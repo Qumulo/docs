@@ -1,5 +1,5 @@
 # Qumulo on Supermicro Getting Started Guide
-Welcome to Qumulo on Supermicro. This guide provides cheat sheets for Supermicro nodes and architecture diagrams, explains the prerequisites to installation, and walks you through racking and wiring your nodes, installing Qumulo Core on your nodes, finally creating a Qumulo cluster. The [Appendix](#appendix) contains the Supermicro node specifications, drive diagram, and LED guide.
+Welcome to Qumulo on Supermicro. This guide provides cheat sheets for Supermicro nodes and architecture diagrams, explains the prerequisites to installation, and walks you through racking and wiring your nodes, installing Qumulo Core on your nodes, and creating a Qumulo cluster. The [Appendix](#appendix) contains the Supermicro node specifications, drive diagram, and LED guide.
 
 For more information about administering your cluster, see the [Qumulo Care](https://care.qumulo.com/hc/en-us) portal. If you have any questions, you can [open a case](https://care.qumulo.com/hc/en-us/requests/new), email us at [care@qumulo.com](mailto:care@qumulo.com), or contact us in your private channel in the [qumulocare](https://qumulocare.slack.com/) Slack workspace.
 
