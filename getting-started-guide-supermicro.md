@@ -55,3 +55,21 @@
 ## Drive Diagram
 
 ## LED Guide
+On the front, right side of the node, there are five LEDs.
+
+| Label         | Color    | Normal Behavior                 |
+| ------------- | -------- | ------------------------------- |
+| Info          | Red      | Blinks if power cable unplugged |
+| Lan A         | (unused) | Off                             |
+| Lan B         | (unused) | Off                             |
+| Disk Activity | Yellow   | On or blinking                  |
+| Power         | Green    | On                              |
+
+**Note:** During normal operation, the **Lan B** LED might appear to be lit slightly when the **Disk Activity** LED is on.
+
+On the back of the node, LAN LEDs are located behind the vent holes on the NIC. Each port has one green light which doesn't blink faster or slower depending on network traffic.
+
+| Status             | Normal Behavior  |
+| ------------------ | ---------------- |
+| Off                | No link          |
+| On or blinking     | Link established |
