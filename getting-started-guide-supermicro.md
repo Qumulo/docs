@@ -49,6 +49,7 @@
 
 
 # Appendix
+The following appendix contains the technical specifications for Supermicro nodes, a drive diagram, and an LED guide.
 
 ## Supermicro Node Specifications
 
