@@ -64,11 +64,11 @@ The following appendix contains the technical specifications for Supermicro node
 <tbody>
 <tr>
 <td><strong>Connectivity Ports (NIC)</strong></td>
-<td colspan="3">4 x 100GbE (2 x Mellanox CX-6 NICs)</td>
+<td colspan="3" style="text-align: center;">4 x 100GbE (2 x Mellanox CX-6 NICs)</td>
 </tr>
 <tr>
 <td><strong>Management Ports (BMC)</strong></td>
-<td colspan="3">1 x 1GbE Base-T (RJ45)</td>
+<td colspan="3" style="text-align: center;">1 x 1GbE Base-T (RJ45)</td>
 </tr>
 <tr>
 <td><strong>Solid State Storage Media</strong></td>
@@ -84,31 +84,31 @@ The following appendix contains the technical specifications for Supermicro node
 </tr>
 <tr>
 <td><strong>Boot Drive</strong></td>
-<td colspan="3">1TB M.2 NVMe drive (Intel P4511 1TB)</td>
+<td colspan="3" style="text-align: center;">1TB M.2 NVMe drive (Intel P4511 1TB)</td>
 </tr>
 <tr>
 <td><strong>CPU</strong></td>
-<td colspan="3">AMD EPYC 7402P 24-Core Processor</td>
+<td colspan="3" style="text-align: center;">AMD EPYC 7402P 24-Core Processor</td>
 </tr>
-<tr style="height: 21.5px;">
-<td style="height: 21.5px;"><strong>Memory</strong></td>
-<td style="height: 21.5px;" colspan="3">128GB (16GB * 8)</td>
+<tr>
+<td><strong>Memory</strong></td>
+<td colspan="3" style="text-align: center;">128GB (16GB * 8)</td>
 </tr>
 <tr>
 <td><strong>Power Supply</strong></td>
-<td colspan="3">2 x 750W Power Supplies</td>
+<td colspan="3" style="text-align: center;">2 x 750W Power Supplies</td>
 </tr>
 <tr>
 <td><strong>Dimensions (H x W x D)</strong></td>
-<td colspan="3">1.7" x 17.2" x 23.5" (43mm x 437mm x 597mm)</td>
+<td colspan="3" style="text-align: center;">1.7" x 17.2" x 23.5" (43mm x 437mm x 597mm)</td>
 </tr>
 <tr>
 <td><strong>Weight</strong></td>
-<td colspan="3">46 lbs (20.9kg)</td>
+<td colspan="3" style="text-align: center;">46 lbs (20.9kg)</td>
 </tr>
 <tr>
 <td><strong>Power Requirements</strong></td>
-<td colspan="3">100 &ndash; 240V, 50/60Hz</td>
+<td colspan="3" style="text-align: center;">100 &ndash; 240V, 50/60Hz</td>
 </tr>
 <tr>
 <td><strong>Typical Power Consumption</strong></td>
@@ -138,21 +138,21 @@ The following appendix contains the technical specifications for Supermicro node
 </tr>
 <tr>
 <td><strong>Operating Temperature</strong></td>
-<td colspan="3">50&deg;F-95&deg;F(10&deg;C&ndash;35&deg;C)</td>
+<td colspan="3" style="text-align: center;">50&deg;F-95&deg;F(10&deg;C&ndash;35&deg;C)</td>
 </tr>
 <tr>
 <td><strong>Non-Operating Temperature</strong></td>
-<td colspan="3">40&deg;F-158&deg;F(-40&deg;C&ndash;70&deg;C)</td>
+<td colspan="3" style="text-align: center;">40&deg;F-158&deg;F(-40&deg;C&ndash;70&deg;C)</td>
 </tr>
 <tr>
 <td><strong>Operating Relative Humidity</strong></td>
-<td colspan="3">8% to 90% (non-condensing)</td>
+<td colspan="3" style="text-align: center;">8% to 90% (non-condensing)</td>
 </tr>
 <tr>
 <td>
 <div><strong>Non-Operating Relative Humidity</strong></div>
 </td>
-<td colspan="3">5% to 95% (non-condensing)</td>
+<td colspan="3" style="text-align: center;">5% to 95% (non-condensing)</td>
 </tr>
 </tbody>
 </table>
