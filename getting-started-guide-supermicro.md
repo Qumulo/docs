@@ -3,15 +3,12 @@ Welcome to Qumulo on Supermicro. This guide provides cheat sheets for Supermicro
 
 For more information about administering your cluster, see the [Qumulo Care](https://care.qumulo.com/hc/en-us) portal. If you have any questions, you can [open a case](https://care.qumulo.com/hc/en-us/requests/new), email us at [care@qumulo.com](mailto:care@qumulo.com), or contact us in your private channel in the [qumulocare](https://qumulocare.slack.com/) Slack workspace.
 
-## Who This Guide is For
 
-## What This Guide Contains
+# Cheat Sheet
 
-## Cheat Sheet
+## Front and Back Node Diagrams
 
-### Front and Back Node Diagrams
-
-### Four-Node Architecture Diagram
+## Four-Node Architecture Diagram
 
 
 # Prerequisites
