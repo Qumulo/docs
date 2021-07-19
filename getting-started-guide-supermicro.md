@@ -48,7 +48,7 @@
 ## Creating the Cluster
 
 
-#Appendix
+# Appendix
 
 ## Supermicro Node Specifications
 
