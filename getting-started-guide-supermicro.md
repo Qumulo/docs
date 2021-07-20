@@ -1,7 +1,7 @@
 # Qumulo on Supermicro Getting Started Guide
 Welcome to Qumulo on Supermicro. This guide is intended for system administrators, professional service providers, and colleagues in your organization who are responsible for installing and configuring server hardware.
 
-This guide includes quick-reference diagrams for Supermicro All-NVMe nodes and cluster architecture diagrams; explains the prerequisites for installation; and walks you through racking and wiring your nodes, installing Qumulo Core on your nodes, and creating a Qumulo cluster. The [Appendix](#appendix) contains the Supermicro node specifications, drive diagram, LED guide, and currently known behavior of Supermicro nodes.
+This guide includes quick-reference diagrams for Supermicro All-NVMe nodes and cluster architecture diagrams; explains the prerequisites for installation; and walks you through racking and wiring your nodes, installing Qumulo Core on your nodes, and creating a Qumulo cluster. The [Appendix](#appendix) contains the Supermicro node specifications, drive slots and PCIe mapping, LED guide, and currently known behavior of Supermicro nodes.
 
 For more information about administering your cluster, see the [Qumulo Care](https://care.qumulo.com/hc/en-us) portal. If you have any questions, you can [open a case](https://care.qumulo.com/hc/en-us/requests/new), email us at [care@qumulo.com](mailto:care@qumulo.com), or contact us in your private channel in the [qumulocare](https://qumulocare.slack.com/) Slack workspace.
 
@@ -15,9 +15,10 @@ This section contains quick-reference diagrams for the front and back of your Su
 
 
 # Prerequisites
-This section describes the network, switch, and firmwarew prerequisites for installing Qumulo Core.
+This section describes the network, switch, and firmware prerequisites for installing Qumulo Core.
 
 ## Networking and Switch Requirements
+For best performance, we recommend a 100 Gbps network (40 Gbps minimum).
 
 ## Special Firmware Instructions
 
@@ -28,12 +29,25 @@ This section describes the network, switch, and firmwarew prerequisites for inst
 This section describes how to use the outside and inside rails of your Supermicro node and how to rack your nodes in your data center.
 
 ## To Attach the Outer and Inner Rails
-**Note:** Because of the rails of your Supermicro nodes are symmetrical, the words **FRONT** and **BACK** might appear upside down.
+**Note:** Because of the left and right rails of your Supermicro nodes are symmetrical, the words **FRONT** and **BACK** might appear upside down.
 
-1. The outer rail attaches to your server rack.
-1. The inner rail attaches near the center of the node using two screws. First attach the front inner rail, then the back inner rail.
+* Each *outer rail* comes as two connected pieces and attaches to your server rack.
+* Each *inner rail* comes as two separate pieces and attaches to the node chassis.
 
-## Inserting the Chassis
+1. Adjust the outer rails to the length of your server rack.
+1. Push each outer rail into the rack until the quick-release bracket snaps into place.
+1. Attach the front inner rails, then the back inner rails to the chassis.
+1. Use two screws on each side, near the middle of the chassis.
+
+## To Insert the Chassis
+1. Align the outer and inner rails and insert the chassis into the server rack.
+1. Attach the chassis to the rack using one screw on each side.
+
+## To Remove the Chassis
+1. Disconnect any cables from the chassis. 
+1. Remove one screw from each side of the front of the chassis.
+1. Pull the chassis out from the server rack partially. When the first set of black snaps appears, pinch them on both sides.
+1. Continue to pull the chassis from the server rack. When the second set of black snaps appears, pinch them on both sides and remove the chassis completely. 
 
 
 # Step 2: Wiring Your Nodes
@@ -56,6 +70,8 @@ After you connect the IPMI port, connect your front-end and back-end SFP28 ports
 **Important:** Make sure that the voltages for both power sockets are the same (for example, both at 115 V or both at 208 V).
 
 After you connect your SFP28 ports, connect power to the node. There are two power sockets on the back of your node. To maximize redundancy, connect each socket to a separate power supply or power distribution unit (PDU).
+
+When you connect the power to your node, it turns on automatically.
 
 # Step 3: Installing Qumulo Core on Your Nodes
 This section describes how to install Qumulo Core on your Supermicro nodes.
@@ -182,7 +198,7 @@ The following appendix contains the technical specifications for Supermicro 153 
 </tbody>
 </table>
 
-## Drive Mapping
+## Drive Slots and PCIe Mapping
 A Supermicro node contains slots for 10 drives and one boot drive. The following is the mapping for the drives using the `<slot_id>: <pcie_mapping>` format.
 
 **Note:** The mapping for the boot drive is `4b:00.0`.
