@@ -209,7 +209,7 @@ A Supermicro node contains slots for 10 drives and one boot drive. The following
   <tr>
     <td>Top</td>
     <td><code>1: c2:00.0</code></td>
-    <td><code>2: c4.00.0</code></td>
+    <td><code>2: c4:00.0</code></td>
     <td><code>3: 83:00.0</code></td>
     <td><code>4: 04:00.0</code></td>
     <td><code>5: 44:00.0</code></td>
