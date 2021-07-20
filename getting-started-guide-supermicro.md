@@ -1,12 +1,13 @@
 # Qumulo on Supermicro Getting Started Guide
 Welcome to Qumulo on Supermicro. This guide is intended for system administrators, professional service providers, and colleagues in your organization who are responsible for installing and configuring server hardware.
 
-This guide includes cheat sheets for Supermicro All-NVMe nodes and cluster architecture diagrams; explains the prerequisites to installation; and walks you through racking and wiring your nodes, installing Qumulo Core on your nodes, and creating a Qumulo cluster. The [Appendix](#appendix) contains the Supermicro node specifications, drive diagram, LED guide, and currently known behavior of Supermicro nodes.
+This guide includes quick-reference diagrams for Supermicro All-NVMe nodes and cluster architecture diagrams; explains the prerequisites for installation; and walks you through racking and wiring your nodes, installing Qumulo Core on your nodes, and creating a Qumulo cluster. The [Appendix](#appendix) contains the Supermicro node specifications, drive diagram, LED guide, and currently known behavior of Supermicro nodes.
 
 For more information about administering your cluster, see the [Qumulo Care](https://care.qumulo.com/hc/en-us) portal. If you have any questions, you can [open a case](https://care.qumulo.com/hc/en-us/requests/new), email us at [care@qumulo.com](mailto:care@qumulo.com), or contact us in your private channel in the [qumulocare](https://qumulocare.slack.com/) Slack workspace.
 
 
-# Cheat Sheet
+# Quick Reference
+This section contains quick-reference diagrams for the front and back of your Supermicro node, as well as an example four-node cluster.
 
 ## Front and Back Node Diagrams
 
@@ -14,6 +15,7 @@ For more information about administering your cluster, see the [Qumulo Care](htt
 
 
 # Prerequisites
+This section describes the network, switch, and firmwarew prerequisites for installing Qumulo Core.
 
 ## Networking and Switch Requirements
 
@@ -23,15 +25,18 @@ For more information about administering your cluster, see the [Qumulo Care](htt
 # Step 1: Racking Your Nodes
 **Tip:** You can use the following instructions to add new nodes after your initial cluster deployment.
 
+This section describes how to use the outside and inside rails of your Supermicro node and how to rack your nodes in your data center.
+
 ## Using the Outside and Inside Rails
 
 ## Inserting the Chassis
 
 
 # Step 2: Wiring Your Nodes
+This section describes how to wire the remote access, network, and power ports of your Supermicro node.
 
 ## Connecting the IPMI
-There is one Intelligent Platform Management Interface (IPMI) port on the back of your node.
+The Intelligent Platform Management Interface (IPMI) is a dedicated port that allows functionality such as remote display, remote control, and remote power on or off (similar to HPE iLO). There is one IPMI port on the back of your node.
 
 ## Connecting the SFP28
 There are four SFP28 (25 Gbps) ports on the back of your node.
@@ -44,7 +49,8 @@ There are four SFP28 (25 Gbps) ports on the back of your node.
 ## Connecting the Power
 
 
-# Step 3: Installing Qumulo Core on Your Node
+# Step 3: Installing Qumulo Core on Your Nodes
+This section describes how to install Qumulo Core on your Supermicro nodes.
 
 ## Running the Field Verification Tool
 
@@ -52,6 +58,7 @@ There are four SFP28 (25 Gbps) ports on the back of your node.
 
 
 # Step 4: Creating a Qumulo Cluster
+This section describes how to combine your Supermicro nodes into a Qumulo cluster.
 
 ## Verifying the Node Order
 
