@@ -27,7 +27,11 @@ This section describes the network, switch, and firmwarew prerequisites for inst
 
 This section describes how to use the outside and inside rails of your Supermicro node and how to rack your nodes in your data center.
 
-## Using the Outside and Inside Rails
+## To Attach the Outer and Inner Rails
+**Note:** Because of the rails of your Supermicro nodes are symmetrical, the words **FRONT** and **BACK** might appear upside down.
+
+1. The outer rail attaches to your server rack.
+1. The inner rail attaches near the center of the node using two screws. First attach the front inner rail, then the back inner rail.
 
 ## Inserting the Chassis
 
@@ -35,19 +39,23 @@ This section describes how to use the outside and inside rails of your Supermicr
 # Step 2: Wiring Your Nodes
 This section describes how to wire the remote access, network, and power ports of your Supermicro node.
 
-## Connecting the IPMI
-The Intelligent Platform Management Interface (IPMI) is a dedicated port that allows functionality such as remote display, remote control, and remote power on or off (similar to HPE iLO). There is one IPMI port on the back of your node.
+**Note:** The two Ethernet ports on the back of your node (to the right of the USB ports) are unused.
 
-## Connecting the SFP28
-There are four SFP28 (25 Gbps) ports on the back of your node.
+## Connecting the IPMI Port
+The Intelligent Platform Management Interface (IPMI) is a dedicated port that allows functionality such as remote display, control, and power (similar to HPE iLO). First, connect the IPMI port first on the back of your node (above the USB ports).
 
-| Port Location         | Function           |
-| --------------------- | ------------------ |
-| Top row (`1`, `0`)    | Front-end ports    |
-| Bottom row (`1`, `0`) | Back-end ports     |
+## Connecting the SFP28 Ports
+After you connect the IPMI port, connect your front-end and back-end SFP28 ports. There are four SFP28 (25 Gbps) ports on the back of your node. To maximize redundancy, split interfaces across subnets by connecting each port to a different switch.
+
+| Port Location         | Port Type  | Purpose                     |
+| --------------------- | ---------- | --------------------------- |
+| Top row (`1`, `0`)    | Front end  | Communication with client   |
+| Bottom row (`1`, `0`) | Back end   | Communication between nodes |
 
 ## Connecting the Power
+**Important:** Make sure that the voltages for both power sockets are the same (for example, both at 115 V or both at 208 V).
 
+After you connect your SFP28 ports, connect power to the node. There are two power sockets on the back of your node. To maximize redundancy, connect each socket to a separate power supply or power distribution unit (PDU).
 
 # Step 3: Installing Qumulo Core on Your Nodes
 This section describes how to install Qumulo Core on your Supermicro nodes.
