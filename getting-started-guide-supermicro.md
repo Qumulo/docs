@@ -1,7 +1,7 @@
 # Qumulo on Supermicro Getting Started Guide
 Welcome to Qumulo on Supermicro. This guide is intended for system administrators, professional service providers, and colleagues in your organization who are responsible for installing and configuring server hardware.
 
-This guide includes cheat sheets for Supermicro All-NVMe nodes and cluster architecture diagrams; explains the prerequisites to installation; and walks you through racking and wiring your nodes, installing Qumulo Core on your nodes, and creating a Qumulo cluster. The [Appendix](#appendix) contains the Supermicro node specifications, drive diagram, LED guide, and currently known issues.
+This guide includes cheat sheets for Supermicro All-NVMe nodes and cluster architecture diagrams; explains the prerequisites to installation; and walks you through racking and wiring your nodes, installing Qumulo Core on your nodes, and creating a Qumulo cluster. The [Appendix](#appendix) contains the Supermicro node specifications, drive diagram, LED guide, and currently known behavior of Supermicro nodes.
 
 For more information about administering your cluster, see the [Qumulo Care](https://care.qumulo.com/hc/en-us) portal. If you have any questions, you can [open a case](https://care.qumulo.com/hc/en-us/requests/new), email us at [care@qumulo.com](mailto:care@qumulo.com), or contact us in your private channel in the [qumulocare](https://qumulocare.slack.com/) Slack workspace.
 
@@ -59,7 +59,7 @@ There are four SFP28 (25 Gbps) ports on the back of your node.
 
 
 # Appendix
-The following appendix contains the technical specifications for Supermicro 153 TB, 76 TB, and 30 TB nodes, a drive map, and an LED guide.
+The following appendix contains the technical specifications for Supermicro 153 TB, 76 TB, and 30 TB nodes, a drive map, an LED guide, and current known behavior of Supermicro nodes.
 
 ## Supermicro Technical Specifications
 <table cellspacing="0" cellpadding="0">
@@ -219,8 +219,8 @@ On the back of your Supermicro node, LAN LEDs are located behind the vent holes 
 | &#8212;    | Off                | No link          |
 | 🟢 (green) | On or blinking     | Link established |
 
-## Known Issues
-The following are the currently known issues for Supermicro nodes.
+## Known Behavior
+The following is the currently known behavior for Supermicro nodes.
 
 ### USB Drive Boot Priority
 To boot a Supermicro node from a USB drive, you must manually set **Boot Option #1** to **[UEFI] USB key**.
