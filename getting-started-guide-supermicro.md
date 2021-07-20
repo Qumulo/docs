@@ -109,7 +109,7 @@ The following appendix contains the technical specifications for Supermicro 153 
 <td colspan="3" style="text-align: center;">2 &#215; 750 W Power Supplies</td>
 </tr>
 <tr>
-<td><strong>Dimensions (H x W x D)</strong></td>
+<td><strong>Dimensions (H &#215; W &#215; D)</strong></td>
 <td colspan="3" style="text-align: center;">1.7" &#215; 17.2" &#215; 23.5" (43 mm &#215; 437 mm &#215; 597 mm)</td>
 </tr>
 <tr>
