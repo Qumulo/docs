@@ -15,12 +15,7 @@ This section contains quick-reference diagrams for the front and back of your Su
 
 
 # Prerequisites
-This section describes the network, switch, and firmware prerequisites for installing Qumulo Core.
-
-## Networking and Switch Requirements
 For best performance, we recommend a 100 Gbps network (40 Gbps minimum).
-
-## Special Firmware Instructions
 
 
 # Step 1: Racking Your Nodes
