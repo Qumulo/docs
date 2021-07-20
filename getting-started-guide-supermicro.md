@@ -56,10 +56,10 @@ The Intelligent Platform Management Interface (IPMI) is a dedicated port that al
 ## Connecting the SFP28 Ports
 After you connect the IPMI port, connect your front-end and back-end SFP28 ports. There are four SFP28 (25 Gbps) ports on the back of your node. To maximize redundancy, split interfaces across subnets by connecting each port to a different switch.
 
-| Port Location         | Port Type  | Purpose                     |
-| --------------------- | ---------- | --------------------------- |
-| Top row (`1`, `0`)    | Front end  | Communication with client   |
-| Bottom row (`1`, `0`) | Back end   | Communication between nodes |
+| Port Location         | Port Type  | Purpose                                           |
+| --------------------- | ---------- | ------------------------------------------------- |
+| Top row (`1`, `0`)    | Front end  | Communication with out-of-band management network |
+| Bottom row (`1`, `0`) | Back end   | Communication between nodes                       |
 
 ## Connecting the Power
 **Important:** Make sure that the voltages for both power sockets are the same (for example, both at 115 V or both at 208 V).
@@ -219,7 +219,7 @@ A Supermicro node contains slots for 10 drives and one boot drive. The following
     <td><code>6: c1:00.0</code></td>
     <td><code>7: c3:00.0</code></td>
     <td><code>8: 82:00.0</code></td>
-    <td><code>9: 03.00.0</code></td>
+    <td><code>9: 03:00.0</code></td>
     <td><code>10: 43:00.0</code></td>
   </tr>
 </tbody>
