@@ -1,7 +1,7 @@
 # Qumulo on Supermicro Getting Started Guide
 Welcome to Qumulo on Supermicro. This guide is intended for system administrators, professional service providers, and colleagues in your organization who are responsible for installing and configuring server hardware.
 
-This guide includes cheat sheets for Supermicro All-NVMe nodes and cluster architecture diagrams; explains the prerequisites to installation; and walks you through racking and wiring your nodes, installing Qumulo Core on your nodes, and creating a Qumulo cluster. The [Appendix](#appendix) contains the Supermicro node specifications, drive diagram, and LED guide.
+This guide includes cheat sheets for Supermicro All-NVMe nodes and cluster architecture diagrams; explains the prerequisites to installation; and walks you through racking and wiring your nodes, installing Qumulo Core on your nodes, and creating a Qumulo cluster. The [Appendix](#appendix) contains the Supermicro node specifications, drive diagram, LED guide, and currently known issues.
 
 For more information about administering your cluster, see the [Qumulo Care](https://care.qumulo.com/hc/en-us) portal. If you have any questions, you can [open a case](https://care.qumulo.com/hc/en-us/requests/new), email us at [care@qumulo.com](mailto:care@qumulo.com), or contact us in your private channel in the [qumulocare](https://qumulocare.slack.com/) Slack workspace.
 
@@ -218,3 +218,14 @@ On the back of your Supermicro node, LAN LEDs are located behind the vent holes 
 | ---------- | ------------------ | ---------------- |
 | &#8212;    | Off                | No link          |
 | 🟢 (green) | On or blinking     | Link established |
+
+## Known Issues
+The following are the currently known issues for Supermicro nodes.
+
+### USB Drive Boot Priority
+To boot a Supermicro node from a USB drive, you must manually set **Boot Option #1** to **[UEFI] USB key**.
+
+### Data Center Management Suite (DCMS) Licenses
+**Important:** If a DCMS license isn't installed on a Supermicro node, the Field Verification Tool (FVT) fails, preventing you from installing Qumulo Core.
+
+A DCMS license is also required for certain other features to work.
