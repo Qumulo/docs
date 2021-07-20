@@ -164,19 +164,19 @@ The following appendix contains the technical specifications for Supermicro node
 ## LED Guide
 On the front, right side of the node, there are five LEDs.
 
-| Label         | Color    | Normal Behavior                 |
-| ------------- | -------- | ------------------------------- |
-| Info          | Red      | Blinks if power cable unplugged |
-| Lan A         | (unused) | Off                             |
-| Lan B         | (unused) | Off                             |
-| Disk Activity | Yellow   | On or blinking                  |
-| Power         | Green    | On                              |
+| Label         | Color       | Normal Behavior                 |
+| ------------- | ----------- | ------------------------------- |
+| Info          | 🔴 (red)    | Blinks if power cable unplugged |
+| Lan A         | (unused)    | Off                             |
+| Lan B         | (unused)    | Off                             |
+| Disk Activity | 🟡 (yellow) | On or blinking                  |
+| Power         | 🟢 (green)  | On                              |
 
 **Note:** During normal operation, the **Lan B** LED might appear to be lit slightly when the **Disk Activity** LED is on.
 
-On the back of the node, LAN LEDs are located behind the vent holes on the NIC. Each port has one green light which doesn't blink faster or slower depending on network traffic.
+On the back of the node, LAN LEDs are located behind the vent holes on the NIC. Each port has one light which *doesn't* blink faster or slower depending on network traffic.
 
-| Status             | Normal Behavior  |
-| ------------------ | ---------------- |
-| Off                | No link          |
-| On or blinking     | Link established |
+| Color      | Status             | Normal Behavior  |
+| ---------- | ------------------ | ---------------- |
+| &#8212;    | Off                | No link          |
+| 🟢 (green) | On or blinking     | Link established |
