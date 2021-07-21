@@ -1,18 +1,18 @@
-repository: qumulo/getting-started-guide
+repository: qumulo/docs
 
 output: web
 # this property is useful for conditional filtering of content that is separate from the PDF.
 
-topnav_title: Qumulo Getting Started Guide
+topnav_title: Qumulo Documentation
 # this appears on the top navigation bar next to the home button
 
-site_title: Qumulo Getting Started Guide
+site_title: Qumulo Documentation
 # this appears in the html browser tab for the site title (seen mostly by search engines, not users)
 
 company_name: Qumulo, Inc.
 # this appears in the footer
 
-github_editme_path: qumulo/getting-started-guide/blob/gh-pages/
+github_editme_path: qumulo/docs/blob/gh-pages/
 # if you're using Github, provide the basepath to the branch you've created for reviews, following the sample here. if not, leave this value blank.
 
 # gitlab_editme_path: tomjoht/documentation-theme-jekyll/blob/gh-pages/
@@ -111,7 +111,7 @@ description: "Intended as a documentation theme based on Jekyll for technical wr
 
 # needed for sitemap.xml file only
 url: qumulo.github.io
-baseurl: getting-started-guide
+baseurl: docs
 
 
 github: [metadata]
