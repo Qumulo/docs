@@ -1,5 +1,2 @@
-# Qumulo Getting Started Guide
-
-This guide shows you how to get started with Qumulo.
-
-**NOTE:** This is an experimental guide. For all up-to-date information, see the current [Qumulo Getting Started Guide](https://care.qumulo.com/hc/en-us/articles/360011321773-Qumulo-Getting-Started-Guide) and the [Qumulo Care](https://care.qumulo.com/) portal.
+# Qumulo Documentation
+This repository is a new kind of Docs as Code documentation for [Qumulo](https://qumulo.com/). Watch this space as we continue to add new content, and remember, we want you to ask questions and share your ideas with us. Just click the **Edit me** button.
