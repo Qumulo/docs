@@ -3,6 +3,7 @@ In this guide, you'll find all the information you need to install new nodes, co
 
 **Table of Contents**
 * [Qumulo on Azure as a Service Onboarding Guide](getting-started/qaas-onboarding-guide.md)
+* [Qumulo on Supermicro Getting Started Guide](getting-started/supermicro/index.md)
 
 ## Visit the Knowledge Base
 For a deeper dive into Qumulo features and advanced functionality such as cluster administration, visit the [Qumulo Care](https://care.qumulo.com/hc/en-us)  portal. Our portal lets you open a case, read articles and watch videos from our content library, review product release notes, and get involved in the Qumulo community.
