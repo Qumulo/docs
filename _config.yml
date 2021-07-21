@@ -1,4 +1,4 @@
-repository: qumulo/getting-started-guide
+repository: qumulo/docs
 
 output: web
 # this property is useful for conditional filtering of content that is separate from the PDF.
@@ -12,10 +12,10 @@ site_title: Qumulo Getting Started Guide
 company_name: Qumulo, Inc.
 # this appears in the footer
 
-github_editme_path: qumulo/getting-started-guide/blob/gh-pages/
+github_editme_path: qumulo/docs/blob/gh-pages/
 # if you're using Github, provide the basepath to the branch you've created for reviews, following the sample here. if not, leave this value blank.
 
-# gitlab_editme_path: tomjoht/documentation-theme-jekyll/blob/gh-pages/
+#gitlab_editme_path: tomjoht/documentation-theme-jekyll/blob/gh-pages/
 # if you're using GitLab, provide the basepath to the branch you've created for reviews, following the sample here. if not, leave this value blank.
 
 google_analytics: UA-66296557-1
@@ -33,9 +33,9 @@ exclude:
   - vendor
 # these are the files and directories that jekyll will exclude from the build
 
-feedback_subject_line: Jekyll documentation theme
+feedback_subject_line: Qumulo Documentation Feedback
 
-feedback_email: tomjoht@gmail.com
+feedback_email: mkhmelnitsky@qumulo.com
 # used as a contact email for the Feedback link in the top navigation bar
 
 # feedback_disable: true
@@ -111,7 +111,7 @@ description: "Intended as a documentation theme based on Jekyll for technical wr
 
 # needed for sitemap.xml file only
 url: qumulo.github.io
-baseurl: getting-started-guide
+baseurl: docs
 
 
 github: [metadata]
