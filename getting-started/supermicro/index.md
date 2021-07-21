@@ -77,25 +77,34 @@ To perform a clean installation of Qumulo Core on your node, you must create a Q
 
 ### To Create a USB Drive Installer on Mac OS
 1. Open Terminal and log in as `root` by using the `sudo -s` command.
-2. Insert your USB drive and then find its disk label by using the `diskutil list` command. In the following example, the USB drive's device label is `disk2`.
-```Bash
-/dev/disk2 (external, physical):
-   #:                       TYPE NAME                    SIZE       IDENTIFIER
-   0:             Windows_FAT_32 MY_USB_DRIVE            *32.0 GB    disk2
-```
-3. To unmount the USB drive, use your USB drive's device label, for example:
-```Bash
-diskutil unmountDisk /dev/disk2
-```
-4. To write the Qumulo Core USB installer image to your USB drive, specify the path to your image file and the USB drive's device label, for example:
-```Bash
-dd if=/path-to-image-file/ of=/dev/rdisk2 bs=2m
-```
-**Note:** If you encounter an **Operation not permitted** error, navigate to **System Preferences > Security & Privacy**, on the **Privacy** tab grant **Full Disk Access** to Terminal, restart Terminal, and then try the command again. When finished, remove **Full Disk Access** from Terminal.
-5. Eject your Qumulo Core USB Drive Installer, for example:
-```Bash
-diskutil eject disk2
-```
+
+1. Insert your USB drive and then find its disk label by using the `diskutil list` command. In the following example, the USB drive's device label is `disk2`.
+
+   ```Bash
+   /dev/disk2 (external, physical):
+      #:                       TYPE NAME                    SIZE       IDENTIFIER
+      0:             Windows_FAT_32 MY_USB_DRIVE            *32.0 GB    disk2
+   ```
+
+1. To unmount the USB drive, use your USB drive's device label, for example:
+
+   ```Bash
+   diskutil unmountDisk /dev/disk2
+   ```
+
+1. To write the Qumulo Core USB installer image to your USB drive, specify the path to your image file and the USB drive's device label, for example:
+
+   ```Bash
+   dd if=/path-to-image-file/ of=/dev/rdisk2 bs=2m
+   ```
+
+   **Note:** If you encounter an **Operation not permitted** error, navigate to **System Preferences > Security & Privacy**, on the **Privacy** tab grant **Full Disk Access** to Terminal, restart Terminal, and then try the command again. When finished, remove **Full Disk Access** from Terminal.
+
+1. Eject your Qumulo Core USB Drive Installer, for example:
+
+   ```Bash
+   diskutil eject disk2
+   ```
 
 ### To Create a USB Drive Installer on Windows
 To create a USB Drive Installer on Windows, you must use a third-party application such as [Rufus](https://rufus.ie/). We recommend Rufus because it can detect mny USB storage devices (rather than only Windows-compatible ones).
@@ -120,7 +129,66 @@ To create a USB Drive Installer on Windows, you must use a third-party applicati
 
 1. To confirm the operation, destroy all data on the USB drive, and image the drive click **OK**.
 
-## Running the Field Verification Tool
+## Running the Field Verification Tool (FVT)
+
+**Caution:** *Don't* run the Field Verification Tool (FVT) if there is live data on your node.
+
+1. When the node powers on and begins to boot, press **F11** to enter the boot menu.
+
+1. Select your USB drive and boot into it.
+
+1. When prompted, type `2` to select `2) One Time Boot to USB DriveKey`.
+
+1. When the node reboots, the FVT starts automatically and the following message appears.
+
+   ```Bash
+   RELEASE: Qumulo Core X.XX.X
+   Running FVT. Please wait...
+   ```
+
+1. When the FVT finishes, the following message appears.
+
+   ```Bash
+   FVT passed!
+
+   No issues were detected, the system is ready to install.
+
+   Installing will run the FACTORY RESET tool. This will wipe all data on BOTH the boot drive AND the data drives.
+   ```
+
+   You can now install the Qumulo Core software image.
+
+### Troubleshooting FVT Fail Cases
+If the FVT encounters an issue, the `FTV failed!` message and an explanation appear, for example:
+
+   ```Bash
+   FTV failed!
+
+   The following issues were detected:
+   check_drive_count: FAIL: We require 12 drives. You have 13.
+   FIX: Contact Qumulo Care Support.
+   Not fixable issues were detected.
+   ```
+
+FVT fail cases divide into *fixable* and *non-fixable* issues.
+
+#### Fixable Issues
+Depending on your installation scenario, you can type `1` to let the FVT correct issues such as the following automatically:
+
+  * BIOS configuration
+  * Drive firmware
+  * Drive controller firmware
+  * NIC mode for CX5
+  * Boot order
+
+**Note:** From Qumulo Core 3.1.0, the FVT can also correct issues (such as firmware upgrades) automatically following part replacements. To run FVT Flash for a part replacement, type `2`.
+
+#### Non-Fixable Issues
+The FVT can't correct issues such as the following automatically. You must contact the [Qumulo Care Team](https://care.qumulo.com/hc/en-us/articles/115008409408-Contact-Qumulo-Care-).
+
+  * BIOS version
+  * IPMI version
+  * NIC firmware
 
 ## Installing the Software Image
 
