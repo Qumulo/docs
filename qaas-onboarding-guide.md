@@ -1,5 +1,5 @@
 # Qumulo on Azure as a Service Onboarding Guide
-Welcome to Qumulo on Azure as a Service. The next step after provisioning your file system is configuring it for your environment. This guide is a supplement to the [Qumulo Getting Started Guide](https://care.qumulo.com/hc/en-us/articles/360011321773-Qumulo-Getting-Started-Guide), where configuration steps and best practices differ from those we recommend for other platforms.
+Welcome to Qumulo on Azure as a Service! The next step after provisioning your file system is configuring it for your environment. This guide is a supplement to the [Qumulo Getting Started Guide](https://care.qumulo.com/hc/en-us/articles/360011321773-Qumulo-Getting-Started-Guide), where configuration steps and best practices differ from those we recommend for other platforms.
 
 
 ## Networking Connectivity
