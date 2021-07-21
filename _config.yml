@@ -3,10 +3,10 @@ repository: qumulo/docs
 output: web
 # this property is useful for conditional filtering of content that is separate from the PDF.
 
-topnav_title: Qumulo Getting Started Guide
+topnav_title: Qumulo Documentation
 # this appears on the top navigation bar next to the home button
 
-site_title: Qumulo Getting Started Guide
+site_title: Qumulo Documentation
 # this appears in the html browser tab for the site title (seen mostly by search engines, not users)
 
 company_name: Qumulo, Inc.
