@@ -72,6 +72,54 @@ When you connect the power to your node, it turns on automatically.
 # Step 3: Installing Qumulo Core on Your Nodes
 This section describes how to install Qumulo Core on your Supermicro nodes.
 
+## Creating a Qumulo Core USB Drive Installer
+To perform a clean installation of Qumulo Core on your node, you must create a Qumulo Core USB Drive Installer. To begin, you must have a USB drive (4 GB minimum) and a Qumulo Core USB installer image from the [Qumulo Care Team](https://care.qumulo.com/hc/en-us/articles/115008409408-Contact-Qumulo-Care-).
+
+### To Create a USB Drive Installer on Mac OS
+1. Open Terminal and log in as `root` by using the `sudo -s` command.
+2. Insert your USB drive and then find its disk label by using the `diskutil list` command. In the following example, the USB drive's device label is `disk2`.
+```Bash
+/dev/disk2 (external, physical):
+   #:                       TYPE NAME                    SIZE       IDENTIFIER
+   0:             Windows_FAT_32 MY_USB_DRIVE            *32.0 GB    disk2
+```
+3. To unmount the USB drive, use your USB drive's device label, for example:
+```Bash
+diskutil unmountDisk /dev/disk2
+```
+4. To write the Qumulo Core USB installer image to your USB drive, specify the path to your image file and the USB drive's device label, for example:
+```Bash
+dd if=/path-to-image-file/ of=/dev/rdisk2 bs=2m
+```
+**Note:** If you encounter an **Operation not permitted** error, navigate to **System Preferences > Security & Privacy**, on the **Privacy** tab grant **Full Disk Access** to Terminal, restart Terminal, and then try the command again. When finished, remove **Full Disk Access** from Terminal.
+5. Eject your Qumulo Core USB Drive Installer, for example:
+```Bash
+diskutil eject disk2
+```
+
+### To Create a USB Drive Installer on Windows
+To create a USB Drive Installer on Windows, you must use a third-party application such as [Rufus](https://rufus.ie/). We recommend Rufus because it can detect mny USB storage devices (rather than only Windows-compatible ones).
+
+**Important:**
+* We don't recommend using other tools (such as Win32 Disk Imager) because they might encounter errors when unable to recognize the USB drive after writing data to it.
+* When the operation concludes, you might not be able to view the contents of the USB drive on Windows because the drive will be formatted using a different file system.
+
+1. Insert your USB drive and run Rufus.
+
+1. Under **Drive Properties**, select a device and the path to the Qumulo Core USB installer image.
+
+1. For **Partition scheme**, select **MBR** and for **Target System**, select **BIOS or UEFI**.
+   
+1. Under **Format Options**, ensure that the **File system** is **FAT32 (Default)** and **Cluster size** is **4096 bytes (Default)**.
+
+1. Click **Start**.
+
+1. If prompted to download a new version of `GRUB` or `vesamenu.c32`, click **No**.
+
+1. When the **ISOHybrid image detected** dialog box appears, click **Write in DD Image mode** and then click **OK**.
+
+1. To confirm the operation, destroy all data on the USB drive, and image the drive click **OK**.
+
 ## Running the Field Verification Tool
 
 ## Installing the Software Image
