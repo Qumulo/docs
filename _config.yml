@@ -111,7 +111,7 @@ description: "Intended as a documentation theme based on Jekyll for technical wr
 
 # needed for sitemap.xml file only
 url: qumulo.github.io
-baseurl: docs
+baseurl: /docs
 
 
 github: [metadata]
