@@ -134,7 +134,7 @@ The Field Verification Tool (FVT) checks your Supermicro node, prepares it for Q
 
 **Caution:** The FVT erases all data from the node. You must back up any live data on the node before you run the FVT.
 
-1. When the node powers on and begins to boot, on the **Supermicro** screen, press **F11**. The following message is displayed:
+1. When the node powers on and begins to boot, on the **Supermicro** screen, press **F11**. The following message appears:
 
    ```Bash
    DXE--BIOS PCI Bus Enumeration
@@ -267,7 +267,7 @@ When you replace a component of your node (such as the motherboard or an NIC car
    >
    ```
 
-**Note:** In some cases, after the part replacement procedure, the message `FIX: Run the FVT flash command.` is displayed. Enter `1` as you would for a [fixable issue](#fixable-issues) to reboot the node and then repeat the part replacement procedure.
+**Note:** In some cases, after the part replacement procedure, the message `FIX: Run the FVT flash command.` appears. Enter `1` as you would for a [fixable issue](#fixable-issues) to reboot the node and then repeat the part replacement procedure.
 
 ## Installing the Software Image
 
