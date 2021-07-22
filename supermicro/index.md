@@ -129,20 +129,45 @@ To create a USB Drive Installer on Windows, you must use a third-party applicati
 
 1. To confirm the operation, destroy all data on the USB drive, and image the drive click **OK**.
 
-## Running the Field Verification Tool (FVT)
+## Running the Field Verification Tool (FVT) and Installing Qumulo Core
+The Field Verification Tool (FVT) checks your Supermicro node, prepares it for Qumulo Core, and installs Qumulo Core.
 
-**Caution:** *Don't* run the Field Verification Tool (FVT) if there is live data on your node.
+**Caution:** The FVT erases all data from the node. You must back up any live data on the node before you run the FVT.
 
-1. When the node powers on and begins to boot, press **F11** to enter the boot menu.
-
-1. Select your USB drive and boot into it.
-
-1. When prompted, type `2` to select `2) One Time Boot to USB DriveKey`.
-
-1. When the node reboots, the FVT starts automatically and the following message appears.
+1. When the node powers on and begins to boot, on the **Supermicro** screen, press **F11**. The following message is displayed:
 
    ```Bash
-   RELEASE: Qumulo Core X.XX.X
+   DXE--BIOS PCI Bus Enumeration
+   Invoking Boot Menu
+   ```
+
+1. On the **Please select boot device:** screen, select your USB drive (usually labelled with `UEFI OS`) and boot into it.
+
+   The FVT starts automatically and the following message appears.
+
+   ```Bash
+   RELEASE: Qumulo Core X.X.X
+
+   Please choose from the following options:
+   [1] Factory reset (DESTROYS ALL DATA)
+   [*] Perform maintenance
+   >
+   ```
+
+1. Enter `1`.
+
+   The following message appears.
+
+   ```Bash
+   You are running a FACTORY RESET. This will wipe all data on BOTH the boot drive AND the data drives.
+   This operation is going to DESTROY ALL DATA on the cluster, in order to proceed you must type "DESTROY ALL DATA" ("no" cancels):
+   ```
+
+1. To continue, enter `DESTROY ALL DATA`.
+
+   The following message appears.
+
+   ```Bash
    Running FVT. Please wait...
    ```
 
@@ -151,29 +176,35 @@ To create a USB Drive Installer on Windows, you must use a third-party applicati
    ```Bash
    FVT passed!
 
-   No issues were detected, the system is ready to install.
-
-   Installing will run the FACTORY RESET tool. This will wipe all data on BOTH the boot drive AND the data drives.
+   Wiping boot drive.
+   Writing OS image.
+   Writing container image.
+   Wiping data drives.
+   Installation successful. Ctrl-C to cancel reboot.
    ```
 
    You can now install the Qumulo Core software image.
 
 ### Troubleshooting FVT Fail Cases
-If the FVT encounters an issue, the `FTV failed!` message and an explanation appear, for example:
+If the FVT encounters an issue, the `FTV failed!` message and an explanation appears.
+
+FVT fail cases divide into *fixable* and *non-fixable* issues.
+
+#### Fixable Issues
+The following is an example of a fixable issue. To let FVT try fix the issue, enter `1`.
 
    ```Bash
    FTV failed!
 
    The following issues were detected:
-   check_drive_count: FAIL: We require 12 drives. You have 13.
-   FIX: Contact Qumulo Care Support.
-   Not fixable issues were detected.
+   check_bmc_version: FAIL: We require a minimum BMC version of 1.00.34. You have 1.00.33.
+   FIX: Run the FVT flash command.
+
+   [1] Run FVT Flash. This will try to fix issues then reboot. Please take caution as this MAY DESTROY EXISTING DATA.
+   [2] Start a rescue shell
    ```
 
-FVT fail cases divide into *fixable* and *non-fixable* issues.
-
-#### Fixable Issues
-Depending on your installation scenario, you can type `1` to let the FVT correct issues such as the following automatically:
+Depending on your installation scenario, FVT might be able to correct issues such as the following automatically:
 
   * BIOS configuration
   * Drive firmware
@@ -181,14 +212,62 @@ Depending on your installation scenario, you can type `1` to let the FVT correct
   * NIC mode for CX5
   * Boot order
 
-**Note:** From Qumulo Core 3.1.0, the FVT can also correct issues (such as firmware upgrades) automatically following part replacements. To run FVT Flash for a part replacement, type `2`.
-
 #### Non-Fixable Issues
-The FVT can't correct issues such as the following automatically. You must contact the [Qumulo Care Team](https://care.qumulo.com/hc/en-us/articles/115008409408-Contact-Qumulo-Care-).
+The following is an example of a non-fixable issue. To fix the issue, contact the [Qumulo Care Team](https://care.qumulo.com/hc/en-us/articles/115008409408-Contact-Qumulo-Care-).
+
+   ```Bash
+   FTV failed!
+
+   The following issues were detected:
+   check_cpu_model: FAIL: We require one of: AMD EPYC 7502P 24-Core Processor. You have AMD EPYC 7402P 24-Core Processor.
+   FIX: Contact Qumulo Care.
+   Not fixable issues were detected.
+
+   [1] Copy logs to USB installer.
+   [2] Start a rescue shell
+   ```
+
+The FVT can't correct issues such as the following automatically.
 
   * BIOS version
   * IPMI version
   * NIC firmware
+
+### Performing the Part Replacement Procedure Using the FVT
+When you replace a component of your node (such as the motherboard or an NIC card), you must ensure that the firmware version and configuration are correct for your new components. To do this, you must perform the part replacement procedure using the FVT.
+
+1. [Boot using the latest version of the Qumulo Core USB Drive Installer](#running-the-field-verification-tool-fvt-and-installing-qumulo-core).
+
+1. When prompted, enter `*` to select `[*] Perform maintenance`.
+
+   The following message appears.
+
+   ```Bash
+   Please choose from the following options:
+   [1] Boot drive reset (DESTROYS BOOT DRIVE CONTENTS)
+   [2] Perform automatic repair after part replacement (non-destructive)
+   [3] Drop to a shell to perform manual maintenance
+   >
+   ```
+
+1. Enter `2`.
+
+   The part replacement procedure runs and the following message appears.
+
+   ```Bash
+   Running FVT. Please wait...
+   100%|▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮| 13/13 [00:26<00:00, 2.01s/check]
+   FVT passed!
+
+   No issues were detected, the system is ready to utilize the replaced parts.
+   
+   Actions:
+   [1] Shut down the system. After the system powers off, you may remove the USB stick and then power on the system to boot into the product.
+   [2] Start a rescue shell
+   >
+   ```
+
+**Note:** In some cases, after the part replacement procedure, the message `FIX: Run the FVT flash command.` is displayed. Enter `1` as you would for a [fixable issue](#fixable-issues) to reboot the node and then repeat the part replacement procedure.
 
 ## Installing the Software Image
 
