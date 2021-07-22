@@ -13,6 +13,7 @@ This section contains quick-reference diagrams for the front and back of your Su
 ![Front and Back Diagrams of the Supermicro All-NVMe Node](supermicro/images/supermicro-front-back-diagram.png)
 
 ## Four-Node Cluster Architecture Diagram
+![Four-Node Cluster Architecture Diagram](supermicro/images/supermicro-four-node-cluster-architecture-diagram.png)
 
 
 # Prerequisites
