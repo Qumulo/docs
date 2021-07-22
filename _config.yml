@@ -18,7 +18,7 @@ github_editme_path: qumulo/docs/blob/gh-pages/
 #gitlab_editme_path: tomjoht/documentation-theme-jekyll/blob/gh-pages/
 # if you're using GitLab, provide the basepath to the branch you've created for reviews, following the sample here. if not, leave this value blank.
 
-google_analytics: UA-66296557-1
+# google_analytics: UA-66296557-1
 # if you have google-analytics ID, put it in. if not, edit this value to blank.
 
 host: 127.0.0.1
@@ -71,7 +71,7 @@ defaults:
       type: "pages"
     values:
       layout: "page"
-      comments: true
+      comments: false
       # if you don't want to use Commento.io and just hide comments, change true to false wherever you see the comments property
       search: true
       sidebar: home_sidebar
@@ -91,7 +91,7 @@ defaults:
       type: "posts"
     values:
       layout: "post"
-      comments: true
+      comments: false
       # if you don't want to use Commento.io and just hide comments, change true to false wherever you see the comments property
       search: true
       sidebar: home_sidebar
@@ -106,15 +106,13 @@ sidebars:
 - product2_sidebar
 - other
 
-description: "Intended as a documentation theme based on Jekyll for technical writers documenting software and other technical products, this theme has all the elements you would need to handle multiple products with both multi-level sidebar navigation, tags, and other documentation features."
+description: "his repository is a new kind of Docs as Code documentation for Qumulo. Watch this space as we continue to add new content, and remember, we want you to ask questions and share your ideas with us. Just click the Edit me button."
 # the description is used in the feed.xml file
 
 # needed for sitemap.xml file only
 url: qumulo.github.io
-baseurl: docs
+baseurl: /docs
 
 
 github: [metadata]
 
-
-# Copyright 2021 Google LLC

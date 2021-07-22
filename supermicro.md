@@ -10,7 +10,7 @@ For more information about administering your cluster, see the [Qumulo Care](htt
 This section contains quick-reference diagrams for the front and back of your Supermicro node, as well as an example four-node cluster.
 
 ## Front and Back Node Diagrams
-![Front and Back Diagrams of the Supermicro All-NVMe Node](images/supermicro-front-back-diagram.png)
+![Front and Back Diagrams of the Supermicro All-NVMe Node](supermicro/images/supermicro-front-back-diagram.png)
 
 ## Four-Node Cluster Architecture Diagram
 
