@@ -17,7 +17,7 @@ You can choose a green or blue theme, or you can create your own. In the css fol
 In the \_includes/head.html file, specify the theme file you want the output to use &mdash; for example, `theme_file: theme-green.css`. See this line:
 
 ```html
-<link rel="stylesheet" href="https://raw.githubusercontent.com/Qumulo/docs/gh-pages/css/theme-green.css" />
+<link rel="stylesheet" href="css/theme-green.css" />
 ```
 
 ## Theme differences
