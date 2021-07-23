@@ -1,7 +1,7 @@
 # Qumulo on Supermicro Getting Started Guide
 Welcome to Qumulo on Supermicro. This guide is intended for system administrators, professional service providers, and colleagues in your organization who are responsible for installing and configuring server hardware.
 
-This guide includes quick-reference diagrams for Supermicro All-NVMe nodes and cluster architecture diagrams, an explanation of node LEDs, and a diagram of drive slots and PCIe mapping. The guide walks you through racking and wiring your nodes, installing Qumulo Core on your nodes, and creating a Qumulo cluster. The [Appendix](#appendix) contains the Supermicro node specifications and the currently known behavior of Supermicro nodes.
+This guide includes quick-reference diagrams for Supermicro All-NVMe nodes and cluster architecture diagrams, an explanation of node LEDs, and a diagram of drive slots and PCIe mapping. The guide walks you through racking and wiring your nodes, installing Qumulo Core on your nodes, and creating a Qumulo cluster. The [Appendix](#appendix) contains the currently known behavior of Supermicro nodes and technical specifications.
 
 For more information about administering your cluster, see the [Qumulo Care](https://care.qumulo.com/hc/en-us) portal. If you have any questions, you can [open a case](https://care.qumulo.com/hc/en-us/requests/new), email us at [care@qumulo.com](mailto:care@qumulo.com), or contact us in your private channel in the [qumulocare](https://qumulocare.slack.com/) Slack workspace.
 
@@ -329,19 +329,45 @@ When you replace a component of your node (such as the motherboard or an NIC car
 
 **Note:** In some cases, after the part replacement procedure, the message `FIX: Run the FVT flash command.` appears. Enter `1` as you would for a [fixable issue](#fixable-issues) to reboot the node and then repeat the part replacement procedure.
 
-## Installing the Software Image
-
 
 # Step 4: Creating a Qumulo Cluster
-This section describes how to combine your Supermicro nodes into a Qumulo cluster.
+This section describes how to configure your Supermicro nodes to form a Qumulo cluster.
 
-## Verifying the Node Order
+## To Create the Cluster
+1. Power on four or more nodes that run the same version of Qumulo Core.
+1. Review the End User Agreement and when ready click **I agree to the End User Agreement**.
+1. In the **1. Set up cluster** section, do the following:
 
-## Creating the Cluster
+   a. Enter a **Cluster name**.
+   
+   b. Click the checkmark next to each node to add to your cluster. The total cluster capacity appears at the bottom of the page.
+   
+   c. Check that your nodes are ordered according to their physical arrangement in the server rack. You can check your nodes' order in the following ways:
 
+   * Power on the nodes (or connect their NICs) one at a time and watch the nodes populate this page.
+   * Retrieve the MAC address for each node and compare the addresses to those listed on this page. 
+
+1. Confirm your cluster protection level (how many drive failures Qumulo Core will protect the cluster against). Depending on your cluster size and node types, two-drive or three-drive protection is selected. If **Customize Protection Level** is available, in the **2. Confirm cluster protection level** section, you can choose two-drive protection or three-drive protection.
+
+   **Important:**
+   * You can choose your cluster protection level only during cluster creation. You can't change this setting later.
+   * Choosing protection for more drives decreases your cluster capacity.
+
+1. In the **3. Create a password for your admin account** section, set the password for your administrative account.
 
 # Appendix
-The following appendix contains the technical specifications for Supermicro 153 TB, 76 TB, and 30 TB nodes and the currently known behavior of Supermicro nodes.
+The following appendix contains the currently known behavior of Supermicro nodes and the technical specifications for Supermicro 153 TB, 76 TB, and 30 TB nodes.
+
+## Known Behavior
+The following is the currently known behavior for Supermicro nodes.
+
+### USB Drive Boot Priority
+To boot a Supermicro node from a USB drive, you must manually set **Boot Option #1** to **[UEFI] USB key**.
+
+### Data Center Management Suite (DCMS) Licenses
+**Important:** If a DCMS license isn't installed on a Supermicro node, the Field Verification Tool (FVT) fails, preventing you from installing Qumulo Core.
+
+A DCMS license is also required for certain other features to work.
 
 ## Supermicro Technical Specifications
 <table cellspacing="0" cellpadding="0">
@@ -448,15 +474,3 @@ The following appendix contains the technical specifications for Supermicro 153 
 </tr>
 </tbody>
 </table>
-
-## Known Behavior
-The following is the currently known behavior for Supermicro nodes.
-
-### USB Drive Boot Priority
-To boot a Supermicro node from a USB drive, you must manually set **Boot Option #1** to **[UEFI] USB key**.
-
-### Data Center Management Suite (DCMS) Licenses
-**Important:** If a DCMS license isn't installed on a Supermicro node, the Field Verification Tool (FVT) fails, preventing you from installing Qumulo Core.
-
-A DCMS license is also required for certain other features to work.
-
