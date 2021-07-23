@@ -354,13 +354,10 @@ The following appendix contains the currently known behavior of Supermicro nodes
 ## Known Behavior
 The following is the currently known behavior for Supermicro nodes.
 
-### USB Drive Boot Priority
-To boot a Supermicro node from a USB drive, you must manually set **Boot Option #1** to **[UEFI] USB key**.
-
 ### Data Center Management Suite (DCMS) Licenses
 **Important:** If a DCMS license isn't installed on a Supermicro node, the Field Verification Tool (FVT) fails, preventing you from installing Qumulo Core.
 
-A DCMS license is also required for certain other features to work.
+A DCMS license from Supermicro is also required for Qumulo Core to work correctly.
 
 ## Supermicro Technical Specifications
 <table cellspacing="0" cellpadding="0">
