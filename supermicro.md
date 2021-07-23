@@ -344,8 +344,10 @@ This section describes how to configure your Supermicro nodes to form a Qumulo c
    
    c. Check that your nodes are ordered according to their physical arrangement in the server rack. You can check your nodes' order in the following ways:
 
-   * Power on the nodes (or connect their NICs) one at a time and watch the nodes populate this page.
-   * Retrieve the MAC address for each node and compare the addresses to those listed on this page. 
+   * Power on the nodes one at a time and watch the nodes populate this page.
+   * Retrieve the MAC address for each node and compare the addresses to those listed on this page.
+
+   If not all nodes appear on this page, check the nodes' networking configuration.
 
 1. Confirm your cluster protection level (how many drive failures Qumulo Core will protect the cluster against). Depending on your cluster size and node types, two-drive or three-drive protection is selected. If **Customize Protection Level** is available, in the **2. Confirm cluster protection level** section, you can choose two-drive protection or three-drive protection.
 
