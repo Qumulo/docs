@@ -115,10 +115,10 @@ The Intelligent Platform Management Interface (IPMI) is a dedicated port that al
 ## Connecting the QSFP28 Ports
 After you connect the IPMI port, connect your front-end and back-end QSFP28 ports. There are four QSFP28 (100 Gbps) ports on the back of your node. To maximize redundancy, split interfaces across subnets by connecting each port to a different switch.
 
-| Port Location         | Port Type  | Purpose                                           |
-| --------------------- | ---------- | ------------------------------------------------- |
-| Top row (`1`, `0`)    | Front end  | Communication with out-of-band management network |
-| Bottom row (`1`, `0`) | Back end   | Communication between nodes                       |
+| Port Location         | Port Type  | Purpose                     |
+| --------------------- | ---------- | --------------------------- |
+| Top row (`1`, `0`)    | Front end  | Communication with clients  |
+| Bottom row (`1`, `0`) | Back end   | Communication between nodes |
 
 ## Connecting the Power
 **Important:** Make sure that the voltages for both power sockets are the same (for example, both at 115 V or both at 208 V).
