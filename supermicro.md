@@ -1,19 +1,71 @@
 # Qumulo on Supermicro Getting Started Guide
 Welcome to Qumulo on Supermicro. This guide is intended for system administrators, professional service providers, and colleagues in your organization who are responsible for installing and configuring server hardware.
 
-This guide includes quick-reference diagrams for Supermicro All-NVMe nodes and cluster architecture diagrams; explains the prerequisites for installation; and walks you through racking and wiring your nodes, installing Qumulo Core on your nodes, and creating a Qumulo cluster. The [Appendix](#appendix) contains the Supermicro node specifications, drive slots and PCIe mapping, LED guide, and currently known behavior of Supermicro nodes.
+This guide includes quick-reference diagrams for Supermicro All-NVMe nodes and cluster architecture diagrams, an explanation of node LEDs, and a diagram of drive slots and PCIe mapping. The guide walks you through racking and wiring your nodes, installing Qumulo Core on your nodes, and creating a Qumulo cluster. The [Appendix](#appendix) contains the Supermicro node specifications and the currently known behavior of Supermicro nodes.
 
 For more information about administering your cluster, see the [Qumulo Care](https://care.qumulo.com/hc/en-us) portal. If you have any questions, you can [open a case](https://care.qumulo.com/hc/en-us/requests/new), email us at [care@qumulo.com](mailto:care@qumulo.com), or contact us in your private channel in the [qumulocare](https://qumulocare.slack.com/) Slack workspace.
 
 
 # Quick Reference
-This section contains quick-reference diagrams for the front and back of your Supermicro node, as well as an example four-node cluster.
+This section contains quick-reference diagrams for the front and back of your Supermicro node, an architecture diagram of an example four-node cluster, an explanation of node LEDs, and a diagram of drive slots and PCIe mapping.
 
 ## Front and Back Node Diagrams
 ![Front and Back Diagrams of the Supermicro All-NVMe Node](supermicro/images/supermicro-front-back-diagram.png)
 
 ## Four-Node Cluster Architecture Diagram
 ![Four-Node Cluster Architecture Diagram](supermicro/images/supermicro-four-node-cluster-architecture-diagram.png)
+
+## Node LEDs
+On the front, right side of your Supermicro node, there are five LEDs.
+
+| Label         | Color       | Normal Behavior                 |
+| ------------- | ----------- | ------------------------------- |
+| Info          | 🔴 (red)    | Blinks if power cable unplugged |
+| Lan A         | (unused)    | Off                             |
+| Lan B         | (unused)    | Off                             |
+| Disk Activity | 🟡 (yellow) | On or blinking                  |
+| Power         | 🟢 (green)  | On                              |
+
+**Note:** During normal operation, the **Lan B** LED might appear to be lit slightly when the **Disk Activity** LED is on.
+
+On the back of your Supermicro node, LAN LEDs are located behind the vent holes on the NIC. Each port has one light. Network traffic *doesn't* affect the speed of the light's blinking.
+
+| Color      | Status             | Normal Behavior  |
+| ---------- | ------------------ | ---------------- |
+| &#8212;    | Off                | No link          |
+| 🟢 (green) | On or blinking     | Link established |
+
+## Drive Slots and PCIe Mapping
+A Supermicro node contains slots for 10 drives and one boot drive. The following is the mapping for the drives using the `<slot_id>: <pcie_mapping>` format.
+
+**Note:** The mapping for the boot drive is `4b:00.0`.
+
+<table>
+<thead>
+  <tr>
+    <th>Row</th>
+    <th colspan="5">Drive Slots</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>Top</td>
+    <td><code>1: c2:00.0</code></td>
+    <td><code>2: c4:00.0</code></td>
+    <td><code>3: 83:00.0</code></td>
+    <td><code>4: 04:00.0</code></td>
+    <td><code>5: 44:00.0</code></td>
+  </tr>
+  <tr>
+    <td>Bottom</td>
+    <td><code>6: c1:00.0</code></td>
+    <td><code>7: c3:00.0</code></td>
+    <td><code>8: 82:00.0</code></td>
+    <td><code>9: 03:00.0</code></td>
+    <td><code>10: 43:00.0</code></td>
+  </tr>
+</tbody>
+</table>
 
 
 # Step 1: Racking Your Nodes
@@ -278,7 +330,7 @@ This section describes how to combine your Supermicro nodes into a Qumulo cluste
 
 
 # Appendix
-The following appendix contains the technical specifications for Supermicro 153 TB, 76 TB, and 30 TB nodes, a drive map, an LED guide, and current known behavior of Supermicro nodes.
+The following appendix contains the technical specifications for Supermicro 153 TB, 76 TB, and 30 TB nodes and the currently known behavior of Supermicro nodes.
 
 ## Supermicro Technical Specifications
 <table cellspacing="0" cellpadding="0">
@@ -385,58 +437,6 @@ The following appendix contains the technical specifications for Supermicro 153 
 </tr>
 </tbody>
 </table>
-
-## Drive Slots and PCIe Mapping
-A Supermicro node contains slots for 10 drives and one boot drive. The following is the mapping for the drives using the `<slot_id>: <pcie_mapping>` format.
-
-**Note:** The mapping for the boot drive is `4b:00.0`.
-
-<table>
-<thead>
-  <tr>
-    <th>Row</th>
-    <th colspan="5">Drive Slots</th>
-  </tr>
-</thead>
-<tbody>
-  <tr>
-    <td>Top</td>
-    <td><code>1: c2:00.0</code></td>
-    <td><code>2: c4:00.0</code></td>
-    <td><code>3: 83:00.0</code></td>
-    <td><code>4: 04:00.0</code></td>
-    <td><code>5: 44:00.0</code></td>
-  </tr>
-  <tr>
-    <td>Bottom</td>
-    <td><code>6: c1:00.0</code></td>
-    <td><code>7: c3:00.0</code></td>
-    <td><code>8: 82:00.0</code></td>
-    <td><code>9: 03:00.0</code></td>
-    <td><code>10: 43:00.0</code></td>
-  </tr>
-</tbody>
-</table>
-
-## LED Guide
-On the front, right side of your Supermicro node, there are five LEDs.
-
-| Label         | Color       | Normal Behavior                 |
-| ------------- | ----------- | ------------------------------- |
-| Info          | 🔴 (red)    | Blinks if power cable unplugged |
-| Lan A         | (unused)    | Off                             |
-| Lan B         | (unused)    | Off                             |
-| Disk Activity | 🟡 (yellow) | On or blinking                  |
-| Power         | 🟢 (green)  | On                              |
-
-**Note:** During normal operation, the **Lan B** LED might appear to be lit slightly when the **Disk Activity** LED is on.
-
-On the back of your Supermicro node, LAN LEDs are located behind the vent holes on the NIC. Each port has one light. Network traffic *doesn't* affect the speed of the light's blinking.
-
-| Color      | Status             | Normal Behavior  |
-| ---------- | ------------------ | ---------------- |
-| &#8212;    | Off                | No link          |
-| 🟢 (green) | On or blinking     | Link established |
 
 ## Known Behavior
 The following is the currently known behavior for Supermicro nodes.
