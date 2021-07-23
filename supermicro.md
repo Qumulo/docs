@@ -262,7 +262,7 @@ The following is an example of a fixable issue. To let FVT try fix the issue, en
    [2] Start a rescue shell
    ```
 
-Depending on your installation scenario, FVT might be able to correct issues such as the following automatically:
+Depending on your node hardware and installation scenario, FVT might be able to correct issues such as the following automatically:
 
   * BIOS configuration
   * Drive firmware
