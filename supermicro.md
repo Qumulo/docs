@@ -112,10 +112,8 @@ This section describes how to wire the remote access, network, and power ports o
 ## Connecting the IPMI Port
 The Intelligent Platform Management Interface (IPMI) is a dedicated port that allows functionality such as remote display, control, and power (similar to HPE iLO). First, connect the IPMI port first on the back of your node (above the USB ports).
 
-## Connecting the QSFP56 Ports
-**Note:** QSFP56 ports are backwards-compatible with QSFP28.
-
-After you connect the IPMI port, connect your front-end and back-end QSFP56 ports. There are four QSFP56 (100 Gbps) ports on the back of your node. To maximize redundancy, split interfaces across subnets by connecting each port to a different switch.
+## Connecting the QSFP28 Ports
+After you connect the IPMI port, connect your front-end and back-end QSFP28 ports. There are four QSFP28 (100 Gbps) ports on the back of your node. To maximize redundancy, split interfaces across subnets by connecting each port to a different switch.
 
 | Port Location         | Port Type  | Purpose                                           |
 | --------------------- | ---------- | ------------------------------------------------- |
@@ -125,7 +123,7 @@ After you connect the IPMI port, connect your front-end and back-end QSFP56 port
 ## Connecting the Power
 **Important:** Make sure that the voltages for both power sockets are the same (for example, both at 115 V or both at 208 V).
 
-After you connect your QSFP56 ports, connect power to the node. There are two power sockets on the back of your node. To maximize redundancy, connect each socket to a separate power supply or power distribution unit (PDU).
+After you connect your QSFP28 ports, connect power to the node. There are two power sockets on the back of your node. To maximize redundancy, connect each socket to a separate power supply or power distribution unit (PDU).
 
 When you connect the power to your node, it turns on automatically.
 
