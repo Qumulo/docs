@@ -267,7 +267,7 @@ Depending on your installation scenario, FVT might be able to correct issues suc
   * BIOS configuration
   * Drive firmware
   * Drive controller firmware
-  * NIC mode for CX5
+  * NIC mode
   * Boot order
 
 #### Non-Fixable Issues
