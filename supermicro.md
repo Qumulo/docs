@@ -276,7 +276,7 @@ The following is an example of a non-fixable issue. To fix the issue, contact th
    FTV failed!
 
    The following issues were detected:
-   check_cpu_model: FAIL: We require one of: AMD EPYC 7502P 24-Core Processor. You have AMD EPYC 7402P 24-Core Processor.
+check_cpu_model: FAIL: We require one of: AMD EPYC 7402P 24-Core Processor. You have Qumulo Grumpquat 4000 Processor.
    FIX: Contact Qumulo Care.
    Not fixable issues were detected.
 
