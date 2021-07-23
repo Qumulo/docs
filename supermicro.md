@@ -266,7 +266,6 @@ Depending on your node hardware and installation scenario, FVT might be able to 
 
   * BIOS configuration
   * Drive firmware
-  * Drive controller firmware
   * NIC mode
   * Boot order
 
@@ -284,12 +283,6 @@ The following is an example of a non-fixable issue. To fix the issue, contact th
    [1] Copy logs to USB installer.
    [2] Start a rescue shell
    ```
-
-The FVT can't correct issues such as the following automatically.
-
-  * BIOS version
-  * IPMI version
-  * NIC firmware
 
 ### Performing the Part Replacement Procedure Using the FVT
 When you replace a component of your node (such as the motherboard or an NIC card), you must ensure that the firmware version and configuration are correct for your new components. To do this, you must perform the part replacement procedure using the FVT.
