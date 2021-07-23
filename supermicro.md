@@ -16,10 +16,6 @@ This section contains quick-reference diagrams for the front and back of your Su
 ![Four-Node Cluster Architecture Diagram](supermicro/images/supermicro-four-node-cluster-architecture-diagram.png)
 
 
-# Prerequisites
-For best performance, we recommend a 100 Gbps network (40 Gbps minimum).
-
-
 # Step 1: Racking Your Nodes
 **Tip:** You can use the following instructions to add new nodes after your initial cluster deployment.
 
@@ -55,8 +51,8 @@ This section describes how to wire the remote access, network, and power ports o
 ## Connecting the IPMI Port
 The Intelligent Platform Management Interface (IPMI) is a dedicated port that allows functionality such as remote display, control, and power (similar to HPE iLO). First, connect the IPMI port first on the back of your node (above the USB ports).
 
-## Connecting the SFP28 Ports
-After you connect the IPMI port, connect your front-end and back-end SFP28 ports. There are four SFP28 (25 Gbps) ports on the back of your node. To maximize redundancy, split interfaces across subnets by connecting each port to a different switch.
+## Connecting the QSFP56 Ports
+After you connect the IPMI port, connect your front-end and back-end QSFP56 ports. There are four QSFP56 (100 Gbps) ports on the back of your node. To maximize redundancy, split interfaces across subnets by connecting each port to a different switch.
 
 | Port Location         | Port Type  | Purpose                                           |
 | --------------------- | ---------- | ------------------------------------------------- |
@@ -66,7 +62,7 @@ After you connect the IPMI port, connect your front-end and back-end SFP28 ports
 ## Connecting the Power
 **Important:** Make sure that the voltages for both power sockets are the same (for example, both at 115 V or both at 208 V).
 
-After you connect your SFP28 ports, connect power to the node. There are two power sockets on the back of your node. To maximize redundancy, connect each socket to a separate power supply or power distribution unit (PDU).
+After you connect your QSFP56 ports, connect power to the node. There are two power sockets on the back of your node. To maximize redundancy, connect each socket to a separate power supply or power distribution unit (PDU).
 
 When you connect the power to your node, it turns on automatically.
 
