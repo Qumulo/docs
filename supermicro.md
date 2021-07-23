@@ -121,11 +121,9 @@ After you connect the IPMI port, connect your front-end and back-end QSFP28 port
 | Bottom row (`1`, `0`) | Back end   | Communication between nodes |
 
 ## Connecting the Power
-**Important:** Make sure that the voltages for both power sockets are the same (for example, both at 115 V or both at 208 V).
+**Important:** Make sure that the voltages for both power supply units (PSUs) are the same (for example, both at 115 V or both at 208 V).
 
-After you connect your QSFP28 ports, connect power to the node. There are two power sockets on the back of your node. To maximize redundancy, connect each socket to a separate power supply or power distribution unit (PDU).
-
-When you connect the power to your node, it turns on automatically.
+After you connect your QSFP28 ports, connect power to the node. There are two power sockets on the back of your node. To maximize redundancy, connect each PSU to a separate power supply or power distribution unit (PDU).
 
 # Step 3: Installing Qumulo Core on Your Nodes
 This section describes how to install Qumulo Core on your Supermicro nodes.
@@ -170,6 +168,8 @@ To create a USB Drive Installer on Windows, you must use a third-party applicati
 **Important:**
 * We don't recommend using other tools (such as Win32 Disk Imager) because they might encounter errors when unable to recognize the USB drive after writing data to it.
 * When the operation concludes, you might not be able to view the contents of the USB drive on Windows because the drive will be formatted using a different file system.
+
+1. Press the **Power** button.
 
 1. Insert your USB drive and run Rufus.
 
