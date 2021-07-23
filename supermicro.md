@@ -35,10 +35,8 @@ On the back of your Supermicro node, LAN LEDs are located behind the vent holes 
 | &#8212;    | Off                | No link          |
 | 🟢 (green) | On or blinking     | Link established |
 
-## Drive Slots and PCIe Mapping
-A Supermicro node contains slots for 10 drives and one boot drive. The following is the mapping for the drives using the `<slot_id>: <pcie_mapping>` format.
-
-**Note:** The mapping for the boot drive is `4b:00.0`.
+## Drive Slot Mapping
+A Supermicro node contains slots for 10 drives and one boot drive (in an iternal M.2 slot). The following is the mapping for the drives.
 
 <table>
 <thead>
@@ -50,19 +48,19 @@ A Supermicro node contains slots for 10 drives and one boot drive. The following
 <tbody>
   <tr>
     <td>Top</td>
-    <td><code>1: c2:00.0</code></td>
-    <td><code>2: c4:00.0</code></td>
-    <td><code>3: 83:00.0</code></td>
-    <td><code>4: 04:00.0</code></td>
-    <td><code>5: 44:00.0</code></td>
+    <td><code>1</code></td>
+    <td><code>2</code></td>
+    <td><code>3</code></td>
+    <td><code>4</code></td>
+    <td><code>5</code></td>
   </tr>
   <tr>
     <td>Bottom</td>
-    <td><code>6: c1:00.0</code></td>
-    <td><code>7: c3:00.0</code></td>
-    <td><code>8: 82:00.0</code></td>
-    <td><code>9: 03:00.0</code></td>
-    <td><code>10: 43:00.0</code></td>
+    <td><code>6</code></td>
+    <td><code>7</code></td>
+    <td><code>8</code></td>
+    <td><code>9</code></td>
+    <td><code>10</code></td>
   </tr>
 </tbody>
 </table>
@@ -112,18 +110,18 @@ This section describes how to wire the remote access, network, and power ports o
 ## Connecting the IPMI Port
 The Intelligent Platform Management Interface (IPMI) is a dedicated port that allows functionality such as remote display, control, and power (similar to HPE iLO). First, connect the IPMI port first on the back of your node (above the USB ports).
 
-## Connecting the QSFP28 Ports
-After you connect the IPMI port, connect your front-end and back-end QSFP28 ports. There are four QSFP28 (100 Gbps) ports on the back of your node. To maximize redundancy, split interfaces across subnets by connecting each port to a different switch.
+## Connecting the 100 Gbps Ports
+After you connect the IPMI port, connect your front-end and back-end 100 Gbps ports (compatible with QSFP28 and QSFP56). There are four 100 Gbps ports on the back of your node. To maximize redundancy, split interfaces across subnets by connecting each port to a different switch.
 
 | Port Location         | Port Type  | Purpose                     |
 | --------------------- | ---------- | --------------------------- |
-| Top row (`1`, `0`)    | Front end  | Communication with clients  |
-| Bottom row (`1`, `0`) | Back end   | Communication between nodes |
+| Top row (`2`, `1`)    | Front end  | Communication with clients  |
+| Bottom row (`2`, `1`) | Back end   | Communication between nodes |
 
 ## Connecting the Power
 **Important:** Make sure that the voltages for both power supply units (PSUs) are the same (for example, both at 115 V or both at 208 V).
 
-After you connect your QSFP28 ports, connect power to the node. There are two power sockets on the back of your node. To maximize redundancy, connect each PSU to a separate power supply or power distribution unit (PDU).
+After you connect your 100 Gbps ports, connect power to the node. There are two power sockets on the back of your node. To maximize redundancy, connect each PSU to a separate power supply or power distribution unit (PDU).
 
 # Step 3: Installing Qumulo Core on Your Nodes
 This section describes how to install Qumulo Core on your Supermicro nodes.
