@@ -74,25 +74,34 @@ A Supermicro node contains slots for 10 drives and one boot drive. The following
 This section describes how to use the outside and inside rails of your Supermicro node and how to rack your nodes in your data center.
 
 ## To Attach the Outer and Inner Rails
-**Note:** Because of the left and right rails of your Supermicro nodes are symmetrical, the words **FRONT** and **BACK** might appear upside down.
+**Note:** Because the left and right rails of your Supermicro nodes are identical, the words **FRONT** and **BACK** might appear upside down.
 
 * Each *outer rail* comes as two connected pieces and attaches to your server rack.
 * Each *inner rail* comes as two separate pieces and attaches to the node chassis.
 
 1. Adjust the outer rails to the length of your server rack.
-1. Push each outer rail into the rack until the quick-release bracket snaps into place.
-1. Attach the front inner rails, then the back inner rails to the chassis.
-1. Use two screws on each side, near the middle of the chassis.
+1. Line up the edge of the outer rail between the rack unit (RU) markers, insert the tabs on the edge of the rail into the mounting holes, and push the rail into the rack until the quick-release snaps into place. This process is the same for the front and back of your rack.
+
+   ![Snap the Outer Rail into the Rack](supermicro/images/supermicro-outer-rail-snap-into-rack.png)
+
+1. Snap the inner rails to the chassis and secure them using two screws on each side, near the middle of the chassis.
+
+   **Note:** First attach the front inner rails, then the back inner rails.
+
+   ![Attach the Inner Rail to the Chassis Using Screws](supermicro/images/supermicro-inner-rail-attach-to-chassis-with-screws.png)
 
 ## To Insert the Chassis
 1. Align the outer and inner rails and insert the chassis into the server rack.
-1. Attach the chassis to the rack using one screw on each side.
+1. Attach the chassis to the rack using one screw on each side, on the front of the chassis.
 
 ## To Remove the Chassis
 1. Disconnect any cables from the chassis. 
 1. Remove one screw from each side of the front of the chassis.
-1. Pull the chassis out from the server rack partially. When the first set of black snaps appears, pinch them on both sides.
-1. Continue to pull the chassis from the server rack. When the second set of black snaps appears, pinch them on both sides and remove the chassis completely. 
+1. Pull the chassis out from the server rack partially. When the first set of black snaps appears, pinch the snaps downward on both sides.
+
+   ![Pinch the Black Latch on Both Sides](supermicro/images/supermicro-remove-chassis-pinch-black-latch-on-both-sides.png)
+
+1. Continue to pull the chassis from the server rack. When the second set of black snaps appears, pinch the snaps downward on both sides and remove the chassis completely.
 
 
 # Step 2: Wiring Your Nodes
