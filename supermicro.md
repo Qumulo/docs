@@ -95,11 +95,11 @@ This section describes how to use the outside and inside rails of your Supermicr
 ## To Remove the Chassis
 1. Disconnect any cables from the chassis. 
 1. Remove one screw from each side of the front of the chassis.
-1. Pull the chassis out from the server rack partially. When the first set of black snaps appears, pinch the snaps downward on both sides.
+1. Pull the chassis out from the server rack partially. When the first set of black snaps appears, pinch the long piece of the snap towards the short one (up on one side, down on the other).
 
    ![Pinch the Black Latch on Both Sides](supermicro/images/supermicro-remove-chassis-pinch-black-latch-on-both-sides.png)
 
-1. Continue to pull the chassis from the server rack. When the second set of black snaps appears, pinch the snaps downward on both sides and remove the chassis completely.
+1. Continue to pull the chassis from the server rack. When the second set of black snaps appears, pinch the long piece of each snap towards the short one (up on one side, down on the other) and remove the chassis completely.
 
 
 # Step 2: Wiring Your Nodes
