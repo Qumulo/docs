@@ -285,6 +285,8 @@ check_cpu_model: FAIL: We require one of: AMD EPYC 7402P 24-Core Processor. You 
 ### Performing the Part Replacement Procedure Using the FVT
 When you replace a component of your node (such as the motherboard or an NIC card), you must ensure that the firmware version and configuration are correct for your new components. To do this, you must perform the part replacement procedure using the FVT.
 
+**Note:** Before you replace the motherboard, you must request a new DCMS license key from Supermicro and apply it before you run the FVT. (The license key uses the BMC MAC address which changes with the motherboard.) For more information, see [Data Center Management Suite (DCMS) Licenses](#data-center-management-suite-dcms-licenses).
+
 1. [Boot using the latest version of the Qumulo Core USB Drive Installer](#running-the-field-verification-tool-fvt-and-installing-qumulo-core).
 
 1. When prompted, enter `*` to select `[*] Perform maintenance`.
@@ -343,6 +345,7 @@ This section describes how to configure your Supermicro nodes to form a Qumulo c
    **Important:**
    * You can choose your cluster protection level only during cluster creation. You can't change this setting later.
    * Choosing protection for more drives decreases your cluster capacity.
+   * To enable multi-node protection, you must create your cluster using the CLI.
 
 1. In the **3. Create a password for your admin account** section, set the password for your administrative account.
 
@@ -352,10 +355,11 @@ The following appendix contains the currently known behavior of Supermicro nodes
 ## Known Behavior
 The following is the currently known behavior for Supermicro nodes.
 
-### Data Center Management Suite (DCMS) Licenses
-**Important:** If a DCMS license isn't installed on a Supermicro node, the Field Verification Tool (FVT) fails, preventing you from installing Qumulo Core.
+### Firmware
+Don't update your node firmware unless a Qumulo representative instructs you to perform an update.
 
-A DCMS license from Supermicro is also required for Qumulo Core to work correctly.
+### Data Center Management Suite (DCMS) Licenses
+If a DCMS license isn't installed on a Supermicro node, the Field Verification Tool (FVT) fails, preventing you from installing Qumulo Core. A DCMS license from Supermicro is required for Qumulo Core to work correctly.
 
 ## Supermicro Technical Specifications
 <table cellspacing="0" cellpadding="0">
