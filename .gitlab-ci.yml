@@ -31,5 +31,4 @@ pages:
       - public
   only:
     variables:
-      - $CI_COMMIT_BRANCH == "staging-preview"
-
+      - $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
