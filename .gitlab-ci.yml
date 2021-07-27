@@ -32,3 +32,4 @@ pages:
   only:
     variables:
       - $CI_COMMIT_BRANCH == "staging-preview"
+
