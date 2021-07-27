@@ -18,25 +18,29 @@ This section contains quick-reference diagrams for the front and back of your Su
 ## Node LEDs
 On the front, right side of your Supermicro node, there are five LEDs.
 
-| Label         | Color       | Normal Behavior                 |
-| ------------- | ----------- | ------------------------------- |
-| Info          | 🔴 (red)    | Blinks if power cable unplugged |
-| Lan A         | (unused)    | Off                             |
-| Lan B         | (unused)    | Off                             |
-| Disk Activity | 🟡 (yellow) | On or blinking                  |
-| Power         | 🟢 (green)  | On                              |
+| Label         | Colors                 | Description                                 |
+| ------------- | ---------------------- | ------------------------------------------- |
+| Info          | 🔴 (solid red)         | Node overheated                             |          
+| Info          | 🔴 (1 s. blinking red) | Fan failed                                  |
+| Info          | 🔴 (4 s. blinking red) | Power Supply Unit (PSU) failed              |
+| Info          | 🔵 (solid blue)        | Unit IDentification (UID) activated locally |
+| Info          | 🔵 (blinking blue)     | UID activated using IPMI                    |
+| Lan A         | ⚪ (unused)            | Off                                         |
+| Lan B         | ⚪ (unused)            | Off                                         |
+| Disk Activity | 🟡 (solid yellow)      | On or blinking                              |
+| Power         | 🟢 (solid green)       | On                                          |
 
 **Note:** During normal operation, the **Lan B** LED might appear to be lit slightly when the **Disk Activity** LED is on.
 
 On the back of your Supermicro node, LAN LEDs are located behind the vent holes on the NIC. Each port has one light. Network traffic *doesn't* affect the speed of the light's blinking.
 
-| Color      | Status             | Normal Behavior  |
-| ---------- | ------------------ | ---------------- |
-| &#8212;    | Off                | No link          |
-| 🟢 (green) | On or blinking     | Link established |
+| Color            | Status             | Description      |
+| ---------------- | ------------------ | ---------------- |
+| &#8212;          | Off                | No link          |
+| 🟢 (solid green) | On or blinking     | Link established |
 
 ## Drive Slot Mapping
-A Supermicro node contains slots for 10 drives and one boot drive (in an iternal M.2 slot). The following is the mapping for the drives.
+A Supermicro node contains slots for 10 drives and one boot drive (in an internal M.2 slot). The following is the mapping for the drives.
 
 <table>
 <thead>
