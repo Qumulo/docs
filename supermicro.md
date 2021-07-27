@@ -1,7 +1,7 @@
 # Qumulo on Supermicro Getting Started Guide
 Welcome to Qumulo on Supermicro. This guide is intended for system administrators, professional service providers, and colleagues in your organization who are responsible for installing and configuring server hardware.
 
-This guide includes quick-reference diagrams for Supermicro All-NVMe nodes and cluster architecture diagrams, an explanation of node LEDs, and a diagram of drive slots and PCIe mapping. The guide walks you through racking and wiring your nodes, installing Qumulo Core on your nodes, and creating a Qumulo cluster. The [Appendix](#appendix) contains the currently known behavior of Supermicro nodes and technical specifications.
+This guide includes quick-reference diagrams for Supermicro A+ WIO 1114S-WN10RT All-NVMe nodes and cluster architecture diagrams, an explanation of node LEDs, and a diagram of drive slots and PCIe mapping. The guide walks you through racking and wiring your nodes, installing Qumulo Core on your nodes, and creating a Qumulo cluster. The [Appendix](#appendix) contains the currently known behavior of Supermicro nodes and technical specifications.
 
 For more information about administering your cluster, see the [Qumulo Care](https://care.qumulo.com/hc/en-us) portal. If you have any questions, you can [open a case](https://care.qumulo.com/hc/en-us/requests/new), email us at [care@qumulo.com](mailto:care@qumulo.com), or contact us in your private channel in the [qumulocare](https://qumulocare.slack.com/) Slack workspace.
 
@@ -10,7 +10,7 @@ For more information about administering your cluster, see the [Qumulo Care](htt
 This section contains quick-reference diagrams for the front and back of your Supermicro node, an architecture diagram of an example four-node cluster, an explanation of node LEDs, and a diagram of drive slots and PCIe mapping.
 
 ## Front and Back Node Diagrams
-![Front and Back Diagrams of the Supermicro All-NVMe Node](supermicro/images/supermicro-front-back-diagram.png)
+![Front and Back Diagrams of the Supermicro A+ WIO 1114S-WN10RT All-NVMe Node](supermicro/images/supermicro-front-back-diagram.png)
 
 ## Four-Node Cluster Architecture Diagram
 ![Four-Node Cluster Architecture Diagram](supermicro/images/supermicro-four-node-cluster-architecture-diagram.png)
