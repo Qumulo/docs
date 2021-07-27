@@ -1,5 +1,5 @@
-# Qumulo on Supermicro Getting Started Guide
-Welcome to Qumulo on Supermicro. This guide is intended for system administrators, professional service providers, and colleagues in your organization who are responsible for installing and configuring server hardware.
+# Qumulo on Supermicro All-NVMe Getting Started Guide
+Welcome to Qumulo on Supermicro All-NVMe. This guide is intended for system administrators, professional service providers, and colleagues in your organization who are responsible for installing and configuring server hardware.
 
 This guide includes quick-reference diagrams for Supermicro A+ WIO 1114S-WN10RT All-NVMe nodes and cluster architecture diagrams, an explanation of node LEDs, and a diagram of drive slots and PCIe mapping. The guide walks you through racking and wiring your nodes, installing Qumulo Core on your nodes, and creating a Qumulo cluster. The [Appendix](#appendix) contains the currently known behavior of Supermicro nodes and technical specifications.
 
