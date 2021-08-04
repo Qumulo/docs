@@ -6,16 +6,16 @@ This guide includes quick-reference diagrams for Supermicro A+ WIO 1114S-WN10RT 
 For more information about administering your cluster, see the [Qumulo Care](https://care.qumulo.com/hc/en-us) portal. If you have any questions, you can [open a case](https://care.qumulo.com/hc/en-us/requests/new), email us at [care@qumulo.com](mailto:care@qumulo.com), or contact us in your private channel in the [qumulocare](https://qumulocare.slack.com/) Slack workspace.
 
 
-# Quick Reference
+## Quick Reference
 This section contains quick-reference diagrams for the front and back of your Supermicro node, an architecture diagram of an example four-node cluster, an explanation of node LEDs, and a diagram of drive slots and PCIe mapping.
 
-## Front and Back Node Diagrams
+### Front and Back Node Diagrams
 ![Front and Back Diagrams of the Supermicro A+ WIO 1114S-WN10RT All-NVMe Node](supermicro/images/supermicro-front-back-diagram.png)
 
-## Four-Node Cluster Architecture Diagram
+### Four-Node Cluster Architecture Diagram
 ![Four-Node Cluster Architecture Diagram](supermicro/images/supermicro-four-node-cluster-architecture-diagram.png)
 
-## Node LEDs
+### Node LEDs
 On the front, right side of your Supermicro node, there are five LEDs.
 
 | Label         | Colors                 | Description                                 |
@@ -39,7 +39,7 @@ On the back of your Supermicro node, LAN LEDs are located behind the vent holes 
 | &#8212;          | Off                | No link          |
 | 🟢 (solid green) | On or blinking     | Link established |
 
-## Drive Slot Mapping
+### Drive Slot Mapping
 A Supermicro node contains slots for 10 drives and one boot drive (in an internal M.2 slot). The following is the mapping for the drives.
 
 <table>
@@ -70,12 +70,12 @@ A Supermicro node contains slots for 10 drives and one boot drive (in an interna
 </table>
 
 
-# Step 1: Racking Your Nodes
+## Step 1: Racking Your Nodes
 **Tip:** You can use the following instructions to add new nodes after your initial cluster deployment.
 
 This section describes how to use the outside and inside rails of your Supermicro node and how to rack your nodes in your data center.
 
-## To Attach the Outer and Inner Rails
+### To Attach the Outer and Inner Rails
 **Note:** Because the left and right rails of your Supermicro nodes are identical, the words **FRONT** and **BACK** might appear upside down.
 
 * Each *outer rail* comes as two connected pieces and attaches to your server rack.
@@ -92,11 +92,11 @@ This section describes how to use the outside and inside rails of your Supermicr
 
    ![Attach the Inner Rail to the Chassis Using Screws](supermicro/images/supermicro-inner-rail-attach-to-chassis-with-screws.png)
 
-## To Insert the Chassis
+### To Insert the Chassis
 1. Align the outer and inner rails and insert the chassis into the server rack.
 1. Attach the chassis to the rack using one screw on each side, on the front of the chassis.
 
-## To Remove the Chassis
+### To Remove the Chassis
 1. Disconnect any cables from the chassis. 
 1. Remove one screw from each side of the front of the chassis.
 1. Pull the chassis out from the server rack partially. When the first set of black snaps appears, pinch the long piece of the snap towards the short one (up on one side, down on the other).
@@ -106,15 +106,15 @@ This section describes how to use the outside and inside rails of your Supermicr
 1. Continue to pull the chassis from the server rack. When the second set of black snaps appears, pinch the long piece of each snap towards the short one (up on one side, down on the other) and remove the chassis completely.
 
 
-# Step 2: Wiring Your Nodes
+## Step 2: Wiring Your Nodes
 This section describes how to wire the remote access, network, and power ports of your Supermicro node.
 
 **Note:** The two Ethernet ports on the back of your node (to the right of the USB ports) are unused.
 
-## Connecting the Out-of-Band Management (IPMI) Port
+### Connecting the Out-of-Band Management (IPMI) Port
 The dedicated out-of-band management port allows functionality such as remote display, control, and power (similar to HPE iLO). The port uses the Intelligent Platform Management Interface (IPMI) protocol. First, connect the IPMI port first on the back of your node (above the USB ports).
 
-## Connecting the 100 Gbps Ports
+### Connecting the 100 Gbps Ports
 After you connect the IPMI port, connect your front-end and back-end 100 Gbps ports (compatible with QSFP28 and QSFP56). There are four 100 Gbps ports on the back of your node. To maximize redundancy, split interfaces across subnets by connecting each port to a different switch.
 
 | Port Location         | Port Type  | Purpose                     |
@@ -122,18 +122,18 @@ After you connect the IPMI port, connect your front-end and back-end 100 Gbps po
 | Top row (`2`, `1`)    | Front end  | Communication with clients  |
 | Bottom row (`2`, `1`) | Back end   | Communication between nodes |
 
-## Connecting the Power
+### Connecting the Power
 **Important:** Make sure that the voltages for both power supply units (PSUs) are the same (for example, both at 115 V or both at 208 V).
 
 After you connect your 100 Gbps ports, connect power to the node. There are two power sockets on the back of your node. To maximize redundancy, connect each PSU to a separate power supply or power distribution unit (PDU).
 
-# Step 3: Installing Qumulo Core on Your Nodes
+## Step 3: Installing Qumulo Core on Your Nodes
 This section describes how to install Qumulo Core on your Supermicro nodes.
 
-## Creating a Qumulo Core USB Drive Installer
+### Creating a Qumulo Core USB Drive Installer
 To perform a clean installation of Qumulo Core on your node, you must create a Qumulo Core USB Drive Installer. To begin, you must have a USB drive (4 GB minimum) and a Qumulo Core USB installer image from the [Qumulo Care Team](https://care.qumulo.com/hc/en-us/articles/115008409408-Contact-Qumulo-Care-).
 
-### To Create a USB Drive Installer on Mac OS
+#### To Create a USB Drive Installer on Mac OS
 1. Open Terminal and log in as `root` by using the `sudo -s` command.
 
 1. Insert your USB drive and then find its disk label by using the `diskutil list` command. In the following example, the USB drive's device label is `disk2`.
@@ -164,7 +164,7 @@ To perform a clean installation of Qumulo Core on your node, you must create a Q
    diskutil eject disk2
    ```
 
-### To Create a USB Drive Installer on Windows
+#### To Create a USB Drive Installer on Windows
 To create a USB Drive Installer on Windows, you must use a third-party application such as [Rufus](https://rufus.ie/). We recommend Rufus because it can detect mny USB storage devices (rather than only Windows-compatible ones).
 
 **Important:**
@@ -189,7 +189,7 @@ To create a USB Drive Installer on Windows, you must use a third-party applicati
 
 1. To confirm the operation, destroy all data on the USB drive, and image the drive click **OK**.
 
-## Running the Field Verification Tool (FVT) and Installing Qumulo Core
+### Running the Field Verification Tool (FVT) and Installing Qumulo Core
 The Field Verification Tool (FVT) checks your Supermicro node, prepares it for Qumulo Core, and installs Qumulo Core.
 
 **Caution:** The FVT erases all data from the node. You must back up any live data on the node before you run the FVT.
@@ -245,12 +245,12 @@ The Field Verification Tool (FVT) checks your Supermicro node, prepares it for Q
 
    You can now install the Qumulo Core software image.
 
-### Troubleshooting FVT Fail Cases
+#### Troubleshooting FVT Fail Cases
 If the FVT encounters an issue, the `FTV failed!` message and an explanation appears.
 
 FVT fail cases divide into *fixable* and *non-fixable* issues.
 
-#### Fixable Issues
+##### Fixable Issues
 The following is an example of a fixable issue. To let FVT try fix the issue, enter `1`.
 
    ```Bash
@@ -271,7 +271,7 @@ Depending on your node hardware and installation scenario, FVT might be able to 
   * NIC mode
   * Boot order
 
-#### Non-Fixable Issues
+##### Non-Fixable Issues
 The following is an example of a non-fixable issue. To fix the issue, contact the [Qumulo Care Team](https://care.qumulo.com/hc/en-us/articles/115008409408-Contact-Qumulo-Care-).
 
    ```Bash
@@ -286,7 +286,7 @@ check_cpu_model: FAIL: We require one of: AMD EPYC 7402P 24-Core Processor. You 
    [2] Start a rescue shell
    ```
 
-### Performing the Part Replacement Procedure Using the FVT
+#### Performing the Part Replacement Procedure Using the FVT
 When you replace a component of your node (such as the motherboard or an NIC card), you must ensure that the firmware version and configuration are correct for your new components. To do this, you must perform the part replacement procedure using the FVT.
 
 **Note:** Before you replace the motherboard, you must request a new DCMS license key from Supermicro and apply it before you run the FVT. (The license key uses the BMC MAC address which changes with the motherboard.) For more information, see [Data Center Management Suite (DCMS) Licenses](#data-center-management-suite-dcms-licenses).
@@ -325,10 +325,10 @@ When you replace a component of your node (such as the motherboard or an NIC car
 **Note:** In some cases, after the part replacement procedure, the message `FIX: Run the FVT flash command.` appears. Enter `1` as you would for a [fixable issue](#fixable-issues) to reboot the node and then repeat the part replacement procedure.
 
 
-# Step 4: Creating a Qumulo Cluster
+## Step 4: Creating a Qumulo Cluster
 This section describes how to configure your Supermicro nodes to form a Qumulo cluster.
 
-## To Create the Cluster
+### To Create the Cluster
 1. Power on four or more nodes that run the same version of Qumulo Core.
 1. Review the End User Agreement and when ready click **I agree to the End User Agreement**.
 1. In the **1. Set up cluster** section, do the following:
@@ -353,19 +353,19 @@ This section describes how to configure your Supermicro nodes to form a Qumulo c
 
 1. In the **3. Create a password for your admin account** section, set the password for your administrative account.
 
-# Appendix
+## Appendix
 The following appendix contains the currently known behavior of Supermicro nodes and the technical specifications for Supermicro 153 TB, 76 TB, and 30 TB nodes.
 
-## Known Behavior
+### Known Behavior
 The following is the currently known behavior for Supermicro nodes.
 
-### Firmware
+#### Firmware
 Don't update your node firmware unless a Qumulo representative instructs you to perform an update.
 
-### Data Center Management Suite (DCMS) Licenses
+##### Data Center Management Suite (DCMS) Licenses
 If a DCMS license isn't installed on a Supermicro node, the Field Verification Tool (FVT) fails, preventing you from installing Qumulo Core. A DCMS license from Supermicro is required for Qumulo Core to work correctly.
 
-## Supermicro Technical Specifications
+### Supermicro Technical Specifications
 <table cellspacing="0" cellpadding="0">
 <thead>
 <tr>
