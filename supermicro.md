@@ -1,13 +1,13 @@
 # Qumulo on Supermicro All-NVMe Getting Started Guide
 Welcome to Qumulo on Supermicro All-NVMe. This guide is intended for system administrators, professional service providers, and colleagues in your organization who are responsible for installing and configuring server hardware.
 
-This guide includes quick-reference diagrams for Supermicro A+ WIO 1114S-WN10RT All-NVMe nodes and cluster architecture diagrams, an explanation of node LEDs, and a diagram of drive slots and PCIe mapping. The guide walks you through racking and wiring your nodes, installing Qumulo Core on your nodes, and creating a Qumulo cluster. The [Appendix](#appendix) contains the currently known behavior of Supermicro nodes and technical specifications.
+This guide includes quick-reference diagrams for Supermicro A+ WIO 1114S-WN10RT All-NVMe nodes and cluster architecture diagrams, an explanation of node LEDs, and a diagram of drive slots and PCIe mapping. Next, the guide explains the networking configuration for your node and then walks you through racking and wiring your nodes, installing Qumulo Core on your nodes, and creating a Qumulo cluster. Finally, the guide explains how to replace hardware components and the [Appendix](#appendix) contains the currently known behavior of Supermicro All-NVMe nodes and technical specifications.
 
 For more information about administering your cluster, see the [Qumulo Care](https://care.qumulo.com/hc/en-us) portal. If you have any questions, you can [open a case](https://care.qumulo.com/hc/en-us/requests/new), email us at [care@qumulo.com](mailto:care@qumulo.com), or contact us in your private channel in the [qumulocare](https://qumulocare.slack.com/) Slack workspace.
 
 
 ## Quick Reference
-This section contains quick-reference diagrams for the front and back of your Supermicro node, an architecture diagram of an example four-node cluster, an explanation of node LEDs, and a diagram of drive slots and PCIe mapping.
+This section contains quick-reference diagrams for the front and back of your Supermicro All-NVMe node, an architecture diagram of an example four-node cluster, an explanation of node LEDs, and a diagram of drive slots and PCIe mapping.
 
 ### Front and Back Node Diagrams
 ![Front and Back Diagrams of the Supermicro A+ WIO 1114S-WN10RT All-NVMe Node](supermicro/images/supermicro-front-back-diagram.png)
@@ -16,7 +16,7 @@ This section contains quick-reference diagrams for the front and back of your Su
 ![Four-Node Cluster Architecture Diagram](supermicro/images/supermicro-four-node-cluster-architecture-diagram.png)
 
 ### Node LEDs
-On the front, right side of your Supermicro node, there are five LEDs.
+On the front, right side of your node, there are five LEDs.
 
 | Label         | Colors                 | Description                                 |
 | ------------- | ---------------------- | ------------------------------------------- |
@@ -32,7 +32,7 @@ On the front, right side of your Supermicro node, there are five LEDs.
 
 **Note:** During normal operation, the **Lan B** LED might appear to be lit slightly when the **Disk Activity** LED is on.
 
-On the back of your Supermicro node, LAN LEDs are located behind the vent holes on the NIC. Each port has one light. Network traffic *doesn't* affect the speed of the light's blinking.
+On the back of your node, LAN LEDs are located behind the vent holes on the NIC. Each port has one light. Network traffic *doesn't* affect the speed of the light's blinking.
 
 | Color            | Status             | Description      |
 | ---------------- | ------------------ | ---------------- |
@@ -40,49 +40,83 @@ On the back of your Supermicro node, LAN LEDs are located behind the vent holes 
 | 🟢 (solid green) | On or blinking     | Link established |
 
 ### Drive Slot Mapping
-A Supermicro node contains slots for 10 drives and one boot drive (in an internal M.2 slot). The following is the mapping for the drives.
+Your node contains slots for 10 drives and one boot drive (in an internal M.2 slot). The following is the mapping for the drives.
+![Supermicro Drive Slot Mapping](supermicro/images/supermicro-drive-mapping.png)
 
-<table>
-<thead>
-  <tr>
-    <th>Row</th>
-    <th colspan="5">Drive Slots</th>
-  </tr>
-</thead>
-<tbody>
-  <tr>
-    <td>Top</td>
-    <td><code>1</code></td>
-    <td><code>2</code></td>
-    <td><code>3</code></td>
-    <td><code>4</code></td>
-    <td><code>5</code></td>
-  </tr>
-  <tr>
-    <td>Bottom</td>
-    <td><code>6</code></td>
-    <td><code>7</code></td>
-    <td><code>8</code></td>
-    <td><code>9</code></td>
-    <td><code>10</code></td>
-  </tr>
-</tbody>
-</table>
+
+## Configuring Networking for Your Node
+This section explains the networking prerequisites, outlines the recommended networking configuration, and explains how you can connect to redundant switches or to a single switch.
+
+### Networking Prerequisites
+**Important:** Before you create your Qumulo cluster, you must configure all switch ports connected to the back-end NIC to have at least 9,000 MTU, with Jumbo Frames enabled.
+
+Your node requires the following resources.
+* A network switch with the following specifications:
+  * 100 Gbps Ethernet
+  * Fully non-blocking architecture
+  * IPv6 capability
+  * Jumbo Frame support (9,000 MTU minimum) for the back-end network
+* Compatible networking cables
+* A sufficient number of ports for connecting all nodes to the same switch fabric
+* One static IP per node, per defined VLAN
+
+### Recommended Networking Configuration
+**Important:** We don't recommend connecting to a single back-end NIC port because the node will become unavailable if the single connection fails.
+
+The Supermicro All-NVMe platform uses a networking configuration in which different NICs handle back-end and front-end traffic. You can connect the front-end and back-end NICs to the same switch or to different switches. However, for greater reliability, we recommend connecting all four 100 Gbps ports on every node: connect both front-end NIC ports to the front-end switch and both back-end NIC ports to the back-end switch.
+
+We recommend the following configuration for your node.
+* One set of redundant switches for the front-end network, with an MTU that matches that of the clients that use the storage cluster. Typically, 1,500 MTU is recommended, but in some instances it might be 9,000 MTU.
+* One set of redundant switches for the back-end network (9,000 MTU minimum)
+* One physical connection per node, per each redundant switch
+* One Link Aggregation Control Protocol (LACP) port-channel per network (front-end and back-end) on each node, with the following configuration
+  * Active mode
+  * Slow transmit rather
+  * Access port or trunk port with a native VLAN
+* DNS servers
+* A Network Time Protocol (NTP) server
+* Firewall protocols or ports allowed for proactive monitoring
+* Where `N` is the number of nodes, `N-1` floating IPs per node, per client-facing VLAN
+
+### Connecting a Cluster to Redundant Switches
+For redundancy, we recommend connecting a Supermicro All-NVMe cluster to dual switches. If either switch becomes inoperative, the cluster will still be accessible from the remaining switch.
+
+* **Front End**
+  * Connect the two front-end NIC ports (2 &#215; 100 Gbps) on your nodes to separate switches.
+  * The uplinks to the client network must equal the bandwidth from the cluster to the switch.
+  * The two ports form an LACP port channel using a multi-chassis link aggregation group.
+* **Back End**
+  * Connect the two back-end NIC ports (2 &#215; 100 Gbps) on your nodes to separate switches.
+  * Use an appropriate inter-switch link or virtual port channel.
+* **MTU**
+  * For all connection speeds, the default behavior is that of an LACP with 1,500 MTU for the front-end and 9,000 MTU for the back-end interfaces.
+
+### Connecting a Cluster to a Single Switch
+You can connect a Suprmicro All-NVMe cluster to a single switch. If this switch becomes inoprative, the entire cluster will be inaccessible.
+
+* **Front End**
+  * Each node has two front-end NIC ports (2 &#215; 100 Gbps) connected to a single switch.
+  * The uplinks to the client network must equal the bandwidth from the cluster to the switch.
+  * The two ports form an LACP port channel. 
+* **Back End**
+  * Each node has two band-end ports (2 &#215; 100 Gbps) connected to a single switch.
+* **MTU**
+  * For all connection speeds, the default behavior is that of an LACP with 1,500 MTU for the front-end and 9,000 MTU for the back-end interfaces.
 
 
 ## Step 1: Racking Your Nodes
 **Tip:** You can use the following instructions to add new nodes after your initial cluster deployment.
 
-This section describes how to use the outside and inside rails of your Supermicro node and how to rack your nodes in your data center.
+This section describes how to use the outside and inside rails of your Supermicro All-NVMe node and how to rack your nodes in your data center.
 
 ### To Attach the Outer and Inner Rails
-**Note:** Because the left and right rails of your Supermicro nodes are identical, the words **FRONT** and **BACK** might appear upside down.
+**Note:** Because the left and right rails of your nodes are identical, the words **FRONT** and **BACK** might appear upside down.
 
 * Each *outer rail* comes as two connected pieces and attaches to your server rack.
 * Each *inner rail* comes as two separate pieces and attaches to the node chassis.
 
 1. Adjust the outer rails to the length of your server rack.
-1. Line up the edge of the outer rail between the rack unit (RU) markers, insert the tabs on the edge of the rail into the mounting holes, and push the rail into the rack until the quick-release snaps into place. This process is the same for the front and back of your rack.
+1. Line up the edge of the outer rail between the rack unit (RU) markers, insert the tabs on the edge of the rail into the mounting holes, and push the rail into the rack until the quick-release clicks into place. This process is the same for the front and back of your rack.
 
    ![Snap the Outer Rail into the Rack](supermicro/images/supermicro-outer-rail-snap-into-rack.png)
 
@@ -107,7 +141,7 @@ This section describes how to use the outside and inside rails of your Supermicr
 
 
 ## Step 2: Wiring Your Nodes
-This section describes how to wire the remote access, network, and power ports of your Supermicro node.
+This section describes how to wire the remote access, network, and power ports of your Supermicro All-NVMe node.
 
 **Note:** The two Ethernet ports on the back of your node (to the right of the USB ports) are unused.
 
@@ -128,7 +162,7 @@ After you connect the IPMI port, connect your front-end and back-end 100 Gbps po
 After you connect your 100 Gbps ports, connect power to the node. There are two power sockets on the back of your node. To maximize redundancy, connect each PSU to a separate power supply or power distribution unit (PDU).
 
 ## Step 3: Installing Qumulo Core on Your Nodes
-This section describes how to install Qumulo Core on your Supermicro nodes.
+This section describes how to install Qumulo Core on your Supermicro All-NVMe nodes.
 
 ### Creating a Qumulo Core USB Drive Installer
 To perform a clean installation of Qumulo Core on your node, you must create a Qumulo Core USB Drive Installer. To begin, you must have a USB drive (4 GB minimum) and a Qumulo Core USB installer image from the [Qumulo Care Team](https://care.qumulo.com/hc/en-us/articles/115008409408-Contact-Qumulo-Care-).
@@ -190,7 +224,7 @@ To create a USB Drive Installer on Windows, you must use a third-party applicati
 1. To confirm the operation, destroy all data on the USB drive, and image the drive click **OK**.
 
 ### Running the Field Verification Tool (FVT) and Installing Qumulo Core
-The Field Verification Tool (FVT) checks your Supermicro node, prepares it for Qumulo Core, and installs Qumulo Core.
+The Field Verification Tool (FVT) checks your node, prepares it for Qumulo Core, and installs Qumulo Core.
 
 **Caution:** The FVT erases all data from the node. You must back up any live data on the node before you run the FVT.
 
@@ -326,7 +360,7 @@ When you replace a component of your node (such as the motherboard or an NIC car
 
 
 ## Step 4: Creating a Qumulo Cluster
-This section describes how to configure your Supermicro nodes to form a Qumulo cluster.
+This section describes how to configure your Supermicro All-NVMe nodes to form a Qumulo cluster.
 
 ### To Create the Cluster
 1. Power on four or more nodes that run the same version of Qumulo Core.
@@ -353,19 +387,130 @@ This section describes how to configure your Supermicro nodes to form a Qumulo c
 
 1. In the **3. Create a password for your admin account** section, set the password for your administrative account.
 
+## Replacing Hardware Components
+**Caution:** We strongly recommend engaging an on-site Supermicro engineer to replace failed hardware components including but not limited to any procedure that:
+* This guide doesn't cover
+* You haven't received training on
+* Requires precautions to avoid damage caused by electrostatic discharge (ESD) by using industry standard anti-static equipment (such as gloves or wrist straps)
+
+This section explains the most common scenarios of replacing failed hardware components such as:
+* Drives (excluding boot drives)
+* Power Supply Units (PSUs)
+* Fans
+* DIMM modules
+
+### To Replace a Drive
+The ten hot-swap drive carriers are located at the front of your Supermicro All-NVMe chassis. The boot drive is located in the internal M.2 slot.
+
+Replacement drives, including the on-site spare drives that you received with your original nodes, are provided without a drive carrier. When replacing a faulty drive, you must remove the existing drive from its carrier and then insert the new drive into the carriers. The drive carriers are toolless and don't require any screws.
+
+**Caution:** We strongly recommend having a Supermicro engineer perform on-site boot drive replacement.
+
+1. Locate the drive that requires replacement using the drive bay mapping.
+
+   ![Supermicro Drive Slot Mapping](supermicro/images/supermicro-drive-mapping.png)
+
+1. To remove the existing drive, do the following:
+
+   a. Press the orange release button on the right of the drive carrier until the drive carrier handle extends on the left.
+    
+   b. Use the drive carrier handle to pull the carrier out of the chassis.
+
+   c. To remove the drive from the carrier, undo the mounting clips.
+
+1. To install a replacement drive, do the following:
+
+   a. Insert the new drive into the drive carrier with the printed circuit board (PCB) side facing down and the connector end facing towards the rear of the tray.
+
+   b. Secure the drive to its carrier using the mounting clips.
+
+   c. Insert the drive carrier into the chassis with the orange release button facing right.
+   
+   d. Push the drive carrier into the chassis until the handle retracts and clicks into place.
+
+### To Replace a Power Supply Unit (PSU)
+The two hot-swap PSUs are located at the front of your Supermicro All-NVMe chassis. If either of the two PSUs fails, the other PSU takes on the full load and lets the node to continue operating without interruption.
+
+When a PSU fails, the **Info** LED at the front of the node begins to blink red every four seconds. In addition, the failure LED on the PSU at the back of the node lights up.
+
+1. To determine which PSU failed, check the PSU LED.
+
+   ![Supermicro Power Supply Units (PSUs)](supermicro/images/supermicro-psu-diagram.png)
+
+1. Disconnect the power cord from the existing PSU.
+
+1. To remove the existing PSU, press the purple release tab to the left while pulling on the handle.
+
+1. Insert the new PSU and push it into the chassis until it clicks into place.
+
+1. Connect the power cord to the new PSU.
+
+### To Replace a Fan
+Your Supermicro All-NVMe chassis has six internal fans. When a fan fails, the **Info** LED at the front of the node begins to blink red every second.
+
+**Caution:**
+* The fans are not hot-swappable. You must power off the node to replace a fan. However, you may remove the top cover to determine which fan failed.
+* For optimal air circulation, you must always re-install the top chassis cover. You must never run the node for an extended period of time with the top chassis cover removed.
+
+1. Power off the node, remove the top chassis cover, and disconnect the power cords from both PSUs.
+
+1. Disconnect the existing fan housing cable from the motherboard and remove the fan housing from its two mounting posts.
+
+1. Insert a new fan provided by Supermicro into the housing, making sure that the airflow direction arrows on top of the fan face the same direction as the arrows on the other fans.
+
+1. Reposition the fan housing over the two mounting posts and connect the fan housing cable to the motherboard.
+
+1. Power on the node and confirm that the new fan is working properly and the **Info** LED has stopped blinking red.
+
+1. Install the top chassis cover.
+
+### To Replace a DIMM Module
+Your Supermicro All-NVMe chassis has 16 DIMM slots (8 &#215; 16 GB DIMMs for a total 128 GB of memory).
+
+To identify which DIMM module failed, you must use the baseboard management controller (BMC) on the node or another hardware monitoring solution.
+
+**Caution:**
+* Use extreme caution when handling DIMM modules. Don't touch their metal contacts.
+* Never force a DIMM module into a slot. Each DIMM module has a keyed notch which allows the module to be inserted in only one way.
+* DIMM modules are not hot-swappable. You must power off the node to replace a DIMM module.
+* For optimal air circulation, you must always re-install the top chassis cover. You must never run the node for an extended period of time with the top chassis cover removed.
+
+1. Power off the node, remove the top chassis cover, and disconnect the power cords from both PSUs.
+
+1. Remove the existing DIMM module.
+
+   The following is the DIMM slot mapping. In this diagram, the CPU socket mounting bracket and power headers are at the bottom.
+
+   | Slot 1  | Slot 2  | Slot 3  | Slot 4  | Slot 5  | Slot 6  | Slot 7  | Slot 8  | CPU Socket        | Slot 9  | Slot 10 | Slot 11 | Slot 12 | Slot 13 | Slot 14 | Slot 15 | Slot 16 |
+   | ------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | ----------------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- |
+   | DIMM D2 | DIMM D1 | DIMM C2 | DIMM C1 | DIMM B2 | DIMM B1 | DIMM A2 | DIMM A1 | Bracket at bottom | DIMM E1 | DIMM E2 | DIMM F1 | DIMM F2 | DIMM G1 | DIMM G2 | DIMM H1 | DIMM H2 |
+   
+1. To remove the existing DIMM module, press both DIMM slot release tabs outwards. When the module is loose, remove it from the slot.
+
+1. To insert a new DIMM module, align the keyed notch on the DIMM module with the receptive points on the DIMM slot.
+
+1. Push in both ends of the DIMM module straight down until it clicks into place.
+
+1. Press both DIMM slot release tabs inwards.
+
+1. Install the top chassis cover.
+
+1. Power on the node.
+
+
 ## Appendix
-The following appendix contains the currently known behavior of Supermicro nodes and the technical specifications for Supermicro 153 TB, 76 TB, and 30 TB nodes.
+The following appendix contains the currently known behavior of Supermicro All-NVMe nodes, information about replacing hardware components, and the technical specifications for 153 TB, 76 TB, and 30 TB nodes.
 
 ### Known Behavior
-The following is the currently known behavior for Supermicro nodes.
+The following is the currently known behavior for Supermicro All-NVMe nodes.
 
 #### Firmware
 Don't update your node firmware unless a Qumulo representative instructs you to perform an update.
 
 ##### Data Center Management Suite (DCMS) Licenses
-If a DCMS license isn't installed on a Supermicro node, the Field Verification Tool (FVT) fails, preventing you from installing Qumulo Core. A DCMS license from Supermicro is required for Qumulo Core to work correctly.
+If a DCMS license isn't installed on a Supermicro All-NVMe node, the Field Verification Tool (FVT) fails, preventing you from installing Qumulo Core. A DCMS license from Supermicro is required for Qumulo Core to work correctly.
 
-### Supermicro Technical Specifications
+### Supermicro All-NVMe Technical Specifications
 <table cellspacing="0" cellpadding="0">
 <thead>
 <tr>
@@ -452,11 +597,11 @@ If a DCMS license isn't installed on a Supermicro node, the Field Verification T
 </tr>
 <tr>
 <td><strong>Operating Temperature</strong></td>
-<td colspan="3" style="text-align: center;">50&deg;F&ndash;95&deg;F(10&deg;C&ndash;35&deg;C)</td>
+<td colspan="3" style="text-align: center;">50&deg;F&ndash;95&deg;F (10&deg;C&ndash;35&deg;C)</td>
 </tr>
 <tr>
 <td><strong>Non-Operating Temperature</strong></td>
-<td colspan="3" style="text-align: center;">40&deg;F&ndash;158&deg;F(-40&deg;C&ndash;70&deg;C)</td>
+<td colspan="3" style="text-align: center;">40&deg;F&ndash;158&deg;F (-40&deg;C&ndash;70&deg;C)</td>
 </tr>
 <tr>
 <td><strong>Operating Relative Humidity</strong></td>
