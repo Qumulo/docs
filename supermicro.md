@@ -1,13 +1,13 @@
 # Qumulo on Supermicro All-NVMe Getting Started Guide
 Welcome to Qumulo on Supermicro All-NVMe. This guide is intended for system administrators, professional service providers, and colleagues in your organization who are responsible for installing and configuring server hardware.
 
-This guide includes quick-reference diagrams for Supermicro A+ WIO 1114S-WN10RT All-NVMe nodes and cluster architecture diagrams, an explanation of node LEDs, and a diagram of drive slots and PCIe mapping. The guide explains the networking configuration for your node and then walks you through racking and wiring your nodes, installing Qumulo Core on your nodes, and creating a Qumulo cluster. The [Appendix](#appendix) contains the currently known behavior of Supermicro nodes and technical specifications.
+This guide includes quick-reference diagrams for Supermicro A+ WIO 1114S-WN10RT All-NVMe nodes and cluster architecture diagrams, an explanation of node LEDs, and a diagram of drive slots and PCIe mapping. Next, the guide explains the networking configuration for your node and then walks you through racking and wiring your nodes, installing Qumulo Core on your nodes, and creating a Qumulo cluster. The [Appendix](#appendix) contains the currently known behavior of Supermicro All-NVMe nodes, information about hardware replacement, and technical specifications.
 
 For more information about administering your cluster, see the [Qumulo Care](https://care.qumulo.com/hc/en-us) portal. If you have any questions, you can [open a case](https://care.qumulo.com/hc/en-us/requests/new), email us at [care@qumulo.com](mailto:care@qumulo.com), or contact us in your private channel in the [qumulocare](https://qumulocare.slack.com/) Slack workspace.
 
 
 ## Quick Reference
-This section contains quick-reference diagrams for the front and back of your Supermicro node, an architecture diagram of an example four-node cluster, an explanation of node LEDs, and a diagram of drive slots and PCIe mapping.
+This section contains quick-reference diagrams for the front and back of your Supermicro All-NVMe node, an architecture diagram of an example four-node cluster, an explanation of node LEDs, and a diagram of drive slots and PCIe mapping.
 
 ### Front and Back Node Diagrams
 ![Front and Back Diagrams of the Supermicro A+ WIO 1114S-WN10RT All-NVMe Node](supermicro/images/supermicro-front-back-diagram.png)
@@ -16,7 +16,7 @@ This section contains quick-reference diagrams for the front and back of your Su
 ![Four-Node Cluster Architecture Diagram](supermicro/images/supermicro-four-node-cluster-architecture-diagram.png)
 
 ### Node LEDs
-On the front, right side of your Supermicro node, there are five LEDs.
+On the front, right side of your node, there are five LEDs.
 
 | Label         | Colors                 | Description                                 |
 | ------------- | ---------------------- | ------------------------------------------- |
@@ -32,7 +32,7 @@ On the front, right side of your Supermicro node, there are five LEDs.
 
 **Note:** During normal operation, the **Lan B** LED might appear to be lit slightly when the **Disk Activity** LED is on.
 
-On the back of your Supermicro node, LAN LEDs are located behind the vent holes on the NIC. Each port has one light. Network traffic *doesn't* affect the speed of the light's blinking.
+On the back of your node, LAN LEDs are located behind the vent holes on the NIC. Each port has one light. Network traffic *doesn't* affect the speed of the light's blinking.
 
 | Color            | Status             | Description      |
 | ---------------- | ------------------ | ---------------- |
@@ -40,7 +40,7 @@ On the back of your Supermicro node, LAN LEDs are located behind the vent holes 
 | 🟢 (solid green) | On or blinking     | Link established |
 
 ### Drive Slot Mapping
-A Supermicro node contains slots for 10 drives and one boot drive (in an internal M.2 slot). The following is the mapping for the drives.
+Your node contains slots for 10 drives and one boot drive (in an internal M.2 slot). The following is the mapping for the drives.
 
 <table>
 <thead>
@@ -133,10 +133,10 @@ You can connect a Suprmicro All-NVMe cluster to a single switch. If this switch 
 ## Step 1: Racking Your Nodes
 **Tip:** You can use the following instructions to add new nodes after your initial cluster deployment.
 
-This section describes how to use the outside and inside rails of your Supermicro node and how to rack your nodes in your data center.
+This section describes how to use the outside and inside rails of your Supermicro All-NVMe node and how to rack your nodes in your data center.
 
 ### To Attach the Outer and Inner Rails
-**Note:** Because the left and right rails of your Supermicro nodes are identical, the words **FRONT** and **BACK** might appear upside down.
+**Note:** Because the left and right rails of your nodes are identical, the words **FRONT** and **BACK** might appear upside down.
 
 * Each *outer rail* comes as two connected pieces and attaches to your server rack.
 * Each *inner rail* comes as two separate pieces and attaches to the node chassis.
@@ -167,7 +167,7 @@ This section describes how to use the outside and inside rails of your Supermicr
 
 
 ## Step 2: Wiring Your Nodes
-This section describes how to wire the remote access, network, and power ports of your Supermicro node.
+This section describes how to wire the remote access, network, and power ports of your Supermicro All-NVMe node.
 
 **Note:** The two Ethernet ports on the back of your node (to the right of the USB ports) are unused.
 
@@ -188,7 +188,7 @@ After you connect the IPMI port, connect your front-end and back-end 100 Gbps po
 After you connect your 100 Gbps ports, connect power to the node. There are two power sockets on the back of your node. To maximize redundancy, connect each PSU to a separate power supply or power distribution unit (PDU).
 
 ## Step 3: Installing Qumulo Core on Your Nodes
-This section describes how to install Qumulo Core on your Supermicro nodes.
+This section describes how to install Qumulo Core on your Supermicro All-NVMe nodes.
 
 ### Creating a Qumulo Core USB Drive Installer
 To perform a clean installation of Qumulo Core on your node, you must create a Qumulo Core USB Drive Installer. To begin, you must have a USB drive (4 GB minimum) and a Qumulo Core USB installer image from the [Qumulo Care Team](https://care.qumulo.com/hc/en-us/articles/115008409408-Contact-Qumulo-Care-).
@@ -250,7 +250,7 @@ To create a USB Drive Installer on Windows, you must use a third-party applicati
 1. To confirm the operation, destroy all data on the USB drive, and image the drive click **OK**.
 
 ### Running the Field Verification Tool (FVT) and Installing Qumulo Core
-The Field Verification Tool (FVT) checks your Supermicro node, prepares it for Qumulo Core, and installs Qumulo Core.
+The Field Verification Tool (FVT) checks your node, prepares it for Qumulo Core, and installs Qumulo Core.
 
 **Caution:** The FVT erases all data from the node. You must back up any live data on the node before you run the FVT.
 
@@ -386,7 +386,7 @@ When you replace a component of your node (such as the motherboard or an NIC car
 
 
 ## Step 4: Creating a Qumulo Cluster
-This section describes how to configure your Supermicro nodes to form a Qumulo cluster.
+This section describes how to configure your Supermicro All-NVMe nodes to form a Qumulo cluster.
 
 ### To Create the Cluster
 1. Power on four or more nodes that run the same version of Qumulo Core.
@@ -413,19 +413,22 @@ This section describes how to configure your Supermicro nodes to form a Qumulo c
 
 1. In the **3. Create a password for your admin account** section, set the password for your administrative account.
 
+
 ## Appendix
-The following appendix contains the currently known behavior of Supermicro nodes and the technical specifications for Supermicro 153 TB, 76 TB, and 30 TB nodes.
+The following appendix contains the currently known behavior of Supermicro All-NVMe nodes and the technical specifications for 153 TB, 76 TB, and 30 TB nodes.
 
 ### Known Behavior
-The following is the currently known behavior for Supermicro nodes.
+The following is the currently known behavior for Supermicro All-NVMe nodes.
 
 #### Firmware
 Don't update your node firmware unless a Qumulo representative instructs you to perform an update.
 
 ##### Data Center Management Suite (DCMS) Licenses
-If a DCMS license isn't installed on a Supermicro node, the Field Verification Tool (FVT) fails, preventing you from installing Qumulo Core. A DCMS license from Supermicro is required for Qumulo Core to work correctly.
+If a DCMS license isn't installed on a Supermicro All-NVMe node, the Field Verification Tool (FVT) fails, preventing you from installing Qumulo Core. A DCMS license from Supermicro is required for Qumulo Core to work correctly.
 
-### Supermicro Technical Specifications
+
+
+### Supermicro All-NVMe Technical Specifications
 <table cellspacing="0" cellpadding="0">
 <thead>
 <tr>
