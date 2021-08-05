@@ -1,7 +1,7 @@
 # Qumulo on Supermicro All-NVMe Getting Started Guide
 Welcome to Qumulo on Supermicro All-NVMe. This guide is intended for system administrators, professional service providers, and colleagues in your organization who are responsible for installing and configuring server hardware.
 
-This guide includes quick-reference diagrams for Supermicro A+ WIO 1114S-WN10RT All-NVMe nodes and cluster architecture diagrams, an explanation of node LEDs, and a diagram of drive slots and PCIe mapping. The guide walks you through racking and wiring your nodes, installing Qumulo Core on your nodes, and creating a Qumulo cluster. The [Appendix](#appendix) contains the currently known behavior of Supermicro nodes and technical specifications.
+This guide includes quick-reference diagrams for Supermicro A+ WIO 1114S-WN10RT All-NVMe nodes and cluster architecture diagrams, an explanation of node LEDs, and a diagram of drive slots and PCIe mapping. The guide explains the networking configuration for your node and then walks you through racking and wiring your nodes, installing Qumulo Core on your nodes, and creating a Qumulo cluster. The [Appendix](#appendix) contains the currently known behavior of Supermicro nodes and technical specifications.
 
 For more information about administering your cluster, see the [Qumulo Care](https://care.qumulo.com/hc/en-us) portal. If you have any questions, you can [open a case](https://care.qumulo.com/hc/en-us/requests/new), email us at [care@qumulo.com](mailto:care@qumulo.com), or contact us in your private channel in the [qumulocare](https://qumulocare.slack.com/) Slack workspace.
 
@@ -68,6 +68,66 @@ A Supermicro node contains slots for 10 drives and one boot drive (in an interna
   </tr>
 </tbody>
 </table>
+
+
+## Configuring Networking for Your Node
+This section explains the networking prerequisites, outlines the recommended networking configuration, and explains how you can connect to redundant switches or to a single switch.
+
+### Networking Prerequisites
+**Important:** Before you create your Qumulo cluster, you must configure all switch ports connected to the back-end NIC to have at least 9,000 MTU, with Jumbo Frames enabled.
+
+Your node requires the following resources.
+* A network switch with the following specifications:
+  * 100 Gbps Ethernet
+  * Fully non-blocking architecture
+  * IPv6 capability
+  * Jumbo Frame support (9,000 MTU minimum) for the back-end network
+* Compatible networking cables
+* A sufficient number of ports for connecting all nodes to the same switch fabric
+* One static IP per node, per defined VLAN
+
+### Recommended Networking Configuration
+**Important:** We don't recommend connecting to a single back-end NIC port because the node will become unavailable if the single connection fails.
+
+The Supermicro All-NVMe platform uses a networking configuration in which different NICs handle back-end and front-end traffic. You can connect the front-end and back-end NICs to the same switch or to different switches. However, for greater reliability, we recommend connecting all four 100 Gbps ports on every node: connect both front-end NIC ports to the front-end switch and both back-end NIC ports to the back-end switch.
+
+We recommend the following configuration for your node.
+* One set of redundant switches for the front-end network, with an MTU that matches that of the clients that use the storage cluster. Typically, 1,500 MTU is recommended, but in some instances it might be 9,000 MTU.
+* One set of redundant switches for the back-end network (9,000 MTU minimum)
+* One physical connection per node, per each redundant switch
+* One Link Aggregation Control Protocol (LACP) port-channel per network (front-end and back-end) on each node, with the following configuration
+  * Active mode
+  * Slow transmit rather
+  * Access port or trunk port with a native VLAN
+* DNS servers
+* A Network Time Protocol (NTP) server
+* Firewall protocols or ports allowed for proactive monitoring
+* Where `N` is the number of nodes, `N-1` floating IPs per node, per client-facing VLAN
+
+### Connecting a Cluster to Redundant Switches
+For redundancy, we recommend connecting a Supermicro All-NVMe cluster to dual switches. If either switch becomes inoperative, the cluster will still be accessible from the remaining switch.
+
+* **Front End**
+  * Connect the two front-end NIC ports (2 &#215; 100 Gbps) on your nodes to separate switches.
+  * The uplinks to the client network must equal the bandwidth from the cluster to the switch.
+  * The two ports form an LACP port channel using a multi-chassis link aggregation group.
+* **Back End**
+  * Connect the two back-end NIC ports (2 &#215; 100 Gbps) on your nodes to separate switches.
+  * Use an appropriate inter-switch link or virtual port channel.
+* **MTU**
+  * For all connection speeds, the default behavior is that of an LACP with 1,500 MTU for the front-end and 9,000 MTU for the back-end interfaces.
+
+### Connecting a Cluster to a Single Switch
+You can connect a Suprmicro All-NVMe cluster to a single switch. If this switch becomes inoprative, the entire cluster will be inaccessible.
+
+* **Front End**
+  * Each node has two front-end NIC ports (2 &#215; 100 Gbps) connected to a single switch.
+  * The uplinks to the client network must equal the bandwidth from the cluster to the switch.
+  * The two ports form an LACP port channel. 
+* **Back End**
+  * Each node has two band-end ports (2 &#215; 100 Gbps) connected to a single switch.
+* **MTU**
+  * For all connection speeds, the default behavior is that of an LACP with 1,500 MTU for the front-end and 9,000 MTU for the back-end interfaces.
 
 
 ## Step 1: Racking Your Nodes
@@ -452,11 +512,11 @@ If a DCMS license isn't installed on a Supermicro node, the Field Verification T
 </tr>
 <tr>
 <td><strong>Operating Temperature</strong></td>
-<td colspan="3" style="text-align: center;">50&deg;F&ndash;95&deg;F(10&deg;C&ndash;35&deg;C)</td>
+<td colspan="3" style="text-align: center;">50&deg;F&ndash;95&deg;F (10&deg;C&ndash;35&deg;C)</td>
 </tr>
 <tr>
 <td><strong>Non-Operating Temperature</strong></td>
-<td colspan="3" style="text-align: center;">40&deg;F&ndash;158&deg;F(-40&deg;C&ndash;70&deg;C)</td>
+<td colspan="3" style="text-align: center;">40&deg;F&ndash;158&deg;F (-40&deg;C&ndash;70&deg;C)</td>
 </tr>
 <tr>
 <td><strong>Operating Relative Humidity</strong></td>
