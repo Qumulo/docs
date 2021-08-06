@@ -270,7 +270,7 @@ div#toc ul li ul li::before {
 }
 
 div#toc >ul::before {
-    content: "Table of Contents";
+    content: "On This Page";
     font-weight: 500;
     color: #555;
     text-align:center;
