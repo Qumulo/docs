@@ -309,6 +309,11 @@ li.dropdownActive a {
     color: orange;
 }
 
+.navbar-inverse {
+    background-color:#101a32;
+    border:none;
+}
+
 
 .navbar-inverse .navbar-nav > li > a {
     background-color: transparent;
