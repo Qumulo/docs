@@ -15,22 +15,6 @@ h1 {
     color: #005d80;
 }
 
-h2 {
-    color: #333;
-}
-
-h3 {
-    color: #333;
-}
-
-h4 {
-    color: #333;
-}
-
-h5 {
-    color: #333;
-}
-
 .bs-callout {
     padding: 20px;
     margin: 20px 0;
@@ -95,9 +79,6 @@ h5 {
 .gi-5x{font-size: 5em;}
 
 
-
-
-
 .breadcrumb > .active {color: #777 !important;}
 
 /* make room for the nav bar */
@@ -109,7 +90,8 @@ h5[id],
 h6[id],
 dt[id]{
 padding-top: 60px;
-margin-top: -40px
+margin-top: -40px;
+color: #333;
 }
 
 .post-content img {
