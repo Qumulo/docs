@@ -85,6 +85,7 @@ On the back of your node, LAN LEDs are located behind the vent holes on the NIC.
 
 ### Drive Slot Mapping
 Your node contains slots for 10 drives and one boot drive (in an internal M.2 slot). The following is the mapping for the drives.
+
 ![Supermicro Drive Slot Mapping](supermicro/images/supermicro-drive-mapping.png)
 
 
