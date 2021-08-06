@@ -322,7 +322,7 @@ The Field Verification Tool (FVT) checks your node, prepares it for Qumulo Core,
    Installation successful. Ctrl-C to cancel reboot.
    ```
 
-   You can now install the Qumulo Core software image.
+   Qumulo Core is now installed on your node.
 
 #### Troubleshooting FVT Fail Cases
 If the FVT encounters an issue, the `FVT failed!` message and an explanation appears.
