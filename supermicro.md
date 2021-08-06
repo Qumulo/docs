@@ -1,7 +1,8 @@
 ---
 title: Qumulo on Supermicro All-NVMe Getting Started Guide
 permalink: supermicro.html
-tags: 
+tags:
+  - getting_started_guide 
   - supermicro
   - quick_reference
   - diagram
