@@ -240,6 +240,13 @@ ul#results-container a:hover {
     margin: 3px;
 }
 
+/* Float the "On this page" box to the right*/
+div#toc {
+    float: right;
+    position: relative;
+    top: 65px;
+}
+
 div#toc ul li {
     margin: 8px 0px 8px 22px;
     font-size: 90%;
@@ -263,7 +270,7 @@ div#toc ul li ul li::before {
 }
 
 div#toc >ul::before {
-    content: "Table of Contents";
+    content: "On This Page";
     font-weight: 500;
     color: #555;
     text-align:center;
