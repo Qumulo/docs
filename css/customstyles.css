@@ -462,6 +462,15 @@ span.projectTitle {
     height:130px;
 }
 
+.footer-text {
+    text-align:right;
+    padding-right:10px;
+}
+
+.footer-grumpquats {
+    text-align:center;
+}
+
 .footerMeta {
     background-color: whitesmoke;
     padding: 10px;
