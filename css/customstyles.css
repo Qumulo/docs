@@ -1,5 +1,18 @@
 body {
-    font-size:15px;
+    font-family: Avenir;
+    background-color: #F8F8F8;
+    font-size:16px;
+}
+
+h1 {
+    display: block;
+    font-size: 2.2em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    color: #005d80;
 }
 
 .bs-callout {
