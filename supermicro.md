@@ -552,7 +552,7 @@ The following is the currently known behavior for Supermicro All-NVMe nodes.
 #### Firmware
 Don't update your node firmware unless a Qumulo representative instructs you to perform an update.
 
-##### Data Center Management Suite (DCMS) Licenses
+#### Data Center Management Suite (DCMS) Licenses
 If a DCMS license isn't installed on a Supermicro All-NVMe node, the Field Verification Tool (FVT) fails, preventing you from installing Qumulo Core. A DCMS license from Supermicro is required for Qumulo Core to work correctly.
 
 ### Supermicro All-NVMe Technical Specifications
