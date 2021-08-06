@@ -325,23 +325,23 @@ The Field Verification Tool (FVT) checks your node, prepares it for Qumulo Core,
    You can now install the Qumulo Core software image.
 
 #### Troubleshooting FVT Fail Cases
-If the FVT encounters an issue, the `FTV failed!` message and an explanation appears.
+If the FVT encounters an issue, the `FVT failed!` message and an explanation appears.
 
 FVT fail cases divide into *fixable* and *non-fixable* issues.
 
 ##### Fixable Issues
 The following is an example of a fixable issue. To let FVT try fix the issue, enter `1`.
 
-   ```Bash
-   FTV failed!
+```Bash
+FVT failed!
 
-   The following issues were detected:
-   check_bmc_version: FAIL: We require a minimum BMC version of 1.00.34. You have 1.00.33.
-   FIX: Run the FVT flash command.
+The following issues were detected:
+check_bmc_version: FAIL: We require a minimum BMC version of 1.00.34. You have 1.00.33.
+FIX: Run the FVT flash command.
 
-   [1] Run FVT Flash. This will try to fix issues then reboot. Please take caution as this MAY DESTROY EXISTING DATA.
-   [2] Start a rescue shell
-   ```
+[1] Run FVT Flash. This will try to fix issues then reboot. Please take caution as this MAY DESTROY EXISTING DATA.
+[2] Start a rescue shell
+```
 
 Depending on your node hardware and installation scenario, FVT might be able to correct issues such as the following automatically:
 
@@ -353,17 +353,17 @@ Depending on your node hardware and installation scenario, FVT might be able to 
 ##### Non-Fixable Issues
 The following is an example of a non-fixable issue. To fix the issue, contact the [Qumulo Care Team](https://care.qumulo.com/hc/en-us/articles/115008409408-Contact-Qumulo-Care-).
 
-   ```Bash
-   FTV failed!
+```Bash
+FVT failed!
 
-   The following issues were detected:
+The following issues were detected:
 check_cpu_model: FAIL: We require one of: AMD EPYC 7402P 24-Core Processor. You have Qumulo Grumpquat 4000 Processor.
-   FIX: Contact Qumulo Care.
-   Not fixable issues were detected.
+FIX: Contact Qumulo Care.
+Not fixable issues were detected.
 
-   [1] Copy logs to USB installer.
-   [2] Start a rescue shell
-   ```
+[1] Copy logs to USB installer.
+[2] Start a rescue shell
+```
 
 #### Performing the Part Replacement Procedure Using the FVT
 When you replace a component of your node (such as the motherboard or an NIC card), you must ensure that the firmware version and configuration are correct for your new components. To do this, you must perform the part replacement procedure using the FVT.
@@ -453,7 +453,7 @@ Replacement drives, including the on-site spare drives that you received with yo
 
 1. Locate the drive that requires replacement using the drive bay mapping.
 
-   ![Supermicro Drive Slot Mapping](supermicro/images/supermicro-drive-mapping.png)
+   ![Supermicro Drive Slot Mapping](supermicro/images/supermicro-drive-slot-mapping.png)
 
 1. To remove the existing drive, do the following:
 
