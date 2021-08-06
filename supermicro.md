@@ -92,7 +92,7 @@ For redundancy, we recommend connecting a Supermicro All-NVMe cluster to dual sw
   * For all connection speeds, the default behavior is that of an LACP with 1,500 MTU for the front-end and 9,000 MTU for the back-end interfaces.
 
 ### Connecting a Cluster to a Single Switch
-You can connect a Suprmicro All-NVMe cluster to a single switch. If this switch becomes inoprative, the entire cluster will be inaccessible.
+You can connect a Supermicro All-NVMe cluster to a single switch. If this switch becomes inoperative, the entire cluster will be inaccessible.
 
 * **Front End**
   * Each node has two front-end NIC ports (2 &#215; 100 Gbps) connected to a single switch.
@@ -199,7 +199,7 @@ To perform a clean installation of Qumulo Core on your node, you must create a Q
    ```
 
 #### To Create a USB Drive Installer on Windows
-To create a USB Drive Installer on Windows, you must use a third-party application such as [Rufus](https://rufus.ie/). We recommend Rufus because it can detect mny USB storage devices (rather than only Windows-compatible ones).
+To create a USB Drive Installer on Windows, you must use a third-party application such as [Rufus](https://rufus.ie/). We recommend Rufus because it can detect many USB storage devices (rather than only Windows-compatible ones).
 
 **Important:**
 * We don't recommend using other tools (such as Win32 Disk Imager) because they might encounter errors when unable to recognize the USB drive after writing data to it.
@@ -429,7 +429,7 @@ Replacement drives, including the on-site spare drives that you received with yo
    d. Push the drive carrier into the chassis until the handle retracts and clicks into place.
 
 ### To Replace a Power Supply Unit (PSU)
-The two hot-swap PSUs are located at the front of your Supermicro All-NVMe chassis. If either of the two PSUs fails, the other PSU takes on the full load and lets the node to continue operating without interruption.
+The two hot-swap PSUs are located at the front of your Supermicro All-NVMe chassis. If either of the two PSUs fails, the other PSU takes on the full load and lets the node continue operating without interruption.
 
 When a PSU fails, the **Info** LED at the front of the node begins to blink red every four seconds. In addition, the failure LED on the PSU at the back of the node lights up.
 
@@ -450,7 +450,7 @@ Your Supermicro All-NVMe chassis has six internal fans. When a fan fails, the **
 
 **Caution:**
 * The fans are not hot-swappable. You must power off the node to replace a fan. However, you may remove the top cover to determine which fan failed.
-* For optimal air circulation, you must always re-install the top chassis cover. You must never run the node for an extended period of time with the top chassis cover removed.
+* For optimal air circulation, you must always reinstall the top chassis cover. You must never run the node for an extended period of time with the top chassis cover removed.
 
 1. Power off the node, remove the top chassis cover, and disconnect the power cords from both PSUs.
 
@@ -473,7 +473,7 @@ To identify which DIMM module failed, you must use the baseboard management cont
 * Use extreme caution when handling DIMM modules. Don't touch their metal contacts.
 * Never force a DIMM module into a slot. Each DIMM module has a keyed notch which allows the module to be inserted in only one way.
 * DIMM modules are not hot-swappable. You must power off the node to replace a DIMM module.
-* For optimal air circulation, you must always re-install the top chassis cover. You must never run the node for an extended period of time with the top chassis cover removed.
+* For optimal air circulation, you must always reinstall the top chassis cover. You must never run the node for an extended period of time with the top chassis cover removed.
 
 1. Power off the node, remove the top chassis cover, and disconnect the power cords from both PSUs.
 
