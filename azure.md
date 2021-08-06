@@ -1,7 +1,8 @@
 ---
 title: Qumulo on Azure as a Service Onboarding Guide
 permalink: azure.html
-tags: 
+tags:
+  - onboarding_guide 
   - azure
   - onboarding
   - networking
