@@ -1,3 +1,46 @@
+---
+title: Qumulo on Supermicro All-NVMe Getting Started Guide
+permalink: supermicro.html
+tags: 
+  - supermicro
+  - quick_reference
+  - diagram
+  - leds
+  - drive_mapping
+  - networking
+  - redundant_switches
+  - single_switch
+  - racking_node
+  - outer_rail
+  - inner_rail
+  - chassis
+  - node
+  - cluster
+  - insert_chassis
+  - remove_chassis
+  - wiring_node
+  - out_of_band_management
+  - ipmi
+  - 100_gbps
+  - installing_qumulo_core
+  - qumulo_core
+  - usb_drive_installer
+  - field_verification_tool
+  - fvt
+  - fixable_issue
+  - non_fixable_issue
+  - hardware_replacement
+  - create_cluster
+  - replace_drive
+  - drive
+  - replace_psu
+  - psu
+  - replace_fan
+  - replace_dimm
+  - dcms_license
+  - technical_specifications
+---
+
 # Qumulo on Supermicro All-NVMe Getting Started Guide
 Welcome to Qumulo on Supermicro All-NVMe. This guide is intended for system administrators, professional service providers, and colleagues in your organization who are responsible for installing and configuring server hardware.
 
