@@ -577,18 +577,18 @@ If a DCMS license isn't installed on a Supermicro All-NVMe node, the Field Verif
 <tr>
 <td><strong>Solid State Storage Media</strong></td>
 <td>
-<div>10 &#215; 15.36 TB NVMe drives (Micron 9300 or WDC SN840)</div>
+<div>10 &#215; 15.36 TB NVMe drives</div>
 </td>
 <td>
-<div>10 &#215; 7.68 TB NVMe drives (Micron 7300 or WDC SN640)</div>
+<div>10 &#215; 7.68 TB NVMe drives</div>
 </td>
 <td>
-<div>8 &#215; 3.84 TB NVMe drives (Micron 7300 or WDC SN640)</div>
+<div>8 &#215; 3.84 TB NVMe drives</div>
 </td>
 </tr>
 <tr>
 <td><strong>Boot Drive</strong></td>
-<td colspan="3" style="text-align: center;">1 TB M.2 NVMe drive (Intel P4511 1 TB)</td>
+<td colspan="3" style="text-align: center;">1 TB M.2 NVMe drive</td>
 </tr>
 <tr>
 <td><strong>CPU</strong></td>
