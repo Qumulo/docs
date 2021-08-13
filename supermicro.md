@@ -69,8 +69,8 @@ On the front, right side of your node, there are five LEDs.
 | Info          | 🔴 (4 s. blinking red) | Power Supply Unit (PSU) failed              |
 | Info          | 🔵 (solid blue)        | Unit IDentification (UID) activated locally |
 | Info          | 🔵 (blinking blue)     | UID activated using IPMI                    |
-| Lan A         | ⚪ (unused)            | Off                                         |
-| Lan B         | ⚪ (unused)            | Off                                         |
+| Lan A         | ⚪ (off)               | Unused                                      |
+| Lan B         | ⚪ (off)               | Unused                                      |
 | Disk Activity | 🟡 (solid yellow)      | On or blinking                              |
 | Power         | 🟢 (solid green)       | On                                          |
 
