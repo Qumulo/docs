@@ -593,6 +593,14 @@ The following is the currently known behavior for Supermicro All-NVMe nodes.
 #### Firmware
 Don't update your node firmware unless a Qumulo representative instructs you to perform an update.
 
+#### USB Drive Boot Priority
+Supermicro All-NVMe nodes don't have the option to always boot from a USB drive if one is present. To boot from a USB drive, press **F11** when booting and select the USB drive from the menu. For more information, see [Running the Field Verification Tool (FVT) and Installing Qumulo Core](#running-the-field-verification-tool-fvt-and-installing-qumulo-core).
+
+**Note:** The setting is persistent: when you boot from a USB drive once, the node will continue boot from the USB drive. Remove the USB drive from the node after Qumulo Core is installed.
+
+#### Fast Drive Hot-Swapping
+If you remove and reinsert a drive extremely quickly (faster than one second), the baseboard management controller (BMC) does not recognize the drive and the activity LEDs do not return to their normal states. To resolve this issue, remove the drive, wait five seconds, and then reinsert it.
+
 #### Data Center Management Suite (DCMS) Licenses
 If a DCMS license isn't installed on a Supermicro All-NVMe node, the Field Verification Tool (FVT) fails, preventing you from installing Qumulo Core. A DCMS license from Supermicro is required for Qumulo Core to work correctly.
 
