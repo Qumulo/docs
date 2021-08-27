@@ -69,8 +69,8 @@ On the front, right side of your node, there are five LEDs.
 | Info          | 🔴 (4 s. blinking red) | Power Supply Unit (PSU) failed              |
 | Info          | 🔵 (solid blue)        | Unit IDentification (UID) activated locally |
 | Info          | 🔵 (blinking blue)     | UID activated using IPMI                    |
-| Lan A         | ⚪ (unused)            | Off                                         |
-| Lan B         | ⚪ (unused)            | Off                                         |
+| Lan A         | ⚪ (off)               | Unused                                      |
+| Lan B         | ⚪ (off)               | Unused                                      |
 | Disk Activity | 🟡 (solid yellow)      | On or blinking                              |
 | Power         | 🟢 (solid green)       | On                                          |
 
@@ -196,10 +196,10 @@ The dedicated out-of-band management port allows functionality such as remote di
 ### Connecting the 100 Gbps Ports
 After you connect the IPMI port, connect your front-end and back-end 100 Gbps ports (compatible with QSFP28 and QSFP56). There are four 100 Gbps ports on the back of your node. To maximize redundancy, split interfaces across subnets by connecting each port to a different switch.
 
-| Port Location         | Port Type  | Purpose                     |
-| --------------------- | ---------- | --------------------------- |
-| Top row (`2`, `1`)    | Front end  | Communication with clients  |
-| Bottom row (`2`, `1`) | Back end   | Communication between nodes |
+| Port Location         | Port Labels        | Port Type  | Purpose                     |
+| --------------------- | ------------------ | ---------- | --------------------------- |
+| Top row               | 2 (eth3), 1 (eth2) | Front end  | Communication with clients  |
+| Bottom row            | 2 (eth5), 1 (eth4) | Back end   | Communication between nodes |
 
 ### Connecting the Power
 **Important:** Make sure that the voltages for both power supply units (PSUs) are the same (for example, both at 115 V or both at 208 V).
@@ -526,9 +526,50 @@ To identify which DIMM module failed, you must use the baseboard management cont
 
    The following is the DIMM slot mapping. In this diagram, the CPU socket mounting bracket and power headers are at the bottom.
 
-   | Slot 1  | Slot 2  | Slot 3  | Slot 4  | Slot 5  | Slot 6  | Slot 7  | Slot 8  | CPU Socket        | Slot 9  | Slot 10 | Slot 11 | Slot 12 | Slot 13 | Slot 14 | Slot 15 | Slot 16 |
-   | ------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | ----------------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- |
-   | DIMM D2 | DIMM D1 | DIMM C2 | DIMM C1 | DIMM B2 | DIMM B1 | DIMM A2 | DIMM A1 | Bracket at bottom | DIMM E1 | DIMM E2 | DIMM F1 | DIMM F2 | DIMM G1 | DIMM G2 | DIMM H1 | DIMM H2 |
+    <table style="font-size:11.4px">
+      <thead>
+        <tr>
+          <th>Slot 1</th>
+          <th>Slot 2</th>
+          <th>Slot 3</th>
+          <th>Slot 4</th>
+          <th>Slot 5</th>
+          <th>Slot 6</th>
+          <th>Slot 7</th>
+          <th>Slot 8</th>
+          <th>CPU Socket</th>
+          <th>Slot 9</th>
+          <th>Slot 10</th>
+          <th>Slot 11</th>
+          <th>Slot 12</th>
+          <th>Slot 13</th>
+          <th>Slot 14</th>
+          <th>Slot 15</th>
+          <th>Slot 16</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>DIMM D2</td>
+          <td>DIMM D1</td>
+          <td>DIMM C2</td>
+          <td>DIMM C1</td>
+          <td>DIMM B2</td>
+          <td>DIMM B1</td>
+          <td>DIMM A2</td>
+          <td>DIMM A1</td>
+          <td>Bracket at bottom</td>
+          <td>DIMM E1</td>
+          <td>DIMM E2</td>
+          <td>DIMM F1</td>
+          <td>DIMM F2</td>
+          <td>DIMM G1</td>
+          <td>DIMM G2</td>
+          <td>DIMM H1</td>
+          <td>DIMM H2</td>
+        </tr>
+      </tbody>
+    </table>
    
 1. To remove the existing DIMM module, press both DIMM slot release tabs outwards. When the module is loose, remove it from the slot.
 
@@ -551,6 +592,14 @@ The following is the currently known behavior for Supermicro All-NVMe nodes.
 
 #### Firmware
 Don't update your node firmware unless a Qumulo representative instructs you to perform an update.
+
+#### USB Drive Boot Priority
+Supermicro All-NVMe nodes don't have the option to always boot from a USB drive if one is present. To boot from a USB drive, press **F11** when booting and select the USB drive from the menu. For more information, see [Running the Field Verification Tool (FVT) and Installing Qumulo Core](#running-the-field-verification-tool-fvt-and-installing-qumulo-core).
+
+**Note:** The setting is persistent: when you boot from a USB drive once, the node will continue boot from the USB drive. Remove the USB drive from the node after Qumulo Core is installed.
+
+#### Fast Drive Hot-Swapping
+If you remove and reinsert a drive extremely quickly (faster than one second), the baseboard management controller (BMC) does not recognize the drive and the activity LEDs do not return to their normal states. To resolve this issue, remove the drive, wait five seconds, and then reinsert it.
 
 #### Data Center Management Suite (DCMS) Licenses
 If a DCMS license isn't installed on a Supermicro All-NVMe node, the Field Verification Tool (FVT) fails, preventing you from installing Qumulo Core. A DCMS license from Supermicro is required for Qumulo Core to work correctly.
@@ -577,18 +626,18 @@ If a DCMS license isn't installed on a Supermicro All-NVMe node, the Field Verif
 <tr>
 <td><strong>Solid State Storage Media</strong></td>
 <td>
-<div>10 &#215; 15.36 TB NVMe drives (Micron 9300 or WDC SN840)</div>
+<div>10 &#215; 15.36 TB NVMe drives</div>
 </td>
 <td>
-<div>10 &#215; 7.68 TB NVMe drives (Micron 7300 or WDC SN640)</div>
+<div>10 &#215; 7.68 TB NVMe drives</div>
 </td>
 <td>
-<div>8 &#215; 3.84 TB NVMe drives (Micron 7300 or WDC SN640)</div>
+<div>8 &#215; 3.84 TB NVMe drives</div>
 </td>
 </tr>
 <tr>
 <td><strong>Boot Drive</strong></td>
-<td colspan="3" style="text-align: center;">1 TB M.2 NVMe drive (Intel P4511 1 TB)</td>
+<td colspan="3" style="text-align: center;">1 TB M.2 NVMe drive</td>
 </tr>
 <tr>
 <td><strong>CPU</strong></td>
