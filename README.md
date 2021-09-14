@@ -11,6 +11,7 @@ Welcome. This repository is a new kind of Docs as Code documentation for [Qumulo
 **Table of Contents**
 * [Qumulo on Azure as a Service Onboarding Guide](azure.md)
 * [Qumulo on Supermicro Getting Started Guide](supermicro.md)
+* [Using Qumulo Shift-From to Copy Objects from Amazon S3](shift-from-s3.md)
 
 ## Visit the Knowledge Base
 For a deeper dive into Qumulo features and advanced functionality such as cluster administration, visit the [Qumulo Care](https://care.qumulo.com/hc/en-us)  portal. Our portal lets you open a case, read articles and watch videos from our content library, review product release notes, and get involved in the Qumulo community.
