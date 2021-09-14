@@ -53,7 +53,7 @@ Qumulo Core performs the following steps when it creates a Shift-From relationsh
    **Note:** If you rename or move an object or local file between jobs, or if there are any metadata changes in S3 or Qumulo, the object is replicated again.
 
 ### Storing and Reusing Relationships
-To let you monitor the completion status of a job, start new jobs for a relationship after the initial job finishes, and delete the relationship (when you no longer need the S3-folder-Qumulo-directory pair), the Shift-From relationship remains on the Qumulo cluster. To let you track which objects are downloaded, relationships take up approximately 100 bytes per object. To free this storage, you can delete relationships that you no longer need.
+To let you monitor the completion status of a job, start new jobs for a relationship after the initial job finishes, and delete the relationship (when you no longer need the S3-folder-Qumulo-directory pair), the Shift-From relationship remains on the Qumulo cluster. To avoid redownloading objects that a previous copy job downloaded, relationships take up approximately 100 bytes per object. To free this storage, you can delete relationships that you no longer need.
 
 If you repeatedly download from the same S3 folder, you can speed up the download process (and skip already downloaded files) by using the same relationship.
 
@@ -79,7 +79,7 @@ The following example shows how you can create a relationship between the direct
 qq replication_create_object_relationship --local-directory-path /my-dir/ --direction COPY_FROM_OBJECT --object-folder /my-folder/ --bucket my-bucket --region us-west-2 --access-key-id AKIAIOSFODNN7EXAMPLE --secret-access-key wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
 ```
 
-The CLI returns JSON output, for example:
+The CLI returns the details of the relationship in JSON format, for example:
 
 ```Json
 {
@@ -109,7 +109,7 @@ The CLI returns JSON output, for example:
 
 * To view the status of all relationships, use the `replication_list_object_relationship_statuses` command.
 
-  The CLI returns JSON output, for example:
+  The CLI returns the details of all relationships in JSON format, for example:
 
   ```Json
   [
@@ -148,7 +148,9 @@ The CLI returns JSON output, for example:
   ]
   ```
 
-  The `state` field indicates a `REPLICATION_RUNNING` status and `current_job` shows ongoing progress. When Qumulo Core copies files from S3, details for the most recent completed job become available in the `last_job` field, the `state` field changes to `REPLICATION_NOT_RUNNING` and the `last_job` field reverts to `null`.
+  The `state` field indicates a `REPLICATION_RUNNING` status and `current_job` shows ongoing progress. When Qumulo Core copies files from S3, details for the most recent completed job become available in the `last_job` field, the `state` field changes to `REPLICATION_NOT_RUNNING` and the `current_job` field reverts to `null`.
+
+  **Note:** If you already ran a job for a relationship, it is possible for both the `current_job` and `last_job` fields to be non-null while you run a new job.
 
 ### Stopping a Copy Job in Progress
 To stop a copy job already in progress, use the `replication_abord_object_relationship` command followed by the `--id` and the Shift relationship ID.
@@ -167,7 +169,7 @@ This command removes the copy job's record, leaving locally stored objects uncha
 
 
 ## Troubleshooting Copy Job Issues
-Any fatal errors that occur during a copy job cause the job to fail, leaving a partially copied set of files in the directory on your Qumulo cluster.  However, to let you review the Shift relationship status any any failure messages, the Shift relationship continues to exist. You can start a new job to complete the copying of objects from the S3 bucket&#8212;any successfully transferred files from the previous job aren't retransferred to your Qumulo cluster.
+Any fatal errors that occur during a copy job cause the job to fail, leaving a partially copied set of files in the directory on your Qumulo cluster.  However, to let you review the Shift relationship status any failure messages, the Shift relationship continues to exist. You can start a new job to complete the copying of objects from the S3 bucket&#8212;any successfully transferred files from the previous job aren't retransferred to your Qumulo cluster.
 
 Whenever Qumulo Core doesn't complete an operation successfully and returns an error from the API or CLI, the `error` field within the `last_job` field (that the `replication_list_object_relationship_statuses` command returns) contains a detailed failure message. For more troubleshooting details, see `qumulo-replication.log` on your Qumulo cluster.
 
@@ -178,7 +180,7 @@ We recommend the following best practices for working with Qumulo Shift-From for
 * **VPC Endpoints:** For best performance when using a Qumulo cluster in AWS, configure a [VPC endpoint](https://docs.aws.amazon.com/vpc/latest/privatelink/vpc-endpoints.html) to S3. For on-premises Qumulo clusters, we recommend [AWS Direct Connect](https://docs.aws.amazon.com/whitepapers/latest/aws-vpc-connectivity-options/aws-direct-connect.html) or another high-bandwidth, low-latency connection to S3.
 * **Repeated Synchronization:** If you need to repeatedly synchronize an S3 folder with a Qumulo directory, we recommend reusing the same relationship. This lets you avoid repeated downloading of unchanged objects that already exist locally.
 * **Completed Jobs:** If you don't plan to use a Shift relationship to download updates from S3, delete the relationship to free up any storage associated with it.
-* **Concurrent Replication Relationships:** To increase parallelism, especially across distinct datasets, use concurrent replication relationships from S3. To avoid having a large number of concurrent operations impact client I/O to the Qumulo cluster, limit the number of concurrent replication relationships. While there is no hard limit, we don't recommend creating more than 100 concurrent replication relationships on a cluster (including object replication relationships and Qumulo source replication relationships).
+* **Concurrent Replication Relationships:** To increase parallelism, especially across distinct datasets, use concurrent replication relationships from S3. To avoid having a large number of concurrent operations impact client I/O to the Qumulo cluster, limit the number of concurrent replication relationships. While there is no hard limit, we don't recommend creating more than 100 concurrent replication relationships on a cluster (including both Shift and Qumulo source replication relationships).
 
 
 ## Restrictions
