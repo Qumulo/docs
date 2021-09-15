@@ -25,6 +25,37 @@ This guide explains how you can use Qumulo Shift-From to copy objects from a fol
 
 The guide describes how a Shift-From relationship works and includes information about the prerequisites, IAM permissions, and CLI commands that you can use to copy files and manage Shift relationships.
 
+## Prerequisites
+* A Qumulo cluster with:
+
+  * Qumulo Core 4.2.3 (or higher)
+
+  * HTTPS connectivity to `s3.<region>.amazonaws.com` though one of the following means:
+
+    * Public Internet
+
+    * [VPC endpoint](https://docs.aws.amazon.com/vpc/latest/privatelink/vpc-endpoints.html)
+
+    * [AWS Direct Connect](https://docs.aws.amazon.com/whitepapers/latest/aws-vpc-connectivity-options/aws-direct-connect.html)
+    
+    For more information, see [AWS IP address ranges](https://docs.aws.amazon.com/general/latest/gr/aws-ip-ranges.html) in the AWS General Reference.
+
+* Membership in a Qumulo role with the following privileges:
+
+  * `PRIVILEGE_REPLICATION_OBJECT_WRITE`
+
+  * `PRIVILEGE_REPLICATION_OBJECT_READ`
+
+* An existing bucket with contents in Amazon S3
+
+* AWS credentials (access key ID and secret access key) with the following permissions:
+
+  * `s3:ListObject`
+
+  * `s3:GetObject`
+
+  For more information, see [Understanding and getting your AWS credentials](https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html) in the AWS General Reference
+
 ## How Shift-From Relationships Work
 Qumulo Core performs the following steps when it creates a Shift-From relationship.
 
@@ -76,7 +107,14 @@ To copy files, use the `replication_create_object_relationship` command and spec
 The following example shows how you can create a relationship between the directory `/my-dir/` on a Qumulo cluster and the S3 bucket `my-bucket` and folder `/my-folder/` in the `us-west-2` AWS region. The secret access key is associated with the access key ID.
 
 ```Bash
-qq replication_create_object_relationship --local-directory-path /my-dir/ --direction COPY_FROM_OBJECT --object-folder /my-folder/ --bucket my-bucket --region us-west-2 --access-key-id AKIAIOSFODNN7EXAMPLE --secret-access-key wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+qq replication_create_object_relationship \
+  --local-directory-path /my-dir/ \
+  --direction COPY_FROM_OBJECT \
+  --object-folder /my-folder/ \
+  --bucket my-bucket \
+  --region us-west-2 \
+  --access-key-id AKIAIOSFODNN7EXAMPLE \
+  --secret-access-key wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
 ```
 
 The CLI returns the details of the relationship in JSON format, for example:
@@ -192,7 +230,7 @@ We recommend the following best practices for working with Qumulo Shift-From for
 * **Disallowed Amazon S3 Paths in Qumulo Clusters:** Certain allowed Amazon S3 paths can't be copied to Qumulo clusters and cause a copy job to fail. Disallowed paths contain:
   * A trailing slash (`/`) character (with non-zero object content length)
   * Consecutive slash (`/`) characters
-  * Consecutive period (`.`) characters
+  * Single and double period (`.`, `..`) characters
   * The path component `.snapshot`
 * **Disallowed Amazon S3 Path Configurations:** Because of conflicting type requirements, Qumulo Core can't recreate certain allowed Amazon S3 path configurations on Qumulo clusters. For example, if an S3 bucket contains objects `a/b/c` and `a/b`, then path `a/b` must be both a file and directory on a Qumulo cluster. Because this isn't possible, this configuration causes a copy job to fail.
 * **Directories in Multiple Relationships:** A directory on a Qumulo cluster for one Shift relationship can't overlap with a directory used for another Shift relationship, or with a directory that acts as a target for a Qumulo-to-Qumulo replication relationship. This causes the relationship creation to fail.
