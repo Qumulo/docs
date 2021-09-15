@@ -25,6 +25,37 @@ This guide explains how you can use Qumulo Shift-From to copy objects from a fol
 
 The guide describes how a Shift-From relationship works and includes information about the prerequisites, IAM permissions, and CLI commands that you can use to copy files and manage Shift relationships.
 
+## Prerequisites
+* A Qumulo cluster with:
+
+  * Qumulo Core 4.2.3 (or higher)
+
+  * HTTPS connectivity to `s3.<region>.amazonaws.com` though one of the following means:
+
+    * Public Internet
+
+    * [VPC endpoint](https://docs.aws.amazon.com/vpc/latest/privatelink/vpc-endpoints.html)
+
+    * [AWS Direct Connect](https://docs.aws.amazon.com/whitepapers/latest/aws-vpc-connectivity-options/aws-direct-connect.html)
+    
+    For more information, see [AWS IP address ranges](https://docs.aws.amazon.com/general/latest/gr/aws-ip-ranges.html) in the AWS General Reference.
+
+* Membership in a Qumulo role with the following privileges:
+
+  * `PRIVILEGE_REPLICATION_OBJECT_WRITE`
+
+  * `PRIVILEGE_REPLICATION_OBJECT_READ`
+
+* An existing bucket with contents in Amazon S3
+
+* AWS credentials (access key ID and secret access key) with the following permissions:
+
+  * `s3:ListObject`
+
+  * `s3:GetObject`
+
+  For more information, see [Understanding and getting your AWS credentials](https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html) in the AWS General Reference
+
 ## How Shift-From Relationships Work
 Qumulo Core performs the following steps when it creates a Shift-From relationship.
 
