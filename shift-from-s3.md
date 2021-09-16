@@ -50,7 +50,7 @@ The guide describes how a Shift-From relationship works and includes information
 
 * AWS credentials (access key ID and secret access key) with the following permissions:
 
-  * `s3:ListObject`
+  * `s3:ListBucket`
 
   * `s3:GetObject`
 
