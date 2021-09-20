@@ -217,7 +217,7 @@ To perform a clean installation of Qumulo Core on your node, you must create a Q
 
 1. Insert your USB drive and then find its disk label by using the `diskutil list` command. In the following example, the USB drive's device label is `disk2`.
 
-   ```bash
+   ```
    /dev/disk2 (external, physical):
       #:                       TYPE NAME                    SIZE       IDENTIFIER
       0:             Windows_FAT_32 MY_USB_DRIVE            *32.0 GB    disk2
@@ -231,7 +231,7 @@ To perform a clean installation of Qumulo Core on your node, you must create a Q
 
 1. To write the Qumulo Core USB installer image to your USB drive, specify the path to your image file and the USB drive's device label, for example:
 
-   ```bash
+   ```
    dd if=/path-to-image-file/ of=/dev/rdisk2 bs=2m
    ```
 
@@ -275,7 +275,7 @@ The Field Verification Tool (FVT) checks your node, prepares it for Qumulo Core,
 
 1. When the node powers on and begins to boot, on the **Supermicro** screen, press **F11**. The following message appears:
 
-   ```bash
+   ```
    DXE--BIOS PCI Bus Enumeration
    Invoking Boot Menu
    ```
@@ -284,7 +284,7 @@ The Field Verification Tool (FVT) checks your node, prepares it for Qumulo Core,
 
    The FVT starts automatically and the following message appears.
 
-   ```bash
+   ```
    RELEASE: Qumulo Core X.X.X
 
    Please choose from the following options:
@@ -297,7 +297,7 @@ The Field Verification Tool (FVT) checks your node, prepares it for Qumulo Core,
 
    The following message appears.
 
-   ```bash
+   ```
    You are running a FACTORY RESET. This will wipe all data on BOTH the boot drive AND the data drives.
    This operation is going to DESTROY ALL DATA on the cluster, in order to proceed you must type "DESTROY ALL DATA" ("no" cancels):
    ```
@@ -306,13 +306,13 @@ The Field Verification Tool (FVT) checks your node, prepares it for Qumulo Core,
 
    The following message appears.
 
-   ```bash
+   ```
    Running FVT. Please wait...
    ```
 
 1. When the FVT finishes, the following message appears.
 
-   ```bash
+   ```
    FVT passed!
 
    Wiping boot drive.
@@ -332,7 +332,7 @@ FVT fail cases divide into *fixable* and *non-fixable* issues.
 ##### Fixable Issues
 The following is an example of a fixable issue. To let FVT try fix the issue, enter `1`.
 
-```bash
+```
 FVT failed!
 
 The following issues were detected:
@@ -353,7 +353,7 @@ Depending on your node hardware and installation scenario, FVT might be able to 
 ##### Non-Fixable Issues
 The following is an example of a non-fixable issue. To fix the issue, contact the [Qumulo Care Team](https://care.qumulo.com/hc/en-us/articles/115008409408-Contact-Qumulo-Care-).
 
-```bash
+```
 FVT failed!
 
 The following issues were detected:
@@ -376,7 +376,7 @@ When you replace a component of your node (such as the motherboard or an NIC car
 
    The following message appears.
 
-   ```bash
+   ```
    Please choose from the following options:
    [1] Boot drive reset (DESTROYS BOOT DRIVE CONTENTS)
    [2] Perform automatic repair after part replacement (non-destructive)
@@ -388,7 +388,7 @@ When you replace a component of your node (such as the motherboard or an NIC car
 
    The part replacement procedure runs and the following message appears.
 
-   ```bash
+   ```
    Running FVT. Please wait...
    100%|▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮| 13/13 [00:26<00:00, 2.01s/check]
    FVT passed!
