@@ -59,7 +59,7 @@ The guide describes how a Shift-From relationship works and includes information
   For more information, see [Understanding and getting your AWS credentials](https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html) in the AWS General Reference
   
 ### Example IAM Policy
-In the following example, the IAM policy gives permission to read from and write to a the `my-folder` folder in the `my-bucket`. This policy can give users the minimal set of permissions required to run Shift-From and Shift-To Jobs.
+In the following example, the IAM policy gives permission to read from and write to the `my-folder` folder in the `my-bucket`. This policy can give users the minimal set of permissions required to run Shift-From and Shift-To Jobs.
 
 ```json
 {
