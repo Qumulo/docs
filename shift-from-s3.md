@@ -138,7 +138,7 @@ To copy files, use the `replication_create_object_relationship` command and spec
 
 The following example shows how you can create a relationship between the directory `/my-dir/` on a Qumulo cluster and the S3 bucket `my-bucket` and folder `/my-folder/` in the `us-west-2` AWS region. The secret access key is associated with the access key ID.
 
-```Bash
+```bash
 qq replication_create_object_relationship \
   --local-directory-path /my-dir/ \
   --direction COPY_FROM_OBJECT \
@@ -151,7 +151,7 @@ qq replication_create_object_relationship \
 
 The CLI returns the details of the relationship in JSON format, for example:
 
-```Json
+```json
 {
   "access_key_id": "ABC",
   "bucket": "my-bucket",
@@ -171,7 +171,7 @@ The CLI returns the details of the relationship in JSON format, for example:
 
 * To view configuration details for a specific relationship, use the `replication_get_object_relationship` command followed by the `--id` and the Shift relationship ID (GUID), for example:
 
-   ```Bash
+   ```bash
    qq replication_get_object_relationship --id 1c23b4ed-5c67-8f90-1e23-a4f5f6ceff78
    ```
 
@@ -181,7 +181,7 @@ The CLI returns the details of the relationship in JSON format, for example:
 
   The CLI returns the details of all relationships in JSON format, for example:
 
-  ```Json
+  ```json
   [
     {
       "direction": "COPY_FROM_OBJECT",
