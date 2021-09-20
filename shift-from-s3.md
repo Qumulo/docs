@@ -50,11 +50,43 @@ The guide describes how a Shift-From relationship works and includes information
 
 * AWS credentials (access key ID and secret access key) with the following permissions:
 
-  * `s3:ListObject`
-
   * `s3:GetObject`
 
+  * `s3:ListBucket`
+
+  * `s3:PutObject`
+
   For more information, see [Understanding and getting your AWS credentials](https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html) in the AWS General Reference
+  
+### Example IAM Policy
+In the following example, the IAM policy gives permission to read from and write to the `my-folder` folder in the `my-bucket`. This policy can give users the minimal set of permissions required to run Shift-From and Shift-To Jobs.
+
+```json
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Action": "s3:ListBucket",
+      "Effect": "Allow",
+      "Resource": "arn:aws:s3:::my-bucket",
+      "Condition": {
+        "StringLike": { 
+          "s3:prefix": "my-folder/*" 
+        } 
+      }
+    },
+    {
+      "Action": [
+        "s3:GetObject", 
+        "s3:PutObject"
+      ],
+      "Effect": "Allow",
+      "Resource": "arn:aws:s3:::my-bucket/my-folder/*"
+    }
+  ]
+}
+```
+
 
 ## How Shift-From Relationships Work
 Qumulo Core performs the following steps when it creates a Shift-From relationship.
@@ -106,7 +138,7 @@ To copy files, use the `replication_create_object_relationship` command and spec
 
 The following example shows how you can create a relationship between the directory `/my-dir/` on a Qumulo cluster and the S3 bucket `my-bucket` and folder `/my-folder/` in the `us-west-2` AWS region. The secret access key is associated with the access key ID.
 
-```Bash
+```bash
 qq replication_create_object_relationship \
   --local-directory-path /my-dir/ \
   --direction COPY_FROM_OBJECT \
@@ -119,7 +151,7 @@ qq replication_create_object_relationship \
 
 The CLI returns the details of the relationship in JSON format, for example:
 
-```Json
+```json
 {
   "access_key_id": "ABC",
   "bucket": "my-bucket",
@@ -139,7 +171,7 @@ The CLI returns the details of the relationship in JSON format, for example:
 
 * To view configuration details for a specific relationship, use the `replication_get_object_relationship` command followed by the `--id` and the Shift relationship ID (GUID), for example:
 
-   ```Bash
+   ```bash
    qq replication_get_object_relationship --id 1c23b4ed-5c67-8f90-1e23-a4f5f6ceff78
    ```
 
@@ -149,7 +181,7 @@ The CLI returns the details of the relationship in JSON format, for example:
 
   The CLI returns the details of all relationships in JSON format, for example:
 
-  ```Json
+  ```json
   [
     {
       "direction": "COPY_FROM_OBJECT",
