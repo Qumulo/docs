@@ -66,12 +66,7 @@ In the following example, the IAM policy gives permission to read from and write
     {
       "Action": "s3:ListBucket",
       "Effect": "Allow",
-      "Resource": "arn:aws:s3:::my-bucket",
-      "Condition": {
-        "StringLike": { 
-          "s3:prefix": "my-folder/*" 
-        } 
-      }
+      "Resource": "arn:aws:s3:::my-bucket"
     },
     {
       "Action": [
