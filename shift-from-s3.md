@@ -54,12 +54,10 @@ The guide describes how a Shift-From relationship works and includes information
 
   * `s3:ListBucket`
 
-  * `s3:PutObject`
-
   For more information, see [Understanding and getting your AWS credentials](https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html) in the AWS General Reference
   
 ### Example IAM Policy
-In the following example, the IAM policy gives permission to read from and write to the `my-folder` folder in the `my-bucket`. This policy can give users the minimal set of permissions required to run Shift-From and Shift-To Jobs.
+In the following example, the IAM policy gives permission to read from and write to the `my-folder` folder in the `my-bucket`. This policy can give users the minimal set of permissions required to run Shift-From jobs.
 
 ```json
 {
@@ -77,8 +75,7 @@ In the following example, the IAM policy gives permission to read from and write
     },
     {
       "Action": [
-        "s3:GetObject", 
-        "s3:PutObject"
+        "s3:GetObject"
       ],
       "Effect": "Allow",
       "Resource": "arn:aws:s3:::my-bucket/my-folder/*"
