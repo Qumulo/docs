@@ -115,10 +115,10 @@ If you repeatedly download from the same S3 folder, you can speed up the downloa
 A new relationship for subsequent downloads doesn't share any tracking information with previous relationships associated with a directory and recopy data that might be already downloaded.
 
 
-## Using the Qumulo CLI to Copy Files and Manage Relationships
+## Using the Qumulo WebUI and CLI to Copy Files and Manage Relationships
 This section describes how you can use the Qumulo CLI to copy files from Amazon S3 to a Qumulo cluster, review Shift relationship details, abort a running copy job, repeat a completed copy job, and delete a relationship.
 
-### Copying Files from Amazon S3 Using the Qumulo CLI
+### Copying Files from Amazon S3
 To copy files, use the `replication_create_object_relationship` command and specify the following:
 * Local directory path on Qumulo cluster
 * Copy direction (copy-from)
@@ -157,6 +157,22 @@ The CLI returns the details of the relationship in JSON format, for example:
   "direction": "COPY_FROM_OBJECT",
 }
 ```
+
+With Qumulo Core 4.2.5 and higher, you can create and manage Shift-from copy using the Web UI. To do so, navigate to `Cluster` -> `Copy to/from S3` and then click `Create Copy`.
+
+![title](administrator-guide/images/shift-from-create-copy1.png)
+
+On the next screen select `Remote` to `Local` direction and then input path, region, folder, bucket, and key parameters like shown on the screen below. 
+
+![title](administrator-guide/images/shift-from-create-copy2.png)
+
+Select `Advanced S3 Server Settings` for additional S3 server configuration.
+
+![title](administrator-guide/images/shift-from-create-copy3.png)
+
+In order to proceed next click `Create Copy` on the bottom of the screen. A confirmation dialog will appear to highlight details of the copy relationship. If everything is correct, click `Yes, Create` to confirm.
+
+![title](administrator-guide/images/shift-from-create-copy4.png)
 
 ### Viewing Configuration Details and Status of Shift Relationships
 * To view configuration details for all Shift relationships, use the `replication_list_object_relationships` command.
