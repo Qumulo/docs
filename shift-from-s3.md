@@ -177,6 +177,10 @@ In order to proceed next click `Create Copy` on the bottom of the screen. A conf
 ### Viewing Configuration Details and Status of Shift Relationships
 * To view configuration details for all Shift relationships, use the `replication_list_object_relationships` command.
 
+* In the Web UI, all Shift relationships can be viewed by navigating to `Cluster` -> `Copy to/from S3`.
+
+![title](administrator-guide/images/administrator-shift-from-list-relationships.png)
+
 * To view configuration details for a specific relationship, use the `replication_get_object_relationship` command followed by the `--id` and the Shift relationship ID (GUID), for example:
 
    ```bash
@@ -230,13 +234,35 @@ In order to proceed next click `Create Copy` on the bottom of the screen. A conf
 
   **Note:** If you already ran a job for a relationship, it is possible for both the `current_job` and `last_job` fields to be non-null while you run a new job.
 
+* In the Web UI, each relationship has an action menu where “View Details” can be clicked to show specifics about a particular relationship.
+
+![title](administrator-guide/images/administrator-shift-from-view-details1.png)
+
+![title](administrator-guide/images/administrator-shift-from-view-details2.png)
+
 ### Stopping a Copy Job in Progress
-To stop a copy job already in progress, use the `replication_abord_object_relationship` command followed by the `--id` and the Shift relationship ID.
+To stop a copy job already in progress, use the `replication_abort_object_relationship` command followed by the `--id` and the Shift relationship ID.
+
+In the Web UI, select `Abort` in the action menu for an in-progress copy relationship.
+
+![title](administrator-guide/images/administrator-shift-from-abort-copy1.png)
+
+Click `Yes, Abort Copy from` to confirm.
+
+![title](administrator-guide/images/administrator-shift-from-abort-copy2.png)
 
 ### Repeating a Completed Copy Job
 To repeat a completed copy job, use the `replication_start_object_relationship` command followed by the `--id` and the Shift relationship ID.
 
 This command begins a new job for the existing relationship and downloads any content that changed in the S3 bucket or on the Qumulo cluster since the time the previous job ran.
+
+In the Web UI, select `Copy Again` in the action menu for a particular copy relationship.
+
+![title](administrator-guide/images/administrator-shift-from-copy-again1.png)
+
+Click `Yes, Copy Again` to confirm.
+
+![title](administrator-guide/images/administrator-shift-from-copy-again2.png)
 
 ### Deleting a Shift Relationship
 After your copy job is complete, you can delete your Shift relationship. To do this, run the `replication_delete_object_relationship` command followed by the `--id` and the Shift relationship ID.
@@ -245,6 +271,13 @@ After your copy job is complete, you can delete your Shift relationship. To do t
 
 This command removes the copy job's record, leaving locally stored objects unchanged. Any storage that the relationship used to track downloaded objects becomes available when you delete the relationship.
 
+In the Web UI, select `Delete` in the action menu for a particular copy relationship.
+
+![title](administrator-guide/images/administrator-shift-from-delete1.png)
+
+Click `Yes, Delete Copy from` to confirm.
+
+![title](administrator-guide/images/administrator-shift-from-delete2.png)
 
 ## Troubleshooting Copy Job Issues
 Any fatal errors that occur during a copy job cause the job to fail, leaving a partially copied set of files in the directory on your Qumulo cluster.  However, to let you review the Shift relationship status any failure messages, the Shift relationship continues to exist. You can start a new job to complete the copying of objects from the S3 bucket&#8212;any successfully transferred files from the previous job aren't retransferred to your Qumulo cluster.
