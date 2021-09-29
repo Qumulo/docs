@@ -129,11 +129,11 @@ On the next screen select `Remote` to `Local` direction and then fill in fields 
 
 `Local Directory Path`: the path of the destination directory on the Qumulo cluster
 
-`Remote Region`: the AWS region for your Amazon S3 bucket
+`Remote Bucket Name`: the name of the existing Amazon S3 bucket
 
-`Remote Folder`: the name of the existing folder in the target bucket on Amazon S3
+`Remote Folder`: the name of the existing folder in the Amazon S3 bucket
 
-`Remote Bucket Name`: the name of the existing Amazon S3 bucket 
+`Remote Region`: the AWS region for the Amazon S3 bucket
 
 `Remote Access Key ID and Secret Access Key`: the key ID and access key for Amazon S3
 
