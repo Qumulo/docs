@@ -119,7 +119,7 @@ This section describes how you can use the Qumulo WebUI to copy files from Amazo
 
 ### Copying Files from Amazon S3
 
-With Qumulo Core 4.2.5 and higher, you can create and manage Shift-from copy using the Web UI. To do so, navigate to `Cluster` -> `Copy to/from S3` and then click `Create Copy`.
+With Qumulo Core 4.2.5 and higher, you can create and manage Shift-from relationships using the Web UI. To create a relationship, navigate to `Cluster` -> `Copy to/from S3` and then click `Create Copy`.
 
 ![title](administrator-guide/images/administrator-shift-from-create-copy1.png)
 
@@ -135,7 +135,7 @@ On the next screen select `Remote` to `Local` direction and then fill in fields 
 
 `Remote Bucket Name`: the name of the existing Amazon S3 bucket 
 
-`Remote Access Key ID and Secret Access`: the key ID and access key for Amazon S3
+`Remote Access Key ID and Secret Access Key`: the key ID and access key for Amazon S3
 
 NOTE: The `Local Directory Path` and `Remote Folder` fields will default to "/" if left blank.
 
