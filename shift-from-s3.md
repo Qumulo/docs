@@ -123,25 +123,37 @@ With Qumulo Core 4.2.5 and higher, you can create and manage Shift-from copy usi
 
 ![title](administrator-guide/images/administrator-shift-from-create-copy1.png)
 
-On the next screen select `Remote` to `Local` direction and then input path, region, folder, bucket, and key parameters like shown on the screen below. 
+On the next screen select `Remote` to `Local` direction and then fill in fields under the `Local` and `Remote` sections. 
 
 ![title](administrator-guide/images/administrator-shift-from-create-copy2.png)
 
-Select `Advanced S3 Server Settings` for additional S3 server configuration.
+`Local Directory Path`: the path of the destination directory on the Qumulo cluster
+
+`Remote Region`: the AWS region for your Amazon S3 bucket
+
+`Remote Folder`: the name of the existing folder in the target bucket on Amazon S3
+
+`Remote Bucket Name`: the name of the existing Amazon S3 bucket 
+
+`Remote Access Key ID and Secret Access`: the key ID and access key for Amazon S3
+
+NOTE: The `Local Directory Path` and `Remote Folder` fields will default to "/" if left blank.
+
+Optionally select `Advanced S3 Server Settings` for additional S3 server configuration.
 
 ![title](administrator-guide/images/administrator-shift-from-create-copy3.png)
 
-In order to proceed next click `Create Copy` on the bottom of the screen. A confirmation dialog will appear to highlight details of the copy relationship. If everything is correct, click `Yes, Create` to confirm.
+Click `Create Copy` on the bottom of the screen. A confirmation dialog will appear to highlight details of the copy relationship. If everything is correct, click `Yes, Create` to confirm.
 
 ![title](administrator-guide/images/administrator-shift-from-create-copy4.png)
 
 ### Viewing Configuration Details and Status of Shift Relationships
 
-* All Shift relationships can be viewed by navigating to `Cluster` -> `Copy to/from S3`.
+All Shift relationships can be viewed by navigating to `Cluster` -> `Copy to/from S3`.
 
 ![title](administrator-guide/images/administrator-shift-from-list-relationships.png)
 
-* Each relationship has an action menu where `View Details` can be clicked to show specifics about a particular relationship.
+Each relationship has an action menu where `View Details` can be clicked to show specifics about a particular relationship.
 
 ![title](administrator-guide/images/administrator-shift-from-view-details1.png)
 
@@ -169,7 +181,7 @@ Click `Yes, Copy Again` to confirm.
 
 ### Deleting a Shift Relationship
 
-In the Web UI, select `Delete` in the action menu for a particular copy relationship.
+Select `Delete` in the action menu for a particular copy relationship.
 
 ![title](administrator-guide/images/administrator-shift-from-delete1.png)
 
