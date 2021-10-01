@@ -165,7 +165,7 @@ In the Web UI, select `Abort` in the action menu for an in-progress copy relatio
 
 ![title](administrator-guide/images/administrator-shift-from-abort-copy1.png)
 
-Click `Yes, Abort Copy from` to confirm.
+Click `Yes, Abort` to confirm.
 
 ![title](administrator-guide/images/administrator-shift-from-abort-copy2.png)
 
@@ -185,7 +185,7 @@ Select `Delete` in the action menu for a particular copy relationship.
 
 ![title](administrator-guide/images/administrator-shift-from-delete1.png)
 
-Click `Yes, Delete Copy from` to confirm.
+Click `Yes, Delete` to confirm.
 
 ![title](administrator-guide/images/administrator-shift-from-delete2.png)
 
