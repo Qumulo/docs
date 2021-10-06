@@ -114,83 +114,91 @@ If you repeatedly download from the same S3 folder, you can speed up the downloa
 
 A new relationship for subsequent downloads doesn't share any tracking information with previous relationships associated with a directory and recopy data that might be already downloaded.
 
-## Using the Qumulo WebUI to Copy Files and Manage Relationships
-This section describes how you can use the Qumulo WebUI to copy files from Amazon S3 to a Qumulo cluster, review Shift relationship details, abort a running copy job, repeat a completed copy job, and delete a relationship.
 
-### Copying Files from Amazon S3
+## Using the Qumulo Web UI to Copy Files and Manage Relationships
+This section describes how you can use the Qumulo Web UI 4.2.5 (and higher) to copy files from Amazon S3 to a Qumulo cluster, review Shift relationship details, stop a running copy job, repeat a completed copy job, and delete a relationship.
 
-With Qumulo Core 4.2.5 and higher, you can create and manage Shift-from relationships using the Web UI. To create a relationship, navigate to `Cluster` -> `Copy to/from S3` and then click `Create Copy`.
+### To Copy Files from Amazon S3
+1. Log in to Qumulo Core.
+1. Click **Cluster > Copy to/from S3**.
+1. On the **Copy to/from S3** page, click **Create Copy**.
+1. On the **Create Copy to/from S3** page, click **Local ⇦ Remote** and then enter the following:
 
-![title](administrator-guide/images/administrator-shift-from-create-copy1.png)
+   a. The **Directory Path** on your cluster (`/` by default)
 
-On the next screen select `Remote` to `Local` direction and then fill in fields under the `Local` and `Remote` sections. 
+   b. The S3 **Bucket Name**
 
-![title](administrator-guide/images/administrator-shift-from-create-copy2.png)
+   c. The **Folder** in your S3 bucket
 
-`Local Directory Path`: the path of the destination directory on the Qumulo cluster
+   d. The **Region** for your S3 bucket
 
-`Remote Bucket Name`: the name of the existing Amazon S3 bucket
+   e. Your AWS **Region** (`/` by default)
 
-`Remote Folder`: the name of the existing folder in the Amazon S3 bucket
+   f. Your AWS **Access Key ID** and **Secret Access Key**.
 
-`Remote Region`: the AWS region for the Amazon S3 bucket
+1. (Optional) For additional configuration, click **Advanced S3 Server Settings**.
+1. Click **Create Copy**.
+1. In the **Create Copy from S3?** dialog box, review the Shift relationship and then click **Yes, Create**.
 
-`Remote Access Key ID and Secret Access Key`: the key ID and access key for Amazon S3
+   The copy job begins.   
 
-NOTE: The `Local Directory Path` and `Remote Folder` fields will default to "/" if left blank.
+### To View Configuration Details and Status of Shift Relationships
 
-Optionally select `Advanced S3 Server Settings` for additional S3 server configuration.
+1. Log in to Qumulo Core.
+1. Click **Cluster > Copy to/from S3**.
 
-![title](administrator-guide/images/administrator-shift-from-create-copy3.png)
+   The **Copy to/from S3** page lists all existing Shift relationships.
 
-Click `Create Copy` on the bottom of the screen. A confirmation dialog will appear to highlight details of the copy relationship. If everything is correct, click `Yes, Create` to confirm.
+1. To get more information about a specific Shift relationship, click **&vellip; > View Details**.
 
-![title](administrator-guide/images/administrator-shift-from-create-copy4.png)
+   ![View Details Menu](administrator-guide/images/view-details-menu.png)
 
-### Viewing Configuration Details and Status of Shift Relationships
+   The **Copy to/from S3 Details** page displays the following information:
 
-All Shift relationships can be viewed by navigating to `Cluster` -> `Copy to/from S3`.
+   * **Throughput:** average
+   * **Run Time**
+   * **Data:** total, transferred, and unchanged
+   * **Files:** total, transferred, and unchanged
 
-![title](administrator-guide/images/administrator-shift-from-list-relationships.png)
+### To Stop a Copy Job in Progress
 
-Each relationship has an action menu where `View Details` can be clicked to show specifics about a particular relationship.
+1. Log in to Qumulo Core.
+1. Click **Cluster > Copy to/from S3**.
+1. To stop a copy job for a specific relationship, click **&vellip; > Abort**.
 
-![title](administrator-guide/images/administrator-shift-from-view-details1.png)
+   ![Abort Menu](administrator-guide/images/abort-menu.png)
 
-![title](administrator-guide/images/administrator-shift-from-view-details2.png)
+1. In the **Abort copy from?** dialog box, review the Shift relationship and then click **Yes, Abort**.
 
-### Stopping a Copy Job in Progress
+   The copy job stops.
 
-In the Web UI, select `Abort` in the action menu for an in-progress copy relationship.
+### To Repeat a Completed Copy Job
 
-![title](administrator-guide/images/administrator-shift-from-abort-copy1.png)
+1. Log in to Qumulo Core.
+1. Click **Cluster > Copy to/from S3**.
+1. To stop a copy job for a specific relationship, click **&vellip; > Copy Again**.
 
-Click `Yes, Abort` to confirm.
+   ![Copy Again Menu](administrator-guide/images/view-details-menu.png)
 
-![title](administrator-guide/images/administrator-shift-from-abort-copy2.png)
+1. In the **Copy again?** dialog box, review the Shift relationship and then click **Yes, Copy Again**.
 
-### Repeating a Completed Copy Job
+   The copy job repeats.
 
-Select `Copy Again` in the action menu for a particular copy relationship.
+### To Delete a Shift Relationship
 
-![title](administrator-guide/images/administrator-shift-from-copy-again1.png)
+1. Log in to Qumulo Core.
+1. Click **Cluster > Copy to/from S3**.
+1. To stop a copy job for a specific relationship, click **&vellip; > Delete**.
 
-Click `Yes, Copy Again` to confirm.
+   ![Delete Menu](administrator-guide/images/view-details-menu.png)
 
-![title](administrator-guide/images/administrator-shift-from-copy-again2.png)
+1. In the **Delete copy from?** dialog box, review the Shift relationship and then click **Yes, Delete**.
 
-### Deleting a Shift Relationship
+   The copy job is deleted.
 
-Select `Delete` in the action menu for a particular copy relationship.
-
-![title](administrator-guide/images/administrator-shift-from-delete1.png)
-
-Click `Yes, Delete` to confirm.
-
-![title](administrator-guide/images/administrator-shift-from-delete2.png)
 
 ## Using the Qumulo CLI to Copy Files and Manage Relationships
-This section describes how you can use the Qumulo CLI to copy files from Amazon S3 to a Qumulo cluster, review Shift relationship details, abort a running copy job, repeat a completed copy job, and delete a relationship.
+This section describes how you can use the Qumulo CLI to copy files from Amazon S3 to a Qumulo cluster, review Shift relationship details, stop a running copy job, repeat a completed copy job, and delete a relationship.
 
 ### Copying Files from Amazon S3
 To copy files, use the `replication_create_object_relationship` command and specify the following:
@@ -303,6 +311,7 @@ After your copy job is complete, you can delete your Shift relationship. To do t
 
 This command removes the copy job's record, leaving locally stored objects unchanged. Any storage that the relationship used to track downloaded objects becomes available when you delete the relationship.
 
+
 ## Troubleshooting Copy Job Issues
 Any fatal errors that occur during a copy job cause the job to fail, leaving a partially copied set of files in the directory on your Qumulo cluster.  However, to let you review the Shift relationship status any failure messages, the Shift relationship continues to exist. You can start a new job to complete the copying of objects from the S3 bucket&#8212;any successfully transferred files from the previous job aren't retransferred to your Qumulo cluster.
 
@@ -329,7 +338,9 @@ We recommend the following best practices for working with Qumulo Shift-From for
   * Consecutive slash (`/`) characters
   * Single and double period (`.`, `..`) characters
   * The path component `.snapshot`
-* **Disallowed conflicting types:** When content in the Amazon S3 bucket or the Qumulo directory changes over time, it is possible to have other conflicts related to type mismatches. For example, a conflict occurs when a remote object maps to a local file system directory entry which is not a regular file (e.g. directory or a special file) or which is a regular file with two or more links. In those cases, the Shift-from job fails with an error message providing details about the conflict.
+* **Disallowed Conflicting Types:** When content in an S3 bucket or Qumulo directory changes over time, a conflict related to type mismatches might arise, the Shift-from job fails, and an error message gives details about the conflict. For example, a conflict might occur when a remote object maps to a local file system directory entry which:
+  * Is a regular file with two or more links
+  * Isn't a regular file (for example, a directory or a special file)
 * **Disallowed Amazon S3 Path Configurations:** Because of conflicting type requirements, Qumulo Core can't recreate certain allowed Amazon S3 path configurations on Qumulo clusters. For example, if an S3 bucket contains objects `a/b/c` and `a/b`, then path `a/b` must be both a file and directory on a Qumulo cluster. Because this isn't possible, this configuration causes a copy job to fail.
 * **Directories in Multiple Relationships:** A directory on a Qumulo cluster for one Shift relationship can't overlap with a directory used for another Shift relationship, or with a directory that acts as a target for a Qumulo-to-Qumulo replication relationship. This causes the relationship creation to fail.
 * **Changes to S3 Folder During Copy Job:** Currently, Shift-From assumes that the S3 folder remains unchanged throughout the copy job. Any changes (deleting, archiving, or modifying an object) during the copy job might cause a copy job to fail.
