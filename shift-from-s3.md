@@ -178,7 +178,7 @@ This section describes how you can use the Qumulo Web UI 4.2.5 (and higher) to c
 1. Click **Cluster > Copy to/from S3**.
 1. To stop a copy job for a specific relationship, click **&vellip; > Copy Again**.
 
-   ![Copy Again Menu](administrator-guide/images/view-details-menu.png)
+   ![Copy Again Menu](administrator-guide/images/copy-again-menu.png)
 
 1. In the **Copy again?** dialog box, review the Shift relationship and then click **Yes, Copy Again**.
 
@@ -190,7 +190,7 @@ This section describes how you can use the Qumulo Web UI 4.2.5 (and higher) to c
 1. Click **Cluster > Copy to/from S3**.
 1. To stop a copy job for a specific relationship, click **&vellip; > Delete**.
 
-   ![Delete Menu](administrator-guide/images/view-details-menu.png)
+   ![Delete Menu](administrator-guide/images/delete-menu.png)
 
 1. In the **Delete copy from?** dialog box, review the Shift relationship and then click **Yes, Delete**.
 
