@@ -1,7 +1,7 @@
 ---
 title: Qumulo Documentation
 permalink: index.html
-tags: 
+tags:
   - home_page
 ---
 
@@ -12,6 +12,7 @@ Welcome! This repository is a new kind of Docs as Code documentation for [Qumulo
 * [Qumulo on Azure as a Service Onboarding Guide](azure.md)
 * [Qumulo on Supermicro Getting Started Guide](supermicro.md)
 * [Using Qumulo Shift-From to Copy Objects from Amazon S3](shift-from-s3.md)
+* [Configuring and Using Exports for NFS4](administrator-guide/nfs4-exports.md)
 
 ## Visit the Knowledge Base
 For a deeper dive into Qumulo features and advanced functionality such as cluster administration, visit the [Qumulo Care](https://care.qumulo.com/hc/en-us)  portal. Our portal lets you open a case, read articles and watch videos from our content library, review product release notes, and get involved in the Qumulo community.
