@@ -62,7 +62,7 @@ As described above, Qumulo's implementation of NFS4 distinguishes between naviga
 For example, consider the exports configuration:
 
 | Export Name        | Filesystem Path      |
----------------------------------------------
+|--------------------|----------------------|
 | `/`                | `/`                  |
 | `/admin`           | `/home/admin`        |
 
@@ -71,7 +71,7 @@ Because `/` is a prefix of `/admin`, NFS4 cannot be enabled with this export con
 To ready this configuration for NFS4, you can either delete the export at `/` and rely on NFS4's presentation of exports when mounting `/`, or rename the `/` export to something that does not prefix other exports, like:
 
 | Export Name        | Filesystem Path      |
----------------------------------------------
+|--------------------|----------------------|
 | `/root`            | `/`                  |
 | `/admin`           | `/home/admin`        |
 
