@@ -47,7 +47,7 @@ mount -overs=4.1 cluster.qumulo.com:/read_only /mnt/cluster/read_only
 ```
 The mount will succeed, and at the mount the exports under `/read_only` will be visible; specifically, `/mnt/cluster/read_only` will show "directories" named `files/` and `home/` with the contents of the corresponding directories in the filesystem:
 ```
-/mnt/cluster/read_only
+/mnt/cluster/read_only/
 |--- files/[filesystem contents]
 |--- home/
 |------ admin/files/[filesystem contents]
