@@ -18,7 +18,7 @@ While each cluster's NFS exports configuration is shared between NFS3 and NFS4, 
 As an example, consider a cluster with the following exports configuration:
 
 | Export Name        | Filesystem Path      | Read only? |
-----------------------------------------------------------
+|--------------------|----------------------|------------|
 | `/home`            | `/home`              | No         |
 | `/files`           | `/home/admin/files`  | No         |
 | `/read_only/home`  | `/home`              | Yes        |
