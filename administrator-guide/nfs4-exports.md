@@ -78,3 +78,11 @@ To ready this configuration for NFSv4, you can either delete the export at `/` a
 ## Visibility of IP-Restricted Exports
 
 NFSv4 respects IP restrictions on exports in that only clients with allowed IPs will be able to access the contents of an export. However, clients without access to an export will still be able to see it as a directory when traversing above exports; the restrictions are only applied when attempting to access the contents of the export. In other words, the names of exports are public to all NFSv4 clients, regardless of IP restrictions.
+
+## 32 Bit Sanitizations
+
+### NFSv3
+In NFSv3, specific exports can be configured to return 32 bit sanitized data on a per field basis. Any data larger than 32 bits, in configured fields, is converted into 32 bit data and returned accordingly. For example, file size can be 32 bit sanitized, which results truncating the field to `max_uint32` whenever the attribute is returned by the NFSv3 server.
+
+### NFSv4
+NFSv4 does not support 32 bit sanitizations and will ignore any configured for an export. They have no effect in NFSv4.
