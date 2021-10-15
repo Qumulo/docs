@@ -68,7 +68,10 @@ For example, consider the exports configuration:
 
 Because `/` is a prefix of `/admin`, NFSv4 cannot be enabled with this export configuration. This prevents the possibly confusing situation where the path `/admin` could refer to either the export of `/home/admin`, or an actual filesystem path `/admin`.
 
-To ready this configuration for NFSv4, you can either delete the export at `/` and rely on NFSv4's presentation of exports when mounting `/`, or rename the `/` export to something that does not prefix other exports, like:
+To ready this configuration for NFSv4, you can either:
+- Delete the export at `/` and rely on NFSv4's presentation of exports when mounting `/`
+- Delete the `/admin` export
+- Rename the `/` export to something that does not prefix other exports, like:
 
 | Export Name        | Filesystem Path      |
 |--------------------|----------------------|
@@ -77,7 +80,7 @@ To ready this configuration for NFSv4, you can either delete the export at `/` a
 
 ## Visibility of IP-Restricted Exports
 
-NFSv4 respects IP restrictions on exports in that only clients with allowed IPs will be able to access the contents of an export. However, clients without access to an export will still be able to see it as a directory when traversing above exports; the restrictions are only applied when attempting to access the contents of the export. In other words, the names of exports are public to all NFSv4 clients, regardless of IP restrictions.
+NFSv4 respects IP restrictions on exports in that only clients with allowed IPs will be able to access the contents of an export. However, clients without access to an export will still be able to see it as a directory when traversing above exports; the restrictions are only applied when attempting to access the contents of the export. In other words, the names of exports are public to all NFSv4 clients, regardless of IP restrictions. This behavior cannot be disabled.
 
 ## 32 Bit Sanitizations
 
