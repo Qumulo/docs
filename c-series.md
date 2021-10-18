@@ -1,16 +1,28 @@
 ---
-title: Qumulo on Supermicro C-Series Getting Started Guide
-permalink: c-series.html
+title: Qumulo C-Series Chassis Field Replacement Unit
+permalink: c-series-chassis-field-replacement-unit.html
 tags:
   - chassis
   - chassis_replacement
+  - C-168T
+  - C-432T
+  - 2U_hybrid
+  - 2U
+  - 2U_chassis_replacement
+
 ---
 
-# Heading 1
-Introduction
+# C-Series 2U (C-168T / C-432T)
 
-## Heading 2
-![image description](administrator-guide/images/my-image.png)
+## Requirements 
+1. Qumulo C Series 168T or 432T Hardware
+2. Replacement Chassis on Site
+
+## Replacement Process
+1. Shut down the current node via front power button or by running `sudo shutdown -h now` over an SSH connection. 
+2. With help available, disconnect all rear cabling on the node and pull from the rack, setting the node down on a flat surface. 
+3. Press the large buttons on both sides of the chassis frame to release the lid. The inner components and motherboard should now be exposed. 
+
 
 ### Heading 3
 Blah
