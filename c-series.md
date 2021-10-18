@@ -22,7 +22,7 @@ tags:
 1. Shut down the current node via front power button or by running `sudo shutdown -h now` over an SSH connection. 
 2. With help available, disconnect all rear cabling on the node and pull from the rack, setting the node down on a flat surface. 
 3. Press the large buttons on both sides of the chassis frame to release the lid. The inner components and motherboard should now be exposed. 
-
+![chassis side release buttons] (c-series/button-releases.png)
 
 ### Heading 3
 Blah
