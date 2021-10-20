@@ -1,5 +1,5 @@
 ---
-title: Replacing the Chassis in Qumulo C-Series 2U (C-168T and C-432T) Nodes
+title: Replacing the Chassis of Qumulo C-Series 2U (C-168T and C-432T) Nodes
 permalink: c-series-chassis-replacement.html
 tags:
   - chassis
@@ -11,7 +11,7 @@ tags:
   - 2u_chassis_replacement
 ---
 
-# Replacing the Chassis in Qumulo C-Series 2U (C-168T and C-432T) Nodes
+# Replacing the Chassis of Qumulo C-Series 2U (C-168T and C-432T) Nodes
 This section explains how you can replace the chassis in Qumulo C-Series 2U nodes. 
 
 ## Prerequisites 
