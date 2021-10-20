@@ -80,7 +80,7 @@ Table 1 100G transceivers
 
 There are many vendors selling MMA1B00-C100D - compatible transceivers but we don't have a list of working or known-bad vendors at this point. 
 
-I suggest that if you see a working 3-rd party optics configuration, add it to the table above.
+I suggest that if you see a working 3-rd party optics configuration, add it to the "know to work" table below.
 
 We are planning to incorporate transceiver information from MissionQ in the table above at some point in the future.
 
@@ -96,7 +96,7 @@ Short-range has a max range of 100m, long-range has a max range of 10km. There i
 
 ### Optical Transceivers 
 
-Table 1 25G transceiver
+Table 2 25G transceiver
 
 
 <table>
@@ -149,7 +149,7 @@ If you decide to go with DAC or AOC, it’s recommended to ensure that the AOC o
 
 ### Known to work 
 
-Table 1 100G DACs and AOCs
+Table 3 100G DACs and AOCs
 
 
 <table>
