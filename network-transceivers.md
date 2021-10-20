@@ -80,7 +80,7 @@ Table 1 100G transceivers
 
 There are many vendors selling MMA1B00-C100D - compatible transceivers but we don't have a list of working or known-bad vendors at this point. 
 
-I suggest that if you see a working 3-rd party optics configuration, add it to the "know to work" table below.
+I suggest that if you see a working 3-rd party optics configuration, add it to the appropriate table in this document.
 
 We are planning to incorporate transceiver information from MissionQ in the table above at some point in the future.
 
