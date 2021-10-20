@@ -32,13 +32,13 @@ Before you begin, ensure that you have C-168T or C-432T hardware and the replace
 
    The inner components of the node are exposed.
 
-## Step 2: To Replace the M.2 Boot Drive, NVMe SSD Drives, and HDDs
+## Step 2: To Replace the M.2 Boot Drive, NVMe SSDs, and HDDs
 
-1. Remove the internal M.2 boot drive and then insert it into the replacement chassis Qumulo provided to you.
+1. Remove the internal M.2 boot drive and then transfer it into the replacement chassis Qumulo provided to you.
 
    ![C-Series M.2 Boot Drive](administrator-guide/images/c-series-m2-boot-drive-location.png)
 
-1. Remove the rear NVMe SSD drives and then insert them into the replacement chassis. The following is the mapping for the drives.
+1. Remove the rear NVMe SSDs and then transfer them into the replacement chassis. The following is the mapping for the drives.
 
    <table>
      <tr>
@@ -59,19 +59,21 @@ Before you begin, ensure that you have C-168T or C-432T hardware and the replace
 
 1. Install the replacement chassis in an appropriate location in your server rack.
 
-7. Starting with the top drawer, transfer the HDDs from each tray on the original chassis into their corresponding slots on the replacement chassis. For this portion it may be helpful to reference our C-Series Drive Diagrams page to ensure each drive is being transferred to the appropriate location. In order to remove the HDD drives, gently lift up on the drive tray knob allowing the drive to come forward and unlatch. Once the drive is transferred into the new chassis, gently slide the drive tray knob backwards latching both the knob and drive in place. 
-![HDD Tray Diagram](administrator-guide/images/c-series-2u-hdd-tray.png)
-**NOTE:** Only one drawer should be worked on at a time. To open the HDD drawers use the blue levers on the front of the node. The shelves may deform if a downward force of 2kg or more is applied while opened. 
-8. With all the drives transferred you may now reconnect the rear power and networking cables. 
-9. Power on your new node!
+1. Starting with the top drawer, transfer the HDDs from each tray in the original chassis into a corresponding slot in the replacement chassis. For more information about drive locations, see [C-Series Drive Diagrams](https://care.qumulo.com/hc/en-us/articles/360020198853-Qumulo-C-Series-Drive-Diagrams) in Qumulo Care.
 
-## (Optional) Reconfigure IPMI
-If the current IPMI settings are set statically and not via DHCP, they will need to be reapplied to each node in the cluster. Reference the [IPMI Quick Reference Guide for Qumulo C-Series](https://care.qumulo.com/hc/en-us/articles/360024426314-IPMI-Quick-Reference-Guide-for-Qumulo-C-Series) article for additional details. 
+   **Important:** Work on one drawer at a time. If you apply 2 kg (or more) of downward force to a drawer, it might deform while opened.
 
-## Resolution 
-You should now be able to successfully replace the chassis for Qumulo’s C Series 192T or 432T platform. Please contact Qumulo Care to complete any RMA returns or if you have outstanding questions. 
+   a. To open the HDD drawer, use the blue lever at the front of the node.
 
+   b. To remove an HDD from the original chassis, gently lift up the drive tray knob. This lets the drive move forward and unlatch.
 
+   ![HDD Tray](administrator-guide/images/c-series-2u-hdd-tray.png)
+   
+   c. To insert an HDD into the replacement chassis, gently slide the drive tray knob backwards. This latches the drive and knob in place.
 
+1. Reconnect the power and networking cables to the node.
 
+1. Power on the node.
 
+## Step 3: (Optional) Reconfiguring the Out-of-Band Management (IPMI) Settings
+If the current IPMI settings for your node are configured statically (rather than using DHCP), you must reapply the settings to each node in the cluster. For more information, see [IPMI Quick Reference Guide for Qumulo C-Series](https://care.qumulo.com/hc/en-us/articles/360024426314-IPMI-Quick-Reference-Guide-for-Qumulo-C-Series) in Qumulo Care.
