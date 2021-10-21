@@ -12,6 +12,7 @@ Welcome! This repository is a new kind of Docs as Code documentation for [Qumulo
 * [Qumulo on Azure as a Service Onboarding Guide](azure.md)
 * [Qumulo on Supermicro Getting Started Guide](supermicro.md)
 * [Using Qumulo Shift-From to Copy Objects from Amazon S3](shift-from-s3.md)
+* [Enabling and Using NFSv4](administrator-guide/nfs4.md)
 * [Configuring and Using Exports for NFSv4](administrator-guide/nfs4-exports.md)
 
 ## Visit the Knowledge Base
