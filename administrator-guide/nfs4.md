@@ -46,12 +46,13 @@ To check whether NFSv4 is enabled, run:
 ```
 qq nfs_get_settings
 ```
+Disabling NFSv4 immediately renders any NFSv4 mounts unusable. For that reason it is advisable to switch over any NFSv4 mounts to NFSv3 before disabling NFSv4.
 
 ## Supported and Unsupported Features
 
 Qumulo's implementation of NFSv4 currently supports:
 - General filesystem access: reading, writing, and navigating files
-- Asynchronous writes
+- Unstable writes
 - Full use of the NFS exports configuration, shared with NFSv3
 - Navigation in the pseudo-filesystem above your exports
 - NFSv3-style AUTH\_SYS authentication
