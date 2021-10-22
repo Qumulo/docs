@@ -101,12 +101,12 @@ defaults:
 
 sidebars:
 - home_sidebar
-- mydoc_sidebar
-- product1_sidebar
-- product2_sidebar
-- other
+#- mydoc_sidebar
+- administrator_guide_sidebar
+#- product2_sidebar
+#- other
 
-description: "his repository is a new kind of Docs as Code documentation for Qumulo. Watch this space as we continue to add new content, and remember, we want you to ask questions and share your ideas with us. Just click Edit on GitHub."
+description: "This site is a new documentation portal for Qumulo that uses docs-as-code principles. As we continue to add new content to this portal, we want you to ask questions and share your ideas with us—click Edit on GitHub on any page."
 # the description is used in the feed.xml file
 
 # needed for sitemap.xml file only
