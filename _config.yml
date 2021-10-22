@@ -100,11 +100,11 @@ defaults:
 # these are defaults used for the frontmatter for these file types
 
 sidebars:
-- home_sidebar
-- mydoc_sidebar
-- product1_sidebar
-- product2_sidebar
-- other
+#- home_sidebar
+#- mydoc_sidebar
+- administrator_guide_sidebar
+#- product2_sidebar
+#- other
 
 description: "his repository is a new kind of Docs as Code documentation for Qumulo. Watch this space as we continue to add new content, and remember, we want you to ask questions and share your ideas with us. Just click Edit on GitHub."
 # the description is used in the feed.xml file
