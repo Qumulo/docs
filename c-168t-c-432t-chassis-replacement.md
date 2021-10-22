@@ -1,6 +1,6 @@
 ---
 title: Replacing the Chassis of Qumulo C-Series 2U (C-168T and C-432T) Nodes
-permalink: c-series-chassis-replacement.html
+permalink: c-168t-c-432t-chassis-replacement.html
 tags:
   - chassis
   - chassis_replacement
