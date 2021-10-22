@@ -9,6 +9,7 @@ tags:
   - 2u
   - 2u_hybrid
   - 2u_chassis_replacement
+sidebar: administrator_guide_sidebar
 ---
 
 # Replacing the Chassis of Qumulo C-Series 2U (C-168T and C-432T) Nodes
