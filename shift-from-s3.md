@@ -18,6 +18,7 @@ tags:
   - relationships
   - configuration_details
   - status
+hide_sidebar: false
 sidebar: administrator-guide-sidebar
 ---
 
