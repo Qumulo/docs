@@ -11,3 +11,7 @@ entries:
     - title: Using Qumulo Shift-From for Amazon S3 to Copy Objects
       url: /shift-from-s3.html
       output: web
+
+    - title: Replacing the Chassis of C-168T and C-432T Nodes
+      url: /c-168t-c-432t-chassis-replacement.html
+      output: web
