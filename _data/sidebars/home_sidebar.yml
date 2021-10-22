@@ -7,6 +7,10 @@ entries:
   - title: Qumulo Guides
     output: web
     folderitems:
+
+    - title: Home
+      url: /index.html
+      output: web
       
     - title: Qumulo on Azure as a Service Onboarding Guide
       url: /azure.html
