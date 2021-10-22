@@ -28,11 +28,11 @@ As an example, consider a cluster with the following exports configuration:
 
 With NFSv3 it is only possible to mount one of these exports by specifying the full name of the export; for example, on the Linux command line, the mount:
 ```
-mount -overs=3 cluster.qumulo.com:/read_only/home /mnt/cluster/home
+mount -onfsvers=3 cluster.qumulo.com:/read_only/home /mnt/cluster/home
 ```
 would give read-only access to `/home` on the cluster via the path `/mnt/cluster/home`. However, the mount:
 ```
-mount -overs=3 cluster.qumulo.com:/read_only /mnt/cluster/read_only
+mount -onfsvers=3 cluster.qumulo.com:/read_only /mnt/cluster/read_only
 ```
 Would fail with a message like:
 ```
@@ -43,7 +43,7 @@ mount.nfs: mounting cluster.qumulo.com:/read_only failed, reason given by server
 
 With NFSv4, it is still possible to mount exports directly by specifying their full name. However, the protocol also supports navigating "above" exports as if they were part of the filesystem. Running the mount from before with NFSv4:
 ```
-mount -overs=4.1 cluster.qumulo.com:/read_only /mnt/cluster/read_only
+mount -onfsvers=4.1 cluster.qumulo.com:/read_only /mnt/cluster/read_only
 ```
 The mount will succeed, and at the mount the exports under `/read_only` will be visible; specifically, `/mnt/cluster/read_only` will show "directories" named `files/` and `home/` with the contents of the corresponding directories in the filesystem:
 ```
