@@ -100,7 +100,7 @@ defaults:
 # these are defaults used for the frontmatter for these file types
 
 sidebars:
-#- home_sidebar
+- home_sidebar
 #- mydoc_sidebar
 - administrator_guide_sidebar
 #- product2_sidebar
