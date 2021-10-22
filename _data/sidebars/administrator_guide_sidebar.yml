@@ -1,0 +1,13 @@
+entries:
+- title:
+  product:
+  version:
+  folders:
+
+  - title: Qumulo Administrator Guide
+    output: web
+    folderitems:
+      
+    - title: Using Qumulo Shift-From for Amazon S3 to Copy Objects
+      url: /shift-from-s3.html
+      output: web
