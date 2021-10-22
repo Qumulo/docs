@@ -14,5 +14,5 @@ The Qumulo Administrator Guide is a growing collection of information about conf
 
 **Table of Contents**
 * [Using Qumulo Shift-From to Copy Objects from Amazon S3](/shift-from-s3.md)
-* [Enabling and Using NFSv4](administrator_guide/nfs4.md)
+* [Enabling and Using NFSv4](/administrator_guide/nfs4.md)
 
