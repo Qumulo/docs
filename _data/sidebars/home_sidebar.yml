@@ -1,10 +1,10 @@
 entries:
-- title: Platform Guides
+- title:
   product: 
   version:
   folders:
 
-  - title: Qumulo Documentation
+  - title: Platform Guides
     output: web
     folderitems:
       
