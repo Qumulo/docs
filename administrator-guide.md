@@ -9,8 +9,9 @@ tags:
   - amazon_s3
 ---
 
-# Qumulo on Azure as a Service Onboarding Guide
+# Qumulo Administrator Guide
 The Qumulo Administrator Guide is a growing collection of information about configuring, managing, and troubleshooting Qumulo Core and you Qumulo nodes and clusters.
 
 **Table of Contents**
 * [Using Qumulo Shift-From to Copy Objects from Amazon S3](/shift-from-s3.md)
+* [Replacing the Chassis of C-168T and C-432T Nodes](/c-168t-c-432t-chassis-replacement.md)
