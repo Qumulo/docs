@@ -18,7 +18,7 @@ tags:
   - relationships
   - configuration_details
   - status
-sidebar: administrator-guide-sidebar
+sidebar: administrator_guide_sidebar
 ---
 
 # Using Qumulo Shift-From for Amazon S3 to Copy Objects
