@@ -7,6 +7,10 @@ entries:
   - title: Qumulo Administrator Guide
     output: web
     folderitems:
+
+    - title: Home
+      url: /index.html
+      output: web
       
     - title: Using Qumulo Shift-From for Amazon S3 to Copy Objects
       url: /shift-from-s3.html
