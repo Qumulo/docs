@@ -1,6 +1,6 @@
 ---
 title: Choosing NICs, Transceivers, and Cables for Your Qumulo Node
-permalink: nics-transceivers-cables.md
+permalink: nics-transceivers-cables.html
 tags:
   - network_transceiver
   - network_transceivers
