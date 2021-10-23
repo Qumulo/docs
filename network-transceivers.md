@@ -1,9 +1,11 @@
 ---
-title: Identifying Network Transceivers for Qumulo Nodes
-permalink: network-transceivers.html
+title: Identifying Transceivers for NICs in Qumulo Nodes
+permalink: identifyin-network-transceivers.html
 tags:
   - network_transceiver
   - network_transceivers
+  - nic
+sidebar: administrator_guide_sidebar
 ---
 
 
