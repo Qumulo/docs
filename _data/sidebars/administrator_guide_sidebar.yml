@@ -8,7 +8,7 @@ entries:
     output: web
     folderitems:
 
-    - title: Home
+    - title: Documentation Home
       url: /index.html
       output: web
 
