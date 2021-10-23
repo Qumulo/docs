@@ -1,6 +1,6 @@
 ---
 title: Qumulo Documentation History
-permalink: documentation_history.html
+permalink: documentation-history.html
 tags:
   - documentation_history
 sidebar: home_sidebar
