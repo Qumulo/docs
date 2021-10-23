@@ -1,6 +1,6 @@
 ---
 title: Identifying Transceivers for NICs in Qumulo Nodes
-permalink: identifyin-network-transceivers.html
+permalink: identifying-network-transceivers.html
 tags:
   - network_transceiver
   - network_transceivers
@@ -8,29 +8,17 @@ tags:
 sidebar: administrator_guide_sidebar
 ---
 
+# Identifying Transceivers for NICs in Qumulo Clusters
+This section explains how you can identify the correct transceivers for 25 Gbps and 100 Gbps NICs in Qumulo nodes.
 
-# Transceivers for NICs in Qumulo clusters.
+## Using Optical Transceivers
+We recommend using optical transceivers that both the NIC and the switch support. Connect the transceiver using the correct fiber.
 
+* **Direct Attach Cables (DACs):** Although these cables are significantly cheaper than optical cables and are less prone to compatibility and thermal issues, they are limited in length (2-3 meters, up to 5 meters maximum).
 
-[TOC]
+* **Active Optical Cables (AOCs):** Although these cables are cheaper than dedicated transceivers and fiber, they might cause compatibility issues, or your NIC or switch might not support them.
 
-
-
-# Overview 
-
-The purpose of this document is to provide guidance to identify the correct transceiver for deployment. The focus is on 100G and 25G since we don’t expect many new deployments on 40G or 10G.
-
-
-## Optics versus DAC and AOC 
-
-In general, the recommendation is to use an optical transceiver that is supported in the NIC in the NIC and a transceiver that is supported in the switch in the switch and connect them via the appropriate fiber. 
-
-DACs (direct attach cables) are much cheaper than optics and are much less prone to compatibility or thermal issues but they have limited length, 2 to 3 meters are common, 5 meters is the max.
-
-AOCs (active optical cables), while cheaper than dedicated transceivers and fibers in some cases, can cause compatibility issues, it might be supported by the NIC but not the switch and vice versa.
-
-
-# 100G 
+## 100 Gbps Connections
 
 There are generally 2 types of fibers, LC (2 fibers) and MPO (8 fibers), LC is commonly used for 10G and 25G whereas 40G and up tend to use MPO. There are transceivers that can use LC fibers for 40G and 100G but those tend to be more expensive and consume more power, they are mainly intended to re-use existing LC cabling or for long-distance.
 
@@ -40,9 +28,6 @@ The most common transmission standard for 100G is SR4, it’s using 4 QSFP28 lan
 
 
 ### Optical Transceivers 
-
-Table 1 100G transceivers
-
 
 <table>
   <tr>
@@ -89,7 +74,7 @@ We are planning to incorporate transceiver information from MissionQ in the tabl
 The Mellanox 100G cards also work on 40G in case the customer only has 40G.
 
 
-# 25G 
+## 25 Gbps Connections
 
 Most common fiber used is a LC Duplex (2 fibers).
 
@@ -97,9 +82,6 @@ Short-range has a max range of 100m, long-range has a max range of 10km. There i
 
 
 ### Optical Transceivers 
-
-Table 2 25G transceiver
-
 
 <table>
   <tr>
