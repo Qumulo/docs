@@ -321,7 +321,13 @@ Whenever Qumulo Core doesn't complete an operation successfully and returns an e
 
 ## Best Practices
 We recommend the following best practices for working with Qumulo Shift-From for Amazon S3.
-* **Inheritable Permissions:** Because the system user creates the files copied using Shift-From for S3, the system owns these files by default. To assign the necessary permissions to copied files, you must assign the necessary inheritable permissions to the root directory of the relationship. This ensures that the copied subdirectories and files inherit the permissions.
+* **Inheritable Permissions:** Because the system user creates the files copied using Shift-From for S3, the system owns these files. By default, Everyone will be granted Read permissions, and administrators always have full access to the files.
+
+    To assign the necessary permissions to copied files, you must assign the necessary inheritable permissions to the root directory of the relationship **before** creating a Copy from S3 relationship. This ensures that the copied subdirectories and files inherit the permissions.
+
+    Windows Security Dialog or `qq fs_modify_acl` can be used to edit permissions on a directory. See [Qumulo-File-Permissions-Overview](https://care.qumulo.com/hc/en-us/articles/115008211868) to learn more about file permissions.
+
+
 * **VPC Endpoints:** For best performance when using a Qumulo cluster in AWS, configure a [VPC endpoint](https://docs.aws.amazon.com/vpc/latest/privatelink/vpc-endpoints.html) to S3. For on-premises Qumulo clusters, we recommend [AWS Direct Connect](https://docs.aws.amazon.com/whitepapers/latest/aws-vpc-connectivity-options/aws-direct-connect.html) or another high-bandwidth, low-latency connection to S3.
 * **Repeated Synchronization:** If you need to repeatedly synchronize an S3 folder with a Qumulo directory, we recommend reusing the same relationship. This lets you avoid repeated downloading of unchanged objects that already exist locally.
 * **Completed Jobs:** If you don't plan to use a Shift relationship to download updates from S3, delete the relationship to free up any storage associated with it.
