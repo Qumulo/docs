@@ -16,8 +16,8 @@ entries:
       url: /shift-from-s3.html
       output: web
 
-    - title: Identifying Transceivers for NICs in Qumulo Nodes
-      url: /identifying-network-transceivers.html
+    - title: Choosing Cables, Transceivers, Switches, and NICs for Qumulo Nodes
+      url: /cables-transceivers-switches-nics.html
       output: web
 
     - title: Replacing the Chassis of C-168T and C-432T Nodes
