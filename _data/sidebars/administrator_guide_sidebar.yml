@@ -16,7 +16,7 @@ entries:
       url: /shift-from-s3.html
       output: web
 
-    - title: Identifying Transceivers for NICs in Qumulo Clusters
+    - title: Identifying Transceivers for NICs in Qumulo Nodes
       url: /identifying-network-transceivers.html
       output: web
 
