@@ -16,7 +16,7 @@ entries:
       url: /shift-from-s3.html
       output: web
 
-    - title: Choosing NICs, Transceivers, and Cables for Qumulo Nodes
+    - title: Choosing NICs, Transceivers, and Cables for Your Qumulo Node
       url: /nics-transceivers-cables.html
       output: web
 
