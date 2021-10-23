@@ -8,8 +8,12 @@ entries:
     output: web
     folderitems:
 
-    - title: Home
+    - title: Documentation Home
       url: /index.html
+      output: web
+
+    - title: Documentation History
+      url: /documentation-history.html
       output: web
       
     - title: Qumulo on Azure as a Service Onboarding Guide
