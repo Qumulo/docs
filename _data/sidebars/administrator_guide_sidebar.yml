@@ -16,6 +16,10 @@ entries:
       url: /shift-from-s3.html
       output: web
 
+    - title: Identifying Transceivers for NICs in Qumulo Clusters
+      url: /identifying-network-transceivers.html
+      output: web
+
     - title: Replacing the Chassis of C-168T and C-432T Nodes
       url: /c-168t-c-432t-chassis-replacement.html
       output: web
