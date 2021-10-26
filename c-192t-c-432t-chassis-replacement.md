@@ -1,10 +1,10 @@
 ---
-title: Replacing the Chassis of Qumulo C-Series 2U (C-168T and C-432T) Nodes
-permalink: c-168t-c-432t-chassis-replacement.html
+title: Replacing the Chassis of C-192T and C-432T Nodes
+permalink: c-192t-c-432t-chassis-replacement.html
 tags:
   - chassis
   - chassis_replacement
-  - c-168T
+  - c-192T
   - c-432T
   - 2u
   - 2u_hybrid
@@ -12,11 +12,11 @@ tags:
 sidebar: administrator_guide_sidebar
 ---
 
-# Replacing the Chassis of C-168T and C-432T Nodes
-This section explains how you can replace the chassis in C-168T and C-432T nodes. 
+# Replacing the Chassis of C-192T and C-432T Nodes
+This section explains how you can replace the chassis in C-192T and C-432T nodes. 
 
 ## Prerequisites 
-Before you begin, ensure that you have C-168T or C-432T hardware and the replacement chassis.
+Before you begin, ensure that you have C-192T or C-432T hardware and the replacement chassis.
 
 ## Step 1: To Prepare for Chassis Replacement
 **Note:** We strongly suggest having another person help you with this process.
