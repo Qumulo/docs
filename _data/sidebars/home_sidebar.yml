@@ -7,6 +7,14 @@ entries:
   - title: Qumulo Guides
     output: web
     folderitems:
+
+    - title: Documentation Home
+      url: /index.html
+      output: web
+
+    - title: Documentation Portal History
+      url: /documentation-history.html
+      output: web
       
     - title: Qumulo on Azure as a Service Onboarding Guide
       url: /azure.html
