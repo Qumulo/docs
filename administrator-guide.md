@@ -10,4 +10,4 @@ The Qumulo Administrator Guide is a growing collection of information about conf
 * [Document History](/administrator-guide-document-history.md)
 * [Using Qumulo Shift-From to Copy Objects from Amazon S3](/shift-from-s3.md)
 * [Identifying NICs and Choosing Transceivers and Cables for Your Qumulo Node](/nics-transceivers-cables.md)
-* [Replacing the Chassis of C-168T and C-432T Nodes](/c-168t-c-432t-chassis-replacement.md)
+* [Replacing the Chassis of C-192T and C-432T Nodes](/c-192t-c-432t-chassis-replacement.md)
