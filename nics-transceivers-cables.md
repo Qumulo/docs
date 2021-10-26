@@ -1,5 +1,5 @@
 ---
-title: Choosing NICs, Transceivers, and Cables for Your Qumulo Node
+title: Identifying NICs and Choosing Transceivers and Cables for Your Qumulo Node
 permalink: nics-transceivers-cables.html
 tags:
   - network_transceiver
@@ -14,12 +14,12 @@ tags:
 sidebar: administrator_guide_sidebar
 ---
 
-# Choosing NICs, Transceivers, and Cables for Your Qumulo Node
-This section explains how to choose the correct cables, transceivers, and NIC cards for your Qumulo nodes.
+# Identifying NICs and Choosing Transceivers and Cables for Your Qumulo Node
+This section explains how to identify your node's NICs and choose the correct transceivers and cables for your Qumulo nodes.
 
 ## Recommended NICs for Your Node
 
-The following table lists node types and the recommended NICs, their speeds, and the latest firmware that Qumulo supports.
+The following table lists node types and their NICs and the NICs' speed and latest firmware that Qumulo supports.
 
 | Node Type                      | NIC        | Speed      | Latest Firmware Qumulo Supports |
 | ------------------------------ | ---------- | ---------- | ------------------------------- |
