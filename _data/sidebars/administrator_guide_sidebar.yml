@@ -12,6 +12,10 @@ entries:
       url: /index.html
       output: web
 
+    - title: Administrator Guide Home
+      url: /administrator-guide.html
+      output: web
+
     - title: Administrator Guide Document History
       url: /administrator-guide-document-history.html
       output: web
@@ -24,6 +28,6 @@ entries:
       url: /nics-transceivers-cables.html
       output: web
 
-    - title: Replacing the Chassis of C-168T and C-432T Nodes
-      url: /c-168t-c-432t-chassis-replacement.html
+    - title: Replacing the Chassis of C-192T and C-432T Nodes
+      url: /c-192t-c-432t-chassis-replacement.html
       output: web
