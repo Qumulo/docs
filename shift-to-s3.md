@@ -87,29 +87,34 @@ In the following example, the IAM policy gives permission to read from and write
 ```
 
 
-## How Shift-From Relationships Work
-Qumulo Core performs the following steps when it creates a Shift-From relationship.
+## How Shift-To Relationships Work
+Qumulo Core performs the following steps when it creates a Shift-To relationship.
 
 1. Verifies that the directory exists on the Qumulo cluster and that the specified S3 bucket exists, is accessible using the specified credentials, and contains downloadable objects.
 
-1. Creates the Shift-From relationship.
+1. Creates the Shift-To relationship.
 
 1. Starts a job using one of the nodes in the Qumulo cluster.
 
    **Note:** If you perform multiple Shift operations, Qumulo Core uses multiple nodes.
 
-1. Lists the contents of the S3 folder and downloads the objects to the specified directory on your Qumulo cluster.
+1. To ensure that the copy is point-in-time consistent, takes a temporary snapshot of the directory (for example, named `replication_to_bucket_my_bucket`).
 
-1. Forms the full path of the file on the Qumulo custer by appending the path of the object (relative to the S3 folder) to the directory path on the Qumulo cluster.
+1. Recursively traverses the directories and files in the snapshots and copies each object to a corresponding object in S3.
 
-   For example, the following object is downloaded to `/my-dir/my-project/file.text`, where `my-folder` is the specified S3 folder and `my-dir` is the directory on your Qumulo cluster.
+1. Preserves the file paths in the source directory in the keys of replicated objects.
+
+   For example, the file `/my-dir/my-project/file.text`, where `my-dir` is the directory on your Qumulo cluster, is uploaded to S3 as the following object, where `my-folder` is the specified S3 folder.
 
    ```
    https://my-bucket.s3.us-west-2.amazonaws.com/my-folder/my-project/file.txt
    ```
 
-   **Note:** This process doesn't encode or transform your data in any way. Shift-From attempts only to map every S3 object in the specified folder to a file on your Qumulo cluster.
+   **Note:** This process doesn't encode or transform your data in any way. Shift-To replicates only the data in a regular file's primary stream, excluding alternate data streams and file system metadata such as access control lists (ACLs). To avoid transferring data across the public Internet, a server-side S3 copy operation also copies any hard links to files in the replication source directory to S3 as full copies of objects, with identical contents and metadata.
 
+   The following table explains how entities in the Qumulo file system map to entities in an S3 bucket.
+   
+   
 1. Avoids redownloading an unchanged object in a subsequent job by tracking the information about an object and its replicated object.
 
    **Note:** If you rename or move an object or local file between jobs, or if there are any metadata changes in S3 or Qumulo, the object is replicated again.
