@@ -43,9 +43,15 @@ The guide describes how a Shift-From relationship works and includes information
 
 * Membership in a Qumulo role with the following privileges:
 
-  * `PRIVILEGE_REPLICATION_OBJECT_WRITE`
+  * `PRIVILEGE_REPLICATION_OBJECT_WRITE`: This privilege is required to create a Shift relationship.
 
-  * `PRIVILEGE_REPLICATION_OBJECT_READ`
+  * `PRIVILEGE_REPLICATION_OBJECT_READ`: This privilege is required to view the status of a Shift relationship.
+
+  **Notes:**
+  
+  * For any changes to take effect, user accounts with newly assigned roles must log out and log back in (or their sessions must time out).
+  
+  * Use special care when granting privileges to roles and users because certain privileges (such as replication-write privileges) can use system privileges to overwrite or move data to a location where a user has greater permissions. This can give a user access to all directories and files in a cluster regardless of any specific file and directory settings.
 
 * An existing bucket with contents in Amazon S3
 
@@ -113,6 +119,13 @@ Qumulo Core performs the following steps when it creates a Shift-To relationship
    **Note:** This process doesn't encode or transform your data in any way. Shift-To replicates only the data in a regular file's primary stream, excluding alternate data streams and file system metadata such as access control lists (ACLs). To avoid transferring data across the public Internet, a server-side S3 copy operation also copies any hard links to files in the replication source directory to S3 as full copies of objects, with identical contents and metadata.
 
    The following table explains how entities in the Qumulo file system map to entities in an S3 bucket.
+
+   | Entity in the Qumulo File System | Entity in an Amazon S3 Bucket                                                                 |
+   | -------------------------------- | --------------------------------------------------------------------------------------------- |
+   | Directory                        | Not copied (directory structure is preserved in the object key for objects created for files) |
+   | Regular file                     | S3 object (the object key is the file system path and the metadata is the field data)         |
+   | Symbolic link                    | Not copied                                                                                    |
+   | UNIX device file                 | Not copied                                                                                    |
    
    
 1. Avoids redownloading an unchanged object in a subsequent job by tracking the information about an object and its replicated object.
