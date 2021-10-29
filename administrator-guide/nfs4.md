@@ -70,3 +70,5 @@ Finally, some new features of NFSv4 are not yet supported, most notably:
 ## NFSv4 Minor Versions
 
 There are three minor versions of NFSv4: 4.0, 4.1, and 4.2. Qumulo Core currently supports only version 4.1; attempting to mount with other minor versions will fail. 4.0 is not supported because 4.1 includes backwards-incompatible fixes for correctness and performance problems in 4.0. 4.2 simply adds performance-oriented features such as server-side copy; since Qumulo Core does not yet support any of those features 4.2 is not supported either.
+
+While most relatively recent distributions of Linux come with support for NFSv4.1., MacOS only has a client for NFSv4.0, and Windows does not come with an NFSv4 client.
