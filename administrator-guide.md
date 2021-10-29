@@ -9,7 +9,7 @@ The Qumulo Administrator Guide is a growing collection of information about conf
 **Table of Contents**
 <ul>
  {% for page in site.pages %}
-   {% for sidebar in page.sidebar %}
+   {% for entry in site.data.sidebars[sidebar].entries %}
        {% if sidebar == "administrator_guide_sidebar" %}
            <li><a href="{{ page.permalink | prepend: site.baseurl }}">{{page.title}}</a></li>
         {% endif %}
