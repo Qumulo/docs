@@ -120,17 +120,29 @@ Qumulo Core performs the following steps when it creates a Shift-To relationship
 
    The following table explains how entities in the Qumulo file system map to entities in an S3 bucket.
 
-   | Entity in the Qumulo File System | Entity in an Amazon S3 Bucket                                                                 |
-   | -------------------------------- | --------------------------------------------------------------------------------------------- |
-   | Directory                        | Not copied (directory structure is preserved in the object key for objects created for files) |
-   | Regular file                     | S3 object (the object key is the file system path and the metadata is the field data)         |
-   | Symbolic link                    | Not copied                                                                                    |
-   | UNIX device file                 | Not copied                                                                                    |
+   | Entity in the Qumulo File System                | Entity in an Amazon S3 Bucket                                                                 |
+   | ----------------------------------------------- | --------------------------------------------------------------------------------------------- |
+   | Access control list (ACL)                       | Not copied                                                                                    |
+   | Alternate data streams                          | Not copied                                                                                    |
+   | Directory                                       | Not copied (directory structure is preserved in the object key for objects created for files) |
+   | Hard link to a non-regular file                 | Not copied                                                                                    |
+   | Hard link to a regular file                     | Copy of the S3 object                                                                         |
+   | Holes in sparse files                           | Zeroes (holes are expanded)                                                                   |
+   | Regular file                                    | S3 object (the object key is the file system path and the metadata is the field data)         |
+   | SMB extended file attributes                    | Not copied                                                                                    |
+   | Symbolic link                                   | Not copied                                                                                    |
+   | Timestamps (`mtime`, `ctime`, `atime`, `btime`) | Not copied                                                                                    |
+   | UNIX device file                                | Not copied                                                                                    |
    
-   
-1. Avoids redownloading an unchanged object in a subsequent job by tracking the information about an object and its replicated object.
+1. Checks whether a file is already replicated. If the object exists in the target S3 bucket, and neither the file nor the object are modified since the last successful replication, its data is not retransferred to S3.
 
-   **Note:** If you rename or move an object or local file between jobs, or if there are any metadata changes in S3 or Qumulo, the object is replicated again.
+   **Note:** Shift never deletes files in the target S3 folder, even if the files are removed from the source directory since the last replication.
+
+1. Deletes the temporary snapshot and completes the job.
+
+   To allow you to monitor the job's status, the relationship remains on your Qumulo cluster. You can delete the relationship without affecting the data in your Qumulo cluster or in S3.
+
+   **Note:** Shift relationships exist for one-time operations. You can't reuse them. To perform a new copy of the same folder, you must create a new Shift relationship.
 
 ### Storing and Reusing Relationships
 To let you monitor the completion status of a job, start new jobs for a relationship after the initial job finishes, and delete the relationship (when you no longer need the S3-folder-Qumulo-directory pair), the Shift-From relationship remains on the Qumulo cluster. To avoid redownloading objects that a previous copy job downloaded, relationships take up approximately 100 bytes per object. To free this storage, you can delete relationships that you no longer need.
