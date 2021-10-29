@@ -29,7 +29,7 @@ The guide describes how a Shift-From relationship works and includes information
 ## Prerequisites
 * A Qumulo cluster with:
 
-  * Qumulo Core 4.2.3 (or higher)
+  * Qumulo Core 3.2.1 (or higher) for the CLI or 3.2.5 for the Web UI
 
   * HTTPS connectivity to `s3.<region>.amazonaws.com` though one of the following means:
 
@@ -51,14 +51,18 @@ The guide describes how a Shift-From relationship works and includes information
 
 * AWS credentials (access key ID and secret access key) with the following permissions:
 
+  * `s3:AbortMultipartUpload`
+
   * `s3:GetObject`
+
+  * `s3:PutObject`
 
   * `s3:ListBucket`
 
   For more information, see [Understanding and getting your AWS credentials](https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html) in the AWS General Reference
   
 ### Example IAM Policy
-In the following example, the IAM policy gives permission to read from and write to the `my-folder` folder in the `my-bucket`. This policy can give users the minimal set of permissions required to run Shift-From jobs. (Shift-To jobs require a less-restrictive policy. For more information and an example, see [Qumulo Shift for Amazon S3](https://care.qumulo.com/hc/en-us/articles/360053162273) in Qumulo Care.
+In the following example, the IAM policy gives permission to read from and write to the `my-folder` folder in the `my-bucket`. This policy can give users the permissions required to run Shift-To jobs.
 
 ```json
 {
@@ -71,8 +75,10 @@ In the following example, the IAM policy gives permission to read from and write
     },
     {
       "Action": [
-        "s3:GetObject"
-      ],
+        "s3:AbortMultipartUpload",
+        "s3:GetObject", 
+        "s3:PutObject"
+      ]
       "Effect": "Allow",
       "Resource": "arn:aws:s3:::my-bucket/my-folder/*"
     }
