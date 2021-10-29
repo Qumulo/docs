@@ -43,9 +43,15 @@ The guide describes how a Shift-From relationship works and includes information
 
 * Membership in a Qumulo role with the following privileges:
 
-  * `PRIVILEGE_REPLICATION_OBJECT_WRITE`
+  * `PRIVILEGE_REPLICATION_OBJECT_WRITE`: This privilege is required to create a Shift relationship.
 
-  * `PRIVILEGE_REPLICATION_OBJECT_READ`
+  * `PRIVILEGE_REPLICATION_OBJECT_READ`: This privilege is required to view the status of a Shift relationship.
+
+  **Notes:**
+  
+  * For any changes to take effect, user accounts with newly assigned roles must log out and log back in (or their sessions must time out).
+  
+  * Use special care when granting privileges to roles and users because certain privileges (such as replication-write privileges) can use system privileges to overwrite or move data to a location where a user has greater permissions. This can give a user access to all directories and files in a cluster regardless of any specific file and directory settings.
 
 * An existing bucket with contents in Amazon S3
 
