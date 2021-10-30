@@ -29,7 +29,7 @@ The guide describes how a Shift-From relationship works and includes information
 ## Prerequisites
 * A Qumulo cluster with:
 
-  * Qumulo Core 3.2.1 (or higher) for the CLI or 3.2.5 for the Web UI
+  * Qumulo Core 3.2.1 (and higher) for the CLI and 3.2.5 (and higher) for the Web UI
 
   * HTTPS connectivity to `s3.<region>.amazonaws.com` though one of the following means:
 
@@ -179,12 +179,12 @@ This section describes how you can use the Qumulo Web UI 3.2.5 (and higher) to c
 
 
 ## Using the Qumulo CLI to Copy Files and Manage Relationships
-This section describes how you can use the Qumulo CLI to copy files from Amazon S3 to a Qumulo cluster, review Shift relationship details, stop a running copy job, repeat a completed copy job, and delete a relationship.
+This section describes how you can use the Qumulo CLI 3.2.5 (and higher) to copy files from a Qumulo cluster to Amazon S3, review Shift relationship details, stop a running copy job, repeat a completed copy job, and delete a relationship.
 
 ### Copying Files from Amazon S3
 To copy files, use the `replication_create_object_relationship` command and specify the following:
-* Local directory path on Qumulo cluster
-* Copy direction (copy-from)
+* Source directory path on Qumulo cluster
+* Copy direction (copy-to)
 * S3 object folder
 * S3 bucket
 * AWS region
@@ -195,8 +195,8 @@ The following example shows how you can create a relationship between the direct
 
 ```bash
 qq replication_create_object_relationship \
-  --local-directory-path /my-dir/ \
-  --direction COPY_FROM_OBJECT \
+  --source-directory-path /my-dir/ \
+  --direction COPY_TO_OBJECT \
   --object-folder /my-folder/ \
   --bucket my-bucket \
   --region us-west-2 \
