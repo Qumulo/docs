@@ -195,20 +195,7 @@ The CLI returns the details of the relationship in JSON format, for example:
 }
 ```
 
-### Viewing Configuration Details and Status of Shift Relationships
-* To view configuration details for all Shift relationships, use the `replication_list_object_relationships` command.
-
-* To view configuration details for a specific relationship, use the `replication_get_object_relationship` command followed by the `--id` and the Shift relationship ID (GUID), for example:
-
-   ```bash
-   qq replication_get_object_relationship --id 1c23b4ed-5c67-8f90-1e23-a4f5f6ceff78
-   ```
-
-* To view the status of a specific relationship, use the `replication_get_object_relationship_status` command followed by the `--id` and the Shift relationship ID.
-
-* To view the status of all relationships, use the `replication_list_object_relationship_statuses` command.
-
-  The CLI returns the details of all relationships in JSON format, for example:
+{% include content-reuse/shift-view-config-details-status-shift-relationship.md %}
 
   ```json
   [
@@ -246,25 +233,7 @@ The CLI returns the details of the relationship in JSON format, for example:
     }
   ]
   ```
-
-  The `state` field indicates a `REPLICATION_RUNNING` status and `current_job` shows ongoing progress. When Qumulo Core copies files from S3, details for the most recent completed job become available in the `last_job` field, the `state` field changes to `REPLICATION_NOT_RUNNING` and the `current_job` field reverts to `null`.
-
-  **Note:** If you already ran a job for a relationship, it is possible for both the `current_job` and `last_job` fields to be non-null while you run a new job.
-
-### Stopping a Copy Job in Progress
-To stop a copy job already in progress, use the `replication_abort_object_relationship` command followed by the `--id` and the Shift relationship ID.
-
-### Repeating a Completed Copy Job
-To repeat a completed copy job, use the `replication_start_object_relationship` command followed by the `--id` and the Shift relationship ID.
-
-This command begins a new job for the existing relationship and downloads any content that changed in the S3 bucket or on the Qumulo cluster since the time the previous job ran.
-
-### Deleting a Shift Relationship
-After your copy job is complete, you can delete your Shift relationship. To do this, run the `replication_delete_object_relationship` command followed by the `--id` and the Shift relationship ID.
-
-**Note:** You can run this command only against a relationship that doesn't have any active jobs running.
-
-This command removes the copy job's record, leaving locally stored objects unchanged. Any storage that the relationship used to track downloaded objects becomes available when you delete the relationship.
+{% include content-reuse/shift-view-status-stop-repeat-copy-job-delete-relationship.md %}
 
 
 ## Troubleshooting Copy Job Issues
