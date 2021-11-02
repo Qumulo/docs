@@ -115,7 +115,7 @@ Qumulo Core performs the following steps when it creates a Shift-From relationsh
    **Note:** If you rename or move an object or local file between jobs, or if there are any metadata changes in S3 or Qumulo, the object is replicated again.
 
 ### Storing and Reusing Relationships
-The Shift-From relationship remains on the Qumulo cluster. To let you monitor the completion status of a job, start new jobs for a relationship after the initial job finishes, and delete the relationship (when you no longer need the S3-folder-Qumulo-directory pair). To avoid redownloading objects that a previous copy job downloaded, relationships take up approximately 100 bytes per object. To free this storage, you can delete relationships that you no longer need.
+The Shift-From relationship remains on the Qumulo cluster. You can use the relationship to you monitor the completion status of a job, start new jobs for a relationship after the initial job finishes, and delete the relationship (when you no longer need the S3-folder-Qumulo-directory pair). To avoid redownloading objects that a previous copy job downloaded, relationships take up approximately 100 bytes per object. To free this storage, you can delete relationships that you no longer need.
 
 If you repeatedly download from the same S3 folder, you can speed up the download process (and skip already downloaded files) by using the same relationship.
 
