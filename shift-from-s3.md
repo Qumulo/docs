@@ -119,7 +119,7 @@ The Shift-From relationship remains on the Qumulo cluster. To let you monitor th
 
 If you repeatedly download from the same S3 folder, you can speed up the download process (and skip already downloaded files) by using the same relationship.
 
-A new relationship for subsequent downloads doesn't share any tracking information with previous relationships associated with a directory and recopy data that might be already downloaded.
+A new relationship for subsequent downloads doesn't share any tracking information with previous relationships associated with a directory and might recopy data that is already downloaded.
 
 
 ## Using the Qumulo Web UI to Copy Files and Manage Relationships
