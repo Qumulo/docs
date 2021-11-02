@@ -143,9 +143,9 @@ Qumulo Core performs the following steps when it creates a Shift-To relationship
 ### Storing and Reusing Relationships
 The Shift-To relationship remains on the Qumulo cluster. This lets you monitor the completion status of a job, start new jobs for a relationship after the initial job finishes, and delete the relationship (when you no longer need the S3-folder-Qumulo-directory pair). To avoid redownloading objects that a previous copy job downloaded, relationships take up approximately 100 bytes per object. To free this storage, you can delete relationships that you no longer need.
 
-If you repeatedly copy to the same Qumulo directory, you can speed up the download process (and skip already downloaded files) by using the same relationship.
+If you repeatedly copy from the same Qumulo directory, you can speed up the download process (and skip already downloaded files) by using the same relationship.
 
-A new relationship for subsequent downloads doesn't share any tracking information with previous relationships associated with a directory and recopy data that might be already downloaded.
+A new relationship for subsequent downloads doesn't share any tracking information with previous relationships associated with a directory and might recopy data that is already downloaded.
 
 
 ## Using the Qumulo Web UI to Copy Files and Manage Relationships
@@ -171,7 +171,7 @@ This section describes how you can use the Qumulo Web UI 3.2.5 (and higher) to c
 
 1. (Optional) For additional configuration, click **Advanced S3 Server Settings**.
 1. Click **Create Copy**.
-1. In the **Create Copy from S3?** dialog box, review the Shift relationship and then click **Yes, Create**.
+1. In the **Create Copy to S3?** dialog box, review the Shift relationship and then click **Yes, Create**.
 
    The copy job begins.   
 
