@@ -1,6 +1,7 @@
 ---
 title: Qumulo on Azure as a Service Administrator Guide
 permalink: administrator-guide.html
+sidebar: administrator_guide_sidebar
 ---
 
 # Qumulo Administrator Guide
