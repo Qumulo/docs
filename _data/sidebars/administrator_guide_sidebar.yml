@@ -20,6 +20,10 @@ entries:
       url: /administrator-guide-document-history.html
       output: web
 
+    - title: Enabling and Using NFSv4 on Qumulo Core
+      url: /nfs4-enabling-using.html
+      output: web
+
     - title: Using Qumulo Shift-To to Copy Objects to Amazon S3
       url: /shift-to-s3.html
       output: web
