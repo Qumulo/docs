@@ -10,6 +10,7 @@ The Qumulo Administrator Guide is a growing collection of information about conf
 **Table of Contents**
 * [Document History](/administrator-guide-document-history.md)
 * [Enabling and Using NFSv4 on Qumulo Core](/nfs4-enabling-using.md)
+* [Configuring and Using Exports for NFSv4 on Qumulo Core](/nfs4-exports-configuring-using.md)
 * [Using Qumulo Shift-To to Copy Objects to Amazon S3](/shift-to-s3.md)
 * [Using Qumulo Shift-From to Copy Objects from Amazon S3](/shift-from-s3.md)
 * [Identifying NICs and Choosing Transceivers and Cables for Your Qumulo Node](/nics-transceivers-cables.md)
