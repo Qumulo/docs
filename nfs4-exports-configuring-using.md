@@ -1,9 +1,8 @@
 ---
-title: Configuring and Using Exports for NFSv4
-permalink: nfs4-exports.html
+title: Configuring and Using Exports for NFSv4 on Qumulo Core
+permalink: nfs4-exports-configuring-using.html
 tags:
   - nfs4
-  - qumulo_core
   - exports
 ---
 
