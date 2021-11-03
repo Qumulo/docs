@@ -20,7 +20,7 @@ entries:
       url: /administrator-guide-document-history.html
       output: web
 
-    - title: Enabling and Using NFSv4 on Qumulo Core
+    - title: Enabling and Using NFSv4 on a Qumulo Cluster
       url: /nfs4-enabling-using.html
       output: web
 
