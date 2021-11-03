@@ -6,8 +6,9 @@ tags:
 ---
 
 # Enabling and Using NFSv4 on a Qumulo Cluster
-Qumulo Core 4.3.0 (and higher) supports Network File System version 4 (NFSv4). This section explains how you can configure your cluster for a supported export configuration and enable or disable NFSv4 on your cluster. It also provides detail about supported and unsupported features and NFSv4 minor versions.
+Qumulo Core 4.3.0 (and higher) supports Network File System version 4 (NFSv4). This section explains how you can configure your cluster for a supported export configuration and enable or disable NFSv4 on your cluster. It also provides detail about supported and unsupported features.
 
+**Important:** Currently, Qumulo Core supports only NFSv4.1. Mounting with version 4.0 or 4.2 isn't supported.
 
 ## Configuring and Using Exports for NFSv4
 Qumulo's NFS exports can present a view of your cluster over NFS that might differ from the contents of the underlying filesystem. You can mark NFS exports as read-only, restricted (to allow access only from certain IP adresses), or configure specific user mappings. For more information, see [Create an NFS Export](https://care.qumulo.com/hc/en-us/articles/360000723928-Create-an-NFS-Export) in Qumulo Care.
@@ -86,61 +87,65 @@ NFSv4 respects IP restrictions on exports: only clients with allowed IP addresse
 * NFSv4 doesn't support 32-bit sanitization and ignores any sanitizations configured for an export.
 
 
-## Enabling NFSv4 on the Cluster
+## Enabling NFSv4 on a Qumulo Cluster
+**Note:** Currently, you can enable NFSv4 only using the CLI.
 
-NFSv4 support is configured via a single cluster-wide configuration. When NFSv4 is turned on, all NFS exports will be accessible over both NFSv3 and NFSv4. To turn NFSv4 on, use the following `qq` command:
-```
+You can enable NFSv4 on your Qumulo cluster using a single cluster-wide configuration command, for example:
+
+```bash
 qq nfs_modify_settings --enable-v4
 ```
-Once NFSv4 is enabled, clients should be able to mount the cluster over NFSv4 just as NFSv3.
 
-The QQ CLI is currently the only supported way to enable NFSv4; there is not yet a way to enable NFSv4 in the Web UI.
+When you enable NFSv4, all NFS exports are accessible using NFSv3 and NFSv4. 
 
-## NFS Mounts with NFSv4 Enabled
+## Specifying the NFS Mount Option
+Typically, NFS clients find and use the highest version of the protocol that both the client and server support. For example, the following command mounts using NFSv4 (if it is enabled) and using NFSv3 otherwise:
 
-NFS clients typically find and use the highest version of the protocol supported by both client and server. For example, the following command will mount with NFSv4 if it is enabled, and NFSv3 otherwise:
-```
+```bash
 mount -t nfs your.qumulo.cluster:/mount_path /path/to/mountpoint
 ```
-Since Qumulo's implementation of NFSv4 is not yet at feature parity with NFSv3, for any mounts that need features only supported by NFSv3 (such as snapshot access) the `nfsvers=3` option should be provided:
-```
+
+Because Qumulo's NFSv4 implementation currently doesn't have full feature parity with NFSv3, you must provide the `nfsvers=3` option for any mounts that require features (such as snapshot access) that only NFSv3 supports, for example:
+
+```bash
 mount -t nfs -o nfsvers=3 your.qumulo.cluster:/mount_path /path/to/mountpoint
 ```
-Conversely, it is advisable to specify `nfsvers=4` or `nfsvers=4.1` for any mounts that are specifically intended to use NFSv4.
 
-## Disabling NFSv4 on the Cluster
+**Note:** We recommend specifying the `nfsvers=4` or `nfsvers=4.1` option for any mounts that use NFSv4.
 
-NFSv4 can be globally disabled with the following `qq` command:
-```
-qq nfs_modify_settings --disable-v4
-```
-To check whether NFSv4 is enabled, run:
-```
+
+## Checking Whether NFSv4 is enabled
+To check whether NFSv4 is enabled on your cluster, use the following CLI command:
+
+```bash
 qq nfs_get_settings
 ```
-Disabling NFSv4 immediately renders any NFSv4 mounts unusable. For that reason it is advisable to switch over any NFSv4 mounts to NFSv3 before disabling NFSv4.
 
-## Supported and Unsupported Features
 
+## Disabling NFSv4 on a Qumulo Cluster
+**Important:** Disabling NFSv4 makes any NFSv4 mounts unusable immediately. We recommend switching any NFSv4 mounts to NFSv3 before disabling NFSv4.
+
+To disable NFSv4 on an entire Qumul cluster, use the following CLI command:
+
+```bash
+qq nfs_modify_settings --disable-v4
+```
+
+
+## Supported and Unsupported Features in Qumulo's Implementation of NFSv4
 Qumulo's implementation of NFSv4 currently supports:
-- General filesystem access: reading, writing, and navigating files
-- Unstable writes
-- Full use of the NFS exports configuration, shared with NFSv3
-- Navigation in the pseudo-filesystem above your exports
-- NFSv3-style AUTH\_SYS authentication
-- Fine-grained control over file permissions with ACLs
+* General file system access (reading, writing, and navigating files)
+* Unstable writes
+* Full use of the NFS exports configuration shared with NFSv3
+* Navigation in the pseudo-filesystem above your exports
+* NFSv3-style `AUTH\_SYS` authentication
+* Fine-grained control over file permissions using access control lists (ACLs)
 
-Some features of the NFSv3 implementation are not yet supported over NFSv4:
-- Quota sizes will not appear over NFSv4 with, for example, the Unix `df` command; directory quotas are nonetheless respected
-- Snapshots are not accessible over NFSv4
-- Server-side file locking (e.g. with `fcntl`) is not yet supported
+Qumulo Core doesn't support the following NFSv3 features through NFSv4:
+* Quota sizes don't appear through NFSv4 with certain commands, such as `df` (however, Qumulo Core respects directory quotas)
+* You can't access snapshots through NFSv4
+* Server-side file locking (for example, using the `fcntl` command)
 
-Finally, some new features of NFSv4 are not yet supported, most notably:
-- Secure authentication with Kerberos
-- Delegations
-
-## NFSv4 Minor Versions
-
-There are three minor versions of NFSv4: 4.0, 4.1, and 4.2. Qumulo Core currently supports only version 4.1; attempting to mount with other minor versions will fail. 4.0 is not supported because 4.1 includes backwards-incompatible fixes for correctness and performance problems in 4.0. 4.2 simply adds performance-oriented features such as server-side copy; since Qumulo Core does not yet support any of those features 4.2 is not supported either.
-
-While most relatively recent distributions of Linux come with support for NFSv4.1., MacOS only has a client for NFSv4.0, and Windows does not come with an NFSv4 client.
+Qumulo Core doesn't currently support the following NFSv4 features:
+* Secure authentication using Kerberos
+* Delegation
