@@ -21,12 +21,7 @@ The following table lists changes to the _Qumulo Administrator Guide_.
   <tbody>
     <tr>
       <td>Nov. 10, 2021</td>
-      <td>Added the following sections:
-        <ul>
-          <li><a href="/nfs4-enabling-using.html">Enabling and Using NFSv4 on a Qumulo Cluster</a></li>
-          <li><a href="/nfs4-exports-configuring-using.html">Configuring and Using Exports for NFSv4 on Qumulo Core</a></li>
-        </ul>
-      </td>
+      <td>Added the <a href="/nfs4-enabling-using.html">Enabling and Using NFSv4 on a Qumulo Cluster</a> section.</td>
     </tr>
     <tr>
       <td>Nov. 2, 2021</td>
