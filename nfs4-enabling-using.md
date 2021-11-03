@@ -1,9 +1,8 @@
 ---
-title: Enabling and Using NFSv4
-permalink: nfs4.html
+title: Enabling and Using NFSv4 on Qumulo Core
+permalink: nfs4-enabling-using.html
 tags:
   - nfs4
-  - qumulo_core
 ---
 
 # Enabling and Using NFSv4
