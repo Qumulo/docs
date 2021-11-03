@@ -24,6 +24,10 @@ entries:
       url: /nfs4-enabling-using.html
       output: web
 
+    - title: Configuring and Using Exports for NFSv4 on Qumulo Core
+      url: /nfs4-exports-configuring-using.md
+      output: web
+
     - title: Using Qumulo Shift-To to Copy Objects to Amazon S3
       url: /shift-to-s3.html
       output: web
