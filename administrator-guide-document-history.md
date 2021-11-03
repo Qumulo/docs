@@ -12,11 +12,13 @@ sidebar: administrator_guide_sidebar
 The following table lists changes to the _Qumulo Administrator Guide_.
 
 <table>
-  <tbody>
+  <thead>
     <tr>
       <th>Date</th>
       <th>Documentation Update</th>
     </tr>
+  </thead>
+  <tbody>
     <tr>
       <td>Nov. 2, 2021</td>
       <td>Added the [Using Qumulo Shift-To to Copy Objects to Amazon S3](/shift-from-s3.md) section.</td>
