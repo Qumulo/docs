@@ -21,20 +21,20 @@ The following table lists changes to the _Qumulo Administrator Guide_.
   <tbody>
     <tr>
       <td>Nov. 2, 2021</td>
-      <td>Added the [Using Qumulo Shift-To to Copy Objects to Amazon S3](/shift-from-s3.md) section.</td>
+      <td>Added the <a href="/shift-from-s3.html">Using Qumulo Shift-To to Copy Objects to Amazon S3</a> section.</td>
     </tr>
     <tr>
       <td>Oct. 22, 2021</td>
       <td>Added the following sections:
         <ul>
-          <li>[Replacing the Chassis of C-192T and C-432T Nodes](/c-192t-c-432t-chassis-replacement.md)</li>
-          <li>[Choosing NICs, Transceivers, and Cables for Your Qumulo Node](/nics-transceivers-cables.md)</li>
+          <li><a href="/c-192t-c-432t-chassis-replacement.html">Replacing the Chassis of C-192T and C-432T Nodes</a></li>
+          <li><a href="/nics-transceivers-cables.html">Choosing NICs, Transceivers, and Cables for Your Qumulo Node</a></li>
         </ul>
       </td>
     </tr>
     <tr>
       <td>Sep. 20, 2021</td>
-      <td>Added the [Using Qumulo Shift-From for Amazon S3 to Copy Objects](/shift-from-s3.md) section.</td>
+      <td>Added the <a href="/shift-from-s3.html">Using Qumulo Shift-From for Amazon S3 to Copy Objects</a> section.</td>
     </tr>
   </tbody>
 </table>
