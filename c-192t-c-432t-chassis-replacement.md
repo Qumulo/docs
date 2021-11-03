@@ -77,4 +77,4 @@ Before you begin, ensure that you have C-192T or C-432T hardware and the replace
 1. Power on the node.
 
 ## Step 3: (Optional) Reconfiguring the Out-of-Band Management (IPMI) Settings
-If the current IPMI settings for your node are configured statically (rather than using DHCP), you must reapply the settings to each node in the cluster. For more information, see [IPMI Quick Reference Guide for Qumulo C-Series](https://care.qumulo.com/hc/en-us/articles/360024426314-IPMI-Quick-Reference-Guide-for-Qumulo-C-Series) in Qumulo Care.
+If the current IPMI settings for your node are configured statically (rather than using DHCP), you must reapply the static IPMI settings to the replacement node. For more information, see [IPMI Quick Reference Guide for Qumulo C-Series](https://care.qumulo.com/hc/en-us/articles/360024426314-IPMI-Quick-Reference-Guide-for-Qumulo-C-Series) in Qumulo Care.

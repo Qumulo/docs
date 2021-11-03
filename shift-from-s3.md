@@ -22,7 +22,7 @@ sidebar: administrator_guide_sidebar
 ---
 
 # Using Qumulo Shift-From for Amazon S3 to Copy Objects
-This guide explains how you can use Qumulo Shift-From to copy objects from a folder in an Amazon Simple Storage Service (Amazon S3) bucket (cloud object store) to a directory in a Qumulo cluster. For more information about copying objects from Qumulo to S3, see [Qumulo Shift for Amazon S3](https://care.qumulo.com/hc/en-us/articles/360053162273-Qumulo-Shift-for-Amazon-S3) in Qumulo Care.
+This guide explains how you can use Qumulo Shift-From to copy objects from a folder in an Amazon Simple Storage Service (Amazon S3) bucket (cloud object store) to a directory in a Qumulo cluster. For more information about copying objects from Qumulo to S3, see [Using Qumulo Shift-To for Amazon S3 to Copy Objects](/shift-to-s3.md) in Qumulo Care.
 
 The guide describes how a Shift-From relationship works and includes information about the prerequisites, IAM permissions, and CLI commands that you can use to copy files and manage Shift relationships.
 
@@ -43,9 +43,15 @@ The guide describes how a Shift-From relationship works and includes information
 
 * Membership in a Qumulo role with the following privileges:
 
-  * `PRIVILEGE_REPLICATION_OBJECT_WRITE`
+  * `PRIVILEGE_REPLICATION_OBJECT_WRITE`: This privilege is required to create a Shift relationship.
 
-  * `PRIVILEGE_REPLICATION_OBJECT_READ`
+  * `PRIVILEGE_REPLICATION_OBJECT_READ`: This privilege is required to view the status of a Shift relationship.
+
+  **Notes:**
+  
+  * For any changes to take effect, user accounts with newly assigned roles must log out and log back in (or their sessions must time out).
+  
+  * Use special care when granting privileges to roles and users because certain privileges (such as replication-write privileges) can use system privileges to overwrite or move data to a location where a user has greater permissions. This can give a user access to all directories and files in a cluster regardless of any specific file and directory settings.
 
 * An existing bucket with contents in Amazon S3
 
@@ -58,7 +64,7 @@ The guide describes how a Shift-From relationship works and includes information
   For more information, see [Understanding and getting your AWS credentials](https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html) in the AWS General Reference
   
 ### Example IAM Policy
-In the following example, the IAM policy gives permission to read from and write to the `my-folder` folder in the `my-bucket`. This policy can give users the minimal set of permissions required to run Shift-From jobs. (Shift-To jobs require a less-restrictive policy. For more information and an example, see [Qumulo Shift for Amazon S3](https://care.qumulo.com/hc/en-us/articles/360053162273) in Qumulo Care.
+In the following example, the IAM policy gives permission to read from and write to the `my-folder` folder in the `my-bucket`. This policy can give users the minimal set of permissions required to run Shift-From jobs. (Shift-To jobs require a less-restrictive policy. For more information and an example, see [Using Qumulo Shift-To for Amazon S3 to Copy Objects](/shift-to-s3.md).)
 
 ```json
 {
@@ -109,11 +115,11 @@ Qumulo Core performs the following steps when it creates a Shift-From relationsh
    **Note:** If you rename or move an object or local file between jobs, or if there are any metadata changes in S3 or Qumulo, the object is replicated again.
 
 ### Storing and Reusing Relationships
-To let you monitor the completion status of a job, start new jobs for a relationship after the initial job finishes, and delete the relationship (when you no longer need the S3-folder-Qumulo-directory pair), the Shift-From relationship remains on the Qumulo cluster. To avoid redownloading objects that a previous copy job downloaded, relationships take up approximately 100 bytes per object. To free this storage, you can delete relationships that you no longer need.
+The Shift-From relationship remains on the Qumulo cluster. You can monitor the completion status of a job, start new jobs for a relationship after the initial job finishes, and delete the relationship (when you no longer need the S3-folder-Qumulo-directory pair). To avoid redownloading objects that a previous copy job downloaded, relationships take up approximately 100 bytes per object. To free this storage, you can delete relationships that you no longer need.
 
 If you repeatedly download from the same S3 folder, you can speed up the download process (and skip already downloaded files) by using the same relationship.
 
-A new relationship for subsequent downloads doesn't share any tracking information with previous relationships associated with a directory and recopy data that might be already downloaded.
+A new relationship for subsequent downloads doesn't share any tracking information with previous relationships associated with a directory and might recopy data that is already downloaded.
 
 
 ## Using the Qumulo Web UI to Copy Files and Manage Relationships
@@ -143,59 +149,7 @@ This section describes how you can use the Qumulo Web UI 4.2.5 (and higher) to c
 
    The copy job begins.   
 
-### To View Configuration Details and Status of Shift Relationships
-
-1. Log in to Qumulo Core.
-1. Click **Cluster > Copy to/from S3**.
-
-   The **Copy to/from S3** page lists all existing Shift relationships.
-
-1. To get more information about a specific Shift relationship, click **&vellip; > View Details**.
-
-   ![View Details Menu](administrator-guide/images/view-details-menu.png)
-
-   The **Copy to/from S3 Details** page displays the following information:
-
-   * **Throughput:** average
-   * **Run Time**
-   * **Data:** total, transferred, and unchanged
-   * **Files:** total, transferred, and unchanged
-
-### To Stop a Copy Job in Progress
-
-1. Log in to Qumulo Core.
-1. Click **Cluster > Copy to/from S3**.
-1. To stop a copy job for a specific relationship, click **&vellip; > Abort**.
-
-   ![Abort Menu](administrator-guide/images/abort-menu.png)
-
-1. In the **Abort copy from?** dialog box, review the Shift relationship and then click **Yes, Abort**.
-
-   The copy job stops.
-
-### To Repeat a Completed Copy Job
-
-1. Log in to Qumulo Core.
-1. Click **Cluster > Copy to/from S3**.
-1. To stop a copy job for a specific relationship, click **&vellip; > Copy Again**.
-
-   ![Copy Again Menu](administrator-guide/images/copy-again-menu.png)
-
-1. In the **Copy again?** dialog box, review the Shift relationship and then click **Yes, Copy Again**.
-
-   The copy job repeats.
-
-### To Delete a Shift Relationship
-
-1. Log in to Qumulo Core.
-1. Click **Cluster > Copy to/from S3**.
-1. To stop a copy job for a specific relationship, click **&vellip; > Delete**.
-
-   ![Delete Menu](administrator-guide/images/delete-menu.png)
-
-1. In the **Delete copy from?** dialog box, review the Shift relationship and then click **Yes, Delete**.
-
-   The copy job is deleted.
+{% include content-reuse/shift-view-config-details-stop-job-repeat-job-delete-relationship.md %}
 
 
 ## Using the Qumulo CLI to Copy Files and Manage Relationships
@@ -241,20 +195,7 @@ The CLI returns the details of the relationship in JSON format, for example:
 }
 ```
 
-### Viewing Configuration Details and Status of Shift Relationships
-* To view configuration details for all Shift relationships, use the `replication_list_object_relationships` command.
-
-* To view configuration details for a specific relationship, use the `replication_get_object_relationship` command followed by the `--id` and the Shift relationship ID (GUID), for example:
-
-   ```bash
-   qq replication_get_object_relationship --id 1c23b4ed-5c67-8f90-1e23-a4f5f6ceff78
-   ```
-
-* To view the status of a specific relationship, use the `replication_get_object_relationship_status` command followed by the `--id` and the Shift relationship ID.
-
-* To view the status of all relationships, use the `replication_list_object_relationship_statuses` command.
-
-  The CLI returns the details of all relationships in JSON format, for example:
+{% include content-reuse/shift-view-config-details-status-shift-relationship.md %}
 
   ```json
   [
@@ -292,25 +233,7 @@ The CLI returns the details of the relationship in JSON format, for example:
     }
   ]
   ```
-
-  The `state` field indicates a `REPLICATION_RUNNING` status and `current_job` shows ongoing progress. When Qumulo Core copies files from S3, details for the most recent completed job become available in the `last_job` field, the `state` field changes to `REPLICATION_NOT_RUNNING` and the `current_job` field reverts to `null`.
-
-  **Note:** If you already ran a job for a relationship, it is possible for both the `current_job` and `last_job` fields to be non-null while you run a new job.
-
-### Stopping a Copy Job in Progress
-To stop a copy job already in progress, use the `replication_abort_object_relationship` command followed by the `--id` and the Shift relationship ID.
-
-### Repeating a Completed Copy Job
-To repeat a completed copy job, use the `replication_start_object_relationship` command followed by the `--id` and the Shift relationship ID.
-
-This command begins a new job for the existing relationship and downloads any content that changed in the S3 bucket or on the Qumulo cluster since the time the previous job ran.
-
-### Deleting a Shift Relationship
-After your copy job is complete, you can delete your Shift relationship. To do this, run the `replication_delete_object_relationship` command followed by the `--id` and the Shift relationship ID.
-
-**Note:** You can run this command only against a relationship that doesn't have any active jobs running.
-
-This command removes the copy job's record, leaving locally stored objects unchanged. Any storage that the relationship used to track downloaded objects becomes available when you delete the relationship.
+{% include content-reuse/shift-view-status-stop-repeat-copy-job-delete-relationship.md %}
 
 
 ## Troubleshooting Copy Job Issues
