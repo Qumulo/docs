@@ -135,7 +135,7 @@ qq nfs_get_settings
 ## Disabling NFSv4 on a Qumulo Cluster
 **Important:** Disabling NFSv4 makes any NFSv4 mounts unusable immediately. We recommend switching any NFSv4 mounts to NFSv3 before disabling NFSv4.
 
-To disable NFSv4 on an entire Qumul cluster, use the following CLI command:
+To disable NFSv4 on an entire Qumulo cluster, use the following CLI command:
 
 ```bash
 qq nfs_modify_settings --disable-v4
