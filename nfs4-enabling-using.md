@@ -2,7 +2,17 @@
 title: Enabling and Using NFSv4 on a Qumulo Cluster
 permalink: nfs4-enabling-using.html
 tags:
+  - nfs
+  - nfs3
+  - nfsv3
   - nfs4
+  - nfsv4
+  - exports
+  - mount
+  - cluster
+  - enable_nfs
+  - disable_nfs
+sidebar: administrator_guide_sidebar
 ---
 
 # Enabling and Using NFSv4 on a Qumulo Cluster
@@ -11,19 +21,19 @@ Qumulo Core 4.3.0 (and higher) supports Network File System version 4 (NFSv4). T
 **Important:** Currently, Qumulo Core supports only NFSv4.1. Mounting with version 4.0 or 4.2 isn't supported.
 
 ## Configuring and Using Exports for NFSv4
-Qumulo's NFS exports can present a view of your cluster over NFS that might differ from the contents of the underlying filesystem. You can mark NFS exports as read-only, restricted (to allow access only from certain IP adresses), or configure specific user mappings. For more information, see [Create an NFS Export](https://care.qumulo.com/hc/en-us/articles/360000723928-Create-an-NFS-Export) in Qumulo Care.
+Qumulo's NFS exports can present a view of your cluster over NFS that might differ from the contents of the underlying file system. You can mark NFS exports as read-only, restricted (to allow access only from certain IP adresses), or configure specific user mappings. For more information, see [Create an NFS Export](https://care.qumulo.com/hc/en-us/articles/360000723928-Create-an-NFS-Export) in Qumulo Care.
 
 While NFSv3 and NFSv4 share each cluster's NFS export configuration, exports behave differently when you access them using NFSv4. This section explains these differences and the new requirements for export configurations with NFSv4.
 
 ### Differences Between NFSv3 and NFSv4 Exports
 In the following example, a Qumulo cluster has the following export configuration.
 
-| Export Name        | Filesystem Path      | Read-Only  |
-|--------------------|----------------------|------------|
-| `/home`            | `/home`              | No         |
-| `/files`           | `/home/admin/files`  | No         |
-| `/read_only/home`  | `/home`              | Yes        |
-| `/read_only/files` | `/home/admin/files`  | Yes        |
+| Export Name        | File System Path      | Read-Only  |
+|--------------------|-----------------------|------------|
+| `/home`            | `/home`               | No         |
+| `/files`           | `/home/admin/files`   | No         |
+| `/read_only/home`  | `/home`               | Yes        |
+| `/read_only/files` | `/home/admin/files`   | Yes        |
 
 NFSv3 lets you mount one of these exports by specifying the full export name, for example:
 
@@ -37,45 +47,45 @@ This command gives read-only access to the `/home` directory on the cluster usin
 mount -onfsvers=3 cluster.qumulo.com:/read_only /mnt/cluster/read_only
 ```
 
-NFSv4 still lets you mount exports by specifying the full export name. However, NFSv4 also supports navigating _above_ exports, as if they are part of the filesystem. The following command succeeds.
+NFSv4 still lets you mount exports by specifying the full export name. However, NFSv4 also supports navigating _above_ exports, as if they are part of the file system. The following command succeeds.
 
 ```bash
 mount -onfsvers=4.1 cluster.qumulo.com:/read_only /mnt/cluster/read_only
 ```
 
-At the mount, the exports under `/read_only` are visible: `/mnt/cluster/read_only` displays virtual directories named `files/` and `home/` with the contents of the corresponding directories in the filesystem, for example:
+At the mount, the exports under `/read_only` are visible: `/mnt/cluster/read_only` displays virtual directories named `files/` and `home/` with the contents of the corresponding directories in the file system, for example:
 
 ```bash
 /mnt/cluster/read_only/
-|--- files/<filesystem contents>
+|--- files/<file system contents>
 |--- home/
-|------ admin/files/<filesystem contents>
-|------ <other filesystem contents>
+|------ admin/files/<file system contents>
+|------ <other file system contents>
 ```
 
-This presentation of exports lets you view existing exports using the filesystem's own interface. It also lets you view new exports as soon as someone creates or modifies them without remounting.
+This presentation of exports lets you view existing exports using the file system's own interface. It also lets you view new exports as soon as someone creates or modifies them without remounting.
 
 ### Preparing Export Configurations for NFSv4
-Qumulo's implementation of NFSv4 distinguishes between navigating _above_ exports and _inside_ an export. To avoid confusion between paths that refer to a virtual directory above an export or a real filesystem directory inside an export, no export name can be a prefix of another export name when NFSv4 is enabled.
+Qumulo's implementation of NFSv4 distinguishes between navigating _above_ exports and _inside_ an export. To avoid confusion between paths that refer to a virtual directory above an export or a real file system directory inside an export, no export name can be a prefix of another export name when NFSv4 is enabled.
 
 In the following example, a Qumulo cluster has the following export configuration.
 
-| Export Name        | Filesystem Path      |
-|--------------------|----------------------|
-| `/`                | `/`                  |
-| `/admin`           | `/home/admin`        |
+| Export Name        | File System Path       |
+|--------------------|----------------------- |
+| `/`                | `/`                    |
+| `/admin`           | `/home/admin`          |
 
-Because `/` is a prefix of `/admin`, you can't enable NFSv4 with this export configuration. This restriction prevents the situation where the path `/admin` can refer to both the export of `/home/admin` or the actual filesystem path `/admin`.
+Because `/` is a prefix of `/admin`, you can't enable NFSv4 with this export configuration. This restriction prevents the situation where the path `/admin` can refer to both the export of `/home/admin` or the actual file system path `/admin`.
 
 To prepare this configuration for NFSv4, you can do one of the following:
 * Delete the `/` export and use NFSv4 presentation of exports when mounting `/`.
 * Delete the `/admin` export.
 * Give the `/` export a name that doesn't use other exports as a prefix, for example:
 
-| Export Name        | Filesystem Path      |
-|--------------------|----------------------|
-| `/root`            | `/`                  |
-| `/admin`           | `/home/admin`        |
+| Export Name        | File System Path      |
+|--------------------|---------------------- |
+| `/root`            | `/`                   |
+| `/admin`           | `/home/admin`         |
 
 ### Visibility of IP-Restricted Exports
 **Note:** The names of exports are public to all NFSv4 clients, regardless of IP restrictions. You can't disable this behavior.
@@ -137,7 +147,7 @@ Qumulo's implementation of NFSv4 currently supports:
 * General file system access (reading, writing, and navigating files)
 * Unstable writes
 * Full use of the NFS exports configuration shared with NFSv3
-* Navigation in the pseudo-filesystem above your exports
+* Navigation in the pseudo-file system above your exports
 * NFSv3-style `AUTH\_SYS` authentication
 * Fine-grained control over file permissions using access control lists (ACLs)
 
