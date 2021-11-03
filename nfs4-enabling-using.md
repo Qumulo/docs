@@ -5,10 +5,8 @@ tags:
   - nfs4
 ---
 
-# Enabling and Using NFSv4 on Qumulo Core
-Qumulo Core 4.3.0 (and higher) supports Network File System version 4 (NFSv4). 
-
-This guide introduces Qumulo's implementation of NFSv4, including a guide to enabling the protocol and an overview of what features it does and does not support.
+# Enabling and Using NFSv4 on a Qumulo Cluster
+Qumulo Core 4.3.0 (and higher) supports Network File System version 4 (NFSv4). This section explains how you can prepare your cluster, enable or disable NFSv4 on your cluster, and provides detail about supported and unsupported features and NFSv4 minor versions.
 
 ## Preparing the Cluster
 
