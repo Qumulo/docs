@@ -33,3 +33,7 @@ scrape_configs:
 ```
 
 Fill in the \<Hostname\> field with the hostname of your cluster. This would preferably be a DNS record associated with one or more floating IP addresses from the cluster.
+
+<h1>Installing and Configuring Grafana</h1>
+
+Follow the Prometheus documentation for integrating with Grafana found [here](https://prometheus.io/docs/visualization/grafana/) in order to get Grafana up and running with Prometheus.
