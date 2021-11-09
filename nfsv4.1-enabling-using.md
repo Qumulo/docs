@@ -89,11 +89,14 @@ To prepare this configuration for NFSv4.1, you can do one of the following:
 ### Visibility of IP-Restricted Exports
 **Note:** The names of exports are public to all NFSv4.1 clients, regardless of IP restrictions. You can't disable this behavior.
 
-NFSv4.1 respects IP restrictions on exports: only clients with allowed IP addresses can access the contents of an export. However, clients without access to an export can still view the export as a directory when they traverse _above_ exports. The restrictions apply only when a client attempts to access the contents of the export. 
+NFSv4.1 respects IP restrictions on exports: only clients with allowed IP addresses can access the contents of an export. However, clients without access to an export can still view the export as a directory when they traverse _above_ exports. The restrictions apply only when a client attempts to access the contents of the export.
 
 ### 32-Bit Sanitization
 * In NFSv3, you can configure specific exports to return 32-bit sanitized data for individual fields. NFSv3 converts any data larger than 32 bits in configured fields to 32-bit data and returns the data. For example, it can sanitize file size to 32-bit format. This truncates the field to `max_uint32` whenever the NFSv3 server returns the attribute.
 * NFSv4.1 doesn't support 32-bit sanitization and ignores any sanitizations configured for an export.
+
+### Unique Hostnames for NFS Clients
+The NFSv4.1 protocol requires clients to provide the server with globally unique identifiers. However, the NFSv4.1 client for Linux uses the machine's hostname by default. Because the Linux client doesn't support using the same hostname to connect to an NFSv4.1 server, an unpredictable failure can occur. We recommend configuring all NFS clients to use unique hostnames. For more information, see [NFS Client](https://www.kernel.org/doc/html/latest/admin-guide/nfs/nfs-client.html) in the Linux Kernel User's and Administrator's Guide.
 
 
 ## Enabling NFSv4.1 on a Qumulo Cluster
@@ -105,7 +108,7 @@ You can enable NFSv4.1 on your Qumulo cluster using a single cluster-wide config
 qq nfs_modify_settings --enable-v4
 ```
 
-When you enable NFSv4.1, all NFS exports are accessible using NFSv3 and NFSv4.1. 
+When you enable NFSv4.1, all NFS exports are accessible using NFSv3 and NFSv4.1.
 
 ## Specifying the NFS Mount Option
 Typically, NFS clients find and use the highest version of the protocol that both the client and server support. For example, the following command mounts using NFSv4.1 (if it is enabled) and using NFSv3 otherwise:
@@ -141,6 +144,12 @@ qq nfs_modify_settings --disable-v4
 ```
 
 
+## Configuring Floating IPs for Nodes
+Currently, each Qumulo node is limited to 1,000 clients connected using NFSv4.1 simultaneously. To account for nodes going down, we recommend balancing the number of client connections across your nodes by configuring a sufficient number of floating IP addresses per node. This prevents a node failover event from overloading the nodes to which the clients might fail over.
+
+For example, if you configure only one IP address per node, on a cluster with 600 clients per node a single node failure might overload one of the remaining nodes, preventing 200 clients from connecting. If you assign multiple floating IP addresses to each node, the clients' connections are distributed across multiple nodes.
+
+
 ## Supported and Unsupported Features in Qumulo's Implementation of NFSv4.1
 Qumulo's implementation of NFSv4.1 currently supports:
 * General file system access (reading, writing, and navigating files)
@@ -153,7 +162,7 @@ Qumulo's implementation of NFSv4.1 currently supports:
 Qumulo Core doesn't support the following NFSv3 features through NFSv4.1:
 * Quota sizes don't appear through NFSv4.1 with certain commands, such as `df` (however, Qumulo Core respects directory quotas)
 * You can't access snapshots through NFSv4.1
-* Server-side file locking (for example, using the `fcntl` command)
+* File locking (for example, using the `fcntl` command)
 
 Qumulo Core doesn't currently support the following NFSv4.1 features:
 * Secure authentication using Kerberos
