@@ -183,7 +183,7 @@ This section describes how you can use the Qumulo CLI 3.2.5 (and higher) to copy
 
 ### Copying Files from Amazon S3
 To copy files, use the `replication_create_object_relationship` command and specify the following:
-* Local (source) directory path on Qumulo cluster
+* Local directory path on Qumulo cluster
 * Copy direction (copy-to)
 * S3 object folder
 * S3 bucket
@@ -279,7 +279,7 @@ We recommend the following best practices for working with Qumulo Shift-To for A
 
 
 ## Restrictions
-* **Object-Locked Buckets:** You can't use buckets configured with S3 Object Lock and a default retention period as a target for Shift-To. If possible, either remove the defauly retention period and set retention periods explicitly on objects uploaded outside of Shift or use a different S3 bucket without S3 Object Lock enabled. For more information, see [How S3 Object Lock works](https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock-overview.html) in the _Amazon Simple Storage Service User Guide_.
+* **Object-Locked Buckets:** You can't use buckets configured with S3 Object Lock and a default retention period for Shift-To. If possible, either remove the defauly retention period and set retention periods explicitly on objects uploaded outside of Shift or use a different S3 bucket without S3 Object Lock enabled. For more information, see [How S3 Object Lock works](https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock-overview.html) in the _Amazon Simple Storage Service User Guide_.
 * **File Size Limit:** The size of an individual file can't exceed 5 TiB (this is the maximum object size that S3 supports). There is no limit on the total size of all your files.
 * **File Path Limit:** The length of a file path must be shorter than 1,024 characters, including the configured object folder prefix, excluding the local directory path.
 * **Hard Links:** Qumulo Core 3.2.3 (and higher) supports hard links, up to the maximum object size that S3 supports.
