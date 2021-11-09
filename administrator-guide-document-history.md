@@ -21,7 +21,12 @@ The following table lists changes to the _Qumulo Administrator Guide_.
   <tbody>
     <tr>
       <td>Nov. 10, 2021</td>
-      <td>Added the <a href="/nfsv4.1-enabling-using.html">Enabling and Using NFSv4.1 on a Qumulo Cluster</a> section.</td>
+            <td>Added the following sections:
+        <ul>
+          <li><a href="/nfsv4.1-enabling-using.html">Enabling and Using NFSv4.1 on a Qumulo Cluster</a></li>
+          <li><a href="/nfsv4.1-auth-sys-acls.html">Managing File Access Permissions Using NFSv4.1 Access Control Lists (ACLs)</a></li>
+        </ul>
+      </td>
     </tr>
     <tr>
       <td>Nov. 2, 2021</td>
