@@ -1,6 +1,6 @@
 ---
 title: Managing File Access Permissions Using NFSv4.1 Access Control Lists (ACLs)
-permalink: nfs4-auth-sys-acls.html
+permalink: nfsv4.1-auth-sys-acls.html
 tags:
   - nfs
   - nfs4.1
