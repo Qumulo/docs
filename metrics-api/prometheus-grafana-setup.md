@@ -37,3 +37,28 @@ Fill in the \<Hostname\> field with the hostname of your cluster. This would pre
 <h1>Installing and Configuring Grafana</h1>
 
 Follow the Prometheus documentation for integrating with Grafana found [here](https://prometheus.io/docs/visualization/grafana/) in order to get Grafana up and running with Prometheus.
+
+<h1>Examples</h1>
+
+<h2>Creating a Throughput Graph with Grafana</h2>
+
+![Example Throughput Graph in Grafana](metrics-api/images/prometheus-grafana-setup-example-throughput-graph.png)
+
+This example with demonstrate how to setup a graph on Grafana to view total read and write throughput across your cluster. These instructions assume that you already have Grafana installed and configured to pull from a Prometheus instance, and will be based on the *Creating a Prometheus graph* section in the [Prometheus documentation](https://prometheus.io/docs/visualization/grafana/).
+
+1. Follow the first two steps of the *Creating a Prometheus graph* section from the documentation linked above to create a new Grafana graph and set it to query your Prometheus instance.
+1. For Step 3, enter the following for the query:
+  
+    `sum by (protocol, io_type) (rate(qumulo_protocol_bytes[1m]))`
+
+    This query will get the throughput rate over a 1 minute period, and sum over the protocol and io_type tags. For more information on writing PromQL queries, see the [Prometheus documentation](https://prometheus.io/docs/prometheus/latest/querying/basics/).
+
+1. For Step 4, you can enter something like `{{protocol}}: {{io_type}}`. This will label each time series shown on the graph by the protocol and the io_type.
+1. On the side menu to the left, select the second icon down, *Visualization*. In the *Label* box under *Left Y* in the *Axes* section, enter something like "Throughput (bytes)". This will add a label to the Y-axis on the left side of the graph.
+1. On the side menu to the left again, select the next option down, *General*. In the *Title* box, enter something like "Cluster Throughput". This will set the title of the graph itself.
+1. You can play around with some of the other visualization settings to adjust the appearance to your liking.
+1. Finally, in the top right corner there is a dropdown menu that should say something like "Last 6 hours". For the purposes of this example, you can set it to be something shorter such as 5 or 15 minutes in order to see the graph fill up with data more quickly.
+1. Hit the save icon in the top right corner and click *Save*.
+1. Click the back arrow at the top left corner to go back to the dashboard page, where you should be able to see the new graph you just made with data starting to come in.
+
+For more information about dashboards, panels, or other visualizations, see their respective sections in the [Grafana documentation](https://grafana.com/docs/grafana/latest/).
