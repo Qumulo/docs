@@ -11,6 +11,7 @@ tags:
   - cluster
   - enable_nfs
   - disable_nfs
+  - floating_ip
 sidebar: administrator_guide_sidebar
 ---
 
@@ -166,4 +167,4 @@ Qumulo Core doesn't support the following NFSv3 features through NFSv4.1:
 
 Qumulo Core doesn't currently support the following NFSv4.1 features:
 * Secure authentication using Kerberos
-* Delegation
+* Delegations
