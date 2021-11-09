@@ -20,7 +20,7 @@ test:
       - test
   except:
     variables:
-      - $CI_COMMIT_BRANCH == "cascade-acls"
+      - $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
 
 pages:
   stage: deploy
@@ -31,4 +31,4 @@ pages:
       - public
   only:
     variables:
-      - $CI_COMMIT_BRANCH == "cascade-acls"
+      - $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
