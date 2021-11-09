@@ -1,20 +1,21 @@
 ---
-title: NFS4 AUTH_SYS ACLs
+title: Managing File Access Permissions Using NFSv4.1 Access Control Lists (ACLs)
 permalink: nfs4-auth-sys-acls.html
 tags:
   - nfs
-  - nfs4
+  - nfs4.1
   - acl
-  - acls
+  - access_control_list
   - auth_sys
   - auth
+  - permissions
+  - file_access
+  - file_access_permissions
 sidebar: administrator_guide_sidebar
 ---
 
-# NFS4 AUTH_SYS ACLs
-NFSv4 provides access control lists (ACLs) to manage access permissions for files. Qumulo’s early
-access NFSv4 supports ACLs using AUTH_SYS credentials.  You can allow/deny a variety of different
-operations using the `nfs4_editfacl` utility (or `nfs4_setfacl`).
+# Managing File Access Permissions Using NFSv4.1 Access Control Lists (ACLs)
+NFSv4 provides access control lists (ACLs) to manage access permissions for files. Qumulo’s early access NFSv4 supports ACLs using AUTH_SYS credentials.  You can allow/deny a variety of different operations using the `nfs4_editfacl` utility (or `nfs4_setfacl`). For more information about NFSv4.1, see [Enabling and Using NFSv4.1 on a Qumulo Cluster](/nfsv4.1-enabling-using.md).
 
 ## nfs4_set/get/editfacl tools and examples
 `nfs4_getfacl`, `nfs4_editfacl`, and `nfs4_setfacl` can be found in the package `nfs4-acl-tools` on
