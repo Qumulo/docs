@@ -36,11 +36,11 @@ Fill in the \<Hostname\> field with the hostname of your cluster. This would pre
 
 <h1>Installing and Configuring Grafana</h1>
 
-Follow the Prometheus documentation for integrating with Grafana found [here](https://prometheus.io/docs/visualization/grafana/) in order to get Grafana up and running with Prometheus.
+Follow the Prometheus documentation for integrating with Grafana found [here](https://prometheus.io/docs/visualization/grafana/) in order to get Grafana up and running with Prometheus. Follow the Grafana documentation for integrating alerts with notification systems found [here](https://grafana.com/docs/grafana/latest/alerting/old-alerting/notifications/) in order to receive notifications when alerts are triggered.
 
 <h1>Examples</h1>
 
-<h2>Creating a Throughput Graph with Grafana</h2>
+<h2>Create a Throughput Graph with Grafana</h2>
 
 ![Example Throughput Graph in Grafana](metrics-api/images/prometheus-grafana-setup-example-throughput-graph.png)
 
@@ -62,3 +62,18 @@ This example with demonstrate how to setup a graph on Grafana to view total read
 1. Click the back arrow at the top left corner to go back to the dashboard page, where you should be able to see the new graph you just made with data starting to come in.
 
 For more information about dashboards, panels, or other visualizations, see their respective sections in the [Grafana documentation](https://grafana.com/docs/grafana/latest/).
+
+<h2>Alert on Offline Node<\h2>
+
+Administrators want to be promptly notified when there is an issue in their cluster preventing one or more nodes from being online. Being in this state risks additional failures taking the entire cluster offline, as well as reduced performance and eventually the inability to write to the cluster. We'll get notified quickly of this state by making a alarm in Grafana.
+
+To make an alarm we'll follow [this guide](https://grafana.com/docs/grafana/latest/alerting/old-alerting/create-alerts/).
+1. Start by setting up a graph of `qumulo_quorum_node_is_offline`. You can use the previous example as a guide and replace the query with the following:
+    `sum(qumulo_quorum_node_is_offline)`
+1. Name the alarm "Node Offline".
+1. Evaluate every 1 minute to match the scrape interval.
+1. If you would like to not be notified of transient issues, such as a networking blip that temporarily makes a node offline, use *For* to set the amount of time that a node must be offline before being alerted.
+1. Set the conditions for the alert to be `avg()` is above 0.95. If you have set *For* to be 5m for example, then the alarm will go off when a node has been offline for 95% of the last 5 minutes.
+1. Select a notification channel to receive the alerts and add a message that should come with the alert.
+1. Click *Test Alert* to test the alert to make sure it is working.
+1. When you are done configuring any other settings, click the save icon in the top right corner to save the alert.
