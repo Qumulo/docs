@@ -24,6 +24,9 @@ entries:
       url: /nfsv4.1-enabling-using.html
       output: web
 
+    - title: Managing File Access Permissions Using NFSv4.1 Access Control Lists (ACLs)
+      url: /nfsv4.1-auth-sys-acls.html
+
     - title: Using Qumulo Shift-To to Copy Objects to Amazon S3
       url: /shift-to-s3.html
       output: web
