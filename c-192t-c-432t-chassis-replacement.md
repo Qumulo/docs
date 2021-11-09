@@ -25,9 +25,13 @@ Before you begin, ensure that you have C-192T or C-432T hardware and the replace
 
 1. Disconnect all cables from the back of the node.
 
-1. Pull the node out from the rack and set it down on a flat surface.
+1. To pull the node out from the rack, release the small, white tabs on the rails that hold the chassis in place.
 
-1. To release the lid, press the large **PUSH** button on each side of the chassis frame.
+1. Place the node on a flat surface.
+
+1. To release the lid, remove the small screw on the upper-right side of the node (viewed from the rear).
+
+1. Press the large **PUSH** button on each side of the chassis frame.
 
    ![C-Series Chassis Side Release Buttons](administrator-guide/images/c-series-button-releases.png)
 
