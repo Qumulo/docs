@@ -87,7 +87,7 @@ To edit the ACL of a file using the text editor specified in the `$EDITOR` envir
 To set the ACL of a file, you can use one of the following commands:
 
 * **Add a Single ACE:** `nfs4_setfacl -a <ace>`
-* **Set an Entire ACE:** `nfs4_setfacl -s <ace>`
+* **Set an Entire ACL:** `nfs4_setfacl -s <acl>`
 
 
 ## Using Special NFSv4.1 Identifiers
