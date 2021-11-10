@@ -1,7 +1,7 @@
 ---
 title: Qumulo Documentation
 permalink: index.html
-tags: 
+tags:
   - home_page
 ---
 
