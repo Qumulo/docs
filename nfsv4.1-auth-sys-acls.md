@@ -115,9 +115,7 @@ Often, the identities in ACEs map to an NFS UID or GID. These mappings succeed w
 * Enable [RFC2307 (An Approach for Using LDAP as a Network Information Service)](https://datatracker.ietf.org/doc/html/rfc2307).
 * Associate all NFS UIDs or GIDs with AD users or groups in your AD configuration.
 
-Alternatively, you can configure UID or GID mappings for the cluster's local users or groups.
-
-When SMB ACLs refer to users or groups not mapped to a corresponding NFS UID or GID, the users or groups appear with the `NOBODY` UID (`65534`).
+Alternatively, you can configure UID or GID mappings for the cluster's local users or groups. When SMB ACLs refer to users or groups not mapped to a corresponding NFS UID or GID, the users or groups appear with the `NOBODY` UID (`65534`).
 
 To discover which mappings your cluster can perform for a file, use the following CLI commands:
 
