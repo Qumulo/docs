@@ -34,6 +34,8 @@ scrape_configs:
 
 Fill in the \<Hostname\> field with the hostname of your cluster. This would preferably be a DNS record associated with one or more floating IP addresses from the cluster.
 
+**Important Note**: In order to use the metrics API, your cluster must have authentication disabled on the endpoint. Please reach out to your Qumulo Systems Engineer or Success Manager if this has not been done.
+
 <h1>Installing and Configuring Grafana</h1>
 
 Follow the Prometheus documentation for integrating with Grafana found [here](https://prometheus.io/docs/visualization/grafana/) in order to get Grafana up and running with Prometheus. Follow the Grafana documentation for integrating alerts with notification systems found [here](https://grafana.com/docs/grafana/latest/alerting/old-alerting/notifications/) in order to receive notifications when alerts are triggered.
@@ -78,6 +80,8 @@ To make an alarm we'll follow [this guide](https://grafana.com/docs/grafana/late
 1. Click *Test Alert* to test the alert to make sure it is working.
 1. When you are done configuring any other settings, click the save icon in the top right corner to save the alert.
 
+For more information on alerts, see the [Grafana documentation](https://grafana.com/docs/grafana/latest/alerting/old-alerting/).
+
 <h2>Alert on Low Free Space</h2>
 
 Knowing how much free space is left in a cluster is very important, and in many cases it is useful to have an alarm that will alert when free space gets too low. In this example we will create a graph to show free space remaining and set an alarm to alert if it gets too low.
@@ -90,3 +94,5 @@ Knowing how much free space is left in a cluster is very important, and in many 
 1. Set the conditions for the alert to be `avg()` is below 10. This means that the alarm will go off if the cluster averages below 10% free space over the period of time specified in the *For* field.
 1. Enter the notification channel you want alerts to be sent to as well as a message.
 1. Finish any other configuration you want to do with the graph or the alert, then click the save icon in the top right corner.
+
+For more information on alerts, see the [Grafana documentation](https://grafana.com/docs/grafana/latest/alerting/old-alerting/).
