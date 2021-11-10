@@ -108,7 +108,7 @@ Qumulo Core performs the following steps when it creates a Shift-To relationship
 
 1. Recursively traverses the directories and files in the snapshots and copies each object to a corresponding object in S3.
 
-1. Preserves the file paths in the source directory in the keys of replicated objects.
+1. Preserves the file paths in the local directory in the keys of replicated objects.
 
    For example, the file `/my-dir/my-project/file.text`, where `my-dir` is the directory on your Qumulo cluster, is uploaded to S3 as the following object, where `my-folder` is the specified S3 folder.
 
@@ -116,7 +116,7 @@ Qumulo Core performs the following steps when it creates a Shift-To relationship
    https://my-bucket.s3.us-west-2.amazonaws.com/my-folder/my-project/file.txt
    ```
 
-   **Note:** This process doesn't encode or transform your data in any way. Shift-To replicates only the data in a regular file's primary stream, excluding alternate data streams and file system metadata such as access control lists (ACLs). To avoid transferring data across the public Internet, a server-side S3 copy operation also copies any hard links to files in the replication source directory to S3 as full copies of objects, with identical contents and metadata.
+   **Note:** This process doesn't encode or transform your data in any way. Shift-To replicates only the data in a regular file's primary stream, excluding alternate data streams and file system metadata such as access control lists (ACLs). To avoid transferring data across the public Internet, a server-side S3 copy operation also copies any hard links to files in the replication local directory to S3 as full copies of objects, with identical contents and metadata.
 
    The following table explains how entities in the Qumulo file system map to entities in an S3 bucket.
 
@@ -134,9 +134,9 @@ Qumulo Core performs the following steps when it creates a Shift-To relationship
    | Timestamps (`mtime`, `ctime`, `atime`, `btime`) | Not copied                                                                                    |
    | UNIX device file                                | Not copied                                                                                    |
    
-1. Checks whether a file is already replicated. If the object exists in the target S3 bucket, and neither the file nor the object are modified since the last successful replication, its data is not retransferred to S3.
+1. Checks whether a file is already replicated. If the object exists in the remote S3 bucket, and neither the file nor the object are modified since the last successful replication, its data is not retransferred to S3.
 
-   **Note:** Shift never deletes files in the target S3 folder, even if the files are removed from the source directory since the last replication.
+   **Note:** Shift never deletes files in the remote S3 folder, even if the files are removed from the local directory since the last replication.
 
 1. Deletes the temporary snapshot.
 
@@ -183,7 +183,7 @@ This section describes how you can use the Qumulo CLI 3.2.5 (and higher) to copy
 
 ### Copying Files from Amazon S3
 To copy files, use the `replication_create_object_relationship` command and specify the following:
-* Source directory path on Qumulo cluster
+* Local directory path on Qumulo cluster
 * Copy direction (copy-to)
 * S3 object folder
 * S3 bucket
@@ -275,13 +275,13 @@ We recommend the following best practices for working with Qumulo Shift-To for A
 * **Unique Artifacts:** To avoid collisions between different data sets, specify a unique object folder or unique bucket for each replication relationship from a Qumulo cluster to S3.
 * **Object Versioning:** To protect against unintended overwrites, enable object versioning. For more information, see [Using versioning in S3 buckets](https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectVersioning.html) in the _Amazon Simple Storage Service User Guide_.
 * **Completed Jobs:** If you don't plan to use a Shift relationship to download updates from S3, delete the relationship to free up any storage associated with it.
-* **Concurrent Replication Relationships:** To increase parallelism, especially across distinct datasets, use concurrent replication relationships to S3. To avoid having a large number of concurrent operations impact client I/O to the Qumulo cluster, limit the number of concurrent replication relationships. While there is no hard limit, we don't recommend creating more than 100 concurrent replication relationships on a cluster (including both Shift and Qumulo source replication relationships).
+* **Concurrent Replication Relationships:** To increase parallelism, especially across distinct datasets, use concurrent replication relationships to S3. To avoid having a large number of concurrent operations impact client I/O to the Qumulo cluster, limit the number of concurrent replication relationships. While there is no hard limit, we don't recommend creating more than 100 concurrent replication relationships on a cluster (including both Shift and Qumulo local replication relationships).
 
 
 ## Restrictions
-* **Object-Locked Buckets:** You can't use buckets configured with S3 Object Lock and a default retention period as a target for Shift-To. If possible, either remove the defauly retention period and set retention periods explicitly on objects uploaded outside of Shift or use a different S3 bucket without S3 Object Lock enabled. For more information, see [How S3 Object Lock works](https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock-overview.html) in the _Amazon Simple Storage Service User Guide_.
+* **Object-Locked Buckets:** You can't use buckets configured with S3 Object Lock and a default retention period for Shift-To. If possible, either remove the defauly retention period and set retention periods explicitly on objects uploaded outside of Shift or use a different S3 bucket without S3 Object Lock enabled. For more information, see [How S3 Object Lock works](https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock-overview.html) in the _Amazon Simple Storage Service User Guide_.
 * **File Size Limit:** The size of an individual file can't exceed 5 TiB (this is the maximum object size that S3 supports). There is no limit on the total size of all your files.
-* **File Path Limit:** The length of a file path must be shorter than 1,024 characters, including the configured object folder prefix, excluding the source directory path.
+* **File Path Limit:** The length of a file path must be shorter than 1,024 characters, including the configured object folder prefix, excluding the local directory path.
 * **Hard Links:** Qumulo Core 3.2.3 (and higher) supports hard links, up to the maximum object size that S3 supports.
 * **Objects Under the Same Key:** Unless an object contains Qumulo-specific hash metadata that matches a file, any object that exists under the same key that a new relationship replicates _is overwritten_. To retain older versions of overwritten objects, enable versioning for your S3 bucket. For more information, see [Using versioning in S3 buckets](https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectVersioning.html) in the _Amazon Simple Storage Service User Guide_.
 * **Object Checksums:** All files replicated using S3 server-side integrity verification (during upload) use a SHA256 checksum stored in the replicated object's metadata.
