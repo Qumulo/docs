@@ -35,43 +35,43 @@ A::EVERYONE@:rtncy
 ```
 The entries in the access control list have four parts separated by colons. For a detailed description, see the [man page for `nfs4_acl`](https://linux.die.net/man/5/nfs4_acl) in the Linux Documentation.
 
-* The type of access control entry (ACE). In this example, all three ACEs are set to `A` (allow).
+1. The type of access control entry (ACE). In this example, all three ACEs are set to `A` (allow).
 
-  **Note:** Qumulo Core supports only `A` and `D` ACEs.
+   **Note:** Qumulo Core supports only `A` and `D` ACEs.
 
-  * **A:** Allow
-  * **D:** Deny
-  * **U:** Audit
-  * **L:** Alarm
+   * **A:** Allow
+   * **D:** Deny
+   * **U:** Audit
+   * **L:** Alarm
 
-* Additional ACE flags. In this example, the second ACE has the flag `g` that shows that the ID in the following part represents a _group_ (rather than a user).
+1. Additional ACE flags. In this example, the second ACE has the flag `g` that shows that the ID in the following part represents a _group_ (rather than a user).
 
-  **Note:** Qumulo Core doesn't support The `S` and `F` flags.
+   **Note:** Qumulo Core doesn't support The `S` and `F` flags.
 
-* Whom the ACE applies to. The available options are:
+1. Whom the ACE applies to. The available options are:
 
-  * `AUTH_SYS`: A user authenticated at the client
-  * `EVERYONE@`: Any user of the file system
-  * `GID`: The GID of the file
-  * `GROUP@`: The group owner of the file
-  * `UID`: The UID of the file
-  * `OWNER@`: The owner of the file
+   * `AUTH_SYS`: A user authenticated at the client
+   * `EVERYONE@`: Any user of the file system
+   * `GID`: The GID of the file
+   * `GROUP@`: The group owner of the file
+   * `UID`: The UID of the file
+   * `OWNER@`: The owner of the file
 
-  **Note:** Currently, Qumulo Core doesn't support Kerberos principals in ACLs.
+   **Note:** Currently, Qumulo Core doesn't support Kerberos principals in ACLs.
 
-* The access types the ACE applies to. For example:
+1. The access types the ACE applies to. For example:
 
-  * `r`: Read
-  * `t`: Read attributes
-  * `w`: Write
+   * `r`: Read
+   * `t`: Read attributes
+   * `w`: Write
 
-  The `nfs4_setfacl` command also lets you use the following shorthand:
+   The `nfs4_setfacl` command also lets you use the following shorthand:
 
-  * `R`: Generic read
-  * `W`: Generic write
-  * `X`: Execute permissions
+   * `R`: Generic read
+   * `W`: Generic write
+   * `X`: Execute permissions
 
-  For a detailed description, see the [man page for `nfs4_setfacl`](https://linux.die.net/man/1/nfs4_setfacl) in the Linux Documentation.
+   For a detailed description, see the [man page for `nfs4_setfacl`](https://linux.die.net/man/1/nfs4_setfacl) in the Linux Documentation.
 
 The ACL in this example corresponds the the `664` mode: The owner and group of the file are allowed to read and write, while others (`EVERYONE@`) are allowed to only read. To check the current mode, run the `stat` command, for example:
 
