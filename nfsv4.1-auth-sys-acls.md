@@ -15,98 +15,126 @@ sidebar: administrator_guide_sidebar
 ---
 
 # Managing File Access Permissions Using NFSv4.1 Access Control Lists (ACLs)
-NFSv4 provides access control lists (ACLs) to manage access permissions for files. Qumulo’s early access NFSv4 supports ACLs using AUTH_SYS credentials.  You can allow/deny a variety of different operations using the `nfs4_editfacl` utility (or `nfs4_setfacl`). For more information about NFSv4.1, see [Enabling and Using NFSv4.1 on a Qumulo Cluster](/nfsv4.1-enabling-using.md).
+NFSv4.1 provides access control lists (ACLs) to manage access permissions for files. Qumulo’s early access NFSv4.1 supports ACLs using AUTH_SYS credentials.  You can allow/deny a variety of different operations using the `nfs4_editfacl` utility (or `nfs4_setfacl`). For more information about NFSv4.1.1, see [Enabling and Using NFSv4.1 on a Qumulo Cluster](/nfsv4.1-enabling-using.md).
 
-## nfs4_set/get/editfacl tools and examples
-`nfs4_getfacl`, `nfs4_editfacl`, and `nfs4_setfacl` can be found in the package `nfs4-acl-tools` on
-most Linux distributions.  `nfs4_getfacl` can show the current ACL of a file:
+## Using the NFSv4.1 CLI Commands to Manage ACLs
+In most Linux distributions, the `nfs-acl-tools` package contains the NFSv4.1 commands that let you manage ACLs for files.
+
+### Showing the ACL of a File
+To show the ACL of a file, use the `nfs4_getfacl` command. In the following example, we create the file `my-file` and then show the ACL for it.
 
 ```bash
-$ touch /mnt/qumulo/foo
-$ nfs4_getfacl /mnt/qumulo/foo
+$ touch /mnt/qumulo/my-file
+$ nfs4_getfacl /mnt/qumulo/my-file
 A::1001:rwatTnNcy
 A:g:1001:rwatTnNcy
 A::EVERYONE@:rtncy
 ```
+The entries in the access control list have four parts separated by colons. For a detailed description, see the [man page for `nfs4_acl`](https://linux.die.net/man/5/nfs4_acl) in the Linux Documentation.
 
-The entries in the access control list are given in four parts, separated by colons (a thorough
-description of the format and allowed flags can be found in man `nfs4_acl`.)
- - The type of the ACE. One letter representing whether the ACE is **A**llow, **D**eny, a**U**dit or
-   a**L**arm. Only Allow and Deny ACEs are supported.
- - Additional flags on the ACE. In the example’s second ACE, the g flag indicates that the ID in the
-   following part represents a group rather than a user. The `S` and `F` flags are not supported.
- - Who the ACE applies to. Can be either an `AUTH_SYS` `UID`/`GID`, or one of the special
-   identifiers `EVERYONE@`, `OWNER@`, or `GROUP@`. Currently, Kerberos principals are not supported
-   in ACLs.
- - The types of access the ACE applies to. Some examples are `r` for read, `w` for write, `t` for
-   read attributes. `nfs4_setfacl` also allows the use of the shorthands `R`, `W`, and `X` which
-   expand to generic read, write, and execute permissions - specifics can be found in `man
-   nfs4_setfacl`. Note: we’ve observed that the ACL tools do not allow setting any of the flags
-   `dnNo` in a Deny ACE.
+* The type of access control entry (ACE). In this example, all three ACEs are set to `A` (allow).
 
-The above example corresponds to a mode of 664: The owner and group of the file are allowed to read
-and write, while others (`EVERYONE@`) are only allowed to read.
+  **Note:** Qumulo Core supports only `A` and `D` ACEs.
+
+  * **A:** Allow
+  * **D:** Deny
+  * **U:** Audit
+  * **L:** Alarm
+
+* Additional ACE flags. In this example, the second ACE has the flag `g` that shows that the ID in the following part represents a _group_ (rather than a user).
+
+  **Note:** Qumulo Core doesn't support The `S` and `F` flags.
+
+* Whom the ACE applies to. The available options are:
+
+  * `AUTH_SYS`: A user authenticated at the client
+  * `EVERYONE@`: Any user of the file system
+  * `GID`: The GID of the file
+  * `GROUP@`: The group owner of the file
+  * `UID`: The UID of the file
+  * `OWNER@`: The owner of the file
+
+  **Note:** Currently, Qumulo Core doesn't support Kerberos principals in ACLs.
+
+* The access types the ACE applies to. For example:
+
+  * `r`: Read
+  * `t`: Read attributes
+  * `w`: Write
+
+  The `nfs4_setfacl` command also lets you use the following shorthand:
+
+  * `R`: Generic read
+  * `W`: Generic write
+  * `X`: Execute permissions
+
+  For a detailed description, see the [man page for `nfs4_setfacl`](https://linux.die.net/man/1/nfs4_setfacl) in the Linux Documentation.
+
+The ACL in this example corresponds the the `664` mode: The owner and group of the file are allowed to read and write, while others (`EVERYONE@`) are allowed to only read. To check the current mode, run the `stat` command, for example:
 
 ```bash
-$ stat -c %a /mnt/qumulo/foo
+$ stat -c %a /mnt/qumulo/my-file
 664
 ```
 
-`nfs4_editfacl` (or `nfs4_setfacl -e`) allows editing a file’s ACL in the text editor specified by
-the `$EDITOR` environment variable. You can add ACEs in new lines, or make changes to the existing
-entries in the ACL. The `nfs4_setfacl` tool provides a variety of other ways to edit ACLs from the
-command line, for example adding a single ACE with `nfs4_setfacl -a <ACE>` or setting an entire ACL
-with `nfs4_setfacl -s <ACL>`.
+### Editing the ACL of a File
+To edit the ACL of a file using the text editor specified in the `$EDITOR` environment variable, use the `nfs4_editfacl` (or `nfs4_setfacl -e`) command. For a detailed description, see the [man page for `nfs4_editfacl`](https://linux.die.net/man/1/nfs4_editfacl) and [`nfs4_setfacl`](https://linux.die.net/man/1/nfs4_setfacl) in the Linux Documentation.
 
-## Special Identifiers
-Qumulo supports 3 of the special identifiers defined by NFSv4: `EVERYONE@`, `OWNER@`, and `GROUP@`.
-These can be used to make an ACE apply to the owner of a file, the group owner of a file, or any
-user of the filesystem.
+### Setting the ACL of a File
+To set the ACL of a file, you can use one of the following commands:
 
-## Interaction with Mode
-You can manage access permissions over NFSv4 with either ACLs or POSIX-style modes, or use them in
-combination with each other. If you set an ACLs on a file and then set a mode on it, the
-restrictions expressed by the mode will be applied to the ACL to modify or remove ACEs that apply to
-the owner, group, or other users. If you use the `OWNER@` or `GROUP@` identifiers in an ACL that
-allows read/write/execute permissions, this will be reflected when reading the file’s mode, in the
-owner or group bits of the mode. Note that permissions granted to `EVERYONE@` are broader than the
-“other” bits in a mode, as `EVERYONE@` includes the owner and group of a file while the “other” bits
-of a mode do not apply to the owner or group.
+* **Add a Single ACE:** `nfs4_setfacl -a <ace>`
+* **Set an Entire ACE:** `nfs4_setfacl -s <ace>`
 
-## Interaction with Other Protocols
-NFSv4 ACLs are comparable to SMB’s access controls, and often can be written/read between the two
-protocols without issue.
 
-In many cases, identities used in an ACE can map to an NFS UID or GID. Mappings may succeed when:
- - The cluster is joined to an Active Directory domain, RFC2307 is enabled, and NFS UIDs/GIDs are
-   associated with AD users/groups in the Active Directory configuration.
- - UID/GID mappings are configured for the cluster’s local users/local groups.
+## Using Special NFSv4.1 Identifiers
+Qumulo supports three of the special identifiers that NFSv4.1 defines. These identifiers get the ACE to apply to:
 
-Otherwise in cases where SMB ACLs refer to users or groups that are not mapped to a corresponding
-NFS UID/GID, they will appear with the NOBODY UID (65534).
+* `EVERYONE@`: Any user of the file system
+* `GROUP@`: The group owner of the file
+* `OWNER@`: The owner of the file
 
-For more information on what mappings your cluster may perform for a given file, see the following
-`qq` CLI commands for identity inspection:
- - `qq fs_get_acl`
- - `qq auth_find_identity`
- - `qq auth_expand_identity`
 
-## Changing Owner
-When the owner of a file is changed, ACEs that refer to that owner will be changed to apply to the
-new owner.
+## Managing NFSv4.1 Permissions with ACLs and POSIX-Style Modes
+You can manage NFSv4.1 access permissions with ACLs, POSIX-style modes, or a combination of both.
+
+* If you set an ACL on a file and then also set a mode on it, the restrictions that the mode espresses are also applied to the ACL. These restrictions change or remove ACEs that apply to the owner, group, or other users.
+
+* If you use the `OWNER@` or `GROUP@` identifiers in an ACL that allows read, write, or execute permissions, the identifiers appear in the `owner` or `group` bits of the mode when you read the file’s mode.
+
+**Note:** Because the `EVERYONE@` identifier includes the owner and group of a file and the `other` bits of a mode don't apply to the owner or group, the permissions you grant to the `EVERYONE@` identifier are more broad than a mode's `other` bits.
+
+## Using NFSv4.1 ACLs with SMB Access Control
+NFSv4.1 ACLs are comparable with SMB access controls. In most cases, you can write and read using both protocols without issues.
+
+Often, the identities in ACEs map to an NFS UID or GID. These mappings succeed when you:
+* Connect your cluster to an Active Directory (AD) domain.
+* Enable [RFC2307 (An Approach for Using LDAP as a Network Information Service)](https://datatracker.ietf.org/doc/html/rfc2307).
+* Associate all NFS UIDs or GIDs with AD users or groups in your AD configuration.
+* Configure UID or GID mappings for the cluster's local users or groups.
+
+When SMB ACLs refer to users or groups not mapped to a corresponding NFS UID or GID, the users or groups appear with the `nobody` UID (`65534`).
+
+To discover which mappings your cluster can perform for a file, use the following CLI commands:
+
+* `qq auth_expand_identity`: Find equivalent identities and full group membership for an `auth_id`
+* `qq auth_find_identity`: Find all representations for an `auth_id`
+* `qq fs_get_acl`: Get the ACL for a file or directory
+
+
+## Changing File Owners
+When you change the owner of a file, the ACEs that refer to the owner change to the new owner, for example:
 
 ```bash
-$ nfs4_getfacl /mnt/qumulo/foo
+$ nfs4_getfacl /mnt/qumulo/my-file
 A::1001:rwatTnNcy
 A:g:1001:rwatTnNcy
 A::EVERYONE@:rtncy
 
-$ sudo chown 1002 /mnt/qumulo/foo
+$ sudo chown 1002 /mnt/qumulo/my_file
 
-$ nfs4_getfacl /mnt/qumulo/foo
+$ nfs4_getfacl /mnt/qumulo/my-file
 A::1002:rwatTnNcy
 A:g:1001:rwatTnNcy
 A::EVERYONE@:rtncy
 ```
-
-
