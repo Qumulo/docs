@@ -117,7 +117,7 @@ Often, the identities in ACEs map to an NFS UID or GID. These mappings succeed w
 
 Alternatively, you can configure UID or GID mappings for the cluster's local users or groups.
 
-When SMB ACLs refer to users or groups not mapped to a corresponding NFS UID or GID, the users or groups appear with the `nobody` UID (`65534`).
+When SMB ACLs refer to users or groups not mapped to a corresponding NFS UID or GID, the users or groups appear with the `NOBODY` UID (`65534`).
 
 To discover which mappings your cluster can perform for a file, use the following CLI commands:
 
