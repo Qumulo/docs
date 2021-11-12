@@ -59,7 +59,7 @@ This example with demonstrate how to setup a graph on Grafana to view total read
 
 1. In the *Legend* box, enter `{{protocol}}: {{io_type}}`. This will label each time series shown on the graph by the protocol and the io_type.
 1. On the side menu to the left, select the second icon down, *Visualization*. In the *Label* box under *Left Y* in the *Axes* section, enter something like "Throughput". This will add a label to the Y-axis on the left side of the graph.
-1. In the same *Left Y* section, click on the *Unit* dropdown and select *Data (Metric)*, then *gigabytes*. This will set the scale to show throughput in gigabytes instead of bytes.
+1. In the same *Left Y* section, click on the *Unit* dropdown and select *Data (Metric)*, then "gigabytes". This will set the scale to show throughput in gigabytes instead of bytes.
 1. On the side menu to the left again, select the next option down, *General*. In the *Title* box, enter something like "Cluster Throughput". This will set the title of the graph itself.
 1. Hit the save icon in the top right corner and click *Save*.
 1. Click the back arrow at the top left corner to go back to the dashboard page, where you should be able to see the new graph you just made with data starting to come in.
@@ -74,13 +74,14 @@ Administrators want to be promptly notified when there is an issue in their clus
 To make an alarm we'll follow [this guide](https://grafana.com/docs/grafana/latest/alerting/old-alerting/create-alerts/).
 
 1. Start by setting up a graph of `qumulo_quorum_node_is_offline`. You can use the previous example as a guide and replace the query with the following:
-    `sum(qumulo_quorum_node_is_offline)`
+    `qumulo_quorum_node_is_offline`
 
+1. In the *Legend* box, enter `Node {{node_id}}`.
 1. Before saving the graph, go to the *Alert* tab in the side menu and click *Create Alert*.
 1. Name the alarm "Node Offline".
 1. Evaluate every 1 minute to match the scrape interval.
-1. If you would like to not be notified of transient issues, such as a networking blip that temporarily makes a node offline, use *For* to set the amount of time that a node must be offline before being alerted.
-1. Set the conditions for the alert to be `avg()` is above 0. If you have set *For* to be 5m for example, then the alarm will go off when a node has been offline for 95% of the last 5 minutes.
+1. If you would like to not be notified of transient issues, such as a networking blip that temporarily makes a node offline, set *For* to 5 minutes. When an alarm is initially triggered, it will be set to a "Pending" state. Once it has been triggered for 5 minutes, the alarm will go to an "Alerting" state and alarm notifications will be sent out.
+1. Set the conditions for the alert to be `avg()` is above 0. This will cause the alarm to trigger if any node goes offline for a period of 1 minute.
 1. In the event that your cluster goes down entirely, the metrics API will not be able to output any metrics, meaning that the alarm will not go off. To avoid this, make sure that the "If execution error or timeout" setting is set to "Alerting". This will ensure that the alarm goes off if the cluster goes down.
 1. Select a notification channel to receive the alerts and add a message that should come with the alert.
 1. Click *Test Alert* to test the alert to make sure it is working.
@@ -88,18 +89,21 @@ To make an alarm we'll follow [this guide](https://grafana.com/docs/grafana/late
 
 For more information on alerts, see the [Grafana documentation](https://grafana.com/docs/grafana/latest/alerting/old-alerting/).
 
-<h2>Alert on Low Free Space</h2>
+<h2>Alert on Cluster Full</h2>
 
-Knowing how much free space is left in a cluster is very important, and in many cases it is useful to have an alarm that will alert when free space gets too low. In this example we will create a graph to show free space remaining and set an alarm to alert if it gets too low.
+Knowing how much free space is left in a cluster is very important, and in many cases it is useful to have an alarm that will alert when the cluster is almost full. In this example we will create a graph to show how full the cluster is and set an alarm to alert if it gets too full.
 
-1. Start by setting up a graph of free space remaining. You can use the previous example as a guide and replace the query with the following:
+1. Start by setting up a graph of used space. You can use the previous example as a guide and replace the query with the following:
 
-    `qumulo_free_bytes / qumulo_capacity_bytes * 100`
+    `1 - qumulo_free_bytes / qumulo_capacity_bytes`
 
-    This will show the amount of free space left in the cluster as a percentage of the total capacity, so an empty cluster would be 100% free space, and a full cluster would be 0%.
+    This will show the amount of space being used in the cluster as a percentage of the total capacity, so an empty cluster would be 0% used space, and a full cluster would be 100%.
 
+1. In the *Visualization* tab, go to the *Unit* dropdown in the *Left Y* section and choose "percent (0.0-1.0)".
 1. Before saving the graph, go to the *Alert* tab in the side menu and click *Create Alert*.
-1. Name the alarm "Free Space Low".
+1. Name the alarm "Cluster Full".
+1. Evaluate every 1 minute to match the scrape interval.
+1. If you would like to not be notified of transient issues, such as space usage spiking for a second, set *For* to 5 minutes. When an alarm is initially triggered, it will be set to a "Pending" state. Once it has been triggered for 5 minutes, the alarm will go to an "Alerting" state and alarm notifications will be sent out.
 1. Set the conditions for the alert to be `avg()` is below 10. This means that the alarm will go off if the cluster averages below 10% free space over the period of time specified in the *For* field.
 1. Enter the notification channel you want alerts to be sent to as well as a message.
 1. Click the save icon in the top right corner.
