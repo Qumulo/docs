@@ -157,7 +157,7 @@ Qumulo's implementation of NFSv4.1 currently supports:
 * Unstable writes
 * Full use of the NFS exports configuration shared with NFSv3
 * Navigation in the pseudo-file system above your exports
-* NFSv3-style `AUTH\_SYS` authentication
+* NFSv3-style `AUTH_SYS` or `AUTH_UNIX` authentication
 * Fine-grained control over file permissions using access control lists (ACLs)
 
 Qumulo Core doesn't support the following NFSv3 features through NFSv4.1:
