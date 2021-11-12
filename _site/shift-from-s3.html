@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="keywords" content="shift_fromcopycopy_objectscopy_filesobject_copyamazon_s3s3iam_permissionsiamcli_commandsclishift_relationshipsshiftrelationshipsconfiguration_detailsstatus,  ">
+<title>Using Qumulo Shift-From to Copy Objects from Amazon S3  | Qumulo Documentation</title>
+
+
+<link rel="stylesheet" href="http://localhost:4010/qumulo-doc/css/syntax.css">
+<link rel="stylesheet" href="http://localhost:4010/qumulo-doc/css/font-awesome.min.css">
+<link rel="stylesheet" href="http://localhost:4010/qumulo-doc/css/bootstrap.min.css">
+<link rel="stylesheet" href="http://localhost:4010/qumulo-doc/css/modern-business.css">
+<link rel="stylesheet" href="http://localhost:4010/qumulo-doc/css/customstyles.css">
+<link rel="stylesheet" href="http://localhost:4010/qumulo-doc/css/theme-blue.css">
+<link rel="stylesheet" href="http://localhost:4010/qumulo-doc/css/syntax.css">
+<link rel="stylesheet" href="/qumulo-doc/css/printstyles.css">
+
+<script>
+    Prince.addScriptFunc("datestamp", function() {
+        return "PDF last generated: November 12, 2021";
+    });
+</script>
+
+<script>
+    Prince.addScriptFunc("guideName", function() {
+        return "Qumulo Documentation User Guide";
+    });
+</script>
+
+
+
+</head>
+
+<body class=" print">
+
+<!-- Page Content -->
+<div class="container">
+    <!-- Content Column -->
+    <div class="col-md-9">
+
+        <div class="post-header">
+    <h1 class="post-title-main" id="shift-from-s3.html">Using Qumulo Shift-From to Copy Objects from Amazon S3</h1>
+</div>
+
+<div class="post-content">
+
+    
+    <h1 id="using-qumulo-shift-from-for-amazon-s3-to-copy-objects">Using Qumulo Shift-From for Amazon S3 to Copy Objects</h1>
+<p>This guide explains how you can use Qumulo Shift-From to copy objects from a folder in an Amazon Simple Storage Service (Amazon S3) bucket (cloud object store) to a directory in a Qumulo cluster. For more information about copying objects from Qumulo to S3, see <a href="/qumulo-doc/shift-to-s3.html">Using Qumulo Shift-To for Amazon S3 to Copy Objects</a> in Qumulo Care.</p>
+
+<p>The guide describes how a Shift-From relationship works and includes information about the prerequisites, IAM permissions, and CLI commands that you can use to copy files and manage Shift relationships.</p>
+
+<h2 id="prerequisites">Prerequisites</h2>
+<ul>
+  <li>
+    <p>A Qumulo cluster with:</p>
+
+    <ul>
+      <li>
+        <p>Qumulo Core 4.2.3 (or higher)</p>
+      </li>
+      <li>
+        <p>HTTPS connectivity to <code class="language-plaintext highlighter-rouge">s3.&lt;region&gt;.amazonaws.com</code> though one of the following means:</p>
+
+        <ul>
+          <li>
+            <p>Public Internet</p>
+          </li>
+          <li>
+            <p><a href="https://docs.aws.amazon.com/vpc/latest/privatelink/vpc-endpoints.html">VPC endpoint</a></p>
+          </li>
+          <li>
+            <p><a href="https://docs.aws.amazon.com/whitepapers/latest/aws-vpc-connectivity-options/aws-direct-connect.html">AWS Direct Connect</a></p>
+          </li>
+        </ul>
+
+        <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-ip-ranges.html">AWS IP address ranges</a> in the AWS General Reference.</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Membership in a Qumulo role with the following privileges:</p>
+
+    <ul>
+      <li>
+        <p><code class="language-plaintext highlighter-rouge">PRIVILEGE_REPLICATION_OBJECT_WRITE</code>: This privilege is required to create a Shift relationship.</p>
+      </li>
+      <li>
+        <p><code class="language-plaintext highlighter-rouge">PRIVILEGE_REPLICATION_OBJECT_READ</code>: This privilege is required to view the status of a Shift relationship.</p>
+      </li>
+    </ul>
+
+    <p><strong>Notes:</strong></p>
+
+    <ul>
+      <li>
+        <p>For any changes to take effect, user accounts with newly assigned roles must log out and log back in (or their sessions must time out).</p>
+      </li>
+      <li>
+        <p>Use special care when granting privileges to roles and users because certain privileges (such as replication-write privileges) can use system privileges to overwrite or move data to a location where a user has greater permissions. This can give a user access to all directories and files in a cluster regardless of any specific file and directory settings.</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>An existing bucket with contents in Amazon S3</p>
+  </li>
+  <li>
+    <p>AWS credentials (access key ID and secret access key) with the following permissions:</p>
+
+    <ul>
+      <li>
+        <p><code class="language-plaintext highlighter-rouge">s3:GetObject</code></p>
+      </li>
+      <li>
+        <p><code class="language-plaintext highlighter-rouge">s3:ListBucket</code></p>
+      </li>
+    </ul>
+
+    <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html">Understanding and getting your AWS credentials</a> in the AWS General Reference</p>
+  </li>
+</ul>
+
+<h3 id="example-iam-policy">Example IAM Policy</h3>
+<p>In the following example, the IAM policy gives permission to read from and write to the <code class="language-plaintext highlighter-rouge">my-folder</code> folder in the <code class="language-plaintext highlighter-rouge">my-bucket</code>. This policy can give users the minimal set of permissions required to run Shift-From jobs. (Shift-To jobs require a less-restrictive policy. For more information and an example, see <a href="/qumulo-doc/shift-to-s3.html">Using Qumulo Shift-To for Amazon S3 to Copy Objects</a>.)</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"Version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2012-10-17"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"Statement"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"Action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"s3:ListBucket"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"Effect"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Allow"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"Resource"</span><span class="p">:</span><span class="w"> </span><span class="s2">"arn:aws:s3:::my-bucket"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"Action"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"s3:GetObject"</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"Effect"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Allow"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"Resource"</span><span class="p">:</span><span class="w"> </span><span class="s2">"arn:aws:s3:::my-bucket/my-folder/*"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h2 id="how-shift-from-relationships-work">How Shift-From Relationships Work</h2>
+<p>Qumulo Core performs the following steps when it creates a Shift-From relationship.</p>
+
+<ol>
+  <li>
+    <p>Verifies that the directory exists on the Qumulo cluster and that the specified S3 bucket exists, is accessible using the specified credentials, and contains downloadable objects.</p>
+  </li>
+  <li>
+    <p>Creates the Shift-From relationship.</p>
+  </li>
+  <li>
+    <p>Starts a job using one of the nodes in the Qumulo cluster.</p>
+
+    <p><strong>Note:</strong> If you perform multiple Shift operations, Qumulo Core uses multiple nodes.</p>
+  </li>
+  <li>
+    <p>Lists the contents of the S3 folder and downloads the objects to the specified directory on your Qumulo cluster.</p>
+  </li>
+  <li>
+    <p>Forms the full path of the file on the Qumulo custer by appending the path of the object (relative to the S3 folder) to the directory path on the Qumulo cluster.</p>
+
+    <p>For example, the following object is downloaded to <code class="language-plaintext highlighter-rouge">/my-dir/my-project/file.text</code>, where <code class="language-plaintext highlighter-rouge">my-folder</code> is the specified S3 folder and <code class="language-plaintext highlighter-rouge">my-dir</code> is the directory on your Qumulo cluster.</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>https://my-bucket.s3.us-west-2.amazonaws.com/my-folder/my-project/file.txt
+</code></pre></div>    </div>
+
+    <p><strong>Note:</strong> This process doesn’t encode or transform your data in any way. Shift-From attempts only to map every S3 object in the specified folder to a file on your Qumulo cluster.</p>
+  </li>
+  <li>
+    <p>Avoids redownloading an unchanged object in a subsequent job by tracking the information about an object and its replicated object.</p>
+
+    <p><strong>Note:</strong> If you rename or move an object or local file between jobs, or if there are any metadata changes in S3 or Qumulo, the object is replicated again.</p>
+  </li>
+</ol>
+
+<h3 id="storing-and-reusing-relationships">Storing and Reusing Relationships</h3>
+<p>The Shift-From relationship remains on the Qumulo cluster. You can monitor the completion status of a job, start new jobs for a relationship after the initial job finishes, and delete the relationship (when you no longer need the S3-folder-Qumulo-directory pair). To avoid redownloading objects that a previous copy job downloaded, relationships take up approximately 100 bytes per object. To free this storage, you can delete relationships that you no longer need.</p>
+
+<p>If you repeatedly download from the same S3 folder, you can speed up the download process (and skip already downloaded files) by using the same relationship.</p>
+
+<p>A new relationship for subsequent downloads doesn’t share any tracking information with previous relationships associated with a directory and might recopy data that is already downloaded.</p>
+
+<h2 id="using-the-qumulo-web-ui-to-copy-files-and-manage-relationships">Using the Qumulo Web UI to Copy Files and Manage Relationships</h2>
+<p>This section describes how you can use the Qumulo Web UI 4.2.5 (and higher) to copy files from Amazon S3 to a Qumulo cluster, review Shift relationship details, stop a running copy job, repeat a completed copy job, and delete a relationship.</p>
+
+<h3 id="to-copy-files-from-amazon-s3">To Copy Files from Amazon S3</h3>
+<ol>
+  <li>Log in to Qumulo Core.</li>
+  <li>Click <strong>Cluster &gt; Copy to/from S3</strong>.</li>
+  <li>On the <strong>Copy to/from S3</strong> page, click <strong>Create Copy</strong>.</li>
+  <li>
+    <p>On the <strong>Create Copy to/from S3</strong> page, click <strong>Local ⇦ Remote</strong> and then enter the following:</p>
+
+    <p>a. The <strong>Directory Path</strong> on your cluster (<code class="language-plaintext highlighter-rouge">/</code> by default)</p>
+
+    <p>b. The S3 <strong>Bucket Name</strong></p>
+
+    <p>c. The <strong>Folder</strong> in your S3 bucket</p>
+
+    <p>d. The <strong>Region</strong> for your S3 bucket</p>
+
+    <p>e. Your AWS <strong>Region</strong> (<code class="language-plaintext highlighter-rouge">/</code> by default)</p>
+
+    <p>f. Your AWS <strong>Access Key ID</strong> and <strong>Secret Access Key</strong>.</p>
+  </li>
+  <li>(Optional) For additional configuration, click <strong>Advanced S3 Server Settings</strong>.</li>
+  <li>Click <strong>Create Copy</strong>.</li>
+  <li>
+    <p>In the <strong>Create Copy from S3?</strong> dialog box, review the Shift relationship and then click <strong>Yes, Create</strong>.</p>
+
+    <p>The copy job begins.</p>
+  </li>
+</ol>
+
+<h3 id="to-view-configuration-details-and-status-of-shift-relationships">To View Configuration Details and Status of Shift Relationships</h3>
+
+<ol>
+  <li>Log in to Qumulo Core.</li>
+  <li>
+    <p>Click <strong>Cluster &gt; Copy to/from S3</strong>.</p>
+
+    <p>The <strong>Copy to/from S3</strong> page lists all existing Shift relationships.</p>
+  </li>
+  <li>
+    <p>To get more information about a specific Shift relationship, click <strong>⋮ &gt; View Details</strong>.</p>
+
+    <p><img src="administrator-guide/images/view-details-menu.png" alt="View Details Menu" /></p>
+
+    <p>The <strong>Copy to/from S3 Details</strong> page displays the following information:</p>
+
+    <ul>
+      <li><strong>Throughput:</strong> average</li>
+      <li><strong>Run Time</strong></li>
+      <li><strong>Data:</strong> total, transferred, and unchanged</li>
+      <li><strong>Files:</strong> total, transferred, and unchanged</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="to-stop-a-copy-job-in-progress">To Stop a Copy Job in Progress</h3>
+
+<ol>
+  <li>Log in to Qumulo Core.</li>
+  <li>Click <strong>Cluster &gt; Copy to/from S3</strong>.</li>
+  <li>
+    <p>To stop a copy job for a specific relationship, click <strong>⋮ &gt; Abort</strong>.</p>
+
+    <p><img src="administrator-guide/images/abort-menu.png" alt="Abort Menu" /></p>
+  </li>
+  <li>
+    <p>In the <strong>Abort copy from?</strong> dialog box, review the Shift relationship and then click <strong>Yes, Abort</strong>.</p>
+
+    <p>The copy job stops.</p>
+  </li>
+</ol>
+
+<h3 id="to-repeat-a-completed-copy-job">To Repeat a Completed Copy Job</h3>
+
+<ol>
+  <li>Log in to Qumulo Core.</li>
+  <li>Click <strong>Cluster &gt; Copy to/from S3</strong>.</li>
+  <li>
+    <p>To stop a copy job for a specific relationship, click <strong>⋮ &gt; Copy Again</strong>.</p>
+
+    <p><img src="administrator-guide/images/copy-again-menu.png" alt="Copy Again Menu" /></p>
+  </li>
+  <li>
+    <p>In the <strong>Copy again?</strong> dialog box, review the Shift relationship and then click <strong>Yes, Copy Again</strong>.</p>
+
+    <p>The copy job repeats.</p>
+  </li>
+</ol>
+
+<h3 id="to-delete-a-shift-relationship">To Delete a Shift Relationship</h3>
+
+<ol>
+  <li>Log in to Qumulo Core.</li>
+  <li>Click <strong>Cluster &gt; Copy to/from S3</strong>.</li>
+  <li>
+    <p>To stop a copy job for a specific relationship, click <strong>⋮ &gt; Delete</strong>.</p>
+
+    <p><img src="administrator-guide/images/delete-menu.png" alt="Delete Menu" /></p>
+  </li>
+  <li>
+    <p>In the <strong>Delete copy from?</strong> dialog box, review the Shift relationship and then click <strong>Yes, Delete</strong>.</p>
+
+    <p>The copy job is deleted.</p>
+  </li>
+</ol>
+
+<h2 id="using-the-qumulo-cli-to-copy-files-and-manage-relationships">Using the Qumulo CLI to Copy Files and Manage Relationships</h2>
+<p>This section describes how you can use the Qumulo CLI to copy files from Amazon S3 to a Qumulo cluster, review Shift relationship details, stop a running copy job, repeat a completed copy job, and delete a relationship.</p>
+
+<h3 id="copying-files-from-amazon-s3">Copying Files from Amazon S3</h3>
+<p>To copy files, use the <code class="language-plaintext highlighter-rouge">replication_create_object_relationship</code> command and specify the following:</p>
+<ul>
+  <li>Local directory path on Qumulo cluster</li>
+  <li>Copy direction (copy-from)</li>
+  <li>S3 object folder</li>
+  <li>S3 bucket</li>
+  <li>AWS region</li>
+  <li>AWS access key ID</li>
+  <li>AWS secret access key</li>
+</ul>
+
+<p>The following example shows how you can create a relationship between the directory <code class="language-plaintext highlighter-rouge">/my-dir/</code> on a Qumulo cluster and the S3 bucket <code class="language-plaintext highlighter-rouge">my-bucket</code> and folder <code class="language-plaintext highlighter-rouge">/my-folder/</code> in the <code class="language-plaintext highlighter-rouge">us-west-2</code> AWS region. The secret access key is associated with the access key ID.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq replication_create_object_relationship <span class="se">\</span>
+  <span class="nt">--local-directory-path</span> /my-dir/ <span class="se">\</span>
+  <span class="nt">--direction</span> COPY_FROM_OBJECT <span class="se">\</span>
+  <span class="nt">--object-folder</span> /my-folder/ <span class="se">\</span>
+  <span class="nt">--bucket</span> my-bucket <span class="se">\</span>
+  <span class="nt">--region</span> us-west-2 <span class="se">\</span>
+  <span class="nt">--access-key-id</span> AKIAIOSFODNN7EXAMPLE <span class="se">\</span>
+  <span class="nt">--secret-access-key</span> wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+</code></pre></div></div>
+
+<p>The CLI returns the details of the relationship in JSON format, for example:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"access_key_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ABC"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"bucket"</span><span class="p">:</span><span class="w"> </span><span class="s2">"my-bucket"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"object_store_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"s3.us-west-2.amazonaws.com"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1c23b4ed-5c67-8f90-1e23-a4f5f6ceff78"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"object_folder"</span><span class="p">:</span><span class="w"> </span><span class="s2">"my-folder/"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"port"</span><span class="p">:</span><span class="w"> </span><span class="mi">443</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"ca_certificate"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"region"</span><span class="p">:</span><span class="w"> </span><span class="s2">"us-west-2"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"local_directory_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"direction"</span><span class="p">:</span><span class="w"> </span><span class="s2">"COPY_FROM_OBJECT"</span><span class="p">,</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="viewing-configuration-details-and-status-of-shift-relationships">Viewing Configuration Details and Status of Shift Relationships</h3>
+<ul>
+  <li>
+    <p>To view configuration details for all Shift relationships, use the <code class="language-plaintext highlighter-rouge">replication_list_object_relationships</code> command.</p>
+  </li>
+  <li>
+    <p>To view configuration details for a specific relationship, use the <code class="language-plaintext highlighter-rouge">replication_get_object_relationship</code> command followed by the <code class="language-plaintext highlighter-rouge">--id</code> and the Shift relationship ID (GUID), for example:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> qq replication_get_object_relationship <span class="nt">--id</span> 1c23b4ed-5c67-8f90-1e23-a4f5f6ceff78
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>To view the status of a specific relationship, use the <code class="language-plaintext highlighter-rouge">replication_get_object_relationship_status</code> command followed by the <code class="language-plaintext highlighter-rouge">--id</code> and the Shift relationship ID.</p>
+  </li>
+  <li>
+    <p>To view the status of all relationships, use the <code class="language-plaintext highlighter-rouge">replication_list_object_relationship_statuses</code> command.</p>
+
+    <p>The CLI returns the details of all relationships in JSON format, for example:</p>
+
+    <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"direction"</span><span class="p">:</span><span class="w"> </span><span class="s2">"COPY_FROM_OBJECT"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"access_key_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AKIAIOSFODNN7EXAMPLE"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"bucket"</span><span class="p">:</span><span class="w"> </span><span class="s2">"my-bucket"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"object_store_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"s3.us-west-2.amazonaws.com"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1c23b4ed-5c67-8f90-1e23-a4f5f6ceff78"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"object_folder"</span><span class="p">:</span><span class="w"> </span><span class="s2">"my-folder/"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"port"</span><span class="p">:</span><span class="w"> </span><span class="mi">443</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"ca_certificate"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"region"</span><span class="p">:</span><span class="w"> </span><span class="s2">"us-west-2"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"local_directory_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"local_directory_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/my-dir/"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"REPLICATION_RUNNING"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"current_job"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"start_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-04-06T17:56:29.659309904Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"estimated_end_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-04-06T21:54:33.244095593Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"job_progress"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"bytes_transferred"</span><span class="p">:</span><span class="w"> </span><span class="s2">"178388608"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"bytes_unchanged"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"bytes_remaining"</span><span class="p">:</span><span class="w"> </span><span class="s2">"21660032"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"bytes_total"</span><span class="p">:</span><span class="w"> </span><span class="s2">"200048640"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"files_transferred"</span><span class="p">:</span><span class="w"> </span><span class="s2">"17"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"files_unchanged"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"files_remaining"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"files_total"</span><span class="p">:</span><span class="w"> </span><span class="s2">"21"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"percent_complete"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.890368314738253</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"throughput_current"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12330689"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"throughput_overall"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12330689"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"last_job"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>    </div>
+    <p>The <code class="language-plaintext highlighter-rouge">state</code> field indicates a <code class="language-plaintext highlighter-rouge">REPLICATION_RUNNING</code> status and <code class="language-plaintext highlighter-rouge">current_job</code> shows ongoing progress. When Qumulo Core copies files from S3, details for the most recent completed job become available in the <code class="language-plaintext highlighter-rouge">last_job</code> field, the <code class="language-plaintext highlighter-rouge">state</code> field changes to <code class="language-plaintext highlighter-rouge">REPLICATION_NOT_RUNNING</code> and the <code class="language-plaintext highlighter-rouge">current_job</code> field reverts to <code class="language-plaintext highlighter-rouge">null</code>.</p>
+
+    <p><strong>Note:</strong> If you already ran a job for a relationship, it is possible for both the <code class="language-plaintext highlighter-rouge">current_job</code> and <code class="language-plaintext highlighter-rouge">last_job</code> fields to be non-null while you run a new job.</p>
+  </li>
+</ul>
+
+<h3 id="stopping-a-copy-job-in-progress">Stopping a Copy Job in Progress</h3>
+<p>To stop a copy job already in progress, use the <code class="language-plaintext highlighter-rouge">replication_abort_object_relationship</code> command followed by the <code class="language-plaintext highlighter-rouge">--id</code> and the Shift relationship ID.</p>
+
+<h3 id="repeating-a-completed-copy-job">Repeating a Completed Copy Job</h3>
+<p>To repeat a completed copy job, use the <code class="language-plaintext highlighter-rouge">replication_start_object_relationship</code> command followed by the <code class="language-plaintext highlighter-rouge">--id</code> and the Shift relationship ID.</p>
+
+<p>This command begins a new job for the existing relationship and downloads any content that changed in the S3 bucket or on the Qumulo cluster since the time the previous job ran.</p>
+
+<h3 id="deleting-a-shift-relationship">Deleting a Shift Relationship</h3>
+<p>After your copy job is complete, you can delete your Shift relationship. To do this, run the <code class="language-plaintext highlighter-rouge">replication_delete_object_relationship</code> command followed by the <code class="language-plaintext highlighter-rouge">--id</code> and the Shift relationship ID.</p>
+
+<p><strong>Note:</strong> You can run this command only against a relationship that doesn’t have any active jobs running.</p>
+
+<p>This command removes the copy job’s record, leaving locally stored objects unchanged. Any storage that the relationship used to track downloaded objects becomes available when you delete the relationship.</p>
+
+<h2 id="troubleshooting-copy-job-issues">Troubleshooting Copy Job Issues</h2>
+<p>Any fatal errors that occur during a copy job cause the job to fail, leaving a partially copied set of files in the directory on your Qumulo cluster.  However, to let you review the Shift relationship status any failure messages, the Shift relationship continues to exist. You can start a new job to complete the copying of objects from the S3 bucket—any successfully transferred files from the previous job aren’t retransferred to your Qumulo cluster.</p>
+
+<p>Whenever Qumulo Core doesn’t complete an operation successfully and returns an error from the API or CLI, the <code class="language-plaintext highlighter-rouge">error</code> field within the <code class="language-plaintext highlighter-rouge">last_job</code> field (that the <code class="language-plaintext highlighter-rouge">replication_list_object_relationship_statuses</code> command returns) contains a detailed failure message. For more troubleshooting details, see <code class="language-plaintext highlighter-rouge">qumulo-replication.log</code> on your Qumulo cluster.</p>
+
+<h2 id="best-practices">Best Practices</h2>
+<p>We recommend the following best practices for working with Qumulo Shift-From for Amazon S3.</p>
+<ul>
+  <li>
+    <p><strong>Inheritable Permissions:</strong> Because the system user creates the files copied using Shift-From for S3, the system owns these files. By default, Everyone will be granted Read permissions, and administrators always have full access to the files.</p>
+
+    <p>To assign the necessary permissions to copied files, you must assign the necessary inheritable permissions to the root directory of the relationship <strong>before</strong> creating a Copy from S3 relationship. This ensures that the copied subdirectories and files inherit the permissions.</p>
+
+    <p>Windows Security Dialog or <code class="language-plaintext highlighter-rouge">qq fs_modify_acl</code> can be used to edit permissions on a directory. See <a href="https://care.qumulo.com/hc/en-us/articles/115008211868">Qumulo-File-Permissions-Overview</a> to learn more about file permissions.</p>
+  </li>
+  <li><strong>VPC Endpoints:</strong> For best performance when using a Qumulo cluster in AWS, configure a <a href="https://docs.aws.amazon.com/vpc/latest/privatelink/vpc-endpoints.html">VPC endpoint</a> to S3. For on-premises Qumulo clusters, we recommend <a href="https://docs.aws.amazon.com/whitepapers/latest/aws-vpc-connectivity-options/aws-direct-connect.html">AWS Direct Connect</a> or another high-bandwidth, low-latency connection to S3.</li>
+  <li><strong>Repeated Synchronization:</strong> If you need to repeatedly synchronize an S3 folder with a Qumulo directory, we recommend reusing the same relationship. This lets you avoid repeated downloading of unchanged objects that already exist locally.</li>
+  <li><strong>Completed Jobs:</strong> If you don’t plan to use a Shift relationship to download updates from S3, delete the relationship to free up any storage associated with it.</li>
+  <li><strong>Concurrent Replication Relationships:</strong> To increase parallelism, especially across distinct datasets, use concurrent replication relationships from S3. To avoid having a large number of concurrent operations impact client I/O to the Qumulo cluster, limit the number of concurrent replication relationships. While there is no hard limit, we don’t recommend creating more than 100 concurrent replication relationships on a cluster (including both Shift and Qumulo local replication relationships).</li>
+</ul>
+
+<h2 id="restrictions">Restrictions</h2>
+<ul>
+  <li><strong>S3-Compatible Object Stores:</strong> S3-compatible object stores aren’t supported. Currently, Qumulo Shift-From supports replication only from Amazon S3.</li>
+  <li><strong>HTTP:</strong> HTTP isn’t supported. All Qumulo connections are encrypted using HTTPS and verify the S3 server’s SSL certificate.</li>
+  <li><strong>Anonymous Access:</strong> Anonymous access isn’t supported. You must use valid AWS credentials.</li>
+  <li><strong>Replication without Throttling:</strong> Replication provides no throttling and might use all available bandwidth. If necessary, use Quality of Service rules on your network.</li>
+  <li><strong>Amazon S3 Standard Storage Class:</strong> Qumulo Shift-From supports downloading only objects stored in the Amazon S3 Standard storage class. You can’t download objects stored in the Amazon S3 Glacier or Deep Archive storage classes and any buckets that contain such objects cause a copy job to fail.</li>
+  <li><strong>Disallowed Amazon S3 Paths in Qumulo Clusters:</strong> Certain allowed Amazon S3 paths can’t be copied to Qumulo clusters and cause a copy job to fail. Disallowed paths contain:
+    <ul>
+      <li>A trailing slash (<code class="language-plaintext highlighter-rouge">/</code>) character (with non-zero object content length)</li>
+      <li>Consecutive slash (<code class="language-plaintext highlighter-rouge">/</code>) characters</li>
+      <li>Single and double period (<code class="language-plaintext highlighter-rouge">.</code>, <code class="language-plaintext highlighter-rouge">..</code>) characters</li>
+      <li>The path component <code class="language-plaintext highlighter-rouge">.snapshot</code></li>
+    </ul>
+  </li>
+  <li><strong>Disallowed Conflicting Types:</strong> When content in an S3 bucket or Qumulo directory changes over time, a conflict related to type mismatches might arise, the Shift-from job fails, and an error message gives details about the conflict. For example, a conflict might occur when a remote object maps to a local file system directory entry which:
+    <ul>
+      <li>Is a regular file with two or more links</li>
+      <li>Isn’t a regular file (for example, a directory or a special file)</li>
+    </ul>
+  </li>
+  <li><strong>Disallowed Amazon S3 Path Configurations:</strong> Because of conflicting type requirements, Qumulo Core can’t recreate certain allowed Amazon S3 path configurations on Qumulo clusters. For example, if an S3 bucket contains objects <code class="language-plaintext highlighter-rouge">a/b/c</code> and <code class="language-plaintext highlighter-rouge">a/b</code>, then path <code class="language-plaintext highlighter-rouge">a/b</code> must be both a file and directory on a Qumulo cluster. Because this isn’t possible, this configuration causes a copy job to fail.</li>
+  <li><strong>Directories in Multiple Relationships:</strong> A directory on a Qumulo cluster for one Shift relationship can’t overlap with a directory used for another Shift relationship, or with a remote directory for a Qumulo-to-Qumulo replication relationship. This causes the relationship creation to fail.</li>
+  <li><strong>Changes to S3 Folder During Copy Job:</strong> Currently, Shift-From assumes that the S3 folder remains unchanged throughout the copy job. Any changes (deleting, archiving, or modifying an object) during the copy job might cause a copy job to fail.</li>
+  <li><strong>Read-Only Local Directory:</strong> When the Shift-From copy job begins, the local directory on the Qumulo cluster becomes read-only. While no external clients can modify anything in the directory or its subdirectories, all content remains readable. When the copy job is complete, the directory reverts to its previous permissions.</li>
+  <li><strong>Partially Downloaded Files:</strong> If a copy job is interrupted or encounters a fatal error (that can’t be resolved by retrying the operation), Qumulo Core attempts to delete partially downloaded files. Because this is a best-effort process, certain interruptions can prevent the cleanup of partially downloaded files.</li>
+</ul>
+
+</div>
+
+    </div>
+
+</div>    <!-- /.container -->
+
+</body>
+
+</html>

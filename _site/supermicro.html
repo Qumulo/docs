@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="keywords" content="getting_started_guidesupermicroquick_referencediagramledsdrive_mappingnetworkingredundant_switchessingle_switchracking_nodeouter_railinner_railchassisnodeclusterinsert_chassisremove_chassiswiring_nodeout_of_band_managementipmi100_gbpsinstalling_qumulo_corequmulo_coreusb_drive_installerfield_verification_toolfvtfixable_issuenon_fixable_issuehardware_replacementcreate_clusterreplace_drivedrivereplace_psupsureplace_fanreplace_dimmdcms_licensetechnical_specifications,  ">
+<title>Qumulo on Supermicro All-NVMe Getting Started Guide  | Qumulo Documentation</title>
+
+
+<link rel="stylesheet" href="http://localhost:4010/qumulo-doc/css/syntax.css">
+<link rel="stylesheet" href="http://localhost:4010/qumulo-doc/css/font-awesome.min.css">
+<link rel="stylesheet" href="http://localhost:4010/qumulo-doc/css/bootstrap.min.css">
+<link rel="stylesheet" href="http://localhost:4010/qumulo-doc/css/modern-business.css">
+<link rel="stylesheet" href="http://localhost:4010/qumulo-doc/css/customstyles.css">
+<link rel="stylesheet" href="http://localhost:4010/qumulo-doc/css/theme-blue.css">
+<link rel="stylesheet" href="http://localhost:4010/qumulo-doc/css/syntax.css">
+<link rel="stylesheet" href="/qumulo-doc/css/printstyles.css">
+
+<script>
+    Prince.addScriptFunc("datestamp", function() {
+        return "PDF last generated: November 12, 2021";
+    });
+</script>
+
+<script>
+    Prince.addScriptFunc("guideName", function() {
+        return "Qumulo Documentation User Guide";
+    });
+</script>
+
+
+
+</head>
+
+<body class=" print">
+
+<!-- Page Content -->
+<div class="container">
+    <!-- Content Column -->
+    <div class="col-md-9">
+
+        <div class="post-header">
+    <h1 class="post-title-main" id="supermicro.html">Qumulo on Supermicro All-NVMe Getting Started Guide</h1>
+</div>
+
+<div class="post-content">
+
+    
+    <h1 id="qumulo-on-supermicro-all-nvme-getting-started-guide">Qumulo on Supermicro All-NVMe Getting Started Guide</h1>
+<p>Welcome to Qumulo on Supermicro All-NVMe. This guide is intended for system administrators, professional service providers, and colleagues in your organization who are responsible for installing and configuring server hardware.</p>
+
+<p>This guide includes quick-reference diagrams for Supermicro A+ WIO 1114S-WN10RT All-NVMe nodes and cluster architecture diagrams, an explanation of node LEDs, and a diagram of drive slots and PCIe mapping. Next, the guide explains the networking configuration for your node and then walks you through racking and wiring your nodes, installing Qumulo Core on your nodes, and creating a Qumulo cluster. Finally, the guide explains how to replace hardware components and the <a href="#appendix">Appendix</a> contains the currently known behavior of Supermicro All-NVMe nodes and technical specifications.</p>
+
+<p>For more information about administering your cluster, see the <a href="https://care.qumulo.com/hc/en-us">Qumulo Care</a> portal. If you have any questions, you can <a href="https://care.qumulo.com/hc/en-us/requests/new">open a case</a>, email us at <a href="mailto:care@qumulo.com">care@qumulo.com</a>, or contact us in your private channel in the <a href="https://qumulocare.slack.com/">qumulocare</a> Slack workspace.</p>
+
+<h2 id="quick-reference">Quick Reference</h2>
+<p>This section contains quick-reference diagrams for the front and back of your Supermicro All-NVMe node, an architecture diagram of an example four-node cluster, an explanation of node LEDs, and a diagram of drive slots and PCIe mapping.</p>
+
+<h3 id="front-and-back-node-diagrams">Front and Back Node Diagrams</h3>
+<p><img src="/qumulo-doc/supermicro/images/supermicro-front-back-diagram.png" alt="Front and Back Diagrams of the Supermicro A+ WIO 1114S-WN10RT All-NVMe Node" /></p>
+
+<h3 id="four-node-cluster-architecture-diagram">Four-Node Cluster Architecture Diagram</h3>
+<p><img src="/qumulo-doc/supermicro/images/supermicro-four-node-cluster-architecture-diagram.png" alt="Four-Node Cluster Architecture Diagram" /></p>
+
+<h3 id="node-leds">Node LEDs</h3>
+<p>On the front, right side of your node, there are five LEDs.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Label</th>
+      <th>Colors</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Info</td>
+      <td>🔴 (solid red)</td>
+      <td>Node overheated</td>
+    </tr>
+    <tr>
+      <td>Info</td>
+      <td>🔴 (1 s. blinking red)</td>
+      <td>Fan failed</td>
+    </tr>
+    <tr>
+      <td>Info</td>
+      <td>🔴 (4 s. blinking red)</td>
+      <td>Power Supply Unit (PSU) failed</td>
+    </tr>
+    <tr>
+      <td>Info</td>
+      <td>🔵 (solid blue)</td>
+      <td>Unit IDentification (UID) activated locally</td>
+    </tr>
+    <tr>
+      <td>Info</td>
+      <td>🔵 (blinking blue)</td>
+      <td>UID activated using IPMI</td>
+    </tr>
+    <tr>
+      <td>Lan A</td>
+      <td>⚪ (off)</td>
+      <td>Unused</td>
+    </tr>
+    <tr>
+      <td>Lan B</td>
+      <td>⚪ (off)</td>
+      <td>Unused</td>
+    </tr>
+    <tr>
+      <td>Disk Activity</td>
+      <td>🟡 (solid yellow)</td>
+      <td>On or blinking</td>
+    </tr>
+    <tr>
+      <td>Power</td>
+      <td>🟢 (solid green)</td>
+      <td>On</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Note:</strong> During normal operation, the <strong>Lan B</strong> LED might appear to be lit slightly when the <strong>Disk Activity</strong> LED is on.</p>
+
+<p>On the back of your node, LAN LEDs are located behind the vent holes on the NIC. Each port has one light. Network traffic <em>doesn’t</em> affect the speed of the light’s blinking.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Color</th>
+      <th>Status</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>—</td>
+      <td>Off</td>
+      <td>No link</td>
+    </tr>
+    <tr>
+      <td>🟢 (solid green)</td>
+      <td>On or blinking</td>
+      <td>Link established</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="drive-slot-mapping">Drive Slot Mapping</h3>
+<p>Your node contains slots for 10 drives and one boot drive (in an internal M.2 slot). The following is the mapping for the drives.</p>
+
+<p><img src="/qumulo-doc/supermicro/images/supermicro-drive-slot-mapping.png" alt="Supermicro Drive Slot Mapping" /></p>
+
+<h2 id="configuring-networking-for-your-node">Configuring Networking for Your Node</h2>
+<p>This section explains the networking prerequisites, outlines the recommended networking configuration, and explains how you can connect to redundant switches or to a single switch.</p>
+
+<h3 id="networking-prerequisites">Networking Prerequisites</h3>
+<p><strong>Important:</strong> Before you create your Qumulo cluster, you must configure all switch ports connected to the back-end NIC to have at least 9,000 MTU, with Jumbo Frames enabled.</p>
+
+<p>Your node requires the following resources.</p>
+<ul>
+  <li>A network switch with the following specifications:
+    <ul>
+      <li>100 Gbps Ethernet</li>
+      <li>Fully non-blocking architecture</li>
+      <li>IPv6 capability</li>
+      <li>Jumbo Frame support (9,000 MTU minimum) for the back-end network</li>
+    </ul>
+  </li>
+  <li>Compatible networking cables</li>
+  <li>A sufficient number of ports for connecting all nodes to the same switch fabric</li>
+  <li>One static IP per node, per defined VLAN</li>
+</ul>
+
+<h3 id="recommended-networking-configuration">Recommended Networking Configuration</h3>
+<p><strong>Important:</strong> We don’t recommend connecting to a single back-end NIC port because the node will become unavailable if the single connection fails.</p>
+
+<p>The Supermicro All-NVMe platform uses a networking configuration in which different NICs handle back-end and front-end traffic. You can connect the front-end and back-end NICs to the same switch or to different switches. However, for greater reliability, we recommend connecting all four 100 Gbps ports on every node: connect both front-end NIC ports to the front-end switch and both back-end NIC ports to the back-end switch.</p>
+
+<p>We recommend the following configuration for your node.</p>
+<ul>
+  <li>One set of redundant switches for the front-end network, with an MTU that matches that of the clients that use the storage cluster. Typically, 1,500 MTU is recommended, but in some instances it might be 9,000 MTU.</li>
+  <li>One set of redundant switches for the back-end network (9,000 MTU minimum)</li>
+  <li>One physical connection per node, per each redundant switch</li>
+  <li>One Link Aggregation Control Protocol (LACP) port-channel per network (front-end and back-end) on each node, with the following configuration
+    <ul>
+      <li>Active mode</li>
+      <li>Slow transmit rather</li>
+      <li>Access port or trunk port with a native VLAN</li>
+    </ul>
+  </li>
+  <li>DNS servers</li>
+  <li>A Network Time Protocol (NTP) server</li>
+  <li>Firewall protocols or ports allowed for proactive monitoring</li>
+  <li>Where <code class="language-plaintext highlighter-rouge">N</code> is the number of nodes, <code class="language-plaintext highlighter-rouge">N-1</code> floating IPs per node, per client-facing VLAN</li>
+</ul>
+
+<h3 id="connecting-a-cluster-to-redundant-switches">Connecting a Cluster to Redundant Switches</h3>
+<p>For redundancy, we recommend connecting a Supermicro All-NVMe cluster to dual switches. If either switch becomes inoperative, the cluster will still be accessible from the remaining switch.</p>
+
+<ul>
+  <li><strong>Front End</strong>
+    <ul>
+      <li>Connect the two front-end NIC ports (2 × 100 Gbps) on your nodes to separate switches.</li>
+      <li>The uplinks to the client network must equal the bandwidth from the cluster to the switch.</li>
+      <li>The two ports form an LACP port channel using a multi-chassis link aggregation group.</li>
+    </ul>
+  </li>
+  <li><strong>Back End</strong>
+    <ul>
+      <li>Connect the two back-end NIC ports (2 × 100 Gbps) on your nodes to separate switches.</li>
+      <li>Use an appropriate inter-switch link or virtual port channel.</li>
+    </ul>
+  </li>
+  <li><strong>MTU</strong>
+    <ul>
+      <li>For all connection speeds, the default behavior is that of an LACP with 1,500 MTU for the front-end and 9,000 MTU for the back-end interfaces.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="connecting-a-cluster-to-a-single-switch">Connecting a Cluster to a Single Switch</h3>
+<p>You can connect a Supermicro All-NVMe cluster to a single switch. If this switch becomes inoperative, the entire cluster will be inaccessible.</p>
+
+<ul>
+  <li><strong>Front End</strong>
+    <ul>
+      <li>Each node has two front-end NIC ports (2 × 100 Gbps) connected to a single switch.</li>
+      <li>The uplinks to the client network must equal the bandwidth from the cluster to the switch.</li>
+      <li>The two ports form an LACP port channel.</li>
+    </ul>
+  </li>
+  <li><strong>Back End</strong>
+    <ul>
+      <li>Each node has two band-end ports (2 × 100 Gbps) connected to a single switch.</li>
+    </ul>
+  </li>
+  <li><strong>MTU</strong>
+    <ul>
+      <li>For all connection speeds, the default behavior is that of an LACP with 1,500 MTU for the front-end and 9,000 MTU for the back-end interfaces.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="step-1-racking-your-nodes">Step 1: Racking Your Nodes</h2>
+<p><strong>Tip:</strong> You can use the following instructions to add new nodes after your initial cluster deployment.</p>
+
+<p>This section describes how to use the outside and inside rails of your Supermicro All-NVMe node and how to rack your nodes in your data center.</p>
+
+<h3 id="to-attach-the-outer-and-inner-rails">To Attach the Outer and Inner Rails</h3>
+<p><strong>Note:</strong> Because the left and right rails of your nodes are identical, the words <strong>FRONT</strong> and <strong>BACK</strong> might appear upside down.</p>
+
+<ul>
+  <li>Each <em>outer rail</em> comes as two connected pieces and attaches to your server rack.</li>
+  <li>Each <em>inner rail</em> comes as two separate pieces and attaches to the node chassis.</li>
+</ul>
+
+<ol>
+  <li>Adjust the outer rails to the length of your server rack.</li>
+  <li>
+    <p>Line up the edge of the outer rail between the rack unit (RU) markers, insert the tabs on the edge of the rail into the mounting holes, and push the rail into the rack until the quick-release clicks into place. This process is the same for the front and back of your rack.</p>
+
+    <p><img src="/qumulo-doc/supermicro/images/supermicro-outer-rail-snap-into-rack.png" alt="Snap the Outer Rail into the Rack" /></p>
+  </li>
+  <li>
+    <p>Snap the inner rails to the chassis and secure them using two screws on each side, near the middle of the chassis.</p>
+
+    <p><strong>Note:</strong> First attach the front inner rails, then the back inner rails.</p>
+
+    <p><img src="/qumulo-doc/supermicro/images/supermicro-inner-rail-attach-to-chassis-with-screws.png" alt="Attach the Inner Rail to the Chassis Using Screws" /></p>
+  </li>
+</ol>
+
+<h3 id="to-insert-the-chassis">To Insert the Chassis</h3>
+<ol>
+  <li>Align the outer and inner rails and insert the chassis into the server rack.</li>
+  <li>Attach the chassis to the rack using one screw on each side, on the front of the chassis.</li>
+</ol>
+
+<h3 id="to-remove-the-chassis">To Remove the Chassis</h3>
+<ol>
+  <li>Disconnect any cables from the chassis.</li>
+  <li>Remove one screw from each side of the front of the chassis.</li>
+  <li>
+    <p>Pull the chassis out from the server rack partially. When the first set of black snaps appears, pinch the long piece of the snap towards the short one (up on one side, down on the other).</p>
+
+    <p><img src="/qumulo-doc/supermicro/images/supermicro-remove-chassis-pinch-black-latch-on-both-sides.png" alt="Pinch the Black Latch on Both Sides" /></p>
+  </li>
+  <li>Continue to pull the chassis from the server rack. When the second set of black snaps appears, pinch the long piece of each snap towards the short one (up on one side, down on the other) and remove the chassis completely.</li>
+</ol>
+
+<h2 id="step-2-wiring-your-nodes">Step 2: Wiring Your Nodes</h2>
+<p>This section describes how to wire the remote access, network, and power ports of your Supermicro All-NVMe node.</p>
+
+<p><strong>Note:</strong> The two Ethernet ports on the back of your node (to the right of the USB ports) are unused.</p>
+
+<h3 id="connecting-the-out-of-band-management-ipmi-port">Connecting the Out-of-Band Management (IPMI) Port</h3>
+<p>The dedicated out-of-band management port allows functionality such as remote display, control, and power (similar to HPE iLO). The port uses the Intelligent Platform Management Interface (IPMI) protocol. First, connect the IPMI port first on the back of your node (above the USB ports).</p>
+
+<h3 id="connecting-the-100-gbps-ports">Connecting the 100 Gbps Ports</h3>
+<p>After you connect the IPMI port, connect your front-end and back-end 100 Gbps ports (compatible with QSFP28 and QSFP56). There are four 100 Gbps ports on the back of your node. To maximize redundancy, split interfaces across subnets by connecting each port to a different switch.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Port Location</th>
+      <th>Port Labels</th>
+      <th>Port Type</th>
+      <th>Purpose</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Top row</td>
+      <td>2 (eth3), 1 (eth2)</td>
+      <td>Front end</td>
+      <td>Communication with clients</td>
+    </tr>
+    <tr>
+      <td>Bottom row</td>
+      <td>2 (eth5), 1 (eth4)</td>
+      <td>Back end</td>
+      <td>Communication between nodes</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="connecting-the-power">Connecting the Power</h3>
+<p><strong>Important:</strong> Make sure that the voltages for both power supply units (PSUs) are the same (for example, both at 115 V or both at 208 V).</p>
+
+<p>After you connect your 100 Gbps ports, connect power to the node. There are two power sockets on the back of your node. To maximize redundancy, connect each PSU to a separate power supply or power distribution unit (PDU).</p>
+
+<h2 id="step-3-installing-qumulo-core-on-your-nodes">Step 3: Installing Qumulo Core on Your Nodes</h2>
+<p>This section describes how to install Qumulo Core on your Supermicro All-NVMe nodes.</p>
+
+<h3 id="creating-a-qumulo-core-usb-drive-installer">Creating a Qumulo Core USB Drive Installer</h3>
+<p>To perform a clean installation of Qumulo Core on your node, you must create a Qumulo Core USB Drive Installer. To begin, you must have a USB drive (4 GB minimum) and a Qumulo Core USB installer image from the <a href="https://care.qumulo.com/hc/en-us/articles/115008409408-Contact-Qumulo-Care-">Qumulo Care Team</a>.</p>
+
+<h4 id="to-create-a-usb-drive-installer-on-mac-os">To Create a USB Drive Installer on Mac OS</h4>
+<ol>
+  <li>
+    <p>Open Terminal and log in as <code class="language-plaintext highlighter-rouge">root</code> by using the <code class="language-plaintext highlighter-rouge">sudo -s</code> command.</p>
+  </li>
+  <li>
+    <p>Insert your USB drive and then find its disk label by using the <code class="language-plaintext highlighter-rouge">diskutil list</code> command. In the following example, the USB drive’s device label is <code class="language-plaintext highlighter-rouge">disk2</code>.</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/dev/disk2 (external, physical):
+   #:                       TYPE NAME                    SIZE       IDENTIFIER
+   0:             Windows_FAT_32 MY_USB_DRIVE            *32.0 GB    disk2
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>To unmount the USB drive, use your USB drive’s device label, for example:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>diskutil unmountDisk /dev/disk2
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>To write the Qumulo Core USB installer image to your USB drive, specify the path to your image file and the USB drive’s device label, for example:</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dd if=/path-to-image-file/ of=/dev/rdisk2 bs=2m
+</code></pre></div>    </div>
+
+    <p><strong>Note:</strong> If you encounter an <strong>Operation not permitted</strong> error, navigate to <strong>System Preferences &gt; Security &amp; Privacy</strong>, on the <strong>Privacy</strong> tab grant <strong>Full Disk Access</strong> to Terminal, restart Terminal, and then try the command again. When finished, remove <strong>Full Disk Access</strong> from Terminal.</p>
+  </li>
+  <li>
+    <p>Eject your Qumulo Core USB Drive Installer, for example:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>diskutil eject disk2
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h4 id="to-create-a-usb-drive-installer-on-windows">To Create a USB Drive Installer on Windows</h4>
+<p>To create a USB Drive Installer on Windows, you must use a third-party application such as <a href="https://rufus.ie/">Rufus</a>. We recommend Rufus because it can detect many USB storage devices (rather than only Windows-compatible ones).</p>
+
+<p><strong>Important:</strong></p>
+<ul>
+  <li>We don’t recommend using other tools (such as Win32 Disk Imager) because they might encounter errors when unable to recognize the USB drive after writing data to it.</li>
+  <li>When the operation concludes, you might not be able to view the contents of the USB drive on Windows because the drive will be formatted using a different file system.</li>
+</ul>
+
+<ol>
+  <li>
+    <p>Press the <strong>Power</strong> button.</p>
+  </li>
+  <li>
+    <p>Insert your USB drive and run Rufus.</p>
+  </li>
+  <li>
+    <p>Under <strong>Drive Properties</strong>, select a device and the path to the Qumulo Core USB installer image.</p>
+  </li>
+  <li>
+    <p>For <strong>Partition scheme</strong>, select <strong>MBR</strong> and for <strong>Target System</strong>, select <strong>BIOS or UEFI</strong>.</p>
+  </li>
+  <li>
+    <p>Under <strong>Format Options</strong>, ensure that the <strong>File system</strong> is <strong>FAT32 (Default)</strong> and <strong>Cluster size</strong> is <strong>4096 bytes (Default)</strong>.</p>
+  </li>
+  <li>
+    <p>Click <strong>Start</strong>.</p>
+  </li>
+  <li>
+    <p>If prompted to download a new version of <code class="language-plaintext highlighter-rouge">GRUB</code> or <code class="language-plaintext highlighter-rouge">vesamenu.c32</code>, click <strong>No</strong>.</p>
+  </li>
+  <li>
+    <p>When the <strong>ISOHybrid image detected</strong> dialog box appears, click <strong>Write in DD Image mode</strong> and then click <strong>OK</strong>.</p>
+  </li>
+  <li>
+    <p>To confirm the operation, destroy all data on the USB drive, and image the drive click <strong>OK</strong>.</p>
+  </li>
+</ol>
+
+<h3 id="running-the-field-verification-tool-fvt-and-installing-qumulo-core">Running the Field Verification Tool (FVT) and Installing Qumulo Core</h3>
+<p>The Field Verification Tool (FVT) checks your node, prepares it for Qumulo Core, and installs Qumulo Core.</p>
+
+<p><strong>Caution:</strong> The FVT erases all data from the node. You must back up any live data on the node before you run the FVT.</p>
+
+<ol>
+  <li>
+    <p>When the node powers on and begins to boot, on the <strong>Supermicro</strong> screen, press <strong>F11</strong>. The following message appears:</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>DXE--BIOS PCI Bus Enumeration
+Invoking Boot Menu
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>On the <strong>Please select boot device:</strong> screen, select your USB drive (usually labelled with <code class="language-plaintext highlighter-rouge">UEFI OS</code>) and boot into it.</p>
+
+    <p>The FVT starts automatically and the following message appears.</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>RELEASE: Qumulo Core X.X.X
+
+Please choose from the following options:
+[1] Factory reset (DESTROYS ALL DATA)
+[*] Perform maintenance
+&gt;
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Enter <code class="language-plaintext highlighter-rouge">1</code>.</p>
+
+    <p>The following message appears.</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>You are running a FACTORY RESET. This will wipe all data on BOTH the boot drive AND the data drives.
+This operation is going to DESTROY ALL DATA on the cluster, in order to proceed you must type "DESTROY ALL DATA" ("no" cancels):
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>To continue, enter <code class="language-plaintext highlighter-rouge">DESTROY ALL DATA</code>.</p>
+
+    <p>The following message appears.</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Running FVT. Please wait...
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>When the FVT finishes, the following message appears.</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>FVT passed!
+
+Wiping boot drive.
+Writing OS image.
+Writing container image.
+Wiping data drives.
+Installation successful. Ctrl-C to cancel reboot.
+</code></pre></div>    </div>
+
+    <p>Qumulo Core is now installed on your node.</p>
+  </li>
+</ol>
+
+<h4 id="troubleshooting-fvt-fail-cases">Troubleshooting FVT Fail Cases</h4>
+<p>If the FVT encounters an issue, the <code class="language-plaintext highlighter-rouge">FVT failed!</code> message and an explanation appears.</p>
+
+<p>FVT fail cases divide into <em>fixable</em> and <em>non-fixable</em> issues.</p>
+
+<h5 id="fixable-issues">Fixable Issues</h5>
+<p>The following is an example of a fixable issue. To let FVT try fix the issue, enter <code class="language-plaintext highlighter-rouge">1</code>.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>FVT failed!
+
+The following issues were detected:
+check_bmc_version: FAIL: We require a minimum BMC version of 1.00.34. You have 1.00.33.
+FIX: Run the FVT flash command.
+
+[1] Run FVT Flash. This will try to fix issues then reboot. Please take caution as this MAY DESTROY EXISTING DATA.
+[2] Start a rescue shell
+</code></pre></div></div>
+
+<p>Depending on your node hardware and installation scenario, FVT might be able to correct issues such as the following automatically:</p>
+
+<ul>
+  <li>BIOS configuration</li>
+  <li>Drive firmware</li>
+  <li>NIC mode</li>
+  <li>Boot order</li>
+</ul>
+
+<h5 id="non-fixable-issues">Non-Fixable Issues</h5>
+<p>The following is an example of a non-fixable issue. To fix the issue, contact the <a href="https://care.qumulo.com/hc/en-us/articles/115008409408-Contact-Qumulo-Care-">Qumulo Care Team</a>.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>FVT failed!
+
+The following issues were detected:
+check_cpu_model: FAIL: We require one of: AMD EPYC 7402P 24-Core Processor. You have Qumulo Grumpquat 4000 Processor.
+FIX: Contact Qumulo Care.
+Not fixable issues were detected.
+
+[1] Copy logs to USB installer.
+[2] Start a rescue shell
+</code></pre></div></div>
+
+<h4 id="performing-the-part-replacement-procedure-using-the-fvt">Performing the Part Replacement Procedure Using the FVT</h4>
+<p>When you replace a component of your node (such as the motherboard or an NIC card), you must ensure that the firmware version and configuration are correct for your new components. To do this, you must perform the part replacement procedure using the FVT.</p>
+
+<p><strong>Note:</strong> Before you replace the motherboard, you must request a new DCMS license key from Supermicro and apply it before you run the FVT. (The license key uses the BMC MAC address which changes with the motherboard.) For more information, see <a href="#data-center-management-suite-dcms-licenses">Data Center Management Suite (DCMS) Licenses</a>.</p>
+
+<ol>
+  <li>
+    <p><a href="#running-the-field-verification-tool-fvt-and-installing-qumulo-core">Boot using the latest version of the Qumulo Core USB Drive Installer</a>.</p>
+  </li>
+  <li>
+    <p>When prompted, enter <code class="language-plaintext highlighter-rouge">*</code> to select <code class="language-plaintext highlighter-rouge">[*] Perform maintenance</code>.</p>
+
+    <p>The following message appears.</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Please choose from the following options:
+[1] Boot drive reset (DESTROYS BOOT DRIVE CONTENTS)
+[2] Perform automatic repair after part replacement (non-destructive)
+[3] Drop to a shell to perform manual maintenance
+&gt;
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Enter <code class="language-plaintext highlighter-rouge">2</code>.</p>
+
+    <p>The part replacement procedure runs and the following message appears.</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Running FVT. Please wait...
+100%|▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮| 13/13 [00:26&lt;00:00, 2.01s/check]
+FVT passed!
+
+No issues were detected, the system is ready to utilize the replaced parts.
+   
+Actions:
+[1] Shut down the system. After the system powers off, you may remove the USB stick and then power on the system to boot into the product.
+[2] Start a rescue shell
+&gt;
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<p><strong>Note:</strong> In some cases, after the part replacement procedure, the message <code class="language-plaintext highlighter-rouge">FIX: Run the FVT flash command.</code> appears. Enter <code class="language-plaintext highlighter-rouge">1</code> as you would for a <a href="#fixable-issues">fixable issue</a> to reboot the node and then repeat the part replacement procedure.</p>
+
+<h2 id="step-4-creating-a-qumulo-cluster">Step 4: Creating a Qumulo Cluster</h2>
+<p>This section describes how to configure your Supermicro All-NVMe nodes to form a Qumulo cluster.</p>
+
+<h3 id="to-create-the-cluster">To Create the Cluster</h3>
+<ol>
+  <li>Power on four or more nodes that run the same version of Qumulo Core.</li>
+  <li>Review the End User Agreement and when ready click <strong>I agree to the End User Agreement</strong>.</li>
+  <li>
+    <p>In the <strong>1. Set up cluster</strong> section, do the following:</p>
+
+    <p>a. Enter a <strong>Cluster name</strong>.</p>
+
+    <p>b. Click the checkmark next to each node to add to your cluster. The total cluster capacity appears at the bottom of the page.</p>
+
+    <p>c. Check that your nodes are ordered according to their physical arrangement in the server rack. You can check your nodes’ order in the following ways:</p>
+
+    <ul>
+      <li>Power on the nodes one at a time and watch the nodes populate this page.</li>
+      <li>Retrieve the MAC address for each node and compare the addresses to those listed on this page.</li>
+    </ul>
+
+    <p>If not all nodes appear on this page, check the nodes’ networking configuration.</p>
+  </li>
+  <li>
+    <p>Confirm your cluster protection level (how many drive failures Qumulo Core will protect the cluster against). Depending on your cluster size and node types, two-drive or three-drive protection is selected. If <strong>Customize Protection Level</strong> is available, in the <strong>2. Confirm cluster protection level</strong> section, you can choose two-drive protection or three-drive protection.</p>
+
+    <p><strong>Important:</strong></p>
+    <ul>
+      <li>You can choose your cluster protection level only during cluster creation. You can’t change this setting later.</li>
+      <li>Choosing protection for more drives decreases your cluster capacity.</li>
+      <li>To enable multi-node protection, you must create your cluster using the CLI.</li>
+    </ul>
+  </li>
+  <li>In the <strong>3. Create a password for your admin account</strong> section, set the password for your administrative account.</li>
+</ol>
+
+<h2 id="replacing-hardware-components">Replacing Hardware Components</h2>
+<p><strong>Caution:</strong> We strongly recommend engaging an on-site Supermicro engineer to replace failed hardware components including but not limited to any procedure that:</p>
+<ul>
+  <li>This guide doesn’t cover</li>
+  <li>You haven’t received training on</li>
+  <li>Requires precautions to avoid damage caused by electrostatic discharge (ESD) by using industry standard anti-static equipment (such as gloves or wrist straps)</li>
+</ul>
+
+<p>This section explains the most common scenarios of replacing failed hardware components such as:</p>
+<ul>
+  <li>Drives (excluding boot drives)</li>
+  <li>Power Supply Units (PSUs)</li>
+  <li>Fans</li>
+  <li>DIMM modules</li>
+</ul>
+
+<h3 id="to-replace-a-drive">To Replace a Drive</h3>
+<p>The ten hot-swap drive carriers are located at the front of your Supermicro All-NVMe chassis. The boot drive is located in the internal M.2 slot.</p>
+
+<p>Replacement drives, including the on-site spare drives that you received with your original nodes, are provided without a drive carrier. When replacing a faulty drive, you must remove the existing drive from its carrier and then insert the new drive into the carriers. The drive carriers are toolless and don’t require any screws.</p>
+
+<p><strong>Caution:</strong> We strongly recommend having a Supermicro engineer perform on-site boot drive replacement.</p>
+
+<ol>
+  <li>
+    <p>Locate the drive that requires replacement using the drive bay mapping.</p>
+
+    <p><img src="/qumulo-doc/supermicro/images/supermicro-drive-slot-mapping.png" alt="Supermicro Drive Slot Mapping" /></p>
+  </li>
+  <li>
+    <p>To remove the existing drive, do the following:</p>
+
+    <p>a. Press the orange release button on the right of the drive carrier until the drive carrier handle extends on the left.</p>
+
+    <p>b. Use the drive carrier handle to pull the carrier out of the chassis.</p>
+
+    <p>c. To remove the drive from the carrier, undo the mounting clips.</p>
+  </li>
+  <li>
+    <p>To install a replacement drive, do the following:</p>
+
+    <p>a. Insert the new drive into the drive carrier with the printed circuit board (PCB) side facing down and the connector end facing towards the rear of the tray.</p>
+
+    <p>b. Secure the drive to its carrier using the mounting clips.</p>
+
+    <p>c. Insert the drive carrier into the chassis with the orange release button facing right.</p>
+
+    <p>d. Push the drive carrier into the chassis until the handle retracts and clicks into place.</p>
+  </li>
+</ol>
+
+<h3 id="to-replace-a-power-supply-unit-psu">To Replace a Power Supply Unit (PSU)</h3>
+<p>The two hot-swap PSUs are located at the front of your Supermicro All-NVMe chassis. If either of the two PSUs fails, the other PSU takes on the full load and lets the node continue operating without interruption.</p>
+
+<p>When a PSU fails, the <strong>Info</strong> LED at the front of the node begins to blink red every four seconds. In addition, the failure LED on the PSU at the back of the node lights up.</p>
+
+<ol>
+  <li>
+    <p>To determine which PSU failed, check the PSU LED.</p>
+
+    <p><img src="/qumulo-doc/supermicro/images/supermicro-psu-diagram.png" alt="Supermicro Power Supply Units (PSUs)" /></p>
+  </li>
+  <li>
+    <p>Disconnect the power cord from the existing PSU.</p>
+  </li>
+  <li>
+    <p>To remove the existing PSU, press the purple release tab to the left while pulling on the handle.</p>
+  </li>
+  <li>
+    <p>Insert the new PSU and push it into the chassis until it clicks into place.</p>
+  </li>
+  <li>
+    <p>Connect the power cord to the new PSU.</p>
+  </li>
+</ol>
+
+<h3 id="to-replace-a-fan">To Replace a Fan</h3>
+<p>Your Supermicro All-NVMe chassis has six internal fans. When a fan fails, the <strong>Info</strong> LED at the front of the node begins to blink red every second.</p>
+
+<p><strong>Caution:</strong></p>
+<ul>
+  <li>The fans are not hot-swappable. You must power off the node to replace a fan. However, you may remove the top cover to determine which fan failed.</li>
+  <li>For optimal air circulation, you must always reinstall the top chassis cover. You must never run the node for an extended period of time with the top chassis cover removed.</li>
+</ul>
+
+<ol>
+  <li>
+    <p>Power off the node, remove the top chassis cover, and disconnect the power cords from both PSUs.</p>
+  </li>
+  <li>
+    <p>Disconnect the existing fan housing cable from the motherboard and remove the fan housing from its two mounting posts.</p>
+  </li>
+  <li>
+    <p>Insert a new fan provided by Supermicro into the housing, making sure that the airflow direction arrows on top of the fan face the same direction as the arrows on the other fans.</p>
+  </li>
+  <li>
+    <p>Reposition the fan housing over the two mounting posts and connect the fan housing cable to the motherboard.</p>
+  </li>
+  <li>
+    <p>Power on the node and confirm that the new fan is working properly and the <strong>Info</strong> LED has stopped blinking red.</p>
+  </li>
+  <li>
+    <p>Install the top chassis cover.</p>
+  </li>
+</ol>
+
+<h3 id="to-replace-a-dimm-module">To Replace a DIMM Module</h3>
+<p>Your Supermicro All-NVMe chassis has 16 DIMM slots (8 × 16 GB DIMMs for a total 128 GB of memory).</p>
+
+<p>To identify which DIMM module failed, you must use the baseboard management controller (BMC) on the node or another hardware monitoring solution.</p>
+
+<p><strong>Caution:</strong></p>
+<ul>
+  <li>Use extreme caution when handling DIMM modules. Don’t touch their metal contacts.</li>
+  <li>Never force a DIMM module into a slot. Each DIMM module has a keyed notch which allows the module to be inserted in only one way.</li>
+  <li>DIMM modules are not hot-swappable. You must power off the node to replace a DIMM module.</li>
+  <li>For optimal air circulation, you must always reinstall the top chassis cover. You must never run the node for an extended period of time with the top chassis cover removed.</li>
+</ul>
+
+<ol>
+  <li>
+    <p>Power off the node, remove the top chassis cover, and disconnect the power cords from both PSUs.</p>
+  </li>
+  <li>
+    <p>Remove the existing DIMM module.</p>
+
+    <p>The following is the DIMM slot mapping. In this diagram, the CPU socket mounting bracket and power headers are at the bottom.</p>
+
+    <table style="font-size:11.4px">
+   <thead>
+     <tr>
+       <th>Slot 1</th>
+       <th>Slot 2</th>
+       <th>Slot 3</th>
+       <th>Slot 4</th>
+       <th>Slot 5</th>
+       <th>Slot 6</th>
+       <th>Slot 7</th>
+       <th>Slot 8</th>
+       <th>CPU Socket</th>
+       <th>Slot 9</th>
+       <th>Slot 10</th>
+       <th>Slot 11</th>
+       <th>Slot 12</th>
+       <th>Slot 13</th>
+       <th>Slot 14</th>
+       <th>Slot 15</th>
+       <th>Slot 16</th>
+     </tr>
+   </thead>
+   <tbody>
+     <tr>
+       <td>DIMM D2</td>
+       <td>DIMM D1</td>
+       <td>DIMM C2</td>
+       <td>DIMM C1</td>
+       <td>DIMM B2</td>
+       <td>DIMM B1</td>
+       <td>DIMM A2</td>
+       <td>DIMM A1</td>
+       <td>Bracket at bottom</td>
+       <td>DIMM E1</td>
+       <td>DIMM E2</td>
+       <td>DIMM F1</td>
+       <td>DIMM F2</td>
+       <td>DIMM G1</td>
+       <td>DIMM G2</td>
+       <td>DIMM H1</td>
+       <td>DIMM H2</td>
+     </tr>
+   </tbody>
+ </table>
+  </li>
+  <li>
+    <p>To remove the existing DIMM module, press both DIMM slot release tabs outwards. When the module is loose, remove it from the slot.</p>
+  </li>
+  <li>
+    <p>To insert a new DIMM module, align the keyed notch on the DIMM module with the receptive points on the DIMM slot.</p>
+  </li>
+  <li>
+    <p>Push in both ends of the DIMM module straight down until it clicks into place.</p>
+  </li>
+  <li>
+    <p>Press both DIMM slot release tabs inwards.</p>
+  </li>
+  <li>
+    <p>Install the top chassis cover.</p>
+  </li>
+  <li>
+    <p>Power on the node.</p>
+  </li>
+</ol>
+
+<h2 id="appendix">Appendix</h2>
+<p>The following appendix contains the currently known behavior of Supermicro All-NVMe nodes, information about replacing hardware components, and the technical specifications for 153 TB, 76 TB, and 30 TB nodes.</p>
+
+<h3 id="known-behavior">Known Behavior</h3>
+<p>The following is the currently known behavior for Supermicro All-NVMe nodes.</p>
+
+<h4 id="firmware">Firmware</h4>
+<p>Don’t update your node firmware unless a Qumulo representative instructs you to perform an update.</p>
+
+<h4 id="usb-drive-boot-priority">USB Drive Boot Priority</h4>
+<p>Supermicro All-NVMe nodes don’t have the option to always boot from a USB drive if one is present. To boot from a USB drive, press <strong>F11</strong> when booting and select the USB drive from the menu. For more information, see <a href="#running-the-field-verification-tool-fvt-and-installing-qumulo-core">Running the Field Verification Tool (FVT) and Installing Qumulo Core</a>.</p>
+
+<p><strong>Note:</strong> The setting is persistent: when you boot from a USB drive once, the node will continue boot from the USB drive. Remove the USB drive from the node after Qumulo Core is installed.</p>
+
+<h4 id="fast-drive-hot-swapping">Fast Drive Hot-Swapping</h4>
+<p>If you remove and reinsert a drive extremely quickly (faster than one second), the baseboard management controller (BMC) does not recognize the drive and the activity LEDs do not return to their normal states. To resolve this issue, remove the drive, wait five seconds, and then reinsert it.</p>
+
+<h4 id="data-center-management-suite-dcms-licenses">Data Center Management Suite (DCMS) Licenses</h4>
+<p>If a DCMS license isn’t installed on a Supermicro All-NVMe node, the Field Verification Tool (FVT) fails, preventing you from installing Qumulo Core. A DCMS license from Supermicro is required for Qumulo Core to work correctly.</p>
+
+<h3 id="supermicro-all-nvme-technical-specifications">Supermicro All-NVMe Technical Specifications</h3>
+<table cellspacing="0" cellpadding="0">
+<thead>
+<tr>
+<th><strong>Specification</strong></th>
+<th><strong>Supermicro All-NVMe 153 TB</strong></th>
+<th><strong>Supermicro All-NVMe 76 TB</strong></th>
+<th><strong>Supermicro All-NVMe 30 TB</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Connectivity Ports (NIC)</strong></td>
+<td colspan="3" style="text-align: center;">4 &#215; 100 GbE (2 x Mellanox CX-6 NICs)</td>
+</tr>
+<tr>
+<td><strong>Management Ports (BMC)</strong></td>
+<td colspan="3" style="text-align: center;">1 &#215; 1 GbE Base-T (RJ45)</td>
+</tr>
+<tr>
+<td><strong>Solid State Storage Media</strong></td>
+<td>
+<div>10 &#215; 15.36 TB NVMe drives</div>
+</td>
+<td>
+<div>10 &#215; 7.68 TB NVMe drives</div>
+</td>
+<td>
+<div>8 &#215; 3.84 TB NVMe drives</div>
+</td>
+</tr>
+<tr>
+<td><strong>Boot Drive</strong></td>
+<td colspan="3" style="text-align: center;">1 TB M.2 NVMe drive</td>
+</tr>
+<tr>
+<td><strong>CPU</strong></td>
+<td colspan="3" style="text-align: center;">AMD EPYC 7402P 24-Core Processor</td>
+</tr>
+<tr>
+<td><strong>Memory</strong></td>
+<td colspan="3" style="text-align: center;">128 GB (16 GB &#215; 8)</td>
+</tr>
+<tr>
+<td><strong>Power Supply</strong></td>
+<td colspan="3" style="text-align: center;">2 &#215; 750 W Power Supplies</td>
+</tr>
+<tr>
+<td><strong>Dimensions (H &#215; W &#215; D)</strong></td>
+<td colspan="3" style="text-align: center;">1.7" &#215; 17.2" &#215; 23.5" (43 mm &#215; 437 mm &#215; 597 mm)</td>
+</tr>
+<tr>
+<td><strong>Weight</strong></td>
+<td colspan="3" style="text-align: center;">46 lbs (20.9 kg)</td>
+</tr>
+<tr>
+<td><strong>Power Requirements</strong></td>
+<td colspan="3" style="text-align: center;">100&ndash;240 V, 50/60Hz</td>
+</tr>
+<tr>
+<td><strong>Typical Power Consumption</strong></td>
+<td>265 W</td>
+<td>230 W</td>
+<td>230 W</td>
+</tr>
+<tr>
+<td><strong>Typical Thermal Rating</strong></td>
+<td>904 BTU/hr</td>
+<td>785 BTU/hr</td>
+<td>785 BTU/hr</td>
+</tr>
+<tr>
+<td>
+<div><strong>Maximum Power Consumption</strong></div>
+</td>
+<td>460 W</td>
+<td>415 W</td>
+<td>384 W</td>
+</tr>
+<tr>
+<td><strong>Maximum Thermal Rating</strong></td>
+<td>1569 BTU/hr</td>
+<td>1416 BTU/hr</td>
+<td>1310 BTU/hr</td>
+</tr>
+<tr>
+<td><strong>Operating Temperature</strong></td>
+<td colspan="3" style="text-align: center;">50&deg;F&ndash;95&deg;F (10&deg;C&ndash;35&deg;C)</td>
+</tr>
+<tr>
+<td><strong>Non-Operating Temperature</strong></td>
+<td colspan="3" style="text-align: center;">40&deg;F&ndash;158&deg;F (-40&deg;C&ndash;70&deg;C)</td>
+</tr>
+<tr>
+<td><strong>Operating Relative Humidity</strong></td>
+<td colspan="3" style="text-align: center;">8%&ndash;90% (non-condensing)</td>
+</tr>
+<tr>
+<td>
+<div><strong>Non-Operating Relative Humidity</strong></div>
+</td>
+<td colspan="3" style="text-align: center;">5%&ndash;95% (non-condensing)</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+    </div>
+
+</div>    <!-- /.container -->
+
+</body>
+
+</html>

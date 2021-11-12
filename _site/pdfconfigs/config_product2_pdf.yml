@@ -1,11 +1,11 @@
 destination: _site/
-url: "http://127.0.0.1:4010"
-baseurl: "/qumulo-doc"
-port: 4010
+url: "http://127.0.0.1:4012"
+baseurl: "/product2-pdf"
+port: 4012
 output: pdf
-product: Qumulo Documentation
-print_title: Qumulo Documentation
-#print_subtitle: version 6.0
+product: product2
+print_title: Product 2 documentation
+print_subtitle: version 1.0
 output: pdf
 defaults:
   -
@@ -17,4 +17,4 @@ defaults:
       comments: true
       search: true
 
-#pdf_sidebar: mydoc_sidebar
+pdf_sidebar: product2_sidebar
