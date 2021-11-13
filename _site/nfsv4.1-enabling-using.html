@@ -183,7 +183,7 @@
   <li>NFSv4.1 doesn’t support 32-bit sanitization and ignores any sanitizations configured for an export.</li>
 </ul>
 
-<h3 id="unique-hostnames-for-nfs-clients">Unique Hostnames for NFS Clients</h3>
+<h2 id="using-unique-hostnames-for-nfs-clients">Using Unique Hostnames for NFS Clients</h2>
 <p>The NFSv4.1 protocol requires clients to provide the server with globally unique identifiers. However, the NFSv4.1 client for Linux uses the machine’s hostname by default. Because the Linux client doesn’t support using the same hostname to connect to an NFSv4.1 server, an unpredictable failure can occur. We recommend configuring all NFS clients to use unique hostnames. For more information, see <a href="https://www.kernel.org/doc/html/latest/admin-guide/nfs/nfs-client.html">NFS Client</a> in the Linux Kernel User’s and Administrator’s Guide.</p>
 
 <h2 id="enabling-nfsv41-on-a-qumulo-cluster">Enabling NFSv4.1 on a Qumulo Cluster</h2>
