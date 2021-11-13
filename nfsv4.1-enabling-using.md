@@ -96,7 +96,8 @@ NFSv4.1 respects IP restrictions on exports: only clients with allowed IP addres
 * In NFSv3, you can configure specific exports to return 32-bit sanitized data for individual fields. NFSv3 converts any data larger than 32 bits in configured fields to 32-bit data and returns the data. For example, it can sanitize file size to 32-bit format. This truncates the field to `max_uint32` whenever the NFSv3 server returns the attribute.
 * NFSv4.1 doesn't support 32-bit sanitization and ignores any sanitizations configured for an export.
 
-### Unique Hostnames for NFS Clients
+
+## Using Unique Hostnames for NFS Clients
 The NFSv4.1 protocol requires clients to provide the server with globally unique identifiers. However, the NFSv4.1 client for Linux uses the machine's hostname by default. Because the Linux client doesn't support using the same hostname to connect to an NFSv4.1 server, an unpredictable failure can occur. We recommend configuring all NFS clients to use unique hostnames. For more information, see [NFS Client](https://www.kernel.org/doc/html/latest/admin-guide/nfs/nfs-client.html) in the Linux Kernel User's and Administrator's Guide.
 
 
