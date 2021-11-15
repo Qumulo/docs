@@ -1,8 +1,7 @@
 ---
 title: Qumulo Documentation History
 permalink: documentation-history.html
-tags:
-  - documentation_history
+search: exclude
 sidebar: home_sidebar
 ---
 
