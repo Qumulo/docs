@@ -4,6 +4,8 @@ permalink: configuring-prometheus-grafana-metrics-api.html
 tags:
   - prometheus
   - grafana
+  - metrics
+  - openmetrics
 sidebar: administrator_guide_sidebar
 ---
 
@@ -46,7 +48,7 @@ Fill in the `<Hostname>` field with the hostname of your cluster. This would pre
 Follow the Prometheus documentation for integrating with Grafana found [here](https://prometheus.io/docs/visualization/grafana/) in order to get Grafana up and running with Prometheus. Follow the Grafana documentation for integrating alerts with notification systems found [here](https://grafana.com/docs/grafana/latest/alerting/old-alerting/notifications/) in order to receive notifications when alerts are triggered.
 
 # Examples
-The following are examples of....
+Provided below are a few examples of some basic graphing and alerting setups that might be useful to have once you have Prometheus and Grafana up and running.
 
 ## Create a Throughput Graph
 
