@@ -25,11 +25,11 @@ entries:
 
     - title: Documentation Home
       url: /index.html
-      output: web, pdf
+      output: web
 
     - title: Administrator Guide Home
       url: /administrator-guide.html
-      output: web, pdf
+      output: web
 
     - title: Administrator Guide Document History
       url: /administrator-guide-document-history.html
