@@ -8,13 +8,10 @@ sidebar: administrator_guide_sidebar
 ---
 
 # Installing Prometheus
-
 Install prometheus using the documentation provided on the [Prometheus website](https://prometheus.io/docs/prometheus/latest/installation/). There are several different setups you can use, including installing to a Docker container or using a configuration management system such as Ansible.
 
 # Configuring Prometheus
-
 The configuration for prometheus is kept in `prometheus.yml`. Create this file if it does not already exist, and add any desired configurations for your monitoring setup. Use the following example as a template:
-
 
 ```yaml
 ---
@@ -46,10 +43,10 @@ Fill in the `<Hostname>` field with the hostname of your cluster. This would pre
 **Important Note**: In order to use the metrics API, your cluster must have authentication disabled on the endpoint. Please reach out to your Qumulo Systems Engineer or Success Manager if this has not been done.
 
 # Installing and Configuring Grafana
-
 Follow the Prometheus documentation for integrating with Grafana found [here](https://prometheus.io/docs/visualization/grafana/) in order to get Grafana up and running with Prometheus. Follow the Grafana documentation for integrating alerts with notification systems found [here](https://grafana.com/docs/grafana/latest/alerting/old-alerting/notifications/) in order to receive notifications when alerts are triggered.
 
 # Examples
+The following are examples of....
 
 ## Create a Throughput Graph
 
@@ -58,20 +55,29 @@ Follow the Prometheus documentation for integrating with Grafana found [here](ht
 This example with demonstrate how to setup a graph on Grafana to view total read and write throughput across your cluster. These instructions assume that you already have Grafana installed and configured to pull from a Prometheus instance, and will be based on the *Creating a Prometheus graph* section in the [Prometheus documentation](https://prometheus.io/docs/visualization/grafana/).
 
 1. From the Grafana homepage, click on the "+" button on the left side of the screen and select *Create Dashboard*, or, if you already have a dashboard, click *Add Panel*, which will be the leftmost of the buttons at the top right corner of the screen.
+
 1. Click *Add Query*.
+
 1. In the dropdown next to "Query", select the data source you set up for your cluster.
+
 1. In the box that says "Enter a PromQL query", enter the following:
   
-    `sum by (protocol, io_type) (rate(qumulo_protocol_bytes[1m]))`
+   `sum by (protocol, io_type) (rate(qumulo_protocol_bytes[1m]))`
 
-    This query will get the throughput rate over a 1 minute period, and sum over the protocol and io_type tags. For more information on writing PromQL queries, see the [Prometheus documentation](https://prometheus.io/docs/prometheus/latest/querying/basics/).
+   This query will get the throughput rate over a 1 minute period, and sum over the protocol and io_type tags. For more information on writing PromQL queries, see the [Prometheus documentation](https://prometheus.io/docs/prometheus/latest/querying/basics/).
 
 1. In the *Legend* box, enter `{{protocol}}: {{io_type}}`. This will label each time series shown on the graph by the protocol and the io_type.
+
 1. On the side menu to the left, select the second icon down, *Visualization*. In the *Label* box under *Left Y* in the *Axes* section, enter something like "Throughput". This will add a label to the Y-axis on the left side of the graph.
+
 1. In the same *Left Y* section, click on the *Unit* dropdown and select *Data (Metric)*, then "gigabytes". This will set the scale to show throughput in gigabytes instead of bytes.
+
 1. On the side menu to the left again, select the next option down, *General*. In the *Title* box, enter something like "Cluster Throughput". This will set the title of the graph itself.
+
 1. Hit the save icon in the top right corner and click *Save*.
+
 1. Click the back arrow at the top left corner to go back to the dashboard page, where you should be able to see the new graph you just made with data starting to come in.
+
    * You can see a smaller time scale of your data by going to the top right corner and clicking on the dropdown that says "Last 6 hours" and setting it to something smaller such as 15 minutes.
 
 For more information about dashboards, panels, or other visualizations, see their respective sections in the [Grafana documentation](https://grafana.com/docs/grafana/latest/).
