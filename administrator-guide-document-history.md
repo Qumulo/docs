@@ -5,8 +5,6 @@ search: exclude
 sidebar: administrator_guide_sidebar
 ---
 
-# Qumulo Administrator Guide Document History
-
 The following table lists changes to the _Qumulo Administrator Guide_.
 
 <table>
