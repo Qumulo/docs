@@ -42,7 +42,6 @@ tags:
   - technical_specifications
 ---
 
-# Qumulo on Supermicro A+ WIO 1114S-WN10RT Getting Started Guide
 Welcome to Qumulo on Supermicro 1114S. This guide is intended for system administrators, professional service providers, and colleagues in your organization who are responsible for installing and configuring server hardware.
 
 This guide includes quick-reference diagrams for Supermicro A+ WIO 1114S-WN10RT All-NVMe nodes and cluster architecture diagrams, an explanation of node LEDs, and a diagram of drive slots and PCIe mapping. Next, the guide explains the networking configuration for your node and then walks you through racking and wiring your nodes, installing Qumulo Core on your nodes, and creating a Qumulo cluster. Finally, the guide explains how to replace hardware components and the [Appendix](#appendix) contains the currently known behavior of Supermicro All-NVMe nodes and technical specifications.

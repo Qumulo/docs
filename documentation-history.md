@@ -5,8 +5,6 @@ search: exclude
 sidebar: home_sidebar
 ---
 
-# Qumulo Documentation Portal History
-
 The following table lists changes to the Qumulo Documentation Portal
 
 | Date | Documentation Update |
