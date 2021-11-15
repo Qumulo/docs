@@ -1,3 +1,11 @@
+---
+title: Configuring Prometheus and Grafana to use the Qumulo Metrics API
+permalink: configuring-prometheus-grafana-metrics-api.html
+tags:
+  - prometheus
+  - grafana
+---
+
 <h1>Installing Prometheus</h1>
 
 Install prometheus using the documentation provided on the [Prometheus website](https://prometheus.io/docs/prometheus/latest/installation/). There are several different setups you can use, including installing to a Docker container or using a configuration management system such as Ansible.
@@ -44,7 +52,7 @@ Follow the Prometheus documentation for integrating with Grafana found [here](ht
 
 <h2>Create a Throughput Graph</h2>
 
-![Example Throughput Graph](metrics-api/images/prometheus-grafana-setup-example-throughput-graph.png)
+![Example Throughput Graph](administrator-guide/images/prometheus-grafana-setup-example-throughput-graph.png)
 
 This example with demonstrate how to setup a graph on Grafana to view total read and write throughput across your cluster. These instructions assume that you already have Grafana installed and configured to pull from a Prometheus instance, and will be based on the *Creating a Prometheus graph* section in the [Prometheus documentation](https://prometheus.io/docs/visualization/grafana/).
 
