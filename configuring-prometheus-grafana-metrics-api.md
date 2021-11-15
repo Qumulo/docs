@@ -4,18 +4,19 @@ permalink: configuring-prometheus-grafana-metrics-api.html
 tags:
   - prometheus
   - grafana
+sidebar: administrator_guide_sidebar
 ---
 
-<h1>Installing Prometheus</h1>
+# Installing Prometheus
 
 Install prometheus using the documentation provided on the [Prometheus website](https://prometheus.io/docs/prometheus/latest/installation/). There are several different setups you can use, including installing to a Docker container or using a configuration management system such as Ansible.
 
-<h1>Configuring Prometheus</h1>
+# Configuring Prometheus
 
 The configuration for prometheus is kept in `prometheus.yml`. Create this file if it does not already exist, and add any desired configurations for your monitoring setup. Use the following example as a template:
 
-`prometheus.yml`
-```
+
+```yaml
 ---
 global:
   scrape_interval: 1m
@@ -40,17 +41,17 @@ scrape_configs:
       insecure_skip_verify: true
 ```
 
-Fill in the \<Hostname\> field with the hostname of your cluster. This would preferably be a DNS record associated with one or more floating IP addresses from the cluster.
+Fill in the `<Hostname>` field with the hostname of your cluster. This would preferably be a DNS record associated with one or more floating IP addresses from the cluster.
 
 **Important Note**: In order to use the metrics API, your cluster must have authentication disabled on the endpoint. Please reach out to your Qumulo Systems Engineer or Success Manager if this has not been done.
 
-<h1>Installing and Configuring Grafana</h1>
+# Installing and Configuring Grafana
 
 Follow the Prometheus documentation for integrating with Grafana found [here](https://prometheus.io/docs/visualization/grafana/) in order to get Grafana up and running with Prometheus. Follow the Grafana documentation for integrating alerts with notification systems found [here](https://grafana.com/docs/grafana/latest/alerting/old-alerting/notifications/) in order to receive notifications when alerts are triggered.
 
-<h1>Examples</h1>
+# Examples
 
-<h2>Create a Throughput Graph</h2>
+## Create a Throughput Graph
 
 ![Example Throughput Graph](administrator-guide/images/prometheus-grafana-setup-example-throughput-graph.png)
 
@@ -75,7 +76,7 @@ This example with demonstrate how to setup a graph on Grafana to view total read
 
 For more information about dashboards, panels, or other visualizations, see their respective sections in the [Grafana documentation](https://grafana.com/docs/grafana/latest/).
 
-<h2>Alert on Offline Node<\h2>
+## Alert on Offline Node
 
 Administrators want to be promptly notified when there is an issue in their cluster preventing one or more nodes from being online. Being in this state risks additional failures taking the entire cluster offline, as well as reduced performance and eventually the inability to write to the cluster. We'll get notified quickly of this state by making a alarm in Grafana.
 
@@ -97,7 +98,7 @@ To make an alarm we'll follow [this guide](https://grafana.com/docs/grafana/late
 
 For more information on alerts, see the [Grafana documentation](https://grafana.com/docs/grafana/latest/alerting/old-alerting/).
 
-<h2>Alert on Cluster Full</h2>
+## Alert on Cluster Full
 
 Knowing how much free space is left in a cluster is very important, and in many cases it is useful to have an alarm that will alert when the cluster is almost full. In this example we will create a graph to show how full the cluster is and set an alarm to alert if it gets too full.
 
