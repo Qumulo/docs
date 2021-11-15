@@ -17,4 +17,4 @@ defaults:
       comments: true
       search: true
 
-#pdf_sidebar: supermicro_sidebar
+pdf_sidebar: supermicro_sidebar
