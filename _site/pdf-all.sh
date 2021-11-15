@@ -1,1 +1,1 @@
-. pdf-mydoc.sh; . pdf-product1.sh; .  pdf-product2.sh;
+. pdf-administrator-guide.sh; . pdf-supermicro.sh; .  pdf-azure.sh;

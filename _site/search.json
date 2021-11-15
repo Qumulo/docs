@@ -37,8 +37,8 @@
 
 
 {
-"title": "Qumulo on Azure as a Service Onboarding Guide",
-"tags": "onboarding_guideazureonboardingnetworkingvirtual_network_peeringdhcp_modednsip_failoverfloating_ipupgradesremote_monitoringremote_supportactive_directory_domainscapacity_increasesperformance_increases",
+"title": "Qumulo on Azure as a Service Getting Started Guide",
+"tags": "getting_started_guideazureonboardingnetworkingvirtual_network_peeringdhcp_modednsip_failoverfloating_ipupgradesremote_monitoringremote_supportactive_directory_domainscapacity_increasesperformance_increases",
 "keywords": "",
 "url": "azure.html",
 "summary": ""
@@ -125,7 +125,7 @@
 
 
 {
-"title": "Qumulo on Supermicro All-NVMe Getting Started Guide",
+"title": "Qumulo on Supermicro A+ WIO 1114S-WN10RT Getting Started Guide",
 "tags": "getting_started_guidesupermicroquick_referencediagramledsdrive_mappingnetworkingredundant_switchessingle_switchracking_nodeouter_railinner_railchassisnodeclusterinsert_chassisremove_chassiswiring_nodeout_of_band_managementipmi100_gbpsinstalling_qumulo_corequmulo_coreusb_drive_installerfield_verification_toolfvtfixable_issuenon_fixable_issuehardware_replacementcreate_clusterreplace_drivedrivereplace_psupsureplace_fanreplace_dimmdcms_licensetechnical_specifications",
 "keywords": "",
 "url": "supermicro.html",
