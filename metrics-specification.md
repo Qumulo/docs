@@ -8,6 +8,18 @@ tags:
 sidebar: administrator_guide_sidebar
 ---
 
+# Metric Types
+
+All the metrics available in the API will be one of three different types defined by the OpenMetrics standards, with each metric type possessing a specific set of functionality. The three different metric types are:
+
+- **Counter**: A monotonically increasing integer value. It starts at zero and cannot be decremented.
+- **Gauge**: Like a counter in that it represents a single integer value; however a gauge can be both increased and decreased.
+- **Histogram**: A histogram represents a series of "buckets", with each bucket keeping track of all values that occur within a specific range, as well as a count of the total number of measurements made by the histogram. However, in this API histograms will have only one bucket, which will contain the sum of all the values measured by the histogram, as well as the count of those measurements. As a result, this allows a histogram to also keep track of the average value of the measurements, which can be calculated by dividing the sum by the count.
+
+# Labels
+
+The OpenMetrics format also provides a way to label metrics, enabling them to be broken up and categorized based on the different combinations of labels. All metrics will automatically be labeled with `job_name`, which is specified in the `prometheus.yml` configuration file, and `instance`, which will be the hostname and port of the cluster that the metrics are coming from and is also specified in `prometheus.yml`. Any additional labels will be metric-specific, and are listed in the "Additional Labels" column in the table below.
+
 # Available Metrics
 
 | Metric Name | Metric Type | Additional Labels | Value Type | Description |
