@@ -5,6 +5,7 @@ tags:
   - metrics
   - specification
   - openmetrics
+  - prometheus
 sidebar: administrator_guide_sidebar
 ---
 
@@ -118,7 +119,7 @@ The OpenMetrics format also provides a way to label metrics, enabling them to be
           <li><code>server_ip</code></li>
         </ul>
       </td>
-      <td>The total latency during protocol operations. The "count" field will contain the total number of each operation, and the single bucket will contain the total latency for that operation.</td>
+      <td>The total latency experienced by different protocol operations.</td>
     </tr>
   </tbody>
 </table>
