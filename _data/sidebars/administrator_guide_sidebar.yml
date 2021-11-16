@@ -43,3 +43,7 @@ entries:
     - title: Replacing the Chassis of C-192T and C-432T Nodes
       url: /c-192t-c-432t-chassis-replacement.html
       output: web
+
+    - title: Metrics API Specification
+      url: /metrics-specification.html
+      output: web
