@@ -1,9 +1,9 @@
 ---
 title: Metrics API Specification
-permalink: metrics-specifications.html
+permalink: metrics-specification.html
 tags:
   - metrics
-  - specifications
+  - specification
   - openmetrics
 sidebar: administrator_guide_sidebar
 ---
