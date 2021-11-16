@@ -54,11 +54,11 @@ Provided below are a few examples of some basic graphing and alerting setups tha
 
 ![Example Throughput Graph](administrator-guide/images/prometheus-grafana-setup-example-throughput-graph.png)
 
-This example with demonstrate how to setup a graph on Grafana to view total read and write throughput across your cluster. These instructions assume that you already have Grafana installed and configured to pull from a Prometheus instance, and will be based on the *Creating a Prometheus graph* section in the [Prometheus documentation](https://prometheus.io/docs/visualization/grafana/).
+This example with demonstrate how to setup a graph on Grafana to view total read and write throughput across your cluster. These instructions assume that you already have Grafana installed and configured to pull from a Prometheus instance, and will be based on the "Creating a Prometheus graph" section in the [Prometheus documentation](https://prometheus.io/docs/visualization/grafana/).
 
-1. From the Grafana homepage, click on the "+" button on the left side of the screen and select *Create Dashboard*, or, if you already have a dashboard, click *Add Panel*, which will be the leftmost of the buttons at the top right corner of the screen.
+1. From the Grafana homepage, click on the "+" button on the left side of the screen and select **Create Dashboard**, or, if you already have a dashboard, click **Add Panel**, which will be the leftmost of the buttons at the top right corner of the screen.
 
-1. Click *Add Query*.
+1. Click **Add Query**.
 
 1. In the dropdown next to "Query", select the data source you set up for your cluster.
 
@@ -68,15 +68,15 @@ This example with demonstrate how to setup a graph on Grafana to view total read
 
    This query will get the throughput rate over a 1 minute period, and sum over the protocol and io_type tags. For more information on writing PromQL queries, see the [Prometheus documentation](https://prometheus.io/docs/prometheus/latest/querying/basics/).
 
-1. In the *Legend* box, enter `{{protocol}}: {{io_type}}`. This will label each time series shown on the graph by the protocol and the io_type.
+1. In the **Legend** box, enter `{{protocol}}: {{io_type}}`. This will label each time series shown on the graph by the protocol and the io_type.
 
-1. On the side menu to the left, select the second icon down, *Visualization*. In the *Label* box under *Left Y* in the *Axes* section, enter something like "Throughput". This will add a label to the Y-axis on the left side of the graph.
+1. On the side menu to the left, select the second icon down, **Visualization**. In the **Label** box under **Left Y** in the **Axes** section, enter something like "Throughput". This will add a label to the Y-axis on the left side of the graph.
 
-1. In the same *Left Y* section, click on the *Unit* dropdown and select *Data (Metric)*, then "gigabytes". This will set the scale to show throughput in gigabytes instead of bytes.
+1. In the same **Left Y** section, click on the **Unit** dropdown and select **Data (Metric)**, then "gigabytes". This will set the scale to show throughput in gigabytes instead of bytes.
 
-1. On the side menu to the left again, select the next option down, *General*. In the *Title* box, enter something like "Cluster Throughput". This will set the title of the graph itself.
+1. On the side menu to the left again, select the next option down, **General**. In the **Title** box, enter something like "Cluster Throughput". This will set the title of the graph itself.
 
-1. Hit the save icon in the top right corner and click *Save*.
+1. Hit the save icon in the top right corner and click **Save**.
 
 1. Click the back arrow at the top left corner to go back to the dashboard page, where you should be able to see the new graph you just made with data starting to come in.
 
@@ -93,15 +93,24 @@ To make an alarm we'll follow [this guide](https://grafana.com/docs/grafana/late
 1. Start by setting up a graph of `qumulo_quorum_node_is_offline`. You can use the previous example as a guide and replace the query with the following:
     `qumulo_quorum_node_is_offline`
 
-1. In the *Legend* box, enter `Node {{node_id}}`.
-1. Before saving the graph, go to the *Alert* tab in the side menu and click *Create Alert*.
+1. In the **Legend** box, enter `Node {{node_id}}`.
+
+1. Before saving the graph, go to the **Alert** tab in the side menu and click **Create Alert**.
+
 1. Name the alarm "Node Offline".
+
 1. Evaluate every 1 minute to match the scrape interval.
-1. If you would like to not be notified of transient issues, such as a networking blip that temporarily makes a node offline, set *For* to 5 minutes. When an alarm is initially triggered, it will be set to a "Pending" state. Once it has been triggered for 5 minutes, the alarm will go to an "Alerting" state and alarm notifications will be sent out.
+
+1. If you would like to not be notified of transient issues, such as a networking blip that temporarily makes a node offline, set **For** to 5 minutes. When an alarm is initially triggered, it will be set to a "Pending" state. Once it has been triggered for 5 minutes, the alarm will go to an "Alerting" state and alarm notifications will be sent out.
+
 1. Set the conditions for the alert to be `avg()` is above 0. This will cause the alarm to trigger if any node goes offline for a period of 1 minute.
+
 1. In the event that your cluster goes down entirely, the metrics API will not be able to output any metrics, meaning that the alarm will not go off. To avoid this, make sure that the "If execution error or timeout" setting is set to "Alerting". This will ensure that the alarm goes off if the cluster goes down.
+
 1. Select a notification channel to receive the alerts and add a message that should come with the alert.
-1. Click *Test Alert* to test the alert to make sure it is working.
+
+1. Click **Test Alert** to test the alert to make sure it is working.
+
 1. Click the save icon in the top right corner to save the alert.
 
 For more information on alerts, see the [Grafana documentation](https://grafana.com/docs/grafana/latest/alerting/old-alerting/).
@@ -116,13 +125,20 @@ Knowing how much free space is left in a cluster is very important, and in many 
 
     This will show the amount of space being used in the cluster as a percentage of the total capacity, so an empty cluster would be 0% used space, and a full cluster would be 100%.
 
-1. In the *Visualization* tab, go to the *Unit* dropdown in the *Left Y* section and choose "percent (0.0-1.0)".
-1. Before saving the graph, go to the *Alert* tab in the side menu and click *Create Alert*.
+1. In the **Visualization** tab, go to the **Unit** dropdown in the **Left Y** section and choose "percent (0.0-1.0)".
+
+1. Before saving the graph, go to the **Alert** tab in the side menu and click **Create Alert**.
+
 1. Name the alarm "Cluster Full".
+
 1. Evaluate every 1 minute to match the scrape interval.
-1. If you would like to not be notified of transient issues, such as space usage spiking for a second, set *For* to 5 minutes. When an alarm is initially triggered, it will be set to a "Pending" state. Once it has been triggered for 5 minutes, the alarm will go to an "Alerting" state and alarm notifications will be sent out.
-1. Set the conditions for the alert to be `avg()` is below 10. This means that the alarm will go off if the cluster averages below 10% free space over the period of time specified in the *For* field.
+
+1. If you would like to not be notified of transient issues, such as space usage spiking for a second, set **For** to 5 minutes. When an alarm is initially triggered, it will be set to a "Pending" state. Once it has been triggered for 5 minutes, the alarm will go to an "Alerting" state and alarm notifications will be sent out.
+
+1. Set the conditions for the alert to be `avg()` is below 10. This means that the alarm will go off if the cluster averages below 10% free space over the period of time specified in the **For** field.
+
 1. Enter the notification channel you want alerts to be sent to as well as a message.
+
 1. Click the save icon in the top right corner.
 
 For more information on alerts, see the [Grafana documentation](https://grafana.com/docs/grafana/latest/alerting/old-alerting/).
