@@ -42,7 +42,7 @@ scrape_configs:
 
 Fill in the `<Hostname>` field with the hostname of your cluster. This would preferably be a DNS record associated with one or more floating IP addresses from the cluster.
 
-**Important Note**: In order to use the metrics API, your cluster must have authentication disabled on the endpoint. Please reach out to your Qumulo Systems Engineer or Success Manager if this has not been done.
+**Important Note**: In order to use the metrics API, your cluster must have the API configured to make metrics available without authentication. Please reach out to your Qumulo Systems Engineer or Success Manager if this has not been done.
 
 # Installing and Configuring Grafana
 Follow the Prometheus documentation for integrating with Grafana found [here](https://prometheus.io/docs/visualization/grafana/) in order to get Grafana up and running with Prometheus. Follow the Grafana documentation for integrating alerts with notification systems found [here](https://grafana.com/docs/grafana/latest/alerting/old-alerting/notifications/) in order to receive notifications when alerts are triggered.
@@ -103,7 +103,7 @@ To make an alarm we'll follow [this guide](https://grafana.com/docs/grafana/late
 
 1. If you would like to not be notified of transient issues, such as a networking blip that temporarily makes a node offline, set **For** to 5 minutes. When an alarm is initially triggered, it will be set to a "Pending" state. Once it has been triggered for 5 minutes, the alarm will go to an "Alerting" state and alarm notifications will be sent out.
 
-1. Set the conditions for the alert to be `avg()` is above 0. This will cause the alarm to trigger if any node goes offline for a period of 1 minute.
+1. Set the conditions for the alert to be `sum()` is above 0. This will cause the alarm to trigger if any node goes offline for a period of 1 minute.
 
 1. In the event that your cluster goes down entirely, the metrics API will not be able to output any metrics, meaning that the alarm will not go off. To avoid this, make sure that the "If execution error or timeout" setting is set to "Alerting". This will ensure that the alarm goes off if the cluster goes down.
 
