@@ -9,6 +9,12 @@ tags:
 sidebar: administrator_guide_sidebar
 ---
 
+# Background
+
+The OpenMetrics API provided by Qumulo provides a single API point to get a holistic dump of point-in-time telemetry from the Qumulo File Data Platform. The OpenMetrics data format emitted by the API can be consumed easily by a variety of monitoring and metrics systems natively without the need for custom code or an agent. Check with your monitoring system documentation to see if OpenMetrics or Prometheus data formats are natively supported for data ingest.
+
+This document contains a specification for the types of metrics emitted by the API and what they mean.
+
 # Metric Types
 
 All the metrics available in the API will be one of three different types defined by the OpenMetrics standards, with each metric type possessing a specific set of functionality. The three different metric types are:
@@ -173,8 +179,8 @@ This table provides additional details on the labels specified for the various m
     </tr>
     <tr>
       <td><code>op_name</code></td>
-      <td>Any one of the operations from NFSv3, NFSv4, or SMB2</td>
-      <td>The operation being recorded.</td>
+      <td>Any one of the operations from NFSv3, NFSv4, or SMB.</td>
+      <td>The operation being recorded. Note that operations with <code>smb2</code> refer to both SMB2 and SMB3 operations, as both protocols are closely related.</td>
     </tr>
     <tr>
       <td><code>protocol</code></td>
@@ -185,7 +191,7 @@ This table provides additional details on the labels specified for the various m
           <li><code>smb2</code></li>
         </ul>
       </td>
-      <td>The protocol of the operation being recorded.</td>
+      <td>The protocol of the operation being recorded. Note that <code>smb2</code> refers to both SMB2 and SMB3, as both protocols are closely related.</td>
     </tr>
     <tr>
       <td><code>data_type</code></td>
@@ -196,7 +202,7 @@ This table provides additional details on the labels specified for the various m
           <li><code>none</code></li>
         </ul>
       </td>
-      <td>The type of data being transferred by the operation.</td>
+      <td>The type of data being transferred by the operation. Note that <code>data</code> refers to reading or writing operations that operate on a file's data. <code>metadata</code> operations refer to things like lookups, stats/getattrs, and other file operations which are not related to a file's data. Finally, <code>none</code> are operations which are neither operating on file data or metadata, and are often required by the protocol for session negotiation or authentication.</td>
     </tr>
     <tr>
       <td><code>io_type</code></td>
@@ -213,7 +219,7 @@ This table provides additional details on the labels specified for the various m
     <tr>
       <td><code>server_ip</code></td>
       <td>An IPv4 or IPv6 address.</td>
-      <td>The IP address of the server performing the operation.</td>
+      <td>This is the IP address on your Qumulo cluster that received and serviced the protocol operation request from the client machine. This label can be used to understand how client connections are distributed across the IP address space of your cluster.</td>
     </tr>
   </tbody>
 </table>
