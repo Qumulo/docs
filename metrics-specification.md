@@ -139,7 +139,7 @@ This table provides additional details on the labels specified for the various m
   <tbody>
     <tr>
       <td><code>node_id</code></td>
-      <td>An integer from 1 to the number of nodes in the cluster</td>
+      <td>A positive integer representing a node ID within the cluster.</td>
       <td>Differentiates between the different nodes in the cluster for <code>qumulo_quorum_node_is_offline</code>.</td>
     </tr>
     <tr>
@@ -208,11 +208,11 @@ This table provides additional details on the labels specified for the various m
           <li><code>none</code></li>
         </ul>
       </td>
-      <td>The type of I/O being performed by the operation.</td>
+      <td>The type of I/O being performed by the operation. In this context, <code>wait</code> refers to a blocking operation that will take an indeterminant amount of time.</td>
     </tr>
     <tr>
       <td><code>server_ip</code></td>
-      <td>An IPv4 address.</td>
+      <td>An IPv4 or IPv6 address.</td>
       <td>The IP address of the server performing the operation.</td>
     </tr>
   </tbody>
