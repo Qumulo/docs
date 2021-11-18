@@ -126,7 +126,7 @@ The OpenMetrics format also provides a way to label metrics, enabling them to be
 
 ## Metric Labels
 
-This table will provide more details on the labels specified for the various metrics in the table above.
+This table provides additional details on the labels specified for the various metrics in the table above.
 
 <table>
   <thead>
