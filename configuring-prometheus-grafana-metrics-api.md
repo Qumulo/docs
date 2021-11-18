@@ -95,6 +95,8 @@ To make an alarm we'll follow [this guide](https://grafana.com/docs/grafana/late
 
 1. In the **Legend** box, enter `Node {{node_id}}`.
 
+1. In the **Visualization** tab, in the **Left Y** section, set **Y-min** to "0".
+
 1. Before saving the graph, go to the **Alert** tab in the side menu and click **Create Alert**.
 
 1. Name the alarm "Node Offline".
@@ -113,6 +115,9 @@ To make an alarm we'll follow [this guide](https://grafana.com/docs/grafana/late
 
 1. Click the save icon in the top right corner to save the alert.
 
+Here is what the alarm configuration should look like:
+![Node Offline Alarm Example Configuration](administrator-guide/images/node-offline-alarm-example-configuration.png)
+
 For more information on alerts, see the [Grafana documentation](https://grafana.com/docs/grafana/latest/alerting/old-alerting/).
 
 ## Alert on Cluster Full
@@ -127,6 +132,8 @@ Knowing how much free space is left in a cluster is very important, and in many 
 
 1. In the **Visualization** tab, go to the **Unit** dropdown in the **Left Y** section and choose "percent (0.0-1.0)".
 
+1. In the same **Left Y** section, set **Y-min** to "0" and **Y-max** to "1".
+
 1. Before saving the graph, go to the **Alert** tab in the side menu and click **Create Alert**.
 
 1. Name the alarm "Cluster Full".
@@ -140,5 +147,8 @@ Knowing how much free space is left in a cluster is very important, and in many 
 1. Enter the notification channel you want alerts to be sent to as well as a message.
 
 1. Click the save icon in the top right corner.
+
+Here is what the final alarm configuration should look like:
+![Free Space Remaining Alarm Example Configuration](administrator-guide/images/free-space-remaining-alarm-example-configuration.png)
 
 For more information on alerts, see the [Grafana documentation](https://grafana.com/docs/grafana/latest/alerting/old-alerting/).
