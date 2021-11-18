@@ -9,6 +9,12 @@ tags:
 sidebar: administrator_guide_sidebar
 ---
 
+# Background
+
+The OpenMetrics API provided by Qumulo provides a single API point to get a holistic dump of point-in-time telemetry from the Qumulo File Data Platform. The OpenMetrics data format emitted by the API can be consumed easily by a variety of monitoring and metrics systems natively without the need for custom code or an agent. Check with your monitoring system documentation to see if OpenMetrics or Prometheus data formats are natively supported for data ingest.
+
+This document walks through how to set up and configure an open source time-series database and collection system known as Prometheus to connect to the API and poll its data at regular intervals. We then use an open-source dashboard/analytics tool known as Grafana to build dashboards with different graphs and information which can be used to monitor the health of your cluster, generate alerts, and uplevel capacity statistics to your business.
+
 # Installing Prometheus
 Install prometheus using the documentation provided on the [Prometheus website](https://prometheus.io/docs/prometheus/latest/installation/). There are several different setups you can use, including installing to a Docker container or using a configuration management system such as Ansible.
 
