@@ -10,24 +10,24 @@ sidebar: administrator_guide_sidebar
 ---
 
 # Qumulo OpenMetrics API Specification
-The Qumulo OpenMetrics API has a single endpoint that provides complete collections of point-in-time telemetry from the Qumulo File Data Platform. Monitoring and metrics systems (such as? provide examples and links) can consume the OpenMetrics data format that the API emits, without custom code or an agent. For more information about whether you can ingest OpenMetrics or Prometheus data formats natively, see your monitoring system documentation.
+The Qumulo OpenMetrics API has a single endpoint that provides complete collections of point-in-time telemetry from the Qumulo File Data Platform. Monitoring and metrics systems can consume the OpenMetrics data format that the API emits, without custom code or an agent. For more information about whether you can ingest OpenMetrics or Prometheus data formats natively, see your monitoring system documentation.
 
 This section describes the specification of the types of metrics that the API emits.
 
-# Metric Types
-
-All the metrics available in the API will be one of three different types defined by the OpenMetrics standards, with each metric type possessing a specific set of functionality. The three different metric types are:
+## Metric Types
+All metrics available in the API belong to one of the three types that the OpenMetrics standard defines. Each metric type has a specific set of functionality. The following are the three metric types:
 
 * **Counter**: A monotonically increasing integer value. It starts at zero and cannot be decremented.
 * **Gauge**: Like a counter in that it represents a single integer value; however a gauge can be both increased and decreased.
 * **Histogram**: A histogram represents a series of "buckets", with each bucket keeping track of all values that occur within its own specific range. They also have a "count" field and a "sum" field, stored in `<metric_name>_count` and `<metric_name>_sum`. These fields contain the total number of samples and the total sum of all the samples, respectively. However, the Qumulo software does not emit any buckets for histogram metrics, so the main use of histograms in this API is to provide a convenient way to keep track of averages, which can be calculated by dividing the "sum" field by the "count" field.
 
-For more details on these and other OpenMetrics types, see the [OpenMetrics specification](https://github.com/OpenObservability/OpenMetrics/blob/main/specification/OpenMetrics.md#metric-types).
+For more information about these (and other) OpenMetrics types, see [Metric Types](https://github.com/OpenObservability/OpenMetrics/blob/main/specification/OpenMetrics.md#metric-types) in the OpenMetrics Specification.
 
-# Labels
+## Metric Labels
 The OpenMetrics format also provides a way to label metrics, enabling them to be broken up and categorized based on the different combinations of labels. If using Prometheus, all metrics will automatically be labeled with `job_name`, which is specified in the `prometheus.yml` configuration file, and `instance`, which will be the hostname and port of the cluster that the metrics are coming from and is also specified in `prometheus.yml`. Any additional labels will be metric-specific, and are listed in the "Labels" column in the table below. If a label has a specific set of possible values, those options are listed below the respective label in the table.
 
-# Available Metrics
+## Available Metrics
+The following table gives the name, type, labels, and descriptions for metrics available for Qumulo Core.
 
 <table>
   <thead>
@@ -40,37 +40,10 @@ The OpenMetrics format also provides a way to label metrics, enabling them to be
   </thead>
   <tbody>
     <tr>
-      <td><code>qumulo_quorum_node_is_offline</code></td>
-      <td>Gauge</td>
-      <td>
-        <ul>
-          <li><code>node_id</code></li>
-        </ul>
-      </td>
-      <td>The online status of each node in the cluster. The value will be either a 0 or a 1, with 0 representing a node being online, and 1 representing an offline node.</td>
-    </tr>
-    <tr>
       <td><code>qumulo_fs_capacity_bytes</code></td>
       <td>Gauge</td>
-      <td>None</td>
+      <td>&mdash;</td>
       <td>The total amount of space in the cluster, in bytes.</td>
-    </tr>
-    <tr>
-      <td><code>qumulo_fs_free_bytes</code></td>
-      <td>Gauge</td>
-      <td>None</td>
-      <td>The amount of free space available in the cluster, in bytes.</td>
-    </tr>
-    <tr>
-      <td><code>qumulo_fs_directory_used_bytes</code></td>
-      <td>Gauge</td>
-      <td>
-        <ul>
-          <li><code>path</code></li>
-          <li><code>usage_type</code></li>
-        </ul>
-      </td>
-      <td>The amount of space being used, broken up by the type of object using the data, in bytes.</td>
     </tr>
     <tr>
       <td><code>qumulo_fs_directory_tree_entries</code></td>
@@ -84,20 +57,23 @@ The OpenMetrics format also provides a way to label metrics, enabling them to be
       <td>The number of file system objects in the cluster, broken up by type of object.</td>
     </tr>
     <tr>
-      <td><code>qumulo_protocol_operations</code></td>
-      <td>Counter</td>
+      <td><code>qumulo_fs_directory_used_bytes</code></td>
+      <td>Gauge</td>
       <td>
         <ul>
-          <li><code>op_name</code></li>
-          <li><code>protocol</code></li>
-          <li><code>data_type</code></li>
-          <li><code>io_type</code></li>
-          <li><code>server_ip</code></li>
+          <li><code>path</code></li>
+          <li><code>usage_type</code></li>
         </ul>
       </td>
-      <td>The number of protocol operations that have been completed.</td>
+      <td>The amount of space being used, broken up by the type of object using the data, in bytes.</td>
     </tr>
-        <tr>
+    <tr>
+      <td><code>qumulo_fs_free_bytes</code></td>
+      <td>Gauge</td>
+      <td>&mdash;</td>
+      <td>The amount of free space available in the cluster, in bytes.</td>
+    </tr>
+    <tr>
       <td><code>qumulo_protocol_bytes</code></td>
       <td>Counter</td>
       <td>
@@ -125,42 +101,55 @@ The OpenMetrics format also provides a way to label metrics, enabling them to be
       </td>
       <td>The total latency experienced by different protocol operations.</td>
     </tr>
+    <tr>
+      <td><code>qumulo_protocol_operations</code></td>
+      <td>Counter</td>
+      <td>
+        <ul>
+          <li><code>op_name</code></li>
+          <li><code>protocol</code></li>
+          <li><code>data_type</code></li>
+          <li><code>io_type</code></li>
+          <li><code>server_ip</code></li>
+        </ul>
+      </td>
+      <td>The number of protocol operations that have been completed.</td>
+    </tr>
+    <tr>
+      <td><code>qumulo_quorum_node_is_offline</code></td>
+      <td>Gauge</td>
+      <td>
+        <ul>
+          <li><code>node_id</code></li>
+        </ul>
+      </td>
+      <td>The online status of each node in the cluster. The value will be either a 0 or a 1, with 0 representing a node being online, and 1 representing an offline node.</td>
+    </tr>
   </tbody>
 </table>
 
 ## Metric Labels
-
-This table provides additional details on the labels specified for the various metrics in the table above.
+The following table gives the metric label name, its possible values, and descriptions.
 
 <table>
   <thead>
     <tr>
-      <th>Tag</th>
+      <th>Label Name</th>
       <th>Possible Values</th>
       <th>Description</th>
     </th>
   </thead>
   <tbody>
     <tr>
-      <td><code>node_id</code></td>
-      <td>A positive integer representing a node ID within the cluster.</td>
-      <td>Differentiates between the different nodes in the cluster for <code>qumulo_quorum_node_is_offline</code>.</td>
-    </tr>
-    <tr>
-      <td><code>path</code></td>
-      <td>Currently only uses <code>/</code></td>
-      <td>Represents a path to a directory in the file system.</td>
-    </tr>
-    <tr>
-      <td><code>usage_type</code></td>
+      <td><code>data_type</code></td>
       <td>
         <ul>
           <li><code>data</code></li>
           <li><code>metadata</code></li>
-          <li><code>snapshot</code></li>
+          <li><code>none</code></li>
         </ul>
       </td>
-      <td>The type of data taking up space.</td>
+      <td>The type of data being transferred by the operation. Note that <code>data</code> refers to reading or writing operations that operate on a file's data. <code>metadata</code> operations refer to things like lookups, stats/getattrs, and other file operations which are not related to a file's data. Finally, <code>none</code> are operations which are neither operating on file data or metadata, and are often required by the protocol for session negotiation or authentication.</td>
     </tr>
     <tr>
       <td><code>entry_type</code></td>
@@ -176,9 +165,31 @@ This table provides additional details on the labels specified for the various m
       <td>The type of file system object.</code></td>
     </tr>
     <tr>
+      <td><code>io_type</code></td>
+      <td>
+        <ul>
+          <li><code>read</code></li>
+          <li><code>write</code></li>
+          <li><code>wait</code></li>
+          <li><code>none</code></li>
+        </ul>
+      </td>
+      <td>The type of I/O being performed by the operation. In this context, <code>wait</code> refers to a blocking operation that will take an indeterminant amount of time.</td>
+    </tr>
+    <tr>
+      <td><code>node_id</code></td>
+      <td>A positive integer representing a node ID within the cluster.</td>
+      <td>Differentiates between the different nodes in the cluster for <code>qumulo_quorum_node_is_offline</code>.</td>
+    </tr>
+    <tr>
       <td><code>op_name</code></td>
       <td>Any one of the operations from NFSv3, NFSv4, or SMB.</td>
       <td>The operation being recorded. Note that operations with <code>smb2</code> refer to both SMB2 and SMB3 operations, as both protocols are closely related.</td>
+    </tr>
+    <tr>
+      <td><code>path</code></td>
+      <td>Currently only uses <code>/</code></td>
+      <td>Represents a path to a directory in the file system.</td>
     </tr>
     <tr>
       <td><code>protocol</code></td>
@@ -192,32 +203,20 @@ This table provides additional details on the labels specified for the various m
       <td>The protocol of the operation being recorded. Note that <code>smb2</code> refers to both SMB2 and SMB3, as both protocols are closely related.</td>
     </tr>
     <tr>
-      <td><code>data_type</code></td>
+      <td><code>server_ip</code></td>
+      <td>An IPv4 or IPv6 address.</td>
+      <td>This is the IP address on your Qumulo cluster that received and serviced the protocol operation request from the client machine. This label can be used to understand how client connections are distributed across the IP address space of your cluster.</td>
+    </tr>
+    <tr>
+      <td><code>usage_type</code></td>
       <td>
         <ul>
           <li><code>data</code></li>
           <li><code>metadata</code></li>
-          <li><code>none</code></li>
+          <li><code>snapshot</code></li>
         </ul>
       </td>
-      <td>The type of data being transferred by the operation. Note that <code>data</code> refers to reading or writing operations that operate on a file's data. <code>metadata</code> operations refer to things like lookups, stats/getattrs, and other file operations which are not related to a file's data. Finally, <code>none</code> are operations which are neither operating on file data or metadata, and are often required by the protocol for session negotiation or authentication.</td>
-    </tr>
-    <tr>
-      <td><code>io_type</code></td>
-      <td>
-        <ul>
-          <li><code>read</code></li>
-          <li><code>write</code></li>
-          <li><code>wait</code></li>
-          <li><code>none</code></li>
-        </ul>
-      </td>
-      <td>The type of I/O being performed by the operation. In this context, <code>wait</code> refers to a blocking operation that will take an indeterminant amount of time.</td>
-    </tr>
-    <tr>
-      <td><code>server_ip</code></td>
-      <td>An IPv4 or IPv6 address.</td>
-      <td>This is the IP address on your Qumulo cluster that received and serviced the protocol operation request from the client machine. This label can be used to understand how client connections are distributed across the IP address space of your cluster.</td>
+      <td>The type of data taking up space.</td>
     </tr>
   </tbody>
 </table>
