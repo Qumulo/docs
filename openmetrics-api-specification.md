@@ -129,7 +129,8 @@ The following table gives the name, type, labels, and descriptions for metrics a
           <li><code>node_id</code></li>
         </ul>
       </td>
-      <td>Online status for each node in the cluster<br>This value can be <code>0</code> (node online) or <code>1</code> (node offline).</td>
+      <td>Online status for each node in the cluster<br>
+      This value can be <code>0</code> (node online) or <code>1</code> (node offline).</td>
     </tr>
   </tbody>
 </table>
@@ -150,12 +151,12 @@ The following table gives the metric label name, its possible values, and descri
       <td><code>data_type</code></td>
       <td>
         <ul>
-          <li><code>data</code></li>
-          <li><code>metadata</code></li>
-          <li><code>none</code></li>
+          <li><code>data</code>: Read or write operations on a file's data.</li>
+          <li><code>metadata</code>: Operations (such as <code>lookup</code>, <code>stat</code>, or <code>getattr</code>) that are unrelated to a file's data.</li>
+          <li><code>none</code>: Operations that operate on neither file data nor metadata. The protocol often requires these operations for session negotiation and authentication.</li>
         </ul>
       </td>
-      <td>The type of data being transferred by the operation. Note that <code>data</code> refers to reading or writing operations that operate on a file's data. <code>metadata</code> operations refer to things like lookups, stats/getattrs, and other file operations which are not related to a file's data. Finally, <code>none</code> are operations which are neither operating on file data or metadata, and are often required by the protocol for session negotiation or authentication.</td>
+      <td>The data type that an operation transfers</td>
     </tr>
     <tr>
       <td><code>entry_type</code></td>
@@ -168,7 +169,7 @@ The following table gives the metric label name, its possible values, and descri
           <li><code>symlink</code></li>
         </ul>
       </td>
-      <td>The type of file system object.</code></td>
+      <td>The file system object type</code></td>
     </tr>
     <tr>
       <td><code>io_type</code></td>
@@ -176,26 +177,26 @@ The following table gives the metric label name, its possible values, and descri
         <ul>
           <li><code>none</code></li>
           <li><code>read</code></li>
-          <li><code>wait</code></li>          
+          <li><code>wait</code>: A blocking operation that takes an indeterminate amount of time.</li>          
           <li><code>write</code></li>
         </ul>
       </td>
-      <td>The type of I/O being performed by the operation. In this context, <code>wait</code> refers to a blocking operation that will take an indeterminant amount of time.</td>
+      <td>The I/O that the operation performs</td>
     </tr>
     <tr>
       <td><code>node_id</code></td>
-      <td>A positive integer representing a node ID within the cluster.</td>
-      <td>Differentiates between the different nodes in the cluster for <code>qumulo_quorum_node_is_offline</code>.</td>
+      <td>A positive integer that represents a node ID in the cluster.</td>
+      <td>This value differentiates between the different nodes in the cluster for the <code>qumulo_quorum_node_is_offline</code> status.</td>
     </tr>
     <tr>
       <td><code>op_name</code></td>
-      <td>Any one of the operations from NFSv3, NFSv4, or SMB.</td>
-      <td>The operation being recorded. Note that operations with <code>smb2</code> refer to both SMB2 and SMB3 operations, as both protocols are closely related.</td>
+      <td>Any NFSv3, NFSv4, or SMB (SMBv2 or SMBv3) operation name.</td>
+      <td>The recorded operation</td>
     </tr>
     <tr>
       <td><code>path</code></td>
-      <td>Currently only uses <code>/</code></td>
-      <td>Represents a path to a directory in the file system.</td>
+      <td>Slash (<code>/</code>)</td>
+      <td>The path to a directory in the file system</td>
     </tr>
     <tr>
       <td><code>protocol</code></td>
@@ -203,15 +204,15 @@ The following table gives the metric label name, its possible values, and descri
         <ul>
           <li><code>nfs3</code></li>
           <li><code>nfs4</code></li>
-          <li><code>smb2</code></li>
+          <li><code>smb2</code>: SMBv2 or SMBv3</li>
         </ul>
       </td>
-      <td>The protocol of the operation being recorded. Note that <code>smb2</code> refers to both SMB2 and SMB3, as both protocols are closely related.</td>
+      <td>The protocol of the recorded operation</td>
     </tr>
     <tr>
       <td><code>server_ip</code></td>
       <td>An IPv4 or IPv6 address.</td>
-      <td>This is the IP address on your Qumulo cluster that received and serviced the protocol operation request from the client machine. This label can be used to understand how client connections are distributed across the IP address space of your cluster.</td>
+      <td>This is the IP address on your Qumulo cluster that receives and services the protocol operation request from the client machine. You can use this label to understand how client connections are distributed across your cluster's IP address space.</td>
     </tr>
     <tr>
       <td><code>usage_type</code></td>
@@ -222,7 +223,7 @@ The following table gives the metric label name, its possible values, and descri
           <li><code>snapshot</code></li>
         </ul>
       </td>
-      <td>The type of data taking up space.</td>
+      <td>The data type that uses space</td>
     </tr>
   </tbody>
 </table>
