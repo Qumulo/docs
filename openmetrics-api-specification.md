@@ -47,41 +47,41 @@ The following table gives the name, type, labels, and descriptions for metrics a
   <tbody>
     <tr>
       <td><code>qumulo_fs_capacity_bytes</code></td>
-      <td>Gauge</td>
+      <td>gauge</td>
       <td>&mdash;</td>
-      <td>The total amount of space in the cluster, in bytes.</td>
+      <td>Total space in the cluster, in bytes</td>
     </tr>
     <tr>
       <td><code>qumulo_fs_directory_tree_entries</code></td>
-      <td>Gauge</td>
+      <td>gauge</td>
       <td>
         <ul>
           <li><code>entry_type</code></li>
           <li><code>path</code></li>
         </ul>
       </td>
-      <td>The number of file system objects in the cluster, broken up by type of object.</td>
+      <td>Number of file system objects in the cluster, by object type</td>
     </tr>
     <tr>
       <td><code>qumulo_fs_directory_used_bytes</code></td>
-      <td>Gauge</td>
+      <td>gauge</td>
       <td>
         <ul>
           <li><code>path</code></li>
           <li><code>usage_type</code></li>
         </ul>
       </td>
-      <td>The amount of space being used, broken up by the type of object using the data, in bytes.</td>
+      <td>Space that object types use, in bytes</td>
     </tr>
     <tr>
       <td><code>qumulo_fs_free_bytes</code></td>
-      <td>Gauge</td>
+      <td>gauge</td>
       <td>&mdash;</td>
-      <td>The amount of free space available in the cluster, in bytes.</td>
+      <td>Free space in the cluster, in bytes</td>
     </tr>
     <tr>
       <td><code>qumulo_protocol_bytes</code></td>
-      <td>Counter</td>
+      <td>counter</td>
       <td>
         <ul>
           <li><code>data_type</code></li>
@@ -91,11 +91,11 @@ The following table gives the name, type, labels, and descriptions for metrics a
           <li><code>server_ip</code></li>
         </ul>
       </td>
-      <td>Amount of bytes transferred by different protocol operations.</td>
+      <td>Bytes transferred by protocol operations</td>
     </tr>
-        <tr>
+    <tr>
       <td><code>qumulo_protocol_latency_seconds</code></td>
-      <td>Histogram</td>
+      <td>histogram</td>
       <td>
         <ul>
           <li><code>data_type</code></li>
@@ -105,11 +105,11 @@ The following table gives the name, type, labels, and descriptions for metrics a
           <li><code>server_ip</code></li>
         </ul>
       </td>
-      <td>The total latency experienced by different protocol operations.</td>
+      <td>Total latency for protocol operations</td>
     </tr>
     <tr>
       <td><code>qumulo_protocol_operations</code></td>
-      <td>Counter</td>
+      <td>counter</td>
       <td>
         <ul>
           <li><code>data_type</code></li>
@@ -119,17 +119,17 @@ The following table gives the name, type, labels, and descriptions for metrics a
           <li><code>server_ip</code></li>
         </ul>
       </td>
-      <td>The number of protocol operations that have been completed.</td>
+      <td>Number of completed protocol operations</td>
     </tr>
     <tr>
       <td><code>qumulo_quorum_node_is_offline</code></td>
-      <td>Gauge</td>
+      <td>gauge</td>
       <td>
         <ul>
           <li><code>node_id</code></li>
         </ul>
       </td>
-      <td>The online status of each node in the cluster. The value will be either a 0 or a 1, with 0 representing a node being online, and 1 representing an offline node.</td>
+      <td>Online status for each node in the cluster<br>This value can be <code>0</code> (node online) or <code>1</code> (node offline).</td>
     </tr>
   </tbody>
 </table>
