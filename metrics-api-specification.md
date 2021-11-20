@@ -1,16 +1,15 @@
 ---
-title: Metrics API Specification
-permalink: metrics-specification.html
+title: Qumulo OpenMetrics API Specification
+permalink: metrics-api-specification.html
 tags:
   - metrics
-  - specification
   - openmetrics
   - prometheus
+  - api
 sidebar: administrator_guide_sidebar
 ---
 
-# Background
-
+# Qumulo OpenMetrics API Specification
 The OpenMetrics API provided by Qumulo provides a single API point to get a holistic dump of point-in-time telemetry from the Qumulo File Data Platform. The OpenMetrics data format emitted by the API can be consumed easily by a variety of monitoring and metrics systems natively without the need for custom code or an agent. Check with your monitoring system documentation to see if OpenMetrics or Prometheus data formats are natively supported for data ingest.
 
 This document contains a specification for the types of metrics emitted by the API and what they mean.
