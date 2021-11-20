@@ -50,8 +50,8 @@ The following table gives the name, type, labels, and descriptions for metrics a
       <td>Gauge</td>
       <td>
         <ul>
-          <li><code>path</code></li>
           <li><code>entry_type</code></li>
+          <li><code>path</code></li>
         </ul>
       </td>
       <td>The number of file system objects in the cluster, broken up by type of object.</td>
@@ -78,10 +78,10 @@ The following table gives the name, type, labels, and descriptions for metrics a
       <td>Counter</td>
       <td>
         <ul>
-          <li><code>op_name</code></li>
-          <li><code>protocol</code></li>
           <li><code>data_type</code></li>
           <li><code>io_type</code></li>
+          <li><code>op_name</code></li>
+          <li><code>protocol</code></li>
           <li><code>server_ip</code></li>
         </ul>
       </td>
@@ -92,10 +92,10 @@ The following table gives the name, type, labels, and descriptions for metrics a
       <td>Histogram</td>
       <td>
         <ul>
-          <li><code>op_name</code></li>
-          <li><code>protocol</code></li>
           <li><code>data_type</code></li>
           <li><code>io_type</code></li>
+          <li><code>op_name</code></li>
+          <li><code>protocol</code></li>
           <li><code>server_ip</code></li>
         </ul>
       </td>
@@ -106,10 +106,10 @@ The following table gives the name, type, labels, and descriptions for metrics a
       <td>Counter</td>
       <td>
         <ul>
+          <li><code>data_type</code></li>
+          <li><code>io_type</code></li>          
           <li><code>op_name</code></li>
           <li><code>protocol</code></li>
-          <li><code>data_type</code></li>
-          <li><code>io_type</code></li>
           <li><code>server_ip</code></li>
         </ul>
       </td>
@@ -155,11 +155,11 @@ The following table gives the metric label name, its possible values, and descri
       <td><code>entry_type</code></td>
       <td>
         <ul>
-          <li><code>file</code></li>
-          <li><code>directory</code></li>
-          <li><code>symlink</code></li>
           <li><code>alternate_data_stream</code></li>
+          <li><code>directory</code></li>
+          <li><code>file</code></li>
           <li><code>other</code></li>
+          <li><code>symlink</code></li>
         </ul>
       </td>
       <td>The type of file system object.</code></td>
@@ -168,10 +168,10 @@ The following table gives the metric label name, its possible values, and descri
       <td><code>io_type</code></td>
       <td>
         <ul>
-          <li><code>read</code></li>
-          <li><code>write</code></li>
-          <li><code>wait</code></li>
           <li><code>none</code></li>
+          <li><code>read</code></li>
+          <li><code>wait</code></li>          
+          <li><code>write</code></li>
         </ul>
       </td>
       <td>The type of I/O being performed by the operation. In this context, <code>wait</code> refers to a blocking operation that will take an indeterminant amount of time.</td>
