@@ -1,6 +1,6 @@
 ---
 title: Qumulo OpenMetrics API Specification
-permalink: metrics-api-specification.html
+permalink: openmetrics-api-specification.html
 tags:
   - metrics
   - openmetrics
