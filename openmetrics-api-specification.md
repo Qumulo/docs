@@ -17,17 +17,23 @@ This section describes the specification of the types of metrics that the API em
 ## Metric Types
 All metrics available in the API belong to one of the three types that the OpenMetrics standard defines. Each metric type has a specific set of functionality. The following are the three metric types:
 
-* **Counter**: A monotonically increasing integer value. It starts at zero and cannot be decremented.
-* **Gauge**: Like a counter in that it represents a single integer value; however a gauge can be both increased and decreased.
-* **Histogram**: A histogram represents a series of "buckets", with each bucket keeping track of all values that occur within its own specific range. They also have a "count" field and a "sum" field, stored in `<metric_name>_count` and `<metric_name>_sum`. These fields contain the total number of samples and the total sum of all the samples, respectively. However, the Qumulo software does not emit any buckets for histogram metrics, so the main use of histograms in this API is to provide a convenient way to keep track of averages, which can be calculated by dividing the "sum" field by the "count" field.
+* **Counter**: A monotonically increasing integer that increases from zero. It isn't possible to decrement this value.
+
+* **Gauge**: A value that represents a single integer (similar to a counter). It is posible to increase or decrease a gauge.
+
+* **Histogram**: A histogram that represents a series of _buckets._ Each bucket keeps track of all values that occur within a specific range. A histogram also has a `count` field and a `sum` field, stored in `<metric_name>_count` (the total number of samples) and `<metric_name>_sum` (the sum of all the samples).
+  
+  **Note:** Because Qumulo Core doesn't emit any buckets for histogram metrics, you can use histograms to keep track of averages, by dividing the `sum` field by the `count` field.
 
 For more information about these (and other) OpenMetrics types, see [Metric Types](https://github.com/OpenObservability/OpenMetrics/blob/main/specification/OpenMetrics.md#metric-types) in the OpenMetrics Specification.
 
 ## Metric Labels
-The OpenMetrics format also provides a way to label metrics, enabling them to be broken up and categorized based on the different combinations of labels. If using Prometheus, all metrics will automatically be labeled with `job_name`, which is specified in the `prometheus.yml` configuration file, and `instance`, which will be the hostname and port of the cluster that the metrics are coming from and is also specified in `prometheus.yml`. Any additional labels will be metric-specific, and are listed in the "Labels" column in the table below. If a label has a specific set of possible values, those options are listed below the respective label in the table.
+The OpenMetrics format provides a way to label metrics. You can use metric labels to categorize metrics based on different label combinations. If you use Prometheus, all metrics are labeled with the `job_name` and `instance` labels automatically. The `instance` label specifies the host name and port for the cluster that emits the metrics. The two labels are defined in `prometheus.yml`.
+
+Any other labels are metric-specific. For more information, see the **Label** column in [Available Metrics](#available-metrics)
 
 ## Available Metrics
-The following table gives the name, type, labels, and descriptions for metrics available for Qumulo Core.
+The following table gives the name, type, labels, and descriptions for metrics available for Qumulo Core. The table lists specific sets of possible values for labels.
 
 <table>
   <thead>
