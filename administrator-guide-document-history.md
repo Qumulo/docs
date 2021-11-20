@@ -23,7 +23,7 @@ The following table lists changes to the _Qumulo Administrator Guide_.
       <td>Nov. ??, 2021</td>
       <td>Added the following sections:
           <ul>
-            <li><a href="/metrics-api-specification.html">Qumulo OpenMetrics API Specification</a></li>
+            <li><a href="/openmetrics-api-specification.html">Qumulo OpenMetrics API Specification</a></li>
           </ul>
       </td>
     </tr>
