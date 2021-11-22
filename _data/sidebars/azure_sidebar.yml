@@ -1,0 +1,19 @@
+entries:
+- title:
+  product:
+  version:
+  folders:
+
+  - title:
+    output: pdf
+    type: frontmatter
+    folderitems:
+
+    - title:
+      url: /titlepage.html
+      output: pdf
+      type: frontmatter
+
+    - title: Qumulo on Azure as a Service Getting Started Guide
+      url: /azure.html
+      output: pdf

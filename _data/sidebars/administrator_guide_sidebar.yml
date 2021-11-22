@@ -4,8 +4,23 @@ entries:
   version:
   folders:
 
+  - title:
+    output: pdf
+    type: frontmatter
+    folderitems:
+
+    - title:
+      url: /titlepage.html
+      output: pdf
+      type: frontmatter
+
+    - title:
+      url: /tocpage.html
+      output: pdf
+      type: frontmatter
+
   - title: Qumulo Administrator Guide
-    output: web
+    output: web, pdf
     folderitems:
 
     - title: Documentation Home
@@ -18,23 +33,23 @@ entries:
 
     - title: Administrator Guide Document History
       url: /administrator-guide-document-history.html
-      output: web
+      output: web, pdf
 
     - title: Enabling and Using NFSv4.1 on a Qumulo Cluster
       url: /nfsv4.1-enabling-using.html
-      output: web
+      output: web, pdf
 
     - title: Managing File Access Permissions Using NFSv4.1 Access Control Lists (ACLs)
       url: /nfsv4.1-auth-sys-acls.html
-      output: web
+      output: web, pdf
 
     - title: Using Qumulo Shift-To to Copy Objects to Amazon S3
       url: /shift-to-s3.html
-      output: web
+      output: web, pdf
       
     - title: Using Qumulo Shift-From for Amazon S3 to Copy Objects
       url: /shift-from-s3.html
-      output: web
+      output: web, pdf
 
     - title: Qumulo OpenMetrics API Specification
       url: /openmetrics-api-specification.html
@@ -42,8 +57,8 @@ entries:
 
     - title: Identifying NICs and Choosing Transceivers and Cables for Your Qumulo Node
       url: /nics-transceivers-cables.html
-      output: web
+      output: web, pdf
 
     - title: Replacing the Chassis of C-192T and C-432T Nodes
       url: /c-192t-c-432t-chassis-replacement.html
-      output: web
+      output: web, pdf

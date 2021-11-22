@@ -1,0 +1,19 @@
+entries:
+- title:
+  product:
+  version:
+  folders:
+
+  - title:
+    output: pdf
+    type: frontmatter
+    folderitems:
+
+    - title:
+      url: /titlepage.html
+      output: pdf
+      type: frontmatter
+
+    - title: Qumulo on Supermicro A+ WIO 1114S-WN10RT Getting Started Guide
+      url: /supermicro.html
+      output: pdf
