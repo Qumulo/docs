@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="keywords" content="getting_started_guideazureonboardingnetworkingvirtual_network_peeringdhcp_modednsip_failoverfloating_ipupgradesremote_monitoringremote_supportactive_directory_domainscapacity_increasesperformance_increases,  ">
+<title>Qumulo on Azure as a Service Getting Started Guide  | Qumulo Documentation</title>
+
+
+<link rel="stylesheet" href="http://localhost:4010/qumulo-doc/css/syntax.css">
+<link rel="stylesheet" href="http://localhost:4010/qumulo-doc/css/font-awesome.min.css">
+<link rel="stylesheet" href="http://localhost:4010/qumulo-doc/css/bootstrap.min.css">
+<link rel="stylesheet" href="http://localhost:4010/qumulo-doc/css/modern-business.css">
+<link rel="stylesheet" href="http://localhost:4010/qumulo-doc/css/customstyles.css">
+<link rel="stylesheet" href="http://localhost:4010/qumulo-doc/css/theme-blue.css">
+<link rel="stylesheet" href="http://localhost:4010/qumulo-doc/css/syntax.css">
+<link rel="stylesheet" href="/qumulo-doc/css/printstyles.css">
+
+<script>
+    Prince.addScriptFunc("datestamp", function() {
+        return "PDF last generated: November 15, 2021";
+    });
+</script>
+
+<script>
+    Prince.addScriptFunc("guideName", function() {
+        return "Qumulo on Azure as a Service Getting Started Guide User Guide";
+    });
+</script>
+
+
+
+</head>
+
+<body class=" print">
+
+<!-- Page Content -->
+<div class="container">
+    <!-- Content Column -->
+    <div class="col-md-9">
+
+        <div class="post-header">
+    <h1 class="post-title-main" id="azure.html">Qumulo on Azure as a Service Getting Started Guide</h1>
+</div>
+
+<div class="post-content">
+
+    
+    <p>Welcome to Qumulo on Azure as a Service. The next step after provisioning your file system is configuring it for your environment. This guide is a supplement to the <a href="https://care.qumulo.com/hc/en-us/articles/360011321773-Qumulo-Getting-Started-Guide">Qumulo Getting Started Guide</a>, where configuration steps and best practices differ from those we recommend for other platforms.</p>
+
+<h2 id="networking-connectivity">Networking Connectivity</h2>
+<p>The biggest difference between running Qumulo on Azure and on other platforms is connectivity to the file system through your network. This section guides you through network configuration specific to Qumulo on Azure as a Service.</p>
+
+<h3 id="configuring-virtual-network-peering">Configuring Virtual Network Peering</h3>
+<p>Virtual Network (VNet) peering allows bidirectional connectivity between the file system and your infrastructure. This connectivity enables several Qumulo features, such as LDAP integration, audit logging, and Active Directory. Qumulo on Azure as a Service requires one or more <a href="https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview">VNet peering connections</a> between the VNet provisioned for the Qumulo file system and the VNets in your infrastructure.</p>
+
+<p>During the file system provisioning, you received the resource ID for the Qumulo on Azure as a Service VNet and one user from your organization was invited into the Qumulo tenancy with permissions necessary to configure VNet peering on that resource. To change who has this permission, contact <a href="https://care.qumulo.com">Qumulo Care</a>.</p>
+
+<p><strong>Note:</strong>
+VNet peering isn’t transitive. For example, if the three VNets A, B, and C are peered transitively (A ⭤ B ⭤ C), the infrastructure in VNet A won’t be able to communicate transitively with infrastructure in VNet C. This has implications for Qumulo on Azure as a Service in the <a href="https://docs.microsoft.com/en-us/azure/architecture/reference-architectures/hybrid-networking/hub-spoke?tabs=cli">hub-and-spoke network topology</a>, which Azure recommends as a best practice. If you have infrastructure that Qumulo must be able to reach (for example, a DNS server, a syslog audit log server, and so on) that lives in a hub VNet, you <em>must</em> peer the Qumulo on Azure as a Service VNet with your hub VNet and with any spoke VNets that must be able to connect to the file system.</p>
+
+<h3 id="configuring-dhcp-mode">Configuring DHCP Mode</h3>
+<p><strong>Important:</strong> Configuring static networking results in an error.</p>
+
+<p>Like other cloud platform implementations, you can configure Qumulo on Azure as a Service to run only in DHCP mode, where Azure assigns IP addresses to the file system automatically.</p>
+
+<h3 id="configuring-dns">Configuring DNS</h3>
+<p><strong>Important:</strong> Before you configure DNS for Qumulo Core, you must ensure that the DNS server that you want to use is reachable from the Qumulo on Azure as a Service VNet and that it can resolve the <code class="language-plaintext highlighter-rouge">blob.core.windows.net</code> and <code class="language-plaintext highlighter-rouge">vault.azure.com</code> addresses. A DNS server misconfiguration can result in a file system outage.</p>
+
+<p>To resolve internal hostnames to IP addresses in your infrastructure, you must configure Qumulo Core to use a DNS server that can resolve the necessary hostnames. By default, the file system uses Azure’s default DNS server (<code class="language-plaintext highlighter-rouge">168.63.129.16</code>) provided by DHCP.</p>
+
+<p>Currently, you can configure DNS servers and search domains only using the the <code class="language-plaintext highlighter-rouge">/v2/network</code> REST API or using the <a href="https://care.qumulo.com/hc/en-us/articles/360026611494-Custom-DNS-Configuration"><code class="language-plaintext highlighter-rouge">qq</code> CLI tool</a>. For more information about installing <code class="language-plaintext highlighter-rouge">qq</code>, see <a href="https://care.qumulo.com/hc/en-us/articles/115014875988-QQ-CLI-Installing-Command-Line-Tools">QQ CLI: Install Command-Line Tools</a> on Qumulo Care.</p>
+
+<h3 id="using-services-on-the-public-internet">Using Services on the Public Internet</h3>
+<p>For improved security, the Qumulo on Azure as a Service file system provisioned for you doesn’t have access to the public Internet. Thus, you must proxy any connectivity between your file system and a service on the public Internet using a VNet peer in your Azure subscription.</p>
+
+<p>The following service require specific configuration for public Internet connectivity.</p>
+<ul>
+  <li><strong>Audit:</strong> Requires an Rsyslog server or proxy to a public Rsyslog server in a peered VNet.</li>
+  <li><strong>Network Time Protocol (NTP):</strong> Not operational by default. Requires an NTP server or proxy to a public NTP server in a peered VNet.</li>
+  <li><strong>Shift for S3:</strong> Requires an S3 proxy in a peered VNet. You can configure this proxy on the <strong>Advanced S3 Server Settings</strong> panel when you create a copy job.</li>
+</ul>
+
+<h3 id="using-ip-failover-with-floating-ip-addresses">Using IP Failover with Floating IP Addresses</h3>
+<p>In on-premises configurations, and when running on AWS and GCP, Qumulo Core uses <a href="https://care.qumulo.com/hc/en-us/articles/115007075107-IP-failover-with-Qumulo-Core">floating IPs</a> that allow the file system to be be continuously available regardless of node failure.</p>
+
+<p>Because the compute infrastructure that underlies Qumulo on Azure as a Service is more fluid than on other platforms, the concepts of file system <em>nodes</em> and the file system’s <em>static</em> and <em>floating</em> IPs are irrelevant. Treat all IP addresses for Qumulo on Azure as a Service like floating IPs in a traditional Qumulo file system.</p>
+
+<h2 id="upgrades">Upgrades</h2>
+<p>In addition to <em>host</em> upgrades, Qumulo performs <em>instant</em> Qumulo Core software upgrades on Qumulo on Azure as a Service file systems on your behalf. Upgrades take place in the week that follows the release of a new Qumulo Core version (typically, once every two weeks). During these upgrades, your file system experiences a brief downtime (usually, less than 30 seconds). For more information, see <a href="https://care.qumulo.com/hc/en-us/articles/360060250653-Qumulo-Core-Instant-Software-Upgrade">Qumulo Core Instant Software Upgrade</a> on Qumulo Care.</p>
+
+<h2 id="active-directory-ad-domains">Active Directory (AD) Domains</h2>
+<p>Like other cloud platform implementations, Qumulo on Azure as a Service lets the file system join an Active Directory domain for authentication and authorization.</p>
+<ul>
+  <li>If you run a traditional Active Directory domain with domain controllers, follow the instructions in <a href="https://care.qumulo.com/hc/en-us/articles/115007276068-Join-your-Qumulo-Cluster-to-Active-Directory">Join your Qumulo Cluster to Active Directory</a> on Qumulo Care.</li>
+  <li>If you use Azure AD in your environment, Qumulo Core requires enabling Azure Active Directory Domain Services in your tenancy. For more information, see <a href="https://docs.microsoft.com/en-us/azure/active-directory-domain-services/overview">What is Azure Active Directory Domain Services?</a> in Azure documentation.</li>
+</ul>
+
+<p><strong>Note:</strong> Currently, Qumulo core doesn’t support Azure AD natively.</p>
+
+<h2 id="remote-monitoring-and-support">Remote Monitoring and Support</h2>
+<p>Qumulo on Azure as a Service doesn’t require special remote monitoring configuration. All Qumulo on Azure as a Service file systems have remote monitoring enabled by default. You can’t disable this functionality. Your Qumulo on Azure as a Service file systems display on Qumulo Trends alongside any other Qumulo systems you might have on other platforms. For more information, see <a href="https://care.qumulo.com/hc/en-us/articles/115008736167-Qumulo-Trends-Overview">Qumulo Trends Overview</a> on Qumulo Care.</p>
+
+<p><strong>Note:</strong> Remote Support VPN is always disabled for Qumulo on Azure as a Service. It isn’t required for getting support for Qumulo on Azure as a Service.</p>
+
+<h2 id="capacity-and-performance-increases">Capacity and Performance Increases</h2>
+<p>Qumulo manages the addition of capacity and performance to your file system. For help with expanding your existing file system, <a href="https://qumulo.com/contact/?utm_source=press-release&amp;utm_medium=press-release&amp;utm_campaign=aws-outposts-2009&amp;utm_team=cloud">contact a Qumulo sales representative</a>.</p>
+
+</div>
+
+    </div>
+
+</div>    <!-- /.container -->
+
+</body>
+
+</html>

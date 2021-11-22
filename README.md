@@ -5,12 +5,11 @@ tags:
   - home_page
 ---
 
-# Qumulo Documentation Portal
 Welcome. This site is a new documentation portal for [Qumulo](https://qumulo.com/) that uses [docs-as-code principles](https://www.writethedocs.org/guide/docs-as-code/). As we continue to add new content to this portal, we want you to ask questions and share your ideas with us&mdash;click **Edit on GitHub** on any page.
 
 **Table of Contents**
 * [Qumulo on Azure as a Service Onboarding Guide](azure.md)
-* [Qumulo on Supermicro Getting Started Guide](supermicro.md)
+* [Qumulo on Supermicro A+ WIO 1114S-WN10RT Getting Started Guide](supermicro.md)
 * [Qumulo Administrator Guide](administrator-guide.md)
 
 ## Visit the Knowledge Base
