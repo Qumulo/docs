@@ -53,7 +53,7 @@ entries:
 
     - title: Qumulo OpenMetrics API Specification
       url: /openmetrics-api-specification.html
-      output: web
+      output: web, pdf
 
     - title: Identifying NICs and Choosing Transceivers and Cables for Your Qumulo Node
       url: /nics-transceivers-cables.html
