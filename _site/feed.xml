@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>docs</title>
+        <description>This site is a new documentation portal for Qumulo that uses docs-as-code principles. As we continue to add new content to this portal, we want you to ask questions and share your ideas with us—click Edit on GitHub on any page.</description>
+        <link>http://localhost:4010/</link>
+        <atom:link href="http://localhost:4010/feed.xml" rel="self" type="application/rss+xml"/>
+        <pubDate>Mon, 15 Nov 2021 14:28:26 -0800</pubDate>
+        <lastBuildDate>Mon, 15 Nov 2021 14:28:26 -0800</lastBuildDate>
+        <generator>Jekyll v3.9.0</generator>
+        
+    </channel>
+</rss>

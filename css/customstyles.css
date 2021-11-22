@@ -867,11 +867,11 @@ span.soft {
 }
 
 .githubEditButton {
-    /*margin-bottom:7px;*/
+    /*
     position: absolute;
     top: -63px;
     z-index: 1001;
-    right: 470px;
+    right: 470px;*/
 }
 
 .endpoint {

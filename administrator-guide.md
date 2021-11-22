@@ -1,10 +1,9 @@
 ---
-title: Qumulo on Azure as a Service Administrator Guide
+title: Qumulo Administrator Guide
 permalink: administrator-guide.html
 sidebar: administrator_guide_sidebar
 ---
 
-# Qumulo Administrator Guide
 The Qumulo Administrator Guide is a growing collection of information about configuring, managing, and troubleshooting Qumulo Core and you Qumulo nodes and clusters.
 
 **Table of Contents**

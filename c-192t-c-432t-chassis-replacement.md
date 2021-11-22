@@ -12,7 +12,6 @@ tags:
 sidebar: administrator_guide_sidebar
 ---
 
-# Replacing the Chassis of C-192T and C-432T Nodes
 This section explains how you can replace the chassis in C-192T and C-432T nodes. 
 
 ## Prerequisites 
