@@ -4,6 +4,10 @@ entries:
   version:
   folders:
 
+  - title: Documentation Home
+    url: /index.html
+    output: web
+
   - title:
     output: pdf
     type: frontmatter
@@ -22,10 +26,6 @@ entries:
   - title: Qumulo Administrator Guide
     output: web, pdf
     folderitems:
-
-    - title: Documentation Home
-      url: /index.html
-      output: web
 
     - title: Administrator Guide Home
       url: /administrator-guide.html
