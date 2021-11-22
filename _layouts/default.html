@@ -76,12 +76,10 @@
 {% include topnav.html %}
 <!-- Page Content -->
 <div class="container">
-  
-  {% if site.github_editme_path %}
-  <a target="_blank" rel="noopener" href="https://github.com/{{site.github_editme_path}}{{page.path}}" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit on GitHub</a>
-  {% endif %}
-
   <div id="main">
+    {% if site.github_editme_path %}
+    <a target="_blank" rel="noopener" href="https://github.com/{{site.github_editme_path}}{{page.path}}" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit on GitHub</a>
+    {% endif %}
     <!-- Content Row -->
     <div class="row">
         {% assign content_col_size = "col-md-12" %}
