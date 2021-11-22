@@ -39,15 +39,9 @@ layout: default
     {% include toc.html %}
     {% endunless %}
 
-
-    {% if site.github_editme_path %}
-
-    <a target="_blank" rel="noopener" href="https://github.com/{{site.github_editme_path}}{{page.path}}" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit on GitHub</a>
-
-    {% endif %}
-
    {{content}}
 
+    <!--
     <div class="tags">
         {% if page.tags != null %}
         <b>Tags: </b>
@@ -59,6 +53,7 @@ layout: default
         {% endfor %}
         {% endif %}
     </div>
+    -->
 
 {% include commento.html %}
 
