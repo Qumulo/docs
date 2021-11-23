@@ -258,10 +258,10 @@ div#toc {
     top: inherit; /* Set this to the default value */ 
 }
 
-/* Ensure that text wraps around TOC correctly */
+/* Ensure that text wraps around TOC correctly 
 #toc>ul {
     margin-top:65px;
-}
+}*/
 
 div#toc ul li {
     margin: 8px 0px 8px 22px;
