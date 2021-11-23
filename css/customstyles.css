@@ -333,6 +333,7 @@ footer {
     color: white;    
     background-color:#0d1934;
     min-height: 130px;
+    font-size: smaller;
 }
 
 /* FAQ page */
@@ -472,6 +473,7 @@ span.projectTitle {
 
 .footer-text {
     text-align:right;
+    padding-top: 15px;
     padding-right:15px;
 }
 
