@@ -2,6 +2,12 @@ body {
     font-family: Avenir;
     background-color: #F8F8F8;
     font-size:16px;
+
+    /* Attach footer to bottom of page */
+    min-height:100vh;
+    margin:0;
+    display:grid;
+    grid-template-rows: auto 1fr auto;
 }
 
 h1 {
@@ -323,7 +329,9 @@ li.dropdownActive a {
 }
 
 footer {
-    font-size: smaller;
+    color: white;    
+    background-color:#0d1934;
+    min-height: 130px;
 }
 
 /* FAQ page */
@@ -452,14 +460,14 @@ span.projectTitle {
     font-family: Avenir;
     font-weight: bold;
 }
-
+/*
 .footer {
     padding-top: 15px;
     color: white;    
     background-color:#0d1934;
     width:auto;
     height:130px;
-}
+}*/
 
 .footer-text {
     text-align:right;
