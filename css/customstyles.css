@@ -255,7 +255,8 @@ ul#results-container a:hover {
 div#toc {
     float: right;
     position: relative;
-    top: inherit; /* Set this to the default value */ 
+    top: inherit; /* Set this to the default value */
+    margin-left:10px; 
 }
 
 /* Ensure that text wraps around TOC correctly 
