@@ -34,7 +34,7 @@ The following table lists changes to the _Qumulo Administrator Guide_.
     </tr>
     <tr>
       <td>Nov. 2, 2021</td>
-      <td>Added the <a href="/shift-from-s3.html">Using Qumulo Shift-To to Copy Objects to Amazon S3</a> section.</td>
+      <td>Added the <a href="/shift-to-s3.html">Using Qumulo Shift-To to Copy Objects to Amazon S3</a> section.</td>
     </tr>
     <tr>
       <td>Oct. 22, 2021</td>
