@@ -13,10 +13,9 @@ sidebar: administrator_guide_sidebar
 
 This section describes how you can configure Prometheus (an open-source, time-series database and collection system) to connect to the Qumulo API and poll its data at regular intervals. It also describes how you can use Grafana (an open-source analytics tool) to create dashboards with graphs and data that you can use to monitor the health of your Qumulo cluster, generate alerts, and improve your capacity statistics.
 
-## Installing Prometheus
+## Installing and Configuring Prometheus
 For information about installing Prometheus, see [Installation](https://prometheus.io/docs/prometheus/latest/installation/) in the Prometheus documentation. You can install Prometheus into a Docker container or use a configuration management system such as Ansible.
 
-## Configuring Prometheus
 **Important**: To use the OpenMetrics API, you you must configure your cluster to emit metrics without authentication. If your cluster isn't configure, open a request at [Qumulo Care](https://care.qumulo.com/hc/en-us/requests/new).
 
 You can configure Prometheus by editing the `prometheus.yml` file. If this file doesn't exist already, create it and add your monitoring configuration to the file. You can use the following example as a template.
@@ -50,11 +49,11 @@ scrape_configs:
 ```
 
 ## Installing and Configuring Grafana
-Follow the Prometheus documentation for integrating with Grafana found [here](https://prometheus.io/docs/visualization/grafana/) in order to get Grafana up and running with Prometheus. Follow the Grafana documentation for integrating alerts with notification systems found [here](https://grafana.com/docs/grafana/latest/alerting/old-alerting/notifications/) in order to receive notifications when alerts are triggered.
+For information about integrating Prometheus with Grafana, see [Grafana Support for Prometheus](https://prometheus.io/docs/visualization/grafana/) in the Prometheus documentation. For information about integrating alerts with notification systems to receive notifications when alerts are triggered, see [Alert Notifications](https://grafana.com/docs/grafana/latest/alerting/old-alerting/notifications/) in the Grafana documentation.
 
-Provided below are a few examples of some basic graphing and alerting setups that might be useful to have once you have Prometheus and Grafana up and running.
+The following examples show basic graphing and alerting configurations.
 
-### Example: Create a Throughput Graph
+### To Create a Throughput Graph
 
 ![Example Throughput Graph](administrator-guide/images/prometheus-grafana-setup-example-throughput-graph.png)
 
@@ -88,9 +87,11 @@ This example with demonstrate how to setup a graph on Grafana to view total read
 
 For more information about dashboards, panels, or other visualizations, see their respective sections in the [Grafana documentation](https://grafana.com/docs/grafana/latest/).
 
-### Example: Alert on Offline Node
+### To Alert on an Offline Node
 
 Administrators want to be promptly notified when there is an issue in their cluster preventing one or more nodes from being online. Being in this state risks additional failures taking the entire cluster offline, as well as reduced performance and eventually the inability to write to the cluster. We'll get notified quickly of this state by making a alarm in Grafana.
+
+For information about alerts, see the [Grafana documentation](https://grafana.com/docs/grafana/latest/alerting/old-alerting/).
 
 To make an alarm we'll follow [this guide](https://grafana.com/docs/grafana/latest/alerting/old-alerting/create-alerts/).
 
@@ -122,11 +123,11 @@ To make an alarm we'll follow [this guide](https://grafana.com/docs/grafana/late
 Here is what the alarm configuration should look like:
 ![Node Offline Alarm Example Configuration](administrator-guide/images/node-offline-alarm-example-configuration.png)
 
-For more information on alerts, see the [Grafana documentation](https://grafana.com/docs/grafana/latest/alerting/old-alerting/).
-
-### Example: Alert on Cluster Full
+### To Alert on a Full Cluster
 
 Knowing how much free space is left in a cluster is very important, and in many cases it is useful to have an alarm that will alert when the cluster is almost full. In this example we will create a graph to show how full the cluster is and set an alarm to alert if it gets too full.
+
+For information about alerts, see the [Grafana documentation](https://grafana.com/docs/grafana/latest/alerting/old-alerting/).
 
 1. Start by setting up a graph of used space. You can use the previous example as a guide and replace the query with the following:
 
@@ -154,5 +155,3 @@ Knowing how much free space is left in a cluster is very important, and in many 
 
 Here is what the final alarm configuration should look like:
 ![Free Space Remaining Alarm Example Configuration](administrator-guide/images/free-space-remaining-alarm-example-configuration.png)
-
-For more information on alerts, see the [Grafana documentation](https://grafana.com/docs/grafana/latest/alerting/old-alerting/).
