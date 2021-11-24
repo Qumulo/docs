@@ -62,7 +62,7 @@ This example explains how you can configure a Grafana graph to show total read a
 
    If you already have a dashboard, at the top right click **Add Panel**.
 
-1. Click **Add Query** and select the data source for your cluster from the list next to **Query**.
+1. Click **Add Query** and then select the data source for your cluster from the list next to **Query**.
 
 1. For **Enter a PromQL query**, enter `sum by (protocol, io_type) (rate(qumulo_protocol_bytes[1m]))`.
 
