@@ -143,7 +143,7 @@ The following table gives the metric label name, its possible values, and descri
       <th>Label Name</th>
       <th>Possible Values</th>
       <th>Description</th>
-    </th>
+    </tr>
   </thead>
   <tbody>
     <tr>
@@ -168,7 +168,7 @@ The following table gives the metric label name, its possible values, and descri
           <li><code>symlink</code></li>
         </ul>
       </td>
-      <td>The file system object type</code></td>
+      <td>The file system object type</td>
     </tr>
     <tr>
       <td><code>io_type</code></td>
