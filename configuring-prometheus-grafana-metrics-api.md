@@ -2,131 +2,131 @@
 title: Configuring Prometheus and Grafana to use the Qumulo Metrics API
 permalink: configuring-prometheus-grafana-metrics-api.html
 tags:
-  - prometheus
-  - grafana
   - metrics
   - openmetrics
+  - prometheus
+  - grafana
 sidebar: administrator_guide_sidebar
 ---
 
-The OpenMetrics API provided by Qumulo provides a single API point to get a holistic dump of point-in-time telemetry from the Qumulo File Data Platform. The OpenMetrics data format emitted by the API can be consumed easily by a variety of monitoring and metrics systems natively without the need for custom code or an agent. Check with your monitoring system documentation to see if OpenMetrics or Prometheus data formats are natively supported for data ingest.
+{% include content-reuse/openmetrics-api-introduction.md %}
 
-This document walks through how to set up and configure an open source time-series database and collection system known as Prometheus to connect to the API and poll its data at regular intervals. We then use an open-source dashboard/analytics tool known as Grafana to build dashboards with different graphs and information which can be used to monitor the health of your cluster, generate alerts, and uplevel capacity statistics to your business.
+This section describes how you can configure Prometheus (an open-source, time-series database and collection system) to connect to the Qumulo API and poll its data at regular intervals. It also describes how you can use Grafana (an open-source analytics tool) to create dashboards with graphs and data that you can use to monitor the health of your Qumulo cluster, generate alerts, and improve your capacity statistics.
 
-# Installing Prometheus
-Install prometheus using the documentation provided on the [Prometheus website](https://prometheus.io/docs/prometheus/latest/installation/). There are several different setups you can use, including installing to a Docker container or using a configuration management system such as Ansible.
+## Installing and Configuring Prometheus
+For information about installing Prometheus, see [Installation](https://prometheus.io/docs/prometheus/latest/installation/) in the Prometheus documentation. You can install Prometheus into a Docker container or use a configuration management system such as Ansible.
 
-# Configuring Prometheus
-The configuration for prometheus is kept in `prometheus.yml`. Create this file if it does not already exist, and add any desired configurations for your monitoring setup. Use the following example as a template:
+**Important**: To use the OpenMetrics API, you you must configure your cluster to emit metrics without authentication. If your cluster isn't configured for this, open a request at [Qumulo Care](https://care.qumulo.com/hc/en-us/requests/new).
+
+You can configure Prometheus by editing the `prometheus.yml` file. If this file doesn't exist already, create it and add your monitoring configuration to the file. You can use the following example as a template.
 
 ```yaml
 ---
 global:
   scrape_interval: 1m
 
-# A scrape configuration containing exactly one endpoint to scrape:
+# The scrape configuration with one endpoint to scrape
 scrape_configs:
 
-  # The job name is added as a label `job=<job_name>`
-  # to any timeseries scraped from this config.
+  # Prometheus adds the job name as the label `job=<job_name>`
+  # to any time series scraped from this configuration.
   - job_name: 'qumulo'
 
     static_configs:
+      # The hostname of your cluster. We recommend using
+      # a DNS record associated with one or more floating
+      # IP addresses from the cluster.
       - targets: ['<Hostname>:8000']
 
     metrics_path: '/v2/metrics/endpoints/default/data'
 
     scheme: https
 
-    # The following is needed in order to bypass our
-    # self-signed certificates not being trusted
+    # The following setting lets us bypass our
+    # untrusted, self-signed certificates.
     tls_config:
       insecure_skip_verify: true
 ```
 
-Fill in the `<Hostname>` field with the hostname of your cluster. This would preferably be a DNS record associated with one or more floating IP addresses from the cluster.
+## Installing and Configuring Grafana
+For information about integrating Prometheus with Grafana, see [Grafana Support for Prometheus](https://prometheus.io/docs/visualization/grafana/) in the Prometheus documentation. For information about integrating alerts with notification systems to receive notifications when alerts are triggered, see [Alert Notifications](https://grafana.com/docs/grafana/latest/alerting/old-alerting/notifications/) in the Grafana documentation.
 
-**Important Note**: In order to use the metrics API, your cluster must have the API configured to make metrics available without authentication. Please reach out to your Qumulo Systems Engineer or Success Manager if this has not been done.
+The following examples show basic graphing and alerting configurations.
 
-# Installing and Configuring Grafana
-Follow the Prometheus documentation for integrating with Grafana found [here](https://prometheus.io/docs/visualization/grafana/) in order to get Grafana up and running with Prometheus. Follow the Grafana documentation for integrating alerts with notification systems found [here](https://grafana.com/docs/grafana/latest/alerting/old-alerting/notifications/) in order to receive notifications when alerts are triggered.
+### To Create a Throughput Graph
+This example explains how you can configure a Grafana graph to show total read and write throughput across your cluster. For more information, see [Creating a Prometheus Graph](https://prometheus.io/docs/visualization/grafana/#creating-a-prometheus-graph) in the Prometheus documentation.
 
-# Examples
-Provided below are a few examples of some basic graphing and alerting setups that might be useful to have once you have Prometheus and Grafana up and running.
+**Note:** Before you begin, ensure that you have Grafana installed and configured to pull from a Prometheus instance. 
 
-## Create a Throughput Graph
+1. In Grafana, click **+** and then click **Create Dashboard**.
 
-![Example Throughput Graph](administrator-guide/images/prometheus-grafana-setup-example-throughput-graph.png)
+   If you already have a dashboard, at the top right click **Add Panel**.
 
-This example with demonstrate how to setup a graph on Grafana to view total read and write throughput across your cluster. These instructions assume that you already have Grafana installed and configured to pull from a Prometheus instance, and will be based on the "Creating a Prometheus graph" section in the [Prometheus documentation](https://prometheus.io/docs/visualization/grafana/).
+1. Click **Add Query** and then select the data source for your cluster from the list next to **Query**.
 
-1. From the Grafana homepage, click on the "+" button on the left side of the screen and select **Create Dashboard**, or, if you already have a dashboard, click **Add Panel**, which will be the leftmost of the buttons at the top right corner of the screen.
+1. For **Enter a PromQL query**, enter `sum by (protocol, io_type) (rate(qumulo_protocol_bytes[1m]))`.
 
-1. Click **Add Query**.
+   This query retrieves the throughput rate over a one-minute period, and the sum across the `protocol` and `io_type` tags. For information about writing PromQL queries, see the [Querying Prometheus](https://prometheus.io/docs/prometheus/latest/querying/basics/) in the Prometheus documentation.
 
-1. In the dropdown next to "Query", select the data source you set up for your cluster.
+1. To label each time series on the graph by `protocol` and `io_type`, for **Legend** enter `{{protocol}}: {{io_type}}`.
 
-1. In the box that says "Enter a PromQL query", enter the following:
-  
-   `sum by (protocol, io_type) (rate(qumulo_protocol_bytes[1m]))`
+1. On the left menu, click **Visualization** and in the **Axes** section, under **Left Y**, do the following:
 
-   This query will get the throughput rate over a 1 minute period, and sum over the protocol and io_type tags. For more information on writing PromQL queries, see the [Prometheus documentation](https://prometheus.io/docs/prometheus/latest/querying/basics/).
+   a. Enter a **Label** for the Y-axis of the graph, for example `Throughput`.
 
-1. In the **Legend** box, enter `{{protocol}}: {{io_type}}`. This will label each time series shown on the graph by the protocol and the io_type.
+   b. To set the scale to show throughput in gigabytes, click **Unit** and select **Data (Metric) > gigabytes**.
 
-1. On the side menu to the left, select the second icon down, **Visualization**. In the **Label** box under **Left Y** in the **Axes** section, enter something like "Throughput". This will add a label to the Y-axis on the left side of the graph.
+1. On the left menu, click **General** and enter a **Title** for the graph, for example `Cluster Throughput`.
 
-1. In the same **Left Y** section, click on the **Unit** dropdown and select **Data (Metric)**, then "gigabytes". This will set the scale to show throughput in gigabytes instead of bytes.
+1. At the top right, click ![Grafana Save Icon](administrator-guide/images/grafana-save-icon.png) and then click **Save**.
 
-1. On the side menu to the left again, select the next option down, **General**. In the **Title** box, enter something like "Cluster Throughput". This will set the title of the graph itself.
+1. At the top left, click ![Grafana Back Arrow](administrator-guide/images/grafana-back-arrow.png).
 
-1. Hit the save icon in the top right corner and click **Save**.
+   On the dashboard page, your graph appears.
 
-1. Click the back arrow at the top left corner to go back to the dashboard page, where you should be able to see the new graph you just made with data starting to come in.
+   ![Example Throughput Graph](administrator-guide/images/prometheus-grafana-setup-example-throughput-graph.png)
 
-   * You can see a smaller time scale of your data by going to the top right corner and clicking on the dropdown that says "Last 6 hours" and setting it to something smaller such as 15 minutes.
+1. (Optional) To see a smaller time scale of your data, at the top right click **Last 6 hours** and set it to a smaller vallue, for example 15 minutes.
 
-For more information about dashboards, panels, or other visualizations, see their respective sections in the [Grafana documentation](https://grafana.com/docs/grafana/latest/).
+For more information about dashboards, panels, and other visualizations, see the [Grafana documentation](https://grafana.com/docs/grafana/latest/).
 
-## Alert on Offline Node
+### To Create an Alert for an Offline Node
+An offline node creates risks of additional failures that can cause reduced performance, inability to write to the cluster, or take the entire cluster offline. This example explains how you can receive an alert when a node in a cluster is offline. For more information, see [Create Alerts](https://grafana.com/docs/grafana/latest/alerting/old-alerting/create-alerts/) and [Legacy Grafana Alerts](https://grafana.com/docs/grafana/latest/alerting/old-alerting/) in the Grafana documentation.
 
-Administrators want to be promptly notified when there is an issue in their cluster preventing one or more nodes from being online. Being in this state risks additional failures taking the entire cluster offline, as well as reduced performance and eventually the inability to write to the cluster. We'll get notified quickly of this state by making a alarm in Grafana.
+1. Configure a graph for the `qumulo_quorum_node_is_offline` metric.
 
-To make an alarm we'll follow [this guide](https://grafana.com/docs/grafana/latest/alerting/old-alerting/create-alerts/).
+   a. Use the example in the [To Create a Throughput Graph](#to-create-a-throughput-graph) section and replace the query with `qumulo_quorum_node_is_offline`.
 
-1. Start by setting up a graph of `qumulo_quorum_node_is_offline`. You can use the previous example as a guide and replace the query with the following:
-    `qumulo_quorum_node_is_offline`
+   b. For **Legend**, enter `Node {{node_id}}`.
 
-1. In the **Legend** box, enter `Node {{node_id}}`.
+   c. On the left menu, click **Visualization** and, under **Left Y**, enter `0` for **Y-min**.
 
-1. In the **Visualization** tab, in the **Left Y** section, set **Y-min** to "0".
+1. On the left menu, click **Alert** and then click **Create Alert**.
 
-1. Before saving the graph, go to the **Alert** tab in the side menu and click **Create Alert**.
+1. For **Name**, enter `Node Offline`.
 
-1. Name the alarm "Node Offline".
+1. To match the scrape interval, set **Evaluate every** to `1m`.
 
-1. Evaluate every 1 minute to match the scrape interval.
+1. To receive alarms about transient issues (such as networking blips that can temporarily take a node offline), set **For** to `5m`.
 
-1. If you would like to not be notified of transient issues, such as a networking blip that temporarily makes a node offline, set **For** to 5 minutes. When an alarm is initially triggered, it will be set to a "Pending" state. Once it has been triggered for 5 minutes, the alarm will go to an "Alerting" state and alarm notifications will be sent out.
+   When an event triggers an alarm is initially, the alarm's state is `Pending`. When the alarm has been triggered for five minutes, its state changes to `Alerting` and Grafana sends notifications.
 
-1. Set the conditions for the alert to be `sum()` is above 0. This will cause the alarm to trigger if any node goes offline for a period of 1 minute.
+1. To trigger the alarm when any node goes offline for one minute, set the following condition:
 
-1. In the event that your cluster goes down entirely, the metrics API will not be able to output any metrics, meaning that the alarm will not go off. To avoid this, make sure that the "If execution error or timeout" setting is set to "Alerting". This will ensure that the alarm goes off if the cluster goes down.
+   **WHEN** `sum()` **OF** `query (A, 5m, now)` **IS ABOVE** `0`
 
-1. Select a notification channel to receive the alerts and add a message that should come with the alert.
+1. To avoid a scenario in which an alarm might not go off when the OpenMetrics API is unable to output any metrics if your cluster goes offline entirely, set **If no data or all values are null** and **If execution error or timeout** to **SET STATE TO Alerting**.
 
-1. Click **Test Alert** to test the alert to make sure it is working.
+1. Select a notification channel for receiving the alerts and add an alert message.
 
-1. Click the save icon in the top right corner to save the alert.
+1. To test the alert, click **Test Alert**.
 
-Here is what the alarm configuration should look like:
-![Node Offline Alarm Example Configuration](administrator-guide/images/node-offline-alarm-example-configuration.png)
+1. Click ![Grafana Save Icon](administrator-guide/images/grafana-save-icon.png).
 
-For more information on alerts, see the [Grafana documentation](https://grafana.com/docs/grafana/latest/alerting/old-alerting/).
-
-## Alert on Cluster Full
-
+### To Create an Alert for a Full Cluster
 Knowing how much free space is left in a cluster is very important, and in many cases it is useful to have an alarm that will alert when the cluster is almost full. In this example we will create a graph to show how full the cluster is and set an alarm to alert if it gets too full.
+
+For information about alerts, see the [Grafana documentation](https://grafana.com/docs/grafana/latest/alerting/old-alerting/).
 
 1. Start by setting up a graph of used space. You can use the previous example as a guide and replace the query with the following:
 
@@ -150,9 +150,7 @@ Knowing how much free space is left in a cluster is very important, and in many 
 
 1. Enter the notification channel you want alerts to be sent to as well as a message.
 
-1. Click the save icon in the top right corner.
+1. Click the save icon at the top right corner.
 
 Here is what the final alarm configuration should look like:
 ![Free Space Remaining Alarm Example Configuration](administrator-guide/images/free-space-remaining-alarm-example-configuration.png)
-
-For more information on alerts, see the [Grafana documentation](https://grafana.com/docs/grafana/latest/alerting/old-alerting/).

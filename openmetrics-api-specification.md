@@ -9,7 +9,7 @@ tags:
 sidebar: administrator_guide_sidebar
 ---
 
-The Qumulo OpenMetrics API has a single endpoint that provides complete collections of point-in-time telemetry from the Qumulo File Data Platform. Monitoring and metrics systems, such as [Prometheus](https://github.com/prometheus/prometheus), can consume the OpenMetrics data format that the API emits, without custom code or an agent. For more information about which data formats your system can ingest natively, see your monitoring system documentation.
+{% include content-reuse/openmetrics-api-introduction.md %}
 
 This section describes the specification of the types of metrics that the API emits.
 
