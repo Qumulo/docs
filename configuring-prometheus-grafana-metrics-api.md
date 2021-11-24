@@ -82,7 +82,7 @@ This example explains how you can configure a Grafana graph to show total read a
 
 1. At the top right, click ![Grafana Save Icon](administrator-guide/images/grafana-save-icon.png) and then click **Save**.
 
-1. At the top left, click the back arrow.
+1. At the top left, click ![Grafana Back Arrow](administrator-guide/images/grafana-back-arrow.png)
 
    On the dashboard page, you can see your graph.
 
