@@ -91,7 +91,7 @@ This example explains how you can configure a Grafana graph to show total read a
 For more information about dashboards, panels, and other visualizations, see the [Grafana documentation](https://grafana.com/docs/grafana/latest/).
 
 ### To Create an Alert for an Offline Node
-This example explains how an administrator can receive a notification when a node in a cluster is offline. An offline node creates risks of additional failures that can cause reduced performance, inability to write to the cluster, or take the entire cluster offline. For more information, see [Create Alerts](https://grafana.com/docs/grafana/latest/alerting/old-alerting/create-alerts/) and [Legacy Grafana Alerts](https://grafana.com/docs/grafana/latest/alerting/old-alerting/) in the Grafana documentation.
+An offline node creates risks of additional failures that can cause reduced performance, inability to write to the cluster, or take the entire cluster offline. This example explains how you can receive an alert when a node in a cluster is offline. For more information, see [Create Alerts](https://grafana.com/docs/grafana/latest/alerting/old-alerting/create-alerts/) and [Legacy Grafana Alerts](https://grafana.com/docs/grafana/latest/alerting/old-alerting/) in the Grafana documentation.
 
 1. Configure a graph for `qumulo_quorum_node_is_offline`.
 
@@ -99,23 +99,27 @@ This example explains how an administrator can receive a notification when a nod
 
    b. For **Legend**, enter `Node {{node_id}}`.
 
-   c. On the **Visualization** tab, in the **Left Y** section, enter `0` for **Y-min**.
+   c. On the left menu, click **Visualization** and, under **Left Y**, enter `0` for **Y-min**.
 
-   d. On the **Alert** tab, on the left menu, click **Create Alert**.
+1. On the left menu, click **Alert** and then click **Create Alert**.
 
-1. Enter a name for the alarm, for example `Node Offline`.
+1. For **Name**, enter `Node Offline`.
 
-1. To match the scrape interval, set the alarm to evaluate every minute.
+1. To match the scrape interval, set **Evaluate every** to `1m`.
 
-1. If you would like to not be notified of transient issues, such as a networking blip that temporarily makes a node offline, set **For** to 5 minutes. When an alarm is initially triggered, it will be set to a "Pending" state. Once it has been triggered for 5 minutes, the alarm will go to an "Alerting" state and alarm notifications will be sent out.
+1. To receive alarms about transient issues (such as networking blips that can temporarily take a node offline), set **For** to `5m`.
 
-1. Set the conditions for the alert to be `sum()` is above 0. This will cause the alarm to trigger if any node goes offline for a period of 1 minute.
+   When an alarm is triggered initially, its state is `Pending`. When the alarm has been triggered for five minutes, its state changes to `Alerting` and Grafana sends notifications.
 
-1. In the event that your cluster goes down entirely, the metrics API will not be able to output any metrics, meaning that the alarm will not go off. To avoid this, make sure that the "If execution error or timeout" setting is set to "Alerting". This will ensure that the alarm goes off if the cluster goes down.
+1. To trigger the alarm when any node goes offline for one minute, set the following condition:
 
-1. Select a notification channel to receive the alerts and add a message that should come with the alert.
+   **WHEN** `sum()` **OF** `query (A, 5m, now)` **IS ABOVE** `0`
 
-1. Click **Test Alert** to test the alert to make sure it is working.
+1. To avoid a scenario in which an alarm might not go off when the OpenMetrics API is unable to output any metrics if your cluster goes offline entirely, set **If no data or all values are null** and **If execution error or timeout** to **SET STATE TO** **Alerting**.
+
+1. Select a notification channel for receiving the alerts and add an alert message.
+
+1. To test the alert, click **Test Alert**.
 
 1. Click ![Grafana Save Icon](administrator-guide/images/grafana-save-icon.png).
 
