@@ -54,38 +54,43 @@ For information about integrating Prometheus with Grafana, see [Grafana Support 
 The following examples show basic graphing and alerting configurations.
 
 ### To Create a Throughput Graph
+This example explains how you can configure a Grafana graph to show total read and write throughput across your cluster. For more information, see [Creating a Prometheus Graph](https://prometheus.io/docs/visualization/grafana/#creating-a-prometheus-graph) in the Prometheus documentation.
 
-![Example Throughput Graph](administrator-guide/images/prometheus-grafana-setup-example-throughput-graph.png)
+**Note:** Before you begin, ensure that you have Grafana installed and configured to pull from a Prometheus instance. 
 
-This example with demonstrate how to setup a graph on Grafana to view total read and write throughput across your cluster. These instructions assume that you already have Grafana installed and configured to pull from a Prometheus instance, and will be based on the "Creating a Prometheus graph" section in the [Prometheus documentation](https://prometheus.io/docs/visualization/grafana/).
+1. In Grafana, click **+** and then click **Create Dashboard**.
 
-1. From the Grafana homepage, click on the "+" button on the left side of the screen and select **Create Dashboard**, or, if you already have a dashboard, click **Add Panel**, which will be the leftmost of the buttons at the top right corner of the screen.
+   If you already have a dashboard, click **Add Panel** at the top right.
 
 1. Click **Add Query**.
 
-1. In the dropdown next to "Query", select the data source you set up for your cluster.
+1. From the list next to **Query**, select the data source for your cluster.
 
-1. In the box that says "Enter a PromQL query", enter the following:
-  
-   `sum by (protocol, io_type) (rate(qumulo_protocol_bytes[1m]))`
+1. For **Enter a PromQL query**, enter `sum by (protocol, io_type) (rate(qumulo_protocol_bytes[1m]))`.
 
-   This query will get the throughput rate over a 1 minute period, and sum over the protocol and io_type tags. For more information on writing PromQL queries, see the [Prometheus documentation](https://prometheus.io/docs/prometheus/latest/querying/basics/).
+   This query retrieves the throughput rate over a one-minute period, and the sum across the `protocol` and `io_type` tags. For information about writing PromQL queries, see the [Querying Prometheus](https://prometheus.io/docs/prometheus/latest/querying/basics/) in the Prometheus documentation.
 
-1. In the **Legend** box, enter `{{protocol}}: {{io_type}}`. This will label each time series shown on the graph by the protocol and the io_type.
+1. To label each time series on the graph by `protocol` and `io_type`, enter `{{protocol}}: {{io_type}}` for **Legend**.
 
-1. On the side menu to the left, select the second icon down, **Visualization**. In the **Label** box under **Left Y** in the **Axes** section, enter something like "Throughput". This will add a label to the Y-axis on the left side of the graph.
+1. On the left menu, click **Visualization** and in the **Axes** section, under **Left Y**, do the following:
 
-1. In the same **Left Y** section, click on the **Unit** dropdown and select **Data (Metric)**, then "gigabytes". This will set the scale to show throughput in gigabytes instead of bytes.
+   a. Enter a **Label** for the Y-axis of the graph, for example `Throughput`.
 
-1. On the side menu to the left again, select the next option down, **General**. In the **Title** box, enter something like "Cluster Throughput". This will set the title of the graph itself.
+   b. To set the scale to show throughput in gigabytes, click **Unit** and select **Data (Metric) > gigabytes**.
 
-1. Hit the save icon in the top right corner and click **Save**.
+1. On the left menu, click **General** and enter a **Title** for the graph, for example `Cluster Throughput`.
 
-1. Click the back arrow at the top left corner to go back to the dashboard page, where you should be able to see the new graph you just made with data starting to come in.
+1. At the top right, click **Save**.
 
-   * You can see a smaller time scale of your data by going to the top right corner and clicking on the dropdown that says "Last 6 hours" and setting it to something smaller such as 15 minutes.
+1. At the top left, click the back arrow.
 
-For more information about dashboards, panels, or other visualizations, see their respective sections in the [Grafana documentation](https://grafana.com/docs/grafana/latest/).
+   On the dashboard page, you can see your graph.
+
+   ![Example Throughput Graph](administrator-guide/images/prometheus-grafana-setup-example-throughput-graph.png)
+
+1. (Optional) To see a smaller time scale of your data, in the top right click **Last 6 hours** and set it to a smaller vallue, for example 15 minutes.
+
+For more information about dashboards, panels, and other visualizations, see the [Grafana documentation](https://grafana.com/docs/grafana/latest/).
 
 ### To Alert on an Offline Node
 
