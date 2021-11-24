@@ -92,15 +92,10 @@ This example explains how you can configure a Grafana graph to show total read a
 
 For more information about dashboards, panels, and other visualizations, see the [Grafana documentation](https://grafana.com/docs/grafana/latest/).
 
-### To Alert on an Offline Node
+### To Create an Alert for an Offline Node
+This example explains how an administrator can receive a notification when a node in a cluster is offline. An offline node creates risks of additional failures that can cause reduced performance, inability to write to the cluster, or take the entire cluster offline. For more information, see [Create Alerts](https://grafana.com/docs/grafana/latest/alerting/old-alerting/create-alerts/) and [Legacy Grafana Alerts](https://grafana.com/docs/grafana/latest/alerting/old-alerting/) in the Grafana documentation.
 
-Administrators want to be promptly notified when there is an issue in their cluster preventing one or more nodes from being online. Being in this state risks additional failures taking the entire cluster offline, as well as reduced performance and eventually the inability to write to the cluster. We'll get notified quickly of this state by making a alarm in Grafana.
-
-For information about alerts, see the [Grafana documentation](https://grafana.com/docs/grafana/latest/alerting/old-alerting/).
-
-To make an alarm we'll follow [this guide](https://grafana.com/docs/grafana/latest/alerting/old-alerting/create-alerts/).
-
-1. Start by setting up a graph of `qumulo_quorum_node_is_offline`. You can use the previous example as a guide and replace the query with the following:
+1. Configure a graph for `qumulo_quorum_node_is_offline`. You can use the previous example as a guide and replace the query with the following:
     `qumulo_quorum_node_is_offline`
 
 1. In the **Legend** box, enter `Node {{node_id}}`.
