@@ -124,33 +124,30 @@ An offline node creates risks of additional failures that can cause reduced perf
 1. Click ![Grafana Save Icon](administrator-guide/images/grafana-save-icon.png).
 
 ### To Create an Alert for a Full Cluster
-Knowing how much free space is left in a cluster is very important, and in many cases it is useful to have an alarm that will alert when the cluster is almost full. In this example we will create a graph to show how full the cluster is and set an alarm to alert if it gets too full.
+It is important for an administrator to know how much free space is left on a cluster. This example explains how you can configure a graph to show how full the cluster is and to receive an alert when your cluster is almost full. For more information, see [Create Alerts](https://grafana.com/docs/grafana/latest/alerting/old-alerting/create-alerts/) and [Legacy Grafana Alerts](https://grafana.com/docs/grafana/latest/alerting/old-alerting/) in the Grafana documentation.
 
-For information about alerts, see the [Grafana documentation](https://grafana.com/docs/grafana/latest/alerting/old-alerting/).
+1. Configure a graph for used space. Use the example in the [To Create a Throughput Graph](#to-create-a-throughput-graph) section and replace the query with `1 - qumulo_free_bytes / qumulo_capacity_bytes`.
+   
+   This graph shows the amount of used space on the cluster as a percentage of total capacity. An empty cluster shows 0% used space and a full cluster shows 100%.
 
-1. Start by setting up a graph of used space. You can use the previous example as a guide and replace the query with the following:
+1. On the left menu, click **Visualization** and in the **Left Y** section, under **Unit** click **percent (0.0-1.0)**.
 
-    `1 - qumulo_free_bytes / qumulo_capacity_bytes`
+1. Set **Y-min** to `0` and **Y-max** to `1`.
 
-    This will show the amount of space being used in the cluster as a percentage of the total capacity, so an empty cluster would be 0% used space, and a full cluster would be 100%.
+1. On the left menu, click **Alert** and then click **Create Alert**.
 
-1. In the **Visualization** tab, go to the **Unit** dropdown in the **Left Y** section and choose "percent (0.0-1.0)".
+1. To match the scrape interval, set **Evaluate every** to `1m`.
 
-1. In the same **Left Y** section, set **Y-min** to "0" and **Y-max** to "1".
+1. To receive alarms about transient issues (such as networking blips that can temporarily take a node offline), set **For** to `5m`.
 
-1. Before saving the graph, go to the **Alert** tab in the side menu and click **Create Alert**.
+   When an event triggers an alarm is initially, the alarm's state is `Pending`. When the alarm has been triggered for five minutes, its state changes to `Alerting` and Grafana sends notifications.
 
-1. Name the alarm "Cluster Full".
+1. To trigger the alarm when you cluster averages less than 10% of free space over the period specified in the **For** field, set the following condition:
 
-1. Evaluate every 1 minute to match the scrape interval.
+   **WHEN** `avg()` **OF** `query (A, 5m, now)` **IS BELOW** `.10`
 
-1. If you would like to not be notified of transient issues, such as space usage spiking for a second, set **For** to 5 minutes. When an alarm is initially triggered, it will be set to a "Pending" state. Once it has been triggered for 5 minutes, the alarm will go to an "Alerting" state and alarm notifications will be sent out.
+1. Select a notification channel for receiving the alerts and add an alert message.
 
-1. Set the conditions for the alert to be `avg()` is below 10. This means that the alarm will go off if the cluster averages below 10% free space over the period of time specified in the **For** field.
+1. To test the alert, click **Test Alert**.
 
-1. Enter the notification channel you want alerts to be sent to as well as a message.
-
-1. Click the save icon at the top right corner.
-
-Here is what the final alarm configuration should look like:
-![Free Space Remaining Alarm Example Configuration](administrator-guide/images/free-space-remaining-alarm-example-configuration.png)
+1. Click ![Grafana Save Icon](administrator-guide/images/grafana-save-icon.png).
