@@ -16,12 +16,20 @@ The following table lists changes to the _Qumulo Administrator Guide_.
   </thead>
   <tbody>
     <tr>
+      <td>[DATE]</td>
+      <td>Added the following sections:
+          <ul>
+            <li><a href="/openmetrics-api-specification.html">Qumulo OpenMetrics API Specification</a></li>
+          </ul>
+      </td>
+    </tr>
+    <tr>
       <td>Nov. 10, 2021</td>
-            <td>Added the following sections:
-        <ul>
-          <li><a href="/nfsv4.1-enabling-using.html">Enabling and Using NFSv4.1 on a Qumulo Cluster</a></li>
-          <li><a href="/nfsv4.1-auth-sys-acls.html">Managing File Access Permissions Using NFSv4.1 Access Control Lists (ACLs)</a></li>
-        </ul>
+      <td>Added the following sections:
+          <ul>
+            <li><a href="/nfsv4.1-enabling-using.html">Enabling and Using NFSv4.1 on a Qumulo Cluster</a></li>
+            <li><a href="/nfsv4.1-auth-sys-acls.html">Managing File Access Permissions Using NFSv4.1 Access Control Lists (ACLs)</a></li>
+          </ul>
       </td>
     </tr>
     <tr>

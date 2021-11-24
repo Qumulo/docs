@@ -82,3 +82,7 @@ entries:
     - title: Configuring Prometheus and Grafana to use the Qumulo Metrics API
       url: /configuring-prometheus-grafana-metrics-api.html
       output: web
+
+    - title: Qumulo OpenMetrics API Specification
+      url: /openmetrics-api-specification.html
+      output: web, pdf

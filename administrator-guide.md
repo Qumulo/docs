@@ -20,3 +20,4 @@ The Qumulo Administrator Guide is a growing collection of information about conf
   * [Using Qumulo Shift-From to Copy Objects from Amazon S3](/shift-from-s3.md)
 * **Working with Metrics**
   * [Configuring Prometheus and Grafana to use the Qumulo Metrics API](/configuring-prometheus-grafana-metrics-api.md)
+  * [Qumulo OpenMetrics API Specification](/openmetrics-api-specification.md)
