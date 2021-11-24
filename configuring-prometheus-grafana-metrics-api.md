@@ -16,7 +16,7 @@ This section describes how you can configure Prometheus (an open-source, time-se
 ## Installing and Configuring Prometheus
 For information about installing Prometheus, see [Installation](https://prometheus.io/docs/prometheus/latest/installation/) in the Prometheus documentation. You can install Prometheus into a Docker container or use a configuration management system such as Ansible.
 
-**Important**: To use the OpenMetrics API, you you must configure your cluster to emit metrics without authentication. If your cluster isn't configure, open a request at [Qumulo Care](https://care.qumulo.com/hc/en-us/requests/new).
+**Important**: To use the OpenMetrics API, you you must configure your cluster to emit metrics without authentication. If your cluster isn't configured for this, open a request at [Qumulo Care](https://care.qumulo.com/hc/en-us/requests/new).
 
 You can configure Prometheus by editing the `prometheus.yml` file. If this file doesn't exist already, create it and add your monitoring configuration to the file. You can use the following example as a template.
 
@@ -28,14 +28,14 @@ global:
 # The scrape configuration with one endpoint to scrape
 scrape_configs:
 
-  # The job name is added as the label `job=<job_name>`
+  # Prometheus adds the job name as the label `job=<job_name>`
   # to any time series scraped from this configuration.
   - job_name: 'qumulo'
 
     static_configs:
-      # The hostname of your cluster.
-      # We recommend using a DNS record associated with
-      # one or more floating IP addresses from the cluster.
+      # The hostname of your cluster. We recommend using
+      # a DNS record associated with one or more floating
+      # IP addresses from the cluster.
       - targets: ['<Hostname>:8000']
 
     metrics_path: '/v2/metrics/endpoints/default/data'
@@ -60,17 +60,15 @@ This example explains how you can configure a Grafana graph to show total read a
 
 1. In Grafana, click **+** and then click **Create Dashboard**.
 
-   If you already have a dashboard, click **Add Panel** at the top right.
+   If you already have a dashboard, at the top right click **Add Panel**.
 
-1. Click **Add Query**.
-
-1. From the list next to **Query**, select the data source for your cluster.
+1. Click **Add Query** and select the data source for your cluster from the list next to **Query**.
 
 1. For **Enter a PromQL query**, enter `sum by (protocol, io_type) (rate(qumulo_protocol_bytes[1m]))`.
 
    This query retrieves the throughput rate over a one-minute period, and the sum across the `protocol` and `io_type` tags. For information about writing PromQL queries, see the [Querying Prometheus](https://prometheus.io/docs/prometheus/latest/querying/basics/) in the Prometheus documentation.
 
-1. To label each time series on the graph by `protocol` and `io_type`, enter `{{protocol}}: {{io_type}}` for **Legend**.
+1. To label each time series on the graph by `protocol` and `io_type`, for **Legend** enter `{{protocol}}: {{io_type}}`.
 
 1. On the left menu, click **Visualization** and in the **Axes** section, under **Left Y**, do the following:
 
@@ -82,13 +80,13 @@ This example explains how you can configure a Grafana graph to show total read a
 
 1. At the top right, click ![Grafana Save Icon](administrator-guide/images/grafana-save-icon.png) and then click **Save**.
 
-1. At the top left, click ![Grafana Back Arrow](administrator-guide/images/grafana-back-arrow.png)
+1. At the top left, click ![Grafana Back Arrow](administrator-guide/images/grafana-back-arrow.png).
 
-   On the dashboard page, you can see your graph.
+   On the dashboard page, your graph appears.
 
    ![Example Throughput Graph](administrator-guide/images/prometheus-grafana-setup-example-throughput-graph.png)
 
-1. (Optional) To see a smaller time scale of your data, in the top right click **Last 6 hours** and set it to a smaller vallue, for example 15 minutes.
+1. (Optional) To see a smaller time scale of your data, at the top right click **Last 6 hours** and set it to a smaller vallue, for example 15 minutes.
 
 For more information about dashboards, panels, and other visualizations, see the [Grafana documentation](https://grafana.com/docs/grafana/latest/).
 
@@ -119,7 +117,7 @@ This example explains how an administrator can receive a notification when a nod
 
 1. Click **Test Alert** to test the alert to make sure it is working.
 
-1. Click the save icon in the top right corner to save the alert.
+1. Click ![Grafana Save Icon](administrator-guide/images/grafana-save-icon.png).
 
 ### To Alert on a Full Cluster
 
@@ -149,7 +147,7 @@ For information about alerts, see the [Grafana documentation](https://grafana.co
 
 1. Enter the notification channel you want alerts to be sent to as well as a message.
 
-1. Click the save icon in the top right corner.
+1. Click the save icon at the top right corner.
 
 Here is what the final alarm configuration should look like:
 ![Free Space Remaining Alarm Example Configuration](administrator-guide/images/free-space-remaining-alarm-example-configuration.png)
