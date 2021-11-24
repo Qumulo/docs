@@ -80,7 +80,7 @@ This example explains how you can configure a Grafana graph to show total read a
 
 1. On the left menu, click **General** and enter a **Title** for the graph, for example `Cluster Throughput`.
 
-1. At the top right, click **Save**.
+1. At the top right, click ![Grafana Save Icon](administrator-guide/images/grafana-save-icon.png) and then click **Save**.
 
 1. At the top left, click the back arrow.
 
@@ -95,18 +95,19 @@ For more information about dashboards, panels, and other visualizations, see the
 ### To Create an Alert for an Offline Node
 This example explains how an administrator can receive a notification when a node in a cluster is offline. An offline node creates risks of additional failures that can cause reduced performance, inability to write to the cluster, or take the entire cluster offline. For more information, see [Create Alerts](https://grafana.com/docs/grafana/latest/alerting/old-alerting/create-alerts/) and [Legacy Grafana Alerts](https://grafana.com/docs/grafana/latest/alerting/old-alerting/) in the Grafana documentation.
 
-1. Configure a graph for `qumulo_quorum_node_is_offline`. You can use the previous example as a guide and replace the query with the following:
-    `qumulo_quorum_node_is_offline`
+1. Configure a graph for `qumulo_quorum_node_is_offline`.
 
-1. In the **Legend** box, enter `Node {{node_id}}`.
+   a. Use the example in the [To Create a Throughput Graph](#to-create-a-throughput-graph) section and replace the query with `qumulo_quorum_node_is_offline`.
 
-1. In the **Visualization** tab, in the **Left Y** section, set **Y-min** to "0".
+   b. For **Legend**, enter `Node {{node_id}}`.
 
-1. Before saving the graph, go to the **Alert** tab in the side menu and click **Create Alert**.
+   c. On the **Visualization** tab, in the **Left Y** section, enter `0` for **Y-min**.
 
-1. Name the alarm "Node Offline".
+   d. On the **Alert** tab, on the left menu, click **Create Alert**.
 
-1. Evaluate every 1 minute to match the scrape interval.
+1. Enter a name for the alarm, for example `Node Offline`.
+
+1. To match the scrape interval, set the alarm to evaluate every minute.
 
 1. If you would like to not be notified of transient issues, such as a networking blip that temporarily makes a node offline, set **For** to 5 minutes. When an alarm is initially triggered, it will be set to a "Pending" state. Once it has been triggered for 5 minutes, the alarm will go to an "Alerting" state and alarm notifications will be sent out.
 
@@ -119,9 +120,6 @@ This example explains how an administrator can receive a notification when a nod
 1. Click **Test Alert** to test the alert to make sure it is working.
 
 1. Click the save icon in the top right corner to save the alert.
-
-Here is what the alarm configuration should look like:
-![Node Offline Alarm Example Configuration](administrator-guide/images/node-offline-alarm-example-configuration.png)
 
 ### To Alert on a Full Cluster
 
