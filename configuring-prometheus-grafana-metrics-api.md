@@ -93,7 +93,7 @@ For more information about dashboards, panels, and other visualizations, see the
 ### To Create an Alert for an Offline Node
 An offline node creates risks of additional failures that can cause reduced performance, inability to write to the cluster, or take the entire cluster offline. This example explains how you can receive an alert when a node in a cluster is offline. For more information, see [Create Alerts](https://grafana.com/docs/grafana/latest/alerting/old-alerting/create-alerts/) and [Legacy Grafana Alerts](https://grafana.com/docs/grafana/latest/alerting/old-alerting/) in the Grafana documentation.
 
-1. Configure a graph for `qumulo_quorum_node_is_offline`.
+1. Configure a graph for the `qumulo_quorum_node_is_offline` metric.
 
    a. Use the example in the [To Create a Throughput Graph](#to-create-a-throughput-graph) section and replace the query with `qumulo_quorum_node_is_offline`.
 
@@ -109,13 +109,13 @@ An offline node creates risks of additional failures that can cause reduced perf
 
 1. To receive alarms about transient issues (such as networking blips that can temporarily take a node offline), set **For** to `5m`.
 
-   When an alarm is triggered initially, its state is `Pending`. When the alarm has been triggered for five minutes, its state changes to `Alerting` and Grafana sends notifications.
+   When an event triggers an alarm is initially, the alarm's state is `Pending`. When the alarm has been triggered for five minutes, its state changes to `Alerting` and Grafana sends notifications.
 
 1. To trigger the alarm when any node goes offline for one minute, set the following condition:
 
    **WHEN** `sum()` **OF** `query (A, 5m, now)` **IS ABOVE** `0`
 
-1. To avoid a scenario in which an alarm might not go off when the OpenMetrics API is unable to output any metrics if your cluster goes offline entirely, set **If no data or all values are null** and **If execution error or timeout** to **SET STATE TO** **Alerting**.
+1. To avoid a scenario in which an alarm might not go off when the OpenMetrics API is unable to output any metrics if your cluster goes offline entirely, set **If no data or all values are null** and **If execution error or timeout** to **SET STATE TO Alerting**.
 
 1. Select a notification channel for receiving the alerts and add an alert message.
 
@@ -123,8 +123,7 @@ An offline node creates risks of additional failures that can cause reduced perf
 
 1. Click ![Grafana Save Icon](administrator-guide/images/grafana-save-icon.png).
 
-### To Alert on a Full Cluster
-
+### To Create an Alert for a Full Cluster
 Knowing how much free space is left in a cluster is very important, and in many cases it is useful to have an alarm that will alert when the cluster is almost full. In this example we will create a graph to show how full the cluster is and set an alarm to alert if it gets too full.
 
 For information about alerts, see the [Grafana documentation](https://grafana.com/docs/grafana/latest/alerting/old-alerting/).
