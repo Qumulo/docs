@@ -11,50 +11,50 @@ sidebar: administrator_guide_sidebar
 
 {% include content-reuse/openmetrics-api-introduction.md %}
 
-This document walks through how to set up and configure an open source time-series database and collection system known as Prometheus to connect to the API and poll its data at regular intervals. We then use an open-source dashboard/analytics tool known as Grafana to build dashboards with different graphs and information which can be used to monitor the health of your cluster, generate alerts, and uplevel capacity statistics to your business.
+This section describes how you can configure Prometheus (an open-source, time-series database and collection system) to connect to the Qumulo API and poll its data at regular intervals. It also describes how you can use Grafana (an open-source analytics tool) to create dashboards with graphs and data that you can use to monitor the health of your Qumulo cluster, generate alerts, and improve your capacity statistics.
 
-# Installing Prometheus
-Install prometheus using the documentation provided on the [Prometheus website](https://prometheus.io/docs/prometheus/latest/installation/). There are several different setups you can use, including installing to a Docker container or using a configuration management system such as Ansible.
+## Installing Prometheus
+For information about installing Prometheus, see [Installation](https://prometheus.io/docs/prometheus/latest/installation/) in the Prometheus documentation. You can install Prometheus into a Docker container or use a configuration management system such as Ansible.
 
-# Configuring Prometheus
-The configuration for prometheus is kept in `prometheus.yml`. Create this file if it does not already exist, and add any desired configurations for your monitoring setup. Use the following example as a template:
+## Configuring Prometheus
+**Important**: To use the OpenMetrics API, you you must configure your cluster to emit metrics without authentication. If your cluster isn't configure, open a request at [Qumulo Care](https://care.qumulo.com/hc/en-us/requests/new).
+
+You can configure Prometheus by editing the `prometheus.yml` file. If this file doesn't exist already, create it and add your monitoring configuration to the file. You can use the following example as a template.
 
 ```yaml
 ---
 global:
   scrape_interval: 1m
 
-# A scrape configuration containing exactly one endpoint to scrape:
+# The scrape configuration with one endpoint to scrape
 scrape_configs:
 
-  # The job name is added as a label `job=<job_name>`
-  # to any timeseries scraped from this config.
+  # The job name is added as the label `job=<job_name>`
+  # to any time series scraped from this configuration.
   - job_name: 'qumulo'
 
     static_configs:
+      # The hostname of your cluster.
+      # We recommend using a DNS record associated with
+      # one or more floating IP addresses from the cluster.
       - targets: ['<Hostname>:8000']
 
     metrics_path: '/v2/metrics/endpoints/default/data'
 
     scheme: https
 
-    # The following is needed in order to bypass our
-    # self-signed certificates not being trusted
+    # The following setting lets us bypass our
+    # untrusted, self-signed certificates.
     tls_config:
       insecure_skip_verify: true
 ```
 
-Fill in the `<Hostname>` field with the hostname of your cluster. This would preferably be a DNS record associated with one or more floating IP addresses from the cluster.
-
-**Important Note**: In order to use the metrics API, your cluster must have the API configured to make metrics available without authentication. Please reach out to your Qumulo Systems Engineer or Success Manager if this has not been done.
-
-# Installing and Configuring Grafana
+## Installing and Configuring Grafana
 Follow the Prometheus documentation for integrating with Grafana found [here](https://prometheus.io/docs/visualization/grafana/) in order to get Grafana up and running with Prometheus. Follow the Grafana documentation for integrating alerts with notification systems found [here](https://grafana.com/docs/grafana/latest/alerting/old-alerting/notifications/) in order to receive notifications when alerts are triggered.
 
-# Examples
 Provided below are a few examples of some basic graphing and alerting setups that might be useful to have once you have Prometheus and Grafana up and running.
 
-## Create a Throughput Graph
+### Example: Create a Throughput Graph
 
 ![Example Throughput Graph](administrator-guide/images/prometheus-grafana-setup-example-throughput-graph.png)
 
@@ -88,7 +88,7 @@ This example with demonstrate how to setup a graph on Grafana to view total read
 
 For more information about dashboards, panels, or other visualizations, see their respective sections in the [Grafana documentation](https://grafana.com/docs/grafana/latest/).
 
-## Alert on Offline Node
+### Example: Alert on Offline Node
 
 Administrators want to be promptly notified when there is an issue in their cluster preventing one or more nodes from being online. Being in this state risks additional failures taking the entire cluster offline, as well as reduced performance and eventually the inability to write to the cluster. We'll get notified quickly of this state by making a alarm in Grafana.
 
@@ -124,7 +124,7 @@ Here is what the alarm configuration should look like:
 
 For more information on alerts, see the [Grafana documentation](https://grafana.com/docs/grafana/latest/alerting/old-alerting/).
 
-## Alert on Cluster Full
+### Example: Alert on Cluster Full
 
 Knowing how much free space is left in a cluster is very important, and in many cases it is useful to have an alarm that will alert when the cluster is almost full. In this example we will create a graph to show how full the cluster is and set an alarm to alert if it gets too full.
 
