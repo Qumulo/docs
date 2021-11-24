@@ -9,7 +9,7 @@ tags:
 sidebar: administrator_guide_sidebar
 ---
 
-The Qumulo OpenMetrics API has a single endpoint that provides complete collections of point-in-time telemetry from the Qumulo File Data Platform. Monitoring and metrics systems can consume the OpenMetrics data format that the API emits, without custom code or an agent. For more information about whether you can ingest OpenMetrics or Prometheus data formats natively, see your monitoring system documentation.
+The Qumulo OpenMetrics API has a single endpoint that provides complete collections of point-in-time telemetry from the Qumulo File Data Platform. Monitoring and metrics systems, such as [Prometheus](https://github.com/prometheus/prometheus), can consume the OpenMetrics data format that the API emits, without custom code or an agent. For more information about which data formats your system can ingest natively, see your monitoring system documentation.
 
 This section describes the specification of the types of metrics that the API emits.
 
@@ -185,7 +185,7 @@ The following table gives the metric label name, its possible values, and descri
     <tr>
       <td><code>node_id</code></td>
       <td>A positive integer that represents a node ID in the cluster.</td>
-      <td>This value differentiates between the different nodes in the cluster for the <code>qumulo_quorum_node_is_offline</code> status.</td>
+      <td>This value differentiates between the different nodes in the cluster for the <code>qumulo_quorum_node_is_offline</code> gauge.</td>
     </tr>
     <tr>
       <td><code>op_name</code></td>
