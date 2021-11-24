@@ -7,7 +7,6 @@ sidebar: administrator_guide_sidebar
 The Qumulo Administrator Guide is a growing collection of information about configuring, managing, and troubleshooting Qumulo Core and you Qumulo nodes and clusters.
 
 **Table of Contents**
-* [Qumulo OpenMetrics API Specification](/openmetrics-api-specification.html)
 * **[Document History](/administrator-guide-document-history.md)**
 * **Configuring Your Node's Networking**
   * [Identifying NICs and Choosing Transceivers and Cables for Your Qumulo Node](/nics-transceivers-cables.md)
