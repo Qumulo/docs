@@ -11,12 +11,12 @@ body {
     background-color: #F8F8F8;
     font-size:16px;
 
-    /* Attach footer to bottom of page
+    /* Attach footer to bottom of page*/
     min-height:100vh;
     margin:0;
-    display:grid;
-    grid-template-rows: auto 1fr auto;
-    Attach footer to bottom of page */
+    display:flex;
+    flex-direction:column;
+    /* Attach footer to bottom of page */
 }
 
 /* -------------------- TOP NAVBAR START -------------------- */
@@ -476,7 +476,7 @@ footer {
     background-color:#0d1934;
     min-height: 130px;
     font-size: smaller;
-    margin-top:30px;
+    margin-top:auto;
 }
 
 /* FAQ page */
