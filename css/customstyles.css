@@ -77,7 +77,7 @@ a.header-link[href^="http://"]:after, a.header-link[href^="https://"]:after {
 }
 
 .below-header {
-  height: 27px;
+  min-height: 27px;
   background-image: url("../images/below-header.png");
   background-position: center center;
   background-size: 180%;
