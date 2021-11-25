@@ -49,18 +49,18 @@ div {
   display: block;
 }
 
-a.header {
+a.header-left {
   color: rgba(0, 124, 172, 1);
   text-decoration: none;
   display: inline-block;
   padding-right:20px;
 }
 
-a.header:hover {
+a.header-left:hover {
   text-decoration:underline;
 }
 
-a.header[href^="http://"]:after, a.header[href^="https://"]:after {
+a.header-link[href^="http://"]:after, a.header-link[href^="https://"]:after {
   content: none;
 }
 
