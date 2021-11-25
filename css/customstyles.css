@@ -95,6 +95,7 @@ a.header-link[href^="http://"]:after, a.header-link[href^="https://"]:after {
   height: 100px;
   margin-top: 12px;
   justify-content: space-between;
+  min-height:112px;
 }
 
 .nav-wrapper a {
