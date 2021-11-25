@@ -1,11 +1,11 @@
 *, html, body {
   box-sizing: border-box;
-  padding:0px;
-  margin:0px;
+  /*padding:0px;
+  margin:0px;*/
 }
 
 body {
-    font-family: 'Montserrat';
+    font-family: Montserrat, Avenir, sans-serif;
     -webkit-font-smoothing: antialiased;
     line-height: 1.5;
     background-color: #F8F8F8;
@@ -98,7 +98,7 @@ a.header-link[href^="http://"]:after, a.header-link[href^="https://"]:after {
   color: #005d80 !important;
   text-transform: uppercase;
   font-size: 15px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: Montserrat, Avenir, sans-serif;
 }
 
 .nav-wrapper a:hover {
@@ -598,7 +598,7 @@ ul#mysidebar {
 }
 
 span.projectTitle {
-    font-family: Avenir;
+    font-family: Montserrat, Avenir, sans-serif;
     font-weight: bold;
 }
 /*
