@@ -19,6 +19,10 @@ body {
     /* Attach footer to bottom of page */
 }
 
+#main {
+    margin-bottom:30px !important;
+}
+
 /* -------------------- TOP NAVBAR START -------------------- */
 .clkb {
   white-space: nowrap;
@@ -95,7 +99,9 @@ header {
   height: 100px;
   margin-top: 12px;
   justify-content: space-between;
+  /* Attach footer to bottom of page*/
   min-height:112px;
+  /* Attach footer to bottom of page*/
 }
 
 .nav-wrapper a {
@@ -474,7 +480,9 @@ li.dropdownActive a {
 footer {
     color: white;    
     background-color:#0d1934;
+    /* Attach footer to bottom of page*/
     min-height: 130px;
+    /* Attach footer to bottom of page*/
     font-size: smaller;
     margin-top:auto;
 }
