@@ -77,6 +77,10 @@ a.header-link[href^="http://"]:after, a.header-link[href^="https://"]:after {
   background-color: #1e1e32;
 }
 
+.header-container {
+  background-color:white;
+}
+
 .header {
   background-color: #ffffff;
   max-width: 1160px;
