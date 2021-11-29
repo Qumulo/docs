@@ -28,7 +28,7 @@ There are a number of ways to install Prometheus, the simplest is to download an
 
 For more information about installing Prometheus, or for other installation options, see [Installation](https://prometheus.io/docs/prometheus/latest/installation/) in the Prometheus documentation.
 
-You can configure Prometheus by editing the `prometheus.yml` file. If this file doesn't exist already, create it and add your monitoring configuration to the file. You can use the following example as a template.
+You can configure Prometheus by editing the `prometheus.yml` file found within the Prometheus folder that was just extracted. Add your monitoring configuration to the file, using the following example as a template.
 
 ```yaml
 ---
@@ -57,6 +57,8 @@ scrape_configs:
     tls_config:
       insecure_skip_verify: true
 ```
+
+After setting the configuration, run the Prometheus server by running the `prometheus` executable in the previously extracted folder. On Linux, use this command from within the Prometheus folder: `./prometheus`
 
 ## Installing and Configuring Grafana
 For information about integrating Prometheus with Grafana, see [Install Grafana](https://grafana.com/docs/grafana/latest/installation/) in the Grafana documentation and the [Using](https://prometheus.io/docs/visualization/grafana/#using) section of Grafana Support for Prometheus in the Prometheus documentation. For information about integrating alerts with notification systems to receive notifications when alerts are triggered, see [Alert Notifications](https://grafana.com/docs/grafana/latest/alerting/old-alerting/notifications/) in the Grafana documentation.
