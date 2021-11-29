@@ -49,7 +49,7 @@ scrape_configs:
 ```
 
 ## Installing and Configuring Grafana
-For information about integrating Prometheus with Grafana, see [Grafana Support for Prometheus](https://prometheus.io/docs/visualization/grafana/) in the Prometheus documentation. For information about integrating alerts with notification systems to receive notifications when alerts are triggered, see [Alert Notifications](https://grafana.com/docs/grafana/latest/alerting/old-alerting/notifications/) in the Grafana documentation.
+For information about integrating Prometheus with Grafana, see [Install Grafana](https://grafana.com/docs/grafana/latest/installation/) in the Grafana documentation and the [Using](https://prometheus.io/docs/visualization/grafana/#using) section of Grafana Support for Prometheus in the Prometheus documentation. For information about integrating alerts with notification systems to receive notifications when alerts are triggered, see [Alert Notifications](https://grafana.com/docs/grafana/latest/alerting/old-alerting/notifications/) in the Grafana documentation.
 
 The following examples show basic graphing and alerting configurations.
 
