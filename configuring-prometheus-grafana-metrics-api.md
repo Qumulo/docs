@@ -13,10 +13,20 @@ sidebar: administrator_guide_sidebar
 
 This section describes how you can configure Prometheus (an open-source, time-series database and collection system) to connect to the Qumulo API and poll its data at regular intervals. It also describes how you can use Grafana (an open-source analytics tool) to create dashboards with graphs and data that you can use to monitor the health of your Qumulo cluster, generate alerts, and improve your capacity statistics.
 
-## Installing and Configuring Prometheus
-For information about installing Prometheus, see [Installation](https://prometheus.io/docs/prometheus/latest/installation/) in the Prometheus documentation. You can install Prometheus into a Docker container or use a configuration management system such as Ansible.
-
 **Important**: To use the OpenMetrics API, you you must configure your cluster to emit metrics without authentication. If your cluster isn't configured for this, open a request at [Qumulo Care](https://care.qumulo.com/hc/en-us/requests/new).
+
+## Installing and Configuring Prometheus
+There are a number of ways to install Prometheus, the simplest is to download an executable to a server.
+
+1. Download Prometheus from the [downloads page](https://prometheus.io/download/#prometheus).
+
+    - Choose the version that does not have "beta" in the name.
+
+    - Choose the version for the operating system of the server you will be running Prometheus on.
+
+1. Extract the downloaded folder. On Linux, navigate to the directory that Prometheus was downloaded to, and use the following command: `tar xvfz prometheus-*.tar.gz`
+
+For more information about installing Prometheus, or for other installation options, see [Installation](https://prometheus.io/docs/prometheus/latest/installation/) in the Prometheus documentation.
 
 You can configure Prometheus by editing the `prometheus.yml` file. If this file doesn't exist already, create it and add your monitoring configuration to the file. You can use the following example as a template.
 
