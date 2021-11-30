@@ -146,7 +146,9 @@ An offline node creates risks of additional failures that can cause reduced perf
 
 1. To avoid a scenario in which an alarm might not go off when the OpenMetrics API is unable to output any metrics if your cluster goes offline entirely, set **If no data or all values are null** and **If execution error or timeout** to **SET STATE TO Alerting**.
 
-1. Select a notification channel for receiving the alerts and add an alert message.
+1. In the **Notifications** section, click the **+** next to **Send to**, and select a notification channel for the alerts to be sent to.
+
+1. In the **Message** box, enter `Node ${node_id} is offline!`.
 
 1. To test the alert, click **Test Alert**.
 
@@ -175,7 +177,9 @@ It is important for an administrator to know how much free space is left on a cl
 
    **WHEN** `avg()` **OF** `query (A, 5m, now)` **IS BELOW** `.10`
 
-1. Select a notification channel for receiving the alerts and add an alert message.
+1. In the **Notifications** section, click the **+** next to **Send to**, and select a notification channel for the alerts to be sent to.
+
+1. In the **Message** box, enter `Cluster is almost full.`.
 
 1. To test the alert, click **Test Alert**.
 
