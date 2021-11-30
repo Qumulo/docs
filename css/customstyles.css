@@ -373,6 +373,11 @@ p.post-meta {font-size: 80%; color: #777;}
     border-left: 1px solid #dedede;
 }
 
+/* Move search box up a bit */
+#search-demo-container {
+    margin-top: -4px;
+}
+
 
 ul#results-container a {
     background-color: transparent;
