@@ -24,41 +24,53 @@ There are a number of ways to install Prometheus, the simplest is to download an
 
     - Choose the version for the operating system of the server you will be running Prometheus on.
 
+1. If you did not download the folder directly to the server where you want to run Prometheus, move it there before continuing.
+
 1. Extract the downloaded folder. On Linux, navigate to the directory that Prometheus was downloaded to, and use the following command: `tar xvfz prometheus-*.tar.gz`
 
 For more information about installing Prometheus, or for other installation options, see [Installation](https://prometheus.io/docs/prometheus/latest/installation/) in the Prometheus documentation.
 
-You can configure Prometheus by editing the `prometheus.yml` file found within the Prometheus folder that was just extracted. Add your monitoring configuration to the file, using the following example as a template.
+You can configure Prometheus by editing the `prometheus.yml` file found within the Prometheus folder that was just extracted.
 
-```yaml
----
-global:
-  scrape_interval: 1m
+1. Replace the configuration in the file using the following template.
 
-# The scrape configuration with one endpoint to scrape
-scrape_configs:
+   ```yaml
+   ---
+   global:
+   scrape_interval: 1m
 
-  # Prometheus adds the job name as the label `job=<job_name>`
-  # to any time series scraped from this configuration.
-  - job_name: 'qumulo'
+   # The scrape configuration with one endpoint to scrape
+   scrape_configs:
 
-    static_configs:
-      # The hostname of your cluster. We recommend using
-      # a DNS record associated with one or more floating
-      # IP addresses from the cluster.
-      - targets: ['<Hostname>:8000']
+   # Prometheus adds the job name as the label `job=<job_name>`
+   # to any time series scraped from this configuration.
+   - job_name: 'qumulo'
 
-    metrics_path: '/v2/metrics/endpoints/default/data'
+      static_configs:
+         # The hostname of your cluster. We recommend using
+         # a DNS record associated with one or more floating
+         # IP addresses from the cluster.
+         - targets: ['<Hostname>:8000']
 
-    scheme: https
+      metrics_path: '/v2/metrics/endpoints/default/data'
 
-    # The following setting lets us bypass our
-    # untrusted, self-signed certificates.
-    tls_config:
-      insecure_skip_verify: true
-```
+      scheme: https
 
-After setting the configuration, run the Prometheus server by running the `prometheus` executable in the previously extracted folder. On Linux, use this command from within the Prometheus folder: `./prometheus`
+      # The following setting lets us bypass our
+      # untrusted, self-signed certificates.
+      tls_config:
+         insecure_skip_verify: true
+   ```
+
+1. Fill in `<Hostname>` with a DNS name or an IP from your Qumulo cluster. Preferably `<Hostname>` should be a DNS name that resolves to a floating IP address.
+
+1. Run the Prometheus server by running the `prometheus` executable in the previously extracted folder. On Linux, use this command from within the Prometheus folder: `./prometheus`
+
+1. Open a web browser and navigate to `<Hostname>:9090`. This will bring up the Prometheus web interface.
+
+1. From the menu bar at the top, select the **Status** dropdown and click on **Targets**. On this page you will see an endpoint for your cluster. After one minute, the **State** should be `UP`.
+
+Prometheus is now running and connected to your cluster.
 
 ## Installing and Configuring Grafana
 For information about integrating Prometheus with Grafana, see [Install Grafana](https://grafana.com/docs/grafana/latest/installation/) in the Grafana documentation and the [Using](https://prometheus.io/docs/visualization/grafana/#using) section of Grafana Support for Prometheus in the Prometheus documentation. For information about integrating alerts with notification systems to receive notifications when alerts are triggered, see [Alert Notifications](https://grafana.com/docs/grafana/latest/alerting/old-alerting/notifications/) in the Grafana documentation.
