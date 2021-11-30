@@ -85,9 +85,7 @@ Follow the steps below to install Grafana and configure it to connect to Prometh
 The following examples show basic graphing and alerting configurations.
 
 ### To Create a Throughput Graph
-This example explains how you can configure a Grafana graph to show total read and write throughput across your cluster. For more information, see [Creating a Prometheus Graph](https://prometheus.io/docs/visualization/grafana/#creating-a-prometheus-graph) in the Prometheus documentation.
-
-**Note:** Before you begin, ensure that you have Grafana installed and configured to pull from a Prometheus instance. 
+This example explains how you can configure a Grafana graph to show total read and write throughput across your cluster.
 
 1. In Grafana, click **+** and then click **Create Dashboard**.
 
