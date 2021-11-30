@@ -73,7 +73,14 @@ You can configure Prometheus by editing the `prometheus.yml` file found within t
 Prometheus is now running and connected to your cluster.
 
 ## Installing and Configuring Grafana
-For information about integrating Prometheus with Grafana, see [Install Grafana](https://grafana.com/docs/grafana/latest/installation/) in the Grafana documentation and the [Using](https://prometheus.io/docs/visualization/grafana/#using) section of Grafana Support for Prometheus in the Prometheus documentation. For information about integrating alerts with notification systems to receive notifications when alerts are triggered, see [Alert Notifications](https://grafana.com/docs/grafana/latest/alerting/old-alerting/notifications/) in the Grafana documentation.
+
+Follow the steps below to install Grafana and configure it to connect to Prometheus.
+
+1. [Install Grafana](https://grafana.com/docs/grafana/latest/installation/) using the instructions in the Grafana documentation.
+
+1. [Create a Prometheus data source](https://prometheus.io/docs/visualization/grafana/#creating-a-prometheus-data-source) using the Grafana Support for Prometheus page in the Prometheus documentation.
+
+1. If you want to use alerts, set up a notification channel using the [Alert Notifications](https://grafana.com/docs/grafana/latest/alerting/old-alerting/notifications/) page in the Grafana documentation.
 
 The following examples show basic graphing and alerting configurations.
 
