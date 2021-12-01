@@ -5,22 +5,27 @@
 }
 
 body {
-    font-family: Montserrat, Avenir, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    line-height: 1.5;
-    background-color: #F8F8F8;
-    font-size:16px;
+  font-family: Montserrat, Avenir, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.5;
+  background-color: #F8F8F8;
+  font-size:16px;
 
-    /* Attach footer to bottom of page*/
-    min-height:100vh;
-    margin:0;
-    display:flex;
-    flex-direction:column;
-    /* Attach footer to bottom of page */
+  /* Attach footer to bottom of page*/
+  min-height:100vh;
+  margin:0;
+  display:flex;
+  flex-direction:column;
+  /* Attach footer to bottom of page */
 }
 
 #main {
-    margin-bottom:30px !important;
+  margin-bottom:30px !important;
+}
+
+/* Reading Mode tweak */
+#tg-sb-link {
+  background-color:transparent;
 }
 
 /* -------------------- TOP NAVBAR START -------------------- */
