@@ -1,5 +1,44 @@
-<!-- Navigation -->
-<nav class="navbar navbar-inverse navbar-static-top">
+<!-- -------------------- TOPNAV START -------------------- -->
+<div class="above-header"></div>
+
+<div class="header-container">
+<header class="header">
+  <div class="logo">
+    <a class="header-link" href="https://care.qumulo.com/hc/en-us">
+      <img src="images/qumulo-logo.png" alt="Qumulo Logo">
+    </a>
+  </div>
+
+  <div class="carelinks">
+    <div class="cloac">
+      <a class="header-link header-left" href="https://care.qumulo.com/hc/en-us/requests/new">OPEN A CASE</a>
+    </div>
+    <div class="clkb">
+      <a class="header-link header-left" href="https://care.qumulo.com/hc/en-us/categories/115000637447-KNOWLEDGE-BASE">KNOWLEDGE BASE</a>
+    </div>
+    <div class="clc">
+      <a class="header-link header-left" href="https://care.qumulo.com/hc/en-us/community/topics">COMMUNITY</a>
+    </div>
+    <div class="clqt">
+      <a class="header-link header-left" href="https://trends.qumulo.com/" target="_blank">QUMULO TRENDS</a>
+    </div>
+  </div>
+
+  <div class="nav-wrapper">
+    <span class="icon-menu"></span>
+    <nav class="user-nav" id="user-nav">
+      <div class="qf2header">
+        <a class="header-link header-right" href="https://qumulo.com/product/" target="_blank">Products</a>
+        <a class="header-link header-right" href="https://qumulo.com/solution/" target="_blank">Industries</a>
+        <a class="header-link header-right" href="https://qumulo.com/partners/" target="_blank">Partners</a>
+        <a class="header-link header-right" href="https://qumulo.com/company/" target="_blank">Company</a>
+        <a class="header-link header-right" href="https://qumulo.com/library/" target="_blank">Resources</a>
+      </div>
+    </nav>
+</div>
+</header>
+</div>
+<div class="below-header navbar navbar-inverse navbar-static-top">
     <div class="container topnavlinks">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -13,7 +52,7 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <!-- toggle sidebar button -->
-                <li><a id="tg-sb-link" href="#"><i id="tg-sb-icon" class="fa fa-toggle-on"></i> Nav</a></li>
+                <li><a id="tg-sb-link" href="#"><i id="tg-sb-icon" class="fa fa-toggle-on"></i> Reading Mode</a></li>
                 <!-- entries without drop-downs appear here -->
 
 {% assign topnav = site.data[page.topnav] %}
@@ -76,6 +115,7 @@
                 </li>
             </ul>
         </div>
-        </div>
+    </div>
         <!-- /.container -->
-</nav>
+</div>
+<!-- -------------------- TOPNAV END -------------------- -->

@@ -1,8 +1,162 @@
+*, html, body {
+  box-sizing: border-box;
+  /*padding:0px;
+  margin:0px;*/
+}
+
 body {
-    font-family: Avenir;
+    font-family: Montserrat, Avenir, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.5;
     background-color: #F8F8F8;
     font-size:16px;
+
+    /* Attach footer to bottom of page*/
+    min-height:100vh;
+    margin:0;
+    display:flex;
+    flex-direction:column;
+    /* Attach footer to bottom of page */
 }
+
+#main {
+    margin-bottom:30px !important;
+}
+
+/* -------------------- TOP NAVBAR START -------------------- */
+.clkb {
+  white-space: nowrap;
+}
+
+.clc {
+  white-space: nowrap;
+}
+
+body .nav-wrapper {
+  display: inline-flex;
+  clear: both;
+  align-items: flex-end;
+}
+
+.user-nav {
+  display: flex;
+  justify-content: flex-end;
+  line-height: 1.7em;
+  white-space: nowrap;
+  font-weight: bold;
+  margin-right: 10px;
+  padding-bottom: 15px;
+  position: relative;
+}
+
+div {
+  display: block;
+}
+
+a.header-left {
+  color: rgba(0, 124, 172, 1);
+  text-decoration: none;
+  display: inline-block;
+}
+
+a.header-left:hover {
+  text-decoration:underline;
+}
+
+a.header-right {
+  padding-right:20px;
+}
+
+a.header-link[href^="http://"]:after, a.header-link[href^="https://"]:after {
+  content: none;
+}
+
+.above-header {
+  min-height: 27px;
+  background-color: #1e1e32;
+}
+
+.below-header {
+  min-height: 50px;
+  background-image: url("../images/below-header.png");
+  background-position: center center;
+  background-size: 180%;
+  background-color: #1e1e32;
+}
+
+.header-container {
+  background-color:white;
+}
+
+header {
+  background-color: #ffffff;
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 5%;
+  position: relative;
+  align-items: center;
+  display: flex;
+  height: 100px;
+  margin-top: 12px;
+  justify-content: space-between;
+  /* Attach footer to bottom of page*/
+  min-height:112px;
+  /* Attach footer to bottom of page*/
+}
+
+.nav-wrapper a {
+  color: #005d80 !important;
+  text-transform: uppercase;
+  font-size: 15px;
+  font-family: Montserrat, Avenir, sans-serif;
+}
+
+.nav-wrapper a:hover {
+  text-decoration: underline;
+}
+
+.logo img {
+  max-height: 40px;
+  margin-top: -3px;
+  margin-left: -2px;
+}
+
+.carelinks {
+  text-size-adjust: 100%;
+  margin-top: 0px;
+  padding-left: 20px;
+  font-weight: bold;
+  font-size: 12px;
+  padding-bottom: 20px;
+  padding-right: 3px !important;
+}
+
+.user-nav {
+  display: flex;
+  justify-content: flex-end;
+  line-height: 1.7em;
+}
+
+.qf2header {
+  padding-left: 20px;
+  margin-top: 5px;
+}
+
+@media (max-width: 768px) {
+  .nav-wrapper {
+    visibility:hidden;
+  }
+}
+
+.nav-wrapper .icon-menu {
+  display:flex;
+  margin-right: 10px;
+  color: rgba(0, 124, 172, 1);
+  text-align: right;
+  width: 100%;
+}
+
+/* -------------------- TOP NAVBAR END -------------------- */
 
 h1 {
     display: block;
@@ -219,6 +373,11 @@ p.post-meta {font-size: 80%; color: #777;}
     border-left: 1px solid #dedede;
 }
 
+/* Move search box up a bit */
+#search-demo-container {
+    margin-top: -4px !important;
+}
+
 
 ul#results-container a {
     background-color: transparent;
@@ -255,13 +414,14 @@ ul#results-container a:hover {
 div#toc {
     float: right;
     position: relative;
-    top: inherit; /* Set this to the default value */ 
+    top: inherit; /* Set this to the default value */
+    margin-left:10px; 
 }
 
-/* Ensure that text wraps around TOC correctly */
+/* Ensure that text wraps around TOC correctly 
 #toc>ul {
     margin-top:65px;
-}
+}*/
 
 div#toc ul li {
     margin: 8px 0px 8px 22px;
@@ -323,7 +483,13 @@ li.dropdownActive a {
 }
 
 footer {
+    color: white;    
+    background-color:#0d1934;
+    /* Attach footer to bottom of page*/
+    min-height: 130px;
+    /* Attach footer to bottom of page*/
     font-size: smaller;
+    margin-top:auto;
 }
 
 /* FAQ page */
@@ -449,20 +615,21 @@ ul#mysidebar {
 }
 
 span.projectTitle {
-    font-family: Avenir;
+    font-family: Montserrat, Avenir, sans-serif;
     font-weight: bold;
 }
-
+/*
 .footer {
     padding-top: 15px;
     color: white;    
     background-color:#0d1934;
     width:auto;
     height:130px;
-}
+}*/
 
 .footer-text {
     text-align:right;
+    padding-top: 15px;
     padding-right:15px;
 }
 
