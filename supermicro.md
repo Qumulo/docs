@@ -93,7 +93,7 @@ Your node contains slots for 10 drives and one boot drive (in an internal M.2 sl
 This section explains the networking prerequisites, outlines the recommended networking configuration, and explains how you can connect to redundant switches or to a single switch.
 
 ### Networking Prerequisites
-**Important:** Before you create your Qumulo cluster, you must configure all switch ports connected to the back-end NIC to have at least 9,000 MTU, with Jumbo Frames enabled.
+{% include important.html content="Before you create your Qumulo cluster, you must configure all switch ports connected to the back-end NIC to have at least 9,000 MTU, with Jumbo Frames enabled." %}
 
 Your node requires the following resources.
 * A network switch with the following specifications:
@@ -106,7 +106,7 @@ Your node requires the following resources.
 * One static IP per node, per defined VLAN
 
 ### Recommended Networking Configuration
-**Important:** We don't recommend connecting to a single back-end NIC port because the node will become unavailable if the single connection fails.
+{% include important.html content="We don't recommend connecting to a single back-end NIC port because the node will become unavailable if the single connection fails." %}
 
 The Supermicro All-NVMe platform uses a networking configuration in which different NICs handle back-end and front-end traffic. You can connect the front-end and back-end NICs to the same switch or to different switches. However, for greater reliability, we recommend connecting all four 100 Gbps ports on every node: connect both front-end NIC ports to the front-end switch and both back-end NIC ports to the back-end switch.
 
@@ -202,7 +202,7 @@ After you connect the IPMI port, connect your front-end and back-end 100 Gbps po
 | Bottom row            | 2 (eth5), 1 (eth4) | Back end   | Communication between nodes |
 
 ### Connecting the Power
-**Important:** Make sure that the voltages for both power supply units (PSUs) are the same (for example, both at 115 V or both at 208 V).
+{% include important.html content="Make sure that the voltages for both power supply units (PSUs) are the same (for example, both at 115 V or both at 208 V)." %}
 
 After you connect your 100 Gbps ports, connect power to the node. There are two power sockets on the back of your node. To maximize redundancy, connect each PSU to a separate power supply or power distribution unit (PDU).
 
@@ -246,9 +246,8 @@ To perform a clean installation of Qumulo Core on your node, you must create a Q
 #### To Create a USB Drive Installer on Windows
 To create a USB Drive Installer on Windows, you must use a third-party application such as [Rufus](https://rufus.ie/). We recommend Rufus because it can detect many USB storage devices (rather than only Windows-compatible ones).
 
-**Important:**
-* We don't recommend using other tools (such as Win32 Disk Imager) because they might encounter errors when unable to recognize the USB drive after writing data to it.
-* When the operation concludes, you might not be able to view the contents of the USB drive on Windows because the drive will be formatted using a different file system.
+{% include important.html content="* We don't recommend using other tools (such as Win32 Disk Imager) because they might encounter errors when unable to recognize the USB drive after writing data to it.
+* When the operation concludes, you might not be able to view the contents of the USB drive on Windows because the drive will be formatted using a different file system." %}
 
 1. Press the **Power** button.
 
@@ -425,10 +424,9 @@ This section describes how to configure your Supermicro All-NVMe nodes to form a
 
 1. Confirm your cluster protection level (how many drive failures Qumulo Core will protect the cluster against). Depending on your cluster size and node types, two-drive or three-drive protection is selected. If **Customize Protection Level** is available, in the **2. Confirm cluster protection level** section, you can choose two-drive protection or three-drive protection.
 
-   **Important:**
-   * You can choose your cluster protection level only during cluster creation. You can't change this setting later.
+   {% include important.html content="* You can choose your cluster protection level only during cluster creation. You can't change this setting later.
    * Choosing protection for more drives decreases your cluster capacity.
-   * To enable multi-node protection, you must create your cluster using the CLI.
+   * To enable multi-node protection, you must create your cluster using the CLI." %}
 
 1. In the **3. Create a password for your admin account** section, set the password for your administrative account.
 

@@ -66,7 +66,7 @@ Before you begin, ensure that you have C-192T or C-432T hardware and the replace
 
 1. Starting with the top drawer, transfer the HDDs from each tray in the original chassis into a corresponding slot in the replacement chassis. For more information about drive locations, see [C-Series Drive Diagrams](https://care.qumulo.com/hc/en-us/articles/360020198853-Qumulo-C-Series-Drive-Diagrams) in Qumulo Care.
 
-   **Important:** Work on one drawer at a time. If you apply 2 kg (or more) of downward force to a drawer, it might deform while opened.
+   {% include important.html content="Work on one drawer at a time. If you apply 2 kg (or more) of downward force to a drawer, it might deform while opened." %}
 
    a. To open the HDD drawer, use the blue lever at the front of the node.
 
