@@ -38,7 +38,7 @@ The entries in the access control list have four parts separated by colons. For 
 
 1. The type of access control entry (ACE). In this example, all three ACEs are set to `A` (allow).
 
-   **Note:** Qumulo Core supports only `A` and `D` ACEs.
+   {% include note.html content="Qumulo Core supports only `A` and `D` ACEs." %}
 
    * **A:** Allow
    * **D:** Deny
@@ -47,7 +47,8 @@ The entries in the access control list have four parts separated by colons. For 
 
 1. Additional ACE flags. In this example, the second ACE has the flag `g` that shows that the ID in the following part represents a _group_ (rather than a user).
 
-   **Note:** Qumulo Core doesn't support The `S` and `F` flags.
+
+   {% include note.html content="Qumulo Core doesn't support The `S` and `F` flags." %}
 
 1. Whom the ACE applies to. The available options are:
 
@@ -58,7 +59,7 @@ The entries in the access control list have four parts separated by colons. For 
    * `UID`: The UID of the file
    * `OWNER@`: The owner of the file
 
-   **Note:** Currently, Qumulo Core doesn't support Kerberos principals in ACLs.
+   {% include note.html content="Currently, Qumulo Core doesn't support Kerberos principals in ACLs." %}
 
 1. The access types the ACE applies to. For example:
 
@@ -106,7 +107,7 @@ You can manage NFSv4.1 access permissions with ACLs, POSIX-style modes, or a com
 
 * If you use the `OWNER@` or `GROUP@` identifiers in an ACL that allows read, write, or execute permissions, the identifiers appear in the `owner` or `group` bits of the mode when you read the file’s mode.
 
-**Note:** Because the `EVERYONE@` identifier includes the owner and group of a file and the `other` bits of a mode don't apply to the owner or group, the permissions you grant to the `EVERYONE@` identifier are more broad than a mode's `other` bits.
+{% include note.html content="Because the `EVERYONE@` identifier includes the owner and group of a file and the `other` bits of a mode don't apply to the owner or group, the permissions you grant to the `EVERYONE@` identifier are more broad than a mode's `other` bits." %}
 
 ## Using NFSv4.1 ACLs with SMB Access Control
 NFSv4.1 ACLs are comparable with SMB access controls. In most cases, you can write and read using both protocols without issues.

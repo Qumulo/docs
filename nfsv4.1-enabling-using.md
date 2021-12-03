@@ -18,7 +18,7 @@ tags:
 
 Qumulo Core 4.3.0 (and higher) supports Network File System version 4.1 (NFSv4.1). This section explains how you can configure your cluster for a supported export configuration and enable or disable NFSv4.1 on your cluster. It also provides detail about supported and unsupported features. For more information about NFSv4.1 and file access permissions, see [Managing File Access Permissions Using NFSv4.1 Access Control Lists (ACLs)](nfsv4.1-auth-sys-acls.md).
 
-**Important:** Currently, Qumulo Core supports only NFSv4.1. Mounting with version 4.0 or 4.2 isn't supported.
+{% include important.html content="Currently, Qumulo Core supports only NFSv4.1. Mounting with version 4.0 or 4.2 isn't supported." %}
 
 ## Configuring and Using Exports for NFSv4.1
 Qumulo's NFS exports can present a view of your cluster over NFS that might differ from the contents of the underlying file system. You can mark NFS exports as read-only, restricted (to allow access only from certain IP adresses), or configure specific user mappings. For more information, see [Create an NFS Export](https://care.qumulo.com/hc/en-us/articles/360000723928-Create-an-NFS-Export) in Qumulo Care.
@@ -88,7 +88,7 @@ To prepare this configuration for NFSv4.1, you can do one of the following:
 | `/admin`           | `/home/admin`         |
 
 ### Visibility of IP-Restricted Exports
-**Note:** The names of exports are public to all NFSv4.1 clients, regardless of IP restrictions. You can't disable this behavior.
+{% include note.html content="The names of exports are public to all NFSv4.1 clients, regardless of IP restrictions. You can't disable this behavior." %}
 
 NFSv4.1 respects IP restrictions on exports: only clients with allowed IP addresses can access the contents of an export. However, clients without access to an export can still view the export as a directory when they traverse _above_ exports. The restrictions apply only when a client attempts to access the contents of the export.
 
@@ -102,7 +102,7 @@ The NFSv4.1 protocol requires clients to provide the server with globally unique
 
 
 ## Enabling NFSv4.1 on a Qumulo Cluster
-**Note:** Currently, you can enable NFSv4.1 only using the CLI.
+{% include note.html content="Currently, you can enable NFSv4.1 only using the CLI." %}
 
 You can enable NFSv4.1 on your Qumulo cluster using a single cluster-wide configuration command, for example:
 
@@ -125,7 +125,7 @@ Because Qumulo's NFSv4.1 implementation currently doesn't have full feature pari
 mount -t nfs -o nfsvers=3 your.qumulo.cluster:/mount_path /path/to/mountpoint
 ```
 
-**Note:** We recommend specifying the `nfsvers=4` or `nfsvers=4.1` option for any mounts that use NFSv4.1.
+{% include note.html content="We recommend specifying the `nfsvers=4` or `nfsvers=4.1` option for any mounts that use NFSv4.1." %}
 
 
 ## Checking Whether NFSv4.1 is enabled
@@ -137,7 +137,7 @@ qq nfs_get_settings
 
 
 ## Disabling NFSv4.1 on a Qumulo Cluster
-**Important:** Disabling NFSv4.1 makes any NFSv4.1 mounts unusable immediately. We recommend switching any NFSv4.1 mounts to NFSv3 before disabling NFSv4.1.
+{% include important.html content="Disabling NFSv4.1 makes any NFSv4.1 mounts unusable immediately. We recommend switching any NFSv4.1 mounts to NFSv3 before disabling NFSv4.1." %}
 
 To disable NFSv4.1 on an entire Qumulo cluster, use the following CLI command:
 

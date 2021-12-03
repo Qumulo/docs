@@ -31,16 +31,15 @@ Virtual Network (VNet) peering allows bidirectional connectivity between the fil
 
 During the file system provisioning, you received the resource ID for the Qumulo on Azure as a Service VNet and one user from your organization was invited into the Qumulo tenancy with permissions necessary to configure VNet peering on that resource. To change who has this permission, contact [Qumulo Care](https://care.qumulo.com).
 
-**Note:**
-VNet peering isn't transitive. For example, if the three VNets A, B, and C are peered transitively (A ⭤ B ⭤ C), the infrastructure in VNet A won't be able to communicate transitively with infrastructure in VNet C. This has implications for Qumulo on Azure as a Service in the [hub-and-spoke network topology](https://docs.microsoft.com/en-us/azure/architecture/reference-architectures/hybrid-networking/hub-spoke?tabs=cli), which Azure recommends as a best practice. If you have infrastructure that Qumulo must be able to reach (for example, a DNS server, a syslog audit log server, and so on) that lives in a hub VNet, you *must* peer the Qumulo on Azure as a Service VNet with your hub VNet and with any spoke VNets that must be able to connect to the file system.
+{% include note.html content="VNet peering isn't transitive. For example, if the three VNets A, B, and C are peered transitively (A ⭤ B ⭤ C), the infrastructure in VNet A won't be able to communicate transitively with infrastructure in VNet C. This has implications for Qumulo on Azure as a Service in the [hub-and-spoke network topology](https://docs.microsoft.com/en-us/azure/architecture/reference-architectures/hybrid-networking/hub-spoke?tabs=cli), which Azure recommends as a best practice. If you have infrastructure that Qumulo must be able to reach (for example, a DNS server, a syslog audit log server, and so on) that lives in a hub VNet, you *must* peer the Qumulo on Azure as a Service VNet with your hub VNet and with any spoke VNets that must be able to connect to the file system." %}
 
 ### Configuring DHCP Mode
-**Important:** Configuring static networking results in an error.
+{% include important.html content="Configuring static networking results in an error." %}
 
 Like other cloud platform implementations, you can configure Qumulo on Azure as a Service to run only in DHCP mode, where Azure assigns IP addresses to the file system automatically.
 
 ### Configuring DNS
-**Important:** Before you configure DNS for Qumulo Core, you must ensure that the DNS server that you want to use is reachable from the Qumulo on Azure as a Service VNet and that it can resolve the `blob.core.windows.net` and `vault.azure.com` addresses. A DNS server misconfiguration can result in a file system outage.
+{% include important.html content="Before you configure DNS for Qumulo Core, you must ensure that the DNS server that you want to use is reachable from the Qumulo on Azure as a Service VNet and that it can resolve the `blob.core.windows.net` and `vault.azure.com` addresses. A DNS server misconfiguration can result in a file system outage." %}
 
 To resolve internal hostnames to IP addresses in your infrastructure, you must configure Qumulo Core to use a DNS server that can resolve the necessary hostnames. By default, the file system uses Azure's default DNS server (`168.63.129.16`) provided by DHCP.
 
@@ -69,13 +68,13 @@ Like other cloud platform implementations, Qumulo on Azure as a Service lets the
 * If you run a traditional Active Directory domain with domain controllers, follow the instructions in [Join your Qumulo Cluster to Active Directory](https://care.qumulo.com/hc/en-us/articles/115007276068-Join-your-Qumulo-Cluster-to-Active-Directory) on Qumulo Care.
 * If you use Azure AD in your environment, Qumulo Core requires enabling Azure Active Directory Domain Services in your tenancy. For more information, see [What is Azure Active Directory Domain Services?](https://docs.microsoft.com/en-us/azure/active-directory-domain-services/overview) in Azure documentation.
 
-**Note:** Currently, Qumulo core doesn't support Azure AD natively.
+{% include note.html content="Currently, Qumulo core doesn't support Azure AD natively." %}
 
 
 ## Remote Monitoring and Support
 Qumulo on Azure as a Service doesn't require special remote monitoring configuration. All Qumulo on Azure as a Service file systems have remote monitoring enabled by default. You can't disable this functionality. Your Qumulo on Azure as a Service file systems display on Qumulo Trends alongside any other Qumulo systems you might have on other platforms. For more information, see [Qumulo Trends Overview](https://care.qumulo.com/hc/en-us/articles/115008736167-Qumulo-Trends-Overview) on Qumulo Care.
 
-**Note:** Remote Support VPN is always disabled for Qumulo on Azure as a Service. It isn't required for getting support for Qumulo on Azure as a Service.
+{% include note.html content="Remote Support VPN is always disabled for Qumulo on Azure as a Service. It isn't required for getting support for Qumulo on Azure as a Service." %}
 
 
 ## Capacity and Performance Increases
