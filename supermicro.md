@@ -150,7 +150,7 @@ You can connect a Supermicro All-NVMe cluster to a single switch. If this switch
 
 
 ## Step 1: Racking Your Nodes
-**Tip:** You can use the following instructions to add new nodes after your initial cluster deployment.
+{% include tip.html content="You can use the following instructions to add new nodes after your initial cluster deployment." %}
 
 This section describes how to use the outside and inside rails of your Supermicro All-NVMe node and how to rack your nodes in your data center.
 
