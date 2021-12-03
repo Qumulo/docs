@@ -41,7 +41,7 @@ Newer switches have 100 Gbps connections using double 50 Gbps PAM4 connections i
 
 ### Recommended Optical Transceivers for 100 Gbps Connections
 
-**Note:** Mellanox 100 Gbps NICs also work with 40 Gbps connections.
+{% include note.html content="Mellanox 100 Gbps NICs also work with 40 Gbps connections." %}
 
 | Speed        | Part Number     | Description                                     |
 | ------------ | --------------- | ----------------------------------------------- |
@@ -65,7 +65,7 @@ Newer switches have 100 Gbps connections using double 50 Gbps PAM4 connections i
 
 * **Active Optical Cables (AOCs):** Although these cables are cheaper than dedicated transceivers and fiber optic cables, they might cause compatibility issues, or your NIC or switch might not support them.
 
-**Note:** If you use DAC or AOC cables, ensure that Mellanox and the maker of your network switch both support your cables.
+{% include note.html content="If you use DAC or AOC cables, ensure that Mellanox and the maker of your network switch both support your cables." %}
 
 ### Recommended 100 Gbps DAC and AOC Cables
 

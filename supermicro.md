@@ -74,7 +74,7 @@ On the front, right side of your node, there are five LEDs.
 | Disk Activity | 🟡 (solid yellow)      | On or blinking                              |
 | Power         | 🟢 (solid green)       | On                                          |
 
-**Note:** During normal operation, the **Lan B** LED might appear to be lit slightly when the **Disk Activity** LED is on.
+{% include note.html content="During normal operation, the **Lan B** LED might appear to be lit slightly when the **Disk Activity** LED is on." %}
 
 On the back of your node, LAN LEDs are located behind the vent holes on the NIC. Each port has one light. Network traffic *doesn't* affect the speed of the light's blinking.
 
@@ -155,7 +155,7 @@ You can connect a Supermicro All-NVMe cluster to a single switch. If this switch
 This section describes how to use the outside and inside rails of your Supermicro All-NVMe node and how to rack your nodes in your data center.
 
 ### To Attach the Outer and Inner Rails
-**Note:** Because the left and right rails of your nodes are identical, the words **FRONT** and **BACK** might appear upside down.
+{% include note.html content="Because the left and right rails of your nodes are identical, the words **FRONT** and **BACK** might appear upside down." %}
 
 * Each *outer rail* comes as two connected pieces and attaches to your server rack.
 * Each *inner rail* comes as two separate pieces and attaches to the node chassis.
@@ -167,7 +167,7 @@ This section describes how to use the outside and inside rails of your Supermicr
 
 1. Snap the inner rails to the chassis and secure them using two screws on each side, near the middle of the chassis.
 
-   **Note:** First attach the front inner rails, then the back inner rails.
+   {% include note.html content="First attach the front inner rails, then the back inner rails." %}
 
    ![Attach the Inner Rail to the Chassis Using Screws](supermicro/images/supermicro-inner-rail-attach-to-chassis-with-screws.png)
 
@@ -188,7 +188,7 @@ This section describes how to use the outside and inside rails of your Supermicr
 ## Step 2: Wiring Your Nodes
 This section describes how to wire the remote access, network, and power ports of your Supermicro All-NVMe node.
 
-**Note:** The two Ethernet ports on the back of your node (to the right of the USB ports) are unused.
+{% include note.html content="The two Ethernet ports on the back of your node (to the right of the USB ports) are unused." %}
 
 ### Connecting the Out-of-Band Management (IPMI) Port
 The dedicated out-of-band management port allows functionality such as remote display, control, and power (similar to HPE iLO). The port uses the Intelligent Platform Management Interface (IPMI) protocol. First, connect the IPMI port first on the back of your node (above the USB ports).
@@ -235,7 +235,7 @@ To perform a clean installation of Qumulo Core on your node, you must create a Q
    dd if=/path-to-image-file/ of=/dev/rdisk2 bs=2m
    ```
 
-   **Note:** If you encounter an **Operation not permitted** error, navigate to **System Preferences > Security & Privacy**, on the **Privacy** tab grant **Full Disk Access** to Terminal, restart Terminal, and then try the command again. When finished, remove **Full Disk Access** from Terminal.
+   {% include note.html content="If you encounter an **Operation not permitted** error, navigate to **System Preferences > Security & Privacy**, on the **Privacy** tab grant **Full Disk Access** to Terminal, restart Terminal, and then try the command again. When finished, remove **Full Disk Access** from Terminal." %}
 
 1. Eject your Qumulo Core USB Drive Installer, for example:
 
@@ -368,7 +368,7 @@ Not fixable issues were detected.
 #### Performing the Part Replacement Procedure Using the FVT
 When you replace a component of your node (such as the motherboard or an NIC card), you must ensure that the firmware version and configuration are correct for your new components. To do this, you must perform the part replacement procedure using the FVT.
 
-**Note:** Before you replace the motherboard, you must request a new DCMS license key from Supermicro and apply it before you run the FVT. (The license key uses the BMC MAC address which changes with the motherboard.) For more information, see [Data Center Management Suite (DCMS) Licenses](#data-center-management-suite-dcms-licenses).
+{% include note.html content="Before you replace the motherboard, you must request a new DCMS license key from Supermicro and apply it before you run the FVT. (The license key uses the BMC MAC address which changes with the motherboard.) For more information, see [Data Center Management Suite (DCMS) Licenses](#data-center-management-suite-dcms-licenses)." %}
 
 1. [Boot using the latest version of the Qumulo Core USB Drive Installer](#running-the-field-verification-tool-fvt-and-installing-qumulo-core).
 
@@ -401,7 +401,7 @@ When you replace a component of your node (such as the motherboard or an NIC car
    >
    ```
 
-**Note:** In some cases, after the part replacement procedure, the message `FIX: Run the FVT flash command.` appears. Enter `1` as you would for a [fixable issue](#fixable-issues) to reboot the node and then repeat the part replacement procedure.
+{% include note.html content="In some cases, after the part replacement procedure, the message `FIX: Run the FVT flash command.` appears. Enter `1` as you would for a [fixable issue](#fixable-issues) to reboot the node and then repeat the part replacement procedure." %}
 
 
 ## Step 4: Creating a Qumulo Cluster
@@ -596,7 +596,7 @@ Don't update your node firmware unless a Qumulo representative instructs you to 
 #### USB Drive Boot Priority
 Supermicro All-NVMe nodes don't have the option to always boot from a USB drive if one is present. To boot from a USB drive, press **F11** when booting and select the USB drive from the menu. For more information, see [Running the Field Verification Tool (FVT) and Installing Qumulo Core](#running-the-field-verification-tool-fvt-and-installing-qumulo-core).
 
-**Note:** The setting is persistent: when you boot from a USB drive once, the node will continue boot from the USB drive. Remove the USB drive from the node after Qumulo Core is installed.
+{% include note.html content="The setting is persistent: when you boot from a USB drive once, the node will continue boot from the USB drive. Remove the USB drive from the node after Qumulo Core is installed." %}
 
 #### Fast Drive Hot-Swapping
 If you remove and reinsert a drive extremely quickly (faster than one second), the baseboard management controller (BMC) does not recognize the drive and the activity LEDs do not return to their normal states. To resolve this issue, remove the drive, wait five seconds, and then reinsert it.

@@ -19,7 +19,7 @@ This section explains how you can replace the chassis in C-192T and C-432T nodes
 Before you begin, ensure that you have C-192T or C-432T hardware and the replacement chassis.
 
 ## Step 1: To Prepare for Chassis Replacement
-**Note:** We strongly suggest having another person help you with this process.
+{% include note.html content="We strongly suggest having another person help you with this process." %}
 
 1. To shut down the node, use the power button at the front or connect using SSH and run the `sudo shutdown -h now` command. 
 

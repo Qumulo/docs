@@ -47,11 +47,9 @@ The guide describes how a Shift-From relationship works and includes information
 
   * `PRIVILEGE_REPLICATION_OBJECT_READ`: This privilege is required to view the status of a Shift relationship.
 
-  **Notes:**
+  {% include note.html content="* For any changes to take effect, user accounts with newly assigned roles must log out and log back in (or their sessions must time out).
   
-  * For any changes to take effect, user accounts with newly assigned roles must log out and log back in (or their sessions must time out).
-  
-  * Use special care when granting privileges to roles and users because certain privileges (such as replication-write privileges) can use system privileges to overwrite or move data to a location where a user has greater permissions. This can give a user access to all directories and files in a cluster regardless of any specific file and directory settings.
+  * Use special care when granting privileges to roles and users because certain privileges (such as replication-write privileges) can use system privileges to overwrite or move data to a location where a user has greater permissions. This can give a user access to all directories and files in a cluster regardless of any specific file and directory settings." %}
 
 * An existing bucket with contents in Amazon S3
 
@@ -96,7 +94,8 @@ Qumulo Core performs the following steps when it creates a Shift-From relationsh
 
 1. Starts a job using one of the nodes in the Qumulo cluster.
 
-   **Note:** If you perform multiple Shift operations, Qumulo Core uses multiple nodes.
+   {% include note.html content="If you perform multiple Shift operations, Qumulo Core uses multiple nodes." %}
+
 
 1. Lists the contents of the S3 folder and downloads the objects to the specified directory on your Qumulo cluster.
 
@@ -108,11 +107,11 @@ Qumulo Core performs the following steps when it creates a Shift-From relationsh
    https://my-bucket.s3.us-west-2.amazonaws.com/my-folder/my-project/file.txt
    ```
 
-   **Note:** This process doesn't encode or transform your data in any way. Shift-From attempts only to map every S3 object in the specified folder to a file on your Qumulo cluster.
+   {% include note.html content="This process doesn't encode or transform your data in any way. Shift-From attempts only to map every S3 object in the specified folder to a file on your Qumulo cluster." %}
 
 1. Avoids redownloading an unchanged object in a subsequent job by tracking the information about an object and its replicated object.
 
-   **Note:** If you rename or move an object or local file between jobs, or if there are any metadata changes in S3 or Qumulo, the object is replicated again.
+   {% include note.html content="If you rename or move an object or local file between jobs, or if there are any metadata changes in S3 or Qumulo, the object is replicated again." %}
 
 ### Storing and Reusing Relationships
 The Shift-From relationship remains on the Qumulo cluster. You can monitor the completion status of a job, start new jobs for a relationship after the initial job finishes, and delete the relationship (when you no longer need the S3-folder-Qumulo-directory pair). To avoid redownloading objects that a previous copy job downloaded, relationships take up approximately 100 bytes per object. To free this storage, you can delete relationships that you no longer need.

@@ -88,7 +88,7 @@ To prepare this configuration for NFSv4.1, you can do one of the following:
 | `/admin`           | `/home/admin`         |
 
 ### Visibility of IP-Restricted Exports
-**Note:** The names of exports are public to all NFSv4.1 clients, regardless of IP restrictions. You can't disable this behavior.
+{% include note.html content="The names of exports are public to all NFSv4.1 clients, regardless of IP restrictions. You can't disable this behavior." %}
 
 NFSv4.1 respects IP restrictions on exports: only clients with allowed IP addresses can access the contents of an export. However, clients without access to an export can still view the export as a directory when they traverse _above_ exports. The restrictions apply only when a client attempts to access the contents of the export.
 
@@ -102,7 +102,7 @@ The NFSv4.1 protocol requires clients to provide the server with globally unique
 
 
 ## Enabling NFSv4.1 on a Qumulo Cluster
-**Note:** Currently, you can enable NFSv4.1 only using the CLI.
+{% include note.html content="Currently, you can enable NFSv4.1 only using the CLI." %}
 
 You can enable NFSv4.1 on your Qumulo cluster using a single cluster-wide configuration command, for example:
 
@@ -125,7 +125,7 @@ Because Qumulo's NFSv4.1 implementation currently doesn't have full feature pari
 mount -t nfs -o nfsvers=3 your.qumulo.cluster:/mount_path /path/to/mountpoint
 ```
 
-**Note:** We recommend specifying the `nfsvers=4` or `nfsvers=4.1` option for any mounts that use NFSv4.1.
+{% include note.html content="We recommend specifying the `nfsvers=4` or `nfsvers=4.1` option for any mounts that use NFSv4.1." %}
 
 
 ## Checking Whether NFSv4.1 is enabled
