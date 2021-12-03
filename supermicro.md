@@ -246,7 +246,12 @@ To perform a clean installation of Qumulo Core on your node, you must create a Q
 #### To Create a USB Drive Installer on Windows
 To create a USB Drive Installer on Windows, you must use a third-party application such as [Rufus](https://rufus.ie/). We recommend Rufus because it can detect many USB storage devices (rather than only Windows-compatible ones).
 
-{% include important.html content="&bull; We don't recommend using other tools (such as Win32 Disk Imager) because they might encounter errors when unable to recognize the USB drive after writing data to <code>it.</code><br/>&bull; When the operation concludes, you might not be able to view the contents of the USB drive on Windows because the drive will be formatted using a different file system.%}
+{{site.data.alerts.important}}
+<ul>
+  <li>We don't recommend using other tools (such as Win32 Disk Imager) because they might encounter errors when unable to recognize the USB drive after writing data to it.</li>
+  <li>When the operation concludes, you might not be able to view the contents of the USB drive on Windows because the drive will be formatted using a different file system.</li>
+</ul>
+{{site.data.alerts.end}}
 
 1. Press the **Power** button.
 
