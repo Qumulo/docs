@@ -271,7 +271,7 @@ To create a USB Drive Installer on Windows, you must use a third-party applicati
 ### Running the Field Verification Tool (FVT) and Installing Qumulo Core
 The Field Verification Tool (FVT) checks your node, prepares it for Qumulo Core, and installs Qumulo Core.
 
-**Caution:** The FVT erases all data from the node. You must back up any live data on the node before you run the FVT.
+{% include caution.html content="The FVT erases all data from the node. You must back up any live data on the node before you run the FVT." %}
 
 1. When the node powers on and begins to boot, on the **Supermicro** screen, press **F11**. The following message appears:
 
@@ -433,10 +433,10 @@ This section describes how to configure your Supermicro All-NVMe nodes to form a
 1. In the **3. Create a password for your admin account** section, set the password for your administrative account.
 
 ## Replacing Hardware Components
-**Caution:** We strongly recommend engaging an on-site Supermicro engineer to replace failed hardware components including but not limited to any procedure that:
+{% include caution.html content="We strongly recommend engaging an on-site Supermicro engineer to replace failed hardware components including but not limited to any procedure that:
 * This guide doesn't cover
 * You haven't received training on
-* Requires precautions to avoid damage caused by electrostatic discharge (ESD) by using industry standard anti-static equipment (such as gloves or wrist straps)
+* Requires precautions to avoid damage caused by electrostatic discharge (ESD) by using industry standard anti-static equipment (such as gloves or wrist straps)" %}
 
 This section explains the most common scenarios of replacing failed hardware components such as:
 * Drives (excluding boot drives)
@@ -449,7 +449,7 @@ The ten hot-swap drive carriers are located at the front of your Supermicro All-
 
 Replacement drives, including the on-site spare drives that you received with your original nodes, are provided without a drive carrier. When replacing a faulty drive, you must remove the existing drive from its carrier and then insert the new drive into the carriers. The drive carriers are toolless and don't require any screws.
 
-**Caution:** We strongly recommend having a Supermicro engineer perform on-site boot drive replacement.
+{% include caution.html content="We strongly recommend having a Supermicro engineer perform on-site boot drive replacement." %}
 
 1. Locate the drive that requires replacement using the drive bay mapping.
 
@@ -493,9 +493,9 @@ When a PSU fails, the **Info** LED at the front of the node begins to blink red 
 ### To Replace a Fan
 Your Supermicro All-NVMe chassis has six internal fans. When a fan fails, the **Info** LED at the front of the node begins to blink red every second.
 
-**Caution:**
+{% include caution.html content="
 * The fans are not hot-swappable. You must power off the node to replace a fan. However, you may remove the top cover to determine which fan failed.
-* For optimal air circulation, you must always reinstall the top chassis cover. You must never run the node for an extended period of time with the top chassis cover removed.
+* For optimal air circulation, you must always reinstall the top chassis cover. You must never run the node for an extended period of time with the top chassis cover removed." %}
 
 1. Power off the node, remove the top chassis cover, and disconnect the power cords from both PSUs.
 
@@ -514,11 +514,10 @@ Your Supermicro All-NVMe chassis has 16 DIMM slots (8 &#215; 16 GB DIMMs for a t
 
 To identify which DIMM module failed, you must use the baseboard management controller (BMC) on the node or another hardware monitoring solution.
 
-**Caution:**
-* Use extreme caution when handling DIMM modules. Don't touch their metal contacts.
+{% include caution.html content="* Use extreme caution when handling DIMM modules. Don't touch their metal contacts.
 * Never force a DIMM module into a slot. Each DIMM module has a keyed notch which allows the module to be inserted in only one way.
 * DIMM modules are not hot-swappable. You must power off the node to replace a DIMM module.
-* For optimal air circulation, you must always reinstall the top chassis cover. You must never run the node for an extended period of time with the top chassis cover removed.
+* For optimal air circulation, you must always reinstall the top chassis cover. You must never run the node for an extended period of time with the top chassis cover removed." %}
 
 1. Power off the node, remove the top chassis cover, and disconnect the power cords from both PSUs.
 
