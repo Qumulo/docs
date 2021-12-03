@@ -428,7 +428,13 @@ This section describes how to configure your Supermicro All-NVMe nodes to form a
 
 1. Confirm your cluster protection level (how many drive failures Qumulo Core will protect the cluster against). Depending on your cluster size and node types, two-drive or three-drive protection is selected. If **Customize Protection Level** is available, in the **2. Confirm cluster protection level** section, you can choose two-drive protection or three-drive protection.
 
-   {% include important.html content="<ul><li>You can choose your cluster protection level only during cluster creation. You can't change this setting later.</li><li>Choosing protection for more drives decreases your cluster capacity.</li><li>To enable multi-node protection, you must create your cluster using the CLI.</li></ul>" %}
+   {{site.data.alerts.important}}
+   <ul>
+     <li>You can choose your cluster protection level only during cluster creation. You can't change this setting later.</li>
+     <li>Choosing protection for more drives decreases your cluster capacity.</li>
+     <li>To enable multi-node protection, you must create your cluster using the CLI.</li>
+   </ul>
+   {{site.data.alerts.end}}
 
 1. In the **3. Create a password for your admin account** section, set the password for your administrative account.
 
@@ -514,7 +520,14 @@ Your Supermicro All-NVMe chassis has 16 DIMM slots (8 &#215; 16 GB DIMMs for a t
 
 To identify which DIMM module failed, you must use the baseboard management controller (BMC) on the node or another hardware monitoring solution.
 
-{% include caution.html content="<ul><li>Use extreme caution when handling DIMM modules. Don't touch their metal contacts.</li><li>Never force a DIMM module into a slot. Each DIMM module has a keyed notch which allows the module to be inserted in only one way.</li><li>DIMM modules are not hot-swappable. You must power off the node to replace a DIMM module.</li><li>For optimal air circulation, you must always reinstall the top chassis cover. You must never run the node for an extended period of time with the top chassis cover removed.</li></ul>" %}
+{{site.data.alerts.caution}}
+<ul>
+  <li>Use extreme caution when handling DIMM modules. Don't touch their metal contacts.</li>
+  <li>Never force a DIMM module into a slot. Each DIMM module has a keyed notch which allows the module to be inserted in only one way.</li>
+  <li>DIMM modules are not hot-swappable. You must power off the node to replace a DIMM module.</li>
+  <li>For optimal air circulation, you must always reinstall the top chassis cover. You must never run the node for an extended period of time with the top chassis cover removed.</li>
+</ul>
+{{site.data.alerts.end}}
 
 1. Power off the node, remove the top chassis cover, and disconnect the power cords from both PSUs.
 
