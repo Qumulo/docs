@@ -47,11 +47,12 @@ The guide describes how a Shift-To relationship works and includes information a
 
   * `PRIVILEGE_REPLICATION_OBJECT_READ`: This privilege is required to view the status of a Shift relationship.
 
-  **Notes:**
-  
-  * For any changes to take effect, user accounts with newly assigned roles must log out and log back in (or their sessions must time out).
-  
-  * Use special care when granting privileges to roles and users because certain privileges (such as replication-write privileges) can use system privileges to overwrite or move data to a location where a user has greater permissions. This can give a user access to all directories and files in a cluster regardless of any specific file and directory settings.
+  {{site.data.alerts.note}}
+  <ul>
+    <li>For any changes to take effect, user accounts with newly assigned roles must log out and log back in (or their sessions must time out).</li>
+    <li>Use special care when granting privileges to roles and users because certain privileges (such as replication-write privileges) can use system privileges to overwrite or move data to a location where a user has greater permissions. This can give a user access to all directories and files in a cluster regardless of any specific file and directory settings.</li>
+  </ul>
+  {{site.data.alerts.end}}
 
 * An existing bucket with contents in Amazon S3
 
@@ -102,7 +103,7 @@ Qumulo Core performs the following steps when it creates a Shift-To relationship
 
 1. Starts a job using one of the nodes in the Qumulo cluster.
 
-   **Note:** If you perform multiple Shift operations, Qumulo Core uses multiple nodes.
+   {% include note.html content="If you perform multiple Shift operations, Qumulo Core uses multiple nodes." %}
 
 1. To ensure that the copy is point-in-time consistent, takes a temporary snapshot of the directory (for example, named `replication_to_bucket_my_bucket`).
 
@@ -116,7 +117,7 @@ Qumulo Core performs the following steps when it creates a Shift-To relationship
    https://my-bucket.s3.us-west-2.amazonaws.com/my-folder/my-project/file.txt
    ```
 
-   **Note:** This process doesn't encode or transform your data in any way. Shift-To replicates only the data in a regular file's primary stream, excluding alternate data streams and file system metadata such as access control lists (ACLs). To avoid transferring data across the public Internet, a server-side S3 copy operation also copies any hard links to files in the replication local directory to S3 as full copies of objects, with identical contents and metadata.
+   {% include note.html content="This process doesn't encode or transform your data in any way. Shift-To replicates only the data in a regular file's primary stream, excluding alternate data streams and file system metadata such as access control lists (ACLs). To avoid transferring data across the public Internet, a server-side S3 copy operation also copies any hard links to files in the replication local directory to S3 as full copies of objects, with identical contents and metadata." %}
 
    The following table explains how entities in the Qumulo file system map to entities in an S3 bucket.
 
@@ -136,7 +137,7 @@ Qumulo Core performs the following steps when it creates a Shift-To relationship
    
 1. Checks whether a file is already replicated. If the object exists in the remote S3 bucket, and neither the file nor the object are modified since the last successful replication, its data is not retransferred to S3.
 
-   **Note:** Shift never deletes files in the remote S3 folder, even if the files are removed from the local directory since the last replication.
+   {% include note.html content="Shift never deletes files in the remote S3 folder, even if the files are removed from the local directory since the last replication." %}
 
 1. Deletes the temporary snapshot.
 

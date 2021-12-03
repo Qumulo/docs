@@ -74,7 +74,7 @@ On the front, right side of your node, there are five LEDs.
 | Disk Activity | 🟡 (solid yellow)      | On or blinking                              |
 | Power         | 🟢 (solid green)       | On                                          |
 
-**Note:** During normal operation, the **Lan B** LED might appear to be lit slightly when the **Disk Activity** LED is on.
+{% include note.html content="During normal operation, the **Lan B** LED might appear to be lit slightly when the **Disk Activity** LED is on." %}
 
 On the back of your node, LAN LEDs are located behind the vent holes on the NIC. Each port has one light. Network traffic *doesn't* affect the speed of the light's blinking.
 
@@ -93,7 +93,7 @@ Your node contains slots for 10 drives and one boot drive (in an internal M.2 sl
 This section explains the networking prerequisites, outlines the recommended networking configuration, and explains how you can connect to redundant switches or to a single switch.
 
 ### Networking Prerequisites
-**Important:** Before you create your Qumulo cluster, you must configure all switch ports connected to the back-end NIC to have at least 9,000 MTU, with Jumbo Frames enabled.
+{% include important.html content="Before you create your Qumulo cluster, you must configure all switch ports connected to the back-end NIC to have at least 9,000 MTU, with Jumbo Frames enabled." %}
 
 Your node requires the following resources.
 * A network switch with the following specifications:
@@ -106,7 +106,7 @@ Your node requires the following resources.
 * One static IP per node, per defined VLAN
 
 ### Recommended Networking Configuration
-**Important:** We don't recommend connecting to a single back-end NIC port because the node will become unavailable if the single connection fails.
+{% include important.html content="We don't recommend connecting to a single back-end NIC port because the node will become unavailable if the single connection fails." %}
 
 The Supermicro All-NVMe platform uses a networking configuration in which different NICs handle back-end and front-end traffic. You can connect the front-end and back-end NICs to the same switch or to different switches. However, for greater reliability, we recommend connecting all four 100 Gbps ports on every node: connect both front-end NIC ports to the front-end switch and both back-end NIC ports to the back-end switch.
 
@@ -150,12 +150,12 @@ You can connect a Supermicro All-NVMe cluster to a single switch. If this switch
 
 
 ## Step 1: Racking Your Nodes
-**Tip:** You can use the following instructions to add new nodes after your initial cluster deployment.
+{% include tip.html content="You can use the following instructions to add new nodes after your initial cluster deployment." %}
 
 This section describes how to use the outside and inside rails of your Supermicro All-NVMe node and how to rack your nodes in your data center.
 
 ### To Attach the Outer and Inner Rails
-**Note:** Because the left and right rails of your nodes are identical, the words **FRONT** and **BACK** might appear upside down.
+{% include note.html content="Because the left and right rails of your nodes are identical, the words **FRONT** and **BACK** might appear upside down." %}
 
 * Each *outer rail* comes as two connected pieces and attaches to your server rack.
 * Each *inner rail* comes as two separate pieces and attaches to the node chassis.
@@ -167,7 +167,7 @@ This section describes how to use the outside and inside rails of your Supermicr
 
 1. Snap the inner rails to the chassis and secure them using two screws on each side, near the middle of the chassis.
 
-   **Note:** First attach the front inner rails, then the back inner rails.
+   {% include note.html content="First attach the front inner rails, then the back inner rails." %}
 
    ![Attach the Inner Rail to the Chassis Using Screws](supermicro/images/supermicro-inner-rail-attach-to-chassis-with-screws.png)
 
@@ -188,7 +188,7 @@ This section describes how to use the outside and inside rails of your Supermicr
 ## Step 2: Wiring Your Nodes
 This section describes how to wire the remote access, network, and power ports of your Supermicro All-NVMe node.
 
-**Note:** The two Ethernet ports on the back of your node (to the right of the USB ports) are unused.
+{% include note.html content="The two Ethernet ports on the back of your node (to the right of the USB ports) are unused." %}
 
 ### Connecting the Out-of-Band Management (IPMI) Port
 The dedicated out-of-band management port allows functionality such as remote display, control, and power (similar to HPE iLO). The port uses the Intelligent Platform Management Interface (IPMI) protocol. First, connect the IPMI port first on the back of your node (above the USB ports).
@@ -202,7 +202,7 @@ After you connect the IPMI port, connect your front-end and back-end 100 Gbps po
 | Bottom row            | 2 (eth5), 1 (eth4) | Back end   | Communication between nodes |
 
 ### Connecting the Power
-**Important:** Make sure that the voltages for both power supply units (PSUs) are the same (for example, both at 115 V or both at 208 V).
+{% include important.html content="Make sure that the voltages for both power supply units (PSUs) are the same (for example, both at 115 V or both at 208 V)." %}
 
 After you connect your 100 Gbps ports, connect power to the node. There are two power sockets on the back of your node. To maximize redundancy, connect each PSU to a separate power supply or power distribution unit (PDU).
 
@@ -235,7 +235,7 @@ To perform a clean installation of Qumulo Core on your node, you must create a Q
    dd if=/path-to-image-file/ of=/dev/rdisk2 bs=2m
    ```
 
-   **Note:** If you encounter an **Operation not permitted** error, navigate to **System Preferences > Security & Privacy**, on the **Privacy** tab grant **Full Disk Access** to Terminal, restart Terminal, and then try the command again. When finished, remove **Full Disk Access** from Terminal.
+   {% include note.html content="If you encounter an **Operation not permitted** error, navigate to **System Preferences > Security & Privacy**, on the **Privacy** tab grant **Full Disk Access** to Terminal, restart Terminal, and then try the command again. When finished, remove **Full Disk Access** from Terminal." %}
 
 1. Eject your Qumulo Core USB Drive Installer, for example:
 
@@ -246,9 +246,12 @@ To perform a clean installation of Qumulo Core on your node, you must create a Q
 #### To Create a USB Drive Installer on Windows
 To create a USB Drive Installer on Windows, you must use a third-party application such as [Rufus](https://rufus.ie/). We recommend Rufus because it can detect many USB storage devices (rather than only Windows-compatible ones).
 
-**Important:**
-* We don't recommend using other tools (such as Win32 Disk Imager) because they might encounter errors when unable to recognize the USB drive after writing data to it.
-* When the operation concludes, you might not be able to view the contents of the USB drive on Windows because the drive will be formatted using a different file system.
+{{site.data.alerts.important}}
+<ul>
+  <li>We don't recommend using other tools (such as Win32 Disk Imager) because they might encounter errors when unable to recognize the USB drive after writing data to it.</li>
+  <li>When the operation concludes, you might not be able to view the contents of the USB drive on Windows because the drive will be formatted using a different file system.</li>
+</ul>
+{{site.data.alerts.end}}
 
 1. Press the **Power** button.
 
@@ -271,7 +274,7 @@ To create a USB Drive Installer on Windows, you must use a third-party applicati
 ### Running the Field Verification Tool (FVT) and Installing Qumulo Core
 The Field Verification Tool (FVT) checks your node, prepares it for Qumulo Core, and installs Qumulo Core.
 
-**Caution:** The FVT erases all data from the node. You must back up any live data on the node before you run the FVT.
+{% include caution.html content="The FVT erases all data from the node. You must back up any live data on the node before you run the FVT." %}
 
 1. When the node powers on and begins to boot, on the **Supermicro** screen, press **F11**. The following message appears:
 
@@ -368,7 +371,7 @@ Not fixable issues were detected.
 #### Performing the Part Replacement Procedure Using the FVT
 When you replace a component of your node (such as the motherboard or an NIC card), you must ensure that the firmware version and configuration are correct for your new components. To do this, you must perform the part replacement procedure using the FVT.
 
-**Note:** Before you replace the motherboard, you must request a new DCMS license key from Supermicro and apply it before you run the FVT. (The license key uses the BMC MAC address which changes with the motherboard.) For more information, see [Data Center Management Suite (DCMS) Licenses](#data-center-management-suite-dcms-licenses).
+{% include note.html content="Before you replace the motherboard, you must request a new DCMS license key from Supermicro and apply it before you run the FVT. (The license key uses the BMC MAC address which changes with the motherboard.) For more information, see [Data Center Management Suite (DCMS) Licenses](#data-center-management-suite-dcms-licenses)." %}
 
 1. [Boot using the latest version of the Qumulo Core USB Drive Installer](#running-the-field-verification-tool-fvt-and-installing-qumulo-core).
 
@@ -401,7 +404,7 @@ When you replace a component of your node (such as the motherboard or an NIC car
    >
    ```
 
-**Note:** In some cases, after the part replacement procedure, the message `FIX: Run the FVT flash command.` appears. Enter `1` as you would for a [fixable issue](#fixable-issues) to reboot the node and then repeat the part replacement procedure.
+{% include note.html content="In some cases, after the part replacement procedure, the message `FIX: Run the FVT flash command.` appears. Enter `1` as you would for a [fixable issue](#fixable-issues) to reboot the node and then repeat the part replacement procedure." %}
 
 
 ## Step 4: Creating a Qumulo Cluster
@@ -425,18 +428,21 @@ This section describes how to configure your Supermicro All-NVMe nodes to form a
 
 1. Confirm your cluster protection level (how many drive failures Qumulo Core will protect the cluster against). Depending on your cluster size and node types, two-drive or three-drive protection is selected. If **Customize Protection Level** is available, in the **2. Confirm cluster protection level** section, you can choose two-drive protection or three-drive protection.
 
-   **Important:**
-   * You can choose your cluster protection level only during cluster creation. You can't change this setting later.
-   * Choosing protection for more drives decreases your cluster capacity.
-   * To enable multi-node protection, you must create your cluster using the CLI.
+   {{site.data.alerts.important}}
+   <ul>
+     <li>You can choose your cluster protection level only during cluster creation. You can't change this setting later.</li>
+     <li>Choosing protection for more drives decreases your cluster capacity.</li>
+     <li>To enable multi-node protection, you must create your cluster using the CLI.</li>
+   </ul>
+   {{site.data.alerts.end}}
 
 1. In the **3. Create a password for your admin account** section, set the password for your administrative account.
 
 ## Replacing Hardware Components
-**Caution:** We strongly recommend engaging an on-site Supermicro engineer to replace failed hardware components including but not limited to any procedure that:
+{% include caution.html content="We strongly recommend engaging an on-site Supermicro engineer to replace failed hardware components including but not limited to any procedure that:
 * This guide doesn't cover
 * You haven't received training on
-* Requires precautions to avoid damage caused by electrostatic discharge (ESD) by using industry standard anti-static equipment (such as gloves or wrist straps)
+* Requires precautions to avoid damage caused by electrostatic discharge (ESD) by using industry standard anti-static equipment (such as gloves or wrist straps)" %}
 
 This section explains the most common scenarios of replacing failed hardware components such as:
 * Drives (excluding boot drives)
@@ -449,7 +455,7 @@ The ten hot-swap drive carriers are located at the front of your Supermicro All-
 
 Replacement drives, including the on-site spare drives that you received with your original nodes, are provided without a drive carrier. When replacing a faulty drive, you must remove the existing drive from its carrier and then insert the new drive into the carriers. The drive carriers are toolless and don't require any screws.
 
-**Caution:** We strongly recommend having a Supermicro engineer perform on-site boot drive replacement.
+{% include caution.html content="We strongly recommend having a Supermicro engineer perform on-site boot drive replacement." %}
 
 1. Locate the drive that requires replacement using the drive bay mapping.
 
@@ -493,9 +499,9 @@ When a PSU fails, the **Info** LED at the front of the node begins to blink red 
 ### To Replace a Fan
 Your Supermicro All-NVMe chassis has six internal fans. When a fan fails, the **Info** LED at the front of the node begins to blink red every second.
 
-**Caution:**
+{% include caution.html content="
 * The fans are not hot-swappable. You must power off the node to replace a fan. However, you may remove the top cover to determine which fan failed.
-* For optimal air circulation, you must always reinstall the top chassis cover. You must never run the node for an extended period of time with the top chassis cover removed.
+* For optimal air circulation, you must always reinstall the top chassis cover. You must never run the node for an extended period of time with the top chassis cover removed." %}
 
 1. Power off the node, remove the top chassis cover, and disconnect the power cords from both PSUs.
 
@@ -514,11 +520,14 @@ Your Supermicro All-NVMe chassis has 16 DIMM slots (8 &#215; 16 GB DIMMs for a t
 
 To identify which DIMM module failed, you must use the baseboard management controller (BMC) on the node or another hardware monitoring solution.
 
-**Caution:**
-* Use extreme caution when handling DIMM modules. Don't touch their metal contacts.
-* Never force a DIMM module into a slot. Each DIMM module has a keyed notch which allows the module to be inserted in only one way.
-* DIMM modules are not hot-swappable. You must power off the node to replace a DIMM module.
-* For optimal air circulation, you must always reinstall the top chassis cover. You must never run the node for an extended period of time with the top chassis cover removed.
+{{site.data.alerts.caution}}
+<ul>
+  <li>Use extreme caution when handling DIMM modules. Don't touch their metal contacts.</li>
+  <li>Never force a DIMM module into a slot. Each DIMM module has a keyed notch which allows the module to be inserted in only one way.</li>
+  <li>DIMM modules are not hot-swappable. You must power off the node to replace a DIMM module.</li>
+  <li>For optimal air circulation, you must always reinstall the top chassis cover. You must never run the node for an extended period of time with the top chassis cover removed.</li>
+</ul>
+{{site.data.alerts.end}}
 
 1. Power off the node, remove the top chassis cover, and disconnect the power cords from both PSUs.
 
@@ -596,7 +605,7 @@ Don't update your node firmware unless a Qumulo representative instructs you to 
 #### USB Drive Boot Priority
 Supermicro All-NVMe nodes don't have the option to always boot from a USB drive if one is present. To boot from a USB drive, press **F11** when booting and select the USB drive from the menu. For more information, see [Running the Field Verification Tool (FVT) and Installing Qumulo Core](#running-the-field-verification-tool-fvt-and-installing-qumulo-core).
 
-**Note:** The setting is persistent: when you boot from a USB drive once, the node will continue boot from the USB drive. Remove the USB drive from the node after Qumulo Core is installed.
+{% include note.html content="The setting is persistent: when you boot from a USB drive once, the node will continue boot from the USB drive. Remove the USB drive from the node after Qumulo Core is installed." %}
 
 #### Fast Drive Hot-Swapping
 If you remove and reinsert a drive extremely quickly (faster than one second), the baseboard management controller (BMC) does not recognize the drive and the activity LEDs do not return to their normal states. To resolve this issue, remove the drive, wait five seconds, and then reinsert it.
