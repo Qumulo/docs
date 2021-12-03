@@ -47,9 +47,7 @@ The guide describes how a Shift-To relationship works and includes information a
 
   * `PRIVILEGE_REPLICATION_OBJECT_READ`: This privilege is required to view the status of a Shift relationship.
 
-  {% include note.html content="* For any changes to take effect, user accounts with newly assigned roles must log out and log back in (or their sessions must time out).
-  
-  * Use special care when granting privileges to roles and users because certain privileges (such as replication-write privileges) can use system privileges to overwrite or move data to a location where a user has greater permissions. This can give a user access to all directories and files in a cluster regardless of any specific file and directory settings." %}
+  {% include note.html content="<ul><li>For any changes to take effect, user accounts with newly assigned roles must log out and log back in (or their sessions must time out).</li><li>Use special care when granting privileges to roles and users because certain privileges (such as replication-write privileges) can use system privileges to overwrite or move data to a location where a user has greater permissions. This can give a user access to all directories and files in a cluster regardless of any specific file and directory settings.</li></ul>" %}
 
 * An existing bucket with contents in Amazon S3
 
