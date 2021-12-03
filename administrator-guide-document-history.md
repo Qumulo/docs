@@ -1,8 +1,8 @@
 ---
 title: Qumulo Administrator Guide Document History
 permalink: administrator-guide-document-history.html
-search: exclude
 sidebar: administrator_guide_sidebar
+search: exclude
 ---
 
 The following table lists changes to the _Qumulo Administrator Guide_.

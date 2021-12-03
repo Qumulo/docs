@@ -1,6 +1,8 @@
 ---
 title: Replacing the Chassis of C-192T and C-432T Nodes
 permalink: c-192t-c-432t-chassis-replacement.html
+preamble: This topic explains how you can replace the chassis in C-192T and C-432T nodes.
+sidebar: administrator_guide_sidebar
 tags:
   - chassis
   - chassis_replacement
@@ -9,7 +11,6 @@ tags:
   - 2u
   - 2u_hybrid
   - 2u_chassis_replacement
-sidebar: administrator_guide_sidebar
 ---
 
 This section explains how you can replace the chassis in C-192T and C-432T nodes. 

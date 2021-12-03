@@ -1,6 +1,7 @@
 ---
 title: Qumulo on Azure as a Service Getting Started Guide
 permalink: azure.html
+preamble: This quide is a supplement to the Qumulo Getting Started guide, where configuration steps and best practices differ from those we recommend for other platforms.
 tags:
   - getting_started_guide 
   - azure
