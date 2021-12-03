@@ -1,6 +1,7 @@
 ---
 title: Qumulo on Supermicro A+ WIO 1114S-WN10RT Getting Started Guide
 permalink: supermicro.html
+preamble: This guide is intended for system administrators, professional service providers, and colleagues in your organization who are responsible for installing and configuring server hardware.
 tags:
   - getting_started_guide 
   - supermicro

@@ -1,5 +1,6 @@
 ---
 title: Qumulo Documentation
+preamble: The Qumulo Documentation Portal is an initiative that uses docs-as-code principles to provide information about Qumulo features, functionality, and administration.
 permalink: index.html
 tags:
   - home_page
