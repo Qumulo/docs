@@ -1,5 +1,5 @@
 ---
-title: Configuring Prometheus and Grafana to use the Qumulo Metrics API
+title: Configuring Prometheus and Grafana to Use the Qumulo Metrics API
 permalink: configuring-prometheus-grafana-metrics-api.html
 tags:
   - metrics
