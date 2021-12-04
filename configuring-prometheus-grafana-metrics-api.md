@@ -91,17 +91,19 @@ The following examples show basic graphing and alerting configurations.
 ### To Create a Throughput Graph
 This example explains how you can configure a Grafana graph to show total read and write throughput across your cluster.
 
-1. In Grafana, click **+** and then click **Create Dashboard**.
+1. In Grafana, do one of the following:
 
-   If you already have a dashboard, at the top right click **Add Panel**.
+   * If you don't have a dashboard, click **+ > Create Dashboard**.
 
-1. Click **Add Query** and then select the data source for your cluster from the list next to **Query**.
+   * If you already have a dashboard, at the top right click **Add Panel**.
+
+1. Click **Add Query** and then, from the list next to **Query**, select the data source for your cluster.
 
 1. For **Enter a PromQL query**, enter `sum by (protocol, io_type) (rate(qumulo_protocol_bytes[1m]))`.
 
-   This query retrieves the throughput rate over a one-minute period, and the sum across the `protocol` and `io_type` tags. For information about writing PromQL queries, see the [Querying Prometheus](https://prometheus.io/docs/prometheus/latest/querying/basics/) in the Prometheus documentation.
+   This query retrieves the throughput rate over a one-minute period, and the sum across the `protocol` and `io_type` tags. For information about writing PromQL queries, see [Querying Prometheus](https://prometheus.io/docs/prometheus/latest/querying/basics/) in the Prometheus documentation.
 
-1. To label each time series on the graph by `protocol` and `io_type`, for **Legend** enter `{{protocol}}: {{io_type}}`.
+1. To label each time series on the graph by `protocol` and `io_type`, enter `{{protocol}}: {{io_type}}` for **Legend**.
 
 1. On the left menu, click **Visualization** and in the **Axes** section, under **Left Y**, do the following:
 
@@ -119,12 +121,12 @@ This example explains how you can configure a Grafana graph to show total read a
 
    ![Example Throughput Graph](administrator-guide/images/prometheus-grafana-setup-example-throughput-graph.png)
 
-1. (Optional) To see a smaller time scale of your data, at the top right click **Last 6 hours** and set it to a smaller vallue, for example 15 minutes.
+1. (Optional) To see a smaller time scale of your data, at the top right click **Last 6 hours** and set it to a smaller value, for example 15 minutes.
 
 For more information about dashboards, panels, and other visualizations, see the [Grafana documentation](https://grafana.com/docs/grafana/latest/).
 
 ### To Create an Alert for an Offline Node
-An offline node creates risks of additional failures that can cause reduced performance, inability to write to the cluster, or take the entire cluster offline. This example explains how you can receive an alert when a node in a cluster is offline. For more information, see [Create Alerts](https://grafana.com/docs/grafana/latest/alerting/old-alerting/create-alerts/) and [Legacy Grafana Alerts](https://grafana.com/docs/grafana/latest/alerting/old-alerting/) in the Grafana documentation.
+An offline node creates a risk of additional failures that can cause reduced performance, inability to write to the cluster, or take the entire cluster offline. This example explains how you can receive an alert when a node in a cluster goes offline. For more information, see [Create Alerts](https://grafana.com/docs/grafana/latest/alerting/old-alerting/create-alerts/) and [Legacy Grafana Alerts](https://grafana.com/docs/grafana/latest/alerting/old-alerting/) in the Grafana documentation.
 
 1. Configure a graph for the `qumulo_quorum_node_is_offline` metric.
 
@@ -142,7 +144,7 @@ An offline node creates risks of additional failures that can cause reduced perf
 
 1. To receive alarms about transient issues (such as networking blips that can temporarily take a node offline), set **For** to `5m`.
 
-   When an event triggers an alarm is initially, the alarm's state is `Pending`. When the alarm has been triggered for five minutes, its state changes to `Alerting` and Grafana sends notifications.
+   When an event triggers an alarm, the alarm's initial state is `Pending`. When the alarm has been triggered for five minutes, its state changes to `Alerting` and Grafana sends out notifications.
 
 1. To trigger the alarm when any node goes offline for one minute, set the following condition:
 
@@ -150,22 +152,22 @@ An offline node creates risks of additional failures that can cause reduced perf
 
 1. To avoid a scenario in which an alarm might not go off when the OpenMetrics API is unable to output any metrics if your cluster goes offline entirely, set **If no data or all values are null** and **If execution error or timeout** to **SET STATE TO Alerting**.
 
-1. In the **Notifications** section, click the **+** next to **Send to**, and select a notification channel for the alerts to be sent to.
+1. In the **Notifications** section, click the **+** next to **Send to**, and select a notification channel for sending out alerts.
 
-1. In the **Message** box, enter `Node ${node_id} is offline!`.
+1. For **Message**, enter `Node ${node_id} is offline.`.
 
 1. To test the alert, click **Test Alert**.
 
 1. Click ![Grafana Save Icon](administrator-guide/images/grafana-save-icon.png).
 
 ### To Create an Alert for a Full Cluster
-It is important for an administrator to know how much free space is left on a cluster. This example explains how you can configure a graph to show how full the cluster is and to receive an alert when your cluster is almost full. For more information, see [Create Alerts](https://grafana.com/docs/grafana/latest/alerting/old-alerting/create-alerts/) and [Legacy Grafana Alerts](https://grafana.com/docs/grafana/latest/alerting/old-alerting/) in the Grafana documentation.
+It is important for an administrator to know how much free space is left on a cluster. This example explains how you can configure a graph to show how full the cluster is and to receive an alert when your cluster becomes almost full. For more information, see [Create Alerts](https://grafana.com/docs/grafana/latest/alerting/old-alerting/create-alerts/) and [Legacy Grafana Alerts](https://grafana.com/docs/grafana/latest/alerting/old-alerting/) in the Grafana documentation.
 
 1. Configure a graph for used space. Use the example in the [To Create a Throughput Graph](#to-create-a-throughput-graph) section and replace the query with `1 - qumulo_free_bytes / qumulo_capacity_bytes`.
    
    This graph shows the amount of used space on the cluster as a percentage of total capacity. An empty cluster shows 0% used space and a full cluster shows 100%.
 
-1. On the left menu, click **Visualization** and in the **Left Y** section, under **Unit** click **percent (0.0-1.0)**.
+1. On the left menu, click **Visualization** and in the **Left Y** section, under **Unit**, click **percent (0.0-1.0)**.
 
 1. Set **Y-min** to `0` and **Y-max** to `1`.
 
@@ -175,15 +177,15 @@ It is important for an administrator to know how much free space is left on a cl
 
 1. To receive alarms about transient issues (such as networking blips that can temporarily take a node offline), set **For** to `5m`.
 
-   When an event triggers an alarm is initially, the alarm's state is `Pending`. When the alarm has been triggered for five minutes, its state changes to `Alerting` and Grafana sends notifications.
+   When an event triggers an alarm, the alarm's initial state is `Pending`. When the alarm has been triggered for five minutes, its state changes to `Alerting` and Grafana sends out notifications.
 
 1. To trigger the alarm when you cluster averages less than 10% of free space over the period specified in the **For** field, set the following condition:
 
    **WHEN** `avg()` **OF** `query (A, 5m, now)` **IS BELOW** `.10`
 
-1. In the **Notifications** section, click the **+** next to **Send to**, and select a notification channel for the alerts to be sent to.
+1. In the **Notifications** section, click the **+** next to **Send to**, and select a notification channel for sending out alerts.
 
-1. In the **Message** box, enter `Cluster is almost full.`.
+1. For **Message**, enter `The cluster is almost full.`.
 
 1. To test the alert, click **Test Alert**.
 
