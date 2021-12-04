@@ -17,7 +17,7 @@ This section describes how you can configure Prometheus&mdash;an open-source tim
 
 
 ## Installing and Configuring Prometheus
-You can install Prometheus in different ways. The simplest installation requires uploading a file to your server.
+The following steps explain how you can install and configure Prometheus.
 
 1. Download the `.tar.gz` file from the [Prometheus download page](https://prometheus.io/download/#prometheus).
 
@@ -29,7 +29,7 @@ You can install Prometheus in different ways. The simplest installation requires
    $ tar xvfz prometheus-*.tar.gz
    ```
 
-1. For information about installing Prometheus, and for installation options, see [Installation](https://prometheus.io/docs/prometheus/latest/installation/) in the Prometheus documentation.
+1. For instructions on installing Prometheus, and for installation options, see [Installation](https://prometheus.io/docs/prometheus/latest/installation/) in the Prometheus documentation.
 
 1. To configure Prometheus, edit the `prometheus.yml` file in your directory and replace the configuration in the file with the following template.
 
@@ -78,14 +78,13 @@ Prometheus is running on your server and connected to your cluster.
 
 
 ## Installing and Configuring Grafana
+The following steps explain how you can install Grafana and configure it to connect to Prometheus.
 
-Follow the steps below to install Grafana and configure it to connect to Prometheus.
+1. For installation on installing Grafana, see [Install Grafana](https://grafana.com/docs/grafana/latest/installation/) in the Grafana documentation.
 
-1. [Install Grafana](https://grafana.com/docs/grafana/latest/installation/) using the instructions in the Grafana documentation.
+1. For instructions on creating a Prometheus data source, see [Creating a Prometheus Data Source](https://prometheus.io/docs/visualization/grafana/#creating-a-prometheus-data-source) in the Prometheus documentation.
 
-1. [Create a Prometheus data source](https://prometheus.io/docs/visualization/grafana/#creating-a-prometheus-data-source) using the Grafana Support for Prometheus page in the Prometheus documentation.
-
-1. If you want to use alerts, set up a notification channel using the [Alert Notifications](https://grafana.com/docs/grafana/latest/alerting/old-alerting/notifications/) page in the Grafana documentation.
+1. To use alerts, you must configure a notification channel. For instructions, see [Alert Notifications](https://grafana.com/docs/grafana/latest/alerting/old-alerting/notifications/) in the Grafana documentation.
 
 The following examples show basic graphing and alerting configurations.
 
