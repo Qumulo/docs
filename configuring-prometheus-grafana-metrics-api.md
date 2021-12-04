@@ -11,28 +11,27 @@ sidebar: administrator_guide_sidebar
 
 {% include content-reuse/openmetrics-api-introduction.md %}
 
-This section describes how you can configure Prometheus (an open-source time-series database and collection system) to connect to the Qumulo API and poll its data at regular intervals. It also describes how you can use Grafana (an open-source analytics tool) to create dashboards with graphs and data that you can use to monitor the health of your Qumulo cluster, generate alerts, and improve your capacity statistics.
+This section describes how you can configure Prometheus&mdash;an open-source time-series database and collection system&mdash;to connect to the Qumulo API and poll its data at regular intervals. It also describes how you can use Grafana&mdash;an open-source analytics tool&mdash;to create dashboards with graphs and data that you can use to monitor the health of your Qumulo cluster, generate alerts, and improve your capacity statistics.
 
 {% include important.html content="To use the OpenMetrics API, you you must configure your cluster to emit metrics without authentication. If your cluster isn't configured for this, open a request at [Qumulo Care](https://care.qumulo.com/hc/en-us/requests/new)." %}
 
+
 ## Installing and Configuring Prometheus
-There are a number of ways to install Prometheus, the simplest is to download an executable to a server.
+You can install Prometheus in different ways. The simplest installation requires uploading a file to your server.
 
-1. Download Prometheus from the [downloads page](https://prometheus.io/download/#prometheus).
+1. Download the `.tar.gz` file from the [Prometheus download page](https://prometheus.io/download/#prometheus).
 
-    - Choose the version that does not have "beta" in the name.
+   {% include tip.html content="Choose a non-beta version for the operating system on the server that Prometheus will run on." %}
 
-    - Choose the version for the operating system of the server you will be running Prometheus on.
+1. Upload the archive file to your server and extract the file to a directory, for example:
 
-1. If you did not download the folder directly to the server where you want to run Prometheus, move it there before continuing.
+   ```bash
+   $ tar xvfz prometheus-*.tar.gz
+   ```
 
-1. Extract the downloaded folder. On Linux, navigate to the directory that Prometheus was downloaded to, and use the following command: `tar xvfz prometheus-*.tar.gz`
+1. For information about installing Prometheus, and for installation options, see [Installation](https://prometheus.io/docs/prometheus/latest/installation/) in the Prometheus documentation.
 
-For more information about installing Prometheus, or for other installation options, see [Installation](https://prometheus.io/docs/prometheus/latest/installation/) in the Prometheus documentation.
-
-You can configure Prometheus by editing the `prometheus.yml` file found within the Prometheus folder that was just extracted.
-
-1. Replace the configuration in the file using the following template.
+1. To configure Prometheus, edit the `prometheus.yml` file in your directory and replace the configuration in the file with the following template.
 
    ```yaml
    ---
@@ -47,9 +46,9 @@ You can configure Prometheus by editing the `prometheus.yml` file found within t
    - job_name: 'qumulo'
 
       static_configs:
-         # The hostname of your cluster. We recommend using
-         # a DNS record associated with one or more floating
-         # IP addresses from the cluster.
+         # The DNS name or IP address in your Qumulo cluster.
+         # We recommend using a DNS name that resolves to a
+         # floating IP address.
          - targets: ['<Hostname>:8000']
 
       metrics_path: '/v2/metrics/endpoints/default/data'
@@ -62,15 +61,21 @@ You can configure Prometheus by editing the `prometheus.yml` file found within t
          insecure_skip_verify: true
    ```
 
-1. Fill in `<Hostname>` with a DNS name or an IP from your Qumulo cluster. Preferably `<Hostname>` should be a DNS name that resolves to a floating IP address.
+1. To start the Prometheus server, make the `prometheus` file in your directory executable and run it, for example:
 
-1. Run the Prometheus server by running the `prometheus` executable in the previously extracted folder. On Linux, use this command from within the Prometheus folder: `./prometheus`
+   ```bash
+   $ chmod +x prometheus
+   $ ./prometheus
+   ```
 
-1. Open a web browser and navigate to `<Hostname>:9090`. This will bring up the Prometheus web interface.
+1. To access the Prometheus web interface, use a browser to navigate to `<Hostname>:9090`.
 
-1. From the menu bar at the top, select the **Status** dropdown and click on **Targets**. On this page you will see an endpoint for your cluster. After one minute, the **State** should be `UP`.
+1. On the top menu, click **Status > Targets**. 
 
-Prometheus is now running and connected to your cluster.
+   The page displays the endpoint for your cluster. After approximately one minute, the **State** changes to **UP**.
+
+Prometheus is running on your server and connected to your cluster.
+
 
 ## Installing and Configuring Grafana
 
