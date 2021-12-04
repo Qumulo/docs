@@ -13,7 +13,7 @@ sidebar: administrator_guide_sidebar
 
 This section describes how you can configure Prometheus (an open-source time-series database and collection system) to connect to the Qumulo API and poll its data at regular intervals. It also describes how you can use Grafana (an open-source analytics tool) to create dashboards with graphs and data that you can use to monitor the health of your Qumulo cluster, generate alerts, and improve your capacity statistics.
 
-**Important**: To use the OpenMetrics API, you you must configure your cluster to emit metrics without authentication. If your cluster isn't configured for this, open a request at [Qumulo Care](https://care.qumulo.com/hc/en-us/requests/new).
+{% include important.html content="To use the OpenMetrics API, you you must configure your cluster to emit metrics without authentication. If your cluster isn't configured for this, open a request at [Qumulo Care](https://care.qumulo.com/hc/en-us/requests/new)." %}
 
 ## Installing and Configuring Prometheus
 There are a number of ways to install Prometheus, the simplest is to download an executable to a server.
