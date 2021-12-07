@@ -151,7 +151,9 @@ header {
   .nav-wrapper {
     visibility:hidden;
   }
+}
 
+@media (min-width: 640px) {
   .footer-grumpquats {
     text-align:left;
   }
