@@ -41,7 +41,7 @@ tags:
   - replace_dimm
   - dcms_license
   - technical_specifications
-40gbps: {% include note.html content="You can use 40 Gbps connections with 40 Gbps transceivers." %}
+fortygbps: {% include note.html content="You can use 40 Gbps connections with 40 Gbps transceivers." %}
 ---
 
 Welcome to Qumulo on Supermicro 1114S. This guide is intended for system administrators, professional service providers, and colleagues in your organization who are responsible for installing and configuring server hardware.
@@ -100,7 +100,7 @@ Your node requires the following resources.
 * A network switch with the following specifications:
   * 100 Gbps Ethernet
 
-    {{page.40gbps}}
+    {{page.fortygbps}}
 
   * Fully non-blocking architecture
   * IPv6 capability
@@ -114,7 +114,7 @@ Your node requires the following resources.
 
 The Supermicro All-NVMe platform uses a networking configuration in which different NICs handle back-end and front-end traffic. You can connect the front-end and back-end NICs to the same switch or to different switches. However, for greater reliability, we recommend connecting all four 100 Gbps ports on every node: connect both front-end NIC ports to the front-end switch and both back-end NIC ports to the back-end switch.
 
-{{page.40gbps}}
+{{page.fortygbps}}
 
 We recommend the following configuration for your node.
 * One set of redundant switches for the front-end network, with an MTU that matches that of the clients that use the storage cluster. Typically, 1,500 MTU is recommended, but in some instances it might be 9,000 MTU.
@@ -132,7 +132,7 @@ We recommend the following configuration for your node.
 ### Connecting a Cluster to Redundant Switches
 For redundancy, we recommend connecting a Supermicro All-NVMe cluster to dual switches. If either switch becomes inoperative, the cluster will still be accessible from the remaining switch.
 
-{{page.40gbps}}
+{{page.fortygbps}}
 
 * **Front End**
   * Connect the two front-end NIC ports (2 &#215; 100 Gbps) on your nodes to separate switches.
@@ -147,7 +147,7 @@ For redundancy, we recommend connecting a Supermicro All-NVMe cluster to dual sw
 ### Connecting a Cluster to a Single Switch
 You can connect a Supermicro All-NVMe cluster to a single switch. If this switch becomes inoperative, the entire cluster will be inaccessible.
 
-{{page.40gbps}}
+{{page.fortygbps}}
 
 * **Front End**
   * Each node has two front-end NIC ports (2 &#215; 100 Gbps) connected to a single switch.
@@ -206,7 +206,7 @@ The dedicated out-of-band management port allows functionality such as remote di
 ### Connecting the 100 Gbps Ports
 After you connect the IPMI port, connect your front-end and back-end 100 Gbps ports (compatible with QSFP28 and QSFP56). There are four 100 Gbps ports on the back of your node. To maximize redundancy, split interfaces across subnets by connecting each port to a different switch.
 
-{{page.40gbps}}
+{{page.fortygbps}}
 
 | Port Location         | Port Labels        | Port Type  | Purpose                     |
 | --------------------- | ------------------ | ---------- | --------------------------- |
