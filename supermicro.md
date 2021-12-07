@@ -41,6 +41,7 @@ tags:
   - replace_dimm
   - dcms_license
   - technical_specifications
+fortygbps: {% include note.html content="You can use 40 Gbps connections with 40 Gbps transceivers." %}
 ---
 
 Welcome to Qumulo on Supermicro 1114S. This guide is intended for system administrators, professional service providers, and colleagues in your organization who are responsible for installing and configuring server hardware.
@@ -99,7 +100,7 @@ Your node requires the following resources.
 * A network switch with the following specifications:
   * 100 Gbps Ethernet
 
-    {% include note.html content="You can use 40 Gbps connections with 40 Gbps transceivers."}
+    {{page.fortygbps}}
 
   * Fully non-blocking architecture
   * IPv6 capability
