@@ -29,8 +29,6 @@ The following steps explain how you can install and configure Prometheus.
    $ tar xvfz prometheus-*.tar.gz
    ```
 
-1. For instructions on installing Prometheus, and for installation options, see [Installation](https://prometheus.io/docs/prometheus/latest/installation/) in the Prometheus documentation.
-
 1. To configure Prometheus, edit the `prometheus.yml` file in your directory and replace the configuration in the file with the following template.
 
    ```yaml
@@ -74,7 +72,7 @@ The following steps explain how you can install and configure Prometheus.
 
    The page displays the endpoint for your cluster. After approximately one minute, the **State** changes to **UP**.
 
-Prometheus is running on your server and connected to your cluster.
+Prometheus is running on your server and connected to your cluster. For additional instructions on installing Prometheus, and for installation options, see [Installation](https://prometheus.io/docs/prometheus/latest/installation/) in the Prometheus documentation.
 
 
 ## Installing and Configuring Grafana
