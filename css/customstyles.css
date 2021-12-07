@@ -156,6 +156,7 @@ header {
 
 @media only screen and (max-width: 600px) {
   .footer-grumpquats {
+    float:left;
     text-align:left;
   }
 }
