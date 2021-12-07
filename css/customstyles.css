@@ -151,6 +151,10 @@ header {
   .nav-wrapper {
     visibility:hidden;
   }
+
+  .footer-grumpquats {
+    text-align:left;
+  }
 }
 
 .nav-wrapper .icon-menu {
