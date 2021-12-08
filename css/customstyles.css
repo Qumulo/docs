@@ -150,7 +150,8 @@ header {
 /*@media (max-width: 768px) {*/
 @media (max-width: 911px) {
   .nav-wrapper {
-    visibility:hidden;
+    /*visibility:hidden;*/
+    display:none;
   }
 }
 
