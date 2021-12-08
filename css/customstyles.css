@@ -151,7 +151,8 @@ header {
 @media (max-width: 911px) {
   .nav-wrapper {
     /*visibility:hidden;*/
-    display:none;
+    /* Fix horizontal scrolling bug on mobile viewports*/
+    display:none !important;
   }
 }
 
