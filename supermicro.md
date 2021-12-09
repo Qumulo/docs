@@ -57,7 +57,7 @@ This section contains quick-reference diagrams for the front and back of your Su
 {% include image.html alt="Front and Back Diagrams of the Supermicro A+ WIO 1114S-WN10RT All-NVMe Node" file="supermicro/supermicro-front-back-diagram.png" url="/docs/images/supermicro/supermicro-front-back-diagram.png" %}
 
 ### Four-Node Cluster Architecture Diagram
-{% include image.html alt="Four-Node Cluster Architecture Diagram" file="supermicro/supermicro-four-node-cluster-architecture-diagram.png" url="/images/supermicro/supermicro-four-node-cluster-architecture-diagram.png" %}
+{% include image.html alt="Four-Node Cluster Architecture Diagram" file="supermicro/supermicro-four-node-cluster-architecture-diagram.png" url="/docs/images/supermicro/supermicro-four-node-cluster-architecture-diagram.png" %}
 
 ### Node LEDs
 On the front, right side of your node, there are five LEDs.
@@ -466,7 +466,7 @@ Replacement drives, including the on-site spare drives that you received with yo
 
 1. Locate the drive that requires replacement using the drive bay mapping.
 
-   {% include image.html alt="Supermicro Drive Slot Mapping" file="supermicro/supermicro-drive-slot-mapping.png" %}
+   {% include image.html alt="Supermicro Drive Slot Mapping" file="supermicro/supermicro-drive-slot-mapping.png" url="/docs/images/supermicro/supermicro-drive-slot-mapping.png"%}
 
 1. To remove the existing drive, do the following:
 
