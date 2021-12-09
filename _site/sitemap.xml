@@ -8,7 +8,7 @@
   
   
   <url>
-    <loc>http://localhost:4010/index.html</loc>
+    <loc>http://10.116.10.222:4000/index.html</loc>
   </url>
   
   
@@ -16,76 +16,64 @@
   
   
   <url>
-    <loc>http://localhost:4010/administrator-guide.html</loc>
+    <loc>http://10.116.10.222:4000/administrator-guide.html</loc>
   </url>
   
   
   
   <url>
-    <loc>http://localhost:4010/azure.html</loc>
+    <loc>http://10.116.10.222:4000/azure.html</loc>
   </url>
   
   
   
   <url>
-    <loc>http://localhost:4010/c-192t-c-432t-chassis-replacement.html</loc>
+    <loc>http://10.116.10.222:4000/c-192t-c-432t-chassis-replacement.html</loc>
   </url>
-  
-  
-  
-  
-  
-  <url>
-    <loc>http://localhost:4010/nfsv4.1-auth-sys-acls.html</loc>
-  </url>
-  
-  
-  
-  <url>
-    <loc>http://localhost:4010/nfsv4.1-enabling-using.html</loc>
-  </url>
-  
-  
-  
-  <url>
-    <loc>http://localhost:4010/nics-transceivers-cables.html</loc>
-  </url>
-  
-  
-  
-  <url>
-    <loc>http://localhost:4010/shift-from-s3.html</loc>
-  </url>
-  
-  
-  
-  <url>
-    <loc>http://localhost:4010/shift-to-s3.html</loc>
-  </url>
-  
-  
-  
-  <url>
-    <loc>http://localhost:4010/supermicro.html</loc>
-  </url>
-  
-  
-  
-  
   
   
   
   
   
   <url>
-    <loc>http://localhost:4010/azure/</loc>
+    <loc>http://10.116.10.222:4000/nfsv4.1-auth-sys-acls.html</loc>
   </url>
   
   
   
   <url>
-    <loc>http://localhost:4010/supermicro/</loc>
+    <loc>http://10.116.10.222:4000/nfsv4.1-enabling-using.html</loc>
   </url>
+  
+  
+  
+  <url>
+    <loc>http://10.116.10.222:4000/nics-transceivers-cables.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://10.116.10.222:4000/shift-from-s3.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://10.116.10.222:4000/shift-to-s3.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://10.116.10.222:4000/supermicro.html</loc>
+  </url>
+  
+  
+  
+  
+  
+  
   
   
 </urlset>
