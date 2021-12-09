@@ -7,7 +7,7 @@
 
 1. To get more information about a specific Shift relationship, click **&vellip; > View Details**.
 
-   ![View Details Menu](administrator-guide/images/view-details-menu.png)
+   {% include image.html alt="View Details Menu" file="administrator-guide/administrator-guide/view-details-menu.png" %}
 
    The **Copy to/from S3 Details** page displays the following information:
 
@@ -22,7 +22,7 @@
 1. Click **Cluster > Copy to/from S3**.
 1. To stop a copy job for a specific relationship, click **&vellip; > Abort**.
 
-   ![Abort Menu](administrator-guide/images/abort-menu.png)
+   {% include image.html alt="Abort Menu" file="administrator-guide/abort-menu.png" %}
 
 1. In the **Abort copy from?** dialog box, review the Shift relationship and then click **Yes, Abort**.
 
@@ -34,7 +34,7 @@
 1. Click **Cluster > Copy to/from S3**.
 1. To stop a copy job for a specific relationship, click **&vellip; > Copy Again**.
 
-   ![Copy Again Menu](administrator-guide/images/copy-again-menu.png)
+   {% include image.html alt="Copy Again Menu" file="administrator-guide/copy-again-menu.png" %}
 
 1. In the **Copy again?** dialog box, review the Shift relationship and then click **Yes, Copy Again**.
 
@@ -46,7 +46,7 @@
 1. Click **Cluster > Copy to/from S3**.
 1. To stop a copy job for a specific relationship, click **&vellip; > Delete**.
 
-   ![Delete Menu](administrator-guide/images/delete-menu.png)
+   {% include image.html alt="Delete Menu" file="administrator-guide/delete-menu.png" %}
 
 1. In the **Delete copy from?** dialog box, review the Shift relationship and then click **Yes, Delete**.
 
