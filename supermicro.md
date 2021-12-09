@@ -442,10 +442,14 @@ This section describes how to configure your Supermicro All-NVMe nodes to form a
 1. In the **3. Create a password for your admin account** section, set the password for your administrative account.
 
 ## Replacing Hardware Components
-{% include caution.html content="We strongly recommend engaging an on-site Supermicro engineer to replace failed hardware components including but not limited to any procedure that:
-* This guide doesn't cover
-* You haven't received training on
-* Requires precautions to avoid damage caused by electrostatic discharge (ESD) by using industry standard anti-static equipment (such as gloves or wrist straps)" %}
+{{site.data.alerts.caution}}
+We strongly recommend engaging an on-site Supermicro engineer to replace failed hardware components including but not limited to any procedure that:
+<ul>
+  <li>This guide doesn't cover</li>
+  <li>You haven't received training on</li>
+  <li>Requires precautions to avoid damage caused by electrostatic discharge (ESD) by using industry standard anti-static equipment (such as gloves or wrist straps</li>
+</ul>
+{{site.data.alerts.end}}
 
 This section explains the most common scenarios of replacing failed hardware components such as:
 * Drives (excluding boot drives)
@@ -502,9 +506,12 @@ When a PSU fails, the **Info** LED at the front of the node begins to blink red 
 ### To Replace a Fan
 Your Supermicro All-NVMe chassis has six internal fans. When a fan fails, the **Info** LED at the front of the node begins to blink red every second.
 
-{% include caution.html content="
-* The fans are not hot-swappable. You must power off the node to replace a fan. However, you may remove the top cover to determine which fan failed.
-* For optimal air circulation, you must always reinstall the top chassis cover. You must never run the node for an extended period of time with the top chassis cover removed." %}
+{{site.data.alerts.caution}}
+<ul>
+  <li>The fans are not hot-swappable. You must power off the node to replace a fan. However, you may remove the top cover to determine which fan failed.</li>
+  <li>For optimal air circulation, you must always reinstall the top chassis cover. You must never run the node for an extended period of time with the top chassis cover removed.</li>
+</ul>
+{{site.data.alerts.end}}
 
 1. Power off the node, remove the top chassis cover, and disconnect the power cords from both PSUs.
 
