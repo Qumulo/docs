@@ -74,3 +74,11 @@ entries:
     - title: Using Qumulo Shift-From for Amazon S3 to Copy Objects
       url: /shift-from-s3.html
       output: web, pdf
+  
+  - title: Using the frontend
+    output: web, pdf
+    folderitems:
+
+    - title: Managing Snapshots
+      url: /managing-snapshots.html
+      output: web, pdf
