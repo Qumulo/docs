@@ -7,7 +7,7 @@
 
 1. To get more information about a specific Shift relationship, click **&vellip; > View Details**.
 
-   {% include image.html alt="View Details Menu" file="administrator-guide/administrator-guide/view-details-menu.png" %}
+   {% include image.html alt="View Details Menu" file="administrator-guide/view-details-menu.png" %}
 
    The **Copy to/from S3 Details** page displays the following information:
 
