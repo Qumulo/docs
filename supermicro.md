@@ -447,7 +447,7 @@ We strongly recommend engaging an on-site Supermicro engineer to replace failed 
 <ul>
   <li>This guide doesn't cover</li>
   <li>You haven't received training on</li>
-  <li>Requires precautions to avoid damage caused by electrostatic discharge (ESD) by using industry standard anti-static equipment (such as gloves or wrist straps</li>
+  <li>Requires precautions to avoid damage caused by electrostatic discharge (ESD) by using industry standard anti-static equipment (such as gloves or wrist straps)</li>
 </ul>
 {{site.data.alerts.end}}
 
