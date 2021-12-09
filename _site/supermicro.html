@@ -1,334 +1,55 @@
 <!DOCTYPE html>
+<html lang="en">
 <html>
 <head>
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="keywords" content="getting_started_guidesupermicroquick_referencediagramledsdrive_mappingnetworkingredundant_switchessingle_switchracking_nodeouter_railinner_railchassisnodeclusterinsert_chassisremove_chassiswiring_nodeout_of_band_managementipmi100_gbpsinstalling_qumulo_corequmulo_coreusb_drive_installerfield_verification_toolfvtfixable_issuenon_fixable_issuehardware_replacementcreate_clusterreplace_drivedrivereplace_psupsureplace_fanreplace_dimmdcms_licensetechnical_specifications,  ">
-<title>Qumulo on Supermicro A+ WIO 1114S-WN10RT Getting Started Guide | Qumulo Documentation</title>
-<link rel="stylesheet" href="css/syntax.css">
-
-<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
-<link rel="stylesheet" href="css/modern-business.css">
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-<link rel="stylesheet" href="css/customstyles.css">
-<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
-<link rel="stylesheet" href="css/boxshadowproperties.css">
-<!-- most color styles are extracted out to here -->
-<link rel="stylesheet" href="css/theme-blue.css">
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
-<script src="js/jquery.navgoco.min.js"></script>
+<title>Qumulo on Supermicro A+ WIO 1114S-WN10RT Getting Started Guide  | Qumulo Documentation</title>
 
 
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-<!-- Anchor.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
-<script src="js/toc.js"></script>
-<script src="js/customscripts.js"></script>
+<link rel="stylesheet" href="http://localhost:4010/qumulo-doc/css/syntax.css">
+<link rel="stylesheet" href="http://localhost:4010/qumulo-doc/css/font-awesome.min.css">
+<link rel="stylesheet" href="http://localhost:4010/qumulo-doc/css/bootstrap.min.css">
+<link rel="stylesheet" href="http://localhost:4010/qumulo-doc/css/modern-business.css">
+<link rel="stylesheet" href="http://localhost:4010/qumulo-doc/css/customstyles.css">
+<link rel="stylesheet" href="http://localhost:4010/qumulo-doc/css/theme-blue.css">
+<link rel="stylesheet" href="http://localhost:4010/qumulo-doc/css/syntax.css">
+<link rel="stylesheet" href="/qumulo-doc/css/printstyles.css">
 
-<link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="194x194" href="images/favicon-194x194.png">
-<link rel="icon" type="image/png" sizes="192x192" href="images/android-chrome-192x192.png">
-<link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
-<link rel="manifest" href="images/site.webmanifest">
-<link rel="mask-icon" href="images/safari-pinned-tab.svg" color="#5bbad5">
-<link rel="shortcut icon" href="images/favicon.ico">
-<meta name="apple-mobile-web-app-title" content="Qumulo Documentation">
-<meta name="application-name" content="Qumulo Documentation">
-<meta name="msapplication-TileColor" content="#2b5797">
-<meta name="msapplication-TileImage" content="images/mstile-144x144.png">
-<meta name="msapplication-config" content="images/browserconfig.xml">
-<meta name="theme-color" content="#ffffff">
-
-<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-<!--[if lt IE 9]>
-<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-<![endif]-->
-
-<link rel="alternate" type="application/rss+xml" title="docs" href="http://10.116.10.222:4000/feed.xml">
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-81J7N4LMSE"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-81J7N4LMSE');
+    Prince.addScriptFunc("datestamp", function() {
+        return "PDF last generated: November 15, 2021";
+    });
 </script>
 
-    <script>
-        $(document).ready(function() {
-            // Initialize navgoco with default options
-            $("#mysidebar").navgoco({
-                caretHtml: '',
-                accordion: true,
-                openClass: 'active', // open
-                save: false, // leave false or nav highlighting doesn't work right
-                cookie: {
-                    name: 'navgoco',
-                    expires: false,
-                    path: '/'
-                },
-                slide: {
-                    duration: 400,
-                    easing: 'swing'
-                }
-            });
+<script>
+    Prince.addScriptFunc("guideName", function() {
+        return "Qumulo on Azure as a Service Getting Started Guide User Guide";
+    });
+</script>
 
-            $("#collapseAll").click(function(e) {
-                e.preventDefault();
-                $("#mysidebar").navgoco('toggle', false);
-            });
 
-            $("#expandAll").click(function(e) {
-                e.preventDefault();
-                $("#mysidebar").navgoco('toggle', true);
-            });
-
-        });
-
-    </script>
-    <script>
-        $(function () {
-            $('[data-toggle="tooltip"]').tooltip()
-        })
-    </script>
-    <script>
-        $(document).ready(function() {
-            $("#tg-sb-link").click(function() {
-                $("#tg-sb-sidebar").toggle();
-                $("#tg-sb-content").toggleClass('col-md-9');
-                $("#tg-sb-content").toggleClass('col-md-12');
-                $("#tg-sb-icon").toggleClass('fa-toggle-on');
-                $("#tg-sb-icon").toggleClass('fa-toggle-off');
-            });
-        });
-    </script>
-    
 
 </head>
-<body>
-<!-- -------------------- TOPNAV START -------------------- -->
-<div class="above-header"></div>
 
-<div class="header-container">
-<header class="header">
-  <div class="logo">
-    <a class="header-link" href="https://care.qumulo.com/hc/en-us">
-      <img src="images/qumulo-logo.png" alt="Qumulo Logo">
-    </a>
-  </div>
-
-  <div class="carelinks">
-    <div class="cloac">
-      <a class="header-link header-left" href="https://care.qumulo.com/hc/en-us/requests/new">OPEN A CASE</a>
-    </div>
-    <div class="clkb">
-      <a class="header-link header-left" href="https://care.qumulo.com/hc/en-us/categories/115000637447-KNOWLEDGE-BASE">KNOWLEDGE BASE</a>
-    </div>
-    <div class="clc">
-      <a class="header-link header-left" href="https://care.qumulo.com/hc/en-us/community/topics">COMMUNITY</a>
-    </div>
-    <div class="clqt">
-      <a class="header-link header-left" href="https://trends.qumulo.com/" target="_blank">QUMULO TRENDS</a>
-    </div>
-  </div>
-
-  <div class="nav-wrapper">
-    <span class="icon-menu"></span>
-    <nav class="user-nav" id="user-nav">
-      <div class="qf2header">
-        <a class="header-link header-right" href="https://qumulo.com/product/" target="_blank">Products</a>
-        <a class="header-link header-right" href="https://qumulo.com/solution/" target="_blank">Industries</a>
-        <a class="header-link header-right" href="https://qumulo.com/partners/" target="_blank">Partners</a>
-        <a class="header-link header-right" href="https://qumulo.com/company/" target="_blank">Company</a>
-        <a class="header-link header-right" href="https://qumulo.com/library/" target="_blank">Resources</a>
-      </div>
-    </nav>
-</div>
-</header>
-</div>
-<div class="below-header navbar navbar-inverse navbar-static-top">
-    <div class="container topnavlinks">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="index.html">&nbsp;<span class="projectTitle"> Qumulo Documentation</span></a>
-        </div>
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav navbar-right">
-                <!-- toggle sidebar button -->
-                <li><a id="tg-sb-link" href="#"><i id="tg-sb-icon" class="fa fa-toggle-on"></i> Reading Mode</a></li>
-                <!-- entries without drop-downs appear here -->
-
-
-
-
-                
-                <!-- entries with drop-downs appear here -->
-                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
-                
-                
-                <!--comment out this block if you want to hide search-->
-                <li>
-                    <!--start search-->
-                    <div id="search-demo-container">
-                        <input type="text" id="search-input" placeholder="search...">
-                        <ul id="results-container"></ul>
-                    </div>
-                    <script src="js/jekyll-search.js" type="text/javascript"></script>
-                    <script type="text/javascript">
-                            SimpleJekyllSearch.init({
-                                searchInput: document.getElementById('search-input'),
-                                resultsContainer: document.getElementById('results-container'),
-                                dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Qumulo on Supermicro A+ WIO 1114S-WN10RT Getting Started Guide">{title}</a></li>',
-                    noResultsText: 'No results found.',
-                            limit: 10,
-                            fuzzy: true,
-                    })
-                    </script>
-                    <!--end search-->
-                </li>
-            </ul>
-        </div>
-    </div>
-        <!-- /.container -->
-</div>
-<!-- -------------------- TOPNAV END -------------------- -->
+<body class=" print">
 
 <!-- Page Content -->
-
 <div class="container">
-  <div id="main">
-    <!-- Content Row -->
-    <div class="row">
-        
-        
+    <!-- Content Column -->
+    <div class="col-md-9">
 
-            <!-- Sidebar Column -->
-            <div class="col-md-3" id="tg-sb-sidebar">
-                
-
-<ul id="mysidebar" class="nav">
-  
-  <a target="_blank" rel="noopener" href="https://github.com/qumulo/docs/blob/gh-pages/supermicro.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit on GitHub</a>
-  
-  
-  <li class="sidebarTitle"> </li>
-  
-  
-  
-  <li>
-      <a title="Qumulo Guides" href="#">Qumulo Guides</a>
-      <ul>
-          
-          
-          
-          <li><a title="Documentation Home" href="index.html">Documentation Home</a></li>
-          
-          
-          
-          
-          
-          
-          <li><a title="Documentation Portal History" href="documentation-history.html">Documentation Portal History</a></li>
-          
-          
-          
-          
-          
-          
-          <li><a title="Qumulo on Azure as a Service Onboarding Guide" href="azure.html">Qumulo on Azure as a Service Onboarding Guide</a></li>
-          
-          
-          
-          
-          
-          
-          <li class="active"><a title="Qumulo on Supermicro Getting Started Guide" href="supermicro.html">Qumulo on Supermicro Getting Started Guide</a></li>
-          
-          
-          
-          
-          
-          
-          <li><a title="Qumulo Administrator Guide" href="administrator-guide.html">Qumulo Administrator Guide</a></li>
-          
-          
-          
-          
-      </ul>
-   </li>
-     
-      
-      
-      <!-- if you aren't using the accordion, uncomment this block:
-         <p class="external">
-             <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
-         </p>
-         -->
-</ul>
-
-<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
-<script>$("li.active").parents('li').toggleClass("active");</script>
-
-            </div>
-            
-        
-
-        <!-- Content Column -->
-        <div class="col-md-9" id="tg-sb-content">
-            <div class="post-header">
-   <h1 class="post-title-main">Qumulo on Supermicro A+ WIO 1114S-WN10RT Getting Started Guide</h1>
+        <div class="post-header">
+    <h1 class="post-title-main" id="supermicro.html">Qumulo on Supermicro A+ WIO 1114S-WN10RT Getting Started Guide</h1>
 </div>
-
-
 
 <div class="post-content">
 
-   
-
     
-    <!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
-<script>
-$( document ).ready(function() {
-  // Handler for .ready() called.
-
-$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2' });
-
-/* this offset helps account for the space taken up by the floating toolbar. */
-$('#toc').on('click', 'a', function() {
-  var target = $(this.getAttribute('href'))
-    , scroll_target = target.offset().top
-
-  $(window).scrollTop(scroll_target - 10);
-  return false
-})
-
-});
-</script>
-
-<div id="toc"></div>
-
-    
-
-   <p>Welcome to Qumulo on Supermicro 1114S. This guide is intended for system administrators, professional service providers, and colleagues in your organization who are responsible for installing and configuring server hardware.</p>
+    <p>Welcome to Qumulo on Supermicro 1114S. This guide is intended for system administrators, professional service providers, and colleagues in your organization who are responsible for installing and configuring server hardware.</p>
 
 <p>This guide includes quick-reference diagrams for Supermicro A+ WIO 1114S-WN10RT All-NVMe nodes and cluster architecture diagrams, an explanation of node LEDs, and a diagram of drive slots and PCIe mapping. Next, the guide explains the networking configuration for your node and then walks you through racking and wiring your nodes, installing Qumulo Core on your nodes, and creating a Qumulo cluster. Finally, the guide explains how to replace hardware components and the <a href="#appendix">Appendix</a> contains the currently known behavior of Supermicro All-NVMe nodes and technical specifications.</p>
 
@@ -338,10 +59,10 @@ $('#toc').on('click', 'a', function() {
 <p>This section contains quick-reference diagrams for the front and back of your Supermicro All-NVMe node, an architecture diagram of an example four-node cluster, an explanation of node LEDs, and a diagram of drive slots and PCIe mapping.</p>
 
 <h3 id="front-and-back-node-diagrams">Front and Back Node Diagrams</h3>
-<p><img src="supermicro/images/supermicro-front-back-diagram.png" alt="Front and Back Diagrams of the Supermicro A+ WIO 1114S-WN10RT All-NVMe Node" /></p>
+<p><img src="/qumulo-doc/supermicro/images/supermicro-front-back-diagram.png" alt="Front and Back Diagrams of the Supermicro A+ WIO 1114S-WN10RT All-NVMe Node" /></p>
 
 <h3 id="four-node-cluster-architecture-diagram">Four-Node Cluster Architecture Diagram</h3>
-<p><img src="supermicro/images/supermicro-four-node-cluster-architecture-diagram.png" alt="Four-Node Cluster Architecture Diagram" /></p>
+<p><img src="/qumulo-doc/supermicro/images/supermicro-four-node-cluster-architecture-diagram.png" alt="Four-Node Cluster Architecture Diagram" /></p>
 
 <h3 id="node-leds">Node LEDs</h3>
 <p>On the front, right side of your node, there are five LEDs.</p>
@@ -403,7 +124,7 @@ $('#toc').on('click', 'a', function() {
   </tbody>
 </table>
 
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note</b><br /> During normal operation, the <strong>Lan B</strong> LED might appear to be lit slightly when the <strong>Disk Activity</strong> LED is on.</div>
+<p><strong>Note:</strong> During normal operation, the <strong>Lan B</strong> LED might appear to be lit slightly when the <strong>Disk Activity</strong> LED is on.</p>
 
 <p>On the back of your node, LAN LEDs are located behind the vent holes on the NIC. Each port has one light. Network traffic <em>doesn’t</em> affect the speed of the light’s blinking.</p>
 
@@ -432,23 +153,19 @@ $('#toc').on('click', 'a', function() {
 <h3 id="drive-slot-mapping">Drive Slot Mapping</h3>
 <p>Your node contains slots for 10 drives and one boot drive (in an internal M.2 slot). The following is the mapping for the drives.</p>
 
-<p><img src="supermicro/images/supermicro-drive-slot-mapping.png" alt="Supermicro Drive Slot Mapping" /></p>
+<p><img src="/qumulo-doc/supermicro/images/supermicro-drive-slot-mapping.png" alt="Supermicro Drive Slot Mapping" /></p>
 
 <h2 id="configuring-networking-for-your-node">Configuring Networking for Your Node</h2>
 <p>This section explains the networking prerequisites, outlines the recommended networking configuration, and explains how you can connect to redundant switches or to a single switch.</p>
 
 <h3 id="networking-prerequisites">Networking Prerequisites</h3>
-<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br /> Before you create your Qumulo cluster, you must configure all switch ports connected to the back-end NIC to have at least 9,000 MTU, with Jumbo Frames enabled.</div>
+<p><strong>Important:</strong> Before you create your Qumulo cluster, you must configure all switch ports connected to the back-end NIC to have at least 9,000 MTU, with Jumbo Frames enabled.</p>
 
 <p>Your node requires the following resources.</p>
 <ul>
   <li>A network switch with the following specifications:
     <ul>
-      <li>
-        <p>100 Gbps Ethernet</p>
-
-        <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note</b><br /> You can use 40 Gbps connections with 40 Gbps transceivers.</div>
-      </li>
+      <li>100 Gbps Ethernet</li>
       <li>Fully non-blocking architecture</li>
       <li>IPv6 capability</li>
       <li>Jumbo Frame support (9,000 MTU minimum) for the back-end network</li>
@@ -460,7 +177,7 @@ $('#toc').on('click', 'a', function() {
 </ul>
 
 <h3 id="recommended-networking-configuration">Recommended Networking Configuration</h3>
-<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br /> We don’t recommend connecting to a single back-end NIC port because the node will become unavailable if the single connection fails.</div>
+<p><strong>Important:</strong> We don’t recommend connecting to a single back-end NIC port because the node will become unavailable if the single connection fails.</p>
 
 <p>The Supermicro All-NVMe platform uses a networking configuration in which different NICs handle back-end and front-end traffic. You can connect the front-end and back-end NICs to the same switch or to different switches. However, for greater reliability, we recommend connecting all four 100 Gbps ports on every node: connect both front-end NIC ports to the front-end switch and both back-end NIC ports to the back-end switch.</p>
 
@@ -530,12 +247,12 @@ $('#toc').on('click', 'a', function() {
 </ul>
 
 <h2 id="step-1-racking-your-nodes">Step 1: Racking Your Nodes</h2>
-<div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip</b><br /> You can use the following instructions to add new nodes after your initial cluster deployment.</div>
+<p><strong>Tip:</strong> You can use the following instructions to add new nodes after your initial cluster deployment.</p>
 
 <p>This section describes how to use the outside and inside rails of your Supermicro All-NVMe node and how to rack your nodes in your data center.</p>
 
 <h3 id="to-attach-the-outer-and-inner-rails">To Attach the Outer and Inner Rails</h3>
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note</b><br /> Because the left and right rails of your nodes are identical, the words <strong>FRONT</strong> and <strong>BACK</strong> might appear upside down.</div>
+<p><strong>Note:</strong> Because the left and right rails of your nodes are identical, the words <strong>FRONT</strong> and <strong>BACK</strong> might appear upside down.</p>
 
 <ul>
   <li>Each <em>outer rail</em> comes as two connected pieces and attaches to your server rack.</li>
@@ -547,14 +264,14 @@ $('#toc').on('click', 'a', function() {
   <li>
     <p>Line up the edge of the outer rail between the rack unit (RU) markers, insert the tabs on the edge of the rail into the mounting holes, and push the rail into the rack until the quick-release clicks into place. This process is the same for the front and back of your rack.</p>
 
-    <p><img src="supermicro/images/supermicro-outer-rail-snap-into-rack.png" alt="Snap the Outer Rail into the Rack" /></p>
+    <p><img src="/qumulo-doc/supermicro/images/supermicro-outer-rail-snap-into-rack.png" alt="Snap the Outer Rail into the Rack" /></p>
   </li>
   <li>
     <p>Snap the inner rails to the chassis and secure them using two screws on each side, near the middle of the chassis.</p>
 
-    <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note</b><br /> First attach the front inner rails, then the back inner rails.</div>
+    <p><strong>Note:</strong> First attach the front inner rails, then the back inner rails.</p>
 
-    <p><img src="supermicro/images/supermicro-inner-rail-attach-to-chassis-with-screws.png" alt="Attach the Inner Rail to the Chassis Using Screws" /></p>
+    <p><img src="/qumulo-doc/supermicro/images/supermicro-inner-rail-attach-to-chassis-with-screws.png" alt="Attach the Inner Rail to the Chassis Using Screws" /></p>
   </li>
 </ol>
 
@@ -571,7 +288,7 @@ $('#toc').on('click', 'a', function() {
   <li>
     <p>Pull the chassis out from the server rack partially. When the first set of black snaps appears, pinch the long piece of the snap towards the short one (up on one side, down on the other).</p>
 
-    <p><img src="supermicro/images/supermicro-remove-chassis-pinch-black-latch-on-both-sides.png" alt="Pinch the Black Latch on Both Sides" /></p>
+    <p><img src="/qumulo-doc/supermicro/images/supermicro-remove-chassis-pinch-black-latch-on-both-sides.png" alt="Pinch the Black Latch on Both Sides" /></p>
   </li>
   <li>Continue to pull the chassis from the server rack. When the second set of black snaps appears, pinch the long piece of each snap towards the short one (up on one side, down on the other) and remove the chassis completely.</li>
 </ol>
@@ -579,7 +296,7 @@ $('#toc').on('click', 'a', function() {
 <h2 id="step-2-wiring-your-nodes">Step 2: Wiring Your Nodes</h2>
 <p>This section describes how to wire the remote access, network, and power ports of your Supermicro All-NVMe node.</p>
 
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note</b><br /> The two Ethernet ports on the back of your node (to the right of the USB ports) are unused.</div>
+<p><strong>Note:</strong> The two Ethernet ports on the back of your node (to the right of the USB ports) are unused.</p>
 
 <h3 id="connecting-the-out-of-band-management-ipmi-port">Connecting the Out-of-Band Management (IPMI) Port</h3>
 <p>The dedicated out-of-band management port allows functionality such as remote display, control, and power (similar to HPE iLO). The port uses the Intelligent Platform Management Interface (IPMI) protocol. First, connect the IPMI port first on the back of your node (above the USB ports).</p>
@@ -613,7 +330,7 @@ $('#toc').on('click', 'a', function() {
 </table>
 
 <h3 id="connecting-the-power">Connecting the Power</h3>
-<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br /> Make sure that the voltages for both power supply units (PSUs) are the same (for example, both at 115 V or both at 208 V).</div>
+<p><strong>Important:</strong> Make sure that the voltages for both power supply units (PSUs) are the same (for example, both at 115 V or both at 208 V).</p>
 
 <p>After you connect your 100 Gbps ports, connect power to the node. There are two power sockets on the back of your node. To maximize redundancy, connect each PSU to a separate power supply or power distribution unit (PDU).</p>
 
@@ -648,7 +365,7 @@ $('#toc').on('click', 'a', function() {
     <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dd if=/path-to-image-file/ of=/dev/rdisk2 bs=2m
 </code></pre></div>    </div>
 
-    <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note</b><br /> If you encounter an <strong>Operation not permitted</strong> error, navigate to <strong>System Preferences &gt; Security &amp; Privacy</strong>, on the <strong>Privacy</strong> tab grant <strong>Full Disk Access</strong> to Terminal, restart Terminal, and then try the command again. When finished, remove <strong>Full Disk Access</strong> from Terminal.</div>
+    <p><strong>Note:</strong> If you encounter an <strong>Operation not permitted</strong> error, navigate to <strong>System Preferences &gt; Security &amp; Privacy</strong>, on the <strong>Privacy</strong> tab grant <strong>Full Disk Access</strong> to Terminal, restart Terminal, and then try the command again. When finished, remove <strong>Full Disk Access</strong> from Terminal.</p>
   </li>
   <li>
     <p>Eject your Qumulo Core USB Drive Installer, for example:</p>
@@ -661,12 +378,11 @@ $('#toc').on('click', 'a', function() {
 <h4 id="to-create-a-usb-drive-installer-on-windows">To Create a USB Drive Installer on Windows</h4>
 <p>To create a USB Drive Installer on Windows, you must use a third-party application such as <a href="https://rufus.ie/">Rufus</a>. We recommend Rufus because it can detect many USB storage devices (rather than only Windows-compatible ones).</p>
 
-<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
+<p><strong>Important:</strong></p>
 <ul>
-  <li>We don't recommend using other tools (such as Win32 Disk Imager) because they might encounter errors when unable to recognize the USB drive after writing data to it.</li>
+  <li>We don’t recommend using other tools (such as Win32 Disk Imager) because they might encounter errors when unable to recognize the USB drive after writing data to it.</li>
   <li>When the operation concludes, you might not be able to view the contents of the USB drive on Windows because the drive will be formatted using a different file system.</li>
 </ul>
-</div>
 
 <ol>
   <li>
@@ -701,7 +417,7 @@ $('#toc').on('click', 'a', function() {
 <h3 id="running-the-field-verification-tool-fvt-and-installing-qumulo-core">Running the Field Verification Tool (FVT) and Installing Qumulo Core</h3>
 <p>The Field Verification Tool (FVT) checks your node, prepares it for Qumulo Core, and installs Qumulo Core.</p>
 
-<div class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> <b>Caution</b><br /> The FVT erases all data from the node. You must back up any live data on the node before you run the FVT.</div>
+<p><strong>Caution:</strong> The FVT erases all data from the node. You must back up any live data on the node before you run the FVT.</p>
 
 <ol>
   <li>
@@ -801,7 +517,7 @@ Not fixable issues were detected.
 <h4 id="performing-the-part-replacement-procedure-using-the-fvt">Performing the Part Replacement Procedure Using the FVT</h4>
 <p>When you replace a component of your node (such as the motherboard or an NIC card), you must ensure that the firmware version and configuration are correct for your new components. To do this, you must perform the part replacement procedure using the FVT.</p>
 
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note</b><br /> Before you replace the motherboard, you must request a new DCMS license key from Supermicro and apply it before you run the FVT. (The license key uses the BMC MAC address which changes with the motherboard.) For more information, see <a href="#data-center-management-suite-dcms-licenses">Data Center Management Suite (DCMS) Licenses</a>.</div>
+<p><strong>Note:</strong> Before you replace the motherboard, you must request a new DCMS license key from Supermicro and apply it before you run the FVT. (The license key uses the BMC MAC address which changes with the motherboard.) For more information, see <a href="#data-center-management-suite-dcms-licenses">Data Center Management Suite (DCMS) Licenses</a>.</p>
 
 <ol>
   <li>
@@ -838,7 +554,7 @@ Actions:
   </li>
 </ol>
 
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note</b><br /> In some cases, after the part replacement procedure, the message <code class="language-plaintext highlighter-rouge">FIX: Run the FVT flash command.</code> appears. Enter <code class="language-plaintext highlighter-rouge">1</code> as you would for a <a href="#fixable-issues">fixable issue</a> to reboot the node and then repeat the part replacement procedure.</div>
+<p><strong>Note:</strong> In some cases, after the part replacement procedure, the message <code class="language-plaintext highlighter-rouge">FIX: Run the FVT flash command.</code> appears. Enter <code class="language-plaintext highlighter-rouge">1</code> as you would for a <a href="#fixable-issues">fixable issue</a> to reboot the node and then repeat the part replacement procedure.</p>
 
 <h2 id="step-4-creating-a-qumulo-cluster">Step 4: Creating a Qumulo Cluster</h2>
 <p>This section describes how to configure your Supermicro All-NVMe nodes to form a Qumulo cluster.</p>
@@ -866,22 +582,23 @@ Actions:
   <li>
     <p>Confirm your cluster protection level (how many drive failures Qumulo Core will protect the cluster against). Depending on your cluster size and node types, two-drive or three-drive protection is selected. If <strong>Customize Protection Level</strong> is available, in the <strong>2. Confirm cluster protection level</strong> section, you can choose two-drive protection or three-drive protection.</p>
 
-    <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
-<ul>
-  <li>You can choose your cluster protection level only during cluster creation. You can't change this setting later.</li>
-  <li>Choosing protection for more drives decreases your cluster capacity.</li>
-  <li>To enable multi-node protection, you must create your cluster using the CLI.</li>
-</ul>
-</div>
+    <p><strong>Important:</strong></p>
+    <ul>
+      <li>You can choose your cluster protection level only during cluster creation. You can’t change this setting later.</li>
+      <li>Choosing protection for more drives decreases your cluster capacity.</li>
+      <li>To enable multi-node protection, you must create your cluster using the CLI.</li>
+    </ul>
   </li>
   <li>In the <strong>3. Create a password for your admin account</strong> section, set the password for your administrative account.</li>
 </ol>
 
 <h2 id="replacing-hardware-components">Replacing Hardware Components</h2>
-<div class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> <b>Caution</b><br /> We strongly recommend engaging an on-site Supermicro engineer to replace failed hardware components including but not limited to any procedure that:
-* This guide doesn’t cover
-* You haven’t received training on
-* Requires precautions to avoid damage caused by electrostatic discharge (ESD) by using industry standard anti-static equipment (such as gloves or wrist straps)</div>
+<p><strong>Caution:</strong> We strongly recommend engaging an on-site Supermicro engineer to replace failed hardware components including but not limited to any procedure that:</p>
+<ul>
+  <li>This guide doesn’t cover</li>
+  <li>You haven’t received training on</li>
+  <li>Requires precautions to avoid damage caused by electrostatic discharge (ESD) by using industry standard anti-static equipment (such as gloves or wrist straps)</li>
+</ul>
 
 <p>This section explains the most common scenarios of replacing failed hardware components such as:</p>
 <ul>
@@ -896,13 +613,13 @@ Actions:
 
 <p>Replacement drives, including the on-site spare drives that you received with your original nodes, are provided without a drive carrier. When replacing a faulty drive, you must remove the existing drive from its carrier and then insert the new drive into the carriers. The drive carriers are toolless and don’t require any screws.</p>
 
-<div class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> <b>Caution</b><br /> We strongly recommend having a Supermicro engineer perform on-site boot drive replacement.</div>
+<p><strong>Caution:</strong> We strongly recommend having a Supermicro engineer perform on-site boot drive replacement.</p>
 
 <ol>
   <li>
     <p>Locate the drive that requires replacement using the drive bay mapping.</p>
 
-    <p><img src="supermicro/images/supermicro-drive-slot-mapping.png" alt="Supermicro Drive Slot Mapping" /></p>
+    <p><img src="/qumulo-doc/supermicro/images/supermicro-drive-slot-mapping.png" alt="Supermicro Drive Slot Mapping" /></p>
   </li>
   <li>
     <p>To remove the existing drive, do the following:</p>
@@ -935,7 +652,7 @@ Actions:
   <li>
     <p>To determine which PSU failed, check the PSU LED.</p>
 
-    <p><img src="supermicro/images/supermicro-psu-diagram.png" alt="Supermicro Power Supply Units (PSUs)" /></p>
+    <p><img src="/qumulo-doc/supermicro/images/supermicro-psu-diagram.png" alt="Supermicro Power Supply Units (PSUs)" /></p>
   </li>
   <li>
     <p>Disconnect the power cord from the existing PSU.</p>
@@ -954,9 +671,11 @@ Actions:
 <h3 id="to-replace-a-fan">To Replace a Fan</h3>
 <p>Your Supermicro All-NVMe chassis has six internal fans. When a fan fails, the <strong>Info</strong> LED at the front of the node begins to blink red every second.</p>
 
-<div class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> <b>Caution</b><br /> 
-* The fans are not hot-swappable. You must power off the node to replace a fan. However, you may remove the top cover to determine which fan failed.
-* For optimal air circulation, you must always reinstall the top chassis cover. You must never run the node for an extended period of time with the top chassis cover removed.</div>
+<p><strong>Caution:</strong></p>
+<ul>
+  <li>The fans are not hot-swappable. You must power off the node to replace a fan. However, you may remove the top cover to determine which fan failed.</li>
+  <li>For optimal air circulation, you must always reinstall the top chassis cover. You must never run the node for an extended period of time with the top chassis cover removed.</li>
+</ul>
 
 <ol>
   <li>
@@ -984,13 +703,13 @@ Actions:
 
 <p>To identify which DIMM module failed, you must use the baseboard management controller (BMC) on the node or another hardware monitoring solution.</p>
 
+<p><strong>Caution:</strong></p>
 <ul>
-  <li>Use extreme caution when handling DIMM modules. Don't touch their metal contacts.</li>
+  <li>Use extreme caution when handling DIMM modules. Don’t touch their metal contacts.</li>
   <li>Never force a DIMM module into a slot. Each DIMM module has a keyed notch which allows the module to be inserted in only one way.</li>
   <li>DIMM modules are not hot-swappable. You must power off the node to replace a DIMM module.</li>
   <li>For optimal air circulation, you must always reinstall the top chassis cover. You must never run the node for an extended period of time with the top chassis cover removed.</li>
 </ul>
-<p>&lt;/div&gt;</p>
 
 <ol>
   <li>
@@ -1078,7 +797,7 @@ Actions:
 <h4 id="usb-drive-boot-priority">USB Drive Boot Priority</h4>
 <p>Supermicro All-NVMe nodes don’t have the option to always boot from a USB drive if one is present. To boot from a USB drive, press <strong>F11</strong> when booting and select the USB drive from the menu. For more information, see <a href="#running-the-field-verification-tool-fvt-and-installing-qumulo-core">Running the Field Verification Tool (FVT) and Installing Qumulo Core</a>.</p>
 
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note</b><br /> The setting is persistent: when you boot from a USB drive once, the node will continue boot from the USB drive. Remove the USB drive from the node after Qumulo Core is installed.</div>
+<p><strong>Note:</strong> The setting is persistent: when you boot from a USB drive once, the node will continue boot from the USB drive. Remove the USB drive from the node after Qumulo Core is installed.</p>
 
 <h4 id="fast-drive-hot-swapping">Fast Drive Hot-Swapping</h4>
 <p>If you remove and reinsert a drive extremely quickly (faster than one second), the baseboard management controller (BMC) does not recognize the drive and the activity LEDs do not return to their normal states. To resolve this issue, remove the drive, wait five seconds, and then reinsert it.</p>
@@ -1192,119 +911,11 @@ Actions:
 </tbody>
 </table>
 
-
-    <!--
-    <div class="tags">
-        
-        <b>Tags: </b>
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-    </div>
-    -->
-
-
-
-
 </div>
 
-        </div>
-    <!-- /.row -->
-</div>
-<!-- /.container -->
-</div>
-<!-- /#main -->
     </div>
 
-<footer>
-    <div class="footer">
-        <div class="footer-text">
-               Copyright &copy; 2021 Qumulo, Inc.<br />
- Site generated on Dec 9, 2021 <br />
-<p><img width="93" height="43" id="logo" data-height-percentage="40" data-src="images/qumulo-logo.svg" src="images/qumulo-logo.svg" alt="Qumulo Logo" data-actual-width="1010" data-actual-height="312"/></p>
-        </div>
-        <div class="footer-grumpquats">
-            <img src="images/grumpquats.png" style="max-width:220px;">
-        </div>
-    </div>
-</footer>
-
+</div>    <!-- /.container -->
 
 </body>
 
