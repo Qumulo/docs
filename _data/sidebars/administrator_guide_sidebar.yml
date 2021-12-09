@@ -75,7 +75,7 @@ entries:
       url: /shift-from-s3.html
       output: web, pdf
   
-  - title: Using the frontend
+  - title: Using the Frontend
     output: web, pdf
     folderitems:
 
