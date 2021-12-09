@@ -33,7 +33,7 @@ Before you begin, ensure that you have C-192T or C-432T hardware and the replace
 
 1. Press the large **PUSH** button on each side of the chassis frame.
 
-   ![C-Series Chassis Side Release Buttons](administrator-guide/images/c-series-button-releases.png)
+   {% include image.html file="administrator-guide/images/c-series-button-releases.png" alt="C-Series Chassis Side Release Buttons" %}
 
    The inner components of the node are exposed.
 
