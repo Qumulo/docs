@@ -147,9 +147,19 @@ header {
   margin-top: 5px;
 }
 
-@media (max-width: 768px) {
+/*@media (max-width: 768px) {*/
+@media (max-width: 911px) {
   .nav-wrapper {
-    visibility:hidden;
+    /*visibility:hidden;*/
+    /* Fix horizontal scrolling bug on mobile viewports*/
+    display:none !important;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .footer-grumpquats {
+    float:left;
+    text-align:left;
   }
 }
 
@@ -1080,14 +1090,12 @@ span.soft {
 }
 
 @media (min-width: 1000px) {
-
     ul#mysidebar {
         width: 225px;
     }
 }
 
 @media (max-width: 900px) {
-
     ul#mysidebar {
         max-width: 100%;
     }

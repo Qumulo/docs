@@ -98,6 +98,9 @@ This section explains the networking prerequisites, outlines the recommended net
 Your node requires the following resources.
 * A network switch with the following specifications:
   * 100 Gbps Ethernet
+
+    {% include note.html content="You can use 40 Gbps connections with 40 Gbps transceivers." %}
+
   * Fully non-blocking architecture
   * IPv6 capability
   * Jumbo Frame support (9,000 MTU minimum) for the back-end network
