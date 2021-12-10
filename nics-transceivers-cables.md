@@ -1,6 +1,6 @@
 ---
 title: "Identifying NICs and Choosing Transceivers and Cables for Your Qumulo Node"
-preamble: "This topic explains how you can identify your node's NICs and choose the correct transceivers and cables for your Qumulo nodes."
+summary: "This topic explains how you can identify your node's NICs and choose the correct transceivers and cables for your Qumulo nodes."
 permalink: nics-transceivers-cables.html
 sidebar: administrator_guide_sidebar
 keywords: network transceiver, network transceivers, nic, mellanox, short range transceiver, long range transceiver, fiber, fiber optic, fiber optic cable
