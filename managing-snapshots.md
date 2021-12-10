@@ -27,7 +27,7 @@ If you have more than 50 snapshots, you can navigate between pages of snapshots 
 
 ### Finding Specific Snapshots
 
-Since snapshots are divided into pages, you won't be able to rely on the web browser's built-in find functionality to find a specific snapshot. To replace this, the table has its own filtering functionality that will allow you to search for specific snapshots by name, creation time, or any other column in the table.
+The snapshots table has a filtering mode that will allow you to search for specific snapshots by name, creation time, or any other column in the table. This serves as a replacement for the browser's built-in find functionality which you won't be able to rely on since snapshots are divided into pages.
 
 1. Click the filter toggle button at the top of the table next to the pagination controls.
 1. Click one of the new inputs that has appeared between the table's header and its content.
