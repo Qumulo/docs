@@ -45,7 +45,7 @@ body {
   font-family: Montserrat, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   line-height: 1.5;
-  background-color: #F8F8F8;
+  background-color: white;
   font-size:14px;
 }
 .nav ul li a {border-top:0px; background-color:transparent; color: #808080; }
