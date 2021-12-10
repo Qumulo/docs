@@ -50,7 +50,7 @@ When filters are active, each column will have a filter control between its head
 ### Deleting a single snapshot
 You can delete a single snapshot by clicking the delete icon at the end of the row you want to delete.
 
-![Delete icon](administrator-guide/images/managing-snapshots-delete.png)
+{% include image.html alt="Delete Icon" file="administrator-guide/managing-snapshots-delete.png" %}
 
 ### Deleting multiple snapshots
 When you select snapshots using the checkbox at the beginning of their row, a delete button will appear at the top of the table. Clicking that button will delete all selected snapshots.
