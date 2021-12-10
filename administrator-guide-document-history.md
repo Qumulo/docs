@@ -1,5 +1,5 @@
 ---
-title: Qumulo Administrator Guide Document History
+title: "Qumulo Administrator Guide Document History"
 permalink: administrator-guide-document-history.html
 search: exclude
 sidebar: administrator_guide_sidebar
