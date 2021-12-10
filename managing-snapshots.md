@@ -1,12 +1,9 @@
 ---
-title: Managing Snapshots
+title: "Managing Snapshots"
+summary: " This topic explains how you can view and manage your saved snapshots through the frontend interface."
 permalink: managing-snapshots.html
-preamble: This topic explains how you can view and manage your saved snapshots through the frontend interface.
 sidebar: administrator_guide_sidebar
-tags:
-  - snapshots
-  - filter
-  - frontend
+keywords: snapshots, filter, front end
 ---
 
 The snapshots table makes it easy for anyone to view and manage their saved snapshots without having to make api queries.
