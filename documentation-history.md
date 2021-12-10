@@ -1,8 +1,8 @@
 ---
 title: Qumulo Documentation History
 permalink: documentation-history.html
-search: exclude
 sidebar: home_sidebar
+search: exclude
 ---
 
 The following table lists changes to the Qumulo Documentation Portal
