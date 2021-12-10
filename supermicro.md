@@ -54,10 +54,10 @@ For more information about administering your cluster, see the [Qumulo Care](htt
 This section contains quick-reference diagrams for the front and back of your Supermicro All-NVMe node, an architecture diagram of an example four-node cluster, an explanation of node LEDs, and a diagram of drive slots and PCIe mapping.
 
 ### Front and Back Node Diagrams
-![Front and Back Diagrams of the Supermicro A+ WIO 1114S-WN10RT All-NVMe Node](supermicro/images/supermicro-front-back-diagram.png)
+{% include image.html alt="Front and Back Diagrams of the Supermicro A+ WIO 1114S-WN10RT All-NVMe Node" file="supermicro/supermicro-front-back-diagram.png" url="/docs/images/supermicro/supermicro-front-back-diagram.png" %}
 
 ### Four-Node Cluster Architecture Diagram
-![Four-Node Cluster Architecture Diagram](supermicro/images/supermicro-four-node-cluster-architecture-diagram.png)
+{% include image.html alt="Four-Node Cluster Architecture Diagram" file="supermicro/supermicro-four-node-cluster-architecture-diagram.png" url="/docs/images/supermicro/supermicro-four-node-cluster-architecture-diagram.png" %}
 
 ### Node LEDs
 On the front, right side of your node, there are five LEDs.
@@ -86,7 +86,7 @@ On the back of your node, LAN LEDs are located behind the vent holes on the NIC.
 ### Drive Slot Mapping
 Your node contains slots for 10 drives and one boot drive (in an internal M.2 slot). The following is the mapping for the drives.
 
-![Supermicro Drive Slot Mapping](supermicro/images/supermicro-drive-slot-mapping.png)
+{% include image.html alt="Supermicro Drive Slot Mapping" file="supermicro/supermicro-drive-slot-mapping.png" url="/docs/images/supermicro/supermicro-drive-slot-mapping.png" %}
 
 
 ## Configuring Networking for Your Node
@@ -166,13 +166,13 @@ This section describes how to use the outside and inside rails of your Supermicr
 1. Adjust the outer rails to the length of your server rack.
 1. Line up the edge of the outer rail between the rack unit (RU) markers, insert the tabs on the edge of the rail into the mounting holes, and push the rail into the rack until the quick-release clicks into place. This process is the same for the front and back of your rack.
 
-   ![Snap the Outer Rail into the Rack](supermicro/images/supermicro-outer-rail-snap-into-rack.png)
+   {% include image.html alt="Snap the Outer Rail into the Rack" file="supermicro/supermicro-outer-rail-snap-into-rack.png" %}
 
 1. Snap the inner rails to the chassis and secure them using two screws on each side, near the middle of the chassis.
 
    {% include note.html content="First attach the front inner rails, then the back inner rails." %}
 
-   ![Attach the Inner Rail to the Chassis Using Screws](supermicro/images/supermicro-inner-rail-attach-to-chassis-with-screws.png)
+   {% include image.html alt="Attach the Inner Rail to the Chassis Using Screws" file="supermicro/supermicro-inner-rail-attach-to-chassis-with-screws.png" %}
 
 ### To Insert the Chassis
 1. Align the outer and inner rails and insert the chassis into the server rack.
@@ -183,7 +183,7 @@ This section describes how to use the outside and inside rails of your Supermicr
 1. Remove one screw from each side of the front of the chassis.
 1. Pull the chassis out from the server rack partially. When the first set of black snaps appears, pinch the long piece of the snap towards the short one (up on one side, down on the other).
 
-   ![Pinch the Black Latch on Both Sides](supermicro/images/supermicro-remove-chassis-pinch-black-latch-on-both-sides.png)
+   {% include image.html alt="Pinch the Black Latch on Both Sides" file="supermicro/supermicro-remove-chassis-pinch-black-latch-on-both-sides.png" %}
 
 1. Continue to pull the chassis from the server rack. When the second set of black snaps appears, pinch the long piece of each snap towards the short one (up on one side, down on the other) and remove the chassis completely.
 
@@ -442,10 +442,14 @@ This section describes how to configure your Supermicro All-NVMe nodes to form a
 1. In the **3. Create a password for your admin account** section, set the password for your administrative account.
 
 ## Replacing Hardware Components
-{% include caution.html content="We strongly recommend engaging an on-site Supermicro engineer to replace failed hardware components including but not limited to any procedure that:
-* This guide doesn't cover
-* You haven't received training on
-* Requires precautions to avoid damage caused by electrostatic discharge (ESD) by using industry standard anti-static equipment (such as gloves or wrist straps)" %}
+{{site.data.alerts.caution}}
+We strongly recommend engaging an on-site Supermicro engineer to replace failed hardware components including but not limited to any procedure that:
+<ul>
+  <li>This guide doesn't cover</li>
+  <li>You haven't received training on</li>
+  <li>Requires precautions to avoid damage caused by electrostatic discharge (ESD) by using industry standard anti-static equipment (such as gloves or wrist straps)</li>
+</ul>
+{{site.data.alerts.end}}
 
 This section explains the most common scenarios of replacing failed hardware components such as:
 * Drives (excluding boot drives)
@@ -462,7 +466,7 @@ Replacement drives, including the on-site spare drives that you received with yo
 
 1. Locate the drive that requires replacement using the drive bay mapping.
 
-   ![Supermicro Drive Slot Mapping](supermicro/images/supermicro-drive-slot-mapping.png)
+   {% include image.html alt="Supermicro Drive Slot Mapping" file="supermicro/supermicro-drive-slot-mapping.png" url="/docs/images/supermicro/supermicro-drive-slot-mapping.png"%}
 
 1. To remove the existing drive, do the following:
 
@@ -489,7 +493,7 @@ When a PSU fails, the **Info** LED at the front of the node begins to blink red 
 
 1. To determine which PSU failed, check the PSU LED.
 
-   ![Supermicro Power Supply Units (PSUs)](supermicro/images/supermicro-psu-diagram.png)
+   {% include image.html alt="Supermicro Power Supply Units (PSUs)" file="supermicro/supermicro-psu-diagram.png" %}
 
 1. Disconnect the power cord from the existing PSU.
 
@@ -502,9 +506,12 @@ When a PSU fails, the **Info** LED at the front of the node begins to blink red 
 ### To Replace a Fan
 Your Supermicro All-NVMe chassis has six internal fans. When a fan fails, the **Info** LED at the front of the node begins to blink red every second.
 
-{% include caution.html content="
-* The fans are not hot-swappable. You must power off the node to replace a fan. However, you may remove the top cover to determine which fan failed.
-* For optimal air circulation, you must always reinstall the top chassis cover. You must never run the node for an extended period of time with the top chassis cover removed." %}
+{{site.data.alerts.caution}}
+<ul>
+  <li>The fans are not hot-swappable. You must power off the node to replace a fan. However, you may remove the top cover to determine which fan failed.</li>
+  <li>For optimal air circulation, you must always reinstall the top chassis cover. You must never run the node for an extended period of time with the top chassis cover removed.</li>
+</ul>
+{{site.data.alerts.end}}
 
 1. Power off the node, remove the top chassis cover, and disconnect the power cords from both PSUs.
 
