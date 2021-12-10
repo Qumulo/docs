@@ -1,8 +1,8 @@
 ---
-title: Qumulo Administrator Guide
-preamble: The Qumulo Administrator Guide is a growing collection of information about configuring, managing, and troubleshooting Qumulo Core and your Qumulo nodes and clusters.
+title: "Qumulo Administrator Guide"
 permalink: administrator-guide.html
 sidebar: administrator_guide_sidebar
+search: exclude
 ---
 
 The Qumulo Administrator Guide is a growing collection of information about configuring, managing, and troubleshooting Qumulo Core and your Qumulo nodes and clusters.
