@@ -30,4 +30,5 @@ search: exclude
 {% unless forloop.last %},{% endunless %}
 {% endfor %}
 
+{"":""}
 ]
