@@ -1,5 +1,10 @@
 /*body.print .container {max-width: 650px;}*/
 
+#userMap {
+    overflow-x: visible;
+    overflow-y: visible;
+}
+
 /* cyrillic-ext */
 @font-face {
   font-family: 'Montserrat';
