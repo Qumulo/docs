@@ -19,5 +19,5 @@ The Qumulo Administrator Guide is a growing collection of information about conf
 * **Moving Files to and From Amazon S3**
   * [Using Qumulo Shift-To to Copy Objects to Amazon S3](/shift-to-s3.md)
   * [Using Qumulo Shift-From to Copy Objects from Amazon S3](/shift-from-s3.md)
-* **Using the Frontend**
+* **Using the webUI**
   * [Managing Snapshots](/managing-snapshots.md)

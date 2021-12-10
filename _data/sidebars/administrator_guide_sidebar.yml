@@ -75,7 +75,7 @@ entries:
       url: /shift-from-s3.html
       output: web, pdf
   
-  - title: Using the Frontend
+  - title: Using the webUI
     output: web, pdf
     folderitems:
 

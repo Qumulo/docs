@@ -1,55 +1,62 @@
 ---
 title: "Managing Snapshots"
-summary: " This topic explains how you can view and manage your saved snapshots through the frontend interface."
+summary: " This topic explains how you can view and manage your saved snapshots through the webUI."
 permalink: managing-snapshots.html
 sidebar: administrator_guide_sidebar
-keywords: snapshots, filter, front end
+keywords: snapshots, filter, webUI
 ---
 
-The snapshots table makes it easy for anyone to view and manage their saved snapshots without having to make api queries.
+Qumulo Core 4.3.3 includes a redesigned snapshots page that allows users to view and manage large numbers of saved snapshots without having to make API queries. While it's possible to do these actions without the webUI, this page's ease of use allows snapshot management operations to be delegated to a wider range of users than could handle these operations otherwise.
 
-## Accessing the snapshots page
+## Viewing Your Snapshots
+
+The snapshots page provides tools to make navigating upwards of tens of thousands of snapshots managable and performant.
+
+### Accessing the Snapshots Page
+
 1. Hover over the "Cluster" menu at the top of the screen.
 1. Click the "Saved Snapshots" link in the dropdown that appears.
 
-## Viewing your snapshots
-By default, the snapshots page shows your most recent 50 snapshots ordered by creation time.
+### Navigating Large Numbers of Snapshots
 
-### Pagination
-If you have more than 50 snapshots, you can use the pagination controls at the top and bottom of the table to navigate between pages.
+If you have more than 50 snapshots, you can navigate between pages of snapshots using the pagination controls at the top and bottom of the table.
 
 {% include image.html alt="Pagination Controls" file="administrator-guide/managing-snapshots-pagination.png" %}
 
 {% include tip.html content="The controls at the bottom of the table will also let you jump to a specific page, or change the number of rows per page." %}
 
-### Sorting
-To sort by something other than creation time, you can click the sort direction arrows in the headers for a column. Clicking it multiple times will cycle between sorting ascending or descending.
+### Finding Specific Snapshots
 
-{% include image.html alt="Pagination Controls" file="administrator-guide/managing-snapshots-sort.png" %}
-
-## Filtering
-If you have a large number of snapshots, you can filter on any column in the snapshots table to narrow it down to only the ones you're interested in.
-
-### Toggling filters
-To enable filters, click the filter toggle button at the top of the table next to the pagination controls.
+Since snapshots are divided into pages, you won't be able to rely on the web browser's built-in find functionality to find a specific snapshot. To replace this, the table has its own filtering functionality that will allow you to search for specific snapshots by name, creation time, or any other column in the table.
 
 {% include image.html alt="Filter Toggle" file="administrator-guide/managing-snapshots-filter-off.png" %}
 
-You can turn off filters by clicking the filter toggle button again. The toggle button's text and coloring will change to reflect whether filters are currently active.
+1. Click the filter toggle button at the top of the table next to the pagination controls.
+1. Click one of the new inputs that has appeared between the table's header and its content.
+1. Type a search query into the input.
+
+As you type, the table rows will filter to match your query in real-time.
+
+You can clear and turn off filters by clicking the filter toggle button again. Its text and coloring will change to reflect whether filters are currently active.
 
 {% include image.html alt="Filter Toggle" file="administrator-guide/managing-snapshots-filter-on.png" %}
 
-### Filtering data
-When filters are active, each column will have a filter control between its header and its data. Only snapshots that match all active filters will show in the table.
+## Managing Your Snapshots
 
-## Deleting snapshots
+The page also includes functionality to delete snapshots, either one at a time or in bulk.
 
-### Deleting a single snapshot
+### Deleting a Single Snapshot
+
 You can delete a single snapshot by clicking the delete icon at the end of the row you want to delete.
 
 {% include image.html alt="Delete Icon" file="administrator-guide/managing-snapshots-delete.png" %}
 
-### Deleting multiple snapshots
-When you select snapshots using the checkbox at the beginning of their row, a delete button will appear at the top of the table. Clicking that button will delete all selected snapshots.
+### Deleting Multiple Snapshots
+
+To delete multiple snapshots, you first need to select the ones you'd like to remove.
+
+1. Click the checkbox at the beginning of the row for each snapshot you want to delete.
+1. Notice that a delete button appears at the top of the table once a row is selected.
+1. Click the delete button and follow the prompts in the dialog that appears.
 
 {% include tip.html content="All selection and deletion controls will only ever modify the current page of data. If a snapshot isn't listed on the current page (either because it's on a different page or has been filtered out), you don't have to worry about accidentally deleting it." %}
