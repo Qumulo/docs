@@ -1,5 +1,5 @@
 ---
-title: Qumulo Documentation History
+title: "Qumulo Documentation History"
 permalink: documentation-history.html
 sidebar: home_sidebar
 search: exclude
