@@ -74,7 +74,10 @@ a[href*="mailto"]::after, a[data-toggle="tooltip"]::after, a[href].noCrossRef::a
 
 
 @page {
-    margin: 60pt 60pt 60pt 60pt;
+    margin-left:30pt;
+    margin-right:30px;
+    margin-top:60px;
+    margin-bottom:60pt;
     font-family: sans-serif;
     font-style:none;
     color: gray;
