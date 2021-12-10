@@ -1,19 +1,9 @@
 ---
-title: Enabling and Using NFSv4.1 on a Qumulo Cluster
+title: "Enabling and Using NFSv4.1 on a Qumulo Cluster"
+preamble: "This topic explains how you can configure your cluster for a supported export configuration and enable or disable NFSv4.1 on your cluster."
 permalink: nfsv4.1-enabling-using.html
-preamble: This topic explains how you can configure your cluster for a supported export configuration and enable or disable NFSv4.1 on your cluster.
 sidebar: administrator_guide_sidebar
-tags:
-  - nfs
-  - nfs3
-  - nfsv3
-  - nfsv4.1
-  - exports
-  - mount
-  - cluster
-  - enable_nfs
-  - disable_nfs
-  - floating_ip
+keywords: nfs, nfs3, nfsv3, nfsv4.1, exports, mount, cluster, enable nfs, disable nfs, floating ip
 ---
 
 Qumulo Core 4.3.0 (and higher) supports Network File System version 4.1 (NFSv4.1). This section explains how you can configure your cluster for a supported export configuration and enable or disable NFSv4.1 on your cluster. It also provides detail about supported and unsupported features. For more information about NFSv4.1 and file access permissions, see [Managing File Access Permissions Using NFSv4.1 Access Control Lists (ACLs)](nfsv4.1-auth-sys-acls.md).
