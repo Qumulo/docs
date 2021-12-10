@@ -21,14 +21,14 @@ By default, the snapshots page shows your most recent 50 snapshots ordered by cr
 ### Pagination
 If you have more than 50 snapshots, you can use the pagination controls at the top and bottom of the table to navigate between pages.
 
-![Pagination controls](administrator-guide/images/managing-snapshots-pagination.png)
+{% include image.html alt="Pagination Controls" file="administrator-guide/managing-snapshots-pagination.png" %}
 
 {% include tip.html content="The controls at the bottom of the table will also let you jump to a specific page, or change the number of rows per page." %}
 
 ### Sorting
 To sort by something other than creation time, you can click the sort direction arrows in the headers for a column. Clicking it multiple times will cycle between sorting ascending or descending.
 
-![Pagination controls](administrator-guide/images/managing-snapshots-sort.png)
+{% include image.html alt="Pagination Controls" file="administrator-guide/managing-snapshots-sort.png" %}
 
 ## Filtering
 If you have a large number of snapshots, you can filter on any column in the snapshots table to narrow it down to only the ones you're interested in.
@@ -36,11 +36,11 @@ If you have a large number of snapshots, you can filter on any column in the sna
 ### Toggling filters
 To enable filters, click the filter toggle button at the top of the table next to the pagination controls.
 
-![Filter toggle](administrator-guide/images/managing-snapshots-filter-off.png)
+{% include image.html alt="Filter Toggle" file="administrator-guide/managing-snapshots-filter-off.png" %}
 
 You can turn off filters by clicking the filter toggle button again. The toggle button's text and coloring will change to reflect whether filters are currently active.
 
-![Filter toggle](administrator-guide/images/managing-snapshots-filter-on.png)
+{% include image.html alt="Filter Toggle" file="administrator-guide/managing-snapshots-filter-on.png" %}
 
 ### Filtering data
 When filters are active, each column will have a filter control between its header and its data. Only snapshots that match all active filters will show in the table.
