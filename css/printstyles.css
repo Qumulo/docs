@@ -74,7 +74,7 @@ a[href*="mailto"]::after, a[data-toggle="tooltip"]::after, a[href].noCrossRef::a
 
 
 @page {
-    margin: 60pt 90pt 60pt 90pt;
+    margin: 60pt 60pt 60pt 60pt;
     font-family: sans-serif;
     font-style:none;
     color: gray;
@@ -170,7 +170,23 @@ body.frontmatter {counter-reset: page 1}
 
 body.first_page {counter-reset: page 1}
 
-h1 { string-set: doctitle content() }
+h1 {
+    string-set: doctitle content();
+    color: #005d80;
+}
+
+h2 {
+    color: #333;
+}
+
+h3 {
+    color: #333;
+}
+
+h4 {
+    color: #333;
+    font-weight: bold;
+}
 
 @page {
     @top-left {
