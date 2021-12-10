@@ -1,11 +1,8 @@
 ---
-title: Configuring Prometheus and Grafana to Use the Qumulo Metrics API
+title: "Configuring Prometheus and Grafana to Use the Qumulo Metrics API"
+summary: "This topic describes configuring Prometheus to connect to the Qumulo API and poll its data at regular intervals and using Grafana to create dashboards to onitor the health of your Qumulo cluster."
 permalink: configuring-prometheus-grafana-metrics-api.html
-tags:
-  - metrics
-  - openmetrics
-  - prometheus
-  - grafana
+keywords: metrics, openmetrics, prometheus, grafana
 sidebar: administrator_guide_sidebar
 ---
 
