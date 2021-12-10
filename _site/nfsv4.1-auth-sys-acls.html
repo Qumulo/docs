@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="This topic explains how you can use Qumulo Core's implementation of NFSv4.1 with access control lists (ACLs) and AUTH_SYS or AUTH_UNIX credentials.">
+<meta name="keywords" content=" nfs, nfs4.1, nfsv4.1, acl, access control list, auth_sys, auth_unix, auth, permissions, file access, file access permissions">
+<title>Managing File Access Permissions Using NFSv4.1 Access Control Lists (ACLs)  | Qumulo Documentation</title>
+
+
+<link rel="stylesheet" href="http://localhost:4010/qumulo-doc/css/syntax.css">
+<link rel="stylesheet" href="http://localhost:4010/qumulo-doc/css/font-awesome.min.css">
+<link rel="stylesheet" href="http://localhost:4010/qumulo-doc/css/bootstrap.min.css">
+<link rel="stylesheet" href="http://localhost:4010/qumulo-doc/css/modern-business.css">
+<link rel="stylesheet" href="http://localhost:4010/qumulo-doc/css/customstyles.css">
+<link rel="stylesheet" href="http://localhost:4010/qumulo-doc/css/theme-blue.css">
+<link rel="stylesheet" href="http://localhost:4010/qumulo-doc/css/syntax.css">
+<link rel="stylesheet" href="/qumulo-doc/css/printstyles.css">
+
+<script>
+    Prince.addScriptFunc("datestamp", function() {
+        return "PDF last generated: December 10, 2021";
+    });
+</script>
+
+<script>
+    Prince.addScriptFunc("guideName", function() {
+        return "Qumulo on Supermicro A+ WIO 1114S-WN10RT Getting Started Guide User Guide";
+    });
+</script>
+
+
+
+</head>
+
+<body class=" print">
+
+<!-- Page Content -->
+<div class="container">
+    <!-- Content Column -->
+    <div class="col-md-9">
+
+        <div class="post-header">
+    <h1 class="post-title-main" id="nfsv4.1-auth-sys-acls.html">Managing File Access Permissions Using NFSv4.1 Access Control Lists (ACLs)</h1>
+</div>
+
+<div class="post-content">
+
+    
+    <div class="summary">This topic explains how you can use Qumulo Core's implementation of NFSv4.1 with access control lists (ACLs) and AUTH_SYS or AUTH_UNIX credentials.</div>
+    
+    <p>NFSv4.1 lets you use access control lists (ACLs) to manage access permissions for files. The Qumulo Core implementation of NFSv4.1 supports ACLs using <code class="language-plaintext highlighter-rouge">AUTH_SYS</code> or <code class="language-plaintext highlighter-rouge">AUTH_UNIX</code> credentials. You can allow or deny various operations using the CLI tools in the <code class="language-plaintext highlighter-rouge">nfs-acl-tools</code> Linux package.</p>
+
+<p>For more information about NFSv4.1, see <a href="/qumulo-doc/nfsv4.1-enabling-using.html">Enabling and Using NFSv4.1 on a Qumulo Cluster</a>.</p>
+
+<h2 id="using-the-nfsv41-cli-commands-to-manage-acls">Using the NFSv4.1 CLI Commands to Manage ACLs</h2>
+<p>In most Linux distributions, the <code class="language-plaintext highlighter-rouge">nfs-acl-tools</code> package contains the NFSv4.1 commands that let you manage ACLs for files.</p>
+
+<h3 id="showing-the-acl-of-a-file">Showing the ACL of a File</h3>
+<p>To show the ACL of a file, use the <code class="language-plaintext highlighter-rouge">nfs4_getfacl</code> command. In the following example, we create the file <code class="language-plaintext highlighter-rouge">my-file</code> and then show the ACL for it.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">touch</span> /mnt/qumulo/my-file
+<span class="nv">$ </span>nfs4_getfacl /mnt/qumulo/my-file
+A::1001:rwatTnNcy
+A:g:1001:rwatTnNcy
+A::EVERYONE@:rtncy
+</code></pre></div></div>
+<p>The entries in the access control list have four parts separated by colons. For a detailed description, see the <a href="https://linux.die.net/man/5/nfs4_acl">man page for <code class="language-plaintext highlighter-rouge">nfs4_acl</code></a> in the Linux Documentation.</p>
+
+<ol>
+  <li>
+    <p>The type of access control entry (ACE). In this example, all three ACEs are set to <code class="language-plaintext highlighter-rouge">A</code> (allow).</p>
+
+    <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note</b><br /> Qumulo Core supports only <code class="language-plaintext highlighter-rouge">A</code> and <code class="language-plaintext highlighter-rouge">D</code> ACEs.</div>
+
+    <ul>
+      <li><strong>A:</strong> Allow</li>
+      <li><strong>D:</strong> Deny</li>
+      <li><strong>U:</strong> Audit</li>
+      <li><strong>L:</strong> Alarm</li>
+    </ul>
+  </li>
+  <li>
+    <p>Additional ACE flags. In this example, the second ACE has the flag <code class="language-plaintext highlighter-rouge">g</code> that shows that the ID in the following part represents a <em>group</em> (rather than a user).</p>
+
+    <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note</b><br /> Qumulo Core doesn’t support The <code class="language-plaintext highlighter-rouge">S</code> and <code class="language-plaintext highlighter-rouge">F</code> flags.</div>
+  </li>
+  <li>
+    <p>Whom the ACE applies to. The available options are:</p>
+
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">AUTH_SYS</code> or <code class="language-plaintext highlighter-rouge">AUTH_UNIX</code>: A user authenticated at the client</li>
+      <li><code class="language-plaintext highlighter-rouge">EVERYONE@</code>: Any user of the file system</li>
+      <li><code class="language-plaintext highlighter-rouge">GID</code>: The GID of the file</li>
+      <li><code class="language-plaintext highlighter-rouge">GROUP@</code>: The group owner of the file</li>
+      <li><code class="language-plaintext highlighter-rouge">UID</code>: The UID of the file</li>
+      <li><code class="language-plaintext highlighter-rouge">OWNER@</code>: The owner of the file</li>
+    </ul>
+
+    <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note</b><br /> Currently, Qumulo Core doesn’t support Kerberos principals in ACLs.</div>
+  </li>
+  <li>
+    <p>The access types the ACE applies to. For example:</p>
+
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">r</code>: Read</li>
+      <li><code class="language-plaintext highlighter-rouge">t</code>: Read attributes</li>
+      <li><code class="language-plaintext highlighter-rouge">w</code>: Write</li>
+    </ul>
+
+    <p>The <code class="language-plaintext highlighter-rouge">nfs4_setfacl</code> command also lets you use the following shorthand:</p>
+
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">R</code>: Generic read</li>
+      <li><code class="language-plaintext highlighter-rouge">W</code>: Generic write</li>
+      <li><code class="language-plaintext highlighter-rouge">X</code>: Execute permissions</li>
+    </ul>
+
+    <p>For a detailed description, see the <a href="https://linux.die.net/man/1/nfs4_setfacl">man page for <code class="language-plaintext highlighter-rouge">nfs4_setfacl</code></a> in the Linux Documentation.</p>
+  </li>
+</ol>
+
+<p>The ACL in this example corresponds the the <code class="language-plaintext highlighter-rouge">664</code> mode: The owner and group of the file are allowed to read and write, while others (<code class="language-plaintext highlighter-rouge">EVERYONE@</code>) are allowed to only read. To check the current mode, run the <code class="language-plaintext highlighter-rouge">stat</code> command, for example:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">stat</span> <span class="nt">-c</span> %a /mnt/qumulo/my-file
+664
+</code></pre></div></div>
+
+<h3 id="editing-the-acl-of-a-file">Editing the ACL of a File</h3>
+<p>To edit the ACL of a file using the text editor specified in the <code class="language-plaintext highlighter-rouge">$EDITOR</code> environment variable, use the <code class="language-plaintext highlighter-rouge">nfs4_editfacl</code> (or <code class="language-plaintext highlighter-rouge">nfs4_setfacl -e</code>) command. For a detailed description, see the <a href="https://linux.die.net/man/1/nfs4_editfacl">man page for <code class="language-plaintext highlighter-rouge">nfs4_editfacl</code></a> and <a href="https://linux.die.net/man/1/nfs4_setfacl"><code class="language-plaintext highlighter-rouge">nfs4_setfacl</code></a> in the Linux Documentation.</p>
+
+<h3 id="setting-the-acl-of-a-file">Setting the ACL of a File</h3>
+<p>To set the ACL of a file, you can use one of the following commands:</p>
+
+<ul>
+  <li><strong>Add a Single ACE:</strong> <code class="language-plaintext highlighter-rouge">nfs4_setfacl -a &lt;ace&gt;</code></li>
+  <li><strong>Set an Entire ACL:</strong> <code class="language-plaintext highlighter-rouge">nfs4_setfacl -s &lt;acl&gt;</code></li>
+</ul>
+
+<h2 id="using-special-nfsv41-identifiers">Using Special NFSv4.1 Identifiers</h2>
+<p>Qumulo supports three of the special identifiers that NFSv4.1 defines. These identifiers get the ACE to apply to:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">EVERYONE@</code>: Any user of the file system</li>
+  <li><code class="language-plaintext highlighter-rouge">GROUP@</code>: The group owner of the file</li>
+  <li><code class="language-plaintext highlighter-rouge">OWNER@</code>: The owner of the file</li>
+</ul>
+
+<h2 id="managing-nfsv41-permissions-with-acls-and-posix-style-modes">Managing NFSv4.1 Permissions with ACLs and POSIX-Style Modes</h2>
+<p>You can manage NFSv4.1 access permissions with ACLs, POSIX-style modes, or a combination of both.</p>
+
+<ul>
+  <li>
+    <p>If you set an ACL on a file and then also set a mode on it, the restrictions that the mode espresses are also applied to the ACL. These restrictions change or remove ACEs that apply to the owner, group, or other users.</p>
+  </li>
+  <li>
+    <p>If you use the <code class="language-plaintext highlighter-rouge">OWNER@</code> or <code class="language-plaintext highlighter-rouge">GROUP@</code> identifiers in an ACL that allows read, write, or execute permissions, the identifiers appear in the <code class="language-plaintext highlighter-rouge">owner</code> or <code class="language-plaintext highlighter-rouge">group</code> bits of the mode when you read the file’s mode.</p>
+  </li>
+</ul>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note</b><br /> Because the <code class="language-plaintext highlighter-rouge">EVERYONE@</code> identifier includes the owner and group of a file and the <code class="language-plaintext highlighter-rouge">other</code> bits of a mode don’t apply to the owner or group, the permissions you grant to the <code class="language-plaintext highlighter-rouge">EVERYONE@</code> identifier are more broad than a mode’s <code class="language-plaintext highlighter-rouge">other</code> bits.</div>
+
+<h2 id="using-nfsv41-acls-with-smb-access-control">Using NFSv4.1 ACLs with SMB Access Control</h2>
+<p>NFSv4.1 ACLs are comparable with SMB access controls. In most cases, you can write and read using both protocols without issues.</p>
+
+<p>Often, the identities in ACEs map to an NFS UID or GID. These mappings succeed when you:</p>
+<ul>
+  <li>Connect your cluster to an Active Directory (AD) domain.</li>
+  <li>Enable <a href="https://datatracker.ietf.org/doc/html/rfc2307">RFC2307 (An Approach for Using LDAP as a Network Information Service)</a>.</li>
+  <li>Associate all NFS UIDs or GIDs with AD users or groups in your AD configuration.</li>
+</ul>
+
+<p>Alternatively, you can configure UID or GID mappings for the cluster’s local users or groups. When SMB ACLs refer to users or groups not mapped to a corresponding NFS UID or GID, the users or groups appear with the <code class="language-plaintext highlighter-rouge">NOBODY</code> UID (<code class="language-plaintext highlighter-rouge">65534</code>).</p>
+
+<p>To discover which mappings your cluster can perform for a file, use the following CLI commands:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">qq auth_expand_identity</code>: Find equivalent identities and full group membership for an <code class="language-plaintext highlighter-rouge">auth_id</code></li>
+  <li><code class="language-plaintext highlighter-rouge">qq auth_find_identity</code>: Find all representations for an <code class="language-plaintext highlighter-rouge">auth_id</code></li>
+  <li><code class="language-plaintext highlighter-rouge">qq fs_get_acl</code>: Get the ACL for a file or directory</li>
+</ul>
+
+<h2 id="changing-file-owners">Changing File Owners</h2>
+<p>When you change the owner of a file, the ACEs that refer to the owner change to the new owner, for example:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>nfs4_getfacl /mnt/qumulo/my-file
+A::1001:rwatTnNcy
+A:g:1001:rwatTnNcy
+A::EVERYONE@:rtncy
+
+<span class="nv">$ </span><span class="nb">sudo chown </span>1002 /mnt/qumulo/my_file
+
+<span class="nv">$ </span>nfs4_getfacl /mnt/qumulo/my-file
+A::1002:rwatTnNcy
+A:g:1001:rwatTnNcy
+A::EVERYONE@:rtncy
+</code></pre></div></div>
+
+</div>
+
+    </div>
+
+</div>    <!-- /.container -->
+
+</body>
+
+</html>
