@@ -1,46 +1,8 @@
 ---
-title: Qumulo on Supermicro A+ WIO 1114S-WN10RT Getting Started Guide
+title: "Qumulo on Supermicro A+ WIO 1114S-WN10RT Getting Started Guide"
+preamble: "This guide is intended for system administrators, professional service providers, and colleagues in your organization who are responsible for installing and configuring server hardware."
 permalink: supermicro.html
-preamble: This guide is intended for system administrators, professional service providers, and colleagues in your organization who are responsible for installing and configuring server hardware.
-tags:
-  - getting_started_guide 
-  - supermicro
-  - quick_reference
-  - diagram
-  - leds
-  - drive_mapping
-  - networking
-  - redundant_switches
-  - single_switch
-  - racking_node
-  - outer_rail
-  - inner_rail
-  - chassis
-  - node
-  - cluster
-  - insert_chassis
-  - remove_chassis
-  - wiring_node
-  - out_of_band_management
-  - ipmi
-  - 100_gbps
-  - installing_qumulo_core
-  - qumulo_core
-  - usb_drive_installer
-  - field_verification_tool
-  - fvt
-  - fixable_issue
-  - non_fixable_issue
-  - hardware_replacement
-  - create_cluster
-  - replace_drive
-  - drive
-  - replace_psu
-  - psu
-  - replace_fan
-  - replace_dimm
-  - dcms_license
-  - technical_specifications
+keywords: getting started guide, supermicro, quick_reference, diagram, leds, drive mapping, networking, redundant switches, single switch, racking node, outer rail, inner rail, chassis, node, cluster, insert chassis, remove chassis, wiring node, out of band management, ipmi, 100 gbps, installing qumulo core, qumulo core, usb drive installer, field verification tool, fvt, fixable issue, non fixable issue, hardware replacement, create cluster, replace drive, drive, replace psu, psu, replace fan, replace dimm, dcms license, technical specifications
 ---
 
 Welcome to Qumulo on Supermicro 1114S. This guide is intended for system administrators, professional service providers, and colleagues in your organization who are responsible for installing and configuring server hardware.
