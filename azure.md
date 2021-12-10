@@ -1,7 +1,7 @@
 ---
 title: "Qumulo on Azure as a Service Getting Started Guide"
-permalink: azure.html
 preamble: "This guide is a supplement to the Qumulo Getting Started guide, where configuration steps and best practices differ from those we recommend for other platforms."
+permalink: azure.html
 keywords: getting started guide, azure, onboarding, networking, virtual network peering, dhcp mode, dns, ip failover, floating ip, upgrades, remote monitoring, remote support, active directory domains, capacity increases, performance increases
 ---
 
