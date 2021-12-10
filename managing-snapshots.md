@@ -21,15 +21,13 @@ The snapshots page provides tools to make navigating upwards of tens of thousand
 
 If you have more than 50 snapshots, you can navigate between pages of snapshots using the pagination controls at the top and bottom of the table.
 
-{% include image.html alt="Pagination Controls" file="administrator-guide/managing-snapshots-pagination.png" %}
+{% include image.html alt="Pagination controls" file="administrator-guide/managing-snapshots-pagination.png" %}
 
 {% include tip.html content="The controls at the bottom of the table will also let you jump to a specific page, or change the number of rows per page." %}
 
 ### Finding Specific Snapshots
 
 Since snapshots are divided into pages, you won't be able to rely on the web browser's built-in find functionality to find a specific snapshot. To replace this, the table has its own filtering functionality that will allow you to search for specific snapshots by name, creation time, or any other column in the table.
-
-{% include image.html alt="Filter Toggle" file="administrator-guide/managing-snapshots-filter-off.png" %}
 
 1. Click the filter toggle button at the top of the table next to the pagination controls.
 1. Click one of the new inputs that has appeared between the table's header and its content.
@@ -39,7 +37,9 @@ As you type, the table rows will filter to match your query in real-time.
 
 You can clear and turn off filters by clicking the filter toggle button again. Its text and coloring will change to reflect whether filters are currently active.
 
-{% include image.html alt="Filter Toggle" file="administrator-guide/managing-snapshots-filter-on.png" %}
+{% include image.html alt="Filter toggle off" file="administrator-guide/managing-snapshots-filter-off.png" %}
+
+{% include image.html alt="Filter toggle on" file="administrator-guide/managing-snapshots-filter-on.png" %}
 
 ## Managing Your Snapshots
 
@@ -49,7 +49,7 @@ The page also includes functionality to delete snapshots, either one at a time o
 
 You can delete a single snapshot by clicking the delete icon at the end of the row you want to delete.
 
-{% include image.html alt="Delete Icon" file="administrator-guide/managing-snapshots-delete.png" %}
+{% include image.html alt="Delete icon" file="administrator-guide/managing-snapshots-delete.png" %}
 
 ### Deleting Multiple Snapshots
 
