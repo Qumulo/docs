@@ -62,11 +62,12 @@ entries:
     - title: Managing File Access Permissions Using NFSv4.1 Access Control Lists (ACLs)
       url: /nfsv4.1-auth-sys-acls.html
       output: web, pdf
-  
-  - title: Moving Files to and From Amazon S3
+
+
+  - title: Working with Qumulo Core
     output: web, pdf
     folderitems:
-
+  
     - title: Using Qumulo Shift-To to Copy Objects to Amazon S3
       url: /shift-to-s3.html
       output: web, pdf
@@ -75,10 +76,6 @@ entries:
       url: /shift-from-s3.html
       output: web, pdf
   
-  - title: Using the webUI
-    output: web, pdf
-    folderitems:
-
     - title: Managing Snapshots
       url: /managing-snapshots.html
       output: web, pdf
