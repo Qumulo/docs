@@ -1,62 +1,62 @@
 ---
 title: "Managing Snapshots"
-summary: " This topic explains how you can view and manage your saved snapshots through the webUI."
+summary: "This topic explains how you can use the Qumulo Core Web UI to view and manage your saved snapshots."
 permalink: managing-snapshots.html
 sidebar: administrator_guide_sidebar
-keywords: snapshots, filter, webUI
+keywords: snapshots, filter, web ui, qumulo core
+varLogin: 1. Log in to Qumulo Core.
+varSaved: 1. Click **Cluster > Saved Snapshots**.
 ---
 
-Qumulo Core 4.3.3 includes a redesigned snapshots page that allows users to view and manage large numbers of saved snapshots without having to make API queries. While it's possible to do these actions without the webUI, this page's ease of use allows snapshot management operations to be delegated to a wider range of users than could handle these operations otherwise.
+The **Snapshots** page in Qumulo Core 4.3.3 (and higher) lets you view and manage large numbers of saved snapshots without having to make API queries. This makes it possible to delegate snapshot management operations to a wide range of users.
 
-## Viewing Your Snapshots
+## To View Your Snapshots
+The **Snapshots** page lets you navigate a large number of snapshots.
 
-The snapshots page provides tools to make navigating upwards of tens of thousands of snapshots managable and performant.
+{{page.varLogin}}
 
-### Accessing the Snapshots Page
+{{page.varSaved}}
 
-1. Hover over the "Cluster" menu at the top of the screen.
-1. Click the "Saved Snapshots" link in the dropdown that appears.
+1. If you have more than 50 snapshots, click {% include inline_image.html alt="Pagination controls" file="administrator-guide/managing-snapshots-pagination.png" max-width="40" %} to navigate the snapshot pages.
 
-### Navigating Large Numbers of Snapshots
+   You can also use the controls at the bottom of the table to navigate to a specific page or change the number of rows per page.
 
-If you have more than 50 snapshots, you can navigate between pages of snapshots using the pagination controls at the top and bottom of the table.
+## To Find a Specific Snapshot
 
-{% include image.html alt="Pagination controls" file="administrator-guide/managing-snapshots-pagination.png" %}
+The table on the **Snapshots** page has a filtering mode that lets you search for a specific snapshot by name, creation time, or any other column.
 
-{% include tip.html content="The controls at the bottom of the table will also let you jump to a specific page, or change the number of rows per page." %}
+{{page.varLogin}}
 
-### Finding Specific Snapshots
+{{page.varSaved}}
 
-The snapshots table has a filtering mode that will allow you to search for specific snapshots by name, creation time, or any other column in the table. This serves as a replacement for the browser's built-in find functionality which you won't be able to rely on since snapshots are divided into pages.
+1. At the top of the table, click {% include inline_image.html alt="Filters on" file="administrator-guide/managing-snapshots-filter-on.png" max-width="75"%}.
 
-1. Click the filter toggle button at the top of the table next to the pagination controls.
-1. Click one of the new inputs that has appeared between the table's header and its content.
-1. Type a search query into the input.
+   A search query field appears.
 
-As you type, the table rows will filter to match your query in real-time.
+1. Enter a search query.
 
-You can clear and turn off filters by clicking the filter toggle button again. Its text and coloring will change to reflect whether filters are currently active.
+   The table rows filter to match your query as you type.
 
-{% include image.html alt="Filter toggle off" file="administrator-guide/managing-snapshots-filter-off.png" %}
+1. To turn off filtering, click {% include inline_image.html alt="Filters off" file="administrator-guide/managing-snapshots-filter-off.png" max-width="75"%}.
 
-{% include image.html alt="Filter toggle on" file="administrator-guide/managing-snapshots-filter-on.png" %}
+## To Delete a Single Snapshot
 
-## Managing Your Snapshots
+{{page.varLogin}}
 
-The page also includes functionality to delete snapshots, either one at a time or in bulk.
+{{page.varSaved}}
 
-### Deleting a Single Snapshot
+1. On the right-most side of a snapshot's row, click {% include inline_image.html alt="Delete icon" file="administrator-guide/managing-snapshots-delete.png" max-width="25" %}.
 
-You can delete a single snapshot by clicking the delete icon at the end of the row you want to delete.
+## To Delete Multiple Snapshots
 
-{% include image.html alt="Delete icon" file="administrator-guide/managing-snapshots-delete.png" %}
+{{page.varLogin}}
 
-### Deleting Multiple Snapshots
+{{page.varSaved}}
 
-To delete multiple snapshots, you first need to select the ones you'd like to remove.
+1. On the left-most side of the table, click the checkbox for every snapshot you want to delete.
 
-1. Click the checkbox at the beginning of the row for each snapshot you want to delete.
-1. Notice that a delete button appears at the top of the table once a row is selected.
-1. Click the delete button and follow the prompts in the dialog that appears.
+   When you select more than one row, the **Delete** button appears.
 
-{% include tip.html content="All selection and deletion controls will only ever modify the current page of data. If a snapshot isn't listed on the current page (either because it's on a different page or has been filtered out), you don't have to worry about accidentally deleting it." %}
+1. When you finish selecting snapshots, click **Delete**.
+
+{% include note.html content="All selection and deletion controls modify only the current page. You can't delete a snapshot accidentally if it isn't listed on the current page (because it is on a different page or is filtered out)." %}

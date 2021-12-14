@@ -16,7 +16,7 @@ The Qumulo Administrator Guide is a growing collection of information about conf
 * **Working with File System Protocols**
   * [Enabling and Using NFSv4.1 on a Qumulo Cluster](/nfsv4.1-enabling-using.md)
   * [Managing File Access Permissions Using NFSv4.1 Access Control Lists (ACLs)](/nfsv4.1-auth-sys-acls.md)
-* **Working wth Qumulo Core**
+* **Working with Qumulo Core**
   * [Using Qumulo Shift-To to Copy Objects to Amazon S3](/shift-to-s3.md)
   * [Using Qumulo Shift-From to Copy Objects from Amazon S3](/shift-from-s3.md)
   * [Managing Snapshots](/managing-snapshots.md)
