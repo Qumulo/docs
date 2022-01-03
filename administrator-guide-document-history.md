@@ -24,6 +24,10 @@ The following table lists changes to the _Qumulo Administrator Guide_.
       </td>
     </tr>
     <tr>
+      <td>Jan. 3, 2022</td>
+      <td>Added the <a href="managing-snapshots.html">Managing Snapshots</a> section.</td>
+    </tr>
+    <tr>
       <td>Nov. 10, 2021</td>
       <td>Added the following sections:
         <ul>
