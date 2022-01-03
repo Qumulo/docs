@@ -29,15 +29,15 @@ The table on the **Snapshots** page has a filtering mode that lets you search fo
 
 {{page.varSaved}}
 
-1. At the top of the table, click {% include inline_image.html alt="Filters on" file="administrator-guide/managing-snapshots-filter-on.png" max-width="75"%}.
+1. At the top of the table, click the highlighted {% include inline_image.html alt="Filters off" file="administrator-guide/managing-snapshots-filter-off.png" max-width="75"%}.
 
-   A search query field appears.
+   The **Search...** field appears.
 
 1. Enter a search query.
 
    The table rows filter to match your query as you type.
 
-1. To turn off filtering, click {% include inline_image.html alt="Filters off" file="administrator-guide/managing-snapshots-filter-off.png" max-width="75"%}.
+1. To turn off filtering, click the grayed-out {% include inline_image.html alt="Filters on" file="administrator-guide/managing-snapshots-filter-on.png" max-width="75"%}.
 
 ## To Delete a Single Snapshot
 
