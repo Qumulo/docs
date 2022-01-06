@@ -48,6 +48,7 @@ body {
   background-color: white;
   font-size:14px;
 }
+
 .nav ul li a {border-top:0px; background-color:transparent; color: #808080; }
 #navig a[href] {color: #595959 !important;}
 table .table {max-width:650px;}
@@ -152,7 +153,16 @@ body.title { page: title }
     }
 }
 
-body.frontmatter { page: frontmatter }
+@page {
+    @top {
+        content: "Header content"
+    }
+    @bottom {
+        content: "Footer content"
+    }
+}
+
+body.frontmatter {page: frontmatter }
 body.frontmatter {counter-reset: page 1}
 
 
@@ -192,13 +202,13 @@ h4 {
 
 @page {
     @top-left {
-        content: string(doctitle);
+        /*content: string(doctitle);
         font-size: 11px;
-        font-style: italic;
+        font-style: italic;*/
     }
     @top-right {
-        content: prince-script(datestamp);
-        font-size: 11px;
+        /*content: prince-script(datestamp);
+        font-size: 11px;*/
     }
 
     @bottom-right {
@@ -206,7 +216,7 @@ h4 {
         font-size: 11px;
     }
     @bottom-left {
-        content: prince-script(guideName);
+        content: prince-script(doctitle);
         font-size: 11px;
     }
 }
