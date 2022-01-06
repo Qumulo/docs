@@ -1,0 +1,221 @@
+/*body.print .container {max-width: 650px;}*/
+
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/montserrat/v18/JTUSjIg1_i6t8kCHKm459WRhyyTh89ZNpQ.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/montserrat/v18/JTUSjIg1_i6t8kCHKm459W1hyyTh89ZNpQ.woff2) format('woff2');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/montserrat/v18/JTUSjIg1_i6t8kCHKm459WZhyyTh89ZNpQ.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/montserrat/v18/JTUSjIg1_i6t8kCHKm459WdhyyTh89ZNpQ.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/montserrat/v18/JTUSjIg1_i6t8kCHKm459WlhyyTh89Y.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+body {
+  font-family: Montserrat, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.5;
+  background-color: white;
+  font-size:14px;
+}
+.nav ul li a {border-top:0px; background-color:transparent; color: #808080; }
+#navig a[href] {color: #595959 !important;}
+table .table {max-width:650px;}
+
+#navig li.sectionHead {font-weight: bold; font-size: 18px; color: #595959 !important; }
+#navig li {font-weight: normal; }
+
+#navig a[href]::after { content: leader(".") target-counter(attr(href), page); }
+
+a[href]::after {
+    content: " (page " target-counter(attr(href), page) ")"
+}
+
+a[href^="http:"]::after, a[href^="https:"]::after {
+    content: "";
+}
+
+a[href] {
+    color: #337ab7 !important;
+}
+a[href*="mailto"]::after, a[data-toggle="tooltip"]::after, a[href].noCrossRef::after {
+    content: "";
+}
+
+
+@page {
+    margin-left:30pt;
+    margin-right:30px;
+    margin-top:60px;
+    margin-bottom:60pt;
+    font-family: sans-serif;
+    font-style:none;
+    color: gray;
+
+}
+
+.printTitle {
+    line-height:30pt;
+    font-size:27pt;
+    font-weight: bold;
+    letter-spacing: -.5px;
+    margin-bottom:25px;
+}
+
+.printSubtitle {
+    font-size: 19pt;
+    color: #cccccc !important;
+    font-family: "Grotesque MT Light";
+    line-height: 22pt;
+    letter-spacing: -.5px;
+    margin-bottom:20px;
+}
+.printTitleArea hr {
+    color: #999999 !important;
+    height: 2px;
+    width: 100%;
+}
+
+.printTitleImage {
+    max-width:300px;
+    margin-bottom:200px;
+}
+
+
+.printTitleImage {
+    max-width: 250px;
+}
+
+#navig {
+    /*page-break-before: always;*/
+}
+
+.copyrightBoilerplate {
+    page-break-before:always;
+    font-size:14px;
+}
+
+.lastGeneratedDate {
+    font-size:14px;
+    color: gray;
+}
+
+.alert a {
+    text-decoration: none !important;
+}
+
+
+body.title { page: title }
+
+@page title {
+    @top-left {
+        content: " ";
+    }
+    @top-right {
+        content: " "
+    }
+    @bottom-right {
+        content: " ";
+    }
+    @bottom-left {
+        content: " ";
+    }
+}
+
+body.frontmatter { page: frontmatter }
+body.frontmatter {counter-reset: page 1}
+
+
+@page frontmatter {
+    @top-left {
+        content: prince-script(guideName);
+    }
+    @top-right {
+        content: prince-script(datestamp);
+    }
+    @bottom-right {
+        content: counter(page, lower-roman);
+    }
+    @bottom-left {
+        content: "youremail@domain.com";   }
+}
+
+body.first_page {counter-reset: page 1}
+
+h1 {
+    string-set: doctitle content();
+    color: #005d80;
+}
+
+h2 {
+    color: #333;
+}
+
+h3 {
+    color: #333;
+}
+
+h4 {
+    color: #333;
+    font-weight: bold;
+}
+
+@page {
+    @top-left {
+        content: string(doctitle);
+        font-size: 11px;
+        font-style: italic;
+    }
+    @top-right {
+        content: prince-script(datestamp);
+        font-size: 11px;
+    }
+
+    @bottom-right {
+        content: "Page " counter(page);
+        font-size: 11px;
+    }
+    @bottom-left {
+        content: prince-script(guideName);
+        font-size: 11px;
+    }
+}
+.alert {
+    background-color: #fafafa !important;
+    border-color: #dedede !important;
+    color: black;
+}
+
+pre {
+    background-color: #fafafa;
+}
