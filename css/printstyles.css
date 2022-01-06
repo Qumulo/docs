@@ -156,7 +156,7 @@ body.title { page: title }
 @page {
     @top {
         content: " ";
-        display: blockl;
+        display: block;
         background-image: url("../images/pdf-header.png");
         background-size: 932px 122px;
         /*content: "Header content"*/
