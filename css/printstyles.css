@@ -155,7 +155,8 @@ body.title { page: title }
 
 @page {
     @top {
-        content: "Header content"
+        background-image: url("images/pdf-header.png");
+        /*content: "Header content"*/
     }
     @bottom {
         content: "Footer content"
