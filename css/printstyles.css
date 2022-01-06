@@ -156,10 +156,11 @@ body.title { page: title }
 @page {
     @top {
         content: " ";
-        /*display: block;*/
+        /*display: block;
         background-image: url("../images/pdf-header.png");
-        background-size: 100% 122px;
+        background-size: 100% 122px;*/
         /*content: "Header content"*/
+        background: url("../images/pdf-header.png") 0 0 no-repeat;
     }
     @bottom {
         /*content: "Footer content"*/
