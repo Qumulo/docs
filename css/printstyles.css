@@ -216,7 +216,7 @@ h4 {
         font-size: 11px;
     }
     @bottom-left {
-        content: prince-script(doctitle);
+        content: string(doctitle);
         font-size: 11px;
     }
 }
