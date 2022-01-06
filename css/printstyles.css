@@ -202,13 +202,13 @@ h4 {
 
 @page {
     @top-left {
-        /*content: string(doctitle);
+        content: none;
         font-size: 11px;
-        font-style: italic;*/
+        font-style: italic;
     }
     @top-right {
-        /*content: prince-script(datestamp);
-        font-size: 11px;*/
+        content: none;
+        font-size: 11px;
     }
 
     @bottom-right {
