@@ -96,7 +96,7 @@ a[href*="mailto"]::after, a[data-toggle="tooltip"]::after, a[href].noCrossRef::a
 .printSubtitle {
     font-size: 19pt;
     color: #cccccc !important;
-    font-family: "Grotesque MT Light";
+    font-family: Montserrat;
     line-height: 22pt;
     letter-spacing: -.5px;
     margin-bottom:20px;
@@ -178,7 +178,8 @@ body.frontmatter {counter-reset: page 1}
         content: counter(page, lower-roman);
     }
     @bottom-left {
-        content: "youremail@domain.com";   }
+        content: " ";
+    }
 }
 
 body.first_page {counter-reset: page 1}
