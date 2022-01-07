@@ -190,14 +190,17 @@ h1 {
 }
 
 h2 {
+    string-set: doctitle content();
     color: #333 !important;
 }
 
 h3 {
+    string-set: doctitle content();
     color: #333 !important;
 }
 
 h4 {
+    string-set: doctitle content();
     color: #333 !important;
     font-weight: bold;
 }
