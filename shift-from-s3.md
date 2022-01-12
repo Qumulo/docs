@@ -221,7 +221,7 @@ The CLI returns the details of the relationship in JSON format, for example:
   ```
 {% include content-reuse/shift-view-status-description.md %}
 
-  Shift From has one task, which estimates the amount of work the job needs to do by listing all contents and summing up the total content. This requires listing the bucket prefix content in sets of 5000 objects. Until this task is complete `percent_complete` field is `"None"` and `estimated_end_time` is `""`.
+  Shift From has one task, which estimates the amount of work the job needs to do by listing all contents and summing up the total content. This requires listing the bucket prefix content in sets of 5000 objects by issuing ListObjectV2 requests to S3. Until this task is complete, `percent_complete` and `estimated_end_time` fields are populated with `"None"` and `""` respectively.
 
 {% include content-reuse/shift-view-status-stop-repeat-copy-job-delete-relationship.md %}
 
