@@ -210,7 +210,7 @@ The CLI returns the details of the relationship in JSON format, for example:
           "files_unchanged": "0",
           "files_remaining": "4",
           "files_total": "21",
-          "percent_complete": 0.890368314738253,
+          "percent_complete": 89.0368314738253,
           "throughput_current": "12330689",
           "throughput_overall": "12330689"
         }
@@ -219,6 +219,10 @@ The CLI returns the details of the relationship in JSON format, for example:
     }
   ]
   ```
+{% include content-reuse/shift-view-status-description.md %}
+
+  Shift From has one task, which estimates the amount of work the job needs to do by listing all contents and summing up the total content. This requires listing the bucket prefix content in sets of 5000 objects. Until this task is complete `percent_complete` field is `"None"` and `estimated_end_time` is `""`.
+
 {% include content-reuse/shift-view-status-stop-repeat-copy-job-delete-relationship.md %}
 
 
