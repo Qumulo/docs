@@ -22,6 +22,9 @@ The following table lists changes to the _Qumulo Administrator Guide_.
             <li><a href="openmetrics-api-specification.html">Qumulo OpenMetrics API Specification</a></li>
           </ul>
       </td>
+    <tr>
+      <td>Jan. 13, 2022</td>
+      <td>Updated the <a href="shift-from-s3.html">Using Qumulo Shift-From for Amazon S3 to Copy Objects</a> section.</td>
     </tr>
     <tr>
       <td>Jan. 3, 2022</td>
