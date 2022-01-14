@@ -235,7 +235,7 @@ The CLI returns the details of the relationship in JSON format, for example:
           "files_unchanged": "0",
           "files_remaining": "4",
           "files_total": "21",
-          "percent_complete": 0.890368314738253,
+          "percent_complete": 89.0368314738253,
           "throughput_current": "12330689",
           "throughput_overall": "12330689"
         }
@@ -244,6 +244,8 @@ The CLI returns the details of the relationship in JSON format, for example:
     }
   ]
   ```
+{% include content-reuse/shift-view-status-description.md %}
+
 {% include content-reuse/shift-view-status-stop-repeat-copy-job-delete-relationship.md %}
 
 

@@ -16,6 +16,10 @@ The following table lists changes to the _Qumulo Administrator Guide_.
   </thead>
   <tbody>
     <tr>
+      <td>Jan. 13, 2022</td>
+      <td>Updated the <a href="shift-from-s3.html">Using Qumulo Shift-From for Amazon S3 to Copy Objects</a> section.</td>
+    </tr>
+    <tr>
       <td>Jan. 3, 2022</td>
       <td>Added the <a href="managing-snapshots.html">Managing Snapshots</a> section.</td>
     </tr>
