@@ -2,4 +2,6 @@ The `state` field shows the `REPLICATION_RUNNING` status and the `current_job` f
 
 {% include note.html content="If you already ran a job for a relationship, it is possible for both the `current_job` and `last_job` fields to be non-null while you run a new job." %}
 
-The `total_bytes` and `total_files` fields represent the total amount of data and number of files to be transferred by a Shift job. The `bytes_remaining` and `files_remaining` fields show the amount of data and number of files not yet transferred. The `percent_complete` field displays the overall job progress.
+The `bytes_total` and `files_total` fields represent the total amount of data and number of files to be transferred by a Shift job. The `bytes_remaining` and `files_remaining` fields show the amount of data and number of files not yet transferred. The values of these four fields don't stabilize until the work estimation for the job is complete.
+
+The `percent_complete` field displays the overall job progress and the `estimated_end_time` field displays the time at which the job is estimated to be complete. The values of these two fields are populated when the work estimation for the job is complete.
