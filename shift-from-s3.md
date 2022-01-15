@@ -133,7 +133,9 @@ This section describes how you can use the Qumulo Web UI 4.2.5 (and higher) to c
 1. Click **Create Copy**.
 1. In the **Create Copy from S3?** dialog box, review the Shift relationship and then click **Yes, Create**.
 
-   The copy job begins.   
+   The copy job begins and Qumulo Core estimates the work to be performed. When the estimation is complete, the Web UI displays a progress bar with a percentage for a relationship on the **Replication Relationships** page. The page also displays the estimated total work, the remaining bytes and files, and the estimated time to completion for a running copy job.
+
+   {% include note.html content="For work estimates, Shift-From jobs calculate the total number of files and bytes in a job's bucket prefix. This requires the job to use the [`ListObjectV2` S3 action](https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjectsV2.html) once per 5,000 objects (or 200 times per 1 million objects)." %}
 
 {% include content-reuse/shift-view-config-details-stop-job-repeat-job-delete-relationship.md %}
 
@@ -221,7 +223,7 @@ The CLI returns the details of the relationship in JSON format, for example:
   ```
 {% include content-reuse/shift-view-status-description.md %}
 
-Shift-From performs a single task that estimates the amount of content to copy by listing all files and summing up their contents. Until this task is complete, the `percent_complete` field is set to `"None"` and the `estimated_end_time` field is set to `""`. To list the bucket prefix content in sets of 5,000 objects, this task uses the [`ListObjectV2` S3 action](https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjectsV2.html).
+  Shift-From performs a single task that estimates the amount of content to copy by listing all files and summing up their contents. Until this task is complete, the `percent_complete` field is set to `"None"` and the `estimated_end_time` field is set to `""`. To list the bucket prefix content in sets of 5,000 objects, this task uses the [`ListObjectV2` S3 action](https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjectsV2.html).
 
 {% include content-reuse/shift-view-status-stop-repeat-copy-job-delete-relationship.md %}
 
