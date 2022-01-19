@@ -130,7 +130,7 @@ The Shift-To relationship remains on the Qumulo cluster. You can monitor the com
 
 If you repeatedly copy to the same Qumulo directory, you can speed up the upload process (and skip already uploaded files) by using the same relationship.
 
-A new relationship for subsequent uploads doesn’t share any tracking information with previous relationships associated with a directory and might recopy data that is already uploaded.
+A new relationship for subsequent uploads doesn't share any tracking information with previous relationships associated with a directory and might recopy data that is already uploaded.
 
 
 ## Using the Qumulo Web UI to Copy Files and Manage Relationships
