@@ -24,8 +24,6 @@ During the file system provisioning, you received the resource ID for the Qumulo
 Like other cloud platform implementations, you can configure Qumulo on Azure as a Service to run only in DHCP mode, where Azure assigns IP addresses to the file system automatically.
 
 ### Configuring DNS
-{% include important.html content="Before you configure DNS for Qumulo Core, you must ensure that the DNS server that you want to use is reachable from the Qumulo on Azure as a Service VNet and that it can resolve the `blob.core.windows.net` and `vault.azure.com` addresses. A DNS server misconfiguration can result in a file system outage." %}
-
 To resolve internal hostnames to IP addresses in your infrastructure, you must configure Qumulo Core to use a DNS server that can resolve the necessary hostnames. By default, the file system uses Azure's default DNS server (`168.63.129.16`) provided by DHCP.
 
 Currently, you can configure DNS servers and search domains only using the the `/v2/network` REST API or using the [`qq` CLI tool](https://care.qumulo.com/hc/en-us/articles/360026611494-Custom-DNS-Configuration). For more information about installing `qq`, see [QQ CLI: Install Command-Line Tools](https://care.qumulo.com/hc/en-us/articles/115014875988-QQ-CLI-Installing-Command-Line-Tools) on Qumulo Care.
