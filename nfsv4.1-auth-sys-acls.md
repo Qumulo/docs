@@ -132,3 +132,25 @@ A::1002:rwatTnNcy
 A:g:1001:rwatTnNcy
 A::EVERYONE@:rtncy
 ```
+
+## Using Equivalent NFS and Qumulo ACL Commands
+You can use NFS (`nfs_setfacl`) and Qumulo (`fs_modify_acl`) CLI commands to set ACL permissions.
+
+The following table compares NFS rights to Qumulo rights.
+
+{% include note.html content="When you set the ACL type, `A` stands for _allowed_ and `D` for _denied_." %}
+
+| NFS Rights | Qumulo Rights |
+| -------------- | ----------------- |
+| `R`: Read, Synchronize | `r`: Read contents |
+| `W`: Read ACL, read attributes, synchronize, write ACL, write file | `w`: Write data |
+| `X`: Execute or traverse, read ACL, read attributes, synchronize | `x`: Execute or traverse |
+| `T`: Write attributes | `t`: Read attributes |
+
+The following table gives examples of permissions and equivalent NFS and Qumulo CLI commands.
+| Permissions | NFS Command | Qumulo Command |
+| ----------- | ----------- | -------------- |
+| Add Read Permission              | `nfs4_setfacl -a "A::OWNER@:R" file.1` | `qq fs_modify_acl --path /file.1 add_entry -y Allowed -t "File Owner" -r Read` |
+| Add Full Access Permission       | `nfs4_setfacl -a "A::GROUP@:rtwRWX" file.1` | `qq fs_modify_acl --path /file.1 add_entry -y Allowed -t "File Group Owner" -r Execute/Traverse, Read, Write ACL, Write file` |
+| Add Read Execute Permission      | `nfs4_setfacl -a "A::EVERYONE@:rtRX" file.1` | `qq fs_modify_acl --path /file.1 add_entry -y Allowed -t "EVERYONE" -r Execute/Traverse, Read` |
+| Deny Write or Execute Permission | `nfs4_setfacl -a "D::OWNER@:wx" file.1` | `qq fs_modify_acl --path /file.1 add_entry -y Denied -t "File Owner" -r Execute/Traverse, Write data` |
