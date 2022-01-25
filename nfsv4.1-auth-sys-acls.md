@@ -148,9 +148,10 @@ The following table compares NFS rights to Qumulo rights.
 | `T`: Write attributes | `t`: Read attributes |
 
 The following table gives examples of permissions and equivalent NFS and Qumulo CLI commands.
-| Permissions | NFS Command | Qumulo Command |
-| ----------- | ----------- | -------------- |
-| Add Read Permission              | `nfs4_setfacl -a "A::OWNER@:R" file.1` | `qq fs_modify_acl --path /file.1 add_entry -y Allowed -t "File Owner" -r Read` |
-| Add Full Access Permission       | `nfs4_setfacl -a "A::GROUP@:rtwRWX" file.1` | `qq fs_modify_acl --path /file.1 add_entry -y Allowed -t "File Group Owner" -r Execute/Traverse, Read, Write ACL, Write file` |
-| Add Read Execute Permission      | `nfs4_setfacl -a "A::EVERYONE@:rtRX" file.1` | `qq fs_modify_acl --path /file.1 add_entry -y Allowed -t "EVERYONE" -r Execute/Traverse, Read` |
-| Deny Write or Execute Permission | `nfs4_setfacl -a "D::OWNER@:wx" file.1` | `qq fs_modify_acl --path /file.1 add_entry -y Denied -t "File Owner" -r Execute/Traverse, Write data` |
+
+| Permissions                      | NFS Command                                  | Qumulo Command                                                                                                                |
+| -------------------------------- | -------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| Add Read Permission              | `nfs4_setfacl -a "A::OWNER@:R" file.1`       | `qq fs_modify_acl --path /file.1 add_entry -y Allowed -t "File Owner" -r Read`                                                |
+| Add Full Access Permission       | `nfs4_setfacl -a "A::GROUP@:rtwRWX" file.1`  | `qq fs_modify_acl --path /file.1 add_entry -y Allowed -t "File Group Owner" -r Execute/Traverse, Read, Write ACL, Write file` |
+| Add Read Execute Permission      | `nfs4_setfacl -a "A::EVERYONE@:rtRX" file.1` | `qq fs_modify_acl --path /file.1 add_entry -y Allowed -t "EVERYONE" -r Execute/Traverse, Read`                                |
+| Deny Write or Execute Permission | `nfs4_setfacl -a "D::OWNER@:wx" file.1`      | `qq fs_modify_acl --path /file.1 add_entry -y Denied -t "File Owner" -r Execute/Traverse, Write data`                         |
