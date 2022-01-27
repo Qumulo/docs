@@ -134,17 +134,21 @@ A::EVERYONE@:rtncy
 ```
 
 ## Using Equivalent NFS and Qumulo ACL Commands
-You can use NFS (`nfs_setfacl`) and Qumulo (`qq fs_modify_acl`) CLI commands to set ACL permissions.
+You can use NFS (`nfs4_setfacl`) and Qumulo (`qq fs_modify_acl`) CLI commands to set ACL permissions.
 
-{{site.data.alerts.note}}
-<ul>
-  <li>The syntax for <code>nfs_setfacl</code> is <code>&lt;type&gt;:&lt;flags&gt;:&lt;principal&gt;:&lt;permissions&gt;</code>, for example <code>A:fd:GROUP@:rwaDdxtTnNcCoy</code>.</li>
-  <li>When setting the ACL type, <code>A</code> is equivalent to <code>Allowed</code> and <code>D</code> to <code>Denied</code>.</li>
-  <li>When setting the ACL flag, <code>d</code> is equivalent to <code>Container inherit</code> and <code>f</code> to <code>Object inherit</code>.</li>
-</ul>
-{{site.data.alerts.end}}
+{% include note.html content="The syntax for `nfs4_setfacl` is `<type>:<flags>:<principal>:<permissions>`, for example `A:fd:GROUP@:rwaDdxtTnNcCoy`." %}
 
-The following table compares NFS rights to Qumulo rights.
+The following tables compare elements of NFS and Qumulo ACL permissions.
+
+| NFS ACL Type | Qumulo ACL Type |
+| ------------ | --------------- |
+| `A`          | `Allowed`       |
+| `D`          | `Denied`        |
+
+| NFS ACL Flag | Qumulo ACL Flag           |
+| ------------ | ------------------------- |
+| `d`          | `Container inherit`       |
+| `f`          | `Object inherit`          |
 
 | NFS Rights  | Qumulo Rights                                                     |
 | ----------- | ----------------------------------------------------------------- |
