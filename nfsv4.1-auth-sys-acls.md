@@ -154,6 +154,7 @@ The following tables compare elements of NFS and Qumulo ACL permissions.
 | `c`         | `Read ACL`                                                        |
 | `C`         | `Write ACL`                                                       |
 | `d`         | `Delete`                                                          |
+| `n`         | `Read EA`                                                         |
 | `o`         | `Take Ownership`                                                  |
 | `r`         | `Read contents`                                                   |
 | `R`         | `Read`, `Synchronize`                                             |
@@ -163,6 +164,7 @@ The following tables compare elements of NFS and Qumulo ACL permissions.
 | `W`         | `Read ACL`, `Read attr`, `Synchronize`, `Write ACL`, `Write file` |
 | `x`         | `Execute/Traverse`                                                |
 | `X`         | `Execute/Traverse`, `Read ACL`, `Read attr`, `Synchronize`        |
+| `y`         | `Synchronize`                                                     |
 
 The following table gives examples of permissions and equivalent NFS and Qumulo CLI commands.
 
