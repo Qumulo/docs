@@ -136,16 +136,32 @@ A::EVERYONE@:rtncy
 ## Using Equivalent NFS and Qumulo ACL Commands
 You can use NFS (`nfs_setfacl`) and Qumulo (`qq fs_modify_acl`) CLI commands to set ACL permissions.
 
-{{site.data.alerts.note}}
-<ul>
-  <li>The syntax for <code>nfs_setfacl</code> is <code>&lt;type&gt;:&lt;flags&gt;:&lt;principal&gt;:&lt;permissions&gt;</code>.</li>
-  <li>When setting the ACL type, <code>A</code> is equivalent to <code>Allowed</em> and <code>D</code> to <code>Denied</code>.</li>
-  <li>When setting the ACL flag, <code>d</code> is equivalent to <code>Container inherit</em> and <code>f</code> to <em>Object inherit</em>.</li>
-</ul>
-{{site.data.alerts.end}}
+
 
 The following table compares NFS rights to Qumulo rights.
 
+| NFS Rights                                                         | Qumulo Rights             |
+| ------------------------------------------------------------------ | ------------------------- |
+| `R`: Read, Synchronize                                             | `r`: Read contents        |
+| `W`: Read ACL, read attributes, synchronize, write ACL, write file | `w`: Write data           |
+| `X`: Execute or traverse, read ACL, read attributes, synchronize   | `x`: Execute or traverse  |
+| `T`: Write attributes                                              | `t`: Read attributes      |
+
+
+r = Read contents
+w = Write data
+a = Extend file
+D = Delete
+d = Delete child
+x = Execute or traverse
+t = Read 
+T = Take ownership
+n = Write ACL
+N
+c = Read ACL
+C 
+o = Take ownership
+y
 
 The following table gives examples of permissions and equivalent NFS and Qumulo CLI commands.
 
