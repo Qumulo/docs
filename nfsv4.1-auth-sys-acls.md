@@ -133,46 +133,46 @@ A:g:1001:rwatTnNcy
 A::EVERYONE@:rtncy
 ```
 
-## Using Equivalent NFS and Qumulo ACL Commands
+## Using Equivalent NFSv4.1 and Qumulo ACL Commands
 The syntax for the `nfs4_setfacl` is command `<type>:<flags>:<principal>:<permissions>`, for example `A:fd:GROUP@:rwaDdxtTnNcCoy`. You can use equivalent NFS (`nfs4_setfacl`) and Qumulo (`qq fs_modify_acl`) CLI commands to set ACL permissions.
 
 The following tables compare elements of NFS and Qumulo ACL permissions.
 
-| NFS ACL Type | Qumulo ACL Type |
-| ------------ | --------------- |
-| `A`          | `Allowed`       |
-| `D`          | `Denied`        |
+| NFSv4.1 ACL Type | Qumulo ACL Type |
+| ---------------- | --------------- |
+| `A`              | `Allowed`       |
+| `D`              | `Denied`        |
 
-| NFS ACL Flag | Qumulo ACL Flag           |
-| ------------ | ------------------------- |
-| `d`          | `Container inherit`       |
-| `f`          | `Object inherit`          |
+| NFSv4.1 ACL Flag | Qumulo ACL Flag           |
+| ---------------- | ------------------------- |
+| `d`              | `Container inherit`       |
+| `f`              | `Object inherit`          |
 
-| NFS Rights  | Qumulo Rights                                                     |
-| ----------- | ----------------------------------------------------------------- |
-| `a`         | `Extend file`                                                     |
-| `c`         | `Read ACL`                                                        |
-| `C`         | `Write ACL`                                                       |
-| `d`         | `Delete`                                                          |
-| `n`         | `Read EA`                                                         |
-| `o`         | `Take Ownership`                                                  |
-| `r`         | `Read contents`                                                   |
-| `R`         | `Read`, `Synchronize`                                             |
-| `t`         | `Read attr`                                                       |
-| `T`         | `Write attr`                                                      |
-| `w`         | `Write data`                                                      |
-| `W`         | `Read ACL`, `Read attr`, `Synchronize`, `Write ACL`, `Write file` |
-| `x`         | `Execute/Traverse`                                                |
-| `X`         | `Execute/Traverse`, `Read ACL`, `Read attr`, `Synchronize`        |
-| `y`         | `Synchronize`                                                     |
+| NFSv4.1 Rights  | Qumulo Rights                                                     |
+| --------------- | ----------------------------------------------------------------- |
+| `a`             | `Extend file`                                                     |
+| `c`             | `Read ACL`                                                        |
+| `C`             | `Write ACL`                                                       |
+| `d`             | `Delete`                                                          |
+| `n`             | `Read EA`                                                         |
+| `o`             | `Take Ownership`                                                  |
+| `r`             | `Read contents`                                                   |
+| `R`             | `Read`, `Synchronize`                                             |
+| `t`             | `Read attr`                                                       |
+| `T`             | `Write attr`                                                      |
+| `w`             | `Write data`                                                      |
+| `W`             | `Read ACL`, `Read attr`, `Synchronize`, `Write ACL`, `Write file` |
+| `x`             | `Execute/Traverse`                                                |
+| `X`             | `Execute/Traverse`, `Read ACL`, `Read attr`, `Synchronize`        |
+| `y`             | `Synchronize`                                                     |
 
 The following table gives examples of permissions and equivalent NFS and Qumulo CLI commands.
 
-| Permissions                                                | NFS Command                                                   | Qumulo Command                                                                                                                     |
-| ---------------------------------------------------------- | ------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| Add Read Permission                                        | `nfs4_setfacl -a "A::OWNER@:R" file.1`                        | `qq fs_modify_acl --path /file.1 add_entry -y Allowed -t "File Owner" -r Read`                                                     |
-| Add Read and Execute Permissions                           | `nfs4_setfacl -a "A::EVERYONE@:rtRX" file.1`                  | `qq fs_modify_acl --path /file.1 add_entry -y Allowed -t "EVERYONE" -r Execute/Traverse, Read`                                     |
-| Add Read, Write, and Execute Permissions                   | `nfs4_setfacl -a "A::GROUP@:rtwRWX" file.1`                   | `qq fs_modify_acl --path /file.1 add_entry -y Allowed -t "File Group Owner" -r Execute/Traverse, Read, Write ACL, Write file`      |
-| Add Full Access                                            | `nfs4_setfacl -a "A::GROUP@:rtwRWX" file.1`                   | `qq fs_modify_acl --path /file.1 add_entry -y Allowed -t "File Group Owner" -r Execute/Traverse, Read, Write ACL, Write file`      |
-| Add Full Access to Group File and Directory Inheritances   | `nfs4_setfacl -a "A:fd:GROUP@:rwaDdxtTnNcCoy" testdirectory`  | `qq fs_modify_acl --path /testdirectory add_entry -y Allowed -t "File Group Owner" -r All -f 'Container inherit' 'Object inherit'` |
-| Remove Write and Execute Permission                        | `nfs4_setfacl -a "D::OWNER@:wx" file.1`                       | `qq fs_modify_acl --path /file.1 add_entry -y Denied -t "File Owner" -r Execute/Traverse, Write data`                              |
+| Permissions                                                | NFSv4.1 Command                                                   | Qumulo Command                                                                                                                     |
+| ---------------------------------------------------------- | ----------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| Add Read Permission                                        | `nfs4_setfacl -a "A::OWNER@:R" file.1`                            | `qq fs_modify_acl --path /file.1 add_entry -y Allowed -t "File Owner" -r Read`                                                     |
+| Add Read and Execute Permissions                           | `nfs4_setfacl -a "A::EVERYONE@:rtRX" file.1`                      | `qq fs_modify_acl --path /file.1 add_entry -y Allowed -t "EVERYONE" -r Execute/Traverse, Read`                                     |
+| Add Read, Write, and Execute Permissions                   | `nfs4_setfacl -a "A::GROUP@:rtwRWX" file.1`                       | `qq fs_modify_acl --path /file.1 add_entry -y Allowed -t "File Group Owner" -r Execute/Traverse, Read, Write ACL, Write file`      |
+| Add Full Access                                            | `nfs4_setfacl -a "A::GROUP@:rtwRWX" file.1`                       | `qq fs_modify_acl --path /file.1 add_entry -y Allowed -t "File Group Owner" -r Execute/Traverse, Read, Write ACL, Write file`      |
+| Add Full Access to Group File and Directory Inheritances   | `nfs4_setfacl -a "A:fd:GROUP@:rwaDdxtTnNcCoy" testdirectory`      | `qq fs_modify_acl --path /testdirectory add_entry -y Allowed -t "File Group Owner" -r All -f 'Container inherit' 'Object inherit'` |
+| Remove Write and Execute Permission                        | `nfs4_setfacl -a "D::OWNER@:wx" file.1`                           | `qq fs_modify_acl --path /file.1 add_entry -y Denied -t "File Owner" -r Execute/Traverse, Write data`                              |
