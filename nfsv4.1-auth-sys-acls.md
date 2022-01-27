@@ -138,7 +138,7 @@ You can use NFS (`nfs_setfacl`) and Qumulo (`qq fs_modify_acl`) CLI commands to 
 
 {{site.data.alerts.note}}
 <ul>
-  <li>The syntax for <code>nfs_setfacl</code> is <code>&lt;type&gt;:&lt;flags&gt;:&lt;principal&gt;:&lt;permissions&gt;</code>.</li>
+  <li>The syntax for <code>nfs_setfacl</code> is <code>&lt;type&gt;:&lt;flags&gt;:&lt;principal&gt;:&lt;permissions&gt;</code>, for example <code>A:fd:GROUP@:rwaDdxtTnNcCoy</code>.</li>
   <li>When setting the ACL type, <code>A</code> is equivalent to <code>Allowed</code> and <code>D</code> to <code>Denied</code>.</li>
   <li>When setting the ACL flag, <code>d</code> is equivalent to <code>Container inherit</code> and <code>f</code> to <code>Object inherit</code>.</li>
 </ul>
