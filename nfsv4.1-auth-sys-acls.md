@@ -134,13 +134,19 @@ A::EVERYONE@:rtncy
 ```
 
 ## Using Equivalent NFS and Qumulo ACL Commands
-You can use NFS (`nfs_setfacl`) and Qumulo (`fs_modify_acl`) CLI commands to set ACL permissions.
+You can use NFS (`nfs_setfacl`) and Qumulo (`qq fs_modify_acl`) CLI commands to set ACL permissions.
 
 The following table compares NFS rights to Qumulo rights.
 
-{% include note.html content="<ul><li>The syntax for `nfs_setfacl` is `<type>:<flags>:<principal>:<permissions>`.</li><li>When you set the ACL type, `A` stands for _allowed_ and `D` for _denied_.</li><li>When you set the flag, `d` stands for _container inherit_ and `f` stands for _object inherit_.</li></ul>" %}
+{{site.data.alerts.note}}
+<ul>
+  <li>The syntax for `nfs_setfacl` is `<type>:<flags>:<principal>:<permissions>`.</li>
+  <li>When setting the ACL type, `A` stands for _allowed_ and `D` for _denied_.</li>
+  <li>When setting the ACL flag, `d` stands for _container inherit_ and `f` stands for _object inherit_.</li>
+</ul>
+{{site.data.alerts.end}}
 
-| NFS Rights | Qumulo Rights |
+| `nfs_setfacl` Rights | `qq fs_modify_acl` Rights |
 | -------------- | ----------------- |
 | `R`: Read, Synchronize | `r`: Read contents |
 | `W`: Read ACL, read attributes, synchronize, write ACL, write file | `w`: Write data |
