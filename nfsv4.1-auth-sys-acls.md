@@ -138,7 +138,7 @@ You can use NFS (`nfs_setfacl`) and Qumulo (`fs_modify_acl`) CLI commands to set
 
 The following table compares NFS rights to Qumulo rights.
 
-{% include note.html content="When you set the ACL type, `A` stands for _allowed_ and `D` for _denied_." %}
+{% include note.html content="<ul><li>The syntax for `nfs_setfacl` is `<type>:<flags>:<principal>:<permissions>`.</li><li>When you set the ACL type, `A` stands for _allowed_ and `D` for _denied_.</li><li>When you set the flag, `d` stands for _container inherit_ and `f` stands for _object inherit_.</li></ul>" %}
 
 | NFS Rights | Qumulo Rights |
 | -------------- | ----------------- |
