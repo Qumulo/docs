@@ -24,6 +24,10 @@ The following table lists changes to the _Qumulo Administrator Guide_.
       </td>
     </tr>
     <tr>
+      <td>Jan. 27, 2022</td>
+      <td>Updated the <a href="nfsv4.1-auth-sys-acls.html">Managing File Access Permissions Using NFSv4.1 Access Control Lists (ACLs)</a> section.</td>
+    </tr>
+    <tr>
       <td>Jan. 24, 2022</td>
       <td>Updated the <a href="shift-to-s3.html">Using Qumulo Shift-To to Copy Objects to Amazon S3</a> section.</td>
     </tr>
