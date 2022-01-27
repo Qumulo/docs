@@ -144,31 +144,23 @@ You can use NFS (`nfs_setfacl`) and Qumulo (`qq fs_modify_acl`) CLI commands to 
 </ul>
 {{site.data.alerts.end}}
 
-
 The following table compares NFS rights to Qumulo rights.
 
-| NFS Rights                                                         | Qumulo Rights             |
-| ------------------------------------------------------------------ | ------------------------- |
-| `R`: Read, Synchronize                                             | `r`: Read contents        |
-| `W`: Read ACL, read attributes, synchronize, write ACL, write file | `w`: Write data           |
-| `X`: Execute or traverse, read ACL, read attributes, synchronize   | `x`: Execute or traverse  |
-| `T`: Write attributes                                              | `t`: Read attributes      |
-
-
-r = Read contents
-w = Write data
-a = Extend file
-D = Delete
-d = Delete child
-x = Execute or traverse
-t = Read 
-T = Take ownership
-n = Write ACL
-N
-c = Read ACL
-C 
-o = Take ownership
-y
+| NFS Rights  | Qumulo Rights                                                     |
+| ----------- | ----------------------------------------------------------------- |
+| `a`         | `Extend file`                                                     |
+| `c`         | `Read ACL`                                                        |
+| `C`         | `Write ACL`                                                       |
+| `d`         | `Delete`                                                          |
+| `o`         | `Take Ownership`                                                  |
+| `r`         | `Read contents`                                                   |
+| `R`         | `Read`, `Synchronize`                                             |
+| `t`         | `Read attr`                                                       |
+| `T`         | `Write attr`                                                      |
+| `w`         | `Write data`                                                      |
+| `W`         | `Read ACL`, `Read attr`, `Synchronize`, `Write ACL`, `Write file` |
+| `x`         | `Execute/Traverse`                                                |
+| `X`         | `Execute/Traverse`, `Read ACL`, `Read attr`, `Synchronize`        |
 
 The following table gives examples of permissions and equivalent NFS and Qumulo CLI commands.
 
