@@ -146,12 +146,13 @@ You can use NFS (`nfs_setfacl`) and Qumulo (`qq fs_modify_acl`) CLI commands to 
 
 The following table compares NFS rights to Qumulo rights.
 
-| `nfs_setfacl` Rights | `qq fs_modify_acl` Rights |
-| -------------- | ----------------- |
-| `R`: Read, Synchronize | `r`: Read contents |
-| `W`: Read ACL, read attributes, synchronize, write ACL, write file | `w`: Write data |
-| `X`: Execute or traverse, read ACL, read attributes, synchronize | `x`: Execute or traverse |
-| `T`: Write attributes | `t`: Read attributes |
+| NFS Rights                                                         | Qumulo Rights             |
+| ------------------------------------------------------------------ | ------------------------- |
+| `R`: Read, Synchronize                                             | `r`: Read contents        |
+| `W`: Read ACL, read attributes, synchronize, write ACL, write file | `w`: Write data           |
+| `X`: Execute or traverse, read ACL, read attributes, synchronize   | `x`: Execute or traverse  |
+| `T`: Write attributes                                              | `t`: Read attributes      |
+
 
 r = Read contents
 w = Write data
@@ -171,7 +172,7 @@ y
 
 The following table gives examples of permissions and equivalent NFS and Qumulo CLI commands.
 
-| Permissions                                                | `nfs_setfacl` Command                                         | `qq fs_modify_acl` Command Command                                                                                                 |
+| Permissions                                                | NFS Command                                                   | Qumulo Command                                                                                                                     |
 | ---------------------------------------------------------- | ------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
 | Add Read Permission                                        | `nfs4_setfacl -a "A::OWNER@:R" file.1`                        | `qq fs_modify_acl --path /file.1 add_entry -y Allowed -t "File Owner" -r Read`                                                     |
 | Add Read and Execute Permissions                           | `nfs4_setfacl -a "A::EVERYONE@:rtRX" file.1`                  | `qq fs_modify_acl --path /file.1 add_entry -y Allowed -t "EVERYONE" -r Execute/Traverse, Read`                                     |
