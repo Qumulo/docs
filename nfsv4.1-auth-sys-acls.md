@@ -140,9 +140,9 @@ The following table compares NFS rights to Qumulo rights.
 
 {{site.data.alerts.note}}
 <ul>
-  <li>The syntax for `nfs_setfacl` is `<type>:<flags>:<principal>:<permissions>`.</li>
-  <li>When setting the ACL type, `A` stands for _allowed_ and `D` for _denied_.</li>
-  <li>When setting the ACL flag, `d` stands for _container inherit_ and `f` stands for _object inherit_.</li>
+  <li>The syntax for <code>nfs_setfacl</code> is <code>&lt;type&gt;:&lt;flags&gt;:&lt;principal&gt;:&lt;permissions&gt;</code>.</li>
+  <li>When setting the ACL type, <code>A</code> stands for <em>allow</em> and <code>D</code> for <em>deny</em>.</li>
+  <li>When setting the ACL flag, <code>d</code> stands for <em>container inherit</em> and <code>f</code> stands for <em>object inherit</em>.</li>
 </ul>
 {{site.data.alerts.end}}
 
