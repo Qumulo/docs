@@ -136,15 +136,15 @@ A::EVERYONE@:rtncy
 ## Using Equivalent NFS and Qumulo ACL Commands
 You can use NFS (`nfs_setfacl`) and Qumulo (`qq fs_modify_acl`) CLI commands to set ACL permissions.
 
-The following table compares NFS rights to Qumulo rights.
-
 {{site.data.alerts.note}}
 <ul>
   <li>The syntax for <code>nfs_setfacl</code> is <code>&lt;type&gt;:&lt;flags&gt;:&lt;principal&gt;:&lt;permissions&gt;</code>.</li>
-  <li>When setting the ACL type, <code>A</code> stands for <em>allow</em> and <code>D</code> for <em>deny</em>.</li>
-  <li>When setting the ACL flag, <code>d</code> stands for <em>container inherit</em> and <code>f</code> stands for <em>object inherit</em>.</li>
+  <li>When setting the ACL type, <code>A</code> is equivalent to <code>Allowed</em> and <code>D</code> to <code>Denied</code>.</li>
+  <li>When setting the ACL flag, <code>d</code> is equivalent to <code>Container inherit</em> and <code>f</code> to <em>Object inherit</em>.</li>
 </ul>
 {{site.data.alerts.end}}
+
+The following table compares NFS rights to Qumulo rights.
 
 | `nfs_setfacl` Rights | `qq fs_modify_acl` Rights |
 | -------------- | ----------------- |
@@ -153,11 +153,29 @@ The following table compares NFS rights to Qumulo rights.
 | `X`: Execute or traverse, read ACL, read attributes, synchronize | `x`: Execute or traverse |
 | `T`: Write attributes | `t`: Read attributes |
 
+r = Read contents
+w = Write data
+a = Extend file
+D = Delete
+d = Delete child
+x = Execute or traverse
+t = Read 
+T = Take ownership
+n = Write ACL
+N
+c = Read ACL
+C 
+o = Take ownership
+y
+
+
 The following table gives examples of permissions and equivalent NFS and Qumulo CLI commands.
 
-| Permissions                      | NFS Command                                  | Qumulo Command                                                                                                                |
-| -------------------------------- | -------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
-| Add Read Permission              | `nfs4_setfacl -a "A::OWNER@:R" file.1`       | `qq fs_modify_acl --path /file.1 add_entry -y Allowed -t "File Owner" -r Read`                                                |
-| Add Full Access Permission       | `nfs4_setfacl -a "A::GROUP@:rtwRWX" file.1`  | `qq fs_modify_acl --path /file.1 add_entry -y Allowed -t "File Group Owner" -r Execute/Traverse, Read, Write ACL, Write file` |
-| Add Read Execute Permission      | `nfs4_setfacl -a "A::EVERYONE@:rtRX" file.1` | `qq fs_modify_acl --path /file.1 add_entry -y Allowed -t "EVERYONE" -r Execute/Traverse, Read`                                |
-| Deny Write or Execute Permission | `nfs4_setfacl -a "D::OWNER@:wx" file.1`      | `qq fs_modify_acl --path /file.1 add_entry -y Denied -t "File Owner" -r Execute/Traverse, Write data`                         |
+| Permissions                                                | `nfs_setfacl` Command                                         | `qq fs_modify_acl` Command Command                                                                                                 |
+| ---------------------------------------------------------- | ------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| Add Read Permission                                        | `nfs4_setfacl -a "A::OWNER@:R" file.1`                        | `qq fs_modify_acl --path /file.1 add_entry -y Allowed -t "File Owner" -r Read`                                                     |
+| Add Read and Execute Permissions                           | `nfs4_setfacl -a "A::EVERYONE@:rtRX" file.1`                  | `qq fs_modify_acl --path /file.1 add_entry -y Allowed -t "EVERYONE" -r Execute/Traverse, Read`                                     |
+| Add Read, Write, and Execute Permissions                   | `nfs4_setfacl -a "A::GROUP@:rtwRWX" file.1`                   | `qq fs_modify_acl --path /file.1 add_entry -y Allowed -t "File Group Owner" -r Execute/Traverse, Read, Write ACL, Write file`      |
+| Add Full Access                                            | `nfs4_setfacl -a "A::GROUP@:rtwRWX" file.1`                   | `qq fs_modify_acl --path /file.1 add_entry -y Allowed -t "File Group Owner" -r Execute/Traverse, Read, Write ACL, Write file`      |
+| Add Full Access to Group File and Directory Inheritances   | `nfs4_setfacl -a "A:fd:GROUP@:rwaDdxtTnNcCoy" testdirectory`  | `qq fs_modify_acl --path /testdirectory add_entry -y Allowed -t "File Group Owner" -r All -f 'Container inherit' 'Object inherit'` |
+| Remove Write and Execute Permission                        | `nfs4_setfacl -a "D::OWNER@:wx" file.1`                       | `qq fs_modify_acl --path /file.1 add_entry -y Denied -t "File Owner" -r Execute/Traverse, Write data`                              |
