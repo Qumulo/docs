@@ -134,9 +134,7 @@ A::EVERYONE@:rtncy
 ```
 
 ## Using Equivalent NFS and Qumulo ACL Commands
-You can use NFS (`nfs4_setfacl`) and Qumulo (`qq fs_modify_acl`) CLI commands to set ACL permissions.
-
-{% include note.html content="The syntax for `nfs4_setfacl` is `<type>:<flags>:<principal>:<permissions>`, for example `A:fd:GROUP@:rwaDdxtTnNcCoy`." %}
+The syntax for the `nfs4_setfacl` is command `<type>:<flags>:<principal>:<permissions>`, for example `A:fd:GROUP@:rwaDdxtTnNcCoy`. You can use equivalent NFS (`nfs4_setfacl`) and Qumulo (`qq fs_modify_acl`) CLI commands to set ACL permissions.
 
 The following tables compare elements of NFS and Qumulo ACL permissions.
 
