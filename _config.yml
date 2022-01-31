@@ -110,7 +110,7 @@ description: "This site is a new documentation portal for Qumulo that uses docs-
 # the description is used in the feed.xml file
 
 # needed for sitemap.xml file only
-url: qumulo.github.io
+url: docs.qumulo.com
 baseurl: /docs
 
 
