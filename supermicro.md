@@ -16,10 +16,10 @@ For more information about administering your cluster, see the [Qumulo Care](htt
 This section contains quick-reference diagrams for the front and back of your Supermicro All-NVMe node, an architecture diagram of an example four-node cluster, an explanation of node LEDs, and a diagram of drive slots and PCIe mapping.
 
 ### Front and Back Node Diagrams
-{% include image.html alt="Front and Back Diagrams of the Supermicro A+ WIO 1114S-WN10RT All-NVMe Node" file="supermicro/supermicro-front-back-diagram.png" url="/docs/images/supermicro/supermicro-front-back-diagram.png" %}
+{% include image.html alt="Front and Back Diagrams of the Supermicro A+ WIO 1114S-WN10RT All-NVMe Node" file="supermicro/supermicro-front-back-diagram.png" url="/images/supermicro/supermicro-front-back-diagram.png" %}
 
 ### Four-Node Cluster Architecture Diagram
-{% include image.html alt="Four-Node Cluster Architecture Diagram" file="supermicro/supermicro-four-node-cluster-architecture-diagram.png" url="/docs/images/supermicro/supermicro-four-node-cluster-architecture-diagram.png" %}
+{% include image.html alt="Four-Node Cluster Architecture Diagram" file="supermicro/supermicro-four-node-cluster-architecture-diagram.png" url="images/supermicro/supermicro-four-node-cluster-architecture-diagram.png" %}
 
 ### Node LEDs
 On the front, right side of your node, there are five LEDs.
@@ -48,7 +48,7 @@ On the back of your node, LAN LEDs are located behind the vent holes on the NIC.
 ### Drive Slot Mapping
 Your node contains slots for 10 drives and one boot drive (in an internal M.2 slot). The following is the mapping for the drives.
 
-{% include image.html alt="Supermicro Drive Slot Mapping" file="supermicro/supermicro-drive-slot-mapping.png" url="/docs/images/supermicro/supermicro-drive-slot-mapping.png" %}
+{% include image.html alt="Supermicro Drive Slot Mapping" file="supermicro/supermicro-drive-slot-mapping.png" url="/images/supermicro/supermicro-drive-slot-mapping.png" %}
 
 
 ## Configuring Networking for Your Node
@@ -428,7 +428,7 @@ Replacement drives, including the on-site spare drives that you received with yo
 
 1. Locate the drive that requires replacement using the drive bay mapping.
 
-   {% include image.html alt="Supermicro Drive Slot Mapping" file="supermicro/supermicro-drive-slot-mapping.png" url="/docs/images/supermicro/supermicro-drive-slot-mapping.png"%}
+   {% include image.html alt="Supermicro Drive Slot Mapping" file="supermicro/supermicro-drive-slot-mapping.png" url="/images/supermicro/supermicro-drive-slot-mapping.png"%}
 
 1. To remove the existing drive, do the following:
 
