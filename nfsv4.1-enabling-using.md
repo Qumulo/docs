@@ -15,8 +15,6 @@ Qumulo Core 4.3.0 (and higher) supports Network File System version 4.1 (NFSv4.1
 </ul>
 {{site.data.alerts.end}}
 
-## Using Unique Hostnames for NFS Clients
-The NFSv4.1 protocol requires clients to provide the server with globally unique identifiers. However, the NFSv4.1 client for Linux uses the machine's hostname by default. Because the Linux client doesn't support using the same hostname to connect to an NFSv4.1 server, an unpredictable failure can occur. We recommend configuring all NFS clients to use unique hostnames. For more information, see [NFS Client](https://www.kernel.org/doc/html/latest/admin-guide/nfs/nfs-client.html) in the Linux Kernel User's and Administrator's Guide.
 
 ## Configuring and Using Exports for NFSv4.1
 Qumulo's NFS exports can present a view of your cluster over NFS that might differ from the contents of the underlying file system. You can mark NFS exports as read-only, restricted (to allow access only from certain IP adresses), or configure specific user mappings. For more information, see [Create an NFS Export](https://care.qumulo.com/hc/en-us/articles/360000723928-Create-an-NFS-Export) in Qumulo Care.
