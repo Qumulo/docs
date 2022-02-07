@@ -8,7 +8,13 @@ keywords: nfs, nfs3, nfsv3, nfsv4.1, exports, mount, cluster, enable nfs, disabl
 
 Qumulo Core 4.3.0 (and higher) supports Network File System version 4.1 (NFSv4.1). This section explains how you can configure your cluster for a supported export configuration and enable or disable NFSv4.1 on your cluster. It also provides detail about supported and unsupported features. For more information about NFSv4.1 and file access permissions, see [Managing File Access Permissions Using NFSv4.1 Access Control Lists (ACLs)](nfsv4.1-auth-sys-acls.md).
 
-{% include important.html content="Currently, Qumulo Core supports only NFSv4.1. Mounting with version 4.0 or 4.2 isn't supported." %}
+{{site.data.alerts.important}}
+<ul>
+  <li>Currently, Qumulo Core supports only NFSv4.1. Mounting with version 4.0 or 4.2 isn't supported.</li>
+  <li>The NFSv4.1 protocol requires clients to provide the server with globally unique identifiers. By default, the NFSv4.1 client for Linux uses the machine's hostname as <code>co_ownerid</code>. Because the NFSv4.1 protocol requires a unique identifier for every client, an unpredictable failure can occur if two clients have the same hostname. To configure unique identification for your NFS clients, set the <code>nfs4_unique_id</code> value for them. For more information, see <a href="https://www.kernel.org/doc/html/v5.8/admin-guide/nfs/nfs-client.html#the-nfs4-unique-id-parameter">The nfs4_unique_id parameter</a> in the <em>Linux kernel user's and administrator's guide</em>.</li>
+</ul>
+{{site.data.alerts.end}}
+
 
 ## Configuring and Using Exports for NFSv4.1
 Qumulo's NFS exports can present a view of your cluster over NFS that might differ from the contents of the underlying file system. You can mark NFS exports as read-only, restricted (to allow access only from certain IP adresses), or configure specific user mappings. For more information, see [Create an NFS Export](https://care.qumulo.com/hc/en-us/articles/360000723928-Create-an-NFS-Export) in Qumulo Care.
@@ -85,10 +91,6 @@ NFSv4.1 respects IP restrictions on exports: only clients with allowed IP addres
 ### 32-Bit Sanitization
 * In NFSv3, you can configure specific exports to return 32-bit sanitized data for individual fields. NFSv3 converts any data larger than 32 bits in configured fields to 32-bit data and returns the data. For example, it can sanitize file size to 32-bit format. This truncates the field to `max_uint32` whenever the NFSv3 server returns the attribute.
 * NFSv4.1 doesn't support 32-bit sanitization and ignores any sanitizations configured for an export.
-
-
-## Using Unique Hostnames for NFS Clients
-The NFSv4.1 protocol requires clients to provide the server with globally unique identifiers. However, the NFSv4.1 client for Linux uses the machine's hostname by default. Because the Linux client doesn't support using the same hostname to connect to an NFSv4.1 server, an unpredictable failure can occur. We recommend configuring all NFS clients to use unique hostnames. For more information, see [NFS Client](https://www.kernel.org/doc/html/latest/admin-guide/nfs/nfs-client.html) in the Linux Kernel User's and Administrator's Guide.
 
 
 ## Enabling NFSv4.1 on a Qumulo Cluster
