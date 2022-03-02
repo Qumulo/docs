@@ -33,6 +33,7 @@ exclude:
   - "*.sh"
   - "*.yml"
   - "*.drawio"
+  - "*.lua"
   - var
   - vendor
   - Dockerfile
