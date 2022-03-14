@@ -126,3 +126,5 @@ baseurl: /
 
 github: [metadata]
 
+exclude:
+  - *.sh
