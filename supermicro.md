@@ -157,6 +157,7 @@ This section describes how to wire the remote access, network, and power ports o
 
 ### Connecting the Out-of-Band Management (IPMI) Port
 The dedicated out-of-band management port allows functionality such as remote display, control, and power (similar to HPE iLO). The port uses the Intelligent Platform Management Interface (IPMI) protocol. First, connect the IPMI port first on the back of your node (above the USB ports).
+   {% include note.html content="You will see a user called `qumulo_<random>` in list of IPMI users, this is critical for Qumulo functionality and should not be disabled or tampered with. Customers should create their own IPMI user account for administration purposes." %}
 
 ### Connecting the 100 Gbps Ports
 After you connect the IPMI port, connect your front-end and back-end 100 Gbps ports (compatible with QSFP28 and QSFP56). There are four 100 Gbps ports on the back of your node. To maximize redundancy, split interfaces across subnets by connecting each port to a different switch.
