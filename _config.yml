@@ -30,12 +30,22 @@ port: 4000
 exclude:
   - .idea/
   - .gitignore
+  - "*.sh"
+  - "*.yml"
+  - "*.drawio"
+  - "*.lua"
+  - var
   - vendor
+  - Dockerfile
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE-BSD-NAVGOCO.txt
+  - createtag
 # these are the files and directories that jekyll will exclude from the build
 
 feedback_subject_line: Qumulo Documentation
 
-feedback_email: mkhmelnitsky@qumulo.com
+feedback_email: qontent-feedback@qumulo.com
 # used as a contact email for the Feedback link in the top navigation bar
 
 feedback_disable: true
