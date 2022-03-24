@@ -360,6 +360,16 @@ table tr td {
     hyphens: auto;
 }
 
+table.tech-specs > tbody > tr > td,
+table.tech-specs > thead > tr > th {
+    text-align: center;
+    border-left: 1px solid #ddd;
+}
+
+table.tech-specs > tbody > tr > td:nth-child(1),
+table.tech-specs > thead > tr > th:nth-child(1) {
+    text-align: left;
+}
 
 p.external a {
     text-align:right;
