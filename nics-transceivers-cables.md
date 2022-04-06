@@ -8,9 +8,10 @@ keywords: network transceiver, network transceivers, nic, mellanox, short range 
 
 This section explains how you can identify your node's NICs and choose the correct transceivers and cables for your Qumulo nodes.
 
-## NICs that may be present in your NodeIdentifying the NICs in Your Node
+## Corresponding Node and NIC Types
+The following table lists node types, the NICs that these nodes use, the speeds of the NICs, and links to the latest transceiver compatbility documentation from the vendor.
 
-The following table lists node types, the NICs used in them, NIC's speed, and a link to the latest transceiver compatbility documentation provided by the vendor. Some vendors update this list with every firmware release. In this case the link provided matches the latest firmware Qumulo Core supports. 
+{% include note.html content="Certain vendors update this list with every firmware release. The following table links to the latest firmware version that Qumulo Core supports. %}
 
 <table>
 <thead>
@@ -152,20 +153,25 @@ The following table lists node types, the NICs used in them, NIC's speed, and a 
 </tbody>
 </table>
 
-## Identifying your NIC
-If your node type has more than one possible NIC type, you may need to identify what NIC is present in your node(s). Ssh to the commandline interface of your node. Run the following<br>
-`lspci | grep "Ethernet controller"`<br>
-An example output
-```
-45:00.0 Ethernet controller: Broadcom Inc. and subsidiaries BCM57416 NetXtreme-E Dual-Media 10G RDMA Ethernet Controller (rev 01)
-45:00.1 Ethernet controller: Broadcom Inc. and subsidiaries BCM57416 NetXtreme-E Dual-Media 10G RDMA Ethernet Controller (rev 01)
-81:00.0 Ethernet controller: Mellanox Technologies MT28908 Family [ConnectX-6]
-81:00.1 Ethernet controller: Mellanox Technologies MT28908 Family [ConnectX-6]
-c5:00.0 Ethernet controller: Mellanox Technologies MT28908 Family [ConnectX-6]
-c5:00.1 Ethernet controller: Mellanox Technologies MT28908 Family [ConnectX-6]
-```
+## To Identify Your NIC
+If your node type corresponds to more than one possible NIC type, you might have to identify the specific NIC in your nodes.
 
-When running this command, it may return the onboard NICs which are 10 Gbps interfaces. These many be ignored. In this example, which was run on a Supermicro A+ WIO 1114S-WN10RT, we see that this node has 2 ConnectX-6 NICs. 
+1. Use SSH to connect to your node.
+
+1. Run the `lspci | grep "Ethernet controller"` command.
+
+   {% include note.html content="This command might return information about (unused) onboard NICs that have 10 Gbps interfaces." %}
+
+   A list of NICs is displayed. In the following example, we ran the command on a Supermicro 1114S node, which has two ConnectX-6 NICs.
+
+   ```
+   45:00.0 Ethernet controller: Broadcom Inc. and subsidiaries BCM57416 NetXtreme-E Dual-Media 10G RDMA Ethernet Controller (rev 01)
+   45:00.1 Ethernet controller: Broadcom Inc. and subsidiaries BCM57416 NetXtreme-E Dual-Media 10G RDMA Ethernet Controller (rev 01)
+   81:00.0 Ethernet controller: Mellanox Technologies MT28908 Family [ConnectX-6]
+   81:00.1 Ethernet controller: Mellanox Technologies MT28908 Family [ConnectX-6]
+   c5:00.0 Ethernet controller: Mellanox Technologies MT28908 Family [ConnectX-6]
+   c5:00.1 Ethernet controller: Mellanox Technologies MT28908 Family [ConnectX-6]
+   ```
 
 ## Choosing Transceivers for Your Node
 The two main types of fiber optic cables are the Lucent connector (LC) with two fibers (commonly used for 10 Gbps and 25 Gbps connections) and the multi-fiber push on (MPO) connector with eight fibers (commonly used for 40 Gbps connections). Although there are transceivers that can use LC fiber optic cables for 40 Gbps and 100 Gbps connections, these transceivers are generally more expensive, consume more power, and are mainly intended for reusing LC cabling or for long-distance applications.
