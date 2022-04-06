@@ -96,7 +96,7 @@ The following table lists node types, the NICs that these nodes use, the speeds 
   </tr>
   <tr>
     <td rowspan="2"><ul><li>K-144T</li><li>K-168T</li></ul></td>
-    <td>Intel82599ES</td>
+    <td>Intel 82599ES</td>
     <td rowspan="2">10 Gbps</td>
     <td><a href="https://www.intel.com/content/www/us/en/embedded/products/networking/82599-10-gbe-controller-datasheet.html?asset=2377" target="_blank" rel="noopener noreferrer">82599-data-sheet</a></td>
   </tr>
