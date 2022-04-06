@@ -8,46 +8,179 @@ keywords: network transceiver, network transceivers, nic, mellanox, short range 
 
 This section explains how you can identify your node's NICs and choose the correct transceivers and cables for your Qumulo nodes.
 
-## Identifying the NICs in Your Node
+## NICs that may be present in your NodeIdentifying the NICs in Your Node
 
-The following table lists node types and their NICs and the NICs' speed and latest firmware that Qumulo supports.
+The following table lists node types, the NICs used in them, NIC's speed, and a link to the latest transceiver compatbility documentation provided by the vendor. Some vendors update this list with every firmware release. In this case the link provided matches the latest firmware Qumulo Core supports. 
 
-| Node Type                      | NIC        | Speed      | Latest Firmware Qumulo Supports |
-| ------------------------------ | ---------- | ---------- | ------------------------------- |
-| C-192T                         | ConnectX-5 | 100 Gbps   | [16.28.1002](https://docs.mellanox.com/display/ConnectX5Firmwarev16281002/Firmware+Compatible+Products#FirmwareCompatibleProducts-ValidatedandSupported100GbECables)|
-| C-432T                         | ConnectX-5 | 100 Gbps   | [16.28.1002](https://docs.mellanox.com/display/ConnectX5Firmwarev16281002/Firmware+Compatible+Products#FirmwareCompatibleProducts-ValidatedandSupported100GbECables)|
-| HPE ProLiant DL325 Gen10 Plus  | ConnectX-6 | 100 Gbps   | [22.31.1014](https://docs.mellanox.com/display/ConnectX6Firmwarev20311014/Firmware+Compatible+Products)|
-| K-432T                         | ConnectX-5 | 25 Gbps    | [16.28.1002](https://docs.mellanox.com/display/ConnectX5Firmwarev16281002/Firmware+Compatible+Products#FirmwareCompatibleProducts-ValidatedandSupported100GbECables) |
-| P-23T                          | ConnectX-5 | 100 Gbps   | [16.28.1002](https://docs.mellanox.com/display/ConnectX5Firmwarev16281002/Firmware+Compatible+Products#FirmwareCompatibleProducts-ValidatedandSupported100GbECables) |
-| P-92T                          | ConnectX-5 | 100 Gbps   | [16.28.1002](https://docs.mellanox.com/display/ConnectX5Firmwarev16281002/Firmware+Compatible+Products#FirmwareCompatibleProducts-ValidatedandSupported100GbECables) |
-| P-184T                         | ConnectX-5 | 100 Gbps   | [16.28.1002](https://docs.mellanox.com/display/ConnectX5Firmwarev16281002/Firmware+Compatible+Products#FirmwareCompatibleProducts-ValidatedandSupported100GbECables) |
-| P-368T                         | ConnectX-5 | 100 Gbps   | [16.28.1002](https://docs.mellanox.com/display/ConnectX5Firmwarev16281002/Firmware+Compatible+Products#FirmwareCompatibleProducts-ValidatedandSupported100GbECables) |
-| Supermicro A+ WIO 1114S-WN10RT | ConnectX-6 | 100 Gbps   | [22.31.1014](https://docs.mellanox.com/display/ConnectX6Firmwarev20311014/Firmware+Compatible+Products) |
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-size:14px;
+  overflow:hidden;padding:8px 4px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-size:18px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-baqh{text-align:center;vertical-align:middle}
+.tg .tg-5j4b{font-weight:bold;text-align:center;vertical-align:middle}
+.tg .tg-0lax{text-align:left;vertical-align:middle}
+</style>
+<table class="tg">
+<thead>
+  <tr>
+    <th class="tg-5j4b">Node Type</th>
+    <th class="tg-5j4b">NIC</th>
+    <th class="tg-5j4b">Speed</th>
+    <th class="tg-5j4b">Vendor Transceiver<br>Compatibility List</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-0lax">C-72T, C-168T</td>
+    <td class="tg-0lax">ConnectX-4Lx</td>
+    <td class="tg-baqh">25 Gbps</td>
+    <td class="tg-0lax"><a href="https://docs.nvidia.com/networking/display/ConnectX4LxFirmwarev14311014/Firmware+Compatible+Products" target="_blank" rel="noopener noreferrer">14.31.1014</a></td>
+  </tr>
+  <tr>
+    <td class="tg-0lax" rowspan="2">C-192T, C-432T</td>
+    <td class="tg-baqh">ConnectX-5</td>
+    <td class="tg-baqh" rowspan="2">100 Gbps</td>
+    <td class="tg-0lax"><a href="https://docs.nvidia.com/networking/spaces/viewspace.action?key=ConnectX5Firmwarev16301004" target="_blank" rel="noopener noreferrer">16.30.1004</a></td>
+  </tr>
+  <tr>
+    <td class="tg-baqh">P2100G</td>
+    <td class="tg-0lax"><a href="https://docs.broadcom.com/doc/BC-0591EN" target="_blank" rel="noopener noreferrer">BC-0591</a></td>
+  </tr>
+  <tr>
+    <td class="tg-0lax" rowspan="2">HPE Apollo 4200 Gen9</td>
+    <td class="tg-baqh">ConnectX-3Pro</td>
+    <td class="tg-baqh" rowspan="2">40 Gbps</td>
+    <td class="tg-0lax"><a href="https://network.nvidia.com/related-docs/firmware/ConnectX3Pro-FW-2_42_5000-release_notes.pdf" target="_blank" rel="noopener noreferrer">2.42.5000</a></td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">ConnectX-5</td>
+    <td class="tg-0lax"><a href="https://docs.nvidia.com/networking/spaces/viewspace.action?key=ConnectX5Firmwarev16301004" target="_blank" rel="noopener noreferrer">16.30.1004</a></td>
+  </tr>
+  <tr>
+    <td class="tg-0lax" rowspan="2">HPE Apollo 4200 Gen10 <br>192T</td>
+    <td class="tg-baqh">ConnectX-5</td>
+    <td class="tg-baqh" rowspan="2">100 Gbps</td>
+    <td class="tg-0lax"><a href="https://docs.nvidia.com/networking/spaces/viewspace.action?key=ConnectX5Firmwarev16301004" target="_blank" rel="noopener noreferrer">16.30.1004</a></td>
+  </tr>
+  <tr>
+    <td class="tg-baqh">ConnectX6Dx</td>
+    <td class="tg-0lax"><a href="https://docs.nvidia.com/networking/spaces/viewspace.action?key=ConnectX6DxFirmwarev22311014" target="_blank" rel="noopener noreferrer">22.31.1014</a></td>
+  </tr>
+  <tr>
+    <td class="tg-0lax" rowspan="2">HPE Apollo 4200 Gen10 <br>36T</td>
+    <td class="tg-baqh">ConnectX-4Lx</td>
+    <td class="tg-baqh" rowspan="2">25 Gbps</td>
+    <td class="tg-0lax"><a href="https://docs.nvidia.com/networking/display/ConnectX4LxFirmwarev14311014/Firmware+Compatible+Products" target="_blank" rel="noopener noreferrer">14.31.1014</a></td>
+  </tr>
+  <tr>
+    <td class="tg-baqh">P225P</td>
+    <td class="tg-0lax"><a href="https://docs.broadcom.com/doc/BC-0591EN" target="_blank" rel="noopener noreferrer">BC-0591</a></td>
+  </tr>
+  <tr>
+    <td class="tg-0lax" rowspan="4">HPE Apollo 4200 Gen10 <br>90T, 336T</td>
+    <td class="tg-baqh">ConnectX-5</td>
+    <td class="tg-baqh" rowspan="2">40 Gbps</td>
+    <td class="tg-0lax"><a href="https://docs.nvidia.com/networking/spaces/viewspace.action?key=ConnectX5Firmwarev16301004" target="_blank" rel="noopener noreferrer">16.30.1004</a></td>
+  </tr>
+  <tr>
+    <td class="tg-baqh">ConnectX-6Dx</td>
+    <td class="tg-0lax"><a href="https://docs.nvidia.com/networking/spaces/viewspace.action?key=ConnectX6DxFirmwarev22311014" target="_blank" rel="noopener noreferrer">22.31.1014</a></td>
+  </tr>
+  <tr>
+    <td class="tg-baqh">ConnectX-4Lx</td>
+    <td class="tg-baqh" rowspan="2">25 Gbps</td>
+    <td class="tg-0lax"><a href="https://docs.nvidia.com/networking/display/ConnectX4LxFirmwarev14311014/Firmware+Compatible+Products" target="_blank" rel="noopener noreferrer">14.31.1014</a></td>
+  </tr>
+  <tr>
+    <td class="tg-baqh">P225P</td>
+    <td class="tg-0lax"><a href="https://docs.broadcom.com/doc/BC-0591EN" target="_blank" rel="noopener noreferrer">BC-0591</a></td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">HPE ProLiant DL325 Gen10 Plus</td>
+    <td class="tg-baqh">ConnectX-6</td>
+    <td class="tg-baqh">100 Gbps</td>
+    <td class="tg-0lax"><a href="https://docs.nvidia.com/networking/spaces/viewspace.action?key=ConnectX6Firmwarev20301004" target="_blank" rel="noopener noreferrer">16.30.1004</a></td>
+  </tr>
+  <tr>
+    <td class="tg-0lax" rowspan="2">K-144T, K-168T</td>
+    <td class="tg-baqh">Intel82599ES</td>
+    <td class="tg-baqh" rowspan="2">10 Gbps</td>
+    <td class="tg-0lax"><a href="https://www.intel.com/content/www/us/en/embedded/products/networking/82599-10-gbe-controller-datasheet.html?asset=2377" target="_blank" rel="noopener noreferrer">82599-data-sheet</a></td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">ConnectX-4Lx</td>
+    <td class="tg-0lax"><a href="https://docs.nvidia.com/networking/display/ConnectX4LxFirmwarev14311014/Firmware+Compatible+Products" target="_blank" rel="noopener noreferrer">14.31.1014</a></td>
+  </tr>
+  <tr>
+    <td class="tg-0lax" rowspan="2">K-432T</td>
+    <td class="tg-baqh">ConnectX-4Lx</td>
+    <td class="tg-baqh" rowspan="2">25 Gbps</td>
+    <td class="tg-0lax"><a href="https://docs.nvidia.com/networking/display/ConnectX4LxFirmwarev14311014/Firmware+Compatible+Products" target="_blank" rel="noopener noreferrer">14.31.1014</a></td>
+  </tr>
+  <tr>
+    <td class="tg-baqh">P225P</td>
+    <td class="tg-0lax"><a href="https://docs.broadcom.com/doc/BC-0591EN" target="_blank" rel="noopener noreferrer">BC-0591</a></td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">P-23T, P-92T, P-184T, P-368T</td>
+    <td class="tg-baqh">ConnectX-5</td>
+    <td class="tg-baqh">100 Gbps</td>
+    <td class="tg-0lax"><a href="https://docs.nvidia.com/networking/spaces/viewspace.action?key=ConnectX5Firmwarev16301004" target="_blank" rel="noopener noreferrer">16.30.1004</a></td>
+  </tr>
+  <tr>
+    <td class="tg-0lax" rowspan="2">QC24, QC40</td>
+    <td class="tg-baqh">ConnectX-3</td>
+    <td class="tg-baqh" rowspan="2">10 Gbps</td>
+    <td class="tg-0lax"><a href="https://network.nvidia.com/sites/default/files/related-docs/firmware/ConnectX3-FW-2_42_5000-release_notes.pdf)" target="_blank" rel="noopener noreferrer">2.42.5000</a></td>
+  </tr>
+  <tr>
+    <td class="tg-baqh">ConnectX-4Lx</td>
+    <td class="tg-0lax"><a href="https://docs.nvidia.com/networking/display/ConnectX4LxFirmwarev14311014/Firmware+Compatible+Products" target="_blank" rel="noopener noreferrer">14.31.1014</a></td>
+  </tr>
+  <tr>
+    <td class="tg-0lax" rowspan="2">QC104, QC208, <br>QC260, QC360</td>
+    <td class="tg-baqh">ConnectX-3 Pro</td>
+    <td class="tg-baqh" rowspan="2">40 Gbps</td>
+    <td class="tg-0lax"><a href="https://network.nvidia.com/related-docs/firmware/ConnectX3Pro-FW-2_42_5000-release_notes.pdf" target="_blank" rel="noopener noreferrer">2.42.5000</a></td>
+  </tr>
+  <tr>
+    <td class="tg-baqh">ConnectX-4</td>
+    <td class="tg-0lax"><a href="https://docs.nvidia.com/networking/display/ConnectX4Firmwarev12282006" target="_blank" rel="noopener noreferrer">12.28.2006</a></td>
+  </tr>
+  <tr>
+    <td class="tg-0lax" rowspan="2">Supermicro A+ WIO 1114S-WN10RT</td>
+    <td class="tg-baqh">ConnectX-6</td>
+    <td class="tg-baqh" rowspan="2">100 Gbps</td>
+    <td class="tg-0lax"><a href="https://docs.nvidia.com/networking/spaces/viewspace.action?key=ConnectX6Firmwarev20301004" target="_blank" rel="noopener noreferrer">16.30.1004</a></td>
+  </tr>
+  <tr>
+    <td class="tg-baqh">P2100G</td>
+    <td class="tg-0lax"><a href="https://docs.broadcom.com/doc/BC-0591EN" target="_blank" rel="noopener noreferrer">BC-0591</a></td>
+  </tr>
+</tbody>
+</table>
 
+## Identifying your NIC
+If your node type has more than one possible NIC type, you may need to identify what NIC is present in your node(s). Ssh to the commandline interface of your node. Run the following<br>
+`lspci | grep "Ethernet controller"`<br>
+An example output
+```
+45:00.0 Ethernet controller: Broadcom Inc. and subsidiaries BCM57416 NetXtreme-E Dual-Media 10G RDMA Ethernet Controller (rev 01)
+45:00.1 Ethernet controller: Broadcom Inc. and subsidiaries BCM57416 NetXtreme-E Dual-Media 10G RDMA Ethernet Controller (rev 01)
+81:00.0 Ethernet controller: Mellanox Technologies MT28908 Family [ConnectX-6]
+81:00.1 Ethernet controller: Mellanox Technologies MT28908 Family [ConnectX-6]
+c5:00.0 Ethernet controller: Mellanox Technologies MT28908 Family [ConnectX-6]
+c5:00.1 Ethernet controller: Mellanox Technologies MT28908 Family [ConnectX-6]
+```
+
+When running this command, it may return the onboard NICs which are 10 Gbps interfaces. These many be ignored. In this example, which was run on a Supermicro A+ WIO 1114S-WN10RT, we see that this node has 2 ConnectX-6 NICs. 
 
 ## Choosing Transceivers for Your Node
 The two main types of fiber optic cables are the Lucent connector (LC) with two fibers (commonly used for 10 Gbps and 25 Gbps connections) and the multi-fiber push on (MPO) connector with eight fibers (commonly used for 40 Gbps connections). Although there are transceivers that can use LC fiber optic cables for 40 Gbps and 100 Gbps connections, these transceivers are generally more expensive, consume more power, and are mainly intended for reusing LC cabling or for long-distance applications.
 
 Newer switches have 100 Gbps connections using double 50 Gbps PAM4 connections instead of the more common four 25 Gbps connections. However, the most common and cost-efficient transmission standard for 100 Gbps is SR4, with four QSFP28 connections over an eight-fiber cable. The maximum range for SR4 is 100 m. The most common transmission standard for 25 Gbps is the Lucent connector duplex (LC duplex) with two fibers. The maximum short-range connection is 100 m and long-range connection is 10 km. There is also an extended-range standard with a maximum of 40 km.
-
-### Recommended Optical Transceivers for 100 Gbps Connections
-
-{% include note.html content="Mellanox 100 Gbps NICs also work with 40 Gbps connections." %}
-
-| Speed        | Part Number     | Description                                     |
-| ------------ | --------------- | ----------------------------------------------- |
-| 100 Gbps LR4 | MMA1L10-CR      | Mellanox QSFP28 Long-Range Transceiver          |
-| 100 Gbps SR4 | MMA1B00-C100D   | Mellanox QSFP28 Short-Range Transceiver         |
-| 100 Gbps SR4 | QSFP28-SR4-100G | FS Arista and Mellanox Short-Range Transceivers |
-
-### Recommended Optical Transceivers for 25 Gbps Connections
-
-| Speed      | Part Number    | Description                                     |
-| ---------- | -------------- | ----------------------------------------------- |
-| 25 Gbps LR | MMA2L20-AR     | Mellanox SFP28 Long-Range Transceiver           |
-| 25 Gbps SR | MMA2P00-AS     | Mellanox SFP28 Short-Range Transceiver          |
-| 25 Gbps SR | SFP28-25GSR-85 | FS Arista and Mellanox Short-Range Transceivers |    
-
 
 ## Choosing Cables for Your Transceiver
 * **Optical Cables:** We recommend using optical cables and optical transceivers that both the NIC and the switch support.
@@ -56,13 +189,4 @@ Newer switches have 100 Gbps connections using double 50 Gbps PAM4 connections i
 
 * **Active Optical Cables (AOCs):** Although these cables are cheaper than dedicated transceivers and fiber optic cables, they might cause compatibility issues, or your NIC or switch might not support them.
 
-{% include note.html content="If you use DAC or AOC cables, ensure that Mellanox and the maker of your network switch both support your cables." %}
-
-### Recommended 100 Gbps DAC and AOC Cables
-
-| Manufacturer | Part Number     | Description                   | Length |
-| ------------ | --------------- | ----------------------------- | ------ |
-| Amphenol     | NDAAFF-C403     | 100 Gbps Passive Copper Cable | 3 m    |
-| FS           | Q28-PC02        | 100 Gbps Passive Copper Cable | 2 m    |
-| FS           | Q28-PC03        | 100 Gbps Passive Copper Cable | 3 m    |
-| Leoni        | L45593-D218-B50 | 100 Gbps Passive Copper Cable | 3 m    |                                                                          
+{% include note.html content="If you use DAC or AOC cables, ensure that your NIC vendor and the maker of your network switch both support your cables." %}
