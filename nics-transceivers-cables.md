@@ -11,7 +11,7 @@ This section explains how you can identify your node's NICs and choose the corre
 ## Corresponding Node and NIC Types
 The following table lists node types, the NICs that these nodes use, the speeds of the NICs, and links to the latest transceiver compatbility documentation from the vendor.
 
-{% include note.html content="Certain vendors update this list with every firmware release. The following table links to the latest firmware version that Qumulo Core supports. %}
+{% include note.html content="Certain vendors update this list with every firmware release. The following table links to the latest firmware version that Qumulo Core supports." %}
 
 <table>
 <thead>
