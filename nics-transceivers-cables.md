@@ -160,7 +160,7 @@ If your node type corresponds to more than one possible NIC type, you might have
 
 1. Run the `lspci | grep "Ethernet controller"` command.
 
-   {% include note.html content="This command might return information about (unused) onboard NICs that have 10 Gbps or less interfaces." %}
+   {% include note.html content="This command might return information about (unused) onboard NICs that have interfaces with speeds of 10 Gbps (or slower)." %}
 
    A list of NICs is displayed. In the following example, we ran the command on a Supermicro 1114S node, which has two ConnectX-6 NICs.
 
