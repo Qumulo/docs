@@ -56,7 +56,7 @@ The following table lists node types, the NICs that these nodes use, the speeds 
     <td><a href="https://docs.nvidia.com/networking/spaces/viewspace.action?key=ConnectX5Firmwarev16301004" target="_blank" rel="noopener noreferrer">16.30.1004</a></td>
   </tr>
   <tr>
-    <td>ConnectX6Dx</td>
+    <td>ConnectX-6Dx</td>
     <td><a href="https://docs.nvidia.com/networking/spaces/viewspace.action?key=ConnectX6DxFirmwarev22311014" target="_blank" rel="noopener noreferrer">22.31.1014</a></td>
   </tr>
   <tr>
