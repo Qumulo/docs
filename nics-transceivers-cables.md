@@ -185,4 +185,4 @@ Newer switches have 100 Gbps connections using double 50 Gbps PAM4 connections i
 
 * **Active Optical Cables (AOCs):** Although these cables are cheaper than dedicated transceivers and fiber optic cables, they might cause compatibility issues, or your NIC or switch might not support them.
 
-{% include note.html content="If you use DAC or AOC cables, ensure that your NIC vendor and the maker of your network switch both support your cables." %}
+{% include note.html content="If you use DAC or AOC cables, ensure that the manufacturers of your NIC and network switch both support your cables." %}
