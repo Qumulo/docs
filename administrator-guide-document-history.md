@@ -16,6 +16,10 @@ The following table lists changes to the _Qumulo Administrator Guide_.
   </thead>
   <tbody>
     <tr>
+      <td>Apr. 6, 2022</td>
+      <td>Updated the <a href="nics-transceivers-cables.html">Choosing NICs, Transceivers, and Cables for Your Qumulo Node</a> section.</td>
+    </tr>
+    <tr>
       <td>Feb. 7, 2022</td>
       <td>Updated the <a href="nfsv4.1-enabling-using.html">Enabling and Using NFSv4.1 on a Qumulo Cluster</a> section.</td>
     </tr>
