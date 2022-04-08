@@ -33,11 +33,11 @@ The following table lists node types, the NICs that these nodes use, the speeds 
     <td rowspan="2"><ul><li>C-192T</li><li>C-432T</li></ul></td>
     <td>ConnectX-5</td>
     <td rowspan="2">100 Gbps</td>
-    <td><a href="https://docs.nvidia.com/networking/spaces/viewspace.action?key=ConnectX5Firmwarev16301004" target="_blank" rel="noopener noreferrer">16.30.1004</a></td>
+    <td><a href="https://docs.nvidia.com/networking/display/ConnectX5Firmwarev16301004/Firmware+Compatible+Products#FirmwareCompatibleProducts-SupportedDevicesSupportedDevices" target="_blank" rel="noopener noreferrer">16.30.1004</a></td>
   </tr>
   <tr>
     <td>P2100G</td>
-    <td><a href="https://docs.broadcom.com/doc/BC-0591EN" target="_blank" rel="noopener noreferrer">BC-0591</a></td>
+    <td><a href="https://docs.broadcom.com/doc/BC-0591EN" target="_blank" rel="noopener noreferrer">BC-0591</a><br><a href="https://techdocs.broadcom.com/us/en/storage-and-ethernet-connectivity/ethernet-nic-controllers/bcm957xxx/1-0/installation_3/connecting-the-network-cables.html" target="_blank" rel="noopener noreferrer">BC 3rd Party Supported</a></td>
   </tr>
   <tr>
     <td rowspan="2">HPE A4200 Gen9</td>
@@ -47,17 +47,17 @@ The following table lists node types, the NICs that these nodes use, the speeds 
   </tr>
   <tr>
     <td>ConnectX-5</td>
-    <td><a href="https://docs.nvidia.com/networking/spaces/viewspace.action?key=ConnectX5Firmwarev16301004" target="_blank" rel="noopener noreferrer">16.30.1004</a></td>
+    <td><a href="https://docs.nvidia.com/networking/display/ConnectX5Firmwarev16301004/Firmware+Compatible+Products#FirmwareCompatibleProducts-SupportedDevicesSupportedDevices" target="_blank" rel="noopener noreferrer">16.30.1004</a></td>
   </tr>
   <tr>
     <td rowspan="2">HPE A4200 Gen10<ul><li>192T</li></ul></td>
     <td>ConnectX-5</td>
     <td rowspan="2">100 Gbps</td>
-    <td><a href="https://docs.nvidia.com/networking/spaces/viewspace.action?key=ConnectX5Firmwarev16301004" target="_blank" rel="noopener noreferrer">16.30.1004</a></td>
+    <td><a href="https://docs.nvidia.com/networking/display/ConnectX5Firmwarev16301004/Firmware+Compatible+Products#FirmwareCompatibleProducts-SupportedDevicesSupportedDevices" target="_blank" rel="noopener noreferrer">16.30.1004</a></td>
   </tr>
   <tr>
     <td>ConnectX-6Dx</td>
-    <td><a href="https://docs.nvidia.com/networking/spaces/viewspace.action?key=ConnectX6DxFirmwarev22311014" target="_blank" rel="noopener noreferrer">22.31.1014</a></td>
+    <td><a href="https://docs.nvidia.com/networking/display/ConnectX6DxFirmwarev22311014/Firmware+Compatible+Products" target="_blank" rel="noopener noreferrer">22.31.1014</a></td>
   </tr>
   <tr>
     <td rowspan="2">HPE A4200 Gen10<ul><li>36T</li></ul></td>
@@ -67,17 +67,17 @@ The following table lists node types, the NICs that these nodes use, the speeds 
   </tr>
   <tr>
     <td>P225P</td>
-    <td><a href="https://docs.broadcom.com/doc/BC-0591EN" target="_blank" rel="noopener noreferrer">BC-0591</a></td>
+    <td><a href="https://docs.broadcom.com/doc/BC-0591EN" target="_blank" rel="noopener noreferrer">BC-0591</a><br><a href="https://techdocs.broadcom.com/us/en/storage-and-ethernet-connectivity/ethernet-nic-controllers/bcm957xxx/1-0/installation_3/connecting-the-network-cables.html" target="_blank" rel="noopener noreferrer">BC 3rd Party Supported</a></td>
   </tr>
   <tr>
     <td rowspan="4">HPE A4200 Gen10<ul><li>90T</li><li>336T</li></ul></td>
     <td>ConnectX-5</td>
     <td rowspan="2">40 Gbps</td>
-    <td><a href="https://docs.nvidia.com/networking/spaces/viewspace.action?key=ConnectX5Firmwarev16301004" target="_blank" rel="noopener noreferrer">16.30.1004</a></td>
+    <td><a href="https://docs.nvidia.com/networking/display/ConnectX5Firmwarev16301004/Firmware+Compatible+Products#FirmwareCompatibleProducts-SupportedDevicesSupportedDevices" target="_blank" rel="noopener noreferrer">16.30.1004</a></td>
   </tr>
   <tr>
     <td>ConnectX-6Dx</td>
-    <td><a href="https://docs.nvidia.com/networking/spaces/viewspace.action?key=ConnectX6DxFirmwarev22311014" target="_blank" rel="noopener noreferrer">22.31.1014</a></td>
+    <td><a href="https://docs.nvidia.com/networking/display/ConnectX6DxFirmwarev22311014/Firmware+Compatible+Products" target="_blank" rel="noopener noreferrer">22.31.1014</a></td>
   </tr>
   <tr>
     <td>ConnectX-4Lx</td>
@@ -92,7 +92,7 @@ The following table lists node types, the NICs that these nodes use, the speeds 
     <td>HPE DL325 Gen10 Plus</td>
     <td>ConnectX-6</td>
     <td>100 Gbps</td>
-    <td><a href="https://docs.nvidia.com/networking/spaces/viewspace.action?key=ConnectX6Firmwarev20301004" target="_blank" rel="noopener noreferrer">16.30.1004</a></td>
+    <td><a href="https://docs.nvidia.com/networking/display/ConnectX6Firmwarev20301004/Firmware+Compatible+Products" target="_blank" rel="noopener noreferrer">16.30.1004</a></td>
   </tr>
   <tr>
     <td rowspan="2"><ul><li>K-144T</li><li>K-168T</li></ul></td>
@@ -112,13 +112,13 @@ The following table lists node types, the NICs that these nodes use, the speeds 
   </tr>
   <tr>
     <td>P225P</td>
-    <td><a href="https://docs.broadcom.com/doc/BC-0591EN" target="_blank" rel="noopener noreferrer">BC-0591</a></td>
+    <td><a href="https://docs.broadcom.com/doc/BC-0591EN" target="_blank" rel="noopener noreferrer">BC-0591</a><br><a href="https://techdocs.broadcom.com/us/en/storage-and-ethernet-connectivity/ethernet-nic-controllers/bcm957xxx/1-0/installation_3/connecting-the-network-cables.html" target="_blank" rel="noopener noreferrer">BC 3rd Party Supported</a></td>
   </tr>
   <tr>
     <td><ul><li>P-23T</li><li>P-92T</li><li>P-184T</li><li>P-368T</li></ul></td>
     <td>ConnectX-5</td>
     <td>100 Gbps</td>
-    <td><a href="https://docs.nvidia.com/networking/spaces/viewspace.action?key=ConnectX5Firmwarev16301004" target="_blank" rel="noopener noreferrer">16.30.1004</a></td>
+    <td><a href="https://docs.nvidia.com/networking/display/ConnectX5Firmwarev16301004/Firmware+Compatible+Products#FirmwareCompatibleProducts-SupportedDevicesSupportedDevices" target="_blank" rel="noopener noreferrer">16.30.1004</a></td>
   </tr>
   <tr>
     <td rowspan="2"><ul><li>QC24</li><li>QC40</li></ul></td>
@@ -138,17 +138,17 @@ The following table lists node types, the NICs that these nodes use, the speeds 
   </tr>
   <tr>
     <td>ConnectX-4</td>
-    <td><a href="https://docs.nvidia.com/networking/display/ConnectX4Firmwarev12282006" target="_blank" rel="noopener noreferrer">12.28.2006</a></td>
+    <td><a href="https://docs.nvidia.com/networking/display/ConnectX4Firmwarev12282006/Firmware+Compatible+Products" target="_blank" rel="noopener noreferrer">12.28.2006</a></td>
   </tr>
   <tr>
     <td rowspan="2">Supermicro 1114S</td>
     <td>ConnectX-6</td>
     <td rowspan="2">100 Gbps</td>
-    <td><a href="https://docs.nvidia.com/networking/spaces/viewspace.action?key=ConnectX6Firmwarev20301004" target="_blank" rel="noopener noreferrer">16.30.1004</a></td>
+    <td><a href="https://docs.nvidia.com/networking/display/ConnectX6Firmwarev20301004/Firmware+Compatible+Products" target="_blank" rel="noopener noreferrer">16.30.1004</a></td>
   </tr>
   <tr>
     <td>P2100G</td>
-    <td><a href="https://docs.broadcom.com/doc/BC-0591EN" target="_blank" rel="noopener noreferrer">BC-0591</a></td>
+    <td><a href="https://docs.broadcom.com/doc/BC-0591EN" target="_blank" rel="noopener noreferrer">BC-0591</a><br><a href="https://techdocs.broadcom.com/us/en/storage-and-ethernet-connectivity/ethernet-nic-controllers/bcm957xxx/1-0/installation_3/connecting-the-network-cables.html" target="_blank" rel="noopener noreferrer">BC 3rd Party Supported</a></td>
   </tr>
 </tbody>
 </table>
