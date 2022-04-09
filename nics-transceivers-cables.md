@@ -37,7 +37,7 @@ The following table lists node types, the NICs that these nodes use, the speeds 
   </tr>
   <tr>
     <td>P2100G</td>
-    <td><a href="https://docs.broadcom.com/doc/BC-0591EN">BC-0591</a><br><a href="https://techdocs.broadcom.com/us/en/storage-and-ethernet-connectivity/ethernet-nic-controllers/bcm957xxx/1-0/installation_3/connecting-the-network-cables.html">BC 3rd Party Supported</a></td>
+    <td><a href="https://docs.broadcom.com/doc/BC-0591EN">BC-0591</a><br><a href="https://techdocs.broadcom.com/us/en/storage-and-ethernet-connectivity/ethernet-nic-controllers/bcm957xxx/1-0/installation_3/connecting-the-network-cables.html">Broadcom-Supported Third Party</a></td>
   </tr>
   <tr>
     <td rowspan="2">HPE A4200 Gen9</td>
@@ -67,7 +67,7 @@ The following table lists node types, the NICs that these nodes use, the speeds 
   </tr>
   <tr>
     <td>P225P</td>
-    <td><a href="https://docs.broadcom.com/doc/BC-0591EN">BC-0591</a><br><a href="https://techdocs.broadcom.com/us/en/storage-and-ethernet-connectivity/ethernet-nic-controllers/bcm957xxx/1-0/installation_3/connecting-the-network-cables.html">BC 3rd Party Supported</a></td>
+    <td><a href="https://docs.broadcom.com/doc/BC-0591EN">BC-0591</a><br><a href="https://techdocs.broadcom.com/us/en/storage-and-ethernet-connectivity/ethernet-nic-controllers/bcm957xxx/1-0/installation_3/connecting-the-network-cables.html">Broadcom-Supported Third Party</a></td>
   </tr>
   <tr>
     <td rowspan="4">HPE A4200 Gen10<ul><li>90T</li><li>336T</li></ul></td>
@@ -112,7 +112,7 @@ The following table lists node types, the NICs that these nodes use, the speeds 
   </tr>
   <tr>
     <td>P225P</td>
-    <td><a href="https://docs.broadcom.com/doc/BC-0591EN">BC-0591</a><br><a href="https://techdocs.broadcom.com/us/en/storage-and-ethernet-connectivity/ethernet-nic-controllers/bcm957xxx/1-0/installation_3/connecting-the-network-cables.html">BC 3rd Party Supported</a></td>
+    <td><a href="https://docs.broadcom.com/doc/BC-0591EN">BC-0591</a><br><a href="https://techdocs.broadcom.com/us/en/storage-and-ethernet-connectivity/ethernet-nic-controllers/bcm957xxx/1-0/installation_3/connecting-the-network-cables.html">Broadcom-Supported Third Party</a></td>
   </tr>
   <tr>
     <td><ul><li>P-23T</li><li>P-92T</li><li>P-184T</li><li>P-368T</li></ul></td>
@@ -148,7 +148,7 @@ The following table lists node types, the NICs that these nodes use, the speeds 
   </tr>
   <tr>
     <td>P2100G</td>
-    <td><a href="https://docs.broadcom.com/doc/BC-0591EN">BC-0591</a><br><a href="https://techdocs.broadcom.com/us/en/storage-and-ethernet-connectivity/ethernet-nic-controllers/bcm957xxx/1-0/installation_3/connecting-the-network-cables.html">BC 3rd Party Supported</a></td>
+    <td><a href="https://docs.broadcom.com/doc/BC-0591EN">BC-0591</a><br><a href="https://techdocs.broadcom.com/us/en/storage-and-ethernet-connectivity/ethernet-nic-controllers/bcm957xxx/1-0/installation_3/connecting-the-network-cables.html">Broadcom-Supported Third Party</a></td>
   </tr>
 </tbody>
 </table>
