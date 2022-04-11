@@ -2,6 +2,7 @@
 title: "Qumulo on HPE Proliant DL325 Gen10 Plus Getting Started Guide"
 summary: "This guide is intended for system administrators, professional service providers, and colleagues in your organization who are responsible for installing and configuring server hardware."
 permalink: platforms/hpe-dl325-gen10-plus/quick-start-guide.html
+sidebar: platforms_sidebar
 ---
 ## In This Article
 

@@ -113,6 +113,7 @@ sidebars:
 - home_sidebar
 #- mydoc_sidebar
 - administrator_guide_sidebar
+- platforms_sidebar
 #- product2_sidebar
 #- other
 
@@ -126,3 +127,7 @@ baseurl: /
 
 github: [metadata]
 
+# Enable relative_links and enable it on collections as well to allow relative links to be processed in subdirectories
+relative_links:
+    enabled: true
+    collections: true
