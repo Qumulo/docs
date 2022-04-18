@@ -69,7 +69,7 @@ In the following example, the IAM policy gives permission to read from and write
         "s3:AbortMultipartUpload",
         "s3:GetObject", 
         "s3:PutObject"
-      ]
+      ],
       "Effect": "Allow",
       "Resource": "arn:aws:s3:::my-bucket/my-folder/*"
     }

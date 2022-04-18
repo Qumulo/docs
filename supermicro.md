@@ -18,6 +18,8 @@ This section contains quick-reference diagrams for the front and back of your Su
 ### Front and Back Node Diagrams
 {% include image.html alt="Front and Back Diagrams of the Supermicro A+ WIO 1114S-WN10RT All-NVMe Node" file="supermicro/supermicro-front-back-diagram.png" url="/images/supermicro/supermicro-front-back-diagram.png" %}
 
+For more information about `eth` port mapping, see [Connecting the 100 Gbps Ports](#connecting-the-100-gbps-ports).
+
 ### Four-Node Cluster Architecture Diagram
 {% include image.html alt="Four-Node Cluster Architecture Diagram" file="supermicro/supermicro-four-node-cluster-architecture-diagram.png" url="images/supermicro/supermicro-four-node-cluster-architecture-diagram.png" %}
 
@@ -163,10 +165,12 @@ The dedicated out-of-band management port allows functionality such as remote di
 ### Connecting the 100 Gbps Ports
 After you connect the IPMI port, connect your front-end and back-end 100 Gbps ports (compatible with QSFP28 and QSFP56). There are four 100 Gbps ports on the back of your node. To maximize redundancy, split interfaces across subnets by connecting each port to a different switch.
 
-| Port Location         | Port Labels        | Port Type  | Purpose                     |
-| --------------------- | ------------------ | ---------- | --------------------------- |
-| Top row               | 2 (eth3), 1 (eth2) | Front end  | Communication with clients  |
-| Bottom row            | 2 (eth5), 1 (eth4) | Back end   | Communication between nodes |
+{% include note.html content="Your node might have Mellanox or Broadcom NICs. The following table lists the port mappings for these NIC types." %}
+
+| Port Location         | Mellanox Port Labels | Broadcom Port Labels | Port Type  | Purpose                     |
+| --------------------- | -------------------- | -------------------- | ---------- | --------------------------- |
+| Top row               | `eth3`, `eth2`       | `eth1`, `eth0`       | Front end  | Communication with clients  |
+| Bottom row            | `eth5`, `eth4`       | `eth3`, `eth2`       | Back end   | Communication between nodes |
 
 ### Connecting the Power
 {% include important.html content="Make sure that the voltages for both power supply units (PSUs) are the same (for example, both at 115 V or both at 208 V)." %}

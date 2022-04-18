@@ -18,6 +18,11 @@ The following table lists changes to the _Qumulo Administrator Guide_.
     <tr>
       <td>[DATE]</td>
       <td>Added the <a href="openmetrics-api-specification.html">Qumulo OpenMetrics API Specification</a> section.</td>
+    </tr>
+    <tr>
+      <td>Apr. 12, 2022</td>
+      <td>Updated the <a href="nics-transceivers-cables.html">Choosing NICs, Transceivers, and Cables for Your Qumulo Node</a> section.</td>
+    </tr>
     <tr>
       <td>Apr. 6, 2022</td>
       <td>Updated the <a href="nics-transceivers-cables.html">Choosing NICs, Transceivers, and Cables for Your Qumulo Node</a> section.</td>
