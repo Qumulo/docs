@@ -11,3 +11,4 @@ The Qumulo Administrator Guide is a growing collection of information about conf
 * **[Document History](history.md)**
 * **HPE Proliant DL325 Gen10 Plus**
   * [Quick start guide](hpe-dl325-gen10-plus/quick-start-guide.md)
+  * [Drive diagrams](hpe-dl325-gen10-plus/drive-diagrams.md)
