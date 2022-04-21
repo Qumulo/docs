@@ -108,7 +108,7 @@ Now that the server has verified it is ready to be configured, you can start to 
 {% include image.html alt="" file="hpe-gen10-fvt-encryption.png" %}
 
 {{site.data.alerts.note}}
-**NOTE**: If only performing a part replacement on your system, select **option 1** to reboot and skip the remaining steps.
+If only performing a part replacement on your system, select <b>option 1</b> to reboot and skip the remaining steps.
 {{site.data.alerts.end}}
 
 1.  Select whether you wish to install with or without encryption.
@@ -150,7 +150,7 @@ Review the End User License Agreement, check the box to agree and click **Submit
 {% include image.html alt="" file="hpe-gen10-setup-cluster.png" %}
 
 {{site.data.alerts.note}}
-**NOTE**: The total capacity for the cluster is dynamically updated at the bottom of the page when selecting nodes.
+The total capacity for the cluster is dynamically updated at the bottom of the page when selecting nodes.
 {{site.data.alerts.end}}
 
 {% include image.html alt="" file="capacity.png" %}
@@ -166,7 +166,7 @@ If **Customize Protection Level** is displayed, the option is available to incre
 {% include image.html alt="" file="recommended-protection.png" %}
 
 {{site.data.alerts.note}}
-**NOTE:** The option for selecting the drive protection level is only available at cluster creation and cannot be changed after the fact.
+The option for selecting the drive protection level is only available at cluster creation and cannot be changed after the fact.
 {{site.data.alerts.end}}
 
 ### 3. Create A Password For Your Admin Account
