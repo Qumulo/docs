@@ -172,5 +172,3 @@ You should now be able to successfully prepare the nodes for installing Qumulo C
 [Create a Qumulo Cluster](https://care.qumulo.com/hc/en-us/articles/115014525587)
 
 [Qumulo Installation FAQ](https://care.qumulo.com/hc/en-us/articles/115008010087-Qumulo-Installation-FAQ)
-
-[ Prev Quick Start Guide: HPE Apollo 4200 Gen10](https://care.qumulo.com/hc/en-us/articles/360041359594-Quick-Start-Guide-HPE-Apollo-4200-Gen10 "Quick Start Guide: HPE Apollo 4200 Gen10") [Next  Qumulo Installation FAQ](https://care.qumulo.com/hc/en-us/articles/115008010087-Qumulo-Installation-FAQ "Qumulo Installation FAQ")
