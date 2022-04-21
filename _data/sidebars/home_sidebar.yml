@@ -27,7 +27,3 @@ entries:
     - title: Qumulo Administrator Guide
       url: /administrator-guide.html
       output: web
-
-    - title: Qumulo Platforms Guide
-      url: /platforms/
-      output: web
