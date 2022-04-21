@@ -128,7 +128,7 @@ Review the End User License Agreement, check the box to agree and click **Submit
 {% include image.html alt="Cluster creation screen" file="dl325-setup-cluster.png" %}
 
 {{site.data.alerts.note}}
-**NOTE**: The total capacity for the cluster is dynamically updated at the bottom of the page when selecting nodes.
+The total capacity for the cluster is dynamically updated at the bottom of the page when selecting nodes.
 {{site.data.alerts.end}}
 
 {% include image.html alt="Capacity confirmation" file="capacity.png" %}
@@ -144,7 +144,7 @@ If **Customize Protection Level** is displayed, the option is available to incre
 {% include image.html alt="Cluster protection level recommendation" file="recommended-protection.png" %}
 
 {{site.data.alerts.note}}
-**NOTE:** The option for selecting the drive protection level is only available at cluster creation and cannot be changed after the fact.
+The option for selecting the drive protection level is only available at cluster creation and cannot be changed after the fact.
 {{site.data.alerts.end}}
 
 ### 3. Create A Password For Your Admin Account
