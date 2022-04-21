@@ -194,5 +194,3 @@ You should now be able to successfully prepare the nodes for installing Qumulo C
 [Create a Qumulo Cluster with 2.7.10 and above](https://care.qumulo.com/hc/en-us/articles/115014525587)
 
 [Qumulo Installation FAQ](https://care.qumulo.com/hc/en-us/articles/115008010087-Qumulo-Installation-FAQ)
-
-[ Prev Quick Start Guide: HPE Apollo 4200 Gen9](https://care.qumulo.com/hc/en-us/articles/115016114048-Quick-Start-Guide-HPE-Apollo-4200-Gen9 "Quick Start Guide: HPE Apollo 4200 Gen9") [Next  Quick Start Guide: HPE ProLiant DL325 Gen10 Plus](https://care.qumulo.com/hc/en-us/articles/360060620194-Quick-Start-Guide-HPE-ProLiant-DL325-Gen10-Plus "Quick Start Guide: HPE ProLiant DL325 Gen10 Plus")
