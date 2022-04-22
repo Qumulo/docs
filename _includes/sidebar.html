@@ -4,7 +4,7 @@
   {% if site.github_editme_path %}
   <a target="_blank" rel="noopener" href="https://github.com/{{site.github_editme_path}}{{page.path}}" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit on GitHub</a>
   {% endif %}
-  
+
   <li class="sidebarTitle">{{sidebar[0].product}} {{sidebar[0].version}}</li>
   {% for entry in sidebar %}
   {% for folder in entry.folders %}
@@ -17,12 +17,12 @@
           {% if folderitem.external_url %}
           <li><a title="{{folderitem.title}}" href="{{folderitem.external_url}}" target="_blank" rel="noopener">{{folderitem.title}}</a></li>
           {% elsif page.url == folderitem.url %}
-          <li class="active"><a title="{{folderitem.title}}" href="{{folderitem.url | remove: "/"}}">{{folderitem.title}}</a></li>
+          <li class="active"><a title="{{folderitem.title}}" href="{{folderitem.url | relative_url }}">{{folderitem.title}}</a></li>
           {% elsif folderitem.type == "empty" %}
-          <li><a title="{{folderitem.title}}" href="{{folderitem.url | remove: "/"}}">{{folderitem.title}}</a></li>
+          <li><a title="{{folderitem.title}}" href="{{folderitem.url | relative_url }}">{{folderitem.title}}</a></li>
 
           {% else %}
-          <li><a title="{{folderitem.title}}" href="{{folderitem.url | remove: "/"}}">{{folderitem.title}}</a></li>
+          <li><a title="{{folderitem.title}}" href="{{folderitem.url | relative_url }}">{{folderitem.title}}</a></li>
           {% endif %}
           {% for subfolders in folderitem.subfolders %}
           {% if subfolders.output contains "web" %}
@@ -34,9 +34,9 @@
                   {% if subfolderitem.external_url %}
                   <li><a title="{{subfolderitem.title}}" href="{{subfolderitem.external_url}}" target="_blank" rel="noopener">{{subfolderitem.title}}</a></li>
                   {% elsif page.url == subfolderitem.url %}
-                  <li class="active"><a title="{{subfolderitem.title}}" href="{{subfolderitem.url | remove: "/"}}">{{subfolderitem.title}}</a></li>
+                  <li class="active"><a title="{{subfolderitem.title}}" href="{{subfolderitem.url | relative_url }}">{{subfolderitem.title}}</a></li>
                   {% else %}
-                  <li><a title="{{subfolderitem.title}}" href="{{subfolderitem.url | remove: "/"}}">{{subfolderitem.title}}</a></li>
+                  <li><a title="{{subfolderitem.title}}" href="{{subfolderitem.url | relative_url }}">{{subfolderitem.title}}</a></li>
                   {% endif %}
                   {% endif %}
                   {% endfor %}
