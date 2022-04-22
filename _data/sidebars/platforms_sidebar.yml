@@ -1,0 +1,33 @@
+entries:
+- title:
+  product:
+  version:
+  folders:
+
+  - title: Qumulo Platforms Guide
+    output: web, pdf
+    folderitems:
+
+    - title: Documentation Home
+      url: /index.html
+      output: web
+
+    - title: Platforms Guide Home
+      url: /platforms/
+      output: web
+
+    - title: Platforms Guide History
+      url: /platforms/history.html
+      output: web, pdf
+
+  - title: HPE Proliant DL325 Gen10 Plus
+    output: web, pdf
+    folderitems:
+
+    - title: Quick start guide
+      url: /platforms/hpe-dl325-gen10-plus/quick-start-guide.html
+      output: web, pdf
+
+    - title: Drive diagrams
+      url: /platforms/hpe-dl325-gen10-plus/drive-diagrams.html
+      output: web, pdf
