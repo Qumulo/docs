@@ -126,3 +126,7 @@ baseurl: /
 
 github: [metadata]
 
+# Enable relative_links and enable it on collections as well to allow relative links to be processed in subdirectories
+relative_links:
+    enabled: true
+    collections: true
