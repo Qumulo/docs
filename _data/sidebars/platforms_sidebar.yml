@@ -20,6 +20,14 @@ entries:
       url: /platforms/history.html
       output: web, pdf
 
+  - title: HPE Apollo 4200 Gen9
+    output: web, pdf
+    folderitems:
+
+    - title: Quick start guide
+      url: /platforms/hpe-apollo-4200-gen9/quick-start-guide.html
+      output: web, pdf
+
   - title: HPE Apollo 4200 Gen10
     output: web, pdf
     folderitems:
