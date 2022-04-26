@@ -58,7 +58,7 @@ Select one of the following options to continue the install:  {% include image.h
 ## Run Field Verification Tool
 
 {{site.data.alerts.important}}
-**IMPORTANT! DO NOT run the following Field Verification Tool if any live data is present on the node.**
+DO NOT run the following Field Verification Tool if any live data is present on the node.
 {{site.data.alerts.end}}
 
 **Access the **Field Verification Tool (FVT) menu** by typing **1** or **FVT** and hit **ENTER**.  {% include image.html alt="" file="fvt-menu.png" %} **
@@ -88,7 +88,7 @@ Select one of the following options to continue the install:  {% include image.h
 ## Flashing Of Hpe Intelligent Provisioning Firmware
 
 {{site.data.alerts.important}}
-**IMPORTANT! ONLY execute these instructions if the Intelligent Provisioning check in the FVT failed.**
+ONLY execute these instructions if the Intelligent Provisioning check in the FVT failed.
 {{site.data.alerts.end}}
 
 The HPE Intelligent Provisioning firmware for the HPE Apollo 4200 has no method available to flash this component in the system. To acquire the firmware, download the binary file from [HPE Support Center](https://internal.support.hpe.com/hpsc/swd/public/detail?swItemId=MTX_f6abd3e3803e4b2395eee361c3) and follow the instructions below.
@@ -127,7 +127,7 @@ Once the upgrade is complete, press **ESC** to return to the **main menu** and r
 5.  Type **DESTROY ALL DATA** (case-sensitive) to perform a clean install of Qumulo Core on your cluster.
 
 {{site.data.alerts.important}}
-**IMPORTANT!** If you mistype **DESTROY ALL DATA** three times or type **no**, the installation will be aborted.
+If you mistype <b>DESTROY ALL DATA</b> three times or type <b>no</b>, the installation will be aborted.
 {{site.data.alerts.end}}
 
 The node will automatically shut down once the installation of Qumulo Core is complete. At that time, remove the USB stick and press the power button to turn on the node. A successful install using the Qumulo Core USB Installer Key will boot the node to the End User Agreement page, the first step in creating a new cluster with Qumulo Core. Before you agree and continue, repeat the steps outlined above for each node that will be included in your Qumulo cluster.
