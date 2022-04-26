@@ -40,6 +40,10 @@ entries:
       url: /platforms/hpe-apollo-4200-gen9/drive-led-guide.html
       output: web, pdf
 
+    - title: IPMI (iLO) guide
+      url: /platforms/hpe-apollo-4200-gen9/ipmi-ilo-guide.html
+      output: web, pdf
+
   - title: HPE Apollo 4200 Gen10
     output: web, pdf
     folderitems:
@@ -58,6 +62,10 @@ entries:
 
     - title: Drive LED guide
       url: /platforms/hpe-apollo-4200-gen10/drive-led-guide.html
+      output: web, pdf
+
+    - title: IPMI (iLO) guide
+      url: /platforms/hpe-apollo-4200-gen10/ipmi-ilo-guide.html
       output: web, pdf
 
   - title: HPE Proliant DL325 Gen10 Plus
