@@ -19,41 +19,41 @@ For additional details on the HPE Apollo 4200 Gen9 server, reference the [HPE Ap
 
 ## Verify The Nodes
 
-Shut down the node and connect it to a display, keyboard, and mouse.
+1. Shut down the node and connect it to a display, keyboard, and mouse.
 
-Plug in the **Qumulo Core Installer USB key** to an available USB port.
+2. Plug in the **Qumulo Core Installer USB key** to an available USB port.
 
-Press the power button highlighted below to power the node on and wait for the machine’s **boot screen** to display.  {% include image.html alt="" file="hpe-front-pw.png" %}
+3. Press the power button highlighted below to power the node on and wait for the machine’s **boot screen** to display.  {% include image.html alt="" file="hpe-front-pw.png" %}
 
-Verify that the **Boot Mode** is set to **Legacy BIOS**.  {% include image.html alt="" file="hpe-boot-mode.png" %}
+4. Verify that the **Boot Mode** is set to **Legacy BIOS**.  {% include image.html alt="" file="hpe-boot-mode.png" %}
 
--   **If the Boot Mode is Legacy BIOS**, disregard the rest of the steps in this section and proceed to the **BOOT TO QUMULO CORE USB INSTALLER KEY** section.
--   **If the Boot Mode is not Legacy BIOS**, press **F9** to access the **System Utilities menu** and proceed with the subsequent steps.
+    -   **If the Boot Mode is Legacy BIOS**, disregard the rest of the steps in this section and proceed to the **BOOT TO QUMULO CORE USB INSTALLER KEY** section.
+    -   **If the Boot Mode is not Legacy BIOS**, press **F9** to access the **System Utilities menu** and proceed with the subsequent steps.
 
-Click through the **System Configuration** page to the **BIOS/Platform Configuration** (RBSU) page to the **Boot Options** page.
+5. Click through the **System Configuration** page to the **BIOS/Platform Configuration** (RBSU) page to the **Boot Options** page.
 
-Set **Boot Mode** to **Legacy BIOS Mode** on the **Boot Options** page**.**
+6. Set **Boot Mode** to **Legacy BIOS Mode** on the **Boot Options** page**.**
 
-Press **F10** to save the change.
+7. Press **F10** to save the change.
 
-Press **Esc** until you return to the **main page**.
+8. Press **Esc** until you return to the **main page**.
 
-Select **Reboot the System**.
+9. Select **Reboot the System**.
 
 ## Boot To The Qumulo Core Usb Installer Key
 
-Press **F11** to access the **Boot Menu** when prompted at the **HPE ProLiant screen**. Note that this boot may take a few minutes.  {% include image.html alt="" file="hpe-f11-boot.png" %}
+1. Press **F11** to access the **Boot Menu** when prompted at the **HPE ProLiant screen**. Note that this boot may take a few minutes.  {% include image.html alt="" file="hpe-f11-boot.png" %}
 
-Press **ENTER** to boot into the **Legacy Bios One-Time Boot Menu**.  {% include image.html alt="" file="hpe-legacy-boot.png" %}
+2. Press **ENTER** to boot into the **Legacy Bios One-Time Boot Menu**.  {% include image.html alt="" file="hpe-legacy-boot.png" %}
 
-Press **ENTER** again to confirm.  {% include image.html alt="" file="hpe-enter-one-time-boot.png" %}
+3. Press **ENTER** again to confirm.  {% include image.html alt="" file="hpe-enter-one-time-boot.png" %}
 
-Select **Option 2** from the **Default Boot Override Options** to do a one-time boot to the Qumulo Core USB Installer key.  {% include image.html alt="" file="hpe-one-time-boot-options.png" %}
+4. Select **Option 2** from the **Default Boot Override Options** to do a one-time boot to the Qumulo Core USB Installer key.  {% include image.html alt="" file="hpe-one-time-boot-options.png" %}
 
-Select one of the following options to continue the install:  {% include image.html alt="" file="hpe-smartarray-mode.png" %}
+5. Select one of the following options to continue the install:  {% include image.html alt="" file="hpe-smartarray-mode.png" %}
 
--   For an **encrypted** install, select **option 2** and hit **ENTER**.
--   For a **non-encrypted** install, select **option 1** and hit **ENTER**. Once the node automatically reboots, repeat the steps in this section to boot to the USB Installer key. Once you return to the SmartArray Mode prompt, select the **continue, install in NonSecure Mode** option for the following boot.
+    -   For an **encrypted** install, select **option 2** and hit **ENTER**.
+    -   For a **non-encrypted** install, select **option 1** and hit **ENTER**. Once the node automatically reboots, repeat the steps in this section to boot to the USB Installer key. Once you return to the SmartArray Mode prompt, select the **continue, install in NonSecure Mode** option for the following boot.
 
 ## Run Field Verification Tool
 
