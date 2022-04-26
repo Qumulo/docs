@@ -61,29 +61,29 @@ Select one of the following options to continue the install:  {% include image.h
 DO NOT run the following Field Verification Tool if any live data is present on the node.
 {{site.data.alerts.end}}
 
-**Access the **Field Verification Tool (FVT) menu** by typing **1** or **FVT** and hit **ENTER**.  {% include image.html alt="" file="fvt-menu.png" %} **
+1. Access the **Field Verification Tool (FVT) menu** by typing **1** or **FVT** and hit **ENTER**.  {% include image.html alt="" file="fvt-menu.png" %}
 
-**Flash the node components to the required versions by typing either **1** or **FLASH** and hit **ENTER**.  {% include image.html alt="" file="fvt-verify.png" %} **
+2. Flash the node components to the required versions by typing either **1** or **FLASH** and hit **ENTER**.  {% include image.html alt="" file="fvt-verify.png" %}
 
-**Type **1** or **FVT** on the **main menu** to continue with the test.  {% include image.html alt="" file="fvt-menu.png" %} **
+3. Type **1** or **FVT** on the **main menu** to continue with the test.  {% include image.html alt="" file="fvt-menu.png" %}
 
-**Type **2** or **VERIFY** and hit **ENTER** to check the node configuration.  {% include image.html alt="" file="fvt-flash.png" %} **
+4. Type **2** or **VERIFY** and hit **ENTER** to check the node configuration.  {% include image.html alt="" file="fvt-flash.png" %}
 
-**Review the results and consider the following before proceeding with a clean install of Qumulo Core:**
+5. Review the results and consider the following before proceeding with a clean install of Qumulo Core:
 
--   **FAIL** messages reported from **VERIFY** are **not** indicative of an unsuccessful **FLASH** command and can be resolved with a power-cycle to reflect recent firmware changes.
--   **FAIL** messages on the boot order when running **VERIFY** can be ignored at this time.
+    -   **FAIL** messages reported from **VERIFY** are **not** indicative of an unsuccessful **FLASH** command and can be resolved with a power-cycle to reflect recent firmware changes.
+    -   **FAIL** messages on the boot order when running **VERIFY** can be ignored at this time.
 
 ### Fvt Pass Example
 
-### Fvt_pass.Png
+{% include image.html alt="" file="fvt-pass.png" %}
 
 ### Fvt Fail Example
 
 {% include image.html alt="" file="fvt-fail.png" %}
 
--   **If all fields pass, you may skip the **FLASHING OF HPE INTELLIGENT PROVISIONING FIRMWARE** section and continue cluster configuration by following the steps outlined in the **INSTALL QUMULO CORE VIA THE USB KEY** section. **
--   **I**f the category for the Intelligent Provisioning Version returns **FAILED**, execute the steps in the **FLASHING OF HPE INTELLIGENT PROVISIONING FIRMWARE** section below.** **Once complete, return to **step 3 in this section** and run the **VERIFY** command for FVT. If all fields pass, you may continue to the **INSTALL QUMULO CORE VIA THE USB KEY** section.
+-   If all fields pass, you may skip the **FLASHING OF HPE INTELLIGENT PROVISIONING FIRMWARE** section and continue cluster configuration by following the steps outlined in the **INSTALL QUMULO CORE VIA THE USB KEY** section.
+-   If the category for the Intelligent Provisioning Version returns **FAILED**, execute the steps in the **FLASHING OF HPE INTELLIGENT PROVISIONING FIRMWARE** section below. Once complete, return to **step 3 in this section** and run the **VERIFY** command for FVT. If all fields pass, you may continue to the **INSTALL QUMULO CORE VIA THE USB KEY** section.
 
 ## Flashing Of HPE Intelligent Provisioning Firmware
 
@@ -95,19 +95,19 @@ The HPE Intelligent Provisioning firmware for the HPE Apollo 4200 has no method 
 
 ### Update Firmware From System Utilities Via A Usb Drive
 
-Convert the iso file to img format.
+1. Convert the iso file to img format.
 
-Apply the file to a USB drive or iLO virtual media.
+2. Apply the file to a USB drive or iLO virtual media.
 
--   Reference the [USB Key Utility for Windows](https://support.hpe.com/hpesc/public/km/product/1008862658/Product?cc=us&lang=en#t=DriversandSoftware&sort=relevancy&layout=table) article from HPE Support Center for more information.
+    -   Reference the [USB Key Utility for Windows](https://support.hpe.com/hpesc/public/km/product/1008862658/Product?cc=us&lang=en#t=DriversandSoftware&sort=relevancy&layout=table) article from HPE Support Center for more information.
 
-Attach the media to the server.
+3. Attach the media to the server.
 
-Press **F11** to enter the **boot menu**.
+4. Press **F11** to enter the **boot menu**.
 
-Select **boot from USB stick**, and allow the Intelligent provisioning package to update the firmware.
+5. Select **boot from USB stick**, and allow the Intelligent provisioning package to update the firmware.
 
-Once the upgrade is complete, press **ESC** to return to the **main menu** and reboot the system.
+6. Once the upgrade is complete, press **ESC** to return to the **main menu** and reboot the system.
 
 ### Update Firmware From System Utilities Via Virtual Media
 
