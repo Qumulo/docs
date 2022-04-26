@@ -36,6 +36,10 @@ entries:
       url: /platforms/hpe-apollo-4200-gen9/led-guide.html
       output: web, pdf
 
+    - title: Drive LED guide
+      url: /platforms/hpe-apollo-4200-gen9/drive-led-guide.html
+      output: web, pdf
+
   - title: HPE Apollo 4200 Gen10
     output: web, pdf
     folderitems:
