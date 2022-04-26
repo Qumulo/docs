@@ -122,7 +122,7 @@ Once the upgrade is complete, press **ESC** to return to the **main menu** and r
 
 1.  Power on the node or perform a reboot.
 2.  Press the **F11 key** to enter the **boot menu** on the **BIOS splash screen**.
-3.  **Type 2 **to continue with the install and boot from the USB Installer key.
+3.  Type **2** to continue with the install and boot from the USB Installer key.
 4.  Select **no** when asked to change between RAID and HBA modes to proceed to the **DESTROY ALL DATA** page.
 5.  Type **DESTROY ALL DATA** (case-sensitive) to perform a clean install of Qumulo Core on your cluster.
 
