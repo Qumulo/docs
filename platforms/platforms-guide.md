@@ -12,6 +12,7 @@ The Qumulo Administrator Guide is a growing collection of information about conf
 * **HPE Apollo 4200 Gen9**
   * [Quick start guide](hpe-apollo-4200-gen9/quick-start-guide.md)
   * [Drive diagrams](hpe-apollo-4200-gen9/drive-diagrams.md)
+  * [LED guide](hpe-apollo-4200-gen9/led-guide.md)
 * **HPE Apollo 4200 Gen10**
   * [Quick start guide](hpe-apollo-4200-gen10/quick-start-guide.md)
   * [Drive diagrams](hpe-apollo-4200-gen10/drive-diagrams.md)
