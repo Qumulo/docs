@@ -14,7 +14,7 @@ Outlines the front and rear drive locations in the HPE Apollo 4200 Gen10 server
 
 For additional details on HPE Apollo 4200 servers, see the [HPE Apollo 4200 Gen10 Server Document List](https://support.hpe.com/hpsc/doc/public/display?docId=emr_na-a00061642en_us&docLocale=en_US).
 
-## Hpe Apollo 4200 Gen10
+## HPE Apollo 4200 Gen10
 
 HPE Apollo 4200 Gen10 servers are comprised of a combination of large form factor (LFF) drives on the front of the server and small form factor (SFF) drives on the rear.
 

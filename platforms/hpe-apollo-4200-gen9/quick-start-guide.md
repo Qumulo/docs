@@ -85,7 +85,7 @@ DO NOT run the following Field Verification Tool if any live data is present on 
 -   **If all fields pass, you may skip the **FLASHING OF HPE INTELLIGENT PROVISIONING FIRMWARE** section and continue cluster configuration by following the steps outlined in the **INSTALL QUMULO CORE VIA THE USB KEY** section. **
 -   **I**f the category for the Intelligent Provisioning Version returns **FAILED**, execute the steps in the **FLASHING OF HPE INTELLIGENT PROVISIONING FIRMWARE** section below.** **Once complete, return to **step 3 in this section** and run the **VERIFY** command for FVT. If all fields pass, you may continue to the **INSTALL QUMULO CORE VIA THE USB KEY** section.
 
-## Flashing Of Hpe Intelligent Provisioning Firmware
+## Flashing Of HPE Intelligent Provisioning Firmware
 
 {{site.data.alerts.important}}
 ONLY execute these instructions if the Intelligent Provisioning check in the FVT failed.

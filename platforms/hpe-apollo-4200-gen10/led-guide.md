@@ -22,7 +22,7 @@ For additional details on HPE Apollo 4200 servers, reference the [HPE Apollo 420
 
 HPE Apollo 4200 Gen10 servers include several LED indicators which can be used to diagnose health issues with the hardware.
 
-## Hpe Apollo 4200 Gen10 Front Panel LEDs And Buttons
+## HPE Apollo 4200 Gen10 Front Panel LEDs And Buttons
 
 The LEDs on the front panel of HPE Apollo 4200 Gen10 servers can be located using the diagram below:
 

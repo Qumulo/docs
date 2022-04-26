@@ -37,11 +37,11 @@ HPE Apollo 4200 motherboards provide IPMI (iLO) support which allow for out-of-b
 
 The steps below must be repeated on each node that will be a member of your IPMI (iLO) maintenance network. Once configuration is complete, accessing the nodes via IPMI (iLO) requires .NET, HTML5, or a Java-capable web browser using the IPs assigned by you or your DHCP server.
 
-### Hpe Apollo 4200 Gen10 IPMI (iLO) Port Location
+### HPE Apollo 4200 Gen10 IPMI (iLO) Port Location
 
 {% include image.html alt="" file="hpe-gen10-ilo.png" %}
 
-### Hpe Apollo 4200 Gen10 IPMI (iLO) Commands
+### HPE Apollo 4200 Gen10 IPMI (iLO) Commands
 
 **Verify IPMI (iLO) LAN Configuration**
 
