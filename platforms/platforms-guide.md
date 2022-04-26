@@ -11,6 +11,7 @@ The Qumulo Administrator Guide is a growing collection of information about conf
 * **[Document History](history.md)**
 * **HPE Apollo 4200 Gen9**
   * [Quick start guide](hpe-apollo-4200-gen9/quick-start-guide.md)
+  * [Drive diagrams](hpe-apollo-4200-gen9/drive-diagrams.md)
 * **HPE Apollo 4200 Gen10**
   * [Quick start guide](hpe-apollo-4200-gen10/quick-start-guide.md)
 * **HPE Proliant DL325 Gen10 Plus**
