@@ -44,6 +44,10 @@ entries:
       url: /platforms/hpe-apollo-4200-gen10/drive-diagrams.html
       output: web, pdf
 
+    - title: LED guide
+      url: /platforms/hpe-apollo-4200-gen10/led-guide.html
+      output: web, pdf
+
   - title: HPE Proliant DL325 Gen10 Plus
     output: web, pdf
     folderitems:
