@@ -23,26 +23,26 @@ For additional details on the HPE Apollo 4200 Gen10 server, reference the  [HPE 
 
 ## Verify The Nodes
 
-Shut down the node and connect it to a display, keyboard, and mouse.
+1. Shut down the node and connect it to a display, keyboard, and mouse.
 
-Plug in the **Qumulo Core Installer USB key** to an available USB port.
+2. Plug in the **Qumulo Core Installer USB key** to an available USB port.
 
-Press the power button highlighted below to power the node on and wait for the machine’s **boot screen** to display. {% include image.html alt="" file="hpe-gen10-front-power.png" %}
+3. Press the power button highlighted below to power the node on and wait for the machine’s **boot screen** to display. {% include image.html alt="" file="hpe-gen10-front-power.png" %}
 
-Verify that the **Boot Mode** is set to **Legacy BIOS**.  {% include image.html alt="" file="hpe-gen10-boot-mode.png" %}
+4. Verify that the **Boot Mode** is set to **Legacy BIOS**.  {% include image.html alt="" file="hpe-gen10-boot-mode.png" %}
 
--   **If the Boot Mode is Legacy BIOS**, disregard the rest of the steps in this section and proceed to the **BOOT TO QUMULO CORE USB INSTALLER KEY** section.
--   **If the Boot Mode is not Legacy BIOS**, press **F9** to access the **System Utilities menu** and proceed with the subsequent steps.
+    -   **If the Boot Mode is Legacy BIOS**, disregard the rest of the steps in this section and proceed to the **BOOT TO QUMULO CORE USB INSTALLER KEY** section.
+    -   **If the Boot Mode is not Legacy BIOS**, press **F9** to access the **System Utilities menu** and proceed with the subsequent steps.
 
-Click through the **System Configuration** page to the **BIOS/Platform Configuration** (RBSU) page and then to the **Boot Options** page.
+5. Click through the **System Configuration** page to the **BIOS/Platform Configuration** (RBSU) page and then to the **Boot Options** page.
 
-Set **Boot Mode** to **Legacy BIOS Mode** on the **Boot Options** page**.**
+6. Set **Boot Mode** to **Legacy BIOS Mode** on the **Boot Options** page**.**
 
-Press **F10** to save the change.
+7. Press **F10** to save the change.
 
-Press **Esc** until you return to the **main page**.
+8. Press **Esc** until you return to the **main page**.
 
-Select **Reboot the System**.
+9. Select **Reboot the System**.
 
 ## Boot To The Qumulo Core USB Installer Key
 
@@ -53,9 +53,9 @@ Select **Reboot the System**.
 
 ## Run Field Verification Tool
 
-**After rebooting, the Field Verification Tool starts automatically.  {% include image.html alt="" file="hpe-gen10-fvt-running.png" %} **
+After rebooting, the Field Verification Tool starts automatically.  {% include image.html alt="" file="hpe-gen10-fvt-running.png" %}
 
-**The test results display once it has concluded. Refer to the following sections for details on Pass and Fail scenarios.**
+The test results display once it has concluded. Refer to the following sections for details on Pass and Fail scenarios.
 
 ### FVT Pass
 
