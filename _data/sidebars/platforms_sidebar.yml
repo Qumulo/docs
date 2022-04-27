@@ -44,6 +44,10 @@ entries:
       url: /platforms/hpe-apollo-4200-gen9/ipmi-ilo-guide.html
       output: web, pdf
 
+    - title: Network guide
+      url: /platforms/hpe-apollo-4200-gen9/network-guide.html
+      output: web, pdf
+
   - title: HPE Apollo 4200 Gen10
     output: web, pdf
     folderitems:
@@ -68,6 +72,10 @@ entries:
       url: /platforms/hpe-apollo-4200-gen10/ipmi-ilo-guide.html
       output: web, pdf
 
+    - title: Network guide
+      url: /platforms/hpe-apollo-4200-gen10/network-guide.html
+      output: web, pdf
+
   - title: HPE Proliant DL325 Gen10 Plus
     output: web, pdf
     folderitems:
@@ -78,4 +86,8 @@ entries:
 
     - title: Drive diagrams
       url: /platforms/hpe-dl325-gen10-plus/drive-diagrams.html
+      output: web, pdf
+
+    - title: Network guide
+      url: /platforms/hpe-dl325-gen10-plus/network-guide.html
       output: web, pdf
