@@ -23,26 +23,26 @@ For additional details on the HPE Proliant DL325 Gen10 Plus server, reference th
 
 ## Verify The Nodes
 
-Shut down the node and connect it to a display, keyboard, and mouse.
+1. Shut down the node and connect it to a display, keyboard, and mouse.
 
-Plug in the **Qumulo Core Installer USB key** to an available USB port.
+2. Plug in the **Qumulo Core Installer USB key** to an available USB port.
 
-Press the power button highlighted below to power the node on and wait for the machine’s **boot screen** to display.  {% include image.html alt="Front view of DL325 node" file="dl325-front.png" %}
+3. Press the power button highlighted below to power the node on and wait for the machine’s **boot screen** to display.  {% include image.html alt="Front view of DL325 node" file="dl325-front.png" %}
 
-Verify that the **Boot Mode** is set to **Legacy BIOS**.  {% include image.html alt="Boot mode identification screen" file="hpe-dl325-boot-mode.png" %}
+4. Verify that the **Boot Mode** is set to **Legacy BIOS**.  {% include image.html alt="Boot mode identification screen" file="hpe-dl325-boot-mode.png" %}
 
--   **If the Boot Mode is EFI BIOS**, disregard the rest of the steps in this section and proceed to the **BOOT TO QUMULO CORE USB INSTALLER KEY** section.
--   **If the Boot Mode is not EFI BIOS**, press **F9** to access the **System Utilities menu** and proceed with the subsequent steps.
+    -   **If the Boot Mode is EFI BIOS**, disregard the rest of the steps in this section and proceed to the **BOOT TO QUMULO CORE USB INSTALLER KEY** section.
+    -   **If the Boot Mode is not EFI BIOS**, press **F9** to access the **System Utilities menu** and proceed with the subsequent steps.
 
-Click through the **System Configuration** page to the **BIOS/Platform Configuration** (RBSU) page and then to the **Boot Options** page.
+5. Click through the **System Configuration** page to the **BIOS/Platform Configuration** (RBSU) page and then to the **Boot Options** page.
 
-Set **Boot Mode** to **EFI BIOS Mode** on the **Boot Options** page**.**
+6. Set **Boot Mode** to **EFI BIOS Mode** on the **Boot Options** page**.**
 
-Press **F10** to save the change.
+7. Press **F10** to save the change.
 
-Press **Esc** until you return to the **main page**.
+8. Press **Esc** until you return to the **main page**.
 
-Select **Reboot the System**.
+9. Select **Reboot the System**.
 
 ## Boot To The Qumulo Core USB Installer Key
 
@@ -51,14 +51,14 @@ Select **Reboot the System**.
 
 ## Run The Qumulo Installer
 
-**After rebooting, the Qumulo Installer runs automatically**
+After rebooting, the Qumulo Installer runs automatically
 
-1.  **Choose option 1 when prompted. This will factory reset your node.  {% include image.html alt="Qumulo installer landing screen" file="dl325-installer.png" %} **
-2.  **Confirm you want to proceed by typing DESTROY ALL DATA.  {% include image.html alt="Qumulo installer factory reset" file="dl325-destroy-data.png" %} **
+1.  Choose option 1 when prompted. This will factory reset your node.  {% include image.html alt="Qumulo installer landing screen" file="dl325-installer.png" %}
+2.  Confirm you want to proceed by typing DESTROY ALL DATA.  {% include image.html alt="Qumulo installer factory reset" file="dl325-destroy-data.png" %}
 
-**The Field Verification Tool (FVt) starts automatically once you confirm.   {% include image.html alt="Field verification tool start" file="dl325-fvt-start.png" %}**
+The Field Verification Tool (FVt) starts automatically once you confirm.   {% include image.html alt="Field verification tool start" file="dl325-fvt-start.png" %}
 
-**The test results display once it has concluded. Refer to the following sections for details on Pass and Fail scenarios.**
+The test results display once it has concluded. Refer to the following sections for details on Pass and Fail scenarios.
 
 ### FVT Pass
 
