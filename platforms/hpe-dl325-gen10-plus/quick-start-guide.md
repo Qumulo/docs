@@ -44,7 +44,7 @@ Press **Esc** until you return to the **main page**.
 
 Select **Reboot the System**.
 
-## Boot To The Qumulo Core Usb Installer Key
+## Boot To The Qumulo Core USB Installer Key
 
 1.  Press **F11** to access the **Boot Menu** when prompted at the **HPE ProLiant** screen. Note that this boot may take a few minutes. {% include image.html alt="Boot menu prompt screen" file="hpe-dl325-f11.png" %}
 2.  Select **Generic USB Boot** from the Boot Menu to do a one-time boot to the Qumulo Core USB Installer key. {% include image.html alt="Boot menu" file="dl325-boot-menu.png" %}

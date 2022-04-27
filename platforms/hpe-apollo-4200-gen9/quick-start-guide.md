@@ -40,7 +40,7 @@ For additional details on the HPE Apollo 4200 Gen9 server, reference the [HPE Ap
 
 9. Select **Reboot the System**.
 
-## Boot To The Qumulo Core Usb Installer Key
+## Boot To The Qumulo Core USB Installer Key
 
 1. Press **F11** to access the **Boot Menu** when prompted at the **HPE ProLiant screen**. Note that this boot may take a few minutes.  {% include image.html alt="" file="hpe-f11-boot.png" %}
 
@@ -93,7 +93,7 @@ ONLY execute these instructions if the Intelligent Provisioning check in the FVT
 
 The HPE Intelligent Provisioning firmware for the HPE Apollo 4200 has no method available to flash this component in the system. To acquire the firmware, download the binary file from [HPE Support Center](https://internal.support.hpe.com/hpsc/swd/public/detail?swItemId=MTX_f6abd3e3803e4b2395eee361c3) and follow the instructions below.
 
-### Update Firmware From System Utilities Via A Usb Drive
+### Update Firmware From System Utilities Via A USB Drive
 
 1. Convert the iso file to img format.
 
@@ -118,7 +118,7 @@ The HPE Intelligent Provisioning firmware for the HPE Apollo 4200 has no method 
 5.  Once complete, return to **step 3** of the **RUN FIELD VERIFICATION TOOL** section to rerun FVT.
 6.  Type **2** or **VERIFY** and hit **ENTER** to check the node configuration**. **If all fields pass, you may now proceed to install Qumulo Core.
 
-## Install Qumulo Core Via The Usb Key
+## Install Qumulo Core Via The USB Key
 
 1.  Power on the node or perform a reboot.
 2.  Press the **F11 key** to enter the **boot menu** on the **BIOS splash screen**.
