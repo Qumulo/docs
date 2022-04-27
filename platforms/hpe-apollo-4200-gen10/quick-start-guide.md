@@ -57,13 +57,13 @@ Select **Reboot the System**.
 
 **The test results display once it has concluded. Refer to the following sections for details on Pass and Fail scenarios.**
 
-### Fvt Pass
+### FVT Pass
 
 {% include image.html alt="" file="hpe-gen10-fvt-success.png" %}
 
 If you see an **FVT passed!** message, proceed to the **Installing Qumulo Core** section later in this document. If **FAIL** messages are present, review the example below to determine the appropriate course.
 
-### Fvt Fail Cases
+### FVT Fail Cases
 
 **Fixable Issues during Install**
 

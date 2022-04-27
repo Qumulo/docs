@@ -74,11 +74,11 @@ DO NOT run the following Field Verification Tool if any live data is present on 
     -   **FAIL** messages reported from **VERIFY** are **not** indicative of an unsuccessful **FLASH** command and can be resolved with a power-cycle to reflect recent firmware changes.
     -   **FAIL** messages on the boot order when running **VERIFY** can be ignored at this time.
 
-### Fvt Pass Example
+### FVT Pass Example
 
 {% include image.html alt="" file="fvt-pass.png" %}
 
-### Fvt Fail Example
+### FVT Fail Example
 
 {% include image.html alt="" file="fvt-fail.png" %}
 
