@@ -112,11 +112,11 @@ The HPE Intelligent Provisioning firmware for the HPE Apollo 4200 has no method 
 ### Update Firmware From System Utilities Via Virtual Media
 
 1.  Put the iso in an accessible location over the network for the node.
-2.  Select **Insert Media** and check the **boot on next reboot option **for the iso on the **virtual media page**.  {% include image.html alt="" file="virtual-media-page.png" %}
+2.  Select **Insert Media** and check the **boot on next reboot option** for the iso on the **virtual media page**.  {% include image.html alt="" file="virtual-media-page.png" %}
 3.  Reset the node and allow the install to complete.  {% include image.html alt="" file="hpe-intelligent-provisioning-update-page.png" %}
 4.  Reboot the node into the installer/FVT.
 5.  Once complete, return to **step 3** of the **RUN FIELD VERIFICATION TOOL** section to rerun FVT.
-6.  Type **2** or **VERIFY** and hit **ENTER** to check the node configuration**. **If all fields pass, you may now proceed to install Qumulo Core.
+6.  Type **2** or **VERIFY** and hit **ENTER** to check the node configuration. If all fields pass, you may now proceed to install Qumulo Core.
 
 ## Install Qumulo Core Via The USB Key
 
