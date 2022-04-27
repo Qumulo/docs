@@ -162,13 +162,3 @@ For additional guidance on cluster configuration and getting started, reference 
 **RESOLUTION**
 
 You should now be able to successfully prepare the nodes for installing Qumulo Core and create a cluster on HPE ProLiant DL325 Gen10 Plus hardware
-
-**ADDITIONAL RESOURCES**
-
-[Qumulo Safety Instructions](https://care.qumulo.com/hc/en-us/articles/115007777308-Qumulo-Safety-Instructions)
-
-[Create a Qumulo Core USB Installer Key](https://care.qumulo.com/hc/en-us/articles/360034690034?flash_digest=380f75faf095e1b66159321c4d3745cec64ba609)
-
-[Create a Qumulo Cluster](https://care.qumulo.com/hc/en-us/articles/115014525587)
-
-[Qumulo Installation FAQ](https://care.qumulo.com/hc/en-us/articles/115008010087-Qumulo-Installation-FAQ)

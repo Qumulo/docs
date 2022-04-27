@@ -57,7 +57,3 @@ Before removing the boot drive, reach out to <a href="mailto:care@qumulo.com">ca
 ## Resolution
 
 You should now be able to successfully locate the front and rear drives on the HPE Apollo 4200 Gen10 servers
-
-## Additional Resources
-
-[HPE Apollo 4200 Gen10 Server Document List](https://support.hpe.com/hpsc/doc/public/display?docId=emr_na-a00061642en_us&docLocale=en_US)

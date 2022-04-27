@@ -77,7 +77,3 @@ The Locate LED is located behind the release lever and is visible when illuminat
 ## Resolution
 
 You should now be able to successfully utilize the LED indicators for the LFF and SFF drives on the HPE Apollo 4200 Gen10 servers
-
-
-## Additional Resources
-[HPE Apollo 4200 Gen10 Server Document List](https://support.hpe.com/hpsc/doc/public/display?docId=emr_na-a00061642en_us&docLocale=en_US)

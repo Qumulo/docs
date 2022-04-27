@@ -157,7 +157,3 @@ The LEDs on the rear panel of HPE Apollo 4200 Gen10 servers can be located using
 ## Resolution
 
 You should now be able to successfully utilize the built-in LED indicators to diagnose hardware issues with the HPE Apollo 4200 Gen10 servers
-
-## Additional Resources
-
-[HPE Apollo 4200 Gen10 Server Document List](https://support.hpe.com/hpsc/doc/public/display?docId=emr_na-a00061642en_us&docLocale=en_US)
