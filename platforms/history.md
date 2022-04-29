@@ -16,8 +16,8 @@ The following table lists changes to the _Qumulo Platforms Guide_.
   </thead>
   <tbody>
     <tr>
-      <td>Apr. 8, 2022</td>
-      <td>Created the initial Platform Guide</td>
+      <td>May 2, 2022</td>
+      <td>Created the Platform Guide and added the HPE Apollo 4200 Gen9, HPE Apollo 4200 Gen10, and HPE Proliant DL325 Gen10 Plus guides.</td>
     </tr>
   </tbody>
 </table>
