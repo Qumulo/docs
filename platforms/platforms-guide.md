@@ -5,7 +5,7 @@ sidebar: platforms_sidebar
 search: exclude
 ---
 
-The Qumulo Administrator Guide is a growing collection of information about configuring, managing, and troubleshooting Qumulo Core and your Qumulo nodes and clusters.
+The _Qumulo Platforms Guide_ is a collection of guides that provide information about getting started with a particular node type as well as reference information for drives, node LEDs, drive LEDs, out-of-band-management (IPMI) ports, and networking.
 
 **Table of Contents**
 * **[Document History](history.md)**
