@@ -1,7 +1,7 @@
 ---
 title: "HPE Apollo 4200 Gen9 Network Guide"
 summary: "Networking recommendations for the HPE Apollo 4200 Gen9 server."
-permalink: platforms/hpe-apollo-4200-gen9/network-guide.html
+permalink: platforms/hpe-apollo-4200-gen9/networking-cluster.html
 sidebar: platforms_sidebar
 ---
 ## In This Article

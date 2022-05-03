@@ -1,7 +1,7 @@
 ---
 title: "HPE Apollo 4200 Gen9 Drive LED Guide"
 summary: "Outlines the drive LED behavior in the HPE Apollo 4200 Gen9 server."
-permalink: platforms/hpe-apollo-4200-gen9/drive-led-guide.html
+permalink: platforms/hpe-apollo-4200-gen9/drive-leds.html
 sidebar: platforms_sidebar
 ---
 ## In This Article

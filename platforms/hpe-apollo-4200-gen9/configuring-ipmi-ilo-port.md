@@ -1,7 +1,7 @@
 ---
 title: "HPE Apollo 4200 Gen9 IPMI (iLO) Guide"
 summary: "Reference guide for IPMI (iLO) in the HPE Apollo 4200 Gen9 server."
-permalink: platforms/hpe-apollo-4200-gen9/ipmi-ilo-guide.html
+permalink: platforms/hpe-apollo-4200-gen9/configuring-ipmi-ilo-port.html
 sidebar: platforms_sidebar
 ---
 *IPMI on a Public LAN can be a major security liability providing anyone with the proper credentials direct hardware and console level access to your server. Please use good security practices when implementing IPMI (iLO) access.*

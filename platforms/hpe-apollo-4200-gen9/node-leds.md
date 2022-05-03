@@ -1,7 +1,7 @@
 ---
 title: "HPE Apollo 4200 Gen9 LED Guide"
 summary: "Outlines the LED behavior in the HPE Apollo 4200 Gen9 server."
-permalink: platforms/hpe-apollo-4200-gen9/led-guide.html
+permalink: platforms/hpe-apollo-4200-gen9/node-leds.html
 sidebar: platforms_sidebar
 ---
 ## In This Article

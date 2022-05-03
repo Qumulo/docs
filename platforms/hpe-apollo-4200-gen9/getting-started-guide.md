@@ -1,7 +1,7 @@
 ---
 title: "Qumulo on HPE Apollo 4200 Gen9 Getting Started Guide"
 summary: "This guide is intended for system administrators, professional service providers, and colleagues in your organization who are responsible for installing and configuring server hardware."
-permalink: platforms/hpe-apollo-4200-gen9/quick-start-guide.html
+permalink: platforms/hpe-apollo-4200-gen9/getting-started-guide.html
 sidebar: platforms_sidebar
 ---
 ## In This Article
