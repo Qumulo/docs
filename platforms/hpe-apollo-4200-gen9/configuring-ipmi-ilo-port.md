@@ -14,15 +14,15 @@ This section explains how to configure the out-of-band management (IPMI or iLO) 
 To configure the IPMI port, you must have root access to the client-facing network through SSH. For example, you can use the `sudo -s` command.
 
 ## How the IPMI Port Works
-HPE A4200 Gen9 nodes provide IPMI support for out-of-band maintenance access even when the node is plugged in but powered off.
+HPE A4200 Gen9 nodes provide IPMI support for out-of-band maintenance access even when the node is plugged in but powered off. The following diagram shows the location of the IPMI port.
+
+{% include image.html alt="The location of the IPMI port on the HPE Apollo 4200 Gen9 node" file="hpe-gen9-ilo.png" %}
 
 Your nodes receive DHCP address assignments by default. When you configure a node's IPMI port, you can access the node by using the IP address that the DHCP server assigns to the node and a web browser that supports HTML5, Java, and .NET
 
 {% include important.html content="We strongly recommend separating your IPMI access network from your client-facing network" %}
 
-{% include image.html alt="The location of the IPMI port on the HPE Apollo 4200 Gen9 node" file="hpe-gen9-ilo.png" %}
-
-To access IPMI configuration in the BIOS System Utilities menu, press **F9**. The default IPMI username is `Administrator`. The password is printed on top of the node chassis.
+To access IPMI configuration from the BIOS System Utilities menu, press **F9**. The default IPMI username is `Administrator`. The password is printed on top of your node chassis.
 
 {% include note.html content="The IMPI username and password are unrelated to your Qumulo administrative credentials." %}
 
@@ -30,13 +30,13 @@ To access IPMI configuration in the BIOS System Utilities menu, press **F9**. Th
 
 Use the following commands to configure the IPMI port on your nodes.
 
-### Verify IPMI LAN Configuration
+### To Verify IPMI LAN Configuration
 
 ```
 # ipmitool lan print 2
 ```
 
-### Configure IPMI LAN Configuration with static IPs**
+### To Configure IPMI LAN Configuration by Using Static IP Addresses
 
 1. Set the IPMI Ethernet interface to a static IP address.
 
@@ -69,7 +69,7 @@ Use the following commands to configure the IPMI port on your nodes.
    ```
 
 
-### List Current Users
+### To List Current Users
 
 ```
 # ipmitool user list 2
@@ -78,7 +78,7 @@ ID Name Callin Link Auth IPMI Msg Channel Priv Limit
 2 root false true true ADMINISTRATOR
 ```
 
-### Change the Default Administrator Password
+### To Change the Default Administrator Password
 
 ```
 # ipmitool user set password 2
@@ -86,7 +86,7 @@ Password for user 2:
 Password for user 2:
 ```
 
-### Create a New User
+### To Create a New User
 
 In the following example, we create the administrative user `netadmin` in user slot `4`.
 
@@ -97,7 +97,7 @@ Password for user 4:
 Password for user 4:
 ```
 
-### Configure User Access
+### To Configure User Access
 
 ```
 # ipmitool channel setaccess 1 4 link=on ipmi=on callin=on privilege=4
@@ -105,7 +105,7 @@ Password for user 4:
 # ipmitool user enable 4
 ```
 
-### Verify User Level Access
+### To Verify User Level Access
 
 ```
 # ipmitool channel getaccess 1 4
@@ -121,7 +121,7 @@ IPMI Messaging : enabled
 Privilege Level : ADMINISTRATOR
 ```
 
-### Resetting the Baseboard Management Controller
+### To Reset the Baseboard Management Controller
 
 If you can't connect to the IPMI management console and your network configuration is correct, reset the BMC through an SSH or KVM Console session for the affected node.
 
