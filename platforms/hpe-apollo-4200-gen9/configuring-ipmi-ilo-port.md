@@ -1,8 +1,9 @@
 ---
-title: "HPE Apollo 4200 Gen9 IPMI (iLO) Guide"
-summary: "Reference guide for IPMI (iLO) in the HPE Apollo 4200 Gen9 server."
+title: "Configuring the Out-of-Band Management (IPMI or iLO) Port"
+summary: "This section explains how to configure the out-of-band management (IPMI or iLO) port on HPE Apollo 4200 Gen9 nodes."
 permalink: platforms/hpe-apollo-4200-gen9/configuring-ipmi-ilo-port.html
 sidebar: platforms_sidebar
+keywords: out-of-band management, out of band management, IPMI, iLO, DHCP, network, networking, LAN, ipmitool
 ---
 *IPMI on a Public LAN can be a major security liability providing anyone with the proper credentials direct hardware and console level access to your server. Please use good security practices when implementing IPMI (iLO) access.*
 
@@ -18,12 +19,7 @@ sidebar: platforms_sidebar
 
 ## Requirements
 
--   HPE Apollo 4200 Gen9 platform
--   Root user access via ssh on the client-facing network
-
-<!-- -->
-
-    sudo -s
+-   Root user access via ssh on the client-facing network by using the `sudo -s` command.
 
 ## Details
 
@@ -47,77 +43,77 @@ The steps below must be repeated on each node that will be a member of your IPMI
 
 -   Use the following command:
 
-<!-- -->
-
-    # ipmitool lan print 2
+   ```
+   # ipmitool lan print 2
+   ```
 
 **IPMI (iLO) LAN Configuration with static IPs**
 
-    # ipmitool lan set 2 ipsrc static #Set IPMI ethernet interface to static IP
-    # ipmitool lan set 2 ipaddr XXX.XXX.XXX.XXX #Set the IP address of the interface
-    # ipmitool lan set 2 netmask 255.XXX.XXX.XXX #Set the Subnet Mask for the interface
-    # ipmitool lan set 2 defgw ipaddr XXX.XXX.XXX.XXX #Set the IP address of the Default Gateway
-    # ipmitool lan set 2 arp respond on #(Optional) Enable BMC ARP responses
+   ```
+   # ipmitool lan set 2 ipsrc static #Set IPMI ethernet interface to static IP
+   # ipmitool lan set 2 ipaddr XXX.XXX.XXX.XXX #Set the IP address of the interface
+   # ipmitool lan set 2 netmask 255.XXX.XXX.XXX #Set the Subnet Mask for the interface
+   # ipmitool lan set 2 defgw ipaddr XXX.XXX.XXX.XXX #Set the IP address of the Default Gateway
+   # ipmitool lan set 2 arp respond on #(Optional) Enable BMC ARP responses
+   ```
 
 **IPMI (iLO) User Operation Examples**
 
 -   List Current users
 
-<!-- -->
-
-    # ipmitool user list 2
-    ID Name Callin Link Auth IPMI Msg Channel Priv Limit
-    1 false false true ADMINISTRATOR
-    2 root false true true ADMINISTRATOR
+   ```
+   # ipmitool user list 2
+   ID Name Callin Link Auth IPMI Msg Channel Priv Limit
+   1 false false true ADMINISTRATOR
+   2 root false true true ADMINISTRATOR
+   ```
 
 -   Change the default ADMINISTRATOR password
 
-<!-- -->
-
-    # ipmitool user set password 2
-    Password for user 2:
-    Password for user 2:
+   ```
+   # ipmitool user set password 2
+   Password for user 2:
+   Password for user 2:
+   ```
 
 -   Create new user
     -   Example: Create Admin user “netadmin” in user slot \#4
 
-<!-- -->
-
-    # ipmitool user set name 4 netadmin
-    # ipmitool user set password 4
-    Password for user 4:
-    Password for user 4:
+   ```
+   # ipmitool user set name 4 netadmin
+   # ipmitool user set password 4
+   Password for user 4:
+   Password for user 4:
+   ```
 
 -   Set user access
 
-<!-- -->
-
-    # ipmitool channel setaccess 1 4 link=on ipmi=on callin=on privilege=4
-    # ipmitool channel setaccess 2 4 link=on ipmi=on callin=on privilege=4
-    # ipmitool user enable 4
+   ```
+   # ipmitool channel setaccess 1 4 link=on ipmi=on callin=on privilege=4
+   # ipmitool channel setaccess 2 4 link=on ipmi=on callin=on privilege=4
+   # ipmitool user enable 4
+   ```
 
 -   Verify User Level Access
 
-<!-- -->
+   ```
+   # ipmitool channel getaccess 1 4
+   Maximum User IDs : 10
+   Enabled User IDs : 4
 
-    # ipmitool channel getaccess 1 4
-    Maximum User IDs : 10
-    Enabled User IDs : 4
-
-    User ID : 4
-    User Name : ADMIN
-    Fixed Name : No
-    Access Available : call-in / callback
-    Link Authentication : disabled
-    IPMI Messaging : enabled
-    Privilege Level : ADMINISTRATOR
+   User ID : 4
+   User Name : ADMIN
+   Fixed Name : No
+   Access Available : call-in / callback
+   Link Authentication : disabled
+   IPMI Messaging : enabled
+   Privilege Level : ADMINISTRATOR
+   ```
 
 ### Troubleshooting
 
 If you cannot connect to the IPMI (iLO) management console and you are sure that your network configuration is correct, reset the BMC via a SSH or KVM Console session to the node in question:
 
-    # ipmitool bmc reset cold
-
-## Resolution
-
-You should now be able to successfully configure and connect to your nodes via IPMI (iLO) on  HPE Apollo 4200 Gen9 servers
+   ```
+   # ipmitool bmc reset cold
+   ```
