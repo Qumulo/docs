@@ -5,61 +5,71 @@ permalink: platforms/hpe-apollo-4200-gen9/configuring-ipmi-ilo-port.html
 sidebar: platforms_sidebar
 keywords: out-of-band management, out of band management, IPMI, iLO, DHCP, network, networking, LAN, ipmitool
 ---
-*IPMI on a Public LAN can be a major security liability providing anyone with the proper credentials direct hardware and console level access to your server. Please use good security practices when implementing IPMI (iLO) access.*
 
-## In This Article
+This section explains how to configure the out-of-band management (IPMI or iLO) port on HPE Apollo 4200 Gen9 nodes.
 
--   Outlines how to configure IPMI (iLO) on HPE Apollo 4200 Gen9 servers
+{% include important.html content="Access to the out-of-bound management (IPMI or iLO) port on a public LAN can have serious security implications because it can grant anyone with credentials direct access to your server's hardware and console. Follow security best practices when implementing IPMI access." %}
 
-    -   IPMI (iLO) port location
-    -   Verify IPMI (iLO) LAN Configuration
-    -   IPMI (iLO) LAN Configuration with static IPs
-    -   IPMI (iLO) User Operations
-    -   Connect via IPMI (iLO)
+## Prerequisites
+To configure the IPMI port, you must have root access to the client-facing network through SSH. For example, you can use the `sudo -s` command.
 
-## Requirements
+## How the IPMI Port Works
+HPE A4200 Gen9 nodes provide IPMI support for out-of-band maintenance access even when the node is plugged in but powered off.
 
--   Root user access via ssh on the client-facing network by using the `sudo -s` command.
+Your nodes receive DHCP address assignments by default. When you configure a node's IPMI port, you can access the node by using the IP address that the DHCP server assigns to the node and a web browser that supports HTML5, Java, and .NET
 
-## Details
+{% include important.html content="We strongly recommend separating your IPMI access network from your client-facing network" %}
 
-HPE Apollo 4200 motherboards provide IPMI (iLO) support which allow for out-of-band maintenance access even if the node is turned off when plugged into power.
+{% include image.html alt="The location of the IPMI port on the HPE Apollo 4200 Gen9 node" file="hpe-gen9-ilo.png" %}
 
--   Nodes are configured to receive DHCP address assignments by default
--   The IPMI (iLO) access network should be completely separate from your client-facing network
--   IPMI (iLO) Configuration is available via BIOS: F9 System Utilities
--   The **default IPMI (iLO) account & password** is Administrator and the password listed on the top of the chassis
-    -   Note that this account name and password are completely independent of your Qumulo admin password
+To access IPMI configuration in the BIOS System Utilities menu, press **F9**. The default IPMI username is `Administrator`. The password is printed on top of the node chassis.
 
-The steps below must be repeated on each node that will be a member of your IPMI (iLO) maintenance network. Once configuration is complete, accessing the nodes via IPMI (iLO) requires .NET, HTML5, or a Java-capable web browser using the IPs assigned by you or your DHCP server.
+{% include note.html content="The IMPI username and password are unrelated to your Qumulo administrative credentials." %}
 
-### HPE Apollo 4200 Gen9 IPMI (iLO) Port Location
+## IPMI Configuration Commands
 
-{% include image.html alt="" file="hpe-gen9-ilo.png" %}
+Use the following commands to configure the IPMI port on your nodes.
 
-### HPE Apollo 4200 Gen9 IPMI (iLO) Commands
-
-**Verify IPMI (iLO) LAN Configuration**
-
--   Use the following command:
+### Verify IPMI LAN Configuration
 
 ```
 # ipmitool lan print 2
 ```
 
-**IPMI (iLO) LAN Configuration with static IPs**
+### Configure IPMI LAN Configuration with static IPs**
 
-```
-# ipmitool lan set 2 ipsrc static #Set IPMI ethernet interface to static IP
-# ipmitool lan set 2 ipaddr XXX.XXX.XXX.XXX #Set the IP address of the interface
-# ipmitool lan set 2 netmask 255.XXX.XXX.XXX #Set the Subnet Mask for the interface
-# ipmitool lan set 2 defgw ipaddr XXX.XXX.XXX.XXX #Set the IP address of the Default Gateway
-# ipmitool lan set 2 arp respond on #(Optional) Enable BMC ARP responses
-```
+1. Set the IPMI Ethernet interface to a static IP address.
 
-**IPMI (iLO) User Operation Examples**
+   ```
+   # ipmitool lan set 2 ipsrc static
+   ```
 
--   List Current users
+1. Set the interface IP address. For example:
+
+   ```
+   # ipmitool lan set 2 ipaddr 203.0.113.0
+   ```
+
+1. Set the interface subnet mask. For example:
+
+   ```
+   # ipmitool lan set 2 netmask 255.0.0.1
+   ```
+
+1. Set the default gateway IP address. For example:
+   
+   ```
+   # ipmitool lan set 2 defgw ipaddr 192.168.0.1
+   ```
+
+1. (Optional) Enable baseboard management controller (BMC) Address Resolution Protocol (ARP) responses.
+
+   ```
+   # ipmitool lan set 2 arp respond on
+   ```
+
+
+### List Current Users
 
 ```
 # ipmitool user list 2
@@ -68,7 +78,7 @@ ID Name Callin Link Auth IPMI Msg Channel Priv Limit
 2 root false true true ADMINISTRATOR
 ```
 
--   Change the default ADMINISTRATOR password
+### Change the Default Administrator Password
 
 ```
 # ipmitool user set password 2
@@ -76,8 +86,9 @@ Password for user 2:
 Password for user 2:
 ```
 
--   Create new user
-    -   Example: Create Admin user “netadmin” in user slot \#4
+### Create a New User
+
+In the following example, we create the administrative user `netadmin` in user slot `4`.
 
 ```
 # ipmitool user set name 4 netadmin
@@ -86,15 +97,15 @@ Password for user 4:
 Password for user 4:
 ```
 
--   Set user access
+### Configure User Access
 
 ```
 # ipmitool channel setaccess 1 4 link=on ipmi=on callin=on privilege=4
 # ipmitool channel setaccess 2 4 link=on ipmi=on callin=on privilege=4
- # ipmitool user enable 4
+# ipmitool user enable 4
 ```
 
--   Verify User Level Access
+### Verify User Level Access
 
 ```
 # ipmitool channel getaccess 1 4
@@ -110,9 +121,9 @@ IPMI Messaging : enabled
 Privilege Level : ADMINISTRATOR
 ```
 
-### Troubleshooting
+### Resetting the Baseboard Management Controller
 
-If you cannot connect to the IPMI (iLO) management console and you are sure that your network configuration is correct, reset the BMC via a SSH or KVM Console session to the node in question:
+If you can't connect to the IPMI management console and your network configuration is correct, reset the BMC through an SSH or KVM Console session for the affected node.
 
 ```
 # ipmitool bmc reset cold
