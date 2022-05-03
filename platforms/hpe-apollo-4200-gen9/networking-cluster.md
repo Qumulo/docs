@@ -15,7 +15,7 @@ This section explains how to network your HPE Apollo 4200 Gen9 cluster.
   * Fully non-blocking architecture
   * IPv6 compatibility
 * Compatible network cables
-* A sufficient number of pots for connecting all nodes to the same switch fabric
+* A sufficient number of ports for connecting all nodes to the same switch fabric
 * One static IP per node, per defined VLAN
 
 {% include important.html content="Before you connect any Qumulo-supported equipment to your network, we strongly recommend consulting with your network engineering team." %}
@@ -36,7 +36,7 @@ This section explains how to network your HPE Apollo 4200 Gen9 cluster.
 
   {% include note.html content="The number of floating IP addresses depends on your workflow and on the clients that connect to the cluster, with a minimum of two floating IP addresses per node, per client-facing VLAN, but with no more than ten floating IP addresses per node, per client-facing VLAN&mdash;or 70 floating IP addresses per namespace." %}
 
-* Nodes connected at their maximum Ethernet speed to achieve advertised performance. To avoid network bottlenecks, Qumulo validates system performance with this configuration by using clients that are connected at the same link speed and to the same switch as the nodes.
+* Nodes connected at their maximum Ethernet speed (this ensures advertised performance). To avoid network bottlenecks, Qumulo validates system performance with this configuration by using clients that are connected at the same link speed and to the same switch as the nodes.
 
 ## Node NICs and Ports
 The following diagrams show the NICs and ports on HPE A4200 Gen9 nodes.
