@@ -10,7 +10,7 @@ The _Qumulo Platforms Guide_ is a collection of guides that provide information 
 **Table of Contents**
 * **[Document History](history.md)**
 * **HPE Apollo 4200 Gen9**
-  * [Quick start guide](hpe-apollo-4200-gen9/quick-start-guide.md)
+  * [Getting Started Guide](hpe-apollo-4200-gen9/getting-started-guide.md)
   * [Drive diagrams](hpe-apollo-4200-gen9/drive-diagrams.md)
   * [LED guide](hpe-apollo-4200-gen9/led-guide.md)
   * [Drive LED guide](hpe-apollo-4200-gen9/drive-led-guide.md)
