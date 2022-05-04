@@ -60,11 +60,13 @@ To locate the front panel LEDs, use the following diagram.
 {{site.data.alerts.note}}
 If the Front Drive Health or Thermal LED, or the Power On and Standby Button and System Power LED are off, one of the following conditions is possible:
 
-* Facility power off
-* Power cord detached
-* No power supplies installed
-* Power supply failure
-* Front I/O cable disconnected
+<ul>
+  <li>Facility power off</li>
+  <li>Power cord detached</li>
+  <li>No power supplies installed</li>
+  <li>Power supply failure</li>
+  <li>Front I/O cable disconnected</li>
+</ul>
 {{site.data.alerts.end}}
 
 ### Power Fault LEDs
