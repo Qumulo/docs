@@ -116,7 +116,7 @@ To locate the SFF drive LEDs, use the following diagram.
    * 🔵 **Solid Blue:** The drive is being identified by a host application.
    * 🔵 **Flashing Blue:** The drive carrier firmware is being updated or requires an update.
 
-   {% include note.html content="The Locate LED is behind the release lever. It is visible when it is illuminated." %}
+   {% include note.html content="The Locate LED is behind the release lever. When it is illuminated, it is visible." %}
 
 1. **Activity Ring LED**
 
