@@ -1,45 +1,29 @@
 ---
 title: "HPE Apollo 4200 Gen9 Drive Diagrams"
-summary: "Outlines the drive locations in the HPE Apollo 4200 Gen9 server."
+summary: "This section explains the front and rear drive locations in your HPE Apollo 4200 Gen9 node."
 permalink: platforms/hpe-apollo-4200-gen9/front-rear-drive-locations.html
 sidebar: platforms_sidebar
+keywords: front drive, rear drive, drive, drive location
 ---
-## In This Article
 
-Outlines the front and rear drive locations in the HPE Apollo 4200 Gen9 server
+This section explains the front large form factor (LFF) and rear small form factor (SFF) drive locations in your HPE Apollo 4200 Gen9 node. For more information, see [HPE Apollo 4200 Gen9 Server - Document List](https://support.hpe.com/hpesc/public/docDisplay?docLocale=en_US&docId=c05058024).
 
-## Requirements
+## Front LFF Drive Row
 
-* HPE Apollo 4200 Gen9 server
+{% include image.html alt="The front large form factor drive row in the HPE Apollo 4200 Gen9 node" file="hpe-gen9-drives-front.png" %}
 
-For additional details on HPE Apollo 4200 servers, see the [HPE Apollo 4200 Gen9 Server Document List](https://support.hpe.com/hpesc/public/docDisplay?docLocale=en_US&docId=c05058024).
+## Second LFF Drive Row
 
-## HPE Apollo 4200 Gen9
+{% include image.html alt="The second large form factor drive row in the HPE Apollo 4200 Gen9 node" file="hpe-gen9-drives-front2.png" %}
 
-HPE Apollo 4200 Gen9 servers are comprised of a combination of large form factor (LFF) drives on the front of the server and small form factor (SFF) drives on the rear.
+## Rear SFF Hot-Plug Drives
 
-### Front Row Of LFF Drives
+{% include image.html alt="The rear small form factor hot-plug drive in the HPE Apollo 4200 Gen9 node" file="hpe-gen9-drives-rear.png" %}
 
-{% include image.html alt="" file="hpe-gen9-drives-front.png" %}
+## Boot Drive
 
-### Second Row Of LFF Drives
+{% include important.html content="Before you remove the boot drive, contact the [Qumulo Care Team](https://care.qumulo.com/hc/en-us/articles/115008409408) for additional instructions." %}
 
-{% include image.html alt="" file="hpe-gen9-drives-front2.png" %}
+The following diagram shows the boot drive in 90T, 180T, and 288T nodes.
 
-### SFF Hot-Plug Rear Drives
-
-{% include image.html alt="" file="hpe-gen9-drives-rear.png" %}
-
-### Boot Drive Locations
-
-{{site.data.alerts.important}}
-Before removing the boot drive, reach out to <a href="mailto:care@qumulo.com">care@qumulo.com</a> for additional instructions on how to proceed.
-{{site.data.alerts.end}}
-
-**HPE Gen9 (90T, 180T, 288T) Boot Drive**
-
-{% include image.html alt="" file="hpe-gen9-boot-drive.png" %}
-
-## Resolution
-
-You should now be able to successfully locate the front and rear drives on the HPE Apollo 4200 Gen9
+{% include image.html alt="The boot drive in 90T, 180T, and 288T nodes" file="hpe-gen9-boot-drive.png" %}
