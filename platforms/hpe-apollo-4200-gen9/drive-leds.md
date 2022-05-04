@@ -16,9 +16,14 @@ To locate the LFF drive LEDs, use the following diagram.
 
 You can determine the current state of an LFF drive by reviewing the status of the following LEDs:
 
-1. **Fault or UID LED** (🟠 Amber or 🔵 Blue)
+1. **Fault or UID LED**
 
-1. **Online or Activity LED** (🟢 Green)
+   * 🟠 **Amber**
+   * 🔵 **Blue**
+
+1. **Online or Activity LED**
+
+   * 🟢 **Green**
 
 The following table explains the various combinations of the two LFF LEDs.
 
