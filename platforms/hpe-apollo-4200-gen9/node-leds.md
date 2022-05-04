@@ -58,7 +58,7 @@ To locate the front panel LEDs, use the following diagram.
    * **Off:** Deactivated
 
 {{site.data.alerts.note}}
-If the Front Drive Health or Thermal LED, or the Power On and Standby Button and System Power LED are off, one of the following conditions is possible:
+If the (3) Front Drive Health or Thermal LED, or the (4) Power On or Standby Button and System Power LED is off, one of the following conditions is possible:
 
 <ul>
   <li>Facility power off</li>
@@ -122,46 +122,49 @@ If the (1) Health LED, (2) NIC status LED, (4) Power On and Standby button, and 
 
 ## Rear Panel LEDs
 
-The LEDs on the rear panel of HPE Apollo 4200 Gen9 servers can be located using the diagram below:
+To locate the rear panel LEDs, use the following diagram.
 
-{% include image.html alt="" file="hpe-rear-leds.png" %}
+{% include image.html alt="Rear panel LEDs on the HPE Apollo 4200 Gen9 node" file="hpe-rear-leds.png" %}
 
-**(1) Dedicated iLO activity LED**
+1. **Dedicated IPMI (iLO) Activity LED**
 
--   Solid green: Link to network
--   Flashing green: Network active
--   Off: No network activity
+   * 🟢 **Solid Green:** Link to network
+   * 🟢 **Flashing Green:** Network active
+   * **Off:** No network activity
 
-**(2) Dedicated iLO link LED**
+1. **Dedicated IPMI (iLO) Link LED**
 
--   Green: Network link
--   Off: No network link
+   * 🟢 **Green:** Network link
+   * **Off:** No network link
 
-**(3) NIC activity LED**
+1. **NIC Activity LED**
 
--   Solid green: Link to network
--   Flashing green: Network active
--   Off: No network activity
+   * 🟢 **Solid Green:** Link to network
+   * 🟢 **Flashing Green:** Network active
+   * **Off:** No network activity
 
-**(4) NIC link LED**
+1. **NIC Link LED**
 
--   Green: Network link
--   Off: No network link
+   * 🟢 **Green:** Network link
+   * **Off:** No network link
 
-**(5) UID LED**
+1. **UID LED**
 
--   Solid blue: Activated
--   Flashing blue:
-    -   1 flash per second = Remote management or firmware upgrade in progress
-    -   4 flashes per second = iLO manual reboot sequence initiated
-    -   8 flashes per second = iLO manual reboot sequence in progress
--   Off: Deactivated
+   * 🔵 **Solid Blue:** Activated
+   * 🔵 **Flashing Blue:**
 
-**(6) Power supply LED**
+     * 1 flash per second: Remote management or firmware upgrade in progress
+     * 4 flashes per second: IPMI (iLO) manual reboot sequence initiated
+     * 8 flashes per second: IPMI (iLO) manual reboot sequence in progress
 
--   Solid green: Normal
--   Off: One or more of the following conditions exist:
-    -   Power is unavailable
-    -   Power supply failed
-    -   Power supply is in standby mode
-    -   Power supply error
+   * **Off:** Deactivated
+
+1. **Power Supply LED**
+
+   * 🟢 **Solid Green:** Normal
+   * **Off:** One or more of the following conditions exist:
+
+     * Power unavailable
+     * Power supply failed
+     * Power supply in standby mode
+     * Power supply error
