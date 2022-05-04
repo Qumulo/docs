@@ -104,7 +104,7 @@ The following table explains the various combinations of the two LFF LEDs.
 
 To locate the SFF drive LEDs, use the following diagram.
 
-{% include image.html alt="Small form factor (SFF) drive LEDs" file="sff-led-guide.png" %}}
+{% include image.html alt="Small form factor (SFF) drive LEDs" file="sff-led-guide.png" %}
 
 1. **Locate LED**
 
