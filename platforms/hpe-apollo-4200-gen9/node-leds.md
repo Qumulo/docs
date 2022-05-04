@@ -69,13 +69,58 @@ If the Front Drive Health or Thermal LED, or the Power On and Standby Button and
 </ul>
 {{site.data.alerts.end}}
 
-### Power Fault LEDs
+## Power Fault LEDs
 
-If the Health LED (1), NIC status LED (2), Power on/standby button and system power LED (4) and the UID button/LED (5) flash simultaneously, a power fault has occurred. The following table provides a list of power fault LEDs and the subsystems that are affected.
+If the (1) Health LED, (2) NIC status LED, (4) Power On and Standby button, and (4) System Power LED, and the (5) UID Button and LED (5) flash simultaneously, a power fault has occurred. The following table lists the LED behavior corresponding to affected subsystems.
 
-{% include image.html alt="" file="hpe-power-led-guide.png" %}
+<table>
+<thead>
+  <tr>
+    <th>Number of LED Flashes</th>
+    <th>Affected Subsystem</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>1</td>
+    <td>System board</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>Processor</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>Memory</td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>Riser board PCIe slots</td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td>FlexibleLOM</td>
+  </tr>
+  <tr>
+    <td>6</td>
+    <td>Removable HPE Flexible Smart Array controller or Smart SAS HBA controller</td>
+  </tr>
+  <tr>
+    <td>7</td>
+    <td>System board PCIe slots</td>
+  </tr>
+  <tr>
+    <td>8</td>
+    <td>Power backplane or storage backplane</td>
+  </tr>
+  <tr>
+    <td>9</td>
+    <td>Power supply</td>
+  </tr>  
+</tbody>
+</table>
 
-### Rear Panel LEDs
+## Rear Panel LEDs
 
 The LEDs on the rear panel of HPE Apollo 4200 Gen9 servers can be located using the diagram below:
 
@@ -120,8 +165,3 @@ The LEDs on the rear panel of HPE Apollo 4200 Gen9 servers can be located using 
     -   Power supply failed
     -   Power supply is in standby mode
     -   Power supply error
-
-
-## Resolution
-
-You should now be able to successfully utilize the built-in LED indicators to diagnose hardware issues with the HPE Apollo 4200 Gen9 servers
