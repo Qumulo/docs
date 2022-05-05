@@ -26,4 +26,4 @@ The _Qumulo Platforms Guide_ is a collection of guides that provide information 
 * **HPE Proliant DL325 Gen10 Plus**
   * [Getting Started](hpe-dl325-gen10-plus/getting-startede.md)
   * [Front and Rear Drives](hpe-dl325-gen10-plus/drive-diagrams.md)
-  * [Cluster Networking](hpe-dl325-gen10-plus/network-guide.md)
+  * [Cluster Networking](hpe-dl325-gen10-plus/networking-cluster.md)
