@@ -96,7 +96,7 @@ This section explains how to prepare HPE Apollo 4200 Gen9 nodes for creating a Q
    
      To resolve these issues, power-cycle the node to apply the most recent firmware changes.
 
-   * If the Intelligent Provisioning Version area fails verification, continue to [flash the HPE Intelligent Provisioning Firmware](), and then return to this section and run the **VERIFY** command in the FVT.
+   * If the Intelligent Provisioning Version area fails verification, continue to [flash the HPE Intelligent Provisioning Firmware](#step-4-optional-flash-the-hpe-intelligent-provisioning-firmware), and then return to this section and run the **VERIFY** command in the FVT.
 
      When all areas pass, continue to [install Qumulo Core by using the USB drive installer](#step-5-install-qumulo-core-by-using-the-usb-drive-installer).
    
