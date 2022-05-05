@@ -1,5 +1,5 @@
 ---
-title: "Drive LEDs"
+title: "Qumulo on HPE Apollo 4200 Gen9 Drive LEDs"
 summary: "This section explains the drive LEDs of your HPE Apollo 4200 Gen9 node."
 permalink: platforms/hpe-apollo-4200-gen9/drive-leds.html
 sidebar: platforms_sidebar
