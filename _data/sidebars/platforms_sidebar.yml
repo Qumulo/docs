@@ -76,7 +76,7 @@ entries:
       url: /platforms/hpe-apollo-4200-gen10/networking-cluster.html
       output: web, pdf
 
-  - title: HPE Proliant DL325 Gen10 Plus
+  - title: HPE ProLiant DL325 Gen10 Plus
     output: web, pdf
     folderitems:
 
