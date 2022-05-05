@@ -4,9 +4,6 @@ summary: "Networking recommendations for the HPE Apollo Proliant DL325 Gen10 Plu
 permalink: platforms/hpe-dl325-gen10-plus/networking-cluster.html
 sidebar: platforms_sidebar
 ---
-## In This Article
-
-This article explains the various ways in which you can connect HPE DL325 Gen10 Plus clusters to your network.
 
 ## Requirements
 
@@ -70,4 +67,3 @@ You can connect an HPE All-NVMe cluster to a single switch. If this switch becom
   * Each node has two band-end ports (2 &#215; 100 Gbps) connected to a single switch.
 * **MTU**
   * For all connection speeds, the default behavior is that of an LACP with 1,500 MTU for the front-end and 9,000 MTU for the back-end interfaces.
-
