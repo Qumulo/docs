@@ -1,5 +1,5 @@
 ---
-title: "Networking Your Cluster"
+title: "Networking Your HPE Apollo 4200 Gen9 Cluster"
 summary: "This section explains how to network your HPE Apollo 4200 Gen9 cluster."
 permalink: platforms/hpe-apollo-4200-gen9/networking-cluster.html
 sidebar: platforms_sidebar
