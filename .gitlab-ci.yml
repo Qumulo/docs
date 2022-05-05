@@ -11,24 +11,24 @@ before_script:
   - gem install bundler
   - bundle install
 
-test:
-  stage: test
-  script:
-    - bundle exec jekyll build -d test
-  artifacts:
-    paths:
-      - test
-  except:
-    variables:
-      - $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+#test:
+#  stage: test
+#  script:
+#    - bundle exec jekyll build -d test
+#  artifacts:
+#    paths:
+#      - test
+#  except:
+#    variables:
+#      - $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
 
-pages:
-  stage: deploy
-  script:
-    - bundle exec jekyll build -d public
-  artifacts:
-    paths:
-      - public
-  only:
-    variables:
-      - $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+#pages:
+#  stage: deploy
+#  script:
+#    - bundle exec jekyll build -d public
+#  artifacts:
+#    paths:
+#      - public
+#  only:
+#    variables:
+#      - $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
