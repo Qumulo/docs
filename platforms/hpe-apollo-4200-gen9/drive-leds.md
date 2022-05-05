@@ -6,7 +6,7 @@ sidebar: platforms_sidebar
 keywords: drive, hard drive, LED, large form factor, LFF, small form factor, SFF
 ---
 
-This article explains the LEDs of large form factor (LFF) and small form factor (SFF) drives in your HPE Apollo 4200 Gen9 node. For more information, see [HPE Apollo 4200 Gen9 Server - Document List](https://support.hpe.com/hpesc/public/docDisplay?docLocale=en_US&docId=c05058024).
+This section explains the LEDs of large form factor (LFF) and small form factor (SFF) drives in your HPE Apollo 4200 Gen9 node. For more information, see [HPE Apollo 4200 Gen9 Server - Document List](https://support.hpe.com/hpesc/public/docDisplay?docLocale=en_US&docId=c05058024).
 
 ## Large Form Factor (LFF) Drive LEDs
 
