@@ -19,7 +19,7 @@ To locate the front panel LEDs, use the following diagram.
    * 🟢 **Solid Green:**  System on
    * 🟢 **Flashing Green:** (1 flash per second) Performing power-on sequence
    * 🟠 **Solid Amber:** System in standby
-   * Off: No power present
+   * **Off:** No power present
 
 1. **UID Button and LED**
 
@@ -45,7 +45,7 @@ To locate the front panel LEDs, use the following diagram.
 
    * 🟢 **Solid Green:** Link to network
    * 🟢 **Flashing Green:** (1 flash per second) Network active
-   * Off: No network activity
+   * **Off:** No network activity
 
 1. **Front Drive Health or Thermal LED**
 
