@@ -3,7 +3,7 @@ title: "Qumulo on HPE Apollo 4200 Gen9 Getting Started Guide"
 summary: "This section explains how to prepare HPE Apollo 4200 Gen9 nodes for creating a Qumulo Core cluster."
 permalink: platforms/hpe-apollo-4200-gen9/getting-started-guide.html
 sidebar: platforms_sidebar
-keywords: getting started guide, quick reference, HPE, Apollo 4200 Gen9
+keywords: getting started guide, quick reference, HPE, Apollo 4200 Gen9, verify node, field verification tool, FVT, intelligent provisioning
 ---
 
 This section explains how to prepare HPE Apollo 4200 Gen9 nodes for creating a Qumulo Core cluster. This guide is for system administrators, professional service providers, and colleagues in your organization who are responsible for installing and configuring server hardware. For more information, see [HPE Apollo 4200 Gen9 - Server Document List](https://support.hpe.com/hpesc/public/docDisplay?docLocale=en_US&docId=c05058024).
@@ -19,7 +19,7 @@ This section explains how to prepare HPE Apollo 4200 Gen9 nodes for creating a Q
 
 1. Plug the Qumulo Core USB Drive Installer into an available USB port on the node.
 
-1. Press the power button on the node..
+1. Press the power button on the node.
 
    {% include image.html alt="To power on the node, press the power button." file="hpe-front-power.png" %}
 
@@ -75,9 +75,7 @@ This section explains how to prepare HPE Apollo 4200 Gen9 nodes for creating a Q
 
 1. On the **===FIELD VERIFICATION TOOL===** page, to verify the node configuration, select **2) VERIFY, verify node configuration**.
 
-1. Review the verification results.
-
-5. Review the results and consider the following before proceeding with a clean install of Qumulo Core.
+1. Review the verification results and consider the following before proceeding with a clean install of Qumulo Core.
 
    * **PASSED** messages indicate correct configuration. For example:
 
@@ -106,13 +104,11 @@ This section explains how to prepare HPE Apollo 4200 Gen9 nodes for creating a Q
 
 {% include important.html content="Follow the steps in this section only if the Intelligent Provisioning Version area fails verification." %}
 
-{{site.data.alerts.important}}
-ONLY execute these instructions if the Intelligent Provisioning check in the FVT failed.
-{{site.data.alerts.end}}
-
-The HPE Intelligent Provisioning firmware for the HPE Apollo 4200 has no method available to flash this component in the system. To acquire the firmware, download the binary file from [HPE Support Center](https://internal.support.hpe.com/hpsc/swd/public/detail?swItemId=MTX_f6abd3e3803e4b2395eee361c3) and follow the instructions below.
+Use one of the following options to update the HPE Intelligent Provisioning firmware by using a USB drive or by using virtual media.
 
 ### Option 1: Update Firmware from System Utilities by Using a USB Drive
+
+1. Download the [Intelligent Provisioning for Gen9 Servers image file](https://internal.support.hpe.com/connect/s/softwaredetails?language=en_US&softwareId=MTX_f6abd3e3803e4b2395eee361c3)
 
 1. Convert the iso file to img format.
 
@@ -129,6 +125,8 @@ The HPE Intelligent Provisioning firmware for the HPE Apollo 4200 has no method 
 6. Once the upgrade is complete, press **ESC** to return to the **main menu** and reboot the system.
 
 ### Option 2: Update Firmware from System Utilities by Using Virtual Media
+
+1. Download the [Intelligent Provisioning for Gen9 Servers image file](https://internal.support.hpe.com/connect/s/softwaredetails?language=en_US&softwareId=MTX_f6abd3e3803e4b2395eee361c3).
 
 1.  Put the iso in an accessible location over the network for the node.
 2.  Select **Insert Media** and check the **boot on next reboot option** for the iso on the **virtual media page**.  {% include image.html alt="" file="virtual-media-page.png" %}
