@@ -171,34 +171,27 @@ Perform the following steps for every node in your cluster.
 
 1. Name your cluster.
 
-1. On the **Set up cluster** page, select the nodes to add to your cluster.
+1. On the **1. Set up cluster** page, select the nodes to add to your cluster.
 
    As you select nodes, the total capacity of your cluster is updated at the bottom of the page.
 
    {% include note.html content="If any nodes are missing, confirm that they are powered on and connected to the same network." %}
 
-## Step 7: Configure the Cluster Protection Level
+1. On the **2. Confirm cluster protection level** page, Qumulo Core selects the recommended 2- or 3-drive protection level based on your cluster size and node type.
 
-The recommended 2 or 3 drive protection level will be selected by default based on the cluster size and node type.
+1. If the **Customize Protection Level** option appears, you can increase your system resilience by selecting 3-drive protection.
 
-{% include image.html alt="" file="confirm-protection.png" %}
+   {{site.data.alerts.note}}
+   <ul>
+     <li>The option for selecting the drive protection level is available only at cluster creation time. You can't change it later.</li>
+     <li>Using 3-drive protection reduces the total capacity of your cluster.</li>
+   </ul>
+   {{site.data.alerts.end}}
 
-If **Customize Protection Level** is displayed, the option is available to increase the resilience of the system by selecting 3 drive protection. Keep in mind that selecting 3 drive protection will result in less capacity for the cluster.
+1. Enter the password for your administrative account.
 
-{% include image.html alt="" file="recommended-protection.png" %}
+1. Click **Create Cluster**.
 
-{{site.data.alerts.note}}
-The option for selecting the drive protection level is only available at cluster creation and cannot be changed after the fact.
-{{site.data.alerts.end}}
+1. To access the Qumulo Core Web UI, use any node's IP address to connect by using a web browser. For more information, see [Qumulo Core Web UI Browser Compatibility](https://care.qumulo.com/hc/en-us/articles/115013902267) in Qumulo Care.
 
-## Step 8: Create a Password For Your Administrative Account
-
-1.  Type in the password for your admin account.
-2.  Retype the password to confirm.
-3.  Click **Create Cluster.**
-
-{% include image.html alt="" file="create-password.png" %}
-
-To access the dashboard in the Qumulo Core UI remotely, use any node's IP address to connect via [web browser](https://care.qumulo.com/hc/en-us/articles/115013902267-Qumulo-Core-s-Web-UI-Browser-Compatability).
-
-For additional guidance on cluster configuration and getting started, reference the [Qumulo Installation FAQ](https://care.qumulo.com/hc/en-us/articles/115008010087-Qumulo-Installation-FAQ) article for more details.
+For more information about configuring your cluster configuration and getting started with Qumulo Core, see [Qumulo Installation FAQ](https://care.qumulo.com/hc/en-us/articles/115008010087-Qumulo-Installation-FAQ) in Qumulo Care.
