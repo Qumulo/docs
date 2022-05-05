@@ -62,11 +62,9 @@ This section explains how to prepare HPE Apollo 4200 Gen9 nodes for creating a Q
      After the node reboots automatically, repeat the steps in this section to boot by using the USB Drive Installer and then select **continue, install in NonSecure Mode** and then press **Enter**.
      
 
-## Run Field Verification Tool
+## Step 3: Run the Field Verification Tool (FVT)
 
-{{site.data.alerts.important}}
-DO NOT run the following Field Verification Tool if any live data is present on the node.
-{{site.data.alerts.end}}
+{% include caution.html content="If your node contains any live data, *don't* run the FVT." %}
 
 1. Access the **Field Verification Tool (FVT) menu** by typing **1** or **FVT** and hit **ENTER**.  {% include image.html alt="" file="fvt-menu.png" %}
 
