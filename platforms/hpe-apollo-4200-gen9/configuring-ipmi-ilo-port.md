@@ -1,5 +1,5 @@
 ---
-title: "Configuring the Out-of-Band Management (IPMI or iLO) Port"
+title: "Configuring the Out-of-Band Management (IPMI or iLO) Port on Qumulo on HPE Apollo 4200 Gen9 Nodes"
 summary: "This section explains how to configure the out-of-band management (IPMI or iLO) port on HPE Apollo 4200 Gen9 nodes."
 permalink: platforms/hpe-apollo-4200-gen9/configuring-ipmi-ilo-port.html
 sidebar: platforms_sidebar
