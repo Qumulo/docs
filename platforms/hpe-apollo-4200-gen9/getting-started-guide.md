@@ -76,14 +76,15 @@ This section explains how to prepare HPE Apollo 4200 Gen9 nodes for creating a Q
 
 1. Review the verification results.
 
-5. Review the results and consider the following before proceeding with a clean install of Qumulo Core:
+5. Review the results and consider the following before proceeding with a clean install of Qumulo Core.
 
-   {{site.data.alerts.note}}
-   <ul>
-     <li><strong>FAIL</strong> messages don't indicate an unsuccessful flash command. To resolve these issues, power-cycle the node to apply the most recent firmware changes.</li>
-     <li>At this time, you can ignore any <strong>FAIL</strong> messages on the boot order.</li>
-   </ul>
-   {{site.data.alerts.end}}
+   * **PASSED** messages (for example, ***=== TEST: Drives in whitelist and proper slot : PASSED***) indicate correct configuration.
+
+     If all areas pass, continue to
+
+   * **FAIL** messages don't indicate an unsuccessful flash command. To resolve these issues, power-cycle the node to apply the most recent firmware changes.
+   
+   * You can ignore any **FAIL** messages on the boot order.
 
 ### FVT Pass Example
 
@@ -96,7 +97,7 @@ This section explains how to prepare HPE Apollo 4200 Gen9 nodes for creating a Q
 -   If all fields pass, you may skip the **FLASHING OF HPE INTELLIGENT PROVISIONING FIRMWARE** section and continue cluster configuration by following the steps outlined in the **INSTALL QUMULO CORE VIA THE USB KEY** section.
 -   If the category for the Intelligent Provisioning Version returns **FAILED**, execute the steps in the **FLASHING OF HPE INTELLIGENT PROVISIONING FIRMWARE** section below. Once complete, return to **step 3 in this section** and run the **VERIFY** command for FVT. If all fields pass, you may continue to the **INSTALL QUMULO CORE VIA THE USB KEY** section.
 
-## Flashing Of HPE Intelligent Provisioning Firmware
+## Step 4: Flash HPE Intelligent Provisioning Firmware
 
 {{site.data.alerts.important}}
 ONLY execute these instructions if the Intelligent Provisioning check in the FVT failed.
@@ -104,7 +105,7 @@ ONLY execute these instructions if the Intelligent Provisioning check in the FVT
 
 The HPE Intelligent Provisioning firmware for the HPE Apollo 4200 has no method available to flash this component in the system. To acquire the firmware, download the binary file from [HPE Support Center](https://internal.support.hpe.com/hpsc/swd/public/detail?swItemId=MTX_f6abd3e3803e4b2395eee361c3) and follow the instructions below.
 
-### Update Firmware From System Utilities Via A USB Drive
+### Option 1: Update Firmware from System Utilities by Using a USB Drive
 
 1. Convert the iso file to img format.
 
@@ -120,7 +121,7 @@ The HPE Intelligent Provisioning firmware for the HPE Apollo 4200 has no method 
 
 6. Once the upgrade is complete, press **ESC** to return to the **main menu** and reboot the system.
 
-### Update Firmware From System Utilities Via Virtual Media
+### Option 2: Update Firmware from System Utilities by Using Virtual Media
 
 1.  Put the iso in an accessible location over the network for the node.
 2.  Select **Insert Media** and check the **boot on next reboot option** for the iso on the **virtual media page**.  {% include image.html alt="" file="virtual-media-page.png" %}
@@ -129,7 +130,7 @@ The HPE Intelligent Provisioning firmware for the HPE Apollo 4200 has no method 
 5.  Once complete, return to **step 3** of the **RUN FIELD VERIFICATION TOOL** section to rerun FVT.
 6.  Type **2** or **VERIFY** and hit **ENTER** to check the node configuration. If all fields pass, you may now proceed to install Qumulo Core.
 
-## Install Qumulo Core Via The USB Key
+## Step 4: Install Qumulo Core by Using the USB Drive Installer
 
 1.  Power on the node or perform a reboot.
 2.  Press the **F11 key** to enter the **boot menu** on the **BIOS splash screen**.
@@ -143,13 +144,13 @@ If you mistype <b>DESTROY ALL DATA</b> three times or type <b>no</b>, the instal
 
 The node will automatically shut down once the installation of Qumulo Core is complete. At that time, remove the USB stick and press the power button to turn on the node. A successful install using the Qumulo Core USB Installer Key will boot the node to the End User Agreement page, the first step in creating a new cluster with Qumulo Core. Before you agree and continue, repeat the steps outlined above for each node that will be included in your Qumulo cluster.
 
-## Create A Cluster
+## Step 5: Create A Cluster
 
 Review the End User License Agreement, check the box to agree and click **Submit.**
 
 {% include image.html alt="" file="user-agreement.png" %}
 
-### 1. Setup Cluster
+### Step 1: Configure Your Cluster
 
 1.  Name the cluster.
 2.  Select the nodes for the cluster .
@@ -163,7 +164,7 @@ The total capacity for the cluster is dynamically updated at the bottom of the p
 
 {% include image.html alt="" file="capacity.png" %}
 
-### 2. Confirm Cluster Protection Level
+### Step 2: Configure the Cluster Protection Level
 
 The recommended 2 or 3 drive protection level will be selected by default based on the cluster size and node type.
 
@@ -177,7 +178,7 @@ If **Customize Protection Level** is displayed, the option is available to incre
 The option for selecting the drive protection level is only available at cluster creation and cannot be changed after the fact.
 {{site.data.alerts.end}}
 
-### 3. Create A Password For Your Admin Account
+### Step 3: Create a Password For Your Administrative Account
 
 1.  Type in the password for your admin account.
 2.  Retype the password to confirm.
@@ -187,8 +188,4 @@ The option for selecting the drive protection level is only available at cluster
 
 To access the dashboard in the Qumulo Core UI remotely, use any node's IP address to connect via [web browser](https://care.qumulo.com/hc/en-us/articles/115013902267-Qumulo-Core-s-Web-UI-Browser-Compatability).
 
-For additional guidance on cluster configuration and getting started, reference the **[Qumulo Installation FAQ](https://care.qumulo.com/hc/en-us/articles/115008010087-Qumulo-Installation-FAQ)** article for more details.
-
-## Resolution
-
-You should now be able to successfully prepare the nodes for installing Qumulo Core and create a cluster on HPE Apollo 4200 Gen9 hardware
+For additional guidance on cluster configuration and getting started, reference the [Qumulo Installation FAQ](https://care.qumulo.com/hc/en-us/articles/115008010087-Qumulo-Installation-FAQ) article for more details.
