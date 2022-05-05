@@ -80,8 +80,8 @@ This section explains how to prepare HPE Apollo 4200 Gen9 nodes for creating a Q
 
    {{site.data.alerts.note}}
    <ul>
-     <li>Any **FAIL** messages aren't indicative of an unsuccessful flash command. To resolve these issues, power-cycle the node to apply the most recent firmware changes.</li>
-     <li>At this time, you can ignore any **FAIL** messages on the boot order.</li>
+     <li><strong>FAIL</strong> messages don't indicate an unsuccessful flash command. To resolve these issues, power-cycle the node to apply the most recent firmware changes.</li>
+     <li>At this time, you can ignore any <strong>FAIL</strong> messages on the boot order.</li>
    </ul>
    {{site.data.alerts.end}}
 
