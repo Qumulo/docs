@@ -130,7 +130,7 @@ The HPE Intelligent Provisioning firmware for the HPE Apollo 4200 has no method 
 5.  Once complete, return to **step 3** of the **RUN FIELD VERIFICATION TOOL** section to rerun FVT.
 6.  Type **2** or **VERIFY** and hit **ENTER** to check the node configuration. If all fields pass, you may now proceed to install Qumulo Core.
 
-## Step 4: Install Qumulo Core by Using the USB Drive Installer
+## Step 5: Install Qumulo Core by Using the USB Drive Installer
 
 1.  Power on the node or perform a reboot.
 2.  Press the **F11 key** to enter the **boot menu** on the **BIOS splash screen**.
@@ -144,7 +144,7 @@ If you mistype <b>DESTROY ALL DATA</b> three times or type <b>no</b>, the instal
 
 The node will automatically shut down once the installation of Qumulo Core is complete. At that time, remove the USB stick and press the power button to turn on the node. A successful install using the Qumulo Core USB Installer Key will boot the node to the End User Agreement page, the first step in creating a new cluster with Qumulo Core. Before you agree and continue, repeat the steps outlined above for each node that will be included in your Qumulo cluster.
 
-## Step 5: Create A Cluster
+## Step 6: Create A Cluster
 
 Review the End User License Agreement, check the box to agree and click **Submit.**
 
