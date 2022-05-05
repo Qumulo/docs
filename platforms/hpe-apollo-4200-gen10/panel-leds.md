@@ -49,16 +49,16 @@ To locate the front panel LEDs, use the following diagram.
 
 1. **Front Drive Health or Thermal LED**
 
-   * 🟢 **Solid green: Drives which the SAS expander supports are functional. This applies to all front drives and the rear drives connected to the front drive cage 2 backplane.
-   * 🟠 **Solid amber: Failure or predictive failure of one or more drives that the SAS expander supports. This applies to all front drives and to the rear drives connected to the front drive cage 2 backplane.
-   * 🟠 **Flashing amber (1 flash per second): The temperature sensor in one or more front drives is about to reach the thermal threshold. You must immediately slide the front drive cages back into the chassis and keep them there until the LED turns green.
+   * 🟢 **Solid Green:** Drives which the SAS expander supports are functional. This applies to all front drives and the rear drives connected to the front drive cage 2 backplane.
+   * 🟠 **Solid Amber:** Failure or predictive failure of one or more drives that the SAS expander supports. This applies to all front drives and to the rear drives connected to the front drive cage 2 backplane.
+   * 🟠 **Flashing Amber:** (1 flash per second) The temperature sensor in one or more front drives is about to reach the thermal threshold. You must immediately slide the front drive cages back into the chassis and keep them there until the LED turns green.
 
      {% include note.html content="This LED behavior depends on the IPMI (iLO) 08-HD Max sensor reading." %}
 
    * **Off:** No power present
 
 {{site.data.alerts.note}}
-If the **(5) Front Drive Health or Thermal LED, or the (1) Power On or Standby Button and System Power LED are off, one of the following conditions is possible:
+If the (5) Front Drive Health or Thermal LED, or the (1) Power On or Standby Button and System Power LED are off, one of the following conditions is possible:
 
 <ul>
   <li>Facility power not present</li>
@@ -71,78 +71,126 @@ If the **(5) Front Drive Health or Thermal LED, or the (1) Power On or Standby B
 
 ### Power Fault LEDs
 
-If thePower on/standby button and system power LED (1),UID button/LED (2), Health LED (3), and NIC status LED (4) flash simultaneously, a power fault has occurred. The following table provides a list of power fault LEDs and the subsystems that are affected.
+If the (1) Power On or Standby Button and System Power LED, (2) UID Button and LED, (3) Health LED, and (4) NIC Status LED flash simultaneously, a power fault has occurred. The following table lists the LED behavior corresponding to affected subsystems.
 
-{% include image.html alt="" file="hpe-power-led-guide.png" %}
+<table>
+<thead>
+  <tr>
+    <th>Number of LED Flashes</th>
+    <th>Affected Subsystem</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>1</td>
+    <td>System board</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>Processor</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>Memory</td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>Riser board PCIe slots</td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td>FlexibleLOM</td>
+  </tr>
+  <tr>
+    <td>6</td>
+    <td>Removable HPE Flexible Smart Array controller or Smart SAS HBA controller</td>
+  </tr>
+  <tr>
+    <td>7</td>
+    <td>System board PCIe slots</td>
+  </tr>
+  <tr>
+    <td>8</td>
+    <td>Power backplane or storage backplane</td>
+  </tr>
+  <tr>
+    <td>9</td>
+    <td>Power supply</td>
+  </tr>  
+</tbody>
+</table>
 
 ### Rear Panel LEDs
 
 The LEDs on the rear panel of HPE Apollo 4200 Gen10 servers can be located using the diagram below:
 
-{% include image.html alt="" file="hpe-gen10-leds-rear.png" %}
+## Rear Panel LEDs
 
-**(1) Dedicated iLO port 1 link LED**
+To locate the rear panel LEDs, use the following diagram.
 
--   Green: Network link
--   Off: No network link
+{% include image.html alt="Rear panel LEDs on the HPE Apollo 4200 Gen10 node" file="hpe-gen10-leds-rear.png" %}
 
-**(2) Dedicated iLO port 1 activity LED**
+1. **Dedicated IPMI (iLO) Port 1 Link LED**
 
--   Solid green: Link to network
--   Flashing green: Network active
--   Off: No network activity
+   * 🟢 **Green:** Network link
+   * **Off:** No network link
 
-**(3) UID LED**
+1. **Dedicated IPMI (iLO) Port 1 Activity LED**
 
--   Solid blue: Activated
--   Flashing blue:
-    -   1 flash per second = Remote management or firmware upgrade in progress
-    -   4 flashes per second = iLO manual reboot sequence initiated
-    -   8 flashes per second = iLO manual reboot sequence in progress
--   Off: Deactivated
+   * 🟢 **Solid Green:** Link to network
+   * 🟢 **Flashing Green:** Network active
+   * **Off:** No network activity
 
-**(4) Dedicated iLO port 2 link LED**
+1. **UID LED**
 
--   Green: Network link
--   Off: No network link
+   * 🔵 **Solid Blue:** Activated
+   * 🔵 **Flashing Blue:**
 
-**(5) Dedicated iLO port 2 activity LED**
+     * 1 flash per second: Remote management or firmware upgrade in progress
+     * 4 flashes per second: IPMI (iLO) manual reboot sequence initiated
+     * 8 flashes per second: IPMI (iLO) manual reboot sequence in progress
 
--   Solid green: Link to network
--   Flashing green: Network active
--   Off: No network activity
+   * **Off:** Deactivated
 
-**(6) NIC port 1 link LED**
+1. **Dedicated IPMI (iLO) Port 2 Link LED**
 
--   Green: Network link
--   Off: No network link
+   * 🟢 **Green:** Network link
+   * **Off:** No network link
 
-**(7) NIC port 1 activity LED**
+1. **Dedicated IPMI (iLO) Port 2 Activity LED**
 
--   Solid green: Link to network
--   Flashing green: Network active
--   Off: No network activity
+   * 🟢 **Solid Green:** Link to network
+   * 🟢 **Flashing Green:** Network active
+   * **Off:** No network activity
 
-**(8) NIC port 2 link LED**
+1. **NIC Port 1 Link LED**
 
--   Green: Network link
--   Off: No network link
+   * 🟢 **Green:** Network link
+   * **Off:** No network link
 
-**(9) NIC port 2 activity LED**
+1. **NIC Port 1 Activity LED**
 
--   Solid green: Link to network
--   Flashing green: Network active
--   Off: No network activity
+   * 🟢 **Solid Green:** Link to network
+   * 🟢 **Flashing Green:** Network active
+   * **Off:** No network activity
 
-**(10) Power supply LED**
+1. **NIC Port 2 Link LED**
 
--   Solid green: Normal
--   Off: One or more of the following conditions exist:
-    -   Power is unavailable
-    -   Power supply failed
-    -   Power supply is in standby mode
-    -   Power supply error
+   * 🟢 **Green:** Network link
+   * **Off:** No network link
 
-## Resolution
+1. **NIC Port 2 Activity LED**
 
-You should now be able to successfully utilize the built-in LED indicators to diagnose hardware issues with the HPE Apollo 4200 Gen10 servers
+   * 🟢 **Solid Green:** Link to network
+   * 🟢 **Flashing Green:** Network active
+   * **Off:** No network activity
+
+1. **Power Supply LED**
+
+   * 🟢 **Solid Green:** Normal
+   * **Off:** One or more of the following conditions exist:
+
+     * Power unavailable
+     * Power supply failed
+     * Power supply in standby mode
+     * Power supply error
