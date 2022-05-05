@@ -28,7 +28,7 @@ entries:
       url: /platforms/hpe-apollo-4200-gen9/getting-started-guide.html
       output: web, pdf
 
-    - title: Front and Rear Drive Locations
+    - title: Front and Rear Drives
       url: /platforms/hpe-apollo-4200-gen9/front-rear-drive-locations.html
       output: web, pdf
 
