@@ -4,13 +4,6 @@ summary: "Outlines the drive locations in the HPE Apollo 4200 Gen10 server."
 permalink: platforms/hpe-apollo-4200-gen10/front-rear-drives.html
 sidebar: platforms_sidebar
 ---
-## In This Article
-
-Outlines the front and rear drive locations in the HPE Apollo 4200 Gen10 server
-
-## Requirements
-
-* HPE Apollo 4200 Gen10 server
 
 For additional details on HPE Apollo 4200 servers, see the [HPE Apollo 4200 Gen10 Server Document List](https://support.hpe.com/hpsc/doc/public/display?docId=emr_na-a00061642en_us&docLocale=en_US).
 
