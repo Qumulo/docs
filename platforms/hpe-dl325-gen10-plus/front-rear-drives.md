@@ -1,7 +1,7 @@
 ---
 title: "HPE ProLiant DL325 Gen10 Plus Drive Diagrams"
 summary: "Outlines the drive locations in the HPE ProLiant DL325 Gen10 Plus server."
-permalink: platforms/hpe-dl325-gen10-plus/drive-diagrams.html
+permalink: platforms/hpe-dl325-gen10-plus/front-rear-drives.html
 sidebar: platforms_sidebar
 ---
 ## In This Article

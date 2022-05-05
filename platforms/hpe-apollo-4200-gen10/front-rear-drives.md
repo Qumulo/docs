@@ -1,7 +1,7 @@
 ---
 title: "HPE Apollo 4200 Gen10 Drive Diagrams"
 summary: "Outlines the drive locations in the HPE Apollo 4200 Gen10 server."
-permalink: platforms/hpe-apollo-4200-gen10/drive-diagrams.html
+permalink: platforms/hpe-apollo-4200-gen10/front-rear-drives.html
 sidebar: platforms_sidebar
 ---
 ## In This Article

@@ -1,7 +1,7 @@
 ---
 title: "HPE Proliant DL325 Gen10 Plus Network Guide"
 summary: "Networking recommendations for the HPE Apollo Proliant DL325 Gen10 Plus server"
-permalink: platforms/hpe-dl325-gen10-plus/network-guide.html
+permalink: platforms/hpe-dl325-gen10-plus/networking-cluster.html
 sidebar: platforms_sidebar
 ---
 ## In This Article
