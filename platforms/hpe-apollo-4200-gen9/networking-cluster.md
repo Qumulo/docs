@@ -36,7 +36,7 @@ This section explains how to network your HPE Apollo 4200 Gen9 cluster.
 
   {% include note.html content="The number of floating IP addresses depends on your workflow and on the clients that connect to the cluster, with a minimum of two floating IP addresses per node, per client-facing VLAN, but with no more than ten floating IP addresses per node, per client-facing VLAN&mdash;or 70 floating IP addresses per namespace." %}
 
-* Nodes connected at their maximum Ethernet speed (this ensures advertised performance). To avoid network bottlenecks, Qumulo validates system performance with this configuration by using clients that are connected at the same link speed and to the same switch as the nodes.
+* Nodes connected at their maximum Ethernet speed (this ensures advertised performance). To avoid network bottlenecks, Qumulo validates system performance with this configuration by using clients connected at the same link speed and to the same switch as the nodes.
 
 ## Node NICs and Ports
 The following diagrams show the NICs and ports on HPE A4200 Gen9 nodes.
@@ -47,7 +47,7 @@ The following diagrams show the NICs and ports on HPE A4200 Gen9 nodes.
 
 ### 180T NIC1 Ports
 
-{% include note.html content="Currently, NIC2 on this mode is unused." %}
+{% include note.html content="Currently, NIC2 on this model is unused." %}
 
 {% include image.html alt="NIC1 ports on the HPE A4200 Gen9 180T node" file="hpe-180t-dual.png" %}
 
@@ -57,13 +57,13 @@ The following diagrams show the NICs and ports on HPE A4200 Gen9 nodes.
 
 ### 288T NIC1 Ports (Dual)
 
-{% include note.html content="Currently, NIC2 on this mode is unused." %}
+{% include note.html content="Currently, NIC2 on this model is unused." %}
 
 {% include image.html alt="NIC1 ports on the dual HPE A4200 Gen9 288T node" file="hpe-288t-dual.png" %}
 
 ## Connecting to Redundant Switches
 
-This section explains how to connect a four-node HPE cluster to dual switches for redundancy. We recommend this configuration for HPE hardware. If either switch becomes inoperative, the cluster is still accessible through the remaining switch.
+This section explains how to connect a four-node HPE cluster to dual switches for redundancy. We recommend this configuration for HPE hardware. If either switch becomes inoperative, the cluster remains accessible through the remaining switch.
 
 * Connect the two 40 Gbps ports on the nodes to separate switches.
 * Use at least one port on both switches as an uplink to the client network. To ensure an acceptable level of physical network redundancy and to meet the necessary client access throughput rates, use an appropriate combination of 10, 25, 40, or 100 Gbps network uplinks.
