@@ -4,9 +4,6 @@ summary: "This guide is intended for system administrators, professional service
 permalink: platforms/hpe-apollo-4200-gen10/getting-started.html
 sidebar: platforms_sidebar
 ---
-## In This Article
-
-Outlines how to prepare HPE Apollo 4200 Gen10 nodes and create a cluster with Qumulo Core
 
 ## Requirements
 
@@ -179,8 +176,4 @@ The option for selecting the drive protection level is only available at cluster
 
 To access the dashboard in the Qumulo Core UI remotely, use any node's IP address to connect via [web browser](https://care.qumulo.com/hc/en-us/articles/115013902267-Qumulo-Core-s-Web-UI-Browser-Compatability).
 
-For additional guidance on cluster configuration and getting started, reference the [Qumulo Installation FAQ](https://care.qumulo.com/hc/en-us/articles/115008010087-Qumulo-Installation-FAQ) article for more details.
-
-**RESOLUTION**
-
-You should now be able to successfully prepare the nodes for installing Qumulo Core and create a cluster on HPE Apollo 4200 Gen10 hardware
+For additional guidance on cluster configuration and getting started, reference the [Qumulo Installation FAQ](https://care.qumulo.com/hc/en-us/articles/115008010087-Qumulo-Installation-FAQ) for more details.
