@@ -17,9 +17,7 @@ This section explains how to prepare HPE Apollo 4200 Gen9 nodes for creating a Q
 ## Step 1: Verify Your Node
 1. Shut down your node and connect a display, a keyboard, and a mouse to it.
 
-1. Plug the Qumulo Core USB Drive Installer into an available USB port on the node.
-
-1. Press the power button on the node.
+1. Plug the Qumulo Core USB Drive Installer into an available USB port on the node and then press the power button.
 
    {% include image.html alt="To power on the node, press the power button." file="hpe-front-power.png" %}
 
@@ -31,9 +29,7 @@ This section explains how to prepare HPE Apollo 4200 Gen9 nodes for creating a Q
 
 1. On the **System Utilities** page, click **System Configuration > BIOS/Platform Configuration (RBSU) > Boot Options**.
 
-1. On the **Boot Options** page, set **Boot Mode** to **Legacy BIOS Mode**.
-
-1. To save the changes, press **F10**.
+1. On the **Boot Options** page, set **Boot Mode** to **Legacy BIOS Mode**, and then press **F10**.
 
 1. Press **Esc** until you return to the main page.
 
