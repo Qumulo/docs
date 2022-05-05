@@ -29,7 +29,7 @@ entries:
       output: web, pdf
 
     - title: Front and Rear Drives
-      url: /platforms/hpe-apollo-4200-gen9/front-rear-drive-locations.html
+      url: /platforms/hpe-apollo-4200-gen9/front-rear-drives.html
       output: web, pdf
 
     - title: Panel LEDs
