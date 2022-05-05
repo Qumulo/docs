@@ -100,7 +100,7 @@ This section explains how to prepare HPE Apollo 4200 Gen9 nodes for creating a Q
 
      When all areas pass, continue to [install Qumulo Core by using the USB drive installer](#step-5-install-qumulo-core-by-using-the-usb-drive-installer).
    
-   * You can ignore any **FAIL** messages on the boot order.
+   * You can ignore any **FAIL** messages about the boot order.
 
 ## Step 4: (Optional) Flash the HPE Intelligent Provisioning Firmware
 
