@@ -37,7 +37,7 @@ To locate the front panel LEDs, use the following diagram.
 
      {% include note.html content="This LED behavior depends on the IPMI (iLO) 08-HD Max sensor reading." %}
 
-   * **Off:** No power present.
+   * **Off:** No power present
 
 1. **Power On or Standby Button and System Power LED**
 
@@ -51,7 +51,7 @@ To locate the front panel LEDs, use the following diagram.
    * 🔵 **Solid Blue:** Activated
    * 🔵 **Flashing Blue:**
 
-     * 1 flash per second:  Remote management or firmware upgrade in progress
+     * 1 flash per second: Remote management or firmware upgrade in progress
      * 4 flashes per second: IPMI (iLO) manual reboot sequence initiated
      * 8 flashes per second: IPMI (iLO) manual reboot sequence in progress
 
@@ -61,7 +61,7 @@ To locate the front panel LEDs, use the following diagram.
 If the (3) Front Drive Health or Thermal LED, or the (4) Power On or Standby Button and System Power LED is off, one of the following conditions is possible:
 
 <ul>
-  <li>Facility power off</li>
+  <li>Facility power not present</li>
   <li>Power cord detached</li>
   <li>No power supplies installed</li>
   <li>Power supply failure</li>
