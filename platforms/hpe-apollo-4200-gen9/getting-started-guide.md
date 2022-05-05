@@ -66,18 +66,24 @@ This section explains how to prepare HPE Apollo 4200 Gen9 nodes for creating a Q
 
 {% include caution.html content="If your node contains any live data, *don't* run the FVT." %}
 
-1. Access the **Field Verification Tool (FVT) menu** by typing **1** or **FVT** and hit **ENTER**.  {% include image.html alt="" file="fvt-menu.png" %}
+1. On the main menu, select **1) FVT, Enter FVT sub menu**.
 
-2. Flash the node components to the required versions by typing either **1** or **FLASH** and hit **ENTER**.  {% include image.html alt="" file="fvt-verify.png" %}
+1. To update the node components to required versions, choose **1) FLASH, Flash components to required versions**.
 
-3. Type **1** or **FVT** on the **main menu** to continue with the test.  {% include image.html alt="" file="fvt-menu.png" %}
+1. On the main menu, to continue with the test, select **1) FVT, Enter FVT sub menu**.
 
-4. Type **2** or **VERIFY** and hit **ENTER** to check the node configuration.  {% include image.html alt="" file="fvt-flash.png" %}
+1. On the **===FIELD VERIFICATION TOOL===** page, to verify the node configuration, select **2) VERIFY, verify node configuration**.
+
+1. Review the verification results.
 
 5. Review the results and consider the following before proceeding with a clean install of Qumulo Core:
 
-    -   **FAIL** messages reported from **VERIFY** are **not** indicative of an unsuccessful **FLASH** command and can be resolved with a power-cycle to reflect recent firmware changes.
-    -   **FAIL** messages on the boot order when running **VERIFY** can be ignored at this time.
+   {{site.data.alerts.note}}
+   <ul>
+     <li>Any **FAIL** messages aren't indicative of an unsuccessful flash command. To resolve these issues, power-cycle the node to apply the most recent firmware changes.</li>
+     <li>At this time, you can ignore any **FAIL** messages on the boot order.</li>
+   </ul>
+   {{site.data.alerts.end}}
 
 ### FVT Pass Example
 
