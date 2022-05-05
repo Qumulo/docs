@@ -131,15 +131,18 @@ Use one of the following options to update the HPE Intelligent Provisioning firm
 
 1. Place the `.iso` file in a network location that your node can access.
 
-1. Select **Insert Media** and check the **boot on next reboot option** for the iso on the **virtual media page**.  {% include image.html alt="" file="virtual-media-page.png" %}
+1. On the **Virtual Media** page, click **boot on next reboot** and then click **Insert Media**.
 
-1. Reset the node and allow the install to complete.  {% include image.html alt="" file="hpe-intelligent-provisioning-update-page.png" %}
+1. Reboot the node.
 
-1. Reboot the node into the installer/FVT.
+   On the **Intelligent Provisioning Update ISO Version X.XX** page, the installation progress appears.
 
-1. Once complete, return to **step 3** of the **RUN FIELD VERIFICATION TOOL** section to rerun FVT.
+1. Reboot the node and (run the FVT)[#step-3-run-the-field-verification-tool-fvt].
 
-1. Type **2** or **VERIFY** and hit **ENTER** to check the node configuration. If all fields pass, you may now proceed to install Qumulo Core.
+1. Select **2) VERIFY, verify node configuration**.
+
+   If all areas pass, you can continue to install Qumulo Core.
+
 
 ## Step 5: Install Qumulo Core by Using the USB Drive Installer
 
