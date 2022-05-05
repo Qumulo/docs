@@ -1,31 +1,30 @@
 ---
 title: "Qumulo on HPE Apollo 4200 Gen9 Getting Started Guide"
-summary: "This guide is intended for system administrators, professional service providers, and colleagues in your organization who are responsible for installing and configuring server hardware."
+summary: "This section explains how to prepare HPE Apollo 4200 Gen9 nodes for creating a Qumulo Core cluster."
 permalink: platforms/hpe-apollo-4200-gen9/getting-started-guide.html
 sidebar: platforms_sidebar
+keywords: getting started guide, quick reference, HPE, Apollo 4200 Gen9
 ---
-## In This Article
 
-Outlines how to prepare HPE Apollo 4200 Gen9 nodes and create a cluster with Qumulo Core
+This section explains how to prepare HPE Apollo 4200 Gen9 nodes for creating a Qumulo Core cluster. This guide is for system administrators, professional service providers, and colleagues in your organization who are responsible for installing and configuring server hardware. For more information, see [HPE Apollo 4200 Gen9 - Server Document List](https://support.hpe.com/hpesc/public/docDisplay?docLocale=en_US&docId=c05058024).
 
-## Requirements
+## Prerequisites
+* The latest Qumulo-certified HPE service pack installed on your nodes. For more information, contact [Qumulo Care](https://care.qumulo.com/hc/en-us/articles/115008409408).
+* The [Qumulo Core USB Drive Installer](https://care.qumulo.com/hc/en-us/articles/360034690034)
 
--   HPE Apollo 4200 Gen9 hardware installed
--   Latest Qumulo-certified HPE service pack installed
-    -   Contact [Qumulo Care](https://care.qumulo.com/hc/en-us/articles/115008409408-Contact-Qumulo-Care-) for details
--   [Qumulo Core USB Installer Key](https://care.qumulo.com/hc/en-us/articles/360034690034)
 
-For additional details on the HPE Apollo 4200 Gen9 server, reference the [HPE Apollo 4200 Gen9 Server Document List](https://support.hpe.com/hpesc/public/docDisplay?docLocale=en_US&docId=c05058024) .
+## Step 1: Verify Your Node
+1. Shut down your node and connect a display, a keyboard, and a mouse to it.
 
-## Verify The Nodes
+1. Plug the Qumulo Core USB Drive Installer into an available USB port on the node.
 
-1. Shut down the node and connect it to a display, keyboard, and mouse.
+1. Press the power button on the node and wait for the **HPE ProLiant** boot screen to appear.
 
-2. Plug in the **Qumulo Core Installer USB key** to an available USB port.
+   {% include image.html alt="To power on the node, press the power button." file="hpe-front-power.png" %}
 
-3. Press the power button highlighted below to power the node on and wait for the machine’s **boot screen** to display.  {% include image.html alt="" file="hpe-front-pw.png" %}
+4. Do one of the following:
 
-4. Verify that the **Boot Mode** is set to **Legacy BIOS**.  {% include image.html alt="" file="hpe-boot-mode.png" %}
+   * If the `Boot Mode: Legacy BIOS` message appears, skip the rest of this section 
 
     -   **If the Boot Mode is Legacy BIOS**, disregard the rest of the steps in this section and proceed to the **BOOT TO QUMULO CORE USB INSTALLER KEY** section.
     -   **If the Boot Mode is not Legacy BIOS**, press **F9** to access the **System Utilities menu** and proceed with the subsequent steps.
@@ -40,7 +39,8 @@ For additional details on the HPE Apollo 4200 Gen9 server, reference the [HPE Ap
 
 9. Select **Reboot the System**.
 
-## Boot To The Qumulo Core USB Installer Key
+
+## Step 2: Boot by Using the Qumulo Core USB Drive Installer
 
 1. Press **F11** to access the **Boot Menu** when prompted at the **HPE ProLiant screen**. Note that this boot may take a few minutes.  {% include image.html alt="" file="hpe-f11-boot.png" %}
 
