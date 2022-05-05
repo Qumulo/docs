@@ -40,11 +40,11 @@ entries:
       url: /platforms/hpe-apollo-4200-gen9/drive-leds.html
       output: web, pdf
 
-    - title: Configuring the Out-of-Band Management (IPMI or iLO) Port
+    - title: IPMI or iLO Port
       url: /platforms/hpe-apollo-4200-gen9/configuring-ipmi-ilo-port.html
       output: web, pdf
 
-    - title: Networking Your Cluster
+    - title: Cluster Networking
       url: /platforms/hpe-apollo-4200-gen9/networking-cluster.html
       output: web, pdf
 
