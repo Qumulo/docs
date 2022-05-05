@@ -18,7 +18,7 @@ HPE A4200 Gen9 nodes provide IPMI support for out-of-band maintenance access eve
 
 {% include image.html alt="The location of the IPMI port on the HPE Apollo 4200 Gen9 node" file="hpe-gen9-ilo.png" %}
 
-Your nodes receive DHCP address assignments by default. When you configure a node's IPMI port, you can access the node by using the IP address that the DHCP server assigns to the node and a web browser that supports HTML5, Java, and .NET
+Your nodes receive DHCP address assignments by default. When you configure a node's IPMI port, you can access the node by using the IP address (that the DHCP server assigns to the node) and a web browser that supports HTML5, Java, and .NET
 
 {% include important.html content="We strongly recommend separating your IPMI access network from your client-facing network" %}
 
