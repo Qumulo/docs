@@ -11,7 +11,7 @@ The _Qumulo Platforms Guide_ is a collection of guides that provide information 
 * **[Document History](history.md)**
 * **HPE Apollo 4200 Gen9**
   * [Getting Started Guide](hpe-apollo-4200-gen9/getting-started-guide.md)
-  * [Front and Rear Drive Locations](hpe-apollo-4200-gen9/front-rear-drive-locations.md)
+  * [Front and Rear Drives](hpe-apollo-4200-gen9/front-rear-drives.md)
   * [Panel LEDs](hpe-apollo-4200-gen9/panel-leds.md)
   * [Drive LEDs](hpe-apollo-4200-gen9/drive-leds.md)
   * [Configuring the Out-of-Band Management (IPMI or iLO) Port](hpe-apollo-4200-gen9/configuring-ipmi-ilo-port.md)
