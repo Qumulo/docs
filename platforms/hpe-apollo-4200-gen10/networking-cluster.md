@@ -4,9 +4,6 @@ summary: "Networking recommendations for the HPE Apollo 4200 Gen10 server."
 permalink: platforms/hpe-apollo-4200-gen10/networking-cluster.html
 sidebar: platforms_sidebar
 ---
-## In This Article
-
-This article explains the ways in which you can connect HPE Apollo 4200 Gen10 clusters to your network.
 
 ## Requirements
 
