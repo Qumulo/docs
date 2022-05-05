@@ -42,7 +42,7 @@ The following table explains the various combinations of the two LFF LEDs.
     <td>One or more of the following conditions exist:
       <ul>
         <li>The drive has failed.</li>
-        <li>This drive received a predictive failure alert.</li>
+        <li>This system received a predictive failure alert about the drive.</li>
         <li>A management application has selected the drive.</li>
       </ul>
     </td>
@@ -60,7 +60,7 @@ The following table explains the various combinations of the two LFF LEDs.
   <tr>
     <td>On</td>
     <td>Flashing amber</td>
-    <td>This drive received a predictive failure alert. Replace the drive as soon as possible.</td>
+    <td>This system received a predictive failure alert about the drive. Replace the drive as soon as possible.</td>
   </tr>
   <tr>
     <td>On</td>
@@ -70,7 +70,7 @@ The following table explains the various combinations of the two LFF LEDs.
   <tr>
     <td>1 flash per second</td>
     <td>Flashing amber</td>
-    <td>Don't remove the drive. Removing the drive might terminate the current operation and cause data loss. The drive is part of an array that is undergoing capacity expansion or stripe migration. However, the drive received a predictive failure alert. To minimize the risk of data loss, don't remove the drive until the expansion or migration is complete.</td>
+    <td>Don't remove the drive. Removing the drive might terminate the current operation and cause data loss. The drive is part of an array that is undergoing capacity expansion or stripe migration. However, the system received a predictive failure alert about the drive. To minimize the risk of data loss, don't remove the drive until the expansion or migration is complete.</td>
   </tr>
   <tr>
     <td>1 flash per second</td>
@@ -80,7 +80,7 @@ The following table explains the various combinations of the two LFF LEDs.
   <tr>
     <td>4 flashes per second</td>
     <td>Flashing amber</td>
-    <td>The drive is active but it received a predictive faiulure alert. Replace the drive as soon as possible.</td>
+    <td>The drive is active but it received a predictive failure alert. Replace the drive as soon as possible.</td>
   </tr>
   <tr>
     <td>4 flashes per second</td>
@@ -95,12 +95,12 @@ The following table explains the various combinations of the two LFF LEDs.
   <tr>
     <td>Off</td>
     <td>Flashing amber</td>
-    <td>This drive received a predictive failure alert. Replace the drive as soon as possible.</td>
+    <td>This system received a predictive failure alert about the drive. Replace the drive as soon as possible.</td>
   </tr>
   <tr>
     <td>Off</td>
     <td>Off</td>
-    <td>The drive is offline, a space, or isn't configured as part of an array.</td>
+    <td>The drive is offline, a spare, or isn't configured as part of an array.</td>
   </tr>
 </tbody>
 </table>
@@ -113,8 +113,8 @@ To locate the SFF drive LEDs, use the following diagram.
 
 1. **Locate LED**
 
-   * 🔵 **Solid Blue:** The drive is being identified by a host application.
-   * 🔵 **Flashing Blue:** The drive carrier firmware is being updated or requires an update.
+   * 🔵 **Solid Blue:** A host application is identifying the drive.
+   * 🔵 **Flashing Blue:** The drive carrier firmware is updating or requires an update.
 
    {% include note.html content="The Locate LED is behind the release lever. When it is illuminated, it is visible." %}
 
