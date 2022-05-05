@@ -137,7 +137,7 @@ Use one of the following options to update the HPE Intelligent Provisioning firm
 
    On the **Intelligent Provisioning Update ISO Version X.XX** page, the installation progress appears.
 
-1. Reboot the node and (run the FVT)[#step-3-run-the-field-verification-tool-fvt].
+1. Reboot the node and [run the FVT](#step-3-run-the-field-verification-tool-fvt).
 
 1. Select **2) VERIFY, verify node configuration**.
 
