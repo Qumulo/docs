@@ -96,48 +96,62 @@ This section explains how to prepare HPE Apollo 4200 Gen9 nodes for creating a Q
    
    * You can ignore any **FAIL** messages about the boot order.
 
+
 ## Step 4: (Optional) Flash the HPE Intelligent Provisioning Firmware
 
 {% include important.html content="Follow the steps in this section only if the Intelligent Provisioning Version area fails verification." %}
 
 Use one of the following options to update the HPE Intelligent Provisioning firmware by using a USB drive or by using virtual media.
 
+
 ### Option 1: Update Firmware from System Utilities by Using a USB Drive
 
-1. Download the [Intelligent Provisioning for Gen9 Servers image file](https://internal.support.hpe.com/connect/s/softwaredetails?language=en_US&softwareId=MTX_f6abd3e3803e4b2395eee361c3)
+1. Download the [Intelligent Provisioning for Gen9 Servers](https://internal.support.hpe.com/connect/s/softwaredetails?language=en_US&softwareId=MTX_f6abd3e3803e4b2395eee361c3) image file.
 
-1. Convert the iso file to img format.
+1. Convert the `.iso` file to `.img` format.
 
-2. Apply the file to a USB drive or iLO virtual media.
+1. Apply the image to a USB drive. For more information, see [USB Key Utility for Windows](https://support.hpe.com/connect/s/softwaredetails?language=en_US&softwareId=MTX_360731071b404454b454390208) on the HPE Support Center.
 
-    -   Reference the [USB Key Utility for Windows](https://support.hpe.com/hpesc/public/km/product/1008862658/Product?cc=us&lang=en#t=DriversandSoftware&sort=relevancy&layout=table) article from HPE Support Center for more information.
+1. Insert the USB drive into the node.
 
-3. Attach the media to the server.
+1. To enter the boot menu, press **F11**.
 
-4. Press **F11** to enter the **boot menu**.
+1. Select **boot from USB stick**.
 
-5. Select **boot from USB stick**, and allow the Intelligent provisioning package to update the firmware.
+   The Intelligent Provisioning package updates your firmware.
 
-6. Once the upgrade is complete, press **ESC** to return to the **main menu** and reboot the system.
+1. When the upgrade is complete, press **Esc** until you return to the main page.
+
+1. Reboot the node.
+
 
 ### Option 2: Update Firmware from System Utilities by Using Virtual Media
 
-1. Download the [Intelligent Provisioning for Gen9 Servers image file](https://internal.support.hpe.com/connect/s/softwaredetails?language=en_US&softwareId=MTX_f6abd3e3803e4b2395eee361c3).
+1. Download the [Intelligent Provisioning for Gen9 Servers](https://internal.support.hpe.com/connect/s/softwaredetails?language=en_US&softwareId=MTX_f6abd3e3803e4b2395eee361c3) image file.
 
-1.  Put the iso in an accessible location over the network for the node.
-2.  Select **Insert Media** and check the **boot on next reboot option** for the iso on the **virtual media page**.  {% include image.html alt="" file="virtual-media-page.png" %}
-3.  Reset the node and allow the install to complete.  {% include image.html alt="" file="hpe-intelligent-provisioning-update-page.png" %}
-4.  Reboot the node into the installer/FVT.
-5.  Once complete, return to **step 3** of the **RUN FIELD VERIFICATION TOOL** section to rerun FVT.
-6.  Type **2** or **VERIFY** and hit **ENTER** to check the node configuration. If all fields pass, you may now proceed to install Qumulo Core.
+1. Place the `.iso` file in a network location that your node can access.
+
+1. Select **Insert Media** and check the **boot on next reboot option** for the iso on the **virtual media page**.  {% include image.html alt="" file="virtual-media-page.png" %}
+
+1. Reset the node and allow the install to complete.  {% include image.html alt="" file="hpe-intelligent-provisioning-update-page.png" %}
+
+1. Reboot the node into the installer/FVT.
+
+1. Once complete, return to **step 3** of the **RUN FIELD VERIFICATION TOOL** section to rerun FVT.
+
+1. Type **2** or **VERIFY** and hit **ENTER** to check the node configuration. If all fields pass, you may now proceed to install Qumulo Core.
 
 ## Step 5: Install Qumulo Core by Using the USB Drive Installer
 
-1.  Power on the node or perform a reboot.
-2.  Press the **F11 key** to enter the **boot menu** on the **BIOS splash screen**.
-3.  Type **2** to continue with the install and boot from the USB Installer key.
-4.  Select **no** when asked to change between RAID and HBA modes to proceed to the **DESTROY ALL DATA** page.
-5.  Type **DESTROY ALL DATA** (case-sensitive) to perform a clean install of Qumulo Core on your cluster.
+1. Power on the node or perform a reboot.
+
+2. Press the **F11 key** to enter the **boot menu** on the **BIOS splash screen**.
+
+3. Type **2** to continue with the install and boot from the USB Installer key.
+
+4. Select **no** when asked to change between RAID and HBA modes to proceed to the **DESTROY ALL DATA** page.
+
+5. Type **DESTROY ALL DATA** (case-sensitive) to perform a clean install of Qumulo Core on your cluster.
 
 {{site.data.alerts.important}}
 If you mistype <b>DESTROY ALL DATA</b> three times or type <b>no</b>, the installation will be aborted.
@@ -145,13 +159,11 @@ If you mistype <b>DESTROY ALL DATA</b> three times or type <b>no</b>, the instal
 
 The node will automatically shut down once the installation of Qumulo Core is complete. At that time, remove the USB stick and press the power button to turn on the node. A successful install using the Qumulo Core USB Installer Key will boot the node to the End User Agreement page, the first step in creating a new cluster with Qumulo Core. Before you agree and continue, repeat the steps outlined above for each node that will be included in your Qumulo cluster.
 
-## Step 6: Create A Cluster
+## Step 6: Create and Configure Your Cluster
 
-Review the End User License Agreement, check the box to agree and click **Submit.**
+1. Review the End User License Agreement, check the box to agree and click **Submit.**
 
 {% include image.html alt="" file="user-agreement.png" %}
-
-### Step 1: Configure Your Cluster
 
 1.  Name the cluster.
 2.  Select the nodes for the cluster .
@@ -165,7 +177,7 @@ The total capacity for the cluster is dynamically updated at the bottom of the p
 
 {% include image.html alt="" file="capacity.png" %}
 
-### Step 2: Configure the Cluster Protection Level
+## Step 7: Configure the Cluster Protection Level
 
 The recommended 2 or 3 drive protection level will be selected by default based on the cluster size and node type.
 
@@ -179,7 +191,7 @@ If **Customize Protection Level** is displayed, the option is available to incre
 The option for selecting the drive protection level is only available at cluster creation and cannot be changed after the fact.
 {{site.data.alerts.end}}
 
-### Step 3: Create a Password For Your Administrative Account
+## Step 8: Create a Password For Your Administrative Account
 
 1.  Type in the password for your admin account.
 2.  Retype the password to confirm.
