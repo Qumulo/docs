@@ -32,8 +32,8 @@ entries:
       url: /platforms/hpe-apollo-4200-gen9/front-rear-drive-locations.html
       output: web, pdf
 
-    - title: Node LEDs
-      url: /platforms/hpe-apollo-4200-gen9/node-leds.html
+    - title: Panel LEDs
+      url: /platforms/hpe-apollo-4200-gen9/panel-leds.html
       output: web, pdf
 
     - title: Drive LEDs
