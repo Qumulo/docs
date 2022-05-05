@@ -8,6 +8,7 @@ keywords: getting started guide, quick reference, HPE, Apollo 4200 Gen9
 
 This section explains how to prepare HPE Apollo 4200 Gen9 nodes for creating a Qumulo Core cluster. This guide is for system administrators, professional service providers, and colleagues in your organization who are responsible for installing and configuring server hardware. For more information, see [HPE Apollo 4200 Gen9 - Server Document List](https://support.hpe.com/hpesc/public/docDisplay?docLocale=en_US&docId=c05058024).
 
+
 ## Prerequisites
 * The latest Qumulo-certified HPE service pack installed on your nodes. For more information, contact [Qumulo Care](https://care.qumulo.com/hc/en-us/articles/115008409408).
 * The [Qumulo Core USB Drive Installer](https://care.qumulo.com/hc/en-us/articles/360034690034)
@@ -78,26 +79,32 @@ This section explains how to prepare HPE Apollo 4200 Gen9 nodes for creating a Q
 
 5. Review the results and consider the following before proceeding with a clean install of Qumulo Core.
 
-   * **PASSED** messages (for example, ***=== TEST: Drives in whitelist and proper slot : PASSED***) indicate correct configuration.
+   * **PASSED** messages indicate correct configuration. For example:
 
-     If all areas pass, continue to
+     ```
+     === TEST: Drives in whitelist and proper slot : PASSED
+     ```
 
-   * **FAIL** messages don't indicate an unsuccessful flash command. To resolve these issues, power-cycle the node to apply the most recent firmware changes.
+     If all areas pass, continue to [install Qumulo Core by using the USB drive installer](#step-5-install-qumulo-core-by-using-the-usb-drive-installer).
+
+   * **FAIL** messages don't indicate an unsuccessful flash command. For example:
+
+     ```
+     === TEST: SmartArray Slot 0 : FAILED
+     ERROR: FW 4.52, Expected 6.30
+     ```
+   
+     To resolve these issues, power-cycle the node to apply the most recent firmware changes.
+
+   * If the Intelligent Provisioning Version area fails verification, continue to [flash the HPE Intelligent Provisioning Firmware](), and then return to this section and run the **VERIFY** command in the FVT.
+
+     When all areas pass, continue to [install Qumulo Core by using the USB drive installer](#step-5-install-qumulo-core-by-using-the-usb-drive-installer).
    
    * You can ignore any **FAIL** messages on the boot order.
 
-### FVT Pass Example
+## Step 4: (Optional) Flash the HPE Intelligent Provisioning Firmware
 
-{% include image.html alt="" file="fvt-pass.png" %}
-
-### FVT Fail Example
-
-{% include image.html alt="" file="fvt-fail.png" %}
-
--   If all fields pass, you may skip the **FLASHING OF HPE INTELLIGENT PROVISIONING FIRMWARE** section and continue cluster configuration by following the steps outlined in the **INSTALL QUMULO CORE VIA THE USB KEY** section.
--   If the category for the Intelligent Provisioning Version returns **FAILED**, execute the steps in the **FLASHING OF HPE INTELLIGENT PROVISIONING FIRMWARE** section below. Once complete, return to **step 3 in this section** and run the **VERIFY** command for FVT. If all fields pass, you may continue to the **INSTALL QUMULO CORE VIA THE USB KEY** section.
-
-## Step 4: Flash HPE Intelligent Provisioning Firmware
+{% include important.html content="Follow the steps in this section only if the Intelligent Provisioning Version area fails verification." %}
 
 {{site.data.alerts.important}}
 ONLY execute these instructions if the Intelligent Provisioning check in the FVT failed.
