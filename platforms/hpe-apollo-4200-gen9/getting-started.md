@@ -181,10 +181,12 @@ Perform the following steps on every node in your cluster.
 
 1. If the **Customize Protection Level** option appears, you can increase your system resilience by selecting 3-drive protection.
 
-   {{site.data.alerts.important}}<ul>
+   {{site.data.alerts.important}}
+   <ul>
      <li>The option for selecting the drive protection level is available only at cluster creation time. You can't change it later.</li>
      <li>Using 3-drive protection reduces the total capacity of your cluster.</li>
-   </ul>{{site.data.alerts.important}}
+   </ul>
+   {{site.data.alerts.end}}
 
 1. Enter a password for the administrative account and click **Create Cluster**.
 
