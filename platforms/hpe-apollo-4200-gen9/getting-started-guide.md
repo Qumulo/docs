@@ -146,39 +146,36 @@ Use one of the following options to update the HPE Intelligent Provisioning firm
 
 ## Step 5: Install Qumulo Core by Using the USB Drive Installer
 
-1. Power on the node or perform a reboot.
+Perform the following steps for every node in your cluster.
 
-2. Press the **F11 key** to enter the **boot menu** on the **BIOS splash screen**.
+1. Power on or reboot your node.
 
-3. Type **2** to continue with the install and boot from the USB Installer key.
+1. To enter the boot menu, press **F11**.
 
-4. Select **no** when asked to change between RAID and HBA modes to proceed to the **DESTROY ALL DATA** page.
+1. To boot from the USB drive, select **2**.
 
-5. Type **DESTROY ALL DATA** (case-sensitive) to perform a clean install of Qumulo Core on your cluster.
+1. When prompted to switch between RAID and HBA modes, select **no**.
 
-{{site.data.alerts.important}}
-If you mistype <b>DESTROY ALL DATA</b> three times or type <b>no</b>, the installation will be aborted.
-{{site.data.alerts.end}}
+1. To perform a clean installation of Qumulo Core on your node, type `DESTROY ALL DATA` (case-sensitive).
 
-The node will automatically shut down once the installation of Qumulo Core is complete. At that time, remove the USB stick and press the power button to turn on the node. A successful install using the Qumulo Core USB Installer Key will boot the node to the End User Agreement page, the first step in creating a new cluster with Qumulo Core. Before you agree and continue, repeat the steps outlined above for each node that will be included in your Qumulo cluster.
+   {% include important.html content="If you mistype `DESTROY ALL DATA` three times or type `no`, the installation is aborted." %}
+
+   When the installation is complete, the node shuts down automatically.
+
+1. Remove the USB drive and power on the node.
+
 
 ## Step 6: Create and Configure Your Cluster
 
-1. Review the End User License Agreement, check the box to agree and click **Submit.**
+1. Review the **End User Agreement**, click **I agree to the End User Agreement**, and then click **Submit**.
 
-{% include image.html alt="" file="user-agreement.png" %}
+1. Name your cluster.
 
-1.  Name the cluster.
-2.  Select the nodes for the cluster .
-    -   If any nodes are missing, verify that the node is currently running and on the same network
+1. On the **Set up cluster** page, select the nodes to add to your cluster.
 
-{% include image.html alt="" file="setup-cluster.png" %}
+   As you select nodes, the total capacity of your cluster is updated at the bottom of the page.
 
-{{site.data.alerts.note}}
-The total capacity for the cluster is dynamically updated at the bottom of the page when selecting nodes.
-{{site.data.alerts.end}}
-
-{% include image.html alt="" file="capacity.png" %}
+   {% include note.html content="If any nodes are missing, confirm that they are powered on and connected to the same network." %}
 
 ## Step 7: Configure the Cluster Protection Level
 
