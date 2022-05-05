@@ -29,7 +29,7 @@ This section explains how to prepare HPE Apollo 4200 Gen9 nodes for creating a Q
 
 1. On the **System Utilities** page, click **System Configuration > BIOS/Platform Configuration (RBSU) > Boot Options**.
 
-1. On the **Boot Options** page, set **Boot Mode** to **Legacy BIOS Mode**, and then press **F10**.
+1. On the **Boot Options** page, set **Boot Mode** to **Legacy BIOS Mode** and then press **F10**.
 
 1. Press **Esc** until you return to the main page.
 
@@ -56,7 +56,7 @@ This section explains how to prepare HPE Apollo 4200 Gen9 nodes for creating a Q
 
    * For an unencrypted installation, select **1) SET HBA MODE, set SmartArrays in HBA mode, destroy all data, reboot node** and then press **Enter**.
 
-     After the node reboots automatically, repeat the steps in this section to boot by using the USB Drive Installer and then select **continue, install in NonSecure Mode** and then press **Enter**.
+     After the node reboots automatically, repeat the steps in this section to boot by using the USB Drive Installer, select **continue, install in NonSecure Mode**, and then press **Enter**.
      
 
 ## Step 3: Run the Field Verification Tool (FVT)
@@ -67,7 +67,7 @@ This section explains how to prepare HPE Apollo 4200 Gen9 nodes for creating a Q
 
 1. To update the node components to required versions, choose **1) FLASH, Flash components to required versions**.
 
-1. On the main menu, to continue with the test, select **1) FVT, Enter FVT sub menu**.
+1. On the main menu, to continue with the component verification, select **1) FVT, Enter FVT sub menu**.
 
 1. On the **===FIELD VERIFICATION TOOL===** page, to verify the node configuration, select **2) VERIFY, verify node configuration**.
 
@@ -135,7 +135,7 @@ Use one of the following options to update the HPE Intelligent Provisioning firm
 
 1. Reboot the node.
 
-   On the **Intelligent Provisioning Update ISO Version X.XX** page, the installation progress appears.
+   On the **Intelligent Provisioning Update ISO Version <x.xx>** page, the installation progress appears.
 
 1. Reboot the node and [run the FVT](#step-3-run-the-field-verification-tool-fvt).
 
@@ -146,7 +146,7 @@ Use one of the following options to update the HPE Intelligent Provisioning firm
 
 ## Step 5: Install Qumulo Core by Using the USB Drive Installer
 
-Perform the following steps for every node in your cluster.
+Perform the following steps on every node in your cluster.
 
 1. Power on or reboot your node.
 
@@ -158,7 +158,7 @@ Perform the following steps for every node in your cluster.
 
 1. To perform a clean installation of Qumulo Core on your node, type `DESTROY ALL DATA` (case-sensitive).
 
-   {% include important.html content="If you mistype `DESTROY ALL DATA` three times or type `no`, the installation is aborted." %}
+   {% include important.html content="If you mistype `DESTROY ALL DATA` three times or if you type `no`, the installation is aborted." %}
 
    When the installation is complete, the node shuts down automatically.
 
@@ -173,7 +173,7 @@ Perform the following steps for every node in your cluster.
 
 1. On the **1. Set up cluster** page, select the nodes to add to your cluster.
 
-   As you select nodes, the total capacity of your cluster is updated at the bottom of the page.
+   As you select nodes, the installer updates the total capacity of your cluster at the bottom of the page.
 
    {% include note.html content="If any nodes are missing, confirm that they are powered on and connected to the same network." %}
 
@@ -181,15 +181,15 @@ Perform the following steps for every node in your cluster.
 
 1. If the **Customize Protection Level** option appears, you can increase your system resilience by selecting 3-drive protection.
 
-   {{site.data.alerts.note}}
+   {{site.data.alerts.important}}
    <ul>
      <li>The option for selecting the drive protection level is available only at cluster creation time. You can't change it later.</li>
      <li>Using 3-drive protection reduces the total capacity of your cluster.</li>
    </ul>
-   {{site.data.alerts.end}}
+   {{site.data.alerts.important}}
 
-1. Enter the password for your administrative account and click **Create Cluster**.
+1. Enter a password for the administrative account and click **Create Cluster**.
 
-1. To access the Qumulo Core Web UI, use any node's IP address to connect by using a web browser. For more information, see [Qumulo Core Web UI Browser Compatibility](https://care.qumulo.com/hc/en-us/articles/115013902267) in Qumulo Care.
+1. To access the Qumulo Core Web UI, connect to any node by entering its IP address into a web browser. For more information, see [Qumulo Core Web UI Browser Compatibility](https://care.qumulo.com/hc/en-us/articles/115013902267) in Qumulo Care.
 
 For more information about configuring your cluster configuration and getting started with Qumulo Core, see [Qumulo Installation FAQ](https://care.qumulo.com/hc/en-us/articles/115008010087-Qumulo-Installation-FAQ) in Qumulo Care.
