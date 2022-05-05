@@ -18,15 +18,15 @@ This section explains how to prepare HPE Apollo 4200 Gen9 nodes for creating a Q
 
 1. Plug the Qumulo Core USB Drive Installer into an available USB port on the node.
 
-1. Press the power button on the node and wait for the **HPE ProLiant** boot screen to appear.
+1. Press the power button on the node..
 
    {% include image.html alt="To power on the node, press the power button." file="hpe-front-power.png" %}
 
-1. Do one of the following:
+1. On the **HPE ProLiant** boot screen, do one of the following:
 
-   * If the `Boot Mode: Legacy BIOS` message appears, skip the rest of this section and continue to [boot by using the Qumulo Core USB Drive Installer](#step-2-boot-by-using-the-qumulo-core-usb-drive-installer).
+   * If the **Boot Mode: Legacy BIOS** message appears, skip the rest of this section and continue to [boot by using the Qumulo Core USB Drive Installer](#step-2-boot-by-using-the-qumulo-core-usb-drive-installer).
 
-   * If the `Boot Mode: Legacy BIOS` message doesn't appear, press **F9**.
+   * If the **Boot Mode: Legacy BIOS** message doesn't appear, press **F9**.
 
 1. On the **System Utilities** page, click **System Configuration > BIOS/Platform Configuration (RBSU) > Boot Options**.
 
@@ -41,18 +41,26 @@ This section explains how to prepare HPE Apollo 4200 Gen9 nodes for creating a Q
 
 ## Step 2: Boot by Using the Qumulo Core USB Drive Installer
 
-1. Press **F11** to access the **Boot Menu** when prompted at the **HPE ProLiant screen**. Note that this boot may take a few minutes.  {% include image.html alt="" file="hpe-f11-boot.png" %}
+1. On the **HPE ProLiant** boot screen, press **F11**.
 
-2. Press **ENTER** to boot into the **Legacy Bios One-Time Boot Menu**.  {% include image.html alt="" file="hpe-legacy-boot.png" %}
+   {% include note.html content="The **Boot Menu** page might take a few minutes to appear." %}
 
-3. Press **ENTER** again to confirm.  {% include image.html alt="" file="hpe-enter-one-time-boot.png" %}
+1. On the **Boot Menu** page, to boot into the **Legacy BIOS One-Time Boot Menu**, press **Enter**.
 
-4. Select **Option 2** from the **Default Boot Override Options** to do a one-time boot to the Qumulo Core USB Installer key.  {% include image.html alt="" file="hpe-one-time-boot-options.png" %}
+1. In the blue dialog box, to confirm, press **Enter**.
 
-5. Select one of the following options to continue the install:  {% include image.html alt="" file="hpe-smartarray-mode.png" %}
+1. From the **Default Boot Override Options** menu, select **2) One Time Boot to USB DriveKey**.
 
-    -   For an **encrypted** install, select **option 2** and hit **ENTER**.
-    -   For a **non-encrypted** install, select **option 1** and hit **ENTER**. Once the node automatically reboots, repeat the steps in this section to boot to the USB Installer key. Once you return to the SmartArray Mode prompt, select the **continue, install in NonSecure Mode** option for the following boot.
+   The platform name appears.
+
+1. Do one of the following:
+
+   * For an encrypted installation, select **2) no, continue install in Secure mode** and then press **Enter**.
+
+   * For an unencrypted installation, select **1) SET HBA MODE, set SmartArrays in HBA mode, destroy all data, reboot node** and then press **Enter**.
+
+     After the node reboots automatically, repeat the steps in this section to boot by using the USB Drive Installer and then select **continue, install in NonSecure Mode** and then press **Enter**.
+     
 
 ## Run Field Verification Tool
 
