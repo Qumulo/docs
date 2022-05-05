@@ -6,8 +6,6 @@ sidebar: platforms_sidebar
 ---
 *IPMI on a Public LAN can be a major security liability providing anyone with the proper credentials direct hardware and console level access to your server. Please use good security practices when implementing IPMI (iLO) access.*
 
-## In This Article
-
 -   Outlines how to configure IPMI (iLO) on HPE Apollo 4200 Gen10 servers
 
     -   IPMI (iLO) port location
