@@ -188,9 +188,7 @@ Perform the following steps for every node in your cluster.
    </ul>
    {{site.data.alerts.end}}
 
-1. Enter the password for your administrative account.
-
-1. Click **Create Cluster**.
+1. Enter the password for your administrative account and click **Create Cluster**.
 
 1. To access the Qumulo Core Web UI, use any node's IP address to connect by using a web browser. For more information, see [Qumulo Core Web UI Browser Compatibility](https://care.qumulo.com/hc/en-us/articles/115013902267) in Qumulo Care.
 
