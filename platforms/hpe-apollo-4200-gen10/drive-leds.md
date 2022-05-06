@@ -12,17 +12,100 @@ This section explains the LEDs of large form factor (LFF) and small form factor 
 
 To locate the LFF drive LEDs, use the following diagram.
 
+<!-- Reuse the Gen9 image -->
 {% include image.html alt="Large form factor (LFF) drive LEDs on the HPE Apollo 4200 Gen10 node" file="../../hpe-apollo-4200-gen9/images/lff-drive-leds.png" %}
 
+You can determine the current state of an LFF drive by reviewing the status of the following LEDs:
 
-The current state of an LFF drive can be determined by reviewing the status of both the **Fault/UID LED** and the **Online/Activity LED**.
+1. **Fault or UID LED**
 
--   **(1) Fault/UID LED**: glows either amber or blue
--   **(2) Online/Activity LED**: glows green
+   * 🟠 **Amber**
+   * 🔵 **Blue**
 
-Reference the following table to decode the different combinations of the two LFF LEDs:
+1. **Online or Activity LED**
 
-{% include image.html alt="" file="lff-drive-chart.jpg" %}
+   * 🟢 **Green**
+
+The following table explains the various combinations of the two LFF LEDs.
+
+<table>
+<thead>
+  <tr>
+    <th>Online or Activity LED</th>
+    <th>Fault or UID LED</th>
+    <th>Description</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>On, off, or flashing</td>
+    <td>Alternating amber and blue</td>
+    <td>One or more of the following conditions exist:
+      <ul>
+        <li>The drive has failed.</li>
+        <li>This system received a predictive failure alert about the drive.</li>
+        <li>A management application has selected the drive.</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>On, off, or flashing</td>
+    <td>Solid blue</td>
+    <td>One or more of the following conditions exist:
+      <ul>
+        <li>The drive is operating normally.</li>
+        <li>A management application has selected the drive.</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>On</td>
+    <td>Flashing amber</td>
+    <td>This system received a predictive failure alert about the drive. Replace the drive as soon as possible.</td>
+  </tr>
+  <tr>
+    <td>On</td>
+    <td>Off</td>
+    <td>The drive is online but isn't active currently.</td>
+  </tr>
+  <tr>
+    <td>1 flash per second</td>
+    <td>Flashing amber</td>
+    <td>Don't remove the drive. Removing the drive might terminate the current operation and cause data loss. The drive is part of an array that is undergoing capacity expansion or stripe migration. However, the system received a predictive failure alert about the drive. To minimize the risk of data loss, don't remove the drive until the expansion or migration is complete.</td>
+  </tr>
+  <tr>
+    <td>1 flash per second</td>
+    <td>Off</td>
+    <td>Don't remove the drive. Removing the drive might terminate the current operation and cause data loss. The drive is rebuilding, erasing, or is part of an array that is undergoing capacity expansion or stripe migration.</td>
+  </tr>
+  <tr>
+    <td>4 flashes per second</td>
+    <td>Flashing amber</td>
+    <td>The drive is active but it received a predictive failure alert. Replace the drive as soon as possible.</td>
+  </tr>
+  <tr>
+    <td>4 flashes per second</td>
+    <td>Off</td>
+    <td>The drive is active and is operating normally.</td>
+  </tr>
+  <tr>
+    <td>Off</td>
+    <td>Solid amber</td>
+    <td>The drive has a critical fault condition and the controller has placed it offline. Replace the drive as soon as possible.</td>
+  </tr>
+  <tr>
+    <td>Off</td>
+    <td>Flashing amber</td>
+    <td>This system received a predictive failure alert about the drive. Replace the drive as soon as possible.</td>
+  </tr>
+  <tr>
+    <td>Off</td>
+    <td>Off</td>
+    <td>The drive is offline, a spare, or isn't configured as part of an array.</td>
+  </tr>
+</tbody>
+</table>
+
 
 ### Small Form Factor (SFF) Gen10 Drive LEDs
 
