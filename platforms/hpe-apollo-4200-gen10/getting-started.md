@@ -121,16 +121,7 @@ Perform the following steps on every node in your cluster.
          <li>One numeric character</li>
          <li>One symbol (such as <code>#</code> or <code>$</code>)</li>
        </ul>
-     <li>Your encryption master key must be 10-32 characters long.</li>
-     <li>
-       <p>Both your login password and encryption master key:</p>
-       <ul>
-         <li>Can use uppercase and lowercase letters, numbers, and symbols</li>
-         <li>Must use only ASCII characters</li>
-         <li>Must not use spaces, semicolons (<code>;</code>), or quotation marks (<code>"</code>)</li>
-       </ul>
-     </li>
-     <li>Store your master key in a secure location for the lifetime of the cluster.</li>
+
    </ul>
    {{site.data.alerts.end}}
    
