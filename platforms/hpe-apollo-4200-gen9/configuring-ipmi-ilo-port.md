@@ -1,12 +1,12 @@
 ---
-title: "Configuring the Out-of-Band Management (IPMI or iLO) Port on HPE Apollo 4200 Gen9 Nodes"
-summary: "This section explains how to configure the out-of-band management (IPMI or iLO) port on HPE Apollo 4200 Gen9 nodes."
+title: "Configuring and Using the Out-of-Band Management (IPMI or iLO) Port on HPE Apollo 4200 Gen9 Nodes"
+summary: "This section explains how to configure and use the out-of-band management (IPMI or iLO) port on HPE Apollo 4200 Gen9 nodes."
 permalink: platforms/hpe-apollo-4200-gen9/configuring-ipmi-ilo-port.html
 sidebar: platforms_sidebar
 keywords: out-of-band management, out of band management, IPMI, iLO, DHCP, network, networking, LAN, ipmitool
 ---
 
-This section explains how to configure the out-of-band management (IPMI or iLO) port on HPE Apollo 4200 Gen9 nodes.
+This section explains how to configure and use the out-of-band management (IPMI or iLO) port on HPE Apollo 4200 Gen9 nodes.
 
 {% include important.html content="Access to the out-of-bound management (IPMI or iLO) port on a public LAN can have serious security implications because it can grant anyone with credentials direct access to your server's hardware and console. Follow security best practices when implementing IPMI access." %}
 
