@@ -46,23 +46,19 @@ The following diagrams show the NICs and ports on HPE A4200 Gen10 nodes.
 
 {% include image.html alt="NIC1 ports on HPE Apollo 4200 Gen10 nodes" file="hpe-networking-gen10-rear.png" %}
 
-## Connecting To A Switch
+## Connecting to Redundant Switches
 
-### Connecting To Redundant Switches
+This section explains how to connect a four-node HPE cluster to dual switches for redundancy. We recommend this configuration for HPE hardware. If either switch becomes inoperative, the cluster remains accessible through the remaining switch.
 
-This section explains how to connect a four-node HPE cluster to dual switches for redundancy. We recommend this configuration for HPE hardware. If either switch becomes inoperative, the cluster will still be accessible through the remaining switch.
+* Connect the two 25 Gbps, 40 Gbps, or 100 Gbps ports on the nodes to separate switches.
+* Use at least one port on both switches as an uplink to the client network. To ensure an acceptable level of physical network redundancy and to meet the necessary client access throughput rates, use an appropriate combination of 10, 25, 40, or 100 Gbps network uplinks.
+* Use at least one peer link between the switches.
 
--   Connect the two ports (two 25 Gbps, two 40 Gbps, or two 100 Gbps) on the nodes to separate switches.
--   Use at least one port on both switches as an uplink to the client network. To ensure an acceptable level of physical network redundancy and to meet the necessary client access throughput rates, use an appropriate combination of 10, 25, 40, or 100 Gbps network uplinks.
--   Use at least one peer link between the switches.
-
-### Connecting To A Single Switch
+## Connecting to a Single Switch
 
 This section explains how to connect a four-node HPE cluster to a single switch.
 
-{{site.data.alerts.note}}
-If the switch becomes inoperative, the cluster becomes inaccessible.
-{{site.data.alerts.end}}
+{% include note.html content="If the switch becomes inoperative, the cluster becomes inaccessible." %}
 
--   Connect two ports (two 25 Gbps, two 40 Gbps, or two 100 Gbps) to the switch.
--   Connect any uplink ports to the client network.
+* Connect two 25 Gbps, 40 Gbps, or 100 Gbps ports to the switch.
+* Connect any uplink ports to the client network.
