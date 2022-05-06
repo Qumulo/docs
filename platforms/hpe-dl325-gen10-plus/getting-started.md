@@ -115,7 +115,7 @@ Once the installation is complete and the server reboots, continue on to create 
 <table>
 <thead>
   <tr>
-    <th>Specification</th>
+    <th></th>
     <th>34T</th>
     <th>145T</th>
     <th>291T</th>
