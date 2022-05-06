@@ -112,8 +112,6 @@ Once the installation is complete and the server reboots, continue on to create 
 
 ## Technical Specifications
 
-{% include image.html alt="DL325 data sheet" file="dl325-datasheet.png" %}
-
 <table>
 <thead>
   <tr>
