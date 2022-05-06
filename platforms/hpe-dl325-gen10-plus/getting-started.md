@@ -13,44 +13,49 @@ This section explains how to prepare HPE ProLiant DL325 Gen10 Plus nodes for cre
 * The [Qumulo Core USB Drive Installer](https://care.qumulo.com/hc/en-us/articles/360034690034)
 
 
-## Verify The Nodes
+## Step 1: Verify Your Node
+1. Shut down your node and connect a display, a keyboard, and a mouse to it.
 
-1. Shut down the node and connect it to a display, keyboard, and mouse.
+1. Plug the Qumulo Core USB Drive Installer into an available USB port on the node and then press the power button.
 
-2. Plug in the **Qumulo Core Installer USB key** to an available USB port.
+   {% include image.html alt="To power on the node, press the power button." file="dl325-front.png" %}
 
-3. Press the power button highlighted below to power the node on and wait for the machine’s **boot screen** to display.  {% include image.html alt="Front view of DL325 node" file="dl325-front.png" %}
+1. On the **HPE ProLiant** boot screen, do one of the following:
 
-4. Verify that the **Boot Mode** is set to **Legacy BIOS**.  {% include image.html alt="Boot mode identification screen" file="hpe-dl325-boot-mode.png" %}
+   * If the **Boot Mode: Legacy BIOS** message appears, skip the rest of this section and continue to [boot by using the Qumulo Core USB Drive Installer](#step-2-boot-by-using-the-qumulo-core-usb-drive-installer).
 
-    -   **If the Boot Mode is EFI BIOS**, disregard the rest of the steps in this section and proceed to the **BOOT TO QUMULO CORE USB INSTALLER KEY** section.
-    -   **If the Boot Mode is not EFI BIOS**, press **F9** to access the **System Utilities menu** and proceed with the subsequent steps.
+   * If the **Boot Mode: Legacy BIOS** message doesn't appear, press **F9**.
 
-5. Click through the **System Configuration** page to the **BIOS/Platform Configuration** (RBSU) page and then to the **Boot Options** page.
+1. On the **System Utilities** page, click **System Configuration > BIOS/Platform Configuration (RBSU) > Boot Options**.
 
-6. Set **Boot Mode** to **EFI BIOS Mode** on the **Boot Options** page**.**
+1. On the **Boot Options** page, set **Boot Mode** to **Legacy BIOS Mode** and then press **F10**.
 
-7. Press **F10** to save the change.
+1. Press **Esc** until you return to the main page.
 
-8. Press **Esc** until you return to the **main page**.
+1. Click **Reboot the System**.
 
-9. Select **Reboot the System**.
 
-## Boot To The Qumulo Core USB Installer Key
+## Step 2: Boot by Using the Qumulo Core USB Drive Installer
 
-1.  Press **F11** to access the **Boot Menu** when prompted at the **HPE ProLiant** screen. Note that this boot may take a few minutes. {% include image.html alt="Boot menu prompt screen" file="hpe-dl325-f11.png" %}
-2.  Select **Generic USB Boot** from the Boot Menu to do a one-time boot to the Qumulo Core USB Installer key. {% include image.html alt="Boot menu" file="dl325-boot-menu.png" %}
+1. On the **HPE ProLiant** boot screen, press **F11**.
 
-## Run The Qumulo Installer
+   {% include note.html content="The **Boot Menu** page might take a few minutes to appear." %}
 
-After rebooting, the Qumulo Installer runs automatically
+1. On the **Boot Menu** page, to perform a one-time boot, click **Generic USB Boot**.
 
-1.  Choose option 1 when prompted. This will factory reset your node.  {% include image.html alt="Qumulo installer landing screen" file="dl325-installer.png" %}
-2.  Confirm you want to proceed by typing DESTROY ALL DATA.  {% include image.html alt="Qumulo installer factory reset" file="dl325-destroy-data.png" %}
+## Step 3: Using the Field Verification Tool (FVT)
 
-The Field Verification Tool (FVt) starts automatically once you confirm.   {% include image.html alt="Field verification tool start" file="dl325-fvt-start.png" %}
+After the node reboots, the Field Verification Tool starts automatically.
 
-The test results display once it has concluded. Refer to the following sections for details on Pass and Fail scenarios.
+1. Choose **[1] Factory reset (DESTROYS ALL DATA)**.
+
+1. To perform a clean installation of Qumulo Core on your node, type `DESTROY ALL DATA` (case-sensitive).
+
+1. Review the verification results and consider the following before proceeding with the installation.
+
+   * If the **FVT Passed!** message appears, continue to [install Qumulo Core by using the USB drive installer](#step-5-install-qumulo-core-by-using-the-usb-drive-installer).
+
+   * If **FAIL** messages appear, use one of the following resolutions.
 
 ### FVT Pass
 
@@ -97,7 +102,10 @@ Examples of non-fixable issues:
 
 Please reach out to [Qumulo Care](https://care.qumulo.com/hc/en-us/articles/115008409408-Contact-Qumulo-Care-) for additional troubleshooting options.
 
-## Install Qumulo Core
+
+## Step 5: Install Qumulo Core by Using the USB Drive Installer
+
+Perform the following steps on every node in your cluster.
 
 Now that the server has verified it is ready to be configured, you can start to install Qumulo Core. Select option 1 when prompted to begin.
 
@@ -105,7 +113,7 @@ Now that the server has verified it is ready to be configured, you can start to 
 
 Once the installation is complete and the server reboots, continue on to create a cluster.
 
-## Step N: Create and Configure Your Cluster
+## Step 6: Create and Configure Your Cluster
 
 {% include content-reuse/create-configure-cluster.md %}
 
