@@ -1,22 +1,19 @@
 ---
 title: "Drive LEDs on HPE Apollo 4200 Gen10 Nodes"
-summary: "This section explains the drive LEDs of your HPE Apollo 4200 Gen9 node."
+summary: "This section explains the drive LEDs in HPE Apollo 4200 Gen9 nodes."
 permalink: platforms/hpe-apollo-4200-gen10/drive-leds.html
 sidebar: platforms_sidebar
 keywords: drive, hard drive, LED, large form factor, LFF, small form factor, SFF
 ---
 
-For additional details on HPE Apollo 4200 servers, reference the [HPE Apollo 4200 Gen10 Server Document List](https://support.hpe.com/hpsc/doc/public/display?docId=emr_na-a00061642en_us&docLocale=en_US).
+This section explains the LEDs of large form factor (LFF) and small form factor (SFF) drives in your HPE Apollo 4200 Gen10 node. For more information, see [HPE Apollo 4200 Gen10 Server - Document List](https://support.hpe.com/hpesc/public/docDisplay?docLocale=en_US&docId=emr_na-a00061642en_us).
 
-## Details
+## Large Form Factor (LFF) Drive LEDs
 
-HPE Apollo 4200 Gen10 servers are comprised of a combination of large form factor (LFF) and small form factor (SFF) drives. LFF and SFF drives have different sets of LEDs to reflect the drive status.
+To locate the LFF drive LEDs, use the following diagram.
 
-### Large Form Factor (LFF) Gen10 Drive LEDs
+{% include image.html alt="Large form factor (LFF) drive LEDs on the HPE Apollo 4200 Gen10 node" file="../images/lff-drive-leds.png" %}
 
-LFF LEDs can be located using the diagram below:
-
-{% include image.html alt="" file="lff-drive-leds.png" %}
 
 The current state of an LFF drive can be determined by reviewing the status of both the **Fault/UID LED** and the **Online/Activity LED**.
 

@@ -1,6 +1,6 @@
 ---
 title: "Drive LEDs on HPE Apollo 4200 Gen9 Nodes"
-summary: "This section explains the drive LEDs of your HPE Apollo 4200 Gen9 node."
+summary: "This section explains the drive LEDs in HPE Apollo 4200 Gen9 nodes."
 permalink: platforms/hpe-apollo-4200-gen9/drive-leds.html
 sidebar: platforms_sidebar
 keywords: drive, hard drive, LED, large form factor, LFF, small form factor, SFF
