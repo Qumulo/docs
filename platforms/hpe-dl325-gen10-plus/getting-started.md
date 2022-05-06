@@ -1,18 +1,17 @@
 ---
-title: "Qumulo on HPE Proliant DL325 Gen10 Plus Getting Started Guide"
-summary: "This guide is intended for system administrators, professional service providers, and colleagues in your organization who are responsible for installing and configuring server hardware."
+title: "Getting Started with Qumulo on HPE Proliant DL325 Gen10 Plus"
+summary: "This section explains how to prepare HPE Proliant DL325 Gen10 Plus nodes for creating a Qumulo Core cluster."
 permalink: platforms/hpe-dl325-gen10-plus/getting-started.html
 sidebar: platforms_sidebar
+keywords: getting started guide, quick reference, HPE, Proliant DL325 Gen10 Plus, verify node, field verification tool, FVT, intelligent provisioning
 ---
 
-## Requirements
+This section explains how to prepare HPE Proliant DL325 Gen10 Plus nodes for creating a Qumulo Core cluster. This guide is for system administrators, professional service providers, and colleagues in your organization who are responsible for installing and configuring server hardware. For more information, see [HPE ProLiant DL325 Gen10 Plus Server - Document List](https://support.hpe.com/hpesc/public/docDisplay?docLocale=en_US&docId=a00102298en_us).
 
--   HPE Proliant DL325 Gen10 Plus hardware installed
--   Latest Qumulo-certified HPE service pack installed
-    -   Contact [Qumulo Care](https://care.qumulo.com/hc/en-us/articles/115008409408-Contact-Qumulo-Care-) for details
--   [Qumulo Core USB Installer Key](https://care.qumulo.com/hc/en-us/articles/360034690034)
+## Prerequisites
+* The latest Qumulo-certified HPE service pack installed on your nodes. For more information, contact [Qumulo Care](https://care.qumulo.com/hc/en-us/articles/115008409408).
+* The [Qumulo Core USB Drive Installer](https://care.qumulo.com/hc/en-us/articles/360034690034)
 
-For additional details on the HPE Proliant DL325 Gen10 Plus server, reference the [HPE ProLiant DL325 Gen10 Plus Server Document List](https://support.hpe.com/hpesc/public/docDisplay?docLocale=en_US&docId=a00102298en_us).
 
 ## Verify The Nodes
 
