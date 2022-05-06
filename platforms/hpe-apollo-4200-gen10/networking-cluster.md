@@ -1,46 +1,50 @@
 ---
-title: "HPE Apollo 4200 Gen10 Network Guide"
-summary: "Networking recommendations for the HPE Apollo 4200 Gen10 server."
+title: "Networking Your HPE Apollo 4200 Gen10 Cluster"
+summary: "This section explains how to network your HPE Apollo 4200 Gen10 cluster."
 permalink: platforms/hpe-apollo-4200-gen10/networking-cluster.html
 sidebar: platforms_sidebar
+keywords: network, networking, cluster, switch, Ethernet, ports, IP, 90T, 180T, 288T
 ---
 
-## Requirements
+This section explains how to network your HPE Apollo 4200 Gen10 cluster.
 
--   HPE Apollo 4200 Gen10 cluster
--   A network switch with the following criteria
-    -   Ethernet connection
-        -   HPE Apollo 4200 Gen10 (36T, 90T): 25, 40, or 100 Gbps
-        -   HPE Apollo 4200 Gen10 (192T): 100 Gbps
-        -   HPE Apollo 4200 Gen10 (336T): 25 Gbps or 40 Gbps
-    -   Fully non-blocking architecture
-    -   IPv6 capability
--   Compatible network cables
--   Enough ports to connect all nodes to the same switch fabric
--   One static IP per node, per defined VLAN
+## Prerequisites
 
-{{site.data.alerts.tip}}
-We recommend consulting with your network engineering team before connecting any Qumulo-supported equipment to your network.
-{{site.data.alerts.end}}
+* A network switch with the following criteria:
+  * Ethernet connection
+    * 36T and 90T: 25, 40, or 100 Gbps
+    * 192T: 100 Gbps
+    * 336T: 25 Gbps or 40 Gbps
+  * Fully non-blocking architecture
+  * IPv6 compatibility
+* Compatible network cables
+* A sufficient number of ports for connecting all nodes to the same switch fabric
+* One static IP per node, per defined VLAN
 
-## Configuration Recommendations
+{% include important.html content="Before you connect any Qumulo-supported equipment to your network, we strongly recommend consulting with your network engineering team." %}
 
--   Two redundant switches
--   One physical connection to each redundant switch per node
--   One Link Aggregation Control Protocol (LACP) port-channel per node with the following configuration
-    -   Active mode
-    -   Slow transmit rate
-    -   Trunk port with a native VLAN
-    -   IEEE 802.3x flow control enabled (full duplex)
--   DNS servers
--   Network Time Protocol (NTP) server
--   Firewall protocol or ports configured for [Proactive Monitoring](https://care.qumulo.com/hc/en-us/articles/115007283828-Qumulo-Care-Proactive-Monitoring)
--   Where N is the number of nodes: N-1 floating IP addresses per node (up to 10 IP addresses), per client-facing VLAN **Note:** The number of floating IP addresses depends on your workflow and the clients that connect to the cluster, with a minimum of two floating IP addresses per node, per client-facing VLAN, but with no more than ten floating IP addresses per node, per client-facing VLAN—or 70 floating IP addresses per namespace.
--   You can achieve advertised performance only if you connect your nodes at their maximum Ethernet speed. To avoid network bottlenecks, Qumulo validates system performance with this configuration by using clients that are connected at the same link speed and to the same switch as the nodes.
+## Recommended Configuration
 
-## HPE Apollo 4200 Gen10 NIC1 Ports
+* Two redundant switches
+* One physical connection to each redundant switch, per node
+* One Link Aggregation Control Protocol (LACP) port-channel per node with the following configuration:
+  * Active mode
+  * Slow transmit rate
+  * Trunk port with a native VLAN
+  * Enabled IEEE 802.3x flow control (full-duplex mode)
+* DNS servers
+* Network Time Protocol (NTP) server
+* Firewall protocol or ports configured for [Qumulo Care Proactive Monitoring](https://care.qumulo.com/hc/en-us/articles/115007283828-Qumulo-Care-Proactive-Monitoring)
+* Where N is the number of nodes, up to 10 N-1 floating IP addresses per node, per client-facing VLAN
 
-{% include image.html alt="" file="hpe-networking-gen10-rear.png" %}
+  {% include note.html content="The number of floating IP addresses depends on your workflow and on the clients that connect to the cluster, with a minimum of two floating IP addresses per node, per client-facing VLAN, but with no more than ten floating IP addresses per node, per client-facing VLAN&mdash;or 70 floating IP addresses per namespace." %}
+
+* Nodes connected at their maximum Ethernet speed (this ensures advertised performance). To avoid network bottlenecks, Qumulo validates system performance with this configuration by using clients connected at the same link speed and to the same switch as the nodes.
+
+## Node NICs and Ports
+The following diagrams show the NICs and ports on HPE A4200 Gen10 nodes.
+
+{% include image.html alt="NIC1 ports on HPE Apollo 4200 Gen10 nodes" file="hpe-networking-gen10-rear.png" %}
 
 ## Connecting To A Switch
 
