@@ -50,7 +50,7 @@ This section explains how to prepare HPE Apollo 4200 Gen10 nodes for creating a 
 1. From the **Default Boot Override Options** menu, select **2) One Time Boot to USB DriveKey**.
 
 
-## Step 3: Using the Field Verification Tool (FVT)
+## Step 3: Use the Field Verification Tool (FVT)
 
 After the node reboots, the Field Verification Tool begins to run automatically.
 
