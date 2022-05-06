@@ -105,7 +105,7 @@ Password for user 4:
 # ipmitool user enable 4
 ```
 
-### To Verify User Level Access
+### To Verify User Access Level
 
 ```
 # ipmitool channel getaccess 1 4
