@@ -48,7 +48,7 @@ This section provides technical specifications for HPE Apollo 4200 Gen10 nodes.
   </tr>
   <tr>
     <td>Management Ports</td>
-    <td colspan="4">2 &times; IPMI 1 GbE baseT (RJ45)</td>
+    <td colspan="4">2 &times; iLO 1 GbE baseT (RJ45)</td>
   </tr>
   <tr>
     <td>Connectivity Ports</td>
