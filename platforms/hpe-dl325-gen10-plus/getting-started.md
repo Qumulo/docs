@@ -53,67 +53,47 @@ After the node reboots, the Field Verification Tool starts automatically.
 
 1. Review the verification results and consider the following before proceeding with the installation.
 
-   * If the **FVT Passed!** message appears, continue to [install Qumulo Core by using the USB drive installer](#step-5-install-qumulo-core-by-using-the-usb-drive-installer).
+   * If the **FVT Passed!** message appears, select **[1] Install Qumulo Core**.
 
    * If **FAIL** messages appear, use one of the following resolutions.
 
-### FVT Pass
 
-{% include image.html alt="Field verification tool pass" file="dl325-fvt-pass.png" %}
+### Fixable Issues During Installation
+If the FVT finds fixable issues, it prompts you to auto-correct any detected issues, depending on your installation scenario. Issues that the FVT can auto-correct include the following:
 
-If you see an **FVT passed!** message, proceed to the **Installing Qumulo Core** section later in this document. If **FAIL** messages are present, review the example below to determine the appropriate course.
+* BIOS Configuration
+* Drive firmware
+* NVMe sector size
+* NIC mode
+* NIC firmware
+* Boot order
 
-### FVT Fail Cases
+1. To attempt auto-correction, select **[1] Run FVT Flash. This will try to fix issues then reboot. Please take caution as this MAY DESTROY EXISTING DATA.**
 
-**Fixable Issues during Install**
+   If the fixes are successful, the FVT reboots the node automatically.
 
-If the FVT fails and there are issues that are fixable, you will be prompted to select whether you wish to allow the FVT to auto-correct the detected issues depending on your install scenario.
-
-{% include image.html alt="Field verification tool fail" file="dl325-fvt-fail.png" %}
-
-Issues that can be auto-corrected include:
-
--   BIOS config
--   Drive firmware
--   NVMe sector size
--   NIC mode
--   NIC firmware
--   Boot order
-
-When presented with this menu, select **option 1** to have the tool attempt to fix the issues. If the fixes are successful, the FVT will automatically reboot the node. Return to the **Boot To The Qumulo Core USB Installer Key** section earlier in this document to re-attempt verification and continue the install.
-
-**Fixable Issues during Part Replacement**
-
-In Qumulo Core 3.1.0 and higher, the FVT offers an option to automatically correct issues (such as a firmware upgrade) after a part replacement has been performed. In this case, select **option 2** to run FVT Flash for a part replacement. This will fix the issue and reboot into the FVT menu once more to proceed with the installation.
-
-{% include image.html alt="Field verification tool part replacement flash" file="hpe-gen10-fvt-replacement.png" %}
-
-**Non-Fixable Issues**
-
-If the FVT is unable to automatically fix any failures detected, the  message “Not fixable issues were detected” will display after providing failure reasons.
-
-Examples of non-fixable issues:
-
--   BIOS version
--   ILO version
--   NIC FW
-
-{% include image.html alt="Field verification tool unfixable issue" file="hpe-gen10-fvt-fail-all.png" %}
-
-Please reach out to [Qumulo Care](https://care.qumulo.com/hc/en-us/articles/115008409408-Contact-Qumulo-Care-) for additional troubleshooting options.
+1. To re-attempt verification, [boot by using the Qumulo Core USB Drive Installer](#step-2-boot-by-using-the-qumulo-core-usb-drive-installer) and then continue the installation.
 
 
-## Step 5: Install Qumulo Core by Using the USB Drive Installer
+### Fixable Issues During Part Replacement
+In Qumulo Core 3.1.0 (and higher), the FVT offers you to auto-correct issues (such as firmware upgrades) after you replace a part.
 
-Perform the following steps on every node in your cluster.
+To attempt auto-correction, select **[2] Run FVT Flash for a part replacement. This will try to fix issues, then reboot. This will NOT destroy existing data.**
 
-Now that the server has verified it is ready to be configured, you can start to install Qumulo Core. Select option 1 when prompted to begin.
+The FVT reboots the node automatically and lets you continue the installation.
 
-{% include image.html alt="Qumulo core installation" file="dl325-install-qumulo.png" %}
 
-Once the installation is complete and the server reboots, continue on to create a cluster.
+### Non-Fixable Issues
+If the FVT is unable to auto-correct any issues, the message **Not fixable issues were detected.** appears, providing reasons for failure. Issues that the FVT can't auto-correct include the following:
 
-## Step 6: Create and Configure Your Cluster
+* BIOS version
+* IPMI (iLO) version
+* NIC firmware
+
+For help with troubleshooting your node, contact [Qumulo Care](https://care.qumulo.com/hc/en-us/articles/115008409408).
+
+
+## Step 5: Create and Configure Your Cluster
 
 {% include content-reuse/create-configure-cluster.md %}
 
