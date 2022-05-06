@@ -42,29 +42,29 @@ The following diagram shows the NICs and ports on HPE DL325 Gen10 Plus nodes. On
 
 {% include image.html alt="NIC1 and NIC2 ports on HPE DL325 Gen10 Plus nodes" file="dl325-rear-networking.png" %}
 
-## Connecting To A Switch
+## Connecting to Redundant Switches
 
-### Connecting a Cluster to Redundant Switches
-For redundancy, we recommend connecting an HPE All-NVMe cluster to dual switches. If either switch becomes inoperative, the cluster will still be accessible from the remaining switch.
+This section explains how to connect a four-node HPE cluster to dual switches for redundancy. We recommend this configuration for HPE hardware. If either switch becomes inoperative, the cluster remains accessible through the remaining switch.
 
 * **Front End**
-  * Connect the two front-end NIC ports (2 &#215; 100 Gbps) on your nodes to separate switches.
+  * Connect the two front-end 100 Gbps ports on your nodes to separate switches.
   * The uplinks to the client network must equal the bandwidth from the cluster to the switch.
-  * The two ports form an LACP port channel using a multi-chassis link aggregation group.
+  * The two ports form an LACP port channel by using a multi-chassis link aggregation group.
 * **Back End**
-  * Connect the two back-end NIC ports (2 &#215; 100 Gbps) on your nodes to separate switches.
+  * Connect the two back-end 100 Gbps NIC ports on your nodes to separate switches.
   * Use an appropriate inter-switch link or virtual port channel.
 * **MTU**
-  * For all connection speeds, the default behavior is that of an LACP with 1,500 MTU for the front-end and 9,000 MTU for the back-end interfaces.
+  * For all connection speeds, the default behavior is that of an LACP with 1,500 MTU for the front-end and 9,000 MTU for the back-end.
 
-### Connecting a Cluster to a Single Switch
-You can connect an HPE All-NVMe cluster to a single switch. If this switch becomes inoperative, the entire cluster will be inaccessible.
+## Connecting to a Single Switch
+
+This section explains how to connect a four-node HPE cluster to a single switch.
 
 * **Front End**
-  * Each node has two front-end NIC ports (2 &#215; 100 Gbps) connected to a single switch.
+  * Each node has two front-end 100 Gbps NIC ports connected to a single switch.
   * The uplinks to the client network must equal the bandwidth from the cluster to the switch.
   * The two ports form an LACP port channel.
 * **Back End**
-  * Each node has two band-end ports (2 &#215; 100 Gbps) connected to a single switch.
+  * Each node has two back-end 100 Gbps ports connected to a single switch.
 * **MTU**
-  * For all connection speeds, the default behavior is that of an LACP with 1,500 MTU for the front-end and 9,000 MTU for the back-end interfaces.
+  * For all connection speeds, the default behavior is that of an LACP with 1,500 MTU for the front-end and 9,000 MTU for the back-end.
