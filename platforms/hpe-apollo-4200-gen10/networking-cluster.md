@@ -51,7 +51,7 @@ The following diagrams show the NICs and ports on HPE A4200 Gen10 nodes.
 This section explains how to connect a four-node HPE cluster to dual switches for redundancy. We recommend this configuration for HPE hardware. If either switch becomes inoperative, the cluster remains accessible through the remaining switch.
 
 * Connect the two 25 Gbps, 40 Gbps, or 100 Gbps ports on the nodes to separate switches.
-* Use at least one port on both switches as an uplink to the client network. To ensure an acceptable level of physical network redundancy and to meet the necessary client access throughput rates, use an appropriate combination of 10, 25, 40, or 100 Gbps network uplinks.
+* Use at least one port on both switches as an uplink to the client network. To ensure an acceptable level of physical network redundancy and to meet the necessary client access throughput rates, use an appropriate combination of 10 Gbps, 25 Gbps, 40 Gbps, or 100 Gbps network uplinks.
 * Use at least one peer link between the switches.
 
 ## Connecting to a Single Switch
