@@ -123,7 +123,7 @@ Privilege Level : ADMINISTRATOR
 
 ### To Reset the Baseboard Management Controller
 
-If you can't connect to the IPMI management console and your network configuration is correct, reset the BMC through an SSH or KVM Console session for the affected node.
+If you can't connect to the iLO management console and your network configuration is correct, reset the BMC through an SSH or KVM Console session for the affected node.
 
 ```
 # ipmitool bmc reset cold
