@@ -1,18 +1,18 @@
 ---
-title: "Qumulo on HPE Apollo 4200 Gen10 Getting Started Guide"
-summary: "This guide is intended for system administrators, professional service providers, and colleagues in your organization who are responsible for installing and configuring server hardware."
+title: "Getting Started with Qumulo on HPE Apollo 4200 Gen10"
+summary: "This section explains how to prepare HPE Apollo 4200 Gen10 nodes for creating a Qumulo Core cluster."
 permalink: platforms/hpe-apollo-4200-gen10/getting-started.html
 sidebar: platforms_sidebar
+keywords: getting started guide, quick reference, HPE, Apollo 4200 Gen10, verify node, field verification tool, FVT, intelligent provisioning
 ---
 
-## Requirements
+This section explains how to prepare HPE Apollo 4200 Gen10 nodes for creating a Qumulo Core cluster. This guide is for system administrators, professional service providers, and colleagues in your organization who are responsible for installing and configuring server hardware. For more information, see [HPE Apollo 4200 Gen10 Server - Document List](https://support.hpe.com/hpesc/public/docDisplay?docLocale=en_US&docId=emr_na-a00061642en_us).
 
--   HPE Apollo 4200 Gen10 hardware installed
--   Latest Qumulo-certified HPE service pack installed
-    -   Contact [Qumulo Care](https://care.qumulo.com/hc/en-us/articles/115008409408-Contact-Qumulo-Care-) for details
--   [Qumulo Core USB Installer Key](https://care.qumulo.com/hc/en-us/articles/360034690034)
 
-For additional details on the HPE Apollo 4200 Gen10 server, reference the  [HPE Apollo 4200 Gen10 Server Document List](https://support.hpe.com/hpsc/doc/public/display?docId=emr_na-a00061642en_us&docLocale=en_US).
+## Prerequisites
+* The latest Qumulo-certified HPE service pack installed on your nodes. For more information, contact [Qumulo Care](https://care.qumulo.com/hc/en-us/articles/115008409408).
+* The [Qumulo Core USB Drive Installer](https://care.qumulo.com/hc/en-us/articles/360034690034)
+
 
 ## Verify The Nodes
 
