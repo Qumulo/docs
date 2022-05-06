@@ -28,3 +28,4 @@ The _Qumulo Platforms Guide_ is a collection of guides that provide information 
   * [Getting Started](hpe-dl325-gen10-plus/getting-started.md)
   * [Front and Rear Drives](hpe-dl325-gen10-plus/front-rear-drives.md)
   * [Cluster Networking](hpe-dl325-gen10-plus/networking-cluster.md)
+  * [Technical Specifications](hpe-dl325-gen10-plus/technical-specifications.md)
