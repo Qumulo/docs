@@ -42,7 +42,7 @@ This section explains how to network your HPE Apollo 4200 Gen10 cluster.
 * Nodes connected at their maximum Ethernet speed (this ensures advertised performance). To avoid network bottlenecks, Qumulo validates system performance with this configuration by using clients connected at the same link speed and to the same switch as the nodes.
 
 ## Node NICs and Ports
-The following diagrams show the NICs and ports on HPE A4200 Gen10 nodes.
+The following diagrams show the NICs and ports on HPE Apollo 4200 Gen10 nodes.
 
 {% include image.html alt="NIC1 ports on HPE Apollo 4200 Gen10 nodes" file="hpe-networking-gen10-rear.png" %}
 
