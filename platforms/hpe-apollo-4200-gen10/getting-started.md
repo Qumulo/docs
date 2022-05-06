@@ -135,3 +135,46 @@ Be sure to store the key in a secure location for the lifetime of the cluster. O
 ## Technical Specifications
 
 {% include image.html alt="" file="hpe-apollo-tech-specs.png" %}
+
+## Technical Specifications
+
+<table>
+<thead>
+  <tr>
+    <th></th>
+    <th>HPE Apollo 36 TB<br>Hybrid SSD and Disk</th>
+    <th>HPE Apollo 90 TB<br>Hybrid SSD and Disk</th>
+    <th>HPE Apollo 192 TB<br>Hybrid SSD and Disk</th>
+    <th>HPE Apollo 336 TB<br>Active Archive</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>Raw Capacity</td>
+    <td>36 TB</td>
+    <td>90 TB</td>
+    <td>192 TB</td>
+    <td>336 TB</td>
+  </tr>
+  <tr>
+    <td>HDDs</td>
+    <td>9 &times; 4 TB</td>
+    <td>9 &times; 10 TB</td>
+    <td>24 &times; 8 TB</td>
+    <td>24 &times; 14 TB</td>
+  </tr>
+  <tr>
+    <td>Logical Flash Cache Capacity</td>
+    <td>1.44 TB</td>
+    <td>2.88 TB</td>
+    <td>5.76 TB</td>
+    <td>7.68 TB</td>
+  </tr>
+  <tr>
+    <td>Connectivity Ports</td>
+    <td colspan="2">A</td>
+    <td>C</td>
+    <td>D</td>
+  </tr>
+</tbody>
+</table>
