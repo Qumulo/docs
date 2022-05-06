@@ -76,7 +76,7 @@ If the FVT finds fixable issues, it prompts you to auto-correct any detected iss
 
 
 ### Fixable Issues During Part Replacement
-In Qumulo Core 3.1.0 (and higher), the FVT offers you to auto-correct issues (such as firmware upgrades) after you replace a part.
+In Qumulo Core 3.1.0 (and higher), the FVT can auto-correct issues (such as firmware upgrades) after you replace a part.
 
 To attempt auto-correction, select **[2] Run FVT Flash for a part replacement. This will try to fix issues, then reboot. This will NOT destroy existing data.**
 
