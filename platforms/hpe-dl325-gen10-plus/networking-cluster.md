@@ -22,7 +22,7 @@ This section explains how to network your HPE Proliant DL325 Gen10 Plus cluster.
 
 ## Recommended Configuration
 
-* One set of redundant switches for the front-end network, with an MTU that matches that of the clients that use the storager cluster. Typically, we recommend 1,500 MTU but in some instances 9,000 MTU is the optimal setting.
+* One set of redundant switches for the front-end network, with an MTU that matches that of the clients that use the storage cluster. Typically, we recommend 1,500 MTU but in some instances 9,000 MTU is the optimal setting.
 * One set of redundant switches for the back-end network (9,000 MTU minimum)
 * One physical connection to each redundant switch, per node
 * One Link Aggregation Control Protocol (LACP) port-channel per network (front-end and back-end) on each node with the following configuration:
