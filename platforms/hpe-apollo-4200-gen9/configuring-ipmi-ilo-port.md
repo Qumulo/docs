@@ -14,7 +14,7 @@ This section explains how to configure and use the out-of-band management (IPMI 
 To configure the IPMI port, you must have root access to the client-facing network through SSH. For example, you can use the `sudo -s` command.
 
 ## How the IPMI Port Works
-HPE A4200 Gen9 nodes provide IPMI support for out-of-band maintenance access even when the node is plugged in but powered off. The following diagram shows the location of the IPMI port.
+HPE Apollo 4200 Gen9 nodes provide IPMI support for out-of-band maintenance access even when the node is plugged in but powered off. The following diagram shows the location of the IPMI port.
 
 {% include image.html alt="The location of the IPMI port on the HPE Apollo 4200 Gen9 node" file="hpe-gen9-ilo.png" %}
 
