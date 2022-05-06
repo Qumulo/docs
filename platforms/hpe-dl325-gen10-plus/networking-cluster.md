@@ -1,45 +1,46 @@
 ---
-title: "HPE Proliant DL325 Gen10 Plus Network Guide"
-summary: "Networking recommendations for the HPE Apollo Proliant DL325 Gen10 Plus server"
+title: "Networking Your HPE Proliant DL325 Gen10 Plus Cluster"
+summary: "This section explains how to network your HPE Proliant DL325 Gen10 Plus cluster."
 permalink: platforms/hpe-dl325-gen10-plus/networking-cluster.html
 sidebar: platforms_sidebar
+keywords: network, networking, cluster, switch, Ethernet, ports, IP
 ---
 
-## Requirements
+This section explains how to network your HPE Proliant DL325 Gen10 Plus cluster.
 
--   HPE DL325 Gen10 Plus cluster
--   A network switch with the following criteria
-    -   100Gbps Ethernet connection
-    -   Fully non-blocking architecture
-    -   IPv6 capability
--   Compatible network cables
--   Enough ports to connect all nodes to the same switch fabric
--   One static IP per node, per defined VLAN
+## Prerequisites
 
-{{site.data.alerts.tip}}
-We recommend consulting with your network engineering team before connecting any Qumulo-supported equipment to your network.
-{{site.data.alerts.end}}
+* A network switch with the following criteria:
+  * 100 Gbps Ethernet connection
+  * Fully non-blocking architecture
+  * IPv6 compatibility
+* Compatible network cables
+* A sufficient number of ports for connecting all nodes to the same switch fabric
+* One static IP per node, per defined VLAN
 
-## Configuration Recommendations
+{% include important.html content="Before you connect any Qumulo-supported equipment to your network, we strongly recommend consulting with your network engineering team." %}
 
-* One set of redundant switches for the front-end network, with an MTU that matches that of the clients that use the storage cluster. Typically, 1,500 MTU is recommended, but in some instances it might be 9,000 MTU.
+## Recommended Configuration
+
+* One set of redundant switches for the front-end network, with an MTU that matches that of the clients that use the storager cluster. Typically, we recommend 1,500 MTU but in some instances 9,000 MTU is the optimal setting.
 * One set of redundant switches for the back-end network (9,000 MTU minimum)
-* One physical connection per node, per each redundant switch
-* One Link Aggregation Control Protocol (LACP) port-channel per network (front-end and back-end) on each node, with the following configuration
+* One physical connection to each redundant switch, per node
+* One Link Aggregation Control Protocol (LACP) port-channel per network (front-end and back-end) on each node with the following configuration:
   * Active mode
-  * Slow transmit rather
-  * Access port or trunk port with a native VLAN
+  * Slow transmit rate
+  * Trunk port with a native VLAN
 * DNS servers
-* A Network Time Protocol (NTP) server
-* Firewall protocols or ports allowed for proactive monitoring
-* Where `N` is the number of nodes, `N-1` floating IPs per node, per client-facing VLAN
--   You can achieve advertised performance only if you connect your nodes at their maximum Ethernet speed. To avoid network bottlenecks, Qumulo validates system performance with this configuration by using clients that are connected at the same link speed and to the same switch as the nodes.
+* Network Time Protocol (NTP) server
+* Firewall protocol or ports configured for [Qumulo Care Proactive Monitoring](https://care.qumulo.com/hc/en-us/articles/115007283828-Qumulo-Care-Proactive-Monitoring)
+* Where N is the number of nodes, up to 10 N-1 floating IP addresses per node, per client-facing VLAN
+* Nodes connected at their maximum Ethernet speed (this ensures advertised performance). To avoid network bottlenecks, Qumulo validates system performance with this configuration by using clients connected at the same link speed and to the same switch as the nodes.
 
-## HPE Proliant Dl325 Gen10 Plus NIC1 And NIC2 Ports
+## Node NICs and Ports
+The following diagram shows the NICs and ports on HPE DL325 Gen10 Plus nodes. On this platform, there are two sets of NICs, one for the front end and one for the back end.
 
-On this platform, there are two sets of NICs, one for the front-end and one for the back-end. **Important:** For your node to work correctly, you must connect at least one port in each NIC.
+{% include important.html content="For your node to work correctly, you must connect at least one port in each NIC." %}
 
-{% include image.html alt="" file="dl325-rear-networking.png" %}
+{% include image.html alt="NIC1 and NIC2 ports on HPE DL325 Gen10 Plus nodes" file="dl325-rear-networking.png" %}
 
 ## Connecting To A Switch
 
