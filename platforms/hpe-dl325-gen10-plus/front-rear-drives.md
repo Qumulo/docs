@@ -1,16 +1,21 @@
 ---
-title: "HPE ProLiant DL325 Gen10 Plus Drive Diagrams"
-summary: "Outlines the drive locations in the HPE ProLiant DL325 Gen10 Plus server."
+title: "Front and Rear Drive Locations on HPE ProLiant DL325 Gen10 Plus Nodes"
+summary: "This section explains the front and rear drive locations in your HPE ProLiant DL325 Gen10 Plus node."
 permalink: platforms/hpe-dl325-gen10-plus/front-rear-drives.html
 sidebar: platforms_sidebar
+keywords: front drive, rear drive, drive, drive location
 ---
 
-## HPE ProLiant DL325 Gen10 Plus
+On this platform, the drives in a node are arranged into groups called _boxes_.
 
-For this platform, the drives in the node are arranged into boxes. In the following diagram of the drives in the front row, bay 1-8 are highlighted in green (Box 1) and bays 1-2 highlighted in orange (Box 2).
+## Front Drive Row
+The following diagram shows the front drive row. In the diagram, Box 1 holds bays 1-8 (indicated in green) and Box 2 holds bays 1-2 (indicated in orange).
 
-{% include image.html alt="DL325 drive diagram" file="dl325-drive-diagram.png" %}
+{% include image.html alt="Bays 1-8 (Box 1) and Bays 1-2 (Box 2) on the HPE ProLiant DL325 Gen10 Plus node" file="dl325-drive-diagram.png" %}
 
-Similarly, for the drives in the second row (that flips up in the node), bays 1-8 are in Box 3 and bays 1-2 are in Box 4.
+## Second Drive Row
+The second drive row flips up behind the first drive row in the node.
 
-{% include image.html alt="DL325 node photo" file="dl325-node-photo.png" %}
+{% include image.html alt="The second drive row flips up behind the first drive row in the node. Box 3 holds bays 1-8 and Box 4 holds bays 1-2." file="dl325-node-photo.png" %}
+
+For the second row, Box 3 holds bays 1-8 and Box 4 holds bays 1-2.
