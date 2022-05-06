@@ -1,7 +1,7 @@
 ---
 title: "Configuring and Using the Out-of-Band Management (IPMI or iLO) Port on HPE Apollo 4200 Gen9 Nodes"
 summary: "This section explains how to configure and use the out-of-band management (IPMI or iLO) port on HPE Apollo 4200 Gen9 nodes."
-permalink: platforms/hpe-apollo-4200-gen9/configuring-ipmi-ilo-port.html
+permalink: platforms/hpe-apollo-4200-gen9/configuring-ilo.html
 sidebar: platforms_sidebar
 keywords: out-of-band management, out of band management, IPMI, iLO, DHCP, network, networking, LAN, ipmitool
 ---
