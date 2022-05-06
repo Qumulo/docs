@@ -113,15 +113,23 @@ Perform the following steps on every node in your cluster.
 
    {{site.data.alerts.note}}
    <ul>
-     <li>
-       <p>Your login password must be 8-16 characters long and must contain at least:</p>
+     <li>Your login password must be 8-16 characters long and must contain at least:
        <ul>
          <li>One upper-case character</li>
          <li>One lower-case character</li>
          <li>One numeric character</li>
          <li>One symbol (such as <code>#</code> or <code>$</code>)</li>
        </ul>
-
+     </li>
+     <li>Your encryption master key must be 10-32 characters long.</li>
+     <li>Both your login password and encryption master key:
+       <ul>
+         <li>Can use uppercase and lowercase letters, numbers, and symbols</li>
+         <li>Must use only ASCII characters</li>
+         <li>Must not use spaces, semicolons (<code>;</code>), or quotation marks (<code>"</code>)</li>
+       </ul>
+     </li>
+     <li>Store your master key in a secure location for the lifetime of the cluster.</li>
    </ul>
    {{site.data.alerts.end}}
    
