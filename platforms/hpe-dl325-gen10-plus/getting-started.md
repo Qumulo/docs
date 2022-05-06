@@ -14,10 +14,6 @@ sidebar: platforms_sidebar
 
 For additional details on the HPE Proliant DL325 Gen10 Plus server, reference the [HPE ProLiant DL325 Gen10 Plus Server Document List](https://support.hpe.com/hpesc/public/docDisplay?docLocale=en_US&docId=a00102298en_us).
 
-## Technical Specifications
-
-{% include image.html alt="DL325 data sheet" file="dl325-datasheet.png" %}
-
 ## Verify The Nodes
 
 1. Shut down the node and connect it to a display, keyboard, and mouse.
@@ -113,3 +109,56 @@ Once the installation is complete and the server reboots, continue on to create 
 ## Step N: Create and Configure Your Cluster
 
 {% include content-reuse/create-configure-cluster.md %}
+
+## Technical Specifications
+
+{% include image.html alt="DL325 data sheet" file="dl325-datasheet.png" %}
+
+<table>
+<thead>
+  <tr>
+    <th>Specification</th>
+    <th>34T</th>
+    <th>145T</th>
+    <th>291T</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>Form Factor</td>
+    <td>1U</td>
+    <td>1U</td>
+    <td>1U</td>
+  </tr>
+  <tr>
+    <td>Raw Storage Capacity</td>
+    <td>34 TB</td>
+    <td>145 TB</td>
+    <td>291 TB</td>
+  </tr>
+  <tr>
+    <td>SSD or NVM3</td>
+    <td>9 &times; 3.84 TB NVMe</td>
+    <td>19 &times; 7.68 TB NVMe</td>
+    <td>19 &times; 15.36 TB NVMe</td>
+  </tr>
+  <tr>
+    <td>Networking</td>
+    <td>4 &times; 100 GbE</td>
+    <td>4 &times; 100 GbE</td>
+    <td>4 &times; 100 GbE</td>
+  </tr>
+  <tr>
+    <td>CPU</td>
+    <td>24 cores 2.8 GHz</td>
+    <td>24 cores 2.8 GHz</td>
+    <td>24 cores 2.8 GHz</td>
+  </tr>
+  <tr>
+    <td>Memory</td>
+    <td>128 GB</td>
+    <td>128 GB</td>
+    <td>128 GB</td>
+  </tr>
+</tbody>
+</table>
