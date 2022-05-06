@@ -40,8 +40,8 @@ entries:
       url: /platforms/hpe-apollo-4200-gen9/drive-leds.html
       output: web, pdf
 
-    - title: IPMI or iLO Port
-      url: /platforms/hpe-apollo-4200-gen9/configuring-ipmi-ilo-port.html
+    - title: iLO Configuration
+      url: /platforms/hpe-apollo-4200-gen9/configuring-ilo.html
       output: web, pdf
 
     - title: Cluster Networking
@@ -68,8 +68,8 @@ entries:
       url: /platforms/hpe-apollo-4200-gen10/drive-leds.html
       output: web, pdf
 
-    - title: IPMI or iLO Port
-      url: /platforms/hpe-apollo-4200-gen10/configuring-ipmi-ilo-port.html
+    - title: iLO Configuration
+      url: /platforms/hpe-apollo-4200-gen10/configuring-ilo.html
       output: web, pdf
 
     - title: Cluster Networking

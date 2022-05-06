@@ -14,14 +14,14 @@ The _Qumulo Platforms Guide_ is a collection of guides that provide information 
   * [Front and Rear Drives](hpe-apollo-4200-gen9/front-rear-drives.md)
   * [Panel LEDs](hpe-apollo-4200-gen9/panel-leds.md)
   * [Drive LEDs](hpe-apollo-4200-gen9/drive-leds.md)
-  * [IPMI or iLO Port](hpe-apollo-4200-gen9/configuring-ipmi-ilo-port.md)
+  * [iLO Configuration](hpe-apollo-4200-gen9/configuring-ilo.md)
   * [Cluster Networking](hpe-apollo-4200-gen9/networking-cluster.md)
 * **HPE Apollo 4200 Gen10**
   * [Getting Started](hpe-apollo-4200-gen10/getting-started.md)
   * [Front and Rear Drives](hpe-apollo-4200-gen10/front-rear-drives.md)
   * [Panel LEDs](hpe-apollo-4200-gen10/panel-leds.md)
   * [Drive LEDs](hpe-apollo-4200-gen10/drive-leds.md)
-  * [IPMI or iLO Port](hpe-apollo-4200-gen10/configuring-ipmi-ilo-port.md)
+  * [iLO Configuration](hpe-apollo-4200-gen10/configuring-ilo.md)
   * [Cluster Networking](hpe-apollo-4200-gen10/networking-cluster.md)
   * [Technical Specifications](hpe-apollo-4200-gen10/technical-specifications.md)
 * **HPE ProLiant DL325 Gen10 Plus**
