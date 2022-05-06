@@ -134,10 +134,6 @@ Be sure to store the key in a secure location for the lifetime of the cluster. O
 
 ## Technical Specifications
 
-{% include image.html alt="" file="hpe-apollo-tech-specs.png" %}
-
-## Technical Specifications
-
 <table>
 <thead>
   <tr>
@@ -172,9 +168,23 @@ Be sure to store the key in a secure location for the lifetime of the cluster. O
   </tr>
   <tr>
     <td>Connectivity Ports</td>
-    <td colspan="2">A</td>
-    <td>C</td>
-    <td>D</td>
+    <td colspan="2">2 &times; 25 GbE or<br>2 &times; 100 GbE</td>
+    <td>2 &times; 100 GbE<br>(25 GbE minimum link speed)</td>
+    <td>2 &times; 25 GbE</td>
+  </tr>
+  <tr>
+    <td>Management Ports</td>
+    <td colspan="4">2 &times; IPMI 1 GbE baseT (RJ45)</td>
+  </tr>
+  <tr>
+    <td>Connectivity Ports</td>
+    <td colspan="2">1 &times; Intel Xeon Silver<br>4210 2.2 GHz 10 cores</td>
+    <td>2 &times; Intel Xeon Silver<br>4210 2.2 GHz 10 cores</td>
+    <td>1 &times; Intel Xeon Silver<br>4210 2.2 GHz 10-cores</td>
+  </tr>
+  <tr>
+    <td>Physical Dimensions</td>
+    <td colspan="4">3.44" (8.75 cm) &times; 17.63" (44.8 cm) &times; 32" (81.28 cm)</td>
   </tr>
 </tbody>
 </table>
