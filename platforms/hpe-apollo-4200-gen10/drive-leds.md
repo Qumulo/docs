@@ -106,45 +106,38 @@ The following table explains the various combinations of the two LFF LEDs.
 </tbody>
 </table>
 
+## Small Form Factor (SFF) Drive LEDs
 
-### Small Form Factor (SFF) Gen10 Drive LEDs
+To locate the SFF drive LEDs, use the following diagram.
 
-SFF LEDs can be located using the diagram below:
+{% include image.html alt="Small form factor (SFF) drive LEDs on the HPE Apollo 4200 Gen10 node" file="sff-gen10-led-guide.png" %}
 
-{% include image.html alt="" file="sff-gen10-led-guide.png" %}
+1. **Locate LED**
 
-**(1) Locate LED**
+   * 🔵 **Solid Blue:** A host application is identifying the drive.
+   * 🔵 **Flashing Blue:** The drive carrier firmware is updating or requires an update.
 
--   Solid blue: The drive is being identified by a host application
--   Flashing blue: The drive carrier firmware is being updated or requires an update
+   {% include note.html content="The Locate LED is behind the release lever. When it is illuminated, it is visible." %}
 
-{{site.data.alerts.note}}
-The Locate LED is located behind the release lever and is visible when illuminated.
-{{site.data.alerts.end}}
+1. **Activity Ring LED**
 
-**(2) Activity ring LED**
+   * 🟢 **Rotating Green:** Drive activity
+   * **Off:** No drive activity
 
--   Rotating green: Drive activity
--   Off: No drive activity
+1. **Drive Status LED**
 
-**(3) Drive status LED**
+   * 🟢 **Solid Green:** The drive is a member of one or more logical drives
+   * 🟢 **Flashing Green:** The drive is rebuilding or performing a RAID migration, strip-size migration, capacity expansion, or logical drive extension or is erasing.
+   * 🟠🟢 **Flashing Amber and Green:** The drive is a member of one or more logical drives and predicts drive failure.
+   * 🟠 **Flashing Amber:** The drive isn't configured and predicts drive failure.
+   * 🟠 **Solid Amber:** The drive has failed.
+   * **Off:** A RAID controller hasn't configured the drive.
 
--   Solid green: The drive is a member of one or more logical drives
--   Flashing green: The drive is rebuilding or performing a RAID migration, strip size migration, capacity expansion, or logical drive extension or is erasing
--   Flashing amber/green: The drive is a member of one or more logical drives and predicts the drive will fail
--   Flashing amber: The drive is not configured and predicts the drive will fail
--   Solid amber: The drive has failed
--   Off: The drive is not configured by a RAID controller
+1. **Do Not Remove LED**
 
-**(4) Do not remove LED**
+   * ⚪ **Solid White:** Don't remove the drive. Removing the drive causes one or more of the logical drives to fail.
+   * **Off:** Removing the drive doesn't cause a logical drive to fail.
 
--   _Solid white:_ Do not remove the drive. Removing the drive causes one or more of the logical drives to fail
--   Off: Removing the drive does not cause a logical drive to fail
+1. **Do Not Remove Button**
 
-**(5) Do not remove button**
-
--   Press to open the release lever
-
-## Resolution
-
-You should now be able to successfully utilize the LED indicators for the LFF and SFF drives on the HPE Apollo 4200 Gen10 servers
+   To open the carrier, press the release lever.
