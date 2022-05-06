@@ -113,7 +113,8 @@ Perform the following steps on every node in your cluster.
 
    {{site.data.alerts.note}}
    <ul>
-     <li>Your login password must be 8-16 characters long and must contain at least:
+     <li>
+       <p>Your login password must be 8-16 characters long and must contain at least:</p>
        <ul>
          <li>One upper-case character</li>
          <li>One lower-case character</li>
@@ -121,7 +122,8 @@ Perform the following steps on every node in your cluster.
          <li>One symbol (such as `#` or `$`)</li>
        </ul>
      <li>Your encryption master key must be 10-32 characters long.</li>
-     <li>Both your login password and encryption master key:
+     <li>
+       <p>Both your login password and encryption master key:</p>
        <ul>
          <li>Can use uppercase and lowercase letters, numbers, and symbols</li>
          <li>Must use only ASCII characters</li>
@@ -136,7 +138,7 @@ Perform the following steps on every node in your cluster.
 
 {% include content-reuse/create-configure-cluster.md %}
 
-## HPE A4200 Gen10 Technical Specifications
+## Technical Specifications
 
 <table>
 <thead>
