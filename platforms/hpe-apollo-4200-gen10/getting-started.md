@@ -14,10 +14,6 @@ sidebar: platforms_sidebar
 
 For additional details on the HPE Apollo 4200 Gen10 server, reference the  [HPE Apollo 4200 Gen10 Server Document List](https://support.hpe.com/hpsc/doc/public/display?docId=emr_na-a00061642en_us&docLocale=en_US).
 
-## Technical Specifications
-
-{% include image.html alt="" file="hpe-apollo-tech-specs.png" %}
-
 ## Verify The Nodes
 
 1. Shut down the node and connect it to a display, keyboard, and mouse.
@@ -135,3 +131,7 @@ Be sure to store the key in a secure location for the lifetime of the cluster. O
 ## Step N: Create and Configure Your Cluster
 
 {% include content-reuse/create-configure-cluster.md %}
+
+## Technical Specifications
+
+{% include image.html alt="" file="hpe-apollo-tech-specs.png" %}
