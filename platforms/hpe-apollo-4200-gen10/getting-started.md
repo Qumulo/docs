@@ -54,7 +54,7 @@ This section explains how to prepare HPE Apollo 4200 Gen10 nodes for creating a 
 
 After the node reboots, the Field Verification Tool begins to run automatically.
 
-Review the verification results and consider the following before proceeding with a clean install
+Review the verification results and consider the following before proceeding with a clean install.
 
 * If the **FVT Passed!** message appears, continue to [install Qumulo Core by using the USB drive installer](#step-5-install-qumulo-core-by-using-the-usb-drive-installer).
 
@@ -101,7 +101,7 @@ Perform the following steps on every node in your cluster.
 
 1. Do one of the following:
 
-   * If you perform a part replacement, choose **1) Part replacement. This will reboot into the product.**
+   * Choose **1) Part replacement. This will reboot into the product.**
 
    * Choose **2) Install Qumulo Core without encryption**.
 
@@ -109,14 +109,14 @@ Perform the following steps on every node in your cluster.
 
 1. When the installer prompts you, to confirm that all data on the node will be destroyed, type `DESTROY ALL DATA`.
 
-1. If you install Qumulo Core with encryption, enter your cryptographic logic password and master encryption key.
+1. If you install Qumulo Core with encryption, enter your cryptographic login password and master encryption key.
 
    {{site.data.alerts.note}}
    <ul>
      <li>Your login password must be 8-16 characters long and must contain at least:
        <ul>
-         <li>One upper-case character</li>
-         <li>One lower-case character</li>
+         <li>One uppercase character</li>
+         <li>One lowercase character</li>
          <li>One numeric character</li>
          <li>One symbol (such as <code>#</code> or <code>$</code>)</li>
        </ul>
