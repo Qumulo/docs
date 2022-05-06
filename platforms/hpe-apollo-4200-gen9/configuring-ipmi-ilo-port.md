@@ -36,7 +36,7 @@ Use the following commands to configure the IPMI port on your nodes.
 # ipmitool lan print 2
 ```
 
-### To Configure IPMI LAN Configuration by Using Static IP Addresses
+### To Configure IPMI LAN by Using Static IP Addresses
 
 1. Set the IPMI Ethernet interface to a static IP address.
 
