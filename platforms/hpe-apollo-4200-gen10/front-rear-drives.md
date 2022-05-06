@@ -8,6 +8,8 @@ keywords: front drive, rear drive, drive, drive location
 
 This section shows the front large form factor (LFF) and rear small form factor (SFF) drive locations in your HPE Apollo 4200 Gen10 node. For more information, see [HPE Apollo 4200 Gen10 Server - Document List](https://support.hpe.com/hpesc/public/docDisplay?docLocale=en_US&docId=emr_na-a00061642en_us).
 
+<br><br>
+
 ## Front LFF Drive Row
 {% include image.html alt="The front large form factor drive row in the HPE Apollo 4200 Gen10 node" file="hpe-gen10-drives-front.png" %}
 
