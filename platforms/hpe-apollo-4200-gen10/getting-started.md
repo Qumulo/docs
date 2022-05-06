@@ -97,7 +97,7 @@ Examples of non-fixable issues:
 
 Please reach out to [Qumulo Care](https://care.qumulo.com/hc/en-us/articles/115008409408-Contact-Qumulo-Care-) for additional troubleshooting options.
 
-## Setep 5: Install Qumulo Core by Using the USB Drive Installer
+## Step 5: Install Qumulo Core by Using the USB Drive Installer
 
 Now that the server has verified it is ready to be configured, you can start to install Qumulo Core.
 
@@ -131,7 +131,7 @@ If only performing a part replacement on your system, select <b>option 1</b> to 
 
 Be sure to store the key in a secure location for the lifetime of the cluster. Once the installation is complete and the server reboots, continue on to create a cluster.
 
-## Step N: Create and Configure Your Cluster
+## Step 6: Create and Configure Your Cluster
 
 {% include content-reuse/create-configure-cluster.md %}
 
