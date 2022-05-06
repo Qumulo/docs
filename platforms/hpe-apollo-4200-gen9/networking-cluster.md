@@ -39,27 +39,27 @@ This section explains how to network your HPE Apollo 4200 Gen9 cluster.
 * Nodes connected at their maximum Ethernet speed (this ensures advertised performance). To avoid network bottlenecks, Qumulo validates system performance with this configuration by using clients connected at the same link speed and to the same switch as the nodes.
 
 ## Node NICs and Ports
-The following diagrams show the NICs and ports on HPE A4200 Gen9 nodes.
+The following diagrams show the NICs and ports on HPE Apollo 4200 Gen9 nodes.
 
 ### 90T NIC1 Ports
 
-{% include image.html alt="NIC1 ports on the HPE A4200 Gen9 90T node" file="hpe-90t-single.png" %}
+{% include image.html alt="NIC1 ports on the HPE Apollo 4200 Gen9 90T node" file="hpe-90t-single.png" %}
 
 ### 180T NIC1 Ports
 
 {% include note.html content="Currently, NIC2 on this model is unused." %}
 
-{% include image.html alt="NIC1 ports on the HPE A4200 Gen9 180T node" file="hpe-180t-dual.png" %}
+{% include image.html alt="NIC1 ports on the HPE Apollo 4200 Gen9 180T node" file="hpe-180t-dual.png" %}
 
 ### 288T NIC1 Ports (Single)
 
-{% include image.html alt="NIC1 ports on the single HPE A4200 Gen9 288T node" file="hpe-288t-single.png" %}
+{% include image.html alt="NIC1 ports on the single HPE Apollo 4200 Gen9 288T node" file="hpe-288t-single.png" %}
 
 ### 288T NIC1 Ports (Dual)
 
 {% include note.html content="Currently, NIC2 on this model is unused." %}
 
-{% include image.html alt="NIC1 ports on the dual HPE A4200 Gen9 288T node" file="hpe-288t-dual.png" %}
+{% include image.html alt="NIC1 ports on the dual HPE Apollo 4200 Gen9 288T node" file="hpe-288t-dual.png" %}
 
 ## Connecting to Redundant Switches
 
