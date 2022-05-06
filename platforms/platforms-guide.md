@@ -5,7 +5,7 @@ sidebar: platforms_sidebar
 search: exclude
 ---
 
-The _Qumulo Platforms Guide_ is a collection of guides that provide information about getting started with a particular node type as well as reference information for front and rear drive locations, panel LEDs, drive LEDs, out-of-band-management (IPMI or iLO) ports, and Qumulo cluster networking.
+The _Qumulo Platforms Guide_ is a collection of guides that provide information about getting started with a particular node type as well as reference information for front and rear drive locations, panel LEDs, drive LEDs, Integrated Lights Out (iLO), and Qumulo cluster networking.
 
 **Table of Contents**
 * **[Document History](history.md)**
