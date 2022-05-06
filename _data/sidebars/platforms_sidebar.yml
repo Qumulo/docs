@@ -95,3 +95,7 @@ entries:
     - title: Cluster Networking
       url: /platforms/hpe-dl325-gen10-plus/networking-cluster.html
       output: web, pdf
+
+    - title: Technical Specifications
+      url: /platforms/hpe-dl325-gen10-plus/technical-specifications.html
+      output: web, pdf
