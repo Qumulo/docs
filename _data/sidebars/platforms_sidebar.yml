@@ -24,70 +24,78 @@ entries:
     output: web, pdf
     folderitems:
 
-    - title: Quick start guide
-      url: /platforms/hpe-apollo-4200-gen9/quick-start-guide.html
+    - title: Getting Started
+      url: /platforms/hpe-apollo-4200-gen9/getting-started.html
       output: web, pdf
 
-    - title: Drive diagrams
-      url: /platforms/hpe-apollo-4200-gen9/drive-diagrams.html
+    - title: Front and Rear Drives
+      url: /platforms/hpe-apollo-4200-gen9/front-rear-drives.html
       output: web, pdf
 
-    - title: LED guide
-      url: /platforms/hpe-apollo-4200-gen9/led-guide.html
+    - title: Panel LEDs
+      url: /platforms/hpe-apollo-4200-gen9/panel-leds.html
       output: web, pdf
 
-    - title: Drive LED guide
-      url: /platforms/hpe-apollo-4200-gen9/drive-led-guide.html
+    - title: Drive LEDs
+      url: /platforms/hpe-apollo-4200-gen9/drive-leds.html
       output: web, pdf
 
-    - title: IPMI (iLO) guide
-      url: /platforms/hpe-apollo-4200-gen9/ipmi-ilo-guide.html
+    - title: iLO Configuration
+      url: /platforms/hpe-apollo-4200-gen9/configuring-ilo.html
       output: web, pdf
 
-    - title: Network guide
-      url: /platforms/hpe-apollo-4200-gen9/network-guide.html
+    - title: Cluster Networking
+      url: /platforms/hpe-apollo-4200-gen9/networking-cluster.html
       output: web, pdf
 
   - title: HPE Apollo 4200 Gen10
     output: web, pdf
     folderitems:
 
-    - title: Quick start guide
-      url: /platforms/hpe-apollo-4200-gen10/quick-start-guide.html
+    - title: Getting Started
+      url: /platforms/hpe-apollo-4200-gen10/getting-started.html
       output: web, pdf
 
-    - title: Drive diagrams
-      url: /platforms/hpe-apollo-4200-gen10/drive-diagrams.html
+    - title: Front and Rear Drives
+      url: /platforms/hpe-apollo-4200-gen10/front-rear-drives.html
       output: web, pdf
 
-    - title: LED guide
-      url: /platforms/hpe-apollo-4200-gen10/led-guide.html
+    - title: Panel LEDs
+      url: /platforms/hpe-apollo-4200-gen10/panel-leds.html
       output: web, pdf
 
-    - title: Drive LED guide
-      url: /platforms/hpe-apollo-4200-gen10/drive-led-guide.html
+    - title: Drive LEDs
+      url: /platforms/hpe-apollo-4200-gen10/drive-leds.html
       output: web, pdf
 
-    - title: IPMI (iLO) guide
-      url: /platforms/hpe-apollo-4200-gen10/ipmi-ilo-guide.html
+    - title: iLO Configuration
+      url: /platforms/hpe-apollo-4200-gen10/configuring-ilo.html
       output: web, pdf
 
-    - title: Network guide
-      url: /platforms/hpe-apollo-4200-gen10/network-guide.html
+    - title: Cluster Networking
+      url: /platforms/hpe-apollo-4200-gen10/networking-cluster.html
       output: web, pdf
 
-  - title: HPE Proliant DL325 Gen10 Plus
+    - title: Technical Specifications
+      url: /platforms/hpe-apollo-4200-gen10/technical-specifications.html
+      output: web, pdf
+
+  - title: HPE ProLiant DL325 Gen10 Plus
     output: web, pdf
     folderitems:
 
-    - title: Quick start guide
-      url: /platforms/hpe-dl325-gen10-plus/quick-start-guide.html
+    - title: Getting Started
+      url: /platforms/hpe-dl325-gen10-plus/getting-started.html
       output: web, pdf
 
-    - title: Drive diagrams
-      url: /platforms/hpe-dl325-gen10-plus/drive-diagrams.html
+    - title: Front and Rear Drives
+      url: /platforms/hpe-dl325-gen10-plus/front-rear-drives.html
       output: web, pdf
 
-    - title: Network guide
-      url: /platforms/hpe-dl325-gen10-plus/network-guide.html
+    - title: Cluster Networking
+      url: /platforms/hpe-dl325-gen10-plus/networking-cluster.html
+      output: web, pdf
+
+    - title: Technical Specifications
+      url: /platforms/hpe-dl325-gen10-plus/technical-specifications.html
       output: web, pdf
