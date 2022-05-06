@@ -132,48 +132,6 @@ If only performing a part replacement on your system, select <b>option 1</b> to 
 
 Be sure to store the key in a secure location for the lifetime of the cluster. Once the installation is complete and the server reboots, continue on to create a cluster.
 
-## Create A Cluster
+## Step N: Create and Configure Your Cluster
 
-Review the End User License Agreement, check the box to agree and click **Submit.**
-
-{% include image.html alt="" file="hpe-gen10-eula.png" %}
-
-### 1. Setup Cluster
-
-1.  Name the cluster.
-2.  Select the nodes for the cluster.
-    -   If any nodes are missing, verify that the node is currently running and on the same network
-
-{% include image.html alt="" file="hpe-gen10-setup-cluster.png" %}
-
-{{site.data.alerts.note}}
-The total capacity for the cluster is dynamically updated at the bottom of the page when selecting nodes.
-{{site.data.alerts.end}}
-
-{% include image.html alt="" file="capacity.png" %}
-
-### 2. Confirm Cluster Protection Level
-
-The recommended 2 or 3 drive protection level will be selected by default based on the cluster size and node type.
-
-{% include image.html alt="" file="confirm-protection.png" %}
-
-If **Customize Protection Level** is displayed, the option is available to increase the resilience of the system by selecting 3 drive protection. Keep in mind that selecting 3 drive protection will result in less capacity for the cluster.
-
-{% include image.html alt="" file="recommended-protection.png" %}
-
-{{site.data.alerts.note}}
-The option for selecting the drive protection level is only available at cluster creation and cannot be changed after the fact.
-{{site.data.alerts.end}}
-
-### 3. Create A Password For Your Admin Account
-
-1.  Type in the password for your admin account.
-2.  Retype the password to confirm.
-3.  Click **Create Cluster.**
-
-{% include image.html alt="" file="create-password.png" %}
-
-To access the dashboard in the Qumulo Core UI remotely, use any node's IP address to connect via [web browser](https://care.qumulo.com/hc/en-us/articles/115013902267-Qumulo-Core-s-Web-UI-Browser-Compatability).
-
-For additional guidance on cluster configuration and getting started, reference the [Qumulo Installation FAQ](https://care.qumulo.com/hc/en-us/articles/115008010087-Qumulo-Installation-FAQ) for more details.
+{% include content-reuse/create-configure-cluster.md %}
