@@ -3,7 +3,7 @@ title: "Getting Started with Qumulo on HPE Apollo 4200 Gen10"
 summary: "This section explains how to prepare HPE Apollo 4200 Gen10 nodes for creating a Qumulo Core cluster."
 permalink: platforms/hpe-apollo-4200-gen10/getting-started.html
 sidebar: platforms_sidebar
-keywords: getting started guide, quick reference, HPE, Apollo 4200 Gen10, verify node, field verification tool, FVT, intelligent provisioning
+keywords: getting started guide, quick reference, HPE, Apollo 4200 Gen10, verify node, field verification tool, FVT
 ---
 
 This section explains how to prepare HPE Apollo 4200 Gen10 nodes for creating a Qumulo Core cluster. This guide is for system administrators, professional service providers, and colleagues in your organization who are responsible for installing and configuring server hardware. For more information, see [HPE Apollo 4200 Gen10 Server - Document List](https://support.hpe.com/hpesc/public/docDisplay?docLocale=en_US&docId=emr_na-a00061642en_us).
@@ -97,38 +97,41 @@ For help with troubleshooting your node, contact [Qumulo Care](https://care.qumu
 
 ## Step 5: Install Qumulo Core by Using the USB Drive Installer
 
-Now that the server has verified it is ready to be configured, you can start to install Qumulo Core.
+Perform the following steps on every node in your cluster.
 
-{% include image.html alt="" file="hpe-gen10-fvt-encryption.png" %}
+1. Do one of the following:
 
-{{site.data.alerts.note}}
-If only performing a part replacement on your system, select <b>option 1</b> to reboot and skip the remaining steps.
-{{site.data.alerts.end}}
+   * If you perform a part replacement, choose **1) Part replacement. This will reboot into the product.**
 
-1.  Select whether you wish to install with or without encryption.
-2.  When prompted, type "DESTROY ALL DATA" to confirm that all data will be destroyed on the server.
-3.  If you selected **Install Qumulo Core with encryption** in Step 1, enter your crypto login password and master encryption key following the guidelines displayed. See the requirements below:
+   * Choose **2) Install Qumulo Core without encryption**.
 
-**Crypto Login Password Requirements**
+   * Choose **3) Install Qumulo Core with encryption**.
 
--   8 to 16 characters in length
--   Must contain at least one upper-case character
--   Must contain at least one lower-case character
--   Must contain at least one numeric character
--   Must contain at least one symbol such as \# or $
--   ASCII only
--   Uppercase letters, lowercase letters, numbers, and symbols are allowed
--   \<space\>, \<semicolon\>, and \<double quote\> are **NOT** allowed
+1. When the installer prompts you, to confirm that all data on the node will be destroyed, type `DESTROY ALL DATA`.
 
-**Encryption Master Key Requirements**
+1. If you install Qumulo Core with encryption, enter your cryptographic logic password and master encryption key.
 
--   10 to 32 characters in length
--   ASCII only
--   Uppercase letters, lowercase letters, numbers, and symbols are allowed
--   \<space\>, \<semicolon\>, and \<double quote\> are **NOT** allowed
-
-Be sure to store the key in a secure location for the lifetime of the cluster. Once the installation is complete and the server reboots, continue on to create a cluster.
-
+   {{site.data.alerts.note}}
+   <ul>
+     <li>Your login password must be 8-16 characters long and must contain at least:
+       <ul>
+         <li>One upper-case character</li>
+         <li>One lower-case character</li>
+         <li>One numeric character</li>
+         <li>One symbol (such as `#` or `$`)</li>
+       </ul>
+     <li>Your encryption master key must be 10-32 characters long.</li>
+     <li>Both your login password and encryption master key:
+       <ul>
+         <li>Can use uppercase and lowercase letters, numbers, and symbols</li>
+         <li>Must use only ASCII characters</li>
+         <li>Must not use spaces, semicolons (`;`), or quotation marks (`"`)</li>
+       </ul>
+     </li>
+     <li>Store your master key in a secure location for the lifetime of the cluster.</li>
+   </ul>
+   {{site.data.alerts.end}}
+   
 ## Step 6: Create and Configure Your Cluster
 
 {% include content-reuse/create-configure-cluster.md %}
