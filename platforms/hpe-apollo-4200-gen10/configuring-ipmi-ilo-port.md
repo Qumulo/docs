@@ -6,7 +6,7 @@ sidebar: platforms_sidebar
 keywords: out-of-band management, out of band management, IPMI, iLO, DHCP, network, networking, LAN, ipmitool
 ---
 
-This section explains how to configure and use the out-of-band management (IPMI or iLO) port on HPE Apollo 4200 Gen9 nodes.
+This section explains how to configure and use the out-of-band management (IPMI or iLO) port on HPE Apollo 4200 Gen10 nodes.
 
 {% include important.html content="Access to the out-of-bound management (IPMI or iLO) port on a public LAN can have serious security implications because it can grant anyone with credentials direct access to your server's hardware and console. Follow security best practices when implementing IPMI access." %}
 
@@ -14,7 +14,7 @@ This section explains how to configure and use the out-of-band management (IPMI 
 To configure the IPMI port, you must have root access to the client-facing network through SSH. For example, you can use the `sudo -s` command.
 
 ## How the IPMI Port Works
-HPE A4200 Gen9 nodes provide IPMI support for out-of-band maintenance access even when the node is plugged in but powered off. The following diagram shows the location of the IPMI port.
+HPE A4200 Gen10 nodes provide IPMI support for out-of-band maintenance access even when the node is plugged in but powered off. The following diagram shows the location of the IPMI port.
 
 {% include image.html alt="The location of the IPMI port on the HPE Apollo 4200 Gen10 node" file="hpe-gen10-ilo.png" %}
 
