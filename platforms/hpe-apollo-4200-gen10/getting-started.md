@@ -89,7 +89,7 @@ The FVT reboots the node automatically and lets you continue the installation.
 If the FVT is unable to auto-correct any issues, the message **Not fixable issues were detected.** appears, providing reasons for failure. Issues that the FVT can't auto-correct include the following:
 
 * BIOS version
-* IPMI (iLO) version
+* Integrated Lights Out (iLO) version
 * NIC firmware
 
 For help with troubleshooting your node, contact [Qumulo Care](https://care.qumulo.com/hc/en-us/articles/115008409408).
