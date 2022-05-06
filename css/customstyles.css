@@ -896,7 +896,7 @@ button.cursorNorm {
 h2  {
     font-size:24px;
     line-height:29px;
-    clear:both; /* make sure that the right-hand TOC doesn't create weird spacing issues with H2 */
+    /*clear:both;*/ /* make sure that the right-hand TOC doesn't create weird spacing issues with H2 */
 }
 span.otherProgrammingLanguages {
     font-style: normal;
