@@ -71,7 +71,7 @@ This section explains how to prepare HPE Apollo 4200 Gen9 nodes for creating a Q
 
 1. On the **===FIELD VERIFICATION TOOL===** page, to verify the node configuration, select **2) VERIFY, verify node configuration**.
 
-1. Review the verification results and consider the following before proceeding with a clean install of Qumulo Core.
+1. Review the verification results and consider the following before proceeding with a clean Qumulo Core installation.
 
    * **PASSED** messages indicate correct configuration. For example:
 

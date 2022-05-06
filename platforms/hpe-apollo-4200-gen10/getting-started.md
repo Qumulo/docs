@@ -14,65 +14,68 @@ This section explains how to prepare HPE Apollo 4200 Gen10 nodes for creating a 
 * The [Qumulo Core USB Drive Installer](https://care.qumulo.com/hc/en-us/articles/360034690034)
 
 
-## Verify The Nodes
+## Step 1: Verify Your Node
 
-1. Shut down the node and connect it to a display, keyboard, and mouse.
+1. Shut down your node and connect a display, a keyboard, and a mouse to it.
 
-2. Plug in the **Qumulo Core Installer USB key** to an available USB port.
+1. Plug the Qumulo Core USB Drive Installer into an available USB port on the node and then press the power button.
 
-3. Press the power button highlighted below to power the node on and wait for the machine’s **boot screen** to display. {% include image.html alt="" file="hpe-gen10-front-power.png" %}
+   {% include image.html alt="To power on the node, press the power button." file="hpe-gen10-front-power.png" %}
 
-4. Verify that the **Boot Mode** is set to **Legacy BIOS**.  {% include image.html alt="" file="hpe-gen10-boot-mode.png" %}
+1. On the **HPE ProLiant** boot screen, do one of the following:
 
-    -   **If the Boot Mode is Legacy BIOS**, disregard the rest of the steps in this section and proceed to the **BOOT TO QUMULO CORE USB INSTALLER KEY** section.
-    -   **If the Boot Mode is not Legacy BIOS**, press **F9** to access the **System Utilities menu** and proceed with the subsequent steps.
+   * If the **Boot Mode: Legacy BIOS** message appears, skip the rest of this section and continue to [boot by using the Qumulo Core USB Drive Installer](#step-2-boot-by-using-the-qumulo-core-usb-drive-installer).
 
-5. Click through the **System Configuration** page to the **BIOS/Platform Configuration** (RBSU) page and then to the **Boot Options** page.
+   * If the **Boot Mode: Legacy BIOS** message doesn't appear, press **F9**.
 
-6. Set **Boot Mode** to **Legacy BIOS Mode** on the **Boot Options** page**.**
+1. On the **System Utilities** page, click **System Configuration > BIOS/Platform Configuration (RBSU) > Boot Options**.
 
-7. Press **F10** to save the change.
+1. On the **Boot Options** page, set **Boot Mode** to **Legacy BIOS Mode** and then press **F10**.
 
-8. Press **Esc** until you return to the **main page**.
+1. Press **Esc** until you return to the main page.
 
-9. Select **Reboot the System**.
+1. Click **Reboot the System**.
 
-## Boot To The Qumulo Core USB Installer Key
 
-1.  Press **F11** to access the **Boot Menu** when prompted at the **HPE ProLiant** screen. Note that this boot may take a few minutes. {% include image.html alt="" file="hpe-gen10-f11.png" %}
-2.  Press **ENTER** to boot into the **Legacy BIOS One-Time Boot Menu**.  {% include image.html alt="" file="hpe-legacy-boot.png" %}
-3.  Press **ENTER** again to confirm.  {% include image.html alt="" file="hpe-enter-one-time-boot.png" %}
-4.  Select **Option 2** from the **Default Boot Override Options** to do a one-time boot to the Qumulo Core USB Installer key.  {% include image.html alt="" file="hpe-one-time-boot-options.png" %}
+## Step 2: Boot by Using the Qumulo Core USB Drive Installer
 
-## Run Field Verification Tool
+1. On the **HPE ProLiant** boot screen, press **F11**.
 
-After rebooting, the Field Verification Tool starts automatically.  {% include image.html alt="" file="hpe-gen10-fvt-running.png" %}
+   {% include note.html content="The **Boot Menu** page might take a few minutes to appear." %}
 
-The test results display once it has concluded. Refer to the following sections for details on Pass and Fail scenarios.
+1. On the **Boot Menu** page, to boot into the **Legacy BIOS One-Time Boot Menu**, press **Enter**.
 
-### FVT Pass
+1. In the blue dialog box, to confirm, press **Enter**.
 
-{% include image.html alt="" file="hpe-gen10-fvt-success.png" %}
+1. From the **Default Boot Override Options** menu, select **2) One Time Boot to USB DriveKey**.
 
-If you see an **FVT passed!** message, proceed to the **Installing Qumulo Core** section later in this document. If **FAIL** messages are present, review the example below to determine the appropriate course.
 
-### FVT Fail Cases
+## Step 3: Using the Field Verification Tool (FVT)
 
-**Fixable Issues during Install**
+After the node reboots, the Field Verification Tool begins to run automatically.
 
-If the FVT fails and there are issues that are fixable, you will be prompted to select whether you wish to allow the FVT to auto-correct the detected issues depending on your install scenario.
+Review the verification results and consider the following before proceeding with a clean install
 
-{% include image.html alt="" file="hpe-gen10-fvt-fail.png" %}
+* If the **FVT Passed!** message appears, continue to [install Qumulo Core by using the USB drive installer](#step-5-install-qumulo-core-by-using-the-usb-drive-installer).
 
-Issues that can be auto-corrected include:
+* If **FAIL** messages appear, use one of the following resolutions.
 
--   BIOS config
--   Drive firmware
--   Drive controller firmware
--   NIC mode for CX5
--   Boot order
+### Fixable Issues During Installations
 
-When presented with this menu, select **option 1** to have the tool attempt to fix the issues. If the fixes are successful, the FVT will automatically reboot the node. Return to the **Boot To The Qumulo Core USB Installer Key** section earlier in this document to re-attempt verification and continue the install.
+If the FVT finds fixable issues, it prompts you to auto-correct any detected issues, depending on your installation scenario. Issues that the FVT can auto-correct include the following:
+
+* BIOS Configuration
+* Drive firmware
+* Drive controller firmware
+* NIC mode for CX5
+* Boot order
+
+1. To attempt auto-correction, select **1) Run FVT Flash for a fresh install. This will try to fix issues, then reboot. Please take caution this MAY DESTROY EXISTING DATA.**
+
+   If the fixes are successful, the FVT reboots the node automatically.
+
+1. To re-attempt verification, [boot by using the Qumulo Core USB Drive Installer](#step-2-boot-by-using-the-qumulo-core-usb-drive-installer) and then continue the installation.
+
 
 **Fixable Issues during Part Replacement**
 
@@ -94,7 +97,7 @@ Examples of non-fixable issues:
 
 Please reach out to [Qumulo Care](https://care.qumulo.com/hc/en-us/articles/115008409408-Contact-Qumulo-Care-) for additional troubleshooting options.
 
-## Install Qumulo Core
+## Setep 5: Install Qumulo Core by Using the USB Drive Installer
 
 Now that the server has verified it is ready to be configured, you can start to install Qumulo Core.
 
