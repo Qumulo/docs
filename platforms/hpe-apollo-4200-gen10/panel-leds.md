@@ -120,10 +120,6 @@ If the (1) Power On or Standby Button and System Power LED, (2) UID Button and L
 </tbody>
 </table>
 
-### Rear Panel LEDs
-
-The LEDs on the rear panel of HPE Apollo 4200 Gen10 servers can be located using the diagram below:
-
 ## Rear Panel LEDs
 
 To locate the rear panel LEDs, use the following diagram.
