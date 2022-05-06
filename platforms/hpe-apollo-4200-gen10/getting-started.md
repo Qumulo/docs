@@ -136,7 +136,7 @@ Perform the following steps on every node in your cluster.
 
 {% include content-reuse/create-configure-cluster.md %}
 
-## Technical Specifications
+## HPE A4200 Gen10 Technical Specifications
 
 <table>
 <thead>
