@@ -27,19 +27,19 @@ To locate the front panel LEDs, use the following diagram.
    * 🔵 **Flashing Blue:**
 
      * 1 flash per second: Remote management or firmware upgrade in progress
-     * 4 flashes per second: IPMI (iLO) manual reboot sequence initiated
-     * 8 flashes per second: IPMI (iLO) manual reboot sequence in progress
+     * 4 flashes per second: iLO manual reboot sequence initiated
+     * 8 flashes per second: iLO manual reboot sequence in progress
 
    * **Off:** Deactivated
 
 1. **Health LED**
 
    * 🟢 **Solid Green:** Normal
-   * 🟢 **Flashing Green:** (1 flash per second) IPMI (iLO) is rebooting
+   * 🟢 **Flashing Green:** (1 flash per second) iLO is rebooting
    * 🟠 **Flashing Amber:** System degraded
    * 🔴 **Flashing Red:** (1 flash per second) System critical
 
-   {% include note.html content="If the Health LED indicates a degraded or critical state, review the system integrated management log (IML) or use IPMI (iLO) to review the system health status." %}
+   {% include note.html content="If the Health LED indicates a degraded or critical state, review the system integrated management log (IML) or use iLO to review the system health status." %}
 
 1. **NIC Status LED**
 
@@ -53,7 +53,7 @@ To locate the front panel LEDs, use the following diagram.
    * 🟠 **Solid Amber:** Failure or predictive failure of one or more drives that the SAS expander supports. This applies to all front drives and to the rear drives connected to the front drive cage 2 backplane.
    * 🟠 **Flashing Amber:** (1 flash per second) The temperature sensor in one or more front drives is about to reach the thermal threshold. You must immediately slide the front drive cages back into the chassis and keep them there until the LED turns green.
 
-     {% include note.html content="This LED behavior depends on the IPMI (iLO) 08-HD Max sensor reading." %}
+     {% include note.html content="This LED behavior depends on the iLO 08-HD Max sensor reading." %}
 
    * **Off:** No power present
 
@@ -126,12 +126,12 @@ To locate the rear panel LEDs, use the following diagram.
 
 {% include image.html alt="Rear panel LEDs on the HPE Apollo 4200 Gen10 node" file="hpe-gen10-leds-rear.png" %}
 
-1. **Dedicated IPMI (iLO) Port 1 Link LED**
+1. **Dedicated iLO Port 1 Link LED**
 
    * 🟢 **Green:** Network link
    * **Off:** No network link
 
-1. **Dedicated IPMI (iLO) Port 1 Activity LED**
+1. **Dedicated iLO Port 1 Activity LED**
 
    * 🟢 **Solid Green:** Link to network
    * 🟢 **Flashing Green:** Network active
@@ -143,17 +143,17 @@ To locate the rear panel LEDs, use the following diagram.
    * 🔵 **Flashing Blue:**
 
      * 1 flash per second: Remote management or firmware upgrade in progress
-     * 4 flashes per second: IPMI (iLO) manual reboot sequence initiated
-     * 8 flashes per second: IPMI (iLO) manual reboot sequence in progress
+     * 4 flashes per second: iLO manual reboot sequence initiated
+     * 8 flashes per second: iLO manual reboot sequence in progress
 
    * **Off:** Deactivated
 
-1. **Dedicated IPMI (iLO) Port 2 Link LED**
+1. **Dedicated iLO Port 2 Link LED**
 
    * 🟢 **Green:** Network link
    * **Off:** No network link
 
-1. **Dedicated IPMI (iLO) Port 2 Activity LED**
+1. **Dedicated iLO Port 2 Activity LED**
 
    * 🟢 **Solid Green:** Link to network
    * 🟢 **Flashing Green:** Network active
