@@ -60,8 +60,8 @@ Review the verification results and consider the following before proceeding wit
 
 * If **FAIL** messages appear, use one of the following resolutions.
 
-### Fixable Issues During Installations
 
+### Fixable Issues During Installation
 If the FVT finds fixable issues, it prompts you to auto-correct any detected issues, depending on your installation scenario. Issues that the FVT can auto-correct include the following:
 
 * BIOS Configuration
@@ -77,25 +77,23 @@ If the FVT finds fixable issues, it prompts you to auto-correct any detected iss
 1. To re-attempt verification, [boot by using the Qumulo Core USB Drive Installer](#step-2-boot-by-using-the-qumulo-core-usb-drive-installer) and then continue the installation.
 
 
-**Fixable Issues during Part Replacement**
+### Fixable Issues During Part Replacement
+In Qumulo Core 3.1.0 (and higher), the FVT offers you to auto-correct issues (such as firmware upgrades) after you replace a part.
 
-In Qumulo Core 3.1.0 and higher, the FVT offers an option to automatically correct issues (such as a firmware upgrade) after a part replacement has been performed. In this case, select **option 2** to run FVT Flash for a part replacement. This will fix the issue and reboot into the FVT menu once more to proceed with the installation.
+To attempt auto-correction, select **2) Run FVT Flash for a part replacement. This will try to fix issues, then reboot. This will NOT destroy existing data.**
 
-{% include image.html alt="" file="hpe-gen10-fvt-replacement.png" %}
+The FVT reboots the node automatically and lets you continue the installation.
 
-**Non-Fixable Issues**
 
-If the FVT is unable to automatically fix any failures detected, the  message “Not fixable issues were detected” will display after providing failure reasons.
+### Non-Fixable Issues
+If the FVT is unable to auto-correct any issues, the message **Not fixable issues were detected.** appears, providing reasons for failure. Issues that the FVT can't auto-correct include the following:
 
-Examples of non-fixable issues:
+* BIOS version
+* IPMI (iLO) version
+* NIC firmware
 
--   BIOS version
--   ILO version
--   NIC FW
+For help with troubleshooting your node, contact [Qumulo Care](https://care.qumulo.com/hc/en-us/articles/115008409408).
 
-{% include image.html alt="" file="hpe-gen10-fvt-fail-all.png" %}
-
-Please reach out to [Qumulo Care](https://care.qumulo.com/hc/en-us/articles/115008409408-Contact-Qumulo-Care-) for additional troubleshooting options.
 
 ## Step 5: Install Qumulo Core by Using the USB Drive Installer
 
