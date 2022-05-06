@@ -43,7 +43,7 @@ This section explains how to prepare HPE ProLiant DL325 Gen10 Plus nodes for cre
 
 1. On the **Boot Menu** page, to perform a one-time boot, click **Generic USB Boot**.
 
-## Step 3: Using the Field Verification Tool (FVT)
+## Step 3: Use the Field Verification Tool (FVT)
 
 After the node reboots, the Field Verification Tool starts automatically.
 
