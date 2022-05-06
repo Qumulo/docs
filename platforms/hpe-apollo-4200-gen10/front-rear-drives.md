@@ -26,9 +26,9 @@ In 36T and 90T nodes, the boot drive is located in the second LFF drive row.
 {% include image.html alt="The boot drive in the second LFF drive row in HPE Apollo 4200 Gen10 36T and 90T nodes" file="hpe-gen10-90-boot.png" %}
 
 ### 192T Nodes
-In 192T nodes, the boot drive is located in a BOSS PCIe riser card.
+In 192T nodes, the boot drive is a BOSS PCIe riser card.
 
-{% include image.html alt="The boot drive in a BOSS PCIe riser card in HPE Apollo 4200 Gen10 192T nodes" file="hpe-gen10-196t-boot.png" %}
+{% include image.html alt="The boot drive is a BOSS PCIe riser card in HPE Apollo 4200 Gen10 192T nodes" file="hpe-gen10-196t-boot.png" %}
 
 ### 336T Nodes
 In 336T nodes, the boot drive is located with the rear SFF hot-plug drives.
