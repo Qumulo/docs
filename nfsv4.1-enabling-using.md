@@ -144,6 +144,27 @@ Currently, each Qumulo node is limited to 1,000 clients connected using NFSv4.1 
 For example, if you configure only one IP address per node, on a cluster with 600 clients per node a single node failure might overload one of the remaining nodes, preventing 200 clients from connecting. If you assign multiple floating IP addresses to each node, the clients' connections are distributed across multiple nodes.
 
 
+
+## Using NFS4.1 Byte-Range Locks
+
+Byte-range locking is available since Qumulo Core 5.1.2. No client mount configuration is required.
+
+Qumulo Core's NFSv4.1 implementation has a non-configurable lease time of 1 minute. Clients send a
+heartbeat to the server every lease period. The server uses this heartbeat to detect when the client
+loses its connection to the cluster and revoke its lease. When a lease is revoked, any byte-range
+locks held under that lease are released and made available to other clients.
+
+NFSv4.1 byte-range locks interoperate with NLM (NFSv3) byte-range locks. This means that locks held
+by NFSv3 clients are visible to and respected by NFSv4.1 clients and vice versa. However neither
+interoperate with SMB locks.
+
+NFSv4.1 byte-range locks can be listed with the `qq fs_list_locks` CLI command with `--protocol nfs4`
+specified. There is not yet a way to revoke NFSv4.1 byte-range locks with the CLI.
+
+{% include note.html content="The time to acquire or release a lock scales linearly with the number of locks already held on the same file, so performance will degrade with very large numbers of locks on a single file." %}
+
+
+
 ## Supported and Unsupported Features in Qumulo's Implementation of NFSv4.1
 Qumulo's implementation of NFSv4.1 currently supports:
 * General file system access (reading, writing, and navigating files)
@@ -152,11 +173,11 @@ Qumulo's implementation of NFSv4.1 currently supports:
 * Navigation in the pseudo-file system above your exports
 * NFSv3-style `AUTH_SYS` or `AUTH_UNIX` authentication
 * Fine-grained control over file permissions using access control lists (ACLs)
+* File locking (for example, using the `fcntl` command)
 
 Qumulo Core doesn't support the following NFSv3 features through NFSv4.1:
 * Quota sizes don't appear through NFSv4.1 with certain commands, such as `df` (however, Qumulo Core respects directory quotas)
 * You can't access snapshots through NFSv4.1
-* File locking (for example, using the `fcntl` command)
 
 Qumulo Core doesn't currently support the following NFSv4.1 features:
 * Secure authentication using Kerberos
