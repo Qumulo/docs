@@ -2,7 +2,7 @@
 title: "Panel LEDs on HPE Apollo 4200 Gen10 Nodes"
 summary: "This section explains the LEDs of your HPE Apollo 4200 Gen10 node."
 permalink: hardware/hpe-apollo-4200-gen10/panel-leds.html
-sidebar: platforms_sidebar
+sidebar: hardware_sidebar
 keywords: LED, front panel, power fault, rear panel, diagnose, diagnosis, hardware health
 ---
 

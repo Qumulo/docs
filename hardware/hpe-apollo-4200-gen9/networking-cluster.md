@@ -2,7 +2,7 @@
 title: "Networking Your HPE Apollo 4200 Gen9 Cluster"
 summary: "This section explains how to network your HPE Apollo 4200 Gen9 cluster."
 permalink: hardware/hpe-apollo-4200-gen9/networking-cluster.html
-sidebar: platforms_sidebar
+sidebar: hardware_sidebar
 keywords: network, networking, cluster, switch, Ethernet, ports, IP, 90T, 180T, 288T
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "Qumulo Platforms Guide"
 permalink: /hardware/
-sidebar: platforms_sidebar
+sidebar: hardware_sidebar
 search: exclude
 ---
 

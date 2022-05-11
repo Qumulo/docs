@@ -2,7 +2,7 @@
 title: "Getting Started with Qumulo on HPE ProLiant DL325 Gen10 Plus"
 summary: "This section explains how to prepare HPE ProLiant DL325 Gen10 Plus nodes for creating a Qumulo Core cluster."
 permalink: hardware/hpe-dl325-gen10-plus/getting-started.html
-sidebar: platforms_sidebar
+sidebar: hardware_sidebar
 keywords: getting started guide, quick reference, HPE, ProLiant DL325 Gen10 Plus, verify node, field verification tool, FVT, intelligent provisioning
 ---
 

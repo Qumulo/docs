@@ -1,7 +1,7 @@
 ---
 title: "Qumulo Platforms Guide Document History"
 permalink: hardware/history.html
-sidebar: platforms_sidebar
+sidebar: hardware_sidebar
 search: exclude
 ---
 

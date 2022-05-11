@@ -2,7 +2,7 @@
 title: "HPE Apollo 4200 Gen10 Technical Specifications"
 summary: "This section provides technical specifications for HPE Apollo 4200 Gen10 nodes."
 permalink: hardware/hpe-apollo-4200-gen10/technical-specifications.html
-sidebar: platforms_sidebar
+sidebar: hardware_sidebar
 keywords: technical specifications, tech specs, specs, specifications, Apollo 4200, Apollo 4200 Gen10
 ---
 

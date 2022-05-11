@@ -2,7 +2,7 @@
 title: "Front and Rear Drive Locations on HPE Apollo 4200 Gen10 Nodes"
 summary: "This section explains the front and rear drive locations in your HPE Apollo 4200 Gen10 node."
 permalink: hardware/hpe-apollo-4200-gen10/front-rear-drives.html
-sidebar: platforms_sidebar
+sidebar: hardware_sidebar
 keywords: front drive, rear drive, drive, drive location
 ---
 
