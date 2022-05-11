@@ -1,19 +1,18 @@
 ---
-title: "Drive LEDs on HPE Apollo 4200 Gen10 Nodes"
+title: "Drive LEDs on HPE Apollo 4200 Gen9 Nodes"
 summary: "This section explains the drive LEDs in HPE Apollo 4200 Gen9 nodes."
-permalink: platforms/hpe-apollo-4200-gen10/drive-leds.html
-sidebar: platforms_sidebar
+permalink: hardware/hpe-apollo-4200-gen9/drive-leds.html
+sidebar: hardware_sidebar
 keywords: drive, hard drive, LED, large form factor, LFF, small form factor, SFF
 ---
 
-This section explains the LEDs of large form factor (LFF) and small form factor (SFF) drives in your HPE Apollo 4200 Gen10 node. For more information, see [HPE Apollo 4200 Gen10 Server - Document List](https://support.hpe.com/hpesc/public/docDisplay?docLocale=en_US&docId=emr_na-a00061642en_us).
+This section explains the LEDs of large form factor (LFF) and small form factor (SFF) drives in your HPE Apollo 4200 Gen9 node. For more information, see [HPE Apollo 4200 Gen9 Server - Document List](https://support.hpe.com/hpesc/public/docDisplay?docLocale=en_US&docId=c05058024).
 
 ## Large Form Factor (LFF) Drive LEDs
 
 To locate the LFF drive LEDs, use the following diagram.
 
-<!-- Reuse the Gen9 image -->
-{% include image.html alt="Large form factor (LFF) drive LEDs on the HPE Apollo 4200 Gen10 node" file="../../hpe-apollo-4200-gen9/images/lff-drive-leds.png" %}
+{% include image.html alt="Large form factor (LFF) drive LEDs on the HPE Apollo 4200 Gen9 node" file="lff-drive-leds.png" %}
 
 You can determine the current state of an LFF drive by reviewing the status of the following LEDs:
 
@@ -110,7 +109,7 @@ The following table explains the various combinations of the two LFF LEDs.
 
 To locate the SFF drive LEDs, use the following diagram.
 
-{% include image.html alt="Small form factor (SFF) drive LEDs on the HPE Apollo 4200 Gen10 node" file="sff-gen10-led-guide.png" %}
+{% include image.html alt="Small form factor (SFF) drive LEDs on the HPE Apollo 4200 Gen9 node" file="sff-led-guide.png" %}
 
 1. **Locate LED**
 
@@ -124,6 +123,11 @@ To locate the SFF drive LEDs, use the following diagram.
    * 🟢 **Rotating Green:** Drive activity
    * **Off:** No drive activity
 
+1. **Do Not Remove LED**
+
+   * ⚪ **Solid White:** Don't remove the drive. Removing the drive causes one or more of the logical drives to fail.
+   * **Off:** Removing the drive doesn't cause a logical drive to fail.
+
 1. **Drive Status LED**
 
    * 🟢 **Solid Green:** The drive is a member of one or more logical drives
@@ -132,12 +136,3 @@ To locate the SFF drive LEDs, use the following diagram.
    * 🟠 **Flashing Amber:** The drive isn't configured and predicts drive failure.
    * 🟠 **Solid Amber:** The drive has failed.
    * **Off:** A RAID controller hasn't configured the drive.
-
-1. **Do Not Remove LED**
-
-   * ⚪ **Solid White:** Don't remove the drive. Removing the drive causes one or more of the logical drives to fail.
-   * **Off:** Removing the drive doesn't cause a logical drive to fail.
-
-1. **Do Not Remove Button**
-
-   To open the carrier, press the release lever.

@@ -1,8 +1,8 @@
 ---
 title: "Front and Rear Drive Locations on HPE ProLiant DL325 Gen10 Plus Nodes"
 summary: "This section explains the front and rear drive locations in your HPE ProLiant DL325 Gen10 Plus node."
-permalink: platforms/hpe-dl325-gen10-plus/front-rear-drives.html
-sidebar: platforms_sidebar
+permalink: hardware/hpe-dl325-gen10-plus/front-rear-drives.html
+sidebar: hardware_sidebar
 keywords: front drive, rear drive, drive, drive location
 ---
 

@@ -1,8 +1,8 @@
 ---
 title: "HPE ProLiant DL325 Gen10 Plus Technical Specifications"
 summary: "This section provides technical specifications for HPE ProLiant DL325 Gen10 Plus nodes."
-permalink: platforms/hpe-dl325-gen10-plus/technical-specifications.html
-sidebar: platforms_sidebar
+permalink: hardware/hpe-dl325-gen10-plus/technical-specifications.html
+sidebar: hardware_sidebar
 keywords: technical specifications, tech specs, specs, specifications, DL325, ProLiant DL325 Gen10 Plus
 ---
 

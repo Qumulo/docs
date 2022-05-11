@@ -1,8 +1,8 @@
 ---
 title: "Configuring and Using Integrated Lights Out (iLO) on HPE Apollo 4200 Gen9 Nodes"
 summary: "This section explains how to configure and use Integrated Lights Out (iLO) on HPE Apollo 4200 Gen9 nodes."
-permalink: platforms/hpe-apollo-4200-gen9/configuring-ilo.html
-sidebar: platforms_sidebar
+permalink: hardware/hpe-apollo-4200-gen9/configuring-ilo.html
+sidebar: hardware_sidebar
 keywords: out-of-band management, out of band management, iLO, DHCP, network, networking, LAN, ipmitool
 ---
 
