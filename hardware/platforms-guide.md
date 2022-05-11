@@ -1,6 +1,6 @@
 ---
 title: "Qumulo Platforms Guide"
-permalink: /platforms/
+permalink: /hardware/
 sidebar: platforms_sidebar
 search: exclude
 ---

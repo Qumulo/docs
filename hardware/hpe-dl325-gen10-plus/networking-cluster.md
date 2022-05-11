@@ -1,7 +1,7 @@
 ---
 title: "Networking Your HPE ProLiant DL325 Gen10 Plus Cluster"
 summary: "This section explains how to network your HPE ProLiant DL325 Gen10 Plus cluster."
-permalink: platforms/hpe-dl325-gen10-plus/networking-cluster.html
+permalink: hardware/hpe-dl325-gen10-plus/networking-cluster.html
 sidebar: platforms_sidebar
 keywords: network, networking, cluster, switch, Ethernet, ports, IP
 ---
