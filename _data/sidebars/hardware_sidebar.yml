@@ -4,7 +4,7 @@ entries:
   version:
   folders:
 
-  - title: Qumulo Certified Hardware Guide
+  - title: Qumulo-Certified Hardware Guide
     output: web, pdf
     folderitems:
 

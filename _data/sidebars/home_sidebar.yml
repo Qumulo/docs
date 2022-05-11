@@ -16,7 +16,7 @@ entries:
       url: /documentation-history.html
       output: web
 
-    - title: Qumulo Certified Hardware Guide
+    - title: Qumulo-Certified Hardware Guide
       url: /hardware/
       output: web
 

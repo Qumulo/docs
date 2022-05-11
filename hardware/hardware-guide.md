@@ -1,11 +1,11 @@
 ---
-title: "Qumulo Certified Hardware Guide"
+title: "Qumulo-Certified Hardware Guide"
 permalink: /hardware/
 sidebar: hardware_sidebar
 search: exclude
 ---
 
-The _Qumulo Certified Hardware Guide_ is a collection of guides that provide information about getting started with a particular node type as well as reference information for front and rear drive locations, panel LEDs, drive LEDs, Integrated Lights Out (iLO), and Qumulo cluster networking.
+The _Qumulo-Certified Hardware Guide_ is a collection of guides that provide information about getting started with a particular node type as well as reference information for front and rear drive locations, panel LEDs, drive LEDs, Integrated Lights Out (iLO), and Qumulo cluster networking.
 
 **Table of Contents**
 * **[Document History](history.md)**
