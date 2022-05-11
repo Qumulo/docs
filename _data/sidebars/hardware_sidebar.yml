@@ -12,12 +12,12 @@ entries:
       url: /index.html
       output: web
 
-    - title: Platforms Guide Home
-      url: /platforms/
+    - title: Hardware Guide Home
+      url: /hardware/
       output: web
 
-    - title: Platforms Guide History
-      url: /platforms/history.html
+    - title: hardware Guide History
+      url: /hardware/history.html
       output: web, pdf
 
   - title: HPE Apollo 4200 Gen9
@@ -25,27 +25,27 @@ entries:
     folderitems:
 
     - title: Getting Started
-      url: /platforms/hpe-apollo-4200-gen9/getting-started.html
+      url: /hardware/hpe-apollo-4200-gen9/getting-started.html
       output: web, pdf
 
     - title: Front and Rear Drives
-      url: /platforms/hpe-apollo-4200-gen9/front-rear-drives.html
+      url: /hardware/hpe-apollo-4200-gen9/front-rear-drives.html
       output: web, pdf
 
     - title: Panel LEDs
-      url: /platforms/hpe-apollo-4200-gen9/panel-leds.html
+      url: /hardware/hpe-apollo-4200-gen9/panel-leds.html
       output: web, pdf
 
     - title: Drive LEDs
-      url: /platforms/hpe-apollo-4200-gen9/drive-leds.html
+      url: /hardware/hpe-apollo-4200-gen9/drive-leds.html
       output: web, pdf
 
     - title: iLO Configuration
-      url: /platforms/hpe-apollo-4200-gen9/configuring-ilo.html
+      url: /hardware/hpe-apollo-4200-gen9/configuring-ilo.html
       output: web, pdf
 
     - title: Cluster Networking
-      url: /platforms/hpe-apollo-4200-gen9/networking-cluster.html
+      url: /hardware/hpe-apollo-4200-gen9/networking-cluster.html
       output: web, pdf
 
   - title: HPE Apollo 4200 Gen10
@@ -53,31 +53,31 @@ entries:
     folderitems:
 
     - title: Getting Started
-      url: /platforms/hpe-apollo-4200-gen10/getting-started.html
+      url: /hardware/hpe-apollo-4200-gen10/getting-started.html
       output: web, pdf
 
     - title: Front and Rear Drives
-      url: /platforms/hpe-apollo-4200-gen10/front-rear-drives.html
+      url: /hardware/hpe-apollo-4200-gen10/front-rear-drives.html
       output: web, pdf
 
     - title: Panel LEDs
-      url: /platforms/hpe-apollo-4200-gen10/panel-leds.html
+      url: /hardware/hpe-apollo-4200-gen10/panel-leds.html
       output: web, pdf
 
     - title: Drive LEDs
-      url: /platforms/hpe-apollo-4200-gen10/drive-leds.html
+      url: /hardware/hpe-apollo-4200-gen10/drive-leds.html
       output: web, pdf
 
     - title: iLO Configuration
-      url: /platforms/hpe-apollo-4200-gen10/configuring-ilo.html
+      url: /hardware/hpe-apollo-4200-gen10/configuring-ilo.html
       output: web, pdf
 
     - title: Cluster Networking
-      url: /platforms/hpe-apollo-4200-gen10/networking-cluster.html
+      url: /hardware/hpe-apollo-4200-gen10/networking-cluster.html
       output: web, pdf
 
     - title: Technical Specifications
-      url: /platforms/hpe-apollo-4200-gen10/technical-specifications.html
+      url: /hardware/hpe-apollo-4200-gen10/technical-specifications.html
       output: web, pdf
 
   - title: HPE ProLiant DL325 Gen10 Plus
@@ -85,17 +85,17 @@ entries:
     folderitems:
 
     - title: Getting Started
-      url: /platforms/hpe-dl325-gen10-plus/getting-started.html
+      url: /hardware/hpe-dl325-gen10-plus/getting-started.html
       output: web, pdf
 
     - title: Front and Rear Drives
-      url: /platforms/hpe-dl325-gen10-plus/front-rear-drives.html
+      url: /hardware/hpe-dl325-gen10-plus/front-rear-drives.html
       output: web, pdf
 
     - title: Cluster Networking
-      url: /platforms/hpe-dl325-gen10-plus/networking-cluster.html
+      url: /hardware/hpe-dl325-gen10-plus/networking-cluster.html
       output: web, pdf
 
     - title: Technical Specifications
-      url: /platforms/hpe-dl325-gen10-plus/technical-specifications.html
+      url: /hardware/hpe-dl325-gen10-plus/technical-specifications.html
       output: web, pdf
