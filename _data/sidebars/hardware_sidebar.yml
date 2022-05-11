@@ -16,7 +16,7 @@ entries:
       url: /hardware/
       output: web
 
-    - title: hardware Guide History
+    - title: Hardware Guide History
       url: /hardware/history.html
       output: web, pdf
 
