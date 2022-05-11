@@ -16,8 +16,8 @@ entries:
       url: /documentation-history.html
       output: web
 
-    - title: Qumulo Platforms Guide
-      url: /platforms/
+    - title: Qumulo Certified Hardware Guide
+      url: /hardware/
       output: web
 
     - title: Qumulo on Azure as a Service Onboarding Guide
