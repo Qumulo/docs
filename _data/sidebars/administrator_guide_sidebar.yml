@@ -79,3 +79,7 @@ entries:
     - title: Managing Snapshots
       url: /managing-snapshots.html
       output: web, pdf
+
+    - title: Setting the Web UI Inactivity Timeout
+      url: /web-ui-inactivity-timeout.html
+      output: web, pdf
