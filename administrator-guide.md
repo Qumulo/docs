@@ -20,3 +20,4 @@ The Qumulo Administrator Guide is a growing collection of information about conf
   * [Using Qumulo Shift-To to Copy Objects to Amazon S3](shift-to-s3.md)
   * [Using Qumulo Shift-From to Copy Objects from Amazon S3](shift-from-s3.md)
   * [Managing Snapshots](managing-snapshots.md)
+  * [Setting the Web UI Inactivity Timeout](web-ui-inactivity-timeout.md)
