@@ -20,5 +20,6 @@ The Qumulo Administrator Guide is a growing collection of information about conf
   * [Using Qumulo Shift-To to Copy Objects to Amazon S3](shift-to-s3.md)
   * [Using Qumulo Shift-From to Copy Objects from Amazon S3](shift-from-s3.md)
   * [Managing Snapshots](managing-snapshots.md)
+  * [Setting the Web UI Inactivity Timeout](web-ui-inactivity-timeout.md)
   * [Configuring Prometheus and Grafana to use the Qumulo Metrics API](configuring-prometheus-grafana-metrics-api.md)
   * [Qumulo OpenMetrics API Specification](openmetrics-api-specification.md)
