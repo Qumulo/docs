@@ -17,6 +17,10 @@ The following table lists changes to the _Qumulo Administrator Guide_.
   <tbody>
     <tr>
       <td>May 16, 2022</td>
+      <td>Updated the <a href="nics-transceivers-cables.html">Choosing NICs, Transceivers, and Cables for Your Qumulo Node</a> section.</td>
+    </tr>
+    <tr>
+      <td>May 16, 2022</td>
       <td>Added the <a href="web-ui-inactivity-timeout.html">Setting the Web UI Inactivity Timeout</a> section.</td>
     </tr>
     <tr>
