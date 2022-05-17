@@ -17,7 +17,12 @@ The following table lists changes to the _Qumulo Administrator Guide_.
   <tbody>
     <tr>
       <td>May 16, 2022</td>
-      <td>Added the <a href="web-ui-inactivity-timeout.html">Setting the Web UI Inactivity Timeout</a> section.</td>
+      <td>
+        <ul>
+          <li>Added the <a href="web-ui-inactivity-timeout.html">Setting the Web UI Inactivity Timeout</a> section.</li>
+          <li>Updated the <a href="nics-transceivers-cables.html">Choosing NICs, Transceivers, and Cables for Your Qumulo Node</a> section.</li>
+        </ul>
+      </td>
     </tr>
     <tr>
       <td>Apr. 12, 2022</td>
