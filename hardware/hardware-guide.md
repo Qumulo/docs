@@ -8,7 +8,7 @@ search: exclude
 The _Qumulo-Certified Hardware Guide_ is a collection of guides that provide information about getting started with a particular node type as well as reference information for front and rear drive locations, panel LEDs, drive LEDs, Integrated Lights Out (iLO), and Qumulo cluster networking.
 
 **Table of Contents**
-* **[Document History](history.md)**
+* **[Document History](document-history.md)**
 * **HPE Apollo 4200 Gen9**
   * [Getting Started](hpe-apollo-4200-gen9/getting-started.md)
   * [Front and Rear Drives](hpe-apollo-4200-gen9/front-rear-drives.md)
