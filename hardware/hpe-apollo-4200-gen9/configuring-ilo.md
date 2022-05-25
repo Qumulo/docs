@@ -100,7 +100,6 @@ Password for user 4:
 ### To Configure User Access
 
 ```
-# ipmitool channel setaccess 1 4 link=on ipmi=on callin=on privilege=4
 # ipmitool channel setaccess 2 4 link=on ipmi=on callin=on privilege=4
 # ipmitool user enable 4
 ```
@@ -108,7 +107,7 @@ Password for user 4:
 ### To Verify User Access Level
 
 ```
-# ipmitool channel getaccess 1 4
+# ipmitool channel getaccess 2 4
 Maximum User IDs : 10
 Enabled User IDs : 4
 
