@@ -17,7 +17,7 @@ entries:
       output: web
 
     - title: Hardware Guide History
-      url: /hardware/history.html
+      url: /hardware/document-history.html
       output: web, pdf
 
   - title: HPE Apollo 4200 Gen9
