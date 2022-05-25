@@ -10,8 +10,7 @@ This section explains how to prepare HPE Apollo 4200 Gen9 nodes for creating a Q
 
 
 ## Prerequisites
-* The latest Qumulo-certified HPE service pack installed on your nodes. For more information, contact [Qumulo Care](https://care.qumulo.com/hc/en-us/articles/115008409408).
-* The [Qumulo Core USB Drive Installer](https://care.qumulo.com/hc/en-us/articles/360034690034)
+[Qumulo Core USB Drive Installer](https://care.qumulo.com/hc/en-us/articles/360034690034)
 
 
 ## Step 1: Verify Your Node
