@@ -38,6 +38,8 @@ This section explains how to prepare HPE Apollo 4200 Gen9 nodes for creating a Q
 
 ## Step 2: Boot by Using the Qumulo Core USB Drive Installer
 
+{% include caution.html content="If your node contains any live data, *don't* run the FVT." %}
+
 1. On the **HPE ProLiant** boot screen, press **F11**.
 
    {% include note.html content="The **Boot Menu** page might take a few minutes to appear." %}
@@ -48,123 +50,51 @@ This section explains how to prepare HPE Apollo 4200 Gen9 nodes for creating a Q
 
 1. From the **Default Boot Override Options** menu, select **2) One Time Boot to USB DriveKey**.
 
-   The platform name appears.
+   Wait for Qumulo Installer to load.
 
-1. Do one of the following:
+1. Select **[1] Factory reset (DESTROYS ALL DATA)** and when prompted type `DESTROY ALL DATA`.
 
-   * For an encrypted installation, select **2) no, continue install in Secure mode** and then press **Enter**.
+   The platform name and SmartArray mode appear.
 
-   * For an unencrypted installation, select **1) SET HBA MODE, set SmartArrays in HBA mode, destroy all data, reboot node** and then press **Enter**.
+1. Configure the encryption on your node.
 
-     After the node reboots automatically, repeat the steps in this section to boot by using the USB Drive Installer, select **continue, install in NonSecure Mode**, and then press **Enter**.
+   * If the SmartArray mode is **Secure**, **RAID**, or **Encrypted**, select **2) no, continue install in Non-Secure mode**.
+
+   * If the SmartArray mode is **Not Secure**, **HBA**, or **Unencrypted**, do the following:
+
+     a. Select **1) SET ENCRYPTION, set SmartArrays in RAID mode, destroy all data, reboot node**.
+
+     b. After the node reboots, select **1) CONFIGURE ENCRYPTION, Set up encryption, input new keys**.
+
+        The rules for the cryptographic login password and master key appear.
+
+        {% include caution.html content="To avoid data loss, save your credentials." %}
      
 
 ## Step 3: Run the Field Verification Tool (FVT)
 
-{% include caution.html content="If your node contains any live data, *don't* run the FVT." %}
-
-1. On the main menu, select **1) FVT, Enter FVT sub menu**.
+1. Select **1) FVT, Enter FVT sub menu**.
 
 1. To update the node components to required versions, choose **1) FLASH, Flash components to required versions**.
 
-1. On the main menu, to continue with the component verification, select **1) FVT, Enter FVT sub menu**.
+1. Do one of the following:
 
-1. On the **===FIELD VERIFICATION TOOL===** page, to verify the node configuration, select **2) VERIFY, verify node configuration**.
+   * If the FVT verification passes, select **2) no, return to menu, run FVT to continue install**.
 
-1. Review the verification results and consider the following before proceeding with the installation.
-
-   * **PASSED** messages indicate correct configuration. For example:
-
-     ```
-     === TEST: Drives in whitelist and proper slot : PASSED
-     ```
-
-     If all areas pass, continue to [install Qumulo Core by using the USB drive installer](#step-5-install-qumulo-core-by-using-the-usb-drive-installer).
-
-   * **FAIL** messages don't indicate an unsuccessful flash command. For example:
-
-     ```
-     === TEST: SmartArray Slot 0 : FAILED
-     ERROR: FW 4.52, Expected 6.30
-     ```
-   
-     To resolve these issues, power-cycle the node to apply the most recent firmware changes.
-
-   * If the Intelligent Provisioning Version area fails verification, continue to [flash the HPE Intelligent Provisioning Firmware](#step-4-optional-flash-the-hpe-intelligent-provisioning-firmware), and then return to this section and run the **VERIFY** command in the FVT.
-
-     When all areas pass, continue to [install Qumulo Core by using the USB drive installer](#step-5-install-qumulo-core-by-using-the-usb-drive-installer).
-   
-   * You can ignore any **FAIL** messages about the boot order.
+   * If the FVT flashes firmware, select **1) REBOOT, reboot node in 5 seconds** and the continue from step 2.
 
 
-## Step 4: (Optional) Flash the HPE Intelligent Provisioning Firmware
-
-{% include important.html content="Follow the steps in this section only if the Intelligent Provisioning Version area fails verification." %}
-
-Use one of the following options to update the HPE Intelligent Provisioning firmware by using a USB drive or by using virtual media.
-
-
-### Option 1: Update Firmware from System Utilities by Using a USB Drive
-
-1. Download the [Intelligent Provisioning for Gen9 Servers](https://internal.support.hpe.com/connect/s/softwaredetails?language=en_US&softwareId=MTX_f6abd3e3803e4b2395eee361c3) image file.
-
-1. Convert the `.iso` file to `.img` format.
-
-1. Apply the image to a USB drive. For more information, see [USB Key Utility for Windows](https://support.hpe.com/connect/s/softwaredetails?language=en_US&softwareId=MTX_360731071b404454b454390208) on the HPE Support Center.
-
-1. Insert the USB drive into the node.
-
-1. To enter the boot menu, press **F11**.
-
-1. Select **boot from USB stick**.
-
-   The Intelligent Provisioning package updates your firmware.
-
-1. When the upgrade is complete, press **Esc** until you return to the main page.
-
-1. Reboot the node.
-
-
-### Option 2: Update Firmware from System Utilities by Using Virtual Media
-
-1. Download the [Intelligent Provisioning for Gen9 Servers](https://internal.support.hpe.com/connect/s/softwaredetails?language=en_US&softwareId=MTX_f6abd3e3803e4b2395eee361c3) image file.
-
-1. Place the `.iso` file in a network location that your node can access.
-
-1. On the **Virtual Media** page, click **boot on next reboot** and then click **Insert Media**.
-
-1. Reboot the node.
-
-   On the **Intelligent Provisioning Update ISO Version <x.xx>** page, the installation progress appears.
-
-1. Reboot the node and [run the FVT](#step-3-run-the-field-verification-tool-fvt).
-
-1. Select **2) VERIFY, verify node configuration**.
-
-   If all areas pass, you can continue to install Qumulo Core.
-
-
-## Step 5: Install Qumulo Core by Using the USB Drive Installer
+## Step 4: Install Qumulo Core by Using the USB Drive Installer
 
 Perform the following steps on every node in your cluster.
 
-1. Power on or reboot your node.
-
-1. To enter the boot menu, press **F11**.
-
-1. To boot from the USB drive, select **2**.
-
-1. When prompted to switch between RAID and HBA modes, select **no**.
-
-1. To perform a clean installation of Qumulo Core on your node, type `DESTROY ALL DATA` (case-sensitive).
-
-   {% include important.html content="If you mistype `DESTROY ALL DATA` three times or if you type `no`, the installation is aborted." %}
+1. In the FVT, select **2) no, continue install**.
 
    When the installation is complete, the node shuts down automatically.
 
 1. Remove the USB drive and power on the node.
 
 
-## Step 6: Create and Configure Your Cluster
+## Step 5: Create and Configure Your Cluster
 
 {% include content-reuse/create-configure-cluster.md %}
