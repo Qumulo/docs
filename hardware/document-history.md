@@ -5,7 +5,7 @@ sidebar: hardware_sidebar
 search: exclude
 ---
 
-The following table lists changes to the _Qumulo-Certified Hardware Guide_.
+The following table lists changes to the Qumulo-Certified Hardware Guide.
 
 <table>
   <thead>
