@@ -1,6 +1,6 @@
 ---
 title: "Qumulo-Certified Hardware Guide Document History"
-permalink: hardware/history.html
+permalink: hardware/document-history.html
 sidebar: hardware_sidebar
 search: exclude
 ---
@@ -16,7 +16,7 @@ The following table lists changes to the _Qumulo-Certified Hardware Guide_.
   </thead>
   <tbody>
     <tr>
-      <td>May 16, 2022</td>
+      <td>May 25, 2022</td>
       <td>Created the Qumulo-Certified Hardware Guide and added guides for the following platforms:
          <ul>
            <li>HPE Apollo 4200 Gen9</li>
