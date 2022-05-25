@@ -37,7 +37,7 @@ The following table lists node types, the NICs that these nodes use, the speeds 
   </tr>
   <tr>
     <td>P2100G</td>
-    <td><ul><li><a href="https://docs.broadcom.com/doc/BC-0591EN">BC-0591</a></li><li><a href="https://techdocs.broadcom.com/us/en/storage-and-ethernet-connectivity/ethernet-nic-controllers/bcm957xxx/1-0/installation_3/connecting-the-network-cables.html">Broadcom-Supported Third Party</a></li></ul></td>
+    <td><ul><li><a href="https://www.broadcom.com/products/fiber-optic-modules-components/networking/optical-transceivers">Broadcom Optical Transceivers</a></li><li><a href="https://techdocs.broadcom.com/us/en/storage-and-ethernet-connectivity/ethernet-nic-controllers/bcm957xxx/1-0/installation_3/connecting-the-network-cables.html">Broadcom-Supported Third Party</a></li></ul></td>
   </tr>
   <tr>
     <td rowspan="2">HPE A4200 Gen9</td>
@@ -67,7 +67,7 @@ The following table lists node types, the NICs that these nodes use, the speeds 
   </tr>
   <tr>
     <td>P225P</td>
-    <td><ul><li><a href="https://docs.broadcom.com/doc/BC-0591EN">BC-0591</a></li><li><a href="https://techdocs.broadcom.com/us/en/storage-and-ethernet-connectivity/ethernet-nic-controllers/bcm957xxx/1-0/installation_3/connecting-the-network-cables.html">Broadcom-Supported Third Party</a></li></ul></td>
+    <td><ul><li><a href="https://www.broadcom.com/products/fiber-optic-modules-components/networking/optical-transceivers">Broadcom Optical Transceivers</a></li><li><a href="https://techdocs.broadcom.com/us/en/storage-and-ethernet-connectivity/ethernet-nic-controllers/bcm957xxx/1-0/installation_3/connecting-the-network-cables.html">Broadcom-Supported Third Party</a></li></ul></td>
   </tr>
   <tr>
     <td rowspan="4">HPE A4200 Gen10<ul><li>90T</li><li>336T</li></ul></td>
@@ -86,7 +86,7 @@ The following table lists node types, the NICs that these nodes use, the speeds 
   </tr>
   <tr>
     <td>P225P</td>
-    <td><ul><li><a href="https://docs.broadcom.com/doc/BC-0591EN">BC-0591</a></li><li><a href="https://techdocs.broadcom.com/us/en/storage-and-ethernet-connectivity/ethernet-nic-controllers/bcm957xxx/1-0/installation_3/connecting-the-network-cables.html">Broadcom-Supported Third Party</a></li></ul></td>
+    <td><ul><li><a href="https://www.broadcom.com/products/fiber-optic-modules-components/networking/optical-transceivers">Broadcom Optical Transceivers</a></li><li><a href="https://techdocs.broadcom.com/us/en/storage-and-ethernet-connectivity/ethernet-nic-controllers/bcm957xxx/1-0/installation_3/connecting-the-network-cables.html">Broadcom-Supported Third Party</a></li></ul></td>
   </tr>
   <tr>
     <td>HPE DL325 Gen10 Plus</td>
@@ -112,7 +112,7 @@ The following table lists node types, the NICs that these nodes use, the speeds 
   </tr>
   <tr>
     <td>P225P</td>
-    <td><ul><li><a href="https://docs.broadcom.com/doc/BC-0591EN">BC-0591</a></li><li><a href="https://techdocs.broadcom.com/us/en/storage-and-ethernet-connectivity/ethernet-nic-controllers/bcm957xxx/1-0/installation_3/connecting-the-network-cables.html">Broadcom-Supported Third Party</a></li></ul></td>
+    <td><ul><li><a href="https://www.broadcom.com/products/fiber-optic-modules-components/networking/optical-transceivers">Broadcom Optical Transceivers</a></li><li><a href="https://techdocs.broadcom.com/us/en/storage-and-ethernet-connectivity/ethernet-nic-controllers/bcm957xxx/1-0/installation_3/connecting-the-network-cables.html">Broadcom-Supported Third Party</a></li></ul></td>
   </tr>
   <tr>
     <td><ul><li>P-23T</li><li>P-92T</li><li>P-184T</li><li>P-368T</li></ul></td>
@@ -147,8 +147,8 @@ The following table lists node types, the NICs that these nodes use, the speeds 
     <td><a href="https://docs.nvidia.com/networking/display/ConnectX6Firmwarev20301004/Firmware+Compatible+Products">16.30.1004</a></td>
   </tr>
   <tr>
-    <td>P2100G</td>
-    <td><ul><li><a href="https://docs.broadcom.com/doc/BC-0591EN">BC-0591</a></li><li><a href="https://techdocs.broadcom.com/us/en/storage-and-ethernet-connectivity/ethernet-nic-controllers/bcm957xxx/1-0/installation_3/connecting-the-network-cables.html">Broadcom-Supported Third Party</a></li></ul></td>
+    <td>AOC-S100G-b2C</td>
+    <td><ul><li><a href="https://www.supermicro.com/en/support/resources/aoc/cables-transceivers">SMC Networking Cables and Transceivers Compatibility Matrix</a></li><li><a href="https://www.broadcom.com/products/fiber-optic-modules-components/networking/optical-transceivers">Broadcom Optical Transceivers</a></li><li><a href="https://techdocs.broadcom.com/us/en/storage-and-ethernet-connectivity/ethernet-nic-controllers/bcm957xxx/1-0/installation_3/connecting-the-network-cables.html">Broadcom-Supported Third Party</a></li></ul></td>
   </tr>
 </tbody>
 </table>
