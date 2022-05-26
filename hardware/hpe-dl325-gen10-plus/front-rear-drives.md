@@ -9,19 +9,19 @@ keywords: front drive, rear drive, drive, drive location
 On this platform, the drives in a node are arranged into groups called _boxes_.
 
 ## Front Drive Row
-The following diagram shows the front drive row. In the diagram, Box 1 holds bays 1-8 (indicated in green) and Box 2 holds bays 1-2 (indicated in orange).
+The following diagram shows the front drive row. In the diagram, box 1 holds bays 1-8 (indicated in green) and box 2 holds bays 1-2 (indicated in orange).
 
-{% include image.html alt="Bays 1-8 (Box 1) and Bays 1-2 (Box 2) on the HPE ProLiant DL325 Gen10 Plus node" file="dl325-drive-diagram.png" %}
+{% include image.html alt="Bays 1-8 (box 1) and bays 1-2 (box 2) on the HPE ProLiant DL325 Gen10 Plus node" file="dl325-drive-diagram.png" %}
 
 ## Second Drive Row
 The second drive row flips up behind the first drive row in the node.
 
-{% include image.html alt="The second drive row flips up behind the first drive row in the node. Box 3 holds bays 1-8 and Box 4 holds bays 1-2." file="dl325-node-photo.png" %}<br>
+{% include image.html alt="The second drive row flips up behind the first drive row in the node. Box 3 holds bays 1-8 and box 4 holds bays 1-2." file="dl325-node-photo.png" %}<br>
 
-For the second row, Box 3 holds bays 1-8 and Box 4 holds bays 1-2.
+For the second row, box 3 holds bays 1-8 and box 4 holds bays 1-2.
 
-{% include image.html alt="Bays 1-8 (Box 3) and Bays 1-2 (Box 4) on the HPE ProLiant DL325 Gen10 Plus node" file="dl325-drive-diagram-second-row.png" %}
+{% include image.html alt="Bays 1-8 (box 3) and bays 1-2 (box 4) on the HPE ProLiant DL325 Gen10 Plus node" file="dl325-drive-diagram-second-row.png" %}
 
-# Boot Drive
-
-{% include important.html content="Before you remove the boot drive, contact the Qumulo Care Team for additional instructions." %}
+## Boot Drive
+The boot drive is in box 1, bay 1.
+{% include important.html content="Before you remove the boot drive, contact the [Qumulo Care Team](https://care.qumulo.com/hc/en-us/articles/115008409408) for additional instructions." %}
