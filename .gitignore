@@ -1,3 +1,4 @@
 .gitlab-ci.yml
 _config.yml
 .DS_Store
+_site
