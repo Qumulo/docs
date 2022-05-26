@@ -18,6 +18,7 @@ The second drive row flips up behind the first drive row in the node.
 
 {% include image.html alt="The second drive row flips up behind the first drive row in the node. Box 3 holds bays 1-8 and Box 4 holds bays 1-2." file="dl325-node-photo.png" %}
 
+
 For the second row, Box 3 holds bays 1-8 and Box 4 holds bays 1-2.
 
 {% include image.html alt="Bays 1-8 (Box 3) and Bays 1-2 (Box 4) on the HPE ProLiant DL325 Gen10 Plus node" file="dl325-drive-diagram-second-row.png" %}
