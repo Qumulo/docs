@@ -10,8 +10,7 @@ This section explains how to prepare HPE Apollo 4200 Gen10 nodes for creating a 
 
 
 ## Prerequisites
-* The latest Qumulo-certified HPE service pack installed on your nodes. For more information, contact [Qumulo Care](https://care.qumulo.com/hc/en-us/articles/115008409408).
-* The [Qumulo Core USB Drive Installer](https://care.qumulo.com/hc/en-us/articles/360034690034)
+[Qumulo Core USB Drive Installer](https://care.qumulo.com/hc/en-us/articles/360034690034)
 
 
 ## Step 1: Verify Your Node
@@ -50,15 +49,11 @@ This section explains how to prepare HPE Apollo 4200 Gen10 nodes for creating a 
 1. From the **Default Boot Override Options** menu, select **2) One Time Boot to USB DriveKey**.
 
 
-## Step 3: Use the Field Verification Tool (FVT)
+## Step 3: Run the Field Verification Tool (FVT)
 
 After the node reboots, the Field Verification Tool begins to run automatically.
 
-Review the verification results and consider the following before proceeding with a clean install.
-
-* If the **FVT Passed!** message appears, continue to [install Qumulo Core by using the USB drive installer](#step-5-install-qumulo-core-by-using-the-usb-drive-installer).
-
-* If **FAIL** messages appear, use one of the following resolutions.
+Select **[1] Factory reset (DESTROYS ALL DATA)** and then enter `DESTROY ALL DATA`.
 
 
 ### Fixable Issues During Installation
@@ -70,44 +65,30 @@ If the FVT finds fixable issues, it prompts you to auto-correct any detected iss
 * NIC mode for CX5
 * Boot order
 
-1. To attempt auto-correction, select **1) Run FVT Flash for a fresh install. This will try to fix issues, then reboot. Please take caution this MAY DESTROY EXISTING DATA.**
+1. To attempt auto-correction, select **[1] Run FVT Flash. This will try to fix issues then reboot.**
 
    If the fixes are successful, the FVT reboots the node automatically.
 
 1. To re-attempt verification, [boot by using the Qumulo Core USB Drive Installer](#step-2-boot-by-using-the-qumulo-core-usb-drive-installer) and then continue the installation.
 
 
-### Fixable Issues During Part Replacement
-In Qumulo Core 3.1.0 (and higher), the FVT can auto-correct issues (such as firmware upgrades) after you replace a part.
-
-To attempt auto-correction, select **2) Run FVT Flash for a part replacement. This will try to fix issues, then reboot. This will NOT destroy existing data.**
-
-The FVT reboots the node automatically and lets you continue the installation.
-
-
 ### Non-Fixable Issues
-If the FVT is unable to auto-correct any issues, the message **Not fixable issues were detected.** appears, providing reasons for failure. Issues that the FVT can't auto-correct include the following:
-
-* BIOS version
-* Integrated Lights Out (iLO) version
-* NIC firmware
+If the FVT is unable to auto-correct any issues, the message **Not fixable issues were detected.** appears, providing reasons for failure.
 
 For help with troubleshooting your node, contact [Qumulo Care](https://care.qumulo.com/hc/en-us/articles/115008409408).
 
 
-## Step 5: Install Qumulo Core by Using the USB Drive Installer
+## Step 4: Install Qumulo Core by Using the USB Drive Installer
+
+{% include caution.html content="Store your master key in a secure location. If you lose your master key, you might not be able to recover your data from certain hardware failures." %}
 
 Perform the following steps on every node in your cluster.
 
 1. Do one of the following:
 
-   * Choose **1) Part replacement. This will reboot into the product.**
+   * Choose **[1] Install Qumulo Core without HPE Hardware encryption**
 
-   * Choose **2) Install Qumulo Core without encryption**.
-
-   * Choose **3) Install Qumulo Core with encryption**.
-
-1. When the installer prompts you, to confirm that all data on the node will be destroyed, type `DESTROY ALL DATA`.
+   * Choose **[2] Install Qumulo Core with HPE Hardware encryption**.
 
 1. If you install Qumulo Core with encryption, enter your cryptographic login password and master encryption key.
 
@@ -133,6 +114,6 @@ Perform the following steps on every node in your cluster.
    </ul>
    {{site.data.alerts.end}}
    
-## Step 6: Create and Configure Your Cluster
+## Step 5: Create and Configure Your Cluster
 
 {% include content-reuse/create-configure-cluster.md %}
