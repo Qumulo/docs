@@ -250,7 +250,6 @@ h1 {
 
 .breadcrumb > .active {color: #777 !important;}
 
-/* make room for the nav bar */
 h1[id],
 h2[id],
 h3[id],
@@ -258,8 +257,6 @@ h4[id],
 h5[id],
 h6[id],
 dt[id]{
-padding-top: 60px;
-margin-top: -40px;
 color: #333;
 }
 
@@ -320,9 +317,8 @@ table > tbody > tr > td,
 table > tfoot > tr > td {
     padding: 8px;
     line-height: 1.42857143;
-    vertical-align: middle;
-    /*border-top: 1px solid #ddd;*/ /*old border style*/
-    border:1px solid #ddd;
+    vertical-align: top;
+    border-top: 1px solid #ddd;
 }
 table > thead > tr > th {
     vertical-align: bottom;
@@ -441,10 +437,10 @@ div#toc {
     float: right;
     position: relative;
     top: inherit; /* Set this to the default value */
-    margin-left:10px; 
+    margin-left:10px;
 }
 
-/* Ensure that text wraps around TOC correctly 
+/* Ensure that text wraps around TOC correctly
 #toc>ul {
     margin-top:65px;
 }*/
@@ -509,7 +505,7 @@ li.dropdownActive a {
 }
 
 footer {
-    color: white;    
+    color: white;
     background-color:#0d1934;
     /* Attach footer to bottom of page*/
     min-height: 130px;
@@ -647,7 +643,7 @@ span.projectTitle {
 /*
 .footer {
     padding-top: 15px;
-    color: white;    
+    color: white;
     background-color:#0d1934;
     width:auto;
     height:130px;
