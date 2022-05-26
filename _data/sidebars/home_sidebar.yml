@@ -1,6 +1,6 @@
 entries:
 - title:
-  product: 
+  product:
   version:
   folders:
 
@@ -15,7 +15,11 @@ entries:
     - title: Documentation Portal History
       url: /documentation-history.html
       output: web
-      
+
+    - title: Qumulo-Certified Hardware Guide
+      url: /hardware/
+      output: web
+
     - title: Qumulo on Azure as a Service Onboarding Guide
       url: /azure.html
       output: web
