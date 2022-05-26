@@ -51,7 +51,7 @@ This section explains how to prepare HPE Apollo 4200 Gen10 nodes for creating a 
 
 ## Step 3: Run the Field Verification Tool (FVT)
 
-After the node reboots, the Field Verification Tool begins to run automatically.
+After the node reboots, the Field Verification Tool runs automatically.
 
 Select **[1] Factory reset (DESTROYS ALL DATA)** and then enter `DESTROY ALL DATA`.
 
