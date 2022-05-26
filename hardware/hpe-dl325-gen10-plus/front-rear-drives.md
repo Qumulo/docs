@@ -16,8 +16,7 @@ The following diagram shows the front drive row. In the diagram, Box 1 holds bay
 ## Second Drive Row
 The second drive row flips up behind the first drive row in the node.
 
-{% include image.html alt="The second drive row flips up behind the first drive row in the node. Box 3 holds bays 1-8 and Box 4 holds bays 1-2." file="dl325-node-photo.png" %}
-
+{% include image.html alt="The second drive row flips up behind the first drive row in the node. Box 3 holds bays 1-8 and Box 4 holds bays 1-2." file="dl325-node-photo.png" %}<br>
 
 For the second row, Box 3 holds bays 1-8 and Box 4 holds bays 1-2.
 
