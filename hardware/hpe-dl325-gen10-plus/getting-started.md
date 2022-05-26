@@ -9,8 +9,7 @@ keywords: getting started guide, quick reference, HPE, ProLiant DL325 Gen10 Plus
 This section explains how to prepare HPE ProLiant DL325 Gen10 Plus nodes for creating a Qumulo Core cluster. This guide is for system administrators, professional service providers, and colleagues in your organization who are responsible for installing and configuring server hardware. For more information, see [HPE ProLiant DL325 Gen10 Plus Server - Document List](https://support.hpe.com/hpesc/public/docDisplay?docLocale=en_US&docId=a00102298en_us).
 
 ## Prerequisites
-* The latest Qumulo-certified HPE service pack installed on your nodes. For more information, contact [Qumulo Care](https://care.qumulo.com/hc/en-us/articles/115008409408).
-* The [Qumulo Core USB Drive Installer](https://care.qumulo.com/hc/en-us/articles/360034690034)
+[Qumulo Core USB Drive Installer](https://care.qumulo.com/hc/en-us/articles/360034690034)
 
 
 ## Step 1: Verify Your Node
@@ -28,7 +27,7 @@ This section explains how to prepare HPE ProLiant DL325 Gen10 Plus nodes for cre
 
 1. On the **System Utilities** page, click **System Configuration > BIOS/Platform Configuration (RBSU) > Boot Options**.
 
-1. On the **Boot Options** page, set **Boot Mode** to **Legacy BIOS Mode** and then press **F10**.
+1. On the **Boot Options** page, set **Boot Mode** to **UEFI Mode** and then press **F10**.
 
 1. Press **Esc** until you return to the main page.
 
@@ -43,9 +42,9 @@ This section explains how to prepare HPE ProLiant DL325 Gen10 Plus nodes for cre
 
 1. On the **Boot Menu** page, to perform a one-time boot, click **Generic USB Boot**.
 
-## Step 3: Use the Field Verification Tool (FVT)
+## Step 3: Run the Field Verification Tool (FVT)
 
-After the node reboots, the Field Verification Tool starts automatically.
+After the node reboots, the Qumulo Installer runs automatically.
 
 1. Choose **[1] Factory reset (DESTROYS ALL DATA)**.
 
@@ -56,6 +55,8 @@ After the node reboots, the Field Verification Tool starts automatically.
    * If the **FVT Passed!** message appears, select **[1] Install Qumulo Core**.
 
    * If **FAIL** messages appear, use one of the following resolutions.
+
+1. When the FVT passes all checks, select **[1] Install Qumulo Core**.
 
 
 ### Fixable Issues During Installation
@@ -68,31 +69,19 @@ If the FVT finds fixable issues, it prompts you to auto-correct any detected iss
 * NIC firmware
 * Boot order
 
-1. To attempt auto-correction, select **[1] Run FVT Flash. This will try to fix issues then reboot. Please take caution as this MAY DESTROY EXISTING DATA.**
+1. To attempt auto-correction, select **[1] Run FVT Flash. This will try to fix issues then reboot.**
 
    If the fixes are successful, the FVT reboots the node automatically.
 
 1. To re-attempt verification, [boot by using the Qumulo Core USB Drive Installer](#step-2-boot-by-using-the-qumulo-core-usb-drive-installer) and then continue the installation.
 
 
-### Fixable Issues During Part Replacement
-In Qumulo Core 3.1.0 (and higher), the FVT can auto-correct issues (such as firmware upgrades) after you replace a part.
-
-To attempt auto-correction, select **[2] Run FVT Flash for a part replacement. This will try to fix issues, then reboot. This will NOT destroy existing data.**
-
-The FVT reboots the node automatically and lets you continue the installation.
-
-
 ### Non-Fixable Issues
-If the FVT is unable to auto-correct any issues, the message **Not fixable issues were detected.** appears, providing reasons for failure. Issues that the FVT can't auto-correct include the following:
-
-* BIOS version
-* iLO version
-* NIC firmware
+If the FVT is unable to auto-correct any issues, the message **Not fixable issues were detected.** appears, providing reasons for failure.
 
 For help with troubleshooting your node, contact [Qumulo Care](https://care.qumulo.com/hc/en-us/articles/115008409408).
 
 
-## Step 5: Create and Configure Your Cluster
+## Step 4: Create and Configure Your Cluster
 
 {% include content-reuse/create-configure-cluster.md %}
