@@ -31,7 +31,6 @@ For improved security, the Qumulo on Azure as a Service file system provisioned 
 
 The following service require specific configuration for public Internet connectivity.
 * **Audit:** Requires an Rsyslog server or proxy to a public Rsyslog server in a peered VNet.
-* **Network Time Protocol (NTP):** Not operational by default. Requires an NTP server or proxy to a public NTP server in a peered VNet.
 * **Shift for S3:** Requires an S3 proxy in a peered VNet. You can configure this proxy on the **Advanced S3 Server Settings** panel when you create a copy job.
 
 ### Using IP Failover with Floating IP Addresses
