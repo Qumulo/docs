@@ -101,7 +101,6 @@ Password for user 4:
 
 ```
 # ipmitool channel setaccess 1 4 link=on ipmi=on callin=on privilege=4
-# ipmitool channel setaccess 2 4 link=on ipmi=on callin=on privilege=4
 # ipmitool user enable 4
 ```
 
