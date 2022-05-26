@@ -16,7 +16,7 @@ The following table lists changes to the Qumulo-Certified Hardware Guide.
   </thead>
   <tbody>
     <tr>
-      <td>May 25, 2022</td>
+      <td>May 26, 2022</td>
       <td>Created the Qumulo-Certified Hardware Guide and added guides for the following platforms:
          <ul>
            <li>HPE Apollo 4200 Gen9</li>
