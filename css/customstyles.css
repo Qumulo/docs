@@ -24,9 +24,8 @@ a:visited {
   color:#3d33b7;
 }
 
-/* Colour of in-page TOC links never changes because they're
-   all already "visited by default" because the user is on thead
-   page to which they link */
+/* Colour of in-page TOC links never changes because we consider
+   in-page links as "visited by default" */
 #toc > ul > li > a:visited {
     color:#337ab7;    
 }
