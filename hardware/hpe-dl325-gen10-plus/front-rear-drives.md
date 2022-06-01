@@ -6,7 +6,7 @@ sidebar: hardware_sidebar
 keywords: front drive, rear drive, drive, drive location
 ---
 
-On this platform, the drives in a node are arranged into groups called _boxes_.
+This section explains the front and rear drive locations in your HPE ProLiant DL325 Gen10 Plus node. On this platform, the drives in a node are arranged into _rows_ and groups called _boxes_.
 
 ## Front Drive Row
 The following diagram shows the front drive row. In the diagram, box 1 holds bays 1-8 (indicated in green) and box 2 holds bays 1-2 (indicated in orange).
