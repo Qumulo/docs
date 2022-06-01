@@ -19,6 +19,17 @@ body {
   /* Attach footer to bottom of page */
 }
 
+/* Colour only body links when :visited for accessibility */
+a:visited {
+  color:#3d33b7;
+}
+
+/* Colour of in-page TOC links never changes because we consider
+   in-page links as "visited by default" */
+#toc > ul > li > a:visited {
+    color:#337ab7;    
+}
+
 #main {
   margin-bottom:30px !important;
 }
