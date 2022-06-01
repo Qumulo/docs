@@ -19,6 +19,7 @@ body {
   /* Attach footer to bottom of page */
 }
 
+/* Colour only body links when :visited for accessibility */
 a:visited {
   color:#4533b7;
 }
@@ -1173,6 +1174,7 @@ a[href^="http://"]:after, a[href^="https://"]:after {
     display: inline-block;
     text-decoration: none;
     padding-left: 3px;
+    color:#4533b7; /*force color for external links*/
 }
 
 /* Strip the outbound icon when this class is present */
