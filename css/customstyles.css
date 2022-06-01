@@ -24,6 +24,10 @@ a:visited {
   color:#4533b7;
 }
 
+#toc > ul > li > a:visited {
+    color:#337ab7;    
+}
+
 /*force color for external links*/
 p.external a:visited {
     text-align:right;
