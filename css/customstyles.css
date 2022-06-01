@@ -21,7 +21,7 @@ body {
 
 /* Colour only body links when :visited for accessibility */
 a:visited {
-  color:#4533b7;
+  color:#3d33b7;
 }
 
 /* Colour of in-page TOC links never changes because they're
