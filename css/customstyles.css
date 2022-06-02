@@ -1075,7 +1075,7 @@ span.soft {
 }
 
 .downloadPDFButton {
-    margin-bottom:0px !important;
+    margin-bottom:-5px !important;
 }
 
 .endpoint {
