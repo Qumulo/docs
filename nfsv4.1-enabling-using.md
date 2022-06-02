@@ -145,21 +145,21 @@ For example, if you configure only one IP address per node, on a cluster with 60
 
 
 ## Listing NFSv4.1 Byte-Range Locks
-Rather than lock an entire file, byte-range locking lets you lock specific elements of a file in use. This feature is available in Qumulo Core 5.1.3 (and higher). It doesn't require client mount configuration.
+Rather than lock an entire file, byte-range locking lets you lock specific portions of a file or an entire file in use. This feature is available in Qumulo Core 5.1.3 (and higher). It doesn't require client mount configuration.
 
 The NFSv4.1 implementation in Qumulo Core has a non-configurable lease of one minute. During each lease period, clients send a heartbeat to your Qumulo cluster. The cluster uses this heartbeat to detect lost client connections and to revoke the client leases. When the cluster revokes a lease, it releases any byte-range locks and makes them available to other clients.
 
 {{site.data.alerts.important}}
 <ul>
   <li>NFSv4.1 byte-range locks are interoperable with NLM (NFSv3) byte-range locks. NFSv4.1 clients view and respect locks that NFSv3 clients hold (the opposite is also true).</li>
-  <li>NFSv.4.1 and NLM locks aren't interoperable with SMB locks.</li>
+  <li>NFSv4.1 and NLM locks aren't interoperable with SMB locks.</li>
 </ul>
 {{site.data.alerts.end}}
 
 To list NFSv4.1 byte-range locks in your cluster, use the following CLI command:
 
 ```bash
-qq qq fs_list_locks --protocol nfs4
+qq fs_list_locks --protocol nfs4
 ```
 
 {{site.data.alerts.note}}
