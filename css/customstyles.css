@@ -1074,6 +1074,10 @@ span.soft {
     right: 470px;*/
 }
 
+.downloadPDFButton {
+    width:100%;
+}
+
 .endpoint {
     padding: 15px;
     background-color: #f0f0f0;
