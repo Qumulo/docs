@@ -4,6 +4,21 @@ entries:
   version:
   folders:
 
+  - title:
+    output: pdf
+    type: frontmatter
+    folderitems:
+
+    - title:
+      url: /titlepage.html
+      output: pdf
+      type: frontmatter
+
+    - title:
+      url: /tocpage.html
+      output: pdf
+      type: frontmatter
+
   - title: Qumulo-Certified Hardware Guide
     output: web, pdf
     folderitems:
