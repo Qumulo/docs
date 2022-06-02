@@ -7,7 +7,7 @@
 
   {% for entry in sidebar %}
   {% for folder in entry.folders %}
-  {% if folder.output contains "web" %}
+  {% if folder.output contains "pdf" %}
   <a target="_blank" rel="noopener" href="/pdf/{{title}}.pdf" class="noCrossRef btn btn-default downloadPDFButton" role="button"><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download PDF</button></a>
   {% endif %}
   {% endfor %}
