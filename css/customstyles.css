@@ -1074,14 +1074,9 @@ span.soft {
     right: 470px;*/
 }
 
-/*
 .downloadPDFButton {
-    width:100%;
+    margin-bottom:-10px;
 }
-
-a.downloadPDFButton:hover {
-    background:none;
-}*/
 
 .endpoint {
     padding: 15px;
