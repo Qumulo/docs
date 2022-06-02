@@ -6,7 +6,6 @@ output: pdf
 #product: Qumulo-Certified Hardware Guide
 print_title: Qumulo-Certified Hardware Guide
 #print_subtitle: version 6.0
-#output: pdf
 defaults:
   -
     scope:

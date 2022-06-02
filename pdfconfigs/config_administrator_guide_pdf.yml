@@ -6,7 +6,6 @@ output: pdf
 #product: Qumulo Administrator Guide
 print_title: Qumulo Administrator Guide
 #print_subtitle: version 6.0
-#output: pdf
 defaults:
   -
     scope:
