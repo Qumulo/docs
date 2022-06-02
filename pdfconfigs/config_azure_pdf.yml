@@ -3,10 +3,10 @@ url: "http://127.0.0.1:4010"
 baseurl: "/qumulo-doc"
 port: 4010
 output: pdf
-product: Qumulo on Azure as a Service Getting Started Guide
-print_title: Qumulo on Azure as a Service Getting Started Guide
+#product: Qumulo on Azure as a Service Getting Started Guide
+print_title: Qumulo on Azure as a Service  Getting Started Guide
 #print_subtitle: version 6.0
-output: pdf
+#output: pdf
 defaults:
   -
     scope:

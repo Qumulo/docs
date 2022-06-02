@@ -3,8 +3,8 @@ url: "http://127.0.0.1:4010"
 baseurl: "/qumulo-doc"
 port: 4010
 output: pdf
-#product: Qumulo Administrator Guide
-print_title: Qumulo Administrator Guide
+#product: Qumulo-Certified Hardware Guide
+print_title: Qumulo-Certified Hardware Guide
 #print_subtitle: version 6.0
 #output: pdf
 defaults:
@@ -17,4 +17,4 @@ defaults:
       comments: true
       search: true
 
-pdf_sidebar: administrator_guide_sidebar
+pdf_sidebar: hardware_sidebar
