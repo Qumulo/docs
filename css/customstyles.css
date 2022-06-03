@@ -320,6 +320,10 @@ table {
     border: 1px solid #dedede;
 }
 
+td {
+    border: 1px solid #ddd;
+}
+
 table > thead > tr > th,
 table > tbody > tr > th,
 table > tfoot > tr > th,
