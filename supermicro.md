@@ -514,7 +514,7 @@ To identify which DIMM module failed, you must use the baseboard management cont
 
    The following is the DIMM slot mapping. In this diagram, the CPU socket mounting bracket and power headers are at the bottom.
 
-    <table style="font-size:11.4px">
+    <table>
       <tr>
          <th>Slot</th>
          <th>1</th>
