@@ -330,8 +330,8 @@ The following is an example of a non-fixable issue. To fix the issue, contact th
 FVT failed!
 
 The following issues were detected:
-check_cpu_model: FAIL: We require one of: AMD EPYC 7402P 24-Core Processor. You have Qumulo Grumpquat 
-4000 Processor.
+check_cpu_model: FAIL: We require one of: AMD EPYC 7402P 24-Core Processor. You 
+have Qumulo Grumpquat 4000 Processor.
 FIX: Contact Qumulo Care.
 Not fixable issues were detected.
 
@@ -364,15 +364,15 @@ When you replace a component of your node (such as the motherboard or an NIC car
 
    ```
    Running FVT. Please wait...
-   100%|▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮
-   ▮▮▮▮▮▮▮▮| 13/13 [00:26<00:00, 2.01s/check]
+   100%|▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮
+   ▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮| 13/13 [00:26<00:00, 2.01s/check]
    FVT passed!
 
    No issues were detected, the system is ready to utilize the replaced parts.
    
    Actions:
-   [1] Shut down the system. After the system powers off, you may remove the USB stick and then 
-   power on the system to boot into the product.
+   [1] Shut down the system. After the system powers off, you may remove the 
+   USB stick and then power on the system to boot into the product.
    [2] Start a rescue shell
    >
    ```
