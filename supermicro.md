@@ -514,7 +514,6 @@ To identify which DIMM module failed, you must use the baseboard management cont
 
    The following is the DIMM slot mapping. In this diagram, the CPU socket mounting bracket and power headers are at the bottom.
 
-<!--
     <table style="font-size:11.4px">
       <thead>
         <tr>
@@ -559,7 +558,6 @@ To identify which DIMM module failed, you must use the baseboard management cont
         </tr>
       </tbody>
     </table>
-    -->
    
 1. To remove the existing DIMM module, press both DIMM slot release tabs outwards. When the module is loose, remove it from the slot.
 
