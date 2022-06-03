@@ -268,10 +268,10 @@ The Field Verification Tool (FVT) checks your node, prepares it for Qumulo Core,
    The following message appears.
 
    ```
-   You are running a FACTORY RESET. This will wipe all data on BOTH the boot drive AND the data 
-   drives.
-   This operation is going to DESTROY ALL DATA on the cluster, in order to proceed you must type 
-   "DESTROY ALL DATA" ("no" cancels):
+   You are running a FACTORY RESET. This will wipe all data on BOTH the boot 
+   drive AND the data drives.
+   This operation is going to DESTROY ALL DATA on the cluster, in order to 
+   proceed you must type "DESTROY ALL DATA" ("no" cancels):
    ```
 
 1. To continue, enter `DESTROY ALL DATA`.
@@ -307,12 +307,11 @@ The following is an example of a fixable issue. To let FVT try fix the issue, en
 ```
 FVT failed!
 
-The following issues were detected:
-check_bmc_version: FAIL: We require a minimum BMC version of 1.00.34. You have 1.00.33.
+The following issues were detected: check_bmc_version: FAIL: We require a 
+minimum BMC version of 1.00.34. You have 1.00.33.
 FIX: Run the FVT flash command.
-
-[1] Run FVT Flash. This will try to fix issues then reboot. Please take caution as this MAY DESTROY 
-EXISTING DATA.
+[1] Run FVT Flash. This will try to fix issues then reboot. Please take caution 
+as this MAY DESTROY EXISTING DATA.
 [2] Start a rescue shell
 ```
 
