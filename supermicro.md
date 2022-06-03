@@ -515,48 +515,46 @@ To identify which DIMM module failed, you must use the baseboard management cont
    The following is the DIMM slot mapping. In this diagram, the CPU socket mounting bracket and power headers are at the bottom.
 
     <table style="font-size:11.4px">
-      <thead>
-        <tr>
-          <th>Slot 1</th>
-          <th>Slot 2</th>
-          <th>Slot 3</th>
-          <th>Slot 4</th>
-          <th>Slot 5</th>
-          <th>Slot 6</th>
-          <th>Slot 7</th>
-          <th>Slot 8</th>
-          <th>CPU Socket</th>
-          <th>Slot 9</th>
-          <th>Slot 10</th>
-          <th>Slot 11</th>
-          <th>Slot 12</th>
-          <th>Slot 13</th>
-          <th>Slot 14</th>
-          <th>Slot 15</th>
-          <th>Slot 16</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>DIMM D2</td>
-          <td>DIMM D1</td>
-          <td>DIMM C2</td>
-          <td>DIMM C1</td>
-          <td>DIMM B2</td>
-          <td>DIMM B1</td>
-          <td>DIMM A2</td>
-          <td>DIMM A1</td>
-          <td>Bracket at bottom</td>
-          <td>DIMM E1</td>
-          <td>DIMM E2</td>
-          <td>DIMM F1</td>
-          <td>DIMM F2</td>
-          <td>DIMM G1</td>
-          <td>DIMM G2</td>
-          <td>DIMM H1</td>
-          <td>DIMM H2</td>
-        </tr>
-      </tbody>
+      <tr>
+         <th>Slot</th>
+         <th>1</th>
+         <th>2</th>
+         <th>3</th>
+         <th>4</th>
+         <th>5</th>
+         <th>6</th>
+         <th>7</th>
+         <th>8</th>
+         <th>CPU Socket</th>
+         <th>9</th>
+         <th>10</th>
+         <th>11</th>
+         <th>12</th>
+         <th>13</th>
+         <th>14</th>
+         <th>15</th>
+         <th>16</th>
+      </tr>
+      <tr>
+         <th>DIMM</th>
+         <td>D2</td>
+         <td>D1</td>
+         <td>C2</td>
+         <td>C1</td>
+         <td>B2</td>
+         <td>B1</td>
+         <td>A2</td>
+         <td>A1</td>
+         <td>Bracket at bottom</td>
+         <td>E1</td>
+         <td>E2</td>
+         <td>F1</td>
+         <td>F2</td>
+         <td>G1</td>
+         <td>G2</td>
+         <td>H1</td>
+         <td>H2</td>
+      </tr>
     </table>
    
 1. To remove the existing DIMM module, press both DIMM slot release tabs outwards. When the module is loose, remove it from the slot.
