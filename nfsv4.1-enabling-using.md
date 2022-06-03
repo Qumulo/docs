@@ -144,25 +144,30 @@ Currently, each Qumulo node is limited to 1,000 clients connected using NFSv4.1 
 For example, if you configure only one IP address per node, on a cluster with 600 clients per node a single node failure might overload one of the remaining nodes, preventing 200 clients from connecting. If you assign multiple floating IP addresses to each node, the clients' connections are distributed across multiple nodes.
 
 
+## Listing NFSv4.1 Byte-Range Locks
+Rather than lock an entire file, byte-range locking lets you lock specific portions of a file or an entire file in use. This feature is available in Qumulo Core 5.1.3 (and higher). It doesn't require client mount configuration.
 
-## Using NFS4.1 Byte-Range Locks
+The NFSv4.1 implementation in Qumulo Core has a non-configurable lease of one minute. During each lease period, clients send a heartbeat to your Qumulo cluster. The cluster uses this heartbeat to detect lost client connections and to revoke the client leases. When the cluster revokes a lease, it releases any byte-range locks and makes them available to other clients.
 
-Byte-range locking is available since Qumulo Core 5.1.2. No client mount configuration is required.
+{{site.data.alerts.important}}
+<ul>
+  <li>NFSv4.1 byte-range locks are interoperable with NLM (NFSv3) byte-range locks. NFSv4.1 clients view and respect locks that NFSv3 clients hold (the opposite is also true).</li>
+  <li>NFSv4.1 and NLM locks aren't interoperable with SMB locks.</li>
+</ul>
+{{site.data.alerts.end}}
 
-Qumulo Core's NFSv4.1 implementation has a non-configurable lease time of 1 minute. Clients send a
-heartbeat to the server every lease period. The server uses this heartbeat to detect when the client
-loses its connection to the cluster and revoke its lease. When a lease is revoked, any byte-range
-locks held under that lease are released and made available to other clients.
+To list NFSv4.1 byte-range locks in your cluster, use the following CLI command:
 
-NFSv4.1 byte-range locks interoperate with NLM (NFSv3) byte-range locks. This means that locks held
-by NFSv3 clients are visible to and respected by NFSv4.1 clients and vice versa. However neither
-interoperate with SMB locks.
+```bash
+qq fs_list_locks --protocol nfs4
+```
 
-NFSv4.1 byte-range locks can be listed with the `qq fs_list_locks` CLI command with `--protocol nfs4`
-specified. There is not yet a way to revoke NFSv4.1 byte-range locks with the CLI.
-
-{% include note.html content="The time to acquire or release a lock scales linearly with the number of locks already held on the same file, so performance will degrade with very large numbers of locks on a single file." %}
-
+{{site.data.alerts.note}}
+<ul>
+  <li>Currently, Qumulo Core doesn't support revoking NFSv4.1 byte-range locks by using the CLI.</li>
+  <li>The time to acquire or release a lock scales linearly with the number of locks that the system already holds on a specific file. If a file has a very large number of locks, system performance can degrade.</li>
+</ul>
+{{site.data.alerts.end}}
 
 
 ## Supported and Unsupported Features in Qumulo's Implementation of NFSv4.1
@@ -173,7 +178,7 @@ Qumulo's implementation of NFSv4.1 currently supports:
 * Navigation in the pseudo-file system above your exports
 * NFSv3-style `AUTH_SYS` or `AUTH_UNIX` authentication
 * Fine-grained control over file permissions using access control lists (ACLs)
-* File locking (for example, using the `fcntl` command)
+* File locking (for example, by using the `fcntl` command)
 
 Qumulo Core doesn't support the following NFSv3 features through NFSv4.1:
 * Quota sizes don't appear through NFSv4.1 with certain commands, such as `df` (however, Qumulo Core respects directory quotas)
