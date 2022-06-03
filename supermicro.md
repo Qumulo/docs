@@ -517,23 +517,23 @@ To identify which DIMM module failed, you must use the baseboard management cont
     <table>
       <tr>
          <th>Slot</th>
-         <th>1</th>
-         <th>2</th>
-         <th>3</th>
-         <th>4</th>
-         <th>5</th>
-         <th>6</th>
-         <th>7</th>
-         <th>8</th>
-         <th>CPU Socket</th>
-         <th>9</th>
-         <th>10</th>
-         <th>11</th>
-         <th>12</th>
-         <th>13</th>
-         <th>14</th>
-         <th>15</th>
-         <th>16</th>
+         <td>1</td>
+         <td>2</td>
+         <td>3</td>
+         <td>4</td>
+         <td>5</td>
+         <td>6</td>
+         <td>7</td>
+         <td>8</td>
+         <td>CPU Socket</td>
+         <td>9</td>
+         <td>10</td>
+         <td>11</td>
+         <td>12</td>
+         <td>13</td>
+         <td>14</td>
+         <td>15</td>
+         <td>16</td>
       </tr>
       <tr>
          <th>DIMM</th>
