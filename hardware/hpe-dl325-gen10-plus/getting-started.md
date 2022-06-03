@@ -21,9 +21,9 @@ This section explains how to prepare HPE ProLiant DL325 Gen10 Plus nodes for cre
 
 1. On the **HPE ProLiant** boot screen, do one of the following:
 
-   * If the **Boot Mode: Legacy BIOS** message appears, skip the rest of this section and continue to [boot by using the Qumulo Core USB Drive Installer](#step-2-boot-by-using-the-qumulo-core-usb-drive-installer).
+   * If the **Boot Mode: UEFI** message appears, skip the rest of this section and continue to [boot by using the Qumulo Core USB Drive Installer](#step-2-boot-by-using-the-qumulo-core-usb-drive-installer).
 
-   * If the **Boot Mode: Legacy BIOS** message doesn't appear, press **F9**.
+   * If the **Boot Mode: UEFI** message doesn't appear, press **F9**.
 
 1. On the **System Utilities** page, click **System Configuration > BIOS/Platform Configuration (RBSU) > Boot Options**.
 
