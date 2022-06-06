@@ -1,5 +1,6 @@
 entries:
 - title:
+  pdf-title: qumulo-certified-hardware-guide.pdf
   product:
   version:
   folders:
@@ -20,7 +21,6 @@ entries:
       type: frontmatter
 
   - title: Qumulo-Certified Hardware Guide
-    pdf-title: qumulo-certified-hardware-guide.pdf
     output: web, pdf
     folderitems:
 
