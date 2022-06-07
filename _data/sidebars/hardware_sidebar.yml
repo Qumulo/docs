@@ -1,11 +1,11 @@
 entries:
 - title:
+  pdftitle: qumulo-certified-hardware-guide.pdf
   product:
   version:
   folders:
 
   - title:
-    pdf-title: qumulo-certified-hardware-guide.pdf
     output: pdf
     type: frontmatter
     folderitems:
