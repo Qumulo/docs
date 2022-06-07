@@ -3,6 +3,7 @@ title: "Qumulo on Supermicro A+ WIO 1114S-WN10RT Getting Started Guide"
 summary: "This guide is intended for system administrators, professional service providers, and colleagues in your organization who are responsible for installing and configuring server hardware."
 permalink: supermicro.html
 keywords: getting started guide, supermicro, quick reference, diagram, leds, drive mapping, networking, redundant switches, single switch, racking node, outer rail, inner rail, chassis, node, cluster, insert chassis, remove chassis, wiring node, out of band management, ipmi, 100 gbps, installing qumulo core, qumulo core, usb drive installer, field verification tool, fvt, fixable issue, non fixable issue, hardware replacement, create cluster, replace drive, drive, replace psu, psu, replace fan, replace dimm, dcms license, technical specifications
+sidebar: supermicro_sidebar
 ---
 
 Welcome to Qumulo on Supermicro 1114S. This guide is intended for system administrators, professional service providers, and colleagues in your organization who are responsible for installing and configuring server hardware.
