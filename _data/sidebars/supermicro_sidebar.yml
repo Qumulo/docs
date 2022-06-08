@@ -18,3 +18,15 @@ entries:
     - title: Qumulo on Supermicro A+ WIO 1114S-WN10RT Getting Started Guide
       url: /supermicro.html
       output: pdf
+
+  - title: Supermicro 1114S Getting Started Guide
+    output: web, pdf
+    folderitems:
+
+    - title: Documentation Home
+      url: /index.html
+      output: web.pdf
+
+    - title: Hardware Guide Home
+      url: /supermicro.html
+      output: web.pdf
