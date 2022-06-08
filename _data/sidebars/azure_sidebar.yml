@@ -18,3 +18,15 @@ entries:
     - title: Qumulo on Azure as a Service Getting Started Guide
       url: /azure.html
       output: pdf
+
+  - title: Qumulo on Azure as a Service Getting Started Guide
+    output: web, pdf
+    folderitems:
+
+    - title: Documentation Home
+      url: /index.html
+      output: web, pdf
+    
+    - title: Qumulo on Azure as a Service Getting Started Guide
+      url: /azure.html
+      output: web, pdf
