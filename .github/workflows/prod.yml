@@ -1,0 +1,25 @@
+name: build prod version
+on:
+  workflow_dispatch:
+    branches:
+    - gh-pages
+  push:
+    branches:
+    - gh-pages
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/cache@v2
+        with:
+          path: vendor/bundle
+          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile') }}
+          restore-keys: |
+            ${{ runner.os }}-gems-
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '2.6'
+          bundler-cache: true
+      - name: Build site
+        run: JEKYLL_ENV=preview LC_ALL=C.UTF-8 bundle exec jekyll build -d prod
