@@ -3,6 +3,7 @@ title: "Qumulo on Azure as a Service Getting Started Guide"
 summary: "This guide is a supplement to the Qumulo Getting Started guide, where configuration steps and best practices differ from those we recommend for other platforms."
 permalink: azure.html
 keywords: getting started guide, azure, onboarding, networking, virtual network peering, dhcp mode, dns, ip failover, floating ip, upgrades, remote monitoring, remote support, active directory domains, capacity increases, performance increases
+sidebar: azure_sidebar
 ---
 
 Welcome to Qumulo on Azure as a Service. The next step after provisioning your file system is configuring it for your environment. This guide is a supplement to the [Qumulo Getting Started Guide](https://care.qumulo.com/hc/en-us/articles/360011321773-Qumulo-Getting-Started-Guide), where configuration steps and best practices differ from those we recommend for other platforms.
@@ -16,7 +17,7 @@ Virtual Network (VNet) peering allows bidirectional connectivity between the fil
 
 During the file system provisioning, you received the resource ID for the Qumulo on Azure as a Service VNet and one user from your organization was invited into the Qumulo tenancy with permissions necessary to configure VNet peering on that resource. To change who has this permission, contact [Qumulo Care](https://care.qumulo.com).
 
-{% include note.html content="VNet peering isn't transitive. For example, if the three VNets A, B, and C are peered transitively (A ⭤ B ⭤ C), the infrastructure in VNet A won't be able to communicate transitively with infrastructure in VNet C. This has implications for Qumulo on Azure as a Service in the [hub-and-spoke network topology](https://docs.microsoft.com/en-us/azure/architecture/reference-architectures/hybrid-networking/hub-spoke?tabs=cli), which Azure recommends as a best practice. If you have infrastructure that Qumulo must be able to reach (for example, a DNS server, a syslog audit log server, and so on) that lives in a hub VNet, you *must* peer the Qumulo on Azure as a Service VNet with your hub VNet and with any spoke VNets that must be able to connect to the file system." %}
+{% include note.html content="VNet peering isn't transitive. For example, if the three VNets A, B, and C are peered transitively (A ↔️ B ↔️ C), the infrastructure in VNet A won't be able to communicate transitively with infrastructure in VNet C. This has implications for Qumulo on Azure as a Service in the [hub-and-spoke network topology](https://docs.microsoft.com/en-us/azure/architecture/reference-architectures/hybrid-networking/hub-spoke?tabs=cli), which Azure recommends as a best practice. If you have infrastructure that Qumulo must be able to reach (for example, a DNS server, a syslog audit log server, and so on) that lives in a hub VNet, you *must* peer the Qumulo on Azure as a Service VNet with your hub VNet and with any spoke VNets that must be able to connect to the file system." %}
 
 ### Configuring DHCP Mode
 {% include important.html content="Configuring static networking results in an error." %}

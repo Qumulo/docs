@@ -3,6 +3,7 @@ title: "Qumulo on Supermicro A+ WIO 1114S-WN10RT Getting Started Guide"
 summary: "This guide is intended for system administrators, professional service providers, and colleagues in your organization who are responsible for installing and configuring server hardware."
 permalink: supermicro.html
 keywords: getting started guide, supermicro, quick reference, diagram, leds, drive mapping, networking, redundant switches, single switch, racking node, outer rail, inner rail, chassis, node, cluster, insert chassis, remove chassis, wiring node, out of band management, ipmi, 100 gbps, installing qumulo core, qumulo core, usb drive installer, field verification tool, fvt, fixable issue, non fixable issue, hardware replacement, create cluster, replace drive, drive, replace psu, psu, replace fan, replace dimm, dcms license, technical specifications
+sidebar: supermicro_sidebar
 ---
 
 Welcome to Qumulo on Supermicro 1114S. This guide is intended for system administrators, professional service providers, and colleagues in your organization who are responsible for installing and configuring server hardware.
@@ -268,8 +269,10 @@ The Field Verification Tool (FVT) checks your node, prepares it for Qumulo Core,
    The following message appears.
 
    ```
-   You are running a FACTORY RESET. This will wipe all data on BOTH the boot drive AND the data drives.
-   This operation is going to DESTROY ALL DATA on the cluster, in order to proceed you must type "DESTROY ALL DATA" ("no" cancels):
+   You are running a FACTORY RESET. This will wipe all data on BOTH the boot 
+   drive AND the data drives.
+   This operation is going to DESTROY ALL DATA on the cluster, in order to 
+   proceed you must type "DESTROY ALL DATA" ("no" cancels):
    ```
 
 1. To continue, enter `DESTROY ALL DATA`.
@@ -305,11 +308,11 @@ The following is an example of a fixable issue. To let FVT try fix the issue, en
 ```
 FVT failed!
 
-The following issues were detected:
-check_bmc_version: FAIL: We require a minimum BMC version of 1.00.34. You have 1.00.33.
+The following issues were detected: check_bmc_version: FAIL: We require a 
+minimum BMC version of 1.00.34. You have 1.00.33.
 FIX: Run the FVT flash command.
-
-[1] Run FVT Flash. This will try to fix issues then reboot. Please take caution as this MAY DESTROY EXISTING DATA.
+[1] Run FVT Flash. This will try to fix issues then reboot. Please take caution 
+as this MAY DESTROY EXISTING DATA.
 [2] Start a rescue shell
 ```
 
@@ -327,7 +330,8 @@ The following is an example of a non-fixable issue. To fix the issue, contact th
 FVT failed!
 
 The following issues were detected:
-check_cpu_model: FAIL: We require one of: AMD EPYC 7402P 24-Core Processor. You have Qumulo Grumpquat 4000 Processor.
+check_cpu_model: FAIL: We require one of: AMD EPYC 7402P 24-Core Processor. You 
+have Qumulo Grumpquat 4000 Processor.
 FIX: Contact Qumulo Care.
 Not fixable issues were detected.
 
@@ -360,13 +364,15 @@ When you replace a component of your node (such as the motherboard or an NIC car
 
    ```
    Running FVT. Please wait...
-   100%|▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮| 13/13 [00:26<00:00, 2.01s/check]
+   100%|▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮
+   ▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮▮| 13/13 [00:26<00:00, 2.01s/check]
    FVT passed!
 
    No issues were detected, the system is ready to utilize the replaced parts.
    
    Actions:
-   [1] Shut down the system. After the system powers off, you may remove the USB stick and then power on the system to boot into the product.
+   [1] Shut down the system. After the system powers off, you may remove the 
+   USB stick and then power on the system to boot into the product.
    [2] Start a rescue shell
    >
    ```
@@ -430,7 +436,7 @@ Replacement drives, including the on-site spare drives that you received with yo
 
 1. Locate the drive that requires replacement using the drive bay mapping.
 
-   {% include image.html alt="Supermicro Drive Slot Mapping" file="supermicro/supermicro-drive-slot-mapping.png" url="/images/supermicro/supermicro-drive-slot-mapping.png"%}
+   {% include image.html alt="Supermicro Drive Slot Mapping" file="supermicro/supermicro-drive-slot-mapping.png" url="/images/supermicro/supermicro-drive-slot-mapping.png" %}
 
 1. To remove the existing drive, do the following:
 
@@ -509,49 +515,47 @@ To identify which DIMM module failed, you must use the baseboard management cont
 
    The following is the DIMM slot mapping. In this diagram, the CPU socket mounting bracket and power headers are at the bottom.
 
-    <table style="font-size:11.4px">
-      <thead>
-        <tr>
-          <th>Slot 1</th>
-          <th>Slot 2</th>
-          <th>Slot 3</th>
-          <th>Slot 4</th>
-          <th>Slot 5</th>
-          <th>Slot 6</th>
-          <th>Slot 7</th>
-          <th>Slot 8</th>
-          <th>CPU Socket</th>
-          <th>Slot 9</th>
-          <th>Slot 10</th>
-          <th>Slot 11</th>
-          <th>Slot 12</th>
-          <th>Slot 13</th>
-          <th>Slot 14</th>
-          <th>Slot 15</th>
-          <th>Slot 16</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>DIMM D2</td>
-          <td>DIMM D1</td>
-          <td>DIMM C2</td>
-          <td>DIMM C1</td>
-          <td>DIMM B2</td>
-          <td>DIMM B1</td>
-          <td>DIMM A2</td>
-          <td>DIMM A1</td>
-          <td>Bracket at bottom</td>
-          <td>DIMM E1</td>
-          <td>DIMM E2</td>
-          <td>DIMM F1</td>
-          <td>DIMM F2</td>
-          <td>DIMM G1</td>
-          <td>DIMM G2</td>
-          <td>DIMM H1</td>
-          <td>DIMM H2</td>
-        </tr>
-      </tbody>
+    <table>
+      <tr>
+         <th>Slot</th>
+         <td>1</td>
+         <td>2</td>
+         <td>3</td>
+         <td>4</td>
+         <td>5</td>
+         <td>6</td>
+         <td>7</td>
+         <td>8</td>
+         <td>CPU Socket</td>
+         <td>9</td>
+         <td>10</td>
+         <td>11</td>
+         <td>12</td>
+         <td>13</td>
+         <td>14</td>
+         <td>15</td>
+         <td>16</td>
+      </tr>
+      <tr>
+         <th>DIMM</th>
+         <td>D2</td>
+         <td>D1</td>
+         <td>C2</td>
+         <td>C1</td>
+         <td>B2</td>
+         <td>B1</td>
+         <td>A2</td>
+         <td>A1</td>
+         <td>Bracket at bottom</td>
+         <td>E1</td>
+         <td>E2</td>
+         <td>F1</td>
+         <td>F2</td>
+         <td>G1</td>
+         <td>G2</td>
+         <td>H1</td>
+         <td>H2</td>
+      </tr>
     </table>
    
 1. To remove the existing DIMM module, press both DIMM slot release tabs outwards. When the module is loose, remove it from the slot.
