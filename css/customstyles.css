@@ -324,6 +324,10 @@ td {
     border: 1px solid #ddd;
 }
 
+th {
+    border: 1px solid #ddd;
+}
+
 table > thead > tr > th,
 table > tbody > tr > th,
 table > tfoot > tr > th,
@@ -839,7 +843,7 @@ a.fa.fa-envelope-o.mailto {
     font-weight: 600;
 }
 
-h3 {color: #ED1951; font-weight:normal; font-size:130%;}
+h3 {color: #808080; font-weight:normal; font-size:130%;}
 h4 {color: #808080; font-weight:bold; font-size:110%;}
 
 .alert, .callout {
@@ -1076,6 +1080,10 @@ span.soft {
     top: -63px;
     z-index: 1001;
     right: 470px;*/
+}
+
+.downloadPDFButton {
+    margin-bottom:-5px !important;
 }
 
 .endpoint {

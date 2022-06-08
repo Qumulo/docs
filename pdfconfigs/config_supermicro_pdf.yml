@@ -6,7 +6,6 @@ output: pdf
 #product: Qumulo on Supermicro A+ WIO 1114S-WN10RT Getting Started Guide
 print_title: Qumulo on Supermicro A+ WIO 1114S-WN10RT Getting Started Guide
 #print_subtitle: version 6.0
-output: pdf
 defaults:
   -
     scope:
