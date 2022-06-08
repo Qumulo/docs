@@ -5,7 +5,7 @@ sidebar: administrator_guide_sidebar
 search: exclude
 ---
 
-The following table lists changes to the _Qumulo Administrator Guide_.
+The following table lists changes to the Qumulo Administrator Guide.
 
 <table>
   <thead>

@@ -5,7 +5,7 @@ sidebar: administrator_guide_sidebar
 search: exclude
 ---
 
-The _Qumulo Administrator Guide_ is a growing collection of information about configuring, managing, and troubleshooting Qumulo Core and your Qumulo nodes and clusters.
+The Qumulo Administrator Guide is a growing collection of information about configuring, managing, and troubleshooting Qumulo Core and your Qumulo nodes and clusters.
 
 **Table of Contents**
 * **[Document History](administrator-guide-document-history.md)**
