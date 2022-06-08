@@ -25,4 +25,8 @@ entries:
 
     - title: Documentation Home
       url: /index.html
-      output: web.pdf
+      output: web, pdf
+    
+    - title: Supermicro 1114S Getting Started Guide
+      url: /supermicro.html
+      output: web, pdf
