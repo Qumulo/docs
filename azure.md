@@ -3,6 +3,7 @@ title: "Qumulo on Azure as a Service Getting Started Guide"
 summary: "This guide is a supplement to the Qumulo Getting Started guide, where configuration steps and best practices differ from those we recommend for other platforms."
 permalink: azure.html
 keywords: getting started guide, azure, onboarding, networking, virtual network peering, dhcp mode, dns, ip failover, floating ip, upgrades, remote monitoring, remote support, active directory domains, capacity increases, performance increases
+sidebar: azure_sidebar
 ---
 
 Welcome to Qumulo on Azure as a Service. The next step after provisioning your file system is configuring it for your environment. This guide is a supplement to the [Qumulo Getting Started Guide](https://care.qumulo.com/hc/en-us/articles/360011321773-Qumulo-Getting-Started-Guide), where configuration steps and best practices differ from those we recommend for other platforms.
