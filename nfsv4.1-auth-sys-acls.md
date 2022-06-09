@@ -176,3 +176,14 @@ The following table gives examples of permissions and equivalent NFS and Qumulo 
 | Add Full Access to File                                               | `nfs4_setfacl -a "A::GROUP@:rtwRWX" myfile.ext`            | `qq fs_modify_acl --path /myfile.ext add_entry -y Allowed -t "File Group Owner" -r Execute/Traverse, Read, Write ACL, Write file` |
 | Remove Write and Execute Permission to File                           | `nfs4_setfacl -a "D::OWNER@:wx" myfile.ext`                | `qq fs_modify_acl --path /myfile.ext add_entry -y Denied -t "File Owner" -r Execute/Traverse, Write data`                         |
 | Add Full Access to Group File and Directory Inheritances to Directory | `nfs4_setfacl -a "A:fd:GROUP@:rwaDdxtTnNcCoy" mydirectory` | `qq fs_modify_acl --path /mydirectory add_entry -y Allowed -t "File Group Owner" -r All -f 'Container inherit' 'Object inherit'`  |
+
+## Working with Trustees and Access Control Entries (ACEs) in the NFSv4.1 ACL Editor on Linux
+This section explains the different ways of working with trustees and ACEs in the NFSv4.1 editor (`nfs4_acl`) on Linux.
+
+After Qumulo Core joins a cluster to an AD domain, you can store the ACEs of your ACLs in a file with the `trustee` field set to an AD user or group. For ACEs in such cases, the cluster displays the trustee in the `saAMAccountName@domain` format when you retrieve it by using the `nfs_getfacl` or `nfs4_editfacl` command.
+
+When you set ACEs in your ACL by using this format and the `nfs4_setfacl` and `nfs4_editfacl` commands, Qumulo Core stores the AD trustee on disk, in the ACE of your ACL.
+
+Alternatively, you can set trustees for ACEs of ACLs by using a UID or GID. In this case, the system stores the UID or GID on disk, also in the ACE of the ACL.
+
+{% include note.html content="This behavior affects only the ACL Editor on Linux and doesn't affect other Linux commands such as `ls -l`, `chown`, `stat`, and so on." %}
