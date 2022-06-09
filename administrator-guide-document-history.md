@@ -20,6 +20,10 @@ The following table lists changes to the Qumulo Administrator Guide.
       <td>Added the <a href="openmetrics-api-specification.html">Qumulo OpenMetrics API Specification</a> section.</td>
     </tr>
     <tr>
+      <td>Jun. 9, 2022</td>
+      <td>Updated the <a href="nfsv4.1-auth-sys-acls.html">Managing File Access Permissions Using NFSv4.1 Access Control Lists (ACLs)</a> section.</td>
+    </tr>
+    <tr>
       <td>May 25, 2022</td>
       <td>Updated the <a href="nics-transceivers-cables.html">Choosing NICs, Transceivers, and Cables for Your Qumulo Node</a> section.</td>
     </tr>
