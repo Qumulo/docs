@@ -130,5 +130,5 @@ relative_links:
     collections: true
 
 # Enable server-side redirects. For more information, see https://github.com/jekyll/jekyll-redirect-from
-plugins:
-  - jekyll-redirect-from
+#plugins:
+#  - jekyll-redirect-from
