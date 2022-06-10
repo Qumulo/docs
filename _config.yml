@@ -122,11 +122,13 @@ description: "This site is a new documentation portal for Qumulo that uses docs-
 # needed for sitemap.xml file only
 url: docs.qumulo.com
 baseurl: /
-
-
 github: [metadata]
 
 # Enable relative_links and enable it on collections as well to allow relative links to be processed in subdirectories
 relative_links:
     enabled: true
     collections: true
+
+# Enable server-side redirects. For more information, see https://github.com/jekyll/jekyll-redirect-from
+plugins:
+  - jekyll-redirect-from
