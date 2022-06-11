@@ -12,7 +12,7 @@ The Qumulo Administrator Guide is a growing collection of information about conf
 * **Configuring Your Node's Networking**
   * [Identifying NICs and Choosing Transceivers and Cables for Your Qumulo Node](nics-transceivers-cables.md)
 * **Maintaining Your Node's Hardware**
-  * [Replacing the Chassis of C-192T and C-432T Nodes](c-192t-c-432t-chassis-replacement.md)
+  * [Replacing the Chassis of C-192T, C-432T, and K-432T Nodes](c-192t-c-432t-k-432t-chassis-replacement.md)
 * **Working with File System Protocols**
   * [Enabling and Using NFSv4.1 on a Qumulo Cluster](nfsv4.1-enabling-using.md)
   * [Managing File Access Permissions Using NFSv4.1 Access Control Lists (ACLs)](nfsv4.1-auth-sys-acls.md)

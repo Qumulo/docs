@@ -119,14 +119,16 @@ sidebars:
 description: "This site is a new documentation portal for Qumulo that uses docs-as-code principles. As we continue to add new content to this portal, we want you to ask questions and share your ideas with us—click Edit on GitHub on any page."
 # the description is used in the feed.xml file
 
-# needed for sitemap.xml file only
-url: docs.qumulo.com
+# needed for sitemap.xml and jekyll-redirect-from
+url: https://docs.qumulo.com
 baseurl: /
-
-
 github: [metadata]
 
 # Enable relative_links and enable it on collections as well to allow relative links to be processed in subdirectories
 relative_links:
     enabled: true
     collections: true
+
+# Enable server-side redirects. For more information, see https://github.com/jekyll/jekyll-redirect-from
+plugins:
+  - jekyll-redirect-from
