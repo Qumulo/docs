@@ -48,8 +48,8 @@ entries:
     output: web, pdf
     folderitems:
 
-    - title: Replacing the Chassis of C-192T and C-432T Nodes
-      url: /c-192t-c-432t-chassis-replacement.html
+    - title: Replacing the Chassis of C-192T, C-432T, and K-432T Nodes
+      url: /c-192t-c-432t-k-432t-chassis-replacement.html
       output: web, pdf
   
   - title: Working with File System Protocols

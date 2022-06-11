@@ -34,19 +34,19 @@ In the following example, a Qumulo cluster has the following export configuratio
 NFSv3 lets you mount one of these exports by specifying the full export name, for example:
 
 ```bash
-mount -onfsvers=3 cluster.qumulo.com:/read_only/home /mnt/cluster/home
+mount -o nfsvers=3 cluster.qumulo.com:/read_only/home /mnt/cluster/home
 ```
 
 This command gives read-only access to the `/home` directory on the cluster using the path `/mnt/cluster/home`. However, the following command fails with the `No such file or directory` message.
 
 ```bash
-mount -onfsvers=3 cluster.qumulo.com:/read_only /mnt/cluster/read_only
+mount -o nfsvers=3 cluster.qumulo.com:/read_only /mnt/cluster/read_only
 ```
 
 NFSv4.1 still lets you mount exports by specifying the full export name. However, NFSv4.1 also supports navigating _above_ exports, as if they are part of the file system. The following command succeeds.
 
 ```bash
-mount -onfsvers=4.1 cluster.qumulo.com:/read_only /mnt/cluster/read_only
+mount -o nfsvers=4.1 cluster.qumulo.com:/read_only /mnt/cluster/read_only
 ```
 
 At the mount, the exports under `/read_only` are visible: `/mnt/cluster/read_only` displays virtual directories named `files/` and `home/` with the contents of the corresponding directories in the file system, for example:
