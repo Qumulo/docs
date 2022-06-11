@@ -180,7 +180,7 @@ The following table gives examples of permissions and equivalent NFS and Qumulo 
 ## Working with Trustees and Access Control Entries (ACEs) in the NFSv4.1 ACL Editor on Linux
 This section explains the different ways of working with trustees and ACEs in the NFSv4.1 editor (`nfs4_acl`) on Linux.
 
-After Qumulo Core joins a cluster to an AD domain, you can store the ACEs of your ACLs in a file with the `trustee` field set to an AD user or group. For ACEs in such cases, the cluster displays the trustee in the `saAMAccountName@domain` format when you retrieve it by using the `nfs_getfacl` or `nfs4_editfacl` command.
+After Qumulo Core joins a cluster to an AD domain, you can store the ACEs of your ACLs in a file with the `trustee` field set to an AD user or group. For ACEs in such cases, the cluster displays the trustee in the `sAMAccountName@domain` format when you retrieve it by using the `nfs_getfacl` or `nfs4_editfacl` command.
 
 When you set ACEs in your ACL by using this format and the `nfs4_setfacl` and `nfs4_editfacl` commands, Qumulo Core stores the AD trustee on disk, in the ACE of your ACL.
 
