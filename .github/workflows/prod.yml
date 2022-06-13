@@ -3,9 +3,11 @@ on:
   workflow_dispatch:
     branches:
     - gh-pages
-  push:
-    branches:
-    - gh-pages
+#  We don't need this to run on the live pages until we migrate this workflow
+#  to doing the github pages generation
+#  push:
+#    branches:
+#    - gh-pages
 jobs:
   test:
     runs-on: ubuntu-latest
