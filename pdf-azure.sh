@@ -5,7 +5,7 @@ kill -9 $(ps aux | grep '[j]ekyll' | awk '{print $2}')
 clear
 
 echo ""
-echo "Building PDF-friendly HTML site for Qumulo on Azure as a Servide Onboarding Guide...";
+echo "Building PDF-friendly HTML site...";
 bundle exec jekyll serve --detach --config _config.yml,pdfconfigs/config_azure_pdf.yml;
 echo "done";
 
