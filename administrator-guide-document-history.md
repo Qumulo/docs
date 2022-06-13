@@ -16,6 +16,19 @@ The following table lists changes to the Qumulo Administrator Guide.
   </thead>
   <tbody>
     <tr>
+      <td>Jun. 10, 2022</td>
+      <td>Updated the following sections:
+        <ul>
+          <li><a href="c-192t-c-432t-k-432t-chassis-replacement.html">Replacing the Chassis of C-192T, C-432T, and K-432T Nodes</a></li>
+          <li><a href="nfsv4.1-enabling-using.html">Enabling and Using NFSv4.1 on a Qumulo Cluster</a></li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>Jun. 9, 2022</td>
+      <td>Updated the <a href="nfsv4.1-auth-sys-acls.html">Managing File Access Permissions Using NFSv4.1 Access Control Lists (ACLs)</a> section.</td>
+    </tr>
+    <tr>
       <td>May 25, 2022</td>
       <td>Updated the <a href="nics-transceivers-cables.html">Choosing NICs, Transceivers, and Cables for Your Qumulo Node</a> section.</td>
     </tr>
