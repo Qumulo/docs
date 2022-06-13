@@ -4,7 +4,7 @@ echo 'Kill all Jekyll instances'
 kill -9 $(ps aux | grep '[j]ekyll' | awk '{print $2}')
 clear
 
-echo "Building PDF-friendly HTML site for Qumulo on Supermicro A+ WIO 1114S-WN10RT Getting Started Guide...";
+echo "Building PDF-friendly HTML site...";
 bundle exec jekyll serve --detach --config _config.yml,pdfconfigs/config_supermicro_pdf.yml;
 echo "done";
 
