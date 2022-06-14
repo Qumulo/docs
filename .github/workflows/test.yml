@@ -1,8 +1,10 @@
-name: build test version
+name: Build feature branch
 on:
+  # Manual trigger for feature branch
   workflow_dispatch:
     branches-ignore:
     - gh-pages
+  # Push trigger for feature branch
   push:
     branches-ignore:
     - gh-pages
@@ -10,6 +12,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
+      # It is recommended to use specific versions
       - uses: actions/checkout@v3
       - uses: actions/cache@v2
         with:
@@ -21,5 +24,8 @@ jobs:
         with:
           ruby-version: '2.6'
           bundler-cache: true
-      - name: Build site
+      # This action builds the feature branch ephemerally
+      # to prove that nothing is broken
+      - name: Build feature branch
+        # `prod` is the name of the output directory
         run: JEKYLL_ENV=preview LC_ALL=C.UTF-8 bundle exec jekyll build -d test
