@@ -1,0 +1,31 @@
+name: Build production site
+on:
+  # For manual trigger
+  workflow_dispatch:
+    branches:
+    - gh-pages
+#  We don't need this to run on the live pages until we migrate this workflow
+#  to doing the github pages generation
+#  push:
+#    branches:
+#    - gh-pages
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      # It is recommended to use specific versions
+      - uses: actions/checkout@v3
+      - uses: actions/cache@v2
+        with:
+          path: vendor/bundle
+          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile') }}
+          restore-keys: |
+            ${{ runner.os }}-gems-
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '2.6'
+          bundler-cache: true
+      # Currently, this action doesn't do anything
+      - name: Build site
+        # `prod` is the name of the output directory
+        run: JEKYLL_ENV=preview LC_ALL=C.UTF-8 bundle exec jekyll build -d prod
