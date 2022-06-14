@@ -6,7 +6,7 @@ search: exclude
 
 [
 {% for page in site.html_pages %}
-{% unless page.search == "exclude" or page.keyword == "" %}
+{% unless page.search == "exclude" or page.keywords == "" %}
 {
 "title": "{{ page.title | escape }}",
 "tags": "{{ page.tags }}",
