@@ -5,8 +5,8 @@ search: exclude
 ---
 
 [
-{% for page in site.html_pages %}
-{% unless page.search == "exclude" or page.keywords == "" or page.keywords == nil %}
+{%- for page in site.html_pages -%}
+{%- unless page.search == "exclude" or page.keywords == "" or page.keywords == nil -%}
 {
 "title": "{{ page.title | escape }}",
 "tags": "{{ page.tags }}",
@@ -14,8 +14,7 @@ search: exclude
 "url": "{{ page.url }}",
 "summary": "{{page.summary | strip }}"
 },
-{% endunless %}
-{% endfor %}
-
+{%- endunless -%}
+{%- endfor -%}
 {}
 ]
