@@ -1,5 +1,6 @@
-name: build prod version
+name: Build production site
 on:
+  # For manual trigger
   workflow_dispatch:
     branches:
     - gh-pages
@@ -12,6 +13,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
+      # It is recommended to use specific versions
       - uses: actions/checkout@v3
       - uses: actions/cache@v2
         with:
@@ -23,5 +25,7 @@ jobs:
         with:
           ruby-version: '2.6'
           bundler-cache: true
+      # Currently, this action doesn't do anything
       - name: Build site
+        # `prod` is the name of the output directory
         run: JEKYLL_ENV=preview LC_ALL=C.UTF-8 bundle exec jekyll build -d prod
