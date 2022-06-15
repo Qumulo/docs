@@ -16,6 +16,15 @@ The following table lists changes to the Qumulo-Certified Hardware Guide.
   </thead>
   <tbody>
     <tr>
+      <td>Jun. 15, 2022</td>
+      <td>Updated the following topics:
+         <ul>
+           <li><a href="/hardware/hpe-apollo-4200-gen9/networking-cluster.html">Networking Your HPE Apollo 4200 Gen9 Cluster</a></li>
+           <li><a href="/hardware/hpe-apollo-4200-gen10/networking-cluster.html">Networking Your HPE Apollo 4200 Gen10 Cluster</a></li>
+         </ul>
+      </td>
+    </tr>
+    <tr>
       <td>Jun. 3, 2022</td>
       <td>Updated the following topics:
          <ul>
