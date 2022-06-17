@@ -18,7 +18,7 @@ This topic explains how you can increase node fault tolerance during node-add op
 {{site.data.alerts.important}}
 <ul>
   <li>We strongly recommend contacting <a href="https://care.qumulo.com/hc/en-us/articles/115008409408">Qumulo Care</a> to learn more about the cluster expansion process.</li>
-  <li>There might be a compromise in usable capacity if your cluster is already is a motley cluster or if, after a node-add operation, it becomes a motley cluster and higher node fault tolerance becomes possible. In this scenario, Qumulo Core maximizes usable capacity by default and offers the option to have a slighly lower increase capacity to increase the node fault tolerance level at the time of the node-add operation.</li>
+  <li>There might be a compromise in usable capacity if your cluster is already is a motley cluster or if, after a node-add operation, it becomes a motley cluster and higher node fault tolerance becomes possible. In these scenarios, Qumulo Core maximizes usable capacity by default and offers the option to have a slighly lower increase capacity to increase the node fault tolerance level at the time of the node-add operation.</li>
 </ul>
 {{site.data.alerts.end}}
 
