@@ -17,8 +17,8 @@ The Qumulo Administrator Guide is a growing collection of information about conf
   * [Enabling and Using NFSv4.1 on a Qumulo Cluster](nfsv4.1-enabling-using.md)
   * [Managing File Access Permissions Using NFSv4.1 Access Control Lists (ACLs)](nfsv4.1-auth-sys-acls.md)
 * **Working with Qumulo Core**
+  * [Increasing Node Fault Tolerance During Node-Add Operations](node-fault-tolerance.md)
   * [Using Qumulo Shift-To to Copy Objects to Amazon S3](shift-to-s3.md)
   * [Using Qumulo Shift-From to Copy Objects from Amazon S3](shift-from-s3.md)
   * [Managing Snapshots](managing-snapshots.md)
   * [Setting the Web UI Inactivity Timeout](web-ui-inactivity-timeout.md)
-  * [Increasing Node Fault Tolerance During Node-Add](node-fault-tolerance.md)
