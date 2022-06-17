@@ -35,7 +35,7 @@ The following sections describe node-add scenarios for different cluster configu
 
 {{page.varCheckCapacity}}
 
-   {{page.varPostExpansion}} When the restriper completes the provisioning of additional usable capacity and data protection reconfiguration, the **Data Protected** section shows the increased node fault tolerance level.
+{{page.varPostExpansion}} When the restriper completes the provisioning of additional usable capacity and data protection reconfiguration, the **Data Protected** section shows the increased node fault tolerance level.
 
 ### Your Cluster Will Support Increased Node Fault Tolerance with Optional Compromise in Usable Capacity
 This scenario lets you choose one of the following options.
@@ -45,7 +45,7 @@ This scenario lets you choose one of the following options.
 
 {{page.varCheckCapacity}}
 
-   {{page.varPostExpansion}} When the restriper completes the provisioning of additional usable capacity and data protection reconfiguration, the **Data Protected** section shows the current node fault tolerance level.
+{{page.varPostExpansion}} When the restriper completes the provisioning of additional usable capacity and data protection reconfiguration, the **Data Protected** section shows the current node fault tolerance level.
 
 #### Increased Node Fault Tolerance with Slightly Lower Increase in Usable Capacity
 
