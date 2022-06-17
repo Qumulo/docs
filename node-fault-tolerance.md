@@ -5,39 +5,40 @@ permalink: node-fault-tolerance.html
 sidebar: administrator_guide_sidebar
 keywords: node fault tolerance, node failure, fault tolerance, node add, node-add, cluster expansion, expand, reconfiguration
 ---
-Prior to Qumulo Core 5.1.3, a cluster's node fault tolerance level is configured at cluster creation
-time and cannot be modified. The software now enables reconfiguring data protection to increase an
-existing cluster's node fault tolerance level as part of cluster expansion.
 
-**Note**: There may be a usable capacity trade-off if the cluster after node-add is heterogeneous and
-feasible for higher node fault tolerance. In this case, the software defaults to maximize usable
-capacity and offers an option to trade-off usable capacity for higher node fault tolerance level at
-the time of node-add.
+This topic explains how you can increase node fault tolerance during node-add operations.
 
-If node purchase happened before this feature was available and you would like to learn more before
-adding the new nodes, you can reach out to CS to understand if your purchased nodes are feasible for
-this feature.
+In Qumulo Core 5.1.2 (and lower), you must configure your cluster's node fault tolerance level when you create your cluster. You can't modify this setting afterwards.
 
-The following sections explain how to add new nodes to an existing cluster and ensure increased node
-fault tolerance once node purchase and delivery are complete. Find the section that describes your
-cluster after expansion.
+In Qumulo Core 5.1.3 (and higher) you can reconfigure data protection to increase an existing cluster's node fault tolerance level during the _cluster expansion_ process.
 
-## Does not support higher node fault tolerance
-Follow the instructions to [add nodes to an existing cluster](https://care.qumulo.com/hc/en-us/articles/360001070307-Add-a-New-Node-to-an-Existing-Qumulo-Cluster). Before clicking the **Yes** button in the web UI confirmation dialog, verify that the projected capacity matches the expected capacity.
+{{site.data.alerts.note}}
+<ul>
+  <li>We recommend contacting [Qumulo Care](https://care.qumulo.com/hc/en-us/articles/115008409408) to evaluate your expansion options.</li>
+  <li>There might be a compromise in usable capacity if, after a node-add operation, your cluster becomes a motley cluster and higher node fault tolerance becomes possible. In this scenario, Qumulo Core maximizes usable capacity by default and offers the option to have a slighly lower increase capacity to increase the node fault tolerance level at the time of the node-add operation.</li>
+</ul>
+{{site.data.alerts.end}}
 
-## Supports higher node fault tolerance without usable capacity trade-off
-Follow the instructions to [add nodes to an existing cluster](https://care.qumulo.com/hc/en-us/articles/360001070307-Add-a-New-Node-to-an-Existing-Qumulo-Cluster). Before clicking the **Yes** button in the web UI confirmation dialog, verify that the projected capacity matches the expected capacity.
+## Adding Nodes to Your Cluster after Purchase
+The following sections describe node-add operations appropriate for the cluster expansion you decided on during the purchasing process.
+
+### Your Cluster Will not Support Increased Node Fault Tolerance
+Follow the instructions to [Add a New Node to an Existing Qumulo Cluster](https://care.qumulo.com/hc/en-us/articles/360001070307) on Qumulo Care. Before you click **Yes** on the **Add &lt;N&gt; nodes to cluster &lt;MyCluster&gt;?**, verify that the projected capacity matches the expected capacity.
+
+### Your Cluster Will Support Increased Node Fault Tolerance without Compromise in Usable Capacity
+Follow the instructions to [add nodes to an existing cluster](https://care.qumulo.com/hc/en-us/articles/360001070307). Before clicking the **Yes** button in the Web UI confirmation dialog, verify that the projected capacity matches the expected capacity.
 
 Data protection reconfiguration automatically starts after the expansion succeeds. To monitor the reconfiguration progress, on the **Cluster** > **Overview** page, refer to the rebalance phase status and estimated time to completion. After the restriper completes the provisioning of additional usable capacity and data protection reconfiguration, the data protection status reflects the increased node fault tolerance level.
 
+### Your Cluster Will Support Increased Node Fault Tolerance with Optional Compromise in Usable Capacity
 
-## Supports higher node fault tolerance with capacity trade-off and you choose to optimize for higher usable capacity
-Follow the instructions to [add nodes to an existing cluster](https://care.qumulo.com/hc/en-us/articles/360001070307-Add-a-New-Node-to-an-Existing-Qumulo-Cluster). Before clicking the **Yes** button in the web UI confirmation dialog, verify that the projected capacity matches the expected capacity.
+#### Current Node Fault Tolerance with Higher Usable Capacity 
+Follow the instructions to [add nodes to an existing cluster](https://care.qumulo.com/hc/en-us/articles/360001070307). Before clicking the **Yes** button in the web UI confirmation dialog, verify that the projected capacity matches the expected capacity.
 
-To monitor the expansion progress, on the **Cluster** > **Overview** page, refer to the rebalance phase status and estimated time to completion. After the restriper completes the provisioning of additional usable capacity, the data protection status will show the same node fault tolerance level.
+To monitor the expansion progress, on the **Cluster > Overview** page, refer to the rebalance phase status and estimated time to completion. After the restriper completes the provisioning of additional usable capacity, the data protection status will show the same node fault tolerance level.
 
-## Supports higher node fault tolerance with capacity trade-off and you choose to optimize for higher node fault tolerance
+#### Increased Node Fault Tolerance with Slightly Lower Increase in Usable Capacity
 
-**Important**: Contact Customer Success to guide you through the expansion process.
+{% include important.html content="We strongly recommend contacting [Qumulo Care](https://care.qumulo.com/hc/en-us/articles/115008409408) for guidance with the cluster expansion process." %}
 
 Data protection reconfiguration automatically starts after the expansion succeeds. To monitor the reconfiguration progress, on the **Cluster** > **Overview** page, refer to the rebalance phase status and estimated time to completion. After the restriper completes the provisioning of additional usable capacity and data protection reconfiguration, the data protection status reflects the increased node fault tolerance level.
