@@ -4,9 +4,9 @@ summary: "This topic explains how you can increase node fault tolerance during n
 permalink: node-fault-tolerance.html
 sidebar: administrator_guide_sidebar
 keywords: node fault tolerance, node failure, fault tolerance, node add, node-add, cluster expansion, expand, reconfiguration
-varAddNode: Follow the instructions in [Add a New Node to an Existing Qumulo Cluster](https://care.qumulo.com/hc/en-us/articles/360001070307) on Qumulo Care.
-varCheckCapacity: Before you click **Yes** in the **Add &lt;N&gt; nodes to cluster &lt;MyCluster&gt;?** dialog box, check that the projected capacity matches the expected capacity.
-varPostExpansion: After the cluster expansion process finishes, Qumulo Core begins data protection reconfiguration automatically. To monitor this process, click **Cluster > Overview**. On the **Cluster** page, in the protection status section, you can view the rebalance phase status and the estimated time to completion. When the restriper completes the provisioning of additional usable capacity and data protection reconfiguration, the **Data Protected** section shows the increased node fault tolerance level.
+varAddNode: 1. Follow the instructions in [Add a New Node to an Existing Qumulo Cluster](https://care.qumulo.com/hc/en-us/articles/360001070307) on Qumulo Care.
+varCheckCapacity: 1. Before you click **Yes** in the **Add &lt;N&gt; nodes to cluster &lt;MyCluster&gt;?** dialog box, check that the projected capacity matches the expected capacity.
+varPostExpansion: After the cluster expansion process finishes, Qumulo Core begins data protection reconfiguration automatically. To monitor this process, click **Cluster > Overview**. On the **Cluster** page, in the protection status section, you can view the rebalance phase status and the estimated time to completion.
 ---
 
 This topic explains how you can increase node fault tolerance during node-add operations.
@@ -26,16 +26,16 @@ This topic explains how you can increase node fault tolerance during node-add op
 The following sections describe node-add scenarios for different cluster configurations. Choose the scenario appropriate for the cluster expansion that you decided on during the purchasing process.
 
 ### Your Cluster Will not Support Increased Node Fault Tolerance
-1. {{page.varAddNode}}
+{{page.varAddNode}}
 
-1. {{page.varCheckCapacity}}
+{{page.varCheckCapacity}}
 
 ### Your Cluster Will Support Increased Node Fault Tolerance without Compromise in Usable Capacity
-1. {{page.varAddNode}}
+{{page.varAddNode}}
 
-1. {{page.varCheckCapacity}}
+{{page.varCheckCapacity}}
 
-   {{page.varPostExpansion}}
+   {{page.varPostExpansion}} When the restriper completes the provisioning of additional usable capacity and data protection reconfiguration, the **Data Protected** section shows the increased node fault tolerance level.
 
 ### Your Cluster Will Support Increased Node Fault Tolerance with Optional Compromise in Usable Capacity
 This scenario lets you choose one of the following options.
@@ -43,8 +43,8 @@ This scenario lets you choose one of the following options.
 #### Current Node Fault Tolerance with Higher Usable Capacity 
 {{page.varAddNode}}
 
-{{page.varPostExpansion}}
+   {{page.varPostExpansion}} When the restriper completes the provisioning of additional usable capacity and data protection reconfiguration, the **Data Protected** section shows the current node fault tolerance level.
 
 #### Increased Node Fault Tolerance with Slightly Lower Increase in Usable Capacity
 
-{{page.varPostExpansion}}
+{{page.varPostExpansion}} When the restriper completes the provisioning of additional usable capacity and data protection reconfiguration, the **Data Protected** section shows the increased node fault tolerance level.
