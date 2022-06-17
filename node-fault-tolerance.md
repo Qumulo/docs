@@ -43,6 +43,8 @@ This scenario lets you choose one of the following options.
 #### Current Node Fault Tolerance with Higher Usable Capacity 
 {{page.varAddNode}}
 
+{{page.varCheckCapacity}}
+
    {{page.varPostExpansion}} When the restriper completes the provisioning of additional usable capacity and data protection reconfiguration, the **Data Protected** section shows the current node fault tolerance level.
 
 #### Increased Node Fault Tolerance with Slightly Lower Increase in Usable Capacity
