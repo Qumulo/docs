@@ -1,7 +1,7 @@
 ---
-title: "Increasing Node Fault Tolerance During Node-Add"
-summary: "This topic explains how you can increase node fault tolerance during node-add."
-permalink: increase-node-fault-tolerance-during-node-add.html
+title: "Increasing Node Fault Tolerance During Node-Add Operations"
+summary: "This topic explains how you can increase node fault tolerance during node-add operations."
+permalink: node-fault-tolerance.html
 sidebar: administrator_guide_sidebar
 keywords: node fault tolerance, node failure, fault tolerance, node add, node-add, cluster expansion, expand, reconfiguration
 ---
