@@ -12,9 +12,9 @@ In Qumulo Core 5.1.2 (and lower), you must configure your cluster's node fault t
 
 In Qumulo Core 5.1.3 (and higher) you can reconfigure data protection to increase an existing cluster's node fault tolerance level during the _cluster expansion_ process.
 
-{{site.data.alerts.note}}
+{{site.data.alerts.important}}
 <ul>
-  <li>We recommend contacting [Qumulo Care](https://care.qumulo.com/hc/en-us/articles/115008409408) to evaluate your expansion options.</li>
+  <li>We recommend contacting <a href="https://care.qumulo.com/hc/en-us/articles/115008409408">Qumulo Care</a> to evaluate your expansion options.</li>
   <li>There might be a compromise in usable capacity if, after a node-add operation, your cluster becomes a motley cluster and higher node fault tolerance becomes possible. In this scenario, Qumulo Core maximizes usable capacity by default and offers the option to have a slighly lower increase capacity to increase the node fault tolerance level at the time of the node-add operation.</li>
 </ul>
 {{site.data.alerts.end}}
