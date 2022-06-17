@@ -11,6 +11,7 @@ varPostExpansion: After the cluster expansion process finishes, Qumulo Core begi
 
 This topic explains how you can increase node fault tolerance during node-add operations.
 
+## Reconfiguring Your Cluster's Node Fault Tolerance
 * In Qumulo Core 5.1.2 (and lower), you must configure your cluster's node fault tolerance level when you create your cluster. You can't modify this setting afterwards.
 * In Qumulo Core 5.1.3 (and higher) you can reconfigure data protection to increase an existing cluster's node fault tolerance level during the _cluster expansion_ process.
 
