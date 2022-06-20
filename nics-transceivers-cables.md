@@ -1,7 +1,7 @@
 ---
 title: "Identifying NICs and Choosing Transceivers and Cables for Your Qumulo Node"
 summary: "This topic explains how you can identify your node's NICs and choose the correct transceivers and cables for your Qumulo nodes."
-permalink: /administrator-guide/nics-transceivers-cables.html
+permalink: /administrator-guide/networking/nics-transceivers-cables.html
 redirect_from:
   - /nics-transceivers-cables.html
 sidebar: administrator_guide_sidebar
