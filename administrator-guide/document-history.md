@@ -19,7 +19,12 @@ The following table lists changes to the Qumulo Administrator Guide.
   <tbody>
     <tr>
       <td>Jun. 22, 2022</td>
-      <td>Added the <a href="/administrator-guide/qumulo-core/node-fault-tolerance.html">Increasing Node Fault Tolerance During Node-Add Operation</a> section.</td>
+      <td>Updated the following sections:
+        <ul>
+          <li><a href="nfsv4.1-enabling-using.html">Enabling and Using NFSv4.1 on a Qumulo Cluster</a></li>
+          <li><a href="/administrator-guide/qumulo-core/node-fault-tolerance.html">Increasing Node Fault Tolerance During Node-Add Operation</a></li>
+        </ul>
+      </td>
     </tr>
     <tr>
       <td>Jun. 10, 2022</td>
