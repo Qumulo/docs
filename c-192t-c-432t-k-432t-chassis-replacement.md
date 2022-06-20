@@ -1,7 +1,7 @@
 ---
 title: "Replacing the Chassis of C-192T, C-432T, and K-432T Nodes"
 summary: "This topic explains how you can replace the chassis in C-192T, C-432T, and K-432T nodes."
-permalink: /administrator-guide/c-192t-c-432t-k-432t-chassis-replacement.html
+permalink: /administrator-guide/maintaining-hardware/c-192t-c-432t-k-432t-chassis-replacement.html
 redirect_from:
   - /c-192t-c-432t-chassis-replacement.html
   - /c-192t-c-432t-k-432t-chassis-replacement.html
