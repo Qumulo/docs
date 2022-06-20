@@ -29,7 +29,7 @@ entries:
       output: web
 
     - title: Administrator Guide Home
-      url: /administrator-guide/administrator-guide.html
+      url: /administrator-guide/
       output: web
 
     - title: Administrator Guide Document History
