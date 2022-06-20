@@ -1,7 +1,7 @@
 ---
 title: "Qumulo OpenMetrics API Specification"
 summary: "This topic describes the specification of the types of metrics that the Qumulo API emits."
-permalink: openmetrics-api-specification.html
+permalink: /administrator-guide/qumulo-core/openmetrics-api-specification.html
 keywords: metrics, openmetrics, prometheus, api
 sidebar: administrator_guide_sidebar
 ---
