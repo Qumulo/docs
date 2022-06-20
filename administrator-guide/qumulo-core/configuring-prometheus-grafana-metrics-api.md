@@ -108,13 +108,13 @@ This example explains how you can configure a Grafana graph to show total read a
 
 1. On the left menu, click **General** and enter a **Title** for the graph, for example `Cluster Throughput`.
 
-1. At the top right, click {% include inline_image.html alt="Grafana Save Icon" file="administrator-guide/grafana-save-icon.png" %} and then click **Save**.
+1. At the top right, click {% include inline_image.html alt="Grafana Save Icon" file="grafana-save-icon.png" %} and then click **Save**.
 
-1. At the top left, click {% include inline_image.html alt="Grafana Back Arrow" file="administrator-guide/grafana-back-arrow.png" %}.
+1. At the top left, click {% include inline_image.html alt="Grafana Back Arrow" file="grafana-back-arrow.png" %}.
 
    On the dashboard page, your graph appears.
 
-   {% include image.html alt="Example Throughput Graph" file="administrator-guide/prometheus-grafana-setup-example-throughput-graph.png" %}
+   {% include image.html alt="Example Throughput Graph" file="prometheus-grafana-setup-example-throughput-graph.png" %}
 
 1. (Optional) To see a smaller time scale of your data, at the top right click **Last 6 hours** and set it to a smaller value, for example 15 minutes.
 
@@ -153,7 +153,7 @@ An offline node creates a risk of additional failures that can cause reduced per
 
 1. To test the alert, click **Test Alert**.
 
-1. Click {% include inline_image.html alt="Grafana Save Icon" file="administrator-guide/grafana-save-icon.png" %}.
+1. Click {% include inline_image.html alt="Grafana Save Icon" file="grafana-save-icon.png" %}.
 
 ### To Create an Alert for a Full Cluster
 It is important for an administrator to know how much free space is left on a cluster. This example explains how you can configure a graph to show how full the cluster is and to receive an alert when your cluster becomes almost full. For more information, see [Create Alerts](https://grafana.com/docs/grafana/latest/alerting/old-alerting/create-alerts/) and [Legacy Grafana Alerts](https://grafana.com/docs/grafana/latest/alerting/old-alerting/) in the Grafana documentation.
@@ -184,4 +184,4 @@ It is important for an administrator to know how much free space is left on a cl
 
 1. To test the alert, click **Test Alert**.
 
-1. Click {% include inline_image.html alt="Grafana Save Icon" file="administrator-guide/grafana-save-icon.png" %}.
+1. Click {% include inline_image.html alt="Grafana Save Icon" file="grafana-save-icon.png" %}.
