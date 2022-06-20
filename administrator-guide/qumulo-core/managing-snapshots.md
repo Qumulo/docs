@@ -4,6 +4,7 @@ summary: "This topic explains how you can use the Qumulo Core Web UI to view and
 permalink: /administrator-guide/qumulo-core/managing-snapshots.html
 redirect_from:
   - /managing-snapshots.html
+  - /administrator-guide/managing-snapshots.html
 sidebar: administrator_guide_sidebar
 keywords: snapshots, filter, web ui, qumulo core
 varLogin: 1. Log in to Qumulo Core.
