@@ -1,7 +1,9 @@
 ---
 title: "Setting the Web UI Inactivity Timeout"
 summary: "This topic explains how you can set an inactivity timeout for the Qumulo Core Web UI."
-permalink: web-ui-inactivity-timeout.html
+permalink: /administrator-guide/qumulo-core/web-ui-inactivity-timeout.html
+redirect_from:
+  - /web-ui-inactivity-timeout.html
 sidebar: administrator_guide_sidebar
 keywords: inactivity, idle, timeout, web ui, qumulo core
 ---
