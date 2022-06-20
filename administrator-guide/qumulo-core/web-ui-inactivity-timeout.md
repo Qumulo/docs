@@ -4,6 +4,7 @@ summary: "This topic explains how you can set an inactivity timeout for the Qumu
 permalink: /administrator-guide/qumulo-core/web-ui-inactivity-timeout.html
 redirect_from:
   - /web-ui-inactivity-timeout.html
+  - /administrator-guide/web-ui-inactivity-timeout.html
 sidebar: administrator_guide_sidebar
 keywords: inactivity, idle, timeout, web ui, qumulo core
 ---
