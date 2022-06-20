@@ -1,7 +1,10 @@
 ---
 title: "Enabling and Using NFSv4.1 on a Qumulo Cluster"
 summary: "This topic explains how you can configure your cluster for a supported export configuration and enable or disable NFSv4.1 on your cluster."
-permalink: nfsv4.1-enabling-using.html
+permalink: /administrator-guide/protocols/nfsv4.1-enabling-using.html
+redirect_from:
+  - /nfsv4.1-enabling-using.html
+  - /administrator-guide/nfsv4.1-enabling-using.html
 sidebar: administrator_guide_sidebar
 keywords: nfs, nfs3, nfsv3, nfsv4.1, exports, mount, cluster, enable nfs, disable nfs, floating ip
 ---

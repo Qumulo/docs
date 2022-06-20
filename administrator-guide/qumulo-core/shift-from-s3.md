@@ -1,7 +1,10 @@
 ---
 title: "Using Qumulo Shift-From to Copy Objects from Amazon S3"
 summary: "This topic explains how you can use Qumulo Shift-From to copy objects from a folder in an Amazon Simple Storage Service (Amazon S3) bucket to a directory in a Qumulo cluster."
-permalink: shift-from-s3.html
+permalink: /administrator-guide/qumulo-core/shift-from-s3.html
+redirect_from:
+  - /shift-from-s3.html
+  - /administrator-guide/shift-from-s3.html
 sidebar: administrator_guide_sidebar
 keywords: shift from, copy, copy objects, copy files, object copy, amazon s3, s3, iam permissions, iam, cli commands, cli, shift relationships, shift, relationships, configuration details, status
 ---
