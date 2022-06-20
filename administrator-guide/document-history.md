@@ -1,6 +1,8 @@
 ---
 title: "Qumulo Administrator Guide Document History"
-permalink: administrator-guide-document-history.html
+permalink: /administrator-guide/document-history.html
+redirect_from:
+  - /administrator-guide-document-history.html
 sidebar: administrator_guide_sidebar
 search: exclude
 ---
