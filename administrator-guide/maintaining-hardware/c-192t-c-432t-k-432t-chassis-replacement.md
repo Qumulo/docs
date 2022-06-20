@@ -26,7 +26,7 @@ This section explains how you can replace the chassis in C-192T, C-432T, and K-4
 
 1. Press the large **PUSH** button on each side of the chassis frame.
 
-   {% include image.html alt="C-Series Chassis Side Release Buttons" file="administrator-guide/c-series-button-releases.png" %}
+   {% include image.html alt="C-Series Chassis Side Release Buttons" file="/administrator-guide/maintaining-hardware/images/c-series-button-releases.png" %}
 
    The inner components of the node are exposed.
 
@@ -34,7 +34,7 @@ This section explains how you can replace the chassis in C-192T, C-432T, and K-4
 
 1. Remove the internal M.2 boot drive and then transfer it into the replacement chassis Qumulo provided to you.
 
-   {% include image.html alt="C-Series M.2 Boot Drive" file="administrator-guide/c-series-m2-boot-drive-location.png" %}
+   {% include image.html alt="C-Series M.2 Boot Drive" file="/administrator-guide/maintaining-hardware/images/c-series-m2-boot-drive-location.png" %}
 
 1. Remove the rear NVMe SSDs and then transfer them into the replacement chassis. The following is the mapping for the drives.
 
@@ -53,7 +53,7 @@ This section explains how you can replace the chassis in C-192T, C-432T, and K-4
 
 1. To allow the HDD trays to slide open, ensure that any shipping screws are removed from the replacement chassis.
 
-   {% include image.html alt="C-Series Shipping Screws" file="administrator-guide/c-series-2u-shipping-screws.png" %}
+   {% include image.html alt="C-Series Shipping Screws" file="/administrator-guide/maintaining-hardware/images/c-series-2u-shipping-screws.png" %}
 
 1. Install the replacement chassis in an appropriate location in your server rack.
 
@@ -65,7 +65,7 @@ This section explains how you can replace the chassis in C-192T, C-432T, and K-4
 
    b. To remove an HDD from the original chassis, gently lift up the drive tray knob. This lets the drive move forward and unlatch.
 
-   {% include image.html alt="HDD Tray" file="administrator-guide/c-series-2u-hdd-tray.png" %}
+   {% include image.html alt="HDD Tray" file="/administrator-guide/maintaining-hardware/images/c-series-2u-hdd-tray.png" %}
    
    c. To insert an HDD into the replacement chassis, gently slide the drive tray knob backwards. This latches the drive and knob in place.
 
