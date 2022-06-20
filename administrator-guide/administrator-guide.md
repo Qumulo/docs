@@ -1,6 +1,8 @@
 ---
 title: "Qumulo Administrator Guide"
-permalink: administrator-guide.html
+permalink: /administrator-guide/administrator-guide.html
+redirect_from:
+  - /administrator-guide.html
 sidebar: administrator_guide_sidebar
 search: exclude
 ---
