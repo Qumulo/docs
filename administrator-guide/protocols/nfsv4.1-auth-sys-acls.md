@@ -4,6 +4,7 @@ summary: "This topic explains how you can use Qumulo Core's implementation of NF
 permalink: /administrator-guide/protocols/nfsv4.1-auth-sys-acls.html
 redirect_from:
   - /nfsv4.1-enabling-using.html
+  - /administrator-guide/nfsv4.1-enabling-using.html
 sidebar: administrator_guide_sidebar
 keywords: nfs, nfs4.1, nfsv4.1, acl, access control list, auth_sys, auth_unix, auth, permissions, file access, file access permissions
 ---
