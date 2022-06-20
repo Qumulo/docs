@@ -19,7 +19,7 @@ The **Snapshots** page lets you navigate a large number of snapshots.
 
 {{page.varSaved}}
 
-1. If you have more than 50 snapshots, click {% include inline_image.html alt="Pagination controls" file="/administrator-guide/qumulo-core/managing-snapshots-pagination.png" max-width="40" %} to navigate the snapshot pages.
+1. If you have more than 50 snapshots, click {% include inline_image.html alt="Pagination controls" file="managing-snapshots-pagination.png" max-width="40" %} to navigate the snapshot pages.
 
    You can also use the controls at the bottom of the table to navigate to a specific page or change the number of rows per page.
 
@@ -31,7 +31,7 @@ The table on the **Snapshots** page has a filtering mode that lets you search fo
 
 {{page.varSaved}}
 
-1. At the top of the table, click {% include inline_image.html alt="Filters off" file="/administrator-guide/qumulo-core/managing-snapshots-filter-off.png" max-width="75"%}.
+1. At the top of the table, click {% include inline_image.html alt="Filters off" file="managing-snapshots-filter-off.png" max-width="75"%}.
 
    The **Search...** field appears.
 
@@ -39,7 +39,7 @@ The table on the **Snapshots** page has a filtering mode that lets you search fo
 
    The table rows filter to match your query as you type.
 
-1. To toggle filtering off, click {% include inline_image.html alt="Filters on" file="/administrator-guide/qumulo-core/managing-snapshots-filter-on.png" max-width="75"%}.
+1. To toggle filtering off, click {% include inline_image.html alt="Filters on" file="managing-snapshots-filter-on.png" max-width="75"%}.
 
 ## To Delete a Single Snapshot
 
@@ -47,7 +47,7 @@ The table on the **Snapshots** page has a filtering mode that lets you search fo
 
 {{page.varSaved}}
 
-1. On the right-most side of a snapshot's row, click {% include inline_image.html alt="Delete icon" file="/administrator-guide/qumulo-core/managing-snapshots-delete.png" max-width="25" %}.
+1. On the right-most side of a snapshot's row, click {% include inline_image.html alt="Delete icon" file="managing-snapshots-delete.png" max-width="25" %}.
 
 ## To Delete Multiple Snapshots
 
