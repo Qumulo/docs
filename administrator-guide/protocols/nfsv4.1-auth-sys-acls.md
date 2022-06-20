@@ -1,7 +1,10 @@
 ---
 title: "Managing File Access Permissions Using NFSv4.1 Access Control Lists (ACLs)"
 summary: "This topic explains how you can use Qumulo Core's implementation of NFSv4.1 with access control lists (ACLs) and AUTH_SYS or AUTH_UNIX credentials."
-permalink: nfsv4.1-auth-sys-acls.html
+permalink: /administrator-guide/protocols/nfsv4.1-auth-sys-acls.html
+redirect_from:
+  - /nfsv4.1-auth-sys-acls.html
+  - /administrator-guide/nfsv4.1-auth-sys-acls.html
 sidebar: administrator_guide_sidebar
 keywords: nfs, nfs4.1, nfsv4.1, acl, access control list, auth_sys, auth_unix, auth, permissions, file access, file access permissions
 ---

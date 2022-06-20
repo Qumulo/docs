@@ -1,7 +1,7 @@
 ---
 title: "Increasing Node Fault Tolerance During Node-Add Operations"
 summary: "This topic explains how you can increase node fault tolerance during node-add operations."
-permalink: node-fault-tolerance.html
+permalink: /administrator-guide/qumulo-core/node-fault-tolerance.html
 sidebar: administrator_guide_sidebar
 keywords: node fault tolerance, node failure, fault tolerance, node add, node-add, cluster expansion, expand, reconfiguration
 varAddNode: 1. Follow the instructions in [Add a New Node to an Existing Qumulo Cluster](https://care.qumulo.com/hc/en-us/articles/360001070307) on Qumulo Care.

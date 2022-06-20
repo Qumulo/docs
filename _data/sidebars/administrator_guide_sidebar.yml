@@ -29,11 +29,11 @@ entries:
       output: web
 
     - title: Administrator Guide Home
-      url: /administrator-guide.html
+      url: /administrator-guide/administrator-guide.html
       output: web
 
     - title: Administrator Guide Document History
-      url: /administrator-guide-document-history.html
+      url: /administrator-guide/document-history.html
       output: web, pdf
 
   - title: Configuring Your Node's Networking
@@ -41,7 +41,7 @@ entries:
     folderitems:
 
     - title: Identifying NICs and Choosing Transceivers and Cables for Your Qumulo Node
-      url: /nics-transceivers-cables.html
+      url: /administrator-guide/networking/nics-transceivers-cables.html
       output: web, pdf
 
   - title: Maintaining Your Node's Hardware
@@ -49,7 +49,7 @@ entries:
     folderitems:
 
     - title: Replacing the Chassis of C-192T, C-432T, and K-432T Nodes
-      url: /c-192t-c-432t-k-432t-chassis-replacement.html
+      url: /administrator-guide/maintaining-hardware/c-192t-c-432t-k-432t-chassis-replacement.html
       output: web, pdf
   
   - title: Working with File System Protocols
@@ -57,11 +57,11 @@ entries:
     folderitems:
 
     - title: Enabling and Using NFSv4.1 on a Qumulo Cluster
-      url: /nfsv4.1-enabling-using.html
+      url: /administrator-guide/protocols/nfsv4.1-enabling-using.html
       output: web, pdf
 
     - title: Managing File Access Permissions Using NFSv4.1 Access Control Lists (ACLs)
-      url: /nfsv4.1-auth-sys-acls.html
+      url: /administrator-guide/protocols/nfsv4.1-auth-sys-acls.html
       output: web, pdf
 
   - title: Working with Qumulo Core
@@ -69,21 +69,21 @@ entries:
     folderitems:
 
     - title: Increasing Node Fault Tolerance During Node-Add Operations
-      url: /node-add-operations.html
+      url: /administrator-guide/qumulo-core/node-add-operations.html
       output: web, pdf
   
     - title: Using Qumulo Shift-To to Copy Objects to Amazon S3
-      url: /shift-to-s3.html
+      url: /administrator-guide/qumulo-core/shift-to-s3.html
       output: web, pdf
       
     - title: Using Qumulo Shift-From for Amazon S3 to Copy Objects
-      url: /shift-from-s3.html
+      url: /administrator-guide/qumulo-core/shift-from-s3.html
       output: web, pdf
   
     - title: Managing Snapshots
-      url: /managing-snapshots.html
+      url: /administrator-guide/qumulo-core/managing-snapshots.html
       output: web, pdf
 
     - title: Setting the Web UI Inactivity Timeout
-      url: /web-ui-inactivity-timeout.html
+      url: /administrator-guide/qumulo-core/web-ui-inactivity-timeout.html
       output: web, pdf
