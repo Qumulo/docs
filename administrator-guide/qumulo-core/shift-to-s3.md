@@ -4,6 +4,7 @@ summary: "This topic explains how you can use Qumulo Shift-To to copy objects fr
 permalink: /administrator-guide/qumulo-core/shift-to-s3.html
 redirect_from:
   - /shift-to-s3.html
+  - /administrator-guide/shift-to-s3.html
 sidebar: administrator_guide_sidebar
 keywords: shift to, copy, copy objects, copy files, object copy, amazon s3, s3, iam permissions, iam, cli commands, cli, shift relationships, shift, relationships, configuration details, status
 ---
