@@ -48,5 +48,6 @@ This scenario lets you choose one of the following options.
 {{page.varPostExpansion}} When the restriper completes the provisioning of additional usable capacity and data protection reconfiguration, the **Data Protected** section shows the current node fault tolerance level.
 
 #### Increased Node Fault Tolerance with Slightly Lower Increase in Usable Capacity
+To begin the node-add operation and discuss the cluster expansion process, contact <a href="https://care.qumulo.com/hc/en-us/articles/115008409408">Qumulo Care</a>.
 
 {{page.varPostExpansion}} When the restriper completes the provisioning of additional usable capacity and data protection reconfiguration, the **Data Protected** section shows the increased node fault tolerance level.
