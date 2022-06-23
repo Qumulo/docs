@@ -68,7 +68,7 @@ entries:
     output: web, pdf
     folderitems:
 
-    - title: Increasing Node Fault Tolerance During Node-Add Operations
+    - title: Increasing the Node Fault Tolerance Level During Node-Add Operations
       url: /administrator-guide/qumulo-core/node-fault-tolerance.html
       output: web, pdf
   
