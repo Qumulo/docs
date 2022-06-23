@@ -15,13 +15,18 @@ varValidateNoReconfig: When the restriper completes the provisioning of addition
 This topic explains how you can increase the node-fault tolerance level for your cluster during node-add operations.
 
 ## Reconfiguring Your Cluster's Node-Fault Tolerance Level
-* In Qumulo Core 5.1.2 (and lower), you must configure your cluster's node-fault tolerance level when you create your cluster. You can't modify this setting afterwards.
-* In Qumulo Core 5.1.3 (and higher), you can reconfigure data protection to increase an existing cluster's node-fault tolerance level during the _cluster expansion_ process.
+* In Qumulo Core 5.1.2 (and lower), you must configure the node-fault tolerance level for your cluster when you create the cluster. You can't modify this setting afterwards.
+* In Qumulo Core 5.1.3 (and higher), you can reconfigure data protection to increase the node-fault tolerance level for an existing cluster during the _cluster expansion_ process.
 
 {{site.data.alerts.important}}
 <ul>
   <li>We strongly recommend contacting <a href="https://care.qumulo.com/hc/en-us/articles/115008409408">Qumulo Care</a> before proceeding with cluster expansion.</li>
-  <li>If your cluster is already a heterogeneous or it becomes a heterogeneous after a node-add operation, there might be a trade-off in usable capacity. In such scenarios, Qumulo Core maximizes the usable capacity by default and offers the option to have a trade-off: at the expense of a smaller increase in usable capacity, the node-fault tolerance level increases at the time of the node-add operation.</li>
+  <li>There might be a trade-off in usable capacity in the following scenarios.
+    <ul>
+      <li>Your cluster is already heterogeneous.</li>
+      <li>Your cluster becomes heterogeneous after a node-add operation.</li>
+    </ul>
+      In these scenarios, Qumulo Core maximizes the usable capacity by default and offers the option to have a trade-off: at the expense of a smaller increase in usable capacity, the node-fault tolerance level increases during the node-add operation.</li>
 </ul>
 {{site.data.alerts.end}}
 
@@ -33,14 +38,20 @@ The following sections describe node-add scenarios for different cluster configu
 
 {{page.varCheckCapacity}}
 
-{{page.varMonitorProgress}} {{page.varValidateNoReconfig}}
+{{page.varMonitorProgress}}
+
+{{page.varValidateNoReconfig}}
 
 ### Your Cluster Will Support an Increased Node-Fault Tolerance Level with Optimal Usable Capacity
 {{page.varAddNode}}
 
 {{page.varCheckCapacity}}
 
-{{page.varPostExpansion}} {{page.varMonitorProgress}} {{page.varValidateReconfig}}
+{{page.varPostExpansion}}
+
+{{page.varMonitorProgress}}
+
+{{page.varValidateReconfig}}
 
 ### Your Cluster Will Support an Increased Node-Fault Tolerance Level with Trade-off in Usable Capacity Increase
 This scenario lets you choose one of the following options.
