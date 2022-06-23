@@ -21,12 +21,12 @@ This topic explains how you can increase the node-fault tolerance level for your
 {{site.data.alerts.important}}
 <ul>
   <li>We strongly recommend contacting <a href="https://care.qumulo.com/hc/en-us/articles/115008409408">Qumulo Care</a> before proceeding with cluster expansion.</li>
-  <li>There might be a trade-off in usable capacity in the following scenarios.
+  <li>In the following scenarios, Qumulo Core maximizes the usable capacity by default but offers the option to increase the node-fault tolerance level during the node-add operation by means of a trade-off in the increase of usable capacity.
     <ul>
       <li>Your cluster is already heterogeneous.</li>
       <li>Your cluster becomes heterogeneous after a node-add operation.</li>
     </ul>
-      In these scenarios, Qumulo Core maximizes the usable capacity by default and offers the option to have a trade-off: at the expense of a smaller increase in usable capacity, the node-fault tolerance level increases during the node-add operation.</li>
+  </li>
 </ul>
 {{site.data.alerts.end}}
 
@@ -53,7 +53,7 @@ The following sections describe node-add scenarios for different cluster configu
 
 {{page.varValidateReconfig}}
 
-### Your Cluster Will Support an Increased Node-Fault Tolerance Level with a Smaller Increase in Usable Capacity
+### Your Cluster Will Support an Increased Node-Fault Tolerance Level with a Trade-Off in the Increase of Usable Capacity
 This scenario lets you choose one of the following options.
 
 #### Maintain the Current Node-Fault Tolerance Level with Optimal Usable Capacity
@@ -65,7 +65,7 @@ This scenario lets you choose one of the following options.
 
 {{page.varValidateNoReconfig}}
 
-#### Increase the Node-Fault Tolerance Level with Trade-off in Usable Capacity Increase
+#### Increase the Node-Fault Tolerance Level with a Trade-Off in the Increase of Usable Capacity
 To begin the node-add operation, contact <a href="https://care.qumulo.com/hc/en-us/articles/115008409408">Qumulo Care</a>.
 
 {{page.varPostExpansion}}
