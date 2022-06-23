@@ -1,53 +1,58 @@
 ---
-title: "Increasing Node Fault Tolerance During Node-Add Operations"
-summary: "This topic explains how you can increase node fault tolerance during node-add operations."
+title: "Increasing Node Fault Tolerance Level During Node-Add Operations"
+summary: "This topic explains how you can increase node fault tolerance level during node-add operations."
 permalink: /administrator-guide/qumulo-core/node-fault-tolerance.html
 sidebar: administrator_guide_sidebar
 keywords: node fault tolerance, node failure, fault tolerance, node add, node-add, cluster expansion, expand, reconfiguration
-varAddNode: 1. Follow the instructions in [Add a New Node to an Existing Qumulo Cluster](https://care.qumulo.com/hc/en-us/articles/360001070307) on Qumulo Care.
+varAddNode: 1. Follow the instructions in [Add a New Node to an Existing Qumulo Cluster](https://care.qumulo.com/hc/en-us/articles/360001070307) on Qumulo Care website.
 varCheckCapacity: 1. Before you click **Yes** in the **Add &lt;N&gt; nodes to cluster &lt;MyCluster&gt;?** dialog box, check that the projected capacity matches the expected capacity.
-varPostExpansion: After the cluster expansion process finishes, Qumulo Core begins data protection reconfiguration automatically. To monitor this process, click **Cluster > Overview**. On the **Cluster** page, in the protection status section, you can view the rebalance phase status and the estimated time to completion.
+varPostExpansion: After the cluster expansion process finishes, Qumulo Core begins data protection reconfiguration automatically.
+varMonitorProgress: To monitor this process, click **Cluster > Overview**. On the **Cluster** page, in the protection status section, you can view the rebalance phase status and the estimated time to completion.
+varValidateReconfig: When the restriper completes the provisioning of additional usable capacity and data protection reconfiguration, the **Data Protected** section shows the increased node fault tolerance level.
+varValidateNoReconfig: When the restriper completes the provisioning of additional usable capacity, the **Data Protected** section shows the same node fault tolerance level as before node-add.
 ---
 
-This topic explains how you can increase node fault tolerance during node-add operations.
+This topic explains how you can increase node fault tolerance levelduring node-add operations.
 
-## Reconfiguring Your Cluster's Node Fault Tolerance
-* In Qumulo Core 5.1.2 (and lower), you must configure your cluster's node fault tolerance level when you create your cluster. You can't modify this setting afterwards.
-* In Qumulo Core 5.1.3 (and higher) you can reconfigure data protection to increase an existing cluster's node fault tolerance level during the _cluster expansion_ process.
+## Reconfiguring Your Cluster's Node Fault Tolerance Level
+* In Qumulo Core version 5.1.2 and lower, you must configure your cluster's node fault tolerance level when you create your cluster. You can't modify this setting afterwards.
+* In Qumulo Core version 5.1.3 and higher, you can reconfigure data protection to increase an existing cluster's node fault tolerance level during the _cluster expansion_ process.
 
 {{site.data.alerts.important}}
 <ul>
-  <li>We strongly recommend contacting <a href="https://care.qumulo.com/hc/en-us/articles/115008409408">Qumulo Care</a> to learn more about the cluster expansion process.</li>
-  <li>There might be a compromise in usable capacity if your cluster is already is a heterogeneous cluster or if, after a node-add operation, it becomes a heterogeneous cluster and higher node fault tolerance becomes possible. In these scenarios, Qumulo Core maximizes usable capacity by default and offers the option to have a slighly lower increase capacity to increase the node fault tolerance level at the time of the node-add operation.</li>
+  <li>We strongly recommend contacting <a href="https://care.qumulo.com/hc/en-us/articles/115008409408">Qumulo Care</a> before preceding with cluster expansion.</li>
+  <li>There might be a trade-off in usable capacity if your cluster is already a heterogeneous cluster or it becomes a heterogeneous cluster after node-add. In these scenarios, Qumulo Core maximizes usable capacity by default and offers the option to trade-off some of the increase in usable capacity to increase the node fault tolerance level at the time of the node-add operation.</li>
 </ul>
 {{site.data.alerts.end}}
 
 ## Adding Nodes to Your Cluster
-The following sections describe node-add scenarios for different cluster configurations. Choose the scenario appropriate for the cluster expansion that you decided on during the purchasing process.
+The following sections describe node-add scenarios for different cluster configurations. Choose the scenario applicable to the cluster expansion option selection during the purchasing process.
 
-### Your Cluster Will not Support Increased Node Fault Tolerance
+### Your Cluster Will not Support Increased Node Fault Tolerance Level
 {{page.varAddNode}}
 
 {{page.varCheckCapacity}}
 
-### Your Cluster Will Support Increased Node Fault Tolerance without Compromise in Usable Capacity
+{{page.varMonitorProgress}} {{page.varValidateNoReconfig}}
+
+### Your Cluster Will Support Increased Node Fault Tolerance Level with Optimal Usable Capacity
 {{page.varAddNode}}
 
 {{page.varCheckCapacity}}
 
-{{page.varPostExpansion}} When the restriper completes the provisioning of additional usable capacity and data protection reconfiguration, the **Data Protected** section shows the increased node fault tolerance level.
+{{page.varPostExpansion}} {{page.varMonitorProgress}} {{page.varValidateReconfig}}
 
-### Your Cluster Will Support Increased Node Fault Tolerance with Optional Compromise in Usable Capacity
+### Your Cluster Will Support Increased Node Fault Tolerance Level with Trade-off in Usable Capacity Increase
 This scenario lets you choose one of the following options.
 
-#### Current Node Fault Tolerance with Higher Usable Capacity 
+#### Maintain Current Node Fault Tolerance Level with Optimal Usable Capacity
 {{page.varAddNode}}
 
 {{page.varCheckCapacity}}
 
-{{page.varPostExpansion}} When the restriper completes the provisioning of additional usable capacity and data protection reconfiguration, the **Data Protected** section shows the current node fault tolerance level.
+{{page.varMonitorProgress}} {{page.varValidateNoReconfig}}
 
-#### Increased Node Fault Tolerance with Slightly Lower Increase in Usable Capacity
-To begin the node-add operation and discuss the cluster expansion process, contact <a href="https://care.qumulo.com/hc/en-us/articles/115008409408">Qumulo Care</a>.
+#### Increase Node Fault Tolerance Level with Trade-off in Usable Capacity Increase
+To begin the node-add operation, contact <a href="https://care.qumulo.com/hc/en-us/articles/115008409408">Qumulo Care</a>.
 
-{{page.varPostExpansion}} When the restriper completes the provisioning of additional usable capacity and data protection reconfiguration, the **Data Protected** section shows the increased node fault tolerance level.
+{{page.varPostExpansion}} {{page.varMonitorProgress}} {{page.varValidateReconfig}}
