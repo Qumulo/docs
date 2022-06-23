@@ -42,7 +42,7 @@ The following sections describe node-add scenarios for various cluster configura
 
 {{page.varValidateNoReconfig}}
 
-### Your Cluster Will Support an Increased Node-Fault Tolerance Level with Optimal Usable Capacity
+### Your Cluster Will Support an Increased Node-Fault Tolerance Level without a Trade-Off in the Increase of Usable Capacity
 {{page.varAddNode}}
 
 {{page.varCheckCapacity}}
@@ -56,7 +56,7 @@ The following sections describe node-add scenarios for various cluster configura
 ### Your Cluster Will Support an Increased Node-Fault Tolerance Level with a Trade-Off in the Increase of Usable Capacity
 This scenario lets you choose one of the following options.
 
-#### Maintain the Current Node-Fault Tolerance Level with Optimal Usable Capacity
+#### Maintain the Current Node-Fault Tolerance Level
 {{page.varAddNode}}
 
 {{page.varCheckCapacity}}
@@ -65,7 +65,7 @@ This scenario lets you choose one of the following options.
 
 {{page.varValidateNoReconfig}}
 
-#### Increase the Node-Fault Tolerance Level with a Trade-Off in the Increase of Usable Capacity
+#### Increase the Node-Fault Tolerance Level
 To begin the node-add operation, contact <a href="https://care.qumulo.com/hc/en-us/articles/115008409408">Qumulo Care</a>.
 
 {{page.varPostExpansion}}
