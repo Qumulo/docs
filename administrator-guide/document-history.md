@@ -18,8 +18,8 @@ The following table lists changes to the Qumulo Administrator Guide.
   </thead>
   <tbody>
     <tr>
-      <td>Jun. 22, 2022</td>
-      <td>Added the <a href="/administrator-guide/qumulo-core/node-fault-tolerance.html">Increasing Node Fault Tolerance During Node-Add Operation</a> section.</td>
+      <td>Jun. 27, 2022</td>
+      <td>Added the <a href="/administrator-guide/qumulo-core/node-fault-tolerance.html">Increasing the Node-Fault Tolerance Level for Your Cluster During Node-Add Operations</a> section.</td>
     </tr>
     <tr>
       <td>Jun. 10, 2022</td>
