@@ -53,7 +53,7 @@ The following sections describe node-add scenarios for different cluster configu
 
 {{page.varValidateReconfig}}
 
-### Your Cluster Will Support an Increased Node-Fault Tolerance Level with Trade-off in Usable Capacity Increase
+### Your Cluster Will Support an Increased Node-Fault Tolerance Level with a Smaller Increase in Usable Capacity
 This scenario lets you choose one of the following options.
 
 #### Maintain the Current Node-Fault Tolerance Level with Optimal Usable Capacity
