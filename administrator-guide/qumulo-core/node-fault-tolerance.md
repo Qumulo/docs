@@ -50,9 +50,15 @@ This scenario lets you choose one of the following options.
 
 {{page.varCheckCapacity}}
 
-{{page.varMonitorProgress}} {{page.varValidateNoReconfig}}
+{{page.varMonitorProgress}}
+
+{{page.varValidateNoReconfig}}
 
 #### Increase the Node-Fault Tolerance Level with Trade-off in Usable Capacity Increase
 To begin the node-add operation, contact <a href="https://care.qumulo.com/hc/en-us/articles/115008409408">Qumulo Care</a>.
 
-{{page.varPostExpansion}} {{page.varMonitorProgress}} {{page.varValidateReconfig}}
+{{page.varPostExpansion}}
+
+{{page.varMonitorProgress}}
+
+{{page.varValidateReconfig}}
