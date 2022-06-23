@@ -31,7 +31,7 @@ This topic explains how you can increase the node-fault tolerance level for your
 {{site.data.alerts.end}}
 
 ## Adding Nodes to Your Cluster
-The following sections describe node-add scenarios for different cluster configurations. Choose the scenario applicable to the cluster expansion option that you chose during the purchasing process.
+The following sections describe node-add scenarios for different cluster configurations. One of the following scenarios applies to the cluster expansion option that you selected during the purchasing process.
 
 ### Your Cluster Will not Support an Increased Node-Fault Tolerance Level
 {{page.varAddNode}}
