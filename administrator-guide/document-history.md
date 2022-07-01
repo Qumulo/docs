@@ -22,7 +22,16 @@ The following table lists changes to the Qumulo Administrator Guide.
       <td>Added the <a href="openmetrics-api-specification.html">Qumulo OpenMetrics API Specification</a> section.</td>
     </tr>
     <tr>  
-     <td>Jun. 10, 2022</td>
+      <td>Jun. 27, 2022</td>
+      <td>Updated the following sections:
+        <ul>
+          <li><a href="/administrator-guide/protocols/nfsv4.1-enabling-using.html">Enabling and Using NFSv4.1 on a Qumulo Cluster</a></li>
+          <li><a href="/administrator-guide/qumulo-core/node-fault-tolerance-level.html">Increasing the Node-Fault-Tolerance Level During Node-Add Operation</a></li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>Jun. 10, 2022</td>
       <td>Updated the following sections:
         <ul>
           <li><a href="c-192t-c-432t-k-432t-chassis-replacement.html">Replacing the Chassis of C-192T, C-432T, and K-432T Nodes</a></li>
