@@ -16,6 +16,14 @@ The following table lists changes to the Qumulo-Certified Hardware Guide.
   </thead>
   <tbody>
     <tr>
+      <td>Jul. 8, 2022</td>
+      <td>Updated the following topics:
+         <ul>
+           <li><a href="/hardware/hpe-apollo-4200-gen9/getting-started.html">Getting Started with Qumulo on HPE Apollo 4200 Gen9</a></li>
+         </ul>
+      </td>
+    </tr>
+    <tr>
       <td>Jun. 15, 2022</td>
       <td>Updated the following topics:
          <ul>
