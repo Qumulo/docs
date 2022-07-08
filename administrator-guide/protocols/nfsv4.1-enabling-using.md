@@ -162,7 +162,7 @@ The NFSv4.1 implementation in Qumulo Core has a non-configurable lease of one mi
 To list NFSv4.1 byte-range locks in your cluster, use the following CLI command:
 
 ```bash
-qq fs_list_locks --protocol nfs4
+qq fs_list_locks --protocol nfs4 --lock-type byte-range
 ```
 
 {{site.data.alerts.note}}
