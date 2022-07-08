@@ -45,7 +45,7 @@ This section explains how to prepare HPE Apollo 4200 Gen9 nodes for creating a Q
 
 1. On the **Boot Menu** page, to boot into the **Legacy BIOS One-Time Boot Menu**, press **Enter**.
 
-1. In the **Question** dialog box, click **OK**.
+1. In the **Select ENTER to enter the Legacy BIOS One-Time Boot Menu or Esc to cancel.** dialog box, press **Enter**.
 
 1. From the **Default Boot Override Options** menu, select **2) One Time Boot to USB DriveKey**.
 
