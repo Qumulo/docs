@@ -22,6 +22,10 @@ The following table lists changes to the Qumulo Administrator Guide.
       <td>Added the <a href="openmetrics-api-specification.html">Qumulo OpenMetrics API Specification</a> section.</td>
     </tr>
     <tr>  
+      <td>Jul. 8, 2022</td>
+      <td>Updated the <a href="/administrator-guide/protocols/nfsv4.1-enabling-using.html">Enabling and Using NFSv4.1 on a Qumulo Cluster</a> section.</td>
+    </tr>
+    <tr>
       <td>Jun. 27, 2022</td>
       <td>Updated the following sections:
         <ul>
