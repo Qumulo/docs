@@ -19,20 +19,6 @@ This section explains how to prepare HPE ProLiant DL325 Gen10 Plus nodes for cre
 
    {% include image.html alt="To power on the node, press the power button." file="dl325-front.png" %}
 
-1. On the **HPE ProLiant** boot screen, do one of the following:
-
-   * If the **Boot Mode: UEFI** message appears, skip the rest of this section and continue to [boot by using the Qumulo Core USB Drive Installer](#step-2-boot-by-using-the-qumulo-core-usb-drive-installer).
-
-   * If the **Boot Mode: UEFI** message doesn't appear, press **F9**.
-
-1. On the **System Utilities** page, click **System Configuration > BIOS/Platform Configuration (RBSU) > Boot Options**.
-
-1. On the **Boot Options** page, set **Boot Mode** to **UEFI Mode** and then press **F10**.
-
-1. Press **Esc** until you return to the main page.
-
-1. Click **Reboot the System**.
-
 
 ## Step 2: Boot by Using the Qumulo Core USB Drive Installer
 
@@ -40,7 +26,18 @@ This section explains how to prepare HPE ProLiant DL325 Gen10 Plus nodes for cre
 
    {% include note.html content="The **Boot Menu** page might take a few minutes to appear." %}
 
-1. On the **Boot Menu** page, to perform a one-time boot, click **Generic USB Boot**.
+1. On the **Boot Menu** page, to perform a one-time boot, do one of the following:
+
+   * If the **Legacy BIOS One-Time Boot Menu** option is available, click it.
+
+   * If the **Legacy BIOS One-Time Boot Menu** option is unavailable, click **Generic USB Boot** and continue to run the Field Verification Tool (FVT).
+
+1. In the **Question** dialog box, click **OK**.
+
+   {% include note.html content="The **Default Boot Override Options** page might take a few minutes to appear." %}
+
+1. In the **Default Boot Override Options** menu, select **2) One Time Boot to USB DriveKey**.
+
 
 ## Step 3: Run the Field Verification Tool (FVT)
 
