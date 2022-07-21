@@ -184,27 +184,6 @@ body.frontmatter {counter-reset: page 1}
 
 body.first_page {counter-reset: page 1}
 
-h1 {
-    string-set: doctitle content();
-    color: #005d80;
-}
-
-h2 {
-    string-set: doctitle content();
-    color: #333 !important;
-}
-
-h3 {
-    string-set: doctitle content();
-    color: #333 !important;
-}
-
-h4 {
-    string-set: doctitle content();
-    color: #333 !important;
-    font-weight: bold;
-}
-
 @page {
     @top-left {
         content: none;
@@ -217,18 +196,14 @@ h4 {
     }
 
     @bottom-right {
-        content: "Page " counter(page);
+        content: counter(page);
+        /*content: "Page " counter(page);*/
         font-size: 11px;
     }
     @bottom-left {
         content: string(doctitle);
         font-size: 11px;
     }
-}
-.alert {
-    background-color: #fafafa !important;
-    border-color: #dedede !important;
-    color: black;
 }
 
 pre {

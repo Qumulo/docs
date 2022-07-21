@@ -478,7 +478,7 @@ Your Supermicro All-NVMe chassis has six internal fans. When a fan fails, the **
 
 {{site.data.alerts.caution}}
 <ul>
-  <li>The fans are not hot-swappable. You must power off the node to replace a fan. However, you may remove the top cover to determine which fan failed.</li>
+  <li>The fans aren't hot-swappable. You must power off the node to replace a fan. However, you may remove the top cover to determine which fan failed.</li>
   <li>For optimal air circulation, you must always reinstall the top chassis cover. You must never run the node for an extended period of time with the top chassis cover removed.</li>
 </ul>
 {{site.data.alerts.end}}
@@ -504,7 +504,7 @@ To identify which DIMM module failed, you must use the baseboard management cont
 <ul>
   <li>Use extreme caution when handling DIMM modules. Don't touch their metal contacts.</li>
   <li>Never force a DIMM module into a slot. Each DIMM module has a keyed notch which allows the module to be inserted in only one way.</li>
-  <li>DIMM modules are not hot-swappable. You must power off the node to replace a DIMM module.</li>
+  <li>DIMM modules aren't hot-swappable. You must power off the node to replace a DIMM module.</li>
   <li>For optimal air circulation, you must always reinstall the top chassis cover. You must never run the node for an extended period of time with the top chassis cover removed.</li>
 </ul>
 {{site.data.alerts.end}}
@@ -586,7 +586,7 @@ Supermicro All-NVMe nodes don't have the option to always boot from a USB drive 
 {% include note.html content="The setting is persistent: when you boot from a USB drive once, the node will continue boot from the USB drive. Remove the USB drive from the node after Qumulo Core is installed." %}
 
 #### Fast Drive Hot-Swapping
-If you remove and reinsert a drive extremely quickly (faster than one second), the baseboard management controller (BMC) does not recognize the drive and the activity LEDs do not return to their normal states. To resolve this issue, remove the drive, wait five seconds, and then reinsert it.
+If you remove and reinsert a drive extremely quickly (faster than one second), the baseboard management controller (BMC) doesn't recognize the drive and the activity LEDs do not return to their normal states. To resolve this issue, remove the drive, wait five seconds, and then reinsert it.
 
 #### Data Center Management Suite (DCMS) Licenses
 If a DCMS license isn't installed on a Supermicro All-NVMe node, the Field Verification Tool (FVT) fails, preventing you from installing Qumulo Core. A DCMS license from Supermicro is required for Qumulo Core to work correctly.

@@ -6,10 +6,10 @@ redirect_from:
   - /nfsv4.1-enabling-using.html
   - /administrator-guide/nfsv4.1-enabling-using.html
 sidebar: administrator_guide_sidebar
-keywords: nfs, nfs3, nfsv3, nfsv4.1, exports, mount, cluster, enable nfs, disable nfs, floating ip
+keywords: NFS, NFS3, NFSv3, NFSv4.1, export, exports, mount, cluster, enable NFS, disable NFS, floating IP
 ---
 
-Qumulo Core 4.3.0 (and higher) supports Network File System version 4.1 (NFSv4.1). This section explains how you can configure your cluster for a supported export configuration and enable or disable NFSv4.1 on your cluster. It also provides detail about supported and unsupported features. For more information about NFSv4.1 and file access permissions, see [Managing File Access Permissions Using NFSv4.1 Access Control Lists (ACLs)](nfsv4.1-auth-sys-acls.md).
+Qumulo Core 4.3.0 (and higher) supports Network File System version 4.1 (NFSv4.1). This section explains how you can configure your cluster for a supported export configuration and enable or disable NFSv4.1 on your cluster. It also provides detail about supported and unsupported features. For more information about NFSv4.1 and file access permissions, see [Managing File Access Permissions Using NFSv4.1 Access Control Lists (ACLs)](nfsv4.1-acls.md).
 
 {{site.data.alerts.important}}
 <ul>
@@ -40,7 +40,7 @@ NFSv3 lets you mount one of these exports by specifying the full export name, fo
 mount -o nfsvers=3 cluster.qumulo.com:/read_only/home /mnt/cluster/home
 ```
 
-This command gives read-only access to the `/home` directory on the cluster using the path `/mnt/cluster/home`. However, the following command fails with the `No such file or directory` message.
+This command gives read-only access to the `/home` directory on the cluster by using the path `/mnt/cluster/home`. However, the following command fails with the `No such file or directory` message.
 
 ```bash
 mount -o nfsvers=3 cluster.qumulo.com:/read_only /mnt/cluster/read_only
@@ -62,7 +62,7 @@ At the mount, the exports under `/read_only` are visible: `/mnt/cluster/read_onl
 |------ <other file system contents>
 ```
 
-This presentation of exports lets you view existing exports using the file system's own interface. It also lets you view new exports as soon as someone creates or modifies them without remounting.
+This presentation of exports lets you view existing exports by using the file system's own interface. It also lets you view new exports as soon as someone creates or modifies them without remounting.
 
 ### Preparing Export Configurations for NFSv4.1
 Qumulo's implementation of NFSv4.1 distinguishes between navigating _above_ exports and _inside_ an export. To avoid confusion between paths that refer to a virtual directory above an export or a real file system directory inside an export, no export name can be a prefix of another export name when NFSv4.1 is enabled.
@@ -86,10 +86,10 @@ To prepare this configuration for NFSv4.1, you can do one of the following:
 | `/root`            | `/`                   |
 | `/admin`           | `/home/admin`         |
 
-### Visibility of IP-Restricted Exports
-{% include note.html content="The names of exports are public to all NFSv4.1 clients, regardless of IP restrictions. You can't disable this behavior." %}
+### Visibility of IP-Address-Restricted Exports
+{% include note.html content="The names of exports are public to all NFSv4.1 clients, regardless of IP address restrictions. You can't disable this behavior." %}
 
-NFSv4.1 respects IP restrictions on exports: only clients with allowed IP addresses can access the contents of an export. However, clients without access to an export can still view the export as a directory when they traverse _above_ exports. The restrictions apply only when a client attempts to access the contents of the export.
+NFSv4.1 respects IP address restrictions on exports: Only clients with allowed IP addresses can access the contents of an export. However, clients without access to an export can still view the export as a directory when they traverse _above_ exports. The restrictions apply only when a client attempts to access the contents of the export.
 
 ### 32-Bit Sanitization
 * In NFSv3, you can configure specific exports to return 32-bit sanitized data for individual fields. NFSv3 converts any data larger than 32 bits in configured fields to 32-bit data and returns the data. For example, it can sanitize file size to 32-bit format. This truncates the field to `max_uint32` whenever the NFSv3 server returns the attribute.
@@ -97,9 +97,9 @@ NFSv4.1 respects IP restrictions on exports: only clients with allowed IP addres
 
 
 ## Enabling NFSv4.1 on a Qumulo Cluster
-{% include note.html content="Currently, you can enable NFSv4.1 only using the CLI." %}
+{% include note.html content="Currently, you can enable NFSv4.1 only by using the `qq` CLI." %}
 
-You can enable NFSv4.1 on your Qumulo cluster using a single cluster-wide configuration command, for example:
+You can enable NFSv4.1 on your Qumulo cluster by using a single cluster-wide configuration command, for example:
 
 ```bash
 qq nfs_modify_settings --enable-v4
@@ -108,7 +108,7 @@ qq nfs_modify_settings --enable-v4
 When you enable NFSv4.1, all NFS exports are accessible using NFSv3 and NFSv4.1.
 
 ## Specifying the NFS Mount Option
-Typically, NFS clients find and use the highest version of the protocol that both the client and server support. For example, the following command mounts using NFSv4.1 (if it is enabled) and using NFSv3 otherwise:
+Typically, NFS clients find and use the highest version of the protocol that both the client and server support. For example, the following command mounts using NFSv4.1 (if it is enabled) and using NFSv3 otherwise.
 
 ```bash
 mount -t nfs your.qumulo.cluster:/mount_path /path/to/mountpoint
@@ -124,7 +124,7 @@ mount -t nfs -o nfsvers=3 your.qumulo.cluster:/mount_path /path/to/mountpoint
 
 
 ## Checking Whether NFSv4.1 is enabled
-To check whether NFSv4.1 is enabled on your cluster, use the following CLI command:
+To check whether NFSv4.1 is enabled on your cluster, use the following `qq` CLI command:
 
 ```bash
 qq nfs_get_settings
@@ -134,7 +134,7 @@ qq nfs_get_settings
 ## Disabling NFSv4.1 on a Qumulo Cluster
 {% include important.html content="Disabling NFSv4.1 makes any NFSv4.1 mounts unusable immediately. We recommend switching any NFSv4.1 mounts to NFSv3 before disabling NFSv4.1." %}
 
-To disable NFSv4.1 on an entire Qumulo cluster, use the following CLI command:
+To disable NFSv4.1 on an entire Qumulo cluster, use the following `qq` CLI command:
 
 ```bash
 qq nfs_modify_settings --disable-v4
@@ -144,7 +144,7 @@ qq nfs_modify_settings --disable-v4
 ## Configuring Floating IPs for Nodes
 Currently, each Qumulo node is limited to 1,000 clients connected using NFSv4.1 simultaneously. To account for nodes going down, we recommend balancing the number of client connections across your nodes by configuring a sufficient number of floating IP addresses per node. This prevents a node failover event from overloading the nodes to which the clients might fail over.
 
-For example, if you configure only one IP address per node, on a cluster with 600 clients per node a single node failure might overload one of the remaining nodes, preventing 200 clients from connecting. If you assign multiple floating IP addresses to each node, the clients' connections are distributed across multiple nodes.
+For example, if you configure only one IP address per node, on a cluster with 600 clients per node, a single node failure might overload one of the remaining nodes, preventing 200 clients from connecting. If you assign multiple floating IP addresses to each node, the clients' connections are distributed across multiple nodes.
 
 
 ## Listing NFSv4.1 Byte-Range Locks
@@ -159,7 +159,7 @@ The NFSv4.1 implementation in Qumulo Core has a non-configurable lease of one mi
 </ul>
 {{site.data.alerts.end}}
 
-To list NFSv4.1 byte-range locks in your cluster, use the following CLI command:
+To list NFSv4.1 byte-range locks in your cluster, use the following `qq` CLI command:
 
 ```bash
 qq fs_list_locks --protocol nfs4 --lock-type byte-range
@@ -175,11 +175,12 @@ qq fs_list_locks --protocol nfs4 --lock-type byte-range
 
 ## Supported and Unsupported Features in Qumulo's Implementation of NFSv4.1
 Qumulo's implementation of NFSv4.1 currently supports:
+* Authentication with [Kerberos](../kerberos/)
 * General file system access (reading, writing, and navigating files)
 * Unstable writes
 * Full use of the NFS exports configuration shared with NFSv3
 * Navigation in the pseudo-file system above your exports
-* NFSv3-style `AUTH_SYS` or `AUTH_UNIX` authentication
+* NFSv3-style `AUTH_SYS` authentication (also known as `AUTH_UNIX`)
 * Fine-grained control over file permissions using access control lists (ACLs)
 * File locking (for example, by using the `fcntl` command)
 
@@ -188,5 +189,4 @@ Qumulo Core doesn't support the following NFSv3 features through NFSv4.1:
 * You can't access snapshots through NFSv4.1
 
 Qumulo Core doesn't currently support the following NFSv4.1 features:
-* Secure authentication using Kerberos
 * Delegations

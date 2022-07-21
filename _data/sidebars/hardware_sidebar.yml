@@ -21,7 +21,7 @@ entries:
       type: frontmatter
 
   - title: Qumulo-Certified Hardware Guide
-    output: web, pdf
+    output: web
     folderitems:
 
     - title: Documentation Home
@@ -34,7 +34,7 @@ entries:
 
     - title: Hardware Guide History
       url: /hardware/document-history.html
-      output: web, pdf
+      output: web
 
   - title: HPE Apollo 4200 Gen9
     output: web, pdf

@@ -21,7 +21,7 @@ entries:
       type: frontmatter
 
   - title: Qumulo Administrator Guide
-    output: web, pdf
+    output: web
     folderitems:
 
     - title: Documentation Home
@@ -34,7 +34,7 @@ entries:
 
     - title: Administrator Guide Document History
       url: /administrator-guide/document-history.html
-      output: web, pdf
+      output: web
 
   - title: Configuring Your Node's Networking
     output: web, pdf
@@ -61,7 +61,43 @@ entries:
       output: web, pdf
 
     - title: Managing File Access Permissions Using NFSv4.1 Access Control Lists (ACLs)
-      url: /administrator-guide/protocols/nfsv4.1-auth-sys-acls.html
+      url: /administrator-guide/protocols/nfsv4.1-acls.html
+      output: web, pdf
+
+  - title: Using NFSv4.1 with Kerberos
+    output: web, pdf
+    folderitems:
+
+    - title: How NFSv4.1 Works with Kerberos in Qumulo Core
+      url: /administrator-guide/kerberos/
+      output: web, pdf
+
+    - title: Prerequisites for Joining a Qumulo Cluster to Active Directory
+      url: /administrator-guide/kerberos/kerberos-prerequisites-joining-cluster-active-directory.html
+      output: web, pdf
+
+    - title: Configuring Active Directory for Use With Kerberos
+      url: /administrator-guide/kerberos/kerberos-configuring-active-directory.html
+      output: web, pdf
+
+    - title: Performing Additional Cluster Configuration after Joining Active Directory
+      url: /administrator-guide/kerberos/kerberos-additional-cluster-configuration.html
+      output: web, pdf
+
+    - title: Using Kerberos Permissions in the Qumulo Filesystem
+      url: /administrator-guide/kerberos/kerberos-qumulo-permissions.html
+      output: web, pdf
+
+    - title: Configuring a Linux Client for NFSv4.1 with Kerberos
+      url: /administrator-guide/kerberos/kerberos-configuring-linux-client.html
+      output: web, pdf
+
+    - title: Configuring Cross-Domain Active Directory Trusts
+      url: /administrator-guide/kerberos/kerberos-configuring-cross-domain-active-directory-trusts.html
+      output: web, pdf
+
+    - title: Troubleshooting NFSv4.1 with Kerberos
+      url: /administrator-guide/kerberos/kerberos-troubleshooting.html
       output: web, pdf
 
   - title: Working with Qumulo Core
