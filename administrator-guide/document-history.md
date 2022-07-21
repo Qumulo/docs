@@ -18,7 +18,7 @@ The following table lists changes to the Qumulo Administrator Guide.
   </thead>
   <tbody>
     <tr>
-      <td>Jul. 20, 2022</td>
+      <td>Jul. 21, 2022</td>
       <td>
         <ul>
           <li>Added the following sections under "Using NFSv4.1 with Kerberos":
