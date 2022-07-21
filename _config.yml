@@ -132,3 +132,7 @@ relative_links:
 # Enable server-side redirects. For more information, see https://github.com/jekyll/jekyll-redirect-from
 plugins:
   - jekyll-redirect-from
+
+# Global include variables
+varKerberosDns: Kerberos relies on DNS to identify machines involved in authentication. NFS clients and servers require DNS <code>A</code> records for forward-DNS lookups and <code>PTR</code> records for reverse-DNS lookups.
+varNfsConf: In versions of Ubuntu lower than 22.04 (and possibly on other Linux distributions), you can't use the <code>/etc/nfs.conf</code> file to configure <code>gssd</code>. If this is the case for your system, we recommend starting the <code>rpc.gssd</code> service by using the <code>-n</code> flag.

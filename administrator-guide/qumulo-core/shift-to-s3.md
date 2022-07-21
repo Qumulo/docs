@@ -122,7 +122,7 @@ Qumulo Core performs the following steps when it creates a Shift-To relationship
    | Timestamps (`mtime`, `ctime`, `atime`, `btime`) | Not copied                                                                                    |
    | UNIX device file                                | Not copied                                                                                    |
    
-1. Checks whether a file is already replicated. If the object exists in the remote S3 bucket, and neither the file nor the object are modified since the last successful replication, its data is not retransferred to S3.
+1. Checks whether a file is already replicated. If the object exists in the remote S3 bucket, and neither the file nor the object are modified since the last successful replication, its data isn't retransferred to S3.
 
    {% include note.html content="Shift never deletes files in the remote S3 folder, even if the files are removed from the local directory since the last replication." %}
 

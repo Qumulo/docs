@@ -20,12 +20,12 @@ entries:
       output: pdf
 
   - title: Supermicro 1114S Getting Started Guide
-    output: web, pdf
+    output: web
     folderitems:
 
     - title: Documentation Home
       url: /index.html
-      output: web, pdf
+      output: web
     
     - title: Supermicro 1114S Getting Started Guide
       url: /supermicro.html
