@@ -18,6 +18,31 @@ The following table lists changes to the Qumulo Administrator Guide.
   </thead>
   <tbody>
     <tr>
+      <td>Jul. 20, 2022</td>
+      <td>
+        <ul>
+          <li>Added the following sections under "Using NFSv4.1 with Kerberos":
+            <ul>
+              <li><a href="/administrator-guide/kerberos/">How NFSv4.1 Works with Kerberos in Qumulo Core</a></li>        
+              <li><a href="/administrator-guide/kerberos/kerberos-prerequisites-joining-cluster-active-directory.html">Prerequisites for Joining a Qumulo Cluster to Active Directory</a></li>
+              <li><a href="/administrator-guide/kerberos/kerberos-configuring-active-directory.html">Configuring Active Directory for Use with Kerberos</a></li>
+              <li><a href="/administrator-guide/kerberos/kerberos-additional-cluster-configuration.html">Performing Additional Cluster Configuration after Joining Active Directory</a></li>
+              <li><a href="/administrator-guide/kerberos/kerberos-qumulo-permissions.html">Using Kerberos Permissions in the Qumulo Filesystem</a></li>
+              <li><a href="/administrator-guide/kerberos/kerberos-configuring-linux-client.html">Configuring a Linux Client for NFSv4.1 with Kerberos</a></li>
+              <li><a href="/administrator-guide/kerberos/kerberos-configuring-cross-domain-active-directory-trusts.html">Configuring Cross-Domain Active Directory Trusts</a></li>
+              <li><a href="/administrator-guide/kerberos/kerberos-troubleshooting.html">Troubleshooting NFSv4.1 with Kerberos</a></li>
+            </ul>
+          </li>
+          <li>Updated the following sections:
+            <ul>
+              <li><a href="/administrator-guide/protocols/nfsv4.1-enabling-using.html">Enabling and Using NFSv4.1 on a Qumulo Cluster</a></li>        
+              <li><a href="/administrator-guide/protocols/nfsv4.1-acls.html">Managing File Access Permissions Using NFSv4.1 Access Control Lists (ACLs)</a></li>          
+            </ul>
+          </li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
       <td>Jul. 8, 2022</td>
       <td>Updated the <a href="/administrator-guide/protocols/nfsv4.1-enabling-using.html">Enabling and Using NFSv4.1 on a Qumulo Cluster</a> section.</td>
     </tr>
