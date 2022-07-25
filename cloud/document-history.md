@@ -17,7 +17,7 @@ The following table lists changes to the Qumulo-Certified Hardware Guide.
   <tbody>
     <tr>
       <td>Jul. 17, 2021</td>
-      <td>Created the Qumulo in the Cloud Guide and added <a href="/azure/getting-started.html">Getting Started with Qumulo on Azure as a Service</a>.</td>
+      <td>Created the Qumulo in the Cloud Guide and added <a href="/cloud/azure/getting-started.html">Getting Started with Qumulo on Azure as a Service</a>.</td>
     </tr>
   </tbody>
 </table>
