@@ -21,7 +21,7 @@ github_editme_path: qumulo/docs/blob/gh-pages/
 # google_analytics: UA-66296557-1
 # if you have google-analytics ID, put it in. if not, edit this value to blank.
 
-host: 127.0.0.1
+host: 10.116.10.222
 # the preview server used. Leave as is.
 
 port: 4000

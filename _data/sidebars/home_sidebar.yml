@@ -20,8 +20,8 @@ entries:
       url: /hardware/
       output: web
 
-    - title: Qumulo on Azure as a Service Onboarding Guide
-      url: /azure.html
+    - title: Qumulo in the Cloud Guide
+      url: /cloud/
       output: web
 
     - title: Qumulo on Supermicro Getting Started Guide
