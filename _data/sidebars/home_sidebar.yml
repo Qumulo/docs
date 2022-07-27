@@ -24,10 +24,6 @@ entries:
       url: /cloud/
       output: web
 
-    - title: Qumulo on Supermicro Getting Started Guide
-      url: /supermicro.html
-      output: web
-
     - title: Qumulo Administrator Guide
       url: /administrator-guide.html
       output: web
