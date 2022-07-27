@@ -36,6 +36,14 @@ entries:
       url: /hardware/document-history.html
       output: web
 
+  - title: C-192T, C-432T, K-432T
+    output: web, pdf
+    folderitems:
+
+    - title: Replacing Hardware Components
+      url: /hardware/c-192t-c-432t-k-432t/replacing-hardware-components.html
+      output: web, pdf
+
   - title: HPE Apollo 4200 Gen9
     output: web, pdf
     folderitems:

@@ -34,6 +34,10 @@ The following table lists changes to the Qumulo-Certified Hardware Guide.
       </td>
     </tr>
     <tr>
+      <td>Jun. 10, 2022</td>
+      <td>Updated the <a href="/hardware/c-192t-c-432t-k-432t/replacing-hardware-components.html">Replacing the Hardware Components in Your C-192T, C-432T, and K-432T Nodes</a> section.</td>
+    </tr>
+    <tr>
       <td>Jun. 3, 2022</td>
       <td>Updated the following topics:
          <ul>
@@ -57,10 +61,14 @@ The following table lists changes to the Qumulo-Certified Hardware Guide.
       <td>Jul. 22, 2021</td>
       <td>
         <ul>
-          <li>Added the <a href="/hardware/">Qumulo-Certified Hardware Guide</a></li>
+          <li>Added the <a href="/hardware/">Qumulo-Certified Hardware Guide</a>.</li>
           <li>Added the <a href="/hardware/supermicro-a-plus-wio-1114s-wn10rt">Supermicro A+ QIO 1114S-WN10RT</a> platform guide.</li>
         </ul>
       </td>
+    </tr>
+    <tr>
+      <td>Oct. 22, 2021</td>
+      <td>Added the <a href="/hardware/c-192t-c-432t-k-432t/replacing-hardware-components.html">Replacing the Hardware Components in Your C-192T, C-432T, and K-432T Nodes</a> section.</td>
     </tr>
   </tbody>
 </table>

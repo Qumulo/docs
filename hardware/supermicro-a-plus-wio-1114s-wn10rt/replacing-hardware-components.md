@@ -1,6 +1,6 @@
 ---
 title: "Replacing Hardware Components in Your Supermicro A+ WIO 1114S-WN10RT Nodes"
-summary: "This section explains how you can replace hqrdware components in your Supermicro A+ WIO 1114S-WN10RT nodes."
+summary: "This section explains how you can replace hardware components in your Supermicro A+ WIO 1114S-WN10RT nodes."
 permalink: hardware/supermicro-a-plus-wio-1114s-wn10rt/replacing-hardware-components.html
 sidebar: hardware_sidebar
 keywords: technical specifications, tech specs, specs, specifications, Supermicro 1114S, WN10RT
