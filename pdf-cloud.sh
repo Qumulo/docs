@@ -6,12 +6,12 @@ clear
 
 echo ""
 echo "Building PDF-friendly HTML site...";
-bundle exec jekyll serve --detach --config _config.yml,pdfconfigs/config_azure_pdf.yml;
+bundle exec jekyll serve --detach --config _config.yml,pdfconfigs/config_cloud_pdf.yml;
 echo "done";
 
 echo ""
 echo "Building the PDF...";
-prince --javascript --input-list=_site/pdfconfigs/prince-list.txt -o pdf/qumulo-azure-getting-started-guide.pdf;
+prince --javascript --input-list=_site/pdfconfigs/prince-list.txt -o pdf/qumulo-cloud-guide.pdf;
 
 echo ""
 echo "Deleting temporary build files..."

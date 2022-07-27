@@ -29,6 +29,7 @@ The Qumulo Administrator Guide is a growing collection of information about conf
   * [Configuring Cross-Domain Active Directory Trusts](kerberos/kerberos-configuring-cross-domain-active-directory-trusts.md)
   * [Troubleshooting NFSv4.1 with Kerberos](kerberos/kerberos-troubleshooting.md)
 * **Working with Qumulo Core**
+  * [Creating a Qumulo Core USB Drive Installer](qumulo-core/creating-usb-drive-installer.md)
   * [Increasing the Node-Fault-Tolerance Level for Your Cluster During Node-Add Operations](qumulo-core/node-fault-tolerance-level.md)
   * [Using Qumulo Shift-To to Copy Objects to Amazon S3](qumulo-core/shift-to-s3.md)
   * [Using Qumulo Shift-From to Copy Objects from Amazon S3](qumulo-core/shift-from-s3.md)

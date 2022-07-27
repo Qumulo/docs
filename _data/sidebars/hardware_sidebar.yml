@@ -115,3 +115,39 @@ entries:
     - title: Technical Specifications
       url: /hardware/hpe-dl325-gen10-plus/technical-specifications.html
       output: web, pdf
+
+  - title: Supermicro A+ WIO 1114S-WN10RT
+    output: web, pdf
+    folderitems:
+
+    - title: Racking Nodes
+      url: /hardware/supermicro-a-plus-wio-1114s-wn10rt/racking-nodes.html
+      output: web, pdf
+
+    - title: Wiring Nodes
+      url: /hardware/supermicro-a-plus-wio-1114s-wn10rt/wiring-nodes.html
+      output: web, pdf
+
+    - title: Getting Started
+      url: /hardware/supermicro-a-plus-wio-1114s-wn10rt/getting-started.html
+      output: web, pdf
+
+    - title: Drive Slot Mapping
+      url: /hardware/supermicro-a-plus-wio-1114s-wn10rt/drive-slot-mapping.html
+      output: web, pdf
+
+    - title: Panel LEDs
+      url: /hardware/supermicro-a-plus-wio-1114s-wn10rt/panel-leds.html
+      output: web, pdf
+
+    - title: Cluster Networking
+      url: /hardware/supermicro-a-plus-wio-1114s-wn10rt/networking-cluster.html
+      output: web, pdf
+
+    - title: Replacing Hardware Components
+      url: /hardware/supermicro-a-plus-wio-1114s-wn10rt/replacing-hardware-components.html
+      output: web, pdf
+
+    - title: Technical Specifications
+      url: /hardware/supermicro-a-plus-wio-1114s-wn10rt/technical-specifications.html
+      output: web, pdf

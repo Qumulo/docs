@@ -19,37 +19,37 @@ This section provides technical specifications for HPE ProLiant DL325 Gen10 Plus
 </thead>
 <tbody>
   <tr>
-    <td>Form Factor</td>
+    <td><strong>Form Factor</strong></td>
     <td>1U</td>
     <td>1U</td>
     <td>1U</td>
   </tr>
   <tr>
-    <td>Raw Storage Capacity</td>
+    <td><strong>Raw Storage Capacity</strong></td>
     <td>34 TB</td>
     <td>145 TB</td>
     <td>291 TB</td>
   </tr>
   <tr>
-    <td>SSD or NVM3</td>
+    <td><strong>SSD or NVM3</strong></td>
     <td>9 &times; 3.84 TB NVMe</td>
     <td>19 &times; 7.68 TB NVMe</td>
     <td>19 &times; 15.36 TB NVMe</td>
   </tr>
   <tr>
-    <td>Networking</td>
+    <td><strong>Networking</strong></td>
     <td>4 &times; 100 GbE</td>
     <td>4 &times; 100 GbE</td>
     <td>4 &times; 100 GbE</td>
   </tr>
   <tr>
-    <td>CPU</td>
+    <td><strong>CPU</strong></td>
     <td>24 cores 2.8 GHz</td>
     <td>24 cores 2.8 GHz</td>
     <td>24 cores 2.8 GHz</td>
   </tr>
   <tr>
-    <td>Memory</td>
+    <td><strong>Memory</strong></td>
     <td>128 GB</td>
     <td>128 GB</td>
     <td>128 GB</td>

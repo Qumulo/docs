@@ -8,8 +8,7 @@ Welcome. This site is a new documentation portal for [Qumulo](https://qumulo.com
 
 **Table of Contents**
 * [Qumulo-Certified Hardware Guide](hardware/)
-* [Qumulo on Azure as a Service Onboarding Guide](azure.md)
-* [Qumulo on Supermicro A+ WIO 1114S-WN10RT Getting Started Guide](supermicro.md)
+* [Qumulo in the Cloud Guide](cloud/)
 * [Qumulo Administrator Guide](administrator-guide/)
 
 ## Visit the Knowledge Base

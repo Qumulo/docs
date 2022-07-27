@@ -59,7 +59,7 @@ This section explains how you can replace the chassis in C-192T, C-432T, and K-4
 
 1. Install the replacement chassis in an appropriate location in your server rack.
 
-1. Starting with the top drawer, transfer the HDDs from each tray in the original chassis into a corresponding slot in the replacement chassis. For more information about drive locations, see [C-Series Drive Diagrams](https://care.qumulo.com/hc/en-us/articles/360020198853-Qumulo-C-Series-Drive-Diagrams) in Qumulo Care.
+1. Starting with the top drawer, transfer the HDDs from each tray in the original chassis into a corresponding slot in the replacement chassis. For more information about drive locations, see [C-Series Drive Diagrams](https://care.qumulo.com/hc/en-us/articles/360020198853-Qumulo-C-Series-Drive-Diagrams) on Qumulo Care.
 
    {% include important.html content="Work on one drawer at a time. If you apply 2 kg (or more) of downward force to a drawer, it might deform while opened." %}
 
@@ -76,4 +76,4 @@ This section explains how you can replace the chassis in C-192T, C-432T, and K-4
 1. Power on the node.
 
 ## Step 3: (Optional) Reconfiguring the Out-of-Band Management (IPMI) Settings
-If the current IPMI settings for your node are configured statically (rather than using DHCP), you must reapply the static IPMI settings to the replacement node. For more information, see [IPMI Quick Reference Guide for Qumulo C-Series](https://care.qumulo.com/hc/en-us/articles/360024426314-IPMI-Quick-Reference-Guide-for-Qumulo-C-Series) in Qumulo Care.
+If the current IPMI settings for your node are configured statically (rather than using DHCP), you must reapply the static IPMI settings to the replacement node. For more information, see [IPMI Quick Reference Guide for Qumulo C-Series](https://care.qumulo.com/hc/en-us/articles/360024426314-IPMI-Quick-Reference-Guide-for-Qumulo-C-Series) on Qumulo Care.
