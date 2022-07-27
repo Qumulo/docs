@@ -135,5 +135,9 @@ The following table lists changes to the Qumulo Administrator Guide.
       <td>Sep. 20, 2021</td>
       <td>Added the <a href="shift-from-s3.html">Using Qumulo Shift-From for Amazon S3 to Copy Objects</a> section.</td>
     </tr>
+    <tr>
+      <td>Jul. 22, 2021</td>
+      <td>Added the <a href="/administrator-guide/qumulo-core/creating-usb-drive-installer.html">Creating a Qumulo Core USB Drive Installer</a> section.</td>
+    </tr>
   </tbody>
 </table>
