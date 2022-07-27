@@ -1,4 +1,3 @@
-./pdf-administrator-guide.sh ;
-./pdf-supermicro.sh ;
-./pdf-azure.sh ;
-./pdf-hardware.sh
+./pdf-hardware;
+./pdf-cloud.sh ;
+./pdf-administrator-guide.sh

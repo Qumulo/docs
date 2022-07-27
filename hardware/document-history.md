@@ -58,7 +58,9 @@ The following table lists changes to the Qumulo-Certified Hardware Guide.
       <td>
         <ul>
           <li>Added the <a href="/hardware/">Qumulo-Certified Hardware Guide</a></li>
-          <li>Added the <a href="/hardware/supermicro-a-plus-wio-1114s-wn10rt">Supermicro A+ QIO 1114S-WN10RT</a> platform guide.</td>
+          <li>Added the <a href="/hardware/supermicro-a-plus-wio-1114s-wn10rt">Supermicro A+ QIO 1114S-WN10RT</a> platform guide.</li>
+        </ul>
+      </td>
     </tr>
   </tbody>
 </table>
