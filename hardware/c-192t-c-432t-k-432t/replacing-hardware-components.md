@@ -1,19 +1,20 @@
 ---
-title: "Replacing the Chassis of C-192T, C-432T, and K-432T Nodes"
-summary: "This topic explains how you can replace the chassis in C-192T, C-432T, and K-432T nodes."
-permalink: /administrator-guide/maintaining-hardware/c-192t-c-432t-k-432t-chassis-replacement.html
+title: "Replacing the Hardware Components in Your C-192T, C-432T, and K-432T Nodes"
+summary: "This topic explains how you can replace the hardware components in C-192T, C-432T, and K-432T nodes."
+permalink: /hardware/c-192t-c-432t-k-432t/replacing-hardware-components.html
 redirect_from:
   - /c-192t-c-432t-chassis-replacement.html
   - /c-192t-c-432t-k-432t-chassis-replacement.html
   - /administrator-guide/c-192t-c-432t-chassis-replacement.html
   - /administrator-guide/c-192t-c-432t-k-432t-chassis-replacement.html
-sidebar: administrator_guide_sidebar
+sidebar: hardware_sidebar
 keywords: chassis, chassis replacement, c-192t, c-432t, k-432t, 2u, 2u hybrid, 2u chassis replacement
 ---
 
+## To Replace the Chassis
 This section explains how you can replace the chassis in C-192T, C-432T, and K-432T nodes. 
 
-## Step 1: To Prepare for Chassis Replacement
+### Step 1: Prepare for Chassis Replacement
 {% include note.html content="We strongly suggest having another person help you with this process." %}
 
 1. To shut down the node, use the power button at the front or connect using SSH and run the `sudo shutdown -h now` command. 
@@ -32,7 +33,7 @@ This section explains how you can replace the chassis in C-192T, C-432T, and K-4
 
    The inner components of the node are exposed.
 
-## Step 2: To Replace the M.2 Boot Drive, NVMe SSDs, and HDDs
+### Step 2: Replace the M.2 Boot Drive, NVMe SSDs, and HDDs
 
 1. Remove the internal M.2 boot drive and then transfer it into the replacement chassis Qumulo provided to you.
 
@@ -59,7 +60,7 @@ This section explains how you can replace the chassis in C-192T, C-432T, and K-4
 
 1. Install the replacement chassis in an appropriate location in your server rack.
 
-1. Starting with the top drawer, transfer the HDDs from each tray in the original chassis into a corresponding slot in the replacement chassis. For more information about drive locations, see [C-Series Drive Diagrams](https://care.qumulo.com/hc/en-us/articles/360020198853-Qumulo-C-Series-Drive-Diagrams) on Qumulo Care.
+1. Starting with the top drawer, transfer the HDDs from each tray in the original chassis into a corresponding slot in the replacement chassis. For more information about drive locations, see [C-Series Drive Diagrams](https://care.qumulo.com/hc/en-us/articles/360020198853) on Qumulo Care.
 
    {% include important.html content="Work on one drawer at a time. If you apply 2 kg (or more) of downward force to a drawer, it might deform while opened." %}
 
@@ -75,5 +76,5 @@ This section explains how you can replace the chassis in C-192T, C-432T, and K-4
 
 1. Power on the node.
 
-## Step 3: (Optional) Reconfiguring the Out-of-Band Management (IPMI) Settings
-If the current IPMI settings for your node are configured statically (rather than using DHCP), you must reapply the static IPMI settings to the replacement node. For more information, see [IPMI Quick Reference Guide for Qumulo C-Series](https://care.qumulo.com/hc/en-us/articles/360024426314-IPMI-Quick-Reference-Guide-for-Qumulo-C-Series) on Qumulo Care.
+### Step 3: (Optional) Reconfiguring the Out-of-Band Management (IPMI) Settings
+If the current IPMI settings for your node are configured statically (rather than using DHCP), you must reapply the static IPMI settings to the replacement node. For more information, see [IPMI Quick Reference Guide for Qumulo C-Series](https://care.qumulo.com/hc/en-us/articles/360024426314) on Qumulo Care.

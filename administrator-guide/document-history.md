@@ -57,12 +57,7 @@ The following table lists changes to the Qumulo Administrator Guide.
     </tr>
     <tr>
       <td>Jun. 10, 2022</td>
-      <td>Updated the following sections:
-        <ul>
-          <li><a href="c-192t-c-432t-k-432t-chassis-replacement.html">Replacing the Chassis of C-192T, C-432T, and K-432T Nodes</a></li>
-          <li><a href="nfsv4.1-enabling-using.html">Enabling and Using NFSv4.1 on a Qumulo Cluster</a></li>
-        </ul>
-      </td>
+      <td>Updated the <a href="nfsv4.1-enabling-using.html">Enabling and Using NFSv4.1 on a Qumulo Cluster</a> section.</td>
     </tr>
     <tr>
       <td>Jun. 9, 2022</td>
@@ -124,12 +119,7 @@ The following table lists changes to the Qumulo Administrator Guide.
     </tr>
     <tr>
       <td>Oct. 22, 2021</td>
-      <td>Added the following sections:
-        <ul>
-          <li><a href="c-192t-c-432t-chassis-replacement.html">Replacing the Chassis of C-192T and C-432T Nodes</a></li>
-          <li><a href="nics-transceivers-cables.html">Choosing NICs, Transceivers, and Cables for Your Qumulo Node</a></li>
-        </ul>
-      </td>
+      <td>Added the <a href="nics-transceivers-cables.html">Choosing NICs, Transceivers, and Cables for Your Qumulo Node</a> section.</td>
     </tr>
     <tr>
       <td>Sep. 20, 2021</td>

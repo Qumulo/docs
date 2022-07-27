@@ -9,6 +9,8 @@ The Qumulo-Certified Hardware Guide is a collection of guides that provide infor
 
 **Table of Contents**
 * **[Document History](document-history.md)**
+* **C-192T, C-432T, K-432T**
+  * [Replacing Hardware Components](c-192t-c-432t-k-432t/replacing-hardware-components.md)
 * **HPE Apollo 4200 Gen9**
   * [Getting Started](hpe-apollo-4200-gen9/getting-started.md)
   * [Front and Rear Drives](hpe-apollo-4200-gen9/front-rear-drives.md)
