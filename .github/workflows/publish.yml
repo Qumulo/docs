@@ -1,0 +1,47 @@
+name: push published branch to public repo
+on:
+  workflow_dispatch:
+    branches:
+    - published
+  push:
+    branches:
+    - published
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          ref: ${{ env.GITHUB_REF_NAME }}
+
+      - uses: actions/cache@v2
+        with:
+          path: vendor/bundle
+          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile') }}
+          restore-keys: |
+            ${{ runner.os }}-gems-
+
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '2.6'
+          bundler-cache: true
+
+      - name: Sanity Build site
+        run: JEKYLL_ENV=preview LC_ALL=C.UTF-8 bundle exec jekyll build -d prod
+
+      - name: prepare key
+        run: |
+          echo "${{ secrets.DOCS_PUBLISH_KEY }}" > /tmp/key
+          chmod 400 /tmp/key
+
+      - name: push to remote gh-pages branch
+        run: |
+          git remote add -t published -m gh-pages public git@github.com:Qumulo/docs-internal-published
+          git push --set-upstream public ${GITHUB_REF_NAME}:gh-pages
+        env:
+          GIT_SSH_COMMAND: ssh -i /tmp/key
+
+      - name: cleanup key
+        run: |
+          rm -f /tmp/key
