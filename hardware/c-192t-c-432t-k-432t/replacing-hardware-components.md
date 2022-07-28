@@ -11,7 +11,7 @@ sidebar: hardware_sidebar
 keywords: chassis, chassis replacement, c-192t, c-432t, k-432t, 2u, 2u hybrid, 2u chassis replacement
 ---
 
-## To Replace the Chassis
+## Replacing the Chassis
 This section explains how you can replace the chassis in C-192T, C-432T, and K-432T nodes. 
 
 ### Step 1: Prepare for Chassis Replacement
