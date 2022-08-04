@@ -13,7 +13,7 @@ This section describes the Active Directory Domain Controller (DC) configuration
 ## Configuring DNS in Active Directory
 {{site.varKerberosDns}}
 
-You can use a variety of DNS implementations with Kerberos. It some cases, for example, it might be convenient to use the DNS server that the AD DC provides. For this reason, this section discusses DNS configuration in general terms.
+You can use a variety of DNS implementations with Kerberos. In some cases, for example, it might be convenient to use the DNS server that the AD DC provides. For this reason, this section discusses DNS configuration in general terms.
 
 
 ## Modifying the Default DNS Configuration
