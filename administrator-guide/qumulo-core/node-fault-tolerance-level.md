@@ -1,6 +1,6 @@
 ---
 title: "Increasing the Node-Fault-Tolerance Level for Your Cluster During Node-Add Operations"
-summary: "This topic explains how you can increase the node-fault-tolerance level for your cluster during node-add operations."
+summary: "This section explains how you can increase the node-fault-tolerance level for your cluster during node-add operations."
 permalink: /administrator-guide/qumulo-core/node-fault-tolerance-level.html
 sidebar: administrator_guide_sidebar
 keywords: node-fault-tolerance level, node failure, fault tolerance, node add, node-add, cluster expansion, expand, reconfiguration
@@ -12,7 +12,7 @@ varValidateReconfig: When the restriper completes the provisioning of additional
 varValidateNoReconfig: When the restriper completes the provisioning of additional usable capacity, the **Data Protected** section shows the same node-fault-tolerance level as before node-add.
 ---
 
-This topic explains how you can increase the node-fault-tolerance level for your cluster during node-add operations.
+This section explains how you can increase the node-fault-tolerance level for your cluster during node-add operations.
 
 ## Reconfiguring Your Cluster's Node-Fault-Tolerance Level
 * In Qumulo Core 5.1.2 (and lower), you must configure the node-fault-tolerance level for your cluster when you create the cluster. You can't modify this setting afterwards.
