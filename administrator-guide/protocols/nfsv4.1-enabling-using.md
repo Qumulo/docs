@@ -1,6 +1,6 @@
 ---
 title: "Enabling and Using NFSv4.1 on a Qumulo Cluster"
-summary: "This topic explains how you can configure your cluster for a supported export configuration and enable or disable NFSv4.1 on your cluster."
+summary: "This section explains how you can configure your cluster for a supported export configuration and enable or disable NFSv4.1 on your cluster."
 permalink: /administrator-guide/protocols/nfsv4.1-enabling-using.html
 redirect_from:
   - /nfsv4.1-enabling-using.html
