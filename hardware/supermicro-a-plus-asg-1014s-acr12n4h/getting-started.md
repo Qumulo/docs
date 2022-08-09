@@ -1,4 +1,4 @@
-:%s/supermicro-a-plus-asg-1014s-acr12n4h/supermicro-a-plus-asg-1014s-acr12n4h/g---
+---
 title: "Getting Started with Qumulo on Supermicro A+ ASG-1014S-ACR12N4H"
 summary: "This section explains how to prepare Supermicro A+ ASG-1014S-ACR12N4H nodes for creating a Qumulo Core cluster."
 permalink: hardware/supermicro-a-plus-asg-1014s-acr12n4h/getting-started.html
