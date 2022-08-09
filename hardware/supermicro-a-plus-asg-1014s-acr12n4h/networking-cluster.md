@@ -1,9 +1,9 @@
 ---
-title: "Networking Your Supermicro A+ WIO 1114S-WN10RT Cluster"
-summary: "This section explains how to network your Supermicro A+ WIO 1114S-WN10RT cluster."
-permalink: hardware/supermicro-a-plus-wio-1114s-wn10rt/networking-cluster.html
+title: "Networking Your Supermicro A+ ASG-1014S-ACR12N4H Cluster"
+summary: "This section explains how to network your Supermicro A+ ASG-1014S-ACR12N4H cluster."
+permalink: hardware/supermicro-a-plus-asg-1014s-acr12n4h/networking-cluster.html
 sidebar: hardware_sidebar
-keywords: network, networking, cluster, switch, Ethernet, ports, IP, Supermicro 1114S, WN10RT
+keywords: network, networking, cluster, switch, Ethernet, ports, IP, Supermicro 1014S, WN10RT
 ---
 
 This section explains the networking prerequisites, outlines the recommended configuration, and explains how you can connect to redundant switches or to a single switch.
@@ -107,4 +107,4 @@ You can connect a Supermicro 1114S cluster to a single switch. If this switch be
 ## Four-Node Cluster Architecture Diagram
 The following is the recommended configuration for a four-node cluster connected to an out-of-band management switch, redundant front-end switches, and redundant back-end switches.
 
-{% include image.html alt="Four-Node Cluster Architecture Diagram" file="supermicro-four-node-cluster-architecture-diagram.png" url="/hardware/supermicro-a-plus-wio-1114s-wn10rt/images/supermicro-four-node-cluster-architecture-diagram.png" %}
+{% include image.html alt="Four-Node Cluster Architecture Diagram" file="supermicro-four-node-cluster-architecture-diagram.png" url="/hardware/supermicro-a-plus-asg-1014s-acr12n4h/images/supermicro-four-node-cluster-architecture-diagram.png" %}
