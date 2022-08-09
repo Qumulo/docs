@@ -6,7 +6,7 @@ sidebar: hardware_sidebar
 keywords: out-of-band management, out of band management, IPMI, DHCP, network, networking, LAN, ipmitool, 100 Gbps, Ethernet, power
 ---
 
-This section explains how to wire your out-of-band management (IPMI) port, 100 Gbps ports, and power on Supermicro A+ WIO 1114S-WN10RT nodes.
+This section explains how to wire your out-of-band management (IPMI) port, 100 Gbps ports, and power on {{site.sm1114s}} nodes.
 
 {% include note.html content="The two Ethernet ports on the back of your node (to the right of the USB ports) are unused." %}
 
