@@ -30,7 +30,8 @@ This section explains the most common scenarios of replacing failed hardware com
 ## Performing the Part Replacement Procedure by Using the FVT
 When you replace a component of your node (such as the motherboard or an NIC card), you must ensure that the firmware version and configuration are correct for your new components. To do this, you must perform the part replacement procedure using the FVT.
 
-{% include note.html content="Before you replace the motherboard, you must request a new Data Center Management Suite (DCMS) license key from Supermicro and apply it before you run the FVT. (The license key uses the BMC MAC address which changes with the motherboard.) If you don't install a DCMS license on a Supermicro 1114S node, the Field Verification Tool (FVT) fails, preventing you from installing Qumulo Core." %}
+{% capture content_tag %} Before you replace the motherboard, you must request a new Data Center Management Suite (DCMS) license key from Supermicro and apply it before you run the FVT. (The license key uses the BMC MAC address which changes with the motherboard.) If you don't install a DCMS license on a {{site.sm1114s}} node, the Field Verification Tool (FVT) fails, preventing you from installing Qumulo Core. {% endcapture %}
+{% include note.html content=content_tag %}
 
 1. Boot using the latest version of the Qumulo Core USB Drive Installer.
 
