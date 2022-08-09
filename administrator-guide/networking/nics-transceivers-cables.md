@@ -144,7 +144,7 @@ The following table lists node types, the NICs that these nodes use, the speeds 
     <td><a href="https://docs.nvidia.com/networking/display/ConnectX4Firmwarev12282006/Firmware+Compatible+Products">12.28.2006</a></td>
   </tr>
   <tr>
-    <td rowspan="2">Supermicro 1114S</td>
+    <td rowspan="2">{{site.sm1114s}}</td>
     <td>ConnectX-6</td>
     <td rowspan="2">100 Gbps</td>
     <td><a href="https://docs.nvidia.com/networking/display/ConnectX6Firmwarev20301004/Firmware+Compatible+Products">16.30.1004</a></td>
@@ -165,7 +165,7 @@ If your node type corresponds to more than one possible NIC type, you might have
 
    {% include note.html content="This command might return information about (unused) onboard NICs that have interfaces with speeds of 10 Gbps (or slower)." %}
 
-   A list of NICs is displayed. In the following example, we ran the command on a Supermicro 1114S node, which has two ConnectX-6 NICs.
+   A list of NICs is displayed. In the following example, we ran the command on a {{site.sm1114s}} node, which has two ConnectX-6 NICs.
 
    ```
    45:00.0 Ethernet controller: Broadcom Inc. and subsidiaries BCM57416 NetXtreme-E Dual-Media 10G RDMA Ethernet Controller (rev 01)

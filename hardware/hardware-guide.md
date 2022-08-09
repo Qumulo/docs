@@ -31,7 +31,7 @@ The Qumulo-Certified Hardware Guide is a collection of guides that provide infor
   * [Front and Rear Drives](hpe-dl325-gen10-plus/front-rear-drives.md)
   * [Cluster Networking](hpe-dl325-gen10-plus/networking-cluster.md)
   * [Technical Specifications](hpe-dl325-gen10-plus/technical-specifications.md)
-* **Supermicro A+ WIO 1114S-WN10RT**
+* **{{site.sm1114sLong}}**
   * [Racking Nodes](supermicro-a-plus-wio-1114s-wn10rt/racking-nodes.md)
   * [Wiring Nodes](supermicro-a-plus-wio-1114s-wn10rt/wiring-nodes.md)
   * [Getting Started](supermicro-a-plus-wio-1114s-wn10rt/getting-started.md)
