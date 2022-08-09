@@ -1,4 +1,4 @@
----
+:%s/supermicro-a-plus-asg-1014s-acr12n4h/supermicro-a-plus-asg-1014s-acr12n4h/g---
 title: "Getting Started with Qumulo on Supermicro A+ ASG-1014S-ACR12N4H"
 summary: "This section explains how to prepare Supermicro A+ ASG-1014S-ACR12N4H nodes for creating a Qumulo Core cluster."
 permalink: hardware/supermicro-a-plus-asg-1014s-acr12n4h/getting-started.html
@@ -14,7 +14,7 @@ This section explains how to prepare {{site.sm1014sShort}} nodes for creating a 
 
 1. Plug the [Qumulo Core USB Drive Installer](/administrator-guide/qumulo-core/creating-usb-drive-installer.html) into an available USB port on the node and then press the power button.
 
-   {% include image.html alt="Front Diagram of the Supermicro A+ WIO 1114S-WN10RT Node" file="supermicro-front-diagram.png" url="/hardware/supermicro-a-plus-wio-1114s-wn10rt/images/supermicro-front-diagram.png" %}
+   {% include image.html alt="Front Diagram of the Supermicro A+ WIO 1114S-WN10RT Node" file="supermicro-front-diagram.png" url="/hardware/supermicro-a-plus-asg-1014s-acr12n4h/images/supermicro-front-diagram.png" %}
 
 
 ## Step 2: Boot by Using the Qumulo Core USB Drive Installer
