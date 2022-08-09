@@ -6,7 +6,7 @@ sidebar: hardware_sidebar
 keywords: getting started guide, quick reference, Supermicro 1014S, ACR12N4H, verify node, field verification tool, FVT
 ---
 
-This section explains how to prepare {{site.sm1014sShort}} nodes for creating a Qumulo Core cluster.
+This section explains how to prepare {{site.sm1014s}} nodes for creating a Qumulo Core cluster.
 
 ## Step 1: Verify Your Node
 

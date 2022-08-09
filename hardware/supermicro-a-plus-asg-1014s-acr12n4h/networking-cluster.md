@@ -3,7 +3,7 @@ title: "Networking Your Supermicro A+ ASG-1014S-ACR12N4H Cluster"
 summary: "This section explains how to network your Supermicro A+ ASG-1014S-ACR12N4H cluster."
 permalink: hardware/supermicro-a-plus-asg-1014s-acr12n4h/networking-cluster.html
 sidebar: hardware_sidebar
-keywords: network, networking, cluster, switch, Ethernet, ports, IP, Supermicro 1014S, WN10RT
+keywords: network, networking, cluster, switch, Ethernet, ports, IP, Supermicro 1014S, ACR12N4H
 ---
 
 This section explains the networking prerequisites, outlines the recommended configuration, and explains how you can connect to redundant switches or to a single switch.

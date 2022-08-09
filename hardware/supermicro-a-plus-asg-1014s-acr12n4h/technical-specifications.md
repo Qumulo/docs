@@ -6,7 +6,7 @@ sidebar: hardware_sidebar
 keywords: technical specifications, tech specs, specs, specifications, Supermicro 1014S, ACR12N4H
 ---
 
-This section provides technical specifications for {{site.sm1014sShort}} nodes.
+This section provides technical specifications for {{site.sm1014s}} nodes.
 
 <table cellspacing="0" cellpadding="0">
   <thead>
