@@ -6,15 +6,15 @@ sidebar: hardware_sidebar
 keywords: technical specifications, tech specs, specs, specifications, Supermicro 1114S, WN10RT
 ---
 
-This section provides technical specifications for Supermicro 1114S nodes.
+This section provides technical specifications for {{site.sm1114s}} nodes.
 
 <table cellspacing="0" cellpadding="0">
   <thead>
     <tr>
       <th></th>
-      <th><strong>Supermicro 1114S 153 TB</strong></th>
-      <th><strong>Supermicro 1114S 76 TB</strong></th>
-      <th><strong>Supermicro 1114S 30 TB</strong></th>
+      <th><strong>{{site.sm1114s}} 153 TB</strong></th>
+      <th><strong>{{site.sm1114s}} 76 TB</strong></th>
+      <th><strong>{{site.sm1114s}} 30 TB</strong></th>
     </tr>
   </thead>
   <tbody>

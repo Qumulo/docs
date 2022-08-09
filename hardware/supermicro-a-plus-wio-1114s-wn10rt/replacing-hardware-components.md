@@ -6,7 +6,7 @@ sidebar: hardware_sidebar
 keywords: technical specifications, tech specs, specs, specifications, Supermicro 1114S, WN10RT
 ---
 
-This section explains how you can replace hardware components in your Supermicro 1114S nodes.
+This section explains how you can replace hardware components in your {{site.sm1114s}} nodes.
 
 {{site.data.alerts.caution}}
 <ul>
@@ -30,7 +30,7 @@ This section explains the most common scenarios of replacing failed hardware com
 ## Performing the Part Replacement Procedure by Using the FVT
 When you replace a component of your node (such as the motherboard or an NIC card), you must ensure that the firmware version and configuration are correct for your new components. To do this, you must perform the part replacement procedure using the FVT.
 
-{% include note.html content="Before you replace the motherboard, you must request a new Data Center Management Suite (DCMS) license key from Supermicro and apply it before you run the FVT. (The license key uses the BMC MAC address which changes with the motherboard.) If you don't install a DCMS licenseon a Supermicro 1114S node, the Field Verification Tool (FVT) fails, preventing you from installing Qumulo Core." %}
+{% include note.html content="Before you replace the motherboard, you must request a new Data Center Management Suite (DCMS) license key from Supermicro and apply it before you run the FVT. (The license key uses the BMC MAC address which changes with the motherboard.) If you don't install a DCMS license on a {{site.sm1114s}} node, the Field Verification Tool (FVT) fails, preventing you from installing Qumulo Core." %}
 
 1. Boot using the latest version of the Qumulo Core USB Drive Installer.
 
@@ -43,7 +43,7 @@ When you replace a component of your node (such as the motherboard or an NIC car
 {% include note.html content="In some cases, after the part replacement procedure, the message `FIX: Run the FVT flash command.` appears. Enter `1` as you would for a [fixable issue](/hardware/supermicro-a-plus-wio-1114s-wn10rt/getting-started.html#fixable-issues-during-installation) to reboot the node and then repeat the part replacement procedure." %}
 
 ## To Replace a Drive
-The ten hot-swap drive carriers are located at the front of your Supermicro 1114S chassis. The boot drive is located in the internal M.2 slot.
+The ten hot-swap drive carriers are located at the front of your {{site.sm1114s}} chassis. The boot drive is located in the internal M.2 slot.
 
 Replacement drives, including the on-site spare drives that you received with your original nodes, are provided without a drive carrier. When replacing a faulty drive, you must remove the existing drive from its carrier and then insert the new drive into the carriers. The drive carriers are toolless and don't require any screws.
 
@@ -75,7 +75,7 @@ Replacement drives, including the on-site spare drives that you received with yo
 
 
 ## To Replace a Power Supply Unit (PSU)
-The two hot-swap PSUs are located at the front of your Supermicro 1114S chassis. If either of the two PSUs fails, the other PSU takes on the full load and lets the node continue operating without interruption.
+The two hot-swap PSUs are located at the front of your {{site.sm1114s}} chassis. If either of the two PSUs fails, the other PSU takes on the full load and lets the node continue operating without interruption.
 
 When a PSU fails, the **Info** LED at the front of the node begins to blink red every four seconds. In addition, the failure LED on the PSU at the back of the node lights up.
 
@@ -93,7 +93,7 @@ When a PSU fails, the **Info** LED at the front of the node begins to blink red 
 
 
 ## To Replace a Fan
-Your Supermicro 1114S chassis has six internal fans. When a fan fails, the **Info** LED at the front of the node begins to blink red every second.
+Your {{site.sm1114s}} chassis has six internal fans. When a fan fails, the **Info** LED at the front of the node begins to blink red every second.
 
 {{site.data.alerts.caution}}
 <ul>
@@ -116,7 +116,7 @@ Your Supermicro 1114S chassis has six internal fans. When a fan fails, the **Inf
 
 
 ## To Replace a DIMM
-Your Supermicro 1114S chassis has 16 DIMM slots (8 &#215; 16 GB DIMMs for a total 128 GB of memory).
+Your {{site.sm1114s}} chassis has 16 DIMM slots (8 &#215; 16 GB DIMMs for a total 128 GB of memory).
 
 To identify which DIMM failed, you must use the baseboard management controller (BMC) on the node or another hardware monitoring solution.
 

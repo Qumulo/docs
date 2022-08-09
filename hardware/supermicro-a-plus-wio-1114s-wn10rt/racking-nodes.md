@@ -6,7 +6,7 @@ sidebar: hardware_sidebar
 keywords: technical specifications, tech specs, specs, specifications, Supermicro 1114S, WN10RT
 ---
 
-This section describes how to use the outside and inside rails of your Supermicro 1114S node and how to rack your nodes in your data center.
+This section describes how to use the outside and inside rails of your {{site.sm1114s}} node and how to rack your nodes in your data center.
 
 ## To Attach the Outer and Inner Rails
 {{site.data.alerts.note}}
