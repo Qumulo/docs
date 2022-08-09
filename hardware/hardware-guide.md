@@ -40,7 +40,7 @@ The Qumulo-Certified Hardware Guide is a collection of guides that provide infor
   * [Cluster Networking](supermicro-a-plus-asg-1014s-acr12n4h/networking-cluster.md)
   * [Replacing Hardware Components](supermicro-a-plus-asg-1014s-acr12n4h/replacing-hardware-components.md)
   * [Technical Specifications](supermicro-a-plus-asg-1014s-acr12n4h/technical-specifications.md)
-* **Supermicro A+ WIO 1114S-WN10RT**
+* **{{site.sm1114sLong}}**
   * [Racking Nodes](supermicro-a-plus-wio-1114s-wn10rt/racking-nodes.md)
   * [Wiring Nodes](supermicro-a-plus-wio-1114s-wn10rt/wiring-nodes.md)
   * [Getting Started](supermicro-a-plus-wio-1114s-wn10rt/getting-started.md)
