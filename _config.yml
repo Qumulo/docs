@@ -138,4 +138,4 @@ varKerberosDns: Kerberos relies on DNS to identify machines involved in authenti
 varNfsConf: In versions of Ubuntu lower than 22.04 (and possibly on other Linux distributions), you can't use the <code>/etc/nfs.conf</code> file to configure <code>gssd</code>. If this is the case for your system, we recommend starting the <code>rpc.gssd</code> service by using the <code>-n</code> flag.
 
 sm1014sLong: Supermicro A+ ASG-1014S-ACR12N4H
-sm1014sShort: Supermicro 1014S
+sm1014s: Supermicro 1014S
