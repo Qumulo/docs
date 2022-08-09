@@ -1,12 +1,12 @@
 ---
-title: "Supermicro A+ WIO 1114S-WN10RT Technical Specifications"
-summary: "This section provides technical specifications for Supermicro A+ WIO 1114S-WN10RT nodes."
-permalink: hardware/supermicro-a-plus-wio-1114s-wn10rt/technical-specifications.html
+title: "Supermicro A+ ASG-1014S-ACR12N4H Technical Specifications"
+summary: "This section provides technical specifications for Supermicro A+ ASG-1014S-ACR12N4H nodes."
+permalink: hardware/supermicro-a-plus-asg-1014s-acr12n4h/technical-specifications.html
 sidebar: hardware_sidebar
-keywords: technical specifications, tech specs, specs, specifications, Supermicro 1114S, WN10RT
+keywords: technical specifications, tech specs, specs, specifications, Supermicro 1014S, ACR12N4H
 ---
 
-This section provides technical specifications for Supermicro 1114S nodes.
+This section provides technical specifications for {{site.sm1014sShort}} nodes.
 
 <table cellspacing="0" cellpadding="0">
   <thead>
