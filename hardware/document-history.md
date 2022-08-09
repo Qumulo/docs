@@ -16,6 +16,10 @@ The following table lists changes to the Qumulo-Certified Hardware Guide.
   </thead>
   <tbody>
     <tr>
+      <td>Sep. 16, 2022</td>
+      <td>Added the <a href="/hardware/supermicro-a-plus-asg-1014s-acr12n4h">Supermicro A+ ASG-1014S-ACR12N4H</a> platform guide.</td>
+    </tr>
+    <tr>
       <td>Jul. 8, 2022</td>
       <td>Updated the following topics:
          <ul>
@@ -62,7 +66,7 @@ The following table lists changes to the Qumulo-Certified Hardware Guide.
       <td>
         <ul>
           <li>Added the <a href="/hardware/">Qumulo-Certified Hardware Guide</a>.</li>
-          <li>Added the <a href="/hardware/supermicro-a-plus-wio-1114s-wn10rt">Supermicro A+ QIO 1114S-WN10RT</a> platform guide.</li>
+          <li>Added the <a href="/hardware/supermicro-a-plus-wio-1114s-wn10rt">Supermicro A+ WIO 1114S-WN10RT</a> platform guide.</li>
         </ul>
       </td>
     </tr>
