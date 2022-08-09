@@ -107,4 +107,4 @@ You can connect a {{site.sm1114s}} cluster to a single switch. If this switch be
 ## Four-Node Cluster Architecture Diagram
 The following is the recommended configuration for a four-node cluster connected to an out-of-band management switch, redundant front-end switches, and redundant back-end switches.
 
-{% include image.html alt="Four-Node Cluster Architecture Diagram" file="supermicro-four-node-cluster-architecture-diagram.png" url="/hardware/supermicro-a-plus-wio-1114s-wn10rt/images/supermicro-four-node-cluster-architecture-diagram.png" %}
+{% include image.html alt="Four-Node Cluster Architecture Diagram" file="supermicro-1114s-four-node-cluster-architecture-diagram.png" url="/hardware/supermicro-a-plus-wio-1114s-wn10rt/images/supermicro-1114s-four-node-cluster-architecture-diagram.png" %}
