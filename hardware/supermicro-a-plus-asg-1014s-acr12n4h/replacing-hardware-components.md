@@ -1,12 +1,12 @@
 ---
-title: "Replacing Hardware Components in Your Supermicro A+ WIO 1114S-WN10RT Nodes"
-summary: "This section explains how you can replace hardware components in your Supermicro A+ WIO 1114S-WN10RT nodes."
-permalink: hardware/supermicro-a-plus-wio-1114s-wn10rt/replacing-hardware-components.html
+title: "Replacing Hardware Components in Your Supermicro A+ ASG-1014S-ACR12N4H Nodes"
+summary: "This section explains how you can replace hardware components in your Supermicro A+ ASG-1014S-ACR12N4H nodes."
+permalink: hardware/supermicro-a-plus-asg-1014s-acr12n4h/replacing-hardware-components.html
 sidebar: hardware_sidebar
-keywords: technical specifications, tech specs, specs, specifications, Supermicro 1114S, WN10RT
+keywords: technical specifications, tech specs, specs, specifications, Supermicro 1014S, ACR12N4H
 ---
 
-This section explains how you can replace hardware components in your Supermicro 1114S nodes.
+This section explains how you can replace hardware components in your {{site.sm1014s}} nodes.
 
 {{site.data.alerts.caution}}
 <ul>
@@ -40,7 +40,7 @@ When you replace a component of your node (such as the motherboard or an NIC car
 
    The part replacement procedure runs and the **FVT passed!** message appears.
 
-{% include note.html content="In some cases, after the part replacement procedure, the message `FIX: Run the FVT flash command.` appears. Enter `1` as you would for a [fixable issue](/hardware/supermicro-a-plus-wio-1114s-wn10rt/getting-started.html#fixable-issues-during-installation) to reboot the node and then repeat the part replacement procedure." %}
+{% include note.html content="In some cases, after the part replacement procedure, the message `FIX: Run the FVT flash command.` appears. Enter `1` as you would for a [fixable issue](/hardware/supermicro-a-plus-asg-1014s-acr12n4h/getting-started.html#fixable-issues-during-installation) to reboot the node and then repeat the part replacement procedure." %}
 
 ## To Replace a Drive
 The ten hot-swap drive carriers are located at the front of your Supermicro 1114S chassis. The boot drive is located in the internal M.2 slot.
@@ -51,7 +51,7 @@ Replacement drives, including the on-site spare drives that you received with yo
 
 1. Locate the drive that requires replacement using the drive bay mapping.
 
-   {% include image.html alt="Supermicro Drive Slot Mapping" file="supermicro-drive-slot-mapping.png" url="/hardware/supermicro-a-plus-wio-1114s-wn10rt/images/supermicro-drive-slot-mapping.png" %}
+   {% include image.html alt="Supermicro Drive Slot Mapping" file="supermicro-drive-slot-mapping.png" url="/hardware/supermicro-a-plus-asg-1014s-acr12n4h/images/supermicro-drive-slot-mapping.png" %}
 
 1. To remove the existing drive, do the following:
 
