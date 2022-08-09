@@ -16,7 +16,7 @@ This section explains how to prepare {{site.sm1114s}} nodes for creating a Qumul
 
 1. Plug the [Qumulo Core USB Drive Installer](/administrator-guide/qumulo-core/creating-usb-drive-installer.html) into an available USB port on the node and then press the power button.
 
-   {% include image.html alt="Front Diagram of the {{site.sm1114sLong}} Node" file="supermicro-front-diagram.png" url="/hardware/supermicro-a-plus-wio-1114s-wn10rt/images/supermicro-front-diagram.png" %}
+   {% include image.html alt="Front Diagram of the Supermicro A+ WIO 1114S-WN10RT Node" file="supermicro-front-diagram.png" url="/hardware/supermicro-a-plus-wio-1114s-wn10rt/images/supermicro-front-diagram.png" %}
 
 
 ## Step 2: Boot by Using the Qumulo Core USB Drive Installer
