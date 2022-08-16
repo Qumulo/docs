@@ -1,0 +1,11 @@
+To create a container that can build your output:
+
+  docker build -f docker/build/Dockerfile -t docs-builder .
+
+Then, to render the output to the _site directory:
+
+  docker run --rm --user $(id -u):0 --group $(id -g):0 --name docs-container -v $(pwd):/src:rw docs-builder
+
+To bring up a webserver with automatic reload (on port 4000):
+
+  docker run --rm --user $(id -u):0 --group $(id -g):0 --name docs-container -v $(pwd):/src:rw -p 4000:4000 docs-builder serve
