@@ -22,6 +22,10 @@ The following table lists changes to the Qumulo Administrator Guide.
       <td>Added the <a href="openmetrics-api-specification.html">Qumulo OpenMetrics API Specification</a> section.</td>
     </tr>
     <tr>
+      <td>Aug. 16, 2022</td>
+      <td>Updated the <a href="/administrator-guide/kerberos/kerberos-configuring-linux-client.html">Configuring a Linux Client for NFSv4.1 with Kerberos</a> section.</td>
+    </tr>
+    <tr>
       <td>Jul. 21, 2022</td>
       <td>
         <ul>

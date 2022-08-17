@@ -113,7 +113,6 @@ In the following example, the `sssd.conf` file configures basic ID mapping for A
 domains = my-domain.example.com
 config_file_version = 2
 services = nss, pam
-default_domain_suffix = my-domain.example.com
 
 [domain/my-domain.example.com]
 ad_domain = my-domain.example.com
@@ -123,7 +122,7 @@ id_provider = ad
 krb5_store_password_if_offline = True
 default_shell = /bin/bash
 ldap_id_mapping = False
-use_fully_qualified_names = True
+use_fully_qualified_names = False
 fallback_homedir = /home/%u@%d
 access_provider = ad
 ```
