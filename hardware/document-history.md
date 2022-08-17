@@ -51,7 +51,7 @@ The following table lists changes to the Qumulo-Certified Hardware Guide.
       <td>May 26, 2022</td>
       <td>Added guides for the following platforms:
          <ul>
-           <:%s/{{site.a4200g10}}/{{site.a4200g10}}/gli><a href="/hardware/hpe-apollo-4200-gen9/getting-started.html">{{site.a4200g9}}</a></li>
+           <li><a href="/hardware/hpe-apollo-4200-gen9/getting-started.html">{{site.a4200g9}}</a></li>
            <li><a href="/hardware/hpe-apollo-4200-gen10/getting-started.html">{{site.a4200g10}}</a></li>
            <li><a href="/hardware/hpe-dl325-gen10-plus/getting-started.html">{{site.dl325g10p}}</a></li>
          </ul>
