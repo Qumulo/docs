@@ -1,19 +1,20 @@
 ---
 title: "Drive LEDs on HPE Apollo 4200 Gen10 Nodes"
-summary: "This section explains the drive LEDs in HPE Apollo 4200 Gen9 nodes."
+summary: "This section explains the drive LEDs in HPE Apollo 4200 Gen10 nodes."
 permalink: hardware/hpe-apollo-4200-gen10/drive-leds.html
 sidebar: hardware_sidebar
 keywords: drive, hard drive, LED, large form factor, LFF, small form factor, SFF
 ---
 
-This section explains the LEDs of large form factor (LFF) and small form factor (SFF) drives in your HPE Apollo 4200 Gen10 node. For more information, see [HPE Apollo 4200 Gen10 Server - Document List](https://support.hpe.com/hpesc/public/docDisplay?docLocale=en_US&docId=emr_na-a00061642en_us).
+This section explains the LEDs of large form factor (LFF) and small form factor (SFF) drives in your {{site.a4200g10}} node. For more information, see [{{site.a4200g10}} Server - Document List](https://support.hpe.com/hpesc/public/docDisplay?docLocale=en_US&docId=emr_na-a00061642en_us).
 
 ## Large Form Factor (LFF) Drive LEDs
 
 To locate the LFF drive LEDs, use the following diagram.
 
+{% capture alt_tag %}iLarge form factor (LFF) drive LEDs on the {{site.a4200g10}} node{% endcapture %}
 <!-- Reuse the Gen9 image -->
-{% include image.html alt="Large form factor (LFF) drive LEDs on the HPE Apollo 4200 Gen10 node" file="../../hpe-apollo-4200-gen9/images/lff-drive-leds.png" %}
+{% include image.html alt=alt_tag file="../../hpe-apollo-4200-gen9/images/lff-drive-leds.png" %}
 
 You can determine the current state of an LFF drive by reviewing the status of the following LEDs:
 
@@ -110,7 +111,8 @@ The following table explains the various combinations of the two LFF LEDs.
 
 To locate the SFF drive LEDs, use the following diagram.
 
-{% include image.html alt="Small form factor (SFF) drive LEDs on the HPE Apollo 4200 Gen10 node" file="sff-gen10-led-guide.png" %}
+{% capture alt_tag %}iSmall form factor (SFF) drive LEDs on the {{site.a4200g10}} node{% endcapture %}
+{% include image.html alt=alt_tag file="sff-gen10-led-guide.png" %}
 
 1. **Locate LED**
 

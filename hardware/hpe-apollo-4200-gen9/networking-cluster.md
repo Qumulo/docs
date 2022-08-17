@@ -6,7 +6,7 @@ sidebar: hardware_sidebar
 keywords: network, networking, cluster, switch, Ethernet, ports, IP, 90T, 180T, 288T
 ---
 
-This section explains how to network your HPE Apollo 4200 Gen9 cluster.
+This section explains how to network your {{site.a4200g9}} cluster.
 
 ## Prerequisites
 
@@ -39,27 +39,31 @@ This section explains how to network your HPE Apollo 4200 Gen9 cluster.
 * Nodes connected at their maximum Ethernet speed (this ensures advertised performance). To avoid network bottlenecks, Qumulo validates system performance with this configuration by using clients connected at the same link speed and to the same switch as the nodes.
 
 ## Node NICs and Ports
-The following diagrams show the NICs and ports on HPE Apollo 4200 Gen9 nodes.
+The following diagrams show the NICs and ports on {{site.a4200g9}} nodes.
 
 ### 90T NIC1 Ports
 
-{% include image.html alt="NIC1 ports on the HPE Apollo 4200 Gen9 90T node" file="hpe-90t-single.png" %}
+{% capture alt_tag %}NIC1 ports on the {{site.a4200g9}} 90T node{% endcapture %}
+{% include image.html alt=alt_tag file="hpe-90t-single.png" %}
 
 ### 180T NIC1 Ports
 
 {% include note.html content="Currently, NIC2 on this model is unused." %}
 
-{% include image.html alt="NIC1 ports on the HPE Apollo 4200 Gen9 180T node" file="hpe-180t-dual.png" %}
+{% capture alt_tag %}NIC1 ports on the {{site.a4200g9}} 180T node{% endcapture %}
+{% include image.html alt=alt_tag file="hpe-180t-dual.png" %}
 
 ### 288T NIC1 Ports (Single)
 
-{% include image.html alt="NIC1 ports on the single HPE Apollo 4200 Gen9 288T node" file="hpe-288t-single.png" %}
+{% capture alt_tag %}NIC1 ports on the single {{site.a4200g9}} 288T node{% endcapture %}
+{% include image.html alt=alt_tag file="hpe-288t-single.png" %}
 
 ### 288T NIC1 Ports (Dual)
 
 {% include note.html content="Currently, NIC2 on this model is unused." %}
 
-{% include image.html alt="NIC1 ports on the dual HPE Apollo 4200 Gen9 288T node" file="hpe-288t-dual.png" %}
+{% capture alt_tag %}NIC1 ports on the dual {{site.a4200g9}} 288T node{% endcapture %}
+{% include image.html alt=alt_tag file="hpe-288t-dual.png" %}
 
 ## Connecting to Redundant Switches
 

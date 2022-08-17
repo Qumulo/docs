@@ -6,13 +6,14 @@ sidebar: hardware_sidebar
 keywords: LED, front panel, power fault, rear panel, diagnose, diagnosis, hardware health
 ---
 
-This section explains the LEDs of your HPE Apollo 4200 Gen9 node, including front panel LEDs and buttons, power fault LEDs, and rear panel LEDs. You can use these LEDs to diagnose hardware health issues. For more information, see [HPE Apollo 4200 Gen9 Server - Document List](https://support.hpe.com/hpesc/public/docDisplay?docLocale=en_US&docId=c05058024).
+This section explains the LEDs of your {{site.a4200g9}} node, including front panel LEDs and buttons, power fault LEDs, and rear panel LEDs. You can use these LEDs to diagnose hardware health issues. For more information, see [{{site.a4200g9}} Server - Document List](https://support.hpe.com/hpesc/public/docDisplay?docLocale=en_US&docId=c05058024).
 
 ## Front Panel LEDs and Buttons
 
 To locate the front panel LEDs, use the following diagram.
 
-{% include image.html alt="Front panel LEDs on the HPE Apollo 4200 Gen9 node" file="hpe-front-leds.png" %}
+{% capture alt_tag %}Front panel LEDs on the {{site.a4200g9}} node{% endcapture %}
+{% include image.html alt=alt_tag file="hpe-front-leds.png" %}
 
 1. **Health LED**
 
@@ -124,7 +125,8 @@ If the (1) Health LED, (2) NIC status LED, (4) Power On and Standby button, and 
 
 To locate the rear panel LEDs, use the following diagram.
 
-{% include image.html alt="Rear panel LEDs on the HPE Apollo 4200 Gen9 node" file="hpe-rear-leds.png" %}
+{% capture alt_tag %}Rear panel LEDs on the {{site.a4200g9}} node{% endcapture %}
+{% include image.html alt=alt_tag file="hpe-rear-leds.png" %}
 
 1. **Dedicated iLO Activity LED**
 

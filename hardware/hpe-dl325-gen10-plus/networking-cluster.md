@@ -6,7 +6,7 @@ sidebar: hardware_sidebar
 keywords: network, networking, cluster, switch, Ethernet, ports, IP
 ---
 
-This section explains how to network your HPE ProLiant DL325 Gen10 Plus cluster.
+This section explains how to network your {{site.dl325g10p}}  cluster.
 
 ## Prerequisites
 
@@ -36,11 +36,12 @@ This section explains how to network your HPE ProLiant DL325 Gen10 Plus cluster.
 * Nodes connected at their maximum Ethernet speed (this ensures advertised performance). To avoid network bottlenecks, Qumulo validates system performance with this configuration by using clients connected at the same link speed and to the same switch as the nodes.
 
 ## Node NICs and Ports
-The following diagram shows the NICs and ports on HPE DL325 Gen10 Plus nodes. On this platform, there are two sets of NICs, one for the front end and one for the back end.
+The following diagram shows the NICs and ports on {{site.dl325g10p}} nodes. On this platform, there are two sets of NICs, one for the front end and one for the back end.
 
 {% include important.html content="For your node to work correctly, you must connect at least one port in each NIC." %}
 
-{% include image.html alt="NIC1 and NIC2 ports on HPE DL325 Gen10 Plus nodes" file="dl325-rear-networking.png" %}
+{% capture alt_tag %}NIC1 and NIC2 ports on {{site.dl325g10p}} nodes{% endcapture %}
+{% include image.html alt=alt_tag file="dl325-rear-networking.png" %}
 
 ## Connecting to Redundant Switches
 
