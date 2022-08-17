@@ -36,7 +36,8 @@ exclude:
   - "*.lua"
   - var
   - vendor
-  - Dockerfile
+  - docker/
+  - README.developer
   - Gemfile
   - Gemfile.lock
   - LICENSE-BSD-NAVGOCO.txt
