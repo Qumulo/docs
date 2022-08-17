@@ -19,8 +19,8 @@ The following table lists changes to the Qumulo-Certified Hardware Guide.
       <td>Jul. 8, 2022</td>
       <td>Updated the following topics:
          <ul>
-           <li><a href="/hardware/hpe-apollo-4200-gen9/getting-started.html">Getting Started with Qumulo on HPE Apollo 4200 Gen9</a></li>
-           <li><a href="/hardware/hpe-dl325-gen10-plus/getting-started.html">Getting Started with Qumulo on HPE ProLiant DL325 Gen10 Plus</a></li>
+           <li><a href="/hardware/hpe-apollo-4200-gen9/getting-started.html">Getting Started with Qumulo on {{site.a4200g9}}</a></li>
+           <li><a href="/hardware/hpe-dl325-gen10-plus/getting-started.html">Getting Started with Qumulo on {{site.dl325g10p}}</a></li>
          </ul>
       </td>
     </tr>
@@ -28,8 +28,8 @@ The following table lists changes to the Qumulo-Certified Hardware Guide.
       <td>Jun. 15, 2022</td>
       <td>Updated the following topics:
          <ul>
-           <li><a href="/hardware/hpe-apollo-4200-gen9/networking-cluster.html">Networking Your HPE Apollo 4200 Gen9 Cluster</a></li>
-           <li><a href="/hardware/hpe-apollo-4200-gen10/networking-cluster.html">Networking Your HPE Apollo 4200 Gen10 Cluster</a></li>
+           <li><a href="/hardware/hpe-apollo-4200-gen9/networking-cluster.html">Networking Your {{site.a4200g9}} Cluster</a></li>
+           <li><a href="/hardware/hpe-apollo-4200-gen10/networking-cluster.html">Networking Your {{site.a4200g10}} Cluster</a></li>
          </ul>
       </td>
     </tr>
@@ -41,9 +41,9 @@ The following table lists changes to the Qumulo-Certified Hardware Guide.
       <td>Jun. 3, 2022</td>
       <td>Updated the following topics:
          <ul>
-           <li><a href="/hardware/hpe-apollo-4200-gen9/getting-started.html">Getting Started with Qumulo on HPE Apollo 4200 Gen9</a></li>
-           <li><a href="/hardware/hpe-apollo-4200-gen10/getting-started.html">Getting Started with Qumulo on HPE Apollo 4200 Gen10</a></li>
-           <li><a href="/hardware/hpe-dl325-gen10-plus/getting-started.html">Getting Started with Qumulo on HPE ProLiant DL325 Gen10 Plus</a></li>
+           <li><a href="/hardware/hpe-apollo-4200-gen9/getting-started.html">Getting Started with Qumulo on {{site.a4200g9}}</a></li>
+           <li><a href="/hardware/hpe-apollo-4200-gen10/getting-started.html">Getting Started with Qumulo on {{site.a4200g10}}</a></li>
+           <li><a href="/hardware/hpe-dl325-gen10-plus/getting-started.html">Getting Started with Qumulo on {{site.dl325g10p}}</a></li>
          </ul>
       </td>
     </tr>
@@ -51,9 +51,9 @@ The following table lists changes to the Qumulo-Certified Hardware Guide.
       <td>May 26, 2022</td>
       <td>Added guides for the following platforms:
          <ul>
-           <li><a href="/hardware/hpe-apollo-4200-gen9/getting-started.html">HPE Apollo 4200 Gen9</a></li>
-           <li><a href="/hardware/hpe-apollo-4200-gen10/getting-started.html">HPE Apollo 4200 Gen10</a></li>
-           <li><a href="/hardware/hpe-dl325-gen10-plus/getting-started.html">HPE ProLiant DL325 Gen10 Plus</a></li>
+           <li><a href="/hardware/hpe-apollo-4200-gen9/getting-started.html">{{site.a4200g9}}</a></li>
+           <li><a href="/hardware/hpe-apollo-4200-gen10/getting-started.html">{{site.a4200g10}}</a></li>
+           <li><a href="/hardware/hpe-dl325-gen10-plus/getting-started.html">{{site.dl325g10p}}</a></li>
          </ul>
       </td>
     </tr>
