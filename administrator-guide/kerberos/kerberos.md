@@ -29,7 +29,7 @@ Qumulo Core supports only the following features:
 
 * The `krb5` mount flavor
 
-  {% include note.html content="Currently, Qumulo Core doesn't support `krb5i` (integrity, or signing) or `krb5p` (privacy, or encryption)." %}
+  {% include note.html content="Currently, Qumulo Core doesn't support `krb5i` (integrity, or signing)." %}
 
 * Linux clients
 
