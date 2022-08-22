@@ -20,13 +20,14 @@ Qumulo provides configuration for the permitted NFSv4.1 authentication flavors i
    {
      "auth_sys_enabled": true,
      "krb5_enabled": true,
+     "krb5p_enabled": true,
      "v4_enabled": false
    }
    ```
 
    This is the default configuration:
    * NFSv4.1 is disabled by default.
-   * `AUTH_SYS` and `AUTH_KRB5` are enabled by default (however, the `AUTH_KRB5` configuration has no effect on NFSv3 because Qumulo Core doesn't support Kerberos with NFSv3).
+   * `AUTH_SYS`, `AUTH_KRB5`, and `AUTH_KRB5P` are enabled by default (however, the `AUTH_KRB5` configuration has no effect on NFSv3 because Qumulo Core doesn't support Kerberos with NFSv3).
 
 1. To harden security, configure your cluster to use only Kerberos by disabling `AUTH_SYS` (without changing `AUTH_KRB5`). For example:
 
@@ -38,6 +39,7 @@ Qumulo provides configuration for the permitted NFSv4.1 authentication flavors i
      "v4_enabled": false,
      "auth_sys_enabled": false,
      "auth_krb5_enabled": true
+     "auth_krb5p_enabled": true
    }
    ```
 1. (Optional) You can also use the following commands.
@@ -46,9 +48,11 @@ Qumulo provides configuration for the permitted NFSv4.1 authentication flavors i
    | ------- | ----------- |
    | `qq nfs_modify_settings --enable-auth-sys` | Enables `AUTH_SYS` without changing `AUTH_KRB5` |
    | `qq nfs_modify_settings --enable-krb5` | Enables `AUTH_KRB5` without changing `AUTH_SYS` |
+   | `qq nfs_modify_settings --enable-krb5p` | Enables `AUTH_KRB5P` without changing `AUTH_SYS` |
    | `qq nfs_modify_settings --enable-v4` | Enables NFSv4.1 |
    | `qq nfs_modify_settings --disable-v4` | Disables NFSv4.1 |
    | `qq nfs_modify_settings --disable-krb5` | Disables `AUTH_KRB5` without changing `AUTH_SYS` |
+   | `qq nfs_modify_settings --disable-krb5p` | Disables `AUTH_KRB5P` without changing `AUTH_SYS` |
 
 {{site.data.alerts.note}}
 <ul>
@@ -64,4 +68,4 @@ You can use [NFSv4.1 exports](../protocols/nfsv4.1-enabling-using.md) to configu
 
 {% include note.html content="The user-mapping portion of the export configuration has no effect on Kerberos configuration. Specifying `root` or `any` user mapping for a particular export applies only to `AUTH_SYS` mounts that access this export."%}
 
-In all other ways, exports behave the same for `AUTH_KRB5` as they do for `AUTH_SYS`. IP address restrictions that you specify in an export work as expected.
+In all other ways, exports behave the same for `AUTH_KRB5` or `AUTH_KRB5P` as they do for `AUTH_SYS`. IP address restrictions that you specify in an export work as expected.
