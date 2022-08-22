@@ -22,6 +22,23 @@ The following table lists changes to the Qumulo Administrator Guide.
       <td>Added the <a href="openmetrics-api-specification.html">Qumulo OpenMetrics API Specification</a> section.</td>
     </tr>
     <tr>
+      <td>Aug. 22, 2022</td>
+      <td>
+        <ul>
+          <li>Added the <a href="/administrator-guide/qumulo-core/web-ui-login-banner.html">Setting the Web UI Login Banner</a> section.</li>
+          <li>Updated the following sections:
+            <ul>
+              <li><a href="/administrator-guide/protocols/nfsv4.1-acls.html">Managing File Access Permissions Using NFSv4.1 Access Control Lists (ACLs)</a></li>
+              <li><a href="/administrator-guide/kerberos/">How NFSv4.1 Works with Kerberos in Qumulo Core</a></li>
+              <li><a href="/administrator-guide/kerberos/kerberos-additional-cluster-configuration.html">Performing Additional Cluster Configuration after Joining Active Directory</a></li>
+              <li><a href="/administrator-guide/kerberos/kerberos-qumulo-permissions.html">Using Kerberos Permissions in the Qumulo Filesystem</a></li>
+              <li><a href="/administrator-guide/kerberos/kerberos-troubleshooting.html">Troubleshooting NFSv4.1 with Kerberos</a></li>
+            </ul>
+          </li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
       <td>Aug. 16, 2022</td>
       <td>Updated the <a href="/administrator-guide/kerberos/kerberos-configuring-linux-client.html">Configuring a Linux Client for NFSv4.1 with Kerberos</a> section.</td>
     </tr>

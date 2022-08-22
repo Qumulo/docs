@@ -116,6 +116,10 @@ entries:
       url: /administrator-guide/qumulo-core/managing-snapshots.html
       output: web, pdf
 
+    - title: Setting the Web UI Login Banner
+      url: /administrator-guide/qumulo-core/web-ui-login-banner.html
+      output: web, pdf
+
     - title: Setting the Web UI Inactivity Timeout
       url: /administrator-guide/qumulo-core/web-ui-inactivity-timeout.html
       output: web, pdf
