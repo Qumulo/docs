@@ -9,18 +9,10 @@ keywords: limit, limits, limitations, known limits, known limitations, config, c
 This section provides an overview of supported configurations and known limits for Qumulo Core.
 
 ## Supported Configurations
-Qumulo Core supports the following protocols, browsers, clients over SMB and NFS, domain-functional level, and Kerberos V5 encryption types.
 
-### Protocols
-* FTP
-* NFSv3
-* NFSv4.1
-* SMB 2.002
-* SMB 2.1
-* SMB 3.0
-* SMB 3.1
+### 
 
-For more information, see [Enabling and Using NFSv4.1 on a Qumulo Cluster](../protocols/nfsv4.1-enabling-using.md) and [Managing File Access Permissions by Using NFSv4.1 Access Control Lists (ACLs)](../protocols/nfsv4.1-acls.md).
+
 
 ### Browser
 Google Chrome 80 (and higher)
@@ -51,9 +43,61 @@ OpenLDAP for Group Expansion
 ### Python Version for qq CLI
 Python 3.8 (and higher)
 
+<table>
+  <thead>
+    <tr>
+      <th>Configuration</th>
+      <th>Supported Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Protocols</td>
+      <td>
+        <ul>
+          <li>FTP</li>
+          <li>NFSv3</li>
+          <li>NFSv4.1</li>
+          <li>SMB 2.002</li>
+          <li>SMB 2.1</li>
+          <li>SMB 3.0</li>
+          <li>SMB 3.1</li>
+        </ul>
+        For more information, see [Enabling and Using NFSv4.1 on a Qumulo Cluster](../protocols/nfsv4.1-enabling-using.md) and [Managing File Access Permissions by Using NFSv4.1 Access Control Lists (ACLs)](../protocols/nfsv4.1-acls.md).
+      </td>
+    </tr>
+    <tr>
+      <td>Cloud Cluster Size</td>
+      <td>100 nodes</td>
+    </tr>
+    <tr>
+      <td>Floating IP Addresses per Node</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>NFS Exports</td>
+      <td>64,000</td>
+    </tr>
+    <tr>
+      <td>SMB Shares</td>
+      <td>40,000</td>
+    </tr>
+    <tr>
+      <td>Access Control Entries (ACEs) in an Access Control List (ACL)</td>
+      <td>200</td>
+    </tr>
+    <tr>
+      <td>NFS Groups</td>
+      <td>16 without <a href="https://www.rfc-editor.org/rfc/rfc2307.html">RFC 2307</a> with Kerberos</td>
+    </tr>
+    <tr>
+      <td>Combined Users and Groups</td>
+      <td>4 billion</td>
+    </tr>
+  </tbody>
+</table>
 
 ## Known Limits
-The following are the maximum known limits for Qumulo Core.
 
 <table>
   <thead>
@@ -97,7 +141,7 @@ The following are the maximum known limits for Qumulo Core.
     </tr>
     <tr>
       <td>Characters in Cluster Name</td>
-      <td>2-15, alphanumeric and hyphen (`-`)</td>
+      <td>2-15, alphanumeric and hyphen (<codee>-</code>)</td>
     </tr>
     <tr>
       <td>Characters in Full Path (Path Name)</td>
