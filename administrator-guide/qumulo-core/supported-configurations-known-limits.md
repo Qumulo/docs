@@ -45,6 +45,12 @@ Microsoft Windows Server 2008 R2 (and higher)
 * AES256-CTS-HMAC-SHA1
 * AES128-CTS-HMAD-SHA1
 
+### LDAP Servers
+OpenLDAP for Group Expansion
+
+### Python Version for qq CLI
+Python 3.8 (and higher)
+
 
 ## Known Limits
 The following are the maximum known limits for Qumulo Core.
@@ -58,33 +64,88 @@ The following are the maximum known limits for Qumulo Core.
   </thead>
   <tbody>
     <tr>
+      <td>On-Premises Cluster Size</td>
+      <td>100 nodes</td>
+    </tr>
+    <tr>
+      <td>Cloud Cluster Size</td>
+      <td>100 nodes</td>
+    </tr>
+    <tr>
+      <td>Floating IP Addresses per Node</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>NFS Exports</td>
+      <td>64,000</td>
+    </tr>
+    <tr>
+      <td>SMB Shares</td>
+      <td>40,000</td>
+    </tr>
+    <tr>
+      <td>Access Control Entries (ACEs) in an Access Control List (ACL)</td>
+      <td>200</td>
+    </tr>
+    <tr>
+      <td>NFS Groups</td>
+      <td>16 without <a href="https://www.rfc-editor.org/rfc/rfc2307.html">RFC 2307</a> with Kerberos</td>
+    </tr>
+    <tr>
+      <td>Combined Users and Groups</td>
+      <td>4 billion</td>
+    </tr>
+    <tr>
+      <td>Characters in Cluster Name</td>
+      <td>2-15, alphanumeric and hyphen (`-`)</td>
+    </tr>
+    <tr>
+      <td>Characters in Full Path (Path Name)</td>
+      <td>32,760 (protocol-limited)</td>
+    </tr>
+    <tr>
+      <td>Characters in File Path Component (File or Directory)</td>
+      <td>255</td>
+    </tr>
+    <tr>
+      <td>Files in a Directory</td>
+      <td>4.3 billion</td>
+    </tr>
+    <tr>
+      <td>File Size</td>
+      <td>9 exabytes</td>
+    </tr>
+    <tr>
+      <td>Number of Files</td>
+      <td>18 quintillion</td>
+    </tr>
+    <tr>
+      <td>Hard Links per File</td>
+      <td>1,024</td>
+    </tr>
+    <tr>
+      <td>LDAP Domains</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Active Directory Domains</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>DNS Servers</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>Snapshots</td>
+      <td>40,000</td>
+    </tr>
+    <tr>
+      <td>Quotas</td>
+      <td>Not specified</td>
+    </tr>
+    <tr>
       <td>Number of Replication Relationships</td>
-      <td>100 {% include note.html content="Qumulo Core doesn't support Samba Domain Controllers." %}</a> section.</td>
+      <td>100 {% include note.html content="If a directory is more than 100 levels below the file system root directory, you can't use it as a replication source." %}</td>
     </tr>
   </tbody>
 </table>
-
-| Limit Type | Maximum Value   |
-|------------|---|
-| On-Premises Cluster Size  | 100 nodes |
-| Cloud Cluster Size | 100 nodes |
-| Floating IP Addresses per Node | 10 IP addresses |
-| NFS Exports | 64,000 |
-| SMB Shares | 40,000 |
-| Access Control Entries (ACEs) in an Access Control List (ACL) | 200 |
-| NFS Groups | 16 without RFC 2307 with Kerberos |
-| Combined Users and Groups | 4 billion |
-| Characters in Cluster Name | 2-15, alphanumeric and dash (`-`) |
-| Characters in Full Path (Path Name) | 32,760 (protocol-limited) |
-| Characters in File Path Component (File or Directory) | 255 |
-| Files in a Directory | 4.3 billion |
-| File Size | 9 exabytes |
-| Number of Files | 18 quintillion |
-| Number of Hard Links per File | 1,024 |
-| Total LDAP Domains | 1 |
-| Supported LDAP Servers | OpenLDAP for group expansion |
-| Total Active Directory Domains | 1 |
-| Total DNS Servers | Up to 3 |
-| Snapshots | 40,000 |
-| Quotas | Not specified |
-| Number of Replication Relationships | 100 {% include note.html content="Qumulo Core doesn't support Samba Domain Controllers." %} |
