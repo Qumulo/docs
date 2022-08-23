@@ -34,3 +34,4 @@ The Qumulo Administrator Guide is a growing collection of information about conf
   * [Managing Snapshots](qumulo-core/managing-snapshots.md)
   * [Setting the Web UI Login Banner](qumulo-core/web-ui-login-banner.html)
   * [Setting the Web UI Inactivity Timeout](qumulo-core/web-ui-inactivity-timeout.md)
+  * [Known Issues and Supported Configurations for Qumulo Core](qumulo-core/known-issues-supported-configurations.md)
