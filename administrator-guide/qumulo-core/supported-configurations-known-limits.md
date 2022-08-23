@@ -63,7 +63,7 @@ Python 3.8 (and higher)
           <li>SMB 3.0</li>
           <li>SMB 3.1</li>
         </ul>
-        For more information, see [Enabling and Using NFSv4.1 on a Qumulo Cluster](../protocols/nfsv4.1-enabling-using.md) and [Managing File Access Permissions by Using NFSv4.1 Access Control Lists (ACLs)](../protocols/nfsv4.1-acls.md).
+        For more information, see <a href="../protocols/nfsv4.1-enabling-using.html">Enabling and Using NFSv4.1 on a Qumulo Cluster</a> and <a href="../protocols/nfsv4.1-acls.html">Managing File Access Permissions by Using NFSv4.1 Access Control Lists (ACLs)</a>.
       </td>
     </tr>
     <tr>
