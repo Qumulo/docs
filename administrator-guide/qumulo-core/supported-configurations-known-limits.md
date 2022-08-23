@@ -61,6 +61,7 @@ The following are the maximum known limits for Qumulo Core.
       <td>Number of Replication Relationships</td>
       <td>100 {% include note.html content="Qumulo Core doesn't support Samba Domain Controllers." %}</a> section.</td>
     </tr>
+  </tbody>
 </table>
 
 | Limit Type | Maximum Value   |
