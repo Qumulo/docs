@@ -52,7 +52,7 @@ entries:
       url: /administrator-guide/protocols/nfsv4.1-enabling-using.html
       output: web, pdf
 
-    - title: Managing File Access Permissions Using NFSv4.1 Access Control Lists (ACLs)
+    - title: Managing File Access Permissions by Using NFSv4.1 Access Control Lists (ACLs)
       url: /administrator-guide/protocols/nfsv4.1-acls.html
       output: web, pdf
 

@@ -28,7 +28,7 @@ The following table lists changes to the Qumulo Administrator Guide.
           <li>Added the <a href="/administrator-guide/qumulo-core/web-ui-login-banner.html">Setting the Web UI Login Banner</a> section.</li>
           <li>Updated the following sections:
             <ul>
-              <li><a href="/administrator-guide/protocols/nfsv4.1-acls.html">Managing File Access Permissions Using NFSv4.1 Access Control Lists (ACLs)</a></li>
+              <li><a href="/administrator-guide/protocols/nfsv4.1-acls.html">Managing File Access Permissions by Using NFSv4.1 Access Control Lists (ACLs)</a></li>
               <li><a href="/administrator-guide/kerberos/">How NFSv4.1 Works with Kerberos in Qumulo Core</a></li>
               <li><a href="/administrator-guide/kerberos/kerberos-additional-cluster-configuration.html">Performing Additional Cluster Configuration after Joining Active Directory</a></li>
               <li><a href="/administrator-guide/kerberos/kerberos-qumulo-permissions.html">Using Kerberos Permissions in the Qumulo Filesystem</a></li>
@@ -61,7 +61,7 @@ The following table lists changes to the Qumulo Administrator Guide.
           <li>Updated the following sections:
             <ul>
               <li><a href="/administrator-guide/protocols/nfsv4.1-enabling-using.html">Enabling and Using NFSv4.1 on a Qumulo Cluster</a></li>        
-              <li><a href="/administrator-guide/protocols/nfsv4.1-acls.html">Managing File Access Permissions Using NFSv4.1 Access Control Lists (ACLs)</a></li>          
+              <li><a href="/administrator-guide/protocols/nfsv4.1-acls.html">Managing File Access Permissions by Using NFSv4.1 Access Control Lists (ACLs)</a></li>          
             </ul>
           </li>
         </ul>
@@ -86,7 +86,7 @@ The following table lists changes to the Qumulo Administrator Guide.
     </tr>
     <tr>
       <td>Jun. 9, 2022</td>
-      <td>Updated the <a href="nfsv4.1-auth-sys-acls.html">Managing File Access Permissions Using NFSv4.1 Access Control Lists (ACLs)</a> section.</td>
+      <td>Updated the <a href="nfsv4.1-auth-sys-acls.html">Managing File Access Permissions by Using NFSv4.1 Access Control Lists (ACLs)</a> section.</td>
     </tr>
     <tr>
       <td>May 25, 2022</td>
@@ -115,7 +115,7 @@ The following table lists changes to the Qumulo Administrator Guide.
     </tr>
     <tr>
       <td>Jan. 27, 2022</td>
-      <td>Updated the <a href="nfsv4.1-auth-sys-acls.html">Managing File Access Permissions Using NFSv4.1 Access Control Lists (ACLs)</a> section.</td>
+      <td>Updated the <a href="nfsv4.1-auth-sys-acls.html">Managing File Access Permissions by Using NFSv4.1 Access Control Lists (ACLs)</a> section.</td>
     </tr>
     <tr>
       <td>Jan. 24, 2022</td>
@@ -134,7 +134,7 @@ The following table lists changes to the Qumulo Administrator Guide.
             <td>Added the following sections:
         <ul>
           <li><a href="nfsv4.1-enabling-using.html">Enabling and Using NFSv4.1 on a Qumulo Cluster</a></li>
-          <li><a href="nfsv4.1-auth-sys-acls.html">Managing File Access Permissions Using NFSv4.1 Access Control Lists (ACLs)</a></li>
+          <li><a href="nfsv4.1-auth-sys-acls.html">Managing File Access Permissions by Using NFSv4.1 Access Control Lists (ACLs)</a></li>
         </ul>
       </td>
     </tr>
