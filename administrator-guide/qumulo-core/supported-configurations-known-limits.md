@@ -8,41 +8,10 @@ keywords: limit, limits, limitations, known limits, known limitations, config, c
 
 This section provides an overview of supported configurations and known limits for Qumulo Core.
 
-## Supported Configurations
-
-### Browser
-Google Chrome 80 (and higher)
-
-### Clients over SMB
-* macOS 10.14 (and higher)
-* Windows 7 (and higher)
-
-### Clients over NFS
-* macOS 10.14 (and higher)
-* Linux Kernel 2.6.X (and higher)
-
-### Linux Configuration
-Qumulo Core is up to date with all Ubuntu 18.04 security updates.
-
-### Domain-Functional Level
-Microsoft Windows Server 2008 R2 (and higher)
-{% include note.html content="Qumulo Core doesn't support Samba Domain Controllers." %}
-
-### Kerberos V5 Encryption Types
-* RC4-HMAC-MD5
-* AES256-CTS-HMAC-SHA1
-* AES128-CTS-HMAD-SHA1
-
-### LDAP Servers
-OpenLDAP for Group Expansion
-
-### Python Version for qq CLI
-Python 3.8 (and higher)
-
 <table>
   <thead>
     <tr>
-      <th>Configuration</th>
+      <th>Configuration Type</th>
       <th>Supported Value</th>
     </tr>
   </thead>
@@ -61,6 +30,54 @@ Python 3.8 (and higher)
         </ul>
         For more information, see <a href="../protocols/nfsv4.1-enabling-using.html">Enabling and Using NFSv4.1 on a Qumulo Cluster</a> and <a href="../protocols/nfsv4.1-acls.html">Managing File Access Permissions by Using NFSv4.1 Access Control Lists (ACLs)</a>.
       </td>
+    </tr>
+    <tr>
+      <td>Browser</td>
+      <td>Google Chrome 80 (and higher)</td>
+    </tr>
+    <tr>
+      <td>Clients over SMB</td>
+      <td>
+        <ul>
+          <li>macOS 10.14 (and higher)</li>
+          <li>Windows 7 (and higher)</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>Clients over NFS</td>
+      <td>
+        <ul>
+          <li>macOS 10.14 (and higher)</li>
+          <li>Linux Kernel 2.6.X (and higher)</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>Linux Configuration</td>
+      <td>Qumulo Core is up to date with all Ubuntu 18.04 security updates.</td>
+    </tr>
+    <tr>
+      <td>Domain-Functional Level</td>
+      <td>Microsoft Windows Server 2008 R2 (and higher) {% include note.html content="Qumulo Core doesn't support Samba Domain Controllers." %}</td>
+    </tr>
+    <tr>
+      <td>Kerberos V5 Encryption Types</td>
+      <td>
+         <ul>
+           <li>RC4-HMAC-MD5</li>
+           <li>AES256-CTS-HMAC-SHA1</li>
+           <li>AES128-CTS-HMAD-SHA1</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>LDAP Servers</td>
+      <td>OpenLDAP for Group Expansion</td>
+    </tr>
+    <tr>
+      <td>Python Version for <code>qq</code> CLI</td>
+      <td>3.8 (and higher)</td>
     </tr>
   </tbody>
 </table>
