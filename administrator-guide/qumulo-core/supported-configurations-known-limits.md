@@ -109,7 +109,7 @@ Python 3.8 (and higher)
     </tr>
     <tr>
       <td>Characters in Cluster Name</td>
-      <td>2-15, alphanumeric and hyphen (<codee>-</code>)</td>
+      <td>2-15, alphanumeric and hyphen (<code>-</code>)</td>
     </tr>
     <tr>
       <td>Characters in Full Path (Path Name)</td>
