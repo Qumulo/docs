@@ -10,10 +10,6 @@ This section provides an overview of supported configurations and known limits f
 
 ## Supported Configurations
 
-### 
-
-
-
 ### Browser
 Google Chrome 80 (and higher)
 
@@ -65,34 +61,6 @@ Python 3.8 (and higher)
         </ul>
         For more information, see <a href="../protocols/nfsv4.1-enabling-using.html">Enabling and Using NFSv4.1 on a Qumulo Cluster</a> and <a href="../protocols/nfsv4.1-acls.html">Managing File Access Permissions by Using NFSv4.1 Access Control Lists (ACLs)</a>.
       </td>
-    </tr>
-    <tr>
-      <td>Cloud Cluster Size</td>
-      <td>100 nodes</td>
-    </tr>
-    <tr>
-      <td>Floating IP Addresses per Node</td>
-      <td>10</td>
-    </tr>
-    <tr>
-      <td>NFS Exports</td>
-      <td>64,000</td>
-    </tr>
-    <tr>
-      <td>SMB Shares</td>
-      <td>40,000</td>
-    </tr>
-    <tr>
-      <td>Access Control Entries (ACEs) in an Access Control List (ACL)</td>
-      <td>200</td>
-    </tr>
-    <tr>
-      <td>NFS Groups</td>
-      <td>16 without <a href="https://www.rfc-editor.org/rfc/rfc2307.html">RFC 2307</a> with Kerberos</td>
-    </tr>
-    <tr>
-      <td>Combined Users and Groups</td>
-      <td>4 billion</td>
     </tr>
   </tbody>
 </table>
