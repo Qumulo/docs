@@ -44,3 +44,32 @@ Microsoft Windows Server 2008 R2 (and higher)
 * RC4-HMAC-MD5
 * AES256-CTS-HMAC-SHA1
 * AES128-CTS-HMAD-SHA1
+
+
+## Known Limits
+The following are the maximum known limits for Qumulo Core.
+
+| Limit Type | Maximum Value   |
+|------------|---|
+| On-Premises Cluster Size  | 100 nodes |
+| Cloud Cluster Size | 100 nodes |
+| Floating IP Addresses per Node | 10 IP addresses |
+| NFS Exports | 64,000 |
+| SMB Shares | 40,000 |
+| Access Control Entries (ACEs) in an Access Control List (ACL) | 200 |
+| NFS Groups | 16 without RFC 2307 with Kerberos |
+| Combined Users and Groups | 4 billion |
+| Characters in Cluster Name | 2-15, alphanumeric and dash (`-`) |
+| Characters in Full Path (Path Name) | 32,760 (protocol-limited) |
+| Characters in File Path Component (File or Directory) | 255 |
+| Files in a Directory | 4.3 billion |
+| File Size | 9 exabytes |
+| Number of Files | 18 quintillion |
+| Number of Hard Links per File | 1,024 |
+| Total LDAP Domains | 1 |
+| Supported LDAP Servers | OpenLDAP for group expansion |
+| Total Active Directory Domains | 1 |
+| Total DNS Servers | Up to 3 |
+| Snapshots | 40,000 |
+| Quotas | Not specified |
+| Number of Replication Relationships | 100 {% include note.html content="Qumulo Core doesn't support Samba Domain Controllers." %} |
