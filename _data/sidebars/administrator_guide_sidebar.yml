@@ -126,3 +126,4 @@ entries:
 
     - title: Known Issues and Supported Configurations for Qumulo Core
       url: /administrator-guide/qumulo-core/known-issues-supported-configurations.html
+      output: web, pdf
