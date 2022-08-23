@@ -1,5 +1,5 @@
 ---
-title: "Managing File Access Permissions Using NFSv4.1 Access Control Lists (ACLs)"
+title: "Managing File Access Permissions by Using NFSv4.1 Access Control Lists (ACLs)"
 summary: "This section explains how you can use Qumulo Core's implementation of NFSv4.1 with access control lists (ACLs) to manage access permissions for files."
 permalink: /administrator-guide/protocols/nfsv4.1-acls.html
 redirect_from:

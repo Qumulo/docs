@@ -16,7 +16,7 @@ The Qumulo Administrator Guide is a growing collection of information about conf
   * [Identifying NICs and Choosing Transceivers and Cables for Your Qumulo Node](networking/nics-transceivers-cables.md)
 * **Working with File System Protocols**
   * [Enabling and Using NFSv4.1 on a Qumulo Cluster](protocols/nfsv4.1-enabling-using.md)
-  * [Managing File Access Permissions Using NFSv4.1 Access Control Lists (ACLs)](protocols/nfsv4.1-acls.md)
+  * [Managing File Access Permissions by Using NFSv4.1 Access Control Lists (ACLs)](protocols/nfsv4.1-acls.md)
 * **Using NFSv4.1 with Kerberos**
   * [How NFSv4.1 Works with Kerberos in Qumulo Core](kerberos/kerberos.md)
   * [Prerequisites for Joining a Qumulo Cluster to Active Directory](kerberos/kerberos-prerequisites-joining-cluster-active-directory.md)
@@ -36,3 +36,4 @@ The Qumulo Administrator Guide is a growing collection of information about conf
   * [Setting the Web UI Inactivity Timeout](qumulo-core/web-ui-inactivity-timeout.md)
   * [Configuring Prometheus and Grafana to use the Qumulo Metrics API](qumulo-core/configuring-prometheus-grafana-metrics-api.md)
   * [Qumulo OpenMetrics API Specification](qumulo-core/openmetrics-api-specification.md)
+  * [Supported Configurations and Known Limits for Qumulo Core](qumulo-core/supported-configurations-known-limits.md)
