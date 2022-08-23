@@ -18,4 +18,4 @@ This section provides an overview of known limits and supported configurations f
 * SMB 3.0
 * SMB 3.1
 
-For more information, see [administrator-guide/protocols/nfsv4.1-enabling-using.md] and [administrator-guide/protocols/nfsv4.1-acls.md].
+For more information, see [Enabling and Using NFSv4.1 on a Qumulo Cluster](../protocols/nfsv4.1-enabling-using.md) and [Managing File Access Permissions by Using NFSv4.1 Access Control Lists (ACLs)](../protocols/nfsv4.1-acls.md).
