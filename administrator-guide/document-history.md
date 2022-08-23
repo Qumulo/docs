@@ -19,7 +19,7 @@ The following table lists changes to the Qumulo Administrator Guide.
   <tbody>
     <tr>
       <td>Aug. 23, 2022</td>
-      <td>Added the <a href="/administrator-guide/qumulo-core/known-limits-supported-configurations.html">Known Issues and Supported Configurations for Qumulo Core</a> section.</td>
+      <td>Added the <a href="/administrator-guide/qumulo-core/supported-configurations-known-limits.html">Supported Configurations and Known Limits for Qumulo Core</a> section.</td>
     </tr>
     <tr>
       <td>Aug. 22, 2022</td>
