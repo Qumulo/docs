@@ -8,6 +8,8 @@ keywords: limit, limits, limitations, known limits, known limitations, config, c
 
 This section provides an overview of supported configurations and known limits for Qumulo Core.
 
+## Supported Configurations
+
 <table>
   <thead>
     <tr>
