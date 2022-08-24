@@ -32,10 +32,6 @@ entries:
       url: /hardware/
       output: web
 
-    - title: Hardware Guide History
-      url: /hardware/document-history.html
-      output: web
-
   - title: C-192T, C-432T, K-432T
     output: web, pdf
     folderitems:

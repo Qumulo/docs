@@ -12,10 +12,6 @@ entries:
       url: /index.html
       output: web
 
-    - title: Documentation Portal History
-      url: /documentation-history.html
-      output: web
-
     - title: Qumulo-Certified Hardware Guide
       url: /hardware/
       output: web

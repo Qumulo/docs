@@ -32,10 +32,6 @@ entries:
       url: /cloud/
       output: web
 
-    - title: Cloud Guide History
-      url: /cloud/document-history.html
-      output: web
-
   - title: Qumulo in Azure
     output: web, pdf
     folderitems:
