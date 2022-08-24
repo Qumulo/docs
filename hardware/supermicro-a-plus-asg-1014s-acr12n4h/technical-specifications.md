@@ -20,8 +20,8 @@ This section provides technical specifications for {{site.sm1014s}} nodes.
   <tbody>
     <tr>
       <td><strong>Connectivity Ports (NIC)</strong></td>
-      <td>2 &#215; 25 GbE (1 &#215; Mellanox CX-4Lx NIC) or 2 &#215; 25 GbE (1 &#215; SMC AOC-S25G-b2S NIC)</td>
-      <td colspan="2" style="text-align: center;">2 &#215; 100 GbE (1 &#215; Mellanox CX-6 NIC) or 2 &#215; 100 GbE (1 &#215; SMC AOC-S100G-b2C NIC)</td>    
+      <td>2 &#215; 25 GbE (1 &#215; Mellanox CX-4Lx NIC)<br>or 2 &#215; 25 GbE (1 &#215; SMC AOC-S25G-b2S NIC)</td>
+      <td colspan="2" style="text-align: center;">2 &#215; 100 GbE (1 &#215; Mellanox CX-6 NIC)<br>or 2 &#215; 100 GbE (1 &#215; SMC AOC-S100G-b2C NIC)</td>    
     </tr>
     <tr>
       <td><strong>Management Ports (BMC)</strong></td>
@@ -67,27 +67,27 @@ This section provides technical specifications for {{site.sm1014s}} nodes.
     </tr>
     <tr>
       <td><strong>Typical Power Consumption</strong></td>
-      <td>1.10 A @ 240 V or 2.39 A @ 110 V</td>
-      <td>1.18 A @ 240 V or 2.56 A @ 110 V</td>
-      <td>1.25 A @ 240 V or 2.74 A @ 110 V</td>
+      <td>1.10 A @ 240 V<br>(2.39 A @ 110 V)</td>
+      <td>1.18 A @ 240 V<br>(2.56 A @ 110 V)</td>
+      <td>1.25 A @ 240 V<br>(2.74 A @ 110 V)</td>
     </tr>
     <tr>
       <td><strong>Typical Thermal Rating</strong></td>
-      <td>263 W (VA) or 897 BTU/hr</td>
-      <td>282 W (VA) or 962 BTU/hr</td>
-      <td>301 W (VA) or 1,028 BTU/hr</td>
+      <td>263 W (VA)<br>(897 BTU/hr)</td>
+      <td>282 W (VA)<br>(962 BTU/hr)</td>
+      <td>301 W (VA)<br>(1,028 BTU/hr)</td>
     </tr>
     <tr>
       <td><div><strong>Maximum Power Consumption</strong></div></td>
-      <td>1.20 A @ 240 V or 2.62 A @ 110 V</td>
-      <td>1.32 A @ 240 V or 2.88 A @ 110 V</td>
-      <td>1.36 A @ 240 V or 2.97 A @ 110 V</td>
+      <td>1.20 A @ 240 V<br>(2.62 A @ 110 V)</td>
+      <td>1.32 A @ 240 V<br>(2.88 A @ 110 V)</td>
+      <td>1.36 A @ 240 V<br>(2.97 A @ 110 V)</td>
     </tr>
     <tr>
       <td><strong>Maximum Thermal Rating</strong></td>
-      <td>288 W (VA) or 982 BTU/hr</td>
-      <td>317 W (VA) or 1,081 BTU/hr</td>
-      <td>327 W (VA) or 1,116 BTU/hr</td>
+      <td>288 W (VA)<br>(982 BTU/hr)</td>
+      <td>317 W (VA)<br>(1,081 BTU/hr)</td>
+      <td>327 W (VA)<br>(1,116 BTU/hr)</td>
     </tr>
     <tr>
       <td><strong>Operating Temperature</strong></td>
