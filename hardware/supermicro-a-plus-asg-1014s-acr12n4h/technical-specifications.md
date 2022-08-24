@@ -12,15 +12,20 @@ This section provides technical specifications for {{site.sm1014s}} nodes.
   <thead>
     <tr>
       <th></th>
-      <th><strong>Supermicro 1114S 153 TB</strong></th>
-      <th><strong>Supermicro 1114S 76 TB</strong></th>
-      <th><strong>Supermicro 1114S 30 TB</strong></th>
+      <th><strong>{{site.sm1014s}} 216 TB (General Purpose)</strong></th>
+      <th><strong>{{site.sm1014s}} 216 TB (Active)</strong></th>
+      <th><strong>{{site.sm1014s}} 96 TB (Active)</strong></th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td><strong>Connectivity Ports (NIC)</strong></td>
-      <td colspan="3" style="text-align: center;">4 &#215; 100 GbE (2 x Mellanox CX-6 NICs)</td>
+      <td>2 &#215; 25 GbE (1 &#215; Mellanox CX-4Lx NIC)<br>
+      or<br>
+      2 &#215; 25 GbE (1 &#215; SMC AOC-S25G-b2S NIC)</td>
+      <td colspan="2" style="text-align: center;">2 &#215; 100 GbE (1 &#215; Mellanox CX-6 NIC)<br>
+      or<br>
+      2 &#215; 100 GbE (1 &#215; SMC AOC-S100G-b2C NIC)</td>    
     </tr>
     <tr>
       <td><strong>Management Ports (BMC)</strong></td>
@@ -28,21 +33,25 @@ This section provides technical specifications for {{site.sm1014s}} nodes.
     </tr>
     <tr>
       <td><strong>Solid State Storage Media</strong></td>
-      <td><div>10 &#215; 15.36 TB NVMe drives</div></td>
-      <td><div>10 &#215; 7.68 TB NVMe drives</div></td>
-      <td><div>8 &#215; 3.84 TB NVMe drives</div></td>
+      <td colspan="2" style="text-align: center;">4 &#215; 1.92 TB NVMe drives</td>
+      <td>4 &#215; 960 GB NVMe drives</td>
     </tr>
     <tr>
+      <td><strong>HDD Storage Media</strong></td>
+      <td colspan="2" style="text-align: center;">12 &#215; 18 TB drives</td>
+      <td>12 &#215; 8 TB drives</td>
+    </tr>    
+    <tr>
       <td><strong>Boot Drive</strong></td>
-      <td colspan="3" style="text-align: center;">1 TB M.2 NVMe drive</td>
+      <td colspan="3" style="text-align: center;">1 &#215; 960 GB M.2 NVMe drive</td>
     </tr>
     <tr>
       <td><strong>CPU</strong></td>
-      <td colspan="3" style="text-align: center;">AMD EPYC 7402P 24-Core Processor</td>
+      <td colspan="3" style="text-align: center;">AMD EPYC 7232P 8-Core Processor</td>
     </tr>
     <tr>
       <td><strong>Memory</strong></td>
-      <td colspan="3" style="text-align: center;">128 GB (16 GB &#215; 8)</td>
+      <td colspan="3" style="text-align: center;">96 GB (6 GB &#215; 16)</td>
     </tr>
     <tr>
       <td><strong>Power Supply</strong></td>
@@ -50,11 +59,11 @@ This section provides technical specifications for {{site.sm1014s}} nodes.
     </tr>
     <tr>
       <td><strong>Dimensions (H &#215; W &#215; D)</strong></td>
-      <td colspan="3" style="text-align: center;">1.7" &#215; 17.2" &#215; 23.5" (43 mm &#215; 437 mm &#215; 597 mm)</td>
+      <td colspan="3" style="text-align: center;">1.7" &#215; 17.6" &#215; 37" (43 mm &#215; 447 mm &#215; 940 mm)</td>
     </tr>
     <tr>
       <td><strong>Weight</strong></td>
-      <td colspan="3" style="text-align: center;">46 lbs (20.9 kg)</td>
+      <td colspan="3" style="text-align: center;">39.5 lbs (17.5 kg)</td>
     </tr>
     <tr>
       <td><strong>Power Requirements</strong></td>
@@ -62,27 +71,27 @@ This section provides technical specifications for {{site.sm1014s}} nodes.
     </tr>
     <tr>
       <td><strong>Typical Power Consumption</strong></td>
-      <td>265 W</td>
-      <td>230 W</td>
-      <td>230 W</td>
+      <td>1.10 A @ 240 V or 2.39 A @ 110 V</td>
+      <td>1.18 A @ 240 V or 2.56 A @ 110 V</td>
+      <td>1.25 A @ 240 V or 2.74 A @ 110 V</td>
     </tr>
     <tr>
       <td><strong>Typical Thermal Rating</strong></td>
-      <td>904 BTU/hr</td>
-      <td>785 BTU/hr</td>
-      <td>785 BTU/hr</td>
+      <td>263 W (VA) or 897 BTU/hr</td>
+      <td>282 W (VA) or 962 BTU/hr</td>
+      <td>301 W (VA) or 1,028 BTU/hr</td>
     </tr>
     <tr>
       <td><div><strong>Maximum Power Consumption</strong></div></td>
-      <td>460 W</td>
-      <td>415 W</td>
-      <td>384 W</td>
+      <td>1.20 A @ 240 V or 2.62 A @ 110 V</td>
+      <td>1.32 A @ 240 V or 2.88 A @ 110 V</td>
+      <td>1.36 A @ 240 V or 2.97 A @ 110 V</td>
     </tr>
     <tr>
       <td><strong>Maximum Thermal Rating</strong></td>
-      <td>1569 BTU/hr</td>
-      <td>1416 BTU/hr</td>
-      <td>1310 BTU/hr</td>
+      <td>288 W (VA) or 982 BTU/hr</td>
+      <td>317 W (VA) or 1,081 BTU/hr</td>
+      <td>327 W (VA) or 1,116 BTU/hr</td>
     </tr>
     <tr>
       <td><strong>Operating Temperature</strong></td>
