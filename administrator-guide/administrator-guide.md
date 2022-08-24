@@ -11,8 +11,6 @@ search: exclude
 The Qumulo Administrator Guide is a growing collection of information about configuring, managing, and troubleshooting Qumulo Core and your Qumulo nodes and clusters.
 
 **Table of Contents**
-* **Configuring Your Node's Networking**
-  * [Identifying NICs and Choosing Transceivers and Cables for Your Qumulo Node](networking/nics-transceivers-cables.md)
 * **Working with File System Protocols**
   * [Enabling and Using NFSv4.1 on a Qumulo Cluster](protocols/nfsv4.1-enabling-using.md)
   * [Managing File Access Permissions by Using NFSv4.1 Access Control Lists (ACLs)](protocols/nfsv4.1-acls.md)
