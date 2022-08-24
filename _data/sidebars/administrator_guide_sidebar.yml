@@ -32,14 +32,6 @@ entries:
       url: /administrator-guide/
       output: web
 
-  - title: Configuring Your Node's Networking
-    output: web, pdf
-    folderitems:
-
-    - title: Identifying NICs and Choosing Transceivers and Cables for Your Qumulo Node
-      url: /administrator-guide/networking/nics-transceivers-cables.html
-      output: web, pdf
-
   - title: Working with File System Protocols
     output: web, pdf
     folderitems:
