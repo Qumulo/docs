@@ -11,7 +11,6 @@ search: exclude
 The Qumulo Administrator Guide is a growing collection of information about configuring, managing, and troubleshooting Qumulo Core and your Qumulo nodes and clusters.
 
 **Table of Contents**
-* **[Document History](document-history.md)**
 * **Configuring Your Node's Networking**
   * [Identifying NICs and Choosing Transceivers and Cables for Your Qumulo Node](networking/nics-transceivers-cables.md)
 * **Working with File System Protocols**

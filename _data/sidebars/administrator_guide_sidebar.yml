@@ -32,10 +32,6 @@ entries:
       url: /administrator-guide/
       output: web
 
-    - title: Administrator Guide Document History
-      url: /administrator-guide/document-history.html
-      output: web
-
   - title: Configuring Your Node's Networking
     output: web, pdf
     folderitems:
