@@ -20,12 +20,8 @@ This section provides technical specifications for {{site.sm1014s}} nodes.
   <tbody>
     <tr>
       <td><strong>Connectivity Ports (NIC)</strong></td>
-      <td>2 &#215; 25 GbE (1 &#215; Mellanox CX-4Lx NIC)<br>
-      or<br>
-      2 &#215; 25 GbE (1 &#215; SMC AOC-S25G-b2S NIC)</td>
-      <td colspan="2" style="text-align: center;">2 &#215; 100 GbE (1 &#215; Mellanox CX-6 NIC)<br>
-      or<br>
-      2 &#215; 100 GbE (1 &#215; SMC AOC-S100G-b2C NIC)</td>    
+      <td>2 &#215; 25 GbE (1 &#215; Mellanox CX-4Lx NIC) or 2 &#215; 25 GbE (1 &#215; SMC AOC-S25G-b2S NIC)</td>
+      <td colspan="2" style="text-align: center;">2 &#215; 100 GbE (1 &#215; Mellanox CX-6 NIC) or 2 &#215; 100 GbE (1 &#215; SMC AOC-S100G-b2C NIC)</td>    
     </tr>
     <tr>
       <td><strong>Management Ports (BMC)</strong></td>
