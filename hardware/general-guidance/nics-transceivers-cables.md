@@ -7,7 +7,7 @@ redirect_from:
   - /administrator-guide/nics-transceivers-cables.html
   - /administrator-guide/networking/nics-transceivers-cables.html
   - /administrator-guide/networking/
-sidebar: administrator_guide_sidebar
+sidebar: hardware
 keywords: network transceiver, network transceivers, nic, mellanox, short range transceiver, long range transceiver, fiber, fiber optic, fiber optic cable
 ---
 
