@@ -29,17 +29,17 @@ This section provides technical specifications for {{site.sm1014s}} nodes.
     </tr>
     <tr>
       <td><strong>Solid State Storage Media</strong></td>
-      <td colspan="2" style="text-align: center;">4 &#215; 1.92 TB NVMe drives</td>
-      <td>4 &#215; 960 GB NVMe drives</td>
+      <td colspan="2" style="text-align: center;">4 &#215; 1.92 TB NVMe</td>
+      <td>4 &#215; 960 GB NVMe</td>
     </tr>
     <tr>
       <td><strong>HDD Storage Media</strong></td>
-      <td colspan="2" style="text-align: center;">12 &#215; 18 TB drives</td>
-      <td>12 &#215; 8 TB drives</td>
+      <td colspan="2" style="text-align: center;">12 &#215; 18 TB</td>
+      <td>12 &#215; 8 TB</td>
     </tr>    
     <tr>
       <td><strong>Boot Drive</strong></td>
-      <td colspan="3" style="text-align: center;">1 &#215; 960 GB M.2 NVMe drive</td>
+      <td colspan="3" style="text-align: center;">1 &#215; 960 GB M.2 NVMe</td>
     </tr>
     <tr>
       <td><strong>CPU</strong></td>
