@@ -20,7 +20,7 @@ This section provides technical specifications for {{site.sm1114s}} nodes.
   <tbody>
     <tr>
       <td><strong>Connectivity Ports (NIC)</strong></td>
-      <td colspan="3" style="text-align: center;">4 &#215; 100 GbE (2 x Mellanox CX-6 NICs)</td>
+      <td colspan="3" style="text-align: center;">4 &#215; 100 GbE (2 &#215; Mellanox CX-6 NICs)</td>
     </tr>
     <tr>
       <td><strong>Management Ports (BMC)</strong></td>
@@ -28,13 +28,13 @@ This section provides technical specifications for {{site.sm1114s}} nodes.
     </tr>
     <tr>
       <td><strong>Solid State Storage Media</strong></td>
-      <td><div>10 &#215; 15.36 TB NVMe drives</div></td>
-      <td><div>10 &#215; 7.68 TB NVMe drives</div></td>
-      <td><div>8 &#215; 3.84 TB NVMe drives</div></td>
+      <td>10 &#215; 15.36 TB NVMe</td>
+      <td>10 &#215; 7.68 TB NVMe</td>
+      <td>8 &#215; 3.84 TB NVMe</td>
     </tr>
     <tr>
       <td><strong>Boot Drive</strong></td>
-      <td colspan="3" style="text-align: center;">1 TB M.2 NVMe drive</td>
+      <td colspan="3" style="text-align: center;">1 &#215; 1 TB M.2 NVMe</td>
     </tr>
     <tr>
       <td><strong>CPU</strong></td>
