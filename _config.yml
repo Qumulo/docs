@@ -147,3 +147,4 @@ sm1114s: Supermicro 1114S
 
 sm1014sLong: Supermicro A+ ASG-1014S-ACR12N4H
 sm1014s: Supermicro 1014S
+sm1014sSpecs: {% include note.html content="Some components vary across node types. For information about node types, see [Technical Specifications](technical-specifications.md)." %}
