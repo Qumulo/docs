@@ -8,8 +8,7 @@ keywords: network, networking, cluster, switch, Ethernet, ports, IP, Supermicro 
 
 This section explains the networking prerequisites, outlines the recommended configuration, and explains how you can connect to redundant switches or to a single switch.
 
-<!--{% include content-reuse/see-technical-specifications.md %}-->
-{% include content-reuse/shift-view-status-stop-repeat-copy-job-delete-relationship.md %}
+{% include content-reuse/see-technical-specifications.md %}
 
 ##  Prerequisites
 {% include important.html content="Before you create your Qumulo cluster, you must configure all switch ports connected to the back-end NIC to have at least 9,000 MTU, with Jumbo Frames enabled." %}
