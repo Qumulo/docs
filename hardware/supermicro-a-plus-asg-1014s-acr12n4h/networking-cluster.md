@@ -36,7 +36,7 @@ Your node requires the following resources.
 ## Recommended Configuration
 {% include important.html content="We don't recommend connecting to a single back-end NIC port because the node becomes unavailable if the single connection fails." %}
 
-The {{site.1014s}} platform uses a networking configuration in which different NICs handle back-end and front-end traffic. You can connect the front-end and back-end NICs to the same switch or to different switches. However, for greater reliability, we recommend connecting all four 100 Gbps ports on every node: Connect both front-end NIC ports to the front-end switch and both back-end NIC ports to the back-end switch.
+The {{site.sm1014s}} platform uses a networking configuration in which different NICs handle back-end and front-end traffic. You can connect the front-end and back-end NICs to the same switch or to different switches. However, for greater reliability, we recommend connecting all four 100 Gbps ports on every node: Connect both front-end NIC ports to the front-end switch and both back-end NIC ports to the back-end switch.
 
 We recommend the following configuration for your node.
 
@@ -64,7 +64,7 @@ We recommend the following configuration for your node.
 
 
 ## Connecting to Redundant Switches
-For redundancy, we recommend connecting a Supermicro {{site.1014s}} cluster to dual switches. If either switch becomes inoperative, the cluster is still be accessible from the remaining switch.
+For redundancy, we recommend connecting a Supermicro {{site.sm1014s}} cluster to dual switches. If either switch becomes inoperative, the cluster is still be accessible from the remaining switch.
 
 * **Front End**
 
@@ -86,7 +86,7 @@ For redundancy, we recommend connecting a Supermicro {{site.1014s}} cluster to d
 
 
 ## Connecting to a Single Switch
-You can connect a Supermicro {{site.1014s}} cluster to a single switch. If this switch becomes inoperative, the entire cluster becomes inaccessible.
+You can connect a Supermicro {{site.sm1014s}} cluster to a single switch. If this switch becomes inoperative, the entire cluster becomes inaccessible.
 
 * **Front End**
 
