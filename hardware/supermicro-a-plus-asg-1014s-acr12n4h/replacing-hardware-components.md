@@ -6,7 +6,7 @@ sidebar: hardware_sidebar
 keywords: technical specifications, tech specs, specs, specifications, Supermicro 1014S, ACR12N4H
 ---
 
-This section explains how you can replace hardware components in your {{site.sm1014s}} nodes. For information about components in different {{site.sm1014s}} node types, see [Technical Specifications](technical-specifications.md).
+This section explains how you can replace hardware components in your {{site.sm1014s}} nodes.
 
 {{site.data.alerts.caution}}
 <ul>
@@ -26,6 +26,8 @@ This section explains the most common scenarios of replacing failed hardware com
 * Power Supply Units (PSUs)
 * Fans
 * DIMMs (memory)
+
+{% include content-reuse/see-technical-specifications.md %}
 
 ## To Perform the Part Replacement Procedure by Using the FVT
 When you replace a component such as the motherboard or an NIC card in your node, you must ensure that the firmware version and configuration are correct for your new components. To do this, you must perform the part replacement procedure using the FVT.
