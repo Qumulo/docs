@@ -10,6 +10,8 @@ This section explains the networking prerequisites, outlines the recommended con
 
 {% include content-reuse/see-technical-specifications.md %}
 
+{{site.sm1014sSpecs}}
+
 ##  Prerequisites
 {% include important.html content="Before you create your Qumulo cluster, you must configure all switch ports connected to the back-end NIC to have at least 9,000 MTU, with Jumbo Frames enabled." %}
 
