@@ -47,7 +47,7 @@ When you replace a component such as the motherboard or an NIC card in your node
 {% include note.html content="In some cases, after the part replacement procedure, the message `FIX: Run the FVT flash command.` appears. Enter `1` as you would for a [fixable issue](/hardware/supermicro-a-plus-asg-1014s-acr12n4h/getting-started.html#fixable-issues-during-installation) to reboot the node and then repeat the part replacement procedure." %}
 
 ## To Replace a Drive
-Your {{site.sm1014s}} chassis contains 12 HDDs, 4 NVMe drives, and 1 M.2 NVMe boot drive. For information about replacing a drive, see the following topics in the Supermicro documentation.
+Your {{site.sm1014s}} chassis contains 12 HDDs, 4 NVMe drives, and one NVMe boot drive (in an internal M.2 slot). For information about replacing a drive, see [Drive Slot Mapping](drive-slot-mapping.md) and the following topics in the Supermicro documentation.
 
 * [Storage Drives (HDD and NVMe)](https://www.supermicro.com/manuals/superserver/1U/MNL-2436.pdf#page=40)
 
