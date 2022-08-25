@@ -8,7 +8,17 @@ keywords: drive, hard drive, drive slot, mapping, Supermicro 1014S, ACR12N4H
 
 This section explains the drive slot mapping on {{site.sm1014s}} nodes.
 
-Your {{site.sm1014s}} chassis contains 12 HDDs, 4 NVMe drives, and 1 M.2 NVMe boot drive. The following is the mapping for the drives.
+Your {{site.sm1014s}} chassis contains 12 HDDs, 4 NVMe drives, and one NVMe boot drive (in an internal M.2 slot).
+
+## HDD Mapping
+
+{% include image.html alt=alt_tag file="supermicro-1014s-nvme-drive-slot-mapping.png" url="/hardware/supermicro-a-plus-asg-1014s-acr12n4h/images/supermicro-1014s-hdd-slot-mapping.png" %}
+
+## NVMe Mapping
 
 {% capture alt_tag %}{{site.sm1014s}} Drive Slot Mapping{% endcapture %}
-{% include image.html alt=alt_tag file="supermicro-1014s-drive-slot-mapping.png" url="/hardware/supermicro-a-plus-asg-1014s-acr12n4h/images/supermicro-1014s-drive-slot-mapping.png" %}
+{% include image.html alt=alt_tag file="supermicro-1014s-nvme-drive-slot-mapping.png" url="/hardware/supermicro-a-plus-asg-1014s-acr12n4h/images/supermicro-1014s-nvme-drive-slot-mapping.png" %}
+
+## NVMe Boot Drive
+
+For information about the NVMe boot drive, see [Installing an M.2 Solid State Drive](https://www.supermicro.com/manuals/superserver/1U/MNL-2436.pdf#page=44) in the Supermicro documentation.
