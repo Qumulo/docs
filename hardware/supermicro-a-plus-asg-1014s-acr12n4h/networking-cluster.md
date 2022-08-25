@@ -15,7 +15,9 @@ This section explains the networking prerequisites, outlines the recommended con
 Your node requires the following resources.
 * A network switch with the following specifications:
 
-  * 100 Gbps Ethernet
+  * 25 Gbps or 100 Gbps Ethernet
+   
+    For information about node types, see [Technical Specifications](technical-specifications.md).
 
     {% include note.html content="You can use 40 Gbps connections with 40 Gbps transceivers." %}
 
@@ -35,7 +37,7 @@ Your node requires the following resources.
 ## Recommended Configuration
 {% include important.html content="We don't recommend connecting to a single back-end NIC port because the node becomes unavailable if the single connection fails." %}
 
-The Supermicro 1114S platform uses a networking configuration in which different NICs handle back-end and front-end traffic. You can connect the front-end and back-end NICs to the same switch or to different switches. However, for greater reliability, we recommend connecting all four 100 Gbps ports on every node: Connect both front-end NIC ports to the front-end switch and both back-end NIC ports to the back-end switch.
+The {{site.1014s}} platform uses a networking configuration in which different NICs handle back-end and front-end traffic. You can connect the front-end and back-end NICs to the same switch or to different switches. However, for greater reliability, we recommend connecting all four 100 Gbps ports on every node: Connect both front-end NIC ports to the front-end switch and both back-end NIC ports to the back-end switch.
 
 We recommend the following configuration for your node.
 
@@ -63,7 +65,7 @@ We recommend the following configuration for your node.
 
 
 ## Connecting to Redundant Switches
-For redundancy, we recommend connecting a Supermicro 1114S cluster to dual switches. If either switch becomes inoperative, the cluster is still be accessible from the remaining switch.
+For redundancy, we recommend connecting a Supermicro {{site.1014s}} cluster to dual switches. If either switch becomes inoperative, the cluster is still be accessible from the remaining switch.
 
 * **Front End**
 
@@ -85,7 +87,7 @@ For redundancy, we recommend connecting a Supermicro 1114S cluster to dual switc
 
 
 ## Connecting to a Single Switch
-You can connect a Supermicro 1114S cluster to a single switch. If this switch becomes inoperative, the entire cluster becomes inaccessible.
+You can connect a Supermicro {{site.1014s}} cluster to a single switch. If this switch becomes inoperative, the entire cluster becomes inaccessible.
 
 * **Front End**
 
@@ -107,4 +109,4 @@ You can connect a Supermicro 1114S cluster to a single switch. If this switch be
 ## Four-Node Cluster Architecture Diagram
 The following is the recommended configuration for a four-node cluster connected to an out-of-band management switch, redundant front-end switches, and redundant back-end switches.
 
-{% include image.html alt="Four-Node Cluster Architecture Diagram" file="supermicro-four-node-cluster-architecture-diagram.png" url="/hardware/supermicro-a-plus-asg-1014s-acr12n4h/images/supermicro-four-node-cluster-architecture-diagram.png" %}
+{% include image.html alt="Four-Node Cluster Architecture Diagram" file="supermicro-four-node-cluster-architecture-diagram.png" url="/hardware/supermicro-a-plus-asg-1014s-acr12n4h/images/supermicro-1014s-four-node-cluster-architecture-diagram.png" %}
