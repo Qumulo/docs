@@ -25,7 +25,7 @@ This section explains the most common scenarios of replacing failed hardware com
 * Drives
 * Power Supply Units (PSUs)
 * Fans
-* DIMM (memory)
+* DIMMs (memory)
 
 ## Performing the Part Replacement Procedure by Using the FVT
 When you replace a component of your node (such as the motherboard or an NIC card), you must ensure that the firmware version and configuration are correct for your new components. To do this, you must perform the part replacement procedure using the FVT.
