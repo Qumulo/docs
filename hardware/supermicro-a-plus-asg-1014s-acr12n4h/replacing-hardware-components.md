@@ -22,7 +22,7 @@ This section explains how you can replace hardware components in your {{site.sm1
 {{site.data.alerts.end}}
 
 This section explains the most common scenarios of replacing failed hardware components such as:
-* Drives (excluding boot drives)
+* Drives
 * Power Supply Units (PSUs)
 * Fans
 * DIMM (memory)
@@ -53,21 +53,7 @@ Your {{site.sm1014s}} chassis contains 12 HDDs, 4 NVMe drives, and 1 M.2 NVMe bo
 
 
 ## To Replace a Power Supply Unit (PSU)
-The two hot-swap PSUs are located at the front of your Supermicro 1114S chassis. If either of the two PSUs fails, the other PSU takes on the full load and lets the node continue operating without interruption.
-
-When a PSU fails, the **Info** LED at the front of the node begins to blink red every four seconds. In addition, the failure LED on the PSU at the back of the node lights up.
-
-1. To determine which PSU failed, check the PSU LED.
-
-   {% include image.html alt="Supermicro Power Supply Units (PSUs)" file="supermicro-psu-diagram.png" %}
-
-1. Disconnect the power cord from the existing PSU.
-
-1. To remove the existing PSU, press the purple release tab to the left while pulling on the handle.
-
-1. Insert the new PSU and push it into the chassis until it clicks into place.
-
-1. Connect the power cord to the new PSU.
+Your {{site.sm1014s}} chassis contains two PSUs. For information about replacing these PSUs, see [Power Supply](https://www.supermicro.com/manuals/superserver/1U/MNL-2436.pdf#page=48) in the Supermicro documentation.
 
 
 ## To Replace a Fan
