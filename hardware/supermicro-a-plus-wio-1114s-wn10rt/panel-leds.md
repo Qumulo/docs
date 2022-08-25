@@ -12,7 +12,7 @@ This section explains the LEDs of your Supermicro 1114 node.
 
 On the front, right side of your node, there are five LEDs.
 
-| Label         | Colors                 | Description                                 |
+| Label         | Color and Behavior     | Description                                 |
 | ------------- | ---------------------- | ------------------------------------------- |
 | Info          | 🔴 (solid red)         | Node overheated                             |          
 | Info          | 🔴 (1 s. blinking red) | Fan failed                                  |
