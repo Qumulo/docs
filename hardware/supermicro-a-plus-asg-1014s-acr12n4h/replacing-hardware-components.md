@@ -30,9 +30,9 @@ This section explains the most common scenarios of replacing failed hardware com
 ## Performing the Part Replacement Procedure by Using the FVT
 When you replace a component of your node (such as the motherboard or an NIC card), you must ensure that the firmware version and configuration are correct for your new components. To do this, you must perform the part replacement procedure using the FVT.
 
-{% include note.html content="Before you replace the motherboard, you must request a new Data Center Management Suite (DCMS) license key from Supermicro and apply it before you run the FVT. (The license key uses the BMC MAC address which changes with the motherboard.) If you don't install a DCMS licenseon a Supermicro 1114S node, the Field Verification Tool (FVT) fails, preventing you from installing Qumulo Core." %}
+{% include note.html content="Before you replace the motherboard, you must request a new Data Center Management Suite (DCMS) license key from Supermicro and apply it before you run the FVT. (The license key uses the BMC MAC address which changes with the motherboard.) If you don't install a DCMS license on a {{site.sm1014s}} node, the Field Verification Tool (FVT) fails, preventing you from installing Qumulo Core." %}
 
-1. Boot using the latest version of the Qumulo Core USB Drive Installer.
+1. Boot by using the latest version of the Qumulo Core USB Drive Installer.
 
 1. Select **[*] Perform maintenance**.
    
@@ -43,35 +43,11 @@ When you replace a component of your node (such as the motherboard or an NIC car
 {% include note.html content="In some cases, after the part replacement procedure, the message `FIX: Run the FVT flash command.` appears. Enter `1` as you would for a [fixable issue](/hardware/supermicro-a-plus-asg-1014s-acr12n4h/getting-started.html#fixable-issues-during-installation) to reboot the node and then repeat the part replacement procedure." %}
 
 ## To Replace a Drive
-The ten hot-swap drive carriers are located at the front of your Supermicro 1114S chassis. The boot drive is located in the internal M.2 slot.
+Your {{site.sm1014s}} chassis contains 12 HDDs, 4 NVMe drives, and 1 M.2 NVMe boot drive. For information about replacing these drives, see the following topics in the Supermicro documentation.
 
-Replacement drives, including the on-site spare drives that you received with your original nodes, are provided without a drive carrier. When replacing a faulty drive, you must remove the existing drive from its carrier and then insert the new drive into the carriers. The drive carriers are toolless and don't require any screws.
+* [Storage Drives (HDD and NVMe)](https://www.supermicro.com/manuals/superserver/1U/MNL-2436.pdf#page=40)
 
-{% include caution.html content="We strongly recommend having a Supermicro engineer perform on-site boot drive replacement." %}
-
-1. Locate the drive that requires replacement using the drive bay mapping.
-
-   {% include image.html alt="Supermicro Drive Slot Mapping" file="supermicro-drive-slot-mapping.png" url="/hardware/supermicro-a-plus-asg-1014s-acr12n4h/images/supermicro-drive-slot-mapping.png" %}
-
-1. To remove the existing drive, do the following:
-
-   a. Press the orange release button on the right of the drive carrier until the drive carrier handle extends on the left.
-    
-   b. Use the drive carrier handle to pull the carrier out of the chassis.
-
-   c. To remove the drive from the carrier, undo the mounting clips.
-
-1. To install a replacement drive, do the following:
-
-   a. Insert the new drive into the drive carrier with the printed circuit board (PCB) side facing down and the connector end facing towards the rear of the tray.
-
-   b. Secure the drive to its carrier using the mounting clips.
-
-   c. Insert the drive carrier into the chassis with the orange release button facing right.
-   
-   d. Push the drive carrier into the chassis until the handle retracts and clicks into place.
-
-{% include note.html content="If you remove and reinsert a drive extremely quickly (faster than one second), the baseboard management controller (BMC) doesn't recognize the drive and the activity LEDs do not return to their normal states. To resolve this issue, remove the drive, wait five seconds, and then reinsert it." %}
+* [Installing an M.2 Solid State Drive](https://www.supermicro.com/manuals/superserver/1U/MNL-2436.pdf#page=44)
 
 
 ## To Replace a Power Supply Unit (PSU)
