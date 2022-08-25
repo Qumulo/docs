@@ -6,7 +6,7 @@ sidebar: hardware_sidebar
 keywords: technical specifications, tech specs, specs, specifications, Supermicro 1014S, ACR12N4H
 ---
 
-This section explains how you can replace hardware components in your {{site.sm1014s}} nodes.
+This section explains how you can replace hardware components in your {{site.sm1014s}} nodes. For more information about the components inside the node types in your cluster, see [Technical Specifications](technical-specifications.md).
 
 {{site.data.alerts.caution}}
 <ul>
