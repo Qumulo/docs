@@ -33,7 +33,7 @@ When you replace a component of your node (such as the motherboard or an NIC car
 {% capture content_tag %} Before you replace the motherboard, you must request a new Data Center Management Suite (DCMS) license key from Supermicro and apply it before you run the FVT. (The license key uses the BMC MAC address which changes with the motherboard.) If you don't install a DCMS license on a {{site.sm1114s}} node, the Field Verification Tool (FVT) fails, preventing you from installing Qumulo Core. {% endcapture %}
 {% include note.html content=content_tag %}
 
-1. Boot using the latest version of the Qumulo Core USB Drive Installer.
+1. Boot by using the latest version of the Qumulo Core USB Drive Installer.
 
 1. Select **[*] Perform maintenance**.
    
