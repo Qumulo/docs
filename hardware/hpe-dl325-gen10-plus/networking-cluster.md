@@ -32,7 +32,7 @@ This section explains how to network your {{site.dl325g10p}}  cluster.
 * DNS servers
 * Network Time Protocol (NTP) server
 * Firewall protocol or ports configured for [Qumulo Care Proactive Monitoring](https://care.qumulo.com/hc/en-us/articles/115007283828-Qumulo-Care-Proactive-Monitoring)
-* Where N is the number of nodes, up to 10 N-1 floating IP addresses per node, per client-facing VLAN
+* Where `N` is the number of nodes, up to 10 `N-1` floating IP addresses per node, per client-facing VLAN
 * Nodes connected at their maximum Ethernet speed (this ensures advertised performance). To avoid network bottlenecks, Qumulo validates system performance with this configuration by using clients connected at the same link speed and to the same switch as the nodes.
 
 ## Node NICs and Ports
