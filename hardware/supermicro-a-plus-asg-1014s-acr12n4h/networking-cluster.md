@@ -38,7 +38,7 @@ The {{site.sm1014s}} platform uses a _unified networking configuration_ in which
 
 We recommend the following configuration for your node.
 
-* One set of redundant switches for the unified network, with an MTU that matches that of the clients that use the storage cluster. Typically, we recommend 1,500 MTU but in some instances 9,000 MTU is sufficient.
+* Your Qumulo MTU configured to match your client environment
 
 * One physical connection per node, per each redundant switch
 
