@@ -39,7 +39,7 @@ The {{site.sm1114s}} platform uses a networking configuration in which different
 
 We recommend the following configuration for your node.
 
-* One set of redundant switches for the front-end network, with an MTU that matches that of the clients that use the storage cluster. Typically, we recommend a 1,500 MTU, but in some instances 9,000 MTU might be sufficient.
+* Your Qumulo front-end MTU configured to match your client environment
 
 * One set of redundant switches for the back-end network (9,000 MTU minimum)
 
