@@ -20,7 +20,7 @@ Your node requires the following resources.
   * 100 Gbps Ethernet
 
     {{site.data.alerts.note}}
-    {{site.40gbpsOK}}
+    {{site.use40gbpsOK}}
     {{site.data.alerts.end}}
 
   * Fully non-blocking architecture
