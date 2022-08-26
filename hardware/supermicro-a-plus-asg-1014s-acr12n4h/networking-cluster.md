@@ -70,10 +70,6 @@ For redundancy, we recommend connecting a {{site.sm1014s}} cluster to dual switc
 
   * Use an appropriate inter-switch link or virtual port channel.
 
-* **MTU**
-
-  * {{site.mtu}}
-
 
 ## Connecting to a Single Switch
 You can connect a Supermicro {{site.sm1014s}} cluster to a single switch. If this switch becomes inoperative, the entire cluster becomes inaccessible.
@@ -85,10 +81,6 @@ You can connect a Supermicro {{site.sm1014s}} cluster to a single switch. If thi
   * The uplinks to the client network must equal the bandwidth from the cluster to the switch.
 
   * The two ports form an LACP port channel. 
-
-* **MTU**
-
-  * {{site.mtu}}
 
 
 ## Four-Node Cluster Architecture Diagram
