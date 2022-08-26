@@ -13,7 +13,7 @@ Your {{site.sm1014s}} chassis contains 12 HDDs, 4 NVMe drives, and one NVMe boot
 ## HDD Mapping
 
 {% capture alt_tag_hdd %}{{site.sm1014sLong}} HDD Mapping{% endcapture %}
-{% include image.html alt=alt_tag_hdd file="supermicro-1014s-nvme-drive-slot-mapping.png" url="/hardware/supermicro-a-plus-asg-1014s-acr12n4h/images/supermicro-1014s-hdd-slot-mapping.png" %}
+{% include image.html alt=alt_tag_hdd file="supermicro-1014s-hdd-drive-slot-mapping.png" url="/hardware/supermicro-a-plus-asg-1014s-acr12n4h/images/supermicro-1014s-hdd-slot-mapping.png" %}
 
 ## NVMe Drive Mapping
 
