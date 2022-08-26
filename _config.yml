@@ -138,6 +138,9 @@ plugins:
 varKerberosDns: Kerberos relies on DNS to identify machines involved in authentication. NFS clients and servers require DNS <code>A</code> records for forward-DNS lookups and <code>PTR</code> records for reverse-DNS lookups.
 varNfsConf: In versions of Ubuntu lower than 22.04 (and possibly on other Linux distributions), you can't use the <code>/etc/nfs.conf</code> file to configure <code>gssd</code>. If this is the case for your system, we recommend starting the <code>rpc.gssd</code> service by using the <code>-n</code> flag.
 
+splitNetJumboFrames: Before you create your Qumulo cluster, if you want to use Jumbo Frames (9,000 MTU), configure your switch to support a higher MTU configuration.
+unifyNetJumboFrames: Before you create your Qumulo cluster, if your client environment requires Jumbo Frames (9,000 MTU), configure your switch to support a higher MTU configuration.
+
 mtu: For all connection speeds, the default behavior is that of an LACP with 1,500 MTU for the front-end and 9,000 MTU for the back-end interfaces.
 
 a4200g9: HPE Apollo 4200 Gen9
