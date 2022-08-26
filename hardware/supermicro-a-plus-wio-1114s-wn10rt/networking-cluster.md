@@ -23,8 +23,6 @@ Your node requires the following resources.
 
   * IPv6 capability
 
-  * Jumbo Frame support (9,000 MTU minimum) for the back-end network
-
 * Compatible networking cables
 
 * A sufficient number of ports for connecting all nodes to the same switch fabric
@@ -39,7 +37,7 @@ The {{site.sm1114s}} platform uses a networking configuration in which different
 
 We recommend the following configuration for your node.
 
-* One set of redundant switches for the front-end network, with an MTU that matches that of the clients that use the storage cluster. Typically, 1,500 MTU is recommended, but in some instances it might be 9,000 MTU.
+* One set of redundant switches for the front-end network, with an MTU that matches that of the clients that use the storage cluster. Typically, we recommend a 1,500 MTU, but in some instances 9,000 MTU might be sufficient.
 
 * One set of redundant switches for the back-end network (9,000 MTU minimum)
 
@@ -89,7 +87,7 @@ You can connect a {{site.sm1114s}} cluster to a single switch. If this switch be
 
 * **Front End**
 
-  * Each node has two front-end NIC ports (2 &#215; 100 Gbps) connected to a single switch.
+  * Connect the two front-end NIC ports (2 &#215; 100 Gbps) to a single switch.
 
   * The uplinks to the client network must equal the bandwidth from the cluster to the switch.
 
@@ -97,7 +95,7 @@ You can connect a {{site.sm1114s}} cluster to a single switch. If this switch be
 
 * **Back End**
 
-  * Each node has two band-end ports (2 &#215; 100 Gbps) connected to a single switch.
+  * Connect the two band-end ports (2 &#215; 100 Gbps) to a single switch.
 
 * **MTU**
 
