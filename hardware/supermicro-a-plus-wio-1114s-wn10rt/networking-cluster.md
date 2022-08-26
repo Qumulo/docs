@@ -19,7 +19,9 @@ Your node requires the following resources.
 
   * 100 Gbps Ethernet
 
-    {% include note.html content="You can use 40 Gbps connections with 40 Gbps transceivers." %}
+    {{site.data.alerts.note}}
+    {{site.40gbpsOK}}
+    {{site.data.alerts.end}}
 
   * Fully non-blocking architecture
 
@@ -42,6 +44,8 @@ We recommend the following configuration for your node.
 * Your Qumulo front-end MTU configured to match your client environment
 
 * One set of redundant switches for the back-end network (9,000 MTU minimum)
+
+  {% include note.html content="You can configure front-end and back-end traffic on the same switch." %}
 
 * One physical connection per node, per each redundant switch
 
