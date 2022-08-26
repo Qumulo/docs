@@ -10,7 +10,7 @@ This section explains how to wire your out-of-band management (IPMI) port, 25 Gb
 
 {% include note.html content="The two Ethernet ports on the back of your node (to the right of the USB ports) are unused." %}
 
-{% capture alt_tag_hdd %}Back Diagram of the {{site.sm1014s}} Node% endcapture %}
+{% capture alt_tag_hdd %}Back Diagram of the {{site.sm1014s}} Node{% endcapture %}
 {% include image.html alt=alt_tag file="supermicro-1014s-back-diagram.png" url="/hardware/supermicro-a-plus-asg-1014s-acr12n4h/images/supermicro-1014s-back-diagram.png" %}
 
 ## Step 1: Connecting the Out-of-Band Management (IPMI) Port
