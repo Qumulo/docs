@@ -11,7 +11,7 @@ This section explains the networking prerequisites, outlines the recommended con
 {% include content-reuse/see-technical-specifications.md %}
 
 ##  Prerequisites
-{% include important.html content="Before you create your Qumulo cluster, you must configure all switch ports connected to the back-end NIC to have at least 9,000 MTU, with Jumbo Frames enabled." %}
+{% include important.html content="Before you create your Qumulo cluster, you must configure all switch ports to have at least 9,000 MTU, with Jumbo Frames enabled." %}
 
 Your node requires the following resources.
 * A network switch with the following specifications:
@@ -24,8 +24,6 @@ Your node requires the following resources.
 
   * IPv6 capability
 
-  * Jumbo Frame support (9,000 MTU minimum) for the back-end network
-
 * Compatible networking cables
 
 * A sufficient number of ports for connecting all nodes to the same switch fabric
@@ -34,13 +32,11 @@ Your node requires the following resources.
 
 
 ## Recommended Configuration
-{% include important.html content="We don't recommend connecting to a single back-end NIC port because the node becomes unavailable if the single connection fails." %}
-
 The {{site.sm1014s}} platform uses a _unified networking configuration_ in which the same NICs handle back-end and front-end traffic. You can connect the NICs to the same switch or to different switches. However, for greater reliability, we recommend connecting both 25 Gbps or 100 Gbps ports on every node to each switch.
 
 We recommend the following configuration for your node.
 
-* One set of redundant switches for the unified network, with an MTU that matches that of the clients that use the storage cluster. Typically, 1,500 MTU is recommended, but in some instances it might be 9,000 MTU.
+* One set of redundant switches for the unified network, with an MTU that matches that of the clients that use the storage cluster. Typically, we recommend 1,500 MTU but in some instances 9,000 MTU is sufficient.
 
 * One physical connection per node, per each redundant switch
 
