@@ -79,8 +79,7 @@ For redundancy, we recommend connecting a {{site.sm1114s}} cluster to dual switc
 
 * **MTU**
 
-  * For all connection speeds, the default behavior is that of an LACP with 1,500 MTU for the front-end and 9,000 MTU for the back-end interfaces.
-
+  * {{site.mtu}}
 
 ## Connecting to a Single Switch
 You can connect a {{site.sm1114s}} cluster to a single switch. If this switch becomes inoperative, the entire cluster becomes inaccessible.
@@ -99,8 +98,7 @@ You can connect a {{site.sm1114s}} cluster to a single switch. If this switch be
 
 * **MTU**
 
-  * For all connection speeds, the default behavior is that of an LACP with 1,500 MTU for the front-end and 9,000 MTU for the back-end interfaces.
-
+  * {{site.mtu}}
 
 ## Four-Node Cluster Architecture Diagram
 The following is the recommended configuration for a four-node cluster connected to an out-of-band management switch, redundant front-end switches, and redundant back-end switches.
