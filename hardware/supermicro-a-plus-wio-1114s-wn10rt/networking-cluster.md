@@ -83,9 +83,9 @@ For redundancy, we recommend connecting a {{site.sm1114s}} cluster to dual switc
 
   * Use an appropriate inter-switch link or virtual port channel.
 
-* **MTU**
+* **Link Aggregation Control Protocol (LACP)**
 
-  * {{site.mtu}}
+  * {{site.splitNetLACP}}
 
 ## Connecting to a Single Switch
 You can connect a {{site.sm1114s}} cluster to a single switch. If this switch becomes inoperative, the entire cluster becomes inaccessible.
@@ -102,9 +102,9 @@ You can connect a {{site.sm1114s}} cluster to a single switch. If this switch be
 
   * Connect the two band-end ports (2 &#215; 100 Gbps) to a single switch.
 
-* **MTU**
+* **Link Aggregation Control Protocol (LACP)**
 
-  * {{site.mtu}}
+  * {{site.splitNetLACP}}
 
 ## Four-Node Cluster Architecture Diagram
 The following is the recommended configuration for a four-node cluster connected to an out-of-band management switch, redundant front-end switches, and redundant back-end switches.
