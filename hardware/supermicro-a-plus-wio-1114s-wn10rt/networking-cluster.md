@@ -10,14 +10,18 @@ This section explains the networking prerequisites, outlines the recommended con
 
 
 ##  Prerequisites
-{% include important.html content="Before you create your Qumulo cluster, you must configure all switch ports connected to the back-end NIC to have at least 9,000 MTU, with Jumbo Frames enabled." %}
+{{site.data.alerts.note}}
+{{site.splitNetJumboFrames}}
+{{site.data.alerts.end}}
 
 Your node requires the following resources.
 * A network switch with the following specifications:
 
   * 100 Gbps Ethernet
 
-    {% include note.html content="You can use 40 Gbps connections with 40 Gbps transceivers." %}
+    {{site.data.alerts.note}}
+    {{site.use40gbps}}
+    {{site.data.alerts.end}}
 
   * Fully non-blocking architecture
 
@@ -37,9 +41,11 @@ The {{site.sm1114s}} platform uses a networking configuration in which different
 
 We recommend the following configuration for your node.
 
-* One set of redundant switches for the front-end network, with an MTU that matches that of the clients that use the storage cluster. Typically, we recommend a 1,500 MTU, but in some instances 9,000 MTU might be sufficient.
+* Your Qumulo front-end MTU configured to match your client environment
 
 * One set of redundant switches for the back-end network (9,000 MTU minimum)
+
+  {% include note.html content="You can configure front-end and back-end traffic on the same switch." %}
 
 * One physical connection per node, per each redundant switch
 
@@ -77,9 +83,9 @@ For redundancy, we recommend connecting a {{site.sm1114s}} cluster to dual switc
 
   * Use an appropriate inter-switch link or virtual port channel.
 
-* **MTU**
+* **Link Aggregation Control Protocol (LACP)**
 
-  * {{site.mtu}}
+  * {{site.splitNetLACP}}
 
 ## Connecting to a Single Switch
 You can connect a {{site.sm1114s}} cluster to a single switch. If this switch becomes inoperative, the entire cluster becomes inaccessible.
@@ -96,9 +102,9 @@ You can connect a {{site.sm1114s}} cluster to a single switch. If this switch be
 
   * Connect the two band-end ports (2 &#215; 100 Gbps) to a single switch.
 
-* **MTU**
+* **Link Aggregation Control Protocol (LACP)**
 
-  * {{site.mtu}}
+  * {{site.splitNetLACP}}
 
 ## Four-Node Cluster Architecture Diagram
 The following is the recommended configuration for a four-node cluster connected to an out-of-band management switch, redundant front-end switches, and redundant back-end switches.

@@ -32,7 +32,7 @@ This section explains how to network your {{site.a4200g9}} cluster.
 * DNS servers
 * Network Time Protocol (NTP) server
 * Firewall protocol or ports configured for [Qumulo Care Proactive Monitoring](https://care.qumulo.com/hc/en-us/articles/115007283828-Qumulo-Care-Proactive-Monitoring)
-* Where N is the number of nodes, up to 10 N-1 floating IP addresses per node, per client-facing VLAN
+* Where `N` is the number of nodes, up to 10 `N-1` floating IP addresses per node, per client-facing VLAN
 
   {% include note.html content="The number of floating IP addresses depends on your workflow and on the clients that connect to the cluster, with a minimum of two floating IP addresses per node, per client-facing VLAN, but with no more than ten floating IP addresses per node, per client-facing VLAN." %}
 
