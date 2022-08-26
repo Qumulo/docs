@@ -19,8 +19,10 @@ Your node requires the following resources.
 * A network switch with the following specifications:
 
   * 25 Gbps or 100 Gbps Ethernet
-   
-    {% include note.html content="You can use 40 Gbps connections with 40 Gbps transceivers." %}
+
+    {{site.data.alerts.note}}
+    {{site.40gbpsOK}}
+    {{site.data.alerts.end}}   
 
   * Fully non-blocking architecture
 
