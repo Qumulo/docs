@@ -47,6 +47,8 @@ The following diagrams show the NICs and ports on {{site.a4200g10}} nodes.
 {% capture alt_tag %}NIC1 ports on {{site.a4200g10}} nodes{% endcapture %}
 {% include image.html alt=alt_tag file="hpe-networking-gen10-rear.png" %}
 
+{% include note.html content="On 192T nodes, port 2 is `eth3` and port 1 is `eth2`." %}
+
 ## Connecting to Redundant Switches
 
 This section explains how to connect a four-node HPE cluster to dual switches for redundancy. We recommend this configuration for HPE hardware. If either switch becomes inoperative, the cluster remains accessible through the remaining switch.
