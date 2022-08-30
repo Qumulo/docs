@@ -26,6 +26,9 @@ On the front, right side of your node, there are five LEDs.
 | HDD LED                | 🟢 (blinking)          | Disk activity                               |
 | Power LED              | 🟢 (on)                | On                                          |
 
+
+## NVMe Drive Carrier LEDs
+
 Each NVMe drive carrier has two LEDs.
 
 | Label                  | Color or Behavior               | Description                          |
