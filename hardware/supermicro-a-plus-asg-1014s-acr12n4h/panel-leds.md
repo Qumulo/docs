@@ -1,12 +1,12 @@
 ---
 title: "Panel LEDs on Supermicro A+ ASG-1014S-ACR12N4H Nodes"
-summary: "This section explains the LEDs of your Supermicro A+ ASG-1014S-ACR12N4H node."
+summary: "This section explains the LEDs on your Supermicro A+ ASG-1014S-ACR12N4H node."
 permalink: hardware/supermicro-a-plus-asg-1014s-acr12n4h/panel-leds.html
 sidebar: hardware_sidebar
 keywords: LED, front panel, power fault, rear panel, diagnose, diagnosis, hardware health, Supermicro 1014S, ACR12N4H
 ---
 
-This section explains the LEDs of your {{site.sm1014s}} node.
+This section explains the LEDs on your {{site.sm1014s}} node.
 
 ## Front Panel LEDs and Buttons
 
