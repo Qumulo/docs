@@ -3,7 +3,7 @@ title: "Panel LEDs on Supermicro A+ WIO 1114S-WN10RT Nodes"
 summary: "This section explains the LEDs of your Supermicro A+ WIO 1114S-WN10RT node."
 permalink: hardware/supermicro-a-plus-wio-1114s-wn10rt/panel-leds.html
 sidebar: hardware_sidebar
-keywords: LED, front panel, power fault, rear panel, diagnose, diagnosis, hardware health, Supermicro 1114, WN10RT
+keywords: LED, front panel, power fault, rear panel, diagnose, diagnosis, hardware health, Supermicro 1114S, WN10RT
 ---
 
 This section explains the LEDs of your Supermicro 1114 node.
