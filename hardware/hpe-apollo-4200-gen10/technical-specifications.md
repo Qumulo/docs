@@ -6,7 +6,7 @@ sidebar: hardware_sidebar
 keywords: technical specifications, tech specs, specs, specifications, Apollo 4200, Apollo 4200 Gen10
 ---
 
-This section provides technical specifications for HPE Apollo 4200 Gen10 nodes.
+This section provides technical specifications for {{site.a4200g10}} nodes.
 
 <table>
 <thead>

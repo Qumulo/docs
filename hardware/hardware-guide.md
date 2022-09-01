@@ -8,17 +8,18 @@ search: exclude
 The Qumulo-Certified Hardware Guide is a collection of guides that provide information about getting started with a particular node type as well as reference information for front and rear drive locations, panel LEDs, drive LEDs, Integrated Lights Out (iLO), and Qumulo cluster networking.
 
 **Table of Contents**
-* **[Document History](document-history.md)**
+* **General Guidance**
+  * [Identifying NICs and Choosing Transceivers and Cables for Your Qumulo Node](general-guidance/nics-transceivers-cables.md)
 * **C-192T, C-432T, K-432T**
   * [Replacing Hardware Components](c-192t-c-432t-k-432t/replacing-hardware-components.md)
-* **HPE Apollo 4200 Gen9**
+* **{{site.a4200g9}}**
   * [Getting Started](hpe-apollo-4200-gen9/getting-started.md)
   * [Front and Rear Drives](hpe-apollo-4200-gen9/front-rear-drives.md)
   * [Panel LEDs](hpe-apollo-4200-gen9/panel-leds.md)
   * [Drive LEDs](hpe-apollo-4200-gen9/drive-leds.md)
   * [iLO Configuration](hpe-apollo-4200-gen9/configuring-ilo.md)
   * [Cluster Networking](hpe-apollo-4200-gen9/networking-cluster.md)
-* **HPE Apollo 4200 Gen10**
+* **{{site.a4200g10}}**
   * [Getting Started](hpe-apollo-4200-gen10/getting-started.md)
   * [Front and Rear Drives](hpe-apollo-4200-gen10/front-rear-drives.md)
   * [Panel LEDs](hpe-apollo-4200-gen10/panel-leds.md)
@@ -26,12 +27,12 @@ The Qumulo-Certified Hardware Guide is a collection of guides that provide infor
   * [iLO Configuration](hpe-apollo-4200-gen10/configuring-ilo.md)
   * [Cluster Networking](hpe-apollo-4200-gen10/networking-cluster.md)
   * [Technical Specifications](hpe-apollo-4200-gen10/technical-specifications.md)
-* **HPE ProLiant DL325 Gen10 Plus**
+* **{{site.dl325g10p}}**
   * [Getting Started](hpe-dl325-gen10-plus/getting-started.md)
   * [Front and Rear Drives](hpe-dl325-gen10-plus/front-rear-drives.md)
   * [Cluster Networking](hpe-dl325-gen10-plus/networking-cluster.md)
   * [Technical Specifications](hpe-dl325-gen10-plus/technical-specifications.md)
-* **Supermicro A+ WIO 1114S-WN10RT**
+* **{{site.sm1114sLong}}**
   * [Racking Nodes](supermicro-a-plus-wio-1114s-wn10rt/racking-nodes.md)
   * [Wiring Nodes](supermicro-a-plus-wio-1114s-wn10rt/wiring-nodes.md)
   * [Getting Started](supermicro-a-plus-wio-1114s-wn10rt/getting-started.md)

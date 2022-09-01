@@ -6,7 +6,7 @@ sidebar: hardware_sidebar
 keywords: technical specifications, tech specs, specs, specifications, DL325, ProLiant DL325 Gen10 Plus
 ---
 
-This section provides technical specifications for HPE ProLiant DL325 Gen10 Plus nodes.
+This section provides technical specifications for {{sote.dl325g10p}} nodes.
 
 <table>
 <thead>

@@ -10,20 +10,22 @@ This section explains the networking prerequisites, outlines the recommended con
 
 
 ##  Prerequisites
-{% include important.html content="Before you create your Qumulo cluster, you must configure all switch ports connected to the back-end NIC to have at least 9,000 MTU, with Jumbo Frames enabled." %}
+{{site.data.alerts.note}}
+{{site.splitNetJumboFrames}}
+{{site.data.alerts.end}}
 
 Your node requires the following resources.
 * A network switch with the following specifications:
 
   * 100 Gbps Ethernet
 
-    {% include note.html content="You can use 40 Gbps connections with 40 Gbps transceivers." %}
+    {{site.data.alerts.note}}
+    {{site.use40gbps}}
+    {{site.data.alerts.end}}
 
   * Fully non-blocking architecture
 
   * IPv6 capability
-
-  * Jumbo Frame support (9,000 MTU minimum) for the back-end network
 
 * Compatible networking cables
 
@@ -35,13 +37,15 @@ Your node requires the following resources.
 ## Recommended Configuration
 {% include important.html content="We don't recommend connecting to a single back-end NIC port because the node becomes unavailable if the single connection fails." %}
 
-The Supermicro 1114S platform uses a networking configuration in which different NICs handle back-end and front-end traffic. You can connect the front-end and back-end NICs to the same switch or to different switches. However, for greater reliability, we recommend connecting all four 100 Gbps ports on every node: Connect both front-end NIC ports to the front-end switch and both back-end NIC ports to the back-end switch.
+The {{site.sm1114s}} platform uses a networking configuration in which different NICs handle back-end and front-end traffic. You can connect the front-end and back-end NICs to the same switch or to different switches. However, for greater reliability, we recommend connecting all four 100 Gbps ports on every node: Connect both front-end NIC ports to the front-end switch and both back-end NIC ports to the back-end switch.
 
 We recommend the following configuration for your node.
 
-* One set of redundant switches for the front-end network, with an MTU that matches that of the clients that use the storage cluster. Typically, 1,500 MTU is recommended, but in some instances it might be 9,000 MTU.
+* Your Qumulo front-end MTU configured to match your client environment
 
 * One set of redundant switches for the back-end network (9,000 MTU minimum)
+
+  {% include note.html content="You can configure front-end and back-end traffic on the same switch." %}
 
 * One physical connection per node, per each redundant switch
 
@@ -63,7 +67,7 @@ We recommend the following configuration for your node.
 
 
 ## Connecting to Redundant Switches
-For redundancy, we recommend connecting a Supermicro 1114S cluster to dual switches. If either switch becomes inoperative, the cluster is still be accessible from the remaining switch.
+For redundancy, we recommend connecting a {{site.sm1114s}} cluster to dual switches. If either switch becomes inoperative, the cluster is still be accessible from the remaining switch.
 
 * **Front End**
 
@@ -79,17 +83,16 @@ For redundancy, we recommend connecting a Supermicro 1114S cluster to dual switc
 
   * Use an appropriate inter-switch link or virtual port channel.
 
-* **MTU**
+* **Link Aggregation Control Protocol (LACP)**
 
-  * For all connection speeds, the default behavior is that of an LACP with 1,500 MTU for the front-end and 9,000 MTU for the back-end interfaces.
-
+  * {{site.splitNetLACP}}
 
 ## Connecting to a Single Switch
-You can connect a Supermicro 1114S cluster to a single switch. If this switch becomes inoperative, the entire cluster becomes inaccessible.
+You can connect a {{site.sm1114s}} cluster to a single switch. If this switch becomes inoperative, the entire cluster becomes inaccessible.
 
 * **Front End**
 
-  * Each node has two front-end NIC ports (2 &#215; 100 Gbps) connected to a single switch.
+  * Connect the two front-end NIC ports (2 &#215; 100 Gbps) to a single switch.
 
   * The uplinks to the client network must equal the bandwidth from the cluster to the switch.
 
@@ -97,14 +100,13 @@ You can connect a Supermicro 1114S cluster to a single switch. If this switch be
 
 * **Back End**
 
-  * Each node has two band-end ports (2 &#215; 100 Gbps) connected to a single switch.
+  * Connect the two band-end ports (2 &#215; 100 Gbps) to a single switch.
 
-* **MTU**
+* **Link Aggregation Control Protocol (LACP)**
 
-  * For all connection speeds, the default behavior is that of an LACP with 1,500 MTU for the front-end and 9,000 MTU for the back-end interfaces.
-
+  * {{site.splitNetLACP}}
 
 ## Four-Node Cluster Architecture Diagram
 The following is the recommended configuration for a four-node cluster connected to an out-of-band management switch, redundant front-end switches, and redundant back-end switches.
 
-{% include image.html alt="Four-Node Cluster Architecture Diagram" file="supermicro-four-node-cluster-architecture-diagram.png" url="/hardware/supermicro-a-plus-wio-1114s-wn10rt/images/supermicro-four-node-cluster-architecture-diagram.png" %}
+{% include image.html alt="Four-Node Cluster Architecture Diagram" file="supermicro-1114s-four-node-cluster-architecture-diagram.png" url="/hardware/supermicro-a-plus-wio-1114s-wn10rt/images/supermicro-1114s-four-node-cluster-architecture-diagram.png" %}

@@ -3,7 +3,7 @@ title: "Using Kerberos Permissions in the Qumulo Filesystem"
 summary: "This section describes how NFSv4.1 interacts with the secure file permissions that Kerberos enables for the Qumulo Core file system."
 permalink: /administrator-guide/kerberos/kerberos-qumulo-permissions.html
 sidebar: administrator_guide_sidebar
-keywords: NFS, NFS4.1, NFSv4.1, Kerberos, permissions, file permissions, owner, group owner, access control list, ACL, access control entry, ACE, security identifier, SID, Kerberos principal, ACL editor, AUTH_SYS, AUTH_KRB5
+keywords: NFS, NFS4.1, NFSv4.1, Kerberos, permissions, file permissions, owner, group owner, access control list, ACL, access control entry, ACE, security identifier, SID, Kerberos principal, ACL editor, AUTH_SYS
 ---
 
 This section describes how NFSv4.1 interacts with the secure file permissions that Kerberos enables for the Qumulo Core file system. For more information, see [Qumulo File Permissions Overview](https://care.qumulo.com/hc/en-us/articles/115008211868) on Qumulo Care.
@@ -156,11 +156,11 @@ For most standard Linux tools, Qumulo Core supports all arbitrary Unicode charac
 ## Using the chown Tool With Kerberos
 `chown` is a Linux tool that changes the owner or group owner for a file. You can generally use `chown` with Kerberos principals. On most Linux systems,  `chown` requires the root user (`sudo chown`).
 
-### The Root User in AUTH_SYS
+### The AUTH_SYS Root User
 `AUTH_SYS` has the concept of the root user. Using `sudo` on a Linux NFS client fills in `0` for the UID and GID. As long as the mounted export doesn't _root squash_&mdash;maps a client's UID `0` (root) to `65534` (nobody) or to another non-root user&mdash;the Linux client receives root permissions on the Qumulo file system, where the client can perform `chown` operations.
 
-### The Root User in AUTH_KRB5
-`AUTH_KRB5` doesn't have the concept of the root user. However, you can still use it to run `chown` operations under the following conditions.
+### The Kerberos Root User
+Kerberos doesn't have the concept of the root user. However, you can still use it to run `chown` operations under the following conditions.
 
 * The ACL for the file must grant the `CHANGE_OWNER` privilege to an authenticated user.
 
@@ -187,7 +187,7 @@ $ stat -c '%U, %G' filename
 user3, group4
 ```
 
-{% include note.html content="The `AUTH_KRB5` restrictions for `chown` also apply to other Linux tools that use the `chown` system call, such as `cp` and `rsync`, when you run them in ownership-preserving modes." %}
+{% include note.html content="The Kerberos restrictions for `chown` also apply to other Linux tools that use the `chown` system call, such as `cp` and `rsync`, when you run them in ownership-preserving modes." %}
 
 ## Using the Linux ACL Editor
 The Linux ACL Editor consists of the following tools:
@@ -196,4 +196,4 @@ The Linux ACL Editor consists of the following tools:
 * `nfs4_getfacl`
 * `nfs4_setfacl`
 
-You can use the editor to read and write ACLs on a Qumulo cluster that uses NFSv4.1 with Kerberos. For more information, see [Managing File Access Permissions Using NFSv4.1 Access Control Lists (ACLs)](../protocols/nfsv4.1-acls.md).
+You can use the editor to read and write ACLs on a Qumulo cluster that uses NFSv4.1 with Kerberos. For more information, see [Managing File Access Permissions by Using NFSv4.1 Access Control Lists (ACLs)](../protocols/nfsv4.1-acls.md).

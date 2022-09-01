@@ -6,21 +6,21 @@ sidebar: hardware_sidebar
 keywords: technical specifications, tech specs, specs, specifications, Supermicro 1114S, WN10RT
 ---
 
-This section provides technical specifications for Supermicro 1114S nodes.
+This section provides technical specifications for {{site.sm1114s}} nodes.
 
 <table cellspacing="0" cellpadding="0">
   <thead>
     <tr>
       <th></th>
-      <th><strong>Supermicro 1114S 153 TB</strong></th>
-      <th><strong>Supermicro 1114S 76 TB</strong></th>
-      <th><strong>Supermicro 1114S 30 TB</strong></th>
+      <th><strong>{{site.sm1114s}} 153 TB</strong></th>
+      <th><strong>{{site.sm1114s}} 76 TB</strong></th>
+      <th><strong>{{site.sm1114s}} 30 TB</strong></th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td><strong>Connectivity Ports (NIC)</strong></td>
-      <td colspan="3" style="text-align: center;">4 &#215; 100 GbE (2 x Mellanox CX-6 NICs)</td>
+      <td colspan="3" style="text-align: center;">4 &#215; 100 GbE (2 &#215; Mellanox CX-6 NICs)</td>
     </tr>
     <tr>
       <td><strong>Management Ports (BMC)</strong></td>
@@ -28,13 +28,13 @@ This section provides technical specifications for Supermicro 1114S nodes.
     </tr>
     <tr>
       <td><strong>Solid State Storage Media</strong></td>
-      <td><div>10 &#215; 15.36 TB NVMe drives</div></td>
-      <td><div>10 &#215; 7.68 TB NVMe drives</div></td>
-      <td><div>8 &#215; 3.84 TB NVMe drives</div></td>
+      <td>10 &#215; 15.36 TB NVMe</td>
+      <td>10 &#215; 7.68 TB NVMe</td>
+      <td>8 &#215; 3.84 TB NVMe</td>
     </tr>
     <tr>
       <td><strong>Boot Drive</strong></td>
-      <td colspan="3" style="text-align: center;">1 TB M.2 NVMe drive</td>
+      <td colspan="3" style="text-align: center;">1 &#215; 1 TB M.2 NVMe</td>
     </tr>
     <tr>
       <td><strong>CPU</strong></td>

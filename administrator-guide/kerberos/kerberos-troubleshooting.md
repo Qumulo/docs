@@ -1,6 +1,6 @@
 ---
 title: "Troubleshooting NFSv4.1 with Kerberos"
-summary: "This topic describes common troubleshooting procedures when NFSv4.1 doesn't work with Kerberos."
+summary: "This section describes common troubleshooting procedures when NFSv4.1 doesn't work with Kerberos."
 permalink: /administrator-guide/kerberos/kerberos-troubleshooting.html
 sidebar: administrator_guide_sidebar
 keywords: NFS, NFS4.1, NFSv4.1, troubleshooting, Kerberos, debugging, sssd, idmapd, rpcdeug, LDAP, DNS, RPC, users, groups, kinit, krb5
@@ -78,6 +78,6 @@ Under certain conditions, you might receive mount-failed errors from `mount.nfs`
 
 1. Confirm that the mount uses the `krb5` option.
 
-   {% include note.html content="Qumulo Core doesn't support the `krb5i` and `krb5p` options." %}
+   {% include note.html content="Qumulo Core doesn't support the `krb5i` option." %}
 
 1. Inspect logs and packet captures.

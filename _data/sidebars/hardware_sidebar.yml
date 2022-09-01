@@ -32,9 +32,13 @@ entries:
       url: /hardware/
       output: web
 
-    - title: Hardware Guide History
-      url: /hardware/document-history.html
-      output: web
+  - title: General Guidance
+    output: web, pdf
+    folderitems:
+
+    - title: Identifying NICs and Choosing Transceivers and Cables for Your Qumulo Node
+      url: /hardware/general-guidance/nics-transceivers-cables.html
+      output: web, pdf
 
   - title: C-192T, C-432T, K-432T
     output: web, pdf

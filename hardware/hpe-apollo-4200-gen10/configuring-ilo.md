@@ -6,7 +6,7 @@ sidebar: hardware_sidebar
 keywords: out-of-band management, out of band management, iLO, DHCP, network, networking, LAN, ipmitool
 ---
 
-This section explains how to configure and use Integrated Lights Out (iLO) on HPE Apollo 4200 Gen10 nodes.
+This section explains how to configure and use Integrated Lights Out (iLO) on {{site.a4200g10}} nodes.
 
 {% include important.html content="Access to the iLO port on a public LAN can have serious security implications because it can grant anyone with credentials direct access to your server's hardware and console. Follow security best practices when implementing iLO access." %}
 
@@ -14,13 +14,15 @@ This section explains how to configure and use Integrated Lights Out (iLO) on HP
 To configure the iLO port, you must have root access to the client-facing network through SSH. For example, you can use the `sudo -s` command.
 
 ## How the iLO Port Works
-HPE Apollo 4200 Gen10 nodes provide iLO support for out-of-band maintenance access even when the node is plugged in but powered off. The following diagram shows the location of the iLO port.
+{{site.a4200g10}} nodes provide iLO support for out-of-band maintenance access even when the node is plugged in but powered off. The following diagram shows the location of the iLO port.
 
-{% include image.html alt="The location of the iLO port on the HPE Apollo 4200 Gen10 node" file="hpe-gen10-ilo.png" %}
+{% capture alt_tag %}The location of the iLO port on the {{site.a4200g10}} node{% endcapture %}
+{% include image.html alt=alt_tag file="hpe-gen10-ilo.png" %}
 
 Your nodes receive DHCP address assignments by default. When you configure a node's iLO port, you can access the node by using the IP address (that the DHCP server assigns to the node) and a web browser that supports HTML5, Java, and .NET
 
-{% include important.html content="We strongly recommend separating your iLO access network from your client-facing network" %}
+{% capture content_tag %}{{site.splitIlo}}{% endcapture %}
+{% include important.html content=content_tag %}
 
 To access iLO configuration from the BIOS System Utilities menu, press **F9**. The default iLO username is `Administrator`. The password is printed on top of your node chassis.
 
