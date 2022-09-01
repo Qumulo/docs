@@ -21,7 +21,8 @@ To configure the iLO port, you must have root access to the client-facing networ
 
 Your nodes receive DHCP address assignments by default. When you configure a node's iLO port, you can access the node by using the IP address (that the DHCP server assigns to the node) and a web browser that supports HTML5, Java, and .NET
 
-{{site.splitIlo}}
+{% capture alt_tag %}{{site.splitIlo}}{% endcapture %}
+{% include important.html content=content_tag %}
 
 To access iLO configuration from the BIOS System Utilities menu, press **F9**. The default iLO username is `Administrator`. The password is printed on top of your node chassis.
 

@@ -136,7 +136,7 @@ plugins:
   - jekyll-redirect-from
 
 # Global include variables
-splitIlo: {% include important.html content="We strongly recommend separating your iLO access network from your client-facing network. %}
+splitIlo: We strongly recommend separating your iLO access network from your client-facing network.
 
 varKerberosDns: Kerberos relies on DNS to identify machines involved in authentication. NFS clients and servers require DNS <code>A</code> records for forward-DNS lookups and <code>PTR</code> records for reverse-DNS lookups.
 varNfsConf: In versions of Ubuntu lower than 22.04 (and possibly on other Linux distributions), you can't use the <code>/etc/nfs.conf</code> file to configure <code>gssd</code>. If this is the case for your system, we recommend starting the <code>rpc.gssd</code> service by using the <code>-n</code> flag.
