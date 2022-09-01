@@ -19,7 +19,7 @@ The following table lists node types, the NICs that these nodes use, the speeds 
 {{site.data.alerts.note}}
 <ul>
   <li>The following table lists the latest firmware that Qumulo Core supports. For certain vendors, we update the following table with every firmware release.</li>
-  <li>You can install any NIC that corresponds to a node type. If your node type is compatible with more than one NIC, see <a href="https://docs.qumulo.com/hardware/general-guidance/nics-transceivers-cables.html#to-identify-your-nic">To Identify Your NIC</a>.</li>
+  <li>You can install any NIC that corresponds to a node type. If your node type is compatible with more than one NIC, see <a href="#to-identify-your-nic">To Identify Your NIC</a>.</li>
 </ul>
 {{site.data.alerts.end}}
 
