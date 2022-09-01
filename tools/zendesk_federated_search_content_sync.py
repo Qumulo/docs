@@ -15,8 +15,6 @@ from requests.auth import HTTPBasicAuth
 import tqdm
 import yaml
 
-from http.client import HTTPConnection
-
 ZD_MAX_KEY_LENGTH = 32
 
 
@@ -142,8 +140,8 @@ class ExternalRecord:
         self.source_id = source_id
         self.url = url
         self.title = title
-        self.body = self.ensure_body_length(body) #body
-        #if keywords:
+        self.body = self.ensure_body_length(body)  # body
+        # if keywords:
         #    self.body = '{0:<120} {1}'.format(
         #        self.ensure_body_length(self.body), keywords
         #    )
@@ -232,9 +230,9 @@ def parse_markup_document(path, default_type_id, default_source_id, default_key_
             return None
 
 
-def get_documents(type_id, source_id, default_key_prefix):
+def get_documents(document_root: str, type_id: str, source_id: str, default_key_prefix: str) -> List:
     documents = []
-    for root, dirs, files in os.walk('.'):
+    for root, dirs, files in os.walk(document_root):
         for f in files:
             if f.endswith('.md'):
                 documents.append(os.path.join(root, f))
@@ -248,8 +246,7 @@ def get_documents(type_id, source_id, default_key_prefix):
     return records
 
 
-def get_zendesk_documents(zd):
-    # all_records = zd.get_external_records()
+def get_zendesk_documents(zd: Zendesk):
     all_records = zd.records()
 
     records = []
@@ -273,14 +270,29 @@ def get_zendesk_documents(zd):
 
 def parse_args(args: List[str]) -> argparse.Namespace:
     parser = argparse.ArgumentParser()
-    parser.add_argument('--commit', action='store_true', default=False)
+    parser.add_argument(
+        '--document-root',
+        default='.',
+        help='Directory to start enumerating documents at',
+        type=str,
+    )
+    parser.add_argument(
+        '--commit',
+        action='store_true',
+        default=False,
+        help='Apply the detected changes to the Zendesk Federated Search API',
+    )
+    parser.add_argument(
+        '--verbose',
+        action='store_true',
+        default=False,
+        help='List all documents, including unchanged documents, during summary',
+    )
+
     return parser.parse_args(args)
 
 
 def main(args: argparse.Namespace):
-    # logging.basicConfig(level=logging.DEBUG)
-    # HTTPConnection.debuglevel = 1
-
     ZENDESK_DOMAIN = os.environ.get('ZENDESK_DOMAIN', 'qumulo')
     ZENDESK_USER = os.environ.get('ZENDESK_USER', 'mkhmelnitsky@qumulo.com/token')
     ZENDESK_TOKEN = os.environ.get('ZENDESK_TOKEN')
@@ -294,7 +306,7 @@ def main(args: argparse.Namespace):
     source_id = zd.get_content_source('Documentation Portal').get('id')
 
     local_documents = {
-        k.key: k for k in get_documents(type_id, source_id, ZENDESK_PREFIX)
+        k.key: k for k in get_documents(args.document_root, type_id, source_id, ZENDESK_PREFIX)
     }
 
     remote_documents = {k.key: k for k in get_zendesk_documents(zd)}
@@ -310,7 +322,6 @@ def main(args: argparse.Namespace):
                 no_changes.add(d)
             else:
                 # Pull in the remote identifier
-                print(d.diff(remote_documents[key]))
                 d.id_ = remote_documents[key].id_
                 documents_to_update.add(d)
         else:
@@ -337,9 +348,10 @@ def main(args: argparse.Namespace):
     for rec in documents_to_update:
         print(rec)
 
-    print('NO_CHANGES')
-    for rec in no_changes:
-        print(rec)
+    if args.verbose:
+        print('NO_CHANGES')
+        for rec in no_changes:
+            print(rec)
 
     if args.commit:
         for rec in tqdm.tqdm(documents_to_delete, desc='Deleting', unit='docs'):
