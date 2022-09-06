@@ -14,7 +14,7 @@ This section explains how to wire your out-of-band management (IPMI) port, 100 G
 {% include image.html alt=alt_tag file="supermicro-1114s-back-diagram.png" url="/hardware/supermicro-a-plus-wio-1114s-wn10rt/images/supermicro-1114s-back-diagram.png" %}
 
 ## Step 1: Connecting the Out-of-Band Management (IPMI) Port
-The dedicated out-of-band management port allows functionality such as remote display, control, and power (similar to HPE iLO). The port uses the Intelligent Platform Management Interface (IPMI) protocol. Connect the IPMI port first on the back of your node (above the USB ports).
+The dedicated out-of-band management port allows functionality such as remote display, control, and power. The port uses the Intelligent Platform Management Interface (IPMI) protocol. Connect the IPMI port first on the back of your node (above the USB ports).
 
 {% include important.html content="The list of IPMI accounts contains the user `qumulo_<random>`. This account is critical for Qumulo Core functionality. Don't disable or tamper with it. To administer Qumulo Core, create your own IPMI user account." %}
 
