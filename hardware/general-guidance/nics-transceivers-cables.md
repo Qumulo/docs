@@ -19,7 +19,7 @@ The following table lists node types, the NICs that these nodes use, the speeds 
 {{site.data.alerts.note}}
 <ul>
   <li>The following table lists the latest firmware that Qumulo Core supports. For certain vendors, we update the following table with every firmware release.</li>
-  <li>You can install any NIC that corresponds to a node type. If your node type is compatible with more than one NIC, see <a href="https://docs.qumulo.com/hardware/general-guidance/nics-transceivers-cables.html#to-identify-your-nic">To Identify Your NIC</a>.</li>
+  <li>You can install any NIC that corresponds to a node type. If your node type is compatible with more than one NIC, see <a href="#to-identify-your-nic">To Identify Your NIC</a>.</li>
 </ul>
 {{site.data.alerts.end}}
 
@@ -190,6 +190,7 @@ The two main types of fiber optic cables are the Lucent connector (LC) with two 
 
 Newer switches have 100 Gbps connections using double 50 Gbps PAM4 connections instead of the more common four 25 Gbps connections. However, the most common and cost-efficient transmission standard for 100 Gbps is SR4, with four QSFP28 connections over an eight-fiber cable. The maximum range for SR4 is 100 m. The most common transmission standard for 25 Gbps is the Lucent connector duplex (LC duplex) with two fibers. The maximum short-range connection is 100 m and long-range connection is 10 km. There is also an extended-range standard with a maximum of 40 km.
 
+
 ## Choosing Cables for Your Transceiver
 
 {% include note.html content="If you use DAC or AOC cables, ensure that the manufacturers of your NIC and network switch both support your cables." %}
@@ -199,3 +200,7 @@ Newer switches have 100 Gbps connections using double 50 Gbps PAM4 connections i
 * **Direct Attach Cables (DACs):** Although these cables are significantly cheaper than optical cables and are less prone to compatibility and thermal issues, they are limited in length (2-3 m, up to 5 m maximum).
 
 * **Active Optical Cables (AOCs):** Although these cables are cheaper than dedicated transceivers and fiber optic cables, they might cause compatibility issues, or your NIC or switch might not support them.
+
+
+## Configuring PAM4 for Broadcom 100 Gbps NICs
+For information about configuring Pulse Amplitude Modulation 4-level (PAM4), see [Auto-Negotiation on Ethernet NIC Controllers](https://techdocs.broadcom.com/us/en/storage-and-ethernet-connectivity/ethernet-nic-controllers/bcm957xxx/1-0/Configuration-adapter/auto-negotiation-configuration.html) in the Broadcom documentation.
