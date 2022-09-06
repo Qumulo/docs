@@ -137,6 +137,8 @@ plugins:
 
 # Global include variables
 splitIlo: We strongly recommend separating your iLO access network from your client-facing network.
+partReplaceDefine: When you replace a component such as the motherboard or a NIC card in your node, you must ensure that the firmware version and configuration are correct for your new components. To do this, you must perform the part replacement procedure by using the FVT.
+partReplaceDCMS: Before you replace the motherboard, you must request a new Data Center Management Suite (DCMS) license key from Supermicro and apply it before you run the FVT. (The license key uses the BMC MAC address which changes with the motherboard.) If you don't install a DCMS license on your node, the Field Verification Tool (FVT) fails, preventing you from running the part replacement procedure in the FVT, which normalizes the firmware and BIOS configuration for your new motherboard.
 
 varKerberosDns: Kerberos relies on DNS to identify machines involved in authentication. NFS clients and servers require DNS <code>A</code> records for forward-DNS lookups and <code>PTR</code> records for reverse-DNS lookups.
 varNfsConf: In versions of Ubuntu lower than 22.04 (and possibly on other Linux distributions), you can't use the <code>/etc/nfs.conf</code> file to configure <code>gssd</code>. If this is the case for your system, we recommend starting the <code>rpc.gssd</code> service by using the <code>-n</code> flag.
