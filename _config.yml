@@ -141,6 +141,7 @@ splitIlo: We strongly recommend separating your iLO access network from your cli
 varKerberosDns: Kerberos relies on DNS to identify machines involved in authentication. NFS clients and servers require DNS <code>A</code> records for forward-DNS lookups and <code>PTR</code> records for reverse-DNS lookups.
 varNfsConf: In versions of Ubuntu lower than 22.04 (and possibly on other Linux distributions), you can't use the <code>/etc/nfs.conf</code> file to configure <code>gssd</code>. If this is the case for your system, we recommend starting the <code>rpc.gssd</code> service by using the <code>-n</code> flag.
 
+unifyNetDefine: This platform uses a _unified networking configuration_ in which the same NICs handle back-end and front-end traffic. You can connect the NICs to the same switch or to different switches.
 splitNetJumboFrames: Before you create your Qumulo cluster, if you want to use Jumbo Frames (9,000 MTU), configure your switch to support a higher MTU configuration.
 unifyNetJumboFrames: Before you create your Qumulo cluster, if your client environment requires Jumbo Frames (9,000 MTU), configure your switch to support a higher MTU configuration.
 use40gbps: You can use 40 Gbps connections with 40 Gbps transceivers.

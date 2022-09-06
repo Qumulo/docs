@@ -36,7 +36,7 @@ Your node requires the following resources.
 
 
 ## Recommended Configuration
-The {{site.sm1014s}} platform uses a _unified networking configuration_ in which the same NICs handle back-end and front-end traffic. You can connect the NICs to the same switch or to different switches. However, for greater reliability, we recommend connecting both 25 Gbps or 100 Gbps ports on every node to each switch.
+{{site.unifyNetDefine}} However, for greater reliability, we recommend connecting both 25 Gbps or 100 Gbps ports on every node to each switch.
 
 We recommend the following configuration for your node.
 
