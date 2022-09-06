@@ -29,12 +29,12 @@ This section explains the most common scenarios of replacing failed hardware com
 
 {% include content-reuse/see-technical-specifications.md %}
 
-## To Perform the Part Replacement Procedure by Using the FVT
-When you replace a component such as the motherboard or an NIC card in your node, you must ensure that the firmware version and configuration are correct for your new components. To do this, you must perform the part replacement procedure using the FVT.
 
-{{site.data.alerts.note}}
-<p>Before you replace the motherboard, you must request a new Data Center Management Suite (DCMS) license key from Supermicro and apply it before you run the FVT. (The license key uses the BMC MAC address which changes with the motherboard.) If you don't install a DCMS license on a {{site.sm1014s}} node, the Field Verification Tool (FVT) fails, preventing you from installing Qumulo Core.</p>
-{{site.data.alerts.end}}
+## To Perform the Part Replacement Procedure by Using the FVT
+{{site.partReplaceDefine}}
+
+{% capture content_tag %}{{site.partReplaceDcms}}{% endcapture %}
+{% include note.html content=content_tag %}
 
 1. Boot by using the latest version of the Qumulo Core USB Drive Installer.
 
@@ -45,6 +45,7 @@ When you replace a component such as the motherboard or an NIC card in your node
    The part replacement procedure runs and the **FVT passed!** message appears.
 
 {% include note.html content="In some cases, after the part replacement procedure, the message `FIX: Run the FVT flash command.` appears. Enter `1` as you would for a [fixable issue](/hardware/supermicro-a-plus-asg-1014s-acr12n4h/getting-started.html#fixable-issues-during-installation) to reboot the node and then repeat the part replacement procedure." %}
+
 
 ## To Replace a Drive
 Your {{site.sm1014s}} chassis contains 12 HDDs, 4 NVMe drives, and one NVMe boot drive (in an internal M.2 slot). For information about replacing a drive, see [Drive Slot Mapping](drive-slot-mapping.md) and the following topics in the Supermicro documentation.
