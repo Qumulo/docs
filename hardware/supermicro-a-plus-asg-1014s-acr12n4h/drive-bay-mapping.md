@@ -22,4 +22,4 @@ Your {{site.sm1014s}} chassis contains 12 HDDs, 4 NVMe drives, and one NVMe boot
 
 
 ## NVMe Boot Drive
-The boot drive is located at the M.2-HC1 connector. For information about the NVMe boot drive, see [Installing an M.2 Solid State Drive](https://www.supermicro.com/manuals/superserver/1U/MNL-2436.pdf#page=44) in the Supermicro documentation.
+The boot drive is located at the M.2-HC1 expansion slot. For information about the NVMe boot drive, see [Installing an M.2 Solid State Drive](https://www.supermicro.com/manuals/superserver/1U/MNL-2436.pdf#page=44) in the Supermicro documentation.
