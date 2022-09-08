@@ -5,7 +5,7 @@ sidebar: hardware_sidebar
 search: exclude
 ---
 
-The Qumulo-Certified Hardware Guide is a collection of guides that provide information about getting started with a particular node type as well as reference information for front and rear drive locations, panel LEDs, drive LEDs, Integrated Lights Out (iLO), and Qumulo cluster networking.
+The Qumulo-Certified Hardware Guide is a collection of guides that provide information about getting started with a particular node type as well as reference information for front and rear drive bays, panel LEDs, drive LEDs, Integrated Lights Out (iLO), and Qumulo cluster networking.
 
 **Table of Contents**
 * **General Guidance**
@@ -36,7 +36,7 @@ The Qumulo-Certified Hardware Guide is a collection of guides that provide infor
   * [Racking Nodes](supermicro-a-plus-wio-1114s-wn10rt/racking-nodes.md)
   * [Wiring Nodes](supermicro-a-plus-wio-1114s-wn10rt/wiring-nodes.md)
   * [Getting Started](supermicro-a-plus-wio-1114s-wn10rt/getting-started.md)
-  * [Drive Slot Mapping](supermicro-a-plus-wio-1114s-wn10rt/drive-slot-mapping.md)
+  * [Drive Bay Mapping](supermicro-a-plus-wio-1114s-wn10rt/drive-bay-mapping.md)
   * [Panel LEDs](supermicro-a-plus-wio-1114s-wn10rt/panel-leds.md)
   * [Cluster Networking](supermicro-a-plus-wio-1114s-wn10rt/networking-cluster.md)
   * [Replacing Hardware Components](supermicro-a-plus-wio-1114s-wn10rt/replacing-hardware-components.md)
