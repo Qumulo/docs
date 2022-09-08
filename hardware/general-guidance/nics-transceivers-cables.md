@@ -36,7 +36,7 @@ The following table lists node types, the NICs that these nodes use, the speeds 
   <tr>
     <td><ul><li>C-72T</li><li>C-168T</li></ul></td>
     <td>25 Gbps</td>
-    <td>ConnectX-4Lx</td>
+    <td>ConnectX-4 Lx</td>
     <td><a href="https://docs.nvidia.com/networking/display/ConnectX4LxFirmwarev14311014/Firmware+Compatible+Products">14.31.1014</a></td>
   </tr>
   <tr>
@@ -72,7 +72,7 @@ The following table lists node types, the NICs that these nodes use, the speeds 
   <tr>
     <td rowspan="2">HPE A4200 Gen10<ul><li>36T</li></ul></td>
     <td rowspan="2">25 Gbps</td>
-    <td>ConnectX-4Lx</td>
+    <td>ConnectX-4 Lx</td>
     <td><a href="https://docs.nvidia.com/networking/display/ConnectX4LxFirmwarev14311014/Firmware+Compatible+Products">14.31.1014</a></td>
   </tr>
   <tr>
@@ -91,7 +91,7 @@ The following table lists node types, the NICs that these nodes use, the speeds 
   </tr>
   <tr>
     <td rowspan="2">25 Gbps</td>
-    <td>ConnectX-4Lx</td>
+    <td>ConnectX-4 Lx</td>
     <td><a href="https://docs.nvidia.com/networking/display/ConnectX4LxFirmwarev14311014/Firmware+Compatible+Products">14.31.1014</a></td>
   </tr>
   <tr>
@@ -111,13 +111,13 @@ The following table lists node types, the NICs that these nodes use, the speeds 
     <td><a href="https://www.intel.com/content/www/us/en/embedded/products/networking/82599-10-gbe-controller-datasheet.html?asset=2377">82599-data-sheet</a></td>
   </tr>
   <tr>
-    <td>ConnectX-4Lx</td>
+    <td>ConnectX-4 Lx</td>
     <td><a href="https://docs.nvidia.com/networking/display/ConnectX4LxFirmwarev14311014/Firmware+Compatible+Products">14.31.1014</a></td>
   </tr>
   <tr>
     <td rowspan="2"><ul><li>K-432T</li></ul></td>
     <td rowspan="2">25 Gbps</td>
-    <td>ConnectX-4Lx</td>
+    <td>ConnectX-4 Lx</td>
     <td><a href="https://docs.nvidia.com/networking/display/ConnectX4LxFirmwarev14311014/Firmware+Compatible+Products">14.31.1014</a></td>
   </tr>
   <tr>
@@ -137,7 +137,7 @@ The following table lists node types, the NICs that these nodes use, the speeds 
     <td><a href="https://network.nvidia.com/sites/default/files/related-docs/firmware/ConnectX3-FW-2_42_5000-release_notes.pdf)">2.42.5000</a></td>
   </tr>
   <tr>
-    <td>ConnectX-4Lx</td>
+    <td>ConnectX-4 Lx</td>
     <td><a href="https://docs.nvidia.com/networking/display/ConnectX4LxFirmwarev14311014/Firmware+Compatible+Products">14.31.1014</a></td>
   </tr>
   <tr>
