@@ -90,7 +90,7 @@ This section provides technical specifications for {{site.sm1114s}} nodes.
     </tr>
     <tr>
       <td><strong>Non-Operating Temperature</strong></td>
-      <td colspan="3" style="text-align: center;">40&deg;F&ndash;158&deg;F (-40&deg;C&ndash;70&deg;C)</td>
+      <td colspan="3" style="text-align: center;">-40&deg;F&ndash;158&deg;F (-40&deg;C&ndash;70&deg;C)</td>
     </tr>
     <tr>
       <td><strong>Operating Relative Humidity</strong></td>
