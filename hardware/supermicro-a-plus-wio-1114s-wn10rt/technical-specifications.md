@@ -20,7 +20,7 @@ This section provides technical specifications for {{site.sm1114s}} nodes.
   <tbody>
     <tr>
       <td><strong>Connectivity Ports (NIC)</strong></td>
-      <td colspan="3" style="text-align: center;">4 &#215; 100 GbE (2 &#215; Mellanox CX-6 NICs)</td>
+      <td colspan="3" style="text-align: center;">4 &#215; 100 GbE (2 &#215; Mellanox ConnectX-6 NICs)</td>
     </tr>
     <tr>
       <td><strong>Management Ports (BMC)</strong></td>
