@@ -48,7 +48,7 @@ This section explains the most common scenarios of replacing failed hardware com
 
 
 ## To Replace a Drive
-Your {{site.sm1014s}} chassis contains 12 HDDs, 4 NVMe drives, and one NVMe boot drive (in an internal M.2 slot). For information about replacing a drive, see [Drive Slot Mapping](drive-slot-mapping.md) and the following topics in the Supermicro documentation.
+Your {{site.sm1014s}} chassis contains 12 HDDs, 4 NVMe drives, and one NVMe boot drive (in an internal M.2 expansion slot). For information about replacing a drive, see [Drive Bay Mapping](drive-bay-mapping.md) and the following topics in the Supermicro documentation.
 
 * [Storage Drives (HDD and NVMe)](https://www.supermicro.com/manuals/superserver/1U/MNL-2436.pdf#page=40)
 

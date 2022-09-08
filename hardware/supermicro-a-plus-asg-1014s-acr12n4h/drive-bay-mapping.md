@@ -1,12 +1,12 @@
 ---
-title: "Drive Slot Mapping in Supermicro A+ ASG-1014S-ACR12N4H Nodes"
-summary: "This section explains the drive slot mapping on Supermicro A+ ASG-1014S-ACR12N4H nodes."
-permalink: hardware/supermicro-a-plus-asg-1014s-acr12n4h/drive-slot-mapping.html
+title: "Drive Bay Mapping in Supermicro A+ ASG-1014S-ACR12N4H Nodes"
+summary: "This section explains the drive bay mapping on Supermicro A+ ASG-1014S-ACR12N4H nodes."
+permalink: hardware/supermicro-a-plus-asg-1014s-acr12n4h/drive-bay-mapping.html
 sidebar: hardware_sidebar
-keywords: drive, hard drive, drive slot, mapping, Supermicro 1014S, ACR12N4H
+keywords: drive, hard drive, drive bay, mapping, Supermicro 1014S, ACR12N4H
 ---
 
-This section explains the drive slot mapping in {{site.sm1014s}} nodes.
+This section explains the drive bay mapping in {{site.sm1014s}} nodes.
 
 Your {{site.sm1014s}} chassis contains 12 HDDs, 4 NVMe drives, and one NVMe boot drive (in an internal M.2 slot).
 
