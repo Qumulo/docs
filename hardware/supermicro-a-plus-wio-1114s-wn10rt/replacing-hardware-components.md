@@ -52,7 +52,7 @@ Replacement drives, including the on-site spare drives that you received with yo
 
 1. Locate the drive that requires replacement using the drive bay mapping.
 
-   {% include image.html alt="Supermicro Drive Slot Mapping" file="supermicro-1114s-drive-slot-mapping.png" url="/hardware/supermicro-a-plus-wio-1114s-wn10rt/images/supermicro-1114s-drive-slot-mapping.png" %}
+   {% include image.html alt="Supermicro Drive Bay Mapping" file="supermicro-1114s-drive-bay-mapping.png" url="/hardware/supermicro-a-plus-wio-1114s-wn10rt/images/supermicro-1114s-drive-bay-mapping.png" %}
 
 1. To remove the existing drive, do the following:
 
