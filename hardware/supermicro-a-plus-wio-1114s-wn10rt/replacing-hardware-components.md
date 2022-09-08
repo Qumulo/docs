@@ -44,7 +44,7 @@ This section explains the most common scenarios of replacing failed hardware com
 {% include note.html content="In some cases, after the part replacement procedure, the message `FIX: Run the FVT flash command.` appears. Enter `1` as you would for a [fixable issue](/hardware/supermicro-a-plus-wio-1114s-wn10rt/getting-started.html#fixable-issues-during-installation) to reboot the node and then repeat the part replacement procedure." %}
 
 ## To Replace a Drive
-The ten hot-swap drive carriers are located at the front of your {{site.sm1114s}} chassis. The boot drive is located in the internal M.2 slot.
+The ten hot-swap drive carriers are located at the front of your {{site.sm1114s}} chassis. The boot drive is located in the internal M.2 bay.
 
 Replacement drives, including the on-site spare drives that you received with your original nodes, are provided without a drive carrier. When replacing a faulty drive, you must remove the existing drive from its carrier and then insert the new drive into the carriers. The drive carriers are toolless and don't require any screws.
 

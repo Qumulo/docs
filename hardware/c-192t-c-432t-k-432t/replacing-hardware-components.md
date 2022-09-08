@@ -60,7 +60,7 @@ This section explains how you can replace the chassis in C-192T, C-432T, and K-4
 
 1. Install the replacement chassis in an appropriate location in your server rack.
 
-1. Starting with the top drawer, transfer the HDDs from each tray in the original chassis into a corresponding slot in the replacement chassis. For more information about drive bays, see [C-Series Drive Diagrams](https://care.qumulo.com/hc/en-us/articles/360020198853) on Qumulo Care.
+1. Starting with the top drawer, transfer the HDDs from each tray in the original chassis into a corresponding bay in the replacement chassis. For more information about drive bays, see [C-Series Drive Diagrams](https://care.qumulo.com/hc/en-us/articles/360020198853) on Qumulo Care.
 
    {% include important.html content="Work on one drawer at a time. If you apply 2 kg (or more) of downward force to a drawer, it might deform while opened." %}
 
