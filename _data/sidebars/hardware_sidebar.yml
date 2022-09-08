@@ -144,8 +144,8 @@ entries:
       url: /hardware/supermicro-a-plus-wio-1114s-wn10rt/getting-started.html
       output: web, pdf
 
-    - title: Drive Slot Mapping
-      url: /hardware/supermicro-a-plus-wio-1114s-wn10rt/drive-slot-mapping.html
+    - title: Drive Bay Mapping
+      url: /hardware/supermicro-a-plus-wio-1114s-wn10rt/drive-bay-mapping.html
       output: web, pdf
 
     - title: Panel LEDs
