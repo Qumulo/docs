@@ -1,12 +1,12 @@
 ---
-title: "Front and Rear Drive Locations on HPE ProLiant DL325 Gen10 Plus Nodes"
-summary: "This section explains the front and rear drive locations in your HPE ProLiant DL325 Gen10 Plus node."
+title: "Front and Rear Drive Bays on HPE ProLiant DL325 Gen10 Plus Nodes"
+summary: "This section explains the front and rear drive bays in your HPE ProLiant DL325 Gen10 Plus node."
 permalink: hardware/hpe-dl325-gen10-plus/front-rear-drives.html
 sidebar: hardware_sidebar
-keywords: front drive, rear drive, drive, drive location
+keywords: front drive, rear drive, drive, drive bay
 ---
 
-This section explains the front and rear drive locations in your {{site.dl325g10p}} node. On this platform, the drives in a node are arranged into _rows_ and groups called _boxes_.
+This section explains the front and rear drive bays in your {{site.dl325g10p}} node. On this platform, the drives in a node are arranged into _rows_ and groups called _boxes_.
 
 ## Front Drive Row
 The following diagram shows the front drive row. In the diagram, box 1 holds bays 1-8 (indicated in green) and box 2 holds bays 1-2 (indicated in orange).
