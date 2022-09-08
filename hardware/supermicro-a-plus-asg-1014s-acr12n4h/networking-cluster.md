@@ -19,11 +19,7 @@ Your node requires the following resources.
 * A network switch with the following specifications:
 
   * 25 Gbps or 100 Gbps Ethernet
-
-    {{site.data.alerts.note}}
-    {{site.use40gbps}}
-    {{site.data.alerts.end}}   
-
+  
   * Fully non-blocking architecture
 
   * IPv6 capability
