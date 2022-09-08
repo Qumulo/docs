@@ -36,7 +36,7 @@ The Qumulo-Certified Hardware Guide is a collection of guides that provide infor
   * [Racking Nodes](supermicro-a-plus-asg-1014s-acr12n4h/racking-nodes.md)
   * [Wiring Nodes](supermicro-a-plus-asg-1014s-acr12n4h/wiring-nodes.md)
   * [Getting Started](supermicro-a-plus-asg-1014s-acr12n4h/getting-started.md)
-  * [Drive Slot Mapping](supermicro-a-plus-asg-1014s-acr12n4h/drive-slot-mapping.md)
+  * [Drive Bay Mapping](supermicro-a-plus-asg-1014s-acr12n4h/drive-bay-mapping.md)
   * [Panel LEDs](supermicro-a-plus-asg-1014s-acr12n4h/panel-leds.md)
   * [Cluster Networking](supermicro-a-plus-asg-1014s-acr12n4h/networking-cluster.md)
   * [Replacing Hardware Components](supermicro-a-plus-asg-1014s-acr12n4h/replacing-hardware-components.md)
