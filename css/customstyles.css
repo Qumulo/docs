@@ -1164,12 +1164,12 @@ span.soft {
     border: 1px solid #dedede;
 }
 
-
+/*
 @media only screen and (min-width: 900px), only screen and (min-device-width: 900px) {
     .col-md-9 img {
         max-height: 700px;
     }
-}
+}*/
 
 *:hover > .anchorjs-link {
     transition: color .25s linear;
