@@ -32,6 +32,58 @@ entries:
       url: /administrator-guide/
       output: web
 
+  - title: Getting Started with Qumulo Core
+    output: web, pdf
+    folderitems:
+
+    - title: Creating a Qumulo Core USB Drive Installer
+      url: /administrator-guide/qumulo-core/creating-usb-drive-installer.html
+      output: web, pdf
+
+    - title: Installing VPN Keys on a Qumulo Cluster
+      url: /administrator-guide/qumulo-core/installing-vpn-keys-on-cluster.html
+      output: web, pdf
+
+    - title: Supported Configurations and Known Limits for Qumulo Core
+      url: /administrator-guide/qumulo-core/supported-configurations-known-limits.html
+      output: web, pdf
+
+  - title: Configuring the Qumulo Core Web UI
+    output: web, pdf
+    folderitems:
+
+    - title: Setting the Web UI Login Banner
+      url: /administrator-guide/qumulo-core/web-ui-login-banner.html
+      output: web, pdf
+
+    - title: Setting the Web UI Inactivity Timeout
+      url: /administrator-guide/qumulo-core/web-ui-inactivity-timeout.html
+      output: web, pdf
+
+  - title: Protecting Your Data
+    output: web, pdf
+    folderitems:
+
+    - title: Increasing the Node-Fault-Tolerance Level for Your Cluster During Node-Add Operations
+      url: /administrator-guide/qumulo-core/node-fault-tolerance-level.html
+      output: web, pdf
+
+    - title: Managing Snapshots
+      url: /administrator-guide/qumulo-core/managing-snapshots.html
+      output: web, pdf
+
+  - title: Moving Your Data
+    output: web, pdf
+    folderitems:
+
+    - title: Using Qumulo Shift-To to Copy Objects to Amazon S3
+      url: /administrator-guide/qumulo-core/shift-to-s3.html
+      output: web, pdf
+
+    - title: Using Qumulo Shift-From for Amazon S3 to Copy Objects
+      url: /administrator-guide/qumulo-core/shift-from-s3.html
+      output: web, pdf
+
   - title: Working with File System Protocols
     output: web, pdf
     folderitems:
@@ -78,40 +130,4 @@ entries:
 
     - title: Troubleshooting NFSv4.1 with Kerberos
       url: /administrator-guide/kerberos/kerberos-troubleshooting.html
-      output: web, pdf
-
-  - title: Working with Qumulo Core
-    output: web, pdf
-    folderitems:
-
-    - title: Creating a Qumulo Core USB Drive Installer
-      url: /administrator-guide/qumulo-core/creating-usb-drive-installer.html
-      output: web, pdf
-
-    - title: Increasing the Node-Fault-Tolerance Level for Your Cluster During Node-Add Operations
-      url: /administrator-guide/qumulo-core/node-fault-tolerance-level.html
-      output: web, pdf
-  
-    - title: Using Qumulo Shift-To to Copy Objects to Amazon S3
-      url: /administrator-guide/qumulo-core/shift-to-s3.html
-      output: web, pdf
-      
-    - title: Using Qumulo Shift-From for Amazon S3 to Copy Objects
-      url: /administrator-guide/qumulo-core/shift-from-s3.html
-      output: web, pdf
-  
-    - title: Managing Snapshots
-      url: /administrator-guide/qumulo-core/managing-snapshots.html
-      output: web, pdf
-
-    - title: Setting the Web UI Login Banner
-      url: /administrator-guide/qumulo-core/web-ui-login-banner.html
-      output: web, pdf
-
-    - title: Setting the Web UI Inactivity Timeout
-      url: /administrator-guide/qumulo-core/web-ui-inactivity-timeout.html
-      output: web, pdf
-
-    - title: Supported Configurations and Known Limits for Qumulo Core
-      url: /administrator-guide/qumulo-core/supported-configurations-known-limits.html
       output: web, pdf
