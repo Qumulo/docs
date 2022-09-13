@@ -63,14 +63,12 @@ This section provides technical specifications for {{site.sm1114s}} nodes.
     <tr>
       <td><strong>Typical Power Consumption</strong></td>
       <td>265 W</td>
-      <td>230 W</td>
-      <td>230 W</td>
+      <td colspan="2" style="text-align: center;">230 W</td>
     </tr>
     <tr>
       <td><strong>Typical Thermal Rating</strong></td>
       <td>904 BTU/hr</td>
-      <td>785 BTU/hr</td>
-      <td>785 BTU/hr</td>
+      <td colspan="2" style="text-align: center;">785 BTU/hr</td>
     </tr>
     <tr>
       <td><div><strong>Maximum Power Consumption</strong></div></td>
