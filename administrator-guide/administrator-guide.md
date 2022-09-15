@@ -18,6 +18,8 @@ The Qumulo Administrator Guide is a growing collection of information about conf
 * **Configuring the Qumulo Core Web UI**
   * [Setting the Web UI Login Banner](qumulo-core/web-ui-login-banner.html)
   * [Setting the Web UI Inactivity Timeout](qumulo-core/web-ui-inactivity-timeout.md)
+* **Configuring Networking for Qumulo Core**
+  * [Required Networking Ports for Qumulo Core](qumulo-core/required-networking-ports.md)
 * **Protecting Your Data**
   * [Increasing the Node-Fault-Tolerance Level for Your Cluster During Node-Add Operations](qumulo-core/node-fault-tolerance-level.md)$
   * [Managing Snapshots](qumulo-core/managing-snapshots.md)
