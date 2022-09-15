@@ -139,9 +139,9 @@ This section explains which inbound and outbound networking ports Qumulo Core re
       <td>DCERPC or Netlogon (Domain Controller Binding)</td>
     </tr>
     <tr>
-      <td>389</td>
+      <td>389<br>636</td>
       <td>TCP</td>
-      <td>LDAP to AD or standalone LDAP server*</td>
+      <td>LDAP to Active Directory or to a standalone LDAP server*</td>
     </tr>
     <tr>
       <td>443</td>
