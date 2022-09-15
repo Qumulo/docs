@@ -48,6 +48,14 @@ entries:
       url: /administrator-guide/qumulo-core/supported-configurations-known-limits.html
       output: web, pdf
 
+  - title: Configuring Networking for Qumulo Core
+    output: web, pdf
+    folderitems:
+
+    - title: Required Networking Ports for Qumulo Core
+      url: /administrator-guide/qumulo-core/required-networking-ports.html
+      output: web, pdf
+
   - title: Configuring the Qumulo Core Web UI
     output: web, pdf
     folderitems:
