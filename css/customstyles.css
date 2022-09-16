@@ -23,6 +23,10 @@ body {
   body { display: block !important; }
 }
 
+@media print {
+  .page-break { display: block; page-break-before: always; }
+}
+
 /* Colour only body links when :visited for accessibility */
 a:visited {
   color:#3d33b7;
