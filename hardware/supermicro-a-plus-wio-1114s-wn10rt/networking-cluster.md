@@ -106,6 +106,8 @@ You can connect a {{site.sm1114s}} cluster to a single switch. If this switch be
 
   * {{site.splitNetLACP}}
 
+<span class="page-break"></span>
+
 ## Four-Node Cluster Architecture Diagram
 The following is the recommended configuration for a four-node cluster connected to an out-of-band management switch, redundant front-end switches, and redundant back-end switches.
 
