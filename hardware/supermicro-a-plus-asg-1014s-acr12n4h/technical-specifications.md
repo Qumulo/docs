@@ -8,6 +8,8 @@ keywords: technical specifications, tech specs, specs, specifications, Supermicr
 
 This section provides technical specifications for {{site.sm1014s}} nodes.
 
+{% include content-reuse/hybrid-platforms-find-out-ssd-size.md %}
+
 <table cellspacing="0" cellpadding="0">
   <thead>
     <tr>
@@ -30,7 +32,7 @@ This section provides technical specifications for {{site.sm1014s}} nodes.
       <td colspan="5" style="text-align: center;">1 &#215; 1 GbE Base-T (RJ45)</td>
     </tr>
     <tr>
-      <td><strong>Solid State Storage Media</strong></td>
+      <td><strong>Solid State Storage Media (Cache)</strong></td>
       <td colspan="4" style="text-align: center;">4 &#215; 1.92 TB NVMe</td>
       <td>4 &#215; 960 GB NVMe</td>
     </tr>
