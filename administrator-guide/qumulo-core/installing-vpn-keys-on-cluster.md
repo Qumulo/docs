@@ -3,9 +3,7 @@ title: "Installing VPN Keys on a Qumulo Cluster"
 summary: "This section explains how you can install VPN keys on your Qumulo cluster over a network."
 permalink: /administrator-guide/qumulo-core/installing-vpn-keys-on-cluster.html
 sidebar: administrator_guide_sidebar
-keywords: vpn, key, keys, cluster, networki
-varCopyDecompress: 1. Copy the `.zip` file from Qumulo Care to a computer on the same network as your cluster, and decompress the file.
-varInstallVpnKeys: 1. Install the VPN keys on all nodes in the cluster.
+keywords: vpn, key, cluster, network
 ---
 
 This section explains how you can install VPN keys on your Qumulo cluster over a network.
@@ -13,9 +11,9 @@ This section explains how you can install VPN keys on your Qumulo cluster over a
 ## Prerequisites
 Before you begin, make sure that you have done the following.
 
-* Obtain `.zip` file with VPN keys from Qumulo Care
+* Obtain a `.zip` file with VPN keys from Qumulo Care
 
-* Whitelist the following domains in your firewall rules
+* Whitelist the following domains in your firewall rules:
 
   * `ep.qumulo.com`
 
@@ -28,47 +26,46 @@ Before you begin, make sure that you have done the following.
 {% include note.html content="If your firewall performs stateful packet inspection (also known as _SPI_ or _deep-packet inspection_), you must allow OpenVPN (SSL VPN) explicitly, rather than only open port 443." %}
 
 
-## Installing VPN Keys on macOS
-{{page.varCopyDecompress}}
+## To Install VPN Keys
+1. Copy the `.zip` file from Qumulo Care to a computer on the same network as your cluster, and decompress the file.
 
-1. Open Terminal and use the `scp` command to copy the VPN key files to one of the nodes. For example:
+1. Install the `qq` CLI on the same computer. For more information, see [QQ CLI: Get Started](https://care.qumulo.com/hc/en-us/articles/115008165008) on Qumulo Care.
 
-   ```bash
-   scp /my-path/* admin@{{site.exampleIP}}:~/
-   ```
-
-1. Use SSH to connect to the node to which you have copied the VPN key files. For example:
+1. To log in to your cluster, use the `qq` CLI and specify your cluster's IP address. For example:
 
    ```bash
-   ssh admin@{{site.exampleIP}}
+   qq --host 203.0.113.1 login
+   ```
+    
+   {% include note.html content="Your user must have `PRIVILEGE_SUPPORT_WRITE` and `PRIVILEGE_SUPPORT_READ`." %}
+
+1. To install the VPN keys on your cluster, specify your cluster's IP address and the path to the directory that contains the VPN keys. For example:
+
+   ```bash
+   qq --host 203.0.113.1 install_vpn_keys /my/path
+   ```
+    
+1. To verify that the VPN keys installed correctly, use the `get_vpn_keys` command. For example:
+
+   ```bash
+   qq --host 203.0.113.1 get_vpn_keys
    ```
 
-{{page.varInstallVpnKeys}}
-
-{% include content-reuse/installing-vpn-keys-on-cluster-final-steps.md %}
+1. Remove any local copies of the VPN key files.
 
 
-## Installing VPN Keys on Windows
+## To Register Cluster with Cloud-Based Monitoring
 
-{% capture content_tag %}On Windows Server 2022, Windows Server 2019, and Windows 10 (build 1809 and higher), you can use [OpenSSH](https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse).{% endcapture %}
-{% include note.html content=content_tag %}
+1. To retrieve your cluster ID, use the `node_state_get` command.
 
-1. Download `putty.exe` and `pscp.exe` from the [Putty website](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html).
-
-{{page.varCopyDecompress}}
-
-1. Open Command Prompt, navigate to the folder that contains the executable files, and then use the `pscp` commnd to copy the VPN key files to one of the nodes. For example:
-
-   ```
-   pscp\my-path\* admin@{{site.exampleIP}}:/home/admin
+   ```bash
+   qq --host 203.0.113.1 node_state_get
    ```
 
-1. Use the `putty` command to connect to the node to which you have copied the VPN key files. For example:
+1. Send the output of the command to Qumulo Care.
 
-   ```
-   putty.exe -ssh admin@{{site.exampleIP}}
-   ```
+1. Use the Web UI to enable Qumulo Care Remote Support.
 
-{{page.varInstallVpnKeys}}
+1. Notify Qumulo Care when this process is complete.
 
-{% include content-reuse/installing-vpn-keys-on-cluster-final-steps.md %}
+   Qumulo Care verifies your VPN functionality and then adds your cluster to Cloud-Based Monitoring.
