@@ -29,6 +29,8 @@ The Qumulo Administrator Guide is a growing collection of information about conf
 * **Working with File System Protocols**
   * [Enabling and Using NFSv4.1 on a Qumulo Cluster](protocols/nfsv4.1-enabling-using.md)
   * [Managing File Access Permissions by Using NFSv4.1 Access Control Lists (ACLs)](protocols/nfsv4.1-acls.md)
+* **Working with the qq CLI**
+  * [Enabling Autocomplete for the qq CLI](qq-cli/enabling-autocomplete.md)
 * **Using NFSv4.1 with Kerberos**
   * [How NFSv4.1 Works with Kerberos in Qumulo Core](kerberos/kerberos.md)
   * [Prerequisites for Joining a Qumulo Cluster to Active Directory](kerberos/kerberos-prerequisites-joining-cluster-active-directory.md)
