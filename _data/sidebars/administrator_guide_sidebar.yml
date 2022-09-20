@@ -48,6 +48,18 @@ entries:
       url: /administrator-guide/qumulo-core/supported-configurations-known-limits.html
       output: web, pdf
 
+  - title: Upgrading Qumulo Core
+    output: web, pdf
+    folderitems:
+
+    - title: Performing Instant Software Upgrades and Platform Upgrades
+      url: /administrator-guide/upgrades/instant-software-platform.html
+      output: web, pdf
+
+    - title: Qumulo Core Upgrade Mode Reference
+      url: /administrator-guide/upgrades/mode-reference.html
+      output: web, pdf
+
   - title: Configuring Networking for Qumulo Core
     output: web, pdf
     folderitems:
