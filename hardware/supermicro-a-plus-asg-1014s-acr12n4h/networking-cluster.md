@@ -6,7 +6,7 @@ sidebar: hardware_sidebar
 keywords: network, networking, cluster, switch, Ethernet, ports, IP, Supermicro 1014S, ACR12N4H
 ---
 
-This section explains the networking prerequisites, outlines the recommended configuration, and explains how you can connect to redundant switches or to a single switch.
+This section explains the networking prerequisites, outlines the recommended configuration, and explains how to connect to redundant switches or to a single switch.
 
 {% include content-reuse/see-technical-specifications.md %}
 

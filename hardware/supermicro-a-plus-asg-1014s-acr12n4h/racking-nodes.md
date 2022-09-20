@@ -1,6 +1,6 @@
 ---
 title: "Racking Your Supermicro A+ ASG-1014S-ACR12N4H Nodes"
-summary: "This section explains how you can rack your Supermicro A+ ASG-1014S-ACR12N4H nodes."
+summary: "This section explains how to rack your Supermicro A+ ASG-1014S-ACR12N4H nodes."
 permalink: hardware/supermicro-a-plus-asg-1014s-acr12n4h/racking-nodes.html
 sidebar: hardware_sidebar
 keywords: technical specifications, tech specs, specs, specifications, Supermicro 1014S, ACR12N4H
