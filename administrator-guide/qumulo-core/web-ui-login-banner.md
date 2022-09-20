@@ -1,12 +1,12 @@
 ---
 title: "Setting the Web UI Login Banner"
-summary: "This section explains how you can set a login banner for the Qumulo Core Web UI."
+summary: "This section explains how to set a login banner for the Qumulo Core Web UI."
 permalink: /administrator-guide/qumulo-core/web-ui-login-banner.html
 sidebar: administrator_guide_sidebar
 keywords: login, banner, greeting, web ui, qumulo core
 ---
 
-This section explains how you can set a login banner for the Qumulo Core Web UI.
+This section explains how to set a login banner for the Qumulo Core Web UI.
 
 In Qumulo Core 5.2.1 (and higher), clusters have an optional login banner that users must acknowledge before being they can log in to the Web UI.
 

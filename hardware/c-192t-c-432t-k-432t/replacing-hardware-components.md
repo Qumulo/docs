@@ -1,6 +1,6 @@
 ---
 title: "Replacing the Hardware Components in Your C-192T, C-432T, and K-432T Nodes"
-summary: "This section explains how you can replace the hardware components in C-192T, C-432T, and K-432T nodes."
+summary: "This section explains how to replace the hardware components in C-192T, C-432T, and K-432T nodes."
 permalink: /hardware/c-192t-c-432t-k-432t/replacing-hardware-components.html
 redirect_from:
   - /c-192t-c-432t-chassis-replacement.html
@@ -12,7 +12,7 @@ keywords: chassis, chassis replacement, c-192t, c-432t, k-432t, 2u, 2u hybrid, 2
 ---
 
 ## Replacing the Chassis
-This section explains how you can replace the chassis in C-192T, C-432T, and K-432T nodes. 
+This section explains how to replace the chassis in C-192T, C-432T, and K-432T nodes. 
 
 ### Step 1: Prepare for Chassis Replacement
 {% include note.html content="We strongly suggest having another person help you with this process." %}
