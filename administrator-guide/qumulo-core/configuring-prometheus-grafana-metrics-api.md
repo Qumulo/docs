@@ -8,13 +8,13 @@ sidebar: administrator_guide_sidebar
 
 {% include content-reuse/openmetrics-api-introduction.md %}
 
-This section describes how you can configure Prometheus&mdash;an open-source time-series database and collection system&mdash;to connect to the Qumulo API and poll its data at regular intervals. It also describes how you can use Grafana&mdash;an open-source analytics tool&mdash;to create dashboards with graphs and data that you can use to monitor the health of your Qumulo cluster, generate alerts, and improve your capacity statistics.
+This section describes how to configure Prometheus&mdash;an open-source time-series database and collection system&mdash;to connect to the Qumulo API and poll its data at regular intervals. It also describes how to use Grafana&mdash;an open-source analytics tool&mdash;to create dashboards with graphs and data that you can use to monitor the health of your Qumulo cluster, generate alerts, and improve your capacity statistics.
 
 {% include important.html content="To use the OpenMetrics API, you you must configure your cluster to emit metrics without authentication. If your cluster isn't configured for this, open a request at [Qumulo Care](https://care.qumulo.com/hc/en-us/requests/new)." %}
 
 
 ## Installing and Configuring Prometheus
-The following steps explain how you can install and configure Prometheus.
+The following steps explain how to install and configure Prometheus.
 
 1. Download the `.tar.gz` file from the [Prometheus download page](https://prometheus.io/download/#prometheus).
 
@@ -73,7 +73,7 @@ Prometheus is running on your server and connected to your cluster. For addition
 
 
 ## Installing and Configuring Grafana
-The following steps explain how you can install Grafana and configure it to connect to Prometheus.
+The following steps explain how to install Grafana and configure it to connect to Prometheus.
 
 1. For installation on installing Grafana, see [Install Grafana](https://grafana.com/docs/grafana/latest/installation/) in the Grafana documentation.
 
@@ -84,7 +84,7 @@ The following steps explain how you can install Grafana and configure it to conn
 The following examples show basic graphing and alerting configurations.
 
 ### To Create a Throughput Graph
-This example explains how you can configure a Grafana graph to show total read and write throughput across your cluster.
+This example explains how to configure a Grafana graph to show total read and write throughput across your cluster.
 
 1. In Grafana, do one of the following:
 
@@ -121,7 +121,7 @@ This example explains how you can configure a Grafana graph to show total read a
 For more information about dashboards, panels, and other visualizations, see the [Grafana documentation](https://grafana.com/docs/grafana/latest/).
 
 ### To Create an Alert for an Offline Node
-An offline node creates a risk of additional failures that can cause reduced performance, inability to write to the cluster, or take the entire cluster offline. This example explains how you can receive an alert when a node in a cluster goes offline. For more information, see [Create Alerts](https://grafana.com/docs/grafana/latest/alerting/old-alerting/create-alerts/) and [Legacy Grafana Alerts](https://grafana.com/docs/grafana/latest/alerting/old-alerting/) in the Grafana documentation.
+An offline node creates a risk of additional failures that can cause reduced performance, inability to write to the cluster, or take the entire cluster offline. This example explains how to receive an alert when a node in a cluster goes offline. For more information, see [Create Alerts](https://grafana.com/docs/grafana/latest/alerting/old-alerting/create-alerts/) and [Legacy Grafana Alerts](https://grafana.com/docs/grafana/latest/alerting/old-alerting/) in the Grafana documentation.
 
 1. Configure a graph for the `qumulo_quorum_node_is_offline` metric.
 
@@ -156,7 +156,7 @@ An offline node creates a risk of additional failures that can cause reduced per
 1. Click {% include inline_image.html alt="Grafana Save Icon" file="grafana-save-icon.png" %}.
 
 ### To Create an Alert for a Full Cluster
-It is important for an administrator to know how much free space is left on a cluster. This example explains how you can configure a graph to show how full the cluster is and to receive an alert when your cluster becomes almost full. For more information, see [Create Alerts](https://grafana.com/docs/grafana/latest/alerting/old-alerting/create-alerts/) and [Legacy Grafana Alerts](https://grafana.com/docs/grafana/latest/alerting/old-alerting/) in the Grafana documentation.
+It is important for an administrator to know how much free space is left on a cluster. This example explains how to configure a graph to show how full the cluster is and to receive an alert when your cluster becomes almost full. For more information, see [Create Alerts](https://grafana.com/docs/grafana/latest/alerting/old-alerting/create-alerts/) and [Legacy Grafana Alerts](https://grafana.com/docs/grafana/latest/alerting/old-alerting/) in the Grafana documentation.
 
 1. Configure a graph for used space. Use the example in the [To Create a Throughput Graph](#to-create-a-throughput-graph) section and replace the query with `1 - qumulo_free_bytes / qumulo_capacity_bytes`.
    
