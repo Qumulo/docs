@@ -15,6 +15,9 @@ The Qumulo Administrator Guide is a growing collection of information about conf
   * [Creating a Qumulo Core USB Drive Installer](qumulo-core/creating-usb-drive-installer.md)
   * [Installing VPN Keys on a Qumulo Cluster](qumulo-core/installing-vpn-keys-on-cluster.md)
   * [Supported Configurations and Known Limits for Qumulo Core](qumulo-core/supported-configurations-known-limits.md)
+* **Upgrading Qumulo Core**
+  * [Performing Instant Software Upgrades and Platform Upgrades](upgrades/instant-software-platform.md)
+  * [Qumulo Core Upgrade Mode Reference](upgrades/mode-reference.md)
 * **Configuring the Qumulo Core Web UI**
   * [Setting the Web UI Login Banner](qumulo-core/web-ui-login-banner.html)
   * [Setting the Web UI Inactivity Timeout](qumulo-core/web-ui-inactivity-timeout.md)
