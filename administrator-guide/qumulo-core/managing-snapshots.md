@@ -1,6 +1,6 @@
 ---
 title: "Managing Snapshots"
-summary: "This section explains how you can use the Qumulo Core Web UI to view and manage your saved snapshots."
+summary: "This section explains how to use the Qumulo Core Web UI to view and manage your saved snapshots."
 permalink: /administrator-guide/qumulo-core/managing-snapshots.html
 redirect_from:
   - /managing-snapshots.html

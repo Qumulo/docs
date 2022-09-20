@@ -1,6 +1,6 @@
 ---
 title: "Using Qumulo Shift-To to Copy Objects to Amazon S3"
-summary: "This section explains how you can use Qumulo Shift-To to copy objects from a directory in a Qumulo cluster to a folder in an Amazon Simple Storage Service (Amazon S3) bucket."
+summary: "This section explains how to use Qumulo Shift-To to copy objects from a directory in a Qumulo cluster to a folder in an Amazon Simple Storage Service (Amazon S3) bucket."
 permalink: /administrator-guide/qumulo-core/shift-to-s3.html
 redirect_from:
   - /shift-to-s3.html
@@ -9,7 +9,7 @@ sidebar: administrator_guide_sidebar
 keywords: shift to, copy, copy objects, copy files, object copy, amazon s3, s3, iam permissions, iam, cli commands, cli, shift relationships, shift, relationships, configuration details, status
 ---
 
-This section explains how you can use Qumulo Shift-To to copy objects from a directory in a Qumulo cluster to a folder in an Amazon Simple Storage Service (Amazon S3) bucket (cloud object store). For more information about copying objects from S3 to Qumulo, see [Using Qumulo Shift-From for Amazon S3 to Copy Objects](/shift-from-s3.md).
+This section explains how to use Qumulo Shift-To to copy objects from a directory in a Qumulo cluster to a folder in an Amazon Simple Storage Service (Amazon S3) bucket (cloud object store). For more information about copying objects from S3 to Qumulo, see [Using Qumulo Shift-From for Amazon S3 to Copy Objects](/shift-from-s3.md).
 
 The guide describes how a Shift-To relationship works and includes information about the prerequisites, IAM permissions, and CLI commands that you can use to copy files and manage Shift relationships.
 
@@ -137,7 +137,7 @@ A new relationship for subsequent uploads doesn't share any tracking information
 
 
 ## Using the Qumulo Web UI to Copy Files and Manage Relationships
-This section describes how you can use the Qumulo Web UI 3.2.5 (and higher) to copy files from a Qumulo cluster to Amazon S3, review Shift relationship details, stop a running copy job, repeat a completed copy job, and delete a relationship.
+This section describes how to use the Qumulo Web UI 3.2.5 (and higher) to copy files from a Qumulo cluster to Amazon S3, review Shift relationship details, stop a running copy job, repeat a completed copy job, and delete a relationship.
 
 ### To Copy Files to Amazon S3
 1. Log in to Qumulo Core.
@@ -167,7 +167,7 @@ This section describes how you can use the Qumulo Web UI 3.2.5 (and higher) to c
 
 
 ## Using the Qumulo CLI to Copy Files and Manage Relationships
-This section describes how you can use the Qumulo CLI 3.2.5 (and higher) to copy files from a Qumulo cluster to Amazon S3, review Shift relationship details, stop a running copy job, repeat a completed copy job, and delete a relationship.
+This section describes how to use the Qumulo CLI 3.2.5 (and higher) to copy files from a Qumulo cluster to Amazon S3, review Shift relationship details, stop a running copy job, repeat a completed copy job, and delete a relationship.
 
 ### Copying Files from Amazon S3
 To copy files, use the `replication_create_object_relationship` command and specify the following:
@@ -179,7 +179,7 @@ To copy files, use the `replication_create_object_relationship` command and spec
 * AWS access key ID
 * AWS secret access key
 
-The following example shows how you can create a relationship between the directory `/my-dir/` on a Qumulo cluster and the S3 bucket `my-bucket` and folder `/my-folder/` in the `us-west-2` AWS region. The secret access key is associated with the access key ID.
+The following example shows how to create a relationship between the directory `/my-dir/` on a Qumulo cluster and the S3 bucket `my-bucket` and folder `/my-folder/` in the `us-west-2` AWS region. The secret access key is associated with the access key ID.
 
 ```bash
 qq replication_create_object_relationship \

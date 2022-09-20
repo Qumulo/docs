@@ -1,12 +1,12 @@
 ---
 title: "Installing VPN Keys on a Qumulo Cluster"
-summary: "This section explains how you can install VPN keys on your Qumulo cluster over a network."
+summary: "This section explains how to install VPN keys on your Qumulo cluster over a network."
 permalink: /administrator-guide/qumulo-core/installing-vpn-keys-on-cluster.html
 sidebar: administrator_guide_sidebar
 keywords: vpn, key, cluster, network
 ---
 
-This section explains how you can install VPN keys on your Qumulo cluster over a network.
+This section explains how to install VPN keys on your Qumulo cluster over a network.
 
 ## Prerequisites
 Before you begin, make sure that you have done the following.
