@@ -52,23 +52,23 @@ We recommend the following configuration for your node.
 ## Connecting to Redundant Switches
 For redundancy, we recommend connecting your cluster to dual switches. If either switch becomes inoperative, the cluster is still be accessible from the remaining switch.
 
-  * Connect the two NIC ports (2 &#215; 25 Gbps or 100 Gbps) on your nodes to separate switches.
+* Connect the two NIC ports (2 &#215; 25 Gbps or 100 Gbps) on your nodes to separate switches.
 
-  * The uplinks to the client network must equal the bandwidth from the cluster to the switch.
+* The uplinks to the client network must equal the bandwidth from the cluster to the switch.
 
-  * The two ports form an LACP port channel using a multi-chassis link aggregation group.
+* The two ports form an LACP port channel using a multi-chassis link aggregation group.
 
-  * Use an appropriate inter-switch link or virtual port channel.
+* Use an appropriate inter-switch link or virtual port channel.
 
 
 ## Connecting to a Single Switch
 You can connect a your cluster to a single switch. If this switch becomes inoperative, the entire cluster becomes inaccessible.
 
-  * Connect the two NIC ports (2 &#215; 25 Gbps or 100 Gbps) on your nodes to a single switch.
+* Connect the two NIC ports (2 &#215; 25 Gbps or 100 Gbps) on your nodes to a single switch.
 
-  * The uplinks to the client network must equal the bandwidth from the cluster to the switch.
+* The uplinks to the client network must equal the bandwidth from the cluster to the switch.
 
-  * The two ports form an LACP port channel. 
+* The two ports form an LACP port channel. 
 
 
 ## Four-Node Cluster Architecture Diagram
