@@ -6,6 +6,6 @@ sidebar: hardware_sidebar
 keywords: network, networking, cluster, switch, Ethernet, ports, IP, Supermicro 1014S, ACR12N4H
 ---
 
-{% include content-reuse/platform-agnostic-networking-cluster-25-100gbps.md %}
+{% include content-reuse/platform-agnostic-unified-networking-cluster-25-100gbps.md %}
 
 {% include image.html alt="Four-Node Cluster Architecture Diagram" file="supermicro-1014s-four-node-cluster-architecture-diagram.png" url="/hardware/supermicro-a-plus-asg-1014s-acr12n4h/images/supermicro-1014s-four-node-cluster-architecture-diagram.png" %}
