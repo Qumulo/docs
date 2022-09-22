@@ -50,6 +50,7 @@ a:visited {
 .enlargeimage::after {
   content: "Click to enlarge";
   font-weight: bold;
+  font-size: 11px;
 }
 
 /* -------------------- TOP NAVBAR START -------------------- */
