@@ -47,9 +47,9 @@ a:visited {
   background-color:transparent;
 }
 
-img.enlargeimage::after {
-  content: "Click to enlarge" !important;
-  font-weight: bold !important;
+.enlargeimage::after {
+  content: "Click to enlarge";
+  font-weight: bold;
 }
 
 /* -------------------- TOP NAVBAR START -------------------- */
