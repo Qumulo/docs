@@ -52,8 +52,6 @@ We recommend the following configuration for your node.
 ## Connecting to Redundant Switches
 For redundancy, we recommend connecting your cluster to dual switches. If either switch becomes inoperative, the cluster is still be accessible from the remaining switch.
 
-* **Unified Networking**
-
   * Connect the two NIC ports (2 &#215; 25 Gbps or 100 Gbps) on your nodes to separate switches.
 
   * The uplinks to the client network must equal the bandwidth from the cluster to the switch.
@@ -65,8 +63,6 @@ For redundancy, we recommend connecting your cluster to dual switches. If either
 
 ## Connecting to a Single Switch
 You can connect a your cluster to a single switch. If this switch becomes inoperative, the entire cluster becomes inaccessible.
-
-* **Unified Networking**
 
   * Connect the two NIC ports (2 &#215; 25 Gbps or 100 Gbps) on your nodes to a single switch.
 
