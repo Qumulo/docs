@@ -47,6 +47,10 @@ a:visited {
   background-color:transparent;
 }
 
+.imageenlarge {
+  background-color:black;
+}
+
 /* -------------------- TOP NAVBAR START -------------------- */
 .clkb {
   white-space: nowrap;
