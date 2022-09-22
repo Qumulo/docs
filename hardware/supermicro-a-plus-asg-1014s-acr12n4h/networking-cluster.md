@@ -58,7 +58,7 @@ We recommend the following configuration for your node.
 
 
 ## Connecting to Redundant Switches
-For redundancy, we recommend connecting a {{site.sm1014s}} cluster to dual switches. If either switch becomes inoperative, the cluster is still be accessible from the remaining switch.
+For redundancy, we recommend connecting your cluster to dual switches. If either switch becomes inoperative, the cluster is still be accessible from the remaining switch.
 
 * **Unified Networking**
 
@@ -72,7 +72,7 @@ For redundancy, we recommend connecting a {{site.sm1014s}} cluster to dual switc
 
 
 ## Connecting to a Single Switch
-You can connect a Supermicro {{site.sm1014s}} cluster to a single switch. If this switch becomes inoperative, the entire cluster becomes inaccessible.
+You can connect a your cluster to a single switch. If this switch becomes inoperative, the entire cluster becomes inaccessible.
 
 * **Unified Networking**
 
