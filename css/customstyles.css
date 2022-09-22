@@ -47,6 +47,14 @@ a:visited {
   background-color:transparent;
 }
 
+/* Insert caption after image with URL */
+span[data-url].enlargeimage::after {
+  content: "Click to enlarge";
+  font-weight: bold;
+  font-size: 12px;
+  cursor: pointer;
+}
+
 /* -------------------- TOP NAVBAR START -------------------- */
 .clkb {
   white-space: nowrap;
