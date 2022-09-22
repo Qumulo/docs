@@ -47,7 +47,14 @@ a:visited {
   background-color:transparent;
 }
 
-span[data-url].enlargeimage::after {
+/* Insert caption after image with URL */
+/*span[data-url].enlargeimage::after {
+  content: "Click to enlarge";
+  font-weight: bold;
+  font-size: 12px;
+}*/
+
+span.enlargeimage::after > img[url] {
   content: "Click to enlarge";
   font-weight: bold;
   font-size: 12px;
