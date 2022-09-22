@@ -58,13 +58,6 @@ a:visited {
   }
 }
 
-@media print {
-  /* Insert caption after image with URL */
-  span[data-url].enlargeimage::after {
-    display:none;
-  }
-}
-
 /* -------------------- TOP NAVBAR START -------------------- */
 .clkb {
   white-space: nowrap;
