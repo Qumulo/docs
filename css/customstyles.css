@@ -32,8 +32,9 @@ a:visited {
   color:#3d33b7;
 }
 
-/* Colour of in-page TOC links never changes because we consider
-   in-page links as "visited by default" */
+/* Colour of in-page TOC links never changes
+   because we consider in-page links as
+   "visited by default" */
 #toc > ul > li > a:visited {
     color:#337ab7;    
 }
@@ -54,6 +55,13 @@ a:visited {
     font-weight: bold;
     font-size: 12px;
     cursor: pointer;
+  }
+}
+
+@media print {
+  /* Insert caption after image with URL */
+  span[data-url].enlargeimage::after {
+    display:none;
   }
 }
 
