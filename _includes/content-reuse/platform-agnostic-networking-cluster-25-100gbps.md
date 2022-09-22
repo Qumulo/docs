@@ -1,3 +1,7 @@
+This section explains the networking prerequisites, outlines the recommended configuration, and explains how to connect to redundant switches or to a single switch.
+
+{% include note.html content="Some components vary across node types. For information about node types, see Technical Specifications." %}
+
 ##  Prerequisites
 {{site.data.alerts.note}}
 {{site.unifyNetJumboFrames}}
