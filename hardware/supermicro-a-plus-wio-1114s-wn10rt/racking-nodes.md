@@ -23,17 +23,17 @@ This section describes how to use the outside and inside rails of your {{site.sm
 
    {% include image.html alt="Snap the Outer Rail into the Rack" file="supermicro-1114s-outer-rail-snap-into-rack.png" %}
 
-1. Snap the inner rails to the chassis and secure them using two screws on each side, near the middle of the chassis.
+1. Snap the inner rails to the chassis and secure them by using two screws on each side, near the middle of the chassis.
 
    {% include note.html content="First attach the front inner rails, then the back inner rails." %}
 
-   {% include image.html alt="Attach the Inner Rail to the Chassis Using Screws" file="supermicro-1114s-inner-rail-attach-to-chassis-with-screws.png" %}
+   {% include image.html alt="Attach the Inner Rail to the Chassis by Using Screws" file="supermicro-1114s-inner-rail-attach-to-chassis-with-screws.png" %}
 
 
 ## To Insert the Chassis
 1. Align the outer and inner rails and insert the chassis into the server rack.
 
-1. Attach the chassis to the rack using one screw on each side, on the front of the chassis.
+1. Attach the chassis to the rack by using one screw on each side, on the front of the chassis.
 
 
 ## To Remove the Chassis
