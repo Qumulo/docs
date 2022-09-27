@@ -82,7 +82,7 @@ Qumulo Core performs the following steps when it creates a Shift-From relationsh
 
 1. Creates the Shift-From relationship.
 
-1. Starts a job using one of the nodes in the Qumulo cluster.
+1. Starts a job by using one of the nodes in the Qumulo cluster.
 
    {% include note.html content="If you perform multiple Shift operations, Qumulo Core uses multiple nodes." %}
 
