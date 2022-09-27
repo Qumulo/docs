@@ -239,12 +239,11 @@ Whenever Qumulo Core doesn't complete an operation successfully and returns an e
 
 ## Best Practices
 We recommend the following best practices for working with Qumulo Shift-From for Amazon S3.
-* **Inheritable Permissions:** Because the system user creates the files copied using Shift-From for S3, the system owns these files. By default, Everyone will be granted Read permissions, and administrators always have full access to the files.
+* **Inheritable Permissions:** Because the system user creates the files copied by using Shift-From for S3, the system owns these files. By default, Everyone will be granted Read permissions, and administrators always have full access to the files.
 
     To assign the necessary permissions to copied files, you must assign the necessary inheritable permissions to the root directory of the relationship **before** creating a Copy from S3 relationship. This ensures that the copied subdirectories and files inherit the permissions.
 
     Windows Security Dialog or `qq fs_modify_acl` can be used to edit permissions on a directory. See [Qumulo-File-Permissions-Overview](https://care.qumulo.com/hc/en-us/articles/115008211868) to learn more about file permissions.
-
 
 * **VPC Endpoints:** For best performance when using a Qumulo cluster in AWS, configure a [VPC endpoint](https://docs.aws.amazon.com/vpc/latest/privatelink/vpc-endpoints.html) to S3. For on-premises Qumulo clusters, we recommend [AWS Direct Connect](https://docs.aws.amazon.com/whitepapers/latest/aws-vpc-connectivity-options/aws-direct-connect.html) or another high-bandwidth, low-latency connection to S3.
 * **Repeated Synchronization:** If you need to repeatedly synchronize an S3 folder with a Qumulo directory, we recommend reusing the same relationship. This lets you avoid repeated downloading of unchanged objects that already exist locally.
@@ -254,7 +253,7 @@ We recommend the following best practices for working with Qumulo Shift-From for
 
 ## Restrictions
 * **S3-Compatible Object Stores:** S3-compatible object stores aren't supported. Currently, Qumulo Shift-From supports replication only from Amazon S3.
-* **HTTP:** HTTP isn't supported. All Qumulo connections are encrypted using HTTPS and verify the S3 server's SSL certificate.
+* **HTTP:** HTTP isn't supported. All Qumulo connections are encrypted by using HTTPS and verify the S3 server's SSL certificate.
 * **Anonymous Access:** Anonymous access isn't supported. You must use valid AWS credentials.
 * **Replication without Throttling:** Replication provides no throttling and might use all available bandwidth. If necessary, use Quality of Service rules on your network.
 * **Amazon S3 Standard Storage Class:** Qumulo Shift-From supports downloading only objects stored in the Amazon S3 Standard storage class. You can't download objects stored in the Amazon S3 Glacier or Deep Archive storage classes and any buckets that contain such objects cause a copy job to fail.
