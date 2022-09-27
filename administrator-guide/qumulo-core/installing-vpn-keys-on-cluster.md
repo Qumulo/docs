@@ -96,10 +96,6 @@ Before you begin, make sure that you have done the following.
 
 1. To retrieve your cluster ID, use the `node_state_get` command.
 
-   ```bash
-   qq --host 203.0.113.1 node_state_get
-   ```
-
 1. Send the output of the command to Qumulo Care.
 
 1. Use the Web UI to enable Qumulo Care Remote Support.
