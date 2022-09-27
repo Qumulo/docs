@@ -78,7 +78,7 @@ In the following example, the IAM policy gives permission to read from and write
 ## How Shift-From Relationships Work
 Qumulo Core performs the following steps when it creates a Shift-From relationship.
 
-1. Verifies that the directory exists on the Qumulo cluster and that the specified S3 bucket exists, is accessible using the specified credentials, and contains downloadable objects.
+1. Verifies that the directory exists on the Qumulo cluster and that the specified S3 bucket exists, is accessible by using the specified credentials, and contains downloadable objects.
 
 1. Creates the Shift-From relationship.
 
