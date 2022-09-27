@@ -31,7 +31,27 @@ Before you begin, make sure that you have done the following.
 
 1. Install the `qq` CLI on the same computer. For more information, see [QQ CLI: Get Started](https://care.qumulo.com/hc/en-us/articles/115008165008) on Qumulo Care.
 
-{% include content-reuse/installing-vpn-keys-common-instructions.md %}
+1. To log in to your cluster, use the `qq` CLI and specify your cluster's IP address. For example:
+
+   ```bash
+   qq --host 203.0.113.1 login
+   ```
+    
+   {% include note.html content="Your user must have `PRIVILEGE_SUPPORT_WRITE` and `PRIVILEGE_SUPPORT_READ`." %}
+
+1. To install the VPN keys on your cluster, specify your cluster's IP address and the path to the directory that contains the VPN keys. For example:
+
+   ```bash
+   qq --host 203.0.113.1 install_vpn_keys /my/path
+   ```
+    
+1. To verify that the VPN keys installed correctly, use the `get_vpn_keys` command. For example:
+
+   ```bash
+   qq --host 203.0.113.1 get_vpn_keys
+   ```
+
+1. Remove any copies of the VPN key files.
 
 
 ## To Install VPN Keys from a Node
