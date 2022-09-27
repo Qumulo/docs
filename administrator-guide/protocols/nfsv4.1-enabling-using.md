@@ -105,10 +105,10 @@ You can enable NFSv4.1 on your Qumulo cluster by using a single cluster-wide con
 qq nfs_modify_settings --enable-v4
 ```
 
-When you enable NFSv4.1, all NFS exports are accessible using NFSv3 and NFSv4.1.
+When you enable NFSv4.1, all NFS exports are accessible through NFSv3 and NFSv4.1.
 
 ## Specifying the NFS Mount Option
-Typically, NFS clients find and use the highest version of the protocol that both the client and server support. For example, the following command mounts using NFSv4.1 (if it is enabled) and using NFSv3 otherwise.
+Typically, NFS clients find and use the highest version of the protocol that both the client and server support. For example, the following command mounts by using NFSv4.1 (if it is enabled) or by using NFSv3 otherwise.
 
 ```bash
 mount -t nfs your.qumulo.cluster:/mount_path /path/to/mountpoint
@@ -142,7 +142,7 @@ qq nfs_modify_settings --disable-v4
 
 
 ## Configuring Floating IPs for Nodes
-Currently, each Qumulo node is limited to 1,000 clients connected by using NFSv4.1 simultaneously. To account for nodes going down, we recommend balancing the number of client connections across your nodes by configuring a sufficient number of floating IP addresses per node. This prevents a node failover event from overloading the nodes to which the clients might fail over.
+Currently, each Qumulo node is limited to 1,000 clients connected through NFSv4.1 simultaneously. To account for nodes going down, we recommend balancing the number of client connections across your nodes by configuring a sufficient number of floating IP addresses per node. This prevents a node failover event from overloading the nodes to which the clients might fail over.
 
 For example, if you configure only one IP address per node, on a cluster with 600 clients per node, a single node failure might overload one of the remaining nodes, preventing 200 clients from connecting. If you assign multiple floating IP addresses to each node, the clients' connections are distributed across multiple nodes.
 
