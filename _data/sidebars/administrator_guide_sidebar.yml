@@ -36,6 +36,10 @@ entries:
     output: web, pdf
     folderitems:
 
+    - title: Configuring SAML Single Sign-On
+      url: /administrator-guide/qumulo-core/saml-sso.html
+      output: web, pdf
+
     - title: Creating a Qumulo Core USB Drive Installer
       url: /administrator-guide/qumulo-core/creating-usb-drive-installer.html
       output: web, pdf
