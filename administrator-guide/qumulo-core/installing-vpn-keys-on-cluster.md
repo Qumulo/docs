@@ -37,6 +37,8 @@ Before you begin, make sure that you have done the following.
 ## To Install VPN Keys from a Node
 {% include note.html content="On macOS and Linux, you can use the `scp` and `ssh` tools. On Windows Server 2022, Windows Server 2019, and Windows 10 (build 1809 and higher), we recommend [installing OpenSSH](https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse)." %}
 
+1. Copy the `.zip` file from Qumulo Care to a computer on the same network as your cluster, and decompress the file.
+
 1. To copy the VPN key files to one of your nodes, use the `scp` command. For example:
 
    ```bash
@@ -55,7 +57,14 @@ Before you begin, make sure that you have done the following.
    qq version
    ```
 
-{% include content-reuse/installing-vpn-keys-common-instructions.md %}
+1. To install the VPN keys on your cluster, use the below command and specify the location of the key. For example:
+   ```bash
+   sudo qq install_vpn_keys /my/path/*
+   ```
+1. To verify that the VPN keys installed correctly, use the get_vpn_keys command. For example:
+   ```bash
+   sudo qq get_vpn_keys
+   ```
 
 
 ## To Register Cluster with Cloud-Based Monitoring
