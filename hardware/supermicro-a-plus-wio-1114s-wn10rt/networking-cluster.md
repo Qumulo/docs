@@ -75,7 +75,7 @@ For redundancy, we recommend connecting a {{site.sm1114s}} cluster to dual switc
 
   * The uplinks to the client network must equal the bandwidth from the cluster to the switch.
 
-  * The two ports form an LACP port channel using a multi-chassis link aggregation group.
+  * The two ports form an LACP port channel by using a multi-chassis link aggregation group.
 
 * **Back End**
 
