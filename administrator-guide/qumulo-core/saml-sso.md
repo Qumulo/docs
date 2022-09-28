@@ -4,7 +4,7 @@ sidebar: administrator_guide_sidebar
 ---
 
 ## Introduction
-Starting with 5.2.5, you can integrate your Qumulo with your company's Single Sign-On (SSO) service using SAML 2.0.
+Starting with 5.2.5, you can integrate your Qumulo cluster with your company's Single Sign-On (SSO) service using SAML 2.0.
 
 Security Assertion Markup Language (SAML), is a widely supported standard for exchanging authentication information. If you do not know what it is, refer to this [Wikipedia article](https://en.wikipedia.org/wiki/SAML_2.0).
 
