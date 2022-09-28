@@ -22,7 +22,7 @@ Qumulo Core 4.3.0 (and higher) supports Network File System version 4.1 (NFSv4.1
 ## Configuring and Using Exports for NFSv4.1
 Qumulo's NFS exports can present a view of your cluster over NFS that might differ from the contents of the underlying file system. You can mark NFS exports as read-only, restricted (to allow access only from certain IP adresses), or configure specific user mappings. For more information, see [Create an NFS Export](https://care.qumulo.com/hc/en-us/articles/360000723928-Create-an-NFS-Export) on Qumulo Care.
 
-While NFSv3 and NFSv4.1 share each cluster's NFS export configuration, exports behave differently when you access them using NFSv4.1. This section explains these differences and the new requirements for export configurations with NFSv4.1.
+While NFSv3 and NFSv4.1 share each cluster's NFS export configuration, exports behave differently when you access them by using NFSv4.1. This section explains these differences and the new requirements for export configurations with NFSv4.1.
 
 ### Differences Between NFSv3 and NFSv4.1 Exports
 In the following example, a Qumulo cluster has the following export configuration.
@@ -105,10 +105,10 @@ You can enable NFSv4.1 on your Qumulo cluster by using a single cluster-wide con
 qq nfs_modify_settings --enable-v4
 ```
 
-When you enable NFSv4.1, all NFS exports are accessible using NFSv3 and NFSv4.1.
+When you enable NFSv4.1, all NFS exports are accessible through NFSv3 and NFSv4.1.
 
 ## Specifying the NFS Mount Option
-Typically, NFS clients find and use the highest version of the protocol that both the client and server support. For example, the following command mounts using NFSv4.1 (if it is enabled) and using NFSv3 otherwise.
+Typically, NFS clients find and use the highest version of the protocol that both the client and server support. For example, the following command mounts by using NFSv4.1 (if it is enabled) or by using NFSv3 otherwise.
 
 ```bash
 mount -t nfs your.qumulo.cluster:/mount_path /path/to/mountpoint
@@ -142,7 +142,7 @@ qq nfs_modify_settings --disable-v4
 
 
 ## Configuring Floating IPs for Nodes
-Currently, each Qumulo node is limited to 1,000 clients connected using NFSv4.1 simultaneously. To account for nodes going down, we recommend balancing the number of client connections across your nodes by configuring a sufficient number of floating IP addresses per node. This prevents a node failover event from overloading the nodes to which the clients might fail over.
+Currently, each Qumulo node is limited to 1,000 clients connected through NFSv4.1 simultaneously. To account for nodes going down, we recommend balancing the number of client connections across your nodes by configuring a sufficient number of floating IP addresses per node. This prevents a node failover event from overloading the nodes to which the clients might fail over.
 
 For example, if you configure only one IP address per node, on a cluster with 600 clients per node, a single node failure might overload one of the remaining nodes, preventing 200 clients from connecting. If you assign multiple floating IP addresses to each node, the clients' connections are distributed across multiple nodes.
 
@@ -181,7 +181,7 @@ Qumulo's implementation of NFSv4.1 currently supports:
 * Full use of the NFS exports configuration shared with NFSv3
 * Navigation in the pseudo-file system above your exports
 * NFSv3-style `AUTH_SYS` authentication (also known as `AUTH_UNIX`)
-* Fine-grained control over file permissions using access control lists (ACLs)
+* Fine-grained control over file permissions by using access control lists (ACLs)
 * File locking (for example, by using the `fcntl` command)
 
 Qumulo Core doesn't support the following NFSv3 features through NFSv4.1:

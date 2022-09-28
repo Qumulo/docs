@@ -36,7 +36,7 @@ Replacement drives, including the on-site spare drives that you received with yo
 
 {% include caution.html content="We strongly recommend having a Supermicro engineer perform on-site boot drive replacement." %}
 
-1. Locate the drive that requires replacement using the drive bay mapping.
+1. Locate the drive that requires replacement by using the drive bay mapping.
 
    {% include image.html alt="Supermicro 1114S Drive Bay Mapping" file="supermicro-1114s-drive-bay-mapping.png" url="/hardware/supermicro-a-plus-wio-1114s-wn10rt/images/supermicro-1114s-drive-bay-mapping.png" %}
 
@@ -52,7 +52,7 @@ Replacement drives, including the on-site spare drives that you received with yo
 
    a. Insert the new drive into the drive carrier with the printed circuit board (PCB) side facing down and the connector end facing towards the rear of the tray.
 
-   b. Secure the drive to its carrier using the mounting clips.
+   b. Secure the drive to its carrier by using the mounting clips.
 
    c. Insert the drive carrier into the chassis with the orange release button facing right.
    
