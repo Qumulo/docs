@@ -3,4 +3,100 @@ title: "Configuring SAML Single Sign-On"
 sidebar: administrator_guide_sidebar
 ---
 
-qqq
+## Introduction
+Starting with 5.2.5, you can integrate your Qumulo with your company's Single Sign-On (SSO) service using SAML 2.0.
+
+Security Assertion Markup Language (SAML), is a widely supported standard for exchanging authentication information. If you do not know what it is, refer to this [Wikipedia article](https://en.wikipedia.org/wiki/SAML_2.0).
+
+Here are several terms that will be used throughout the document:
+- Active Directory (AD) - For more information, see [Join Your Qumulo Cluster to Active Directory](https://care.qumulo.com/hc/en-us/articles/115007276068) on Qumulo Care.
+- Identity Provider (IdP) – a system that actually authenticates users (using passwords and additional factors). Usually managed centrally by IT. Examples are OneLogin, Okta, Duo, on-premise instances. IdP is often linked with the Active Directory.
+- Service Provider (SP) – a service that users need access to. This is the Qumulo cluster's role. Before SSO can work, IT has to register a new SP in their IdP. This is called SAML integration.
+- NameID – name identifier for an authenticated user. Usually in a form of email but can be almost anything.
+
+## Requirements
+- Cluster is joined to an Active Directory domain. We only support SAML logins for AD users.
+- BaseDN in AD settings is correctly set even if POSIX attributes are not used. This is needed to find group membership for SAML authenticated users.
+- SAML Identity Provider is linked to the same AD. Trusts are fine as long as BaseDN covers all the users that will need to access the cluster.
+- IdP is configured to return AD UPN (e.g., `alice@domain.example.com`) or email as NameID.
+
+## Configuration
+Configuring SAML SSO requires coordination between the cluster administrator and the organization's SSO administrator.
+
+The cluster administrator reaches out to the SSO administrator asking to create a SAML integration for the cluster.
+
+The SSO administrator creates a SAML integration in their SSO service (Okta, Duo, etc.) and uses `https://<cluster-fqdn>/saml` (e.g., `https://qumulo-cluster.my-company.com/saml`) for the SP endpoint (AKA Assertion Consumer Service). If asked, specify HTTP POST Binding for the SP endpoint. This will likely be the default.
+
+The cluster's FQDN does not have to be resolvable by external DNS. The resolution will be done by the customer's browser (e.g., it can be VPN-only).
+
+The SSO administrator provides the following information (available after creating the SAML integration):
+- The certificate (public key) of IdP in PEM format. This is used to verify the authenticity of the messages from IdP.
+- The IdP SSO URL to send authentication requests from the cluster, e.g., `https://my-company.sso-provider.com/something`.
+- IDP Issuer/EntityID, e.g., `http://www.sso-provider.com/exk45tw63vjGE9IHw1d7`.
+- The cluster's FQDN, e.g., `qumulo-cluster.my-company.com`.
+
+To complete the setup on the cluster the cluster administrator uses `qq saml_modify_settings` to configure and enable SAML logins on the cluster. If you configure SAML for the first time, you have to provide all the settings. These settings are needed so that the cluster can validate the authentication messages from the IdP to make sure that they are indeed from the IdP and that they are intended for the cluster.
+
+Example command:
+```
+qq saml_modify_settings --enable 
+    --idp-certificate-file ~/certificate.pem 
+    --cluster-dns-name qumulo-cluster.my-company.com 
+    --idp-entity-id http://www.sso-provider.com/exk45tw63vjGE9IHw1d7 
+    --idp-sso-url https://my-company.sso-provider.com/exk45tw63vjGE9IHw1d7/saml
+```
+
+There is no verification of the configuration parameters beyond a basic check of the IdP certificate. It is up to the cluster administrator to verify that IdP-initiated SAML logins (usually a click on the corresponding item in the SSO portal) work.
+
+The command allows individual settings to be changed independently. This can be useful to correct typos, update a DNS name, update an expired certificate, or temporarily disable SAML SSO without losing other settings.
+
+Use `qq saml_get_settings` to the current SAML configuration.
+
+## Supported SAML SSO flows
+IdP initiated SAML SSO, which works in the following way:
+1. A user (presumably a cluster admin but it could be any user) goes to their SSO portal and authenticates there if needed.
+1. The user locates and clicks on the application tile for the desired Qumulo cluster. Depending on the company's policy, additional verification may be required. For example, the SSO administrator can configure it so that a 2FA is always used to access certain clusters.
+1. SSO portal redirects to the cluster. If the user has sufficient privileges, they will be logged in to WebUI. Otherwise an appropriate error message will appear.
+
+SP initiated SAML SSO, which works in the following way:
+1. A user opens the cluster's WebUI in a browser. If SAML is configured on the cluster, the login page will show the "Continue to SSO login" link leading to the configured SSO portal.
+The authentication request uses the HTTP Redirect Binding. In other words, the login link will look like this `<idp-sso-url>?SAMLRequest=<very-long-string>`.
+1. The user clicks the login link. The SSO portal will verify the user (potentially asking for any additional factors if required by the organization).
+1. SSO portal redirects back to the cluster. This is now the same with the step 3 above in the IdP initiated login
+
+If you access WebUI by physically connecting to a node, the login page will not show the SSO prompt even if it is configured.
+
+In general, users need to be assigned the built-in Observers role to access WebUI. Members of the built-in Administrators role always have access to the WebUI.
+
+## Known Issues and Limitations
+- AD users can still use their passwords to login to WebUI and CLI. This will be improved in a future software release.
+- SAML Single Logout is not supported. Use the Sign out action in WebUI.
+- Automatic configuration from metadata XML is not supported. You have to specify each parameter in qq.
+- Suggesting a username to the SSO service is not supported.
+- Returning to the previous page in WebUI after re-authentication (e.g., after a timeout) is not supported.
+
+## Troubleshooting
+In many simple cases, if SAML authentication fails, the error message in the browser will show the exact reason, and the problem should be easy to resolve by setting the right configuration with the qq saml_modify_settings command.
+
+Examples are:
+- SAML is not actually enabled on the cluster.
+- Clock skew between IdP and the cluster. Clock skew tolerance is dictated by the SSO service, 5 minutes is common.
+- Incorrectly set `cluster-dns-name` or `idp-entity-id` on the cluster.
+- User is not a member of the Observers role required to access WebUI.
+
+In more complex cases the errors can be less informative (for security reasons). For example, if a wrong IdP certificate is configured on the cluster, the error will simply say "Signature validation failed. SAML Response rejected".
+
+Several AD related reasons can lead to s “User not found” error:
+- Cluster is not joined to AD at all.
+- Cluster is joined to AD that is not connected to the IdP.
+- IdP is sending usernames (NameID) in an unusual format.
+  
+  To verify that the username can be used, run `qq auth_find_identity --name <NameID>`.
+- Configured BaseDN does not include all the users.
+  
+  To verify that the username is discoverable, run the following commands:
+  - First, `qq auth_find_identity --name <NameID>` to find the SID;
+  - Then `qq ad_sid_to_account --sid <SID>` to verify that it is discoverable.
+If there is an error, contact your Active Directory administrator and ask for the right BaseDN.
+
+While NFSv4.1 with Kerberos is unrelated topic, [this article](../kerberos/kerberos-prerequisites-joining-cluster-active-directory.md#specifying-the-base-distinguished-name-base-dn) has more information about Active Directory and BaseDN.
