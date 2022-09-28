@@ -59,7 +59,7 @@ To create a USB Drive Installer on Windows, you must use a third-party applicati
 {{site.data.alerts.important}}
 <ul>
   <li>We don't recommend using other tools (such as Win32 Disk Imager) because they might encounter errors when unable to recognize the USB drive after writing data to it.</li>
-  <li>When the operation concludes, you might not be able to view the contents of the USB drive on Windows because the drive will be formatted using a different file system.</li>
+  <li>When the operation concludes, you might not be able to view the contents of the USB drive on Windows because the drive will be formatted by using a different file system.</li>
 </ul>
 {{site.data.alerts.end}}
 
