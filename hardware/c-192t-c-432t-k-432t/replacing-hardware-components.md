@@ -17,7 +17,7 @@ This section explains how to replace the chassis in C-192T, C-432T, and K-432T n
 ### Step 1: Prepare for Chassis Replacement
 {% include note.html content="We strongly suggest having another person help you with this process." %}
 
-1. To shut down the node, use the power button at the front or connect using SSH and run the `sudo shutdown -h now` command. 
+1. To shut down the node, use the power button at the front or connect by using SSH and run the `sudo shutdown -h now` command. 
 
 1. Disconnect all cables from the back of the node.
 
@@ -77,4 +77,4 @@ This section explains how to replace the chassis in C-192T, C-432T, and K-432T n
 1. Power on the node.
 
 ### Step 3: (Optional) Reconfiguring the Out-of-Band Management (IPMI) Settings
-If the current IPMI settings for your node are configured statically (rather than using DHCP), you must reapply the static IPMI settings to the replacement node. For more information, see [IPMI Quick Reference Guide for Qumulo C-Series](https://care.qumulo.com/hc/en-us/articles/360024426314) on Qumulo Care.
+If the current IPMI settings for your node are configured statically (rather than by using DHCP), you must reapply the static IPMI settings to the replacement node. For more information, see [IPMI Quick Reference Guide for Qumulo C-Series](https://care.qumulo.com/hc/en-us/articles/360024426314) on Qumulo Care.

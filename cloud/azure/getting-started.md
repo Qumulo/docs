@@ -30,7 +30,7 @@ Like other cloud platform implementations, you can configure Qumulo on Azure as 
 To resolve internal hostnames to IP addresses in your infrastructure, you must configure Qumulo Core to use a DNS server that can resolve the necessary hostnames. By default, the file system uses Azure's default DNS server (`168.63.129.16`) provided by DHCP.
 
 ### Using Services on the Public Internet
-For improved security, the Qumulo on Azure as a Service file system provisioned for you doesn't have access to the public Internet. Thus, you must proxy any connectivity between your file system and a service on the public Internet using a VNet peer in your Azure subscription.
+For improved security, the Qumulo on Azure as a Service file system provisioned for you doesn't have access to the public Internet. Thus, you must proxy any connectivity between your file system and a service on the public Internet by using a VNet peer in your Azure subscription.
 
 The following service require specific configuration for public Internet connectivity.
 * **Audit:** Requires an Rsyslog server or proxy to a public Rsyslog server in a peered VNet.

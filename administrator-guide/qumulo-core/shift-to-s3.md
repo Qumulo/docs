@@ -84,11 +84,11 @@ In the following example, the IAM policy gives permission to read from and write
 ## How Shift-To Relationships Work
 Qumulo Core performs the following steps when it creates a Shift-To relationship.
 
-1. Verifies that the directory exists on the Qumulo cluster and that the specified S3 bucket exists, is accessible using the specified credentials, and contains downloadable objects.
+1. Verifies that the directory exists on the Qumulo cluster and that the specified S3 bucket exists, is accessible by using the specified credentials, and contains downloadable objects.
 
 1. Creates the Shift-To relationship.
 
-1. Starts a job using one of the nodes in the Qumulo cluster.
+1. Starts a job by using one of the nodes in the Qumulo cluster.
 
    {% include note.html content="If you perform multiple Shift operations, Qumulo Core uses multiple nodes." %}
 
@@ -274,10 +274,10 @@ We recommend the following best practices for working with Qumulo Shift-To for A
 * **File Path Limit:** The length of a file path must be shorter than 1,024 characters, including the configured object folder prefix, excluding the local directory path.
 * **Hard Links:** Qumulo Core 3.2.3 (and higher) supports hard links, up to the maximum object size that S3 supports.
 * **Objects Under the Same Key:** Unless an object contains Qumulo-specific hash metadata that matches a file, any object that exists under the same key that a new relationship replicates _is overwritten_. To retain older versions of overwritten objects, enable versioning for your S3 bucket. For more information, see [Using versioning in S3 buckets](https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectVersioning.html) in the _Amazon Simple Storage Service User Guide_.
-* **Object Checksums:** All files replicated using S3 server-side integrity verification (during upload) use a SHA256 checksum stored in the replicated object's metadata.
+* **Object Checksums:** All files replicated by using S3 server-side integrity verification (during upload) use a SHA256 checksum stored in the replicated object's metadata.
 * **S3-Compatible Object Stores:** S3-compatible object stores aren't supported. Currently, Qumulo Shift-To supports replication only to Amazon S3.
-* **HTTP:** HTTP isn't supported. All Qumulo connections are encrypted using HTTPS and verify the S3 server's SSL certificate.
+* **HTTP:** HTTP isn't supported. All Qumulo connections are encrypted by using HTTPS and verify the S3 server's SSL certificate.
 * **Anonymous Access:** Anonymous access isn't supported. You must use valid AWS credentials.
 * **Replication without Throttling:** Replication provides no throttling and might use all available bandwidth. If necessary, use Quality of Service rules on your network.
 * **Amazon S3 Standard Storage Class:** Qumulo Shift-To supports uploading only objects stored in the Amazon S3 Standard storage class. You can't download objects stored in the Amazon S3 Glacier or Deep Archive storage classes and any buckets that contain such objects cause a copy job to fail.
-* **Content-Type Metadata:** Because all objects are stored in S3 using the default `binary/octet-stream` content type, they might be interpreted as binary data if you download them using a browser. To attach content-type metadata to your objects, use the AWS Console.
+* **Content-Type Metadata:** Because all objects are stored in S3 using the default `binary/octet-stream` content type, they might be interpreted as binary data if you download them by using a browser. To attach content-type metadata to your objects, use the AWS Console.
