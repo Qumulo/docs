@@ -18,7 +18,7 @@ On the front, right side of your node, there are five LEDs.
 | Info                   | 🔴 (1 s. blinking red) | Fan failed                                  |
 | Info                   | 🔴 (4 s. blinking red) | Power Supply Unit (PSU) failed              |
 | Info                   | 🔵 (solid blue)        | Unit Identification (UID) activated locally |
-| Info                   | 🔵 (blinking blue)     | UID activated using IPMI                    |
+| Info                   | 🔵 (blinking blue)     | UID activated from IPMI                     |
 | NIC 2 LED              | 🟢 (solid green)       | On                                          |
 | NIC 2 LED              | 🟢 (blinking)          | Network activity                            |
 | NIC 1 LED              | 🟢 (solid green)       | On                                          |
