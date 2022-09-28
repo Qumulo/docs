@@ -56,7 +56,7 @@ For redundancy, we recommend connecting your cluster to dual switches. If either
 
 * The uplinks to the client network must equal the bandwidth from the cluster to the switch.
 
-* The two ports form an LACP port channel using a multi-chassis link aggregation group.
+* The two ports form an LACP port channel by using a multi-chassis link aggregation group.
 
 * Use an appropriate inter-switch link or virtual port channel.
 
