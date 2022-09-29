@@ -27,6 +27,10 @@ body {
   .page-break { display: block; page-break-before: always; }
 }
 
+@media print {
+  .alert { break-inside: avoid; }
+}
+
 /* Colour only body links when :visited for accessibility */
 a:visited {
   color:#3d33b7;
