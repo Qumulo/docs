@@ -183,10 +183,10 @@ Qumulo's implementation of NFSv4.1 currently supports:
 * NFSv3-style `AUTH_SYS` authentication (also known as `AUTH_UNIX`)
 * Fine-grained control over file permissions by using access control lists (ACLs)
 * File locking (for example, by using the `fcntl` command)
+* Snapshots through NFSv4.1 (Qumulo Core 5.2.4 and higher)
 
 Qumulo Core doesn't support the following NFSv3 features through NFSv4.1:
 * Quota sizes don't appear through NFSv4.1 with certain commands, such as `df` (however, Qumulo Core respects directory quotas)
-* You can't access snapshots through NFSv4.1
 
 Qumulo Core doesn't currently support the following NFSv4.1 features:
 * Delegations
