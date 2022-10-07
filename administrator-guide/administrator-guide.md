@@ -27,6 +27,7 @@ The Qumulo Administrator Guide is a growing collection of information about conf
 * **Protecting Your Data**
   * [Increasing the Node-Fault-Tolerance Level for Your Cluster During Node-Add Operations](qumulo-core/node-fault-tolerance-level.md)
   * [Managing Snapshots](qumulo-core/managing-snapshots.md)
+  * [Understanding Offline Nodes and Checking for Free Space](qumulo-core/understanding-offline-nodes.md)
 * **Moving Your Data**
   * [Using Qumulo Shift-To to Copy Objects to Amazon S3](qumulo-core/shift-to-s3.md)
   * [Using Qumulo Shift-From to Copy Objects from Amazon S3](qumulo-core/shift-from-s3.md)
