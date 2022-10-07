@@ -92,6 +92,10 @@ entries:
       url: /administrator-guide/qumulo-core/managing-snapshots.html
       output: web, pdf
 
+    - title: Understanding Offline Qumulo Core Nodes and Checking for Free Space
+      url: /administrator-guide/qumulo-core/understanding-offline-nodes.html
+      output: web, pdf
+
   - title: Moving Your Data
     output: web, pdf
     folderitems:
