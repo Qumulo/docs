@@ -33,8 +33,8 @@ This section provides technical specifications for {{site.sm1014s}} nodes.
     </tr>
     <tr>
       <td><strong>Solid State Storage Media (Cache)</strong></td>
-      <td colspan="4" style="text-align: center;">4 &#215; 1.92 TB NVMe</td>
-      <td>4 &#215; 960 GB NVMe</td>
+      <td colspan="4" style="text-align: center;">4 &#215; 1.92 TB NVMe<br>or 4 &#215; 3.84 TB NVMe<br>or 4 &#215; 7.68 TB NVMe</td>
+      <td>4 &#215; 960 GB NVMe<br>or 4 &#215; 1.92 TB NVMe<br>or 4 &#215; 3.84 TB NVMe</td>
     </tr>
     <tr>
       <td><strong>HDD Storage Media</strong></td>
