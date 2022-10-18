@@ -18,7 +18,7 @@ All metrics available in the API belong to one of the three types that the OpenM
 * **Gauge**: A value that represents a single integer (similar to a counter). It is posible to increase or decrease a gauge.
 
 * **Histogram**: A histogram that represents a series of _buckets._ Each bucket keeps track of all values that occur within a specific range. A histogram also has a `count` field and a `sum` field, stored in `<metric_name>_count` (the total number of samples) and `<metric_name>_sum` (the sum of all the samples).
-  
+
   {% include note.html content="Because Qumulo Core doesn't emit any buckets for histogram metrics, you can use histograms to keep track of averages, by dividing the `sum` field by the `count` field." %}
 
 For more information about these (and other) OpenMetrics types, see [Metric Types](https://github.com/OpenObservability/OpenMetrics/blob/main/specification/OpenMetrics.md#metric-types) in the OpenMetrics Specification.
@@ -41,6 +41,84 @@ The following table gives the name, type, labels, and descriptions for metrics a
     </tr>
   </thead>
   <tbody>
+    <tr>
+      <td><code>qumulo_ad_netlogon_request_errors</code></td>
+      <td>counter</td>
+      <td>
+        <ul>
+          <li><code>server_url</code></li>
+        </ul>
+      </td>
+      <td>Number of errored Active Directory Netlogon requests</td>
+    </tr>
+    <tr>
+      <td><code>qumulo_ad_netlogon_request_latency_seconds</code></td>
+      <td>histogram</td>
+      <td>
+        <ul>
+          <li><code>server_url</code></li>
+        </ul>
+      </td>
+      <td>Total latency for Active Directory Netlogon requests</td>
+    </tr>
+    <tr>
+      <td><code>qumulo_ad_netlogon_requests</code></td>
+      <td>counter</td>
+      <td>
+        <ul>
+          <li><code>server_url</code></li>
+        </ul>
+      </td>
+      <td>Number of completed Active Directory Netlogon operations</td>
+    </tr>
+    <tr>
+      <td><code>qumulo_cpu_temperature_celsius</code></td>
+      <td>gauge</td>
+      <td>
+        <ul>
+          <li><code>cpu</code></li>
+          <li><code>node_id</code></li>
+        </ul>
+      </td>
+      <td>The temperature in Celsius for each physical CPU</td>
+    </tr>
+    <tr>
+      <td><code>qumulo_disk_is_unhealthy</code></td>
+      <td>gauge</td>
+      <td>
+        <ul>
+          <li><code>disk_type</code></li>
+          <li><code>drive_bay</code></li>
+          <li><code>node_id</code></li>
+        </ul>
+      </td>
+      <td>Disk health for each disk in the cluster<br>
+      This value can be <code>0</code> (disk is healthy) or <code>1</code> (disk is unhealthy).</td>
+    </tr>
+    <tr>
+      <td><code>qumulo_disk_operation_latency_seconds</code></td>
+      <td>histogram</td>
+      <td>
+        <ul>
+          <li><code>disk_type</code></li>
+          <li><code>drive_bay</code></li>
+          <li><code>io_type</code></li>
+          <li><code>node_id</code></li>
+        </ul>
+      </td>
+      <td>Total latency for disk IO operations</td>
+    </tr>
+    <tr>
+      <td><code>qumulo_fan_speed_rpm</code></td>
+      <td>gauge</td>
+      <td>
+        <ul>
+          <li><code>fan</code></li>
+          <li><code>node_id</code></li>
+        </ul>
+      </td>
+      <td>The fan speed in RPM</td>
+    </tr>
     <tr>
       <td><code>qumulo_fs_capacity_bytes</code></td>
       <td>gauge</td>
@@ -76,7 +154,206 @@ The following table gives the name, type, labels, and descriptions for metrics a
       <td>Free space in the cluster, in bytes</td>
     </tr>
     <tr>
-      <td><code>qumulo_protocol_bytes</code></td>
+      <td><code>qumulo_fs_snapshots</code></td>
+      <td>gauge</td>
+      <td>&mdash;</td>
+      <td>Number of snapshots in the cluster</td>
+    </tr>
+    <tr>
+      <td><code>qumulo_ldap_lookup_request_errors</code></td>
+      <td>counter</td>
+      <td>
+        <ul>
+          <li><code>server_url</code></li>
+        </ul>
+      </td>
+      <td>Number of errored LDAP requests</td>
+    </tr>
+    <tr>
+      <td><code>qumulo_ldap_lookup_request_latency_seconds</code></td>
+      <td>histogram</td>
+      <td>
+        <ul>
+          <li><code>server_url</code></li>
+        </ul>
+      </td>
+      <td>Total latency for LDAP requests</td>
+    </tr>
+    <tr>
+      <td><code>qumulo_ldap_lookup_requests</code></td>
+      <td>counter</td>
+      <td>
+        <ul>
+          <li><code>server_url</code></li>
+        </ul>
+      </td>
+      <td>Number of completed LDAP requests</td>
+    </tr>
+    <tr>
+      <td><code>qumulo_ldap_operation_errors</code></td>
+      <td>counter</td>
+      <td>&mdash;</td>
+      <td>Number of errored LDAP operations</td>
+    </tr>
+    <tr>
+      <td><code>qumulo_ldap_operation_latency_seconds</code></td>
+      <td>histogram</td>
+      <td>&mdash;</td>
+      <td>Total latency for LDAP operations</td>
+    </tr>
+    <tr>
+      <td><code>qumulo_ldap_operations</code></td>
+      <td>counter</td>
+      <td>&mdash;</td>
+      <td>Number of completed LDAP operations</td>
+    </tr>
+    <tr>
+      <td><code>qumulo_memory_correctable_ecc_errors</code></td>
+      <td>counter</td>
+      <td>
+        <ul>
+          <li><code>node_id</code></li>
+        </ul>
+      </td>
+      <td>Number of memory errors that were automatically corrected</td>
+    </tr>
+    <tr>
+      <td><code>qumulo_network_interface_is_down</code></td>
+      <td>gauge</td>
+      <td>
+        <ul>
+          <li><code>bond</code></li>
+          <li><code>role</code></li>
+          <li><code>interface</code></li>
+          <li><code>node_id</code></li>
+        </ul>
+      </td>
+      <td>Whether this interface is up or down. This value can be <code>0</code> (interface is up) or <code>1</code> (interface is down)</td>
+    </tr>
+    <tr>
+      <td><code>qumulo_network_interface_link_speed_bits_per_second</code></td>
+      <td>gauge</td>
+      <td>
+        <ul>
+          <li><code>bond</code></li>
+          <li><code>role</code></li>
+          <li><code>interface</code></li>
+          <li><code>node_id</code></li>
+        </ul>
+      </td>
+      <td>The negotiated link speed for this interface</td>
+    </tr>
+    <tr>
+      <td><code>qumulo_network_interface_receive_errors</code></td>
+      <td>counter</td>
+      <td>
+        <ul>
+          <li><code>bond</code></li>
+          <li><code>role</code></li>
+          <li><code>interface</code></li>
+          <li><code>node_id</code></li>
+        </ul>
+      </td>
+      <td>Number of receive errors on this interface</td>
+    </tr>
+    <tr>
+      <td><code>qumulo_network_interface_received_bytes</code></td>
+      <td>counter</td>
+      <td>
+        <ul>
+          <li><code>bond</code></li>
+          <li><code>role</code></li>
+          <li><code>interface</code></li>
+          <li><code>node_id</code></li>
+        </ul>
+      </td>
+      <td>Total bytes received on this interface</td>
+    </tr>
+    <tr>
+      <td><code>qumulo_network_interface_received_packets</code></td>
+      <td>counter</td>
+      <td>
+        <ul>
+          <li><code>bond</code></li>
+          <li><code>role</code></li>
+          <li><code>interface</code></li>
+          <li><code>node_id</code></li>
+        </ul>
+      </td>
+      <td>Total number of packets received on this interface</td>
+    </tr>
+    <tr>
+      <td><code>qumulo_network_interface_transmit_errors</code></td>
+      <td>counter</td>
+      <td>
+        <ul>
+          <li><code>bond</code></li>
+          <li><code>role</code></li>
+          <li><code>interface</code></li>
+          <li><code>node_id</code></li>
+        </ul>
+      </td>
+      <td>Number of transmit errors on this interface</td>
+    </tr>
+    <tr>
+      <td><code>qumulo_network_interface_transmitted_bytes</code></td>
+      <td>counter</td>
+      <td>
+        <ul>
+          <li><code>bond</code></li>
+          <li><code>role</code></li>
+          <li><code>interface</code></li>
+          <li><code>node_id</code></li>
+        </ul>
+      </td>
+      <td>Total bytes transmitted on this interface</td>
+    </tr>
+    <tr>
+      <td><code>qumulo_network_interface_transmitted_packets</code></td>
+      <td>counter</td>
+      <td>
+        <ul>
+          <li><code>bond</code></li>
+          <li><code>role</code></li>
+          <li><code>interface</code></li>
+          <li><code>node_id</code></li>
+        </ul>
+      </td>
+      <td>Total number of packets transmitted on this interface</td>
+    </tr>
+    <tr>
+      <td><code>qumulo_power_supply_is_unhealthy</code></td>
+      <td>gauge</td>
+      <td>
+        <ul>
+          <li><code>location</code></li>
+          <li><code>node_id</code></li>
+        </ul>
+      </td>
+      <td>Whether this power supply is healthy. This value can be <code>0</code> (healthy) or <code>1</code> (unplugged, removed, or unresponsive)</td>
+    </tr>
+    <tr>
+      <td><code>qumulo_protocol_client_connections</code></td>
+      <td>counter</td>
+      <td>
+        <ul>
+          <li><code>protocol</code></li>
+        </ul>
+      </td>
+      <td>Total number of clients that have connected to this protocol</td>
+    </tr>
+    <tr>
+      <td><code>qumulo_protocol_client_disconnections</code></td>
+      <td>counter</td>
+      <td>
+        <ul>
+          <li><code>protocol</code></li>
+        </ul>
+      </td>
+      <td>Total number of clients that have disconnected from this protocol</td>
+    </tr>
+    <tr>
+      <td><code>qumulo_protocol_operation_bytes</code></td>
       <td>counter</td>
       <td>
         <ul>
@@ -84,13 +361,12 @@ The following table gives the name, type, labels, and descriptions for metrics a
           <li><code>io_type</code></li>
           <li><code>op_name</code></li>
           <li><code>protocol</code></li>
-          <li><code>server_ip</code></li>
         </ul>
       </td>
       <td>Bytes transferred by protocol operations</td>
     </tr>
     <tr>
-      <td><code>qumulo_protocol_latency_seconds</code></td>
+      <td><code>qumulo_protocol_operation_latency_seconds</code></td>
       <td>histogram</td>
       <td>
         <ul>
@@ -98,7 +374,6 @@ The following table gives the name, type, labels, and descriptions for metrics a
           <li><code>io_type</code></li>
           <li><code>op_name</code></li>
           <li><code>protocol</code></li>
-          <li><code>server_ip</code></li>
         </ul>
       </td>
       <td>Total latency for protocol operations</td>
@@ -109,10 +384,9 @@ The following table gives the name, type, labels, and descriptions for metrics a
       <td>
         <ul>
           <li><code>data_type</code></li>
-          <li><code>io_type</code></li>          
+          <li><code>io_type</code></li>
           <li><code>op_name</code></li>
           <li><code>protocol</code></li>
-          <li><code>server_ip</code></li>
         </ul>
       </td>
       <td>Number of completed protocol operations</td>
@@ -127,6 +401,17 @@ The following table gives the name, type, labels, and descriptions for metrics a
       </td>
       <td>Online status for each node in the cluster<br>
       This value can be <code>0</code> (node online) or <code>1</code> (node offline).</td>
+    </tr>
+    <tr>
+      <td><code>qumulo_time_is_not_synchronizing</code></td>
+      <td>gauge</td>
+      <td>
+        <ul>
+          <li><code>node_id</code></li>
+        </ul>
+      </td>
+      <td>Time synchronization status for each node in the cluster<br>
+      This value can be <code>0</code> (time is synchronized) or <code>1</code> (time is not synchronizing).</td>
     </tr>
   </tbody>
 </table>
@@ -173,7 +458,7 @@ The following table gives the metric label name, its possible values, and descri
         <ul>
           <li><code>none</code></li>
           <li><code>read</code></li>
-          <li><code>wait</code>: A blocking operation that takes an indeterminate amount of time.</li>          
+          <li><code>wait</code>: A blocking operation that takes an indeterminate amount of time.</li>
           <li><code>write</code></li>
         </ul>
       </td>
@@ -182,11 +467,11 @@ The following table gives the metric label name, its possible values, and descri
     <tr>
       <td><code>node_id</code></td>
       <td>A positive integer that represents a node ID in the cluster.</td>
-      <td>This value differentiates between the different nodes in the cluster for the <code>qumulo_quorum_node_is_offline</code> gauge.</td>
+      <td>This value differentiates between the different nodes in the cluster.</td>
     </tr>
     <tr>
       <td><code>op_name</code></td>
-      <td>Any NFSv3, NFSv4, or SMB (SMBv2 or SMBv3) operation name.</td>
+      <td>Any NFS (NFSv3 or NFSv4), SMB (SMBv2 or SMBv3), or FTP operation name.</td>
       <td>The recorded operation</td>
     </tr>
     <tr>
@@ -198,17 +483,12 @@ The following table gives the metric label name, its possible values, and descri
       <td><code>protocol</code></td>
       <td>
         <ul>
-          <li><code>nfs3</code></li>
-          <li><code>nfs4</code></li>
+          <li><code>nfs</code>: NFSv3 or NFSv4</li>
           <li><code>smb2</code>: SMBv2 or SMBv3</li>
+          <li><code>ftp</code></li>
         </ul>
       </td>
       <td>The protocol of the recorded operation</td>
-    </tr>
-    <tr>
-      <td><code>server_ip</code></td>
-      <td>An IPv4 or IPv6 address.</td>
-      <td>This is the IP address on your Qumulo cluster that receives and services the protocol operation request from the client machine. You can use this label to understand how client connections are distributed across your cluster's IP address space.</td>
     </tr>
     <tr>
       <td><code>usage_type</code></td>
