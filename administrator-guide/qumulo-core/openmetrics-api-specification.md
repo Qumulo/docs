@@ -8,7 +8,10 @@ sidebar: administrator_guide_sidebar
 
 {% include content-reuse/openmetrics-api-introduction.md %}
 
-This section describes the specification of the types of metrics that the Qumulo API emits.
+## Accessing Metrics
+
+The metrics API is available at <code>/v2/metrics/endpoints/default/data</code>.
+An external system that supports the [OpenMetrics specification](https://github.com/OpenObservability/OpenMetrics/blob/main/specification/OpenMetrics.md) can be set up to point to your cluster's hostname at that path, and can use bearer token authentication to access the endpoint.
 
 ## Metric Types
 All metrics available in the API belong to one of the three types that the OpenMetrics standard defines. Each metric type has a specific set of functionality. The following are the three metric types:
