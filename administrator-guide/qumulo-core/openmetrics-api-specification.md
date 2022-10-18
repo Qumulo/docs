@@ -431,6 +431,21 @@ The following table gives the metric label name, its possible values, and descri
   </thead>
   <tbody>
     <tr>
+      <td><code>bond</code></td>
+      <td>
+        <ul>
+          <li><code>bond0</code></li>
+          <li><code>bond1</code></li>
+        </ul>
+      </td>
+      <td>The bond to which a network interface belongs</td>
+    </tr>
+    <tr>
+      <td><code>cpu</code></td>
+      <td>A non-negative integer</td>
+      <td>The CPU's index in the node</td>
+    </tr>
+    <tr>
       <td><code>data_type</code></td>
       <td>
         <ul>
@@ -440,6 +455,23 @@ The following table gives the metric label name, its possible values, and descri
         </ul>
       </td>
       <td>The data type that an operation transfers</td>
+    </tr>
+    <tr>
+      <td><code>disk_type</code></td>
+      <td>
+        <ul>
+          <li><code>hdd</code>: Hard disk drive</li>
+          <li><code>ssd</code>: Solid-state drive</li>
+          <li><code>premium page blob</code>: Azure premium page blob</li>
+          <li><code>standard page blob</code>: Azure standard page blob</li>
+        </ul>
+      </td>
+      <td>The type of disk</td>
+    </tr>
+    <tr>
+      <td><code>drive_bay</code></td>
+      <td>A drive bay name, for example <code>b3</code> or <code>1.1</code></td>
+      <td>The physical drive bay on the chassis.</td>
     </tr>
     <tr>
       <td><code>entry_type</code></td>
@@ -455,6 +487,16 @@ The following table gives the metric label name, its possible values, and descri
       <td>The file system object type</td>
     </tr>
     <tr>
+      <td><code>fan</code></td>
+      <td>A fan name, for example <code>system fan 1</code></td>
+      <td>The fan name</td>
+    </tr>
+    <tr>
+      <td><code>interface</code></td>
+      <td>An interface name, for example <code>eth0</code></td>
+      <td>The interface name.</td>
+    </tr>
+    <tr>
       <td><code>io_type</code></td>
       <td>
         <ul>
@@ -465,6 +507,12 @@ The following table gives the metric label name, its possible values, and descri
         </ul>
       </td>
       <td>The I/O that the operation performs</td>
+    </tr>
+    <tr>
+      <td><code>location</code></td>
+      <td>A location, for example <code>left</code> or <code>right</code></td>
+      <td>The location on the chassis.<br>
+      For power supplies, this location is determined by looking at the back of the node.</td>
     </tr>
     <tr>
       <td><code>node_id</code></td>
@@ -491,6 +539,22 @@ The following table gives the metric label name, its possible values, and descri
         </ul>
       </td>
       <td>The protocol of the recorded operation</td>
+    </tr>
+    <tr>
+      <td><code>role</code></td>
+      <td>
+        <ul>
+          <li><code>frontend</code></li>
+          <li><code>backend</code></li>
+        </ul>
+      </td>
+      <td>The interface's role.<br>
+      Frontend includes protocol, management, and replication traffic, and backend includes all intra-node communication.</td>
+    </tr>
+    <tr>
+      <td><code>server_url</code></td>
+      <td>A hostname (<code>ad.my-domain.com</code>) or IP address</td>
+      <td>The URL of a remote server.</td>
     </tr>
     <tr>
       <td><code>usage_type</code></td>
