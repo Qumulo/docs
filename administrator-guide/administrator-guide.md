@@ -45,5 +45,4 @@ The Qumulo Administrator Guide is a growing collection of information about conf
   * [Configuring Cross-Domain Active Directory Trusts](kerberos/kerberos-configuring-cross-domain-active-directory-trusts.md)
   * [Troubleshooting NFSv4.1 with Kerberos](kerberos/kerberos-troubleshooting.md)
 * **Configuring and Collecting Metrics**
-  * [Configuring Prometheus and Grafana to use the Qumulo Metrics API](qumulo-core/configuring-prometheus-grafana-metrics-api.md)
   * [Qumulo OpenMetrics API Specification](qumulo-core/openmetrics-api-specification.md)

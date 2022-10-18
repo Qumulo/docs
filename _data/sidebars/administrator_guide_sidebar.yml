@@ -168,10 +168,6 @@ entries:
     output: web, pdf
     folderitems:
 
-    - title: Configuring Prometheus and Grafana to use the Qumulo Metrics API
-      url: /administrator-guide/qumulo-core/configuring-prometheus-grafana-metrics-api.html
-      output: web, pdf
-
     - title: Qumulo OpenMetrics API Specification
       url: /administrator-guide/qumulo-core/openmetrics-api-specification.html
       output: web, pdf
