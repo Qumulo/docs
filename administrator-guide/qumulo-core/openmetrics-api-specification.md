@@ -31,10 +31,12 @@ For more information about these (and other) OpenMetrics types, see [Metric Type
 ## Metric Labels
 The OpenMetrics format provides a way to label metrics. You can use metric labels to categorize metrics based on different label combinations. If you use Prometheus, all metrics are labeled with the `job_name` and `instance` labels automatically. The `instance` label specifies the host name and port for the cluster that emits the metrics. The two labels are defined in `prometheus.yml`.
 
-Any other labels are metric-specific. For more information, see the **Label** column in [Available Metrics](#available-metrics)
+Any other labels are metric-specific. For more information, see the full table of [Available Labels](#available-labels).
 
 ## Available Metrics
 The following table gives the name, type, labels, and descriptions for metrics available for Qumulo Core. The table lists specific sets of possible values for labels.
+
+{% include note.html content="For Qumulo on Azure as a Service users, all metrics with a <code>node_id</code> label are unavailable as they refer to specific hardware." %}
 
 <table>
   <thead>
@@ -421,7 +423,7 @@ The following table gives the name, type, labels, and descriptions for metrics a
   </tbody>
 </table>
 
-## Metric Labels
+## Available Labels
 The following table gives the metric label name, its possible values, and descriptions.
 
 <table>
