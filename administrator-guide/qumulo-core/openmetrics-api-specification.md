@@ -21,6 +21,8 @@ All metrics available in the API belong to one of the three types that the OpenM
 
   {% include note.html content="Because Qumulo Core doesn't emit any buckets for histogram metrics, you can use histograms to keep track of averages, by dividing the `sum` field by the `count` field." %}
 
+* **Info**: A metric that exposes some informational text about the system. An info metric always has a value of <code>1</code> and has labels containing the relevant information.
+
 For more information about these (and other) OpenMetrics types, see [Metric Types](https://github.com/OpenObservability/OpenMetrics/blob/main/specification/OpenMetrics.md#metric-types) in the OpenMetrics Specification.
 
 ## Metric Labels
