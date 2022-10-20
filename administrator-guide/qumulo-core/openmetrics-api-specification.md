@@ -6,37 +6,36 @@ keywords: metrics, openmetrics, prometheus, api
 sidebar: administrator_guide_sidebar
 ---
 
-The Qumulo OpenMetrics API has a single endpoint that provides complete collections of point-in-time telemetry from the Qumulo File Data Platform. Monitoring and metrics systems, such as [Prometheus](https://github.com/prometheus/prometheus), can consume the OpenMetrics data format that the API emits, without custom code or an agent. For more information about which data formats your system can ingest natively, see your monitoring system documentation.
+The Qumulo OpenMetrics API has a single endpoint that provides a complete view of point-in-time telemetry from the Qumulo File Data Platform. Monitoring and metrics systems, such as [Prometheus](https://github.com/prometheus/prometheus), can consume the OpenMetrics data format that the API emits, without custom code or an agent. For more information about which data formats your system can ingest natively, see your monitoring system documentation.
 
 ## Accessing Metrics
 
 The metrics API is available at <code>https://&lt;hostname&gt;:8000/v2/metrics/endpoints/default/data</code>, where <code>hostname</code> is your cluster's hostname or IP address.
-An external system that supports the [OpenMetrics specification](https://github.com/OpenObservability/OpenMetrics/blob/main/specification/OpenMetrics.md) can be set up to point to this URL and can use bearer token authentication to access the endpoint.
+An external system that supports the [OpenMetrics specification](https://github.com/OpenObservability/OpenMetrics/blob/main/specification/OpenMetrics.md) can be set up to point to this URL and use bearer token authentication to access the endpoint.
 
 ## Metric Types
-All metrics available in the API belong to one of the three types that the OpenMetrics standard defines. Each metric type has a specific set of functionality. The following are the three metric types:
+All metrics available in the API belong to one of the four types that the OpenMetrics standard defines. Each metric type has a specific set of functionality. The following are the four metric types:
 
-* **Counter**: A monotonically increasing integer that increases from zero. It isn't possible to decrement this value.
+* **Counter**: A monotonically increasing integer that increases from zero, stored in `<metric_name>_count`. A counter's value will never decrease during normal operation.
 
-* **Gauge**: A value that represents a single integer (similar to a counter). It is posible to increase or decrease a gauge.
+* **Gauge**: A value that represents a single integer (similar to a counter), stored in `<metric_name>`.. A gauge's value may increase and decrease during normal operation.
 
-* **Histogram**: A histogram that represents a series of _buckets._ Each bucket keeps track of all values that occur within a specific range. A histogram also has a `count` field and a `sum` field, stored in `<metric_name>_count` (the total number of samples) and `<metric_name>_sum` (the sum of all the samples).
+* **Histogram**: A histogram that represents a series of _buckets._ Each bucket keeps track of all values that occur within a specific range. A histogram also has a `count` field and a `sum` field, stored in `<metric_name>_count` (the total number of samples) and `<metric_name>_sum` (the sum of all the samples). The Qumulo Core OpenMetrics API emits only a single bucket containing all samples.
 
-  {% include note.html content="Because Qumulo Core doesn't emit any buckets for histogram metrics, you can use histograms to keep track of averages, by dividing the `sum` field by the `count` field." %}
+  {% include note.html content="Because Qumulo Core only emits a single bucket for histogram metrics, you can use histograms to keep track of averages by dividing the `sum` field by the `count` field." %}
 
-* **Info**: A metric that exposes some informational text about the system. An info metric always has a value of <code>1</code> and has labels containing the relevant information.
+* **Info**: A metric that exposes some informational text about the system, stored in `<metric_name>_info`. An info metric always has a value of <code>1</code> and has labels containing the relevant information.
 
 For more information about these (and other) OpenMetrics types, see [Metric Types](https://github.com/OpenObservability/OpenMetrics/blob/main/specification/OpenMetrics.md#metric-types) in the OpenMetrics Specification.
 
 ## Metric Labels
-The OpenMetrics format provides a way to label metrics. You can use metric labels to categorize metrics based on different label combinations. If you use Prometheus, all metrics are labeled with the `job_name` and `instance` labels automatically. The `instance` label specifies the host name and port for the cluster that emits the metrics. The two labels are defined in `prometheus.yml`.
-
-Any other labels are metric-specific. For more information, see the full table of [Available Labels](#available-labels).
+The OpenMetrics format allows for metrics to be labeled to communicate additional information about each metric point. The Qumulo Core OpenMetrics API emits labels to give context to each metric, for example the name of a protocol operation or the URL of a remote server. These labels are metric-specific. For more information, see the full table of [Available Labels](#available-labels).
 
 ## Available Metrics
-The following table gives the name, type, labels, and descriptions for metrics available for Qumulo Core. The table lists specific sets of possible values for labels.
+Below are two tables that list the metrics and metric labels available in the Qumulo Core OpenMetrics API.
+The following table gives the name, type, labels, and descriptions.
 
-{% include note.html content="For Qumulo on Azure as a Service users, all metrics with a <code>node_id</code> label are unavailable as they refer to specific hardware." %}
+{% include note.html content="For Qumulo as a Service users, all metrics with a <code>node_id</code> label are unavailable as they refer to specific hardware." %}
 
 <table>
   <thead>
@@ -49,6 +48,18 @@ The following table gives the name, type, labels, and descriptions for metrics a
   </thead>
   <tbody>
     <tr>
+      <td><code>qumulo</code></td>
+      <td>info</td>
+      <td>
+        <ul>
+          <li><code>name</code></li>
+          <li><code>uuid</code></li>
+          <li><code>version</code></li>
+        </ul>
+      </td>
+      <td>Information about the Qumulo Core software. This gives the cluster name, the cluster UUID, and the software version of Qumulo Core currently running.</td>
+    </tr>
+    <tr>
       <td><code>qumulo_ad_netlogon_request_errors</code></td>
       <td>counter</td>
       <td>
@@ -56,7 +67,7 @@ The following table gives the name, type, labels, and descriptions for metrics a
           <li><code>server_url</code></li>
         </ul>
       </td>
-      <td>Number of errored Active Directory Netlogon requests</td>
+      <td>Total number of errored active directory netlogon requests</td>
     </tr>
     <tr>
       <td><code>qumulo_ad_netlogon_request_latency_seconds</code></td>
@@ -76,7 +87,7 @@ The following table gives the name, type, labels, and descriptions for metrics a
           <li><code>server_url</code></li>
         </ul>
       </td>
-      <td>Number of completed Active Directory Netlogon operations</td>
+      <td>Total number of completed Active Directory Netlogon operations</td>
     </tr>
     <tr>
       <td><code>qumulo_cpu_temperature_celsius</code></td>
@@ -174,7 +185,7 @@ The following table gives the name, type, labels, and descriptions for metrics a
           <li><code>server_url</code></li>
         </ul>
       </td>
-      <td>Number of errored LDAP requests</td>
+      <td>Total number of errored LDAP requests</td>
     </tr>
     <tr>
       <td><code>qumulo_ldap_lookup_request_latency_seconds</code></td>
@@ -194,13 +205,13 @@ The following table gives the name, type, labels, and descriptions for metrics a
           <li><code>server_url</code></li>
         </ul>
       </td>
-      <td>Number of completed LDAP requests</td>
+      <td>Total number of completed LDAP requests</td>
     </tr>
     <tr>
       <td><code>qumulo_ldap_operation_errors</code></td>
       <td>counter</td>
       <td>&mdash;</td>
-      <td>Number of errored LDAP operations</td>
+      <td>Total number of errored LDAP operations</td>
     </tr>
     <tr>
       <td><code>qumulo_ldap_operation_latency_seconds</code></td>
@@ -212,7 +223,7 @@ The following table gives the name, type, labels, and descriptions for metrics a
       <td><code>qumulo_ldap_operations</code></td>
       <td>counter</td>
       <td>&mdash;</td>
-      <td>Number of completed LDAP operations</td>
+      <td>Total number of completed LDAP operations</td>
     </tr>
     <tr>
       <td><code>qumulo_memory_correctable_ecc_errors</code></td>
@@ -222,7 +233,7 @@ The following table gives the name, type, labels, and descriptions for metrics a
           <li><code>node_id</code></li>
         </ul>
       </td>
-      <td>Number of memory errors that were automatically corrected</td>
+      <td>Total number of memory errors that were automatically corrected</td>
     </tr>
     <tr>
       <td><code>qumulo_network_interface_is_down</code></td>
@@ -261,7 +272,7 @@ The following table gives the name, type, labels, and descriptions for metrics a
           <li><code>node_id</code></li>
         </ul>
       </td>
-      <td>Number of receive errors on this interface</td>
+      <td>Total number of receive errors on this interface</td>
     </tr>
     <tr>
       <td><code>qumulo_network_interface_received_bytes</code></td>
@@ -300,7 +311,7 @@ The following table gives the name, type, labels, and descriptions for metrics a
           <li><code>node_id</code></li>
         </ul>
       </td>
-      <td>Number of transmit errors on this interface</td>
+      <td>Total number of transmit errors on this interface</td>
     </tr>
     <tr>
       <td><code>qumulo_network_interface_transmitted_bytes</code></td>
@@ -370,7 +381,7 @@ The following table gives the name, type, labels, and descriptions for metrics a
           <li><code>protocol</code></li>
         </ul>
       </td>
-      <td>Bytes transferred by protocol operations</td>
+      <td>Total bytes transferred by protocol operations</td>
     </tr>
     <tr>
       <td><code>qumulo_protocol_operation_latency_seconds</code></td>
@@ -396,7 +407,7 @@ The following table gives the name, type, labels, and descriptions for metrics a
           <li><code>protocol</code></li>
         </ul>
       </td>
-      <td>Number of completed protocol operations</td>
+      <td>Total number of completed protocol operations</td>
     </tr>
     <tr>
       <td><code>qumulo_quorum_node_is_offline</code></td>
@@ -467,11 +478,9 @@ The following table gives the metric label name, its possible values, and descri
         <ul>
           <li><code>hdd</code>: Hard disk drive</li>
           <li><code>ssd</code>: Solid-state drive</li>
-          <li><code>premium page blob</code>: Azure premium page blob</li>
-          <li><code>standard page blob</code>: Azure standard page blob</li>
         </ul>
       </td>
-      <td>The type of disk</td>
+      <td>The type of underlying storage</td>
     </tr>
     <tr>
       <td><code>drive_bay</code></td>
