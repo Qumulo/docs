@@ -25,11 +25,11 @@ Before you begin, make sure that you have done the following.
 
   {% include note.html content="You can use trusts, as long as the Base DN covers all users that might require access to your cluster." %}
   
-* Configure your IdP to return AD User Principal Names (UPNs, for example `alice@example.com`) or an email address as a NameID. A _NameID_ is an identifier for an authenticated user. Typically, a NameID uses the email format.
+* Configure your IdP to return AD User Principal Names (UPNs, for example `alice@example.com`) or an email address as a NameID. A _NameID_ is an identifier for an authenticated user. Typically, a NameID uses the format of an email address.
 
 
 ## To Configure SAML SSO for Your Qumulo Cluster
-Configuring SAML SSO for your Qumulo Cluster requires coordination between the cluster administrator and your organization's SSO administrator.
+This process requires coordination between the cluster administrator and SSO administrator.
 
 1. The cluster administrator contacts the SSO administrator and asks the SSO administrator to create a SAML integration for the Qumulo cluster.
 
@@ -96,31 +96,31 @@ Qumulo Core supports two SAML SSO workflows: [IdP](#identity-provider)-initiated
   <li>Members of the built-in Administrators role always have access to the Web UI.</li>
   <li>To allow other users to access the Web UI, you must assign the built-in Observers role to the users.</li>
   <li>Depending on policy, additional verification might be necessary for users. For example, the SSO administrator can enforce mandatory two-factor authentication (2FA) for certain clusters.</li>
-  <li>If the user accesses the Web UI by connecting to a node physically, the login page doesn't show doesn't show **Continue to SSO login** on the Web UI login page, even if SSO is configured.</li>
+  <li>If the user accesses the Web UI by connecting to a node physically, the login page doesn't show doesn't show <strong>Continue to SSO login</strong> on the Web UI login page, even if SSO is configured.</li>
 </ul>
 {{site.data.alerts.end}}
 
 ### IdP-Initiated SSO Worfklow
-1. A user authenticates to her organization's SSO portal and then selects the Qumulo cluster in the portal.
+1. A user authenticates to her organization's SSO portal and then selects the Qumulo cluster on the SSO portal.
    
-1. The SSO portal redirects to the cluster's endpoint.
+1. The SSO portal redirects the user to the cluster's endpoint.
 
-   If the user has sufficient privileges, the Web UI logs her in. Otherwise, the Web UI displays an error message.
+   If the user has sufficient privileges, the Web UI logs the user in. Otherwise, the Web UI displays an error message.
 
 ### SP-Initiated SSO Workflow
 1. A user navigates to the Qumulo cluster's Web UI endpoint in a browser.
 
 1. If the Qumulo cluster has SAML SSO configured, the user can click **Continue to SSO login** on the Web UI login page.
 
-   The Web UI redirects the user to the configured SSO portal. Because the authentication request uses HTTP-Redirect Binding, the login link appears. For example:
+   The Web UI redirects the user to the configured SSO portal. Because the authentication request uses HTTP-Redirect Binding, the login link appears as follows:
    
    ```
    https://my-org.sso-provider.com/abc12de34fgAB5CDh6i7/saml?SAMLRequest=abcdefgh1234567890...
    ```
    
-1. The user clicks the login link and the SSO portal authenticates the users.
+1. The user clicks the login link and the SSO portal authenticates the user.
 
-1. The SSO portal redirects to the cluster's endpoint.
+1. The SSO portal redirects the user to the cluster's endpoint.
 
 
 ## Known Issues and Limitations
@@ -136,7 +136,7 @@ Qumulo Core supports two SAML SSO workflows: [IdP](#identity-provider)-initiated
 This section explains troubleshooting common and uncommon SAML SSO authentication issues.
 
 ### Common Issues
-Typically, if SAML authentication fails, Qumulo Core's in-browser error message explains the reasons for failure and you can resolve the issue by setting the right configuration by using the `qq saml_modify_settings` command. Examples of this issue type include the followingscenarios:
+Typically, if SAML authentication fails, Qumulo Core's in-browser error message explains the reasons for failure and you can resolve the issue by setting the right configuration by using the `qq saml_modify_settings` command. Examples of this issue type include the following scenarios:
 
 * SAML isn't enabled on the Qumulo cluster.
 
@@ -147,13 +147,13 @@ Typically, if SAML authentication fails, Qumulo Core's in-browser error message 
 * A user isn't a member of the Observers role that Qumulo Core requires for granting access to the Web UI.
 
 ### Uncommon Issues
-In more complex cases the in-browser errors are somewhat less informative, for security reasons. For example, if you configure an incorrect IdP certificate on your cluster, the **Signature validation failed. SAML Response rejected.** error appears.
+In more complex cases, the in-browser errors are less informative for security reasons. For example, if you configure an incorrect IdP certificate on your cluster, the **Signature validation failed. SAML Response rejected.** error appears.
 
 Several AD configuration issues can cause a **User not found** error:
 
 * The Qumulo cluster isn't joined to AD.
 
-* The Qumulo cluster is joing to AD that isn't connected to the IdP.
+* The Qumulo cluster is joined to AD that isn't connected to the IdP.
 
 * IdP sends usernames (NameID) in an unusual format.
 
@@ -165,13 +165,13 @@ Several AD configuration issues can cause a **User not found** error:
 
 * The Configured Base DN doesn't include all users.
 
-  To find the security identifier (SID), run the `qq auth_find_identity` command. For example:
+  To find a security identifier (SID), run the `qq auth_find_identity` command. For example:
   
   ```bash
   qq auth_find_identity --name MyUsername
   ```
   
-  To verify that the username is discoverable, run the `qq ad_sid_to_account` command. For example:
+  To verify that a username is discoverable, run the `qq ad_sid_to_account` command. For example:
 
   ```bash
   qq ad_sid_to_account --sid S-1-5-32-544
