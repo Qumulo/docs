@@ -31,9 +31,9 @@ Before you begin, make sure that you have done the following.
 ## To Configure SAML SSO for Your Qumulo Cluster
 Configuring SAML SSO for your Qumulo Cluster requires coordination between the cluster administrator and your organization's SSO administrator.
 
-1. The cluster administrator contacts your SSO administrator and asks the SSO administrator to create a SAML integration for the cluster.
+1. The cluster administrator contacts the SSO administrator and asks the SSO administrator to create a SAML integration for the Qumulo cluster.
 
-1. The SSO administrator creates a SAML integration with your organization's SSO [identity provider](#identity-provider) (IdP) and uses the cluster's fully qualified domain name (FQDN) format for the [service provider](#service-provider) (SP) endpoint (also known as the _assertion consumer service URL_), in the following format.
+1. The SSO administrator creates a SAML integration with your organization's SSO [identity provider](#identity-provider) (IdP) and uses the cluster's fully qualified domain name (FQDN) format for the [service provider](#service-provider) (SP) endpoint (also known as the _assertion consumer service URL_), in the following format:
 
    ```
    https://my-cluster.my-org.com/saml
@@ -41,13 +41,13 @@ Configuring SAML SSO for your Qumulo Cluster requires coordination between the c
    
    {% include note.html content="Because the user's browser performs DNS resolution (for example, in a VPN-only scenario), it isn't necessary for an external DNS server to be able to resolve the cluster's FQDN." %}
 
-1. If prompted, the SSO administrator specifies an HTTP POST binding for the SP endpoint. Typically, she can use the default binding.
+1. If prompted, the SSO administrator specifies an HTTP POST binding for the SP endpoint. Typically, the default binding is sufficient.
 
 1. After creating the SAML integration, the SSO administrator provides the following information to the cluster administrator.
 
    * The certificate (public key) of the identity provider, in a `.pem` file.
    
-     This certificatre lets you verify the authenticity of the messages from the IdP.
+     This certificate lets you verify the authenticity of the messages from the IdP.
    
    * The IdP SSO URL&mdash;to which the Qumulo cluster can send authentication requests&mdash;in the following format:
 
@@ -69,7 +69,7 @@ Configuring SAML SSO for your Qumulo Cluster requires coordination between the c
 
 1. To configure and enable SAML login to the Qumulo cluster, the cluster administrator runs the `qq saml_modify_settings` command. For example:
 
-   ```
+   ```Bash
    qq saml_modify_settings --enable \
      --idp-certificate-file ~/certificate.pem \
      --cluster-dns-name qumulo-cluster.my-org.com \
@@ -79,9 +79,9 @@ Configuring SAML SSO for your Qumulo Cluster requires coordination between the c
    
    {{site.data.alerts.note}}
    <ul>
-     <li>To allow specific changes (for instance, correct a typo, update a DNS name or an expired certificate, or temporarily disable SAML SSO without losing any of the other settings), the command permits changing individual SAML settings independently.</li>
+     <li>To allow specific changes (for instance, correct a typo, update a DNS name or an expired certificate, or temporarily disable SAML SSO without losing any of the other settings), the <code>qq saml_modify_settings</code> command permits changing individual SAML settings independently.</li>
      <li>To let the cluster validate the authentication messages from the IdP and make sure that the IdP issued them to the cluster, first-time SAML configurations require providing all configuration settings.</li>
-     <li>Aside from a basic check of the IdP certificate, Qumulo Core doesn't verify the configuration parameters. It is the cluster administrator's responsibility to ensure that IdP-initiated SAML logins (that initate when the user clicks <strong>Continue to SSO login</strong> in the Web UI) work correctly.</li>
+     <li>Aside from a basic check of the IdP certificate, Qumulo Core doesn't verify the configuration parameters. It is the cluster administrator's responsibility to ensure that IdP-initiated SAML logins work correctly. (These logins initate when the user clicks <strong>Continue to SSO login</strong> in the Web UI.)</li>
    </ul>
    {{site.data.alerts.end}}
 
