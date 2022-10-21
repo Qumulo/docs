@@ -4,6 +4,7 @@ summary: "This section explains how to configure SAML Single Sign-On (SSO) for y
 permalink: /administrator-guide/qumulo-core/configuring-saml-single-sign-on-sso.html
 sidebar: administrator_guide_sidebar
 keywords: SAML, SAML 2.0, authentication, single sign-on, SSO
+varAddlAuth: Depending on policy, additional verification might be necessary. For example, the SSO administrator can enforce mandatory two-factor authentication (2FA) for certain clusters.
 ---
 
 This section explains how to integrate your Qumulo cluster with your organization's single sign-on (SSO) service by configuring Security Assertion Markup Language (SAML) 2.0 for Qumulo Core 5.2.5 (and higher).
@@ -93,7 +94,9 @@ Qumulo Core supports two SAML SSO workflows: [IdP](#identity-provider)-initiated
 ### IdP-Initiated SSO Worfklow
 1. A user authenticates to her organization's SSO portal and then selects the Qumulo cluster in the portal.
 
-   {% include note.html content="Depending on policy, additional verification might be necessary. For example, the SSO administrator can enforce mandatory two-factor authentication (2FA) for certain clusters." %}
+   {{site.data.alerts.note}}
+   {{page.varAddlAuth}}
+   {{site.data.alerts.end}}
    
 1. The SSO portal redirects to the cluster's endpoint.
 
@@ -107,9 +110,13 @@ Qumulo Core supports two SAML SSO workflows: [IdP](#identity-provider)-initiated
    The Web UI redirects the user to the configured SSO portal.
    
    {% include note.html content="Because the authentication request uses HTTP-Redirect Binding, the login link appears. For example: `https://my-org.sso-provider.com/abc12de34fgAB5CDh6i7/saml?SAMLRequest=abcdefgh1234567890...`" %}
+   
+1. The user clicks the login link and the SSO portal authenticates the users.
 
-1. A user opens the cluster's WebUI in a browser. If SAML is configured on the cluster, the login page will show the "Continue to SSO login" link leading to the configured SSO portal.
-The authentication request uses the HTTP Redirect Binding. In other words, the login link will look like this ``.
+   {{site.data.alerts.note}}
+   {{page.varAddlAuth}}
+   {{site.data.alerts.end}}
+
 
 1. The user clicks the login link. The SSO portal will verify the user (potentially asking for any additional factors if required by the organization).
 
