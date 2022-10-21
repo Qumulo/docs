@@ -124,34 +124,57 @@ Qumulo Core supports two SAML SSO workflows: [IdP](#identity-provider)-initiated
 
 
 ## Known Issues and Limitations
-- AD users can still use their passwords to login to WebUI and CLI. This will be improved in a future software release.
-- SAML Single Logout is not supported. Use the Sign out action in WebUI.
-- Automatic configuration from metadata XML is not supported. You have to specify each parameter in qq.
-- Suggesting a username to the SSO service is not supported.
-- Returning to the previous page in WebUI after re-authentication (e.g., after a timeout) is not supported.
+* Currently, AD users can still use their passwords to authenticate to the Web UI and the `qq` CLI.
+* Qumulo Core doesn't support:
+  * **SAML Single Logout (SLO):** We recommend clicking **Sign out** in the Web UI.
+  * **Automatic Configuration from Metadata XML:** You must specify each parameter by using the `qq` CLI.
+  * **Returning to Previous Web UI Page:** You can't return to a previous page after re-authenticating (for example, after a timeout).
+  * **Suggesting Usernames to the SSO Service**
 
-## Troubleshooting
-In many simple cases, if SAML authentication fails, the error message in the browser will show the exact reason, and the problem should be easy to resolve by setting the right configuration with the qq saml_modify_settings command.
 
-Examples are:
-- SAML is not actually enabled on the cluster.
-- Clock skew between IdP and the cluster. Clock skew tolerance is dictated by the SSO service, 5 minutes is common.
-- Incorrectly set `cluster-dns-name` or `idp-entity-id` on the cluster.
-- User is not a member of the Observers role required to access WebUI.
+## Troubleshooting SAML SSO Authentication
+This section explains troubleshooting common and uncommon SAML SSO authentication issues.
 
-In more complex cases the errors can be less informative (for security reasons). For example, if a wrong IdP certificate is configured on the cluster, the error will simply say "Signature validation failed. SAML Response rejected".
+### Common Issues
+Typically, if SAML authentication fails, Qumulo Core's in-browser error message explains the reasons for failure and you can resolve the issue by setting the right configuration by using the `qq saml_modify_settings` command. Examples of this issue type include the followingscenarios:
 
-Several AD related reasons can lead to s “User not found” error:
-- Cluster is not joined to AD at all.
-- Cluster is joined to AD that is not connected to the IdP.
-- IdP is sending usernames (NameID) in an unusual format.
+* SAML isn't enabled on the Qumulo cluster.
+
+* There is clock skew between the IdP and the Qumulo cluster (the SSO service sets the clock skew tolerance, typically to 5 minutes).
+
+* The `cluster-dns-name` or `idp-entity-id` on the Qumulo cluster aren't configured correctly.
+
+* A user isn't a member of the Observers role that Qumulo Core requires for granting access to the Web UI.
+
+### Uncommon Issues
+In more complex cases the in-browser errors are somewhat less informative, for security reasons. For example, if you configure an incorrect IdP certificate on your cluster, the **Signature validation failed. SAML Response rejected.** error appears.
+
+Several AD configuration issues can cause a **User not found** error:
+
+* The Qumulo cluster isn't joined to AD.
+
+* The Qumulo cluster is joing to AD that isn't connected to the IdP.
+
+* IdP sends usernames (NameID) in an unusual format.
+
+  To verify that you can use a username, run the `qq auth_find_identity` command. For example:
+
+  ```bash
+  qq auth_find_identity --name MyUsername
+  ```
+
+* The Configured Base DN doesn't include all users.
+
+  1. To find the security identifier (SID), run the `qq auth_find_identity` command. For example:
   
-  To verify that the username can be used, run `qq auth_find_identity --name <NameID>`.
-- Configured BaseDN does not include all the users.
+  ```bash
+  qq auth_find_identity --name MyUsername
+  ```
   
-  To verify that the username is discoverable, run the following commands:
-  - First, `qq auth_find_identity --name <NameID>` to find the SID;
-  - Then `qq ad_sid_to_account --sid <SID>` to verify that it is discoverable.
-If there is an error, contact your Active Directory administrator and ask for the right BaseDN.
+  1. To verify that the username is discoverable, run the `qq ad_sid_to_account` command. For example:
 
-While NFSv4.1 with Kerberos is unrelated topic, [this article](../kerberos/kerberos-prerequisites-joining-cluster-active-directory.md#specifying-the-base-distinguished-name-base-dn) has more information about Active Directory and BaseDN.
+  ```bash
+  qq ad_sid_to_account --sid S-1-5-32-544
+  ```
+  
+  If an error occurs, contact your AD administrator and request the correct Base DN. For more information, see [Specifying the Base Distinguished Name (Base DN)](../kerberos/kerberos-prerequisites-joining-cluster-active-directory.md#specifying-the-base-distinguished-name-base-dn).
