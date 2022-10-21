@@ -88,8 +88,16 @@ Configuring SAML SSO for your Qumulo Cluster requires coordination between the c
 
 1. (Optional) To view the current SAML configuration, the cluster administrator can use the `qq saml_get_settings` command.
 
+
 ## Supported SAML SSO Workflows
 Qumulo Core supports two SAML SSO workflows: [IdP](#identity-provider)-initiated and [SP](#service-provider)-initiated.
+
+{{site.data.alerts.note}}
+<ul>
+  <li>Members of the built-in Administrators role always have access to the Web UI.</li>
+  <li>To allow other users to access the Web UI, you must assign the built-in Observers role to the users.</li>
+</ul>
+{{site.data.alerts.end}}
 
 ### IdP-Initiated SSO Worfklow
 1. A user authenticates to her organization's SSO portal and then selects the Qumulo cluster in the portal.
@@ -105,7 +113,7 @@ Qumulo Core supports two SAML SSO workflows: [IdP](#identity-provider)-initiated
 ### SP-Initiated SSO Workflow
 1. A user navigates to the Qumulo cluster's Web UI endpoint in a browser.
 
-1. If the Qumulo cluster has SAML SSO configured, the user can click **Continue to SSO login** in the Web UI.
+1. If the Qumulo cluster has SAML SSO configured, the user can click **Continue to SSO login** on the Web UI login page.
 
    The Web UI redirects the user to the configured SSO portal.
    
@@ -117,14 +125,10 @@ Qumulo Core supports two SAML SSO workflows: [IdP](#identity-provider)-initiated
    {{page.varAddlAuth}}
    {{site.data.alerts.end}}
 
+1. The SSO portal redirects to the cluster's endpoint.
 
-1. The user clicks the login link. The SSO portal will verify the user (potentially asking for any additional factors if required by the organization).
+   {% include note.html content="If the user accesses the Web UI by connecting to a node physically, the login page doesn't show doesn't show **Continue to SSO login** on the Web UI login page, even if SSO is configured." %}
 
-1. SSO portal redirects back to the cluster. This is now the same with the step 3 above in the IdP initiated login
-
-If you access WebUI by physically connecting to a node, the login page will not show the SSO prompt even if it is configured.
-
-In general, users need to be assigned the built-in Observers role to access WebUI. Members of the built-in Administrators role always have access to the WebUI.
 
 ## Known Issues and Limitations
 - AD users can still use their passwords to login to WebUI and CLI. This will be improved in a future software release.
