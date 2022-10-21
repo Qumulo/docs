@@ -6,22 +6,23 @@ sidebar: administrator_guide_sidebar
 keywords: SAML, SAML 2.0, authentication, single sign-on, SSO
 ---
 
-## Introduction
-Starting with 5.2.5, you can integrate your Qumulo cluster with your company's Single Sign-On (SSO) service using SAML 2.0.
+This section explains how to integrate your Qumulo cluster with your company's single sign-on (SSO) service by configuring Security Assertion Markup Language (SAML) 2.0 for Qumulo Core 5.2.5 (and higher). Fore more information about the SAML standard for exchanging authentication information, see [SAML 2.0](https://en.wikipedia.org/wiki/SAML_2.0).
 
-Security Assertion Markup Language (SAML) is a widely supported standard for exchanging authentication information. If you do not know what it is, refer to this [Wikipedia article](https://en.wikipedia.org/wiki/SAML_2.0).
+## Prerequisites
+Before you begin, make sure that you have done the following.
 
-Here are several terms that will be used throughout the document:
-- Active Directory (AD) - For more information, see [Join Your Qumulo Cluster to Active Directory](https://care.qumulo.com/hc/en-us/articles/115007276068) on Qumulo Care.
-- Identity Provider (IdP) – a system that actually authenticates users (using passwords and additional factors). Usually managed centrally by IT. Examples are OneLogin, Okta, Duo, on-premise instances. IdP is often linked with the Active Directory.
-- Service Provider (SP) – a service that users need access to. This is the Qumulo cluster's role. Before SSO can work, IT has to register a new SP in their IdP. This is called SAML integration.
-- NameID – name identifier for an authenticated user. Usually in a form of email but can be almost anything.
+* Join your cluster to an Active Directory (AD) domain. For more information, see [Join Your Qumulo Cluster to Active Directory](https://care.qumulo.com/hc/en-us/articles/115007276068) on Qumulo Care.
 
-## Requirements
-- Cluster is joined to an Active Directory domain. We only support SAML logins for AD users.
-- BaseDN in AD settings is correctly set even if POSIX attributes are not used. This is needed to find group membership for SAML authenticated users.
-- SAML Identity Provider is linked to the same AD. Trusts are fine as long as BaseDN covers all the users that will need to access the cluster.
-- IdP is configured to return AD UPN (e.g., `alice@domain.example.com`) or email as NameID.
+  {% include note.html content="Qumulo Core supports SAML authentication only for AD users." %}
+
+* To allow SAML-authenticated users to find group memberships, configure the Base DN in your AD configuration, even if you don't use POSIX attributes.
+
+* Ensure that your SAML Identity Provider (IdP) is linked to the same AD. An _identity provider_ (such as OneLogin, Okta, Duo, or an on-premises instance) is a system that authenticates users to a system (for instance, by using passwords). Typically, an IT department manages an IdP centrally and the IdP is linked with AD. Before you can enable SSO, your IT department must register a new Service Provider (SP) in your IdP. A _service provider_ is the server which users access, in this case a Qumulo cluster.
+
+  {% include note.html content="You can use trusts, as long as the Base DN covers all users that might require access to your cluster." %}
+  
+* Configure your IdP to return AD User Principal Names (UPNs, for example `alice@example.com`) or email addresses as Name IDs. A _name ID_ is an identifier for an authenticated user. Typically, a Name ID uses the email format.
+
 
 ## Configuration
 Configuring SAML SSO requires coordination between the cluster administrator and the organization's SSO administrator.
