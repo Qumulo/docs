@@ -4,7 +4,6 @@ summary: "This section explains how to configure SAML Single Sign-On (SSO) for y
 permalink: /administrator-guide/qumulo-core/configuring-saml-single-sign-on-sso.html
 sidebar: administrator_guide_sidebar
 keywords: SAML, SAML 2.0, authentication, single sign-on, SSO
-varAddlAuth: Depending on policy, additional verification might be necessary. For example, the SSO administrator can enforce mandatory two-factor authentication (2FA) for certain clusters.
 ---
 
 This section explains how to integrate your Qumulo cluster with your organization's single sign-on (SSO) service by configuring Security Assertion Markup Language (SAML) 2.0 for Qumulo Core 5.2.5 (and higher).
@@ -96,7 +95,8 @@ Qumulo Core supports two SAML SSO workflows: [IdP](#identity-provider)-initiated
 <ul>
   <li>Members of the built-in Administrators role always have access to the Web UI.</li>
   <li>To allow other users to access the Web UI, you must assign the built-in Observers role to the users.</li>
-  <li>{{page.varAddlAuth}}</li>
+  <li>Depending on policy, additional verification might be necessary for users. For example, the SSO administrator can enforce mandatory two-factor authentication (2FA) for certain clusters.</li>
+  <li>If the user accesses the Web UI by connecting to a node physically, the login page doesn't show doesn't show **Continue to SSO login** on the Web UI login page, even if SSO is configured.</li>
 </ul>
 {{site.data.alerts.end}}
 
@@ -121,8 +121,6 @@ Qumulo Core supports two SAML SSO workflows: [IdP](#identity-provider)-initiated
 1. The user clicks the login link and the SSO portal authenticates the users.
 
 1. The SSO portal redirects to the cluster's endpoint.
-
-   {% include note.html content="If the user accesses the Web UI by connecting to a node physically, the login page doesn't show doesn't show **Continue to SSO login** on the Web UI login page, even if SSO is configured." %}
 
 
 ## Known Issues and Limitations
