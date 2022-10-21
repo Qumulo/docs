@@ -106,7 +106,10 @@ Qumulo Core supports two SAML SSO workflows: [IdP](#identity-provider)-initiated
 
    The Web UI redirects the user to the configured SSO portal.
    
-   {% include note.html content="Because the authentication request uses HTTP-Redirect Binding, the login link appears. For example:```&lt;https://my-org.sso-provider.com/abc12de34fgAB5CDh6i7/saml&gt;?SAMLRequest=abcdefgh1234567890...```" %}
+   {{site.data.alerts.note}}
+   Because the authentication request uses HTTP-Redirect Binding, the login link appears. For example:
+   <pre><code>&lt;https://my-org.sso-provider.com/abc12de34fgAB5CDh6i7/saml&gt;?SAMLRequest=abcdefgh1234567890...</code></pre>
+   {{site.data.alerts.end}}
 
 1. A user opens the cluster's WebUI in a browser. If SAML is configured on the cluster, the login page will show the "Continue to SSO login" link leading to the configured SSO portal.
 The authentication request uses the HTTP Redirect Binding. In other words, the login link will look like this ``.
