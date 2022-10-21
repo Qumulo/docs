@@ -1,20 +1,20 @@
 ---
-title: "Replacing the Hardware Components in Your C-192T, C-432T, and K-432T Nodes"
-summary: "This section explains how to replace the hardware components in C-192T, C-432T, and K-432T nodes."
-permalink: /hardware/c-192t-c-432t-k-432t/replacing-hardware-components.html
+title: "Replacing the Chassis in Your C-192T, C-432T, and K-432T Nodes"
+summary: "This section explains how to replace the chassis in C-192T, C-432T, and K-432T nodes."
+permalink: /hardware/c-192t-c-432t-k-432t/replacing-chassis.html
 redirect_from:
   - /c-192t-c-432t-chassis-replacement.html
   - /c-192t-c-432t-k-432t-chassis-replacement.html
   - /administrator-guide/c-192t-c-432t-chassis-replacement.html
   - /administrator-guide/c-192t-c-432t-k-432t-chassis-replacement.html
+  - /hardware/c-192t-c-432t-k-432t/replacing-hardware-components.html
 sidebar: hardware_sidebar
 keywords: chassis, chassis replacement, c-192t, c-432t, k-432t, 2u, 2u hybrid, 2u chassis replacement
 ---
 
-## Replacing the Chassis
 This section explains how to replace the chassis in C-192T, C-432T, and K-432T nodes. 
 
-### Step 1: Prepare for Chassis Replacement
+## Step 1: Prepare for Chassis Replacement
 {% include note.html content="We strongly suggest having another person help you with this process." %}
 
 1. To shut down the node, use the power button at the front or connect by using SSH and run the `sudo shutdown -h now` command. 
@@ -33,7 +33,7 @@ This section explains how to replace the chassis in C-192T, C-432T, and K-432T n
 
    The inner components of the node are exposed.
 
-### Step 2: Replace the M.2 Boot Drive, NVMe SSDs, and HDDs
+## Step 2: Replace the M.2 Boot Drive, NVMe SSDs, and HDDs
 
 1. Remove the internal M.2 boot drive and then transfer it into the replacement chassis Qumulo provided to you.
 
@@ -76,5 +76,5 @@ This section explains how to replace the chassis in C-192T, C-432T, and K-432T n
 
 1. Power on the node.
 
-### Step 3: (Optional) Reconfiguring the Out-of-Band Management (IPMI) Settings
+## Step 3: (Optional) Reconfiguring the Out-of-Band Management (IPMI) Settings
 If the current IPMI settings for your node are configured statically (rather than by using DHCP), you must reapply the static IPMI settings to the replacement node. For more information, see [IPMI Quick Reference Guide for Qumulo C-Series](https://care.qumulo.com/hc/en-us/articles/360024426314) on Qumulo Care.
