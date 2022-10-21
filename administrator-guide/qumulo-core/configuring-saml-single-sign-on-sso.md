@@ -69,7 +69,7 @@ Configuring SAML SSO for your Qumulo Cluster requires coordination between the c
 
 1. To configure and enable SAML login to the Qumulo cluster, the cluster administrator runs the `qq saml_modify_settings` command. For example:
 
-   ```Bash
+   ```bash
    qq saml_modify_settings --enable \
      --idp-certificate-file ~/certificate.pem \
      --cluster-dns-name qumulo-cluster.my-org.com \
