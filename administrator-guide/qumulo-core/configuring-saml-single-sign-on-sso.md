@@ -96,15 +96,12 @@ Qumulo Core supports two SAML SSO workflows: [IdP](#identity-provider)-initiated
 <ul>
   <li>Members of the built-in Administrators role always have access to the Web UI.</li>
   <li>To allow other users to access the Web UI, you must assign the built-in Observers role to the users.</li>
+  <li>{{page.varAddlAuth}}</li>
 </ul>
 {{site.data.alerts.end}}
 
 ### IdP-Initiated SSO Worfklow
 1. A user authenticates to her organization's SSO portal and then selects the Qumulo cluster in the portal.
-
-   {{site.data.alerts.note}}
-   {{page.varAddlAuth}}
-   {{site.data.alerts.end}}
    
 1. The SSO portal redirects to the cluster's endpoint.
 
@@ -120,10 +117,6 @@ Qumulo Core supports two SAML SSO workflows: [IdP](#identity-provider)-initiated
    {% include note.html content="Because the authentication request uses HTTP-Redirect Binding, the login link appears. For example: `https://my-org.sso-provider.com/abc12de34fgAB5CDh6i7/saml?SAMLRequest=abcdefgh1234567890...`" %}
    
 1. The user clicks the login link and the SSO portal authenticates the users.
-
-   {{site.data.alerts.note}}
-   {{page.varAddlAuth}}
-   {{site.data.alerts.end}}
 
 1. The SSO portal redirects to the cluster's endpoint.
 
