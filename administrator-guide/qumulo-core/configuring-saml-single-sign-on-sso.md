@@ -6,7 +6,7 @@ sidebar: administrator_guide_sidebar
 keywords: SAML, SAML 2.0, authentication, single sign-on, SSO
 ---
 
-This section explains how to integrate your Qumulo cluster with your company's single sign-on (SSO) service by configuring Security Assertion Markup Language (SAML) 2.0 for Qumulo Core 5.2.5 (and higher).
+This section explains how to integrate your Qumulo cluster with your organization's single sign-on (SSO) service by configuring Security Assertion Markup Language (SAML) 2.0 for Qumulo Core 5.2.5 (and higher).
 
 For more information about the SAML standard for exchanging authentication information, see [SAML 2.0](https://en.wikipedia.org/wiki/SAML_2.0).
 
@@ -19,46 +19,73 @@ Before you begin, make sure that you have done the following.
 
 * To allow SAML-authenticated users to find group memberships, configure the Base DN in your AD configuration, even if you don't use POSIX attributes.
 
-* Ensure that your SAML Identity Provider (IdP) is linked to the same AD. An _identity provider_ (such as OneLogin, Okta, Duo, or an on-premises instance) is a system that authenticates users to a system (for instance, by using passwords).
+* <a name="identity-provider"></a>Ensure that your SAML Identity Provider (IdP) is linked to the same AD. An _identity provider_ (such as OneLogin, Okta, Duo, or an on-premises instance) is a system that authenticates users to a system (for instance, by using passwords).
 
-  Typically, an IT department manages an IdP centrally and the IdP is linked with AD. Before you can enable SSO, your IT department must register a new Service Provider (SP) in your IdP. A _service provider_ is the server which users access, in this case a Qumulo cluster.
+  <a name="service-provider"></a>Typically, an IT department manages an IdP centrally and the IdP is linked with AD. Before you can enable SSO, your IT department must register a new Service Provider (SP) in your IdP. A _service provider_ is the server which users access, in this case a Qumulo cluster.
 
   {% include note.html content="You can use trusts, as long as the Base DN covers all users that might require access to your cluster." %}
   
-* Configure your IdP to return AD User Principal Names (UPNs, for example `alice@example.com`) or email addresses as Name IDs. A _name ID_ is an identifier for an authenticated user. Typically, a Name ID uses the email format.
+* Configure your IdP to return AD User Principal Names (UPNs, for example `alice@example.com`) or an email address as a NameID. A _NameID_ is an identifier for an authenticated user. Typically, a NameID uses the email format.
 
 
 ## To Configure SAML SSO for Your Qumulo Cluster
-Configuring SAML SSO requires coordination between the cluster administrator and the organization's SSO administrator.
+Configuring SAML SSO for your Qumulo Cluster requires coordination between the cluster administrator and your organization's SSO administrator.
 
-The cluster administrator reaches out to the SSO administrator asking to create a SAML integration for the cluster.
+1. The cluster administrator contacts your SSO administrator and asks the SSO administrator to create a SAML integration for the cluster.
 
-The SSO administrator creates a SAML integration in their SSO service (Okta, Duo, etc.) and uses `https://<cluster-fqdn>/saml` (e.g., `https://qumulo-cluster.my-company.com/saml`) for the SP endpoint (AKA Assertion Consumer Service). If asked, specify HTTP POST Binding for the SP endpoint. This will likely be the default.
+1. The SSO administrator creates a SAML integration with your organization's SSO [identity provider](#identity-provider) (IdP) and uses the cluster's fully qualified domain name (FQDN) format for the [service provider](#service-provider) (SP) endpoint (also known as the _assertion consumer service URL_), in the following format.
 
-The cluster's FQDN does not have to be resolvable by external DNS. The resolution will be done by the customer's browser (e.g., it can be VPN-only).
+   ```
+   https://my-cluster.my-org.com/saml
+   ```
+   
+   {% include note.html content="Because the user's browser performs DNS resolution (for example, in a VPN-only scenario), it isn't necessary for an external DNS server to be able to resolve the cluster's FQDN." %}
 
-The SSO administrator provides the following information (available after creating the SAML integration):
-- The certificate (public key) of IdP in PEM format. This is used to verify the authenticity of the messages from IdP.
-- The IdP SSO URL to send authentication requests from the cluster, e.g., `https://my-company.sso-provider.com/something`.
-- IDP Issuer/EntityID, e.g., `http://www.sso-provider.com/exk45tw63vjGE9IHw1d7`.
-- The cluster's FQDN, e.g., `qumulo-cluster.my-company.com`.
+1. If prompted, the SSO administrator specifies an HTTP POST binding for the SP endpoint. Typically, she can use the default binding.
 
-To complete the setup on the cluster the cluster administrator uses `qq saml_modify_settings` to configure and enable SAML logins on the cluster. If you configure SAML for the first time, you have to provide all the settings. These settings are needed so that the cluster can validate the authentication messages from the IdP to make sure that they are indeed from the IdP and that they are intended for the cluster.
+1. After creating the SAML integration, the SSO administrator provides the following information to the cluster administrator.
 
-Example command:
-```
-qq saml_modify_settings --enable 
-    --idp-certificate-file ~/certificate.pem 
-    --cluster-dns-name qumulo-cluster.my-company.com 
-    --idp-entity-id http://www.sso-provider.com/exk45tw63vjGE9IHw1d7 
-    --idp-sso-url https://my-company.sso-provider.com/exk45tw63vjGE9IHw1d7/saml
-```
+   * The certificate (public key) of the identity provider, in a `.pem` file.
+   
+     This certificatre lets you verify the authenticity of the messages from the IdP.
+   
+   * The IdP SSO URL&mdash;to which the Qumulo cluster can send authentication requests&mdash;in the following format:
 
-There is no verification of the configuration parameters beyond a basic check of the IdP certificate. It is up to the cluster administrator to verify that IdP-initiated SAML logins (usually a click on the corresponding item in the SSO portal) work.
+     ```
+     https://my-org.sso-provider.com/foo
+     ```
+     
+   * The IdP issuer or EntityID. For example:
 
-The command allows individual settings to be changed independently. This can be useful to correct typos, update a DNS name, update an expired certificate, or temporarily disable SAML SSO without losing other settings.
+     ```
+     http://www.sso-provider.com/abc12de34fgAB5CDh6i7
+     ```
+   
+   * The FQDN of the cluster, in the following format:
 
-Use `qq saml_get_settings` to the current SAML configuration.
+     ```
+     qumulo-cluster.my-org.com
+     ```
+
+1. To configure and enable SAML login to the Qumulo cluster, the cluster administrator runs the `qq saml_modify_settings` command. For example:
+
+   ```
+   qq saml_modify_settings --enable \
+     --idp-certificate-file ~/certificate.pem \
+     --cluster-dns-name qumulo-cluster.my-org.com \
+     --idp-entity-id http://www.sso-provider.com/abc12de34fgAB5CDh6i7 \
+     --idp-sso-url https://my-org.sso-provider.com/abc12de34fgAB5CDh6i7/saml \
+   ```
+   
+   {{site.data.alerts.note}}
+   <ul>
+     <li>To allow specific changes (for instance, correct a typo, update a DNS name or an expired certificate, or temporarily disable SAML SSO without losing any of the other settings), the command permits changing individual SAML settings independently.</li>
+     <li>To let the cluster validate the authentication messages from the IdP and make sure that the IdP issued them to the cluster, first-time SAML configurations require providing all configuration settings.</li>
+     <li>Aside from a basic check of the IdP certificate, Qumulo Core doesn't verify the configuration parameters. It is the cluster administrator's responsibility to ensure that IdP-initiated SAML logins (that initate when the user clicks <strong>Continue to SSO login</strong> in the Web UI) work correctly.</li>
+   </ul>
+   {{site.data.alerts.end}}
+
+1. (Optional) To view the current SAML configuration, the cluster administrator can use the `qq saml_get_settings` command.
 
 ## Supported SAML SSO flows
 IdP initiated SAML SSO, which works in the following way:
