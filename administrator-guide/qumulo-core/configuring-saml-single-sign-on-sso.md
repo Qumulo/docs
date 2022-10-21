@@ -19,7 +19,7 @@ Before you begin, make sure that you have done the following.
 
 * To allow SAML-authenticated users to find group memberships, configure the Base DN in your AD configuration, even if you don't use POSIX attributes.
 
-* <a name="identity-provider"></a>Ensure that your SAML Identity Provider (IdP) is linked to the same AD. An _identity provider_ (such as OneLogin, Okta, Duo, or an on-premises instance) is a system that authenticates users to a system (for instance, by using passwords).
+* <a name="identity-provider"></a>Ensure that your SAML Identity Provider (IdP) is linked to the same AD. An _identity provider_ (such as OneLogin, Okta, Duo, or an on-premises instance) is a system that authenticates users to a system (for example, by using passwords).
 
   <a name="service-provider"></a>Typically, an IT department manages an IdP centrally and the IdP is linked with AD. Before you can enable SSO, your IT department must register a new Service Provider (SP) in your IdP. A _service provider_ is the server which users access, in this case a Qumulo cluster.
 
@@ -87,16 +87,32 @@ Configuring SAML SSO for your Qumulo Cluster requires coordination between the c
 
 1. (Optional) To view the current SAML configuration, the cluster administrator can use the `qq saml_get_settings` command.
 
-## Supported SAML SSO flows
-IdP initiated SAML SSO, which works in the following way:
-1. A user (presumably a cluster admin but it could be any user) goes to their SSO portal and authenticates there if needed.
-1. The user locates and clicks on the application tile for the desired Qumulo cluster. Depending on the company's policy, additional verification may be required. For example, the SSO administrator can configure it so that a 2FA is always used to access certain clusters.
-1. SSO portal redirects to the cluster. If the user has sufficient privileges, they will be logged in to WebUI. Otherwise an appropriate error message will appear.
+## Supported SAML SSO Workflows
+Qumulo Core supports two SAML SSO workflows: [IdP](#identity-provider)-initiated and [SP](#service-provider)-initiated.
 
-SP initiated SAML SSO, which works in the following way:
+### IdP-Initiated SSO Worfklow
+1. A user authenticates to her organization's SSO portal and then selects the Qumulo cluster in the portal.
+
+   {% include note.html content="Depending on policy, additional verification might be necessary. For example, the SSO administrator can enforce mandatory two-factor authentication (2FA) for certain clusters." %}
+   
+1. The SSO portal redirects to the cluster's endpoint.
+
+   If the user has sufficient privileges, the Web UI logs her in. Otherwise, the Web UI displays an error message.
+
+### SP-Initiated SSO Workflow
+1. A user navigates to the Qumulo cluster's Web UI endpoint in a browser.
+
+1. If the Qumulo cluster has SAML SSO configured, the user can click **Continue to SSO login** in the Web UI.
+
+   The Web UI redirects the user to the configured SSO portal.
+   
+   {% include note.html content="Because the authentication request uses HTTP-Redirect Binding, the login link appears. For example:```&lt;https://my-org.sso-provider.com/abc12de34fgAB5CDh6i7/saml&gt;?SAMLRequest=abcdefgh1234567890...```" %}
+
 1. A user opens the cluster's WebUI in a browser. If SAML is configured on the cluster, the login page will show the "Continue to SSO login" link leading to the configured SSO portal.
-The authentication request uses the HTTP Redirect Binding. In other words, the login link will look like this `<idp-sso-url>?SAMLRequest=<very-long-string>`.
+The authentication request uses the HTTP Redirect Binding. In other words, the login link will look like this ``.
+
 1. The user clicks the login link. The SSO portal will verify the user (potentially asking for any additional factors if required by the organization).
+
 1. SSO portal redirects back to the cluster. This is now the same with the step 3 above in the IdP initiated login
 
 If you access WebUI by physically connecting to a node, the login page will not show the SSO prompt even if it is configured.
