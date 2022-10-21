@@ -165,13 +165,13 @@ Several AD configuration issues can cause a **User not found** error:
 
 * The Configured Base DN doesn't include all users.
 
-  1. To find the security identifier (SID), run the `qq auth_find_identity` command. For example:
+  To find the security identifier (SID), run the `qq auth_find_identity` command. For example:
   
   ```bash
   qq auth_find_identity --name MyUsername
   ```
   
-  1. To verify that the username is discoverable, run the `qq ad_sid_to_account` command. For example:
+  To verify that the username is discoverable, run the `qq ad_sid_to_account` command. For example:
 
   ```bash
   qq ad_sid_to_account --sid S-1-5-32-544
