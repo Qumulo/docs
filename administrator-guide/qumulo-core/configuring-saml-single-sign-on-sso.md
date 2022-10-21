@@ -1,6 +1,9 @@
 ---
-title: "Configuring SAML Single Sign-On"
+title: "Configuring SAML Single Sign-On (SSO) for Qumulo Core"
+summary: "This section explains how to configure SAML Single Sign-On (SSO) for Qumulo Core."
+permalink: /administrator-guide/qumulo-core/configuring-saml-single-sign-on-sso.html
 sidebar: administrator_guide_sidebar
+keywords: SAML, SAML 2.0, authentication, single sign-on, SSO
 ---
 
 ## Introduction

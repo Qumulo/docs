@@ -12,9 +12,9 @@ The Qumulo Administrator Guide is a growing collection of information about conf
 
 **Table of Contents**
 * **Getting Started with Qumulo Core**
-  * [Configuring SAML Single Sign-On](qumulo-core/saml-sso.md)
   * [Creating a Qumulo Core USB Drive Installer](qumulo-core/creating-usb-drive-installer.md)
   * [Installing VPN Keys on a Qumulo Cluster](qumulo-core/installing-vpn-keys-on-cluster.md)
+  * [Configuring SAML Single Sign-On for Qumulo Core](qumulo-core/configuring-saml-single-sign-on-sso.md)
   * [Supported Configurations and Known Limits for Qumulo Core](qumulo-core/supported-configurations-known-limits.md)
 * **Upgrading Qumulo Core**
   * [Performing Instant Software Upgrades and Platform Upgrades](upgrades/instant-software-platform.md)
