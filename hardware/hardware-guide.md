@@ -11,7 +11,7 @@ The Qumulo-Certified Hardware Guide is a collection of guides that provide infor
 * **General Guidance**
   * [Identifying NICs and Choosing Transceivers and Cables for Your Qumulo Node](general-guidance/nics-transceivers-cables.md)
 * **C-192T, C-432T, K-432T**
-  * [Replacing Hardware Components](c-192t-c-432t-k-432t/replacing-hardware-components.md)
+  * [Replacing the Chassis](c-192t-c-432t-k-432t/replacing-chassis.md)
 * **{{site.a4200g9}}**
   * [Getting Started](hpe-apollo-4200-gen9/getting-started.md)
   * [Front and Rear Drives](hpe-apollo-4200-gen9/front-rear-drives.md)
