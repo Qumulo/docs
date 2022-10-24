@@ -41,7 +41,7 @@ This process requires coordination between the cluster administrator and SSO adm
    
    {% include note.html content="Because the user's browser performs DNS resolution (for example, in a VPN-only scenario), it isn't necessary for an external DNS server to be able to resolve the cluster's FQDN." %}
 
-1. If prompted, the SSO administrator specifies an HTTP POST binding for the SP endpoint. Typically, the binding is specified by default.
+1. If prompted, the SSO administrator specifies the HTTP POST binding for the SP endpoint. Typically, this binding is specified by default.
 
 1. After creating the SAML integration, the SSO administrator provides the following information to the cluster administrator.
 
