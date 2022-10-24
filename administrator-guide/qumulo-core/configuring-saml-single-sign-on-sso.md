@@ -79,14 +79,13 @@ This process requires coordination between the cluster administrator and SSO adm
    
    {{site.data.alerts.note}}
    <ul>
+     <li>To view the current SAML configuration, the cluster administrator can use the `qq saml_get_settings` command.</li>
      <li>To allow specific changes (for instance, correct a typo, update a DNS name or an expired certificate, or temporarily disable SAML SSO without losing any of the other settings), the <code>qq saml_modify_settings</code> command permits changing individual SAML settings independently.</li>
      <li>For first-time SAML configurations, you must provide all settings.</li>
      <li>Aside from a basic check of the IdP certificate, Qumulo Core doesn't verify the configuration parameters. It is the cluster administrator's responsibility to ensure that IdP-initiated SAML logins work correctly. (These logins initate when the user clicks <strong>Continue to SSO login</strong> in the Web UI or selects the Qumulo cluster on the SSO portal.)</li>
    </ul>
    {{site.data.alerts.end}}
-
-   {% include tip.html content="To view the current SAML configuration, the cluster administrator can use the `qq saml_get_settings` command." %}
-
+   
 
 ## Supported SAML SSO Workflows
 Qumulo Core supports two SAML SSO workflows: [IdP](#identity-provider)-initiated and [SP](#service-provider)-initiated.
