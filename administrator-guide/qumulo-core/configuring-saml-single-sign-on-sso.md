@@ -128,7 +128,6 @@ Qumulo Core supports two SAML SSO workflows: [IdP](#identity-provider)-initiated
   * **SAML Single Logout (SLO):** We recommend clicking **Sign out** in the Web UI.
   * **Automatic Configuration from Metadata XML:** You must specify each parameter by using the `qq` CLI.
   * **Returning to Previous Web UI Page:** You can't return to a previous page after re-authenticating (for example, after a timeout).
-  * **Suggesting Usernames to the SSO Service**
 
 
 ## Troubleshooting SAML SSO Authentication
