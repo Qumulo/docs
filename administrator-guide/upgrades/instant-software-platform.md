@@ -4,11 +4,19 @@ summary: "This section explains the difference between Instant Software Upgrades
 permalink: /administrator-guide/upgrades/instant-software-platform.html
 sidebar: administrator_guide_sidebar
 keywords: update, upgrade, instant, instant software upgrade, platform, platform upgrade
+varContactQumuloCare: If you perform multiple upgrades back to back, you might encounter one or more platform upgrades in one of the incremental releases; you must install these upgrades before you continue. Before performing back to back upgrades, contact <a href="https://care.qumulo.com/hc/en-us/articles/115008409408">Qumulo Care</a> for guidance.
+varRollingRebootRefresh: If you don’t see a rolling reboot option for a platform upgrade, refresh the page in your browser.
 ---
 
 This section explains the difference between Instant Software Upgrades and Platform Upgrades. For more information, see [Performing Qumulo Core Upgrades by Using the qq CLI](https://care.qumulo.com/hc/en-us/articles/115008107468) on Qumulo Care.
 
-{% include important.html content="If you perform multiple upgrades back to back, you might encounter one or more platform upgrades in one of the incremental releases; you must install these upgrades before you proceed. Before performing back to back upgrades, reach out to the Qumulo Care Team for guidance." %}
+{{site.data.alerts.important}}
+<ul>
+  <li>{{page.varContactQumuloCare}}</li>
+  <li>{{page.varRollingRebootRefresh}}</li>
+</ul>
+{{site.data.alerts.end}}
+
 
 ## Understanding the Differences Between Upgrade Modes
 For information about which upgrade modes different Qumulo Core releases use, see [Qumulo Core Upgrade Mode Reference](mode-reference.md).
@@ -31,7 +39,8 @@ For information about which upgrade modes different Qumulo Core releases use, se
 
   {{site.data.alerts.important}}
   <ul>
-    <li>If you perform multiple upgrades back to back, you might encounter one or more platform upgrades in one of the incremental releases; you must install these upgrades before you continue. Before performing back to back upgrades, contact <a href="https://care.qumulo.com/hc/en-us/articles/115008409408">Qumulo Care</a> for guidance.</li>
+    <li>{{page.varContactQumuloCare}}</li>
+    <li>{{page.varRollingRebootRefresh}}</li>
     <li>Upgrading past a platform upgrade still requires a node reboot, even if you don't install the exact build. For example, if your cloud cluster runs Qumulo Core 4.0.0, installing Qumulo Core 4.1.0 triggers a platform upgrade, because the installation includes all changes contained in Qumulo Core 4.0.6 that is a platform upgrade.</li>
   </ul>
   {{site.data.alerts.end}}
@@ -51,7 +60,7 @@ To determine what phase an upgrade is in, use the `qq upgrade_status` command wh
 
 The following is example output from the command.
 
-```
+```json
 {
   "install_path": "/upgrade/qinstall.qimg",
   "state": "UPGRADE_PREPARING",
