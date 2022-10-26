@@ -19,6 +19,10 @@ This section provides a reference for Qumulo Core upgrade modes from version 3.3
       <th>Upgrade Type</th>
     </thead>
     <tr>
+      <td>5.2.5</td>
+      <td>Instant</td>
+    </tr>
+    <tr>
       <td>5.2.4</td>
       <td>Instant</td>
     </tr>
@@ -229,6 +233,10 @@ This section provides a reference for Qumulo Core upgrade modes from version 3.3
       <th>Version</th>
       <th>Upgrade Type</th>
     </thead>
+    <tr>
+      <td>5.2.5</td>
+      <td>Instant</td>
+    </tr>
     <tr>
       <td>5.2.4</td>
       <td>Instant</td>
