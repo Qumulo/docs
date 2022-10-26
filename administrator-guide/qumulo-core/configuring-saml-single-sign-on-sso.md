@@ -139,7 +139,7 @@ Qumulo Core supports three SAML SSO workflows:
    https://my-qumulo-cluster.my-org.com/saml-login?login-id=12345678-1234-1234-1234-123456789012
    ```
    
-   {% include important.html content="The user must complete the following step within 5 minutes, while the `qq` CLI pauses for authentication." %}
+   {% include note.html content="The user must complete the following step within 5 minutes, while the `qq` CLI pauses for authentication." %}
    
 1. When the user opens the login URL in a browser, the URL redirects the user to a configured SSO portal and one of the following two scenarios takes place:
 
