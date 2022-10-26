@@ -1295,9 +1295,6 @@ a code {
     color: #0d1934;
 }
 
-code + a > code {
-    margin-left: -7px;
-}
 
 table th code {
     color: white;
