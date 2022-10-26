@@ -88,7 +88,7 @@ This process requires coordination between the cluster administrator and SSO adm
    
 
 ## Supported SAML SSO Workflows
-Qumulo Core supports two SAML SSO workflows: [IdP](#identity-provider)-initiated and [SP](#service-provider)-initiated.
+Qumulo Core supports three SAML SSO workflows, standard SAML workflows that the [IdP](#identity-provider) or [SP](#service-provider) initiates and a workflow that the `qq` CLI initiates.
 
 {{site.data.alerts.note}}
 <ul>
@@ -111,7 +111,7 @@ Qumulo Core supports two SAML SSO workflows: [IdP](#identity-provider)-initiated
 
 1. If the Qumulo cluster has SAML SSO configured, the user can click **Continue to SSO login** on the Web UI login page.
 
-   The Web UI redirects the user to the configured SSO portal. Because the authentication request uses HTTP-Redirect Binding, the login link appears as follows:
+   The Web UI redirects the user to the configured SSO portal. Because the authentication request uses HTTP-Redirect Binding, the login URL appears.
    
    ```
    https://my-org.sso-provider.com/abc12de34fgAB5CDh6i7/saml?SAMLRequest=abcdefgh1234567890...
@@ -121,33 +121,59 @@ Qumulo Core supports two SAML SSO workflows: [IdP](#identity-provider)-initiated
 
 1. The SSO portal redirects the user to the cluster's endpoint.
 
-### SSO for qq CLI
-Starting with 5.3.0, customers can authenticate a `qq` CLI session with SSO. This works as below:
+### qq-CLI-Initiated SSO Workflow
+<a name="sso-login"></a>In Qumulo Core 5.3.0 (and higher), a user can authenticate a `qq` CLI session by using SSO.
 
-1. A user invokes `qq [--host <cluster-address>] sso_login` in a terminal and receives a login URL in the form of `https://qumulo-cluster.my-org.com/saml-login?login-id=12345678-1234-1234-1234-123456789012`. `qq` will pause awaiting authenticaion. The user will have 5 minutes to complete the next step.
+1. A user uses the `qq sso_login` CLI command in a terminal. For example:
 
-1. The user opens the provided URL in the browser. The URL redirects the user to the configured SSO portal. When authentication is complete, the browser shows a message that asks the user to return to the terminal. Otherwise, the browser displays an appropriate error message.
+   ```bash
+   qq --host {{site.exampleIP}} sso_login
+   ```
+   
+   The login URL appears.
+   
+   ```
+   https://my-qumulo-cluster.my-org.com/saml-login?login-id=12345678-1234-1234-1234-123456789012
+   ```
+   
+   {% include important.html content="The user must complete the following step within 5 minutes, while the `qq` CLI pauses for authentication." %}
+   
+1. When the user opens the login URL in a browser, the URL redirects the user to a configured SSO portal and one of the following two scenarios takes place:
 
-1. The paused `qq sso_login` recognizes the completed authentication and prints the username for confirmation. The user can now continue with using `qq` commands normally.
+   * If authentication succeeds, the browser shows a message that asks the user to return to the terminal.
 
-In case of any errors, the user needs to start over by running `qq sso_login` again.
+     The paused `sso_login` command recognizes that authentication is complete and shows the authenticated username.
+   
+   * If authentication doesn't succeed, the browser displays an error message.
 
-## Requiring SSO for management access
+     The user must retry the workflow.
 
-**Warning**: If you turn require-sso on, you will lose the ability to do `qq login` with your AD account password. Use `qq sso_login` instead as described above. Also make sure you know the local admin user’s password for emergency access.
 
-Starting with 5.3.0 you can require Active Directory users to use SSO to manage the cluster by turning on the following setting.
+## Requiring SSO for Cluster Management Access
+{% include caution.html content="If you use the `--require-sso` flag, you can no longer use the `qq login` command by using your AD acocunt password. Instead, you must [use the `qq sso_login` command](#sso-login)." %}
+
+In Qumulo Core 5.3.0 (and higher), you can use the `qq saml_modify_settings` CLI command require AD users to use SSO for managing the cluster. For example:
+
+```bash
+qq saml_modify_settings --require-sso true
 ```
-qq saml_modify_settigs --require-sso {true|false}
-```
 
-If set, the cluster will reject password-based authentication from AD users in WebUIthe , qq CLI, and REST API. This setting does not restrict access over file protocols such as SMB. Keep in mind that FTP is inherently insecure as it sends passwords in plaintext. Many FTP clients either do not support TLS at all or silently fallback to the plaintext protocol. Qumulo clusters have FTP disabled by default.
+When SSO is required, your cluster rejects password-based authentication from AD users in the Web UI, the `qq` CLI, and the REST API.
+
+{{site.data.alerts.note}}
+<ul>
+  <li>This setting doesn't restrict access through file protocols such as SMB.</li>
+  <li>Because the FTP protocol sends passwords in plaintext, it is inherently insecure. In addition, many FTP clients don't support Transport Layer Security (TSL) or fall back silently to the plaintext protocol. For this reason, all Qumulo clusters have FTP disabled by default.</li>
+  <li></li>
+</ul>
+{{site.data.alerts.end}}
 
 
 ## Known Issues and Limitations
-* Local users (built-in `admin` user and any additionally created users) can always use their passwords to authenticate to the Web UI and the `qq` CLI.
+* Local users (the built-in `admin` user and any additional users) can always use their passwords to authenticate to the Web UI and the `qq` CLI.
 
-  We recommend setting a strong password for the built-in `admin` user and save it only for emergencies.
+  {% include important.html content="We recommend setting a strong password for the built-in `admin` user and using this account only for emergencies." %} 
+
 * Qumulo Core doesn't support:
   * **SAML Single Logout (SLO):** We recommend clicking **Sign out** in the Web UI.
   * **Automatic Configuration from Metadata XML:** You must specify each parameter by using the `qq` CLI.
