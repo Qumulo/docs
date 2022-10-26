@@ -155,7 +155,7 @@ Qumulo Core supports three SAML SSO workflows:
 ## Requiring SSO Authentication for Cluster Management
 {{site.data.alerts.important}}
 <ul>
-  <li>If you use the `--require-sso` flag, you can no longer use the `qq login` command by using your AD account password. Instead, you must [use the `qq sso_login` command](#sso-login).</li>
+  <li>If you use the <code>--require-sso</code> flag, you can no longer use the <code>qq login</code> command by using your AD account password. Instead, you must <a href="#sso-login">use the <code>qq sso_login</code> command</a>.</li>
   <li>This setting doesn't restrict access through file protocols such as SMB.</li>
   <li>Because the FTP protocol sends passwords in plaintext, it is inherently insecure. In addition, many FTP clients don't support Transport Layer Security (TSL) or fall back silently to the plaintext protocol. For this reason, all Qumulo clusters have FTP disabled by default.</li>
 </ul>
