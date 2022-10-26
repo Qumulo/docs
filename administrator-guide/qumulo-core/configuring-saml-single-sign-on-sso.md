@@ -121,6 +121,17 @@ Qumulo Core supports two SAML SSO workflows: [IdP](#identity-provider)-initiated
 
 1. The SSO portal redirects the user to the cluster's endpoint.
 
+### SSO for qq CLI
+Starting with 5.3.0, customers can authenticate a `qq` CLI session with SSO. This works as below:
+
+1. A user invokes `qq [--host <cluster-address>] sso_login` in a terminal and receives a login URL in the form of `https://qumulo-cluster.my-org.com/saml-login?login-id=12345678-1234-1234-1234-123456789012`. `qq` will pause awaiting authenticaion. The user will have 5 minutes to complete the next step.
+
+1. The user opens the provided URL in the browser. The URL redirects the user to the configured SSO portal. When authentication is complete, the browser shows a message that asks the user to return to the terminal. Otherwise, the browser displays an appropriate error message.
+
+1. The paused `qq sso_login` recognizes the completed authentication and prints the username for confirmation. The user can now continue with using `qq` commands normally.
+
+In case of any errors, the user needs to start over by running `qq sso_login` again.
+
 
 ## Known Issues and Limitations
 * Currently, AD users can still use their passwords to authenticate to the Web UI and the `qq` CLI.
