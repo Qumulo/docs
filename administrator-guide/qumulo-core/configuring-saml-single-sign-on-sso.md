@@ -132,6 +132,17 @@ Starting with 5.3.0, customers can authenticate a `qq` CLI session with SSO. Thi
 
 In case of any errors, the user needs to start over by running `qq sso_login` again.
 
+## Requiring SSO for management access
+
+**Warning**: If you turn require-sso on, you will lose the ability to do `qq login` with your AD account password. Use `qq sso_login` instead as described above. Also make sure you know the local admin user’s password for emergency access.
+
+Starting with 5.3.0 you can require Active Directory users to use SSO to manage the cluster by turning on the following setting.
+```
+qq saml_modify_settigs --require-sso {true|false}
+```
+
+If set, the cluster will reject password-based authentication from AD users in WebUIthe , qq CLI, and REST API. This setting does not restrict access over file protocols such as SMB. Keep in mind that FTP is inherently insecure as it sends passwords in plaintext. Many FTP clients either do not support TLS at all or silently fallback to the plaintext protocol. Qumulo clusters have FTP disabled by default.
+
 
 ## Known Issues and Limitations
 * Currently, AD users can still use their passwords to authenticate to the Web UI and the `qq` CLI.
