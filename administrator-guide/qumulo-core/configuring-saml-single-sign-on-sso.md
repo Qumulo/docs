@@ -88,7 +88,10 @@ This process requires coordination between the cluster administrator and SSO adm
    
 
 ## Supported SAML SSO Workflows
-Qumulo Core supports three SAML SSO workflows, standard SAML workflows that the [IdP](#identity-provider) or [SP](#service-provider) initiates and a workflow that the `qq` CLI initiates.
+Qumulo Core supports three SAML SSO workflows:
+
+* Standard SAML workflows that the [IdP](#identity-provider) or [SP](#service-provider) initiates
+* A workflow that the `qq` CLI initiates
 
 {{site.data.alerts.note}}
 <ul>
@@ -124,7 +127,7 @@ Qumulo Core supports three SAML SSO workflows, standard SAML workflows that the 
 ### qq-CLI-Initiated SSO Workflow
 <a name="sso-login"></a>In Qumulo Core 5.3.0 (and higher), a user can authenticate a `qq` CLI session by using SSO.
 
-1. A user uses the `qq sso_login` CLI command in a terminal. For example:
+1. A user uses the `qq sso_login` CLI command. For example:
 
    ```bash
    qq --host {{site.exampleIP}} sso_login
@@ -140,7 +143,7 @@ Qumulo Core supports three SAML SSO workflows, standard SAML workflows that the 
    
 1. When the user opens the login URL in a browser, the URL redirects the user to a configured SSO portal and one of the following two scenarios takes place:
 
-   * If authentication succeeds, the browser shows a message that asks the user to return to the terminal.
+   * If authentication succeeds, the browser shows a message that asks the user to return to the CLI session.
 
      The paused `sso_login` command recognizes that authentication is complete and shows the authenticated username.
    
@@ -149,24 +152,22 @@ Qumulo Core supports three SAML SSO workflows, standard SAML workflows that the 
      The user must retry the workflow.
 
 
-## Requiring SSO for Cluster Management Access
-{% include caution.html content="If you use the `--require-sso` flag, you can no longer use the `qq login` command by using your AD acocunt password. Instead, you must [use the `qq sso_login` command](#sso-login)." %}
+## Requiring SSO Authentication for Cluster Management
+{{site.data.alerts.important}}
+<ul>
+  <li>If you use the `--require-sso` flag, you can no longer use the `qq login` command by using your AD account password. Instead, you must [use the `qq sso_login` command](#sso-login).</li>
+  <li>This setting doesn't restrict access through file protocols such as SMB.</li>
+  <li>Because the FTP protocol sends passwords in plaintext, it is inherently insecure. In addition, many FTP clients don't support Transport Layer Security (TSL) or fall back silently to the plaintext protocol. For this reason, all Qumulo clusters have FTP disabled by default.</li>
+</ul>
+{{site.data.alerts.end}}
 
-In Qumulo Core 5.3.0 (and higher), you can use the `qq saml_modify_settings` CLI command require AD users to use SSO for managing the cluster. For example:
+In Qumulo Core 5.3.0 (and higher), you can use the `qq saml_modify_settings` CLI command to require AD users to use SSO authentication for managing your cluster. For example:
 
 ```bash
 qq saml_modify_settings --require-sso true
 ```
 
-When SSO is required, your cluster rejects password-based authentication from AD users in the Web UI, the `qq` CLI, and the REST API.
-
-{{site.data.alerts.note}}
-<ul>
-  <li>This setting doesn't restrict access through file protocols such as SMB.</li>
-  <li>Because the FTP protocol sends passwords in plaintext, it is inherently insecure. In addition, many FTP clients don't support Transport Layer Security (TSL) or fall back silently to the plaintext protocol. For this reason, all Qumulo clusters have FTP disabled by default.</li>
-  <li></li>
-</ul>
-{{site.data.alerts.end}}
+When the cluster requires SSO authentication, your cluster rejects password-based authentication from AD users in the Web UI, the `qq` CLI, and the REST API.
 
 
 ## Known Issues and Limitations
