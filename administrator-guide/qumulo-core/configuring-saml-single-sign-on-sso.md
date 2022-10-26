@@ -145,7 +145,9 @@ If set, the cluster will reject password-based authentication from AD users in W
 
 
 ## Known Issues and Limitations
-* Currently, AD users can still use their passwords to authenticate to the Web UI and the `qq` CLI.
+* Local users (built-in `admin` user and any additionally created users) can always use their passwords to authenticate to the Web UI and the `qq` CLI.
+
+  We recommend setting a strong password for the built-in `admin` user and save it only for emergencies.
 * Qumulo Core doesn't support:
   * **SAML Single Logout (SLO):** We recommend clicking **Sign out** in the Web UI.
   * **Automatic Configuration from Metadata XML:** You must specify each parameter by using the `qq` CLI.
