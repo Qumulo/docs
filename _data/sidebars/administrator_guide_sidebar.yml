@@ -44,6 +44,10 @@ entries:
       url: /administrator-guide/qumulo-core/installing-vpn-keys-on-cluster.html
       output: web, pdf
 
+    - title: Configuring SAML Single Sign-On (SSO) for Your Qumulo Cluster
+      url: /administrator-guide/qumulo-core/configuring-saml-single-sign-on-sso.html
+      output: web, pdf
+
     - title: Supported Configurations and Known Limits for Qumulo Core
       url: /administrator-guide/qumulo-core/supported-configurations-known-limits.html
       output: web, pdf
