@@ -3,9 +3,9 @@
 {% for crumb in crumbs offset: 1 %}
   {% if forloop.last %}
   <span>&rsaquo;</span>
-    <a>{{ crumb | replace:'-',' ' | remove:'/index.html' }}</a>
+    <a>{{ crumb | replace:'-',' ' | remove:'/index.html' | capitalize }}</a>
   {% else %}
   <span>&rsaquo;</span>
-    <a href="{% assign crumb_limit = forloop.index | plus: 1 %}{{site.baseurl}}{% for crumb in crumbs limit: crumb_limit %}{% if crumb != "" %}{{ crumb | append: '/' }}{% endif %}{% endfor %}">{{ crumb | replace:'-',' ' | remove:'/index.html' | remove:'.html'}}</a>
+    <a href="{% assign crumb_limit = forloop.index | plus: 1 %}{{site.baseurl}}{% for crumb in crumbs limit: crumb_limit %}{% if crumb != "" %}{{ crumb | append: '/' }}{% endif %}{% endfor %}">{{ crumb | replace:'-',' ' | remove:'/index.html' | remove:'.html' | capitalize}}</a>
   {% endif %}
 {% endfor %}
