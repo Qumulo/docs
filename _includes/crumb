@@ -1,3 +1,4 @@
+<div class="breadcrumb-line">
 <ol class="breadcrumb">
 <li><a href="{{site.url}}/">Home</a></li>
 {% capture page_url_without_index_html %}{{ page.url | remove: "/index.html" }}{% endcapture %}
@@ -18,3 +19,4 @@
     {% endfor %}
 {% endfor %}
 </ol>
+</div>
