@@ -2,6 +2,7 @@
 title: "Qumulo Documentation"
 summary: "The Qumulo Documentation Portal is an initiative that uses docs-as-code principles to provide information about Qumulo features, functionality, and administration."
 permalink: index.html
+breadcrumbs: exclude
 ---
 
 Welcome. This site is a new documentation portal for [Qumulo](https://qumulo.com/) that uses [docs-as-code principles](https://www.writethedocs.org/guide/docs-as-code/). As we continue to add new content to this portal, we want you to ask questions and share your ideas with us&mdash;click **Edit on GitHub** on any page.
