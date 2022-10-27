@@ -210,7 +210,7 @@ h1.post-title-main:nth-child(1) {
   margin-top: 0px;
 }
 
-ol.breadcrumb {
+.breadcrumb-line {
   margin-bottom: 20px; 
 }
 
