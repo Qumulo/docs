@@ -6,6 +6,7 @@ redirect_from:
   - /administrator-guide/administrator-guide.html
 sidebar: administrator_guide_sidebar
 search: exclude
+breadcrumbs: exclude
 ---
 
 The Qumulo Administrator Guide is a growing collection of information about configuring, managing, and troubleshooting Qumulo Core and your Qumulo nodes and clusters.
