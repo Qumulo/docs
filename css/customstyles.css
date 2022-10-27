@@ -207,7 +207,11 @@ header {
 
 /* Get rid of the margin for double H1s */
 h1.post-title-main:nth-child(1) {
-    margin-top: 0px;
+  margin-top: 0px;
+}
+
+ol.breadcrumb {
+  margin-bottom: 20px; 
 }
 
 /* -------------------- TOP NAVBAR END -------------------- */
