@@ -1,0 +1,15 @@
+{% if page.breadcrumbs != "exclude" %}
+<div class="breadcrumb-line">
+  <a href='{{site.baseurl}}'>Home</a>
+  {% assign crumbs = page.url | split: '/' %}
+  {% for crumb in crumbs offset: 1 %}
+    {% if forloop.last %}
+      <span>&rsaquo;</span>
+      <span>{{page.title}}</span>
+    {% else %}
+      <span>&rsaquo;</span>
+      <a class="crumb" href="{% assign crumb_limit = forloop.index | plus: 1 %}{{site.baseurl}}{% for crumb in crumbs limit: crumb_limit %}{% if crumb != "" %}{{ crumb | append: '/' }}{% endif %}{% endfor %}">{{ crumb | replace:'-',' ' | remove:'/index.html'}}</a>
+    {% endif %}
+  {% endfor %}
+</div>
+{% endif %}
