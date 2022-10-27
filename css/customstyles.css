@@ -205,7 +205,20 @@ header {
   width: 100%;
 }
 
+/* Get rid of the margin for double H1s */
+h1.post-title-main:nth-child(1) {
+  margin-top: 0px;
+}
+
+.breadcrumb-line {
+  margin-bottom: 20px; 
+}
+
 /* -------------------- TOP NAVBAR END -------------------- */
+
+.crumb {
+    text-transform:capitalize;
+}
 
 h1 {
     display: block;
