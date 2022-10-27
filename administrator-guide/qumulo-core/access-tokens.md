@@ -1,0 +1,155 @@
+---
+title: "Creating Access Tokens for Qumulo Core"
+summary: "This topic describes the creating and using access tokens to authenticate external services with Qumulo Core."
+permalink: /administrator-guide/qumulo-core/access-tokens.html
+keywords: api, authentication, auth
+sidebar: administrator_guide_sidebar
+---
+
+{% include important.html content="Treat access tokens like passwords. Keep them secure and hidden. Anyone who obtains an access token has full access to the Qumulo Core REST API as that user." %}
+
+# About Access Tokens
+
+Access tokens are an alternative to the session-based authentication used by `qq login` and the Qumulo Core web interface.
+They are long-lived tokens that allow a user to authenticate to the REST API without needing to complete a login step each time.
+An access token comes in the form of a [bearer token](https://oauth.net/2/bearer-tokens/) which can be used in the HTTP Authorization header.
+Access tokens may be revoked and rotated to ensure that the system the access is kept secure.
+
+Access tokens are intended to be used by services and long-lived automation.
+Typical user bearer tokens have a short expiration and require a password to refresh.
+Since an access token can be created once and used to authenticate indefinitely, they are great for uses that want to access the Qumulo Core REST APIs with minimal human input.
+
+Access tokens are not suitable for use for normal command-line users, as they allow indefinite authentication to the associated users's account.
+We **do not** recommend creating access tokens for human users of Qumulo Core REST APIs. See more about creating a service account in [Best Practices](#best-practices) below.
+
+# How To Use Access Tokens
+
+### Creating Access Tokens
+
+Access tokens can be created using `qq`.
+
+```bash
+$ qq auth_create_access_token USER
+{
+    "bearer_token": "access-v1:abKvmz5uGfNZQO8WrlOzVXD5NAxRo3nC5+iISIXhDRcBAAAABwQAAAAAAABW8Yro4FWwKMlzWGMAAAAAYYTACg==",
+    "id": "19021525077776428364118"
+}
+```
+
+`USER` can be specified as a name, optionally qualified with a domain prefix (for example, `local:user`, `ad:user`, or `AD\user`.
+It also accepts ID types such as `auth_id:1234` or `SID:S-1-1-0`. Groups are not supported for access tokens; they can only be created for a user.
+
+
+The returned JSON contains the access token's ID and the bearer token. The bearer token is used for authentication; it should be treated like a password. See [Using Access Tokens](#using-access-tokens) to learn how to use the bearer token. The access token ID is used for further administration of the access token. See [Deleting Access Tokens](#deleting-access-tokens) to learn more.
+
+Only two access tokens can exist for any user at a time. If a user already has two access tokens, creating new ones will fail until existing access tokens are deleted. We recommend only creating a single access token for a user and using the second access token to perform secret rotation, see [Rotating Access Tokens](#rotating-access-tokens)
+
+{% include note.html content="Save the bearer token somewhere safe after you run the command. There is no way to retreive the bearer token later." %}
+
+{% include important.html content="Never create access tokens for users with administration privileges. A compromised access token will give an attacker full access to the Qumulo Core REST API as that user." %}
+
+Creating access tokens requires the privilege PRIVILEGE_ACCESS_TOKEN_WRITE and allows creating access tokens for **all users** in the system.
+
+### Using Access Tokens
+
+To use an access token to  Qumulo Core REST API,
+Access tokens can be used to authenticate to the Qumulo Core REST API using [Bearer Token](https://oauth.net/2/bearer-tokens/) authorization. Use the bearer token returned from the `auth_create_access_token` in an `Authorization` HTTP header like so:
+
+```
+Authorization: Bearer <bearer token>
+```
+
+For example, you can set the authorization header for `curl` like this:
+
+```bash
+curl https://qumulo-hostname:8000/v1/session/who-am-i -H 'Authorization: Bearer <bearer token>'
+```
+
+### Listing Access Tokens
+
+Access tokens can be listed using `qq auth_list_access_tokens`.
+
+```bash
+$ qq auth_list_access_tokens
+id                      user   creator  creation time
+======================  =====  =======  ==============================
+9226266821531216810715  svc    admin    2022-10-27T15:18:09.725513764Z
+9230454060595080992940  svc    admin    2022-10-27T15:18:24.997572918Z
+```
+
+Listing access tokens gives the access token ID, the user that the access token represents, the creator of the access token, and the time that the access token was created.
+
+{% include important.html content="Listing access tokens **does not** return the bearer token needed for authentication. If you have lost the bearer token associated with an access token, you will need to create a new access token." %}
+
+Listing access tokens requires the privilege PRIVILEGE_ACCESS_TOKEN_READ.
+
+### Deleting Access Tokens
+
+Access tokens can be deleted using `qq auth_delete_access_tokens`.
+
+```bash
+$ qq auth_delete_access_token <access token ID>
+```
+
+Once an access token is deleted, the bearer token associated with it will no longer work for authentication.
+
+Deleting access tokens requires the privilege PRIVILEGE_ACCESS_TOKEN_WRITE.
+
+# Best Practices
+
+## Never generate tokens for accounts with administrative privileges
+
+An access token is effectively a password for a user---with an access token, an attacker can authenticate as that user in the Qumulo Core REST API and has the full capabilities of that user.
+For this reason, it is **highly discouraged** to create an access token for users with administrative privileges.
+Such tokens can give full administrator access to attackers if leaked, including access to cluster data.
+
+## Creating a service account
+
+When connecting external services up to the Qumulo Core REST API, we recommend creating a service account with limited privileges for that individual service and generating an access token for that account.
+This limits the exposure if an access token is ever leaked or stolen, as the service account should only have privileges that the service required.
+
+### To create a new service account with privileges
+
+1. Log in to Qumulo Core.
+
+1. Create a service account:
+
+    a. Click **Cluster > Local Users & Groups**.
+
+    b. On the **Users** page, click **Create** and enter a **User name** and **Password**.
+
+1. Create a role with privileges:
+
+    a. Click **Cluster > Role Management**.
+
+    b. Click **Create Role**.
+
+    c. Fill out a **Name**, **Description**, and select all appropriate **Privileges** for the user.
+
+    d. Click **Save**.
+
+1. Assign the service user to the role:
+
+    a. Find the role you just created in the list and click **Add Member**.
+
+    b. Type the name of the user you created above into the **Trustee** field.
+
+    c. Click **Yes, Add Member**.
+
+You can now follow the steps above in [Creating Access Tokens](#creating-access-tokens) to create an access token for the account.
+
+## Rotating Access Tokens
+
+In order to limit exposure from leaked or stolen credentials, we recommend rotating access tokens on some regular interval. To rotate an access token for a service, follow these steps:
+
+1. Ensure that there is only one access token for the service account using `qq auth_list_access_tokens`.
+
+    a. If there are multiple access tokens, delete any old access tokens that are not in use.
+
+1. Create a new access token for the service account using `qq auth_create_access_token`.
+
+1. Replace the old access token in your service's credential store with the new one.
+
+1. Test that your service can still access the Qumulo Core API.
+
+1. Delete the old access token using `qq auth_delete_access_token`.

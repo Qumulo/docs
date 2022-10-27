@@ -132,6 +132,14 @@ entries:
       url: /administrator-guide/qq-cli/enabling-autocomplete.html
       output: web, pdf
 
+  - title: Connecting Qumulo Core to External Services
+    output: web, pdf
+    folderitems:
+
+    - title: Creating Access Tokens for Qumulo Core
+      url: /administrator-guide/qumulo-core/access-tokens.html
+      output: web, pdf
+
   - title: Using NFSv4.1 with Kerberos
     output: web, pdf
     folderitems:
