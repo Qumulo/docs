@@ -1,4 +1,4 @@
-{% unless page.search == "exclude" %}
+{% unless page.breadcrumbs == "exclude" %}
   <a href='{{site.baseurl}}'>Home</a>
   {% assign crumbs = page.url | split: '/' %}
   {% for crumb in crumbs offset: 1 %}
