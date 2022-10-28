@@ -8,7 +8,9 @@ keywords: technical specifications, tech specs, specs, specifications, Supermicr
 
 This section provides technical specifications for {{site.sm1014s}} nodes.
 
+{{site.data.alerts.note}}
 {% include content-reuse/hybrid-platforms-find-out-ssd-size.md %}
+{{site.data.alerts.end}}
 
 <table cellspacing="0" cellpadding="0">
   <thead>
