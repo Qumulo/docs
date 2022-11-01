@@ -128,6 +128,42 @@ entries:
       url: /hardware/hpe-dl325-gen10-plus/technical-specifications.html
       output: web, pdf
 
+  - title: Supermicro A+ ASG-1014S-ACR12N4H
+    output: web, pdf
+    folderitems:
+
+    - title: Racking Nodes
+      url: /hardware/supermicro-a-plus-asg-1014s-acr12n4h/racking-nodes.html
+      output: web, pdf
+
+    - title: Wiring Nodes
+      url: /hardware/supermicro-a-plus-asg-1014s-acr12n4h/wiring-nodes.html
+      output: web, pdf
+
+    - title: Getting Started
+      url: /hardware/supermicro-a-plus-asg-1014s-acr12n4h/getting-started.html
+      output: web, pdf
+
+    - title: Drive Bay Mapping
+      url: /hardware/supermicro-a-plus-asg-1014s-acr12n4h/drive-bay-mapping.html
+      output: web, pdf
+
+    - title: Panel LEDs
+      url: /hardware/supermicro-a-plus-asg-1014s-acr12n4h/panel-leds.html
+      output: web, pdf
+
+    - title: Cluster Networking
+      url: /hardware/supermicro-a-plus-asg-1014s-acr12n4h/networking-cluster.html
+      output: web, pdf
+
+    - title: Replacing Hardware Components
+      url: /hardware/supermicro-a-plus-asg-1014s-acr12n4h/replacing-hardware-components.html
+      output: web, pdf
+
+    - title: Technical Specifications
+      url: /hardware/supermicro-a-plus-asg-1014s-acr12n4h/technical-specifications.html
+      output: web, pdf
+
   - title: Supermicro A+ WIO 1114S-WN10RT
     output: web, pdf
     folderitems:

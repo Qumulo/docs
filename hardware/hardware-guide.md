@@ -32,6 +32,15 @@ The Qumulo-Certified Hardware Guide is a collection of guides that provide infor
   * [Front and Rear Drives](hpe-dl325-gen10-plus/front-rear-drives.md)
   * [Cluster Networking](hpe-dl325-gen10-plus/networking-cluster.md)
   * [Technical Specifications](hpe-dl325-gen10-plus/technical-specifications.md)
+* **Supermicro A+ ASG-1014S-ACR12N4H**
+  * [Racking Nodes](supermicro-a-plus-asg-1014s-acr12n4h/racking-nodes.md)
+  * [Wiring Nodes](supermicro-a-plus-asg-1014s-acr12n4h/wiring-nodes.md)
+  * [Getting Started](supermicro-a-plus-asg-1014s-acr12n4h/getting-started.md)
+  * [Drive Bay Mapping](supermicro-a-plus-asg-1014s-acr12n4h/drive-bay-mapping.md)
+  * [Panel LEDs](supermicro-a-plus-asg-1014s-acr12n4h/panel-leds.md)
+  * [Cluster Networking](supermicro-a-plus-asg-1014s-acr12n4h/networking-cluster.md)
+  * [Replacing Hardware Components](supermicro-a-plus-asg-1014s-acr12n4h/replacing-hardware-components.md)
+  * [Technical Specifications](supermicro-a-plus-asg-1014s-acr12n4h/technical-specifications.md)
 * **{{site.sm1114sLong}}**
   * [Racking Nodes](supermicro-a-plus-wio-1114s-wn10rt/racking-nodes.md)
   * [Wiring Nodes](supermicro-a-plus-wio-1114s-wn10rt/wiring-nodes.md)
