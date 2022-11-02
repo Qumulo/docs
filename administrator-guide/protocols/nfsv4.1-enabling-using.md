@@ -184,7 +184,7 @@ Qumulo's implementation of NFSv4.1 currently supports:
 * Fine-grained control over file permissions by using access control lists (ACLs)
 * File locking (for example, by using the `fcntl` command)
 * Snapshots through NFSv4.1 (Qumulo Core 5.2.4 and higher)
-* Quotas through NFSv4.1 (Qumulo Core 5.2.5 and higher)
+* Quotas through NFSv4.1 (Qumulo Core 5.2.5.1 and higher)
 
 Qumulo Core doesn't currently support the following NFSv4.1 features:
 * Delegations
