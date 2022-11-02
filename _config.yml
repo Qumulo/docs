@@ -145,6 +145,7 @@ partReplaceDcms: Before you replace the motherboard, you must request a new Data
 varKerberosDns: Kerberos relies on DNS to identify machines involved in authentication. NFS clients and servers require DNS <code>A</code> records for forward-DNS lookups and <code>PTR</code> records for reverse-DNS lookups.
 varNfsConf: In versions of Ubuntu lower than 22.04 (and possibly on other Linux distributions), you can't use the <code>/etc/nfs.conf</code> file to configure <code>gssd</code>. If this is the case for your system, we recommend starting the <code>rpc.gssd</code> service by using the <code>-n</code> flag.
 
+unifyNetDefine: This platform uses a _unified networking configuration_ in which the same NICs handle back-end and front-end traffic. In this configuration, each networking port provides communication with clients and between nodes. You can connect the NICs to the same switch or to different switches.
 splitNetJumboFrames: Before you create your Qumulo cluster, if you want to use Jumbo Frames (9,000 MTU), configure your switch to support a higher MTU configuration.
 unifyNetJumboFrames: Before you create your Qumulo cluster, if your client environment requires Jumbo Frames (9,000 MTU), configure your switch to support a higher MTU configuration.
 use40gbps: You can use 40 Gbps connections with 40 Gbps transceivers.
@@ -156,3 +157,6 @@ dl325g10p: HPE ProLiant DL325 Gen10 Plus
 
 sm1114sLong: Supermicro A+ WIO 1114S-WN10RT
 sm1114s: Supermicro 1114S
+
+sm1014sLong: Supermicro A+ ASG-1014S-ACR12N4H
+sm1014s: Supermicro 1014S
