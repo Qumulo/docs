@@ -8,7 +8,7 @@ sidebar: administrator_guide_sidebar
 
 {% include important.html content="Treat access tokens like passwords. Keep them secure and hidden. Anyone who obtains an access token has full access to the Qumulo Core REST API as that user." %}
 
-Access tokens are an alternative to the session-based authentication used by `qq login` and the Qumulo Core web interface.
+Qumulo Core 5.3.0 (and higher) supports access tokens as an alternative to the session-based authentication used by `qq login` and the Qumulo Core web interface.
 They are long-lived tokens that allow a user to authenticate to the REST API without needing to complete a login step each time.
 An access token comes in the form of a [bearer token](https://oauth.net/2/bearer-tokens/) which can be used in the HTTP Authorization header.
 Access tokens may be revoked and rotated to ensure that the system the access is kept secure.
