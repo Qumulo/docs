@@ -112,6 +112,20 @@ The following table gives the name, type, labels, and descriptions.
       <td>The temperature in Celsius for each physical CPU</td>
     </tr>
     <tr>
+      <td><code>qumulo_disk_endurance_percent</code></td>
+      <td>gauge</td>
+      <td>
+        <ul>
+          <li><code>disk_type</code></li>
+          <li><code>drive_bay</code></li>
+          <li><code>node_id</code></li>
+        </ul>
+      </td>
+      <td>Disk endurance remaining for each disk in the cluster.<br>
+      This value can range from <code>100</code> (no disk wear) to <code>0</code> (disk is fully
+      worn).</td>
+    </tr>
+    <tr>
       <td><code>qumulo_disk_is_unhealthy</code></td>
       <td>gauge</td>
       <td>
