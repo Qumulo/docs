@@ -90,6 +90,17 @@ The following table gives the name, type, labels, and descriptions.
       <td>Total number of completed Active Directory Netlogon operations</td>
     </tr>
     <tr>
+      <td><code>qumulo_cpu_max_temperature_celsius</code></td>
+      <td>gauge</td>
+      <td>
+        <ul>
+          <li><code>cpu</code></li>
+          <li><code>node_id</code></li>
+        </ul>
+      </td>
+      <td>The max temperature threshold for each physical CPU</td>
+    </tr>
+    <tr>
       <td><code>qumulo_cpu_temperature_celsius</code></td>
       <td>gauge</td>
       <td>
