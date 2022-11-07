@@ -96,7 +96,7 @@ This section provides an overview of supported configurations and known limits f
   <tbody>
     <tr>
       <td>On-Premises Cluster Size</td>
-      <td>100 nodes</td>
+      <td>275 nodes</td>
     </tr>
     <tr>
       <td>Cloud Cluster Size</td>
