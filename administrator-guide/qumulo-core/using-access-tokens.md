@@ -2,11 +2,12 @@
 title: "Using Qumulo Core Access Tokens"
 summary: "This section describes how to create and use access tokens to authenticate external services to Qumulo Core."
 permalink: /administrator-guide/qumulo-core/using-access-tokens.html
-keywords: auth, authentication, access token, token
+keywords: auth, authentication, access token, bearer token, token, Authorization
 sidebar: administrator_guide_sidebar
 varAccessTokenWarning: An attacker can use an access token to authenticate as the token's user to Qumulo Core REST API and gain all of the user's privileges.
 varAccessTokenBestPractices: Treat access tokens, and the bearer tokens they generate, like passwords&#58; Store your tokens securely, rotate your tokens often, and create a token revocation policy for your organization.
 varAccessTokenAdminWarning: To decrease the risk of giving an attacker full administrative access&mdash;including access to cluster data&mdash;avoid generating tokens for accounts with administrative privileges.
+varTokenQQcli: To use an access token in the `qq` CLI, you must use the `--file` flag when you create the access token.
 ---
 
 This section explains how to create and use access tokens&mdash;by using the Qumulo REST API, Python SDK, and `qq` CLI&mdash;to authenticate external services to Qumulo Core.
@@ -15,11 +16,9 @@ In Qumulo Core 5.3.0 (and higher), _access tokens_ let a user to authenticate to
 
 Unlike _user bearer tokens_ (that have a short expiration time and require a password to refresh), access tokens are long-lived. Commonly, access tokens support authentication for services, long-lived automation processes, and programmatic REST API access that doesn't require user input.
 
-An access token returns a _bearer token_, an item in the Authorization HTTP header which acts as the authentication mechanism for the REST API. 
-
 {{site.data.alerts.important}}
 <ul>
-  <li>{{page.varAccessTokenWarning}}{{page.varAccessTokenBestPractices}}</li>
+  <li>{{page.varAccessTokenWarning}} {{page.varAccessTokenBestPractices}}</li>
   <li>Because a token allows indefinite authentication to the associated user's account, we strongly recommend against creating tokens for individual Qumulo Core REST API users. For more information, see <a href="#best-practices-using-access-tokens">Best Practices for Using Access Tokens</a>.</li>
 </ul>
 {{site.data.alerts.end}}
@@ -45,9 +44,14 @@ You can:
   * `auth_id:1234`
   * `SID:S-1-1-0`
  
-{% include note.html content="Although you can create groups for users, access tokens don't support groups." %}
+{{site.data.alerts.note}}
+<ul>
+  <li>Although you can create groups for users, access tokens don't support groups.</li>
+  <li>{{page.varTokenQQcli}}</li>
+</ul>
+{{site.data.alerts.end}}
 
-The `auth_create_access_token` command returns a JSON response that contains the bearer token body and the access token ID, which you can use to manage the access token.
+<a name="json-bearer-token"></a>The `auth_create_access_token` command returns a JSON response that contains the bearer token body and the access token ID, which you can use to manage the access token.
 
 ```json
 {
@@ -58,45 +62,43 @@ The `auth_create_access_token` command returns a JSON response that contains the
 
 {{site.data.alerts.important}}
 <ul>
+  <li>As soon as you receive your bearer token, record it in a safe place. You can't retrieve the bearer token at a later time.</li>
+  <li>Any user can have a maximum of two access tokens. If a user already has two access tokens, creating new tokens fails until you remove at least one token from the user. We strongly recommend creating a single access token for each user and using the second access token to perform secret rotation.</li>  
   <li>{{page.varAccessTokenBestPractices}}</li>
   <li>{{page.varAccessTokenAdminWarning}}</li>
-  <li>As soon as you receive your bearer token, record it in a safe place. You can't retrieve the bearer token at a later time.</li>
-  <li>Any user can have a maximum of two access tokens. If a user already has two access tokens, creating new tokens fails until you remove at least one token from the user. We strongly recommend creating a single access token for each user and using the second access token to perform secret rotation.</li>
 </ul>
 {{site.data.alerts.end}}
 
 
 ## Using Bearer Tokens for Authorization
-
-Access tokens can be used to authenticate to the Qumulo Core REST API using [Bearer Token](https://oauth.net/2/bearer-tokens/) authorization.
+A Qumulo Core access token [returns a _bearer token_](#json-bearer-token), an item in the `Authorization` HTTP header which acts as the authentication mechanism for the Qumulo Core REST API. 
 
 ### REST API
-
-Use the bearer token returned from the `auth_create_access_token` in an `Authorization` HTTP header like so:
+When you use the Qumulo REST API, add the bearer token to the `Authorization` HTTP header. For example:
 
 ```
-Authorization: Bearer <bearer token>
+Authorization: Bearer access-v1:abAcde...==
 ```
 
-For example, you can set the authorization header for `curl` like this:
+You can also add the bearer token to a `curl` command. For example:
 
 ```bash
-$ curl https://qumulo-hostname:8000/v1/session/who-am-i -H 'Authorization: Bearer <bearer token>'
+$ curl https://my-qumulo-cluster:8000/v1/session/who-am-i -H 'Authorization: Bearer access-v1:abAcde...=='
 ```
 
 ### Python SDK
-
-Using [Qumulo Core Python SDK](https://pypi.org/project/qumulo-api/) you can create a `RestClient` object using the bearer token.
+When you use the Qumulo Python SDK, add the bearer token to a `RestClient` object. For example:
 
 ```python
 from qumulo.rest_client import RestClient
 from qumulo.lib.auth import Credentials
-client = RestClient('qumulo-hostname', 8000, Credentials('<bearer token>'))
+client = RestClient('my-qumulo-cluster', 8000, Credentials('access-v1:abAcde...=='))
 ```
 
-### qq CLI
+For more information, see the [Qumulo Core Python SDK](https://pypi.org/project/qumulo-api/).
 
-To use access tokens in the qq CLI, you must create the access token with the `--file` option. This option accepts a file path to save the credential in a format that can be used by the qq CLI.
+### qq CLI
+{{page.varTokenQQcli}} This option accepts a file path to save the credential in a format that can be used by the qq CLI.
 
 Once the credentials file has been created, it can be pass to the qq CLI using the `--credentials-store` option. Here is an example that creates an access token saved to a file, and uses it in a subsequent call to qq.
 
