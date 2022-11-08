@@ -2,14 +2,14 @@
 title: "Using Qumulo Core Access Tokens"
 summary: "This section describes how to create and use access tokens to authenticate external services to Qumulo Core."
 permalink: /administrator-guide/qumulo-core/using-access-tokens.html
-keywords: auth, authentication, access token, bearer token, token, Authorization
+keywords: auth, authentication, access token, bearer token, token
 sidebar: administrator_guide_sidebar
 varAccessTokenWarning: An attacker can use an access token to authenticate as the token's user to Qumulo Core REST API and gain all of the user's privileges.
 varAccessTokenBestPractices: Treat access tokens, and the bearer tokens they generate, like passwords&#58; Store your tokens securely, rotate your tokens often, and create a token revocation policy for your organization.
 varAccessTokenAdminWarning: To decrease the risk of giving an attacker full administrative access&mdash;including access to cluster data&mdash;avoid generating tokens for accounts with administrative privileges.
 varTokenQQcli: To use an access token in the <code>qq</code> CLI, you must use the <code>--file</code> flag when you create the access token. Use this flag to specify a path for saving your credentials file in a format that the <code>qq</code> CLI can use.
 varBearerTokenWarning: If you misplace the bearer token, you can't retrieve it at a later time. You must create a new access token.
-varPrereqWrite: The Qumulo Core privilege <code>PRIVILEGE_ACCESS_TOKEN_WRITE</code> is required for creating access tokens for all users in the system.
+varPrereqWrite: The Qumulo Core privilege <code>PRIVILEGE_ACCESS_TOKEN_WRITE</code> is required for creating and deleting access tokens for all users in the system.
 varPrereqRead: The Qumulo Core privilege <code>PRIVILEGE_ACCESS_TOKEN_READ</code> is required for listing access tokens.
 ---
 
@@ -35,7 +35,7 @@ Unlike _user bearer tokens_ (that have a short expiration time and require a pas
 
 
 ## Creating and Using Access Tokens
-This section explains how to create access tokens by using the `qq` CLI. {{page.varPrereqWrite}}
+{{page.varPrereqWrite}} This section explains how to create access tokens by using the `qq` CLI.
 
 To create a token, use the `auth_create_access_token` command and specify the user. For example:
 
@@ -120,7 +120,7 @@ $ qq --credentials-store ./qumulo_credentials who_am_i
 ```
 
 ## Listing Access Tokens
-This section explains how to create access tokens by using the `qq` CLI. {{page.varPrereqRead}}
+{{page.varPrereqRead}} This section explains how to create access tokens by using the `qq` CLI.
 
 To list access tokens, use the `auth_list_access_tokens` command. For example:
 
@@ -140,38 +140,36 @@ The `auth_list_access_tokens` command returns:
 ```
 id                      user   creator  creation time
 ======================  =====  =======  ==============================
-9226266821531216810715  svc    admin    2022-10-27T15:18:09.725513764Z
-9230454060595080992940  svc    admin    2022-10-27T15:18:24.997572918Z
+1234567890123456789012  svc    admin    2022-10-27T15:18:09.725513764Z
+0987654321098765432109  svc    admin    2022-10-27T15:18:24.997572918Z
 ```
 
 To filter the command's output by user, use the `--user` flag and use the same format for the name as for the [`auth_create_access_token`](#create-token-format) command.
 
 
 ## Deleting Access Tokens
+{{page.varPrereqWrite}} This section explains how to delete access tokens by using the `qq` CLI.
 
-Access tokens can be deleted using `qq auth_delete_access_tokens`.
+{% include important.html content="When you delete an access token, you can't use any bearer tokens associated with the access token to authenticate to Qumulo Core." %}
+
+To delete an access token, use the `auth_delete_access_tokens` command and specify the access token ID. For example:
 
 ```bash
-$ qq auth_delete_access_token <access token ID>
+$ qq auth_delete_access_token 1234567890123456789012
 ```
-
-Once an access token is deleted, the bearer token associated with it will no longer work for authentication.
-
-Deleting access tokens requires the privilege `PRIVILEGE_ACCESS_TOKEN_WRITE`.
-
 
 <a name="best-practices-using-access-tokens"></a>
 ## Best Practices for Using Access Tokens
+This section lists the best practices for working with access tokens securely.
 
 ### Avoid Generating Tokens for Administrative Accounts
-
 {{page.varAccessTokenWarning}}
 
 {{page.varAccessTokenAdminWarning}}
 
 ### Generate Tokens for Service Accounts
-
 When connecting external services up to the Qumulo Core REST API, we recommend creating a service account with limited privileges for that individual service and generating an access token for that account.
+
 This limits the exposure if an access token is ever leaked or stolen, as the service account should only have privileges that the service required.
 
 #### To Create a New Service Account
@@ -204,22 +202,21 @@ This limits the exposure if an access token is ever leaked or stolen, as the ser
 
 You can now follow the steps above in [Creating Access Tokens](#creating-access-tokens) to create an access token for the account.
 
-{% include note.html content="We recommend creating a separate account for each service. This helps limit exposure if the credentials are ever leaked." %}
+{% include note.html content="To limit potential exposure from lost credentials, we recommend creating a separate account for each service." %}
 
 ### Rotate Access Tokens
-
-In order to limit exposure from leaked or stolen credentials, we recommend rotating access tokens on some regular interval.
+To limit potential exposure from lost credentials, we strongly recommend rotating access tokens on a regular interval.
 
 #### To Rotate an Access Token for a Service
 
-1. Ensure that there is only one access token for the service account using `qq auth_list_access_tokens`.
+1. To ensure that there is only one access token for each service account, use the `qq auth_list_access_tokens` command.
 
-    a. If there are multiple access tokens, delete any old access tokens that are not in use.
+   If multiple access tokens exist, delete any unused access tokens.
 
-1. Create a new access token for the service account using `qq auth_create_access_token`.
+1. To create a new access token for the service account, use the `qq auth_create_access_token` command.
 
-1. Replace the old access token in your service's credential store with the new one.
+1. In the credential store of your service, replace the old access token with the new one.
 
-1. Test that your service can still access the Qumulo Core API.
+1. Test that your service account can access the Qumulo Core REST API.
 
-1. Delete the old access token using `qq auth_delete_access_token`.
+1. To delete the old access token, use the `qq auth_delete_access_token` command.
