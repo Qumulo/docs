@@ -13,9 +13,6 @@ Unlike _user bearer tokens_ (that have a short expiration time and require a pas
 
 Qumulo Core 5.3.0 (and higher) supports using access tokens as an alternative to session-based authentication that the `qq login` CLI command and the Web UI use. 
 
-{% capture content_tag %}{{page.varAccessTokenWarning}}{% endcapture %}
-{% include important.html content=content_tag %}
-
 {{site.data.alerts.important}}
 <ul>
   <li>{{page.varAccessTokenWarning}}</li>
