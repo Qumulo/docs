@@ -55,7 +55,7 @@ This process requires coordination between the cluster administrator and SSO adm
      https://my-org.sso-provider.com/foo
      ```
      
-   * The IdP issuer or EntityID. For example:
+   * The IdP issuer or `EntityId`. For example:
 
      ```
      http://www.sso-provider.com/abc12de34fgAB5CDh6i7
@@ -80,9 +80,9 @@ This process requires coordination between the cluster administrator and SSO adm
    {{site.data.alerts.note}}
    <ul>
      <li>To view the current SAML configuration, the cluster administrator can use the <code>qq saml_get_settings</code> command.</li>
-     <li>To allow specific changes (for instance, correct a typo, update a DNS name or an expired certificate, or temporarily disable SAML SSO without losing any of the other settings), the <code>qq saml_modify_settings</code> command permits changing individual SAML settings independently.</li>
-     <li>For first-time SAML configurations, you must provide all settings.</li>
-     <li>Aside from a basic check of the IdP certificate, Qumulo Core doesn't verify the configuration parameters. It is the cluster administrator's responsibility to ensure that IdP-initiated SAML logins work correctly. (These logins initate when the user clicks <strong>Continue to SSO login</strong> in the Web UI or selects the Qumulo cluster on the SSO portal.)</li>
+     <li>To allow specific changes (for instance, correct a typo, update a DNS name or an expired certificate, or temporarily disable SAML SSO without losing any of the other settings), the cluster administrator can use the <code>qq saml_modify_settings</code> command to change individual SAML settings independently.</li>
+     <li>For first-time SAML configurations, the cluster administrator must provide all of the required settings.</li>
+     <li>Aside from a basic check of the IdP certificate, Qumulo Core doesn't verify the configuration parameters. It is the cluster administrator's responsibility to ensure that IdP-initiated SAML login work correctly. (This login type initiates when the user clicks <strong>Continue to SSO login</strong> in the Web UI or selects the Qumulo cluster on the SSO portal.)</li>
    </ul>
    {{site.data.alerts.end}}
    
@@ -157,7 +157,7 @@ Qumulo Core supports three SAML SSO workflows:
 <ul>
   <li>If you use the <code>--require-sso</code> flag, you can no longer use the <code>qq login</code> command with your AD account password. Instead, you must <a href="#sso-login">use the <code>qq sso_login</code> command</a>.</li>
   <li>This setting doesn't restrict access through file protocols such as SMB.</li>
-  <li>Because the FTP protocol sends passwords in plaintext, it is inherently insecure. In addition, many FTP clients don't support Transport Layer Security (TSL) or fall back silently to the plaintext protocol. For this reason, all Qumulo clusters have FTP disabled by default.</li>
+  <li>Because the FTP protocol sends passwords in plaintext, it is inherently insecure. In addition, many FTP clients don't support Transport Layer Security (TSL) or fall back quietly to the plaintext protocol. For this reason, all Qumulo clusters have FTP disabled by default.</li>
 </ul>
 {{site.data.alerts.end}}
 
