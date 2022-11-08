@@ -74,7 +74,7 @@ The following tables list names, types, labels, and descriptions for metrics ava
   <tbody>
     <tr>
       <td><code>qumulo</code></td>
-      <td>info</td>
+      <td><a href="#metric-type-info"><code>info</code></a></td>
       <td>
         <ul>
           <li><code>name</code></li>
@@ -86,7 +86,7 @@ The following tables list names, types, labels, and descriptions for metrics ava
     </tr>
     <tr>
       <td><code>qumulo_ad_netlogon_request_errors</code></td>
-      <td>counter</td>
+      <td><a href="#metric-type-counter"><code>counter</code></a></td>
       <td>
         <ul>
           <li><code>server_url</code></li>
@@ -96,7 +96,7 @@ The following tables list names, types, labels, and descriptions for metrics ava
     </tr>
     <tr>
       <td><code>qumulo_ad_netlogon_request_latency_seconds</code></td>
-      <td>histogram</td>
+      <td><a href="#metric-type-histogram"><code>histogram</code></a></td>
       <td>
         <ul>
           <li><code>server_url</code></li>
@@ -106,7 +106,7 @@ The following tables list names, types, labels, and descriptions for metrics ava
     </tr>
     <tr>
       <td><code>qumulo_ad_netlogon_requests</code></td>
-      <td>counter</td>
+      <td><a href="#metric-type-counter"><code>counter</code></a></td>
       <td>
         <ul>
           <li><code>server_url</code></li>
@@ -116,7 +116,7 @@ The following tables list names, types, labels, and descriptions for metrics ava
     </tr>
     <tr>
       <td><code>qumulo_cpu_max_temperature_celsius</code></td>
-      <td>gauge</td>
+      <td><a href="#metric-type-gauge"><code>gauge</code></a></td>
       <td>
         <ul>
           <li><code>cpu</code></li>
@@ -127,7 +127,7 @@ The following tables list names, types, labels, and descriptions for metrics ava
     </tr>
     <tr>
       <td><code>qumulo_cpu_temperature_celsius</code></td>
-      <td>gauge</td>
+      <td><a href="#metric-type-gauge"><code>gauge</code></a></td>
       <td>
         <ul>
           <li><code>cpu</code></li>
@@ -138,7 +138,7 @@ The following tables list names, types, labels, and descriptions for metrics ava
     </tr>
     <tr>
       <td><code>qumulo_disk_endurance_percent</code></td>
-      <td>gauge</td>
+      <td><a href="#metric-type-gauge"><code>gauge</code></a></td>
       <td>
         <ul>
           <li><code>disk_type</code></li>
@@ -152,7 +152,7 @@ The following tables list names, types, labels, and descriptions for metrics ava
     </tr>
     <tr>
       <td><code>qumulo_disk_is_unhealthy</code></td>
-      <td>gauge</td>
+      <td><a href="#metric-type-gauge"><code>gauge</code></a></td>
       <td>
         <ul>
           <li><code>disk_type</code></li>
@@ -165,7 +165,7 @@ The following tables list names, types, labels, and descriptions for metrics ava
     </tr>
     <tr>
       <td><code>qumulo_disk_operation_latency_seconds</code></td>
-      <td>histogram</td>
+      <td><a href="#metric-type-histogram"><code>histogram</code></a></td>
       <td>
         <ul>
           <li><code>disk_type</code></li>
@@ -178,7 +178,7 @@ The following tables list names, types, labels, and descriptions for metrics ava
     </tr>
     <tr>
       <td><code>qumulo_fan_speed_rpm</code></td>
-      <td>gauge</td>
+      <td><a href="#metric-type-gauge"><code>gauge</code></a></td>
       <td>
         <ul>
           <li><code>fan</code></li>
@@ -189,13 +189,13 @@ The following tables list names, types, labels, and descriptions for metrics ava
     </tr>
     <tr>
       <td><code>qumulo_fs_capacity_bytes</code></td>
-      <td>gauge</td>
+      <td><a href="#metric-type-gauge"><code>gauge</code></a></td>
       <td>&mdash;</td>
       <td>Total space in the cluster, in bytes</td>
     </tr>
     <tr>
       <td><code>qumulo_fs_directory_tree_entries</code></td>
-      <td>gauge</td>
+      <td><a href="#metric-type-gauge"><code>gauge</code></a></td>
       <td>
         <ul>
           <li><code>entry_type</code></li>
@@ -206,7 +206,7 @@ The following tables list names, types, labels, and descriptions for metrics ava
     </tr>
     <tr>
       <td><code>qumulo_fs_directory_used_bytes</code></td>
-      <td>gauge</td>
+      <td><a href="#metric-type-gauge"><code>gauge</code></a></td>
       <td>
         <ul>
           <li><code>path</code></li>
@@ -217,19 +217,19 @@ The following tables list names, types, labels, and descriptions for metrics ava
     </tr>
     <tr>
       <td><code>qumulo_fs_free_bytes</code></td>
-      <td>gauge</td>
+      <td><a href="#metric-type-gauge"><code>gauge</code></a></td>
       <td>&mdash;</td>
       <td>Free space in the cluster, in bytes</td>
     </tr>
     <tr>
       <td><code>qumulo_fs_snapshots</code></td>
-      <td>gauge</td>
+      <td><a href="#metric-type-gauge"><code>gauge</code></a></td>
       <td>&mdash;</td>
       <td>Number of snapshots in the cluster</td>
     </tr>
     <tr>
       <td><code>qumulo_ldap_lookup_request_errors</code></td>
-      <td>counter</td>
+      <td><a href="#metric-type-counter"><code>counter</code></a></td>
       <td>
         <ul>
           <li><code>server_url</code></li>
@@ -239,7 +239,7 @@ The following tables list names, types, labels, and descriptions for metrics ava
     </tr>
     <tr>
       <td><code>qumulo_ldap_lookup_request_latency_seconds</code></td>
-      <td>histogram</td>
+      <td><a href="#metric-type-histogram"><code>histogram</code></a></td>
       <td>
         <ul>
           <li><code>server_url</code></li>
@@ -249,7 +249,7 @@ The following tables list names, types, labels, and descriptions for metrics ava
     </tr>
     <tr>
       <td><code>qumulo_ldap_lookup_requests</code></td>
-      <td>counter</td>
+      <td><a href="#metric-type-counter"><code>counter</code></a></td>
       <td>
         <ul>
           <li><code>server_url</code></li>
@@ -259,25 +259,25 @@ The following tables list names, types, labels, and descriptions for metrics ava
     </tr>
     <tr>
       <td><code>qumulo_ldap_operation_errors</code></td>
-      <td>counter</td>
+      <td><a href="#metric-type-counter"><code>counter</code></a></td>
       <td>&mdash;</td>
       <td>Total number of errored LDAP operations</td>
     </tr>
     <tr>
       <td><code>qumulo_ldap_operation_latency_seconds</code></td>
-      <td>histogram</td>
+      <td><a href="#metric-type-histogram"><code>histogram</code></a></td>
       <td>&mdash;</td>
       <td>Total latency for LDAP operations</td>
     </tr>
     <tr>
       <td><code>qumulo_ldap_operations</code></td>
-      <td>counter</td>
+      <td><a href="#metric-type-counter"><code>counter</code></a></td>
       <td>&mdash;</td>
       <td>Total number of completed LDAP operations</td>
     </tr>
     <tr>
       <td><code>qumulo_memory_correctable_ecc_errors</code></td>
-      <td>counter</td>
+      <td><a href="#metric-type-counter"><code>counter</code></a></td>
       <td>
         <ul>
           <li><code>node_id</code></li>
@@ -287,7 +287,7 @@ The following tables list names, types, labels, and descriptions for metrics ava
     </tr>
     <tr>
       <td><code>qumulo_network_interface_is_down</code></td>
-      <td>gauge</td>
+      <td><a href="#metric-type-gauge"><code>gauge</code></a></td>
       <td>
         <ul>
           <li><code>bond</code></li>
@@ -300,7 +300,7 @@ The following tables list names, types, labels, and descriptions for metrics ava
     </tr>
     <tr>
       <td><code>qumulo_network_interface_link_speed_bits_per_second</code></td>
-      <td>gauge</td>
+      <td><a href="#metric-type-gauge"><code>gauge</code></a></td>
       <td>
         <ul>
           <li><code>bond</code></li>
@@ -313,7 +313,7 @@ The following tables list names, types, labels, and descriptions for metrics ava
     </tr>
     <tr>
       <td><code>qumulo_network_interface_receive_errors</code></td>
-      <td>counter</td>
+      <td><a href="#metric-type-counter"><code>counter</code></a></td>
       <td>
         <ul>
           <li><code>bond</code></li>
@@ -326,7 +326,7 @@ The following tables list names, types, labels, and descriptions for metrics ava
     </tr>
     <tr>
       <td><code>qumulo_network_interface_received_bytes</code></td>
-      <td>counter</td>
+      <td><a href="#metric-type-counter"><code>counter</code></a></td>
       <td>
         <ul>
           <li><code>bond</code></li>
@@ -339,7 +339,7 @@ The following tables list names, types, labels, and descriptions for metrics ava
     </tr>
     <tr>
       <td><code>qumulo_network_interface_received_packets</code></td>
-      <td>counter</td>
+      <td><a href="#metric-type-counter"><code>counter</code></a></td>
       <td>
         <ul>
           <li><code>bond</code></li>
@@ -352,7 +352,7 @@ The following tables list names, types, labels, and descriptions for metrics ava
     </tr>
     <tr>
       <td><code>qumulo_network_interface_transmit_errors</code></td>
-      <td>counter</td>
+      <td><a href="#metric-type-counter"><code>counter</code></a></td>
       <td>
         <ul>
           <li><code>bond</code></li>
@@ -365,7 +365,7 @@ The following tables list names, types, labels, and descriptions for metrics ava
     </tr>
     <tr>
       <td><code>qumulo_network_interface_transmitted_bytes</code></td>
-      <td>counter</td>
+      <td><a href="#metric-type-counter"><code>counter</code></a></td>
       <td>
         <ul>
           <li><code>bond</code></li>
@@ -378,7 +378,7 @@ The following tables list names, types, labels, and descriptions for metrics ava
     </tr>
     <tr>
       <td><code>qumulo_network_interface_transmitted_packets</code></td>
-      <td>counter</td>
+      <td><a href="#metric-type-counter"><code>counter</code></a></td>
       <td>
         <ul>
           <li><code>bond</code></li>
@@ -391,7 +391,7 @@ The following tables list names, types, labels, and descriptions for metrics ava
     </tr>
     <tr>
       <td><code>qumulo_power_supply_is_unhealthy</code></td>
-      <td>gauge</td>
+      <td><a href="#metric-type-gauge"><code>gauge</code></a></td>
       <td>
         <ul>
           <li><code>location</code></li>
@@ -402,7 +402,7 @@ The following tables list names, types, labels, and descriptions for metrics ava
     </tr>
     <tr>
       <td><code>qumulo_protocol_client_connections</code></td>
-      <td>counter</td>
+      <td><a href="#metric-type-counter"><code>counter</code></a></td>
       <td>
         <ul>
           <li><code>protocol</code></li>
@@ -412,7 +412,7 @@ The following tables list names, types, labels, and descriptions for metrics ava
     </tr>
     <tr>
       <td><code>qumulo_protocol_client_disconnections</code></td>
-      <td>counter</td>
+      <td><a href="#metric-type-counter"><code>counter</code></a></td>
       <td>
         <ul>
           <li><code>protocol</code></li>
@@ -422,7 +422,7 @@ The following tables list names, types, labels, and descriptions for metrics ava
     </tr>
     <tr>
       <td><code>qumulo_protocol_operation_bytes</code></td>
-      <td>counter</td>
+      <td><a href="#metric-type-counter"><code>counter</code></a></td>
       <td>
         <ul>
           <li><code>data_type</code></li>
@@ -435,7 +435,7 @@ The following tables list names, types, labels, and descriptions for metrics ava
     </tr>
     <tr>
       <td><code>qumulo_protocol_operation_latency_seconds</code></td>
-      <td>histogram</td>
+      <td><a href="#metric-type-histogram"><code>histogram</code></a></td>
       <td>
         <ul>
           <li><code>data_type</code></li>
@@ -448,7 +448,7 @@ The following tables list names, types, labels, and descriptions for metrics ava
     </tr>
     <tr>
       <td><code>qumulo_protocol_operations</code></td>
-      <td>counter</td>
+      <td><a href="#metric-type-counter"><code>counter</code></a></td>
       <td>
         <ul>
           <li><code>data_type</code></li>
@@ -461,7 +461,7 @@ The following tables list names, types, labels, and descriptions for metrics ava
     </tr>
     <tr>
       <td><code>qumulo_quorum_node_is_offline</code></td>
-      <td>gauge</td>
+      <td><a href="#metric-type-gauge"><code>gauge</code></a></td>
       <td>
         <ul>
           <li><code>node_id</code></li>
@@ -472,7 +472,7 @@ The following tables list names, types, labels, and descriptions for metrics ava
     </tr>
     <tr>
       <td><code>qumulo_time_is_not_synchronizing</code></td>
-      <td>gauge</td>
+      <td><a href="#metric-type-gauge"><code>gauge</code></a></td>
       <td>
         <ul>
           <li><code>node_id</code></li>
