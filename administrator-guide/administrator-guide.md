@@ -19,11 +19,15 @@ The Qumulo Administrator Guide is a growing collection of information about conf
 * **Upgrading Qumulo Core**
   * [Performing Instant Software Upgrades and Platform Upgrades](upgrades/instant-software-platform.md)
   * [Qumulo Core Upgrade Mode Reference](upgrades/mode-reference.md)
-* **Configuring the Qumulo Core Web UI**
-  * [Setting the Web UI Login Banner](qumulo-core/web-ui-login-banner.html)
-  * [Setting the Web UI Inactivity Timeout](qumulo-core/web-ui-inactivity-timeout.md)
 * **Configuring Networking for Qumulo Core**
   * [Required Networking Ports for Qumulo Core](qumulo-core/required-networking-ports.md)
+* **Connecting Qumulo Core to External Services**
+  * [Creating Access Tokens for Qumulo Core](qumulo-core/creating-access-tokens.md)
+* **Configuring the Qumulo Core Web UI**
+  * [Setting the Web UI Login Banner](qumulo-core/web-ui-login-banner.md)
+  * [Setting the Web UI Inactivity Timeout](qumulo-core/web-ui-inactivity-timeout.md)
+* **Working with the qq CLI**
+  * [Enabling Autocomplete for the qq CLI](qq-cli/enabling-autocomplete.md)
 * **Protecting Your Data**
   * [Increasing the Node-Fault-Tolerance Level for Your Cluster During Node-Add Operations](qumulo-core/node-fault-tolerance-level.md)
   * [Managing Snapshots](qumulo-core/managing-snapshots.md)
@@ -34,8 +38,6 @@ The Qumulo Administrator Guide is a growing collection of information about conf
 * **Working with File System Protocols**
   * [Enabling and Using NFSv4.1 on a Qumulo Cluster](protocols/nfsv4.1-enabling-using.md)
   * [Managing File Access Permissions by Using NFSv4.1 Access Control Lists (ACLs)](protocols/nfsv4.1-acls.md)
-* **Working with the qq CLI**
-  * [Enabling Autocomplete for the qq CLI](qq-cli/enabling-autocomplete.md)
 * **Using NFSv4.1 with Kerberos**
   * [How NFSv4.1 Works with Kerberos in Qumulo Core](kerberos/kerberos.md)
   * [Prerequisites for Joining a Qumulo Cluster to Active Directory](kerberos/kerberos-prerequisites-joining-cluster-active-directory.md)
