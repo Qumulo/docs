@@ -15,9 +15,9 @@ varPrereqRead: <code>PRIVILEGE_ACCESS_TOKEN_READ</code> is required for listing 
 
 This section explains how to create and use access tokens&mdash;by using the Qumulo REST API, Python SDK, and `qq` CLI&mdash;to authenticate external services to Qumulo Core.
 
-In Qumulo Core 5.3.0 (and higher), _access tokens_ let a user to authenticate to the Qumulo REST API without having to complete repetitive login procedures. Access tokens provide an alternative to session-based authentication that the `qq login` CLI command and the Web UI use
+In Qumulo Core 5.3.0 (and higher), _access tokens_ let a user to authenticate to the Qumulo REST API without having to complete repetitive login procedures. Access tokens provide an alternative to session-based authentication that the `qq login` command and the Web UI use
 
-Unlike _user bearer tokens_ (that have a short expiration time and require a password to refresh), access tokens are long-lived. Access tokens support authentication for services, long-lived automation processes, and programmatic REST API access that doesn't require user input.
+Unlike _session bearer tokens_ (that have a short expiration time and require a password to refresh, for example for authentication by using the `qq login` command), access tokens are long-lived. Access tokens support authentication for services, long-lived automation processes, and programmatic REST API access that doesn't require user input.
 
 {{site.data.alerts.important}}
 <ul>
@@ -55,7 +55,7 @@ $ qq auth_create_access_token jane
  
 {{site.data.alerts.note}}
 <ul>
-  <li>Although you can create groups for users, access tokens don't support groups.</li>
+  <li>Although you can create groups for users, you can't create access tokens for groups.</li>
   <li>{{page.varTokenQQcli}}</li>
 </ul>
 {{site.data.alerts.end}}
