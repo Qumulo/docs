@@ -33,7 +33,7 @@ Unlike _user bearer tokens_ (that have a short expiration time and require a pas
   <li>{{page.varPrereqRead}}</li>
 </ul>
 
-
+<a name="creating-using-access-tokens"></a>
 ## Creating and Using Access Tokens
 {{page.varPrereqWrite}} This section explains how to create access tokens by using the `qq` CLI.
 
@@ -159,55 +159,47 @@ $ qq auth_delete_access_token 1234567890123456789012
 ```
 
 <a name="best-practices-using-access-tokens"></a>
-## Best Practices for Using Access Tokens
-This section lists the best practices for working with access tokens securely.
+## Best Practices for Using Qumulo Core Access Tokens
+This section lists the best practices for limiting the exposure to lost credentials and working with Qumulo Core access tokens securely.
 
 ### Avoid Generating Tokens for Administrative Accounts
-{{page.varAccessTokenWarning}}
-
-{{page.varAccessTokenAdminWarning}}
+{{page.varAccessTokenWarning}} {{page.varAccessTokenAdminWarning}}
 
 ### Generate Tokens for Service Accounts
-When connecting external services up to the Qumulo Core REST API, we recommend creating a service account with limited privileges for that individual service and generating an access token for that account.
-
-This limits the exposure if an access token is ever leaked or stolen, as the service account should only have privileges that the service required.
+When you connect external services to the Qumulo Core REST API, we recommend creating a service account with limited privileges for each individual service and generating an access token for each service account.
 
 #### To Create a New Service Account
 
 1. Log in to Qumulo Core.
 
-1. Create a service account:
+1. Create a service account.
 
     a. Click **Cluster > Local Users & Groups**.
 
-    b. On the **Users** page, click **Create** and enter a **User name** and **Password**.
+    b. In the **Users** section, click **Create**.
+    
+    c. In the **Create user** dialog box, enter a **User name** and **Password**, re-enter the password, and then click **Create**.
 
-1. Create a role with privileges:
+1. Create a role with privileges.
 
     a. Click **Cluster > Role Management**.
 
-    b. Click **Create Role**.
+    b. In the **Role Management** section, click **Create Role**.
+    
+    c. On the **Create Role** page, enter a **Name** and **Description**, click the **Privileges** for the user, and then click **Save**.
+ 
+1. Assign the service user to the role.
 
-    c. Fill out a **Name**, **Description**, and select all appropriate **Privileges** for the user.
-
-    d. Click **Save**.
-
-1. Assign the service user to the role:
-
-    a. Find the role you just created in the list and click **Add Member**.
-
-    b. Type the name of the user you created above into the **Trustee** field.
-
-    c. Click **Yes, Add Member**.
-
-You can now follow the steps above in [Creating Access Tokens](#creating-access-tokens) to create an access token for the account.
-
-{% include note.html content="To limit potential exposure from lost credentials, we recommend creating a separate account for each service." %}
+    a. On the **Role Management** page, find the name of the role you created and then click **Add Member**.
+    
+    b. In the **Add Member to <MyRoleName>** dialog box, for **Trustee**, enter the name of the user you created and then click **Yes, Add Member**.
+  
+1. [Create access tokens](#creating-using-access-tokens) for your service account.
 
 ### Rotate Access Tokens
-To limit potential exposure from lost credentials, we strongly recommend rotating access tokens on a regular interval.
+We strongly recommend rotating access tokens for a service account at a regular interval.
 
-#### To Rotate an Access Token for a Service
+#### To Rotate an Access Token for a Service Account
 
 1. To ensure that there is only one access token for each service account, use the `qq auth_list_access_tokens` command.
 
