@@ -32,33 +32,35 @@ All available Qumulo metrics belong to one of the four types that the OpenMetric
   </thead>
   <tbody>
     <tr>
-      <td><strong>Counter</strong></td>
+      <td><a name="metric-type-counter"></a><strong>Counter</strong></td>
       <td>A monotonically increasing integer that increases from zero, stored in <code>&lt;metric_name&gt;_count</code>. A counter's value will never decrease during normal operation.</td>
+    </tr>
+    <tr>
+      <td><a name="metric-type-gauge"></a><strong>Gauge</strong></td>
+      <td>A value that represents a single integer (similar to a counter), stored in <code>&lt;metric_name&gt;</code>. A gauge's value may increase and decrease during normal operation.</td>
+    </tr>
+    <tr>
+      <td><a name="metric-type-histogram"></a><strong>Histogram</strong></td>
+      <td>A histogram that represents a series of buckets. Each <em>bucket</em> keeps track of all values that occur within a specific range. A histogram also has a <code>count</code> field and a <code>sum</code> field, stored in <code>&lt;metric_name&gt;_count</code> (the total number of samples) and <code>&lt;metric_name&gt;_sum</code> (the sum of all the samples). Qumulo Core emits only a single bucket that contains all samples. {% include note.html content="Because Qumulo Core only emits a single bucket for histogram metrics, you can use histograms to keep track of averages by dividing the <code>sum</code> field by the <code>count</code> field." %}</td>
+    </tr>
+    <tr>
+      <td><a name="metric-type-info"></a><strong>info</strong></td>
+      <td>A metric that exposes some informational text about the system, stored in <code>&lt;metric_name&gt;_info</code>. An <code>info</code> metric always has a value of <code>1</code> and has labels thqat contain information.</td>
     </tr>
   </tbody>
 </table>
 
+For more information about these and other OpenMetrics types, see [Metric Types](https://github.com/OpenObservability/OpenMetrics/blob/main/specification/OpenMetrics.md#metric-types) in the OpenMetrics Specification.
 
-* **Counter**: A monotonically increasing integer that increases from zero, stored in `<metric_name>_count`. A counter's value will never decrease during normal operation.
-
-* **Gauge**: A value that represents a single integer (similar to a counter), stored in `<metric_name>`.. A gauge's value may increase and decrease during normal operation.
-
-* **Histogram**: A histogram that represents a series of _buckets._ Each bucket keeps track of all values that occur within a specific range. A histogram also has a `count` field and a `sum` field, stored in `<metric_name>_count` (the total number of samples) and `<metric_name>_sum` (the sum of all the samples). The Qumulo Core OpenMetrics API emits only a single bucket containing all samples.
-
-  {% include note.html content="Because Qumulo Core only emits a single bucket for histogram metrics, you can use histograms to keep track of averages by dividing the `sum` field by the `count` field." %}
-
-* **Info**: A metric that exposes some informational text about the system, stored in `<metric_name>_info`. An info metric always has a value of <code>1</code> and has labels containing the relevant information.
-
-For more information about these (and other) OpenMetrics types, see [Metric Types](https://github.com/OpenObservability/OpenMetrics/blob/main/specification/OpenMetrics.md#metric-types) in the OpenMetrics Specification.
 
 ## Metric Labels
-The OpenMetrics format allows for metrics to be labeled to communicate additional information about each metric point. The Qumulo Core OpenMetrics API emits labels to give context to each metric, for example the name of a protocol operation or the URL of a remote server. These labels are metric-specific. For more information, see the full table of [Available Labels](#available-labels).
+The OpenMetrics format allows for metrics to be labeled to communicate additional information about each metric point. The Qumulo Core OpenMetrics API emits labels to give context to each metric, for example the name of a protocol operation or the URL of a remote server. These labels are metric-specific. For more information, see [Available Labels](#available-labels).
+
 
 ## Available Metrics
-Below are two tables that list the metrics and metric labels available in the Qumulo Core OpenMetrics API.
-The following table gives the name, type, labels, and descriptions.
+The following tables list names, types, labels, and descriptions for metrics available in the Qumulo Core OpenMetrics API.
 
-{% include note.html content="For Qumulo as a Service users, all metrics with a <code>node_id</code> label are unavailable as they refer to specific hardware." %}
+{% include note.html content="For Qumulo as a Service, all metrics with a `node_id` label are unavailable because they refer to specific hardware." %}
 
 <table>
   <thead>
