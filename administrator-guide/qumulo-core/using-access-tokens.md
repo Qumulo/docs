@@ -113,7 +113,7 @@ For more information, see the [Qumulo Core Python SDK](https://pypi.org/project/
 $ qq auth_create_access_token jane --file ./qumulo_credentials
 ```
 
-To use the credentials file, specify its location by useing the `--credentials-store` flag. For example:
+To use the credentials file, specify its location by using the `--credentials-store` flag. For example:
 
 ```bash
 $ qq --credentials-store ./qumulo_credentials who_am_i
@@ -127,7 +127,7 @@ To list access tokens, use the `auth_list_access_tokens` command. For example:
 ```bash
 $ qq auth_list_access_tokens
 ```
-{{site.data.alerts.note}}
+{{site.data.alerts.important}}
 Listing access tokens <em>doesn't</em> return the bearer token required for authentication. {{page.varBearerTokenWarning}}
 {{site.data.alerts.end}}
 
@@ -162,10 +162,10 @@ $ qq auth_delete_access_token 1234567890123456789012
 ## Best Practices for Using Qumulo Core Access Tokens
 This section lists the best practices for limiting the exposure to lost credentials and working with Qumulo Core access tokens securely.
 
-### Avoid Generating Tokens for Administrative Accounts
+### Avoiding Creation of Tokens for Administrative Accounts
 {{page.varAccessTokenWarning}} {{page.varAccessTokenAdminWarning}}
 
-### Generate Tokens for Service Accounts
+### Generating Tokens for Service Accounts
 When you connect external services to the Qumulo Core REST API, we recommend creating a service account with limited privileges for each individual service and generating an access token for each service account.
 
 #### To Create a New Service Account
@@ -196,7 +196,7 @@ When you connect external services to the Qumulo Core REST API, we recommend cre
   
 1. [Create access tokens](#creating-using-access-tokens) for your service account.
 
-### Rotate Access Tokens
+### Rotating Access Tokens
 We strongly recommend rotating access tokens for a service account at a regular interval.
 
 #### To Rotate an Access Token for a Service Account
