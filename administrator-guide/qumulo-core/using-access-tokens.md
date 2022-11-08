@@ -6,6 +6,7 @@ keywords: auth, authentication, access token, token
 sidebar: administrator_guide_sidebar
 varAccessTokenWarning: An attacker can use an access token to authenticate as the token's user to Qumulo Core REST API and gain all of the user's privileges.
 varAccessTokenBestPractices: Treat access tokens, and the bearer tokens they generate, like passwords&#58; Store your tokens securely, rotate your tokens often, and create a token revocation policy for your organization.
+varAccessTokenAdminWarning: To decrease the risk of giving an attacker full administrative access&mdash;including access to cluster data&mdash;avoid generating tokens for accounts with administrative privileges.
 ---
 
 This section explains how to create and use access tokens&mdash;by using the Qumulo REST API, Python SDK, and `qq` CLI&mdash;to authenticate external services to Qumulo Core.
@@ -24,6 +25,8 @@ Qumulo Core 5.3.0 (and higher) supports using access tokens as an alternative to
 
 ## Creating Access Tokens by Using the qq CLI
 This section explains how to create access tokens by using the `qq` CLI.
+
+{% include note.html content="The Qumulo Core privilege `PRIVILEGE_ACCESS_TOKEN_WRITE`, required for creating access tokens, allows creating tokens for all users in the system." %}
 
 To create a token, use the `auth_create_access_token` command and specify the user. For example:
 
@@ -44,10 +47,6 @@ You can:
 
 The `auth_create_access_token` command returns a JSON response that contains the bearer token body and the access token ID, which you can use to manage the access token.
 
-{{site.data.alerts.important}}
-{{page.varAccessTokenBestPractices}}
-{{site.data.alerts.end}}
-
 ```json
 {
   "bearer_token": "access-v1:abAcde...==",
@@ -55,13 +54,14 @@ The `auth_create_access_token` command returns a JSON response that contains the
 }
 ```
 
-Only two access tokens can exist for any user at a time. If a user already has two access tokens, creating new ones will fail until existing access tokens are deleted. We recommend only creating a single access token for a user and using the second access token to perform secret rotation, see [Rotating Access Tokens](#rotating-access-tokens)
-
-{% include note.html content="Save the bearer token somewhere safe after you run the command. There is no way to retreive the bearer token later." %}
-
-{% include important.html content="Never create access tokens for users with administration privileges. A compromised access token will give an attacker full access to the Qumulo Core REST API as that user." %}
-
-Creating access tokens requires the privilege PRIVILEGE_ACCESS_TOKEN_WRITE and allows creating access tokens for **all users** in the system.
+{{site.data.alerts.important}}
+<ul>
+  <li>{{page.varAccessTokenBestPractices}}</li>
+  <li>{{page.varAccessTokenAdminWarning}}</li>
+  <li>As soon as you receive your bearer token, record it in a safe place. You can't retrieve the bearer token at a later time.</li>
+  <li>Any user can have a maximum of two access tokens. If a user already has two access tokens, creating new tokens fails until you remove at least one token from the user. We strongly recommend creating a single access token for each user and using the second access token to perform secret rotation.</li>
+</ul>
+{{site.data.alerts.end}}
 
 
 ## Using Bearer Tokens for Authorization
@@ -141,12 +141,9 @@ Deleting access tokens requires the privilege `PRIVILEGE_ACCESS_TOKEN_WRITE`.
 
 ### Avoid Generating Tokens for Administrative Accounts
 
-{% include important.html content="Never generate tokens for accounts with administrative privileges." %}
-
 {{page.varAccessTokenWarning}}
 
-For this reason, it is **highly discouraged** to create an access token for users with administrative privileges.
-Such tokens can give full administrator access to attackers if leaked, including access to cluster data.
+{{page.varAccessTokenAdminWarning}}
 
 ### Generate Tokens for Service Accounts
 
