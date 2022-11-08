@@ -506,15 +506,15 @@ The following table lists metric label names, possible values, and descriptions.
     <tr>
       <td><a name="metric-label-cpu"></a><code>cpu</code></td>
       <td>A non-negative integer</td>
-      <td>The CPU's index in the node</td>
+      <td>The CPU index in the node</td>
     </tr>
     <tr>
       <td><a name="metric-label-data_type"></a><code>data_type</code></td>
       <td>
         <ul>
-          <li><code>data</code>: Read or write operations on a file's data.</li>
-          <li><code>metadata</code>: Operations (such as <code>lookup</code>, <code>stat</code>, or <code>getattr</code>) that are unrelated to a file's data.</li>
-          <li><code>none</code>: Operations that operate on neither file data nor metadata. The protocol often requires these operations for session negotiation and authentication.</li>
+          <li><code>data</code>: Read or write operations on the data of a file.</li>
+          <li><code>metadata</code>: Operations (such as <code>lookup</code>, <code>stat</code>, or <code>getattr</code>) unrelated to a file's data</li>
+          <li><code>none</code>: Operations that operate on neither the file data nor the metadata. {% include note.html content="The protocol often requires these operations for session negotiation and authentication." %}</li>
         </ul>
       </td>
       <td>The data type that an operation transfers</td>
@@ -523,16 +523,16 @@ The following table lists metric label names, possible values, and descriptions.
       <td><a name="metric-label-disk_type"></a><code>disk_type</code></td>
       <td>
         <ul>
-          <li><code>hdd</code>: Hard disk drive</li>
-          <li><code>ssd</code>: Solid-state drive</li>
+          <li><code>hdd</code>: Hard Disk Drive</li>
+          <li><code>ssd</code>: Solid-State Drive</li>
         </ul>
       </td>
-      <td>The type of underlying storage</td>
+      <td>The underlying storage type</td>
     </tr>
     <tr>
       <td><a name="metric-label-drive_bay"></a><code>drive_bay</code></td>
-      <td>A drive bay name, for example <code>b3</code> or <code>1.1</code></td>
-      <td>The physical drive bay on the chassis.</td>
+      <td>A drive bay name. For example: <code>b3</code>, <code>1.1</code></td>
+      <td>The physical drive bay in the chassis.</td>
     </tr>
     <tr>
       <td><a name="metric-label-entry_type"></a><code>entry_type</code></td>
@@ -555,7 +555,7 @@ The following table lists metric label names, possible values, and descriptions.
     <tr>
       <td><a name="metric-label-interface"></a><code>interface</code></td>
       <td>An interface name, for example <code>eth0</code></td>
-      <td>The interface name.</td>
+      <td>The interface name</td>
     </tr>
     <tr>
       <td><a name="metric-label-io_type"></a><code>io_type</code></td>
@@ -563,26 +563,25 @@ The following table lists metric label names, possible values, and descriptions.
         <ul>
           <li><code>none</code></li>
           <li><code>read</code></li>
-          <li><code>wait</code>: A blocking operation that takes an indeterminate amount of time.</li>
+          <li><code>wait</code>: A blocking operation that takes an indeterminate amount of time</li>
           <li><code>write</code></li>
         </ul>
       </td>
-      <td>The I/O that the operation performs</td>
+      <td>The I/O that an operation performs</td>
     </tr>
     <tr>
       <td><a name="metric-label-location"></a><code>location</code></td>
-      <td>A location, for example <code>left</code> or <code>right</code></td>
-      <td>The location on the chassis.<br>
-      For power supplies, this location is determined by looking at the back of the node.</td>
+      <td>A location on the chassis, for example <code>left</code> or <code>right</code></td>
+      <td>The location on the chassis. {% include note.html content="For PSU, this location is relative to the back of the node." %}</td>
     </tr>
     <tr>
       <td><a name="metric-label-node_id"></a><code>node_id</code></td>
       <td>A positive integer that represents a node ID in the cluster.</td>
-      <td>This value differentiates between the different nodes in the cluster.</td>
+      <td>A value that differentiates between the different nodes in a cluster</td>
     </tr>
     <tr>
       <td><a name="metric-label-op_name"></a><code>op_name</code></td>
-      <td>Any NFS (NFSv3 or NFSv4), SMB (SMBv2 or SMBv3), or FTP operation name.</td>
+      <td>Any operation name, including NFSv3, NFSv4.1, SMBv2, SMBv3 or FTP</td>
       <td>The recorded operation</td>
     </tr>
     <tr>
@@ -594,7 +593,7 @@ The following table lists metric label names, possible values, and descriptions.
       <td><a name="metric-label-protocol"></a><code>protocol</code></td>
       <td>
         <ul>
-          <li><code>nfs</code>: NFSv3 or NFSv4</li>
+          <li><code>nfs</code>: NFSv3 or NFSv4.1</li>
           <li><code>smb2</code>: SMBv2 or SMBv3</li>
           <li><code>ftp</code></li>
         </ul>
@@ -609,13 +608,12 @@ The following table lists metric label names, possible values, and descriptions.
           <li><code>backend</code></li>
         </ul>
       </td>
-      <td>The interface's role.<br>
-      Frontend includes protocol, management, and replication traffic, and backend includes all intra-node communication.</td>
+      <td>The role of the interface {% include note.html content="<code>frontend</coe> includes protocol, management, and replication traffic. <code>backend</code> includes all intra-node communications." %}</td>
     </tr>
     <tr>
       <td><a name="metric-label-server_url"></a><code>server_url</code></td>
-      <td>A hostname (<code>ad.my-domain.com</code>) or IP address</td>
-      <td>The URL of a remote server.</td>
+      <td>A hostname (for example, <code>ad.my-domain.com</code>) or an IP address</td>
+      <td>The URL of a remote server</td>
     </tr>
     <tr>
       <td><a name="metric-label-usage_type"></a><code>usage_type</code></td>
