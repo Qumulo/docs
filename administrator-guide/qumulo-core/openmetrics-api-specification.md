@@ -21,7 +21,23 @@ https://<my-cluster-hostname>:8000/v2/metrics/endpoints/default/data
 You can configure a system that supports the [OpenMetrics Specification](https://github.com/OpenObservability/OpenMetrics/blob/main/specification/OpenMetrics.md) to use [bearer token authentication](using-access-tokens.md) to access this endpoint.
 
 ## Metric Types
-All metrics available in the API belong to one of the four types that the OpenMetrics standard defines. Each metric type has a specific set of functionality. The following are the four metric types:
+All available Qumulo metrics belong to one of the four types that the OpenMetrics standard defines.
+
+<table>
+  <thead>
+    <tr>
+      <th>Metric Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Counter</strong></td>
+      <td>A monotonically increasing integer that increases from zero, stored in <code>&lt;metric_name&gt;_count</code>. A counter's value will never decrease during normal operation.</td>
+    </tr>
+  </tbody>
+</table>
+
 
 * **Counter**: A monotonically increasing integer that increases from zero, stored in `<metric_name>_count`. A counter's value will never decrease during normal operation.
 
