@@ -4,25 +4,25 @@ summary: "This section describes how to create and use access tokens to authenti
 permalink: /administrator-guide/qumulo-core/using-access-tokens.html
 keywords: auth, authentication, access token, token
 sidebar: administrator_guide_sidebar
-varAccessTokenWarning: Treat access tokens like passwords. Store your tokens securely. An attacker can use an access token to authenticate as the token's user to Qumulo Core REST API and gain all of the user's privileges.
+varAccessTokenWarning: An attacker can use an access token to authenticate as the token's user to Qumulo Core REST API and gain all of the user's privileges. Treat access tokens like passwords: Store your tokens securely, rotate your tokens often, and create a token revocation policy for your organization.
 ---
 
 This section explains how to create and use access tokens&mdash;by using the Qumulo REST API, Python SDK, and `qq` CLI&mdash;to authenticate external services to Qumulo Core.
 
+Unlike _user bearer tokens_ (that have a short expiration time and require a password to refresh), _access tokens_ are long-lived tokens that let a user to authenticate to the Qumulo REST API without having to complete repetitive login procedures. An access token returns a _bearer token_&mdash;an item in the Authorization HTTP header which acts as the authentication mechanism for the REST API. Commonly, access tokens enable authentication for services, long-lived automation processes, and programmatic REST API access that doesn't require user input.
+
+Qumulo Core 5.3.0 (and higher) supports using access tokens as an alternative to session-based authentication that the `qq login` CLI command and the Web UI use. 
+
 {% capture content_tag %}{{page.varAccessTokenWarning}}{% endcapture %}
 {% include important.html content=content_tag %}
 
-Qumulo Core 5.3.0 (and higher) supports access tokens as an alternative to the session-based authentication used by `qq login` and the Qumulo Core web interface.
-They are long-lived tokens that allow a user to authenticate to the REST API without needing to complete a login step each time.
-An access token comes in the form of a [bearer token](https://oauth.net/2/bearer-tokens/) which can be used in the HTTP Authorization header.
-Access tokens may be revoked and rotated to ensure that the system the access is kept secure.
+{{site.data.alerts.important}}
+<ul>
+  <li>{{page.varAccessTokenWarning}}</li>
+  <li>Because a token allows indefinite authentication to the associated user's account, we strongly recommend against creating tokens for individual Qumulo Core REST API users. For more information, see <a href="#best-practices-using-access-tokens">Best Practices for Using Access Tokens</a>.</li>
+</ul>
+{{site.data.alerts.end}}
 
-Access tokens are intended to be used by services and long-lived automation.
-Typical user bearer tokens have a short expiration and require a password to refresh.
-Since an access token can be created once and used to authenticate indefinitely, they are great for use cases that access the Qumulo Core REST API and don't require human input.
-
-Access tokens are not suitable for use for normal command-line users, as they allow indefinite authentication to the associated users's account.
-We **do not** recommend creating access tokens for human users of Qumulo Core REST APIs. See more about creating a service account in [Best Practices](#best-practices) below.
 
 ## Creating Access Tokens by Using the qq CLI
 
@@ -120,6 +120,7 @@ Once an access token is deleted, the bearer token associated with it will no lon
 Deleting access tokens requires the privilege `PRIVILEGE_ACCESS_TOKEN_WRITE`.
 
 
+<a name="best-practices-using-access-tokens"></a>
 ## Best Practices for Using Access Tokens
 
 ### Avoid Generating Tokens for Administrative Accounts
