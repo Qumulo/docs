@@ -146,7 +146,7 @@ The following table lists metric names, types, labels, and descriptions.
           <li><a href="#metric-label-node_id"><code>node_id</code></a></li>
         </ul>
       </td>
-      <td>The remaining disk endurance value for each disk in the cluster. {% include note.html content="This value can range from <code>100</code> (no disk wear) to <code>0</code> (disk is worn fully)." %}<br>
+      <td>The remaining disk endurance value for each disk in the cluster, ranging <code>100</code> (no disk wear) to <code>0</code> (disk is worn fully)<br>
      </td>
     </tr>
     <tr>
@@ -159,7 +159,7 @@ The following table lists metric names, types, labels, and descriptions.
           <li><a href="#metric-label-node_id"><code>node_id</code></a></li>
         </ul>
       </td>
-      <td>The health of each disk in the cluster {% include note.html content="This value can range from <code>0</code> (the disk is healthy) or <code>1</code> (the disk is unhealthy)." %}</td>
+      <td>The health of each disk in the cluster, ranging from <code>0</code> (the disk is healthy) to <code>1</code> (the disk is unhealthy)</td>
     </tr>
     <tr>
       <td><code>qumulo_disk_operation_latency_seconds</code></td>
