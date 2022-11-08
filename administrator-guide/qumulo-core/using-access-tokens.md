@@ -4,7 +4,7 @@ summary: "This section describes how to create and use access tokens to authenti
 permalink: /administrator-guide/qumulo-core/using-access-tokens.html
 keywords: auth, authentication, access token, bearer token, token
 sidebar: administrator_guide_sidebar
-varAccessTokenWarning: An attacker can use an access token to authenticate as the token's user to Qumulo Core REST API and gain all of the user's privileges.
+varAccessTokenWarning: An attacker can use an access token to authenticate as the token's user to Qumulo Core REST API (through HTTP, the Python SDK, or the <code>qq</code> CLI) and gain all of the user's privileges.
 varAccessTokenBestPractices: Treat access tokens, and the bearer tokens they generate, like passwords&#58; Store your tokens securely, rotate your tokens often, and create a token revocation policy for your organization.
 varAccessTokenAdminWarning: To decrease the risk of giving an attacker full administrative access&mdash;including access to cluster data&mdash;avoid generating tokens for accounts with administrative privileges.
 varTokenQQcli: To use an access token in the <code>qq</code> CLI, you must use the <code>--file</code> flag when you create the access token. Use this flag to specify a path for saving your credentials file in a format that the <code>qq</code> CLI can use.
@@ -79,7 +79,7 @@ $ qq auth_create_access_token jane
 {{site.data.alerts.end}}
 
 
-### Using Bearer Tokens for Authorization
+### Using Bearer Tokens for Authentication
 A Qumulo Core access token [returns a _bearer token_](#json-bearer-token), an item in the `Authorization` HTTP header which acts as the authentication mechanism for the Qumulo Core REST API. 
 
 #### REST API
@@ -152,7 +152,7 @@ To filter the command's output by user, use the `--user` flag and use the same f
 
 {% include important.html content="When you delete an access token, you can't use any bearer tokens associated with the access token to authenticate to Qumulo Core." %}
 
-To delete an access token, use the `auth_delete_access_tokens` command and specify the access token ID. For example:
+To delete an access token, use the `auth_delete_access_token` command and specify the access token ID. For example:
 
 ```bash
 $ qq auth_delete_access_token 1234567890123456789012
