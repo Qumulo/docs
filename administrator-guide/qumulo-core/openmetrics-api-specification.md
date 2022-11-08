@@ -36,7 +36,7 @@ All Qumulo metrics belong to one of the following OpenMetrics types.
       <td>A monotonically increasing integer that increases from zero, stored in <code>&lt;metric_name&gt;_count</code>. A counter's value will never decrease during normal operation.</td>
     </tr>
     <tr>
-      <td><a name="metric-type-gauge"></a><counter>gauge</code></td>
+      <td><a name="metric-type-gauge"></a><code>gauge</code></td>
       <td>A value that represents a single integer (similar to a counter), stored in <code>&lt;metric_name&gt;</code>. A gauge's value may increase and decrease during normal operation.</td>
     </tr>
     <tr>
