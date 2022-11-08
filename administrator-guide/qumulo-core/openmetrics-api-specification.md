@@ -32,19 +32,19 @@ All Qumulo metrics belong to one of the following OpenMetrics types.
   </thead>
   <tbody>
     <tr>
-      <td><a name="metric-type-counter"></a><strong>Counter</strong></td>
+      <td><a name="metric-type-counter"></a><code>counter</counter></td>
       <td>A monotonically increasing integer that increases from zero, stored in <code>&lt;metric_name&gt;_count</code>. A counter's value will never decrease during normal operation.</td>
     </tr>
     <tr>
-      <td><a name="metric-type-gauge"></a><strong>Gauge</strong></td>
+      <td><a name="metric-type-gauge"></a><counter>gauge</code></td>
       <td>A value that represents a single integer (similar to a counter), stored in <code>&lt;metric_name&gt;</code>. A gauge's value may increase and decrease during normal operation.</td>
     </tr>
     <tr>
-      <td><a name="metric-type-histogram"></a><strong>Histogram</strong></td>
+      <td><a name="metric-type-histogram"></a><code>histogram</code></td>
       <td>A histogram that represents a series of buckets. Each <em>bucket</em> keeps track of all values that occur within a specific range. A histogram also has a <code>count</code> field and a <code>sum</code> field, stored in <code>&lt;metric_name&gt;_count</code> (the total number of samples) and <code>&lt;metric_name&gt;_sum</code> (the sum of all the samples). Qumulo Core emits only a single bucket that contains all samples. {% include note.html content="Because Qumulo Core only emits a single bucket for histogram metrics, you can use histograms to keep track of averages by dividing the <code>sum</code> field by the <code>count</code> field." %}</td>
     </tr>
     <tr>
-      <td><a name="metric-type-info"></a><strong>info</strong></td>
+      <td><a name="metric-type-info"></a><code>info</code></td>
       <td>A metric that exposes some informational text about the system, stored in <code>&lt;metric_name&gt;_info</code>. An <code>info</code> metric always has a value of <code>1</code> and has labels thqat contain information.</td>
     </tr>
   </tbody>
