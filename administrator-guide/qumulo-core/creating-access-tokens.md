@@ -1,7 +1,7 @@
 ---
 title: "Creating Access Tokens for Qumulo Core"
 summary: "This topic describes the creating and using access tokens to authenticate external services with Qumulo Core."
-permalink: /administrator-guide/qumulo-core/access-tokens.html
+permalink: /administrator-guide/qumulo-core/creating-access-tokens.html
 keywords: api, authentication, auth
 sidebar: administrator_guide_sidebar
 ---

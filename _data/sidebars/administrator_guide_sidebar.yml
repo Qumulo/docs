@@ -77,7 +77,7 @@ entries:
     folderitems:
 
     - title: Creating Access Tokens for Qumulo Core
-      url: /administrator-guide/qumulo-core/access-tokens.html
+      url: /administrator-guide/qumulo-core/creating-access-tokens.html
       output: web, pdf
 
   - title: Configuring the Qumulo Core Web UI
