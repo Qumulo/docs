@@ -8,6 +8,9 @@ varAccessTokenWarning: An attacker can use an access token to authenticate as th
 varAccessTokenBestPractices: Treat access tokens, and the bearer tokens they generate, like passwords&#58; Store your tokens securely, rotate your tokens often, and create a token revocation policy for your organization.
 varAccessTokenAdminWarning: To decrease the risk of giving an attacker full administrative access&mdash;including access to cluster data&mdash;avoid generating tokens for accounts with administrative privileges.
 varTokenQQcli: To use an access token in the <code>qq</code> CLI, you must use the <code>--file</code> flag when you create the access token. Use this flag to specify a path for saving your credentials file in a format that the <code>qq</code> CLI can use.
+varBearerTokenWarning: If you misplace the bearer token, you can't retrieve it at a later time. You must create a new access token.
+varPrereqWrite: The Qumulo Core privilege <code>PRIVILEGE_ACCESS_TOKEN_WRITE</code> is required for creating access tokens for all users in the system.
+varPrereqRead: The Qumulo Core privilege <code>PRIVILEGE_ACCESS_TOKEN_READ</code> is required for listing access tokens.
 ---
 
 This section explains how to create and use access tokens&mdash;by using the Qumulo REST API, Python SDK, and `qq` CLI&mdash;to authenticate external services to Qumulo Core.
@@ -24,17 +27,23 @@ Unlike _user bearer tokens_ (that have a short expiration time and require a pas
 {{site.data.alerts.end}}
 
 
-## Creating Access Tokens by Using the qq CLI
-This section explains how to create access tokens by using the `qq` CLI.
+## Prerequisites
+<ul>
+  <li>{{page.varPrereqWrite}}</li>
+  <li>{{page.varPrereqRead}}</li>
+</ul>
 
-{% include note.html content="The Qumulo Core privilege `PRIVILEGE_ACCESS_TOKEN_WRITE`, required for creating access tokens, allows creating tokens for all users in the system." %}
+
+## Creating and Using Access Tokens
+This section explains how to create access tokens by using the `qq` CLI. {{page.varPrereqWrite}}
 
 To create a token, use the `auth_create_access_token` command and specify the user. For example:
 
 ```bash
 $ qq auth_create_access_token jane
 ```
-You can:
+
+<a name="create-token-format"></a>You can:
 * Specify the user as a name
 * Qualify the user by using a domain prefix, for example:
   * `ad:jane`
@@ -62,7 +71,7 @@ You can:
 
 {{site.data.alerts.important}}
 <ul>
-  <li>As soon as you receive your bearer token, record it in a safe place. You can't retrieve the bearer token at a later time.</li>
+  <li>As soon as you receive your bearer token, record it in a safe place. {{page.varBearerTokenWarning}}</li>
   <li>Any user can have a maximum of two access tokens. If a user already has two access tokens, creating new tokens fails until you remove at least one token from the user. We strongly recommend creating a single access token for each user and using the second access token to perform secret rotation.</li>  
   <li>{{page.varAccessTokenBestPractices}}</li>
   <li>{{page.varAccessTokenAdminWarning}}</li>
@@ -70,10 +79,10 @@ You can:
 {{site.data.alerts.end}}
 
 
-## Using Bearer Tokens for Authorization
+### Using Bearer Tokens for Authorization
 A Qumulo Core access token [returns a _bearer token_](#json-bearer-token), an item in the `Authorization` HTTP header which acts as the authentication mechanism for the Qumulo Core REST API. 
 
-### REST API
+#### REST API
 When you use the Qumulo REST API, add the bearer token to the `Authorization` HTTP header. For example:
 
 ```
@@ -86,7 +95,7 @@ You can also add the bearer token to a `curl` command. For example:
 $ curl https://my-qumulo-cluster:8000/v1/session/who-am-i -H 'Authorization: Bearer access-v1:abAcde...=='
 ```
 
-### Python SDK
+#### Python SDK
 When you use the Qumulo Python SDK, add the bearer token to a `RestClient` object. For example:
 
 ```python
@@ -97,7 +106,7 @@ client = RestClient('my-qumulo-cluster', 8000, Credentials('access-v1:abAcde...=
 
 For more information, see the [Qumulo Core Python SDK](https://pypi.org/project/qumulo-api/).
 
-### qq CLI
+#### qq CLI
 {{page.varTokenQQcli}} For example:
 
 ```bash
@@ -111,24 +120,31 @@ $ qq --credentials-store ./qumulo_credentials who_am_i
 ```
 
 ## Listing Access Tokens
+This section explains how to create access tokens by using the `qq` CLI. {{page.varPrereqRead}}
 
-Access tokens can be listed using `qq auth_list_access_tokens`.
+To list access tokens, use the `auth_list_access_tokens` command. For example:
 
 ```bash
 $ qq auth_list_access_tokens
+```
+
+{% include note.html content="Listing access tokens _doesn't_ return the bearer token required for authentication. {{page.varBearerTokenWarning}}" %}
+
+The `auth_list_access_tokens` command returns:
+* The access token ID
+* The user that the access token represents
+* The access token's creator
+* The access token's creation time
+
+```
 id                      user   creator  creation time
 ======================  =====  =======  ==============================
 9226266821531216810715  svc    admin    2022-10-27T15:18:09.725513764Z
 9230454060595080992940  svc    admin    2022-10-27T15:18:24.997572918Z
 ```
 
-Listing access tokens gives the access token ID, the user that the access token represents, the creator of the access token, and the time that the access token was created.
+To filter the command's output by user, use the `--user` flag and use the same format for the name as for the [`auth_create_access_token`](#create-token-format) command.
 
-The `auth_list_access_tokens` command can filter by user with the `--user` argument, which takes an argument in the same form as `auth_create_access_token`.
-
-{% include important.html content="Listing access tokens _doesn't_ return the bearer token needed for authentication. If you have lost the bearer token associated with an access token, you will need to create a new access token." %}
-
-Listing access tokens requires the privilege `PRIVILEGE_ACCESS_TOKEN_READ`.
 
 ## Deleting Access Tokens
 
