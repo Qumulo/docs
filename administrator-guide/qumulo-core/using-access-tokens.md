@@ -4,7 +4,8 @@ summary: "This section describes how to create and use access tokens to authenti
 permalink: /administrator-guide/qumulo-core/using-access-tokens.html
 keywords: auth, authentication, access token, token
 sidebar: administrator_guide_sidebar
-varAccessTokenWarning: An attacker can use an access token to authenticate as the token's user to Qumulo Core REST API and gain all of the user's privileges. Treat access tokens like passwords&#58; Store your tokens securely, rotate your tokens often, and create a token revocation policy for your organization.
+varAccessTokenWarning: An attacker can use an access token to authenticate as the token's user to Qumulo Core REST API and gain all of the user's privileges.
+varAccessTokenBestPractices: Treat access tokens, and the bearer tokens they generate, like passwords&#58; Store your tokens securely, rotate your tokens often, and create a token revocation policy for your organization.
 ---
 
 This section explains how to create and use access tokens&mdash;by using the Qumulo REST API, Python SDK, and `qq` CLI&mdash;to authenticate external services to Qumulo Core.
@@ -15,27 +16,44 @@ Qumulo Core 5.3.0 (and higher) supports using access tokens as an alternative to
 
 {{site.data.alerts.important}}
 <ul>
-  <li>{{page.varAccessTokenWarning}}</li>
+  <li>{{page.varAccessTokenWarning}}{{page.varAccessTokenBestPractices}}</li>
   <li>Because a token allows indefinite authentication to the associated user's account, we strongly recommend against creating tokens for individual Qumulo Core REST API users. For more information, see <a href="#best-practices-using-access-tokens">Best Practices for Using Access Tokens</a>.</li>
 </ul>
 {{site.data.alerts.end}}
 
 
 ## Creating Access Tokens by Using the qq CLI
+This section explains how to create access tokens by using the `qq` CLI.
+
+To create a token, use the `auth_create_access_token` command and specify the user. For example:
 
 ```bash
-$ qq auth_create_access_token USER
+$ qq auth_create_access_token jane
+```
+You can:
+* Specify the user as a name
+* Qualify the user by using a domain prefix, for example:
+  * `ad:jane`
+  * `AD\jane`
+  * `local:jane`
+* Specify ID types, for example:
+  * `auth_id:1234`
+  * `SID:S-1-1-0`
+ 
+{% include note.html content="Although you can create groups for users, access tokens don't support groups." %}
+
+The `auth_create_access_token` command returns a JSON response that contains the bearer token body and the access token ID, which you can use to manage the access token.
+
+{{site.data.alerts.important}}
+{{page.varAccessTokenBestPractices}}
+{{site.data.alerts.end}}
+
+```json
 {
-    "bearer_token": "access-v1:abKvmz5uGfNZQO8WrlOzVXD5NAxRo3nC5+iISIXhDRcBAAAABwQAAAAAAABW8Yro4FWwKMlzWGMAAAAAYYTACg==",
-    "id": "19021525077776428364118"
+  "bearer_token": "access-v1:abAcde...==",
+  "id": "12345678901234567890123"
 }
 ```
-
-`USER` can be specified as a name, optionally qualified with a domain prefix (for example, `local:user`, `ad:user`, or `AD\user`.
-It also accepts ID types such as `auth_id:1234` or `SID:S-1-1-0`. Groups are not supported for access tokens; they can only be created for a user.
-
-
-The returned JSON contains the access token's ID and the bearer token. The bearer token is used for authentication; it should be treated like a password. See [Using Access Tokens](#using-access-tokens) to learn how to use the bearer token. The access token ID is used for further administration of the access token. See [Deleting Access Tokens](#deleting-access-tokens) to learn more.
 
 Only two access tokens can exist for any user at a time. If a user already has two access tokens, creating new ones will fail until existing access tokens are deleted. We recommend only creating a single access token for a user and using the second access token to perform secret rotation, see [Rotating Access Tokens](#rotating-access-tokens)
 
@@ -44,6 +62,7 @@ Only two access tokens can exist for any user at a time. If a user already has t
 {% include important.html content="Never create access tokens for users with administration privileges. A compromised access token will give an attacker full access to the Qumulo Core REST API as that user." %}
 
 Creating access tokens requires the privilege PRIVILEGE_ACCESS_TOKEN_WRITE and allows creating access tokens for **all users** in the system.
+
 
 ## Using Bearer Tokens for Authorization
 
