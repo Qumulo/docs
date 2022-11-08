@@ -1,17 +1,24 @@
 ---
 title: "Qumulo OpenMetrics API Specification"
-summary: "This topic describes the specification of the types of metrics that the Qumulo API emits."
+summary: "This section lists the metrics that the Qumulo REST API emits and lists the metrics' types, labels, and descriptions."
 permalink: /administrator-guide/qumulo-core/openmetrics-api-specification.html
-keywords: metrics, openmetrics, prometheus, api
+keywords: metrics, OpenMetrics, API metrics, prometheus
 sidebar: administrator_guide_sidebar
 ---
 
-The Qumulo OpenMetrics API has a single endpoint that provides a complete view of point-in-time telemetry from the Qumulo File Data Platform. Monitoring and metrics systems, such as [Prometheus](https://github.com/prometheus/prometheus), can consume the OpenMetrics data format that the API emits, without custom code or an agent. For more information about which data formats your system can ingest natively, see your monitoring system documentation.
+This section lists the metrics that the Qumulo API emits and lists the metrics' types, labels, and descriptions.
 
-## Accessing Metrics
+The Qumulo OpenMetrics API has a single endpoint that provides a complete view of point-in-time telemetry from the Qumulo File Data Platform. Monitoring and metrics systems, such as [Prometheus](https://github.com/prometheus/prometheus), can consume the OpenMetrics data format that the Qumulo REST API emits, without custom code or a monitoring and logging agent. For more information about the data formats that your monitoring and metrics system can ingest, see the system's documentation.
 
-The metrics API is available at <code>https://&lt;hostname&gt;:8000/v2/metrics/endpoints/default/data</code>, where <code>hostname</code> is your cluster's hostname or IP address.
-An external system that supports the [OpenMetrics specification](https://github.com/OpenObservability/OpenMetrics/blob/main/specification/OpenMetrics.md) can be set up to point to this URL and use bearer token authentication to access the endpoint.
+
+## Accessing Qumulo Metrics
+Qumulo metrics are available at the following endpoint.
+
+```
+https://<my-cluster-hostname>:8000/v2/metrics/endpoints/default/data
+```
+
+You can configure a system that supports the [OpenMetrics Specification](https://github.com/OpenObservability/OpenMetrics/blob/main/specification/OpenMetrics.md) to use [bearer token authentication](using-access-tokens.md) to access this endpoint.
 
 ## Metric Types
 All metrics available in the API belong to one of the four types that the OpenMetrics standard defines. Each metric type has a specific set of functionality. The following are the four metric types:
