@@ -7,7 +7,7 @@ sidebar: administrator_guide_sidebar
 varAccessTokenWarning: An attacker can use an access token to authenticate as the token's user to Qumulo Core REST API and gain all of the user's privileges.
 varAccessTokenBestPractices: Treat access tokens, and the bearer tokens they generate, like passwords&#58; Store your tokens securely, rotate your tokens often, and create a token revocation policy for your organization.
 varAccessTokenAdminWarning: To decrease the risk of giving an attacker full administrative access&mdash;including access to cluster data&mdash;avoid generating tokens for accounts with administrative privileges.
-varTokenQQcli: To use an access token in the <code>qq</code> CLI, you must use the <code>--file</code> flag when you create the access token.
+varTokenQQcli: To use an access token in the <code>qq</code> CLI, you must use the <code>--file</code> flag when you create the access token. Use this flag to specify a path for saving your credentials file in a format that the <code>qq</code> CLI can use.
 ---
 
 This section explains how to create and use access tokens&mdash;by using the Qumulo REST API, Python SDK, and `qq` CLI&mdash;to authenticate external services to Qumulo Core.
@@ -98,12 +98,15 @@ client = RestClient('my-qumulo-cluster', 8000, Credentials('access-v1:abAcde...=
 For more information, see the [Qumulo Core Python SDK](https://pypi.org/project/qumulo-api/).
 
 ### qq CLI
-{{page.varTokenQQcli}} This option accepts a file path to save the credential in a format that can be used by the qq CLI.
-
-Once the credentials file has been created, it can be pass to the qq CLI using the `--credentials-store` option. Here is an example that creates an access token saved to a file, and uses it in a subsequent call to qq.
+{{page.varTokenQQcli}} For example:
 
 ```bash
-$ qq auth_create_access_token USER --file ./qumulo_credentials
+$ qq auth_create_access_token jane --file ./qumulo_credentials
+```
+
+To use the credentials file, specify its location by useing the `--credentials-store` flag. For example:
+
+```bash
 $ qq --credentials-store ./qumulo_credentials who_am_i
 ```
 
