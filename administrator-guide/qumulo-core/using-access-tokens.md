@@ -4,7 +4,7 @@ summary: "This section describes how to create and use access tokens to authenti
 permalink: /administrator-guide/qumulo-core/using-access-tokens.html
 keywords: auth, authentication, access token, token
 sidebar: administrator_guide_sidebar
-varAccessTokenWarning: An attacker can use an access token to authenticate as the token's user to Qumulo Core REST API and gain all of the user's privileges. Treat access tokens like passwords: Store your tokens securely, rotate your tokens often, and create a token revocation policy for your organization.
+varAccessTokenWarning: An attacker can use an access token to authenticate as the token's user to Qumulo Core REST API and gain all of the user's privileges. Treat access tokens like passwords&#58; Store your tokens securely, rotate your tokens often, and create a token revocation policy for your organization.
 ---
 
 This section explains how to create and use access tokens&mdash;by using the Qumulo REST API, Python SDK, and `qq` CLI&mdash;to authenticate external services to Qumulo Core.
