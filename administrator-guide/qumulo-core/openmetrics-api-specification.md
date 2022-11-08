@@ -608,7 +608,7 @@ The following table lists metric label names, possible values, and descriptions.
           <li><code>backend</code></li>
         </ul>
       </td>
-      <td>The role of the interface {% include note.html content="<code>frontend</coe> includes protocol, management, and replication traffic. <code>backend</code> includes all intra-node communications." %}</td>
+      <td>The role of the interface {% include note.html content="<code>frontend</code> includes protocol, management, and replication traffic. <code>backend</code> includes all intra-node communications." %}</td>
     </tr>
     <tr>
       <td><a name="metric-label-server_url"></a><code>server_url</code></td>
