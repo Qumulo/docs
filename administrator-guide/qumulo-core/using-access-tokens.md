@@ -7,7 +7,7 @@ sidebar: administrator_guide_sidebar
 varAccessTokenWarning: An attacker can use an access token to authenticate as the token's user to Qumulo Core REST API and gain all of the user's privileges.
 varAccessTokenBestPractices: Treat access tokens, and the bearer tokens they generate, like passwords&#58; Store your tokens securely, rotate your tokens often, and create a token revocation policy for your organization.
 varAccessTokenAdminWarning: To decrease the risk of giving an attacker full administrative access&mdash;including access to cluster data&mdash;avoid generating tokens for accounts with administrative privileges.
-varTokenQQcli: To use an access token in the `qq` CLI, you must use the `--file` flag when you create the access token.
+varTokenQQcli: To use an access token in the &lt;code&gt;qq&lt;/code&gt; CLI, you must use the &lt;code&gt;--file&lt;/code&gt; flag when you create the access token.
 ---
 
 This section explains how to create and use access tokens&mdash;by using the Qumulo REST API, Python SDK, and `qq` CLI&mdash;to authenticate external services to Qumulo Core.
