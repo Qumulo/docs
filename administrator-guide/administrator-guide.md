@@ -22,7 +22,7 @@ The Qumulo Administrator Guide is a growing collection of information about conf
 * **Configuring Networking for Qumulo Core**
   * [Required Networking Ports for Qumulo Core](qumulo-core/required-networking-ports.md)
 * **Connecting Qumulo Core to External Services**
-  * [Creating Access Tokens for Qumulo Core](qumulo-core/creating-access-tokens.md)
+  * [Using Qumulo Core Access Tokens](qumulo-core/using-access-tokens.md)
 * **Configuring the Qumulo Core Web UI**
   * [Setting the Web UI Login Banner](qumulo-core/web-ui-login-banner.md)
   * [Setting the Web UI Inactivity Timeout](qumulo-core/web-ui-inactivity-timeout.md)

@@ -76,8 +76,8 @@ entries:
     output: web, pdf
     folderitems:
 
-    - title: Creating Access Tokens for Qumulo Core
-      url: /administrator-guide/qumulo-core/creating-access-tokens.html
+    - title: Using Qumulo Core Access Tokens
+      url: /administrator-guide/qumulo-core/using-access-tokens.html
       output: web, pdf
 
   - title: Configuring the Qumulo Core Web UI
