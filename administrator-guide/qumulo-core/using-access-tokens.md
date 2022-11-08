@@ -9,7 +9,8 @@ varAccessTokenWarning: Treat access tokens like passwords. Store your tokens sec
 
 This section explains how to create and use access tokens&mdash;by using the Qumulo REST API, Python SDK, and `qq` CLI&mdash;to authenticate external services to Qumulo Core.
 
-{% include important.html content="{{page.varAccessTokenWarning}}" %}
+{% capture content_tag %}{{page.varAccessTokenWarning}}{% endcapture %}
+{% include important.html content=content_tag %}
 
 Qumulo Core 5.3.0 (and higher) supports access tokens as an alternative to the session-based authentication used by `qq login` and the Qumulo Core web interface.
 They are long-lived tokens that allow a user to authenticate to the REST API without needing to complete a login step each time.
