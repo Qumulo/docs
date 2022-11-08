@@ -9,15 +9,15 @@ varAccessTokenBestPractices: Treat access tokens, and the bearer tokens they gen
 varAccessTokenAdminWarning: To decrease the risk of giving an attacker full administrative access&mdash;including access to cluster data&mdash;avoid generating tokens for accounts with administrative privileges.
 varTokenQQcli: To use an access token in the <code>qq</code> CLI, you must use the <code>--file</code> flag when you create the access token. Use this flag to specify a path for saving your credentials file in a format that the <code>qq</code> CLI can use.
 varBearerTokenWarning: If you misplace the bearer token, you can't retrieve it at a later time. You must create a new access token.
-varPrereqWrite: The Qumulo Core privilege <code>PRIVILEGE_ACCESS_TOKEN_WRITE</code> is required for creating and deleting access tokens for all users in the system.
-varPrereqRead: The Qumulo Core privilege <code>PRIVILEGE_ACCESS_TOKEN_READ</code> is required for listing access tokens.
+varPrereqWrite: <code>PRIVILEGE_ACCESS_TOKEN_WRITE</code> is required for creating and deleting access tokens for all users in the system.
+varPrereqRead: <code>PRIVILEGE_ACCESS_TOKEN_READ</code> is required for listing access tokens.
 ---
 
 This section explains how to create and use access tokens&mdash;by using the Qumulo REST API, Python SDK, and `qq` CLI&mdash;to authenticate external services to Qumulo Core.
 
 In Qumulo Core 5.3.0 (and higher), _access tokens_ let a user to authenticate to the Qumulo REST API without having to complete repetitive login procedures. Access tokens provide an alternative to session-based authentication that the `qq login` CLI command and the Web UI use
 
-Unlike _user bearer tokens_ (that have a short expiration time and require a password to refresh), access tokens are long-lived. Commonly, access tokens support authentication for services, long-lived automation processes, and programmatic REST API access that doesn't require user input.
+Unlike _user bearer tokens_ (that have a short expiration time and require a password to refresh), access tokens are long-lived. Access tokens support authentication for services, long-lived automation processes, and programmatic REST API access that doesn't require user input.
 
 {{site.data.alerts.important}}
 <ul>
@@ -192,7 +192,7 @@ When you connect external services to the Qumulo Core REST API, we recommend cre
 
     a. On the **Role Management** page, find the name of the role you created and then click **Add Member**.
     
-    b. In the **Add Member to <MyRoleName>** dialog box, for **Trustee**, enter the name of the user you created and then click **Yes, Add Member**.
+    b. In the **Add Member to &lt;MyRoleName&gt;** dialog box, for **Trustee**, enter the name of the user you created and then click **Yes, Add Member**.
   
 1. [Create access tokens](#creating-using-access-tokens) for your service account.
 
