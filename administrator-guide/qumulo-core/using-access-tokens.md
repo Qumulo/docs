@@ -127,8 +127,9 @@ To list access tokens, use the `auth_list_access_tokens` command. For example:
 ```bash
 $ qq auth_list_access_tokens
 ```
-
-{% include note.html content="Listing access tokens _doesn't_ return the bearer token required for authentication. {{page.varBearerTokenWarning}}" %}
+{{site.data.alerts.note}}
+Listing access tokens <em>doesn't</em> return the bearer token required for authentication. {{page.varBearerTokenWarning}}
+{{site.data.alerts.end}}
 
 The `auth_list_access_tokens` command returns:
 * The access token ID
