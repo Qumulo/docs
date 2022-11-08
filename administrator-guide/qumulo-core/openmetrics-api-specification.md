@@ -33,19 +33,19 @@ All Qumulo metrics belong to one of the following OpenMetrics types.
   <tbody>
     <tr>
       <td><a name="metric-type-counter"></a><code>counter</code></td>
-      <td>An integer that increases monotonically from zero, stored in <code>&lt;metric_name&gt;_count</code>. {% include note.html content="A counter's value never decreases during normal operation." %}</td>
+      <td>An integer that increases monotonically from zero, stored in <code>&lt;metric_name&gt;_count</code>. {% include note.html content="During normal operation, the value of <code>counter</code> never decreases." %}</td>
     </tr>
     <tr>
       <td><a name="metric-type-gauge"></a><code>gauge</code></td>
-      <td>A value that represents a single integer (similar to a counter), stored in <code>&lt;metric_name&gt;</code>. A gauge's value may increase and decrease during normal operation.</td>
+      <td>A value that represents a single integer (similar to <code>counter</code>), stored in <code>&lt;metric_name&gt;</code>. {% include note.html content="During normal operation, the value of a <code>gauge</code> metric might increase or decrease." %}</td>
     </tr>
     <tr>
       <td><a name="metric-type-histogram"></a><code>histogram</code></td>
-      <td>A histogram that represents a series of buckets. Each <em>bucket</em> keeps track of all values that occur within a specific range. A histogram also has a <code>count</code> field and a <code>sum</code> field, stored in <code>&lt;metric_name&gt;_count</code> (the total number of samples) and <code>&lt;metric_name&gt;_sum</code> (the sum of all the samples). Qumulo Core emits only a single bucket that contains all samples. {% include note.html content="Because Qumulo Core only emits a single bucket for histogram metrics, you can use histograms to keep track of averages by dividing the <code>sum</code> field by the <code>count</code> field." %}</td>
+      <td><p>A representation of a series of <em>buckets</em>, where each bucket tracks values within a specific range.</p><p>A histogram has a <code>count</code> field and a <code>sum</code> field, stored in <code>&lt;metric_name&gt;_count</code> (the total number of samples) and <code>&lt;metric_name&gt;_sum</code> (the sum of all samples). Qumulo Core emits a single bucket that contains all samples.</p> {% include tip.html content="You can use <code>histogram</code> metrics to keep track of averages by dividing the <code>sum</code> field by the <code>count</code> field." %}</td>
     </tr>
     <tr>
       <td><a name="metric-type-info"></a><code>info</code></td>
-      <td>A metric that exposes some informational text about the system, stored in <code>&lt;metric_name&gt;_info</code>. An <code>info</code> metric always has a value of <code>1</code> and has labels thqat contain information.</td>
+      <td>Informational text about the system, stored in <code>&lt;metric_name&gt;_info</code>. An <code>info</code> metric always has a value of <code>1</code> and labels that contain detailed information.</td>
     </tr>
   </tbody>
 </table>
