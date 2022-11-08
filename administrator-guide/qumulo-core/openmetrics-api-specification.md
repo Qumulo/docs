@@ -89,7 +89,7 @@ The following tables list names, types, labels, and descriptions for metrics ava
       <td><a href="#metric-type-counter"><code>counter</code></a></td>
       <td>
         <ul>
-          <li><code>server_url</code></li>
+          <li><a href="#metric-label-server_url"><code>server_url</code></a></li>
         </ul>
       </td>
       <td>Total number of errored active directory netlogon requests</td>
@@ -99,7 +99,7 @@ The following tables list names, types, labels, and descriptions for metrics ava
       <td><a href="#metric-type-histogram"><code>histogram</code></a></td>
       <td>
         <ul>
-          <li><code>server_url</code></li>
+          <li><a href="#metric-label-server_url"><code>server_url</code></a></li>
         </ul>
       </td>
       <td>Total latency for Active Directory Netlogon requests</td>
@@ -109,7 +109,7 @@ The following tables list names, types, labels, and descriptions for metrics ava
       <td><a href="#metric-type-counter"><code>counter</code></a></td>
       <td>
         <ul>
-          <li><code>server_url</code></li>
+          <li><a href="#metric-label-server_url"><code>server_url</code></a></li>
         </ul>
       </td>
       <td>Total number of completed Active Directory Netlogon operations</td>
@@ -119,8 +119,8 @@ The following tables list names, types, labels, and descriptions for metrics ava
       <td><a href="#metric-type-gauge"><code>gauge</code></a></td>
       <td>
         <ul>
-          <li><code>cpu</code></li>
-          <li><code>node_id</code></li>
+          <li><a href="#metric-label-cpu"><code>cpu</code></a></li>
+          <li><a href="#metric-label-node_id"><code>node_id</code></a></li>
         </ul>
       </td>
       <td>The max temperature threshold for each physical CPU</td>
@@ -130,8 +130,8 @@ The following tables list names, types, labels, and descriptions for metrics ava
       <td><a href="#metric-type-gauge"><code>gauge</code></a></td>
       <td>
         <ul>
-          <li><code>cpu</code></li>
-          <li><code>node_id</code></li>
+          <li><a href="#metric-label-cpu"><code>cpu</code></a></li>
+          <li><a href="#metric-label-node_id"><code>node_id</code></a></li>
         </ul>
       </td>
       <td>The temperature in Celsius for each physical CPU</td>
@@ -141,9 +141,9 @@ The following tables list names, types, labels, and descriptions for metrics ava
       <td><a href="#metric-type-gauge"><code>gauge</code></a></td>
       <td>
         <ul>
-          <li><code>disk_type</code></li>
-          <li><code>drive_bay</code></li>
-          <li><code>node_id</code></li>
+          <li><a href="#metric-label-disk_type"><code>disk_type</code></a></li>
+          <li><a href="#metric-label-drive_bay"><code>drive_bay</code></a></li>
+          <li><a href="#metric-label-node_id"><code>node_id</code></a></li>
         </ul>
       </td>
       <td>Disk endurance remaining for each disk in the cluster.<br>
@@ -155,9 +155,9 @@ The following tables list names, types, labels, and descriptions for metrics ava
       <td><a href="#metric-type-gauge"><code>gauge</code></a></td>
       <td>
         <ul>
-          <li><code>disk_type</code></li>
-          <li><code>drive_bay</code></li>
-          <li><code>node_id</code></li>
+          <li><a href="#metric-label-disk_type"><code>disk_type</code></a></li>
+          <li><a href="#metric-label-drive_bay"><code>drive_bay</code></a></li>
+          <li><a href="#metric-label-node_id"><code>node_id</code></a></li>
         </ul>
       </td>
       <td>Disk health for each disk in the cluster<br>
@@ -168,10 +168,10 @@ The following tables list names, types, labels, and descriptions for metrics ava
       <td><a href="#metric-type-histogram"><code>histogram</code></a></td>
       <td>
         <ul>
-          <li><code>disk_type</code></li>
-          <li><code>drive_bay</code></li>
-          <li><code>io_type</code></li>
-          <li><code>node_id</code></li>
+          <li><a href="#metric-label-disk_type"><code>disk_type</code></a></li>
+          <li><a href="#metric-label-drive_bay"><code>drive_bay</code></a></li>
+          <li><a href="#metric-label-io_type"><code>io_type</code></a></li>
+          <li><a href="#metric-label-node_id"><code>node_id</code></a></li>
         </ul>
       </td>
       <td>Total latency for disk IO operations</td>
@@ -181,8 +181,8 @@ The following tables list names, types, labels, and descriptions for metrics ava
       <td><a href="#metric-type-gauge"><code>gauge</code></a></td>
       <td>
         <ul>
-          <li><code>fan</code></li>
-          <li><code>node_id</code></li>
+          <li><a href="#metric-label-fan"><code>fan</code></a></li>
+          <li><a href="#metric-label-node_id"><code>node_id</code></a></li>
         </ul>
       </td>
       <td>The fan speed in RPM</td>
@@ -198,8 +198,8 @@ The following tables list names, types, labels, and descriptions for metrics ava
       <td><a href="#metric-type-gauge"><code>gauge</code></a></td>
       <td>
         <ul>
-          <li><code>entry_type</code></li>
-          <li><code>path</code></li>
+          <li><a href="#metric-label-entry_type"><code>entry_type</code></a></li>
+          <li><a href="#metric-label-path"><code>path</code></a></li>
         </ul>
       </td>
       <td>Number of file system objects in the cluster, by object type</td>
@@ -209,8 +209,8 @@ The following tables list names, types, labels, and descriptions for metrics ava
       <td><a href="#metric-type-gauge"><code>gauge</code></a></td>
       <td>
         <ul>
-          <li><code>path</code></li>
-          <li><code>usage_type</code></li>
+          <li><a href="#metric-label-path"><code>path</code></a></li>
+          <li><a href="#metric-label-usage_type"><code>usage_type</code></a></li>
         </ul>
       </td>
       <td>Space that object types use, in bytes</td>
@@ -232,7 +232,7 @@ The following tables list names, types, labels, and descriptions for metrics ava
       <td><a href="#metric-type-counter"><code>counter</code></a></td>
       <td>
         <ul>
-          <li><code>server_url</code></li>
+          <li><a href="#metric-label-server_url"><code>server_url</code></a></li>
         </ul>
       </td>
       <td>Total number of errored LDAP requests</td>
@@ -242,7 +242,7 @@ The following tables list names, types, labels, and descriptions for metrics ava
       <td><a href="#metric-type-histogram"><code>histogram</code></a></td>
       <td>
         <ul>
-          <li><code>server_url</code></li>
+          <li><a href="#metric-label-server_url"><code>server_url</code></a></li>
         </ul>
       </td>
       <td>Total latency for LDAP requests</td>
@@ -252,7 +252,7 @@ The following tables list names, types, labels, and descriptions for metrics ava
       <td><a href="#metric-type-counter"><code>counter</code></a></td>
       <td>
         <ul>
-          <li><code>server_url</code></li>
+          <li><a href="#metric-label-server_url"><code>server_url</code></a></li>
         </ul>
       </td>
       <td>Total number of completed LDAP requests</td>
@@ -280,7 +280,7 @@ The following tables list names, types, labels, and descriptions for metrics ava
       <td><a href="#metric-type-counter"><code>counter</code></a></td>
       <td>
         <ul>
-          <li><code>node_id</code></li>
+          <li><a href="#metric-label-node_id"><code>node_id</code></a></li>
         </ul>
       </td>
       <td>Total number of memory errors that were automatically corrected</td>
@@ -290,10 +290,10 @@ The following tables list names, types, labels, and descriptions for metrics ava
       <td><a href="#metric-type-gauge"><code>gauge</code></a></td>
       <td>
         <ul>
-          <li><code>bond</code></li>
-          <li><code>role</code></li>
-          <li><code>interface</code></li>
-          <li><code>node_id</code></li>
+          <li><a href="#metric-label-bond"><code>name</code></a></li>
+          <li><a href="#metric-label-role"><code>role</code></a></li>
+          <li><a href="#metric-label-interface"><code>interface</code></a></li>
+          <li><a href="#metric-label-node_id"><code>node_id</code></a></li>
         </ul>
       </td>
       <td>Whether this interface is up or down. This value can be <code>0</code> (interface is up) or <code>1</code> (interface is down)</td>
@@ -303,10 +303,10 @@ The following tables list names, types, labels, and descriptions for metrics ava
       <td><a href="#metric-type-gauge"><code>gauge</code></a></td>
       <td>
         <ul>
-          <li><code>bond</code></li>
-          <li><code>role</code></li>
-          <li><code>interface</code></li>
-          <li><code>node_id</code></li>
+          <li><a href="#metric-label-bond"><code>name</code></a></li>
+          <li><a href="#metric-label-role"><code>role</code></a></li>
+          <li><a href="#metric-label-interface"><code>interface</code></a></li>
+          <li><a href="#metric-label-node_id"><code>node_id</code></a></li>
         </ul>
       </td>
       <td>The negotiated link speed for this interface</td>
@@ -316,10 +316,10 @@ The following tables list names, types, labels, and descriptions for metrics ava
       <td><a href="#metric-type-counter"><code>counter</code></a></td>
       <td>
         <ul>
-          <li><code>bond</code></li>
-          <li><code>role</code></li>
-          <li><code>interface</code></li>
-          <li><code>node_id</code></li>
+          <li><a href="#metric-label-bond"><code>name</code></a></li>
+          <li><a href="#metric-label-role"><code>role</code></a></li>
+          <li><a href="#metric-label-interface"><code>interface</code></a></li>
+          <li><a href="#metric-label-node_id"><code>node_id</code></a></li>
         </ul>
       </td>
       <td>Total number of receive errors on this interface</td>
@@ -329,10 +329,10 @@ The following tables list names, types, labels, and descriptions for metrics ava
       <td><a href="#metric-type-counter"><code>counter</code></a></td>
       <td>
         <ul>
-          <li><code>bond</code></li>
-          <li><code>role</code></li>
-          <li><code>interface</code></li>
-          <li><code>node_id</code></li>
+          <li><a href="#metric-label-bond"><code>name</code></a></li>
+          <li><a href="#metric-label-role"><code>role</code></a></li>
+          <li><a href="#metric-label-interface"><code>interface</code></a></li>
+          <li><a href="#metric-label-node_id"><code>node_id</code></a></li>
         </ul>
       </td>
       <td>Total bytes received on this interface</td>
@@ -342,10 +342,10 @@ The following tables list names, types, labels, and descriptions for metrics ava
       <td><a href="#metric-type-counter"><code>counter</code></a></td>
       <td>
         <ul>
-          <li><code>bond</code></li>
-          <li><code>role</code></li>
-          <li><code>interface</code></li>
-          <li><code>node_id</code></li>
+          <li><a href="#metric-label-bond"><code>name</code></a></li>
+          <li><a href="#metric-label-role"><code>role</code></a></li>
+          <li><a href="#metric-label-interface"><code>interface</code></a></li>
+          <li><a href="#metric-label-node_id"><code>node_id</code></a></li>
         </ul>
       </td>
       <td>Total number of packets received on this interface</td>
@@ -355,10 +355,10 @@ The following tables list names, types, labels, and descriptions for metrics ava
       <td><a href="#metric-type-counter"><code>counter</code></a></td>
       <td>
         <ul>
-          <li><code>bond</code></li>
-          <li><code>role</code></li>
-          <li><code>interface</code></li>
-          <li><code>node_id</code></li>
+          <li><a href="#metric-label-bond"><code>name</code></a></li>
+          <li><a href="#metric-label-role"><code>role</code></a></li>
+          <li><a href="#metric-label-interface"><code>interface</code></a></li>
+          <li><a href="#metric-label-node_id"><code>node_id</code></a></li>
         </ul>
       </td>
       <td>Total number of transmit errors on this interface</td>
@@ -368,10 +368,10 @@ The following tables list names, types, labels, and descriptions for metrics ava
       <td><a href="#metric-type-counter"><code>counter</code></a></td>
       <td>
         <ul>
-          <li><code>bond</code></li>
-          <li><code>role</code></li>
-          <li><code>interface</code></li>
-          <li><code>node_id</code></li>
+          <li><a href="#metric-label-bond"><code>name</code></a></li>
+          <li><a href="#metric-label-role"><code>role</code></a></li>
+          <li><a href="#metric-label-interface"><code>interface</code></a></li>
+          <li><a href="#metric-label-node_id"><code>node_id</code></a></li>
         </ul>
       </td>
       <td>Total bytes transmitted on this interface</td>
@@ -381,10 +381,10 @@ The following tables list names, types, labels, and descriptions for metrics ava
       <td><a href="#metric-type-counter"><code>counter</code></a></td>
       <td>
         <ul>
-          <li><code>bond</code></li>
-          <li><code>role</code></li>
-          <li><code>interface</code></li>
-          <li><code>node_id</code></li>
+          <li><a href="#metric-label-bond"><code>name</code></a></li>
+          <li><a href="#metric-label-role"><code>role</code></a></li>
+          <li><a href="#metric-label-interface"><code>interface</code></a></li>
+          <li><a href="#metric-label-node_id"><code>node_id</code></a></li>
         </ul>
       </td>
       <td>Total number of packets transmitted on this interface</td>
@@ -394,8 +394,8 @@ The following tables list names, types, labels, and descriptions for metrics ava
       <td><a href="#metric-type-gauge"><code>gauge</code></a></td>
       <td>
         <ul>
-          <li><code>location</code></li>
-          <li><code>node_id</code></li>
+          <li><a href="#metric-label-location"><code>location</code></a></li>
+          <li><a href="#metric-label-node_id"><code>node_id</code></a></li>
         </ul>
       </td>
       <td>Whether this power supply is healthy. This value can be <code>0</code> (healthy) or <code>1</code> (unplugged, removed, or unresponsive)</td>
@@ -405,7 +405,7 @@ The following tables list names, types, labels, and descriptions for metrics ava
       <td><a href="#metric-type-counter"><code>counter</code></a></td>
       <td>
         <ul>
-          <li><code>protocol</code></li>
+          <li><a href="#metric-label-protocol"><code>protocol</code></a></li>
         </ul>
       </td>
       <td>Total number of clients that have connected to this protocol</td>
@@ -415,7 +415,7 @@ The following tables list names, types, labels, and descriptions for metrics ava
       <td><a href="#metric-type-counter"><code>counter</code></a></td>
       <td>
         <ul>
-          <li><code>protocol</code></li>
+          <li><a href="#metric-label-protocol"><code>protocol</code></a></li>
         </ul>
       </td>
       <td>Total number of clients that have disconnected from this protocol</td>
@@ -425,10 +425,10 @@ The following tables list names, types, labels, and descriptions for metrics ava
       <td><a href="#metric-type-counter"><code>counter</code></a></td>
       <td>
         <ul>
-          <li><code>data_type</code></li>
-          <li><code>io_type</code></li>
-          <li><code>op_name</code></li>
-          <li><code>protocol</code></li>
+          <li><a href="#metric-label-data_type"><code>data_type</code></a></li>
+          <li><a href="#metric-label-io_type"><code>io_type</code></a></li>
+          <li><a href="#metric-label-op_name"><code>op_name</code></a></li>
+          <li><a href="#metric-label-protocol"><code>protocol</code></a></li>
         </ul>
       </td>
       <td>Total bytes transferred by protocol operations</td>
@@ -438,10 +438,10 @@ The following tables list names, types, labels, and descriptions for metrics ava
       <td><a href="#metric-type-histogram"><code>histogram</code></a></td>
       <td>
         <ul>
-          <li><code>data_type</code></li>
-          <li><code>io_type</code></li>
-          <li><code>op_name</code></li>
-          <li><code>protocol</code></li>
+          <li><a href="#metric-label-data_type"><code>data_type</code></a></li>
+          <li><a href="#metric-label-io_type"><code>io_type</code></a></li>
+          <li><a href="#metric-label-op_name"><code>op_name</code></a></li>
+          <li><a href="#metric-label-protocol"><code>protocol</code></a></li>
         </ul>
       </td>
       <td>Total latency for protocol operations</td>
@@ -451,10 +451,10 @@ The following tables list names, types, labels, and descriptions for metrics ava
       <td><a href="#metric-type-counter"><code>counter</code></a></td>
       <td>
         <ul>
-          <li><code>data_type</code></li>
-          <li><code>io_type</code></li>
-          <li><code>op_name</code></li>
-          <li><code>protocol</code></li>
+          <li><a href="#metric-label-data_type"><code>data_type</code></a></li>
+          <li><a href="#metric-label-io_type"><code>io_type</code></a></li>
+          <li><a href="#metric-label-op_name"><code>op_name</code></a></li>
+          <li><a href="#metric-label-protocol"><code>protocol</code></a></li>
         </ul>
       </td>
       <td>Total number of completed protocol operations</td>
@@ -464,7 +464,7 @@ The following tables list names, types, labels, and descriptions for metrics ava
       <td><a href="#metric-type-gauge"><code>gauge</code></a></td>
       <td>
         <ul>
-          <li><code>node_id</code></li>
+          <li><a href="#metric-label-node_id"><code>node_id</code></a></li>
         </ul>
       </td>
       <td>Online status for each node in the cluster<br>
@@ -475,7 +475,7 @@ The following tables list names, types, labels, and descriptions for metrics ava
       <td><a href="#metric-type-gauge"><code>gauge</code></a></td>
       <td>
         <ul>
-          <li><code>node_id</code></li>
+          <li><a href="#metric-label-node_id"><code>node_id</code></a></li>
         </ul>
       </td>
       <td>Time synchronization status for each node in the cluster<br>
@@ -483,6 +483,7 @@ The following tables list names, types, labels, and descriptions for metrics ava
     </tr>
   </tbody>
 </table>
+
 
 ## Available Labels
 The following table gives the metric label name, its possible values, and descriptions.
@@ -497,7 +498,7 @@ The following table gives the metric label name, its possible values, and descri
   </thead>
   <tbody>
     <tr>
-      <td><code>bond</code></td>
+      <td><a name="metric-label-bond"></a><code>bond</code></td>
       <td>
         <ul>
           <li><code>bond0</code></li>
@@ -507,12 +508,12 @@ The following table gives the metric label name, its possible values, and descri
       <td>The bond to which a network interface belongs</td>
     </tr>
     <tr>
-      <td><code>cpu</code></td>
+      <td><a name="metric-label-cpu"></a><code>cpu</code></td>
       <td>A non-negative integer</td>
       <td>The CPU's index in the node</td>
     </tr>
     <tr>
-      <td><code>data_type</code></td>
+      <td><a name="metric-label-data_type"></a><code>data_type</code></td>
       <td>
         <ul>
           <li><code>data</code>: Read or write operations on a file's data.</li>
@@ -523,7 +524,7 @@ The following table gives the metric label name, its possible values, and descri
       <td>The data type that an operation transfers</td>
     </tr>
     <tr>
-      <td><code>disk_type</code></td>
+      <td><a name="metric-label-disk_type"></a><code>disk_type</code></td>
       <td>
         <ul>
           <li><code>hdd</code>: Hard disk drive</li>
@@ -533,12 +534,12 @@ The following table gives the metric label name, its possible values, and descri
       <td>The type of underlying storage</td>
     </tr>
     <tr>
-      <td><code>drive_bay</code></td>
+      <td><a name="metric-label-drive_bay"></a><code>drive_bay</code></td>
       <td>A drive bay name, for example <code>b3</code> or <code>1.1</code></td>
       <td>The physical drive bay on the chassis.</td>
     </tr>
     <tr>
-      <td><code>entry_type</code></td>
+      <td><a name="metric-label-entry_type"></a><code>entry_type</code></td>
       <td>
         <ul>
           <li><code>alternate_data_stream</code></li>
@@ -551,17 +552,17 @@ The following table gives the metric label name, its possible values, and descri
       <td>The file system object type</td>
     </tr>
     <tr>
-      <td><code>fan</code></td>
+      <td><a name="metric-label-fan"></a><code>fan</code></td>
       <td>A fan name, for example <code>system fan 1</code></td>
       <td>The fan name</td>
     </tr>
     <tr>
-      <td><code>interface</code></td>
+      <td><a name="metric-label-interface"></a><code>interface</code></td>
       <td>An interface name, for example <code>eth0</code></td>
       <td>The interface name.</td>
     </tr>
     <tr>
-      <td><code>io_type</code></td>
+      <td><a name="metric-label-io_type"></a><code>io_type</code></td>
       <td>
         <ul>
           <li><code>none</code></li>
@@ -573,28 +574,28 @@ The following table gives the metric label name, its possible values, and descri
       <td>The I/O that the operation performs</td>
     </tr>
     <tr>
-      <td><code>location</code></td>
+      <td><a name="metric-label-location"></a><code>location</code></td>
       <td>A location, for example <code>left</code> or <code>right</code></td>
       <td>The location on the chassis.<br>
       For power supplies, this location is determined by looking at the back of the node.</td>
     </tr>
     <tr>
-      <td><code>node_id</code></td>
+      <td><a name="metric-label-node_id"></a><code>node_id</code></td>
       <td>A positive integer that represents a node ID in the cluster.</td>
       <td>This value differentiates between the different nodes in the cluster.</td>
     </tr>
     <tr>
-      <td><code>op_name</code></td>
+      <td><a name="metric-label-op_name"></a><code>op_name</code></td>
       <td>Any NFS (NFSv3 or NFSv4), SMB (SMBv2 or SMBv3), or FTP operation name.</td>
       <td>The recorded operation</td>
     </tr>
     <tr>
-      <td><code>path</code></td>
+      <td><a name="metric-label-path"></a><code>path</code></td>
       <td>Slash (<code>/</code>)</td>
       <td>The path to a directory in the file system</td>
     </tr>
     <tr>
-      <td><code>protocol</code></td>
+      <td><a name="metric-label-protocol"></a><code>protocol</code></td>
       <td>
         <ul>
           <li><code>nfs</code>: NFSv3 or NFSv4</li>
@@ -605,7 +606,7 @@ The following table gives the metric label name, its possible values, and descri
       <td>The protocol of the recorded operation</td>
     </tr>
     <tr>
-      <td><code>role</code></td>
+      <td><a name="metric-label-role"></a><code>role</code></td>
       <td>
         <ul>
           <li><code>frontend</code></li>
@@ -616,12 +617,12 @@ The following table gives the metric label name, its possible values, and descri
       Frontend includes protocol, management, and replication traffic, and backend includes all intra-node communication.</td>
     </tr>
     <tr>
-      <td><code>server_url</code></td>
+      <td><a name="metric-label-server_url"></a><code>server_url</code></td>
       <td>A hostname (<code>ad.my-domain.com</code>) or IP address</td>
       <td>The URL of a remote server.</td>
     </tr>
     <tr>
-      <td><code>usage_type</code></td>
+      <td><a name="metric-label-usage_type"></a><code>usage_type</code></td>
       <td>
         <ul>
           <li><code>data</code></li>
