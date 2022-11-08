@@ -1,14 +1,14 @@
 ---
 title: "Qumulo OpenMetrics API Specification"
-summary: "This section lists the metrics that the Qumulo REST API emits and lists the metrics' types, labels, and descriptions."
+summary: "This section lists the names, types, labels, and descriptions for the metrics that the Qumulo REST API emits."
 permalink: /administrator-guide/qumulo-core/openmetrics-api-specification.html
 keywords: metrics, OpenMetrics, API metrics, prometheus
 sidebar: administrator_guide_sidebar
 ---
 
-This section lists the metrics that the Qumulo API emits and lists the metrics' types, labels, and descriptions.
+This section lists the names, types, labels, and descriptions for the metrics that the Qumulo REST API emits.
 
-The Qumulo OpenMetrics API has a single endpoint that provides a complete view of point-in-time telemetry from the Qumulo File Data Platform. Monitoring and metrics systems, such as [Prometheus](https://github.com/prometheus/prometheus), can consume the OpenMetrics data format that the Qumulo REST API emits, without custom code or a monitoring and logging agent. For more information about the data formats that your monitoring and metrics system can ingest, see the system's documentation.
+The Qumulo OpenMetrics API has a single endpoint that provides a complete view of point-in-time telemetry from the Qumulo File Data Platform. Metric monitoring systems (such as [Prometheus](https://github.com/prometheus/prometheus)) can consume the OpenMetrics data format that the Qumulo REST API emits without custom code or a monitoring agent. For more information about the data formats that your monitoring system can ingest, see your monitoring system's documentation.
 
 
 ## Accessing Qumulo Metrics
@@ -18,10 +18,10 @@ Qumulo metrics are available at the following endpoint.
 https://<my-cluster-hostname>:8000/v2/metrics/endpoints/default/data
 ```
 
-You can configure a system that supports the [OpenMetrics Specification](https://github.com/OpenObservability/OpenMetrics/blob/main/specification/OpenMetrics.md) to use [bearer token authentication](using-access-tokens.md) to access this endpoint.
+You can configure a monitoring system that supports the [OpenMetrics Specification](https://github.com/OpenObservability/OpenMetrics/blob/main/specification/OpenMetrics.md) to use [bearer token authentication](using-access-tokens.md) to access this endpoint.
 
 ## Metric Types
-All available Qumulo metrics belong to one of the four types that the OpenMetrics standard defines.
+All Qumulo metrics belong to one of the following OpenMetrics types.
 
 <table>
   <thead>
@@ -50,15 +50,15 @@ All available Qumulo metrics belong to one of the four types that the OpenMetric
   </tbody>
 </table>
 
-For more information about these and other OpenMetrics types, see [Metric Types](https://github.com/OpenObservability/OpenMetrics/blob/main/specification/OpenMetrics.md#metric-types) in the OpenMetrics Specification.
+For more information, see [Metric Types](https://github.com/OpenObservability/OpenMetrics/blob/main/specification/OpenMetrics.md#metric-types) in the OpenMetrics Specification.
 
 
 ## Metric Labels
-The OpenMetrics format allows for metrics to be labeled to communicate additional information about each metric point. The Qumulo Core OpenMetrics API emits labels to give context to each metric, for example the name of a protocol operation or the URL of a remote server. These labels are metric-specific. For more information, see [Available Labels](#available-labels).
+The OpenMetrics format allows for metric labeling for communicating additional information. To provide context for metrics, Qumulo Core emits metric-specific labels. For example, the `name` of a protocol operation or the `url` of a remote server. For more information, see [Available Labels](#available-labels).
 
 
 ## Available Metrics
-The following tables list names, types, labels, and descriptions for metrics available in the Qumulo Core OpenMetrics API.
+The following table lists metric names, types, labels, and descriptions.
 
 {% include note.html content="For Qumulo as a Service, all metrics with a `node_id` label are unavailable because they refer to specific hardware." %}
 
@@ -486,7 +486,7 @@ The following tables list names, types, labels, and descriptions for metrics ava
 
 
 ## Available Labels
-The following table gives the metric label name, its possible values, and descriptions.
+The following table lists metric label names, possible values, and descriptions.
 
 <table>
   <thead>
