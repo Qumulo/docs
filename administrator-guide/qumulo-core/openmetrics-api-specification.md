@@ -137,19 +137,6 @@ The following table lists metric names, types, labels, and descriptions.
       <td>The temperature for each physical CPU, in degrees Celsius</td>
     </tr>
     <tr>
-      <td><code>qumulo_disk_endurance_percent</code></td>
-      <td><a href="#metric-type-gauge"><code>gauge</code></a></td>
-      <td>
-        <ul>
-          <li><a href="#metric-label-disk_type"><code>disk_type</code></a></li>
-          <li><a href="#metric-label-drive_bay"><code>drive_bay</code></a></li>
-          <li><a href="#metric-label-node_id"><code>node_id</code></a></li>
-        </ul>
-      </td>
-      <td>The remaining disk endurance value for each disk in the cluster, ranging <code>100</code> (no disk wear) to <code>0</code> (disk is worn fully)<br>
-     </td>
-    </tr>
-    <tr>
       <td><code>qumulo_disk_is_unhealthy</code></td>
       <td><a href="#metric-type-gauge"><code>gauge</code></a></td>
       <td>
