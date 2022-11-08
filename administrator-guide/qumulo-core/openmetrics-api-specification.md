@@ -32,7 +32,7 @@ All Qumulo metrics belong to one of the following OpenMetrics types.
   </thead>
   <tbody>
     <tr>
-      <td><a name="metric-type-counter"></a><code>counter</counter></td>
+      <td><a name="metric-type-counter"></a><code>counter</code></td>
       <td>A monotonically increasing integer that increases from zero, stored in <code>&lt;metric_name&gt;_count</code>. A counter's value will never decrease during normal operation.</td>
     </tr>
     <tr>
