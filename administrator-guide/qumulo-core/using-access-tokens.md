@@ -11,11 +11,11 @@ varAccessTokenAdminWarning: To decrease the risk of giving an attacker full admi
 
 This section explains how to create and use access tokens&mdash;by using the Qumulo REST API, Python SDK, and `qq` CLI&mdash;to authenticate external services to Qumulo Core.
 
-_Access tokens_ are let a user to authenticate to the Qumulo REST API without having to complete repetitive login procedures. Unlike _user bearer tokens_ (that have a short expiration time and require a password to refresh), access tokens are long-lived. Commonly, access tokens support authentication for services, long-lived automation processes, and programmatic REST API access that doesn't require user input.
+In Qumulo Core 5.3.0 (and higher), _access tokens_ let a user to authenticate to the Qumulo REST API without having to complete repetitive login procedures. Access tokens provide an alternative to session-based authentication that the `qq login` CLI command and the Web UI use
+
+Unlike _user bearer tokens_ (that have a short expiration time and require a password to refresh), access tokens are long-lived. Commonly, access tokens support authentication for services, long-lived automation processes, and programmatic REST API access that doesn't require user input.
 
 An access token returns a _bearer token_, an item in the Authorization HTTP header which acts as the authentication mechanism for the REST API. 
-
-Qumulo Core 5.3.0 (and higher) supports using access tokens as an alternative to session-based authentication that the `qq login` CLI command and the Web UI use. 
 
 {{site.data.alerts.important}}
 <ul>
