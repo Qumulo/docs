@@ -175,6 +175,10 @@ When the cluster requires SSO authentication, your cluster rejects password-base
 
   {% include important.html content="We recommend setting a strong password for the built-in `admin` user and using this account only for emergencies." %} 
 
+* Azure AD SAML Toolkit is currently not supported due to a compatibility issue.
+
+* When Require SSO is turned on, logging in to the Interactive API documentation (`https://my-cluster.my-org.com/api`) is not available.
+
 * Qumulo Core doesn't support:
   * **SAML Single Logout (SLO):** We recommend clicking **Sign out** in the Web UI.
   * **Automatic Configuration from Metadata XML:** You must specify each parameter by using the `qq` CLI.
