@@ -115,17 +115,6 @@ The following table lists metric names, types, labels, and descriptions.
       <td>The total number of completed AD <code>NETLOGON</code> operations</td>
     </tr>
     <tr>
-      <td><code>qumulo_cpu_max_temperature_celsius</code></td>
-      <td><a href="#metric-type-gauge"><code>gauge</code></a></td>
-      <td>
-        <ul>
-          <li><a href="#metric-label-cpu"><code>cpu</code></a></li>
-          <li><a href="#metric-label-node_id"><code>node_id</code></a></li>
-        </ul>
-      </td>
-      <td>The maximum temperature threshold for each physical CPU</td>
-    </tr>
-    <tr>
       <td><code>qumulo_cpu_temperature_celsius</code></td>
       <td><a href="#metric-type-gauge"><code>gauge</code></a></td>
       <td>
