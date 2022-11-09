@@ -64,7 +64,7 @@ Qumulo provides configuration for the permitted NFSv4.1 authentication flavors i
 
 
 ## Configuring Export Configuration
-You can use [NFSv4.1 exports](../protocols/nfsv4.1-enabling-using.md) to configure access to the Qumulo file system.
+You can use [NFSv4.1 exports](../file-system-protocols/nfsv4.1-enabling-using.md) to configure access to the Qumulo file system.
 
 {% include note.html content="The user-mapping portion of the export configuration has no effect on Kerberos configuration. Specifying `root` or `any` user mapping for a particular export applies only to `AUTH_SYS` mounts that access this export."%}
 

@@ -1,0 +1,42 @@
+entries:
+- title:
+  pdftitle: qumulo-cloud-guide.pdf
+  product:
+  version:
+  folders:
+
+  - title:
+    output: pdf
+    type: frontmatter
+    folderitems:
+
+    - title:
+      url: /titlepage.html
+      output: pdf
+      type: frontmatter
+
+    - title:
+      url: /tocpage.html
+      output: pdf
+      type: frontmatter
+
+  - title: Qumulo in the Cloud Guide
+    output: web
+    folderitems:
+
+    - title: Documentation Home
+      url: /index.html
+      output: web
+
+    - title: Cloud Guide Home
+      url: /cloud-guide/
+      output: web
+
+  - title: Qumulo on Azure as a Service
+    url: /cloud-guide/azure/
+    output: web, pdf
+    folderitems:
+
+    - title: Getting Started with Qumulo on Azure as a Service
+      url: /cloud-guide/azure/getting-started.html
+      output: web, pdf

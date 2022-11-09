@@ -196,4 +196,4 @@ The Linux ACL Editor consists of the following tools:
 * `nfs4_getfacl`
 * `nfs4_setfacl`
 
-You can use the editor to read and write ACLs on a Qumulo cluster that uses NFSv4.1 with Kerberos. For more information, see [Managing File Access Permissions by Using NFSv4.1 Access Control Lists (ACLs)](../protocols/nfsv4.1-acls.md).
+You can use the editor to read and write ACLs on a Qumulo cluster that uses NFSv4.1 with Kerberos. For more information, see [Managing File Access Permissions by Using NFSv4.1 Access Control Lists (ACLs)](../file-system-protocols/nfsv4.1-acls.md).

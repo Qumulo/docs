@@ -33,98 +33,63 @@ entries:
       output: web
 
   - title: Getting Started with Qumulo Core
+    url: /administrator-guide/getting-started-qumulo-core/index.html
     output: web, pdf
     folderitems:
 
     - title: Creating a Qumulo Core USB Drive Installer
-      url: /administrator-guide/qumulo-core/creating-usb-drive-installer.html
+      url: /administrator-guide/getting-started-qumulo-core/creating-usb-drive-installer.html
       output: web, pdf
 
     - title: Installing VPN Keys on a Qumulo Cluster
-      url: /administrator-guide/qumulo-core/installing-vpn-keys-on-cluster.html
+      url: /administrator-guide/getting-started-qumulo-core/installing-vpn-keys-on-cluster.html
       output: web, pdf
 
     - title: Configuring SAML Single Sign-On (SSO) for Your Qumulo Cluster
-      url: /administrator-guide/qumulo-core/configuring-saml-single-sign-on-sso.html
+      url: /administrator-guide/getting-started-qumulo-core/configuring-saml-single-sign-on-sso.html
       output: web, pdf
 
     - title: Supported Configurations and Known Limits for Qumulo Core
-      url: /administrator-guide/qumulo-core/supported-configurations-known-limits.html
+      url: /administrator-guide/getting-started-qumulo-core/supported-configurations-known-limits.html
       output: web, pdf
 
   - title: Upgrading Qumulo Core
+    url: /administrator-guide/upgrading-qumulo-core/index.html
     output: web, pdf
     folderitems:
 
     - title: Performing Instant Software Upgrades and Platform Upgrades
-      url: /administrator-guide/upgrades/instant-software-platform.html
+      url: /administrator-guide/upgrading-qumulo-core/instant-software-platform.html
       output: web, pdf
 
     - title: Qumulo Core Upgrade Mode Reference
-      url: /administrator-guide/upgrades/mode-reference.html
+      url: /administrator-guide/upgrading-qumulo-core/mode-reference.html
       output: web, pdf
 
   - title: Configuring Networking for Qumulo Core
+    url: /administrator-guide/networking/index.html
     output: web, pdf
     folderitems:
 
     - title: Required Networking Ports for Qumulo Core
-      url: /administrator-guide/qumulo-core/required-networking-ports.html
+      url: /administrator-guide/networking/required-networking-ports.html
       output: web, pdf
 
-  - title: Configuring the Qumulo Core Web UI
+  - title: Working with the Qumulo Core Web UI
+    url: /administrator-guide/web-ui/index.html
     output: web, pdf
     folderitems:
 
     - title: Setting the Web UI Login Banner
-      url: /administrator-guide/qumulo-core/web-ui-login-banner.html
+      url: /administrator-guide/web-ui/login-banner.html
       output: web, pdf
 
     - title: Setting the Web UI Inactivity Timeout
-      url: /administrator-guide/qumulo-core/web-ui-inactivity-timeout.html
-      output: web, pdf
-
-  - title: Protecting Your Data
-    output: web, pdf
-    folderitems:
-
-    - title: Increasing the Node-Fault-Tolerance Level for Your Cluster During Node-Add Operations
-      url: /administrator-guide/qumulo-core/node-fault-tolerance-level.html
-      output: web, pdf
-
-    - title: Managing Snapshots
-      url: /administrator-guide/qumulo-core/managing-snapshots.html
-      output: web, pdf
-
-    - title: Understanding Offline Qumulo Core Nodes and Checking for Free Space
-      url: /administrator-guide/qumulo-core/understanding-offline-nodes.html
-      output: web, pdf
-
-  - title: Moving Your Data
-    output: web, pdf
-    folderitems:
-
-    - title: Using Qumulo Shift-To to Copy Objects to Amazon S3
-      url: /administrator-guide/qumulo-core/shift-to-s3.html
-      output: web, pdf
-
-    - title: Using Qumulo Shift-From for Amazon S3 to Copy Objects
-      url: /administrator-guide/qumulo-core/shift-from-s3.html
-      output: web, pdf
-
-  - title: Working with File System Protocols
-    output: web, pdf
-    folderitems:
-
-    - title: Enabling and Using NFSv4.1 on a Qumulo Cluster
-      url: /administrator-guide/protocols/nfsv4.1-enabling-using.html
-      output: web, pdf
-
-    - title: Managing File Access Permissions by Using NFSv4.1 Access Control Lists (ACLs)
-      url: /administrator-guide/protocols/nfsv4.1-acls.html
+      url: /administrator-guide/web-ui/inactivity-timeout.html
       output: web, pdf
 
   - title: Working with the qq CLI
+    url: /administrator-guide/qq-cli/index.html
     output: web, pdf
     folderitems:
 
@@ -132,12 +97,56 @@ entries:
       url: /administrator-guide/qq-cli/enabling-autocomplete.html
       output: web, pdf
 
-  - title: Using NFSv4.1 with Kerberos
+  - title: Protecting Your Data
+    url: /administrator-guide/protecting-data/index.html
+    output: web, pdf
+    folderitems:
+
+    - title: Increasing the Node-Fault-Tolerance Level for Your Cluster During Node-Add Operations
+      url: /administrator-guide/protecting-data/node-fault-tolerance-level.html
+      output: web, pdf
+
+    - title: Managing Snapshots
+      url: /administrator-guide/protecting-data/managing-snapshots.html
+      output: web, pdf
+
+    - title: Understanding Offline Qumulo Core Nodes and Checking for Free Space
+      url: /administrator-guide/protecting-data/understanding-offline-nodes.html
+      output: web, pdf
+
+  - title: Moving Your Data
+    url: /administrator-guide/moving-data/index.html
+    output: web, pdf
+    folderitems:
+
+    - title: Using Qumulo Shift-To to Copy Objects to Amazon S3
+      url: /administrator-guide/moving-data/shift-to-s3.html
+      output: web, pdf
+
+    - title: Using Qumulo Shift-From for Amazon S3 to Copy Objects
+      url: /administrator-guide/moving-data/shift-from-s3.html
+      output: web, pdf
+
+  - title: Working with File System Protocols
+    url: /administrator-guide/file-system-protocols/index.html
+    output: web, pdf
+    folderitems:
+
+    - title: Enabling and Using NFSv4.1 on a Qumulo Cluster
+      url: /administrator-guide/file-system-protocols/nfsv4.1-enabling-using.html
+      output: web, pdf
+
+    - title: Managing File Access Permissions by Using NFSv4.1 Access Control Lists (ACLs)
+      url: /administrator-guide/file-system-protocols/nfsv4.1-acls.html
+      output: web, pdf
+
+  - title: Using NFSv4.1 with Kerberos in Qumulo Core
+    url: /administrator-guide/kerberos/index.html
     output: web, pdf
     folderitems:
 
     - title: How NFSv4.1 Works with Kerberos in Qumulo Core
-      url: /administrator-guide/kerberos/
+      url: /administrator-guide/kerberos/kerberos-with-qumulo-core.html
       output: web, pdf
 
     - title: Prerequisites for Joining a Qumulo Cluster to Active Directory

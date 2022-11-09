@@ -8,8 +8,8 @@ breadcrumbs: exclude
 Welcome. This site is a new documentation portal for [Qumulo](https://qumulo.com/) that uses [docs-as-code principles](https://www.writethedocs.org/guide/docs-as-code/). As we continue to add new content to this portal, we want you to ask questions and share your ideas with us&mdash;click **Edit on GitHub** on any page.
 
 **Table of Contents**
-* [Qumulo-Certified Hardware Guide](hardware/)
-* [Qumulo in the Cloud Guide](cloud/)
+* [Qumulo-Certified Hardware Guide](hardware-guide/)
+* [Qumulo in the Cloud Guide](cloud-guide/)
 * [Qumulo Administrator Guide](administrator-guide/)
 
 ## Visit the Knowledge Base

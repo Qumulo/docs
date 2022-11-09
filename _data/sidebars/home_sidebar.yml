@@ -13,11 +13,11 @@ entries:
       output: web
 
     - title: Qumulo-Certified Hardware Guide
-      url: /hardware/
+      url: /hardware-guide/
       output: web
 
     - title: Qumulo in the Cloud Guide
-      url: /cloud/
+      url: /cloud-guide/
       output: web
 
     - title: Qumulo Administrator Guide
