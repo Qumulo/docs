@@ -1,7 +1,7 @@
 ---
 title: "Qumulo OpenMetrics API Specification"
 summary: "This section lists the names, types, labels, and descriptions for the metrics that the Qumulo REST API emits."
-permalink: /administrator-guide/qumulo-core/openmetrics-api-specification.html
+permalink: /administrator-guide/metrics/openmetrics-api-specification.html
 keywords: metrics, OpenMetrics, API metrics, prometheus
 sidebar: administrator_guide_sidebar
 ---
