@@ -75,6 +75,15 @@ entries:
       url: /administrator-guide/networking/required-networking-ports.html
       output: web, pdf
 
+  - title: Connecting Qumulo Core to External Services
+    url: /administrator-guide/external-services/index.html
+    output: web, pdf
+    folderitems:
+
+    - title: Using Qumulo Core Access Tokens
+      url: /administrator-guide/external-services/using-access-tokens.html
+      output: web, pdf
+
   - title: Working with the Qumulo Core Web UI
     url: /administrator-guide/web-ui/index.html
     output: web, pdf
@@ -90,6 +99,14 @@ entries:
 
   - title: Working with the qq CLI
     url: /administrator-guide/qq-cli/index.html
+    output: web, pdf
+    folderitems:
+
+    - title: Enabling Autocomplete for the qq CLI
+      url: /administrator-guide/qq-cli/enabling-autocomplete.html
+      output: web, pdf
+
+  - title: Working with the qq CLI
     output: web, pdf
     folderitems:
 
@@ -175,4 +192,13 @@ entries:
 
     - title: Troubleshooting NFSv4.1 with Kerberos
       url: /administrator-guide/kerberos/kerberos-troubleshooting.html
+      output: web, pdf
+
+  - title: Configuring and Collecting Metrics in Qumulo Core
+    url: /administrator-guide/metrics/index.md
+    output: web, pdf
+    folderitems:
+
+    - title: Qumulo OpenMetrics API Specification
+      url: /administrator-guide/metrics/openmetrics-api-specification.html
       output: web, pdf
