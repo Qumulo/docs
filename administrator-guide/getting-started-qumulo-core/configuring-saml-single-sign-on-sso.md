@@ -57,7 +57,7 @@ This process requires coordination between the cluster administrator and SSO adm
      https://my-org.sso-provider.com/foo
      ```
      
-   * The IdP issuer or EntityID. For example:
+   * The IdP issuer or `EntityId`. For example:
 
      ```
      http://www.sso-provider.com/abc12de34fgAB5CDh6i7
@@ -82,15 +82,18 @@ This process requires coordination between the cluster administrator and SSO adm
    {{site.data.alerts.note}}
    <ul>
      <li>To view the current SAML configuration, the cluster administrator can use the <code>qq saml_get_settings</code> command.</li>
-     <li>To allow specific changes (for instance, correct a typo, update a DNS name or an expired certificate, or temporarily disable SAML SSO without losing any of the other settings), the <code>qq saml_modify_settings</code> command permits changing individual SAML settings independently.</li>
-     <li>For first-time SAML configurations, you must provide all settings.</li>
-     <li>Aside from a basic check of the IdP certificate, Qumulo Core doesn't verify the configuration parameters. It is the cluster administrator's responsibility to ensure that IdP-initiated SAML logins work correctly. (These logins initate when the user clicks <strong>Continue to SSO login</strong> in the Web UI or selects the Qumulo cluster on the SSO portal.)</li>
+     <li>To allow specific changes (for instance, correct a typo, update a DNS name or an expired certificate, or temporarily disable SAML SSO without losing any of the other settings), the cluster administrator can use the <code>qq saml_modify_settings</code> command to change individual SAML settings independently.</li>
+     <li>For first-time SAML configurations, the cluster administrator must provide all of the required settings.</li>
+     <li>Aside from a basic check of the IdP certificate, Qumulo Core doesn't verify the configuration parameters. It is the cluster administrator's responsibility to ensure that IdP-initiated SAML login works correctly. (This login type initiates when the user clicks <strong>Continue to SSO login</strong> in the Web UI or selects the Qumulo cluster on the SSO portal.)</li>
    </ul>
    {{site.data.alerts.end}}
    
 
 ## Supported SAML SSO Workflows
-Qumulo Core supports two SAML SSO workflows: [IdP](#identity-provider)-initiated and [SP](#service-provider)-initiated.
+Qumulo Core supports three SAML SSO workflows:
+
+* Standard SAML workflows that the [IdP](#identity-provider) or [SP](#service-provider) initiates
+* A workflow that the `qq` CLI initiates
 
 {{site.data.alerts.note}}
 <ul>
@@ -113,7 +116,7 @@ Qumulo Core supports two SAML SSO workflows: [IdP](#identity-provider)-initiated
 
 1. If the Qumulo cluster has SAML SSO configured, the user can click **Continue to SSO login** on the Web UI login page.
 
-   The Web UI redirects the user to the configured SSO portal. Because the authentication request uses HTTP-Redirect Binding, the login link appears as follows:
+   The Web UI redirects the user to the configured SSO portal. Because the authentication request uses HTTP-Redirect Binding, the login URL appears.
    
    ```
    https://my-org.sso-provider.com/abc12de34fgAB5CDh6i7/saml?SAMLRequest=abcdefgh1234567890...
@@ -123,13 +126,64 @@ Qumulo Core supports two SAML SSO workflows: [IdP](#identity-provider)-initiated
 
 1. The SSO portal redirects the user to the cluster's endpoint.
 
+### qq-CLI-Initiated SSO Workflow
+<a name="sso-login"></a>In Qumulo Core 5.3.0 (and higher), a user can authenticate a `qq` CLI session by using SSO.
+
+1. A user uses the `qq sso_login` CLI command. For example:
+
+   ```bash
+   qq --host {{site.exampleIP}} sso_login
+   ```
+   
+   The login URL appears.
+   
+   ```
+   https://my-qumulo-cluster.my-org.com/saml-login?login-id=12345678-1234-1234-1234-123456789012
+   ```
+   
+   {% include note.html content="The user must complete the following step within 5 minutes, while the `qq` CLI pauses for authentication." %}
+   
+1. When the user opens the login URL in a browser, the URL redirects the user to a configured SSO portal and one of the following two scenarios takes place:
+
+   * If authentication succeeds, the browser shows a message that asks the user to return to the CLI session.
+
+     The paused `sso_login` command recognizes that authentication is complete and shows the authenticated username.
+   
+   * If authentication doesn't succeed, the browser displays an error message.
+
+     The user must retry the workflow.
+
+
+## Requiring SSO Authentication for Cluster Management
+{{site.data.alerts.important}}
+<ul>
+  <li>If you use the <code>--require-sso</code> flag, you can no longer use the <code>qq login</code> command with your AD account password. Instead, you must <a href="#sso-login">use the <code>qq sso_login</code> command</a>.</li>
+  <li>This setting doesn't restrict access through file protocols such as SMB.</li>
+  <li>Because the FTP protocol sends passwords in plaintext, it is inherently insecure. In addition, many FTP clients don't support Transport Layer Security (TSL) or fall back quietly to the plaintext protocol. For this reason, all Qumulo clusters have FTP disabled by default.</li>
+</ul>
+{{site.data.alerts.end}}
+
+In Qumulo Core 5.3.0 (and higher), you can use the `qq saml_modify_settings` CLI command to require AD users to use SSO authentication for managing your cluster. For example:
+
+```bash
+qq saml_modify_settings --require-sso true
+```
+
+When the cluster requires SSO authentication, your cluster rejects password-based authentication from AD users in the Web UI, the `qq` CLI, and the REST API.
+
 
 ## Known Issues and Limitations
-* Currently, AD users can still use their passwords to authenticate to the Web UI and the `qq` CLI.
+* Local users (the built-in `admin` user and any additional users) can always use their passwords to authenticate to the Web UI and the `qq` CLI.
+
+  {% include important.html content="We recommend setting a strong password for the built-in `admin` user and using this account only for emergencies." %} 
+
+* If SSO is required for a Qumulo Core cluster, it isn't possible to log in to the **Interactive API documentation** section of the **APIs & Tools** page in the Web UI.
+
 * Qumulo Core doesn't support:
   * **SAML Single Logout (SLO):** We recommend clicking **Sign out** in the Web UI.
   * **Automatic Configuration from Metadata XML:** You must specify each parameter by using the `qq` CLI.
   * **Returning to Previous Web UI Page:** You can't return to a previous page after re-authenticating (for example, after a timeout).
+  * **Azure AD SAML Toolkit:** Currently, Qumulo Core doesn't provide support due to a compatibility issue.
 
 
 ## Troubleshooting SAML SSO Authentication
