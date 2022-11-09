@@ -175,7 +175,7 @@ When the cluster requires SSO authentication, your cluster rejects password-base
 
   {% include important.html content="We recommend setting a strong password for the built-in `admin` user and using this account only for emergencies." %} 
 
-* If SSO is required for a Qumulo Core cluster, it isn't possible to log in to the **Interactive API documentation** section of the **APIs & Tools** page in the Weh UI.
+* If SSO is required for a Qumulo Core cluster, it isn't possible to log in to the **Interactive API documentation** section of the **APIs & Tools** page in the Web UI.
 
 * Qumulo Core doesn't support:
   * **SAML Single Logout (SLO):** We recommend clicking **Sign out** in the Web UI.
