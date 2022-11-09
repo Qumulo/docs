@@ -211,7 +211,9 @@ h1.post-title-main:nth-child(1) {
 }
 
 .breadcrumb-line {
-  margin-bottom: 20px; 
+  margin-bottom: 10px;
+  font-size: 14px;
+  font-weight: bold; 
 }
 
 /* -------------------- TOP NAVBAR END -------------------- */
