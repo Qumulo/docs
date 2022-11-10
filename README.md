@@ -8,9 +8,9 @@ breadcrumbs: exclude
 Welcome. This site is a new documentation portal for [Qumulo](https://qumulo.com/) that uses [docs-as-code principles](https://www.writethedocs.org/guide/docs-as-code/). As we continue to add new content to this portal, we want you to ask questions and share your ideas with us&mdash;click **Edit on GitHub** on any page.
 
 **Table of Contents**
-* [Qumulo-Certified Hardware Guide](hardware-guide/)
-* [Qumulo in the Cloud Guide](cloud-guide/)
-* [Qumulo Administrator Guide](administrator-guide/)
+* [Qumulo-Certified Hardware Guide](hardware-guide/index.html)
+* [Qumulo in the Cloud Guide](cloud-guide/index.html)
+* [Qumulo Administrator Guide](administrator-guide/index.html)
 
 ## Visit the Knowledge Base
 For a deeper dive into Qumulo features and advanced functionality such as cluster administration, visit the [Qumulo Care](https://care.qumulo.com/hc/en-us) portal. Qumulo Care lets you open a case, read articles and watch videos from our content library, review product release notes, and get involved in the Qumulo community.
