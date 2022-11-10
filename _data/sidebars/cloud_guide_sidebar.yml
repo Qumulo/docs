@@ -22,6 +22,7 @@ entries:
 
   - title: Qumulo in the Cloud Guide
     output: web
+    type: navi
     folderitems:
 
     - title: Documentation Home
