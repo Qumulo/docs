@@ -21,7 +21,6 @@ entries:
       type: frontmatter
 
   - title: Qumulo-Certified Hardware Guide
-    url: /hardware-guide/index.html
     output: web
     folderitems:
 
@@ -30,7 +29,7 @@ entries:
       output: web
 
     - title: Hardware Guide Home
-      url: /hardware-guide/index.html
+      url: /hardware-guide/
       output: web
 
   - title: General Guidance
