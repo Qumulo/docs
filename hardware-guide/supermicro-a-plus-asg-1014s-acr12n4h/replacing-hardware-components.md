@@ -23,11 +23,7 @@ This section explains how to replace hardware components in your {{site.sm1014s}
 </ul>
 {{site.data.alerts.end}}
 
-This section explains the most common scenarios of replacing failed hardware components such as:
-* Drives
-* Power Supply Units (PSUs)
-* Fans
-* DIMMs (memory)
+This section explains the most common scenarios of replacing failed hardware components.
 
 {% include content-reuse/see-technical-specifications.md %}
 
