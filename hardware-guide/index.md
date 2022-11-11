@@ -2,7 +2,7 @@
 title: "Qumulo-Certified Hardware Guide"
 layout: parent_landing_page
 permalink: /hardware-guide/
-redirect-from:
+redirect_from:
   - /hardware/
 sidebar: hardware_guide_sidebar
 search: exclude

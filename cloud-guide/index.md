@@ -2,7 +2,7 @@
 title: "Qumulo in the Cloud Guide"
 layout: parent_landing_page
 permalink: /cloud-guide/
-redirect-from:
+redirect_from:
   - /cloud/
 sidebar: cloud_guide_sidebar
 search: exclude
