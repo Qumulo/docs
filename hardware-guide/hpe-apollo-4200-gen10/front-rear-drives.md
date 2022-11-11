@@ -2,7 +2,7 @@
 title: "Front and Rear Drive Bays on HPE Apollo 4200 Gen10 Nodes"
 summary: "This section explains the front and rear drive bays in your HPE Apollo 4200 Gen10 node."
 permalink: hardware-guide/hpe-apollo-4200-gen10/front-rear-drives.html
-redirect-from:
+redirect_from:
   - hardware/hpe-apollo-4200-gen10/front-rear-drives.html
 sidebar: hardware_guide_sidebar
 keywords: front drive, rear drive, drive, drive bay

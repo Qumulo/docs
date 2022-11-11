@@ -2,7 +2,7 @@
 title: "Qumulo Administrator Guide"
 layout: parent_landing_page
 permalink: /administrator-guide/
-redirect-from:
+redirect_from:
   - /administrator-guide.html
 sidebar: administrator_guide_sidebar
 search: exclude
