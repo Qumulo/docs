@@ -23,11 +23,7 @@ This section explains how to replace hardware components in your {{site.sm1114s}
 </ul>
 {{site.data.alerts.end}}
 
-This section explains the most common scenarios of replacing failed hardware components such as:
-* Drives (excluding boot drives)
-* Power Supply Units (PSUs)
-* Fans
-* DIMM (memory)
+This section explains the most common scenarios of replacing failed hardware components.
 
 {% include content-reuse/platform-agnostic-part-replacement-procedure-fvt.md %}
 
