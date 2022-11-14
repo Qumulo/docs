@@ -35,15 +35,23 @@ This process requires coordination between the cluster administrator and SSO adm
 
 1. The cluster administrator contacts the SSO administrator and asks the SSO administrator to create a SAML integration for the Qumulo cluster.
 
-1. The SSO administrator creates a SAML integration with your organization's SSO [identity provider](#identity-provider) (IdP) and uses the cluster's fully qualified domain name (FQDN) format for the [service provider](#service-provider) (SP) endpoint (also known as the _assertion consumer service URL_), in the following format:
+1. The SSO administrator creates a SAML integration with your organization's SSO [identity provider](#identity-provider) (IdP).
 
-   ```
-   https://my-cluster.my-org.com/saml
-   ```
+   a. The SSO administrator uses the cluster's fully qualified domain name (FQDN) format for the [service provider](#service-provider) (SP) endpoint (also known as the _assertion consumer service URL_), in the following format:
+
+      ```
+      https://my-cluster.my-org.com/saml
+      ```
    
-   {% include note.html content="Because the user's browser performs DNS resolution (for example, in a VPN-only scenario), it isn't necessary for an external DNS server to be able to resolve the cluster's FQDN." %}
+      {% include note.html content="Because the user's browser performs DNS resolution (for example, in a VPN-only scenario), it isn't necessary for an external DNS server to be able to resolve the cluster's FQDN." %}
 
-1. If prompted, the SSO administrator specifies the HTTP POST binding for the SP endpoint. Typically, this binding is specified by default.
+   b. If prompted, the SSO administrator enters the HTTP POST binding for the SP endpoint. Typically, this binding is specified by default.
+
+   c. If prompted for **SP Entity ID** (alternatively named **Application Identifier** or **Audience**), the SSO administrator enters `https://my-cluster.my-org.com/saml`.
+
+   d. If **SAML Signing**  (depending on the SSO service, this option is named differently) configuration is available, the SSO administrator sets it to **Sign SAML response and assertion**.
+   
+      {% include note.html content="Qumulo Core requires that IdP sign both the assertion and the entire SAML response." %}
 
 1. After creating the SAML integration, the SSO administrator provides the following information to the cluster administrator.
 
@@ -57,12 +65,16 @@ This process requires coordination between the cluster administrator and SSO adm
      https://my-org.sso-provider.com/foo
      ```
      
-   * The IdP issuer or `EntityId`. For example:
+   * The IdP issuer or `EntityId`.
+
+     {% include note.html content="Don't confuse `EntityId` with SP Entity ID." %}
+
+     For example:
 
      ```
      http://www.sso-provider.com/abc12de34fgAB5CDh6i7
      ```
-   
+    
    * The FQDN of the cluster, in the following format:
 
      ```
@@ -111,6 +123,7 @@ Qumulo Core supports three SAML SSO workflows:
 
    If the user has sufficient privileges, the Web UI logs the user in. Otherwise, the Web UI displays an error message.
 
+<a name="sp-inititated-sso-workflow"></a>
 ### SP-Initiated SSO Workflow
 1. A user navigates to the Qumulo cluster's Web UI endpoint in a browser.
 
@@ -183,7 +196,7 @@ When the cluster requires SSO authentication, your cluster rejects password-base
   * **SAML Single Logout (SLO):** We recommend clicking **Sign out** in the Web UI.
   * **Automatic Configuration from Metadata XML:** You must specify each parameter by using the `qq` CLI.
   * **Returning to Previous Web UI Page:** You can't return to a previous page after re-authenticating (for example, after a timeout).
-  * **Azure AD SAML Toolkit:** Currently, Qumulo Core doesn't provide support due to a compatibility issue.
+  * **Azure AD SAML Toolkit:** Currently, due to a configuration deficiency in the toolkit, IdP-initiated SSO isn't operational for Qumulo as a Service. Use the [SP-initiated SSO workflow](#sp-inititated-sso-workflow).
 
 
 ## Troubleshooting SAML SSO Authentication
