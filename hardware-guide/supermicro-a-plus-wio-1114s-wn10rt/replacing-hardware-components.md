@@ -21,8 +21,6 @@ keywords: technical specifications, tech specs, specs, specifications, Supermicr
 </ul>
 {{site.data.alerts.end}}
 
-This section explains the most common scenarios of replacing failed hardware components.
-
 {% include content-reuse/platform-agnostic-part-replacement-procedure-fvt.md %}
 
 ## To Replace a Drive
