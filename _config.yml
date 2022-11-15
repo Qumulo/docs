@@ -135,7 +135,11 @@ plugins:
   - jekyll-redirect-from
 
 # Global include variables
-exampleIP: 203.0.113.1
+exampleIP0: 203.0.113.0
+exampleIP1: 203.0.113.1
+exampleIP2: 203.0.113.2
+exampleSubnet1: 255.0.0.1
+exampleGateway1: 192.168.0.1
 
 splitIlo: We strongly recommend separating your iLO access network from your client-facing network.
 partReplaceDefine: When you replace a component such as the motherboard or a NIC card in your node, you must ensure that the firmware version and configuration are correct for your new components. To do this, you must perform the part replacement procedure by using the FVT.

@@ -594,8 +594,12 @@ a.accordion-toggle, a.accordion-collapsed {
 
 .nav {
     /* padding: 4px;*/
-    padding:0px;
+    padding: 0px;
     margin: 0px;
+}
+
+.nav-buttons {
+    width: 225px;
 }
 
 .nav > li {

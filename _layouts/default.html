@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     {% include head.html %}
     <script>
@@ -92,6 +92,7 @@
 
         <!-- Content Column -->
         <div class="{{content_col_size}}" id="tg-sb-content">
+            {% include breadcrumbs %}
             {{content}}
         </div>
     <!-- /.row -->

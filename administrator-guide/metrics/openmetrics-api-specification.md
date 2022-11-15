@@ -16,7 +16,7 @@ Qumulo metrics are available at the following endpoint.
 https://<my-cluster-hostname>:8000/v2/metrics/endpoints/default/data
 ```
 
-You can configure a monitoring system that supports the [OpenMetrics Specification](https://github.com/OpenObservability/OpenMetrics/blob/main/specification/OpenMetrics.md) to use [bearer token authentication](using-access-tokens.md) to access this endpoint.
+You can configure a monitoring system that supports the [OpenMetrics Specification](https://github.com/OpenObservability/OpenMetrics/blob/main/specification/OpenMetrics.md) to use [bearer token authentication](../external-services/using-access-tokens.md) to access this endpoint.
 
 ## Metric Types
 All Qumulo metrics belong to one of the following OpenMetrics types.
@@ -30,19 +30,19 @@ All Qumulo metrics belong to one of the following OpenMetrics types.
   </thead>
   <tbody>
     <tr>
-      <td><a name="metric-type-counter"></a><code>counter</code></td>
+      <td><a id="metric-type-counter"></a><code>counter</code></td>
       <td>An integer that increases monotonically from zero, stored in <code>&lt;metric_name&gt;_count</code>. {% include note.html content="During normal operation, the value of <code>counter</code> never decreases." %}</td>
     </tr>
     <tr>
-      <td><a name="metric-type-gauge"></a><code>gauge</code></td>
+      <td><a id="metric-type-gauge"></a><code>gauge</code></td>
       <td>A value that represents a single integer (similar to <code>counter</code>), stored in <code>&lt;metric_name&gt;</code>. {% include note.html content="During normal operation, the value of a <code>gauge</code> metric might increase or decrease." %}</td>
     </tr>
     <tr>
-      <td><a name="metric-type-histogram"></a><code>histogram</code></td>
+      <td><a id="metric-type-histogram"></a><code>histogram</code></td>
       <td><p>A representation of a series of <em>buckets</em>, where each bucket tracks values within a specific range.</p><p>A histogram has a <code>count</code> field and a <code>sum</code> field, stored in <code>&lt;metric_name&gt;_count</code> (the total number of samples) and <code>&lt;metric_name&gt;_sum</code> (the sum of all samples). Qumulo Core emits a single bucket that contains all samples.</p> {% include tip.html content="You can use <code>histogram</code> metrics to keep track of averages by dividing the <code>sum</code> field by the <code>count</code> field." %}</td>
     </tr>
     <tr>
-      <td><a name="metric-type-info"></a><code>info</code></td>
+      <td><a id="metric-type-info"></a><code>info</code></td>
       <td>Informational text about the system, stored in <code>&lt;metric_name&gt;_info</code>. An <code>info</code> metric always has a value of <code>1</code> and labels that contain detailed information.</td>
     </tr>
   </tbody>
@@ -492,7 +492,7 @@ The following table lists metric label names, possible values, and descriptions.
   </thead>
   <tbody>
     <tr>
-      <td><a name="metric-label-bond"></a><code>bond</code></td>
+      <td><a id="metric-label-bond"></a><code>bond</code></td>
       <td>
         <ul>
           <li><code>bond0</code></li>
@@ -502,12 +502,12 @@ The following table lists metric label names, possible values, and descriptions.
       <td>The bond to which a network interface belongs</td>
     </tr>
     <tr>
-      <td><a name="metric-label-cpu"></a><code>cpu</code></td>
+      <td><a id="metric-label-cpu"></a><code>cpu</code></td>
       <td>A non-negative integer</td>
       <td>The CPU index in the node</td>
     </tr>
     <tr>
-      <td><a name="metric-label-data_type"></a><code>data_type</code></td>
+      <td><a id="metric-label-data_type"></a><code>data_type</code></td>
       <td>
         <ul>
           <li><code>data</code>: Read or write operations on the data of a file.</li>
@@ -518,7 +518,7 @@ The following table lists metric label names, possible values, and descriptions.
       <td>The data type that an operation transfers</td>
     </tr>
     <tr>
-      <td><a name="metric-label-disk_type"></a><code>disk_type</code></td>
+      <td><a id="metric-label-disk_type"></a><code>disk_type</code></td>
       <td>
         <ul>
           <li><code>hdd</code>: Hard Disk Drive</li>
@@ -528,12 +528,12 @@ The following table lists metric label names, possible values, and descriptions.
       <td>The underlying storage type</td>
     </tr>
     <tr>
-      <td><a name="metric-label-drive_bay"></a><code>drive_bay</code></td>
+      <td><a id="metric-label-drive_bay"></a><code>drive_bay</code></td>
       <td>A drive bay name. For example: <code>b3</code>, <code>1.1</code></td>
       <td>The physical drive bay in the chassis.</td>
     </tr>
     <tr>
-      <td><a name="metric-label-entry_type"></a><code>entry_type</code></td>
+      <td><a id="metric-label-entry_type"></a><code>entry_type</code></td>
       <td>
         <ul>
           <li><code>alternate_data_stream</code></li>
@@ -546,17 +546,17 @@ The following table lists metric label names, possible values, and descriptions.
       <td>The file system object type</td>
     </tr>
     <tr>
-      <td><a name="metric-label-fan"></a><code>fan</code></td>
+      <td><a id="metric-label-fan"></a><code>fan</code></td>
       <td>A fan name, for example <code>system fan 1</code></td>
       <td>The fan name</td>
     </tr>
     <tr>
-      <td><a name="metric-label-interface"></a><code>interface</code></td>
+      <td><a id="metric-label-interface"></a><code>interface</code></td>
       <td>An interface name, for example <code>eth0</code></td>
       <td>The interface name</td>
     </tr>
     <tr>
-      <td><a name="metric-label-io_type"></a><code>io_type</code></td>
+      <td><a id="metric-label-io_type"></a><code>io_type</code></td>
       <td>
         <ul>
           <li><code>none</code></li>
@@ -568,27 +568,27 @@ The following table lists metric label names, possible values, and descriptions.
       <td>The I/O that an operation performs</td>
     </tr>
     <tr>
-      <td><a name="metric-label-location"></a><code>location</code></td>
+      <td><a id="metric-label-location"></a><code>location</code></td>
       <td>A location on the chassis, for example <code>left</code> or <code>right</code></td>
       <td>The location on the chassis. {% include note.html content="For PSU, this location is relative to the back of the node." %}</td>
     </tr>
     <tr>
-      <td><a name="metric-label-node_id"></a><code>node_id</code></td>
+      <td><a id="metric-label-node_id"></a><code>node_id</code></td>
       <td>A positive integer that represents a node ID in the cluster.</td>
       <td>A value that differentiates between the different nodes in a cluster</td>
     </tr>
     <tr>
-      <td><a name="metric-label-op_name"></a><code>op_name</code></td>
+      <td><a id="metric-label-op_name"></a><code>op_name</code></td>
       <td>Any operation name, including NFSv3, NFSv4.1, SMBv2, SMBv3 or FTP</td>
       <td>The recorded operation</td>
     </tr>
     <tr>
-      <td><a name="metric-label-path"></a><code>path</code></td>
+      <td><a id="metric-label-path"></a><code>path</code></td>
       <td>Slash (<code>/</code>)</td>
       <td>The path to a directory in the file system</td>
     </tr>
     <tr>
-      <td><a name="metric-label-protocol"></a><code>protocol</code></td>
+      <td><a id="metric-label-protocol"></a><code>protocol</code></td>
       <td>
         <ul>
           <li><code>nfs</code>: NFSv3 or NFSv4.1</li>
@@ -599,7 +599,7 @@ The following table lists metric label names, possible values, and descriptions.
       <td>The protocol of the recorded operation</td>
     </tr>
     <tr>
-      <td><a name="metric-label-role"></a><code>role</code></td>
+      <td><a id="metric-label-role"></a><code>role</code></td>
       <td>
         <ul>
           <li><code>frontend</code></li>
@@ -609,12 +609,12 @@ The following table lists metric label names, possible values, and descriptions.
       <td>The role of the interface {% include note.html content="<code>frontend</code> includes protocol, management, and replication traffic. <code>backend</code> includes all intra-node communications." %}</td>
     </tr>
     <tr>
-      <td><a name="metric-label-server_url"></a><code>server_url</code></td>
+      <td><a id="metric-label-server_url"></a><code>server_url</code></td>
       <td>A hostname (for example, <code>ad.my-domain.com</code>) or an IP address</td>
       <td>The URL of a remote server</td>
     </tr>
     <tr>
-      <td><a name="metric-label-usage_type"></a><code>usage_type</code></td>
+      <td><a id="metric-label-usage_type"></a><code>usage_type</code></td>
       <td>
         <ul>
           <li><code>data</code></li>
