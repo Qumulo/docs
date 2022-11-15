@@ -5,7 +5,8 @@ The dedicated out-of-band management port allows functionality such as remote di
 
 
 ## Step 2: Connecting the 25 Gbps or 100 Gbps Ports
-{% include content-reuse/see-technical-specifications.md %}
+{% capture content_tag %}{{site.seeTechSpecs}}{% endcapture %}
+{% include note.html content=content_tag %}
 
 After you connect the IPMI port, connect your 25 Gbps or 100 Gbps ports (compatible with QSFP28 and QSFP56). There are two 25 Gbps or 100 Gbps ports on the back of your node. {{site.unifyNetDefine}}
 

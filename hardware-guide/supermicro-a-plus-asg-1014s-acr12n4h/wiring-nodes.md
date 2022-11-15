@@ -1,6 +1,6 @@
 ---
 title: "Wiring Your Supermicro A+ ASG-1014S-ACR12N4H Nodes"
-summary: "This section explains how to wire your out-of-band management (IPMI) port, 25 Gbps or 100 Gbps ports, and power on Supermicro 1014S nodes."
+summary: "This section explains how to wire the out-of-band management (IPMI) port, 25 Gbps or 100 Gbps ports, and power on Supermicro 1014S nodes."
 permalink: hardware-guide/supermicro-a-plus-asg-1014s-acr12n4h/wiring-nodes.html
 redirect_from:
   - hardware/supermicro-a-plus-asg-1014s-acr12n4h/wiring-nodes.html

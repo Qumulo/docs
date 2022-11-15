@@ -1,4 +1,5 @@
-{% include content-reuse/see-technical-specifications.md %}
+{% capture content_tag %}{{site.seeTechSpecs}}{% endcapture %}
+{% include note.html content=content_tag %}
 
 ##  Prerequisites
 {{site.data.alerts.note}}

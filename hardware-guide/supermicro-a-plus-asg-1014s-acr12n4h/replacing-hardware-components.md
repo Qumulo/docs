@@ -18,12 +18,9 @@ keywords: technical specifications, tech specs, specs, specifications, Supermicr
     </ul>
   </li>
   <li>Don't update your node firmware unless a Qumulo representative instructs you to perform an update.</li>
+  <li>{{site.seeTechSpecs}}</li>
 </ul>
 {{site.data.alerts.end}}
-
-This section explains the most common scenarios of replacing failed hardware components.
-
-{% include content-reuse/see-technical-specifications.md %}
 
 
 ## To Perform the Part Replacement Procedure by Using the FVT
