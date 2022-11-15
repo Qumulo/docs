@@ -39,9 +39,9 @@ This process requires coordination between the cluster administrator and SSO adm
 
    a. The SSO administrator uses the cluster's fully qualified domain name (FQDN) format for the [service provider](#service-provider) (SP) endpoint (also known as the _assertion consumer service URL_), in the following format:
 
-      ```
-      https://my-cluster.my-org.com/saml
-      ```
+   ```
+   https://my-cluster.my-org.com/saml
+   ```
    
       {% include note.html content="Because the user's browser performs DNS resolution (for example, in a VPN-only scenario), it isn't necessary for an external DNS server to be able to resolve the cluster's FQDN." %}
 
