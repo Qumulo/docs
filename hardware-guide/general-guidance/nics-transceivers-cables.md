@@ -1,6 +1,6 @@
 ---
 title: "Identifying NICs and Choosing Transceivers and Cables for Your Node"
-summary: "This section explains how to identify your node's NICs and choose the correct transceivers and cables for your nodes."
+summary: "This section explains how to identify the NICs in your nodes and choose the correct transceivers and cables."
 permalink: /hardware-guide/general-guidance/nics-transceivers-cables.html
 redirect_from:
   - /nics-transceivers-cables.html
