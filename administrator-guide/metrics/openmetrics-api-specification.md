@@ -16,7 +16,7 @@ Qumulo metrics are available at the following endpoint.
 https://<my-cluster-hostname>:8000/v2/metrics/endpoints/default/data
 ```
 
-You can configure a monitoring system that supports the [OpenMetrics Specification](https://github.com/OpenObservability/OpenMetrics/blob/main/specification/OpenMetrics.md) to use [bearer token authentication](using-access-tokens.md) to access this endpoint.
+You can configure a monitoring system that supports the [OpenMetrics Specification](https://github.com/OpenObservability/OpenMetrics/blob/main/specification/OpenMetrics.md) to use [bearer token authentication](../external-services/using-access-tokens.md) to access this endpoint.
 
 ## Metric Types
 All Qumulo metrics belong to one of the following OpenMetrics types.
