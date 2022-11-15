@@ -49,19 +49,19 @@ Use the following commands to configure the iLO port on your nodes.
 1. Set the interface IP address. For example:
 
    ```
-   # ipmitool lan set 1 ipaddr 203.0.113.0
+   # ipmitool lan set 1 ipaddr {{site.exampleIP0}}
    ```
 
 1. Set the interface subnet mask. For example:
 
    ```
-   # ipmitool lan set 1 netmask 255.0.0.1
+   # ipmitool lan set 1 netmask {{site.exampleSubnet1}}
    ```
 
 1. Set the default gateway IP address. For example:
    
    ```
-   # ipmitool lan set 1 defgw ipaddr 192.168.0.1
+   # ipmitool lan set 1 defgw ipaddr {{site.exampleGateway1}}
    ```
 
 1. (Optional) Enable baseboard management controller (BMC) Address Resolution Protocol (ARP) responses.

@@ -36,7 +36,7 @@ Before you begin, make sure that you have done the following.
 1. To log in to your cluster, use the `qq` CLI and specify your cluster's IP address. For example:
 
    ```bash
-   qq --host 203.0.113.1 login
+   qq --host {{site.exampleIP0}} login
    ```
     
    {% include note.html content="Your user must have `PRIVILEGE_SUPPORT_WRITE` and `PRIVILEGE_SUPPORT_READ`." %}
@@ -44,13 +44,13 @@ Before you begin, make sure that you have done the following.
 1. To install the VPN keys on your cluster, specify your cluster's IP address and the path to the directory that contains the VPN keys. For example:
 
    ```bash
-   qq --host 203.0.113.1 install_vpn_keys /my/path
+   qq --host {{site.exampleIP0}} install_vpn_keys /my/path
    ```
     
 {{page.varVerifyKeys}}
 
    ```bash
-   qq --host 203.0.113.1 get_vpn_keys
+   qq --host {{site.exampleIP0}} get_vpn_keys
    ```
 
 1. Remove any local copies of the VPN key files.
@@ -64,13 +64,13 @@ Before you begin, make sure that you have done the following.
 1. To copy the VPN key files to one of your nodes, use the `scp` command. For example:
 
    ```bash
-   scp /my-path/* admin@203.0.113.1:~/
+   scp /my-path/* admin@{{site.exampleIP0}}:~/
    ```
 
 1. To connect to the node to which you copied the VPN key files, use the `ssh` command. For example:
 
    ```bash
-   ssh admin@203.0.113.1
+   ssh admin@{{site.exampleIP0}}
    ```
 
    The `qq` CLI is available to the admin user. For example:

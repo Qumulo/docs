@@ -33,7 +33,7 @@ The Qumulo distributed file system works best when you spread the workload evenl
 
 This approach provides a list of IP addresses which refer to different nodes in the cluster. Successive DNS queries for the single cluster hostname return different IP addresses. From the perspective of Kerberos, all nodes that comprise a Qumulo cluster act as one host and have the same Kerberos key table. In this way, the Kerberos experience is the same regardless of the selected node.
 
-Unless you need direct access to a specific node through a DNS fully qualified domain name (FQDN), it isn't necessary to use individual DNS `A` records for each node in the cluster (for example, `qumulo1.example.com`, `qumulo2.example.com`, `qumulo3.example.com`, and so on). Instead, we recommend creating a DNS `A` record for the cluster and then duplicating this `A` record for each IP address in the cluster (for example, `qumulo.example.com` &rarr; `203.0.113.1`, `qumulo.example.com` &rarr; `203.0.113.2`, and so on).
+Unless you need direct access to a specific node through a DNS fully qualified domain name (FQDN), it isn't necessary to use individual DNS `A` records for each node in the cluster (for example, `qumulo1.example.com`, `qumulo2.example.com`, `qumulo3.example.com`, and so on). Instead, we recommend creating a DNS `A` record for the cluster and then duplicating this `A` record for each IP address in the cluster (for example, `qumulo.example.com` &rarr; `{{site.exampleIP0}}`, `qumulo.example.com` &rarr; `{{site.exampleIP1}}`, and so on).
 
 ### To Configure DNS Round Robin
 1. [Join your Qumulo cluster to AD](kerberos-prerequisites-joining-cluster-active-directory.md).
@@ -124,7 +124,7 @@ mount.nfs: access denied by server while mounting qumulo-cluster.ad.eng.qumulo.c
 ## Configuring SPN with DNS
 For Kerberos authentication to work correctly, SPN entries must correspond to DNS `A` records exactly. Although the machine account is sometimes the same as the DNS `A` record created during the domain-join process, depending on your the DNS environment, this might not always be true.
 
-In the following example, a Qumulo cluster has a machine account with the SPN `nfs/qumulo.example.com` and two DNS `A` records that point to the same Qumulo cluster IP, `203.0.113.0`:
+In the following example, a Qumulo cluster has a machine account with the SPN `nfs/qumulo.example.com` and two DNS `A` records that point to the same Qumulo cluster IP, `{{site.exampleIP0}}`:
 * `qumulo.example.com`
 * `storage.example.com`
 

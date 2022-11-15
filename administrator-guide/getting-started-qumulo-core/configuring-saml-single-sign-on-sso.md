@@ -143,7 +143,7 @@ Qumulo Core supports three SAML SSO workflows:
 1. A user uses the `qq sso_login` CLI command. For example:
 
    ```bash
-   qq --host {{site.exampleIP}} sso_login
+   qq --host {{site.exampleIP0}} sso_login
    ```
    
    The login URL appears.
