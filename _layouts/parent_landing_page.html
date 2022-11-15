@@ -43,11 +43,11 @@ layout: default
       {% if entry.type != 'navi' and entry.title %}
         <ul>
           <li><strong>{{entry.title}}</strong></li>
-          {% for item in entry.folderitems %}
-            <ul>          
-              <li><a href="{{ item.url }}">{{ item.title }}</a></li>
-            </ul>
-          {% endfor %}    
+            <ul>
+              {% for item in entry.folderitems %}
+                <li><a href="{{ item.url }}">{{ item.title }}</a></li>
+              {% endfor %}
+            </ul>    
         </ul>             
       {% endif %}
     {% endfor %}  
