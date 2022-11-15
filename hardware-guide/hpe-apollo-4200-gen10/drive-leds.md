@@ -12,8 +12,8 @@ keywords: drive, hard drive, LED, large form factor, LFF, small form factor, SFF
 
 To locate the LFF drive LEDs, use the following diagram.
 
-{% capture alt_tag %}iLarge form factor (LFF) drive LEDs on the {{site.a4200g10}} node{% endcapture %}
-<!-- Reuse the Gen9 image -->
+{% capture alt_tag %}Large form factor (LFF) drive LEDs on the {{site.a4200g10}} node{% endcapture %}
+{% comment %}Reuse the Gen9 image{% endcomment %}
 {% include image.html alt=alt_tag file="../../hpe-apollo-4200-gen9/images/lff-drive-leds.png" %}
 
 You can determine the current state of an LFF drive by reviewing the status of the following LEDs:
@@ -111,7 +111,7 @@ The following table explains the various combinations of the two LFF LEDs.
 
 To locate the SFF drive LEDs, use the following diagram.
 
-{% capture alt_tag %}iSmall form factor (SFF) drive LEDs on the {{site.a4200g10}} node{% endcapture %}
+{% capture alt_tag %}Small form factor (SFF) drive LEDs on the {{site.a4200g10}} node{% endcapture %}
 {% include image.html alt=alt_tag file="sff-gen10-led-guide.png" %}
 
 1. **Locate LED**
