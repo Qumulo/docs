@@ -31,7 +31,7 @@ Unlike _session bearer tokens_ (that have a short expiration time and require a 
   <li>{{page.varPrereqRead}}</li>
 </ul>
 
-<a name="creating-using-access-tokens"></a>
+<a id="creating-using-access-tokens"></a>
 ## Creating and Using Access Tokens
 {{page.varPrereqWrite}} This section explains how to create access tokens by using the `qq` CLI.
 
@@ -41,7 +41,7 @@ To create a token, use the `auth_create_access_token` command and specify the us
 $ qq auth_create_access_token jane
 ```
 
-<a name="create-token-format"></a>You can:
+<a id="create-token-format"></a>You can:
 * Specify the user as a name
 * Qualify the user by using a domain prefix, for example:
   * `ad:jane`
@@ -58,7 +58,7 @@ $ qq auth_create_access_token jane
 </ul>
 {{site.data.alerts.end}}
 
-<a name="json-bearer-token"></a>The `auth_create_access_token` command returns a JSON response that contains the bearer token body and the access token ID, which you can use to manage the access token.
+<a id="json-bearer-token"></a>The `auth_create_access_token` command returns a JSON response that contains the bearer token body and the access token ID, which you can use to manage the access token.
 
 ```json
 {
@@ -156,7 +156,7 @@ To delete an access token, use the `auth_delete_access_token` command and specif
 $ qq auth_delete_access_token 1234567890123456789012
 ```
 
-<a name="best-practices-using-access-tokens"></a>
+<a id="best-practices-using-access-tokens"></a>
 ## Best Practices for Using Qumulo Core Access Tokens
 This section lists the best practices for limiting the exposure to lost credentials and working with Qumulo Core access tokens securely.
 
