@@ -8,8 +8,6 @@ sidebar: hardware_guide_sidebar
 keywords: out-of-band management, out of band management, iLO, DHCP, network, networking, LAN, ipmitool
 ---
 
-This section explains how to configure and use Integrated Lights Out (iLO) on {{site.a4200g9}} nodes.
-
 {% include important.html content="Access to the iLO port on a public LAN can have serious security implications because it can grant anyone with credentials direct access to your server's hardware and console. Follow security best practices when implementing iLO access." %}
 
 ## Prerequisites

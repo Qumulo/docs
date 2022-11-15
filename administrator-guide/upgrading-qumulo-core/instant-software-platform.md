@@ -1,6 +1,6 @@
 ---
 title: "Performing Instant Software Upgrades and Platform Upgrades"
-summary: "This section explains the difference between Instant Software Upgrades and Platform Upgrades."
+summary: "This section explains the difference between Instant Software Upgrades and Platform Upgrades. For more information, see <a href='https://care.qumulo.com/hc/en-us/articles/115008107468'>Performing Qumulo Core Upgrades by Using the qq CLI</a> on Qumulo Care."
 permalink: /administrator-guide/upgrading-qumulo-core/instant-software-platform.html
 redirect_from:
   - /administrator-guide/upgrades/instant-software-platform.html
@@ -10,7 +10,6 @@ varContactQumuloCare: If you perform multiple upgrades back to back, you might e
 varRollingRebootRefresh: If you don’t see a rolling reboot option for a platform upgrade, refresh the page in your browser.
 ---
 
-This section explains the difference between Instant Software Upgrades and Platform Upgrades. For more information, see [Performing Qumulo Core Upgrades by Using the qq CLI](https://care.qumulo.com/hc/en-us/articles/115008107468) on Qumulo Care.
 
 {{site.data.alerts.important}}
 <ul>

@@ -1,14 +1,12 @@
 ---
 title: "Front and Rear Drive Bays on HPE Apollo 4200 Gen10 Nodes"
-summary: "This section explains the front and rear drive bays in your HPE Apollo 4200 Gen10 node."
+summary: "This section shows the front large form factor (LFF) and rear small form factor (SFF) drive bays in HPE Apollo 4200 Gen10 nodes. For more information, see <a href='https://support.hpe.com/hpesc/public/docDisplay?docLocale=en_US&docId=emr_na-a00061642en_us)'>HPE Apollo 4200 Gen10  Server - Document List</a>."
 permalink: hardware-guide/hpe-apollo-4200-gen10/front-rear-drives.html
 redirect_from:
   - hardware/hpe-apollo-4200-gen10/front-rear-drives.html
 sidebar: hardware_guide_sidebar
 keywords: front drive, rear drive, drive, drive bay
 ---
-
-This section shows the front large form factor (LFF) and rear small form factor (SFF) drive bays in your {{site.a4200g10}} node. For more information, see [{{site.a4200g10}} Server - Document List](https://support.hpe.com/hpesc/public/docDisplay?docLocale=en_US&docId=emr_na-a00061642en_us).
 
 <br>
 

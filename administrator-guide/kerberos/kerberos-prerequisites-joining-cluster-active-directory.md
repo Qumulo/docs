@@ -6,7 +6,7 @@ sidebar: administrator_guide_sidebar
 keywords: NFS, NFS4.1, NFSv4.1, Kerberos, POSIX, RFC2307, Base DN, Active Directory, AD, NTP
 ---
 
-This section describes the prerequisites for joining a Qumulo Cluster to Active Directory for using NFSv4.1 with Kerberos. For more information, see [Join Your Qumulo Cluster to Active Directory](https://care.qumulo.com/hc/en-us/articles/115007276068) on Qumulo Care.
+For more information, see [Join Your Qumulo Cluster to Active Directory](https://care.qumulo.com/hc/en-us/articles/115007276068) on Qumulo Care.
 
 ## Using Active Directory (AD) for POSIX Attributes (RFC2307)
 While [using AD for POSIX attributes](https://care.qumulo.com/hc/en-us/articles/115008011927) is optional, it helps avoid issues with Linux ID mapping. We recommend enabling [RFC 2307](https://datatracker.ietf.org/doc/html/rfc2307) to match your client's functionality.

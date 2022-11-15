@@ -36,6 +36,8 @@ layout: default
 
     {{content}}
 
+    <p>{{page.summary}}</p>
+
     <strong>Table of Contents</strong>
     {% for entry in site.data.sidebars[page.sidebar].entries[0].folders %}
       {% if entry.type != 'navi' and entry.title %}

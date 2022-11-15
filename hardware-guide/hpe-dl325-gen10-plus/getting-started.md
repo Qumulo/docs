@@ -1,14 +1,12 @@
 ---
 title: "Getting Started with Qumulo on HPE ProLiant DL325 Gen10 Plus"
-summary: "This section explains how to prepare HPE ProLiant DL325 Gen10 Plus nodes for creating a Qumulo Core cluster."
+summary: "This section explains how to prepare HPE ProLiant DL325 Gen10 Plus nodes for creating a Qumulo Core cluster. This guide is for system administrators, professional service providers, and colleagues in your organization who are responsible for installing and configuring server hardware. For more information, see <a href='https://support.hpe.com/hpesc/public/docDisplay?docLocale=en_US&docId=a00102298en_us'>HPE ProLiant DL325 Gen10 Plus Server - Document List</a>."
 permalink: hardware-guide/hpe-dl325-gen10-plus/getting-started.html
 redirect_from:
   - hardware/hpe-dl325-gen10-plus/getting-started.html
 sidebar: hardware_guide_sidebar
 keywords: getting started guide, quick reference, HPE, ProLiant DL325 Gen10 Plus, verify node, field verification tool, FVT, intelligent provisioning
 ---
-
-This section explains how to prepare {{site.dl325g10p}} nodes for creating a Qumulo Core cluster. This guide is for system administrators, professional service providers, and colleagues in your organization who are responsible for installing and configuring server hardware. For more information, see [{{site.dl325g10p}} Server - Document List](https://support.hpe.com/hpesc/public/docDisplay?docLocale=en_US&docId=a00102298en_us).
 
 ## Prerequisites
 [Qumulo Core USB Drive Installer](https://care.qumulo.com/hc/en-us/articles/360034690034)

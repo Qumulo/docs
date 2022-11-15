@@ -11,8 +11,6 @@ sidebar: hardware_guide_sidebar
 keywords: network transceiver, network transceivers, nic, mellanox, short range transceiver, long range transceiver, fiber, fiber optic, fiber optic cable
 ---
 
-This section explains how to identify your node's NICs and choose the correct transceivers and cables for your nodes.
-
 ## Corresponding Node and NIC Types
 The following table lists node types, the NICs that these nodes use, the speeds of the NICs, and links to the latest transceiver compatibility documentation from the vendor.
 

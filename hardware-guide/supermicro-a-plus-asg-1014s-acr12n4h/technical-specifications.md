@@ -1,14 +1,12 @@
 ---
 title: "Supermicro A+ ASG-1014S-ACR12N4H Technical Specifications"
-summary: "This section provides technical specifications for Supermicro A+ ASG-1014S-ACR12N4H nodes."
+summary: "This section provides technical specifications for Supermicro 1014S node types."
 permalink: hardware-guide/supermicro-a-plus-asg-1014s-acr12n4h/technical-specifications.html
 redirect_from:
   - hardware/supermicro-a-plus-asg-1014s-acr12n4h/technical-specifications.html
 sidebar: hardware_guide_sidebar
 keywords: technical specifications, tech specs, specs, specifications, Supermicro 1014S, ACR12N4H
 ---
-
-This section provides technical specifications for {{site.sm1014s}} nodes.
 
 {{site.data.alerts.note}}
 {% include content-reuse/hybrid-platforms-find-out-ssd-size.md %}

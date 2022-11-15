@@ -1,6 +1,6 @@
 ---
 title: "Managing Snapshots"
-summary: "This section explains how to use the Qumulo Core Web UI to view and manage your saved snapshots."
+summary: "This section explains how to use the Qumulo Core Web UI to view and manage your saved snapshots in Qumulo Core 4.3.3 (and higher)."
 permalink: /administrator-guide/protecting-data/managing-snapshots.html
 redirect_from:
   - /managing-snapshots.html
@@ -12,7 +12,7 @@ varLogin: 1. Log in to Qumulo Core.
 varSaved: 1. Click **Cluster > Saved Snapshots**.
 ---
 
-The **Snapshots** page in Qumulo Core 4.3.3 (and higher) lets you view and manage large numbers of saved snapshots without having to make API queries. This makes it possible to delegate snapshot management operations to a wide range of users.
+The **Snapshots** page lets you work with a large numbers of saved snapshots without having to make API queries. This makes it possible to delegate snapshot management operations to a wide range of users.
 
 ## To View Your Snapshots
 The **Snapshots** page lets you navigate a large number of snapshots.

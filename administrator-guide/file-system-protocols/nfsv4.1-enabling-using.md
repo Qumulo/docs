@@ -10,11 +10,11 @@ sidebar: administrator_guide_sidebar
 keywords: NFS, NFS3, NFSv3, NFSv4.1, export, exports, mount, cluster, enable NFS, disable NFS, floating IP
 ---
 
-Qumulo Core 4.3.0 (and higher) supports Network File System version 4.1 (NFSv4.1). This section explains how to configure your cluster for a supported export configuration and enable or disable NFSv4.1 on your cluster. It also provides detail about supported and unsupported features. For more information about NFSv4.1 and file access permissions, see [Managing File Access Permissions by Using NFSv4.1 Access Control Lists (ACLs)](nfsv4.1-acls.md).
+For more information about NFSv4.1 and file access permissions, see [Managing File Access Permissions by Using NFSv4.1 Access Control Lists (ACLs)](nfsv4.1-acls.md).
 
 {{site.data.alerts.important}}
 <ul>
-  <li>Currently, Qumulo Core supports only NFSv4.1. Mounting with version 4.0 or 4.2 isn't supported.</li>
+  <li>Currently, Qumulo Core 4.3.0 (and higher) supports only NFSv4.1. Mounting with version 4.0 or 4.2 isn't supported.</li>
   <li>The NFSv4.1 protocol requires clients to provide the server with globally unique identifiers. By default, the NFSv4.1 client for Linux uses the machine's hostname as <code>co_ownerid</code>. Because the NFSv4.1 protocol requires a unique identifier for every client, an unpredictable failure can occur if two clients have the same hostname. To configure unique identification for your NFS clients, set the <code>nfs4_unique_id</code> value for them. For more information, see <a href="https://www.kernel.org/doc/html/v5.8/admin-guide/nfs/nfs-client.html#the-nfs4-unique-id-parameter">The nfs4_unique_id parameter</a> in the <em>Linux kernel user's and administrator's guide</em>.</li>
 </ul>
 {{site.data.alerts.end}}
@@ -176,7 +176,7 @@ qq fs_list_locks --protocol nfs4 --lock-type byte-range
 
 ## Supported and Unsupported Features in Qumulo's Implementation of NFSv4.1
 Qumulo's implementation of NFSv4.1 currently supports:
-* Authentication with [Kerberos](../kerberos/)
+* Authentication with [Kerberos](../kerberos/kerberos-with-qumulo-core.md)
 * General file system access (reading, writing, and navigating files)
 * Unstable writes
 * Full use of the NFS exports configuration shared with NFSv3

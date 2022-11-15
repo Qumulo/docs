@@ -1,14 +1,12 @@
 ---
 title: "Racking Your Supermicro A+ ASG-1014S-ACR12N4H Nodes"
-summary: "This section explains how to rack your Supermicro A+ ASG-1014S-ACR12N4H nodes."
+summary: "This section describes how to use the toolless rail system to attach the rails to your server rack and install Supermicro 1014S nodes in a data center."
 permalink: hardware-guide/supermicro-a-plus-asg-1014s-acr12n4h/racking-nodes.html
 redirect_from:
   - hardware/supermicro-a-plus-asg-1014s-acr12n4h/racking-nodes.html
 sidebar: hardware_guide_sidebar
 keywords: technical specifications, tech specs, specs, specifications, Supermicro 1014S, ACR12N4H
 ---
-
-This section describes how to use the toolless rail system to attach the rails to your server rack and install {{site.sm1014s}} nodes in your data center.
 
 ## Using the Toolless Rail System
 {{site.sm1014s}} nodes don't require any tools for attaching rails to your server rack. For more information, see [The Toolless Rail System](https://www.supermicro.com/manuals/superserver/1U/MNL-2436.pdf#page=18) in the Supermicro documentation.

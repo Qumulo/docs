@@ -10,8 +10,6 @@ varMountKRB5: Mount your cluster by using the `krb5` security mechanism. For exa
 varLimitedUsefulness: Both machine account authentication and <code>kinit</code> have limited usefulness because they limit the mount point to a single authenticated user. Between the two authentication options, <code>kinit</code> has an advantage because of the way it handles ID mapping.
 ---
 
-This section describes how to configure a Linux client for using NFSv4.1 with Kerberos.
-
 {% include note.html content="Qumulo Core supports only Linux for using NFSv4.1 with Kerberos." %}
 
 Linux systems implement Kerberos support as a series of loosely related packages and configuration files. For this reason, configuration depends on the Linux distribution and version. This section refers to tools, packages, d&aelig;mons, configuration files, and other elements in Ubuntu 18.04 LTS.

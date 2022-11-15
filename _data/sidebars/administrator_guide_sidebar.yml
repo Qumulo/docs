@@ -107,14 +107,6 @@ entries:
       url: /administrator-guide/qq-cli/enabling-autocomplete.html
       output: web, pdf
 
-  - title: Working with the qq CLI
-    output: web, pdf
-    folderitems:
-
-    - title: Enabling Autocomplete for the qq CLI
-      url: /administrator-guide/qq-cli/enabling-autocomplete.html
-      output: web, pdf
-
   - title: Protecting Your Data
     url: /administrator-guide/protecting-data/index.html
     output: web, pdf

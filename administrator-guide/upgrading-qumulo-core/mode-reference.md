@@ -1,14 +1,12 @@
 ---
 title: "Qumulo Core Upgrade Mode Reference"
-summary: "This section provides a reference for Qumulo Core upgrade modes from version 3.3.3."
+summary: "This section provides a reference for Qumulo Core upgrade modes from version 3.3.3. For more information, see <a class='no_icon' href='https://docs.qumulo.com/administrator-guide/upgrading-qumulo-core/instant-software-platform.html'>Performing Instant Software Upgrades and Platform Upgrades</a>."
 permalink: /administrator-guide/upgrading-qumulo-core/mode-reference.html
 redirect_from:
   - /administrator-guide/upgrades/mode-reference.html
 sidebar: administrator_guide_sidebar
 keywords: update, upgrade, instant, instant software upgrade, platform, platform upgrade
 ---
-
-This section provides a reference for Qumulo Core upgrade modes from version 3.3.3. For more information, see [Performing Instant Software Upgrades and Platform Upgrades](instant-software-platform.md).
 
 {% include note.html content="A _quarterly upgrade_ aggregates all improvements and fixes since the last quarterly upgrade." %}
 

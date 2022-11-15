@@ -1,6 +1,6 @@
 ---
 title: "Using Qumulo Core Access Tokens"
-summary: "This section describes how to create and use access tokens to authenticate external services to Qumulo Core."
+summary: "This section explains how to create and use access tokens&mdash;by using the Qumulo REST API, Python SDK, and <code>qq</code> CLI&mdash;to authenticate external services to Qumulo Core."
 permalink: /administrator-guide/external-services/using-access-tokens.html
 keywords: auth, authentication, access token, bearer token, token
 sidebar: administrator_guide_sidebar
@@ -12,8 +12,6 @@ varBearerTokenWarning: If you misplace the bearer token, you can't retrieve it a
 varPrereqWrite: <code>PRIVILEGE_ACCESS_TOKEN_WRITE</code> is required for creating and deleting access tokens for all users in the system.
 varPrereqRead: <code>PRIVILEGE_ACCESS_TOKEN_READ</code> is required for listing access tokens.
 ---
-
-This section explains how to create and use access tokens&mdash;by using the Qumulo REST API, Python SDK, and `qq` CLI&mdash;to authenticate external services to Qumulo Core.
 
 In Qumulo Core 5.3.0 (and higher), _access tokens_ let a user to authenticate to the Qumulo REST API without having to complete repetitive login procedures. Access tokens provide an alternative to session-based authentication that the `qq login` command and the Web UI use
 
