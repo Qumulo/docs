@@ -1,6 +1,6 @@
 ---
-title: "HPE Apollo 4200 Gen10 Plus Plus Technical Specifications"
-summary: "This section provides technical specifications for HPE Apollo 4200 Gen10 Plus Plus node types."
+title: "HPE Apollo 4200 Gen10 Plus Technical Specifications"
+summary: "This section provides technical specifications for HPE Apollo 4200 Gen10 Plus node types."
 permalink: hardware-guide/hpe-apollo-4200-gen10-plus/technical-specifications.html
 sidebar: hardware_guide_sidebar
 keywords: technical specifications, tech specs, specs, specifications, Apollo 4200, Apollo 4200 Gen10 Plus

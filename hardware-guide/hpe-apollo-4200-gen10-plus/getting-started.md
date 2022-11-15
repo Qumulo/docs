@@ -1,6 +1,6 @@
 ---
 title: "Getting Started with Qumulo on HPE Apollo 4200 Gen10 Plus"
-summary: "This section explains how to prepare HPE Apollo 4200 Gen10 Plus nodes for creating a Qumulo Core cluster. This guide is for system administrators, professional service providers, and colleagues in your organization who are responsible for installing and configuring server hardware. For more information, see <a href='https://www.hpe.com/psnow/product-documentation?oid=1013422400&cc=ca&lc=en&jumpid=in_pdp-psnow-docs'>HPE Apollo 4200 Gen10 Plus Plus System - Product Documentation</a>."
+summary: "This section explains how to prepare HPE Apollo 4200 Gen10 Plus nodes for creating a Qumulo Core cluster. This guide is for system administrators, professional service providers, and colleagues in your organization who are responsible for installing and configuring server hardware. For more information, see <a href='https://www.hpe.com/psnow/product-documentation?oid=1013422400&cc=ca&lc=en&jumpid=in_pdp-psnow-docs'>HPE Apollo 4200 Gen10 Plus System - Product Documentation</a>."
 permalink: hardware-guide/hpe-apollo-4200-gen10-plus/getting-started.html
 sidebar: hardware_guide_sidebar
 keywords: getting started guide, quick reference, HPE, Apollo 4200 Gen10 Plus, verify node, field verification tool, FVT
