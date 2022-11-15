@@ -159,6 +159,7 @@ seeTechSpecs: Some components vary across node types. For information about node
 a4200g9: HPE Apollo 4200 Gen9
 a4200g10: HPE Apollo 4200 Gen10
 dl325g10p: HPE ProLiant DL325 Gen10 Plus 
+a4200g10p: HPE Apollo 4200 Gen10 Plus
 
 sm1114sLong: Supermicro A+ WIO 1114S-WN10RT
 sm1114s: Supermicro 1114S

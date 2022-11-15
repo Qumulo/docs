@@ -113,6 +113,40 @@ entries:
       url: /hardware-guide/hpe-apollo-4200-gen10/technical-specifications.html
       output: web, pdf
 
+  - title: HPE Apollo 4200 Gen10 Plus
+    url: /hardware-guide/hpe-apollo-4200-gen10-plus/index.html
+    output: web, pdf
+    folderitems:
+
+    - title: Getting Started
+      url: /hardware-guide/hpe-apollo-4200-gen10-plus/getting-started.html
+      output: web, pdf
+
+    - title: Front and Rear Drives
+      url: /hardware-guide/hpe-apollo-4200-gen10-plus/front-rear-drives.html
+      output: web, pdf
+
+    - title: Panel LEDs
+      url: /hardware-guide/hpe-apollo-4200-gen10-plus/panel-leds.html
+      output: web, pdf
+
+    - title: Drive LEDs
+      url: /hardware-guide/hpe-apollo-4200-gen10-plus/drive-leds.html
+      output: web, pdf
+
+    - title: iLO Configuration
+      url: /hardware-guide/hpe-apollo-4200-gen10-plus/configuring-ilo.html
+      output: web, pdf
+
+    - title: Cluster Networking
+      url: /hardware-guide/hpe-apollo-4200-gen10-plus/networking-cluster.html
+      output: web, pdf
+
+    - title: Technical Specifications
+      url: /hardware-guide/hpe-apollo-4200-gen10-plus/technical-specifications.html
+      output: web, pdf
+
+
   - title: HPE ProLiant DL325 Gen10 Plus
     url: /hardware-guide/hpe-dl325-gen10-plus/index.html
     output: web, pdf
