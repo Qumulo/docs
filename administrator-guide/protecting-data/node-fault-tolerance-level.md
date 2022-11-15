@@ -14,8 +14,6 @@ varValidateReconfig: When the restriper completes the provisioning of additional
 varValidateNoReconfig: When the restriper completes the provisioning of additional usable capacity, the **Data Protected** section shows the same node-fault-tolerance level as before node-add.
 ---
 
-This section explains how to increase the node-fault-tolerance level for your cluster during node-add operations.
-
 ## Reconfiguring Your Cluster's Node-Fault-Tolerance Level
 * In Qumulo Core 5.1.2 (and lower), you must configure the node-fault-tolerance level for your cluster when you create the cluster. You can't modify this setting afterwards.
 * In Qumulo Core 5.1.3 (and higher), you can reconfigure data protection to increase the node-fault-tolerance level for an existing cluster during the _cluster expansion_ process.

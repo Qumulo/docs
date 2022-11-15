@@ -1,14 +1,12 @@
 ---
 title: "Configuring SAML Single Sign-On (SSO) for Your Qumulo Cluster"
-summary: "This section explains how to configure SAML Single Sign-On (SSO) for your Qumulo cluster."
+summary: "This section explains how to integrate your Qumulo cluster with your organization's single sign-on (SSO) service by configuring Security Assertion Markup Language (SAML) 2.0 for Qumulo Core 5.2.5.1 (and higher)."
 permalink: /administrator-guide/getting-started-qumulo-core/configuring-saml-single-sign-on-sso.html
 redirect_from:
   - /administrator-guide/qumulo-core/configuring-saml-single-sign-on-sso.html
 sidebar: administrator_guide_sidebar
 keywords: SAML, SAML 2.0, authentication, single sign-on, SSO
 ---
-
-This section explains how to integrate your Qumulo cluster with your organization's single sign-on (SSO) service by configuring Security Assertion Markup Language (SAML) 2.0 for Qumulo Core 5.2.5.1 (and higher).
 
 For more information about the SAML standard for exchanging authentication information, see [SAML 2.0](https://en.wikipedia.org/wiki/SAML_2.0).
 

@@ -6,7 +6,7 @@ sidebar: administrator_guide_sidebar
 keywords: NFS, NFS4.1, NFSv4.1, Kerberos, permissions, file permissions, owner, group owner, access control list, ACL, access control entry, ACE, security identifier, SID, Kerberos principal, ACL editor, AUTH_SYS
 ---
 
-This section describes how NFSv4.1 interacts with the secure file permissions that Kerberos enables for the Qumulo Core file system. For more information, see [Qumulo File Permissions Overview](https://care.qumulo.com/hc/en-us/articles/115008211868) on Qumulo Care.
+For more information, see [Qumulo File Permissions Overview](https://care.qumulo.com/hc/en-us/articles/115008211868) on Qumulo Care.
 
 
 ## Listing Permissions for Files

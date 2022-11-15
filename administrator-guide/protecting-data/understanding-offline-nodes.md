@@ -8,8 +8,6 @@ sidebar: administrator_guide_sidebar
 keywords: node, offline, space, free space, ENOSPC
 ---
 
-This section explains what happens when a Qumulo Core node goes offline and how you can check for free space.
-
 ## What Happens When a Qumulo Core Node Goes Offline
 Qumulo Core uses _erasure coding_ to let multiple drives or nodes to go offline but continue to serve data. For more information, see [Qumulo Drive Failure Protection](https://care.qumulo.com/hc/en-us/articles/115014383267) on Qumulo Care.
 

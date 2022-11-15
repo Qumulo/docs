@@ -8,8 +8,6 @@ sidebar: administrator_guide_sidebar
 keywords: limit, limits, limitations, known limits, known limitations, config, configuration, supported config, supported configuration
 ---
 
-This section provides an overview of supported configurations and known limits for Qumulo Core.
-
 ## Supported Configurations
 
 <table>

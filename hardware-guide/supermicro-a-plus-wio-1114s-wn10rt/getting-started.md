@@ -1,6 +1,6 @@
 ---
 title: "Getting Started with Qumulo on Supermicro A+ WIO 1114S-WN10RT"
-summary: "This section explains how to prepare Supermicro A+ WIO 1114S-WN10RT nodes for creating a Qumulo Core cluster."
+summary: "This section explains how to prepare Supermicro 1114S nodes for creating a Qumulo Core cluster."
 permalink: hardware-guide/supermicro-a-plus-wio-1114s-wn10rt/getting-started.html
 redirect_from:
   - supermicro.html
@@ -8,8 +8,6 @@ redirect_from:
 sidebar: hardware_guide_sidebar
 keywords: getting started guide, quick reference, Supermicro 1114S, WN10RT, verify node, field verification tool, FVT
 ---
-
-This section explains how to prepare {{site.sm1114s}} nodes for creating a Qumulo Core cluster.
 
 ## Step 1: Verify Your Node
 

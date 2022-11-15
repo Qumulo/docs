@@ -1,6 +1,6 @@
 ---
 title: "Using Qumulo Shift-To to Copy Objects to Amazon S3"
-summary: "This section explains how to use Qumulo Shift-To to copy objects from a directory in a Qumulo cluster to a folder in an Amazon Simple Storage Service (Amazon S3) bucket."
+summary: "This section explains how to use Shift-To to copy objects from a directory in a Qumulo cluster to a folder in an Amazon Simple Storage Service (Amazon S3) bucket and how to manage Shift relationships."
 permalink: /administrator-guide/moving-data/shift-to-s3.html
 redirect_from:
   - /shift-to-s3.html
@@ -10,9 +10,7 @@ sidebar: administrator_guide_sidebar
 keywords: shift to, copy, copy objects, copy files, object copy, amazon s3, s3, iam permissions, iam, cli commands, cli, shift relationships, shift, relationships, configuration details, status
 ---
 
-This section explains how to use Qumulo Shift-To to copy objects from a directory in a Qumulo cluster to a folder in an Amazon Simple Storage Service (Amazon S3) bucket (cloud object store). For more information about copying objects from S3 to Qumulo, see [Using Qumulo Shift-From for Amazon S3 to Copy Objects](/shift-from-s3.md).
-
-The guide describes how a Shift-To relationship works and includes information about the prerequisites, IAM permissions, and CLI commands that you can use to copy files and manage Shift relationships.
+For more information about copying objects from S3 to Qumulo, see [Using Qumulo Shift-From for Amazon S3 to Copy Objects](/shift-from-s3.md).
 
 ## Prerequisites
 * A Qumulo cluster with:

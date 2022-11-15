@@ -1,14 +1,12 @@
 ---
 title: "Racking Your Supermicro A+ WIO 1114S-WN10RT Nodes"
-summary: "This section explains how to rack your Supermicro A+ WIO 1114S-WN10RT nodes."
+summary: "This section describes how to use the outside and inside rails of Supermicro 1114S nodes and how to rack nodes in a data center."
 permalink: hardware-guide/supermicro-a-plus-wio-1114s-wn10rt/racking-nodes.html
 redirect_from:
   - hardware/supermicro-a-plus-wio-1114s-wn10rt/racking-nodes.html
 sidebar: hardware_guide_sidebar
 keywords: technical specifications, tech specs, specs, specifications, Supermicro 1114S, WN10RT
 ---
-
-This section describes how to use the outside and inside rails of your {{site.sm1114s}} node and how to rack your nodes in your data center.
 
 ## To Attach the Outer and Inner Rails
 {{site.data.alerts.note}}

@@ -1,14 +1,12 @@
 ---
 title: "Supermicro A+ WIO 1114S-WN10RT Technical Specifications"
-summary: "This section provides technical specifications for Supermicro A+ WIO 1114S-WN10RT nodes."
+summary: "This section provides technical specifications for Supermicro 1114S node types."
 permalink: hardware-guide/supermicro-a-plus-wio-1114s-wn10rt/technical-specifications.html
 redirect_from:
   - hardware/supermicro-a-plus-wio-1114s-wn10rt/technical-specifications.html
 sidebar: hardware_guide_sidebar
 keywords: technical specifications, tech specs, specs, specifications, Supermicro 1114S, WN10RT
 ---
-
-This section provides technical specifications for {{site.sm1114s}} nodes.
 
 <table cellspacing="0" cellpadding="0">
   <thead>

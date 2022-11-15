@@ -1,14 +1,12 @@
 ---
 title: "Replacing Hardware Components in Your Supermicro A+ ASG-1014S-ACR12N4H Nodes"
-summary: "This section explains how to replace hardware components in your Supermicro A+ ASG-1014S-ACR12N4H nodes."
+summary: "This section explains how to replace hardware components in Supermicro 1014S nodes."
 permalink: hardware-guide/supermicro-a-plus-asg-1014s-acr12n4h/replacing-hardware-components.html
 redirect_from:
   - hardware/supermicro-a-plus-asg-1014s-acr12n4h/replacing-hardware-components.html
 sidebar: hardware_guide_sidebar
 keywords: technical specifications, tech specs, specs, specifications, Supermicro 1014S, ACR12N4H
 ---
-
-This section explains how to replace hardware components in your {{site.sm1014s}} nodes.
 
 {{site.data.alerts.caution}}
 <ul>

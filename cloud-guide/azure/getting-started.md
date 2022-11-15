@@ -1,6 +1,6 @@
 ---
 title: "Getting Started with Qumulo on Azure as a Service"
-summary: "This guide is a supplement to the Qumulo Getting Started guide, where configuration steps and best practices differ from those we recommend for other platforms."
+summary: "This guide is a supplement to the <a href='https://care.qumulo.com/hc/en-us/articles/360011321773'>Qumulo Getting Started Guide</a>, where configuration steps and best practices differ from those we recommend for other platforms."
 permalink: /cloud-guide/azure/getting-started.html
 keywords: getting started guide, azure, onboarding, networking, virtual network peering, dhcp mode, dns, ip failover, floating ip, upgrades, remote monitoring, remote support, active directory domains, capacity increases, performance increases
 redirect_from:
@@ -9,8 +9,7 @@ redirect_from:
 sidebar: cloud_guide_sidebar
 ---
 
-Welcome to Qumulo on Azure as a Service. The next step after provisioning your file system is configuring it for your environment. This guide is a supplement to the [Qumulo Getting Started Guide](https://care.qumulo.com/hc/en-us/articles/360011321773-Qumulo-Getting-Started-Guide), where configuration steps and best practices differ from those we recommend for other platforms.
-
+The next step after provisioning your file system is configuring it for your environment.
 
 ## Networking Connectivity
 The biggest difference between running Qumulo on Azure and on other platforms is connectivity to the file system through your network. This section guides you through network configuration specific to Qumulo on Azure as a Service.

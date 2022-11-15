@@ -8,8 +8,6 @@ sidebar: administrator_guide_sidebar
 keywords: Qumulo Core, USB, USB drive, installer, macOS, mac, Windows
 ---
 
-This section explains how to create a Qumulo Core USB Drive Installer on macOS or Windows.
-
 ## Prerequisites
 * USB drive (4 GB minimum)
 * Qumulo Core USB installer image from the [Qumulo Care Team](https://care.qumulo.com/hc/en-us/articles/115008409408)
