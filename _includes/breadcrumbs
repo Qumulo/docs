@@ -1,6 +1,6 @@
 {% if page.breadcrumbs != "exclude" %}
 <div class="breadcrumb-line">
-  <a href='{{site.baseurl}}'>Home</a>
+  <a href='/'>Home</a>
   {% assign crumbs = page.url | split: '/' %}
       {% assign landing_limit = crumbs|size | minus: 2 %}
   {% for crumb in crumbs offset: 1 %}
@@ -9,10 +9,10 @@
       <span>{{page.title}}</span>
     {% else %}
       {% assign crumb_limit = forloop.index | plus: 1 %}
-      {% if page.layout != "landing_page" or forloop.index < landing_limit %}
+      {% if page.layout != "parent_landing_page" or forloop.index < landing_limit %}
           
         <span>&rsaquo;</span>
-        <a href="{{site.baseurl}}{% for crumb in crumbs limit: crumb_limit %}{% if crumb != "" %}{{ crumb | append: '/' }}{% endif %}{% endfor %}">{{ crumb | replace:'-',' ' | remove:'/index.html' | replace:'hardware guide','Qumulo-Certified Hardware Guide' | replace:'general guidance','General Guidance' | replace:'c 192t c 432t k 432t','C-192T, C-432T, and K-432T' | replace:'hpe apollo 4200 gen9','HPE Apollo 4200 Gen9' | replace:'hpe apollo 4200 gen10','HPE Apollo 4200 Gen10' | replace:'hpe dl325 gen10 plus','HPE ProLiant DL325 Gen10 Plus' | replace:'supermicro a plus asg 1014s acr12n4h','Supermicro A+ ASG-1014S-ACR12N4H' | replace:'supermicro a plus wio 1114s wn10rt','Supermicro A+ WIO 1114S-WN10RT' | replace:'azure','Qumulo on Azure as a Service' | replace:'administrator guide','Qumulo Administrator Guide' | replace:'getting started qumulo core','Getting Started with Qumulo Core' | replace:'upgrading qumulo core','Upgrading Qumulo Core' | replace:'networking','Configure Networking for Qumulo Core' | replace:'web ui','Working with the Qumulo Core Web UI' | replace:'qq cli','Working with the qq CLI' | replace:'protecting data','Protecting Your Data' | replace:'moving data','Moving Your Data' | replace:'file system protocols','Working with File System Protocols' | replace:'kerberos','Using NFSv4.1 with Kerberos in Qumulo Core' | replace:'cloud guide','Qumulo in the Cloud Guide'}}</a>
+        <a href="/{% for crumb in crumbs limit: crumb_limit %}{% if crumb != "" %}{{ crumb | append: '/' }}{% endif %}{% endfor %}">{{ crumb | replace:'-',' ' | remove:'/index.html' | replace:'hardware guide','Qumulo-Certified Hardware Guide' | replace:'general guidance','General Guidance' | replace:'c 192t c 432t k 432t','C-192T, C-432T, and K-432T' | replace:'hpe apollo 4200 gen9','HPE Apollo 4200 Gen9' | replace:'hpe apollo 4200 gen10','HPE Apollo 4200 Gen10' | replace:'hpe dl325 gen10 plus','HPE ProLiant DL325 Gen10 Plus' | replace:'supermicro a plus asg 1014s acr12n4h','Supermicro A+ ASG-1014S-ACR12N4H' | replace:'supermicro a plus wio 1114s wn10rt','Supermicro A+ WIO 1114S-WN10RT' | replace:'azure','Qumulo on Azure as a Service' | replace:'administrator guide','Qumulo Administrator Guide' | replace:'getting started qumulo core','Getting Started with Qumulo Core' | replace:'upgrading qumulo core','Upgrading Qumulo Core' | replace:'networking','Configure Networking for Qumulo Core' | replace:'web ui','Working with the Qumulo Core Web UI' | replace:'qq cli','Working with the qq CLI' | replace:'protecting data','Protecting Your Data' | replace:'moving data','Moving Your Data' | replace:'file system protocols','Working with File System Protocols' | replace:'kerberos','Using NFSv4.1 with Kerberos in Qumulo Core' | replace:'cloud guide','Qumulo in the Cloud Guide'}}</a>
       {% endif %}
     {% endif %}
   {% endfor %}
