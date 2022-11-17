@@ -120,10 +120,6 @@ entries:
       url: /administrator-guide/protecting-data/managing-snapshots.html
       output: web, pdf
 
-    - title: Understanding Offline Qumulo Core Nodes and Checking for Free Space
-      url: /administrator-guide/protecting-data/understanding-offline-nodes.html
-      output: web, pdf
-
   - title: Moving Your Data
     url: /administrator-guide/moving-data/index.html
     output: web, pdf
