@@ -8,7 +8,7 @@ sidebar: administrator_guide_sidebar
 keywords: update, upgrade, instant, instant software upgrade, platform, platform upgrade
 ---
 
-{% include note.html content="A _quarterly upgrade_ aggregates all improvements and fixes since the last quarterly upgrade." %}
+{% include note.html content="A _quarterly upgrade_ aggregates all improvements and fixes since the last quarterly upgrade. The version number of a quarterly upgrade ends in `.0`." %}
 
 ## On-Premises Upgrades
 
@@ -20,7 +20,7 @@ keywords: update, upgrade, instant, instant software upgrade, platform, platform
     </thead>
     <tr>
       <td>5.3.0</td>
-      <td>Instant</td>
+      <td>Quarterly, Instant</td>
     </tr>
     <tr>
       <td>5.2.5.1</td>

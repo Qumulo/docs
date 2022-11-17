@@ -599,7 +599,7 @@ a.accordion-toggle, a.accordion-collapsed {
 }
 
 .nav-buttons {
-    width: 225px;
+    margin-top: 4px;
 }
 
 .nav > li {
@@ -656,7 +656,9 @@ background-color: #347DBE;
 }
 
 ul#mysidebar {
-    border-radius:0px;
+    border-radius: 0px;
+    margin-top: 2px;
+    margin-bottom: 16px;
 }
 
 .nav ul li ul li a {
@@ -1156,19 +1158,19 @@ span.soft {
 }
 
 @media (max-width: 990px) {
-    #mysidebar {
+    #mysidebar .nav-buttons {
         position: relative;
     }
 }
 
 @media (min-width: 1000px) {
-    ul#mysidebar {
+    ul#mysidebar .nav-buttons {
         width: 225px;
     }
 }
 
 @media (max-width: 900px) {
-    ul#mysidebar {
+    ul#mysidebar .nav-buttons {
         max-width: 100%;
     }
 }
