@@ -59,11 +59,11 @@ keywords: technical specifications, tech specs, specs, specifications, HPE, Apol
   </tr>
   <tr>
     <td><strong>Management Ports</strong></td>
-    <td colspan="6">2 &times; iLO 1 GbE baseT (RJ45)</td>
+    <td colspan="6" style="text-align: center;">2 &times; iLO 1 GbE baseT (RJ45)</td>
   </tr>
   <tr>
     <td><strong>Physical Dimensions</strong></td>
-    <td colspan="4">3.44" (8.75 cm) &times; 17.63" (44.8 cm) &times; 33" (83.79 cm)</td>
+    <td colspan="6" style="text-align: center;">3.44" (8.75 cm) &times; 17.63" (44.8 cm) &times; 33" (83.79 cm)</td>
   </tr>
 </tbody>
 </table>
