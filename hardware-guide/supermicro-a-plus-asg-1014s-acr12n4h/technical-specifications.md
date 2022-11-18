@@ -40,11 +40,11 @@ keywords: technical specifications, tech specs, specs, specifications, Supermicr
     </tr>
     <tr>
       <td><strong>HDD Storage Media</strong></td>
-      <td>12 &#215; 20 TB</td>
-      <td>12 &#215; 18 TB</td>
-      <td>12 &#215; 20 TB</td>
-      <td>12 &#215; 18 TB</td>
-      <td>12 &#215; 8 TB</td>
+      <td style="text-align: center;">12 &#215; 20 TB</td>
+      <td style="text-align: center;">12 &#215; 18 TB</td>
+      <td style="text-align: center;">12 &#215; 20 TB</td>
+      <td style="text-align: center;">12 &#215; 18 TB</td>
+      <td style="text-align: center;">12 &#215; 8 TB</td>
     </tr>    
     <tr>
       <td><strong>Boot Drive</strong></td>
