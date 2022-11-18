@@ -21,44 +21,44 @@ keywords: technical specifications, tech specs, specs, specifications, HPE, Apol
 <tbody>
   <tr>
     <td><strong>Raw Capacity</strong></td>
-    <td>336 TB</td>
-    <td>192 TB</td>
-    <td>90 TB</td>
-    <td>36 TB</td>
+    <td style="text-align: center;">336 TB</td>
+    <td style="text-align: center;">192 TB</td>
+    <td style="text-align: center;">90 TB</td>
+    <td style="text-align: center;">36 TB</td>
   </tr>
   <tr>
     <td><strong>HDDs</strong></td>
-    <td>24 &times; 14 TB</td>
-    <td>24 &times; 8 TB</td>
-    <td>9 &times; 10 TB</td>
-    <td>9 &times; 4 TB</td>
+    <td style="text-align: center;">24 &times; 14 TB</td>
+    <td style="text-align: center;">24 &times; 8 TB</td>
+    <td style="text-align: center;">9 &times; 10 TB</td>
+    <td style="text-align: center;">9 &times; 4 TB</td>
   </tr>
   <tr>
     <td><strong>Logical Flash Cache Capacity</strong></td>
-    <td>7.68 TB</td>
-    <td>5.76 TB</td>
-    <td>2.88 TB</td>
-    <td>1.44 TB</td>
+    <td style="text-align: center;">7.68 TB</td>
+    <td style="text-align: center;">5.76 TB</td>
+    <td style="text-align: center;">2.88 TB</td>
+    <td style="text-align: center;">1.44 TB</td>
   </tr>
   <tr>
     <td><strong>Connectivity Ports</strong></td>
-    <td>2 &times; 25 GbE</td>
-    <td>2 &times; 100 GbE<br>(25 GbE minimum link speed)</td>
-    <td colspan="2">2 &times; 25 GbE or<br>2 &times; 100 GbE</td>
+    <td style="text-align: center;">2 &times; 25 GbE</td>
+    <td style="text-align: center;">2 &times; 100 GbE<br>(25 GbE minimum link speed)</td>
+    <td colspan="2" style="text-align: center;">2 &times; 25 GbE or<br>2 &times; 100 GbE</td>
   </tr>
   <tr>
     <td><strong>Management Ports</strong></td>
-    <td colspan="4">1 &times; iLO 1 GbE</td>
+    <td colspan="4" style="text-align: center;">1 &times; iLO 1 GbE</td>
   </tr>
   <tr>
     <td><strong>CPU</strong></td>
-    <td>1 &times; Intel Xeon Silver<br>4210 2.2 GHz, 10 Cores</td>
-    <td>2 &times; Intel Xeon Silver<br>4210 2.2 GHz, 10 Cores</td>
-    <td colspan="2">1 &times; Intel Xeon Silver<br>4210 2.2 GHz, 10 Cores</td>
+    <td style="text-align: center;">1 &times; Intel Xeon Silver<br>4210 2.2 GHz, 10 Cores</td>
+    <td style="text-align: center;">2 &times; Intel Xeon Silver<br>4210 2.2 GHz, 10 Cores</td>
+    <td colspan="2" style="text-align: center;">1 &times; Intel Xeon Silver<br>4210 2.2 GHz, 10 Cores</td>
   </tr>
   <tr>
     <td><strong>Physical Dimensions</strong></td>
-    <td colspan="4">3.44" (8.75 cm) &times; 17.63" (44.8 cm) &times; 32" (81.28 cm)</td>
+    <td colspan="4" style="text-align: center;">3.44" (8.75 cm) &times; 17.63" (44.8 cm) &times; 32" (81.28 cm)</td>
   </tr>
 </tbody>
 </table>
