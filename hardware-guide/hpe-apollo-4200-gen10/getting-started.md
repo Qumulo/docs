@@ -5,7 +5,7 @@ permalink: hardware-guide/hpe-apollo-4200-gen10/getting-started.html
 redirect_from:
   - hardware/hpe-apollo-4200-gen10/getting-started.html
 sidebar: hardware_guide_sidebar
-keywords: getting started guide, quick reference, HPE, Apollo 4200 Gen10, verify node, field verification tool, FVT
+keywords: getting started guide, quick reference, verify node, field verification tool, FVT, HPE, Apollo 4200 Gen10
 ---
 
 ## Prerequisites
