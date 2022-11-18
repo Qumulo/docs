@@ -33,4 +33,4 @@ To locate the rear panel LEDs, use the following diagram.
 
 1. **UID LED**
 
-1. **PSU1 and PSU2 LED**
+1. **PSU1 and PSU2 LEDs**
