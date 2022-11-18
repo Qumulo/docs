@@ -9,3 +9,5 @@ keywords: network, networking, cluster, switch, Ethernet, ports, IP, HPE, Apollo
 ---
 
 {% include content-reuse/platform-agnostic-unified-networking-cluster-25-100gbps.md %}
+
+{% include image.html alt="Platform-Agnostic Unified Networking Four-Node Cluster Architecture Diagram" file="../platform-agnostic/images/platform-agnostic-unified-networking-four-node-cluster.png" url="/hardware-guide/platform-agnostic/images/splatform-agnostic-unified-networking-four-node-cluster.png" %}
