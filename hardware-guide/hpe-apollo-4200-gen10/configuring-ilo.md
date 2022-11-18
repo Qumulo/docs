@@ -5,7 +5,7 @@ permalink: hardware-guide/hpe-apollo-4200-gen10/configuring-ilo.html
 redirect_from:
   - hardware/hpe-apollo-4200-gen10/configuring-ilo.md
 sidebar: hardware_guide_sidebar
-keywords: out-of-band management, out of band management, iLO, DHCP, network, networking, LAN, ipmitool
+keywords: out-of-band management, out of band management, iLO, DHCP, network, networking, LAN, ipmitool, HPE, Apollo 4200 Gen10
 ---
 
 {% include important.html content="Access to the iLO port on a public LAN can have serious security implications because it can grant anyone with credentials direct access to your server's hardware and console. Follow security best practices when implementing iLO access." %}
