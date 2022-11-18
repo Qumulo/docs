@@ -10,12 +10,12 @@ keywords: technical specifications, tech specs, specs, specifications, HPE, Apol
 <thead>
   <tr>
     <th></th>
-    <th>{{site.a4200g10p}} 480T<br>General Purpose</th>
-    <th>{{site.a4200g10p}} 480T<br>Active</th>
-    <th>{{site.a4200g10p}} 240T<br>General Purpose</th>
-    <th>{{site.a4200g10p}} 240T<br>Actve</th>
-    <th>{{site.a4200g10p}} 90T<br>Active</th>
-    <th>{{site.a4200g10p}} 36T<br>Actve</th>    
+    <th>{{site.a4200g10p}} 480TB<br>General Purpose</th>
+    <th>{{site.a4200g10p}} 480TB<br>Active</th>
+    <th>{{site.a4200g10p}} 240TB<br>General Purpose</th>
+    <th>{{site.a4200g10p}} 240TB<br>Active</th>
+    <th>{{site.a4200g10p}} 90TB<br>Active</th>
+    <th>{{site.a4200g10p}} 36TB<br>Active</th>    
   </tr>
 </thead>
 <tbody>
@@ -59,7 +59,7 @@ keywords: technical specifications, tech specs, specs, specifications, HPE, Apol
   </tr>
   <tr>
     <td><strong>Management Ports</strong></td>
-    <td colspan="6" style="text-align: center;">2 &times; iLO 1 GbE baseT (RJ45)</td>
+    <td colspan="6" style="text-align: center;">1 &times; iLO 1 GbE baseT (RJ45)</td>
   </tr>
   <tr>
     <td><strong>Physical Dimensions</strong></td>

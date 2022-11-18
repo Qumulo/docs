@@ -48,10 +48,10 @@ keywords: technical specifications, tech specs, specs, specifications, HPE, Apol
   </tr>
   <tr>
     <td><strong>Management Ports</strong></td>
-    <td colspan="4">2 &times; iLO 1 GbE baseT (RJ45)</td>
+    <td colspan="4">1 &times; iLO 1 GbE baseT (RJ45)</td>
   </tr>
   <tr>
-    <td><strong>Connectivity Ports</strong></td>
+    <td><strong>CPU</strong></td>
     <td colspan="2">1 &times; Intel Xeon Silver<br>4210 2.2 GHz 10 cores</td>
     <td>2 &times; Intel Xeon Silver<br>4210 2.2 GHz 10 cores</td>
     <td>1 &times; Intel Xeon Silver<br>4210 2.2 GHz 10-cores</td>
