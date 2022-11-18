@@ -10,7 +10,7 @@ keywords: LED, front panel, power fault, rear panel, diagnose, diagnosis, hardwa
 
 To locate the front panel LEDs, use the following diagram.
 
-{% capture alt_tag %}Front panel LEDs on the {{site.a4200g10p}} node{% endcapture %}
+{% capture alt_tag %}Front panel LEDs and buttons on the {{site.a4200g10p}} node{% endcapture %}
 {% include image.html alt=alt_tag file="hpe-apollo-4200-gen10-plus-front-panel-led.png" %}
 
 1. **Health LED**
@@ -29,69 +29,8 @@ To locate the front panel LEDs, use the following diagram.
 To locate the rear panel LEDs, use the following diagram.
 
 {% capture alt_tag %}Rear panel LEDs on the {{site.a4200g10p}} node{% endcapture %}
-{% include image.html alt=alt_tag file="hpe-gen10-leds-rear.png" %}
-
-1. **Dedicated iLO Port 1 Link LED**
-
-   * 🟢 **Green:** Network link
-   * **Off:** No network link
-
-1. **Dedicated iLO Port 1 Activity LED**
-
-   * 🟢 **Solid Green:** Link to network
-   * 🟢 **Flashing Green:** Network active
-   * **Off:** No network activity
+{% include image.html alt=alt_tag file="hpe-apollo-4200-gen10-plus-rear-panel-led.png" %}
 
 1. **UID LED**
 
-   * 🔵 **Solid Blue:** Activated
-   * 🔵 **Flashing Blue:**
-
-     * 1 flash per second: Remote management or firmware upgrade in progress
-     * 4 flashes per second: iLO manual reboot sequence initiated
-     * 8 flashes per second: iLO manual reboot sequence in progress
-
-   * **Off:** Deactivated
-
-1. **Dedicated iLO Port 2 Link LED**
-
-   * 🟢 **Green:** Network link
-   * **Off:** No network link
-
-1. **Dedicated iLO Port 2 Activity LED**
-
-   * 🟢 **Solid Green:** Link to network
-   * 🟢 **Flashing Green:** Network active
-   * **Off:** No network activity
-
-1. **NIC Port 1 Link LED**
-
-   * 🟢 **Green:** Network link
-   * **Off:** No network link
-
-1. **NIC Port 1 Activity LED**
-
-   * 🟢 **Solid Green:** Link to network
-   * 🟢 **Flashing Green:** Network active
-   * **Off:** No network activity
-
-1. **NIC Port 2 Link LED**
-
-   * 🟢 **Green:** Network link
-   * **Off:** No network link
-
-1. **NIC Port 2 Activity LED**
-
-   * 🟢 **Solid Green:** Link to network
-   * 🟢 **Flashing Green:** Network active
-   * **Off:** No network activity
-
-1. **Power Supply LED**
-
-   * 🟢 **Solid Green:** Normal
-   * **Off:** One or more of the following conditions exist:
-
-     * Power unavailable
-     * Power supply failed
-     * Power supply in standby mode
-     * Power supply error
+1. **PSU1 and PSU2 LED**
