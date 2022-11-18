@@ -5,8 +5,7 @@ permalink: hardware-guide/hpe-apollo-4200-gen10/drive-leds.html
 redirect_from:
   - hardware/hpe-apollo-4200-gen10/drive-leds.html
 sidebar: hardware_guide_sidebar
-keywords: drive, hard drive, LED, large form factor, LFF, small form factor, SFF
----
+keywords: drive, hard drive, LED, large form factor, LFF, small form factor, SFF, HPE, Apollo 4200 Gen10
 
 ## Large Form Factor (LFF) Drive LEDs
 
