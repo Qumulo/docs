@@ -44,9 +44,9 @@ keywords: technical specifications, tech specs, specs, specifications, DL325, Pr
   </tr>
   <tr>
     <td><strong>CPU</strong></td>
-    <td>24 cores &times; 2.8 GHz</td>
-    <td>24 cores &times; 2.8 GHz</td>
-    <td>24 cores &times; 2.8 GHz</td>
+    <td>24 Cores &times; 2.8 GHz</td>
+    <td>24 Cores &times; 2.8 GHz</td>
+    <td>24 Cores &times; 2.8 GHz</td>
   </tr>
   <tr>
     <td><strong>Memory</strong></td>
