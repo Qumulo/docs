@@ -20,44 +20,44 @@ keywords: technical specifications, tech specs, specs, specifications, HPE, Apol
 </thead>
 <tbody>
   <tr>
-    <td>Raw Capacity</td>
+    <td><strong>Raw Capacity</strong></td>
     <td>36 TB</td>
     <td>90 TB</td>
     <td>192 TB</td>
     <td>336 TB</td>
   </tr>
   <tr>
-    <td>HDDs</td>
+    <td><strong>HDDs</strong></td>
     <td>9 &times; 4 TB</td>
     <td>9 &times; 10 TB</td>
     <td>24 &times; 8 TB</td>
     <td>24 &times; 14 TB</td>
   </tr>
   <tr>
-    <td>Logical Flash Cache Capacity</td>
+    <td><strong>Logical Flash Cache Capacity</strong></td>
     <td>1.44 TB</td>
     <td>2.88 TB</td>
     <td>5.76 TB</td>
     <td>7.68 TB</td>
   </tr>
   <tr>
-    <td>Connectivity Ports</td>
+    <td><strong>Connectivity Ports</strong></td>
     <td colspan="2">2 &times; 25 GbE or<br>2 &times; 100 GbE</td>
     <td>2 &times; 100 GbE<br>(25 GbE minimum link speed)</td>
     <td>2 &times; 25 GbE</td>
   </tr>
   <tr>
-    <td>Management Ports</td>
+    <td><strong>Management Ports</strong></td>
     <td colspan="4">2 &times; iLO 1 GbE baseT (RJ45)</td>
   </tr>
   <tr>
-    <td>Connectivity Ports</td>
+    <td><strong>Connectivity Ports</strong></td>
     <td colspan="2">1 &times; Intel Xeon Silver<br>4210 2.2 GHz 10 cores</td>
     <td>2 &times; Intel Xeon Silver<br>4210 2.2 GHz 10 cores</td>
     <td>1 &times; Intel Xeon Silver<br>4210 2.2 GHz 10-cores</td>
   </tr>
   <tr>
-    <td>Physical Dimensions</td>
+    <td><strong>Physical Dimensions</strong></td>
     <td colspan="4">3.44" (8.75 cm) &times; 17.63" (44.8 cm) &times; 32" (81.28 cm)</td>
   </tr>
 </tbody>
