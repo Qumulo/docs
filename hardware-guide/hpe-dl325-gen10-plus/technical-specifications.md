@@ -12,9 +12,9 @@ keywords: technical specifications, tech specs, specs, specifications, DL325, Pr
 <thead>
   <tr>
     <th></th>
-    <th>34T</th>
-    <th>145T</th>
-    <th>291T</th>
+    <th>{{site.dl325g10p}} 34T</th>
+    <th>{{site.dl325g10p}} 145T</th>
+    <th>{{site.dl325g10p}} 291T</th>
   </tr>
 </thead>
 <tbody>
@@ -44,9 +44,9 @@ keywords: technical specifications, tech specs, specs, specifications, DL325, Pr
   </tr>
   <tr>
     <td><strong>CPU</strong></td>
-    <td>24 cores 2.8 GHz</td>
-    <td>24 cores 2.8 GHz</td>
-    <td>24 cores 2.8 GHz</td>
+    <td>24 cores &times; 2.8 GHz</td>
+    <td>24 cores &times; 2.8 GHz</td>
+    <td>24 cores &times; 2.8 GHz</td>
   </tr>
   <tr>
     <td><strong>Memory</strong></td>
