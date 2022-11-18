@@ -10,53 +10,60 @@ keywords: technical specifications, tech specs, specs, specifications, HPE, Apol
 <thead>
   <tr>
     <th></th>
-    <th>HPE Apollo 36 TB<br>Hybrid SSD and Disk</th>
-    <th>HPE Apollo 90 TB<br>Hybrid SSD and Disk</th>
-    <th>HPE Apollo 192 TB<br>Hybrid SSD and Disk</th>
-    <th>HPE Apollo 336 TB<br>Active Archive</th>
+    <th>{{site.a4200g10p}} 480T<br>General Purpose</th>
+    <th>{{site.a4200g10p}} 480T<br>Active</th>
+    <th>{{site.a4200g10p}} 240T<br>General Purpose</th>
+    <th>{{site.a4200g10p}} 240T<br>Actve</th>
+    <th>{{site.a4200g10p}} 90T<br>Active</th>
+    <th>{{site.a4200g10p}} 36T<br>Actve</th>    
   </tr>
 </thead>
 <tbody>
   <tr>
-    <td>Raw Capacity</td>
-    <td>36 TB</td>
-    <td>90 TB</td>
-    <td>192 TB</td>
-    <td>336 TB</td>
+    <td><strong>Raw Capacity</strong></td>
+    <td colspan="2" style="text-align: center;">480 TB</td>
+    <td colspan="2" style="text-align: center;">240 TB</td>
+    <td style="text-align: center;">90 TB</td>
+    <td style="text-align: center;">36 TB</td>
   </tr>
   <tr>
-    <td>HDDs</td>
-    <td>9 &times; 4 TB</td>
-    <td>9 &times; 10 TB</td>
-    <td>24 &times; 8 TB</td>
-    <td>24 &times; 14 TB</td>
+    <td><strong>HDDs</strong></td>
+    <td colspan="2" style="text-align: center;">24 &times; 20 TB</td>
+    <td colspan="2" style="text-align: center;">24 &times; 10 TB</td>
+    <td style="text-align: center;">9 &times; 10 TB</td>
+    <td style="text-align: center;">9 &times; 4 TB</td>
   </tr>
   <tr>
-    <td>Logical Flash Cache Capacity</td>
-    <td>1.44 TB</td>
-    <td>2.88 TB</td>
-    <td>5.76 TB</td>
-    <td>7.68 TB</td>
+    <td><strong>Logical Flash Cache Capacity</strong></td>
+    <td colspan="2" style="text-align: center;">8 &times; 1.6 TB</td>
+    <td colspan="2" style="text-align: center;">8 &times; 0.8 TB</td>
+    <td colspan="2" style="text-align: center;">3 &times; 0.8 TB</td>
   </tr>
   <tr>
-    <td>Connectivity Ports</td>
-    <td colspan="2">2 &times; 25 GbE or<br>2 &times; 100 GbE</td>
-    <td>2 &times; 100 GbE<br>(25 GbE minimum link speed)</td>
-    <td>2 &times; 25 GbE</td>
+    <td><strong>CPU</strong></td>
+    <td colspan="4" style="text-align: center;">2 CPUs</td>
+    <td colspan="2" style="text-align: center;">1 CPU</td>
   </tr>
   <tr>
-    <td>Management Ports</td>
-    <td colspan="4">2 &times; iLO 1 GbE baseT (RJ45)</td>
+    <td><strong>Memory</strong></td>
+    <td colspan="4" style="text-align: center;">128 GB</td>
+    <td colspan="2" style="text-align: center;">64 GB</td>
   </tr>
   <tr>
-    <td>Connectivity Ports</td>
-    <td colspan="2">1 &times; Intel Xeon Silver<br>4210 2.2 GHz 10 cores</td>
-    <td>2 &times; Intel Xeon Silver<br>4210 2.2 GHz 10 cores</td>
-    <td>1 &times; Intel Xeon Silver<br>4210 2.2 GHz 10-cores</td>
+    <td><strong>Connectivity Ports</strong></td>
+    <td style="text-align: center;">1 &times; 25 GbE</td>
+    <td style="text-align: center;">1 &times; 100 GbE</td>
+    <td style="text-align: center;">1 &times; 25 GbE</td>
+    <td style="text-align: center;">1 &times; 100 GbE</td>
+    <td colspan="2" style="text-align: center;">1 &times; 25 GbE</td>
   </tr>
   <tr>
-    <td>Physical Dimensions</td>
-    <td colspan="4">3.44" (8.75 cm) &times; 17.63" (44.8 cm) &times; 32" (81.28 cm)</td>
+    <td><strong>Management Ports</strong></td>
+    <td colspan="6">2 &times; iLO 1 GbE baseT (RJ45)</td>
+  </tr>
+  <tr>
+    <td><strong>Physical Dimensions</strong></td>
+    <td colspan="4">3.44" (8.75 cm) &times; 17.63" (44.8 cm) &times; 33" (83.79 cm)</td>
   </tr>
 </tbody>
 </table>
