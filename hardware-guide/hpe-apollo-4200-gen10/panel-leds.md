@@ -12,8 +12,8 @@ keywords: LED, front panel, power fault, rear panel, diagnose, diagnosis, hardwa
 
 To locate the front panel LEDs, use the following diagram.
 
-{% capture alt_tag %}Front panel LEDs on the {{site.a4200g10}} node{% endcapture %}
-{% include image.html alt=alt_tag file="hpe-gen10-leds.png" %}
+{% capture alt_front %}Front panel LEDs on the {{site.a4200g10}} node{% endcapture %}
+{% include image.html alt=alt_front file="hpe-gen10-leds.png" %}
 
 1. **Power On or Standby Button and System Power LED**
 
@@ -125,8 +125,8 @@ If the (1) Power On or Standby Button and System Power LED, (2) UID Button and L
 
 To locate the rear panel LEDs, use the following diagram.
 
-{% capture alt_tag %}Rear panel LEDs on the {{site.a4200g10}} node{% endcapture %}
-{% include image.html alt=alt_tag file="hpe-gen10-leds-rear.png" %}
+{% capture alt_rear %}Rear panel LEDs on the {{site.a4200g10}} node{% endcapture %}
+{% include image.html alt=alt_rear file="hpe-gen10-leds-rear.png" %}
 
 1. **Dedicated iLO Port 1 Link LED**
 
