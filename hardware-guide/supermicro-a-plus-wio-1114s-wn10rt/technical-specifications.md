@@ -62,25 +62,25 @@ keywords: technical specifications, tech specs, specs, specifications, Supermicr
     </tr>
     <tr>
       <td><strong>Typical Power Consumption</strong></td>
-      <td>265 W</td>
+      <td style="text-align: center;">265 W</td>
       <td colspan="2" style="text-align: center;">230 W</td>
     </tr>
     <tr>
       <td><strong>Typical Thermal Rating</strong></td>
-      <td>904 BTU/hr</td>
+      <td style="text-align: center;">904 BTU/hr</td>
       <td colspan="2" style="text-align: center;">785 BTU/hr</td>
     </tr>
     <tr>
       <td><div><strong>Maximum Power Consumption</strong></div></td>
-      <td>460 W</td>
-      <td>415 W</td>
-      <td>384 W</td>
+      <td style="text-align: center;">460 W</td>
+      <td style="text-align: center;">415 W</td>
+      <td style="text-align: center;">384 W</td>
     </tr>
     <tr>
       <td><strong>Maximum Thermal Rating</strong></td>
-      <td>1569 BTU/hr</td>
-      <td>1416 BTU/hr</td>
-      <td>1310 BTU/hr</td>
+      <td style="text-align: center;">1569 BTU/hr</td>
+      <td style="text-align: center;">1416 BTU/hr</td>
+      <td style="text-align: center;">1310 BTU/hr</td>
     </tr>
     <tr>
       <td><strong>Operating Temperature</strong></td>
