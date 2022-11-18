@@ -51,15 +51,15 @@ keywords: technical specifications, tech specs, specs, specifications, HPE, Apol
   </tr>
   <tr>
     <td><strong>Connectivity Ports</strong></td>
-    <td style="text-align: center;">1 &times; 25 GbE</td>
-    <td style="text-align: center;">1 &times; 100 GbE</td>
-    <td style="text-align: center;">1 &times; 25 GbE</td>
-    <td style="text-align: center;">1 &times; 100 GbE</td>
+    <td style="text-align: center;">2 &times; 25 GbE</td>
+    <td style="text-align: center;">2 &times; 100 GbE</td>
+    <td style="text-align: center;">2 &times; 25 GbE</td>
+    <td style="text-align: center;">2 &times; 100 GbE</td>
     <td colspan="2" style="text-align: center;">1 &times; 25 GbE</td>
   </tr>
   <tr>
     <td><strong>Management Ports</strong></td>
-    <td colspan="6" style="text-align: center;">1 &times; iLO 1 GbE baseT (RJ45)</td>
+    <td colspan="6" style="text-align: center;">1 &times; iLO 1 GbE</td>
   </tr>
   <tr>
     <td><strong>Physical Dimensions</strong></td>
