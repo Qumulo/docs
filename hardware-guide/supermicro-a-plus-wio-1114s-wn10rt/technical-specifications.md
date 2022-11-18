@@ -28,9 +28,9 @@ keywords: technical specifications, tech specs, specs, specifications, Supermicr
     </tr>
     <tr>
       <td><strong>Solid State Storage Media</strong></td>
-      <td>10 &#215; 15.36 TB NVMe</td>
-      <td>10 &#215; 7.68 TB NVMe</td>
-      <td>8 &#215; 3.84 TB NVMe</td>
+      <td style="text-align: center;">10 &#215; 15.36 TB NVMe</td>
+      <td style="text-align: center;">10 &#215; 7.68 TB NVMe</td>
+      <td style="text-align: center;">8 &#215; 3.84 TB NVMe</td>
     </tr>
     <tr>
       <td><strong>Boot Drive</strong></td>
