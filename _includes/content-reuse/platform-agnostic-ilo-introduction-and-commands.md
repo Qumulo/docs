@@ -1,4 +1,3 @@
-<br>
 Your nodes receive DHCP address assignments by default. When you configure a node's iLO port, you can access the node by using the IP address (that the DHCP server assigns to the node) and a web browser that supports HTML5, Java, and .NET
 
 {% capture content_tag %}{{site.splitIlo}}{% endcapture %}
