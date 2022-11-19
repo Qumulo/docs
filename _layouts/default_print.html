@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<html>
 <head>
     {% include head_print.html %}
 
@@ -8,13 +7,14 @@
 </head>
 
 <body class="{% if page.type == "title"%}title{% elsif page.type == "frontmatter" %}frontmatter{% elsif page.type == "first_page" %}first_page{% endif %} print">
-
+    
 <!-- Page Content -->
 <div class="container">
+    
     <!-- Content Column -->
-    <div class="col-md-9">
-
-        {{content}}
+    <div class="col-md-9">        
+        {% assign replace_headings = content | replace: '<h5', '<h6' | replace: '</h5>', '</h6>' | replace: '<h4', '<h5' | replace: '</h4>', '</h5>' | replace: '<h3', '<h4' | replace: '</h3>', '</h4>' | replace: '<h2', '<h3' | replace: '</h2>', '</h3>' | replace: '<h9', '<h2' | replace: '</h9>', '</h2>' %}
+        {{ replace_headings }}
     </div>
 
 </div>    <!-- /.container -->

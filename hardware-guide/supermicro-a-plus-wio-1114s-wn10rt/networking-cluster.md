@@ -1,9 +1,9 @@
 ---
 title: "Networking Your Supermicro A+ WIO 1114S-WN10RT Cluster"
 summary: "This section explains how to network a Supermicro 114S cluster, lists the networking prerequisites, outlines the recommended configuration, and explains how to connect to redundant switches or to a single switch."
-permalink: hardware-guide/supermicro-a-plus-wio-1114s-wn10rt/networking-cluster.html
+permalink: /hardware-guide/supermicro-a-plus-wio-1114s-wn10rt/networking-cluster.html
 redirect_from:
-  - hardware/supermicro-a-plus-wio-1114s-wn10rt/networking-cluster.html
+  - /hardware/supermicro-a-plus-wio-1114s-wn10rt/networking-cluster.html
 sidebar: hardware_guide_sidebar
 keywords: network, networking, cluster, switch, Ethernet, ports, IP, Supermicro 1114S, WN10RT
 ---
