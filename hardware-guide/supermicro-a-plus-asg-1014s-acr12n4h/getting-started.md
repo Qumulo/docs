@@ -1,9 +1,9 @@
 ---
 title: "Getting Started with Qumulo on Supermicro A+ ASG-1014S-ACR12N4H"
 summary: "This section explains how to prepare Supermicro 1014S nodes for creating a Qumulo Core cluster."
-permalink: hardware-guide/supermicro-a-plus-asg-1014s-acr12n4h/getting-started.html
+permalink: /hardware-guide/supermicro-a-plus-asg-1014s-acr12n4h/getting-started.html
 redirect_from:
-  - hardware/supermicro-a-plus-asg-1014s-acr12n4h/getting-started.html
+  - /hardware/supermicro-a-plus-asg-1014s-acr12n4h/getting-started.html
 sidebar: hardware_guide_sidebar
 keywords: getting started guide, quick reference, Supermicro 1014S, ACR12N4H, verify node, field verification tool, FVT
 ---

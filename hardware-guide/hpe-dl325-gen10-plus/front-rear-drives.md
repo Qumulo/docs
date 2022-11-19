@@ -1,9 +1,9 @@
 ---
 title: "Front and Rear Drive Bays on HPE ProLiant DL325 Gen10 Plus Nodes"
 summary: "This section explains the front and rear drive bays in HPE ProLiant DL325 Gen10 Plus nodes. On this platform, the drives in a node are arranged into <em>rows</em> and groups called <em>boxes</em>."
-permalink: hardware-guide/hpe-dl325-gen10-plus/front-rear-drives.html
+permalink: /hardware-guide/hpe-dl325-gen10-plus/front-rear-drives.html
 redirect_from:
-  - hardware/hpe-dl325-gen10-plus/front-rear-drives.html
+  - /hardware/hpe-dl325-gen10-plus/front-rear-drives.html
 sidebar: hardware_guide_sidebar
 keywords: front drive, rear drive, drive, drive bay
 ---
