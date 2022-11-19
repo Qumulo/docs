@@ -3,9 +3,25 @@ layout: default_print
 comments: true
 ---
 <div class="post-header">
-    <h1 class="post-title-main" id="{{page.permalink | replace: '/', '' }}">{{ page.title }}</h1>
+  {% for entry in site.data.sidebars[page.sidebar].entries[0].folders %}
+    {% if entry.title and entry.type != 'navi' and entry.type != 'frontmatter' %}
+      {% for item in entry.folderitems %}
+        {% if item.url == page.permalink %}
+<h1 class="post-title-main" id="{{page.permalink | replace: '/', '' }}">{{ entry.title }}</h1>
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+  {% endfor %}  
+  <!--
+    At this point, the following heading is set on purpose to an unreasonably
+    high heading level, so that I can perform substitution in the generated
+    HTML, before Prince XML builds it into a PDF file. This applies only to
+    PDF content.
+  -->
+  <h9>{{ page.title }}</h9>
+  <p>{{ page.summary }}</p>
 </div>
 
 <div class="post-content">
-    {{ content }}
+  {{ content }}
 </div>

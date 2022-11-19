@@ -1,9 +1,9 @@
 ---
 title: "Drive Bay Mapping in Supermicro A+ ASG-1014S-ACR12N4H Nodes"
 summary: "This section explains the drive bay mapping in Supermicro 1014S nodes."
-permalink: hardware-guide/supermicro-a-plus-asg-1014s-acr12n4h/drive-bay-mapping.html
+permalink: /hardware-guide/supermicro-a-plus-asg-1014s-acr12n4h/drive-bay-mapping.html
 redirect_from:
-  - hardware/supermicro-a-plus-asg-1014s-acr12n4h/drive-bay-mapping.html
+  - /hardware/supermicro-a-plus-asg-1014s-acr12n4h/drive-bay-mapping.html
 sidebar: hardware_guide_sidebar
 keywords: drive, hard drive, drive bay, mapping, Supermicro 1014S, ACR12N4H
 ---

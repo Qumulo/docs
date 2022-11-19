@@ -1,10 +1,10 @@
 ---
 title: "Drive Bay Mapping in Supermicro A+ WIO 1114S-WN10RT Nodes"
 summary: "This section explains the drive bay mapping in Supermicro 1114S nodes."
-permalink: hardware-guide/supermicro-a-plus-wio-1114s-wn10rt/drive-bay-mapping.html
+permalink: /hardware-guide/supermicro-a-plus-wio-1114s-wn10rt/drive-bay-mapping.html
 redirect_from:
-  - hardware/supermicro-a-plus-wio-1114s-wn10rt/drive-slot-mapping.html
-  - hardware/supermicro-a-plus-wio-1114s-wn10rt/drive-bay-mapping.html
+  - /hardware/supermicro-a-plus-wio-1114s-wn10rt/drive-slot-mapping.html
+  - /hardware/supermicro-a-plus-wio-1114s-wn10rt/drive-bay-mapping.html
 sidebar: hardware_guide_sidebar
 keywords: drive, hard drive, drive bay, mapping, Supermicro 1114S, WN10RT
 ---
