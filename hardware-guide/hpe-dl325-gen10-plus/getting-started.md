@@ -13,11 +13,11 @@ keywords: getting started guide, quick reference, HPE, ProLiant DL325 Gen10 Plus
 
 
 ## Step 1: Verify Your Node
-1. Shut down your node and connect a display, a keyboard, and a mouse to it.
 
-1. Plug the Qumulo Core USB Drive Installer into an available USB port on the node and then press the power button.
+{% include content-reuse/platform-agnostic-verify-node-preamble.md %}
 
-   {% include image.html alt="To power on the node, press the power button." file="dl325-front.png" %}
+   {% capture alt_tag %}Front Diagram of the {{site.dl325g10p}} Node{% endcapture %}
+   {% include image.html alt=alt_tag file="dl325-front.png" %}
 
 
 ## Step 2: Boot by Using the Qumulo Core USB Drive Installer

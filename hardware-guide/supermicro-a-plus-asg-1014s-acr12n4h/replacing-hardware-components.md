@@ -22,23 +22,7 @@ keywords: technical specifications, tech specs, specs, specifications, Supermicr
 </ul>
 {{site.data.alerts.end}}
 
-
-## To Perform the Part Replacement Procedure by Using the FVT
-{{site.partReplaceDefine}}
-
-{% capture content_tag %}{{site.partReplaceDcms}}{% endcapture %}
-{% include note.html content=content_tag %}
-
-1. Boot by using the latest version of the Qumulo Core USB Drive Installer.
-
-1. Select **[*] Perform maintenance**.
-   
-1. Select **[2] Perform automatic repair after part replacement (non-destructive)**.
-
-   The part replacement procedure runs and the **FVT passed!** message appears.
-
-{% include note.html content="In some cases, after the part replacement procedure, the message `FIX: Run the FVT flash command.` appears. Enter `1` as you would for a [fixable issue](/hardware-guide/supermicro-a-plus-asg-1014s-acr12n4h/getting-started.html#fixable-issues-during-installation) to reboot the node and then repeat the part replacement procedure." %}
-
+{% include content-reuse/platform-agnostic-part-replacement-procedure-fvt.md %}
 
 ## To Replace a Drive
 Your {{site.sm1014s}} chassis contains 12 HDDs, 4 NVMe drives, and one NVMe boot drive (in an internal M.2 expansion slot). For information about replacing a drive, see [Drive Bay Mapping](drive-bay-mapping.md) and the following topics in the Supermicro documentation.
