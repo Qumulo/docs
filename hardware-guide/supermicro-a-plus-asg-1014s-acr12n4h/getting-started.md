@@ -10,9 +10,7 @@ keywords: getting started guide, quick reference, Supermicro 1014S, ACR12N4H, ve
 
 ## Step 1: Verify Your Node
 
-1. Shut down your node and connect a display, a keyboard, and a mouse to it.
-
-1. Plug the [Qumulo Core USB Drive Installer](/administrator-guide/qumulo-core/creating-usb-drive-installer.html) into an available USB port on the node and then press the power button.
+{% include content-reuse/platform-agnostic-verify-node-preamble.md %}
 
    {% capture alt_tag %}Front Diagram of the {{site.sm1014sLong}} Node{% endcapture %}
    {% include image.html alt=alt_tag file="supermicro-1014s-front-diagram.png" url="/hardware-guide/supermicro-a-plus-asg-1014s-acr12n4h/images/supermicro-1014s-front-diagram.png" %}
