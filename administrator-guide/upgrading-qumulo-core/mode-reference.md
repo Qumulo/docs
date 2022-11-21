@@ -9,8 +9,8 @@ keywords: update, upgrade, instant, instant software upgrade, platform, platform
 ---
 
 <ul>
-  <li>An <a href="instant-software-platform.html#instant-software-upgrade"><em>instant upgrade</em></a> requires restarting only the container on your nodes and has a downtime of less than 30 seconds.</li>
-  <li>A <a href="instant-software-platform.html#instant-software-upgrade"><em>platform upgrade</em></a> requires either a complete reboot (rebooting all nodes in your cluster at the same time) or a rolling reboot (rebooting the nodes in your cluster one at a time).</li>
+  <li>An <a href="instant-software-platform.html#instant-software-upgrade"><em>instant software upgrade</em></a> requires restarting only the container on your nodes and has a downtime of less than 30 seconds.</li>
+  <li>A <a href="instant-software-platform.html#platform-upgrade"><em>platform upgrade</em></a> requires either a complete reboot (rebooting all nodes in your cluster at the same time) or a rolling reboot (rebooting the nodes in your cluster one at a time).</li>
   <li>A <em>quarterly upgrade</em> aggregates all improvements and fixes since the last quarterly upgrade. The version number of a quarterly upgrade ends in `.0`.</li>
 </ul>
 
