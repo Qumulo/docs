@@ -8,11 +8,9 @@ sidebar: administrator_guide_sidebar
 keywords: update, upgrade, instant, instant software upgrade, platform, platform upgrade
 ---
 
-<ul>
-  <li>An <a href="instant-software-platform.html#instant-software-upgrade"><em>instant software upgrade</em></a> requires restarting only the container on your nodes and has a downtime of less than 30 seconds.</li>
-  <li>A <a href="instant-software-platform.html#platform-upgrade"><em>platform upgrade</em></a> requires either a complete reboot (rebooting all nodes in your cluster at the same time) or a rolling reboot (rebooting the nodes in your cluster one at a time).</li>
-  <li>A <em>quarterly upgrade</em> aggregates all improvements and fixes since the last quarterly upgrade. The version number of a quarterly upgrade ends in `.0`.</li>
-</ul>
+* An [_instant software upgrade_](instant-software-platform.md#instant-software-upgrade) requires restarting only the container on your nodes and has a downtime of less than 30 seconds.
+* A [_platform upgrade_](instant-software-platform.html#platform-upgrade) requires either a complete reboot (rebooting all nodes in your cluster at the same time) or a rolling reboot (rebooting the nodes in your cluster one at a time).
+* A <em>quarterly upgrade</em> aggregates all improvements and fixes since the last quarterly upgrade. The version number of a quarterly upgrade ends in `.0`.
 
 {% include important.html content="Although the _upgrade_ type for [on-premises upgrades](#on-premises-upgrades) and [cloud upgrades](#cloud upgrades) are often the same, they do occasionally diverge. For instance, for Qumulo Core 5.3.1, a cloud deployment allows an instant upgrades, an on-premises deployment requires a platform upgrade." %}
 
