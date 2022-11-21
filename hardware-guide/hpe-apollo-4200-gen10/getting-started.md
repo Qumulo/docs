@@ -14,11 +14,10 @@ keywords: getting started guide, quick reference, verify node, field verificatio
 
 ## Step 1: Verify Your Node
 
-1. Shut down your node and connect a display, a keyboard, and a mouse to it.
+{% include content-reuse/platform-agnostic-verify-node-preamble.md %}
 
-1. Plug the Qumulo Core USB Drive Installer into an available USB port on the node and then press the power button.
-
-   {% include image.html alt="To power on the node, press the power button." file="hpe-gen10-front-power.png" %}
+   {% capture alt_tag %}Front Diagram of the {{site.a4200g10}} Node{% endcapture %}
+   {% include image.html alt=alt_tag file="hpe-gen10-front-power.png" %}
 
 1. On the **HPE ProLiant** boot screen, do one of the following:
 
