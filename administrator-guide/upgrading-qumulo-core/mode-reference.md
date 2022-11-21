@@ -1,6 +1,6 @@
 ---
 title: "Qumulo Core Upgrade Mode Reference"
-summary: "This section provides a reference for Qumulo Core upgrade modes from version 3.3.3. For more information, see <a class='no_icon' href='https://docs.qumulo.com/administrator-guide/upgrading-qumulo-core/instant-software-platform.html'>Performing Instant Software Upgrades and Platform Upgrades</a>."
+summary: "This section provides a reference for Qumulo Core upgrade modes from version 3.3.3 onwards."
 permalink: /administrator-guide/upgrading-qumulo-core/mode-reference.html
 redirect_from:
   - /administrator-guide/upgrades/mode-reference.html
@@ -8,7 +8,13 @@ sidebar: administrator_guide_sidebar
 keywords: update, upgrade, instant, instant software upgrade, platform, platform upgrade
 ---
 
-{% include note.html content="A _quarterly upgrade_ aggregates all improvements and fixes since the last quarterly upgrade. The version number of a quarterly upgrade ends in `.0`." %}
+<ul>
+  <li>An <a href="instant-software-platform.html#instant-software-upgrade"><em>instant upgrade</em></a> requires restarting only the container on your nodes and has a downtime of less than 30 seconds.</li>
+  <li>A <a href="instant-software-platform.html#instant-software-upgrade"><em>platform upgrade</em></a> requires either a complete reboot (rebooting all nodes in your cluster at the same time) or a rolling reboot (rebooting the nodes in your cluster one at a time).</li>
+  <li>A <em>quarterly upgrade</em> aggregates all improvements and fixes since the last quarterly upgrade. The version number of a quarterly upgrade ends in `.0`.</li>
+</ul>
+
+{% include important.html content="Although the _upgrade_ type for [on-premises upgrades](#on-premises-upgrades) and [cloud upgrades](#cloud upgrades) are often the same, they do occasionally diverge. For instance, for Qumulo Core 5.3.1, a cloud deployment allows an instant upgrades, an on-premises deployment requires a platform upgrade." %}
 
 ## On-Premises Upgrades
 
@@ -19,8 +25,12 @@ keywords: update, upgrade, instant, instant software upgrade, platform, platform
       <th>Upgrade Type</th>
     </thead>
     <tr>
+      <td><strong>5.3.1</strong></td>
+      <td><strong>Platform</strong></td>
+    </tr>    
+    <tr>
       <td>5.3.0</td>
-      <td>Quarterly, Instant</td>
+      <td>Instant, Quarterly</td>
     </tr>
     <tr>
       <td>5.2.5.1</td>
@@ -44,15 +54,11 @@ keywords: update, upgrade, instant, instant software upgrade, platform, platform
     </tr>
     <tr>
       <td>5.2.0.2</td>
-      <td>Quarterly, Instant</td>
+      <td>Instant, Quarterly</td>
     </tr>
     <tr>
-      <td>
-        <strong>5.1.5</strong>
-      </td>
-      <td>
-        <strong>Platform</strong>
-      </td>
+      <td><strong>5.1.5</strong></td>
+      <td><strong>Platform</strong></td>
     </tr>
     <tr>
       <td>5.1.4.1</td>
@@ -67,16 +73,12 @@ keywords: update, upgrade, instant, instant software upgrade, platform, platform
       <td>Instant</td>
     </tr>
     <tr>
-      <td>
-        <strong>5.1.1</strong>
-      </td>
-      <td>
-        <strong>Platform</strong>
-      </td>
+      <td><strong>5.1.1</strong></td>
+      <td><strong>Platform</strong></td>
     </tr>
     <tr>
       <td>5.1.0.1</td>
-      <td>Quarterly, Instant</td>
+      <td>Instant, Quarterly</td>
     </tr>
     <tr>
       <td>5.0.6</td>
@@ -104,7 +106,7 @@ keywords: update, upgrade, instant, instant software upgrade, platform, platform
     </tr>
     <tr>
       <td>5.0.0.1</td>
-      <td>Quarterly, Instant</td>
+      <td>Instant, Quarterly</td>
     </tr>
     <tr>
       <td>4.3.4</td>
@@ -124,7 +126,7 @@ keywords: update, upgrade, instant, instant software upgrade, platform, platform
     </tr>
     <tr>
       <td>4.3.0</td>
-      <td>Quarterly, Instant</td>
+      <td>Instant, Quarterly</td>
     </tr>
     <tr>
       <td>4.2.6</td>
@@ -135,12 +137,8 @@ keywords: update, upgrade, instant, instant software upgrade, platform, platform
       <td>Instant</td>
     </tr>
     <tr>
-      <td>
-        <strong>4.2.4</strong>
-      </td>
-      <td>
-        <strong>Platform</strong>
-      </td>
+      <td><strong>4.2.4</strong></td>
+      <td><strong>Platform</strong></td>
     </tr>
     <tr>
       <td>4.2.3</td>
@@ -151,16 +149,12 @@ keywords: update, upgrade, instant, instant software upgrade, platform, platform
       <td>Instant</td>
     </tr>
     <tr>
-      <td>
-        <strong>4.2.1</strong>
-      </td>
-      <td>
-        <strong>Platform</strong>
-      </td>
+      <td><strong>4.2.1</strong></td>
+      <td><strong>Platform</strong></td>
     </tr>
     <tr>
       <td>4.2.0</td>
-      <td>Quarterly, Instant</td>
+      <td>Instant, Quarterly</td>
     </tr>
     <tr>
       <td>4.1.5</td>
@@ -184,7 +178,7 @@ keywords: update, upgrade, instant, instant software upgrade, platform, platform
     </tr>
     <tr>
       <td>4.1.0.1</td>
-      <td>Quarterly, Instant</td>
+      <td>Instant, Quarterly</td>
     </tr>
     <tr>
       <td>4.0.6</td>
@@ -212,7 +206,7 @@ keywords: update, upgrade, instant, instant software upgrade, platform, platform
     </tr>
     <tr>
       <td>4.0.0.2</td>
-      <td>Quarterly, Instant</td>
+      <td>Instant, Quarterly</td>
     </tr>
     <tr>
       <td>3.3.5</td>
@@ -237,6 +231,10 @@ keywords: update, upgrade, instant, instant software upgrade, platform, platform
       <th>Version</th>
       <th>Upgrade Type</th>
     </thead>
+    <tr>
+      <td>5.3.1</td>
+      <td>Instant</td>
+    </tr>    
     <tr>
       <td>5.3.0</td>
       <td>Instant</td>
@@ -263,15 +261,11 @@ keywords: update, upgrade, instant, instant software upgrade, platform, platform
     </tr>
     <tr>
       <td>5.2.0.2</td>
-      <td>Quarterly, Instant</td>
+      <td>Instant, Quarterly</td>
     </tr>
     <tr>
-      <td>
-        <strong>5.1.5</strong>
-      </td>
-      <td>
-        <strong>Platform</strong>
-      </td>
+      <td><strong>5.1.5</strong></td>
+      <td><strong>Platform</strong></td>
     </tr>
     <tr>
       <td>5.1.4.1</td>
@@ -286,16 +280,12 @@ keywords: update, upgrade, instant, instant software upgrade, platform, platform
       <td>Instant</td>
     </tr>
     <tr>
-      <td>
-        <strong>5.1.1</strong>
-      </td>
-      <td>
-        <strong>Platform</strong>
-      </td>
+      <td><strong>5.1.1</strong></td>
+      <td><strong>Platform</strong></td>
     </tr>
     <tr>
       <td>5.1.0.1</td>
-      <td>Quarterly, Instant</td>
+      <td>Instant, Quarterly</td>
     </tr>
     <tr>
       <td>5.0.6</td>
@@ -323,7 +313,7 @@ keywords: update, upgrade, instant, instant software upgrade, platform, platform
     </tr>
     <tr>
       <td>5.0.0.1</td>
-      <td>Quarterly, Instant</td>
+      <td>Instant, Quarterly</td>
     </tr>
     <tr>
       <td>4.3.4</td>
@@ -343,7 +333,7 @@ keywords: update, upgrade, instant, instant software upgrade, platform, platform
     </tr>
     <tr>
       <td>4.3.0</td>
-      <td>Quarterly, Instant</td>
+      <td>Instant, Quarterly</td>
     </tr>
     <tr>
       <td>4.2.6</td>
@@ -354,12 +344,8 @@ keywords: update, upgrade, instant, instant software upgrade, platform, platform
       <td>Instant</td>
     </tr>
     <tr>
-      <td>
-        <strong>4.2.4</strong>
-      </td>
-      <td>
-        <span><strong>Platform</strong><br></span>
-      </td>
+      <td><strong>4.2.4</strong></td>
+      <td><span><strong>Platform</strong><br></span></td>
     </tr>
     <tr>
       <td>4.2.3</td>
@@ -370,16 +356,12 @@ keywords: update, upgrade, instant, instant software upgrade, platform, platform
       <td>Instant</td>
     </tr>
     <tr>
-      <td>
-        <strong>4.2.1</strong>
-      </td>
-      <td>
-        <strong>Platform</strong>
-      </td>
+      <td><strong>4.2.1</strong></td>
+      <td><strong>Platform</strong></td>
     </tr>
     <tr>
       <td>4.2.0</td>
-      <td>Quarterly, Instant</td>
+      <td>Instant, Quarterly</td>
     </tr>
     <tr>
       <td>4.1.5</td>
@@ -403,15 +385,11 @@ keywords: update, upgrade, instant, instant software upgrade, platform, platform
     </tr>
     <tr>
       <td>4.1.0.1</td>
-      <td>Quarterly, Instant</td>
+      <td>Instant, Quarterly</td>
     </tr>
     <tr>
-      <td>
-        <strong>4.0.6</strong>
-      </td>
-      <td>
-        <strong>Platform</strong>
-      </td>
+      <td><strong>4.0.6</strong></td>
+      <td><strong>Platform</strong></td>
     </tr>
     <tr>
       <td>4.0.5</td>
@@ -435,7 +413,7 @@ keywords: update, upgrade, instant, instant software upgrade, platform, platform
     </tr>
     <tr>
       <td>4.0.0.2</td>
-      <td>Quarterly, Instant</td>
+      <td>Instant, Quarterly</td>
     </tr>
     <tr>
       <td>3.3.5</td>
