@@ -147,7 +147,7 @@ entries:
       output: web, pdf
 
     - title: Watching for File Attribute and Directory Changes by Using SMB2 CHANGE_NOTIFY
-      url: /administrator-guide/file-system-protocols/watch-file-directory-changes-smb2-change-notify.html
+      url: /administrator-guide/file-system-protocols/watching-file-directory-changes-smb2-change-notify.html
       output: web, pdf
 
   - title: Using NFSv4.1 with Kerberos in Qumulo Core

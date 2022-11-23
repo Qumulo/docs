@@ -1,7 +1,7 @@
 ---
 title: "Watching for File Attribute and Directory Changes by Using SMB2 CHANGE_NOTIFY"
 summary: "This section lists the completion filters that an SMB client can request and the corresponding actions that Qumulo Core returns for a matched change."
-permalink: /administrator-guide/file-system-protocols/watch-file-directory-changes-smb2-change-notify.html
+permalink: /administrator-guide/file-system-protocols/watching-file-directory-changes-smb2-change-notify.html
 sidebar: administrator_guide_sidebar
 keywords: SMB, SMB2, CHANGE_NOTIFY, completion filter, action, matched change
 varNoEA: Qumulo doesn't support mutating extended attributes (EA). If only the <code>FILE_NOTIFY_CHANGE_EA</code> filter is requested, no events propagate.
