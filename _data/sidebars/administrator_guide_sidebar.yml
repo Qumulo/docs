@@ -188,7 +188,7 @@ entries:
       output: web, pdf
 
   - title: Configuring and Collecting Metrics in Qumulo Core
-    url: /administrator-guide/metrics/index.md
+    url: /administrator-guide/metrics/index.html
     output: web, pdf
     folderitems:
 
