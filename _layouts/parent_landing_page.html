@@ -42,10 +42,10 @@ layout: default
     {% for entry in site.data.sidebars[page.sidebar].entries[0].folders %}
       {% if entry.type != 'navi' and entry.title %}
         <ul>
-          <li><strong>{{entry.title}}</strong>
+          <li><strong><a href="{{ entry.url }}">{{ entry.title }}</a></strong>
             <ul>
               {% for item in entry.folderitems %}
-                <li><a href="{{ item.url }}">{{ item.title }}</a></li>
+              <li><a href="{{ item.url }}">{{ item.title }}</a></li>
               {% endfor %}
             </ul>
           </li>
