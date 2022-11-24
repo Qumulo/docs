@@ -3,15 +3,19 @@ layout: default_print
 comments: true
 ---
 <div class="post-header">
-  {% for entry in site.data.sidebars[page.sidebar].entries[0].folders %}
-    {% if entry.title and entry.type != 'navi' and entry.type != 'frontmatter' %}
-      {% for item in entry.folderitems %}
-        {% if item.url == page.permalink %}
-<h1 class="post-title-main" id="{{page.permalink | replace: '/', '' }}">{{ entry.title }}</h1>
+    {% assign sidebar = site.data.sidebars[page.sidebar].entries %}
+    
+    {% for entry in sidebar %}
+      {% for folder in entry.folders %}
+        {% if folder.title and folder.type != "navi" and folder.type != "frontmatter" %}
+          {% for folderitem in folder.folderitems %}
+            {% if folderitem.url == page.url and forloop.first == true %}
+<h1 class="post-title-main" id="{{page.permalink | replace: '/', '' }}">{{ folder.title }}</h1>
+            {% endif %}
+          {% endfor %}
         {% endif %}
       {% endfor %}
-    {% endif %}
-  {% endfor %}  
+    {% endfor %}
   <!--
     At this point, the following heading is set on purpose to an unreasonably
     high heading level, so that I can perform substitution in the generated
