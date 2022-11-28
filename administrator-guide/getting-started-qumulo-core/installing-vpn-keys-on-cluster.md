@@ -82,7 +82,7 @@ Before you begin, make sure that you have done the following.
 1. To install the VPN keys on your cluster, specify the path to the directory that contains the VPN keys. For example:
    
    ```bash
-   sudo qq install_vpn_keys /my/path/*
+   sudo qq install_vpn_keys /my/path/
    ```
    
 {{page.varVerifyKeys}}
