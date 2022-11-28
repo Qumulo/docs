@@ -146,6 +146,10 @@ entries:
       url: /administrator-guide/file-system-protocols/nfsv4.1-acls.html
       output: web, pdf
 
+    - title: Watching for File Attribute and Directory Changes by Using SMB2 CHANGE_NOTIFY
+      url: /administrator-guide/file-system-protocols/watching-file-directory-changes-smb2-change-notify.html
+      output: web, pdf
+
   - title: Using NFSv4.1 with Kerberos in Qumulo Core
     url: /administrator-guide/kerberos/index.html
     output: web, pdf

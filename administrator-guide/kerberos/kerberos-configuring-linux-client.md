@@ -290,7 +290,7 @@ In environments where Linux systems map exactly to end users that have `kinit`-b
    b. Add the following line to the `/etc/auto.kerberos_nfs_mount_example` map file.
 
    ```
-   /mnt/qumulo_mount_point -vers=4.1,sec=krb5 my-qumulo-cluster.my-domain.example.com:/
+   /mnt/qumulo_mount_point -vers=4.1,sec=krb5 <qumulo-cluster>.my-domain.example.com:/
    ```
 
 1. Restart `autofs`.

@@ -38,14 +38,14 @@ This process requires coordination between the cluster administrator and SSO adm
    a. The SSO administrator uses the cluster's fully qualified domain name (FQDN) format for the [service provider](#service-provider) (SP) endpoint (also known as the _assertion consumer service URL_), in the following format:
 
    ```
-   https://my-cluster.my-org.com/saml
+   https://<my-cluster>.<my-org>.com/saml
    ```
    
       {% include note.html content="Because the user's browser performs DNS resolution (for example, in a VPN-only scenario), it isn't necessary for an external DNS server to be able to resolve the cluster's FQDN." %}
 
    b. If prompted, the SSO administrator enters the HTTP POST binding for the SP endpoint. Typically, this binding is specified by default.
 
-   c. If prompted for **SP Entity ID** (alternatively named **Application Identifier** or **Audience**), the SSO administrator enters `https://my-cluster.my-org.com/saml`.
+   c. If prompted for **SP Entity ID** (alternatively named **Application Identifier** or **Audience**), the SSO administrator enters `https://<my-cluster>.<my-org>.com/saml`.
 
    d. If **SAML Signing**  (depending on the SSO service, this option is named differently) configuration is available, the SSO administrator sets it to **Sign SAML response and assertion**.
    
@@ -60,7 +60,7 @@ This process requires coordination between the cluster administrator and SSO adm
    * The IdP SSO URL&mdash;to which the Qumulo cluster can send authentication requests&mdash;in the following format:
 
      ```
-     https://my-org.sso-provider.com/foo
+     https://<my-org>.<sso-provider>.com/foo
      ```
      
    * The IdP issuer or `EntityId`.
@@ -70,13 +70,13 @@ This process requires coordination between the cluster administrator and SSO adm
      For example:
 
      ```
-     http://www.sso-provider.com/abc12de34fgAB5CDh6i7
+     http://www.<sso-provider>.com/abc12de34fgAB5CDh6i7
      ```
     
    * The FQDN of the cluster, in the following format:
 
      ```
-     qumulo-cluster.my-org.com
+     <qumulo-cluster>.<my-org>.com
      ```
 
 1. To configure and enable SAML login to the Qumulo cluster, the cluster administrator runs the `qq saml_modify_settings` command. For example:
@@ -84,15 +84,15 @@ This process requires coordination between the cluster administrator and SSO adm
    ```bash
    qq saml_modify_settings --enable \
      --idp-certificate-file ~/certificate.pem \
-     --cluster-dns-name qumulo-cluster.my-org.com \
-     --idp-entity-id http://www.sso-provider.com/abc12de34fgAB5CDh6i7 \
-     --idp-sso-url https://my-org.sso-provider.com/abc12de34fgAB5CDh6i7/saml \
+     --cluster-dns-name <qumulo-cluster>.<my-org>.com \
+     --idp-entity-id http://www.<sso-provider>.com/abc12de34fgAB5CDh6i7 \
+     --idp-sso-url https://<my-org>.<sso-provider>.com/abc12de34fgAB5CDh6i7/saml \
    ```
    
    {{site.data.alerts.note}}
    <ul>
      <li>To view the current SAML configuration, the cluster administrator can use the <code>qq saml_get_settings</code> command.</li>
-     <li>To allow specific changes (for instance, correct a typo, update a DNS name or an expired certificate, or temporarily disable SAML SSO without losing any of the other settings), the cluster administrator can use the <code>qq saml_modify_settings</code> command to change individual SAML settings independently.</li>
+     <li>To allow specific changes (for example, correct a typo, update a DNS name or an expired certificate, or temporarily disable SAML SSO without losing any of the other settings), the cluster administrator can use the <code>qq saml_modify_settings</code> command to change individual SAML settings independently.</li>
      <li>For first-time SAML configurations, the cluster administrator must provide all of the required settings.</li>
      <li>Aside from a basic check of the IdP certificate, Qumulo Core doesn't verify the configuration parameters. It is the cluster administrator's responsibility to ensure that IdP-initiated SAML login works correctly. (This login type initiates when the user clicks <strong>Continue to SSO login</strong> in the Web UI or selects the Qumulo cluster on the SSO portal.)</li>
    </ul>
@@ -130,7 +130,7 @@ Qumulo Core supports three SAML SSO workflows:
    The Web UI redirects the user to the configured SSO portal. Because the authentication request uses HTTP-Redirect Binding, the login URL appears.
    
    ```
-   https://my-org.sso-provider.com/abc12de34fgAB5CDh6i7/saml?SAMLRequest=abcdefgh1234567890...
+   https://<my-org>.<sso-provider>.com/abc12de34fgAB5CDh6i7/saml?SAMLRequest=abcdefgh1234567890...
    ```
    
 1. The user clicks the login link and the SSO portal authenticates the user.
@@ -147,19 +147,23 @@ In Qumulo Core 5.3.0 (and higher), a user can authenticate a `qq` CLI session by
    qq --host {{site.exampleIP0}} sso_login
    ```
    
-   The login URL appears.
+   The login URL and a prompt appear. The following is an example URL.
    
    ```
-   https://my-qumulo-cluster.my-org.com/saml-login?login-id=12345678-1234-1234-1234-123456789012
+   https://<my-cluster>.<my-org>.com/saml-login?login-id=12345678-1234-1234-1234-123456789012
    ```
    
    {% include note.html content="The user must complete the following step within 5 minutes, while the `qq` CLI pauses for authentication." %}
    
 1. When the user opens the login URL in a browser, the URL redirects the user to a configured SSO portal and one of the following two scenarios takes place:
 
-   * If authentication succeeds, the browser shows a message that asks the user to return to the CLI session.
+   * If authentication succeeds, the browser shows a message that contains an eight-character verification code and asks the user to return to the CLI session.
 
-     The paused `sso_login` command recognizes that authentication is complete and shows the authenticated username.
+     The user copies the verification code and enters it into the waiting prompt of the `sso_login` command.
+     
+     * If the verification code is correct, the command recognizes that authentication is complete and shows the authenticated username.
+
+     * If the verification code is incorrect, the user must retry the workflow.
    
    * If authentication doesn't succeed, the browser displays an error message.
 

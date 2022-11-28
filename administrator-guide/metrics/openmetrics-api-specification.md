@@ -113,6 +113,30 @@ The following table lists metric names, types, labels, and descriptions.
       <td>The total number of completed AD <code>NETLOGON</code> operations</td>
     </tr>
     <tr>
+      <td><code>qumulo_cpu_max_temperature_celsius</code></td>
+      <td><a href="#metric-type-gauge"><code>gauge</code></a></td>
+      <td>
+        <ul>
+          <li><a href="#metric-label-cpu"><code>cpu</code></a></li>
+          <li><a href="#metric-label-node_id"><code>node_id</code></a></li>
+        </ul>
+      </td>
+      <td>The maximum temperature threshold for each physical CPU</td>
+    </tr>
+    <tr>
+      <td><code>qumulo_disk_endurance_percent</code></td>
+      <td><a href="#metric-type-gauge"><code>gauge</code></a></td>
+      <td>
+        <ul>
+          <li><a href="#metric-label-disk_type"><code>disk_type</code></a></li>
+          <li><a href="#metric-label-drive_bay"><code>drive_bay</code></a></li>
+          <li><a href="#metric-label-node_id"><code>node_id</code></a></li>
+        </ul>
+      </td>
+      <td>The remaining disk endurance value for each disk in the cluster, ranging <code>100</code> (no disk wear) to <code>0</code> (disk is worn fully)<br>
+     </td>
+    </tr>
+    <tr>
       <td><code>qumulo_cpu_temperature_celsius</code></td>
       <td><a href="#metric-type-gauge"><code>gauge</code></a></td>
       <td>

@@ -78,7 +78,7 @@ The SPN is a string that identifies the Kerberos services that a particular host
 1. On the **Attribute Editor** tab, find the `servicePrincipalName` attribute and edit its value to include a new SPN in the `nfs/<machine_account>.<domain_fqdn>` format, for example:
 
    ```
-   nfs/qumulo-cluster.ad.eng.example.com
+   nfs/<qumulo-cluster>.ad.eng.example.com
    ```
 
    {% include tip.html content="You can use the other, automatically generated entries as syntax examples." %}
@@ -95,23 +95,23 @@ The SPN is a string that identifies the Kerberos services that a particular host
 
 1. Use RDP or SSH to connect to your AD domain.
 
-1. Run the `setspn` command with the machine account (in this example, `qumulo-cluster`) followed by a period (`.`) and the FQDN (in this example, `ad.eng.example.com`). For example:
+1. Run the `setspn` command with the machine account (in this example, `<qumulo-cluster>`) followed by a period (`.`) and the FQDN (in this example, `ad.eng.example.com`). For example:
 
    ```
-   setspn -s nfs/qumulo-cluster.ad.eng.example.com
+   setspn -s nfs/<qumulo-cluster>.ad.eng.example.com
    ```
 
 1. Confirm the configuration by using the `setspn` command with the machine account name. For example:
 
    ```
-   setspn qumulo-cluster
+   setspn <qumulo-cluster>
    ```
 
 ### To Troubleshoot Your SPN Configuration
 If your SPN is configured incorrectly, a client is likely to display the following error:
 
 ```
-mount.nfs: access denied by server while mounting qumulo-cluster.ad.eng.qumulo.com:/
+mount.nfs: access denied by server while mounting <qumulo-cluster>.ad.eng.qumulo.com:/
 ```
 
 1. Take a client-side packet capture and find the logs for the client and AD Kerberos.
