@@ -1,9 +1,7 @@
 ---
-title: "Configuring and Using Integrated Lights Out (iLO) on HPE Apollo 4200 Gen10 Nodes"
-summary: "This section explains how to configure and use Integrated Lights Out (iLO) on HPE Apollo 4200 Gen10 nodes."
-permalink: /hardware-guide/hpe-apollo-4200-gen10/configuring-ilo.html
-redirect_from:
-  - /hardware/hpe-apollo-4200-gen10/configuring-ilo.html
+title: "Configuring and Using Integrated Lights Out (iLO) on HPE ProLiant DL325 Gen10 Plus Nodes"
+summary: "This section explains how to configure and use Integrated Lights Out (iLO) on HPE ProLiant DL325 Gen10 Plus nodes."
+permalink: /hardware-guide/hpe-dl325-gen10-plus/configuring-ilo.html
 sidebar: hardware_guide_sidebar
 keywords: out-of-band management, out of band management, iLO, DHCP, network, networking, LAN, ipmitool
 ---
@@ -14,10 +12,10 @@ keywords: out-of-band management, out of band management, iLO, DHCP, network, ne
 To configure the iLO port, you must have root access to the client-facing network through SSH. For example, you can use the `sudo -s` command.
 
 ## How the iLO Port Works
-{{site.a4200g10}} nodes provide iLO support for out-of-band maintenance access even when the node is plugged in but powered off. The following diagram shows the location of the iLO port.
+{{site.dl325g10p}} nodes provide iLO support for out-of-band maintenance access even when the node is plugged in but powered off. The following diagram shows the location of the iLO port.
 
-{% capture alt_tag %}The location of the iLO port on the {{site.a4200g10}} node{% endcapture %}
-{% include image.html alt=alt_tag file="hpe-gen10-ilo.png" %}
+{% capture alt_tag %}The location of the iLO port on the {{site.dl325g10p}} node{% endcapture %}
+{% include image.html alt=alt_tag file="dl325-ilo.png" %}
 
 Your nodes receive DHCP address assignments by default. When you configure a node's iLO port, you can access the node by using the IP address (that the DHCP server assigns to the node) and a web browser that supports HTML5, Java, and .NET.
 
