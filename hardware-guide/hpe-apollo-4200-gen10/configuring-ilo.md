@@ -13,4 +13,4 @@ keywords: out-of-band management, out of band management, iLO, DHCP, network, ne
 {% capture alt_tag %}The location of the iLO port on the {{site.a4200g10}} node{% endcapture %}
 {% include image.html alt=alt_tag file="hpe-gen10-ilo.png" %}
 
-{% include content-reuse/platform-agnostic-ilo-introduction-and-commands.md %}
+{% include content-reuse/platform-agnostic-ilo-configuration.md %}

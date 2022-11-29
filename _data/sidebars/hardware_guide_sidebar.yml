@@ -159,6 +159,10 @@ entries:
     - title: Front and Rear Drives
       url: /hardware-guide/hpe-dl325-gen10-plus/front-rear-drives.html
       output: web, pdf
+      
+    - title: iLO Configuration
+      url: /hardware-guide/hpe-dl325-gen10-plus/configuring-ilo.html
+      output: web, pdf      
 
     - title: Cluster Networking
       url: /hardware-guide/hpe-dl325-gen10-plus/networking-cluster.html
