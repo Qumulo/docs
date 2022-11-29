@@ -130,10 +130,6 @@ entries:
       url: /hardware-guide/hpe-apollo-4200-gen10-plus/panel-leds.html
       output: web, pdf
 
-    - title: Drive LEDs
-      url: /hardware-guide/hpe-apollo-4200-gen10-plus/drive-leds.html
-      output: web, pdf
-
     - title: iLO Configuration
       url: /hardware-guide/hpe-apollo-4200-gen10-plus/configuring-ilo.html
       output: web, pdf
