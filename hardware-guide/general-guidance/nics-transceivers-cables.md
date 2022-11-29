@@ -12,14 +12,136 @@ keywords: network transceiver, network transceivers, nic, mellanox, short range 
 ---
 
 ## Corresponding Node and NIC Types
-The following table lists node types, the NICs that these nodes use, the speeds of the NICs, and links to the latest transceiver compatibility documentation from the vendor.
+The following table lists node types and the speeds of the NICs included. The table further down lists NIC models and links their transceiver compatibility tables.
+Not all nodes are compatible with all NICs of a given speed, if you need to change your NICs to a different model, contact Qumulo Care.
 
-{{site.data.alerts.note}}
-<ul>
-  <li>The following table lists the latest firmware that Qumulo Core supports. For certain vendors, we update the following table with every firmware release.</li>
-  <li>You can install any NIC that corresponds to a node type. If your node type is compatible with more than one NIC, see <a href="#to-identify-your-nic">To Identify Your NIC</a>.</li>
-</ul>
-{{site.data.alerts.end}}
+<table>
+<thead>
+  <tr>
+    <th>Node Type</th>
+    <th>Speed</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>SM 1114S</td>
+    <td rowspan=8>100 Gbps</td>
+  </tr>
+  <tr>
+    <td>P-23T</td>
+  </tr>
+  <tr>
+    <td>P-92T</td>
+  </tr>
+  <tr>
+    <td>P-184T</td>
+  </tr>
+  <tr>
+    <td>P-368T</td>
+  </tr>
+  <tr>
+    <td>C-192T</td>
+  </tr>
+  <tr>
+    <td>C-432T</td>
+  </tr>
+  <tr>
+    <td>HPE DL325 Gen10+</td>
+  </tr>
+
+  <tr>
+    <td>SM 1014S</td>
+    <td>100 Gbps or 25 Gbps depending on license
+  </tr>
+
+  <tr>
+    <td>QC104</td>
+    <td rowspan=5>40 Gbps</td>
+  </tr>
+  <tr>
+    <td>QC208</td>
+  </tr>
+  <tr>
+    <td>QC260</td>
+  </tr>
+  <tr>
+    <td>QC360</td>
+  </tr>
+  <tr>
+    <td>HPE A4200 Gen9</td>
+  </tr>
+
+  <tr>
+    <td>HPE A4200 Gen10
+    <ul>
+        <li>36T</li>
+        <li>90T</li>
+      </ul>
+    </td>
+    <td>10 Gbps/25 Gbps/40 Gbps/100 Gbps</td>
+  </tr>
+  <tr>
+    <td>HPE A4200 Gen10
+    <ul>
+        <li>192T</li>
+      </ul>
+    </td>
+    <td>40 Gbps/100 Gbps</td>
+  </tr>
+  <tr>
+    <td>HPE A4200 Gen10
+    <ul>
+        <li>336T</li>
+      </ul>
+    </td>
+    <td>25 Gbps/40 Gbps</td>
+  </tr>
+  <tr>
+    <td>C-72T</td>
+    <td rowspan=3 >25 Gbps</td>
+  </tr>
+  <tr>
+    <td>C-168T</td>
+  </tr>
+  <tr>
+    <td>K432T</td>
+  </tr>
+
+  <tr>
+    <td>K-144T</td>
+    <td rowspan=4 >10 Gbps</td>
+  </tr>
+  <tr>
+    <td>K-168T</td>
+  </tr>
+  <tr>
+    <td>QC24</td>
+  </tr>
+  <tr>
+    <td>QC40</td>
+  </tr>
+</tbody>
+</table>
+
+## To Identify Your NIC
+First, identify the NICs present in your node. Most nodes are compatible with multiple NICs, and which transceivers are compatible is determined by the specific NIC model.
+
+1. Use SSH to connect to your node.
+
+1. Run the `lspci | grep "Ethernet controller"` command.
+
+   {% include note.html content="This command might return information about (unused) onboard NICs that have interfaces with speeds of 10 Gbps (or slower)." %}
+
+   A list of NICs is displayed. In the following example, we ran the command on a {{site.sm1114s}} node, which has two ConnectX-6 NICs.
+
+   ```
+   45:00.0 Ethernet controller: Broadcom Inc. and subsidiaries BCM57416 NetXtreme-E Dual-Media 10G RDMA Ethernet Controller (rev 01)
+   45:00.1 Ethernet controller: Broadcom Inc. and subsidiaries BCM57416 NetXtreme-E Dual-Media 10G RDMA Ethernet Controller (rev 01)
+   81:00.0 Ethernet controller: Mellanox Technologies MT28908 Family [ConnectX-6]
+   81:00.1 Ethernet controller: Mellanox Technologies MT28908 Family [ConnectX-6]
+   c5:00.0 Ethernet controller: Mellanox Technologies MT28908 Family [ConnectX-6]
+   c5:00.1 Ethernet controller: Mellanox Technologies MT28908 Family [ConnectX-6]
+   ```
 
 <table>
 <thead>
@@ -162,26 +284,6 @@ The following table lists node types, the NICs that these nodes use, the speeds 
   </tr>
 </tbody>
 </table>
-
-## To Identify Your NIC
-If your node type corresponds to more than one possible NIC type, you might have to identify the specific NIC in your nodes.
-
-1. Use SSH to connect to your node.
-
-1. Run the `lspci | grep "Ethernet controller"` command.
-
-   {% include note.html content="This command might return information about (unused) onboard NICs that have interfaces with speeds of 10 Gbps (or slower)." %}
-
-   A list of NICs is displayed. In the following example, we ran the command on a {{site.sm1114s}} node, which has two ConnectX-6 NICs.
-
-   ```
-   45:00.0 Ethernet controller: Broadcom Inc. and subsidiaries BCM57416 NetXtreme-E Dual-Media 10G RDMA Ethernet Controller (rev 01)
-   45:00.1 Ethernet controller: Broadcom Inc. and subsidiaries BCM57416 NetXtreme-E Dual-Media 10G RDMA Ethernet Controller (rev 01)
-   81:00.0 Ethernet controller: Mellanox Technologies MT28908 Family [ConnectX-6]
-   81:00.1 Ethernet controller: Mellanox Technologies MT28908 Family [ConnectX-6]
-   c5:00.0 Ethernet controller: Mellanox Technologies MT28908 Family [ConnectX-6]
-   c5:00.1 Ethernet controller: Mellanox Technologies MT28908 Family [ConnectX-6]
-   ```
 
 ## Choosing Transceivers for Your Node
 The two main types of fiber optic cables are the Lucent connector (LC) with two fibers (commonly used for 10 Gbps and 25 Gbps connections) and the multi-fiber push on (MPO) connector with eight fibers (commonly used for 40 Gbps connections). Although there are transceivers that can use LC fiber optic cables for 40 Gbps and 100 Gbps connections, these transceivers are generally more expensive, consume more power, and are mainly intended for reusing LC cabling or for long-distance applications.
