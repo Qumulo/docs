@@ -1,6 +1,6 @@
 ---
 title: "Drive LEDs on HPE Apollo 4200 Gen10 Nodes"
-summary: "This section explains the LEDs on large form factor (LFF) and small form factor (SFF) drives in HPE Apollo 4200 Gen10 nodes. For more information, see <a href='https://support.hpe.com/hpesc/public/docDisplay?docLocale=en_US&docId=emr_na-a00061642en_us'>HPE Apollo 4200 Gen10 Server - Document List</a>."
+summary: "This section explains the LEDs on large form factor (LFF) and small form factor (SFF) drives in HPE Apollo 4200 Gen10 nodes."
 permalink: /hardware-guide/hpe-apollo-4200-gen10/drive-leds.html
 redirect_from:
   - /hardware/hpe-apollo-4200-gen10/drive-leds.html
