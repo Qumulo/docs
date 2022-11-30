@@ -1,10 +1,18 @@
 ---
-title: "Networking Your HPE Apollo 4200 Gen10 Plus Cluster"
+title: "Wiring and Networking Your HPE Apollo 4200 Gen10 Plus Cluster"
 summary: "This section explains how to network a HPE Apollo 4200 Gen10 Plus cluster."
 permalink: /hardware-guide/hpe-apollo-4200-gen10-plus/networking-cluster.html
 sidebar: hardware_guide_sidebar
 keywords: network, networking, cluster, switch, Ethernet, ports, IP, HPE, Apollo 4200 Gen10 Plus
 ---
+
+## Node NICs and Ports
+The following diagram shows the NICs and ports on {{a4200g10p}} nodes. On this platform, there are two sets of NICs, one for the front end and one for the back end.
+
+{% include important.html content="For your node to work correctly, you must connect at least one port in the NIC." %}
+
+{% capture alt_tag %}NIC ports on {{site.a4200g10p}} nodes{% endcapture %}
+{% include image.html alt=alt_tag file="hpe-apollo-4200-gen10-plus-networking.png" %}
 
 {% include content-reuse/platform-agnostic-unified-networking-cluster-25-100gbps.md %}
 
