@@ -1,5 +1,5 @@
 ---
-title: "Wiring and Networking Your HPE Apollo 4200 Gen10 Cluster"
+title: "Wiring Nodes and Networking Your HPE Apollo 4200 Gen10 Cluster"
 summary: "This section explains how to wire NIC ports on HPE Apollo 4200 Gen10 nodes and how to network a cluster."
 permalink: /hardware-guide/hpe-apollo-4200-gen10/wiring-nodes-networking-cluster.html
 redirect_from:
