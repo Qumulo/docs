@@ -43,22 +43,22 @@ First, identify the NICs present in your node. Most nodes are compatible with mu
   <tr>
     <td>ConnectX-6</td>
     <td>100 Gbps</td>
-    <td><a href="https://docs.nvidia.com/networking/display/ConnectX6Firmwarev20301004/Firmware+Compatible+Products">Nvidia Compatible Products</a></td>
+    <td><a href="https://docs.nvidia.com/networking/display/ConnectX6Firmwarev20321010/Firmware+Compatible+Products">Nvidia Compatible Products</a></td>
   </tr>
   <tr>
     <td>ConnectX-6Dx</td>
     <td>100 Gbps</td>
-    <td><a href="https://docs.nvidia.com/networking/display/ConnectX6DxFirmwarev22311014/Firmware+Compatible+Products">Nvidia Compatible Products</a></td>
+    <td><a href="https://docs.nvidia.com/networking/display/ConnectX6DxFirmwarev22322004/Firmware+Compatible+Products">Nvidia Compatible Products</a></td>
   </tr>
   <tr>
     <td>ConnectX-5</td>
     <td>100 Gbps</td>
-    <td><a href="https://docs.nvidia.com/networking/display/ConnectX5Firmwarev16301004/Firmware+Compatible+Products#FirmwareCompatibleProducts-SupportedDevicesSupportedDevices">Nvidia Supported Devices</a></td>
+    <td><a href="https://docs.nvidia.com/networking/display/ConnectX5Firmwarev16331048/Firmware+Compatible+Products">Nvidia Compatible Products</a></td>
   </tr>
   <tr>
     <td>ConnectX-4 Lx</td>
     <td>25 Gbps</td>
-    <td><a href="https://docs.nvidia.com/networking/display/ConnectX4LxFirmwarev14311014/Firmware+Compatible+Products">Nvidia Supported Devices</a></td>
+    <td><a href="https://docs.nvidia.com/networking/display/ConnectX4LxFirmwarev14321010/Firmware+Compatible+Products">Nvidia Compatible Products</a></td>
   </tr>
   <tr>
     <td>ConnectX-4</td>
