@@ -9,8 +9,10 @@ keywords: front drive, internal drive, boot drive, drive, drive bay
 <br>
 
 ## Front LFF Drive Row
-{% capture alt_tag %}The front large form factor drive row in the {{site.a4200g10p}} node{% endcapture %}
-{% include image.html alt=alt_tag file="hpe-apollo-4200-gen10-plus-front-panel-lff.png" %}
+The following diagram shows the front drive row, also known as cage 1 or box 1. In the diagram, box 1 holds bays 1-12.
+
+{% capture alt_tag %}The front large form factor drive row (also known as cage 1 or box 1) in the {{site.a4200g10p}} node{% endcapture %}
+{% include image.html alt=alt_tag file="hpe-apollo-4200-gen10-plus-front-panel-lff-cage-1-box-1.png" %}
 
 ## Internal LFF Drive Row
 {% capture alt_tag %}The internal large form factor drive row in the {{site.a4200g10p}} node{% endcapture %}
