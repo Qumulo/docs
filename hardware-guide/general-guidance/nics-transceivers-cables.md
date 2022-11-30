@@ -73,7 +73,7 @@ First, identify the NICs present in your node. Most nodes are compatible with mu
   <tr>
     <td>ConnectX-3</td>
     <td>10 Gbps</td>
-    <td><a href="https://network.nvidia.com/sites/default/files/related-docs/firmware/ConnectX3-FW-2_42_5000-release_notes.pdf)">FW release notes (see section 1.2)</a></td>
+    <td><a href="https://network.nvidia.com/sites/default/files/related-docs/firmware/ConnectX3-FW-2_42_5000-release_notes.pdf">FW release notes (see section 1.2)</a></td>
   </tr>
   <tr>
     <td>P2100G</td>
