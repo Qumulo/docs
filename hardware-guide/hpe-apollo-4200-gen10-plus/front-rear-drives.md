@@ -6,8 +6,6 @@ sidebar: hardware_guide_sidebar
 keywords: front drive, internal drive, boot drive, drive, drive bay
 ---
 
-<br>
-
 ## Front LFF Drive Row
 The following diagram shows the front drive row, also known as cage 1 or box 1. In the diagram, box 1 holds bays 1-12.
 
