@@ -9,7 +9,7 @@ keywords: getting started guide, quick reference, HPE, ProLiant DL325 Gen10 Plus
 ---
 
 ## Prerequisites
-[Qumulo Core USB Drive Installer](https://docs.qumulo.com/administrator-guide/getting-started-qumulo-core/creating-usb-drive-installer.html)
+<a href="https://docs.qumulo.com/administrator-guide/qumulo-core/creating-usb-drive-installer.html" class="no_icon">Qumulo Core USB Drive Installer</a>
 
 
 ## Step 1: Verify Your Node
