@@ -1,6 +1,6 @@
 ---
-title: "Networking Your HPE Apollo 4200 Gen10 Cluster"
-summary: "This section explains how to network a HPE Apollo 4200 Gen10 cluster."
+title: "Wiring and Networking Your HPE Apollo 4200 Gen10 Cluster"
+summary: "This section explains how to wire HPE Apollo 4200 Gen10 nodes and network a cluster."
 permalink: /hardware-guide/hpe-apollo-4200-gen10/wiring-nodes-networking-cluster.html
 redirect_from:
   - /hardware-guide/hpe-apollo-4200-gen10/networking-cluster.html
