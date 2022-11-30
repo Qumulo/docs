@@ -134,8 +134,8 @@ entries:
       url: /hardware-guide/hpe-apollo-4200-gen10-plus/configuring-ilo.html
       output: web, pdf
 
-    - title: Cluster Networking
-      url: /hardware-guide/hpe-apollo-4200-gen10-plus/networking-cluster.html
+    - title: Wiring Nodes and Networking a Cluster
+      url: /hardware-guide/hpe-apollo-4200-gen10-plus/wiring-nodes-networking-cluster.html
       output: web, pdf
 
     - title: Technical Specifications
@@ -159,7 +159,7 @@ entries:
       url: /hardware-guide/hpe-dl325-gen10-plus/configuring-ilo.html
       output: web, pdf      
 
-    - title: Wiring Nodes and Cluster Networking
+    - title: Wiring Nodes and Networking a Cluster
       url: /hardware-guide/hpe-dl325-gen10-plus/wiring-nodes-networking-cluster.html
       output: web, pdf
 
