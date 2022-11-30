@@ -122,7 +122,7 @@ entries:
       url: /hardware-guide/hpe-apollo-4200-gen10-plus/getting-started.html
       output: web, pdf
 
-    - title: Front and Rear Drives
+    - title: Front and Internal Drives
       url: /hardware-guide/hpe-apollo-4200-gen10-plus/front-internal-drives.html
       output: web, pdf
 
