@@ -1,12 +1,21 @@
 ---
 title: "Networking Your HPE Apollo 4200 Gen10 Cluster"
 summary: "This section explains how to network a HPE Apollo 4200 Gen10 cluster."
-permalink: /hardware-guide/hpe-apollo-4200-gen10/networking-cluster.html
+permalink: /hardware-guide/hpe-apollo-4200-gen10/wiring-nodes-networking-cluster.html
 redirect_from:
+  - /hardware-guide/hpe-apollo-4200-gen10/networking-cluster.html
   - /hardware/hpe-apollo-4200-gen10/networking-cluster.html
 sidebar: hardware_guide_sidebar
 keywords: network, networking, cluster, switch, Ethernet, ports, IP, HPE, Apollo 4200 Gen10
 ---
+
+## Node NICs and Ports
+The following diagrams show the NICs and ports on {{site.a4200g10}} nodes.
+
+{% capture alt_tag %}NIC1 ports on {{site.a4200g10}} nodes{% endcapture %}
+{% include image.html alt=alt_tag file="hpe-networking-gen10-rear.png" %}
+
+{% include note.html content="On 192T nodes, port 2 is `eth3` and port 1 is `eth2`." %}
 
 ## Prerequisites
 
@@ -40,14 +49,6 @@ keywords: network, networking, cluster, switch, Ethernet, ports, IP, HPE, Apollo
   {% include note.html content="The number of floating IP addresses depends on your workflow and on the clients that connect to the cluster, with a minimum of two floating IP addresses per node, per client-facing VLAN, but with no more than ten floating IP addresses per node, per client-facing VLAN." %}
 
 * Nodes connected at their maximum Ethernet speed (this ensures advertised performance). To avoid network bottlenecks, Qumulo validates system performance with this configuration by using clients connected at the same link speed and to the same switch as the nodes.
-
-## Node NICs and Ports
-The following diagrams show the NICs and ports on {{site.a4200g10}} nodes.
-
-{% capture alt_tag %}NIC1 ports on {{site.a4200g10}} nodes{% endcapture %}
-{% include image.html alt=alt_tag file="hpe-networking-gen10-rear.png" %}
-
-{% include note.html content="On 192T nodes, port 2 is `eth3` and port 1 is `eth2`." %}
 
 ## Connecting to Redundant Switches
 
