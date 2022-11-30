@@ -5,7 +5,7 @@ permalink: /hardware-guide/hpe-dl325-gen10-plus/front-rear-drives.html
 redirect_from:
   - /hardware/hpe-dl325-gen10-plus/front-rear-drives.html
 sidebar: hardware_guide_sidebar
-keywords: front drive, rear drive, drive, drive bay
+keywords: front drive, rear drive, boot drive, drive, drive bay
 ---
 
 ## Front Drive Row
