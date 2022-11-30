@@ -7,7 +7,7 @@ keywords: getting started guide, quick reference, HPE, Apollo 4200 Gen10 Plus, v
 ---
 
 ## Prerequisites
-[Qumulo Core USB Drive Installer](https://care.qumulo.com/hc/en-us/articles/360034690034)
+[Qumulo Core USB Drive Installer](https://docs.qumulo.com/administrator-guide/getting-started-qumulo-core/creating-usb-drive-installer.html)
 
 
 ## Step 1: Verify Your Node
