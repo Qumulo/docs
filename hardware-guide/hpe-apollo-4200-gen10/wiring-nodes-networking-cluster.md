@@ -9,7 +9,7 @@ sidebar: hardware_guide_sidebar
 keywords: network, networking, cluster, switch, Ethernet, ports, IP, HPE, Apollo 4200 Gen10
 ---
 
-<br>
+<br><br>
 
 ## Node NICs and Ports
 The following diagrams show the NICs and ports on {{site.a4200g10}} nodes.
