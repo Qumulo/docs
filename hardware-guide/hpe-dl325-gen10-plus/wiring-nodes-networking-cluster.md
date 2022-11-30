@@ -1,6 +1,6 @@
 ---
-title: "Wiring and Networking Your HPE ProLiant DL325 Gen10 Plus Cluster"
-summary: "This section explains how to network a HPE ProLiant DL325 Gen10 Plus cluster."
+title: "Wiring Nodes and Networking Your HPE ProLiant DL325 Gen10 Plus Cluster"
+summary: "This section explains how to wire NIC ports on HPE ProLiant DL325 Gen10 Plus nodes and how to network a cluster."
 permalink: /hardware-guide/hpe-dl325-gen10-plus/wiring-nodes-networking-cluster.html
 redirect_from:
   - /hardware-guide/hpe-dl325-gen10-plus/networking-cluster.html
