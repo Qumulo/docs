@@ -27,7 +27,7 @@ The internal SFF drive row flips up behind the internal LFF drive row. This row 
 ## Boot Drive
 {% include important.html content="Before you remove the boot drive, contact the [Qumulo Care Team](https://care.qumulo.com/hc/en-us/articles/115008409408) for additional instructions." %}
 
-The boot drive is located at the rear of the node. It is mounted onto a PCI Express slot and connected to the motherboard with a SATA cable.
+The boot drive is located inside the node at the indicated location. The drive is mounted onto a PCI Express slot and connected to the motherboard with a SATA cable.
 
-{% capture alt_tag %}The boot drive at the rear of {{site.a4200g10p}} nodes{% endcapture %}
+{% capture alt_tag %}The boot drive inside the {{site.a4200g10p}} node{% endcapture %}
 {% include image.html alt=alt_tag file="hpe-apollo-4200-gen10-plus-boot-drive.png" %}
