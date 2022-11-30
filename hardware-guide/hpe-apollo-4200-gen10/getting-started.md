@@ -1,6 +1,6 @@
 ---
 title: "Getting Started with Qumulo on HPE Apollo 4200 Gen10"
-summary: "This section explains how to prepare HPE Apollo 4200 Gen10 nodes for creating a Qumulo Core cluster. This guide is for system administrators, professional service providers, and colleagues in your organization who are responsible for installing and configuring server hardware. For more information, see <a href='https://support.hpe.com/hpesc/public/docDisplay?docLocale=en_US&docId=emr_na-a00061642en_us)'>HPE Apollo 4200 Gen10 Server - Document List</a>."
+summary: "This section explains how to prepare HPE Apollo 4200 Gen10 nodes for creating a Qumulo Core cluster. This guide is for system administrators, professional service providers, and colleagues in your organization who are responsible for installing and configuring server hardware."
 permalink: /hardware-guide/hpe-apollo-4200-gen10/getting-started.html
 redirect_from:
   - /hardware/hpe-apollo-4200-gen10/getting-started.html
