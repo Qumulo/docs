@@ -8,6 +8,14 @@ sidebar: hardware_guide_sidebar
 keywords: network, networking, cluster, switch, Ethernet, ports, IP
 ---
 
+## Node NICs and Ports
+The following diagram shows the NICs and ports on {{site.dl325g10p}} nodes. On this platform, there are two sets of NICs, one for the front end and one for the back end.
+
+{% include important.html content="For your node to work correctly, you must connect at least one port in each NIC." %}
+
+{% capture alt_tag %}NIC1 and NIC2 ports on {{site.dl325g10p}} nodes{% endcapture %}
+{% include image.html alt=alt_tag file="dl325-rear-networking.png" %}
+
 ## Prerequisites
 
 * A network switch with the following criteria:
@@ -34,14 +42,6 @@ keywords: network, networking, cluster, switch, Ethernet, ports, IP
 * Firewall protocol or ports configured for [Qumulo Care Proactive Monitoring](https://care.qumulo.com/hc/en-us/articles/115007283828-Qumulo-Care-Proactive-Monitoring)
 * Where `N` is the number of nodes, up to 10 `N-1` floating IP addresses per node, per client-facing VLAN
 * Nodes connected at their maximum Ethernet speed (this ensures advertised performance). To avoid network bottlenecks, Qumulo validates system performance with this configuration by using clients connected at the same link speed and to the same switch as the nodes.
-
-## Node NICs and Ports
-The following diagram shows the NICs and ports on {{site.dl325g10p}} nodes. On this platform, there are two sets of NICs, one for the front end and one for the back end.
-
-{% include important.html content="For your node to work correctly, you must connect at least one port in each NIC." %}
-
-{% capture alt_tag %}NIC1 and NIC2 ports on {{site.dl325g10p}} nodes{% endcapture %}
-{% include image.html alt=alt_tag file="dl325-rear-networking.png" %}
 
 ## Connecting to Redundant Switches
 
