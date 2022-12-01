@@ -45,7 +45,7 @@ Most Qumulo-certified nodes are compatible with multiple NIC models. The NIC mod
        <tr>
          <td>ConnectX-6</td>
          <td>100 Gbps</td>
-         <td><a href="https://docs.nvidia.com/networking/display/ConnectX6Firmwarev20321010/Firmware+Compatible+Products">Firmware Compatible Products</a> in the NVIDIA ConnectX®-6 Adapter Cards Firmware Release Notes v20.32.1010</td>
+         <td><a href="https://docs.nvidia.com/networking/display/ConnectX6Firmwarev20321010/Firmware+Compatible+Products">Firmware Compatible Products</a> in the NVIDIA ConnectX-6 Adapter Cards Firmware Release Notes v20.32.1010</td>
        </tr>
        <tr>
          <td>ConnectX-6Dx</td>
@@ -60,7 +60,7 @@ Most Qumulo-certified nodes are compatible with multiple NIC models. The NIC mod
        <tr>
          <td>ConnectX-4 Lx</td>
          <td>25 Gbps</td>
-         <td><a href="https://docs.nvidia.com/networking/display/ConnectX4LxFirmwarev14321010/Firmware+Compatible+Products">Firmware Compatible Products</a> in the NVIDIA ConnectX®-4 Lx Adapter Cards Firmware Release Notes v14.32.1010</td>
+         <td><a href="https://docs.nvidia.com/networking/display/ConnectX4LxFirmwarev14321010/Firmware+Compatible+Products">Firmware Compatible Products</a> in the NVIDIA ConnectX-4 Lx Adapter Cards Firmware Release Notes v14.32.1010</td>
        </tr>
        <tr>
          <td>ConnectX-4</td>
