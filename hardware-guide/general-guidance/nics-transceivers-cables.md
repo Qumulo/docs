@@ -78,7 +78,7 @@ First, identify the NICs present in your node. Most nodes are compatible with mu
   <tr>
     <td>P2100G</td>
     <td>100 Gbps</td>
-    <td>
+    <td rowspan=2>
       <ul>
         <li><a href="https://www.broadcom.com/products/fiber-optic-modules-components/networking/optical-transceivers">Broadcom Optical Transceivers</a></li>
         <li><a href="https://techdocs.broadcom.com/us/en/storage-and-ethernet-connectivity/ethernet-nic-controllers/bcm957xxx/adapters/installation/connecting-the-network-cables.html">Broadcom-Supported Third Party</a></li>
@@ -88,12 +88,6 @@ First, identify the NICs present in your node. Most nodes are compatible with mu
   <tr>
     <td>P225P</td>
     <td>25 Gbps</td>
-    <td>
-      <ul>
-        <li><a href="https://www.broadcom.com/products/fiber-optic-modules-components/networking/optical-transceivers">Broadcom Optical Transceivers</a></li>
-        <li><a href="https://techdocs.broadcom.com/us/en/storage-and-ethernet-connectivity/ethernet-nic-controllers/bcm957xxx/adapters/installation/connecting-the-network-cables.html">Broadcom-Supported Third Party</a></li>
-      </ul>
-    </td>
   </tr>
   <tr>
     <td>82599ES</td>
