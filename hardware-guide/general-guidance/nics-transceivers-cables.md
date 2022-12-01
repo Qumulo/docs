@@ -81,7 +81,7 @@ First, identify the NICs present in your node. Most nodes are compatible with mu
     <td>
       <ul>
         <li><a href="https://www.broadcom.com/products/fiber-optic-modules-components/networking/optical-transceivers">Broadcom Optical Transceivers</a></li>
-        <li><a href="https://techdocs.broadcom.com/us/en/storage-and-ethernet-connectivity/ethernet-nic-controllers/bcm957xxx/1-0/installation_3/connecting-the-network-cables.html">Broadcom-Supported Third Party</a></li>
+        <li><a href="https://techdocs.broadcom.com/us/en/storage-and-ethernet-connectivity/ethernet-nic-controllers/bcm957xxx/adapters/installation/connecting-the-network-cables.html">Broadcom-Supported Third Party</a></li>
       </ul>
     </td>
   </tr>
@@ -91,7 +91,7 @@ First, identify the NICs present in your node. Most nodes are compatible with mu
     <td>
       <ul>
         <li><a href="https://www.broadcom.com/products/fiber-optic-modules-components/networking/optical-transceivers">Broadcom Optical Transceivers</a></li>
-        <li><a href="https://techdocs.broadcom.com/us/en/storage-and-ethernet-connectivity/ethernet-nic-controllers/bcm957xxx/1-0/installation_3/connecting-the-network-cables.html">Broadcom-Supported Third Party</a></li>
+        <li><a href="https://techdocs.broadcom.com/us/en/storage-and-ethernet-connectivity/ethernet-nic-controllers/bcm957xxx/adapters/installation/connecting-the-network-cables.html">Broadcom-Supported Third Party</a></li>
       </ul>
     </td>
   </tr>
@@ -103,13 +103,17 @@ First, identify the NICs present in your node. Most nodes are compatible with mu
   <tr>
     <td>AOC-S100G-b2C</td>
     <td>100 Gbps</td>
-    <td>
+    <td rowspan=2>
       <ul>
         <li><a href="https://www.supermicro.com/en/support/resources/aoc/cables-transceivers">SMC Networking Cables and Transceivers Compatibility Matrix</a></li>
         <li><a href="https://www.broadcom.com/products/fiber-optic-modules-components/networking/optical-transceivers">Broadcom Optical Transceivers</a></li>
-        <li><a href="https://techdocs.broadcom.com/us/en/storage-and-ethernet-connectivity/ethernet-nic-controllers/bcm957xxx/1-0/installation_3/connecting-the-network-cables.html">Broadcom-Supported Third Party</a></li>
+        <li><a href="https://techdocs.broadcom.com/us/en/storage-and-ethernet-connectivity/ethernet-nic-controllers/bcm957xxx/adapters/installation/connecting-the-network-cables.html">Broadcom-Supported Third Party</a></li>
       </ul>
     </td>
+  </tr>
+  <tr>
+    <td>AOC-S25G-b2S</td>
+    <td>25 Gbps</td>
   </tr>
   <tr>
     <td>E810-CQDA2</td>
