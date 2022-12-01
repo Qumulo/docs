@@ -156,6 +156,9 @@ splitNetLACP: For all connection speeds, the default behavior is that of an LACP
 
 seeTechSpecs: Some components vary across node types. For information about node types, see <a href="technical-specifications.html">Technical Specifications</a>.
 
+varBearerTokenRecommend: As soon as you receive your bearer token, record it in a safe place.
+varBearerTokenWarning: If you misplace the bearer token, you can't retrieve it at a later time. You must create a new access token.
+
 a4200g9: HPE Apollo 4200 Gen9
 a4200g10: HPE Apollo 4200 Gen10
 dl325g10p: HPE ProLiant DL325 Gen10 Plus 
