@@ -31,51 +31,51 @@ Most Qumulo-certified nodes are compatible with multiple NIC models. The NIC mod
    c5:00.1 Ethernet controller: Mellanox Technologies MT28908 Family [ConnectX-6]
    ```
    
-1. Refer to the following table to determine the speed and additional information about the NICs in your node.
+1. To determine the speed and firmware compatibility information for the NICs in your node, refer to the following table.
 
    <table>
      <thead>
        <tr>
          <th>NIC</th>
          <th>Speed</th>
-         <th>Vendor Transceiver<br>Compatibility List</th>
+         <th>Firmware Compatibility Information</th>
        </tr>
      </thead>
      <tbody>
        <tr>
          <td>ConnectX-6</td>
          <td>100 Gbps</td>
-         <td><a href="https://docs.nvidia.com/networking/display/ConnectX6Firmwarev20321010/Firmware+Compatible+Products">Nvidia Compatible Products</a></td>
+         <td><a href="https://docs.nvidia.com/networking/display/ConnectX6Firmwarev20321010/Firmware+Compatible+Products">Firmware Compatible Products</a> in the NVIDIA ConnectX®-6 Adapter Cards Firmware Release Notes v20.32.1010</td>
        </tr>
        <tr>
          <td>ConnectX-6Dx</td>
          <td>100 Gbps</td>
-         <td><a href="https://docs.nvidia.com/networking/display/ConnectX6DxFirmwarev22322004/Firmware+Compatible+Products">Nvidia Compatible Products</a></td>
+         <td><a href="https://docs.nvidia.com/networking/display/ConnectX6DxFirmwarev22322004/Firmware+Compatible+Products">Firmware Compatible Products</a> in the NVIDIA ConnectX-6 Dx Adapter Cards Firmware Release Notes v22.32.2004</td>
        </tr>
        <tr>
          <td>ConnectX-5</td>
          <td>100 Gbps</td>
-         <td><a href="https://docs.nvidia.com/networking/display/ConnectX5Firmwarev16331048/Firmware+Compatible+Products">Nvidia Compatible Products</a></td>
+         <td><a href="https://docs.nvidia.com/networking/display/ConnectX5Firmwarev16331048/Firmware+Compatible+Products">Firmware Compatible Products</a> in the NVIDIA ConnectX-5 Adapter Cards Firmware Release Notes v16.33.1048</td>
        </tr>
        <tr>
          <td>ConnectX-4 Lx</td>
          <td>25 Gbps</td>
-         <td><a href="https://docs.nvidia.com/networking/display/ConnectX4LxFirmwarev14321010/Firmware+Compatible+Products">Nvidia Compatible Products</a></td>
+         <td><a href="https://docs.nvidia.com/networking/display/ConnectX4LxFirmwarev14321010/Firmware+Compatible+Products">Firmware Compatible Products</a> in the NVIDIA ConnectX®-4 Lx Adapter Cards Firmware Release Notes v14.32.1010</td>
        </tr>
        <tr>
          <td>ConnectX-4</td>
          <td>40 Gbps</td>
-         <td><a href="https://docs.nvidia.com/networking/display/ConnectX4Firmwarev12282006/Firmware+Compatible+Products">Nvidia Compatible Products</a></td>
+         <td><a href="https://docs.nvidia.com/networking/display/ConnectX4Firmwarev12282006/Firmware+Compatible+Products">Firmware Compatible Products</a> in the NVIDIA Mellanox ConnectX-4 Adapter Cards Firmware Release Notes v12.28.2006</td>
        </tr>
        <tr>
          <td>ConnectX-3Pro</td>
          <td>40 Gbps</td>
-         <td><a href="https://network.nvidia.com/related-docs/firmware/ConnectX3Pro-FW-2_42_5000-release_notes.pdf">FW release notes (see section 1.2)</a></td>
+         <td><a href="https://network.nvidia.com/related-docs/firmware/ConnectX3Pro-FW-2_42_5000-release_notes.pdf#page=8">Supported Cables and Modules</a> in the Mellanox ConnectX-3 Pro Firmware Release Notes Rev 2.42.5000</td>
        </tr>
        <tr>
          <td>ConnectX-3</td>
          <td>10 Gbps</td>
-         <td><a href="https://network.nvidia.com/sites/default/files/related-docs/firmware/ConnectX3-FW-2_42_5000-release_notes.pdf">FW release notes (see section 1.2)</a></td>
+         <td><a href="https://network.nvidia.com/pdf/firmware/ConnectX3-FW-2_42_5000-release_notes.pdf#page=7">Supported Cables and Modules</a> in the Mellanox ConnectX-3 Firmware Release Notes Rev 2.42.5000</td>
        </tr>
        <tr>
          <td>P2100G</td>
@@ -83,7 +83,7 @@ Most Qumulo-certified nodes are compatible with multiple NIC models. The NIC mod
          <td rowspan=2>
            <ul>
              <li><a href="https://www.broadcom.com/products/fiber-optic-modules-components/networking/optical-transceivers">Broadcom Optical Transceivers</a></li>
-             <li><a href="https://techdocs.broadcom.com/us/en/storage-and-ethernet-connectivity/ethernet-nic-controllers/bcm957xxx/adapters/installation/connecting-the-network-cables.html">Broadcom-Supported Third Party</a></li>
+             <li><a href="https://techdocs.broadcom.com/us/en/storage-and-ethernet-connectivity/ethernet-nic-controllers/bcm957xxx/adapters/installation/connecting-the-network-cables.html">Supported Cables for Broadcom Ethernet Network Adapters</a> in the Broadcom Ethernet Network Adapter User Guide</li>
            </ul>
          </td>
        </tr>
@@ -101,9 +101,9 @@ Most Qumulo-certified nodes are compatible with multiple NIC models. The NIC mod
          <td>100 Gbps</td>
          <td rowspan=2>
            <ul>
-             <li><a href="https://www.supermicro.com/en/support/resources/aoc/cables-transceivers">SMC Networking Cables and Transceivers Compatibility Matrix</a></li>
+             <li><a href="https://www.supermicro.com/en/support/resources/aoc/cables-transceivers">Supermicro Networking Cables and Transceivers Compatibility Matrix</a></li>
              <li><a href="https://www.broadcom.com/products/fiber-optic-modules-components/networking/optical-transceivers">Broadcom Optical Transceivers</a></li>
-             <li><a href="https://techdocs.broadcom.com/us/en/storage-and-ethernet-connectivity/ethernet-nic-controllers/bcm957xxx/adapters/installation/connecting-the-network-cables.html">Broadcom-Supported Third Party</a></li>
+             <li><a href="https://techdocs.broadcom.com/us/en/storage-and-ethernet-connectivity/ethernet-nic-controllers/bcm957xxx/adapters/installation/connecting-the-network-cables.html">Supported Cables for Broadcom Ethernet Network Adapters</a> in the Broadcom Ethernet Network Adapter User Guide</li>
            </ul>
          </td>
        </tr>
@@ -115,10 +115,8 @@ Most Qumulo-certified nodes are compatible with multiple NIC models. The NIC mod
          <td>E810-CQDA2</td>
          <td>100 Gbps</td>
          <td>
-           <ul>
-             <li><a href="https://compatibleproducts.intel.com/ProductDetails?activeModule=Intel%C2%AE%20Ethernet&prdName=Intel%C2%AE%20Ethernet%20Network%20Adapter%20E810-2CQDA2">Intel Optical Transceivers</a></li>
-             <li>Third party transceivers may be supported but are not verified by Intel</li>
-           </ul>
+           <p><a href="https://compatibleproducts.intel.com/ProductDetails?activeModule=Intel%C2%AE%20Ethernet&prdName=Intel%C2%AE%20Ethernet%20Network%20Adapter%20E810-2CQDA2">Intel Ethernet Network Adapter E810-2CQDA2</a></p>
+           {% include note.html content="Intel might support, but doesn't verify, third-party transceiver compatibility." %}
          </td>
        </tr>
      </tbody>
