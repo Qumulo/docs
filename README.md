@@ -1,6 +1,6 @@
 ---
 title: "Qumulo Documentation"
-summary: "The Qumulo Documentation Portal is a documentation repository that uses <a href="https://www.writethedocs.org/guide/docs-as-code/">docs-as-code principles</a> and contains information and guidance about Qumulo-certified hardware platforms, Qumulo in the cloud, and Qumulo Core functionality and configuration."
+summary: "The Qumulo Documentation Portal is a documentation repository that uses <a href='https://www.writethedocs.org/guide/docs-as-code/'>docs-as-code principles</a> and contains information and guidance about Qumulo-certified hardware platforms, Qumulo in the cloud, and Qumulo Core functionality and configuration."
 permalink: index.html
 breadcrumbs: exclude
 ---
