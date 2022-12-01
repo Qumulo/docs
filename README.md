@@ -1,6 +1,6 @@
 ---
 title: "Qumulo Documentation"
-summary: "The Qumulo Documentation Portal is an initiative that uses docs-as-code principles to provide information about Qumulo features, functionality, and administration."
+summary: "The Qumulo Documentation Portal is a documentation repository that uses <a href='https://www.writethedocs.org/guide/docs-as-code/'>docs-as-code principles</a> and contains information and guidance about Qumulo-certified hardware platforms, Qumulo in the cloud, and Qumulo Core functionality and configuration."
 permalink: index.html
 breadcrumbs: exclude
 ---
@@ -10,8 +10,8 @@ breadcrumbs: exclude
 * [Qumulo in the Cloud Guide](cloud-guide/)
 * [Qumulo Administrator Guide](administrator-guide/)
 
-## Visit the Knowledge Base
-For a deeper dive into Qumulo features and advanced functionality such as cluster administration, visit the [Qumulo Care](https://care.qumulo.com/hc/en-us) portal. Qumulo Care lets you open a case, read articles and watch videos from our content library, review product release notes, and get involved in the Qumulo community.
+## Visit Qumulo Care
+For existing articles about advanced Qumulo platform and Qumulo Core functionality, visit [Qumulo Care](https://care.qumulo.com/hc/en-us). Qumulo Care also lets you review product release notes, watch videos from our content library, get involved in the Qumulo community.
 
 ## Reach Out to Us
-If you have any additional questions or want to give us feedback, [open a case](https://care.qumulo.com/hc/en-us/requests/new), send an email to [care@qumulo.com](mailto:care@qumulo.com), or ping us in your private qumulocare Slack channel.
+If you have any additional questions or want to give us feedback, [open a case](https://care.qumulo.com/hc/en-us/requests/new), send an email to [care@qumulo.com](mailto:care@qumulo.com), or ping us in your private **qumulocare** Slack channel.
