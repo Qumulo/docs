@@ -11,7 +11,7 @@ sidebar: hardware_guide_sidebar
 keywords: network, transceiver, NIC, Mellanox, Nvidia, SMC, Intel, Broadcom, short range, long range, fiber, optic, cable
 ---
 
-## Step 1: To Identify the NICs in Your Node
+## Step 1: Identify the NICs in Your Nodes
 Most Qumulo-certified nodes are compatible with multiple NIC models. The NIC model determines transceiver compatibility.
 
 1. Use SSH to connect to your node.
@@ -122,13 +122,18 @@ Most Qumulo-certified nodes are compatible with multiple NIC models. The NIC mod
      </tbody>
      </table>
 
-## Choosing Transceivers for Your Node
-The two main types of fiber optic cables are the Lucent connector (LC) with two fibers (commonly used for 10 Gbps and 25 Gbps connections) and the multi-fiber push on (MPO) connector with eight fibers (commonly used for 40 Gbps connections). Although there are transceivers that can use LC fiber optic cables for 40 Gbps and 100 Gbps connections, these transceivers are generally more expensive, consume more power, and are mainly intended for reusing LC cabling or for long-distance applications.
 
-Newer switches have 100 Gbps connections by using double 50 Gbps PAM4 connections instead of the more common four 25 Gbps connections. However, the most common and cost-efficient transmission standard for 100 Gbps is SR4, with four QSFP28 connections over an eight-fiber cable. The maximum range for SR4 is 100 m. The most common transmission standard for 25 Gbps is the Lucent connector duplex (LC duplex) with two fibers. The maximum short-range connection is 100 m and long-range connection is 10 km. There is also an extended-range standard with a maximum of 40 km.
+## Step 2: Choose Transceivers for Your Nodes
+The two main types of fiber optic cables are the Lucent connector (LC) with two fibers (commonly used for 10 Gbps and 25 Gbps connections) and the multi-fiber push on (MPO) connector with eight fibers (commonly used for 40 Gbps connections).
+
+Although there are transceivers that can use LC fiber optic cables for 40 Gbps and 100 Gbps connections, these transceivers are generally more expensive, consume more power, and are mainly intended for reusing LC cabling or for long-distance applications.
+
+Some newer switches can establish 100 Gbps connections by using double 50 Gbps PAM4 connections instead of the more common four 25 Gbps connections. For information about configuring Pulse Amplitude Modulation 4-level (PAM4), see [Auto-Negotiation on Ethernet NIC Controllers](https://techdocs.broadcom.com/us/en/storage-and-ethernet-connectivity/ethernet-nic-controllers/bcm957xxx/1-0/Configuration-adapter/auto-negotiation-configuration.html) in the Broadcom documentation.
+
+The most common and cost-efficient transmission standard for 100 Gbps is SR4, with four QSFP28 connections over an eight-fiber cable. The maximum range for SR4 is 100 m. The most common transmission standard for 25 Gbps is the Lucent connector duplex (LC duplex) with two fibers. The maximum short-range connection is 100 m and long-range connection is 10 km. There is also an extended-range standard with a maximum of 40 km.
 
 
-## Choosing Cables for Your Transceiver
+## Step 3: Choose Cables for Your Transceiver
 
 {% include note.html content="If you use DAC or AOC cables, ensure that the manufacturers of your NIC and network switch both support your cables." %}
 
@@ -137,7 +142,3 @@ Newer switches have 100 Gbps connections by using double 50 Gbps PAM4 connection
 * **Direct Attach Cables (DACs):** Although these cables are significantly cheaper than optical cables and are less prone to compatibility and thermal issues, they are limited in length (2-3 m, up to 5 m maximum).
 
 * **Active Optical Cables (AOCs):** Although these cables are cheaper than dedicated transceivers and fiber optic cables, they might cause compatibility issues, or your NIC or switch might not support them.
-
-
-## Configuring PAM4 for Broadcom 100 Gbps NICs
-For information about configuring Pulse Amplitude Modulation 4-level (PAM4), see [Auto-Negotiation on Ethernet NIC Controllers](https://techdocs.broadcom.com/us/en/storage-and-ethernet-connectivity/ethernet-nic-controllers/bcm957xxx/1-0/Configuration-adapter/auto-negotiation-configuration.html) in the Broadcom documentation.
