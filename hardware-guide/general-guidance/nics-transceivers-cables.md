@@ -94,7 +94,7 @@ Most Qumulo-certified nodes are compatible with multiple NIC models. The NIC mod
        <tr>
          <td>82599ES</td>
          <td>10 Gbps</td>
-         <td><a href="https://www.intel.com/content/www/us/en/embedded/products/networking/82599-10-gbe-controller-datasheet.html?asset=2377">82599-data-sheet</a></td>
+         <td><a href="https://www.intel.com/content/www/us/en/products/sku/41282/intel-82599es-10-gigabit-ethernet-controller/specifications.html">Intel 82599ES 10 Gigabit Ethernet Controller</a></td>
        </tr>
        <tr>
          <td>AOC-S100G-b2C</td>
