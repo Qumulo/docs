@@ -8,7 +8,6 @@ varAccessTokenWarning: An attacker can use an access token to authenticate as th
 varAccessTokenBestPractices: Treat access tokens, and the bearer tokens they generate, like passwords&#58; Store your tokens securely, rotate your tokens often, and create a token revocation policy for your organization.
 varAccessTokenAdminWarning: To decrease the risk of giving an attacker full administrative access&mdash;including access to cluster data&mdash;avoid generating tokens for accounts with administrative privileges.
 varTokenQQcli: To use an access token in the <code>qq</code> CLI, you must use the <code>--file</code> flag when you create the access token. Use this flag to specify a path for saving your credentials file in a format that the <code>qq</code> CLI can use.
-varBearerTokenWarning: If you misplace the bearer token, you can't retrieve it at a later time. You must create a new access token.
 varPrereqWrite: <code>PRIVILEGE_ACCESS_TOKEN_WRITE</code> is required for creating and deleting access tokens for all users in the system.
 varPrereqRead: <code>PRIVILEGE_ACCESS_TOKEN_READ</code> is required for listing access tokens.
 ---
@@ -69,7 +68,7 @@ $ qq auth_create_access_token jane
 
 {{site.data.alerts.important}}
 <ul>
-  <li>As soon as you receive your bearer token, record it in a safe place. {{page.varBearerTokenWarning}}</li>
+  <li>{{site.varBearerTokenRecommend}} {{site.varBearerTokenWarning}}</li>
   <li>Any user can have a maximum of two access tokens. If a user already has two access tokens, creating new tokens fails until you remove at least one token from the user. We strongly recommend creating a single access token for each user and using the second access token to perform secret rotation.</li>  
   <li>{{page.varAccessTokenBestPractices}}</li>
   <li>{{page.varAccessTokenAdminWarning}}</li>
@@ -126,7 +125,7 @@ To list access tokens, use the `auth_list_access_tokens` command. For example:
 $ qq auth_list_access_tokens
 ```
 {{site.data.alerts.important}}
-Listing access tokens <em>doesn't</em> return the bearer token required for authentication. {{page.varBearerTokenWarning}}
+Listing access tokens <em>doesn't</em> return the bearer token required for authentication. {{site.varBearerTokenWarning}}
 {{site.data.alerts.end}}
 
 The `auth_list_access_tokens` command returns:
