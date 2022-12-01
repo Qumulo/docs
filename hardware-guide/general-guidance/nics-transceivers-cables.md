@@ -124,16 +124,19 @@ Most Qumulo-certified nodes are compatible with multiple NIC models. The NIC mod
 
 
 ## Step 2: Choose Transceivers for Your Nodes
-The two main types of fiber optic cables are the Lucent connector (LC) with two fibers (commonly used for 10 Gbps and 25 Gbps connections) and the multi-fiber push on (MPO) connector with eight fibers (commonly used for 40 Gbps connections).
+This section lists and explains the differences between the types of transceivers available for your nodes.
 
-Although there are transceivers that can use LC fiber optic cables for 40 Gbps and 100 Gbps connections, these transceivers are generally more expensive, consume more power, and are mainly intended for reusing LC cabling or for long-distance applications.
+* **Lucent Connector (LC) and Multi-Fiber Push On (MPO):** The two main types of fiber optic cables are the LC with two fibers (commonly used for 10 Gbps and 25 Gbps connections) and the MPO connector with eight fibers (commonly used for 40 Gbps connections). Although there are transceivers that can use LC fiber optic cables for 40 Gbps and 100 Gbps connections, these transceivers are generally more expensive, consume more power, and are mainly intended for reusing LC cabling or for long-distance applications.
 
-Some newer switches can establish 100 Gbps connections by using double 50 Gbps PAM4 connections instead of the more common four 25 Gbps connections. For information about configuring Pulse Amplitude Modulation 4-level (PAM4), see [Auto-Negotiation on Ethernet NIC Controllers](https://techdocs.broadcom.com/us/en/storage-and-ethernet-connectivity/ethernet-nic-controllers/bcm957xxx/1-0/Configuration-adapter/auto-negotiation-configuration.html) in the Broadcom documentation.
+* **PAM4:** Some newer switches can establish 100 Gbps connections by using double 50 Gbps PAM4 connections instead of the more common four 25 Gbps connections. For information about configuring Pulse Amplitude Modulation 4-level (PAM4), see [Auto-Negotiation on Ethernet NIC Controllers](https://techdocs.broadcom.com/us/en/storage-and-ethernet-connectivity/ethernet-nic-controllers/bcm957xxx/1-0/Configuration-adapter/auto-negotiation-configuration.html) in the Broadcom documentation.
 
-The most common and cost-efficient transmission standard for 100 Gbps is SR4, with four QSFP28 connections over an eight-fiber cable. The maximum range for SR4 is 100 m. The most common transmission standard for 25 Gbps is the Lucent connector duplex (LC duplex) with two fibers. The maximum short-range connection is 100 m and long-range connection is 10 km. There is also an extended-range standard with a maximum of 40 km.
+* **SR4:** The most common and cost-efficient transmission standard for 100 Gbps is SR4, with four QSFP28 connections over an eight-fiber cable. The maximum range for SR4 is 100 m.
+
+* **Lucent Connector Duplex (LC Duplex):** The most common transmission standard for 25 Gbps is LC duplex with two fibers. The maximum short-range connection is 100 m and long-range connection is 10 km. There is also an extended-range standard with a maximum of 40 km.
 
 
-## Step 3: Choose Cables for Your Transceiver
+## Step 3: Choose Cables for Your Transceivers
+This section lists and explains the differences between the types of cables available for your transceivers.
 
 {% include note.html content="If you use DAC or AOC cables, ensure that the manufacturers of your NIC and network switch both support your cables." %}
 
