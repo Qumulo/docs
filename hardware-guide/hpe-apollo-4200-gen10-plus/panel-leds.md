@@ -25,8 +25,7 @@ To locate the front panel LEDs, use the following diagram.
 
 
 ## Rear Panel LEDs
-
-To locate the UID, PSU2, and PSU1 LEDs on the rear panel, use the following diagram.
+The following diagram shows the UID, PSU2, and PSU1 LEDs on the rear panel.
 
 {% capture alt_tag %}UID, PSU2, and PSU1 LEDs on the rear panel of the {{site.a4200g10p}} node{% endcapture %}
 {% include image.html alt=alt_tag file="hpe-apollo-4200-gen10-plus-rear-panel-led.png" url="/hardware-guide/hpe-apollo-4200-gen10-plus/images/hpe-apollo-4200-gen10-plus-rear-panel-led.png"%}
