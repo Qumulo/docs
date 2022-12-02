@@ -7,12 +7,24 @@ keywords: network, networking, cluster, switch, Ethernet, ports, IP, HPE, Apollo
 ---
 
 ## Node NICs and Ports
-The following diagram shows the NICs and ports on {{a4200g10p}} nodes. On this platform, there are two sets of NICs, one for the front end and one for the back end.
+The following diagram shows the NICs and ports on {{a4200g10p}} nodes. On this platform, there is one NIC with two ports.
 
 {% include important.html content="For your node to work correctly, you must connect at least one port in the NIC." %}
 
 {% capture alt_tag %}NIC ports on {{site.a4200g10p}} nodes{% endcapture %}
 {% include image.html alt=alt_tag file="hpe-apollo-4200-gen10-plus-networking.png" %}
+
+The following diagrams show the NICs and ports on {{site.a4200g9}} node types.
+
+### 480TB and 240TB (Active)
+{% include note.html content="Currently, NIC2 on this model is unused." %}
+
+{% capture alt_tag %}NIC ports on the {{a4200g10p}} 480TB and 240TB (Active) node types{% endcapture %}
+{% include image.html alt=alt_tag file="hpe-apollo-4200-gen10-plus-networking-480tb-240tb-active.png" %}
+
+### 480TB and 240TB (General Purpose), 90TB, and 36TB
+{% capture alt_tag %}NIC ports on the {{a4200g10p}} 480TB and 240TB (General Purpose), 90TB, and 36TB node types{% endcapture %}
+{% include image.html alt=alt_tag file="hpe-apollo-4200-gen10-plus-networking-480tb-240tb-general-purpose-90tb-36tb.png" %}
 
 {% include content-reuse/platform-agnostic-unified-networking-cluster-25-100gbps.md %}
 
