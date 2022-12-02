@@ -29,7 +29,7 @@ We recommend the following configuration for your node.
 
 * Your Qumulo MTU configured to match your client environment
 
-* One physical connection per node, per each redundant switch
+* Two physical connections for each node, one connection for each redundant switch
 
 * One Link Aggregation Control Protocol (LACP) port-channel per network on each node, with the following configuration
 
