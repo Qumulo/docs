@@ -7,25 +7,13 @@ keywords: LED, front panel, power fault, rear panel, diagnose, diagnosis, hardwa
 ---
 
 ## Front Panel LEDs and Buttons
+The following diagram shows the LEDs and buttons on the front panel.
 
-To locate the front panel LEDs, use the following diagram.
-
-{% capture alt_tag %}Front panel LEDs and buttons on the {{site.a4200g10p}} node{% endcapture %}
-{% include image.html alt=alt_tag file="hpe-apollo-4200-gen10-plus-front-panel-led.png" %}
-
-1. **Health LED**
-
-1. **NIC Status LED**
-
-1. **Front Drive Health or Thermal LED**
-
-1. **System Power LED and Power-On or Standby Button**
-
-1. **UID LED and Button**
-
+{% capture alt_tag %}Health, NIC Status, and System Power LEDs, Power-On or Standby Button, and UID LED and Button on the {{site.a4200g10p}} node{% endcapture %}
+{% include image.html alt=alt_tag file="hpe-apollo-4200-gen10-plus-front-panel-led.png" url="hpe-apollo-4200-gen10-plus-front-panel-led.png"%}
 
 ## Rear Panel LEDs
-The following diagram shows the UID, PSU2, and PSU1 LEDs on the rear panel.
+The following diagram shows the LEDs on the rear panel.
 
 {% capture alt_tag %}UID, PSU2, and PSU1 LEDs on the rear panel of the {{site.a4200g10p}} node{% endcapture %}
 {% include image.html alt=alt_tag file="hpe-apollo-4200-gen10-plus-rear-panel-led.png" url="/hardware-guide/hpe-apollo-4200-gen10-plus/images/hpe-apollo-4200-gen10-plus-rear-panel-led.png"%}
