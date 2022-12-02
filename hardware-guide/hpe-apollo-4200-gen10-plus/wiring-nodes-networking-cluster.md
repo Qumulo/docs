@@ -7,14 +7,9 @@ keywords: network, networking, cluster, switch, Ethernet, ports, IP, HPE, Apollo
 ---
 
 ## Node NICs and Ports
-The following diagram shows the NICs and ports on {{a4200g10p}} nodes. On this platform, there is one NIC with two ports.
+The following diagrams show the NICs and ports on {{site.a4200g9}} node types.
 
 {% include important.html content="For your node to work correctly, you must connect at least one port in the NIC." %}
-
-{% capture alt_tag %}NIC ports on {{site.a4200g10p}} nodes{% endcapture %}
-{% include image.html alt=alt_tag file="hpe-apollo-4200-gen10-plus-networking.png" %}
-
-The following diagrams show the NICs and ports on {{site.a4200g9}} node types.
 
 ### 480TB and 240TB (Active)
 {% include note.html content="Currently, NIC2 on this model is unused." %}
