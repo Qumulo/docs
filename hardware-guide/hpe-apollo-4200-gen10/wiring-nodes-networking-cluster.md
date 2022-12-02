@@ -11,7 +11,7 @@ keywords: network, networking, cluster, switch, Ethernet, ports, IP, HPE, Apollo
 
 <br><br>
 
-## Node NICs and Ports
+## Node NIC and Ports
 The following diagrams show the NIC and ports on {{site.a4200g10}} nodes.
 
 {% capture alt_tag %}NIC ports on {{site.a4200g10}} nodes{% endcapture %}
