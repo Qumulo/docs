@@ -7,7 +7,7 @@ keywords: network, networking, cluster, switch, Ethernet, ports, IP, HPE, Apollo
 ---
 
 ## Node NIC and Ports
-The following diagrams show the NICs and ports on {{site.a4200g10p}} node types.
+The following diagrams show the NIC and ports on {{site.a4200g10p}} node types.
 
 {% include important.html content="For your node to work correctly, you must connect at least one port in the NIC." %}
 
