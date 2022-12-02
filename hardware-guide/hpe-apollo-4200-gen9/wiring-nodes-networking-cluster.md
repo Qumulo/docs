@@ -12,29 +12,26 @@ keywords: network, networking, cluster, switch, Ethernet, ports, IP, 90T, 180T, 
 ## Node NICs and Ports
 The following diagrams show the NICs and ports on {{site.a4200g9}} nodes.
 
-### 90T NIC1 Ports
-
-{% capture alt_tag %}NIC1 ports on the {{site.a4200g9}} 90T node{% endcapture %}
-{% include image.html alt=alt_tag file="hpe-90t-single.png" %}
-
-### 180T NIC1 Ports
-
+### 288T (Dual NICs)
 {% include note.html content="Currently, NIC2 on this model is unused." %}
 
-{% capture alt_tag %}NIC1 ports on the {{site.a4200g9}} 180T node{% endcapture %}
-{% include image.html alt=alt_tag file="hpe-180t-dual.png" %}
+{% capture alt_tag %}NIC ports on the dual {{site.a4200g9}} 288T node type{% endcapture %}
+{% include image.html alt=alt_tag file="hpe-288t-dual.png" %}
 
-### 288T NIC1 Ports (Single)
-
-{% capture alt_tag %}NIC1 ports on the single {{site.a4200g9}} 288T node{% endcapture %}
+### 288T (Single NIC)
+{% capture alt_tag %}NIC ports on the single {{site.a4200g9}} 288T node type{% endcapture %}
 {% include image.html alt=alt_tag file="hpe-288t-single.png" %}
 
-### 288T NIC1 Ports (Dual)
-
+### 180T
 {% include note.html content="Currently, NIC2 on this model is unused." %}
 
-{% capture alt_tag %}NIC1 ports on the dual {{site.a4200g9}} 288T node{% endcapture %}
-{% include image.html alt=alt_tag file="hpe-288t-dual.png" %}
+{% capture alt_tag %}NIC ports on the {{site.a4200g9}} 180T node type{% endcapture %}
+{% include image.html alt=alt_tag file="hpe-180t-dual.png" %}
+
+### 90T
+{% capture alt_tag %}NIC ports on the {{site.a4200g9}} 90T node type{% endcapture %}
+{% include image.html alt=alt_tag file="hpe-90t-single.png" %}
+
 
 ## Prerequisites
 
