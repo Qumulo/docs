@@ -30,4 +30,4 @@ The internal SFF drive row flips up behind the internal LFF drive row. This row 
 The boot drive is located inside the node at the indicated location. The drive is mounted onto a PCI Express slot and connected to the motherboard with a SATA cable.
 
 {% capture alt_tag %}The boot drive inside the {{site.a4200g10p}} node{% endcapture %}
-{% include image.html alt=alt_tag file="hpe-apollo-4200-gen10-plus-boot-drive.png" %}
+{% include image.html alt=alt_tag file="hpe-apollo-4200-gen10-plus-boot-drive.png" url="/hardware-guide/hpe-apollo-4200-gen10-plus/images/hpe-apollo-4200-gen10-plus-boot-drive.png"%}
