@@ -13,7 +13,6 @@ keywords: getting started guide, quick reference, HPE, Apollo 4200 Gen10 Plus, v
 ## Step 1: Verify Your Node
 
 {% include content-reuse/platform-agnostic-verify-node-preamble.md %}
-
    {% capture alt_tag %}Front Diagram of the {{site.a4200g10p}} Node{% endcapture %}
    {% include image.html alt=alt_tag file="hpe-apollo-4200-gen10-plus-front-panel-power.png" %}
 
