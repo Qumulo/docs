@@ -34,7 +34,18 @@ keywords: getting started guide, quick reference, HPE, Apollo 4200 Gen10 Plus, v
 
 ## Step 2: Boot by Using the Qumulo Core USB Drive Installer
 
-{% include content-reuse/hpe-generic-usb-boot.md %}
+1. On the **HPE ProLiant** boot screen, press **F11**.
+
+   {% include note.html content="The **Boot Menu** page might take a few minutes to appear." %}
+
+1. On the **One-Time Boot Menu** page, click **Generic USB Boot** and continue to run the Field Verification Tool (FVT).
+
+1. In the **Question** dialog box, click **OK**.
+
+   {% include note.html content="The **Default Boot Override Options** page might take a few minutes to appear." %}
+
+1. In the **Default Boot Override Options** menu, select **2) One Time Boot to USB DriveKey**.
+
 
 
 ## Step 3: Run the Field Verification Tool (FVT)
@@ -65,43 +76,7 @@ If the FVT is unable to auto-correct any issues, the message **Not fixable issue
 
 For help with troubleshooting your node, contact [Qumulo Care](https://care.qumulo.com/hc/en-us/articles/115008409408).
 
-
-## Step 4: Install Qumulo Core by Using the USB Drive Installer
-
-{% include caution.html content="Store your master key in a secure location. If you lose your master key, you might not be able to recover your data from certain hardware failures." %}
-
-Perform the following steps on every node in your cluster.
-
-1. Do one of the following:
-
-   * Choose **[1] Install Qumulo Core without HPE Hardware encryption**
-
-   * Choose **[2] Install Qumulo Core with HPE Hardware encryption**.
-
-1. If you install Qumulo Core with encryption, enter your cryptographic login password and master encryption key.
-
-   {{site.data.alerts.note}}
-   <ul>
-     <li>Your login password must be 8-16 characters long and must contain at least:
-       <ul>
-         <li>One uppercase character</li>
-         <li>One lowercase character</li>
-         <li>One numeric character</li>
-         <li>One symbol (such as <code>#</code> or <code>$</code>)</li>
-       </ul>
-     </li>
-     <li>Your encryption master key must be 10-32 characters long.</li>
-     <li>Both your login password and encryption master key:
-       <ul>
-         <li>Can use uppercase and lowercase letters, numbers, and symbols</li>
-         <li>Must use only ASCII characters</li>
-         <li>Must not use spaces, semicolons (<code>;</code>), or quotation marks (<code>"</code>)</li>
-       </ul>
-     </li>
-     <li>Store your master key in a secure location for the lifetime of the cluster.</li>
-   </ul>
-   {{site.data.alerts.end}}
    
-## Step 5: Create and Configure Your Cluster
+## Step 4: Create and Configure Your Cluster
 
 {% include content-reuse/create-configure-cluster.md %}
