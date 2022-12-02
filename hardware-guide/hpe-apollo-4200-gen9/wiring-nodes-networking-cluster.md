@@ -10,7 +10,7 @@ keywords: network, networking, cluster, switch, Ethernet, ports, IP, 90T, 180T, 
 ---
 
 ## Node NICs and Ports
-The following diagrams show the NICs and ports on {{site.a4200g9}} nodes.
+The following diagrams show the NICs and ports on {{site.a4200g9}} node types.
 
 ### 288T (Dual NICs)
 {% include note.html content="Currently, NIC2 on this model is unused." %}
