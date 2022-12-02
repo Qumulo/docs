@@ -15,7 +15,7 @@ keywords: getting started guide, quick reference, HPE, Apollo 4200 Gen10 Plus, v
 {% include content-reuse/platform-agnostic-verify-node-preamble.md %}
 
    {% capture alt_tag %}Front Diagram of the {{site.a4200g10p}} Node{% endcapture %}
-   {% include image.html alt=alt_tag file="hpe-apollo-4200-gen10-plus-front-panel-power.png" %}
+   {% include image.html alt=alt_tag file="hpe-apollo-4200-gen10-plus-front-panel-power.png" url="/hardware-guide/hpe-apollo-4200-gen10-plus/images/hpe-apollo-4200-gen10-plus-front-panel-power.png" %}
 
 ## Step 2: Boot by Using the Qumulo Core USB Drive Installer
 
