@@ -25,13 +25,6 @@ keywords: getting started guide, quick reference, HPE, Apollo 4200 Gen10 Plus, v
 
 1. On the **One-Time Boot Menu** page, click **Generic USB Boot** and continue to run the Field Verification Tool (FVT).
 
-1. In the **Question** dialog box, click **OK**.
-
-   {% include note.html content="The **Default Boot Override Options** page might take a few minutes to appear." %}
-
-1. In the **Default Boot Override Options** menu, select **2) One Time Boot to USB DriveKey**.
-
-
 
 ## Step 3: Run the Field Verification Tool (FVT)
 
