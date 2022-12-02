@@ -7,11 +7,11 @@ keywords: network, networking, cluster, switch, Ethernet, ports, IP, HPE, Apollo
 ---
 
 ## Node NIC and Ports
-The following diagrams show the NICs and ports on {{a4200g10p}} node types.
+The following diagrams show the NICs and ports on {{site.a4200g10p}} node types.
 
 {% include important.html content="For your node to work correctly, you must connect at least one port in the NIC." %}
 
-{% capture alt_tag %}Back Diagram of the {{a4200g10p}} Node{% endcapture %}
+{% capture alt_tag %}Back Diagram of the {{site.a4200g10p}} Node{% endcapture %}
 {% include image.html alt=alt_tag file="hpe-apollo-4200-gen10-plus-back-diagram.png" url="/hardware-guide/hpe-apollo-4200-gen10-plus/images/hpe-apollo-4200-gen10-plus-back-diagram.png" %}
 
 {% include content-reuse/platform-agnostic-unified-networking-cluster-25-100gbps.md %}
