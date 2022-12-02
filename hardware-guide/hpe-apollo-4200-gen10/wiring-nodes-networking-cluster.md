@@ -12,9 +12,9 @@ keywords: network, networking, cluster, switch, Ethernet, ports, IP, HPE, Apollo
 <br><br>
 
 ## Node NICs and Ports
-The following diagrams show the NICs and ports on {{site.a4200g10}} nodes.
+The following diagrams show the NIC and ports on {{site.a4200g10}} nodes.
 
-{% capture alt_tag %}NIC1 ports on {{site.a4200g10}} nodes{% endcapture %}
+{% capture alt_tag %}NIC ports on {{site.a4200g10}} nodes{% endcapture %}
 {% include image.html alt=alt_tag file="hpe-networking-gen10-rear.png" %}
 
 {% include note.html content="On 192T nodes, port 2 is `eth3` and port 1 is `eth2`." %}
