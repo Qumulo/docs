@@ -7,7 +7,7 @@ keywords: Qumulo Alerts, alert, alarm, Docker, producer, plug in, plugin, plug-i
 ---
 
 ## Configuring Monitoring for a Qumulo Cluster
-To configure Qumulo Alerts to connect to, and collect data from a Qumulo cluster, you must edit `QumuloAlerts.json`, located in the `config/alerts` directory, in the directory [that you cloned from GitHub](installing.md#to-install-qumulo-alerts).
+To configure Qumulo Alerts to connect to, and collect data from a Qumulo cluster, you must edit `QumuloAlerts.json`, located in the `config/alerts` directory, in the directory [that you cloned from GitHub](installing-connecting-to-qumulo-cluster.md#step-1-install-qumuloalerts).
 
 The following is an explanation of the JSON keys that configure Qumulo cluster monitoring.
 

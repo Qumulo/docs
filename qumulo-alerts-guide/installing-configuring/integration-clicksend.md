@@ -11,7 +11,7 @@ keywords: Qumulo Alerts, ClickSend, SMS, integrate, integration
 {% include note.html content="To be able to send SMS in the U.S. and Canada, you must sign up for a dedicated TFN." %}
 
 ## Configuring Qumulo Alerts Integration with the ClickSend Service
-To configure Qumulo Alerts to integrate with the ClickSend Service, you must edit `QumuloClickSend.json`, located in the `config/consumers` directory, in the directory [that you cloned from GitHub](installing.md#to-install-qumulo-alerts).
+To configure Qumulo Alerts to integrate with the ClickSend Service, you must edit `QumuloClickSend.json`, located in the `config/consumers` directory, in the directory [that you cloned from GitHub](installing-connecting-to-qumulo-cluster.md#step-1-install-qumuloalerts).
 
 The following is an explanation of the JSON keys that configure integration with an email server.
 
