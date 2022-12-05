@@ -28,7 +28,7 @@ keywords: Qumulo Alerts, user, notification, language, locale
 | `ko_KR` | Korean (Korea)               |
 | `pl_PL` | Polish (Poland)              |
 | `sk_SK` | Slovak (Slovakia)            |
-| `tr_TR` | Turkish (Turkey              |
+| `tr_TR` | Turkish (Turkey)             |
 | `zh_TW` | Traditional Chinese (Taiwan) |
 
 ## Converting Time Zones
