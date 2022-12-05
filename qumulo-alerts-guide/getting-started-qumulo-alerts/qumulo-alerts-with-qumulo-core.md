@@ -11,7 +11,7 @@ Qumulo Alerts is a Docker-based system that comprises multiple containers. The m
 
 In Qumulo Alerts, _producers_ are Docker containers that take data from various sources, pass it through _the Exchange_, a processing queue, and finally give it to _consumers_, defined users or user groups. Aside from processing data, the Exchange facilitates the transfers between the producers and consumers.
 
-{% include image.html alt="Qumulo Alerts Architecture Diagram" file="qumulo-alerts-architecture.png" max-width="500" %}
+{% include image.html alt="Qumulo Alerts Architecture Diagram" file="qumulo-alerts-architecture.png" %}
 
 Both producers and consumers use plugins that help process alarms and alerts from a Qumulo Core cluster. A _plugin_ is a mechanism that processes a single function, such as fan failure, disk failure, or node failure. Plugins help with granular control over the information that Qumulo Alerts collects and processes.
 
