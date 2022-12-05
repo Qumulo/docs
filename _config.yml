@@ -21,7 +21,7 @@ github_editme_path: qumulo/docs/blob/gh-pages/
 # google_analytics: UA-66296557-1
 # if you have google-analytics ID, put it in. if not, edit this value to blank.
 
-host: 10.116.10.222
+host: localhost
 # the preview server used. Leave as is.
 
 port: 4000
@@ -116,6 +116,7 @@ sidebars:
 - hardware_guide_sidebar
 - cloud_guide_sidebar
 - administrator_guide_sidebar
+- qumulo_alerts_guide_sidebar
 
 description: "This site is a new documentation portal for Qumulo that uses docs-as-code principles. As we continue to add new content to this portal, we want you to ask questions and share your ideas with us—click Edit on GitHub on any page."
 # the description is used in the feed.xml file
@@ -168,3 +169,5 @@ sm1114s: Supermicro 1114S
 
 sm1014sLong: Supermicro A+ ASG-1014S-ACR12N4H
 sm1014s: Supermicro 1014S
+
+consTrans: The consumer processes for email and ClickSend integrations translate messages into the recipient's native language.
