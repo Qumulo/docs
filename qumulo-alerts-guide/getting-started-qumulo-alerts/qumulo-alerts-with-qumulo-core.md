@@ -7,7 +7,7 @@ keywords: Qumulo Alerts, alert, alarm, monitor, cluster, hardware alarm, softwar
 ---
 
 ## How Qumulo Alerts Works
-Qumulo Alerts is a Docker-based system that comprises multiple containers. The main container uses a series of _plugins_ to collect _hardware alarms_, _software alerts_, and other information from one or more Qumulo Core clusters.
+Qumulo Alerts is a Docker-based system that comprises multiple containers. The main container uses a series of _plugins_ to collect _hardware alarms_ and _software alerts_ from Qumulo Core clusters.
 
 In Qumulo Alerts, _producers_ are Docker containers that take data from various sources, pass it through _the Exchange_, a processing queue, and finally give it to _consumers_, defined users or user groups. Aside from processing data, the Exchange facilitates the transfers between the producers and consumers.
 
