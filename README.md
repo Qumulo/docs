@@ -9,6 +9,7 @@ breadcrumbs: exclude
 * [Qumulo-Certified Hardware Guide](hardware-guide/)
 * [Qumulo in the Cloud Guide](cloud-guide/)
 * [Qumulo Administrator Guide](administrator-guide/)
+* [Qumulo Alerts Administrator Guide](qumulo-alerts-guide/)
 
 ## Visit Qumulo Care
 For existing articles about advanced Qumulo platform and Qumulo Core functionality, visit [Qumulo Care](https://care.qumulo.com/hc/en-us). Qumulo Care also lets you review product release notes, watch videos from our content library, get involved in the Qumulo community.

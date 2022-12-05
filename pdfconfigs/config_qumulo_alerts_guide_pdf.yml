@@ -1,0 +1,19 @@
+destination: _site/
+url: "http://127.0.0.1:4010"
+baseurl: "/qumulo-doc"
+port: 4010
+output: pdf
+#product: Qumulo Alerts Guide
+print_title: Qumulo Alerts Administrator Guide
+print_subtitle: Version 3.3.0
+defaults:
+  -
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page_print"
+      comments: true
+      search: true
+
+pdf_sidebar: qumulo_alerts_guide_sidebar
