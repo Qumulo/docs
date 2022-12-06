@@ -8,4 +8,4 @@ keywords: network, networking, cluster, switch, Ethernet, ports, IP, Quiver 1U H
 
 {% include content-reuse/platform-agnostic-unified-networking-cluster-25-100gbps.md %}
 
-{% include image.html alt="Four-Node Cluster Architecture Diagram" file="quiver-1u-hybrid-gen2-four-node-cluster-architecture-diagram.png" url="/hardware/quiver-1u-hybrid-gen2/images/quiver-1u-hybrid-gen2-four-node-cluster-architecture-diagram.png" %}
+{% include image.html alt="Four-Node Cluster Architecture Diagram" file="quiver-1u-hybrid-gen2-four-node-cluster-architecture-diagram.png" url="/hardware-guide/quiver-1u-hybrid-gen2/images/quiver-1u-hybrid-gen2-four-node-cluster-architecture-diagram.png" %}
