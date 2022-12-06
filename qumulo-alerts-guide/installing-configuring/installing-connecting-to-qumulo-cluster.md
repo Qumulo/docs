@@ -159,7 +159,8 @@ To start Qumulo Alerts, run the following command from the directory to which yo
 To reapply changes to the Qumulo Alerts configuration, run the following command.
 
 ```bash
-./stop-docker-qumulo-alerts.sh && ./start-docker-qumulo-alerts.sh
+./stop-docker-qumulo-alerts.sh && \
+  ./start-docker-qumulo-alerts.sh
 ```
 
 
