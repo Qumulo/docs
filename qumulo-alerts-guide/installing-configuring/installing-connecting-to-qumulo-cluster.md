@@ -3,7 +3,7 @@ title: "Installing Qumulo Alerts and Connecting it to a Qumulo Cluster"
 summary: "This section explains how to install Qumulo Alerts and connect it to a Qumulo cluster."
 permalink: /qumulo-alerts-guide/installing-configuring/installing-connecting-to-qumulo-cluster.html
 sidebar: qumulo_alerts_guide_sidebar
-keywords: Qumulo Alerts, install, connect, cluster, local user, role, assign, access token, access, token
+keywords: Qumulo Alerts, install, connect, cluster, local user, role, assign, access token, access, token, start, stop
 ---
 
 ## Prerequisites
@@ -15,6 +15,9 @@ We recommend the following system requirements for Qumulo Alerts.
 Before you install Qumulo Alerts, make sure you have the following tools:
 * [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) (You can also browse the [QumuloAlerts](https://github.com/Qumulo/QumuloAlerts) GitHub repository.)
 * [Docker](https://docs.docker.com/get-docker/)
+* [Docker Compose Plugin](https://docs.docker.com/compose/install/linux/)
+
+  {% include important.html content="Qumulo Alerts requires the Docker Compose Plugin to operate correctly." %}
 
 Before you connect Qumulo Alerts to a Qumulo cluster, collect the information that can help you configure Qumulo Alerts to monitor your cluster.
 * **Cluster Address:** What is your cluster's address? Use a fully qualified domain name (FQDN) rather than an IP address.
@@ -22,7 +25,7 @@ Before you connect Qumulo Alerts to a Qumulo cluster, collect the information th
 * **Default Plugin Frequency**: What should be the default frequency for plugin execution? (You can specify the frequency in seconds or minutes.)
 * **Alarm and Alert Types:** Decide which alarms and alerts Qumulo Alerts will collect for your cluster.
 
-## Step 1: Install QumuloAlerts
+## Step 1: Clone the QumuloAlerts Repository
 Navigate to the directory where you want Git to download files and run the following command.
 
 ```bash
@@ -65,14 +68,15 @@ To be able to generate access tokens, you must create a local user for Qumulo Al
 
 1. On the **Create Role** page:
 
-   a. Enter a name, for example `Qumulo Alerts`.
+   a. Enter a name, for example `QumuloAlerts`.
 
-   b. Enter a description, for example `This account lets an administrator restrict the privileges of the Qumulo Alerts user.`
+   b. Enter a description, for example `This account lets an administrator restrict the privileges of the QumuloAlerts user.`
 
 1. For **Privileges**, click all of the following:
 
    * **AD_READ: Read Qumulo Active Directory Settings**
    * **ANALYTICS_READ: Read cluster analytics**
+   * **AUDIT_READ: Read audit settings**
    * **CHECKSUMMING_READ: View the status of checksumming**
    * **CLUSTER_READ: View nodes, disks, protection status, and SSL certificate**
    * **DNS_READ: Read DNS setting**
@@ -112,9 +116,9 @@ To be able to generate access tokens, you must create a local user for Qumulo Al
 ## Step 4: Assign the Qumulo Alerts Role to Your Local User
 1. In the Web UI, click **Cluster > Role Management**.
 
-1. On the **Role Management** page, in the **Qumulo Alerts** section, click **Add Member**.
+1. On the **Role Management** page, in the **QumuloAlerts** section, click **Add Member**.
 
-1. In the **Add Member to Administrators** dialog box, for **Trustee**, enter the local username you have created earlier (for example, `Qumulo Alerts`) and then click **Yes, Add Member**.
+1. In the **Add Member to Administrators** dialog box, for **Trustee**, enter the local username you have created earlier (for example, `QumuloAlerts`) and then click **Yes, Add Member**.
 
 ## Step 5: Create a Long-Lived Access Token
 Use the `auth_create_access_token` command and specify the ID of the local user. For example:
@@ -137,3 +141,25 @@ The `auth_create_access_token` command returns a JSON response that contains the
 {{site.data.alerts.end}}
 
 For more information, see [Using Qumulo Core Access Tokens](https://docs.qumulo.com/administrator-guide/external-services/using-access-tokens.html) in the Qumulo Administrator Guide.
+
+## Step 6: Configure Qumulo Alerts
+1. [Configure alarms and alerts](alarms-and-alerts.md).
+
+1. [Configure user notifications](user-notifications.md).
+
+1. Configure [integration with an email server](integration-email-server.md) or [integration with the ClickSend service](integration-clicksend.md).
+
+## Step 7: Start Qumulo Alerts
+To start Qumulo Alerts, run the following command from the directory to which you cloned the `QumuloAlerts` repository.
+
+```bash
+./start-docker-qumulo-alerts.sh
+```
+
+To reapply changes to the Qumulo Alerts configuration, run the following command.
+
+```bash
+./stop-docker-qumulo-alerts.sh && ./start-docker-qumulo-alerts.sh
+```
+
+
