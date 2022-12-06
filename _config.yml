@@ -155,7 +155,10 @@ unifyNetJumboFrames: Before you create your Qumulo cluster, if your client envir
 use40gbps: You can use 40 Gbps connections with 40 Gbps transceivers.
 splitNetLACP: For all connection speeds, the default behavior is that of an LACP with 1,500 MTU for the front-end and 9,000 MTU for the back-end interfaces.
 
+noNIC: For this platform, all models ship without NICs.
 seeTechSpecs: Some components vary across node types. For information about node types, see <a href="technical-specifications.html">Technical Specifications</a>.
+doNotWarpChassis: To avoid warping the chassis frame, always keep it level while you insert it into the server rack. Never insert the chassis at an angle and don&apos;t apply excessive pressure to it.
+twoPeopleOrLift: We strongly recommend using a server lift or that two people perform this task.
 
 varBearerTokenRecommend: As soon as you receive your bearer token, record it in a safe place.
 varBearerTokenWarning: If you misplace the bearer token, you can't retrieve it at a later time. You must create a new access token.
@@ -170,5 +173,8 @@ sm1114s: Supermicro 1114S
 
 sm1014sLong: Supermicro A+ ASG-1014S-ACR12N4H
 sm1014s: Supermicro 1014S
+
+q1uhg2Long: Quiver 1U Hybrid Gen2
+q1uhg2: Quiver 1UH Gen2
 
 consTrans: The consumer processes for email and ClickSend integrations translate messages into the recipient's native language.
