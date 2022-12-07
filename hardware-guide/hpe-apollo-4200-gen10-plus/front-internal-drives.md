@@ -6,23 +6,51 @@ sidebar: hardware_guide_sidebar
 keywords: front drive, internal drive, boot drive, drive, drive bay
 ---
 
-## Front LFF Drive Row
+## 480TB and 240TB Nodes
+In [480TB and 240TB nodes](technical-specifications.md), all drive bays are populated.
+
+### Front LFF Drive Row
 The following diagram shows the front LFF drive row, or cage 1. Cage 1 holds the first half of the drives in box 1, bays 1-12.
 
-{% capture alt_tag %}The front large form factor drive row, or cage 1, in the {{site.a4200g10p}} node{% endcapture %}
-{% include image.html alt=alt_tag file="hpe-apollo-4200-gen10-plus-front-panel-lff-cage-1-box-1.png" %}
+{% capture alt_tag %}The front large form factor drive row, or cage 1, in the {{site.a4200g10p}} node (480TB and 240TB).{% endcapture %}
+{% include image.html alt=alt_tag file="hpe-apollo-4200-gen10-plus-front-panel-lff-cage-1-box-1-480tb-240tb.png" %}
 
-## Internal LFF Drive Row
+### Internal LFF Drive Row
 The internal LFF drive row, or cage 2, flips up behind the front drive row in the node. Cage 2 holds the second half of the drives in box 1, bays 13-24.
 
-{% capture alt_tag %}The internal large form factor drive row, or cage 2, in the {{site.a4200g10p}} node{% endcapture %}
-{% include image.html alt=alt_tag file="hpe-apollo-4200-gen10-plus-internal-lff-cage-2-box-1.png" %}
+{% capture alt_tag %}The internal large form factor drive row, or cage 2, in the {{site.a4200g10p}} node (480TB and 240TB).{% endcapture %}
+{% include image.html alt=alt_tag file="hpe-apollo-4200-gen10-plus-internal-lff-cage-2-box-1-480tb-240tb.png" %}
 
-## Internal SFF Drive Row
+### Internal SFF Drive Row
 The internal SFF drive row flips up behind the internal LFF drive row. This row holds box 3, bays 1-8.
 
-{% capture alt_tag %}The internal small form factor drive row in the {{site.a4200g10p}} node{% endcapture %}
-{% include image.html alt=alt_tag file="hpe-apollo-4200-gen10-plus-internal-sff-box-3.png" %}
+{% capture alt_tag %}The internal small form factor drive row in the {{site.a4200g10p}} node (480TB and 240TB).{% endcapture %}
+{% include image.html alt=alt_tag file="hpe-apollo-4200-gen10-plus-internal-sff-box-3-480tb-240tb.png" %}
+
+
+## 90TB and 36TB Nodes
+In [90TB and 36TB Nodes](technical-specifications.md), some drive bays are empty.
+
+{% include note.html content="In the following diagrams, empty drive bays appear in gray." %}
+
+### Front LFF Drive Row
+The following diagram shows the front LFF drive row, or cage 1. Cage 1 holds the drives in box 1, bays 1-9. Bays 10-12 are empty.
+
+{% capture alt_tag %}The front large form factor drive row, or cage 1, in the {{site.a4200g10p}} node (90TB and 36TB). Cage 1 holds the drives in box 1, bays 1-9. Bays 10-12 are empty.{% endcapture %}
+{% include image.html alt=alt_tag file="hpe-apollo-4200-gen10-plus-front-panel-lff-cage-1-box-1-90tb-36tb.png" %}
+
+### Internal LFF Drive Row
+The internal LFF drive row, or cage 2, flips up behind the front drive row in the node. Bays 13-24 in cage 2, box 1 are empty.
+
+{% capture alt_tag %}The internal large form factor drive row, or cage 2, in the {{site.a4200g10p}} node (90TB and 36TB). Bays 13-24 in cage 2, box 1 are empty.{% endcapture %}
+{% include image.html alt=alt_tag file="hpe-apollo-4200-gen10-plus-internal-lff-cage-2-box-1-90tb-36tb.png" %}
+
+### Internal SFF Drive Row
+The internal SFF drive row flips up behind the internal LFF drive row. Bays 1-4 and 8 in box 3 are empty.
+
+{% capture alt_tag %}The internal small form factor drive row in the {{site.a4200g10p}} node (90TB and 36TB). Bays 1-4 and 8 in box 3 are empty.{% endcapture %}
+{% include image.html alt=alt_tag file="hpe-apollo-4200-gen10-plus-internal-sff-box-3-90tb-36tb.png" %}
+
 
 ## Boot Drive
 {% include important.html content="Before you remove the boot drive, contact the [Qumulo Care Team](https://care.qumulo.com/hc/en-us/articles/115008409408) for additional instructions." %}
