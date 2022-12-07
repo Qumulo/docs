@@ -7,12 +7,15 @@ sidebar: administrator_guide_sidebar
 varAccessTokenWarning: An attacker can use an access token to authenticate as the token's user to Qumulo Core REST API (through HTTP, the Python SDK, or the <code>qq</code> CLI) and gain all of the user's privileges.
 varAccessTokenBestPractices: Treat access tokens, and the bearer tokens they generate, like passwords&#58; Store your tokens securely, rotate your tokens often, and create a token revocation policy for your organization.
 varAccessTokenAdminWarning: To decrease the risk of giving an attacker full administrative access&mdash;including access to cluster data&mdash;avoid generating tokens for accounts with administrative privileges.
+varExpirationUtcNote: The <code>--expiration-time</code> flag interprets arguments as timestamps in the UTC time zone.
 varTokenQQcli: To use an access token in the <code>qq</code> CLI, you must use the <code>--file</code> flag when you create the access token. Use this flag to specify a path for saving your credentials file in a format that the <code>qq</code> CLI can use.
 varPrereqWrite: <code>PRIVILEGE_ACCESS_TOKEN_WRITE</code> is required for creating and deleting access tokens for all users in the system.
 varPrereqRead: <code>PRIVILEGE_ACCESS_TOKEN_READ</code> is required for listing access tokens.
+varTokenExpiration: When an access token's expiration time elapses, it isn't possible to use the token for authentication. Any attempt to use the token results in an authentication error. To continue the authentication process, you must either [create a new access token](#creating-using-access-tokens) or [update the expiration time for your existing token](#modifying-access-tokens).
+varTokenReturn: <ul><li>The access token ID</li><li>The user that the access token represents</li><li>The access token's creator</li><li>The access token's creation time</li></ul>
 ---
 
-In Qumulo Core 5.3.0 (and higher), _access tokens_ let a user to authenticate to the Qumulo REST API without having to complete repetitive login procedures. Access tokens provide an alternative to session-based authentication that the `qq login` command and the Web UI use
+In Qumulo Core 5.3.0 (and higher), _access tokens_ let a user to authenticate to the Qumulo REST API without having to complete repetitive login procedures. Access tokens provide an alternative to session-based authentication that the `qq login` command and the Web UI use.
 
 Unlike _session bearer tokens_ (that have a short expiration time and require a password to refresh, for example for authentication by using the `qq login` command), access tokens are long-lived. Access tokens support authentication for services, long-lived automation processes, and programmatic REST API access that doesn't require user input.
 
@@ -32,9 +35,10 @@ Unlike _session bearer tokens_ (that have a short expiration time and require a 
 
 <a id="creating-using-access-tokens"></a>
 ## Creating and Using Access Tokens
-{{page.varPrereqWrite}} This section explains how to create access tokens by using the `qq` CLI.
+{{page.varPrereqWrite}} This section explains how to create access tokens without or with an expiration time by using the `qq` CLI.
 
-To create a token, use the `auth_create_access_token` command and specify the user. For example:
+### To Create an Access Token without an Expiration Time
+Use the `auth_create_access_token` command and specify the user. For example:
 
 ```bash
 $ qq auth_create_access_token jane
@@ -49,7 +53,7 @@ $ qq auth_create_access_token jane
 * Specify ID types, for example:
   * `auth_id:1234`
   * `SID:S-1-1-0`
- 
+
 {{site.data.alerts.note}}
 <ul>
   <li>Although you can create groups for users, you can't create access tokens for groups.</li>
@@ -75,9 +79,26 @@ $ qq auth_create_access_token jane
 </ul>
 {{site.data.alerts.end}}
 
+<a id="create-token-expiration-time"></a>
+### To Create an Access Token with an Expiration Time
+Use the `auth_create_access_token --expiration-time` command and specify the expiration time. You can specify the expiration time in different formats. For example:
+
+```bash
+$ qq auth_create_access_token jane --expiration-time 'Jan 01 2023'
+```
+
+```bash
+$ qq auth_create_access_token jane --expiration-time '01/01/2023 00:00'
+```
+
+{{page.varTokenExpiration}}
+
+{{site.data.alerts.note}}
+{{page.varExpirationUtcNote}}
+{{site.data.alerts.end}}
 
 ### Using Bearer Tokens for Authentication
-A Qumulo Core access token [returns a _bearer token_](#json-bearer-token), an item in the `Authorization` HTTP header which acts as the authentication mechanism for the Qumulo Core REST API. 
+A Qumulo Core access token [returns a _bearer token_](#json-bearer-token), an item in the `Authorization` HTTP header which acts as the authentication mechanism for the Qumulo Core REST API.
 
 #### REST API
 When you use the Qumulo REST API, add the bearer token to the `Authorization` HTTP header. For example:
@@ -116,23 +137,29 @@ To use the credentials file, specify its location by using the `--credentials-st
 $ qq --credentials-store ./qumulo_credentials who_am_i
 ```
 
-## Listing Access Tokens
-{{page.varPrereqRead}} This section explains how to create access tokens by using the `qq` CLI.
+<a id="getting-metadata-for-access-tokens"></a>
+## Getting Metadata for Access Tokens
+{{page.varPrereqRead}} This section explains how to get metadata for a specific access token or all access tokens by using the `qq` CLI.
 
-To list access tokens, use the `auth_list_access_tokens` command. For example:
+### To Get Metadata for a Specific Access Token
+Use the `auth_get_access_token` command and specify the access token ID. For example:
 
 ```bash
-$ qq auth_list_access_tokens
+$ qq auth_get_access_token 1234567890123456789012
 ```
+
+This command returns a JSON object that contains:
+{{page.varTokenReturn}}
+
+### To Get Metadata for All Access Tokens
+Use the `qq auth_list_access_tokens` command.
+
 {{site.data.alerts.important}}
 Listing access tokens <em>doesn't</em> return the bearer token required for authentication. {{site.varBearerTokenWarning}}
 {{site.data.alerts.end}}
 
 The `auth_list_access_tokens` command returns:
-* The access token ID
-* The user that the access token represents
-* The access token's creator
-* The access token's creation time
+{{page.varTokenReturn}}
 
 ```
 id                      user   creator  creation time
@@ -142,6 +169,23 @@ id                      user   creator  creation time
 ```
 
 To filter the command's output by user, use the `--user` flag and use the same format for the name as for the [`auth_create_access_token`](#create-token-format) command.
+
+
+<a id="modifying-expiration-time-access-token"></a>
+## Modifying the Expiration Time for an Access Token
+{{page.varPrereqWrite}} This section explains how to modify access tokens by using the `qq` CLI.
+
+Use the `auth_modify_access_token` command and specify the access token ID and the expiration time. For example:
+
+```bash
+$ qq auth_modify_access_token 1234567890123456789012 --expiration-time 'Jan 01 2023'
+```
+
+{{page.varTokenExpiration}}
+
+{{site.data.alerts.note}}
+{{page.varExpirationUtcNote}}
+{{site.data.alerts.end}}
 
 
 ## Deleting Access Tokens
@@ -174,7 +218,7 @@ When you connect external services to the Qumulo Core REST API, we recommend cre
     a. Click **Cluster > Local Users & Groups**.
 
     b. In the **Users** section, click **Create**.
-    
+
     c. In the **Create user** dialog box, enter a **User name** and **Password**, re-enter the password, and then click **Create**.
 
 1. Create a role with privileges.
@@ -182,15 +226,15 @@ When you connect external services to the Qumulo Core REST API, we recommend cre
     a. Click **Cluster > Role Management**.
 
     b. In the **Role Management** section, click **Create Role**.
-    
+
     c. On the **Create Role** page, enter a **Name** and **Description**, click the **Privileges** for the user, and then click **Save**.
- 
+
 1. Assign the service user to the role.
 
     a. On the **Role Management** page, find the name of the role you created and then click **Add Member**.
-    
+
     b. In the **Add Member to &lt;MyRoleName&gt;** dialog box, for **Trustee**, enter the name of the user you created and then click **Yes, Add Member**.
-  
+
 1. [Create access tokens](#creating-using-access-tokens) for your service account.
 
 ### Rotating Access Tokens
