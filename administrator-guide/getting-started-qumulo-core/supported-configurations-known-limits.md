@@ -96,7 +96,7 @@ keywords: limit, limits, limitations, known limits, known limitations, config, c
   <tbody>
     <tr>
       <td>On-Premises Cluster Size</td>
-      <td>275 nodes</td>
+      <td>265 nodes</td>
     </tr>
     <tr>
       <td>Cloud Cluster Size</td>
