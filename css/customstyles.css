@@ -195,6 +195,11 @@ header {
 }
 
 @media only screen and (max-width: 600px) {
+  /* Prevent overly long permission names
+     from breaking display on mobile. */
+  .improve-mobile {
+    margin-left: -22px;
+  }
   .footer-grumpquats {
     float:left;
     text-align:left;

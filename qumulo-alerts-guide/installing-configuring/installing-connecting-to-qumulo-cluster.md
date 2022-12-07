@@ -74,42 +74,45 @@ To be able to generate access tokens, you must create a local user for Qumulo Al
 
 1. For **Privileges**, click all of the following:
 
-   * **AD_READ: Read Qumulo Active Directory Settings**
-   * **ANALYTICS_READ: Read cluster analytics**
-   * **AUDIT_READ: Read audit settings**
-   * **CHECKSUMMING_READ: View the status of checksumming**
-   * **CLUSTER_READ: View nodes, disks, protection status, and SSL certificate**
-   * **DNS_READ: Read DNS setting**
-   * **ENCRYPTION_READ: View the status of at rest encryption**
-   * **FTP_READ: View FTP status and settings**
-   * **IDENTITY_MAPPING_READ: Get AD/LDAP User Defined Mappings**
-   * **LDAP_READ: View LDAP settings**
-   * **LOCAL_GROUP_READ: View local groups and members**
-   * **LOCAL_USER_READ: Get information about local users**
-   * **METRICS_READ: Get all metrics**
-   * **NETWORK_READ: Read network status and settings**
-   * **NFS_EXPORT_READ: Read network status and settings**
-   * **QUOTA_READ: View all file system quotas**
-   * **REBOOT_READ: View Reboot Status**
-   * **RECONCILER_READ: View reconciler status and metrics**
-   * **REPLICATION_SOURCE_READ: View source relationship settings and status**
-   * **REPLICATION_TARGET_READ: View target relationship settings and status**
-   * **ROLE_READ: View roles and assignments**
-   * **S3_BUCKETS_READ: View all S3 buckets present in the system**
-   * **S3_CREDENTIALS_READ: View any S3 access key present in the system**
-   * **S3_SETTINGS_READ: View S3 server settings**
-   * **SAML_SETTINGS_READ: View SAML integration settings**
-   * **SMB_SESSION_READ: List logged on SMB sessions**
-   * **SMB_SHARE_READ: View configuration of SMB shares and SMB server settings**
-   * **SNAPSHOT_CALCULATE_USED_CAPACITY_READ:  Recalculate capacity usage of snapshots**
-   * **SNAPSHOT_DIFFERENCE_READ: View the changes between snapshots**
-   * **SNAPSHOT_POLICY_READ: View snapshot policies and status**
-   * **SNAPSHOT_READ: List snapshots and view their status and cached capacity.**
-   * **SUPPORT_READ: View support configuration and status**
-   * **TENANT_READ: View any tenant information**
-   * **TIME_READ: View time and time settings**
-   * **UNCONFIGURED_NODE_READ: List unconfigured Qumulo nodes**
-   * **UPGRADE_READ: View upgrade configuration and status**
+   {% comment %} The following table is in HTML because the overly long privilege SNAPSHOT_CALCULATE_USED_CAPACITY_READ doesn't wrap on mobile, requiring special CSS to move the whole thing over to the left.{% endcomment %}
+   <ul class="improve-mobile">
+      <li><strong>AD_READ: Read Qumulo Active Directory Settings</strong></li>
+      <li><strong>ANALYTICS_READ: Read cluster analytics</strong></li>
+      <li><strong>AUDIT_READ: Read audit settings</strong></li>
+      <li><strong>CHECKSUMMING_READ: View the status of checksumming</strong></li>
+      <li><strong>CLUSTER_READ: View nodes, disks, protection status, and SSL certificate</strong></li>
+      <li><strong>DNS_READ: Read DNS setting</strong></li>
+      <li><strong>ENCRYPTION_READ: View the status of at rest encryption</strong></li>
+      <li><strong>FTP_READ: View FTP status and settings</strong></li>
+      <li><strong>IDENTITY_MAPPING_READ: Get AD/LDAP User Defined Mappings</strong></li>
+      <li><strong>LDAP_READ: View LDAP settings</strong></li>
+      <li><strong>LOCAL_GROUP_READ: View local groups and members</strong></li>
+      <li><strong>LOCAL_USER_READ: Get information about local users</strong></li>
+      <li><strong>METRICS_READ: Get all metrics</strong></li>
+      <li><strong>NETWORK_READ: Read network status and settings</strong></li>
+      <li><strong>NFS_EXPORT_READ: Read network status and settings</strong></li>
+      <li><strong>QUOTA_READ: View all file system quotas</strong></li>
+      <li><strong>REBOOT_READ: View Reboot Status</strong></li>
+      <li><strong>RECONCILER_READ: View reconciler status and metrics</strong></li>
+      <li><strong>REPLICATION_SOURCE_READ: View source relationship settings and status</strong></li>
+      <li><strong>REPLICATION_TARGET_READ: View target relationship settings and status</strong></li>
+      <li><strong>ROLE_READ: View roles and assignments</strong></li>
+      <li><strong>S3_BUCKETS_READ: View all S3 buckets present in the system</strong></li>
+      <li><strong>S3_CREDENTIALS_READ: View any S3 access key present in the system</strong></li>
+      <li><strong>S3_SETTINGS_READ: View S3 server settings</strong></li>
+      <li><strong>SAML_SETTINGS_READ: View SAML integration settings</strong></li>
+      <li><strong>SMB_SESSION_READ: List logged on SMB sessions</strong></li>
+      <li><strong>SMB_SHARE_READ: View configuration of SMB shares and SMB server settings</strong></li>
+      <li><strong>SNAPSHOT_CALCULATE_USED_CAPACITY_READ: Recalculate capacity usage of snapshots</strong></li>
+      <li><strong>SNAPSHOT_DIFFERENCE_READ: View the changes between snapshots</strong></li>
+      <li><strong>SNAPSHOT_POLICY_READ: View snapshot policies and status</strong></li>
+      <li><strong>SNAPSHOT_READ: List snapshots and view their status and cached capacity.</strong></li>
+      <li><strong>SUPPORT_READ: View support configuration and status</strong></li>
+      <li><strong>TENANT_READ: View any tenant information</strong></li>
+      <li><strong>TIME_READ: View time and time settings</strong></li>
+      <li><strong>UNCONFIGURED_NODE_READ: List unconfigured Qumulo nodes</strong></li>
+      <li><strong>UPGRADE_READ: View upgrade configuration and status</strong></li>
+    </ul>
 
 1. Click **Save**.
 
@@ -159,8 +162,5 @@ To start Qumulo Alerts, run the following command from the directory to which yo
 To reapply changes to the Qumulo Alerts configuration, run the following command.
 
 ```bash
-./stop-docker-qumulo-alerts.sh && \
-  ./start-docker-qumulo-alerts.sh
+./stop-docker-qumulo-alerts.sh && ./start-docker-qumulo-alerts.sh
 ```
-
-
