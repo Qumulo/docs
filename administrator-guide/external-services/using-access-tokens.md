@@ -81,7 +81,7 @@ $ qq auth_create_access_token jane
 
 <a id="create-token-expiration-time"></a>
 ### To Create an Access Token with an Expiration Time
-Use the `auth_create_access_token --expiration-time` command and specify the expiration time. You can specify the expiration time in different formats. For example:
+In Qumulo Core 5.3.2 (and higher), you can use the `auth_create_access_token --expiration-time` command and specify the expiration time. You can specify the expiration time in different formats. For example:
 
 ```bash
 $ qq auth_create_access_token jane --expiration-time 'Jan 01 2023'
