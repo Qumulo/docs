@@ -45,37 +45,37 @@ Most Qumulo-certified nodes are compatible with multiple NIC models. The NIC mod
        <tr>
          <td>ConnectX-6</td>
          <td>100 Gbps</td>
-         <td><a href="https://docs.nvidia.com/networking/display/ConnectX6Firmwarev20321010/Firmware+Compatible+Products">Firmware Compatible Products</a> in the NVIDIA ConnectX-6 Adapter Cards Firmware Release Notes v20.32.1010</td>
+         <td><a href="https://docs.nvidia.com/networking/display/ConnectX6Firmwarev20321010/Firmware+Compatible+Products">Firmware Compatible Products</a> in the NVIDIA ConnectX-6 Adapter Cards Firmware Release Notes</td>
        </tr>
        <tr>
          <td>ConnectX-6Dx</td>
          <td>100 Gbps</td>
-         <td><a href="https://docs.nvidia.com/networking/display/ConnectX6DxFirmwarev22322004/Firmware+Compatible+Products">Firmware Compatible Products</a> in the NVIDIA ConnectX-6 Dx Adapter Cards Firmware Release Notes v22.32.2004</td>
+         <td><a href="https://docs.nvidia.com/networking/display/ConnectX6DxFirmwarev22322004/Firmware+Compatible+Products">Firmware Compatible Products</a> in the NVIDIA ConnectX-6 Dx Adapter Cards Firmware Release Notes</td>
        </tr>
        <tr>
          <td>ConnectX-5</td>
          <td>100 Gbps</td>
-         <td><a href="https://docs.nvidia.com/networking/display/ConnectX5Firmwarev16331048/Firmware+Compatible+Products">Firmware Compatible Products</a> in the NVIDIA ConnectX-5 Adapter Cards Firmware Release Notes v16.33.1048</td>
+         <td><a href="https://docs.nvidia.com/networking/display/ConnectX5Firmwarev16331048/Firmware+Compatible+Products">Firmware Compatible Products</a> in the NVIDIA ConnectX-5 Adapter Cards Firmware Release Notes</td>
        </tr>
        <tr>
          <td>ConnectX-4 Lx</td>
          <td>25 Gbps</td>
-         <td><a href="https://docs.nvidia.com/networking/display/ConnectX4LxFirmwarev14321010/Firmware+Compatible+Products">Firmware Compatible Products</a> in the NVIDIA ConnectX-4 Lx Adapter Cards Firmware Release Notes v14.32.1010</td>
+         <td><a href="https://docs.nvidia.com/networking/display/ConnectX4LxFirmwarev14321010/Firmware+Compatible+Products">Firmware Compatible Products</a> in the NVIDIA ConnectX-4 Lx Adapter Cards Firmware Release Notes</td>
        </tr>
        <tr>
          <td>ConnectX-4</td>
          <td>40 Gbps</td>
-         <td><a href="https://docs.nvidia.com/networking/display/ConnectX4Firmwarev12282006/Firmware+Compatible+Products">Firmware Compatible Products</a> in the NVIDIA Mellanox ConnectX-4 Adapter Cards Firmware Release Notes v12.28.2006</td>
+         <td><a href="https://docs.nvidia.com/networking/display/ConnectX4Firmwarev12282006/Firmware+Compatible+Products">Firmware Compatible Products</a> in the NVIDIA Mellanox ConnectX-4 Adapter Cards Firmware Release Notes</td>
        </tr>
        <tr>
          <td>ConnectX-3Pro</td>
          <td>40 Gbps</td>
-         <td><a href="https://network.nvidia.com/related-docs/firmware/ConnectX3Pro-FW-2_42_5000-release_notes.pdf#page=8">Supported Cables and Modules</a> in the Mellanox ConnectX-3 Pro Firmware Release Notes Rev 2.42.5000</td>
+         <td><a href="https://network.nvidia.com/related-docs/firmware/ConnectX3Pro-FW-2_42_5000-release_notes.pdf#page=8">Supported Cables and Modules</a> in the Mellanox ConnectX-3 Pro Firmware Release Notes</td>
        </tr>
        <tr>
          <td>ConnectX-3</td>
          <td>10 Gbps</td>
-         <td><a href="https://network.nvidia.com/pdf/firmware/ConnectX3-FW-2_42_5000-release_notes.pdf#page=7">Supported Cables and Modules</a> in the Mellanox ConnectX-3 Firmware Release Notes Rev 2.42.5000</td>
+         <td><a href="https://network.nvidia.com/pdf/firmware/ConnectX3-FW-2_42_5000-release_notes.pdf#page=7">Supported Cables and Modules</a> in the Mellanox ConnectX-3 Firmware Release Notes</td>
        </tr>
        <tr>
          <td>P2100G</td>
