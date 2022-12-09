@@ -106,8 +106,8 @@ Most Qumulo-certified nodes are compatible with multiple NIC models. The NIC mod
          </td>
        </tr>
        <tr>
-         <td>P225P</td>
-         <td>25 Gbps</td>         
+         <td>P2100G</td>
+         <td>100 Gbps</td>              
          <td rowspan=2>
            <ul>
              <li><a href="https://www.broadcom.com/products/fiber-optic-modules-components/networking/optical-transceivers">Broadcom Optical Transceivers</a></li>
@@ -116,8 +116,8 @@ Most Qumulo-certified nodes are compatible with multiple NIC models. The NIC mod
          </td>
        </tr>
        <tr>
-         <td>P2100G</td>
-         <td>100 Gbps</td>
+         <td>P225P</td>
+         <td>25 Gbps</td>    
        </tr>       
      </tbody>
      </table>
