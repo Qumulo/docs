@@ -48,7 +48,7 @@ Most Qumulo-certified nodes are compatible with multiple NIC models. The NIC mod
          <td><a href="https://docs.nvidia.com/networking/display/ConnectX6Firmwarev20321010/Firmware+Compatible+Products">Firmware Compatible Products</a> in the NVIDIA ConnectX-6 Adapter Cards Firmware Release Notes</td>
        </tr>
        <tr>
-         <td>ConnectX-6Dx</td>
+         <td>ConnectX-6 Dx</td>
          <td>100 Gbps</td>
          <td><a href="https://docs.nvidia.com/networking/display/ConnectX6DxFirmwarev22322004/Firmware+Compatible+Products">Firmware Compatible Products</a> in the NVIDIA ConnectX-6 Dx Adapter Cards Firmware Release Notes</td>
        </tr>
