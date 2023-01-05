@@ -5,17 +5,18 @@ permalink: /administrator-guide/external-services/using-access-tokens.html
 keywords: auth, authentication, access token, bearer token, token
 sidebar: administrator_guide_sidebar
 varAccessTokenWarning: An attacker can use an access token to authenticate as the token's user to Qumulo Core REST API (through HTTP, the Python SDK, or the <code>qq</code> CLI) and gain all of the user's privileges.
-varAccessTokenBestPractices: Treat access tokens, and the bearer tokens they generate, like passwords&#58; Store your tokens securely, rotate your tokens often, and create a token revocation policy for your organization.
+varAccessTokenBestPractices: Treat access tokens, and the bearer tokens they generate, like passwords. Store your tokens securely, rotate your tokens often, and create a token revocation policy for your organization.
 varAccessTokenAdminWarning: To decrease the risk of giving an attacker full administrative access&mdash;including access to cluster data&mdash;avoid generating tokens for accounts with administrative privileges.
 varExpirationUtcNote: The <code>--expiration-time</code> flag interprets arguments as timestamps in the UTC time zone.
-varTokenQQcli: To use an access token in the <code>qq</code> CLI, you must use the <code>--file</code> flag when you create the access token. Use this flag to specify a path for saving your credentials file in a format that the <code>qq</code> CLI can use.
-varPrereqWrite: <code>PRIVILEGE_ACCESS_TOKEN_WRITE</code> is required for creating and deleting access tokens for all users in the system.
+varTokenQQcli: To use an access token in the <code>qq</code> CLI, you must use the <code>--file</code> flag&mdash;to specify a path for saving your credentials file in a format that the <code>qq</code> CLI can use&mdash;when you create the access token.
+varPrereqWrite: <code>PRIVILEGE_ACCESS_TOKEN_WRITE</code> is required for creating, disabling, and deleting access tokens for all users in the system.
 varPrereqRead: <code>PRIVILEGE_ACCESS_TOKEN_READ</code> is required for listing access tokens.
 varTokenExpiration: When an access token's expiration time elapses, it isn't possible to use the token for authentication. Any attempt to use the token results in an authentication error. To continue the authentication process, you must either [create a new access token](#creating-using-access-tokens) or [update the expiration time for your existing token](#modifying-access-tokens).
-varTokenReturn: <ul><li>The access token ID</li><li>The user that the access token represents</li><li>The access token's creator</li><li>The access token's creation time</li></ul>
+varTokenReturn: <ul><li>The access token ID</li><li>The user that the access token represents</li><li>The access token's creator</li><li>The access token's creation time</li><li>The access token's expiration time</li><li>Whether the access token is enabled</li></ul>
+varBearerToken: you can no longer use any bearer tokens associated with the access token to authenticate to Qumulo Core.
 ---
 
-In Qumulo Core 5.3.0 (and higher), _access tokens_ let a user to authenticate to the Qumulo REST API without having to complete repetitive login procedures. Access tokens provide an alternative to session-based authentication that the `qq login` command and the Web UI use.
+In Qumulo Core 5.3.0 (and higher), _access tokens_ let a user authenticate to the Qumulo REST API without having to complete repetitive login procedures. Access tokens provide an alternative to session-based authentication that the `qq login` command and the Web UI use.
 
 Unlike _session bearer tokens_ (that have a short expiration time and require a password to refresh, for example for authentication by using the `qq login` command), access tokens are long-lived. Access tokens support authentication for services, long-lived automation processes, and programmatic REST API access that doesn't require user input.
 
@@ -148,8 +149,35 @@ Use the `auth_get_access_token` command and specify the access token ID. For exa
 $ qq auth_get_access_token 1234567890123456789012
 ```
 
-This command returns a JSON object that contains:
+This command returns a JSON object that lists:
 {{page.varTokenReturn}}
+
+For example:
+
+```json
+{
+  "creation_time": "2022-12-06T01:14:39.56621474Z",
+  "creator": {
+    "auth_id": "500",
+    "domain": "LOCAL",
+    "gid": null,
+    "name": "admin",
+    "sid": "S-1-1-12-12345678-1234567890-1234567890-500",
+    "uid": null
+  },
+  "enabled": true,
+  "expiration_time": "2023-01-01T00:00:00Z",
+  "id": "12345678901234567890123",
+  "user": {
+    "auth_id": "1002",
+    "domain": "LOCAL",
+    "gid": null,
+    "name": "svc",
+    "sid": "S-1-1-12-12345678-1234567890-1234567890-1002",
+    "uid": null
+  }
+}
+```
 
 ### To Get Metadata for All Access Tokens
 Use the `qq auth_list_access_tokens` command.
@@ -161,11 +189,13 @@ Listing access tokens <em>doesn't</em> return the bearer token required for auth
 The `auth_list_access_tokens` command returns:
 {{page.varTokenReturn}}
 
+For example:
+
 ```
-id                      user   creator  creation time
-======================  =====  =======  ==============================
-1234567890123456789012  svc    admin    2022-10-27T15:18:09.725513764Z
-0987654321098765432109  svc    admin    2022-10-27T15:18:24.997572918Z
+id                      user   creator  creation time                   expiration time       enabled
+======================  =====  =======  ==============================  ====================  =======
+1234567890123456789012  svc    admin    2022-10-27T15:18:09.725513764Z                        True
+0987654321098765432109  svc    admin    2022-10-27T15:18:24.997572918Z  2023-01-01T00:00:00Z  False
 ```
 
 To filter the command's output by user, use the `--user` flag and use the same format for the name as for the [`auth_create_access_token`](#create-token-format) command.
@@ -188,10 +218,33 @@ $ qq auth_modify_access_token 1234567890123456789012 --expiration-time 'Jan 01 2
 {{site.data.alerts.end}}
 
 
-## Deleting Access Tokens
-{{page.varPrereqWrite}} This section explains how to delete access tokens by using the `qq` CLI.
+<a id="disabling-access-token"></a>
+## Disabling an Access Token
+To help you check your system's security posture, Qumulo Core lets you disable an access token without deleting it. This is a good way to check for dependencies on the access token before you delete the token permanently.
 
-{% include important.html content="When you delete an access token, you can't use any bearer tokens associated with the access token to authenticate to Qumulo Core." %}
+{{page.varPrereqWrite}} This section explains how to disable an access token by using the `qq` CLI.
+
+{% capture content_disable_token %}After you disable an access token, {{page.varBearerToken}}{% endcapture %}
+{% include important.html content=content_disable_token %}
+
+To disable an access token, use the `auth_modify_access_token` command, specify the access token ID, and use the `-d` flag. For example:
+
+```bash
+$ qq auth_modify_access_token 1234567890123456789012 -d
+```
+
+To enable an access token, use the `auth_modify_access_token` command, specify the access token ID, and use the `-e` flag. For example:
+
+```bash
+$ qq auth_modify_access_token 1234567890123456789012 -e
+```
+
+
+## Deleting Access Tokens
+{{page.varPrereqWrite}} This section explains how to delete an access token by using the `qq` CLI.
+
+{% capture content_disable_token %}After you delete an access token, {{page.varBearerToken}}{% endcapture %}
+{% include important.html content=content_disable_token %}
 
 To delete an access token, use the `auth_delete_access_token` command and specify the access token ID. For example:
 
@@ -251,5 +304,7 @@ We strongly recommend rotating access tokens for a service account at a regular 
 1. In the credential store of your service, replace the old access token with the new one.
 
 1. Test that your service account can access the Qumulo Core REST API.
+
+1. Confirm that there is nothing else relying on the old access token by disabling it first. If this causes any disruptions then you can re-enable it while you resolve the issue.
 
 1. To delete the old access token, use the `qq auth_delete_access_token` command.

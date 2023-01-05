@@ -74,8 +74,4 @@ Under certain conditions, you might receive mount-failed errors from `mount.nfs`
 
 1. Confirm that the clocks on the client, cluster, and domain controller are synchronized to the same time.
 
-1. Confirm that the mount uses the `krb5` option.
-
-   {% include note.html content="Qumulo Core doesn't support the `krb5i` option." %}
-
 1. Inspect logs and packet captures.

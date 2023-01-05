@@ -27,10 +27,6 @@ Qumulo Core supports only the following features:
 
 * NFSv4.1
 
-* The `krb5` mount flavor
-
-  {% include note.html content="Currently, Qumulo Core doesn't support `krb5i` (integrity, or signing)." %}
-
 * Linux clients
 
 * AES-128 and AES-256 encryption algorithms&mdash;for more information, see [Network security: Configure encryption types allowed for Kerberos](https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/network-security-configure-encryption-types-allowed-for-kerberos) in the Microsoft documentation
