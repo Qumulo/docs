@@ -30,8 +30,6 @@ To follow this guide, you should have:
 
 Using the S3 API with Qumulo Core requires the use of HTTPS. A valid SSL certificate must be installed in the cluster in order for the S3 API service to run. Qumulo clusters are preconfigured with a self-signed SSL certificate; however, we recommend installing your own certificate, as there are applications that do not accept the default certificate.
 
-{% include important.html content="Changing the SSL certificate requires that the cluster be restarted in order for the changes to take effect for the S3 API server. You can restart your cluster by logging into the cluster's Web UI, clicking the power icon in the upper right hand corner, and selecting <b>Restart cluster...</b>." %}
-
 For information on how to install a signed SSL certificate, please see [SSL: Install a Signed SSL Certificate](https://care.qumulo.com/hc/en-us/articles/115015388507-SSL-Install-a-Signed-SSL-Certificate).
 
 <a id="enabling-s3"></a>
