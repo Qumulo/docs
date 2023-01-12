@@ -9,6 +9,7 @@ redirect_from:
   - /hardware/general-guidance/nics-transceivers-cables.html
 sidebar: hardware_guide_sidebar
 keywords: network, transceiver, NIC, Mellanox, Nvidia, SMC, Intel, Broadcom, short range, long range, fiber, optic, cable
+varIntelMight: Intel might support, but doesn't verify, third-party transceiver compatibility.
 ---
 
 ## Step 1: Identify the NICs in Your Nodes
@@ -102,7 +103,17 @@ Most Qumulo-certified nodes are compatible with multiple NIC models. The NIC mod
          <td>100 Gbps</td>
          <td>
            <p><a href="https://compatibleproducts.intel.com/ProductDetails?activeModule=Intel%C2%AE%20Ethernet&prdName=Intel%C2%AE%20Ethernet%20Network%20Adapter%20E810-2CQDA2">Intel Ethernet Network Adapter E810-2CQDA2</a></p>
-           {% include note.html content="Intel might support, but doesn't verify, third-party transceiver compatibility." %}
+           {% capture intel %}{{page.varIntelMight}}{% endcapture %}
+           {% include note.html content=intel %}
+         </td>
+       </tr>
+       <tr>
+         <td>E810-XXVDA2</td>
+         <td>25 Gbps</td>
+         <td>
+           <p><a href="https://compatibleproducts.intel.com/ProductDetails?prodSearch=True&searchTerm=Intel%C2%AE%20Ethernet%20Network%20Adapter%20E810-XXVDA2#">Intel Ethernet Network Adapter E810-XXVDA2</a></p>
+           {% capture intel %}{{page.varIntelMight}}{% endcapture %}
+           {% include note.html content=intel %}
          </td>
        </tr>
        <tr>
