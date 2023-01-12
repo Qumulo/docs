@@ -132,11 +132,11 @@ keywords: limit, limits, limitations, known limits, known limitations, config, c
     </tr>
     <tr>
       <td>Characters in Full Path (Path Name)</td>
-      <td>32,760 (protocol-limited)</td>
+      <td>32,760 (limited by protocol)</td>
     </tr>
     <tr>
       <td>Characters in File Path Component (File or Directory)</td>
-      <td>255</td>
+      <td>255 (limited by protocol)</td>
     </tr>
     <tr>
       <td>Files in a Directory</td>
