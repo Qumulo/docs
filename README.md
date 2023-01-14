@@ -5,6 +5,8 @@ permalink: index.html
 breadcrumbs: exclude
 ---
 
+To get started, choose one of the following guides.
+
 <table class="landing-page-table">
 <tbody>
   <tr>
