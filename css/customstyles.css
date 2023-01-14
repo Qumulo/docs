@@ -227,6 +227,51 @@ h1.post-title-main:nth-child(1) {
 
 /* -------------------- TOP NAVBAR END -------------------- */
 
+/* ----------------- LANDING PAGE START ------------------- */
+
+.landing-page-table {
+  border:0px;
+  margin-top:30px;
+  margin-bottom:30px;
+  table-layout:fixed;
+  max-width:400px;
+}
+
+a.multilink {
+  padding:10px;
+  width:100%;
+  display:block;
+  color:#005d80;
+  font-weight:bold;
+  min-width:150px;
+}
+
+a.multilink:visited {
+  color:black;
+}
+
+a.multilink:hover {
+  text-decoration:none;
+  background:white;
+}
+
+td.landing-page-cell {
+  text-align:center;
+  background:#F0F0F0;
+  min-width:150px;
+  padding:0px;
+  width:50%;
+}
+
+img.landing-page-icon {
+  max-width:100px !important;
+  max-height:100px !important;
+  height:301px !important;
+  width:301px !important;
+}
+
+/* ------------------- LANDING PAGE END ------------------- */
+
 .crumb {
     text-transform:capitalize;
 }
