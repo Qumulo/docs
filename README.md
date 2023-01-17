@@ -5,6 +5,8 @@ permalink: index.html
 breadcrumbs: exclude
 ---
 
+<style>#toc{display:none;}</style>
+
 To get started, choose one of the following guides.
 
 <table class="landing-page-table">
@@ -17,8 +19,8 @@ To get started, choose one of the following guides.
       </a>
     </td>
     <td class="landing-page-cell">
-      <a class="multilink" href="cloud-guide/"><img src="images/cloud-guide.png" alt="Qumulo in the Cloud Guide" class="landing-page-icon"><br>
-        Qumulo in the Cloud Guide
+      <a class="multilink" href="azure-guide/"><img src="images/azure-guide.png" alt="Azure Native Qumulo Scalable File Service Guide" class="landing-page-icon"><br>
+        Azure Native Qumulo Scalable File Service Guide
       </a>
     </td>
   </tr>

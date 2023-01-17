@@ -42,7 +42,9 @@ layout: default
       {% if entry.title == page.title %}
         <ul>
           {% for item in entry.folderitems %}
-          <li><a href="{{ item.url }}">{{ item.title }}</a></li>
+            {% if item.type == subnavi %}
+              <li><a href="{{ item.url }}">{{ item.title }}</a></li>
+            {% endif %}
           {% endfor %}    
         </ul>             
       {% endif %}         

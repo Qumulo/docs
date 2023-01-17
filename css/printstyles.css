@@ -69,10 +69,10 @@ a[href^="http:"]::after, a[href^="https:"]::after {
 a[href] {
     color: #337ab7 !important;
 }
+
 a[href*="mailto"]::after, a[data-toggle="tooltip"]::after, a[href].noCrossRef::after {
     content: "";
 }
-
 
 @page {
     margin-left:30pt;
@@ -208,4 +208,10 @@ body.first_page {counter-reset: page 1}
 
 pre {
     background-color: #fafafa;
+}
+
+/* always strip out space or icon from outbound links */
+a[href^="http://"]:after, a[href^="https://"]:after {
+    content:"" !important;
+    padding-left: 0;
 }

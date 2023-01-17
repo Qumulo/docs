@@ -1,0 +1,47 @@
+entries:
+- title:
+  pdftitle: qumulo-azure-guide.pdf
+  product:
+  version:
+  folders:
+
+  - title:
+    output: pdf
+    type: frontmatter
+    folderitems:
+
+    - title:
+      url: /titlepage.html
+      output: pdf
+      type: frontmatter
+
+    - title:
+      url: /tocpage.html
+      output: pdf
+      type: frontmatter
+
+  - title: Azure Native Qumulo Scalable File Service Guide
+    output: web, pdf
+    folderitems:
+
+    - title: Documentation Home
+      url: /index.html
+      output: web
+      type: subnavi
+
+    - title: Azure Native Qumulo Scalable File Service Guide Home
+      url: /azure-guide/
+      output: web
+      type: subnavi
+
+    - title: How the Azure Native Qumulo Scalable File Service Works
+      url: /azure-guide/how-qumulo-scalable-file-service-works.html
+      output: web, pdf
+
+    - title: Configuring Virtual Networking for the Azure Native Qumulo Scalable File Service
+      url: /azure-guide/configuring-virtual-networking-qumulo-scalable-file-service.html
+      output: web, pdf
+
+    - title: Getting Started with the Azure Native Qumulo Scalable File Service
+      url: /azure-guide/getting-started-qumulo-scalable-file-service.html
+      output: web, pdf

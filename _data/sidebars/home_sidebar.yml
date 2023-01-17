@@ -16,8 +16,8 @@ entries:
       url: /hardware-guide/
       output: web
 
-    - title: Qumulo in the Cloud Guide
-      url: /cloud-guide/
+    - title: Azure Native Qumulo Scalable File Service Guide
+      url: /azure-guide/
       output: web
 
     - title: Qumulo Administrator Guide

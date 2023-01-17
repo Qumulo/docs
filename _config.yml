@@ -206,3 +206,7 @@ s3:
     ListParts: https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListParts.html
     PutObject: https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html
     UploadPart: https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html
+
+azure:
+  qumuloOnAzureLong: Azure Native Qumulo Scalable File Service
+  emailAzure: email [azure@qumulo.com](mailto:azure@qumulo.com).
