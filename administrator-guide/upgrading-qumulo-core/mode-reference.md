@@ -23,7 +23,7 @@ keywords: update, upgrade, instant, instant software upgrade, platform, platform
       <th>Upgrade Type</th>
     </thead>
     <tr>
-      <td>5.3.3</td>
+      <td>5.3.3.1</td>
       <td>Instant</td>
     </tr>
     <tr>
@@ -238,7 +238,7 @@ keywords: update, upgrade, instant, instant software upgrade, platform, platform
       <th>Upgrade Type</th>
     </thead>
     <tr>
-      <td>5.3.3</td>
+      <td>5.3.3.1</td>
       <td>Instant</td>
     </tr>
     <tr>
