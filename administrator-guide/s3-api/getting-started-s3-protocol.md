@@ -27,10 +27,16 @@ To follow this guide, you should have:
 
 <a id="configuring-https"></a>
 ## Step 1: Configuring HTTPS
+The Qumulo Core S3 API accepts only HTTPS requests by default. For the S3 API service to run with HTTPS, you must install a valid SSL certificate on your Qumulo cluster. Every Qumulo cluster is preconfigured with a self-signed SSL certificate. However, because certain applications don't accept the default certificate, we recommend installing your own.
 
-Using the S3 API with Qumulo Core requires the use of HTTPS. A valid SSL certificate must be installed in the cluster in order for the S3 API service to run. Qumulo clusters are preconfigured with a self-signed SSL certificate; however, we recommend installing your own certificate, as there are applications that do not accept the default certificate.
+For information about installing a signed SSL certificate, see [SSL: Install a Signed SSL Certificate](https://care.qumulo.com/hc/en-us/articles/115015388507).
 
-For information on how to install a signed SSL certificate, please see [SSL: Install a Signed SSL Certificate](https://care.qumulo.com/hc/en-us/articles/115015388507-SSL-Install-a-Signed-SSL-Certificate).
+### Enabling and Disabling Plaintext HTTP Connections
+{% include important.html content="If you configure the S3 API service to accept only plaintext HTTP connections, all requests made through the S3 API are not encrypted." %}
+
+* To enable HTTP connections, use the `qq s3_modify_settings --insecure` command.
+
+* To revert to encrypted HTTPS requests, use the `qq s3_modify_settings --secure` command.
 
 <a id="enabling-s3"></a>
 ## Step 2: Enabling the S3 API on a Qumulo Cluster
@@ -58,7 +64,7 @@ To create an access key for a user via the `qq` CLI, use the `s3_create_access_k
 $ qq s3_create_access_key <username>
 ```
 
-Please see the [Creating and Managing S3 Access Keys](./creating-managing-s3-access-keys.html) section that covers this in more detail.
+For a more detailed description, see [Creating and Managing S3 Access Keys](./creating-managing-s3-access-keys.html).
 
 ## Step 4: Configuring the AWS CLI for Use with Qumulo Core
 
