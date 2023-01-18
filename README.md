@@ -15,7 +15,7 @@ To get started, choose one of the following guides.
     <td class="landing-page-cell">
       <a class="multilink" href="hardware-guide/">
         <img src="images/hardware-guide.png" alt="Qumulo-Certified Hardware Guide" class="landing-page-icon"><br>
-        Qumulo-Certified Hardware Guide
+        Qumulo-Certified Hardware Guide<br><br>
       </a>
     </td>
     <td class="landing-page-cell">
