@@ -1,8 +1,9 @@
 ---
 title: "Increasing the Node-Fault-Tolerance Level for Your Cluster During Node-Add Operations"
 summary: "This section explains how to increase the node-fault-tolerance level for your cluster during node-add operations."
-permalink: /administrator-guide/protecting-data/node-fault-tolerance-level.html
+permalink: /administrator-guide/protecting-data/increasing-node-fault-tolerance-level.html
 redirect_from:
+  - /administrator-guide/protecting-data/node-fault-tolerance-level.html
   - /administrator-guide/qumulo-core/node-fault-tolerance-level.html
 sidebar: administrator_guide_sidebar
 keywords: node-fault-tolerance level, node failure, fault tolerance, node add, node-add, cluster expansion, expand, reconfiguration

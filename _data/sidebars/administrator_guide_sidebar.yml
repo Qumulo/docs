@@ -117,7 +117,7 @@ entries:
     folderitems:
 
     - title: Increasing the Node-Fault-Tolerance Level for Your Cluster During Node-Add Operations
-      url: /administrator-guide/protecting-data/node-fault-tolerance-level.html
+      url: /administrator-guide/protecting-data/increasing-node-fault-tolerance-level.html
       output: web, pdf
 
     - title: Managing Snapshots
