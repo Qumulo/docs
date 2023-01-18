@@ -275,12 +275,17 @@ img.landing-page-icon {
 h1 {
     display: block;
     font-size: 2.2em;
-    margin-block-start: 0.67em;
-    margin-block-end: 0.67em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
     font-weight: bold;
     color: #005d80;
+}
+
+@media screen {
+    h1 {
+        margin-block-start: 0.67em;
+        margin-block-end: 0.67em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+    }
 }
 
 .bs-callout {
@@ -1405,10 +1410,15 @@ table thead th code.highlighter-rouge {
 }
 
 #userMap {
-    overflow-x: auto;
-    overflow-y: auto;
     padding: 20px;
     min-width: 770px;
+}
+
+@media screen {
+    #userMap {
+        overflow-x: auto;
+        overflow-y: auto;
+    }
 }
 
 #userMap .active {

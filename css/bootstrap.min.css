@@ -1944,7 +1944,12 @@ pre code {
 
 .pre-scrollable {
     max-height: 340px;
-    overflow-y: scroll
+}
+
+@media screen {
+    .pre-scrollable {
+        overflow-y: scroll;
+    }
 }
 
 .container {
@@ -2987,7 +2992,12 @@ table th[class*=col-] {
 
 .table-responsive {
     min-height: .01%;
-    overflow-x: auto
+}
+
+@media screen {
+    .table-responsive {
+        overflow-x: auto;
+    }
 }
 
 @media screen and (max-width:767px) {
@@ -4857,13 +4867,24 @@ textarea.input-group-sm>.input-group-btn>.btn {
 .navbar-collapse {
     padding-right: 15px;
     padding-left: 15px;
-    overflow-x: visible;
     -webkit-overflow-scrolling: touch;
     border-top: 1px solid transparent;
 }
 
-.navbar-collapse.in {
-    overflow-y: auto
+@media screen {
+    .navbar-collapse {
+        overflow-x: visible;
+    }
+    
+    .navbar-collapse.in {
+        overflow-y: auto
+    }
+}
+
+@media screen and (min-width:768px) {
+    .navbar-collapse.in {
+        overflow-y: visible
+    }
 }
 
 @media (min-width:768px) {
@@ -4877,9 +4898,6 @@ textarea.input-group-sm>.input-group-btn>.btn {
         padding-bottom: 0;
         overflow: visible!important;
         visibility: visible!important
-    }
-    .navbar-collapse.in {
-        overflow-y: visible
     }
     .navbar-fixed-bottom .navbar-collapse,
     .navbar-fixed-top .navbar-collapse,
@@ -6800,9 +6818,11 @@ button.close {
     transform: translate(0, 0)
 }
 
-.modal-open .modal {
-    overflow-x: hidden;
-    overflow-y: auto
+@media screen {
+    .modal-open .modal {
+        overflow-x: hidden;
+        overflow-y: auto
+    }
 }
 
 .modal-dialog {
