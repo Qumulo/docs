@@ -39,7 +39,11 @@ This section explains how to deploy the service in Azure.
 
 1. In the **Pricing plan** section, select a pricing plan.
 
-   The pay-as-you-go plan is the default plan. For up-front pricing plans and free trials, {{site.azure.emailAzure}}
+   The pay-as-you-go plan is the default plan.
+
+   * {{site.azure.pricingCalculator}}
+
+   * For up-front pricing plans and free trials, {{site.azure.emailAzure}}
 
 1. On the **Networking** tab, in the **Configure virtual network** section:
 
