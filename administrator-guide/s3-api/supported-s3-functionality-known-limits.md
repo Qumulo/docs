@@ -32,7 +32,7 @@ The following table lists the S3 API actions that Qumulo Core supports and the v
     <td>5.3.3</td>
   </tr>
   <tr>
-    <td class="fade-row"><code>CreateBucket</code></td>
+    <td><code>CreateBucket</code></td>
     <td class="fade-row">5.2.3</td>
   </tr>
   <tr>
@@ -40,35 +40,35 @@ The following table lists the S3 API actions that Qumulo Core supports and the v
     <td>5.3.3</td>
   </tr>
   <tr>
-    <td class="fade-row"><code>DeleteBucket</code></td>
+    <td><code>DeleteBucket</code></td>
     <td class="fade-row">5.2.4</td>
   </tr>  
   <tr>
-    <td class="fade-row"><code>DeleteObject</code></td>
+    <td><code>DeleteObject</code></td>
     <td class="fade-row">5.2.1</td>
   </tr>  
   <tr>
-    <td class="fade-row"><code>DeleteObjects</code></td>
+    <td><code>DeleteObjects</code></td>
     <td class="fade-row">5.2.2</td>
   </tr>   
   <tr>
-    <td class="fade-row"><code>GetBucketLocation</code></td>
+    <td><code>GetBucketLocation</code></td>
     <td class="fade-row">5.1.2</td>
   </tr>    
   <tr>
-    <td class="fade-row"><code>GetObject</code></td>
+    <td><code>GetObject</code></td>
     <td class="fade-row">5.0.4</td>
   </tr>   
   <tr>
-    <td class="fade-row"><code>HeadBucket</code></td>
+    <td><code>HeadBucket</code></td>
     <td class="fade-row">5.1.2</td>
   </tr> 
   <tr>
-    <td class="fade-row"><code>HeadObject</code></td>
+    <td><code>HeadObject</code></td>
     <td class="fade-row">5.0.4</td>
   </tr>
   <tr>
-    <td class="fade-row"><code>ListBuckets</code></td>
+    <td><code>ListBuckets</code></td>
     <td class="fade-row">5.0.4</td>
   </tr> 
   <tr>
@@ -76,11 +76,11 @@ The following table lists the S3 API actions that Qumulo Core supports and the v
     <td>5.3.3</td>
   </tr> 
   <tr>
-    <td class="fade-row"><code>ListObjects</code></td>
+    <td><code>ListObjects</code></td>
     <td class="fade-row">5.0.5</td>
   </tr> 
   <tr>
-    <td class="fade-row"><code>ListObjectsV2</code></td>
+    <td><code>ListObjectsV2</code></td>
     <td class="fade-row">5.0.4</td>
   </tr>  
   <tr>
@@ -88,7 +88,7 @@ The following table lists the S3 API actions that Qumulo Core supports and the v
     <td>5.3.3</td>
   </tr>  
   <tr>
-    <td class="fade-row"><code>PutObject</code></td>
+    <td><code>PutObject</code></td>
     <td class="fade-row">5.2.1</td>
   </tr>  
   <tr>
