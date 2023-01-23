@@ -41,25 +41,25 @@ The following diagrams show the NICs and ports on {{site.a4200g9}} node types.
   * IPv6 compatibility
 * Compatible network cables
 * A sufficient number of ports for connecting all nodes to the same switch fabric
-* One static IP per node, per defined VLAN
+* One static IP for each node, for each defined VLAN
 
 {% include important.html content="Before you connect any Qumulo-supported equipment to your network, we strongly recommend consulting with your network engineering team." %}
 
 ## Recommended Configuration
 
 * Two redundant switches
-* One physical connection to each redundant switch, per node
-* One Link Aggregation Control Protocol (LACP) port-channel per node with the following configuration:
+* One physical connection to each redundant switch, for each node
+* One Link Aggregation Control Protocol (LACP) port-channel for each node with the following configuration:
   * Active mode
   * Slow transmit rate
   * Trunk port with a native VLAN
   * Enabled IEEE 802.3x flow control (full-duplex mode)
 * DNS servers
 * Network Time Protocol (NTP) server
-* Firewall protocol or ports configured for [Qumulo Care Proactive Monitoring](https://care.qumulo.com/hc/en-us/articles/115007283828-Qumulo-Care-Proactive-Monitoring)
-* Where `N` is the number of nodes, up to 10 `N-1` floating IP addresses per node, per client-facing VLAN
+* Firewall protocol or ports configured for [Qumulo Care Proactive Monitoring](https://care.qumulo.com/hc/en-us/articles/115007283828)
+* Where `N` is the number of nodes, up to 10 `N-1` floating IP addresses for each node, for each client-facing VLAN
 
-  {% include note.html content="The number of floating IP addresses depends on your workflow and on the clients that connect to the cluster, with a minimum of two floating IP addresses per node, per client-facing VLAN, but with no more than ten floating IP addresses per node, per client-facing VLAN." %}
+  {% include note.html content="The number of floating IP addresses depends on your workflow and on the clients that connect to the cluster, with a minimum of two floating IP addresses for each node, for each client-facing VLAN, but with no more than ten floating IP addresses for each node, for each client-facing VLAN." %}
 
 * Nodes connected at their maximum Ethernet speed (this ensures advertised performance). To avoid network bottlenecks, Qumulo validates system performance with this configuration by using clients connected at the same link speed and to the same switch as the nodes.
 

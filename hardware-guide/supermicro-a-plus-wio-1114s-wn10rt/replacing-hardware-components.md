@@ -52,7 +52,7 @@ Replacement drives, including the on-site spare drives that you received with yo
    
    d. Push the drive carrier into the chassis until the handle retracts and clicks into place.
 
-{% include note.html content="If you remove and reinsert a drive extremely quickly (faster than one second), the baseboard management controller (BMC) doesn't recognize the drive and the activity LEDs do not return to their normal states. To resolve this issue, remove the drive, wait five seconds, and then reinsert it." %}
+{% include note.html content="If you remove and reinsert a drive extremely quickly (faster than one second), the baseboard management controller (BMC) doesn't recognize the drive and the activity LEDs don't return to their normal states. To resolve this issue, remove the drive, wait five seconds, and then reinsert it." %}
 
 
 ## To Replace a Power Supply Unit (PSU)

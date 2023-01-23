@@ -192,10 +192,15 @@ The `auth_list_access_tokens` command returns:
 For example:
 
 ```
-id                      user   creator  creation time                   expiration time       enabled
-======================  =====  =======  ==============================  ====================  =======
-1234567890123456789012  svc    admin    2022-10-27T15:18:09.725513764Z                        True
-0987654321098765432109  svc    admin    2022-10-27T15:18:24.997572918Z  2023-01-01T00:00:00Z  False
+id                      user   creator  creation time                   
+======================  =====  =======  ==============================  
+1234567890123456789012  svc    admin    2022-10-27T15:18:09.725513764Z
+0987654321098765432109  svc    admin    2022-10-27T15:18:24.997572918Z
+
+expiration time       enabled
+====================  =======
+                      True
+2023-01-01T00:00:00Z  False
 ```
 
 To filter the command's output by user, use the `--user` flag and use the same format for the name as for the [`auth_create_access_token`](#create-token-format) command.

@@ -1,5 +1,5 @@
 ---
-title: "Managing Snapshots"
+title: "Managing Snapshots in Qumulo Core"
 summary: "This section explains how to use the Qumulo Core Web UI to view and manage your saved snapshots in Qumulo Core 4.3.3 (and higher)."
 permalink: /administrator-guide/protecting-data/managing-snapshots.html
 redirect_from:
@@ -23,7 +23,7 @@ The **Snapshots** page lets you navigate a large number of snapshots.
 
 1. If you have more than 50 snapshots, click {% include inline_image.html alt="Pagination controls" file="managing-snapshots-pagination.png" max-width="40" %} to navigate the snapshot pages.
 
-   You can also use the controls at the bottom of the table to navigate to a specific page or change the number of rows per page.
+   You can also use the controls at the bottom of the table to navigate to a specific page or change the number of rows for each page.
 
 ## To Find a Specific Snapshot
 

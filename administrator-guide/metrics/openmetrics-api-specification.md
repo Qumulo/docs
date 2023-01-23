@@ -60,7 +60,7 @@ The following table lists metric names, types, labels, and descriptions.
 
 {% include note.html content="For Qumulo as a Service, all metrics with a `node_id` label are unavailable because they refer to specific hardware." %}
 
-<table>
+<table class="pdf-reduce">
   <thead>
     <tr>
       <th>Metric Name</th>
@@ -321,7 +321,7 @@ The following table lists metric names, types, labels, and descriptions.
       <td>The interface status, <code>0</code> (interface is up) or <code>1</code> (interface is down)</td>
     </tr>
     <tr>
-      <td><code>qumulo_network_interface_link_speed_bits_per_second</code></td>
+      <td><code>qumulo_network_interface<wbr>_link_speed_bits_per_second</code></td>
       <td><a href="#metric-type-gauge"><code>gauge</code></a></td>
       <td>
         <ul>

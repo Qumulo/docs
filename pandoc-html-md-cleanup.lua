@@ -28,7 +28,7 @@ end
 local function fixImageLinks(source)
   -- munge for image links. note that the image include macro automatically
   -- prepends "images/" to the source. before running the script, feel free to
-  -- customize the sub-directory further, e.g. "<topic>".
+  -- customize the sub-directory further, for example, "<topic>".
   image_sub_directory = ""
   if string.find(source, "article_attachments") then
     source = string.gsub(source, "/hc/article_attachments/(%d*)/", image_sub_directory)

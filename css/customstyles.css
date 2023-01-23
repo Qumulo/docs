@@ -47,6 +47,11 @@ a:visited {
   margin-bottom:30px !important;
 }
 
+/* Fade deprecated elements in a table */
+td.fade-row {
+  opacity:50%;
+}
+
 /* Reading Mode tweak */
 #tg-sb-link {
   background-color:transparent;
@@ -249,6 +254,10 @@ a.multilink, a.multilink:link, a.multilink:visited, a.multilink:hover {
 
 a.multilink:hover {
   background:white;
+}
+
+td.joined-cell {
+  text-align:center;
 }
 
 td.landing-page-cell {

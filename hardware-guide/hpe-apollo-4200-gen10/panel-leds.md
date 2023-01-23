@@ -18,7 +18,7 @@ To locate the front panel LEDs, use the following diagram.
 1. **Power On or Standby Button and System Power LED**
 
    * 🟢 **Solid Green:**  System on
-   * 🟢 **Flashing Green:** (1 flash per second) Performing power-on sequence
+   * 🟢 **Flashing Green:** (1 flash each second) Performing power-on sequence
    * 🟠 **Solid Amber:** System in standby
    * **Off:** No power present
 
@@ -27,32 +27,32 @@ To locate the front panel LEDs, use the following diagram.
    * 🔵 **Solid Blue:** Activated
    * 🔵 **Flashing Blue:**
 
-     * 1 flash per second: Remote management or firmware upgrade in progress
-     * 4 flashes per second: iLO manual reboot sequence initiated
-     * 8 flashes per second: iLO manual reboot sequence in progress
+     * 1 flash each second: Remote management or firmware upgrade in progress
+     * 4 flashes each second: iLO manual reboot sequence initiated
+     * 8 flashes each second: iLO manual reboot sequence in progress
 
    * **Off:** Deactivated
 
 1. **Health LED**
 
    * 🟢 **Solid Green:** Normal
-   * 🟢 **Flashing Green:** (1 flash per second) iLO is rebooting
+   * 🟢 **Flashing Green:** (1 flash each second) iLO is rebooting
    * 🟠 **Flashing Amber:** System degraded
-   * 🔴 **Flashing Red:** (1 flash per second) System critical
+   * 🔴 **Flashing Red:** (1 flash each second) System critical
 
    {% include note.html content="If the Health LED indicates a degraded or critical state, review the system integrated management log (IML) or use iLO to review the system health status." %}
 
 1. **NIC Status LED**
 
    * 🟢 **Solid Green:** Link to network
-   * 🟢 **Flashing Green:** (1 flash per second) Network active
+   * 🟢 **Flashing Green:** (1 flash each second) Network active
    * **Off:** No network activity
 
 1. **Front Drive Health or Thermal LED**
 
    * 🟢 **Solid Green:** Drives which the SAS expander supports are functional. This applies to all front drives and the rear drives connected to the front drive cage 2 backplane.
    * 🟠 **Solid Amber:** Failure or predictive failure of one or more drives that the SAS expander supports. This applies to all front drives and to the rear drives connected to the front drive cage 2 backplane.
-   * 🟠 **Flashing Amber:** (1 flash per second) The temperature sensor in one or more front drives is about to reach the thermal threshold. You must immediately slide the front drive cages back into the chassis and keep them there until the LED turns green.
+   * 🟠 **Flashing Amber:** (1 flash each second) The temperature sensor in one or more front drives is about to reach the thermal threshold. You must immediately slide the front drive cages back into the chassis and keep them there until the LED turns green.
 
      {% include note.html content="This LED behavior depends on the iLO 08-HD Max sensor reading." %}
 
@@ -144,9 +144,9 @@ To locate the rear panel LEDs, use the following diagram.
    * 🔵 **Solid Blue:** Activated
    * 🔵 **Flashing Blue:**
 
-     * 1 flash per second: Remote management or firmware upgrade in progress
-     * 4 flashes per second: iLO manual reboot sequence initiated
-     * 8 flashes per second: iLO manual reboot sequence in progress
+     * 1 flash each second: Remote management or firmware upgrade in progress
+     * 4 flashes each second: iLO manual reboot sequence initiated
+     * 8 flashes each second: iLO manual reboot sequence in progress
 
    * **Off:** Deactivated
 

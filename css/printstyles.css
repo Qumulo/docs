@@ -215,3 +215,11 @@ a[href^="http://"]:after, a[href^="https://"]:after {
     content:"" !important;
     padding-left: 0;
 }
+
+table.pdf-reduce {
+    font-size:12px;
+}
+
+li {
+    margin-left:-20px !important;
+}

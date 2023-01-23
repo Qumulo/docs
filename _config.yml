@@ -179,7 +179,21 @@ q1uhg2: Quiver 1UH Gen2
 
 consTrans: The consumer processes for email and ClickSend integrations translate messages into the recipient's native language.
 
+protectingData:
+  contactQumuloCare: We strongly recommend contacting <a href="https://care.qumulo.com/hc/en-us/articles/115008409408">Qumulo Care</a> before proceeding with cluster expansion.
+  followAddNodeInstructions: 1. Follow the instructions in <a href="https://care.qumulo.com/hc/en-us/articles/360001070307">Add a New Node to an Existing Qumulo Cluster</a> on Qumulo Care.
+  checkCapacity: 1. Before you click **Yes** in the **Add &lt;N&gt; nodes to cluster &lt;MyCluster&gt;?** dialog box, check that the projected capacity matches the expected capacity.
+  monitorProcess: 1. To monitor this process, click **Cluster > Overview**. On the **Cluster** page, in the protection status section, you can view the rebalance phase status and the estimated time to completion.
+
 s3:
+  permissions:
+    APIorCLI: by using the Qumulo REST API or <code>qq</code> CLI
+    directAPI: You can also use the S3 API directly.
+    bucketsRead: the <code>PRIVILEGE_S3_BUCKETS_READ</code> privilege
+    bucketsWrite: the <code>PRIVILEGE_S3_BUCKETS_WRITE</code> privilege
+    commandOutput: The following is example output from the command.
+    timesUTC: All times are in UTC format.
+    secretAccessKeys: After Qumulo Core initially creates your secret access keys, it never logs or displays them again. If you lose your secret access key, it isn't possible to recover it and you must create a new access key pair.
   docs:
     actions: https://docs.aws.amazon.com/AmazonS3/latest/API/API_Operations.html
     bucketNamingRules: https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html

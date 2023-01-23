@@ -40,7 +40,7 @@ Each NVMe drive carrier has two LEDs.
 | Status LED             | 🔴 (5 s.) then off              | Power-on drive status                |
 | Status LED             | 🔴 (0.25 s. blinking red)       | Identifying or locating drive status |
 | Status LED             | 🟢 (on)                         | Drive is safe to remove              |
-| Status LED             | 🟠 (solid amber)                | Drive is not safe to remove          |
+| Status LED             | 🟠 (solid amber)                | Drive isn't safe to remove           |
 | Activity LED           | 🔵 (solid blue)                 | Drive installed                      |
 | Activity LED           | 🔵 (blinking blue)              | Drive activity                       |
 

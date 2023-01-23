@@ -69,7 +69,7 @@ qqcreds my_credentials
 
 To ensure that your `argcomplete` configuration works with `qq` CLI command aliases, you must perform additional configuration and add a third-party helper script to your system.
 
-{% include important.html content="Before you begin, review the source code of the [complete-alias](https://github.com/cykerway/complete-alias/blob/master/complete_alias) helper script. Qumulo does not contribute to, maintain, or take responsibility for this script." %}
+{% include important.html content="Before you begin, review the source code of the [complete-alias](https://github.com/cykerway/complete-alias/blob/master/complete_alias) helper script. Qumulo doesn't contribute to, maintain, or take responsibility for this script." %}
 
 ### To Enable Autocomplete for qq CLI Command Aliases
 

@@ -46,7 +46,7 @@ echo "  - ${tag}" >> _data/tags.yml
   done
 
 else
-  echo "Directory ${TAGDIR} doesn't exist or you are not in the top-level directory."
+  echo "Directory ${TAGDIR} doesn't exist or you aren't in the top-level directory."
   echo "Please run again from the root directory of your project."
   exit 1
 fi

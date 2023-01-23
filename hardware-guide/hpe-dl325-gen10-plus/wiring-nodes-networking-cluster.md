@@ -25,7 +25,7 @@ The following diagram shows the NICs and ports on {{site.dl325g10p}} nodes. On t
   * IPv6 compatibility
 * Compatible network cables
 * A sufficient number of ports for connecting all nodes to the same switch fabric
-* One static IP per node, per defined VLAN
+* One static IP for each node, for each defined VLAN
 
 {% include important.html content="Before you connect any Qumulo-supported equipment to your network, we strongly recommend consulting with your network engineering team." %}
 
@@ -33,15 +33,15 @@ The following diagram shows the NICs and ports on {{site.dl325g10p}} nodes. On t
 
 * One set of redundant switches for the front-end network, with an MTU that matches that of the clients that use the storage cluster. Typically, we recommend 1,500 MTU but in some instances 9,000 MTU is the optimal setting.
 * One set of redundant switches for the back-end network (9,000 MTU minimum)
-* One physical connection to each redundant switch, per node
-* One Link Aggregation Control Protocol (LACP) port-channel per network (front-end and back-end) on each node with the following configuration:
+* One physical connection to each redundant switch, for each node
+* One Link Aggregation Control Protocol (LACP) port-channel for each network (front-end and back-end) on each node with the following configuration:
   * Active mode
   * Slow transmit rate
   * Trunk port with a native VLAN
 * DNS servers
 * Network Time Protocol (NTP) server
-* Firewall protocol or ports configured for [Qumulo Care Proactive Monitoring](https://care.qumulo.com/hc/en-us/articles/115007283828-Qumulo-Care-Proactive-Monitoring)
-* Where `N` is the number of nodes, up to 10 `N-1` floating IP addresses per node, per client-facing VLAN
+* Firewall protocol or ports configured for [Qumulo Care Proactive Monitoring](https://care.qumulo.com/hc/en-us/articles/115007283828)
+* Where `N` is the number of nodes, up to 10 `N-1` floating IP addresses for each node, for each client-facing VLAN
 * Nodes connected at their maximum Ethernet speed (this ensures advertised performance). To avoid network bottlenecks, Qumulo validates system performance with this configuration by using clients connected at the same link speed and to the same switch as the nodes.
 
 ## Connecting to Redundant Switches

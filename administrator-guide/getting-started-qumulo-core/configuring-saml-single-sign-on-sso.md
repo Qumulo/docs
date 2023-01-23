@@ -82,11 +82,12 @@ This process requires coordination between the cluster administrator and SSO adm
 1. To configure and enable SAML login to the Qumulo cluster, the cluster administrator runs the `qq saml_modify_settings` command. For example:
 
    ```bash
-   qq saml_modify_settings --enable \
+   qq saml_modify_settings
+     --enable \
      --idp-certificate-file ~/certificate.pem \
      --cluster-dns-name <qumulo-cluster>.<my-org>.com \
      --idp-entity-id http://www.<sso-provider>.com/abc12de34fgAB5CDh6i7 \
-     --idp-sso-url https://<my-org>.<sso-provider>.com/abc12de34fgAB5CDh6i7/saml \
+     --idp-sso-url https://<my-org>.<sso-provider>.com/abc12de34fgAB5CDh6i7/saml
    ```
    
    {{site.data.alerts.note}}

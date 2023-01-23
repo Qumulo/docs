@@ -103,7 +103,7 @@ keywords: limit, limits, limitations, known limits, known limitations, config, c
       <td>100 nodes</td>
     </tr>
     <tr>
-      <td>Floating IP Addresses per Node</td>
+      <td>Floating IP Addresses for Each Node</td>
       <td>10</td>
     </tr>
     <tr>
@@ -151,7 +151,7 @@ keywords: limit, limits, limitations, known limits, known limitations, config, c
       <td>18 quintillion</td>
     </tr>
     <tr>
-      <td>Hard Links per File</td>
+      <td>Hard Links for Each File</td>
       <td>1,024</td>
     </tr>
     <tr>

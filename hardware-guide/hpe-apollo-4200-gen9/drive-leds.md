@@ -69,22 +69,22 @@ The following table explains the various combinations of the two LFF LEDs.
     <td>The drive is online but isn't active currently.</td>
   </tr>
   <tr>
-    <td>1 flash per second</td>
+    <td>1 flash each second</td>
     <td>Flashing amber</td>
     <td>Don't remove the drive. Removing the drive might terminate the current operation and cause data loss. The drive is part of an array that is undergoing capacity expansion or stripe migration. However, the system received a predictive failure alert about the drive. To minimize the risk of data loss, don't remove the drive until the expansion or migration is complete.</td>
   </tr>
   <tr>
-    <td>1 flash per second</td>
+    <td>1 flash each second</td>
     <td>Off</td>
     <td>Don't remove the drive. Removing the drive might terminate the current operation and cause data loss. The drive is rebuilding, erasing, or is part of an array that is undergoing capacity expansion or stripe migration.</td>
   </tr>
   <tr>
-    <td>4 flashes per second</td>
+    <td>4 flashes each second</td>
     <td>Flashing amber</td>
     <td>The drive is active but it received a predictive failure alert. Replace the drive as soon as possible.</td>
   </tr>
   <tr>
-    <td>4 flashes per second</td>
+    <td>4 flashes each second</td>
     <td>Off</td>
     <td>The drive is active and is operating normally.</td>
   </tr>
@@ -125,7 +125,7 @@ To locate the SFF drive LEDs, use the following diagram.
    * 🟢 **Rotating Green:** Drive activity
    * **Off:** No drive activity
 
-1. **Do Not Remove LED**
+1. **Don't Remove LED**
 
    * ⚪ **Solid White:** Don't remove the drive. Removing the drive causes one or more of the logical drives to fail.
    * **Off:** Removing the drive doesn't cause a logical drive to fail.

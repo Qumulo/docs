@@ -23,7 +23,7 @@ $( document ).ready(function() {
 
 });
 
-// needed for nav tabs on pages. See Formatting > Nav tabs for more details.
+// needed for nav tabs on pages. For more information, see Formatting > Nav.
 // script from http://stackoverflow.com/questions/10523433/how-do-i-keep-the-current-tab-active-with-twitter-bootstrap-after-a-page-reload
 $(function() {
     var json, tabsState;

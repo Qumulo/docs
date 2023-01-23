@@ -105,7 +105,7 @@ Qumulo Core performs the following steps when it creates a Shift-From relationsh
    {% include note.html content="If you rename or move an object or local file between jobs, or if there are any metadata changes in S3 or Qumulo, the object is replicated again." %}
 
 ### Storing and Reusing Relationships
-The Shift-From relationship remains on the Qumulo cluster. You can monitor the completion status of a job, start new jobs for a relationship after the initial job finishes, and delete the relationship (when you no longer need the S3-folder-Qumulo-directory pair). To avoid redownloading objects that a previous copy job downloaded, relationships take up approximately 100 bytes per object. To free this storage, you can delete relationships that you no longer need.
+The Shift-From relationship remains on the Qumulo cluster. You can monitor the completion status of a job, start new jobs for a relationship after the initial job finishes, and delete the relationship (when you no longer need the S3-folder-Qumulo-directory pair). To avoid redownloading objects that a previous copy job downloaded, relationships take up approximately 100 bytes for each object. To free this storage, you can delete relationships that you no longer need.
 
 If you repeatedly download from the same S3 folder, you can speed up the download process (and skip already downloaded files) by using the same relationship.
 
@@ -139,7 +139,7 @@ This section describes how to use the Qumulo Web UI 4.2.5 (and higher) to copy f
 
    The copy job begins and Qumulo Core estimates the work to be performed. When the estimation is complete, the Web UI displays a progress bar with a percentage for a relationship on the **Replication Relationships** page. The page also displays the estimated total work, the remaining bytes and files, and the estimated time to completion for a running copy job.
 
-   {% include note.html content="For work estimates, Shift-From jobs calculate the total number of files and bytes in a job's bucket prefix. This requires the job to use the [`ListObjectV2` S3 action](https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjectsV2.html) once per 5,000 objects (or 200 times per 1 million objects)." %}
+   {% include note.html content="For work estimates, Shift-From jobs calculate the total number of files and bytes in a job's bucket prefix. This requires the job to use the [`ListObjectV2` S3 action](https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjectsV2.html) once for every 5,000 objects (or 200 times for every 1 million objects)." %}
 
 {% include content-reuse/shift-view-config-details-stop-job-repeat-job-delete-relationship.md %}
 
@@ -240,11 +240,9 @@ Whenever Qumulo Core doesn't complete an operation successfully and returns an e
 
 ## Best Practices
 We recommend the following best practices for working with Qumulo Shift-From for Amazon S3.
-* **Inheritable Permissions:** Because the system user creates the files copied by using Shift-From for S3, the system owns these files. By default, Everyone will be granted Read permissions, and administrators always have full access to the files.
+* **Inheritable Permissions:** Because the system user creates the files that Shift-From for S3 copies, the system owns these files. By default, everyone is granted read permissions and administrators always have full access to the files.
 
-    To assign the necessary permissions to copied files, you must assign the necessary inheritable permissions to the root directory of the relationship **before** creating a Copy from S3 relationship. This ensures that the copied subdirectories and files inherit the permissions.
-
-    Windows Security Dialog or `qq fs_modify_acl` can be used to edit permissions on a directory. See [Qumulo-File-Permissions-Overview](https://care.qumulo.com/hc/en-us/articles/115008211868) to learn more about file permissions.
+  {% include note.html content="To ensure that the copied files and subdirectories have the correct permissions, you must assign the necessary inheritable permissions to the root directory of the relationship _before_ you create a Shift-From S3 relationship. To edit directory permissions, you can use the Windows Security Dialog or the `qq fs_modify_acl` command. For more information, see [Qumulo File Permissions Overview](https://care.qumulo.com/hc/en-us/articles/115008211868) on Qumulo Care." %}
 
 * **VPC Endpoints:** For best performance when using a Qumulo cluster in AWS, configure a [VPC endpoint](https://docs.aws.amazon.com/vpc/latest/privatelink/vpc-endpoints.html) to S3. For on-premises Qumulo clusters, we recommend [AWS Direct Connect](https://docs.aws.amazon.com/whitepapers/latest/aws-vpc-connectivity-options/aws-direct-connect.html) or another high-bandwidth, low-latency connection to S3.
 * **Repeated Synchronization:** If you need to repeatedly synchronize an S3 folder with a Qumulo directory, we recommend reusing the same relationship. This lets you avoid repeated downloading of unchanged objects that already exist locally.

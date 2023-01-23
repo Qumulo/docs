@@ -19,7 +19,7 @@ Your node requires the following resources.
 
 * A sufficient number of ports for connecting all nodes to the same switch fabric
 
-* One static IP per node, per defined VLAN
+* One static IP for each node, for each defined VLAN
 
 
 ## Recommended Configuration
@@ -31,7 +31,7 @@ We recommend the following configuration for your node.
 
 * Two physical connections for each node, one connection for each redundant switch
 
-* One Link Aggregation Control Protocol (LACP) port-channel per network on each node, with the following configuration
+* One Link Aggregation Control Protocol (LACP) port-channel for each network on each node, with the following configuration
 
   * Active mode
 
@@ -45,7 +45,7 @@ We recommend the following configuration for your node.
 
 * Firewall protocols or ports allowed for proactive monitoring
 
-* Where `N` is the number of nodes, `N-1` floating IPs per node, per client-facing VLAN
+* Where `N` is the number of nodes, `N-1` floating IPs for each node, for each client-facing VLAN
 
 
 ## Connecting to Redundant Switches
