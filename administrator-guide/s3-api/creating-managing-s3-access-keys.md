@@ -5,7 +5,7 @@ permalink: /administrator-guide/s3-api/creating-managing-s3-access-keys.html
 sidebar: administrator_guide_sidebar
 keywords: s3, credential, access, key, key pair, authentication, authn, create, list, delete, revoke, access key ID, secret access key, secret key, identity, lifecycle 
 varResponseOutput: The following is example output from the response.
-varResultKeys: In this example, the access key id is `AKIAIOSFODNN7EXAMPLE` and the secret access key is `wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY`.
+varResultKeys: In this example, the access key id is `000000000001fEXAMPLE` and the secret access key is `TEIT4liMZ8A32iI7JXmqIiLWp5co/jmkjEXAMPLE`.
 varPaginatedResponsePart1: The `entries` list contains the access keys, limited to the first
 varListMax: "10,000"
 varPaginatedResponsePart2: The `paging.next` field contains the URI to which you can send a `GET` request to retrieve the next page of access keys. By making `GET` requests with all returned `paging.next` values, you can iterate over access keys in the cluster.
@@ -102,7 +102,7 @@ You can specify an identity by using:
 {{site.s3.permissions.commandOutput}}
 
 {% capture createAccessKeyResponse %}{
-  "access_key_id": "AKIAIOSFODNN7EXAMPLE",
+  "access_key_id": "000000000001fEXAMPLE",
   "creation_time": "2022-12-12T21:37:53.553457928Z",
   "owner": {
     "auth_id": "501",
@@ -112,7 +112,7 @@ You can specify an identity by using:
     "sid": "S-0-1-23-4567890123-456789012-345678901-234",
     "uid": null
   },
-  "secret_access_key": "wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY"
+  "secret_access_key": "TEIT4liMZ8A32iI7JXmqIiLWp5co/jmkjEXAMPLE"
 }{% endcapture %}
 
 ```json
@@ -165,7 +165,7 @@ To list S3 access keys, you must have {{site.s3.permissions.bucketsRead}}.
 {% capture listAccessKeysResponse %}{
   "entries": [
     {
-      "access_key_id": "AKIAIOSFODNN7EXAMPLE",
+      "access_key_id": "000000000001fEXAMPLE",
       "creation_time": "2022-12-12T21:37:53.553457928Z",
       "owner": {
         "auth_id": "501",
@@ -192,7 +192,7 @@ To list S3 access keys, you must have {{site.s3.permissions.bucketsRead}}.
   ```
   access_key_id         owner  creation_time
   ====================  =====  ==============================
-  AKIAIOSFODNN7EXAMPLE  Guest  2022-12-12T21:37:53.553457928Z
+  000000000001fEXAMPLE  Guest  2022-12-12T21:37:53.553457928Z
   ```
 
 * For JSON output, use the `--json` flag.
@@ -227,7 +227,7 @@ Use the `qq s3_delete_access_key` command and specify the access key ID. For exa
 
 ```bash
 $ qq s3_delete_access_key \
-  --id AKIAIOSFODNN7EXAMPLE
+  --id 000000000001fEXAMPLE
 ```
 
 ### To Delete an S3 Access Key by Using the Qumulo REST API
