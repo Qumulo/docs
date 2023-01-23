@@ -30,5 +30,3 @@ Qumulo Core supports only the following features:
 * AES-128 and AES-256 encryption algorithms&mdash;for more information, see [Network security: Configure encryption types allowed for Kerberos](https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/network-security-configure-encryption-types-allowed-for-kerberos) in the Microsoft documentation
 
 * Microsoft Windows Active Directory (Windows Server 2008 and higher)
-
-{% include in_page_toc.html %}
