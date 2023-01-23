@@ -155,5 +155,3 @@ The S3 API creates the new directory `/My-Bucket/`. All of the bucket's objects 
      "Metadata": {}
    }
    ```
-
-{% include in_page_toc.html %}
