@@ -8,7 +8,7 @@ keywords: s3, bucket, permissions, access control entry, ace, access control lis
 
 Managing user access to S3 buckets in a Qumulo cluster is very similar to managing access to SMB shares and NFS exports, with the following exceptions:
 
-* To let a user access S3 buckets in the cluster, you must assign an S3 access key to the user. This applies even when you give a user [read-only, anonymous access](#enabling-anonymous-access-for-an-s3-bucket). For more information, see [Creating and Managing S3 Access Keys in Qumulo Core](creating-managing-s3-access-keys.html).
+* To let a user access S3 buckets in the cluster, you must [assign an S3 access key](creating-managing-s3-access-keys.html) to the user. Alternatively, you can enable [read-only, anonymous access](#enabling-anonymous-access-for-an-s3-bucket) for the S3 bucket.
 
 * Because Amazon S3 provides access to an entire S3 bucket but Qumulo Core provides access to individual files and directories, a bucket might behave differently from user expectations.
 
