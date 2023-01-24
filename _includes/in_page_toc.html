@@ -7,7 +7,7 @@
     {% for folderitem in folder.folderitems %}
       {% if folderitem.url == page.url %}
         {% for folderitem in folder.folderitems %}
-          {% if folderitem.url == page.url and folder.folderitems.size =< 1 %}
+          {% if folderitem.url == page.url and folder.folderitems.size <= 1 %}
           {% else %}
             <li><a href="{{folderitem.url}}">{{folderitem.title}}</a></li>
           {% endif %}
