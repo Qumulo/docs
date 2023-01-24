@@ -8,13 +8,6 @@
 <ul>
       {% else %}
       {% endif %}
-    {% endfor %}
-  {% endfor %}
-{% endfor %}
-
-{% for entry in sidebar %}
-  {% for folder in entry.folders %}
-    {% for folderitem in folder.folderitems %}
       {% if folderitem.url == page.url %}
         {% for folderitem in folder.folderitems %}
           {% if folderitem.url == page.url %}
@@ -23,17 +16,10 @@
           {% endif %}
         {% endfor %}
       {% endif %}
-    {% endfor %}
-  {% endfor %}
-{% endfor %}
-
-{% for entry in sidebar %}
-  {% for folder in entry.folders %}
-    {% for folderitem in folder.folderitems %}
       {% if folderitem.url == page.url and folder.folderitems.size > 1 %}
 </ul>
       {% else %}
-      {% endif %}
+      {% endif %}  
     {% endfor %}
   {% endfor %}
 {% endfor %}
