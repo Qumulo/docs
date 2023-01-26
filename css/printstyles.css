@@ -85,6 +85,10 @@ a[href*="mailto"]::after, a[data-toggle="tooltip"]::after, a[href].noCrossRef::a
 
 }
 
+#related-topics {
+    display:none;
+}
+
 .printTitle {
     line-height:30pt;
     font-size:27pt;
