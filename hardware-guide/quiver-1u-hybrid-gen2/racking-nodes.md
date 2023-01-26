@@ -16,7 +16,7 @@ keywords: technical specifications, tech specs, specs, specifications, Quiver 1U
    {% capture alt_tag_snap_rail %}Snap the {{site.q1uhg2Long}} Node Rail into the Rack{% endcapture %}
    {% include image.html alt=alt_tag_snap_rail file="quiver-1u-hybrid-gen2-rail-snap-into-rack.png" %}
 
-<a name="insert-chassis"></a>
+<a id="insert-chassis"></a>
 ## To Insert the Chassis into the Server Rack
 {% capture content_tag %}{{site.twoPeopleOrLift}}{% endcapture %}
 {% include important.html content=content_tag %}
