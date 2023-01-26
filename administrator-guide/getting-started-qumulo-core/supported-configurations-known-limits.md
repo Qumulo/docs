@@ -172,7 +172,7 @@ keywords: limit, limits, limitations, known limits, known limitations, config, c
     </tr>
     <tr>
       <td>Quotas</td>
-      <td>Not specified</td>
+      <td><p>4.3 billion</p>{% include note.html content="This approximate value of 2<sup>32</sup> is equivalent to the maximum number of directories or the entire inode space." %}</td>
     </tr>
     <tr>
       <td>Number of Replication Relationships</td>
