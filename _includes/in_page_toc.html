@@ -3,22 +3,20 @@
 {% for entry in sidebar %}
   {% for folder in entry.folders %}
     {% for folderitem in folder.folderitems %}
+      {% comment %}Ensure that there is, at minimum, one sibling in addition to the current page.{% endcomment %}
       {% if folderitem.url == page.url and folder.folderitems.size > 1 %}
 <h2 id="related-topics" class="clickable-header top-level-header">Related Topics</h2>
 <ul>
-      {% else %}
-      {% endif %}
-      {% if folderitem.url == page.url %}
-        {% for folderitem in folder.folderitems %}
-          {% if folderitem.url == page.url %}
-          {% else %}
-            <li><a href="{{folderitem.url}}">{{folderitem.title}}</a></li>
-          {% endif %}
-        {% endfor %}
-      {% endif %}
-      {% if folderitem.url == page.url and folder.folderitems.size > 1 %}
+        {% comment %}Check that we're in the right folder and start iterating.{% endcomment %}
+        {% if folderitem.url == page.url %}
+          {% for folderitem in folder.folderitems %}
+            {% comment %}Don't add a link to the page itself to the list.{% endcomment %}
+            {% if folderitem.url != page.url %}
+  <li><a href="{{folderitem.url}}">{{folderitem.title}}</a></li>
+            {% endif %}
+          {% endfor %}
+        {% endif %}
 </ul>
-      {% else %}
       {% endif %}  
     {% endfor %}
   {% endfor %}
