@@ -24,7 +24,7 @@ Managing S3 access keys requires the following [role-based access control (RBAC)
 
 
 ## How S3 Access Keys Work in Qumulo Core
-<a id="identity"></a>An _identity_ is a single principal from an identity provider (IdP). Examples of identities include POSIX UIDs, SMB SIDs, Active Directory UPNs, and local users in a Qumulo cluster.
+<a id="identity"></a>An _identity_ is a single principal from an identity provider (IdP). Examples of identities include SMB security identifiers (SIDs), Active Directory user principal names (UPNs), and local users in a Qumulo cluster.
 
 An _access key_ (or _access key pair)_ is comprised of an S3 access key ID and an S3 secret access key.
 
@@ -97,7 +97,7 @@ You can specify an identity by using:
 
 * <a id="auth-id"></a>A Qumulo _auth ID_, Qumulo Core's common representation for identities, in the form of a numeric identifier. For example: `auth_id:513`
 
-{% include important.html content="Currently, it isn't possible to associate an S3 access key with a POSIX UID or GID." %}
+{% include important.html content="Currently, it isn't possible to associate an S3 access key with a POSIX group ID (GID)." %}
 
 {{site.s3.permissions.commandOutput}}
 
