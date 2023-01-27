@@ -227,7 +227,7 @@ This section compares the Qumulo Core S3 API limits with native Amazon S3 limits
 </thead>
 <tbody>
   <tr>
-    <td>Maximum object size</td>
+    <td>Minimum object size</td>
     <td colspan="2" class="joined-cell">0 bytes</td>
   </tr>
   <tr>
