@@ -8,6 +8,8 @@ sidebar: hardware_guide_sidebar
 keywords: front drive, rear drive, boot drive, drive, drive bay
 ---
 
+{% include content-reuse/hpe-apollo-4200-gen-9-90t-180t-288t-eops.md %}
+
 ## Front LFF Drive Row
 {% capture alt_tag %}The front large form factor drive row in the {{site.a4200g9}} node{% endcapture %}
 {% include image.html alt=alt_tag file="hpe-gen9-drives-front.png" %}
