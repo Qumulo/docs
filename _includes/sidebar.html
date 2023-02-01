@@ -16,10 +16,13 @@
   {% for folder in entry.folders %}
   {% if folder.output contains "web" %}
   
-  {% if page.url == folder.url %}
+  {% capture indexURL %}{{ page.url }}index.html{% endcapture %}
+  
+  {% comment %}The first case accounts for parent_landing_page.html. The second case accounts for landing_page.html, which doesn't render with index.html by design.{% endcomment %}
+  {% if page.url == folder.url or indexURL == folder.url %}
   <li class="active">
   {% else %}
-  <li data-url="{{page.url}}" data-folder-url="{{folder.url}}>
+  <li>
     
 <!--{% endif %}
       <a title="{{folder.title}}" href="{% if page.url != folder.url %}{{folder.url}}{% else %}#{% endif %}">{{folder.title}}</a>-->
