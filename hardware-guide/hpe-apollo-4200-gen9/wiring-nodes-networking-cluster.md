@@ -9,6 +9,8 @@ sidebar: hardware_guide_sidebar
 keywords: network, networking, cluster, switch, Ethernet, ports, IP, 90T, 180T, 288T
 ---
 
+{% include content-reuse/hpe-apollo-4200-gen-9-90t-180t-288t-eops.md %}
+
 ## Node NICs and Ports
 The following diagrams show the NICs and ports on {{site.a4200g9}} node types.
 
