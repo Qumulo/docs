@@ -8,6 +8,8 @@ sidebar: hardware_guide_sidebar
 keywords: drive, hard drive, LED, large form factor, LFF, small form factor, SFF
 ---
 
+{% include content-reuse/hpe-apollo-4200-gen-9-90t-180t-288t-eops.md %}
+
 ## Large Form Factor (LFF) Drive LEDs
 
 To locate the LFF drive LEDs, use the following diagram.
