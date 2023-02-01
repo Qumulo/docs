@@ -8,6 +8,8 @@ sidebar: hardware_guide_sidebar
 keywords: LED, front panel, power fault, rear panel, diagnose, diagnosis, hardware health
 ---
 
+{% include content-reuse/hpe-apollo-4200-gen-9-90t-180t-288t-eops.md %}
+
 ## Front Panel LEDs and Buttons
 
 To locate the front panel LEDs, use the following diagram.
