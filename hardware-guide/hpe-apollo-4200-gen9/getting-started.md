@@ -8,6 +8,8 @@ sidebar: hardware_guide_sidebar
 keywords: getting started guide, quick reference, HPE, Apollo 4200 Gen9, verify node, field verification tool, FVT, intelligent provisioning
 ---
 
+{% include content-reuse/hpe-apollo-4200-gen-9-90t-180t-288t-eops.md %}
+
 ## Prerequisites
 <a href="https://docs.qumulo.com/administrator-guide/qumulo-core/creating-usb-drive-installer.html" class="no_icon">Qumulo Core USB Drive Installer</a>
 
