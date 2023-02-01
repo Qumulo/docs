@@ -31,7 +31,6 @@
     
     <a title="{{folder.title}}" href="{% if page.url != folder.url and indexURL != folder.url %}{{folder.url}}{% else %}#{% endif %}">{{folder.title}}</a>
     
-    <!--<a title="{{folder.title}}" href="#">{{folder.title}}</a>-->
       <ul>
           {% for folderitem in folder.folderitems %}
           {% if folderitem.output contains "web" %}
