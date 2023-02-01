@@ -7,3 +7,5 @@ redirect_from:
 sidebar: hardware_guide_sidebar
 search: exclude
 ---
+
+{% include content-reuse/hpe-apollo-4200-gen-9-90t-180t-288t-eops.md %}
