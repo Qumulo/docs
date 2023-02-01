@@ -137,8 +137,8 @@ entries:
       url: /administrator-guide/protecting-data/increasing-node-fault-tolerance-level.html
       output: web, pdf
 
-    - title: Changing the Adaptive Data Protection Configuration for Your Qumulo Cluster During Node-Add Operations
-      url: /administrator-guide/protecting-data/changing-adaptive-data-protection-configuration.html
+    - title: Changing the Data Protection Configuration for Your Qumulo Cluster During Node-Add Operations
+      url: /administrator-guide/protecting-data/changing-data-protection-configuration.html
       output: web, pdf
 
     - title: Managing Snapshots in Qumulo Core
