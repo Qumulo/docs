@@ -8,6 +8,8 @@ sidebar: hardware_guide_sidebar
 keywords: out-of-band management, out of band management, iLO, DHCP, network, networking, LAN, ipmitool
 ---
 
+{% include content-reuse/hpe-apollo-4200-gen-9-90t-180t-288t-eops.md %}
+
 {% include content-reuse/platform-agnostic-ilo-preamble.md %}
 
 {% capture alt_tag %}The location of the iLO port on the {{site.a4200g9}} node{% endcapture %}
