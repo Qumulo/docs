@@ -19,7 +19,7 @@
   {% if page.url == folder.url %}
   <li class="active">
   {% else %}
-  <li>
+  <li data-url="{{page.url}}" data-folder-url="{{folder.url}}>
     
 <!--{% endif %}
       <a title="{{folder.title}}" href="{% if page.url != folder.url %}{{folder.url}}{% else %}#{% endif %}">{{folder.title}}</a>-->
