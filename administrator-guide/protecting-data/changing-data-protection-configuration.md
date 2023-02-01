@@ -9,10 +9,14 @@ keywords: disk-fault-tolerance level, disk failure, node-fault-tolerance level, 
 ---
 
 ## Reconfiguring Your Cluster's Data Protection
-In Qumulo Core 5.3.4 (and higher), as you expand your cluster, you might need to reconfigure its data protection to change the disk- or node-fault-tolerance level (to guarantee the same Mean Time to Data Loss threshold) and, when possible, to take advantage of higher storage efficiency.
+In Qumulo Core 5.3.4 (and higher), as you expand your cluster, it might become necessary to reconfigure its _data protection,_ which specifies the disk-fault-tolerance and, when applicable, the storage efficiency of your cluster.
 
-{% capture contactUs %}{{site.protectingData.contactQumuloCare}} We can recommend the correct cluster expansion scenario to you.{% endcapture %}
-{% include important.html content=contactUs %}
+{{site.data.alerts.important}}
+<ul>
+  <li>Although you <em>can</em> also change the node-fault-tolerance level when you change the data protection configuration (to guarantee the same Mean Time to Data Loss threshold), this isn't mandatory.</li>
+  <li>{{site.protectingData.contactQumuloCare}} We can recommend the correct cluster expansion scenario to you.</li>
+</ul>
+{{site.data.alerts.end}}
 
 
 ## Cluster Expansion Scenarios
