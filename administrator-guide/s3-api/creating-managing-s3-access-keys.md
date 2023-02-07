@@ -8,7 +8,7 @@ varResponseOutput: The following is example output from the response.
 varResultKeys: In this example, the access key id is `000000000001fEXAMPLE` and the secret access key is `TEIT4liMZ8A32iI7JXmqIiLWp5co/jmkjEXAMPLE`.
 varPaginatedResponsePart1: The `entries` list contains the access keys, limited to the first
 varListMax: "10,000"
-varPaginatedResponsePart2: The `paging.next` field contains the URI to which you can send a `GET` request to retrieve the next page of access keys. By making `GET` requests with all returned `paging.next` values, you can iterate over access keys in the cluster.
+varPaginatedResponsePart2: The `paging.next` field contains the URI to which you can send a `GET` request to retrieve the next page of access keys. By making `GET` requests with all returned `paging.next` values, you can iterate over all of the access keys in the cluster.
 varKeyDoAlso: along with the identities associated with the key and the key creation times
 ---
 
@@ -63,14 +63,14 @@ For more information, see [Listing S3 Access Keys in a Qumulo Cluster](#listing-
 
 {{site.data.alerts.note}}
 <ul>
- <li>To facilitate key rotation, each user <a href="#identity">identity</a> can have at most two S3 access key pairs associated with it. It is a good practice to delete a user's old access key after you create a new one.</li>
+ <li>To facilitate key rotation, each user <a href="#identity">identity</a> can have at most two S3 access key pairs associated with it. It is a good practice to delete a user's old access key after you create a new one and test that the new key works.</li>
   <li>If you revoke an access key pair, it isn't possible to restore it. Before you revoke an access key pair, ensure that no critical applications depend on it.</li>
 </ul>
 {{site.data.alerts.end}}
 
 
 ## Creating S3 Access Keys for a Qumulo Cluster
-To make S3 API requests to a Qumulo cluster as a specific user, you must create an S3 access key pair for that user [identity](#identity) {{site.s3.permissions.APIorCLI}}. {{site.s3.permissions.directAPI}}
+To make S3 API requests to a Qumulo cluster as a specific user, you must create an S3 access key pair for that user [identity](#identity) {{site.s3.permissions.APIorCLI}}.
 
 To create S3 access keys, you must have an administrator account or have {{page.s3.permissions.bucketsWrite}}.
 
@@ -156,13 +156,14 @@ For example:
 
 
 ## Listing S3 Access Keys for a Qumulo Cluster
-You can list every S3 access key that your Qumulo cluster knows, {{page.varKeyDoAlso}}, {{site.s3.permissions.APIorCLI}}. {{site.s3.permissions.directAPI}}
+You can list every S3 access key that your Qumulo cluster knows, {{page.varKeyDoAlso}}, {{site.s3.permissions.APIorCLI}}.
 
 To list S3 access keys, you must have {{site.s3.permissions.bucketsRead}}.
 
-{% include note.html content="Qumulo Core lists access keys in a consistent, but unordered, manner. To list keys according to fields such as `creation_time` or `owner` you must process or filter the response." %}
+{% include note.html content="Qumulo Core doesn't list access keys in any particular order. To sort keys according to fields such as `creation_time` or `owner` you must process or filter the response." %}
 
-{% capture listAccessKeysResponse %}{
+{% capture listAccessKeysResponse %}```json
+{
   "entries": [
     {
       "access_key_id": "000000000001fEXAMPLE",
@@ -181,7 +182,8 @@ To list S3 access keys, you must have {{site.s3.permissions.bucketsRead}}.
   "paging": {
     "next": null
   }
-}{% endcapture %}
+}
+```{% endcapture %}
 
 ### To List S3 Access Keys by Using the qq CLI
 
@@ -197,13 +199,9 @@ To list S3 access keys, you must have {{site.s3.permissions.bucketsRead}}.
 
 * For JSON output, use the `--json` flag.
 
-  {{site.s3.permissions.commandOutput}} The command returns JSON response bodies from calls to the `/v1/s3/access-keys/` Qumulo REST API endpoint. 
- 
-  {{page.varPaginatedResponsePart1}} {{page.varListMax}}. {{page.varPaginatedResponsePart2}}
-  
-  ```json
-  {{listAccessKeysResponse}}
-  ```
+  {{site.s3.permissions.commandOutput}} The command returns a single JSON object that contains the combined responses from calls to the `/v1/s3/access-keys/` Qumulo REST API endpoint. 
+
+{{listAccessKeysResponse}}
 
 ### To List S3 Access Keys by Using the Qumulo REST API
 To list the S3 access keys that your Qumulo cluster knows, send a `GET` request to the `/v1/s3/access-keys/` endpoint.
@@ -213,12 +211,10 @@ To list the S3 access keys that your Qumulo cluster knows, send a `GET` request 
 
 {{page.varResponseOutput}} {{page.varPaginatedResponsePart1}} {{page.varListMax}}. {{page.varPaginatedResponsePart2}}
 
-```json
 {{listAccessKeysResponse}}
-```
 
 ## Revoking S3 Access Keys for a Qumulo Cluster
-To revoke an S3 access key, you must delete the access key from your Qumulo cluster, {{page.varKeyDoAlso}}. You can delete an S3 access key {{site.s3.permissions.APIorCLI}}. {{site.s3.permissions.directAPI}}
+To revoke an S3 access key, you must delete the access key from your Qumulo cluster. You can delete an S3 access key {{site.s3.permissions.APIorCLI}}.
 
 To revoke an access key, you must have {{site.s3.permissions.bucketsWrite}}.
 

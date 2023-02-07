@@ -192,12 +192,13 @@ s3:
     bucketsRead: the <code>PRIVILEGE_S3_BUCKETS_READ</code> privilege
     bucketsWrite: the <code>PRIVILEGE_S3_BUCKETS_WRITE</code> privilege
     commandOutput: The following is example output from the command.
-    timesUTC: All times are in UTC format.
+    timesUTC: All times are in the UTC time zone.
     secretAccessKeys: After Qumulo Core initially creates your secret access keys, it never logs or displays them again. If you lose your secret access key, it isn't possible to recover it and you must create a new access key pair.
   docs:
     actions: https://docs.aws.amazon.com/AmazonS3/latest/API/API_Operations.html
     bucketNamingRules: https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html
     cli: https://aws.amazon.com/cli
+    pathStyleAddressing: https://docs.aws.amazon.com/AmazonS3/latest/userguide/VirtualHosting.html#path-style-access
     s3: https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html
     signatureV4: https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html
   actions:

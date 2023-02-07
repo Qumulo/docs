@@ -119,7 +119,7 @@ The following table lists some of the S3 API functionality that Qumulo Core does
 | Storage classes                           | Qumulo Core doesn't use the [storage class](https://aws.amazon.com/s3/storage-classes/) concept. All objects have the same storage class status. |
 | Retention policies                        | &mdash;     |
 | Temporary access credentials              | &mdash;     |
-| Virtual-hosted bucket addressing          | Qumulo Core supports only [path-style bucket addressing](https://docs.aws.amazon.com/AmazonS3/latest/userguide/VirtualHosting.html#path-style-access). |
+| Virtual-hosted bucket addressing          | Qumulo Core supports only [path-style bucket addressing]({{site.s3.docs.pathStyleAddressing}}). |
 | Web hosting configuration                 | &mdash;     |
 
 
@@ -127,18 +127,16 @@ The following table lists some of the S3 API functionality that Qumulo Core does
 This section describes the most important S3 API limitations in Qumulo Core.
 
 ### Bucket Addressing Style
-* Because Qumulo Core supports only path-style bucket addressing, you must configure your client applications to use path-style addressing to send S3 API requests to a Qumulo cluster. For more information, see [Configuring the AWS CLI for Use with Qumulo Core](configuring-using-s3-api.html#configuring-aws-cli).
-
-* Amazon S3 supports virtual-hosted and path-style bucket addressing in requests. For more information, see [Virtual hosted‐style and path‐style requests](https://docs.aws.amazon.com/AmazonS3/latest/userguide/RESTAPI.html#virtual-hosted-path-style-requests) in the Amazon Simple Storage User Guide.
+Because Qumulo Core supports only [path-style bucket addressing]({{site.s3.docs.pathStyleAddressing}}), you must configure your client applications to use path-style addressing to send S3 API requests to a Qumulo cluster. For more information, see [Configuring the AWS CLI for Use with Qumulo Core](configuring-using-s3-api.html#configuring-aws-cli).
 
 ### ETags
 RESTful APIs, such as the S3 API, use HTTP [ETags](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/ETag) to identify different resource versions.
 
 * Qumulo Core uses a proprietary mechanism to generate an object's ETag.
 
-* Amazon S3 service uses the MD5 checksum of an object's contents as its ETag.
+* Amazon S3 uses the MD5 checksum of an object's contents as its ETag.
 
-{% include note.html content="Well-behaved applications shouldn't attempt to interpret the contents of an ETag. However, certain applications do assume that S3 object ETags contain the MD5 checksum of the object's contents. Such applications might not function properly with the Qumulo S3 API." %}
+{% include important.html content="Well-behaved applications shouldn't attempt to interpret the contents of an ETag. However, certain applications do assume that S3 object ETags contain the MD5 checksum of the object's contents. Such applications might not function properly with the Qumulo S3 API." %}
 
 ### Listing Objects
 The S3 API supports listing objects in a bucket by using the [`ListObjects`]({{site.s3.actions.ListObjects}}) and [`ListObjectsV2`]({{site.s3.actions.ListObjectsV2}}) API actions.
@@ -155,22 +153,22 @@ The S3 API supports listing objects in a bucket by using the [`ListObjects`]({{s
   <tr>
     <td>Returning results</td>
     <td>Consistent but non-alphabetical order</td>
-    <td>Alphabetical order, by object name</td>    
+    <td>Alphabetical order, by object key</td>    
   </tr>
   <tr>
     <td>Arbitrary prefix</td>
     <td>Partial support for <code>Prefix</code>, only if <code>Prefix</code> is a path to a file or directory under the <a href="creating-managing-s3-buckets.html#bucket-root">bucket root directory</a></td>
-    <td><code>Prefix</code> limits results to object names that begin with the prefix</td>    
+    <td><code>Prefix</code> limits results to object keys that begin with the prefix</td>    
   </tr>
   <tr>
     <td>Arbitrary delimiter</td>
-    <td>Only the slash (<code>/</code>) can act as <code>Delimiter</code></td>
+    <td>Only the slash (<code>/</code>) character can act as <code>Delimiter</code></td>
     <td><code>Delimiter</code> groups results into common prefixes</td>
   </tr>
 </tbody>
 </table>
 
-{% include note.html content="Although Qumulo Core support for `Prefix` and `Delimiter` is partial, it treats an S3 bucket as an hierarchical file tree. This is the most common use case." %}
+{% include note.html content="Although Qumulo Core supports `Prefix` and `Delimiter` partially, it supports the most common use case&mdash;listing the contents of S3 buckets as a hierarchical file tree&mdash;fully.)))" %}
 
 ### Request Authentication
 Qumulo Core supports authenticating requests by using only [Amazon Signature Version 4]({{site.s3.docs.signatureV4}}). Most S3 client applications support this authentication type.
@@ -178,7 +176,7 @@ Qumulo Core supports authenticating requests by using only [Amazon Signature Ver
 If your application attempts to use a previous Amazon signature version, you receive a `400 Bad Request` response with the error code `AuthorizationHeaderMalformed`.
 
 
-## Comparison of S3 API and Amazon S3 Known Limits
+## Comparison of Known Limits between S3 in Qumulo and Amazon
 This section compares the Qumulo Core S3 API limits with native Amazon S3 limits.
 
 ### Limits for S3 Buckets
@@ -213,7 +211,7 @@ This section compares the Qumulo Core S3 API limits with native Amazon S3 limits
 </tbody>
 </table>
 
-{% include note.html content="If all objects in a bucket are under the same directory (none of the object keys have the slash [`/`] character in them), the maximum number of objects in the bucket is limited to the maximum number of files in a directory. For more information, see [Supported Configurations and Known Limits for Qumulo Core](../getting-started-qumulo-core/supported-configurations-known-limits.html)." %}
+{% include note.html content="If all objects in a bucket are under the same directory&mdash;none of the object keys have the slash (`/`) character in them&mdash;the maximum number of objects in the bucket is limited to the maximum number of files in a directory. For more information, see [Supported Configurations and Known Limits for Qumulo Core](../getting-started-qumulo-core/supported-configurations-known-limits.html)." %}
 
 ### Limits for S3 Objects
 

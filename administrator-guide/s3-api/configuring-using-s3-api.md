@@ -56,7 +56,7 @@ To create and manage S3 buckets, you must configure AWS CLI to work with your Qu
 <ul>
   <li>We recommend configuring a dedicated profile for Qumulo in your <a href="https://docs.aws.amazon.com/cli/latest/topic/s3-config.html">AWS CLI S3 Configuration</a>.</li>
   <li>Qumulo Core listens for S3 API traffic on TCP port 9000. It isn't possible to change this setting.</li>
-  <li>Currently, Qumulo Core supports only <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/VirtualHosting.html#path-style-access">path-style</a> bucket addressing. For more information, see <a href="supported-s3-functionality-known-limits.html#bucket-addressing-style">Bucket Addressing Style</a>.</li>
+  <li>Currently, Qumulo Core supports only <a href="{{site.s3.docs.pathStyleAddressing}}">path-style</a> bucket addressing. For more information, see <a href="supported-s3-functionality-known-limits.html#bucket-addressing-style">Bucket Addressing Style</a>.</li>
 </ul>
 {{site.data.alerts.end}}
 
@@ -88,14 +88,14 @@ To create and manage S3 buckets, you must configure AWS CLI to work with your Qu
 1. Because it isn't possible to specify your cluster's URI persistently, create a shell alias to specify your cluster's URI, in the following format:
 
    ```bash
-   $ alias aws="aws --endpoint-url https://<qumulo-cluster>:9000 --profile <your-profile>"
+   $ alias aws="aws --endpoint-url https://<qumulo-cluster>:9000 --profile my-qumulo-profile"
    ```
 
 1. (Optional) If you haven't configured your machine to trust the SSL certificate installed on your Qumulo cluster, to configure the path to [the trusted SSL certificate bundle that you have created and installed earlier](#configuring-https) manually, use the `aws configure` command. For example:
   
    ```bash
    $ aws configure \
-     --profile MyCompany set ca_bundle MySpecialCert.crt
+     --profile my-qumulo-profile set ca_bundle MySpecialCert.crt
    ```
 
 1. To test your configuration, send an S3 API request to your Qumulo cluster by using the `aws s3api list-buckets` command.

@@ -16,16 +16,16 @@ Managing user access to S3 buckets in a Qumulo cluster is very similar to managi
 
 
 ## How S3 Bucket Permissions Work in Qumulo Core
-To process an S3 API request, Qumulo Core performs one or more file system operation. Qumulo Core processes these operations by checking the user's access against the access control lists (ACLs) for each file that is part of the request.
+To process an S3 API request, Qumulo Core performs one or more file system operations. Qumulo Core processes these operations by checking the user's access against the access control lists (ACLs) for each file that is part of the request.
 
-For authenticated requests signed with [Amazon Signature Version 4]({{site.s3.docs.signatureV4}})), Qumulo Core maps the access key ID in the request to its corresponding [auth ID](creating-managing-s3-access-keys.html#auth-id), and then processes the request as that user. Qumulo Core processes unsigned, anonymous requests as the `Guest` user, to whom all modifying operations are forbidden.
+For authenticated requests signed with [Amazon Signature Version 4]({{site.s3.docs.signatureV4}}), Qumulo Core maps the access key ID in the request to its corresponding [auth ID](creating-managing-s3-access-keys.html#auth-id), and then processes the request as that user. Qumulo Core processes unsigned, anonymous requests as the `Guest` user.
 
-While Qumulo Core processes an S3 request, the ownership of any newly created files and directories belongs to the user that makes the request. These files and directories inherit access control entries (ACE) from their parents (this process is the same for all protocols).
+While Qumulo Core processes an S3 request, the ownership of any newly created files and directories belongs to the user that makes the request. These files and directories inherit access control entries (ACEs) from their parents (this process is the same for all protocols).
 
 
 <a id="anonymous-access"></a>
 ## Enabling Anonymous Access for an S3 Bucket
-Your users might need to make [read-only S3 API requests]({{site.s3.docs.signatureV4}}) to individual S3 buckets for operations that require plain HTTPS access to a bucket's contents, for example by using the `wget` command or a browser. To allow read-only access, you must enable anonymous access to specific buckets.
+In certain cases, it might be more practical to allow anonymous (unauthenticated) requests to access the contents of S3 buckets, for example, if you want to let users access objects from the S3 bucket by using a web browser or if the number of users who need read access is very large. In such cases, when you enable anonymous access to an S3 bucket, you allow [read-only operations]({{site.s3.docs.signatureV4}} for unauthenticated requests.
 
 {% include important.html content="Anonymous requests can never perform modifying operations. Qumulo Core requires all modifying operations on an S3 bucket to be authenticated." %}
 
@@ -68,18 +68,24 @@ To ensure that anonymous requests have permission to read files in a bucket, gra
 ## Using Inheritable ACEs to Imitate Bucket-Level Permissions
 To grant multiple users access to all paths in a bucket and ensure that newly created directories inherit the correct permissions, use inheritable access control entries (ACEs).
 
-In Amazon S3, permission to read objects from&mdash;and write objects to&mdash;an S3 bucket applies to the entire bucket. In Qumulo Core, each [object key](creating-managing-s3-buckets.html#object-keys) corresponds to a file path relative to a root directory and Qumulo Core grants permissions for individual files and directories.
+In Amazon S3, permission to read objects from&mdash;and write objects to&mdash;an S3 bucket applies to the entire bucket. In Qumulo Core, each [object key](creating-managing-s3-buckets.html#object-keys) corresponds to a file path relative to a bucket's root directory. Qumulo Core grants permissions for individual files and directories.
 
-When users create objects in an S3 bucket in a Qumulo cluster, they might also create new directories. The user that creates these directories owns them. However, without the correct access control entries (ACLs) in your bucket, these directories might have restrictive permissions that prevent other users from creating objects with the same prefix.
+When users create objects in an S3 bucket in a Qumulo cluster, they might also create new directories. The user that creates these directories owns them. However, without the correct access control entries (ACEs) in your bucket, these directories might have restrictive permissions that prevent other users from creating objects with the same prefix.
 
 ### How Permissions with Inheritable ACEs Work
-You can use inheritable ACEs to ensure that:
+Access control entries (ACEs) control the permissions that users have for files and directories in a Qumulo cluster. When you add ACEs to a directory and mark them as _inheritable,_ all new files and directories created in that directory inherit those ACEs and pass them on.
 
-* Any files and directories that you create under the root directory inherit your ACEs and pass them to any child files and directories, add inheritable ACEs to your bucket's root directory when you first create your S3 bucket.
+You can use inheritable ACEs to:
 
-* Any newly created buckets inherit the same set of ACEs, add inheritable ACEs to the default bucket directory prefix.
+* Imitate bucket-level permissions by ensuring that any files and directories that your users create in an S3 bucket receive the same permissions.
 
-To add ACEs to a directory, use the `qq` CLI or using the File Explorer on a Windows client with a mapped SMB share that contains the directory.
+  To make all paths in an S3 bucket inherit the same set of ACEs, add the ACEs to the bucket's root directory and mark them as inheritable.
+
+* Configure default permissions for newly create buckets.
+
+  To make a set of ACEs the default for buckets that your users create by using the S3 API, add the ACEs to the default bucket directory prefix.
+
+To add ACEs to a directory, use the `qq` CLI or use the File Explorer on a Windows client with a mapped SMB share that contains the directory.
 
 {% include note.html content="Adding inheritable ACEs to a directory doesn't affect any files that already exist in that directory. For more information, see [To Recursively Add a New ACL (with Multithreading)](https://care.qumulo.com/hc/en-us/articles/6351767625491#to-recursively-add-a-new-acl-with-multithreading--0-6) on Qumulo Core." %}
 
@@ -92,10 +98,10 @@ Use the `qq fs_modify_acl` command. In the following example, we add the access 
 ```bash
 $ qq fs_modify_acl \
   --path /buckets/my-bucket add_entry
-    -t MyWriters \
-    -y Allowed \
-    -f 'Container inherit' 'Object inherit' \
-    -r 'Delete child' 'Execute/Traverse' 'Read' 'Write file'
+  --trustee MyWriters \
+  --type Allowed \
+  --flags 'Container inherit' 'Object inherit' \
+  --rights 'Delete child' 'Execute/Traverse' 'Read' 'Write file'
 ```
 
 The ACE imitates bucket-level read-write access for a user or group of users.
@@ -114,10 +120,10 @@ Use the `qq fs_modify_acl` command. In the following example, we add the access 
 ```bash
 $ qq fs_modify_acl 
   --path /buckets/my-bucket add_entry 
-    -t MyReaders \
-    -y Allowed \
-    -f 'Container inherit' 'Object inherit' \
-    -r 'Execute/Traverse' 'Read'
+  --trustee MyReaders \
+  --type Allowed \
+  --flags 'Container inherit' 'Object inherit' \
+  --rights 'Execute/Traverse' 'Read'
 ```
 
 The ACE imitates bucket-level read-only access for a user or group of users.
@@ -129,27 +135,27 @@ Allowed  Object inherit, Container inherit  Execute/Traverse, Read
 ```
 
 ### Imitating Bucket-Level List-Only Access
-Use the `qq fs_modify_acl` command for each of the two ACEs. In the following example, we add each access control entry (ACE) to the bucket whose root directory is `/buckets/my-bucket` for the user group `MyListers`.
+Use the `qq fs_modify_acl` command. In the following example, we add two access control entries (ACEs) to the bucket whose root directory is `/buckets/my-bucket` for the user group `MyListers`.
 
 ```bash
 $ qq fs_modify_acl 
   --path /buckets/my-bucket add_entry
-    -t MyListers \
-    -y Allowed \
-    -f 'Container inherit' \
-    -r 'Execute/Traverse' 'Read'
+  --trustee MyListers \
+  --type Allowed \
+  --flags 'Container inherit' \
+  --rights 'Execute/Traverse' 'Read'
 ```
 
 ```bash
 $ qq fs_modify_acl 
   --path /buckets/my-bucket add_entry 
-    -t MyListers \
-    -y Allowed \
-    -f 'Object inherit' \
-    -r 'Read attr'
+  --trustee MyListers \
+  --type Allowed \
+  --flags 'Object inherit' \
+  --rights 'Read attr'
 ```
 
-The ACE imitates bucket-level list-only access for a user or group of users:
+The two ACEs imitate bucket-level list-only access for a user or group of users:
 
 ```
 Type     Flags              Rights

@@ -5,29 +5,30 @@ permalink: /administrator-guide/s3-api/creating-managing-s3-buckets.html
 sidebar: administrator_guide_sidebar
 keywords: s3, bucket, permissions, bucket root, root directory, root, key, objecty keys, bucket name, name, default bucket directory prefix, default prefix, default directory prefix, directory prefix, prefix, create, configure, list, delete
 varListJSON: The JSON output contains an array named <code>Buckets</code> that contains the individual buckets as objects.
+varUploadKinds: <code>UploadPart</code>, <code>PutObject</code>, or <code>CopyObject</code>
 varNoBucket: The specified bucket doesn't exist.
 varCantDelRootDir: You don't have permission to delete the bucket root directory.
 varRootDirNotEmpty: The bucket root directory isn't empty.
-varMpuInProgress: The bucket has in-progress <code>MultipartUpload</code> operations.
+varDefaultPrefix: <a href="#default-directory-prefix">default bucket directory prefix</a>
 ---
 
 You can create and work with S3 buckets {{site.s3.permissions.APIorCLI}}. {{site.s3.permissions.directAPI}}
 
 
 ## Prerequisites
-To work with S3 buckets, you need:
+To create and manage S3 buckets {{site.s3.permissions.APIorCLI}}, you need the following [role-based access control (RBAC)](https://care.qumulo.com/hc/en-us/articles/360036591633) privileges:
 
-* [A valid Qumulo S3 access key](creating-managing-s3-access-keys.html)
-
-* To use the S3 API directly, [a configured AWS CLI](configuring-using-s3-api.html#configuring-aws-cli)
-
-* The following [role-based access control (RBAC)](https://care.qumulo.com/hc/en-us/articles/360036591633) privileges:
-
-  * `PRIVILEGE_S3_BUCKETS_WRITE`: Create and delete S3 buckets {{site.s3.permissions.APIorCLI}}.
+  * `PRIVILEGE_S3_BUCKETS_WRITE`: Create and delete S3 buckets
   
-    {% include note.html content="Unless you don't perform these actions when you use the `qq` CLI, you also need permission to create and delete directories." %}
+    {% include note.html content="If you perform create and delete operations on directories by using the `qq` CLI, you also need this privilege." %}
 
-  * `PRIVILEGE_S3_BUCKETS_READ`: List S3 buckets {{site.s3.permissions.APIorCLI}}.
+  * `PRIVILEGE_S3_BUCKETS_READ`: List S3 buckets
+
+To create and manage S3 buckets by using the S3 API, you also need:
+
+  * [A valid Qumulo S3 access key](creating-managing-s3-access-keys.html)
+
+  * [A configured AWS CLI](configuring-using-s3-api.html#configuring-aws-cli)
 
 
 ## How S3 Buckets Map to the Qumulo File System
@@ -102,7 +103,7 @@ You specify the [bucket root directory](#bucket-root) depending on how you creat
 
 * When you create an S3 bucket by using the `CreateBucket` S3 API action, the API creates a new directory with the same name as the bucket under the default bucket directory prefix. For more information, see [Configuring the Default Bucket Directory Prefix for S3 Buckets](#default-directory-prefix). 
 
-* If you don't specify a directory, the Qumulo REST API and `qq` CLI use the [default bucket directory prefix](#default-directory-prefix).
+* If you don't specify a directory, the Qumulo REST API and `qq` CLI use the {{page.varDefaultPrefix}}.
 
 The user that creates a new directory for a new bucket owns the directory. For more information, see [Managing Access to S3 Buckets in a Qumulo Cluster](managing-access-to-s3-buckets.html).
 
@@ -124,7 +125,7 @@ While the Qumulo REST API and `qq` CLI let you use an existing directory as the 
 ### Configuring the Default Bucket Directory Prefix for S3 Buckets
 The _default bucket directory prefix_ is the directory under which Qumulo Core creates new bucket root directories when it creates S3 buckets by using the `CreateBucket` S3 API action or when you create an S3 bucket without specifying a directory {{site.s3.permissions.APIorCLI}}.
 
-By default, the default bucket directory prefix for newly created buckets is the cluster's root directory, `/`.
+By default, the default bucket directory prefix for newly created buckets is the cluster's root directory (`/`). Thus, if you create a bucket named `my-bucket`, its root directory is `/my-bucket`.
 
 * To view the current default bucket directory prefix {{site.s3.permissions.APIorCLI}}, you need {{site.s3.permissions.bucketsRead}}.
 
@@ -136,7 +137,7 @@ By default, the default bucket directory prefix for newly created buckets is the
    {{site.s3.permissions.commandOutput}}
 
    ```json 
-   {"enabled": true, "base_path": "/buckets/"}
+   {"enabled": true, "base_path": "/buckets/", ...}
    ```
 
 1. To change the setting, use the `qq s3_modify_settings` command and specify the new default bucket directory prefix. In the following example, we specify `/buckets`.
@@ -153,7 +154,7 @@ When you use the `qq` CLI to create a bucket, you can use a new or existing dire
 
 {% include note.html content="If an entry with the specified name or directory already exists, or if you don't have permission to create a directory, the command returns an error. For more information, see [Configuring the Default Bucket Directory Prefix for S3 Buckets](#default-directory-prefix)." %}
 
-* To create a new, empty bucket from the [default bucket directory prefix](#default-directory-prefix), use the `qq s3_create_bucket` command and specify the bucket name. For example:
+* To create a new, empty bucket from the {{page.varDefaultPrefix}}, use the `qq s3_create_bucket` command and specify the bucket name. For example:
 
   ```bash
   $ qq s3_create_bucket \
@@ -178,7 +179,7 @@ $ aws s3api create-bucket \
   --bucket my-bucket
 ```
 
-Qumulo Core creates the bucket root directory under the default bucket directory prefix and gives it the same name as the bucket's name. In this example, if the default bucket directory prefix is `/buckets/`, the new bucket root directory is `/buckets/my-bucket/`.
+Qumulo Core creates the bucket root directory under the {{page.varDefaultPrefix}} and names it the same as the bucket. In this example, if the default bucket directory prefix is `/buckets/`, the new bucket root directory is `/buckets/my-bucket/`.
 
 {% include note.html content="When you use the `CreateBucket` S3 API action with the `LocationConstraint` parameter, the Qumulo S3 API supports only the `local` region." %}
 
@@ -186,7 +187,7 @@ Qumulo Core creates the bucket root directory under the default bucket directory
 ## Configuring S3 Buckets
 You can view and modify the settings for individual buckets {{site.s3.permissions.APIorCLI}}.
 
-Although you can configure global settings, such as the [default bucket directory prefix](#default-directory-prefix) for S3 buckets, the only individual S3 bucket setting that you can configure in Qumulo Core is anonymous access. For more information, see [Enabling Anonymous Access for an S3 Bucket](managing-access-to-s3-buckets.html#anonymous-access).
+Although you can configure global settings, such as the {{page.varDefaultPrefix}} for S3 buckets, the only individual S3 bucket setting that you can configure in Qumulo Core is anonymous access. For more information, see [Enabling Anonymous Access for an S3 Bucket](managing-access-to-s3-buckets.html#anonymous-access).
 
 * To view the current bucket configuration {{site.s3.permissions.APIorCLI}}, you need {{site.s3.permissions.bucketsRead}}.
 
@@ -200,7 +201,7 @@ $ qq s3_get_bucket \
   --name my-bucket
 ```
 
-{{site.s3.permissions.commandOutput}} {{site.s3.permissions.timesUTC}}
+{{site.s3.permissions.commandOutput}} {{site.s3.permissions.timesUTC}}.
 
 ```json
 {
@@ -234,7 +235,7 @@ To list your S3 buckets {{site.s3.permissions.APIorCLI}}, you need {{site.s3.per
 
   ```json
   {
-    "Buckets": [
+    "buckets": [
       {
         "anonymous_access_enabled": false,
         "creation_time": "2022-12-13T22:18:01.406433425Z",
@@ -247,8 +248,6 @@ To list your S3 buckets {{site.s3.permissions.APIorCLI}}, you need {{site.s3.per
 
 ### To List S3 Buckets by Using the S3 API
 Use the `aws s3api list-buckets` command. This command uses the [`ListBuckets`]({{site.s3.actions.ListBuckets}}) S3 API action.
-
-{% include note.html content="This command lists only the S3 buckets for which you have read access." %}
 
 {{site.s3.permissions.commandOutput}} {{site.s3.permissions.timesUTC}} {{page.varListJSON}}
 
@@ -268,9 +267,12 @@ You can delete an S3 bucket {{site.s3.permissions.APIorCLI}}. {{site.s3.permissi
 
 While the Qumulo REST API and `qq` CLI let you choose whether to also delete the bucket root directory, the S3 API always deletes the bucket root directory.
 
-{% include important.html content="Before you delete your S3 bucket, you must either let all in-progress `MultipartUpload` operations for your S3 bucket complete or your must stop these the operations." %}
+{% capture deleteNote %}Before you delete your S3 bucket, you must either let all in-progress upload operations for the bucket ({{page.varUploadKinds}}) complete or you must abort the operations.{% endcapture %}
+{% include note.html content=deleteNote %}
 
 ### Deleting an S3 Bucket by Using the qq CLI
+{% capture varMpuInProgress %}The bucket has in-progress upload operations ({{page.varUploadKinds}}).{% endcapture %}
+
 To delete an S3 bucket {{site.s3.permissions.APIorCLI}}, you need {{site.s3.permissions.bucketsWrite}}.
 
 When you use the `qq` CLI to delete a bucket, you can choose to also delete the bucket root directory.
@@ -290,14 +292,14 @@ When you use the `qq` CLI to delete a bucket, you can choose to also delete the 
   
   * You don't have {{site.s3.permissions.bucketsWrite}}.
   
-  * {{page.varMpuInProgress}}
+  * {{varMpuInProgress}}
 
 * To delete a bucket together with its root directory, use the `qq s3_delete_bucket`, specify the bucket name, and use the `--delete-root-dir` flag. For example:
 
   ```bash
   $ qq s3_delete_bucket \
-    --name my-bucket \
-    --delete-root-dir
+    --delete-root-dir \
+    --name my-bucket
   ```
   
   If any of the following conditions are true, the command returns an error:
@@ -324,4 +326,4 @@ If any of the following conditions are true, the command returns an error:
 
 * {{page.varRootDirNotEmpty}}
 
-* {{page.varMpuInProgress}}
+* {{varMpuInProgress}}
