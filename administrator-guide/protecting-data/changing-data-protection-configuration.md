@@ -22,17 +22,8 @@ In Qumulo Core 5.3.4 (and higher), as you expand your cluster, it might become n
 ## Cluster Expansion Scenarios
 The following sections describe two cluster expansion scenarios. Identify the scenario that applies to your cluster expansion plan.
 
-### Adding Nodes Normally (without Data Protection Reconfiguration)
-{{site.protectingData.followAddNodeInstructions}}
-
-{{site.protectingData.checkCapacity}}
-
-{{site.protectingData.monitorProcess}}
-
-When the restriper completes the provisioning of additional usable capacity, the **Data Protected** section shows the same disk-fault-tolerance and node-fault-tolerance levels as before the node-add operation.
-
 ### Adding Nodes with Data Protection Reconfiguration
-1. Contact Qumulo Care for help with one of the following strategies.
+1. To begin the process, contact [Qumulo Care](https://care.qumulo.com/hc/en-us/articles/115008409408) to discuss your cluster expansion needs. In addition, Qumulo Care can advise you how to:
    
    * Reduce the impact of data protection reconfiguration on your primary workload by decreasing background resource consumption.
 
@@ -41,3 +32,12 @@ When the restriper completes the provisioning of additional usable capacity, the
 {{site.protectingData.monitorProcess}}
 
 When Qumulo Core completes the reconfiguration of data protection, the **Data Protected** section shows the changed disk-fault-tolerance and node-fault-tolerance levels and, during the next rebalancing phase, the restriper begins to provision additional usable capacity.
+
+### Adding Nodes Normally (without Data Protection Reconfiguration)
+{{site.protectingData.followAddNodeInstructions}}
+
+{{site.protectingData.checkCapacity}}
+
+{{site.protectingData.monitorProcess}}
+
+When the restriper completes the provisioning of additional usable capacity, the **Data Protected** section shows the same disk-fault-tolerance and node-fault-tolerance levels as before the node-add operation.
