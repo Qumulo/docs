@@ -160,7 +160,7 @@ When you use the `qq` CLI to create a bucket, you can use a new or existing dire
     --name my-bucket
   ```
 
-  Qumulo Core creates a new directory named `my-bucket` under the .
+  Qumulo Core creates a new directory named `my-bucket` under the default bucket directory prefix.
 
 * To create a bucket from an existing directory, use the `qq s3_create_bucket` command and specify the bucket name and the directory path. For example:
 
