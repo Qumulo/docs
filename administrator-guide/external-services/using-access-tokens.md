@@ -113,7 +113,7 @@ Authorization: Bearer access-v1:abAcde...==
 You can also add the bearer token to a `curl` command. For example:
 
 ```bash
-$ curl https://<qumulo-cluster>:8000/v1/session/who-am-i -H 'Authorization: Bearer access-v1:abAcde...=='
+$ curl https://{{site.exampleIP0}}:8000/v1/session/who-am-i -H 'Authorization: Bearer access-v1:abAcde...=='
 ```
 
 #### Python SDK
@@ -122,7 +122,7 @@ When you use the Qumulo Python SDK, add the bearer token to a `RestClient` objec
 ```python
 from qumulo.rest_client import RestClient
 from qumulo.lib.auth import Credentials
-client = RestClient('<qumulo-cluster>', 8000, Credentials('access-v1:abAcde...=='))
+client = RestClient('{{site.exampleIP0}}', 8000, Credentials('access-v1:abAcde...=='))
 ```
 
 For more information, see the [Qumulo Core Python SDK](https://pypi.org/project/qumulo-api/).
