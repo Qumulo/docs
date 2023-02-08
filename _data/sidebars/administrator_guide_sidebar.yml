@@ -137,8 +137,12 @@ entries:
       url: /administrator-guide/protecting-data/increasing-node-fault-tolerance-level.html
       output: web, pdf
 
-    - title: Changing the Data Protection Configuration for Your Qumulo Cluster During Node-Add Operations
-      url: /administrator-guide/protecting-data/changing-data-protection-configuration.html
+    - title: Adding Nodes to a Qumulo Cluster with Data Protection Configuration Changes
+      url: /administrator-guide/protecting-data/adding-nodes-with-data-protection-changes.html
+      output: web, pdf
+
+    - title: Replacing Nodes in a Qumulo Cluster by Performing a Transparent Platform Refresh
+      url: /administrator-guide/protecting-data/replacing-nodes-by-performing-transparent-platform-refresh.html
       output: web, pdf
 
     - title: Managing Snapshots in Qumulo Core

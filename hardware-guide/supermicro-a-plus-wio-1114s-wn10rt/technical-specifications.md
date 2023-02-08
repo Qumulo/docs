@@ -38,7 +38,7 @@ keywords: technical specifications, tech specs, specs, specifications, Supermicr
     </tr>
     <tr>
       <td><strong>CPU</strong></td>
-      <td colspan="3" style="text-align: center;">AMD EPYC 7402P 24-Core Processor</td>
+      <td colspan="3" style="text-align: center;">AMD EPYC 7402P 24-Core Processor<br>or AMD EPYC 7443P 24-Core Processor</td>
     </tr>
     <tr>
       <td><strong>Memory</strong></td>

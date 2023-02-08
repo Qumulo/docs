@@ -1,15 +1,16 @@
 ---
-title: "Changing the Data Protection Configuration for Your Qumulo Cluster During Node-Add Operations"
-summary: "This section explains how to change your Qumulo cluster’s data protection configuration during node-add operations and how to monitor and reduce the impact of this reconfiguration on your cluster's workload."
-permalink: /administrator-guide/protecting-data/changing-data-protection-configuration.html
+title: "Adding Nodes to a Qumulo Cluster with Data Protection Configuration Changes"
+summary: "This section explains how to change your Qumulo cluster’s data protection configuration during node-add operations and how to monitor and reduce the impact of configuration changes on your cluster's workload."
+permalink: /administrator-guide/protecting-data/adding-nodes-with-data-protection-changes.html
 redirect_from:
+  - /administrator-guide/protecting-data/changing-data-protection-configuration.html
   - /administrator-guide/protecting-data/changing-adaptive-data-protection-configuration.html
 sidebar: administrator_guide_sidebar
-keywords: disk-fault-tolerance level, disk failure, node-fault-tolerance level, node failure, fault tolerance, node add, node-add, cluster expansion, expand, reconfiguration, mean time to data loss, mtdl, mttdl 
+keywords: disk-fault-tolerance level, disk failure, node-fault-tolerance level, node failure, fault tolerance, node add, node-add, cluster expansion, expand, configuration, change, mean time to data loss, mtdl, mttdl 
 ---
 
-## Reconfiguring Your Cluster's Data Protection
-In Qumulo Core 5.3.4 (and higher), as you expand your cluster, it might become necessary to reconfigure its _data protection,_ which specifies the disk-fault-tolerance and, when applicable, the storage efficiency of your cluster.
+## Changing the Configuration of Your Cluster's Data Protection
+In Qumulo Core 5.3.4 (and higher), as you expand your cluster, it might become necessary to change the configuration its _data protection,_ which specifies the disk-fault-tolerance and, when applicable, the storage efficiency of your cluster.
 
 {{site.data.alerts.important}}
 <ul>

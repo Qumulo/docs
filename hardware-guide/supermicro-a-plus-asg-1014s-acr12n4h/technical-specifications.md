@@ -52,7 +52,7 @@ keywords: technical specifications, tech specs, specs, specifications, Supermicr
     </tr>
     <tr>
       <td><strong>CPU</strong></td>
-      <td colspan="5" style="text-align: center;">AMD EPYC 7232P 8-Core Processor</td>
+      <td colspan="5" style="text-align: center;">AMD EPYC 7232P 8-Core Processor<br>or AMD EPYC 7313P 16-Core Processor</td>
     </tr>
     <tr>
       <td><strong>Memory</strong></td>
