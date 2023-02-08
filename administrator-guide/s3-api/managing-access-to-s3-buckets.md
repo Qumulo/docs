@@ -18,14 +18,14 @@ Managing user access to S3 buckets in a Qumulo cluster is very similar to managi
 ## How S3 Bucket Permissions Work in Qumulo Core
 To process an S3 API request, Qumulo Core performs one or more file system operations. Qumulo Core processes these operations by checking the user's access against the access control lists (ACLs) for each file that is part of the request.
 
-For authenticated requests signed with [Amazon Signature Version 4]({{site.s3.docs.signatureV4}}), Qumulo Core maps the access key ID in the request to its corresponding [auth ID](creating-managing-s3-access-keys.html#auth-id), and then processes the request as that user. Qumulo Core processes unsigned, anonymous requests as the `Guest` user.
+For authenticated requests signed with [Amazon Signature Version 4]({{site.s3.docs.signatureV4}}), Qumulo Core maps the [access key ID](creating-managing-s3-access-keys.html#access-key-id) in the request to its corresponding [auth ID](creating-managing-s3-access-keys.html#auth-id), and then processes the request as that user. Qumulo Core processes unsigned, anonymous requests as the `Guest` user.
 
 While Qumulo Core processes an S3 request, the ownership of any newly created files and directories belongs to the user that makes the request. These files and directories inherit access control entries (ACEs) from their parents (this process is the same for all protocols).
 
 
 <a id="anonymous-access"></a>
 ## Enabling Anonymous Access for an S3 Bucket
-In certain cases, it might be more practical to allow anonymous (unauthenticated) requests to access the contents of S3 buckets, for example, if you want to let users access objects from the S3 bucket by using a web browser or if the number of users who need read access is very large. In such cases, when you enable anonymous access to an S3 bucket, you allow [read-only operations]({{site.s3.docs.signatureV4}} for unauthenticated requests.
+In certain cases, it might be more practical to allow anonymous (unauthenticated) requests to access the contents of S3 buckets, for example, if you want to let users access objects from the S3 bucket by using a web browser or if the number of users who need read access is very large. When you enable anonymous access to an S3 bucket, your users can perform read-only S3 operations without authenticating their requests.
 
 {% include important.html content="Anonymous requests can never perform modifying operations. Qumulo Core requires all modifying operations on an S3 bucket to be authenticated." %}
 
@@ -81,7 +81,7 @@ You can use inheritable ACEs to:
 
   To make all paths in an S3 bucket inherit the same set of ACEs, add the ACEs to the bucket's root directory and mark them as inheritable.
 
-* Configure default permissions for newly create buckets.
+* Configure default permissions for newly created buckets.
 
   To make a set of ACEs the default for buckets that your users create by using the S3 API, add the ACEs to the default bucket directory prefix.
 
@@ -90,14 +90,14 @@ To add ACEs to a directory, use the `qq` CLI or use the File Explorer on a Windo
 {% include note.html content="Adding inheritable ACEs to a directory doesn't affect any files that already exist in that directory. For more information, see [To Recursively Add a New ACL (with Multithreading)](https://care.qumulo.com/hc/en-us/articles/6351767625491#to-recursively-add-a-new-acl-with-multithreading--0-6) on Qumulo Core." %}
 
 ## Imitating Bucket-Level Permissions by Using the qq CLI
-The following sections show how to imitate bucket-level permissions by using the `qq` CLI.
+The following sections show how to imitate bucket-level permissions, to add inheritable ACEs, by using the `qq` CLI.
 
 ### Imitating Bucket-Level Read-Write Access
 Use the `qq fs_modify_acl` command. In the following example, we add the access control entry (ACE) to the bucket whose root directory is `/buckets/my-bucket` for the user group `MyWriters`.
 
 ```bash
 $ qq fs_modify_acl \
-  --path /buckets/my-bucket add_entry
+  --path /buckets/my-bucket add_entry \
   --trustee MyWriters \
   --type Allowed \
   --flags 'Container inherit' 'Object inherit' \
@@ -119,7 +119,7 @@ Use the `qq fs_modify_acl` command. In the following example, we add the access 
 
 ```bash
 $ qq fs_modify_acl 
-  --path /buckets/my-bucket add_entry 
+  --path /buckets/my-bucket add_entry \
   --trustee MyReaders \
   --type Allowed \
   --flags 'Container inherit' 'Object inherit' \
@@ -139,7 +139,7 @@ Use the `qq fs_modify_acl` command. In the following example, we add two access 
 
 ```bash
 $ qq fs_modify_acl 
-  --path /buckets/my-bucket add_entry
+  --path /buckets/my-bucket add_entry \
   --trustee MyListers \
   --type Allowed \
   --flags 'Container inherit' \
@@ -148,7 +148,7 @@ $ qq fs_modify_acl
 
 ```bash
 $ qq fs_modify_acl 
-  --path /buckets/my-bucket add_entry 
+  --path /buckets/my-bucket add_entry \
   --trustee MyListers \
   --type Allowed \
   --flags 'Object inherit' \
