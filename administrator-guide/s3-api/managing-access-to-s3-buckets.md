@@ -90,7 +90,7 @@ To add ACEs to a directory, use the `qq` CLI or use the File Explorer on a Windo
 {% include note.html content="Adding inheritable ACEs to a directory doesn't affect any files that already exist in that directory. For more information, see [To Recursively Add a New ACL (with Multithreading)](https://care.qumulo.com/hc/en-us/articles/6351767625491#to-recursively-add-a-new-acl-with-multithreading--0-6) on Qumulo Core." %}
 
 ## Imitating Bucket-Level Permissions by Using the qq CLI
-The following sections show how to imitate bucket-level permissions, to add inheritable ACEs, by using the `qq` CLI.
+The following sections show how to use the `qq` CLI to imitate bucket-level permissions by adding inheritable ACEs.
 
 ### Imitating Bucket-Level Read-Write Access
 Use the `qq fs_modify_acl` command. In the following example, we add the access control entry (ACE) to the bucket whose root directory is `/buckets/my-bucket` for the user group `MyWriters`.
