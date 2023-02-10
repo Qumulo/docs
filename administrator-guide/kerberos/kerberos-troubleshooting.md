@@ -33,7 +33,7 @@ Normally, there should be:
 
 Because a Kerberos mount requires the client to perform a series of steps, in most cases, the last traffic that the client issues indicates the source of failure. To view encrypted Kerberos traffic, use Wireshark with a Kerberos keytab file. For more information, see [Kerberos](https://wiki.wireshark.org/Kerberos.md) in the Wireshark documentation.
 
-For help with interpreting logging and metrics from your Qumulo cluster and for insights from the telemetry of our Kerberos implementation, contact [Qumulo Care](https://care.qumulo.com/hc/en-us/articles/115008409408).
+For help with interpreting logging and metrics from your Qumulo cluster and for insights from the telemetry of our Kerberos implementation, {{site.contactQumuloCare}}.
 
 
 ## Resolving Incorrect Display of Users or Groups

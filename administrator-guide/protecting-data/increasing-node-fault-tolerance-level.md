@@ -63,7 +63,7 @@ This scenario lets you choose one of the following strategies.
 {{page.varValidateNoReconfig}}
 
 #### Increase the Node-Fault-Tolerance Level
-1. To begin the node-add operation, contact <a href="https://care.qumulo.com/hc/en-us/articles/115008409408">Qumulo Care</a>.
+1. To begin the node-add operation, {{site.contactQumuloCare}}.
 
    {{page.varPostExpansion}}
 

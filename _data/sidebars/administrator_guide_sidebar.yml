@@ -18,7 +18,7 @@ entries:
     - title:
       url: /tocpage.html
       output: pdf
-      type: frontmatter
+      type: frontmatter   
 
   - title: Qumulo Administrator Guide
     output: web
@@ -31,6 +31,10 @@ entries:
 
     - title: Administrator Guide Home
       url: /administrator-guide/
+      output: web
+
+    - title: Contacting the Qumulo Care Team
+      url: /contacting-qumulo-care-team.html
       output: web
 
   - title: Getting Started with Qumulo Core

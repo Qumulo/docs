@@ -10,7 +10,7 @@ In Qumulo Core 6.0.0 (and higher), you can replace old nodes in your cluster wit
 
 {{site.data.alerts.important}}
 <ul>
-  <li>To perform this procedure, you must contact <a href="https://care.qumulo.com/hc/en-us/articles/115008409408">Qumulo Care</a>.</li>
+  <li>To perform this procedure, you must {{site.contactQumuloCare}}.</li>
   <li>Qumulo Core doesn't support replacing nodes in clusters with more than 100 nodes.</li>
 </ul>
 {{site.data.alerts.end}}

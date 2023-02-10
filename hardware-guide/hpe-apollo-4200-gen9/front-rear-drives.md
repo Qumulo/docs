@@ -23,7 +23,7 @@ keywords: front drive, rear drive, boot drive, drive, drive bay
 {% include image.html alt=alt_tag file="hpe-gen9-drives-rear.png" %}
 
 ## Boot Drive
-{% include important.html content="Before you remove the boot drive, contact the [Qumulo Care Team](https://care.qumulo.com/hc/en-us/articles/115008409408) for additional instructions." %}
+{% include content-reuse/platform-agnostic-boot-drive-additional-instructions.md %}
 
 The following diagram shows the boot drive in {{site.a4200g9}} 90T, 180T, and 288T nodes.
 

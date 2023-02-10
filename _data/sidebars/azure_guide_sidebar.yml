@@ -33,6 +33,11 @@ entries:
       url: /azure-guide/
       output: web
       type: subnavi
+      
+    - title: Contacting the Qumulo Care Team
+      url: /contacting-qumulo-care-team.html
+      output: web
+      type: subnavi
 
     - title: How the Azure Native Qumulo Scalable File Service Works
       url: /azure-guide/how-qumulo-scalable-file-service-works.html

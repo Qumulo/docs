@@ -136,6 +136,8 @@ plugins:
   - jekyll-redirect-from
 
 # Global include variables
+contactQumuloCare: <a href="https://docs.qumulo.com/contacting-qumulo-care-team.html">contact the Qumulo Care team</a>
+
 exampleIP0: 203.0.113.0
 exampleIP1: 203.0.113.1
 exampleIP2: 203.0.113.2
@@ -180,7 +182,7 @@ q1uhg2: Quiver 1UH Gen2
 consTrans: The consumer processes for email and ClickSend integrations translate messages into the recipient's native language.
 
 protectingData:
-  contactQumuloCare: We strongly recommend contacting <a href="https://care.qumulo.com/hc/en-us/articles/115008409408">Qumulo Care</a> before proceeding with cluster expansion.
+  contactQumuloCare: We strongly recommend contacting the <a href="/contacting-qumulo-care-team.html">Qumulo Care team</a> before proceeding with cluster expansion.
   followAddNodeInstructions: 1. Follow the instructions in <a href="https://care.qumulo.com/hc/en-us/articles/360001070307">Add a New Node to an Existing Qumulo Cluster</a> on Qumulo Care.
   checkCapacity: 1. Before you click **Yes** in the **Add &lt;N&gt; nodes to cluster &lt;MyCluster&gt;?** dialog box, check that the projected capacity matches the expected capacity.
   monitorProcess: 1. To monitor this process, click **Cluster > Overview**. On the **Cluster** page, in the protection status section, you can view the rebalance phase status and the estimated time to completion.

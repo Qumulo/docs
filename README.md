@@ -43,4 +43,4 @@ To get started, choose one of the following guides.
 For articles about advanced Qumulo platform and Qumulo Core functionality, visit [Qumulo Care](https://care.qumulo.com/hc/en-us). Qumulo Care also lets you review product release notes, watch videos from our content library, get involved in the Qumulo community.
 
 ## Reach Out to Us
-If you have any additional questions or want to give us feedback, [open a case](https://care.qumulo.com/hc/en-us/requests/new), send an email to [care@qumulo.com](mailto:care@qumulo.com), or ping us in your private **qumulocare** Slack channel.
+If you have any additional questions or want to give us feedback, [open a case](https://care.qumulo.com/hc/en-us/requests/new), or {{site.contactQumuloCare}} through Slack, email, or by phone.

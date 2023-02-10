@@ -28,3 +28,8 @@ entries:
     - title: Qumulo Alerts Administrator Guide
       url: /qumulo-alerts-guide/
       output: web
+      
+    - title: Contacting the Qumulo Care Team
+      url: /contacting-qumulo-care-team.html
+      type: norel      
+      output: web

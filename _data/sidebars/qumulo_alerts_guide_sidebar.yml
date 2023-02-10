@@ -33,6 +33,10 @@ entries:
       url: /qumulo-alerts-guide/
       output: web
 
+    - title: Contacting the Qumulo Care Team
+      url: /contacting-qumulo-care-team.html
+      output: web  
+
   - title: Getting Started with Qumulo Alerts
     url: /qumulo-alerts-guide/getting-started-qumulo-alerts/index.html
     output: pdf, web

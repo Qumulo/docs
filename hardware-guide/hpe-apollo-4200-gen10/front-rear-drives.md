@@ -23,7 +23,7 @@ keywords: front drive, rear drive, boot drive, drive, drive bay, HPE, Apollo 420
 {% include image.html alt=alt_tag file="hpe-gen10-drives-rear.png" %}
 
 ## Boot Drive
-{% include important.html content="Before you remove the boot drive, contact the [Qumulo Care Team](https://care.qumulo.com/hc/en-us/articles/115008409408) for additional instructions." %}
+{% include content-reuse/platform-agnostic-boot-drive-additional-instructions.md %}
 
 ### 36T and 90T Nodes
 In 36T and 90T nodes, the boot drive is located in the second LFF drive row.

@@ -6,7 +6,7 @@
       {% comment %}Ensure that there is, at minimum, one sibling in addition to the current page.{% endcomment %}
       {% if folderitem.type != 'norel' and folderitem.url == page.url and folder.folderitems.size > 1 %}
 <h2 id="related-topics" class="clickable-header top-level-header">Related Topics</h2>
-<ul>
+<ul id="related-topics-list">
         {% comment %}Check that we're in the right folder and start iterating.{% endcomment %}
         {% if folderitem.url == page.url %}
           {% for folderitem in folder.folderitems %}

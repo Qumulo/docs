@@ -52,7 +52,7 @@ If the FVT finds fixable issues, it prompts you to auto-correct any detected iss
 ### Non-Fixable Issues
 If the FVT is unable to auto-correct any issues, the message **Not fixable issues were detected.** appears, providing reasons for failure.
 
-For help with troubleshooting your node, contact [Qumulo Care](https://care.qumulo.com/hc/en-us/articles/115008409408).
+For help with troubleshooting your node, {{site.contactQumuloCare}}.
 
    
 ## Step 4: Create and Configure Your Cluster

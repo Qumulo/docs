@@ -33,6 +33,10 @@ entries:
       url: /hardware-guide/
       output: web
 
+    - title: Contacting the Qumulo Care Team
+      url: /contacting-qumulo-care-team.html
+      output: web   
+
   - title: General Guidance
     url: /hardware-guide/general-guidance/index.html
     output: web, pdf

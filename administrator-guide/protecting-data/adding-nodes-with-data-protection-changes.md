@@ -24,7 +24,7 @@ In Qumulo Core 5.3.4 (and higher), as you expand your cluster, it might become n
 The following sections describe two cluster expansion scenarios. Identify the scenario that applies to your cluster expansion plan.
 
 ### Adding Nodes with Data Protection Reconfiguration
-1. To begin the process, contact [Qumulo Care](https://care.qumulo.com/hc/en-us/articles/115008409408) to discuss your cluster expansion needs. In addition, Qumulo Care can advise you how to:
+1. To begin the process, {{site.contactQumuloCare}} to discuss your cluster expansion needs. In addition, Qumulo Care can advise you how to:
    
    * Reduce the impact of data protection reconfiguration on your primary workload by decreasing background resource consumption.
 

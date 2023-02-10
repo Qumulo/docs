@@ -26,4 +26,5 @@ For the second row, box 3 holds bays 1-8 and box 4 holds bays 1-2.
 
 ## Boot Drive
 The boot drive is in box 1, bay 1.
-{% include important.html content="Before you remove the boot drive, contact the [Qumulo Care Team](https://care.qumulo.com/hc/en-us/articles/115008409408) for additional instructions." %}
+
+{% include content-reuse/platform-agnostic-boot-drive-additional-instructions.md %}

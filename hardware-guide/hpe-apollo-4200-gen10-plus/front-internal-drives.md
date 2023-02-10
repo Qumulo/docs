@@ -53,7 +53,7 @@ The internal SFF drive row flips up behind the internal LFF drive row. Bays 1-4 
 
 
 ## Boot Drive
-{% include important.html content="Before you remove the boot drive, contact the [Qumulo Care Team](https://care.qumulo.com/hc/en-us/articles/115008409408) for additional instructions." %}
+{% include content-reuse/platform-agnostic-boot-drive-additional-instructions.md %}
 
 The boot drive is located inside the node at the indicated location. The drive is mounted onto a PCI Express slot and connected to the motherboard with a SATA cable.
 

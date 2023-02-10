@@ -22,9 +22,9 @@ This section lists the currenly known limitations for Qumulo Alerts.
 
   {% include important.html content="Qumulo Alerts can't function if neither IP addresses or NLBs are configured." %}
 
-* **Error Logging:** Qumulo Alerts generates a large number of error messages that can help you debug issues. However, currently, all logging remains within the Docker container and is therefore not accessible easily. For help with debugging issues, contact [Qumulo Care](https://care.qumulo.com/hc/en-us/articles/115008409408).
+* **Error Logging:** Qumulo Alerts generates a large number of error messages that can help you debug issues. However, currently, all logging remains within the Docker container and is therefore not accessible easily. For help with troubleshooting issues, {{site.contactQumuloCare}}.
 
-* **Connectivity to the Cluster:** If Qumulo Alerts loses connectivity to your Qumulo cluster for more than 10 minutes, you can start a new Qumulo Alerts session or contact [Qumulo Care](https://care.qumulo.com/hc/en-us/articles/115008409408) for help with debugging your running session. This scenario might occur when there is a VPN that requires re-authentication.
+* **Connectivity to the Cluster:** If Qumulo Alerts loses connectivity to your Qumulo cluster for more than 10 minutes, you can start a new Qumulo Alerts session or {{site.contactQumuloCare}} for help with debugging your running session. This scenario might occur when there is a VPN that requires re-authentication.
 
   {% include important.html content="When you terminate your Qumulo Alerts session and start a new one, all logging data from the session running in the Docker container is discarded." %}
 
