@@ -10,7 +10,6 @@ varContactQumuloCare: If you perform multiple upgrades back to back, you might e
 varRollingRebootRefresh: If you don’t see a rolling reboot option for a platform upgrade, refresh the page in your browser.
 ---
 
-
 {{site.data.alerts.important}}
 <ul>
   <li>{{page.varContactQumuloCare}}</li>
@@ -38,7 +37,7 @@ Because in Qumulo Core 3.3.2 (and higher), the Qumulo file and data protection s
 ### Platform Upgrade
 The infrequent, somewhat slower platform upgrade requires either a _complete reboot_ (rebooting all nodes in your cluster at the same time) or&mdash;in Qumulo Core 5.0.3 (and higher)&mdash;a _rolling reboot_ (rebooting the nodes in your cluster one at a time).
 
-In contrast with instant software upgrades, your nodes maintain the Linux operating system, and certain services that Qumulo Core relies on, through most upgrades because the underlying host changes less frequently than the container and the file and data protection systems.
+The reboot process differentiates platform upgrades from instant software upgrades, where your nodes maintain the Linux operating system (and certain services that Qumulo Core relies on) during the upgrade process and where the underlying host changes less frequently than the container and the file and data protection systems.
 
 {{site.data.alerts.important}}
 <ul>
