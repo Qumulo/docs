@@ -228,3 +228,16 @@ $ qq s3_delete_access_key \
 
 ### To Delete an S3 Access Key by Using the Qumulo REST API
 Send a `DELETE` request to the `/v1/s3/access-keys/<access-key-id>` Qumulo REST API endpoint and specify the access key ID.
+
+
+## Configuring Active Directory (AD) for S3
+If you create S3 access keys for users that exist in an AD domain that has a trust relationship with the joined domain, you must append that domain's base DN to the base DN in your Qumulo cluster's AD configuration.
+
+To append the trusted base DN to the base DN in use&mdash;with a semicolon (`;`) separating the two&mdash;use the Web UI or the `qq ad_reconfigure` command. For example:
+
+```bash
+$ qq ad_reconfigure \
+  --base-dn 'CN=Users,DC=joined_domain,DC=example,DC=com;CN=Users,DC=trusted_domain,DC=example,DC=com'
+```
+
+For more information, see [Configuring Cross-Domain Active Directory Trusts](../kerberos/kerberos-configuring-cross-domain-active-directory-trusts.html)
