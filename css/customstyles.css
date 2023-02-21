@@ -1565,3 +1565,7 @@ h4.panel-title {
         display:block !important;
     }
 }
+
+li.pdf-friendly {
+    margin-left:-15px !important;
+}
