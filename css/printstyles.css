@@ -223,7 +223,3 @@ a[href^="http://"]:after, a[href^="https://"]:after {
 table.pdf-reduce {
     font-size:12px;
 }
-
-li {
-    margin-left:-20px !important;
-}
