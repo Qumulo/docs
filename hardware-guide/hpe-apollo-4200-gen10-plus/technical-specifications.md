@@ -55,7 +55,7 @@ keywords: technical specifications, tech specs, specs, specifications, HPE, Apol
     <td style="text-align: center;">2 &times; 100 GbE</td>
     <td style="text-align: center;">2 &times; 25 GbE</td>
     <td style="text-align: center;">2 &times; 100 GbE</td>
-    <td colspan="2" style="text-align: center;">2 &times; 25 GbE</td>
+    <td colspan="2" style="text-align: center;">2 &times; 25 GbE<br>or 2 &times; 100 GbE</td>
   </tr>
   <tr>
     <td><strong>Management Ports</strong></td>
