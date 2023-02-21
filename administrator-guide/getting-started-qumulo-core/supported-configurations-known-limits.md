@@ -24,13 +24,13 @@ keywords: limit, limits, limitations, known limits, known limitations, config, c
         <ul>
           <li>FTP</li>
           <li>NFSv3</li>
-          <li>NFSv4.1</li>
+          <li><a href="../file-system-protocols/">NFSv4.1</a></li>
+          <li><a href="../s3-api/index.html">S3 API</a></li>
           <li>SMB 2.002</li>
           <li>SMB 2.1</li>
           <li>SMB 3.0</li>
           <li>SMB 3.1</li>
         </ul>
-        For more information, see <a href="../protocols/nfsv4.1-enabling-using.html">Enabling and Using NFSv4.1 on a Qumulo Cluster</a> and <a href="../protocols/nfsv4.1-acls.html">Managing File Access Permissions by Using NFSv4.1 Access Control Lists (ACLs)</a>.
       </td>
     </tr>
     <tr>
