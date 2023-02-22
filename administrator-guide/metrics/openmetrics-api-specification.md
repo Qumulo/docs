@@ -284,9 +284,9 @@ The following table lists metric names, types, labels, and descriptions.
       <td><a href="#metric-type-gauge"><code>gauge</code></a></td>
       <td>
         <ul>
-          <li class="pdf-friendly"><code>name</code></li>
-          <li class="pdf-friendly"><a href="#metric-label-role"><code>role</code></a></li>
+          <li class="pdf-friendly"><a href="#metric-label-bond"><code>bond</code></a></li>
           <li class="pdf-friendly"><a href="#metric-label-interface"><code>interface</code></a></li>
+          <li class="pdf-friendly"><a href="#metric-label-role"><code>role</code></a></li>
           <li class="pdf-friendly"><a href="#metric-label-node_id"><code>node_id</code></a></li>
         </ul>
       </td>
@@ -297,9 +297,9 @@ The following table lists metric names, types, labels, and descriptions.
       <td><a href="#metric-type-gauge"><code>gauge</code></a></td>
       <td>
         <ul>
-          <li class="pdf-friendly"><code>name</code></li>
-          <li class="pdf-friendly"><a href="#metric-label-role"><code>role</code></a></li>
+          <li class="pdf-friendly"><a href="#metric-label-bond"><code>bond</code></a></li>
           <li class="pdf-friendly"><a href="#metric-label-interface"><code>interface</code></a></li>
+          <li class="pdf-friendly"><a href="#metric-label-role"><code>role</code></a></li>
           <li class="pdf-friendly"><a href="#metric-label-node_id"><code>node_id</code></a></li>
         </ul>
       </td>
@@ -310,9 +310,9 @@ The following table lists metric names, types, labels, and descriptions.
       <td><a href="#metric-type-counter"><code>counter</code></a></td>
       <td>
         <ul>
-          <li class="pdf-friendly"><code>name</code></li>
+          <li class="pdf-friendly"><a href="#metric-label-bond"><code>bond</code></a></li>
+          <li class="pdf-friendly"><a href="#metric-label-interface"><code>interface</code></a></li>          
           <li class="pdf-friendly"><a href="#metric-label-role"><code>role</code></a></li>
-          <li class="pdf-friendly"><a href="#metric-label-interface"><code>interface</code></a></li>
           <li class="pdf-friendly"><a href="#metric-label-node_id"><code>node_id</code></a></li>
         </ul>
       </td>
@@ -323,9 +323,9 @@ The following table lists metric names, types, labels, and descriptions.
       <td><a href="#metric-type-counter"><code>counter</code></a></td>
       <td>
         <ul>
-          <li class="pdf-friendly"><code>name</code></li>
+          <li class="pdf-friendly"><a href="#metric-label-bond"><code>bond</code></a></li>
+          <li class="pdf-friendly"><a href="#metric-label-interface"><code>interface</code></a></li>          
           <li class="pdf-friendly"><a href="#metric-label-role"><code>role</code></a></li>
-          <li class="pdf-friendly"><a href="#metric-label-interface"><code>interface</code></a></li>
           <li class="pdf-friendly"><a href="#metric-label-node_id"><code>node_id</code></a></li>
         </ul>
       </td>
@@ -336,9 +336,9 @@ The following table lists metric names, types, labels, and descriptions.
       <td><a href="#metric-type-counter"><code>counter</code></a></td>
       <td>
         <ul>
-          <li class="pdf-friendly"><code>name</code></li>
+          <li class="pdf-friendly"><a href="#metric-label-bond"><code>bond</code></a></li>
+          <li class="pdf-friendly"><a href="#metric-label-interface"><code>interface</code></a></li>          
           <li class="pdf-friendly"><a href="#metric-label-role"><code>role</code></a></li>
-          <li class="pdf-friendly"><a href="#metric-label-interface"><code>interface</code></a></li>
           <li class="pdf-friendly"><a href="#metric-label-node_id"><code>node_id</code></a></li>
         </ul>
       </td>
@@ -349,9 +349,9 @@ The following table lists metric names, types, labels, and descriptions.
       <td><a href="#metric-type-counter"><code>counter</code></a></td>
       <td>
         <ul>
-          <li class="pdf-friendly"><code>name</code></li>
+          <li class="pdf-friendly"><a href="#metric-label-bond"><code>bond</code></a></li>
+          <li class="pdf-friendly"><a href="#metric-label-interface"><code>interface</code></a></li>          
           <li class="pdf-friendly"><a href="#metric-label-role"><code>role</code></a></li>
-          <li class="pdf-friendly"><a href="#metric-label-interface"><code>interface</code></a></li>
           <li class="pdf-friendly"><a href="#metric-label-node_id"><code>node_id</code></a></li>
         </ul>
       </td>
@@ -362,9 +362,9 @@ The following table lists metric names, types, labels, and descriptions.
       <td><a href="#metric-type-counter"><code>counter</code></a></td>
       <td>
         <ul>
-          <li class="pdf-friendly"><code>name</code></li>
+          <li class="pdf-friendly"><a href="#metric-label-bond"><code>bond</code></a></li>
+          <li class="pdf-friendly"><a href="#metric-label-interface"><code>interface</code></a></li>          
           <li class="pdf-friendly"><a href="#metric-label-role"><code>role</code></a></li>
-          <li class="pdf-friendly"><a href="#metric-label-interface"><code>interface</code></a></li>
           <li class="pdf-friendly"><a href="#metric-label-node_id"><code>node_id</code></a></li>
         </ul>
       </td>
@@ -375,9 +375,9 @@ The following table lists metric names, types, labels, and descriptions.
       <td><a href="#metric-type-counter"><code>counter</code></a></td>
       <td>
         <ul>
-          <li class="pdf-friendly"><code>name</code></li>
+          <li class="pdf-friendly"><a href="#metric-label-bond"><code>bond</code></a></li>
+          <li class="pdf-friendly"><a href="#metric-label-interface"><code>interface</code></a></li>          
           <li class="pdf-friendly"><a href="#metric-label-role"><code>role</code></a></li>
-          <li class="pdf-friendly"><a href="#metric-label-interface"><code>interface</code></a></li>
           <li class="pdf-friendly"><a href="#metric-label-node_id"><code>node_id</code></a></li>
         </ul>
       </td>
