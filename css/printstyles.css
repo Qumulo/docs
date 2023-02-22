@@ -126,7 +126,7 @@ a[href*="mailto"]::after, a[data-toggle="tooltip"]::after, a[href].noCrossRef::a
 }
 
 .copyrightBoilerplate {
-    page-break-before:always;
+    margin-top:-180px;
     font-size:14px;
 }
 
