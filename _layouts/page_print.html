@@ -16,12 +16,7 @@ comments: true
         {% endif %}
       {% endfor %}
     {% endfor %}
-  <!--
-    At this point, the following <h9> heading is set on purpose to an unreasonably
-    high heading level, so that I can perform substitution in the generated HTML,
-    before Prince XML builds it into a PDF file.
-    Note: This applies only to PDF content.
-  -->
+  {% comment %}At this point, the following <h9> heading is set on purpose to an unreasonably high heading level, so that I can perform substitution in the generated HTML, before Prince XML builds it into a PDF file. For more information, see line 16 in `default_print.html`. This applies only to PDF content.{% endcomment %}
   {% if page.permalink == "/tocpage.html/" %}<h1>{{ page.title }}</h1>{% elsif page.title %}<h9>{{ page.title }}</h9>{% endif %}
   <p>{{ page.summary }}</p>
 </div>
