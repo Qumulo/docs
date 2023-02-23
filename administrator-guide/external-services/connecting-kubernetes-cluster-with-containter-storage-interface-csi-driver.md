@@ -212,19 +212,19 @@ To link your Kubernetes cluster to your Qumulo cluster, you must create a storag
 
    f. Specify the NFS `mountOptions`. For example:
    
-      ```
-      mountOptions:
-        - nolock
-        - intr
-        - proto=tcp
-        - vers=3
-      ```
+   ```
+   mountOptions:
+     - nolock
+     - intr
+     - proto=tcp
+     - vers=3
+   ```
       
    g. To create the class, apply the configuration. For example:
    
-      ```bash
-      kubectl create -f storageclass-qumulo.yaml
-      ```
+   ```bash
+   kubectl create -f storageclass-qumulo.yaml
+   ```
       
 ### Step 6: Create a Persistent Volume Claim (PVC) and Apply it to a Pod
 To apply a PVC claim to a Pod dynamically, you must first configure and create it.
