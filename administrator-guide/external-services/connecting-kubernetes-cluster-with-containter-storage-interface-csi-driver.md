@@ -252,8 +252,7 @@ To apply a PVC claim to a Pod dynamically, you must first configure and create i
    
    b. Change `storeClassName` to the name of your claim.
    
-   c. Specify the capacity in `spec.resources.requests.storage`.
-      This parameter lets you create a quota on your Qumulo cluster.
+   c. Specify the capacity in `spec.resources.requests.storage`. This parameter lets you create a quota on your Qumulo cluster.
       
    d. To create the claim, apply the configuration. For example:
    
