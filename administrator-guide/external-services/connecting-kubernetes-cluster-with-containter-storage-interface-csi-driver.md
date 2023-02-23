@@ -76,7 +76,7 @@ This section explains how you can configure, provision, and mount Qumulo storage
    
    * **Windows:**
    
-     ```cmd
+     ```dos
      cd deploy_v1.1.0
      install-driver.bat
      ```
