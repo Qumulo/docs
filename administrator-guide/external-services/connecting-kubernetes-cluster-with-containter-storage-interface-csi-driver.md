@@ -254,13 +254,13 @@ To apply a PVC claim to a Pod dynamically, you must first configure and create i
    
    c. Specify the capacity in `spec.resources.requests.storage`.
 
-      This parameter lets you create a quota on your Qumulo cluster.
+        This parameter lets you create a quota on your Qumulo cluster.
       
    d. To create the claim, apply the configuration. For example:
    
-      ```bash
-      kubectl apply -f dynamic-pvc.yaml
-      ```
+   ```bash
+   kubectl apply -f dynamic-pvc.yaml
+   ```
 
 1. Use the claim in a Pod or a Deployment. For example:
 
