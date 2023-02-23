@@ -78,7 +78,7 @@ keywords: networking, port, ports, qumulo core
     <tr>
       <td>9000</td>
       <td>TCP</td>
-      <td>S3 API</td>
+      <td>S3 API, if you [enable the S3 API for your Qumulo cluster](../s3-api/configuring-using-s3-api.html)</td>
     </tr>
     <tr>
       <td>32768-60999</td>
