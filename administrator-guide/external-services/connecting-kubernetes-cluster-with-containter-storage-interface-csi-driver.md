@@ -96,7 +96,8 @@ To prepare your Qumulo cluster for connecting to your Kubernetes cluster, you mu
 
 1. When you configure your cluster for multitenancy and the cluster's default tenant doesn't manage the NFS export, the optional `tenantId` parameter directs the driver to use the provided tenant. For more information, see [Configure Multi-Tenancy with Qumulo](https://care.qumulo.com/hc/en-us/articles/360054089954) on Qumulo Care.
 
-   {% include note.html content="You must provide the value for `tenantId` as a string. For example: `&quot;2&quot;`." %}
+   {% capture tenantId %}You must provide the value for `tenantId` as a string. For example: `"2"`.{% endcapture %}
+   {% include note.html content=tenantId %}
    
 ### Step 3: Configure Credentials
 To connect your Kubernetes cluster to your Qumulo cluster, you must either use an existing account or create a new account for the CSI driver to communicate with the Qumulo API.
