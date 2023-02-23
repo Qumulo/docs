@@ -61,7 +61,7 @@ keywords: networking, port, ports, qumulo core
       <td>
         <p>NFS or MOUNT</p>
         <p>
-          {% include note.html content="Qumulo Core supports UDP for the MOUNT protocol for older clients. However, any NFS clients&emdash;that specify the TCP mount option or transfer data over NFS after mounting&emdash;don't use UDP." %}
+          {% include note.html content="Qumulo Core supports UDP for the MOUNT protocol for older clients. However, any NFS clients&mdash;that specify the TCP mount option or transfer data over NFS after mounting&mdash;don't use UDP." %}
         </p>
       </td>
     </tr>
@@ -74,6 +74,11 @@ keywords: networking, port, ports, qumulo core
       <td>8000</td>
       <td>TCP</td>
       <td>REST API</td>
+    </tr>
+    <tr>
+      <td>9000</td>
+      <td>TCP</td>
+      <td>S3 API</td>
     </tr>
     <tr>
       <td>32768-60999</td>
@@ -90,7 +95,7 @@ keywords: networking, port, ports, qumulo core
   <li>In the following table, uses marked with an asterisk (*) are default configurations. You can reconfigure these ports.</li>
   <li>For cluster formation and inter-node communication Qumulo Core requires the following:
     <ul>
-      <li><strong>Hardware Platforms:</strong> Unblocked IPv6 traffic in the local subnet&emdash;for more information, see <a href="https://care.qumulo.com/hc/en-us/articles/115009002827) on Qumulo Care">Configuring IPv6 in Qumulo Core</a>.</li>
+      <li><strong>Hardware Platforms:</strong> Unblocked IPv6 traffic in the local subnet&mdash;for more information, see <a href="https://care.qumulo.com/hc/en-us/articles/115009002827) on Qumulo Care">Configuring IPv6 in Qumulo Core</a>.</li>
       <li><strong>Cloud Platforms:</strong> Unblocked IPv4 traffic in the local subnet</li>
     </ul>
   </li>
