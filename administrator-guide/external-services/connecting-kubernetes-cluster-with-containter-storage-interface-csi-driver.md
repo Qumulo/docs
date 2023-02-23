@@ -86,7 +86,7 @@ This section explains how you can configure, provision, and mount Qumulo storage
 ### Step 2: Configure Volume and NFS Export Paths
 To prepare your Qumulo cluster for connecting to your Kubernetes cluster, you must first configure your volume and NFS export paths on your Qumulo cluster by setting the following parameters for each storage class that you define.
 
-{% include tip.html content="Note down the paths for the following YAML keys for the `storageclass-qumulo.yaml` file that you use when you [create a storage class](#step-5-create-storage-class)." %}
+{% include tip.html content="Note the paths for the following YAML keys for the `storageclass-qumulo.yaml` file that you use when you [create a storage class](#step-5-create-storage-class)." %}
 
 1. For `storeRealPath`, from the root of the Qumulo file system, create a directory for storing volumes on your Qumulo cluster, for example `/csi/volumes1`.
 
@@ -110,7 +110,11 @@ To connect your Kubernetes cluster to your Qumulo cluster, you must either use a
    
    * Create directories in `storeRealPath`
  
-   * Create and modify quotas: `PRIVILEGE_QUOTA_READ` and `PRIVILEGE_QUOTA_WRITE`
+   * Create and modify quotas:
+   
+     * `PRIVILEGE_QUOTA_READ`
+     
+     * `PRIVILEGE_QUOTA_WRITE`
      
    * Read NFS exports: `PRIVILEGE_NFS_EXPORT_READ`
    
