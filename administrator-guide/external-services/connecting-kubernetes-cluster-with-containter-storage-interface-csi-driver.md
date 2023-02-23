@@ -50,13 +50,13 @@ This section explains how you can configure, provision, and mount Qumulo storage
 
 1. [Download the `.zip` file](https://csi-driver-qumulo.s3.us-west-2.amazonaws.com/deploy_v1.1.0.zip) or use one of the following commands.
 
-   * **S3:**
+   * S3:
 
      ```bash
      aws s3 cp s3://csi-driver-qumulo/deploy_v1.1.0.zip ./
      ```
    
-   * **HTTP:**
+   * HTTP:
 
      ```bash
      wget https://csi-driver-qumulo.s3.us-west-2.amazonaws.com/deploy_v1.1.0.zip
@@ -66,7 +66,7 @@ This section explains how you can configure, provision, and mount Qumulo storage
 
 1. Run the shell script and specify the current release version. For example:
 
-   * **Linux:**
+   * Linux:
 
      ```bash
      cd deploy_v1.1.0
@@ -74,7 +74,7 @@ This section explains how you can configure, provision, and mount Qumulo storage
      ./install-driver.sh
      ```
    
-   * **Windows:**
+   * Windows:
    
      ```bat
      cd deploy_v1.1.0
@@ -128,7 +128,7 @@ To allow the CSI driver to operate with your Qumulo cluster, you must create and
 
 1. Configure one of the following authentication types.
 
-   * **Basic Authentication:**
+   * Basic Authentication:
 
      ```bash
      kubectl create secret generic cluster1-login \
@@ -138,7 +138,7 @@ To allow the CSI driver to operate with your Qumulo cluster, you must create and
        --namespace=kube-system
      ```
    
-   * **Access Token:**
+   * Access Token:
 
      ```bash
      TOKEN='access-v1:zNTc5D0zWTdNi/KsZo620fu71TweGh47u+S/5NbV...'
