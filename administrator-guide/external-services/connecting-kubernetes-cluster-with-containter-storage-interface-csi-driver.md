@@ -33,7 +33,7 @@ The Qumulo CSI Driver supports:
 ## Unsupported Features
 * [Volume cloning](https://kubernetes-csi.github.io/docs/volume-cloning.html)
 
-* [Volume snapshot and restore]("https://kubernetes-csi.github.io/docs/snapshot-restore-feature.html)
+* [Volume snapshot and restore](https://kubernetes-csi.github.io/docs/snapshot-restore-feature.html)
 
 
 ## Requirements
