@@ -95,7 +95,7 @@ keywords: networking, port, ports, qumulo core
   <li>In the following table, uses marked with an asterisk (*) are default configurations. You can reconfigure these ports.</li>
   <li>For cluster formation and inter-node communication Qumulo Core requires the following:
     <ul>
-      <li><strong>Hardware Platforms:</strong> Unblocked IPv6 traffic in the local subnet&mdash;for more information, see <a href="https://care.qumulo.com/hc/en-us/articles/115009002827) on Qumulo Care">Configuring IPv6 in Qumulo Core</a>.</li>
+      <li><strong>Hardware Platforms:</strong> Unblocked IPv6 traffic in the local subnet&mdash;for more information, see <a href="https://care.qumulo.com/hc/en-us/articles/115009002827">Configuring IPv6 in Qumulo Core</a> on Qumulo Care.</li>
       <li><strong>Cloud Platforms:</strong> Unblocked IPv4 traffic in the local subnet</li>
     </ul>
   </li>
