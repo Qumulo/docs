@@ -25,15 +25,15 @@ The Qumulo CSI Driver supports:
   * `ReadWriteOnce`
 
   * `ReadWriteOncePod`
- 
-{{site.data.alerts.important}}
-<p>Currently, the driver doesn't support the following features:</p>
-<ul>
-  <li><a href="https://kubernetes-csi.github.io/docs/volume-cloning.html">Volume cloning</a></li>
-  <li><a href="https://kubernetes-csi.github.io/docs/snapshot-restore-feature.html">Volume snapshot and restore</a></li>
-  <li>NFSv4.1</li>
-</ul>
-{{site.data.alerts.end}}
+
+* NFSv4.1
+
+  {% include important.html content="Even when you enable NFSv4.1 for your Qumulo cluster, you must explicitly [configure NFSv4.1 to work with Kerberos](../kerberos)." %}
+
+## Unsupported Features
+* [Volume cloning](https://kubernetes-csi.github.io/docs/volume-cloning.html)
+
+* [Volume snapshot and restore]("https://kubernetes-csi.github.io/docs/snapshot-restore-feature.html)
 
 
 ## Requirements
