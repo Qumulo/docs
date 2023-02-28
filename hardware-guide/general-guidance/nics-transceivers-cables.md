@@ -145,7 +145,7 @@ This section lists and explains the differences between the types of transceiver
 
 * **Multi-Fiber Push On (MPO):** The MPO connector with eight fibers is a common connector for 40 Gbps connections.
 
-* **PAM4:** Some newer switches can establish 100 Gbps connections by using double 50 Gbps PAM4 connections instead of the more common four 25 Gbps connections. For information about configuring Pulse Amplitude Modulation 4-level (PAM4), see [Auto-Negotiation on Ethernet NIC Controllers](https://techdocs.broadcom.com/us/en/storage-and-ethernet-connectivity/ethernet-nic-controllers/bcm957xxx/1-0/Configuration-adapter/auto-negotiation-configuration.html) in the Broadcom documentation.
+* **PAM4:** Some newer switches can establish 100 Gbps connections by using double 50 Gbps PAM4 connections instead of the more common four 25 Gbps connections. For information about configuring Pulse Amplitude Modulation 4-level (PAM4), see [Auto-Negotiation on Ethernet NIC Controllers](https://techdocs.broadcom.com/us/en/storage-and-ethernet-connectivity/ethernet-nic-controllers/bcm957xxx/adapters/Configuration-adapter/auto-negotiation-configuration.html) in the Broadcom documentation.
 
 * **SR4:** The SR4, with four QSFP28 connections over an eight-fiber cable, is the most common and cost-efficient standard for 100 Gbps connections. The maximum range for SR4 is 100 m.
 
