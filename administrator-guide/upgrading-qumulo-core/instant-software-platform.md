@@ -22,7 +22,7 @@ varRollingRebootRefresh: If you don’t see a rolling reboot option for a platfo
 For information about which upgrade modes different Qumulo Core releases use, see [Qumulo Core Upgrade Mode Reference](mode-reference.md).
 
 ### Instant Software Upgrade
-The more common, faster instant software upgrade requires restarting only the container on your nodes and has a downtime of less than 30 seconds.
+The more common, faster instant software upgrade requires restarting only the container on your nodes and has a downtime of less than 30 seconds without disruption to the operation of the cluster.
 
 Because in Qumulo Core 3.3.2 (and higher), the Qumulo file and data protection systems are separate from the host in charge of running the operating system and the services specific to each hardware or cloud platform, and because these services run in a lightweight container (by using Ubuntu-native [systemd-nspawn](https://www.freedesktop.org/software/systemd/man/systemd-nspawn.html) containerization) in the user space, it is possible to move quickly from one version of Qumulo Core to another by loading a new container and pointing the runtime environment at updated software.
   
@@ -35,7 +35,7 @@ Because in Qumulo Core 3.3.2 (and higher), the Qumulo file and data protection s
 {{site.data.alerts.end}}
 
 ### Platform Upgrade
-The infrequent, somewhat slower platform upgrade requires either a _complete reboot_ (rebooting all nodes in your cluster at the same time) or&mdash;in Qumulo Core 5.0.3 (and higher)&mdash;a _rolling reboot_ (rebooting the nodes in your cluster one at a time).
+The infrequent, somewhat slower platform upgrade requires either a _complete reboot_ (rebooting all nodes in your cluster at the same time with SMB and NFS client interruption) or&mdash;in Qumulo Core 5.0.3 (and higher)&mdash;a _rolling reboot_ (rebooting the nodes in your cluster one at a time with impact only to SMB clients).
 
 The reboot process differentiates platform upgrades from instant software upgrades, where your nodes maintain the Linux operating system (and certain services that Qumulo Core relies on) during the upgrade process and where the underlying host changes less frequently than the container and the file and data protection systems.
 
