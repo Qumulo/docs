@@ -6,7 +6,7 @@ redirect_from:
   - /administrator-guide/upgrades/instant-software-platform.html
 sidebar: administrator_guide_sidebar
 keywords: update, upgrade, instant, instant software upgrade, platform, platform upgrade
-varContactQumuloCare: If you perform multiple upgrades back to back, you might encounter one or more platform upgrades in one of the incremental releases; you must install these upgrades before you continue. Before performing back to back upgrades, {{site.contactQumuloCare}} for guidance.
+varContactQumuloCare: If you perform multiple upgrades back to back, you might encounter one or more platform upgrades in one of the incremental releases; you must install these upgrades before you continue. Before performing back to back upgrades, <a href="https://docs.qumulo.com/contacting-qumulo-care-team.html">contact the Qumulo Care team</a> for guidance.
 varRollingRebootRefresh: If you don’t see a rolling reboot option for a platform upgrade, refresh the page in your browser.
 ---
 
