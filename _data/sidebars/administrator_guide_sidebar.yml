@@ -192,23 +192,23 @@ entries:
     output: web, pdf
     folderitems:
 
-    - title: Configuring and Using the S3 API in Qumulo Core
+    - title: Configuring and Using the S3 API
       url: /administrator-guide/s3-api/configuring-using-s3-api.html
       output: web, pdf
 
-    - title: Creating and Managing S3 Access Keys in Qumulo Core
+    - title: Creating and Managing S3 Access Keys
       url: /administrator-guide/s3-api/creating-managing-s3-access-keys.html
       output: web, pdf
 
-    - title: Creating and Managing S3 Buckets in Qumulo Core
+    - title: Creating and Managing S3 Buckets
       url: /administrator-guide/s3-api/creating-managing-s3-buckets.html
       output: web, pdf
 
-    - title: Managing Access to S3 Buckets in a Qumulo Cluster
+    - title: Managing Access to S3 Buckets
       url: /administrator-guide/s3-api/managing-access-to-s3-buckets.html
       output: web, pdf
 
-    - title: Supported Functionality and Known Limits for S3 in Qumulo Core
+    - title: Supported Functionality and Known Limits for S3
       url: /administrator-guide/s3-api/supported-s3-functionality-known-limits.html
       output: web, pdf
 

@@ -21,6 +21,7 @@ entries:
       type: frontmatter
 
   - title: Azure Native Qumulo Scalable File Service Guide
+    url: /azure-guide/index.html
     output: web, pdf
     folderitems:
 
@@ -30,7 +31,7 @@ entries:
       type: subnavi
 
     - title: Azure Native Qumulo Scalable File Service Guide Home
-      url: /azure-guide/
+      url: /azure-guide/index.html
       output: web
       type: subnavi
       
@@ -43,10 +44,10 @@ entries:
       url: /azure-guide/how-qumulo-scalable-file-service-works.html
       output: web, pdf
 
-    - title: Configuring Virtual Networking for the Azure Native Qumulo Scalable File Service
+    - title: Configuring Virtual Networking
       url: /azure-guide/configuring-virtual-networking-qumulo-scalable-file-service.html
       output: web, pdf
 
-    - title: Getting Started with the Azure Native Qumulo Scalable File Service
+    - title: Getting Started
       url: /azure-guide/getting-started-qumulo-scalable-file-service.html
       output: web, pdf

@@ -13,16 +13,18 @@ layout: default
     {% endunless %}
 
     {{content}}
-
+   
+    {% comment %}If URLs in sidebar include index.html, but page metadata does not, add index.html.{% endcomment %}
+    {% capture indexURL %}{{ page.url }}index.html{% endcapture %}
 
     <strong>Table of Contents</strong>
     {% for entry in site.data.sidebars[page.sidebar].entries[0].folders %}
-      {% if entry.title == page.title %}
+      {% if entry.url == page.url or entry.url == indexURL %}
         <ul>
           {% for item in entry.folderitems %}
-            {% if item.type == subnavi %}
-              <li><a href="{{ item.url }}">{{ item.title }}</a></li>
-            {% endif %}
+          {% if item.type == subnavi %}
+          <li><a href="{{ item.url }}">{{ item.title }}</a></li>
+          {% endif %}
           {% endfor %}    
         </ul>             
       {% endif %}         
