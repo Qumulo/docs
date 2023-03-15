@@ -237,7 +237,7 @@ entries:
       url: /administrator-guide/kerberos/kerberos-additional-cluster-configuration.html
       output: web, pdf
 
-    - title: Using Kerberos Permissions in the Qumulo Filesystem
+    - title: Using Kerberos Permissions in the Qumulo File System
       url: /administrator-guide/kerberos/kerberos-qumulo-permissions.html
       output: web, pdf
 

@@ -261,7 +261,7 @@ In environments where Linux systems map exactly to end users that have `kinit`-b
 
 
 ### To Authenticate as an AD User Manually by Using autofs and Mount Your Qumulo Cluster
-[autofs](https://man7.org/linux/man-pages/man5/autofs.5.html) is a d&aelig;mon that manages mount points for individual Linux users. For this reason, Linux users have different views of a mount point. `autofs` can authenticate an AD user through `ssh`, the Linux filesystem, or a Qumulo cluster mounted on a Linux system.
+[autofs](https://man7.org/linux/man-pages/man5/autofs.5.html) is a d&aelig;mon that manages mount points for individual Linux users. For this reason, Linux users have different views of a mount point. `autofs` can authenticate an AD user through `ssh`, the Linux file system, or a Qumulo cluster mounted on a Linux system.
 
 {% include important.html content="When you use `autofs`, the Linux system maps the root user to the machine account user for the Linux system on the Qumulo cluster. However, the machine account user doesn't have all the privileges of the root user, such as special permissions for the Qumulo cluster. You must specify all permissions in ACLs." %}
 
