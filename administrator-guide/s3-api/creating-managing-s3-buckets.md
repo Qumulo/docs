@@ -150,25 +150,36 @@ By default, the default bucket directory prefix for newly created buckets is the
 ### Creating an S3 Bucket by Using the qq CLI
 To create an S3 bucket {{site.s3.permissions.APIorCLI}}, you need {{site.s3.permissions.bucketsWrite}}.
 
+{% include important.html content="In Qumulo Core 6.0.1 (and higher), the `qq` CLI command changed from `s3_create_bucket` to `s3_add_bucket` and the flag for specifying the directory path has changed from `--path` to `--fs-path`." %}
+
 When you use the `qq` CLI to create a bucket, you can use a new or existing directory as the bucket root.
 
 {% include note.html content="If an entry with the specified name or directory already exists, or if you don't have permission to create a directory, the command returns an error. For more information, see [Configuring the Default Bucket Directory Prefix for S3 Buckets](#default-directory-prefix)." %}
 
-* To create a new, empty bucket from the {{page.varDefaultPrefix}}, use the `qq s3_create_bucket` command and specify the bucket name. For example:
+* To create a new, empty bucket from the {{page.varDefaultPrefix}}, use the `qq s3_add_bucket` command and specify the bucket name. For example:
 
   ```bash
-  $ qq s3_create_bucket \
+  $ qq s3_add_bucket \
     --name my-bucket
   ```
 
   Qumulo Core creates a new directory named `my-bucket` under the default bucket directory prefix.
 
-* To create a bucket from an existing directory, use the `qq s3_create_bucket` command and specify the bucket name and the directory path. For example:
+* To create a bucket from an existing directory, use the `qq s3_add_bucket` command and specify the bucket name and the directory path. For example:
 
   ```bash
-  $ qq s3_create_bucket \
+  $ qq s3_add_bucket \
     --name my-bucket \
-    --path /products/web/appliances/
+    --fs-path /products/web/appliances/
+  ```
+  
+* To create a bucket for a path that doesn’t exist yet, specify the name and path and add the `--create-fs-path` flag. For example:
+
+  ```bash
+  $ qq s3_add_bucket \
+    --name my-bucket \
+    --fs-path /products/web/appliances/ \
+    --create-fs-path
   ```
 
 ### Creating an S3 Bucket by Using the S3 API

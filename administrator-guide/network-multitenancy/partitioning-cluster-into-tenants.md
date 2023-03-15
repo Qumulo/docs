@@ -5,6 +5,7 @@ permalink: /administrator-guide/network-multitenancy/partitioning-cluster-into-t
 keywords: network, tenant, multitenancy, vlan
 sidebar: administrator_guide_sidebar
 varTenantCreateResult: It enables all management protocols for the tenant. The tenant also retains the same file system protocol configuration as when multitenancy was disabled.
+varUnassignNetwork: After you unassign a network from a tenant, you can assign it to another tenant.
 ---
 
 In Qumulo Core 5.3.4 (and higher), _network multitenancy_ lets you partition a single physical Qumulo cluster into multiple virtual _tenants._ You can define a tenant by using a name and one or more networks. When you assign a network to a tenant, Qumulo Core treats any client that connects from that network as part of that tenant. For more information, see [Connect to Multiple Networks in Qumulo Core](https://care.qumulo.com/hc/en-us/articles/115007237948) on Qumulo Care.
@@ -17,8 +18,9 @@ For each tenant, you can specify individual [management protocol access and conf
 ## Prerequisites
 To manage network multitenancy and tenants, your user must have membership in a Qumulo role with the following privileges.
 
+* `PRIVILEGE_NETWORK_READ`: Viewing networks
+* `PRIVILEGE_NETWORK_WRITE`: Assigning networks to tenants
 * `PRIVILEGE_TENANT_READ`: Viewing tenants
-
 * `PRIVILEGE_TENANT_WRITE`: Enabling network multitenancy and creating, modifying, and deleting tenants
 
 
@@ -59,8 +61,8 @@ To disable network multitenancy for your cluster, use the `qq multitenancy disab
 * Retains global settings and deletes tenant-specific settings
 
 
-## Creating, Configuring, and Deleting Tenants
-This section explains the lifecycle of working with tenants, including creating tenants, assigning networks to new and existing tenants, viewing tenant configuration, and deleting tenants.
+## Creating, Configuring, and Unassigning Tenants by Using the qq CLI.
+This section explains the lifecycle of working with tenants, including creating tenants, assigning networks to new and existing tenants, viewing tenant configuration, and unassigning tenants.
 
 ### Step 1: Create a New Tenant
 After you enable multitenancy for your cluster, you can create a new tenant.
@@ -78,11 +80,11 @@ Your cluster creates a new tenant with no networks assigned to it. By default, Q
 ### Step 2: Assign Networks to a Tenant
 To allow a tenant to apply its configuration to clients that connect to the cluster from specific networks, you must associate the tenant with one or more networks. To do this, you can:
 
-1. Create a new tenant with networks assigned to it.
+* Create a new tenant with networks assigned to it.
 
-1. Assign networks to, and unassign networks from, an existing tenant.
+* Assign networks to, and unassign networks from, an existing tenant.
 
-1. Move networks between tenants.
+* Move networks between tenants.
 
 #### Creating a New Tenant with Assigned Networks
 Use the `qq multitenancy_create_tenant` and specify the tenant name and network ID.
@@ -97,26 +99,50 @@ $ qq multitenancy_create_tenant \
   --network-id 2
 ```
 
-#### Assigning Networks to an Existing Tenant
-Use the `qq multitenancy_modify_tenant` and specify the tenant and network ID.
+#### Assigning a Single Network to an Existing Tenant
+To assign a single network to a tenant, modify _the tenant that belongs to the network._ Use the `qq network_mod_network` command and specify the network and tenant ID.
 
-{% include important.html content="Any existing networks not specified after the `--network-id` flag become unsassigned." %}
+```bash
+$ qq network_mod_network \
+  --network-id 3 \
+  --tenant-id 2
+```
 
-In the following example, we specify two networks.
+#### Assigning Multiple Networks to an Existing Tenant
+To assign multiple networks to a tenant, modify _the networks that belong to the tenant._  Use the `qq multitenancy_modify_tenant` command and specify the tenant and network ID.
+  
+{% include important.html content="Any existing networks not specified after the `--network-id` flag become unassigned." %}
+  
+In the following example, we specify three networks.
 
 ```bash
 $ qq multitenancy_modify_tenant \
   --id 2 \
-  --network-id 2 3
+  --network-id 2 3 4
 ```
 
-#### Unassigning Networks from a Tenant
-Use the `qq multitenancy_modify_tenant` command and specify the tenant and network ID, but don't specify any arguments for the network ID.
+#### Unassigning a Single Network from a Tenant
+To unassign a single network from a tenant, clear _the tenant that belongs to the network_. Use the `qq network_mod_network` command and specify the network and the `--clear-tenant-id` flag.
 
-{% include note.html content="After you unassign a network from a tenant, you can assign it to another tenant." %}
+{% capture unassignNetwork %}{{page.varUnassignNetwork}}{% endcapture %}
+{% include note.html content=unassignNetwork %}
 
-In the following example, we unassign all networks from the tenant.
+```bash
+$ qq network_mod_network \
+  --network-id 3 \
+  --clear-tenant-id
+```
 
+#### Unassigning All Networks from a Tenant
+To unassign all networks from a tenant, clear _the networks that belong to the tenant_. Use the `qq multitenancy_modify_tenant` command and specify the tenant and network ID.
+
+{{site.data.alerts.note}}
+<ul>
+  <li>{{page.varUnassignNetwork}}</li>
+  <li>Don't specify any arguments for the <code>--network-id</code> flag.</li>
+</ul>
+{{site.data.alerts.end}}
+  
 ```bash
 $ qq multitenancy_modify_tenant \
   --id 2 \
@@ -124,21 +150,39 @@ $ qq multitenancy_modify_tenant \
 ```
 
 #### Moving Networks between Tenants
-Use the `qq multitenancy_reassign_network` command and specify the source and target tenants.
+Use the `qq network_mod_network` command and specify the network and target tenant.
 
 ```bash
-$ qq multitenancy_reassign_network \
-  --source-tenant-id 1 \
-  --target-tenant-id 2 \
-  --network-id 2
+$ qq network_mod_network \
+  --network-id 2 \
+  --tenant-id 1
 ```
 
 ### Step 3: View Tenant Information
 To determine a tenant's network assignments and enabled management and file system protocols, you can view the tenant information.
 
-* To view tenant information by using the Web UI, log in to Qumulo Core and then click **Cluster > Network Multitenancy**.
+#### Viewing Information for a Single Tenant
+To view the information for a single tenant, use the `qq multitenancy_get_tenants` command.
 
-* To view tenant information by using the `qq` CLI, use the `qq multitenancy_list_tenants` command.
+```bash
+$ qq multitenancy_get_tenant \
+  --id 1
+```
+
+#### Viewing Information for All Tenants
+* In the Web UI, log in to Qumulo Core and then click **Cluster > Network Multitenancy**.
+
+* In the `qq` CLI, use the `multitenancy_list_tenants` command.
+
+#### Determining the Tenant Assignment for Networks
+* To view the information for a single network, use the `qq network_get_network` command.
+
+  ```bash
+  $ qq network_get_network \
+    --network-id 2
+  ```
+ 
+* To view the information for all networks, use the `qq network_list_networks` command.
 
 ### Step 4: Delete a Tenant
 {{site.data.alerts.important}}
@@ -148,13 +192,12 @@ To determine a tenant's network assignments and enabled management and file syst
 </ul>
 {{site.data.alerts.end}}
 
-To delete a tenant, use the `qq multitenancy_delete_tenant` command amd specify the tenant ID.
+To delete a tenant, use the `qq multitenancy_delete_tenant` command and specify the tenant ID.
 
 ```bash
 $ qq multitenancy_delete_tenant \
   --id 2
 ```
-
 
 ## Known Network Multitenancy Limitations in Qumulo Core
 Currently, Qumulo Core doesn't support:

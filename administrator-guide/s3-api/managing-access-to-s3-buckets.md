@@ -3,12 +3,12 @@ title: "Managing Access to S3 Buckets in a Qumulo Cluster"
 summary: "This section explains how to manage access to S3 buckets in a Qumulo cluster."
 permalink: /administrator-guide/s3-api/managing-access-to-s3-buckets.html
 sidebar: administrator_guide_sidebar
-keywords: s3, bucket, permissions, access control entry, ace, access control list, acl, anonymous, read-only, read only, access, inherit, inheritable ace
+keywords: s3, bucket, permissions, access control entry, ace, access control list, acl, anonymous, read-only, read only, access, inherit, inheritable ace, presign, presigned url, pre-sign, pre-signed url
 ---
 
 Managing user access to S3 buckets in a Qumulo cluster is very similar to managing access to SMB shares and NFS exports, with the following exceptions:
 
-* To let a user access S3 buckets in the cluster, you must [assign an S3 access key](creating-managing-s3-access-keys.html) to the user. Alternatively, you can enable [read-only, anonymous access](#enabling-anonymous-access-for-an-s3-bucket) for the S3 bucket.
+* To let a user access S3 buckets in the cluster, you must [assign an S3 access key](creating-managing-s3-access-keys.html) to the user. Alternatively, you can create [presigned URLs](#presigned-urls) or enable [read-only, anonymous access](#enabling-anonymous-access-for-an-s3-bucket) for the entire S3 bucket.
 
 * Because Amazon S3 provides access to an entire S3 bucket but Qumulo Core provides access to individual files and directories, a bucket might behave differently from user expectations.
 
@@ -21,6 +21,44 @@ To process an S3 API request, Qumulo Core performs one or more file system opera
 For authenticated requests signed with [Amazon Signature Version 4]({{site.s3.docs.signatureV4}}), Qumulo Core maps the [access key ID](creating-managing-s3-access-keys.html#access-key-id) in the request to its corresponding [auth ID](creating-managing-s3-access-keys.html#auth-id), and then processes the request as that user. Qumulo Core processes unsigned, anonymous requests as the `Guest` user.
 
 While Qumulo Core processes an S3 request, the ownership of any newly created files and directories belongs to the user that makes the request. These files and directories inherit access control entries (ACEs) from their parents (this process is the same for all protocols).
+
+
+<a id="presigned-urls"></a>
+## Granting Access to S3 Buckets by Using Presigned URLs
+To let trusted users perform S3 API actions&mdash;such as `GetObject` or `UploadPart`&mdash;as if using your user account, you can generate a _presigned URL_ (also known as _query parameter authentication_), associate the URL with specific API actions, and then share it with trusted users. Every presigned URLs has a configurable expiration time that ensures that the URL stops working at the configured time.
+
+For more information, see [Authenticating Requests: Using Query Parameters (AWS Signature Version 4)](https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html) in the Amazon Simple Storage Service API Reference.
+
+{{site.data.alerts.note}}
+<p>Qumulo Core accepts only presigned requests that use the <code>PUT</code>, <code>GET</code>, <code>HEAD</code>, and <code>DELETE</code> HTTP methods. Qumulo Core rejects presigned requests for <code>POST</code> requests, such as the following:</p>
+<ul>
+  <li><code>AbortMultipartUpload</code></li>
+  <li><code>CompleteMultipartUpload</code></li>
+  <li><code>CreateMultipartUpload</code></li>
+  <li><code>DeleteObjects</code></li>
+</ul>
+{{site.data.alerts.end}}
+
+To create a presigned URL, use the AWS CLI [`presign`](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/s3/presign.html) command. In the following example, the presigned URL expires in 10 minutes (600 seconds).
+
+  ```bash
+  $ aws2 s3 presign s3://my-bucket/my-file.txt \
+    --endpoint-url https://{{site.exampleIP0}}:9000 \
+    --profile my-qumulo-profile \
+    --expires-in 600
+  ```
+
+The following is example output from the command, with line breaks inserted for readability. The `X-Amz-Expires` header is set to 10 minutes.
+
+  ```
+  https://{{site.exampleIP0}}:9000/my-bucket/my-file.txt?
+  X-Amz-Algorithm=AWS4-HMAC-SHA256
+  &X-Amz-Credential=00000000000003e88527%2F20230217%2Fus-east-1%2Fs3%2Faws4_request
+  &X-Amz-Date=20230217T205559Z
+  &X-Amz-Expires=600
+  &X-Amz-SignedHeaders=host
+  &X-Amz-Signature=141fa5b10caaa8575ba9c065d2270a24ce14b2ff58bb2c2e98382c76297b21ee
+  ```
 
 
 <a id="anonymous-access"></a>
@@ -60,7 +98,7 @@ To ensure that anonymous requests have permission to read files in a bucket, gra
    ```
 
 1. Anonymous access to S3 buckets is disabled by default. To enable anonymous access, use the `qq s3_modify_bucket` command, specify the bucket name, and use the `--enable-anonymous-access` flag.
-   
+
 1. To disable anonymous access, use the `qq s3_modify_bucket` command, specify the bucket name, and use the `--disable-anonymous-access` flag.
 
 
@@ -68,7 +106,7 @@ To ensure that anonymous requests have permission to read files in a bucket, gra
 ## Using Inheritable ACEs to Imitate Bucket-Level Permissions
 To grant multiple users access to all paths in a bucket and ensure that newly created directories inherit the correct permissions, use inheritable access control entries (ACEs).
 
-In Amazon S3, permission to read objects from&mdash;and write objects to&mdash;an S3 bucket applies to the entire bucket. In Qumulo Core, each [object key](creating-managing-s3-buckets.html#object-keys) corresponds to a file path relative to a bucket's root directory. Qumulo Core grants permissions for individual files and directories.
+In Amazon S3, permission to read objects from &mdash;and write objects to&mdash; an S3 bucket applies to the entire bucket. In Qumulo Core, each [object key](creating-managing-s3-buckets.html#object-keys) corresponds to a file path relative to a bucket's root directory. Qumulo Core grants permissions for individual files and directories.
 
 When users create objects in an S3 bucket in a Qumulo cluster, they might also create new directories. The user that creates these directories owns them. However, without the correct access control entries (ACEs) in your bucket, these directories might have restrictive permissions that prevent other users from creating objects with the same prefix.
 
@@ -118,7 +156,7 @@ Allowed  Object inherit, Container inherit  Delete child, Execute/Traverse, Read
 Use the `qq fs_modify_acl` command. In the following example, we add the access control entry (ACE) to the bucket whose root directory is `/buckets/my-bucket` for the user group `MyReaders`:
 
 ```bash
-$ qq fs_modify_acl 
+$ qq fs_modify_acl
   --path /buckets/my-bucket add_entry \
   --trustee MyReaders \
   --type Allowed \
@@ -138,7 +176,7 @@ Allowed  Object inherit, Container inherit  Execute/Traverse, Read
 Use the `qq fs_modify_acl` command. In the following example, we add two access control entries (ACEs) to the bucket whose root directory is `/buckets/my-bucket` for the user group `MyListers`.
 
 ```bash
-$ qq fs_modify_acl 
+$ qq fs_modify_acl
   --path /buckets/my-bucket add_entry \
   --trustee MyListers \
   --type Allowed \
@@ -147,7 +185,7 @@ $ qq fs_modify_acl
 ```
 
 ```bash
-$ qq fs_modify_acl 
+$ qq fs_modify_acl
   --path /buckets/my-bucket add_entry \
   --trustee MyListers \
   --type Allowed \

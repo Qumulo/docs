@@ -200,6 +200,7 @@ s3:
     actions: https://docs.aws.amazon.com/AmazonS3/latest/API/API_Operations.html
     bucketNamingRules: https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html
     cli: https://aws.amazon.com/cli
+    multipartUpload: https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html
     pathStyleAddressing: https://docs.aws.amazon.com/AmazonS3/latest/userguide/VirtualHosting.html#path-style-access
     s3: https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html
     signatureV4: https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html

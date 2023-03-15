@@ -208,6 +208,10 @@ entries:
       url: /administrator-guide/s3-api/managing-access-to-s3-buckets.html
       output: web, pdf
 
+    - title: Managing Multipart S3 Uploads
+      url: /administrator-guide/s3-api/managing-multipart-uploads.html
+      output: web, pdf
+
     - title: Supported Functionality and Known Limits for S3
       url: /administrator-guide/s3-api/supported-s3-functionality-known-limits.html
       output: web, pdf

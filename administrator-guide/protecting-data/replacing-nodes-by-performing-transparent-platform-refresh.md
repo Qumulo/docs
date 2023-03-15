@@ -6,7 +6,7 @@ sidebar: administrator_guide_sidebar
 keywords: cluster, expand, expansion, remove, dispose, get rid of, retirement, end of life, EOL, migrate, migration, license, class, transparent, platform, refresh
 ---
 
-In Qumulo Core 6.0.0.1 (and higher), you can replace old nodes in your cluster with new nodes to remove nodes that have reached their retirement or end of life or to take advantage of newer hardware.
+In Qumulo Core 6.0.0.2 (and higher), you can replace old nodes in your cluster with new nodes to remove nodes that have reached their retirement or end of life or to take advantage of newer hardware.
 
 {{site.data.alerts.important}}
 <ul>
@@ -33,7 +33,7 @@ For information about expanding your cluster, see [Adding Nodes to a Qumulo Clus
 
 
 ## Migrating a Cluster to a Different License Class
-In Qumulo Core 6.0.0.1 (and higher), you can migrate your entire cluster to a different license class to accommodate your performance needs. For example, you can migrate your Qumulo cluster from hybrid to all-NVMe nodes.
+In Qumulo Core 6.0.0.2 (and higher), you can migrate your entire cluster to a different license class to accommodate your performance needs. For example, you can migrate your Qumulo cluster from hybrid to all-NVMe nodes.
 
 {% include important.html content="Because it isn't possible to have nodes with differenct license classes in the same cluster, you must migrate all nodes in your cluster to the same license class." %}
 
