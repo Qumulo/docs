@@ -11,14 +11,6 @@ Qumulo Core can watch for changes in file attributes and directory entries with 
 
 Commonly, these requests help limit the amount of traffic required to keep a current cache of entries for an open directory. The requests also help operating system applications such as Windows Explorer and macOS Finder update automatically when changes take place. It is also possible to make requests programmatically. For more information about language bindings, see the Windows Protocol documentation, such as [ReadDirectoryChangesW function (winbase.h)](https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-readdirectorychangesw) for Win32 and [FileSystemWatcher Class](https://learn.microsoft.com/en-us/dotnet/api/system.io.filesystemwatcher?view=net-7.0) for .NET.
 
-{{site.data.alerts.note}}
-<ul>
-  <li>Certain events, such as <code>rename</code> and <code>delete</code> trigger multiple <code>NOTIFY_CHANGE</code> events.</li>
-  <li>For certain events, such as <code>setattr</code> and <code>write</code>, Qumulo Core aggregates changes into a single <code>MODIFIED</code> event.</li>
-  <li>Currently, Qumulo Core doesn’t support watching <code>STREAM</code> attributes or the <code>WATCH_TREE</code> flag.</li>
-</ul>
-{{site.data.alerts.end}}
-
 ## Completion Filter Types
 Each request uses a _completion filter_ to specify the events to watch for. When events occur, the system batches them into a `NOTIFY` response that contains a list of `FILE_ACTION` items, each tagged with the names of changed entries. As long as the handle for the watched directory remains open, events queue up on the server, so that no events are lost between <code>NOTIFY</code> requests.
 
@@ -43,7 +35,7 @@ Each request uses a _completion filter_ to specify the events to watch for. When
 
 
 ## Completion Filters and Corresponding Actions
-The following table show the requested completion filters (grouped by the number of inode reads required to support them), the changes they watch for, and the actions corresponding to them.
+The following table shows the requested completion filters (grouped by the number of inode reads required to support them), the changes they watch for, and the actions that correspond to them.
 
 <table>
 <thead>
@@ -69,12 +61,10 @@ The following table show the requested completion filters (grouped by the number
     </td>
     <td>
       <p>When Qumulo Core watches names, it notifies the client when there is an added, removed, or renamed file or directory in the watched directory.</p>
-      <ul>
-        <li>A <code>delete</code> event sends both <code>REMOVED</code> and <code>MODIFIED</code> notifications.</li>
-        <li>A <code>rename</code> event sends separate, consecutive events for <code>OLD</code> and <code>NEW</code> names, for example:
+      <p>A <code>rename</code> event sends separate, consecutive events for <code>OLD</code> and <code>NEW</code> names, for example:
 <pre>[REMOVED, file_old_name],
-[ADDED, file_new_name]</pre></li>
-      </ul>
+[ADDED, file_new_name]</pre>
+      </p>
     </td>
   </tr>
   <tr>
@@ -103,10 +93,6 @@ The following table show the requested completion filters (grouped by the number
       <p>&bull;&nbsp;<code>FILE_NOTIFY_CHANGE_STREAM_NAME</code></p>
       <p>&bull;&nbsp;<code>FILE_NOTIFY_CHANGE_STREAM_SIZE</code></p>
       <p>&bull;&nbsp;<code>FILE_NOTIFY_CHANGE_STREAM_WRITE</code></p>
-      {{site.data.alerts.note}}
-      <p>Qumulo Core doesn't support watching ADS changes. The following explanation is only informational.</p>
-      <p>For more information, see <a href="#known-limitations">Known CHANGE_NOTIFY Limitations for Qumulo Core</a>.</p>
-      {{site.data.alerts.end}}
     </td>
     <td>
       <p>&bull;&nbsp;<code>FILE_ACTION_ADDED_STREAM</code></p>
@@ -118,25 +104,17 @@ The following table show the requested completion filters (grouped by the number
       <pre>echo "data" > watched_dir/file0:stream</pre>
       <p>This command generates the following event.</p>
       <pre>[ADDED_STREAM, file0:stream]</pre>
-      <p>When a name change takes place, Qumulo Core returns the <code>STATUS_ENUM_DIR</code> message that indicates that the client should perform its own directory read.</p>
     </td>   
   </tr>  
 </tbody>
 </table>
 
+{% include note.html content="If you don't supply a filter, the SMB server accepts the request but doesn't send any notifications." %}
 
-<a id="known-limitations"></a>
-## Known CHANGE_NOTIFY Limitations for Qumulo Core
-Qumulo Core doesn't support the following workflows.
+## Re-Enumerating Changes after the STATUS_ENUM_DIR Error
+If the SMB client can't keep up with the notification stream from the server, the server returns the `STATUS_ENUM_DIR` error code to the client and stops sending notifications.
 
-{% include important.html content="You must ensure that your application can handle the `STATUS_ENUM_DIR` response status that indicates to the SMB client that it needs to re-enumerate a directory manually. Depending on the library you use, this response might propagate as an error or an empty response." %}
+In this scenario, the client must re-enumerate any changes that concern it directly, by opening and inspecting files, rather than relying on notifications. This scenario can happen because the request is too broad, for example, a recursive watch on the filesystem root.
 
-* A `NOTIFY_CHANGE_STREAM` ADS completion filter is requested.
-
-* The `SMB2_WATCH_TREE` flag is requested. Rather than watch a directory tree recursively, Qumulo Core handles the `SMB2_WATCH_TREE` flag the same way it handles the `CHANGE_STREAM` filters.
-  
-* The watched directory contains more than 5,000 entries.
-
-* The response buffer size is exceeded. Most third-party libraries limit this size to 64 Kb. At the maximum SMB file name length of 255 UTF-16 characters, this limit corresponds to roughly 200 simultaneous file renames.
-
-* The system reaches the heap usage quota for `CHANGE_NOTIFY`. In the worst scenario, this can correspond to more than 500 unique handles across all clients connected to a single Qumulo node.
+## Configuring Full Recursion for the WATCH_TREE Flag
+By default, when a client supplies the `WATCH_TREE` flag, the server sends an error to the client immediately. In this scenario, you can configure your Qumulo cluster to support full recursion.
