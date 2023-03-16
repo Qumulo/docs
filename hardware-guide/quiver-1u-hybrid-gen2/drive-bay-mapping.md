@@ -19,7 +19,7 @@ For more information, see [To Replace an HDD](replacing-hardware-components.html
 For more information, see [To Replace an NVMe Drive](replacing-hardware-components.html#replace-nvme-m2-boot-drive) 
 
 {% capture alt_tag_nvme %}{{site.q1uhg2Long}} NVMe Drive Bay Mapping{% endcapture %}
-{% include image.html alt=alt_tag_nvme file="quiver-1u-hybrid-gen2-nvme-drive-bay-mapping.png" url="/hardware/quiver-1u-hybrid-gen2/images/quiver-1u-hybrid-gen2-nvme-drive-bay-mapping.png" %}
+{% include image.html alt=alt_tag_nvme file="quiver-1u-hybrid-gen2-nvme-drive-bay-mapping.png" url="/hardware-guide/quiver-1u-hybrid-gen2/images/quiver-1u-hybrid-gen2-nvme-drive-bay-mapping.png" %}
 
 
 ## NVMe M.2 Boot Drive
