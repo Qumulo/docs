@@ -32,7 +32,7 @@ jobs:
           echo "${{ secrets.DOCS_PUBLISH_KEY }}" > /tmp/key
           chmod 400 /tmp/key
 
-      - name: push to remote gh-pages branch
+      - name: Push to remote gh-pages branch
         run: |
           git remote add -t ${GITHUB_REF_NAME} -m gh-pages public git@github.com:Qumulo/docs
           git push --force --set-upstream public ${GITHUB_REF_NAME}:gh-pages
