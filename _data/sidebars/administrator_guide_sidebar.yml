@@ -111,7 +111,7 @@ entries:
       output: web, pdf
       
     - title: Connecting Your Kubernetes Cluster to Your Qumulo Cluster by Using the Qumulo Container Storage Interface (CSI) Driver
-      url: /administrator-guide/external-services/connecting-kubernetes-cluster-with-containter-storage-interface-csi-driver.html
+      url: /administrator-guide/external-services/connecting-kubernetes-cluster-with-container-storage-interface-csi-driver.html
       output: web, pdf
 
   - title: Working with the Qumulo Core Web UI
