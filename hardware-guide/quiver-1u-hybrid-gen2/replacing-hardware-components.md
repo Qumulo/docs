@@ -90,9 +90,12 @@ Your {{site.q1uhg2}} chassis contains an NVMe boot drive inserted vertically int
 ## To Replace an HDD
 Your {{site.q1uhg2}} chassis contains 12 HDDs. For more information, see [HDD Drives](drive-bay-mapping.md#hdd-drives).
 
-{% include note.html content="Sliding out the tray that holds the HDD carriers doesn't interfere with your node's operation." %}
-
-1. {{page.varHotPlug}}
+{{site.data.alerts.note}}
+<ul>
+  <li>{{page.varHotPlug}}</li>
+  <li>Sliding out the tray that holds the HDD carriers doesn't interfere with your node's operation.</li>
+</ul>
+{{site.data.alerts.end}}
 
 1. Slide the tray with the HDD carriers out of the chassis.
 
@@ -136,7 +139,8 @@ Your {{site.q1uhg2}} chassis contains 4 NVMe drives. For more information, see [
 ## To Replace a Power Supply Unit (PSU)
 Your {{site.q1uhg2}} chassis contains two PSUs.
 
-1. {{page.varHotPlug}}
+{% capture psuHotPlugOK %}{{page.varHotPlug}}{% endcapture %}
+{% include note.html content=psuHotPlugOK %}
 
 1. Unfasten the power cord latch and remove the power cord from the existing PSU.
 
