@@ -5,6 +5,8 @@ permalink: /hardware-guide/quiver-1u-hybrid-gen2/replacing-hardware-components.h
 sidebar: hardware_guide_sidebar
 keywords: technical specifications, tech specs, specs, specifications, Quiver 1U Hybrid Gen2, pci express, pcie, drive, drives, power supply unit, psu, fan, dimm, memory
 varRemovePCIeCard: <a href="#replace-pci-e-riser-card">Remove the PCIe card from the motherboard.</a>
+varHotPlug: You can replace this component without powering off the node.
+varNoHotPlug: To replace this component, you must first power off the node.
 ---
 
 {{site.data.alerts.caution}}
@@ -35,6 +37,8 @@ Your {{site.q1uhg2}} chassis contains a PCIe riser card inserted vertically into
 
 {% include note.html content="The PCIe riser card installation is toolless." %}
 
+1. {{page.varNoHotPlug}}
+
 1. To remove the existing PCIe riser card, pull it vertically out of the PCIe slot.
 
    {% include image.html alt="Quiver 1U Hybrid Gen2 PCIe Riser Card" file="quiver-1u-hybrid-gen2-pci-e-riser-card.png" %}
@@ -48,6 +52,8 @@ Your {{site.q1uhg2}} chassis contains a NIC inserted horizontally into the PCIe 
 
 {% include note.html content="Although the NIC installation is toolless, depending on the NIC that ships with your node model, you might have to replace the exterior-facing metal frame on your NIC with a different one. For more information, see [Technical Specifications](technical-specifications.md)." %}
 
+1. {{page.varNoHotPlug}}
+
 1. {{page.varRemovePCIeCard}}
 
 1. Insert the NIC into the PCIe riser card horizontally.
@@ -60,6 +66,8 @@ Your {{site.q1uhg2}} chassis contains a NIC inserted horizontally into the PCIe 
 <a id="replace-nvme-m2-boot-drive"></a>
 ## To Replace the NVMe M.2 Boot Drive
 Your {{site.q1uhg2}} chassis contains an NVMe boot drive inserted vertically into an M.2 expansion slot on the PCIe riser card. For more information, see [NVMe M.2 Boot Drive](drive-bay-mapping.md#nvme-m2-boot-drive).
+
+1. {{page.varNoHotPlug}}
 
 1. {{page.varRemovePCIeCard}}
 
@@ -82,7 +90,12 @@ Your {{site.q1uhg2}} chassis contains an NVMe boot drive inserted vertically int
 ## To Replace an HDD
 Your {{site.q1uhg2}} chassis contains 12 HDDs. For more information, see [HDD Drives](drive-bay-mapping.md#hdd-drives).
 
-{% include note.html content="Sliding out the tray that holds the HDD carriers doesn't interfere with your node's operation." %}
+{{site.data.alerts.note}}
+<ul>
+  <li>{{page.varHotPlug}}</li>
+  <li>Sliding out the tray that holds the HDD carriers doesn't interfere with your node's operation.</li>
+</ul>
+{{site.data.alerts.end}}
 
 1. Slide the tray with the HDD carriers out of the chassis.
 
@@ -107,6 +120,8 @@ Your {{site.q1uhg2}} chassis contains 12 HDDs. For more information, see [HDD Dr
 ## To Replace an NVMe Drive
 Your {{site.q1uhg2}} chassis contains 4 NVMe drives. For more information, see [NVMe Drives](drive-bay-mapping.md#nvme-drives).
 
+1. {{page.varNoHotPlug}}
+
 1. To remove the existing NVMe drive, pull out the SSD bracket while pressing the blue latch.
 
 1. Remove the four screws from the existing NVMe drive.
@@ -124,6 +139,9 @@ Your {{site.q1uhg2}} chassis contains 4 NVMe drives. For more information, see [
 ## To Replace a Power Supply Unit (PSU)
 Your {{site.q1uhg2}} chassis contains two PSUs.
 
+{% capture psuHotPlugOK %}{{page.varHotPlug}}{% endcapture %}
+{% include note.html content=psuHotPlugOK %}
+
 1. Unfasten the power cord latch and remove the power cord from the existing PSU.
 
 1. To remove the existing PSU, press the blue latch while pulling on the black handle.
@@ -137,6 +155,8 @@ Your {{site.q1uhg2}} chassis contains two PSUs.
 Your {{site.q1uhg2}} chassis has two three-fan modules. The fans are marked **L** (left), **M** (middle), and **R** (right). Each module has six rubber clips on each side and latches that hold cables in place.
 
 {% include image.html alt="Quiver 1U Hybrid Gen2 Fan Module" file="quiver-1u-hybrid-gen2-fan-module.png" %}
+
+1. {{page.varNoHotPlug}}
 
 1. Remove the air duct from the existing fan module.
 
@@ -159,6 +179,8 @@ Your {{site.q1uhg2}} chassis has two three-fan modules. The fans are marked **L*
 ## To Replace a DIMM
 Your {{site.q1uhg2}} chassis has 12 DIMM slots, with a locking latch on each side of each DIMM.
 
+1. {{page.varNoHotPlug}}
+
 1. To remove an existing DIMM, press down on the latches and pull the module upwards.
 
 1. Match the notch on the new DIMM with the protrusion on the DIMM slot.
@@ -169,6 +191,8 @@ Your {{site.q1uhg2}} chassis has 12 DIMM slots, with a locking latch on each sid
 
 
 ## To Replace the Node Chassis
+{% include important.html content="After you perform a chassis swap, you must reconfigure the IPMI settings for your node." %}
+
 1. At the back of the node, disconnect the power cabling from both power supply units (PSUs) and [remove both existing PSUs](#replace-psu) from the node.
 
 1. Disconnect the network cabling from the NIC port and [remove the existing NIC](#replace-nic) from the node.
