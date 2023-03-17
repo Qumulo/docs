@@ -169,6 +169,8 @@ Your {{site.q1uhg2}} chassis has 12 DIMM slots, with a locking latch on each sid
 
 
 ## To Replace the Node Chassis
+{% include important.html content="After you perform a chassis swap, you must reconfigure the IPMI settings for your node." %}
+
 1. At the back of the node, disconnect the power cabling from both power supply units (PSUs) and [remove both existing PSUs](#replace-psu) from the node.
 
 1. Disconnect the network cabling from the NIC port and [remove the existing NIC](#replace-nic) from the node.
