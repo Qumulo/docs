@@ -33,5 +33,6 @@ keywords: technical specifications, tech specs, specs, specifications, Quiver 1U
 
 1. Attach the two stoppers marked **L** (left) and **R** (right) by using #10-32 &times; 13" screws on the back of the chassis.
 
+<a id="remove-chassis"></a>
 ## To Remove the Chassis from the Server Rack
 Perform the steps for inserting the chassis in reverse order.
