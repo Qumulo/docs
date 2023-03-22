@@ -199,7 +199,7 @@ Your {{site.q1uhg2}} chassis has 12 DIMM slots, with a locking latch on each sid
 
 1. Remove the existing [HDDs](#replace-hdd), [NVMe drives](#replace-nvme-drive), and the [NVMe M.2 boot drive](#replace-nvme-m2-boot-drive) from the node.
 
-1. [Remove the existing chassis](racking-nodes.md#to-remove-the-chassis) from the server rack.
+1. [Remove the existing chassis](racking-nodes.md#remove-chassis) from the server rack.
 
    {% capture content_lift %}{{site.twoPeopleOrLift}}{% endcapture %}
    {% include important.html content=content_lift %}
