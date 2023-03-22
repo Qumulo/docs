@@ -1,7 +1,10 @@
 #!/bin/bash
 
 case "${1}" in
+    clean)
+        rm _site -rf;;
     check)
+        jekyll build -d _site
         echo "Checking HTML output";
         htmlproofer _site ;;
     serve)
