@@ -11,7 +11,7 @@ varExpirationUtcNote: The <code>--expiration-time</code> flag interprets argumen
 varTokenQQcli: To use an access token in the <code>qq</code> CLI, you must use the <code>--file</code> flag&mdash;to specify a path for saving your credentials file in a format that the <code>qq</code> CLI can use&mdash;when you create the access token.
 varPrereqWrite: <code>PRIVILEGE_ACCESS_TOKEN_WRITE</code> is required for creating, disabling, and deleting access tokens for all users in the system.
 varPrereqRead: <code>PRIVILEGE_ACCESS_TOKEN_READ</code> is required for listing access tokens.
-varTokenExpiration: When an access token's expiration time elapses, it isn't possible to use the token for authentication. Any attempt to use the token results in an authentication error. To continue the authentication process, you must either [create a new access token](#creating-using-access-tokens) or [update the expiration time for your existing token](#modifying-access-tokens).
+varTokenExpiration: When an access token's expiration time elapses, it isn't possible to use the token for authentication. Any attempt to use the token results in an authentication error. To continue the authentication process, you must either [create a new access token](#creating-using-access-tokens) or [update the expiration time for your existing token](#modifying-expiration-time-access-token).
 varTokenReturn: <ul><li>The access token ID</li><li>The user that the access token represents</li><li>The access token's creator</li><li>The access token's creation time</li><li>The access token's expiration time</li><li>Whether the access token is enabled</li></ul>
 varBearerToken: you can no longer use any bearer tokens associated with the access token to authenticate to Qumulo Core.
 ---
