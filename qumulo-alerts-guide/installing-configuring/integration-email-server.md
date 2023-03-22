@@ -7,7 +7,7 @@ keywords: Qumulo Alerts, email, e-mail, integrate, integration
 ---
 
 ## Configuring Qumulo Alerts Integration with an Email Server
-To configure Qumulo Alerts to integrate with an email server, you must edit `QumuloEmailServer.json`, located in the `config/consumers` directory, in the directory [that you cloned from GitHub](installing-connecting-to-qumulo-cluster.md#step-1-install-qumuloalerts).
+To configure Qumulo Alerts to integrate with an email server, you must edit `QumuloEmailServer.json`, located in the `config/consumers` directory, in the directory [that you cloned from GitHub](installing-connecting-to-qumulo-cluster.md#clone-qumuloalerts-repository).
 
 The following is an explanation of the JSON keys that configure integration with an email server.
 
