@@ -25,6 +25,7 @@ Before you connect Qumulo Alerts to a Qumulo cluster, collect the information th
 * **Default Plugin Frequency**: What should be the default frequency for plugin execution? (You can specify the frequency in seconds or minutes.)
 * **Alarm and Alert Types:** Decide which alarms and alerts Qumulo Alerts will collect for your cluster.
 
+<a id="clone-qumuloalerts-repository"></a>
 ## Step 1: Clone the QumuloAlerts Repository
 Navigate to the directory where you want Git to download files and run the following command.
 
