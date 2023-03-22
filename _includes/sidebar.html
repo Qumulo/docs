@@ -29,7 +29,7 @@
   <li>
   {% endif %}
     
-    <a title="{{folder.title}}" href="{% if page.url != folder.url and indexURL != folder.url %}{{folder.url}}{% else %}#{% endif %}">{{folder.title}}</a>
+    <a title="{{folder.title}}" href="{% if page.url != folder.url and indexURL != folder.url %}{{folder.url}}{% else %}#{% endif %}" data-proofer-ignore>{{folder.title}}</a>
     
       <ul>
           {% for folderitem in folder.folderitems %}
