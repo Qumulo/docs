@@ -31,7 +31,7 @@ This section outlines the process of configuring and deploying the service.
 
 1. Qumulo deploys and configures the following resources in an environment that it manages.
    
-   * **Managed Resource Group:** This group contains the networking resources that the service deploys.
+   * **Managed Resource Group:** This group contains the networking resources that the service.
 
    * **Delegated Subnet:** The [delegated subnet](https://learn.microsoft.com/en-us/azure/virtual-network/subnet-delegation-overview) that the service uses to provision endpoints for your virtual network.
 

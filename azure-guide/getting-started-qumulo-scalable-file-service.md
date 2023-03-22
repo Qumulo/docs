@@ -17,7 +17,7 @@ This section explains how to deploy the service in Azure.
    
    b. Select a **Resource group** or click **Create new**.
       
-      {% include note.html content="A _resource group_ is a container that holds related Azure resources. We recommend creating a resource group exclusive to your Qumulo infrastructure." %}
+      {% include note.html content="A _resource group_ is a container that holds related Azure resources. We recommend creating resource groups exclusive to your Qumulo infrastructure." %}
 
 1. In the **Azure resource details** section:
 
