@@ -7,7 +7,7 @@ keywords: Qumulo Alerts, user, notification, configure, configuration, JSON
 ---
 
 ## Configuring User Notifications about a Qumulo Cluster
-To configure Qumulo Alerts to notify users about alarms and alerts from a Qumulo cluster, you must edit `QumuloUsers.json`, located in the `config/consumer` directory, in the directory [that you cloned from GitHub](installing-connecting-to-qumulo-cluster.md#step-1-install-qumuloalerts).
+To configure Qumulo Alerts to notify users about alarms and alerts from a Qumulo cluster, you must edit `QumuloUsers.json`, located in the `config/consumer` directory, in the directory [that you cloned from GitHub](installing-connecting-to-qumulo-cluster.md#clone-qumuloalerts-repository).
 
 The following is an explanation of the JSON keys that configure user notifications.
 
