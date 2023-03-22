@@ -44,7 +44,7 @@ The following is an explanation of the JSON keys that configure integration with
     <td>
       <p>Your ClickSend toll-free number (TFN)</p>
       {% include important.html content="This field is mandatory for the U.S. and Canada." %}
-      <p>For more information, see <a href="https://help.clicksend.com/article/lg3zqrklof-tfn-application-approval-process">TFN Application approval process</a> in the ClickSend documentation.</p>
+      <p>For more information, see <a href="https://help.clicksend.com/article/b06v2x81sy-toll-free-number-tfn-verification">Toll-Free Number (TFN) Verification</a> in the ClickSend documentation.</p>
     </td>
   </tr>
   <tr>
