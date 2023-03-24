@@ -23,6 +23,8 @@ Before you begin, make sure that you have done the following.
 
   * `monitor.qumulo.com`
 
+  * `api.nexus.qumulo.com`
+
 * Permit outbound HTTPS traffic on port 443
 
 {% include note.html content="If your firewall performs stateful packet inspection (also known as _SPI_ or _deep-packet inspection_), you must allow OpenVPN (SSL VPN) explicitly, rather than only open port 443." %}
