@@ -9,7 +9,7 @@ sidebar: administrator_guide_sidebar
 varNoRemoteVPNforCustomProxy: Remote VPN support isn't available when you connect to Cloud-Based Monitoring by using a custom proxy.
 ---
 
-In Qumulo Core 2.6.4 (and higher), you can specify a custom proxy for both C. You can configure the custom proxy in a number of different ways.
+In Qumulo Core 2.6.4 (and higher), you can specify a custom proxy for both Cloud-Based Monitoring and S3 in different ways.
 
 ## Configuring a Custom Proxy for Cloud-Based Monitoring and S3
 The following examples show some common configurations for custom proxies by using the `qq set_monitoring_conf` command.
