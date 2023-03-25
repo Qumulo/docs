@@ -58,4 +58,4 @@ When you no longer [connect to Cloud-Based Monitoring by using a custom proxy](c
  
  1. To confirm that Cloud-Based Monitoring is working correctly, log in to the Qumulo Core Web UI and then click **Support**.
  
-    If everything is configured correctly, the status is **Enabled | Connected**.
+    If everything is configured correctly, the status is **Enabled &#124; Connected**.
