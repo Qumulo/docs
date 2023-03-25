@@ -229,3 +229,6 @@ azure:
   qumuloOnAzureLong: Azure Native Qumulo Scalable File Service
   emailAzure: email [azure@qumulo.com](mailto:azure@qumulo.com).
   pricingCalculator: For an estimated pay-as-you-go price, see the <a href="https://azure.qumulo.com/calculator">Pricing and Performance Calculator</a>.
+
+monitoring:
+  cloudBasedMonitoringEnabled: If your configuration is valid, the Web UI shows the status **Enabled &#124; Connected**.
