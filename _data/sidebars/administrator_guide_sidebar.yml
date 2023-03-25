@@ -258,8 +258,12 @@ entries:
     output: web, pdf
     folderitems:
     
-    - title: Connecting to Cloud-Based Monitoring by Using a Custom Proxy
-      url: /administrator-guide/monitoring-and-metrics/connecting-cloud-based-monitoring-custom-proxy.html
+    - title: Connecting to Cloud-Based Monitoring and S3 by Using a Custom Proxy
+      url: /administrator-guide/monitoring-and-metrics/connecting-cloud-based-monitoring-s3-custom-proxy.html
+      output: web, pdf
+      
+    - title: Restoring the Default Values for Cloud-Based and Nexus Monitoring
+      url: /administrator-guide/monitoring-and-metrics/restoring-default-values-cloud-based-nexus-monitoring.html
       output: web, pdf
 
     - title: Qumulo OpenMetrics API Specification
