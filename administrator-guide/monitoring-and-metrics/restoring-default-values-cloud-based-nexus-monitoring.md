@@ -22,7 +22,7 @@ When you no longer [connect to Cloud-Based Monitoring by using a custom proxy](c
    qq login -u admin -p mypassword
    ```
 
-1. Use the `qq set_monitoring_conf` to restore the default values for Cloud-Based and Nexus Monitoring.
+1. To restore the default values for Cloud-Based and Nexus Monitoring, use the `qq set_monitoring_conf` command.
 
    In the following example, we:
    
