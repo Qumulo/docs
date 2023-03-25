@@ -12,25 +12,7 @@ We make sure that every one of our engineers has deep experience with file stora
 We take pride in helping our customers and coming up with solutions for every specific issue.
 
 ## Ways to Get Help
-The Qumulo Care team is always here to help you. You can contact us by using any of the following ways.
-
-* 📚 Browse the [Qumulo Knowledge Base](https://care.qumulo.com/hc/en-us/categories/115000637447)
-
-* <a id="open-a-case"></a>🧑‍💻 Open a case by [filing a request](https://care.qumulo.com/hc/en-us/requests/new) or [emailing us](mailto:care@qumulo.com).
-
-* 💬 [Message us on Slack](https://qumulocare.slack.com/) (if you are a current customer). For more information, see our [Slack Tips and Tricks](#slack-tips-and-tricks).
-
-* <a id="toll-free-numbers"></a>📱 Call one of our toll-free numbers:
-
-  * **North America:** [+1 855-577-7544](tel:+18555777544)
-
-  * **United Kingdom:** [+44 808-164-6656](tel:+448081646656)
-
-  * **Germany:** [+49 800-000-7047](tel:+498000007047)
-
-  * **Australia:** [+61 1800-954-952](tel:+611800954952)
-  
-  * **U.S. Government Customers:** [+1 844-962-3777](tel:+18449623777)
+{% include content-reuse/qumulo-care-ways-to-get-help.md %}
 
 ## Support Hours
 The Qumulo Care team is available Monday to Friday, 24&times;5 to answer your questions and requests. During off hours, a team member is on call 24&times;7 for when you might need help the most.
@@ -38,7 +20,7 @@ The Qumulo Care team is available Monday to Friday, 24&times;5 to answer your qu
 ## Qumulo Care Response Times
 The service availability and initial response time vary based on an issue's severity level, starting from the time when the Qumulo Care team first learns about the issue.
 
-{% include content-reuse/qumulo-core-response-times.md %}
+{% include content-reuse/qumulo-care-response-times.md %}
 
 ## Slack Tips and Tricks
 The Qumulo Care team monitors the [qumulocare Slack channel](https://qumulocare.slack.com/) during our normal Monday-to-Friday, 24&times;5 standard support hours. If you are currently a Qumulo customer, the fastest way to reach us is by using your dedicated Slack channel.
