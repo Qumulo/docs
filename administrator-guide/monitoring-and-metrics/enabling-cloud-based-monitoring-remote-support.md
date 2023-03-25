@@ -45,9 +45,13 @@ Cloud-Based Monitoring lets the Qumulo Care team monitor your Qumulo cluster pro
 
 {% include important.html content="Cloud-Based Monitoring _doesn't_ collect file names, path names, client IP addresses, or account credentials." %}
 
+### Qumulo Care Response Times
 We use a proprietary application that aggregates diagnostic cluster data and alerts the Qumulo Care team if an issue arises. Depending on the issue severity and cluster state, a member of the Qumulo Care team reaches out. The following table outlines Qumulo Care response times.
 
-{% include content-reuse/qumulo-core-response-times.md %}
+{% include content-reuse/qumulo-care-response-times.md %}
+
+### Ways to Get Help
+{% include content-reuse/qumulo-care-ways-to-get-help.md %}
 
 ## How Remote Support Works
 _Remote Support_ lets the Qumulo Care team access your Qumulo cluster solely to assist you with a software update or perform diagnostics or troubleshooting on your cluster from the command line. Qumulo uses industry-standard encryption technologies to ensure a secure connection to your cluster and you can enable or disable Remote Support at any time.
