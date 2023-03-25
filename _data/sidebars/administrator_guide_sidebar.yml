@@ -258,6 +258,10 @@ entries:
     output: web, pdf
     folderitems:
     
+    - title: Enabling Cloud-Based Monitoring and Remote Support
+      url: /administrator-guide/monitoring-and-metrics/enabling-cloud-based-monitoring-remote-support.html
+      output: web, pdf
+    
     - title: Connecting to Cloud-Based Monitoring and S3 by Using a Custom Proxy
       url: /administrator-guide/monitoring-and-metrics/connecting-cloud-based-monitoring-s3-custom-proxy.html
       output: web, pdf
