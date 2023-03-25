@@ -7,7 +7,7 @@ sidebar: administrator_guide_sidebar
 ---
 
 ## How Cloud-Based Monitoring Works
-Cloud-Based Monitoring lets the Qumulo Care team monitor your Qumulo cluster proactively. Enabling Cloud-Based Monitoring lets your cluster send the following detailed diagnostic data to Qumulo through an encrypted connection.
+Cloud-Based Monitoring lets the Qumulo Care team monitor your Qumulo cluster proactively. [Enabling Cloud-Based Monitoring](#enabling-cloud-based-monitoring) lets your cluster send the following detailed diagnostic data to Qumulo through an encrypted connection.
 
 * Cluster name
 
@@ -97,7 +97,7 @@ Before you can use Cloud-Based monitoring and Remote Support, you must:
     </tbody>
   </table>
 
-
+<a id="enabling-cloud-based-monitoring"></a>
 ## Enabling Cloud-Based Monitoring
 You can enable cloud-based monitoring by using the Web UI or `qq` CLI.
 
