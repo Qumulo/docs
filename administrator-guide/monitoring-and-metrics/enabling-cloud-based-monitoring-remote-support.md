@@ -6,7 +6,7 @@ keywords: monitoring, Cloud-Based Monitoring, Remote Support, enable, enabling, 
 sidebar: administrator_guide_sidebar
 ---
 
-Cloud-Based monitoring lets the Qumulo Care team monitor your Qumulo cluster proactively. Enabling Cloud-Based Monitoring lets your cluster send detailed diagnostic data to the Qumulo through an encrypted connection. We have developed an application that aggregates diagnostic cluster data and alerts the Qumulo Care team if an issue arises.
+Cloud-Based monitoring lets the Qumulo Care team monitor your Qumulo cluster proactively. Enabling Cloud-Based Monitoring lets your cluster send detailed diagnostic data to Qumulo through an encrypted connection. We use a proprietary application that aggregates diagnostic cluster data and alerts the Qumulo Care team if an issue arises.
 
 Remote Support lets the Qumulo Care team access your Qumulo cluster only to assist you with a software update or perform diagnostics or troubleshooting from the command line. Qumulo uses encryption technologies to ensure a secure connection to your cluster and you can enable or disable Remote Support at any time.
 
