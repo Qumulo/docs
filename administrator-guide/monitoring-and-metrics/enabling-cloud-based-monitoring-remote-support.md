@@ -114,3 +114,5 @@ You can enable cloud-based monitoring by using the Web UI or `qq` CLI.
    b. Click **Yes, I want Qumulo Cloud-Based Monitoring**.
 
    c. Click **Save**.
+
+{{site.monitoring.cloudBasedMonitoringEnabled}}
