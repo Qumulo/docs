@@ -116,3 +116,11 @@ You can enable cloud-based monitoring by using the Web UI or `qq` CLI.
    c. Click **Save**.
 
 {{site.monitoring.cloudBasedMonitoringEnabled}}
+
+### To Enable Cloud-Based Monitoring by Using the qq CLI
+
+* To enable Cloud-Based Monitoring, run the `qq set_monitoring_conf --enabled` command.
+
+* To disable Cloud-Based Monitoring, run the `qq set_monitoring_conf --disabled` command.
+
+* To check the status of Cloud-Based Monitoring, run the `qq monitoring_conf` command.
