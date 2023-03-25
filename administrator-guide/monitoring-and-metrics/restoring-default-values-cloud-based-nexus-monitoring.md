@@ -40,7 +40,7 @@ When you no longer [connect to Cloud-Based Monitoring by using a custom proxy](c
 
    * Set the hostname and port for the S3 proxy
    
-   * Specify the custom VPN hostname `example.qumulo.com`
+   * Specify the custom VPN for your organization, `example.qumulo.com`
 
    ```bash
    qq set_monitoring_conf
@@ -53,7 +53,7 @@ When you no longer [connect to Cloud-Based Monitoring by using a custom proxy](c
      --period 60
      --s3-proxy-host monitor.qumulo.com
      --s3-proxy-port 443
-     --vpn-host ep1.qumulo.com
+     --vpn-host example.qumulo.com
    ```
  
  1. To confirm that Cloud-Based Monitoring is working correctly, log in to the Qumulo Core Web UI and then click **Support**.
