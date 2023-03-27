@@ -253,11 +253,23 @@ entries:
       url: /administrator-guide/kerberos/kerberos-troubleshooting.html
       output: web, pdf
 
-  - title: Configuring and Collecting Metrics in Qumulo Core
-    url: /administrator-guide/metrics/index.html
+  - title: Configuring Monitoring and Collecting Metrics
+    url: /administrator-guide/monitoring-and-metrics/index.html
     output: web, pdf
     folderitems:
+    
+    - title: Enabling Cloud-Based Monitoring and Remote Support
+      url: /administrator-guide/monitoring-and-metrics/enabling-cloud-based-monitoring-remote-support.html
+      output: web, pdf
+
+    - title: Connecting to Cloud-Based Monitoring and S3 by Using a Custom Proxy
+      url: /administrator-guide/monitoring-and-metrics/connecting-cloud-based-monitoring-s3-custom-proxy.html
+      output: web, pdf
+      
+    - title: Restoring the Default Values for Cloud-Based and Nexus Monitoring
+      url: /administrator-guide/monitoring-and-metrics/restoring-default-values-cloud-based-nexus-monitoring.html
+      output: web, pdf
 
     - title: Qumulo OpenMetrics API Specification
-      url: /administrator-guide/metrics/openmetrics-api-specification.html
+      url: /administrator-guide/monitoring-and-metrics/openmetrics-api-specification.html
       output: web, pdf
