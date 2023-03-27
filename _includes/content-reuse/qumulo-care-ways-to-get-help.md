@@ -4,7 +4,7 @@ The Qumulo Care team is always here to help you. You can contact us by using any
 
 * <a id="open-a-case"></a>🧑‍💻 Open a case by [filing a request](https://care.qumulo.com/hc/en-us/requests/new) or [emailing us](mailto:care@qumulo.com).
 
-* 💬 [Message us on Slack](https://qumulocare.slack.com/) (if you are a current customer). For more information, see our [Slack Tips and Tricks]([#slack-tips-and-tricks](https://docs.qumulo.com/contacting-qumulo-care-team.html#slack-tips-and-tricks)).
+* 💬 [Message us on Slack](https://qumulocare.slack.com/) (if you are a current customer). For more information, see our [Slack Tips and Tricks](https://docs.qumulo.com/contacting-qumulo-care-team.html#slack-tips-and-tricks).
 
 * <a id="toll-free-numbers"></a>📱 Call one of our toll-free numbers:
 
