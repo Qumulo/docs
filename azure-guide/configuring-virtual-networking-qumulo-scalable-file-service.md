@@ -6,7 +6,7 @@ sidebar: azure_guide_sidebar
 keywords: cloud, azure, native, scalable file service, file service, network, networking, owner, contributor, role, subnet, dedicated subnet, endpoint, route table, security group, VNet injection
 ---
 
-The underlying storage of the service resides in Qumulo's Azure tenant. This storage system connects to your Azure subscription by using _VNet injection,_ a process that establishes a direct connection between your resources and the servie resources without using VNet peering. You can use VNet injection to apply routing and security policies to your service endpoints.
+The underlying storage of the service resides in Qumulo's Azure tenant. This storage system connects to your Azure subscription by using _VNet injection,_ a process that establishes a direct connection between your resources and the service resources without using VNet peering. You can use VNet injection to apply routing and security policies to your service endpoints.
 
 To create endpoints for accessing the {{site.azure.qumuloOnAzureLong}}, Qumulo creates network interfaces (NICs) and inserts them into your subnet. To allow VNet injection to operate correctly, you must create and configure a new subnet within your virtual network.
 
@@ -51,7 +51,7 @@ This section explains how to configure virtual networking for the {{site.azure.q
 {% include important.html content="To enforce network policies for traffic to and from the service, you can apply network security groups and route tables to a [delegated subnet](https://learn.microsoft.com/en-us/azure/virtual-network/subnet-delegation-overview)." %}
 
 ### Configuring Network Security Groups
-Network security groups let administrators enforce networking traffic rules. You can assign network security groups to individual NICs or to entire subnets. Because it is posible to create or remove NICs from the, we recommend assigning security groups to a delegated subnet.
+Network security groups let administrators enforce networking traffic rules. You can assign network security groups to individual NICs or to entire subnets. Because it is possible to create or remove NICs from the, we recommend assigning security groups to a delegated subnet.
 
 To ensure that your configuration doesn't block a specific protocol, see [Required Networking Ports for Qumulo Core](https://docs.qumulo.com/administrator-guide/networking/required-networking-ports.html).
 
