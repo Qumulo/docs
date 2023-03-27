@@ -7,8 +7,8 @@ case "${1}" in
     check)
         jekyll build -d _site
         echo "Checking HTML output"
-        if [ -f ignore-urls ]; then
-            proofer_args="--url-ignore \"$(cat .errorignore | tr '\n' ',')\""
+        if [ -f .ignore-error ]; then
+            proofer_args="--url-ignore \"$(cat .ignore-error | tr '\n' ',')\""
         fi
         htmlproofer ${proofer_args} _site ;;
     serve)
