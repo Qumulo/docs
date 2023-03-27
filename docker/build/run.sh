@@ -8,7 +8,8 @@ case "${1}" in
         jekyll build -d _site
         echo "Checking HTML output"
         if [ -f .ignore-error ]; then
-            proofer_args="--url-ignore \"$(cat .ignore-error | tr '\n' ',')\""
+            # Use a leading comma, otherwise htmlproofer seems to ignore the first entry
+            proofer_args="--url-ignore \",$(cat .ignore-error | tr '\n' ',')\""
         fi
         htmlproofer ${proofer_args} _site ;;
     serve)
