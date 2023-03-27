@@ -7,7 +7,10 @@ case "${1}" in
     check)
         jekyll build -d _site
         echo "Checking HTML output"
-        htmlproofer _site ;;
+        if [ -f ignore-urls ]; then
+            proofer_args="--url-ignore \"$(cat .errorignore | tr '\n' ',')\""
+        fi
+        htmlproofer ${proofer_args} _site ;;
     serve)
         echo "Serving on port 4000"
         jekyll serve --livereload -H 0.0.0.0 ;;
