@@ -16,14 +16,50 @@ For each tenant, you can specify individual [management protocol access and conf
 
 
 ## Prerequisites
-{% include important.html content="If your cluster runs a version of Qumulo Core lower than 6.1.0, you must use the `qq multitenancy_enable` command to enable multitenancy for your cluster." %}
-
 To manage network multitenancy and tenants, your user must have membership in a Qumulo role with the following privileges.
 
 * `PRIVILEGE_NETWORK_READ`: Viewing networks
 * `PRIVILEGE_NETWORK_WRITE`: Assigning networks to tenants
 * `PRIVILEGE_TENANT_READ`: Viewing tenants
 * `PRIVILEGE_TENANT_WRITE`: Enabling network multitenancy and creating, modifying, and deleting tenants
+
+
+## Enabling and Disabling Network Multitenancy
+To add tenants to your Qumulo cluster, you must enable network multitenancy. This section explains how to enable and disable network multitenancy on your Qumulo cluster.
+
+### To Enable Network Multitenancy by Using the Web UI
+1. Log in to Qumulo Core.
+
+1. Click **Cluster > Network Multitenancy**.
+
+1. On the **Network Tenants** page, in the upper right, click **Enable Multitenancy...**
+
+1. In the **Enable Multitenancy?** dialog box, click **Yes, Enable Multitenancy...**
+   
+   Qumulo Core creates a tenant with the name `Default` and all of the cluster's networks. {{page.varTenantCreateResult}}
+
+### Enabling Network Multitenancy by Using the qq CLI
+Use the `qq multitenancy_enable` command and specify a name for your tenant. For example:
+
+```bash
+$ qq multitenancy_enable \
+  --name my_tenant
+```
+
+Your cluster creates a tenant with the specified name and all of the cluster's networks. {{page.varTenantCreateResult}}
+
+<a id="disable-multitenancy"></a>
+### Disabling Network Multitenancy by Using the qq CLI
+{% include note.html content="You can disable multitenancy on your Qumulo cluster if it has only one tenant." %}
+
+To disable network multitenancy for your cluster, use the `qq multitenancy disable` command. The cluster:
+
+* Deletes the last tenant
+
+* Makes the SMB shares and NFS exports associated with this tenant available on all networks
+
+* Retains global settings and deletes tenant-specific settings
+
 
 ## Creating, Configuring, and Unassigning Tenants by Using the qq CLI.
 This section explains the lifecycle of working with tenants, including creating tenants, assigning networks to new and existing tenants, viewing tenant configuration, and unassigning tenants.
@@ -152,7 +188,7 @@ $ qq multitenancy_get_tenant \
 {{site.data.alerts.important}}
 <ul>
   <li>When you delete a tenant, Qumulo Core removes the tenant's entire configuration from your cluster, including NFS exports and SMB shares associated with the tenant.</li>
-  <li>It isn't possible to delete the last tenant.</li>
+  <li>It isn't possible to delete the last tenant. To do this you must <a href="#disable-multitenancy">disable network multitenancy</a>.</li>
 </ul>
 {{site.data.alerts.end}}
 
@@ -166,7 +202,7 @@ $ qq multitenancy_delete_tenant \
 ## Known Network Multitenancy Limitations in Qumulo Core
 Currently, Qumulo Core doesn't support:
 
-* Creating or modifying tenants on cloud-based clusters
+* Using network multitenancy with cloud-based clusters
 
 * Using one VLAN on multiple tenants
 
