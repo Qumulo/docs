@@ -16,60 +16,39 @@ select opt in "${options[@]}"
 do
   case $opt in
     "Hardware Guide")
-      echo "Building PDF-friendly HTML site..."
-      docker run -ti \
-        --rm \
-        --user $(id -u):$(id -g) \
-        --name docs-container \
-        -v "$(pwd)":/src:rw \
-        -P \
-        --detach \
-        --network host docs-builder serve \
-        --config _config.yml,pdfconfigs/config_hardware_guide_pdf.yml
+      JEKYLL_CONFIG=config_hardware_guide_pdf.yml
+      PRINCE_OUTPUT=qumulo-certified-hardware-guide.pdf
       break
       ;;
     "Azure Guide")
-      echo "Building PDF-friendly HTML site..."
-      docker run -ti \
-        --rm \
-        --user $(id -u):$(id -g) \
-        --name docs-container \
-        -v "$(pwd)":/src:rw \
-        -P \
-        --detach \
-        --network host docs-builder serve \
-        --config _config.yml,pdfconfigs/config_azure_guide_pdf.yml    
+      JEKYLL_CONFIG=config_azure_guide_pdf.yml
+      PRINCE_OUTPUT=qumulo-azure-guide.pdf
       break
       ;;
     "Administrator Guide")
-      echo "Building PDF-friendly HTML site..."
-      docker run -ti \
-        --rm \
-        --user $(id -u):$(id -g) \
-        --name docs-container \
-        -v "$(pwd)":/src:rw \
-        -P \
-        --detach \
-        --network host docs-builder serve \
-        --config _config.yml,pdfconfigs/config_administrator_guide_pdf.yml 
+      JEKYLL_CONFIG=config_administrator_guide_pdf.yml
+      PRINCE_OUTPUT=qumulo-administrator-guide.pdf
       break
       ;;
     "Qumulo Alerts Guide")
-      echo "Building PDF-friendly HTML site..."
-      docker run -ti \
-        --rm \
-        --user $(id -u):$(id -g) \
-        --name docs-container \
-        -v "$(pwd)":/src:rw \
-        -P \
-        --detach \
-        --network host docs-builder serve \
-        --config _config.yml,pdfconfigs/config_qumulo_alerts_guide_pdf.yml
+      JEKYLL_CONFIG=config_qumulo_alerts_guide_pdf.yml
+      PRINCE_OUTPUT=qumulo-alerts-guide.pdf
       break
       ;;
     *) echo "$REPLY is not valid. Try again.";;
   esac
 done
+
+echo "Building PDF-friendly HTML site..."
+docker run -ti \
+        --rm \
+        --user $(id -u):$(id -g) \
+        --name docs-container \
+        -v "$(pwd)":/src:rw \
+        -P \
+        --detach \
+        --network host docs-builder serve \
+        --config "_config.yml,pdfconfigs/${JEKYLL_CONFIG}"
 
 echo "Waiting for port 4000 to become available..."
 while ! nc -z localhost 4000; do
@@ -77,7 +56,7 @@ while ! nc -z localhost 4000; do
 done
 
 echo "Building the PDF..."
-prince --javascript --input-list=_site/pdfconfigs/prince-list.txt -o pdf/qumulo-certified-hardware-guide.pdf;
+prince --javascript --input-list=_site/pdfconfigs/prince-list.txt -o "pdf/${PRINCE_OUTPUT}"
 
 echo "Deleting temporary build files..."
 cd _site && rm * -rf
