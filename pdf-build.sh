@@ -1,15 +1,14 @@
 #!/bin/bash
 
-# Exit when you hit an error and print all the commands
-set -ex
+# Exit when you hit an error
+set -e
 
-echo 'Killing all running containers...'
 # Display list of containers, count them, and kill them if they exist
+echo 'Killing all running containers...'
 if [ $(docker ps | grep -c 'docs-container') -gt 0 ]; then
   docker kill docs-container
 fi
 
-# How would I have a case for building all guides??
 PS3='Choose a guide:'
 options=("Hardware Guide" "Azure Guide" "Administrator Guide" "Qumulo Alerts Guide")
 select opt in "${options[@]}"
@@ -84,6 +83,5 @@ cd _site && rm * -rf
 
 echo "The PDF output is in the /pdf directory."
 
-# Clean up the container
 echo "Cleaning up the Docker container..."
 docker kill docs-container
