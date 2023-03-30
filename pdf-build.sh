@@ -5,11 +5,12 @@ set -e
 
 # Display list of containers, count them, and kill them if they exist
 echo 'Killing all running containers...'
+echo ''
 if [ $(docker ps | grep -c 'docs-container') -gt 0 ]; then
   docker kill docs-container
 fi
 
-PS3='Choose a guide:'
+PS3='Choose a guide to build:'
 options=("Hardware Guide" "Azure Guide" "Administrator Guide" "Qumulo Alerts Guide")
 select opt in "${options[@]}"
 do
@@ -81,7 +82,7 @@ prince --javascript --input-list=_site/pdfconfigs/prince-list.txt -o pdf/qumulo-
 echo "Deleting temporary build files..."
 cd _site && rm * -rf
 
-echo "The PDF output is in the /pdf directory."
-
 echo "Cleaning up the Docker container..."
 docker kill docs-container
+
+echo "Done. The PDF output is in the /pdf directory."
