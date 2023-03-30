@@ -17,7 +17,7 @@ case "${1}" in
         # Remove the first argument from the command
         shift
         # Pass through any other specified arguments
-        jekyll serve --livereload -H 0.0.0.0 $@;;
+        jekyll serve --livereload -H 0.0.0.0 $@ ;;
     *)
         # Pass through any other specified arguments
         jekyll build -d _site $@ ;;
