@@ -14,7 +14,7 @@ case "${1}" in
         htmlproofer ${proofer_args} _site ;;
     serve)
         echo "Serving on port 4000"
-        # Remove the first argument from the comman
+        # Remove the first argument from the command
         shift
         # Pass through any other specified arguments
         jekyll serve --livereload -H 0.0.0.0 $@;;
