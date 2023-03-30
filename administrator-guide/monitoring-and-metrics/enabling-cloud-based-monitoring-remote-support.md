@@ -6,8 +6,38 @@ keywords: monitoring, Cloud-Based Monitoring, Remote Support, enable, enabling, 
 sidebar: administrator_guide_sidebar
 ---
 
+{% include important.html content="To let the Qumulo Care team provide fast support when you need it most, we strongly recommend enabling both Cloud-Based Monitoring and Remote Support." %}
+
+
 ## How Cloud-Based Monitoring Works
-Cloud-Based Monitoring lets the Qumulo Care team monitor your Qumulo cluster proactively. [Enabling Cloud-Based Monitoring](#enabling-cloud-based-monitoring) lets your cluster send the following detailed diagnostic data to Qumulo through an encrypted connection.
+[Enabling Cloud-Based Monitoring](#enabling-cloud-based-monitoring) lets the Qumulo Care team monitor your Qumulo cluster proactively.
+
+{% include important.html content="Cloud-Based Monitoring _doesn't_ collect file names, path names, client IP addresses, or account credentials." %}
+
+### Qumulo Care Response Times
+We use a proprietary application that aggregates diagnostic cluster data and alerts the Qumulo Care team if an issue arises. Depending on the issue severity and cluster state, a member of the Qumulo Care team reaches out. The following table outlines Qumulo Care response times.
+
+{% include content-reuse/qumulo-care-response-times.md %}
+
+### Ways to Get Help
+{% include content-reuse/qumulo-care-ways-to-get-help.md %}
+
+
+## How Remote Support Works
+[Enabling Remote Support](#enabling-remote-support) lets the Qumulo Care team access your Qumulo cluster solely to assist you with a software update or perform diagnostics or troubleshooting on your cluster from the command line.
+
+When you install VPN keys in the `/etc/openvpn` directory, an authorized member of the Qumulo Care team uses SSH to connect to the `ep1.qumulo.com` server and then uses SSH through a secure VPN connection to connect to your cluster (normally, this VPN connection is closed).
+
+By default, the VPN tunnel remains open for four hours to allow members of the Qumulo Care team to perform operations such as uploading logs to `monitor.qumulo.com` or to a secured Amazon S3 bucket and sending diagnostic data to a private Amazon EC2 instance for analysis.
+
+{% include note.html content="Currently, Qumulo Core doesn't support VPN connections with IPv6." %}
+
+You can configure the connection period and enable or disable Remote Support at any time.
+
+
+## What Data Gets Sent to Qumulo
+
+Cloud-Based Monitoring and Remote Support let your cluster send the following detailed diagnostic data to Qumulo through an encrypted connection.
 
 * Cluster name
 
@@ -43,21 +73,6 @@ Cloud-Based Monitoring lets the Qumulo Care team monitor your Qumulo cluster pro
 
 * Logs, stack traces, and code dumps
 
-{% include important.html content="Cloud-Based Monitoring _doesn't_ collect file names, path names, client IP addresses, or account credentials." %}
-
-### Qumulo Care Response Times
-We use a proprietary application that aggregates diagnostic cluster data and alerts the Qumulo Care team if an issue arises. Depending on the issue severity and cluster state, a member of the Qumulo Care team reaches out. The following table outlines Qumulo Care response times.
-
-{% include content-reuse/qumulo-care-response-times.md %}
-
-### Ways to Get Help
-{% include content-reuse/qumulo-care-ways-to-get-help.md %}
-
-## How Remote Support Works
-_Remote Support_ lets the Qumulo Care team access your Qumulo cluster solely to assist you with a software update or perform diagnostics or troubleshooting on your cluster from the command line. Qumulo uses industry-standard encryption technologies to ensure a secure connection to your cluster and you can enable or disable Remote Support at any time.
-
-{% include important.html content="To let the Qumulo Care team provide fast support when you need it most, we strongly recommend enabling both Cloud-Based Monitoring and Remote Support." %}
-
 
 ## Prerequisites
 Before you can use Cloud-Based monitoring and Remote Support, you must:
@@ -69,7 +84,7 @@ Before you can use Cloud-Based monitoring and Remote Support, you must:
   <table>
     <thead>
       <tr>
-        <th>Hostname</th>
+        <th width="40%">Hostname</th>
         <th>Description</th>
       </tr>
     </thead>
@@ -80,7 +95,10 @@ Before you can use Cloud-Based monitoring and Remote Support, you must:
       </tr>  
       <tr>
         <td><code>ep1.qumulo.com</code></td>
-        <td>Remote Support</td>
+        <td>
+          <p>Remote Support</p>
+          {% include important.html content="If your organization has an intrusion detection device or a firewall that performs SSL or HTTPS deep-packet inspection, you must add an exception to the IP address that resolves to `ep1.qumulo.com`. To identify this IP address, log in to your Qumulo cluster and run the `nslookup ep1.qumulo.com` command." %}
+        </td>
       </tr>
       <tr>
         <td><code>missionq.qumulo.com</code></td>
@@ -99,7 +117,7 @@ Before you can use Cloud-Based monitoring and Remote Support, you must:
 
 <a id="enabling-cloud-based-monitoring"></a>
 ## Enabling Cloud-Based Monitoring
-You can enable cloud-based monitoring by using the Web UI or `qq` CLI.
+You can enable Cloud-Based Monitoring by using the Web UI or `qq` CLI.
 
 ### To Enable Cloud-Based Monitoring by Using the Web UI
 
@@ -111,9 +129,7 @@ You can enable cloud-based monitoring by using the Web UI or `qq` CLI.
 
    a. In the **Cloud-Based Monitoring** section, click **Edit**.
 
-   b. Click **Yes, I want Qumulo Cloud-Based Monitoring**.
-
-   c. Click **Save**.
+   b. Click **Yes, I want Qumulo Cloud-Based Monitoring** and then click **Save**.
 
 {{site.monitoring.cloudBasedMonitoringEnabled}}
 
@@ -124,3 +140,30 @@ You can enable cloud-based monitoring by using the Web UI or `qq` CLI.
 * To disable Cloud-Based Monitoring, run the `qq set_monitoring_conf --disabled` command.
 
 * To check the status of Cloud-Based Monitoring, run the `qq monitoring_conf` command.
+
+
+<a id="enabling-remote-support"></a>
+## Enabling Remote Support
+You can enable Remote Support by using the Web UI or `qq` CLI.
+
+### To Enable Remote Support by Using the Web UI
+
+1. Log in to he Web UI.
+
+1. Click **Support > Qumulo Care**.
+
+1. On the **Qumulo Care** page, do the following:
+
+   a. In the **Remote Support** section, click **Edit**.
+   
+   b. Under **Do you want to enable Qumulo Remote Support?**, click **Yes** and then click **Save**.
+   
+{{site.monitoring.cloudBasedMonitoringEnabled}}
+
+### To Enable Remote Support by Using the qq CLI
+
+* To enable Remote Support, run the `qq set_monitoring_conf --vpn-enabled` command.
+
+* To disable Remote Support, run the `qq set_monitoring_conf --vpn-disabled` command.
+
+* To check the status of Remote Support, run the `qq set_monitoring_conf` command.
