@@ -1,7 +1,7 @@
 destination: _site/
-url: "http://127.0.0.1:4010"
+url: "http://127.0.0.1:4000"
 baseurl: "/qumulo-doc"
-port: 4010
+port: 4000
 output: pdf
 #product: Qumulo-Certified Hardware Guide
 print_title: Qumulo-Certified Hardware Guide
