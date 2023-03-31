@@ -28,19 +28,24 @@ do
   case $opt in
     "Hardware Guide")
       ACTIONS+=("Hardware Guide")
+      break
       ;;
     "Azure Guide")
       ACTIONS+=("Azure Guide")
+      break
       ;;
     "Administrator Guide")
       ACTIONS+=("Administrator Guide")
+      break
       ;;
     "Qumulo Alerts Guide")
       ACTIONS+=("Qumulo Alerts Guide")
+      break
       ;;
     "All Guides")
       # Perform all of the actions
-      ACTIONS+=("Hardware Guide" "Azure Guide" "Administrator Guide" "Qumulo Alerts Guide" )      
+      ACTIONS+=("Hardware Guide" "Azure Guide" "Administrator Guide" "Qumulo Alerts Guide")
+      break
       ;;      
     *) echo "$REPLY is not valid. Try again."
     ;;
