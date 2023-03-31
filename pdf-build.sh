@@ -80,15 +80,15 @@ build_prince () {
     --user $(id -u):$(id -g) \
     --name docs-container \
     -v "$(pwd)":/src:rw \
-	  -P \
-	  --detach \
-	  --network host docs-builder serve \
-	  --config "_config.yml,pdfconfigs/${JEKYLL_CONFIG}"
+    -P \
+    --detach \
+    --network host docs-builder serve \
+    --config "_config.yml,pdfconfigs/${JEKYLL_CONFIG}"
 
-	echo "Waiting for port 4000 to become available..."
-	while ! nc -z localhost 4000; do
-	  sleep 0.2
-	done
+  echo "Waiting for port 4000 to become available..."
+  while ! nc -z localhost 4000; do
+    sleep 0.2
+  done
 
   echo "Building the PDF..."
   prince --javascript --input-list=_site/pdfconfigs/prince-list.txt -o "pdf/${PRINCE_OUTPUT}"
