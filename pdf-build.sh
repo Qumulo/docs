@@ -53,7 +53,7 @@ do
 done
 
 # Define the build config and output filename for each guide
-function build_prince {
+build_prince () {
   # Match input against the first parameter
   case "$1" in
     "Hardware Guide")
