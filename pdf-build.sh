@@ -54,7 +54,6 @@ done
 
 # Define the build config and output filename for each guide
 build_prince () {
-echo "my value is '$1'"
   # Match input against the first parameter
   case "$1" in
     "Hardware_Guide")
