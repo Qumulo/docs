@@ -69,7 +69,7 @@ To create a USB Drive Installer on Windows, you must use a third-party applicati
 
 1. For **Partition scheme**, select **MBR** and for **Target System**, select **BIOS or UEFI**.
    
-1. Under **Format Options**, ensure that the **File system** is set to **FAT32 (Default)** and **Cluster size** is set to **4096 bytes (Default)**.
+1. Under **Format Options**, ensure that the **File system** is set to **FAT32 (Default)**.
 
 1. Click **Start**.
 
