@@ -82,7 +82,10 @@ build_prince () {
     -v "$(pwd)":/src:rw \
     -P \
     --detach \
-    --network host docs-builder serve \
+    --env NOLIVERELOAD=1 \
+    --network host \
+    docs-builder \
+    serve \
     --config "_config.yml,pdfconfigs/${JEKYLL_CONFIG}"
 
   echo "Waiting for port 4000 to become available..."
