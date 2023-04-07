@@ -140,6 +140,10 @@ entries:
     url: /administrator-guide/protecting-data/index.html
     output: web, pdf
     folderitems:
+    
+    - title: Managing Encryption at Rest in Qumulo Core
+      url: /administrator-guide/protecting-data/managing-encryption-at-rest.html
+      output: web, pdf
 
     - title: Increasing the Node-Fault-Tolerance Level for Your Qumulo Cluster During Node-Add Operations
       url: /administrator-guide/protecting-data/increasing-node-fault-tolerance-level.html
