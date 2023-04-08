@@ -7,28 +7,24 @@ keywords: encryption, at rest, encryption at rest, data key, master key, rotate 
 ---
 
 {{site.data.alerts.caution}}
+<p>To avoid major security risks:</p>
 <ul>
-  <li>
-    <p>To avoid major security risks:</p>
-    <ul>
-      <li>Never write down encryption keys.</li>
-      <li>Always save your keys in a secure location outside of your cluster.</li>
-      <li>Keep the boot drive secure at all times.</li>
-    </ul>
-  </li>
-  <li>While the <em>master key</em> on your boot drive encrypts your <em>data keys</em>, the master key <em>itself</em> isn't encrypted.</li>
-  <li>Qumulo Care team members don't have access to your encryption keys and can't retrieve them for you.</li>
+  <li>Never write down encryption keys.</li>
+  <li>Always save your keys in a secure location outside of your cluster.</li>
+  <li>Keep the boot drive secure at all times.</li>
 </ul>
 {{site.data.alerts.end}}  
 
 ## How Master Keys and Data Keys Work in Qumulo Core
-In addition to encryption of data _in transit_ (for example, to clients that use SMBv.3.1), in Qumulo Core 3.1.5 (and higher) software-based encryption secures file data _at rest_ for on-premises clusters. Qumulo Core encrypts all data and metadata in the file system. Removing or reinserting drives and replication doesn't affect encryption at rest. For more information, see [Encryption Limitations](#encryption-limitations).
+In addition to encrypting data _in transit_ (for example, to clients that use SMBv.3.1), in Qumulo Core 3.1.5 (and higher) software-based encryption secures data _at rest_ for on-premises clusters. Qumulo Core encrypts all data and metadata in the file system. Removing or reinserting drives and replication doesn't affect encryption at rest. For more information, see [Encryption Limitations](#encryption-limitations).
 
 To encrypt data and data keys, Qumulo Core uses _master keys_ that it stores on the boot drive of every node in the cluster, in a file that only the `root` user can access. The _master key_ protects the _data key_ that encrypts the data on the cluster. This lets Qumulo Core protect your data from potential threats such as a malicious actors' access to stolen or decommissioned disks.
 
 {{site.data.alerts.important}}
 <ul>
-  <li>Handle the boot drive that contains the node's master key carefully. If a boot drive fails and requires replacement, remove the encrypted data keys associayed with the master key from the boot drive by <a href="#rotate-master-key">rotating the master key</a>. When you complete the key rotation process, you can dispose of the failed boot drive securely.</li>
+  <li>While the <em>master key</em> on your boot drive encrypts your <em>data keys</em>, the master key <em>itself</em> isn't encrypted.</li>
+  <li><a href="https://docs.qumulo.com/contacting-qumulo-care-team.html">Qumulo Care</a> team members can help you <a href="#rotate-master-key">rotate your master keys</a>. However, they don't have access to your encryption keys and can't retrieve them for you.</li>
+  <li>The boot drive contains the disk image, the installed build of Qumulo Core, and configuration files. In the unlikely event that your boot drive fails and requires replacement, remove the encrypted data keys associated with the master key from the boot drive by <a href="#rotate-master-key">rotating the master key</a>. When you complete the key rotation process, you can dispose of the failed boot drive securely.</li>
   <li>To avoid potential decryption, ensure that your data keys eventually <em>age out</em> by rotating the master key any time you replace a drive in your cluster.</li>
 </ul>
 {{site.data.alerts.end}}
