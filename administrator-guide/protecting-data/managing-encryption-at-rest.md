@@ -6,15 +6,6 @@ sidebar: administrator_guide_sidebar
 keywords: encryption, at rest, encryption at rest, data key, master key, rotate keys
 ---
 
-{{site.data.alerts.caution}}
-<p>To avoid major security risks:</p>
-<ul>
-  <li>Never write down encryption keys.</li>
-  <li>Always save your keys in a secure location outside of your cluster.</li>
-  <li>Keep the boot drive secure at all times.</li>
-</ul>
-{{site.data.alerts.end}}  
-
 ## How Master Keys and Data Keys Work in Qumulo Core
 In addition to encrypting data _in transit_ (for example, to clients that use SMBv.3.1), in Qumulo Core 3.1.5 (and higher) software-based encryption secures data _at rest_ for on-premises clusters. Qumulo Core encrypts all data and metadata in the file system. Removing or reinserting drives and replication doesn't affect encryption at rest. For more information, see [Encryption Limitations](#encryption-limitations).
 
