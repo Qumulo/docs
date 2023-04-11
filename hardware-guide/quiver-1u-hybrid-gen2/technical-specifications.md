@@ -26,7 +26,10 @@ keywords: technical specifications, tech specs, specs, specifications, Quiver 1U
   <tbody>
     <tr>
       <td><strong>Connectivity Ports (NIC)</strong></td>
-      <td colspan="4" style="text-align: center;">2 &#215; 25 GbE (1 &#215; Mellanox ConnectX-4 Lx NIC)<br>or 2 &#215; 25 GbE (1 &#215; Broadcom P225P NIC)<br>or 2 &#215; 100 GbE (1 &#215; Mellanox ConnectX-5 Lx NIC)<br>or 2 &#215; 100 GbE (1 &#215; Broadcom P2100G NIC)</td>
+      <td colspan="1" style="text-align: center;">2 &#215; 25 GbE (1 &#215; Mellanox ConnectX-4 Lx NIC)<br>or 2 &#215; 25 GbE (1 &#215; Broadcom P225P NIC)</td>
+      <td colspan="1" style="text-align: center;">2 &#215; 25 GbE (1 &#215; Mellanox ConnectX-4 Lx NIC)<br>or 2 &#215; 25 GbE (1 &#215; Broadcom P225P NIC)<br>or 2 &#215; 100 GbE (1 &#215; Mellanox ConnectX-5 Lx NIC)<br>or 2 &#215; 100 GbE (1 &#215; Broadcom P2100G NIC)</td>
+      <td colspan="1" style="text-align: center;">2 &#215; 25 GbE (1 &#215; Mellanox ConnectX-4 Lx NIC)<br>or 2 &#215; 25 GbE (1 &#215; Broadcom P225P NIC)</td>
+      <td colspan="1" style="text-align: center;">2 &#215; 25 GbE (1 &#215; Mellanox ConnectX-4 Lx NIC)<br>or 2 &#215; 25 GbE (1 &#215; Broadcom P225P NIC)<br>or 2 &#215; 100 GbE (1 &#215; Mellanox ConnectX-5 Lx NIC)<br>or 2 &#215; 100 GbE (1 &#215; Broadcom P2100G NIC)</td>
     </tr>
     <tr>
       <td><strong>Management Ports (BMC)</strong></td>
