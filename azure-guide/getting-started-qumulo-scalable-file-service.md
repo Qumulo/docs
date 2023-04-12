@@ -73,7 +73,14 @@ To log in to the Web UI, you must identify your service endpoint.
    https://192.0.0.4/login
    ```
    
-1. Enter the URL into a browser on the same network.
+1. Enter the URL into a browser from a machine that runs, or is connected to, the virtual network where you deployed {{site.azure.qumuloOnAzureLong}}.
+
+   {{site.data.alerts.note}}
+   <ul>
+     <li>If you connect from a machine that is in a different virtual network, establish <a href="https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview">virtual network peering</a> between the two virtual networks.</li>
+     <li>If you connect from an on-premises machine, ensure that you connect by using <a href="https://learn.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-about-vpngateways">VPN Gateway</a> or <a href="https://learn.microsoft.com/en-us/azure/expressroute/expressroute-introduction">ExpressRoute</a>.</li>
+   </ul>
+   {{site.data.alerts.end}}
 
 1. When the page prompts you for a **Username**, enter `admin`.
 
