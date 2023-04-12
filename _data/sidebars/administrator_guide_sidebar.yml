@@ -187,8 +187,21 @@ entries:
       url: /administrator-guide/file-system-protocols/nfsv4.1-acls.html
       output: web, pdf
 
+  - title: Watching for File Attribute and Directory Changes
+    url: /administrator-guide/watching-file-attribute-directory-changes/index.html
+    output: web, pdf
+    folderitems:
+
+    - title: How File System Change Notifications Work in Qumulo Core
+      url: /administrator-guide/watching-file-attribute-directory-changes/how-file-system-change-notifications-work.html
+      output: web, pdf
+
     - title: Watching for File Attribute and Directory Changes by Using SMB2 CHANGE_NOTIFY
-      url: /administrator-guide/file-system-protocols/watching-file-directory-changes-smb2-change-notify.html
+      url: /administrator-guide/watching-file-attribute-directory-changes/smb2-change-notify.html
+      output: web, pdf
+
+    - title: Watching for File Attribute and Directory Changes by Using REST
+      url: /administrator-guide/watching-file-attribute-directory-changes/rest.html
       output: web, pdf
 
   - title: S3 API

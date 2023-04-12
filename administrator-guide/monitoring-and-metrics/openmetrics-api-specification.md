@@ -78,13 +78,29 @@ The following table lists metric names, types, labels, and descriptions.
       <td><a href="#metric-type-info"><code>info</code></a></td>
       <td>
         <ul>
+          <li class="pdf-friendly"><code>max_drive_failures</code></li>
+          <li class="pdf-friendly"><code>max_node_failures</code></li>
           <li class="pdf-friendly"><code>name</code></li>
+          <li class="pdf-friendly"><code>platform</code></li>
+          <li class="pdf-friendly"><code>service_model</code></li>
           <li class="pdf-friendly"><code>uuid</code></li>
           <li class="pdf-friendly"><code>version</code></li>
         </ul>
       </td>
       <td>5.3.0</td>
       <td>Qumulo Core information, including the cluster name, cluster UUID, and the current Qumulo Core version</td>
+    </tr>
+    <tr>
+      <td><code>qumulo_node</code></td>
+      <td><a href="#metric-type-info"><code>info</code></a></td>
+      <td>
+        <ul>
+          <li class="pdf-friendly"><a href="#metric-label-node_id"><code>node_id</code></a></li>
+          <li class="pdf-friendly"><code>node_model</code></li>
+        </ul>
+      </td>
+      <td>6.0.2</td>
+      <td>Information about the nodes in the cluster, including the node ID and the node model</td>
     </tr>
     <tr>
       <td><code>qumulo_ad_netlogon_request_errors</code></td>

@@ -23,6 +23,10 @@ keywords: update, upgrade, instant, instant software upgrade, platform, platform
       <th>Upgrade Type</th>
     </thead>
     <tr>
+      <td>6.0.2</td>
+      <td>Instant</td>
+    </tr>
+    <tr>
       <td><strong>6.0.1.1</strong></td>
       <td><strong>Platform</strong></td>
     </tr>
@@ -249,6 +253,10 @@ keywords: update, upgrade, instant, instant software upgrade, platform, platform
       <th>Version</th>
       <th>Upgrade Type</th>
     </thead>
+    <tr>
+      <td>6.0.2</td>
+      <td>Instant</td>
+    </tr>
     <tr>
       <td><strong>6.0.1.1</strong></td>
       <td><strong>Platform</strong></td>

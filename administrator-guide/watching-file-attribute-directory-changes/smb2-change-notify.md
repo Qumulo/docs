@@ -1,11 +1,16 @@
 ---
 title: "Watching for File Attribute and Directory Changes by Using SMB2 CHANGE_NOTIFY"
 summary: "This section lists the completion filters that an SMB client can request and the corresponding actions that Qumulo Core returns for a matched change."
-permalink: /administrator-guide/file-system-protocols/watching-file-directory-changes-smb2-change-notify.html
+permalink: /administrator-guide/watching-file-attribute-directory-changes/smb2-change-notify.html
+redirect_from:
+  - /administrator-guide/file-system-protocols/watching-file-directory-changes-smb2-change-notify.html
 sidebar: administrator_guide_sidebar
-keywords: SMB, SMB2, CHANGE_NOTIFY, completion filter, action, matched change
-varNoEA: Qumulo doesn't support mutating extended attributes (EA). If only the <code>FILE_NOTIFY_CHANGE_EA</code> filter is requested, no events propagate.
+keywords: SMB2, CHANGE_NOTIFY, completion filter, action, matched change
+varNoEA: Qumulo doesn't support mutating extended attributes (EA). If the system requests only the <code>FILE_NOTIFY_CHANGE_EA</code> filter, no events propagate.
 ---
+
+{% capture useRESTnotSMB %}{{site.changeNotify.useRESTnotSMB}}{% endcapture %}
+{% include note.html content=useRESTnotSMB %}
 
 Qumulo Core can watch for changes in file attributes and directory entries with a combination of SMB2 <a href='https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-smb2/598f395a-e7a2-4cc8-afb3-ccb30dd2df7c'><code>CHANGE_NOTIFY</code></a> filters. Depending on the requested filter&mdash;and activity in the file system&mdash;an SMB client or an application remains current by receiving a variety of notifications.
 
@@ -117,4 +122,4 @@ If the SMB client can't keep up with the notification stream from the server, th
 In this scenario, the client must re-enumerate any changes that concern it directly, by opening and inspecting files, rather than relying on notifications. This scenario can happen because the request is too broad, for example, a recursive watch on the filesystem root.
 
 ## Configuring Full Recursion for the WATCH_TREE Flag
-By default, when a client supplies the `WATCH_TREE` flag, the server sends an error to the client immediately. In this scenario, you can configure your Qumulo cluster to support full recursion.
+By default, when a client supplies the `WATCH_TREE` flag, the server sends an error to the client immediately. In this scenario, you can [configure your Qumulo cluster to support full recursion](how-file-system-change-notifications-work.md).
