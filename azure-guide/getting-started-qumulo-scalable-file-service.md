@@ -78,7 +78,7 @@ To log in to the Web UI, you must identify your service endpoint.
    {{site.data.alerts.note}}
    <ul>
      <li>If you connect from a machine that is in a different virtual network, establish <a href="https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview">virtual network peering</a> between the two virtual networks.</li>
-     <li>If you connect from an on-premises machine, ensure that you connect by using <a href="https://learn.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-about-vpngateways">VPN Gateway</a> or <a href="https://learn.microsoft.com/en-us/azure/expressroute/expressroute-introduction">ExpressRoute</a>.</li>
+     <li>If you connect from an on-premises machine, ensure that you connect by using <a href="https://learn.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-about-vpngateways">Azure VPN Gateway</a> or <a href="https://learn.microsoft.com/en-us/azure/expressroute/expressroute-introduction">Azure ExpressRoute</a>.</li>
    </ul>
    {{site.data.alerts.end}}
 
