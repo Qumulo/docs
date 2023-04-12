@@ -150,7 +150,7 @@ By default, the default bucket directory prefix for newly created buckets is the
 ### Creating an S3 Bucket by Using the qq CLI
 To create an S3 bucket {{site.s3.permissions.APIorCLI}}, you need {{site.s3.permissions.bucketsWrite}}.
 
-{% include important.html content="In Qumulo Core 6.0.1 (and higher), the `qq` CLI command changed from `s3_create_bucket` to `s3_add_bucket` and the flag for specifying the directory path has changed from `--path` to `--fs-path`." %}
+{% include important.html content="In Qumulo Core 6.0.1.1 (and higher), the `qq` CLI command changed from `s3_create_bucket` to `s3_add_bucket` and the flag for specifying the directory path has changed from `--path` to `--fs-path`." %}
 
 When you use the `qq` CLI to create a bucket, you can use a new or existing directory as the bucket root.
 
