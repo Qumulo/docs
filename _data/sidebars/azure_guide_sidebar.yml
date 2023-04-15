@@ -51,3 +51,7 @@ entries:
     - title: Getting Started
       url: /azure-guide/getting-started-qumulo-scalable-file-service.html
       output: web, pdf
+
+    - title: Connecting Azure Native Qumulo Scalable File Service to Azure Active Directory Domain Services
+      url: /azure-guide/connecting-to-azure-active-directory-domain-services.html
+      output: web, pdf
