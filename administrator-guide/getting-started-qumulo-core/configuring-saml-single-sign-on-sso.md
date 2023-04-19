@@ -35,19 +35,19 @@ This process requires coordination between the cluster administrator and SSO adm
 
 1. The SSO administrator creates a SAML integration with your organization's SSO [identity provider](#identity-provider) (IdP).
 
-   a. The SSO administrator uses the cluster's fully qualified domain name (FQDN) format for the [service provider](#service-provider) (SP) endpoint (also known as the _assertion consumer service URL_), in the following format:
+   1. The SSO administrator uses the cluster's fully qualified domain name (FQDN) format for the [service provider](#service-provider) (SP) endpoint (also known as the _assertion consumer service URL_), in the following format:
 
-   ```
-   https://<my-cluster>.<my-org>.com/saml
-   ```
+      ```
+      https://<my-cluster>.<my-org>.com/saml
+      ```
    
       {% include note.html content="Because the user's browser performs DNS resolution (for example, in a VPN-only scenario), it isn't necessary for an external DNS server to be able to resolve the cluster's FQDN." %}
 
-   b. If prompted, the SSO administrator enters the HTTP POST binding for the SP endpoint. Typically, this binding is specified by default.
+   1. If prompted, the SSO administrator enters the HTTP POST binding for the SP endpoint. Typically, this binding is specified by default.
 
-   c. If prompted for **SP Entity ID** (alternatively named **Application Identifier** or **Audience**), the SSO administrator enters `https://<my-cluster>.<my-org>.com/saml`.
+   1. If prompted for **SP Entity ID** (alternatively named **Application Identifier** or **Audience**), the SSO administrator enters `https://<my-cluster>.<my-org>.com/saml`.
 
-   d. If **SAML Signing**  (depending on the SSO service, this option is named differently) configuration is available, the SSO administrator sets it to **Sign SAML response and assertion**.
+   1. If **SAML Signing**  (depending on the SSO service, this option is named differently) configuration is available, the SSO administrator sets it to **Sign SAML response and assertion**.
    
       {% include note.html content="Qumulo Core requires that IdP sign both the assertion and the entire SAML response." %}
 

@@ -63,13 +63,13 @@ keywords: chassis, chassis replacement, c-192t, c-432t, k-432t, 2u, 2u hybrid, 2
 
    {% include important.html content="Work on one drawer at a time. If you apply 2 kg (or more) of downward force to a drawer, it might deform while opened." %}
 
-   a. To open the HDD drawer, use the blue lever at the front of the node.
+   1. To open the HDD drawer, use the blue lever at the front of the node.
 
-   b. To remove an HDD from the original chassis, gently lift up the drive tray knob. This lets the drive move forward and unlatch.
+   1. To remove an HDD from the original chassis, gently lift up the drive tray knob. This lets the drive move forward and unlatch.
 
-   {% include image.html alt="HDD Tray" file="c-series-2u-hdd-tray.png" %}
+      {% include image.html alt="HDD Tray" file="c-series-2u-hdd-tray.png" %}
    
-   c. To insert an HDD into the replacement chassis, gently slide the drive tray knob backwards. This latches the drive and knob in place.
+   1. To insert an HDD into the replacement chassis, gently slide the drive tray knob backwards. This latches the drive and knob in place.
 
 1. Reconnect the power and networking cables to the node.
 

@@ -41,24 +41,24 @@ For more information, see [Authenticating Requests: Using Query Parameters (AWS 
 
 To create a presigned URL, use the AWS CLI [`presign`](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/s3/presign.html) command. In the following example, the presigned URL expires in 10 minutes (600 seconds).
 
-  ```bash
-  $ aws2 s3 presign s3://my-bucket/my-file.txt \
-    --endpoint-url https://{{site.exampleIP0}}:9000 \
-    --profile my-qumulo-profile \
-    --expires-in 600
-  ```
+```bash
+$ aws2 s3 presign s3://my-bucket/my-file.txt \
+  --endpoint-url https://{{site.exampleIP0}}:9000 \
+  --profile my-qumulo-profile \
+  --expires-in 600
+```
 
 The following is example output from the command, with line breaks inserted for readability. The `X-Amz-Expires` header is set to 10 minutes.
 
-  ```
-  https://{{site.exampleIP0}}:9000/my-bucket/my-file.txt?
-  X-Amz-Algorithm=AWS4-HMAC-SHA256
-  &X-Amz-Credential=00000000000003e88527%2F20230217%2Fus-east-1%2Fs3%2Faws4_request
-  &X-Amz-Date=20230217T205559Z
-  &X-Amz-Expires=600
-  &X-Amz-SignedHeaders=host
-  &X-Amz-Signature=141fa5b10caaa8575ba9c065d2270a24ce14b2ff58bb2c2e98382c76297b21ee
-  ```
+```
+https://{{site.exampleIP0}}:9000/my-bucket/my-file.txt?
+X-Amz-Algorithm=AWS4-HMAC-SHA256
+&X-Amz-Credential=00000000000003e88527%2F20230217%2Fus-east-1%2Fs3%2Faws4_request
+&X-Amz-Date=20230217T205559Z
+&X-Amz-Expires=600
+&X-Amz-SignedHeaders=host
+&X-Amz-Signature=141fa5b10caaa8575ba9c065d2270a24ce14b2ff58bb2c2e98382c76297b21ee
+```
 
 
 <a id="anonymous-access"></a>

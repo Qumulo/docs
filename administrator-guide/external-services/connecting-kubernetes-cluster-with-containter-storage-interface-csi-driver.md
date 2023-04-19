@@ -194,15 +194,15 @@ To link your Kubernetes cluster to your Qumulo cluster, you must create a storag
 
 1. Edit the configuration for your Qumulo cluster.
 
-   a. Name your storage class.
+   1. Name your storage class.
    
-   b. Specify server and `storeRealPath`.
+   1. Specify server and `storeRealPath`.
 
-   c. Specify `storeExportPath`.
+   1. Specify `storeExportPath`.
 
-   d. (Optional) Specify `tenantId`.
+   1. (Optional) Specify `tenantId`.
    
-   e. Configure the following parameters to point to [the Secrets that you have created and configured](#step-4-create-configure-secrets) in the namespace in which you installed the CSI driver:
+   1. Configure the following parameters to point to [the Secrets that you have created and configured](#step-4-create-configure-secrets) in the namespace in which you installed the CSI driver:
 
       * `controller-expand-secret-name`
 
@@ -212,17 +212,17 @@ To link your Kubernetes cluster to your Qumulo cluster, you must create a storag
 
       * `provisioner-secret-namespace`
 
-   f. Specify the NFS `mountOptions`. For example:
+   1. Specify the NFS `mountOptions`. For example:
    
-   ```
-   mountOptions:
-     - nolock
-     - intr
-     - proto=tcp
-     - vers=3
-   ```
+      ```
+      mountOptions:
+        - nolock
+        - intr
+        - proto=tcp
+        - vers=3
+      ```
       
-   g. To create the class, apply the configuration. For example:
+   1. To create the class, apply the configuration. For example:
    
    ```bash
    kubectl create -f storageclass-qumulo.yaml
@@ -250,17 +250,17 @@ To apply a PVC claim to a Pod dynamically, you must first configure and create i
 
 1. Edit the configuration for your PVC claim.
 
-   a. Name your claim.
+   1. Name your claim.
    
-   b. Change `storeClassName` to the name of your claim.
+   1. Change `storeClassName` to the name of your claim.
    
-   c. Specify the capacity in `spec.resources.requests.storage`. This parameter lets you create a quota on your Qumulo cluster.
+   1. Specify the capacity in `spec.resources.requests.storage`. This parameter lets you create a quota on your Qumulo cluster.
       
-   d. To create the claim, apply the configuration. For example:
+   1. To create the claim, apply the configuration. For example:
    
-   ```bash
-   kubectl apply -f dynamic-pvc.yaml
-   ```
+      ```bash
+      kubectl apply -f dynamic-pvc.yaml
+      ```
 
 1. Use the claim in a Pod or a Deployment. For example:
 

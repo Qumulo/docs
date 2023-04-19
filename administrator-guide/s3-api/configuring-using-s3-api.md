@@ -69,21 +69,21 @@ To create and manage S3 buckets, you must configure AWS CLI to work with your Qu
 
 1. Use [the access key pair that you have created earlier](#creating-access-key) and the `aws configure` command to:
 
-   a. Specify your profile and [access key ID](creating-managing-s3-access-keys.html#access-key-id). For example:
+   1. Specify your profile and [access key ID](creating-managing-s3-access-keys.html#access-key-id). For example:
 
-   ```bash
-   $ aws configure
-     --profile my-qumulo-profile set s3.aws_access_key_id \
-       000000000001fEXAMPLE
-   ```
+      ```bash
+      $ aws configure
+        --profile my-qumulo-profile set s3.aws_access_key_id \
+          000000000001fEXAMPLE
+      ```
    
-   b. Specify your profile and [secret access key](creating-managing-s3-access-keys.html#secret-access-key). For example:
+   1. Specify your profile and [secret access key](creating-managing-s3-access-keys.html#secret-access-key). For example:
 
-   ```bash
-   $ aws configure
-     --profile my-qumulo-profile set s3.aws_secret_access_key \
-       TEIT4liMZ8A32iI7JXmqIiLWp5co/jmkjEXAMPLE
-   ```
+      ```bash
+      $ aws configure
+        --profile my-qumulo-profile set s3.aws_secret_access_key \
+          TEIT4liMZ8A32iI7JXmqIiLWp5co/jmkjEXAMPLE
+      ```
 
 1. Because it isn't possible to specify your cluster's URI persistently, create a shell alias to specify your cluster's URI, in the following format:
 

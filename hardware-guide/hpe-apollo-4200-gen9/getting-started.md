@@ -61,13 +61,13 @@ keywords: getting started guide, quick reference, HPE, Apollo 4200 Gen9, verify 
 
    * If the SmartArray mode is **Not Secure**, **HBA**, or **Unencrypted**, do the following:
 
-     a. Select **1) SET ENCRYPTION, set SmartArrays in RAID mode, destroy all data, reboot node**.
+     1. Select **1) SET ENCRYPTION, set SmartArrays in RAID mode, destroy all data, reboot node**.
 
-     b. After the node reboots, select **1) CONFIGURE ENCRYPTION, Set up encryption, input new keys**.
+     1. After the node reboots, select **1) CONFIGURE ENCRYPTION, Set up encryption, input new keys**.
 
         The rules for the cryptographic login password and master key appear.
 
-        {% include caution.html content="To avoid data loss, save your credentials." %}
+     {% include caution.html content="To avoid data loss, save your credentials." %}
      
 
 ## Step 3: Run the Field Verification Tool (FVT)

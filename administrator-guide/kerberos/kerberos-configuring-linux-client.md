@@ -279,19 +279,19 @@ In environments where Linux systems map exactly to end users that have `kinit`-b
 
 1. Configure the `autofs` mappings. For more information, see [auto.master](https://man7.org/linux/man-pages/man5/auto.master.5.html) in the Linux documentation. The following is an example of a simple configuration that provides a single (direct) mount point which authenticates AD users automatically.
 
-   a. To define a mount point and the path to its map file, add the following line to the `/etc/auto.master` file.
+   1. To define a mount point and the path to its map file, add the following line to the `/etc/auto.master` file.
 
-   ```
-   /- /etc/auto.kerberos_nfs_mount_example --timeout 60
-   ```
+      ```
+      /- /etc/auto.kerberos_nfs_mount_example --timeout 60
+      ```
 
-   For more information, see [Autofs](https://help.ubuntu.com/community/Autofs) in the Ubuntu documentation.
+      For more information, see [Autofs](https://help.ubuntu.com/community/Autofs) in the Ubuntu documentation.
 
-   b. Add the following line to the `/etc/auto.kerberos_nfs_mount_example` map file.
+   1. Add the following line to the `/etc/auto.kerberos_nfs_mount_example` map file.
 
-   ```
-   /mnt/qumulo_mount_point -vers=4.1,sec=krb5 <qumulo-cluster>.my-domain.example.com:/
-   ```
+      ```
+      /mnt/qumulo_mount_point -vers=4.1,sec=krb5 <qumulo-cluster>.my-domain.example.com:/
+      ```
 
 1. Restart `autofs`.
 
