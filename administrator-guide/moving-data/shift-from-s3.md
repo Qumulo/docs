@@ -117,24 +117,29 @@ This section describes how to use the Qumulo Web UI 4.2.5 (and higher) to copy f
 
 ### To Copy Files from Amazon S3
 1. Log in to Qumulo Core.
+
 1. Click **Cluster > Copy to/from S3**.
+
 1. On the **Copy to/from S3** page, click **Create Copy**.
+
 1. On the **Create Copy to/from S3** page, click **Local ⇦ Remote** and then enter the following:
 
-   a. The **Directory Path** on your cluster (`/` by default)
+   1. The **Directory Path** on your cluster (`/` by default)
 
-   b. The S3 **Bucket Name**
+   1. The S3 **Bucket Name**
 
-   c. The **Folder** in your S3 bucket
+   1. The **Folder** in your S3 bucket
 
-   d. The **Region** for your S3 bucket
+   1. The **Region** for your S3 bucket
 
-   e. Your AWS **Region** (`/` by default)
+   1. Your AWS **Region** (`/` by default)
 
-   f. Your AWS **Access Key ID** and **Secret Access Key**.
+   1. Your AWS **Access Key ID** and **Secret Access Key**.
 
 1. (Optional) For additional configuration, click **Advanced S3 Server Settings**.
+
 1. Click **Create Copy**.
+
 1. In the **Create Copy from S3?** dialog box, review the Shift relationship and then click **Yes, Create**.
 
    The copy job begins and Qumulo Core estimates the work to be performed. When the estimation is complete, the Web UI displays a progress bar with a percentage for a relationship on the **Replication Relationships** page. The page also displays the estimated total work, the remaining bytes and files, and the estimated time to completion for a running copy job.

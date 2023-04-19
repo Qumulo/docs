@@ -13,19 +13,19 @@ This section explains how to deploy the service in Azure.
 
 1. On the **Create a Qumulo resource in Azure** page, on the **Basics** tab, in the **Project details** section:
 
-   a. Select a **Subscription** that you can access as an owner.
+   1. Select a **Subscription** that you can access as an owner.
    
-   b. Select a **Resource group** or click **Create new**.
+   1. Select a **Resource group** or click **Create new**.
       
       {% include note.html content="A _resource group_ is a container that holds related Azure resources. We recommend creating a resource group exclusive to your Qumulo infrastructure." %}
 
 1. In the **Azure resource details** section:
 
-   a. Enter a **Resource name**. This is the name of your service.
+   1. Enter a **Resource name**. This is the name of your service.
    
-   b. Select a **Region**. For more information, see [Supported Azure Regions](how-qumulo-scalable-file-service-works.html#supported-azure-regions).
+   1. Select a **Region**. For more information, see [Supported Azure Regions](how-qumulo-scalable-file-service-works.html#supported-azure-regions).
    
-   c. Select an **Availability zone**. Azure pins the service resources in a region to this availability zone.
+   1. Select an **Availability zone**. Azure pins the service resources in a region to this availability zone.
    
       {% include note.html content="By creating all your Qumulo resources within the same availability zone, Azure can reduce latency." %}
 
@@ -33,9 +33,9 @@ This section explains how to deploy the service in Azure.
 
 1. In the **Qumulo file system details** section:
 
-   a. Select the **Standard** or **Performance** storage type.
+   1. Select the **Standard** or **Performance** storage type.
    
-   b. Specify the size of the service to create, in TB.
+   1. Specify the size of the service to create, in TB.
 
 1. In the **Pricing plan** section, select a pricing plan.
 
@@ -47,9 +47,9 @@ This section explains how to deploy the service in Azure.
 
 1. On the **Networking** tab, in the **Configure virtual network** section:
 
-   a. Select the **Virtual network** for hosting your service. For more information, see [Configuring Virtual Networking for the {{site.azure.qumuloOnAzureLong}}](configuring-virtual-networking-qumulo-scalable-file-service.html).
+   1. Select the **Virtual network** for hosting your service. For more information, see [Configuring Virtual Networking for the {{site.azure.qumuloOnAzureLong}}](configuring-virtual-networking-qumulo-scalable-file-service.html).
    
-   b. Select an existing [delegated subnet](https://learn.microsoft.com/en-us/azure/virtual-network/subnet-delegation-overview) to associate with your service.
+   1. Select an existing [delegated subnet](https://learn.microsoft.com/en-us/azure/virtual-network/subnet-delegation-overview) to associate with your service.
    
       {% include note.html content="You can associate only one delegated subnet with one service instance." %}
 

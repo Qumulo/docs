@@ -31,11 +31,11 @@ Azure AD DS provides managed domain services such as Windows Domain Join, Group 
    
 1. Configure DNS for your managed domain.
 
-   a. Log in to the [Azure portal](https://azure.microsoft.com/en-us/) and search for `azure active directory domain services`.
+   1. Log in to the [Azure portal](https://azure.microsoft.com/en-us/) and search for `azure active directory domain services`.
    
-   b. Click your domain.
+   1. Click your domain.
    
-   c. In the **Required configuration steps** section, under **Update DNS server settings for your virtual network**, note the domain controllers (DNS servers) that the managed domain deployment created for you, and then click **Configure**. For more information, see [Update DNS settings for the Azure virtual network](https://learn.microsoft.com/en-us/azure/active-directory-domain-services/tutorial-create-instance#update-dns-settings-for-the-azure-virtual-network) in the Azure AD Domain Services documentation.
+   1. In the **Required configuration steps** section, under **Update DNS server settings for your virtual network**, note the domain controllers (DNS servers) that the managed domain deployment created for you, and then click **Configure**. For more information, see [Update DNS settings for the Azure virtual network](https://learn.microsoft.com/en-us/azure/active-directory-domain-services/tutorial-create-instance#update-dns-settings-for-the-azure-virtual-network) in the Azure AD Domain Services documentation.
 
 1. (Optional) If the Azure AD DS managed domain VNet is different from the VNet that you used for deploying {{site.azure.qumuloOnAzureShort}}, peer the two VNets. For more information, see [Configure virtual network peering](https://learn.microsoft.com/en-us/azure/active-directory-domain-services/tutorial-configure-networking#configure-virtual-network-peering) in the Azure AD Domain Services documentation.
    

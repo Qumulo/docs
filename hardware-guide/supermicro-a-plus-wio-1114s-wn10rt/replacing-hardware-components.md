@@ -36,21 +36,21 @@ Replacement drives, including the on-site spare drives that you received with yo
 
 1. To remove the existing drive, do the following:
 
-   a. Press the orange release button on the right of the drive carrier until the drive carrier handle extends on the left.
+   1. Press the orange release button on the right of the drive carrier until the drive carrier handle extends on the left.
     
-   b. Use the drive carrier handle to pull the carrier out of the chassis.
+   1. Use the drive carrier handle to pull the carrier out of the chassis.
 
-   c. To remove the drive from the carrier, undo the mounting clips.
+   1. To remove the drive from the carrier, undo the mounting clips.
 
 1. To install a replacement drive, do the following:
 
-   a. Insert the new drive into the drive carrier with the printed circuit board (PCB) side facing down and the connector end facing towards the rear of the tray.
+   1. Insert the new drive into the drive carrier with the printed circuit board (PCB) side facing down and the connector end facing towards the rear of the tray.
 
-   b. Secure the drive to its carrier by using the mounting clips.
+   1. Secure the drive to its carrier by using the mounting clips.
 
-   c. Insert the drive carrier into the chassis with the orange release button facing right.
+   1. Insert the drive carrier into the chassis with the orange release button facing right.
    
-   d. Push the drive carrier into the chassis until the handle retracts and clicks into place.
+   1. Push the drive carrier into the chassis until the handle retracts and clicks into place.
 
 {% include note.html content="If you remove and reinsert a drive extremely quickly (faster than one second), the baseboard management controller (BMC) doesn't recognize the drive and the activity LEDs don't return to their normal states. To resolve this issue, remove the drive, wait five seconds, and then reinsert it." %}
 

@@ -275,25 +275,25 @@ When you connect external services to the Qumulo Core REST API, we recommend cre
 
 1. Create a service account.
 
-    a. Click **Cluster > Local Users & Groups**.
+   1. Click **Cluster > Local Users & Groups**.
 
-    b. In the **Users** section, click **Create**.
+   1. In the **Users** section, click **Create**.
 
-    c. In the **Create user** dialog box, enter a **User name** and **Password**, re-enter the password, and then click **Create**.
+   1. In the **Create user** dialog box, enter a **User name** and **Password**, re-enter the password, and then click **Create**.
 
 1. Create a role with privileges.
 
-    a. Click **Cluster > Role Management**.
+   1. Click **Cluster > Role Management**.
 
-    b. In the **Role Management** section, click **Create Role**.
+   1. In the **Role Management** section, click **Create Role**.
 
-    c. On the **Create Role** page, enter a **Name** and **Description**, click the **Privileges** for the user, and then click **Save**.
+   1. On the **Create Role** page, enter a **Name** and **Description**, click the **Privileges** for the user, and then click **Save**.
 
 1. Assign the service user to the role.
 
-    a. On the **Role Management** page, find the name of the role you created and then click **Add Member**.
+   1. On the **Role Management** page, find the name of the role you created and then click **Add Member**.
 
-    b. In the **Add Member to &lt;MyRoleName&gt;** dialog box, for **Trustee**, enter the name of the user you created and then click **Yes, Add Member**.
+   1. In the **Add Member to &lt;MyRoleName&gt;** dialog box, for **Trustee**, enter the name of the user you created and then click **Yes, Add Member**.
 
 1. [Create access tokens](#creating-using-access-tokens) for your service account.
 
