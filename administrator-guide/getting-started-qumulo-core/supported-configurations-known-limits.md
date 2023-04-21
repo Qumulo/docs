@@ -5,7 +5,7 @@ permalink: /administrator-guide/getting-started-qumulo-core/supported-configurat
 redirect_from:
   - /administrator-guide/qumulo-core/supported-configurations-known-limits.html
 sidebar: administrator_guide_sidebar
-keywords: limit, limits, limitations, known limits, known limitations, config, configuration, supported config, supported configuration
+keywords: limit, limits, limitations, known_limits, known_limitations, config, configuration, supported_config, supported_configuration
 ---
 
 ## Supported Configurations

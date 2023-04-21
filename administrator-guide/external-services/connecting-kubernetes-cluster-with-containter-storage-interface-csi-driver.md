@@ -4,7 +4,7 @@ summary: "This section introduces the Qumulo Container Storage Interface (CSI) d
 permalink: /administrator-guide/external-services/connecting-kubernetes-cluster-with-container-storage-interface-csi-driver.html
 redirect_from:
   - /administrator-guide/external-services/connecting-kubernetes-cluster-with-containter-storage-interface-csi-driver.html
-keywords: static, dynamic, expansion, persistent volume claim, PVC, container storage interface, CSI, Kubernetes
+keywords: static, dynamic, expansion, persistent_volume_claim, PVC, container_storage_interface, CSI, Kubernetes
 sidebar: administrator_guide_sidebar
 ---
 

@@ -5,7 +5,7 @@ permalink: /hardware-guide/hpe-apollo-4200-gen10/panel-leds.html
 redirect_from:
   - /hardware/hpe-apollo-4200-gen10/panel-leds.html
 sidebar: hardware_guide_sidebar
-keywords: LED, front panel, power fault, rear panel, diagnose, diagnosis, hardware health
+keywords: LED, front_panel, power_fault, rear_panel, diagnose, diagnosis, hardware_health
 ---
 
 ## Front Panel LEDs and Buttons

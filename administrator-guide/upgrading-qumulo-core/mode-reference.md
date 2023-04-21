@@ -5,7 +5,7 @@ permalink: /administrator-guide/upgrading-qumulo-core/mode-reference.html
 redirect_from:
   - /administrator-guide/upgrades/mode-reference.html
 sidebar: administrator_guide_sidebar
-keywords: update, upgrade, instant, instant software upgrade, platform, platform upgrade
+keywords: update, upgrade, instant, instant_software_upgrade, platform, platform_upgrade
 ---
 
 * An [_instant software upgrade_](instant-software-platform.md#instant-software-upgrade) requires restarting only the container on your nodes and has a downtime of less than 30 seconds without disruption to the operation of the cluster.

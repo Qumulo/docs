@@ -5,7 +5,7 @@ permalink: /hardware-guide/hpe-apollo-4200-gen9/getting-started.html
 redirect_from:
   - /hardware/hpe-apollo-4200-gen9/getting-started.html
 sidebar: hardware_guide_sidebar
-keywords: getting started guide, quick reference, HPE, Apollo 4200 Gen9, verify node, field verification tool, FVT, intelligent provisioning
+keywords: getting_started_guide, quick_reference, HPE, Apollo_4200_Gen9, verify_node, field_verification_tool, FVT, intelligent_provisioning
 ---
 
 {% include content-reuse/hpe-apollo-4200-gen-9-90t-180t-288t-eops.md %}

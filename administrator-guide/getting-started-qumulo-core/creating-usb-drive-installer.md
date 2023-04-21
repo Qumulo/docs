@@ -5,7 +5,7 @@ permalink: /administrator-guide/getting-started-qumulo-core/creating-usb-drive-i
 redirect_from:
   - /administrator-guide/qumulo-core/creating-usb-drive-installer.html
 sidebar: administrator_guide_sidebar
-keywords: Qumulo Core, USB, USB drive, installer, macOS, mac, Windows
+keywords: Qumulo_Core, USB, USB drive, installer, macOS, mac, Windows
 ---
 
 ## Prerequisites

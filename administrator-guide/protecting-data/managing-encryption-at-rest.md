@@ -3,7 +3,7 @@ title: "Managing Encryption at Rest in Qumulo Core"
 summary: "This section explains how encryption at rest works in Qumulo Core, how to rotate master keys, and how to ensure that the master keys across your cluster are secured correctly."
 permalink: /administrator-guide/protecting-data/managing-encryption-at-rest.html
 sidebar: administrator_guide_sidebar
-keywords: encryption, at rest, encryption at rest, data key, master key, rotate keys
+keywords: encryption, at_rest, encryption_at_rest, data_key, master_key, rotate_keys
 ---
 
 ## How Master Keys and Data Keys Work in Qumulo Core

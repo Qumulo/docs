@@ -3,7 +3,7 @@ title: "How the Azure Native Qumulo Scalable File Service Works"
 summary: "This section gives an overview of deploying the Azure Native Qumulo Scalable File Service; lists the Azure regions and compliance postures that the service supports; and explains the differences between this service, Qumulo on AWS as an AMI, and Qumulo on premises."
 permalink: /azure-guide/how-qumulo-scalable-file-service-works.html
 sidebar: azure_guide_sidebar
-keywords: cloud, azure, native, scalable file service, file service, regions, soc, fips 140-2
+keywords: cloud, azure, native, scalable_file_service, file_service, regions, soc, fips_140-2
 ---
 
 This fully managed service deploys and manages resources on your behalf, runs Qumulo Core, and provides the same interfaces and functionality as Qumulo on premises.

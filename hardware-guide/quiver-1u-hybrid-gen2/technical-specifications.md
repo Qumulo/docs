@@ -3,7 +3,7 @@ title: "Quiver 1U Hybrid Gen2 Technical Specifications"
 summary: "This section provides technical specifications for Quiver 1U Hybrid Gen2 node types."
 permalink: /hardware-guide/quiver-1u-hybrid-gen2/technical-specifications.html
 sidebar: hardware_guide_sidebar
-keywords: technical specifications, tech specs, specs, specifications, Quiver 1U Hybrid Gen2
+keywords: technical_specifications, tech_specs, specs, specifications, Quiver_1U_Hybrid_Gen2
 ---
 
 {{site.data.alerts.note}}

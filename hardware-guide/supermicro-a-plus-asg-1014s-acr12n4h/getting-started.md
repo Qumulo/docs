@@ -5,7 +5,7 @@ permalink: /hardware-guide/supermicro-a-plus-asg-1014s-acr12n4h/getting-started.
 redirect_from:
   - /hardware/supermicro-a-plus-asg-1014s-acr12n4h/getting-started.html
 sidebar: hardware_guide_sidebar
-keywords: getting started guide, quick reference, Supermicro 1014S, ACR12N4H, verify node, field verification tool, FVT
+keywords: getting_started_guide, quick_reference, Supermicro_1014S, ACR12N4H, verify_node, field_verification_tool, FVT
 ---
 
 ## Step 1: Verify Your Node

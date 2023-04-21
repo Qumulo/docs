@@ -3,7 +3,7 @@ title: "Configuring Virtual Networking for the Azure Native Qumulo Scalable File
 summary: "This section lists the prerequisites for the Azure Native Qumulo Scalable File Service, describes the components of virtual networking for the service, explains how to configure them, and provides virtual networking best practices."
 permalink: /azure-guide/configuring-virtual-networking-qumulo-scalable-file-service.html
 sidebar: azure_guide_sidebar
-keywords: cloud, azure, native, scalable file service, file service, network, networking, owner, contributor, role, subnet, dedicated subnet, endpoint, route table, security group, VNet injection
+keywords: cloud, azure, native, scalable_file_service, file_service, network, networking, owner, contributor, role, subnet, dedicated_subnet, endpoint, route_table, security_group, VNet_injection
 ---
 
 The underlying storage of the service resides in Qumulo's Azure tenant. This storage system connects to your Azure subscription by using _VNet injection,_ a process that establishes a direct connection between your resources and the service resources without using VNet peering. You can use VNet injection to apply routing and security policies to your service endpoints.

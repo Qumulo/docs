@@ -5,7 +5,7 @@ permalink: /hardware-guide/supermicro-a-plus-wio-1114s-wn10rt/technical-specific
 redirect_from:
   - /hardware/supermicro-a-plus-wio-1114s-wn10rt/technical-specifications.html
 sidebar: hardware_guide_sidebar
-keywords: technical specifications, tech specs, specs, specifications, Supermicro 1114S, WN10RT
+keywords: technical_specifications, tech_specs, specs, specifications, Supermicro_1114S, WN10RT
 ---
 
 <table cellspacing="0" cellpadding="0">

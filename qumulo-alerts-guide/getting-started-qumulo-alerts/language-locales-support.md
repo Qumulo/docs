@@ -3,7 +3,7 @@ title: "What Language Locales Qumulo Alerts Supports"
 summary: "This section lists the language locales that Qumulo Alerts supports for notifying users through email and SMS."
 permalink: /qumulo-alerts-guide/getting-started-qumulo-alerts/language-locales-support.html
 sidebar: qumulo_alerts_guide_sidebar
-keywords: Qumulo Alerts, user, notification, language, locale
+keywords: Qumulo_Alerts, user, notification, language, locale
 ---
 
 ## Language Locales

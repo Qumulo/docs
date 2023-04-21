@@ -5,7 +5,7 @@ permalink: /hardware-guide/hpe-apollo-4200-gen10/front-rear-drives.html
 redirect_from:
   - /hardware/hpe-apollo-4200-gen10/front-rear-drives.html
 sidebar: hardware_guide_sidebar
-keywords: front drive, rear drive, boot drive, drive, drive bay, HPE, Apollo 4200 Gen 10
+keywords: front_drive, rear_drive, boot_drive, drive, drive_bay, HPE, Apollo_4200_Gen_10
 ---
 
 <br>

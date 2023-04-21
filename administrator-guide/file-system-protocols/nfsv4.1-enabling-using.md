@@ -7,7 +7,7 @@ redirect_from:
   - /administrator-guide/nfsv4.1-enabling-using.html
   - /administrator-guide/protocols/nfsv4.1-enabling-using.html
 sidebar: administrator_guide_sidebar
-keywords: NFS, NFS3, NFSv3, NFSv4.1, export, exports, mount, cluster, enable NFS, disable NFS, floating IP
+keywords: NFS, NFS3, NFSv3, NFSv4.1, export, exports, mount, cluster, enable_NFS, disable_NFS, floating_IP
 ---
 
 For more information about NFSv4.1 and file access permissions, see [Managing File Access Permissions by Using NFSv4.1 Access Control Lists (ACLs)](nfsv4.1-acls.md).

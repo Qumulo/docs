@@ -5,7 +5,7 @@ permalink: /administrator-guide/s3-api/configuring-using-s3-api.html
 redirect_from:
   - /administrator-guide/s3-api/getting-started-s3-api.html
 sidebar: administrator_guide_sidebar
-keywords: s3 api, s3, api, configure, https, enable, create, access key pair, aws cli, cli, s3 bucket, write, read, object
+keywords: s3_api, s3, api, configure, https, enable, create, access_key_pair, aws_cli, cli, s3_bucket, write, read, object
 ---
 
 ## Prerequisites

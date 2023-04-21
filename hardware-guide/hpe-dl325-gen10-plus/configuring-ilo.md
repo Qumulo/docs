@@ -3,7 +3,7 @@ title: "Configuring and Using Integrated Lights Out (iLO) on HPE ProLiant DL325 
 summary: "This section explains how to configure and use Integrated Lights Out (iLO) on HPE ProLiant DL325 Gen10 Plus nodes."
 permalink: /hardware-guide/hpe-dl325-gen10-plus/configuring-ilo.html
 sidebar: hardware_guide_sidebar
-keywords: out-of-band management, out of band management, iLO, DHCP, network, networking, LAN, ipmitool
+keywords: out-of-band_management, out_of_band_management, iLO, DHCP, network, networking, LAN, ipmitool
 ---
 
 {% include content-reuse/platform-agnostic-ilo-preamble.md %}

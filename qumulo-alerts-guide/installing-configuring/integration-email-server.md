@@ -3,7 +3,7 @@ title: "Configuring Qumulo Alerts Integration with an Email Server"
 summary: "This section explains how to configure Qumulo Alerts to work with an email server."
 permalink: /qumulo-alerts-guide/installing-configuring/integration-email-server.html
 sidebar: qumulo_alerts_guide_sidebar
-keywords: Qumulo Alerts, email, e-mail, integrate, integration
+keywords: Qumulo_Alerts, email, e-mail, integrate, integration
 ---
 
 ## Configuring Qumulo Alerts Integration with an Email Server

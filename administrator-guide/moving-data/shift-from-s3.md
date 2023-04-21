@@ -7,7 +7,7 @@ redirect_from:
   - /administrator-guide/shift-from-s3.html
   - /administrator-guide/qumulo-core/shift-from-s3.html
 sidebar: administrator_guide_sidebar
-keywords: shift from, copy, copy objects, copy files, object copy, amazon s3, s3, iam permissions, iam, cli commands, cli, shift relationships, shift, relationships, configuration details, status
+keywords: shift_from, copy, copy_objects, copy_files, object_copy, amazon_s3, s3, iam_permissions, iam, cli_commands, cli, shift_relationships, shift, relationships, configuration_details, status
 ---
 
 For more information about copying objects from Qumulo to S3, see [Using Qumulo Shift-To for Amazon S3 to Copy Objects](/shift-to-s3.md) on Qumulo Care.

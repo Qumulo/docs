@@ -3,7 +3,7 @@ title: "Getting Started with the Azure Native Qumulo Scalable File Service"
 summary: "This section explains how to deploy Azure Native Qumulo Scalable File Service, view information about your service, and connect to the Web UI."
 permalink: /azure-guide/getting-started-qumulo-scalable-file-service.html
 sidebar: azure_guide_sidebar
-keywords: cloud, azure, native, scalable file service, file service, getting started
+keywords: cloud, azure, native, scalable_file_service, file_service, getting_started
 ---
 
 ## To Deploy the {{site.azure.qumuloOnAzureLong}}

@@ -2,7 +2,7 @@
 title: "Configuring File System Protocols on a Tenant"
 summary: "This section describes how to configure file system protocols for each tenant on a Qumulo cluster."
 permalink: /administrator-guide/network-multitenancy/configuring-file-system-protocols.html
-keywords: network, tenant, multitenancy, vlan, nfs, nfsv41, nfsv4.1, smb, s3, ftp, mmc, client, file system, protocol
+keywords: network, tenant, multitenancy, vlan, nfs, nfsv41, nfsv4.1, smb, s3, ftp, mmc, client, file_system, protocol
 sidebar: administrator_guide_sidebar
 varMustSpecifyTenantID: When multiple tenants exist on a cluster, you must specify the tenant ID.
 ---

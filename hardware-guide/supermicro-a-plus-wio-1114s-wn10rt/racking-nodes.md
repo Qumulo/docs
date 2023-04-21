@@ -5,7 +5,7 @@ permalink: /hardware-guide/supermicro-a-plus-wio-1114s-wn10rt/racking-nodes.html
 redirect_from:
   - /hardware/supermicro-a-plus-wio-1114s-wn10rt/racking-nodes.html
 sidebar: hardware_guide_sidebar
-keywords: technical specifications, tech specs, specs, specifications, Supermicro 1114S, WN10RT
+keywords: rack, racking, rail, outer_rail, inner_rail, rails, server_rack, chassis, insert_chassis, remove_chassis, Supermicro 1114S, WN10RT
 ---
 
 ## To Attach the Outer and Inner Rails

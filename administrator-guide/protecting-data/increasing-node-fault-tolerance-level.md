@@ -6,7 +6,7 @@ redirect_from:
   - /administrator-guide/protecting-data/node-fault-tolerance-level.html
   - /administrator-guide/qumulo-core/node-fault-tolerance-level.html
 sidebar: administrator_guide_sidebar
-keywords: node-fault-tolerance level, node failure, fault tolerance, node add, node-add, cluster expansion, expand, reconfiguration
+keywords: node-fault-tolerance_level, node_failure, fault_tolerance, node_add, node-add, cluster_expansion, expand, reconfiguration
 varPostExpansion: After the cluster expansion process finishes, Qumulo Core begins data protection reconfiguration automatically.
 varValidateReconfig: When the restriper completes the provisioning of additional usable capacity and data protection reconfiguration, the **Data Protected** section shows the increased node-fault-tolerance level.
 varValidateNoReconfig: When the restriper completes the provisioning of additional usable capacity, the **Data Protected** section shows the same node-fault-tolerance level as before the node-add operation.

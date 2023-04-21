@@ -3,7 +3,7 @@ title: "Installing Qumulo Alerts and Connecting it to a Qumulo Cluster"
 summary: "This section explains how to install Qumulo Alerts and connect it to a Qumulo cluster."
 permalink: /qumulo-alerts-guide/installing-configuring/installing-connecting-to-qumulo-cluster.html
 sidebar: qumulo_alerts_guide_sidebar
-keywords: Qumulo Alerts, install, connect, cluster, local user, role, assign, access token, access, token, start, stop
+keywords: Qumulo_Alerts, install, connect, cluster, local_user, role, assign, access_token, access, token, start, stop
 ---
 
 ## Prerequisites
