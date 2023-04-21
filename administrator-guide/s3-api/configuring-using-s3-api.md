@@ -116,10 +116,10 @@ Use the `aws s3api create-bucket` command and specify the bucket name. For examp
 
 ```bash
 $ aws s3api create-bucket \
-  --bucket My-Bucket
+  --bucket my-bucket
 ```
 
-The S3 API creates the new directory `/My-Bucket/`. All of the bucket's objects are located under this directory. For more information, see [Creating and Working with S3 Buckets in Qumulo Core](creating-managing-s3-buckets.html).
+The S3 API creates the new directory `/my-bucket/`. All of the bucket's objects are located under this directory. For more information, see [Creating and Working with S3 Buckets in Qumulo Core](creating-managing-s3-buckets.html).
 
 
 <a id="writing-reading-objects"></a>
@@ -129,7 +129,7 @@ The S3 API creates the new directory `/My-Bucket/`. All of the bucket's objects 
 
    ```bash
    $ aws s3api put-object \
-     --bucket My-Bucket \
+     --bucket my-bucket \
      --key archives/my-remote-file.zip \
      --body my-local-file.zip
    ```
@@ -140,7 +140,7 @@ The S3 API creates the new directory `/My-Bucket/`. All of the bucket's objects 
 
    ```bash
    $ aws s3api get-object \
-     --bucket My-Bucket \
+     --bucket my-bucket \
      --key archives/my-remote-file.zip local-file.zip
    ```
    
