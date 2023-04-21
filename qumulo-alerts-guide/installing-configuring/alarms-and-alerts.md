@@ -3,7 +3,7 @@ title: "Configuring Alarms and Alerts"
 summary: "This section explains how to configure Qumulo Alerts to generate alarms and alerts."
 permalink: /qumulo-alerts-guide/installing-configuring/alarms-and-alerts.html
 sidebar: qumulo_alerts_guide_sidebar
-keywords: Qumulo Alerts, alert, alarm, Docker, producer, plug in, plugin, plug-in, monitoring, configure, configuration, JSON
+keywords: Qumulo_Alerts, alert, alarm, Docker, producer, plug_in, plugin, plug-in, monitoring, configure, configuration, JSON
 ---
 
 ## Configuring Monitoring for a Qumulo Cluster

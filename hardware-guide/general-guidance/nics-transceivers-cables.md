@@ -8,7 +8,7 @@ redirect_from:
   - /administrator-guide/networking/nics-transceivers-cables.html
   - /hardware/general-guidance/nics-transceivers-cables.html
 sidebar: hardware_guide_sidebar
-keywords: network, transceiver, NIC, Mellanox, Nvidia, SMC, Intel, Broadcom, short range, long range, fiber, optic, cable
+keywords: network, transceiver, NIC, Mellanox, Nvidia, SMC, Intel, Broadcom, short_range, long_range, fiber, optic, cable
 varIntelMight: Intel might support, but doesn't verify, third-party transceiver compatibility.
 ---
 

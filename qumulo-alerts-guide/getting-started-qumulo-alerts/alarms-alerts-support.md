@@ -3,7 +3,7 @@ title: "What Alarms and Alerts Qumulo Alerts Supports"
 summary: "This section lists the alarms and alerts that Qumulo Alerts collects and processes."
 permalink: /qumulo-alerts-guide/getting-started-qumulo-alerts/alarms-alerts-support.html
 sidebar: qumulo_alerts_guide_sidebar
-keywords: Qumulo Alerts, alert, alarms, collect, process, hardware, software
+keywords: Qumulo_Alerts, alert, alarms, collect, process, hardware, software
 ---
 
 ## Alarms

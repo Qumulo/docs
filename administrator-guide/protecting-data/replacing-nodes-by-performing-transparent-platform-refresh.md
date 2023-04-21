@@ -3,7 +3,7 @@ title: "Replacing Nodes in a Qumulo Cluster by Performing a Transparent Platform
 summary: "This section explains how to replace the nodes that have reached their retirement or end of life in your Qumulo cluster and how to migrate your cluster to a different license class by performing a transparent platform refresh."
 permalink: /administrator-guide/protecting-data/replacing-nodes-by-performing-transparent-platform-refresh.html
 sidebar: administrator_guide_sidebar
-keywords: cluster, expand, expansion, remove, dispose, get rid of, retirement, end of life, EOL, migrate, migration, license, class, transparent, platform, refresh
+keywords: cluster, expand, expansion, remove, dispose, get_rid_of, retirement, end_of_life, EOL, migrate, migration, license, class, transparent, platform, refresh
 ---
 
 In Qumulo Core 6.0.0.2 (and higher), you can replace old nodes in your cluster with new nodes to remove nodes that have reached their retirement or end of life or to take advantage of newer hardware.

@@ -5,7 +5,7 @@ permalink: /hardware-guide/supermicro-a-plus-wio-1114s-wn10rt/wiring-nodes.html
 redirect_from:
   - /hardware/supermicro-a-plus-wio-1114s-wn10rt/wiring-nodes.html
 sidebar: hardware_guide_sidebar
-keywords: out-of-band management, out of band management, IPMI, DHCP, network, networking, LAN, ipmitool, 100 Gbps, Ethernet, power
+keywords: out-of-band_management, out_of_band_management, IPMI, DHCP, network, networking, LAN, ipmitool, 100_Gbps, Ethernet, power
 ---
 
 {% include note.html content="The two Ethernet ports on the back of your node (to the right of the USB ports) are unused." %}

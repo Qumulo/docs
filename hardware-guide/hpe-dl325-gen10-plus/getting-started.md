@@ -5,7 +5,7 @@ permalink: /hardware-guide/hpe-dl325-gen10-plus/getting-started.html
 redirect_from:
   - /hardware/hpe-dl325-gen10-plus/getting-started.html
 sidebar: hardware_guide_sidebar
-keywords: getting started guide, quick reference, HPE, ProLiant DL325 Gen10 Plus, verify node, field verification tool, FVT, intelligent provisioning
+keywords: getting_started_guide, quick_reference, HPE, ProLiant_DL325_Gen10_Plus, verify_node, field_verification_tool, FVT, intelligent_provisioning
 ---
 
 ## Prerequisites

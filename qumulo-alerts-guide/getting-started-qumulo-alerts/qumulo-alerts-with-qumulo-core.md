@@ -3,7 +3,7 @@ title: "How Qumulo Alerts Works with Qumulo Core"
 summary: "This section explains how Qumulo Alerts monitors alarms and alerts for a Qumulo Core Cluster."
 permalink: /qumulo-alerts-guide/getting-started-qumulo-alerts/qumulo-alerts-with-qumulo-core.html
 sidebar: qumulo_alerts_guide_sidebar
-keywords: Qumulo Alerts, alert, alarm, monitor, cluster, hardware alarm, software alarm, producer, consumer, plugin, plug-in, Exchange
+keywords: Qumulo_Alerts, alert, alarm, monitor, cluster, hardware_alarm, software_alarm, producer, consumer, plugin, plug-in, Exchange
 ---
 
 ## How Qumulo Alerts Works

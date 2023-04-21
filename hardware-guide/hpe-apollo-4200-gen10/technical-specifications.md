@@ -5,7 +5,7 @@ permalink: /hardware-guide/hpe-apollo-4200-gen10/technical-specifications.html
 redirect_from:
   - /hardware/hpe-apollo-4200-gen10/technical-specifications.html
 sidebar: hardware_guide_sidebar
-keywords: technical specifications, tech specs, specs, specifications, HPE, Apollo 4200 Gen10
+keywords: technical_specifications, tech_specs, specs, specifications, HPE, Apollo_4200_Gen10
 ---
 
 <table>

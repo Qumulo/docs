@@ -5,7 +5,7 @@ permalink: /hardware-guide/supermicro-a-plus-asg-1014s-acr12n4h/technical-specif
 redirect_from:
   - /hardware/supermicro-a-plus-asg-1014s-acr12n4h/technical-specifications.html
 sidebar: hardware_guide_sidebar
-keywords: technical specifications, tech specs, specs, specifications, Supermicro 1014S, ACR12N4H
+keywords: technical_specifications, tech_specs, specs, specifications, Supermicro_1014S, ACR12N4H
 ---
 
 {{site.data.alerts.note}}

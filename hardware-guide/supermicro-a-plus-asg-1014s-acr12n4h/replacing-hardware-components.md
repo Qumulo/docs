@@ -5,7 +5,7 @@ permalink: /hardware-guide/supermicro-a-plus-asg-1014s-acr12n4h/replacing-hardwa
 redirect_from:
   - /hardware/supermicro-a-plus-asg-1014s-acr12n4h/replacing-hardware-components.html
 sidebar: hardware_guide_sidebar
-keywords: technical specifications, tech specs, specs, specifications, Supermicro 1014S, ACR12N4H
+keywords: replace, hardware, component, replace_drive, drive, replace_psu, psu, replace_fan, fan, replace_dimm, dimm, Supermicro_1014S, ACR12N4H
 ---
 
 {{site.data.alerts.caution}}

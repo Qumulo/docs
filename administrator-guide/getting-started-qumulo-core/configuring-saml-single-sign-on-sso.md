@@ -5,7 +5,7 @@ permalink: /administrator-guide/getting-started-qumulo-core/configuring-saml-sin
 redirect_from:
   - /administrator-guide/qumulo-core/configuring-saml-single-sign-on-sso.html
 sidebar: administrator_guide_sidebar
-keywords: SAML, SAML 2.0, authentication, single sign-on, SSO
+keywords: SAML, SAML 2.0, authentication, single_sign-on, SSO
 ---
 
 For more information about the SAML standard for exchanging authentication information, see [SAML 2.0](https://en.wikipedia.org/wiki/SAML_2.0).

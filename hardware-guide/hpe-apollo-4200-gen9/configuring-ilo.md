@@ -5,7 +5,7 @@ permalink: /hardware-guide/hpe-apollo-4200-gen9/configuring-ilo.html
 redirect_from:
   - /hardware/hpe-apollo-4200-gen9/configuring-ilo.html
 sidebar: hardware_guide_sidebar
-keywords: out-of-band management, out of band management, iLO, DHCP, network, networking, LAN, ipmitool
+keywords: out-of-band_management, out_of_band_management, iLO, DHCP, network, networking, LAN, ipmitool
 ---
 
 {% include content-reuse/hpe-apollo-4200-gen-9-90t-180t-288t-eops.md %}

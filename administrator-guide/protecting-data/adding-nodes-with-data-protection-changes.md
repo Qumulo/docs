@@ -6,7 +6,7 @@ redirect_from:
   - /administrator-guide/protecting-data/changing-data-protection-configuration.html
   - /administrator-guide/protecting-data/changing-adaptive-data-protection-configuration.html
 sidebar: administrator_guide_sidebar
-keywords: disk-fault-tolerance level, disk failure, node-fault-tolerance level, node failure, fault tolerance, node add, node-add, cluster expansion, expand, configuration, change, mean time to data loss, mtdl, mttdl 
+keywords: disk-fault-tolerance_level, disk_failure, node-fault-tolerance_level, node_failure, fault_tolerance, node_add, node-add, cluster_expansion, expand, configuration, change, mean_time_to_data_loss, mtdl, mttdl 
 ---
 
 ## Changing the Configuration of Your Cluster's Data Protection

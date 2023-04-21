@@ -3,7 +3,7 @@ title: "Prerequisites for Joining a Qumulo Cluster to Active Directory"
 summary: "This section describes the prerequisites for joining a Qumulo Cluster to Active Directory for using NFSv4.1 with Kerberos."
 permalink: /administrator-guide/kerberos/kerberos-prerequisites-joining-cluster-active-directory.html
 sidebar: administrator_guide_sidebar
-keywords: NFS, NFS4.1, NFSv4.1, Kerberos, POSIX, RFC2307, Base DN, Active Directory, AD, NTP
+keywords: NFS, NFS4.1, NFSv4.1, Kerberos, POSIX, RFC2307, Base_DN, Active_Directory, AD, NTP
 ---
 
 For more information, see [Join Your Qumulo Cluster to Active Directory](https://care.qumulo.com/hc/en-us/articles/115007276068) on Qumulo Care.

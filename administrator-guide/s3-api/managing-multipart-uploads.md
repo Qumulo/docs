@@ -3,7 +3,7 @@ title: "Managing Multipart S3 Uploads in Qumulo Core"
 summary: "This section explains how multipart S3 uploads affect usable capacity on a Qumulo cluster and how to abort and clean up multipart uploads manually or automatically."
 permalink: /administrator-guide/s3-api/managing-multipart-uploads.html
 sidebar: administrator_guide_sidebar
-keywords: s3, multipart, upload, delete, abort, clean up, cleanup
+keywords: s3, multipart, upload, delete, abort, clean_up, cleanup
 ---
 
 Qumulo Core supports the [multipart upload functionality]({{site.s3.docs.multipartUpload}}) of the S3 API, which lets you upload objects to a bucket in parts and then, at a later time, combine these parts into a single object.

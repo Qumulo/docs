@@ -3,7 +3,7 @@ title: "Connecting Azure Native Qumulo Scalable File Service to Azure Active Dir
 summary: "This section explains how to connect Azure Native Qumulo Scalable File Service (SFS) to Azure Active Directory Domain Services (AD DS)."
 permalink: /azure-guide/connecting-to-azure-active-directory-domain-services.html
 sidebar: azure_guide_sidebar
-keywords: cloud, azure, native, scalable file service, file service, connecting, active directory, ad, active directory domain services
+keywords: cloud, azure, native, scalable_file_service, file_service, connecting, active_directory, ad, active_directory_domain_services
 ---
 
 Azure AD DS provides managed domain services such as Windows Domain Join, Group Policy, LDAP, and Kerberos authentication. You can connect your {{site.azure.qumuloOnAzureShort}} to standard Active Directory (on-premises AD or self-managed AD in the cloud) or to Azure AD DS.

@@ -7,7 +7,7 @@ redirect_from:
   - /administrator-guide/managing-snapshots.html
   - /administrator-guide/qumulo-core/managing-snapshots.html
 sidebar: administrator_guide_sidebar
-keywords: snapshots, filter, web ui, qumulo core
+keywords: snapshots, filter, Web_UI, Qumulo_Core
 varLogin: 1. Log in to Qumulo Core.
 varSaved: 1. Click **Cluster > Saved Snapshots**.
 ---

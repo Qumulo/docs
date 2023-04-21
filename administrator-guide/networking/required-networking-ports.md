@@ -5,7 +5,7 @@ permalink: /administrator-guide/networking/required-networking-ports.html
 redirect_from:
  - /administrator-guide/qumulo-core/required-networking-ports.html
 sidebar: administrator_guide_sidebar
-keywords: networking, port, ports, qumulo core
+keywords: networking, port, ports, Qumulo_Core
 ---
 
 {% include note.html content="Active Directory authentication services require their own network port range. For an authoritative list, see [Active Directory and Active Directory Domain Service Port Requirements](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd772723%28v=ws.10%29?redirectedfrom=MSDN)" %}

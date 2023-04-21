@@ -3,7 +3,7 @@ title: "Qumulo Compliance Posture"
 summary: "This section lists the attestations that Qumulo has achieved from third parties."
 permalink: /administrator-guide/getting-started-qumulo-core/qumulo-compliance-posture.html
 sidebar: administrator_guide_sidebar
-keywords: compliance, posture, soc 2, soc 2 type ii, fips, fips 140-2
+keywords: compliance, posture, soc_2, soc_2_type_ii, fips, fips_140-2
 ---
 
 ## SOC 2 Type II (Safeguarding Customer Data)

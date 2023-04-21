@@ -9,7 +9,7 @@ redirect_from:
  - /administrator-guide/protocols/nfsv4.1-auth-sys-acls.html
  - /administrator-guide/protocols/nfsv4.1-acls.html
 sidebar: administrator_guide_sidebar
-keywords: NFS, NFS4.1, NFSv4.1, access control list, ACL, access control entry, ACE, AUTH_SYS, AUTH_UNIX, AUTH_NONE, AUTH_KRB5, AUTH_KRB5P, AUTH_KRB5I authentication, permissions, file access, file access permissions, trustee, trustee representation
+keywords: NFS, NFS4.1, NFSv4.1, access_control_list, ACL, access_control_entry, ACE, AUTH_SYS, AUTH_UNIX, AUTH_NONE, AUTH_KRB5, AUTH_KRB5P, AUTH_KRB5I authentication, permissions, file_access, file_access_permissions, trustee, trustee_representation
 ---
 
 The Qumulo Core implementation supports using `AUTH_SYS` credentials (also known as `AUTH_UNIX`), `AUTH_NONE` (which acts as `AUTH_SYS` but maps incoming UIDs and GIDs to `nobody`), and `AUTH_KRB5`, `AUTH_KRB5P`, or `AUTH_KRB5I` credentials. You can use the CLI tools in the `nfs-acl-tools` Linux package to allow or deny various operations.

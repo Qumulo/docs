@@ -5,7 +5,7 @@ permalink: /administrator-guide/web-ui/login-banner.html
 redirect_from:
   - /administrator-guide/qumulo-core/web-ui-login-banner.html
 sidebar: administrator_guide_sidebar
-keywords: login, banner, greeting, web ui, qumulo core
+keywords: login, banner, greeting, Web_UI, Qumulo_Core
 ---
 
 In Qumulo Core 5.2.1 (and higher), clusters have an optional login banner that users must acknowledge before being they can log in to the Web UI.

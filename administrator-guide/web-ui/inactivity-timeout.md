@@ -7,7 +7,7 @@ redirect_from:
   - /administrator-guide/web-ui-inactivity-timeout.html
   - /administrator-guide/qumulo-core/web-ui-inactivity-timeout.html
 sidebar: administrator_guide_sidebar
-keywords: inactivity, idle, timeout, web ui, qumulo core
+keywords: inactivity, idle, timeout, Web_UI, Qumulo_Core
 ---
 
 In Qumulo Core 5.1.0 (and higher), clusters have an optional _inactivity timeout_ that logs users out of the Web UI if they don't interact with it for a specified amount of time.
