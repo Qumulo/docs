@@ -3,6 +3,8 @@ entries:
   pdftitle: qumulo-azure-guide.pdf
   product:
   version:
+  guidetitle: Azure Native Qumulo Scalable File Service Guide
+  guideurl: /azure-guide/    
   folders:
 
   - title:

@@ -3,6 +3,8 @@ entries:
   pdftitle: qumulo-alerts-guide.pdf
   product:
   version:
+  guidetitle: Qumulo Alerts Administrator Guide
+  guideurl: /qumulo-alerts-guide/ 
   folders:
 
   - title:
