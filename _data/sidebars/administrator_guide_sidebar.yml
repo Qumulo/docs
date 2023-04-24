@@ -3,6 +3,8 @@ entries:
   pdftitle: qumulo-administrator-guide.pdf
   product:
   version:
+  guidetitle: Qumulo Administrator Guide
+  guideurl: /administrator-guide/  
   folders:
 
   - title:

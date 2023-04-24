@@ -3,6 +3,8 @@ entries:
   pdftitle: qumulo-certified-hardware-guide.pdf
   product:
   version:
+  guidetitle: Qumulo-Certified Hardware Guide
+  guideurl: /hardware-guide/      
   folders:
 
   - title:
