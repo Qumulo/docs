@@ -3,7 +3,7 @@ title: "Configuring Active Directory for Use With Kerberos"
 summary: "This section describes the Active Directory Domain Controller (DC) configuration changes necessary for enabling NFSv4.1 with Kerberos."
 permalink: /administrator-guide/kerberos/kerberos-configuring-active-directory.html
 sidebar: administrator_guide_sidebar
-keywords: NFS, NFS4.1, NFSv4.1, DNS, Active_Directory, AD, DNS_configuration, DNS, A_record, PTR_record, distributed_load, distributing_load, round_robin, DNS_round_robin, SPN
+keywords: NFS, NFS4.1, NFSv4.1, DNS, Active_Directory, AD, DNS_configuration, DNS, A_record, PTR_record, distributed_load, distributing_load, round_robin,  SPN
 varMachineAccount: To find the machine account name in the Web UI, click **Cluster > Active Directory** and note the name under **Machine Account**.
 varLowercase: To maximize compatibility with Linux, we recommend formatting SPN entries in lowercase.
 ---
@@ -27,15 +27,15 @@ The default DNS configuration is generally not useful without additional modific
 
 * **We don't recommend assigning a single IP address to an entire cluster:** In such a configuration, any client that mounts the cluster points at the same node.
 
-
+<a id="configure-round-robin-dns"></a>
 ## Configuring DNS for Distributing Workflows Across Nodes
-The Qumulo distributed file system works best when you spread the workload evenly across multiple nodes. We recommend [configuring DNS round robin in Active Directory](https://care.qumulo.com/hc/en-us/articles/115007926128).
+The Qumulo distributed file system works best when you spread the workload evenly across multiple nodes. We recommend configuring round-robin DNS in Active Directory.
 
 This approach provides a list of IP addresses which refer to different nodes in the cluster. Successive DNS queries for the single cluster hostname return different IP addresses. From the perspective of Kerberos, all nodes that comprise a Qumulo cluster act as one host and have the same Kerberos key table. In this way, the Kerberos experience is the same regardless of the selected node.
 
 Unless you need direct access to a specific node through a DNS fully qualified domain name (FQDN), it isn't necessary to use individual DNS `A` records for each node in the cluster (for example, `qumulo1.example.com`, `qumulo2.example.com`, `qumulo3.example.com`, and so on). Instead, we recommend creating a DNS `A` record for the cluster and then duplicating this `A` record for each IP address in the cluster (for example, `qumulo.example.com` &rarr; `{{site.exampleIP0}}`, `qumulo.example.com` &rarr; `{{site.exampleIP1}}`, and so on).
 
-### To Configure DNS Round Robin
+### To Configure Round-Robin DNS
 1. [Join your Qumulo cluster to AD](kerberos-prerequisites-joining-cluster-active-directory.md).
 
 1. Find the DNS entry for the cluster on the DNS server.
