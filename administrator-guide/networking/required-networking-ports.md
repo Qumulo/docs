@@ -145,7 +145,7 @@ keywords: networking, port, ports, Qumulo_Core
       <td>DCERPC or Netlogon (Domain Controller Binding)</td>
     </tr>
     <tr>
-      <td>389<br>636</td>
+      <td>389,<br>636</td>
       <td>TCP</td>
       <td>LDAP to Active Directory or to a standalone LDAP server (by default)</td>
     </tr>
