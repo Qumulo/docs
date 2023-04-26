@@ -8,7 +8,12 @@ sidebar: administrator_guide_sidebar
 keywords: networking, port, ports, Qumulo_Core
 ---
 
-{% include note.html content="Active Directory authentication services require their own network port range. For an authoritative list, see [Active Directory and Active Directory Domain Service Port Requirements](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd772723%28v=ws.10%29?redirectedfrom=MSDN)" %}
+{{site.data.alerts.note}}
+<ul>
+  <li>Communication <em>between</em> nodes in a cluster must be possible on any port.</li>
+  <li>Active Directory authentication services require their own network port range. For an authoritative list, see <a href="https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd772723%28v=ws.10%29?redirectedfrom=MSDN">Active Directory and Active Directory Domain Service Port Requirements</a> in the Windows Server 2008 R2 and Windows Server 2008 documentation.</li>
+</ul>
+{{site.data.alerts.end}}
 
 ## Networking Ports for Inbound Connections
 
@@ -91,14 +96,10 @@ keywords: networking, port, ports, Qumulo_Core
 ## Networking Ports for Outbound Connections
 
 {{site.data.alerts.note}}
+<p>For cluster formation and inter-node communication Qumulo Core requires the following:</p>
 <ul>
-  <li>In the following table, uses marked with an asterisk (*) are default configurations. You can reconfigure these ports.</li>
-  <li>For cluster formation and inter-node communication Qumulo Core requires the following:
-    <ul>
-      <li><strong>Hardware Platforms:</strong> Unblocked IPv6 traffic in the local subnet&mdash;for more information, see <a href="https://care.qumulo.com/hc/en-us/articles/115009002827">Configuring IPv6 in Qumulo Core</a> on Qumulo Care.</li>
-      <li><strong>Cloud Platforms:</strong> Unblocked IPv4 traffic in the local subnet</li>
-    </ul>
-  </li>
+  <li><strong>Hardware Platforms:</strong> Unblocked IPv6 traffic in the local subnet&mdash;for more information, see <a href="https://care.qumulo.com/hc/en-us/articles/115009002827">Configuring IPv6 in Qumulo Core</a> on Qumulo Care.</li>
+  <li><strong>Cloud Platforms:</strong> Unblocked IPv4 traffic in the local subnet</li>
 </ul>
 {{site.data.alerts.end}}
 
@@ -144,24 +145,24 @@ keywords: networking, port, ports, Qumulo_Core
       <td>DCERPC or Netlogon (Domain Controller Binding)</td>
     </tr>
     <tr>
-      <td>389<br>636</td>
+      <td>389,<br>636</td>
       <td>TCP</td>
-      <td>LDAP to Active Directory or to a standalone LDAP server*</td>
+      <td>LDAP to Active Directory or to a standalone LDAP server (by default)</td>
     </tr>
     <tr>
       <td>443</td>
       <td>TCP</td>
-      <td>Qumulo Shift for Amazon S3*</td>
+      <td>Qumulo Shift for Amazon S3 (by default)</td>
     </tr>
     <tr>
       <td>514</td>
       <td>TCP</td>
-      <td>Audit with <code>Rsyslog</code>*</td>
+      <td>Audit with <code>Rsyslog</code> (by default)</td>
     </tr>
     <tr>
       <td>3712</td>
       <td>TCP</td>
-      <td>Replication*</td>
+      <td>Replication (by default)</td>
     </tr>
   </tbody>
 </table>
