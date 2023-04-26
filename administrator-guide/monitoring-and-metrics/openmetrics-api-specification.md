@@ -26,7 +26,7 @@ All Qumulo metrics belong to one of the following OpenMetrics types.
 <table>
   <thead>
     <tr>
-      <th>Metric Type</th>
+      <th width="15%">Metric Type</th>
       <th>Description</th>
     </tr>
   </thead>
@@ -65,11 +65,11 @@ The following table lists metric names, types, labels, and descriptions.
 <table class="pdf-reduce">
   <thead>
     <tr>
-      <th>Metric Name</th>
-      <th>Metric Type</th>
+      <th width="30%">Metric Name</th>
+      <th width="13%">Metric Type</th>
       <th>Labels</th>
-      <th>Supported from Qumulo Core Version</th>
-      <th>Description</th>
+      <th width="10%">Suppor&shy;ted from Qumulo Core Version</th>
+      <th width="20%">Description</th>
     </tr>
   </thead>
   <tbody>
@@ -103,14 +103,14 @@ The following table lists metric names, types, labels, and descriptions.
       <td>Information about the nodes in the cluster, including the node ID and the node model</td>
     </tr>
     <tr>
-      <td><code>qumulo_ad_netlogon_request_errors</code></td>
+      <td><code>qumulo_ad_netlogon_request<br>_errors</code></td>
       <td><a href="#metric-type-counter"><code>counter</code></a></td>
       <td><a href="#metric-label-server_url"><code>server_url</code></a></td>
       <td>5.3.0</td>
       <td>The total number Active Directory (AD) <code>NETLOGON</code> requests that resulted in an error</td>
     </tr>
     <tr>
-      <td><code>qumulo_ad_netlogon_request_latency_seconds</code></td>
+      <td><code>qumulo_ad_netlogon_request<br>_latency_seconds</code></td>
       <td><a href="#metric-type-histogram"><code>histogram</code></a></td>
       <td><a href="#metric-label-server_url"><code>server_url</code></a></td>
       <td>5.3.0</td>
@@ -124,7 +124,7 @@ The following table lists metric names, types, labels, and descriptions.
       <td>The total number of completed AD <code>NETLOGON</code> operations</td>
     </tr>
     <tr>
-      <td><code>qumulo_cpu_max_temperature_celsius</code></td>
+      <td><code>qumulo_cpu_max_temperature<br>_celsius</code></td>
       <td><a href="#metric-type-gauge"><code>gauge</code></a></td>
       <td>
         <ul>
@@ -136,7 +136,7 @@ The following table lists metric names, types, labels, and descriptions.
       <td>The maximum temperature threshold for each physical CPU</td>
     </tr>
     <tr>
-      <td><code>qumulo_disk_endurance_percent</code></td>
+      <td><code>qumulo_disk_endurance<br>_percent</code></td>
       <td><a href="#metric-type-gauge"><code>gauge</code></a></td>
       <td>
         <ul>
@@ -149,7 +149,7 @@ The following table lists metric names, types, labels, and descriptions.
       <td>The remaining disk endurance value for each disk in the cluster, ranging <code>100</code> (no disk wear) to <code>0</code> (disk is worn fully)</td>
     </tr>
     <tr>
-      <td><code>qumulo_disk_transport_errors</code></td>
+      <td><code>qumulo_disk_transport<br>_errors</code></td>
       <td><a href="#metric-type-counter"><code>counter</code></a></td>
       <td>
         <ul>
@@ -162,7 +162,7 @@ The following table lists metric names, types, labels, and descriptions.
       <td>The total number of communication errors between the specified drive and its host.</td>
     </tr>
     <tr>
-      <td><code>qumulo_disk_uncorrectable_media_errors</code></td>
+      <td><code>qumulo_disk_uncorrectable<br>_media_errors</code></td>
       <td><a href="#metric-type-counter"><code>counter</code></a></td>
       <td>
         <ul>
@@ -175,7 +175,7 @@ The following table lists metric names, types, labels, and descriptions.
       <td>The total number of uncorrectable errors on the specified drive's physical media.</td>
     </tr>
     <tr>
-      <td><code>qumulo_cpu_temperature_celsius</code></td>
+      <td><code>qumulo_cpu_temperature<br>_celsius</code></td>
       <td><a href="#metric-type-gauge"><code>gauge</code></a></td>
       <td>
         <ul>
@@ -200,7 +200,7 @@ The following table lists metric names, types, labels, and descriptions.
       <td>The health of each disk in the cluster, ranging from <code>0</code> (the disk is healthy) to <code>1</code> (the disk is unhealthy)</td>
     </tr>
     <tr>
-      <td><code>qumulo_disk_operation_latency_seconds</code></td>
+      <td><code>qumulo_disk_operation<br>_latency_seconds</code></td>
       <td><a href="#metric-type-histogram"><code>histogram</code></a></td>
       <td>
         <ul>
@@ -233,7 +233,7 @@ The following table lists metric names, types, labels, and descriptions.
       <td>The total cluster space, in bytes</td>
     </tr>
     <tr>
-      <td><code>qumulo_fs_directory_tree_entries</code></td>
+      <td><code>qumulo_fs_directory<br>_tree_entries</code></td>
       <td><a href="#metric-type-gauge"><code>gauge</code></a></td>
       <td>
         <ul>
@@ -245,7 +245,7 @@ The following table lists metric names, types, labels, and descriptions.
       <td>The number of file system objects on the cluster, sorted by object type</td>
     </tr>
     <tr>
-      <td><code>qumulo_fs_directory_used_bytes</code></td>
+      <td><code>qumulo_fs_directory<br>_used_bytes</code></td>
       <td><a href="#metric-type-gauge"><code>gauge</code></a></td>
       <td>
         <ul>
@@ -271,35 +271,35 @@ The following table lists metric names, types, labels, and descriptions.
       <td>The number of snapshots on the cluster</td>
     </tr>
     <tr>
-      <td><code>qumulo_ldap_lookup_request_errors</code></td>
+      <td><code>qumulo_ldap_lookup<br>_request_errors</code></td>
       <td><a href="#metric-type-counter"><code>counter</code></a></td>
       <td><a href="#metric-label-server_url"><code>server_url</code></a></td>
       <td>5.3.0</td>
       <td>The total number of LDAP requests that resulted in an error</td>
     </tr>
     <tr>
-      <td><code>qumulo_ldap_lookup_request_latency_seconds</code></td>
+      <td><code>qumulo_ldap_lookup<br>_request_latency_seconds</code></td>
       <td><a href="#metric-type-histogram"><code>histogram</code></a></td>
       <td><a href="#metric-label-server_url"><code>server_url</code></a></td>
       <td>5.3.0</td>
       <td>The total latency of LDAP requests</td>
     </tr>
     <tr>
-      <td><code>qumulo_ldap_lookup_requests</code></td>
+      <td><code>qumulo_ldap_lookup<br>_requests</code></td>
       <td><a href="#metric-type-counter"><code>counter</code></a></td>
       <td><a href="#metric-label-server_url"><code>server_url</code></a></td>
       <td>5.3.0</td>
       <td>The total number of completed LDAP requests</td>
     </tr>
     <tr>
-      <td><code>qumulo_ldap_operation_errors</code></td>
+      <td><code>qumulo_ldap_operation<br>_errors</code></td>
       <td><a href="#metric-type-counter"><code>counter</code></a></td>
       <td>&mdash;</td>
       <td>5.3.0</td>
       <td>The total number of LDAP operations that resulted in an error</td>
     </tr>
     <tr>
-      <td><code>qumulo_ldap_operation_latency_seconds</code></td>
+      <td><code>qumulo_ldap_operation<br>_latency_seconds</code></td>
       <td><a href="#metric-type-histogram"><code>histogram</code></a></td>
       <td>&mdash;</td>
       <td>5.3.0</td>
@@ -313,14 +313,14 @@ The following table lists metric names, types, labels, and descriptions.
       <td>The total number of completed LDAP operations</td>
     </tr>
     <tr>
-      <td><code>qumulo_memory_correctable_ecc_errors</code></td>
+      <td><code>qumulo_memory_correctable<br>_ecc_errors</code></td>
       <td><a href="#metric-type-counter"><code>counter</code></a></td>
       <td><a href="#metric-label-node_id"><code>node_id</code></a></td>
       <td>5.3.0</td>
       <td>The total number of memory errors that Qumulo Core corrected automatically</td>
     </tr>
     <tr>
-      <td><code>qumulo_network_interface_is_down</code></td>
+      <td><code>qumulo_network_interface<br>_is_down</code></td>
       <td><a href="#metric-type-gauge"><code>gauge</code></a></td>
       <td>
         <ul>
@@ -334,7 +334,7 @@ The following table lists metric names, types, labels, and descriptions.
       <td>The interface status, <code>0</code> (interface is up) or <code>1</code> (interface is down)</td>
     </tr>
     <tr>
-      <td><code>qumulo_network_interface_link_speed_<br>bits_per_second</code></td>
+      <td><code>qumulo_network_interface<br>_link_speed_bits_per_second</code></td>
       <td><a href="#metric-type-gauge"><code>gauge</code></a></td>
       <td>
         <ul>
@@ -348,7 +348,7 @@ The following table lists metric names, types, labels, and descriptions.
       <td>The negotiated link speed for the specified interface</td>
     </tr>
     <tr>
-      <td><code>qumulo_network_interface_receive_errors</code></td>
+      <td><code>qumulo_network_interface<br>_receive_errors</code></td>
       <td><a href="#metric-type-counter"><code>counter</code></a></td>
       <td>
         <ul>
@@ -362,7 +362,7 @@ The following table lists metric names, types, labels, and descriptions.
       <td>The total number of receive errors on the specified interface</td>
     </tr>
     <tr>
-      <td><code>qumulo_network_interface_received_bytes</code></td>
+      <td><code>qumulo_network_interface<br>_received_bytes</code></td>
       <td><a href="#metric-type-counter"><code>counter</code></a></td>
       <td>
         <ul>
@@ -376,7 +376,7 @@ The following table lists metric names, types, labels, and descriptions.
       <td>The total bytes received on the specified interface</td>
     </tr>
     <tr>
-      <td><code>qumulo_network_interface_received_packets</code></td>
+      <td><code>qumulo_network_interface<br>_received_packets</code></td>
       <td><a href="#metric-type-counter"><code>counter</code></a></td>
       <td>
         <ul>
@@ -390,7 +390,7 @@ The following table lists metric names, types, labels, and descriptions.
       <td>The total number of packets received on the specified interface</td>
     </tr>
     <tr>
-      <td><code>qumulo_network_interface_transmit_errors</code></td>
+      <td><code>qumulo_network_interface<br>_transmit_errors</code></td>
       <td><a href="#metric-type-counter"><code>counter</code></a></td>
       <td>
         <ul>
@@ -404,7 +404,7 @@ The following table lists metric names, types, labels, and descriptions.
       <td>The total number of transmission errors on the specified interface</td>
     </tr>
     <tr>
-      <td><code>qumulo_network_interface_transmitted_bytes</code></td>
+      <td><code>qumulo_network_interface<br>_transmitted_bytes</code></td>
       <td><a href="#metric-type-counter"><code>counter</code></a></td>
       <td>
         <ul>
@@ -418,7 +418,7 @@ The following table lists metric names, types, labels, and descriptions.
       <td>The total number of bytes transmitted on the specified interface</td>
     </tr>
     <tr>
-      <td><code>qumulo_network_interface_transmitted_packets</code></td>
+      <td><code>qumulo_network_interface<br>_transmitted_packets</code></td>
       <td><a href="#metric-type-counter"><code>counter</code></a></td>
       <td>
         <ul>
@@ -432,7 +432,7 @@ The following table lists metric names, types, labels, and descriptions.
       <td>The total number of packets transmitted on the specified interface</td>
     </tr>
     <tr>
-      <td><code>qumulo_power_supply_is_unhealthy</code></td>
+      <td><code>qumulo_power_supply<br>_is_unhealthy</code></td>
       <td><a href="#metric-type-gauge"><code>gauge</code></a></td>
       <td>
         <ul>
@@ -444,21 +444,21 @@ The following table lists metric names, types, labels, and descriptions.
       <td>PSU health, <code>0</code> (healthy) or <code>1</code> (unplugged, removed, or unresponsive)</td>
     </tr>
     <tr>
-      <td><code>qumulo_protocol_client_connections</code></td>
+      <td><code>qumulo_protocol_client<br>_connections</code></td>
       <td><a href="#metric-type-counter"><code>counter</code></a></td>
       <td><a href="#metric-label-protocol"><code>protocol</code></a></td>
       <td>5.3.0</td>
       <td>The total number of clients that have connected to the specified protocol</td>
     </tr>
     <tr>
-      <td><code>qumulo_protocol_client_disconnections</code></td>
+      <td><code>qumulo_protocol_client<br>_disconnections</code></td>
       <td><a href="#metric-type-counter"><code>counter</code></a></td>
       <td><a href="#metric-label-protocol"><code>protocol</code></a></td>
       <td>5.3.0</td>
       <td>The total number of clients that have disconnected from the specified protocol</td>
     </tr>
     <tr>
-      <td><code>qumulo_protocol_operation_bytes</code></td>
+      <td><code>qumulo_protocol_operation<br>_bytes</code></td>
       <td><a href="#metric-type-counter"><code>counter</code></a></td>
       <td>
         <ul>
@@ -472,7 +472,7 @@ The following table lists metric names, types, labels, and descriptions.
       <td>The total bytes that protocol operations have transferred</td>
     </tr>
     <tr>
-      <td><code>qumulo_protocol_operation_latency_seconds</code></td>
+      <td><code>qumulo_protocol_operation<br>_latency_seconds</code></td>
       <td><a href="#metric-type-histogram"><code>histogram</code></a></td>
       <td>
         <ul>
@@ -500,7 +500,7 @@ The following table lists metric names, types, labels, and descriptions.
       <td>The total number of completed protocol operations</td>
     </tr>
     <tr>
-      <td><code>qumulo_quorum_node_is_offline</code></td>
+      <td><code>qumulo_quorum_node_is<br>_offline</code></td>
       <td><a href="#metric-type-gauge"><code>gauge</code></a></td>
       <td><a href="#metric-label-node_id"><code>node_id</code></a></td>
       <td>5.3.0</td>
