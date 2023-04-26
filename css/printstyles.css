@@ -226,4 +226,7 @@ table.pdf-reduce {
 
 li.pdf-friendly {
     margin-left:-20px !important;
+    -ms-hyphens:none;
+    -webkit-hyphens:none;
+    word-break:break-all;
 }
