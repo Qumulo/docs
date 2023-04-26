@@ -11,6 +11,7 @@ keywords: s3_api, s3, api, configure, https, enable, create, access_key_pair, aw
 ## Prerequisites
 To use the S3 API, you must install the [`aws`]({{site.s3.docs.cli}}) and [`qq`](https://care.qumulo.com/hc/en-us/articles/115008165008) CLI tools.
 
+{% include important.html content="The following instructions are for Ubuntu 18.04 (and higher)." %}
 
 <a id="configuring-https"></a>
 ## Step 1: Configure HTTPS
@@ -73,7 +74,7 @@ To create and manage S3 buckets, you must configure AWS CLI to work with your Qu
 
       ```bash
       $ aws configure
-        --profile my-qumulo-profile set s3.aws_access_key_id \
+        --profile my-qumulo-profile set aws_access_key_id \
           000000000001fEXAMPLE
       ```
    
@@ -81,7 +82,7 @@ To create and manage S3 buckets, you must configure AWS CLI to work with your Qu
 
       ```bash
       $ aws configure
-        --profile my-qumulo-profile set s3.aws_secret_access_key \
+        --profile my-qumulo-profile set aws_secret_access_key \
           TEIT4liMZ8A32iI7JXmqIiLWp5co/jmkjEXAMPLE
       ```
 
@@ -90,6 +91,8 @@ To create and manage S3 buckets, you must configure AWS CLI to work with your Qu
    ```bash
    $ alias aws="aws --endpoint-url https://<qumulo-cluster>:9000 --profile my-qumulo-profile"
    ```
+   
+   {% include note.html content="If you haven't installed an SSL certificate, append `--no-verify-ssl` to the end of the command." %}
 
 1. (Optional) If you haven't configured your machine to trust the SSL certificate installed on your Qumulo cluster, to configure the path to [the trusted SSL certificate bundle that you have created and installed earlier](#configuring-https) manually, use the `aws configure` command. For example:
   
