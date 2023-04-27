@@ -163,17 +163,17 @@ entries:
       url: /administrator-guide/protecting-data/managing-snapshots.html
       output: web, pdf
 
-  - title: Moving Your Data
-    url: /administrator-guide/moving-data/index.html
+  - title: Replicating Data
+    url: /administrator-guide/replicating-data/index.html
     output: web, pdf
     folderitems:
 
     - title: Using Qumulo Shift-To to Copy Objects to Amazon S3
-      url: /administrator-guide/moving-data/shift-to-s3.html
+      url: /administrator-guide/replicating-data/shift-to-s3.html
       output: web, pdf
 
     - title: Using Qumulo Shift-From for Amazon S3 to Copy Objects
-      url: /administrator-guide/moving-data/shift-from-s3.html
+      url: /administrator-guide/replicating-data/shift-from-s3.html
       output: web, pdf
 
   - title: Working with File System Protocols
