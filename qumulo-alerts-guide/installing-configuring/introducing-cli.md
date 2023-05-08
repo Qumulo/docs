@@ -16,7 +16,7 @@ All configuration for Qumulo Alerts is done through the CLI. There is a CLI comm
 
 ### Working with the Alerts CLI
 
-The Alerts CLI command configures the entire Qumulo Alerts system. Alerts is composed of many subcommands; each one that configures a specific feature of Qumulo Alerts.
+The Alerts CLI command configures the entire Qumulo Alerts system. Alerts is composed of many subcommands; with each one configuring a specific feature of Qumulo Alerts.
 
 ```bash
 alerts --help
