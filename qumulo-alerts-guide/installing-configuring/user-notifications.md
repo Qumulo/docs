@@ -6,12 +6,42 @@ sidebar: qumulo_alerts_guide_sidebar
 keywords: Qumulo_Alerts, user, notification, configure, configuration, JSON
 ---
 
-## Configuring User Notifications about a Qumulo Cluster
-To configure Qumulo Alerts to notify users about alarms and alerts from a Qumulo cluster, you must edit `QumuloUsers.json`, located in the `config/consumer` directory, in the directory [that you cloned from GitHub](installing-connecting-to-qumulo-cluster.md#clone-qumuloalerts-repository).
+## Configuring Administrative Notifications for a Qumulo Cluster
+To configure Qumulo Alerts to notify individual unique administrators about alarms and alerts from a Qumulo cluster, you must use the CLI to add that 
+administrator as am user to Qumulo Alerts and then to add that user to a Notify Group.
 
-The following is an explanation of the JSON keys that configure user notifications.
+A configured user is also allowed to login to the Qumulo Alerts CLI and execute administration commands. Users must first be added to a Role to enable this feature.
 
-{% include note.html content="Although both `email_address` and `phone_number` are optional keys, you must specify at least one of them for the user to receive notifications." %}
+{% include note.html content="Configuring a user notification has nothing to do with user quota notifications. Please see the section on User Quota Notifications for instructions on how to configure user notifications for quotas." %}
+
+The format of the command to add a new user is:
+
+```bash
+./alerts user_add --help
+[alerts - 6.0.0 - CLI for Qumulo Alerts subsystem]
+Usage: alerts user_add [OPTIONS]
+
+  Add a user to notify in Qumulo Alerts
+
+Options:
+  --full_name TEXT               Full name of the user (example: 'John
+                                 Smith').  [required]
+  --username TEXT                Login user name (example: 'jsmith')
+                                 [required]
+  --password TEXT                Login password for the new user.  [required]
+  --email TEXT                   Email address for the new user
+  --phone TEXT                   Mobile phone number for the new user.
+  --ifttt-trigger TEXT           IFTTT event to trigger for the new user.
+  --language TEXT                Language used to send alerts to the user.
+  --timezone TEXT                Timezone used for formatting alerts to the
+                                 user.
+  --disabled BOOLEAN             Disabled/Enable the user.
+  --can-change-password BOOLEAN  Can change the password for the user.
+  --help                         Show this message and exit.
+```
+The following is an explanation of the command line arguments that configure user notifications.
+
+{% include note.html content="Although both `email`, `phone`, and `ifttt-trigger` are optional keys, you must specify at least one of them for the user to receive notifications." %}
 
 <table>
   <colgroup>
@@ -26,71 +56,164 @@ The following is an explanation of the JSON keys that configure user notificatio
 </thead>
 <tbody>
   <tr>
-    <td><code>email_address</code></td>
-    <td>(Optional) The recipient's email address</td>
-  </tr>   
-  <tr>
-    <td><code>full_name</code></td>
+    <td><code>--full_name</code></td>
     <td>The recipient's full name</td>
   </tr>
   <tr>
-    <td><code>language</code></td>
+    <td><code>--username</code></td>
+    <td>A unique username to identify the recipient</td>
+  </tr>
+  <tr>
+    <td><code>--password</code></td>
+    <td>A password so that this user can login to the Qumulo Alerts CLI.</td>
+  </tr>
+  <tr>
+    <td><code>--email</code></td>
+    <td>(Optional) The recipient's email address</td>
+  </tr>   
+  <tr>
+    <td><code>--phone</code></td>
+    <td>(Optional) The recipient's phone number, starting with a plus (<code>+</code>) followed by the international calling code</td>
+  </tr>  
+  <tr>
+    <td><code>--ifttt-trigger</code></td>
+    <td>(Optional) A trigger string used by IFTTT that will be unique for this recipient.</td>
+  </tr>  
+  <tr>
+    <td><code>--language</code></td>
     <td>
     {% include content-reuse/qumulo-alerts-see-locale.md %}
     </td>
   </tr>
   <tr>
-    <td><code>notify</code></td>
-    {% include content-reuse/qumulo-alerts-monitor-notify-array.md %}
-  </tr>   
-  <tr>
-    <td><code>phone_number</code></td>
-    <td>(Optional) The recipient's phone number, starting with a plus (<code>+</code>) followed by the international calling code</td>
-  </tr>  
-  <tr>
-    <td><code>short_name</code></td>
-    <td>The shortened form of the recipient's name</td>
-  </tr> 
-  <tr>
-    <td><code>timezone</code></td>
+    <td><code>--timezone</code></td>
     <td>
     {% include content-reuse/qumulo-alerts-see-tz.md %}
     </td>
-  </tr>     
+  </tr>
+  <tr>
+    <td><code>--disabled</code></td>
+    <td>(Optional) The user is allowed to receive notifications, but cannot login to the Qumulo Alerts CLI.</td>
+  </tr>  
+  <tr>
+    <td><code>--can-change-password</code></td>
+    <td>(Optional) The user is allowed to change their own password. This is only used if the user is allowed through ROLE permissions to login to the Qumulo Alerts CLI.</td>
+  </tr>
 </tbody>
 </table>
 
-## Example: Notifying Users in Different Countries about Different Alarms and Alerts
-In the following example, the wildcard `*` specifies _all plugins in this category generate notifications_.
+## Example: Adding a new Administrative user
 
-```json
+```bash
+# ./alerts user_add --full_name "Joe Somebody" --username jsomebody --password Admin123 --email jsomebody@xyzcorp.com --language en_US --timezone America/Los_Angeles
+[alerts - 6.0.0 - CLI for Qumulo Alerts subsystem]
 [{
-  "full_name": "Linda Johnson",
-  "short_name": "Linda",
-  "email_address": "ljohnson@example.com",
-  "phone_number": "+15555555555",
-  "language": "en_US",
-  "timezone": "America/Phoenix",
-  "notify": [{
-    "category": "Alarms",
-    "subcategory": ["Disk", "Node"],
-    "enabled": true
-  }]
-},{
-  "full_name": "Yennefer Martinez",
-  "short_name": "Yen",
-  "email_address": "yennefer@example.com",
-  "phone_number": "+905555555555"
-  "language": "tr_TR",
-  "timezone": "Europe/Istanbul",
-  "notify": [{
-    "category": "Alarms",
-    "subcategory": ["*"],
-    "enabled": true
-  },{
-    "category": "Alerts",
-    "subcategory": ["Quotas"],
-    "enabled": true
-  }]
+    "disabled": false,
+    "email": "jsomebody@xyzcorp.com",
+    "full_name": "Joe Somebody",
+    "id": 3,
+    "ifttt_trigger": null,
+    "language": "en_US",
+    "phone": null,
+    "timezone": "America/Los_Angeles",
+    "username": "jsomebody"
 }]
+
+```
+
+## Configuring a NotifyGroup for User Notifications
+
+Only Users added to a NotifyGroup will get notifications from Qumulo Alerts. A NotifyGroup specifies which events
+receive notifications.
+
+To add a user to NotifyGroup, it must first exist. By default, there is one NotifyGroup with all events
+included and it is called `NotifyAll`. If you wish to restrict which events any user receives, create an additional
+NotifyGroup and add those events to the group. 
+
+```bash
+# ./alerts notifygroup_add --help
+[alerts - 6.0.0 - CLI for Qumulo Alerts subsystem]
+Usage: alerts notifygroup_add [OPTIONS]
+
+  Add a NotifyGroup to Qumulo Alerts
+
+Options:
+  --name TEXT         Name of the NotifyGroup.  [required]
+  --description TEXT  Description of the NotifyGroup.
+  --event TEXT        Event to assign to the NotifyGroup.
+  --help              Show this message and exit.
+```
+The following is an explanation of the command line arguments that are used to add a NotifyGroup.
+
+<table>
+  <colgroup>
+    <col span="1" style="width: 30%;">
+    <col span="1" style="width: 70%;">
+  </colgroup>
+<thead>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td><code>--name</code></td>
+    <td>A unique name for the NotifyGroup.</td>
+  </tr>
+  <tr>
+    <td><code>--description</code></td>
+    <td>[Optional] A description of the NotifyGroup</td>
+  </tr>
+  <tr>
+    <td><code>--event</code></td>
+    <td>The name of the event that will cause a notification. The command may include multiple <b>--event</b> on the command line.</td>
+  </tr>
+</tbody>
+</table>
+
+## Example: Adding a new NotifyGroup
+
+The following command adds a new NotifyGroup identified as `NotifyHardware` and adds all the events
+for hardware state changes.
+
+```bash
+# ./alerts notifygroup_add --name NotifyHardware --description "Notify when some hardware has changed state" --event NOTIFY_FANS --event NOTIFY_CPU --event NOTIFY_DISKS --event NOTIFY_NETWORK --event NOTIFY_NODES
+[alerts - 6.0.0 - CLI for Qumulo Alerts subsystem]
+[{
+    "description": "Notify when some hardware has changed state",
+    "id": 2,
+    "name": "NotifyHardware"
+}]
+
+```
+
+## Example: Adding a user to the new NotifyGroup
+
+Once the NotifyGroup is created, you can start to add users to it. Remember that only users in a NotifyGroup can
+receive notifications; either through email, clicksend (sms), or IFTTT.
+
+```bash
+# ./alerts notifygroup_add_user --name NotifyHardware --username jsomebody
+[alerts - 6.0.0 - CLI for Qumulo Alerts subsystem]
+[{
+    "description": "Notify when some hardware has changed state",
+    "id": 2,
+    "name": "NotifyHardware",
+    "users": [
+        {
+            "can_change_password": true,
+            "disabled": false,
+            "email": "jsomebody@xyzcorp.com",
+            "full_name": "Joe Somebody",
+            "id": 3,
+            "ifttt_trigger": null,
+            "language": "en_US",
+            "phone": null,
+            "timezone": "America/Los_Angeles",
+            "username": "jsomebody"
+        }
+    ]
+}]
+
 ```
