@@ -373,6 +373,10 @@ dt[id]{
 color: #333;
 }
 
+h5 {
+    font-weight:bold;
+}
+
 .post-content img {
     margin: 12px 0px 3px 0px;
     width: auto;
