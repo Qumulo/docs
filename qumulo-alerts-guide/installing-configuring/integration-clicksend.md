@@ -11,7 +11,31 @@ keywords: Qumulo_Alerts, ClickSend, SMS, integrate, integration
 {% include note.html content="To be able to send SMS in the U.S. and Canada, you must sign up for a dedicated TFN." %}
 
 ## Configuring Qumulo Alerts Integration with the ClickSend Service
-To configure Qumulo Alerts to integrate with the ClickSend Service, you must edit `QumuloClickSendServer.json`, located in the `config/consumers` directory, in the directory [that you cloned from GitHub](installing-connecting-to-qumulo-cluster.md#clone-qumuloalerts-repository).
+To configure Qumulo Alerts to integrate with the ClickSend Service, you must add a clicksend server using the CLI.
+
+The command syntax is:
+
+```bash
+# ./alerts clicksend_server_add --help
+[alerts - 6.0.0 - CLI for Qumulo Alerts subsystem]
+Usage: alerts clicksend_server_add [OPTIONS]
+
+  Add a clicksend server in order to send alerts to recipients
+
+Options:
+  --username TEXT    'username' needed to login to the ClickSend service.
+                     [required]
+  --token TEXT       'token' needed to login to the ClickSend service.
+                     [required]
+  --senderid TEXT    Sender ID used by ClickSend.
+  --to-address TEXT  'to-address' used to test ClickSend.
+  --language TEXT    Default language used to send alerts to clicksend
+                     recipients.
+  --timezone TEXT    Default timezone used when expressing dates on clicksend
+                     sms messages.
+  --help             Show this message and exit.
+
+```
 
 The following is an explanation of the JSON keys that configure integration with an email server.
 
@@ -28,19 +52,21 @@ The following is an explanation of the JSON keys that configure integration with
 </thead>
 <tbody>
   <tr>
-    <td><code>default_language</code></td>
+    <td><code>--username</code></td>
     <td>
-      {% include content-reuse/qumulo-alerts-see-locale.md %}
+      <p>The login username for the ClickSend service.</p>
+      <p>For more information, see <a href="https://help.clicksend.com/article/dghaoyf7tg-api-credentials">API credentials</a> in the ClickSend documentation.</p>
     </td>
-  </tr>
+  </tr> 
   <tr>
-    <td><code>default_timezone</code></td>
+    <td><code>--token</code></td>
     <td>
-      {% include content-reuse/qumulo-alerts-see-tz.md %}
+      <p>Your ClickSend API key</p>
+      <p>For more information, see <a href="https://help.clicksend.com/article/dghaoyf7tg-api-credentials">API credentials</a> in the ClickSend documentation.</p>
     </td>
-  </tr>
+  </tr> 
   <tr>
-    <td><code>senderid</code></td>
+    <td><code>--senderid</code></td>
     <td>
       <p>Your ClickSend toll-free number (TFN)</p>
       {% include important.html content="This field is mandatory for the U.S. and Canada." %}
@@ -48,23 +74,50 @@ The following is an explanation of the JSON keys that configure integration with
     </td>
   </tr>
   <tr>
-    <td><code>token</code></td>
+    <td><code>--to-address</code></td>
     <td>
-      <p>Your ClickSend API key</p>
-      <p>For more information, see <a href="https://help.clicksend.com/article/dghaoyf7tg-api-credentials">API credentials</a> in the ClickSend documentation.</p>
+      <p>A valid phone number where a test message can be sent (TFN)</p>
+      {% include important.html content="This is ONLY used during a test of the ClickSend service!" %}
     </td>
-  </tr> 
+  </tr>
+  <tr>
+    <td><code>--language</code></td>
+    <td>
+      {% include content-reuse/qumulo-alerts-see-locale.md %}
+    </td>
+  </tr>
+  <tr>
+    <td><code>--timezone</code></td>
+    <td>
+      {% include content-reuse/qumulo-alerts-see-tz.md %}
+    </td>
+  </tr>
 </tbody>
 </table>
   
-## Example: Configured ClickSend Service Integration 
+## Example: Adding a ClickSend server to Qumulo Alerts
   
-```json
-{
-    "username": "mary@example.com",
-    "token": "A12BC345-D6EF-7890-G1234-56HIJ7890",
-    "senderid": "+15555555555",
-    "default_language": "en_GB",
-    "default_timezone": "UTC"
-}
+```bash
+# ./alerts clicksend_server_add --username jsomebody@xyzcorp.com --token 12345678-ABCDEFGH-12345678-ABCDEFGH --senderid "+18441234567" --to-address "+14801234567"
+[alerts - 6.0.0 - CLI for Qumulo Alerts subsystem]
+[{
+    "language": "en_GB",
+    "senderid": "+18441234567",
+    "timezone": "UTC",
+    "to_address": "+14801234567",
+    "username": "jsomebody@xyzcorp.com"
+}]
 ```
+## Testing the ClickSend service
+
+If order to determine if the ClickSend service is configured properly, a test message should be sent.
+This can only be done if the `--to-address` is configured.
+  
+```bash
+# ./alerts clicksend_server_test
+[alerts - 6.0.0 - CLI for Qumulo Alerts subsystem]
+[{
+    "ok": true
+}]
+```
+If the Clicksend service was configured properly, the phone number configured in `to-address` should receive a test message.
