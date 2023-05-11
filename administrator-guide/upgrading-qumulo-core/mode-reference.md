@@ -24,7 +24,7 @@ keywords: update, upgrade, instant, instant_software_upgrade, platform, platform
     </thead>
     <tr>
       <td>6.1.0</td>
-      <td>Instant</td>
+      <td>Instant, Quarterly</td>
     </tr>
     <tr>
       <td>6.0.2</td>
