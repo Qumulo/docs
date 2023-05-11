@@ -235,6 +235,10 @@ azure:
   qumuloOnAzureShort: Azure Native Qumulo SFS
   emailAzure: email [azure@qumulo.com](mailto:azure@qumulo.com).
   pricingCalculator: For an estimated pay-as-you-go price, see the <a href="https://azure.qumulo.com/calculator">Pricing and Performance Calculator</a>.
+  
+varonis:
+  separateMachine: Deploy Qumulo Broker on a stand-alone machine (or virtual machine) so that it sits between your Qumulo cluster and Varonis.
+  restartRsyslog: To restart the rsyslog service, use the `systemctl restart rsyslog` command.
 
 monitoring:
   cloudBasedMonitoringEnabled: If your configuration is valid, the Web UI shows the status **Enabled &#124; Connected**.
