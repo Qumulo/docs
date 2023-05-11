@@ -119,7 +119,7 @@ When you add a key to the Qumulo file system key store, Qumulo Core enables it a
 
 * To disable a key, use the `qq fs_security_modify_key` command and specify the key identifier or name and the `--disable` flag.
 
-* To re-enabled a key, use the `--enable` flag.
+* To re-enable a key, use the `--enable` flag.
 
 {{site.data.alerts.note}}
 <ul>

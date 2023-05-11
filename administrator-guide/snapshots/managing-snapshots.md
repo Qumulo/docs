@@ -225,8 +225,11 @@ If you can use the private key only to sign data, take the following steps.
    qq snapshot_get_unlock_challenge \
      --id 1682119059
    ```
+<<<<<<< HEAD
    
    {% include important.html content="Any change to the snapshot after you receive the unlock challenge, but before you perform the unlock, causes the challenge to change." %}
+=======
+>>>>>>> mkhmelnitsky-6.1.0-staging
 
 1. To generate a verification signature, use the response from the challenge with your private key.
 
