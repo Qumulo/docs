@@ -4,18 +4,10 @@ summary: "This section describes how to configure file system protocols for each
 permalink: /administrator-guide/network-multitenancy/configuring-file-system-protocols.html
 keywords: network, tenant, multitenancy, vlan, nfs, nfsv41, nfsv4.1, smb, s3, ftp, mmc, client, file_system, protocol
 sidebar: administrator_guide_sidebar
-varMustSpecifyTenantID: When network multitenancy is enabled for a cluster, you must specify the tenant ID.
+varMustSpecifyTenantID: When multiple tenants exist on a cluster, you must specify the tenant ID.
 ---
 
 After you [create tenants](partitioning-cluster-into-tenants.html) on your Qumulo cluster, you can manage access for clients that connect to the cluster from the tenant's network by enabling or disabling file system protocols, or configuring file system protocols specifically for each tenant.
-
-{{site.data.alerts.note}}
-<ul>
-   <li>The configuration that this section describes is tenant-specific. To configure all tenants to use settings (such as NFSv4 access for NFS or encryption for SMB), use global settings. This section provides examples of global settings, exceptions to global settings, and reverting to global settings.</li>
-   <li>File system protocol settings that you configured before enabling multitenancy remain global.</li>
-</ul>
-{{site.data.alerts.end}}
-
 
 ## Prerequisites
 To configure file system protocols, your user must have membership in a Qumulo role with the following privileges.

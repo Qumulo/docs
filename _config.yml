@@ -181,11 +181,16 @@ q1uhg2: Quiver 1UH Gen2
 
 consTrans: The consumer processes for email and ClickSend integrations translate messages into the recipient's native language.
 
+jsonNotTable: The output displays information in a table format. To view the output in JSON format, use the <code>--json</code> flag.
+
 protectingData:
   contactQumuloCare: We strongly recommend contacting the <a href="/contacting-qumulo-care-team.html">Qumulo Care team</a> before proceeding with cluster expansion.
   followAddNodeInstructions: 1. Follow the instructions in <a href="https://care.qumulo.com/hc/en-us/articles/360001070307">Add a New Node to an Existing Qumulo Cluster</a> on Qumulo Care.
   checkCapacity: 1. Before you click **Yes** in the **Add &lt;N&gt; nodes to cluster &lt;MyCluster&gt;?** dialog box, check that the projected capacity matches the expected capacity.
   monitorProcess: 1. To monitor this process, click **Cluster > Overview**. On the **Cluster** page, in the protection status section, you can view the rebalance phase status and the estimated time to completion.
+  mustHaveCryptoLib: To use this method, you must install the Python cryptography library.
+  storeKeysProtectResources: In Qumulo Core 6.1.0 (and higher), you can store multiple ECDSA public keys in the Qumulo file system key store and use these keys to protect filesystem resources.
+  supportedKeys: Currently, Qumulo Core supports only 256-bit ECDSA keys in <code>.pem</code> and <code>.der</code> formats. Qumulo Core doesn't support storing ECDSA keys of other lengths and formats.
 
 s3:
   permissions:
@@ -230,6 +235,10 @@ azure:
   qumuloOnAzureShort: Azure Native Qumulo SFS
   emailAzure: email [azure@qumulo.com](mailto:azure@qumulo.com).
   pricingCalculator: For an estimated pay-as-you-go price, see the <a href="https://azure.qumulo.com/calculator">Pricing and Performance Calculator</a>.
+  
+varonis:
+  separateMachine: Deploy Qumulo Broker on a stand-alone machine (or virtual machine) so that it sits between your Qumulo cluster and Varonis.
+  restartRsyslog: To restart the rsyslog service, use the `systemctl restart rsyslog` command.
 
 monitoring:
   cloudBasedMonitoringEnabled: If your configuration is valid, the Web UI shows the status **Enabled &#124; Connected**.

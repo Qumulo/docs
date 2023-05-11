@@ -18,7 +18,7 @@ ACTIONS=()
 PS3='Choose a guide to build:'
 
 # Prints the options on screen
-options=("Hardware Guide" "Azure Guide" "Administrator Guide" "Qumulo Alerts Guide" "All Guides")
+options=("Hardware Guide" "Azure Guide" "Administrator Guide" "Qumulo Alerts Guide" "Integration Guide" "All Guides")
 
 select opt in "${options[@]}"
 
@@ -42,9 +42,13 @@ do
       ACTIONS+=("Qumulo_Alerts_Guide")
       break
       ;;
+    "Integration Guide")
+      ACTIONS+=("Integration_Guide")
+      break
+      ;;
     "All Guides")
       # Perform all of the actions
-      ACTIONS+=("Hardware_Guide" "Azure_Guide" "Administrator_Guide" "Qumulo_Alerts_Guide")
+      ACTIONS+=("Hardware_Guide" "Azure_Guide" "Administrator_Guide" "Qumulo_Alerts_Guide" "Integration_Guide")
       break
       ;;      
     *) echo "$REPLY is not valid. Try again."
@@ -71,6 +75,10 @@ build_prince () {
     "Qumulo_Alerts_Guide")
       JEKYLL_CONFIG=config_qumulo_alerts_guide_pdf.yml
       PRINCE_OUTPUT=qumulo-alerts-guide.pdf
+      ;;
+    "Integration_Guide")
+      JEKYLL_CONFIG=config_integration_guide_pdf.yml
+      PRINCE_OUTPUT=qumulo-integration-guide.pdf
       ;;
   esac
 

@@ -1,0 +1,55 @@
+entries:
+- title:
+  pdftitle: qumulo-integration-guide.pdf
+  product:
+  version:
+  folders:
+
+  - title:
+    output: pdf
+    type: frontmatter
+    folderitems:
+
+    - title:
+      url: /titlepage.html
+      output: pdf
+      type: frontmatter
+
+    - title:
+      url: /tocpage.html
+      output: pdf
+      type: frontmatter
+
+  - title: Qumulo Integration Guide
+    output: web
+    type: navi
+    folderitems:
+
+    - title: Documentation Home
+      url: /index.html
+      output: web
+
+    - title: Qumulo Integration Guide Home
+      url: /integration-guide/
+      output: web
+
+    - title: Contacting the Qumulo Care Team
+      url: /contacting-qumulo-care-team.html
+      output: web  
+
+  - title: Varonis Collector
+    url: /integration-guide/varonis-collector/index.html
+    output: web, pdf
+    folderitems:
+
+    - title: How Varonis Collector Works with Qumulo Core
+      url: /integration-guide/varonis-collector/qumulo-core-with-varonis.html
+      output: web, pdf
+      
+    - title: Deploying Qumulo Broker
+      url: /integration-guide/varonis-collector/deploying-qumulo-broker.html
+      output: web, pdf
+      
+    - title: Troubleshooting Qumulo Broker
+      url: /integration-guide/varonis-collector/troubleshooting-qumulo-broker.html
+      output: web, pdf

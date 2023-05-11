@@ -147,6 +147,14 @@ entries:
       url: /administrator-guide/protecting-data/managing-encryption-at-rest.html
       output: web, pdf
 
+    - title: Generating and Storing ECDSA Keys on a Qumulo Cluster
+      url: /administrator-guide/protecting-data/generating-storing-ecdsa-keys.html
+      output: web, pdf
+      
+    - title: Managing Security Keys in the Qumulo File System Key Store
+      url: /administrator-guide/protecting-data/managing-security-keys.html
+      output: web, pdf      
+
     - title: Increasing the Node-Fault-Tolerance Level for Your Qumulo Cluster During Node-Add Operations
       url: /administrator-guide/protecting-data/increasing-node-fault-tolerance-level.html
       output: web, pdf
@@ -159,8 +167,21 @@ entries:
       url: /administrator-guide/protecting-data/replacing-nodes-by-performing-transparent-platform-refresh.html
       output: web, pdf
 
+  - title: Working with Snapshots
+    url: /administrator-guide/snapshots/index.html
+    output: web, pdf
+    folderitems:
+
+    - title: How Snapshots Work in Qumulo Core
+      url: /administrator-guide/snapshots/how-snapshots-work.html
+      output: web, pdf
+
     - title: Managing Snapshots in Qumulo Core
-      url: /administrator-guide/protecting-data/managing-snapshots.html
+      url: /administrator-guide/snapshots/managing-snapshots.html
+      output: web, pdf
+
+    - title: Recovering Files by Using Snapshots
+      url: /administrator-guide/snapshots/recovering-files.html
       output: web, pdf
 
   - title: Replicating Data
