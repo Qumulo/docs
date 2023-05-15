@@ -6,8 +6,8 @@ set -e
 # Display list of containers, count them, and kill them if they exist
 echo 'Killing all running containers...'
 echo ''
-if [ $(docker ps | grep -c 'docs-container') -gt 0 ]; then
-  docker kill docs-container
+if [ $(docker ps | grep -c 'docs-container$') -gt 0 ]; then
+  docker kill docs-container || true
 fi
 
 # Declaring a future array of actions
@@ -96,8 +96,11 @@ build_prince () {
     serve \
     --config "_config.yml,pdfconfigs/${JEKYLL_CONFIG}"
 
-  echo "Waiting for port 4000 to become available..."
-  while ! nc -z localhost 4000; do
+  # -F: sets the field delimiter to colon 
+  port=$(grep '^port:' "pdfconfigs/${JEKYLL_CONFIG}" | awk -F: '{print $2;}')
+
+  echo "Waiting for port$port to become available..."
+  while ! nc -z localhost $port; do
     sleep 0.2
   done
 
