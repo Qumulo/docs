@@ -8,7 +8,9 @@ keywords: Qumulo_Alerts, alert, alarm, Docker, producer, plug_in, plugin, plug-i
 
 ## Configuring Monitoring for a Qumulo Cluster
 To configure Qumulo Alerts to connect to, and collect data from a Qumulo cluster, you must run the **cluster_add** subcommand in the **alerts** CLI.
-The following is an explanation of the JSON keys that configure Qumulo cluster monitoring.
+
+The following is an explanation of the options that configure Qumulo cluster monitoring.
+
 
 ```bash
 Usage: alerts cluster_add [OPTIONS]
@@ -98,13 +100,13 @@ Options:
 ## Example: Monitoring Alarms for Disks and Nodes on a Single Cluster
 
 ```bash
-alerts cluster_add --name cluster.qumulo.com --token 12345678901234567890 -pi Disks -pi Nodes
+alerts cluster_add --name cluster.xyzcorp.com --token 12345678901234567890 -pi Disks -pi Nodes
 ```
 ```json
 [{
     "frequency": 1,
     "id": 1,
-    "name": "cluster.qumulo.com",
+    "name": "cluster.xyzcorp.com",
     "nlb": false,
     "plugins": [
         {
@@ -128,13 +130,13 @@ alerts cluster_add --name cluster.qumulo.com --token 12345678901234567890 -pi Di
 ## Example: Monitoring Alarms for Disks and Nodes and All Alerts on a Single Cluster
 
 ```bash
-alerts cluster_add --name cluster.qumulo.com --token 12345678901234567890 -pi Disks -pi Nodes -pc Alerts
+alerts cluster_add --name cluster.xyzcorp.com --token 12345678901234567890 -pi Disks -pi Nodes -pc Alerts
 ```
 ```json
 [{
     "frequency": 1,
     "id": 1,
-    "name": "groot.eng.qumulo.com",
+    "name": "cluster.xyzcorp.com",
     "nlb": false,
     "plugins": [
         {
