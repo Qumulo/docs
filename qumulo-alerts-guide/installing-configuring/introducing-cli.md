@@ -7,7 +7,7 @@ keywords: Qumulo_Alerts, install, connect, cluster, local_user, role, assign, ac
 ---
 
 ## Configuration Commands
-All configuration for Qumulo Alerts is done through the CLI. There is a CLI command for each of the following architectures.
+All configuration for Qumulo Alerts is done through the CLI. There is a CLI utility for each of the following architectures.
 * Ubuntu 20
 * Ubuntu 22
 * Redhat 8
@@ -17,6 +17,7 @@ All configuration for Qumulo Alerts is done through the CLI. There is a CLI comm
 ### Working with the Alerts CLI
 
 The Alerts CLI command configures the entire Qumulo Alerts system. Alerts is composed of many subcommands; with each one configuring a specific feature of Qumulo Alerts.
+
 
 ```bash
 alerts --help
