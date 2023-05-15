@@ -8,7 +8,7 @@ keywords: Qumulo_Alerts, user, notification, configure, configuration, JSON
 
 ## Configuring Administrative Notifications for a Qumulo Cluster
 To configure Qumulo Alerts to notify individual unique administrators about alarms and alerts from a Qumulo cluster, you must use the CLI to add that 
-administrator as am user to Qumulo Alerts and then to add that user to a Notify Group.
+administrator as a user to Qumulo Alerts and then add that user to a Notify Group.
 
 A configured user is also allowed to login to the Qumulo Alerts CLI and execute administration commands. Users must first be added to a Role to enable this feature.
 
@@ -31,17 +31,17 @@ Options:
   --password TEXT                Login password for the new user.  [required]
   --email TEXT                   Email address for the new user
   --phone TEXT                   Mobile phone number for the new user.
-  --ifttt-trigger TEXT           IFTTT event to trigger for the new user.
+  --ifttt-event TEXT             IFTTT event to trigger for the new user.
   --language TEXT                Language used to send alerts to the user.
   --timezone TEXT                Timezone used for formatting alerts to the
                                  user.
-  --disabled BOOLEAN             Disabled/Enable the user.
-  --can-change-password BOOLEAN  Can change the password for the user.
+  --disabled BOOLEAN             Disable/Enable the user.
+  --can-change-password BOOLEAN  A user can change their own password.
   --help                         Show this message and exit.
 ```
 The following is an explanation of the command line arguments that configure user notifications.
 
-{% include note.html content="Although both `email`, `phone`, and `ifttt-trigger` are optional keys, you must specify at least one of them for the user to receive notifications." %}
+{% include note.html content="Although both `email`, `phone`, and `ifttt-event` are optional keys, you must specify at least one of them for the user to receive notifications." %}
 
 <table>
   <colgroup>
@@ -76,8 +76,8 @@ The following is an explanation of the command line arguments that configure use
     <td>(Optional) The recipient's phone number, starting with a plus (<code>+</code>) followed by the international calling code</td>
   </tr>  
   <tr>
-    <td><code>--ifttt-trigger</code></td>
-    <td>(Optional) A trigger string used by IFTTT that will be unique for this recipient.</td>
+    <td><code>--ifttt-event</code></td>
+    <td>(Optional) A event string used by IFTTT in a webhook that will be unique for this recipient.</td>
   </tr>  
   <tr>
     <td><code>--language</code></td>
@@ -112,7 +112,7 @@ The following is an explanation of the command line arguments that configure use
     "email": "jsomebody@xyzcorp.com",
     "full_name": "Joe Somebody",
     "id": 3,
-    "ifttt_trigger": null,
+    "ifttt_event": null,
     "language": "en_US",
     "phone": null,
     "timezone": "America/Los_Angeles",
@@ -207,7 +207,7 @@ receive notifications; either through email, clicksend (sms), or IFTTT.
             "email": "jsomebody@xyzcorp.com",
             "full_name": "Joe Somebody",
             "id": 3,
-            "ifttt_trigger": null,
+            "ifttt_event": null,
             "language": "en_US",
             "phone": null,
             "timezone": "America/Los_Angeles",
