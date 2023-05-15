@@ -6,7 +6,9 @@ sidebar: qumulo_alerts_guide_sidebar
 keywords: Qumulo_Alerts, ClickSend, SMS, integrate, integration
 ---
 
-[ClickSend](https://www.clicksend.com/en/) is a paid, third-party service that provides delivery of messages as SMS (and other formats). For more information, see [How to get started with ClickSend](https://help.clicksend.com/article/3pp05c4fcs-how-to-get-started-with-clicksend) in the ClickSend documentation.
+[ClickSend](https://www.clicksend.com/en/) is a paid, third-party service that provides delivery of messages as SMS (and other formats). 
+
+For more information, see [How to get started with ClickSend](https://help.clicksend.com/article/3pp05c4fcs-how-to-get-started-with-clicksend) in the ClickSend documentation.
 
 {% include note.html content="To be able to send SMS in the U.S. and Canada, you must sign up for a dedicated TFN." %}
 
@@ -37,7 +39,7 @@ Options:
 
 ```
 
-The following is an explanation of the JSON keys that configure integration with an email server.
+The following is an explanation of the options that configure integration with an email server.
 
 <table>
   <colgroup>
