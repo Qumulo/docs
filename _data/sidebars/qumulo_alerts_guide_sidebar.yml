@@ -65,6 +65,10 @@ entries:
       url: /qumulo-alerts-guide/installing-configuring/installing-connecting-to-qumulo-cluster.html
       output: web, pdf
     
+    - title: Introducing Qumulo Alerts CLI
+      url: /qumulo-alerts-guide/installing-configuring/introducing-cli.html
+      output: web, pdf
+
     - title: Configuring Alarms and Alerts
       url: /qumulo-alerts-guide/installing-configuring/alarms-and-alerts.html
       output: web, pdf
@@ -79,4 +83,8 @@ entries:
 
     - title: Configuring Integration with ClickSend
       url: /qumulo-alerts-guide/installing-configuring/integration-clicksend.html
+      output: web, pdf
+
+    - title: Configuring Integration with IFTTT
+      url: /qumulo-alerts-guide/installing-configuring/integration-ifttt.html
       output: web, pdf
