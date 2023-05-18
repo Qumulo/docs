@@ -12,7 +12,9 @@ To configure Qumulo Alerts to integrate with an email server, you must use the C
 The format of the command to add a new email server is:
 
 ```bash
-# ./alerts email_server_add --help
+./alerts email_server_add --help
+```
+```json
 [alerts - 6.0.0 - CLI for Qumulo Alerts subsystem]
 Usage: alerts email_server_add [OPTIONS]
 
@@ -99,7 +101,9 @@ After May 2022, only organizations with access to the Google Admin Console can u
 ## Example: Adding a new email server to Qumulo Alerts
 
 ```bash
-# ./alerts email_server_add --from-addr Alerts@qumulo.com --to-addr mkade@qumulo.com --server mail.corp.qumulo.com --port 25 --language en_US --timezone "America/Los_Angeles"
+./alerts email_server_add --from-addr Alerts@qumulo.com --to-addr mkade@qumulo.com --server mail.corp.qumulo.com --port 25 --language en_US --timezone "America/Los_Angeles"
+```
+```json
 [alerts - 6.0.0 - CLI for Qumulo Alerts subsystem]
 [{
     "from_address": "Alerts@qumulo.com",
@@ -119,7 +123,9 @@ After May 2022, only organizations with access to the Google Admin Console can u
 It is recommended that you test to make sure that the email server is working properly.
 
 ```bash
-# ./alerts email_server_test
+./alerts email_server_test
+```
+```json
 [alerts - 6.0.0 - CLI for Qumulo Alerts subsystem]
 [{
     "ok": true
