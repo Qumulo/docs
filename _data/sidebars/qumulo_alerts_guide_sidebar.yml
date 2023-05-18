@@ -61,14 +61,14 @@ entries:
     output: web, pdf
     folderitems:
 
-    - title: Installing Qumulo Alerts and Connecting It to a Qumulo Cluster
-      url: /qumulo-alerts-guide/installing-configuring/installing-connecting-to-qumulo-cluster.html
-      output: web, pdf
-    
     - title: Introducing Qumulo Alerts CLI
       url: /qumulo-alerts-guide/installing-configuring/introducing-cli.html
       output: web, pdf
 
+    - title: Installing Qumulo Alerts and Connecting It to a Qumulo Cluster
+      url: /qumulo-alerts-guide/installing-configuring/installing-connecting-to-qumulo-cluster.html
+      output: web, pdf
+    
     - title: Configuring Alarms and Alerts
       url: /qumulo-alerts-guide/installing-configuring/alarms-and-alerts.html
       output: web, pdf
@@ -87,4 +87,16 @@ entries:
 
     - title: Configuring Integration with IFTTT
       url: /qumulo-alerts-guide/installing-configuring/integration-ifttt.html
+      output: web, pdf
+
+    - title: Configuring Quota Notifications
+      url: /qumulo-alerts-guide/installing-configuring/quota-notifications.html
+      output: web, pdf
+
+    - title: Configuring Default Quota Notifications
+      url: /qumulo-alerts-guide/installing-configuring/default_quotas.html
+      output: web, pdf
+
+    - title: Configuring User Quota Notifications
+      url: /qumulo-alerts-guide/installing-configuring/user_quota_notifications.html
       output: web, pdf
