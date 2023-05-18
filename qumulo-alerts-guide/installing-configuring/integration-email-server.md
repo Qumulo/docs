@@ -101,20 +101,20 @@ After May 2022, only organizations with access to the Google Admin Console can u
 ## Example: Adding a new email server to Qumulo Alerts
 
 ```bash
-./alerts email_server_add --from-addr Alerts@qumulo.com --to-addr mkade@qumulo.com --server mail.corp.qumulo.com --port 25 --language en_US --timezone "America/Los_Angeles"
+./alerts email_server_add --from-addr Alerts@xyzcorp.com --to-addr jsomebody@xyzcorp.com --server mail.xyzcorp.com --port 25 --language en_US --timezone "America/Los_Angeles"
 ```
 ```json
 [alerts - 6.0.0 - CLI for Qumulo Alerts subsystem]
 [{
-    "from_address": "Alerts@qumulo.com",
+    "from_address": "Alerts@xyzcorp.com",
     "language": "en_US",
     "login": null,
     "password": null,
     "port": 25,
     "security": null,
-    "server": "mail.corp.qumulo.com",
+    "server": "mail.xyzcorp.com",
     "timezone": "America/Los_Angeles",
-    "to_address": "mkade@qumulo.com"
+    "to_address": "jsomebody@xyzcorp.com"
 }]
 ```
 
