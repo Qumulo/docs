@@ -18,7 +18,9 @@ To configure Qumulo Alerts to integrate with the IFTTT Service, you must add a I
 The command syntax is:
 
 ```bash
-# ./alerts ifttt_server_add --help
+./alerts ifttt_server_add --help
+```
+```json
 [alerts - 6.0.0 - CLI for Qumulo Alerts subsystem]
 Usage: alerts ifttt_server_add [OPTIONS]
 
@@ -71,7 +73,9 @@ The following is an explanation of the options that configure integration with a
 ## Example: Adding a IFTTT server to Qumulo Alerts
   
 ```bash
-# ./alerts ifttt_server_add --token dygWSfq55w0m1234RHJ45 --language en_US --timezone "America/Phoenix"
+./alerts ifttt_server_add --token dygWSfq55w0m1234RHJ45 --language en_US --timezone "America/Phoenix"
+```
+```json
 [alerts - 6.0.0 - CLI for Qumulo Alerts subsystem]
 [{
     "language": "en_US",
@@ -84,7 +88,9 @@ The following is an explanation of the options that configure integration with a
 If order to determine if the IFTT service is configured properly, a test message should be sent.
   
 ```bash
-# ./alerts ifttt_server_test
+./alerts ifttt_server_test
+```
+```json
 [alerts - 6.0.0 - CLI for Qumulo Alerts subsystem]
 [{
     "ok": true
