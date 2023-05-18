@@ -13,12 +13,15 @@ For more information, see [How to get started with ClickSend](https://help.click
 {% include note.html content="To be able to send SMS in the U.S. and Canada, you must sign up for a dedicated TFN." %}
 
 ## Configuring Qumulo Alerts Integration with the ClickSend Service
+
 To configure Qumulo Alerts to integrate with the ClickSend Service, you must add a clicksend server using the CLI.
 
 The command syntax is:
 
 ```bash
-# ./alerts clicksend_server_add --help
+./alerts clicksend_server_add --help
+```
+```json
 [alerts - 6.0.0 - CLI for Qumulo Alerts subsystem]
 Usage: alerts clicksend_server_add [OPTIONS]
 
@@ -100,7 +103,9 @@ The following is an explanation of the options that configure integration with a
 ## Example: Adding a ClickSend server to Qumulo Alerts
   
 ```bash
-# ./alerts clicksend_server_add --username jsomebody@xyzcorp.com --token 12345678-ABCDEFGH-12345678-ABCDEFGH --senderid "+18441234567" --to-address "+14801234567"
+./alerts clicksend_server_add --username jsomebody@xyzcorp.com --token 12345678-ABCDEFGH-12345678-ABCDEFGH --senderid "+18441234567" --to-address "+14801234567"
+```
+```json
 [alerts - 6.0.0 - CLI for Qumulo Alerts subsystem]
 [{
     "language": "en_GB",
@@ -116,7 +121,9 @@ If order to determine if the ClickSend service is configured properly, a test me
 This can only be done if the `--to-address` is configured.
   
 ```bash
-# ./alerts clicksend_server_test
+./alerts clicksend_server_test
+```
+```json
 [alerts - 6.0.0 - CLI for Qumulo Alerts subsystem]
 [{
     "ok": true
