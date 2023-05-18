@@ -18,6 +18,8 @@ The format of the command to add a new user is:
 
 ```bash
 ./alerts user_add --help
+```
+```json
 [alerts - 6.0.0 - CLI for Qumulo Alerts subsystem]
 Usage: alerts user_add [OPTIONS]
 
@@ -105,7 +107,9 @@ The following is an explanation of the command line arguments that configure use
 ## Example: Adding a new Administrative user
 
 ```bash
-# ./alerts user_add --full_name "Joe Somebody" --username jsomebody --password Admin123 --email jsomebody@xyzcorp.com --language en_US --timezone America/Los_Angeles
+./alerts user_add --full_name "Joe Somebody" --username jsomebody --password Admin123 --email jsomebody@xyzcorp.com --language en_US --timezone America/Los_Angeles
+```
+```json
 [alerts - 6.0.0 - CLI for Qumulo Alerts subsystem]
 [{
     "disabled": false,
@@ -131,7 +135,9 @@ included and it is called `NotifyAll`. If you wish to restrict which events any 
 NotifyGroup and add those events to the group. 
 
 ```bash
-# ./alerts notifygroup_add --help
+./alerts notifygroup_add --help
+```
+```json
 [alerts - 6.0.0 - CLI for Qumulo Alerts subsystem]
 Usage: alerts notifygroup_add [OPTIONS]
 
@@ -178,7 +184,9 @@ The following command adds a new NotifyGroup identified as `NotifyHardware` and 
 for hardware state changes.
 
 ```bash
-# ./alerts notifygroup_add --name NotifyHardware --description "Notify when some hardware has changed state" --event NOTIFY_FANS --event NOTIFY_CPU --event NOTIFY_DISKS --event NOTIFY_NETWORK --event NOTIFY_NODES
+./alerts notifygroup_add --name NotifyHardware --description "Notify when some hardware has changed state" --event NOTIFY_FANS --event NOTIFY_CPU --event NOTIFY_DISKS --event NOTIFY_NETWORK --event NOTIFY_NODES
+```
+```json
 [alerts - 6.0.0 - CLI for Qumulo Alerts subsystem]
 [{
     "description": "Notify when some hardware has changed state",
@@ -194,7 +202,9 @@ Once the NotifyGroup is created, you can start to add users to it. Remember that
 receive notifications; either through email, clicksend (sms), or IFTTT.
 
 ```bash
-# ./alerts notifygroup_add_user --name NotifyHardware --username jsomebody
+./alerts notifygroup_add_user --name NotifyHardware --username jsomebody
+```
+```json
 [alerts - 6.0.0 - CLI for Qumulo Alerts subsystem]
 [{
     "description": "Notify when some hardware has changed state",
