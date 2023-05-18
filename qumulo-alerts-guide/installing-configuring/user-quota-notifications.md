@@ -22,7 +22,7 @@ is identified, Qumulo Alerts will look within Active Directory for the email add
 has an advantage in that a Qumulo Alerts Administrator need not create a quota entry for each user to notify. Instead,
 they can create a default quota and inherit a notification for each user using the **owner** method.
 
-## Configuring an active directory lookup for a user quota notification for a Qumulo Cluster
+## Configuring an active directory lookup for a user quota notification on a Qumulo Cluster
 
 The format of the command to add a active directory server is:
 
@@ -109,6 +109,8 @@ Add an Active Directory server to an existing defined cluster that is currently 
 
 ```
 
+{% include important.html content="Whenever possible, for security reasons, you should configure a specific user in Active Directory that will allow you to issue lookups for specific information in the Users CN. In our example (above), we use the name <b>LookupUser</b>" %}
+
 ## Example: Configuring a default quota to use AD Lookup
 
 Once you have added an AD Server, configure the default quota to issue user notifications. Additionally, optionally disable
@@ -136,7 +138,7 @@ administrative notifications.
 While adding a specific quota, it is possible to configure user notifications using a direct email address.
 
 ```bash
-./alerts quota_add --quotapath /Movies/Dutch --user-notification True --user-mode direct --user-email joesomebody@xyzcorp.com --cluster-include cluster.xyzcorp.com
+./alerts quota_add --quotapath /Movies/Dutch --user-notification True --user-mode direct --user-email jsomebody@xyzcorp.com --cluster-include cluster.xyzcorp.com
 ```
 ```json
 [alerts - 6.0.0 - CLI for Qumulo Alerts subsystem]
@@ -146,7 +148,7 @@ While adding a specific quota, it is possible to configure user notifications us
     "error": 85,
     "id": 1,
     "quota_path": "/Movies/Dutch/",
-    "user_email": "joesomebody@xyzcorp.com",
+    "user_email": "jsomebody@xyzcorp.com",
     "user_mode": "direct",
     "user_notification": true,
     "warning": 75
