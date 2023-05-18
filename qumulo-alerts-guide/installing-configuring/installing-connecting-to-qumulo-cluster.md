@@ -69,7 +69,7 @@ To be able to generate access tokens, you must create a local user for Qumulo Al
 
 1. On the **Create Role** page:
 
-   1. Enter a name, for example `QumuloAlerts`.
+   1. Enter `QumuloAlerts`. **This name is required as Qumulo Alerts verifies that it has sufficient role permissions before it can start**
 
    1. Enter a description, for example `This account lets an administrator restrict the privileges of the QumuloAlerts user.`
 
