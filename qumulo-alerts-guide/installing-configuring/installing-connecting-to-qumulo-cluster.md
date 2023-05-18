@@ -84,14 +84,23 @@ To be able to generate access tokens, you must create a local user for Qumulo Al
       <li><strong>CLUSTER_READ: View nodes, disks, protection status, and SSL certificate</strong></li>
       <li><strong>DNS_READ: Read DNS setting</strong></li>
       <li><strong>ENCRYPTION_READ: View the status of at rest encryption</strong></li>
+      <li><strong>FS_ATTRIBUTES_READ: Read file system statistics</strong></li>
+      <li><strong>FS_DELETE_TREE_READ: View the status of directory tree delete operations</strong></li>
+      <li><strong>FS_KEY_MANAGEMENT_READ: Read and list public keys for various FS security features</strong></li>
+      <li><strong>FS_LOCK_READ: View NLM and SMB locks and waiters</strong></li>
+      <li><strong>FS_SETTINGS_READ: View file system permissions settings</strong></li>
       <li><strong>FTP_READ: View FTP status and settings</strong></li>
       <li><strong>IDENTITY_MAPPING_READ: Get AD/LDAP User Defined Mappings</strong></li>
+      <li><strong>IDENTITY_READ: Use Qumulo's identity lookup and translation APIs</strong></li>
+      <li><strong>KERBEROS_KEYTAB_READ: View Kerberos keytab</strong></li>
+      <li><strong>KERBEROS_SETTINGS_READ: Read Kerberos settings</strong></li>
       <li><strong>LDAP_READ: View LDAP settings</strong></li>
       <li><strong>LOCAL_GROUP_READ: View local groups and members</strong></li>
       <li><strong>LOCAL_USER_READ: Get information about local users</strong></li>
       <li><strong>METRICS_READ: Get all metrics</strong></li>
       <li><strong>NETWORK_READ: Read network status and settings</strong></li>
       <li><strong>NFS_EXPORT_READ: Read network status and settings</strong></li>
+      <li><strong>NFS_SETTINGS_READ: Internal-Only: View NFS server settings</strong></li>
       <li><strong>QUOTA_READ: View all file system quotas</strong></li>
       <li><strong>REBOOT_READ: View Reboot Status</strong></li>
       <li><strong>RECONCILER_READ: View reconciler status and metrics</strong></li>
@@ -101,7 +110,9 @@ To be able to generate access tokens, you must create a local user for Qumulo Al
       <li><strong>S3_BUCKETS_READ: View all S3 buckets present in the system</strong></li>
       <li><strong>S3_CREDENTIALS_READ: View any S3 access key present in the system</strong></li>
       <li><strong>S3_SETTINGS_READ: View S3 server settings</strong></li>
+      <li><strong>S3_UPLOADS_READ: View all S3 uploads present in the system.</strong></li>
       <li><strong>SAML_SETTINGS_READ: View SAML integration settings</strong></li>
+      <li><strong>SMB_FILE_HANDLE_READ: List open SMB file handles</strong></li>
       <li><strong>SMB_SESSION_READ: List logged on SMB sessions</strong></li>
       <li><strong>SMB_SHARE_READ: View configuration of SMB shares and SMB server settings</strong></li>
       <li><strong>SNAPSHOT_CALCULATE_USED_CAPACITY_READ: Recalculate capacity usage of snapshots</strong></li>
@@ -146,19 +157,19 @@ The `auth_create_access_token` command returns a JSON response that contains the
 
 For more information, see [Using Qumulo Core Access Tokens](https://docs.qumulo.com/administrator-guide/external-services/using-access-tokens.html) in the Qumulo Administrator Guide.
 
-## Step 6: Configure Qumulo Alerts
+## Step 6: Start Qumulo Alerts
+To start Qumulo Alerts, run the following command from the directory to which you cloned the `QumuloAlerts` repository.
+
+```bash
+./start-docker-qumulo-alerts.sh
+```
+## Step 7: Configure Qumulo Alerts
 1. [Configure alarms and alerts](alarms-and-alerts.md).
 
 1. [Configure user notifications](user-notifications.md).
 
 1. Configure [integration with an email server](integration-email-server.md) or [integration with the ClickSend service](integration-clicksend.md).
 
-## Step 7: Start Qumulo Alerts
-To start Qumulo Alerts, run the following command from the directory to which you cloned the `QumuloAlerts` repository.
-
-```bash
-./start-docker-qumulo-alerts.sh
-```
 
 ## Step 8: Stop Qumulo Alerts
 If you wish to stop Qumulo Alerts for any reason, run the following command from the directory to which you cloned the 'QumuloAlerts' repository.
