@@ -20,7 +20,9 @@ The Alerts CLI command configures the entire Qumulo Alerts system. Alerts is com
 
 
 ```bash
-alerts --help
+./alerts --help
+```
+```json
 Usage: alerts [OPTIONS] COMMAND [ARGS]...
 
   CLI for Qumulo Alerts subsystem
