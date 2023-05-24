@@ -1,6 +1,6 @@
 ---
 title: "Managing Snapshots in Qumulo Core"
-summary: "This section explains how to create on-demand snapshots and snapshot policies, view and search for existing snapshots, and delete snapshots by using the Web UI and how to create snapshots on a schedule, create a snapshot with an expiration time, and modify a snapshot's expiration time by using the <code>qq</code> CLI."
+summary: "This section explains how to create on-demand snapshots and snapshot policies, view and search for existing snapshots, and delete snapshots by using the Web UI and how to create snapshots on a schedule, create a snapshot with an expiration time, modify a snapshot's expiration time, and lock or unlock a snapshot by using by using a key located in the Qumulo file system key store and the <code>qq</code> CLI."
 permalink: /administrator-guide/snapshots/managing-snapshots.html
 redirect_from:
   - /managing-snapshots.html
@@ -13,6 +13,8 @@ varLogin: 1. Log in to the Qumulo Core Web UI.
 varSaved: 1. Click **Cluster > Saved Snapshots**.
 var433Only: In Qumulo Core version 4.3.3 (and higher),
 ---
+
+For more information, see [Managing Security Keys in the Qumulo File System Key Store](../protecting-data/managing-security-keys.html).
 
 ## Managing Snapshots by Using the Web UI
 This section explains how to create on-demand snapshots and snapshot policies, view and search for existing snapshots, and delete snapshots by using the Web UI.
