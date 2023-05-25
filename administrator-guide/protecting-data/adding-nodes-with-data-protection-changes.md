@@ -6,7 +6,7 @@ redirect_from:
   - /administrator-guide/protecting-data/changing-data-protection-configuration.html
   - /administrator-guide/protecting-data/changing-adaptive-data-protection-configuration.html
 sidebar: administrator_guide_sidebar
-keywords: disk-fault-tolerance_level, disk_failure, node-fault-tolerance_level, node_failure, fault_tolerance, node_add, node-add, cluster_expansion, expand, configuration, change, mean_time_to_data_loss, mtdl, mttdl 
+keywords: disk_fault_tolerance_level, disk_failure, node_fault_tolerance_level, node_failure, fault_tolerance, node_add, node-add, cluster_expansion, expand, configuration, change, mean_time_to_data_loss, mtdl, mttdl 
 ---
 
 ## Changing the Configuration of Your Cluster's Data Protection
@@ -14,7 +14,7 @@ In Qumulo Core 5.3.4 (and higher), as you expand your cluster, it might become n
 
 {{site.data.alerts.important}}
 <ul>
-  <li>Although you <em>can</em> also change the node-fault-tolerance level when you change the data protection configuration (to guarantee the same Mean Time to Data Loss threshold), this isn't mandatory.</li>
+  <li>Although you <em>can</em> also change the node fault tolerance level when you change the data protection configuration (to guarantee the same Mean Time to Data Loss threshold), this isn't mandatory.</li>
   <li>{{site.protectingData.contactQumuloCare}} We can recommend the correct cluster expansion scenario to you.</li>
 </ul>
 {{site.data.alerts.end}}
@@ -32,7 +32,7 @@ The following sections describe two cluster expansion scenarios. Identify the sc
 
 {{site.protectingData.monitorProcess}}
 
-When Qumulo Core completes the reconfiguration of data protection, the **Data Protected** section shows the changed disk-fault-tolerance and node-fault-tolerance levels and, during the next rebalancing phase, the restriper begins to provision additional usable capacity.
+When Qumulo Core completes the reconfiguration of data protection, the **Data Protected** section shows the changed disk fault tolerance and node fault tolerance levels and, during the next rebalancing phase, the restriper begins to provision additional usable capacity.
 
 ### Adding Nodes Normally (without Data Protection Reconfiguration)
 {{site.protectingData.followAddNodeInstructions}}
@@ -41,4 +41,4 @@ When Qumulo Core completes the reconfiguration of data protection, the **Data Pr
 
 {{site.protectingData.monitorProcess}}
 
-When the restriper completes the provisioning of additional usable capacity, the **Data Protected** section shows the same disk-fault-tolerance and node-fault-tolerance levels as before the node-add operation.
+When the restriper completes the provisioning of additional usable capacity, the **Data Protected** section shows the same disk fault tolerance and node fault tolerance levels as before the node-add operation.
