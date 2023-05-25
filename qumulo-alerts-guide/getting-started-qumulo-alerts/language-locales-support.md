@@ -1,6 +1,6 @@
 ---
 title: "What Language Locales Qumulo Alerts Supports"
-summary: "This section lists the language locales that Qumulo Alerts supports for notifying users through EMail, IFTTT, and ClickSend (SMS)."
+summary: "This section lists the language locales that Qumulo Alerts supports for notifying users through email, IFTTT, and ClickSend (SMS)."
 permalink: /qumulo-alerts-guide/getting-started-qumulo-alerts/language-locales-support.html
 sidebar: qumulo_alerts_guide_sidebar
 keywords: Qumulo_Alerts, user, notification, language, locale
