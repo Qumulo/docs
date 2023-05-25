@@ -171,7 +171,7 @@ To start Qumulo Alerts, run the following command from the directory to which yo
 
 1. [Configure user notifications](user-notifications.md).
 
-1. Configure [integration with an email server](integration-email-server.md) or [integration with the ClickSend service](../configuring-integrations/sms-clicksend.md).
+1. Configure [integration with an email server](../configuring-integrations/email-server.md) or [integration with the ClickSend service](../configuring-integrations/sms-clicksend.md).
 
 
 ## Step 8: Stop Qumulo Alerts
