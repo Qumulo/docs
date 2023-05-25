@@ -1,7 +1,9 @@
 ---
-title: "Configuring Qumulo Alerts Integration with ClickSend"
-summary: "This section explains how to configure Qumulo Alerts to work with the ClickSend service."
-permalink: /qumulo-alerts-guide/installing-configuring/integration-clicksend.html
+title: "Configuring Qumulo Alerts Integration with SMS (ClickSend)"
+summary: "This section explains how to configure Qumulo Alerts to work with SMS by using the ClickSend service."
+permalink: /qumulo-alerts-guide/configuring-integrations/sms-clicksend.html
+redirect_from:
+  - /qumulo-alerts-guide/installing-configuring/integration-clicksend.html
 sidebar: qumulo_alerts_guide_sidebar
 keywords: Qumulo_Alerts, ClickSend, SMS, integrate, integration
 ---
