@@ -155,7 +155,7 @@ entries:
       url: /administrator-guide/protecting-data/managing-security-keys.html
       output: web, pdf      
 
-    - title: Increasing the Node-Fault-Tolerance Level for Your Qumulo Cluster During Node-Add Operations
+    - title: Increasing the Node Fault Tolerance Level for Your Qumulo Cluster During Node-Add Operations
       url: /administrator-guide/protecting-data/increasing-node-fault-tolerance-level.html
       output: web, pdf
 
