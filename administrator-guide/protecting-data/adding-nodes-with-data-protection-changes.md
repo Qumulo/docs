@@ -10,7 +10,7 @@ keywords: disk_fault_tolerance_level, disk_failure, node_fault_tolerance_level, 
 ---
 
 ## Changing the Configuration of Your Cluster's Data Protection
-In Qumulo Core 5.3.4 (and higher), as you expand your cluster, it might become necessary to change the configuration its _data protection,_ which specifies the disk fault tolerance and, when applicable, the storage efficiency of your cluster.
+In Qumulo Core 6.1.0 (and higher), as you expand your cluster, it might become necessary to change the configuration its _data protection,_ which specifies the disk fault tolerance and, when applicable, the storage efficiency of your cluster.
 
 {{site.data.alerts.important}}
 <ul>
