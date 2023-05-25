@@ -36,9 +36,9 @@ The following alerts report software changes and changes in environmental condit
 | Users       | Local users added, modified, or deleted                                   |
 
 ## Informational
-The following reports on performance or status information for a Qumulo cluster.
+The following informational notifications show performance and status information for a Qumulo cluster.
 
 | Plugin Name | Description                                         |
 |-------------|-----------------------------------------------------|
 | OSUpgrade   | Qumulo Core upgrade                                 |
-| Metrics     | Performance metrics (throughput, IOPs, and latency) |
+| Metrics     | Performance metrics (throughput, IOPS, and latency) |
