@@ -15,6 +15,15 @@ In Qumulo Alerts, _producers_ are Docker containers that take data from various 
 
 Both producers and consumers use plugins that help process alarms and alerts from a Qumulo Core cluster. A _plugin_ is a mechanism that processes a single function, such as fan failure, disk failure, or node failure. Plugins help with granular control over the information that Qumulo Alerts collects and processes.
 
+## Working with the alerts CLI
+The `alerts` CLI lets you configure Qumulo Alerts. For more information, use the `--help` flag.
+
+Qumulo Alerts includes a CLI for the following operating systems:
+* Ubuntu 20 and 22
+* Red Hat Enterprise (RHEL) 8
+* macOS
+* Windows Server 2019 and Windows 10 and 11
+
 ## Known Limitations of Qumulo Alerts
 This section lists the currenly known limitations for Qumulo Alerts.
 
