@@ -13,7 +13,7 @@ varValidateNoReconfig: When the restriper completes the provisioning of addition
 ---
 
 ## Reconfiguring Your Cluster's Node Fault Tolerance Level
-While in previous versions of Qumulo Core you couldn't modify the node fault tolerance level for your cluster after creating it, in Qumulo Core 5.1.3 (and higher) you can increase the node fault tolerance level for an existing cluster during the _cluster expansion_ process. In addition to this, in Qumulo Core 5.3.4 (and higher), you can [change the data protection configuration](adding-nodes-with-data-protection-changes.md) to manage the disk fault tolerance and node fault tolerance level during the cluster expansion process.
+While in previous versions of Qumulo Core you couldn't modify the node fault tolerance level for your cluster after creating it, in Qumulo Core 5.1.3 (and higher) you can increase the node fault tolerance level for an existing cluster during the _cluster expansion_ process. In addition to this, in Qumulo Core 6.1.0 (and higher), you can [change the data protection configuration](adding-nodes-with-data-protection-changes.md) to manage the disk fault tolerance and node fault tolerance level during the cluster expansion process.
 
 {{site.data.alerts.important}}
 <ul>
