@@ -78,11 +78,11 @@ entries:
       output: web, pdf
 
     - title: Configuring Default Quota Notifications
-      url: /qumulo-alerts-guide/installing-configuring/default_quotas.html
+      url: /qumulo-alerts-guide/installing-configuring/default-quotas.html
       output: web, pdf
 
     - title: Configuring User Quota Notifications
-      url: /qumulo-alerts-guide/installing-configuring/user_quota_notifications.html
+      url: /qumulo-alerts-guide/installing-configuring/user-quota-notifications.html
       output: web, pdf
 
   - title: Configuring Qumulo Alerts Integrations
