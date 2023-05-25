@@ -69,7 +69,9 @@ To be able to generate access tokens, you must create a local user for Qumulo Al
 
 1. On the **Create Role** page:
 
-   1. Enter `QumuloAlerts`. **This name is required as Qumulo Alerts verifies that it has sufficient role permissions before it can start**
+   1. Enter `QumuloAlerts`.
+      
+      {% include important.html content="Because Qumulo Alerts verifies that it has sufficient role permissions before starting, this name is required." %}
 
    1. Enter a description, for example `This account lets an administrator restrict the privileges of the QumuloAlerts user.`
 
@@ -163,6 +165,7 @@ To start Qumulo Alerts, run the following command from the directory to which yo
 ```bash
 ./start-docker-qumulo-alerts.sh
 ```
+
 ## Step 7: Configure Qumulo Alerts
 1. [Configure alarms and alerts](alarms-and-alerts.md).
 
