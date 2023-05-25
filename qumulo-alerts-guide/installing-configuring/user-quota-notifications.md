@@ -1,7 +1,7 @@
 ---
 title: "Configure User Quota Notifications"
 summary: "This section explains how to configure quotas for individual user notifications from Qumulo Alerts."
-permalink: /qumulo-alerts-guide/installing-configuring/user_quota_notifications.html
+permalink: /qumulo-alerts-guide/installing-configuring/user-quota-notifications.html
 sidebar: qumulo_alerts_guide_sidebar
 keywords: Qumulo_Alerts, quota, quotas, notification, configure, configuration
 ---
