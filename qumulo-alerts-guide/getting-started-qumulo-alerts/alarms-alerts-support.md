@@ -40,5 +40,5 @@ The following informational notifications show performance and status informatio
 
 | Plugin Name | Description                                         |
 |-------------|-----------------------------------------------------|
-| OSUpgrade   | Qumulo Core upgrade                                 |
 | Metrics     | Performance metrics (throughput, IOPS, and latency) |
+| OSUpgrade   | Qumulo Core upgrade                                 |
