@@ -8,7 +8,7 @@ sidebar: qumulo_alerts_guide_sidebar
 keywords: Qumulo_Alerts, IFTTT, integrate, integration
 ---
 
-[IFTTT (If This Then That)](https://ifttt.com/) is a paid, third-party service that provides delivery of messages by using [Webhooks integrations](https://ifttt.com/maker_webhooks) and events. For more information, see [IFTTT Documentation](https://ifttt.com/docs).
+[IFTTT (If This Then That)](https://ifttt.com/) is a paid, third-party service that provides delivery of messages by using [Webhooks integrations](https://ifttt.com/maker_webhooks) and events. For more information, see the [IFTTT documentation](https://ifttt.com/docs).
 
 
 ## To Integrate IFTTT with Qumulo Alerts
