@@ -6,7 +6,7 @@ sidebar: qumulo_alerts_guide_sidebar
 keywords: Qumulo_Alerts, quota, quotas, notification, configure, configuration, default
 ---
 
-Qumulo Alerts lets an administrator configure notifications that inherit a template from default quotas of two types.
+Qumulo Alerts lets an administrator configure notifications that inherit a template from one of the following default quotas.
 
 * **No-Path Quota**: This quota type has no defined file system path. It is the most common quota type and it applies thresholds to every quota defined for a Qumulo cluster.
 
