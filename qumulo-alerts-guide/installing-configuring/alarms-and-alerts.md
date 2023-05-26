@@ -59,7 +59,7 @@ Use the `./alerts cluster_add` command and specify the fully qualified domain na
   -pc Alerts
 ```
 
-{{site.qumuloalerts.jsonOutput}}
+{{site.qumuloalerts.jsonOutput}} This example output is truncated.
 
 ```json
 [{
@@ -93,7 +93,7 @@ Use the `./alerts cluster_add` command and specify the fully qualified domain na
     "frequency": null,
     "name": "Capacity"
   },
-  &hellip;
+  ...
   ],
   "port": 8000
 }]
