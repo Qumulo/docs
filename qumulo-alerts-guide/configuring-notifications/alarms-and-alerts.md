@@ -85,7 +85,7 @@ Use the `./alerts notifygroup_add_user` command and specify the NotifyGroup name
 
 ```json
 [{
-  "description": "Notify when some hardware has changed state",
+  "description": "Notify when certain hardware changes state",
   "id": 2,
   "name": "NotifyOnHardwareChange",
   "users": [{
