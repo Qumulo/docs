@@ -26,7 +26,7 @@ Use the `./alerts user_add` command and specify the administrator's full name, u
 
 {{site.data.alerts.note}}
 <ul>
-  <li>{{site.qumuloalerts.consTrans}} {{site.qumuloalerts.locale}}</li>
+  <li>{{site.qumuloalerts.locale}} {{site.qumuloalerts.consTrans}}</li>
   <li>{{site.qumuloalerts.tz}}</li>
 </ul>
 {{site.data.alerts.end}}
