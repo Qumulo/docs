@@ -6,7 +6,7 @@ sidebar: qumulo_alerts_guide_sidebar
 keywords: Qumulo_Alerts, quota, quotas, notification, configure, configuration
 ---
 
-Qumulo Alerts can notify an individual user's email address manually or use [default quotas](default-quotas.md) to notify email addresses associated in Active Directory (AD) with the security identifier (SID) of the quota directory's owner automatically.
+Qumulo Alerts can notify an individual user's email address manually or use [default quotas](default-quotas.html) to notify email addresses associated in Active Directory (AD) with the security identifier (SID) of the quota directory's owner automatically.
 
 
 ## To Notify an Individual Email Address
