@@ -23,7 +23,7 @@ Use the `./alerts ifttt_server_add` command and specify the IFTTT server token, 
 
 {{site.data.alerts.note}}
 <ul>
-  <li>{{site.qumuloalerts.consTrans}} {{site.qumuloalerts.locale}}</li>
+  <li>{{site.qumuloalerts.locale}} {{site.qumuloalerts.consTrans}}</li>
   <li>{{site.qumuloalerts.tz}}</li>
 </ul>
 {{site.data.alerts.end}}

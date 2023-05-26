@@ -27,7 +27,7 @@ Use the `./alerts clicksend_server_add` command and specify the username, token,
 <ul>
   <li>For the <code>--username</code> and <code>--token</code> flags, see <a href="https://help.clicksend.com/article/dghaoyf7tg-api-credentials">API Credentials</a> in the ClickSend documentation.</li>
   <li>The <code>--senderid</code> flag is mandatory for the U.S. and Canada. For more information, see <a href="https://help.clicksend.com/article/b06v2x81sy-toll-free-number-tfn-verification">Toll-Free Number (TFN) Verification</a> in the ClickSend documentation.</li>
-  <li>{{site.qumuloalerts.consTrans}} {{site.qumuloalerts.locale}}</li>
+  <li>{{site.qumuloalerts.locale}} {{site.qumuloalerts.consTrans}}</li>
   <li>{{site.qumuloalerts.tz}}</li>
 </ul>
 {{site.data.alerts.end}}
