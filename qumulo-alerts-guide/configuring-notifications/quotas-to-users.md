@@ -62,12 +62,12 @@ Use the `./alerts ad_server_add` command and specify the AD server, AD login nam
 [{
   "clusters": [{
     "frequency": 1,
-    "name": "cluster.xyzcorp.com",
+    "name": "cluster.example.com",
     "nlb": false,
     "port": 8000
   }],
   "id": 2,
-  "login_name": "xyzcorp.com\\LookupUser",
+  "login_name": "example.com\\LookupUser",
   "search_base": "CN=Users,DC=example,DC=com",
   "server_name": "ad.example.com"
 }]
