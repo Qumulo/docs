@@ -10,6 +10,7 @@ keywords: Qumulo_Alerts, email, e-mail, integrate, integration
 
 {% include note.html content="After May 2022, only organizations with access to the Google Admin Console can use SMTP relay. If your organization has this access, see [Route outgoing SMTP relay messages through Google](https://support.google.com/a/answer/2956491?hl=en)." %}
 
+
 ## To Add a New Email Server to Qumulo Alerts
 Use the `./alerts email_server_add` and specify the sender, receiver, email server hostname and port, language, and time zone. For example:
 
@@ -46,6 +47,7 @@ Use the `./alerts email_server_add` and specify the sender, receiver, email serv
   "to_address": "name@example.com"
 }]
 ```
+
 
 ## To Test Integration with Your Email Server
 Use the `./alerts email_server_test` command. A successful response returns the `[{ "ok": true }]` JSON output.
