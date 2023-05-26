@@ -47,7 +47,7 @@ Use the `./alerts cluster_add` command and specify the fully qualified domain na
 </ul>
 {{site.data.alerts.end}}
 
-## To Configure Qumulo Alerts to Collect Specific Data and All Alerts from a Qumulo Cluster
+## To Configure Qumulo Alerts to Collect All Alerts for Specific Data from a Qumulo Cluster
 Use the `./alerts cluster_add` command and specify the fully qualified domain name (FQDN) of your Qumulo cluster, your long-lived access token for the Qumulo REST API, the plugins to include or exclude from monitoring, and the plugin category to include. In the following example, we include `Disks`, exclude `Nodes`, and include the `Alerts` category.
 
 ```bash
