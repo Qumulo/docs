@@ -12,6 +12,7 @@ You can configure quota monitoring by using _thresholds_.
 * {{site.qumuloalerts.errorThreshold}}
 * {{site.qumuloalerts.criticalThreshold}}
 
+You can configure unattached quotas or attach them to a cluster.
 
 ## To Configure Quota Notifications with Two Thresholds
 Use the `./alerts quota_add` command and specify the quota path to monitor. The following example specifies the warning threshold and the error threshold and doesn't attach the quota to a Qumulo Core cluster.
@@ -41,7 +42,7 @@ Use the `./alerts quota_add` command and specify the quota path to monitor. The 
 
 
 ## To Configure Quota Notifications with a Single Threshold
-Use the `./alerts quota_add` command and specify the quota path. You can configure unattached quotas or attach them to a cluster. The following example specifies the error threshold and attaches the quota to a Qumulo Core cluster.
+Use the `./alerts quota_add` command and specify the quota path. The following example specifies the error threshold and attaches the quota to a Qumulo Core cluster.
 
 ```bash
 ./alerts quota_add \
