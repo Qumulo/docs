@@ -28,6 +28,15 @@ Use the `./alerts ifttt_server_add` command and specify the IFTTT server token, 
 </ul>
 {{site.data.alerts.end}}
 
+{{site.qumuloalerts.jsonOutput}}
+
+```json
+[{
+  "language": "en_US",
+  "timezone": "America/Los_Angeles",
+  "token": "abcABde12f3g4567CDE89"
+}]
+```
 
 ## To Test Integration with IFTTT
 Use the `./alerts ifttt_server_test` command. {{site.qumuloalerts.testSuccess}}
