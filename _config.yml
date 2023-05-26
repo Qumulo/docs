@@ -183,6 +183,7 @@ qumuloalerts:
   consTrans: The consumer processes for email, IFTTT, and SMS (ClickSend) integrations translate messages into the recipient's native language.
   locale: For the <code>--language</code> flag, see <a href="../getting-started-qumulo-alerts/language-locales-support.html">What Language Locales Qumulo Alerts Supports</a>.
   tz: For the  <code>--timezone</code> flag, see <a href="../getting-started-qumulo-alerts/language-locales-support.html#converting-time-zones">Converting Time Zones</a>.
+  jsonOutput: The following is example JSON output from the command.
 
 jsonNotTable: The output displays information in a table format. To view the output in JSON format, use the <code>--json</code> flag.
 
