@@ -1,7 +1,7 @@
 ---
 title: "Configure Default Quota Notifications"
 summary: "This section explains how to configure default quotas for notifications from Qumulo Alerts."
-permalink: /qumulo-alerts-guide/installing-configuring/default-quotas.html
+permalink: /qumulo-alerts-guide/configuring-notifications/default-quota.html
 sidebar: qumulo_alerts_guide_sidebar
 keywords: Qumulo_Alerts, quota, quotas, notification, configure, configuration
 ---
