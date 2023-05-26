@@ -15,7 +15,7 @@ To configure Qumulo Alerts integration with an email server, use the `./alerts e
   <li>The <code>--login</code>, <code>--password</code>, and <code>--security</code> flags might be optional, depending on the type of SMTP email server that you use.</li>
   <li>{{site.qumuloalerts.locale}}</li>
   <li>{{site.qumuloalerts.tz}}</li>
-  <li>After May 2022, only organizations with access to the Google Admin Console can use SMTP relay. If your organization has this access, see [Route outgoing SMTP relay messages through Google](https://support.google.com/a/answer/2956491?hl=en).</li>
+  <li>After May 2022, only organizations with access to the Google Admin Console can use SMTP relay. If your organization has this access, see <a href="https://support.google.com/a/answer/2956491?hl=en">Route outgoing SMTP relay messages through Google</a>.</li>
 </ul>
 {{site.data.alerts.end}}
 
