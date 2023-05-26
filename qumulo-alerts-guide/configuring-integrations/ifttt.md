@@ -1,6 +1,6 @@
 ---
 title: "Configuring Qumulo Alerts Integration with IFTTT"
-summary: "This section explains how to configure Qumulo Alerts to work with the IFTTT service."
+summary: "This section explains how to configure Qumulo Alerts to work with IFTTT."
 permalink: /qumulo-alerts-guide/configuring-integrations/ifttt.html
 redirect_from:
   - /qumulo-alerts-guide/installing-configuring/integration-ifttt.html
