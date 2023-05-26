@@ -1,6 +1,6 @@
 ---
 title: "Getting Started with Qumulo on Supermicro A+ WIO 1114S-WN10RT"
-summary: "This section explains how to prepare Supermicro 1114S nodes for creating a Qumulo Core cluster."
+summary: "This section explains how to prepare Supermicro 1114S nodes for creating a Qumulo cluster."
 permalink: /hardware-guide/supermicro-a-plus-wio-1114s-wn10rt/getting-started.html
 redirect_from:
   - /supermicro.html

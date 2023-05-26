@@ -1,6 +1,6 @@
 ---
 title: "Getting Started with Qumulo on Quiver 1U Hybrid Gen2"
-summary: "This section explains how to prepare Quiver 1UH Gen 2 nodes for creating a Qumulo Core cluster."
+summary: "This section explains how to prepare Quiver 1UH Gen 2 nodes for creating a Qumulo cluster."
 permalink: /hardware-guide/quiver-1u-hybrid-gen2/getting-started.html
 sidebar: hardware_guide_sidebar
 keywords: getting_started_guide, quick_reference, Quiver_1U_Hybrid_Gen2, verify_node, field_verification_tool, FVT

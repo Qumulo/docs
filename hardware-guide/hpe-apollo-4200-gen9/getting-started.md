@@ -1,6 +1,6 @@
 ---
 title: "Getting Started with Qumulo on HPE Apollo 4200 Gen9"
-summary: "This section explains how to prepare HPE Apollo 4200 Gen9 nodes for creating a Qumulo Core cluster. This guide is for system administrators, professional service providers, and colleagues in your organization who are responsible for installing and configuring server hardware."
+summary: "This section explains how to prepare HPE Apollo 4200 Gen9 nodes for creating a Qumulo cluster. This guide is for system administrators, professional service providers, and colleagues in your organization who are responsible for installing and configuring server hardware."
 permalink: /hardware-guide/hpe-apollo-4200-gen9/getting-started.html
 redirect_from:
   - /hardware/hpe-apollo-4200-gen9/getting-started.html
