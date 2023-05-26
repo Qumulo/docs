@@ -26,7 +26,7 @@ Use the `./alerts email_server_add` and specify the sender, receiver, email serv
 {{site.data.alerts.note}}
 <ul>
   <li>The <code>--login</code>, <code>--password</code>, and <code>--security</code> flags might be optional, depending on the type of SMTP email server that you use.</li>
-  <li>{{site.qumuloalerts.locale}}</li>
+  <li>{{site.qumuloalerts.consTrans}}{{site.qumuloalerts.locale}}</li>
   <li>{{site.qumuloalerts.tz}}</li>
 </ul>
 {{site.data.alerts.end}}
