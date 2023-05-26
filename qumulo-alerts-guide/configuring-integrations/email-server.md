@@ -50,4 +50,5 @@ Use the `./alerts email_server_add` and specify the sender's email address, reci
 
 
 ## To Test Integration with Your Email Server
-Use the `./alerts email_server_test` command. {{site.qumuloalerts.testSuccess}}
+Use the `./alerts email_server_test` command.
+{{site.qumuloalerts.testSuccess}}
