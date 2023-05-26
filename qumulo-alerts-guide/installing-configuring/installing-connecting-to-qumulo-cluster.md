@@ -23,7 +23,7 @@ Before you connect Qumulo Alerts to a Qumulo cluster, collect the information th
 * **Cluster Address:** Use a fully qualified domain name (FQDN) rather than an IP address.
 * **Traffic Distribution:** Will your Qumulo Alerts installation use a network load balancer or a floating IP address?
 * **Default Plugin Frequency**: What should be the default frequency for plugin execution? (You can specify the frequency in minutes or seconds.)
-* **Alarm and Alert Types:** Which alarms and alerts will Qumulo Alerts will collect from your Qumulo Core cluster?
+* **Alarm and Alert Types:** Which alarms and alerts will Qumulo Alerts will collect from your Qumulo cluster?
 
 <a id="clone-qumuloalerts-repository"></a>
 ## Step 1: Clone the QumuloAlerts Repository

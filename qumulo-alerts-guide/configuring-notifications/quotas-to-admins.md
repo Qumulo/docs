@@ -1,6 +1,6 @@
 ---
 title: "Configuring Quota Notifications to an Administrative Account in Qumulo Alerts"
-summary: "This section explains how to configure Qumulo Alerts to send quota notifications from a Qumulo Core cluster to an administrative account."
+summary: "This section explains how to configure Qumulo Alerts to send quota notifications from a Qumulo cluster to an administrative account."
 permalink: /qumulo-alerts-guide/configuring-notifications/quotas-to-admins.html
 sidebar: qumulo_alerts_guide_sidebar
 keywords: Qumulo_Alerts, quota, quotas, notification, configure, configuration
@@ -15,7 +15,7 @@ You can configure quota monitoring by using _thresholds_.
 You can configure unattached quotas or attach them to a cluster.
 
 ## To Configure Quota Notifications with Two Thresholds
-Use the `./alerts quota_add` command and specify the quota path to monitor. The following example specifies the warning threshold and the error threshold and doesn't attach the quota to a Qumulo Core cluster.
+Use the `./alerts quota_add` command and specify the quota path to monitor. The following example specifies the warning threshold and the error threshold and doesn't attach the quota to a Qumulo cluster.
 
 ```bash
 ./alerts quota_add \
@@ -42,7 +42,7 @@ Use the `./alerts quota_add` command and specify the quota path to monitor. The 
 
 
 ## To Configure Quota Notifications with a Single Threshold
-Use the `./alerts quota_add` command and specify the quota path. The following example specifies the error threshold and attaches the quota to a Qumulo Core cluster.
+Use the `./alerts quota_add` command and specify the quota path. The following example specifies the error threshold and attaches the quota to a Qumulo cluster.
 
 ```bash
 ./alerts quota_add \
@@ -73,7 +73,7 @@ Use the `./alerts quota_add` command and specify the quota path. The following e
 ## To List All Defined Quotas and Attached Clusters
 Use the `./alerts quota_list` command.
 
-{{site.qumuloalerts.jsonOutput}} In this example, the second quota is attached to a Qumulo Core cluster.
+{{site.qumuloalerts.jsonOutput}} In this example, the second quota is attached to a Qumulo cluster.
 
 ```json
 [{

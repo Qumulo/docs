@@ -1,6 +1,6 @@
 ---
 title: "Configuring Alarm and Alert Notifications to an Administrative Account in Qumulo Alerts"
-summary: "This section explains how to configure Qumulo Alerts to send alarm and alert notifications from a Qumulo Core cluster to an administrative account."
+summary: "This section explains how to configure Qumulo Alerts to send alarm and alert notifications from a Qumulo cluster to an administrative account."
 permalink: /qumulo-alerts-guide/configuring-notifications/alarms-and-alerts.html
 redirect_from:
   - /qumulo-alerts-guide/installing-configuring/user-notifications.html

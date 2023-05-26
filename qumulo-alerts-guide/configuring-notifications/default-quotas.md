@@ -8,9 +8,9 @@ keywords: Qumulo_Alerts, quota, quotas, notification, configure, configuration, 
 
 Qumulo Alerts lets an administrator configure notifications that inherit a template from default quotas of two types.
 
-* **No-Path Quota**: This quota type has no defined file system path. It is the most common quota type and it applies thresholds to every quota defined for a Qumulo Core cluster.
+* **No-Path Quota**: This quota type has no defined file system path. It is the most common quota type and it applies thresholds to every quota defined for a Qumulo cluster.
 
-* **Inherited-Path Quotas:** This quota type lets an administrator specify a default path for every quota defined for a Qumulo Core cluster. Every quota created under the default path inherits its thresholds from this quota.
+* **Inherited-Path Quotas:** This quota type lets an administrator specify a default path for every quota defined for a Qumulo cluster. Every quota created under the default path inherits its thresholds from this quota.
 
 You can configure quota monitoring by using _thresholds_.
 

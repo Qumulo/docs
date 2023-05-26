@@ -1,6 +1,6 @@
 ---
 title: "Configuring Quota Notifications to a User Account in Qumulo Alerts"
-summary: "This section explains how to configure Qumulo Alerts to send quota notifications from a Qumulo Core cluster to a user account."
+summary: "This section explains how to configure Qumulo Alerts to send quota notifications from a Qumulo cluster to a user account."
 permalink: /qumulo-alerts-guide/configuring-notifications/quotas-to-users.html
 sidebar: qumulo_alerts_guide_sidebar
 keywords: Qumulo_Alerts, quota, quotas, notification, configure, configuration
@@ -10,7 +10,7 @@ Qumulo Alerts can notify an individual user's email address manually or use [def
 
 
 ## To Notify an Individual Email Address
-Use the `./alerts quota_add` command and specify the quota path, the email address to notify, the email address to notify, and your Qumulo Core cluster hostname. For example:
+Use the `./alerts quota_add` command and specify the quota path, the email address to notify, the email address to notify, and your Qumulo cluster hostname. For example:
 
 ```bash
 ./alerts quota_add \
