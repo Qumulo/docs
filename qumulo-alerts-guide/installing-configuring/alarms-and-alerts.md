@@ -92,52 +92,9 @@ Use the `./alerts cluster_add` command and specify the fully qualified domain na
     "description": "Get Cluster Volume Capacity",
     "frequency": null,
     "name": "Capacity"
-  },{
-    "category": "Alerts",
-    "description": "Get NFS Exports",
-    "frequency": null,
-    "name": "Exports"
-  },{
-    "category": "Alerts",
-    "description": "Get FTP Status",
-    "frequency": null,
-    "name": "FTP"
-  },{
-    "category": "Alerts",
-    "description": "Get Local Groups",
-    "frequency": null,
-    "name": "Groups"
-  },{
-    "category": "Alerts",
-    "description": "Get Cloud Monitoring and Remote Support Information",
-    "frequency": null,
-    "name": "Monitoring"
-  },{
-    "category": "Alerts",
-    "description": "Get Quota Notifications",
-    "frequency": null,
-    "name": "Quotas"
-  },{
-    "category": "Alerts",
-    "description": "Get Restriper Status Information",
-    "frequency": null,
-    "name": "Restriper"
-  },{
-    "category": "Alerts",
-    "description": "Get SMB Shares",
-    "frequency": null,
-    "name": "Shares"
-  },{
-    "category": "Alerts",
-    "description": "Get Softquota Notifications",
-    "frequency": null,
-    "name": "Softquotas"
-  },{
-    "category": "Alerts",
-    "description": "Get Local Users",
-    "frequency": null,
-    "name": "Users"
-  }],
+  },
+  &hellip;
+  ],
   "port": 8000
 }]
 ```
