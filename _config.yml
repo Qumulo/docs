@@ -185,9 +185,9 @@ qumuloalerts:
   tz: For the  <code>--timezone</code> flag, see <a href="../getting-started-qumulo-alerts/language-locales-support.html#converting-time-zones">Converting Time Zones</a>.
   jsonOutput: The following is example JSON output from the command.
   testSuccess: A successful response returns the <code>[{ "ok"&colon; true }]</code> JSON output.
-  warningThreshold: For the <code>--warning</code> flag, the threshold must be lower than the thresholds which both the <code>--error</code> or <code>--critical</code> flags specify.
-  errorThreshold: For the <code>--error</code> flag, the threshold must be lower than the threshold which the <code>--critical</code> flag specifies.
-  criticalThreshold: For the <code>--critical</code> flag, the threshold must be greater than the thresholds which both the <code>--warning</code> and <code>--error</code> flags specify.
+  warningThreshold: For the <code>--warning</code> flag, the threshold must be lower than the thresholds of both the <code>--error</code> and <code>--critical</code> flags.
+  errorThreshold: For the <code>--error</code> flag, the threshold must be lower than the threshold of the <code>--critical</code> flag.
+  criticalThreshold: For the <code>--critical</code> flag, the threshold must be greater than the thresholds of both the <code>--warning</code> and <code>--error</code> flags.
   userEmail: For the <code>--user-email</code> flag, you can specify a comma-delimited list of email addresses to notify, if you also specify the <code>--user-notification True --user-mode direct</code>.
 
 jsonNotTable: The output displays information in a table format. To view the output in JSON format, use the <code>--json</code> flag.
