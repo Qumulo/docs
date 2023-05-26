@@ -180,7 +180,7 @@ q1uhg2Long: Quiver 1U Hybrid Gen2
 q1uhg2: Quiver 1UH Gen2
 
 qumuloalerts:
-  consTrans: The consumer processes for email, IFTTT, and SMS (ClickSend) integrations translate messages into the recipient's native language.
+  consTrans: The consumer processes for <a href="../configuring-integrations/email-server.html">email</a>, <a href="../configuring-integrations/ifttt.html">IFTTT</a>, and <a href="../configuring-integrations/sms-clicksend.html">SMS (ClickSend)</a> integrations translate messages into the recipient's native language.
   locale: For the <code>--language</code> flag, see <a href="../getting-started-qumulo-alerts/language-locales-support.html">What Language Locales Qumulo Alerts Supports</a>.
   tz: For the  <code>--timezone</code> flag, see <a href="../getting-started-qumulo-alerts/language-locales-support.html#converting-time-zones">Converting Time Zones</a>.
   jsonOutput: The following is example JSON output from the command.
