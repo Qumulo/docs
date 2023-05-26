@@ -14,6 +14,8 @@ A configured user is also allowed to login to the Qumulo Alerts CLI and execute 
 
 {% include note.html content="Configuring a user notification has nothing to do with user quota notifications. Please see the section on User Quota Notifications for instructions on how to configure user notifications for quotas." %}
 
+{{site.qumuloalerts.consTrans}}{{site.qumuloalerts.locale}}
+
 The format of the command to add a new user is:
 
 ```bash
@@ -84,7 +86,6 @@ The following is an explanation of the command line arguments that configure use
   <tr>
     <td><code>--language</code></td>
     <td>
-    {% include content-reuse/qumulo-alerts-see-locale.md %}
     </td>
   </tr>
   <tr>

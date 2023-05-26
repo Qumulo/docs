@@ -17,6 +17,9 @@ For more information, see [How to get started with IFTTT](https://ifttt.com/abou
 ## Configuring Qumulo Alerts Integration with the IFTTT Service
 To configure Qumulo Alerts to integrate with the IFTTT Service, you must add a IFTTT server using the CLI.
 
+{{site.qumuloalerts.consTrans}}{{site.qumuloalerts.locale}}
+{{site.qumuloalerts.tz}}
+
 The command syntax is:
 
 ```bash
@@ -60,13 +63,11 @@ The following is an explanation of the options that configure integration with a
   <tr>
     <td><code>--language</code></td>
     <td>
-      {% include content-reuse/qumulo-alerts-see-locale.md %}
     </td>
   </tr>
   <tr>
     <td><code>--timezone</code></td>
     <td>
-      {% include content-reuse/qumulo-alerts-see-tz.md %}
     </td>
   </tr>
 </tbody>
