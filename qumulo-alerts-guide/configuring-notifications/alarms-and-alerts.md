@@ -10,8 +10,6 @@ keywords: Qumulo_Alerts, notification, configure, configuration, JSON, NotifyGro
 
 You must first add the account as a Qumulo Alerts user, create a NotifyGroup and configure its notifications, and then add the user to the NotifyGroup.
 
-{% include note.html content="If you associate the user with a role, the user can also use the `alerts` CLI to run administrative commands." %}
-
 
 ## To Add an Administrative Account as a Qumulo Alerts User
 Use the `./alerts user_add` command and specify the administrator's full name, username, password, email address, language, and time zone. For example:
