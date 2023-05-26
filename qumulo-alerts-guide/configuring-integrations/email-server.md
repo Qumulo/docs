@@ -50,4 +50,4 @@ Use the `./alerts email_server_add` and specify the sender, receiver, email serv
 
 
 ## To Test Integration with Your Email Server
-Use the `./alerts email_server_test` command. A successful response returns the `[{ "ok": true }]` JSON output.
+Use the `./alerts email_server_test` command. {{site.qumuloalerts.testSuccess}}
