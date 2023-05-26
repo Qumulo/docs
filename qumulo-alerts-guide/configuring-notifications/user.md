@@ -2,7 +2,7 @@
 title: "Configuring User Notifications"
 summary: "This section explains how to configure user notifications from Qumulo Alerts."
 permalink: /qumulo-alerts-guide/configuring-notifications/user.html
-redirect_to:
+redirect_from:
   - /qumulo-alerts-guide/installing-configuring/user-notifications.html
 sidebar: qumulo_alerts_guide_sidebar
 keywords: Qumulo_Alerts, user, notification, configure, configuration, JSON
