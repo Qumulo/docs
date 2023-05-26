@@ -11,7 +11,7 @@ keywords: Qumulo_Alerts, notification, configure, configuration, JSON, NotifyGro
 You must first add the account as a Qumulo Alerts user, create a NotifyGroup and configure its notifications, and then add the user to the NotifyGroup.
 
 
-## To Add an Administrative Account as a Qumulo Alerts User
+## Step 1: Add an Administrative Account as a Qumulo Alerts User
 Use the `./alerts user_add` command and specify the administrator's full name, username, password, email address, language, and time zone. For example:
 
 ```bash
@@ -48,7 +48,7 @@ Use the `./alerts user_add` command and specify the administrator's full name, u
 ```
 
 
-## To Create and Configure a NotifyGroup
+## Step 2: Create and Configure a NotifyGroup
 Use the `./alerts notifygroup_add` command and specify the NotifyGroup's name, description, and the events for which the NotifyGroup receives notifications. In the following example, the `NotifyOnHardwareChange` group receives notifications for all hardware state change events.
 
 ```bash
@@ -72,7 +72,7 @@ Use the `./alerts notifygroup_add` command and specify the NotifyGroup's name, d
 }]
 ```
 
-## To Add a Qumulo Alerts User to a NotifyGroup
+## Step 3: Add a Qumulo Alerts User to a NotifyGroup
 Use the `./alerts notifygroup_add_user` command and specify the NotifyGroup name and the Qumulo Alerts user name to add to the NotifyGroup. For example:
 
 ```bash
