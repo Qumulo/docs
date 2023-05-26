@@ -30,7 +30,7 @@ Use the `./alerts cluster_add` command and specify the fully qualified domain na
 [{
   "frequency": 1,
   "id": 1,
-  "name": "cluster.xyzcorp.com",
+  "name": "cluster.example.com",
   "nlb": false,
   "plugins": [{
     "category": "Alarms",
@@ -65,7 +65,7 @@ Use the `./alerts cluster_add` command and specify the fully qualified domain na
 [{
   "frequency": 1,
   "id": 1,
-  "name": "cluster.xyzcorp.com",
+  "name": "cluster.example.com",
   "nlb": false,
   "plugins": [{
     "category": "Alarms",
