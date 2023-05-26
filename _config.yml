@@ -179,7 +179,10 @@ sm1014s: Supermicro 1014S
 q1uhg2Long: Quiver 1U Hybrid Gen2
 q1uhg2: Quiver 1UH Gen2
 
-consTrans: The consumer processes for email, IFTTT, and SMS (ClickSend) integrations translate messages into the recipient's native language.
+qumuloalerts:
+  consTrans: The consumer processes for email, IFTTT, and SMS (ClickSend) integrations translate messages into the recipient's native language.
+  locale: For more information, see <a href="../getting-started-qumulo-alerts/language-locales-support.html">What Language Locales Qumulo Alerts Supports</a>.
+  tz: For more information, see <a href="../getting-started-qumulo-alerts/language-locales-support.html#converting-time-zones">Converting Time Zones</a>.
 
 jsonNotTable: The output displays information in a table format. To view the output in JSON format, use the <code>--json</code> flag.
 
