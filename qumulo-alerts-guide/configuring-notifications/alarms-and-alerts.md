@@ -91,7 +91,7 @@ Use the `./alerts notifygroup_add_user` command and specify the NotifyGroup name
   "users": [{
     "can_change_password": true,
     "disabled": false,
-    "email": "jjohnson@xyzcorp.com",
+    "email": "jjohnson@example.com",
     "full_name": "Jane Johnson",
     "id": 3,
     "ifttt_event": null,
