@@ -44,15 +44,15 @@ entries:
     output: pdf, web
     folderitems:
 
-    - title: How Qumulo Alerts Works with Qumulo Core
+    - title: How Qumulo Alerts Works
       url: /qumulo-alerts-guide/getting-started-qumulo-alerts/qumulo-alerts-with-qumulo-core.html
       output: web, pdf
 
-    - title: What Alarms and Alerts Qumulo Alerts Supports
+    - title: Supported Alarms and Alerts
       url: /qumulo-alerts-guide/getting-started-qumulo-alerts/alarms-alerts-support.html
       output: web, pdf
 
-    - title: What Language Locales Qumulo Alerts Supports
+    - title: Suported Language Locales
       url: /qumulo-alerts-guide/getting-started-qumulo-alerts/language-locales-support.html
       output: web, pdf
 
@@ -61,7 +61,7 @@ entries:
     output: web, pdf
     folderitems:
 
-    - title: Installing Qumulo Alerts and Connecting It to a Qumulo Cluster
+    - title: Installing and Connecting Qumulo Alerts
       url: /qumulo-alerts-guide/installing-configuring/installing-connecting-to-qumulo-cluster.html
       output: web, pdf
     
@@ -74,8 +74,8 @@ entries:
     output: web, pdf
     folderitems:
 
-    - title: Configuring User Notifications
-      url: /qumulo-alerts-guide/configuring-notifications/user.html
+    - title: Configuring Alarm and Alert Notifications
+      url: /qumulo-alerts-guide/configuring-notifications/alarms-and-alerts.html
       output: web, pdf
 
     - title: Configuring User Quota Notifications
@@ -95,14 +95,14 @@ entries:
     output: web, pdf
     folderitems:
 
-    - title: Configuring Integration with an Email Server
+    - title: Integration with an Email Server
       url: /qumulo-alerts-guide/configuring-integrations/email-server.html
       output: web, pdf
 
-    - title: Configuring Integration with IFTTT
+    - title: Integration with IFTTT
       url: /qumulo-alerts-guide/configuring-integrations/ifttt.html
       output: web, pdf
 
-    - title: Configuring Integration with SMS (ClickSend)
+    - title: Integration with SMS (ClickSend)
       url: /qumulo-alerts-guide/configuring-integrations/sms-clicksend.html
       output: web, pdf
