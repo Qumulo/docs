@@ -7,7 +7,7 @@ keywords: Qumulo_Alerts, user, notification, language, locale
 ---
 
 ## Language Locales
-{{site.consTrans}}
+{{site.qumuloalerts.consTrans}}
 
 | Code    | Description                  |
 |---------|------------------------------|
