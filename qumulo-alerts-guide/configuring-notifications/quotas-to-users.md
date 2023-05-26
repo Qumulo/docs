@@ -10,7 +10,7 @@ Qumulo Alerts can notify an individual user's email address manually or use [def
 
 
 ## To Notify an Individual Email Address
-Use the `./alerts quota_add` command and specify the quota path, the email address to notify, the email address to notify, and your Qumulo cluster hostname. For example:
+Use the `./alerts quota_add` command and specify the quota path, the email address to notify, the email address to notify, and the fully qualified domain name (FQDN) of your Qumulo cluster. For example:
 
 ```bash
 ./alerts quota_add \
@@ -43,7 +43,7 @@ Use the `./alerts quota_add` command and specify the quota path, the email addre
 To ue this method, you must first add an AD server to Qumulo Alerts and then configure the default quota to use AD lookup to retrieve users' email addresses.
 
 ### Step 1: Connect Qumulo Alerts to an Active Directory Server
-Use the `./alerts ad_server_add` command and specify the AD server, AD login name, AD password, the search base for looking up users, and your Qumulo cluster hostname. For example:
+Use the `./alerts ad_server_add` command and specify the AD server, AD login name, AD password, the search base for looking up users, and the fully qualified domain name (FQDN) of your Qumulo cluster. For example:
 
 ```bash
 ./alerts ad_server_add \
