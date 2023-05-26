@@ -1,20 +1,14 @@
 ---
-title: "Configuring User Notifications"
-summary: "This section explains how to configure user notifications from Qumulo Alerts."
-permalink: /qumulo-alerts-guide/configuring-notifications/user.html
+title: "Configuring Alarm and Alert Notifications to Administrative Accounts"
+summary: "This section explains how to configure notifications to administrator accounts about alarms and alerts from a Qumulo Core cluster in Qumulo Alerts."
+permalink: /qumulo-alerts-guide/configuring-notifications/alarms-and-alerts.html
 redirect_from:
   - /qumulo-alerts-guide/installing-configuring/user-notifications.html
 sidebar: qumulo_alerts_guide_sidebar
-keywords: Qumulo_Alerts, user, notification, configure, configuration, JSON
+keywords: Qumulo_Alerts, notification, configure, configuration, JSON, NotifyGroup
 ---
 
-## Configuring Administrative Notifications for a Qumulo Cluster
-To configure Qumulo Alerts to notify individual unique administrators about alarms and alerts from a Qumulo cluster, you must use the CLI to add that 
-administrator as a user to Qumulo Alerts and then add that user to a Notify Group.
-
-A configured user is also allowed to login to the Qumulo Alerts CLI and execute administration commands. Users must first be added to a Role to enable this feature.
-
-{% include note.html content="Configuring a user notification has nothing to do with user quota notifications. Please see the section on User Quota Notifications for instructions on how to configure user notifications for quotas." %}
+To configure user notifications you must add an administrator account as a user to Qumulo Alerts and then add the user to a NotifyGroup. If you associate the user with a Role, the user can also use the `alerts` CLI and run administrative commands.
 
 {{site.qumuloalerts.consTrans}}{{site.qumuloalerts.locale}}
 {{site.qumuloalerts.tz}}
@@ -110,20 +104,26 @@ The following is an explanation of the command line arguments that configure use
 ## Example: Adding a new Administrative user
 
 ```bash
-./alerts user_add --full_name "Joe Somebody" --username jsomebody --password Admin123 --email jsomebody@xyzcorp.com --language en_US --timezone America/Los_Angeles
+./alerts user_add \
+  --full_name "Jane Johnson" \
+  --username jjohnson \
+  --password MyPassword123 \
+  --email jjohnson@example.com \
+  --language en_US \
+  --timezone America/Los_Angeles
 ```
+
 ```json
-[alerts - 6.0.0 - CLI for Qumulo Alerts subsystem]
 [{
-    "disabled": false,
-    "email": "jsomebody@xyzcorp.com",
-    "full_name": "Joe Somebody",
-    "id": 3,
-    "ifttt_event": null,
-    "language": "en_US",
-    "phone": null,
-    "timezone": "America/Los_Angeles",
-    "username": "jsomebody"
+  "disabled": false,
+  "email": "jjohnson@example.com",
+  "full_name": "Jane Johnson",
+  "id": 3,
+  "ifttt_event": null,
+  "language": "en_US",
+  "phone": null,
+  "timezone": "America/Los_Angeles",
+  "username": "jjohnson"
 }]
 
 ```
