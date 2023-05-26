@@ -69,20 +69,25 @@ entries:
       url: /qumulo-alerts-guide/installing-configuring/alarms-and-alerts.html
       output: web, pdf
 
+  - title: Configuring Qumulo Alerts Notifications
+    url: /qumulo-alerts-guide/configuring-notifications/index.html
+    output: web, pdf
+    folderitems:
+
     - title: Configuring User Notifications
-      url: /qumulo-alerts-guide/installing-configuring/user-notifications.html
-      output: web, pdf
-
-    - title: Configuring Quota Notifications
-      url: /qumulo-alerts-guide/installing-configuring/quota-notifications.html
-      output: web, pdf
-
-    - title: Configuring Default Quota Notifications
-      url: /qumulo-alerts-guide/installing-configuring/default-quotas.html
+      url: /qumulo-alerts-guide/configuring-notifications/user.html
       output: web, pdf
 
     - title: Configuring User Quota Notifications
-      url: /qumulo-alerts-guide/installing-configuring/user-quota-notifications.html
+      url: /qumulo-alerts-guide/configuring-notifications/user-quota.html
+      output: web, pdf
+
+    - title: Configuring Quota Notifications
+      url: /qumulo-alerts-guide/configuring-notifications/quota.html
+      output: web, pdf
+
+    - title: Configuring Default Quota Notifications
+      url: /qumulo-alerts-guide/configuring-notifications/default-quota.html
       output: web, pdf
 
   - title: Configuring Qumulo Alerts Integrations
