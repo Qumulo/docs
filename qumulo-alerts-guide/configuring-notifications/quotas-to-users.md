@@ -6,7 +6,7 @@ sidebar: qumulo_alerts_guide_sidebar
 keywords: Qumulo_Alerts, quota, quotas, notification, configure, configuration
 ---
 
-Qumulo Alerts can notify a user by notifying individual email addresses manually or email addresses associated in Active Directory (AD) with the security identifier (SID) of the quota directory's owner.
+Qumulo Alerts can notify an individual user's email address manually or email addresses associated in Active Directory (AD) with the security identifier (SID) of the quota directory's owner automatically.
 
 
 ## To Notify an Individual Email Address
@@ -40,7 +40,7 @@ Use the `./alerts quota_add` command and specify the quota path, the email addre
 ```
 
 ## Notifying Directory Owners Automatically
-To ue this method, you mut first add an AD server to Qumulo Alerts and then configure the default quota to use AD lookup to retrieve users' email addresses.
+To ue this method, you must first add an AD server to Qumulo Alerts and then configure the default quota to use AD lookup to retrieve users' email addresses.
 
 ### Step 1: Connect Qumulo Alerts to an Active Directory Server
 Use the `./alerts ad_server_add` command and specify the AD server, AD login name, AD password, the search base for looking up users, and your Qumulo cluster hostname. For example:
@@ -87,12 +87,12 @@ Use the `./alerts default_quota_update` command, specify the default quota ID, a
 
 ```json
 [{
-    "admin_notification": false,
-    "critical": 95,
-    "error": 85,
-    "quota_prefix": "",
-    "user_mode": "owner",
-    "user_notification": true,
-    "warning": 75
+  "admin_notification": false,
+  "critical": 95,
+  "error": 85,
+  "quota_prefix": "",
+  "user_mode": "owner",
+  "user_notification": true,
+  "warning": 75
 }]
 ```
