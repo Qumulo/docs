@@ -74,20 +74,20 @@ entries:
     output: web, pdf
     folderitems:
 
-    - title: Alarm and Alert Notifications
+    - title: Alarm and Alert Notifications to Administrators
       url: /qumulo-alerts-guide/configuring-notifications/alarms-and-alerts.html
       output: web, pdf
 
-    - title: User Quota Notifications
-      url: /qumulo-alerts-guide/configuring-notifications/user-quota.html
+    - title: Quota Notifications to Administrators
+      url: /qumulo-alerts-guide/configuring-notifications/quotas-to-admins.html
       output: web, pdf
 
-    - title: Quota Notifications
-      url: /qumulo-alerts-guide/configuring-notifications/quota.html
+    - title: Quota Notifications to Users
+      url: /qumulo-alerts-guide/configuring-notifications/quotas-to-users.html
       output: web, pdf
 
-    - title: Default Quota Notifications
-      url: /qumulo-alerts-guide/configuring-notifications/default-quota.html
+    - title: Quota Notifications with Default Templates
+      url: /qumulo-alerts-guide/configuring-notifications/default-quota-templates.html
       output: web, pdf
 
   - title: Configuring Qumulo Alerts Integrations
