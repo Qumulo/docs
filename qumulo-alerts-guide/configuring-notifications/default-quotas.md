@@ -27,20 +27,20 @@ Qumulo Alerts comes with a predefined no-path quota. To get information about th
 
 ```json
 [{
-"items": [{
-  "admin_notification": true,
-  "critical": 95,
-  "error": 85,
-  "id": 1,
-  "quota_prefix": "",
-  "user_mode": "owner",
-  "user_notification": false,
-  "warning": 75
+  "items": [{
+    "admin_notification": true,
+    "critical": 95,
+    "error": 85,
+    "id": 1,
+    "quota_prefix": "",
+    "user_mode": "owner",
+    "user_notification": false,
+    "warning": 75
   }],
-"page": 1,
-"pages": 1,
-"size": 50,
-"total": 1
+  "page": 1,
+  "pages": 1,
+  "size": 50,
+  "total": 1
 }]
 
 ```
