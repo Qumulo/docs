@@ -169,7 +169,7 @@ To start Qumulo Alerts, run the following command from the directory to which yo
 ## Step 7: Configure Qumulo Alerts
 1. [Configure alarms and alerts](alarms-and-alerts.md).
 
-1. [Configure user notifications](user-notifications.md).
+1. [Configure user notifications](../configuring-notifications/user.md).
 
 1. Configure [integration with an email server](../configuring-integrations/email-server.md) or [integration with the ClickSend service](../configuring-integrations/sms-clicksend.md).
 
