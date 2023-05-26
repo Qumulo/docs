@@ -78,12 +78,12 @@ entries:
       url: /qumulo-alerts-guide/configuring-notifications/alarms-and-alerts.html
       output: web, pdf
 
-    - title: Quota Notifications to Administrators
-      url: /qumulo-alerts-guide/configuring-notifications/quotas-to-admins.html
-      output: web, pdf
-
     - title: Default Quota Notifications
       url: /qumulo-alerts-guide/configuring-notifications/default-quotas.html
+      output: web, pdf
+
+    - title: Quota Notifications to Administrators
+      url: /qumulo-alerts-guide/configuring-notifications/quotas-to-admins.html
       output: web, pdf
 
     - title: Quota Notifications to Users
