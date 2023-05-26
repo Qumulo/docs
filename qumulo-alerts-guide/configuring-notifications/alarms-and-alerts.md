@@ -87,18 +87,18 @@ Use the `./alerts notifygroup_add_user` command and specify the NotifyGroup name
 [{
   "description": "Notify when some hardware has changed state",
   "id": 2,
-  "name": "NotifyHardware",
+  "name": "NotifyOnHardwareChange",
   "users": [{
     "can_change_password": true,
     "disabled": false,
-    "email": "jsomebody@xyzcorp.com",
-    "full_name": "Joe Somebody",
+    "email": "jjohnson@xyzcorp.com",
+    "full_name": "Jane Johnson",
     "id": 3,
     "ifttt_event": null,
     "language": "en_US",
     "phone": null,
     "timezone": "America/Los_Angeles",
-    "username": "jsomebody"
+    "username": "jjohnson"
   }]
 }]
 ```
