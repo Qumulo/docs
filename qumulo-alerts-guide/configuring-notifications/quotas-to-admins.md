@@ -48,7 +48,7 @@ Use the `./alerts quota_add` command and specify the quota path. The following e
 ./alerts quota_add \
   --quotapath /Reports/Marketing \
   --error 90 \
-  --cluster-include cluster.xyzcorp.com
+  --cluster-include cluster.example.com
 ```
 
 {% include note.html content="When you add a quota and attach it to a cluster, the `alerts` CLI doesn't list the cluster." %}
