@@ -18,6 +18,9 @@ For more information, see [How to get started with ClickSend](https://help.click
 
 To configure Qumulo Alerts to integrate with the ClickSend Service, you must add a clicksend server using the CLI.
 
+{{site.qumuloalerts.consTrans}}{{site.qumuloalerts.locale}}
+{{site.qumuloalerts.tz}}
+
 The command syntax is:
 
 ```bash
@@ -90,13 +93,11 @@ The following is an explanation of the options that configure integration with a
   <tr>
     <td><code>--language</code></td>
     <td>
-      {% include content-reuse/qumulo-alerts-see-locale.md %}
     </td>
   </tr>
   <tr>
     <td><code>--timezone</code></td>
     <td>
-      {% include content-reuse/qumulo-alerts-see-tz.md %}
     </td>
   </tr>
 </tbody>
