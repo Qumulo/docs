@@ -17,13 +17,6 @@ Use the `./alerts cluster_add` command and specify the fully qualified domain na
   -pi Nodes
 ```
 
-{{site.data.alerts.note}}
-<ul>
-  <li>For the <code>--nlb</code> flag, the <code>false</code> setting requires floating IP address configuration.</li>
-  <li>To prevent spreading the load of a plugin's API requests across all nodes in a Qumulo cluster, each alarm or alert plugin that you configure communicates with your cluster by using either a network load balancer or floating IPs. You can configure <em>one</em>&mdash;but not both&mdash;of these communication methods.</li>
-</ul>
-{{site.data.alerts.end}}
-
 {{site.qumuloalerts.jsonOutput}}
     
 ```json
@@ -46,6 +39,13 @@ Use the `./alerts cluster_add` command and specify the fully qualified domain na
   "port": 8000
 }]
 ```
+
+{{site.data.alerts.note}}
+<ul>
+  <li>For the <code>--nlb</code> flag, the <code>false</code> setting requires floating IP address configuration.</li>
+  <li>To prevent spreading the load of a plugin's API requests across all nodes in a Qumulo cluster, each alarm or alert plugin that you configure communicates with your cluster by using either a network load balancer or floating IPs. You can configure <em>one</em>&mdash;but not both&mdash;of these communication methods.</li>
+</ul>
+{{site.data.alerts.end}}
 
 ## To Configure Qumulo Alerts to Collect Specific Data and All Alerts from a Qumulo Cluster
 Use the `./alerts cluster_add` command and specify the fully qualified domain name (FQDN) of your Qumulo cluster, your long-lived access token for the Qumulo REST API, the plugins to include or exclude from monitoring, and the plugin category to include. In the following example, we include `Disks`, exclude `Nodes`, and include the `Alerts` category.
