@@ -39,7 +39,7 @@ Use the `./alerts clicksend_server_add` command and specify the username, token,
   "language": "en_GB",
   "senderid": "+15551234567,
   "timezone": "UTC",
-  "to_address": "+15550987654"",
+  "to_address": "+15550987654",
   "username": "name@example.com"
 }]
 ```
