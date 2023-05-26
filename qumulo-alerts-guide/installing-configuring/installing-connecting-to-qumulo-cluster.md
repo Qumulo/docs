@@ -20,10 +20,10 @@ Before you install Qumulo Alerts, make sure you have the following tools:
   {% include important.html content="Qumulo Alerts requires the Docker Compose Plugin to operate correctly." %}
 
 Before you connect Qumulo Alerts to a Qumulo cluster, collect the information that can help you configure Qumulo Alerts to monitor your cluster.
-* **Cluster Address:** What is your cluster's address? Use a fully qualified domain name (FQDN) rather than an IP address.
+* **Cluster Address:** Use a fully qualified domain name (FQDN) rather than an IP address.
 * **Traffic Distribution:** Will your Qumulo Alerts installation use a network load balancer or a floating IP address?
-* **Default Plugin Frequency**: What should be the default frequency for plugin execution? (You can specify the frequency in seconds or minutes.)
-* **Alarm and Alert Types:** Decide which alarms and alerts Qumulo Alerts will collect for your cluster.
+* **Default Plugin Frequency**: What should be the default frequency for plugin execution? (You can specify the frequency in minutes or seconds.)
+* **Alarm and Alert Types:** Which alarms and alerts will Qumulo Alerts will collect from your Qumulo Core cluster?
 
 <a id="clone-qumuloalerts-repository"></a>
 ## Step 1: Clone the QumuloAlerts Repository
@@ -46,7 +46,7 @@ To be able to generate access tokens, you must create a local user for Qumulo Al
    qq auth_add_user --name QumuloAlerts --password <password>
    ```
 
-1. You will need the user ID that appears in the command output to create a role for Qumulo Alerts.
+1. You need the user ID that appears in the command output to create a role for Qumulo Alerts.
 
    In the following example, the user ID is `1234`.
 
@@ -169,13 +169,13 @@ To start Qumulo Alerts, run the following command from the directory to which yo
 ## Step 7: Configure Qumulo Alerts
 1. [Configure alarms and alerts](alarms-and-alerts.md).
 
-1. [Configure user notifications](../configuring-notifications/alarms-and-alerts.md).
+1. [Configure alarm and alert notifications](../configuring-notifications/alarms-and-alerts.md).
 
-1. Configure [integration with an email server](../configuring-integrations/email-server.md) or [integration with the ClickSend service](../configuring-integrations/sms-clicksend.md).
+1. Configure integration [with an email server](../configuring-integrations/email-server.md) or [with SMS (ClickSend)](../configuring-integrations/sms-clicksend.md).
 
 
 ## Step 8: Stop Qumulo Alerts
-If you wish to stop Qumulo Alerts for any reason, run the following command from the directory to which you cloned the 'QumuloAlerts' repository.
+To stop Qumulo Alerts, run the following command from the directory to which you cloned the 'QumuloAlerts' repository.
 
 ```bash
 ./stop-docker-qumulo-alerts.sh
