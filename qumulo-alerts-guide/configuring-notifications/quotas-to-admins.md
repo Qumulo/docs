@@ -51,7 +51,7 @@ Use the `./alerts quota_add` command and specify the quota path. The following e
   --cluster-include cluster.example.com
 ```
 
-{% include note.html content="When you add a quota and attach it to a cluster, the `alerts` CLI doesn't list the cluster." %}
+{% include note.html content="When you add a quota and attach it to a Qumulo cluster, the `alerts` CLI doesn't list the cluster." %}
 
 {{site.qumuloalerts.jsonOutput}}
 
