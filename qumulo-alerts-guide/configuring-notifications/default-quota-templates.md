@@ -1,9 +1,9 @@
 ---
-title: "Configuring Quota Notifications by Using Default Templates in Qumulo Alerts"
-summary: "This section explains how to configure quota notifications by using default templates in Qumulo Alerts."
-permalink: /qumulo-alerts-guide/configuring-notifications/default-quota-templates.html
+title: "Configuring Quota Notifications by Using Default Quotas in Qumulo Alerts"
+summary: "This section explains how to configure quota notifications by using default quotas in Qumulo Alerts."
+permalink: /qumulo-alerts-guide/configuring-notifications/default-quotas.html
 sidebar: qumulo_alerts_guide_sidebar
-keywords: Qumulo_Alerts, quota, quotas, notification, configure, configuration
+keywords: Qumulo_Alerts, quota, quotas, notification, configure, configuration, default
 ---
 
 ## The definition of a default quota
