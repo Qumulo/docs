@@ -8,7 +8,7 @@ sidebar: qumulo_alerts_guide_sidebar
 keywords: Qumulo_Alerts, notification, configure, configuration, JSON, NotifyGroup
 ---
 
-You must first add the account as a Qumulo Alerts user, create a NotifyGroup and configure its notifications, and then add the user to the NotifyGroup.
+You must first add the account as a Qumulo Alerts user, create a Notification Group and configure its notifications, and then add the user to the Notification Group.
 
 
 ## Step 1: Add an Administrative Account as a Qumulo Alerts User
@@ -21,7 +21,7 @@ Use the `./alerts user_add` command and specify the administrator's full name, u
   --password MyPassword123 \
   --email jjohnson@example.com \
   --language en_US \
-  --timezone America/Los_Angeles
+  --timezone "America/Los_Angeles"
 ```
 
 {{site.data.alerts.note}}
@@ -48,11 +48,11 @@ Use the `./alerts user_add` command and specify the administrator's full name, u
 ```
 
 
-## Step 2: Create and Configure a NotifyGroup
-Use the `./alerts notifygroup_add` command and specify the NotifyGroup's name, description, and the events for which the NotifyGroup receives notifications. In the following example, the `NotifyOnHardwareChange` group receives notifications for all hardware state change events.
+## Step 2: Create and Configure a Notification Group
+Use the `./alerts notification_group_add` command and specify the Notification Group's name, description, and the events for which the notification_group receives notifications. In the following example, the `NotifyOnHardwareChange` group receives notifications for all hardware state change events.
 
 ```bash
-./alerts notifygroup_add \
+./alerts notification_group_add \
   --name NotifyOnHardwareChange \
   --description "Send a notification when any hardware changes state" \
   --event NOTIFY_FANS \
@@ -72,11 +72,11 @@ Use the `./alerts notifygroup_add` command and specify the NotifyGroup's name, d
 }]
 ```
 
-## Step 3: Add a Qumulo Alerts User to a NotifyGroup
-Use the `./alerts notifygroup_add_user` command and specify the NotifyGroup name and the Qumulo Alerts user name to add to the NotifyGroup. For example:
+## Step 3: Add a Qumulo Alerts User to a Notification Group
+Use the `./alerts notification_group_add_user` command and specify the Notification Group name and the Qumulo Alerts user name to add to the Notification Group. For example:
 
 ```bash
-./alerts notifygroup_add_user \
+./alerts notification_group_add_user \
   --name NotifyOnHardwareChange \
   --username jjohnson
 ```
