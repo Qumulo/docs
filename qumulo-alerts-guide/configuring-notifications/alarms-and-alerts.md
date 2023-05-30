@@ -49,7 +49,7 @@ Use the `./alerts user_add` command and specify the administrator's full name, u
 
 
 ## Step 2: Create and Configure a Notification Group
-Use the `./alerts notification_group_add` command and specify the Notification Group's name, description, and the events for which the notification_group receives notifications. In the following example, the `NotifyOnHardwareChange` group receives notifications for all hardware state change events.
+Use the `./alerts notification_group_add` command and specify the notification group's name, description, and the events for which the notification group receives notifications. In the following example, the `NotifyOnHardwareChange` group receives notifications for all hardware state change events.
 
 ```bash
 ./alerts notification_group_add \
@@ -73,7 +73,7 @@ Use the `./alerts notification_group_add` command and specify the Notification G
 ```
 
 ## Step 3: Add a Qumulo Alerts User to a Notification Group
-Use the `./alerts notification_group_add_user` command and specify the Notification Group name and the Qumulo Alerts user name to add to the Notification Group. For example:
+Use the `./alerts notification_group_add_user` command and specify the notification group name and the Qumulo Alerts user name to add to the notification group. For example:
 
 ```bash
 ./alerts notification_group_add_user \
