@@ -7,7 +7,7 @@ keywords: Qumulo_Alerts, alert, alarm, Docker, producer, plug_in, plugin, plug-i
 ---
 
 ## To Configure Qumulo Alerts to Collect Specific Data from a Qumulo Cluster
-Use the `./alerts cluster_add` command and specify the fully qualified domain name (FQDN) of your Qumulo cluster, your long-lived access token for the Qumulo REST API, and the plugins to include or exclude from monitoring. In the following example, we include `Disks` and include `Nodes`.
+Use the `./alerts cluster_add` command and specify the fully qualified domain name (FQDN) of your Qumulo cluster, your long-lived access token for the Qumulo REST API, and the plugins to include or exclude from monitoring. In the following example, we include `Disks` and `Nodes`.
 
 ```bash
 ./alerts cluster_add \
@@ -48,7 +48,7 @@ Use the `./alerts cluster_add` command and specify the fully qualified domain na
 {{site.data.alerts.end}}
 
 ## To Configure Qumulo Alerts to Collect All Alerts for Specific Data from a Qumulo Cluster
-Use the `./alerts cluster_add` command and specify the fully qualified domain name (FQDN) of your Qumulo cluster, your long-lived access token for the Qumulo REST API, the plugins to include or exclude from monitoring, and the plugin category to include. In the following example, we include `Disks`, include `Nodes`, and include the `Alerts` category.
+Use the `./alerts cluster_add` command and specify the fully qualified domain name (FQDN) of your Qumulo cluster, your long-lived access token for the Qumulo REST API, the plugins to include or exclude from monitoring, and the plugin category to include. In the following example, we include `Disks` and `Nodes`, and include the `Alerts` category.
 
 ```bash
 ./alerts cluster_add \
