@@ -4,4 +4,5 @@ summary: "This section lists the attestations that Qumulo has achieved from thir
 permalink: /administrator-guide/getting-started-qumulo-core/qumulo-compliance-posture.html
 redirect_to:
   - https://qumulo.com/trust#l-co
+search: exclude
 ---
