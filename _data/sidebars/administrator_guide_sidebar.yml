@@ -60,10 +60,6 @@ entries:
       url: /administrator-guide/getting-started-qumulo-core/supported-configurations-known-limits.html
       output: web, pdf
       
-    - title: Qumulo Compliance Posture
-      url: /administrator-guide/getting-started-qumulo-core/qumulo-compliance-posture.html
-      output: web, pdf
-
   - title: Upgrading Qumulo Core
     url: /administrator-guide/upgrading-qumulo-core/index.html
     output: web, pdf
