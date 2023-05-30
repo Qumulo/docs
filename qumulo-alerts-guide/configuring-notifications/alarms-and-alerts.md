@@ -8,7 +8,7 @@ sidebar: qumulo_alerts_guide_sidebar
 keywords: Qumulo_Alerts, notification, configure, configuration, JSON, NotifyGroup
 ---
 
-You must first add the account as a Qumulo Alerts user, create a Notification Group and configure its notifications, and then add the user to the Notification Group.
+You must first add the account as a Qumulo Alerts user, create a notification group and configure its notifications, and then add the user to the notification group.
 
 
 ## Step 1: Add an Administrative Account as a Qumulo Alerts User
