@@ -291,7 +291,7 @@ keywords: update, upgrade, instant, instant_software_upgrade, platform, platform
     </tr>    
     <tr>
       <td>5.3.0</td>
-      <td>Instant</td>
+      <td>Instant, Quarterly</td>
     </tr>
     <tr>
       <td>5.2.5.1</td>
