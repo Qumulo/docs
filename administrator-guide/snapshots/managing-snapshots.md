@@ -73,7 +73,7 @@ The **Snapshots** page lets you navigate a large number of snapshots.
 
 {{page.varSaved}}
 
-1. At the top of the table, click {% include inline_image.html alt="filters disabled" file="managing-snapshots-filters-disabled.png" max-width="100" %}.
+1. At the top of the table, click **enable filters**.
 
    The **Search...** field appears.
 
@@ -81,7 +81,7 @@ The **Snapshots** page lets you navigate a large number of snapshots.
 
    The table rows match your query as you type.
 
-1. (Optional) To turn off filtering, click {% include inline_image.html alt="filters enabled" file="managing-snapshots-filters-enabled.png" max-width="100" %}.
+1. (Optional) To turn off filtering, click **disable filters**.
 
 ### To Delete a Single Snapshot
 {{page.varLogin}}
