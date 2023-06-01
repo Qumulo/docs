@@ -126,7 +126,7 @@ qq snapshot_create_policy daily \
   --at 00:00 \
   --timezone America/Los_Angeles \
   --time-to-live 7days
-  --lock-key-name my-key-name
+  --lock-key my-key-name
 ```
 
 In the following example, we change a previously created policy with ID `1` to a policy named `hourly` that takes a snapshot every hour, but only during business hours (Monday to Friday, 8am to 6pm in the Pacific time zone), and retains snapshots for two days. Every new snapshot that this policy creates is unlocked (previously created snapshots remain locked).
@@ -197,12 +197,12 @@ In Qumulo Core 6.1.0 (and higher), you can lock a snapshot by using [a key locat
 In Qumulo Core 6.1.1 (and higher), you can ensure that a [replication target relationship locks all new policy snapshots with a particular key](#replication-target-locking) by associating the key with the replication target.
 
 #### To Lock a Snapshot by Using the qq CLI
-Use the `qq snapshot_lock_snapshot` command and specify the snapshot ID and either the key identifier (by using the `--lock-key-id` flag) or the key name (by using the `--lock-key-name` flag). For example:
+Use the `qq snapshot_lock_snapshot` command and specify the snapshot ID and either the key ID or key name. For example:
 
 ```bash
 qq snapshot_lock_snapshot \
   --id 1682119059 \
-  --lock-key-name my-key-name
+  --lock-key my-key-name
 ```
 
 #### To Unlock a Snapshot by Using the qq CLI
