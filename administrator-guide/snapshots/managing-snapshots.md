@@ -194,6 +194,8 @@ qq snapshot_modify_snapshot \
 
 In Qumulo Core 6.1.0 (and higher), you can lock a snapshot by using [a key located in the Qumulo file system key store](../protecting-data/managing-security-keys.html). You can also ensure that [a snapshot policy locks all new snapshots with a particular key](#create-snapshot-with-policy) by associating the key with the snapshot policy.
 
+In Qumulo Core 6.1.1 (and higher), you can ensure that a [replication target relationship locks all new policy snapshots with a particular key](#replication-target-locking) by associating the key with the replication target.
+
 #### To Lock a Snapshot by Using the qq CLI
 Use the `qq snapshot_lock_snapshot` command and specify the snapshot ID and either the key identifier (by using the `--lock-key-id` flag) or the key name (by using the `--lock-key-name` flag). For example:
 
@@ -241,3 +243,24 @@ If you can use the private key only to sign data, take the following steps.
      --id 1682119059 \
      --signature "VGhpcyBpcyBteSB1bmxvY2sgY2hhbGxlbmdlLg=="
    ```
+
+<a id="replication-target-locking"></a>
+#### To Associate a Security Key with a Replication Target Relationship
+
+You may associate a lock key with a replication target relationship. Snapshots created by a policy will be locked using this key. Unless you configure an expiration on the snapshot policy on the target cluster, the system does not lock snapshots. If you reverse the relationship (switch the source and the target), the new target does not use this lock key. To enable snapshot locking, you must configure the new target separately. However, if you revert the reversed relationship (return the source and target to their original assignments), the system preserves the original target replication relationship lock key. Unless you reverse the relationship, you cannot disable or delete a lock key while a target replication relationship uses the key. If you disable or delete a lock key while the relationship is reversed and you then revert the reversal, the original source-target relationship has no lock key until you configure a new one.
+
+Associate a lock key with a replication target relationship by running the following command, providing a real relationship ID and lock key:
+
+```bash
+qq replication_set_target_relationship_lock \
+  --relationship-id <relationship ID>
+  --lock-key <lock key name or ID>
+```
+
+Dissociate a lock key from a replication target relationship by running the following command, providing a real relationship ID:
+
+```bash
+qq replication_set_target_relationship_lock \
+  --relationship-id <relationship ID>
+  --clear-lock-key
+```
