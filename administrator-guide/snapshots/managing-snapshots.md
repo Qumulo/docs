@@ -1,6 +1,6 @@
 ---
 title: "Managing Snapshots in Qumulo Core"
-summary: "This section explains how to create on-demand snapshots and snapshot policies, view and search for existing snapshots, and delete snapshots by using the Web UI and how to create snapshots on a schedule, create a snapshot with an expiration time, modify a snapshot's expiration time, and lock or unlock a snapshot by using by using a key located in the Qumulo file system key store and the <code>qq</code> CLI."
+summary: "This section explains how to create on-demand snapshots and snapshot policies, view and search for existing snapshots, and delete snapshots by using the Web UI and how to create snapshots on a schedule, create a snapshot with an expiration time, modify a snapshot's expiration time, and lock or unlock a snapshot by using by using a key located in the Qumulo file system key store and the <code>qq</code> CLI. In addition, it explains how to lock all policy-created snapshots by using a lock key by associating a lock key with a replication target relationship."
 permalink: /administrator-guide/snapshots/managing-snapshots.html
 redirect_from:
   - /managing-snapshots.html
@@ -246,7 +246,7 @@ If you can use the private key only to sign data, take the following steps.
 
 <a id="replication-target-locking"></a>
 ## Associating a Lock Key with a Replication Target Relationship
-You can associate a lock key with a replication target relationships. Qumulo Core locks all policy-created snapshots by using this key. Consider the following system behavior:
+To lock all policy-created snapshots by using a lock key, you can associate a lock key with a replication target relationships. Consider the following system behavior:
 
 * Qumulo Core locks only policy-created snapshots, unless you configure an expiration time for the snapshot policy on the target cluster.
 
