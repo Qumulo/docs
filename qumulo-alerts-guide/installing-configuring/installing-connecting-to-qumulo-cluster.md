@@ -79,6 +79,7 @@ To be able to generate access tokens, you must create a local user for Qumulo Al
 
    {% comment %} The following table is in HTML because the overly long privilege SNAPSHOT_CALCULATE_USED_CAPACITY_READ doesn't wrap on mobile, requiring special CSS to move the whole thing over to the left.{% endcomment %}
    <ul class="improve-mobile">
+      <li><strong>ACCESS_TOKENS_READ: View any access tokens present in the system</strong></li>
       <li><strong>AD_READ: Read Qumulo Active Directory Settings</strong></li>
       <li><strong>ANALYTICS_READ: Read cluster analytics</strong></li>
       <li><strong>AUDIT_READ: Read audit settings</strong></li>
@@ -100,12 +101,14 @@ To be able to generate access tokens, you must create a local user for Qumulo Al
       <li><strong>LOCAL_GROUP_READ: View local groups and members</strong></li>
       <li><strong>LOCAL_USER_READ: Get information about local users</strong></li>
       <li><strong>METRICS_READ: Get all metrics</strong></li>
+      <li><strong>NETWORK_IP_ALLOCATION_READ: View network IP address allocations</strong></li>
       <li><strong>NETWORK_READ: Read network status and settings</strong></li>
       <li><strong>NFS_EXPORT_READ: Read network status and settings</strong></li>
       <li><strong>NFS_SETTINGS_READ: Internal-Only: View NFS server settings</strong></li>
       <li><strong>QUOTA_READ: View all file system quotas</strong></li>
       <li><strong>REBOOT_READ: View Reboot Status</strong></li>
       <li><strong>RECONCILER_READ: View reconciler status and metrics</strong></li>
+      <li><strong>REPLICATION_OBJECT_READ: View object store relationship settings and status</strong></li>
       <li><strong>REPLICATION_SOURCE_READ: View source relationship settings and status</strong></li>
       <li><strong>REPLICATION_TARGET_READ: View target relationship settings and status</strong></li>
       <li><strong>ROLE_READ: View roles and assignments</strong></li>
