@@ -20,10 +20,10 @@ Before you install Qumulo Alerts, make sure you have the following tools:
   {% include important.html content="Qumulo Alerts requires the Docker Compose Plugin to operate correctly." %}
 
 Before you connect Qumulo Alerts to a Qumulo cluster, collect the information that can help you configure Qumulo Alerts to monitor your cluster.
-* **Cluster Address:** What is your cluster's address? Use a fully qualified domain name (FQDN) rather than an IP address.
+* **Cluster Address:** Use a fully qualified domain name (FQDN) rather than an IP address.
 * **Traffic Distribution:** Will your Qumulo Alerts installation use a network load balancer or a floating IP address?
-* **Default Plugin Frequency**: What should be the default frequency for plugin execution? (You can specify the frequency in seconds or minutes.)
-* **Alarm and Alert Types:** Decide which alarms and alerts Qumulo Alerts will collect for your cluster.
+* **Default Plugin Frequency**: What should be the default frequency for plugin execution? (You can specify the frequency in minutes or seconds.)
+* **Alarm and Alert Types:** Which alarms and alerts will Qumulo Alerts will collect from your Qumulo cluster?
 
 <a id="clone-qumuloalerts-repository"></a>
 ## Step 1: Clone the QumuloAlerts Repository
@@ -46,7 +46,7 @@ To be able to generate access tokens, you must create a local user for Qumulo Al
    qq auth_add_user --name QumuloAlerts --password <password>
    ```
 
-1. You will need the user ID that appears in the command output to create a role for Qumulo Alerts.
+1. You need the user ID that appears in the command output to create a role for Qumulo Alerts.
 
    In the following example, the user ID is `1234`.
 
@@ -69,7 +69,9 @@ To be able to generate access tokens, you must create a local user for Qumulo Al
 
 1. On the **Create Role** page:
 
-   1. Enter a name, for example `QumuloAlerts`.
+   1. Enter `QumuloAlerts`.
+      
+      {% include important.html content="Because Qumulo Alerts verifies that it has sufficient role permissions before starting, this name is required." %}
 
    1. Enter a description, for example `This account lets an administrator restrict the privileges of the QumuloAlerts user.`
 
@@ -84,14 +86,23 @@ To be able to generate access tokens, you must create a local user for Qumulo Al
       <li><strong>CLUSTER_READ: View nodes, disks, protection status, and SSL certificate</strong></li>
       <li><strong>DNS_READ: Read DNS setting</strong></li>
       <li><strong>ENCRYPTION_READ: View the status of at rest encryption</strong></li>
+      <li><strong>FS_ATTRIBUTES_READ: Read file system statistics</strong></li>
+      <li><strong>FS_DELETE_TREE_READ: View the status of directory tree delete operations</strong></li>
+      <li><strong>FS_KEY_MANAGEMENT_READ: Read and list public keys for various FS security features</strong></li>
+      <li><strong>FS_LOCK_READ: View NLM and SMB locks and waiters</strong></li>
+      <li><strong>FS_SETTINGS_READ: View file system permissions settings</strong></li>
       <li><strong>FTP_READ: View FTP status and settings</strong></li>
       <li><strong>IDENTITY_MAPPING_READ: Get AD/LDAP User Defined Mappings</strong></li>
+      <li><strong>IDENTITY_READ: Use Qumulo's identity lookup and translation APIs</strong></li>
+      <li><strong>KERBEROS_KEYTAB_READ: View Kerberos keytab</strong></li>
+      <li><strong>KERBEROS_SETTINGS_READ: Read Kerberos settings</strong></li>
       <li><strong>LDAP_READ: View LDAP settings</strong></li>
       <li><strong>LOCAL_GROUP_READ: View local groups and members</strong></li>
       <li><strong>LOCAL_USER_READ: Get information about local users</strong></li>
       <li><strong>METRICS_READ: Get all metrics</strong></li>
       <li><strong>NETWORK_READ: Read network status and settings</strong></li>
       <li><strong>NFS_EXPORT_READ: Read network status and settings</strong></li>
+      <li><strong>NFS_SETTINGS_READ: Internal-Only: View NFS server settings</strong></li>
       <li><strong>QUOTA_READ: View all file system quotas</strong></li>
       <li><strong>REBOOT_READ: View Reboot Status</strong></li>
       <li><strong>RECONCILER_READ: View reconciler status and metrics</strong></li>
@@ -101,7 +112,9 @@ To be able to generate access tokens, you must create a local user for Qumulo Al
       <li><strong>S3_BUCKETS_READ: View all S3 buckets present in the system</strong></li>
       <li><strong>S3_CREDENTIALS_READ: View any S3 access key present in the system</strong></li>
       <li><strong>S3_SETTINGS_READ: View S3 server settings</strong></li>
+      <li><strong>S3_UPLOADS_READ: View all S3 uploads present in the system.</strong></li>
       <li><strong>SAML_SETTINGS_READ: View SAML integration settings</strong></li>
+      <li><strong>SMB_FILE_HANDLE_READ: List open SMB file handles</strong></li>
       <li><strong>SMB_SESSION_READ: List logged on SMB sessions</strong></li>
       <li><strong>SMB_SHARE_READ: View configuration of SMB shares and SMB server settings</strong></li>
       <li><strong>SNAPSHOT_CALCULATE_USED_CAPACITY_READ: Recalculate capacity usage of snapshots</strong></li>
@@ -146,22 +159,24 @@ The `auth_create_access_token` command returns a JSON response that contains the
 
 For more information, see [Using Qumulo Core Access Tokens](https://docs.qumulo.com/administrator-guide/external-services/using-access-tokens.html) in the Qumulo Administrator Guide.
 
-## Step 6: Configure Qumulo Alerts
-1. [Configure alarms and alerts](alarms-and-alerts.md).
-
-1. [Configure user notifications](user-notifications.md).
-
-1. Configure [integration with an email server](integration-email-server.md) or [integration with the ClickSend service](integration-clicksend.md).
-
-## Step 7: Start Qumulo Alerts
+## Step 6: Start Qumulo Alerts
 To start Qumulo Alerts, run the following command from the directory to which you cloned the `QumuloAlerts` repository.
 
 ```bash
 ./start-docker-qumulo-alerts.sh
 ```
 
-To reapply changes to the Qumulo Alerts configuration, run the following command.
+## Step 7: Configure Qumulo Alerts
+1. [Configure alarms and alerts](alarms-and-alerts.md).
+
+1. [Configure alarm and alert notifications](../configuring-notifications/alarms-and-alerts.md).
+
+1. Configure integration [with an email server](../configuring-integrations/email-server.md) or [with SMS (ClickSend)](../configuring-integrations/sms-clicksend.md).
+
+
+## Step 8: Stop Qumulo Alerts
+To stop Qumulo Alerts, run the following command from the directory to which you cloned the 'QumuloAlerts' repository.
 
 ```bash
-./stop-docker-qumulo-alerts.sh && ./start-docker-qumulo-alerts.sh
+./stop-docker-qumulo-alerts.sh
 ```
