@@ -263,7 +263,7 @@ Run the `qq replication_set_target_relationship_lock` command and specify the re
 ```bash
 qq replication_set_target_relationship_lock \
   --relationship-id 1234567890
-  --lock-key my-lock-key-name
+  --lock-key my-key-name
 ```
 
 ### To Disassociate a Lock Key from a Replication Target Relationship
