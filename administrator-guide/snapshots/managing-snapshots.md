@@ -246,11 +246,11 @@ If you can use the private key only to sign data, take the following steps.
 
 <a id="replication-target-locking"></a>
 ## Associating a Lock Key with a Replication Target Relationship
-To lock all policy-created snapshots by using a lock key, you can associate a lock key with a replication target relationship. Consider the following system behavior:
+To lock all policy-created snapshots by using a lock key, you can associate the key with a replication target relationship. Consider the following system behavior:
 
 * Qumulo Core locks only policy-created snapshots that have an expiration time.
 
-* If you reverse the relationship by switching the source and target, the new target can't use this key and you must set a key for the new target. However, if you revert the relationship by returning the source and target to their original assignments, Qumulo Core lets you use the key from the original source-target relationship.
+* If you reverse the relationship by switching the source and target, the new target can't use the existing key and you must set a key for the new target. However, if you revert the relationship by returning the source and target to their original assignments, Qumulo Core lets you use the key from the original source-target relationship.
 
 * If a target replication relationship uses a key, you can't disable or delete the key, unless you reverse the relationship.
 
