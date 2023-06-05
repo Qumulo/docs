@@ -254,7 +254,7 @@ To lock all policy-created snapshots by using a lock key, you can associate a lo
 
 * If a target replication relationship uses a key, you can't disable or delete the key, unless you reverse the relationship.
 
-* If you disable or delete a key while a target replication relationship is reversed and then return the source and target to their original assignments, you must set a new key.
+* If you disable or delete a key while a target replication relationship is reversed and then return the source and target to their original assignments, you must set a new key to be able to lock future snapshots.
 
 
 ### To Associate a Lock Key with a Replication Target Relationship
