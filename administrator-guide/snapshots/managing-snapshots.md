@@ -262,7 +262,7 @@ Run the `qq replication_set_target_relationship_lock` command and specify the re
 
 ```bash
 qq replication_set_target_relationship_lock \
-  --relationship-id 1234567890
+  --relationship-id {{site.exampleUUID41}}
   --lock-key my-key-name
 ```
 
@@ -271,6 +271,6 @@ Run the `qq replication_set_target_relationship_lock` command and specify the re
 
 ```bash
 qq replication_set_target_relationship_lock \
-  --relationship-id 1234567890
+  --relationship-id {{site.exampleUUID41}}
   --clear-lock-key
 ```
