@@ -1,6 +1,6 @@
 ---
 title: "Managing Snapshots in Qumulo Core"
-summary: "This section explains how to create on-demand snapshots and snapshot policies, view and search for existing snapshots, and delete snapshots by using the Web UI and how to create snapshots on a schedule, create a snapshot with an expiration time, modify a snapshot's expiration time, and lock or unlock a snapshot by using by using a key located in the Qumulo file system key store and the <code>qq</code> CLI. In addition, it explains how to lock all policy-created snapshots by using a lock key by associating a lock key with a replication target relationship."
+summary: "This section explains how to create on-demand snapshots and snapshot policies, view and search for existing snapshots, and delete snapshots by using the Web UI and how to create snapshots on a schedule, create a snapshot with an expiration time, modify a snapshot's expiration time, and lock or unlock a snapshot by using a key located in the Qumulo file system key store and the <code>qq</code> CLI. In addition, it explains how to lock policy-created snapshots for local policies and for policies part of a replication target relationship."
 permalink: /administrator-guide/snapshots/managing-snapshots.html
 redirect_from:
   - /managing-snapshots.html
