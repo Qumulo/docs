@@ -1,6 +1,6 @@
 ---
 title: "Managing Snapshots in Qumulo Core"
-summary: "This section explains how to create on-demand snapshots and snapshot policies, view and search for existing snapshots, and delete snapshots by using the Web UI and how to create snapshots on a schedule, create a snapshot with an expiration time, modify a snapshot's expiration time, and lock or unlock a snapshot by using by using a key located in the Qumulo file system key store and the <code>qq</code> CLI."
+summary: "This section explains how to create on-demand snapshots and snapshot policies, view and search for existing snapshots, and delete snapshots by using the Web UI and how to create snapshots on a schedule, create a snapshot with an expiration time, modify a snapshot's expiration time, and lock or unlock a snapshot by using a key located in the Qumulo file system key store and the <code>qq</code> CLI. In addition, it explains how to lock policy-created snapshots for local policies and for policies that are part of a replication target relationship."
 permalink: /administrator-guide/snapshots/managing-snapshots.html
 redirect_from:
   - /managing-snapshots.html
@@ -126,7 +126,7 @@ qq snapshot_create_policy daily \
   --at 00:00 \
   --timezone America/Los_Angeles \
   --time-to-live 7days
-  --lock-key-name my-key-name
+  --lock-key my-key-name
 ```
 
 In the following example, we change a previously created policy with ID `1` to a policy named `hourly` that takes a snapshot every hour, but only during business hours (Monday to Friday, 8am to 6pm in the Pacific time zone), and retains snapshots for two days. Every new snapshot that this policy creates is unlocked (previously created snapshots remain locked).
@@ -192,15 +192,17 @@ qq snapshot_modify_snapshot \
 </ul>
 {{site.data.alerts.end}}
 
-In Qumulo Core 6.1.0 (and higher), you can lock a snapshot by using [a key located in the Qumulo file system key store](../protecting-data/managing-security-keys.html). You can also ensure that [a snapshot policy locks all new snapshots with a particular key](#create-snapshot-with-policy) by associating the key with the snapshot policy.
+In Qumulo Core 6.1.0 (and higher), you can [lock a snapshot by using a key located in the Qumulo file system key store](../protecting-data/managing-security-keys.html). You can also ensure that [a snapshot policy locks all new snapshots with a particular key](#create-snapshot-with-policy) by associating the key with the snapshot policy.
+
+In Qumulo Core 6.1.1 (and higher), you can [ensure that a replication target relationship locks all new policy snapshots with a specific key](#replication-target-locking) by associating the key with the replication target.
 
 #### To Lock a Snapshot by Using the qq CLI
-Use the `qq snapshot_lock_snapshot` command and specify the snapshot ID and either the key identifier (by using the `--lock-key-id` flag) or the key name (by using the `--lock-key-name` flag). For example:
+Use the `qq snapshot_lock_snapshot` command and specify the snapshot ID and either the key ID or key name. For example:
 
 ```bash
 qq snapshot_lock_snapshot \
   --id 1682119059 \
-  --lock-key-name my-key-name
+  --lock-key my-key-name
 ```
 
 #### To Unlock a Snapshot by Using the qq CLI
@@ -241,3 +243,34 @@ If you can use the private key only to sign data, take the following steps.
      --id 1682119059 \
      --signature "VGhpcyBpcyBteSB1bmxvY2sgY2hhbGxlbmdlLg=="
    ```
+
+<a id="replication-target-locking"></a>
+## Associating a Lock Key with a Replication Target Relationship
+To lock all policy-created snapshots by using a lock key, you can associate the key with a replication target relationship. Consider the following system behavior:
+
+* Qumulo Core locks only policy-created snapshots that have an expiration time.
+
+* If you reverse the relationship by switching the source and target, the new target can't use the existing key and you must set a key for the new target. However, if you revert the relationship by returning the source and target to their original assignments, Qumulo Core lets you use the key from the original source-target relationship.
+
+* If a target replication relationship uses a key, you can't disable or delete the key, unless you reverse the relationship.
+
+* If you disable or delete a key while a target replication relationship is reversed and then return the source and target to their original assignments, you must set a new key to be able to lock future snapshots.
+
+
+### To Associate a Lock Key with a Replication Target Relationship
+Run the `qq replication_set_target_relationship_lock` command and specify the relationship ID and key name or ID. For example:
+
+```bash
+qq replication_set_target_relationship_lock \
+  --relationship-id {{site.exampleUUID41}}
+  --lock-key my-key-name
+```
+
+### To Disassociate a Lock Key from a Replication Target Relationship
+Run the `qq replication_set_target_relationship_lock` command and specify the relationship ID and and `--clear-lock-key` flag. For example:
+
+```bash
+qq replication_set_target_relationship_lock \
+  --relationship-id {{site.exampleUUID41}}
+  --clear-lock-key
+```
