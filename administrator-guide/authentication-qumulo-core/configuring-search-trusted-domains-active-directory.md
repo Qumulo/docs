@@ -6,12 +6,12 @@ sidebar: administrator_guide_sidebar
 keywords: authentication, search_trusted_domains, trusted_domains, active_directory, ad, ldap
 ---
 
-During normal AD domain operations, a Qumulo cluster often encounters _LDAP referrals_ that indicate to the cluster in what alternative locations within an AD domain it might locate requested information. Often, these referrals are hints to other trusted AD domains which a cluster accesses through a Domain Trust, such as a Parent Domain Trust or an external Domain Trust.
-
-In Qumulo Core 6.1.0 (and lower), to permit Qumulo clusters to follow LDAP referrals, the **Search Trusted Domains** configuration option is enabled by default.
+During normal AD domain operations, a Qumulo cluster often encounters _LDAP referrals_ that indicate to the cluster in what alternative locations within an AD domain it might locate requested information. Often, these referrals are hints to alternative trusted AD domains which a cluster accesses through a Domain Trust, such as a Parent Domain Trust or an external Domain Trust.
 
 
 ## Reducing Latency by Disabling Search Trusted Domains
+In Qumulo Core 6.1.0 (and lower), to permit Qumulo clusters to follow LDAP referrals, the **Search Trusted Domains** configuration option is enabled by default.
+
 In Qumulo Core 6.1.1 (and higher), to reduce the potential latency of AD domain operations that might trigger and follow LDAP referrals unnecessarily (particularly for large, complex AD environments with multiple Domain Trusts), you can disable the **Search Trusted Domains** configuration option.
 
 Disabling this option might benefit your system if you can determine that all relevant user and group accounts&mdash;which you might expect to use POSIX attributes, logins with SAML Single Sign-On (SSO), or logins with NFS4.1 and Kerberos&mdash;are located entirely in the current domain.
@@ -38,6 +38,6 @@ To decide whether to ignore LDAP referrals, consider the Qumulo Core operations 
 ### Operations Unaffected by Search Trusted Domains Configuration
 * Kerberos SMB SSO logins from Domain Local or Trusted Domain users
 * NTMLv2 SMB logins (with username and password) from Domain Local or Trusted Domain users.
-* Use of Domain Local groups that contain users and groups from other Trusted Domains
+* Use of Domain Local groups that contain users and groups from alternative Trusted Domains
 * Adding users or groups to SMB share permissions by using the Qumulo Core Web UI or `qq` CLI
 * Resolving Security Identifiers (SIDs) to usernames by using client dialog boxes, for example in macOS Finder or Windows File Explorer
