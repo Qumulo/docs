@@ -30,7 +30,7 @@ Qumulo Core lets you configure multiple Base DNs by providing their paths in a s
 {% include important.html content="Disabling Search Trusted Domains disregards any trusted domains specified in the Base DN." %}
 
 
-### Ignoring LDAP Referrals and Qumulo Core Operations
+### Ignoring LDAP Referrals and Qumulo Core Authentication Processes
 To decide whether your system should ignore LDAP referrals, consider the Qumulo Core authentication processes that this might affect.
 
 #### Authentication Processes that Trigger LDAP Queries
