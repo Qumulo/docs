@@ -78,7 +78,7 @@ entries:
       url: /administrator-guide/authentication-qumulo-core/configuring-saml-single-sign-on-sso.html
       output: web, pdf
 
-    - title: Configuring the Search Trusted Domains Option
+    - title: Configuring Search Trusted Domains
       url: /administrator-guide/authentication-qumulo-core/configuring-search-trusted-domains-active-directory.html
       output: web, pdf
 
