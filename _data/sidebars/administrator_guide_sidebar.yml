@@ -87,7 +87,7 @@ entries:
       url: /administrator-guide/external-services/using-access-tokens.html
       output: web, pdf
       
-    - title: Connecting a Kubernetes Cluster to a Qumulo Cluster
+    - title: Connecting a Kubernetes Cluster
       url: /administrator-guide/external-services/connecting-kubernetes-cluster-with-container-storage-interface-csi-driver.html
       output: web, pdf
 
@@ -96,7 +96,7 @@ entries:
     output: web, pdf
     folderitems:
 
-    - title: Required Networking Ports for Qumulo Core
+    - title: Required Networking Ports
       url: /administrator-guide/networking/required-networking-ports.html
       output: web, pdf
 
@@ -198,7 +198,7 @@ entries:
       url: /administrator-guide/replicating-data/shift-from-s3.html
       output: web, pdf
       
-  - title: Watching for Changes
+  - title: File System Changes
     url: /administrator-guide/watching-file-attribute-directory-changes/index.html
     output: web, pdf
     folderitems:
