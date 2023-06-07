@@ -56,7 +56,7 @@ entries:
       url: /administrator-guide/getting-started-qumulo-core/configuring-saml-single-sign-on-sso.html
       output: web, pdf
 
-    - title: Supported Configurations and Known Limits
+    - title: Supported Configurations and Limits
       url: /administrator-guide/getting-started-qumulo-core/supported-configurations-known-limits.html
       output: web, pdf
       
@@ -285,7 +285,7 @@ entries:
       url: /administrator-guide/s3-api/managing-multipart-uploads.html
       output: web, pdf
 
-    - title: Supported Functionality and Known Limits for S3
+    - title: Supported Functionality and Limits
       url: /administrator-guide/s3-api/supported-s3-functionality-known-limits.html
       output: web, pdf
 
