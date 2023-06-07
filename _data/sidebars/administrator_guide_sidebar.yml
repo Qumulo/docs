@@ -39,7 +39,7 @@ entries:
       url: /contacting-qumulo-care-team.html
       output: web
 
-  - title: Getting Started with Qumulo Core
+  - title: Getting Started
     url: /administrator-guide/getting-started-qumulo-core/index.html
     output: web, pdf
     folderitems:
