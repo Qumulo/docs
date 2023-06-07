@@ -27,7 +27,7 @@ To get started, choose one of the following guides.
 ## Collaborate
 For announcements, general questions, and feature requests, see [Community Q](https://care.qumulo.com/hc/en-us/community/topics).
 
-We're currently in process of migrating legacy articles about Qumulo Core and hardware platform functionality from [Qumulo Care](https://care.qumulo.com/hc/en-us). To help us prioritize topics for migration, [send feedback to Team Qontent](qontent-feedback@qumulo.com).
+We're currently in process of migrating legacy articles about Qumulo Core and hardware platform functionality from [Qumulo Care](https://care.qumulo.com/hc/en-us).
 
 ## Reach Out to Us
 If you need help, [open a case](https://care.qumulo.com/hc/en-us/requests/new), or {{site.contactQumuloCare}} through Slack, email, or by phone.
