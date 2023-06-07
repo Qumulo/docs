@@ -1,6 +1,6 @@
 ---
 title: "Configuring the Search Trusted Domains Option in Active Directory for a Qumulo Cluster"
-summary: "This section explains how to fine-tune the behavior of your Qumulo cluster joined to an Active Directory (AD) domain by restricting the scope of LDAP queries with the Search Trusted Domains configuration option."
+summary: "This section explains how to restrict the scope of LDAP queries by using the Search Trusted Domains configuration option for a Qumulo cluster joined to an Active Directory (AD) domain.
 permalink: /administrator-guide/authentication-qumulo-core/configuring-search-trusted-domains-active-directory.html
 sidebar: administrator_guide_sidebar
 keywords: authentication, search_trusted_domains, trusted_domains, active_directory, ad, ldap
@@ -18,13 +18,13 @@ Disabling the Search Trusted Domains configuration option might benefit your sys
 
 
 ## The Base DN Path and LDAP Queries
+{% include important.html content="Disabling Search Trusted Domains disregards any trusted tomains that you add to the Base DN in Qumulo Core." %}
+
 The Base DN (Distinguished Name) configuration option specifies the path that limits LDAP queries. When you set the Base DN to the top-level domain (TLD) or bae path of a domain, LDAP searches span the entire domain LDAP structure, inclding LDAP referrals to alternative domains that have a Trust with the currently joined domain.
 
 Often, the Base DN configuration ensures that the system searches all Organizational Units (OUs) in the domain, for example when the Administrator team might not have control over the OUs that contains the user accounts to be retrieved. (This is common in a dynamic environment that an external team manages.)
 
 Qumulo Core lets you configure multiple Base DNs by providing their paths in a semicolon-separated list that includes the paths of other trusted domains, which allows them to use POSIX attributes and SAML SSO logins.
-
-{% include important.html content="Disabling Search Trusted Domains disregards any trusted tomains that you add to the Base DN in Qumulo Core." %}
 
 
 ## Ignoring LDAP Referrals and Qumulo Core Operations
