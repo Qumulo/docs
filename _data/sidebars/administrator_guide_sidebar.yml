@@ -69,7 +69,7 @@ entries:
       url: /administrator-guide/upgrading-qumulo-core/instant-software-platform.html
       output: web, pdf
 
-    - title: Qumulo Core Upgrade Mode Reference
+    - title: Upgrade Mode Reference
       url: /administrator-guide/upgrading-qumulo-core/mode-reference.html
       output: web, pdf
 
@@ -87,15 +87,15 @@ entries:
     output: web, pdf
     folderitems:
 
-    - title: Partitioning a Qumulo Cluster into Tenants
+    - title: Partitioning a Cluster into Tenants
       url: /administrator-guide/network-multitenancy/partitioning-cluster-into-tenants.html
       output: web, pdf
 
-    - title: Configuring Management Protocols on a Tenant
+    - title: Configuring Management Protocols
       url: /administrator-guide/network-multitenancy/configuring-management-protocols.html
       output: web, pdf
 
-    - title: Configuring File System Protocols on a Tenant
+    - title: Configuring File System Protocols
       url: /administrator-guide/network-multitenancy/configuring-file-system-protocols.html
       output: web, pdf
 
@@ -104,15 +104,15 @@ entries:
     output: web, pdf
     folderitems:
 
-    - title: Using Qumulo Core Access Tokens
+    - title: Using Access Tokens
       url: /administrator-guide/external-services/using-access-tokens.html
       output: web, pdf
       
-    - title: Connecting Your Kubernetes Cluster to Your Qumulo Cluster by Using the Qumulo Container Storage Interface (CSI) Driver
+    - title: Connecting a Kubernetes Cluster to a Qumulo Cluster
       url: /administrator-guide/external-services/connecting-kubernetes-cluster-with-container-storage-interface-csi-driver.html
       output: web, pdf
 
-  - title: Working with the Qumulo Core Web UI
+  - title: Web UI
     url: /administrator-guide/web-ui/index.html
     output: web, pdf
     folderitems:
@@ -125,7 +125,7 @@ entries:
       url: /administrator-guide/web-ui/inactivity-timeout.html
       output: web, pdf
 
-  - title: Working with the qq CLI
+  - title: qq CLI
     url: /administrator-guide/qq-cli/index.html
     output: web, pdf
     folderitems:
@@ -139,70 +139,70 @@ entries:
     output: web, pdf
     folderitems:
     
-    - title: Managing Encryption at Rest in Qumulo Core
+    - title: Managing Encryption at Rest
       url: /administrator-guide/protecting-data/managing-encryption-at-rest.html
       output: web, pdf
 
-    - title: Generating and Storing ECDSA Keys on a Qumulo Cluster
+    - title: Generating and Storing ECDSA Keys
       url: /administrator-guide/protecting-data/generating-storing-ecdsa-keys.html
       output: web, pdf
       
-    - title: Managing Security Keys in the Qumulo File System Key Store
+    - title: Managing Security Keys
       url: /administrator-guide/protecting-data/managing-security-keys.html
       output: web, pdf      
 
-    - title: Increasing the Node Fault Tolerance Level for Your Qumulo Cluster During Node-Add Operations
+    - title: Increasing the Node Fault Tolerance Level
       url: /administrator-guide/protecting-data/increasing-node-fault-tolerance-level.html
       output: web, pdf
 
-    - title: Adding Nodes to a Qumulo Cluster with Data Protection Configuration Changes
+    - title: Adding Nodes with Data Protection Configuration Changes
       url: /administrator-guide/protecting-data/adding-nodes-with-data-protection-changes.html
       output: web, pdf
 
-    - title: Replacing Nodes in a Qumulo Cluster by Performing a Transparent Platform Refresh
+    - title: Replacing Nodes by Performing a Transparent Platform Refresh
       url: /administrator-guide/protecting-data/replacing-nodes-by-performing-transparent-platform-refresh.html
       output: web, pdf
 
-  - title: Working with Snapshots
+  - title: Snapshots
     url: /administrator-guide/snapshots/index.html
     output: web, pdf
     folderitems:
 
-    - title: How Snapshots Work in Qumulo Core
+    - title: How Snapshots Work
       url: /administrator-guide/snapshots/how-snapshots-work.html
       output: web, pdf
 
-    - title: Managing Snapshots in Qumulo Core
+    - title: Managing Snapshots
       url: /administrator-guide/snapshots/managing-snapshots.html
       output: web, pdf
 
-    - title: Recovering Files by Using Snapshots
+    - title: Recovering Files with Snapshots
       url: /administrator-guide/snapshots/recovering-files.html
       output: web, pdf
 
-  - title: Replicating Data
+  - title: Data Replication
     url: /administrator-guide/replicating-data/index.html
     output: web, pdf
     folderitems:
 
-    - title: Using Qumulo Shift-To to Copy Objects to Amazon S3
+    - title: Shift-To Amazon S3
       url: /administrator-guide/replicating-data/shift-to-s3.html
       output: web, pdf
 
-    - title: Using Qumulo Shift-From for Amazon S3 to Copy Objects
+    - title: Shift-From Amazon S3
       url: /administrator-guide/replicating-data/shift-from-s3.html
       output: web, pdf
 
-  - title: Working with File System Protocols
+  - title: File System Protocols
     url: /administrator-guide/file-system-protocols/index.html
     output: web, pdf
     folderitems:
 
-    - title: Enabling and Using NFSv4.1 on a Qumulo Cluster
+    - title: Enabling and Using NFSv4.1
       url: /administrator-guide/file-system-protocols/nfsv4.1-enabling-using.html
       output: web, pdf
 
-    - title: Managing File Access Permissions by Using NFSv4.1 Access Control Lists (ACLs)
+    - title: Managing File Access Permissions with ACLs
       url: /administrator-guide/file-system-protocols/nfsv4.1-acls.html
       output: web, pdf
 
@@ -211,15 +211,15 @@ entries:
     output: web, pdf
     folderitems:
 
-    - title: How File System Change Notifications Work in Qumulo Core
+    - title: How File System Change Notifications Work
       url: /administrator-guide/watching-file-attribute-directory-changes/how-file-system-change-notifications-work.html
       output: web, pdf
 
-    - title: Watching for File Attribute and Directory Changes by Using SMB2 CHANGE_NOTIFY
+    - title: Watching for Changes with SMB2 CHANGE_NOTIFY
       url: /administrator-guide/watching-file-attribute-directory-changes/smb2-change-notify.html
       output: web, pdf
 
-    - title: Watching for File Attribute and Directory Changes by Using REST
+    - title: Watching for Changes with REST
       url: /administrator-guide/watching-file-attribute-directory-changes/rest.html
       output: web, pdf
 
@@ -252,32 +252,32 @@ entries:
       url: /administrator-guide/s3-api/supported-s3-functionality-known-limits.html
       output: web, pdf
 
-  - title: Using NFSv4.1 with Kerberos in Qumulo Core
+  - title: NFSv4.1 with Kerberos
     url: /administrator-guide/kerberos/index.html
     output: web, pdf
     folderitems:
 
-    - title: How NFSv4.1 Works with Kerberos in Qumulo Core
+    - title: How NFSv4.1 Works with Kerberos
       url: /administrator-guide/kerberos/kerberos-with-qumulo-core.html
       output: web, pdf
 
-    - title: Prerequisites for Joining a Qumulo Cluster to Active Directory
+    - title: Prerequisites for Joining to Active Directory
       url: /administrator-guide/kerberos/kerberos-prerequisites-joining-cluster-active-directory.html
       output: web, pdf
 
-    - title: Configuring Active Directory for Use With Kerberos
+    - title: Configuring Active Directory for Kerberos
       url: /administrator-guide/kerberos/kerberos-configuring-active-directory.html
       output: web, pdf
 
-    - title: Performing Additional Cluster Configuration after Joining Active Directory
+    - title: Performing Additional Cluster Configuration after Joining AD
       url: /administrator-guide/kerberos/kerberos-additional-cluster-configuration.html
       output: web, pdf
 
-    - title: Using Kerberos Permissions in the Qumulo File System
+    - title: Using Kerberos Permissions
       url: /administrator-guide/kerberos/kerberos-qumulo-permissions.html
       output: web, pdf
 
-    - title: Configuring a Linux Client for NFSv4.1 with Kerberos
+    - title: Configuring a Linux Client
       url: /administrator-guide/kerberos/kerberos-configuring-linux-client.html
       output: web, pdf
 
@@ -289,7 +289,7 @@ entries:
       url: /administrator-guide/kerberos/kerberos-troubleshooting.html
       output: web, pdf
 
-  - title: Configuring Monitoring and Collecting Metrics
+  - title: Monitoring and Metrics
     url: /administrator-guide/monitoring-and-metrics/index.html
     output: web, pdf
     folderitems:
@@ -298,7 +298,7 @@ entries:
       url: /administrator-guide/monitoring-and-metrics/enabling-cloud-based-monitoring-remote-support.html
       output: web, pdf
 
-    - title: Connecting to Cloud-Based Monitoring and S3 by Using a Custom Proxy
+    - title: Connecting to Cloud-Based Monitoring and S3 with a Custom Proxy
       url: /administrator-guide/monitoring-and-metrics/connecting-cloud-based-monitoring-s3-custom-proxy.html
       output: web, pdf
       
@@ -306,6 +306,6 @@ entries:
       url: /administrator-guide/monitoring-and-metrics/restoring-default-values-cloud-based-nexus-monitoring.html
       output: web, pdf
 
-    - title: Qumulo OpenMetrics API Specification
+    - title: OpenMetrics API Specification
       url: /administrator-guide/monitoring-and-metrics/openmetrics-api-specification.html
       output: web, pdf
