@@ -151,7 +151,7 @@ entries:
       url: /administrator-guide/snapshots/recovering-files.html
       output: web, pdf      
 
-  - title: Protecting Data
+  - title: Data Protection
     url: /administrator-guide/protecting-data/index.html
     output: web, pdf
     folderitems:
