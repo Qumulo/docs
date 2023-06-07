@@ -35,7 +35,7 @@ To decide whether your system should ignore LDAP referrals, consider the Qumulo 
 
 #### Authentication Processes that Trigger LDAP Queries
 * Identity mapping from NTFS to POSIX (SMB to NFS) by using the **Use Active Directory for POSIX attributes** AD configuration option
-* [SAML SSO](configuring-saml-single-sign-on-sso.html)
+* [SAML single sign-on (SSO)](configuring-saml-single-sign-on-sso.html)
 * [NFSv4.1 and Kerberos](../kerberos/)
 * [REST API access tokens](../external-services/using-access-tokens.html)
 * [S3 access keys](../s3-api/creating-managing-s3-access-keys.html)
