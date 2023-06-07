@@ -65,7 +65,7 @@ entries:
     output: web, pdf
     folderitems:
 
-    - title: Performing Instant Software Upgrades and Platform Upgrades
+    - title: Performing Upgrades
       url: /administrator-guide/upgrading-qumulo-core/instant-software-platform.html
       output: web, pdf
 
