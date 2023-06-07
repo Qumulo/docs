@@ -22,7 +22,7 @@ Disabling the Search Trusted Domains configuration option might benefit your sys
 
 The Base DN (Distinguished Name) configuration option specifies the path that limits LDAP queries. When you set the Base DN to the top-level domain (TLD) or base path of a domain, LDAP searches span the entire domain LDAP structure, including LDAP referrals to alternative domains that have a Trust with the currently joined domain.
 
-Often, the Base DN configuration ensures that the system searches all Organizational Units (OUs) in the domain, for example when the Administrator team might not have control over the OUs that contains the user accounts to be retrieved. (This is common in a dynamic environment that an external team manages.)
+Often, the Base DN configuration ensures that the system searches all Organizational Units (OUs) in the domain, for example when the Administrator team might not have control over the OUs that contain the user accounts to be retrieved. (This is common in a dynamic environment that an external team manages.)
 
 Qumulo Core lets you configure multiple Base DNs by providing their paths in a semicolon-separated list that includes the paths of other trusted domains, which allows them to use POSIX attributes and SAML SSO logins.
 
