@@ -52,19 +52,6 @@ entries:
       url: /administrator-guide/getting-started-qumulo-core/supported-configurations-known-limits.html
       output: web, pdf
       
-  - title: Authentication
-    url: /administrator-guide/authentication-qumulo-core/index.html
-    output: web, pdf
-    folderitems:
-    
-    - title: Installing VPN Keys
-      url: /administrator-guide/authentication/installing-vpn-keys-on-cluster.html
-      output: web, pdf
-
-    - title: Configuring SAML Single Sign-On (SSO)
-      url: /administrator-guide/authentication/configuring-saml-single-sign-on-sso.html
-      output: web, pdf    
-      
   - title: System Upgrades
     url: /administrator-guide/upgrading-qumulo-core/index.html
     output: web, pdf
@@ -77,6 +64,19 @@ entries:
     - title: Upgrade Mode Reference
       url: /administrator-guide/upgrading-qumulo-core/mode-reference.html
       output: web, pdf
+      
+  - title: Authentication
+    url: /administrator-guide/authentication-qumulo-core/index.html
+    output: web, pdf
+    folderitems:
+    
+    - title: Installing VPN Keys
+      url: /administrator-guide/authentication/installing-vpn-keys-on-cluster.html
+      output: web, pdf
+
+    - title: Configuring SAML Single Sign-On (SSO)
+      url: /administrator-guide/authentication/configuring-saml-single-sign-on-sso.html
+      output: web, pdf    
 
   - title: Network Configuration
     url: /administrator-guide/networking/index.html
