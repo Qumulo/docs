@@ -6,7 +6,7 @@ sidebar: administrator_guide_sidebar
 keywords: authentication, search_trusted_domains, trusted_domains, active_directory, ad, ldap
 ---
 
-During normal AD domain operations, a Qumulo cluster often encounters _LDAP referrals_ that indicate to the cluster in what alternative locations within an AD domain it might locate requested information. Often, these referrals are hints to alternative trusted AD domains which a cluster accesses through a Domain Trust, such as a Parent Domain Trust or an external Domain Trust.
+During normal AD domain operations, a Qumulo cluster often encounters _LDAP referrals_ that indicate to the cluster in what other locations within an AD domain it might locate requested information. Often, these referrals are hints to other trusted AD domains which a cluster accesses through a Domain Trust, such as a Parent Domain Trust or an external Domain Trust.
 
 
 ## Reducing Latency by Disabling Search Trusted Domains
@@ -21,11 +21,11 @@ Disabling this option might benefit your system if you can determine that all re
 This section explains the limitations of disabling the **Search Trusted Domains** configuration option.
 
 ### Trusted Domains Specified in the Base DN
-The **Base DN** (Distinguished Name) configuration option specifies the path that limits LDAP queries. When you set the Base DN to the top-level domain or base path of a domain, LDAP searches span the entire domain's LDAP structure, including LDAP referrals to alternative domains that have a Trust with the currently joined domain.
+The **Base DN** (Distinguished Name) configuration option specifies the path that limits LDAP queries. When you set the Base DN to the top-level domain or base path of a domain, LDAP searches span the entire domain's LDAP structure, including LDAP referrals to other domains that have a Trust with the currently joined domain.
 
 Often, the Base DN configuration ensures that the system searches all Organizational Units (OUs) in the domain, for example when the Administrator team might not have control over the OUs that contain the user accounts to be retrieved. (This is common in a dynamic environment that an external team manages.)
 
-Qumulo Core lets you configure multiple Base DNs by providing their paths in a semicolon-separated list that includes the paths of alternative trusted domains. This configuration permits the trusted domains to use POSIX attributes and SAML SSO logins.
+Qumulo Core lets you configure multiple Base DNs by providing their paths in a semicolon-separated list that includes the paths of other trusted domains. This configuration permits the trusted domains to use POSIX attributes and SAML SSO logins.
 
 {% include important.html content="Disabling Search Trusted Domains disregards any trusted domains specified in the Base DN." %}
 
@@ -43,6 +43,6 @@ To decide whether your system should ignore LDAP referrals, consider the Qumulo 
 #### Unaffected Operations
 * Performing Kerberos SMB SSO logins from Domain Local or Trusted Domain users
 * Performing NTMLv2 SMB logins (username and password) from Domain Local or Trusted Domain users
-* Using Domain Local groups that contain users and groups from alternative Trusted Domains
+* Using Domain Local groups that contain users and groups from other Trusted Domains
 * Adding users or groups to SMB share permissions by using the Qumulo Core Web UI or `qq` CLI
 * Resolving Security Identifiers (SIDs) to usernames by using client dialog boxes, for example in macOS Finder or Windows File Explorer
