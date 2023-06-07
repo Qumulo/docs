@@ -71,6 +71,11 @@ figure {
   margin-bottom:12px;
 }
 
+.table-float-child {
+  width: 50%;
+  float: left;
+}
+
 /* -------------------- TOP NAVBAR START -------------------- */
 .clkb {
   white-space: nowrap;

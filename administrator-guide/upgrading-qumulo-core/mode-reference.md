@@ -14,9 +14,12 @@ keywords: update, upgrade, instant, instant_software_upgrade, platform, platform
 
 {% include important.html content="Although the _upgrade types_ for [on-premises upgrades](#on-premises-upgrades) and [cloud upgrades](#cloud-upgrades) are most often the same, they do occasionally diverge. For example, for Qumulo Core 5.3.1, a cloud deployment allows an instant upgrades, an on-premises deployment requires a platform upgrade." %}
 
-## On-Premises Upgrades
+{{site.nexusDownloads}}
 
-<table>
+<div class="table-float-container">
+<div class="table-float-child">
+  <h2>On-Premises Upgrades</h2>
+  <table>
   <tbody>
     <thead>
       <th>Version</th>
@@ -248,9 +251,10 @@ keywords: update, upgrade, instant, instant_software_upgrade, platform, platform
     </tr>
   </tbody>
 </table>
+</div>
 
-## Cloud Upgrades
-
+<div class="table-float-child">
+<h2>Cloud Upgrades</h2>
 <table>
   <tbody>
     <thead>
@@ -483,3 +487,6 @@ keywords: update, upgrade, instant, instant_software_upgrade, platform, platform
     </tr>
   </tbody>
 </table>
+</div>
+  
+</div>

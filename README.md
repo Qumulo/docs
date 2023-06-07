@@ -1,6 +1,6 @@
 ---
 title: "Qumulo Documentation"
-summary: "The Qumulo Documentation Portal is a documentation repository that uses <a href='https://www.writethedocs.org/guide/docs-as-code/'>docs-as-code principles</a> and contains information and guidance about Qumulo-certified hardware platforms, Qumulo in the cloud, and Qumulo Core functionality and configuration, and Qumulo Alerts administration."
+summary: "Welcome to the Qumulo Documentation Portal. This repository uses <a href='https://www.writethedocs.org/guide/docs-as-code/'>docs-as-code principles</a> to provide guidance about working with Qumulo."
 permalink: index.html
 breadcrumbs: exclude
 ---
@@ -21,8 +21,13 @@ To get started, choose one of the following guides.
   <span class="guide-button"><a class="multilink" href="qumulo-alerts-guide/"><img src="images/qumulo-alerts-guide.png" alt="Qumulo Alerts Administrator Guide" class="landing-page-icon"><br>Qumulo Alerts Administrator&nbsp;Guide</a></span>
 </div>
 
-## Visit Qumulo Care
-For articles about advanced Qumulo platform and Qumulo Core functionality, visit [Qumulo Care](https://care.qumulo.com/hc/en-us). Qumulo Care also lets you review product release notes, watch videos from our content library, get involved in the Qumulo community.
+## Get Qumulo Core
+{{site.nexusDownloads}}
+
+## Collaborate
+For announcements, asking questions, and making feature requests, see [Community Q](https://care.qumulo.com/hc/en-us/community/topics).
+
+We're currently in process of migrating legacy articles about Qumulo Core and hardware platform functionality from [Qumulo Care](https://care.qumulo.com/hc/en-us). To help us prioritize topics for migration, [send feedback to Team Qontent](qontent-feedback@qumulo.com).
 
 ## Reach Out to Us
-If you have any additional questions or want to give us feedback, [open a case](https://care.qumulo.com/hc/en-us/requests/new), or {{site.contactQumuloCare}} through Slack, email, or by phone.
+If you need help, [open a case](https://care.qumulo.com/hc/en-us/requests/new), or {{site.contactQumuloCare}} through Slack, email, or by phone.
