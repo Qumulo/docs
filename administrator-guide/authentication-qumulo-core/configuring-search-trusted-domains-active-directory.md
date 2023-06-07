@@ -35,7 +35,7 @@ To decide whether to ignore LDAP referrals, consider the Qumulo Core operations 
 * [SAML SSO Integration](configuring-saml-single-sign-on-sso.html)
 * [Authentication with NFSv4.1 and Kerberos](../kerberos/)
 * [REST API access tokens](../external-services/using-access-tokens.html)
-* [S3 access keys)(../s3-api/creating-managing-s3-access-keys.html)
+* [S3 access keys](../s3-api/creating-managing-s3-access-keys.html)
 
 ### Operations Unaffected by Search Trusted Domains Configuration
 * Kerberos SMB SSO logins from Domain Local or Trusted Domain users
