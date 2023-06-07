@@ -113,8 +113,8 @@ If you repeatedly download from the same S3 folder, you can speed up the downloa
 A new relationship for subsequent downloads doesn't share any tracking information with previous relationships associated with a directory and might recopy data that is already downloaded.
 
 
-## Using the Qumulo Web UI to Copy Files and Manage Relationships
-This section describes how to use the Qumulo Web UI 4.2.5 (and higher) to copy files from Amazon S3 to a Qumulo cluster, review Shift relationship details, stop a running copy job, repeat a completed copy job, and delete a relationship.
+## Using the Qumulo Core Web UI to Copy Files and Manage Relationships
+This section describes how to use the Qumulo Core Web UI 4.2.5 (and higher) to copy files from Amazon S3 to a Qumulo cluster, review Shift relationship details, stop a running copy job, repeat a completed copy job, and delete a relationship.
 
 ### To Copy Files from Amazon S3
 1. Log in to Qumulo Core.

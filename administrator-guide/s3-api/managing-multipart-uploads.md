@@ -28,7 +28,7 @@ The following conditions are true for multipart S3 uploads in Qumulo Core.
 
 * Multipart upload data isn't visible in the Qumulo file system, and isn't included in file system snapshots, until you complete the upload successfully by making a call to the `CompleteMultipartUpload` S3 API.
 
-  {% include note.html content="When you view the breakdown of a Qumulo cluster's capacity by using the Qumulo Web UI, REST API, or `qq` CLI, Qumulo Core doesn't distinguish between capacity that the file system and incomplete multipart uploads use." %}
+  {% include note.html content="When you view the breakdown of a Qumulo cluster's capacity by using the Qumulo Core Web UI, REST API, or `qq` CLI, Qumulo Core doesn't distinguish between capacity that the file system and incomplete multipart uploads use." %}
 
 * Qumulo Core doesn't delete multipart data unless it [aborts and cleans up the multipart upload automatically](#cleaning-up-uploads-automatically) or you [abort and clean up the multipart upload manually](#cleaning-up-uploads-manually).
 
