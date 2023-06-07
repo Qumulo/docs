@@ -44,7 +44,7 @@ entries:
     output: web, pdf
     folderitems:
 
-    - title: Creating a USB Drive Installer
+    - title: Creating a USB Drive Installer for a Hardware Node
       url: /administrator-guide/getting-started-qumulo-core/creating-usb-drive-installer.html
       output: web, pdf
 
