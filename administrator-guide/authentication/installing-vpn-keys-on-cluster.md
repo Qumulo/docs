@@ -1,8 +1,9 @@
 ---
 title: "Installing VPN Keys on a Qumulo Cluster"
 summary: "This section explains how to install VPN keys on your Qumulo cluster over a network. You can install the VPN keys by using the <code>qq</code> CLI from a machine on the same network as your cluster or from one of your nodes."
-permalink: /administrator-guide/getting-started-qumulo-core/installing-vpn-keys-on-cluster.html
+permalink: /administrator-guide/authentication/installing-vpn-keys-on-cluster.html
 redirect_from:
+  - /administrator-guide/getting-started-qumulo-core/installing-vpn-keys-on-cluster.html
   - /administrator-guide/qumulo-core/installing-vpn-keys-on-cluster.html
 sidebar: administrator_guide_sidebar
 keywords: vpn, key, cluster, network
