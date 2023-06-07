@@ -31,18 +31,18 @@ Qumulo Core lets you configure multiple Base DNs by providing their paths in a s
 
 
 ### Ignoring LDAP Referrals and Qumulo Core Operations
-To decide whether your system should ignore LDAP referrals, consider the Qumulo Core operations that this might affect.
+To decide whether your system should ignore LDAP referrals, consider the Qumulo Core authentication processes that this might affect.
 
-#### Operations that Trigger LDAP Queries
+#### Authentication Processes that Trigger LDAP Queries
 * Identity mapping from NTFS to POSIX (SMB to NFS) by using the **Use Active Directory for POSIX attributes** AD configuration option
-* [SAML SSO Integration](configuring-saml-single-sign-on-sso.html)
-* [Authentication with NFSv4.1 and Kerberos](../kerberos/)
+* [SAML SSO](configuring-saml-single-sign-on-sso.html)
+* [NFSv4.1 and Kerberos](../kerberos/)
 * [REST API access tokens](../external-services/using-access-tokens.html)
 * [S3 access keys](../s3-api/creating-managing-s3-access-keys.html)
 
-#### Unaffected Operations
-* Performing Kerberos SMB SSO logins from Domain Local or Trusted Domain users
-* Performing NTMLv2 SMB logins (username and password) from Domain Local or Trusted Domain users
-* Using Domain Local groups that contain users and groups from other Trusted Domains
-* Adding users or groups to SMB share permissions by using the Qumulo Core Web UI or `qq` CLI
-* Resolving Security Identifiers (SIDs) to usernames by using client dialog boxes, for example in macOS Finder or Windows File Explorer
+#### Unaffected Authentication Processes
+* Kerberos SMB SSO logins from Domain Local or Trusted Domain users
+* NTMLv2 SMB logins (with a username and a password) from Domain Local or Trusted Domain users
+* Domain Local groups that contain users and groups from other Trusted Domains
+* Users or groups added to SMB share permissions by using the Qumulo Core Web UI or `qq` CLI
+* Security Identifiers (SIDs) resolved to usernames by using client dialog boxes, for example in macOS Finder or Windows File Explorer
