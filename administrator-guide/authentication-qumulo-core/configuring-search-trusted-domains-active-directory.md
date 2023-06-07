@@ -30,17 +30,17 @@ Qumulo Core lets you configure multiple Base DNs by providing their paths in a s
 {% include important.html content="Disabling Search Trusted Domains disregards any trusted domains specified in the Base DN." %}
 
 
-## Ignoring LDAP Referrals and Qumulo Core Operations
+### Ignoring LDAP Referrals and Qumulo Core Operations
 To decide whether your system should ignore LDAP referrals, consider the Qumulo Core operations that this might affect.
 
-### Operations that Trigger LDAP Queries
+#### Operations that Trigger LDAP Queries
 * Identity mapping from NTFS to POSIX (SMB to NFS) by using the **Use Active Directory for POSIX attributes** AD configuration option
 * [SAML SSO Integration](configuring-saml-single-sign-on-sso.html)
 * [Authentication with NFSv4.1 and Kerberos](../kerberos/)
 * [REST API access tokens](../external-services/using-access-tokens.html)
 * [S3 access keys](../s3-api/creating-managing-s3-access-keys.html)
 
-### Unaffected Operations
+#### Unaffected Operations
 * Performing Kerberos SMB SSO logins from Domain Local or Trusted Domain users
 * Performing NTMLv2 SMB logins (username and password) from Domain Local or Trusted Domain users
 * Using Domain Local groups that contain users and groups from alternative Trusted Domains
