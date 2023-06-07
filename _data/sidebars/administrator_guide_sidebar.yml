@@ -133,6 +133,23 @@ entries:
     - title: Enabling Autocomplete for the qq CLI
       url: /administrator-guide/qq-cli/enabling-autocomplete.html
       output: web, pdf
+      
+  - title: Snapshots
+    url: /administrator-guide/snapshots/index.html
+    output: web, pdf
+    folderitems:
+
+    - title: How Snapshots Work
+      url: /administrator-guide/snapshots/how-snapshots-work.html
+      output: web, pdf
+
+    - title: Managing Snapshots
+      url: /administrator-guide/snapshots/managing-snapshots.html
+      output: web, pdf
+
+    - title: Recovering Files with Snapshots
+      url: /administrator-guide/snapshots/recovering-files.html
+      output: web, pdf      
 
   - title: Protecting Data
     url: /administrator-guide/protecting-data/index.html
@@ -163,23 +180,6 @@ entries:
       url: /administrator-guide/protecting-data/replacing-nodes-by-performing-transparent-platform-refresh.html
       output: web, pdf
 
-  - title: Snapshots
-    url: /administrator-guide/snapshots/index.html
-    output: web, pdf
-    folderitems:
-
-    - title: How Snapshots Work
-      url: /administrator-guide/snapshots/how-snapshots-work.html
-      output: web, pdf
-
-    - title: Managing Snapshots
-      url: /administrator-guide/snapshots/managing-snapshots.html
-      output: web, pdf
-
-    - title: Recovering Files with Snapshots
-      url: /administrator-guide/snapshots/recovering-files.html
-      output: web, pdf
-
   - title: Data Replication
     url: /administrator-guide/replicating-data/index.html
     output: web, pdf
@@ -192,21 +192,8 @@ entries:
     - title: Shift-From Amazon S3
       url: /administrator-guide/replicating-data/shift-from-s3.html
       output: web, pdf
-
-  - title: File System Protocols
-    url: /administrator-guide/file-system-protocols/index.html
-    output: web, pdf
-    folderitems:
-
-    - title: Enabling and Using NFSv4.1
-      url: /administrator-guide/file-system-protocols/nfsv4.1-enabling-using.html
-      output: web, pdf
-
-    - title: Managing File Access Permissions with ACLs
-      url: /administrator-guide/file-system-protocols/nfsv4.1-acls.html
-      output: web, pdf
-
-  - title: Watching for File Attribute and Directory Changes
+      
+  - title: Watching for Changes
     url: /administrator-guide/watching-file-attribute-directory-changes/index.html
     output: web, pdf
     folderitems:
@@ -221,6 +208,19 @@ entries:
 
     - title: Watching for Changes with REST
       url: /administrator-guide/watching-file-attribute-directory-changes/rest.html
+      output: web, pdf     
+
+  - title: File System Protocols
+    url: /administrator-guide/file-system-protocols/index.html
+    output: web, pdf
+    folderitems:
+
+    - title: Enabling and Using NFSv4.1
+      url: /administrator-guide/file-system-protocols/nfsv4.1-enabling-using.html
+      output: web, pdf
+
+    - title: Managing File Access Permissions with ACLs
+      url: /administrator-guide/file-system-protocols/nfsv4.1-acls.html
       output: web, pdf
 
   - title: NFSv4.1 with Kerberos
@@ -236,11 +236,11 @@ entries:
       url: /administrator-guide/kerberos/kerberos-prerequisites-joining-cluster-active-directory.html
       output: web, pdf
 
-    - title: Configuring Active Directory for Kerberos
+    - title: Configuring Active Directory
       url: /administrator-guide/kerberos/kerberos-configuring-active-directory.html
       output: web, pdf
 
-    - title: Performing Additional Cluster Configuration after Joining AD
+    - title: Performing Additional Cluster Configuration
       url: /administrator-guide/kerberos/kerberos-additional-cluster-configuration.html
       output: web, pdf
 
