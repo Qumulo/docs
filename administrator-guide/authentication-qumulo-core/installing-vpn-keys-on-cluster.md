@@ -6,7 +6,7 @@ redirect_from:
   - /administrator-guide/getting-started-qumulo-core/installing-vpn-keys-on-cluster.html
   - /administrator-guide/qumulo-core/installing-vpn-keys-on-cluster.html
 sidebar: administrator_guide_sidebar
-keywords: vpn, key, cluster, network
+keywords: vpn, key, cluster, network, authentication
 varCopyFile: 1. Copy the `.zip` file from Qumulo Care to a computer on the same network as your cluster, and decompress the file.
 varVerifyKeys: 1. To verify that the VPN keys installed correctly, use the `get_vpn_keys` command. For example&#58;
 ---
