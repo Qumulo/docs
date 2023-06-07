@@ -48,17 +48,22 @@ entries:
       url: /administrator-guide/getting-started-qumulo-core/creating-usb-drive-installer.html
       output: web, pdf
 
-    - title: Installing VPN Keys
-      url: /administrator-guide/getting-started-qumulo-core/installing-vpn-keys-on-cluster.html
-      output: web, pdf
-
-    - title: Configuring SAML Single Sign-On (SSO)
-      url: /administrator-guide/getting-started-qumulo-core/configuring-saml-single-sign-on-sso.html
-      output: web, pdf
-
     - title: Supported Configurations and Limits
       url: /administrator-guide/getting-started-qumulo-core/supported-configurations-known-limits.html
       output: web, pdf
+      
+  - title: Authentication
+    url: /administrator-guide/authentication-qumulo-core/index.html
+    output: web, pdf
+    folderitems:
+    
+    - title: Installing VPN Keys
+      url: /administrator-guide/authentication/installing-vpn-keys-on-cluster.html
+      output: web, pdf
+
+    - title: Configuring SAML Single Sign-On (SSO)
+      url: /administrator-guide/authentication/configuring-saml-single-sign-on-sso.html
+      output: web, pdf    
       
   - title: System Upgrades
     url: /administrator-guide/upgrading-qumulo-core/index.html
