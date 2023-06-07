@@ -76,7 +76,20 @@ entries:
 
     - title: Configuring SAML Single Sign-On (SSO)
       url: /administrator-guide/authentication/configuring-saml-single-sign-on-sso.html
-      output: web, pdf    
+      output: web, pdf
+
+  - title: External Services
+    url: /administrator-guide/external-services/index.html
+    output: web, pdf
+    folderitems:
+
+    - title: Using Access Tokens
+      url: /administrator-guide/external-services/using-access-tokens.html
+      output: web, pdf
+      
+    - title: Connecting a Kubernetes Cluster to a Qumulo Cluster
+      url: /administrator-guide/external-services/connecting-kubernetes-cluster-with-container-storage-interface-csi-driver.html
+      output: web, pdf
 
   - title: Network Configuration
     url: /administrator-guide/networking/index.html
@@ -102,19 +115,6 @@ entries:
 
     - title: Configuring File System Protocols
       url: /administrator-guide/network-multitenancy/configuring-file-system-protocols.html
-      output: web, pdf
-
-  - title: External Services
-    url: /administrator-guide/external-services/index.html
-    output: web, pdf
-    folderitems:
-
-    - title: Using Access Tokens
-      url: /administrator-guide/external-services/using-access-tokens.html
-      output: web, pdf
-      
-    - title: Connecting a Kubernetes Cluster to a Qumulo Cluster
-      url: /administrator-guide/external-services/connecting-kubernetes-cluster-with-container-storage-interface-csi-driver.html
       output: web, pdf
 
   - title: Web UI
