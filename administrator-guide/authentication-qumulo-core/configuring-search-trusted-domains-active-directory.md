@@ -17,14 +17,12 @@ In Qumulo Core 6.1.1 (and higher), to reduce the potential latency of AD domain 
 Disabling the Search Trusted Domains configuration option might benefit your system if you can determine that all relevant user and group accounts&mdash;which you might expect to use POSIX attributes, logins with SAML Single Sign-On (SSO), or logins with NFS4.1 and Kerberos&mdash;are located entirely in the current domain.
 
 
-## The Base DN Path and LDAP Queries
-{% include important.html content="Disabling Search Trusted Domains disregards any trusted tomains that you add to the Base DN in Qumulo Core." %}
+## Specifying Trusted Domains in the Base DN
+{% include important.html content="Qumulo Core lets you configure multiple Base DNs by providing their paths in a semicolon-separated list that includes the paths of alternative trusted domains, which allows them to use POSIX attributes and SAML SSO logins. Disabling Search Trusted Domains disregards any trusted domains that you add to the Base DN." %}
 
 The Base DN (Distinguished Name) configuration option specifies the path that limits LDAP queries. When you set the Base DN to the top-level domain (TLD) or base path of a domain, LDAP searches span the entire domain LDAP structure, including LDAP referrals to alternative domains that have a Trust with the currently joined domain.
 
-Often, the Base DN configuration ensures that the system searches all Organizational Units (OUs) in the domain, for example when the Administrator team might not have control over the OUs that contain the user accounts to be retrieved. (This is common in a dynamic environment that an external team manages.)
-
-Qumulo Core lets you configure multiple Base DNs by providing their paths in a semicolon-separated list that includes the paths of other trusted domains, which allows them to use POSIX attributes and SAML SSO logins.
+Often, the Base DN configuration ensures that the system searches all Organizational Units (OUs) in the domain, for example when the Administrator team might not have control over the OUs that contain the user accounts to be retrieved. (This is common in a dynamic environment wich an external team manages.)
 
 
 ## Ignoring LDAP Referrals and Qumulo Core Operations
