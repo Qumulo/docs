@@ -99,7 +99,7 @@ entries:
       url: /administrator-guide/network-multitenancy/configuring-file-system-protocols.html
       output: web, pdf
 
-  - title: Connecting to External Services
+  - title: External Services
     url: /administrator-guide/external-services/index.html
     output: web, pdf
     folderitems:
