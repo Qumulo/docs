@@ -71,11 +71,11 @@ entries:
     folderitems:
     
     - title: Installing VPN Keys
-      url: /administrator-guide/authentication/installing-vpn-keys-on-cluster.html
+      url: /administrator-guide/authentication-qumulo-core/installing-vpn-keys-on-cluster.html
       output: web, pdf
 
     - title: Configuring SAML Single Sign-On (SSO)
-      url: /administrator-guide/authentication/configuring-saml-single-sign-on-sso.html
+      url: /administrator-guide/authentication-qumulo-core/configuring-saml-single-sign-on-sso.html
       output: web, pdf
 
   - title: External Services
