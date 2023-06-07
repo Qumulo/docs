@@ -17,16 +17,21 @@ In Qumulo Core 6.1.1 (and higher), to reduce the potential latency of AD domain 
 Disabling this option might benefit your system if you can determine that all relevant user and group accounts&mdash;which you might expect to use POSIX attributes, logins with SAML Single Sign-On (SSO), or logins with NFS4.1 and Kerberos&mdash;are located entirely in the current domain.
 
 
-## Specifying Trusted Domains in the Base DN
-{% include important.html content="Qumulo Core lets you configure multiple Base DNs by providing their paths in a semicolon-separated list that includes the paths of alternative trusted domains. This configuration permits these trusted domains to use POSIX attributes and SAML SSO logins. Disabling Search Trusted Domains disregards any trusted domains specified in the Base DN." %}
+## Limitations of Disabling Search Trusted Domains
+This section explains the limitations of disabling the **Search Trusted Domains** configuration option.
 
-The Base DN (Distinguished Name) configuration option specifies the path that limits LDAP queries. When you set the Base DN to the top-level domain (TLD) or base path of a domain, LDAP searches span the entire domain LDAP structure, including LDAP referrals to alternative domains that have a Trust with the currently joined domain.
+### Trusted Domains Specified in the Base DN
+The **Base DN** (Distinguished Name) configuration option specifies the path that limits LDAP queries. When you set the Base DN to the top-level domain or base path of a domain, LDAP searches span the entire domain's LDAP structure, including LDAP referrals to alternative domains that have a Trust with the currently joined domain.
 
-Often, the Base DN configuration ensures that the system searches all Organizational Units (OUs) in the domain, for example when the Administrator team might not have control over the OUs that contain the user accounts to be retrieved. (This is common in a dynamic environment wich an external team manages.)
+Often, the Base DN configuration ensures that the system searches all Organizational Units (OUs) in the domain, for example when the Administrator team might not have control over the OUs that contain the user accounts to be retrieved. (This is common in a dynamic environment that an external team manages.)
+
+Qumulo Core lets you configure multiple Base DNs by providing their paths in a semicolon-separated list that includes the paths of alternative trusted domains. This configuration permits the trusted domains to use POSIX attributes and SAML SSO logins.
+
+{% include important.html content="Disabling Search Trusted Domains disregards any trusted domains specified in the Base DN." %}
 
 
 ## Ignoring LDAP Referrals and Qumulo Core Operations
-To decide whether to ignore LDAP referrals, consider the Qumulo Core operations that might be affected.
+To decide whether your system should ignore LDAP referrals, consider the Qumulo Core operations that this might affect.
 
 ### Operations that Trigger LDAP Queries
 * Identity mapping from NTFS to POSIX (SMB to NFS) by using the **Use Active Directory for POSIX attributes** AD configuration option
@@ -35,9 +40,9 @@ To decide whether to ignore LDAP referrals, consider the Qumulo Core operations 
 * [REST API access tokens](../external-services/using-access-tokens.html)
 * [S3 access keys](../s3-api/creating-managing-s3-access-keys.html)
 
-### Operations Unaffected by Search Trusted Domains Configuration
-* Kerberos SMB SSO logins from Domain Local or Trusted Domain users
-* NTMLv2 SMB logins (with username and password) from Domain Local or Trusted Domain users.
-* Use of Domain Local groups that contain users and groups from alternative Trusted Domains
+### Unaffected Operations
+* Performing Kerberos SMB SSO logins from Domain Local or Trusted Domain users
+* Performing NTMLv2 SMB logins (username and password) from Domain Local or Trusted Domain users
+* Using Domain Local groups that contain users and groups from alternative Trusted Domains
 * Adding users or groups to SMB share permissions by using the Qumulo Core Web UI or `qq` CLI
 * Resolving Security Identifiers (SIDs) to usernames by using client dialog boxes, for example in macOS Finder or Windows File Explorer
