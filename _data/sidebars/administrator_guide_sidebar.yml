@@ -44,23 +44,23 @@ entries:
     output: web, pdf
     folderitems:
 
-    - title: Creating a Qumulo Core USB Drive Installer
+    - title: Creating a USB Drive Installer
       url: /administrator-guide/getting-started-qumulo-core/creating-usb-drive-installer.html
       output: web, pdf
 
-    - title: Installing VPN Keys on a Qumulo Cluster
+    - title: Installing VPN Keys
       url: /administrator-guide/getting-started-qumulo-core/installing-vpn-keys-on-cluster.html
       output: web, pdf
 
-    - title: Configuring SAML Single Sign-On (SSO) for Your Qumulo Cluster
+    - title: Configuring SAML Single Sign-On (SSO)
       url: /administrator-guide/getting-started-qumulo-core/configuring-saml-single-sign-on-sso.html
       output: web, pdf
 
-    - title: Supported Configurations and Known Limits for Qumulo Core
+    - title: Supported Configurations and Known Limits
       url: /administrator-guide/getting-started-qumulo-core/supported-configurations-known-limits.html
       output: web, pdf
       
-  - title: Upgrading Qumulo Core
+  - title: System Upgrades
     url: /administrator-guide/upgrading-qumulo-core/index.html
     output: web, pdf
     folderitems:
@@ -73,7 +73,7 @@ entries:
       url: /administrator-guide/upgrading-qumulo-core/mode-reference.html
       output: web, pdf
 
-  - title: Configuring Networking for Qumulo Core
+  - title: Network Configuration
     url: /administrator-guide/networking/index.html
     output: web, pdf
     folderitems:
@@ -99,7 +99,7 @@ entries:
       url: /administrator-guide/network-multitenancy/configuring-file-system-protocols.html
       output: web, pdf
 
-  - title: Connecting Qumulo Core to External Services
+  - title: Connecting to External Services
     url: /administrator-guide/external-services/index.html
     output: web, pdf
     folderitems:
