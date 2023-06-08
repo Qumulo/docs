@@ -105,21 +105,36 @@ The following table lists metric names, types, labels, and descriptions.
     <tr>
       <td><code>qumulo_ad_netlogon_request<br>_errors</code></td>
       <td><a href="#metric-type-counter"><code>counter</code></a></td>
-      <td><a href="#metric-label-server_url"><code>server_url</code></a></td>
+      <td>
+        <ul>
+          <li class="pdf-friendly"><a href="#metric-label-domain_url"><code>domain_url</code></a></li>
+          <li class="pdf-friendly"><a href="#metric-label-server_url"><code>server_url</code></a></li>
+        </ul>
+      </td>
       <td>5.3.0</td>
-      <td>The total number Active Directory (AD) <code>NETLOGON</code> requests that resulted in an error</td>
+      <td>The total number of Active Directory (AD) <code>NETLOGON</code> requests that resulted in an error</td>
     </tr>
     <tr>
       <td><code>qumulo_ad_netlogon_request<br>_latency_seconds</code></td>
       <td><a href="#metric-type-histogram"><code>histogram</code></a></td>
-      <td><a href="#metric-label-server_url"><code>server_url</code></a></td>
+      <td>
+        <ul>
+          <li class="pdf-friendly"><a href="#metric-label-domain_url"><code>domain_url</code></a></li>
+          <li class="pdf-friendly"><a href="#metric-label-server_url"><code>server_url</code></a></li>
+        </ul>
+      </td>
       <td>5.3.0</td>
       <td>The total latency for AD <code>NETLOGON</code> requests</td>
     </tr>
     <tr>
       <td><code>qumulo_ad_netlogon_requests</code></td>
       <td><a href="#metric-type-counter"><code>counter</code></a></td>
-      <td><a href="#metric-label-server_url"><code>server_url</code></a></td>
+      <td>
+        <ul>
+          <li class="pdf-friendly"><a href="#metric-label-domain_url"><code>domain_url</code></a></li>
+          <li class="pdf-friendly"><a href="#metric-label-server_url"><code>server_url</code></a></li>
+        </ul>
+      </td>
       <td>5.3.0</td>
       <td>The total number of completed AD <code>NETLOGON</code> operations</td>
     </tr>
@@ -273,42 +288,57 @@ The following table lists metric names, types, labels, and descriptions.
     <tr>
       <td><code>qumulo_ldap_lookup<br>_request_errors</code></td>
       <td><a href="#metric-type-counter"><code>counter</code></a></td>
-      <td><a href="#metric-label-server_url"><code>server_url</code></a></td>
+      <td>
+        <ul>
+          <li class="pdf-friendly"><a href="#metric-label-domain_url"><code>domain_url</code></a></li>
+          <li class="pdf-friendly"><a href="#metric-label-server_url"><code>server_url</code></a></li>
+        </ul>
+      </td>
       <td>5.3.0</td>
       <td>The total number of LDAP requests that resulted in an error</td>
     </tr>
     <tr>
       <td><code>qumulo_ldap_lookup<br>_request_latency_seconds</code></td>
       <td><a href="#metric-type-histogram"><code>histogram</code></a></td>
-      <td><a href="#metric-label-server_url"><code>server_url</code></a></td>
+      <td>
+        <ul>
+          <li class="pdf-friendly"><a href="#metric-label-domain_url"><code>domain_url</code></a></li>
+          <li class="pdf-friendly"><a href="#metric-label-server_url"><code>server_url</code></a></li>
+        </ul>
+      </td>
       <td>5.3.0</td>
       <td>The total latency of LDAP requests</td>
     </tr>
     <tr>
       <td><code>qumulo_ldap_lookup<br>_requests</code></td>
       <td><a href="#metric-type-counter"><code>counter</code></a></td>
-      <td><a href="#metric-label-server_url"><code>server_url</code></a></td>
+      <td>
+        <ul>
+          <li class="pdf-friendly"><a href="#metric-label-domain_url"><code>domain_url</code></a></li>
+          <li class="pdf-friendly"><a href="#metric-label-server_url"><code>server_url</code></a></li>
+        </ul>
+      </td>
       <td>5.3.0</td>
       <td>The total number of completed LDAP requests</td>
     </tr>
     <tr>
       <td><code>qumulo_ldap_operation<br>_errors</code></td>
       <td><a href="#metric-type-counter"><code>counter</code></a></td>
-      <td>&mdash;</td>
+      <td><a href="#metric-label-domain_url"><code>domain_url</code></a></td>
       <td>5.3.0</td>
       <td>The total number of LDAP operations that resulted in an error</td>
     </tr>
     <tr>
       <td><code>qumulo_ldap_operation<br>_latency_seconds</code></td>
       <td><a href="#metric-type-histogram"><code>histogram</code></a></td>
-      <td>&mdash;</td>
+      <td><a href="#metric-label-domain_url"><code>domain_url</code></a></td>
       <td>5.3.0</td>
       <td>The total latency for LDAP operations</td>
     </tr>
     <tr>
       <td><code>qumulo_ldap_operations</code></td>
       <td><a href="#metric-type-counter"><code>counter</code></a></td>
-      <td>&mdash;</td>
+      <td><a href="#metric-label-domain_url"><code>domain_url</code></a></td>
       <td>5.3.0</td>
       <td>The total number of completed LDAP operations</td>
     </tr>
@@ -564,6 +594,11 @@ The following table lists metric label names, possible values, and descriptions.
         </ul>
       </td>
       <td>The underlying storage type</td>
+    </tr>
+    <tr>
+      <td><a id="metric-label-domain_url"></a><code>domain_url</code></td>
+      <td>An Active Directory domain (for example, <code>my-domain.com</code>) or an LDAP bind URI (for example, <code>ldap://my-server.my-domain.com</code>)</td>
+      <td>The URL of the domain</td>
     </tr>
     <tr>
       <td><a id="metric-label-drive_bay"></a><code>drive_bay</code></td>

@@ -1,6 +1,6 @@
 ---
 title: "Creating a Qumulo Core USB Drive Installer"
-summary: "This section explains how to create a Qumulo Core USB Drive Installer on macOS or Windows."
+summary: "This section explains how to create a Qumulo Core USB Drive Installer on macOS or Windows for deployment on a hardware platform."
 permalink: /administrator-guide/getting-started-qumulo-core/creating-usb-drive-installer.html
 redirect_from:
   - /administrator-guide/qumulo-core/creating-usb-drive-installer.html
