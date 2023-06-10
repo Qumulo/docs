@@ -557,11 +557,6 @@ div#toc {
     margin-left:10px;
 }
 
-/* Ensure that text wraps around TOC correctly
-#toc>ul {
-    margin-top:65px;
-}*/
-
 div#toc ul li {
     margin: 8px 0px 8px 22px;
     font-size: 90%;
@@ -1582,8 +1577,13 @@ li.pdf-friendly {
   .guide-button {
     width: 50%;
   }
-}
-
-@media only screen and (max-width: 412px) {
-
+  
+  /* Ensure that text doesn't wrap weirdly around
+     "On This Page" block on mobile devices. */
+  /* Float the "On this page" box to the right*/
+  div#toc {
+    float: unset;
+    position: relative;
+    margin-left:0px;
+  }
 }
