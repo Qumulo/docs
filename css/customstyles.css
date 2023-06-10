@@ -195,28 +195,6 @@ header {
   margin-top: 5px;
 }
 
-@media (max-width: 911px) {
-  .nav-wrapper {
-    /* Fix horizontal scrolling bug on mobile viewports*/
-    display:none !important;
-  }
-  .guide-button {
-    width: 170px;
-  }
-}
-
-@media only screen and (max-width: 600px) {
-  /* Prevent overly long permission names
-     from breaking display on mobile. */
-  .improve-mobile {
-    margin-left: -22px;
-  }
-  .footer-grumpquats {
-    float: left;
-    text-align: left;
-  }
-}
-
 .nav-wrapper .icon-menu {
   display:flex;
   margin-right: 10px;
@@ -1579,4 +1557,29 @@ h4.panel-title {
 
 li.pdf-friendly {
     margin-left:-15px !important;
+}
+
+@media (max-width: 911px) {
+  .nav-wrapper {
+    /* Fix horizontal scrolling bug on mobile viewports*/
+    display:none !important;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  /* Prevent overly long permission names
+     from breaking display on mobile. */
+  .improve-mobile {
+    margin-left: -22px;
+  }
+  .footer-grumpquats {
+    float: left;
+    text-align: left;
+  }
+}
+
+@media only screen and (max-width: 412px) {
+  .guide-button {
+    width: 170px;
+  }
 }
