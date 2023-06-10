@@ -1580,6 +1580,6 @@ li.pdf-friendly {
 
 @media only screen and (max-width: 412px) {
   .guide-button {
-    width: 170px;
+    width: 50%;
   }
 }
