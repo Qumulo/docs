@@ -195,12 +195,13 @@ header {
   margin-top: 5px;
 }
 
-/*@media (max-width: 768px) {*/
 @media (max-width: 911px) {
   .nav-wrapper {
-    /*visibility:hidden;*/
     /* Fix horizontal scrolling bug on mobile viewports*/
     display:none !important;
+  }
+  .guide-button {
+    width: 170px;
   }
 }
 
@@ -211,8 +212,8 @@ header {
     margin-left: -22px;
   }
   .footer-grumpquats {
-    float:left;
-    text-align:left;
+    float: left;
+    text-align: left;
   }
 }
 
@@ -1288,13 +1289,6 @@ span.soft {
     margin:15px 15px 15px 0px;
     border: 1px solid #dedede;
 }
-
-/*
-@media only screen and (min-width: 900px), only screen and (min-device-width: 900px) {
-    .col-md-9 img {
-        max-height: 700px;
-    }
-}*/
 
 *:hover > .anchorjs-link {
     transition: color .25s linear;
