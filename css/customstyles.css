@@ -1580,10 +1580,13 @@ li.pdf-friendly {
   
   /* Ensure that text doesn't wrap weirdly around
      "On This Page" block on mobile devices. */
-  /* Float the "On this page" box to the right*/
   div#toc {
     float: unset;
     position: relative;
     margin-left:0px;
+  }
+  
+  div#toc ul {
+    max-width: unset;
   }
 }
