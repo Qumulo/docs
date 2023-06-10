@@ -1576,10 +1576,14 @@ li.pdf-friendly {
     float: left;
     text-align: left;
   }
-}
-
-@media only screen and (max-width: 412px) {
+  
+  /* Ensure that there are two tiles per row
+     on mobile devices. */
   .guide-button {
     width: 50%;
   }
+}
+
+@media only screen and (max-width: 412px) {
+
 }
