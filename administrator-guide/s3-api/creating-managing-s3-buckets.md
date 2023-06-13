@@ -94,8 +94,6 @@ Except for names that contain the period (`.`), Qumulo Core accepts all names th
 
 * Bucket names must start with a letter or a number.
 
-For more information, see [Bucket naming rules]({{site.s3.docs.bucketNamingRules}}) in the Amazon Simple Storage Service User Guide.
-
 ### How to Choose a Bucket Root
 You specify the [bucket root directory](#bucket-root) depending on how you create your S3 bucket.
 
