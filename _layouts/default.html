@@ -2,6 +2,9 @@
 <html lang="en">
 <head>
     {% include head.html %}
+    
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
+    
     <script>
         $(document).ready(function() {
             // Initialize navgoco with default options
@@ -41,7 +44,25 @@
     </script>
     <script>
         $(document).ready(function() {
+            // By default, Reading Mode is off and the button is dark.
+            if (Cookies.get('reading_mode') == '1' ) {
+                $("#tg-sb-sidebar").toggle();
+                $("#tg-sb-content").toggleClass('col-md-9');
+                $("#tg-sb-content").toggleClass('col-md-12');
+                $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                $("#tg-sb-icon").toggleClass('fa-toggle-off');                   
+            }
+            
             $("#tg-sb-link").click(function() {
+                if (Cookies.get('reading_mode') == '1' ) {
+                    // If the Reading Mode is on, remove the cookie.
+                    Cookies.remove('reading_mode');
+                } else {
+                    // If the Reading Mode is on, place the cookie.
+                    Cookies.set('reading_mode', '1');
+                }
+                
+                // Toggle the Reading Mode and change the button color.
                 $("#tg-sb-sidebar").toggle();
                 $("#tg-sb-content").toggleClass('col-md-9');
                 $("#tg-sb-content").toggleClass('col-md-12');
