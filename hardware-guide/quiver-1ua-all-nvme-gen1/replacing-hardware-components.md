@@ -85,7 +85,7 @@ Follow the instructions for [removing and installing a DIMM](https://dlcdnets.as
 
 1. Remove the [NVMe drives in front storage bays](#replace-nvme-drive-front-storage-bay), the [NVMe drives in internal storage bays](#replace-nvme-drive-internal-storage-bay), and the [NVMe M.2 boot drive](#replace-nvme-m2-boot-drive) from the node.
 
-1. [Remove the existing chassis](racking-nodes.md#remove-chassis) from the server rack.
+1. Remove the existing chassis from the server rack.
 
    {% capture content_lift %}{{site.twoPeopleOrLift}}{% endcapture %}
    {% include important.html content=content_lift %}
