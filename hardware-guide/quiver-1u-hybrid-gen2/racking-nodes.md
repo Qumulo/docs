@@ -1,6 +1,6 @@
 ---
 title: "Racking Your Quiver 1U Hybrid Gen2 Nodes"
-summary: "This section explains how to rack Quiver 1UH Gen 2 nodes in a data center."
+summary: "This section explains how to rack Quiver 1UH Gen2 nodes in a data center."
 permalink: /hardware-guide/quiver-1u-hybrid-gen2/racking-nodes.html
 sidebar: hardware_guide_sidebar
 keywords: rack, racking, rails, server_rack, chassis, insert_chassis, Quiver_1U_Hybrid_Gen2

@@ -3,7 +3,7 @@
 
 ##  Prerequisites
 {{site.data.alerts.note}}
-{{site.unifyNetJumboFrames}}
+{{site.jumboFramesPrereq}}
 {{site.data.alerts.end}}
 
 Your node requires the following resources.

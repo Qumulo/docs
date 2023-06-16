@@ -1,12 +1,12 @@
 ---
 title: "Drive Bay Mapping in Quiver 1U Hybrid Gen2 Nodes"
-summary: "This section explains the drive bay mapping in Quiver 1UH Gen 2 nodes."
+summary: "This section explains the drive bay mapping in Quiver 1UH Gen2 nodes."
 permalink: /hardware-guide/quiver-1u-hybrid-gen2/drive-bay-mapping.html
 sidebar: hardware_guide_sidebar
 keywords: drive, hard_drive, drive_bay, mapping, Quiver_1U_Hybrid_Gen2
 ---
 
-Your {{site.q1uhg2}} chassis contains 12 HDDs, 4 NVMe drives, and one boot drive (in an internal M.2 expansion slot).
+Your {{site.q1uhg2}} chassis contains 12 HDDs, 4 NVMe drives, and one boot drive in an internal M.2 expansion slot. The following is the mapping for the drives.
 
 ## HDD Drives
 For more information, see [To Replace an HDD](replacing-hardware-components.html#to-replace-an-hdd).

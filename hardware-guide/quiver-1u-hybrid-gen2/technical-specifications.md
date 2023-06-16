@@ -51,10 +51,10 @@ keywords: technical_specifications, tech_specs, specs, specifications, Quiver_1U
     </tr>
     <tr>
       <td><strong>CPU</strong></td>
-      <td style="text-align: center;">2 &#215; Intel Xeon Bronze 3204 CPU @ 1.90GHz</td>
-      <td style="text-align: center;">2 &#215; Intel Xeon Silver 4210 CPU @ 2.20GHz</td>
-      <td style="text-align: center;">2 &#215; Intel Xeon Bronze 3204 CPU @ 1.90GHz</td>
-      <td style="text-align: center;">2 &#215; Intel Xeon Silver 4210 CPU @ 2.20GHz</td>
+      <td style="text-align: center;">2 &#215; Intel Xeon Bronze 3204 CPU @ 1.90 GHz</td>
+      <td style="text-align: center;">2 &#215; Intel Xeon Silver 4210 CPU @ 2.20 GHz</td>
+      <td style="text-align: center;">2 &#215; Intel Xeon Bronze 3204 CPU @ 1.90 GHz</td>
+      <td style="text-align: center;">2 &#215; Intel Xeon Silver 4210 CPU @ 2.20 GHz</td>
     </tr>
     <tr>
       <td><strong>Memory</strong></td>

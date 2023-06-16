@@ -8,7 +8,7 @@ sidebar: hardware_guide_sidebar
 keywords: drive, hard_drive, drive_bay, mapping, Supermicro_1014S, ACR12N4H
 ---
 
-Your {{site.sm1014s}} chassis contains 12 HDDs, 4 NVMe drives, and one NVMe boot drive (in an internal M.2 expansion slot).
+Your {{site.sm1014s}} chassis contains 12 HDDs, 4 NVMe drives, and one NVMe boot drive in an internal M.2 expansion slot. The following is the mapping for the drives.
 
 ## HDD Drives
 {% capture alt_tag_hdd %}{{site.sm1014sLong}} HDD Bay Mapping{% endcapture %}

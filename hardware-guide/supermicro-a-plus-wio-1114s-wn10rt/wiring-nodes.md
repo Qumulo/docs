@@ -8,7 +8,8 @@ sidebar: hardware_guide_sidebar
 keywords: out-of-band_management, out_of_band_management, IPMI, DHCP, network, networking, LAN, ipmitool, 100_Gbps, Ethernet, power
 ---
 
-{% include note.html content="The two Ethernet ports on the back of your node (to the right of the USB ports) are unused." %}
+{% capture unusedPorts %}{{site.unusedEthPorts}}{% endcapture %}
+{% include note.html content=unusedPorts %}
 
 {% capture alt_tag %}Back Diagram of the {{site.sm1114sLong}} Node{% endcapture %}
 {% include image.html alt=alt_tag file="supermicro-1114s-back-diagram.png" url="/hardware-guide/supermicro-a-plus-wio-1114s-wn10rt/images/supermicro-1114s-back-diagram.png" %}
@@ -29,6 +30,4 @@ After you connect the IPMI port, connect your front-end and back-end 100 Gbps po
 
 
 ## Step 3: Connecting the Power
-{% include important.html content="Make sure that the voltages for both power supply units (PSUs) are the same (for example, both at 115 V or both at 208 V)." %}
-
 After you connect your 100 Gbps ports, connect power to the node. There are two power sockets on the back of your node. To maximize redundancy, connect each PSU to a separate power supply or power distribution unit (PDU).

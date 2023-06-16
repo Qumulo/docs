@@ -153,14 +153,19 @@ partReplaceDcms: Before you replace the motherboard, you must request a new Data
 varKerberosDns: Kerberos relies on DNS to identify machines involved in authentication. NFS clients and servers require DNS <code>A</code> records for forward-DNS lookups and <code>PTR</code> records for reverse-DNS lookups.
 varNfsConf: In versions of Ubuntu lower than 22.04 (and possibly on other Linux distributions), you can't use the <code>/etc/nfs.conf</code> file to configure <code>gssd</code>. If this is the case for your system, we recommend starting the <code>rpc.gssd</code> service by using the <code>-n</code> flag.
 
-unifyNetDefine: This platform uses a _unified networking configuration_ in which the same NIC handles back-end and front-end traffic. In this configuration, each networking port provides communication with clients and between nodes. You can connect the NIC's ports to the same switch or to different switches.
-splitNetJumboFrames: Before you create your Qumulo cluster, if you want to use Jumbo Frames (9,000 MTU), configure your switch to support a higher MTU.
-unifyNetJumboFrames: Before you create your Qumulo cluster, if your client environment requires Jumbo Frames (9,000 MTU), configure your switch to support a higher MTU.
-use40gbps: You can use 40 Gbps connections with 40 Gbps transceivers.
+splitNetDefine: This platform uses a _split networking configuration_ in which different NICs handle back-end and front-end traffic. You can connect the front-end and back-end NICs to the same switch or to different switches.
 splitNetLACP: For all connection speeds, the default behavior is that of an LACP with 1,500 MTU for the front-end and 9,000 MTU for the back-end interfaces.
+splitNetDontConnectSingleNIC: We don't recommend connecting to a single back-end NIC port because the node becomes unavailable if the single connection fails.
 
+unifyNetDefine: This platform uses a _unified networking configuration_ in which the same NIC handles back-end and front-end traffic. In this configuration, each networking port provides communication with clients and between nodes. You can connect the NIC's ports to the same switch or to different switches.
+use40gbps: You can use 40 Gbps connections with 40 Gbps transceivers.
+
+jumboFramesPrereq: Before you create your Qumulo cluster, if your client environment requires Jumbo Frames (9,000 MTU), configure your switch to support a higher MTU.
 noNIC: For this platform, all models ship without NICs.
 seeTechSpecs: Some components vary across node types. For information about node types, see <a href="technical-specifications.html">Technical Specifications</a>.
+
+unusedEthPorts: The two rightmost Ethernet ports on the back of your node are unused.
+
 doNotWarpChassis: To avoid warping the chassis frame, always keep it level while you insert it into the server rack. Never insert the chassis at an angle and don&apos;t apply excessive pressure to it.
 twoPeopleOrLift: We strongly recommend using a server lift or that two people perform this task.
 
@@ -180,6 +185,14 @@ sm1014s: Supermicro 1014S
 
 q1uhg2Long: Quiver 1U Hybrid Gen2
 q1uhg2: Quiver 1UH Gen2
+
+q1uag1Long: Quiver 1U All-NVMe Gen1
+q1uag1: Quiver 1UA Gen1
+
+q1uag1Drives:
+  frontStorageBays: There are 12 2.5" hot-swap NVMe drives in front storage bays. For more information, see <a href="https://dlcdnets.asus.com/pub/ASUS/server/RS500A-E12-RS12U/Manual/E21507_RS500A-E12-RS12U_UM_V2_WEB.pdf?model=RS500A-E12-RS12U#page=45">Installing a 2.5-Inch Storage Device to a Front Storage Bay</a> in the ASUS documentation.
+  internalStorageBays: There are 4 2.5" NVMe drives in internal storage bays. For more information, see <a href="https://dlcdnets.asus.com/pub/ASUS/server/RS500A-E12-RS12U/Manual/E21507_RS500A-E12-RS12U_UM_V2_WEB.pdf?model=RS500A-E12-RS12U#page=46">Installing a 2.5-Inch Storage Device to an Internal Storage Bay</a> in the ASUS documentation. 
+  internalBootDrive: The boot drive is located at the M.2 expansion slot at connector NGFF1. For more information, see <a href="https://dlcdnets.asus.com/pub/ASUS/server/RS500A-E12-RS12U/Manual/E21507_RS500A-E12-RS12U_UM_V2_WEB.pdf?model=RS500A-E12-RS12U#page=58">Installing M.2 (NGFF) Cards</a> in the ASUS documentation.
 
 qumuloalerts:
   consTrans: The consumer processes for <a href="../configuring-integrations/email-server.html">email</a>, <a href="../configuring-integrations/ifttt.html">IFTTT</a>, and <a href="../configuring-integrations/sms-clicksend.html">SMS (ClickSend)</a> integrations translate messages into the recipient's native language.

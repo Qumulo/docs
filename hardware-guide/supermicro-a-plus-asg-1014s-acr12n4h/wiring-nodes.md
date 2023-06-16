@@ -8,7 +8,8 @@ sidebar: hardware_guide_sidebar
 keywords: out-of-band_management, out_of_band_management, IPMI, DHCP, network, networking, LAN, ipmitool, 100_Gbps, Ethernet, power, Supermicro_1014S, ACR12N4H
 ---
 
-{% include note.html content="The two Ethernet ports on the back of your node (to the right of the USB ports) are unused." %}
+{% capture unusedPorts %}{{site.unusedEthPorts}}{% endcapture %}
+{% include note.html content=unusedPorts %}
 
 {% capture alt_tag %}Back Diagram of the {{site.sm1014sLong}} Node{% endcapture %}
 {% include image.html alt=alt_tag file="supermicro-1014s-back-diagram.png" url="/hardware-guide/supermicro-a-plus-asg-1014s-acr12n4h/images/supermicro-1014s-back-diagram.png" %}

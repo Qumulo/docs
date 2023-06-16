@@ -111,7 +111,7 @@ Most Qumulo-certified nodes are compatible with multiple NIC models. The NIC mod
          <td>E810-XXVDA2</td>
          <td>25 Gbps</td>
          <td>
-           <p><a href="https://compatibleproducts.intel.com/ProductDetails?prodSearch=True&searchTerm=Intel%C2%AE%20Ethernet%20Network%20Adapter%20E810-XXVDA2#">Intel Ethernet Network Adapter E810-XXVDA2</a></p>
+           <p><a href="https://www.intel.ca/content/www/ca/en/products/sku/189760/intel-ethernet-network-adapter-e810xxvda2/support.html">Intel Ethernet Network Adapter E810-XXVDA2</a></p>
            {% capture intel %}{{page.varIntelMight}}{% endcapture %}
            {% include note.html content=intel %}
          </td>

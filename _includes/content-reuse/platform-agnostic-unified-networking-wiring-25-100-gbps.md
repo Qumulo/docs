@@ -21,6 +21,4 @@ After you connect the IPMI port, connect your 25 Gbps or 100 Gbps ports (compati
 
 
 ## Step 3: Connecting the Power
-{% include important.html content="Make sure that the voltages for both power supply units (PSUs) are the same (for example, both at 115 V or both at 208 V)." %}
-
 After you connect your 25 Gbps or 100 Gbps ports, connect power to the node. There are two power sockets on the back of your node. To maximize redundancy, connect each PSU to a separate power supply or power distribution unit (PDU).
