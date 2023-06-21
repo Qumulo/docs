@@ -46,17 +46,50 @@ body {
   -webkit-font-smoothing: antialiased;
   line-height: 1.5;
   background-color: white;
-  font-size:14px;
+  font-size: 14px;
 }
 
-.nav ul li a {border-top:0px; background-color:transparent; color: #808080; }
-#navig a[href] {color: #595959 !important;}
-table .table {max-width:650px;}
+/* Allow the H2 headings in the TOC to be hyperlinks */
+a.parentSectionTitle {
+  background: transparent !important;
+  margin-left: -10px !important;
+  font-size: 18px !important;
+}
 
-#navig li.sectionHead {font-weight: bold; font-size: 18px; color: #595959 !important; }
-#navig li {font-weight: normal; }
+.nav ul li a {
+  border-top:0px;
+  background-color:transparent;
+  color: #808080;
+}
 
-#navig a[href]::after { content: leader(".") target-counter(attr(href), page); }
+#navig a[href] {
+  color: #595959 !important;
+}
+
+table .table {
+  max-width:650px;
+}
+
+#navig li.sectionHead {
+  font-weight: bold; 
+  font-size: 18px; 
+  color: #595959 !important; 
+  /* Keep "H2" heading together with children */
+  break-inside: avoid-page;
+}
+
+#navig li {
+  font-weight: normal;
+}
+
+#navig a[href]::after {
+  content: leader(".") target-counter(attr(href), page);
+}
+
+/* Remove trailing leader dots and page numbers from H2 headings */
+#navig a.parentSectionTitle[href]::after {
+  content: none;
+}
 
 a[href]::after {
     content: " (page " target-counter(attr(href), page) ")"

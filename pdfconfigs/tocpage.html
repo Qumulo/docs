@@ -5,26 +5,35 @@ search: exclude
 permalink: /tocpage.html/
 ---
 
-<!-- new page -->
 <div id="navig">
 
     {% assign sidebar = site.data.sidebars[site.pdf_sidebar].entries %}
 
     <ul id="mysidebar" class="nav">
+        {% comment %} Exclude frontmatter from PDF build. {% endcomment %}
         {% for entry in sidebar %}
         {% for folder in entry.folders %}
         {% if folder.output contains "pdf" and folder.type != "frontmatter" %}
-        <li class="sectionHead">{{ folder.title }}
+
+          {% comment %} Find the first page with PDF output. {% endcomment %}
+          {% for folderitem in folder.folderitems %}
+          {% if folderitem.output contains "pdf" and firstProfiledPdfLink == nil %}
+            {% assign firstProfiledPdfLink = folderitem.url %}
+          {% endif %}
+          {% endfor %}
+        
+        <li class="sectionHead">
+            <a class="parentSectionTitle" href="{{ firstProfiledPdfLink | prepend: site.baseurl }}">{{ folder.title }}</a>
             <ul>
                 {% for folderitem in folder.folderitems %}
-                {% if folderitem.output contains "pdf" and folderitem.type != "frontmatter"%}
+                {% if folderitem.output contains "pdf" %}
                 <li><a href="{{folderitem.url | prepend: site.baseurl}}">{{folderitem.title}}</a>
                     {% for subfolders in folderitem.subfolders %}
-                    {% if subfolders.output contains "pdf" and subfolders.type != "frontmatter" %}
+                    {% if subfolders.output contains "pdf" %}
                 <li class="sectionHead">{{ subfolders.title }}
                     <ul>
                         {% for subfolderitem in subfolders.subfolderitems%}
-                        {% if subfolderitem.output contains "pdf" and subfolderitem.type != "frontmatter"%}
+                        {% if subfolderitem.output contains "pdf" %}
                         <li><a href="{{subfolderitem.url | prepend: site.baseurl}}">{{subfolderitem.title}}</a></li>
                         {% endif %}
                         {% endfor %}
