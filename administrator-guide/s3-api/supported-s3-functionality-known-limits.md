@@ -97,7 +97,7 @@ The following table lists the S3 API actions that Qumulo Core supports and the v
   </tr>  
   <tr>
     <td><code>UploadPartCopy</code></td>
-    <td>6.1.0</td>
+    <td>6.1.0.1</td>
   </tr>  
 </tbody>
 </table>
