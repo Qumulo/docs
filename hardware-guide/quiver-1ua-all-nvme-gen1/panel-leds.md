@@ -26,13 +26,13 @@ On the front, right side of your node, there are four LEDs.
 
 Each NVMe drive carrier in the front storage bay has a red LED and a green LED.
 
-{% include note.html content="The red LED is unused." %}
-
-| Color and Behavior  | Description                                              |
-| ------------------- | -------------------------------------------------------- |
-| 🟢 (solid green)    | Storage device is powered on                             |
-| green and red off   | Storage device not found                                 |
-| 🟢 (blinking green) | Reading data from, or writing data to the storage device |
+| Color and Behavior       | Description                                              |
+| ------------------------ | -------------------------------------------------------- |
+| 🔴 (solid red)           | Storage device failed                                    |
+| 🔴 (red off)             | Storage device healthy                                   |
+| 🟢 (solid green)         | Storage device is powered on                             |
+| 🟢 (blinking green)      | Reading data from, or writing data to the storage device |
+| ⚪⚪ (red and green off) | Storage device not found                                 |
 
 
 ## Rear Panel LEDs and Buttons
