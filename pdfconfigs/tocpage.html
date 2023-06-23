@@ -12,42 +12,54 @@ permalink: /tocpage.html/
     <ul id="mysidebar" class="nav">
         {% comment %} Exclude frontmatter from PDF build. {% endcomment %}
         {% for entry in sidebar %}
-        {% for folder in entry.folders %}
-        {% if folder.output contains "pdf" and folder.type != "frontmatter" %}
+            {% for folder in entry.folders %}
+                {% if folder.output contains "pdf" and folder.type != "frontmatter" %}
+                    {% comment %} Find the first page with PDF output. {% endcomment %}
+                    {% assign firstPDFlink = false %}
 
-          {% comment %} Find the first page with PDF output. {% endcomment %}
-          {% for folderitem in folder.folderitems %}
-          {% if folderitem.output contains "pdf" and firstProfiledPdfLink == nil %}
-            {% assign firstProfiledPdfLink = folderitem.url %}
-          {% endif %}
-          {% endfor %}
+                    {% comment %} Account for folders with folderitems {% endcomment %}
+                    {% for folderitem in folder.folderitems %}
+                        {% if folderitem.output contains "pdf" %}
+                            {% assign firstPDFlink = folderitem.url %}
+                            {% comment %} Get out of the loop {% endcomment %}
+                            {% break %}
+                        {% endif %}
+                    {% endfor %}
+
+                    {% comment %} Account for folders without folderitems {% endcomment %}
+                    {% if firstPDFlink == false %}
+                        {% assign firstPDFlink = folder.url %}
+                        {% assign linkClass = "parentSectionTitleLone" %}
+                    {% else %}
+                        {% assign linkClass = "parentSectionTitle" %}
+                    {% endif %}
         
         <li class="sectionHead">
-            <a class="parentSectionTitle" href="{{ firstProfiledPdfLink | prepend: site.baseurl }}">{{ folder.title }}</a>
+            <a class="{{ linkClass }}" href="{{ firstPDFlink | prepend: site.baseurl }}">{{ folder.title }}</a>
             <ul>
-                {% for folderitem in folder.folderitems %}
-                {% if folderitem.output contains "pdf" %}
+                    {% for folderitem in folder.folderitems %}
+                        {% if folderitem.output contains "pdf" %}
                 <li><a href="{{folderitem.url | prepend: site.baseurl}}">{{folderitem.title}}</a>
-                    {% for subfolders in folderitem.subfolders %}
-                    {% if subfolders.output contains "pdf" %}
+                            {% for subfolders in folderitem.subfolders %}
+                                {% if subfolders.output contains "pdf" %}
                 <li class="sectionHead">{{ subfolders.title }}
                     <ul>
-                        {% for subfolderitem in subfolders.subfolderitems%}
-                        {% if subfolderitem.output contains "pdf" %}
+                                    {% for subfolderitem in subfolders.subfolderitems %}
+                                        {% if subfolderitem.output contains "pdf" %}
                         <li><a href="{{subfolderitem.url | prepend: site.baseurl}}">{{subfolderitem.title}}</a></li>
-                        {% endif %}
-                        {% endfor %}
+                                        {% endif %}
+                                    {% endfor %}
                     </ul>
                 </li>
-                {% endif %}
-                {% endfor %}
+                                {% endif %}
+                            {% endfor %}
                 </li>
-                {% endif %}
-                {% endfor %}
+                        {% endif %}
+                    {% endfor %}
             </ul>
         </li>
-        {% endif %}
-        {% endfor %}
+                {% endif %} 
+            {% endfor %}
         {% endfor %}
     </ul>
 </div>

@@ -50,7 +50,7 @@ body {
 }
 
 /* Allow the H2 headings in the TOC to be hyperlinks */
-a.parentSectionTitle {
+a.parentSectionTitle, a.parentSectionTitleLone {
   background: transparent !important;
   margin-left: -10px !important;
   font-size: 18px !important;
@@ -89,6 +89,13 @@ table .table {
 /* Remove trailing leader dots and page numbers from H2 headings */
 #navig a.parentSectionTitle[href]::after {
   content: none;
+}
+
+/* Add trailing leader dots and page numbers to lone parent H2 headings */
+#navig a.parentSectionTitleLone[href]::after {
+  content: leader(".") target-counter(attr(href), page);
+  font-size: 12px;
+  font-weight: normal;
 }
 
 a[href]::after {
@@ -262,4 +269,12 @@ li.pdf-friendly {
     -ms-hyphens:none;
     -webkit-hyphens:none;
     word-break:break-all;
+}
+
+.collapse-scroll {
+    height: auto !important;
+    overflow: visible;
+    background: none;
+    border: none;
+    border-radius: none;
 }

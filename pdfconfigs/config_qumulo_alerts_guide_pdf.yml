@@ -5,7 +5,7 @@ port: 4001
 output: pdf
 #product: Qumulo Alerts Guide
 print_title: Qumulo Alerts Administrator Guide
-print_subtitle: Version 6.0.1
+print_subtitle: Version 6.1.0
 defaults:
   -
     scope:

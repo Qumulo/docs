@@ -39,58 +39,62 @@ entries:
       url: /contacting-qumulo-care-team.html
       output: web  
 
-  - title: Getting Started with Qumulo Alerts
-    url: /qumulo-alerts-guide/getting-started-qumulo-alerts/index.html
-    output: pdf, web
-    folderitems:
-
-    - title: How Qumulo Alerts Works
-      url: /qumulo-alerts-guide/getting-started-qumulo-alerts/qumulo-alerts-with-qumulo-core.html
-      output: web, pdf
-
-    - title: Supported Alarms and Alerts
-      url: /qumulo-alerts-guide/getting-started-qumulo-alerts/alarms-alerts-support.html
-      output: web, pdf
-
-    - title: Suported Language Locales
-      url: /qumulo-alerts-guide/getting-started-qumulo-alerts/language-locales-support.html
-      output: web, pdf
-
-  - title: Installing and Configuring Qumulo Alerts
-    url: /qumulo-alerts-guide/installing-configuring/index.html
+  - title: Getting Started
+    url: /qumulo-alerts-guide/getting-started/index.html
     output: web, pdf
     folderitems:
 
-    - title: Installing and Connecting Qumulo Alerts
-      url: /qumulo-alerts-guide/installing-configuring/installing-connecting-to-qumulo-cluster.html
-      output: web, pdf
-    
-    - title: Configuring Alarms and Alerts
-      url: /qumulo-alerts-guide/installing-configuring/alarms-and-alerts.html
+    - title: How Qumulo Alerts Works
+      url: /qumulo-alerts-guide/getting-started/how-it-works.html
       output: web, pdf
 
-  - title: Configuring Qumulo Alerts Notifications
+    - title: Supported Alarms and Alerts
+      url: /qumulo-alerts-guide/getting-started/supported-alarms-alerts.html
+      output: web, pdf
+
+    - title: Supported Language Locales
+      url: /qumulo-alerts-guide/getting-started/supported-language-locales.html
+      output: web, pdf
+
+  - title: Installing and Configuring
+    url: /qumulo-alerts-guide/installing-configuring-qumulo-alerts.html
+    output: web, pdf
+
+  - title: Upgrading
+    url: /qumulo-alerts-guide/upgrading/index.html
+    output: web, pdf
+    folderitems:
+    
+    - title: Upgrading from a Previous Version
+      url: /qumulo-alerts-guide/upgrading/from-previous-version.html
+      output: web, pdf
+
+    - title: Upgrading from a Beta Version
+      url: /qumulo-alerts-guide/upgrading/from-beta-version.html
+      output: web, pdf
+
+  - title: Configuring Notifications
     url: /qumulo-alerts-guide/configuring-notifications/index.html
     output: web, pdf
     folderitems:
 
     - title: Alarm and Alert Notifications to Administrators
-      url: /qumulo-alerts-guide/configuring-notifications/alarms-and-alerts.html
+      url: /qumulo-alerts-guide/configuring-notifications/alarms-and-alert-notifications-to-administrators.html
       output: web, pdf
 
     - title: Default Quota Notifications
-      url: /qumulo-alerts-guide/configuring-notifications/default-quotas.html
+      url: /qumulo-alerts-guide/configuring-notifications/default-quota-notifications.html
       output: web, pdf
 
     - title: Quota Notifications to Administrators
-      url: /qumulo-alerts-guide/configuring-notifications/quotas-to-admins.html
+      url: /qumulo-alerts-guide/configuring-notifications/quota-notifications-to-administrators.html
       output: web, pdf
 
     - title: Quota Notifications to Users
-      url: /qumulo-alerts-guide/configuring-notifications/quotas-to-users.html
+      url: /qumulo-alerts-guide/configuring-notifications/quota-notifications-to-users.html
       output: web, pdf
 
-  - title: Configuring Qumulo Alerts Integrations
+  - title: Configuring Integrations
     url: /qumulo-alerts-guide/configuring-integrations/index.html
     output: web, pdf
     folderitems:
@@ -106,3 +110,11 @@ entries:
     - title: Integration with SMS (ClickSend)
       url: /qumulo-alerts-guide/configuring-integrations/sms-clicksend.html
       output: web, pdf
+
+  - title: Configuring Alarm and Alert Collection
+    url: /qumulo-alerts-guide/configuring-alarm-alert-collection.html
+    output: web, pdf
+
+  - title: Connecting to Grafana
+    url: /qumulo-alerts-guide/connecting-grafana.html
+    output: web, pdf

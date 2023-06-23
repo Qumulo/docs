@@ -20,15 +20,18 @@ body {
 }
 
 @media print {
-  body { display: block !important; }
-}
+  body {
+    display: block !important;
+  }
+  
+  .page-break {
+    display: block;
+    page-break-before: always;
+  }
 
-@media print {
-  .page-break { display: block; page-break-before: always; }
-}
-
-@media print {
-  .alert { break-inside: avoid; }
+  .alert {
+    break-inside: avoid;
+  }
 }
 
 /* Colour only body links when :visited for accessibility */
@@ -681,12 +684,14 @@ a.accordion-toggle, a.accordion-collapsed {
 }
 
 
-.nav li > a > span:after {
+.nav li:has(li) > a > span:after {
     content: '\25be';
 }
-.nav li.active > a > span:after {
+
+.nav li.active:has(li) > a > span:after {
     content: '\25b4';
 }
+
 
 .nav a:hover, .nav li.active > a {
     background-color: #8D8D8D;
@@ -1554,6 +1559,14 @@ li.pdf-friendly {
     margin-left:-15px !important;
 }
 
+.collapse-scroll {
+  height: 200px;
+  overflow: auto;
+  background: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
 @media (max-width: 911px) {
   .nav-wrapper {
     /* Fix horizontal scrolling bug on mobile viewports*/
@@ -1567,6 +1580,7 @@ li.pdf-friendly {
   .improve-mobile {
     margin-left: -22px;
   }
+  
   .footer-grumpquats {
     float: left;
     text-align: left;
