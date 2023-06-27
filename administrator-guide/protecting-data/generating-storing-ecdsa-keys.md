@@ -12,7 +12,7 @@ varSpecifyDetails: When you create a key pair, specify the following details&#58
 {{site.data.alerts.important}}
 <ul>
   <li>{{site.protectingData.supportedKeys}}</li>
-  <li>No KMS system shows the private key. To sign messages later, note the key ID in the responses from key generation commands.</li>  
+  <li>No KMS system shows the private key. To sign messages later, write down the key ID in the responses from key generation commands.</li>  
 </ul>
 {{site.data.alerts.end}}
 
