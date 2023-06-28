@@ -20,8 +20,8 @@ keywords: technical_specifications, tech_specs, specs, specifications, Quiver_1U
     <tr>
       <td><strong>Connectivity Ports (NIC)</strong></td>
       <td colspan="4" style="text-align: center;">
-        2 &#215; 100 GbE (1 &#215; Mellanox ConnectX-4 Lx NIC)<br>
-        or 2 &#215; 100 GbE (1 &#215; Broadcom P225P NIC)
+        4 &#215; 100 GbE (2 &#215; Mellanox ConnectX-6 NICs)<br>
+        or 4 &#215; 100 GbE (2 &#215; Broadcom P2100G NICs)
       </td>
     </tr>
     <tr>
