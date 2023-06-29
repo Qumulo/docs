@@ -39,13 +39,17 @@ entries:
       url: /contacting-qumulo-care-team.html
       output: web   
 
-  - title: General Guidance
-    url: /hardware-guide/general-guidance/index.html
+  - title: Getting Started
+    url: /hardware-guide/getting-started/index.html
     output: web, pdf
     folderitems:
 
-    - title: Identifying NICs and Choosing Transceivers and Cables for Your Qumulo Node
-      url: /hardware-guide/general-guidance/nics-transceivers-cables.html
+    - title: Identifying NICs and Choosing Transceivers and Cables
+      url: /hardware-guide/getting-started/nics-transceivers-cables.html
+      output: web, pdf
+
+    - title: Creating a USB Drive Installer
+      url: /hardware-guide/getting-started/creating-usb-drive-installer.html
       output: web, pdf
 
   - title: C-192T, C-432T, and K-432T

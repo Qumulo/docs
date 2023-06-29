@@ -40,16 +40,12 @@ entries:
       output: web
 
   - title: Getting Started
-    url: /administrator-guide/getting-started-qumulo-core/index.html
+    url: /administrator-guide/getting-started/index.html
     output: web, pdf
     folderitems:
 
-    - title: Creating a USB Drive Installer for a Hardware Node
-      url: /administrator-guide/getting-started-qumulo-core/creating-usb-drive-installer.html
-      output: web, pdf
-
     - title: Supported Configurations and Limits
-      url: /administrator-guide/getting-started-qumulo-core/supported-configurations-known-limits.html
+      url: /administrator-guide/getting-started/supported-configurations-known-limits.html
       output: web, pdf
       
   - title: System Upgrades

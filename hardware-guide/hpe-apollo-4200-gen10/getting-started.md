@@ -9,8 +9,7 @@ keywords: getting_started_guide, quick_reference, verify_node, field_verificatio
 ---
 
 ## Prerequisites
-<a href="https://docs.qumulo.com/administrator-guide/qumulo-core/creating-usb-drive-installer.html" class="no_icon">Qumulo Core USB Drive Installer</a>
-
+{{site.xrefUSBinstaller}}
 
 ## Step 1: Verify Your Node
 

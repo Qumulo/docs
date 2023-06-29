@@ -11,8 +11,7 @@ keywords: getting_started_guide, quick_reference, HPE, Apollo_4200_Gen9, verify_
 {% include content-reuse/hpe-apollo-4200-gen-9-90t-180t-288t-eops.md %}
 
 ## Prerequisites
-<a href="https://docs.qumulo.com/administrator-guide/qumulo-core/creating-usb-drive-installer.html" class="no_icon">Qumulo Core USB Drive Installer</a>
-
+{{site.xrefUSBinstaller}}
 
 ## Step 1: Verify Your Node
 {% include content-reuse/platform-agnostic-verify-node-preamble.md %}
