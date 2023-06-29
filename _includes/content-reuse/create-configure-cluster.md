@@ -8,14 +8,14 @@
 
    {% include note.html content="If any nodes are missing, confirm that they are powered on and connected to the same network." %}
 
-1. On the **2. Confirm cluster protection level** page, Qumulo Core selects the recommended 2- or 3-drive protection level based on your cluster size and node type.
+1. On the **2. Confirm cluster protection level** page, Qumulo Core selects the recommended 2, 3, or 4-drive protection level based on your cluster size and node type.
 
-1. If the **Customize Protection Level** option appears, you can increase your system resilience by selecting 3-drive protection.
+1. If the **Customize Protection Level** option appears, you can increase your system resilience by selecting 3- or 4-drive protection.
 
    {{site.data.alerts.important}}
    <ul>
-     <li>The option for selecting the drive protection level is available only at cluster creation time. You can't change it later.</li>
-     <li>Using 3-drive protection reduces the total capacity of your cluster.</li>
+     <li>For information about how changing the drive protection level works in different versions of Qumulo Core, see <a href="/administrator-guide/protecting-data/adding-nodes-with-data-protection-changes.html">Adding Nodes to a Qumulo Cluster with Data Protection Configuration Changes</a>.</li>
+     <li>Using 3- or 4-drive protection reduces the total capacity of your cluster.</li>
    </ul>
    {{site.data.alerts.end}}
 
