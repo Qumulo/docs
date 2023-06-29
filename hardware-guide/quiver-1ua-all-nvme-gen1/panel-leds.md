@@ -22,9 +22,9 @@ On the front, right side of your node, there are four LEDs.
 
 
 
-## Front Storage Bay NVMe Drive Carrier LEDs
+## Front and Internal Storage Bay NVMe Drive Carrier LEDs
 
-Each NVMe drive carrier in the front storage bay has a red LED at the top and a green LED at the bottom
+Each NVMe drive carrier in front and internal storage bays has a red LED at the top and a green LED at the bottom
 
 {% include note.html content="When both LEDs are off, the storage device isn't present" %}
 
