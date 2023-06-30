@@ -14,11 +14,11 @@ keywords: out-of-band_management, out_of_band_management, IPMI, DHCP, network, n
 {% capture alt_tag %}Back Diagram of the {{site.sm1114sLong}} Node{% endcapture %}
 {% include image.html alt=alt_tag file="supermicro-1114s-back-diagram.png" url="/hardware-guide/supermicro-a-plus-wio-1114s-wn10rt/images/supermicro-1114s-back-diagram.png" %}
 
-## Step 1: Connecting the Out-of-Band Management (IPMI) Port
-The dedicated out-of-band management port allows functionality such as remote display, control, and power. The port uses the Intelligent Platform Management Interface (IPMI) protocol. Connect the IPMI port first on the back of your node (above the USB ports).
-
-{% include important.html content="The list of IPMI accounts contains the user `qumulo_<random>`. This account is critical for Qumulo Core functionality. Don't disable or tamper with it. To administer Qumulo Core, create your own IPMI user account." %}
-
+{% include content-reuse/platform-agnostic-ipmi.md %}
+{{site.hardware.ipmiCreds.smc}}
+{{site.data.alerts.note}}
+{{site.hardware.ipmiCreds.smcNote}} {{site.hardware.ipmiCreds.smcMoreInfo1114S}}
+{{site.data.alerts.end}}
 
 ## Step 2: Connecting the 100 Gbps Ports
 After you connect the IPMI port, connect your front-end and back-end 100 Gbps ports (compatible with QSFP28 and QSFP56). There are four 100 Gbps ports on the back of your node. To maximize redundancy, split interfaces across subnets by connecting each port to a different switch.

@@ -9,4 +9,6 @@ keywords: out-of-band_management, out_of_band_management, IPMI, DHCP, network, n
 {% capture alt_tag %}Back Diagram of the {{site.q1uhg2Long}} Node{% endcapture %}
 {% include image.html alt=alt_tag file="quiver-1u-hybrid-gen2-back-diagram.png" url="/hardware-guide/quiver-1u-hybrid-gen2/images/quiver-1u-hybrid-gen2-back-diagram.png" %}
 
+{% include content-reuse/platform-agnostic-ipmi.md %}
+{{site.hardware.ipmiCreds.quiver}}
 {% include content-reuse/platform-agnostic-unified-networking-wiring-25-100-gbps.md %}

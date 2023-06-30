@@ -146,6 +146,15 @@ exampleSubnet1: 255.0.0.1
 exampleGateway1: 192.168.0.1
 exampleUUID41: 12345a6b-7c89-0d12-3456-78fe9012f345
 
+hardware:
+  ipmiCreds:
+    hpe: The default username, password, and DNS name are printed on a serial label pull tab attached on the node. For more information, see <a href="https://support.hpe.com/hpesc/public/docDisplay?docId=sf000046874en_us&docLocale=en_US">HPE Integrated Lights-Out 5 (iLO5) - Default Username and Password</a> in the HPE documentation.
+    quiver: The default IMPI username is <code>ADMIN</code> and the default password is <code>Admin123</code>. 
+    smc: The default IPMI username is <code>ADMIN</code> and the default password is printed on a label on the node's motherboard.
+    smcNote: As of November 2019, <a href="https://www.supermicro.com/en/support/BMC_Unique_Password">Supermicro no longer uses the default <code>ADMIN</code> password.</a>
+    smcMoreInfo1114S: For more information, see <a href="https://www.supermicro.com/manuals/superserver/1U/MNL-2295.pdf#page=64">IPMI</a> in the Supermicro documentation.
+    smcMoreInfo1014S: For more information, see <a href="https://www.supermicro.com/manuals/superserver/1U/MNL-2436.pdf#page=67">IPMI</a> in the Supermicro documentation. 
+
 xrefUSBInstaller: <a href="/hardware-guide/getting-started/creating-usb-drive-installer.html" class="no_icon">Qumulo Core USB Drive Installer</a>
 
 splitIlo: We strongly recommend separating your iLO access network from your client-facing network.

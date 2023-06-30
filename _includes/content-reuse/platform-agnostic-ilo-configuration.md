@@ -3,7 +3,9 @@ Your nodes receive DHCP address assignments by default. When you configure a nod
 {% capture content_tag %}{{site.splitIlo}}{% endcapture %}
 {% include important.html content=content_tag %}
 
-To access iLO configuration from the BIOS System Utilities menu, press **F9**. The default iLO username is `Administrator`. The password is printed on top of your node chassis.
+To access iLO configuration from the BIOS System Utilities menu, press **F9**.
+
+{{site.hardware.ipmiCreds.hpe}}
 
 {% include note.html content="The IMPI username and password are unrelated to your Qumulo administrative credentials." %}
 
