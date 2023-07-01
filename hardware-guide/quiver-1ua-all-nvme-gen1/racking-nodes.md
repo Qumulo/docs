@@ -21,7 +21,7 @@ For nodes without drives, follow the [Tool-Less Friction Rail Kit Installation G
 ### To Insert a Chassis with Internal Drives into a Deep Server Rack
 For nodes with drives in [internal storage bays](drive-bay-mapping.html#nvme-drives-in-internal-storage-bays), you can purchase the optional [1.2m Half Extension Ball Bearing Type Rail Kit](https://dlcdnets.asus.com/pub/ASUS/server/RS500A-E11/manual/1.2m_Half_Extension_Ball_bearing_Type_Rail_Kit_Instruction_13SV000IAM0901.pdf?model=RS500A-E12-RS12U) together with the Cable Management Arm. These two items replace the Tool-Less Friction Rail Kit.
 
-{% include note.html content="To permit access to the internal storage bays, leave some clearance at the top of the chassis." %}
+{% include note.html content="To permit access to the internal storage bays, leave clearance at the top of the chassis." %}
 
 <a id="remove-chassis"></a>
 ## Removing the Chassis from the Server Rack
