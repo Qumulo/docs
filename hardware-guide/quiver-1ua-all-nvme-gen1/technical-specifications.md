@@ -67,7 +67,7 @@ keywords: technical_specifications, tech_specs, specs, specifications, Quiver_1U
     </tr>
     <tr>
       <td><strong>Idle Power Consumption</strong></td>
-      <td> style="text-align: center;"315 W</td>
+      <td style="text-align: center;">315 W</td>
       <td colspan="2" style="text-align: center;">288 W*</td>
       <td style="text-align: center;">245 W</td>
     </tr>    
