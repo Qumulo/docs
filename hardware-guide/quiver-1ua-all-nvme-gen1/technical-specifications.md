@@ -97,7 +97,7 @@ keywords: technical_specifications, tech_specs, specs, specifications, Quiver_1U
     </tr>
     <tr>
       <td><strong>Maximum Thermal Rating</strong></td>
-      <td style="text-align: center;"2,064 BTU/hr</td>
+      <td style="text-align: center;">2,064 BTU/hr</td>
       <td colspan="2" style="text-align: center;">1,894 BTU/hr</td>
       <td style="text-align: center;">1,603 BTU/hr</td>
     </tr>
