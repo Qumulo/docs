@@ -6,6 +6,8 @@ sidebar: hardware_guide_sidebar
 keywords: technical_specifications, tech_specs, specs, specifications, Quiver_1U_All-NVMe_Gen1
 ---
 
+{% include note.html content="Values marked with an asterisk (*) are estimated." %}
+
 <table cellspacing="0" cellpadding="0">
   <thead>
     <tr>
@@ -53,16 +55,52 @@ keywords: technical_specifications, tech_specs, specs, specifications, Quiver_1U
     </tr>
     <tr>
       <td><strong>Dimensions (H &#215; W &#215; D)</strong></td>
-      <td colspan="4" style="text-align: center;">1.73" &#215; 17.68" &#215; 33.17" (44 mm &#215; 449 mm &#215; 843 mm)</td>
+      <td colspan="4" style="text-align: center;">1.73" &#215; 17.68" &#215; 33.15" (44 mm &#215; 449 mm &#215; 842.01 mm)</td>
     </tr>
     <tr>
       <td><strong>Net Weight</strong></td>
-      <td colspan="4" style="text-align: center;">31.2 lbs (14.16 kg)</td>
+      <td colspan="4" style="text-align: center;">44 lbs (19.95 kg)</td>
     </tr>
     <tr>
       <td><strong>Power Requirements</strong></td>
-      <td colspan="4" style="text-align: center;">90&ndash;264 V, 47/63 Hz</td>
-    </tr> 
+      <td colspan="4" style="text-align: center;">100&ndash;240 V, 50/60 Hz</td>
+    </tr>
+    <tr>
+      <td><strong>Idle Power Consumption</strong></td>
+      <td>315 W</td>
+      <td colspan="2" style="text-align: center;">288 W*</td>
+      <td>245 W</td>
+    </tr>    
+    <tr>
+      <td><strong>Idle Thermal Rating</strong></td>
+      <td>1,075 BTU/hr</td>
+      <td colspan="2" style="text-align: center;">983 BTU/hr</td>
+      <td>836 BTU/hr</td>
+    </tr>    
+    <tr>
+      <td><strong>Typical Power Consumption</strong></td>
+      <td>400 W*</td>
+      <td colspan="2" style="text-align: center;">336 W*</td>
+      <td>310 W*</td>
+    </tr>
+    <tr>
+      <td><strong>Typical Thermal Rating</strong></td>
+      <td>1,365 BTU/hr</td>
+      <td colspan="2" style="text-align: center;">1,249 BTU/hr</td>
+      <td>1,058 BTU/hr</td>
+    </tr>
+    <tr>
+      <td><div><strong>Maximum Power Consumption</strong></div></td>
+      <td>605 W*</td>
+      <td colspan="2" style="text-align: center;">555 W*</td>
+      <td>470 W</td>
+    </tr>
+    <tr>
+      <td><strong>Maximum Thermal Rating</strong></td>
+      <td>2,064 BTU/hr</td>
+      <td colspan="2" style="text-align: center;">1,894 BTU/hr</td>
+      <td>1,603 BTU/hr</td>
+    </tr>
     <tr>
       <td><strong>Operating Temperature</strong></td>
       <td colspan="4" style="text-align: center;">50&deg;F&ndash;95&deg;F (10&deg;C&ndash;35&deg;C)</td>
@@ -71,6 +109,10 @@ keywords: technical_specifications, tech_specs, specs, specifications, Quiver_1U
       <td><strong>Non-Operating Temperature</strong></td>
       <td colspan="4" style="text-align: center;">-40&deg;F&ndash;140&deg;F (-40&deg;C&ndash;60&deg;C)</td>
     </tr>
+    <tr>
+      <td><div><strong>Operating Relative Humidity</strong></div></td>
+      <td colspan="4" style="text-align: center;">20%&ndash;90% (non-condensing)</td>
+    </tr>    
     <tr>
       <td><div><strong>Non-Operating Relative Humidity</strong></div></td>
       <td colspan="4" style="text-align: center;">20%&ndash;90% (non-condensing)</td>

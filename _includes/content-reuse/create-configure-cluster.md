@@ -8,6 +8,8 @@
 
    {% include note.html content="If any nodes are missing, confirm that they are powered on and connected to the same network." %}
 
+1. Confirm that the individual nodes have the expected capacity.
+
 1. On the **2. Confirm cluster protection level** page, Qumulo Core selects the recommended 2, 3, or 4-drive protection level based on your cluster size and node type.
 
 1. If the **Customize Protection Level** option appears, you can increase your system resilience by selecting 3- or 4-drive protection.

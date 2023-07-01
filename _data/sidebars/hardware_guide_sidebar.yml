@@ -182,6 +182,10 @@ entries:
     output: web, pdf
     folderitems:
 
+    - title: Racking Nodes
+      url: /hardware-guide/quiver-1ua-all-nvme-gen1/racking-nodes.html
+      output: web, pdf    
+
     - title: Wiring Nodes
       url: /hardware-guide/quiver-1ua-all-nvme-gen1/wiring-nodes.html
       output: web, pdf

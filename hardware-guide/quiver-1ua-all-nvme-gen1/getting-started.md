@@ -25,10 +25,8 @@ keywords: getting_started_guide, quick_reference, Quiver_1U_All-NVMe_Gen1, verif
 
 1. On the **Please select boot device:** screen, select your USB drive (usually labelled with `UEFI OS`) and boot into it.
 
-
-## Step 3: Install Qumulo Core
-{% include content-reuse/install-qumulo-core.md %}
+   The Qumulo Core installation begins.
    
 
-## Step 4: Create and Configure Your Cluster
+## Step 3: Create and Configure Your Cluster
 {% include content-reuse/create-configure-cluster.md %}
