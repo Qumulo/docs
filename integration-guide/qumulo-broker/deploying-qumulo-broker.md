@@ -1,9 +1,11 @@
 ---
 title: "Deploying Qumulo Broker"
-summary: "This section explains how to deploy Qumulo Broker to enable integration with Varonis Collector."
-permalink: /integration-guide/varonis-collector/deploying-qumulo-broker.html
+summary: "This section explains how to deploy Qumulo Broker to enable integration with Varonis."
+permalink: /integration-guide/qumulo-broker/deploying-qumulo-broker.html
+redirect_from:
+  - /integration-guide/varonis-collector/deploying-qumulo-broker.html
 sidebar: integration_guide_sidebar
-keywords: Varonis Collector, integrate, integration, broker, Qumulo Broker, deploy
+keywords: Varonis, integrate, integration, broker, Qumulo Broker, deploy
 ---
 
 {{site.varonis.separateMachine}} For more information, see the [Qumulo-Varonis integration architecture diagram](qumulo-core-with-varonis.html#integration-architecture-diagram).
@@ -59,7 +61,7 @@ This section explains how to deploy Qumulo Broker on a standalone machine or vir
    
 1. To view the logs of a specific container, use the `docker logs <container-id>` command.
 
-You can now configure Varonis Collector to communicate with your Qumulo cluster.
+You can now configure Varonis to communicate with your Qumulo cluster.
 
 <a id="configure-audit-logging"></a>
 ## Step 3: Configure Qumulo Audit Logging by Using the qq CLI

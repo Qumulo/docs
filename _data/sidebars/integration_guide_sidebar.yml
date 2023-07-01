@@ -37,19 +37,19 @@ entries:
       url: /contacting-qumulo-care-team.html
       output: web  
 
-  - title: Varonis Collector
-    url: /integration-guide/varonis-collector/index.html
+  - title: Qumulo Broker
+    url: /integration-guide/qumulo-broker/index.html
     output: web, pdf
     folderitems:
 
-    - title: How Varonis Collector Works with Qumulo Core
-      url: /integration-guide/varonis-collector/qumulo-core-with-varonis.html
+    - title: How Qumulo Broker Works with Qumulo Core
+      url: /integration-guide/qumulo-broker/qumulo-broker-with-qumulo-core.html
       output: web, pdf
       
     - title: Deploying Qumulo Broker
-      url: /integration-guide/varonis-collector/deploying-qumulo-broker.html
+      url: /integration-guide/qumulo-broker/deploying-qumulo-broker.html
       output: web, pdf
       
     - title: Troubleshooting Qumulo Broker
-      url: /integration-guide/varonis-collector/troubleshooting-qumulo-broker.html
+      url: /integration-guide/qumulo-broker/troubleshooting-qumulo-broker.html
       output: web, pdf

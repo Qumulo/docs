@@ -1,9 +1,11 @@
 ---
 title: "Troubleshooting Qumulo Broker"
-summary: "This section explains how to troubleshoot Qumulo Broker to enable integration between Varonis Collector and Qumulo Core."
-permalink: /integration-guide/varonis-collector/troubleshooting-qumulo-broker.html
+summary: "This section explains how to troubleshoot Qumulo Broker to enable integration between Qumulo Core and Varonis."
+permalink: /integration-guide/qumulo-broker/troubleshooting-qumulo-broker.html
+redirect_from:
+  - /integration-guide/varonis-collector/troubleshooting-qumulo-broker.html
 sidebar: integration_guide_sidebar
-keywords: Varonis Collector, integrate, integration, broker, Qumulo Broker, troubleshoot
+keywords: Varonis, integrate, integration, broker, Qumulo Broker, troubleshoot
 varJSONreadability: In the following example, the JSON is formatted for readability.
 ---
 
