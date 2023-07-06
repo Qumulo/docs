@@ -5,7 +5,7 @@ permalink: /integration-guide/qumulo-broker/qumulo-broker-with-qumulo-core.html
 redirect_from:
   - /integration-guide/varonis-collector/qumulo-core-with-varonis.html
 sidebar: integration_guide_sidebar
-keywords: Qumulo Broker, integrate, integration, getting started
+keywords: Varonis, Qumulo Broker, integrate, integration, getting started
 ---
 
 The Qumulo-Varonis integration monitors file and directory operations in Qumulo Core. When events take place in a Qumulo system, Qumulo Core adds the events to audit logs which track all actions that users take within a Qumulo namespace, including data access and modification, file system access, data sharing through new SMB shares or NFS exports, and system configuration changes. Qumulo Core uses the [Qumulo Broker](#qumulo-broker) to process and send audit logs to Varonis.
