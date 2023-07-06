@@ -6,8 +6,12 @@ sidebar: hardware_guide_sidebar
 keywords: out-of-band_management, out_of_band_management, IPMI, DHCP, network, networking, LAN, ipmitool, 100 Gbps, Ethernet, power
 ---
 
-{% capture unusedPorts %}{{site.unusedEthPorts}}{% endcapture %}
-{% include note.html content=unusedPorts %}
+{{site.data.alerts.note}}
+<ul>
+  <li>For dual-NIC nodes, the left NIC is for the front end and the right NIC is for the back end. For more information, see <a href="networking-cluster.html">Cluster Networking</a>.</li>
+  <li>{{site.unusedEthPorts}}</li>
+</ul>
+{{site.data.alerts.end}}
 
 {% capture alt_tag %}Back Diagram of the {{site.q1uag1Long}} Node{% endcapture %}
 {% include image.html alt=alt_tag file="quiver-1ua-all-nvme-gen1-back-diagram.png" url="/hardware-guide/quiver-1ua-all-nvme-gen1/images/quiver-1ua-all-nvme-gen1-back-diagram.png" %}
