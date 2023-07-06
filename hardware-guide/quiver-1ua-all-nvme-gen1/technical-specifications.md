@@ -6,8 +6,6 @@ sidebar: hardware_guide_sidebar
 keywords: technical_specifications, tech_specs, specs, specifications, Quiver_1U_All-NVMe_Gen1
 ---
 
-{% include note.html content="Values marked with an asterisk (*) are estimated." %}
-
 <table cellspacing="0" cellpadding="0">
   <thead>
     <tr>
@@ -68,7 +66,7 @@ keywords: technical_specifications, tech_specs, specs, specifications, Quiver_1U
     <tr>
       <td><strong>Idle Power Consumption</strong></td>
       <td style="text-align: center;">315 W</td>
-      <td colspan="2" style="text-align: center;">288 W*</td>
+      <td colspan="2" style="text-align: center;">288 W</td>
       <td style="text-align: center;">245 W</td>
     </tr>    
     <tr>
@@ -79,9 +77,9 @@ keywords: technical_specifications, tech_specs, specs, specifications, Quiver_1U
     </tr>    
     <tr>
       <td><strong>Typical Power Consumption</strong></td>
-      <td style="text-align: center;">400 W*</td>
-      <td colspan="2" style="text-align: center;">336 W*</td>
-      <td style="text-align: center;">310 W*</td>
+      <td style="text-align: center;">400 W</td>
+      <td colspan="2" style="text-align: center;">336 W</td>
+      <td style="text-align: center;">310 W</td>
     </tr>
     <tr>
       <td><strong>Typical Thermal Rating</strong></td>
@@ -91,8 +89,8 @@ keywords: technical_specifications, tech_specs, specs, specifications, Quiver_1U
     </tr>
     <tr>
       <td><div><strong>Maximum Power Consumption</strong></div></td>
-      <td style="text-align: center;">605 W*</td>
-      <td colspan="2" style="text-align: center;">555 W*</td>
+      <td style="text-align: center;">605 W</td>
+      <td colspan="2" style="text-align: center;">555 W</td>
       <td style="text-align: center;">470 W</td>
     </tr>
     <tr>
