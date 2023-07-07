@@ -37,7 +37,7 @@ entries:
       url: /contacting-qumulo-care-team.html
       output: web  
 
-  - title: Qumulo Broker
+  - title: Integrating with Varonis by Using Qumulo Broker
     url: /integration-guide/qumulo-broker/index.html
     output: web, pdf
     folderitems:
