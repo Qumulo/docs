@@ -763,14 +763,6 @@ span.projectTitle {
     font-family: Montserrat, Avenir, sans-serif;
     font-weight: bold;
 }
-/*
-.footer {
-    padding-top: 15px;
-    color: white;
-    background-color:#0d1934;
-    width:auto;
-    height:130px;
-}*/
 
 .footer-text {
     text-align:right;
@@ -1277,6 +1269,16 @@ span.soft {
     color: white;
     background-color: #444;
     padding:10px;
+}
+
+a.footer_link,
+a.footer_link:visited {
+    color: white;
+    text-decoration: underline;
+}
+
+a.footer_link:hover {
+    text-decoration: none;
 }
 
 /* this part adds an icon after external links, using FontAwesome*/
