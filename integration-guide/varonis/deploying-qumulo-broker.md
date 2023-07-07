@@ -1,8 +1,9 @@
 ---
-title: "Deploying Qumulo Broker"
-summary: "This section explains how to deploy Qumulo Broker to enable integration with Varonis."
-permalink: /integration-guide/qumulo-broker/deploying-qumulo-broker.html
+title: "Integrating Qumulo Core with Varonis"
+summary: "This section explains how to integrate Qumulo Core with Varonis by deploying Qumulo Broker."
+permalink: /integration-guide/varonis/deploying-qumulo-broker.html
 redirect_from:
+  - /integration-guide/qumulo-broker/deploying-qumulo-broker.html
   - /integration-guide/varonis-collector/deploying-qumulo-broker.html
 sidebar: integration_guide_sidebar
 keywords: Varonis, integrate, integration, broker, Qumulo Broker, deploy

@@ -37,19 +37,19 @@ entries:
       url: /contacting-qumulo-care-team.html
       output: web  
 
-  - title: Integrating with Varonis by Using Qumulo Broker
-    url: /integration-guide/qumulo-broker/index.html
+  - title: Integrating with Varonis
+    url: /integration-guide/varonis/index.html
     output: web, pdf
     folderitems:
 
-    - title: How Qumulo Broker Works with Qumulo Core
-      url: /integration-guide/qumulo-broker/qumulo-broker-with-qumulo-core.html
+    - title: How Qumulo Core Integrates with Varonis
+      url: /integration-guide/varonis/qumulo-broker-with-qumulo-core.html
       output: web, pdf
       
-    - title: Deploying Qumulo Broker
-      url: /integration-guide/qumulo-broker/deploying-qumulo-broker.html
+    - title: Integrating Qumulo Core with Varonis
+      url: /integration-guide/varonis/deploying-qumulo-broker.html
       output: web, pdf
       
-    - title: Troubleshooting Qumulo Broker
-      url: /integration-guide/qumulo-broker/troubleshooting-qumulo-broker.html
+    - title: Troubleshooting the Integration
+      url: /integration-guide/varonis/troubleshooting-qumulo-broker.html
       output: web, pdf

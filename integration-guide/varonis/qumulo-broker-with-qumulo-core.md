@@ -1,8 +1,9 @@
 ---
-title: "How Qumulo Broker works with Qumulo Core"
-summary: "This section explains how Qumulo Broker works with Qumulo Core."
-permalink: /integration-guide/qumulo-broker/qumulo-broker-with-qumulo-core.html
+title: "How Qumulo Core Integrates with Varonis"
+summary: "This section explains how Qumulo Core integrates with Varonis by using Qumulo Broker."
+permalink: /integration-guide/varonis/qumulo-broker-with-qumulo-core.html
 redirect_from:
+  - /integration-guide/qumulo-broker/qumulo-broker-with-qumulo-core.html
   - /integration-guide/varonis-collector/qumulo-core-with-varonis.html
 sidebar: integration_guide_sidebar
 keywords: Varonis, Qumulo Broker, integrate, integration, getting started
