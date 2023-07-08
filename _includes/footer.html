@@ -3,7 +3,7 @@
         <div class="footer-text">
             Copyright &copy; {{ site.time | date: "%Y"  }} {{site.company_name}}<br>
 {% comment %}{% if page.last_updated %}<span>Page last updated:</span> {{page.last_updated}}<br>{% endif %} Site generated on {{ site.time | date: "%b %-d, %Y"  }} <br>{% endcomment %}
-            <a class="no_icon footer_link" href="https://qumulo.com/legal/privacy-policy/">Privacy Policy</a> &VerticalSeparator; <a class="no_icon" href="https://qumulo.com/legal/cookie-policy/">Cookie Policy</a> &VerticalSeparator; <a class="no_icon" href="https://qumulo.com/terms-hub/">Terms Hub</a><br>
+            <a class="no_icon footer_link" href="https://qumulo.com/legal/privacy-policy/">Privacy Policy</a> &VerticalSeparator; <a class="no_icon footer_link" href="https://qumulo.com/legal/cookie-policy/">Cookie Policy</a> &VerticalSeparator; <a class="no_icon footer_link" href="https://qumulo.com/terms-hub/">Terms Hub</a><br>
 <p><img width="93" height="43" id="logo" data-height-percentage="40" data-src="{{ "images/qumulo-logo.svg" | relative_url }}" src="{{ "images/qumulo-logo.svg" | relative_url }}" alt="Qumulo Logo" data-actual-width="1010" data-actual-height="312"></p>
         </div>
         <div class="footer-grumpquats">
@@ -18,20 +18,6 @@
 	</div>
         <span class="grt-cookie-button">Accept</span>
    </div>
-
    <script src="js/grt-cookie-consent.js"></script>
-   
-   <script>
-       // Custom Settings
-       $(".grt-cookie").grtCookie({
-           // Main text and background color
-           textcolor: "#333",
-           background: "#3FBAD6",
-           // Button colors
-           buttonbackground: "#007CAC",
-           buttontextcolor: "#fff",
-           // Duration in days
-           duration: 365,
-       });
-    </script>	
+   <script>$(".grt-cookies").grtCookie();</script>	
 </footer>
