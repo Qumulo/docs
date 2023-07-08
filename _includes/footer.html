@@ -19,5 +19,15 @@
         <span class="grt-cookie-button">Accept</span>
    </div>
    <script src="js/grt-cookie-consent.js"></script>
-   <script>$(".grt-cookies").grtCookie();</script>	
+   <script>		// Custom Settings
+		$(".grt-cookie").grtCookie({
+			// Main text and background color
+			textcolor: "#333",
+			background: "#FFCD69",
+			// Button colors
+			buttonbackground: "#c40b14",
+			buttontextcolor: "#fff",
+			// Duration in days
+			duration: 365,
+		});</script>	
 </footer>
