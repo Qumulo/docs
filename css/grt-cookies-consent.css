@@ -1,72 +1,70 @@
 .grt-cookie {
-	display:none;
-	position:fixed;
-	bottom:0;
-	left:0;
-	right:0;
-	padding: 20px;
-	background: #3FBAD6;
-	color:#333;
-	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-	z-index:9999;
+  display:none;
+  position:fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  padding: 20px;
+  background: #3FBAD6;
+  color:#333;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  z-index:9999;
 }
 
 .grt-cookie-active {
-	display: flex;
-	justify-content: space-between;
-	align-items: baseline;
-	flex-direction: row;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-direction: row;
 }
 
 .grt-cookie p {
-	font-size: 14px;
-	margin: 0;
-	padding:0;
-	line-height: 1.35;
-	color:#333;
-	font-weight: normal;
+  font-size: 14px;
+  margin: 0;
+  padding:0;
+  line-height: 1.35;
+  color:#333;
+  font-weight: normal;
 }
 
 .grt-cookie p a {
-	color:#333;
-	text-decoration: underline;
-	font-size: 14px;
-	margin: 0;
-	padding:0;
+  color:#333;
+  text-decoration: underline;
+  font-size: 14px;
+  margin: 0;
+  padding:0;
 }
 
 .grt-cookie-button {
-	display: inline-block;
-	cursor: pointer;
-	font-weight: bold;
-	font-size: 14px;
-	padding: 3px 18px;
-	margin-left:12px;
-	background: #007CAC;
-	color: #FFF;
-	text-transform: capitalize;
-	white-space: nowrap;
+  display: inline-block;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
+  padding: 3px 18px;
+  margin-left:12px;
+  background: #007CAC;
+  color: #FFF;
+  text-transform: capitalize;
+  white-space: nowrap;
 }
 
 .grt-cookie-button:hover {
-	background: #154A75;
+  background: #154A75;
 }
 
 @media (max-width:767px) {
+  .grt-cookie {
+    flex-direction: column;
+    padding: 15px;
+  }
 
-	.grt-cookie {
-		flex-direction: column;
-		padding: 15px;
-	}
+  .grt-cookie p, .grt-cookie p a {
+    font-size:13px;
+  }
 
-	.grt-cookie p, .grt-cookie p a {
-		font-size:13px;
-	}
-
-	.grt-cookie-button {
-		font-size:13px;
-		padding: 3px 14px;
-		margin:8px 0 0 0;
-	}
-
+  .grt-cookie-button {
+    font-size:13px;
+    padding: 3px 14px;
+    margin:8px 0 0 0;
+  }
 }
