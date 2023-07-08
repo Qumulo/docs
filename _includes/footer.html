@@ -12,24 +12,28 @@
     </div>
 
    <!-- Cookie Consent - GRT Plugin -->	
-    <div class="grt-cookie"> 
+   <div class="grt-cookie">
         <div class="grt-cookies-msg">
 	    <p>We use cookies to improve your user experience by remember your preferences on this website. If you continue to use this site we will assume that you accept and understand our <a href="https://qumulo.com/legal/privacy-policy">Privacy Policy</a>, <a href="https://qumulo.com/legal/cookie-policy/">Cookie Policy</a>, and <a href="https://qumulo.com/terms-hub/">Terms Hub</a>.</p>
-        </div> 
-	<span class="grt-cookie-button">Accept</span>
-    </div>
-    <script>
-      $(".grt-cookie").grtCookie({
-        // Main text and background color
-	textcolor: "#333",
-	background: "#FFCD69",
+	</div>
+        <span class="grt-cookie-button">Accept</span>
+   </div>
 	
-	// Button colors
-	buttonbackground: "#c40b14",
-	buttontextcolor: "#fff",
-	
-	// Duration in days
-	duration: 365,
-      });
-     </script>
+   <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+   <script src="js/grt-cookie-consent.js"></script>
+   
+   <script>
+       // Custom Settings
+       $(".grt-cookie").grtCookie({
+           // Main text and background color
+           textcolor: "#333",
+           background: "#FFCD69",
+           // Button colors
+           buttonbackground: "#c40b14",
+           buttontextcolor: "#fff",
+           // Duration in days
+           duration: 365,
+       });
+    </script>	
 </footer>
