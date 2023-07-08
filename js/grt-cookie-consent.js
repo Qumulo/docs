@@ -13,28 +13,11 @@
 
 		// Default options
 		var settings = $.extend({
-			textcolor: "#333",
-			background: "#fff",
-			buttonbackground: "#333",
-			buttontextcolor: "#fff",
-			duration: 365
+		        duration: 365
 		}, options);
 
 		// Check cookie
 		if (!(document.cookie.indexOf("acceptgrt=0") > -1)) {
-
-			// Text and Background color
-			this.css({
-				color: settings.textcolor,
-				background: settings.background,
-			});
-
-			// Button Colors
-			$('span.grt-cookie-button').css({
-				background: settings.buttonbackground,
-				color: settings.buttontextcolor
-			});
-
 			// Show message and calculate date
 			this.addClass("grt-cookie-active");
 			var d1 = new Date();
