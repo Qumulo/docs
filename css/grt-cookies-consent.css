@@ -5,7 +5,7 @@
 	left:0;
 	right:0;
 	padding: 20px;
-	background:#FFF;
+	background:#3FBAD6;
 	color:#333;
 	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 	z-index:9999;
@@ -38,14 +38,18 @@
 .grt-cookie-button {
 	display: inline-block;
 	cursor: pointer;
-	font-weight: normal;
+	font-weight: bold;
 	font-size: 14px;
 	padding: 3px 18px;
 	margin-left:12px;
-	background: #333;
+	background: #007CAC;
 	color: #FFF;
 	text-transform: capitalize;
 	white-space: nowrap;
+}
+
+.grt-cookie-button:hover {
+	background: #154A75;
 }
 
 @media (max-width:767px) {
