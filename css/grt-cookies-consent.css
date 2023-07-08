@@ -5,7 +5,7 @@
 	left:0;
 	right:0;
 	padding: 20px;
-	background:#3FBAD6;
+	background: #3FBAD6;
 	color:#333;
 	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 	z-index:9999;
@@ -14,7 +14,7 @@
 .grt-cookie-active {
 	display: flex;
 	justify-content: space-between;
-	align-items: flex-start;
+	align-items: baseline;
 	flex-direction: row;
 }
 
