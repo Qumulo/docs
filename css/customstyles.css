@@ -1293,6 +1293,7 @@ a[href^="http://"]:after, a[href^="https://"]:after {
 }
 
 /* Strip the outbound icon when this class is present */
+a[href*="contacting-qumulo-care-team"]::after,
 a[href].noCrossRef::after,
 a.no_icon:after
  {

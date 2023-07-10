@@ -16,7 +16,11 @@
 
    {{site.data.alerts.important}}
    <ul>
-     <li>For information about how changing the drive protection level works in different versions of Qumulo Core, see <a href="/administrator-guide/protecting-data/adding-nodes-with-data-protection-changes.html">Adding Nodes to a Qumulo Cluster with Data Protection Configuration Changes</a>.</li>
+     <li>
+       <p>{{site.adp.before612AddOnly}}</p>
+       <p>{{site.adp.before612Description}} {{site.contactQumuloCare}}.</p>
+     </li>
+     <li>{{site.adp.after612AddReplace}}</li>
      <li>Using 3- or 4-drive protection reduces the total capacity of your cluster.</li>
    </ul>
    {{site.data.alerts.end}}

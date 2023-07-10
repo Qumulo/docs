@@ -1,7 +1,9 @@
 ---
 title: "Managing Security Keys in the Qumulo File System Key Store"
 summary: "This section explains how to manage security keys in the Qumulo file system key store by using the <code>qq</code> CLI."
-permalink: /administrator-guide/protecting-data/managing-security-keys.html
+permalink: /administrator-guide/data-security/managing-security-keys.html
+redirect_from:
+  - /administrator-guide/protecting-data/managing-security-keys.html
 sidebar: administrator_guide_sidebar
 keywords: key, public_key, add, read, modify, rotate, enable, disable, delete, display, lock, unlock
 varXrefUsage: For more information, see <a href="#retrieve-key-usage">Retrieving Public Key Usage Information</a>.
@@ -74,7 +76,7 @@ To modify the name or comment for a public key, use the `qq fs_security_modify_k
 This section explains how to rotate a public key in the Qumulo file system key store.
 
 {{site.data.alerts.note}}
-<ul>  
+<ul>
   <li>Key rotation doesn't affect the resources that the key protects or change the identifier or name of the public key.</li>
   <li>When the key rotation is complete, only the replacement public key can unlock the protected resources.</li>
 </ul>
@@ -98,7 +100,7 @@ qq fs_security_replace_key \
 1. To generate a verification signature, use the response from the challenge with the existing private key and another verification signature by using the challenge and the replacement private key.
 
    For more information, see [Signing a Security Challenge by Using an ECDSA Private Key](generating-storing-ecdsa-keys.html#signing-a-security-challenge-by-using-an-ecdsa-private-key).
-   
+
 1. To rotate the key, use the `qq fs_security_replace_key` command and specify the key identifier or name, the replacement public key contents, the replacement key verification signature (Base64-encoded key replacement challenge signed with the replacement private key), and the existing key verification signature (Base64-encoded key replacement challenge signed with the existing private key). For example:
 
    ```bash
@@ -110,10 +112,10 @@ qq fs_security_replace_key \
    ```
 
    For more information, see [Extracting the Public Key from an ECDSA Private Key](generating-storing-ecdsa-keys.html#extracting-the-public-key-from-an-ecdsa-private-key).
-   
+
    {% include important.html content="Because the key version is part of the challenge message, and this version changes when a user writes or modifies the key, any change to the key name or comment after you receive the challenge message makes the message stale." %}
 
-  
+
 ## Disabling a Public Key
 When you add a key to the Qumulo file system key store, Qumulo Core enables it automatically.
 
@@ -128,7 +130,7 @@ When you add a key to the Qumulo file system key store, Qumulo Core enables it a
 </ul>
 {{site.data.alerts.end}}
 
-  
+
 ## Deleting a Public Key
 Use the `qq fs_security_delete_key` and specify the key identifier or name.
 

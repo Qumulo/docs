@@ -145,6 +145,17 @@ exampleIP2: 203.0.113.2
 exampleSubnet1: 255.0.0.1
 exampleGateway1: 192.168.0.1
 exampleUUID41: 12345a6b-7c89-0d12-3456-78fe9012f345
+exampleUUID42: abcde1f2-g3hi-j4kl-mnop-qr56stuv7wxy
+
+adp:
+  before612AddOnly: Qumulo Core 6.1.0.1 and 6.1.1 support Adaptive Data Protection by letting you reconfigure your cluster's fault tolerance level and storage efficiency only when you add nodes to your cluster.
+  before612Description: Depending on your cluster, Qumulo Core shows configuration options that offer better fault tolerance levels, better storage efficiency, or both benefits. To help choose better data protection configuration,
+  after612AddReplace: In Qumulo Core 6.1.2 (and higher), you can change your cluster's data protection configuration when you add or replace nodes.
+
+determineUUIDs: 1. To determine the UUIDs of the nodes to add to your cluster, use the <code>qq unconfigured_nodes_list</code> command.
+noteDownUUIDs: 1. Write down the UUIDs of the nodes that you want to add to the cluster, in the order that you want to add them.
+rackNewNodes: 1. Rack and wire your new nodes and then power them on.
+cannotReorderNodes: it isn’t possible to revert this operation or reorder nodes after adding them to a cluster.
 
 hardware:
   ipmiCreds:

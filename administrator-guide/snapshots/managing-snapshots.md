@@ -234,7 +234,7 @@ If you can use the private key only to sign data, take the following steps.
 
 1. To generate a verification signature, use the response from the challenge with your private key.
 
-   For more information about creating a verification signature by using a private key or key management service, see [Signing a Security Challenge by Using an ECDSA Private Key](../protecting-data/generating-storing-ecdsa-keys.html#signing-a-security-challenge-by-using-an-ecdsa-private-key).
+   For more information about creating a verification signature by using a private key or key management service, see [Signing a Security Challenge by Using an ECDSA Private Key](../data-security/generating-storing-ecdsa-keys.html#signing-a-security-challenge-by-using-an-ecdsa-private-key).
 
 1. To unlock the snapshot, use the `qq snapshot_unlock_snapshot` command and specify the snapshot ID and the Base64-encoded unlock challenge that your private key signed. For example:
 

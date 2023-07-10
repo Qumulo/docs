@@ -1,7 +1,9 @@
 ---
 title: "Generating and Storing ECDSA Keys on a Qumulo Cluster"
 summary: "This section explains how to generate Elliptic Curve Digital Signature Algorithm (ECDSA) keys and ECDSA verification signatures that are compatible with the Qumulo file system key store."
-permalink: /administrator-guide/protecting-data/generating-storing-ecdsa-keys.html
+permalink: /administrator-guide/data-security/generating-storing-ecdsa-keys.html
+redirect_from:
+  - /administrator-guide/protecting-data/generating-storing-ecdsa-keys.html
 sidebar: administrator_guide_sidebar
 keywords: cluster, ECDSA, signing, key, asymmetric_key, public_key, signature, cryptography, ransomware, security, key_store, key_management_service, KMS
 varSpecifyDetails: When you create a key pair, specify the following details&#58;
@@ -167,9 +169,9 @@ You can use your private key to generate a verification signature and then provi
    ```bash
    echo -n "This is my challenge." > /tmp/challenge.out
    ```
-   
+
    {% include note.html content="The `-n` flag ensures that there are no newline characters following the challenge." %}
-   
+
 1. To sign the challenge, use the `openssl` tool and specify the path to the private key. For example:
 
    ```bash
@@ -212,7 +214,7 @@ You can use your private key to generate a verification signature and then provi
 
 ### To Sign a Security Challenge by Using the Azure Key Vault
 {% include important.html content="The Azure API requires a security challenge as a UrlBase64-encoded SHA-256 digest." %}
-   
+
 1. Sign a security challenge by using the Azure Key Vault and the Azure API. For more information, see [`sign`](https://learn.microsoft.com/en-us/rest/api/keyvault/keys/sign/sign?tabs=HTTP) in the Azure documentation.
 
 1. Convert your plaintext challenge into the correct format. For example:
@@ -225,10 +227,10 @@ You can use your private key to generate a verification signature and then provi
      | base64 \
      | tr '/+' '_-'
    ```
-     
+
 1. Use the re-encoded challenge to call the Azure API.
 
-1. Specify ES256 as the algorithm. 
+1. Specify ES256 as the algorithm.
 
    The signature in the response is encoded in UrlBase64 format.
 
