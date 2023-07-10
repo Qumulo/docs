@@ -1,13 +1,29 @@
 <footer>
-    <div class="footer">
-        <div class="footer-text">
-               Copyright &copy; {{ site.time | date: "%Y"  }} {{site.company_name}}<br>
+  <div class="footer">
+    <div class="footer-text">
+      Copyright &copy; {{ site.time | date: "%Y"  }} {{site.company_name}}<br>
 {% comment %}{% if page.last_updated %}<span>Page last updated:</span> {{page.last_updated}}<br>{% endif %} Site generated on {{ site.time | date: "%b %-d, %Y"  }} <br>{% endcomment %}
-                           <a class="no_icon footer_link" href="https://qumulo.com/legal/privacy-policy/">Privacy Policy</a><br>
+      <a class="no_icon footer_link" href="https://qumulo.com/legal/privacy-policy/">Privacy Policy</a> &VerticalSeparator; <a class="no_icon footer_link" href="https://qumulo.com/legal/cookie-policy/">Cookie Policy</a> &VerticalSeparator; <a class="no_icon footer_link" href="https://qumulo.com/terms-hub/">Terms Hub</a><br>
 <p><img width="93" height="43" id="logo" data-height-percentage="40" data-src="{{ "images/qumulo-logo.svg" | relative_url }}" src="{{ "images/qumulo-logo.svg" | relative_url }}" alt="Qumulo Logo" data-actual-width="1010" data-actual-height="312"></p>
-        </div>
-        <div class="footer-grumpquats">
-            <img src="{{ "images/grumpquats.png" | relative_url }}" style="max-width:220px;" alt="Three Grumpquats">
-        </div>
     </div>
+    <div class="footer-grumpquats">
+      <img src="{{ "images/grumpquats.png" | relative_url }}" style="max-width:220px;" alt="Three Grumpquats">
+    </div>
+  </div>
+
+  <!-- Cookie Consent - GRT Plugin -->	
+  <div class="grt-cookie">
+    <div class="grt-cookies-msg">
+      <p>We use cookies to improve your user experience and remember your preferences on this website. If you continue to use this website, we will assume that you accept and understand our <a class="no_icon" href="https://qumulo.com/legal/privacy-policy">Privacy Policy</a>, <a class="no_icon" href="https://qumulo.com/legal/cookie-policy/">Cookie Policy</a>, and <a class="no_icon" href="https://qumulo.com/terms-hub/">Terms Hub</a>.</p>
+    </div>
+    <span class="grt-cookie-button">Accept</span>
+  </div>
+  <script src="{{ "js/grt-cookie-consent.js" | relative_url }}"></script>
+  <script>
+    // Custom Settings
+    $(".grt-cookie").grtCookie({
+      // Duration in days
+      duration: 365,
+    });
+  </script>	
 </footer>
