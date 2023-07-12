@@ -18,6 +18,8 @@ keywords: update, upgrade, instant, instant_software_upgrade, platform, platform
 
 {{site.nexusDownloads}}
 
+For information about the most important features from each release, see [Qumulo Core Feature Log](feature-log.html).
+
 <div class="table-float-container">
 <div class="table-float-child">
   <h2>On-Premises Upgrades</h2>

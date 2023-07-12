@@ -61,6 +61,10 @@ entries:
       url: /administrator-guide/upgrading-qumulo-core/mode-reference.html
       output: web, pdf
 
+    - title: Feature Log
+      url: /administrator-guide/upgrading-qumulo-core/feature-log.html
+      output: web, pdf
+
   - title: Authentication
     url: /administrator-guide/authentication-qumulo-core/index.html
     output: web, pdf

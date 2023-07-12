@@ -557,7 +557,13 @@ div#toc {
     float: right;
     position: relative;
     top: inherit; /* Set this to the default value */
-    margin-left:10px;
+    margin-left: 10px;
+    border-radius: 4px;
+    border: 1px solid #f1efef;
+}
+
+#toc > ul {
+    margin-bottom: 0px;
 }
 
 div#toc ul li {
