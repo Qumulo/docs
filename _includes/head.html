@@ -1,35 +1,84 @@
+
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="{% if page.summary %}{{ page.summary | strip_html | strip_newlines }}{% endif %}">
-<meta name="keywords" content="{{page.tags}}{% if page.tags %}, {% endif %} {{page.keywords}}">
+
 <title>{{ page.title }} | {{ site.site_title }}</title>
-<link rel="stylesheet" href="{{ "css/syntax.css" | relative_url }}">
 
-<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
-<link rel="stylesheet" href="{{ "css/modern-business.css" | relative_url }}">
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-<link rel="stylesheet" href="{{ "css/customstyles.css" | relative_url }}">
-<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+<!-- BEGIN TO PREPARE WEBSITE RESOURCES
+-->
+<!-- Preload from jsdelivr.net:
+     * Bootstrap and Font Awesome as stylesheets
+     * Bootstrap as a script
+-->
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" as="style" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css" as="style" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" as="script" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous">
+
+<!-- Preload web fonts from fonts.googleapis.com as stylesheets -->
+<link rel="preload" href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" as="style">
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap" as="style">
+
+<!-- Preload scripts from cloudflare.com
+     * jQuery
+     * jQuery Cookie
+     * Anchor JS
+-->
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" as="script">
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js" as="script">
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/5.0.0/anchor.min.js" as="script">
+
+<!-- Prefetch DNS from CDNs -->
+<link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+<link rel="dns-prefetch" href="https://fonts.googleapis.com">
+<link rel="dns-prefetch" href="https://fonts.gstatic.com" crossorigin>
+<link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+
+<!-- Preconnect to CDNs -->
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
+<!-- BEGIN TO LOAD WEBSITE RESOURCES -->
+<!-- Load Bootstrap and Font Awesome -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+<!-- Load local stylesheets -->
 <link rel="stylesheet" href="{{ "css/boxshadowproperties.css" | relative_url }}">
-<!-- most color styles are extracted out to here -->
-<link rel="stylesheet" href="{{ "css/theme-blue.css" | relative_url }}">
-<!-- Cookie Consent - GRT Plugin -->
+<link rel="stylesheet" href="{{ "css/customstyles.css" | relative_url }}">
 <link rel="stylesheet" href="{{ "css/grt-cookies-consent.css" | relative_url }}">
+<link rel="stylesheet" href="{{ "css/modern-business.css" | relative_url }}">
+<link rel="stylesheet" href="{{ "css/syntax.css" | relative_url }}">
+<link rel="stylesheet" href="{{ "css/theme-blue.css" | relative_url }}">
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
-<script src="{{ "js/jquery.navgoco.min.js" | relative_url }}"></script>
+<!-- Optimize web font load
+     Note: Loading Noto Color Emoji by using `link rel=stylesheet`
+           syntax causes multiple versions of the font to load.
+-->
+<style>
+  @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap');    
+</style>
 
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-<!-- Anchor.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
-<script src="{{ "js/toc.js" | relative_url }}"></script>
-<script src="{{ "js/customscripts.js" | relative_url }}"></script>
+<!-- Web font fallbacks for older browsers -->
+<noscript>
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Montserrat&display=swap">
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap">    
+</noscript>  
 
+<!-- Define page metadata -->
+<meta name="description" content="{% if page.summary %}{{ page.summary | strip_html | strip_newlines }}{% endif %}">
+<meta name="keywords" content="{{ page.tags }}{% if page.tags %}, {% endif %} {{ page.keywords }}">
+<meta name="apple-mobile-web-app-title" content="Qumulo Documentation">
+<meta name="application-name" content="Qumulo Documentation">
+<meta name="msapplication-TileColor" content="#2b5797">
+<meta name="msapplication-TileImage" content="{{ "images/mstile-144x144.png" | relative_url }}">
+<meta name="msapplication-config" content="{{ "images/browserconfig.xml" | relative_url }}">
+<meta name="theme-color" content="#ffffff">
+
+<!-- Define favicon variants -->
 <link rel="apple-touch-icon" sizes="180x180" href="{{ "images/apple-touch-icon.png" | relative_url }}">
 <link rel="icon" type="image/png" sizes="32x32" href="{{ "images/favicon-32x32.png" | relative_url }}">
 <link rel="icon" type="image/png" sizes="194x194" href="{{ "images/favicon-194x194.png" | relative_url }}">
@@ -38,32 +87,31 @@
 <link rel="manifest" href="{{ "images/site.webmanifest" | relative_url }}">
 <link rel="mask-icon" href="{{ "images/safari-pinned-tab.svg" | relative_url }}" color="#5bbad5">
 <link rel="shortcut icon" href="{{ "images/favicon.ico" | relative_url }}">
-<meta name="apple-mobile-web-app-title" content="Qumulo Documentation">
-<meta name="application-name" content="Qumulo Documentation">
-<meta name="msapplication-TileColor" content="#2b5797">
-<meta name="msapplication-TileImage" content="{{ "images/mstile-144x144.png" | relative_url }}">
-<meta name="msapplication-config" content="{{ "images/browserconfig.xml" | relative_url }}">
-<meta name="theme-color" content="#ffffff">
 
-<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!-- Define RSS feed -->
+<link rel="alternate" href="{{ "/feed.xml" | prepend: site.url }} type="application/rss+xml" title="{{ site.title }}" ">
+
+<!-- Load scripts from cloudflare.com -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+<!-- Load local scripts with dependencies on jQuery -->
+<script async src="{{ "js/jquery.navgoco.min.js" | relative_url }}"></script>
+
+<!-- Load scripts from jsdelivr.net and cloudflare.com -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/5.0.0/anchor.min.js"></script>
+
+<!-- Load local scripts with dependencies on Bootstrap and Anchor JS -->
+<script async src="{{ "js/toc.js" | relative_url }}"></script>
+<script async src="{{ "js/customscripts.js" | relative_url }}"></script>
+
+<!-- Fallback for IE9 -->
 <!--[if lt IE 9]>
-<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
 
-<link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.url }}">
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-81J7N4LMSE"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-81J7N4LMSE');
-  gtag('consent', 'default', {
-    'ad_storage': 'denied',
-    'analytics_storage': 'denied',
-    'region': ['AT', 'BE', 'BG', 'HR', 'CY', 'CZ', 'DK', 'EE', 'FI', 'FR', 'DE', 'GR', 'HU', 'IS', 'IE', 'IT', 'LV', 'LI', 'LT', 'LU', 'MT', 'NL', 'NO', 'PL', 'PT', 'RO', 'SK', 'SI', 'ES', 'SE', 'CH', 'UK']
-  });
-</script>
+<!-- Load Google Analytics and exclude GDPR countries from collection -->
+<script defer src="https://www.googletagmanager.com/gtag/js?id=G-81J7N4LMSE"></script>
+<script defer src={{ "js/gtag.js" | relative_url }}"></script>
