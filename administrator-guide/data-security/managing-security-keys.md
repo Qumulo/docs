@@ -18,7 +18,7 @@ varXrefUsage: For more information, see <a href="#retrieve-key-usage">Retrieving
 </ul>
 {{site.data.alerts.end}}
 
-For information about protecting your snapshots by using a key from the Qumulo file system key store, see [Locking and Unlocking Snapshots](../snapshots/managing-snapshots.html#locking-and-unlocking-snapshots).
+For information about protecting your snapshots by using a key from the Qumulo file system key store, see [Locking and Unlocking Snapshots](../snapshots/locking-unlocking-snapshots.html).
 
 {% include tip.html content="The response of the `qq fs_security_add_key` command includes the _key identifier._ When you use `qq fs_security` commands, you can specify either the key identifier (by using the `--id` flag) or the key name (by using the `--name` flag)." %}
 

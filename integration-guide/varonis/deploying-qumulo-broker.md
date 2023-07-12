@@ -9,7 +9,7 @@ sidebar: integration_guide_sidebar
 keywords: Varonis, integrate, integration, broker, Qumulo Broker, deploy
 ---
 
-{{site.varonis.separateMachine}} For more information, see the [Qumulo-Varonis integration architecture diagram](qumulo-core-with-varonis.html#integration-architecture-diagram).
+{{site.varonis.separateMachine}} For more information, see the [Qumulo-Varonis integration architecture diagram](qumulo-broker-with-qumulo-core.html#integration-architecture-diagram).
 
 ## Step 1: Prepare for Deploying Qumulo Broker
 This section explains how to prepare your Qumulo Broker machine for deployment.

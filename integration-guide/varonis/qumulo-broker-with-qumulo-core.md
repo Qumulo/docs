@@ -23,7 +23,7 @@ The following architecture diagram shows the workflow between Qumulo Broker and 
 {% include note.html content="We recommend installing Qumulo Broker and Varonis in the same VLAN or VPC." %}
 
 <a id="integration-architecture-diagram"></a>
-{% include image.html alt="An Architecture Diagram of Integration Between Qumulo Broker and Qumulo Core" file="qumulo-broker-with-qumulo-core.png" url="/integration-guide/qumulo-broker/images/qumulo-broker-with-qumulo-core.png" %}
+{% include image.html alt="An Architecture Diagram of Integration Between Qumulo Broker and Qumulo Core" file="qumulo-broker-with-qumulo-core.png" url="/integration-guide/varonis/images/qumulo-broker-with-qumulo-core.png" %}
 
 {% include note.html content="Although Qumulo currently is certified only for the Varonis SaaS offering, you can configure and use the SaaS offering with an on-premises Qumulo cluster." %}
 

@@ -156,6 +156,10 @@ entries:
       url: /administrator-guide/snapshots/managing-snapshots.html
       output: web, pdf
 
+    - title: Locking and Unlocking Snapshots
+      url: /administrator-guide/snapshots/locking-unlocking-snapshots.html
+      output: web, pdf
+
     - title: Recovering Files by Using Snapshots
       url: /administrator-guide/snapshots/recovering-files.html
       output: web, pdf
