@@ -25,7 +25,12 @@ a {
      Note: This setting overrides bootstrap.css
   
   color: #1d557e !important;
+ old #337ab7
 }*/
+
+a {
+  color: #1d557e;
+}
 
 a.navbar-brand {
   color:white;
