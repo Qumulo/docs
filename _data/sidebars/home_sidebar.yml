@@ -5,6 +5,7 @@ entries:
   folders:
 
   - title: Qumulo Guides
+    url: /
     output: web
     folderitems:
 
