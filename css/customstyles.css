@@ -192,6 +192,7 @@ header {
 .logo img {
   max-height: 40px;
   margin-top: -15px;
+  margin-left: -20px;
 }
 
 .carelinks {
