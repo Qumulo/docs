@@ -25,7 +25,7 @@ To get started, choose one of the following guides.
     <a class="multilink" href="hardware-guide/">
       <picture>
         <source type="image/webp" srcset="images/hardware-guide.webp" width="301" height="301">
-        <source type="image/png" srcset="images/hardware-guide.png width="301" height="301">
+        <source type="image/png" srcset="images/hardware-guide.png" width="301" height="301">
         <img src="images/hardware-guide.png" alt="Qumulo-Certified Hardware Guide" class="landing-page-icon">
       </picture><br>Qumulo-Certified Hardware Guide</a>
   </span>
