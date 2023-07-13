@@ -5,7 +5,7 @@
 <script>
 $(document).ready(function() {
   /* Ensure that #toc isn't hidden. */
-  if ($('#toc').length) {
+  /*if ($('#toc').length) { */
     $('#toc').toc({
       minimumHeaders: 2,
       listType: 'ul',
@@ -20,7 +20,7 @@ $(document).ready(function() {
           $(window).scrollTop(scroll_target - 10);
       return false
     });
-  }
+  /*}*/
 });
 </script>
 
