@@ -43,6 +43,7 @@ a:visited {
    because we consider in-page links as
    "visited by default" */
 #toc > ul > li > a:visited {
+    /* This color is required to meet WCAG standards for accessible text. */
     color:#0379a7;    
 }
 
@@ -1384,6 +1385,7 @@ span.label.label-primary {
     }
 
 a code {
+    /* This color is required to meet WCAG standards for accessible text. */  
     color: #0379a7;
 }
 
