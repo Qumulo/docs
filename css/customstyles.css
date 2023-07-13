@@ -99,10 +99,16 @@ figure {
 
 /* -------------------- TOP NAVBAR START -------------------- */
 
-
-.clkb, .clc {
+.clkb {
   white-space: nowrap;
-  padding-bottom: 10px;
+}
+
+.clc {
+  white-space: nowrap;
+}
+
+.clc, .clqt {
+  margin-bottom: 10px;
 }
 
 body .nav-wrapper {
