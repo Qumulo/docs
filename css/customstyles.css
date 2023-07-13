@@ -43,7 +43,7 @@ a:visited {
    because we consider in-page links as
    "visited by default" */
 #toc > ul > li > a:visited {
-    color:#337ab7;    
+    color:#0379a7;    
 }
 
 #main {
@@ -1384,7 +1384,7 @@ span.label.label-primary {
     }
 
 a code {
-    color: #337ab7;
+    color: #0379a7;
 }
 
 table th code {
