@@ -263,14 +263,14 @@ a.multilink:hover {
   background:white;
 }
 
-img.landing-page-icon {
+.landing-page-icon {
   max-width:100px !important;
   max-height:100px !important;
   height:301px !important;
   width:301px !important;
 }
 
-img.three-grumpquats {
+.three-grumpquats {
   max-width:220px;
   max-height:93px;
   height:255px;
