@@ -104,6 +104,11 @@ figure {
 
 .clc {
   white-space: nowrap;
+  margin-bottom: 7px;
+}
+
+.clqt {
+  margin-bottom: 7px;
 }
 
 body .nav-wrapper {
@@ -204,7 +209,6 @@ header {
   padding-bottom: 20px;
   padding-right: 3px !important;
   margin-left: 20px;
-  line-height: 22px;
 }
 
 .user-nav {
