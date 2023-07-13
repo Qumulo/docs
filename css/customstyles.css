@@ -192,10 +192,10 @@ header {
 
 .carelinks {
   text-size-adjust: 100%;
-  margin-top: 0px;
+  margin-top: 9.5px;
   padding-left: 20px;
   font-weight: bold;
-  font-size: 12px;
+  font-size: 10pt;
   padding-bottom: 20px;
   padding-right: 3px !important;
 }
