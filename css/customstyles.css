@@ -1,7 +1,5 @@
 *, html, body {
   box-sizing: border-box;
-  /*padding:0px;
-  margin:0px;*/
 }
 
 body {
@@ -16,7 +14,6 @@ body {
   margin:0;
   display:flex;
   flex-direction:column;
-  /* Attach footer to bottom of page */
 }
 
 a {
@@ -27,7 +24,7 @@ a {
 }
 
 a.navbar-brand {
-  /* Ensures that there is a light color for the navbar. */
+  /* Ensure that there is a light color for the navbar. */
   color:white;
 }
 
@@ -51,15 +48,14 @@ a:visited {
   color:#3d33b7;
 }
 
-/* Colour of mini-TOC links never changes
-   because we consider in-page links as
-   "visited by default" */
+/* The colour of mini-TOC links never changes because we
+   consider in-page links as "visited by default" */
 #toc > ul > li > a:visited {
     /* This color is required to meet WCAG standards for accessible text. */
     color:#0379a7;    
 }
 
-/* No anchor icon after mini-TOC links */
+/* Remove the anchor icon after mini-TOC links */
 [data-anchorjs-icon]::after {
     content: attr(data-anchorjs-icon);
 }
@@ -97,7 +93,7 @@ figure {
   float: left;
 }
 
-/* -------------------- TOP NAVBAR START -------------------- */
+/* -------------------- TOP NAVBAR STARTS -------------------- */
 .clkb {
   white-space: nowrap;
 }
@@ -169,9 +165,9 @@ header {
   height: 100px;
   margin-top: 12px;
   justify-content: space-between;
+  
   /* Attach footer to bottom of page*/
   min-height:112px;
-  /* Attach footer to bottom of page*/
 }
 
 .nav-wrapper a {
@@ -221,9 +217,7 @@ h1.post-title-main:nth-child(1) {
   font-weight: bold; 
 }
 
-/* -------------------- TOP NAVBAR END -------------------- */
-
-/* ----------------- LANDING PAGE START ------------------- */
+/* ----------------- LANDING PAGE STARTS ------------------- */
 
 .landing-page-buttons {
   display:inline-block;
@@ -281,7 +275,7 @@ a.multilink:hover {
   width:604px;
 }
 
-/* ------------------- LANDING PAGE END ------------------- */
+
 
 .crumb {
     text-transform:capitalize;
@@ -1007,7 +1001,8 @@ li.activeSeries {
 div.alert code, h2 code {
     background-color: transparent !important;
 }
-/* without this, the links in these notes aren't visible.*/
+
+/* Without this, the links in the admonitions aren't visible. */
 .alert a {
     text-decoration: underline;
 }
@@ -1034,6 +1029,7 @@ h2  {
     font-size:24px;
     line-height:29px;
 }
+
 span.otherProgrammingLanguages {
     font-style: normal;
 }
@@ -1079,7 +1075,6 @@ ol.series li {
     display:block;
 }
 
-/* not sure if using this ...*/
 .navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
     border-color: #0d1934 !important;
 }
@@ -1193,11 +1188,6 @@ span.soft {
 }
 
 .githubEditButton {
-    /*
-    position: absolute;
-    top: -63px;
-    z-index: 1001;
-    right: 470px;*/
 }
 
 .downloadPDFButton {
@@ -1303,7 +1293,7 @@ a.footer_link:hover {
     text-decoration: none;
 }
 
-/* this part adds an icon after external links, using FontAwesome*/
+/* Add an icon after external links by using Font Awesome */
 a[href^="http://"]:after, a[href^="https://"]:after {
     content: "\f08e";
     font-family: FontAwesome;
@@ -1327,8 +1317,7 @@ a.no_icon:after
     margin-bottom: 10px;
 }
 
-/* algolia search */
-
+/* Algolia search */
 .search {
     text-align: left;
 }
@@ -1345,8 +1334,7 @@ a.no_icon:after
     padding: 0;
 }
 
-/* algolia */
-
+/* Algolia */
 div.results {
     position: absolute;
     background-color: white;
@@ -1521,17 +1509,12 @@ div.box.box1 {
         font-size: 14px;
     }
 
-/*
- * Let's target IE to respect aspect ratios and sizes for img tags containing SVG files
- *
- * [1] IE9
- * [2] IE10+
- */
-/* 1 */
+/*  Target IE9 to respect aspect ratios and sizes for img tags containing SVG files */
 .ie9 img[src$=".svg"] {
     width: 100%;
 }
-/* 2 */
+
+/*  Target IE10+ to respect aspect ratios and sizes for img tags containing SVG files */
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
     img[src$=".svg"] {
         width: 100%;
@@ -1543,8 +1526,7 @@ h4.panel-title {
     margin-top: 0px;
 }
 
-/*set navbar breakpoint so that it converts to hamburger earlier */
-
+/* Set navbar breakpoint so that it converts to a hamburger menu earlier */
 @media (max-width: 1200px) {
     .navbar-header {
         float: none;
