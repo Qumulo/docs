@@ -5,7 +5,11 @@
 <header class="header">
   <div class="logo">
     <a class="header-link" href="https://docs.qumulo.com/">
-        <img src="{{ "images/qumulo-logo.png" | relative_url }}" alt="Qumulo Logo">
+      <picture>
+	<source type="image/webp" srcset="{{ "images/qumulo-logo.webp" | relative_url }}">
+	<source type="image/png" srcset="{{ "images/qumulo-logo.png" | relative_url }}">	      
+        <img src="{{ "images/qumulo-logo.png" | relative_url }}" alt="Qumulo Logo" width="129" height="40">
+      </picture>
     </a>
   </div>
 
