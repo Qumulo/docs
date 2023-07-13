@@ -9,16 +9,53 @@ breadcrumbs: exclude
 
 To get started, choose one of the following guides.
 
+
+
 <div class="landing-page-buttons">
-  <span class="guide-button"><a class="multilink" href="azure-guide/"><img src="images/azure-guide.png" alt="Azure Native Qumulo Scalable File Service Guide" class="landing-page-icon"><br>Azure Native Qumulo Scalable File Service Guide</a></span>
+  <span class="guide-button">
+    <a class="multilink" href="azure-guide/">
+      <picture>
+        <source type="image/webp" srcset="images/azure-guide.webp">
+        <source type="image/png" srcset="images/azure-guide.png">
+        <img src="images/azure-guide.png" alt="Azure Native Qumulo Scalable File Service Guide" class="landing-page-icon">
+      </picture><br>Azure Native Qumulo Scalable File Service Guide</a>
+  </span>
 
-  <span class="guide-button"><a class="multilink" href="hardware-guide/"><img src="images/hardware-guide.png" alt="Qumulo-Certified Hardware Guide" class="landing-page-icon"><br>Qumulo-Certified Hardware Guide<br><br></a></span>
+  <span class="guide-button">
+    <a class="multilink" href="hardware-guide/">
+      <picture>
+        <source type="image/webp" srcset="images/hardware-guide.webp">
+        <source type="image/png" srcset="images/hardware-guide.png">
+        <img src="images/hardware-guide.png" alt="Qumulo-Certified Hardware Guide" class="landing-page-icon">
+      </picture><br>Qumulo-Certified Hardware Guide</a>
+  </span>
 
-  <span class="guide-button"><a class="multilink" href="integration-guide/"><img src="images/qumulo-integration-guide.png" alt="Qumulo Integration Guide" class="landing-page-icon"><br>Qumulo Integration Guide</a></span>
+  <span class="guide-button">
+    <a class="multilink" href="integration-guide/">
+      <picture>
+        <source type="image/webp" srcset="images/qumulo-integration-guide.webp">
+        <source type="image/png" srcset="images/qumulo-integration-guide.png">
+        <img src="images/qumulo-integration-guide.png" alt="Qumulo Integration Guide" class="landing-page-icon">
+      </picture><br>Qumulo Integration Guide</a>
+  </span>
 
-  <span class="guide-button"><a class="multilink" href="administrator-guide/"><img src="images/administrator-guide.png" alt="Qumulo Administrator Guide" class="landing-page-icon"><br>Qumulo<br>Administrator Guide</a></span>
+  <span class="guide-button">
+    <a class="multilink" href="administrator-guide/">
+      <picture>
+        <source type="image/webp" srcset="images/administrator-guide.webp">
+        <source type="image/png" srcset="images/administrator-guide.png">
+        <img src="images/administrator-guide.png" alt="Qumulo Administrator Guide" class="landing-page-icon">
+      </picture><br>Qumulo Administrator Guide</a>
+  </span>
 
-  <span class="guide-button"><a class="multilink" href="qumulo-alerts-guide/"><img src="images/qumulo-alerts-guide.png" alt="Qumulo Alerts Administrator Guide" class="landing-page-icon"><br>Qumulo Alerts<br>Administrator Guide</a></span>
+  <span class="guide-button">
+    <a class="multilink" href="qumulo-alerts-guide/">
+      <picture>
+        <source type="image/webp" srcset="images/qumulo-alerts-guide.webp">
+        <source type="image/png" srcset="images/qumulo-alerts-guide.png">
+        <img src="images/qumulo-alerts-guide.png" alt="Qumulo Alerts Administrator Guide" class="landing-page-icon">
+      </picture><br>Qumulo Alerts Administrator Guide</a>
+  </span>
 </div>
 
 ## Get Qumulo Core
