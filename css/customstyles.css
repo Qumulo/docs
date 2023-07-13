@@ -20,8 +20,10 @@ body {
 }
 
 a {
-  /* This color is required to meet WCAG standards for accessible text. */
-  color: #215a78;
+  /* This color is required to meet WCAG standards for accessible text.
+     Note: This style overrides bootstrap.css.
+  */
+  color: #245592;
 }
 
 a.navbar-brand {
