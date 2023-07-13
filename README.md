@@ -44,8 +44,8 @@ To get started, choose one of the following guides.
       <picture>
         <source type="image/webp" srcset="images/administrator-guide.webp">
         <source type="image/png" srcset="images/administrator-guide.png">
-        <img src="images/administrator-guide.png" alt="Qumulo Integration Guide" class="landing-page-icon">
-      </picture><br>Qumulo Integration Guide</a>
+        <img src="images/administrator-guide.png" alt="Qumulo Administrator Guide" class="landing-page-icon">
+      </picture><br>Qumulo Administrator Guide</a>
   </span>
 
   <span class="guide-button">
