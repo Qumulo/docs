@@ -17,15 +17,15 @@ To locate the front panel LEDs, use the following diagram.
 
 1. **Power On or Standby Button and System Power LED**
 
-   * 🟢 **Solid Green:**  System on
-   * 🟢 **Flashing Green:** (1 flash each second) Performing power-on sequence
-   * 🟠 **Solid Amber:** System in standby
+   * {{site.led.green}} **Solid Green:**  System on
+   * {{site.led.green}} **Flashing Green:** (1 flash each second) Performing power-on sequence
+   * {{site.led.orange}} **Solid Amber:** System in standby
    * **Off:** No power present
 
 1. **UID Button and LED**
 
-   * 🔵 **Solid Blue:** Activated
-   * 🔵 **Flashing Blue:**
+   * {{site.led.blue}} **Solid Blue:** Activated
+   * {{site.led.blue}} **Flashing Blue:**
 
      * 1 flash each second: Remote management or firmware upgrade in progress
      * 4 flashes each second: iLO manual reboot sequence initiated
@@ -35,24 +35,24 @@ To locate the front panel LEDs, use the following diagram.
 
 1. **Health LED**
 
-   * 🟢 **Solid Green:** Normal
-   * 🟢 **Flashing Green:** (1 flash each second) iLO is rebooting
-   * 🟠 **Flashing Amber:** System degraded
-   * 🔴 **Flashing Red:** (1 flash each second) System critical
+   * {{site.led.green}} **Solid Green:** Normal
+   * {{site.led.green}} **Flashing Green:** (1 flash each second) iLO is rebooting
+   * {{site.led.orange}} **Flashing Amber:** System degraded
+   * {{site.led.red}} **Flashing Red:** (1 flash each second) System critical
 
    {% include note.html content="If the Health LED indicates a degraded or critical state, review the system integrated management log (IML) or use iLO to review the system health status." %}
 
 1. **NIC Status LED**
 
-   * 🟢 **Solid Green:** Link to network
-   * 🟢 **Flashing Green:** (1 flash each second) Network active
+   * {{site.led.green}} **Solid Green:** Link to network
+   * {{site.led.green}} **Flashing Green:** (1 flash each second) Network active
    * **Off:** No network activity
 
 1. **Front Drive Health or Thermal LED**
 
-   * 🟢 **Solid Green:** Drives which the SAS expander supports are functional. This applies to all front drives and the rear drives connected to the front drive cage 2 backplane.
-   * 🟠 **Solid Amber:** Failure or predictive failure of one or more drives that the SAS expander supports. This applies to all front drives and to the rear drives connected to the front drive cage 2 backplane.
-   * 🟠 **Flashing Amber:** (1 flash each second) The temperature sensor in one or more front drives is about to reach the thermal threshold. You must immediately slide the front drive cages back into the chassis and keep them there until the LED turns green.
+   * {{site.led.green}} **Solid Green:** Drives which the SAS expander supports are functional. This applies to all front drives and the rear drives connected to the front drive cage 2 backplane.
+   * {{site.led.orange}} **Solid Amber:** Failure or predictive failure of one or more drives that the SAS expander supports. This applies to all front drives and to the rear drives connected to the front drive cage 2 backplane.
+   * {{site.led.orange}} **Flashing Amber:** (1 flash each second) The temperature sensor in one or more front drives is about to reach the thermal threshold. You must immediately slide the front drive cages back into the chassis and keep them there until the LED turns green.
 
      {% include note.html content="This LED behavior depends on the iLO 08-HD Max sensor reading." %}
 
@@ -130,19 +130,19 @@ To locate the rear panel LEDs, use the following diagram.
 
 1. **Dedicated iLO Port 1 Link LED**
 
-   * 🟢 **Green:** Network link
+   * {{site.led.green}} **Green:** Network link
    * **Off:** No network link
 
 1. **Dedicated iLO Port 1 Activity LED**
 
-   * 🟢 **Solid Green:** Link to network
-   * 🟢 **Flashing Green:** Network active
+   * {{site.led.green}} **Solid Green:** Link to network
+   * {{site.led.green}} **Flashing Green:** Network active
    * **Off:** No network activity
 
 1. **UID LED**
 
-   * 🔵 **Solid Blue:** Activated
-   * 🔵 **Flashing Blue:**
+   * {{site.led.blue}} **Solid Blue:** Activated
+   * {{site.led.blue}} **Flashing Blue:**
 
      * 1 flash each second: Remote management or firmware upgrade in progress
      * 4 flashes each second: iLO manual reboot sequence initiated
@@ -152,40 +152,40 @@ To locate the rear panel LEDs, use the following diagram.
 
 1. **Dedicated iLO Port 2 Link LED**
 
-   * 🟢 **Green:** Network link
+   * {{site.led.green}} **Green:** Network link
    * **Off:** No network link
 
 1. **Dedicated iLO Port 2 Activity LED**
 
-   * 🟢 **Solid Green:** Link to network
-   * 🟢 **Flashing Green:** Network active
+   * {{site.led.green}} **Solid Green:** Link to network
+   * {{site.led.green}} **Flashing Green:** Network active
    * **Off:** No network activity
 
 1. **NIC Port 1 Link LED**
 
-   * 🟢 **Green:** Network link
+   * {{site.led.green}} **Green:** Network link
    * **Off:** No network link
 
 1. **NIC Port 1 Activity LED**
 
-   * 🟢 **Solid Green:** Link to network
-   * 🟢 **Flashing Green:** Network active
+   * {{site.led.green}} **Solid Green:** Link to network
+   * {{site.led.green}} **Flashing Green:** Network active
    * **Off:** No network activity
 
 1. **NIC Port 2 Link LED**
 
-   * 🟢 **Green:** Network link
+   * {{site.led.green}} **Green:** Network link
    * **Off:** No network link
 
 1. **NIC Port 2 Activity LED**
 
-   * 🟢 **Solid Green:** Link to network
-   * 🟢 **Flashing Green:** Network active
+   * {{site.led.green}} **Solid Green:** Link to network
+   * {{site.led.green}} **Flashing Green:** Network active
    * **Off:** No network activity
 
 1. **Power Supply LED**
 
-   * 🟢 **Solid Green:** Normal
+   * {{site.led.green}} **Solid Green:** Normal
    * **Off:** One or more of the following conditions exist:
 
      * Power unavailable

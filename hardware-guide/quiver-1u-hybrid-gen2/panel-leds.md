@@ -12,15 +12,15 @@ On the front, right side of your node, there are four LEDs.
 
 | Label                 | Color and Behavior  | Description               |
 | --------------------- | ------------------- | ------------------------- |
-| Power Button with LED | 🔵 (solid blue)     | On                        |
-| Power Button with LED | 🔵 (blinking blue)  | Standby or sleep          |
+| Power Button with LED | {{site.led.blue}} (solid blue)     | On                        |
+| Power Button with LED | {{site.led.blue}} (blinking blue)  | Standby or sleep          |
 | ID LED                | Off                 | No ID requested           |
-| ID LED                | 🔵 (solid blue)     | Selected unit ID          |
+| ID LED                | {{site.led.blue}} (solid blue)     | Selected unit ID          |
 | Status LED            | Off                 | Operation normal          |
-| Status LED            | 🟠 (solid amber)    | DC off and critical error |
-| Status LED            | 🟠 (blinking amber) | DC on and critical error  |
+| Status LED            | {{site.led.orange}} (solid amber)    | DC off and critical error |
+| Status LED            | {{site.led.orange}} (blinking amber) | DC on and critical error  |
 | HDD Row LED           | Off                 | Operation normal          |
-| HDD Row LED           | 🟠 (blinking amber) | Fault                     |
+| HDD Row LED           | {{site.led.orange}} (blinking amber) | Fault                     |
 
 
 ## NVMe Drive Carrier LEDs
@@ -29,8 +29,8 @@ Each NVMe drive carrier has one LED.
 
 | Color or Behavior | Description   |
 | ----------------- | ------------- |
-| 🔵 (solid blue)   | Drive present |
-| 🟠 (solid amber)  | Drive failed  |
+| {{site.led.blue}} (solid blue)   | Drive present |
+| {{site.led.orange}} (solid amber)  | Drive failed  |
 | Off               | Slot empty    |
 
 
@@ -49,4 +49,4 @@ On the back of your node, LAN LEDs are located behind the vent holes on the NIC.
 | Color            | Status             | Description      |
 | ---------------- | ------------------ | ---------------- |
 | &#8212;          | Off                | No link          |
-| 🟢 (solid green) | On or blinking     | Link established |
+| {{site.led.green}} (solid green) | On or blinking     | Link established |

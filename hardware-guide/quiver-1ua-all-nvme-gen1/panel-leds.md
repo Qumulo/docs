@@ -14,11 +14,11 @@ On the front, right side of your node, there are four LEDs.
 
 | Label        | Color and Behavior | Description                             |
 | ------------ | ------------------ | --------------------------------------- |
-| Power LED    | 🟢 (solid green)   | The node is powered on                  |
+| Power LED    | {{site.led.green}} (solid green)   | The node is powered on                  |
 | Message LED  | Off                | The node is functioning normally        |
-| Message LED  | 🟠 (solid amber)   | A hardware event has occurred           |
+| Message LED  | {{site.led.orange}} (solid amber)   | A hardware event has occurred           |
 | Location LED | Off                | The node is functioning normally        |
-| Location LED | 🔵 (solid blue)    | The location button has been pressed    |
+| Location LED | {{site.led.blue}} (solid blue)    | The location button has been pressed    |
 
 
 
@@ -30,10 +30,10 @@ Each NVMe drive carrier in front and internal storage bays has a red LED at the 
 
 | Location | Color and Behavior  | Description                                              |
 | -------- | ------------------- | -------------------------------------------------------- |
-| Top      | 🔴 (solid red)      | Storage device failed                                    |
+| Top      | {{site.led.red}} (solid red)      | Storage device failed                                    |
 | Top      | Off                 | Storage device healthy                                   |
-| Bottom   | 🟢 (solid green)    | Storage device is powered on                             |
-| Bottom   | 🟢 (blinking green) | Reading data from, or writing data to the storage device |
+| Bottom   | {{site.led.green}} (solid green)    | Storage device is powered on                             |
+| Bottom   | {{site.led.green}} (blinking green) | Reading data from, or writing data to the storage device |
 
 
 ## Rear Panel LEDs and Buttons
@@ -42,9 +42,9 @@ On the back of your node, there are three LEDs.
 
 | Label               | Color and Behavior | Description                             |
 | ------------------- | ------------------ | --------------------------------------- |
-| Q-Code LED          | 🟠 (solid amber)   | Indicates a post code for troubleshooting. For more information, see the [Q-Code Table](https://dlcdnets.asus.com/pub/ASUS/server/RS500A-E12-RS12U/Manual/E21507_RS500A-E12-RS12U_UM_V2_WEB.pdf?model=RS500A-E12-RS12U#page=23) in the ASUS documentation. |
-| Location Button LED | 🔵 (solid blue)    | The location button has been pressed. To turn off the LED, press the location button again. |
-| Power LED           | 🟢 (solid green)   | The node is powered on. |
+| Q-Code LED          | {{site.led.orange}} (solid amber)   | Indicates a post code for troubleshooting. For more information, see the [Q-Code Table](https://dlcdnets.asus.com/pub/ASUS/server/RS500A-E12-RS12U/Manual/E21507_RS500A-E12-RS12U_UM_V2_WEB.pdf?model=RS500A-E12-RS12U#page=23) in the ASUS documentation. |
+| Location Button LED | {{site.led.blue}} (solid blue)    | The location button has been pressed. To turn off the LED, press the location button again. |
+| Power LED           | {{site.led.green}} (solid green)   | The node is powered on. |
 
 ## Rear LAN LEDs
 
@@ -58,4 +58,4 @@ Network traffic <em>doesn't</em> affect the speed of the light's blinking.
 | Color            | Status             | Description      |
 | ---------------- | ------------------ | ---------------- |
 | &#8212;          | Off                | No link          |
-| 🟢 (solid green) | On or blinking     | Link established |
+| {{site.led.green}} (solid green) | On or blinking     | Link established |

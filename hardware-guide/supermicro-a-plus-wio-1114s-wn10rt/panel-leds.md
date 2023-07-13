@@ -14,15 +14,15 @@ On the front, right side of your node, there are five LEDs.
 
 | Label         | Color and Behavior     | Description                                 |
 | ------------- | ---------------------- | ------------------------------------------- |
-| Info          | 🔴 (solid red)         | Node overheated                             |          
-| Info          | 🔴 (1 s. blinking red) | Fan failed                                  |
-| Info          | 🔴 (4 s. blinking red) | Power Supply Unit (PSU) failed              |
-| Info          | 🔵 (solid blue)        | Unit Identification (UID) activated locally |
-| Info          | 🔵 (blinking blue)     | UID activated from IPMI                     |
+| Info          | {{site.led.red}} (solid red)         | Node overheated                             |          
+| Info          | {{site.led.red}} (1 s. blinking red) | Fan failed                                  |
+| Info          | {{site.led.red}} (4 s. blinking red) | Power Supply Unit (PSU) failed              |
+| Info          | {{site.led.blue}} (solid blue)        | Unit Identification (UID) activated locally |
+| Info          | {{site.led.blue}} (blinking blue)     | UID activated from IPMI                     |
 | Lan A         | Off                    | Unused                                      |
 | Lan B         | Off                    | Unused                                      |
-| Disk Activity | 🟡 (solid yellow)      | On or blinking                              |
-| Power         | 🟢 (solid green)       | On                                          |
+| Disk Activity | {{site.led.yellow}} (solid yellow)      | On or blinking                              |
+| Power         | {{site.led.green}} (solid green)       | On                                          |
 
 {% include note.html content="During normal operation, the **Lan B** LED might appear to be lit slightly when the **Disk Activity** LED is on." %}
 
@@ -35,4 +35,4 @@ On the back of your node, LAN LEDs are located behind the vent holes on the NIC.
 | Color            | Status             | Description      |
 | ---------------- | ------------------ | ---------------- |
 | &#8212;          | Off                | No link          |
-| 🟢 (solid green) | On or blinking     | Link established |
+| {{site.led.green}} (solid green) | On or blinking     | Link established |

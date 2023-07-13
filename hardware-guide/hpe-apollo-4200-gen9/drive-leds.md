@@ -21,12 +21,12 @@ You can determine the current state of an LFF drive by reviewing the status of t
 
 1. **Fault or UID LED**
 
-   * 🟠 **Amber**
-   * 🔵 **Blue**
+   * {{site.led.orange}} **Amber**
+   * {{site.led.blue}} **Blue**
 
 1. **Online or Activity LED**
 
-   * 🟢 **Green**
+   * {{site.led.green}} **Green**
 
 The following table explains the various combinations of the two LFF LEDs.
 
@@ -117,14 +117,14 @@ To locate the SFF drive LEDs, use the following diagram.
 
 1. **Locate LED**
 
-   * 🔵 **Solid Blue:** A host application is identifying the drive.
-   * 🔵 **Flashing Blue:** The drive carrier firmware is updating or requires an update.
+   * {{site.led.blue}} **Solid Blue:** A host application is identifying the drive.
+   * {{site.led.blue}} **Flashing Blue:** The drive carrier firmware is updating or requires an update.
 
    {% include note.html content="The Locate LED is behind the release lever. When it is illuminated, it is visible." %}
 
 1. **Activity Ring LED**
 
-   * 🟢 **Rotating Green:** Drive activity
+   * {{site.led.green}} **Rotating Green:** Drive activity
    * **Off:** No drive activity
 
 1. **Don't Remove LED**
@@ -134,9 +134,9 @@ To locate the SFF drive LEDs, use the following diagram.
 
 1. **Drive Status LED**
 
-   * 🟢 **Solid Green:** The drive is a member of one or more logical drives
-   * 🟢 **Flashing Green:** The drive is rebuilding or performing a RAID migration, strip-size migration, capacity expansion, or logical drive extension or is erasing.
-   * 🟠🟢 **Flashing Amber and Green:** The drive is a member of one or more logical drives and predicts drive failure.
-   * 🟠 **Flashing Amber:** The drive isn't configured and predicts drive failure.
-   * 🟠 **Solid Amber:** The drive has failed.
+   * {{site.led.green}} **Solid Green:** The drive is a member of one or more logical drives
+   * {{site.led.green}} **Flashing Green:** The drive is rebuilding or performing a RAID migration, strip-size migration, capacity expansion, or logical drive extension or is erasing.
+   * {{site.led.orange}}{{site.led.green}} **Flashing Amber and Green:** The drive is a member of one or more logical drives and predicts drive failure.
+   * {{site.led.orange}} **Flashing Amber:** The drive isn't configured and predicts drive failure.
+   * {{site.led.orange}} **Solid Amber:** The drive has failed.
    * **Off:** A RAID controller hasn't configured the drive.

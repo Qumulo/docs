@@ -93,6 +93,11 @@ figure {
   float: left;
 }
 
+.emoji {
+  font-family:
+    "Samsung Emoji", "Apple Emoji",  "Noto Color Emoji", emoji;
+}
+
 /* -------------------- TOP NAVBAR STARTS -------------------- */
 .clkb {
   white-space: nowrap;
