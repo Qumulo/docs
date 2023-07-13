@@ -1,10 +1,9 @@
+
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="{% if page.summary %}{{ page.summary | strip_html | strip_newlines }}{% endif %}">
-<meta name="keywords" content="{{page.tags}}{% if page.tags %}, {% endif %} {{page.keywords}}">
+
 <title>{{ page.title }} | {{ site.site_title }}</title>
-<link rel="stylesheet" href="{{ "css/syntax.css" | relative_url }}">
 
 <!-- BEGIN TO PREPARE WEBSITE RESOURCES
 -->
@@ -17,8 +16,8 @@
 <link rel="preload" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" as="style">
 
 <!-- Preload web fonts from fonts.googleapis.com as stylesheets -->
-<link rel="preload" href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" as="font">
-<link rel="preload" href="https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap" as="font">
+<link rel="preload" href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" as="style">
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap" as="style">
 
 <!-- Preload scripts from cloudflare.com
      * jQuery
@@ -53,27 +52,35 @@
 <link rel="stylesheet" href="{{ "css/customstyles.css" | relative_url }}">
 <link rel="stylesheet" href="{{ "css/grt-cookies-consent.css" | relative_url }}">
 <link rel="stylesheet" href="{{ "css/modern-business.css" | relative_url }}">
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-<link rel="stylesheet" href="{{ "css/customstyles.css" | relative_url }}">
-<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
-<link rel="stylesheet" href="{{ "css/boxshadowproperties.css" | relative_url }}">
-<!-- most color styles are extracted out to here -->
+<link rel="stylesheet" href="{{ "css/syntax.css" | relative_url }}">
 <link rel="stylesheet" href="{{ "css/theme-blue.css" | relative_url }}">
-<!-- Cookie Consent - GRT Plugin -->
-<link rel="stylesheet" href="{{ "css/grt-cookies-consent.css" | relative_url }}">
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
-<script src="{{ "js/jquery.navgoco.min.js" | relative_url }}"></script>
+<!-- Optimize web font load
+     Note: Loading Noto Color Emoji by using `link rel=stylesheet`
+           syntax causes multiple versions of the font to load.
+-->
+<style>
+  @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap');
+</style>
 
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-<!-- Anchor.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
-<script src="{{ "js/toc.js" | relative_url }}"></script>
-<script src="{{ "js/customscripts.js" | relative_url }}"></script>
+<!-- Web font fallbacks for older browsers -->
+<noscript>
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Montserrat&display=swap">
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap">
+</noscript>
 
+<!-- Define page metadata -->
+<meta name="description" content="{% if page.summary %}{{ page.summary | strip_html | strip_newlines }}{% endif %}">
+<meta name="keywords" content="{{ page.tags }}{% if page.tags %}, {% endif %} {{ page.keywords }}">
+<meta name="apple-mobile-web-app-title" content="Qumulo Documentation">
+<meta name="application-name" content="Qumulo Documentation">
+<meta name="msapplication-TileColor" content="#2b5797">
+<meta name="msapplication-TileImage" content="{{ "images/mstile-144x144.png" | relative_url }}">
+<meta name="msapplication-config" content="{{ "images/browserconfig.xml" | relative_url }}">
+<meta name="theme-color" content="#ffffff">
+
+<!-- Define favicon variants -->
 <link rel="apple-touch-icon" sizes="180x180" href="{{ "images/apple-touch-icon.png" | relative_url }}">
 <link rel="icon" type="image/png" sizes="32x32" href="{{ "images/favicon-32x32.png" | relative_url }}">
 <link rel="icon" type="image/png" sizes="194x194" href="{{ "images/favicon-194x194.png" | relative_url }}">
@@ -82,12 +89,6 @@
 <link rel="manifest" href="{{ "images/site.webmanifest" | relative_url }}">
 <link rel="mask-icon" href="{{ "images/safari-pinned-tab.svg" | relative_url }}" color="#5bbad5">
 <link rel="shortcut icon" href="{{ "images/favicon.ico" | relative_url }}">
-<meta name="apple-mobile-web-app-title" content="Qumulo Documentation">
-<meta name="application-name" content="Qumulo Documentation">
-<meta name="msapplication-TileColor" content="#2b5797">
-<meta name="msapplication-TileImage" content="{{ "images/mstile-144x144.png" | relative_url }}">
-<meta name="msapplication-config" content="{{ "images/browserconfig.xml" | relative_url }}">
-<meta name="theme-color" content="#ffffff">
 
 <!-- Define RSS feed -->
 <link rel="alternate" href="{{ "/feed.xml" | prepend: site.url }} type="application/rss+xml" title="{{ site.title }}" ">
@@ -109,8 +110,8 @@
 
 <!-- Fallback for IE9 -->
 <!--[if lt IE 9]>
-<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
 
 <!-- Load Google Analytics and exclude GDPR countries from collection -->
