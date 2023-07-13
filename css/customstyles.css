@@ -19,20 +19,13 @@ body {
   /* Attach footer to bottom of page */
 }
 
-/* 
 a {
-  This color is required to meet WCAG standards for accessible text.
-     Note: This setting overrides bootstrap.css
-  
-  color: #1d557e !important;
- old #337ab7
-}*/
-
-a {
-  color: #1d557e;
+  /* This color is required to meet WCAG standards for accessible text. */
+  color: #215a78;
 }
 
 a.navbar-brand {
+  /* Ensures that there is a light color for the navbar. */
   color:white;
 }
 
