@@ -98,17 +98,12 @@ figure {
 }
 
 /* -------------------- TOP NAVBAR START -------------------- */
-
 .clkb {
   white-space: nowrap;
 }
 
 .clc {
   white-space: nowrap;
-}
-
-.clc, .clqt {
-  margin-bottom: 10px;
 }
 
 body .nav-wrapper {
@@ -209,6 +204,8 @@ header {
   padding-bottom: 20px;
   padding-right: 3px !important;
   margin-left: 20px;
+  line-height: 22px;
+}
 
 .user-nav {
   display: flex;
