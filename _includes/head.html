@@ -56,17 +56,24 @@
 <link rel="stylesheet" href="{{ "css/theme-blue.css" | relative_url }}">
 
 <!-- Optimize web font load
-     Note: Loading Noto Color Emoji by using `link rel=stylesheet`
-           syntax causes multiple versions of the font to load.
+     * Loading Noto Color Emoji by using `link rel=stylesheet`
+       syntax causes multiple versions of the font to load.
+     * Additional instructions are necessary for Font Awesome
+       to load with the font-display attribute.
 -->
 <style>
   @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
   @import url('https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap');
   @font-face {
-    font-family: FontAwesome;
     display: swap;
+    font-family:'FontAwesome';
+    src: url('../fonts/fontawesome-webfont.woff?v=4.7.0') format('woff'),
+         url('../fonts/fontawesome-webfont.woff2?v=4.7.0') format('woff2');
   }
 </style>
+
+<link href="../css/bootstrap-icons.css" rel="stylesheet preload" as="style" />
+
 
 <!-- Web font fallbacks for older browsers -->
 <noscript>

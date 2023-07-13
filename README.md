@@ -17,16 +17,16 @@ To get started, choose one of the following guides.
       <picture>
         <source type="image/webp" srcset="images/azure-guide.webp">
         <source type="image/png" srcset="images/azure-guide.png">
-        <img src="images/azure-guide.png" alt="Azure Native Qumulo Scalable File Service Guide" class="landing-page-icon">
+        <img src="images/azure-guide.png" alt="Azure Native Qumulo Scalable File Service Guide" class="landing-page-icon" width="301" height="301">
       </picture><br>Azure Native Qumulo Scalable File Service Guide</a>
   </span>
 
   <span class="guide-button">
     <a class="multilink" href="hardware-guide/">
       <picture>
-        <source type="image/webp" srcset="images/hardware-guide.webp">
-        <source type="image/png" srcset="images/hardware-guide.png">
-        <img src="images/hardware-guide.png" alt="Qumulo-Certified Hardware Guide" class="landing-page-icon">
+        <source type="image/webp" srcset="images/hardware-guide.webp" width="301" height="301">
+        <source type="image/png" srcset="images/hardware-guide.png" width="301" height="301">
+        <img src="images/hardware-guide.png" alt="Qumulo-Certified Hardware Guide" class="landing-page-icon" width="301" height="301">
       </picture><br>Qumulo-Certified Hardware Guide</a>
   </span>
 
@@ -35,7 +35,7 @@ To get started, choose one of the following guides.
       <picture>
         <source type="image/webp" srcset="images/qumulo-integration-guide.webp">
         <source type="image/png" srcset="images/qumulo-integration-guide.png">
-        <img src="images/qumulo-integration-guide.png" alt="Qumulo Integration Guide" class="landing-page-icon">
+        <img src="images/qumulo-integration-guide.png" alt="Qumulo Integration Guide" class="landing-page-icon" width="301" height="301">
       </picture><br>Qumulo Integration Guide</a>
   </span>
 
@@ -44,7 +44,7 @@ To get started, choose one of the following guides.
       <picture>
         <source type="image/webp" srcset="images/administrator-guide.webp">
         <source type="image/png" srcset="images/administrator-guide.png">
-        <img src="images/administrator-guide.png" alt="Qumulo Administrator Guide" class="landing-page-icon">
+        <img src="images/administrator-guide.png" alt="Qumulo Administrator Guide" class="landing-page-icon" width="301" height="301">
       </picture><br>Qumulo Administrator Guide</a>
   </span>
 
@@ -53,7 +53,7 @@ To get started, choose one of the following guides.
       <picture>
         <source type="image/webp" srcset="images/qumulo-alerts-guide.webp">
         <source type="image/png" srcset="images/qumulo-alerts-guide.png">
-        <img src="images/qumulo-alerts-guide.png" alt="Qumulo Alerts Administrator Guide" class="landing-page-icon">
+        <img src="images/qumulo-alerts-guide.png" alt="Qumulo Alerts Administrator Guide" class="landing-page-icon" width="301" height="301">
       </picture><br>Qumulo Alerts Administrator Guide</a>
   </span>
 </div>
