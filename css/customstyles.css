@@ -602,7 +602,7 @@ div#toc ul {
     /* This background color is required to create
        more contrast for accessibility. */
     background-color: #f3f3f3;
-    padding: 5px;
+    padding: 5px 10px 5px 5px;
     border-radius: 5px;
     max-width: 300px;
     color: gray;
