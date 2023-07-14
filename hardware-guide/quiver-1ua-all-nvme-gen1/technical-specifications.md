@@ -12,7 +12,7 @@ keywords: technical_specifications, tech_specs, specs, specifications, Quiver_1U
       <th></th>
       <th><strong>{{site.q1uag1Long}} 245 TB (Active)</strong></th>
       <th><strong>{{site.q1uag1Long}} 184 TB (Active)</strong></th>
-      <th><strong>{{site.q1uag1Long}} 96 TB (Active)</strong></th>
+      <th><strong>{{site.q1uag1Long}} 92 TB (Active)</strong></th>
       <th><strong>{{site.q1uag1Long}} 46 TB (Active)</strong></th>
     </tr>
   </thead>
@@ -21,7 +21,9 @@ keywords: technical_specifications, tech_specs, specs, specifications, Quiver_1U
       <td><strong>Connectivity Ports (NIC)</strong></td>
       <td colspan="4" style="text-align: center;">
         4 &#215; 100 GbE (2 &#215; Mellanox ConnectX-6 NICs)<br>
-        or 4 &#215; 100 GbE (2 &#215; Broadcom P2100G NICs)
+        or 4 &#215; 100 GbE (2 &#215; Broadcom P2100G NICs)<br>
+        or 2 &#215; 100 GbE (1 &#215; Mellanox ConnectX-6 NIC)<br>
+        or 2 &#215; 100 GbE (1 &#215; Broadcom P2100G NIC)
       </td>
     </tr>
     <tr>
