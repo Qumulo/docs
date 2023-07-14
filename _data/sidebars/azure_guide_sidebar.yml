@@ -32,7 +32,7 @@ entries:
       output: web
       type: subnavi
 
-    - title: Azure Native Qumulo Scalable File Service Guide Home
+    - title: ANQ Guide Home
       url: /azure-guide/index.html
       output: web
       type: subnavi
@@ -42,7 +42,7 @@ entries:
       output: web
       type: subnavi
 
-    - title: How the Azure Native Qumulo Scalable File Service Works
+    - title: How ANQ Works
       url: /azure-guide/how-qumulo-scalable-file-service-works.html
       output: web, pdf
 
@@ -54,6 +54,6 @@ entries:
       url: /azure-guide/getting-started-qumulo-scalable-file-service.html
       output: web, pdf
 
-    - title: Connecting Azure Native Qumulo Scalable File Service to Azure Active Directory Domain Services
+    - title: Connecting to Azure Active Directory Domain Services
       url: /azure-guide/connecting-to-azure-active-directory-domain-services.html
       output: web, pdf

@@ -1,6 +1,6 @@
 ---
-title: "Connecting Azure Native Qumulo Scalable File Service to Azure Active Directory Domain Services"
-summary: "This section explains how to connect Azure Native Qumulo Scalable File Service (SFS) to Azure Active Directory Domain Services (AD DS)."
+title: "Connecting Azure Native Qumulo Scalable File Service (ANQ) to Azure Active Directory Domain Services"
+summary: "This section explains how to connect ANQ to Azure Active Directory Domain Services (AD DS)."
 permalink: /azure-guide/connecting-to-azure-active-directory-domain-services.html
 sidebar: azure_guide_sidebar
 keywords: cloud, azure, native, scalable_file_service, file_service, connecting, active_directory, ad, active_directory_domain_services

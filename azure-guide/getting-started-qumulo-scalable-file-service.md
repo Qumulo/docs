@@ -1,12 +1,12 @@
 ---
-title: "Getting Started with the Azure Native Qumulo Scalable File Service"
-summary: "This section explains how to deploy Azure Native Qumulo Scalable File Service, view information about your service, and connect to the Web UI."
+title: "Getting Started with Azure Native Qumulo Scalable File Service (ANQ)"
+summary: "This section explains how to deploy ANQ, view information about your service, and connect to the Web UI."
 permalink: /azure-guide/getting-started-qumulo-scalable-file-service.html
 sidebar: azure_guide_sidebar
 keywords: cloud, azure, native, scalable_file_service, file_service, getting_started
 ---
 
-## To Deploy the {{site.azure.qumuloOnAzureLong}}
+## To Deploy {{site.azure.qumuloOnAzureLong}}
 This section explains how to deploy the service in Azure.
 
 1. Log in to the Azure Portal and search for `{{site.azure.qumuloOnAzureLong}}`.
@@ -47,7 +47,7 @@ This section explains how to deploy the service in Azure.
 
 1. On the **Networking** tab, in the **Configure virtual network** section:
 
-   1. Select the **Virtual network** for hosting your service. For more information, see [Configuring Virtual Networking for the {{site.azure.qumuloOnAzureLong}}](configuring-virtual-networking-qumulo-scalable-file-service.html).
+   1. Select the **Virtual network** for hosting your service. For more information, see [Configuring Virtual Networking for {{site.azure.qumuloOnAzureShort}}](configuring-virtual-networking-qumulo-scalable-file-service.html).
    
    1. Select an existing [delegated subnet](https://learn.microsoft.com/en-us/azure/virtual-network/subnet-delegation-overview) to associate with your service.
    
@@ -73,7 +73,7 @@ To log in to the Web UI, you must identify your service endpoint.
    https://192.0.0.4/login
    ```
    
-1. Enter the URL into a browser from a machine that runs, or is connected to, the virtual network where you deployed {{site.azure.qumuloOnAzureLong}}.
+1. Enter the URL into a browser from a machine that runs, or is connected to, the virtual network where you deployed {{site.azure.qumuloOnAzureShort}}.
 
    {{site.data.alerts.note}}
    <ul>

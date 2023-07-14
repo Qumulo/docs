@@ -1,6 +1,6 @@
 ---
-title: "Configuring Virtual Networking for the Azure Native Qumulo Scalable File Service"
-summary: "This section lists the prerequisites for the Azure Native Qumulo Scalable File Service, describes the components of virtual networking for the service, explains how to configure them, and provides virtual networking best practices."
+title: "Configuring Virtual Networking for Azure Native Qumulo Scalable File Service (ANQ)"
+summary: "This section lists the prerequisites for ANQ, describes the components of virtual networking for the service, explains how to configure them, and provides virtual networking best practices."
 permalink: /azure-guide/configuring-virtual-networking-qumulo-scalable-file-service.html
 sidebar: azure_guide_sidebar
 keywords: cloud, azure, native, scalable_file_service, file_service, network, networking, owner, contributor, role, subnet, dedicated_subnet, endpoint, route_table, security_group, VNet_injection
@@ -8,11 +8,11 @@ keywords: cloud, azure, native, scalable_file_service, file_service, network, ne
 
 The underlying storage of the service resides in Qumulo's Azure tenant. This storage system connects to your Azure subscription by using _VNet injection,_ a process that establishes a direct connection between your resources and the service resources without using VNet peering. You can use VNet injection to apply routing and security policies to your service endpoints.
 
-To create endpoints for accessing the {{site.azure.qumuloOnAzureLong}}, Qumulo creates network interfaces (NICs) and inserts them into your subnet. To allow VNet injection to operate correctly, you must create and configure a new subnet within your virtual network.
+To create endpoints for accessing {{site.azure.qumuloOnAzureShort}}, Qumulo creates network interfaces (NICs) and inserts them into your subnet. To allow VNet injection to operate correctly, you must create and configure a new subnet within your virtual network.
 
 
 ## Prerequisites for Configuring Virtual Networking
-This section explains the prerequisites for configuring virtual networking for the {{site.azure.qumuloOnAzureLong}}.
+This section explains the prerequisites for configuring virtual networking for {{site.azure.qumuloOnAzureShort}}.
 
 ### Owner and Contributor Roles
 The service requires an Owner or Contributor role with access to your Azure subscription.
@@ -46,7 +46,7 @@ Qumulo provisions multiple endpoints to allow access to the service. To avoid th
 
 
 ## Configuring Virtual Networking
-This section explains how to configure virtual networking for the {{site.azure.qumuloOnAzureLong}}.
+This section explains how to configure virtual networking for {{site.azure.qumuloOnAzureShort}}.
 
 {% include important.html content="To enforce network policies for traffic to and from the service, you can apply network security groups and route tables to a [delegated subnet](https://learn.microsoft.com/en-us/azure/virtual-network/subnet-delegation-overview)." %}
 

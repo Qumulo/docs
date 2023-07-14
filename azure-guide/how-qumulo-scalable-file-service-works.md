@@ -1,6 +1,6 @@
 ---
-title: "How the Azure Native Qumulo Scalable File Service Works"
-summary: "This section gives an overview of deploying the Azure Native Qumulo Scalable File Service; lists the Azure regions and compliance postures that the service supports; and explains the differences between this service, Qumulo on AWS as an AMI, and Qumulo on premises."
+title: "How Azure Native Qumulo Scalable File Service (ANQ) Works"
+summary: "This section gives an overview of deploying ANQ; lists the Azure regions and compliance postures that the service supports; and explains the differences between this service, Qumulo on AWS as an AMI, and Qumulo on premises."
 permalink: /azure-guide/how-qumulo-scalable-file-service-works.html
 sidebar: azure_guide_sidebar
 keywords: cloud, azure, native, scalable_file_service, file_service, regions, soc, fips_140-2
@@ -8,17 +8,17 @@ keywords: cloud, azure, native, scalable_file_service, file_service, regions, so
 
 This fully managed service deploys and manages resources on your behalf, runs Qumulo Core, and provides the same interfaces and functionality as Qumulo on premises.
 
-{% capture inThisGuide %}In this guide, we refer to the collective features and functionality of Qumulo Core as _{{site.azure.qumuloOnAzureLong}}_ or _the service._{% endcapture %}
+{% capture inThisGuide %}In this guide, we refer to the collective features and functionality of Qumulo Core as _{{site.azure.qumuloOnAzureLong}}({{site.azure.qumuloOnAzureShort}})_ or _the service._{% endcapture %}
 {% include tip.html content=inThisGuide %}
 
-The {{site.azure.qumuloOnAzureLong}} lets you configure file protocols, quotas, replication, and other features regardless of underlying infrastructure or storage and without requiring the tracking of resource quotas and costs. It receives the latest updates and features continuously and, when issues occur, replaces compute and storage resources automatically. 
+{{site.azure.qumuloOnAzureShort}} lets you configure file protocols, quotas, replication, and other features regardless of underlying infrastructure or storage and without requiring the tracking of resource quotas and costs. It receives the latest updates and features continuously and, when issues occur, replaces compute and storage resources automatically. 
 
-For instructions on deploying the service in Azure, see [Getting Started with {{site.azure.qumuloOnAzureLong}}](getting-started-qumulo-scalable-file-service.md).
+For instructions on deploying the service in Azure, see [Getting Started with {{site.azure.qumuloOnAzureShort}}](getting-started-qumulo-scalable-file-service.md).
 
-{% capture emailAzure %}For help with expanding the capacity of your {{site.azure.qumuloOnAzureLong}}, {{site.azure.emailAzure}}{% endcapture %}
+{% capture emailAzure %}For help with expanding the capacity of {{site.azure.qumuloOnAzureShort}}, {{site.azure.emailAzure}}{% endcapture %}
 {% include note.html content=emailAzure %}
 
-## Deploying the {{site.azure.qumuloOnAzureLong}}
+## Deploying {{site.azure.qumuloOnAzureLong}}
 This section outlines the process of configuring and deploying the service.
 
 1. You specify the following configuration.
@@ -39,7 +39,7 @@ This section outlines the process of configuring and deploying the service.
 
    * **Marketplace SaaS Resource:** The SaaS resource from the Qumulo Marketplace offer that you choose. Azure uses this resource for billing purposes.
 
-   {% capture autoDep %}Automated deployments let you create {{site.azure.qumuloOnAzureLong}} instances for long-term use cases and for short-term components of automated storage workflows.{% endcapture %}
+   {% capture autoDep %}Automated deployments let you create {{site.azure.qumuloOnAzureShort}} instances for long-term use cases and for short-term components of automated storage workflows.{% endcapture %}
    {% include tip.html content=autoDep %}
    
    
@@ -55,26 +55,86 @@ This section outlines the process of configuring and deploying the service.
 
 <a id="supported-azure-regions"></a>
 ## Supported Azure Regions
-{{site.azure.qumuloOnAzureLong}} supports all public U.S. regions. For more information, see [Azure Geographies](https://azure.microsoft.com/en-us/explore/global-infrastructure/geographies/#geographies).
+{{site.azure.qumuloOnAzureShort}} supports all public U.S. regions. For more information, see [Azure Geographies](https://azure.microsoft.com/en-us/explore/global-infrastructure/geographies/#geographies).
 
 ## Feature Comparison with Qumulo on Other Platforms
-The following table compares {{site.azure.qumuloOnAzureLong}} features with those of Qumulo on other platforms.
+The following table compares {{site.azure.qumuloOnAzureShort}} features with those of Qumulo on other platforms.
 
 {% capture noDirectAccess %}Although Qumulo manages the service fully, direct access to hosts with SSH is unavailable. You can configure the service by using the [`qq` CLI](https://care.qumulo.com/hc/en-us/articles/115014875988) from a remote machine or by using any of the IP addresses of the service to log in to the Web UI.{% endcapture %}
 {% include note.html content=noDirectAccess %}
 
-| Feature                                  | {{site.azure.qumuloOnAzureLong}} | Qumulo on AWS as an AMI | Qumulo on Premises |
-| ---------------------------------------- | -------------------------------- | ----------------------- | ------------------ |
-| Automatic Deployment                     | &#10003;                         |                         |                    |
-| Automatic Updates                        | &#10003;                         |                         |                    |
-| Available in Cloud Marketplace           | &#10003;                         | &#10003;                |                    | 
-| Customer Support                         | &#10003;                         | &#10003;                | &#10003;           |
-| Automatic Infrastructure Replacement     | &#10003;                         | &#10003;                |                    | 
-| Incremental Sizing                       | &#10003;                         |                         |                    |
-| Pay as You Go                            | &#10003;                         | &#10003;                |                    | 
-| Portal Integration                       | &#10003;                         |                         |                    |
-| Qumulo Core Features                     | &#10003;                         | &#10003;                | &#10003;           |
-| Simple, Fast Deployment Under 15 Minutes | &#10003;                         |                         |                    |
+<table>
+  <thead>
+    <tr>
+      <th>Feature</th>
+      <th width="15%">{{site.azure.qumuloOnAzureShort}}</th>
+      <th width="15%">Qumulo on AWS as an AMI</th>
+      <th width="15%">Qumulo on Premises</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Automatic Deployment</td>
+      <td>&#10003;</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Automatic Updates</td>
+      <td>&#10003;</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Available in Cloud Marketplace</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Customer Support</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+    </tr>
+    <tr>
+      <td>Automatic Infrastructure Replacement</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Incremental Sizing</td>
+      <td>&#10003;</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Pay as You Go</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Portal Integration</td>
+      <td>&#10003;</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Qumulo Core Features</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+    </tr>
+    <tr>
+      <td>Simple, Fast Deployment Under 15 Minutes</td>
+      <td>&#10003;</td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
 
 
 ## Qumulo Compliance Posture
