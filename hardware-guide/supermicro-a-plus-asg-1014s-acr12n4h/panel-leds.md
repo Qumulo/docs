@@ -5,7 +5,7 @@ permalink: /hardware-guide/supermicro-a-plus-asg-1014s-acr12n4h/panel-leds.html
 redirect_from:
   - /hardware/supermicro-a-plus-asg-1014s-acr12n4h/panel-leds.html
 sidebar: hardware_guide_sidebar
-keywords: LED, front_panel, power_fault, rear_panel, diagnose, diagnosis, hardware_health, Supermicro_1014S, ACR12N4H
+keywords: LED, front_panel, power_fault, rear_panel, diagnose, diagnosis, hardware_health, Supermicro, Supermicro_1014S, 1014S, ACR12N4H
 ---
 
 ## Front Panel LEDs and Buttons

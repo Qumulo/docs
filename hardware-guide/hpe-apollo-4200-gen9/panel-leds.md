@@ -5,7 +5,7 @@ permalink: /hardware-guide/hpe-apollo-4200-gen9/panel-leds.html
 redirect_from:
   - /hardware/hpe-apollo-4200-gen9/panel-leds.html
 sidebar: hardware_guide_sidebar
-keywords: LED, front_panel, power_fault, rear_panel, diagnose, diagnosis, hardware_health
+keywords: LED, front_panel, power_fault, rear_panel, diagnose, diagnosis, hardware_health, HPE_Apollo_4200_Gen9, HPE, Apollo, 4200_Gen9
 ---
 
 {% include content-reuse/hpe-apollo-4200-gen-9-90t-180t-288t-eops.md %}

@@ -3,7 +3,7 @@ title: "Quiver 1U All-NVMe Gen1 Technical Specifications"
 summary: "This section provides technical specifications for Quiver 1U All-NVMe Gen1 node types."
 permalink: /hardware-guide/quiver-1ua-all-nvme-gen1/technical-specifications.html
 sidebar: hardware_guide_sidebar
-keywords: technical_specifications, tech_specs, specs, specifications, Quiver_1U_All-NVMe_Gen1
+keywords: technical_specifications, tech_specs, specs, specifications, Quiver_1U_All-NVMe_Gen1, Quiver, Quiver_1UA
 ---
 
 <table cellspacing="0" cellpadding="0">

@@ -3,7 +3,7 @@ title: "Drive Bay Mapping in Quiver 1U All-NVMe Gen1 Nodes"
 summary: "This section explains the drive bay mapping in Quiver 1UA Gen1 nodes."
 permalink: /hardware-guide/quiver-1ua-all-nvme-gen1/drive-bay-mapping.html
 sidebar: hardware_guide_sidebar
-keywords: drive, hard_drive, drive_bay, mapping, Quiver_1U_All-NVMe_Gen1
+keywords: drive, hard_drive, drive_bay, mapping, Quiver_1U_All-NVMe_Gen1, Quiver, Quiver_1UA
 ---
 
 Your {{site.q1uag1}} chassis contains up to 12 2.5" hot-swap NVMe drives in front storage bays and one boot drive in an internal M.2 expansion slot. The following is the mapping for the drives.

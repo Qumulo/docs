@@ -5,7 +5,7 @@ permalink: /hardware-guide/supermicro-a-plus-asg-1014s-acr12n4h/racking-nodes.ht
 redirect_from:
   - /hardware/supermicro-a-plus-asg-1014s-acr12n4h/racking-nodes.html
 sidebar: hardware_guide_sidebar
-keywords: rack, racking, rail, toolless_rail, server_rack, chassis, insert_chassis, remove_chassis, Supermicro_1014S, ACR12N4H
+keywords: rack, racking, rail, toolless_rail, server_rack, chassis, insert_chassis, remove_chassis, Supermicro, Supermicro_1014S, 1014S, ACR12N4H
 ---
 
 ## Using the Toolless Rail System

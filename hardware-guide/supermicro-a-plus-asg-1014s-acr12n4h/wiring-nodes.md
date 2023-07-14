@@ -5,7 +5,7 @@ permalink: /hardware-guide/supermicro-a-plus-asg-1014s-acr12n4h/wiring-nodes.htm
 redirect_from:
   - /hardware/supermicro-a-plus-asg-1014s-acr12n4h/wiring-nodes.html
 sidebar: hardware_guide_sidebar
-keywords: out-of-band_management, out_of_band_management, IPMI, DHCP, network, networking, LAN, ipmitool, 100_Gbps, Ethernet, power, Supermicro_1014S, ACR12N4H
+keywords: out-of-band_management, out_of_band_management, IPMI, DHCP, network, networking, LAN, ipmitool, 100_Gbps, Ethernet, power, Supermicro, Supermicro_1014S, 1014S, ACR12N4H
 ---
 
 {% capture unusedPorts %}{{site.unusedEthPorts}}{% endcapture %}

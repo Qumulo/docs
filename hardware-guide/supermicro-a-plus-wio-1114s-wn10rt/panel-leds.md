@@ -5,7 +5,7 @@ permalink: /hardware-guide/supermicro-a-plus-wio-1114s-wn10rt/panel-leds.html
 redirect_from:
   - /hardware/supermicro-a-plus-wio-1114s-wn10rt/panel-leds.html
 sidebar: hardware_guide_sidebar
-keywords: LED, front_panel, power_fault, rear_panel, diagnose, diagnosis, hardware_health, Supermicro_1114S, WN10RT
+keywords: LED, front_panel, power_fault, rear_panel, diagnose, diagnosis, hardware_health, Supermicro, Supermicro_1114S, 1114S, WN10RT
 ---
 
 ## Front Panel LEDs and Buttons

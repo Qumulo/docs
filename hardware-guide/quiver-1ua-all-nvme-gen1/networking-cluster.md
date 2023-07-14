@@ -3,7 +3,7 @@ title: "Networking Your Quiver 1U All-NVMe Gen1 Cluster"
 summary: "This section explains how to network a Quiver 1U All-NVMe Gen1 cluster."
 permalink: /hardware-guide/quiver-1ua-all-nvme-gen1/networking-cluster.html
 sidebar: hardware_guide_sidebar
-keywords: network, networking, cluster, switch, Ethernet, ports, IP, Quiver_1U_All-NVMe_Gen1
+keywords: network, networking, cluster, switch, Ethernet, ports, IP, Quiver_1U_All-NVMe_Gen1, Quiver, Quiver_1UA
 ---
 
 {% include content-reuse/platform-agnostic-unified-or-split-networking-cluster-100gbps.md %}

@@ -6,7 +6,7 @@ redirect_from:
   - /hardware-guide/hpe-apollo-4200-gen9/networking-cluster.html
   - /hardware/hpe-apollo-4200-gen9/networking-cluster.html
 sidebar: hardware_guide_sidebar
-keywords: network, networking, cluster, switch, Ethernet, ports, IP, 90T, 180T, 288T
+keywords: network, networking, cluster, switch, Ethernet, ports, IP, 90T, 180T, 288T, HPE_Apollo_4200_Gen9, HPE, Apollo, 4200_Gen9
 ---
 
 {% include content-reuse/hpe-apollo-4200-gen-9-90t-180t-288t-eops.md %}

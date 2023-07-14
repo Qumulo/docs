@@ -5,7 +5,7 @@ permalink: /hardware-guide/hpe-dl325-gen10-plus/front-rear-drives.html
 redirect_from:
   - /hardware/hpe-dl325-gen10-plus/front-rear-drives.html
 sidebar: hardware_guide_sidebar
-keywords: front_drive, rear_drive, boot_drive, drive, drive_bay
+keywords: front_drive, rear_drive, boot_drive, drive, drive_bay, HPE_ProLiant_DL325_Gen10_Plus, HPE, ProLiant, DL325
 ---
 
 ## Front Drive Row

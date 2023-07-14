@@ -5,7 +5,7 @@ permalink: /hardware-guide/supermicro-a-plus-wio-1114s-wn10rt/replacing-hardware
 redirect_from:
   - /hardware/supermicro-a-plus-wio-1114s-wn10rt/replacing-hardware-components.html
 sidebar: hardware_guide_sidebar
-keywords: replace, hardware, component, replace_drive, drive, replace_psu, psu, replace_fan, fan, replace_dimm, dimm, Supermicro_1114S, WN10RT
+keywords: replace, hardware, component, replace_drive, drive, replace_psu, psu, replace_fan, fan, replace_dimm, dimm, Supermicro, Supermicro_1114S, 1114S, WN10RT
 ---
 
 {{site.data.alerts.caution}}

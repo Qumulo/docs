@@ -3,7 +3,7 @@ title: "Getting Started with Qumulo on Quiver 1U Hybrid Gen2"
 summary: "This section explains how to prepare Quiver 1UH Gen2 nodes for creating a Qumulo cluster."
 permalink: /hardware-guide/quiver-1u-hybrid-gen2/getting-started.html
 sidebar: hardware_guide_sidebar
-keywords: getting_started_guide, quick_reference, Quiver_1U_Hybrid_Gen2, verify_node, field_verification_tool, FVT
+keywords: getting_started_guide, quick_reference, Quiver_1U_Hybrid_Gen2, Quiver, Quiver_1UH, verify_node, field_verification_tool, FVT, QVRG2-96T, QVRG2-240T, QVRG296T, QVRG2240T
 ---
 
 ## Step 1: Verify Your Node
