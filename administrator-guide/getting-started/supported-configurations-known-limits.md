@@ -31,6 +31,7 @@ keywords: limit, limits, limitations, known_limits, known_limitations, config, c
           <li>SMB 2.1</li>
           <li>SMB 3.0</li>
           <li>SMB 3.1</li>
+          <li>SMB 3.1.1</li>
         </ul>
       </td>
     </tr>
