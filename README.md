@@ -5,7 +5,7 @@ permalink: index.html
 breadcrumbs: exclude
 ---
 
-<style>#toc{display:none;}</style>
+{{site.hideTOC}}
 
 To get started, choose one of the following guides.
 
