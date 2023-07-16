@@ -1,7 +1,7 @@
 ---
 title: "Safety Recommendations for Qumulo-Certified Platforms"
 summary: "This section gives safety recommendations for Qumulo-certified hardware platforms."
-permalink: /hardware-guide/getting-started/safety-instructions.html
+permalink: /hardware-guide/getting-started/safety-recommendations.html
 sidebar: hardware_guide_sidebar
 keywords: hardware, on-prem, on_prem, safety, instructions
 ---
