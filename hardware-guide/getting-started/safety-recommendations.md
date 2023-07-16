@@ -1,5 +1,5 @@
 ---
-title: "Safety Recommendations for Qumulo-Certified Platforms"
+title: "Safety Recommendations for Qumulo-Certified Hardware Platforms"
 summary: "This section gives safety recommendations for Qumulo-certified hardware platforms."
 permalink: /hardware-guide/getting-started/safety-recommendations.html
 sidebar: hardware_guide_sidebar
