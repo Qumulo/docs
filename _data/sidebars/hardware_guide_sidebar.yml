@@ -45,7 +45,7 @@ entries:
     folderitems:
 
     - title: Safety Recommendations
-      permalink: /hardware-guide/getting-started/safety-recommendations.html
+      url: /hardware-guide/getting-started/safety-recommendations.html
       output: web, pdf
 
     - title: Identifying NICs and Choosing Transceivers and Cables
