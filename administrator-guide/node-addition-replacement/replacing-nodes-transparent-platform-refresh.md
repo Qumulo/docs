@@ -11,7 +11,7 @@ keywords: cluster, expand, expansion, remove, retirement, end_of_life, EOL, tran
 {{site.data.alerts.note}}
 <ul>
   <li>Qumulo Core doesn't support replacing nodes in clusters with more than 100 nodes.</li>
-  <li>In Qumulo Core 6.1.2 (and higher), you can use the <code>qq</code> CLI to replace nodes. To replace nodes on a lower version of Qumulo Core, {{site.contactQumuloCare}}.</li>
+  <li>In Qumulo Core 6.1.2.1 (and higher), you can use the <code>qq</code> CLI to replace nodes. To replace nodes on a lower version of Qumulo Core, {{site.contactQumuloCare}}.</li>
 </ul>
 {{site.data.alerts.end}}
 

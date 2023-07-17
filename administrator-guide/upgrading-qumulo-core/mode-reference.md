@@ -30,7 +30,7 @@ For information about the most important features from each release, see [Qumulo
       <th>Upgrade Type</th>
     </thead>
     <tr>
-      <td><strong>6.1.2</strong></td>
+      <td><strong>6.1.2.1</strong></td>
       <td><strong>Platform</strong></td>
     </tr>
     <tr>
@@ -274,7 +274,7 @@ For information about the most important features from each release, see [Qumulo
       <th>Upgrade Type</th>
     </thead>
     <tr>
-      <td><strong>6.1.2</strong></td>
+      <td><strong>6.1.2.1</strong></td>
       <td><strong>Platform</strong></td>
     </tr>
     <tr>
