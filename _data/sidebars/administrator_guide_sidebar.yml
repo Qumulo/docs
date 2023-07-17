@@ -181,6 +181,10 @@ entries:
       url: /administrator-guide/data-security/managing-security-keys.html
       output: web, pdf
 
+    - title: Understanding Offline Qumulo Core Nodes and Checking for Free Space
+      url: /administrator-guide/data-security/understanding-offline-nodes.html
+      output: web, pdf
+
   - title: Node Addition and Replacement
     url: /administrator-guide/node-addition-replacement/index.html
     output: web, pdf
