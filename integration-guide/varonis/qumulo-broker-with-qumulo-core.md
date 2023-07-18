@@ -35,6 +35,10 @@ Typically, Qumulo Core sends the audit logs to a single remote syslog instance. 
 
 {% include note.html content="Qumulo Core can send audit logs to only one target syslog instance. For information about sending your Qumulo audit logs to different target systems in addition to Varonis, see [Configuring rsyslog to Communicate with Multiple Clusters](deploying-qumulo-broker.html#rsyslog-with-multiple-clusters)." %}
 
+The following architecture diagram shows how Qumulo Broker gathers, processes, and emits data.
+
+{% include image.html alt="An Architecture Diagram that Shows how Qumulo Broker Gathers, Processes, and Emits Data" file="how-qumulo-broker-works.png" url="/integration-guide/varonis/images/how-qumulo-broker-works.png" %}
+
 
 ## Qumulo Broker Specifications
 This section describes the specifications for Qumulo Broker, including system requirements, prerequisites, firewall definitions, and supported operations. {{site.varonis.separateMachine}} For more information, see the [Qumulo-Varonis integration architecture diagram](#integration-architecture-diagram).
