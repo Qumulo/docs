@@ -75,12 +75,35 @@ td.fade-row {
 }
 
 @media screen {
-  /* Insert caption after image with URL */
-  span[data-url].enlargeimage::after {
-    content: "Click to enlarge";
+  /* Insert CLICK TO ENLARGE overlay for images with URLs */
+  .enlargeimage {
+    position: relative;
+    display: inline-block;
+  }
+
+  .enlargeimage a .docimage {
+    opacity: 1;
+    transition: opacity 0.5s;
+  }
+
+  .enlargeimage a:hover .docimage {
+    opacity: 0.25;
+  }
+
+  .enlargeimage::after {
+    content: "CLICK TO ENLARGE";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    visibility: hidden;
+    font-size: 26px;
     font-weight: bold;
-    font-size: 12px;
-    cursor: pointer;
+    color: black;
+  } 
+
+  .enlargeimage:hover::after {
+    visibility: visible;
   }
 }
 
