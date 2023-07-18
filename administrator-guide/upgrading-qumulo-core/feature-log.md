@@ -9,17 +9,23 @@ varNoPublicChanges: The majority of functionality and stability improvements in 
 
 <style>div#toc{height:200px;overflow:auto;}</style>
 
-## Qumulo Core 6.1.2.1
+## Qumulo Core 6.1.2.2
 * Added Adaptive Data Protection to the REST API and `qq` CLI and made performance improvements
 * Added Transparent Platform Refresh to the REST API and `qq` CLI
 * Added S3 configuration settings to the Web UI
-* Improved hard link cireation
+* Improved hard link creation
 
 {{site.data.alerts.important}}
 <ul>
-  <li>This release resolves an issue performing an upgrade of Qumulo Core on the Quiver 1U Hybrid Gen2 platform.</li>
-  <li>We've changed this release to a platform upgrade to resolve an issue we found in Qumulo Core 6.1.1.</li>
-  <li>We’ve identified a known issue with event processing in the Cloud-Based Monitoring (CBM) service in Qumulo Core 6.1.0.1. This issue is resolved in Qumulo Core 6.2.0.</li>
+  <li>
+    <p>This release resolves:</p>
+    <ul>
+      <li>An issue that affects parsing Kerberos principal names that contain special characters in Active Directory Kerberos authentication in Qumulo Core 6.1.2. This issue doesn’t prevent access to SMB shares by using NTLM-based authentication.</li>
+      <li>An issue that affects upgrading Qumulo Core on the Quiver 1U Hybrid Gen2 platform in Qumulo Core 6.1.1.</li>
+      <li>An issue that affects getting a useful core dump in Qumulo Core 6.1.1.</li>
+   </ul>
+  </li>
+  <li>We’ve identified a known issue that affects event processing in the Cloud-Based Monitoring (CBM) service Qumulo Core 6.1.0.1. This issue is resolved in Qumulo Core 6.2.0.</li>
 </ul>
 {{site.data.alerts.end}}
 
