@@ -389,7 +389,7 @@ Fixed important bugs in:
 * SMB file enumeration
 * Compound API and `qq` CLI request errors
 
-## Qumulo Core 4.0.0 (Quarterly)
+## Qumulo Core 4.0.0.2 (Quarterly)
 * Deprecated the Python 2.7 SDK
 * Made several important bug fixes
 
