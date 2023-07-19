@@ -83,7 +83,7 @@ td.fade-row {
 
   .enlargeimage a .docimage {
     opacity: 1;
-    transition: opacity 0.5s;
+    transition: opacity 0.15s;
   }
 
   .enlargeimage a:hover .docimage {
