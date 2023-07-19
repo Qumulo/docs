@@ -180,5 +180,9 @@ keywords: limit, limits, limitations, known_limits, known_limitations, config, c
       <td>Number of Replication Relationships</td>
       <td>100 {% include note.html content="If a directory is more than 100 levels below the file system root directory, you can't use it as a replication source." %}</td>
     </tr>
+    <tr>
+      <td>Usable Provisioned Capacity on Cluster</td>
+      <td>100%</td>
+    </tr>    
   </tbody>
 </table>
