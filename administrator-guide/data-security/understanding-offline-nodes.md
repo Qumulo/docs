@@ -37,23 +37,23 @@ The output of the command shows the number of valid tokens remaining for writes 
 <tbody>
   <tr>
     <td>4.2.1 (and higher)</td>
-    <td><pre>sudo qsh -c /opt/qumulo/qq_internal debug_metrics_get \
+    <td><pre>sudo qsh -c /opt/qumulo/qq debug_metrics_get \
   --measurement space_agent | grep reclaimable; sleep 60; \
-  sudo qsh -c /opt/qumulo/qq_internal debug_metrics_get \
+  sudo qsh -c /opt/qumulo/qq debug_metrics_get \
   --measurement space_agent | grep reclaimable</pre></td>
   </tr>
   <tr>
     <td>3.3.2 - 4.2.0</td>
-    <td><pre>sudo qsh -c /opt/qumulo/qq_internal metrics_get \
+    <td><pre>sudo qsh -c /opt/qumulo/qq metrics_get \
   --measurement space_agent | grep reclaimable; sleep 60; \
-  sudo qsh -c /opt/qumulo/qq_internal metrics_get \
+  sudo qsh -c /opt/qumulo/qq metrics_get \
   --measurement space_agent | grep reclaimable</pre></td>
   </tr>   
   <tr>
     <td>3.1 - 3.3.1</td>
-    <td><pre>sudo /opt/qumulo/qq_internal metrics_get \
+    <td><pre>sudo /opt/qumulo/qq metrics_get \
   --measurement space_agent | grep reclaimable; sleep 60; \
-  sudo /opt/qumulo/qq_internal metrics_get \
+  sudo /opt/qumulo/qq metrics_get \
   --measurement space_agent | grep reclaimable</pre></td>
   </tr>     
 </tbody>
