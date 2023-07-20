@@ -995,17 +995,9 @@ h4 {color: #808080; font-weight:bold; font-size:110%;}
     color: white;
 }
 
-ol li ol li {
-  list-style-type: lower-alpha;
-}
-
-ol li ul li {
-  list-style-type: circle;
-}
-
-ol li ol li ul li {
-  list-style-type: dot;
-}
+ol li ol li {list-style-type: lower-alpha;}
+ol li ul li {list-style-type: disc;}
+ol li ul li ul li {list-style-type: circle;}
 
 li img {clear:both; }
 
