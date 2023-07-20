@@ -58,7 +58,7 @@ keywords: replace, hardware, component, chassis, chassis_replacement, c-192t, c1
 
    {{site.data.alerts.note}}
    To allow the front HDD trays to slide open, ensure that any shipping screws are removed from the replacement chassis.
-   {% include image.html alt="C-Series Shipping Screws" file="c-series-2u-shipping-screws.png" %}
+   {% include image.html alt="C-Series Shipping Screws" file="c-series-2u-shipping-screws.png" max-width="150" %}
    {{site.data.alerts.end}}
 
 1. Install the replacement chassis in an appropriate location in your server rack.
@@ -81,7 +81,6 @@ keywords: replace, hardware, component, chassis, chassis_replacement, c-192t, c1
       <ul>
         <li>The HDD carriers in the top and middle trays connect to an HBA controller card at the rear of the chassis.</li>
         <li>The HDD carriers in the the bottom tray connect directly to the motherboard at the rear of the chassis.</li>
-        <li></li>
       </ul>
       {{site.data.alerts.end}}
 
