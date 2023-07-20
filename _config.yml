@@ -192,6 +192,8 @@ varNfsConf: In versions of Ubuntu lower than 22.04 (and possibly on other Linux 
 
 splitNetDefine: This platform uses a _split networking configuration_ in which different NICs handle back-end and front-end traffic. You can connect the front-end and back-end NICs to the same switch or to different switches.
 splitNetLACP: For all connection speeds, the default behavior is that of an LACP with 1,500 MTU for the front-end and 9,000 MTU for the back-end interfaces.
+dontMixSingleDualNodes: Don't network single-NIC and and dual-NIC nodes within the same cluster.
+splitNetDualNICmustUseSplit: Don't configure a dual-NIC platform with a unified networking configuration.
 splitNetDontConnectSingleNIC: We don't recommend connecting to a single back-end NIC port because the node becomes unavailable if the single connection fails.
 
 unifyNetDefine: This platform uses a _unified networking configuration_ in which the same NIC handles back-end and front-end traffic. In this configuration, each networking port provides communication with clients and between nodes. You can connect the NIC's ports to the same switch or to different switches.
