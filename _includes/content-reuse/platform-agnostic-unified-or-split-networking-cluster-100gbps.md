@@ -21,12 +21,17 @@ Your node requires the following resources.
 
 
 ## Recommended Configuration
+{{site.data.alerts.important}}
+<ul>
+ <li>{{site.dontMixSingleDualNodes}}</li>
+ <li>{{site.splitNetDualNICmustUseSplit}}</li>
+ <li>{{site.splitNetDontConnectSingleNIC}}</li>
+</ul>
+{{site.data.alerts.end}}
+
 * **Single NIC:** {{site.unifyNetDefine}} However, for greater reliability, we recommend connecting both 100 Gbps ports on every node to each switch.
 
 * **Dual NIC:** {{site.splitNetDefine}} However, for greater reliability, we recommend connecting all four 100 Gbps ports on every node: Connect both front-end NIC ports to the front-end switch and both back-end NIC ports to the back-end switch.
-
-  {% capture noSingleNIC %}{{site.splitNetDontConnectSingleNIC}}{% endcapture %}
-  {% include important.html content=noSingleNIC %}
 
 We recommend the following configuration for your node.
 
