@@ -13,7 +13,7 @@ Inside the `.snapshot` directory, directories with snapshot IDs represent variou
 
 {{site.data.alerts.note}}
 <ul>
-  <li>When you use NFS on Linux and macOS (even if you configure your system to show hidden files), the <code>.snapshot</code> directory doesn't appear when you list a directory's contents. You must navigate to the `.snapshot` directory explicitly.</li>
+  <li>When you use NFS on Linux and macOS (even if you configure your system to show hidden files), the <code>.snapshot</code> directory doesn't appear when you list a directory's contents. You must navigate to the <code>.snapshot</code> directory explicitly.</li>
   <li>When you use SMB, the <code>.snapshot</code> directory appears only at the root of the share in Finder or File Explorer. In other directories, you must navigate to the <code>.snapshot</code> directory explicitly.</li>  
 </ul>
 {{site.data.alerts.end}}
