@@ -13,10 +13,13 @@ sidebar: hardware_guide_sidebar
 keywords: replace, hardware, component, chassis, chassis_replacement, c-192t, c192t, c-432t, c432t, k-432t, k432t, 2u, 2u_hybrid, 2u_chassis_replacement
 ---
 
-## Step 1: Prepare for Chassis Replacement
-{% include note.html content="We strongly suggest having another person help you with this process." %}
+{% include important.html content="We strongly recommend having another person help you with this process." %}
 
-1. To shut down the node, use the power button at the front or connect by using SSH and run the `sudo shutdown -h now` command. 
+## Step 1: Prepare for Chassis Replacement
+
+1. To shut down the node, use the power button at the front of the node.
+
+   Alternatively, connect to the node by using SSH and run the `sudo shutdown -h now` command. 
 
 1. Disconnect all cables from the back of the node.
 
@@ -42,20 +45,21 @@ keywords: replace, hardware, component, chassis, chassis_replacement, c-192t, c1
 
    <table>
      <tr>
-       <td>6</td>
-       <td>4</td>
-       <td>2</td>
+       <td><strong>6</strong></td>
+       <td><strong>4</strong></td>
+       <td><strong>2</strong></td>
      </tr>
      <tr>
-       <td>5</td>
-       <td>3</td>
-       <td>1</td>
+       <td><strong>5</strong></td>
+       <td><strong>3</strong></td>
+       <td><strong>1</strong></td>
      </tr>
    </table>
 
-1. To allow the HDD trays to slide open, ensure that any shipping screws are removed from the replacement chassis.
-
+   {{site.data.alerts.note}}
+   To allow the front HDD trays to slide open, ensure that any shipping screws are removed from the replacement chassis.
    {% include image.html alt="C-Series Shipping Screws" file="c-series-2u-shipping-screws.png" %}
+   {{site.data.alerts.end}}
 
 1. Install the replacement chassis in an appropriate location in your server rack.
 
@@ -70,6 +74,16 @@ keywords: replace, hardware, component, chassis, chassis_replacement, c-192t, c1
       {% include image.html alt="HDD Tray" file="c-series-2u-hdd-tray.png" %}
    
    1. To insert an HDD into the replacement chassis, gently slide the drive tray knob backwards. This latches the drive and knob in place.
+  
+   1. Reconnect the cables to the HDDs, making sure that you reseat both ends of the cable.
+
+      {{site.data.alerts.note}}
+      <ul>
+        <li>The HDD carriers in the top and middle trays connect to an HBA controller card at the rear of the chassis.</li>
+        <li>The HDD carriers in the the bottom tray connect directly to the motherboard at the rear of the chassis.</li>
+        <li></li>
+      </ul>
+      {{site.data.alerts.end}}
 
 1. Reconnect the power and networking cables to the node.
 
