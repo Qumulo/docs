@@ -57,7 +57,7 @@ keywords: replace, hardware, component, chassis, chassis_replacement, c-192t, c1
    </table>
 
    {{site.data.alerts.note}}
-   To allow the front HDD trays to slide open, ensure that any shipping screws are removed from the replacement chassis.
+   To allow the front HDD trays to slide open, remove any shipping screws from the replacement chassis.
    {% include image.html alt="C-Series Shipping Screws" file="c-series-2u-shipping-screws.png" max-width="150" %}
    {{site.data.alerts.end}}
 
