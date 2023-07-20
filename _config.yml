@@ -160,6 +160,8 @@ rackNewNodes: 1. Rack and wire your new nodes and then power them on.
 cannotReorderNodes: it isn’t possible to revert this operation or reorder nodes after adding them to a cluster.
 
 hardware:
+  ipmiConfig:
+    smc: To configure the IPMI port, you must use the IPMI Management Utility installed on the motherboard. For more information, see <a href="https://www.supermicro.com/manuals/other/BMC_Users_Guide_X12_H12.pdf">Supermicro BMC User Guide X12</a>.
   ipmiCreds:
     hpe: The default username, password, and DNS name are printed on a serial label pull tab attached on the node. For more information, see <a href="https://support.hpe.com/hpesc/public/docDisplay?docId=sf000046874en_us&docLocale=en_US">HPE Integrated Lights-Out 5 (iLO5) - Default Username and Password</a> in the HPE documentation.
     quiver: The default IMPI username is <code>ADMIN</code> and the default password is <code>Admin123</code>. 

@@ -1,8 +1,9 @@
 ---
-title: "Wiring Your Supermicro A+ WIO 1114S-WN10RT Nodes"
+title: "Configuring the Intelligent Platform Management Interface (IPMI) and Wiring Your Supermicro A+ WIO 1114S-WN10RT Nodes"
 summary: "This section explains how to wire the out-of-band management (IPMI) port, 100 Gbps ports, and power on Supermicro 1114S nodes."
-permalink: /hardware-guide/supermicro-a-plus-wio-1114s-wn10rt/wiring-nodes.html
+permalink: /hardware-guide/supermicro-a-plus-wio-1114s-wn10rt/configuring-ipmi-wiring-nodes.html
 redirect_from:
+  - /hardware-guide/supermicro-a-plus-wio-1114s-wn10rt/wiring-nodes.html
   - /hardware/supermicro-a-plus-wio-1114s-wn10rt/wiring-nodes.html
 sidebar: hardware_guide_sidebar
 keywords: out-of-band_management, out_of_band_management, IPMI, DHCP, network, networking, LAN, ipmitool, 100_Gbps, Ethernet, power, Supermicro, Supermicro_1114S, 1114S
@@ -15,6 +16,7 @@ keywords: out-of-band_management, out_of_band_management, IPMI, DHCP, network, n
 {% include image.html alt=alt_tag file="supermicro-1114s-back-diagram.png" url="/hardware-guide/supermicro-a-plus-wio-1114s-wn10rt/images/supermicro-1114s-back-diagram.png" %}
 
 {% include content-reuse/platform-agnostic-ipmi.md %}
+{{site.hardware.ipmiConfig.smc}}
 {{site.hardware.ipmiCreds.smc}}
 {{site.data.alerts.note}}
 {{site.hardware.ipmiCreds.smcNote}} {{site.hardware.ipmiCreds.smcMoreInfo1114S}}

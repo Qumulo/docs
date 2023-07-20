@@ -264,8 +264,8 @@ entries:
       url: /hardware-guide/supermicro-a-plus-asg-1014s-acr12n4h/racking-nodes.html
       output: web, pdf
 
-    - title: Wiring Nodes
-      url: /hardware-guide/supermicro-a-plus-asg-1014s-acr12n4h/wiring-nodes.html
+    - title: Configuring IPMI and Wiring Nodes
+      url: /hardware-guide/supermicro-a-plus-asg-1014s-acr12n4h/configuring-ipmi-wiring-nodes.html
       output: web, pdf
 
     - title: Getting Started
@@ -301,8 +301,8 @@ entries:
       url: /hardware-guide/supermicro-a-plus-wio-1114s-wn10rt/racking-nodes.html
       output: web, pdf
 
-    - title: Wiring Nodes
-      url: /hardware-guide/supermicro-a-plus-wio-1114s-wn10rt/wiring-nodes.html
+    - title: Configuring IPMI and Wiring Nodes
+      url: /hardware-guide/supermicro-a-plus-wio-1114s-wn10rt/configuring-ipmi-wiring-nodes.html
       output: web, pdf
 
     - title: Getting Started
