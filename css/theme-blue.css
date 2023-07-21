@@ -54,11 +54,11 @@ a.navbar-brand:hover {
 }
 
 .navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
-    color: #015CAE;
+    color: #17598e;
 }
 
 .navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
-    background-color: #015CAE;
+    background-color: #17598e;
     color: #ffffff;
 }
 
@@ -86,7 +86,7 @@ a.navbar-brand:hover {
 }
 
 .printTitle {
-    color: #015CAE !important;
+    color: #17598e !important;
 }
 
 .anchorjs-link:hover {
@@ -94,7 +94,7 @@ a.navbar-brand:hover {
 }
 
 div.sidebarTitle {
-    color: #015CAE;
+    color: #17598e;
 }
 
 li.sidebarTitle {
@@ -108,9 +108,9 @@ li.sidebarTitle {
 }
 
 .navbar-inverse .navbar-toggle:focus, .navbar-inverse .navbar-toggle:hover {
-    background-color: #015CAE;
+    background-color: #17598e;
 }
 
 .navbar-inverse .navbar-toggle {
-    border-color: #015CAE;
+    border-color: #17598e;
 }

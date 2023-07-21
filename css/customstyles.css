@@ -544,14 +544,28 @@ p.post-meta {font-size: 80%; color: #777;}
 /* search area */
 #search-demo-container ul#results-container {
     list-style: none;
-    font-size: 12px;
-    background-color: white;
+    background-color: #007cac;
+    color: white;
     position: absolute;
     top: 40px; /* if you change anything about the nav, you'll prob. need to reset the top and left values here.*/
     left: 20px;
     z-index: -1;
-    width:223px;
+    width: 256px;
     border-left: 1px solid #dedede;
+}
+
+ul#results-container a {
+    font-size: 10pt;
+    color: white;
+}
+
+ul#results-container a:hover {
+    background-color: #17598e;
+    color: white !important;
+}
+
+ul#results-container > li {
+    margin: 0px;
 }
 
 /* Move search box up a bit */
@@ -761,12 +775,11 @@ background-color: #347DBE;
 .nav > li > a {
     font-size: 14px;
     line-height: 20px;
-    padding: 4px 10px;
-}
+    padding: 4px 10px}
 
 ul#mysidebar {
     border-radius: 0px;
-    margin-top: 2px;
+    margin-top: -10px;
     margin-bottom: 16px;
 }
 
@@ -1222,13 +1235,6 @@ span.soft {
     color: #c0c0c0;
 }
 
-.githubEditButton {
-}
-
-.downloadPDFButton {
-    margin-bottom:-5px !important;
-}
-
 .endpoint {
     padding: 15px;
     background-color: #f0f0f0;
@@ -1563,39 +1569,91 @@ h4.panel-title {
 
 /* Set navbar breakpoint so that it converts to a hamburger menu earlier */
 @media (max-width: 1200px) {
-    .navbar-header {
-        float: none;
-    }
-    .navbar-left,.navbar-right {
-        float: none !important;
-    }
-    .navbar-toggle {
-        display: block;
-    }
-    .navbar-collapse {
-        border-top: 1px solid transparent;
-    }
-    .navbar-fixed-top {
-        top: 0;
-        border-width: 0 0 1px;
-    }
-    .navbar-collapse.collapse {
-        display: none!important;
-    }
-    .navbar-nav {
-        float: none!important;
-        margin-top: 7.5px;
-    }
-    .navbar-nav>li {
-        float: none;
-    }
-    .navbar-nav>li>a {
-        padding-top: 10px;
-        padding-bottom: 10px;
-    }
-    .collapse.in{
-        display:block !important;
-    }
+  .navbar-header {
+    float: none;
+  }
+
+  .navbar-left,.navbar-right {
+    float: none !important;
+  }
+
+  .navbar-toggle {
+    display: block;
+  }
+
+  .navbar-collapse {
+    border-top: 1px solid transparent;
+  }
+
+  .navbar-fixed-top {
+    top: 0;
+    border-width: 0 0 1px;
+  }
+
+  .navbar-collapse.collapse {
+    display: none!important;
+  }
+
+  .navbar-nav {
+    float: none!important;
+    margin-top: 7.5px;
+  }
+
+  .navbar-nav>li {
+    float: none;
+  }
+
+  .navbar-nav>li>a {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .collapse.in {
+    display:block !important;
+  }
+
+  /* Make search field stand out in responsive mode
+     and move the search box up a bit */
+  #search-demo-container {
+    background: #17598e;
+    margin-top: -9px !important;
+  }
+
+  #search-input {
+    font-size: 11pt;
+    margin: 10px;
+    width: calc(100% - 20px);
+  }
+
+  /* Make search results visible in responsive mode */
+  #search-demo-container ul#results-container {
+    position: unset;
+    top: unset;
+    left: unset;
+    width: 100%;
+  }
+
+  ul#results-container a {
+    font-size: 11pt;
+    background-color: #007cac;
+    color: white;
+  }
+
+  ul#results-container > li {
+    margin: 0px;
+  }
+
+  /* Hide Reading Mode toggle in responsive mode */
+  #tg-sb-link {
+    display: none;
+  }
+}
+
+/* Hide Grumpquats in the footer on very small screens */
+@media (max-width: 490px) {
+  .three-grumpquats {
+    display: none;
+  }
 }
 
 li.pdf-friendly {
@@ -1617,18 +1675,20 @@ li.pdf-friendly {
   }
 }
 
+@media only screen and (max-width: 760px) {
+  .footer-grumpquats {
+    float: left;
+    text-align: left;
+  }
+}
+
 @media only screen and (max-width: 600px) {
   /* Prevent overly long permission names
      from breaking display on mobile. */
   .improve-mobile {
     margin-left: -22px;
   }
-  
-  .footer-grumpquats {
-    float: left;
-    text-align: left;
-  }
-  
+
   /* Ensure that there are two tiles per row
      on mobile devices. */
   .guide-button {
