@@ -164,25 +164,21 @@ entries:
       url: /administrator-guide/snapshots/recovering-files.html
       output: web, pdf
 
-  - title: Data Security
-    url: /administrator-guide/data-security/index.html
+  - title: Encryption and Data Security
+    url: /administrator-guide/encryption-data-security/index.html
     output: web, pdf
     folderitems:
 
     - title: Managing Encryption at Rest
-      url: /administrator-guide/data-security/managing-encryption-at-rest.html
+      url: /administrator-guide/encryption-data-security/managing-encryption-at-rest.html
       output: web, pdf
 
     - title: Generating and Storing ECDSA Keys
-      url: /administrator-guide/data-security/generating-storing-ecdsa-keys.html
+      url: /administrator-guide/encryption-data-security/generating-storing-ecdsa-keys.html
       output: web, pdf
 
     - title: Managing Security Keys
-      url: /administrator-guide/data-security/managing-security-keys.html
-      output: web, pdf
-
-    - title: Understanding Offline Qumulo Core Nodes and Checking for Free Space
-      url: /administrator-guide/data-security/understanding-offline-nodes.html
+      url: /administrator-guide/encryption-data-security/managing-security-keys.html
       output: web, pdf
 
   - title: Node Addition and Replacement
@@ -209,6 +205,10 @@ entries:
     - title: Improving Performance by Migrating a Cluster to a Different License Class
       url: /administrator-guide/node-addition-replacement/migrating-license-class.html
       output: web, pdf    
+
+    - title: Understanding Offline Qumulo Core Nodes and Checking for Free Space
+      url: /administrator-guide/node-addition-replacement/understanding-offline-nodes.html
+      output: web, pdf
 
   - title: Data Replication
     url: /administrator-guide/replicating-data/index.html

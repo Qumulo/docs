@@ -1,8 +1,9 @@
 ---
 title: "Understanding Offline Qumulo Core Nodes and Checking for Free Space"
 summary: "This section explains what happens when a Qumulo Core node goes offline and how you can check the remaining free space."
-permalink: /administrator-guide/data-security/understanding-offline-nodes.html
+permalink: /administrator-guide/node-addition-replacement/understanding-offline-nodes.html
 redirect_from:
+  - /administrator-guide/data-security/understanding-offline-nodes.html
   - /administrator-guide/protecting-data/understanding-offline-nodes.html
   - /administrator-guide/qumulo-core/understanding-offline-nodes.html
 sidebar: administrator_guide_sidebar
