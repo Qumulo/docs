@@ -31,21 +31,21 @@ To get started, choose one of the following guides.
   </span>
 
   <span class="guide-button">
-    <a class="multilink" href="integration-guide/">
-      <picture>
-        <source type="image/webp" srcset="images/qumulo-integration-guide.webp">
-        <source type="image/png" srcset="images/qumulo-integration-guide.png">
-        <img src="images/qumulo-integration-guide.png" alt="Qumulo Integration Guide" class="landing-page-icon" width="301" height="301">
-      </picture><br>Qumulo Integration Guide</a>
-  </span>
-
-  <span class="guide-button">
     <a class="multilink" href="administrator-guide/">
       <picture>
         <source type="image/webp" srcset="images/administrator-guide.webp">
         <source type="image/png" srcset="images/administrator-guide.png">
         <img src="images/administrator-guide.png" alt="Qumulo Administrator Guide" class="landing-page-icon" width="301" height="301">
       </picture><br>Qumulo Administrator Guide</a>
+  </span>
+
+  <span class="guide-button">
+    <a class="multilink" href="integration-guide/">
+      <picture>
+        <source type="image/webp" srcset="images/qumulo-integration-guide.webp">
+        <source type="image/png" srcset="images/qumulo-integration-guide.png">
+        <img src="images/qumulo-integration-guide.png" alt="Qumulo Integration Guide" class="landing-page-icon" width="301" height="301">
+      </picture><br>Qumulo Integration Guide</a>
   </span>
 
   <span class="guide-button">
