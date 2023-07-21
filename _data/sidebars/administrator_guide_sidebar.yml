@@ -206,7 +206,7 @@ entries:
       url: /administrator-guide/node-addition-replacement/migrating-license-class.html
       output: web, pdf    
 
-    - title: Understanding Offline Qumulo Core Nodes and Checking for Free Space
+    - title: Understanding Offline Nodes and Checking for Free Space
       url: /administrator-guide/node-addition-replacement/understanding-offline-nodes.html
       output: web, pdf
 
