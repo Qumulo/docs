@@ -18,495 +18,248 @@ keywords: update, upgrade, instant, instant_software_upgrade, platform, platform
 
 {{site.nexusDownloads}}
 
-For information about the most important features from each release, see [Qumulo Core Feature Log](feature-log.html).
-
-<div class="table-float-container">
-<div class="table-float-child">
-  <h2>On-Premises Upgrades</h2>
-  <table>
+## Qumulo Core Upgrade Modes
+For information about the most important features from each release, click the Qumulo Core version.
+<table width="100%">
+  <thead>
+    <th width="33%">Version</th>
+    <th width="33%">On-Premises Upgrade Type</th>
+    <th width="33%">Cloud Upgrade Type</th>      
+  </thead>
   <tbody>
-    <thead>
-      <th>Version</th>
-      <th>Upgrade Type</th>
-    </thead>
     <tr>
-      <td><strong>6.1.2.2</strong></td>
-      <td><strong>Platform</strong></td>
+      <td><a href="feature-log.html#qumulo-core-6122">6.1.2.2</a></td>
+      <td colspan="2" class="shared-upgrade-mode platform">Platform</td>
     </tr>
     <tr>
-      <td><strong>6.1.1</strong></td>
-      <td><strong>Platform</strong></td>
+      <td><a href="feature-log.html#qumulo-core-611">6.1.1</a></td>
+      <td colspan="2" class="shared-upgrade-mode platform">Platform</td>
     </tr>
     <tr>
-      <td>6.1.0.1</td>
-      <td>Instant, Quarterly</td>
+      <td><a href="feature-log.html#qumulo-core-6101-quarterly">6.1.0.1 (Quarterly)</a></td>
+      <td colspan="2" class="shared-upgrade-mode">Instant</td>
     </tr>
     <tr>
-      <td>6.0.2</td>
-      <td>Instant</td>
+      <td><a href="feature-log.html#qumulo-core-602">6.0.2</a></td>
+      <td colspan="2" class="shared-upgrade-mode">Instant</td>   
     </tr>
     <tr>
-      <td><strong>6.0.1.1</strong></td>
-      <td><strong>Platform</strong></td>
+      <td><a href="feature-log.html#qumulo-core-6011">6.0.1.1</a></td>
+      <td colspan="2" class="shared-upgrade-mode platform">Platform</td>
     </tr>
     <tr>
-      <td>6.0.0.2</td>
-      <td>Instant, Quarterly</td>
+      <td><a href="feature-log.html#qumulo-core-6002-quarterly">6.0.0.2 (Quarterly)</a></td>
+      <td colspan="2" class="shared-upgrade-mode">Instant</td>
     </tr>
     <tr>
-      <td>5.3.4</td>
-      <td>Instant</td>
+      <td><a href="feature-log.html#qumulo-core-534">5.3.4</a></td>
+      <td colspan="2" class="shared-upgrade-mode">Instant</td>
     </tr>
     <tr>
-      <td>5.3.3.1</td>
-      <td>Instant</td>
+      <td><a href="feature-log.html#qumulo-core-5331">5.3.3.1</a></td>
+      <td colspan="2" class="shared-upgrade-mode">Instant</td>
     </tr>
     <tr>
-      <td>5.3.2</td>
-      <td>Instant</td>
+      <td><a href="feature-log.html#qumulo-core-532">5.3.2</a></td>
+      <td colspan="2" class="shared-upgrade-mode">Instant</td>
     </tr>
     <tr>
-      <td><strong>5.3.1</strong></td>
-      <td><strong>Platform</strong></td>
+      <td><a href="feature-log.html#qumulo-core-531">5.3.1</a></td>
+      <td class="platform">Platform</td>
+      <td class="instant">Instant</td>    
     </tr>    
     <tr>
-      <td>5.3.0</td>
-      <td>Instant, Quarterly</td>
+      <td><a href="feature-log.html#qumulo-core-530-quarterly">5.3.0 (Quarterly)</a></td>
+      <td colspan="2" class="shared-upgrade-mode">Instant</td>
     </tr>
     <tr>
-      <td>5.2.5.1</td>
-      <td>Instant</td>
+      <td><a href="feature-log.html#qumulo-core-5251">5.2.5.1</a></td>
+      <td colspan="2" class="shared-upgrade-mode">Instant</td>
     </tr>
     <tr>
-      <td>5.2.4</td>
-      <td>Instant</td>
+      <td><a href="feature-log.html#qumulo-core-524">5.2.4</a></td>
+      <td colspan="2" class="shared-upgrade-mode">Instant</td>
     </tr>
     <tr>
-      <td>5.2.3</td>
-      <td>Instant</td>
+      <td><a href="feature-log.html#qumulo-core-523">5.2.3</a></td>
+      <td colspan="2" class="shared-upgrade-mode">Instant</td>
     </tr>
     <tr>
-      <td>5.2.2</td>
-      <td>Instant</td>
+      <td><a href="feature-log.html#qumulo-core-522">5.2.2</a></td>
+      <td colspan="2" class="shared-upgrade-mode">Instant</td>
     </tr>
     <tr>
-      <td>5.2.1</td>
-      <td>Instant</td>
+      <td><a href="feature-log.html#qumulo-core-521">5.2.1</a></td>
+      <td colspan="2" class="shared-upgrade-mode">Instant</td>
     </tr>
     <tr>
-      <td>5.2.0.2</td>
-      <td>Instant, Quarterly</td>
+      <td><a href="feature-log.html#qumulo-core-5202-quarterly">5.2.0.2 (Quarterly)</a></td>
+      <td colspan="2" class="shared-upgrade-mode">Instant</td>
     </tr>
     <tr>
-      <td><strong>5.1.5</strong></td>
-      <td><strong>Platform</strong></td>
+      <td><a href="feature-log.html#qumulo-core-515">5.1.5</a></td>
+      <td colspan="2" class="shared-upgrade-mode platform">Platform</td>
     </tr>
     <tr>
-      <td>5.1.4.1</td>
-      <td>Instant</td>
+      <td><a href="feature-log.html#qumulo-core-5141">5.1.4.1</a></td>
+      <td colspan="2" class="shared-upgrade-mode">Instant</td>
     </tr>
     <tr>
-      <td>5.1.3</td>
-      <td>Instant</td>
+      <td><a href="feature-log.html#qumulo-core-513">5.1.3</a></td>
+      <td colspan="2" class="shared-upgrade-mode">Instant</td>
     </tr>
     <tr>
-      <td>5.1.2</td>
-      <td>Instant</td>
+      <td><a href="feature-log.html#qumulo-core-512">5.1.2</a></td>
+      <td colspan="2" class="shared-upgrade-mode">Instant</td>
     </tr>
     <tr>
-      <td><strong>5.1.1</strong></td>
-      <td><strong>Platform</strong></td>
+      <td><a href="feature-log.html#qumulo-core-511">5.1.1</a></td>
+      <td colspan="2" class="shared-upgrade-mode platform">Platform</td>
     </tr>
     <tr>
-      <td>5.1.0.1</td>
-      <td>Instant, Quarterly</td>
+      <td><a href="feature-log.html#qumulo-core-5101-quarterly">5.1.0.1 (Quarterly)</a></td>
+      <td colspan="2" class="shared-upgrade-mode">Instant</td>
     </tr>
     <tr>
-      <td>5.0.6</td>
-      <td>Instant</td>
+      <td><a href="feature-log.html#qumulo-core-506">5.0.6</a></td>
+      <td colspan="2" class="shared-upgrade-mode">Instant</td>
     </tr>
     <tr>
-      <td>5.0.5</td>
-      <td>Instant</td>
+      <td><a href="feature-log.html#qumulo-core-505">5.0.5</a></td>
+      <td colspan="2" class="shared-upgrade-mode">Instant</td>
     </tr>
     <tr>
-      <td>5.0.4</td>
-      <td>Instant</td>
+      <td><a href="feature-log.html#qumulo-core-504">5.0.4</a></td>
+      <td colspan="2" class="shared-upgrade-mode">Instant</td>
     </tr>
     <tr>
-      <td>5.0.3</td>
-      <td>Instant</td>
+      <td><a href="feature-log.html#qumulo-core-503">5.0.3</a></td>
+      <td colspan="2" class="shared-upgrade-mode">Instant</td>
     </tr>
     <tr>
-      <td>5.0.2</td>
-      <td>Instant</td>
+      <td><a href="feature-log.html#qumulo-core-502">5.0.2</a></td>
+      <td colspan="2" class="shared-upgrade-mode">Instant</td>
     </tr>
     <tr>
-      <td>5.0.1</td>
-      <td>Instant</td>
+      <td><a href="feature-log.html#qumulo-core-501">5.0.1</a></td>
+      <td colspan="2" class="shared-upgrade-mode">Instant</td>
     </tr>
     <tr>
-      <td>5.0.0.1</td>
-      <td>Instant, Quarterly</td>
+      <td><a href="feature-log.html#qumulo-core-5001-quarterly">5.0.0.1 (Quarterly)</a></td>
+      <td colspan="2" class="shared-upgrade-mode">Instant</td>
     </tr>
     <tr>
-      <td>4.3.4</td>
-      <td>Instant</td>
+      <td><a href="feature-log.html#qumulo-core-434">4.3.4</a></td>
+      <td colspan="2" class="shared-upgrade-mode">Instant</td>
     </tr>
     <tr>
-      <td>4.3.3</td>
-      <td>Instant</td>
+      <td><a href="feature-log.html#qumulo-core-433">4.3.3</a></td>
+      <td colspan="2" class="shared-upgrade-mode">Instant</td>
     </tr>
     <tr>
-      <td>4.3.2</td>
-      <td>Instant</td>
+      <td><a href="feature-log.html#qumulo-core-432">4.3.2</a></td>
+      <td colspan="2" class="shared-upgrade-mode">Instant</td>
     </tr>
     <tr>
-      <td>4.3.1</td>
-      <td>Instant</td>
+      <td><a href="feature-log.html#qumulo-core-431">4.3.1</a></td>
+      <td colspan="2" class="shared-upgrade-mode">Instant</td>
     </tr>
     <tr>
-      <td>4.3.0</td>
-      <td>Instant, Quarterly</td>
+      <td><a href="feature-log.html#qumulo-core-430-quarterly">4.3.0 (Quarterly)</a></td>
+      <td colspan="2" class="shared-upgrade-mode">Instant</td>
     </tr>
     <tr>
-      <td>4.2.6</td>
-      <td>Instant</td>
+      <td><a href="feature-log.html#qumulo-core-426">4.2.6</a></td>
+      <td colspan="2" class="shared-upgrade-mode">Instant</td>
     </tr>
     <tr>
-      <td>4.2.5</td>
-      <td>Instant</td>
+      <td><a href="feature-log.html#qumulo-core-425">4.2.5</a></td>
+      <td colspan="2" class="shared-upgrade-mode">Instant</td>
     </tr>
     <tr>
-      <td><strong>4.2.4</strong></td>
-      <td><strong>Platform</strong></td>
+      <td><a href="feature-log.html#qumulo-core-424">4.2.4</a></td>
+      <td colspan="2" class="shared-upgrade-mode platform">Platform</td>
     </tr>
     <tr>
-      <td>4.2.3</td>
-      <td>Instant</td>
+      <td><a href="feature-log.html#qumulo-core-423">4.2.3</a></td>
+      <td colspan="2" class="shared-upgrade-mode">Instant</td>
     </tr>
     <tr>
-      <td>4.2.2</td>
-      <td>Instant</td>
+      <td><a href="feature-log.html#qumulo-core-422">4.2.2</a></td>
+      <td colspan="2" class="shared-upgrade-mode">Instant</td>
     </tr>
     <tr>
-      <td><strong>4.2.1</strong></td>
-      <td><strong>Platform</strong></td>
+      <td><a href="feature-log.html#qumulo-core-421">4.2.1</a></td>
+      <td colspan="2" class="shared-upgrade-mode platform">Platform</td>
     </tr>
     <tr>
-      <td>4.2.0</td>
-      <td>Instant, Quarterly</td>
+      <td><a href="feature-log.html#qumulo-core-420-quarterly">4.2.0 (Quarterly)</a></td>
+      <td colspan="2" class="shared-upgrade-mode">Instant</td>
     </tr>
     <tr>
-      <td>4.1.5</td>
-      <td>Instant</td>
+      <td><a href="feature-log.html#qumulo-core-415">4.1.5</a></td>
+      <td colspan="2" class="shared-upgrade-mode">Instant</td>
     </tr>
     <tr>
-      <td>4.1.4</td>
-      <td>Instant</td>
+      <td><a href="feature-log.html#qumulo-core-414">4.1.4</a></td>
+      <td colspan="2" class="shared-upgrade-mode">Instant</td>
     </tr>
     <tr>
-      <td>4.1.3</td>
-      <td>Instant</td>
+      <td><a href="feature-log.html#qumulo-core-413">4.1.3</a></td>
+      <td colspan="2" class="shared-upgrade-mode">Instant</td>
     </tr>
     <tr>
-      <td>4.1.2</td>
-      <td>Instant</td>
+      <td><a href="feature-log.html#qumulo-core-412">4.1.2</a></td>
+      <td colspan="2" class="shared-upgrade-mode">Instant</td>
     </tr>
     <tr>
-      <td>4.1.1</td>
-      <td>Instant</td>
+      <td><a href="feature-log.html#qumulo-core-411">4.1.1</a></td>
+      <td colspan="2" class="shared-upgrade-mode">Instant</td>
     </tr>
     <tr>
-      <td>4.1.0.1</td>
-      <td>Instant, Quarterly</td>
+      <td><a href="feature-log.html#qumulo-core-4101-quarterly">4.1.0.1 (Quarterly)</a></td>
+      <td colspan="2" class="shared-upgrade-mode">Instant</td>
     </tr>
     <tr>
-      <td>4.0.6</td>
-      <td>Instant</td>
+      <td><a href="feature-log.html#qumulo-core-406">4.0.6</a></td>
+      <td class="instant">Instant</td>
+      <td class="platform">Platform</td>    
     </tr>
     <tr>
-      <td>4.0.5</td>
-      <td>Instant</td>
+      <td><a href="feature-log.html#qumulo-core-405">4.0.5</a></td>
+      <td colspan="2" class="shared-upgrade-mode">Instant</td>
     </tr>
     <tr>
-      <td>4.0.4</td>
-      <td>Instant</td>
+      <td><a href="feature-log.html#qumulo-core-404">4.0.4</a></td>
+      <td colspan="2" class="shared-upgrade-mode">Instant</td>
     </tr>
     <tr>
-      <td>4.0.3</td>
-      <td>Instant</td>
+      <td><a href="feature-log.html#qumulo-core-403">4.0.3</a></td>
+      <td colspan="2" class="shared-upgrade-mode">Instant</td>
     </tr>
     <tr>
-      <td>4.0.2</td>
-      <td>Instant</td>
+      <td><a href="feature-log.html#qumulo-core-402">4.0.2</a></td>
+      <td colspan="2" class="shared-upgrade-mode">Instant</td>
     </tr>
     <tr>
-      <td>4.0.1.1</td>
-      <td>Instant</td>
+      <td><a href="feature-log.html#qumulo-core-4011">4.0.1.1</a></td>
+      <td colspan="2" class="shared-upgrade-mode">Instant</td>
     </tr>
     <tr>
-      <td>4.0.0.2</td>
-      <td>Instant, Quarterly</td>
+      <td><a href="feature-log.html#qumulo-core-4002-quarterly">4.0.0.2 (Quarterly)</a></td>
+      <td colspan="2" class="shared-upgrade-mode">Instant</td>
     </tr>
     <tr>
-      <td>3.3.5</td>
-      <td>Instant</td>
+      <td><a href="feature-log.html#qumulo-core-335">3.3.5</a></td>
+      <td colspan="2" class="shared-upgrade-mode">Instant</td>
     </tr>
     <tr>
-      <td>3.3.4</td>
-      <td>Instant</td>
+      <td><a href="feature-log.html#qumulo-core-334">3.3.4</a></td>
+      <td colspan="2" class="shared-upgrade-mode">Instant</td>
     </tr>
     <tr>
-      <td>3.3.3</td>
-      <td>Instant</td>
+      <td><a href="feature-log.html#qumulo-core-333">3.3.3</a></td>
+      <td colspan="2" class="shared-upgrade-mode">Instant</td>
     </tr>
   </tbody>
 </table>
-</div>
-
-<div class="table-float-child">
-<h2>Cloud Upgrades</h2>
-<table>
-  <tbody>
-    <thead>
-      <th>Version</th>
-      <th>Upgrade Type</th>
-    </thead>
-    <tr>
-      <td><strong>6.1.2.2</strong></td>
-      <td><strong>Platform</strong></td>
-    </tr>
-    <tr>
-      <td><strong>6.1.1</strong></td>
-      <td><strong>Platform</strong></td>
-    </tr>
-    <tr>
-      <td>6.1.0.1</td>
-      <td>Instant, Quarterly</td>
-    </tr>
-    <tr>
-      <td>6.0.2</td>
-      <td>Instant</td>
-    </tr>
-    <tr>
-      <td><strong>6.0.1.1</strong></td>
-      <td><strong>Platform</strong></td>
-    </tr>
-    <tr>
-      <td>6.0.0.2</td>
-      <td>Instant, Quarterly</td>
-    </tr>
-    <tr>            
-      <td>5.3.4</td>
-      <td>Instant</td>
-    </tr> 
-    <tr>
-      <td>5.3.3.1</td>
-      <td>Instant</td>
-    </tr>
-    <tr>
-      <td>5.3.2</td>
-      <td>Instant</td>
-    </tr>
-    <tr>
-      <td>5.3.1</td>
-      <td>Instant</td>
-    </tr>    
-    <tr>
-      <td>5.3.0</td>
-      <td>Instant, Quarterly</td>
-    </tr>
-    <tr>
-      <td>5.2.5.1</td>
-      <td>Instant</td>
-    </tr>
-    <tr>
-      <td>5.2.4</td>
-      <td>Instant</td>
-    </tr>
-    <tr>
-      <td>5.2.3</td>
-      <td>Instant</td>
-    </tr>
-    <tr>
-      <td>5.2.2</td>
-      <td>Instant</td>
-    </tr>
-    <tr>
-      <td>5.2.1</td>
-      <td>Instant</td>
-    </tr>
-    <tr>
-      <td>5.2.0.2</td>
-      <td>Instant, Quarterly</td>
-    </tr>
-    <tr>
-      <td><strong>5.1.5</strong></td>
-      <td><strong>Platform</strong></td>
-    </tr>
-    <tr>
-      <td>5.1.4.1</td>
-      <td>Instant</td>
-    </tr>
-    <tr>
-      <td>5.1.3</td>
-      <td>Instant</td>
-    </tr>
-    <tr>
-      <td>5.1.2</td>
-      <td>Instant</td>
-    </tr>
-    <tr>
-      <td><strong>5.1.1</strong></td>
-      <td><strong>Platform</strong></td>
-    </tr>
-    <tr>
-      <td>5.1.0.1</td>
-      <td>Instant, Quarterly</td>
-    </tr>
-    <tr>
-      <td>5.0.6</td>
-      <td>Instant</td>
-    </tr>
-    <tr>
-      <td>5.0.5</td>
-      <td>Instant</td>
-    </tr>
-    <tr>
-      <td>5.0.4</td>
-      <td>Instant</td>
-    </tr>
-    <tr>
-      <td>5.0.3</td>
-      <td>Instant</td>
-    </tr>
-    <tr>
-      <td>5.0.2</td>
-      <td>Instant</td>
-    </tr>
-    <tr>
-      <td>5.0.1</td>
-      <td>Instant</td>
-    </tr>
-    <tr>
-      <td>5.0.0.1</td>
-      <td>Instant, Quarterly</td>
-    </tr>
-    <tr>
-      <td>4.3.4</td>
-      <td>Instant</td>
-    </tr>
-    <tr>
-      <td>4.3.3</td>
-      <td>Instant</td>
-    </tr>
-    <tr>
-      <td>4.3.2</td>
-      <td>Instant</td>
-    </tr>
-    <tr>
-      <td>4.3.1</td>
-      <td>Instant</td>
-    </tr>
-    <tr>
-      <td>4.3.0</td>
-      <td>Instant, Quarterly</td>
-    </tr>
-    <tr>
-      <td>4.2.6</td>
-      <td>Instant</td>
-    </tr>
-    <tr>
-      <td>4.2.5</td>
-      <td>Instant</td>
-    </tr>
-    <tr>
-      <td><strong>4.2.4</strong></td>
-      <td><span><strong>Platform</strong><br></span></td>
-    </tr>
-    <tr>
-      <td>4.2.3</td>
-      <td>Instant</td>
-    </tr>
-    <tr>
-      <td>4.2.2</td>
-      <td>Instant</td>
-    </tr>
-    <tr>
-      <td><strong>4.2.1</strong></td>
-      <td><strong>Platform</strong></td>
-    </tr>
-    <tr>
-      <td>4.2.0</td>
-      <td>Instant, Quarterly</td>
-    </tr>
-    <tr>
-      <td>4.1.5</td>
-      <td>Instant</td>
-    </tr>
-    <tr>
-      <td>4.1.4</td>
-      <td>Instant</td>
-    </tr>
-    <tr>
-      <td>4.1.3</td>
-      <td>Instant</td>
-    </tr>
-    <tr>
-      <td>4.1.2</td>
-      <td>Instant</td>
-    </tr>
-    <tr>
-      <td>4.1.1</td>
-      <td>Instant</td>
-    </tr>
-    <tr>
-      <td>4.1.0.1</td>
-      <td>Instant, Quarterly</td>
-    </tr>
-    <tr>
-      <td><strong>4.0.6</strong></td>
-      <td><strong>Platform</strong></td>
-    </tr>
-    <tr>
-      <td>4.0.5</td>
-      <td>Instant</td>
-    </tr>
-    <tr>
-      <td>4.0.4</td>
-      <td>Instant</td>
-    </tr>
-    <tr>
-      <td>4.0.3</td>
-      <td>Instant</td>
-    </tr>
-    <tr>
-      <td>4.0.2</td>
-      <td>Instant</td>
-    </tr>
-    <tr>
-      <td>4.0.1.1</td>
-      <td>Instant</td>
-    </tr>
-    <tr>
-      <td>4.0.0.2</td>
-      <td>Instant, Quarterly</td>
-    </tr>
-    <tr>
-      <td>3.3.5</td>
-      <td>Instant</td>
-    </tr>
-    <tr>
-      <td>3.3.4</td>
-      <td>Instant</td>
-    </tr>
-    <tr>
-      <td>3.3.3</td>
-      <td>Instant</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-  
-</div>

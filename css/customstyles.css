@@ -111,14 +111,20 @@ figure {
   margin-bottom:12px;
 }
 
-.table-float-child {
-  width: 50%;
-  float: left;
-}
-
 .emoji {
   font-family:
     "Samsung Emoji", "Apple Emoji",  "Noto Color Emoji", emoji;
+}
+
+.shared-upgrade-mode,
+.platform,
+.instant {
+  text-align:center;
+} 
+
+.platform {
+  background-color: #ddf4ff;
+  font-weight: bold;
 }
 
 /* -------------------- TOP NAVBAR STARTS -------------------- */

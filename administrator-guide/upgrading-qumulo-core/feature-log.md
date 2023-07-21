@@ -1,11 +1,13 @@
 ---
 title: "Qumulo Core Feature Log"
-summary: "This section lists the most important features from each release. For information about upgrade types, see <a href='mode-reference.html'>Qumulo Core Upgrade Mode Reference</a>."
+summary: "This section lists the most important features from each release."
 permalink: /administrator-guide/upgrading-qumulo-core/feature-log.html
 sidebar: administrator_guide_sidebar
 keywords: update, upgrade, feature, log
 varNoPublicChanges: The majority of functionality and stability improvements in this Qumulo Core release are internal.
 ---
+
+For information about upgrade types for each release, see <a href='mode-reference.html'>Qumulo Core Upgrade Mode Reference</a>.
 
 <style>div#toc{height:200px;overflow:auto;}</style>
 
@@ -383,7 +385,7 @@ Made a platform upgrade for cloud clusters
 * Made minor performance enhancements
 * Fixed an important bug in the Web UI
 
-## Qumulo Core 4.0.1
+## Qumulo Core 4.0.1.1
 Fixed important bugs in:
 * Cloud-Based Monitoring
 * SMB file enumeration
