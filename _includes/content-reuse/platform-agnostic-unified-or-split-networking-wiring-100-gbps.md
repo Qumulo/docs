@@ -5,7 +5,8 @@ After you connect the IPMI port, connect your 100 Gbps ports (compatible with QS
 
 * **Dual NIC:** {{site.splitNetDefine}} 
 
-{% include note.html content="The `eth` port labels vary depending on the NIC manufacturer." %}
+{% capture ethDiff %}{{site.hardware.ethDiff}}{% endcapture %}
+{% include note.html content=ethDiff %}
 
 
 ## Step 3: Connecting the Power

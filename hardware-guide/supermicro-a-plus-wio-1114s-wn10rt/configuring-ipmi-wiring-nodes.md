@@ -25,10 +25,10 @@ keywords: out-of-band_management, out_of_band_management, IPMI, DHCP, network, n
 ## Step 2: Connecting the 100 Gbps Ports
 After you connect the IPMI port, connect your front-end and back-end 100 Gbps ports (compatible with QSFP28 and QSFP56). There are four 100 Gbps ports on the back of your node. To maximize redundancy, split interfaces across subnets by connecting each port to a different switch.
 
-| Port Location         | Port Labels        | Port Type  | Purpose                     |
-| --------------------- | ------------------ | ---------- | --------------------------- |
-| Top row               | 2 (eth3), 1 (eth2) | Front end  | Communication with clients  |
-| Bottom row            | 2 (eth5), 1 (eth4) | Back end   | Communication between nodes |
+| Port Location         | Port Labels            | Port Type  | Purpose                     |
+| --------------------- | ---------------------- | ---------- | --------------------------- |
+| Top row               | 2 (`eth3`), 1 (`eth2`) | Front end  | Communication with clients  |
+| Bottom row            | 2 (`eth5`), 1 (`eth4`) | Back end   | Communication between nodes |
 
 
 ## Step 3: Connecting the Power

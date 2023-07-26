@@ -14,7 +14,7 @@ The following diagram shows the NICs and ports on {{site.dl325g10p}} nodes. On t
 
 {% include important.html content="For your node to work correctly, you must connect at least one port in each NIC." %}
 
-{% capture alt_tag %}NIC1 and NIC2 ports on {{site.dl325g10p}} nodes{% endcapture %}
+{% capture alt_tag %}Front End (NIC1) and Back End (NIC2) ports on {{site.dl325g10p}} nodes, Port 1 (eth4) and Port 2 (eth5) on the left, and Port 2 (eth7) and Port 1 (eth6) on the right.{% endcapture %}
 {% include image.html alt=alt_tag file="dl325-rear-networking.png" %}
 
 ## Prerequisites

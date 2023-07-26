@@ -1,5 +1,9 @@
-{% capture content_tag %}{{site.seeTechSpecs}}{% endcapture %}
-{% include note.html content=content_tag %}
+{{site.data.alerts.note}}
+<ul>
+ <li>{{site.seeTechSpecs}}</li>
+ <li>{{site.hardware.ethDiff}}</li>
+</ul>
+{{site.data.alerts.end}}
 
 ##  Prerequisites
 {{site.data.alerts.note}}
