@@ -253,6 +253,10 @@ entries:
       url: /administrator-guide/file-system-protocols/nfsv4.1-acls.html
       output: web, pdf
 
+    - title: Host Access Rules for NFS Exports
+      url: /administrator-guide/file-system-protocols/configuring-troubleshooting-host-access-rules-nfs-exports.html
+      output: web, pdf
+
   - title: NFSv4.1 with Kerberos
     url: /administrator-guide/kerberos/index.html
     output: web, pdf

@@ -28,6 +28,10 @@ For information about the most important features from each release, click the Q
   </thead>
   <tbody>
     <tr>
+      <td><a href="feature-log.html#qumulo-core-620">6.2.0</a></td>
+      <td colspan="2" class="shared-upgrade-mode">Instant</td>
+    </tr>
+    <tr>
       <td><a href="feature-log.html#qumulo-core-6122">6.1.2.2</a></td>
       <td colspan="2" class="shared-upgrade-mode platform">Platform</td>
     </tr>

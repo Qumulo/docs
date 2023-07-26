@@ -11,6 +11,13 @@ For information about upgrade types for each release, see <a href='mode-referenc
 
 <style>div#toc{height:200px;overflow:auto;}</style>
 
+## Qumulo Core 6.2.0
+* Added the ability to specify hostnames in host access rules for NFS exports
+* Added the privilege `FILE_READ_ACCESS` to Qumulo Core for roles that require read-only access
+* Improved the snapshot deletion process
+* Added information about drive bays and disk serial numbers for {{site.q1uag1Long}} and virtual machine nodes
+* Disabled the automatic addition of DNS records to an AD domain when you join the domain
+
 ## Qumulo Core 6.1.2.2
 * Added Adaptive Data Protection to the REST API and `qq` CLI and made performance improvements
 * Added Transparent Platform Refresh to the REST API and `qq` CLI

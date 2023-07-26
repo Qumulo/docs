@@ -144,6 +144,10 @@ contactQumuloCare: <a href="https://docs.qumulo.com/contacting-qumulo-care-team.
 exampleIP0: 203.0.113.0
 exampleIP1: 203.0.113.1
 exampleIP2: 203.0.113.2
+exampleIPrange1: 203.0.113.0-203.0.113.10
+exampleIPrange2: 203.0.113.0-10
+exampleNetworkSegment1: 203.0.113.0/24
+exampleNetworkSegment2: 203.0.113.0/255.255.255.0
 exampleSubnet1: 255.0.0.1
 exampleGateway1: 192.168.0.1
 exampleUUID41: 12345a6b-7c89-0d12-3456-78fe9012f345
