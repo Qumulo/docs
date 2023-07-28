@@ -47,7 +47,7 @@ We recommend the following configuration for your node.
 
   * Active mode
 
-  * Slow transmit rather
+  * Slow transmit rate
 
   * Access port or trunk port with a native VLAN
 
