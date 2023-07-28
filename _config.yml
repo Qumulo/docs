@@ -167,7 +167,7 @@ hardware:
   ipmiConfig:
     smc: To configure the IPMI port, you must use the IPMI Management Utility installed on the motherboard. For more information, see <a href="https://www.supermicro.com/manuals/other/BMC_Users_Guide_X12_H12.pdf">Supermicro BMC User Guide X12</a>.
   ipmiCreds:
-    hpe: The default username, password, and DNS name are printed on a serial label pull tab attached on the node. For more information, see <a href="https://support.hpe.com/hpesc/public/docDisplay?docId=sf000046874en_us&docLocale=en_US">HPE Integrated Lights-Out 5 (iLO5) - Default Username and Password</a> in the HPE documentation.
+    hpe: The default username, password, and DNS name are printed on a serial label pull tab attached to the node.
     quiver: The default IMPI username is <code>ADMIN</code> and the default password is <code>Admin123</code>. 
     smc: The default IPMI username is <code>ADMIN</code> and the default password is printed on a label on the node's motherboard.
     smcNote: As of November 2019, <a href="https://www.supermicro.com/en/support/BMC_Unique_Password">Supermicro no longer uses the default <code>ADMIN</code> password.</a>
