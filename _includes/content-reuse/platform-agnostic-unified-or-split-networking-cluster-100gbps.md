@@ -7,7 +7,7 @@ Your node requires the following resources.
 
 * A network switch with the following specifications:
 
-  * 100 Gbps Ethernet
+  * {{include.ethernetSpeed}} Ethernet
   
   * Fully non-blocking architecture
 
@@ -21,9 +21,9 @@ Your node requires the following resources.
 
 
 ## Recommended Configuration
-* **Single NIC:** {{site.unifyNetDefine}} However, for greater reliability, we recommend connecting both 100 Gbps ports on every node to each switch.
+* **Single NIC:** {{site.unifyNetDefine}} However, for greater reliability, we recommend connecting both {{include.ethernetSpeed}} ports on every node to each switch.
 
-* **Dual NIC:** {{site.splitNetDefine}} However, for greater reliability, we recommend connecting all four 100 Gbps ports on every node: Connect both front-end NIC ports to the front-end switch and both back-end NIC ports to the back-end switch.
+* **Dual NIC:** {{site.splitNetDefine}} However, for greater reliability, we recommend connecting all four {{include.ethernetSpeed}} ports on every node: Connect both front-end NIC ports to the front-end switch and both back-end NIC ports to the back-end switch.
 
 {{site.data.alerts.important}}
 <ul>
@@ -65,7 +65,7 @@ For redundancy, we recommend connecting your cluster to dual switches. If either
 
 ### Single NIC
 
-* Connect the two NIC ports (2 &#215; 100 Gbps) on your nodes to separate switches.
+* Connect the two NIC ports (2 &#215; {{include.ethernetSpeedSingleNIC}}) on your nodes to separate switches.
 
 * The uplinks to the client network must equal the bandwidth from the cluster to the switch.
 
@@ -77,7 +77,7 @@ For redundancy, we recommend connecting your cluster to dual switches. If either
 
 * **Front End**
 
-  * Connect the two front-end NIC ports (2 &#215; 100 Gbps) on your nodes to separate switches.
+  * Connect the two front-end NIC ports (2 &#215; {{include.ethernetSpeedDualNIC}}) on your nodes to separate switches.
 
   * The uplinks to the client network must equal the bandwidth from the cluster to the switch.
 
@@ -85,7 +85,7 @@ For redundancy, we recommend connecting your cluster to dual switches. If either
 
 * **Back End**
 
-  * Connect the two back-end NIC ports (2 &#215; 100 Gbps) on your nodes to separate switches.
+  * Connect the two back-end NIC ports (2 &#215; {{include.ethernetSpeedDualNIC}}) on your nodes to separate switches.
 
   * Use an appropriate inter-switch link or virtual port channel.
 
@@ -99,7 +99,7 @@ You can connect a your cluster to a single switch. If this switch becomes inoper
 
 ### Single NIC
 
-* Connect the two NIC ports (2 &#215; 100 Gbps) on your nodes to a single switch.
+* Connect the two NIC ports (2 &#215; {{include.ethernetSpeedDualNIC}}) on your nodes to a single switch.
 
 * The uplinks to the client network must equal the bandwidth from the cluster to the switch.
 
@@ -109,7 +109,7 @@ You can connect a your cluster to a single switch. If this switch becomes inoper
 
 * **Front End**
 
-  * Connect the two front-end NIC ports (2 &#215; 100 Gbps) to a single switch.
+  * Connect the two front-end NIC ports (2 &#215; {{include.ethernetSpeedDualNIC}}) to a single switch.
 
   * The uplinks to the client network must equal the bandwidth from the cluster to the switch.
 
@@ -117,7 +117,7 @@ You can connect a your cluster to a single switch. If this switch becomes inoper
 
 * **Back End**
 
-  * Connect the two band-end ports (2 &#215; 100 Gbps) to a single switch.
+  * Connect the two band-end ports (2 &#215; {{include.ethernetSpeedDualNIC}}) to a single switch.
 
   * Link Aggregation Control Protocol (LACP)
 
