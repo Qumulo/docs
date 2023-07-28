@@ -6,7 +6,7 @@ sidebar: hardware_guide_sidebar
 keywords: network, networking, cluster, switch, Ethernet, ports, IP, Quiver_1U_All-NVMe_Gen1, Quiver, Quiver_1UA
 ---
 
-{% include content-reuse/platform-agnostic-unified-networking-wiring.md ethernetSpeed="100 Gbps" ethernetSpeedSingleNIC="100 Gbps" ethernetSpeedDualNIC="100 Gbps"%}
+{% include content-reuse/platform-agnostic-unified-or-split-networking-cluster.md ethernetSpeed="100 Gbps" ethernetSpeedSingleNIC="100 Gbps" ethernetSpeedDualNIC="100 Gbps"%}
 
 ## Four-Node Cluster Architecture Diagrams
 
