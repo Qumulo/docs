@@ -41,8 +41,8 @@ keywords: technical_specifications, tech_specs, specs, specifications, HPE_Apoll
   </tr>
   <tr>
     <td><strong>CPU</strong></td>
-    <td colspan="4" style="text-align: center;">2 &times; Intel Xeon Silver 4310 2.10 GHz 12 cores</td>
-    <td colspan="2" style="text-align: center;">1 &times; Intel Xeon Silver 4310 2.10 GHz 12 cores</td>
+    <td colspan="4" style="text-align: center;">2 &times; Intel Xeon Silver 4310 12 cores @ 2.10 GHz</td>
+    <td colspan="2" style="text-align: center;">1 &times; Intel Xeon Silver 4310 12 cores @ 2.10 GHz</td>
   </tr>
   <tr>
     <td><strong>Memory</strong></td>
