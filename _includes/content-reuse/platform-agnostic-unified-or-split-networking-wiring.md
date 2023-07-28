@@ -1,6 +1,6 @@
 ## Step 2: Connecting the 100 Gbps Ports
 
-After you connect the IPMI port, connect your {{include.ethernetSpeedSingleNIC}} {{include.ethernetSpeedDualNIC}}.
+After you connect the IPMI port, connect your {{include.ethernetSpeedSingleNIC}}{{include.ethernetSpeedDualNIC}}.
 
 * **Single NIC:** {{site.unifyNetDefine}}
 
