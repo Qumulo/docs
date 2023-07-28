@@ -22,4 +22,4 @@ keywords: out-of-band_management, out_of_band_management, IPMI, DHCP, network, n
 {{site.hardware.ipmiCreds.smcNote}} {{site.hardware.ipmiCreds.smcMoreInfo1014S}}
 {{site.data.alerts.end}}
 
-{% include content-reuse/platform-agnostic-unified-networking-wiring-25-100-gbps.md %}
+{% include content-reuse/platform-agnostic-unified-networking-wiring.md ethernetSpeed="25 Gbps or 100 Gbps"%}

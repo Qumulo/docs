@@ -18,4 +18,4 @@ keywords: out-of-band_management, out_of_band_management, IPMI, DHCP, network, n
 
 {% include content-reuse/platform-agnostic-ipmi.md %}
 {{site.hardware.ipmiCreds.quiver}}
-{% include content-reuse/platform-agnostic-unified-or-split-networking-wiring-100-gbps.md %}
+{% include content-reuse/platform-agnostic-unified-or-split-networking-wiring.md ethernetSpeed="100 Gbps" ethernetSpeedSingleNIC="100 Gbps ports (compatible with QSFP28 or QSFP56)" %}

@@ -13,7 +13,7 @@
 Your node requires the following resources.
 * A network switch with the following specifications:
 
-  * 25 Gbps or 100 Gbps Ethernet
+  * {{include.ethernetSpeed}} Ethernet
   
   * Fully non-blocking architecture
 
@@ -55,7 +55,7 @@ We recommend the following configuration for your node.
 ## Connecting to Redundant Switches
 For redundancy, we recommend connecting your cluster to dual switches. If either switch becomes inoperative, the cluster is still be accessible from the remaining switch.
 
-* Connect the two NIC ports (2 &#215; 25 Gbps or 100 Gbps) on your nodes to separate switches.
+* Connect the two NIC ports (2 &#215; {{include.ethernetSpeed}}) on your nodes to separate switches.
 
 * The uplinks to the client network must equal the bandwidth from the cluster to the switch.
 
@@ -67,7 +67,7 @@ For redundancy, we recommend connecting your cluster to dual switches. If either
 ## Connecting to a Single Switch
 You can connect a your cluster to a single switch. If this switch becomes inoperative, the entire cluster becomes inaccessible.
 
-* Connect the two NIC ports (2 &#215; 25 Gbps or 100 Gbps) on your nodes to a single switch.
+* Connect the two NIC ports (2 &#215; {{include.ethernetSpeed}}) on your nodes to a single switch.
 
 * The uplinks to the client network must equal the bandwidth from the cluster to the switch.
 
