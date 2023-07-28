@@ -1,8 +1,8 @@
-## Step 2: Connecting the 25 Gbps or 100 Gbps Ports
+## Step 2: Connecting the {{include.ethernetSpeed}} Ports
 {% capture content_tag %}{{site.seeTechSpecs}}{% endcapture %}
 {% include note.html content=content_tag %}
 
-After you connect the IPMI port, connect your 25 Gbps or 100 Gbps ports (compatible with QSFP28 and QSFP56). There are two 25 Gbps or 100 Gbps ports on the back of your node. {{site.unifyNetDefine}}
+After you connect the IPMI port, connect your {{include.ethernetSpeed}} ports (compatible with QSFP28 and QSFP56). There are two 25 Gbps or 100 Gbps ports on the back of your node. {{site.unifyNetDefine}}
 
 {% capture ethDiff %}{{site.hardware.ethDiff}}{% endcapture %}
 {% include note.html content=ethDiff %}
@@ -16,4 +16,4 @@ After you connect the IPMI port, connect your 25 Gbps or 100 Gbps ports (compati
 
 
 ## Step 3: Connecting the Power
-After you connect your 25 Gbps or 100 Gbps ports, connect power to the node. There are two power sockets on the back of your node. To maximize redundancy, connect each PSU to a separate power supply or power distribution unit (PDU).
+After you connect your {{include.ethernetSpeed}} ports, connect power to the node. There are two power sockets on the back of your node. To maximize redundancy, connect each PSU to a separate power supply or power distribution unit (PDU).
