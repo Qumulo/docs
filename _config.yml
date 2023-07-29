@@ -186,7 +186,7 @@ led:
   black: <span class="emoji">⚫️</span>
   white: <span class="emoji">⚪️</span>
 
-xrefUSBInstaller: <a href="/hardware-guide/getting-started/creating-usb-drive-installer.html" class="no_icon">Qumulo Core USB Drive Installer</a>
+xrefUSBinstaller: <a href="/hardware-guide/getting-started/creating-usb-drive-installer.html" class="no_icon">Qumulo Core USB Drive Installer</a>
 
 splitIlo: We strongly recommend separating your iLO access network from your client-facing network.
 partReplaceDefine: When you replace a component such as the motherboard or a NIC card in your node, you must ensure that the firmware version and configuration are correct for your new components. To do this, you must perform the part replacement procedure by using the FVT.
