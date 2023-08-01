@@ -9,6 +9,8 @@ sidebar: hardware_guide_sidebar
 keywords: out-of-band_management, out_of_band_management, IPMI, DHCP, network, networking, LAN, ipmitool, 100_Gbps, Ethernet, power, Supermicro, Supermicro_1014S, 1014S, ACR12N4H
 ---
 
+{{site.unifyNetDefine}}
+
 {% capture unusedPorts %}{{site.unusedEthPorts}}{% endcapture %}
 {% include note.html content=unusedPorts %}
 

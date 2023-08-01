@@ -6,6 +6,8 @@ sidebar: hardware_guide_sidebar
 keywords: network, networking, cluster, switch, Ethernet, ports, IP, HPE_Apollo_4200_Gen10_Plus, HPE, Apollo, 4200_Gen10_Plus
 ---
 
+{{site.unifyNetDefine}}
+
 ## Node NIC and Ports
 The following diagrams show the NIC and ports on {{site.a4200g10p}} node types.
 

@@ -9,18 +9,20 @@ sidebar: hardware_guide_sidebar
 keywords: network, networking, cluster, switch, Ethernet, ports, IP, 90T, 180T, 288T, HPE_Apollo_4200_Gen9, HPE, Apollo, 4200_Gen9
 ---
 
+{{site.unifyNetDefine}}
+
 {% include content-reuse/hpe-apollo-4200-gen-9-90t-180t-288t-eops.md %}
 
 ## Node NICs and Ports
 The following diagrams show the NICs and ports on {{site.a4200g9}} node types.
 
-### 288T (Dual NICs)
+### 288T
 {% include note.html content="Currently, NIC2 on this model is unused." %}
 
 {% capture alt_tag %}NIC ports on the dual {{site.a4200g9}} 288T node type, Port 1 (eth4) at the top and Port 2 (eth5) at the bottom. Currently, NIC2 (on the left) is unused.{% endcapture %}
 {% include image.html alt=alt_tag file="hpe-288t-dual.png" %}
 
-### 288T (Single NIC)
+### 288T
 {% capture alt_tag %}NIC ports on the single {{site.a4200g9}} 288T node type, Port 2 (eth3) at the top and Port 1 (eth2) at the bottom.{% endcapture %}
 {% include image.html alt=alt_tag file="hpe-288t-single.png" %}
 

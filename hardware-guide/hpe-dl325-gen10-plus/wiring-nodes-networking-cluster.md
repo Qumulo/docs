@@ -9,6 +9,8 @@ sidebar: hardware_guide_sidebar
 keywords: network, networking, cluster, switch, Ethernet, ports, IP, HPE_ProLiant_DL325_Gen10_Plus, HPE, ProLiant, DL325
 ---
 
+{{site.splitNetDefine}}
+
 ## Node NICs and Ports
 The following diagram shows the NICs and ports on {{site.dl325g10p}} nodes. On this platform, there are two sets of NICs, one for the front end and one for the back end.
 

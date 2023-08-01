@@ -195,6 +195,8 @@ partReplaceDcms: Before you replace the motherboard, you must request a new Data
 varKerberosDns: Kerberos relies on DNS to identify machines involved in authentication. NFS clients and servers require DNS <code>A</code> records for forward-DNS lookups and <code>PTR</code> records for reverse-DNS lookups.
 varNfsConf: In versions of Ubuntu lower than 22.04 (and possibly on other Linux distributions), you can't use the <code>/etc/nfs.conf</code> file to configure <code>gssd</code>. If this is the case for your system, we recommend starting the <code>rpc.gssd</code> service by using the <code>-n</code> flag.
 
+unifySplitDepends: Depending on its [technical specifications](technical-specifications.html), your node uses _unified_ or _split networking configuration_.
+
 splitNetDefine: This platform uses a _split networking configuration_ in which different NICs handle back-end and front-end traffic. You can connect the front-end and back-end NICs to the same switch or to different switches.
 splitNetLACP: For all connection speeds, the default behavior is that of an LACP with 1,500 MTU for the front-end and 9,000 MTU for the back-end interfaces.
 dontMixSingleDualNodes: Never network single-NIC and and dual-NIC nodes within the same cluster.
