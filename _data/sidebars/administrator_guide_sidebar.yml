@@ -57,16 +57,16 @@ entries:
     output: web, pdf
     folderitems:
 
-    - title: Performing Upgrades
-      url: /administrator-guide/upgrading-qumulo-core/instant-software-platform.html
+    - title: Feature Log
+      url: /administrator-guide/upgrading-qumulo-core/feature-log.html
       output: web, pdf
 
-    - title: Upgrade Mode Reference
+    - title: Upgrade Modes
       url: /administrator-guide/upgrading-qumulo-core/mode-reference.html
       output: web, pdf
 
-    - title: Feature Log
-      url: /administrator-guide/upgrading-qumulo-core/feature-log.html
+    - title: Instant Software and Platform Upgrades
+      url: /administrator-guide/upgrading-qumulo-core/instant-software-platform.html
       output: web, pdf
 
   - title: Authentication

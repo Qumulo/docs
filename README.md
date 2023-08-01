@@ -59,7 +59,11 @@ To get started, choose one of the following guides.
 </div>
 
 ## Get Qumulo Core
-{{site.nexusDownloads}}
+{{site.nexusDownloads}} For more information about upgrading, see:
+
+* [Feature Log](/administrator-guide/upgrading-qumulo-core/feature-log.html)
+* [Qumulo Core Upgrade Mode Reference](/administrator-guide/upgrading-qumulo-core/mode-reference.html)
+* [Performing Instant Software Upgrades and Platform Upgrades](/administrator-guide/upgrading-qumulo-core/instant-software-platform.html)
 
 ## Collaborate
 For announcements, general questions, and feature requests, see [Community Q](https://care.qumulo.com/hc/en-us/community/topics).
