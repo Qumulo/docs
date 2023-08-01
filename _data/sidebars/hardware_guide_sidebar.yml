@@ -86,7 +86,7 @@ entries:
       url: /hardware-guide/hpe-apollo-4200-gen9/drive-leds.html
       output: web, pdf
 
-    - title: iLO Configuration
+    - title: Configuring iLO
       url: /hardware-guide/hpe-apollo-4200-gen9/configuring-ilo.html
       output: web, pdf
 
@@ -115,7 +115,7 @@ entries:
       url: /hardware-guide/hpe-apollo-4200-gen10/drive-leds.html
       output: web, pdf
 
-    - title: iLO Configuration
+    - title: Configuring iLO
       url: /hardware-guide/hpe-apollo-4200-gen10/configuring-ilo.html
       output: web, pdf
 
@@ -144,7 +144,7 @@ entries:
       url: /hardware-guide/hpe-apollo-4200-gen10-plus/panel-leds.html
       output: web, pdf
 
-    - title: iLO Configuration
+    - title: Configuring iLO
       url: /hardware-guide/hpe-apollo-4200-gen10-plus/configuring-ilo.html
       output: web, pdf
 
@@ -169,7 +169,7 @@ entries:
       url: /hardware-guide/hpe-dl325-gen10-plus/front-rear-drives.html
       output: web, pdf
       
-    - title: iLO Configuration
+    - title: Configuring iLO
       url: /hardware-guide/hpe-dl325-gen10-plus/configuring-ilo.html
       output: web, pdf      
 
@@ -190,8 +190,8 @@ entries:
       url: /hardware-guide/quiver-1ua-all-nvme-gen1/racking-nodes.html
       output: web, pdf    
 
-    - title: Wiring Nodes
-      url: /hardware-guide/quiver-1ua-all-nvme-gen1/wiring-nodes.html
+    - title: Configuring IPMI and Wiring Nodes
+      url: /hardware-guide/quiver-1ua-all-nvme-gen1/configuring-ipmi-wiring-nodes.html
       output: web, pdf
 
     - title: Getting Started
@@ -227,8 +227,8 @@ entries:
       url: /hardware-guide/quiver-1u-hybrid-gen2/racking-nodes.html
       output: web, pdf
 
-    - title: Wiring Nodes
-      url: /hardware-guide/quiver-1u-hybrid-gen2/wiring-nodes.html
+    - title: Configuring IPMI and Wiring Nodes
+      url: /hardware-guide/quiver-1u-hybrid-gen2/configuring-ipmi-wiring-nodes.html
       output: web, pdf
 
     - title: Getting Started

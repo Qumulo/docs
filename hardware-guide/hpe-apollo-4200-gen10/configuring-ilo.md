@@ -1,6 +1,6 @@
 ---
-title: "Configuring and Using Integrated Lights Out (iLO) on HPE Apollo 4200 Gen10 Nodes"
-summary: "This section explains how to configure and use Integrated Lights Out (iLO) on HPE Apollo 4200 Gen10 nodes."
+title: "Configuring Integrated Lights Out (iLO) on HPE Apollo 4200 Gen10 Nodes"
+summary: "This section explains how to configure Integrated Lights Out (iLO) on HPE Apollo 4200 Gen10 nodes."
 permalink: /hardware-guide/hpe-apollo-4200-gen10/configuring-ilo.html
 redirect_from:
   - /hardware/hpe-apollo-4200-gen10/configuring-ilo.html
