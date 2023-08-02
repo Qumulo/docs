@@ -23,7 +23,7 @@ entries:
       type: frontmatter
 
   - title: Azure Native Qumulo Scalable File Service Guide
-    url: /azure-guide/index.html
+    url: /azure-guide/
     output: web, pdf
     folderitems:
 
@@ -33,7 +33,7 @@ entries:
       type: subnavi
 
     - title: ANQ Guide Home
-      url: /azure-guide/index.html
+      url: /azure-guide/
       output: web
       type: subnavi
       

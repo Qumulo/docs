@@ -24,7 +24,7 @@
   <a href='{{ guideurl }}'>{{ guidetitle }}</a> <span>&rsaquo;</span>
 {% endif %}
 
-{% if parent_title and parent_title != page.title %}
+{% if parent_title and parent_title != page.title and parent_title != guidetitle %}
   <a href='{{ parent_url }}'>{{ parent_title }}</a> <span>&rsaquo;</span>
 {% endif %}
 
