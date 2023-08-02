@@ -68,7 +68,7 @@ To get started, choose one of the following guides.
 ## Collaborate
 For announcements, general questions, and feature requests, see [Community Q](https://care.qumulo.com/hc/en-us/community/topics).
 
-We're currently in process of migrating legacy articles about Qumulo Core and hardware platform functionality from [Qumulo Care](https://care.qumulo.com/hc/en-us). To help us prioritize topics for migration, <a href="#" onclick="javascript:window.location='mailto:&#113;&#111;&#110;&#116;&#101;&#110;&#116;&#045;&#102;&#101;&#101;&#100;&#098;&#097;&#099;&#107;&#064;&#113;&#117;&#109;&#117;&#108;&#111;&#046;&#099;&#111;&#109;?subject=Feedback%20about%20docs.qumulo.com&body=Page%20URL: ' + window.location;">send feedback to Team Qontent</a>.
+We're currently in process of migrating legacy articles about Qumulo Core and hardware platform functionality from [Qumulo Care](https://care.qumulo.com/hc/en-us). To help us prioritize topics for migration, <a onclick="javascript:window.location='mailto:&#113;&#111;&#110;&#116;&#101;&#110;&#116;&#045;&#102;&#101;&#101;&#100;&#098;&#097;&#099;&#107;&#064;&#113;&#117;&#109;&#117;&#108;&#111;&#046;&#099;&#111;&#109;?subject=Feedback%20about%20docs.qumulo.com&body=Page%20URL: ' + window.location;">send feedback to Team Qontent</a>.
 
 
 ## Reach Out to Us
