@@ -1,3 +1,10 @@
+{{site.data.alerts.note}}
+<ul>
+  <li>{{site.seeTechSpecs}}</li>
+  <li>{{site.hardware.ethDiff}}</li>
+</ul>
+{{site.data.alerts.end}}
+
 ## Prerequisites
 {{site.data.alerts.note}}
 {{site.jumboFramesPrereq}}
@@ -21,9 +28,9 @@ Your node requires the following resources.
 
 
 ## Recommended Configuration
-* **Single NIC:** {{site.unifyNetDefine}} However, for greater reliability, we recommend connecting both {{include.ethernetSpeed}} ports on every node to each switch.
+* **Single NIC:** {{site.unifyNetDefine}} However, for greater reliability, we recommend connecting both {{include.ethernetSpeedSingleNIC}} ports on every node to each switch.
 
-* **Dual NIC:** {{site.splitNetDefine}} However, for greater reliability, we recommend connecting all four {{include.ethernetSpeed}} ports on every node: Connect both front-end NIC ports to the front-end switch and both back-end NIC ports to the back-end switch.
+* **Dual NIC:** {{site.splitNetDefine}} However, for greater reliability, we recommend connecting all four {{include.ethernetSpeedDualNIC}} ports on every node: Connect both front-end NIC ports to the front-end switch and both back-end NIC ports to the back-end switch.
 
 {{site.data.alerts.important}}
 <ul>
@@ -99,7 +106,7 @@ You can connect a your cluster to a single switch. If this switch becomes inoper
 
 ### Single NIC
 
-* Connect the two NIC ports (2 &#215; {{include.ethernetSpeedDualNIC}}) on your nodes to a single switch.
+* Connect the two NIC ports (2 &#215; {{include.ethernetSpeedSingleNIC}}) on your nodes to a single switch.
 
 * The uplinks to the client network must equal the bandwidth from the cluster to the switch.
 

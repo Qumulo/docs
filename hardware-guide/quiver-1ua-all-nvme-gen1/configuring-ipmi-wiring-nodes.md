@@ -12,7 +12,7 @@ keywords: out-of-band_management, out_of_band_management, IPMI, DHCP, network, n
 
 {{site.data.alerts.note}}
 <ul>
-  <li>For dual-NIC nodes, the left NIC is for the front end and the right NIC is for the back end. For more information, see <a href="networking-cluster.html">Cluster Networking</a>.</li>
+  <li>{{site.dualNICfrontBackEnd}}</li>
   <li>{{site.unusedEthPorts}}</li>
 </ul>
 {{site.data.alerts.end}}

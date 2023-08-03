@@ -65,6 +65,35 @@ entries:
       url: /hardware-guide/c-192t-c-432t-k-432t/replacing-chassis.html
       output: web, pdf
 
+  - title: HPE Alletra 4110
+    url: /hardware-guide/hpe-alletra-4110/index.html
+    output: web, pdf
+    folderitems:
+
+    - title: Getting Started
+      url: /hardware-guide/hpe-alletra-4110/getting-started.html
+      output: web, pdf
+
+    - title: Front and Internal Drives
+      url: /hardware-guide/hpe-alletra-4110/front-internal-drives.html
+      output: web, pdf
+
+    - title: Panel LEDs
+      url: /hardware-guide/hpe-alletra-4110/panel-leds.html
+      output: web, pdf
+
+    - title: Configuring iLO
+      url: /hardware-guide/hpe-alletra-4110/configuring-ilo.html
+      output: web, pdf
+
+    - title: Wiring Nodes and Networking a Cluster
+      url: /hardware-guide/hpe-alletra-4110/wiring-nodes-networking-cluster.html
+      output: web, pdf
+
+    - title: Technical Specifications
+      url: /hardware-guide/hpe-alletra-4110/technical-specifications.html
+      output: web, pdf
+
   - title: HPE Apollo 4200 Gen9
     url: /hardware-guide/hpe-apollo-4200-gen9/index.html
     output: web, pdf
