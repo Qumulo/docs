@@ -13,7 +13,7 @@ This fully managed service deploys and manages resources on your behalf, runs Qu
 
 {{site.azure.qumuloOnAzureShort}} lets you configure file protocols, quotas, replication, and other features regardless of underlying infrastructure or storage and without requiring the tracking of resource quotas and costs. It receives the latest updates and features continuously and, when issues occur, replaces compute and storage resources automatically. 
 
-For instructions on deploying the service in Azure, see [Getting Started with {{site.azure.qumuloOnAzureShort}}](getting-started-qumulo-scalable-file-service.md).
+For instructions on deploying the service in Azure, see [Getting Started with {{site.azure.qumuloOnAzureShort}}](getting-started-qumulo-scalable-file-service.html).
 
 {% capture emailAzure %}For help with expanding the capacity of {{site.azure.qumuloOnAzureShort}}, {{site.azure.emailAzure}}{% endcapture %}
 {% include note.html content=emailAzure %}

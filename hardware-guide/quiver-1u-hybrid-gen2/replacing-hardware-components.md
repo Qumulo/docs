@@ -50,7 +50,7 @@ Your {{site.q1uhg2}} chassis contains a PCIe riser card inserted vertically into
 ## To Replace the NIC
 Your {{site.q1uhg2}} chassis contains a NIC inserted horizontally into the PCIe riser card.
 
-{% include note.html content="Although the NIC installation is toolless, depending on the NIC that ships with your node model, you might have to replace the exterior-facing metal frame on your NIC with a different one. For more information, see [Technical Specifications](technical-specifications.md)." %}
+{% include note.html content="Although the NIC installation is toolless, depending on the NIC that ships with your node model, you might have to replace the exterior-facing metal frame on your NIC with a different one. For more information, see [Technical Specifications](technical-specifications.html)." %}
 
 1. {{page.varNoHotPlug}}
 
@@ -65,7 +65,7 @@ Your {{site.q1uhg2}} chassis contains a NIC inserted horizontally into the PCIe 
 
 <a id="replace-nvme-m2-boot-drive"></a>
 ## To Replace the NVMe M.2 Boot Drive
-Your {{site.q1uhg2}} chassis contains an NVMe boot drive inserted vertically into an M.2 expansion slot on the PCIe riser card. For more information, see [NVMe M.2 Boot Drive](drive-bay-mapping.md#nvme-m2-boot-drive).
+Your {{site.q1uhg2}} chassis contains an NVMe boot drive inserted vertically into an M.2 expansion slot on the PCIe riser card. For more information, see [NVMe M.2 Boot Drive](drive-bay-mapping.html#nvme-m2-boot-drive).
 
 1. {{page.varNoHotPlug}}
 
@@ -88,7 +88,7 @@ Your {{site.q1uhg2}} chassis contains an NVMe boot drive inserted vertically int
 
 <a id="replace-hdd"></a>
 ## To Replace an HDD
-Your {{site.q1uhg2}} chassis contains 12 HDDs. For more information, see [HDD Drives](drive-bay-mapping.md#hdd-drives).
+Your {{site.q1uhg2}} chassis contains 12 HDDs. For more information, see [HDD Drives](drive-bay-mapping.html#hdd-drives).
 
 {{site.data.alerts.note}}
 <ul>
@@ -118,7 +118,7 @@ Your {{site.q1uhg2}} chassis contains 12 HDDs. For more information, see [HDD Dr
 
 <a id="replace-nvme-drive"></a>
 ## To Replace an NVMe Drive
-Your {{site.q1uhg2}} chassis contains 4 NVMe drives. For more information, see [NVMe Drives](drive-bay-mapping.md#nvme-drives).
+Your {{site.q1uhg2}} chassis contains 4 NVMe drives. For more information, see [NVMe Drives](drive-bay-mapping.html#nvme-drives).
 
 1. {{page.varNoHotPlug}}
 
@@ -199,7 +199,7 @@ Your {{site.q1uhg2}} chassis has 12 DIMM slots, with a locking latch on each sid
 
 1. Remove the existing [HDDs](#replace-hdd), [NVMe drives](#replace-nvme-drive), and the [NVMe M.2 boot drive](#replace-nvme-m2-boot-drive) from the node.
 
-1. [Remove the existing chassis](racking-nodes.md#remove-chassis) from the server rack.
+1. [Remove the existing chassis](racking-nodes.html#remove-chassis) from the server rack.
 
    {% capture content_lift %}{{site.twoPeopleOrLift}}{% endcapture %}
    {% include important.html content=content_lift %}

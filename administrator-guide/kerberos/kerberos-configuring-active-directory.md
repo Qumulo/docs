@@ -36,7 +36,7 @@ This approach provides a list of IP addresses which refer to different nodes in 
 Unless you need direct access to a specific node through a DNS fully qualified domain name (FQDN), it isn't necessary to use individual DNS `A` records for each node in the cluster (for example, `qumulo1.example.com`, `qumulo2.example.com`, `qumulo3.example.com`, and so on). Instead, we recommend creating a DNS `A` record for the cluster and then duplicating this `A` record for each IP address in the cluster (for example, `qumulo.example.com` &rarr; `{{site.exampleIP0}}`, `qumulo.example.com` &rarr; `{{site.exampleIP1}}`, and so on).
 
 ### To Configure Round-Robin DNS
-1. [Join your Qumulo cluster to AD](kerberos-prerequisites-joining-cluster-active-directory.md).
+1. [Join your Qumulo cluster to AD](kerberos-prerequisites-joining-cluster-active-directory.html).
 
 1. Find the DNS entry for the cluster on the DNS server.
 

@@ -10,7 +10,7 @@ sidebar: administrator_guide_sidebar
 keywords: NFS, NFS3, NFSv3, NFSv4.1, export, exports, mount, cluster, enable_NFS, disable_NFS, floating_IP
 ---
 
-For more information about NFSv4.1 and file access permissions, see [Managing File Access Permissions by Using NFSv4.1 Access Control Lists (ACLs)](nfsv4.1-acls.md).
+For more information about NFSv4.1 and file access permissions, see [Managing File Access Permissions by Using NFSv4.1 Access Control Lists (ACLs)](nfsv4.1-acls.html).
 
 {{site.data.alerts.important}}
 <ul>
@@ -176,7 +176,7 @@ qq fs_list_locks --protocol nfs4 --lock-type byte-range
 
 ## Supported and Unsupported Features in Qumulo's Implementation of NFSv4.1
 Qumulo's implementation of NFSv4.1 currently supports:
-* Authentication with [Kerberos](../kerberos/kerberos-with-qumulo-core.md)
+* Authentication with [Kerberos](../kerberos/kerberos-with-qumulo-core.html)
 * General file system access (reading, writing, and navigating files)
 * Unstable writes
 * Full use of the NFS exports configuration shared with NFSv3

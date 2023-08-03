@@ -11,7 +11,7 @@ sidebar: administrator_guide_sidebar
 keywords: shift to, copy, copy_objects, copy_files, object_copy, amazon_s3, s3, iam_permissions, iam, cli_commands, cli, shift_relationships, shift, relationships, configuration_details, status
 ---
 
-For more information about copying objects from S3 to Qumulo, see [Using Qumulo Shift-From for Amazon S3 to Copy Objects](/shift-from-s3.md).
+For more information about copying objects from S3 to Qumulo, see [Using Qumulo Shift-From for Amazon S3 to Copy Objects](/shift-from-s3.html).
 
 ## Prerequisites
 * A Qumulo cluster with:

@@ -249,4 +249,4 @@ Several AD configuration issues can cause a **User not found** error:
   qq ad_sid_to_account --sid S-1-5-32-544
   ```
   
-  If an error occurs, contact your AD administrator and request the correct Base DN. For more information, see [Specifying the Base Distinguished Name (Base DN)](../kerberos/kerberos-prerequisites-joining-cluster-active-directory.md#specifying-the-base-distinguished-name-base-dn).
+  If an error occurs, contact your AD administrator and request the correct Base DN. For more information, see [Specifying the Base Distinguished Name (Base DN)](../kerberos/kerberos-prerequisites-joining-cluster-active-directory.html#specifying-the-base-distinguished-name-base-dn).

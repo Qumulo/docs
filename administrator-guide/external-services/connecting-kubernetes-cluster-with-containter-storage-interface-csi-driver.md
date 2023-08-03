@@ -30,7 +30,7 @@ The Qumulo CSI Driver supports:
 
 * NFSv4.1
 
-  {% include important.html content="Even when you enable NFSv4.1 for your Qumulo cluster, you must explicitly [configure NFSv4.1 to work with Kerberos](../kerberos)." %}
+  {% include important.html content="Even when you enable NFSv4.1 for your Qumulo cluster, you must explicitly [configure NFSv4.1 to work with Kerberos](../kerberos/kerberos-with-qumulo-core.html)." %}
 
 ## Unsupported Features
 * [Volume cloning](https://kubernetes-csi.github.io/docs/volume-cloning.html)

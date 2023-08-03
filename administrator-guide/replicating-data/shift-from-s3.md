@@ -11,7 +11,7 @@ sidebar: administrator_guide_sidebar
 keywords: shift_from, copy, copy_objects, copy_files, object_copy, amazon_s3, s3, iam_permissions, iam, cli_commands, cli, shift_relationships, shift, relationships, configuration_details, status
 ---
 
-For more information about copying objects from Qumulo to S3, see [Using Qumulo Shift-To for Amazon S3 to Copy Objects](/shift-to-s3.md) on Qumulo Care.
+For more information about copying objects from Qumulo to S3, see [Using Qumulo Shift-To for Amazon S3 to Copy Objects](/shift-to-s3.html) on Qumulo Care.
 
 {% include note.html content="From Qumulo Core 4.3.4, Shift-From estimates the work that a copy job performs." %}
 
@@ -54,7 +54,7 @@ For more information about copying objects from Qumulo to S3, see [Using Qumulo 
   For more information, see [Understanding and getting your AWS credentials](https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html) in the AWS General Reference
   
 ### Example IAM Policy
-In the following example, the IAM policy gives permission to read from and write to the `my-folder` folder in the `my-bucket`. This policy can give users the minimal set of permissions required to run Shift-From jobs. (Shift-To jobs require a less-restrictive policy. For more information and an example, see [Using Qumulo Shift-To for Amazon S3 to Copy Objects](/shift-to-s3.md).)
+In the following example, the IAM policy gives permission to read from and write to the `my-folder` folder in the `my-bucket`. This policy can give users the minimal set of permissions required to run Shift-From jobs. (Shift-To jobs require a less-restrictive policy. For more information and an example, see [Using Qumulo Shift-To for Amazon S3 to Copy Objects](/shift-to-s3.html).)
 
 ```json
 {

@@ -14,7 +14,7 @@ In Qumulo Core 5.2.1 (and higher), clusters have an optional login banner that u
 To set the login banner, use the `web_ui_modify_settings` command. To specify the Markdown file to use for the banner, use the `--login-banner` flag. For example:
 
 ```bash
-qq web_ui_modify_settings --login-banner my-banner.md
+qq web_ui_modify_settings --login-banner my-banner.html
 ```
 
 ## To Clear the Web UI Login Banner

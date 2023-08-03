@@ -23,7 +23,7 @@ For more information, see [To Replace an NVMe Drive](replacing-hardware-componen
 
 
 ## NVMe M.2 Boot Drive
-The boot drive is located at the M.2 expansion slot at Riser Slot 4. For more information, see [To Replace an NVMe M.2 Boot Drive](replacing-hardware-components.md#replace-nvme-m2-boot-drive).
+The boot drive is located at the M.2 expansion slot at Riser Slot 4. For more information, see [To Replace an NVMe M.2 Boot Drive](replacing-hardware-components.html#replace-nvme-m2-boot-drive).
 
 {% capture alt_tag_nvme %}{{site.q1uhg2Long}} NVMe Boot Drive Location{% endcapture %}
 {% include image.html alt=alt_tag_nvme file="quiver-1u-hybrid-gen2-nvme-boot-drive-location.png" %}

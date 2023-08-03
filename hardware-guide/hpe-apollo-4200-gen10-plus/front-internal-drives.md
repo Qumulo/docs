@@ -7,7 +7,7 @@ keywords: front_drive, internal_drive, boot_drive, drive, drive_bay, HPE_Apollo_
 ---
 
 ## 480TB and 240TB Nodes
-In [480TB and 240TB nodes](technical-specifications.md), all drive bays are populated.
+In [480TB and 240TB nodes](technical-specifications.html), all drive bays are populated.
 
 ### Front LFF Drive Row
 The following diagram shows the front LFF drive row, or cage 1. Cage 1 holds the first half of the drives in box 1, bays 1-12.
@@ -29,7 +29,7 @@ The internal SFF drive row flips up behind the internal LFF drive row. This row 
 
 
 ## 90TB and 36TB Nodes
-In [90TB and 36TB Nodes](technical-specifications.md), some drive bays are empty.
+In [90TB and 36TB Nodes](technical-specifications.html), some drive bays are empty.
 
 {% include note.html content="In the following diagrams, empty drive bays appear in gray." %}
 

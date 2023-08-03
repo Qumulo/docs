@@ -6,7 +6,7 @@ sidebar: administrator_guide_sidebar
 keywords: NFS, NFS4.1, NFSv4.1, Kerberos, Active_Directory, AD, security, security_settings, AUTH_SYS, AUTH_KRB5, AUTH_KRB5P, AUTH_KRB5I
 ---
 
-When your Qumulo cluster is [joined to AD](kerberos-prerequisites-joining-cluster-active-directory.md), you must configure the [NFSv4.1 server](../file-system-protocols/nfsv4.1-enabling-using.md) and NFSv4.1 security settings.
+When your Qumulo cluster is [joined to AD](kerberos-prerequisites-joining-cluster-active-directory.html), you must configure the [NFSv4.1 server](../file-system-protocols/nfsv4.1-enabling-using.html) and NFSv4.1 security settings.
 
 ## To Configure Security Settings by Using the qq CLI
 Qumulo provides configuration for the permitted NFSv4.1 authentication flavors in the `qq` CLI or directly through the REST API.
@@ -66,7 +66,7 @@ Qumulo provides configuration for the permitted NFSv4.1 authentication flavors i
 
 
 ## Configuring Export Configuration
-You can use [NFSv4.1 exports](../file-system-protocols/nfsv4.1-enabling-using.md) to configure access to the Qumulo file system.
+You can use [NFSv4.1 exports](../file-system-protocols/nfsv4.1-enabling-using.html) to configure access to the Qumulo file system.
 
 The user-mapping portion of the export configuration has no effect on Kerberos configuration. Specifying `root` or `any` user mapping for a particular export applies only to `AUTH_SYS` mounts that access this export.
 

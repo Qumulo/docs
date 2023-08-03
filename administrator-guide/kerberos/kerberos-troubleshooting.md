@@ -50,7 +50,7 @@ If the issue is with the client, it is most often an ID mapping issue. Confirm t
 If the issue persists, investigate logging and packet captures.
 
 ### Resolving Cluster-Side Issues
-If the issue is with the cluster, confirm that your cluster's Active Directory settings include the Base DNs that contain the expected users. For more information, see [Prerequisites for Joining a Qumulo Cluster to Active Directory](kerberos-prerequisites-joining-cluster-active-directory.md).
+If the issue is with the cluster, confirm that your cluster's Active Directory settings include the Base DNs that contain the expected users. For more information, see [Prerequisites for Joining a Qumulo Cluster to Active Directory](kerberos-prerequisites-joining-cluster-active-directory.html).
 
 
 ## Diagnosing Mount-Failed Errors

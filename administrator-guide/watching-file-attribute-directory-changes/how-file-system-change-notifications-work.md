@@ -12,9 +12,9 @@ Qumulo Core can stream file system change notifications to a client whenever som
 
 Qumulo Core supports two protocols for streaming file system change notifications. Both protocols provide roughly the same functionality.
 
-* **SMB:** For more information, see [Watching for File Attribute and Directory Changes by Using SMB2 CHANGE_NOTIFY](smb2-change-notify.md)
+* **SMB:** For more information, see [Watching for File Attribute and Directory Changes by Using SMB2 CHANGE_NOTIFY](smb2-change-notify.html)
 
-* **REST:** For more information, see [Watching for File Attribute and Directory Changes by Using REST](rest.md). 
+* **REST:** For more information, see [Watching for File Attribute and Directory Changes by Using REST](rest.html). 
 
 The Qumulo Core notification system guarantees that:
 

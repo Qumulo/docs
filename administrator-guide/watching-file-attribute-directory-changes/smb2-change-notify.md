@@ -122,4 +122,4 @@ If the SMB client can't keep up with the notification stream from the server, th
 In this scenario, the client must re-enumerate any changes that concern it directly, by opening and inspecting files, rather than relying on notifications. This scenario can happen because the request is too broad, for example, a recursive watch on the filesystem root.
 
 ## Configuring Full Recursion for the WATCH_TREE Flag
-By default, when a client supplies the `WATCH_TREE` flag, the server sends an error to the client immediately. In this scenario, you can [configure your Qumulo cluster to support full recursion](how-file-system-change-notifications-work.md).
+By default, when a client supplies the `WATCH_TREE` flag, the server sends an error to the client immediately. In this scenario, you can [configure your Qumulo cluster to support full recursion](how-file-system-change-notifications-work.html).

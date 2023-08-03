@@ -20,7 +20,7 @@ varRollingRebootRefresh: If you don’t see a rolling reboot option for a platfo
 {{site.nexusDownloads}}
 
 ## Understanding the Differences Between Upgrade Modes
-For information about which upgrade modes different Qumulo Core releases use, see [Qumulo Core Upgrade Mode Reference](mode-reference.md).
+For information about which upgrade modes different Qumulo Core releases use, see [Qumulo Core Upgrade Mode Reference](mode-reference.html).
 
 ### Instant Software Upgrade
 The more common, faster instant software upgrade requires restarting only the container on your nodes and has a downtime of less than 30 seconds without disruption to the operation of the cluster.
