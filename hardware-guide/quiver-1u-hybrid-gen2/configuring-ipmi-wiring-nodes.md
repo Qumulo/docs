@@ -14,5 +14,5 @@ keywords: out-of-band_management, out_of_band_management, IPMI, DHCP, network, n
 {% include image.html alt=alt_tag file="quiver-1u-hybrid-gen2-back-diagram.png" url="/hardware-guide/quiver-1u-hybrid-gen2/images/quiver-1u-hybrid-gen2-back-diagram.png" %}
 
 {% include content-reuse/platform-agnostic-ipmi.md %}
-To configure the IPMI port, you must use the BMC UI. For more information, see BMC section in the [{{site.q1uhg2Long}} Service Guide](https://care.qumulo.com/hc/en-us/article_attachments/19236306533267/D52T-1ULH-Field-Service-Guide_Qumulo_.pdf#page=107). {{site.hardware.ipmiCreds.quiver}}
+To configure the IPMI port, you must use the BMC UI. For more information, see BMC section in the [{{site.q1uhg2Long}} Service Guide](https://care.qumulo.com/hc/en-us/article_attachments/19236306533267/D52T-1ULH-Field-Service-Guide_Qumulo_.pdf#page=107). {{site.loginRequired}} {{site.hardware.ipmiCreds.quiver}}
 {% include content-reuse/platform-agnostic-unified-networking-wiring.md ethernetSpeed="25 Gbps or 100 Gbps"%}
