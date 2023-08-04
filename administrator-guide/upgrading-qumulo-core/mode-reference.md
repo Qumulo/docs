@@ -16,7 +16,7 @@ keywords: update, upgrade, instant, instant_software_upgrade, platform, platform
 
 {% include important.html content="Although the _upgrade types_ for on-premises upgrades and cloud upgrades are most often the same, they do occasionally diverge. For example, for Qumulo Core 5.3.1, a cloud deployment allows an instant upgrades, an on-premises deployment requires a platform upgrade." %}
 
-{{site.nexusDownloads}}
+{{site.nexusDownloads}} {{site.loginRequired}}.
 
 ## Qumulo Core Upgrade Modes
 For information about the most important features from each release, click the Qumulo Core version.

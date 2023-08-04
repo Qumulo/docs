@@ -17,7 +17,7 @@ varRollingRebootRefresh: If you don’t see a rolling reboot option for a platfo
 </ul>
 {{site.data.alerts.end}}
 
-{{site.nexusDownloads}}
+{{site.nexusDownloads}} {{site.loginRequired}}.
 
 ## Understanding the Differences Between Upgrade Modes
 For information about which upgrade modes different Qumulo Core releases use, see [Qumulo Core Upgrade Mode Reference](mode-reference.html).

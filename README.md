@@ -59,7 +59,7 @@ To get started, choose one of the following guides.
 </div>
 
 ## Get Qumulo Core
-{{site.nexusDownloads}} For more information about upgrading, see:
+{{site.nexusDownloads}} {{site.loginRequired}}. For more information about upgrading, see:
 
 * [Feature Log](/administrator-guide/upgrading-qumulo-core/feature-log.html)
 * [Qumulo Core Upgrade Mode Reference](/administrator-guide/upgrading-qumulo-core/mode-reference.html)
