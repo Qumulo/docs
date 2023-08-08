@@ -309,7 +309,12 @@ a.multilink:hover {
   width:604px;
 }
 
-
+.404-grumpquat {
+  max-width:200px;
+  max-height:232px;
+  height:449px;
+  width:520px;
+}
 
 .crumb {
     text-transform:capitalize;
