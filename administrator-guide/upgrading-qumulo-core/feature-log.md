@@ -5,6 +5,7 @@ permalink: /administrator-guide/upgrading-qumulo-core/feature-log.html
 sidebar: administrator_guide_sidebar
 keywords: update, upgrade, feature, log
 varNoPublicChanges: The majority of functionality and stability improvements in this Qumulo Core release are internal.
+varDownloadsRelnotes: <p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a></p>
 ---
 
 For information about upgrade types for each release, see <a href='mode-reference.html'>Qumulo Core Upgrade Mode Reference</a>.
@@ -12,6 +13,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
 <style>div#toc{height:200px;overflow:auto;}</style>
 
 ## Qumulo Core 6.2.0
+{{page.varDownloadsRelnotes}}
 * Added the ability to specify hostnames in host access rules for NFS exports
 * Added the privilege `FILE_READ_ACCESS` to Qumulo Core for roles that require read-only access
 * Improved the snapshot deletion process
@@ -19,6 +21,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
 * Disabled the automatic addition of DNS records to an AD domain when you join the domain
 
 ## Qumulo Core 6.1.2.2
+{{page.varDownloadsRelnotes}}
 * Added Adaptive Data Protection to the REST API and `qq` CLI and made performance improvements
 * Added Transparent Platform Refresh to the REST API and `qq` CLI
 * Added S3 configuration settings to the Web UI
@@ -39,6 +42,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
 {{site.data.alerts.end}}
 
 ## Qumulo Core 6.1.1
+{{page.varDownloadsRelnotes}}
 * Added support for new S3 API actions, snapshot locking for replication target relationships, and lock configuration to the Web UI
 * Enabled the Search Trusted Domains Active Directory configuration option by default
 * Upgraded the host and container images
@@ -49,6 +53,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
 * Made general improvements to Qumulo Core
 
 ## Qumulo Core 6.1.0.3 (Quarterly)
+{{page.varDownloadsRelnotes}}
 {% include important.html content="This release resolves an issue where, under certain circumstances, while using Adaptive Data Protection in Qumulo Core 6.1.0 (and lower), it becomes impossible to add nodes to a cluster during normal cluster expansion or Transparent Platform Refresh operations, until you upgrade the cluster to version 6.1.0.3 (or higher)." %}
 
 * Configured Qumulo Core to use recursive change notifications by default
@@ -58,6 +63,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
 * Removed beta multitenancy REST APIs and `qq` CLI commands
 
 ## Qumulo Core 6.0.2
+{{page.varDownloadsRelnotes}}
 * Added support for streaming file change notifications
 * Improved the S3 API
 * Made improvements to the Qumulo Core allocation algorithm
@@ -67,6 +73,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
 * Fixed issues with creating SMB shares, transparent platform refresh, vSphere clusters, upgrades in the Web UI, making SMB2 copies by using ODX, and creating snapshot policies
 
 ## Qumulo Core 6.0.1.1
+{{page.varDownloadsRelnotes}}
 * Added new SMB2 `CHANGE_NOTIFY` functionality
   * Full support for recursive watch-tree notifications
   * Alternate Data Streams
@@ -83,6 +90,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
 * Fixed an issue with Network Interface Card (NIC) addressing on 240TB and 480TB General Purpose models of the {{site.a4200g10p}} node
 
 ## Qumulo Core 6.0.0.2 (Quarterly)
+{{page.varDownloadsRelnotes}}
 {{site.data.alerts.important}}
 <ul>
   <li>This release resolves an issue with transparent platform refresh that we discovered in Qumulo Core 6.0.0 and 6.0.0.1.</li>
@@ -100,6 +108,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
 * Fixed issues with the Web UI, directory access by non-root users on Linux, and changed caching for some OpenMetrics API metrics
 
 ## Qumulo Core 5.3.4
+{{page.varDownloadsRelnotes}}
 {% include important.html content="The removal of the deprecated <code>/v1/smb/shares</code> REST API endpoints in this release can affect certain third-party backup or migration workflows." %}
 
 * Added data protection configuration, multitenancy, tenant-aware SMB and NFS, and automatic clean-up of stale multipart S3 uploads
@@ -109,6 +118,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
 * Fixed an issue with SMB2 attributes for symlinks and a potential security issue with REST API session tokens
 
 ## Qumulo Core 5.3.3.1
+{{page.varDownloadsRelnotes}}
 {% include note.html content="This release resolves an issue that we discovered in Qumulo Core 5.3.3." %}
 
 * Put out the initial release of the S3 Protocol Server
@@ -118,6 +128,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
 * Fixed a bug with listing trustees for a role and a bug with LDAP connections
 
 ## Qumulo Core 5.3.2
+{{page.varDownloadsRelnotes}}
 * Added distributed multi-AZ clustering to Qumulo clusters on AWS
 * Added SMB2 `CHANGE_NOTIFY` parity with Windows
 * New Qumulo OpenMetrics API metrics
@@ -125,6 +136,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
 * Improved the REST API
 
 ## Qumulo Core 5.3.1
+{{page.varDownloadsRelnotes}}
 * Added support for watching for changes in file attributes and directory entries with SMB2 `CHANGE_NOTIFY` filters
 * Updated all firmware for all variants of Mellanox CX5 and CX6 and Broadcom NICs
 * Added metrics to the Qumulo OpenMetrics API
@@ -133,6 +145,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
 * Added a missing library dependency that allows SAML SSO to work on cloud platforms
 
 ## Qumulo Core 5.3.0 (Quarterly)
+{{page.varDownloadsRelnotes}}
 * Added interactive SAML SSO login and SSO for Active Directory users who manage clusters
 * Identified a known issue with SAML SSO on cloud platforms
 * Improved SMB `CHANGE_NOTIFY` requests
@@ -143,6 +156,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
 * Improved `qq` CLI commands
 
 ## Qumulo Core 5.2.5.1
+{{page.varDownloadsRelnotes}}
 {% include note.html content="This release resolves an issue that we discovered in Qumulo Core 5.2.5." %}
 
 * Allowed clusters joined to Active Directory to use SAML 2.0 SSO
@@ -153,18 +167,22 @@ For information about upgrade types for each release, see <a href='mode-referenc
 * Fixed bugs related to quotas and Alternative Data Streams
 
 ## Qumulo Core 5.2.4
+{{page.varDownloadsRelnotes}}
 {{page.varNoPublicChanges}}
 
 ## Qumulo Core 5.2.3
+{{page.varDownloadsRelnotes}}
 {{page.varNoPublicChanges}}
 
 ## Qumulo Core 5.2.2
+{{page.varDownloadsRelnotes}}
 * Made improvements to the Web UI on the NFS Exports and Role Management pages
 * Adjusted the REST API endpoint `/v1/smb/sessions` and the corresponding `qq` CLI command
 * Fixed an issue that occurs during NFSv4.1 failover
 * Fixed an issue that prevents a cluster from forming due to an incorrect HDD-SSD ratio.
 
 ## Qumulo Core 5.2.1
+{{page.varDownloadsRelnotes}}
 * Added over-the-wire encryption to NFSv4.1 with Kerberos
 * Improved performance for SMB Find requests
 * Added an optional Web UI login banner
@@ -172,6 +190,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
 * Fixed a bug on the NFS Exports page.
 
 ## Qumulo Core 5.2.0.2 (Quarterly)
+{{page.varDownloadsRelnotes}}
 * Enabled local trustees for NFSv4.1 with Kerberos
 * Added support for Amazon EC2 M6i instances and Amazon EBS gp3 volumes
 * Removed and replaced REST API endpoints related to shutting down and stopping clusters and nodes
@@ -180,6 +199,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
 * Resolved an issue that caused a node to enter a reboot loop under certain conditions.
 
 ## Qumulo Core 5.1.5
+{{page.varDownloadsRelnotes}}
 * Enabled creating mounts by using NFSv4.1 with Kerberos
 * Improved NLM and NFSv4.1 locking
 * Updated Mellanox NIC firmware
@@ -191,12 +211,14 @@ For information about upgrade types for each release, see <a href='mode-referenc
 * Added support for user principal (UPN) names
 
 ## Qumulo Core 5.1.4.1
+{{page.varDownloadsRelnotes}}
 * Improved workload read performance for streaming
 * Deprecated the `/v1/session/kv/` REST API endpoints
 * Fixed an issue on the FTP Settings page
 * Fixed a bug where unexpected behavior from an NFS client can cause issues with memory usage on a Qumulo cluster.
 
 ## Qumulo Core 5.1.3
+{{page.varDownloadsRelnotes}}
 * Added NFSv4.1 byte-range locking support for clusters that have NFSv4.1 enabled
 * Added custom naming functionality for snapshots
 * Made improvements to the Web UI
@@ -206,12 +228,14 @@ For information about upgrade types for each release, see <a href='mode-referenc
 * Fixed bugs about adding S3 privileges, making `OPEN` requests over NFSv4.1, and reassigning floating IP addresses.
 
 ## Qumulo Core 5.1.2
+{{page.varDownloadsRelnotes}}
 * Improved user experience for NFSv4.1 ACL editor
 * Made improvements to the Web UI
 * Updated time synchronization APIs for QaaS Azure clusters
 * Fixed bugs with malformed `RPCBIND` requests and replication relationships.
 
 ## Qumulo Core 5.1.1
+{{page.varDownloadsRelnotes}}
 * Improved time management on QaaS Azure clusters
 * Improved resiliency against data center accidents
 * Made improvements to the Web UI
@@ -220,6 +244,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
 * Fixed SMB and Web UI form bugs.
 
 ## Qumulo Core 5.1.0.1 (Quarterly)
+{{page.varDownloadsRelnotes}}
 * Improved write performance for workloads on clusters with high-churn, small-file datasets
 * Added a new Active Directory capability
 * Made a number of pages in the Web UI more clear
@@ -228,6 +253,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
 * Identified a regression in 5.0.5 and fixed a bug that occurs for rare NFS client applications.
 
 ## Qumulo Core 5.0.6
+{{page.varDownloadsRelnotes}}
 * Improved read performance for previously read large files
 * Improved write performance for certain platforms and workloads
 * Improved cluster resilience on Azure
@@ -236,6 +262,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
 * Fixed bugs pertaining to snapshots of directories with SMB-illegal characters and localized Active Directory installations.
 
 ## Qumulo Core 5.0.5
+{{page.varDownloadsRelnotes}}
 * Increased the tolerance of uncertainty for NTP
 * Mapped Isilon-style and Samba-style NFS SIDs to Qumulo SIDs
 * Made changes to the Python SDK
@@ -243,6 +270,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
 * Resolved two bugs
 
 ## Qumulo Core 5.0.4
+{{page.varDownloadsRelnotes}}
 * Enabled advanced data integrity for new clusters
 * Added a check to confirm whether an upgrade can begin
 * Added an initial release of the S3 protocol
@@ -250,24 +278,28 @@ For information about upgrade types for each release, see <a href='mode-referenc
 * Added access time (`atime`) API resources and `qq` CLI commands.
 
 ## Qumulo Core 5.0.3
+{{page.varDownloadsRelnotes}}
 * Added Rolling Reboot for platform upgrades (including new APIs and CLI commands)
 * Updated the Web UI for both software and platform upgrades
 * Made improvements to write performance over NFSv3
 * Improved the **Add Nodes** and **Snapshots** pages in the Web UI
 
 ## Qumulo Core 5.0.2
+{{page.varDownloadsRelnotes}}
 * Changed all HPE firmware updates to be performed using the Qumulo installer
 * Improved cluster resilience against boot drive failures
 * Added the ability to set timestamps through NFSv4.1
 * Added the `access_time` field to the attributes REST API resource.
 
 ## Qumulo Core 5.0.1
+{{page.varDownloadsRelnotes}}
 * Enforced the Qumulo-to-Qumulo replication compatibility guarantee to 3 consecutive quarterly releases
   {% include tip.html content="For example, 5.0.1 can't replicate with versions lower than 4.3.0 or higher than 5.2.0." %}
 * Made improvements to Shift-to-S3
 * Removed unconfigured node APIs
 
 ## Qumulo Core 5.0.0.1 (Quarterly)
+{{page.varDownloadsRelnotes}}
 * Changed the Qumulo-to-Qumulo replication compatibility guarantee from 2 to 3 consecutive quarterly releases
 * Enforced Kerberos ticket expiration
 * Enabled NLM persistence by default
@@ -279,6 +311,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
 * Resolved an issue that causes an unpredictable node failure if two NFSv4.1 clients have the same hostname.
 
 ## Qumulo Core 4.3.4
+{{page.varDownloadsRelnotes}}
 {% include important.html content="This release of Qumulo Core resolves a critical security vulnerability. We strongly recommend upgrading your Qumulo cluster to 4.3.4 to resolve this issue." %}
 
 * Added work estimation to Shift-from-S3 relationships
@@ -286,34 +319,41 @@ For information about upgrade types for each release, see <a href='mode-referenc
 * Changed the kiosk timeout window to 15 minutes
 
 ## Qumulo Core 4.3.3
+{{page.varDownloadsRelnotes}}
 * Prevented authentication requests with PAC buffers of unknown type from failing
 * Improved Saved Snapshots page in the Web UI
 * Added a mechanism for monitoring status of front-end network on platforms with separate interfaces.
   
 ## Qumulo Core 4.3.2
+{{page.varDownloadsRelnotes}}
 Fixed a bug in Qumulo Core's handling of cross-protocol permissions
 
 ## Qumulo Core 4.3.1
+{{page.varDownloadsRelnotes}}
 * Improved write performance
 * Improved speed and duration of terminating outstanding requests to AD Controllers
 * Added file system permission checks for SMB shares and NFS exports
 * Enabled mounting NFS over UDP with floating IP addresses
 
 ## Qumulo Core 4.3.0 (Quarterly)
+{{page.varDownloadsRelnotes}}
 * Added Network File System Version 4.1 (NFSv4.1)
 * Improved performance for SMB offloaded data transfer (ODX) and SMB directory query
 * Allowed AWS Sidecar to handle a new class of EBS failures
 * Fixed bugs in Shift-From-S3 and the Web UI
 
 ## Qumulo Core 4.2.6
+{{page.varDownloadsRelnotes}}
 * Made an enhancement to Web UI for Qumulo on Azure
 * Adjusted  a REST resource
 * Made an important change to export names that end with a slash (`/`) or are longer than 64 KiB
 
 ## Qumulo Core 4.2.5
+{{page.varDownloadsRelnotes}}
 Added Web UI management support for Qumulo Shift-from-S3 operations
 
 ## Qumulo Core 4.2.4
+{{page.varDownloadsRelnotes}}
 * Enhanced tree-delete operations
 * Made performance improvement for C-72T, C-168T, C-192T, and C-432T platforms
 * Enhanced Shift-to-S3
@@ -321,15 +361,18 @@ Added Web UI management support for Qumulo Shift-from-S3 operations
 * Made several important bug fixes
 
 ## Qumulo Core 4.2.3
+{{page.varDownloadsRelnotes}}
 * Added Qumulo Shift-from-S3
 * Web UI Update for SMB Shares
 * Enabled DNS configuration for cloud deployments in the Web UI
 
 ## Qumulo Core 4.2.2
+{{page.varDownloadsRelnotes}}
 * Improved the appearance of spinners in the Web UI
 * Made a failover procedure bug fix
 
 ## Qumulo Core 4.2.1
+{{page.varDownloadsRelnotes}}
 * Made improvements for security identifiers
   {% include important.html content="We removed this feature for compatibility reasons. For more information, see [the release notes](https://nexus.qumulo.com/downloads/) on Qumulo Nexus." %}
 * Upgraded the Linux kernel to 5.4
@@ -338,71 +381,86 @@ Added Web UI management support for Qumulo Shift-from-S3 operations
 * Fixed a bug
 
 ## Qumulo Core 4.2.0 (Quarterly)
+{{page.varDownloadsRelnotes}}
 * Enhanced snapshot performance
 * Enhanced Active Directory connections
 * Made an important bug fix
 
 ## Qumulo Core 4.1.5
+{{page.varDownloadsRelnotes}}
 * Added details to the **Node Add** page in the Web UI
 * Updated `qq` CLI upgrade commands for unconfigured nodes
 * Made improvements to snapshot cleanup
 * Made an important bug fix
 
 ## Qumulo Core 4.1.4
+{{page.varDownloadsRelnotes}}
 * Updated user privileges for the quota `qq` CLI commands
 * Enhanced autocomplete functionality in the Web UI
 * Made several important bug fixes
 
 ## Qumulo Core 4.1.3
+{{page.varDownloadsRelnotes}}
 {{page.varNoPublicChanges}}
 
 ## Qumulo Core 4.1.2
+{{page.varDownloadsRelnotes}}
 * Enhanced security of `qq` CLI commands
 * Made several important bug fixes
 
 ## Qumulo Core 4.1.1
+{{page.varDownloadsRelnotes}}
 * Added the ability to repeat completed jobs for Shift
 * Enhanced the security flag for SMB connections
 * Improved directory-caching performance
 * Updated the HPE Field Verification Tool
 
 ## Qumulo Core 4.1.0.1 (Quarterly)
+{{page.varDownloadsRelnotes}}
 * Enhanced the upgrade experience
 * Improved the Qumulo Sidecar for AWS
 * Made several important bug fixes
 
 ## Qumulo Core 4.0.6
+{{page.varDownloadsRelnotes}}
 Made a platform upgrade for cloud clusters
 
 ## Qumulo Core 4.0.5
+{{page.varDownloadsRelnotes}}
 * Updated the SMB API and CLI
 * Made several important bug fixes
 
 ## Qumulo Core 4.0.4
+{{page.varDownloadsRelnotes}}
 * Updated the firmware for C-72T, C-168T, C-192T, C-432T, K-144T, K-168T, and K-432T platforms
 * Enhanced `qq` CLI commands
 * Fixed an important bug for mixed-node clusters
 
 ## Qumulo Core 4.0.3
+{{page.varDownloadsRelnotes}}
 * Enhanced the web server security
 * Fixed an important bug fix for mixed-node clusters
 
 ## Qumulo Core 4.0.2
+{{page.varDownloadsRelnotes}}
 * Improved the performance of SSD clusters
 * Made minor performance enhancements
 * Fixed an important bug in the Web UI
 
 ## Qumulo Core 4.0.1.1
+{{page.varDownloadsRelnotes}}
 Fixed important bugs in:
 * Cloud-Based Monitoring
 * SMB file enumeration
 * Compound API and `qq` CLI request errors
 
 ## Qumulo Core 4.0.0.2 (Quarterly)
+{{page.varDownloadsRelnotes}}
 * Deprecated the Python 2.7 SDK
 * Made several important bug fixes
 
 ## Qumulo Core 3.3.5
+{{page.varDownloadsRelnotes}}
 * Updated mixed-node compatibility
 * Made a performance improvement for Qumulo Shift
 * Improved the Field Verification Tool for {{site.a4200g10}} clusters
@@ -410,10 +468,12 @@ Fixed important bugs in:
 * Made a few important bug fixes
 
 ## Qumulo Core 3.3.4
+{{page.varDownloadsRelnotes}}
 * Added support for the {{site.dl325g10p}} platform
 * Made general performance enhancements for hybrid clusters
 
 ## Qumulo Core 3.3.3
+{{page.varDownloadsRelnotes}}
 * Added Instant Software Upgrade
 * Made Qumulo Shift performance improvements and Web UI enhancements
 * Updated the HPE Service Pack Pro (SPP) Update for {{site.a4200g10}} clusters
