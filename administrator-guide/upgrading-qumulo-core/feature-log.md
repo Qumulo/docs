@@ -12,8 +12,17 @@ For information about upgrade types for each release, see <a href='mode-referenc
 
 <style>div#toc{height:200px;overflow:auto;}</style>
 
-## Qumulo Core 6.2.0
-{{page.varDownloadsRelnotes}}
+## Qumulo Core 6.2.0.1
+{{site.data.alerts.important}}
+<p>This release resolves an issue with Qumulo Core’s ability to route return packets back to clients when the following conditions are true for a cluster:</p>
+<ul>
+  <li>The cluster has a single tenant</li>
+  <li>VLAN networks are configured</li>
+  <li>Packets are destined for specific VLANs without a configured gateway</li>
+</ul>
+<p>After upgrading to Qumulo Core 6.2.0.1, you can continue to use the default gateway to route VLAN-specific packets.</p>
+{{site.data.alerts.end}}
+
 * Added the ability to specify hostnames in host access rules for NFS exports
 * Added the privilege `FILE_READ_ACCESS` to Qumulo Core for roles that require read-only access
 * Improved the snapshot deletion process
@@ -37,7 +46,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
       <li>An issue that affects getting a useful core dump in Qumulo Core 6.1.1.</li>
    </ul>
   </li>
-  <li>We’ve identified a known issue that affects event processing in the Cloud-Based Monitoring (CBM) service Qumulo Core 6.1.0.3. This issue is resolved in Qumulo Core 6.2.0.</li>
+  <li>We’ve identified a known issue that affects event processing in the Cloud-Based Monitoring (CBM) service Qumulo Core 6.1.0.3. This issue is resolved in Qumulo Core 6.2.0.1.</li>
 </ul>
 {{site.data.alerts.end}}
 
