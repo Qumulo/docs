@@ -4,20 +4,25 @@ search: exclude
 ---
 
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  {% for post in site.posts %}
-  {% unless post.search == "exclude" %}
-  <url>
-    <loc>{{site.url}}{{post.url}}</loc>
-  </url>
-  {% endunless %}
-  {% endfor %}
-
-
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
   {% for page in site.html_pages %}
   {% unless page.search == "exclude" %}
+  {% assign full_page_url = site.url | append: page.url %}
+  {% assign page_last_char = page.url | slice: -1 %}
+  {% assign page_last_five_chars = page.url | slice: -5, 5 %}
   <url>
-    <loc>{{site.url}}{{ page.url}}</loc>
+    <loc>{{ full_page_url }}</loc>
+    <lastmod>{{ site.time | date: '%Y-%m-%dT%H:%M:%S%:z' }}</lastmod>
+    <changefreq>weekly</changefreq>
+    {% if full_page_url == "https://docs.qumulo.com/index.html" %}
+      <priority>1.0</priority>
+    {% elsif page_last_char == "/" %}
+      <priority>0.7</priority>
+    {% elsif page_last_five_chars == ".html" %}
+      <priority>0.9</priority>
+    {% else %}
+      <priority>0.5</priority>
+    {% endif %}
   </url>
   {% endunless %}
   {% endfor %}
