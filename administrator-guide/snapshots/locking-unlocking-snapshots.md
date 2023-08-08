@@ -20,7 +20,7 @@ For more information, see [Managing Security Keys in the Qumulo File System Key 
 </ul>
 {{site.data.alerts.end}}
 
-In Qumulo Core 6.1.0.1 (and higher), you can [lock a snapshot by using a key located in the Qumulo file system key store](../encryption-data-security/managing-security-keys.html). You can also ensure that [a snapshot policy locks all new snapshots with a particular key](managing-snapshots.html#create-snapshot-with-policy) by associating the key with the snapshot policy.
+In Qumulo Core 6.1.0.3 (and higher), you can [lock a snapshot by using a key located in the Qumulo file system key store](../encryption-data-security/managing-security-keys.html). You can also ensure that [a snapshot policy locks all new snapshots with a particular key](managing-snapshots.html#create-snapshot-with-policy) by associating the key with the snapshot policy.
 
 In Qumulo Core 6.1.1 (and higher), you can [ensure that a replication target relationship locks all new policy snapshots with a specific key](#replication-target-locking) by associating the key with the replication target.
 

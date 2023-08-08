@@ -12,7 +12,7 @@ keywords: node_fault_tolerance_level, node_failure, fault_tolerance, node_add, n
 
 * In Qumulo Core 5.1.3 (and higher) you can increase the node fault tolerance level for an existing cluster during the cluster expansion process.
 
-* In Qumulo Core 6.1.0.1 (and higher), you can manage the drive and node fault tolerance levels during the cluster expansion process by [changing the data protection configuration](adding-nodes-adaptive-data-protection.html).
+* In Qumulo Core 6.1.0.3 (and higher), you can manage the drive and node fault tolerance levels during the cluster expansion process by [changing the data protection configuration](adding-nodes-adaptive-data-protection.html).
 
 {% capture contactQC %}{{site.protectingData.contactQumuloCare}}{% endcapture %}
 {% include important.html content=contactQC %}

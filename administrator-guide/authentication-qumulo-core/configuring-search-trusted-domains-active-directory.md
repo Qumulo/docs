@@ -10,7 +10,7 @@ During normal AD domain operations, a Qumulo cluster often encounters _LDAP refe
 
 
 ## Reducing Latency by Disabling Search Trusted Domains
-In Qumulo Core 6.1.0.1 (and lower), to permit Qumulo clusters to follow LDAP referrals, the **Search Trusted Domains** configuration option is enabled by default.
+In Qumulo Core 6.1.0.3 (and lower), to permit Qumulo clusters to follow LDAP referrals, the **Search Trusted Domains** configuration option is enabled by default.
 
 In Qumulo Core 6.1.1 (and higher), to reduce the potential latency of AD domain operations that might trigger and follow LDAP referrals unnecessarily (particularly for large, complex AD environments with multiple Domain Trusts), you can disable the **Search Trusted Domains** configuration option.
 

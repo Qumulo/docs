@@ -34,7 +34,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
       <li>An issue that affects getting a useful core dump in Qumulo Core 6.1.1.</li>
    </ul>
   </li>
-  <li>We’ve identified a known issue that affects event processing in the Cloud-Based Monitoring (CBM) service Qumulo Core 6.1.0.1. This issue is resolved in Qumulo Core 6.2.0.</li>
+  <li>We’ve identified a known issue that affects event processing in the Cloud-Based Monitoring (CBM) service Qumulo Core 6.1.0.3. This issue is resolved in Qumulo Core 6.2.0.</li>
 </ul>
 {{site.data.alerts.end}}
 
@@ -48,8 +48,8 @@ For information about upgrade types for each release, see <a href='mode-referenc
 * Updated the OpenMetrics API Specification
 * Made general improvements to Qumulo Core
 
-## Qumulo Core 6.1.0.1 (Quarterly)
-{% include note.html content="This release resolves an issue where, under certain circumstances, while using Adaptive Data Protection in Qumulo Core 6.1.0 (and lower), it becomes impossible to add nodes to a cluster during normal cluster expansion or Transparent Platform Refresh operations, until you upgrade the cluster to version 6.1.0.1 (or higher)." %}
+## Qumulo Core 6.1.0.3 (Quarterly)
+{% include important.html content="This release resolves an issue where, under certain circumstances, while using Adaptive Data Protection in Qumulo Core 6.1.0 (and lower), it becomes impossible to add nodes to a cluster during normal cluster expansion or Transparent Platform Refresh operations, until you upgrade the cluster to version 6.1.0.3 (or higher)." %}
 
 * Configured Qumulo Core to use recursive change notifications by default
 * Enabled SMB multichannel by default

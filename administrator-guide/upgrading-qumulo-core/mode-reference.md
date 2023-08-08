@@ -40,7 +40,7 @@ For information about the most important features from each release, click the Q
       <td colspan="2" class="shared-upgrade-mode platform">Platform</td>
     </tr>
     <tr>
-      <td><a href="feature-log.html#qumulo-core-6101-quarterly">6.1.0.1 (Quarterly)</a></td>
+      <td><a href="feature-log.html#qumulo-core-6103-quarterly">6.1.0.3 (Quarterly)</a></td>
       <td colspan="2" class="shared-upgrade-mode">Instant</td>
     </tr>
     <tr>

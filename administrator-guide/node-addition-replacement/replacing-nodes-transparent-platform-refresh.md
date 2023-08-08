@@ -1,6 +1,6 @@
 ---
 title: "Replacing Nodes in a Qumulo Cluster by Performing a Transparent Platform Refresh"
-summary: "This section explains how to replace nodes that have reached retirement or end of life by performing a two-stage transparent platform refresh on clusters that run Qumulo Core 6.1.0.1 (and higher)."
+summary: "This section explains how to replace nodes that have reached retirement or end of life by performing a two-stage transparent platform refresh on clusters that run Qumulo Core 6.1.0.3 (and higher)."
 permalink: /administrator-guide/node-addition-replacement/replacing-nodes-transparent-platform-refresh.html
 redirect_from:
   - /administrator-guide/protecting-data/replacing-nodes-by-performing-transparent-platform-refresh.html
