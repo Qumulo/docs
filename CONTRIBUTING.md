@@ -36,7 +36,9 @@ To contribute, open an issue.
 If you discover a potential security issue, contact the [Qumulo Care team](https://docs.qumulo.com/contacting-qumulo-care-team.html).
 
 ## Code of Conduct
-This project has adopted the [Contributor Covenant Code of Conduct](CODE_OF_CONDUCT.md). If you have any questions, [send us email](mailto:qontent-feedback@qumulo.com) with any questions or comments.
+This project has adopted the [Contributor Covenant Code of Conduct](CODE_OF_CONDUCT.md). If you have any questions, email [qontent-feedback@qumulo.com](mailto:qontent-feedback@qumulo.com) with questions or comments.
 
 ## Licenses
-This project has adopted the [Creative Commons Attribution 4.0 International](LICENSE) license. The Navgoco jQuery component uses the [BSD License 2.0](LICENSE-BSD-NAVGOCO) license.
+This project has adopted the [Creative Commons Attribution 4.0 International](LICENSE) license.
+
+The Navgoco jQuery component uses the [BSD License 2.0](LICENSE-BSD-NAVGOCO) license.
