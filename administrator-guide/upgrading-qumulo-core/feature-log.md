@@ -12,7 +12,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
 
 <style>div#toc{height:200px;overflow:auto;}</style>
 
-## Qumulo Core 6.2.0.1
+## Qumulo Core 6.2.0.1 (Quarterly)
 {{page.varDownloadsRelnotes}}
 {{site.data.alerts.important}}
 <p>This release resolves an issue with Qumulo Core’s ability to route return packets back to clients when the following conditions are true for a cluster:</p>
