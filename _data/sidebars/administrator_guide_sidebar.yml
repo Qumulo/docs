@@ -69,6 +69,10 @@ entries:
       url: /administrator-guide/upgrading-qumulo-core/instant-software-platform.html
       output: web, pdf
 
+    - title: Replication Version Requirements and Upgrade Recommendations
+      url: /administrator-guide/upgrading-qumulo-core/replication-version-requirements-upgrade-recommendations.html
+      output: web, pdf
+
   - title: Authentication
     url: /administrator-guide/authentication-qumulo-core/index.html
     output: web, pdf

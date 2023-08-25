@@ -127,6 +127,24 @@ figure {
   font-weight: bold;
 }
 
+.thick-arrow-right,
+.thick-arrow-left {
+  color: #7cb342;
+}
+
+.thick-arrow-left {
+  transform: scaleX(-1);
+  display: inline-block;
+}
+
+.highlight-version {
+  background: #007cac;
+  color: white;
+  font-weight: bold;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
 /* -------------------- TOP NAVBAR STARTS -------------------- */
 .clkb {
   white-space: nowrap;
@@ -443,12 +461,14 @@ h5 {
 table {
     background-color: transparent;
 }
+
 caption {
     padding-top: 8px;
     padding-bottom: 8px;
     color: #777;
     text-align: left;
 }
+
 th {
     text-align: left;
 }
@@ -464,6 +484,11 @@ td {
 
 th {
     border: 1px solid #ddd;
+}
+
+table > tbody > tr > th {
+  background-color: #777;
+  color: white;
 }
 
 table > thead > tr > th,
