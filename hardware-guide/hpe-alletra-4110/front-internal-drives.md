@@ -35,4 +35,10 @@ The NVMe boot drive is located inside the HPE NS204i-u Hot Plug Boot Optimized S
 </ul>
 {{site.data.alerts.end}}
 
-For information about [installing the drives onto HPE NS204i-u Boot Device](https://support.hpe.com/hpesc/public/docDisplay?docId=sd00001830en_us&page=GUID-BB337DF6-B98B-43A7-A609-28CE4AFCEAD6.html), see the HPE documentation.
+For more information, see the following HPE documentation:
+
+* [Installing the Drives onto HPE NS204i-u Boot Device](https://support.hpe.com/hpesc/public/docDisplay?docId=sd00001830en_us&page=GUID-BB337DF6-B98B-43A7-A609-28CE4AFCEAD6.html)
+
+* [Removing and Replacing the M.2 Boot Device](https://support.hpe.com/hpesc/public/docDisplay?docId=sd00002471en_us&page=GUID-2E7D27B3-9665-4615-87A4-4256C3E8373D.html)
+
+  {% include note.html content="The instructions for installing the HPE NS2014i-u Boot Device and M.2 Boot Device are similar." %}
