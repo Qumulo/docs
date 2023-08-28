@@ -260,7 +260,7 @@ protectingData:
   followAddNodeInstructions: 1. Follow the instructions in <a href="https://care.qumulo.com/hc/en-us/articles/360001070307">Add a New Node to an Existing Qumulo Cluster</a> on Qumulo Care.
   checkCapacity: 1. Before you click **Yes** in the **Add &lt;N&gt; nodes to cluster &lt;MyCluster&gt;?** dialog box, check that the projected capacity matches the expected capacity.
   monitorProcess: 1. To monitor this process, click **Cluster > Overview**. On the **Cluster** page, in the protection status section, you can view the rebalance phase status and the estimated time to completion.
-  mustHaveCryptoLib: To use this method, you must install the Python cryptography library.
+  mustHaveCryptoLib: To use this method, you must install the <a target="_blank" href="https://pypi.org/project/cryptography/">Python `cryptography` library</a>.
   storeKeysProtectResources: In Qumulo Core 6.1.0 (and higher), you can store multiple ECDSA public keys in the Qumulo file system key store and use these keys to protect filesystem resources.
   supportedKeys: Currently, Qumulo Core supports only 256-bit ECDSA keys in <code>.pem</code> and <code>.der</code> formats. Qumulo Core doesn't support storing ECDSA keys of other lengths and formats.
 
