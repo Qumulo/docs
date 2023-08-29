@@ -12,20 +12,20 @@ The replication process creates a consistent point-in-time copy of data in a dir
 ## Replication for Qumulo Core 6.0.0.x (and Higher)
 For Qumulo Core 6.0.0.x (and higher), clusters that run different versions can replicate _with all quarterly and non-quarterly versions, up to eight quarters in the future._
 
-The following example shows a replication compatibility matrix for various version of Qumulo Core.
+The following example shows a replication compatibility matrix for quarterly and non-quarterly version of Qumulo Core.
 
 <table>
 <thead>
   <tr>
     <th style="text-align:center;width:10%;"></th>
-    <th style="text-align:center;width:10%;">6.0.0.x</th>
+    <th style="text-align:center;width:10%;">6.0.0.x (q)</th>
     <th style="text-align:center;width:10%;">6.0.1</th>
-    <th style="text-align:center;width:10%;">6.1.0</th>
+    <th style="text-align:center;width:10%;">6.1.0 (q)</th>
     <th style="text-align:center;width:10%;">&hellip;</th>
-    <th style="text-align:center;width:10%;">8.0.0</th>
+    <th style="text-align:center;width:10%;">8.0.0 (q)</th>
     <th style="text-align:center;width:10%;">8.0.1</th>
     <th style="text-align:center;width:10%;">&hellip;</th>
-    <th style="text-align:center;width:10%;">10.0.0</th>
+    <th style="text-align:center;width:10%;">10.0.0 (q)</th>
     <th style="text-align:center;width:10%;">10.0.1</th>
   </tr>
 </thead>
