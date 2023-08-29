@@ -12,6 +12,135 @@ The replication process creates a consistent point-in-time copy of data in a dir
 ## Replication for Qumulo Core 6.0.0.x (and Higher)
 For Qumulo Core 6.0.0.x (and higher), clusters that run different versions can replicate _with all quarterly and non-quarterly versions, up to eight quarters in the future._
 
+The following example shows a replication compatibility matrix for various version of Qumulo Core.
+
+<table>
+<thead>
+  <tr>
+    <th style="text-align:center"></th>
+    <th style="text-align:center">6.0.0.x</th>
+    <th style="text-align:center">6.0.1</th>
+    <th style="text-align:center">6.1.0</th>
+    <th style="text-align:center">&hellip;</th>
+    <th style="text-align:center">8.0.0</th>
+    <th style="text-align:center">8.0.1</th>
+    <th style="text-align:center">&hellip;</th>
+    <th style="text-align:center">10.0.0</th>
+    <th style="text-align:center">10.0.1</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <th style="text-align:center">6.0.0.x</span></th>
+    <td style="text-align:center">✅</td>
+    <td style="text-align:center">✅</td>
+    <td style="text-align:center">✅</td>
+    <td style="text-align:center"></td>
+    <td style="text-align:center">✅</td>
+    <td style="text-align:center"></td>
+    <td style="text-align:center"></td>
+    <td style="text-align:center"></td>
+    <td style="text-align:center"></td>
+  </tr>
+  <tr>
+    <th style="text-align:center">6.0.1</span></th>
+    <td style="text-align:center">✅</td>
+    <td style="text-align:center">✅</td>
+    <td style="text-align:center">✅</td>
+    <td style="text-align:center"></td>
+    <td style="text-align:center">✅</td>
+    <td style="text-align:center"></td>
+    <td style="text-align:center"></td>
+    <td style="text-align:center"></td>
+    <td style="text-align:center"></td>
+  </tr>
+  <tr>
+    <th style="text-align:center">6.1.0</span></th>
+    <td style="text-align:center">✅</td>
+    <td style="text-align:center">✅</td>
+    <td style="text-align:center">✅</td>
+    <td style="text-align:center"></td>
+    <td style="text-align:center">✅</td>
+    <td style="text-align:center">✅</td>
+    <td style="text-align:center"></td>
+    <td style="text-align:center"></td>
+    <td style="text-align:center"></td>
+  </tr>
+  <tr>
+    <th style="text-align:center">&hellip;</span></th>
+    <td style="text-align:center"></td>
+    <td style="text-align:center"></td>
+    <td style="text-align:center"></td>
+    <td style="text-align:center"></td>
+    <td style="text-align:center"></td>
+    <td style="text-align:center"></td>
+    <td style="text-align:center"></td>
+    <td style="text-align:center"></td>
+    <td style="text-align:center"></td>
+  </tr>
+  <tr>
+    <th style="text-align:center">8.0.0</span></th>
+    <td style="text-align:center">✅</td>
+    <td style="text-align:center">✅</td>
+    <td style="text-align:center">✅</td>
+    <td style="text-align:center"></td>
+    <td style="text-align:center">✅</td>
+    <td style="text-align:center">✅</td>
+    <td style="text-align:center"></td>
+    <td style="text-align:center">✅</td>
+    <td style="text-align:center"></td>
+  </tr>
+  <tr>
+    <th style="text-align:center">8.0.1</span></th>
+    <td style="text-align:center"></td>
+    <td style="text-align:center"></td>
+    <td style="text-align:center">✅</td>
+    <td style="text-align:center"></td>
+    <td style="text-align:center">✅</td>
+    <td style="text-align:center">✅</td>
+    <td style="text-align:center"></td>
+    <td style="text-align:center">✅</td>
+    <td style="text-align:center"></td>
+  </tr>
+  <tr>
+    <th style="text-align:center">&hellip;</span></th>
+    <td style="text-align:center"></td>
+    <td style="text-align:center"></td>
+    <td style="text-align:center"></td>
+    <td style="text-align:center"></td>
+    <td style="text-align:center"></td>
+    <td style="text-align:center"></td>
+    <td style="text-align:center"></td>
+    <td style="text-align:center"></td>
+    <td style="text-align:center"></td>
+  </tr>
+  <tr>
+    <th style="text-align:center">10.0.0</span></th>
+    <td style="text-align:center"></td>
+    <td style="text-align:center"></td>
+    <td style="text-align:center"></td>
+    <td style="text-align:center"></td>
+    <td style="text-align:center">✅</td>
+    <td style="text-align:center">✅</td>
+    <td style="text-align:center"></td>
+    <td style="text-align:center">✅</td>
+    <td style="text-align:center">✅</td>
+  </tr>
+  <tr>
+    <th style="text-align:center">10.0.1</span></th>
+    <td style="text-align:center"></td>
+    <td style="text-align:center"></td>
+    <td style="text-align:center"></td>
+    <td style="text-align:center"></td>
+    <td style="text-align:center"></td>
+    <td style="text-align:center"></td>
+    <td style="text-align:center"></td>
+    <td style="text-align:center">✅</td>
+    <td style="text-align:center">✅</td>
+  </tr>
+</tbody>
+</table>
+
 {{page.varExample}} quarterly (future) 8.0.0 version.
 
 <blockquote> 6.0.0.x (q) <span class="thick-arrow-left">&#10148;</span> 6.1.0 (q) <span class="thick-arrow-left">&#10148;</span> &hellip; <span class="thick-arrow-left">&#10148;</span> 7.2.0 (q) <span class="thick-arrow-left">&#10148;</span> 7.3.0 (q) <span class="thick-arrow-left">&#10148;</span><span class="highlight-version"> 8.0.0 (q) </span><span class="thick-arrow-right">&#10148;</span>  8.1.0 (q) <span class="thick-arrow-right">&#10148;</span> 8.2.0 (q) <span class="thick-arrow-right">&#10148;</span> &hellip; <span class="thick-arrow-right">&#10148;</span> 9.3.0 (q) <span class="thick-arrow-right">&#10148;</span> 10.0.0 (q) </blockquote>
