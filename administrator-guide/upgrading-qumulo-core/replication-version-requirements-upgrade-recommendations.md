@@ -14,10 +14,10 @@ For Qumulo Core 6.0.0.x (and higher), clusters that run different versions can r
 
 The following example shows a replication compatibility matrix for quarterly and non-quarterly version of Qumulo Core.
 
-<table>
+<table style="border:0;">
 <thead>
   <tr>
-    <th style="text-align:center;width:12.85%;background:transparent;border-top:0;border-left:0;"></th>
+    <th style="text-align:center;width:12.85%;background:transparent;"></th>
     <th style="text-align:center;width:12.85%;">6.0.0.x (q)</th>
     <th style="text-align:center;width:12.85%;">6.0.1</th>
     <th style="text-align:center;width:12.85%;">6.1.0 (q)</th>
@@ -172,10 +172,10 @@ From Qumulo Core 5.0.1 to 5.3.4, clusters that run different versions can replic
 ## Replication for Qumulo Core 2.11.0 to 5.0.0
 From Qumulo Core 2.11.0 to 5.0.0, clusters that run different versions can replicate _between at least two consecutive quarterly versions_. For example:
 
-<table>
+<table style="border:0;">
 <thead>
   <tr>
-    <th></th>
+    <th style="background:transparent;"></th>
     <th>4.1.5</th>
     <th>4.2.0 (q)</th>
     <th>4.2.1</th>
