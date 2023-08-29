@@ -17,16 +17,16 @@ The following example shows a replication compatibility matrix for quarterly and
 <table>
 <thead>
   <tr>
-    <th style="text-align:center;width:10%;"></th>
-    <th style="text-align:center;width:10%;">6.0.0.x (q)</th>
-    <th style="text-align:center;width:10%;">6.0.1</th>
-    <th style="text-align:center;width:10%;">6.1.0 (q)</th>
-    <th style="text-align:center;width:10%;">&hellip;</th>
-    <th style="text-align:center;width:10%;">8.0.0 (q)</th>
-    <th style="text-align:center;width:10%;">8.0.1</th>
-    <th style="text-align:center;width:10%;">&hellip;</th>
-    <th style="text-align:center;width:10%;">10.0.0 (q)</th>
-    <th style="text-align:center;width:10%;">10.0.1</th>
+    <th style="text-align:center;width:12.85%;"></th>
+    <th style="text-align:center;width:12.85%;">6.0.0.x (q)</th>
+    <th style="text-align:center;width:12.85%;">6.0.1</th>
+    <th style="text-align:center;width:12.85%;">6.1.0 (q)</th>
+    <th style="text-align:center;width:5%;">&hellip;</th>
+    <th style="text-align:center;width:12.85%;">8.0.0 (q)</th>
+    <th style="text-align:center;width:12.85%;">8.0.1</th>
+    <th style="text-align:center;width:5%;">&hellip;</th>
+    <th style="text-align:center;width:12.85%;">10.0.0 (q)</th>
+    <th style="text-align:center;width:12.85%;">10.0.1</th>
   </tr>
 </thead>
 <tbody>
