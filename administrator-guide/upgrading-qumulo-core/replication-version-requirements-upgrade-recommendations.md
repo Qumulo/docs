@@ -31,7 +31,7 @@ The following example shows a replication compatibility matrix for various versi
 </thead>
 <tbody>
   <tr>
-    <th style="text-align:center">6.0.0.x</span></th>
+    <th style="text-align:center">6.0.0.x</th>
     <td style="text-align:center">✅</td>
     <td style="text-align:center">✅</td>
     <td style="text-align:center">✅</td>
@@ -43,7 +43,7 @@ The following example shows a replication compatibility matrix for various versi
     <td style="text-align:center"></td>
   </tr>
   <tr>
-    <th style="text-align:center">6.0.1</span></th>
+    <th style="text-align:center">6.0.1</th>
     <td style="text-align:center">✅</td>
     <td style="text-align:center">✅</td>
     <td style="text-align:center">✅</td>
@@ -55,7 +55,7 @@ The following example shows a replication compatibility matrix for various versi
     <td style="text-align:center"></td>
   </tr>
   <tr>
-    <th style="text-align:center">6.1.0</span></th>
+    <th style="text-align:center">6.1.0</th>
     <td style="text-align:center">✅</td>
     <td style="text-align:center">✅</td>
     <td style="text-align:center">✅</td>
@@ -67,7 +67,7 @@ The following example shows a replication compatibility matrix for various versi
     <td style="text-align:center"></td>
   </tr>
   <tr>
-    <th style="text-align:center">&hellip;</span></th>
+    <th style="text-align:center">&hellip;</th>
     <td style="text-align:center"></td>
     <td style="text-align:center"></td>
     <td style="text-align:center"></td>
@@ -79,7 +79,7 @@ The following example shows a replication compatibility matrix for various versi
     <td style="text-align:center"></td>
   </tr>
   <tr>
-    <th style="text-align:center">8.0.0</span></th>
+    <th style="text-align:center">8.0.0</th>
     <td style="text-align:center">✅</td>
     <td style="text-align:center">✅</td>
     <td style="text-align:center">✅</td>
@@ -91,7 +91,7 @@ The following example shows a replication compatibility matrix for various versi
     <td style="text-align:center"></td>
   </tr>
   <tr>
-    <th style="text-align:center">8.0.1</span></th>
+    <th style="text-align:center">8.0.1</th>
     <td style="text-align:center"></td>
     <td style="text-align:center"></td>
     <td style="text-align:center">✅</td>
@@ -103,7 +103,7 @@ The following example shows a replication compatibility matrix for various versi
     <td style="text-align:center"></td>
   </tr>
   <tr>
-    <th style="text-align:center">&hellip;</span></th>
+    <th style="text-align:center">&hellip;</th>
     <td style="text-align:center"></td>
     <td style="text-align:center"></td>
     <td style="text-align:center"></td>
@@ -115,7 +115,7 @@ The following example shows a replication compatibility matrix for various versi
     <td style="text-align:center"></td>
   </tr>
   <tr>
-    <th style="text-align:center">10.0.0</span></th>
+    <th style="text-align:center">10.0.0</th>
     <td style="text-align:center"></td>
     <td style="text-align:center"></td>
     <td style="text-align:center"></td>
