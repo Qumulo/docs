@@ -127,7 +127,7 @@ The following example shows a replication compatibility matrix for various versi
     <td style="text-align:center">✅</td>
   </tr>
   <tr>
-    <th style="text-align:center">10.0.1</span></th>
+    <th style="text-align:center">10.0.1</th>
     <td style="text-align:center"></td>
     <td style="text-align:center"></td>
     <td style="text-align:center"></td>
