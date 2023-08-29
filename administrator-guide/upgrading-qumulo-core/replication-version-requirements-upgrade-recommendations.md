@@ -175,10 +175,10 @@ From Qumulo Core 2.11.0 to 5.0.0, clusters that run different versions can repli
 <table style="border:0;">
 <thead>
   <tr>
-    <th style="background:transparent;border-left:0;"></th>
-    <th>4.1.5</th>
-    <th>4.2.0 (q)</th>
-    <th>4.2.1</th>
+    <th style="background:transparent;width:25%;border-left:0;"></th>
+    <th style="text-align:center;width:25%;">4.1.5</th>
+    <th style="text-align:center;width:25%;">4.2.0 (q)</th>
+    <th style="text-align:center;width:25%;">4.2.1</th>
   </tr>
 </thead>
 <tbody>
