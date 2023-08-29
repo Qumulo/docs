@@ -31,7 +31,7 @@ The following example shows a replication compatibility matrix for quarterly and
 </thead>
 <tbody>
   <tr>
-    <th style="text-align:center;">6.0.0.x</th>
+    <th style="text-align:center;">6.0.0.x (q)</th>
     <td style="text-align:center;"><span class="emoji">✅</span></td>
     <td style="text-align:center;"><span class="emoji">✅</span></td>
     <td style="text-align:center;"><span class="emoji">✅</span></td>
@@ -55,7 +55,7 @@ The following example shows a replication compatibility matrix for quarterly and
     <td style="text-align:center;"></td>
   </tr>
   <tr>
-    <th style="text-align:center;">6.1.0</th>
+    <th style="text-align:center;">6.1.0 (q)</th>
     <td style="text-align:center;"><span class="emoji">✅</span></td>
     <td style="text-align:center;"><span class="emoji">✅</span></td>
     <td style="text-align:center;"><span class="emoji">✅</span></td>
@@ -79,7 +79,7 @@ The following example shows a replication compatibility matrix for quarterly and
     <td style="text-align:center;"></td>
   </tr>
   <tr>
-    <th style="text-align:center;">8.0.0</th>
+    <th style="text-align:center;">8.0.0 (q)</th>
     <td style="text-align:center;"><span class="emoji">✅</span></td>
     <td style="text-align:center;"><span class="emoji">✅</span></td>
     <td style="text-align:center;"><span class="emoji">✅</span></td>
@@ -115,7 +115,7 @@ The following example shows a replication compatibility matrix for quarterly and
     <td style="text-align:center;"></td>
   </tr>
   <tr>
-    <th style="text-align:center;">10.0.0</th>
+    <th style="text-align:center;">10.0.0 (q)</th>
     <td style="text-align:center;"></td>
     <td style="text-align:center;"></td>
     <td style="text-align:center;"></td>
