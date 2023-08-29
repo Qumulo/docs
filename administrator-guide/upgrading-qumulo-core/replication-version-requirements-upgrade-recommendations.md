@@ -32,11 +32,11 @@ The following example shows a replication compatibility matrix for various versi
 <tbody>
   <tr>
     <th style="text-align:center">6.0.0.x</th>
-    <td style="text-align:center">✅</td>
-    <td style="text-align:center">✅</td>
-    <td style="text-align:center">✅</td>
+    <td style="text-align:center"><span class="emoji">✅</span></td>
+    <td style="text-align:center"><span class="emoji">✅</span></td>
+    <td style="text-align:center"><span class="emoji">✅</span></td>
     <td style="text-align:center"></td>
-    <td style="text-align:center">✅</td>
+    <td style="text-align:center"><span class="emoji">✅</span></td>
     <td style="text-align:center"></td>
     <td style="text-align:center"></td>
     <td style="text-align:center"></td>
@@ -44,11 +44,11 @@ The following example shows a replication compatibility matrix for various versi
   </tr>
   <tr>
     <th style="text-align:center">6.0.1</th>
-    <td style="text-align:center">✅</td>
-    <td style="text-align:center">✅</td>
-    <td style="text-align:center">✅</td>
+    <td style="text-align:center"><span class="emoji">✅</span></td>
+    <td style="text-align:center"><span class="emoji">✅</span></td>
+    <td style="text-align:center"><span class="emoji">✅</span></td>
     <td style="text-align:center"></td>
-    <td style="text-align:center">✅</td>
+    <td style="text-align:center"><span class="emoji">✅</span></td>
     <td style="text-align:center"></td>
     <td style="text-align:center"></td>
     <td style="text-align:center"></td>
@@ -56,12 +56,12 @@ The following example shows a replication compatibility matrix for various versi
   </tr>
   <tr>
     <th style="text-align:center">6.1.0</th>
-    <td style="text-align:center">✅</td>
-    <td style="text-align:center">✅</td>
-    <td style="text-align:center">✅</td>
+    <td style="text-align:center"><span class="emoji">✅</span></td>
+    <td style="text-align:center"><span class="emoji">✅</span></td>
+    <td style="text-align:center"><span class="emoji">✅</span></td>
     <td style="text-align:center"></td>
-    <td style="text-align:center">✅</td>
-    <td style="text-align:center">✅</td>
+    <td style="text-align:center"><span class="emoji">✅</span></td>
+    <td style="text-align:center"><span class="emoji">✅</span></td>
     <td style="text-align:center"></td>
     <td style="text-align:center"></td>
     <td style="text-align:center"></td>
@@ -80,26 +80,26 @@ The following example shows a replication compatibility matrix for various versi
   </tr>
   <tr>
     <th style="text-align:center">8.0.0</th>
-    <td style="text-align:center">✅</td>
-    <td style="text-align:center">✅</td>
-    <td style="text-align:center">✅</td>
+    <td style="text-align:center"><span class="emoji">✅</span></td>
+    <td style="text-align:center"><span class="emoji">✅</span></td>
+    <td style="text-align:center"><span class="emoji">✅</span></td>
     <td style="text-align:center"></td>
-    <td style="text-align:center">✅</td>
-    <td style="text-align:center">✅</td>
+    <td style="text-align:center"><span class="emoji">✅</span></td>
+    <td style="text-align:center"><span class="emoji">✅</span></td>
     <td style="text-align:center"></td>
-    <td style="text-align:center">✅</td>
+    <td style="text-align:center"><span class="emoji">✅</span></td>
     <td style="text-align:center"></td>
   </tr>
   <tr>
     <th style="text-align:center">8.0.1</th>
     <td style="text-align:center"></td>
     <td style="text-align:center"></td>
-    <td style="text-align:center">✅</td>
+    <td style="text-align:center"><span class="emoji">✅</span></td>
     <td style="text-align:center"></td>
-    <td style="text-align:center">✅</td>
-    <td style="text-align:center">✅</td>
+    <td style="text-align:center"><span class="emoji">✅</span></td>
+    <td style="text-align:center"><span class="emoji">✅</span></td>
     <td style="text-align:center"></td>
-    <td style="text-align:center">✅</td>
+    <td style="text-align:center"><span class="emoji">✅</span></td>
     <td style="text-align:center"></td>
   </tr>
   <tr>
@@ -120,11 +120,11 @@ The following example shows a replication compatibility matrix for various versi
     <td style="text-align:center"></td>
     <td style="text-align:center"></td>
     <td style="text-align:center"></td>
-    <td style="text-align:center">✅</td>
-    <td style="text-align:center">✅</td>
+    <td style="text-align:center"><span class="emoji">✅</span></td>
+    <td style="text-align:center"><span class="emoji">✅</span></td>
     <td style="text-align:center"></td>
-    <td style="text-align:center">✅</td>
-    <td style="text-align:center">✅</td>
+    <td style="text-align:center"><span class="emoji">✅</span></td>
+    <td style="text-align:center"><span class="emoji">✅</span></td>
   </tr>
   <tr>
     <th style="text-align:center">10.0.1</th>
@@ -135,8 +135,8 @@ The following example shows a replication compatibility matrix for various versi
     <td style="text-align:center"></td>
     <td style="text-align:center"></td>
     <td style="text-align:center"></td>
-    <td style="text-align:center">✅</td>
-    <td style="text-align:center">✅</td>
+    <td style="text-align:center"><span class="emoji">✅</span></td>
+    <td style="text-align:center"><span class="emoji">✅</span></td>
   </tr>
 </tbody>
 </table>
@@ -184,21 +184,21 @@ From Qumulo Core 2.11.0 to 5.0.0, clusters that run different versions can repli
 <tbody>
   <tr>
     <th>4.1.5</th>
-    <td style="text-align:center;"><span class="emoji">✅</span></td>
-    <td style="text-align:center;"><span class="emoji">✅</span></td>
+    <td style="text-align:center;"><span class="emoji"><span class="emoji">✅</span></span></td>
+    <td style="text-align:center;"><span class="emoji"><span class="emoji">✅</span></span></td>
     <td></td>
   </tr>
   <tr>
     <th>4.2.0 (q)</th>
-    <td style="text-align:center;"><span class="emoji">✅</span></td>
-    <td style="text-align:center;"><span class="emoji">✅</span></td>
-    <td style="text-align:center;"><span class="emoji">✅</span></td>
+    <td style="text-align:center;"><span class="emoji"><span class="emoji">✅</span></span></td>
+    <td style="text-align:center;"><span class="emoji"><span class="emoji">✅</span></span></td>
+    <td style="text-align:center;"><span class="emoji"><span class="emoji">✅</span></span></td>
   </tr>
   <tr>
     <th>4.2.1</th>
     <td></td>
-    <td style="text-align:center;"><span class="emoji">✅</span></td>
-    <td style="text-align:center;"><span class="emoji">✅</span></td>
+    <td style="text-align:center;"><span class="emoji"><span class="emoji">✅</span></span></td>
+    <td style="text-align:center;"><span class="emoji"><span class="emoji">✅</span></span></td>
   </tr>
 </tbody>
 </table>
