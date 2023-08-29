@@ -17,7 +17,7 @@ The following example shows a replication compatibility matrix for quarterly and
 <table style="border:0;">
 <thead>
   <tr>
-    <th style="text-align:center;width:12.85%;background:transparent;"></th>
+    <th style="text-align:center;width:12.85%;background:transparent;border-left:0;"></th>
     <th style="text-align:center;width:12.85%;">6.0.0.x (q)</th>
     <th style="text-align:center;width:12.85%;">6.0.1</th>
     <th style="text-align:center;width:12.85%;">6.1.0 (q)</th>
@@ -175,7 +175,7 @@ From Qumulo Core 2.11.0 to 5.0.0, clusters that run different versions can repli
 <table style="border:0;">
 <thead>
   <tr>
-    <th style="background:transparent;"></th>
+    <th style="background:transparent;border-left:0;"></th>
     <th>4.1.5</th>
     <th>4.2.0 (q)</th>
     <th>4.2.1</th>
