@@ -17,16 +17,16 @@ The following example shows a replication compatibility matrix for various versi
 <table>
 <thead>
   <tr>
-    <th style="text-align:center"></th>
-    <th style="text-align:center">6.0.0.x</th>
-    <th style="text-align:center">6.0.1</th>
-    <th style="text-align:center">6.1.0</th>
-    <th style="text-align:center">&hellip;</th>
-    <th style="text-align:center">8.0.0</th>
-    <th style="text-align:center">8.0.1</th>
-    <th style="text-align:center">&hellip;</th>
-    <th style="text-align:center">10.0.0</th>
-    <th style="text-align:center">10.0.1</th>
+    <th style="text-align:center;width:10%;"></th>
+    <th style="text-align:center;width:10%;">6.0.0.x</th>
+    <th style="text-align:center;width:10%;">6.0.1</th>
+    <th style="text-align:center;width:10%;">6.1.0</th>
+    <th style="text-align:center;width:10%;">&hellip;</th>
+    <th style="text-align:center;width:10%;">8.0.0</th>
+    <th style="text-align:center;width:10%;">8.0.1</th>
+    <th style="text-align:center;width:10%;">&hellip;</th>
+    <th style="text-align:center;width:10%;">10.0.0</th>
+    <th style="text-align:center;width:10%;">10.0.1</th>
   </tr>
 </thead>
 <tbody>
