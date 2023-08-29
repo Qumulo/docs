@@ -31,112 +31,112 @@ The following example shows a replication compatibility matrix for quarterly and
 </thead>
 <tbody>
   <tr>
-    <th style="text-align:center">6.0.0.x</th>
-    <td style="text-align:center"><span class="emoji">✅</span></td>
-    <td style="text-align:center"><span class="emoji">✅</span></td>
-    <td style="text-align:center"><span class="emoji">✅</span></td>
-    <td style="text-align:center"></td>
-    <td style="text-align:center"><span class="emoji">✅</span></td>
-    <td style="text-align:center"></td>
-    <td style="text-align:center"></td>
-    <td style="text-align:center"></td>
-    <td style="text-align:center"></td>
+    <th style="text-align:center;">6.0.0.x</th>
+    <td style="text-align:center;"><span class="emoji">✅</span></td>
+    <td style="text-align:center;"><span class="emoji">✅</span></td>
+    <td style="text-align:center;"><span class="emoji">✅</span></td>
+    <td style="text-align:center;background-color:#777777;"></td>
+    <td style="text-align:center;"><span class="emoji">✅</span></td>
+    <td style="text-align:center;"></td>
+    <td style="text-align:center;"></td>
+    <td style="text-align:center;"></td>
+    <td style="text-align:center;"></td>
   </tr>
   <tr>
-    <th style="text-align:center">6.0.1</th>
-    <td style="text-align:center"><span class="emoji">✅</span></td>
-    <td style="text-align:center"><span class="emoji">✅</span></td>
-    <td style="text-align:center"><span class="emoji">✅</span></td>
-    <td style="text-align:center"></td>
-    <td style="text-align:center"><span class="emoji">✅</span></td>
-    <td style="text-align:center"></td>
-    <td style="text-align:center"></td>
-    <td style="text-align:center"></td>
-    <td style="text-align:center"></td>
+    <th style="text-align:center;">6.0.1</th>
+    <td style="text-align:center;"><span class="emoji">✅</span></td>
+    <td style="text-align:center;"><span class="emoji">✅</span></td>
+    <td style="text-align:center;"><span class="emoji">✅</span></td>
+    <td style="text-align:center;background-color:#777777;"></td>
+    <td style="text-align:center;"><span class="emoji">✅</span></td>
+    <td style="text-align:center;"></td>
+    <td style="text-align:center;"></td>
+    <td style="text-align:center;"></td>
+    <td style="text-align:center;"></td>
   </tr>
   <tr>
-    <th style="text-align:center">6.1.0</th>
-    <td style="text-align:center"><span class="emoji">✅</span></td>
-    <td style="text-align:center"><span class="emoji">✅</span></td>
-    <td style="text-align:center"><span class="emoji">✅</span></td>
-    <td style="text-align:center"></td>
-    <td style="text-align:center"><span class="emoji">✅</span></td>
-    <td style="text-align:center"><span class="emoji">✅</span></td>
-    <td style="text-align:center"></td>
-    <td style="text-align:center"></td>
-    <td style="text-align:center"></td>
+    <th style="text-align:center;">6.1.0</th>
+    <td style="text-align:center;"><span class="emoji">✅</span></td>
+    <td style="text-align:center;"><span class="emoji">✅</span></td>
+    <td style="text-align:center;"><span class="emoji">✅</span></td>
+    <td style="text-align:center;background-color:#777777;"></td>
+    <td style="text-align:center;"><span class="emoji">✅</span></td>
+    <td style="text-align:center;"><span class="emoji">✅</span></td>
+    <td style="text-align:center;"></td>
+    <td style="text-align:center;"></td>
+    <td style="text-align:center;"></td>
+  </tr>
+  <tr style="background-color:#777777">
+    <th style="text-align:center;">&hellip;</th>
+    <td style="text-align:center;"></td>
+    <td style="text-align:center;"></td>
+    <td style="text-align:center;"></td>
+    <td style="text-align:center;"></td>
+    <td style="text-align:center;"></td>
+    <td style="text-align:center;"></td>
+    <td style="text-align:center;"></td>
+    <td style="text-align:center;"></td>
+    <td style="text-align:center;"></td>
   </tr>
   <tr>
-    <th style="text-align:center">&hellip;</th>
-    <td style="text-align:center"></td>
-    <td style="text-align:center"></td>
-    <td style="text-align:center"></td>
-    <td style="text-align:center"></td>
-    <td style="text-align:center"></td>
-    <td style="text-align:center"></td>
-    <td style="text-align:center"></td>
-    <td style="text-align:center"></td>
-    <td style="text-align:center"></td>
+    <th style="text-align:center;">8.0.0</th>
+    <td style="text-align:center;"><span class="emoji">✅</span></td>
+    <td style="text-align:center;"><span class="emoji">✅</span></td>
+    <td style="text-align:center;"><span class="emoji">✅</span></td>
+    <td style="text-align:center;background-color:#777777;"></td>
+    <td style="text-align:center;"><span class="emoji">✅</span></td>
+    <td style="text-align:center;"><span class="emoji">✅</span></td>
+    <td style="text-align:center;"></td>
+    <td style="text-align:center;"><span class="emoji">✅</span></td>
+    <td style="text-align:center;"></td>
   </tr>
   <tr>
-    <th style="text-align:center">8.0.0</th>
-    <td style="text-align:center"><span class="emoji">✅</span></td>
-    <td style="text-align:center"><span class="emoji">✅</span></td>
-    <td style="text-align:center"><span class="emoji">✅</span></td>
-    <td style="text-align:center"></td>
-    <td style="text-align:center"><span class="emoji">✅</span></td>
-    <td style="text-align:center"><span class="emoji">✅</span></td>
-    <td style="text-align:center"></td>
-    <td style="text-align:center"><span class="emoji">✅</span></td>
-    <td style="text-align:center"></td>
+    <th style="text-align:center;">8.0.1</th>
+    <td style="text-align:center;"></td>
+    <td style="text-align:center;"></td>
+    <td style="text-align:center;"><span class="emoji">✅</span></td>
+    <td style="text-align:center;background-color:#777777;"></td>
+    <td style="text-align:center;"><span class="emoji">✅</span></td>
+    <td style="text-align:center;"><span class="emoji">✅</span></td>
+    <td style="text-align:center;"></td>
+    <td style="text-align:center;"><span class="emoji">✅</span></td>
+    <td style="text-align:center";></td>
+  </tr>
+  <tr style="background-color:#777777">
+    <th style="text-align:center;">&hellip;</th>
+    <td style="text-align:center;"></td>
+    <td style="text-align:center;"></td>
+    <td style="text-align:center;"></td>
+    <td style="text-align:center;"></td>
+    <td style="text-align:center;"></td>
+    <td style="text-align:center;"></td>
+    <td style="text-align:center;"></td>
+    <td style="text-align:center;"></td>
+    <td style="text-align:center;"></td>
   </tr>
   <tr>
-    <th style="text-align:center">8.0.1</th>
-    <td style="text-align:center"></td>
-    <td style="text-align:center"></td>
-    <td style="text-align:center"><span class="emoji">✅</span></td>
-    <td style="text-align:center"></td>
-    <td style="text-align:center"><span class="emoji">✅</span></td>
-    <td style="text-align:center"><span class="emoji">✅</span></td>
-    <td style="text-align:center"></td>
-    <td style="text-align:center"><span class="emoji">✅</span></td>
-    <td style="text-align:center"></td>
+    <th style="text-align:center;">10.0.0</th>
+    <td style="text-align:center;"></td>
+    <td style="text-align:center;"></td>
+    <td style="text-align:center;"></td>
+    <td style="text-align:center;background-color:#777777;"></td>
+    <td style="text-align:center;"><span class="emoji">✅</span></td>
+    <td style="text-align:center;"><span class="emoji">✅</span></td>
+    <td style="text-align:center;"></td>
+    <td style="text-align:center;"><span class="emoji">✅</span></td>
+    <td style="text-align:center;"><span class="emoji">✅</span></td>
   </tr>
   <tr>
-    <th style="text-align:center">&hellip;</th>
-    <td style="text-align:center"></td>
-    <td style="text-align:center"></td>
-    <td style="text-align:center"></td>
-    <td style="text-align:center"></td>
-    <td style="text-align:center"></td>
-    <td style="text-align:center"></td>
-    <td style="text-align:center"></td>
-    <td style="text-align:center"></td>
-    <td style="text-align:center"></td>
-  </tr>
-  <tr>
-    <th style="text-align:center">10.0.0</th>
-    <td style="text-align:center"></td>
-    <td style="text-align:center"></td>
-    <td style="text-align:center"></td>
-    <td style="text-align:center"></td>
-    <td style="text-align:center"><span class="emoji">✅</span></td>
-    <td style="text-align:center"><span class="emoji">✅</span></td>
-    <td style="text-align:center"></td>
-    <td style="text-align:center"><span class="emoji">✅</span></td>
-    <td style="text-align:center"><span class="emoji">✅</span></td>
-  </tr>
-  <tr>
-    <th style="text-align:center">10.0.1</th>
-    <td style="text-align:center"></td>
-    <td style="text-align:center"></td>
-    <td style="text-align:center"></td>
-    <td style="text-align:center"></td>
-    <td style="text-align:center"></td>
-    <td style="text-align:center"></td>
-    <td style="text-align:center"></td>
-    <td style="text-align:center"><span class="emoji">✅</span></td>
-    <td style="text-align:center"><span class="emoji">✅</span></td>
+    <th style="text-align:center;">10.0.1</th>
+    <td style="text-align:center;"></td>
+    <td style="text-align:center;"></td>
+    <td style="text-align:center;"></td>
+    <td style="text-align:center;background-color:#777777;"></td>
+    <td style="text-align:center;"></td>
+    <td style="text-align:center;"></td>
+    <td style="text-align:center;"></td>
+    <td style="text-align:center;"><span class="emoji">✅</span></td>
+    <td style="text-align:center;"><span class="emoji">✅</span></td>
   </tr>
 </tbody>
 </table>
