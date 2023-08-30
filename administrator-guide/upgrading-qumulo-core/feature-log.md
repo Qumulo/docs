@@ -13,7 +13,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
 <style>div#toc{height:200px;overflow:auto;}</style>
 
 ## Qumulo Core 6.2.1
-* Configured Qumulo Core 6.0.0 (and higher) to have _replication compatibility with all quarterly and non-quarterly releases up to 8 quarters in the future_) (previously, compatibility was for 2 quarters)
+* Configured Qumulo Core 6.0.0 (and higher) to have replication compatibility with all quarterly and non-quarterly releases up to 8 quarters in the future (previously, compatibility was for 2 quarters)
 * Improved the functionality of S3 `ListObjects`, `ListObjectsV2`, and `PutObject` API actions
 * Added support for the SMB `ATTR_OFFLINE` extended file attribute
 * Replaced deprecated REST API and `qq` CLI command pertaining to authentication
