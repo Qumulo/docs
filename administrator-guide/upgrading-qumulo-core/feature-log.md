@@ -42,11 +42,6 @@ For information about upgrade types for each release, see <a href='mode-referenc
 
 ## Qumulo Core 6.1.2.2
 {{page.varDownloadsRelnotes}}
-* Added Adaptive Data Protection to the REST API and `qq` CLI and made performance improvements
-* Added Transparent Platform Refresh to the REST API and `qq` CLI
-* Added S3 configuration settings to the Web UI
-* Improved hard link creation
-
 {{site.data.alerts.important}}
 <ul>
   <li>
@@ -60,6 +55,11 @@ For information about upgrade types for each release, see <a href='mode-referenc
   <li>We’ve identified a known issue that affects event processing in the Cloud-Based Monitoring (CBM) service Qumulo Core 6.1.0.3. This issue is resolved in Qumulo Core 6.2.0.1.</li>
 </ul>
 {{site.data.alerts.end}}
+
+* Added Adaptive Data Protection to the REST API and `qq` CLI and made performance improvements
+* Added Transparent Platform Refresh to the REST API and `qq` CLI
+* Added S3 configuration settings to the Web UI
+* Improved hard link creation
 
 ## Qumulo Core 6.1.1
 {{page.varDownloadsRelnotes}}
