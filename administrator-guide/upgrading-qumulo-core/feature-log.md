@@ -13,6 +13,9 @@ For information about upgrade types for each release, see <a href='mode-referenc
 <style>div#toc{height:200px;overflow:auto;}</style>
 
 ## Qumulo Core 6.2.1
+{{page.varDownloadsRelnotes}}
+{% include important.html content="This release resolves an issue that we have identified in Qumulo Core 6.1.0 (and higher), where a potential session impersonation exploit was possible when a client accesses a Qumulo cluster by using the SMB protocol." %}
+
 * Configured Qumulo Core 6.0.0 (and higher) to have replication compatibility with all quarterly and non-quarterly releases up to 8 quarters in the future (previously, compatibility was for 2 quarters)
 * Improved the functionality of S3 `ListObjects`, `ListObjectsV2`, and `PutObject` API actions
 * Added support for the SMB `ATTR_OFFLINE` extended file attribute
