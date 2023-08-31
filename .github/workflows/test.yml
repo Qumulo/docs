@@ -22,7 +22,7 @@ jobs:
             ${{ runner.os }}-gems-
       - uses: ruby/setup-ruby@ee26e27437bde475b19a6bf8cb73c9fa658876a2  # v1.134.0
         with:
-          ruby-version: '2.6'
+          ruby-version: '2.7'
           bundler-cache: true
       # This action builds the feature branch ephemerally
       # to prove that nothing is broken

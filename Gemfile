@@ -8,3 +8,4 @@ gem 'github-pages', group: :jekyll_plugins
 
 gem 'nokogumbo'
 gem 'html-proofer'
+gem 'faraday-retry'
