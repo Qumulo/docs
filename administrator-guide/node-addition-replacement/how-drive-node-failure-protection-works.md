@@ -1,7 +1,9 @@
 ---
 title: "How Drive and Node Failure Protection Works in Qumulo Core"
 summary: "This section provides an overview of how Qumulo clusters ensure continued operation in the event of a drive or node failure."
-permalink: /administrator-guide/getting-started/how-drive-node-failure-protection-works.html
+permalink: /administrator-guide/node-addition-replacement/how-drive-node-failure-protection-works.html
+redirect_from:
+  - permalink: /administrator-guide/getting-started/how-drive-node-failure-protection-works.html
 sidebar: administrator_guide_sidebar
 keywords: drive_failure, node_failure, failure, failure_protection, protection, data_protection
 varLow: <span class="emoji">⬇️</span> Low

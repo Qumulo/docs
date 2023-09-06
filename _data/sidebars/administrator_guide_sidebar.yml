@@ -194,6 +194,10 @@ entries:
     output: web, pdf
     folderitems:
 
+    - title: How Drive and Node Failure Protection Works
+      url: /administrator-guide/node-addition-replacement/how-drive-node-failure-protection-works.html
+      output: web, pdf
+
     - title: Adding Nodes to an Existing Cluster
       url: /administrator-guide/node-addition-replacement/adding-nodes-existing-cluster.html
       output: web, pdf
