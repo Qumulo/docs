@@ -9,11 +9,24 @@ keywords: Qumulo_Alerts, install, connect, cluster, local_user, role, assign, ac
 ---
 
 ## Prerequisites
+This section lists the prerequisites for Qumulo Alerts.
+
+### Firewall Ports
+Qumulo Alerts requires the following firewall ports to be open from the Qumulo Alerts instance
+
+| Port                  | Target                                              |
+| --------------------- | --------------------------------------------------- |
+| `25`, `587`, or `465` | Email server                                        |
+| `3000`                | Any client that queries or views Grafana dashboards |
+| `8000`                | Qumulo cluster                                      |
+
+### System Requirements
 We recommend the following system requirements for Qumulo Alerts.
 * 4-core processor
 * 16 GB memory
 * 500 GB disk space
 
+### Tools
 Before you install Qumulo Alerts, make sure you have the following tools:
 * [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) (You can also browse the [QumuloAlerts](https://github.com/Qumulo/QumuloAlerts) GitHub repository.)
 * [Docker](https://docs.docker.com/get-docker/)
@@ -21,7 +34,9 @@ Before you install Qumulo Alerts, make sure you have the following tools:
 
   {% include important.html content="Qumulo Alerts requires the Docker Compose Plugin to operate correctly." %}
 
+### Configuration Details
 Before you connect Qumulo Alerts to a Qumulo cluster, collect the information that can help you configure Qumulo Alerts to monitor your cluster.
+
 * **Cluster Address:** Use a fully qualified domain name (FQDN) rather than an IP address.
 * **Traffic Distribution:** Will your Qumulo Alerts installation use a network load balancer or a floating IP address?
 * **Default Plugin Frequency**: What should be the default frequency for plugin execution? (You can specify the frequency in minutes or seconds.)
