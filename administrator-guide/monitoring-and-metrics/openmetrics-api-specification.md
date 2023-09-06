@@ -151,6 +151,18 @@ The following table lists metric names, types, labels, and descriptions.
       <td>The maximum temperature threshold for each physical CPU</td>
     </tr>
     <tr>
+      <td><code>qumulo_cpu_temperature<br>_celsius</code></td>
+      <td><a href="#metric-type-gauge"><code>gauge</code></a></td>
+      <td>
+        <ul>
+          <li class="pdf-friendly"><a href="#metric-label-cpu"><code>cpu</code></a></li>
+          <li class="pdf-friendly"><a href="#metric-label-node_id"><code>node_id</code></a></li>
+        </ul>
+      </td>
+      <td>5.3.0</td>
+      <td>The temperature for each physical CPU, in degrees Celsius</td>
+    </tr>    
+    <tr>
       <td><code>qumulo_disk_endurance<br>_percent</code></td>
       <td><a href="#metric-type-gauge"><code>gauge</code></a></td>
       <td>
@@ -188,18 +200,6 @@ The following table lists metric names, types, labels, and descriptions.
       </td>
       <td>5.3.2</td>
       <td>The total number of uncorrectable errors on the specified drive's physical media.</td>
-    </tr>
-    <tr>
-      <td><code>qumulo_cpu_temperature<br>_celsius</code></td>
-      <td><a href="#metric-type-gauge"><code>gauge</code></a></td>
-      <td>
-        <ul>
-          <li class="pdf-friendly"><a href="#metric-label-cpu"><code>cpu</code></a></li>
-          <li class="pdf-friendly"><a href="#metric-label-node_id"><code>node_id</code></a></li>
-        </ul>
-      </td>
-      <td>5.3.0</td>
-      <td>The temperature for each physical CPU, in degrees Celsius</td>
     </tr>
     <tr>
       <td><code>qumulo_disk_is_unhealthy</code></td>
