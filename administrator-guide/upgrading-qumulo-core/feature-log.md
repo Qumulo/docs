@@ -12,9 +12,15 @@ For information about upgrade types for each release, see <a href='mode-referenc
 
 <style>div#toc{height:200px;overflow:auto;}</style>
 
-## Qumulo Core 6.2.1
+## Qumulo Core 6.2.1.1
 {{page.varDownloadsRelnotes}}
-{% include important.html content="This release resolves an issue that we have identified in Qumulo Core 6.1.0 (and higher), where a potential session impersonation exploit was possible when a client accesses a Qumulo cluster by using the SMB protocol." %}
+{{site.data.alerts.important}}
+<ul>
+  <li>This release resolves an issue in Qumulo Core 6.2.1 that affected the persistence of cluster network settings configured by using the Web UI.</li>
+  <li>This release removes the flag <code>--dns-config-id</code> that was added in Qumulo Core 6.2.1. This flag prevents the normal functioning of the <code>qq fs_list_locks</code> command.</li>
+  <li>This release resolves an issue that we have identified in Qumulo Core 6.1.0 (and higher), where a potential session impersonation exploit was possible when a client accesses a Qumulo cluster by using the SMB protocol.</li>
+</ul>
+{{site.data.alerts.end}}
 
 * Configured Qumulo Core 6.0.0 (and higher) to have replication compatibility with all quarterly and non-quarterly releases up to 8 quarters in the future (previously, compatibility was for 2 quarters)
 * Improved the functionality of S3 `ListObjects`, `ListObjectsV2`, and `PutObject` API actions
