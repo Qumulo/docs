@@ -1,15 +1,13 @@
 #!/bin/bash
 
-if [[ -f /build.sha256 ]]; then
-    sha256sum --check /build.sha256 >/dev/null 2>&1
-    if [[ $? -ne 0 ]]; then
-        echo "#####################################################################"
-        echo "#  WARNING! Gemfile dependencies have changed from this container.  #"
-        echo "#  Rebuild this container to ensure you are running with the latest #"
-        echo "#  dependencies.                                                    #"
-        echo "#####################################################################"
-        exit 1
-    fi
+sha256sum --check /build.sha256 >/dev/null 2>&1
+if [[ $? -ne 0 ]]; then
+  echo "#####################################################################"
+  echo "#  WARNING! Gemfile dependencies have changed from this container.  #"
+  echo "#  Rebuild this container to ensure you are running with the latest #"
+  echo "#  dependencies.                                                    #"
+  echo "#####################################################################"
+  exit 1
 fi
 
 case "${1}" in
@@ -35,7 +33,5 @@ case "${1}" in
         jekyll serve ${LIVERELOAD} -H 0.0.0.0 $@ ;;
     *)
         # Pass through any other specified arguments
-        bundle exec jekyll build -d _site $@
-        # Remove closing slashes from void elements
-        python3 docker/build/replace-tags.py ;;
+        jekyll build -d _site $@ ;;
 esac
