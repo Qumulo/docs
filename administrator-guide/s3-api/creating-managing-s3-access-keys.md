@@ -233,7 +233,9 @@ Send a `DELETE` request to the `/v1/s3/access-keys/<access-key-id>` Qumulo REST 
 
 
 ## Configuring Active Directory (AD) for S3
-If you create S3 access keys for users that exist in an AD domain that has a trust relationship with the joined domain, you must append that domain's base DN to the base DN in your Qumulo cluster's AD configuration.
+{% include note.html content="To be able to create access keys for a user in a joined AD domain, the user must exist within the domain's base DN." %}
+
+For users that exist in an AD domain that has a trust relationship with the joined domain, you must append that domain's base DN to the base DN in your Qumulo cluster's AD configuration.
 
 To append the trusted base DN to the base DN in use&mdash;with a semicolon (`;`) separating the two&mdash;use the Web UI or the `qq ad_reconfigure` command. For example:
 
