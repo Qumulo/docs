@@ -19,10 +19,11 @@ For information about upgrade types for each release, see <a href='mode-referenc
 * Configured the drive LEDs for the front (external) storage bays on Quiver 1U All-NVMe Gen 1 platforms to light up red if a drive fails.
 * Ensured that certain SMB `qq` CLI commands always output valid JSON.
 
-## Qumulo Core 6.2.1.1
+## Qumulo Core 6.2.1.2
 {{page.varDownloadsRelnotes}}
 {{site.data.alerts.important}}
 <ul>
+  <li>This release fixes an issue in Qumulo 6.2.1.1 that affected DNS resolution for cross-realm Kerberos authentication when using classless <code>in-addr.arpa</code> delegation.</li>
   <li>This release resolves an issue in Qumulo Core 6.2.1 that affected the persistence of cluster network settings configured by using the Web UI.</li>
   <li>This release removes the flag <code>--dns-config-id</code> that was added in Qumulo Core 6.2.1. This flag prevents the normal functioning of the <code>qq fs_list_locks</code> command.</li>
   <li>This release resolves an issue that we have identified in Qumulo Core 6.1.0 (and higher), where a potential session impersonation exploit was possible when a client accesses a Qumulo cluster by using the SMB protocol.</li>
