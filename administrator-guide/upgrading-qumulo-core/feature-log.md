@@ -24,10 +24,18 @@ For information about upgrade types for each release, see <a href='mode-referenc
 {{page.varDownloadsRelnotes}}
 {{site.data.alerts.important}}
 <ul>
-  <li>This release fixes an issue in Qumulo 6.2.1.1 that affected DNS resolution for cross-realm Kerberos authentication when using classless <code>in-addr.arpa</code> delegation.</li>
   <li>This release resolves an issue in Qumulo Core 6.2.1 that affected the persistence of cluster network settings configured by using the Web UI.</li>
   <li>This release removes the flag <code>--dns-config-id</code> that was added in Qumulo Core 6.2.1. This flag prevents the normal functioning of the <code>qq fs_list_locks</code> command.</li>
   <li>This release resolves an issue that we have identified in Qumulo Core 6.1.0 (and higher), where a potential session impersonation exploit was possible when a client accesses a Qumulo cluster by using the SMB protocol.</li>
+  <li>
+    <p>This release resolves an issue with Qumulo Core’s ability to route return packets back to clients when the following conditions are true for a cluster:</p>
+    <ul>
+      <li>The cluster has a single tenant</li>
+      <li>VLAN networks are configured</li>
+      <li>Packets are destined for specific VLANs without a configured gateway</li>
+    </ul>
+    <p>After upgrading to Qumulo Core 6.2.0.1, you can continue to use the default gateway to route VLAN-specific packets.</p>
+  </li>
 </ul>
 {{site.data.alerts.end}}
 
