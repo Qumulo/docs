@@ -13,6 +13,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
 <style>div#toc{height:200px;overflow:auto;}</style>
 
 ## Qumulo Core 6.2.2
+{{page.varDownloadsRelnotes}}
 {% include important.html content="This release fixes an issue in Qumulo 6.2.1.1 that interrupted the functioning of cross-realm Kerberos authentication when the system returns CNAMEs for PTR records while performing reverse DNS lookups." %}
 * Added the ability to store master keys for at-rest encryption in an external Key Management Server (KMS) and updated the corresponding REST APIs and `qq` CLI commands.
 * Added the ability to dismiss errors and warnings on the **Cluster > Active Directory** page in the Web UI by clicking **X**.
