@@ -16,7 +16,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
 {{page.varDownloadsRelnotes}}
 {{site.data.alerts.important}}
 <ul>
-  <li>This release resolves an issue in Qumulo 6.2.1.1 that interrupted the functioning of cross- realm Kerberos authentication when the system returns CNAMEs for PTR records while performing reverse DNS lookups.</i>
+  <li>This release resolves an issue in Qumulo 6.2.1.1 that interrupted the functioning of cross-realm Kerberos authentication when the system returns CNAMEs for PTR records while performing reverse DNS lookups.</li>
   <li>This release resolves an issue with caching NFS hostnames from the NFS allowed list.</li>
 </ul>
 {{site.data.alerts.end}}
