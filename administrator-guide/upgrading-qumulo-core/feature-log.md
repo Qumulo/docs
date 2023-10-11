@@ -12,9 +12,14 @@ For information about upgrade types for each release, see <a href='mode-referenc
 
 <style>div#toc{height:200px;overflow:auto;}</style>
 
-## Qumulo Core 6.2.2
+## Qumulo Core 6.2.2.1
 {{page.varDownloadsRelnotes}}
-{% include important.html content="We have identified an issue in Qumulo 6.2.1.1 that interrupted the functioning of cross-realm Kerberos authentication when the system returns CNAMEs for PTR records while performing reverse DNS lookups." %}
+{{site.data.alerts.important}}
+<ul>
+  <li>This release resolves an issue in Qumulo 6.2.1.1 that interrupted the functioning of cross- realm Kerberos authentication when the system returns CNAMEs for PTR records while performing reverse DNS lookups.</i>
+  <li>This release resolves an issue with caching NFS hostnames from the NFS allowed list.</li>
+</ul>
+{{site.data.alerts.end}}
 * Added the ability to store master keys for at-rest encryption in an external Key Management Server (KMS) and updated the corresponding REST APIs and `qq` CLI commands.
 * Added the ability to dismiss errors and warnings on the **Cluster > Active Directory** page in the Web UI by clicking **X**.
 * Configured the drive LEDs for the front (external) storage bays on Quiver 1U All-NVMe Gen 1 platforms to light up red if a drive fails.
