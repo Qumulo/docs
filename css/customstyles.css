@@ -1357,6 +1357,34 @@ a.footer_link:hover {
     text-decoration: none;
 }
 
+/* Styles from Qumulo Care */
+a.btn-contact {
+  color: white !important;
+  background-color: #0070A4;
+  font-family: Montserrat, sans-serif;
+  font-weight: bold;
+  text-align: center;
+  display: inline-block;
+  margin-bottom: 0;
+  margin-right: 10px;
+  padding: 8px 16px;
+  border-radius: 0;
+  transition: all 0.3s ease;
+  text-transform: capitalize;
+}
+
+a.btn-contact:last-child {
+  margin-right: 0px;
+}
+
+a.btn-contact:hover,
+a.btn-contact:focus,
+a.btn-contact:active {
+  color: white;
+  background-color: #ff9a00;
+  text-decoration: none;
+}
+
 /* Add an icon after external links by using Font Awesome */
 a[href^="http://"]:after, a[href^="https://"]:after {
     content: "\f08e";
@@ -1680,7 +1708,7 @@ h4.panel-title {
 }
 
 li.pdf-friendly {
-    margin-left:-15px !important;
+  margin-left:-15px !important;
 }
 
 .collapse-scroll {
@@ -1691,10 +1719,36 @@ li.pdf-friendly {
   border-radius: 4px;
 }
 
+.flex-links,
+.contact-links {
+  display: inline-block;
+}
+
 @media (max-width: 911px) {
-  .nav-wrapper {
-    /* Fix horizontal scrolling bug on mobile viewports*/
-    display:none !important;
+  .user-nav {
+    margin-right: 0 !important;
+  }
+
+  .qf2header {
+    padding-left: 0 !important;
+  }
+
+  .flex-links {
+    display: none !important;
+  }
+ 
+  .contact-links {
+    transform:scale(0.95);
+  }
+ 
+  a.btn-contact {
+    display: block;
+    width: 180px;
+    margin-bottom: 10px;
+  }
+
+  a.btn-contact:last-child {
+    margin-bottom: 0;
   }
 }
 
