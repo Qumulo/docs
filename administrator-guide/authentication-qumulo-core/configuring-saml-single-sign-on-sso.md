@@ -50,7 +50,11 @@ This process requires coordination between the cluster administrator and SSO adm
 
    1. If **SAML Signing**  (depending on the SSO service, this option is named differently) configuration is available, the SSO administrator sets it to **Sign SAML response and assertion**.
    
-      {% include note.html content="Qumulo Core requires that IdP sign both the assertion and the entire SAML response." %}
+      {% include note.html content="Qumulo Core requires that the IdP sign both the assertion and the entire SAML response." %}
+
+   1. To configure the IdP to use an algorithm based on SHA-256 (certain SSO providers use older algorithms, such as SHA-1, by default), follow the instructions in your SSO provider's documentation.
+  
+      {% include tip.html content="Commonly, a `signatureAlgorithm` key is set to `rsa-sha256` and the `digestAlgorithm` key is set to `sha256` in the configuration file." %}
 
 1. After creating the SAML integration, the SSO administrator provides the following information to the cluster administrator.
 
@@ -63,6 +67,8 @@ This process requires coordination between the cluster administrator and SSO adm
      ```
      https://<my-org>.<sso-provider>.com/foo
      ```
+
+     {% include note.html content="The IdP SSO URL often contains a unique identifier for the SAML integration. We don't recommend using the same identifier on several clusters simultaneously." %}
      
    * The IdP issuer or `EntityId`.
 
@@ -110,7 +116,7 @@ Qumulo Core supports three SAML SSO workflows:
 {{site.data.alerts.note}}
 <ul>
   <li>Members of the built-in Administrators role always have access to the Web UI.</li>
-  <li>To allow other users to access the Web UI, you must assign the built-in Observers role to the users.</li>
+  <li>To allow other users to access the Web UI, you must assign the built-in Observers role to individual users or to groups.</li>
   <li>Depending on policy, additional verification might be necessary for users. For example, the SSO administrator can enforce mandatory two-factor authentication (2FA) for certain clusters.</li>
   <li>If the user accesses the Web UI by connecting to a node physically, the login page doesn't show doesn't show <strong>Continue to SSO login</strong> on the Web UI login page, even if SSO is configured.</li>
 </ul>
