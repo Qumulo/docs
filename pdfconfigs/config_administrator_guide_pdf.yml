@@ -3,9 +3,7 @@ url: "http://127.0.0.1:4001"
 baseurl: "/qumulo-doc"
 port: 4001
 output: pdf
-#product: Qumulo Administrator Guide
-print_title: Qumulo Administrator Guide
-#print_subtitle: version 6.0
+print_title: Qumulo On-Premises Administrator Guide
 defaults:
   -
     scope:

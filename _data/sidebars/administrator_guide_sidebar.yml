@@ -3,7 +3,7 @@ entries:
   pdftitle: qumulo-administrator-guide.pdf
   product:
   version:
-  guidetitle: Qumulo Administrator Guide
+  guidetitle: Qumulo On-Premises Administrator Guide
   guideurl: /administrator-guide/
   folders:
 
@@ -22,7 +22,7 @@ entries:
       output: pdf
       type: frontmatter
 
-  - title: Qumulo Administrator Guide
+  - title: Qumulo On-Premises Administrator Guide
     output: web
     type: navi
     folderitems:

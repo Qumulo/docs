@@ -14,16 +14,16 @@ entries:
       type: norel
       output: web
 
-    - title: Azure Native Qumulo Scalable File Service Guide
+    - title: Azure Native Qumulo Administrator Guide
       url: /azure-guide/
       output: web
 
-    - title: Qumulo-Certified Hardware Guide
-      url: /hardware-guide/
+    - title: Qumulo On-Premises Administrator Guide
+      url: /administrator-guide/
       output: web
 
-    - title: Qumulo Administrator Guide
-      url: /administrator-guide/
+    - title: Qumulo-Certified Hardware Servicing Guide
+      url: /hardware-guide/
       output: web
 
     - title: Qumulo Integration Guide

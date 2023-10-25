@@ -181,7 +181,7 @@ The `auth_create_access_token` command returns a JSON response that contains the
 {{site.varBearerTokenRecommend}} {{site.varBearerTokenWarning}}
 {{site.data.alerts.end}}
 
-For more information, see [Using Qumulo Core Access Tokens](https://docs.qumulo.com/administrator-guide/external-services/using-access-tokens.html) in the Qumulo Administrator Guide.
+For more information, see [Using Qumulo Core Access Tokens](https://docs.qumulo.com/administrator-guide/external-services/using-access-tokens.html) in the Qumulo On-Premises Administrator Guide.
 
 
 ## Starting and Stopping Qumulo Alerts

@@ -46,4 +46,4 @@ Azure AD DS provides managed domain services such as Windows Domain Join, Group 
    {% include note.html content="We recommend giving an administrative role to the user who joins the domain. For newly created users, the system requires a password reset when the user logs in to the [Azure portal](https://azure.microsoft.com/en-us/)." %}
 
 ## Next Steps
-After you deploy your Azure AD DS instance and connect {{site.azure.qumuloOnAzureShort}} to it, you can configure SAML SSO for {{site.azure.qumuloOnAzureShort}}. For more information, see [Configuring SAML Single Sign-On (SSO) for Your Qumulo Cluster](https://docs.qumulo.com/administrator-guide/getting-started-qumulo-core/configuring-saml-single-sign-on-sso.html) in the Qumulo Administrator Guide.
+After you deploy your Azure AD DS instance and connect {{site.azure.qumuloOnAzureShort}} to it, you can configure SAML SSO for {{site.azure.qumuloOnAzureShort}}. For more information, see [Configuring SAML Single Sign-On (SSO) for Your Qumulo Cluster](https://docs.qumulo.com/administrator-guide/getting-started-qumulo-core/configuring-saml-single-sign-on-sso.html) in the Qumulo On-Premises Administrator Guide.

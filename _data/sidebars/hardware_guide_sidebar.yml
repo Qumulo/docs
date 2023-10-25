@@ -3,7 +3,7 @@ entries:
   pdftitle: qumulo-certified-hardware-guide.pdf
   product:
   version:
-  guidetitle: Qumulo-Certified Hardware Guide
+  guidetitle: Qumulo-Certified Hardware Servicing Guide
   guideurl: /hardware-guide/      
   folders:
 
@@ -22,7 +22,7 @@ entries:
       output: pdf
       type: frontmatter
 
-  - title: Qumulo-Certified Hardware Guide
+  - title: Qumulo-Certified Hardware Servicing Guide
     output: web
     type: navi
     folderitems:

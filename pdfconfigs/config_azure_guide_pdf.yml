@@ -3,9 +3,7 @@ url: "http://127.0.0.1:4001"
 baseurl: "/qumulo-doc"
 port: 4001
 output: pdf
-#product: Qumulo in the Cloud Guide
-print_title: Azure Native Qumulo Scalable File Service Guide
-#print_subtitle: version 6.0
+print_title: Azure Native Qumulo Administrator Guide
 defaults:
   -
     scope:

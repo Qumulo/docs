@@ -3,7 +3,7 @@ entries:
   pdftitle: qumulo-azure-guide.pdf
   product:
   version:
-  guidetitle: Azure Native Qumulo Scalable File Service Guide
+  guidetitle: Azure Native Qumulo Administrator Guide
   guideurl: /azure-guide/    
   folders:
 
@@ -22,7 +22,7 @@ entries:
       output: pdf
       type: frontmatter
 
-  - title: Azure Native Qumulo Scalable File Service Guide
+  - title: Azure Native Qumulo (ANQ) Administrator Guide
     url: /azure-guide/
     output: web, pdf
     folderitems:
@@ -32,7 +32,7 @@ entries:
       output: web
       type: subnavi
 
-    - title: ANQ Guide Home
+    - title: ANQ Administrator Guide Home
       url: /azure-guide/
       output: web
       type: subnavi

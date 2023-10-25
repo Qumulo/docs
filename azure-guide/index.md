@@ -1,6 +1,6 @@
 ---
-title: "Azure Native Qumulo Scalable File Service Guide"
-summary: "The Azure Native Qumulo Scalable File Service (ANQ) Guide explains how the service works, how to configure virtual networking for the service, and how to get started with using the service in Azure."
+title: "Azure Native Qumulo Administrator Guide"
+summary: "The Azure Native Qumulo (ANQ) Administrator Guide explains how the service works, how to configure virtual networking for the service, and how to get started with using the service in Azure."
 permalink: /azure-guide/
 layout: landing_page
 redirect_from:

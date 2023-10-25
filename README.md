@@ -15,10 +15,19 @@ To get started, choose one of the following guides.
   <span class="guide-button">
     <a class="multilink" href="azure-guide/">
       <picture>
-        <source type="image/webp" srcset="images/azure-guide.webp">
-        <source type="image/png" srcset="images/azure-guide.png">
-        <img src="images/azure-guide.png" alt="Azure Native Qumulo Scalable File Service Guide" class="landing-page-icon" width="301" height="301">
-      </picture><br>Azure Native Qumulo Scalable File Service Guide</a>
+        <source type="image/webp" srcset="images/azure-native-qumulo-administrator-guide.webp">
+        <source type="image/png" srcset="images/azure-native-qumulo-administrator-guide.png">
+        <img src="images/azure-native-qumulo-administrator-guide.png" alt="Azure Native Qumulo Administrator Guide" class="landing-page-icon" width="301" height="301">
+      </picture><br>Azure Native Qumulo Administrator Guide</a>
+  </span>
+
+  <span class="guide-button">
+    <a class="multilink" href="administrator-guide/">
+      <picture>
+        <source type="image/webp" srcset="images/on-premises-administrator-guide.webp">
+        <source type="image/png" srcset="images/on-premises-administrator-guide.png">
+        <img src="images/on-premises-administrator-guide.png" alt="Qumulo On-Premises Administrator Guide" class="landing-page-icon" width="301" height="301">
+      </picture><br>Qumulo On-Premises Administrator Guide</a>
   </span>
 
   <span class="guide-button">
@@ -26,17 +35,8 @@ To get started, choose one of the following guides.
       <picture>
         <source type="image/webp" srcset="images/hardware-guide.webp" width="301" height="301">
         <source type="image/png" srcset="images/hardware-guide.png" width="301" height="301">
-        <img src="images/hardware-guide.png" alt="Qumulo-Certified Hardware Guide" class="landing-page-icon" width="301" height="301">
-      </picture><br>Qumulo-Certified Hardware Guide</a>
-  </span>
-
-  <span class="guide-button">
-    <a class="multilink" href="administrator-guide/">
-      <picture>
-        <source type="image/webp" srcset="images/administrator-guide.webp">
-        <source type="image/png" srcset="images/administrator-guide.png">
-        <img src="images/administrator-guide.png" alt="Qumulo Administrator Guide" class="landing-page-icon" width="301" height="301">
-      </picture><br>Qumulo Administrator Guide</a>
+        <img src="images/hardware-guide.png" alt="Qumulo-Certified Hardware Servicing Guide" class="landing-page-icon" width="301" height="301">
+      </picture><br>Qumulo-Certified Hardware Servicing Guide</a>
   </span>
 
   <span class="guide-button">

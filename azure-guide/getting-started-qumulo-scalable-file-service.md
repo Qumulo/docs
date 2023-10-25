@@ -86,4 +86,4 @@ To log in to the Web UI, you must identify your service endpoint.
 
 1. When the page prompts you for a **Password**, enter [the administrator password that you configured](#admin-password).
 
-For more information about working with Qumulo Core and the Web UI, see the [Qumulo Administrator Guide](https://docs.qumulo.com/administrator-guide/).
+For more information about working with Qumulo Core and the Web UI, see the [Qumulo On-Premises Administrator Guide](https://docs.qumulo.com/administrator-guide/).
