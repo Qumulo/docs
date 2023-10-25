@@ -12,6 +12,15 @@ For information about upgrade types for each release, see <a href='mode-referenc
 
 <style>div#toc{height:200px;overflow:auto;}</style>
 
+## Qumulo Core 6.3.0
+{{page.varDownloadsRelnotes}}
+{% include important.html content="This release resolves an issue in Qumulo 6.2.1.1 that interrupted the functioning of cross-realm Kerberos authentication when the system returns CNAMEs for PTR records while performing reverse DNS lookups." %}
+
+* Configured nodes to remain powered on after Transparent Platform Refresh operations
+* Changed the behavior of static IP addresses when a cluster's networking configuration changes or nodes are replaced
+* Improved the Web UI by making accessibility improvements, renaming headings on the **Dashboard** page, and added physical drive bay locations to the **Node Details** page for {{site.all4110}} and {{site.q1uag1Long}} node types
+* Improved compatibility between Qumulo Core and the Auth0 SSO provider, increased the replication speed for large numbers of deleted files, updated the `smartpqi` driver for the {{site.a4200g10}} and {{site.a4200g10p}} node types, and resolved an issue with misreported temperatures for AMD CPUs
+
 ## Qumulo Core 6.2.2.1
 {{page.varDownloadsRelnotes}}
 {{site.data.alerts.important}}
