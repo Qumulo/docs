@@ -58,7 +58,7 @@ If you can use the private key only to sign data, take the following steps.
      --id 1682119059
    ```
    
-   {% include important.html content="Any change to the snapshot after you receive the unlock challenge, but before you perform the unlock, causes the challenge to change." %}
+   {% include important.html content="If you change a snapshot's expiration time while the snapshot is locked, Qumulo Core changes the unlock challenge for the snapshot." %}
 
 1. To generate a verification signature, use the response from the challenge with your private key.
 
