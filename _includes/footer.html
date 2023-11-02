@@ -30,4 +30,35 @@
       duration: 365,
     });
   </script>	
+
+  <!-- Client-side cache -->
+  <script src="js/cache.min.js"></script>
+  <script>
+  app.helpers.events.on(window, 'load', function () {  		
+    app.cache.load([
+      {url: "/images/below-header.webp", type:":webp"},
+      {url: "/fonts/fontawesome-webfont.woff?v=4.7.0", type:"woff"},
+      {url: "/images/qumulo-integration-guide.webp", type:"webp"},
+      {url: "/images/grumpquats.webp", type:"webp"},
+      {url: "/images/qumulo-logo.webp", type:"webp"},
+      {url: "/images/qumulo-alerts-guide.webp", type:"webp"},
+      {url: "/css/customstyles.css", type:"css"},
+      {url: "/images/azure-native-qumulo-administrator-guide.webp", type:"webp"},
+      {url: "/images/qumulo-logo.svg", type:"svg"},
+      {url: "/images/on-premises-administrator-guide.webp", type:"webp"},
+      {url: "/js/jekyll-search.js", type:"js"},
+      {url: "/js/jquery.navgoco.min.js", type:"js"},
+      {url: "/js/toc.js", type:"js"},
+      {url: "/js/customscripts.js", type:"js"},
+      {url: "/css/syntax.css", type:"css"},
+      {url: "/css/theme-blue.css", type:"css"},
+      {url: "/css/modern-business.css", type:"css"},
+      {url: "/js/grt-cookie-consent.js", type:"js"},
+      {url: "/css/grt-cookies-consent.css", type:"css"},
+      {url: "/images/hardware-guide.webp", type:"webp"},
+      {url: "/js/googletag.js", type:"js"},
+      {url: "/css/boxshadowproperties.css", type:"css"},    
+    ]);  			
+  });        		
+  </script>
 </footer>
