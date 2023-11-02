@@ -216,6 +216,9 @@ def parse_markup_document(path, default_type_id, default_source_id, default_key_
             if not doc.get('permalink'):
                 return None
 
+            if doc.get('redirect_to'):
+                return None
+
             return ExternalRecord(
                 type_id=default_type_id,
                 source_id=default_source_id,
