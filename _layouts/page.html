@@ -42,5 +42,15 @@ layout: default
 
 {% include in_page_toc.html %}
 
+{% if page.hideTOC %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var styleElement = document.createElement('style');
+        styleElement.innerHTML = 'div#toc { display: none; }';
+        document.head.appendChild(styleElement);
+    });
+</script>
+{% endif %}
+
 </div>
 

@@ -3,9 +3,8 @@ title: "Qumulo Documentation"
 summary: "Welcome to the Qumulo Documentation Portal. This repository uses <a href='https://www.writethedocs.org/guide/docs-as-code/'>docs-as-code principles</a> to provide guidance about working with Qumulo."
 permalink: index.html
 breadcrumbs: exclude
+hideTOC: true
 ---
-
-{{site.hideTOC}}
 
 To get started, choose one of the following guides.
 

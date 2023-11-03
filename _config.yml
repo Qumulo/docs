@@ -135,7 +135,6 @@ plugins:
   - jekyll-redirect-from
 
 # Global include variables
-hideTOC: <style>div#toc{display:none;}</style>
 loginRequired: <span class="emoji">🔒</span>
 
 nexusDownloads: For downloads, release notes, and upgrade paths for on-premises and cloud releases of Qumulo Core, see <a target="_blank" href="https://nexus.qumulo.com/downloads">Qumulo Nexus</a>
