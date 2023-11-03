@@ -9,7 +9,9 @@ keywords: NFS, export, host, hostname, access, rules, restrictions, troubleshoot
 varExampleJSONoutput: The following is example JSON output from the command.
 ---
 
-<a id="host-access-rule"></a>In Qumulo Core, you can add a host access rule to an NFS export to restrict the export by IP address or hostname.
+<a id="host-access-rule"></a>
+
+In Qumulo Core, you can add a host access rule to an NFS export to restrict the export by IP address or hostname.
 
 The following examples show the elements that a host access rule can include.
 
@@ -152,7 +154,9 @@ This section describes the troubleshooting steps for a scenario in which an NFS 
    Client {{site.exampleIP2}} is not authorized to use export ExportId(1)
    ```
 
-1. <a id="dns_resolve_ips"></a>To find the client's hostname, use the `qq dns_resolve_ips` command and specify the client's IP address. For example:
+1. <a id="dns_resolve_ips"></a>
+
+   To find the client's hostname, use the `qq dns_resolve_ips` command and specify the client's IP address. For example:
 
    ```bash
    qq dns_resolve_ips --ips {{site.exampleIP2}}
