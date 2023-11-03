@@ -115,7 +115,6 @@ In addition to the Varonis firewall requirements, you must also define the follo
   </tbody>
 </table>
 
-<a id="supported-operations"></a>
 ### Supported Operations
 Qumulo Broker supports the following file- and directory-level operations.
 
