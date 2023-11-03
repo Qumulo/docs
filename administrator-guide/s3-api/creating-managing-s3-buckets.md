@@ -34,7 +34,8 @@ To create and manage S3 buckets by using the S3 API, you also need:
 ## How S3 Buckets Map to the Qumulo File System
 An S3 bucket exposes a portion of your Qumulo file system to applications that use the [Amazon S3 API]({{site.s3.docs.s3}}).
 
-<a id="bucket-root"></a>The _bucket root directory_ (or _bucket root)_ is the directory to which you attach an S3 bucket. All files under the bucket root directory (and all of its subdirectories) are objects in the bucket. The presence of the slash (`/`) in objects' keys determines the directory hierarchy.
+<a id="bucket-root"></a>
+The _bucket root directory_ (or _bucket root)_ is the directory to which you attach an S3 bucket. All files under the bucket root directory (and all of its subdirectories) are objects in the bucket. The presence of the slash (`/`) in objects' keys determines the directory hierarchy.
 
 {% include important.html content="Because S3 buckets can use any directory in the file system as a root directory, the same file can be an object in multiple buckets." %}
 

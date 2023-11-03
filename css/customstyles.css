@@ -28,6 +28,27 @@ a.navbar-brand {
   color:white;
 }
 
+/* Custom table sizing */
+.width-10 {
+  width: 10%;
+}
+
+.width-13 {
+  width: 13%;
+}
+
+.width-15 {
+  width: 15%;
+}
+
+.width-20 {
+  width: 20%;
+}
+
+.width-30 {
+  width: 30%;
+}
+
 @media print {
   body {
     display: block !important;

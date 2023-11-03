@@ -26,7 +26,7 @@ All Qumulo metrics belong to one of the following OpenMetrics types.
 <table>
   <thead>
     <tr>
-      <th width="15%">Metric Type</th>
+      <th class="width-15">Metric Type</th>
       <th>Description</th>
     </tr>
   </thead>
@@ -65,11 +65,11 @@ The following table lists metric names, types, labels, and descriptions.
 <table class="pdf-reduce">
   <thead>
     <tr>
-      <th width="30%">Metric Name</th>
-      <th width="13%">Metric Type</th>
+      <th class="width-30">Metric Name</th>
+      <th class="width-13">Metric Type</th>
       <th>Labels</th>
-      <th width="10%">Suppor&shy;ted from Qumulo Core Version</th>
-      <th width="20%">Description</th>
+      <th class="width-10">Suppor&shy;ted from Qumulo Core Version</th>
+      <th class="width-20">Description</th>
     </tr>
   </thead>
   <tbody>
