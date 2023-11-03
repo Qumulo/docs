@@ -32,7 +32,7 @@
   </script>	
 
   <!-- Client-side cache -->
-  <script src="js/cache.min.js"></script>
+  <script src="{{ "js/cache.min.js" | relative_url }}"></script>
   <script>
   app.helpers.events.on(window, 'load', function () {  		
     app.cache.load([
