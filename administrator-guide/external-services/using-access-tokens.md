@@ -47,7 +47,9 @@ Use the `auth_create_access_token` command and specify the user. For example:
 $ qq auth_create_access_token jane
 ```
 
-<a id="create-token-format"></a>You can:
+<a id="create-token-format"></a>
+
+You can:
 * Specify the user as a name
 * Qualify the user by using a domain prefix, for example:
   * `ad:jane`
@@ -64,7 +66,9 @@ $ qq auth_create_access_token jane
 </ul>
 {{site.data.alerts.end}}
 
-<a id="json-bearer-token"></a>The `auth_create_access_token` command returns a JSON response that contains the bearer token body and the access token ID, which you can use to manage the access token.
+<a id="json-bearer-token"></a>
+
+The `auth_create_access_token` command returns a JSON response that contains the bearer token body and the access token ID, which you can use to manage the access token.
 
 ```json
 {
@@ -140,7 +144,6 @@ To use the credentials file, specify its location by using the `--credentials-st
 $ qq --credentials-store ./qumulo_credentials who_am_i
 ```
 
-<a id="getting-metadata-for-access-tokens"></a>
 ## Getting Metadata for Access Tokens
 {{page.varPrereqRead}} This section explains how to get metadata for a specific access token or all access tokens by using the `qq` CLI.
 

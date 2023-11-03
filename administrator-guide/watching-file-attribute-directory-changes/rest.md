@@ -70,7 +70,7 @@ The following is a list of available notification types in [SSE event payloads](
 <table>
 <thead>
   <tr>
-    <th width="30%">Notification Type</th>
+    <th class="width-30">Notification Type</th>
     <th>Description</th>
   </tr>
 </thead>
