@@ -7,7 +7,7 @@ redirect_from:
   - /administrator-guide/protecting-data/managing-encryption-at-rest.html
   - /administrator-guide/encryption-data-security/configuring-remote-key-management-server.html
 sidebar: administrator_guide_sidebar
-keywords: encryption, at_rest, encryption_at_rest, data_key, master_key, rotate_keys, kms, key_management_server, key_management_system, key_management_service
+keywords: encryption, at_rest, encryption_at_rest, data_key, master_key, rotate_keys, kms, key_management_server, key_management_system, key_management_service, KMIP, KMS
 varLocalKey: The following is example JSON output for a locally stored master key.
 varKmsKey: The following is example JSON output for a master key stored in a KMS.
 varExampleKeyID: abcd-1234-efgh-5678
