@@ -53,7 +53,6 @@ This section outlines the process of configuring and deploying the service.
 * **Namespaces Larger than 1 PB:** To deploy namespaces larger than 1 PB through the Azure Portal, {{site.azure.emailAzure}}
 
 
-<a id="supported-azure-regions"></a>
 ## Supported Azure Regions
 {{site.azure.qumuloOnAzureShort}} supports all public U.S. regions. For more information, see [Azure Geographies](https://azure.microsoft.com/en-us/explore/global-infrastructure/geographies/#geographies).
 
@@ -67,9 +66,9 @@ The following table compares {{site.azure.qumuloOnAzureShort}} features with tho
   <thead>
     <tr>
       <th>Feature</th>
-      <th width="15%">{{site.azure.qumuloOnAzureShort}}</th>
-      <th width="15%">Qumulo on AWS as an AMI</th>
-      <th width="15%">Qumulo on Premises</th>
+      <th class="width-15">{{site.azure.qumuloOnAzureShort}}</th>
+      <th class="width-15">Qumulo on AWS as an AMI</th>
+      <th class="width-15">Qumulo on Premises</th>
     </tr>
   </thead>
   <tbody>

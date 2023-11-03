@@ -172,7 +172,6 @@ This section explains how to rotate the master key and check the encryption stat
 1. If encryption is enabled for your cluster, the **Cluster** page shows the message **Data Encrypted**.
 
 
-<a id="encryption-limitations"></a>
 ## Encryption Limitations
 * Qumulo Core doesn't encrypt host file system data on the node (such as system logs, core files, and so on).
 
