@@ -24,15 +24,21 @@ Managing S3 access keys requires the following [role-based access control (RBAC)
 
 
 ## How S3 Access Keys Work in Qumulo Core
-<a id="identity"></a>An _identity_ is a single principal from an identity provider (IdP). Examples of identities include SMB security identifiers (SIDs), Active Directory user principal names (UPNs), POSIX user identifiers (UIDs), and local users in a Qumulo cluster.
+<a id="identity"></a>
+
+An _identity_ is a single principal from an identity provider (IdP). Examples of identities include SMB security identifiers (SIDs), Active Directory user principal names (UPNs), POSIX user identifiers (UIDs), and local users in a Qumulo cluster.
 
 {% include important.html content="It isn't possible to create access keys for UIDs in an Active Directory environment that has POSIX extensions enabled. However, it is possible to use Active Directory identity identifiers (SIDs, UPNs, and so on)." %}
 
 An _access key_ (or _access key pair)_ is comprised of an S3 access key ID and an S3 secret access key.
 
-* <a id="access-key-id"></a>The _access key ID_ is the public component of an S3 access key pair. It identifies the user that performs an S3 request.
+* <a id="access-key-id"></a>
 
-* <a id="secret-access-key"></a>The _secret access key_ (or _secret key)_ is the private component of an S3 access key pair. The client uses the secret access key to sign requests and the server uses the secret access key to validate request signatures.
+  The _access key ID_ is the public component of an S3 access key pair. It identifies the user that performs an S3 request.
+
+* <a id="secret-access-key"></a>
+
+  The _secret access key_ (or _secret key)_ is the private component of an S3 access key pair. The client uses the secret access key to sign requests and the server uses the secret access key to validate request signatures.
 
 {{site.data.alerts.important}}
 <ul>
@@ -97,7 +103,9 @@ You can specify an identity by using:
 
 * An Active Directory Security Identifier. For example: `SID:S-1-1-0`
 
-* <a id="auth-id"></a>A Qumulo _auth ID_, Qumulo Core's common representation for identities, in the form of a numeric identifier. For example: `auth_id:513`
+* <a id="auth-id"></a>
+
+  A Qumulo _auth ID_, Qumulo Core's common representation for identities, in the form of a numeric identifier. For example: `auth_id:513`
 
 {% include important.html content="Currently, it isn't possible to associate an S3 access key with a POSIX group ID (GID)." %}
 
