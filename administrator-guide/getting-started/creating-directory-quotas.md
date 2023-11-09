@@ -49,4 +49,4 @@ keywords: directory_quota, directory, quota
 
 For information about configuring email notifications for your cluster's quotas, see [Cluster Alerts for Qumulo](https://github.com/Qumulo/cluster-email-alerts) on GitHub.
 
-For an example configuration, see `exampl_config.json`.
+For an example configuration, see `example_config.json`.
