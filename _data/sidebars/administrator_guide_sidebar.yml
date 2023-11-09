@@ -236,6 +236,10 @@ entries:
     output: web, pdf
     folderitems:
 
+    - title: Creating and Managing a Continuous Replication Relationship
+      url: /administrator-guide/replicating-data/creating-managing-continuous-replication-relationship.html
+      output: web, pdf    
+
     - title: Shift-To Amazon S3
       url: /administrator-guide/replicating-data/shift-to-s3.html
       output: web, pdf
