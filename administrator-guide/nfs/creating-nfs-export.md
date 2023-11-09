@@ -31,7 +31,7 @@ keywords: NFS, export
         
       * The **User Mapping**
   
-      {% include note.html content="Qumulo Core enforces host access rules in the order of appearance, top to bottom. We recommend adding rules specific to IP-addresses and host to the top of the list and rules specific to subnets rules and host wildcards to the bottom. For more information see [Configuring and Troubleshooting Host Access Rules](configuring-troubleshooting-host-access-rules-nfs-exports.html)." %}
+      {% include note.html content="Qumulo Core enforces host access rules in the order of appearance, top to bottom. We recommend adding rules specific to IP addresses and hosts to the top of the list and rules specific to subnets and host wildcards to the bottom. For more information see [Configuring and Troubleshooting Host Access Rules](configuring-troubleshooting-host-access-rules-nfs-exports.html)." %}
      
       To add a host, click **Add a Host Access Rule**.
 
