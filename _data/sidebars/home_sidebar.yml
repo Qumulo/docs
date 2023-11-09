@@ -15,7 +15,7 @@ entries:
       output: web
 
     - title: Azure Native Qumulo Administrator Guide
-      url: /azure-guide/
+      url: /azure-administrator-guide/
       output: web
 
     - title: Qumulo On-Premises Administrator Guide

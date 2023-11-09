@@ -77,7 +77,7 @@ Cloud-Based Monitoring and Remote Support let your cluster send the following de
 ## Prerequisites
 Before you can use Cloud-Based monitoring and Remote Support, you must:
 
-* [Install VPN keys on your Qumulo cluster](../getting-started-qumulo-core/installing-vpn-keys-on-cluster.html)
+* [Install VPN keys on your Qumulo cluster](../authentication-qumulo-core/installing-vpn-keys-on-cluster.html)
 
 * Enable the following destination hostnames for TCP on port 443.
 

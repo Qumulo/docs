@@ -12,7 +12,7 @@ To get started, choose one of the following guides.
 
 <div class="landing-page-buttons">
   <span class="guide-button">
-    <a class="multilink" href="azure-guide/">
+    <a class="multilink" href="azure-administrator-guide/">
       <picture>
         <source type="image/webp" srcset="images/azure-native-qumulo-administrator-guide.webp">
         <source type="image/png" srcset="images/azure-native-qumulo-administrator-guide.png">

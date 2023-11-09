@@ -1,5 +1,5 @@
 ---
-title: "Data Security"
+title: "Encryption and Data Security"
 layout: landing_page
 permalink: /administrator-guide/encryption-data-security/
 redirect_from:

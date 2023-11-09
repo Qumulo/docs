@@ -302,10 +302,11 @@ s3:
     UploadPart: https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html
 
 azure:
-  qumuloOnAzureLong: Azure Native Qumulo Scalable File Service
+  qumuloOnAzureLong: Azure Native Qumulo
   qumuloOnAzureShort: ANQ
-  emailAzure: email [azure@qumulo.com](mailto:azure@qumulo.com).
-  pricingCalculator: For an estimated pay-as-you-go price, see the <a href="https://azure.qumulo.com/calculator">Pricing and Performance Calculator</a>.
+  emailAzure: email <a href="mailto:azure@qumulo.com">Azure Native Qumulo Support</a>
+  pricingCalculator: For more information about pay-as-you-go price estimates, see the <a href="https://azure.qumulo.com/calculator-v2">Pricing and Performance Calculator</a>.
+  detailedDeploymentInstructions: For detailed instructions, see <a href="deploying-instance-azure-native-qumulo.html">Deploying and Viewing Information about Your Azure Native Qumulo Instance</a>. 
   
 varonis:
   separateMachine: Deploy Qumulo Broker on a stand-alone machine (or virtual machine) so that it sits between your Qumulo cluster and Varonis.

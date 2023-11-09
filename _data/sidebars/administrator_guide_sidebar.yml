@@ -48,7 +48,7 @@ entries:
       url: /administrator-guide/getting-started/creating-directory-quotas.html
       output: web, pdf
 
-    - title: Supported Configurations and Limits
+    - title: Supported Configurations and Known Limits
       url: /administrator-guide/getting-started/supported-configurations-known-limits.html
       output: web, pdf
 

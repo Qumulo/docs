@@ -18,7 +18,7 @@ ACTIONS=()
 PS3='Choose a guide to build:'
 
 # Prints the options on screen
-options=("Hardware Guide" "Azure Guide" "Administrator Guide" "Qumulo Alerts Guide" "Integration Guide" "All Guides")
+options=("Qumulo-Certified Hardware Servicing Guide" "Azure Native Qumulo Administrator Guide" "Qumulo On-Premises Administrator Guide" "Qumulo Alerts Guide" "Qumulo Integration Guide" "All Guides")
 
 select opt in "${options[@]}"
 
@@ -26,15 +26,15 @@ select opt in "${options[@]}"
 # Populates the ACTIONS array
 do
   case $opt in
-    "Hardware Guide")
+    "Qumulo-Certified Hardware Servicing Guide")
       ACTIONS+=("Hardware_Guide")
       break
       ;;
-    "Azure Guide")
+    "Azure Native Qumulo Administrator Guide")
       ACTIONS+=("Azure_Guide")
       break
       ;;
-    "Administrator Guide")
+    "Qumulo On-Premises Administrator Guide")
       ACTIONS+=("Administrator_Guide")
       break
       ;;
@@ -42,7 +42,7 @@ do
       ACTIONS+=("Qumulo_Alerts_Guide")
       break
       ;;
-    "Integration Guide")
+    "Qumulo Integration Guide")
       ACTIONS+=("Integration_Guide")
       break
       ;;
