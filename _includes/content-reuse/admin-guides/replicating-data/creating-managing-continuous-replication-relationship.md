@@ -100,31 +100,31 @@ The following privileges are required for continuous replication.
        <th>Description</th>
      </tr>
      <tr>
-       <td style="background-color:#222222;text-align:center;"><figure><img class="docimage" src="{% if site.baseurl != "/" %}{{ site.baseurl }}{% endif %}/images/shared-images/admin-guides/replication-running.png" alt="Replication is Running" style="max-width: 20px"></figure></td>
+       <td class="replication-background"><figure><img class="docimage" src="{% if site.baseurl != "/" %}{{ site.baseurl }}{% endif %}/images/shared-images/admin-guides/replication-running.png" alt="Replication is Running" style="max-width: 20px"></figure></td>
        <td>The replication is running or is ready to run.</td>
      </tr>
      <tr>
-       <td style="background-color:#222222;text-align:center;"><figure><img class="docimage" src="{% if site.baseurl != "/" %}{{ site.baseurl }}{% endif %}/images/shared-images/admin-guides/replication-awaiting-authorization.png" alt="Replication is Awaiting Authorization" style="max-width:20px"></figure></td>
+       <td class="replication-background"><figure><img class="docimage" src="{% if site.baseurl != "/" %}{{ site.baseurl }}{% endif %}/images/shared-images/admin-guides/replication-awaiting-authorization.png" alt="Replication is Awaiting Authorization" style="max-width:20px"></figure></td>
        <td>The replication is awaiting authorization from the target cluster's administrator.</td>
      </tr>
      <tr>
-       <td style="background-color:#222222;text-align:center;"><figure><img class="docimage" src="{% if site.baseurl != "/" %}{{ site.baseurl }}{% endif %}/images/shared-images/admin-guides/replication-relationship-disconnected.png" alt="Replication Relationship is Disconnected" style="max-width:20px"></figure></td>
+       <td class="replication-background"><figure><img class="docimage" src="{% if site.baseurl != "/" %}{{ site.baseurl }}{% endif %}/images/shared-images/admin-guides/replication-relationship-disconnected.png" alt="Replication Relationship is Disconnected" style="max-width:20px"></figure></td>
        <td>The replication relationship is disconnected and the target directory is writable.</td>
      </tr>
      <tr>
-       <td style="background-color:#222222;text-align:center;"><figure><img class="docimage" src="{% if site.baseurl != "/" %}{{ site.baseurl }}{% endif %}/images/shared-images/admin-guides/replication-relationship-in-blackout-window.png" alt="Replication Relationship is in a Blackout Window" style="max-width:17px"></figure></td>
+       <td class="replication-background"><figure><img class="docimage" src="{% if site.baseurl != "/" %}{{ site.baseurl }}{% endif %}/images/shared-images/admin-guides/replication-relationship-in-blackout-window.png" alt="Replication Relationship is in a Blackout Window" style="max-width:17px"></figure></td>
        <td>The replication relationship is in a blackout window.</td>
      </tr>
      <tr>
-       <td style="background-color:#222222;text-align:center;"><figure><img class="docimage" src="{% if site.baseurl != "/" %}{{ site.baseurl }}{% endif %}/images/shared-images/admin-guides/continuous-replication-disabled.png" style="max-width:20px"></figure></td>       
+       <td class="replication-background"><figure><img class="docimage" src="{% if site.baseurl != "/" %}{{ site.baseurl }}{% endif %}/images/shared-images/admin-guides/continuous-replication-disabled.png" style="max-width:20px"></figure></td>       
        <td>Continuous replication is disabled.</td>
      </tr>
      <tr>
-       <td style="background-color:#222222;text-align:center;"><figure><img class="docimage" src="{% if site.baseurl != "/" %}{{ site.baseurl }}{% endif %}/images/shared-images/admin-guides/target-directory-reverting-to-last-recovery-point.png" alt="Target Directory is Reverting to the Last Recovery Point" style="max-width:17px"></figure></td>
+       <td class="replication-background"><figure><img class="docimage" src="{% if site.baseurl != "/" %}{{ site.baseurl }}{% endif %}/images/shared-images/admin-guides/target-directory-reverting-to-last-recovery-point.png" alt="Target Directory is Reverting to the Last Recovery Point" style="max-width:17px"></figure></td>
        <td>The target directory is reverting to the last recovery point before becoming writable.</td>
      </tr>
      <tr>
-       <td style="background-color:#222222;text-align:center;"><figure><img class="docimage" src="{% if site.baseurl != "/" %}{{ site.baseurl }}{% endif %}/images/shared-images/admin-guides/replication-job-incomplete.png" alt="Replication Job is Incomplete" style="max-width:30px"></figure></td>          
+       <td class="replication-background"><figure><img class="docimage" src="{% if site.baseurl != "/" %}{{ site.baseurl }}{% endif %}/images/shared-images/admin-guides/replication-job-incomplete.png" alt="Replication Job is Incomplete" style="max-width:30px"></figure></td>          
        <td>The replication job is incomplete and will retry soon.</td>
      </tr>
    </table>
