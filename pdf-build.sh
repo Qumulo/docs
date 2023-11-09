@@ -119,6 +119,6 @@ do
 done
 
 echo "Deleting temporary build files..."
-cd _site && rm * -rf
+#cd _site && rm * -rf
 
 echo "Done. The PDF output is in the /pdf directory."
