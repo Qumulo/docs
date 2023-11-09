@@ -100,31 +100,31 @@ The following privileges are required for continuous replication.
        <th>Description</th>
      </tr>
      <tr>
-       <td class="replication-icon"><figure><img class="docimage" src="{% if site.baseurl != "/" %}{{ site.baseurl }}{% endif %}/images/shared-images/admin-guides/replication-running.png" alt="Replication is Running" style="max-width: 20px"></figure></td>
+       <td class="replication-icon"><figure><img class="docimage" src="{% if site.baseurl != "/" %}{{ site.baseurl }}{% endif %}/images/shared-images/admin-guides/replication-running.png" alt="Replication is Running"></figure></td>
        <td>The replication is running or is ready to run.</td>
      </tr>
      <tr>
-       <td class="replication-icon"><figure><img class="docimage" src="{% if site.baseurl != "/" %}{{ site.baseurl }}{% endif %}/images/shared-images/admin-guides/replication-awaiting-authorization.png" alt="Replication is Awaiting Authorization" style="max-width:20px"></figure></td>
+       <td class="replication-icon"><figure><img class="docimage" src="{% if site.baseurl != "/" %}{{ site.baseurl }}{% endif %}/images/shared-images/admin-guides/replication-awaiting-authorization.png" alt="Replication is Awaiting Authorization"></figure></td>
        <td>The replication is awaiting authorization from the target cluster's administrator.</td>
      </tr>
      <tr>
-       <td class="replication-icon"><figure><img class="docimage" src="{% if site.baseurl != "/" %}{{ site.baseurl }}{% endif %}/images/shared-images/admin-guides/replication-relationship-disconnected.png" alt="Replication Relationship is Disconnected" style="max-width:20px"></figure></td>
+       <td class="replication-icon"><figure><img class="docimage" src="{% if site.baseurl != "/" %}{{ site.baseurl }}{% endif %}/images/shared-images/admin-guides/replication-relationship-disconnected.png" alt="Replication Relationship is Disconnected"></figure></td>
        <td>The replication relationship is disconnected and the target directory is writable.</td>
      </tr>
      <tr>
-       <td class="replication-icon"><figure><img class="docimage" src="{% if site.baseurl != "/" %}{{ site.baseurl }}{% endif %}/images/shared-images/admin-guides/replication-relationship-in-blackout-window.png" alt="Replication Relationship is in a Blackout Window" style="max-width:17px"></figure></td>
+       <td class="replication-icon"><figure><img class="docimage" src="{% if site.baseurl != "/" %}{{ site.baseurl }}{% endif %}/images/shared-images/admin-guides/replication-relationship-in-blackout-window.png" alt="Replication Relationship is in a Blackout Window"></figure></td>
        <td>The replication relationship is in a blackout window.</td>
      </tr>
      <tr>
-       <td class="replication-icon"><figure><img class="docimage" src="{% if site.baseurl != "/" %}{{ site.baseurl }}{% endif %}/images/shared-images/admin-guides/continuous-replication-disabled.png" style="max-width:20px"></figure></td>       
+       <td class="replication-icon"><figure><img class="docimage" src="{% if site.baseurl != "/" %}{{ site.baseurl }}{% endif %}/images/shared-images/admin-guides/continuous-replication-disabled.png"></figure></td>       
        <td>Continuous replication is disabled.</td>
      </tr>
      <tr>
-       <td class="replication-icon"><figure><img class="docimage" src="{% if site.baseurl != "/" %}{{ site.baseurl }}{% endif %}/images/shared-images/admin-guides/target-directory-reverting-to-last-recovery-point.png" alt="Target Directory is Reverting to the Last Recovery Point" style="max-width:17px"></figure></td>
+       <td class="replication-icon"><figure><img class="docimage" src="{% if site.baseurl != "/" %}{{ site.baseurl }}{% endif %}/images/shared-images/admin-guides/target-directory-reverting-to-last-recovery-point.png" alt="Target Directory is Reverting to the Last Recovery Point"></figure></td>
        <td>The target directory is reverting to the last recovery point before becoming writable.</td>
      </tr>
      <tr>
-       <td class="replication-icon"><figure><img class="docimage" src="{% if site.baseurl != "/" %}{{ site.baseurl }}{% endif %}/images/shared-images/admin-guides/replication-job-incomplete.png" alt="Replication Job is Incomplete" style="max-width:30px"></figure></td>          
+       <td class="replication-icon"><figure><img class="docimage" src="{% if site.baseurl != "/" %}{{ site.baseurl }}{% endif %}/images/shared-images/admin-guides/replication-job-incomplete.png" alt="Replication Job is Incomplete"></figure></td>          
        <td>The replication job is incomplete and will retry soon.</td>
      </tr>
    </table>
@@ -143,7 +143,7 @@ The following privileges are required for continuous replication.
 
 1. Click **Cluster > Replication**.
 
-1. On the **Replication Relationships** page, next to the relationship to modify, click {% include shared_inline_image.html alt="Vertical Ellipsis" file="shared-images/admin-guides/vertical-ellipsis.png" max-width="20" %} **> Edit Relationship...**
+1. On the **Replication Relationships** page, next to the relationship to modify, click {% include shared_inline_image.html alt="Vertical Ellipsis" file="shared-images/admin-guides/vertical-ellipsis.png" %} **> Edit Relationship...**
 
 1. Make changes to your replication relationship (for more information, see [To Create a Replication Relationship](#create-replication-relationship)) and then click **Save Relationship**.
 
@@ -154,7 +154,7 @@ The following privileges are required for continuous replication.
 
 1. Click **Cluster > Replication**.
 
-1. On the **Replication Relationships** page, next to the relationship to delete, click {% include shared_inline_image.html alt="Vertical Ellipsis" file="shared-images/admin-guides/vertical-ellipsis.png" max-width="20" %} **> Delete Relationship...**
+1. On the **Replication Relationships** page, next to the relationship to delete, click {% include shared_inline_image.html alt="Vertical Ellipsis" file="shared-images/admin-guides/vertical-ellipsis.png" %} **> Delete Relationship...**
 
 1. In the **Delete relationship** dialog box, review the source and target clusters and then click **Yes, Delete**.
 
