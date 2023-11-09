@@ -306,6 +306,15 @@ entries:
       url: /administrator-guide/kerberos/kerberos-troubleshooting.html
       output: web, pdf
 
+  - title: SMB
+    url: /administrator-guide/smb/index.html
+    output: web, pdf
+    folderitems:
+
+    - title: Creating an SMB Share
+      url: /administrator-guide/smb/creating-smb-share.html
+      output: web, pdf   
+
   - title: S3 API
     url: /administrator-guide/s3-api/index.html
     output: web, pdf
