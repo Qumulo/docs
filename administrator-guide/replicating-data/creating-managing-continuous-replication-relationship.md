@@ -66,7 +66,7 @@ The following privileges are required for continuous replication.
 
    1. For **Port Number**, click **Default (3712)** or enter a custom port.
 
-      {% include note.html content="Your organization's firewall may require a custom port." %}
+      {% include note.html content="Your organization's firewall might require a custom port." %}
       
 1. Click **Add Blackout Window** and then select the days of the week and time when replication suspends.
 
