@@ -27,8 +27,11 @@ The following privileges are required for continuous replication.
 <ul>
   <li>We don't recommend granting the following privileges to specific users because they grant administrative access to your cluster.</li>
   <li>
-    <p>Furthermore, <code>PRIVILEGE_REPLICATION_SOURCE_WRITE</code> grants the user permission to access any data on a cluster, regardless of file or directory permissions and <code>PRIVILEGE_REPLICATION_TARGET_WRITE</code> grants the user permission to authorize replication relationships to any target directory on a cluster.</p>
-    <p>These privileges grant access to Qumulo Core functionality beyond replication relationship management.</p>
+    <p>The following privileges grant user access to Qumulo Core functionality beyond replication relationship management:</p>
+    <ul>
+      <li><code>PRIVILEGE_REPLICATION_SOURCE_WRITE</code>: Grants the permission to access any data on a cluster, regardless of file or directory permissions</li>
+      <li><code>PRIVILEGE_REPLICATION_TARGET_WRITE</code>: Grants the permission to authorize replication relationships to any target directory on a cluster</li>
+    </ul>
   </li>
 </ul>
 {{site.data.alerts.end}}
