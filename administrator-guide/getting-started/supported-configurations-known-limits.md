@@ -26,7 +26,7 @@ keywords: limit, limits, limitations, known_limits, known_limitations, config, c
           <li>FTP</li>
           <li>FTPS</li>
           <li>NFSv3</li>
-          <li><a href="../file-system-protocols/nfsv4.1-enabling-using.html">NFSv4.1</a></li>
+          <li><a href="../nfs/nfsv4.1-enabling-using.html">NFSv4.1</a></li>
           <li><a href="../s3-api/configuring-using-s3-api.html">S3 API</a></li>
           <li>SMB 2.002</li>
           <li>SMB 2.1</li>

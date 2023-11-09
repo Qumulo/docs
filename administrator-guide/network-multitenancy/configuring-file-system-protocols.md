@@ -46,7 +46,7 @@ $ qq multitenancy_modify_tenant \
 ```
 
 ### Configuring the NFS Protocol Globally or for a Tenant
-You can use _global settings_ that apply to all tenants. For example, to enable NFSv4.1 for all tenants, use the `qq nfs_modify_settings --enable-v4` command. For more information about NFS settings see [Enabling and Using NFSv4.1 on a Qumulo Cluster](../file-system-protocols/nfsv4.1-enabling-using.html) and [How NFSv4.1 works with Kerberos in Qumulo Core](../kerberos/kerberos-with-qumulo-core.html).
+You can use _global settings_ that apply to all tenants. For example, to enable NFSv4.1 for all tenants, use the `qq nfs_modify_settings --enable-v4` command. For more information about NFS settings see [Enabling and Using NFSv4.1 on a Qumulo Cluster](../nfs/nfsv4.1-enabling-using.html) and [How NFSv4.1 works with Kerberos in Qumulo Core](../kerberos/kerberos-with-qumulo-core.html).
 
 To override this global setting, use the `qq multitenancy_nfs_modify_settings` command to disable NFSv4.1 on a specific tenant, specify the tenant ID, and use the `--disable-v4` flag. In the following example, despite the global setting, the specified tenant no longer accepts NFSv4.1 traffic on port 2049, on all networks assigned to the tenant.
 

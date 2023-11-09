@@ -3,7 +3,7 @@ title: "Required Networking Ports for Qumulo Core"
 summary: "This section explains which inbound and outbound networking ports Qumulo Core requires."
 permalink: /administrator-guide/networking/required-networking-ports.html
 redirect_from:
- - /administrator-guide/qumulo-core/required-networking-ports.html
+  - /administrator-guide/qumulo-core/required-networking-ports.html
 sidebar: administrator_guide_sidebar
 keywords: networking, port, ports, Qumulo_Core
 ---
