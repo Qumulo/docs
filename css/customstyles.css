@@ -90,6 +90,12 @@ td.fade-row {
   opacity:50%;
 }
 
+/* Format replication icons with a background */
+td.replication-icon {
+  background-color:#222222;
+  text-align:center;
+}
+
 /* Reading Mode tweak */
 #tg-sb-link {
   background-color:transparent;
