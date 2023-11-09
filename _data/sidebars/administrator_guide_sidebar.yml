@@ -44,8 +44,8 @@ entries:
     output: web, pdf
     folderitems:
 
-    - title: How Drive and Node Failure Protection Works
-      url: /administrator-guide/getting-started/how-drive-node-failure-protection-works.html
+    - title: Creating and Managing Directory Quotas
+      url: /administrator-guide/getting-started/creating-directory-quotas.html
       output: web, pdf
 
     - title: Supported Configurations and Limits
@@ -257,7 +257,7 @@ entries:
     output: web, pdf
     folderitems:
 
-    - title: Creating an NFS Export
+    - title: Creating and Managing an NFS Export
       url: /administrator-guide/nfs/creating-nfs-export.html
       output: web, pdf     
 
@@ -315,7 +315,7 @@ entries:
     output: web, pdf
     folderitems:
 
-    - title: Creating an SMB Share
+    - title: Creating and Managing an SMB Share
       url: /administrator-guide/smb/creating-smb-share.html
       output: web, pdf   
 

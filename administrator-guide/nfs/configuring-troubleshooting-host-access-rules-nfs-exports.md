@@ -50,7 +50,7 @@ This section explains how you can add a host access rule to an existing NFS expo
 
 1. Click **Sharing > NFS Exports**.
 
-1. For an NFS export, in the **Actions** column, click {% include inline_image.html alt="Edit" file="edit.png" max-width="40" %}.
+1. For an NFS export, in the **Actions** column, click {% include shared_inline_image.html alt="Edit" file="shared-images/admin-guides/edit.png" max-width="40" %}.
 
 1. On the **NFS Export** page, in the **Host Access Rules** section, do the following:
 
