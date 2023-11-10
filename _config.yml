@@ -305,7 +305,7 @@ azure:
   qumuloOnAzureLong: Azure Native Qumulo
   qumuloOnAzureShort: ANQ
   emailAzure: email <a href="mailto:azure@qumulo.com">Azure Native Qumulo Support</a>
-  pricingCalculator: For more information about pay-as-you-go price estimates, see the <a href="https://azure.qumulo.com/calculator-v2">Pricing and Performance Calculator</a>.
+  pricingCalculator: For more information about pay-as-you-go price estimates, see the <a href="https://azure.qumulo.com/calculator">Pricing and Performance Calculator</a>.
   detailedDeploymentInstructions: For detailed instructions, see <a href="deploying-instance-azure-native-qumulo.html">Deploying and Viewing Information about Your Azure Native Qumulo Instance</a>. 
   
 varonis:
