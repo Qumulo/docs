@@ -116,7 +116,7 @@ The following privileges are required for continuous replication.
        <td>The replication relationship is in a blackout window.</td>
      </tr>
      <tr>
-       <td class="replication-icon"><figure><img class="docimage" src="{% if site.baseurl != "/" %}{{ site.baseurl }}{% endif %}/images/shared-images/admin-guides/continuous-replication-disabled.png"></figure></td>       
+       <td class="replication-icon"><figure><img class="docimage" src="{% if site.baseurl != "/" %}{{ site.baseurl }}{% endif %}/images/shared-images/admin-guides/continuous-replication-disabled.png" alt="Continuous Replication Disabled"></figure></td>       
        <td>Continuous replication is disabled.</td>
      </tr>
      <tr>
