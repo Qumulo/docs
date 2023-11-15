@@ -48,9 +48,9 @@ There are two node replacement plan types:
 
 * When a node replacement step is complete, the reassignment of static IP addresses differs between versions of Qumulo Core:
 
-  * In Qumulo Core 6.3.0 (and higher), the static IP addresses assigned to nodes remain unchanged and Qumulo Core removes only the static IP addresses for nodes removed from the cluster.
+  * In Qumulo Core 6.3.0.1 (and higher), the static IP addresses assigned to nodes remain unchanged and Qumulo Core removes only the static IP addresses for nodes removed from the cluster.
  
-  * In Qumulo Core versions lower than 6.3.0, Qumulo Core reassigns static IP addresses to different nodes. To view the reassigned IP addresses in the Web UI, click **Cluster > Network Configuration.**
+  * In Qumulo Core versions lower than 6.3.0.1, Qumulo Core reassigns static IP addresses to different nodes. To view the reassigned IP addresses in the Web UI, click **Cluster > Network Configuration.**
 
 * When Qumulo Core adds nodes to a cluster, it assigns node IDs sequentially, without reusing or changing IDs.
 
