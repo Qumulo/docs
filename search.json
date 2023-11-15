@@ -5,16 +5,32 @@ search: exclude
 ---
 
 [
+{%- assign is_first = true -%}
 {%- for page in site.html_pages -%}
-{%- unless page.search == "exclude" or page.keywords == "" or page.keywords == nil -%}
+  {%- unless page.search == "exclude" or page.keywords == "" or page.keywords == nil -%}
+    {% case page.sidebar %}
+      {% when "azure_guide_sidebar" %}
+        {% assign prefix = "Azure: " %}
+      {% when "administrator_guide_sidebar" %}
+        {% assign prefix = "On-Prem: " %}
+      {% else %}
+        {% assign prefix = "" %}
+    {% endcase %}
+
+    {%- if is_first -%}
+      {%- assign is_first = false -%}
+    {%- else -%}
+      ,
+    {%- endif -%}
 {
-"title": "{% if page.url contains 'azure-administrator-guide' %}Azure: {% elsif page.url contains 'administrator-guide' %}On-Prem: {% endif %}{{ page.title | escape }}",
-"tags": "{{ page.tags }}",
-"keywords": "{{page.keywords}}",
-"url": "{{ page.url }}",
-"summary": "{{page.summary | strip }}"
-},
-{%- endunless -%}
+    "title": "{{ prefix }}{{ page.title | escape }}"
+    {%- if page.tags != empty and page.tags != null -%},
+    "tags": "{{ page.tags }}"
+    {%- endif -%},
+    "keywords": "{{ page.keywords }}",
+    "url": "{{ page.url }}",
+    "summary": "{{ page.summary | strip }}"
+}
+  {%- endunless -%}
 {%- endfor -%}
-{}
 ]
