@@ -8,7 +8,7 @@ search: exclude
 {%- for page in site.html_pages -%}
 {%- unless page.search == "exclude" or page.keywords == "" or page.keywords == nil -%}
 {
-"title": "{{ page.title | escape }}",
+"title": "{% if page.url contains 'azure-administrator-guide' %}Azure: {% elsif page.url contains 'administrator-guide' %}On-Prem: {% endif %}{{ page.title | escape }}",
 "tags": "{{ page.tags }}",
 "keywords": "{{page.keywords}}",
 "url": "{{ page.url }}",
