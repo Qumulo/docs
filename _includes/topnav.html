@@ -90,22 +90,23 @@
                 <!--comment out this block if you want to hide search-->
                 <li>
                     <!--start search-->
-                    <div id="search-demo-container">
-                        <input type="text" id="search-input" placeholder="{{site.data.strings.search_placeholder_text}}">
-                        <ul id="results-container"></ul>
-                    </div>
-                    <script src="{{ "js/jekyll-search.js" | relative_url }}"></script>
-                    <script>
-                            SimpleJekyllSearch.init({
-                                searchInput: document.getElementById('search-input'),
-                                resultsContainer: document.getElementById('results-container'),
-                                dataSource: '{{ "search.json" | relative_url }}',
-                                searchResultTemplate: '<li><a href="{{ site.baseurl }}{url}" title="{{page.title | escape }}">{title}</a></li>',
-                    noResultsText: '{{site.data.strings.search_no_results_text}}',
-                            limit: 10,
-                            fuzzy: true,
-                    })
-                    </script>
+		    <div id="search-demo-container">
+		        <input type="text" id="search-input" placeholder="Search the Documentation Portal">
+		        <ul id="results-container"></ul>
+		    </div>
+		    <script src="/js/search-summary.js"></script>
+		    <script src="/js/jekyll-search.js"></script>
+		    <script>
+		        SimpleJekyllSearch.init({
+			    searchInput: document.getElementById('search-input'),
+			    resultsContainer: document.getElementById('results-container'),
+			    dataSource: '/search.json',
+			    searchResultTemplate: '<li onmouseover="showSummary(this)" onmouseout="hideSummary()" data-summary="{summary}"><a href="{url}" title="Qumulo Documentation">{title}</a><div class="summary-box" style="display:none;"></div></li>',
+			    noResultsText: 'No results found.',
+			    limit: 10,
+			    fuzzy: true,
+		        })
+		    </script>
                     <!--end search-->
                 </li>
             </ul>
