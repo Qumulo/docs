@@ -82,7 +82,7 @@ To prepare your Qumulo cluster for connecting to your Kubernetes cluster, you mu
 
 1. For `storeRealPath`, from the root of the Qumulo file system, create a directory for storing volumes on your Qumulo cluster, for example `/csi/volumes1`.
 
-   {% include note.html content="Because the CSI driver doesn't create the directory listed in the `storeRealPath` key automatically, this directory must exist above the NFS export and must not be the NFS export itself." %}
+   {% include note.html content="Because the CSI driver doesn't create the directory listed in the `storeRealPath` key automatically, this directory must exist below the NFS export and must not be the NFS export itself." %}
 
 1. For `storeExportPath`, create the NFS export for hosting the persistent volume.
 
@@ -158,6 +158,13 @@ To link your Kubernetes cluster to your Qumulo cluster, you must create a storag
 
 1. Begin with the example Qumulo storage class configuration.
 
+   {{site.data.alerts.note}}
+   <ul>
+     <li>In the following example, it is possible to use a fully qualified domain name (FQDN) for the <code>parameters: server:</code> entry.</li>
+     <li>For such a configuration, all Kubernetes nodes in the cluster must be able to resolve FQDNs.</li>
+   </ul>
+   {{site.data.alerts.end}}
+
    ```yaml
    ---
    apiVersion: storage.k8s.io/v1
@@ -177,8 +184,8 @@ To link your Kubernetes cluster to your Qumulo cluster, you must create a storag
    volumeBindingMode: Immediate
    mountOptions:
      - nolock
-     - intr
      - proto=tcp
+     - vers=3
    allowVolumeExpansion: true
    ```
 
@@ -204,10 +211,9 @@ To link your Kubernetes cluster to your Qumulo cluster, you must create a storag
 
    1. Specify the NFS `mountOptions`. For example:
    
-      ```
+      ```yaml
       mountOptions:
         - nolock
-        - intr
         - proto=tcp
         - vers=3
       ```
