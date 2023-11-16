@@ -1,6 +1,6 @@
 <a id="host-access-rule"></a>
 
-In Qumulo Core, you can add a host access rule to an NFS export to restrict the export by IP address or hostname.
+In Qumulo Core 6.2.0.1, you can add a host access rule to an NFS export to restrict the export by IP address or hostname.
 
 The following examples show the elements that a host access rule can include.
 
