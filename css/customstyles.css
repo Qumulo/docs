@@ -28,6 +28,10 @@ a.navbar-brand {
   color:white;
 }
 
+.highlighter {
+  background: yellow
+}
+
 /* Custom table sizing */
 .width-10 {
   width: 10%;
@@ -1436,15 +1440,25 @@ a.btn-contact:active {
   text-decoration: none;
 }
 
+a.pdf:after {
+  content: "\f1c1";
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+  display: inline-block;
+  text-decoration: none;
+  padding-left: 3px;
+}
+
 /* Add an icon after external links by using Font Awesome */
 a[href^="http://"]:after, a[href^="https://"]:after {
-    content: "\f08e";
-    font-family: FontAwesome;
-    font-weight: normal;
-    font-style: normal;
-    display: inline-block;
-    text-decoration: none;
-    padding-left: 3px;
+  content: "\f08e";
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+  display: inline-block;
+  text-decoration: none;
+  padding-left: 3px;
 }
 
 /* Strip the outbound icon when this class is present */

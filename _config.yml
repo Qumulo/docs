@@ -173,6 +173,9 @@ hardware:
     smcMoreInfo1114S: For more information, see <a href="https://www.supermicro.com/manuals/superserver/1U/MNL-2295.pdf#page=64">IPMI</a> in the Supermicro documentation.
     smcMoreInfo1014S: For more information, see <a href="https://www.supermicro.com/manuals/superserver/1U/MNL-2436.pdf#page=67">IPMI</a> in the Supermicro documentation. 
   ethDiff: The <code>eth</code> port labels vary depending on the NIC manufacturer.
+  irmcCreds:
+    fprx: The default iRMC username is <code>admin</code> and the default password is <code>admin</code>.
+    
 
 led:
   red: <span class="emoji">🔴</span>
@@ -235,6 +238,11 @@ q1uhg2: Quiver 1UH Gen2
 
 q1uag1Long: Quiver 1U All-NVMe Gen1
 q1uag1: Quiver 1UA Gen1
+
+fprx2540m7Long: Fujitsu PRIMERGY RX2540 M7
+fprx2540m7: Fujitsu RX2540 M7
+
+fprx2540m7followDocs: "Follow the instructions in the Fujitsu documentation:"
 
 q1uag1Drives:
   frontStorageBays: There are 12 2.5" hot-swap NVMe drives attached with four screws to trays in front storage bays. For more information, see <a href="https://dlcdnets.asus.com/pub/ASUS/server/RS500A-E12-RS12U/Manual/E21507_RS500A-E12-RS12U_UM_V2_WEB.pdf?model=RS500A-E12-RS12U#page=45">Installing a 2.5-Inch Storage Device to a Front Storage Bay</a> in the ASUS documentation.

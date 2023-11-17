@@ -27,7 +27,7 @@ Your node requires the following resources.
 
 
 ## Recommended Configuration
-{{site.unifyNetDefine}} However, for greater reliability, we recommend connecting both 25 Gbps or 100 Gbps ports on every node to each switch.
+{{site.unifyNetDefine}} However, for greater reliability, we recommend connecting both {{include.ethernetSpeed}} ports on every node to each switch.
 
 We recommend the following configuration for your node.
 
