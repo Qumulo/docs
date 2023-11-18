@@ -24,7 +24,7 @@ For more information, see [To Replace an NVMe Drive](replacing-hardware-componen
 {% capture alt_tag_nvme %}{{site.fprx2540m7Long}} NVMe Drive Bay Mapping{% endcapture %}
 {% include image.html alt=alt_tag_nvme file="fujitsu-primergy-rx2540-m7-nvme-drive-bay-mapping.png" url="/hardware-guide/fujitsu-primergy-rx2540-m7/images/fujitsu-primergy-rx2540-m7-nvme-drive-bay-mapping.png" %}
 
-
+<a id="nvme-m2-boot-drives"></a>
 ## Internal NVMe M.2 Boot Drive
 The boot drives are located at the M.2 expansion slot on an interposer (controller) board. For more information, see [To Replace an NVMe M.2 Boot Drive](replacing-hardware-components.html#replace-nvme-m2-boot-drive).
 
