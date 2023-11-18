@@ -17,7 +17,7 @@ For more information, see [To Replace an HDD](replacing-hardware-components.html
 
 <a id="nvme-drives"></a>
 ## Back NVMe Drives
-For more information, see [To Replace an NVMe M.2 Boot Drive](replacing-hardware-components.html#replace-nvme-m2-boot-drive).
+For more information, see [To Replace an NVMe Drive](replacing-hardware-components.html#replace-nvme-drive).
 
 {% include note.html content="Because the expansion bays are universal, your node might contain labels such as **HDD0** for the NVMe slots." %}
 
