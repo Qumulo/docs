@@ -44,7 +44,7 @@ Each of the two [RAID module risers](#replace-raid-module-riser) on your chassis
 
 <a id="replace-nvme-m2-boot-drive"></a>
 ## To Replace the NVMe M.2 Boot Drive
-Your {{site.fprx2540m7}} chassis contains two mirrored NVMe boot drives, each of which is inserted into an [interposer (controller) board](#replace-interposer-board). For more information, see [NVMe M.2 Boot Drive](drive-bay-mapping.html#nvme-m2-boot-drive).
+Your {{site.fprx2540m7}} chassis contains two mirrored NVMe boot drives, each of which is inserted into an [interposer (controller) board](#replace-interposer-board). For more information, see [NVMe M.2 Boot Drive](drive-bay-mapping.html#nvme-m2-boot-drives).
 
 1. {{page.varNoHotPlug}}
 
