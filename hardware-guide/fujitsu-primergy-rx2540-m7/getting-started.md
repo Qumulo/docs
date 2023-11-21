@@ -24,5 +24,5 @@ keywords: getting_started_guide, quick_reference, Fujitsu_PRIMERGY_RX2540_M7, Fu
 
 
 ## Step 3: Create and Configure Your Cluster
-After the node reboots, the Qumulo Installer runs automatically.
+The Qumulo Installer runs automatically.
 {% include content-reuse/create-configure-cluster.md %}
