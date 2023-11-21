@@ -12,7 +12,7 @@ keywords: out-of-band_management, out_of_band_management, iRMC, DHCP, network, n
 {% include image.html alt=alt_tag file="fujitsu-primergy-rx2540-m7-back-diagram.png" url="/hardware-guide/fujitsu-primergy-rx2540-m7/images/fujitsu-primergy-rx2540-m7-back-diagram.png" %}
 
 {% include content-reuse/platform-agnostic-irmc.md %}
-To configure the iRMC port, you must use the web UI of the Remote Management Controller. For more information, see the [Starting Web Interface section in the Remote Management Controller User's Guide (p. 107)](https://www.fujitsu.com/global/Images/b7fh-5631-01en.pdf#page=17) {{site.hardware.irmcCreds.fprx}}
+To configure the iRMC port, you must use the web UI of the Remote Management Controller. For more information, see <a href="/pdf/fujitsu-software-serverview-suite-irmc-s6-configuration-maintenance-03-2023.pdf#page=30" class="pdf">Logging on to the iRMC S6 for the first time (p. 30)</a> and <a href="/pdf/fujitsu-software-serverview-suite-irmc-s6-configuration-maintenance-03-2023.pdf#page=31" class="pdf">iRMC factory defaults (p. 31)</a> in the Fujitsu iRMC S6 Configuration and Maintenance Manual. {{site.hardware.irmcCreds.fprx}}
 {% include content-reuse/platform-agnostic-unified-networking-wiring.md bmcType="iRMC" ethernetSpeed="25 Gbps" portCompatibility=" (compatible with SFP28)" %}
 
 | NIC Manufacturer | Port Location | Port Labels |
