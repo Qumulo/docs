@@ -9,12 +9,7 @@ varHotPlug: You can replace this component without powering off the node.
 varNoHotPlug: To replace this component, you must first power off the node.
 ---
 
-{{site.data.alerts.caution}}
-<ul>
-  <li>Don't update your node firmware unless a Qumulo representative instructs you to perform an update.</li>
-  <li>{{site.seeTechSpecs}}</li>
-</ul>    
-{{site.data.alerts.end}}
+{% include content-reuse/platform-agnostic-part-replacement-admonitions.md %}
 
 
 ## To Remove and Replace the Top Cover

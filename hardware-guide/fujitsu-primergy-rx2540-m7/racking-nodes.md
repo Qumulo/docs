@@ -6,7 +6,8 @@ sidebar: hardware_guide_sidebar
 keywords: rack, racking, rails, server_rack, chassis, insert_chassis, Fujitsu_PRIMERGY_RX2540_M7, Fujitsu, PRIMERGY, RX2540, 2540, M7
 ---
 
-{% comment %}## To Install the Rails in the Server Rack{% endcomment %}
+## To Install the Rails in the Server Rack
+{{site.fprx2540m7}} uses Rack Mount Kit QRL with CMA (PYBRR0B). For instructions on installing the kit in your server rack, see Fujitsu documentation.
 
 <a id="insert-chassis"></a>
 ## To Insert the Chassis into the Server Rack

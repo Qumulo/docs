@@ -9,13 +9,7 @@ varHotPlug: You can replace this component without powering off the node.
 varNoHotPlug: To replace this component, you must first power off the node.
 ---
 
-{{site.data.alerts.caution}}
-<ul>
-  <li>Don't update your node firmware unless a Qumulo representative instructs you to perform an update.</li>
-  <li>{{site.seeTechSpecs}}</li>
-</ul>    
-{{site.data.alerts.end}}
-
+{% include content-reuse/platform-agnostic-part-replacement-admonitions.md %}
 
 ## To Remove and Replace the Top Cover
 {{site.fprx2540m7followDocs}} <a href="/pdf/fujitsu-primergy-rx2540-m7-upgrade-maintenance-manual-09-2023.pdf#page=58" class="pdf">Removing the top covers (p. 58)</a>.
@@ -101,37 +95,3 @@ Your {{site.fprx2540m7}} chassis has 12 DIMM slots, with a locking latch on each
 1. {{page.varNoHotPlug}}
 
 1. {{site.fprx2540m7followDocs}} <a href="/pdf/fujitsu-primergy-rx2540-m7-upgrade-maintenance-manual-09-2023.pdf#page=345" class="pdf">Installing the memory modules (p. 345)</a>.
-
-
-## To Replace the Node Chassis
-{% include important.html content="After you perform a chassis swap, you must reconfigure the iRMC settings for your node." %}
-
-1. At the back of the node, disconnect the power cabling from both power supply units (PSUs) and [remove both existing PSUs](#replace-psu) from the node.
-
-1. Disconnect the network cabling from the NIC port and [remove the existing NIC](#replace-nic) from the node.
-
-1. Remove the existing [HDDs](#replace-hdd), [NVMe drives](#replace-nvme-drive), and the [NVMe M.2 boot drive](#replace-nvme-m2-boot-drive) from the node.
-
-1. [Remove the existing chassis](racking-nodes.html#remove-chassis) from the server rack.
-
-   {% capture content_lift %}{{site.twoPeopleOrLift}}{% endcapture %}
-   {% include important.html content=content_lift %}
-
-1. Install the new chassis in the server rack.
-
-   {% capture content_warp %}{{site.doNotWarpChassis}}{% endcapture %}
-   {% include caution.html content=content_warp %}
-
-1. Install the existing HDDs, NVMe drives, and the boot drive in the node.
-
-1. For the NIC, do one of the following:
-
-   * If your replacement chassis comes with a NIC, install the new NIC in the chassis and connect the network cabling to the NIC ports.
-   
-   * If your replacement chassis doesn't come with a NIC, install and connect the existing NIC.
-
-1. For the PSUs, do one of the following:
-
-   * If your replacement chassis comes with PSUs, install the new PSUs in the chassis and connect the power cabling to the PSUs.
-
-   * If your replacement chassis doesn't come with PSUs, install and connect the existing PSUs.

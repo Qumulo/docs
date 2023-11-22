@@ -8,18 +8,7 @@ sidebar: hardware_guide_sidebar
 keywords: replace, hardware, component, replace_drive, drive, replace_psu, psu, replace_fan, fan, replace_dimm, dimm, Supermicro, Supermicro_1114S, 1114S, WN10RT
 ---
 
-{{site.data.alerts.caution}}
-<ul>
-  <li>We strongly recommend engaging an on-site Supermicro engineer to replace failed hardware components including but not limited to any procedure that:
-    <ul>
-      <li>This guide doesn't cover</li>
-      <li>You haven't received training on</li>
-      <li>Requires precautions to avoid damage caused by electrostatic discharge (ESD) by using industry standard anti-static equipment (such as gloves or wrist straps)</li>
-    </ul>
-  </li>
-  <li>Don't update your node firmware unless a Qumulo representative instructs you to perform an update.</li>
-</ul>
-{{site.data.alerts.end}}
+{% include content-reuse/platform-agnostic-part-replacement-admonitions.md %}
 
 {% include content-reuse/platform-agnostic-part-replacement-procedure-fvt.md %}
 

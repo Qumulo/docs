@@ -9,7 +9,7 @@ keywords: front_drive, internal_drive, boot_drive, drive, drive_bay, HPE_Alletra
 There are 20 drive bay at the front of the {{site.all4110}} node, populated according to your node type.
 
 
-## 307TB and 153 TB Nodes
+## 307TB and 153TB Nodes
 In [307TB and 153TB nodes](technical-specifications.md), all drive bays are populated.
 
 {% capture alt_tag %}The front drives in the {{site.all4110}} node (307TB and 153TB).{% endcapture %}

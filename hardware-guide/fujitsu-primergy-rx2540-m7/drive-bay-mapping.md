@@ -6,14 +6,25 @@ sidebar: hardware_guide_sidebar
 keywords: drive, hard_drive, drive_bay, mapping, Fujitsu_PRIMERGY_RX2540_M7, Fujitsu, PRIMERGY, RX2540, 2540, M7
 ---
 
-Your {{site.fprx2540m7}} chassis contains 12 HDDs in the front, 4 NVMe drives in the back, and 2 mirrored NVMe boot drives in internal M.2 expansion slots. The following is the mapping for the drives.
+Your {{site.fprx2540m7}} chassis contains 12 or 8 HDDs in the front, 4 NVMe drives in the back, and 2 mirrored NVMe boot drives in internal M.2 expansion slots. The following is the mapping for the drives.
+
+{% include note.html content="To determine the drive configuration for your node, see [Technical Specifications](technical-specifications.html)." %}
 
 <a id="hdd-drives"></a>
 ## Front HDD Drives
 For more information, see [To Replace an HDD](replacing-hardware-components.html#to-replace-an-hdd).
 
-{% capture alt_tag %}{{site.fprx2540m7Long}} HDD Bay Mapping{% endcapture %}
-{% include image.html alt=alt_tag file="fujitsu-primergy-rx2540-m7-hdd-bay-mapping.png" url="/hardware-guide/fujitsu-primergy-rx2540-m7/images/fujitsu-primergy-rx2540-m7-hdd-bay-mapping.png" %}
+### 48TB and 144TB Nodes
+In [48TB and 144TB Nodes](technical-specifications.html), all drive bays are populated.
+
+{% capture alt_tag %}{{site.fprx2540m7Long}} Front HDD Bay Mapping (48TB and 144TB){% endcapture %}
+{% include image.html alt=alt_tag file="fujitsu-primergy-rx2540-m7-hdd-bay-mapping-48tb-144tb.png" url="/hardware-guide/fujitsu-primergy-rx2540-m7/images/fujitsu-primergy-rx2540-m7-hdd-bay-mapping-48tb-144tb.png" %}
+
+### 96TB Nodes
+In [96TB Nodes](technical-specifications.html), some drive bays are empty.
+
+{% capture alt_tag %}{{site.fprx2540m7Long}} Front HDD Bay Mapping (96TB){% endcapture %}
+{% include image.html alt=alt_tag file="fujitsu-primergy-rx2540-m7-hdd-bay-mapping-96tb.png" url="/hardware-guide/fujitsu-primergy-rx2540-m7/images/fujitsu-primergy-rx2540-m7-hdd-bay-mapping-96tb.png" %}
 
 <a id="nvme-drives"></a>
 ## Back NVMe Drives
