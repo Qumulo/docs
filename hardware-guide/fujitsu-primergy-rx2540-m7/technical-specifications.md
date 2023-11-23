@@ -22,7 +22,7 @@ keywords: technical_specifications, tech_specs, specs, specifications, Fujitsu_P
   <tbody>
     <tr>
       <td><strong>Connectivity Ports (NIC)</strong></td>
-      <td colspan="3" style="text-align: center;">1 &#215; 25 GbE (1 &#215; Intel E810 NIC)</td>
+      <td colspan="3" style="text-align: center;">2 &#215; 25 GbE (1 &#215; Intel E810 NIC)</td>
     </tr>
     <tr>
       <td><strong>Management Ports (BMC)</strong></td>
@@ -45,7 +45,7 @@ keywords: technical_specifications, tech_specs, specs, specifications, Fujitsu_P
     </tr>
     <tr>
       <td><strong>CPU</strong></td>
-      <td colspan="3" style="text-align: center;">1 &#215; Intel Xeon Silver 4410Y CPU @ 2.70 GHz</td>
+      <td colspan="3" style="text-align: center;">2 &#215; Intel Xeon Silver 4410Y CPU @ 2.70 GHz</td>
     </tr>
     <tr>
       <td><strong>Memory</strong></td>
