@@ -39,4 +39,4 @@ For more information, see [To Replace an NVMe Drive](replacing-hardware-componen
 ## Internal NVMe M.2 Boot Drive
 The boot drives are located at the M.2 expansion slot on an interposer (controller) board. For more information, see [To Replace an NVMe M.2 Boot Drive](replacing-hardware-components.html#replace-nvme-m2-boot-drive).
 
-{{site.fprx2540m7followDocs}} <a href="/pdf/fujitsu-primergy-rx2540-m7-upgrade-maintenance-manual-09-2023.pdf#page=58" class="pdf">Slots for M.2 SSDs on the M.2 interposer board (p. 211)</a>.
+{{site.fprx2540m7followDocs}} <a href="https://docs.qumulo.com/pdf/fujitsu-primergy-rx2540-m7-upgrade-maintenance-manual-09-2023.pdf#page=58" class="pdf">Slots for M.2 SSDs on the M.2 interposer board (p. 211)</a>.
