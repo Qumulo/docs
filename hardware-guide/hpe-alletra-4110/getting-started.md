@@ -79,5 +79,8 @@ For help with troubleshooting your node, {{site.contactQumuloCare}}.
 
    
 ## Step 4: Create and Configure Your Cluster
+{% capture checkNetworks %}Your {{site.all4110}} node uses a [split networking configuration](wiring-nodes-networking-cluster.html). Ensure that the [front-end and back-end networks](wiring-nodes-networking-cluster.html#connecting-to-redundant-switches) are connected and operational before creating your cluster.{% endcapture %}
+
+{% include important.html content=checkNetworks %}
 
 {% include content-reuse/create-configure-cluster.md %}

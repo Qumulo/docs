@@ -29,4 +29,7 @@ keywords: getting_started_guide, quick_reference, Quiver_1U_All-NVMe_Gen1, Quive
    
 
 ## Step 3: Create and Configure Your Cluster
+{% capture checkNetworks %}The dual-NIC variant of your {{site.q1uag1}} node uses a [split networking configuration](configuring-ipmi-wiring-nodes.html). Ensure that the [front-end and back-end networks](configuring-ipmi-wiring-nodes.html#step-2-connecting-the-100-gbps-ports) are connected and operational before creating your cluster.{% endcapture %}
+{% include important.html content=checkNetworks %}
+
 {% include content-reuse/create-configure-cluster.md %}
