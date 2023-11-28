@@ -64,7 +64,7 @@ entries:
       output: web, pdf
 
     - title: Creating and Managing Directory Quotas
-      url: /administrator-guide/getting-started/creating-directory-quotas.html
+      url: /azure-administrator-guide/getting-started/creating-directory-quotas.html
       output: web, pdf
 
     - title: Performance Characteristics and Default Limits
