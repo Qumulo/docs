@@ -250,18 +250,6 @@ The following table lists regions in US, Canada, Europe, and the UK that {{site.
       <td>&#10003;</td>
     </tr>
     <tr>
-      <td>US (Wyoming)</td>      
-      <td>West Central US</td>
-      <td></td>      
-      <td>&#10003;</td>
-    </tr>    
-    <tr>
-      <td>Canada (Quebec City)</td>
-      <td>Canada East</td>
-      <td></td>      
-      <td>&#10003;</td>
-    </tr>    
-    <tr>
       <td>Canada (Toronto)</td>
       <td>Canada Central</td>
       <td>&#10003;</td>
@@ -309,12 +297,6 @@ The following table lists regions in US, Canada, Europe, and the UK that {{site.
       <td>&#10003;</td>
       <td>&#10003;</td>
     </tr>
-    <tr>
-      <td>UK (Cardiff)</td>
-      <td>UK West</td>
-      <td></td>      
-      <td>&#10003;</td>
-    </tr>    
     <tr>
       <td>UK (London)</td>
       <td>UK South</td>
