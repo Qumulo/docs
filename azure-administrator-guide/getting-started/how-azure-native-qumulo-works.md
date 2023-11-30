@@ -258,7 +258,7 @@ The following table lists regions in US, Canada, Europe, and the UK that {{site.
     <tr>
       <td>Europe (Frankfurt)</td>
       <td>Germany West Central</td>
-      <td></td>      
+      <td>&#10003;</td>
       <td>&#10003;</td>
     </tr>
     <tr>
