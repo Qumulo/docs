@@ -9,15 +9,15 @@ keywords: technical_specifications, tech_specs, specs, specifications, HPE_Apoll
 <table>
 <thead>
   <tr>
-    <th></th>
-    <th>{{site.a4200g10p}} 480TB<br>(General Purpose)</th>
-    <th>{{site.a4200g10p}} 480TB<br>(Active)</th>
-    <th>{{site.a4200g10p}} 240TB<br>(General Purpose)</th>
-    <th>{{site.a4200g10p}} 240TB<br>(Active)</th>
-    <th>{{site.a4200g10p}} 90TB<br>(General Purpose)</th>
-    <th>{{site.a4200g10p}} 90TB<br>(Active)</th>
-    <th>{{site.a4200g10p}} 36TB<br>(General Purpose)</th>    
-    <th>{{site.a4200g10p}} 36TB<br>(Active)</th>
+    <th>{{site.a4200g10p}}</th>
+    <th>480TB<br>(General Purpose)</th>
+    <th>480TB<br>(Active)</th>
+    <th>240TB<br>(General Purpose)</th>
+    <th>240TB<br>(Active)</th>
+    <th>90TB<br>(General Purpose)</th>
+    <th>90TB<br>(Active)</th>
+    <th>36TB<br>(General Purpose)</th>    
+    <th>36TB<br>(Active)</th>
   </tr>
 </thead>
 <tbody>
@@ -61,11 +61,11 @@ keywords: technical_specifications, tech_specs, specs, specifications, HPE_Apoll
   </tr>
   <tr>
     <td><strong>Management Ports</strong></td>
-    <td colspan="6" style="text-align: center;">1 &times; iLO 1 GbE</td>
+    <td colspan="8" style="text-align: center;">1 &times; iLO 1 GbE</td>
   </tr>
   <tr>
     <td><strong>Physical Dimensions</strong></td>
-    <td colspan="6" style="text-align: center;">3.44" (8.75 cm) &times; 17.63" (44.8 cm) &times; 33" (83.79 cm)</td>
+    <td colspan="8" style="text-align: center;">3.44" (8.75 cm) &times; 17.63" (44.8 cm) &times; 33" (83.79 cm)</td>
   </tr>
 </tbody>
 </table>
