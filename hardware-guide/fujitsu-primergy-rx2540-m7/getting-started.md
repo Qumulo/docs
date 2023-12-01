@@ -6,7 +6,7 @@ sidebar: hardware_guide_sidebar
 keywords: getting_started_guide, quick_reference, Fujitsu_PRIMERGY_RX2540_M7, Fujitsu, PRIMERGY, RX2540, 2540, M7
 ---
 
-{% capture askFujitsu %}Your {{site.fprx2540m7}} node might require a firmware update. Before you get started with Qumulo Core, contact [Fujitsu Product Support](https://support.ts.fujitsu.com/) for information about the minimum required firmware level and hardware configuration.
+{% capture askFujitsu %}Your {{site.fprx2540m7}} node might require a firmware update. Before you get started with Qumulo Core, contact [Fujitsu Product Support](https://support.ts.fujitsu.com/) for information about the minimum required firmware level and hardware configuration.{% endcapture %}
 {% include note.html content=askFujitsu %}
 
 ## Step 1: Verify Your Node
