@@ -12,47 +12,39 @@ keywords: technical_specifications, tech_specs, specs, specifications, HPE_ProLi
 <thead>
   <tr>
     <th></th>
-    <th>{{site.dl325g10p}} 34T</th>
-    <th>{{site.dl325g10p}} 145T</th>
     <th>{{site.dl325g10p}} 291T</th>
+    <th>{{site.dl325g10p}} 145T</th>    
+    <th>{{site.dl325g10p}} 34T</th>
   </tr>
 </thead>
 <tbody>
   <tr>
     <td><strong>Form Factor</strong></td>
-    <td style="text-align: center;">1U</td>
-    <td style="text-align: center;">1U</td>
-    <td style="text-align: center;">1U</td>
+    <td style="text-align: center;" colspan="3">1U</td>
   </tr>
   <tr>
     <td><strong>Raw Storage Capacity</strong></td>
-    <td style="text-align: center;">34 TB</td>
+    <td style="text-align: center;">291 TB</td>    
     <td style="text-align: center;">145 TB</td>
-    <td style="text-align: center;">291 TB</td>
+    <td style="text-align: center;">34 TB</td>
   </tr>
   <tr>
     <td><strong>SSD or NVM3</strong></td>
-    <td style="text-align: center;">9 &times; 3.84 TB NVMe</td>
-    <td style="text-align: center;">19 &times; 7.68 TB NVMe</td>
     <td style="text-align: center;">19 &times; 15.36 TB NVMe</td>
+    <td style="text-align: center;">19 &times; 7.68 TB NVMe</td>    
+    <td style="text-align: center;">9 &times; 3.84 TB NVMe</td>
   </tr>
   <tr>
     <td><strong>Networking</strong></td>
-    <td style="text-align: center;">4 &times; 100 GbE</td>
-    <td style="text-align: center;">4 &times; 100 GbE</td>
-    <td style="text-align: center;">4 &times; 100 GbE</td>
+    <td style="text-align: center;" colspan="3">4 &times; 100 GbE</td>
   </tr>
   <tr>
     <td><strong>CPU</strong></td>
-    <td style="text-align: center;">24 Cores &times; 2.8 GHz</td>
-    <td style="text-align: center;">24 Cores &times; 2.8 GHz</td>
-    <td style="text-align: center;">24 Cores &times; 2.8 GHz</td>
+    <td style="text-align: center;" colspan="3">24 Cores &times; 2.8 GHz</td>
   </tr>
   <tr>
     <td><strong>Memory</strong></td>
-    <td style="text-align: center;">128 GB</td>
-    <td style="text-align: center;">128 GB</td>
-    <td style="text-align: center;">128 GB</td>
+    <td style="text-align: center;" colspan="3">128 GB</td>
   </tr>
 </tbody>
 </table>
