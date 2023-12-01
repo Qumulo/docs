@@ -10,12 +10,14 @@ keywords: technical_specifications, tech_specs, specs, specifications, HPE_Apoll
 <thead>
   <tr>
     <th></th>
-    <th>{{site.a4200g10p}} 480TB<br>General Purpose</th>
-    <th>{{site.a4200g10p}} 480TB<br>Active</th>
-    <th>{{site.a4200g10p}} 240TB<br>General Purpose</th>
-    <th>{{site.a4200g10p}} 240TB<br>Active</th>
-    <th>{{site.a4200g10p}} 90TB<br>Active</th>
-    <th>{{site.a4200g10p}} 36TB<br>Active</th>    
+    <th>{{site.a4200g10p}} 480TB<br>(General Purpose)</th>
+    <th>{{site.a4200g10p}} 480TB<br>(Active)</th>
+    <th>{{site.a4200g10p}} 240TB<br>(General Purpose)</th>
+    <th>{{site.a4200g10p}} 240TB<br>(Active)</th>
+    <th>{{site.a4200g10p}} 90TB<br>(General Purpose)</th>
+    <th>{{site.a4200g10p}} 90TB<br>(Active)</th>
+    <th>{{site.a4200g10p}} 36TB<br>(General Purpose)</th>    
+    <th>{{site.a4200g10p}} 36TB<br>(Active)</th>
   </tr>
 </thead>
 <tbody>
@@ -23,31 +25,31 @@ keywords: technical_specifications, tech_specs, specs, specifications, HPE_Apoll
     <td><strong>Raw Capacity</strong></td>
     <td colspan="2" style="text-align: center;">480 TB</td>
     <td colspan="2" style="text-align: center;">240 TB</td>
-    <td style="text-align: center;">90 TB</td>
-    <td style="text-align: center;">36 TB</td>
+    <td colspan="2" style="text-align: center;">90 TB</td>
+    <td colspan="2" style="text-align: center;">36 TB</td>
   </tr>
   <tr>
     <td><strong>HDDs</strong></td>
     <td colspan="2" style="text-align: center;">24 &times; 20 TB</td>
     <td colspan="2" style="text-align: center;">24 &times; 10 TB</td>
-    <td style="text-align: center;">9 &times; 10 TB</td>
-    <td style="text-align: center;">9 &times; 4 TB</td>
+    <td colspan="2" style="text-align: center;">9 &times; 10 TB</td>
+    <td colspan="2" style="text-align: center;">9 &times; 4 TB</td>
   </tr>
   <tr>
     <td><strong>Logical Flash Cache Capacity</strong></td>
     <td colspan="2" style="text-align: center;">8 &times; 1.6 TB</td>
     <td colspan="2" style="text-align: center;">8 &times; 0.8 TB</td>
-    <td colspan="2" style="text-align: center;">3 &times; 0.8 TB</td>
+    <td colspan="4" style="text-align: center;">3 &times; 0.8 TB</td>
   </tr>
   <tr>
     <td><strong>CPU</strong></td>
     <td colspan="4" style="text-align: center;">2 &times; Intel Xeon Silver 4310 12 cores @ 2.10 GHz</td>
-    <td colspan="2" style="text-align: center;">1 &times; Intel Xeon Silver 4310 12 cores @ 2.10 GHz</td>
+    <td colspan="4" style="text-align: center;">1 &times; Intel Xeon Silver 4310 12 cores @ 2.10 GHz</td>
   </tr>
   <tr>
     <td><strong>Memory</strong></td>
     <td colspan="4" style="text-align: center;">128 GB</td>
-    <td colspan="2" style="text-align: center;">64 GB</td>
+    <td colspan="4" style="text-align: center;">64 GB</td>
   </tr>
   <tr>
     <td><strong>Connectivity Ports</strong></td>
@@ -55,7 +57,7 @@ keywords: technical_specifications, tech_specs, specs, specifications, HPE_Apoll
     <td style="text-align: center;">2 &times; 100 GbE</td>
     <td style="text-align: center;">2 &times; 25 GbE</td>
     <td style="text-align: center;">2 &times; 100 GbE</td>
-    <td colspan="2" style="text-align: center;">2 &times; 25 GbE<br>or 2 &times; 100 GbE</td>
+    <td colspan="4" style="text-align: center;">2 &times; 25 GbE<br>or 2 &times; 100 GbE</td>
   </tr>
   <tr>
     <td><strong>Management Ports</strong></td>
