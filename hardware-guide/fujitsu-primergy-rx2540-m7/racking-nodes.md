@@ -7,7 +7,7 @@ keywords: rack, racking, rails, server_rack, chassis, insert_chassis, Fujitsu_PR
 ---
 
 ## To Install the Rails in the Server Rack
-{{site.fprx2540m7}} uses Rack Mount Kit QRL with CMA (PYBRR0B). For instructions on installing the kit in your server rack, see Fujitsu documentation.
+{{site.fprx2540m7}} uses Rack Mount Kit QRL with CMA (PYBRR0B). {{site.fprx2540m7followDocs}} <a href="fujitsu-primergy-rx2540-m7-rack-mount-kit-rail-kit-ball-bearing-type.pdf" class="pdf">Rail Kit—Ball Bearing Type (For Drop In / Slide In)</a>.
 
 <a id="insert-chassis"></a>
 ## To Insert the Chassis into the Server Rack
