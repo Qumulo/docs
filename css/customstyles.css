@@ -1441,7 +1441,7 @@ a.btn-contact:active {
 }
 
 a.pdf:after {
-  content: "\f1c1";
+  content: "\f1c1" !important;
   font-family: FontAwesome;
   font-weight: normal;
   font-style: normal;
