@@ -19,7 +19,7 @@ keywords: rack, racking, rails, server_rack, chassis, insert_chassis, Quiver_1U_
 For nodes without drives, follow the [Tool-Less Friction Rail Kit Installation Guide](https://dlcdnets.asus.com/pub/ASUS/server/RS520-E9-RS8/Manual/E21630_Tool-less_Friction_Rail_Kit_Installation_Guide_EM_WEB.pdf?model=RS500A-E12-RS12U) in the ASUS documentation.
 
 ### To Insert a Chassis with Internal Drives into a Deep Server Rack
-For nodes with drives in [internal storage bays](drive-bay-mapping.html#nvme-drives-in-internal-storage-bays), you can purchase the optional [1.2m Half Extension Ball Bearing Type Rail Kit](https://dlcdnets.asus.com/pub/ASUS/server/RS500A-E11/manual/1.2m_Half_Extension_Ball_bearing_Type_Rail_Kit_Instruction_13SV000IAM0901.pdf?model=RS500A-E12-RS12U) together with the Cable Management Arm. These two items replace the Tool-Less Friction Rail Kit.
+For nodes with drives in [internal storage bays](drive-bay-mapping.html#nvme-drives-in-internal-storage-bays), you can purchase the optional [1.2m Half Extension Ball Bearing Type Rail Kit](https://dlcdnets.asus.com/pub/ASUS/server/RS500A-E11/manual/1.2m_Half_Extension_Ball_bearing_Type_Rail_Kit_Instruction_13SV000IAM0901.pdf?model=RS500A-E12-RS12U) together with the <a href="https://docs.qumulo.com/pdf/quiver-1ua-all-nvme-gen1-cable-management-arm.pdf" class="pdf">Cable Management Arm</a>. These two items replace the Tool-Less Friction Rail Kit.
 
 {% include note.html content="To permit access to the internal storage bays, leave clearance at the top of the chassis." %}
 
