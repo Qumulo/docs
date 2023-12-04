@@ -10,7 +10,7 @@ keywords: getting_started_guide, quick_reference, HPE_Alletra_4110, HPE, Alletra
 {% include tip.html content=seeMore %}
 
 ## Prerequisites
-{{site.xrefUSBInstaller}}
+{{site.xrefUSBinstaller}}
 
 ## Step 1: Verify Your Node
 
