@@ -18,7 +18,7 @@ layout: default
 
     <strong>Table of Contents</strong>
     {% for entry in site.data.sidebars[page.sidebar].entries[0].folders %}
-      {% if entry.type != 'navi' and entry.title %}
+      {% if entry.type != 'navi' and entry.type != 'frontmatter' and entry.title %}
         <ul>
           <li><strong><a href="{{ entry.url }}">{{ entry.title }}</a></strong>
             <ul>

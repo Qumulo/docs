@@ -1,0 +1,1179 @@
+entries:
+- folders:
+  - folderitems:
+    - output: pdf
+      title: ''
+      type: frontmatter
+      url: /titlepage.html
+    - output: pdf
+      title: ''
+      type: frontmatter
+      url: /tocpage.html
+    output: pdf
+    title: ''
+    type: frontmatter
+  - folderitems:
+    - output: web
+      title: Documentation Home
+      url: /index.html
+    - output: web
+      title: Qumulo qq CLI Command Guide Home
+      url: /qq-cli-command-guide/
+    - output: web
+      title: Contacting the Qumulo Care Team
+      url: /contacting-qumulo-care-team.html
+    output: web
+    title: Qumulo qq CLI Command Guide
+    type: navi
+  - folderitems:
+    - output: web,pdf
+      title: ad_cancel
+      url: /qq-cli-command-guide/ad/ad_cancel.html
+    - output: web,pdf
+      title: ad_distinguished_name_to_account
+      url: /qq-cli-command-guide/ad/ad_distinguished_name_to_account.html
+    - output: web,pdf
+      title: ad_expand_groups
+      url: /qq-cli-command-guide/ad/ad_expand_groups.html
+    - output: web,pdf
+      title: ad_get_advanced_settings
+      url: /qq-cli-command-guide/ad/ad_get_advanced_settings.html
+    - output: web,pdf
+      title: ad_gid_to_sids
+      url: /qq-cli-command-guide/ad/ad_gid_to_sids.html
+    - output: web,pdf
+      title: ad_join
+      url: /qq-cli-command-guide/ad/ad_join.html
+    - output: web,pdf
+      title: ad_leave
+      url: /qq-cli-command-guide/ad/ad_leave.html
+    - output: web,pdf
+      title: ad_list
+      url: /qq-cli-command-guide/ad/ad_list.html
+    - output: web,pdf
+      title: ad_name_to_accounts
+      url: /qq-cli-command-guide/ad/ad_name_to_accounts.html
+    - output: web,pdf
+      title: ad_poll
+      url: /qq-cli-command-guide/ad/ad_poll.html
+    - output: web,pdf
+      title: ad_reconfigure
+      url: /qq-cli-command-guide/ad/ad_reconfigure.html
+    - output: web,pdf
+      title: ad_set_advanced_settings
+      url: /qq-cli-command-guide/ad/ad_set_advanced_settings.html
+    - output: web,pdf
+      title: ad_sid_to_account
+      url: /qq-cli-command-guide/ad/ad_sid_to_account.html
+    - output: web,pdf
+      title: ad_sid_to_gid
+      url: /qq-cli-command-guide/ad/ad_sid_to_gid.html
+    - output: web,pdf
+      title: ad_sid_to_uid
+      url: /qq-cli-command-guide/ad/ad_sid_to_uid.html
+    - output: web,pdf
+      title: ad_sid_to_username
+      url: /qq-cli-command-guide/ad/ad_sid_to_username.html
+    - output: web,pdf
+      title: ad_uid_to_sids
+      url: /qq-cli-command-guide/ad/ad_uid_to_sids.html
+    - output: web,pdf
+      title: ad_username_to_sids
+      url: /qq-cli-command-guide/ad/ad_username_to_sids.html
+    output: web,pdf
+    title: ad
+    url: /qq-cli-command-guide/ad/
+  - folderitems:
+    - output: web,pdf
+      title: add_nodes
+      url: /qq-cli-command-guide/add/add_nodes.html
+    output: web,pdf
+    title: add
+    url: /qq-cli-command-guide/add/
+  - folderitems:
+    - output: web,pdf
+      title: audit_get_cloudwatch_config
+      url: /qq-cli-command-guide/audit/audit_get_cloudwatch_config.html
+    - output: web,pdf
+      title: audit_get_cloudwatch_status
+      url: /qq-cli-command-guide/audit/audit_get_cloudwatch_status.html
+    - output: web,pdf
+      title: audit_get_syslog_config
+      url: /qq-cli-command-guide/audit/audit_get_syslog_config.html
+    - output: web,pdf
+      title: audit_get_syslog_status
+      url: /qq-cli-command-guide/audit/audit_get_syslog_status.html
+    - output: web,pdf
+      title: audit_set_cloudwatch_config
+      url: /qq-cli-command-guide/audit/audit_set_cloudwatch_config.html
+    - output: web,pdf
+      title: audit_set_syslog_config
+      url: /qq-cli-command-guide/audit/audit_set_syslog_config.html
+    output: web,pdf
+    title: audit
+    url: /qq-cli-command-guide/audit/
+  - folderitems:
+    - output: web,pdf
+      title: auth_add_group
+      url: /qq-cli-command-guide/auth/auth_add_group.html
+    - output: web,pdf
+      title: auth_add_user
+      url: /qq-cli-command-guide/auth/auth_add_user.html
+    - output: web,pdf
+      title: auth_assign_role
+      url: /qq-cli-command-guide/auth/auth_assign_role.html
+    - output: web,pdf
+      title: auth_clear_cache
+      url: /qq-cli-command-guide/auth/auth_clear_cache.html
+    - output: web,pdf
+      title: auth_create_access_token
+      url: /qq-cli-command-guide/auth/auth_create_access_token.html
+    - output: web,pdf
+      title: auth_create_role
+      url: /qq-cli-command-guide/auth/auth_create_role.html
+    - output: web,pdf
+      title: auth_delete_access_token
+      url: /qq-cli-command-guide/auth/auth_delete_access_token.html
+    - output: web,pdf
+      title: auth_delete_group
+      url: /qq-cli-command-guide/auth/auth_delete_group.html
+    - output: web,pdf
+      title: auth_delete_role
+      url: /qq-cli-command-guide/auth/auth_delete_role.html
+    - output: web,pdf
+      title: auth_delete_user
+      url: /qq-cli-command-guide/auth/auth_delete_user.html
+    - output: web,pdf
+      title: auth_expand_identity
+      url: /qq-cli-command-guide/auth/auth_expand_identity.html
+    - output: web,pdf
+      title: auth_find_identity
+      url: /qq-cli-command-guide/auth/auth_find_identity.html
+    - output: web,pdf
+      title: auth_get_access_token
+      url: /qq-cli-command-guide/auth/auth_get_access_token.html
+    - output: web,pdf
+      title: auth_get_user_defined_mappings
+      url: /qq-cli-command-guide/auth/auth_get_user_defined_mappings.html
+    - output: web,pdf
+      title: auth_list_access_tokens
+      url: /qq-cli-command-guide/auth/auth_list_access_tokens.html
+    - output: web,pdf
+      title: auth_list_group
+      url: /qq-cli-command-guide/auth/auth_list_group.html
+    - output: web,pdf
+      title: auth_list_groups
+      url: /qq-cli-command-guide/auth/auth_list_groups.html
+    - output: web,pdf
+      title: auth_list_privileges
+      url: /qq-cli-command-guide/auth/auth_list_privileges.html
+    - output: web,pdf
+      title: auth_list_role
+      url: /qq-cli-command-guide/auth/auth_list_role.html
+    - output: web,pdf
+      title: auth_list_roles
+      url: /qq-cli-command-guide/auth/auth_list_roles.html
+    - output: web,pdf
+      title: auth_list_user
+      url: /qq-cli-command-guide/auth/auth_list_user.html
+    - output: web,pdf
+      title: auth_list_users
+      url: /qq-cli-command-guide/auth/auth_list_users.html
+    - output: web,pdf
+      title: auth_mod_group
+      url: /qq-cli-command-guide/auth/auth_mod_group.html
+    - output: web,pdf
+      title: auth_mod_user
+      url: /qq-cli-command-guide/auth/auth_mod_user.html
+    - output: web,pdf
+      title: auth_modify_access_token
+      url: /qq-cli-command-guide/auth/auth_modify_access_token.html
+    - output: web,pdf
+      title: auth_modify_role
+      url: /qq-cli-command-guide/auth/auth_modify_role.html
+    - output: web,pdf
+      title: auth_set_password
+      url: /qq-cli-command-guide/auth/auth_set_password.html
+    - output: web,pdf
+      title: auth_set_user_defined_mappings
+      url: /qq-cli-command-guide/auth/auth_set_user_defined_mappings.html
+    - output: web,pdf
+      title: auth_unassign_role
+      url: /qq-cli-command-guide/auth/auth_unassign_role.html
+    output: web,pdf
+    title: auth
+    url: /qq-cli-command-guide/auth/
+  - folderitems:
+    - output: web,pdf
+      title: capacity_history_files_get
+      url: /qq-cli-command-guide/capacity/capacity_history_files_get.html
+    - output: web,pdf
+      title: capacity_history_get
+      url: /qq-cli-command-guide/capacity/capacity_history_get.html
+    output: web,pdf
+    title: capacity
+    url: /qq-cli-command-guide/capacity/
+  - folderitems:
+    - output: web,pdf
+      title: change_password
+      url: /qq-cli-command-guide/change/change_password.html
+    output: web,pdf
+    title: change
+    url: /qq-cli-command-guide/change/
+  - folderitems:
+    - output: web,pdf
+      title: checksumming_get_status
+      url: /qq-cli-command-guide/checksumming/checksumming_get_status.html
+    output: web,pdf
+    title: checksumming
+    url: /qq-cli-command-guide/checksumming/
+  - folderitems:
+    - output: web,pdf
+      title: cluster_conf
+      url: /qq-cli-command-guide/cluster/cluster_conf.html
+    - output: web,pdf
+      title: cluster_create
+      url: /qq-cli-command-guide/cluster/cluster_create.html
+    - output: web,pdf
+      title: cluster_slot_set_config
+      url: /qq-cli-command-guide/cluster/cluster_slot_set_config.html
+    - output: web,pdf
+      title: cluster_slots
+      url: /qq-cli-command-guide/cluster/cluster_slots.html
+    output: web,pdf
+    title: cluster
+    url: /qq-cli-command-guide/cluster/
+  - folderitems:
+    - output: web,pdf
+      title: current_activity_get
+      url: /qq-cli-command-guide/current/current_activity_get.html
+    output: web,pdf
+    title: current
+    url: /qq-cli-command-guide/current/
+  - folderitems:
+    - output: web,pdf
+      title: dns_clear_cache
+      url: /qq-cli-command-guide/dns/dns_clear_cache.html
+    - output: web,pdf
+      title: dns_get_lookup_overrides
+      url: /qq-cli-command-guide/dns/dns_get_lookup_overrides.html
+    - output: web,pdf
+      title: dns_resolve_hostnames
+      url: /qq-cli-command-guide/dns/dns_resolve_hostnames.html
+    - output: web,pdf
+      title: dns_resolve_ips
+      url: /qq-cli-command-guide/dns/dns_resolve_ips.html
+    - output: web,pdf
+      title: dns_set_lookup_overrides
+      url: /qq-cli-command-guide/dns/dns_set_lookup_overrides.html
+    output: web,pdf
+    title: dns
+    url: /qq-cli-command-guide/dns/
+  - folderitems:
+    - output: web,pdf
+      title: encryption_get_key_store
+      url: /qq-cli-command-guide/encryption/encryption_get_key_store.html
+    - output: web,pdf
+      title: encryption_get_status
+      url: /qq-cli-command-guide/encryption/encryption_get_status.html
+    - output: web,pdf
+      title: encryption_set_key_store
+      url: /qq-cli-command-guide/encryption/encryption_set_key_store.html
+    output: web,pdf
+    title: encryption
+    url: /qq-cli-command-guide/encryption/
+  - folderitems:
+    - output: web,pdf
+      title: floating_ip_allocation
+      url: /qq-cli-command-guide/floating/floating_ip_allocation.html
+    output: web,pdf
+    title: floating
+    url: /qq-cli-command-guide/floating/
+  - folderitems:
+    - output: web,pdf
+      title: fs_acl_explain_chmod
+      url: /qq-cli-command-guide/fs/fs_acl_explain_chmod.html
+    - output: web,pdf
+      title: fs_acl_explain_posix_mode
+      url: /qq-cli-command-guide/fs/fs_acl_explain_posix_mode.html
+    - output: web,pdf
+      title: fs_acl_explain_rights
+      url: /qq-cli-command-guide/fs/fs_acl_explain_rights.html
+    - output: web,pdf
+      title: fs_copy
+      url: /qq-cli-command-guide/fs/fs_copy.html
+    - output: web,pdf
+      title: fs_create_dir
+      url: /qq-cli-command-guide/fs/fs_create_dir.html
+    - output: web,pdf
+      title: fs_create_file
+      url: /qq-cli-command-guide/fs/fs_create_file.html
+    - output: web,pdf
+      title: fs_create_link
+      url: /qq-cli-command-guide/fs/fs_create_link.html
+    - output: web,pdf
+      title: fs_create_symlink
+      url: /qq-cli-command-guide/fs/fs_create_symlink.html
+    - output: web,pdf
+      title: fs_create_unix_file
+      url: /qq-cli-command-guide/fs/fs_create_unix_file.html
+    - output: web,pdf
+      title: fs_delete
+      url: /qq-cli-command-guide/fs/fs_delete.html
+    - output: web,pdf
+      title: fs_delete_user_metadata
+      url: /qq-cli-command-guide/fs/fs_delete_user_metadata.html
+    - output: web,pdf
+      title: fs_file_get_attr
+      url: /qq-cli-command-guide/fs/fs_file_get_attr.html
+    - output: web,pdf
+      title: fs_file_samples
+      url: /qq-cli-command-guide/fs/fs_file_samples.html
+    - output: web,pdf
+      title: fs_file_set_attr
+      url: /qq-cli-command-guide/fs/fs_file_set_attr.html
+    - output: web,pdf
+      title: fs_file_set_smb_attrs
+      url: /qq-cli-command-guide/fs/fs_file_set_smb_attrs.html
+    - output: web,pdf
+      title: fs_get_acl
+      url: /qq-cli-command-guide/fs/fs_get_acl.html
+    - output: web,pdf
+      title: fs_get_atime_settings
+      url: /qq-cli-command-guide/fs/fs_get_atime_settings.html
+    - output: web,pdf
+      title: fs_get_notify_settings
+      url: /qq-cli-command-guide/fs/fs_get_notify_settings.html
+    - output: web,pdf
+      title: fs_get_permissions_settings
+      url: /qq-cli-command-guide/fs/fs_get_permissions_settings.html
+    - output: web,pdf
+      title: fs_get_stats
+      url: /qq-cli-command-guide/fs/fs_get_stats.html
+    - output: web,pdf
+      title: fs_get_user_metadata
+      url: /qq-cli-command-guide/fs/fs_get_user_metadata.html
+    - output: web,pdf
+      title: fs_list_lock_waiters_by_client
+      url: /qq-cli-command-guide/fs/fs_list_lock_waiters_by_client.html
+    - output: web,pdf
+      title: fs_list_lock_waiters_by_file
+      url: /qq-cli-command-guide/fs/fs_list_lock_waiters_by_file.html
+    - output: web,pdf
+      title: fs_list_locks
+      url: /qq-cli-command-guide/fs/fs_list_locks.html
+    - output: web,pdf
+      title: fs_list_named_streams
+      url: /qq-cli-command-guide/fs/fs_list_named_streams.html
+    - output: web,pdf
+      title: fs_list_user_metadata
+      url: /qq-cli-command-guide/fs/fs_list_user_metadata.html
+    - output: web,pdf
+      title: fs_modify_acl
+      url: /qq-cli-command-guide/fs/fs_modify_acl.html
+    - output: web,pdf
+      title: fs_notify
+      url: /qq-cli-command-guide/fs/fs_notify.html
+    - output: web,pdf
+      title: fs_punch_hole
+      url: /qq-cli-command-guide/fs/fs_punch_hole.html
+    - output: web,pdf
+      title: fs_read
+      url: /qq-cli-command-guide/fs/fs_read.html
+    - output: web,pdf
+      title: fs_read_dir
+      url: /qq-cli-command-guide/fs/fs_read_dir.html
+    - output: web,pdf
+      title: fs_read_dir_aggregates
+      url: /qq-cli-command-guide/fs/fs_read_dir_aggregates.html
+    - output: web,pdf
+      title: fs_release_nlm_lock
+      url: /qq-cli-command-guide/fs/fs_release_nlm_lock.html
+    - output: web,pdf
+      title: fs_release_nlm_locks_by_client
+      url: /qq-cli-command-guide/fs/fs_release_nlm_locks_by_client.html
+    - output: web,pdf
+      title: fs_remove_stream
+      url: /qq-cli-command-guide/fs/fs_remove_stream.html
+    - output: web,pdf
+      title: fs_rename
+      url: /qq-cli-command-guide/fs/fs_rename.html
+    - output: web,pdf
+      title: fs_resolve_paths
+      url: /qq-cli-command-guide/fs/fs_resolve_paths.html
+    - output: web,pdf
+      title: fs_security_add_key
+      url: /qq-cli-command-guide/fs/fs_security_add_key.html
+    - output: web,pdf
+      title: fs_security_delete_key
+      url: /qq-cli-command-guide/fs/fs_security_delete_key.html
+    - output: web,pdf
+      title: fs_security_get_key
+      url: /qq-cli-command-guide/fs/fs_security_get_key.html
+    - output: web,pdf
+      title: fs_security_get_key_replace_challenge
+      url: /qq-cli-command-guide/fs/fs_security_get_key_replace_challenge.html
+    - output: web,pdf
+      title: fs_security_get_key_usage
+      url: /qq-cli-command-guide/fs/fs_security_get_key_usage.html
+    - output: web,pdf
+      title: fs_security_list_keys
+      url: /qq-cli-command-guide/fs/fs_security_list_keys.html
+    - output: web,pdf
+      title: fs_security_modify_key
+      url: /qq-cli-command-guide/fs/fs_security_modify_key.html
+    - output: web,pdf
+      title: fs_security_replace_key
+      url: /qq-cli-command-guide/fs/fs_security_replace_key.html
+    - output: web,pdf
+      title: fs_set_acl
+      url: /qq-cli-command-guide/fs/fs_set_acl.html
+    - output: web,pdf
+      title: fs_set_atime_settings
+      url: /qq-cli-command-guide/fs/fs_set_atime_settings.html
+    - output: web,pdf
+      title: fs_set_notify_settings
+      url: /qq-cli-command-guide/fs/fs_set_notify_settings.html
+    - output: web,pdf
+      title: fs_set_permissions_settings
+      url: /qq-cli-command-guide/fs/fs_set_permissions_settings.html
+    - output: web,pdf
+      title: fs_set_user_metadata
+      url: /qq-cli-command-guide/fs/fs_set_user_metadata.html
+    - output: web,pdf
+      title: fs_walk_tree
+      url: /qq-cli-command-guide/fs/fs_walk_tree.html
+    - output: web,pdf
+      title: fs_write
+      url: /qq-cli-command-guide/fs/fs_write.html
+    output: web,pdf
+    title: fs
+    url: /qq-cli-command-guide/fs/
+  - folderitems:
+    - output: web,pdf
+      title: ftp_get_status
+      url: /qq-cli-command-guide/ftp/ftp_get_status.html
+    - output: web,pdf
+      title: ftp_modify_settings
+      url: /qq-cli-command-guide/ftp/ftp_modify_settings.html
+    output: web,pdf
+    title: ftp
+    url: /qq-cli-command-guide/ftp/
+  - folderitems:
+    - output: web,pdf
+      title: get_vpn_keys
+      url: /qq-cli-command-guide/get/get_vpn_keys.html
+    output: web,pdf
+    title: get
+    url: /qq-cli-command-guide/get/
+  - folderitems:
+    - output: web,pdf
+      title: halt_cluster
+      url: /qq-cli-command-guide/halt/halt_cluster.html
+    output: web,pdf
+    title: halt
+    url: /qq-cli-command-guide/halt/
+  - folderitems:
+    - output: web,pdf
+      title: help
+      url: /qq-cli-command-guide/help/help.html
+    output: web,pdf
+    title: help
+    url: /qq-cli-command-guide/help/
+  - folderitems:
+    - output: web,pdf
+      title: identity_attributes_get
+      url: /qq-cli-command-guide/identity/identity_attributes_get.html
+    - output: web,pdf
+      title: identity_attributes_set
+      url: /qq-cli-command-guide/identity/identity_attributes_set.html
+    output: web,pdf
+    title: identity
+    url: /qq-cli-command-guide/identity/
+  - folderitems:
+    - output: web,pdf
+      title: install_vpn_keys
+      url: /qq-cli-command-guide/install/install_vpn_keys.html
+    output: web,pdf
+    title: install
+    url: /qq-cli-command-guide/install/
+  - folderitems:
+    - output: web,pdf
+      title: kerberos_delete_keytab
+      url: /qq-cli-command-guide/kerberos/kerberos_delete_keytab.html
+    - output: web,pdf
+      title: kerberos_get_keytab
+      url: /qq-cli-command-guide/kerberos/kerberos_get_keytab.html
+    - output: web,pdf
+      title: kerberos_get_settings
+      url: /qq-cli-command-guide/kerberos/kerberos_get_settings.html
+    - output: web,pdf
+      title: kerberos_modify_settings
+      url: /qq-cli-command-guide/kerberos/kerberos_modify_settings.html
+    - output: web,pdf
+      title: kerberos_set_keytab
+      url: /qq-cli-command-guide/kerberos/kerberos_set_keytab.html
+    output: web,pdf
+    title: kerberos
+    url: /qq-cli-command-guide/kerberos/
+  - folderitems:
+    - output: web,pdf
+      title: ldap_get_settings
+      url: /qq-cli-command-guide/ldap/ldap_get_settings.html
+    - output: web,pdf
+      title: ldap_get_status
+      url: /qq-cli-command-guide/ldap/ldap_get_status.html
+    - output: web,pdf
+      title: ldap_login_name_to_gid_numbers
+      url: /qq-cli-command-guide/ldap/ldap_login_name_to_gid_numbers.html
+    - output: web,pdf
+      title: ldap_login_name_to_uid_numbers
+      url: /qq-cli-command-guide/ldap/ldap_login_name_to_uid_numbers.html
+    - output: web,pdf
+      title: ldap_set_settings
+      url: /qq-cli-command-guide/ldap/ldap_set_settings.html
+    - output: web,pdf
+      title: ldap_uid_number_to_login_name
+      url: /qq-cli-command-guide/ldap/ldap_uid_number_to_login_name.html
+    - output: web,pdf
+      title: ldap_update_settings
+      url: /qq-cli-command-guide/ldap/ldap_update_settings.html
+    output: web,pdf
+    title: ldap
+    url: /qq-cli-command-guide/ldap/
+  - folderitems:
+    - output: web,pdf
+      title: login
+      url: /qq-cli-command-guide/login/login.html
+    output: web,pdf
+    title: login
+    url: /qq-cli-command-guide/login/
+  - folderitems:
+    - output: web,pdf
+      title: logout
+      url: /qq-cli-command-guide/logout/logout.html
+    output: web,pdf
+    title: logout
+    url: /qq-cli-command-guide/logout/
+  - folderitems:
+    - output: web,pdf
+      title: metrics_get
+      url: /qq-cli-command-guide/metrics/metrics_get.html
+    output: web,pdf
+    title: metrics
+    url: /qq-cli-command-guide/metrics/
+  - folderitems:
+    - output: web,pdf
+      title: monitoring_conf
+      url: /qq-cli-command-guide/monitoring/monitoring_conf.html
+    - output: web,pdf
+      title: monitoring_status_get
+      url: /qq-cli-command-guide/monitoring/monitoring_status_get.html
+    output: web,pdf
+    title: monitoring
+    url: /qq-cli-command-guide/monitoring/
+  - folderitems:
+    - output: web,pdf
+      title: multitenancy_create_tenant
+      url: /qq-cli-command-guide/multitenancy/multitenancy_create_tenant.html
+    - output: web,pdf
+      title: multitenancy_delete_tenant
+      url: /qq-cli-command-guide/multitenancy/multitenancy_delete_tenant.html
+    - output: web,pdf
+      title: multitenancy_get_tenant
+      url: /qq-cli-command-guide/multitenancy/multitenancy_get_tenant.html
+    - output: web,pdf
+      title: multitenancy_list_tenants
+      url: /qq-cli-command-guide/multitenancy/multitenancy_list_tenants.html
+    - output: web,pdf
+      title: multitenancy_modify_tenant
+      url: /qq-cli-command-guide/multitenancy/multitenancy_modify_tenant.html
+    - output: web,pdf
+      title: multitenancy_nfs_delete_settings
+      url: /qq-cli-command-guide/multitenancy/multitenancy_nfs_delete_settings.html
+    - output: web,pdf
+      title: multitenancy_nfs_get_global_settings
+      url: /qq-cli-command-guide/multitenancy/multitenancy_nfs_get_global_settings.html
+    - output: web,pdf
+      title: multitenancy_nfs_get_settings
+      url: /qq-cli-command-guide/multitenancy/multitenancy_nfs_get_settings.html
+    - output: web,pdf
+      title: multitenancy_nfs_list_settings
+      url: /qq-cli-command-guide/multitenancy/multitenancy_nfs_list_settings.html
+    - output: web,pdf
+      title: multitenancy_nfs_modify_global_settings
+      url: /qq-cli-command-guide/multitenancy/multitenancy_nfs_modify_global_settings.html
+    - output: web,pdf
+      title: multitenancy_nfs_modify_settings
+      url: /qq-cli-command-guide/multitenancy/multitenancy_nfs_modify_settings.html
+    - output: web,pdf
+      title: multitenancy_smb_delete_settings
+      url: /qq-cli-command-guide/multitenancy/multitenancy_smb_delete_settings.html
+    - output: web,pdf
+      title: multitenancy_smb_get_global_settings
+      url: /qq-cli-command-guide/multitenancy/multitenancy_smb_get_global_settings.html
+    - output: web,pdf
+      title: multitenancy_smb_get_settings
+      url: /qq-cli-command-guide/multitenancy/multitenancy_smb_get_settings.html
+    - output: web,pdf
+      title: multitenancy_smb_list_settings
+      url: /qq-cli-command-guide/multitenancy/multitenancy_smb_list_settings.html
+    - output: web,pdf
+      title: multitenancy_smb_modify_global_settings
+      url: /qq-cli-command-guide/multitenancy/multitenancy_smb_modify_global_settings.html
+    - output: web,pdf
+      title: multitenancy_smb_modify_settings
+      url: /qq-cli-command-guide/multitenancy/multitenancy_smb_modify_settings.html
+    output: web,pdf
+    title: multitenancy
+    url: /qq-cli-command-guide/multitenancy/
+  - folderitems:
+    - output: web,pdf
+      title: network_add_network
+      url: /qq-cli-command-guide/network/network_add_network.html
+    - output: web,pdf
+      title: network_delete_network
+      url: /qq-cli-command-guide/network/network_delete_network.html
+    - output: web,pdf
+      title: network_get_interface
+      url: /qq-cli-command-guide/network/network_get_interface.html
+    - output: web,pdf
+      title: network_get_network
+      url: /qq-cli-command-guide/network/network_get_network.html
+    - output: web,pdf
+      title: network_list_connections
+      url: /qq-cli-command-guide/network/network_list_connections.html
+    - output: web,pdf
+      title: network_list_interfaces
+      url: /qq-cli-command-guide/network/network_list_interfaces.html
+    - output: web,pdf
+      title: network_list_networks
+      url: /qq-cli-command-guide/network/network_list_networks.html
+    - output: web,pdf
+      title: network_mod_interface
+      url: /qq-cli-command-guide/network/network_mod_interface.html
+    - output: web,pdf
+      title: network_mod_network
+      url: /qq-cli-command-guide/network/network_mod_network.html
+    - output: web,pdf
+      title: network_poll
+      url: /qq-cli-command-guide/network/network_poll.html
+    output: web,pdf
+    title: network
+    url: /qq-cli-command-guide/network/
+  - folderitems:
+    - output: web,pdf
+      title: nfs_add_export
+      url: /qq-cli-command-guide/nfs/nfs_add_export.html
+    - output: web,pdf
+      title: nfs_delete_export
+      url: /qq-cli-command-guide/nfs/nfs_delete_export.html
+    - output: web,pdf
+      title: nfs_get_export
+      url: /qq-cli-command-guide/nfs/nfs_get_export.html
+    - output: web,pdf
+      title: nfs_get_settings
+      url: /qq-cli-command-guide/nfs/nfs_get_settings.html
+    - output: web,pdf
+      title: nfs_list_exports
+      url: /qq-cli-command-guide/nfs/nfs_list_exports.html
+    - output: web,pdf
+      title: nfs_mod_export
+      url: /qq-cli-command-guide/nfs/nfs_mod_export.html
+    - output: web,pdf
+      title: nfs_mod_export_host_access
+      url: /qq-cli-command-guide/nfs/nfs_mod_export_host_access.html
+    - output: web,pdf
+      title: nfs_modify_settings
+      url: /qq-cli-command-guide/nfs/nfs_modify_settings.html
+    output: web,pdf
+    title: nfs
+    url: /qq-cli-command-guide/nfs/
+  - folderitems:
+    - output: web,pdf
+      title: node_chassis_status_get
+      url: /qq-cli-command-guide/node/node_chassis_status_get.html
+    - output: web,pdf
+      title: node_state_get
+      url: /qq-cli-command-guide/node/node_state_get.html
+    output: web,pdf
+    title: node
+    url: /qq-cli-command-guide/node/
+  - folderitems:
+    - output: web,pdf
+      title: nodes_list
+      url: /qq-cli-command-guide/nodes/nodes_list.html
+    output: web,pdf
+    title: nodes
+    url: /qq-cli-command-guide/nodes/
+  - folderitems:
+    - output: web,pdf
+      title: protection_status_get
+      url: /qq-cli-command-guide/protection/protection_status_get.html
+    output: web,pdf
+    title: protection
+    url: /qq-cli-command-guide/protection/
+  - folderitems:
+    - output: web,pdf
+      title: quota_create_quota
+      url: /qq-cli-command-guide/quota/quota_create_quota.html
+    - output: web,pdf
+      title: quota_delete_quota
+      url: /qq-cli-command-guide/quota/quota_delete_quota.html
+    - output: web,pdf
+      title: quota_get_quota
+      url: /qq-cli-command-guide/quota/quota_get_quota.html
+    - output: web,pdf
+      title: quota_list_quotas
+      url: /qq-cli-command-guide/quota/quota_list_quotas.html
+    - output: web,pdf
+      title: quota_update_quota
+      url: /qq-cli-command-guide/quota/quota_update_quota.html
+    output: web,pdf
+    title: quota
+    url: /qq-cli-command-guide/quota/
+  - folderitems:
+    - output: web,pdf
+      title: raw
+      url: /qq-cli-command-guide/raw/raw.html
+    output: web,pdf
+    title: raw
+    url: /qq-cli-command-guide/raw/
+  - folderitems:
+    - output: web,pdf
+      title: reboot_pause
+      url: /qq-cli-command-guide/reboot/reboot_pause.html
+    - output: web,pdf
+      title: reboot_resume
+      url: /qq-cli-command-guide/reboot/reboot_resume.html
+    - output: web,pdf
+      title: reboot_start
+      url: /qq-cli-command-guide/reboot/reboot_start.html
+    - output: web,pdf
+      title: reboot_status
+      url: /qq-cli-command-guide/reboot/reboot_status.html
+    output: web,pdf
+    title: reboot
+    url: /qq-cli-command-guide/reboot/
+  - folderitems:
+    - output: web,pdf
+      title: replace_nodes
+      url: /qq-cli-command-guide/replace/replace_nodes.html
+    output: web,pdf
+    title: replace
+    url: /qq-cli-command-guide/replace/
+  - folderitems:
+    - output: web,pdf
+      title: replication_abort_object_replication
+      url: /qq-cli-command-guide/replication/replication_abort_object_replication.html
+    - output: web,pdf
+      title: replication_abort_replication
+      url: /qq-cli-command-guide/replication/replication_abort_replication.html
+    - output: web,pdf
+      title: replication_add_blackout_window
+      url: /qq-cli-command-guide/replication/replication_add_blackout_window.html
+    - output: web,pdf
+      title: replication_authorize
+      url: /qq-cli-command-guide/replication/replication_authorize.html
+    - output: web,pdf
+      title: replication_create_object_relationship
+      url: /qq-cli-command-guide/replication/replication_create_object_relationship.html
+    - output: web,pdf
+      title: replication_create_source_relationship
+      url: /qq-cli-command-guide/replication/replication_create_source_relationship.html
+    - output: web,pdf
+      title: replication_delete_blackout_windows
+      url: /qq-cli-command-guide/replication/replication_delete_blackout_windows.html
+    - output: web,pdf
+      title: replication_delete_object_relationship
+      url: /qq-cli-command-guide/replication/replication_delete_object_relationship.html
+    - output: web,pdf
+      title: replication_delete_source_relationship
+      url: /qq-cli-command-guide/replication/replication_delete_source_relationship.html
+    - output: web,pdf
+      title: replication_delete_target_relationship
+      url: /qq-cli-command-guide/replication/replication_delete_target_relationship.html
+    - output: web,pdf
+      title: replication_get_object_relationship
+      url: /qq-cli-command-guide/replication/replication_get_object_relationship.html
+    - output: web,pdf
+      title: replication_get_object_relationship_status
+      url: /qq-cli-command-guide/replication/replication_get_object_relationship_status.html
+    - output: web,pdf
+      title: replication_get_source_relationship
+      url: /qq-cli-command-guide/replication/replication_get_source_relationship.html
+    - output: web,pdf
+      title: replication_get_source_relationship_status
+      url: /qq-cli-command-guide/replication/replication_get_source_relationship_status.html
+    - output: web,pdf
+      title: replication_get_target_relationship_status
+      url: /qq-cli-command-guide/replication/replication_get_target_relationship_status.html
+    - output: web,pdf
+      title: replication_link_snapshot_policy
+      url: /qq-cli-command-guide/replication/replication_link_snapshot_policy.html
+    - output: web,pdf
+      title: replication_list_object_relationship_statuses
+      url: /qq-cli-command-guide/replication/replication_list_object_relationship_statuses.html
+    - output: web,pdf
+      title: replication_list_object_relationships
+      url: /qq-cli-command-guide/replication/replication_list_object_relationships.html
+    - output: web,pdf
+      title: replication_list_queued_snapshots
+      url: /qq-cli-command-guide/replication/replication_list_queued_snapshots.html
+    - output: web,pdf
+      title: replication_list_source_relationship_statuses
+      url: /qq-cli-command-guide/replication/replication_list_source_relationship_statuses.html
+    - output: web,pdf
+      title: replication_list_source_relationships
+      url: /qq-cli-command-guide/replication/replication_list_source_relationships.html
+    - output: web,pdf
+      title: replication_list_target_relationship_statuses
+      url: /qq-cli-command-guide/replication/replication_list_target_relationship_statuses.html
+    - output: web,pdf
+      title: replication_make_target_writable
+      url: /qq-cli-command-guide/replication/replication_make_target_writable.html
+    - output: web,pdf
+      title: replication_modify_source_relationship
+      url: /qq-cli-command-guide/replication/replication_modify_source_relationship.html
+    - output: web,pdf
+      title: replication_reconnect_target_relationship
+      url: /qq-cli-command-guide/replication/replication_reconnect_target_relationship.html
+    - output: web,pdf
+      title: replication_release_queued_snapshot
+      url: /qq-cli-command-guide/replication/replication_release_queued_snapshot.html
+    - output: web,pdf
+      title: replication_replicate
+      url: /qq-cli-command-guide/replication/replication_replicate.html
+    - output: web,pdf
+      title: replication_reverse_target_relationship
+      url: /qq-cli-command-guide/replication/replication_reverse_target_relationship.html
+    - output: web,pdf
+      title: replication_set_snapshot_policy_replication_mode
+      url: /qq-cli-command-guide/replication/replication_set_snapshot_policy_replication_mode.html
+    - output: web,pdf
+      title: replication_set_target_relationship_lock
+      url: /qq-cli-command-guide/replication/replication_set_target_relationship_lock.html
+    - output: web,pdf
+      title: replication_start_object_relationship
+      url: /qq-cli-command-guide/replication/replication_start_object_relationship.html
+    - output: web,pdf
+      title: replication_unlink_snapshot_policy
+      url: /qq-cli-command-guide/replication/replication_unlink_snapshot_policy.html
+    output: web,pdf
+    title: replication
+    url: /qq-cli-command-guide/replication/
+  - folderitems:
+    - output: web,pdf
+      title: restriper_status
+      url: /qq-cli-command-guide/restriper/restriper_status.html
+    output: web,pdf
+    title: restriper
+    url: /qq-cli-command-guide/restriper/
+  - folderitems:
+    - output: web,pdf
+      title: rotate_encryption_keys
+      url: /qq-cli-command-guide/rotate/rotate_encryption_keys.html
+    output: web,pdf
+    title: rotate
+    url: /qq-cli-command-guide/rotate/
+  - folderitems:
+    - output: web,pdf
+      title: s3_abort_upload
+      url: /qq-cli-command-guide/s3/s3_abort_upload.html
+    - output: web,pdf
+      title: s3_add_bucket
+      url: /qq-cli-command-guide/s3/s3_add_bucket.html
+    - output: web,pdf
+      title: s3_create_access_key
+      url: /qq-cli-command-guide/s3/s3_create_access_key.html
+    - output: web,pdf
+      title: s3_delete_access_key
+      url: /qq-cli-command-guide/s3/s3_delete_access_key.html
+    - output: web,pdf
+      title: s3_delete_bucket
+      url: /qq-cli-command-guide/s3/s3_delete_bucket.html
+    - output: web,pdf
+      title: s3_get_bucket
+      url: /qq-cli-command-guide/s3/s3_get_bucket.html
+    - output: web,pdf
+      title: s3_get_settings
+      url: /qq-cli-command-guide/s3/s3_get_settings.html
+    - output: web,pdf
+      title: s3_list_access_keys
+      url: /qq-cli-command-guide/s3/s3_list_access_keys.html
+    - output: web,pdf
+      title: s3_list_buckets
+      url: /qq-cli-command-guide/s3/s3_list_buckets.html
+    - output: web,pdf
+      title: s3_list_uploads
+      url: /qq-cli-command-guide/s3/s3_list_uploads.html
+    - output: web,pdf
+      title: s3_modify_bucket
+      url: /qq-cli-command-guide/s3/s3_modify_bucket.html
+    - output: web,pdf
+      title: s3_modify_settings
+      url: /qq-cli-command-guide/s3/s3_modify_settings.html
+    output: web,pdf
+    title: s3
+    url: /qq-cli-command-guide/s3/
+  - folderitems:
+    - output: web,pdf
+      title: saml_get_settings
+      url: /qq-cli-command-guide/saml/saml_get_settings.html
+    - output: web,pdf
+      title: saml_modify_settings
+      url: /qq-cli-command-guide/saml/saml_modify_settings.html
+    output: web,pdf
+    title: saml
+    url: /qq-cli-command-guide/saml/
+  - folderitems:
+    - output: web,pdf
+      title: set_cluster_conf
+      url: /qq-cli-command-guide/set/set_cluster_conf.html
+    - output: web,pdf
+      title: set_monitoring_conf
+      url: /qq-cli-command-guide/set/set_monitoring_conf.html
+    - output: web,pdf
+      title: set_node_identify_light
+      url: /qq-cli-command-guide/set/set_node_identify_light.html
+    output: web,pdf
+    title: set
+    url: /qq-cli-command-guide/set/
+  - folderitems:
+    - output: web,pdf
+      title: smb_add_share
+      url: /qq-cli-command-guide/smb/smb_add_share.html
+    - output: web,pdf
+      title: smb_close_file_handle
+      url: /qq-cli-command-guide/smb/smb_close_file_handle.html
+    - output: web,pdf
+      title: smb_close_sessions
+      url: /qq-cli-command-guide/smb/smb_close_sessions.html
+    - output: web,pdf
+      title: smb_delete_share
+      url: /qq-cli-command-guide/smb/smb_delete_share.html
+    - output: web,pdf
+      title: smb_get_settings
+      url: /qq-cli-command-guide/smb/smb_get_settings.html
+    - output: web,pdf
+      title: smb_list_file_handles
+      url: /qq-cli-command-guide/smb/smb_list_file_handles.html
+    - output: web,pdf
+      title: smb_list_sessions
+      url: /qq-cli-command-guide/smb/smb_list_sessions.html
+    - output: web,pdf
+      title: smb_list_share
+      url: /qq-cli-command-guide/smb/smb_list_share.html
+    - output: web,pdf
+      title: smb_list_shares
+      url: /qq-cli-command-guide/smb/smb_list_shares.html
+    - output: web,pdf
+      title: smb_mod_share
+      url: /qq-cli-command-guide/smb/smb_mod_share.html
+    - output: web,pdf
+      title: smb_mod_share_permissions
+      url: /qq-cli-command-guide/smb/smb_mod_share_permissions.html
+    - output: web,pdf
+      title: smb_modify_settings
+      url: /qq-cli-command-guide/smb/smb_modify_settings.html
+    output: web,pdf
+    title: smb
+    url: /qq-cli-command-guide/smb/
+  - folderitems:
+    - output: web,pdf
+      title: snapshot_calculate_used_capacity
+      url: /qq-cli-command-guide/snapshot/snapshot_calculate_used_capacity.html
+    - output: web,pdf
+      title: snapshot_create_policy
+      url: /qq-cli-command-guide/snapshot/snapshot_create_policy.html
+    - output: web,pdf
+      title: snapshot_create_snapshot
+      url: /qq-cli-command-guide/snapshot/snapshot_create_snapshot.html
+    - output: web,pdf
+      title: snapshot_delete_policy
+      url: /qq-cli-command-guide/snapshot/snapshot_delete_policy.html
+    - output: web,pdf
+      title: snapshot_delete_snapshot
+      url: /qq-cli-command-guide/snapshot/snapshot_delete_snapshot.html
+    - output: web,pdf
+      title: snapshot_diff
+      url: /qq-cli-command-guide/snapshot/snapshot_diff.html
+    - output: web,pdf
+      title: snapshot_file_diff
+      url: /qq-cli-command-guide/snapshot/snapshot_file_diff.html
+    - output: web,pdf
+      title: snapshot_get_capacity_used_per_snapshot
+      url: /qq-cli-command-guide/snapshot/snapshot_get_capacity_used_per_snapshot.html
+    - output: web,pdf
+      title: snapshot_get_policy
+      url: /qq-cli-command-guide/snapshot/snapshot_get_policy.html
+    - output: web,pdf
+      title: snapshot_get_policy_status
+      url: /qq-cli-command-guide/snapshot/snapshot_get_policy_status.html
+    - output: web,pdf
+      title: snapshot_get_snapshot
+      url: /qq-cli-command-guide/snapshot/snapshot_get_snapshot.html
+    - output: web,pdf
+      title: snapshot_get_status
+      url: /qq-cli-command-guide/snapshot/snapshot_get_status.html
+    - output: web,pdf
+      title: snapshot_get_total_used_capacity
+      url: /qq-cli-command-guide/snapshot/snapshot_get_total_used_capacity.html
+    - output: web,pdf
+      title: snapshot_get_unlock_challenge
+      url: /qq-cli-command-guide/snapshot/snapshot_get_unlock_challenge.html
+    - output: web,pdf
+      title: snapshot_list_policies
+      url: /qq-cli-command-guide/snapshot/snapshot_list_policies.html
+    - output: web,pdf
+      title: snapshot_list_policy_statuses
+      url: /qq-cli-command-guide/snapshot/snapshot_list_policy_statuses.html
+    - output: web,pdf
+      title: snapshot_list_snapshots
+      url: /qq-cli-command-guide/snapshot/snapshot_list_snapshots.html
+    - output: web,pdf
+      title: snapshot_list_statuses
+      url: /qq-cli-command-guide/snapshot/snapshot_list_statuses.html
+    - output: web,pdf
+      title: snapshot_lock_snapshot
+      url: /qq-cli-command-guide/snapshot/snapshot_lock_snapshot.html
+    - output: web,pdf
+      title: snapshot_modify_policy
+      url: /qq-cli-command-guide/snapshot/snapshot_modify_policy.html
+    - output: web,pdf
+      title: snapshot_modify_snapshot
+      url: /qq-cli-command-guide/snapshot/snapshot_modify_snapshot.html
+    - output: web,pdf
+      title: snapshot_unlock_snapshot
+      url: /qq-cli-command-guide/snapshot/snapshot_unlock_snapshot.html
+    output: web,pdf
+    title: snapshot
+    url: /qq-cli-command-guide/snapshot/
+  - folderitems:
+    - output: web,pdf
+      title: ssl_delete_ca_certificate
+      url: /qq-cli-command-guide/ssl/ssl_delete_ca_certificate.html
+    - output: web,pdf
+      title: ssl_get_ca_certificate
+      url: /qq-cli-command-guide/ssl/ssl_get_ca_certificate.html
+    - output: web,pdf
+      title: ssl_modify_ca_certificate
+      url: /qq-cli-command-guide/ssl/ssl_modify_ca_certificate.html
+    - output: web,pdf
+      title: ssl_modify_certificate
+      url: /qq-cli-command-guide/ssl/ssl_modify_certificate.html
+    output: web,pdf
+    title: ssl
+    url: /qq-cli-command-guide/ssl/
+  - folderitems:
+    - output: web,pdf
+      title: sso_login
+      url: /qq-cli-command-guide/sso/sso_login.html
+    output: web,pdf
+    title: sso
+    url: /qq-cli-command-guide/sso/
+  - folderitems:
+    - output: web,pdf
+      title: static_ip_allocation
+      url: /qq-cli-command-guide/static/static_ip_allocation.html
+    output: web,pdf
+    title: static
+    url: /qq-cli-command-guide/static/
+  - folderitems:
+    - output: web,pdf
+      title: time_get
+      url: /qq-cli-command-guide/time/time_get.html
+    - output: web,pdf
+      title: time_list_timezones
+      url: /qq-cli-command-guide/time/time_list_timezones.html
+    - output: web,pdf
+      title: time_series_get
+      url: /qq-cli-command-guide/time/time_series_get.html
+    - output: web,pdf
+      title: time_set
+      url: /qq-cli-command-guide/time/time_set.html
+    - output: web,pdf
+      title: time_status
+      url: /qq-cli-command-guide/time/time_status.html
+    output: web,pdf
+    title: time
+    url: /qq-cli-command-guide/time/
+  - folderitems:
+    - output: web,pdf
+      title: tree_delete_cancel
+      url: /qq-cli-command-guide/tree/tree_delete_cancel.html
+    - output: web,pdf
+      title: tree_delete_create
+      url: /qq-cli-command-guide/tree/tree_delete_create.html
+    - output: web,pdf
+      title: tree_delete_get
+      url: /qq-cli-command-guide/tree/tree_delete_get.html
+    - output: web,pdf
+      title: tree_delete_list
+      url: /qq-cli-command-guide/tree/tree_delete_list.html
+    output: web,pdf
+    title: tree
+    url: /qq-cli-command-guide/tree/
+  - folderitems:
+    - output: web,pdf
+      title: unconfigured_nodes_list
+      url: /qq-cli-command-guide/unconfigured/unconfigured_nodes_list.html
+    - output: web,pdf
+      title: unconfigured_upgrade_config
+      url: /qq-cli-command-guide/unconfigured/unconfigured_upgrade_config.html
+    - output: web,pdf
+      title: unconfigured_upgrade_config_set
+      url: /qq-cli-command-guide/unconfigured/unconfigured_upgrade_config_set.html
+    - output: web,pdf
+      title: unconfigured_upgrade_status
+      url: /qq-cli-command-guide/unconfigured/unconfigured_upgrade_status.html
+    output: web,pdf
+    title: unconfigured
+    url: /qq-cli-command-guide/unconfigured/
+  - folderitems:
+    - output: web,pdf
+      title: upgrade_blocked
+      url: /qq-cli-command-guide/upgrade/upgrade_blocked.html
+    - output: web,pdf
+      title: upgrade_cluster
+      url: /qq-cli-command-guide/upgrade/upgrade_cluster.html
+    - output: web,pdf
+      title: upgrade_status
+      url: /qq-cli-command-guide/upgrade/upgrade_status.html
+    - output: web,pdf
+      title: upgrade_verify_image
+      url: /qq-cli-command-guide/upgrade/upgrade_verify_image.html
+    output: web,pdf
+    title: upgrade
+    url: /qq-cli-command-guide/upgrade/
+  - folderitems:
+    - output: web,pdf
+      title: version
+      url: /qq-cli-command-guide/version/version.html
+    output: web,pdf
+    title: version
+    url: /qq-cli-command-guide/version/
+  - folderitems:
+    - output: web,pdf
+      title: web_ui_get_settings
+      url: /qq-cli-command-guide/web/web_ui_get_settings.html
+    - output: web,pdf
+      title: web_ui_modify_settings
+      url: /qq-cli-command-guide/web/web_ui_modify_settings.html
+    output: web,pdf
+    title: web
+    url: /qq-cli-command-guide/web/
+  - folderitems:
+    - output: web,pdf
+      title: who_am_i
+      url: /qq-cli-command-guide/who/who_am_i.html
+    output: web,pdf
+    title: who
+    url: /qq-cli-command-guide/who/
+  guidetitle: Qumulo qq CLI Command Guide
+  guideurl: /qq-cli-command-guide/
+  output: web,pdf
+  pdftitle: qumulo-qq-cli-command-guide.pdf
+  product: ''
+  title: Qumulo qq CLI Command Guide
+  version: ''

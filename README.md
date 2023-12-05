@@ -30,6 +30,24 @@ To get started, choose one of the following guides.
   </span>
 
   <span class="guide-button">
+    <a class="multilink" href="qumulo-alerts-guide/">
+      <picture>
+        <source type="image/webp" srcset="images/qumulo-alerts-guide.webp">
+        <source type="image/png" srcset="images/qumulo-alerts-guide.png">
+        <img src="images/qumulo-alerts-guide.png" alt="An image of a computer screen showing a warning triangle behind a stylized image of a cog wheel, symbolizing administering Qumulo Alerts instances" class="landing-page-icon" width="301" height="301">
+      </picture><br>Qumulo Alerts Administrator Guide</a>
+  </span>
+
+  <span class="guide-button">
+    <a class="multilink" href="qq-cli-command-guide/">
+      <picture>
+        <source type="image/webp" srcset="images/qumulo-qq-cli-command-guide.webp">
+        <source type="image/png" srcset="images/qumulo-qq-cli-command-guide.png">
+        <img src="images/qumulo-alerts-guide.png" alt="An image of a computer screen showing a terminal window with a Qumulo qq CLI command" class="landing-page-icon" width="301" height="301">
+      </picture><br>Qumulo <code>qq</code> Command Guide</a>
+  </span>
+
+  <span class="guide-button">
     <a class="multilink" href="hardware-guide/">
       <picture>
         <source type="image/webp" srcset="images/hardware-guide.webp" width="301" height="301">
@@ -45,15 +63,6 @@ To get started, choose one of the following guides.
         <source type="image/png" srcset="images/qumulo-integration-guide.png">
         <img src="images/qumulo-integration-guide.png" alt="A stylized image of two entities combining together with three items orbiting them, symbolizing integration" class="landing-page-icon" width="301" height="301">
       </picture><br>Qumulo Integration Guide</a>
-  </span>
-
-  <span class="guide-button">
-    <a class="multilink" href="qumulo-alerts-guide/">
-      <picture>
-        <source type="image/webp" srcset="images/qumulo-alerts-guide.webp">
-        <source type="image/png" srcset="images/qumulo-alerts-guide.png">
-        <img src="images/qumulo-alerts-guide.png" alt="An image of a computer screen showing a warning triangle behind a stylized image of a cog wheel, symbolizing administering Qumulo Alerts instances" class="landing-page-icon" width="301" height="301">
-      </picture><br>Qumulo Alerts Administrator Guide</a>
   </span>
 </div>
 

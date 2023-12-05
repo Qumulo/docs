@@ -5,9 +5,9 @@ set -e
 
 # Display list of containers, count them, and kill them if they exist
 echo 'Killing all running containers...'
-echo ''
 if [ $(docker ps | grep -c 'docs-container$') -gt 0 ]; then
-  docker kill docs-container || true
+  docker kill docs-container || true 
+  docker wait docs-container || true
 fi
 
 # Declaring a future array of actions
@@ -18,7 +18,7 @@ ACTIONS=()
 PS3='Choose a guide to build:'
 
 # Prints the options on screen
-options=("Qumulo-Certified Hardware Servicing Guide" "Azure Native Qumulo Administrator Guide" "Qumulo On-Premises Administrator Guide" "Qumulo Alerts Guide" "Qumulo Integration Guide" "All Guides")
+options=("Qumulo-Certified Hardware Servicing Guide" "Azure Native Qumulo Administrator Guide" "Qumulo On-Premises Administrator Guide" "Qumulo Alerts Guide" "Qumulo qq CLI Command Guide" "Qumulo Integration Guide" "All Guides")
 
 select opt in "${options[@]}"
 
@@ -42,13 +42,17 @@ do
       ACTIONS+=("Qumulo_Alerts_Guide")
       break
       ;;
+    "Qumulo qq CLI Command Guide")
+      ACTIONS+=("Qumulo_qq_CLI_Command_Guide")
+      break
+      ;;
     "Qumulo Integration Guide")
       ACTIONS+=("Integration_Guide")
       break
       ;;
     "All Guides")
       # Perform all of the actions
-      ACTIONS+=("Hardware_Guide" "Azure_Guide" "Administrator_Guide" "Qumulo_Alerts_Guide" "Integration_Guide")
+      ACTIONS+=("Hardware_Guide" "Azure_Guide" "Administrator_Guide" "Qumulo_Alerts_Guide" "Qumulo_qq_CLI_Command_Guide" "Integration_Guide")
       break
       ;;      
     *) echo "$REPLY is not valid. Try again."
@@ -76,12 +80,17 @@ build_prince () {
       JEKYLL_CONFIG=config_qumulo_alerts_guide_pdf.yml
       PRINCE_OUTPUT=qumulo-alerts-guide.pdf
       ;;
+    "Qumulo_qq_CLI_Command_Guide")
+      JEKYLL_CONFIG=config_qq_cli_command_guide_pdf.yml
+      PRINCE_OUTPUT=qumulo-qq-cli-command-guide.pdf
+      ;;
     "Integration_Guide")
       JEKYLL_CONFIG=config_integration_guide_pdf.yml
       PRINCE_OUTPUT=qumulo-integration-guide.pdf
       ;;
   esac
 
+  echo ""
   echo "Building PDF-friendly HTML site..."
   docker run -ti \
     --rm \
@@ -108,8 +117,10 @@ build_prince () {
   prince --javascript --input-list=_site/pdfconfigs/prince-list.txt -o "pdf/${PRINCE_OUTPUT}"
 
 echo "Cleaning up the Docker container..."
-docker kill docs-container
-
+if [ $(docker ps | grep -c 'docs-container$') -gt 0 ]; then
+  docker kill docs-container || true
+  docker wait docs-container || true
+fi
 }
 
 # Build the PDF for each item in the array
