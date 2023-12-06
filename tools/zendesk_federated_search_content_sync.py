@@ -218,12 +218,20 @@ def parse_markup_document(path, default_type_id, default_source_id, default_key_
 
             if doc.get('redirect_to'):
                 return None
+            
+            # Check whether the Admin Guide is for Azure or On-Prem
+            sidebar = doc.get('sidebar')
+            title_prefix = ''
+            if sidebar == 'azure_guide_sidebar':
+                title_prefix = 'Azure: '
+            elif sidebar == 'administrator_guide_sidebar':
+                title_prefix = 'On-Prem: '
 
             return ExternalRecord(
                 type_id=default_type_id,
                 source_id=default_source_id,
                 url=f'https://docs.qumulo.com{with_leading_slash(doc["permalink"])}',
-                title=doc['title'],
+                title=title_prefix + doc['title'],  # Add prefix to the title
                 body=doc['summary'],
                 keywords=doc.get('keywords'),
                 key_prefix=default_key_prefix,
