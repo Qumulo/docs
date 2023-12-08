@@ -335,3 +335,18 @@ monitoring:
 
 changeNotify:
   useRESTnotSMB: Qumulo provides REST access to the same [change notification system](how-file-system-change-notifications-work.html) that backs SMB2 `CHANGE_NOTIFY`. Because the notification interface and types are easier to work with compared to SMB2, we recommend programming by using REST rather than SMB `CHANGE_NOTIFY`.
+
+udm:
+  t: User-Defined Metadata
+  s: User-defined metadata
+  l: user-defined metadata
+  hex: To specify a non-text value for the user-defined metadata, use the <code>--base64-value</code> or <code>--hex-value</code> flag.
+  snap: To access the user-defined metadata within a file snapshot, use the <code>--snapshot</code> flag and specify the shapshot ID.
+
+guides:
+  anq: Azure Native Qumulo Administrator Guide
+  onprem: Qumulo On-Premises Administrator Guide
+  alert: Qumulo Alerts Administrator Guide
+  cli: Qumulo <code>qq</code> CLI Command Guide
+  hard: Qumulo-Certified Hardware Servicing Guide
+  integ: Qumulo Integration Guide

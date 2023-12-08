@@ -144,6 +144,15 @@ entries:
     - title: Enabling Autocomplete for the qq CLI
       url: /azure-administrator-guide/qq-cli/enabling-autocomplete.html
       output: web, pdf
+
+  - title: Metadata
+    url: /azure-administrator-guide/metadata/index.html
+    output: web, pdf
+    folderitems:
+
+    - title: Managing User-Defined Metadata
+      url: /azure-administrator-guide/metadata/managing-user-defined-metadata.html
+      output: web, pdf
       
   - title: Snapshots
     url: /azure-administrator-guide/snapshots/index.html

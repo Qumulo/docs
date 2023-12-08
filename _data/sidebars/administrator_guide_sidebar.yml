@@ -160,6 +160,15 @@ entries:
       url: /administrator-guide/qq-cli/enabling-autocomplete.html
       output: web, pdf
 
+  - title: Metadata
+    url: /administrator-guide/metadata/index.html
+    output: web, pdf
+    folderitems:
+
+    - title: Managing User-Defined Metadata
+      url: /administrator-guide/metadata/managing-user-defined-metadata.html
+      output: web, pdf
+
   - title: Snapshots
     url: /administrator-guide/snapshots/index.html
     output: web, pdf
