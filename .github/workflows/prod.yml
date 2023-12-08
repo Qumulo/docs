@@ -29,3 +29,13 @@ jobs:
       - name: Build site
         # `prod` is the name of the output directory
         run: JEKYLL_ENV=preview LC_ALL=C.UTF-8 bundle exec jekyll build -d prod
+      # Append API Key to .env file
+      - name: Append API Key to .env
+        run: echo "API_KEY=${{ secrets.API_KEY }}" >> .env
+      # Run the vectara/vectara-answer Docker container
+      - name: Run Vectara Answer Docker container
+        run: |
+          docker run -v $PWD/queries.json:/build/queries.json \
+                     -v $PWD/.env:/.env \
+                     vectara/vectara-answer \
+                     /bin/bash -c "node server/index.js"
