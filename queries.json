@@ -1,0 +1,9 @@
+{
+  "questions": [
+    "What is a Qumulo node?",
+    "What is a Qumulo cluster?",
+    "How does NFSv4.1 work with Kerberos in Qumulo Core?",
+    "How does the S3 API work in Qumulo Core?",
+    "How does Qumulo Core integrate with Varonis?"
+  ]
+}
