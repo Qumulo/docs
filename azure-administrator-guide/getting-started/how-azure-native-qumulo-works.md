@@ -302,7 +302,43 @@ The following table lists regions in US, Canada, Europe, and the UK that {{site.
       <td>UK South</td>
       <td>&#10003;</td>
       <td>&#10003;</td>
-    </tr> 
+    </tr>
+    <tr>
+      <td>Australia (New South Wales)</td>
+      <td>Australia East</td>
+      <td>&#10003;</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Brazil (São Paulo State)</td>
+      <td>Brazil South</td>
+      <td>&#10003;</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>India (Pune)</td>
+      <td>Central India</td>
+      <td>&#10003;</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Japan (Tokyo, Saitama)</td>
+      <td>Japan East</td>
+      <td>&#10003;</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Korea (Seoul)</td>
+      <td>Korea Central</td>
+      <td>&#10003;</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>UAE (Dubai)</td>
+      <td>UAE North</td>
+      <td>&#10003;</td>
+      <td></td>
+    </tr>
   </tbody>
 </table>
 
