@@ -12,6 +12,14 @@ For information about upgrade types for each release, see <a href='mode-referenc
 
 <style>div#toc{height:200px;overflow:auto;}</style>
 
+## Qumulo Core 6.3.2
+{{page.varDownloadsRelnotes}}
+* Added support for additional custom metadata operations to the S3 API.
+* Configured Qumulo Core to replicate user metadata.
+* Added support for counting metadata updtes for a file.
+* Configured OpenMetrics API metrics for protocol operations to track file system REST API operations.
+* Fixed an issue with cluster authentication for Kerberos client principals with names that contain the `@` character.
+
 ## Qumulo Core 6.3.1.1
 {{page.varDownloadsRelnotes}}
 {% include important.html content="This release resolves an issue with memory utilization during secure credential handling." %}
