@@ -38,11 +38,19 @@ The following table lists the S3 API actions that Qumulo Core supports and the v
   <tr>
     <td><code>DeleteObject</code></td>
     <td class="fade-row">5.2.1</td>
-  </tr>  
+  </tr>
+  <tr>
+    <td><code>DeleteObjectTagging</code></td>
+    <td>6.3.2</td>
+  </tr>   
   <tr>
     <td><code>DeleteObjects</code></td>
     <td class="fade-row">5.2.2</td>
-  </tr>   
+  </tr>
+  <tr>
+    <td><code>GetBucketAcl</code></td>
+    <td>6.1.1</td>
+  </tr>     
   <tr>
     <td><code>GetBucketLocation</code></td>
     <td class="fade-row">5.1.2</td>
@@ -50,7 +58,11 @@ The following table lists the S3 API actions that Qumulo Core supports and the v
   <tr>
     <td><code>GetObject</code></td>
     <td class="fade-row">5.0.4</td>
-  </tr>   
+  </tr>
+  <tr>
+    <td><code>GetObjectAcl</code></td>
+    <td>6.1.1</td>
+  </tr>     
   <tr>
     <td><code>HeadBucket</code></td>
     <td class="fade-row">5.1.2</td>
@@ -82,14 +94,18 @@ The following table lists the S3 API actions that Qumulo Core supports and the v
   <tr>
     <td><code>PutObject</code></td>
     <td class="fade-row">5.2.1</td>
-  </tr>  
+  </tr>
+  <tr>
+    <td><code>PutObjectTagging</code></td>
+    <td>6.3.2</td>
+  </tr>   
   <tr>
     <td><code>UploadPart</code></td>
     <td>5.3.3</td>
   </tr>  
   <tr>
     <td><code>UploadPartCopy</code></td>
-    <td>6.1.0.3</td>
+    <td>6.0.2</td>
   </tr>  
 </tbody>
 </table>
@@ -108,7 +124,6 @@ The following table lists some of the S3 API functionality that Qumulo Core does
 | Logging controls                          | &mdash;     |
 | Multi-chunk payload signing               | Qumulo Core doesn't support the [streaming version of Amazon Signature Version 4 (SigV4)](https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-streaming.html), only the [single-chunk version](https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-header-based-auth.html). |
 | Object locks                              | &mdash;     |
-| Object tagging and custom object metadata | &mdash;     |
 | Object versioning                         | Qumulo objects have one object version. To preserve previous object contents in Qumulo Core, use snapshots. |
 | Policies                                  | &mdash;     |
 | Signature Version 2                       | Qumulo Core supports only SigV4 signatures. |
