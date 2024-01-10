@@ -5,47 +5,75 @@
     <th>Service Availability</th>
     <th>Response Time</th>
     <th>Description</th>
-    <th>Example</th>   
+    <th>Common Examples</th>   
   </tr>
 </thead>
 <tbody>
   <tr style="background:rgb(255 153 153 / 0.75);">
-    <td>0</td>
+    <td>Sev0</td>
     <td>24&times;7</td>   
     <td>2 hours</td>
     <td>
-      <p>Outage, data unavailability, or data loss</p>
+      <p><strong>Business Impacting:</strong> A Qumulo cluster is offline, impacting regular business operations, with potential productivity or financial losses.</p>
       {% include important.html content="For Severity 0 cases, call one of our <a href='#toll-free-numbers'>toll-free numbers</a> or select <strong>Severity 0</strong> when you <a href='#open-a-case'>open a case</a>." %}
     </td>
-    <td>The Qumulo cluster is down or there aren't enough online nodes to form a quorum.</td>   
+    <td>
+      <ul>
+        <li>A Qumulo cluster is unable to form a quorum</li>
+        <li>A Qumulo cluster is unable to maintain a quorum</li>
+      </ul>
+    </td>   
   </tr>
   <tr style="background:rgb(255 153 153 / 0.5);">
-    <td>1</td>
+    <td>Sev1</td>
     <td>24&times;7</td>   
     <td>2 hours</td>
-    <td>High business impact while the Qumulo cluster is still available and functional</td>
-    <td>A node is down but the cluster's quorum is still intact.</td>   
+    <td><strong>High Priority:</strong> A Qumulo cluster is operational. However, a node is offline or the cluster experiences a severe performance degradation.</td>
+    <td>
+      <ul>
+        <li>A node in a Qumulo cluster is offline.</li>
+        <li>Multiple business units experience degraded performance.</li>
+      </ul>
+    </td>   
   </tr>
   <tr style="background:rgb(255 153 153 / 0.25);">
-    <td>2</td>
+    <td>Sev2</td>
     <td>24&times;5</td>   
     <td>2 hours</td>
-    <td>A serious issue with an available workaround</td>
-    <td>When you use <code>ls</code> and <code>dd</code> commands from the same client, the performance is poor. The workaround is to mount to two different nodes and run the <code>ls</code> command for the first node and the <code>dd</code> command for the second.</td>   
+    <td><strong>Normal Priority:</strong> A Qumulo cluster and the Qumulo Core software are operational. However, an issue with the cluster or moderate performance degradation causes applications to operate suboptimally.</td>
+    <td>
+      <ul>
+        <li>CPU cores recover to normal operation</li>
+        <li>Drive failures (within expected parameters)</li>
+        <li>Inconsistent performance issues</li>
+      </ul>
+    </td>   
   </tr>
   <tr style="background:rgb(255 153 153 / 0.125);">
-    <td>3</td>
+    <td>Sev3</td>
     <td>24&times;5</td>   
     <td>6 hours</td>
-    <td>Poor or frustrating user experience</td>
-    <td>In the Web UI, a dialog box lingers for about five seconds after a change.</td>   
+    <td><strong>Low Priority:</strong> A Qumulo cluster or the Qumulo Core software experiences an issue, cosmetic UI defect, or minor performance degradation that has minimal or negligible impact on a production system or regular business operations.</td>
+    <td>
+      <ul>
+        <li>PSU failure</li>
+        <li>Loss of communication with Cloud-Based Monitoring</li>
+        <li>Upgrade issues</li>
+      </ul>
+    </td>   
   </tr>
   <tr style="background:rgb(255 153 153 / 0.0625);">
-    <td>4</td>
+    <td>Sev4</td>
     <td>24&times;5</td>   
     <td>6 hours</td>
-    <td>Cosmetic issues or other concerns</td>
-    <td>The background color of a dialog box makes text difficult to read.</td>   
+    <td><strong>Informational:</strong> Informal inquiries about product functionality</td>
+    <td>
+      <ul>
+        <li>Questions about Qumulo Core configuration</li>
+        <li>Documentation requests</li>
+        <li>Qumulo Care Slack channel access permissions</li>
+      </ul>
+    </td>   
   </tr>   
 </tbody>
 </table>
