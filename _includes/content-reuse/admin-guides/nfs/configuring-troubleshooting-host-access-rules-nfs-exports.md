@@ -24,7 +24,7 @@ The following examples show the elements that a host access rule can include.
 
 * **Allowed Kerberos Security Flavors**
 
-  To restrict access to NFSv4.1 clients that use only specific [Kerberos security flavors](../kerberos/kerberos-with-qumulo-core.html#choosing-a-kerberos-security-flavor, add the following special strings to the list of host access rules. For example:
+  To restrict access to NFSv4.1 clients that use only specific [Kerberos security flavors](../kerberos/kerberos-with-qumulo-core.html#choosing-a-kerberos-security-flavor), add the following special strings to the list of host access rules. For example:
   
   * `KRB5P@`: Allow only encrypted access for the specified export.
     
