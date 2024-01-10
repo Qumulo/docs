@@ -44,7 +44,7 @@ To get started, choose one of the following guides.
         <source type="image/webp" srcset="images/qumulo-qq-cli-command-guide.webp">
         <source type="image/png" srcset="images/qumulo-qq-cli-command-guide.png">
         <img src="images/qumulo-alerts-guide.png" alt="An image of a computer screen showing a terminal window with a Qumulo qq CLI command" class="landing-page-icon" width="301" height="301">
-      </picture><br>Qumulo <code>qq</code> Command Guide</a>
+      </picture><br>Qumulo <code>qq</code> CLI Command Guide</a>
   </span>
 
   <span class="guide-button">
