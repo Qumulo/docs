@@ -30,7 +30,7 @@ The following examples show the elements that a host access rule can include.
     
   * `KRB5@`, `KRB5I@`, and `KRB5P@`: Allow any Kerberos-authenticated access, but not `AUTH_SYS` access.
     
-  For more information, see [Choosing a Kerberos Security Flavor](../kerberos/kerberos-with-qumulo-core.html#choosing-a-kerberos-security-flavor)
+  For more information, see [Choosing a Kerberos Security Flavor](../kerberos/kerberos-with-qumulo-core.html#choosing-a-kerberos-security-flavor).
 
 {% include important.html content="If you don't specify a host access rule, Qumulo Core allows access to all IP addresses." %}
 
