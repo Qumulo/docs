@@ -49,7 +49,7 @@
     </tr>
     <tr>
       <td>Linux Configuration</td>
-      <td>Qumulo Core is up to date with all Ubuntu 18.04 security updates.</td>
+      <td>Qumulo Core is up to date with all Ubuntu 20.04 security updates.</td>
     </tr>
     <tr>
       <td>Domain-Functional Level</td>
