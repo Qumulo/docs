@@ -50,7 +50,7 @@ Qumulo provides configuration for the permitted NFSv4.1 authentication flavors i
 
 {{site.data.alerts.note}}
 <ul>
-  <li>Security configuration options apply to <em>all</em> versions of NFS (NFSv3 and NFSv4.1). Thus, disabling <code>AUTH_SYS</code> also disables NFSv3, because <code>AUTH_SYS</code> is the only authentication flavor that NFSv3 supports by design.</li>
+  <li>Security configuration options apply to <em>all</em> versions of NFS (NFSv3 and NFSv4.1). Thus, disabling <code>AUTH_SYS</code> also disables NFSv3, because <code>AUTH_SYS</code> is the only [Kerberos security flavors](../kerberos/kerberos-with-qumulo-core.html#choosing-a-kerberos-security-flavor) that NFSv3 supports by design.</li>
   <li>In a secure environment, where Kerberos is required, <code>AUTH_SYS</code> NFSv3 connections aren't allowed.</li>
   <li>These configuration options apply cluster-wide to all NFS exports and files.</li>
 </ul>
@@ -62,4 +62,4 @@ You can use [NFSv4.1 exports](../nfs/nfsv4.1-enabling-using.html) to configure a
 
 The user-mapping portion of the export configuration has no effect on Kerberos configuration. Specifying `root` or `any` user mapping for a particular export applies only to `AUTH_SYS` mounts that access this export.
 
-Otherwise, exports and IP address restrictions (that you specify in exports) behave identically for all authentication flavors: `AUTH_SYS`, `AUTH_KRB5`, `AUTH_KRB5P`, and `AUTH_KRB5I`.
+Otherwise, exports and IP address restrictions (that you specify in exports) behave identically for all [Kerberos security flavors](../kerberos/kerberos-with-qumulo-core.html#choosing-a-kerberos-security-flavor): `AUTH_SYS`, `AUTH_KRB5`, `AUTH_KRB5P`, and `AUTH_KRB5I`.
