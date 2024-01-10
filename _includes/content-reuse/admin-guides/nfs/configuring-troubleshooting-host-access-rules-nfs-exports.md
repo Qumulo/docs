@@ -5,18 +5,31 @@ In Qumulo Core 6.2.0.1, you can add a host access rule to an NFS export to restr
 The following examples show the elements that a host access rule can include.
 
 * **Hostnames**
+   
    * Without a wildcard (`name.example.com`)
+
    * With a wildcard (`*.example.com`)
+
 * **IP Addresses**
+
   * Single IP addresses (`{{site.exampleIP0}}`)
+
   * IP address range (`{{site.exampleIPrange1}}` or `{{site.exampleIPrange2}}`)
+
 * **Network Segment**
+
   * Without a subnet mask (`{{site.exampleNetworkSegment1}}`)
+
   * With a subnet mask (`{{site.exampleNetworkSegment2}}`)
+
 * **Allowed Kerberos Security Flavors**
+
   To restrict access to NFSv4.1 clients that use only specific Kerberos security flavors, add the following special strings to the list of host access rules. For example:
+  
   * `KRB5P@`: Allow only encrypted access for the specified export.
+    
   * `KRB5@`, `KRB5I@`, and `KRB5P@`: Allow any Kerberos-authenticated access, but not `AUTH_SYS` access.
+    
   For more information, see [Choosing a Kerberos Security Flavor](../kerberos/kerberos-with-qumulo-core.html#choosing-a-kerberos-security-flavor)
 
 {% include important.html content="If you don't specify a host access rule, Qumulo Core allows access to all IP addresses." %}
