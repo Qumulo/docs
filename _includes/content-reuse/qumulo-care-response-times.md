@@ -1,11 +1,11 @@
 <table>
 <thead>
   <tr>
-    <th>Severity Level</th>
-    <th>Service Availability</th>
-    <th>Response Time</th>
-    <th>Description</th>
-    <th>Common Examples</th>   
+    <th style="text-align:center;">Severity Level</th>
+    <th style="text-align:center;">Service Availability</th>
+    <th style="text-align:center;">Response Time</th>
+    <th style="text-align:center;">Description</th>
+    <th style="text-align:center;">Common Examples</th>   
   </tr>
 </thead>
 <tbody>
