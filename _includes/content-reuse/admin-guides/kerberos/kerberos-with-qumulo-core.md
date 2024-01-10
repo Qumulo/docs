@@ -2,12 +2,18 @@ Kerberos is a network authentication protocol that works by using a three-way tr
 
 Active Directory (AD) simplifies Kerberos requirements by providing [a globally unique security identifier for every user and group (SID)](https://docs.microsoft.com/en-us/windows/security/identity-protection/access-control/security-identifiers) and a KDC implementation with a [ticket-granting service (TGS)](https://docs.microsoft.com/en-us/windows/win32/secauthn/ticket-granting-service-exchange) and an [authentication service (AS)](https://docs.microsoft.com/en-us/windows/win32/secauthn/authentication-service-exchange).
 
+<a id="kerberos-security-flavors"></a>
+Qumulo Core supports three _flavors_ of Kerberos security that NFSv4.1 clients can use by specifying the following mount options:
+* `sec=krb5`: Provides user authentication only.
+* `sec=krb5i`: Provides authentication and message integrity by performing message signing for protection against man-in-the-middle attacks and message tampering.
+* `sec=krb5bp`: Provides privacy by encrypting all traffic between the client and server. This is the most secure mount option.
+
 ## Configuring Kerberos for Qumulo Core
 Qumulo Core 5.1.5 (and higher) supports Kerberos for authenticating AD users over NFSv4.1. The following is an overview of the Kerberos configuration process following the configuration of your AD domain.
 
 1. Join your Qumulo cluster to your AD domain.
 1. Join Linux systems to your AD domain.
-1. Log in to a Linux system and mount the Qumulo cluster by using the `-o sec=krb5` mount option.
+1. Log in to a Linux system and mount the Qumulo cluster by using one of the [available mount options](#kerberos-security-flavors).
 
 ## Known Kerberos Limitations for Qumulo Core
 Qumulo Core supports only the following features:
