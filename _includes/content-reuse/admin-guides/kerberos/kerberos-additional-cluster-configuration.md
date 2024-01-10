@@ -50,7 +50,7 @@ Qumulo provides configuration for the permitted NFSv4.1 authentication flavors i
 
 {{site.data.alerts.note}}
 <ul>
-  <li>Security configuration options apply to <em>all</em> versions of NFS (NFSv3 and NFSv4.1). Thus, disabling <code>AUTH_SYS</code> also disables NFSv3, because <code>AUTH_SYS</code> is the only [Kerberos security flavors](../kerberos/kerberos-with-qumulo-core.html#choosing-a-kerberos-security-flavor) that NFSv3 supports by design.</li>
+  <li>Security configuration options apply to <em>all</em> versions of NFS (NFSv3 and NFSv4.1). Thus, disabling <code>AUTH_SYS</code> also disables NFSv3, because <code>AUTH_SYS</code> is the only <a href="../kerberos/kerberos-with-qumulo-core.html#choosing-a-kerberos-security-flavor">Kerberos security flavor</a> that NFSv3 supports by design.</li>
   <li>In a secure environment, where Kerberos is required, <code>AUTH_SYS</code> NFSv3 connections aren't allowed.</li>
   <li>These configuration options apply cluster-wide to all NFS exports and files.</li>
 </ul>
