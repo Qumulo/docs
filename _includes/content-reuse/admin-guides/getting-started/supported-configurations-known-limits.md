@@ -114,11 +114,7 @@
     </tr>
     <tr>
       <td>NFS Groups</td>
-      <td>16 without <a href="https://www.rfc-editor.org/rfc/rfc2307.html">RFC 2307</a> with Kerberos</td>
-    </tr>
-    <tr>
-      <td>Combined Users and Groups</td>
-      <td>4 billion</td>
+      <td>16, when not using LDAP or Active Directory for <a href="https://www.rfc-editor.org/rfc/rfc2307.html">RFC 2307</a> attributes</td>
     </tr>
     <tr>
       <td>Characters in Cluster Name</td>
