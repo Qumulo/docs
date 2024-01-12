@@ -78,7 +78,7 @@ This section explains how you can configure, provision, and mount Qumulo storage
 ### Step 2: Configure Volume and NFS Export Paths
 To prepare your Qumulo cluster for connecting to your Kubernetes cluster, you must first configure your volume and NFS export paths on your Qumulo cluster by setting the following parameters for each storage class that you define.
 
-{% include tip.html content="Write down the paths for the following YAML keys for the `storageclass-qumulo.yaml` file that you use when you [create a storage class](#step-5-create-storage-class)." %}
+{% include tip.html content="Write down the paths for the following YAML keys for the `storageclass-qumulo.yaml` file that you use when you [create a storage class in step 5](#step-5-create-storage-class)." %}
 
 1. For `storeRealPath`, from the root of the Qumulo file system, create a directory for storing volumes on your Qumulo cluster, for example `/csi/volumes1`.
 
@@ -86,17 +86,21 @@ To prepare your Qumulo cluster for connecting to your Kubernetes cluster, you mu
 
 1. For `storeExportPath`, create the NFS export for hosting the persistent volume.
 
-1. When you configure your cluster for multitenancy and the cluster's default tenant doesn't manage the NFS export, the optional `tenantId` parameter directs the driver to use the provided tenant. For more information, see [Configure Multi-Tenancy with Qumulo](https://care.qumulo.com/hc/en-us/articles/360054089954) on Qumulo Care.
+1. If your cluster has more than one tenant, specify the tenant ID that contains your NFS export for the `tenantId` parameter. For more information, see [Configure Multi-Tenancy with Qumulo](https://care.qumulo.com/hc/en-us/articles/360054089954) on Qumulo Care.
 
-   {% capture tenantId %}You must provide the value for `tenantId` as a string. For example: `"2"`.{% endcapture %}
-   {% include note.html content=tenantId %}
+   {{site.data.alerts.note}}
+   <ul>
+    <li>If you have only one tenant, it isn't necessary to specify the `tenantId` parameter.</li>
+    <li>{{page.varTenantIdString}}</li>
+   </ul>
+   {{site.data.alerts.end}}
    
 ### Step 3: Configure Credentials
 To connect your Kubernetes cluster to your Qumulo cluster, you must either use an existing account or create a new account for the CSI driver to communicate with the Qumulo API.
 
 1. Configure a username and password for a user on your Qumulo cluster.
 
-1. The configured username must have the following permissions:
+1. The configured username must have the following file permissions:
 
    * Lookup on `storeRealPath`
    
@@ -198,6 +202,9 @@ To link your Kubernetes cluster to your Qumulo cluster, you must create a storag
    1. Specify `storeExportPath`.
 
    1. (Optional) Specify `tenantId`.
+  
+      {% capture tenantId %}{{page.varTenantIdString}}{% endcapture %}
+      {% include note.html content=tenantId %}
    
    1. Configure the following parameters to point to [the Secrets that you have created and configured](#step-4-create-configure-secrets) in the namespace in which you installed the CSI driver:
 
