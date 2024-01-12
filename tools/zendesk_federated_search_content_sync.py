@@ -207,7 +207,7 @@ def with_leading_slash(txt):
     return txt
 
 
-def parse_markup_document(path, default_type_id, default_source_id, default_key_prefix):
+def parse_markup_document(path, default_type_id, source_ids, default_key_prefix):
     with open(path, 'r') as f:
         try:
             docs = yaml.safe_load_all(f)
@@ -218,7 +218,7 @@ def parse_markup_document(path, default_type_id, default_source_id, default_key_
 
             if doc.get('redirect_to'):
                 return None
-            
+
             # Check whether the Admin Guide is for Azure or On-Prem
             sidebar = doc.get('sidebar')
             title_prefix = ''
@@ -227,9 +227,13 @@ def parse_markup_document(path, default_type_id, default_source_id, default_key_
             elif sidebar == 'administrator_guide_sidebar':
                 title_prefix = 'On-Prem: '
 
+            source_id = (
+                source_ids.get(doc.get('zendesk_source')) or source_ids['__DEFAULT__']
+            )
+
             return ExternalRecord(
                 type_id=default_type_id,
-                source_id=default_source_id,
+                source_id=source_id,
                 url=f'https://docs.qumulo.com{with_leading_slash(doc["permalink"])}',
                 title=title_prefix + doc['title'],  # Add prefix to the title
                 body=doc['summary'],
@@ -241,7 +245,9 @@ def parse_markup_document(path, default_type_id, default_source_id, default_key_
             return None
 
 
-def get_documents(document_root: str, type_id: str, source_id: str, default_key_prefix: str) -> List:
+def get_documents(
+    document_root: str, type_id: str, source_id: str, default_key_prefix: str
+) -> List:
     documents = []
     for root, dirs, files in os.walk(document_root):
         for f in files:
@@ -314,10 +320,14 @@ def main(args: argparse.Namespace):
     zd = Zendesk(user=ZENDESK_USER, token=ZENDESK_TOKEN, domain=ZENDESK_DOMAIN)
 
     type_id = zd.get_content_type('Topic').get('id')
-    source_id = zd.get_content_source('Documentation Portal').get('id')
+
+    # Build our mapping of zendesk content sources by the name
+    source_ids = {src['name']: src.get('id') for src in zd.content_sources()}
+    source_ids['__DEFAULT__'] = source_ids['Documentation Portal']
 
     local_documents = {
-        k.key: k for k in get_documents(args.document_root, type_id, source_id, ZENDESK_PREFIX)
+        k.key: k
+        for k in get_documents(args.document_root, type_id, source_ids, ZENDESK_PREFIX)
     }
 
     remote_documents = {k.key: k for k in get_zendesk_documents(zd)}
