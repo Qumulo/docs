@@ -27,7 +27,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
 * Added the optional `data_revision` field for all REST resources that return file or stream attributes.
 * Resolved an issue with a third-party GSS authentication library.
 
-## Qumulo Core 6.3.0.1
+## Qumulo Core 6.3.0.1 (Quarterly)
 {{page.varDownloadsRelnotes}}
 {{site.data.alerts.important}}
 <ul>
