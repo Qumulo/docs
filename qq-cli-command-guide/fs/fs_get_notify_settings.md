@@ -11,5 +11,6 @@ summary: This section explains how to use the <code>qq fs_get_notify_settings</c
 synopsis: Get FS notify settings.
 title: qq fs_get_notify_settings
 usage: qq fs_get_notify_settings [-h]
+zendesk_source: qq CLI Command Guide
 
 ---

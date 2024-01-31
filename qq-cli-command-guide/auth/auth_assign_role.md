@@ -21,5 +21,6 @@ summary: This section explains how to use the <code>qq auth_assign_role</code> c
 synopsis: Assign a user to a role
 title: qq auth_assign_role
 usage: qq auth_assign_role [-h] -r ROLE -t TRUSTEE
+zendesk_source: qq CLI Command Guide
 
 ---

@@ -13,5 +13,6 @@ synopsis: Query the LDAP server for the gid numbers for all the groups of which 
   the given login name maps to multiple uid numbers.
 title: qq ldap_login_name_to_gid_numbers
 usage: qq ldap_login_name_to_gid_numbers [-h] --login-name LOGIN_NAME
+zendesk_source: qq CLI Command Guide
 
 ---

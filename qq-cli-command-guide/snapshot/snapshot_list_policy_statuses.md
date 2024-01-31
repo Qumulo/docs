@@ -11,5 +11,6 @@ summary: This section explains how to use the <code>qq snapshot_list_policy_stat
 synopsis: List all snapshot policy statuses
 title: qq snapshot_list_policy_statuses
 usage: qq snapshot_list_policy_statuses [-h]
+zendesk_source: qq CLI Command Guide
 
 ---

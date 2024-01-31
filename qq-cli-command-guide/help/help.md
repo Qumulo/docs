@@ -10,5 +10,6 @@ summary: This section explains how to use the <code>qq help</code> command.
 synopsis: QQ documentation
 title: qq help
 usage: qq help [-h]
+zendesk_source: qq CLI Command Guide
 
 ---

@@ -11,5 +11,6 @@ summary: This section explains how to use the <code>qq auth_get_user_defined_map
 synopsis: Get the configured set of AD/LDAP static user defined mappings.
 title: qq auth_get_user_defined_mappings
 usage: qq auth_get_user_defined_mappings [-h]
+zendesk_source: qq CLI Command Guide
 
 ---

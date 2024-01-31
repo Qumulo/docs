@@ -69,8 +69,9 @@ summary: This section explains how to use the <code>qq multitenancy_create_tenan
 synopsis: Create a tenant
 title: qq multitenancy_create_tenant
 usage: "qq multitenancy_create_tenant [-h] --name NAME [--network-id [NETWORK_ID [NETWORK_ID\
-  \ ...]]]\n    [--enable-web-ui | --disable-web-ui]\n    [--enable-rest-api | --disable-rest-api]\
-  \ [--enable-ssh | --disable-ssh]\n    [--enable-replication | --disable-replication]\n\
-  \    [--enable-nfs | --disable-nfs] [--enable-smb | --disable-smb]"
+  \ ...]]] [--enable-web-ui | --disable-web-ui]\n    [--enable-rest-api | --disable-rest-api]\
+  \ [--enable-ssh | --disable-ssh]\n    [--enable-replication | --disable-replication]\
+  \ [--enable-nfs | --disable-nfs] [--enable-smb | --disable-smb]"
+zendesk_source: qq CLI Command Guide
 
 ---

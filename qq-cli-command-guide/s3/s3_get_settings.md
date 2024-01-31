@@ -10,5 +10,6 @@ summary: This section explains how to use the <code>qq s3_get_settings</code> co
 synopsis: Get S3 server settings
 title: qq s3_get_settings
 usage: qq s3_get_settings [-h]
+zendesk_source: qq CLI Command Guide
 
 ---

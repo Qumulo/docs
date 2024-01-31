@@ -42,7 +42,8 @@ sidebar: qq_cli_command_reference_sidebar
 summary: This section explains how to use the <code>qq fs_write</code> command.
 synopsis: Write data to an object
 title: qq fs_write
-usage: "qq fs_write [-h] (--path PATH | --id ID)\n    [--stream-id STREAM_ID | --stream-name\
-  \ STREAM_NAME | --create] [--offset OFFSET]\n    [--file FILE] [--stdin]"
+usage: qq fs_write [-h] (--path PATH | --id ID) [--stream-id STREAM_ID | --stream-name
+  STREAM_NAME | --create] [--offset OFFSET] [--file FILE] [--stdin]
+zendesk_source: qq CLI Command Guide
 
 ---

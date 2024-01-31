@@ -32,7 +32,8 @@ sidebar: qq_cli_command_reference_sidebar
 summary: This section explains how to use the <code>qq fs_create_symlink</code> command.
 synopsis: Create a new symbolic link
 title: qq fs_create_symlink
-usage: "qq fs_create_symlink [-h] (--path PATH | --id ID) --target TARGET\n    [--target-type\
+usage: "qq fs_create_symlink [-h] (--path PATH | --id ID) --target TARGET [--target-type\
   \ {FS_FILE_TYPE_UNKNOWN,FS_FILE_TYPE_FILE,FS_FILE_TYPE_DIRECTORY}]\n    --name NAME"
+zendesk_source: qq CLI Command Guide
 
 ---

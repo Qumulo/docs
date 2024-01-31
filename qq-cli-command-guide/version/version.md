@@ -10,5 +10,6 @@ summary: This section explains how to use the <code>qq version</code> command.
 synopsis: Print version information
 title: qq version
 usage: qq version [-h]
+zendesk_source: qq CLI Command Guide
 
 ---

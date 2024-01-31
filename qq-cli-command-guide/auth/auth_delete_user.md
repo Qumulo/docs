@@ -14,5 +14,6 @@ summary: This section explains how to use the <code>qq auth_delete_user</code> c
 synopsis: Delete a user
 title: qq auth_delete_user
 usage: qq auth_delete_user [-h] --id ID
+zendesk_source: qq CLI Command Guide
 
 ---

@@ -45,9 +45,10 @@ sidebar: qq_cli_command_reference_sidebar
 summary: This section explains how to use the <code>qq add_nodes</code> command.
 synopsis: Add unconfigured nodes to a Qumulo cluster
 title: qq add_nodes
-usage: "qq add_nodes [-h]\n    (--node-uuids NODE_UUIDS [NODE_UUIDS ...] | --node-ips\
-  \ NODE_IPS [NODE_IPS ...] | --all-unconfigured)\n    [--target-stripe-config BLOCKS_PER_STRIPE\
-  \ DATA_BLOCKS_PER_STRIPE]\n    [--target-max-node-failures TARGET_MAX_NODE_FAILURES]\
-  \ [--dry-run] [--batch]"
+usage: "qq add_nodes [-h] (--node-uuids NODE_UUIDS [NODE_UUIDS ...] | --node-ips NODE_IPS\
+  \ [NODE_IPS ...] | --all-unconfigured)\n    [--target-stripe-config BLOCKS_PER_STRIPE\
+  \ DATA_BLOCKS_PER_STRIPE] [--target-max-node-failures TARGET_MAX_NODE_FAILURES]\
+  \ [--dry-run]\n    [--batch]"
+zendesk_source: qq CLI Command Guide
 
 ---

@@ -22,5 +22,6 @@ synopsis: Make the target directory read-only and revert any changes made to the
   complete before replication is resumed.
 title: qq replication_reconnect_target_relationship
 usage: qq replication_reconnect_target_relationship [-h] --id ID [--force]
+zendesk_source: qq CLI Command Guide
 
 ---

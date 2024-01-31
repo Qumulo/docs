@@ -10,5 +10,6 @@ summary: This section explains how to use the <code>qq auth_list_groups</code> c
 synopsis: List all groups
 title: qq auth_list_groups
 usage: qq auth_list_groups [-h]
+zendesk_source: qq CLI Command Guide
 
 ---

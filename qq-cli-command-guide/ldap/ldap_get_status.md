@@ -10,5 +10,6 @@ summary: This section explains how to use the <code>qq ldap_get_status</code> co
 synopsis: Get LDAP client connection states
 title: qq ldap_get_status
 usage: qq ldap_get_status [-h]
+zendesk_source: qq CLI Command Guide
 
 ---

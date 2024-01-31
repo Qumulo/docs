@@ -35,7 +35,8 @@ sidebar: qq_cli_command_reference_sidebar
 summary: This section explains how to use the <code>qq fs_copy</code> command.
 synopsis: Server-side copy a file.
 title: qq fs_copy
-usage: "qq fs_copy [-h] [--source-snapshot SOURCE_SNAPSHOT] [--overwrite] [--quiet]\
-  \ [--no-attributes]\n    [--no-named-streams]\n    source target"
+usage: qq fs_copy [-h] [--source-snapshot SOURCE_SNAPSHOT] [--overwrite] [--quiet]
+  [--no-attributes] [--no-named-streams] source target
+zendesk_source: qq CLI Command Guide
 
 ---

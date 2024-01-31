@@ -10,5 +10,6 @@ summary: This section explains how to use the <code>qq upgrade_blocked</code> co
 synopsis: Get information on whether and for what reason an upgrade is blocked
 title: qq upgrade_blocked
 usage: qq upgrade_blocked [-h]
+zendesk_source: qq CLI Command Guide
 
 ---

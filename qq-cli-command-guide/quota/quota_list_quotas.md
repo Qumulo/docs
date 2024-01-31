@@ -14,5 +14,6 @@ summary: This section explains how to use the <code>qq quota_list_quotas</code> 
 synopsis: List all directory quotas
 title: qq quota_list_quotas
 usage: qq quota_list_quotas [-h] [--page-size PAGE_SIZE]
+zendesk_source: qq CLI Command Guide
 
 ---

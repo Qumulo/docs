@@ -11,5 +11,6 @@ summary: This section explains how to use the <code>qq fs_get_atime_settings</co
 synopsis: Get access time (atime) settings.
 title: qq fs_get_atime_settings
 usage: qq fs_get_atime_settings [-h]
+zendesk_source: qq CLI Command Guide
 
 ---

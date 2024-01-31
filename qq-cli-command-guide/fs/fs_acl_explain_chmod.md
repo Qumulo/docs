@@ -32,5 +32,6 @@ summary: This section explains how to use the <code>qq fs_acl_explain_chmod</cod
 synopsis: Explain how setting a POSIX mode would affect a file's ACL
 title: qq fs_acl_explain_chmod
 usage: qq fs_acl_explain_chmod [-h] (--path PATH | --id ID) --mode MODE [-v] [--json]
+zendesk_source: qq CLI Command Guide
 
 ---

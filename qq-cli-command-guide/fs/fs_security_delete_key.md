@@ -16,5 +16,6 @@ summary: This section explains how to use the <code>qq fs_security_delete_key</c
 synopsis: Delete a key from the file system key store.
 title: qq fs_security_delete_key
 usage: qq fs_security_delete_key [-h] -k KEY
+zendesk_source: qq CLI Command Guide
 
 ---

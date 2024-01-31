@@ -22,5 +22,6 @@ summary: This section explains how to use the <code>qq auth_list_access_tokens</
 synopsis: List metadata for all access tokens
 title: qq auth_list_access_tokens
 usage: qq auth_list_access_tokens [-h] [--json] [--user USER]
+zendesk_source: qq CLI Command Guide
 
 ---

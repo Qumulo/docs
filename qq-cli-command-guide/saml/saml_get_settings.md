@@ -10,5 +10,6 @@ summary: This section explains how to use the <code>qq saml_get_settings</code> 
 synopsis: Get cluster SAML configuration
 title: qq saml_get_settings
 usage: qq saml_get_settings [-h]
+zendesk_source: qq CLI Command Guide
 
 ---

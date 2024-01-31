@@ -14,5 +14,6 @@ summary: This section explains how to use the <code>qq s3_list_buckets</code> co
 synopsis: List all S3 buckets
 title: qq s3_list_buckets
 usage: qq s3_list_buckets [-h] [--json]
+zendesk_source: qq CLI Command Guide
 
 ---

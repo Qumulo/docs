@@ -11,5 +11,6 @@ summary: This section explains how to use the <code>qq audit_get_cloudwatch_stat
 synopsis: Get audit CloudWatch status
 title: qq audit_get_cloudwatch_status
 usage: qq audit_get_cloudwatch_status [-h]
+zendesk_source: qq CLI Command Guide
 
 ---

@@ -28,7 +28,8 @@ summary: This section explains how to use the <code>qq replication_link_snapshot
   command.
 synopsis: Link a snapshot policy to a source replication relationship.
 title: qq replication_link_snapshot_policy
-usage: "qq replication_link_snapshot_policy [-h] --relationship-id RELATIONSHIP_ID\
-  \ --snapshot-policy-id\n    SNAPSHOT_POLICY_ID [-t TARGET_EXPIRATION]"
+usage: qq replication_link_snapshot_policy [-h] --relationship-id RELATIONSHIP_ID
+  --snapshot-policy-id SNAPSHOT_POLICY_ID [-t TARGET_EXPIRATION]
+zendesk_source: qq CLI Command Guide
 
 ---

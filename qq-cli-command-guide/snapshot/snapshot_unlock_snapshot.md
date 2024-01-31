@@ -27,5 +27,6 @@ summary: This section explains how to use the <code>qq snapshot_unlock_snapshot<
 synopsis: Unlock a snapshot.
 title: qq snapshot_unlock_snapshot
 usage: qq snapshot_unlock_snapshot [-h] -i ID (-s SIGNATURE | -k PRIVATE_KEY_FILE)
+zendesk_source: qq CLI Command Guide
 
 ---

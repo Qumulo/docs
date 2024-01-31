@@ -22,5 +22,6 @@ summary: This section explains how to use the <code>qq time_set</code> command.
 synopsis: Set time configuration.
 title: qq time_set
 usage: qq time_set [-h] [--set-use-ad] [--unset-use-ad] [--ntp-servers NTP_SERVERS]
+zendesk_source: qq CLI Command Guide
 
 ---

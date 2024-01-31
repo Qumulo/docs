@@ -30,6 +30,7 @@ summary: This section explains how to use the <code>qq snapshot_file_diff</code>
 synopsis: List changed byte ranges of a file between two snapshots.
 title: qq snapshot_file_diff
 usage: "qq snapshot_file_diff [-h] --newer-snapshot NEWER_SNAPSHOT --older-snapshot\
-  \ OLDER_SNAPSHOT\n    (--path PATH | --file-id FILE_ID) [--page-size PAGE_SIZE]"
+  \ OLDER_SNAPSHOT (--path PATH | --file-id FILE_ID)\n    [--page-size PAGE_SIZE]"
+zendesk_source: qq CLI Command Guide
 
 ---

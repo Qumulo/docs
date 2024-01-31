@@ -10,5 +10,6 @@ summary: This section explains how to use the <code>qq smb_get_settings</code> c
 synopsis: Get SMB settings
 title: qq smb_get_settings
 usage: qq smb_get_settings [-h]
+zendesk_source: qq CLI Command Guide
 
 ---

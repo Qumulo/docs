@@ -10,5 +10,6 @@ summary: This section explains how to use the <code>qq ldap_get_settings</code> 
 synopsis: Get settings for LDAP interaction
 title: qq ldap_get_settings
 usage: qq ldap_get_settings [-h]
+zendesk_source: qq CLI Command Guide
 
 ---

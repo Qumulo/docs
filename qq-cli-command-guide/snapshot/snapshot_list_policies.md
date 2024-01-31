@@ -11,5 +11,6 @@ summary: This section explains how to use the <code>qq snapshot_list_policies</c
 synopsis: List all policies
 title: qq snapshot_list_policies
 usage: qq snapshot_list_policies [-h]
+zendesk_source: qq CLI Command Guide
 
 ---

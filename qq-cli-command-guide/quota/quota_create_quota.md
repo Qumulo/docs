@@ -23,5 +23,6 @@ summary: This section explains how to use the <code>qq quota_create_quota</code>
 synopsis: Create a directory quota
 title: qq quota_create_quota
 usage: qq quota_create_quota [-h] [--path PATH] [--id ID] --limit LIMIT
+zendesk_source: qq CLI Command Guide
 
 ---

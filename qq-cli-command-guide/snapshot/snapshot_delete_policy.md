@@ -16,5 +16,6 @@ summary: This section explains how to use the <code>qq snapshot_delete_policy</c
 synopsis: Delete a single scheduling policy
 title: qq snapshot_delete_policy
 usage: qq snapshot_delete_policy [-h] -i ID
+zendesk_source: qq CLI Command Guide
 
 ---

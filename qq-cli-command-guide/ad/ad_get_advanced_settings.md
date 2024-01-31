@@ -11,5 +11,6 @@ summary: This section explains how to use the <code>qq ad_get_advanced_settings<
 synopsis: Get advanced Active Directory settings
 title: qq ad_get_advanced_settings
 usage: qq ad_get_advanced_settings [-h]
+zendesk_source: qq CLI Command Guide
 
 ---

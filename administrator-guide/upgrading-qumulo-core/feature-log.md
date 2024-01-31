@@ -12,6 +12,15 @@ For information about upgrade types for each release, see <a href='mode-referenc
 
 <style>div#toc{height:200px;overflow:auto;}</style>
 
+## Qumulo Core 7.0.0 (Quarterly)
+{{page.varDownloadsRelnotes}}
+* Added support for NFSv4.1 cross-connection write combining
+* Made significant improvements in SMB random small-write performance
+* Added partial support for new S3 API actions
+* Configured Qumulo Core to take daily snapshots at regular intervals throughout the day
+* Made changes to the REST API and the `qq` CLI to accommodate improvements in snapshot and at-rest encryption functionality
+* Resolved a minor issue with AD authentication, revised permissions for SMB `copychunk` requests, and resolved an issue with `.snapshot` directories in Windows Command Prompt
+
 ## Qumulo Core 6.3.2
 {{page.varDownloadsRelnotes}}
 * Added support for additional custom metadata operations to the S3 API.

@@ -12,5 +12,6 @@ synopsis: Get SSL CA certificate. This certificate is used to authenticate conne
   to external LDAP servers.
 title: qq ssl_get_ca_certificate
 usage: qq ssl_get_ca_certificate [-h]
+zendesk_source: qq CLI Command Guide
 
 ---

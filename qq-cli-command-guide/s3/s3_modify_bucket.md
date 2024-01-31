@@ -22,5 +22,6 @@ summary: This section explains how to use the <code>qq s3_modify_bucket</code> c
 synopsis: Modify S3 bucket settings
 title: qq s3_modify_bucket
 usage: qq s3_modify_bucket [-h] --name NAME [--disable-anonymous-access | --enable-anonymous-access]
+zendesk_source: qq CLI Command Guide
 
 ---

@@ -17,5 +17,6 @@ synopsis: Set SSL CA certificate. This certificate is used to authenticate conne
   to external LDAP servers.
 title: qq ssl_modify_ca_certificate
 usage: qq ssl_modify_ca_certificate [-h] -c CERTIFICATE
+zendesk_source: qq CLI Command Guide
 
 ---

@@ -11,5 +11,6 @@ summary: This section explains how to use the <code>qq audit_get_syslog_config</
 synopsis: Get audit syslog server configuration
 title: qq audit_get_syslog_config
 usage: qq audit_get_syslog_config [-h]
+zendesk_source: qq CLI Command Guide
 
 ---

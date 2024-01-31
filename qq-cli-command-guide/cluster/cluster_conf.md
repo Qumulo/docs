@@ -10,5 +10,6 @@ summary: This section explains how to use the <code>qq cluster_conf</code> comma
 synopsis: Get the cluster config
 title: qq cluster_conf
 usage: qq cluster_conf [-h]
+zendesk_source: qq CLI Command Guide
 
 ---

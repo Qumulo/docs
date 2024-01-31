@@ -26,5 +26,6 @@ summary: This section explains how to use the <code>qq smb_list_share</code> com
 synopsis: List a share
 title: qq smb_list_share
 usage: qq smb_list_share [-h] (--id ID | --name NAME) [--tenant-id TENANT_ID] [--json]
+zendesk_source: qq CLI Command Guide
 
 ---

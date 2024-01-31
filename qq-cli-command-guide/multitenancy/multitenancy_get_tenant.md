@@ -15,5 +15,6 @@ summary: This section explains how to use the <code>qq multitenancy_get_tenant</
 synopsis: Get a tenant
 title: qq multitenancy_get_tenant
 usage: qq multitenancy_get_tenant [-h] --id ID
+zendesk_source: qq CLI Command Guide
 
 ---

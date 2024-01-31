@@ -10,5 +10,6 @@ summary: This section explains how to use the <code>qq auth_list_users</code> co
 synopsis: List all users
 title: qq auth_list_users
 usage: qq auth_list_users [-h]
+zendesk_source: qq CLI Command Guide
 
 ---

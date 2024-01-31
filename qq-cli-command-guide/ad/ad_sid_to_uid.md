@@ -15,5 +15,6 @@ summary: This section explains how to use the <code>qq ad_sid_to_uid</code> comm
 synopsis: Get UID from SID
 title: qq ad_sid_to_uid
 usage: qq ad_sid_to_uid [-h] -s SID
+zendesk_source: qq CLI Command Guide
 
 ---

@@ -10,5 +10,6 @@ summary: This section explains how to use the <code>qq who_am_i</code> command.
 synopsis: Get information on the current user
 title: qq who_am_i
 usage: qq who_am_i [-h]
+zendesk_source: qq CLI Command Guide
 
 ---

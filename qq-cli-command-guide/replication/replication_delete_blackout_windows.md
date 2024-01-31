@@ -15,5 +15,6 @@ summary: This section explains how to use the <code>qq replication_delete_blacko
 synopsis: Delete blackout windows of the specified source replication relationship.
 title: qq replication_delete_blackout_windows
 usage: qq replication_delete_blackout_windows [-h] --id ID
+zendesk_source: qq CLI Command Guide
 
 ---

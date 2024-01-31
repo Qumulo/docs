@@ -26,7 +26,8 @@ summary: This section explains how to use the <code>qq fs_list_lock_waiters_by_c
   command.
 synopsis: List waiting lock requests for a particular client machine
 title: qq fs_list_lock_waiters_by_client
-usage: "qq fs_list_lock_waiters_by_client [-h] --protocol {nlm} --lock-type {byte-range}\
-  \ [--name NAME]\n    [--address ADDRESS]"
+usage: qq fs_list_lock_waiters_by_client [-h] --protocol {nlm} --lock-type {byte-range}
+  [--name NAME] [--address ADDRESS]
+zendesk_source: qq CLI Command Guide
 
 ---

@@ -34,7 +34,8 @@ summary: This section explains how to use the <code>qq fs_punch_hole</code> comm
 synopsis: "Create a hole in a region of a file. Destroys all data\n        within\
   \ the hole."
 title: qq fs_punch_hole
-usage: "qq fs_punch_hole [-h] (--path PATH | --id ID) [--stream-id STREAM_ID | --stream-name\
-  \ STREAM_NAME]\n    --offset OFFSET --size SIZE"
+usage: qq fs_punch_hole [-h] (--path PATH | --id ID) [--stream-id STREAM_ID | --stream-name
+  STREAM_NAME] --offset OFFSET --size SIZE
+zendesk_source: qq CLI Command Guide
 
 ---

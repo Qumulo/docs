@@ -10,5 +10,6 @@ summary: This section explains how to use the <code>qq logout</code> command.
 synopsis: Remove qfsd REST credentials
 title: qq logout
 usage: qq logout [-h]
+zendesk_source: qq CLI Command Guide
 
 ---

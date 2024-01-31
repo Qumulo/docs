@@ -11,5 +11,6 @@ summary: This section explains how to use the <code>qq replication_list_source_r
 synopsis: List existing source replication relationships.
 title: qq replication_list_source_relationships
 usage: qq replication_list_source_relationships [-h]
+zendesk_source: qq CLI Command Guide
 
 ---

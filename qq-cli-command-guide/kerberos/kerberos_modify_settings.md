@@ -17,5 +17,6 @@ summary: This section explains how to use the <code>qq kerberos_modify_settings<
 synopsis: Modify the Kerberos settings
 title: qq kerberos_modify_settings
 usage: qq kerberos_modify_settings [-h] -a USE_ALT_SECURITY_IDENTITIES_MAPPING
+zendesk_source: qq CLI Command Guide
 
 ---

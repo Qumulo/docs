@@ -27,7 +27,8 @@ summary: This section explains how to use the <code>qq nfs_mod_export_host_acces
 synopsis: Modify the access hosts are granted to an export
 title: qq nfs_mod_export_host_access
 usage: "qq nfs_mod_export_host_access [-h] [--export-id EXPORT_ID] [--export-path\
-  \ EXPORT_PATH]\n    [--tenant-id TENANT_ID] [--json]\n    {add_entry,modify_entry,remove_entry}\
+  \ EXPORT_PATH] [--tenant-id TENANT_ID] [--json]\n    {add_entry,modify_entry,remove_entry}\
   \ ..."
+zendesk_source: qq CLI Command Guide
 
 ---

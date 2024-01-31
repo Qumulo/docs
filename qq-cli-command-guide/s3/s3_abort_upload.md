@@ -20,5 +20,6 @@ synopsis: Aborts an in-progress S3 upload. This can be applied to both user init
   CopyObject actions.
 title: qq s3_abort_upload
 usage: qq s3_abort_upload [-h] --bucket BUCKET --upload-id UPLOAD_ID
+zendesk_source: qq CLI Command Guide
 
 ---

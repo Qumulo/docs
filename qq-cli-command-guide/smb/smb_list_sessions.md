@@ -23,5 +23,6 @@ summary: This section explains how to use the <code>qq smb_list_sessions</code> 
 synopsis: List SMB open sessions
 title: qq smb_list_sessions
 usage: qq smb_list_sessions [-h] [--page-size PAGE_SIZE] [--identity IDENTITY]
+zendesk_source: qq CLI Command Guide
 
 ---

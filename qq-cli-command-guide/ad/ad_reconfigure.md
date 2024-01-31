@@ -33,5 +33,6 @@ synopsis: Reconfigure Active Directory POSIX Attributes
 title: qq ad_reconfigure
 usage: "qq ad_reconfigure [-h] [--enable-search-trusted-domains | --disable-search-trusted-domains]\n\
   \    [--enable-ad-posix-attributes | --disable-ad-posix-attributes] [--base-dn BASE_DN]"
+zendesk_source: qq CLI Command Guide
 
 ---

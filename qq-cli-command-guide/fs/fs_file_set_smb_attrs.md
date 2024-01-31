@@ -52,7 +52,8 @@ summary: This section explains how to use the <code>qq fs_file_set_smb_attrs</co
 synopsis: Change SMB extended attributes on the file
 title: qq fs_file_set_smb_attrs
 usage: "qq fs_file_set_smb_attrs [-h] (--path PATH | --id ID) [--archive BOOL] [--compressed\
-  \ BOOL]\n    [--hidden BOOL] [--not-content-indexed BOOL] [--read-only BOOL]\n \
-  \   [--system BOOL] [--temporary BOOL] [--offline BOOL]"
+  \ BOOL] [--hidden BOOL] [--not-content-indexed BOOL]\n    [--read-only BOOL] [--system\
+  \ BOOL] [--temporary BOOL] [--offline BOOL]"
+zendesk_source: qq CLI Command Guide
 
 ---

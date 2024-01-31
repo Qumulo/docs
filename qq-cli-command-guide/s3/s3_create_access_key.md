@@ -20,5 +20,6 @@ summary: This section explains how to use the <code>qq s3_create_access_key</cod
 synopsis: Create S3 access key
 title: qq s3_create_access_key
 usage: qq s3_create_access_key [-h] [--auth-id AUTH_ID] [identifier]
+zendesk_source: qq CLI Command Guide
 
 ---

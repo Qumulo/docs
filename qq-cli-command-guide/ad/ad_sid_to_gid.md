@@ -15,5 +15,6 @@ summary: This section explains how to use the <code>qq ad_sid_to_gid</code> comm
 synopsis: Get GID from SID
 title: qq ad_sid_to_gid
 usage: qq ad_sid_to_gid [-h] -s SID
+zendesk_source: qq CLI Command Guide
 
 ---

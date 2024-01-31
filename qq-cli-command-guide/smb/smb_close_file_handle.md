@@ -15,5 +15,6 @@ summary: This section explains how to use the <code>qq smb_close_file_handle</co
 synopsis: Force-close the specified SMB file handle
 title: qq smb_close_file_handle
 usage: qq smb_close_file_handle [-h] --location LOCATION
+zendesk_source: qq CLI Command Guide
 
 ---

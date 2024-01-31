@@ -18,5 +18,6 @@ summary: This section explains how to use the <code>qq smb_list_shares</code> co
 synopsis: List all SMB shares
 title: qq smb_list_shares
 usage: qq smb_list_shares [-h] [--json] [--populate-trustee-names]
+zendesk_source: qq CLI Command Guide
 
 ---

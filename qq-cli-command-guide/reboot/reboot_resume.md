@@ -10,5 +10,6 @@ summary: This section explains how to use the <code>qq reboot_resume</code> comm
 synopsis: Resume a cluster-wide reboot
 title: qq reboot_resume
 usage: qq reboot_resume [-h]
+zendesk_source: qq CLI Command Guide
 
 ---

@@ -15,5 +15,6 @@ summary: This section explains how to use the <code>qq auth_delete_role</code> c
 synopsis: Delete a custom role.
 title: qq auth_delete_role
 usage: qq auth_delete_role [-h] -r ROLE
+zendesk_source: qq CLI Command Guide
 
 ---

@@ -21,7 +21,8 @@ summary: This section explains how to use the <code>qq raw</code> command.
 synopsis: Issue an HTTP request to a Qumulo REST endpoint. Content for modifying requests
   (i.e. PATCH, POST, and PUT) can be provided on stdin.  Output is provided on stdout.
 title: qq raw
-usage: "qq raw [-h] [--content-type {application/json,application/octet-stream}]\n\
-  \    {DELETE,GET,PATCH,POST,PUT} url"
+usage: qq raw [-h] [--content-type {application/json,application/octet-stream}] {DELETE,GET,PATCH,POST,PUT}
+  url
+zendesk_source: qq CLI Command Guide
 
 ---

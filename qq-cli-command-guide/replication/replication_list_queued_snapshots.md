@@ -16,5 +16,6 @@ synopsis: List information for all snapshots awaiting replication by the specifi
   source replication relationship.
 title: qq replication_list_queued_snapshots
 usage: qq replication_list_queued_snapshots [-h] --id ID
+zendesk_source: qq CLI Command Guide
 
 ---

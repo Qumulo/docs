@@ -32,5 +32,6 @@ synopsis: Change audit CloudWatch configuration
 title: qq audit_set_cloudwatch_config
 usage: qq audit_set_cloudwatch_config [-h] [--enable | --disable] [-l LOG_GROUP_NAME]
   [-r REGION]
+zendesk_source: qq CLI Command Guide
 
 ---

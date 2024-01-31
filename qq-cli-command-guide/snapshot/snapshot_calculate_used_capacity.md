@@ -17,5 +17,6 @@ summary: This section explains how to use the <code>qq snapshot_calculate_used_c
 synopsis: Get the space used by the snapshots specified.
 title: qq snapshot_calculate_used_capacity
 usage: qq snapshot_calculate_used_capacity [-h] [-i IDS]
+zendesk_source: qq CLI Command Guide
 
 ---

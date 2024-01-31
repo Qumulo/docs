@@ -16,5 +16,6 @@ summary: This section explains how to use the <code>qq snapshot_get_policy_statu
 synopsis: Get a single snapshot policy status
 title: qq snapshot_get_policy_status
 usage: qq snapshot_get_policy_status [-h] -i ID
+zendesk_source: qq CLI Command Guide
 
 ---

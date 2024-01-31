@@ -11,5 +11,6 @@ summary: This section explains how to use the <code>qq audit_get_syslog_status</
 synopsis: Get audit syslog server status
 title: qq audit_get_syslog_status
 usage: qq audit_get_syslog_status [-h]
+zendesk_source: qq CLI Command Guide
 
 ---

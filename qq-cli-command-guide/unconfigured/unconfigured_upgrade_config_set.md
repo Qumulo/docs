@@ -19,5 +19,6 @@ summary: This section explains how to use the <code>qq unconfigured_upgrade_conf
 synopsis: Upgrade on an unconfigured node with the FS path to an upgrade image
 title: qq unconfigured_upgrade_config_set
 usage: qq unconfigured_upgrade_config_set [-h] --path PATH [--target TARGET]
+zendesk_source: qq CLI Command Guide
 
 ---

@@ -16,5 +16,6 @@ summary: This section explains how to use the <code>qq snapshot_get_policy</code
 synopsis: Get a single policy
 title: qq snapshot_get_policy
 usage: qq snapshot_get_policy [-h] -i ID
+zendesk_source: qq CLI Command Guide
 
 ---

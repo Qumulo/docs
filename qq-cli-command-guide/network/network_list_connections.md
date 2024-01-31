@@ -20,5 +20,6 @@ summary: This section explains how to use the <code>qq network_list_connections<
 synopsis: Get the list of SMB and NFS protocol connections per node.
 title: qq network_list_connections
 usage: qq network_list_connections [-h] [-c | --json]
+zendesk_source: qq CLI Command Guide
 
 ---

@@ -18,5 +18,6 @@ summary: This section explains how to use the <code>qq set_node_identify_light</
 synopsis: Turn node identification light on or off
 title: qq set_node_identify_light
 usage: qq set_node_identify_light [-h] --node NODE {on,off}
+zendesk_source: qq CLI Command Guide
 
 ---

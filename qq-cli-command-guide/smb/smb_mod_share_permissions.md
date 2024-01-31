@@ -28,7 +28,8 @@ summary: This section explains how to use the <code>qq smb_mod_share_permissions
   command.
 synopsis: Modify a share's permissions
 title: qq smb_mod_share_permissions
-usage: "qq smb_mod_share_permissions [-h] (--id ID | --name NAME) [--tenant-id TENANT_ID]\
-  \ [--json]\n    {add_entry,remove_entry,modify_entry,replace} ..."
+usage: qq smb_mod_share_permissions [-h] (--id ID | --name NAME) [--tenant-id TENANT_ID]
+  [--json] {add_entry,remove_entry,modify_entry,replace} ...
+zendesk_source: qq CLI Command Guide
 
 ---

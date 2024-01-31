@@ -19,7 +19,8 @@ summary: This section explains how to use the <code>qq replication_release_queue
 synopsis: Release a snapshot queued for replication from the queue of the specified
   source replication relationship.
 title: qq replication_release_queued_snapshot
-usage: "qq replication_release_queued_snapshot [-h] --relationship-id RELATIONSHIP_ID\
-  \ --snapshot-id\n    SNAPSHOT_ID"
+usage: qq replication_release_queued_snapshot [-h] --relationship-id RELATIONSHIP_ID
+  --snapshot-id SNAPSHOT_ID
+zendesk_source: qq CLI Command Guide
 
 ---

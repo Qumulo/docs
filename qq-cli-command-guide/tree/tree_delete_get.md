@@ -17,5 +17,6 @@ summary: This section explains how to use the <code>qq tree_delete_get</code> co
 synopsis: Get information about one delete job
 title: qq tree_delete_get
 usage: qq tree_delete_get [-h] [--json] id
+zendesk_source: qq CLI Command Guide
 
 ---

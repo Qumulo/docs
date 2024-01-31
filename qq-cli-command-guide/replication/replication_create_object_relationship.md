@@ -74,11 +74,12 @@ summary: This section explains how to use the <code>qq replication_create_object
 synopsis: "\n    Create an object replication relationship that initiates a copy of\
   \ file data to or\n    from S3.\n    "
 title: qq replication_create_object_relationship
-usage: "qq replication_create_object_relationship [-h]\n    (--local-directory-id\
-  \ LOCAL_DIRECTORY_ID | --local-directory-path LOCAL_DIRECTORY_PATH)\n    --direction\
-  \ {COPY_TO_OBJECT,COPY_FROM_OBJECT}\n    [--object-store-address OBJECT_STORE_ADDRESS]\n\
-  \    --object-folder OBJECT_FOLDER [--use-port USE_PORT]\n    [--ca-certificate\
-  \ CA_CERTIFICATE] --bucket BUCKET\n    [--bucket-addressing-style {BUCKET_STYLE_PATH,BUCKET_STYLE_VIRTUAL_HOSTED}]\n\
-  \    --region REGION --access-key-id ACCESS_KEY_ID\n    [--secret-access-key SECRET_ACCESS_KEY]"
+usage: "qq replication_create_object_relationship [-h] (--local-directory-id LOCAL_DIRECTORY_ID\
+  \ | --local-directory-path LOCAL_DIRECTORY_PATH)\n    --direction {COPY_TO_OBJECT,COPY_FROM_OBJECT}\
+  \ [--object-store-address OBJECT_STORE_ADDRESS]\n    --object-folder OBJECT_FOLDER\
+  \ [--use-port USE_PORT] [--ca-certificate CA_CERTIFICATE] --bucket BUCKET\n    [--bucket-addressing-style\
+  \ {BUCKET_STYLE_PATH,BUCKET_STYLE_VIRTUAL_HOSTED}] --region REGION\n    --access-key-id\
+  \ ACCESS_KEY_ID [--secret-access-key SECRET_ACCESS_KEY]"
+zendesk_source: qq CLI Command Guide
 
 ---

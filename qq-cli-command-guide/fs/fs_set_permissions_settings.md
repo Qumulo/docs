@@ -14,5 +14,6 @@ summary: This section explains how to use the <code>qq fs_set_permissions_settin
 synopsis: Set permissions settings
 title: qq fs_set_permissions_settings
 usage: qq fs_set_permissions_settings [-h] mode
+zendesk_source: qq CLI Command Guide
 
 ---

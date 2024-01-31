@@ -16,5 +16,6 @@ summary: This section explains how to use the <code>qq ad_name_to_accounts</code
 synopsis: Get all account info for a sAMAccountName
 title: qq ad_name_to_accounts
 usage: qq ad_name_to_accounts [-h] -n NAME
+zendesk_source: qq CLI Command Guide
 
 ---

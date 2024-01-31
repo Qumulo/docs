@@ -30,7 +30,8 @@ summary: This section explains how to use the <code>qq fs_list_lock_waiters_by_f
   command.
 synopsis: List waiting lock requests for a particular file
 title: qq fs_list_lock_waiters_by_file
-usage: "qq fs_list_lock_waiters_by_file [-h] (--path PATH | --id ID) --protocol {nlm}\
-  \ --lock-type {byte-range}\n    [--snapshot SNAPSHOT]"
+usage: qq fs_list_lock_waiters_by_file [-h] (--path PATH | --id ID) --protocol {nlm}
+  --lock-type {byte-range} [--snapshot SNAPSHOT]
+zendesk_source: qq CLI Command Guide
 
 ---

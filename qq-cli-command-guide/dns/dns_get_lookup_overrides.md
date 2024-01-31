@@ -11,5 +11,6 @@ summary: This section explains how to use the <code>qq dns_get_lookup_overrides<
 synopsis: List the configured set of DNS lookup overrides.
 title: qq dns_get_lookup_overrides
 usage: qq dns_get_lookup_overrides [-h]
+zendesk_source: qq CLI Command Guide
 
 ---

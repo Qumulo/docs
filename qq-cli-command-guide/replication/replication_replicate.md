@@ -15,5 +15,6 @@ summary: This section explains how to use the <code>qq replication_replicate</co
 synopsis: Replicate from the source to the target of the specified relationship.
 title: qq replication_replicate
 usage: qq replication_replicate [-h] --id ID
+zendesk_source: qq CLI Command Guide
 
 ---

@@ -30,7 +30,8 @@ summary: This section explains how to use the <code>qq snapshot_list_statuses</c
   command.
 synopsis: List the information for every snapshot.
 title: qq snapshot_list_statuses
-usage: "qq snapshot_list_statuses [-h] [--exclude-in-delete | --only-in-delete]\n\
-  \    [--exclude-locked | --only-locked]"
+usage: qq snapshot_list_statuses [-h] [--exclude-in-delete | --only-in-delete] [--exclude-locked
+  | --only-locked]
+zendesk_source: qq CLI Command Guide
 
 ---

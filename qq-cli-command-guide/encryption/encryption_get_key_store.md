@@ -11,5 +11,6 @@ summary: This section explains how to use the <code>qq encryption_get_key_store<
 synopsis: Get the active at-rest encryption configuration.
 title: qq encryption_get_key_store
 usage: qq encryption_get_key_store [-h]
+zendesk_source: qq CLI Command Guide
 
 ---

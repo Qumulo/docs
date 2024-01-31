@@ -56,9 +56,10 @@ summary: This section explains how to use the <code>qq network_add_network</code
 synopsis: Add network configuration
 title: qq network_add_network
 usage: "qq network_add_network [-h] --name NAME --netmask <netmask-or-subnet> --ip-ranges\
-  \ <address-or-range>\n    [<address-or-range> ...]\n    [--floating-ip-ranges <address-or-range>\
+  \ <address-or-range> [<address-or-range> ...]\n    [--floating-ip-ranges <address-or-range>\
   \ [<address-or-range> ...]]\n    [--dns-servers <address-or-range> [<address-or-range>\
-  \ ...]]\n    [--dns-search-domains <search-domain> [<search-domain> ...]] [--mtu\
-  \ MTU]\n    [--vlan-id VLAN_ID] [--tenant-id TENANT_ID]"
+  \ ...]] [--dns-search-domains <search-domain> [<search-domain> ...]]\n    [--mtu\
+  \ MTU] [--vlan-id VLAN_ID] [--tenant-id TENANT_ID]"
+zendesk_source: qq CLI Command Guide
 
 ---

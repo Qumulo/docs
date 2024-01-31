@@ -23,7 +23,8 @@ summary: This section explains how to use the <code>qq capacity_history_get</cod
   command.
 synopsis: Get capacity history data.
 title: qq capacity_history_get
-usage: "qq capacity_history_get [-h] --begin-time BEGIN_TIME [--end-time END_TIME]\n\
-  \    [--interval {hourly,daily,weekly}]"
+usage: qq capacity_history_get [-h] --begin-time BEGIN_TIME [--end-time END_TIME]
+  [--interval {hourly,daily,weekly}]
+zendesk_source: qq CLI Command Guide
 
 ---

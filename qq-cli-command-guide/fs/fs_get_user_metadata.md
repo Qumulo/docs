@@ -46,7 +46,8 @@ summary: This section explains how to use the <code>qq fs_get_user_metadata</cod
 synopsis: Retrieve a user metadata value for a file by using the specified metadata
   key
 title: qq fs_get_user_metadata
-usage: "qq fs_get_user_metadata [-h] (--path PATH | --id ID) [--s3] --key KEY [--snapshot\
-  \ SNAPSHOT]\n    [--hex | --base64]"
+usage: qq fs_get_user_metadata [-h] (--path PATH | --id ID) [--s3] --key KEY [--snapshot
+  SNAPSHOT] [--hex | --base64]
+zendesk_source: qq CLI Command Guide
 
 ---

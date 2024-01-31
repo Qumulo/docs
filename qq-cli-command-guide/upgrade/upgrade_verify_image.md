@@ -15,5 +15,6 @@ summary: This section explains how to use the <code>qq upgrade_verify_image</cod
 synopsis: Verify an image path for upgrade
 title: qq upgrade_verify_image
 usage: qq upgrade_verify_image [-h] --path PATH
+zendesk_source: qq CLI Command Guide
 
 ---

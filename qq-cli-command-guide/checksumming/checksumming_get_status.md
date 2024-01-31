@@ -11,5 +11,6 @@ summary: This section explains how to use the <code>qq checksumming_get_status</
 synopsis: Get the checksumming status of the cluster.
 title: qq checksumming_get_status
 usage: qq checksumming_get_status [-h]
+zendesk_source: qq CLI Command Guide
 
 ---

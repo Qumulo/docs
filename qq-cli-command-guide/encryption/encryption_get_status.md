@@ -11,5 +11,6 @@ summary: This section explains how to use the <code>qq encryption_get_status</co
 synopsis: Get the status of at-rest encryption.
 title: qq encryption_get_status
 usage: qq encryption_get_status [-h]
+zendesk_source: qq CLI Command Guide
 
 ---

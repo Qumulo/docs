@@ -14,5 +14,6 @@ summary: This section explains how to use the <code>qq auth_delete_access_token<
 synopsis: Delete the specified access token
 title: qq auth_delete_access_token
 usage: qq auth_delete_access_token [-h] id
+zendesk_source: qq CLI Command Guide
 
 ---

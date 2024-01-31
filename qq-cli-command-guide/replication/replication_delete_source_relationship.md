@@ -19,5 +19,6 @@ summary: This section explains how to use the <code>qq replication_delete_source
 synopsis: Delete the specified source replication relationship.
 title: qq replication_delete_source_relationship
 usage: qq replication_delete_source_relationship [-h] --id ID [--force]
+zendesk_source: qq CLI Command Guide
 
 ---

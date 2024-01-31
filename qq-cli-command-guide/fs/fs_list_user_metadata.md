@@ -47,7 +47,8 @@ summary: This section explains how to use the <code>qq fs_list_user_metadata</co
   command.
 synopsis: Retrieve user metadata of the specified type for a file
 title: qq fs_list_user_metadata
-usage: "qq fs_list_user_metadata [-h] (--path PATH | --id ID) [--s3] [--json] [--snapshot\
-  \ SNAPSHOT]\n    [--hex | --base64]"
+usage: qq fs_list_user_metadata [-h] (--path PATH | --id ID) [--s3] [--json] [--snapshot
+  SNAPSHOT] [--hex | --base64]
+zendesk_source: qq CLI Command Guide
 
 ---

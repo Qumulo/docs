@@ -15,5 +15,6 @@ summary: This section explains how to use the <code>qq ad_sid_to_account</code> 
 synopsis: Get all account info for a SID
 title: qq ad_sid_to_account
 usage: qq ad_sid_to_account [-h] -s SID
+zendesk_source: qq CLI Command Guide
 
 ---

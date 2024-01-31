@@ -20,5 +20,6 @@ summary: This section explains how to use the <code>qq identity_attributes_set</
 synopsis: Set attributes related to the given identity.
 title: qq identity_attributes_set
 usage: qq identity_attributes_set [-h] --home-directory HOME_DIRECTORY identifier
+zendesk_source: qq CLI Command Guide
 
 ---

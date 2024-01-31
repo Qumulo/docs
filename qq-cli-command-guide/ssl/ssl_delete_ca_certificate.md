@@ -12,5 +12,6 @@ synopsis: Delete SSL CA certificate. This certificate is used to authenticate co
   to external LDAP servers.
 title: qq ssl_delete_ca_certificate
 usage: qq ssl_delete_ca_certificate [-h]
+zendesk_source: qq CLI Command Guide
 
 ---

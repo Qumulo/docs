@@ -26,7 +26,8 @@ sidebar: qq_cli_command_reference_sidebar
 summary: This section explains how to use the <code>qq nfs_get_export</code> command.
 synopsis: Get an export
 title: qq nfs_get_export
-usage: "qq nfs_get_export [-h] (--export-id EXPORT_ID | --export-path EXPORT_PATH)\
-  \ [--tenant-id TENANT_ID]\n    [--json]"
+usage: qq nfs_get_export [-h] (--export-id EXPORT_ID | --export-path EXPORT_PATH)
+  [--tenant-id TENANT_ID] [--json]
+zendesk_source: qq CLI Command Guide
 
 ---

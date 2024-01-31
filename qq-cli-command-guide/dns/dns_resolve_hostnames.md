@@ -15,5 +15,6 @@ summary: This section explains how to use the <code>qq dns_resolve_hostnames</co
 synopsis: Resolve hostnames to IP addresses
 title: qq dns_resolve_hostnames
 usage: qq dns_resolve_hostnames [-h] --hosts HOSTS [HOSTS ...]
+zendesk_source: qq CLI Command Guide
 
 ---

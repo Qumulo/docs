@@ -11,5 +11,6 @@ summary: This section explains how to use the <code>qq kerberos_get_settings</co
 synopsis: Get the Kerberos settings
 title: qq kerberos_get_settings
 usage: qq kerberos_get_settings [-h]
+zendesk_source: qq CLI Command Guide
 
 ---

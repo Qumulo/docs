@@ -16,5 +16,6 @@ summary: This section explains how to use the <code>qq snapshot_get_status</code
 synopsis: Get the information for a single snapshot.
 title: qq snapshot_get_status
 usage: qq snapshot_get_status [-h] -i ID
+zendesk_source: qq CLI Command Guide
 
 ---

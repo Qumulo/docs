@@ -14,5 +14,6 @@ summary: This section explains how to use the <code>qq cluster_slots</code> comm
 synopsis: Get the cluster disk slots status
 title: qq cluster_slots
 usage: qq cluster_slots [-h] [--slot SLOT]
+zendesk_source: qq CLI Command Guide
 
 ---

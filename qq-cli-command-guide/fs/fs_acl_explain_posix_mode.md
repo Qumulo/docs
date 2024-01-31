@@ -23,5 +23,6 @@ summary: This section explains how to use the <code>qq fs_acl_explain_posix_mode
 synopsis: Explain the derivation of POSIX mode from a file's ACL
 title: qq fs_acl_explain_posix_mode
 usage: qq fs_acl_explain_posix_mode [-h] (--path PATH | --id ID) [--json]
+zendesk_source: qq CLI Command Guide
 
 ---

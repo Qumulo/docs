@@ -10,5 +10,6 @@ summary: This section explains how to use the <code>qq ad_list</code> command.
 synopsis: Get Active Directory configuration and connection status
 title: qq ad_list
 usage: qq ad_list [-h]
+zendesk_source: qq CLI Command Guide
 
 ---

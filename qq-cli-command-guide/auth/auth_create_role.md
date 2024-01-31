@@ -25,5 +25,6 @@ summary: This section explains how to use the <code>qq auth_create_role</code> c
 synopsis: Create a custom role.
 title: qq auth_create_role
 usage: qq auth_create_role [-h] -r ROLE [-d DESCRIPTION] [-p PRIVILEGES_FILE]
+zendesk_source: qq CLI Command Guide
 
 ---

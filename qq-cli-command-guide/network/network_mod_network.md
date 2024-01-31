@@ -79,11 +79,12 @@ summary: This section explains how to use the <code>qq network_mod_network</code
 synopsis: Modify network configuration
 title: qq network_mod_network
 usage: "qq network_mod_network [-h] --network-id NETWORK_ID [--name NAME] [--assigned-by\
-  \ {DHCP,STATIC}]\n    [--netmask <netmask-or-subnet>]\n    [--ip-ranges <address-or-range>\
+  \ {DHCP,STATIC}] [--netmask <netmask-or-subnet>]\n    [--ip-ranges <address-or-range>\
   \ [<address-or-range> ...]]\n    [--floating-ip-ranges <address-or-range> [<address-or-range>\
-  \ ...]]\n    [--clear-floating-ip-ranges]\n    [--dns-servers <address-or-range>\
-  \ [<address-or-range> ...]]\n    [--clear-dns-servers]\n    [--dns-search-domains\
-  \ <search-domain> [<search-domain> ...]]\n    [--clear-dns-search-domains] [--mtu\
-  \ MTU] [--vlan-id VLAN_ID]\n    [--tenant-id TENANT_ID | --clear-tenant-id]"
+  \ ...]] [--clear-floating-ip-ranges]\n    [--dns-servers <address-or-range> [<address-or-range>\
+  \ ...]] [--clear-dns-servers]\n    [--dns-search-domains <search-domain> [<search-domain>\
+  \ ...]] [--clear-dns-search-domains] [--mtu MTU] [--vlan-id VLAN_ID]\n    [--tenant-id\
+  \ TENANT_ID | --clear-tenant-id]"
+zendesk_source: qq CLI Command Guide
 
 ---

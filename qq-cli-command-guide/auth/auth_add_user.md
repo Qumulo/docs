@@ -30,7 +30,8 @@ sidebar: qq_cli_command_reference_sidebar
 summary: This section explains how to use the <code>qq auth_add_user</code> command.
 synopsis: Add a new user
 title: qq auth_add_user
-usage: "qq auth_add_user [-h] --name NAME [--primary-group PRIMARY_GROUP] [--uid UID]\n\
-  \    [--home-directory HOME_DIRECTORY] [-p [PASSWORD]]"
+usage: qq auth_add_user [-h] --name NAME [--primary-group PRIMARY_GROUP] [--uid UID]
+  [--home-directory HOME_DIRECTORY] [-p [PASSWORD]]
+zendesk_source: qq CLI Command Guide
 
 ---

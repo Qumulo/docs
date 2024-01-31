@@ -18,5 +18,6 @@ summary: This section explains how to use the <code>qq auth_add_group</code> com
 synopsis: Add a new group
 title: qq auth_add_group
 usage: qq auth_add_group [-h] --name NAME [--gid GID]
+zendesk_source: qq CLI Command Guide
 
 ---

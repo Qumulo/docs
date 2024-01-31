@@ -19,5 +19,6 @@ summary: This section explains how to use the <code>qq dns_set_lookup_overrides<
 synopsis: Replace the configured set of DNS lookup overrides.
 title: qq dns_set_lookup_overrides
 usage: qq dns_set_lookup_overrides [-h] (--file FILE | --stdin)
+zendesk_source: qq CLI Command Guide
 
 ---

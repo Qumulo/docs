@@ -20,5 +20,6 @@ summary: This section explains how to use the <code>qq s3_delete_bucket</code> c
 synopsis: Delete an S3 bucket
 title: qq s3_delete_bucket
 usage: qq s3_delete_bucket [-h] --name NAME [--delete-root-dir]
+zendesk_source: qq CLI Command Guide
 
 ---

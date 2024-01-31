@@ -112,14 +112,15 @@ sidebar: qq_cli_command_reference_sidebar
 summary: This section explains how to use the <code>qq smb_add_share</code> command.
 synopsis: Add a new SMB share
 title: qq smb_add_share
-usage: "qq smb_add_share [-h] [--tenant-id TENANT_ID] --name NAME --fs-path FS_PATH\n\
-  \    [--description DESCRIPTION] [--access-based-enumeration-enabled {true,false}]\n\
-  \    [--create-fs-path] [--default-file-create-mode DEFAULT_FILE_CREATE_MODE]\n\
-  \    [--default-directory-create-mode DEFAULT_DIRECTORY_CREATE_MODE]\n    [--require-encryption\
-  \ {true,false}] [--json]\n    [--no-access | --read-only | --all-access]\n    [--grant-read-access\
-  \ TRUSTEE [TRUSTEE ...]]\n    [--grant-read-write-access TRUSTEE [TRUSTEE ...]]\n\
-  \    [--grant-all-access TRUSTEE [TRUSTEE ...]] [--deny-access TRUSTEE [TRUSTEE\
-  \ ...]]\n    [--full-control-hosts IP/RANGE [IP/RANGE ...]]\n    [--read-only-hosts\
-  \ IP/RANGE [IP/RANGE ...]] [--deny-hosts IP/RANGE [IP/RANGE ...]]\n    [--deny-all-hosts]"
+usage: "qq smb_add_share [-h] [--tenant-id TENANT_ID] --name NAME --fs-path FS_PATH\
+  \ [--description DESCRIPTION]\n    [--access-based-enumeration-enabled {true,false}]\
+  \ [--create-fs-path] [--default-file-create-mode DEFAULT_FILE_CREATE_MODE]\n   \
+  \ [--default-directory-create-mode DEFAULT_DIRECTORY_CREATE_MODE] [--require-encryption\
+  \ {true,false}] [--json]\n    [--no-access | --read-only | --all-access] [--grant-read-access\
+  \ TRUSTEE [TRUSTEE ...]]\n    [--grant-read-write-access TRUSTEE [TRUSTEE ...]]\
+  \ [--grant-all-access TRUSTEE [TRUSTEE ...]]\n    [--deny-access TRUSTEE [TRUSTEE\
+  \ ...]] [--full-control-hosts IP/RANGE [IP/RANGE ...]] [--read-only-hosts IP/RANGE\
+  \ [IP/RANGE ...]]\n    [--deny-hosts IP/RANGE [IP/RANGE ...]] [--deny-all-hosts]"
+zendesk_source: qq CLI Command Guide
 
 ---

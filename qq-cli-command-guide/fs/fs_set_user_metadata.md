@@ -46,7 +46,8 @@ summary: This section explains how to use the <code>qq fs_set_user_metadata</cod
 synopsis: Set or update a user metadata value for a file by using the specified metadata
   key and value
 title: qq fs_set_user_metadata
-usage: "qq fs_set_user_metadata [-h] (--path PATH | --id ID) [--s3] --key KEY\n  \
-  \  (--value VALUE | --hex-value HEX_VALUE | --base64-value BASE64_VALUE)"
+usage: qq fs_set_user_metadata [-h] (--path PATH | --id ID) [--s3] --key KEY (--value
+  VALUE | --hex-value HEX_VALUE | --base64-value BASE64_VALUE)
+zendesk_source: qq CLI Command Guide
 
 ---

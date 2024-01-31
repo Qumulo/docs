@@ -15,5 +15,6 @@ summary: This section explains how to use the <code>qq network_delete_network</c
 synopsis: Delete network configuration
 title: qq network_delete_network
 usage: qq network_delete_network [-h] --network-id NETWORK_ID
+zendesk_source: qq CLI Command Guide
 
 ---

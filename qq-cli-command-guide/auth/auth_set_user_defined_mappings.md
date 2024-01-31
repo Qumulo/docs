@@ -19,5 +19,6 @@ summary: This section explains how to use the <code>qq auth_set_user_defined_map
 synopsis: Replace the configured set of AD/LDAP static identity mappings.
 title: qq auth_set_user_defined_mappings
 usage: qq auth_set_user_defined_mappings [-h] (--file FILE | --stdin)
+zendesk_source: qq CLI Command Guide
 
 ---

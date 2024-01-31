@@ -14,5 +14,6 @@ summary: This section explains how to use the <code>qq network_poll</code> comma
 synopsis: Poll network status
 title: qq network_poll
 usage: qq network_poll [-h] [--node-id NODE_ID]
+zendesk_source: qq CLI Command Guide
 
 ---

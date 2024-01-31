@@ -15,5 +15,6 @@ summary: This section explains how to use the <code>qq replication_get_target_re
 synopsis: Get current target of the specified source replication relationship.
 title: qq replication_get_target_relationship_status
 usage: qq replication_get_target_relationship_status [-h] --id ID
+zendesk_source: qq CLI Command Guide
 
 ---

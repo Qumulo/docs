@@ -28,5 +28,6 @@ synopsis: Authorize the specified replication relationship, establishing this cl
   as the target of replication.
 title: qq replication_authorize
 usage: qq replication_authorize [-h] --id ID [--allow-non-empty-directory] [--allow-fs-path-create]
+zendesk_source: qq CLI Command Guide
 
 ---

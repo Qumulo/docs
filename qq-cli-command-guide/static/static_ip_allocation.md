@@ -22,7 +22,8 @@ summary: This section explains how to use the <code>qq static_ip_allocation</cod
   command.
 synopsis: Get cluster-wide static IP allocation
 title: qq static_ip_allocation
-usage: "qq static_ip_allocation [-h] [--try-ranges TRY_RANGES] [--try-netmask TRY_NETMASK]\n\
-  \    [--try-floating-ranges TRY_FLOATING_RANGES]"
+usage: qq static_ip_allocation [-h] [--try-ranges TRY_RANGES] [--try-netmask TRY_NETMASK]
+  [--try-floating-ranges TRY_FLOATING_RANGES]
+zendesk_source: qq CLI Command Guide
 
 ---

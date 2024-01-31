@@ -15,5 +15,6 @@ summary: This section explains how to use the <code>qq network_get_interface</co
 synopsis: Get configuration for the specified interface
 title: qq network_get_interface
 usage: qq network_get_interface [-h] [--interface-id INTERFACE_ID]
+zendesk_source: qq CLI Command Guide
 
 ---

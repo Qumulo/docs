@@ -26,19 +26,25 @@ In the following example, a Qumulo cluster has the following export configuratio
 NFSv3 lets you mount one of these exports by specifying the full export name, for example:
 
 ```bash
-mount -o nfsvers=3 cluster.qumulo.com:/read_only/home /mnt/cluster/home
+mount -o nfsvers=3 \
+  cluster.qumulo.com:/read_only/home \
+  /mnt/cluster/home
 ```
 
 This command gives read-only access to the `/home` directory on the cluster by using the path `/mnt/cluster/home`. However, the following command fails with the `No such file or directory` message.
 
 ```bash
-mount -o nfsvers=3 cluster.qumulo.com:/read_only /mnt/cluster/read_only
+mount -o nfsvers=3 \
+  cluster.qumulo.com:/read_only \
+  /mnt/cluster/read_only
 ```
 
 NFSv4.1 still lets you mount exports by specifying the full export name. However, NFSv4.1 also supports navigating _above_ exports, as if they are part of the file system. The following command succeeds.
 
 ```bash
-mount -o nfsvers=4.1 cluster.qumulo.com:/read_only /mnt/cluster/read_only
+mount -o nfsvers=4.1 \
+  cluster.qumulo.com:/read_only \
+  /mnt/cluster/read_only
 ```
 
 At the mount, the exports under `/read_only` are visible: `/mnt/cluster/read_only` displays virtual directories named `files/` and `home/` with the contents of the corresponding directories in the file system, for example:
@@ -97,16 +103,24 @@ qq nfs_modify_settings --enable-v4
 When you enable NFSv4.1, all NFS exports are accessible through NFSv3 and NFSv4.1.
 
 ## Specifying the NFS Mount Option
+{% include note.html content="In Qumulo Core 7.0.0 (and higher), to greatly improve throughput, use the `nconnect=16` option to enable cross-connection write combining." %}
+
 Typically, NFS clients find and use the highest version of the protocol that both the client and server support. For example, the following command mounts by using NFSv4.1 (if it is enabled) or by using NFSv3 otherwise.
 
 ```bash
-mount -t nfs your.qumulo.cluster:/mount_path /path/to/mountpoint
+mount -t nfs \
+  -o nconnect=16 \
+  your.qumulo.cluster:/mount_path \
+  /path/to/mountpoint
 ```
 
 Because Qumulo's NFSv4.1 implementation currently doesn't have full feature parity with NFSv3, you must provide the `nfsvers=3` option for any mounts that require features (such as snapshot access) that only NFSv3 supports, for example:
 
 ```bash
-mount -t nfs -o nfsvers=3 your.qumulo.cluster:/mount_path /path/to/mountpoint
+mount -t nfs \
+  -o nfsvers=3,nconnect=16 \
+  your.qumulo.cluster:/mount_path \
+  /path/to/mountpoint
 ```
 
 {% include note.html content="We recommend specifying the `nfsvers=4` or `nfsvers=4.1` option for any mounts that use NFSv4.1." %}
@@ -151,7 +165,9 @@ The NFSv4.1 implementation in Qumulo Core has a non-configurable lease of one mi
 To list NFSv4.1 byte-range locks in your cluster, use the following `qq` CLI command:
 
 ```bash
-qq fs_list_locks --protocol nfs4 --lock-type byte-range
+qq fs_list_locks \
+  --protocol nfs4 \
+  --lock-type byte-range
 ```
 
 {{site.data.alerts.note}}

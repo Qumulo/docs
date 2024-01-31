@@ -24,5 +24,6 @@ synopsis: Set the attributes for the given cluster slot. Currently only led_patt
   may be set.
 title: qq cluster_slot_set_config
 usage: qq cluster_slot_set_config [-h] --slot SLOT [--locate | --no-locate]
+zendesk_source: qq CLI Command Guide
 
 ---

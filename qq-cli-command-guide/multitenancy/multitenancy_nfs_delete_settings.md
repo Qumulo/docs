@@ -15,5 +15,6 @@ summary: This section explains how to use the <code>qq multitenancy_nfs_delete_s
 synopsis: Delete NFS settings for a tenant
 title: qq multitenancy_nfs_delete_settings
 usage: qq multitenancy_nfs_delete_settings [-h] --tenant-id TENANT_ID
+zendesk_source: qq CLI Command Guide
 
 ---

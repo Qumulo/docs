@@ -18,5 +18,6 @@ summary: This section explains how to use the <code>qq fs_delete</code> command.
 synopsis: Delete a file system object
 title: qq fs_delete
 usage: qq fs_delete [-h] (--path PATH | --id ID)
+zendesk_source: qq CLI Command Guide
 
 ---

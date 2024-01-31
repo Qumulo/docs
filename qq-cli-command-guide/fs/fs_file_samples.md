@@ -23,7 +23,8 @@ sidebar: qq_cli_command_reference_sidebar
 summary: This section explains how to use the <code>qq fs_file_samples</code> command.
 synopsis: Get a number of sample files from the file system
 title: qq fs_file_samples
-usage: "qq fs_file_samples [-h] (--path PATH | --id ID) --count COUNT\n    [--sample-by\
-  \ {capacity,data,file,named_streams}]"
+usage: qq fs_file_samples [-h] (--path PATH | --id ID) --count COUNT [--sample-by
+  {capacity,data,file,named_streams}]
+zendesk_source: qq CLI Command Guide
 
 ---

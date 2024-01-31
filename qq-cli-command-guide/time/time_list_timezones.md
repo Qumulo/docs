@@ -11,5 +11,6 @@ summary: This section explains how to use the <code>qq time_list_timezones</code
 synopsis: List timezones supported by QC
 title: qq time_list_timezones
 usage: qq time_list_timezones [-h]
+zendesk_source: qq CLI Command Guide
 
 ---

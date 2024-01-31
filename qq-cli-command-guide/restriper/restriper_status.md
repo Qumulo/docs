@@ -10,5 +10,6 @@ summary: This section explains how to use the <code>qq restriper_status</code> c
 synopsis: Get restriper status
 title: qq restriper_status
 usage: qq restriper_status [-h]
+zendesk_source: qq CLI Command Guide
 
 ---

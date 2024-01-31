@@ -47,8 +47,9 @@ sidebar: qq_cli_command_reference_sidebar
 summary: This section explains how to use the <code>qq fs_walk_tree</code> command.
 synopsis: Walk file system tree
 title: qq fs_walk_tree
-usage: "qq fs_walk_tree [-h] [--path PATH] [--snapshot SNAPSHOT]\n    [--file-only\
-  \ | --directory-only | --symlink-only]\n    [--display-ownership | --display-all-attributes]\
-  \ [--output-file OUTPUT_FILE]\n    [--max-depth MAX_DEPTH]"
+usage: "qq fs_walk_tree [-h] [--path PATH] [--snapshot SNAPSHOT] [--file-only | --directory-only\
+  \ | --symlink-only]\n    [--display-ownership | --display-all-attributes] [--output-file\
+  \ OUTPUT_FILE] [--max-depth MAX_DEPTH]"
+zendesk_source: qq CLI Command Guide
 
 ---

@@ -15,5 +15,6 @@ summary: This section explains how to use the <code>qq replication_get_source_re
 synopsis: Get information about the specified source replication relationship.
 title: qq replication_get_source_relationship
 usage: qq replication_get_source_relationship [-h] --id ID
+zendesk_source: qq CLI Command Guide
 
 ---

@@ -22,5 +22,6 @@ summary: This section explains how to use the <code>qq fs_create_file</code> com
 synopsis: Create a new file
 title: qq fs_create_file
 usage: qq fs_create_file [-h] (--path PATH | --id ID) --name NAME
+zendesk_source: qq CLI Command Guide
 
 ---

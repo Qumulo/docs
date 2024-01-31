@@ -35,7 +35,8 @@ sidebar: qq_cli_command_reference_sidebar
 summary: This section explains how to use the <code>qq auth_modify_role</code> command.
 synopsis: Modify a custom role.
 title: qq auth_modify_role
-usage: "qq auth_modify_role [-h] -r ROLE [-d DESCRIPTION] [-p PRIVILEGES_FILE] [-G\
-  \ PRIVILEGE [PRIVILEGE ...]]\n    [-R PRIVILEGE [PRIVILEGE ...]]"
+usage: qq auth_modify_role [-h] -r ROLE [-d DESCRIPTION] [-p PRIVILEGES_FILE] [-G
+  PRIVILEGE [PRIVILEGE ...]] [-R PRIVILEGE [PRIVILEGE ...]]
+zendesk_source: qq CLI Command Guide
 
 ---

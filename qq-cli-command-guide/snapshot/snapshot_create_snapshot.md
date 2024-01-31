@@ -29,7 +29,8 @@ summary: This section explains how to use the <code>qq snapshot_create_snapshot<
   command.
 synopsis: Create a new snapshot
 title: qq snapshot_create_snapshot
-usage: "qq snapshot_create_snapshot [-h] [--source-file-id SOURCE_FILE_ID | --path\
-  \ PATH] [-e EXPIRATION]\n    [-n NAME]"
+usage: qq snapshot_create_snapshot [-h] [--source-file-id SOURCE_FILE_ID | --path
+  PATH] [-e EXPIRATION] [-n NAME]
+zendesk_source: qq CLI Command Guide
 
 ---

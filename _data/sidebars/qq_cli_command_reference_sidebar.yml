@@ -893,8 +893,14 @@ entries:
       title: s3_delete_bucket
       url: /qq-cli-command-guide/s3/s3_delete_bucket.html
     - output: web,pdf
+      title: s3_delete_bucket_policy
+      url: /qq-cli-command-guide/s3/s3_delete_bucket_policy.html
+    - output: web,pdf
       title: s3_get_bucket
       url: /qq-cli-command-guide/s3/s3_get_bucket.html
+    - output: web,pdf
+      title: s3_get_bucket_policy
+      url: /qq-cli-command-guide/s3/s3_get_bucket_policy.html
     - output: web,pdf
       title: s3_get_settings
       url: /qq-cli-command-guide/s3/s3_get_settings.html
@@ -911,8 +917,14 @@ entries:
       title: s3_modify_bucket
       url: /qq-cli-command-guide/s3/s3_modify_bucket.html
     - output: web,pdf
+      title: s3_modify_bucket_policy
+      url: /qq-cli-command-guide/s3/s3_modify_bucket_policy.html
+    - output: web,pdf
       title: s3_modify_settings
       url: /qq-cli-command-guide/s3/s3_modify_settings.html
+    - output: web,pdf
+      title: s3_set_bucket_policy
+      url: /qq-cli-command-guide/s3/s3_set_bucket_policy.html
     output: web,pdf
     title: s3
     url: /qq-cli-command-guide/s3/

@@ -46,7 +46,8 @@ synopsis: 'Modify the name or comment of a key in the file system key store.
 
   '
 title: qq fs_security_modify_key
-usage: "qq fs_security_modify_key [-h] -k KEY [--new-name NEW_NAME] [--comment COMMENT]\
-  \ [--enable | --disable]\n    [--json]"
+usage: qq fs_security_modify_key [-h] -k KEY [--new-name NEW_NAME] [--comment COMMENT]
+  [--enable | --disable] [--json]
+zendesk_source: qq CLI Command Guide
 
 ---

@@ -19,5 +19,6 @@ synopsis: List in-progress S3 uploads. This includes user initiated multi-part u
   and system initiated uploads that are used in PutObject and CopyObject actions.
 title: qq s3_list_uploads
 usage: qq s3_list_uploads [-h] --bucket BUCKET [--starts-with STARTS_WITH]
+zendesk_source: qq CLI Command Guide
 
 ---

@@ -18,5 +18,6 @@ summary: This section explains how to use the <code>qq dns_clear_cache</code> co
 synopsis: Clear the local DNS cache
 title: qq dns_clear_cache
 usage: qq dns_clear_cache [-h] [--skip-reverse-cache | --skip-forward-cache]
+zendesk_source: qq CLI Command Guide
 
 ---

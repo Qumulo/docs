@@ -14,5 +14,6 @@ summary: This section explains how to use the <code>qq nodes_list</code> command
 synopsis: List nodes
 title: qq nodes_list
 usage: qq nodes_list [-h] [--node NODE]
+zendesk_source: qq CLI Command Guide
 
 ---

@@ -19,5 +19,6 @@ summary: This section explains how to use the <code>qq replication_make_target_w
 synopsis: Revert target directory to the latest recovery point.
 title: qq replication_make_target_writable
 usage: qq replication_make_target_writable [-h] --id ID [--force]
+zendesk_source: qq CLI Command Guide
 
 ---

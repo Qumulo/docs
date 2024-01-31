@@ -11,5 +11,6 @@ summary: This section explains how to use the <code>qq replication_list_object_r
 synopsis: List the statuses for all existing object replication relationships.
 title: qq replication_list_object_relationship_statuses
 usage: qq replication_list_object_relationship_statuses [-h]
+zendesk_source: qq CLI Command Guide
 
 ---

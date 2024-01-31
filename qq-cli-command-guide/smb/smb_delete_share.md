@@ -24,5 +24,6 @@ summary: This section explains how to use the <code>qq smb_delete_share</code> c
 synopsis: Delete a share
 title: qq smb_delete_share
 usage: qq smb_delete_share [-h] (--id ID | --name NAME) [--tenant-id TENANT_ID]
+zendesk_source: qq CLI Command Guide
 
 ---

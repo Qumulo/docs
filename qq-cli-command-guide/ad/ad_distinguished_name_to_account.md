@@ -16,5 +16,6 @@ summary: This section explains how to use the <code>qq ad_distinguished_name_to_
 synopsis: Get all account info for a distinguished name
 title: qq ad_distinguished_name_to_account
 usage: qq ad_distinguished_name_to_account [-h] -d DISTINGUISHED_NAME
+zendesk_source: qq CLI Command Guide
 
 ---

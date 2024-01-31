@@ -16,5 +16,6 @@ synopsis: Get the SIDs of all the groups that the given SID is a member of (incl
   nested groups).
 title: qq ad_expand_groups
 usage: qq ad_expand_groups [-h] -s SID
+zendesk_source: qq CLI Command Guide
 
 ---

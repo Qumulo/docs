@@ -11,5 +11,6 @@ summary: This section explains how to use the <code>qq network_list_networks</co
 synopsis: List network configurations
 title: qq network_list_networks
 usage: qq network_list_networks [-h]
+zendesk_source: qq CLI Command Guide
 
 ---

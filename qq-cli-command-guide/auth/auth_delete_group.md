@@ -14,5 +14,6 @@ summary: This section explains how to use the <code>qq auth_delete_group</code> 
 synopsis: Delete a group
 title: qq auth_delete_group
 usage: qq auth_delete_group [-h] --id ID
+zendesk_source: qq CLI Command Guide
 
 ---

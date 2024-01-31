@@ -11,5 +11,6 @@ summary: This section explains how to use the <code>qq snapshot_get_total_used_c
 synopsis: Get the total space consumed by all snapshots.
 title: qq snapshot_get_total_used_capacity
 usage: qq snapshot_get_total_used_capacity [-h]
+zendesk_source: qq CLI Command Guide
 
 ---

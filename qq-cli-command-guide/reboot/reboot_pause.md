@@ -10,5 +10,6 @@ summary: This section explains how to use the <code>qq reboot_pause</code> comma
 synopsis: Pause a cluster-wide reboot
 title: qq reboot_pause
 usage: qq reboot_pause [-h]
+zendesk_source: qq CLI Command Guide
 
 ---

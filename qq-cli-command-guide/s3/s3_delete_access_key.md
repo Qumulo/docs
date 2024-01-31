@@ -15,5 +15,6 @@ summary: This section explains how to use the <code>qq s3_delete_access_key</cod
 synopsis: Delete an S3 access key
 title: qq s3_delete_access_key
 usage: qq s3_delete_access_key [-h] --id ID
+zendesk_source: qq CLI Command Guide
 
 ---

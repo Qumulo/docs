@@ -11,5 +11,6 @@ summary: This section explains how to use the <code>qq audit_get_cloudwatch_conf
 synopsis: Get audit CloudWatch configuration
 title: qq audit_get_cloudwatch_config
 usage: qq audit_get_cloudwatch_config [-h]
+zendesk_source: qq CLI Command Guide
 
 ---

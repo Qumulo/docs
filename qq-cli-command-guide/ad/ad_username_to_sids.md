@@ -16,5 +16,6 @@ summary: This section explains how to use the <code>qq ad_username_to_sids</code
 synopsis: Get SIDs from an AD username
 title: qq ad_username_to_sids
 usage: qq ad_username_to_sids [-h] -u USERNAME
+zendesk_source: qq CLI Command Guide
 
 ---

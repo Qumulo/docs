@@ -26,5 +26,6 @@ summary: This section explains how to use the <code>qq fs_set_atime_settings</co
 synopsis: Set access time (atime) settings.
 title: qq fs_set_atime_settings
 usage: qq fs_set_atime_settings [-h] [--enable | --disable] [--granularity {HOUR,DAY,WEEK}]
+zendesk_source: qq CLI Command Guide
 
 ---

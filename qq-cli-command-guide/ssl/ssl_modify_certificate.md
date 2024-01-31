@@ -22,5 +22,6 @@ summary: This section explains how to use the <code>qq ssl_modify_certificate</c
 synopsis: Set the SSL certificate chain and private key for the web UI and REST servers
 title: qq ssl_modify_certificate
 usage: qq ssl_modify_certificate [-h] -c CERTIFICATE -k PRIVATE_KEY
+zendesk_source: qq CLI Command Guide
 
 ---

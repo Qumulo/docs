@@ -14,5 +14,6 @@ summary: This section explains how to use the <code>qq auth_list_user</code> com
 synopsis: List a user
 title: qq auth_list_user
 usage: qq auth_list_user [-h] --id ID
+zendesk_source: qq CLI Command Guide
 
 ---

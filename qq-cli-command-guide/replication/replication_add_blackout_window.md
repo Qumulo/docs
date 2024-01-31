@@ -29,7 +29,8 @@ summary: This section explains how to use the <code>qq replication_add_blackout_
   command.
 synopsis: Add a blackout window to the specified source replication relationship.
 title: qq replication_add_blackout_window
-usage: "qq replication_add_blackout_window [-h] --id ID --start-time START_TIME --end-time\
-  \ END_TIME\n    --days-of-week DAYS_OF_WEEK"
+usage: qq replication_add_blackout_window [-h] --id ID --start-time START_TIME --end-time
+  END_TIME --days-of-week DAYS_OF_WEEK
+zendesk_source: qq CLI Command Guide
 
 ---

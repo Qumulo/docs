@@ -11,5 +11,6 @@ summary: This section explains how to use the <code>qq multitenancy_smb_get_glob
 synopsis: Retrieve global default SMB settings
 title: qq multitenancy_smb_get_global_settings
 usage: qq multitenancy_smb_get_global_settings [-h]
+zendesk_source: qq CLI Command Guide
 
 ---

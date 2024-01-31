@@ -41,7 +41,8 @@ synopsis: "Release an arbitrary NLM byte-range lock range. This is\n    dangerou
   \ the lock, and only if there is a very good reason why the\n    situation should\
   \ not be resolved by terminating that process."
 title: qq fs_release_nlm_lock
-usage: "qq fs_release_nlm_lock [-h] (--path PATH | --id ID) --offset OFFSET --size\
-  \ SIZE --owner-id OWNER_ID\n    [--force] [--snapshot SNAPSHOT]"
+usage: qq fs_release_nlm_lock [-h] (--path PATH | --id ID) --offset OFFSET --size
+  SIZE --owner-id OWNER_ID [--force] [--snapshot SNAPSHOT]
+zendesk_source: qq CLI Command Guide
 
 ---

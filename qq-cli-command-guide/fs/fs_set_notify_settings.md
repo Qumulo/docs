@@ -15,5 +15,6 @@ summary: This section explains how to use the <code>qq fs_set_notify_settings</c
 synopsis: Set FS notify settings
 title: qq fs_set_notify_settings
 usage: qq fs_set_notify_settings [-h] [--recursive-mode RECURSIVE_MODE]
+zendesk_source: qq CLI Command Guide
 
 ---

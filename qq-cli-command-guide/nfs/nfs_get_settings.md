@@ -10,5 +10,6 @@ summary: This section explains how to use the <code>qq nfs_get_settings</code> c
 synopsis: Retrieve current NFS server configuration.
 title: qq nfs_get_settings
 usage: qq nfs_get_settings [-h]
+zendesk_source: qq CLI Command Guide
 
 ---

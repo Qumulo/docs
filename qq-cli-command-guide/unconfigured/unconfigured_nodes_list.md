@@ -15,5 +15,6 @@ summary: This section explains how to use the <code>qq unconfigured_nodes_list</
 synopsis: Get the list of unconfigured nodes
 title: qq unconfigured_nodes_list
 usage: qq unconfigured_nodes_list [-h] [--table]
+zendesk_source: qq CLI Command Guide
 
 ---

@@ -31,7 +31,8 @@ sidebar: qq_cli_command_reference_sidebar
 summary: This section explains how to use the <code>qq fs_read_dir</code> command.
 synopsis: Read directory
 title: qq fs_read_dir
-usage: "qq fs_read_dir [-h] (--path PATH | --id ID) [--page-size PAGE_SIZE] [--snapshot\
-  \ SNAPSHOT]\n    [--smb-pattern SMB_PATTERN]"
+usage: qq fs_read_dir [-h] (--path PATH | --id ID) [--page-size PAGE_SIZE] [--snapshot
+  SNAPSHOT] [--smb-pattern SMB_PATTERN]
+zendesk_source: qq CLI Command Guide
 
 ---

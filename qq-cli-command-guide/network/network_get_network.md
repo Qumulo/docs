@@ -15,5 +15,6 @@ summary: This section explains how to use the <code>qq network_get_network</code
 synopsis: Get configuration for the specified network
 title: qq network_get_network
 usage: qq network_get_network [-h] --network-id NETWORK_ID
+zendesk_source: qq CLI Command Guide
 
 ---

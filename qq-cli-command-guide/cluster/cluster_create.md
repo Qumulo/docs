@@ -58,10 +58,11 @@ sidebar: qq_cli_command_reference_sidebar
 summary: This section explains how to use the <code>qq cluster_create</code> command.
 synopsis: Creates a Qumulo Cluster
 title: qq cluster_create
-usage: "qq cluster_create [-h] --cluster-name CLUSTER_NAME [--admin-password ADMIN_PASSWORD]\n\
-  \    [--blocks-per-stripe BLOCKS_PER_STRIPE] [--max-drive-failures MAX_DRIVE_FAILURES]\n\
-  \    [--max-node-failures MAX_NODE_FAILURES] [--accept-eula] [--reject-eula]\n \
-  \   [--host-instance-id HOST_INSTANCE_ID]\n    (--node-uuids NODE_UUIDS [NODE_UUIDS\
-  \ ...] | --node-ips NODE_IPS [NODE_IPS ...] | --all-unconfigured)"
+usage: "qq cluster_create [-h] --cluster-name CLUSTER_NAME [--admin-password ADMIN_PASSWORD]\
+  \ [--blocks-per-stripe BLOCKS_PER_STRIPE]\n    [--max-drive-failures MAX_DRIVE_FAILURES]\
+  \ [--max-node-failures MAX_NODE_FAILURES] [--accept-eula] [--reject-eula]\n    [--host-instance-id\
+  \ HOST_INSTANCE_ID]\n    (--node-uuids NODE_UUIDS [NODE_UUIDS ...] | --node-ips\
+  \ NODE_IPS [NODE_IPS ...] | --all-unconfigured)"
+zendesk_source: qq CLI Command Guide
 
 ---

@@ -27,5 +27,6 @@ summary: This section explains how to use the <code>qq snapshot_modify_snapshot<
 synopsis: Modify an existing snapshot
 title: qq snapshot_modify_snapshot
 usage: qq snapshot_modify_snapshot [-h] -i ID [-e EXPIRATION] [-f]
+zendesk_source: qq CLI Command Guide
 
 ---

@@ -18,5 +18,6 @@ summary: This section explains how to use the <code>qq quota_get_quota</code> co
 synopsis: Get a directory quota
 title: qq quota_get_quota
 usage: qq quota_get_quota [-h] [--path PATH] [--id ID]
+zendesk_source: qq CLI Command Guide
 
 ---

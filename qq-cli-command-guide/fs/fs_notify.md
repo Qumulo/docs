@@ -37,5 +37,6 @@ title: qq fs_notify
 usage: "qq fs_notify [-h] (--path PATH | --id ID) [--recursive]\n    [--filter {child_file_added,child_dir_added,child_file_removed,child_dir_removed,child_file_moved_from,child_file_moved_to,child_dir_moved_from,child_dir_moved_to,child_btime_changed,child_mtime_changed,child_atime_changed,child_size_changed,child_extra_attrs_changed,child_acl_changed,child_owner_changed,child_group_changed,child_data_written,child_stream_added,child_stream_removed,child_stream_moved_from,child_stream_moved_to,child_stream_size_changed,child_stream_data_written,self_removed}\
   \ [{child_file_added,child_dir_added,child_file_removed,child_dir_removed,child_file_moved_from,child_file_moved_to,child_dir_moved_from,child_dir_moved_to,child_btime_changed,child_mtime_changed,child_atime_changed,child_size_changed,child_extra_attrs_changed,child_acl_changed,child_owner_changed,child_group_changed,child_data_written,child_stream_added,child_stream_removed,child_stream_moved_from,child_stream_moved_to,child_stream_size_changed,child_stream_data_written,self_removed}\
   \ ...]]\n    [--file FILE] [--json]"
+zendesk_source: qq CLI Command Guide
 
 ---

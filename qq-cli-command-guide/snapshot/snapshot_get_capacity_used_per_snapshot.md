@@ -18,5 +18,6 @@ synopsis: Get the approximate amount of space for each snapshot that would be re
   if that snapshot were deleted.
 title: qq snapshot_get_capacity_used_per_snapshot
 usage: qq snapshot_get_capacity_used_per_snapshot [-h] [-i ID]
+zendesk_source: qq CLI Command Guide
 
 ---

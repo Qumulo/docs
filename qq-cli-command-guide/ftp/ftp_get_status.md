@@ -10,5 +10,6 @@ summary: This section explains how to use the <code>qq ftp_get_status</code> com
 synopsis: Get FTP server settings and status
 title: qq ftp_get_status
 usage: qq ftp_get_status [-h]
+zendesk_source: qq CLI Command Guide
 
 ---

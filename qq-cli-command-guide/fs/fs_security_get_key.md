@@ -20,5 +20,6 @@ summary: This section explains how to use the <code>qq fs_security_get_key</code
 synopsis: Get information for a key in the file system key store.
 title: qq fs_security_get_key
 usage: qq fs_security_get_key [-h] -k KEY [--json]
+zendesk_source: qq CLI Command Guide
 
 ---

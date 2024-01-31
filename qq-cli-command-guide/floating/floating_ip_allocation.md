@@ -11,5 +11,6 @@ summary: This section explains how to use the <code>qq floating_ip_allocation</c
 synopsis: Get cluster-wide floating IP allocation
 title: qq floating_ip_allocation
 usage: qq floating_ip_allocation [-h]
+zendesk_source: qq CLI Command Guide
 
 ---

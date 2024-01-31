@@ -13,5 +13,6 @@ summary: This section explains how to use the <code>qq install_vpn_keys</code> c
 synopsis: Install VPN keys.
 title: qq install_vpn_keys
 usage: qq install_vpn_keys [-h] directory
+zendesk_source: qq CLI Command Guide
 
 ---

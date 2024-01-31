@@ -10,5 +10,6 @@ summary: This section explains how to use the <code>qq time_status</code> comman
 synopsis: Get time configuration status.
 title: qq time_status
 usage: qq time_status [-h]
+zendesk_source: qq CLI Command Guide
 
 ---

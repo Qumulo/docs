@@ -65,10 +65,11 @@ summary: This section explains how to use the <code>qq multitenancy_smb_modify_s
   command.
 synopsis: Modify SMB settings for a tenant
 title: qq multitenancy_smb_modify_settings
-usage: "qq multitenancy_smb_modify_settings [-h] --tenant-id TENANT_ID [-e {none,preferred,required}]\n\
-  \    [-d dialect_1 [dialect_2 ...]]\n    [--hide-shares-from-unauthorized-hosts\
-  \ {true,false}]\n    [--hide-shares-from-unauthorized-users {true,false}]\n    [--snapshot-directory-mode\
-  \ {visible,hidden,disabled}]\n    [--bypass-traverse-checking {true,false}]\n  \
-  \  [--signing-required {true,false}]"
+usage: "qq multitenancy_smb_modify_settings [-h] --tenant-id TENANT_ID [-e {none,preferred,required}]\
+  \ [-d dialect_1 [dialect_2 ...]]\n    [--hide-shares-from-unauthorized-hosts {true,false}]\
+  \ [--hide-shares-from-unauthorized-users {true,false}]\n    [--snapshot-directory-mode\
+  \ {visible,hidden,disabled}] [--bypass-traverse-checking {true,false}]\n    [--signing-required\
+  \ {true,false}]"
+zendesk_source: qq CLI Command Guide
 
 ---

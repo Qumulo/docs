@@ -14,5 +14,6 @@ summary: This section explains how to use the <code>qq s3_get_bucket</code> comm
 synopsis: Get details for an S3 bucket
 title: qq s3_get_bucket
 usage: qq s3_get_bucket [-h] --name NAME
+zendesk_source: qq CLI Command Guide
 
 ---

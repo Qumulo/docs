@@ -12,5 +12,6 @@ synopsis: Retrieve NFS settings for all tenant that have tenant-specific setting
   configured
 title: qq multitenancy_nfs_list_settings
 usage: qq multitenancy_nfs_list_settings [-h]
+zendesk_source: qq CLI Command Guide
 
 ---

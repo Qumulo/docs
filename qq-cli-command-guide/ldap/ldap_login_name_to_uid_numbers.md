@@ -11,5 +11,6 @@ summary: This section explains how to use the <code>qq ldap_login_name_to_uid_nu
 synopsis: Get the uidNumbers from a login name using the LDAP server
 title: qq ldap_login_name_to_uid_numbers
 usage: qq ldap_login_name_to_uid_numbers [-h] --login-name LOGIN_NAME
+zendesk_source: qq CLI Command Guide
 
 ---

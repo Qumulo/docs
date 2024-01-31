@@ -11,5 +11,6 @@ summary: This section explains how to use the <code>qq fs_get_permissions_settin
 synopsis: Get permissions settings
 title: qq fs_get_permissions_settings
 usage: qq fs_get_permissions_settings [-h]
+zendesk_source: qq CLI Command Guide
 
 ---

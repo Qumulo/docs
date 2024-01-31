@@ -19,5 +19,6 @@ summary: This section explains how to use the <code>qq snapshot_list_snapshots</
 synopsis: ==SUPPRESS==
 title: qq snapshot_list_snapshots
 usage: qq snapshot_list_snapshots [-h] [--exclude-in-delete | --only-in-delete]
+zendesk_source: qq CLI Command Guide
 
 ---

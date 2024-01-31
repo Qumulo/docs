@@ -25,7 +25,8 @@ summary: This section explains how to use the <code>qq ad_set_advanced_settings<
   command.
 synopsis: Modify advanced Active Directory settings
 title: qq ad_set_advanced_settings
-usage: "qq ad_set_advanced_settings [-h] [--signing {off,prefer,require}] [--sealing\
-  \ {off,prefer,require}]\n    [--crypto {off,prefer,require}]"
+usage: qq ad_set_advanced_settings [-h] [--signing {off,prefer,require}] [--sealing
+  {off,prefer,require}] [--crypto {off,prefer,require}]
+zendesk_source: qq CLI Command Guide
 
 ---

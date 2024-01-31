@@ -11,5 +11,6 @@ summary: This section explains how to use the <code>qq network_list_interfaces</
 synopsis: List configurations for interfaces on the cluster
 title: qq network_list_interfaces
 usage: qq network_list_interfaces [-h]
+zendesk_source: qq CLI Command Guide
 
 ---

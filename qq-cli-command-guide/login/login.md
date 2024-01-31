@@ -20,5 +20,6 @@ summary: This section explains how to use the <code>qq login</code> command.
 synopsis: Log in to qfsd to get REST credentials
 title: qq login
 usage: qq login [-h] -u USERNAME [-p PASSWORD]
+zendesk_source: qq CLI Command Guide
 
 ---

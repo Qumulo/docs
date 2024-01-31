@@ -16,5 +16,6 @@ synopsis: Delete the specified object replication relationship, which must not b
   running a job.
 title: qq replication_delete_object_relationship
 usage: qq replication_delete_object_relationship [-h] --id ID
+zendesk_source: qq CLI Command Guide
 
 ---

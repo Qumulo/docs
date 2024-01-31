@@ -46,7 +46,8 @@ summary: This section explains how to use the <code>qq fs_acl_explain_rights</co
   command.
 synopsis: Explain how rights are granted to a user for a file.
 title: qq fs_acl_explain_rights
-usage: "qq fs_acl_explain_rights [-h] (--path PATH | --id ID) -u ID [ID ...] [-g [ID\
-  \ [ID ...]]] [--no-expand]\n    [-v] [--json]"
+usage: qq fs_acl_explain_rights [-h] (--path PATH | --id ID) -u ID [ID ...] [-g [ID
+  [ID ...]]] [--no-expand] [-v] [--json]
+zendesk_source: qq CLI Command Guide
 
 ---

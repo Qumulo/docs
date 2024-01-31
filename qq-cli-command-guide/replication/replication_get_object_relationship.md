@@ -15,5 +15,6 @@ summary: This section explains how to use the <code>qq replication_get_object_re
 synopsis: Get the configuration of the specified object replication relationship.
 title: qq replication_get_object_relationship
 usage: qq replication_get_object_relationship [-h] --id ID
+zendesk_source: qq CLI Command Guide
 
 ---

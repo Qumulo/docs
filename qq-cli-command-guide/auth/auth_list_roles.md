@@ -14,5 +14,6 @@ summary: This section explains how to use the <code>qq auth_list_roles</code> co
 synopsis: List all of the roles.
 title: qq auth_list_roles
 usage: qq auth_list_roles [-h] [--json]
+zendesk_source: qq CLI Command Guide
 
 ---

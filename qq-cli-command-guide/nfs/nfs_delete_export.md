@@ -23,5 +23,6 @@ synopsis: Delete an export
 title: qq nfs_delete_export
 usage: qq nfs_delete_export [-h] (--export-id EXPORT_ID | --export-path EXPORT_PATH)
   [--tenant-id TENANT_ID]
+zendesk_source: qq CLI Command Guide
 
 ---

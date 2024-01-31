@@ -56,13 +56,25 @@ The following table lists the S3 API actions that Qumulo Core supports and the v
     <td class="fade-row">5.1.2</td>
   </tr>    
   <tr>
+    <td><code>GetBucketPolicy</code></td>
+    <td>7.0.0</td>
+  </tr>
+  <tr>
+    <td><code>GetBucketVersioning</code></td>
+    <td>7.0.0</td>
+  </tr>
+  <tr>
     <td><code>GetObject</code></td>
     <td class="fade-row">5.0.4</td>
   </tr>
   <tr>
     <td><code>GetObjectAcl</code></td>
     <td>6.1.1</td>
-  </tr>     
+  </tr>
+  <tr>
+    <td><code>GetObjectLockConfiguration</code></td>
+    <td>7.0.0</td>
+  </tr>
   <tr>
     <td><code>HeadBucket</code></td>
     <td class="fade-row">5.1.2</td>

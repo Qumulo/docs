@@ -16,5 +16,6 @@ summary: This section explains how to use the <code>qq identity_attributes_get</
 synopsis: Get attributes related to the given identity.
 title: qq identity_attributes_get
 usage: qq identity_attributes_get [-h] identifier
+zendesk_source: qq CLI Command Guide
 
 ---

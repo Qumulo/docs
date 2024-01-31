@@ -10,5 +10,6 @@ summary: This section explains how to use the <code>qq reboot_status</code> comm
 synopsis: Retrieve status of reboot manager
 title: qq reboot_status
 usage: qq reboot_status [-h]
+zendesk_source: qq CLI Command Guide
 
 ---

@@ -10,5 +10,6 @@ summary: This section explains how to use the <code>qq node_state_get</code> com
 synopsis: Get the operational state of the node
 title: qq node_state_get
 usage: qq node_state_get [-h]
+zendesk_source: qq CLI Command Guide
 
 ---

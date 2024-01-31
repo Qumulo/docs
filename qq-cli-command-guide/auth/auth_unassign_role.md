@@ -21,5 +21,6 @@ summary: This section explains how to use the <code>qq auth_unassign_role</code>
 synopsis: Unassign a user from a role
 title: qq auth_unassign_role
 usage: qq auth_unassign_role [-h] -r ROLE -t TRUSTEE
+zendesk_source: qq CLI Command Guide
 
 ---

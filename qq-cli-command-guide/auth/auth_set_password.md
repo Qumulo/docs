@@ -19,5 +19,6 @@ summary: This section explains how to use the <code>qq auth_set_password</code> 
 synopsis: Set a user's password
 title: qq auth_set_password
 usage: qq auth_set_password [-h] --id ID [-p PASSWORD]
+zendesk_source: qq CLI Command Guide
 
 ---

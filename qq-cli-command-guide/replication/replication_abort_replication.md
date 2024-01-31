@@ -22,5 +22,6 @@ synopsis: Abort ongoing replication work for the specified source replication re
 title: qq replication_abort_replication
 usage: qq replication_abort_replication [-h] --id ID [--skip-active-policy-snapshot
   {true,false}]
+zendesk_source: qq CLI Command Guide
 
 ---

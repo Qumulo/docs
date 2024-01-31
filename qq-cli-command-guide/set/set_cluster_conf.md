@@ -14,5 +14,6 @@ summary: This section explains how to use the <code>qq set_cluster_conf</code> c
 synopsis: Set the cluster config
 title: qq set_cluster_conf
 usage: qq set_cluster_conf [-h] --cluster-name CLUSTER_NAME
+zendesk_source: qq CLI Command Guide
 
 ---

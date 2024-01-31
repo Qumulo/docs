@@ -10,5 +10,6 @@ summary: This section explains how to use the <code>qq ad_poll</code> command.
 synopsis: Get details on a join or leave operation
 title: qq ad_poll
 usage: qq ad_poll [-h]
+zendesk_source: qq CLI Command Guide
 
 ---

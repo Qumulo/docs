@@ -16,5 +16,6 @@ summary: This section explains how to use the <code>qq snapshot_get_snapshot</co
 synopsis: ==SUPPRESS==
 title: qq snapshot_get_snapshot
 usage: qq snapshot_get_snapshot [-h] -i ID
+zendesk_source: qq CLI Command Guide
 
 ---

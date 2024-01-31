@@ -30,5 +30,6 @@ synopsis: Force close SMB sessions matching one or more of a set of filters.
 title: qq smb_close_sessions
 usage: qq smb_close_sessions [-h] [--identity IDENTITY] [--location LOCATION] [--ip
   IP]
+zendesk_source: qq CLI Command Guide
 
 ---

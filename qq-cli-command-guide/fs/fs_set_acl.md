@@ -23,5 +23,6 @@ summary: This section explains how to use the <code>qq fs_set_acl</code> command
 synopsis: Set file ACL
 title: qq fs_set_acl
 usage: qq fs_set_acl [-h] (--path PATH | --id ID) [--file FILE]
+zendesk_source: qq CLI Command Guide
 
 ---

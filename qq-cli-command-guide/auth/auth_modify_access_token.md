@@ -32,5 +32,6 @@ synopsis: Modify the specified access token
 title: qq auth_modify_access_token
 usage: qq auth_modify_access_token [-h] [--expiration-time EXPIRATION_TIME] [--enable]
   [--disable] id
+zendesk_source: qq CLI Command Guide
 
 ---

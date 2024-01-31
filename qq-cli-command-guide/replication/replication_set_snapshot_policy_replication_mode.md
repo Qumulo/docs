@@ -19,7 +19,7 @@ summary: This section explains how to use the <code>qq replication_set_snapshot_
 synopsis: Set the replication mode of the specified source replication relationship.
   This command is only for a relationship that has linked snapshot policies.
 title: qq replication_set_snapshot_policy_replication_mode
-usage: "qq replication_set_snapshot_policy_replication_mode [-h] --id ID --mode\n\
-  \    {REPLICATION_SNAPSHOT_POLICY,REPLICATION_SNAPSHOT_POLICY_WITH_CONTINUOUS}"
+usage: qq replication_set_snapshot_policy_replication_mode [-h] --id ID --mode {REPLICATION_SNAPSHOT_POLICY,REPLICATION_SNAPSHOT_POLICY_WITH_CONTINUOUS}
+zendesk_source: qq CLI Command Guide
 
 ---

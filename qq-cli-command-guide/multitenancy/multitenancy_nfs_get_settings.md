@@ -15,5 +15,6 @@ summary: This section explains how to use the <code>qq multitenancy_nfs_get_sett
 synopsis: Retrieve NFS settings for a tenant
 title: qq multitenancy_nfs_get_settings
 usage: qq multitenancy_nfs_get_settings [-h] --tenant-id TENANT_ID
+zendesk_source: qq CLI Command Guide
 
 ---

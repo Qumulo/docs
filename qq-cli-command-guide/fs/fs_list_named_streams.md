@@ -23,5 +23,6 @@ summary: This section explains how to use the <code>qq fs_list_named_streams</co
 synopsis: List all named streams on file or directory
 title: qq fs_list_named_streams
 usage: qq fs_list_named_streams [-h] (--path PATH | --id ID) [--snapshot SNAPSHOT]
+zendesk_source: qq CLI Command Guide
 
 ---

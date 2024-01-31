@@ -16,5 +16,6 @@ summary: This section explains how to use the <code>qq unconfigured_upgrade_stat
 synopsis: List the current upgrade status for an unconfigured node
 title: qq unconfigured_upgrade_status
 usage: qq unconfigured_upgrade_status [-h] [--wait-until-prepared]
+zendesk_source: qq CLI Command Guide
 
 ---

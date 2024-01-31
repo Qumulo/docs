@@ -26,5 +26,6 @@ summary: This section explains how to use the <code>qq fs_get_acl</code> command
 synopsis: Get file ACL
 title: qq fs_get_acl
 usage: qq fs_get_acl [-h] (--path PATH | --id ID) [--snapshot SNAPSHOT] [--json]
+zendesk_source: qq CLI Command Guide
 
 ---

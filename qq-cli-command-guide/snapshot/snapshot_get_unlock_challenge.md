@@ -16,5 +16,6 @@ summary: This section explains how to use the <code>qq snapshot_get_unlock_chall
 synopsis: Get a security challenge for unlocking a snapshot.
 title: qq snapshot_get_unlock_challenge
 usage: qq snapshot_get_unlock_challenge [-h] -i ID
+zendesk_source: qq CLI Command Guide
 
 ---

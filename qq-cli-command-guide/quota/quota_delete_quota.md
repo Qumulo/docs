@@ -18,5 +18,6 @@ summary: This section explains how to use the <code>qq quota_delete_quota</code>
 synopsis: Delete a directory quota
 title: qq quota_delete_quota
 usage: qq quota_delete_quota [-h] [--path PATH] [--id ID]
+zendesk_source: qq CLI Command Guide
 
 ---

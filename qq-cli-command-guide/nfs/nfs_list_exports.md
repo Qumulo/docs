@@ -14,5 +14,6 @@ summary: This section explains how to use the <code>qq nfs_list_exports</code> c
 synopsis: List all NFS exports
 title: qq nfs_list_exports
 usage: qq nfs_list_exports [-h] [--json]
+zendesk_source: qq CLI Command Guide
 
 ---

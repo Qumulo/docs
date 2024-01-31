@@ -10,5 +10,6 @@ summary: This section explains how to use the <code>qq auth_clear_cache</code> c
 synopsis: Clear all cached authorization information
 title: qq auth_clear_cache
 usage: qq auth_clear_cache [-h]
+zendesk_source: qq CLI Command Guide
 
 ---

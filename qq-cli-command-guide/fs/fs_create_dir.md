@@ -22,5 +22,6 @@ summary: This section explains how to use the <code>qq fs_create_dir</code> comm
 synopsis: Create a new directory
 title: qq fs_create_dir
 usage: qq fs_create_dir [-h] (--path PATH | --id ID) --name NAME
+zendesk_source: qq CLI Command Guide
 
 ---

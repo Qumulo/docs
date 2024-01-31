@@ -24,5 +24,6 @@ summary: This section explains how to use the <code>qq s3_add_bucket</code> comm
 synopsis: Create an S3 bucket
 title: qq s3_add_bucket
 usage: qq s3_add_bucket [-h] --name NAME [--fs-path FS_PATH] [--create-fs-path]
+zendesk_source: qq CLI Command Guide
 
 ---

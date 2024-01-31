@@ -11,5 +11,6 @@ summary: This section explains how to use the <code>qq monitoring_status_get</co
 synopsis: Get current monitoring status.
 title: qq monitoring_status_get
 usage: qq monitoring_status_get [-h]
+zendesk_source: qq CLI Command Guide
 
 ---

@@ -10,5 +10,6 @@ summary: This section explains how to use the <code>qq metrics_get</code> comman
 synopsis: Get all system metrics.
 title: qq metrics_get
 usage: qq metrics_get [-h]
+zendesk_source: qq CLI Command Guide
 
 ---

@@ -11,5 +11,6 @@ summary: This section explains how to use the <code>qq encryption_set_key_store<
 synopsis: Set the active at-rest encryption configuration.
 title: qq encryption_set_key_store
 usage: qq encryption_set_key_store [-h] {kms,local} ...
+zendesk_source: qq CLI Command Guide
 
 ---

@@ -30,5 +30,6 @@ summary: This section explains how to use the <code>qq fs_rename</code> command.
 synopsis: Rename a file system object
 title: qq fs_rename
 usage: qq fs_rename [-h] (--path PATH | --id ID) --source SOURCE --name NAME [--clobber]
+zendesk_source: qq CLI Command Guide
 
 ---

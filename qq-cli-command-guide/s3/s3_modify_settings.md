@@ -40,8 +40,9 @@ sidebar: qq_cli_command_reference_sidebar
 summary: This section explains how to use the <code>qq s3_modify_settings</code> command.
 synopsis: Modify S3 server settings
 title: qq s3_modify_settings
-usage: "qq s3_modify_settings [-h] [--disable | --enable] [--base-path BASE_PATH]\n\
-  \    [--multipart-upload-expiry-interval MULTIPART_UPLOAD_EXPIRY_INTERVAL]\n   \
-  \ [--secure | --insecure]"
+usage: "qq s3_modify_settings [-h] [--disable | --enable] [--base-path BASE_PATH]\
+  \ [--multipart-upload-expiry-interval MULTIPART_UPLOAD_EXPIRY_INTERVAL]\n    [--secure\
+  \ | --insecure]"
+zendesk_source: qq CLI Command Guide
 
 ---

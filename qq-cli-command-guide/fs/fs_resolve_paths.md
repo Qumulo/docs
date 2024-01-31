@@ -18,5 +18,6 @@ summary: This section explains how to use the <code>qq fs_resolve_paths</code> c
 synopsis: Resolve file IDs to paths
 title: qq fs_resolve_paths
 usage: qq fs_resolve_paths [-h] --ids [IDS [IDS ...]] [--snapshot SNAPSHOT]
+zendesk_source: qq CLI Command Guide
 
 ---

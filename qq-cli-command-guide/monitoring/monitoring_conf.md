@@ -10,5 +10,6 @@ summary: This section explains how to use the <code>qq monitoring_conf</code> co
 synopsis: Get monitoring configuration.
 title: qq monitoring_conf
 usage: qq monitoring_conf [-h]
+zendesk_source: qq CLI Command Guide
 
 ---

@@ -10,5 +10,6 @@ summary: This section explains how to use the <code>qq get_vpn_keys</code> comma
 synopsis: Get VPN keys stored in the cluster.
 title: qq get_vpn_keys
 usage: qq get_vpn_keys [-h]
+zendesk_source: qq CLI Command Guide
 
 ---

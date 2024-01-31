@@ -11,5 +11,6 @@ summary: This section explains how to use the <code>qq multitenancy_nfs_get_glob
 synopsis: Retrieve global default NFS settings
 title: qq multitenancy_nfs_get_global_settings
 usage: qq multitenancy_nfs_get_global_settings [-h]
+zendesk_source: qq CLI Command Guide
 
 ---
