@@ -14,6 +14,7 @@ keywords: technical_specifications, tech_specs, specs, specifications, Fujitsu_P
   <thead>
     <tr>
       <th></th>
+      <th><strong>{{site.fprx2540m7Long}} 240 TB (Active or General Purpose)</strong></th>
       <th><strong>{{site.fprx2540m7Long}} 144 TB (Active or General Purpose)</strong></th>
       <th><strong>{{site.fprx2540m7Long}} 96 TB (Active or General Purpose)</strong></th>
       <th><strong>{{site.fprx2540m7Long}} 48 TB (Active or General Purpose)</strong></th>
@@ -22,34 +23,34 @@ keywords: technical_specifications, tech_specs, specs, specifications, Fujitsu_P
   <tbody>
     <tr>
       <td><strong>Connectivity Ports (NIC)</strong></td>
-      <td colspan="3" style="text-align: center;">2 &#215; 25 GbE (1 &#215; Intel E810 NIC)</td>
+      <td colspan="4" style="text-align: center;">2 &#215; 25 GbE (1 &#215; Intel E810 NIC)</td>
     </tr>
     <tr>
       <td><strong>Management Ports (BMC)</strong></td>
-      <td colspan="3" style="text-align: center;">1 &#215; 1 GbE Base-T (RJ45)</td>
+      <td colspan="4" style="text-align: center;">1 &#215; 1 GbE Base-T (RJ45)</td>
     </tr>
     <tr>
       <td><strong>Solid State Storage Media (Cache)</strong></td>
-      <td colspan="2" style="text-align: center;">4 &#215; 1.6 TB NVMe</td>
-      <td colspan="1" style="text-align: center;">4 &#215; 1.92 TB  NVMe</td> 
+      <td colspan="4" style="text-align: center;">4 &#215; 1.6 TB NVMe</td>
     </tr>
     <tr>
       <td><strong>HDD Storage Media</strong></td>
+      <td style="text-align: center;">12 &#215; 20 TB</td>      
       <td style="text-align: center;">12 &#215; 12 TB</td>
       <td style="text-align: center;">8 &#215; 12 TB</td>
       <td style="text-align: center;">12 &#215; 4 TB</td>      
     </tr>    
     <tr>
       <td><strong>Boot Drives (Mirrored)</strong></td>
-      <td colspan="3" style="text-align: center;">2 &#215; 960 GB M.2 SATA (RAID 1)</td>
+      <td colspan="4" style="text-align: center;">2 &#215; 960 GB M.2 SATA (RAID 1)</td>
     </tr>
     <tr>
       <td><strong>CPU</strong></td>
-      <td colspan="3" style="text-align: center;">2 &#215; Intel Xeon Silver 4410Y CPU @ 2.70 GHz</td>
+      <td colspan="4" style="text-align: center;">2 &#215; Intel Xeon Silver 4410Y CPU @ 2.70 GHz</td>
     </tr>
     <tr>
       <td><strong>Memory</strong></td>
-      <td colspan="3" style="text-align: center;">128 GB (32 GB &#215; 4)</td>      
+      <td colspan="4" style="text-align: center;">128 GB (32 GB &#215; 4)</td>      
     </tr>
     <tr>
       <td><strong>Power Supply</strong></td>
