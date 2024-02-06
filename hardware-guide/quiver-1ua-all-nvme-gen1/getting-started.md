@@ -4,6 +4,7 @@ summary: "This section explains how to prepare Quiver 1UA Gen1 nodes for creatin
 permalink: /hardware-guide/quiver-1ua-all-nvme-gen1/getting-started.html
 sidebar: hardware_guide_sidebar
 keywords: getting_started_guide, quick_reference, Quiver_1U_All-NVMe_Gen1, Quiver, Quiver_1UA, verify_node, field_verification_tool, FVT
+platform: q1uag1
 ---
 
 ## Step 1: Verify Your Node
@@ -29,7 +30,6 @@ keywords: getting_started_guide, quick_reference, Quiver_1U_All-NVMe_Gen1, Quive
    
 
 ## Step 3: Create and Configure Your Cluster
-{% capture checkNetworks %}The dual-NIC variant of your {{site.q1uag1}} node uses a [split networking configuration](configuring-ipmi-wiring-nodes.html). Ensure that the [front-end and back-end networks](configuring-ipmi-wiring-nodes.html#step-2-connecting-the-100-gbps-ports) are connected and operational before creating your cluster.{% endcapture %}
-{% include important.html content=checkNetworks %}
+{% include content-reuse/run-anywhere-conditional-admonitions.md %}
 
 {% include content-reuse/create-configure-cluster.md %}

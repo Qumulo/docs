@@ -4,9 +4,10 @@ summary: "This section explains how to wire NIC ports on HPE Alletra 4110 nodes 
 permalink: /hardware-guide/hpe-alletra-4110/wiring-nodes-networking-cluster.html
 sidebar: hardware_guide_sidebar
 keywords: network, networking, cluster, switch, Ethernet, ports, IP, HPE_Alletra_4110, HPE, Alletra, 4110
+platform: all4110
 ---
 
-{{site.splitNetDefine}}
+{% include content-reuse/run-anywhere-conditional-admonitions.md %}
 
 ## Node NICs and Ports
 The following diagrams show the NICs and ports on {{site.all4110}} node types.

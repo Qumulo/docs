@@ -4,6 +4,7 @@ summary: "This section explains how to prepare HPE Alletra 4110 nodes for creati
 permalink: /hardware-guide/hpe-alletra-4110/getting-started.html
 sidebar: hardware_guide_sidebar
 keywords: getting_started_guide, quick_reference, HPE_Alletra_4110, HPE, Alletra, 4110, verify_node, field_verification_tool, FVT
+platform: all4110
 ---
 
 {% capture seeMore %}For information about installing your node and replacing hardware components, see [{{site.all4110}} System Maintenance and Service Guide](https://support.hpe.com/hpesc/public/docDisplay?docLocale=en_US&docId=sd00002471en_us) and [{{site.all4110}} System Setup and Installation Guide](https://support.hpe.com/hpesc/public/docDisplay?docLocale=en_US&docId=sd00002563en_us) in the HPE documentation.{% endcapture %}
@@ -79,8 +80,6 @@ For help with troubleshooting your node, {{site.contactQumuloCare}}.
 
    
 ## Step 4: Create and Configure Your Cluster
-{% capture checkNetworks %}Your {{site.all4110}} node uses a [split networking configuration](wiring-nodes-networking-cluster.html). Ensure that the [front-end and back-end networks](wiring-nodes-networking-cluster.html#connecting-to-redundant-switches) are connected and operational before creating your cluster.{% endcapture %}
-
-{% include important.html content=checkNetworks %}
+{% include content-reuse/run-anywhere-conditional-admonitions.md %}
 
 {% include content-reuse/create-configure-cluster.md %}
