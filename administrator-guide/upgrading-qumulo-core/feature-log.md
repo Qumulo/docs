@@ -12,14 +12,16 @@ For information about upgrade types for each release, see <a href='mode-referenc
 
 <style>div#toc{height:200px;overflow:auto;}</style>
 
-## Qumulo Core 7.0.0 (Quarterly)
+## Qumulo Core 7.0.0.1 (Quarterly)
 {{page.varDownloadsRelnotes}}
+{% include important.html content="To install Qumulo Core on HPE Alletra 4110 platforms, you must use the 7.0.0.1 release." %}
 * Added support for NFSv4.1 cross-connection write combining
 * Made significant improvements in SMB random small-write performance
 * Added partial support for new S3 API actions
 * Configured Qumulo Core to take daily snapshots at regular intervals throughout the day
 * Made changes to the REST API and the `qq` CLI to accommodate improvements in snapshot and at-rest encryption functionality
-* Resolved a minor issue with AD authentication, revised permissions for SMB `copychunk` requests, and resolved an issue with `.snapshot` directories in Windows Command Prompt
+* Revised permissions for SMB `copychunk` requests
+* Resolved a minor issue with AD authentication, an issue with `.snapshot` directories in Windows Command Prompt, and an issue with SMB copy operations and long share names and volume labels
 
 ## Qumulo Core 6.3.2
 {{page.varDownloadsRelnotes}}
@@ -81,7 +83,8 @@ For information about upgrade types for each release, see <a href='mode-referenc
 * Deprecated and replaced REST API command pertaining to the UID light and PSU information
 
 ## Qumulo Core 6.2.0.1 (Quarterly)
-{{page.varDownloadsRelnotes}}
+{{page.varDownloadsRelnotes}}{{page.varDownloadsRelnotes}}
+{% include important.html content="The removal of the deprecated <code>/v1/smb/shares</code> REST API endpoints in this release can affect certain third-party backup or migration workflows." %}
 {{site.data.alerts.important}}
 <p>This release resolves an issue with Qumulo Core’s ability to route return packets back to clients when the following conditions are true for a cluster:</p>
 <ul>
@@ -140,7 +143,8 @@ For information about upgrade types for each release, see <a href='mode-referenc
 * Made usability changes to event logging and the Web UI
 * Removed beta multitenancy REST APIs and `qq` CLI commands
 
-## Qumulo Core 6.0.2
+## Qumulo Core 6.0.2{{page.varDownloadsRelnotes}}
+{% include important.html content="The removal of the deprecated <code>/v1/smb/shares</code> REST API endpoints in this release can affect certain third-party backup or migration workflows." %}
 {{page.varDownloadsRelnotes}}
 * Added support for streaming file change notifications
 * Improved the S3 API
