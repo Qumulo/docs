@@ -10,6 +10,8 @@ layout: default_print
 
 <div>{{ page.summary }}</div>
 
+{{content}}
+
 <h2>Description</h2>
 <div>{{ page.synopsis }}</div>
 
@@ -68,7 +70,5 @@ layout: default_print
 {% endfor %}
 </table>
 {% endunless %}
-
-{{content}}
 
 </div>

@@ -66,3 +66,5 @@ usage: "qq cluster_create [-h] --cluster-name CLUSTER_NAME [--admin-password ADM
 zendesk_source: qq CLI Command Guide
 
 ---
+
+{% include important.html content="To ensure that the Web UI displays the nodes in your cluster in the same order that they are racked, enter the node UUIDs in the same order when you run the `qq cluster_create` command." %}
