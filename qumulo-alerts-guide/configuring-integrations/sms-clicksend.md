@@ -5,7 +5,6 @@ permalink: /qumulo-alerts-guide/configuring-integrations/sms-clicksend.html
 redirect_from:
   - /qumulo-alerts-guide/installing-configuring/integration-clicksend.html
 sidebar: qumulo_alerts_guide_sidebar
-keywords: Qumulo_Alerts, ClickSend, SMS, integrate, integration
 ---
 
 [ClickSend](https://www.clicksend.com/en/) is a paid, third-party service that provides delivery of messages as SMS (and other formats).  For more information, see [How to get started with ClickSend](https://help.clicksend.com/article/3pp05c4fcs-how-to-get-started-with-clicksend) in the ClickSend documentation.

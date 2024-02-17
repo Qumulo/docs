@@ -1,7 +1,6 @@
 ---
 category: ldap
 command: ldap_get_settings
-keywords: qq, qq_cli, ldap_get_settings
 optional_options: []
 permalink: /qq-cli-command-guide/ldap/ldap_get_settings.html
 positional_options: []

@@ -1,7 +1,6 @@
 ---
 category: multitenancy
 command: multitenancy_get_tenant
-keywords: qq, qq_cli, multitenancy_get_tenant
 optional_options:
 - alternate: []
   help: The unique ID of the tenant to retrieve.

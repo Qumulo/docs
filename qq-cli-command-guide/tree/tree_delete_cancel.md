@@ -1,7 +1,6 @@
 ---
 category: tree
 command: tree_delete_cancel
-keywords: qq, qq_cli, tree_delete_cancel
 optional_options: []
 permalink: /qq-cli-command-guide/tree/tree_delete_cancel.html
 positional_options:

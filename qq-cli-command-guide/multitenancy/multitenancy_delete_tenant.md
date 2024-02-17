@@ -1,7 +1,6 @@
 ---
 category: multitenancy
 command: multitenancy_delete_tenant
-keywords: qq, qq_cli, multitenancy_delete_tenant
 optional_options:
 - alternate: []
   help: The unique ID of the tenant to delete.

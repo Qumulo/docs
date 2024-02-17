@@ -2,7 +2,6 @@
 title: "Restoring the Default Values for Cloud-Based and Nexus Monitoring"
 summary: "This section explains how to set the default values for Cloud-Based Monitoring and Nexus Monitoring."
 permalink: /administrator-guide/monitoring-and-metrics/restoring-default-values-cloud-based-nexus-monitoring.html
-keywords: monitoring, Cloud-Based_Monitoring, Nexus, proxy, default
 sidebar: administrator_guide_sidebar
 ---
 

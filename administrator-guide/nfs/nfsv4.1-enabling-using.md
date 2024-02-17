@@ -8,7 +8,6 @@ redirect_from:
   - /administrator-guide/nfsv4.1-enabling-using.html
   - /administrator-guide/protocols/nfsv4.1-enabling-using.html
 sidebar: administrator_guide_sidebar
-keywords: NFS, NFS3, NFSv3, NFSv4.1, export, exports, mount, cluster, enable_NFS, disable_NFS, floating_IP
 ---
 
 {% include content-reuse/admin-guides/nfs/nfsv4.1-enabling-using.md %}

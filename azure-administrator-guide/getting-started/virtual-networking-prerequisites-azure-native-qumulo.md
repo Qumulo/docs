@@ -5,7 +5,6 @@ permalink:  /azure-administrator-guide/getting-started/virtual-networking-prereq
 redirect_from:
   - /azure-guide/configuring-virtual-networking-qumulo-scalable-file-service.html
 sidebar: azure_guide_sidebar
-keywords: cloud, azure, native, ANQ, network, networking, owner, contributor, role, subnet, dedicated_subnet, endpoint, route_table, security_group, VNet_injection
 ---
 
 ## How Qumulo Manages Virtual Networking for {{site.azure.qumuloOnAzureLong}}

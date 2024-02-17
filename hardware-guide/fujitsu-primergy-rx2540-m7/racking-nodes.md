@@ -3,7 +3,6 @@ title: "Racking Your Fujitsu PRIMERGY RX2540 M7 Nodes"
 summary: "This section explains how to rack Fujitsu RX2540 M7 nodes in a data center."
 permalink: /hardware-guide/fujitsu-primergy-rx2540-m7/racking-nodes.html
 sidebar: hardware_guide_sidebar
-keywords: rack, racking, rails, server_rack, chassis, insert_chassis, Fujitsu_PRIMERGY_RX2540_M7, Fujitsu, PRIMERGY, RX2540, 2540, M7
 ---
 
 ## To Install the Rails in the Server Rack

@@ -1,7 +1,6 @@
 ---
 category: fs
 command: fs_remove_stream
-keywords: qq, qq_cli, fs_remove_stream
 optional_options:
 - alternate: []
   help: File or directory path

@@ -1,7 +1,6 @@
 ---
 category: nfs
 command: nfs_modify_settings
-keywords: qq, qq_cli, nfs_modify_settings
 optional_options:
 - alternate: []
   help: Enables mounting with the NFSv4.1 protocol

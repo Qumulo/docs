@@ -1,7 +1,6 @@
 ---
 category: reboot
 command: reboot_pause
-keywords: qq, qq_cli, reboot_pause
 optional_options: []
 permalink: /qq-cli-command-guide/reboot/reboot_pause.html
 positional_options: []

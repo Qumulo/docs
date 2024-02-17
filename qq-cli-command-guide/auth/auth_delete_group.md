@@ -1,7 +1,6 @@
 ---
 category: auth
 command: auth_delete_group
-keywords: qq, qq_cli, auth_delete_group
 optional_options:
 - alternate: []
   help: Name or ID of group to delete

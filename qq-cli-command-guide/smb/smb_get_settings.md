@@ -1,7 +1,6 @@
 ---
 category: smb
 command: smb_get_settings
-keywords: qq, qq_cli, smb_get_settings
 optional_options: []
 permalink: /qq-cli-command-guide/smb/smb_get_settings.html
 positional_options: []

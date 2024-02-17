@@ -1,7 +1,6 @@
 ---
 category: get
 command: get_vpn_keys
-keywords: qq, qq_cli, get_vpn_keys
 optional_options: []
 permalink: /qq-cli-command-guide/get/get_vpn_keys.html
 positional_options: []

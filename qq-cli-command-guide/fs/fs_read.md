@@ -1,7 +1,6 @@
 ---
 category: fs
 command: fs_read
-keywords: qq, qq_cli, fs_read
 optional_options:
 - alternate: []
   help: File path

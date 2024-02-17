@@ -1,7 +1,6 @@
 ---
 category: dns
 command: dns_get_lookup_overrides
-keywords: qq, qq_cli, dns_get_lookup_overrides
 optional_options: []
 permalink: /qq-cli-command-guide/dns/dns_get_lookup_overrides.html
 positional_options: []

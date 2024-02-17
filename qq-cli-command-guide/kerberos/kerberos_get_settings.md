@@ -1,7 +1,6 @@
 ---
 category: kerberos
 command: kerberos_get_settings
-keywords: qq, qq_cli, kerberos_get_settings
 optional_options: []
 permalink: /qq-cli-command-guide/kerberos/kerberos_get_settings.html
 positional_options: []

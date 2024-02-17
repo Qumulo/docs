@@ -1,7 +1,6 @@
 ---
 category: dns
 command: dns_clear_cache
-keywords: qq, qq_cli, dns_clear_cache
 optional_options:
 - alternate: []
   help: When this flag is set, the reverse lookup cache is not cleared.

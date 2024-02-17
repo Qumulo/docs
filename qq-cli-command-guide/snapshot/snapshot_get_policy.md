@@ -1,7 +1,6 @@
 ---
 category: snapshot
 command: snapshot_get_policy
-keywords: qq, qq_cli, snapshot_get_policy
 optional_options:
 - alternate:
   - --id

@@ -1,7 +1,6 @@
 ---
 category: ldap
 command: ldap_uid_number_to_login_name
-keywords: qq, qq_cli, ldap_uid_number_to_login_name
 optional_options: []
 permalink: /qq-cli-command-guide/ldap/ldap_uid_number_to_login_name.html
 positional_options: []

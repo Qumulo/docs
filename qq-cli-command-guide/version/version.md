@@ -1,7 +1,6 @@
 ---
 category: version
 command: version
-keywords: qq, qq_cli, version
 optional_options: []
 permalink: /qq-cli-command-guide/version/version.html
 positional_options: []

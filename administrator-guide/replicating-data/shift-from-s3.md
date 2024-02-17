@@ -8,7 +8,6 @@ redirect_from:
   - /administrator-guide/qumulo-core/shift-from-s3.html
   - /administrator-guide/moving-data/shift-from-s3.html
 sidebar: administrator_guide_sidebar
-keywords: shift_from, copy, copy_objects, copy_files, object_copy, amazon_s3, s3, iam_permissions, iam, cli_commands, cli, shift_relationships, shift, relationships, configuration_details, status
 ---
 
 {% include content-reuse/admin-guides/replicating-data/shift-from-s3.md %}

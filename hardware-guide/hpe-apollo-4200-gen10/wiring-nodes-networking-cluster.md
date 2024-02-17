@@ -6,7 +6,6 @@ redirect_from:
   - /hardware-guide/hpe-apollo-4200-gen10/networking-cluster.html
   - /hardware/hpe-apollo-4200-gen10/networking-cluster.html
 sidebar: hardware_guide_sidebar
-keywords: network, networking, cluster, switch, Ethernet, ports, IP, HPE_Apollo_4200_Gen10, HPE, Apollo, 4200_Gen10
 ---
 
 {{site.unifyNetDefine}}

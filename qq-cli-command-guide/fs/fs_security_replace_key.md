@@ -1,7 +1,6 @@
 ---
 category: fs
 command: fs_security_replace_key
-keywords: qq, qq_cli, fs_security_replace_key
 optional_options:
 - alternate:
   - --key

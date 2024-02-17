@@ -3,7 +3,6 @@ title: "Quiver 1U Hybrid Gen2 Technical Specifications"
 summary: "This section provides technical specifications for Quiver 1U Hybrid Gen2 node types."
 permalink: /hardware-guide/quiver-1u-hybrid-gen2/technical-specifications.html
 sidebar: hardware_guide_sidebar
-keywords: technical_specifications, tech_specs, specs, specifications, Quiver_1U_Hybrid_Gen2, Quiver, Quiver_1UH, QVRG2-96T, QVRG2-240T, QVRG296T, QVRG2240T
 ---
 
 {{site.data.alerts.note}}

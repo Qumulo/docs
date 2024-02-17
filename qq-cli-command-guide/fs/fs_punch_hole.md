@@ -1,7 +1,6 @@
 ---
 category: fs
 command: fs_punch_hole
-keywords: qq, qq_cli, fs_punch_hole
 optional_options:
 - alternate: []
   help: File path

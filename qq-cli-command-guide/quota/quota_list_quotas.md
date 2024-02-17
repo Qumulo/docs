@@ -1,7 +1,6 @@
 ---
 category: quota
 command: quota_list_quotas
-keywords: qq, qq_cli, quota_list_quotas
 optional_options:
 - alternate: []
   help: Max quota entries to return per request

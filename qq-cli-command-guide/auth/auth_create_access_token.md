@@ -1,7 +1,6 @@
 ---
 category: auth
 command: auth_create_access_token
-keywords: qq, qq_cli, auth_create_access_token
 optional_options:
 - alternate: []
   help: The expiration time of the access token. After this time, the token will no

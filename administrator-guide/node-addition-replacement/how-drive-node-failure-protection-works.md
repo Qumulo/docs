@@ -5,7 +5,6 @@ permalink: /administrator-guide/node-addition-replacement/how-drive-node-failure
 redirect_from:
   - /administrator-guide/getting-started/how-drive-node-failure-protection-works.html
 sidebar: administrator_guide_sidebar
-keywords: drive_failure, node_failure, failure, failure_protection, protection, data_protection
 varLow: <span class="emoji">⬇️</span> Low
 varMedium: <span class="emoji">⚠️</span> Medium
 varHigh: <span class="emoji">🚩</span> High

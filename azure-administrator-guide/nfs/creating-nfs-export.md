@@ -3,7 +3,6 @@ title: "Creating and Managing an NFS Export in Qumulo Core"
 summary: "This section explains how to create, modify, and delete an NFS export by using the Qumulo Core Web UI."
 permalink: /azure-administrator-guide/nfs/creating-nfs-export.html
 sidebar: azure_guide_sidebar
-keywords: NFS, export
 ---
 
 {% include content-reuse/admin-guides/nfs/creating-nfs-export.md %}

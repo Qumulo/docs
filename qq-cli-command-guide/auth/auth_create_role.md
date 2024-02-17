@@ -1,7 +1,6 @@
 ---
 category: auth
 command: auth_create_role
-keywords: qq, qq_cli, auth_create_role
 optional_options:
 - alternate:
   - --role

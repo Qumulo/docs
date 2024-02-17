@@ -1,7 +1,6 @@
 ---
 category: network
 command: network_list_connections
-keywords: qq, qq_cli, network_list_connections
 optional_options:
 - alternate:
   - --counts

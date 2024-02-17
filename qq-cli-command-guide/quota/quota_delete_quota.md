@@ -1,7 +1,6 @@
 ---
 category: quota
 command: quota_delete_quota
-keywords: qq, qq_cli, quota_delete_quota
 optional_options:
 - alternate: []
   help: Path name

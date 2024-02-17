@@ -1,7 +1,6 @@
 ---
 category: change
 command: change_password
-keywords: qq, qq_cli, change_password
 optional_options:
 - alternate:
   - --old-password

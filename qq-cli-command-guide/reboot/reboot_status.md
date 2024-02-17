@@ -1,7 +1,6 @@
 ---
 category: reboot
 command: reboot_status
-keywords: qq, qq_cli, reboot_status
 optional_options: []
 permalink: /qq-cli-command-guide/reboot/reboot_status.html
 positional_options: []

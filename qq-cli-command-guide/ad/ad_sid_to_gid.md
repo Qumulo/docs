@@ -1,7 +1,6 @@
 ---
 category: ad
 command: ad_sid_to_gid
-keywords: qq, qq_cli, ad_sid_to_gid
 optional_options:
 - alternate:
   - --sid

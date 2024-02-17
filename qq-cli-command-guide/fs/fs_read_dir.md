@@ -1,7 +1,6 @@
 ---
 category: fs
 command: fs_read_dir
-keywords: qq, qq_cli, fs_read_dir
 optional_options:
 - alternate: []
   help: Directory path

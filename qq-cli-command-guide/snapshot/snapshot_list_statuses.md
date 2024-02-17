@@ -1,7 +1,6 @@
 ---
 category: snapshot
 command: snapshot_list_statuses
-keywords: qq, qq_cli, snapshot_list_statuses
 optional_options:
 - alternate: []
   help: Exclude all snapshots in process of being deleted from the list. You can use

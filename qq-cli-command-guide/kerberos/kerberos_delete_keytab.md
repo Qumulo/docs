@@ -1,7 +1,6 @@
 ---
 category: kerberos
 command: kerberos_delete_keytab
-keywords: qq, qq_cli, kerberos_delete_keytab
 optional_options: []
 permalink: /qq-cli-command-guide/kerberos/kerberos_delete_keytab.html
 positional_options: []

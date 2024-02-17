@@ -1,7 +1,6 @@
 ---
 category: auth
 command: auth_list_group
-keywords: qq, qq_cli, auth_list_group
 optional_options:
 - alternate: []
   help: Name or ID of group to list

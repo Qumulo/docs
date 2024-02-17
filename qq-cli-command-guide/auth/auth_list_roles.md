@@ -1,7 +1,6 @@
 ---
 category: auth
 command: auth_list_roles
-keywords: qq, qq_cli, auth_list_roles
 optional_options:
 - alternate: []
   help: Print JSON representation of auth roles.

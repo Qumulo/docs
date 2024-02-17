@@ -3,7 +3,6 @@ title: "Fujitsu PRIMERGY RX2540 M7 Technical Specifications"
 summary: "This section provides technical specifications for Fujitsu PRIMERGY RX2540 M7 node types."
 permalink: /hardware-guide/fujitsu-primergy-rx2540-m7/technical-specifications.html
 sidebar: hardware_guide_sidebar
-keywords: technical_specifications, tech_specs, specs, specifications, Fujitsu_PRIMERGY_RX2540_M7, Fujitsu, PRIMERGY, RX2540, 2540, M7
 ---
 
 {{site.data.alerts.note}}

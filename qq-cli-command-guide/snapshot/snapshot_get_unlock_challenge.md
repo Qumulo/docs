@@ -1,7 +1,6 @@
 ---
 category: snapshot
 command: snapshot_get_unlock_challenge
-keywords: qq, qq_cli, snapshot_get_unlock_challenge
 optional_options:
 - alternate:
   - --id

@@ -5,7 +5,6 @@ permalink: /administrator-guide/web-ui/login-banner.html
 redirect_from:
   - /administrator-guide/qumulo-core/web-ui-login-banner.html
 sidebar: administrator_guide_sidebar
-keywords: login, banner, greeting, Web_UI, Qumulo_Core
 ---
 
 {% include content-reuse/admin-guides/web-ui/login-banner.md %}

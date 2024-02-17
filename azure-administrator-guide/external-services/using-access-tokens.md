@@ -2,7 +2,6 @@
 title: "Using Qumulo Core Access Tokens"
 summary: "This section explains how to create and use access tokens&mdash;by using the Qumulo REST API, Python SDK, and <code>qq</code> CLI&mdash;to authenticate external services to Qumulo Core."
 permalink: /azure-administrator-guide/external-services/using-access-tokens.html
-keywords: auth, authentication, access_token, bearer_token, token
 sidebar: azure_guide_sidebar
 varAccessTokenWarning: An attacker can use an access token to authenticate as the token's user to Qumulo Core REST API (through HTTP, the Python SDK, or the <code>qq</code> CLI) and gain all of the user's privileges.
 varAccessTokenBestPractices: Treat access tokens, and the bearer tokens they generate, like passwords. Store your tokens securely, rotate your tokens often, and create a token revocation policy for your organization.

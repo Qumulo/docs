@@ -1,7 +1,6 @@
 ---
 category: ad
 command: ad_set_advanced_settings
-keywords: qq, qq_cli, ad_set_advanced_settings
 optional_options:
 - alternate: []
   help: Configure DCERPC signing to be off, prefer signing, or require signing. The

@@ -36,6 +36,83 @@ a.navbar-brand {
   background: yellow
 }
 
+/* Vectara */
+.vectara__logo_btn {
+  margin-left: -38px;
+  border: 0;
+  background: transparent;
+}
+
+.vectara__search_loading {
+  filter: none !important;
+  animation: pulsate 1s ease-out;
+  animation-iteration-count: infinite;
+  opacity: 1;
+}
+
+@keyframes pulsate {
+  50% {
+    transform: scale(0.75, 0.75);
+    opacity: 0.8;
+  }
+}
+
+#search-widget-results {
+  margin-left: -40px;
+}
+
+.vuiLink {
+  font-weight: bold;
+}
+
+.vuiSummaryCitation,
+.vuiSearchResultPosition {
+  border: 0;
+  padding: 0 10px 0 10px;
+  background: #696969;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+}
+
+.vuiSummaryCitation {
+  transition: all 0.3s ease;
+}
+
+.vuiSummaryCitation-isSelected,
+.vuiSearchResultPosition--selected { 
+  background-color: #0070A4;
+  color: white;
+}
+
+.vuiSummaryCitation:hover {
+  background: #3fbad6;
+}
+
+.vuiSearchResultPosition {
+  float: left;
+  margin-right: 10px;
+}
+
+.vuiSearchResult a.vuiLink:after {
+  content: "";
+}
+
+.vuiText strong {
+  background: #0070a438;
+  color: black;
+  padding: 2px;
+  font-weight: normal;
+}
+
+.vuiBadge--success {
+  display: none;
+}
+
+.vuiSpacer {
+  height: 15px;
+}
+
 /* Custom table sizing */
 .width-10 {
   width: 10%;
@@ -668,15 +745,17 @@ ul#results-container a:hover {
 #search-demo-container a:hover {
     color: black;
 }
+
 #search-input {
     padding: .5em;
-    margin-left:20px;
-    width:20em;
+    margin-left: 20px;
+    width: 20em;
     font-size: 0.8em;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    margin-top:10px;
+    margin-top: 10px;
+    margin-right: 42px;
 }
 /* end search */
 
@@ -1746,7 +1825,11 @@ h4.panel-title {
   #search-input {
     font-size: 11pt;
     margin: 10px;
-    width: calc(100% - 20px);
+    width: calc(100% - 50px);
+  }
+
+  .vectara__logo_btn {
+    margin-left: -10px;
   }
 
   /* Make search results visible in responsive mode */

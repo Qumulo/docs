@@ -1,7 +1,6 @@
 ---
 category: fs
 command: fs_list_lock_waiters_by_client
-keywords: qq, qq_cli, fs_list_lock_waiters_by_client
 optional_options:
 - alternate: []
   help: The protocol whose lock waiters should be listed

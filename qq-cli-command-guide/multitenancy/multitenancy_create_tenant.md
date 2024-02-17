@@ -1,7 +1,6 @@
 ---
 category: multitenancy
 command: multitenancy_create_tenant
-keywords: qq, qq_cli, multitenancy_create_tenant
 optional_options:
 - alternate: []
   help: Unique name of the tenant chosen by the user.

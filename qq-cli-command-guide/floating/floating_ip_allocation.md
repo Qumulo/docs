@@ -1,7 +1,6 @@
 ---
 category: floating
 command: floating_ip_allocation
-keywords: qq, qq_cli, floating_ip_allocation
 optional_options: []
 permalink: /qq-cli-command-guide/floating/floating_ip_allocation.html
 positional_options: []

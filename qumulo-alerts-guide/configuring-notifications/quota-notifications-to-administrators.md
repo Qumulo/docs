@@ -5,7 +5,6 @@ permalink: /qumulo-alerts-guide/configuring-notifications/quota-notifications-to
 redirect_from:
   - /qumulo-alerts-guide/configuring-notifications/quotas-to-admins.html
 sidebar: qumulo_alerts_guide_sidebar
-keywords: Qumulo_Alerts, quota, quotas, notification, configure, configuration
 ---
 
 You can configure quota monitoring by using _thresholds_.

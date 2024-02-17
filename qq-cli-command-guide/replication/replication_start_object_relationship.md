@@ -1,7 +1,6 @@
 ---
 category: replication
 command: replication_start_object_relationship
-keywords: qq, qq_cli, replication_start_object_relationship
 optional_options:
 - alternate: []
   help: Unique identifier of the object replication relationship

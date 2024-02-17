@@ -1,7 +1,6 @@
 ---
 category: set
 command: set_node_identify_light
-keywords: qq, qq_cli, set_node_identify_light
 optional_options:
 - alternate: []
   help: Node ID

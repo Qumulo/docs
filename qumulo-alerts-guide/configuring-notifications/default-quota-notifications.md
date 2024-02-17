@@ -5,7 +5,6 @@ permalink: /qumulo-alerts-guide/configuring-notifications/default-quota-notifica
 redirect_from:
   - /qumulo-alerts-guide/configuring-notifications/default-quotas.html
 sidebar: qumulo_alerts_guide_sidebar
-keywords: Qumulo_Alerts, quota, quotas, notification, configure, configuration, default
 ---
 
 Qumulo Alerts lets an administrator configure notifications that inherit a template from one of the following default quotas.

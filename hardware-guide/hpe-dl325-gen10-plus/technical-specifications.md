@@ -5,7 +5,6 @@ permalink: /hardware-guide/hpe-dl325-gen10-plus/technical-specifications.html
 redirect_from:
   - /hardware/hpe-dl325-gen10-plus/technical-specifications.html
 sidebar: hardware_guide_sidebar
-keywords: technical_specifications, tech_specs, specs, specifications, HPE_ProLiant_DL325_Gen10_Plus, HPE, ProLiant, DL325
 ---
 
 <table>

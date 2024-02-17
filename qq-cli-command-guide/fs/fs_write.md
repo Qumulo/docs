@@ -1,7 +1,6 @@
 ---
 category: fs
 command: fs_write
-keywords: qq, qq_cli, fs_write
 optional_options:
 - alternate: []
   help: File path

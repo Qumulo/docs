@@ -3,7 +3,6 @@ title: "Replacing Hardware Components in Your Quiver 1U All-NVMe Gen1 Nodes"
 summary: "This section explains how to replace hardware components in Quiver 1U All-NVMe Gen1 nodes."
 permalink: /hardware-guide/quiver-1ua-all-nvme-gen1/replacing-hardware-components.html
 sidebar: hardware_guide_sidebar
-keywords: replace, hardware, component, replace_top_cover, remove_top_cover, top_cover, replace_pcie_riser, pcie_riser, replace_nic, nic, replace_boot_drive, boot_drive, replace_hdd, hdd, replace_nvme, nvme, replace_psu, psu, replace_fan_module, fan_module, replace_dimm, dimm, memory, replace_chassis, chassis, Quiver_1U_All-NVMe_Gen1, Quiver, Quiver_1UA
 varRemovePCIeCard: <a href="#replace-pci-e-riser-card">Remove the PCIe card from the motherboard.</a>
 varHotPlug: You can replace this component without powering off the node.
 varNoHotPlug: To replace this component, you must first power off the node.

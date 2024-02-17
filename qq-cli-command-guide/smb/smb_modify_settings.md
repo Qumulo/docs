@@ -1,7 +1,6 @@
 ---
 category: smb
 command: smb_modify_settings
-keywords: qq, qq_cli, smb_modify_settings
 optional_options:
 - alternate:
   - --encryption-mode

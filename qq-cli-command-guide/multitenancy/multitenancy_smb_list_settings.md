@@ -1,7 +1,6 @@
 ---
 category: multitenancy
 command: multitenancy_smb_list_settings
-keywords: qq, qq_cli, multitenancy_smb_list_settings
 optional_options: []
 permalink: /qq-cli-command-guide/multitenancy/multitenancy_smb_list_settings.html
 positional_options: []

@@ -1,7 +1,6 @@
 ---
 category: replication
 command: replication_add_blackout_window
-keywords: qq, qq_cli, replication_add_blackout_window
 optional_options:
 - alternate: []
   help: Unique identifier of the source replication relationship.

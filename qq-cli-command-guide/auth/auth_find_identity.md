@@ -1,7 +1,6 @@
 ---
 category: auth
 command: auth_find_identity
-keywords: qq, qq_cli, auth_find_identity
 optional_options:
 - alternate: []
   help: Find all external representations for an internal QumuloFS identifier.

@@ -6,7 +6,6 @@ redirect_from:
   - /administrator-guide/getting-started-qumulo-core/supported-configurations-known-limits.html
   - /administrator-guide/qumulo-core/supported-configurations-known-limits.html
 sidebar: administrator_guide_sidebar
-keywords: limit, limits, limitations, known_limits, known_limitations, config, configuration, supported_config, supported_configuration
 platform: on-prem
 ---
 

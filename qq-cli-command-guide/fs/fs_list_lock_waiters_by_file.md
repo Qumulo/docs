@@ -1,7 +1,6 @@
 ---
 category: fs
 command: fs_list_lock_waiters_by_file
-keywords: qq, qq_cli, fs_list_lock_waiters_by_file
 optional_options:
 - alternate: []
   help: File path

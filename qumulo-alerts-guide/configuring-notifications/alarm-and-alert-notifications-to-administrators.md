@@ -6,7 +6,6 @@ redirect_from:
   - /qumulo-alerts-guide/configuring-notifications/alarms-and-alerts.html
   - /qumulo-alerts-guide/installing-configuring/user-notifications.html
 sidebar: qumulo_alerts_guide_sidebar
-keywords: Qumulo_Alerts, notification, group, notification group, configure, configuration, JSON
 ---
 
 You must first add the account as a Qumulo Alerts user, create a notification group and configure its notifications, and then add the user to the notification group.

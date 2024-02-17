@@ -1,7 +1,6 @@
 ---
 category: help
 command: help
-keywords: qq, qq_cli, help
 optional_options: []
 permalink: /qq-cli-command-guide/help/help.html
 positional_options: []

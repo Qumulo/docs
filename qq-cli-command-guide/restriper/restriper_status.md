@@ -1,7 +1,6 @@
 ---
 category: restriper
 command: restriper_status
-keywords: qq, qq_cli, restriper_status
 optional_options: []
 permalink: /qq-cli-command-guide/restriper/restriper_status.html
 positional_options: []

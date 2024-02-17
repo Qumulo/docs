@@ -1,7 +1,6 @@
 ---
 category: time
 command: time_get
-keywords: qq, qq_cli, time_get
 optional_options: []
 permalink: /qq-cli-command-guide/time/time_get.html
 positional_options: []

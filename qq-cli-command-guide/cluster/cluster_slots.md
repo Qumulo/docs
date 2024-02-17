@@ -1,7 +1,6 @@
 ---
 category: cluster
 command: cluster_slots
-keywords: qq, qq_cli, cluster_slots
 optional_options:
 - alternate: []
   help: Slot ID

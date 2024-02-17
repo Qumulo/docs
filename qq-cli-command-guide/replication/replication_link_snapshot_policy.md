@@ -1,7 +1,6 @@
 ---
 category: replication
 command: replication_link_snapshot_policy
-keywords: qq, qq_cli, replication_link_snapshot_policy
 optional_options:
 - alternate: []
   help: Unique identifier of the source replication relationship.

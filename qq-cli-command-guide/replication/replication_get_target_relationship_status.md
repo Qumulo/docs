@@ -1,7 +1,6 @@
 ---
 category: replication
 command: replication_get_target_relationship_status
-keywords: qq, qq_cli, replication_get_target_relationship_status
 optional_options:
 - alternate: []
   help: Unique identifier of the target replication relationship

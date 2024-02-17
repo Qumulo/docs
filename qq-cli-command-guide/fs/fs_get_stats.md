@@ -1,7 +1,6 @@
 ---
 category: fs
 command: fs_get_stats
-keywords: qq, qq_cli, fs_get_stats
 optional_options: []
 permalink: /qq-cli-command-guide/fs/fs_get_stats.html
 positional_options: []

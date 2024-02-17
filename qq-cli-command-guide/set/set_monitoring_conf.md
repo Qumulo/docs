@@ -1,7 +1,6 @@
 ---
 category: set
 command: set_monitoring_conf
-keywords: qq, qq_cli, set_monitoring_conf
 optional_options:
 - alternate: []
   help: Enable monitoring service.

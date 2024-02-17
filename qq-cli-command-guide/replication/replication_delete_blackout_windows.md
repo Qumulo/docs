@@ -1,7 +1,6 @@
 ---
 category: replication
 command: replication_delete_blackout_windows
-keywords: qq, qq_cli, replication_delete_blackout_windows
 optional_options:
 - alternate: []
   help: Unique identifier of the source replication relationship

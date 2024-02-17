@@ -3,7 +3,6 @@ title: "Panel LEDs on Quiver 1U All-NVMe Gen1 Nodes"
 summary: "This section explains the LEDs on Quiver 1UA Gen1 nodes."
 permalink: /hardware-guide/quiver-1ua-all-nvme-gen1/panel-leds.html
 sidebar: hardware_guide_sidebar
-keywords: LED, front_panel, power_fault, rear_panel, diagnose, diagnosis, hardware_health, Quiver_1U_All-NVMe_Gen1, Quiver, Quiver_1UA
 ---
 
 ## Front Panel LEDs and Buttons

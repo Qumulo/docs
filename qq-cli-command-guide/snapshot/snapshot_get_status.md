@@ -1,7 +1,6 @@
 ---
 category: snapshot
 command: snapshot_get_status
-keywords: qq, qq_cli, snapshot_get_status
 optional_options:
 - alternate:
   - --id

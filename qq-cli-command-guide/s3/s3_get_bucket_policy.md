@@ -1,7 +1,6 @@
 ---
 category: s3
 command: s3_get_bucket_policy
-keywords: qq, qq_cli, s3_get_bucket_policy
 optional_options:
 - alternate: []
   help: The target bucket for which the access policy will be retrieved

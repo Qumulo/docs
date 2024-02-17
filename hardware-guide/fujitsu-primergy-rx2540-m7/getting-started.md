@@ -3,7 +3,6 @@ title: "Getting Started with Qumulo on Fujitsu PRIMERGY RX2540 M7"
 summary: "This section explains how to prepare Fujitsu RX2540 M7 nodes for creating a Qumulo cluster."
 permalink: /hardware-guide/fujitsu-primergy-rx2540-m7/getting-started.html
 sidebar: hardware_guide_sidebar
-keywords: getting_started_guide, quick_reference, Fujitsu_PRIMERGY_RX2540_M7, Fujitsu, PRIMERGY, RX2540, 2540, M7
 ---
 
 {% capture askFujitsu %}Your {{site.fprx2540m7}} node might require a firmware update. Before you get started with Qumulo Core, contact [Fujitsu Product Support](https://support.ts.fujitsu.com/) for information about the minimum required firmware level and hardware configuration.{% endcapture %}

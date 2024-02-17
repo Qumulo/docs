@@ -1,7 +1,6 @@
 ---
 category: time
 command: time_set
-keywords: qq, qq_cli, time_set
 optional_options:
 - alternate: []
   help: Use Active Directory controller for NTP.

@@ -1,7 +1,6 @@
 ---
 category: s3
 command: s3_get_settings
-keywords: qq, qq_cli, s3_get_settings
 optional_options: []
 permalink: /qq-cli-command-guide/s3/s3_get_settings.html
 positional_options: []

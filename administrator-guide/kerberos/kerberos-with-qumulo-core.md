@@ -6,7 +6,6 @@ redirect_from:
   - /nfsv4.1-kerberos.html
   - /administrator-guide/protocols/nfsv4.1-kerberos.html
 sidebar: administrator_guide_sidebar
-keywords: NFS, NFS4.1, NFSv4.1, Kerberos, Active Directory, AD, domain, krb5
 ---
 
 {% include content-reuse/admin-guides/kerberos/kerberos-with-qumulo-core.md %}

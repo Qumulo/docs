@@ -3,7 +3,6 @@ title: "Performance Characteristics and Default Service Limits of Azure Native Q
 summary: "This section describes the performance characteristics and default service limits of Azure Native Qumulo (ANQ) v2."
 permalink: /azure-administrator-guide/getting-started/performance-characteristics-default-limits-azure-native-qumulo.html
 sidebar: azure_guide_sidebar
-keywords: cloud, azure, native, ANQ, ANQ_v2, performance_characteristics, performance, characteristics, limits, default_limit, service_limit
 ---
 
 {{site.azure.qumuloOnAzureShort}} v2 introduces a file system architecture that offers improved performance and flexibility for file systems of any size. For this reason, we eliminated the concept of _total available capacity._ You pay only for the data you store and, separately, for the throughput you use.

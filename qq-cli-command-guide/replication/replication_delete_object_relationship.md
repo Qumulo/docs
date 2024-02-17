@@ -1,7 +1,6 @@
 ---
 category: replication
 command: replication_delete_object_relationship
-keywords: qq, qq_cli, replication_delete_object_relationship
 optional_options:
 - alternate: []
   help: Unique identifier of the object replication relationship

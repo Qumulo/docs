@@ -1,7 +1,6 @@
 ---
 category: ssl
 command: ssl_get_ca_certificate
-keywords: qq, qq_cli, ssl_get_ca_certificate
 optional_options: []
 permalink: /qq-cli-command-guide/ssl/ssl_get_ca_certificate.html
 positional_options: []

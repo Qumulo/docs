@@ -1,7 +1,6 @@
 ---
 category: replication
 command: replication_delete_target_relationship
-keywords: qq, qq_cli, replication_delete_target_relationship
 optional_options:
 - alternate: []
   help: Unique identifier of the target replication relationship

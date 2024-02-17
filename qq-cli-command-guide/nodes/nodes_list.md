@@ -1,7 +1,6 @@
 ---
 category: nodes
 command: nodes_list
-keywords: qq, qq_cli, nodes_list
 optional_options:
 - alternate: []
   help: Node ID

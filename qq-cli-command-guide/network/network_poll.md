@@ -1,7 +1,6 @@
 ---
 category: network
 command: network_poll
-keywords: qq, qq_cli, network_poll
 optional_options:
 - alternate: []
   help: Node ID

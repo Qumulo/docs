@@ -5,7 +5,6 @@ permalink: /hardware-guide/quiver-1u-hybrid-gen2/configuring-ipmi-wiring-nodes.h
 redirect_from:
   - /hardware-guide/quiver-1u-hybrid-gen2/wiring-nodes.html
 sidebar: hardware_guide_sidebar
-keywords: out-of-band_management, out_of_band_management, IPMI, DHCP, network, networking, LAN, ipmitool, 100 Gbps, Ethernet, power, Quiver_1U_Hybrid_Gen2, Quiver, Quiver_1UH, QVRG2-96T, QVRG2-240T, QVRG296T, QVRG2240T
 ---
 
 {{site.unifyNetDefine}}

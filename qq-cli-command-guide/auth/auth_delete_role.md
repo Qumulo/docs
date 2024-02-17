@@ -1,7 +1,6 @@
 ---
 category: auth
 command: auth_delete_role
-keywords: qq, qq_cli, auth_delete_role
 optional_options:
 - alternate:
   - --role

@@ -1,7 +1,6 @@
 ---
 category: capacity
 command: capacity_history_files_get
-keywords: qq, qq_cli, capacity_history_files_get
 optional_options:
 - alternate: []
   help: Time period to retrieve, in epoch seconds.

@@ -1,7 +1,6 @@
 ---
 category: dns
 command: dns_resolve_ips
-keywords: qq, qq_cli, dns_resolve_ips
 optional_options:
 - alternate: []
   help: IP addresses to resolve

@@ -1,7 +1,6 @@
 ---
 category: auth
 command: auth_clear_cache
-keywords: qq, qq_cli, auth_clear_cache
 optional_options: []
 permalink: /qq-cli-command-guide/auth/auth_clear_cache.html
 positional_options: []

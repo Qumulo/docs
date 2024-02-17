@@ -1,7 +1,6 @@
 ---
 category: s3
 command: s3_modify_settings
-keywords: qq, qq_cli, s3_modify_settings
 optional_options:
 - alternate:
   - -d

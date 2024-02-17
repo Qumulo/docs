@@ -2,7 +2,6 @@
 title: "Partitioning a Qumulo Cluster into Tenants"
 summary: "This section explains how to enable, disable, and use network multitenancy in Qumulo Core."
 permalink: /administrator-guide/network-multitenancy/partitioning-cluster-into-tenants.html
-keywords: network, tenant, multitenancy, vlan
 sidebar: administrator_guide_sidebar
 varTenantCreateResult: It enables all management protocols for the tenant. The tenant also retains the same file system protocol configuration as when multitenancy was disabled.
 varUnassignNetwork: After you unassign a network from a tenant, you can assign it to another tenant.

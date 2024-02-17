@@ -1,7 +1,6 @@
 ---
 category: node
 command: node_chassis_status_get
-keywords: qq, qq_cli, node_chassis_status_get
 optional_options:
 - alternate: []
   help: Node ID

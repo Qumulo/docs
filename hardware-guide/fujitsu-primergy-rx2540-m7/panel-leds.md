@@ -3,7 +3,6 @@ title: "Panel LEDs on Fujitsu PRIMERGY RX2540 M7 Nodes"
 summary: "This section explains the LEDs on Fujitsu RX2540 M7 nodes."
 permalink: /hardware-guide/fujitsu-primergy-rx2540-m7/panel-leds.html
 sidebar: hardware_guide_sidebar
-keywords: LED, front_panel, power_fault, rear_panel, diagnose, diagnosis, hardware_health, Fujitsu_PRIMERGY_RX2540_M7, Fujitsu, PRIMERGY, RX2540, 2540, M7
 ---
 
 ## Front Panel LEDs and Buttons

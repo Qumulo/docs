@@ -1,7 +1,6 @@
 ---
 category: web
 command: web_ui_modify_settings
-keywords: qq, qq_cli, web_ui_modify_settings
 optional_options:
 - alternate: []
   help: Sets the inactivity timeout

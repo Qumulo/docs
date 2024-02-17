@@ -1,7 +1,6 @@
 ---
 category: fs
 command: fs_set_atime_settings
-keywords: qq, qq_cli, fs_set_atime_settings
 optional_options:
 - alternate:
   - -e

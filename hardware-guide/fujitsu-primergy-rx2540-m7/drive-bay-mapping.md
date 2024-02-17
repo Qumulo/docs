@@ -3,7 +3,6 @@ title: "Drive Bay Mapping in Fujitsu PRIMERGY RX2540 M7 Nodes"
 summary: "This section explains the drive bay mapping in Fujitsu RX2540 M7 nodes."
 permalink: /hardware-guide/fujitsu-primergy-rx2540-m7/drive-bay-mapping.html
 sidebar: hardware_guide_sidebar
-keywords: drive, hard_drive, drive_bay, mapping, Fujitsu_PRIMERGY_RX2540_M7, Fujitsu, PRIMERGY, RX2540, 2540, M7
 ---
 
 Your {{site.fprx2540m7}} chassis contains 12 or 8 HDDs in the front, 4 NVMe drives in the back, and 2 mirrored NVMe boot drives in internal M.2 expansion slots. The following is the mapping for the drives.

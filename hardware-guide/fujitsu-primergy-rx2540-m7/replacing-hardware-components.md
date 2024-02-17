@@ -3,7 +3,6 @@ title: "Replacing Hardware Components in Your Fujitsu PRIMERGY RX2540 M7 Nodes"
 summary: "This section explains how to replace hardware components in Fujitsu PRIMERGY RX2540 M7 nodes."
 permalink: /hardware-guide/fujitsu-primergy-rx2540-m7/replacing-hardware-components.html
 sidebar: hardware_guide_sidebar
-keywords: replace, hardware, component, replace_top_cover, remove_top_cover, top_cover, replace_pcie_riser, pcie_riser, replace_nic, nic, replace_boot_drive, boot_drive, replace_hdd, hdd, replace_nvme, nvme, replace_psu, psu, replace_fan_module, fan_module, replace_dimm, dimm, memory, replace_chassis, chassis, Fujitsu_PRIMERGY_RX2540_M7, Fujitsu, PRIMERGY, RX2540, 2540, M7
 varRemoveRAIDModule: <a href="#replace-raid-module-riser">Remove the RAID module riser from the motherboard.</a>
 varHotPlug: You can replace this component without powering off the node.
 varNoHotPlug: To replace this component, you must first power off the node.

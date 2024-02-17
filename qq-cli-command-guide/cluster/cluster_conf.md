@@ -1,7 +1,6 @@
 ---
 category: cluster
 command: cluster_conf
-keywords: qq, qq_cli, cluster_conf
 optional_options: []
 permalink: /qq-cli-command-guide/cluster/cluster_conf.html
 positional_options: []

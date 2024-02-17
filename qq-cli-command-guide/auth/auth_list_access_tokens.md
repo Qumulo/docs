@@ -1,7 +1,6 @@
 ---
 category: auth
 command: auth_list_access_tokens
-keywords: qq, qq_cli, auth_list_access_tokens
 optional_options:
 - alternate: []
   help: Output JSON instead of table.

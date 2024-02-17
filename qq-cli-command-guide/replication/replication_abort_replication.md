@@ -1,7 +1,6 @@
 ---
 category: replication
 command: replication_abort_replication
-keywords: qq, qq_cli, replication_abort_replication
 optional_options:
 - alternate: []
   help: Unique identifier of the source replication relationship

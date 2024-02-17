@@ -2,7 +2,6 @@
 title: "Enabling Cloud-Based Monitoring and Remote Support"
 summary: "This section explains how to enable Cloud-Based Monitoring and Remote Support for your Qumulo cluster."
 permalink: /administrator-guide/monitoring-and-metrics/enabling-cloud-based-monitoring-remote-support.html
-keywords: monitoring, Cloud-Based_Monitoring, Remote_Support, enable, enabling, Qumulo Care
 sidebar: administrator_guide_sidebar
 ---
 

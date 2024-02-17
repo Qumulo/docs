@@ -3,7 +3,6 @@ title: "Panel LEDs on HPE Apollo 4200 Gen10 Plus Nodes"
 summary: "This section explains the LEDs on HPE Apollo 4200 Gen10 Plus nodes, including front panel LEDs and buttons, power fault LEDs, and rear panel LEDs. You can use these LEDs to diagnose hardware health issues."
 permalink: /hardware-guide/hpe-apollo-4200-gen10-plus/panel-leds.html
 sidebar: hardware_guide_sidebar
-keywords: LED, front_panel, power_fault, rear_panel, diagnose, diagnosis, hardware_health, HPE_Apollo_4200_Gen10_Plus, HPE, Apollo, 4200_Gen10_Plus
 ---
 
 ## Front Panel LEDs and Buttons

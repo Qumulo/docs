@@ -1,7 +1,6 @@
 ---
 category: smb
 command: smb_close_sessions
-keywords: qq, qq_cli, smb_close_sessions
 optional_options:
 - alternate: []
   help: "\n                Close only the sessions that match the specified user's\

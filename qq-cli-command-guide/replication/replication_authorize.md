@@ -1,7 +1,6 @@
 ---
 category: replication
 command: replication_authorize
-keywords: qq, qq_cli, replication_authorize
 optional_options:
 - alternate: []
   help: Unique identifier of the target replication relationship

@@ -1,7 +1,6 @@
 ---
 category: upgrade
 command: upgrade_verify_image
-keywords: qq, qq_cli, upgrade_verify_image
 optional_options:
 - alternate: []
   help: FS path to upgrade image

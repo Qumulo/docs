@@ -1,7 +1,6 @@
 ---
 category: dns
 command: dns_resolve_hostnames
-keywords: qq, qq_cli, dns_resolve_hostnames
 optional_options:
 - alternate: []
   help: Hostnames to resolve

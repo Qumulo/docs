@@ -5,7 +5,6 @@ permalink: /azure-administrator-guide/getting-started/deploying-instance-azure-n
 redirect_from:
   - /azure-guide/getting-started-qumulo-scalable-file-service.html
 sidebar: azure_guide_sidebar
-keywords: cloud, azure, native, ANQ, getting_started
 ---
 
 For an introduction, see [How {{site.azure.qumuloOnAzureLong}} Works](how-azure-native-qumulo-works.html).

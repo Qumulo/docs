@@ -3,7 +3,6 @@ title: "Replacing Hardware Components in Your Quiver 1U Hybrid Gen2 Nodes"
 summary: "This section explains how to replace hardware components in Quiver 1U Hybrid Gen2 nodes."
 permalink: /hardware-guide/quiver-1u-hybrid-gen2/replacing-hardware-components.html
 sidebar: hardware_guide_sidebar
-keywords: replace, hardware, component, replace_top_cover, remove_top_cover, top_cover, replace_pcie_riser, pcie_riser, replace_nic, nic, replace_boot_drive, boot_drive, replace_hdd, hdd, replace_nvme, nvme, replace_psu, psu, replace_fan_module, fan_module, replace_dimm, dimm, memory, replace_chassis, chassis, Quiver_1U_Hybrid_Gen2, Quiver, Quiver_1UH, QVRG2-96T, QVRG2-240T, QVRG296T, QVRG2240T
 varRemovePCIeCard: <a href="#replace-pci-e-riser-card">Remove the PCIe card from the motherboard.</a>
 varHotPlug: You can replace this component without powering off the node.
 varNoHotPlug: To replace this component, you must first power off the node.

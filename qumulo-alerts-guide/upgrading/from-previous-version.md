@@ -3,7 +3,6 @@ title: "Upgrading Qumulo Alerts from a Previous Public Version"
 summary: "This section explains how to upgrade Qumulo Alerts from a previous public version to the latest one."
 permalink: /qumulo-alerts-guide/upgrading/from-previous-version.html
 sidebar: qumulo_alerts_guide_sidebar
-keywords: Qumulo_Alerts, upgrade, access_token, token
 ---
 
 ## To Upgrade Qumulo Alerts to the Latest Public Version

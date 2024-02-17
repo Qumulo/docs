@@ -1,7 +1,6 @@
 ---
 category: login
 command: login
-keywords: qq, qq_cli, login
 optional_options:
 - alternate:
   - --username

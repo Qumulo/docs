@@ -1,7 +1,6 @@
 ---
 category: fs
 command: fs_delete
-keywords: qq, qq_cli, fs_delete
 optional_options:
 - alternate: []
   help: File system object path

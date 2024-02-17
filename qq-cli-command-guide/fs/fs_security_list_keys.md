@@ -1,7 +1,6 @@
 ---
 category: fs
 command: fs_security_list_keys
-keywords: qq, qq_cli, fs_security_list_keys
 optional_options:
 - alternate: []
   help: Print the output in JSON format. By default, the output is in a table.

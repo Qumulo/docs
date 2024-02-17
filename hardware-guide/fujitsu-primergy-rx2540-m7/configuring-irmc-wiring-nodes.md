@@ -3,7 +3,6 @@ title: "Configuring the Integrated Remote Management Controller (iRMC) and Wirin
 summary: "This section explains how to wire the out-of-band management (iRMC) port, 25 Gbps ports, and power on Fujitsu RX2540 M7 nodes."
 permalink: /hardware-guide/fujitsu-primergy-rx2540-m7/configuring-irmc-wiring-nodes.html
 sidebar: hardware_guide_sidebar
-keywords: out-of-band_management, out_of_band_management, iRMC, DHCP, network, networking, LAN, 25 Gbps, Ethernet, power, Fujitsu_PRIMERGY_RX2540_M7, Fujitsu, PRIMERGY, RX2540, 2540, M7
 ---
 
 {{site.unifyNetDefine}}

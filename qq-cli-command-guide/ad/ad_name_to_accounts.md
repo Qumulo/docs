@@ -1,7 +1,6 @@
 ---
 category: ad
 command: ad_name_to_accounts
-keywords: qq, qq_cli, ad_name_to_accounts
 optional_options:
 - alternate:
   - --name

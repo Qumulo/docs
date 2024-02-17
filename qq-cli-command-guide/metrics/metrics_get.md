@@ -1,7 +1,6 @@
 ---
 category: metrics
 command: metrics_get
-keywords: qq, qq_cli, metrics_get
 optional_options: []
 permalink: /qq-cli-command-guide/metrics/metrics_get.html
 positional_options: []

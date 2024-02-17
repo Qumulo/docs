@@ -1,7 +1,6 @@
 ---
 category: s3
 command: s3_get_bucket
-keywords: qq, qq_cli, s3_get_bucket
 optional_options:
 - alternate: []
   help: The name of the bucket to retrieve

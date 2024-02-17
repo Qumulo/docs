@@ -1,7 +1,6 @@
 ---
 category: multitenancy
 command: multitenancy_smb_modify_global_settings
-keywords: qq, qq_cli, multitenancy_smb_modify_global_settings
 optional_options:
 - alternate:
   - --encryption-mode

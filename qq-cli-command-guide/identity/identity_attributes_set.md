@@ -1,7 +1,6 @@
 ---
 category: identity
 command: identity_attributes_set
-keywords: qq, qq_cli, identity_attributes_set
 optional_options:
 - alternate: []
   help: The home directory for the identity.

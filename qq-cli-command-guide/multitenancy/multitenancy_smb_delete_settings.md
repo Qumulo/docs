@@ -1,7 +1,6 @@
 ---
 category: multitenancy
 command: multitenancy_smb_delete_settings
-keywords: qq, qq_cli, multitenancy_smb_delete_settings
 optional_options:
 - alternate: []
   help: ID of the tenant to delete settings for

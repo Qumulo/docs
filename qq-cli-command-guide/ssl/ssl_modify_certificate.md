@@ -1,7 +1,6 @@
 ---
 category: ssl
 command: ssl_modify_certificate
-keywords: qq, qq_cli, ssl_modify_certificate
 optional_options:
 - alternate:
   - --certificate

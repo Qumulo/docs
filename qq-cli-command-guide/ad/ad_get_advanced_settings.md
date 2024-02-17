@@ -1,7 +1,6 @@
 ---
 category: ad
 command: ad_get_advanced_settings
-keywords: qq, qq_cli, ad_get_advanced_settings
 optional_options: []
 permalink: /qq-cli-command-guide/ad/ad_get_advanced_settings.html
 positional_options: []

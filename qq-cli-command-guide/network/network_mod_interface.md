@@ -1,7 +1,6 @@
 ---
 category: network
 command: network_mod_interface
-keywords: qq, qq_cli, network_mod_interface
 optional_options:
 - alternate: []
   help: The unique ID of the interface

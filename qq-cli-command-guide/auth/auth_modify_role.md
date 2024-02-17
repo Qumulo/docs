@@ -1,7 +1,6 @@
 ---
 category: auth
 command: auth_modify_role
-keywords: qq, qq_cli, auth_modify_role
 optional_options:
 - alternate:
   - --role

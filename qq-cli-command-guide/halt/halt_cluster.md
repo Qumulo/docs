@@ -1,7 +1,6 @@
 ---
 category: halt
 command: halt_cluster
-keywords: qq, qq_cli, halt_cluster
 optional_options:
 - alternate: []
   help: Do not prompt

@@ -1,7 +1,6 @@
 ---
 category: ldap
 command: ldap_get_status
-keywords: qq, qq_cli, ldap_get_status
 optional_options: []
 permalink: /qq-cli-command-guide/ldap/ldap_get_status.html
 positional_options: []

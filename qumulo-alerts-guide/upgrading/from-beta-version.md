@@ -3,7 +3,6 @@ title: "Upgrading Qumulo Alerts from the Beta Version"
 summary: "This section explains how to upgrade Qumulo Alerts from the beta version."
 permalink: /qumulo-alerts-guide/upgrading/from-beta-version.html
 sidebar: qumulo_alerts_guide_sidebar
-keywords: Qumulo_Alerts, upgrade, beta, access_token, token
 ---
 
 {{site.data.alerts.note}}

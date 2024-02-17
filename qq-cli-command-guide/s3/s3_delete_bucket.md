@@ -1,7 +1,6 @@
 ---
 category: s3
 command: s3_delete_bucket
-keywords: qq, qq_cli, s3_delete_bucket
 optional_options:
 - alternate: []
   help: The name of the bucket to be deleted

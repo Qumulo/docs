@@ -1,7 +1,6 @@
 ---
 category: fs
 command: fs_release_nlm_locks_by_client
-keywords: qq, qq_cli, fs_release_nlm_locks_by_client
 optional_options:
 - alternate: []
   help: This command can cause corruption, add this flag to release lock

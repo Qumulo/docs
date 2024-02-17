@@ -1,7 +1,6 @@
 ---
 category: ad
 command: ad_reconfigure
-keywords: qq, qq_cli, ad_reconfigure
 optional_options:
 - alternate: []
   help: Allows the cluster to search trusted domains for user information.

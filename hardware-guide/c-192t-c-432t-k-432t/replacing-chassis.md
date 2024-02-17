@@ -10,7 +10,6 @@ redirect_from:
   - /hardware/c-192t-c-432t-k-432t/replacing-hardware-components.html
   - /hardware/c-192t-c-432t-k-432t/replacing-chassis.html
 sidebar: hardware_guide_sidebar
-keywords: replace, hardware, component, chassis, chassis_replacement, c-192t, c192t, c-432t, c432t, k-432t, k432t, 2u, 2u_hybrid, 2u_chassis_replacement
 ---
 
 {% include important.html content="We strongly recommend having another person help you with this process." %}

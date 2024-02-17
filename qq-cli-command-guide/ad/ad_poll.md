@@ -1,7 +1,6 @@
 ---
 category: ad
 command: ad_poll
-keywords: qq, qq_cli, ad_poll
 optional_options: []
 permalink: /qq-cli-command-guide/ad/ad_poll.html
 positional_options: []

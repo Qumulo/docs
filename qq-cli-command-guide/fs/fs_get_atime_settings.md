@@ -1,7 +1,6 @@
 ---
 category: fs
 command: fs_get_atime_settings
-keywords: qq, qq_cli, fs_get_atime_settings
 optional_options: []
 permalink: /qq-cli-command-guide/fs/fs_get_atime_settings.html
 positional_options: []

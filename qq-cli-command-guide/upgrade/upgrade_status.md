@@ -1,7 +1,6 @@
 ---
 category: upgrade
 command: upgrade_status
-keywords: qq, qq_cli, upgrade_status
 optional_options:
 - alternate:
   - --json

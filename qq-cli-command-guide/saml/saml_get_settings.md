@@ -1,7 +1,6 @@
 ---
 category: saml
 command: saml_get_settings
-keywords: qq, qq_cli, saml_get_settings
 optional_options: []
 permalink: /qq-cli-command-guide/saml/saml_get_settings.html
 positional_options: []

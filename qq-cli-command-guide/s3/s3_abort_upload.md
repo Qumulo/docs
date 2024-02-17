@@ -1,7 +1,6 @@
 ---
 category: s3
 command: s3_abort_upload
-keywords: qq, qq_cli, s3_abort_upload
 optional_options:
 - alternate: []
   help: The bucket in which the upload was initiated.

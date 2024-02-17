@@ -7,7 +7,6 @@ redirect_from:
   - /administrator-guide/protecting-data/understanding-offline-nodes.html
   - /administrator-guide/qumulo-core/understanding-offline-nodes.html
 sidebar: administrator_guide_sidebar
-keywords: offline, offline_node, check_free_space, free_space, space, enospc, ssd_space
 ---
 
 ## What Happens When a Qumulo Core Node Goes Offline

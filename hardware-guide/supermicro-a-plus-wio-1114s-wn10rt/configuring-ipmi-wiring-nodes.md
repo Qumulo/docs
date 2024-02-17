@@ -6,7 +6,6 @@ redirect_from:
   - /hardware-guide/supermicro-a-plus-wio-1114s-wn10rt/wiring-nodes.html
   - /hardware/supermicro-a-plus-wio-1114s-wn10rt/wiring-nodes.html
 sidebar: hardware_guide_sidebar
-keywords: out-of-band_management, out_of_band_management, IPMI, DHCP, network, networking, LAN, ipmitool, 100_Gbps, Ethernet, power, Supermicro, Supermicro_1114S, 1114S
 ---
 
 {{site.splitNetDefine}}

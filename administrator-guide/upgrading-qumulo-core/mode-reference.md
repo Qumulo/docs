@@ -5,7 +5,6 @@ permalink: /administrator-guide/upgrading-qumulo-core/mode-reference.html
 redirect_from:
   - /administrator-guide/upgrades/mode-reference.html
 sidebar: administrator_guide_sidebar
-keywords: update, upgrade, instant, instant_software_upgrade, platform, platform_upgrade
 hideTOC: true
 ---
 

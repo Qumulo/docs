@@ -1,7 +1,6 @@
 ---
 category: nfs
 command: nfs_get_settings
-keywords: qq, qq_cli, nfs_get_settings
 optional_options: []
 permalink: /qq-cli-command-guide/nfs/nfs_get_settings.html
 positional_options: []

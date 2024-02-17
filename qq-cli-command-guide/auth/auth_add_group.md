@@ -1,7 +1,6 @@
 ---
 category: auth
 command: auth_add_group
-keywords: qq, qq_cli, auth_add_group
 optional_options:
 - alternate: []
   help: New group's name (windows style)

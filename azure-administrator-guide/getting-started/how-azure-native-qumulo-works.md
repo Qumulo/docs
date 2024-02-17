@@ -5,7 +5,6 @@ permalink: /azure-administrator-guide/getting-started/how-azure-native-qumulo-wo
 redirect_from:
   - /azure-guide/how-qumulo-scalable-file-service-works.html
 sidebar: azure_guide_sidebar
-keywords: cloud, azure, native, ANQ, ANQ_v1, ANQ_v2, regions, fips, fips_140, gdpr, hipaa, soc, soc_2
 ---
 
 {{site.azure.detailedDeploymentInstructions}}

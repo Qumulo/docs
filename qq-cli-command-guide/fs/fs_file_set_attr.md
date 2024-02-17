@@ -1,7 +1,6 @@
 ---
 category: fs
 command: fs_file_set_attr
-keywords: qq, qq_cli, fs_file_set_attr
 optional_options:
 - alternate: []
   help: File path

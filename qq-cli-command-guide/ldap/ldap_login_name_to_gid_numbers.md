@@ -1,7 +1,6 @@
 ---
 category: ldap
 command: ldap_login_name_to_gid_numbers
-keywords: qq, qq_cli, ldap_login_name_to_gid_numbers
 optional_options: []
 permalink: /qq-cli-command-guide/ldap/ldap_login_name_to_gid_numbers.html
 positional_options: []

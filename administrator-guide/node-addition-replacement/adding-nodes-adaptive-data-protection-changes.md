@@ -7,7 +7,6 @@ redirect_from:
   - /administrator-guide/protecting-data/changing-data-protection-configuration.html
   - /administrator-guide/protecting-data/changing-adaptive-data-protection-configuration.html
 sidebar: administrator_guide_sidebar
-keywords: drive-fault-tolerance_level, drive_failure, node-fault-tolerance_level, node_failure, fault_tolerance, node_add, node-add, cluster_expansion, expand, configuration, change
 ---
 
 * {{site.adp.before612AddOnly}}

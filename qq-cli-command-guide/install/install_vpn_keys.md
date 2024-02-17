@@ -1,7 +1,6 @@
 ---
 category: install
 command: install_vpn_keys
-keywords: qq, qq_cli, install_vpn_keys
 optional_options: []
 permalink: /qq-cli-command-guide/install/install_vpn_keys.html
 positional_options:

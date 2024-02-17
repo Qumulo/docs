@@ -1,7 +1,6 @@
 ---
 category: identity
 command: identity_attributes_get
-keywords: qq, qq_cli, identity_attributes_get
 optional_options: []
 permalink: /qq-cli-command-guide/identity/identity_attributes_get.html
 positional_options:

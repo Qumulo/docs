@@ -1,7 +1,6 @@
 ---
 category: ad
 command: ad_expand_groups
-keywords: qq, qq_cli, ad_expand_groups
 optional_options:
 - alternate:
   - --sid

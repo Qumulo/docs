@@ -1,7 +1,6 @@
 ---
 category: time
 command: time_status
-keywords: qq, qq_cli, time_status
 optional_options: []
 permalink: /qq-cli-command-guide/time/time_status.html
 positional_options: []

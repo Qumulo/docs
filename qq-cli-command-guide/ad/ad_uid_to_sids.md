@@ -1,7 +1,6 @@
 ---
 category: ad
 command: ad_uid_to_sids
-keywords: qq, qq_cli, ad_uid_to_sids
 optional_options:
 - alternate:
   - --uid

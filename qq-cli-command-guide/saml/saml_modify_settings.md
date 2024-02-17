@@ -1,7 +1,6 @@
 ---
 category: saml
 command: saml_modify_settings
-keywords: qq, qq_cli, saml_modify_settings
 optional_options:
 - alternate:
   - -d

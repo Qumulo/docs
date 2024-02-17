@@ -1,7 +1,6 @@
 ---
 category: nfs
 command: nfs_add_export
-keywords: qq, qq_cli, nfs_add_export
 optional_options:
 - alternate: []
   help: NFS Export path

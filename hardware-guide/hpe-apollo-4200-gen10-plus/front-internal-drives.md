@@ -3,7 +3,6 @@ title: "Front and Internal Drive Bays on HPE Apollo 4200 Gen10 Plus Nodes"
 summary: "This section shows the front large form factor (LFF), internal LFF, and internal small form factor (SFF) drive bays in HPE Apollo 4200 Gen10 Plus nodes."
 permalink: /hardware-guide/hpe-apollo-4200-gen10-plus/front-internal-drives.html
 sidebar: hardware_guide_sidebar
-keywords: front_drive, internal_drive, boot_drive, drive, drive_bay, HPE_Apollo_4200_Gen10_Plus, HPE, Apollo, 4200_Gen10_Plus
 ---
 
 ## 480TB and 240TB Nodes

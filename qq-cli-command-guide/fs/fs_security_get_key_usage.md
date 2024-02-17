@@ -1,7 +1,6 @@
 ---
 category: fs
 command: fs_security_get_key_usage
-keywords: qq, qq_cli, fs_security_get_key_usage
 optional_options:
 - alternate:
   - --key

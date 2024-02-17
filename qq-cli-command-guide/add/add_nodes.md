@@ -1,7 +1,6 @@
 ---
 category: add
 command: add_nodes
-keywords: qq, qq_cli, add_nodes
 optional_options:
 - alternate: []
   help: The UUIDs of the unconfigured nodes to add to the cluster. The system adds

@@ -5,7 +5,6 @@ permalink: /hardware-guide/supermicro-a-plus-wio-1114s-wn10rt/networking-cluster
 redirect_from:
   - /hardware/supermicro-a-plus-wio-1114s-wn10rt/networking-cluster.html
 sidebar: hardware_guide_sidebar
-keywords: network, networking, cluster, switch, Ethernet, ports, IP, Supermicro, Supermicro_1114S, 1114S, WN10RT
 ---
 
 ##  Prerequisites

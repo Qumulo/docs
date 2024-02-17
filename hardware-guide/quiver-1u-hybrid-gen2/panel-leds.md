@@ -3,7 +3,6 @@ title: "Panel LEDs on Quiver 1U Hybrid Gen2 Nodes"
 summary: "This section explains the LEDs on Quiver 1UH Gen2 nodes."
 permalink: /hardware-guide/quiver-1u-hybrid-gen2/panel-leds.html
 sidebar: hardware_guide_sidebar
-keywords: LED, front_panel, power_fault, rear_panel, diagnose, diagnosis, hardware_health, Quiver_1U_Hybrid_Gen2, Quiver, Quiver_1UH, QVRG2-96T, QVRG2-240T, QVRG296T, QVRG2240T
 ---
 
 ## Front Panel LEDs and Buttons

@@ -1,7 +1,6 @@
 ---
 category: s3
 command: s3_create_access_key
-keywords: qq, qq_cli, s3_create_access_key
 optional_options:
 - alternate: []
   help: Auth ID of the qumulo user

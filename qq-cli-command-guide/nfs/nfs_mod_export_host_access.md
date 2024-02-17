@@ -1,7 +1,6 @@
 ---
 category: nfs
 command: nfs_mod_export_host_access
-keywords: qq, qq_cli, nfs_mod_export_host_access
 optional_options:
 - alternate: []
   help: ID of export to modify

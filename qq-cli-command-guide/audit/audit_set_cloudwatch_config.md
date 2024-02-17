@@ -1,7 +1,6 @@
 ---
 category: audit
 command: audit_set_cloudwatch_config
-keywords: qq, qq_cli, audit_set_cloudwatch_config
 optional_options:
 - alternate:
   - -e

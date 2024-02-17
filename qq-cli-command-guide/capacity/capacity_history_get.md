@@ -1,7 +1,6 @@
 ---
 category: capacity
 command: capacity_history_get
-keywords: qq, qq_cli, capacity_history_get
 optional_options:
 - alternate: []
   help: Lower bound on history returned, in epoch seconds.

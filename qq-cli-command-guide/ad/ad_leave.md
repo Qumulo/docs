@@ -1,7 +1,6 @@
 ---
 category: ad
 command: ad_leave
-keywords: qq, qq_cli, ad_leave
 optional_options:
 - alternate:
   - --domain

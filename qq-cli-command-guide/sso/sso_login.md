@@ -1,7 +1,6 @@
 ---
 category: sso
 command: sso_login
-keywords: qq, qq_cli, sso_login
 optional_options: []
 permalink: /qq-cli-command-guide/sso/sso_login.html
 positional_options: []

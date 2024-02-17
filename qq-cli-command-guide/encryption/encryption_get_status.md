@@ -1,7 +1,6 @@
 ---
 category: encryption
 command: encryption_get_status
-keywords: qq, qq_cli, encryption_get_status
 optional_options: []
 permalink: /qq-cli-command-guide/encryption/encryption_get_status.html
 positional_options: []

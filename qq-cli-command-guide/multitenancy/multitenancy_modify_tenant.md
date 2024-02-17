@@ -1,7 +1,6 @@
 ---
 category: multitenancy
 command: multitenancy_modify_tenant
-keywords: qq, qq_cli, multitenancy_modify_tenant
 optional_options:
 - alternate: []
   help: The unique ID of the tenant to modify.

@@ -1,7 +1,6 @@
 ---
 category: time
 command: time_list_timezones
-keywords: qq, qq_cli, time_list_timezones
 optional_options: []
 permalink: /qq-cli-command-guide/time/time_list_timezones.html
 positional_options: []

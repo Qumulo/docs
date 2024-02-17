@@ -1,7 +1,6 @@
 ---
 category: unconfigured
 command: unconfigured_upgrade_status
-keywords: qq, qq_cli, unconfigured_upgrade_status
 optional_options:
 - alternate:
   - --monitor

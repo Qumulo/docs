@@ -1,7 +1,6 @@
 ---
 category: network
 command: network_delete_network
-keywords: qq, qq_cli, network_delete_network
 optional_options:
 - alternate: []
   help: The unique ID of the network on the interface

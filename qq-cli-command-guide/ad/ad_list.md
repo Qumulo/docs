@@ -1,7 +1,6 @@
 ---
 category: ad
 command: ad_list
-keywords: qq, qq_cli, ad_list
 optional_options: []
 permalink: /qq-cli-command-guide/ad/ad_list.html
 positional_options: []

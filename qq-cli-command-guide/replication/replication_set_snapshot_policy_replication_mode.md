@@ -1,7 +1,6 @@
 ---
 category: replication
 command: replication_set_snapshot_policy_replication_mode
-keywords: qq, qq_cli, replication_set_snapshot_policy_replication_mode
 optional_options:
 - alternate: []
   help: Unique identifier of the source replication relationship.

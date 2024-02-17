@@ -1,7 +1,6 @@
 ---
 category: fs
 command: fs_notify
-keywords: qq, qq_cli, fs_notify
 optional_options:
 - alternate: []
   help: Directory path

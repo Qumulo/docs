@@ -1,7 +1,6 @@
 ---
 category: quota
 command: quota_get_quota
-keywords: qq, qq_cli, quota_get_quota
 optional_options:
 - alternate: []
   help: Path name

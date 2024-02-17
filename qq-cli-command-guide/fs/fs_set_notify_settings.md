@@ -1,7 +1,6 @@
 ---
 category: fs
 command: fs_set_notify_settings
-keywords: qq, qq_cli, fs_set_notify_settings
 optional_options:
 - alternate: []
   help: Notify recursive mode to set (ENABLED, DISABLED_ERROR, DISABLED_IGNORE)

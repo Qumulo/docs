@@ -1,7 +1,6 @@
 ---
 category: tree
 command: tree_delete_create
-keywords: qq, qq_cli, tree_delete_create
 optional_options:
 - alternate:
   - -f

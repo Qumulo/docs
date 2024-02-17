@@ -1,7 +1,6 @@
 ---
 category: fs
 command: fs_list_locks
-keywords: qq, qq_cli, fs_list_locks
 optional_options:
 - alternate: []
   help: The protocol whose locks should be listed

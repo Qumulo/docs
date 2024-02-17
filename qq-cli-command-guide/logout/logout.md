@@ -1,7 +1,6 @@
 ---
 category: logout
 command: logout
-keywords: qq, qq_cli, logout
 optional_options: []
 permalink: /qq-cli-command-guide/logout/logout.html
 positional_options: []

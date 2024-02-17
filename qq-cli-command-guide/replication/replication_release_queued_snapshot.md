@@ -1,7 +1,6 @@
 ---
 category: replication
 command: replication_release_queued_snapshot
-keywords: qq, qq_cli, replication_release_queued_snapshot
 optional_options:
 - alternate: []
   help: Unique identifier of the source replication relationship.

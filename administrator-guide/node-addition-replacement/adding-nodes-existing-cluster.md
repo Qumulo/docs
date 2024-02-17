@@ -3,7 +3,6 @@ title: "Adding Nodes to an Existing Qumulo Cluster"
 summary: "This section explains how to add new HPE, Supermicro, or Quiver nodes to an existing cluster."
 permalink: /administrator-guide/node-addition-replacement/adding-nodes-existing-cluster.html
 sidebar: administrator_guide_sidebar
-keywords: node_add, node-add, cluster_expansion, expand
 ---
 
 After you connect and power on your new nodes, Qumulo Core discovers any unconfigured nodes automatically and prompts you to add nodes in the Web UI.

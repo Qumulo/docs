@@ -6,7 +6,6 @@ redirect_from:
   - /administrator-guide/data-security/managing-security-keys.html
   - /administrator-guide/protecting-data/managing-security-keys.html
 sidebar: administrator_guide_sidebar
-keywords: key, public_key, add, read, modify, rotate, enable, disable, delete, display, lock, unlock
 varXrefUsage: For more information, see <a href="#retrieve-key-usage">Retrieving Public Key Usage Information</a>.
 ---
 

@@ -1,7 +1,6 @@
 ---
 category: auth
 command: auth_add_user
-keywords: qq, qq_cli, auth_add_user
 optional_options:
 - alternate: []
   help: New user's name (windows style)

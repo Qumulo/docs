@@ -1,7 +1,6 @@
 ---
 category: protection
 command: protection_status_get
-keywords: qq, qq_cli, protection_status_get
 optional_options: []
 permalink: /qq-cli-command-guide/protection/protection_status_get.html
 positional_options: []

@@ -1,7 +1,6 @@
 ---
 category: snapshot
 command: snapshot_get_snapshot
-keywords: qq, qq_cli, snapshot_get_snapshot
 optional_options:
 - alternate:
   - --id

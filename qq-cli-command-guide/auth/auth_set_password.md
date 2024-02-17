@@ -1,7 +1,6 @@
 ---
 category: auth
 command: auth_set_password
-keywords: qq, qq_cli, auth_set_password
 optional_options:
 - alternate: []
   help: Name or ID of user to modify

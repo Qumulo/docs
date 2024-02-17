@@ -1,7 +1,6 @@
 ---
 category: node
 command: node_state_get
-keywords: qq, qq_cli, node_state_get
 optional_options: []
 permalink: /qq-cli-command-guide/node/node_state_get.html
 positional_options: []

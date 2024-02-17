@@ -1,7 +1,6 @@
 ---
 category: snapshot
 command: snapshot_get_total_used_capacity
-keywords: qq, qq_cli, snapshot_get_total_used_capacity
 optional_options: []
 permalink: /qq-cli-command-guide/snapshot/snapshot_get_total_used_capacity.html
 positional_options: []

@@ -5,7 +5,6 @@ permalink: /administrator-guide/node-addition-replacement/replacing-nodes-transp
 redirect_from:
   - /administrator-guide/protecting-data/replacing-nodes-by-performing-transparent-platform-refresh.html
 sidebar: administrator_guide_sidebar
-keywords: cluster, expand, expansion, remove, retirement, end_of_life, EOL, transparent, platform, refresh
 ---
 
 {{site.data.alerts.note}}

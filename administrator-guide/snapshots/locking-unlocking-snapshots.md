@@ -5,7 +5,6 @@ permalink: /administrator-guide/snapshots/locking-unlocking-snapshots.html
 redirect_from:
   - /managing-snapshots.html#locking-and-unlocking-snapshots
 sidebar: administrator_guide_sidebar
-keywords: snapshots, filter, qumulo_core, snapshot_policy, lock, unlock
 ---
 
 {% include content-reuse/admin-guides/snapshots/locking-unlocking-snapshots.md %}

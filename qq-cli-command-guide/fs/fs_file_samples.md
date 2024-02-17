@@ -1,7 +1,6 @@
 ---
 category: fs
 command: fs_file_samples
-keywords: qq, qq_cli, fs_file_samples
 optional_options:
 - alternate: []
   help: Query root path

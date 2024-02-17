@@ -7,7 +7,6 @@ redirect_from:
   - /administrator-guide/protecting-data/node-fault-tolerance-level.html
   - /administrator-guide/qumulo-core/node-fault-tolerance-level.html
 sidebar: administrator_guide_sidebar
-keywords: node_fault_tolerance_level, node_failure, fault_tolerance, node_add, node-add, cluster_expansion, expand, reconfiguration
 ---
 
 * In Qumulo Core 5.1.3 (and higher) you can increase the node fault tolerance level for an existing cluster during the cluster expansion process.

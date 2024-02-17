@@ -1,7 +1,6 @@
 ---
 category: network
 command: network_list_interfaces
-keywords: qq, qq_cli, network_list_interfaces
 optional_options: []
 permalink: /qq-cli-command-guide/network/network_list_interfaces.html
 positional_options: []

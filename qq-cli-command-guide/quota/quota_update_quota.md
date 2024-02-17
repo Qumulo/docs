@@ -1,7 +1,6 @@
 ---
 category: quota
 command: quota_update_quota
-keywords: qq, qq_cli, quota_update_quota
 optional_options:
 - alternate: []
   help: Path name

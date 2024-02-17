@@ -1,7 +1,6 @@
 ---
 category: reboot
 command: reboot_start
-keywords: qq, qq_cli, reboot_start
 optional_options:
 - alternate: []
   help: Reboot nodes one set at a time, depending on the number of node failures configured

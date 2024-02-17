@@ -1,7 +1,6 @@
 ---
 category: snapshot
 command: snapshot_diff
-keywords: qq, qq_cli, snapshot_diff
 optional_options:
 - alternate: []
   help: Snapshot ID of the newer snapshot

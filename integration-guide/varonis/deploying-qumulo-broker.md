@@ -6,7 +6,6 @@ redirect_from:
   - /integration-guide/qumulo-broker/deploying-qumulo-broker.html
   - /integration-guide/varonis-collector/deploying-qumulo-broker.html
 sidebar: integration_guide_sidebar
-keywords: Varonis, integrate, integration, broker, Qumulo Broker, deploy
 ---
 
 {{site.varonis.separateMachine}} For more information, see the [Qumulo-Varonis integration architecture diagram](qumulo-broker-with-qumulo-core.html#integration-architecture-diagram).

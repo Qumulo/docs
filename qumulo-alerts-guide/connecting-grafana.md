@@ -3,7 +3,6 @@ title: "Connecting to Grafana to View Visualizations of Qumulo Alerts Data"
 summary: "This section explains how to connect to the Qumulo Alerts instance of <a target='_blank' href='https://grafana.com/'>Grafana</a> to view visualizations and information about your Qumulo cluster from prebuilt dashboards."
 permalink: /qumulo-alerts-guide/connecting-grafana.html
 sidebar: qumulo_alerts_guide_sidebar
-keywords: Qumulo_Alerts, Grafana, monitoring, viz, visualization
 ---
 
 ## To Connect to the Grafana Endpoint

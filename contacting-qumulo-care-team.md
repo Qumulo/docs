@@ -4,7 +4,6 @@ summary: "This section explains how to contact the Qumulo Care team through Slac
 permalink: contacting-qumulo-care-team.html
 sidebar: home_sidebar
 breadcrumbs: exclude
-keywords: contact, qumulo care, care, support, tech support, tech, support, help, customer service, service, customer
 ---
 
 We make sure that every one of our engineers has deep experience with file storage systems; knows the appropriate workflows, software, and hardware; and can get you the answers you need quickly.

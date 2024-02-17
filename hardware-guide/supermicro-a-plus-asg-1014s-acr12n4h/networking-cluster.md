@@ -5,7 +5,6 @@ permalink: /hardware-guide/supermicro-a-plus-asg-1014s-acr12n4h/networking-clust
 redirect_from:
   - /hardware/supermicro-a-plus-asg-1014s-acr12n4h/networking-cluster.html
 sidebar: hardware_guide_sidebar
-keywords: network, networking, cluster, switch, Ethernet, ports, IP, Supermicro, Supermicro_1014S, 1014S, ACR12N4H
 ---
 
 {% include content-reuse/platform-agnostic-unified-networking-cluster.md ethernetSpeed="25 Gbps or 100 Gbps"%}

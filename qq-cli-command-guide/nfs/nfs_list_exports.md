@@ -1,7 +1,6 @@
 ---
 category: nfs
 command: nfs_list_exports
-keywords: qq, qq_cli, nfs_list_exports
 optional_options:
 - alternate: []
   help: Print raw response JSON.

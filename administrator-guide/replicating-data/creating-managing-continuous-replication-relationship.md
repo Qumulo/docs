@@ -3,7 +3,6 @@ title: "Creating and Managing a Continuous Replication Relationship in Qumulo Co
 summary: "This section explains how to create, authorize, modify, and delete a replication relationship by using the Qumulo Core Web UI."
 permalink: /administrator-guide/replicating-data/creating-managing-continuous-replication-relationship.html
 sidebar: administrator_guide_sidebar
-keywords: continuous_replication, replication_relationship, continuous_replication_relationship
 platform: on-prem
 ---
 

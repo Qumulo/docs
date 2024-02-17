@@ -3,7 +3,6 @@ title: "HPE Alletra 4110 Technical Specifications"
 summary: "This section provides technical specifications for HPE Alletra 4110 node types."
 permalink: /hardware-guide/hpe-alletra-4110/technical-specifications.html
 sidebar: hardware_guide_sidebar
-keywords: technical_specifications, tech_specs, specs, specifications, HPE_Alletra_4110, HPE, Alletra, 4110
 ---
 
 <table cellspacing="0" cellpadding="0">

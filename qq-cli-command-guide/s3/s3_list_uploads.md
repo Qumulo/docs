@@ -1,7 +1,6 @@
 ---
 category: s3
 command: s3_list_uploads
-keywords: qq, qq_cli, s3_list_uploads
 optional_options:
 - alternate: []
   help: The bucket for which uploads should be listed.

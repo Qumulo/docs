@@ -1,7 +1,6 @@
 ---
 category: s3
 command: s3_list_buckets
-keywords: qq, qq_cli, s3_list_buckets
 optional_options:
 - alternate: []
   help: Output JSON instead of table

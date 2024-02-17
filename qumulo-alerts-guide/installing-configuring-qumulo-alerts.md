@@ -5,7 +5,6 @@ permalink: /qumulo-alerts-guide/installing-configuring-qumulo-alerts.html
 redirect_from:
   - /qumulo-alerts-guide/installing-configuring/installing-connecting-to-qumulo-cluster.html
 sidebar: qumulo_alerts_guide_sidebar
-keywords: Qumulo_Alerts, install, connect, cluster, local_user, role, assign, access_token, access, token, start, stop
 ---
 
 ## Prerequisites

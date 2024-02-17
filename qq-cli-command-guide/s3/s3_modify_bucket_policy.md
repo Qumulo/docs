@@ -1,7 +1,6 @@
 ---
 category: s3
 command: s3_modify_bucket_policy
-keywords: qq, qq_cli, s3_modify_bucket_policy
 optional_options:
 - alternate: []
   help: The bucket who's policy will be modified.

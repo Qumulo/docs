@@ -5,7 +5,6 @@ permalink: /qumulo-alerts-guide/getting-started/how-it-works.html
 redirect_from:
   - /qumulo-alerts-guide/getting-started-qumulo-alerts/qumulo-alerts-with-qumulo-core.html
 sidebar: qumulo_alerts_guide_sidebar
-keywords: Qumulo_Alerts, alert, alarm, monitor, cluster, hardware_alarm, software_alarm, producer, consumer, plugin, plug-in, Exchange
 ---
 
 ## How Qumulo Alerts Works

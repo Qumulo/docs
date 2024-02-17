@@ -1,7 +1,6 @@
 ---
 category: smb
 command: smb_mod_share_permissions
-keywords: qq, qq_cli, smb_mod_share_permissions
 optional_options:
 - alternate: []
   help: The ID of the share to modify.

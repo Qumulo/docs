@@ -1,7 +1,6 @@
 ---
 category: upgrade
 command: upgrade_blocked
-keywords: qq, qq_cli, upgrade_blocked
 optional_options: []
 permalink: /qq-cli-command-guide/upgrade/upgrade_blocked.html
 positional_options: []

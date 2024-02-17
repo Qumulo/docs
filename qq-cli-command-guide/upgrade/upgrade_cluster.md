@@ -1,7 +1,6 @@
 ---
 category: upgrade
 command: upgrade_cluster
-keywords: qq, qq_cli, upgrade_cluster
 optional_options:
 - alternate: []
   help: FS path to upgrade image

@@ -1,7 +1,6 @@
 ---
 category: ad
 command: ad_cancel
-keywords: qq, qq_cli, ad_cancel
 optional_options: []
 permalink: /qq-cli-command-guide/ad/ad_cancel.html
 positional_options: []

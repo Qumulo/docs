@@ -1,7 +1,6 @@
 ---
 category: tree
 command: tree_delete_get
-keywords: qq, qq_cli, tree_delete_get
 optional_options:
 - alternate: []
   help: Output JSON instead of table.

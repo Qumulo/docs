@@ -1,7 +1,6 @@
 ---
 category: smb
 command: smb_list_share
-keywords: qq, qq_cli, smb_list_share
 optional_options:
 - alternate: []
   help: ID of share to list.

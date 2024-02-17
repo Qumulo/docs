@@ -1,7 +1,6 @@
 ---
 category: fs
 command: fs_list_named_streams
-keywords: qq, qq_cli, fs_list_named_streams
 optional_options:
 - alternate: []
   help: File or directory path

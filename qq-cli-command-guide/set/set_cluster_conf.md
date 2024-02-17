@@ -1,7 +1,6 @@
 ---
 category: set
 command: set_cluster_conf
-keywords: qq, qq_cli, set_cluster_conf
 optional_options:
 - alternate: []
   help: Cluster Name

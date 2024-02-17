@@ -1,7 +1,6 @@
 ---
 category: replace
 command: replace_nodes
-keywords: qq, qq_cli, replace_nodes
 optional_options: []
 permalink: /qq-cli-command-guide/replace/replace_nodes.html
 positional_options: []

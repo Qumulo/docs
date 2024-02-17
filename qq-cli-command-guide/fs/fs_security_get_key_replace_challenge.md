@@ -1,7 +1,6 @@
 ---
 category: fs
 command: fs_security_get_key_replace_challenge
-keywords: qq, qq_cli, fs_security_get_key_replace_challenge
 optional_options:
 - alternate:
   - --key

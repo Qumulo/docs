@@ -1,7 +1,6 @@
 ---
 category: ldap
 command: ldap_update_settings
-keywords: qq, qq_cli, ldap_update_settings
 optional_options:
 - alternate: []
   help: Enable or disable the use of standalone LDAP.

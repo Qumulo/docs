@@ -1,7 +1,6 @@
 ---
 category: auth
 command: auth_assign_role
-keywords: qq, qq_cli, auth_assign_role
 optional_options:
 - alternate:
   - --role

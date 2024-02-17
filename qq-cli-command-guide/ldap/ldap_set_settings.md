@@ -1,7 +1,6 @@
 ---
 category: ldap
 command: ldap_set_settings
-keywords: qq, qq_cli, ldap_set_settings
 optional_options:
 - alternate: []
   help: Whether or not to enable the use of the LDAP server on the cluster.

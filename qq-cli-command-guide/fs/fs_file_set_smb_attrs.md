@@ -1,7 +1,6 @@
 ---
 category: fs
 command: fs_file_set_smb_attrs
-keywords: qq, qq_cli, fs_file_set_smb_attrs
 optional_options:
 - alternate: []
   help: File path

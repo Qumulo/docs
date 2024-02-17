@@ -5,7 +5,6 @@ permalink: /hardware-guide/hpe-apollo-4200-gen10/configuring-ilo.html
 redirect_from:
   - /hardware/hpe-apollo-4200-gen10/configuring-ilo.html
 sidebar: hardware_guide_sidebar
-keywords: out-of-band_management, out_of_band_management, iLO, DHCP, network, networking, LAN, ipmitool, HPE_Apollo_4200_Gen10, HPE, Apollo, 4200_Gen10
 ---
 
 {% include content-reuse/platform-agnostic-ilo-preamble.md %}

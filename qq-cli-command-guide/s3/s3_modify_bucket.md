@@ -1,7 +1,6 @@
 ---
 category: s3
 command: s3_modify_bucket
-keywords: qq, qq_cli, s3_modify_bucket
 optional_options:
 - alternate: []
   help: The name of the bucket to be modified

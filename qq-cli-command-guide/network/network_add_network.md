@@ -1,7 +1,6 @@
 ---
 category: network
 command: network_add_network
-keywords: qq, qq_cli, network_add_network
 optional_options:
 - alternate: []
   help: Network name

@@ -1,7 +1,6 @@
 ---
 category: time
 command: time_series_get
-keywords: qq, qq_cli, time_series_get
 optional_options:
 - alternate:
   - --begin-time

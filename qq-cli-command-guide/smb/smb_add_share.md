@@ -1,7 +1,6 @@
 ---
 category: smb
 command: smb_add_share
-keywords: qq, qq_cli, smb_add_share
 optional_options:
 - alternate: []
   help: The ID of the tenant to which to add the share.

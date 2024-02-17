@@ -1,7 +1,6 @@
 ---
 category: auth
 command: auth_expand_identity
-keywords: qq, qq_cli, auth_expand_identity
 optional_options:
 - alternate: []
   help: The canonical identifier used internally by QumuloFS.

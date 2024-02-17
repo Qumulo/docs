@@ -1,7 +1,6 @@
 ---
 category: rotate
 command: rotate_encryption_keys
-keywords: qq, qq_cli, rotate_encryption_keys
 optional_options:
 - alternate: []
   help: The unique ID of the master key for at-rest encryption.

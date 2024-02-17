@@ -1,7 +1,6 @@
 ---
 category: multitenancy
 command: multitenancy_list_tenants
-keywords: qq, qq_cli, multitenancy_list_tenants
 optional_options:
 - alternate:
   - --json

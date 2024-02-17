@@ -1,7 +1,6 @@
 ---
 category: auth
 command: auth_mod_user
-keywords: qq, qq_cli, auth_mod_user
 optional_options:
 - alternate: []
   help: Name or ID of user to modify

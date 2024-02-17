@@ -1,7 +1,6 @@
 ---
 category: snapshot
 command: snapshot_create_policy
-keywords: qq, qq_cli, snapshot_create_policy
 optional_options: []
 permalink: /qq-cli-command-guide/snapshot/snapshot_create_policy.html
 positional_options: []

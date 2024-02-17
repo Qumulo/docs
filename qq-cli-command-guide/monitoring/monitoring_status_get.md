@@ -1,7 +1,6 @@
 ---
 category: monitoring
 command: monitoring_status_get
-keywords: qq, qq_cli, monitoring_status_get
 optional_options: []
 permalink: /qq-cli-command-guide/monitoring/monitoring_status_get.html
 positional_options: []

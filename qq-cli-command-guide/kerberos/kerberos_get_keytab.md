@@ -1,7 +1,6 @@
 ---
 category: kerberos
 command: kerberos_get_keytab
-keywords: qq, qq_cli, kerberos_get_keytab
 optional_options: []
 permalink: /qq-cli-command-guide/kerberos/kerberos_get_keytab.html
 positional_options: []

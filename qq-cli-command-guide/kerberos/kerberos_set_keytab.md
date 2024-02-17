@@ -1,7 +1,6 @@
 ---
 category: kerberos
 command: kerberos_set_keytab
-keywords: qq, qq_cli, kerberos_set_keytab
 optional_options:
 - alternate:
   - --keytab-file

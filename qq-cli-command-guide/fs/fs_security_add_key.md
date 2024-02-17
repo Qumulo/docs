@@ -1,7 +1,6 @@
 ---
 category: fs
 command: fs_security_add_key
-keywords: qq, qq_cli, fs_security_add_key
 optional_options:
 - alternate: []
   help: "\n                The unique name to associate with the key to add to the\

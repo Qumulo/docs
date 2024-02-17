@@ -1,7 +1,6 @@
 ---
 category: current
 command: current_activity_get
-keywords: qq, qq_cli, current_activity_get
 optional_options:
 - alternate:
   - --type

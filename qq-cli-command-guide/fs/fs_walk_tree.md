@@ -1,7 +1,6 @@
 ---
 category: fs
 command: fs_walk_tree
-keywords: qq, qq_cli, fs_walk_tree
 optional_options:
 - alternate: []
   help: Tree root path

@@ -1,7 +1,6 @@
 ---
 category: auth
 command: auth_set_user_defined_mappings
-keywords: qq, qq_cli, auth_set_user_defined_mappings
 optional_options:
 - alternate: []
   help: JSON-encoded file containing mappings.

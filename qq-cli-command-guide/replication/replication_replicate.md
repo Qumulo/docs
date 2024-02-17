@@ -1,7 +1,6 @@
 ---
 category: replication
 command: replication_replicate
-keywords: qq, qq_cli, replication_replicate
 optional_options:
 - alternate: []
   help: Unique identifier of the source replication relationship

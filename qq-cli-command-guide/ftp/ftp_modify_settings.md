@@ -1,7 +1,6 @@
 ---
 category: ftp
 command: ftp_modify_settings
-keywords: qq, qq_cli, ftp_modify_settings
 optional_options: []
 permalink: /qq-cli-command-guide/ftp/ftp_modify_settings.html
 positional_options: []

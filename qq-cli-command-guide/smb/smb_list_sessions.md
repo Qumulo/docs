@@ -1,7 +1,6 @@
 ---
 category: smb
 command: smb_list_sessions
-keywords: qq, qq_cli, smb_list_sessions
 optional_options:
 - alternate: []
   help: Max sessions to return per request

@@ -1,7 +1,6 @@
 ---
 category: static
 command: static_ip_allocation
-keywords: qq, qq_cli, static_ip_allocation
 optional_options:
 - alternate: []
   help: Specify ip range list to try (e.g. '1.1.1.10-12,10.20.5.0/24'

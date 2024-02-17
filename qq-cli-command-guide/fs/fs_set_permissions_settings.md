@@ -1,7 +1,6 @@
 ---
 category: fs
 command: fs_set_permissions_settings
-keywords: qq, qq_cli, fs_set_permissions_settings
 optional_options: []
 permalink: /qq-cli-command-guide/fs/fs_set_permissions_settings.html
 positional_options:

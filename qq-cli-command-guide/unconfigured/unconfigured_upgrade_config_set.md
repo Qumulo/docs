@@ -1,7 +1,6 @@
 ---
 category: unconfigured
 command: unconfigured_upgrade_config_set
-keywords: qq, qq_cli, unconfigured_upgrade_config_set
 optional_options:
 - alternate: []
   help: FS path to upgrade image

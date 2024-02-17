@@ -5,7 +5,6 @@ permalink: /hardware-guide/hpe-apollo-4200-gen9/drive-leds.html
 redirect_from:
   - /hardware/hpe-apollo-4200-gen9/drive-leds.html
 sidebar: hardware_guide_sidebar
-keywords: drive, hard_drive, LED, large_form_factor, LFF, small_form_factor, SFF, HPE_Apollo_4200_Gen9, HPE, Apollo, 4200_Gen9
 ---
 
 {% include content-reuse/hpe-apollo-4200-gen-9-90t-180t-288t-eops.md %}

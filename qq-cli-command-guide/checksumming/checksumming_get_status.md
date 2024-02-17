@@ -1,7 +1,6 @@
 ---
 category: checksumming
 command: checksumming_get_status
-keywords: qq, qq_cli, checksumming_get_status
 optional_options: []
 permalink: /qq-cli-command-guide/checksumming/checksumming_get_status.html
 positional_options: []

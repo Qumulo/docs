@@ -1,7 +1,6 @@
 ---
 category: fs
 command: fs_release_nlm_lock
-keywords: qq, qq_cli, fs_release_nlm_lock
 optional_options:
 - alternate: []
   help: File path

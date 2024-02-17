@@ -1,7 +1,6 @@
 ---
 category: who
 command: who_am_i
-keywords: qq, qq_cli, who_am_i
 optional_options: []
 permalink: /qq-cli-command-guide/who/who_am_i.html
 positional_options: []

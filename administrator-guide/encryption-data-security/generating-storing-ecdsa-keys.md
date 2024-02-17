@@ -6,7 +6,6 @@ redirect_from:
   - /administrator-guide/data-security/generating-storing-ecdsa-keys.html
   - /administrator-guide/protecting-data/generating-storing-ecdsa-keys.html
 sidebar: administrator_guide_sidebar
-keywords: cluster, ECDSA, signing, key, asymmetric_key, public_key, signature, cryptography, ransomware, security, key_store, key_management_service, KMS
 varSpecifyDetails: When you create a key pair, specify the following details&#58;
 ---
 

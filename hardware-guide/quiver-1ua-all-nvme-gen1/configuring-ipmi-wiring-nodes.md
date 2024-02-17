@@ -5,7 +5,6 @@ permalink: /hardware-guide/quiver-1ua-all-nvme-gen1/configuring-ipmi-wiring-node
 redirect_from:
   - /hardware-guide/quiver-1ua-all-nvme-gen1/wiring-nodes.html
 sidebar: hardware_guide_sidebar
-keywords: out-of-band_management, out_of_band_management, IPMI, DHCP, network, networking, LAN, ipmitool, 100 Gbps, Ethernet, power, Quiver_1U_All-NVMe_Gen1, Quiver, Quiver_1UA
 ---
 
 {{site.unifySplitDepends}} For more information, see [Connecting the 100 Gbps Ports](#step-2-connecting-the-100-gbps-ports).

@@ -5,7 +5,6 @@ permalink: /qumulo-alerts-guide/configuring-integrations/email-server.html
 redirect_from:
   - /qumulo-alerts-guide/installing-configuring/integration-email-server.html
 sidebar: qumulo_alerts_guide_sidebar
-keywords: Qumulo_Alerts, email, e-mail, integrate, integration
 ---
 
 {% include note.html content="After May 2022, only organizations with access to the Google Admin Console can use SMTP relay. If your organization has this access, see [Route outgoing SMTP relay messages through Google](https://support.google.com/a/answer/2956491?hl=en)." %}

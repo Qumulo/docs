@@ -1,7 +1,6 @@
 ---
 category: replication
 command: replication_list_source_relationships
-keywords: qq, qq_cli, replication_list_source_relationships
 optional_options: []
 permalink: /qq-cli-command-guide/replication/replication_list_source_relationships.html
 positional_options: []

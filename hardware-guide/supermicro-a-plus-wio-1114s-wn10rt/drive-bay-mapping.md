@@ -6,7 +6,6 @@ redirect_from:
   - /hardware/supermicro-a-plus-wio-1114s-wn10rt/drive-slot-mapping.html
   - /hardware/supermicro-a-plus-wio-1114s-wn10rt/drive-bay-mapping.html
 sidebar: hardware_guide_sidebar
-keywords: drive, hard_drive, drive_bay, mapping, Supermicro, Supermicro_1114S, 1114S, WN10RT
 ---
 
 Your node contains bays for 10 drives and one boot drive in an internal M.2 expansion slot. The following is the mapping for the drives.

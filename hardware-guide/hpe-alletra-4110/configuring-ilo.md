@@ -3,7 +3,6 @@ title: "Configuring Integrated Lights Out (iLO) on HPE Alletra 4110 Nodes"
 summary: "This section explains how to configure Integrated Lights Out (iLO) on HPE Alletra 4110 nodes."
 permalink: /hardware-guide/hpe-alletra-4110/configuring-ilo.html
 sidebar: hardware_guide_sidebar
-keywords: out-of-band_management, out_of_band_management, iLO, DHCP, network, networking, LAN, ipmitool, HPE_Alletra_4110, HPE, Alletra, 4110
 ---
 
 {% include content-reuse/platform-agnostic-ilo-preamble.md %}

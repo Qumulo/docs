@@ -6,7 +6,6 @@ redirect_from:
   - /supermicro.html
   - /hardware/supermicro-a-plus-wio-1114s-wn10rt/getting-started.html
 sidebar: hardware_guide_sidebar
-keywords: getting_started_guide, quick_reference, Supermicro, Supermicro_1114S, 1114S, WN10RT, verify_node, field_verification_tool, FVT
 ---
 
 ## Step 1: Verify Your Node

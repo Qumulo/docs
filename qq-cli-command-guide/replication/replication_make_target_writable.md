@@ -1,7 +1,6 @@
 ---
 category: replication
 command: replication_make_target_writable
-keywords: qq, qq_cli, replication_make_target_writable
 optional_options:
 - alternate: []
   help: Unique identifier of the target replication relationship

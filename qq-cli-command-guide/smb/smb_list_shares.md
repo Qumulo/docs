@@ -1,7 +1,6 @@
 ---
 category: smb
 command: smb_list_shares
-keywords: qq, qq_cli, smb_list_shares
 optional_options:
 - alternate: []
   help: Print JSON representation of shares.

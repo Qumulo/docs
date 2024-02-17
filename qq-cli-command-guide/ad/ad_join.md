@@ -1,7 +1,6 @@
 ---
 category: ad
 command: ad_join
-keywords: qq, qq_cli, ad_join
 optional_options:
 - alternate:
   - --domain

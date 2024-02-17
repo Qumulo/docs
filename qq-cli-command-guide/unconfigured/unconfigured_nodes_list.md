@@ -1,7 +1,6 @@
 ---
 category: unconfigured
 command: unconfigured_nodes_list
-keywords: qq, qq_cli, unconfigured_nodes_list
 optional_options:
 - alternate: []
   help: Print output as a table, instead of JSON

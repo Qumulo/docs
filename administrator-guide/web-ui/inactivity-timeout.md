@@ -7,7 +7,6 @@ redirect_from:
   - /administrator-guide/web-ui-inactivity-timeout.html
   - /administrator-guide/qumulo-core/web-ui-inactivity-timeout.html
 sidebar: administrator_guide_sidebar
-keywords: inactivity, idle, timeout, Web_UI, Qumulo_Core
 ---
 
 {% include content-reuse/admin-guides/web-ui/inactivity-timeout.md %}

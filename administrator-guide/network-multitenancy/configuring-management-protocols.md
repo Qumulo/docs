@@ -2,7 +2,6 @@
 title: "Configuring Management Protocols on a Tenant"
 summary: "This section explains how to configure management protocols for each tenant on a Qumulo cluster."
 permalink: /administrator-guide/network-multitenancy/configuring-management-protocols.html
-keywords: network, tenant, multitenancy, VLAN, protocol, REST, API, Web UI, HTTP, HTTPS, SSH, replication
 sidebar: administrator_guide_sidebar
 varNoReq: access doesn't require enabling REST API access.
 ---

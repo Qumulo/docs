@@ -3,7 +3,6 @@ title: "Panel LEDs on HPE Alletra 4110 Nodes"
 summary: "This section explains the LEDs on HPE Alletra 4110 nodes, including front panel LEDs and buttons and rear panel LEDs."
 permalink: /hardware-guide/hpe-alletra-4110/panel-leds.html
 sidebar: hardware_guide_sidebar
-keywords: LED, front_panel, rear_panel, hardware_health, HPE_Alletra_4110, HPE, Alletra, 4110
 ---
 
 ## Front Panel LEDs and Buttons

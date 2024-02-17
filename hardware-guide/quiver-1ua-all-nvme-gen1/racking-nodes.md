@@ -3,7 +3,6 @@ title: "Racking Your Quiver 1U All-NVMe Gen1 Nodes"
 summary: "This section explains how to rack Quiver 1UA Gen1 nodes in a data center."
 permalink: /hardware-guide/quiver-1ua-all-nvme-gen1/racking-nodes.html
 sidebar: hardware_guide_sidebar
-keywords: rack, racking, rails, server_rack, chassis, insert_chassis, Quiver_1U_All-NVMe_Gen1, Quiver, Quiver_1UA
 ---
 
 <a id="insert-chassis"></a>

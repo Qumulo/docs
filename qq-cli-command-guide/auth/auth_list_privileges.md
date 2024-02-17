@@ -1,7 +1,6 @@
 ---
 category: auth
 command: auth_list_privileges
-keywords: qq, qq_cli, auth_list_privileges
 optional_options:
 - alternate:
   - --role

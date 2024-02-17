@@ -1,7 +1,6 @@
 ---
 category: dns
 command: dns_set_lookup_overrides
-keywords: qq, qq_cli, dns_set_lookup_overrides
 optional_options:
 - alternate: []
   help: JSON-encoded file containing overrides.

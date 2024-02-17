@@ -1,7 +1,6 @@
 ---
 category: multitenancy
 command: multitenancy_smb_get_settings
-keywords: qq, qq_cli, multitenancy_smb_get_settings
 optional_options:
 - alternate: []
   help: ID of tenant to get settings for

@@ -1,7 +1,6 @@
 ---
 category: cluster
 command: cluster_create
-keywords: qq, qq_cli, cluster_create
 optional_options:
 - alternate:
   - -n

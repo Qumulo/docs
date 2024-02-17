@@ -5,7 +5,6 @@ permalink: /qumulo-alerts-guide/getting-started/supported-language-locales.html
 redirect_from:
   - /qumulo-alerts-guide/getting-started-qumulo-alerts/language-locales-support.html
 sidebar: qumulo_alerts_guide_sidebar
-keywords: Qumulo_Alerts, user, notification, language, locale
 ---
 
 ## Language Locales

@@ -1,7 +1,6 @@
 ---
 category: raw
 command: raw
-keywords: qq, qq_cli, raw
 optional_options:
 - alternate: []
   help: 'Content MIME type. Use application/octet-stream for binary input. (Default:

@@ -1,7 +1,6 @@
 ---
 category: snapshot
 command: snapshot_list_policy_statuses
-keywords: qq, qq_cli, snapshot_list_policy_statuses
 optional_options: []
 permalink: /qq-cli-command-guide/snapshot/snapshot_list_policy_statuses.html
 positional_options: []

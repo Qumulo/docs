@@ -1,7 +1,6 @@
 ---
 category: ad
 command: ad_distinguished_name_to_account
-keywords: qq, qq_cli, ad_distinguished_name_to_account
 optional_options:
 - alternate:
   - --distinguished-name

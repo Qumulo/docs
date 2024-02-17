@@ -1,7 +1,6 @@
 ---
 category: fs
 command: fs_create_dir
-keywords: qq, qq_cli, fs_create_dir
 optional_options:
 - alternate: []
   help: Parent directory path

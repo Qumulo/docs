@@ -1,7 +1,6 @@
 ---
 category: unconfigured
 command: unconfigured_upgrade_config
-keywords: qq, qq_cli, unconfigured_upgrade_config
 optional_options: []
 permalink: /qq-cli-command-guide/unconfigured/unconfigured_upgrade_config.html
 positional_options: []

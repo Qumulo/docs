@@ -1,7 +1,6 @@
 ---
 category: fs
 command: fs_acl_explain_rights
-keywords: qq, qq_cli, fs_acl_explain_rights
 optional_options:
 - alternate: []
   help: File or directory path

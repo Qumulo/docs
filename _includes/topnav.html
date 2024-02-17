@@ -87,27 +87,25 @@
                 {% if site.feedback_disable == null or site.feedback_disable == false %}
 			{% include feedback.html %}
 		{% endif %}
-                <!--comment out this block if you want to hide search-->
                 <li>
-                    <!--start search-->
-		    <div id="search-demo-container">
-		        <input type="text" id="search-input" placeholder="Search the Documentation Portal">
-		        <ul id="results-container"></ul>
-		    </div>
-		    <script src="/js/search-summary.js"></script>
-		    <script src="/js/jekyll-search.js"></script>
-		    <script>
-		        SimpleJekyllSearch.init({
-			    searchInput: document.getElementById('search-input'),
-			    resultsContainer: document.getElementById('results-container'),
-			    dataSource: '/search.json',
-			    searchResultTemplate: '<li onmouseover="showSummary(this)" onmouseout="hideSummary()" data-summary="{summary}"><a href="{url}">{title}</a><div class="summary-box" style="display:none;"></div></li>',
-			    noResultsText: 'No results found.',
-			    limit: 10,
-			    fuzzy: true,
-		        })
-		    </script>
-                    <!--end search-->
+                  <div id="search-demo-container">
+                    <div class="parent">
+                      <div class="search_container">
+                        <main id="search-widget">
+                          <div class="vectara__search_Box">
+                            <form id="vectara__search_form" action="/search.html" method="GET">
+                              <input class="vectara__search_field" name="query" id="search-input" placeholder="What would you like to know?" autofocus>
+                              <button class="vectara__logo_btn">
+                                <img class="vectara__search_logo" width="26" height="26" src="/images/magnifying-glass.png" alt="Search">
+                              </button>
+                            </form>
+                          </div>
+                        </main>
+                        <ul class="tags" id="widget-tags"></ul>
+                      </div>
+                    </div>
+                  </div>
+                  <ul id="list"></ul>
                 </li>
             </ul>
         </div>

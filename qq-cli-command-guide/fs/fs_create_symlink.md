@@ -1,7 +1,6 @@
 ---
 category: fs
 command: fs_create_symlink
-keywords: qq, qq_cli, fs_create_symlink
 optional_options:
 - alternate: []
   help: Parent directory path

@@ -1,7 +1,6 @@
 ---
 category: nfs
 command: nfs_mod_export
-keywords: qq, qq_cli, nfs_mod_export
 optional_options:
 - alternate: []
   help: ID of export to modify

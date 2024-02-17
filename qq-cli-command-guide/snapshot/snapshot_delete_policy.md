@@ -1,7 +1,6 @@
 ---
 category: snapshot
 command: snapshot_delete_policy
-keywords: qq, qq_cli, snapshot_delete_policy
 optional_options:
 - alternate:
   - --id

@@ -1,7 +1,6 @@
 ---
 category: replication
 command: replication_set_target_relationship_lock
-keywords: qq, qq_cli, replication_set_target_relationship_lock
 optional_options:
 - alternate: []
   help: The unique identifier of the target replication relationship.

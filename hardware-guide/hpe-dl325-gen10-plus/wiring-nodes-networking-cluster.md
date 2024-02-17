@@ -6,7 +6,6 @@ redirect_from:
   - /hardware-guide/hpe-dl325-gen10-plus/networking-cluster.html
   - /hardware/hpe-dl325-gen10-plus/networking-cluster.html
 sidebar: hardware_guide_sidebar
-keywords: network, networking, cluster, switch, Ethernet, ports, IP, HPE_ProLiant_DL325_Gen10_Plus, HPE, ProLiant, DL325
 ---
 
 {{site.splitNetDefine}}

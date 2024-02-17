@@ -1,7 +1,6 @@
 ---
 category: web
 command: web_ui_get_settings
-keywords: qq, qq_cli, web_ui_get_settings
 optional_options:
 - alternate: []
   help: Gets the inactivity timeout

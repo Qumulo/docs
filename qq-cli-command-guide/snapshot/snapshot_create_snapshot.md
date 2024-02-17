@@ -1,7 +1,6 @@
 ---
 category: snapshot
 command: snapshot_create_snapshot
-keywords: qq, qq_cli, snapshot_create_snapshot
 optional_options:
 - alternate: []
   help: ID of directory to snapshot

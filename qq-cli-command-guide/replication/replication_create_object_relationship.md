@@ -1,7 +1,6 @@
 ---
 category: replication
 command: replication_create_object_relationship
-keywords: qq, qq_cli, replication_create_object_relationship
 optional_options:
 - alternate: []
   help: File ID of the qumulo directory

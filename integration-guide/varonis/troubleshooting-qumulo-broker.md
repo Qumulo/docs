@@ -6,7 +6,6 @@ redirect_from:
   - /integration-guide/qumulo-broker/troubleshooting-qumulo-broker.html
   - /integration-guide/varonis-collector/troubleshooting-qumulo-broker.html
 sidebar: integration_guide_sidebar
-keywords: Varonis, integrate, integration, broker, Qumulo Broker, troubleshoot
 varJSONreadability: In the following example, the JSON is formatted for readability.
 ---
 

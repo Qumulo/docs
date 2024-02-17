@@ -3,7 +3,6 @@ title: "Front and Internal Drive Bays on HPE Alletra 4110 Nodes"
 summary: "This section shows the locations of front drive bays in HPE Alletra 4110 nodes."
 permalink: /hardware-guide/hpe-alletra-4110/front-internal-drives.html
 sidebar: hardware_guide_sidebar
-keywords: front_drive, internal_drive, boot_drive, drive, drive_bay, HPE_Alletra_4110, HPE, Alletra, 4110, nvme, ns204i-u, hot, plug, optimized, storage, device
 ---
 
 There are 20 drive bay at the front of the {{site.all4110}} node, populated according to your node type.

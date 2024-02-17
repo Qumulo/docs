@@ -1,7 +1,6 @@
 ---
 category: multitenancy
 command: multitenancy_nfs_modify_global_settings
-keywords: qq, qq_cli, multitenancy_nfs_modify_global_settings
 optional_options:
 - alternate: []
   help: Enables mounting with the NFSv4.1 protocol

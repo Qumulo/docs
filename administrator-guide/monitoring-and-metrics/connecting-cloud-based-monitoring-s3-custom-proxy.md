@@ -4,7 +4,6 @@ summary: "This section explains how to connect to Cloud-Based Monitoring and S3 
 permalink: /administrator-guide/monitoring-and-metrics/connecting-cloud-based-monitoring-s3-custom-proxy.html
 redirect_from:
   - /administrator-guide/monitoring-and-metrics/connecting-cloud-based-monitoring-custom-proxy.html
-keywords: monitoring, Cloud-Based_Monitoring, proxy, custom_proxy, S3_proxy, S3
 sidebar: administrator_guide_sidebar
 varNoRemoteVPNforCustomProxy: Remote VPN support isn't available when you connect to Cloud-Based Monitoring by using a custom proxy.
 ---

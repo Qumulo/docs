@@ -5,7 +5,6 @@ permalink: /azure-administrator-guide/getting-started/connecting-azure-native-qu
 redirect_from:
   - /azure-guide/connecting-to-azure-active-directory-domain-services.html
 sidebar: azure_guide_sidebar
-keywords: cloud, azure, native, ANQ, connecting, active_directory, ad, Microsoft_Entra, Entra, domain_services
 ---
 
 {% include important.html content="On October 1, 2023, Microsoft renamed Azure Active Directory Domain Services to Microsoft Entra Domain Services." %}

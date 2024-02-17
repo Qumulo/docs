@@ -1,7 +1,6 @@
 ---
 category: s3
 command: s3_add_bucket
-keywords: qq, qq_cli, s3_add_bucket
 optional_options:
 - alternate: []
   help: The name of the bucket to be created

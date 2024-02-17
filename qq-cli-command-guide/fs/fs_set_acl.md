@@ -1,7 +1,6 @@
 ---
 category: fs
 command: fs_set_acl
-keywords: qq, qq_cli, fs_set_acl
 optional_options:
 - alternate: []
   help: File path

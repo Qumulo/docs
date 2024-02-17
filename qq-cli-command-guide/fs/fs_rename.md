@@ -1,7 +1,6 @@
 ---
 category: fs
 command: fs_rename
-keywords: qq, qq_cli, fs_rename
 optional_options:
 - alternate: []
   help: Destination parent directory path

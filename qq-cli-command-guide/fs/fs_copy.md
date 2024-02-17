@@ -1,7 +1,6 @@
 ---
 category: fs
 command: fs_copy
-keywords: qq, qq_cli, fs_copy
 optional_options:
 - alternate: []
   help: Snapshot ID to copy from

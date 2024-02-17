@@ -1,7 +1,6 @@
 ---
 category: kerberos
 command: kerberos_modify_settings
-keywords: qq, qq_cli, kerberos_modify_settings
 optional_options:
 - alternate:
   - --use-alt-security-identities-mapping

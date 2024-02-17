@@ -1,7 +1,6 @@
 ---
 category: fs
 command: fs_resolve_paths
-keywords: qq, qq_cli, fs_resolve_paths
 optional_options:
 - alternate: []
   help: File IDs to resolve

@@ -1,7 +1,6 @@
 ---
 category: fs
 command: fs_set_user_metadata
-keywords: qq, qq_cli, fs_set_user_metadata
 optional_options:
 - alternate: []
   help: File path

@@ -1,7 +1,6 @@
 ---
 category: encryption
 command: encryption_set_key_store
-keywords: qq, qq_cli, encryption_set_key_store
 optional_options: []
 permalink: /qq-cli-command-guide/encryption/encryption_set_key_store.html
 positional_options: []

@@ -1,7 +1,6 @@
 ---
 category: smb
 command: smb_list_file_handles
-keywords: qq, qq_cli, smb_list_file_handles
 optional_options:
 - alternate: []
   help: Max files to return per request.

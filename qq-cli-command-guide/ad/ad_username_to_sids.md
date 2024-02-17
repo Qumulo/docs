@@ -1,7 +1,6 @@
 ---
 category: ad
 command: ad_username_to_sids
-keywords: qq, qq_cli, ad_username_to_sids
 optional_options:
 - alternate:
   - --username

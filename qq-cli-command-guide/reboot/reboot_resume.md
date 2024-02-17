@@ -1,7 +1,6 @@
 ---
 category: reboot
 command: reboot_resume
-keywords: qq, qq_cli, reboot_resume
 optional_options: []
 permalink: /qq-cli-command-guide/reboot/reboot_resume.html
 positional_options: []

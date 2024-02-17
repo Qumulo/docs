@@ -1,7 +1,6 @@
 ---
 category: s3
 command: s3_delete_access_key
-keywords: qq, qq_cli, s3_delete_access_key
 optional_options:
 - alternate: []
   help: The ID of the access key to be deleted

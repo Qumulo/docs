@@ -1,7 +1,6 @@
 ---
 category: snapshot
 command: snapshot_calculate_used_capacity
-keywords: qq, qq_cli, snapshot_calculate_used_capacity
 optional_options:
 - alternate:
   - --ids

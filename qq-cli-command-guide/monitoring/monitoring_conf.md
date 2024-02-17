@@ -1,7 +1,6 @@
 ---
 category: monitoring
 command: monitoring_conf
-keywords: qq, qq_cli, monitoring_conf
 optional_options: []
 permalink: /qq-cli-command-guide/monitoring/monitoring_conf.html
 positional_options: []

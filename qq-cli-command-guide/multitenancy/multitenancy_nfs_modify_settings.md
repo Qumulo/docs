@@ -1,7 +1,6 @@
 ---
 category: multitenancy
 command: multitenancy_nfs_modify_settings
-keywords: qq, qq_cli, multitenancy_nfs_modify_settings
 optional_options:
 - alternate: []
   help: ID of tenant to modify settings for
