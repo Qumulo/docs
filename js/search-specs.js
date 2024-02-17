@@ -78,8 +78,7 @@ function successFn(results) {
   const apologyTextElements = document.querySelectorAll(".vuiText--m");
   apologyTextElements.forEach(function(element) {
     if (element.textContent.includes(apologyText1) || element.textContent.includes(apologyText2)) {
-      let currentQuery = new URLSearchParams(window.location.search).get('query') || document.querySelector('#search-input').value.trim();
-      element.textContent = `Here are some search results about ${currentQuery}. To help me write a better summary, enter more search terms or ask me a question!`;
+      element.textContent = `Here are some search results. To help me write a better summary, enter more search terms or ask me a question!`;
     }
   });
 
