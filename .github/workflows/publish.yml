@@ -7,19 +7,19 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3.3.0
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
           ref: ${{ env.GITHUB_REF_NAME }}
 
-      - uses: actions/cache@v3.2.4
+      - uses: actions/cache@v4
         with:
           path: vendor/bundle
           key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile') }}
           restore-keys: |
             ${{ runner.os }}-gems-
 
-      - uses: ruby/setup-ruby@ee26e27437bde475b19a6bf8cb73c9fa658876a2  # v1.134.0
+      - uses: ruby/setup-ruby@b256bd96bb4867e7d23e92e087d9bb697270b725  # v1.163.0
         with:
           ruby-version: '2.7'
           bundler-cache: true
