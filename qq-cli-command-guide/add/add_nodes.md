@@ -47,7 +47,7 @@ title: qq add_nodes
 usage: "qq add_nodes [-h] (--node-uuids NODE_UUIDS [NODE_UUIDS ...] | --node-ips NODE_IPS\
   \ [NODE_IPS ...] | --all-unconfigured)\n    [--target-stripe-config BLOCKS_PER_STRIPE\
   \ DATA_BLOCKS_PER_STRIPE] [--target-max-node-failures TARGET_MAX_NODE_FAILURES]\
-  \ [--dry-run]\n    [--batch]"
+  \ [--dry-run] [--batch]"
 zendesk_source: qq CLI Command Guide
 
 ---

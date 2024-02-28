@@ -69,9 +69,8 @@ summary: This section explains how to use the <code>qq nfs_add_export</code> com
 synopsis: Add a new NFS export
 title: qq nfs_add_export
 usage: "qq nfs_add_export [-h] --export-path EXPORT_PATH --fs-path FS_PATH [--tenant-id\
-  \ TENANT_ID] [--description DESCRIPTION]\n    (--no-restrictions | --restrictions\
-  \ JSON_FILE_PATH) [--create-fs-path] [--fields-to-present-as-32-bit FIELD [FIELD\
-  \ ...]]"
+  \ TENANT_ID] [--description DESCRIPTION] (--no-restrictions | --restrictions JSON_FILE_PATH)\n\
+  \    [--create-fs-path] [--fields-to-present-as-32-bit FIELD [FIELD ...]]"
 zendesk_source: qq CLI Command Guide
 
 ---

@@ -46,9 +46,9 @@ summary: This section explains how to use the <code>qq saml_modify_settings</cod
   command.
 synopsis: Modify cluster SAML configuration
 title: qq saml_modify_settings
-usage: "qq saml_modify_settings [-h] [--disable | --enable] [--idp-sso-url IDP_SSO_URL]\n\
-  \    [--idp-certificate IDP_CERTIFICATE | --idp-certificate-file IDP_CERTIFICATE_FILE]\
-  \ [--idp-entity-id IDP_ENTITY_ID]\n    [--cluster-dns-name CLUSTER_DNS_NAME] [--require-sso\
+usage: "qq saml_modify_settings [-h] [--disable | --enable] [--idp-sso-url IDP_SSO_URL]\
+  \ [--idp-certificate IDP_CERTIFICATE | --idp-certificate-file IDP_CERTIFICATE_FILE]\n\
+  \    [--idp-entity-id IDP_ENTITY_ID] [--cluster-dns-name CLUSTER_DNS_NAME] [--require-sso\
   \ {true,false}]"
 zendesk_source: qq CLI Command Guide
 

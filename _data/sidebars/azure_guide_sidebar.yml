@@ -4,7 +4,7 @@ entries:
   product:
   version:
   guidetitle: Azure Native Qumulo Administrator Guide
-  guideurl: /azure-administrator-guide/    
+  guideurl: /azure-administrator-guide/
   folders:
 
   - title:
@@ -36,7 +36,7 @@ entries:
       url: /azure-administrator-guide/
       output: web
       type: subnavi
-      
+
     - title: Contacting the Qumulo Care Team
       url: /contacting-qumulo-care-team.html
       output: web
@@ -77,13 +77,13 @@ entries:
 
     - title: Replication Version Requirements
       url: /azure-administrator-guide/getting-started/replication-version-requirements.html
-      output: web, pdf   
+      output: web, pdf
 
   - title: Authentication
     url: /azure-administrator-guide/authentication-qumulo-core/index.html
     output: web, pdf
     folderitems:
-    
+
     - title: Configuring SAML Single Sign-On (SSO)
       url: /azure-administrator-guide/authentication-qumulo-core/configuring-saml-single-sign-on-sso.html
       output: web, pdf
@@ -99,7 +99,7 @@ entries:
 
     - title: Managing Cross-Protocol Permissions
       url: /azure-administrator-guide/authorization-qumulo-core/managing-cross-protocol-permissions-xpp.html
-      output: web, pdf  
+      output: web, pdf
 
   - title: External Services
     url: /azure-administrator-guide/external-services/index.html
@@ -153,7 +153,7 @@ entries:
     - title: Managing User-Defined Metadata
       url: /azure-administrator-guide/metadata/managing-user-defined-metadata.html
       output: web, pdf
-      
+
   - title: Snapshots
     url: /azure-administrator-guide/snapshots/index.html
     output: web, pdf
@@ -179,7 +179,7 @@ entries:
     url: /azure-administrator-guide/encryption-data-security/index.html
     output: web, pdf
     folderitems:
-    
+
     - title: Generating and Storing ECDSA Keys
       url: /azure-administrator-guide/encryption-data-security/generating-storing-ecdsa-keys.html
       output: web, pdf
@@ -187,7 +187,7 @@ entries:
     - title: Managing Security Keys
       url: /azure-administrator-guide/encryption-data-security/managing-security-keys.html
       output: web, pdf
-      
+
   - title: Data Replication
     url: /azure-administrator-guide/replicating-data/index.html
     output: web, pdf
@@ -229,7 +229,7 @@ entries:
 
     - title: Creating and Managing an NFS Export
       url: /azure-administrator-guide/nfs/creating-nfs-export.html
-      output: web, pdf    
+      output: web, pdf
 
     - title: Enabling and Using NFSv4.1
       url: /azure-administrator-guide/nfs/nfsv4.1-enabling-using.html
@@ -287,7 +287,7 @@ entries:
 
     - title: Creating and Managing an SMB Share
       url: /azure-administrator-guide/smb/creating-smb-share.html
-      output: web, pdf   
+      output: web, pdf
 
   - title: S3 API
     url: /azure-administrator-guide/s3-api/index.html
@@ -308,6 +308,10 @@ entries:
 
     - title: Managing Access to S3 Buckets
       url: /azure-administrator-guide/s3-api/managing-access-to-s3-buckets.html
+      output: web, pdf
+
+    - title: Managing Access Policies for S3 Buckets
+      url: /azure-administrator-guide/s3-api/managing-access-policies-for-s3-buckets.html
       output: web, pdf
 
     - title: Managing Multipart S3 Uploads

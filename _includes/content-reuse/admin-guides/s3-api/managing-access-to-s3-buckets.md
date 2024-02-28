@@ -2,13 +2,14 @@ Managing user access to S3 buckets in a Qumulo cluster is very similar to managi
 
 * To let a user access S3 buckets in the cluster, you must [assign an S3 access key](creating-managing-s3-access-keys.html) to the user. Alternatively, you can create [presigned URLs](#presigned-urls) or enable [read-only, anonymous access](#enabling-anonymous-access-for-an-s3-bucket) for the entire S3 bucket.
 
-* Because Amazon S3 provides access to an entire S3 bucket but Qumulo Core provides access to individual files and directories, a bucket might behave differently from user expectations.
+* Because a Qumulo cluster restricts S3 actions based on file access control lists (ACLs), an S3 bucket might work differently or have more restrictive permissions than expected.
 
-  {% include note.html content="There are no bucket-level permissions in Qumulo Core, only file-level permissions. To configure an S3 bucket in Qumulo Core to work more like an Amazon S3 bucket, [use inheritable access control entries (ACEs) to imitate bucket-level permissions](#inheritable-aces)." %}
-
+  {% include note.html content="To configure an S3 bucket in Qumulo Core to work more like an Amazon S3 bucket, [use inheritable access control entries (ACEs) to imitate bucket-level permissions](#inheritable-aces)." %}
 
 ## How S3 Bucket Permissions Work in Qumulo Core
 To process an S3 API request, Qumulo Core performs one or more file system operations. Qumulo Core processes these operations by checking the user's access against the access control lists (ACLs) for each file that is part of the request.
+
+{% include note.html content="To permit an action to be performed, the [bucket policy](managing-access-policies-for-s3-buckets.html) and the object's file system ACL must allow the action." %}
 
 For authenticated requests signed with [Amazon Signature Version 4]({{site.s3.docs.signatureV4}}), Qumulo Core maps the [access key ID](creating-managing-s3-access-keys.html#access-key-id) in the request to its corresponding [auth ID](creating-managing-s3-access-keys.html#auth-id), and then processes the request as that user. Qumulo Core processes unsigned, anonymous requests as the `Guest` user.
 

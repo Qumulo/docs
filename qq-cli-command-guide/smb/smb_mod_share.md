@@ -95,10 +95,10 @@ synopsis: Modify a share
 title: qq smb_mod_share
 usage: "qq smb_mod_share [-h] (--id ID | --name NAME) [--tenant-id TENANT_ID] [--new-name\
   \ NEW_NAME] [--new-tenant-id NEW_TENANT_ID] [--fs-path FS_PATH]\n    [--description\
-  \ DESCRIPTION] [--access-based-enumeration-enabled {true,false}] [--create-fs-path]\n\
-  \    [--default-file-create-mode DEFAULT_FILE_CREATE_MODE] [--default-directory-create-mode\
-  \ DEFAULT_DIRECTORY_CREATE_MODE]\n    [--require-encryption {true,false}] [--json]\
-  \ [--full-control-hosts IP/RANGE [IP/RANGE ...]]\n    [--read-only-hosts IP/RANGE\
+  \ DESCRIPTION] [--access-based-enumeration-enabled {true,false}] [--create-fs-path]\
+  \ [--default-file-create-mode DEFAULT_FILE_CREATE_MODE]\n    [--default-directory-create-mode\
+  \ DEFAULT_DIRECTORY_CREATE_MODE] [--require-encryption {true,false}] [--json]\n\
+  \    [--full-control-hosts IP/RANGE [IP/RANGE ...]] [--read-only-hosts IP/RANGE\
   \ [IP/RANGE ...]] [--deny-hosts IP/RANGE [IP/RANGE ...]] [--deny-all-hosts]"
 zendesk_source: qq CLI Command Guide
 

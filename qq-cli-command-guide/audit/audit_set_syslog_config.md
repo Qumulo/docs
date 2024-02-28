@@ -46,8 +46,8 @@ summary: This section explains how to use the <code>qq audit_set_syslog_config</
   command.
 synopsis: Change audit syslog server configuration
 title: qq audit_set_syslog_config
-usage: "qq audit_set_syslog_config [-h] [--enable | --disable] [--csv | --json] [--local-enable\
-  \ | --local-disable] [--server-address SERVER_ADDRESS]\n    [--server-port SERVER_PORT]"
+usage: qq audit_set_syslog_config [-h] [--enable | --disable] [--csv | --json] [--local-enable
+  | --local-disable] [--server-address SERVER_ADDRESS] [--server-port SERVER_PORT]
 zendesk_source: qq CLI Command Guide
 
 ---

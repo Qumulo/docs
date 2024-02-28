@@ -11,6 +11,16 @@ For information about upgrade types for each release, see <a href='mode-referenc
 
 <style>div#toc{height:200px;overflow:auto;}</style>
 
+## Qumulo Core 7.0.1
+{{page.varDownloadsRelnotes}}
+* Configured rolling reboots to restart `N-1` nodes at a time, where `N` is the number of nodes configured for the cluster's fault tolerance
+* Further improved NFSv3 random small-write performance
+* Added support for Active Directory Global Catalog for lookups
+* Added support for `DeleteBucketPolicy` and `PutBucketPolicy` S3 API actions
+* Configured RBAC privileges to override bucket policies which deny a user access to API actions through the S3 API
+* Improved REST API and `qq` CLI operations for working with S3 buckets
+* Fixed a bug with custom LDAP schemas 
+
 ## Qumulo Core 7.0.0.1 (Quarterly)
 {{page.varDownloadsRelnotes}}
 {% include important.html content="To install Qumulo Core on HPE Alletra 4110 platforms, you must use the 7.0.0.1 release." %}
@@ -24,18 +34,18 @@ For information about upgrade types for each release, see <a href='mode-referenc
 
 ## Qumulo Core 6.3.2
 {{page.varDownloadsRelnotes}}
-* Added support for additional custom metadata operations to the S3 API.
-* Configured Qumulo Core to replicate user metadata.
-* Added support for counting metadata updates for a file.
-* Configured OpenMetrics API metrics for protocol operations to track file system REST API operations.
-* Fixed an issue with cluster authentication for Kerberos client principals with names that contain the `@` character.
+* Added support for additional custom metadata operations to the S3 API
+* Configured Qumulo Core to replicate user metadata
+* Added support for counting metadata updates for a file
+* Configured OpenMetrics API metrics for protocol operations to track file system REST API operations
+* Fixed an issue with cluster authentication for Kerberos client principals with names that contain the `@` character
 
 ## Qumulo Core 6.3.1.1
 {{page.varDownloadsRelnotes}}
 {% include important.html content="This release resolves an issue with memory utilization during secure credential handling." %}
-* Added support for storing and retrieving custom metadata and tags by using the S3 API and Qumulo REST API and made supporting changes to the API and `qq` CLI.
-* Added the optional `data_revision` field for all REST resources that return file or stream attributes.
-* Resolved an issue with a third-party GSS authentication library.
+* Added support for storing and retrieving custom metadata and tags by using the S3 API and Qumulo REST API and made supporting changes to the API and `qq` CLI
+* Added the optional `data_revision` field for all REST resources that return file or stream attributes
+* Resolved an issue with a third-party GSS authentication library
 
 ## Qumulo Core 6.3.0.1 (Quarterly)
 {{page.varDownloadsRelnotes}}
@@ -59,10 +69,10 @@ For information about upgrade types for each release, see <a href='mode-referenc
   <li>This release resolves an issue with caching NFS hostnames from the NFS allowed list.</li>
 </ul>
 {{site.data.alerts.end}}
-* Added the ability to store master keys for at-rest encryption in an external Key Management Server (KMS) and updated the corresponding REST APIs and `qq` CLI commands.
-* Added the ability to dismiss errors and warnings on the **Cluster > Active Directory** page in the Web UI by clicking **X**.
-* Configured the drive LEDs for the front (external) storage bays on Quiver 1U All-NVMe Gen 1 platforms to light up red if a drive fails.
-* Ensured that certain SMB `qq` CLI commands always output valid JSON.
+* Added the ability to store master keys for at-rest encryption in an external Key Management Server (KMS) and updated the corresponding REST APIs and `qq` CLI commands
+* Added the ability to dismiss errors and warnings on the **Cluster > Active Directory** page in the Web UI by clicking **X**
+* Configured the drive LEDs for the front (external) storage bays on Quiver 1U All-NVMe Gen 1 platforms to light up red if a drive fails
+* Ensured that certain SMB `qq` CLI commands always output valid JSON
 
 ## Qumulo Core 6.2.1.2
 {{page.varDownloadsRelnotes}}
@@ -82,16 +92,20 @@ For information about upgrade types for each release, see <a href='mode-referenc
 * Deprecated and replaced REST API command pertaining to the UID light and PSU information
 
 ## Qumulo Core 6.2.0.1 (Quarterly)
-{{page.varDownloadsRelnotes}}{{page.varDownloadsRelnotes}}
-{% include important.html content="The removal of the deprecated <code>/v1/smb/shares</code> REST API endpoints in this release can affect certain third-party backup or migration workflows." %}
+{{page.varDownloadsRelnotes}}
 {{site.data.alerts.important}}
-<p>This release resolves an issue with Qumulo Core’s ability to route return packets back to clients when the following conditions are true for a cluster:</p>
 <ul>
-  <li>The cluster has a single tenant</li>
-  <li>VLAN networks are configured</li>
-  <li>Packets are destined for specific VLANs without a configured gateway</li>
+  <li>The removal of the deprecated <code>/v1/smb/shares</code> REST API endpoints in this release can affect certain third-party backup or migration workflows.</li>
+  <li>
+    <p>This release resolves an issue with Qumulo Core’s ability to route return packets back to clients when the following conditions are true for a cluster:</p>
+    <ul>
+      <li>The cluster has a single tenant</li>
+      <li>VLAN networks are configured</li>
+      <li>Packets are destined for specific VLANs without a configured gateway</li>
+    </ul>
+    <p>After upgrading to Qumulo Core 6.2.0.1, you can continue to use the default gateway to route VLAN-specific packets.</p>
+  </li>
 </ul>
-<p>After upgrading to Qumulo Core 6.2.0.1, you can continue to use the default gateway to route VLAN-specific packets.</p>
 {{site.data.alerts.end}}
 
 * Added the ability to specify hostnames in host access rules for NFS exports
@@ -135,16 +149,15 @@ For information about upgrade types for each release, see <a href='mode-referenc
 ## Qumulo Core 6.1.0.3 (Quarterly)
 {{page.varDownloadsRelnotes}}
 {% include important.html content="This release resolves an issue where, under certain circumstances, while using Adaptive Data Protection in Qumulo Core 6.1.0 (and lower), it becomes impossible to add nodes to a cluster during normal cluster expansion or Transparent Platform Refresh operations, until you upgrade the cluster to version 6.1.0.3 (or higher)." %}
-
 * Configured Qumulo Core to use recursive change notifications by default
 * Enabled SMB multichannel by default
 * Added snapshot locking functionality by using the `qq` CLI
 * Made usability changes to event logging and the Web UI
 * Removed beta multitenancy REST APIs and `qq` CLI commands
 
-## Qumulo Core 6.0.2{{page.varDownloadsRelnotes}}
-{% include important.html content="The removal of the deprecated <code>/v1/smb/shares</code> REST API endpoints in this release can affect certain third-party backup or migration workflows." %}
+## Qumulo Core 6.0.2
 {{page.varDownloadsRelnotes}}
+{% include important.html content="The removal of the deprecated <code>/v1/smb/shares</code> REST API endpoints in this release can affect certain third-party backup or migration workflows." %}
 * Added support for streaming file change notifications
 * Improved the S3 API
 * Made improvements to the Qumulo Core allocation algorithm

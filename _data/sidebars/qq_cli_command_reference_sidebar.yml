@@ -884,6 +884,9 @@ entries:
       title: s3_add_bucket
       url: /qq-cli-command-guide/s3/s3_add_bucket.html
     - output: web,pdf
+      title: s3_bucket_policy_explain_access
+      url: /qq-cli-command-guide/s3/s3_bucket_policy_explain_access.html
+    - output: web,pdf
       title: s3_create_access_key
       url: /qq-cli-command-guide/s3/s3_create_access_key.html
     - output: web,pdf
@@ -913,9 +916,6 @@ entries:
     - output: web,pdf
       title: s3_list_uploads
       url: /qq-cli-command-guide/s3/s3_list_uploads.html
-    - output: web,pdf
-      title: s3_modify_bucket
-      url: /qq-cli-command-guide/s3/s3_modify_bucket.html
     - output: web,pdf
       title: s3_modify_bucket_policy
       url: /qq-cli-command-guide/s3/s3_modify_bucket_policy.html

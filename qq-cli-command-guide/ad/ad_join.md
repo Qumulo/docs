@@ -48,7 +48,7 @@ summary: This section explains how to use the <code>qq ad_join</code> command.
 synopsis: Join an Active Directory Domain
 title: qq ad_join
 usage: "qq ad_join [-h] -d DOMAIN -u USERNAME [-p PASSWORD] [--domain-netbios DOMAIN_NETBIOS]\
-  \ [-o OU] [--disable-search-trusted-domains]\n    [--use-ad-posix-attributes] [--base-dn\
+  \ [-o OU] [--disable-search-trusted-domains] [--use-ad-posix-attributes]\n    [--base-dn\
   \ BASE_DN]"
 zendesk_source: qq CLI Command Guide
 

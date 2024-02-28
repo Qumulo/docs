@@ -36,6 +36,10 @@ The following table lists the S3 API actions that Qumulo Core supports and the v
     <td class="fade-row">5.2.4</td>
   </tr>  
   <tr>
+    <td><code>DeleteBucketPolicy</code></td>
+    <td>7.0.1</td>
+  </tr>  
+  <tr>
     <td><code>DeleteObject</code></td>
     <td class="fade-row">5.2.1</td>
   </tr>
@@ -102,7 +106,11 @@ The following table lists the S3 API actions that Qumulo Core supports and the v
   <tr>
     <td><code>ListParts</code></td>
     <td>5.3.3</td>
-  </tr>  
+  </tr>
+  <tr>
+    <td><code>PutBucketPolicy</code></td>
+    <td>7.0.1</td>
+  </tr>    
   <tr>
     <td><code>PutObject</code></td>
     <td class="fade-row">5.2.1</td>

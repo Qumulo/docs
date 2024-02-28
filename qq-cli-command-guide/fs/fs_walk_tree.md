@@ -47,7 +47,7 @@ summary: This section explains how to use the <code>qq fs_walk_tree</code> comma
 synopsis: Walk file system tree
 title: qq fs_walk_tree
 usage: "qq fs_walk_tree [-h] [--path PATH] [--snapshot SNAPSHOT] [--file-only | --directory-only\
-  \ | --symlink-only]\n    [--display-ownership | --display-all-attributes] [--output-file\
+  \ | --symlink-only] [--display-ownership | --display-all-attributes]\n    [--output-file\
   \ OUTPUT_FILE] [--max-depth MAX_DEPTH]"
 zendesk_source: qq CLI Command Guide
 

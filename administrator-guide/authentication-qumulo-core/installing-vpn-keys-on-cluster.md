@@ -1,6 +1,6 @@
 ---
 title: "Installing VPN Keys on a Qumulo Cluster"
-summary: "This section explains how to install VPN keys on your Qumulo cluster over a network. You can install the VPN keys by using the <code>qq</code> CLI from a machine on the same network as your cluster or from one of your nodes."
+summary: "This section explains how to install VPN keys obtained from the Qumulo Care team on your Qumulo cluster, over a network. You can install the VPN keys by using the <code>qq</code> CLI from a machine on the same network as your cluster or from one of your nodes."
 permalink: /administrator-guide/authentication-qumulo-core/installing-vpn-keys-on-cluster.html
 redirect_from:
   - /administrator-guide/getting-started-qumulo-core/installing-vpn-keys-on-cluster.html
@@ -9,6 +9,9 @@ sidebar: administrator_guide_sidebar
 varCopyFile: 1. Copy the `.zip` file from Qumulo Care to a computer on the same network as your cluster, and decompress the file.
 varVerifyKeys: 1. To verify that the VPN keys installed correctly, use the `get_vpn_keys` command. For example&#58;
 ---
+
+{% capture dontDoIt %}Follow these steps only if a member of the Qumulo Care team instructs you to do so. Performing these steps incorrectly can cause network performance, connectivity, and data integrity issues. It can also expose your cluster to unauthorized access. For help with this task, {{site.contactQumuloCare}}.{% endcapture %}
+{% include caution.html content=dontDoIt %}
 
 ## Prerequisites
 Before you begin, make sure that you have done the following.

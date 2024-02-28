@@ -193,7 +193,13 @@ led:
   black: <span class="emoji">⚫️</span>
   white: <span class="emoji">⚪️</span>
 
-xrefUSBinstaller: <a href="/hardware-guide/getting-started/creating-usb-drive-installer.html" class="no_icon">Qumulo Core USB Drive Installer</a>
+xrefUSBinstaller: <a href="https://docs.qumulo.com/hardware-guide/getting-started/creating-usb-drive-installer.html" class="no_icon">Qumulo Core USB Drive Installer</a>
+xref:
+  adminANQ:
+    manageAccessS3: <a href="https://docs.qumulo.com/azure-administrator-guide/s3-api/managing-access-policies-for-s3-buckets.html">Managing Access Policies for an S3 Bucket in a Qumulo Cluster</a> in the Azure Native Qumulo Administrator Guide
+  adminOnPrem:
+    manageAccessS3: <a href="https://docs.qumulo.com/administrator-guide/s3-api/managing-access-policies-for-s3-buckets.html">Managing Access Policies for an S3 Bucket in a Qumulo Cluster</a> in the Qumulo On-Premises Administrator Guide
+
 
 splitIlo: We strongly recommend separating your iLO access network from your client-facing network.
 partReplaceDefine: When you replace a component such as the motherboard or a NIC card in your node, you must ensure that the firmware version and configuration are correct for your new components. To do this, you must perform the part replacement procedure by using the FVT.
@@ -330,6 +336,8 @@ monitoring:
 
 changeNotify:
   useRESTnotSMB: Qumulo provides REST access to the same [change notification system](how-file-system-change-notifications-work.html) that backs SMB2 `CHANGE_NOTIFY`. Because the notification interface and types are easier to work with compared to SMB2, we recommend programming by using REST rather than SMB `CHANGE_NOTIFY`.
+
+RBACoverrides: For the S3 API and Qumulo REST API, if a user has the <a href="https://care.qumulo.com/hc/en-us/articles/360036591633">role-based access control privilege (RBAC)</a> to perform an API action, Qumulo Core <a href="#rbac-overrides">ignores the access policy</a> and permits the API action.
 
 udm:
   t: User-Defined Metadata

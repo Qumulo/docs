@@ -267,6 +267,11 @@ table.pdf-reduce {
     font-size:12px;
 }
 
+/* Strange regression possibly introduced by the search elements */
+td ul li {
+  margin-left: 40px !important;
+}
+
 li.pdf-friendly {
     margin-left:-20px !important;
     -ms-hyphens:none;

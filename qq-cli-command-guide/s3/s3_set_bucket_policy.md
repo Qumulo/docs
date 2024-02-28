@@ -26,3 +26,15 @@ usage: qq s3_set_bucket_policy [-h] --bucket BUCKET --file FILE [--allow-remove-
 zendesk_source: qq CLI Command Guide
 
 ---
+For more information, see:
+* {{site.xref.adminANQ.manageAccessS3}}
+* {{site.xref.adminOnPrem.manageAccessS3}}
+  
+## Examples
+
+### To Configure an Access Policy for an S3 Bucket
+Run the `qq s3_set_bucket_policy` command, use the `--bucket` flag to specify the name of your bucket and the `--file` flag to specify the JSON file with the access policy. For example:
+
+```bash
+qq s3_set_bucket_policy --bucket MyBucket --file mypolicy.json
+```
