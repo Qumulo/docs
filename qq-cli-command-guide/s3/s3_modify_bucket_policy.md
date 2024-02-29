@@ -29,14 +29,9 @@ For more information, see:
 ## Examples
 
 ### To Modify a Statement in an Access Policy for an S3 Bucket
-Run the `qq s3_modify_bucket_policy` command and use the `--bucket` flag to specify the name of the S3 bucket. For the `modify_statement` subcommand, specify the index of the statement to modify. For example:
+Run the `qq s3_modify_bucket_policy` command and use the `--bucket` flag to specify the name of the S3 bucket. For the `modify_statement` subcommand:
 
-```bash
-qq s3_modify_bucket_policy --bucket MyBucket modify_statement --index 2
-```
-
-Alternatively, run the `qq s3_modify_bucket_policy` command and use the `--bucket` flag to specify the name of the S3 bucket. For the `modify_statement` subcommand:
-
+* Use the `--index` flag to specify the index of the statement to modify.
 * Use the `--type` flag to specify the statement type.
 * Use the `--sid` flag to specify the security identifier.
 * Use the `--new-principals` flag to specify a comma-separated list of principals (with which to replace the existing ones), enclosed in quotation marks (`"`).
