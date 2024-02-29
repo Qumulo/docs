@@ -98,8 +98,8 @@ The S3 bucket policy statement contains the following fields.
             <p><code>Index</code>: The system ignores this field when you configure the access policy for an S3 bucket.</p>
             {{site.data.alerts.note}}
             <ul>
-              <li>To retrieve the value for this field, use the <a href="https://docs.qumulo.com/qq-cli-command-guide/s3/s3_get_bucket_policy.html"><code>qq s3_get_bucket_policy</code></a> command.</li>
-              <li>You can specify the value of this field by using the <code>--index</code> flag with the <a href="https://docs.qumulo.com/qq-cli-command-guide/s3/s3_modify_bucket_policy.html"><code>qq s3_modify_bucket_policy modify_statement</code></a> command.</li>
+              <li>To retrieve index for a policy statement, use the <a href="https://docs.qumulo.com/qq-cli-command-guide/s3/s3_get_bucket_policy.html"><code>qq s3_get_bucket_policy</code></a> command.</li>
+              <li>You can target a specific policy statement by specifying its index for the <code>--index</code> flag with the <a href="https://docs.qumulo.com/qq-cli-command-guide/s3/s3_modify_bucket_policy.html"><code>qq s3_modify_bucket_policy modify_statement</code></a> command.</li>
             </ul>
             {{site.data.alerts.end}}
           </li>
