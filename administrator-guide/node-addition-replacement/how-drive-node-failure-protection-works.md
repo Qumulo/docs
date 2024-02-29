@@ -47,9 +47,9 @@ This is the default system configuration. {{page.varMinConfig}} 4 nodes.
 <table>
   <thead>
     <tr>
-      <th width="43.5%">Failure Scenario</th>
-      <th width="13%">Severity</th>
-      <th width="43.5%">Data Protection State</th>
+      <th width="42%">Failure Scenario</th>
+      <th width="16%">Severity</th>
+      <th width="42%">Data Protection State</th>
     </tr>
   </thead>
   <tbody>
@@ -85,9 +85,9 @@ This configuration requires a minimum of 5 nodes.
 <table>
   <thead>
     <tr>
-      <th width="43.5%">Failure Scenario</th>
-      <th width="13%">Severity</th>
-      <th width="43.5%">Data Protection State</th>
+      <th width="42%">Failure Scenario</th>
+      <th width="16%">Severity</th>
+      <th width="42%">Data Protection State</th>
     </tr>
   </thead>
   <tbody>
@@ -128,9 +128,9 @@ This configuration requires a minimum of 5 nodes.
 <table>
   <thead>
     <tr>
-      <th width="43.5%">Failure Scenario</th>
-      <th width="13%">Severity</th>
-      <th width="43.5%">Data Protection State</th>
+      <th width="42%">Failure Scenario</th>
+      <th width="16%">Severity</th>
+      <th width="42%">Data Protection State</th>
     </tr>
   </thead>
   <tbody>
@@ -176,9 +176,9 @@ This configuration requires a minimum of 5 nodes.
 <table>
   <thead>
     <tr>
-      <th width="43.5%">Failure Scenario</th>
-      <th width="13%">Severity</th>
-      <th width="43.5%">Data Protection State</th>
+      <th width="42%">Failure Scenario</th>
+      <th width="16%">Severity</th>
+      <th width="42%">Data Protection State</th>
     </tr>
   </thead>
   <tbody>  
@@ -229,9 +229,9 @@ This configuration requires a minimum of 5 nodes.
 <table>
   <thead>
     <tr>
-      <th width="43.5%">Failure Scenario</th>
-      <th width="13%">Severity</th>
-      <th width="43.5%">Data Protection State</th>
+      <th width="42%">Failure Scenario</th>
+      <th width="16%">Severity</th>
+      <th width="42%">Data Protection State</th>
     </tr>
   </thead>
   <tbody>  
@@ -282,9 +282,9 @@ This configuration requires a minimum of 5 nodes.
 <table>
   <thead>
     <tr>
-      <th width="43.5%">Failure Scenario</th>
-      <th width="13%">Severity</th>
-      <th width="43.5%">Data Protection State</th>
+      <th width="42%">Failure Scenario</th>
+      <th width="16%">Severity</th>
+      <th width="42%">Data Protection State</th>
     </tr>
   </thead>
   <tbody>
@@ -340,9 +340,9 @@ This configuration requires a minimum of 5 nodes.
 <table>
   <thead>
     <tr>
-      <th width="43.5%">Failure Scenario</th>
-      <th width="13%">Severity</th>
-      <th width="43.5%">Data Protection State</th>
+      <th width="42%">Failure Scenario</th>
+      <th width="16%">Severity</th>
+      <th width="42%">Data Protection State</th>
     </tr>
   </thead>
   <tbody>

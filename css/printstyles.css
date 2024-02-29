@@ -273,7 +273,7 @@ td ul li {
 }
 
 li.pdf-friendly {
-    margin-left:-20px !important;
+    /*margin-left:-20px !important;*/
     -ms-hyphens:none;
     -webkit-hyphens:none;
     word-break:break-all;

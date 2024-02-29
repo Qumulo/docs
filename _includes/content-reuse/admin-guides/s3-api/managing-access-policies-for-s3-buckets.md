@@ -68,13 +68,13 @@ The S3 bucket policy statement contains the following fields.
 <table>
   <thead>
     <tr>
-      <th>Field Name</th>
-      <th>Description</th>
+      <th width="22%">Field Name</th>
+      <th width="78%">Description</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td style="width:22%">(Optional)<code>Id</code></td>
+      <td>(Optional)<code>Id</code></td>
       <td>Describes the functionality of your overall policy</td>
     </tr>
     <tr>
@@ -133,13 +133,13 @@ The following table describes the subset of the [Amazon S3 API Actions](https://
 <table>
   <thead>
     <tr>
-      <th>API Action</th>
-      <th>Description</th>
+      <th width="39%">API Action</th>
+      <th width="61%">Description</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td style="width:39%"><code>s3:AbortMultipartUpload</code></td>
+      <td><code>s3:AbortMultipartUpload</code></td>
       <td>Abort a multipart upload to the S3 bucket</td>
     </tr>
     <tr>
@@ -250,13 +250,13 @@ The following table describes examples of principals which Qumulo Core supports.
 <table>
   <thead>
     <tr>
-      <th>Identity Specification Example</th>
-      <th>Description</th>
+      <th width="38%">Identity Specification Example</th>
+      <th width="62%">Description</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td style="width:31%"><code>Mary Lou</code></td>
+      <td><code>Mary Lou</code></td>
       <td>A username or group name</td>
     </tr>
     <tr>
