@@ -100,12 +100,8 @@ Before you can use Cloud-Based monitoring and Remote Support, you must:
         </td>
       </tr>
       <tr>
-        <td><code>missionq.qumulo.com</code></td>
-        <td>Cloud-Based Monitoring connectivity for Qumulo Core versions lower than 6.1.1</td>
-      </tr>
-      <tr>
         <td><code>api.missionq.qumulo.com</code></td>
-        <td>Cloud-Based Monitoring connectivity for Qumulo Core 6.1.1 and higher</td>
+        <td>Cloud-Based Monitoring connectivity</td>
       </tr>  
       <tr>
         <td><code>missionq-dumps.s3.amazonaws.com</code></td>

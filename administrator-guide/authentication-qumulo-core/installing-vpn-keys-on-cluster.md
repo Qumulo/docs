@@ -22,8 +22,6 @@ Before you begin, make sure that you have done the following.
 
   * `ep.qumulo.com`
 
-  * `missionq.qumulo.com`
-
   * `api.missionq.qumulo.com`
 
   * `monitor.qumulo.com`

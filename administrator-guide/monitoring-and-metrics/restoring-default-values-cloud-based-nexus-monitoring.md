@@ -46,7 +46,7 @@ When you no longer [connect to Cloud-Based Monitoring by using a custom proxy](c
      --enabled
      --nexus-enabled
      --s3-proxy-disable-https
-     --mq-host missionq.qumulo.com
+     --mq-host api.missionq.qumulo.com
      --mq-port 443
      --mq-proxy-port 0
      --period 60
