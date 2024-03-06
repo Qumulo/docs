@@ -113,12 +113,12 @@ entries:
       output: web, pdf
 
   - title: Network Configuration
-    url: /administrator-guide/networking/index.html
+    url: /administrator-guide/network-configuration/index.html
     output: web, pdf
     folderitems:
 
     - title: Required Networking Ports
-      url: /administrator-guide/networking/required-networking-ports.html
+      url: /administrator-guide/network-configuration/required-ports.html
       output: web, pdf
 
   - title: Network Multitenancy

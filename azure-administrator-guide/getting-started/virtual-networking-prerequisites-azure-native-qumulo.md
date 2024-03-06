@@ -83,7 +83,7 @@ _Network security groups_ let administrators enforce networking traffic rules. Y
 {% capture delegatedSubnet %}Because it is possible to create or remove network interfaces from an {{site.azure.qumuloOnAzureShort}} instance, we recommend assigning security groups to a delegated subnet.{% endcapture %}
 {% include tip.html content=delegatedSubnet %}
 
-To ensure that your configuration doesn't block a specific protocol, follow the guidance in [Required Networking Ports for Qumulo Core](https://docs.qumulo.com/administrator-guide/networking/required-networking-ports.html).
+To ensure that your configuration doesn't block a specific protocol, follow the guidance in [Required Networking Ports for Qumulo Core](https://docs.qumulo.com/azure-administrator-guide/network-configuration/required-ports.html).
 
 ### Configuring Route Tables
 To configure explicit traffic routing to and from the service, you must attach an [Azure route table](https://learn.microsoft.com/en-us/azure/virtual-network/manage-route-table) to a delegated subnet, and then configure your route table.

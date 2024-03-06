@@ -115,12 +115,12 @@ entries:
       output: web, pdf
 
   - title: Network Configuration
-    url: /azure-administrator-guide/networking/index.html
+    url: /azure-administrator-guide/network-configuration/index.html
     output: web, pdf
     folderitems:
 
     - title: Required Networking Ports
-      url: /azure-administrator-guide/networking/required-networking-ports.html
+      url: /azure-administrator-guide/network-configuration/required-ports.html
       output: web, pdf
 
   - title: Web UI
