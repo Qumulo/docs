@@ -8,6 +8,6 @@ redirect_from:
   - /administrator-guide/nfsv4.1-enabling-using.html
   - /administrator-guide/protocols/nfsv4.1-enabling-using.html
 sidebar: administrator_guide_sidebar
+include_content: content-reuse/admin-guides/nfs/nfsv4.1-enabling-using.md
 ---
 
-{% include content-reuse/admin-guides/nfs/nfsv4.1-enabling-using.md %}

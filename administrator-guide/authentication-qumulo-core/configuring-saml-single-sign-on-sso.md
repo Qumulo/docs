@@ -6,6 +6,6 @@ redirect_from:
   - /administrator-guide/getting-started-qumulo-core/configuring-saml-single-sign-on-sso.html
   - /administrator-guide/qumulo-core/configuring-saml-single-sign-on-sso.html
 sidebar: administrator_guide_sidebar
+include_content: content-reuse/admin-guides/authentication-qumulo-core/configuring-saml-single-sign-on-sso.md
 ---
 
-{% include content-reuse/admin-guides/authentication-qumulo-core/configuring-saml-single-sign-on-sso.md %}

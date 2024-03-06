@@ -5,6 +5,6 @@ permalink: /administrator-guide/monitoring-and-metrics/openmetrics-api-specifica
 redirect_from:
   - /administrator-guide/metrics/openmetrics-api-specification.html
 sidebar: administrator_guide_sidebar
+include_content: content-reuse/admin-guides/monitoring-and-metrics/openmetrics-api-specification.md
 ---
 
-{% include content-reuse/admin-guides/monitoring-and-metrics/openmetrics-api-specification.md %}

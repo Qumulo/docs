@@ -7,6 +7,6 @@ redirect_from:
   - /administrator-guide/web-ui-inactivity-timeout.html
   - /administrator-guide/qumulo-core/web-ui-inactivity-timeout.html
 sidebar: administrator_guide_sidebar
+include_content: content-reuse/admin-guides/web-ui/inactivity-timeout.md
 ---
 
-{% include content-reuse/admin-guides/web-ui/inactivity-timeout.md %}

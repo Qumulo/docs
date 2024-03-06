@@ -8,6 +8,6 @@ redirect_from:
   - /administrator-guide/qumulo-core/shift-to-s3.html
   - /administrator-guide/moving-data/shift-to-s3.html
 sidebar: administrator_guide_sidebar
+include_content: content-reuse/admin-guides/replicating-data/shift-to-s3.md
 ---
 
-{% include content-reuse/admin-guides/replicating-data/shift-to-s3.md %}

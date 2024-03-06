@@ -4,6 +4,6 @@ summary: "This section explains how to create, authorize, modify, and delete a r
 permalink: /administrator-guide/replicating-data/creating-managing-continuous-replication-relationship.html
 sidebar: administrator_guide_sidebar
 platform: on-prem
+include_content: content-reuse/admin-guides/replicating-data/creating-managing-continuous-replication-relationship.md
 ---
 
-{% include content-reuse/admin-guides/replicating-data/creating-managing-continuous-replication-relationship.md %}

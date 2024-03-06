@@ -5,6 +5,6 @@ permalink: /administrator-guide/s3-api/configuring-using-s3-api.html
 redirect_from:
   - /administrator-guide/s3-api/getting-started-s3-api.html
 sidebar: administrator_guide_sidebar
+include_content: content-reuse/admin-guides/s3-api/configuring-using-s3-api.md
 ---
 
-{% include content-reuse/admin-guides/s3-api/configuring-using-s3-api.md %}

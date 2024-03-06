@@ -6,6 +6,6 @@ redirect_from:
   - /nfsv4.1-kerberos.html
   - /administrator-guide/protocols/nfsv4.1-kerberos.html
 sidebar: administrator_guide_sidebar
+include_content: content-reuse/admin-guides/kerberos/kerberos-with-qumulo-core.md
 ---
 
-{% include content-reuse/admin-guides/kerberos/kerberos-with-qumulo-core.md %}

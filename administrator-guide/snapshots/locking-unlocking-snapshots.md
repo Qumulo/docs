@@ -5,6 +5,6 @@ permalink: /administrator-guide/snapshots/locking-unlocking-snapshots.html
 redirect_from:
   - /managing-snapshots.html#locking-and-unlocking-snapshots
 sidebar: administrator_guide_sidebar
+include_content: content-reuse/admin-guides/snapshots/locking-unlocking-snapshots.md
 ---
 
-{% include content-reuse/admin-guides/snapshots/locking-unlocking-snapshots.md %}

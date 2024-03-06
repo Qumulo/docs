@@ -4,6 +4,6 @@ summary: "This section introduces the Qumulo Container Storage Interface (CSI) d
 permalink: /administrator-guide/external-services/connecting-kubernetes-cluster-with-container-storage-interface-csi-driver.html
 sidebar: administrator_guide_sidebar
 varTenantIdString: 'You must provide the value for <code>tenantId</code> as a string. For example: <code>"2"</code>.'
+include_content: content-reuse/admin-guides/external-services/connecting-kubernetes-cluster-with-container-storage-interface-csi-driver.md
 ---
 
-{% include content-reuse/admin-guides/external-services/connecting-kubernetes-cluster-with-container-storage-interface-csi-driver.md %}

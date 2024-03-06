@@ -4,6 +4,6 @@ summary: "This section explains how host access rules work in Qumulo Core and ho
 permalink: /azure-administrator-guide/nfs/configuring-troubleshooting-host-access-rules-nfs-exports.html
 sidebar: azure_guide_sidebar
 varExampleJSONoutput: The following is example JSON output from the command.
+include_content: content-reuse/admin-guides/nfs/configuring-troubleshooting-host-access-rules-nfs-exports.md
 ---
 
-{% include content-reuse/admin-guides/nfs/configuring-troubleshooting-host-access-rules-nfs-exports.md %}

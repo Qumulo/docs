@@ -4,6 +4,6 @@ summary: "This section explains how to create, authorize, modify, and delete a r
 permalink: /azure-administrator-guide/replicating-data/creating-managing-continuous-replication-relationship.html
 sidebar: azure_guide_sidebar
 platform: azure
+include_content: content-reuse/admin-guides/replicating-data/creating-managing-continuous-replication-relationship.md
 ---
 
-{% include content-reuse/admin-guides/replicating-data/creating-managing-continuous-replication-relationship.md %}

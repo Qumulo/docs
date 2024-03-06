@@ -6,6 +6,6 @@ redirect_from:
   - /administrator-guide/file-system-protocols/watching-file-directory-changes-smb2-change-notify.html
 sidebar: administrator_guide_sidebar
 varNoEA: Qumulo doesn't support mutating extended attributes (EA). If the system requests only the <code>FILE_NOTIFY_CHANGE_EA</code> filter, no events propagate.
+include_content: content-reuse/admin-guides/watching-file-attribute-directory-changes/smb2-change-notify.md
 ---
 
-{% include content-reuse/admin-guides/watching-file-attribute-directory-changes/smb2-change-notify.md %}

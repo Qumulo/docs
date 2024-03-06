@@ -5,6 +5,6 @@ permalink: /azure-administrator-guide/getting-started/replication-version-requir
 sidebar: azure_guide_sidebar
 varExample: The following example shows replication options for a cluster running the 
 platform: azure
+include_content: content-reuse/admin-guides/upgrading-qumulo-core/replication-version-requirements-upgrade-recommendations.md
 ---
 
-{% include content-reuse/admin-guides/upgrading-qumulo-core/replication-version-requirements-upgrade-recommendations.md %}

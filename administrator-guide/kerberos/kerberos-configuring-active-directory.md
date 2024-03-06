@@ -5,6 +5,6 @@ permalink: /administrator-guide/kerberos/kerberos-configuring-active-directory.h
 sidebar: administrator_guide_sidebar
 varMachineAccount: To find the machine account name in the Web UI, click **Cluster > Active Directory** and write down the name under **Machine Account**.
 varLowercase: To maximize compatibility with Linux, we recommend formatting SPN entries in lowercase.
+include_content: content-reuse/admin-guides/kerberos/kerberos-configuring-active-directory.md
 ---
 
-{% include content-reuse/admin-guides/kerberos/kerberos-configuring-active-directory.md %}

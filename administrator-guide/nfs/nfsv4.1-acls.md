@@ -10,6 +10,6 @@ redirect_from:
   - /administrator-guide/protocols/nfsv4.1-auth-sys-acls.html
   - /administrator-guide/protocols/nfsv4.1-acls.html
 sidebar: administrator_guide_sidebar
+include_content: content-reuse/admin-guides/nfs/nfsv4.1-acls.md
 ---
 
-{% include content-reuse/admin-guides/nfs/nfsv4.1-acls.md %}

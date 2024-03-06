@@ -9,6 +9,6 @@ varPaginatedResponsePart1: The `entries` list contains the access keys, limited 
 varListMax: "10,000"
 varPaginatedResponsePart2: The `paging.next` field contains the URI to which you can send a `GET` request to retrieve the next page of access keys. By making `GET` requests with all returned `paging.next` values, you can iterate over all of the access keys in the cluster.
 varKeyDoAlso: along with the identities associated with the key and the key creation times
+include_content: content-reuse/admin-guides/s3-api/creating-managing-s3-access-keys.md
 ---
 
-{% include content-reuse/admin-guides/s3-api/creating-managing-s3-access-keys.md %}

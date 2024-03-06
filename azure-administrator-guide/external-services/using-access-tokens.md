@@ -13,6 +13,6 @@ varPrereqRead: <code>PRIVILEGE_ACCESS_TOKEN_READ</code> is required for listing 
 varTokenExpiration: When an access token's expiration time elapses, it isn't possible to use the token for authentication. Any attempt to use the token results in an authentication error. To continue the authentication process, you must either [create a new access token](#creating-using-access-tokens) or [update the expiration time for your existing token](#modifying-expiration-time-access-token).
 varTokenReturn: <ul><li>The access token ID</li><li>The user that the access token represents</li><li>The access token's creator</li><li>The access token's creation time</li><li>The access token's expiration time</li><li>Whether the access token is enabled</li></ul>
 varBearerToken: you can no longer use any bearer tokens associated with the access token to authenticate to Qumulo Core.
+include_content: content-reuse/admin-guides/external-services/using-access-tokens.md
 ---
 
-{% include content-reuse/admin-guides/external-services/using-access-tokens.md %}

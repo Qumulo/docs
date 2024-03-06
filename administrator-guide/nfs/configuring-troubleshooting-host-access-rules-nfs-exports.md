@@ -7,6 +7,6 @@ redirect_from:
   - /administrator-guide/file-system-protocols/nfs-export-restrictions.html
 sidebar: administrator_guide_sidebar
 varExampleJSONoutput: The following is example JSON output from the command.
+include_content: content-reuse/admin-guides/nfs/configuring-troubleshooting-host-access-rules-nfs-exports.md
 ---
 
-{% include content-reuse/admin-guides/nfs/configuring-troubleshooting-host-access-rules-nfs-exports.md %}

@@ -9,6 +9,6 @@ varNoBucket: The specified bucket doesn't exist.
 varCantDelRootDir: You don't have permission to delete the bucket root directory.
 varRootDirNotEmpty: The bucket root directory isn't empty.
 varDefaultPrefix: <a href="#default-directory-prefix">default bucket directory prefix</a>
+include_content: content-reuse/admin-guides/s3-api/creating-managing-s3-buckets.md
 ---
 
-{% include content-reuse/admin-guides/s3-api/creating-managing-s3-buckets.md %}
