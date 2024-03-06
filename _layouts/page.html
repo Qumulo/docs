@@ -36,7 +36,12 @@ layout: default
     {% endunless %}
 
    <p>{{page.summary}}</p>
-   {{ processed_content }}
+   {% if page.include_content %}
+     {% capture reusedContent %}{% include {{ page.include_content }} %}{% endcapture %}
+     {{ reusedContent | markdownify }}
+   {% else %}
+     {{ processed_content }}
+   {% endif %}
 
 {% include commento.html %}
 
