@@ -3,7 +3,7 @@ For more information about the SAML standard for exchanging authentication infor
 ## Prerequisites
 Before you begin, make sure that you have done the following.
 
-* Join your cluster to an Active Directory (AD) domain. For more information, see [Join Your Qumulo Cluster to Active Directory](https://care.qumulo.com/hc/en-us/articles/115007276068) on Qumulo Care.
+* To join your cluster to an Active Directory (AD) domain, log in to the Qumulo Core Web UI and click **Cluster > Active Directory**.
 
   {% include note.html content="Qumulo Core supports SAML authentication only for AD users." %}
 

@@ -337,7 +337,7 @@ varonis:
   restartRsyslog: To restart the rsyslog service, use the `systemctl restart rsyslog` command.
 
 monitoring:
-  cloudBasedMonitoringEnabled: If your configuration is valid, the Web UI shows the status **Enabled &#124; Connected**.
+  cloudBasedMonitoringEnabled: If your configuration is valid, the Qumulo Core Web UI shows the status **Enabled &#124; Connected**.
 
 changeNotify:
   useRESTnotSMB: Qumulo provides REST access to the same [change notification system](how-file-system-change-notifications-work.html) that backs SMB2 `CHANGE_NOTIFY`. Because the notification interface and types are easier to work with compared to SMB2, we recommend programming by using REST rather than SMB `CHANGE_NOTIFY`.

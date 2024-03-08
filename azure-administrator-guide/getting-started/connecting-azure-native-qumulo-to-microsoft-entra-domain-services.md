@@ -11,8 +11,6 @@ sidebar: azure_administrator_guide_sidebar
 
 Microsoft Entra DS provides managed domain services such as Windows Domain Join, Group Policy, LDAP, and Kerberos authentication. You can connect your {{site.azure.qumuloOnAzureShort}} to standard Active Directory (on-premises AD or self-managed AD in the cloud) or to Microsoft Entra DS.
 
-For information about joining {{site.azure.qumuloOnAzureShort}} to standard AD, see [Join Your Qumulo Cluster to Active Directory](https://care.qumulo.com/hc/en-us/articles/115007276068) on Qumulo Care.
-
 For information about joining Microsoft Entra DS, see the following resources in the Microsoft Entra documentation.
 
   * [Tutorial: Configure virtual networking for a Microsoft Entra Domain Services managed domain](https://learn.microsoft.com/en-us/azure/active-directory-domain-services/tutorial-configure-networking)
@@ -54,7 +52,7 @@ For information about joining Microsoft Entra DS, see the following resources in
 
    For more information, see [Custom DNS Configuration](https://care.qumulo.com/hc/en-us/articles/360026611494) on Qumulo Care.
    
-1. To finish configuring your file system to work with Microsoft Entra DS, [join your Qumulo cluster to AD](https://care.qumulo.com/hc/en-us/articles/115007276068).
+1. To finish configuring your file system to work with Microsoft Entra DS, join your cluster ton AD by logging in to the Qumulo Core Web UI and clickng **Cluster > Active Directory**.
 
    {% include note.html content="We recommend giving an administrative role to the user who joins the domain. For newly created users, the system requires a password reset when the user logs in to the [Azure portal](https://azure.microsoft.com/en-us/)." %}
 

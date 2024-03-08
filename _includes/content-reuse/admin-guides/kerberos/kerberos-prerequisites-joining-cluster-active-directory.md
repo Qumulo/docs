@@ -1,4 +1,4 @@
-For more information, see [Join Your Qumulo Cluster to Active Directory](https://care.qumulo.com/hc/en-us/articles/115007276068) on Qumulo Care.
+To join your cluster to Active Directory, log in to the Qumulo Core Web UI and click **Cluster > Active Directory**.
 
 ## Using Active Directory (AD) for POSIX Attributes (RFC2307)
 While [using AD for POSIX attributes](https://care.qumulo.com/hc/en-us/articles/115008011927) is optional, it helps avoid issues with Linux ID mapping. We recommend enabling [RFC 2307](https://datatracker.ietf.org/doc/html/rfc2307) to match your client's functionality.
