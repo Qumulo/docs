@@ -41,7 +41,7 @@ $ aws2 s3 presign s3://my-bucket/my-file.txt \
   --expires-in 600
 ```
 
-The following is example output from the command, with line breaks inserted for readability. The `X-Amz-Expires` header is set to 10 minutes.
+{{site.commandOutput}} The `X-Amz-Expires` header is set to 10 minutes.
 
 ```
 https://{{site.exampleIP0}}:9000/my-bucket/my-file.txt?

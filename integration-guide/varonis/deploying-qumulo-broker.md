@@ -34,7 +34,7 @@ This section explains how to deploy Qumulo Broker on a standalone machine or vir
    
 1. To start the Docker containers, use the `docker compose up -d` command.
 
-   The command creates the network and containers. The following is example output from the command.
+   The command creates the network and containers. {{site.commandOutput}}
    
    ```
     ⠿ Network api_qumulo-net  Created      0.1s
@@ -45,7 +45,7 @@ This section explains how to deploy Qumulo Broker on a standalone machine or vir
    
 1. To view the status of running containers, use the `docker ps` command.
 
-   In the following example output from the command, the output is formatted for readability.
+   {{site.commandOutput}}
 
    ```
    CONTAINER ID   IMAGE          COMMAND                  CREATED         

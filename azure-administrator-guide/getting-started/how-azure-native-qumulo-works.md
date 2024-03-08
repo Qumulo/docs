@@ -4,7 +4,7 @@ summary: "This section explains the main functionality of Azure Native Qumulo (A
 permalink: /azure-administrator-guide/getting-started/how-azure-native-qumulo-works.html
 redirect_from:
   - /azure-guide/how-qumulo-scalable-file-service-works.html
-sidebar: azure_guide_sidebar
+sidebar: azure_administrator_guide_sidebar
 ---
 
 {{site.azure.detailedDeploymentInstructions}}

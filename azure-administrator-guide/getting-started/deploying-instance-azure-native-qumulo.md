@@ -4,7 +4,7 @@ summary: "This section explains how to deploy Azure Native Qumulo (ANQ), view in
 permalink: /azure-administrator-guide/getting-started/deploying-instance-azure-native-qumulo.html
 redirect_from:
   - /azure-guide/getting-started-qumulo-scalable-file-service.html
-sidebar: azure_guide_sidebar
+sidebar: azure_administrator_guide_sidebar
 ---
 
 For an introduction, see [How {{site.azure.qumuloOnAzureLong}} Works](how-azure-native-qumulo-works.html).

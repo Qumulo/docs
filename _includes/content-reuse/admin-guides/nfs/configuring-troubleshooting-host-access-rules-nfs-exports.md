@@ -136,7 +136,7 @@ This section describes the troubleshooting steps for a scenario in which an NFS 
    qq nfs_get_export --export-path /
    ```
 
-   The following is example output from the command.
+   {{site.commandOutput}}
 
    ```
    ID:          1
@@ -193,7 +193,7 @@ This section describes the troubleshooting steps for a scenario in which an NFS 
 
    * Use the `qq dns_resolve_hostnames` command and specify the hostname to perform a lookup for `user1.accounting.example.com`.
   
-     The following is example output from the command.
+     {{site.commandOutput}}
 
      ```json
      [{

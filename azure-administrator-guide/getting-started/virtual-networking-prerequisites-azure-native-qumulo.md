@@ -4,7 +4,7 @@ summary: "This section lists the prerequisites for Azure Native Qumulo (ANQ), de
 permalink:  /azure-administrator-guide/getting-started/virtual-networking-prerequisites-azure-native-qumulo.html
 redirect_from:
   - /azure-guide/configuring-virtual-networking-qumulo-scalable-file-service.html
-sidebar: azure_guide_sidebar
+sidebar: azure_administrator_guide_sidebar
 ---
 
 ## How Qumulo Manages Virtual Networking for {{site.azure.qumuloOnAzureLong}}

@@ -150,10 +150,15 @@ exampleIP1: 203.0.113.1
 exampleIP2: 203.0.113.2
 exampleIPrange1: 203.0.113.0-203.0.113.10
 exampleIPrange2: 203.0.113.0-10
+exampleIPrange3: 203.0.113.10-20
 exampleNetworkSegment1: 203.0.113.0/24
 exampleNetworkSegment2: 203.0.113.0/255.255.255.0
+exampleNetMask1: 255.255.255.0
 exampleSubnet1: 255.0.0.1
 exampleGateway1: 192.168.0.1
+exampleGatewayRange1: 192.168.0.1-10
+exampleGatewayRange2: 192.168.0.11-21
+exampleDNSserver1: 8.8.8.8
 exampleUUID41: 12345a6b-7c89-0d12-3456-78fe9012f345
 exampleUUID42: abcde1f2-g3hi-j4kl-mnop-qr56stuv7wxy
 

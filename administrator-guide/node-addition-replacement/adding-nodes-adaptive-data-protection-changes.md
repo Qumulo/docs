@@ -46,7 +46,7 @@ A cluster's data protection configuration includes the stripe configuration (for
      --target-max-node-failures 2
    ```
    
-   The following is example output from the command.
+   {{site.commandOutput}}
 
    ```
    Current cluster:

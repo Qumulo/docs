@@ -123,6 +123,10 @@ entries:
       url: /azure-administrator-guide/network-configuration/required-ports.html
       output: web, pdf
 
+    - title: Connecting to Multiple Virtual Networks
+      url: /azure-administrator-guide/network-configuration/connecting-multiple-virtual-networks.html
+      output: web, pdf
+
   - title: Web UI
     url: /azure-administrator-guide/web-ui/index.html
     output: web, pdf

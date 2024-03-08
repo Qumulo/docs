@@ -61,7 +61,7 @@ Every Qumulo Core upgrade has two phases, _preparation_ and _commit_.
 
 To determine what phase an upgrade is in, use the `qq upgrade_status` command while your cluster is performing and upgrade. For more information, see [Performing Qumulo Core Upgrades by Using the qq CLI](https://care.qumulo.com/hc/en-us/articles/115008107468) on Qumulo Care.
 
-The following is example output from the command.
+{{site.commandOutput}}
 
 ```json
 {

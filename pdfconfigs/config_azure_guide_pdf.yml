@@ -14,4 +14,4 @@ defaults:
       comments: true
       search: true
 
-pdf_sidebar: azure_guide_sidebar
+pdf_sidebar: azure_administrator_guide_sidebar

@@ -7,7 +7,7 @@ varTenantCreateResult: It enables all management protocols for the tenant. The t
 varUnassignNetwork: After you unassign a network from a tenant, you can assign it to another tenant.
 ---
 
-In Qumulo Core 5.3.4 (and higher), _network multitenancy_ lets you partition a single physical Qumulo cluster into multiple virtual _tenants._ You can define a tenant by using a name and one or more networks. When you assign a network to a tenant, Qumulo Core treats any client that connects from that network as part of that tenant. For more information, see [Connect to Multiple Networks in Qumulo Core](https://care.qumulo.com/hc/en-us/articles/115007237948) on Qumulo Care.
+In Qumulo Core 5.3.4 (and higher), _network multitenancy_ lets you partition a single physical Qumulo cluster into multiple virtual _tenants._ You can define a tenant by using a name and one or more networks. When you assign a network to a tenant, Qumulo Core treats any client that connects from that network as part of that tenant. For more information, see [Connecting to Multiple Virtual Networks in Qumulo Core](https://docs.qumulo.com/administrator-guide/network-configuration/connecting-multiple-virtual-networks.html).
 
 For each tenant, you can specify individual [management protocol access and configuration](configuring-management-protocols.html) and [file system protocol access and configuration](configuring-file-system-protocols.html).
 

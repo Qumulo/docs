@@ -222,7 +222,7 @@ def parse_markup_document(path, default_type_id, source_ids, default_key_prefix)
             # Check whether the Admin Guide is for Azure or On-Prem
             sidebar = doc.get('sidebar')
             title_prefix = ''
-            if sidebar == 'azure_guide_sidebar':
+            if sidebar == 'azure_administrator_guide_sidebar':
                 title_prefix = 'Azure: '
             elif sidebar == 'administrator_guide_sidebar':
                 title_prefix = 'On-Prem: '

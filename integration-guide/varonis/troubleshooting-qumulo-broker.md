@@ -6,7 +6,6 @@ redirect_from:
   - /integration-guide/qumulo-broker/troubleshooting-qumulo-broker.html
   - /integration-guide/varonis-collector/troubleshooting-qumulo-broker.html
 sidebar: integration_guide_sidebar
-varJSONreadability: In the following example, the JSON is formatted for readability.
 ---
 
 ## To Troubleshoot Qumulo Broker
@@ -25,7 +24,7 @@ varJSONreadability: In the following example, the JSON is formatted for readabil
 
 1. {{site.varonis.restartRsyslog}}
 
-1. Get the input log that you suspect to cause an issue from the `/var/log/qumulo_audit.log` file. {{page.varJSONreadability}}
+1. Get the input log that you suspect to cause an issue from the `/var/log/qumulo_audit.log` file.
 
    ```
    Mar  3 14:08:51 q-varonis-1 qumulo
@@ -46,7 +45,7 @@ varJSONreadability: In the following example, the JSON is formatted for readabil
    }
    ```
    
-1. Use the input log from the from the `/var/log/qumulo_audit.log` file to run the `/opt/qumulo/QumuloBroker/events/Broker` command manually. {{page.varJSONreadability}}
+1. Use the input log from the from the `/var/log/qumulo_audit.log` file to run the `/opt/qumulo/QumuloBroker/events/Broker` command manually.
 
    {% include note.html content="Change the timestamp definition in your input to [ISO 8601 with milliseconds](https://en.wikipedia.org/wiki/ISO_8601)." %}
    

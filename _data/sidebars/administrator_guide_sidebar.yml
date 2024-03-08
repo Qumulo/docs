@@ -121,6 +121,10 @@ entries:
       url: /administrator-guide/network-configuration/required-ports.html
       output: web, pdf
 
+    - title: Connecting to Multiple Virtual Networks
+      url: /administrator-guide/network-configuration/connecting-multiple-virtual-networks.html
+      output: web, pdf
+
   - title: Network Multitenancy
     url: /administrator-guide/network-multitenancy/index.html
     output: web, pdf
