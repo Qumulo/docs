@@ -12,7 +12,7 @@ You can configure your Qumulo cluster from the default DHCP configuration. If yo
      --default-gateway {{site.exampleIP0}}
    ```
 
-1. To configure the `Default` network to use static (rather than DHCP) addressing, use the [`qq network_mod_network`](https://docs.qumulo.com/qq-cli-command-guide/network/network_mod_network.html_) command. For example:
+1. To configure the `Default` network to use static (rather than DHCP) addressing, use the [`qq network_mod_network`](https://docs.qumulo.com/qq-cli-command-guide/network/network_mod_network.html) command. For example:
 
    ```bash
    qq network_mod_network \
