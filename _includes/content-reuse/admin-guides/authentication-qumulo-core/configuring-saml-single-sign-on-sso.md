@@ -95,7 +95,7 @@ This process requires coordination between the cluster administrator and SSO adm
      <li>To view the current SAML configuration, the cluster administrator can use the <code>qq saml_get_settings</code> command.</li>
      <li>To allow specific changes (for example, correct a typo, update a DNS name or an expired certificate, or temporarily disable SAML SSO without losing any of the other settings), the cluster administrator can use the <code>qq saml_modify_settings</code> command to change individual SAML settings independently.</li>
      <li>For first-time SAML configurations, the cluster administrator must provide all of the required settings.</li>
-     <li>Aside from a basic check of the IdP certificate, Qumulo Core doesn't verify the configuration parameters. It is the cluster administrator's responsibility to ensure that IdP-initiated SAML login works correctly. (This login type initiates when the user clicks <strong>Continue to SSO login</strong> in the Web UI or selects the Qumulo cluster on the SSO portal.)</li>
+     <li>Aside from a basic check of the IdP certificate, Qumulo Core doesn't verify the configuration parameters. It is the cluster administrator's responsibility to ensure that IdP-initiated SAML login works correctly. (This login type initiates when the user clicks <strong>Continue to SSO login</strong> in the Qumulo Core Web UI or selects the Qumulo cluster on the SSO portal.)</li>
    </ul>
    {{site.data.alerts.end}}
    
@@ -108,10 +108,10 @@ Qumulo Core supports three SAML SSO workflows:
 
 {{site.data.alerts.note}}
 <ul>
-  <li>Members of the built-in Administrators role always have access to the Web UI.</li>
-  <li>To allow other users to access the Web UI, you must assign the built-in Observers role to individual users or to groups.</li>
+  <li>Members of the built-in Administrators role always have access to the Qumulo Core Web UI.</li>
+  <li>To allow other users to access the Qumulo Core Web UI, you must assign the built-in Observers role to individual users or to groups.</li>
   <li>Depending on policy, additional verification might be necessary for users. For example, the SSO administrator can enforce mandatory two-factor authentication (2FA) for certain clusters.</li>
-  <li>If the user accesses the Web UI by connecting to a node physically, the login page doesn't show doesn't show <strong>Continue to SSO login</strong> on the Web UI login page, even if SSO is configured.</li>
+  <li>If the user accesses the Qumulo Core Web UI by connecting to a node physically, the login page doesn't show doesn't show <strong>Continue to SSO login</strong> on the Qumulo Core Web UI login page, even if SSO is configured.</li>
 </ul>
 {{site.data.alerts.end}}
 
@@ -120,15 +120,15 @@ Qumulo Core supports three SAML SSO workflows:
    
 1. The SSO portal redirects the user to the cluster's endpoint.
 
-   If the user has sufficient privileges, the Web UI logs the user in. Otherwise, the Web UI displays an error message.
+   If the user has sufficient privileges, the Qumulo Core Web UI logs the user in. Otherwise, the Qumulo Core Web UI displays an error message.
 
 <a id="sp-inititated-sso-workflow"></a>
 ### SP-Initiated SSO Workflow
 1. A user navigates to the Qumulo cluster's Web UI endpoint in a browser.
 
-1. If the Qumulo cluster has SAML SSO configured, the user can click **Continue to SSO login** on the Web UI login page.
+1. If the Qumulo cluster has SAML SSO configured, the user can click **Continue to SSO login** on the Qumulo Core Web UI login page.
 
-   The Web UI redirects the user to the configured SSO portal. Because the authentication request uses HTTP-Redirect Binding, the login URL appears.
+   the Qumulo Core Web UI redirects the user to the configured SSO portal. Because the authentication request uses HTTP-Redirect Binding, the login URL appears.
    
    ```
    https://<my-org>.<sso-provider>.com/abc12de34fgAB5CDh6i7/saml?SAMLRequest=abcdefgh1234567890...
@@ -186,18 +186,18 @@ In Qumulo Core 5.3.0 (and higher), you can use the `qq saml_modify_settings` CLI
 qq saml_modify_settings --require-sso true
 ```
 
-When the cluster requires SSO authentication, your cluster rejects password-based authentication from AD users in the Web UI, the `qq` CLI, and the REST API.
+When the cluster requires SSO authentication, your cluster rejects password-based authentication from AD users in the Qumulo Core Web UI, the `qq` CLI, and the REST API.
 
 
 ## Known Issues and Limitations
-* Local users (the built-in `admin` user and any additional users) can always use their passwords to authenticate to the Web UI and the `qq` CLI.
+* Local users (the built-in `admin` user and any additional users) can always use their passwords to authenticate to the Qumulo Core Web UI and the `qq` CLI.
 
   {% include important.html content="We recommend setting a strong password for the built-in `admin` user and using this account only for emergencies." %} 
 
-* If SSO is required for a Qumulo cluster, it isn't possible to log in to the **Interactive API documentation** section of the **APIs & Tools** page in the Web UI.
+* If SSO is required for a Qumulo cluster, it isn't possible to log in to the **Interactive API documentation** section of the **APIs & Tools** page in the Qumulo Core Web UI.
 
 * Qumulo Core doesn't support:
-  * **SAML Single Logout (SLO):** We recommend clicking **Sign out** in the Web UI.
+  * **SAML Single Logout (SLO):** We recommend clicking **Sign out** in the Qumulo Core Web UI.
   * **Automatic Configuration from Metadata XML:** You must specify each parameter by using the `qq` CLI.
   * **Returning to Previous Web UI Page:** You can't return to a previous page after re-authenticating (for example, after a timeout).
   * **Azure AD SAML Toolkit:** Currently, due to a configuration deficiency in the toolkit, IdP-initiated SSO isn't operational for Qumulo as a Service. Use the [SP-initiated SSO workflow](#sp-inititated-sso-workflow).
@@ -215,7 +215,7 @@ Typically, if SAML authentication fails, Qumulo Core's in-browser error message 
 
 * The `cluster-dns-name` or `idp-entity-id` on the Qumulo cluster aren't configured correctly.
 
-* A user isn't a member of the Observers role that Qumulo Core requires for granting access to the Web UI.
+* A user isn't a member of the Observers role that Qumulo Core requires for granting access to the Qumulo Core Web UI.
 
 ### Uncommon Issues
 In more complex cases, the in-browser errors are less informative for security reasons. For example, if you configure an incorrect IdP certificate on your cluster, the **Signature validation failed. SAML Response rejected.** error appears.

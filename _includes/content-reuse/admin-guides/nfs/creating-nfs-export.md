@@ -1,7 +1,7 @@
 <a id="create-nfs-export"></a>
 ## To Create an NFS Export
 
-1. Log in to the Web UI.
+1. Log in to the Qumulo Core Web UI.
 
 1. Click **Sharing > NFS Exports**.
 
@@ -34,7 +34,7 @@
 
 ## To Modify an NFS Export
 
-1. Log in to the Web UI.
+1. Log in to the Qumulo Core Web UI.
 
 1. Click **Sharing > NFS Exports**.
 
@@ -45,7 +45,7 @@
 
 ## To Delete an NFS Export
 
-1. Log in to the Web UI.
+1. Log in to the Qumulo Core Web UI.
 
 1. Click **Sharing > NFS Exports**.
 

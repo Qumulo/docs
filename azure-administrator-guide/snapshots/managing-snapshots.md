@@ -1,6 +1,6 @@
 ---
 title: "Managing Snapshots in Qumulo Core"
-summary: "This section explains how to create on-demand snapshots and snapshot policies, view and search for existing snapshots, and delete snapshots by using the Web UI. It also explains how to create snapshots on a schedule, create a snapshot with an expiration time, and modify a snapshot's expiration time."
+summary: "This section explains how to create on-demand snapshots and snapshot policies, view and search for existing snapshots, and delete snapshots by using the Qumulo Core Web UI. It also explains how to create snapshots on a schedule, create a snapshot with an expiration time, and modify a snapshot's expiration time."
 permalink: /azure-administrator-guide/snapshots/managing-snapshots.html
 sidebar: azure_administrator_guide_sidebar
 varLogin: 1. Log in to the Qumulo Core Web UI.

@@ -1,7 +1,7 @@
 <a id="create-smb-share"></a>
 ## To Create an SMB Share
 
-1. Log in to the Web UI.
+1. Log in to the Qumulo Core Web UI.
 
 1. Click **Sharing > SMB Shares**.
 
@@ -42,7 +42,7 @@
 
 ## To Modify an SMB Share
 
-1. Log in to the Web UI.
+1. Log in to the Qumulo Core Web UI.
 
 1. Click **Sharing > SMB Shares**.
 
@@ -53,7 +53,7 @@
 
 ## To Delete an SMB Share
 
-1. Log in to the Web UI.
+1. Log in to the Qumulo Core Web UI.
 
 1. Click **Sharing > SMB Shares**.
 

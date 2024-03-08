@@ -46,9 +46,9 @@ To be able to use hostnames, you must:
 
 
 ## Adding a Host Access Rule to an Existing NFS Export
-This section explains how you can add a host access rule to an existing NFS export by using the Web UI or the `qq` CLI.
+This section explains how you can add a host access rule to an existing NFS export by using the Qumulo Core Web UI or the `qq` CLI.
 
-### To Add a Host Access Rule by Using the Web UI
+### To Add a Host Access Rule by Using the Qumulo Core Web UI
 
 1. Log in to Qumulo Core.
 

@@ -1,5 +1,5 @@
 ---
-title: "Setting the Web UI Login Banner"
+title: "Setting the Qumulo Core Web UI Login Banner"
 summary: "This section explains how to set a login banner for the Qumulo Core Web UI."
 permalink: /azure-administrator-guide/web-ui/login-banner.html
 sidebar: azure_administrator_guide_sidebar

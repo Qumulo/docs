@@ -39,7 +39,7 @@ The following privileges are required for continuous replication.
 ## To Create a Replication Relationship
 {% include important.html content="A replication job doesn't begin until you authorize the relationship on the target cluster." %}
 
-1. Log in to the Web UI on the source cluster.
+1. Log in to the Qumulo Core Web UI on the source cluster.
 
 1. Click **Cluster > Replication**.
 
@@ -77,7 +77,7 @@ The following privileges are required for continuous replication.
 ## To Authorize a Replication Relationship
 {% include note.html content="If your cluster is currently in a blackout window or if continuous replication for the replication relationship is disabled, replication doesn't begin. For more information, see [Replication: Blackout Windows](https://care.qumulo.com/hc/en-us/articles/360019101513) on Qumulo Care." %}
 
-1. Log in to the Web UI on the target cluster.
+1. Log in to the Qumulo Core Web UI on the target cluster.
 
    A notification banner informing you of a new relationship authorization request appears.
 
@@ -88,7 +88,7 @@ The following privileges are required for continuous replication.
 
 ## To View the Status of a Replication Relationship
 
-1. Log in to the Web UI on the source cluster.
+1. Log in to the Qumulo Core Web UI on the source cluster.
 
 1. Click **Cluster > Replication**.
 
@@ -139,7 +139,7 @@ The following privileges are required for continuous replication.
 ## To Modify a Replication Relationship
 {% include note.html content="It isn't possible to edit the source and target directory paths. To make these changes, you must create a new replication relationship." %}
 
-1. Log in to the Web UI.
+1. Log in to the Qumulo Core Web UI.
 
 1. Click **Cluster > Replication**.
 
@@ -150,7 +150,7 @@ The following privileges are required for continuous replication.
 
 ## To Delete a Replication Relationship
 
-1. Log in to the Web UI.
+1. Log in to the Qumulo Core Web UI.
 
 1. Click **Cluster > Replication**.
 

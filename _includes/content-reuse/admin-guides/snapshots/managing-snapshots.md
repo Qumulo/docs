@@ -1,5 +1,5 @@
-## Managing Snapshots by Using the Web UI
-This section explains how to create on-demand snapshots and snapshot policies, view and search for existing snapshots, and delete snapshots by using the Web UI.
+## Managing Snapshots by Using the Qumulo Core Web UI
+This section explains how to create on-demand snapshots and snapshot policies, view and search for existing snapshots, and delete snapshots by using the Qumulo Core Web UI.
 
 ### To Create an On-Demand Snapshot
 {{page.varLogin}}
@@ -146,7 +146,7 @@ qq snapshot_create_snapshot \
 ```
 
 ### Modifying a Snapshot's Expiration Time
-Use the `qq snapshot_modify_snapshot` command and specify the snapshot ID from the **Saved Snapshots** page in the Web UI (for example, for the `1234567_replication_from_prod` snapshot, the ID is `1234567`).
+Use the `qq snapshot_modify_snapshot` command and specify the snapshot ID from the **Saved Snapshots** page in the Qumulo Core Web UI (for example, for the `1234567_replication_from_prod` snapshot, the ID is `1234567`).
 
 In the following example, the snapshot with ID `1234567` never expires.
 

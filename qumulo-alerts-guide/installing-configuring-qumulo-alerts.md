@@ -154,7 +154,7 @@ To be able to generate access tokens, you must create a local user for Qumulo Al
 1. Click **Save**.
 
 ### Step 4: Assign the Qumulo Alerts Role to Your Local Qumulo Core User
-1. In the Web UI, click **Cluster > Role Management**.
+1. In the Qumulo Core Web UI, click **Cluster > Role Management**.
 
 1. On the **Role Management** page, in the **QumuloAlerts** section, click **Add Member**.
 

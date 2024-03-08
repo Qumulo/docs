@@ -3,7 +3,7 @@ For more information about copying objects from S3 to Qumulo, see [Using Qumulo 
 ## Prerequisites
 * A Qumulo cluster with:
 
-  * Qumulo Core 3.2.1 (and higher) for the CLI and 3.2.5 (and higher) for the Web UI
+  * Qumulo Core 3.2.1 (and higher) for the CLI and 3.2.5 (and higher) for the Qumulo Core Web UI
 
   * HTTPS connectivity to `s3.<region>.amazonaws.com` though one of the following means:
 

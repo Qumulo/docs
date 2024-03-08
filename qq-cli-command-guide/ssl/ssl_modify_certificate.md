@@ -18,7 +18,7 @@ positional_options: []
 sidebar: qq_cli_command_reference_sidebar
 summary: This section explains how to use the <code>qq ssl_modify_certificate</code>
   command.
-synopsis: Set the SSL certificate chain and private key for the web UI and REST servers
+synopsis: Set the SSL certificate chain and private key for the Qumulo Core Web UI and REST servers
 title: qq ssl_modify_certificate
 usage: qq ssl_modify_certificate [-h] -c CERTIFICATE -k PRIVATE_KEY
 zendesk_source: qq CLI Command Guide

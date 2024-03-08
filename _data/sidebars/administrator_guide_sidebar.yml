@@ -65,8 +65,8 @@ entries:
       url: /administrator-guide/upgrading-qumulo-core/mode-reference.html
       output: web, pdf
 
-    - title: Instant Software and Platform Upgrades
-      url: /administrator-guide/upgrading-qumulo-core/instant-software-platform.html
+    - title: Performing Upgrades
+      url: /administrator-guide/upgrading-qumulo-core/performing-upgrades.html
       output: web, pdf
 
     - title: Replication Version Requirements and Upgrade Recommendations

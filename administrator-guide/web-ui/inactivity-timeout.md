@@ -1,5 +1,5 @@
 ---
-title: "Setting the Web UI Inactivity Timeout"
+title: "Setting the Qumulo Core Web UI Inactivity Timeout"
 summary: "This section explains how to set an inactivity timeout for the Qumulo Core Web UI."
 permalink: /administrator-guide/web-ui/inactivity-timeout.html
 redirect_from:

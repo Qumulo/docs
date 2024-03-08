@@ -34,7 +34,7 @@ Unless you need direct access to a specific node through a DNS fully qualified d
 
 1. Update the list of IP addresses for this host record. Include the IP addresses for all nodes.
 
-   To find the IP addresses in the Web UI, click **Cluster > Network Configuration**.
+   To find the IP addresses in the Qumulo Core Web UI, click **Cluster > Network Configuration**.
 
 1. Configure the DNS resolver to point to the DNS server.
 

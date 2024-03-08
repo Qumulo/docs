@@ -117,7 +117,7 @@ This section explains how to configure Qumulo Core to use a master key stored lo
 {{site.data.alerts.caution}}
 <ul>
   <li>If the master key is deleted from the KMS, and all nodes in the cluster are rebooted, all data on the cluster becomes permanently unrecoverable.</li>
-  <li>If you allow the certificates to expire, or the master key is deleted accidentally, you must create a new, valid configuration as soon as possible. To warn you of this scenario, the Web UI indicates if any of your certificates are about to expire, or if the configured master key becomes unavailable.</li>
+  <li>If you allow the certificates to expire, or the master key is deleted accidentally, you must create a new, valid configuration as soon as possible. To warn you of this scenario, the Qumulo Core Web UI indicates if any of your certificates are about to expire, or if the configured master key becomes unavailable.</li>
 </ul>
 {{site.data.alerts.end}}
 
@@ -139,7 +139,7 @@ This section explains how to configure Qumulo Core to use a master key stored lo
 
 <a id="rotate-master-key"></a>
 ## Rotating the Master Key
-This section explains how to rotate the master key and check the encryption status for your cluster by using the `qq` CLI and how to check the encryption status by using the Web UI.
+This section explains how to rotate the master key and check the encryption status for your cluster by using the `qq` CLI and how to check the encryption status by using the Qumulo Core Web UI.
 
 {% include caution.html content="[Qumulo Care](https://docs.qumulo.com/contacting-qumulo-care-team.html) team members can help you [rotate your master keys](#rotate-master-key). However, they don't have access to your encryption keys and can't retrieve them for you." %}
 
@@ -163,7 +163,7 @@ This section explains how to rotate the master key and check the encryption stat
 
    In the output, ensure that the `key_id` field lists the new key ID.
 
-### To Check the Encryption Status of a Qumulo Cluster by Using the Web UI
+### To Check the Encryption Status of a Qumulo Cluster by Using the Qumulo Core Web UI
 1. Log in to Qumulo Core.
 
 1. On the **Dashboard** page, in the **Cluster Overview** section, click **More details**.

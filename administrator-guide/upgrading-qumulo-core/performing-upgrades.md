@@ -1,8 +1,9 @@
 ---
-title: "Performing Qumulo Core Instant Software Upgrades and Platform Upgrades"
-summary: "This section explains the difference between Qumulo Core Instant Software Upgrades and Platform Upgrades. For more information, see <a href='https://care.qumulo.com/hc/en-us/articles/115008107468'>Performing Qumulo Core Upgrades by Using the qq CLI</a> on Qumulo Care."
-permalink: /administrator-guide/upgrading-qumulo-core/instant-software-platform.html
+title: "Performing Qumulo Core Upgrades"
+summary: "This section explains the difference between Qumulo Core Instant Software Upgrades and Platform Upgrades and how to perform upgrades."
+permalink: /administrator-guide/upgrading-qumulo-core/performing-upgrades.html
 redirect_from:
+  - /administrator-guide/upgrading-qumulo-core/instant-software-platform.html
   - /administrator-guide/upgrades/instant-software-platform.html
 sidebar: administrator_guide_sidebar
 varContactQumuloCare: If you perform multiple upgrades back to back, you might encounter one or more platform upgrades in one of the incremental releases; you must install these upgrades before you continue. Before performing back to back upgrades, <a href="https://docs.qumulo.com/contacting-qumulo-care-team.html">contact the Qumulo Care team</a> for guidance.
@@ -49,7 +50,6 @@ The reboot process differentiates platform upgrades from instant software upgrad
 
 
 ## Understanding the Upgrade Phases
-
 Every Qumulo Core upgrade has two phases, _preparation_ and _commit_.
 
 1. **Preparation:** Qumulo Core stages a new image in an alternate boot drive partition while the current image continues to run. This phase is responsible only for the background work (unpacking and writing the platform image and upgrade firmware, and so on). When the preparation phase is complete, we continue to the commit phase.
@@ -74,3 +74,41 @@ To determine what phase an upgrade is in, use the `qq upgrade_status` command wh
   "blocked_reason": ""
 }
 ```
+
+## Upgrading Your Qumulo Cluster
+{{site.data.alerts.important}}
+<ul>
+  <li>Before beginning the upgrade process, make sure that you have the correct <a href="https://nexus.qumulo.com/downloads?platform=cloud">cloud upgrade image</a>{{site.loginRequired}} or <a href="https://nexus.qumulo.com/downloads?platform=onprem">on-premises upgrade image</a>{{site.loginRequired}}.</li>
+  <li>To allow certain background processes to run, multiple sequential Qumulo Core upgrades might require a waiting period between specific releases. Before installing multiple Qumulo Core releases within an extended maintenance window, {{site.contactQumuloCare}}.</li>
+  <li>When the node to which you are connected reboots, the Qumulo Core Web UI might redirect you to the <strong>Cluster is booting...</strong> page. To view the reboot status, you can connect to a different node or wait until the current node goes online and then click <strong>Support > Software Upgrade</strong>.</li>
+  <li>During rolling reboots, the system reboots one or more nodes (depending on the configured protection level) in the cluster in succession. If your cluster is under heavy load due to write or delete operations, this proces can take a long time.</li>
+</ul>
+{{site.data.alerts.end}}
+
+### To Upgrade Your Qumulo Cluster
+
+1. Upload the `qumulo_core_x.x.x.qimg` upgrade file to any directory on your cluster by using a client protocol such as NFS or SMB.
+
+1. Log in to the Qumulo Core Web UI.
+
+1. **Click Support > Software Upgrade**.
+
+1. On the **Software Upgrade** page, enter the file system path for the upgrade file without the leading slash, for example: `upgrade/qumulo_core_7.1.0.qimg`.
+
+1. Click **Upgrade...**
+
+   Depending on the [upgrade mode for your release](mode-reference.html), continue to one of the following sections.
+
+   * **Instant Software Upgrade:** In the **Ready to upgrade?** dialog box, confirm the current and new versions of Qumulo Core and then click **Start Upgrade**.
+
+     On the **Software Upgrade** page, the upgrade progress is displayed.
+
+   * **Platform Upgrade:** In the **Ready to upgrade?** dialog box, choose one of the following modes and then click **Start Upgrade**.
+
+       * **Complete reboot (with SMB and NFS client interruption):** You can't access your cluster during the reboot process.
+
+       * **Rolling reboot (with SMB client impact):** You can access your cluster during reboot, but SMB connectivity to specific nodes is impacted.
+
+    Qumulo Core prepares the upgrade then installs Qumulo software on your cluster.
+
+    When the upgrade is complete, the message **You have successfully upgraded from Qumulo Core x.x.x to y.y.y** is displayed.

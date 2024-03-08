@@ -43,13 +43,13 @@ There are two node replacement plan types:
 
 * <a id="combined-cluster"></a>
 
-  While a node replacement step is in progress, both new nodes and nodes marked for replacement appear on the **Cluster** page of the Web UI and clients can connect to any of the nodes in the _combined cluster_ while the step is in progress.
+  While a node replacement step is in progress, both new nodes and nodes marked for replacement appear on the **Cluster** page of the Qumulo Core Web UI and clients can connect to any of the nodes in the _combined cluster_ while the step is in progress.
 
 * When a node replacement step is complete, the reassignment of static IP addresses differs between versions of Qumulo Core:
 
   * In Qumulo Core 6.3.0.1 (and higher), the static IP addresses assigned to nodes remain unchanged and Qumulo Core removes only the static IP addresses for nodes removed from the cluster.
  
-  * In Qumulo Core versions lower than 6.3.0.1, Qumulo Core reassigns static IP addresses to different nodes. To view the reassigned IP addresses in the Web UI, click **Cluster > Network Configuration.**
+  * In Qumulo Core versions lower than 6.3.0.1, Qumulo Core reassigns static IP addresses to different nodes. To view the reassigned IP addresses in the Qumulo Core Web UI, click **Cluster > Network Configuration.**
 
 * When Qumulo Core adds nodes to a cluster, it assigns node IDs sequentially, without reusing or changing IDs.
 
@@ -132,7 +132,7 @@ Ensure that the number of static and floating IP addresses is equal to or greate
 
    After each node replacement step, Qumulo Core begins to migrate data from existing nodes in the backround.
    
-   {% include note.html content="This is a long process (that can take days or weeks). When the data migration is complete, Qumulo Core removes the nodes marked for replacement from the cluster. These nodes no longer appear on the **Cluster** page of the Web UI." %}
+   {% include note.html content="This is a long process (that can take days or weeks). When the data migration is complete, Qumulo Core removes the nodes marked for replacement from the cluster. These nodes no longer appear on the **Cluster** page of the Qumulo Core Web UI." %}
 
 1. Unrack the removed nodes from your data center.
 

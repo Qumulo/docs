@@ -1,6 +1,6 @@
 ## To Create a Directory Quota
 
-1. Log in to the Web UI.
+1. Log in to the Qumulo Core Web UI.
 
 1. Click **Sharing > Quotas**.
 
@@ -17,7 +17,7 @@
 
 ## To Modify a Directory Quota
 
-1. Log in to the Web UI.
+1. Log in to the Qumulo Core Web UI.
 
 1. Click **Sharing > Quotas**.
 
@@ -28,7 +28,7 @@
 
 ## To Delete a Directory Quota
 
-1. Log in to the Web UI.
+1. Log in to the Qumulo Core Web UI.
 
 1. Click **Sharing > Quotas**.
 

@@ -9,7 +9,7 @@ The Qumulo Core S3 API accepts only HTTPS requests by default. To enable HTTPS s
 
 Every Qumulo cluster is preconfigured with a self-signed SSL certificate. However, because certain applications don't accept the default certificate, we recommend installing your own.
 
-For information about configuring HTTPS for your cluster, see [Installing the Web UI SSL Certificate](https://care.qumulo.com/hc/en-us/articles/17652500917779) on Qumulo Care.
+For information about configuring HTTPS for your cluster, see [Installing the Qumulo Core Web UI SSL Certificate](https://care.qumulo.com/hc/en-us/articles/17652500917779) on Qumulo Care.
 
 ### Enabling and Disabling Plaintext HTTP Connections
 {% include important.html content="If you configure the S3 API service to accept only plaintext HTTP connections, no requests made through the S3 API are encrypted." %}

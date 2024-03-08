@@ -50,7 +50,7 @@ The Qumulo Core Web UI lets you manage clusters from a browser.
 
 * To disable access, use the `--disable-web-ui` flag.
 
-In the following example, the cluster begins to serve the Web UI on TCP ports 80 and 433 on all networks assigned to the tenant.
+In the following example, the cluster begins to serve the Qumulo Core Web UI on TCP ports 80 and 433 on all networks assigned to the tenant.
 
 ```bash
 $ qq multitenancy_modify_tenant \

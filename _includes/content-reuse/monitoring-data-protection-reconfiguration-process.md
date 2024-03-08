@@ -1,15 +1,15 @@
 ## Monitoring the Data Protection Reconfiguration Process
 To view the progress of the three stages of the data protection reconfiguration process, log in to the Qumulo Core Web UI and click **Cluster**.
 
-1. Qumulo Core begins to move data to new nodes in the cluster and the Web UI displays the message **Rebalancing for data protection reconfiguration**.
+1. Qumulo Core begins to move data to new nodes in the cluster and the Qumulo Core Web UI displays the message **Rebalancing for data protection reconfiguration**.
    
-1. Qumulo Core reencodes all data on your cluster and the Web UI displays the message **Reconfiguring data protection**.
+1. Qumulo Core reencodes all data on your cluster and the Qumulo Core Web UI displays the message **Reconfiguring data protection**.
 
    {% include note.html content="In certain scenarios, this stage might appear to pause while the system performs preparatory work on the cluster." %}
 
    When this stage is complete, your data is protected according to the cluster's new configuration and the system begins to use the new drive and node fault tolerance levels.
 
-1. Qumulo Core adds new capacity to your cluster and the Web UI displays the message **Rabalancing**.
+1. Qumulo Core adds new capacity to your cluster and the Qumulo Core Web UI displays the message **Rabalancing**.
 
    If you initiated the reconfiguration process as part of a node replacement step, the system migrates data from the existing nodes in the cluster.
 

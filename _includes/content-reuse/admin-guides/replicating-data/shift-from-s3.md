@@ -130,7 +130,7 @@ This section describes how to use the Qumulo Core Web UI 4.2.5 (and higher) to c
 
 1. In the **Create Copy from S3?** dialog box, review the Shift relationship and then click **Yes, Create**.
 
-   The copy job begins and Qumulo Core estimates the work to be performed. When the estimation is complete, the Web UI displays a progress bar with a percentage for a relationship on the **Replication Relationships** page. The page also displays the estimated total work, the remaining bytes and files, and the estimated time to completion for a running copy job.
+   The copy job begins and Qumulo Core estimates the work to be performed. When the estimation is complete, the Qumulo Core Web UI displays a progress bar with a percentage for a relationship on the **Replication Relationships** page. The page also displays the estimated total work, the remaining bytes and files, and the estimated time to completion for a running copy job.
 
    {% include note.html content="For work estimates, Shift-From jobs calculate the total number of files and bytes in a job's bucket prefix. This requires the job to use the [`ListObjectV2` S3 action](https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjectsV2.html) once for every 5,000 objects (or 200 times for every 1 million objects)." %}
 

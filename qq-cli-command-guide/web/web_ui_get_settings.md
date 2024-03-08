@@ -15,7 +15,7 @@ positional_options: []
 sidebar: qq_cli_command_reference_sidebar
 summary: This section explains how to use the <code>qq web_ui_get_settings</code>
   command.
-synopsis: Get configuration options for the Web UI
+synopsis: Get configuration options for the Qumulo Core Web UI
 title: qq web_ui_get_settings
 usage: qq web_ui_get_settings [-h] [--inactivity-timeout | --login-banner]
 zendesk_source: qq CLI Command Guide

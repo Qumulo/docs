@@ -35,7 +35,7 @@ optional_options:
 - alternate: []
   help: If set, requires SSO for Active Directory (AD) users to be able to manage
     this cluster. The cluster rejects password-based authentication from AD users
-    of the Web UI, qq CLI, and REST API. This setting does not restrict access over
+    of the Qumulo Core Web UI, qq CLI, and REST API. This setting does not restrict access over
     file protocols such as SMB.
   name: --require-sso
   required: false

@@ -73,7 +73,7 @@ This section explains how to deploy the {{site.azure.qumuloOnAzureShort}} servic
 1. To create a service, click **Next: Review + Create >**.
 
 
-## Viewing Service Information and Connecting to the Web UI
+## Viewing Service Information and Connecting to the Qumulo Core Web UI
 When Azure finishes creating your service, you can view information about the service and start using the Qumulo Core Web UI.
 
 ### Viewing the IP Addresses of Your Service
@@ -81,8 +81,8 @@ To view the IP addresses associated with your service, click **IP Addresses** on
 
 {% include tip.html content="We recommend using round-robin DNS to [load balance](virtual-networking-prerequisites-azure-native-qumulo.html#load-balanced-endpoints) traffic across your service IP addresses." %}
 
-### To Log in to the Web UI
-To log in to the Web UI, you must identify your service endpoint.
+### To Log in to the Qumulo Core Web UI
+To log in to the Qumulo Core Web UI, you must identify your service endpoint.
 
 1. Click **Overview** and then copy the **Qumulo Core Web UI Login** URL. For example:
 

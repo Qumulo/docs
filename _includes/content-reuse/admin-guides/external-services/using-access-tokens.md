@@ -2,7 +2,7 @@
 
 In Qumulo Core 5.3.0 (and higher), you can use _access tokens_ to let a user authenticate to the Qumulo REST API without having to complete repetitive login procedures.
 
-Access tokens are long-lived. They provide an alternative to session-based authentication that the `qq login` command and the Web UI use. They also support support authentication for services, long-lived automation processes, and programmatic REST API access that doesn't require user input.
+Access tokens are long-lived. They provide an alternative to session-based authentication that the `qq login` command and the Qumulo Core Web UI use. They also support support authentication for services, long-lived automation processes, and programmatic REST API access that doesn't require user input.
 
 {{site.data.alerts.important}}
 <ul>

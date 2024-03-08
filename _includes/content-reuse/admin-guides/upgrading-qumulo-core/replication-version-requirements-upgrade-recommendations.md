@@ -214,9 +214,9 @@ To avoid having to resynchronize your clusters after you reconnect the replicati
 
 On clusters that run Qumulo Core 2.12.5 (and lower), this process requires additional time to resynchronize the clusters by running a full-tree scan after you reconnect the replication relationship.
 
-1. To temporarily make the target relationship writable for the duration of the upgrade, use the **Make Target Writable** action in the Web UI.
+1. To temporarily make the target relationship writable for the duration of the upgrade, use the **Make Target Writable** action in the Qumulo Core Web UI.
    
 1. Wait for the upgrade to complete.
    
-1. Use the **Reconnect Relationship** action in the Web UI.
+1. Use the **Reconnect Relationship** action in the Qumulo Core Web UI.
 {% endif %}

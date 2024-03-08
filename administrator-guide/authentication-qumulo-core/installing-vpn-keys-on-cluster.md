@@ -103,7 +103,7 @@ Before you begin, make sure that you have done the following.
 
 1. Send the output of the command to Qumulo Care.
 
-1. Use the Web UI to enable Qumulo Care Remote Support.
+1. Use the Qumulo Core Web UI to enable Qumulo Care Remote Support.
 
 1. Notify Qumulo Care when this process is complete.
 
