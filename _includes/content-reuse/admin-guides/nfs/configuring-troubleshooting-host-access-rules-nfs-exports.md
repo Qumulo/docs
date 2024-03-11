@@ -50,7 +50,7 @@ This section explains how you can add a host access rule to an existing NFS expo
 
 ### To Add a Host Access Rule by Using the Qumulo Core Web UI
 
-1. Log in to Qumulo Core.
+1. {{site.logIntoWebUI}}
 
 1. Click **Sharing > NFS Exports**.
 

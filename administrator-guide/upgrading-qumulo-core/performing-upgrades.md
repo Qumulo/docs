@@ -89,7 +89,7 @@ To determine what phase an upgrade is in, use the `qq upgrade_status` command wh
 
 1. Upload the `qumulo_core_x.x.x.qimg` upgrade file to any directory on your cluster by using a client protocol such as NFS or SMB.
 
-1. Log in to the Qumulo Core Web UI.
+1. {{site.logIntoWebUI}}
 
 1. **Click Support > Software Upgrade**.
 

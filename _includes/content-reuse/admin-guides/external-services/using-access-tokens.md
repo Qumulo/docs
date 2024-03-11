@@ -256,7 +256,7 @@ When you connect external services to the Qumulo Core REST API, we recommend cre
 
 #### To Create a New Service Account
 
-1. Log in to Qumulo Core.
+1. {{site.logIntoWebUI}}
 
 1. Create a service account.
 

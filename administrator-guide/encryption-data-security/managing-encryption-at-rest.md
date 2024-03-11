@@ -164,7 +164,7 @@ This section explains how to rotate the master key and check the encryption stat
    In the output, ensure that the `key_id` field lists the new key ID.
 
 ### To Check the Encryption Status of a Qumulo Cluster by Using the Qumulo Core Web UI
-1. Log in to Qumulo Core.
+1. {{site.logIntoWebUI}}
 
 1. On the **Dashboard** page, in the **Cluster Overview** section, click **More details**.
 

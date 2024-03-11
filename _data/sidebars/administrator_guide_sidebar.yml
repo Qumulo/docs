@@ -90,6 +90,10 @@ entries:
       url: /administrator-guide/authentication-qumulo-core/configuring-search-trusted-domains-active-directory.html
       output: web, pdf
 
+    - title: Configuring LDAP
+      url: /administrator-guide/authentication-qumulo-core/configuring-ldap.html
+      output: web, pdf
+
   - title: Authorization
     url: /administrator-guide/authorization-qumulo-core/index.html
     output: web, pdf

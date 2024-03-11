@@ -127,7 +127,7 @@ A new relationship for subsequent uploads doesn't share any tracking information
 This section describes how to use the Qumulo Core Web UI 3.2.5 (and higher) to copy files from a Qumulo cluster to Amazon S3, review Shift relationship details, stop a running copy job, repeat a completed copy job, and delete a relationship.
 
 ### To Copy Files to Amazon S3
-1. Log in to Qumulo Core.
+1. {{site.logIntoWebUI}}
 
 1. Click **Cluster > Copy to/from S3**.
 

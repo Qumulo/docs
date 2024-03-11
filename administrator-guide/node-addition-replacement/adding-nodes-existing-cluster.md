@@ -34,7 +34,7 @@ To receive support for new, Qumulo-certified drives, do one of the following:
 
 
 ## Step 2: Add Your New Nodes to an Existing Qumulo Cluster
-1.  Log in to the Qumulo Core Web UI.
+1.  {{site.logIntoWebUI}}
 
 1.  Click **Cluster &gt; Add Nodes**.
 

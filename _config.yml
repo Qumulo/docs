@@ -278,6 +278,9 @@ qumuloalerts:
 
 jsonNotTable: The output displays information in a table format. To view the output in JSON format, use the <code>--json</code> flag.
 
+
+logIntoWebUI: Log in to the Qumulo Core Web UI.
+
 protectingData:
   contactQumuloCare: We strongly recommend contacting the <a href="/contacting-qumulo-care-team.html">Qumulo Care team</a> before proceeding with cluster expansion.
   followAddNodeInstructions: 1. Follow the instructions in <a href="https://care.qumulo.com/hc/en-us/articles/360001070307">Add a New Node to an Existing Qumulo Cluster</a> on Qumulo Care.

@@ -139,7 +139,7 @@ The following privileges are required for continuous replication.
 ## To Modify a Replication Relationship
 {% include note.html content="It isn't possible to edit the source and target directory paths. To make these changes, you must create a new replication relationship." %}
 
-1. Log in to the Qumulo Core Web UI.
+1. {{site.logIntoWebUI}}
 
 1. Click **Cluster > Replication**.
 
@@ -150,7 +150,7 @@ The following privileges are required for continuous replication.
 
 ## To Delete a Replication Relationship
 
-1. Log in to the Qumulo Core Web UI.
+1. {{site.logIntoWebUI}}
 
 1. Click **Cluster > Replication**.
 

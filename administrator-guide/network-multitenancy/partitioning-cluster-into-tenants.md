@@ -133,7 +133,9 @@ $ qq multitenancy_get_tenant \
 ```
 
 #### Viewing Information for All Tenants
-* In the Qumulo Core Web UI, log in to Qumulo Core and then click **Cluster > Network Multitenancy**.
+* {{site.logIntoWebUI}}
+
+* Click **Cluster > Network Multitenancy**.
 
 * In the `qq` CLI, use the `multitenancy_list_tenants` command.
 

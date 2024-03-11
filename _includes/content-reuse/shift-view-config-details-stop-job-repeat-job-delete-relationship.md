@@ -1,6 +1,6 @@
 ### To View Configuration Details and Status of Shift Relationships
 
-1. Log in to Qumulo Core.
+1. {{site.logIntoWebUI}}
 1. Click **Cluster > Copy to/from S3**.
 
    The **Copy to/from S3** page lists all existing Shift relationships.
@@ -16,7 +16,7 @@
 
 ### To Stop a Copy Job in Progress
 
-1. Log in to Qumulo Core.
+1. {{site.logIntoWebUI}}
 1. Click **Cluster > Copy to/from S3**.
 1. To stop a copy job for a specific relationship, click **&vellip; > Abort**.
 1. In the **Abort copy from?** dialog box, review the Shift relationship and then click **Yes, Abort**.
@@ -25,7 +25,7 @@
 
 ### To Repeat a Completed Copy Job
 
-1. Log in to Qumulo Core.
+1. {{site.logIntoWebUI}}
 1. Click **Cluster > Copy to/from S3**.
 1. To stop a copy job for a specific relationship, click **&vellip; > Copy Again**.
 1. In the **Copy again?** dialog box, review the Shift relationship and then click **Yes, Copy Again**.
@@ -34,7 +34,7 @@
 
 ### To Delete a Shift Relationship
 
-1. Log in to Qumulo Core.
+1. {{site.logIntoWebUI}}
 1. Click **Cluster > Copy to/from S3**.
 1. To stop a copy job for a specific relationship, click **&vellip; > Delete**.
 1. In the **Delete copy from?** dialog box, review the Shift relationship and then click **Yes, Delete**.
