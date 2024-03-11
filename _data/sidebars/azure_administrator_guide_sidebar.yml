@@ -196,6 +196,10 @@ entries:
       url: /azure-administrator-guide/encryption-data-security/managing-security-keys.html
       output: web, pdf
 
+    - title: Installing a Signed SSL Certificate
+      url: /azure-administrator-guide/encryption-data-security/installing-signed-ssl-certificate.html
+      output: web, pdf
+
   - title: Data Replication
     url: /azure-administrator-guide/replicating-data/index.html
     output: web, pdf

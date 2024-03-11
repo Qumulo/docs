@@ -17,7 +17,7 @@
 
    1. For **Bind Password**, enter the password that corresponds to the username.
 
-   1. (Optional) For Encrypt Connection, click **Yes**.
+   1. (Optional) For **Encrypt Connection**, click **Yes**.
 
       {{site.data.alerts.important}}
       <ul>

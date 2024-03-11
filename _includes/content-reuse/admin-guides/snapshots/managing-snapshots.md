@@ -2,7 +2,7 @@
 This section explains how to create on-demand snapshots and snapshot policies, view and search for existing snapshots, and delete snapshots by using the Qumulo Core Web UI.
 
 ### To Create an On-Demand Snapshot
-{{page.varLogin}}
+1. {{site.logIntoWebUI}}
 
 {{page.varSaved}}
 
@@ -19,7 +19,7 @@ This section explains how to create on-demand snapshots and snapshot policies, v
    1. Click **Save**.
 
 ### To Create a Snapshot Policy
-{{page.varLogin}}
+1. {{site.logIntoWebUI}}
 
 1. Click **Cluster > Policy**.
 
@@ -40,7 +40,7 @@ This section explains how to create on-demand snapshots and snapshot policies, v
 ### To View Existing Snapshots
 The **Snapshots** page lets you navigate a large number of snapshots.
 
-{{page.varLogin}}
+1. {{site.logIntoWebUI}}
 
 {{page.varSaved}}
 
@@ -51,7 +51,7 @@ The **Snapshots** page lets you navigate a large number of snapshots.
 ### To Find a Specific Snapshot
 {{page.var433Only}} you can search for a specific snapshot by name, creation time, and so on.
 
-{{page.varLogin}}
+1. {{site.logIntoWebUI}}
 
 {{page.varSaved}}
 
@@ -66,7 +66,7 @@ The **Snapshots** page lets you navigate a large number of snapshots.
 1. (Optional) To turn off filtering, click **disable filters**.
 
 ### To Delete a Single Snapshot
-{{page.varLogin}}
+1. {{site.logIntoWebUI}}
 
 {{page.varSaved}}
 
@@ -75,7 +75,7 @@ The **Snapshots** page lets you navigate a large number of snapshots.
 ### To Delete Multiple Snapshots
 {{page.var433Only}} you can delete multiple snapshots at once.
 
-{{page.varLogin}}
+1. {{site.logIntoWebUI}}
 
 {{page.varSaved}}
 
