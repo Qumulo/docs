@@ -22,7 +22,7 @@
       {{site.data.alerts.important}}
       <ul>
         <li>By default, Qumulo requires an encrypted connection to connect to LDAP (either LDAPS or StartTLS). If you disable the option to connect without TLS, you might expose credentials over your network.</li>
-        <li>To use encrypted connections, you must install a valid certificate for your LDAP server.</li>
+        <li>To use encrypted connections, you must <a href="../encryption-data-security/installing-signed-ssl-certificate.html">install a valid certificate for your LDAP server</a>.</li>
       </ul>
       {{site.data.alerts.end}}
 
