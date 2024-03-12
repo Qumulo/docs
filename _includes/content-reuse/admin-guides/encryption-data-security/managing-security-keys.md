@@ -121,7 +121,7 @@ When you add a key to the Qumulo file system key store, Qumulo Core enables it a
 
 
 ## Deleting a Public Key
-Use the `qq fs_security_delete_key` and specify the key identifier or name.
+Use the `qq fs_security_delete_key` command and specify the key identifier or name.
 
 {% capture unlockBeforeDelete %}It isn't possible to delete a key that a Qumulo file system resource uses. {{page.varXrefUsage}}{% endcapture %}
 {% include note.html content=unlockBeforeDelete %}
