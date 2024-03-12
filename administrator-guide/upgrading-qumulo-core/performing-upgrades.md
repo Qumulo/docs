@@ -7,6 +7,7 @@ redirect_from:
   - /administrator-guide/upgrades/instant-software-platform.html
 sidebar: administrator_guide_sidebar
 varContactQumuloCare: If you perform multiple upgrades back to back, you might encounter one or more platform upgrades in one of the incremental releases; you must install these upgrades before you continue. Before performing back to back upgrades, <a href="https://docs.qumulo.com/contacting-qumulo-care-team.html">contact the Qumulo Care team</a> for guidance.
+varViewUpgradeStatus: "To view your cluster's upgrade phase and status, use the [`qq upgrade_status`](https://docs.qumulo.com/qq-cli-command-guide/upgrade/upgrade_status.html) command."
 varRollingRebootRefresh: If you don't see a rolling reboot option for a platform upgrade, refresh the page in your browser.
 varDisableProgressBar: "You can disable the CLI progress bar by adding the <code>--no-monitor</code> flag to your command. If you do this, it isn't possible to cancel the upgrade process after it begins."
 varUploadUpgradeFile: "1. Upload the `qumulo_core_x.x.x.qimg` upgrade file to any directory on your cluster by using a client protocol such as NFS or SMB."
@@ -64,7 +65,7 @@ Every Qumulo Core upgrade has two phases, _preparation_ and _commit_.
    * **Instant Software Upgrade:** Stops the existing container and starts a new one.
    * **Platform Upgrade:** Initiates a reboot and selectively upgrades the operating system image.
 
-To determine what phase an upgrade is in, use the `qq upgrade_status` command while your cluster is performing and upgrade. For more information, see [Performing Qumulo Core Upgrades by Using the qq CLI](https://care.qumulo.com/hc/en-us/articles/115008107468) on Qumulo Care.
+{{page.varViewUpgradeStatus}}
 
 {{site.commandOutput}}
 
@@ -178,7 +179,7 @@ To determine what phase an upgrade is in, use the `qq upgrade_status` command wh
         qq upgrade_cluster commit
         ```
 
-1. To view your cluster's upgrade status, use the [`qq upgrade_status`](https://docs.qumulo.com/qq-cli-command-guide/upgrade/upgrade_status.html) command.
+1. {{page.varViewUpgradeStatus}}
 
    When the CLI progress bar shows that the upgrade is complete, Qumulo Core restarts your cluster.
 

@@ -28,7 +28,7 @@ If Qumulo Core doesn't discover any unconfigured nodes, it displays the message 
 
 To receive support for new, Qumulo-certified drives, do one of the following:
 
-* Upgrade your existing cluster to the latest version of Qumulo Core and then install the same version of Qumulo Core on your new node. For more information, see [Performing Qumulo Core Upgrades by Using the Qumulo Core Web UI](https://care.qumulo.com/hc/en-us/articles/115007247168) on Qumulo Care.
+* Upgrade your existing cluster to the latest version of Qumulo Core and then install the same version of Qumulo Core on your new node. For more information, see [Upgrading Your Qumulo Cluster](../upgrading-qumulo-core/performing-upgrades.html).
   
 * Update the Supported Drive List on your new node. For more information, {{site.contactQumuloCare}}.
 
