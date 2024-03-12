@@ -7,7 +7,12 @@ redirect_from:
   - /administrator-guide/upgrades/instant-software-platform.html
 sidebar: administrator_guide_sidebar
 varContactQumuloCare: If you perform multiple upgrades back to back, you might encounter one or more platform upgrades in one of the incremental releases; you must install these upgrades before you continue. Before performing back to back upgrades, <a href="https://docs.qumulo.com/contacting-qumulo-care-team.html">contact the Qumulo Care team</a> for guidance.
-varRollingRebootRefresh: If you don’t see a rolling reboot option for a platform upgrade, refresh the page in your browser.
+varRollingRebootRefresh: If you don't see a rolling reboot option for a platform upgrade, refresh the page in your browser.
+varDisableProgressBar: "You can disable the CLI progress bar by adding the <code>--no-monitor</code> flag to your command. If you do this, it isn't possible to cancel the upgrade process after it begins."
+varUploadUpgradeFile: "1. Upload the `qumulo_core_x.x.x.qimg` upgrade file to any directory on your cluster by using a client protocol such as NFS or SMB."
+varUpgradeTwoPhase: "Run the [`qq upgrade_cluster`](https://docs.qumulo.com/qq-cli-command-guide/upgrade/upgrade_cluster.html) command first with the `prepare` subcommand and then with the `commit` subcommand."
+varUpgrade5101Flags: "Use the `--rolling` flag to specify rolling reboot, and the `--path` flag to specify the path to the upgrade file."
+varUpgrade506: "Run the [`qq upgrade_cluster`](https://docs.qumulo.com/qq-cli-command-guide/upgrade/upgrade_cluster.html) command and use the `--path` flag to specify the path to the upgrade file."
 ---
 
 {{site.data.alerts.important}}
@@ -87,7 +92,7 @@ To determine what phase an upgrade is in, use the `qq upgrade_status` command wh
 
 ### To Upgrade Your Qumulo Cluster by Using the Qumulo Core Web UI
 
-1. Upload the `qumulo_core_x.x.x.qimg` upgrade file to any directory on your cluster by using a client protocol such as NFS or SMB.
+{{page.varUploadUpgradeFile}}
 
 1. {{site.logIntoWebUI}}
 
@@ -97,7 +102,7 @@ To determine what phase an upgrade is in, use the `qq upgrade_status` command wh
 
 1. Click **Upgrade...**
 
-   Depending on the [upgrade mode for your release](mode-reference.html), continue to one of the following sections.
+1. Depending on the [upgrade mode for your release](mode-reference.html), do one of the following:
 
    * **Instant Software Upgrade:** In the **Ready to upgrade?** dialog box, confirm the current and new versions of Qumulo Core and then click **Start Upgrade**.
 
@@ -112,3 +117,70 @@ To determine what phase an upgrade is in, use the `qq upgrade_status` command wh
     Qumulo Core prepares the upgrade then installs Qumulo software on your cluster.
 
     When the upgrade is complete, the message **You have successfully upgraded from Qumulo Core x.x.x to y.y.y** is displayed.
+
+### To Upgrade Your Qumulo Cluster by Using the qq CLI
+
+{{site.data.alerts.important}}
+<ul>
+  <li>For two-phase upgrades, there is no client downtime during the <em>prepare</em> phase, only during the commit phase.</li>
+  <li>{{page.varDisableProgressBar}}</li>
+  <li>Qumulo Core reboots a number of nodes (depending on the protection level configured on your cluster) in succession. This requires the restriper job to finish before Qumulo Core can continue to the next node in the cluster. If your cluster is under heavy load from write or delete operations, this process can take a long time.</li>
+</ul>
+{{site.data.alerts.end}}
+
+{{page.varUploadUpgradeFile}}
+
+1. Use SSH to connect to an IP address of a node in your cluster.
+
+1. To become the root user, run the `sudo -s` command.
+
+1. Depending on the current Qumulo Core version on your cluster, do one of the following:
+
+   * **Qumulo Core 5.1.0.1 (and Higher):**
+
+     * **Immediate Upgrade with Rolling Reboot:** Run the [`qq upgrade_cluster`](https://docs.qumulo.com/qq-cli-command-guide/upgrade/upgrade_cluster.html) command. {{page.varUpgrade5101Flags}} For example:
+
+       ```bash
+       qq upgrade_cluster \
+         --rolling \
+         --path /qumulo_upgrade_x.x.x.qimg
+       ```
+
+     * **Two-Phase Upgrade with Rolling Reboot:** {{page.varUpgradeTwoPhase}} {{page.varUpgrade5101Flags}} For example:
+ 
+       ```bash
+       qq upgrade_cluster prepare \
+         --rolling \
+         --path /qumulo_upgrade_x.x.x.qimg
+       ```
+
+       ```bash
+       qq upgrade_cluster commit
+       ```
+
+    * **Qumulo Core 5.0.6 (and Lower):**
+
+      * **Immediate Upgrade:** {{page.varUpgrade506}} For example:
+
+        ```bash
+        qq upgrade_cluster \
+          --path /qumulo_core_x.x.x.qimg
+        ```
+
+      * **Two-Phase Upgrade:** {{page.varUpgradeTwoPhase}} Use the `--path` flag to specify the path to the upgrade file. For example:
+
+        ```bash
+        qq upgrade_cluster prepare \
+          --path /qumulo_core_x.x.x.qimg
+        ```
+
+        ```bash
+        qq upgrade_cluster commit
+        ```
+
+1. To view your cluster's upgrade status, use the [`qq upgrade_status`](https://docs.qumulo.com/qq-cli-command-guide/upgrade/upgrade_status.html) command.
+
+   When the CLI progress bar shows that the upgrade is complete, Qumulo Core restarts your cluster.
+
+   {% capture disableProgressBar %}{{page.varDisableProgressBar}}{% endcapture %}
+   {% include note.html content=disableProgressBar %}
