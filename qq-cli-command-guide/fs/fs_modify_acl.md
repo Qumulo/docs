@@ -29,8 +29,6 @@ varCreateACL: "Run the `qq fs_modify_acl` command and use the `--path` flag to s
 ## Examples
 The following examples show how to use the `qq fs_modify_acl` command to work with access control lists (ACLs).
 
-For information about how to add a new ACL recursively and with multithreading, see [`qq fs_walk_tree`](fs_walk_tree.html).
-
 ### To Create a New ACL
 {{page.varCreateACL}} For the `add_entry` subcommand:
 
@@ -39,7 +37,8 @@ For information about how to add a new ACL recursively and with multithreading, 
 * Use the `-r` flag to specify the rights.
   {% include tip.html content="For full control, specify `-r All`." %}
 * Use the `-f` flag to specify ACL flags.
-  {% include note.html content="To ensure that the ACL applies to newly created files automatically, specify `"Object inherit" "Container inherit"`." %}
+  {% capture newFiles %}To ensure that the ACL applies to newly created files automatically, specify `"Object inherit" "Container inherit"`.{% endcapture %}
+  {% include note.html content=newFiles %}
 
 For example:
 
