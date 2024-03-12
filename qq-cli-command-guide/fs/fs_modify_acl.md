@@ -29,6 +29,8 @@ varCreateACL: "Run the `qq fs_modify_acl` command and use the `--path` flag to s
 ## Examples
 The following examples show how to use the `qq fs_modify_acl` command to work with access control lists (ACLs).
 
+{% include important.html content="Before deploying permissions changes in a production environment, we strongly recommend performing a dry run on a test directory." %}
+
 ### To Create a New ACL
 {{page.varCreateACL}} For the `add_entry` subcommand:
 
@@ -94,7 +96,8 @@ qq fs_modify_acl --path=/my_path \
   ```bash
   qq fs_modify_acl --path /my_path \
     remove_entry --trustee="DOMAIN\\myusername"
-
+  ```
+  
 * To remove a specific position from an ACL, for the `remove_entry` subcommand use the `-p` flag to specify the position number. For example:
 
   ```bash
@@ -104,55 +107,4 @@ qq fs_modify_acl --path=/my_path \
 
 * To remove all ACLs, for the `remove_entry` subcommand use the `-a` flag.
 
-### To Recursively Add a New ACL with Multithreading
-{% include note.html content="For very large directories, we recommend running the following command [in a screen session](https://linuxize.com/post/how-to-use-linux-screen/)." %}
-
-1. Ensure that the `jq` utility is installed on your system.
-
-1. Run the `qq fs_walk_tree` command and use the `--path` flag to specify the path for the ACL. To extract the path for each item into an array, pipe the command to `jq`. To modify the ACL for each path, pipe the command to `xargs` which in turn runs the `qq fs_set_acl` command on each path. For example:
-
-   ```bash
-   qq fs_walk_tree --path /my_path | \
-     jq -r '.tree_nodes[].path' | \
-       xargs -d '\n' -I % -n1 -P 4 \
-         qq fs_modify_acl --path '%' \
-           add_entry -t "DOMAIN\my_username" \
-             -y Allowed \
-             -r "Read" "Execute/Traverse" \
-             -f "Object inherit" "Container inherit"
-   ```
-
-### To Recursively Apply a Permissions Template
-Performing a permission repair operation ensures consistent access controls across your file system.
-
-{% include important.html content="Before deploying permissions changes in a production environment, we strongly recommend performing a dry run on a test directory." %}
-
-1. Ensure that the `jq` utility is installed on your system.
-
-1. Use a new or existing file with the necessary permissions to capture the ACL and save it in JSON format by using the `qq fs_get_acl` command. For example:
-   
-   ```bash
-   qq fs_get_acl --path /path_to_acl_source \
-     --json >/history/new_permissions.json
-   ```
-
-1. To apply the captured ACL, run the `qq fs_walk_tree` command and use the `--path` flag to specify the path for the ACL. To extract the path for each item into an array, pipe the command to `jq`. To modify the ACL for each path, pipe the command to `xargs` which in turn runs the `qq fs_set_acl` command on each path.
-
-   ```bash
-   qq fs_walk_tree --path /my_target_path | \
-     jq -r '.tree_nodes[].path' | \
-       xargs -I % -n1 -P 4 \
-         qq fs_set_acl --path '%' \
-           --file /history/new_permissions.json >> &>/dev/null
-   ```
-
-### To Recursively Modify SMB Attributes
-Run the `qq fs_walk_tree` command and use the `--path` flag to specify the path for the ACL. To extract the path for each item into an array, pipe the command to `jq`. To modify the ACL for each path, pipe the command to `xargs` which in turn runs the `qq fs_set_acl` command on each path.
-
-```bash
-qq fs_walk_tree --path /my_path | \
-  jq -r '.tree_nodes[].path' | \
-    xargs -I % -n1 -P 4 \
-      qq fs_file_set_smb_attrs --path % \
-        --hidden false
-```
+{% include content-reuse/cli-guide/recursive-acl-template-smb-attributes.md %}
