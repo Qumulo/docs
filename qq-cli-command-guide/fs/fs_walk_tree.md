@@ -52,3 +52,7 @@ usage: "qq fs_walk_tree [-h] [--path PATH] [--snapshot SNAPSHOT] [--file-only | 
 zendesk_source: qq CLI Command Guide
 
 ---
+
+## Examples
+
+{% include content-reuse/cli-guide/recursive-acl-template-smb-attributes.md %}
