@@ -29,7 +29,7 @@ To ensure the optimal performance of your cluster, its client connections must b
 ### To View Client Connections in JSON Format
 Run the `qq network_list_connections` command to list the IP address and protocol for each client.
 
-{{site.exampleOutput}} It specifies 
+{{site.exampleOutput}}
 
 ```json
 [{
