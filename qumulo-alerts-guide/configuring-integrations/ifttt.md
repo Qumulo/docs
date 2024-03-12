@@ -27,7 +27,7 @@ Run the `./alerts ifttt_server_add` command and specify the IFTTT server token, 
 </ul>
 {{site.data.alerts.end}}
 
-{{site.qumuloalerts.jsonOutput}}
+{{site.exampleOutput}}
 
 ```json
 [{

@@ -111,7 +111,7 @@ Ensure that the number of static and floating IP addresses is equal to or greate
      --target-max-node-failures 1
    ```
 
-   {{site.commandOutput}}
+   {{site.exampleOutput}}
 
    ```
    Current cluster:

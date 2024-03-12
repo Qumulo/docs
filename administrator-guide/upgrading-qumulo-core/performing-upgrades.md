@@ -67,7 +67,7 @@ Every Qumulo Core upgrade has two phases, _preparation_ and _commit_.
 
 {{page.varViewUpgradeStatus}}
 
-{{site.commandOutput}}
+{{site.exampleOutput}}
 
 ```json
 {

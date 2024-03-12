@@ -95,7 +95,7 @@ You can specify an identity by using:
 
 {% include important.html content="Currently, it isn't possible to associate an S3 access key with a POSIX group ID (GID)." %}
 
-{{site.s3.permissions.commandOutput}}
+{{site.exampleOutput}}
 
 {% capture createAccessKeyResponse %}{
   "access_key_id": "000000000001fEXAMPLE",
@@ -139,7 +139,7 @@ For example:
 }
 ```
 
-{{page.varResponseOutput}}
+{{site.exampleOutput}}
 
 ```json
 {{createAccessKeyResponse}}
@@ -185,7 +185,7 @@ To list S3 access keys, you must have {{site.s3.permissions.bucketsRead}}.
 
 * To list the S3 access keys that your Qumulo cluster knows, use the `qq s3_list_access_keys` command:
 
-  {{site.s3.permissions.commandOutput}} {{site.s3.permissions.timesUTC}}
+  {{site.exampleOutput}} {{site.s3.permissions.timesUTC}}
 
   ```
   access_key_id         owner  creation_time
@@ -195,7 +195,7 @@ To list S3 access keys, you must have {{site.s3.permissions.bucketsRead}}.
 
 * For JSON output, use the `--json` flag.
 
-  {{site.s3.permissions.commandOutput}} The command returns a single JSON object that contains the combined responses from calls to the `/v1/s3/access-keys/` Qumulo REST API endpoint. 
+  {{site.exampleOutput}} The command returns a single JSON object that contains the combined responses from calls to the `/v1/s3/access-keys/` Qumulo REST API endpoint. 
 
 {{listAccessKeysResponse}}
 
@@ -205,7 +205,7 @@ To list the S3 access keys that your Qumulo cluster knows, send a `GET` request 
 {% capture restrictResults %}To restrict the number of returned results, up to the maximum of {{page.varListMax}} access keys (this is the default limit), include the optional `limit` query parameter in the request.{% endcapture %}
 {% include note.html content=restrictResults %}
 
-{{page.varResponseOutput}} {{page.varPaginatedResponsePart1}} {{page.varListMax}}. {{page.varPaginatedResponsePart2}}
+{{site.exampleOutput}} {{page.varPaginatedResponsePart1}} {{page.varListMax}}. {{page.varPaginatedResponsePart2}}
 
 {{listAccessKeysResponse}}
 

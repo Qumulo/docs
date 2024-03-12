@@ -25,7 +25,7 @@ Run the `./alerts quota_add` command and specify the quota path to monitor. The 
   --error 85
 ```
 
-{{site.qumuloalerts.jsonOutput}}
+{{site.exampleOutput}}
 
 ```json
 [{
@@ -54,7 +54,7 @@ Run the `./alerts quota_add` command and specify the quota path. The following e
 
 {% include note.html content="When you add a quota and attach it to a Qumulo cluster, the `alerts` CLI doesn't list the cluster." %}
 
-{{site.qumuloalerts.jsonOutput}}
+{{site.exampleOutput}}
 
 ```json
 [{
@@ -74,7 +74,7 @@ Run the `./alerts quota_add` command and specify the quota path. The following e
 ## To List All Defined Quotas and Attached Clusters
 Run the `./alerts quota_list` command.
 
-{{site.qumuloalerts.jsonOutput}} In this example, the second quota is attached to the fully qualified domain name (FQDN) of a Qumulo cluster.
+{{site.exampleOutput}} In this example, the second quota is attached to the fully qualified domain name (FQDN) of a Qumulo cluster.
 
 ```json
 [{

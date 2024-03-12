@@ -174,7 +174,7 @@ For more information, see [S3 API](../s3-api/configuring-using-s3-api.html) in t
 ## Listing Client Connections
 To determine tenant activity and client types connected to the tenant, use the `qq network_list_connections` command. For more information, see [Balance of Client Connections on your Qumulo Cluster](https://care.qumulo.com/hc/en-us/articles/115009003427) on Qumulo Care.
 
-{{site.commandOutput}}
+{{site.exampleOutput}}
 
 ```json
 [

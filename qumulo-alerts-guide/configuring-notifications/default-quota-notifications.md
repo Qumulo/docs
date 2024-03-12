@@ -24,7 +24,7 @@ For more information about how quotas work, see [Configuring Quota Notifications
 ## To List the Predefined No-Path Quota
 Qumulo Alerts comes with a predefined no-path quota. To get information about this quota, use the `./alerts default_quota_list` command.
 
-{{site.qumuloalerts.jsonOutput}}
+{{site.exampleOutput}}
 
 ```json
 [{
@@ -57,7 +57,7 @@ Run the `./alerts default_quota_add` command and specify the default path and th
   --critical 98
 ```
 
-{{site.qumuloalerts.jsonOutput}}
+{{site.exampleOutput}}
 
 ```json
 [{

@@ -14,7 +14,7 @@
 
 1. Verify that your certificate and the CA-bundle are in the PEM format by running the `file *` command.
 
-   {{site.commandOutput}}
+   {{site.exampleOutput}}
 
    ```bash
    certbundle.pem: PEM certificate

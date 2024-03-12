@@ -269,7 +269,6 @@ qumuloalerts:
   consTrans: The consumer processes for <a href="../configuring-integrations/email-server.html">email</a>, <a href="../configuring-integrations/ifttt.html">IFTTT</a>, and <a href="../configuring-integrations/sms-clicksend.html">SMS (ClickSend)</a> integrations translate messages into the recipient's native language.
   locale: For the <code>--language</code> flag, see <a href="../getting-started/supported-language-locales.html">What Language Locales Qumulo Alerts Supports</a>.
   tz: For the  <code>--timezone</code> flag, see <a href="../getting-started/supported-language-locales.html#converting-time-zones">Converting Time Zones</a>.
-  jsonOutput: The following is example JSON output from the command.
   testSuccess: A successful response returns the <code>[{ "ok"&colon; true }]</code> JSON output.
   warningThreshold: For the <code>--warning</code> flag, the threshold must be lower than the thresholds of both the <code>--error</code> and <code>--critical</code> flags.
   errorThreshold: For the <code>--error</code> flag, the threshold must be lower than the threshold of the <code>--critical</code> flag.
@@ -278,6 +277,7 @@ qumuloalerts:
 
 jsonNotTable: The output displays information in a table format. To view the output in JSON format, use the <code>--json</code> flag.
 
+exampleOutput: The following is example output.
 
 logIntoWebUI: Log in to the Qumulo Core Web UI.
 
@@ -296,7 +296,6 @@ s3:
     directAPI: You can also use the S3 API directly.
     bucketsRead: the <code>PRIVILEGE_S3_BUCKETS_READ</code> privilege
     bucketsWrite: the <code>PRIVILEGE_S3_BUCKETS_WRITE</code> privilege
-    commandOutput: The following is example output from the command.
     timesUTC: All times are in the UTC time zone.
     secretAccessKeys: After Qumulo Core initially creates your secret access keys, it never logs or displays them again. If you lose your secret access key, it isn't possible to recover it and you must create a new access key pair.
   docs:

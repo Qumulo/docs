@@ -31,7 +31,7 @@ Use the `./alerts email_server_add` and specify the sender's email address, reci
 </ul>
 {{site.data.alerts.end}}
 
-{{site.qumuloalerts.jsonOutput}}
+{{site.exampleOutput}}
 
 ```json
 [{

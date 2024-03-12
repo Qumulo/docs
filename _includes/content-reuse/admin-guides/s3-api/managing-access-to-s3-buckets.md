@@ -41,7 +41,7 @@ $ aws2 s3 presign s3://my-bucket/my-file.txt \
   --expires-in 600
 ```
 
-{{site.commandOutput}} The `X-Amz-Expires` header is set to 10 minutes.
+{{site.exampleOutput}} The `X-Amz-Expires` header is set to 10 minutes.
 
 ```
 https://{{site.exampleIP0}}:9000/my-bucket/my-file.txt?
@@ -79,7 +79,7 @@ To ensure that anonymous requests have permission to read files in a bucket, gra
      --name my-bucket
    ```
 
-   {{site.s3.permissions.commandOutput}} {{site.s3.permissions.timesUTC}}
+   {{site.exampleOutput}} {{site.s3.permissions.timesUTC}}
 
    ```json
    {

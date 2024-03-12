@@ -31,7 +31,7 @@ Run the `./alerts user_add` command and specify the administrator's full name, u
 </ul>
 {{site.data.alerts.end}}
 
-{{site.qumuloalerts.jsonOutput}}
+{{site.exampleOutput}}
 
 ```json
 [{
@@ -62,7 +62,7 @@ Run the `./alerts notification_group_add` command and specify the notification g
   --event NOTIFY_NODES
 ```
 
-{{site.qumuloalerts.jsonOutput}}
+{{site.exampleOutput}}
 
 ```json
 [{
@@ -81,7 +81,7 @@ Run the `./alerts notification_group_add_user` command and specify the notificat
   --username jjohnson
 ```
 
-{{site.qumuloalerts.jsonOutput}}
+{{site.exampleOutput}}
 
 ```json
 [{

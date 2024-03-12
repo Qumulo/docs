@@ -120,7 +120,7 @@ By default, the default bucket directory prefix for newly created buckets is the
 #### To Configure the Default Bucket Directory Prefix by Using the qq CLI
 1. To view the current default bucket directory prefix, use the `qq s3_get_settings` command.
 
-   {{site.s3.permissions.commandOutput}}
+   {{site.exampleOutput}}
 
    ```json 
    {"enabled": true, "base_path": "/buckets/", ...}
@@ -198,7 +198,7 @@ $ qq s3_get_bucket \
   --name my-bucket
 ```
 
-{{site.s3.permissions.commandOutput}} {{site.s3.permissions.timesUTC}}.
+{{site.exampleOutput}} {{site.s3.permissions.timesUTC}}.
 
 ```json
 {
@@ -218,7 +218,7 @@ To list your S3 buckets {{site.s3.permissions.APIorCLI}}, you need {{site.s3.per
 
 * Run the `qq s3_list_buckets` command.
 
-  {{site.s3.permissions.commandOutput}} {{site.s3.permissions.timesUTC}}
+  {{site.exampleOutput}} {{site.s3.permissions.timesUTC}}
 
   ```
   name       creation_time                   path
@@ -228,7 +228,7 @@ To list your S3 buckets {{site.s3.permissions.APIorCLI}}, you need {{site.s3.per
 
 * For JSON output, use the `--json` flag.
 
-  {{site.s3.permissions.commandOutput}} {{site.s3.permissions.timesUTC}} {{page.varListJSON}}
+  {{site.exampleOutput}} {{site.s3.permissions.timesUTC}} {{page.varListJSON}}
 
   ```json
   {
@@ -246,7 +246,7 @@ To list your S3 buckets {{site.s3.permissions.APIorCLI}}, you need {{site.s3.per
 ### To List S3 Buckets by Using the S3 API
 Run the `aws s3api list-buckets` command. This command uses the [`ListBuckets`]({{site.s3.actions.ListBuckets}}) S3 API action.
 
-{{site.s3.permissions.commandOutput}} {{site.s3.permissions.timesUTC}} {{page.varListJSON}}
+{{site.exampleOutput}} {{site.s3.permissions.timesUTC}} {{page.varListJSON}}
 
 ```json
 {

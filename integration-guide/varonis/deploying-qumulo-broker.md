@@ -34,7 +34,7 @@ This section explains how to deploy Qumulo Broker on a standalone machine or vir
    
 1. To start the Docker containers, use the `docker compose up -d` command.
 
-   The command creates the network and containers. {{site.commandOutput}}
+   The command creates the network and containers. {{site.exampleOutput}}
    
    ```
     ⠿ Network api_qumulo-net  Created      0.1s
@@ -45,7 +45,7 @@ This section explains how to deploy Qumulo Broker on a standalone machine or vir
    
 1. To view the status of running containers, use the `docker ps` command.
 
-   {{site.commandOutput}}
+   {{site.exampleOutput}}
 
    ```
    CONTAINER ID   IMAGE          COMMAND                  CREATED         
@@ -81,7 +81,7 @@ This section explains how to configure audit logging on your Qumulo cluster.
    
 1. To confirm the audit logging configuration for your cluster, use the `qq audit_get_syslog_config` command.
 
-   In the following example output from the command, audit logging is enabled in JSON format.
+   In the following example output, audit logging is enabled in JSON format.
    
    ```json
    {

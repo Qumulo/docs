@@ -24,7 +24,7 @@ Run the `./alerts quota_add` command and specify the quota path, the email addre
 
 {% include note.html content="For the `--user-email` flag, you can specify a comma-delimited list of email addresses to notify, if you also specify `--user-notification True --user-mode direct`." %}
 
-{{site.qumuloalerts.jsonOutput}}
+{{site.exampleOutput}}
 
 ```json
 [{
@@ -57,7 +57,7 @@ Run the `./alerts ad_server_add` command and specify the AD server, AD login nam
 
 {% include important.html content="For maximum security, configure a specific AD user to issue lookup requests." %}
 
-{{site.qumuloalerts.jsonOutput}}
+{{site.exampleOutput}}
 
 ```json
 [{
@@ -84,7 +84,7 @@ Run the `./alerts default_quota_update` command, specify the default quota ID, a
   --admin-notification False
 ```
 
-{{site.qumuloalerts.jsonOutput}}
+{{site.exampleOutput}}
 
 ```json
 [{

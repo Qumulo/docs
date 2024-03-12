@@ -7,8 +7,8 @@ redirect_from:
   - /administrator-guide/protecting-data/managing-encryption-at-rest.html
   - /administrator-guide/encryption-data-security/configuring-remote-key-management-server.html
 sidebar: administrator_guide_sidebar
-varLocalKey: The following is example JSON output for a locally stored master key.
-varKmsKey: The following is example JSON output for a master key stored in a KMS.
+varLocalKey: The master key is stored locally.
+varKmsKey: The master key is stored in a KMS.
 varExampleKeyID: abcd-1234-efgh-5678
 varExampleHostname: kms-server.example.com
 ---
@@ -35,7 +35,7 @@ This section explains how to retrieve the status or detailed information about a
 ### To View the Status of an Active Encryption Configuration
 Run the `qq encryption_get_status` command.
 
-{{page.varLocalKey}}
+{{site.exampleOutput}} {{page.varLocalKey}}
 
 ```json
 {
@@ -45,7 +45,7 @@ Run the `qq encryption_get_status` command.
 }
 ```
 
-{{page.varKmsKey}}
+{{site.exampleOutput}} {{page.varKmsKey}}
 
 ```json
 {
@@ -62,7 +62,7 @@ Run the `qq encryption_get_status` command.
 ### To View Detailed Information for an Active Encryption Configuration
 Run the `qq encryption_get_key_store` command.
 
-{{page.varLocalKey}}
+{{site.exampleOutput}} {{page.varLocalKey}}
 
 ```json
 {
@@ -73,7 +73,7 @@ Run the `qq encryption_get_key_store` command.
 }
 ```
 
-{{page.varKmsKey}}
+{{site.exampleOutput}} {{page.varKmsKey}}
 
 ```json
 {

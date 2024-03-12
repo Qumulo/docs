@@ -21,7 +21,7 @@ In the following example, we include the plugins `Disks` and `Nodes`.
   -pi Nodes
 ```
 
-{{site.qumuloalerts.jsonOutput}}
+{{site.exampleOutput}}
     
 ```json
 [{
@@ -64,7 +64,7 @@ In the following example, we include the `Alarms` category.
   -pc Alarms
 ```
 
-{{site.qumuloalerts.jsonOutput}} This example output is truncated.
+{{site.exampleOutput}}
 
 ```json
 [{
@@ -113,7 +113,7 @@ In the following example, we include the `Alarms`, `Alerts`, and `Informational`
   -pc Informational
 ```
 
-{{site.qumuloalerts.jsonOutput}} This example output is truncated.
+{{site.exampleOutput}}
 
 ```json
 [{

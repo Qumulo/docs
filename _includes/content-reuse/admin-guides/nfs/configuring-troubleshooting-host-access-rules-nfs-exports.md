@@ -101,7 +101,7 @@ Qumulo Core applies the host access rule to the NFS export.
      --restrictions root_restrictions.json
    ```
 
-   {{page.varExampleJSONoutput}}
+   {{site.exampleOutput}}
 
    ```json
    {
@@ -136,7 +136,7 @@ This section describes the troubleshooting steps for a scenario in which an NFS 
    qq nfs_get_export --export-path /
    ```
 
-   {{site.commandOutput}}
+   {{site.exampleOutput}}
 
    ```
    ID:          1
@@ -167,7 +167,7 @@ This section describes the troubleshooting steps for a scenario in which an NFS 
    qq dns_resolve_ips --ips {{site.exampleIP2}}
    ```
 
-   {{page.varExampleJSONoutput}}
+   {{site.exampleOutput}}
 
    ```json
    [{
@@ -193,7 +193,7 @@ This section describes the troubleshooting steps for a scenario in which an NFS 
 
    * Run the `qq dns_resolve_hostnames` command and specify the hostname to perform a lookup for `user1.accounting.example.com`.
   
-     {{site.commandOutput}}
+     {{site.exampleOutput}}
 
      ```json
      [{

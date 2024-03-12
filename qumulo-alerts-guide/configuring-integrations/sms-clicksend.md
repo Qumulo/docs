@@ -31,7 +31,7 @@ Run the `./alerts clicksend_server_add` command and specify the username, token,
 </ul>
 {{site.data.alerts.end}}
       
-{{site.qumuloalerts.jsonOutput}}
+{{site.exampleOutput}}
   
 ```json
 [{
