@@ -94,6 +94,23 @@ entries:
       url: /administrator-guide/authentication-qumulo-core/configuring-ldap.html
       output: web, pdf
 
+    - title: Creating and Using Bearer Tokens
+      url: /administrator-guide/authentication-qumulo-core/creating-using-bearer-tokens-to-authenticate-qumulo-rest-api-calls.html
+      output: web, pdf
+
+  - title: Connecting to External Services
+    url: /administrator-guide/connecting-to-external-services/index.html
+    output: web, pdf
+    folderitems:
+
+    - title: Creating and Using Access Tokens
+      url: /administrator-guide/connecting-to-external-services/creating-using-access-tokens-to-authenticate-external-services-qumulo-core.html
+      output: web, pdf
+
+    - title: Connecting a Kubernetes Cluster
+      url: /administrator-guide/connecting-to-external-services/connecting-kubernetes-cluster-with-container-storage-interface-csi-driver.html
+      output: web, pdf
+
   - title: Authorization
     url: /administrator-guide/authorization-qumulo-core/index.html
     output: web, pdf
@@ -101,19 +118,6 @@ entries:
 
     - title: Managing Cross-Protocol Permissions
       url: /administrator-guide/authorization-qumulo-core/managing-cross-protocol-permissions-xpp.html
-      output: web, pdf
-
-  - title: External Services
-    url: /administrator-guide/external-services/index.html
-    output: web, pdf
-    folderitems:
-
-    - title: Using Access Tokens
-      url: /administrator-guide/external-services/using-access-tokens.html
-      output: web, pdf
-
-    - title: Connecting a Kubernetes Cluster
-      url: /administrator-guide/external-services/connecting-kubernetes-cluster-with-container-storage-interface-csi-driver.html
       output: web, pdf
 
   - title: Network Configuration
