@@ -11,7 +11,7 @@ sidebar: qumulo_alerts_guide_sidebar
 
 
 ## To Integrate IFTTT with Qumulo Alerts
-Use the `./alerts ifttt_server_add` command and specify the IFTTT server token, language, and time zone. For example:
+Run the `./alerts ifttt_server_add` command and specify the IFTTT server token, language, and time zone. For example:
 
 ```bash
 ./alerts ifttt_server_add \
@@ -38,6 +38,6 @@ Use the `./alerts ifttt_server_add` command and specify the IFTTT server token, 
 ```
 
 ## To Test Integration with IFTTT
-Use the `./alerts ifttt_server_test` command.
+Run the `./alerts ifttt_server_test` command.
 
 {{site.qumuloalerts.testSuccess}}

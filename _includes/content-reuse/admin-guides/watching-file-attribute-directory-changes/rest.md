@@ -195,7 +195,7 @@ The following is a list of available notification types in [SSE event payloads](
 
 
 ## Streaming Change Notifications by Using the qq CLI
-Use the `qq fs_notify` command and specify the path to a directory. For example:
+Run the `qq fs_notify` command and specify the path to a directory. For example:
 
 ```bash
 qq fs_notify --path /my/directory

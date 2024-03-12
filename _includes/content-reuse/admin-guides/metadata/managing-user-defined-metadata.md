@@ -34,7 +34,7 @@ Managing {{site.udm.l}} requires the following privileges:
 * `WRITE_EA`: Write to, or delete, the {{site.udm.l}} of a file
 
 ### To Create a Generic {{site.udm.t}} Entry for a File by Using the qq CLI
-Use the `fs_set_user_metadata` command and specify the path to the file, the key, and the value. For example:
+Run the `fs_set_user_metadata` command and specify the path to the file, the key, and the value. For example:
 
 ```bash
 qq fs_set_user_metadata \
@@ -62,7 +62,7 @@ qq fs_get_user_metadata \
 For more information, see [`qq fs_get_user_metadata`](https://docs.qumulo.com/qq-cli-command-guide/fs/fs_get_user_metadata.html) in the {{site.guides.cli}}.
 
 ### To List All Generic {{site.udm.t}} Entries for a File by Using the qq CLI
-Use the `fs_list_user_metadata` command and specify the path to the file. For example:
+Run the `fs_list_user_metadata` command and specify the path to the file. For example:
 
 ```bash
 qq fs_list_user_metadata \
@@ -75,7 +75,7 @@ qq fs_list_user_metadata \
 For more information, see [`qq fs_list_user_metadata`](https://docs.qumulo.com/qq-cli-command-guide/fs/fs_list_user_metadata.html) in the {{site.guides.cli}}.
 
 ### To Delete a Generic {{site.udm.t}} Entry for a File by Using the qq CLI
-Use the `fs_delete_user_metadata` command and specify the path to the file and the key. For example:
+Run the `fs_delete_user_metadata` command and specify the path to the file and the key. For example:
 
 ```bash
   qq fs_delete_user_metadata \

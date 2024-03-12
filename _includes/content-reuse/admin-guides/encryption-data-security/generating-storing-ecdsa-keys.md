@@ -14,7 +14,7 @@ This section explains how to generate a 256-bit ECDSA private key by using Linux
 ### To Generate a Private Key by Using Linux CLI Tools
 To generate a key in the `.pem` format, use the `openssl` or `ssh-keygen` tools.
 
-* Use the `openssl` command and specify the path to the private key. For example:
+* Run the `openssl` command and specify the path to the private key. For example:
 
   ```bash
   openssl ecparam \
@@ -23,7 +23,7 @@ To generate a key in the `.pem` format, use the `openssl` or `ssh-keygen` tools.
     -out /private-key-path
   ```
 
-* Use the `ssh-keygen` command and specify the path to the private key. For example:
+* Run the `ssh-keygen` command and specify the path to the private key. For example:
 
   ```bash
   ssh-keygen \

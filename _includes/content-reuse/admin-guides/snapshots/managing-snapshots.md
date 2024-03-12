@@ -95,7 +95,7 @@ This section explains how to create snapshots on a schedule, create a snapshot w
 
 <a id="create-snapshot-with-policy"></a>
 ### Creating Snapshots on a Schedule by Using a Snapshot Policy
-Use the `qq snapshot_create_policy` command to create a snapshot policy and specify the interval at which Qumulo Core takes and deletes snapshots.
+Run the `qq snapshot_create_policy` command to create a snapshot policy and specify the interval at which Qumulo Core takes and deletes snapshots.
 
 In the following example, we create a policy named `every_day` that takes a snapshot every midnight in the Pacific time zone and retains the snapshot for two days. Every new snapshot that this policy creates is locked with a key named `my-key-name`.  {{page.varSeeLockUnlock}}
 
@@ -127,7 +127,7 @@ qq snapshot_modify_policy change_to_hourly_or_less \
 ```
 
 ### Creating an On-Demand Snapshot with an Expiration Time
-Use the `qq_snapshot_create_snapshot` command to specify an expiration date or expiration time before Qumulo Core deletes the snapshot.
+Run the `qq_snapshot_create_snapshot` command to specify an expiration date or expiration time before Qumulo Core deletes the snapshot.
 
 {% include note.html content="If you don't specify an expiration date or expiration time before deletion, Qumulo Core never deletes the snapshot." %}
 
@@ -146,7 +146,7 @@ qq snapshot_create_snapshot \
 ```
 
 ### Modifying a Snapshot's Expiration Time
-Use the `qq snapshot_modify_snapshot` command and specify the snapshot ID from the **Saved Snapshots** page in the Qumulo Core Web UI (for example, for the `1234567_replication_from_prod` snapshot, the ID is `1234567`).
+Run the `qq snapshot_modify_snapshot` command and specify the snapshot ID from the **Saved Snapshots** page in the Qumulo Core Web UI (for example, for the `1234567_replication_from_prod` snapshot, the ID is `1234567`).
 
 In the following example, the snapshot with ID `1234567` never expires.
 

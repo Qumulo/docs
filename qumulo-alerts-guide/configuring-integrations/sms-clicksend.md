@@ -12,7 +12,7 @@ sidebar: qumulo_alerts_guide_sidebar
 {% include important.html content="To be able to send SMS in the U.S. and Canada, you must sign up for a dedicated toll-free number (TFN)." %}
 
 ## To Integrate ClickSend with Qumulo Alerts
-Use the `./alerts clicksend_server_add` command and specify the username, token, sender ID, and recipient's phone number.
+Run the `./alerts clicksend_server_add` command and specify the username, token, sender ID, and recipient's phone number.
 
 ```bash
 ./alerts clicksend_server_add \
@@ -44,7 +44,7 @@ Use the `./alerts clicksend_server_add` command and specify the username, token,
 ```
 
 ## To Test Integration with ClickSend
-Use the `./alerts clicksend_server_test` command.
+Run the `./alerts clicksend_server_test` command.
 
 {% include note.html content="For integration testing to complete successfully, the `--to-address` flag must be configured already." %}
 

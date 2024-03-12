@@ -23,7 +23,7 @@ Access tokens are long-lived. They provide an alternative to session-based authe
 {{page.varPrereqWrite}} This section explains how to create access tokens without or with an expiration time by using the `qq` CLI.
 
 ### To Create an Access Token without an Expiration Time
-Use the `auth_create_access_token` command and specify the user. For example:
+Run the `auth_create_access_token` command and specify the user. For example:
 
 ```bash
 $ qq auth_create_access_token jane
@@ -130,7 +130,7 @@ $ qq --credentials-store ./qumulo_credentials who_am_i
 {{page.varPrereqRead}} This section explains how to get metadata for a specific access token or all access tokens by using the `qq` CLI.
 
 ### To Get Metadata for a Specific Access Token
-Use the `auth_get_access_token` command and specify the access token ID. For example:
+Run the `auth_get_access_token` command and specify the access token ID. For example:
 
 ```bash
 $ qq auth_get_access_token 1234567890123456789012
@@ -167,7 +167,7 @@ For example:
 ```
 
 ### To Get Metadata for All Access Tokens
-Use the `qq auth_list_access_tokens` command.
+Run the `qq auth_list_access_tokens` command.
 
 {{site.data.alerts.important}}
 Listing access tokens <em>doesn't</em> return the bearer token required for authentication. {{site.varBearerTokenWarning}}
@@ -197,7 +197,7 @@ To filter the command's output by user, use the `--user` flag and use the same f
 ## Modifying the Expiration Time for an Access Token
 {{page.varPrereqWrite}} This section explains how to modify access tokens by using the `qq` CLI.
 
-Use the `auth_modify_access_token` command and specify the access token ID and the expiration time. For example:
+Run the `auth_modify_access_token` command and specify the access token ID and the expiration time. For example:
 
 ```bash
 $ qq auth_modify_access_token 1234567890123456789012 --expiration-time 'Jan 01 2023'

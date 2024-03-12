@@ -69,7 +69,7 @@ Ensure that the number of static and floating IP addresses is equal to or greate
 
 <a id="register-node-replacement-plan"></a>
 ## Step 1: Register a Node Replacement Plan by Using the qq CLI
-1. Use the `qq replace_nodes register_plan` command and the `--nodes-to-be-replaced` flag to specify the nodes to replace and the `--target-stripe-config` flag to specify the stripe configuration. For example:
+1. Run the `qq replace_nodes register_plan` command and the `--nodes-to-be-replaced` flag to specify the nodes to replace and the `--target-stripe-config` flag to specify the stripe configuration. For example:
 
    ```bash
    qq replace_nodes register_plan \
@@ -96,7 +96,7 @@ Ensure that the number of static and floating IP addresses is equal to or greate
 
 <a id="execute-node-replacement-plan-steps"></a>
 ## Step 2: Execute the Node Replacement Plan Steps by Using the qq CLI
-1. Use the `qq replace_nodes add_nodes_and_replace` command to initiate each step, the `--nodes-being-replaced` flag to specify the nodes to replace, and the `--node-uuids` flag to specify the nodes to add during the current step.
+1. Run the `qq replace_nodes add_nodes_and_replace` command to initiate each step, the `--nodes-being-replaced` flag to specify the nodes to replace, and the `--node-uuids` flag to specify the nodes to add during the current step.
 
    {% capture noReorder %}Qumulo Core adds nodes to the cluster in the order in which you list their UUIDs after the `--node-uuids` flag. When you begin the node replacement step, {{site.cannotReorderNodes}}{% endcapture %}
    {% include important.html content=noReorder %}

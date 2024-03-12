@@ -47,7 +47,7 @@ Qumulo Alerts comes with a predefined no-path quota. To get information about th
 ```
 
 ## To Configure an Inherited-Path Quota
-Use the `./alerts default_quota_add` command and specify the default path and thresholds. For example:
+Run the `./alerts default_quota_add` command and specify the default path and thresholds. For example:
 
 ```bash
 ./alerts default_quota_add \

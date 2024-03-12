@@ -15,7 +15,7 @@ In Qumulo Core 6.1.0.3 (and higher), you can [lock a snapshot by using a key loc
 In Qumulo Core 6.1.1 (and higher), you can [ensure that a replication target relationship locks all new policy snapshots with a specific key](#replication-target-locking) by associating the key with the replication target.
 
 ### To Lock a Snapshot by Using the qq CLI
-Use the `qq snapshot_lock_snapshot` command and specify the snapshot ID and either the key ID or key name. For example:
+Run the `qq snapshot_lock_snapshot` command and specify the snapshot ID and either the key ID or key name. For example:
 
 ```bash
 qq snapshot_lock_snapshot \
@@ -30,7 +30,7 @@ Unlocking a snapshot requires proving that you can sign a challenge by using the
 {% capture cryptoLib %}{{site.protectingData.mustHaveCryptoLib}}{% endcapture %}
 {% include note.html content=cryptoLib %}
 
-Use the `qq snapshot_unlock_snapshot` command and specify the snapshot ID and the path to the private key file. For example:
+Run the `qq snapshot_unlock_snapshot` command and specify the snapshot ID and the path to the private key file. For example:
 
 ```bash
 qq snapshot_unlock_snapshot \

@@ -93,7 +93,7 @@ Qumulo Core applies the host access rule to the NFS export.
    }
    ```
 
-1. Use the `qq nfs_mod_export` command and specify the export path and the file with the host access rules. For example:
+1. Run the `qq nfs_mod_export` command and specify the export path and the file with the host access rules. For example:
 
    ```bash
    qq nfs_mod_export \
@@ -191,7 +191,7 @@ This section describes the troubleshooting steps for a scenario in which an NFS 
    
      To reset your Qumulo cluster's DNS cache, use the `qq dns_clear_lookup_cache` command.
 
-   * Use the `qq dns_resolve_hostnames` command and specify the hostname to perform a lookup for `user1.accounting.example.com`.
+   * Run the `qq dns_resolve_hostnames` command and specify the hostname to perform a lookup for `user1.accounting.example.com`.
   
      {{site.commandOutput}}
 
@@ -203,7 +203,7 @@ This section describes the troubleshooting steps for a scenario in which an NFS 
      }]
      ```
 
-   * Use the `qq dns_resolve_ips` command to find the hostname for your client's IP address and:
+   * Run the `qq dns_resolve_ips` command to find the hostname for your client's IP address and:
   
      * If the NFS client can't access a share, but should be able to, add the IP address to the NFS export's host access rules.
        

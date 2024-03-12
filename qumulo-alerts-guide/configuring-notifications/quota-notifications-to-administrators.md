@@ -16,7 +16,7 @@ You can configure quota monitoring by using _thresholds_.
 You can configure unattached quotas or attach them to a Qumulo cluster.
 
 ## To Configure Quota Notifications with Two Thresholds
-Use the `./alerts quota_add` command and specify the quota path to monitor. The following example specifies the warning threshold and the error threshold and doesn't attach the quota to a Qumulo cluster.
+Run the `./alerts quota_add` command and specify the quota path to monitor. The following example specifies the warning threshold and the error threshold and doesn't attach the quota to a Qumulo cluster.
 
 ```bash
 ./alerts quota_add \
@@ -43,7 +43,7 @@ Use the `./alerts quota_add` command and specify the quota path to monitor. The 
 
 
 ## To Configure Quota Notifications with a Single Threshold
-Use the `./alerts quota_add` command and specify the quota path. The following example specifies the error threshold and attaches the quota to the fully qualified domain name (FQDN) of a Qumulo cluster.
+Run the `./alerts quota_add` command and specify the quota path. The following example specifies the error threshold and attaches the quota to the fully qualified domain name (FQDN) of a Qumulo cluster.
 
 ```bash
 ./alerts quota_add \
@@ -72,7 +72,7 @@ Use the `./alerts quota_add` command and specify the quota path. The following e
 
 
 ## To List All Defined Quotas and Attached Clusters
-Use the `./alerts quota_list` command.
+Run the `./alerts quota_list` command.
 
 {{site.qumuloalerts.jsonOutput}} In this example, the second quota is attached to the fully qualified domain name (FQDN) of a Qumulo cluster.
 

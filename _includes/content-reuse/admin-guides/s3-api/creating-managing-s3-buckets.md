@@ -169,7 +169,7 @@ When you use the `qq` CLI to create a bucket, you can use a new or existing dire
   ```
 
 ### Creating an S3 Bucket by Using the S3 API
-Use the `aws s3api create-bucket` command and specify the bucket name. This command uses the [`CreateBucket`]({{site.s3.actions.CreateBucket}}) S3 API action. For example:
+Run the `aws s3api create-bucket` command and specify the bucket name. This command uses the [`CreateBucket`]({{site.s3.actions.CreateBucket}}) S3 API action. For example:
 
 ```bash
 $ aws s3api create-bucket \
@@ -191,7 +191,7 @@ Although you can configure global settings, such as the {{page.varDefaultPrefix}
 * To change the bucket configuration, you need {{site.s3.permissions.bucketsWrite}}.
 
 ### Viewing the Current S3 Bucket Configuration by Using the qq CLI
-Use the `qq s3_get_bucket` command and specify the bucket name. For example:
+Run the `qq s3_get_bucket` command and specify the bucket name. For example:
 
 ```bash
 $ qq s3_get_bucket \
@@ -216,7 +216,7 @@ You can list all S3 buckets in your Qumulo cluster {{site.s3.permissions.APIorCL
 ### To List S3 Buckets by Using the qq CLI
 To list your S3 buckets {{site.s3.permissions.APIorCLI}}, you need {{site.s3.permissions.bucketsRead}}.
 
-* Use the `qq s3_list_buckets` command.
+* Run the `qq s3_list_buckets` command.
 
   {{site.s3.permissions.commandOutput}} {{site.s3.permissions.timesUTC}}
 
@@ -244,7 +244,7 @@ To list your S3 buckets {{site.s3.permissions.APIorCLI}}, you need {{site.s3.per
   ```
 
 ### To List S3 Buckets by Using the S3 API
-Use the `aws s3api list-buckets` command. This command uses the [`ListBuckets`]({{site.s3.actions.ListBuckets}}) S3 API action.
+Run the `aws s3api list-buckets` command. This command uses the [`ListBuckets`]({{site.s3.actions.ListBuckets}}) S3 API action.
 
 {{site.s3.permissions.commandOutput}} {{site.s3.permissions.timesUTC}} {{page.varListJSON}}
 
@@ -306,7 +306,7 @@ When you use the `qq` CLI to delete a bucket, you can choose to also delete the 
   * {{page.varRootDirNotEmpty}}
   
 ### Deleting an S3 Bucket by Using the S3 API
-Use the `aws s3api delete-bucket` command and specify the bucket name. This command uses the [`DeleteBucket`]({{site.s3.actions.DeleteBucket}}) S3 API action. For example:
+Run the `aws s3api delete-bucket` command and specify the bucket name. This command uses the [`DeleteBucket`]({{site.s3.actions.DeleteBucket}}) S3 API action. For example:
 
 ```bash
 $ aws s3api delete-bucket \

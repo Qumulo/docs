@@ -161,7 +161,7 @@ To be able to generate access tokens, you must create a local user for Qumulo Al
 1. In the **Add Member to Administrators** dialog box, for **Trustee**, enter the local username you have created earlier (for example, `QumuloAlerts`) and then click **Yes, Add Member**.
 
 ### Step 5: Create a Long-Lived Access Token
-Use the `auth_create_access_token` command and specify the ID of the local user. For example:
+Run the `auth_create_access_token` command and specify the ID of the local user. For example:
 
 ```bash
 qq auth_create_access_token auth_id:1234
