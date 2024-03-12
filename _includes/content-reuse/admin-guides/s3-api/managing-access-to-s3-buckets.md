@@ -118,7 +118,7 @@ You can use inheritable ACEs to:
 
 To add ACEs to a directory, use the `qq` CLI or use the File Explorer on a Windows client with a mapped SMB share that contains the directory.
 
-{% include note.html content="Adding inheritable ACEs to a directory doesn't affect any files that already exist in that directory. For more information, see [To Recursively Add a New ACL (with Multithreading)](https://care.qumulo.com/hc/en-us/articles/6351767625491#to-recursively-add-a-new-acl-with-multithreading--0-6) on Qumulo Core." %}
+{% include note.html content="Adding inheritable ACEs to a directory doesn't affect any files that already exist in that directory. For more information, see [To Recursively Add a New ACL with Multithreading](https://docs.qumulo.com/qq-cli-command-guide/fs/fs_modify_acl.html#to-recursively-add-a-new-acl-with-multithreading)." %}
 
 ## Imitating Bucket-Level Permissions by Using the qq CLI
 The following sections show how to use the `qq` CLI to imitate bucket-level permissions by adding inheritable ACEs.
