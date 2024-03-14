@@ -34,3 +34,26 @@ When your cluster joins Active Directory, all SMB sessions and NFS operations re
 * Apply permissions based on the fully expanded credential set
 
 {{page.varMapExample}}
+
+### To Manage Active Directory for POSIX Attributes by Using the Qumulo Core REST API
+To toggle Qumulo Core's ability to use Active Directory for POSIX attributes, use the fields `use_ad_posix_attributes` and `base_dn` for the following REST API endpoints.
+
+* **Get Configuration and Status:** `/v1/ad/status`
+* **Get Operation Status:** `/v1/ad/monitor`
+* **Join Active Directory:** `/v1/ad/join`
+
+To map identities from one domain to another, use the following REST API endpoints.
+
+{% include note.html content="It is possible for one UID to be mapped to multiple SIDs." %}
+
+* **GID to SIDs:** `/v1/ad/uids/:gid:/sids`
+* **Local Username to All Related Identities:** `/v1/auth/local-username/:username:/related-identities`
+* **POSIX UID to All Related Identities:** `/v1/auth/posix-uids/:id:/related-identities`
+* **POSIX GID to All Related Identities:** `/v1/auth/posix-gids/:id:/related-identities`
+* **SID to GID:** `/v1/ad/uids/:uid:/gid`
+* **SID to Expanded Group SIDs:** `/v1/ad/uids/:gid:/sids`
+* **SID to UID:** `/v1/ad/uids/:sid:/uid`
+* **UID to SIDs:** `/v1/ad/uids/:uid:/sids`
+* **Windows NT SID to All Related Identities:** `/v1/auth/sids/:id:/related-identities`
+
+To retrieve related identities, use the `/v1/auth/auth-ids/:id:/related-identities` REST API endpoint.
