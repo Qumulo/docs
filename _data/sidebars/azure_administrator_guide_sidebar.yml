@@ -96,8 +96,8 @@ entries:
       url: /azure-administrator-guide/authentication-qumulo-core/configuring-ldap.html
       output: web, pdf
 
-    - title: Creating and Using Bearer Tokens
-      url: /azure-administrator-guide/authentication-qumulo-core/creating-using-bearer-tokens-to-authenticate-qumulo-rest-api-calls.html
+    - title: Acquiring and Using Bearer Tokens
+      url: /azure-administrator-guide/authentication-qumulo-core/acquiring-using-bearer-tokens-to-authenticate-qumulo-rest-api-calls.html
       output: web, pdf
 
   - title: Connecting to External Services
