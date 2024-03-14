@@ -29,7 +29,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
 * Made significant improvements in SMB random small-write performance
 * Added partial support for new S3 API actions
 * Configured Qumulo Core to take daily snapshots at regular intervals throughout the day
-* Made changes to the REST API and the `qq` CLI to accommodate improvements in snapshot and at-rest encryption functionality
+* Made changes to the Qumulo Core REST API and the `qq` CLI to accommodate improvements in snapshot and at-rest encryption functionality
 * Revised permissions for SMB `copychunk` requests
 * Resolved a minor issue with AD authentication, an issue with `.snapshot` directories in Windows Command Prompt, and an issue with SMB copy operations and long share names and volume labels
 
@@ -131,8 +131,8 @@ For information about upgrade types for each release, see <a href='mode-referenc
 </ul>
 {{site.data.alerts.end}}
 
-* Added Adaptive Data Protection to the REST API and `qq` CLI and made performance improvements
-* Added Transparent Platform Refresh to the REST API and `qq` CLI
+* Added Adaptive Data Protection to the Qumulo Core REST API and `qq` CLI and made performance improvements
+* Added Transparent Platform Refresh to the Qumulo Core REST API and `qq` CLI
 * Added S3 configuration settings to the Qumulo Core Web UI
 * Improved hard link creation
 
@@ -141,7 +141,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
 * Added support for new S3 API actions, snapshot locking for replication target relationships, and lock configuration to the Qumulo Core Web UI
 * Enabled the Search Trusted Domains Active Directory configuration option by default
 * Upgraded the host and container images
-* Revised the REST API for snapshots
+* Revised the Qumulo Core REST API for snapshots
 * Added `qq` CLI commands for lock key functionality
 * Added a `qq` CLI command for viewing blocked upgrade status
 * Updated the OpenMetrics API Specification
@@ -199,7 +199,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
 * Introduced optional HTTP mode for the S3 API
 * Made SSL certificate changes for the S3 API without a cluster restart
 * Added audit syslog in JSON format
-* Made corresponding changes and additions to the REST API and `qq` CLI
+* Made corresponding changes and additions to the Qumulo Core REST API and `qq` CLI
 * Fixed issues with the Qumulo Core Web UI, directory access by non-root users on Linux, and changed caching for some OpenMetrics API metrics
 
 ## Qumulo Core 5.3.4
@@ -228,7 +228,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
 * Added SMB2 `CHANGE_NOTIFY` parity with Windows
 * New Qumulo OpenMetrics API metrics
 * Added expiration time for access tokens
-* Improved the REST API
+* Improved the Qumulo Core REST API
 
 ## Qumulo Core 5.3.1
 {{page.varDownloadsRelnotes}}
@@ -272,7 +272,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
 ## Qumulo Core 5.2.2
 {{page.varDownloadsRelnotes}}
 * Made improvements to the Qumulo Core Web UI on the NFS Exports and Role Management pages
-* Adjusted the REST API endpoint `/v1/smb/sessions` and the corresponding `qq` CLI command
+* Adjusted the Qumulo Core REST API endpoint `/v1/smb/sessions` and the corresponding `qq` CLI command
 * Fixed an issue that occurs during NFSv4.1 failover
 * Fixed an issue that prevents a cluster from forming due to an incorrect HDD-SSD ratio.
 
@@ -299,7 +299,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
 * Improved NLM and NFSv4.1 locking
 * Updated Mellanox NIC firmware
 * Made improvements to the Qumulo Core Web UI on the **APIs & Tools**, **Add Nodes**, and **Active Directory** pages
-* Added NFS fields to the REST API and `qq` CLI
+* Added NFS fields to the Qumulo Core REST API and `qq` CLI
 * Deprecated the `/v2/upgrade/status` REST API
 * Updated security permissions for home directories
 * Prohibited the use of the switch-user command

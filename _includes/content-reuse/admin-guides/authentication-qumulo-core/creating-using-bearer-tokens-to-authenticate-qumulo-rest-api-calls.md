@@ -2,7 +2,7 @@ When you use the Qumulo Core REST API, you begin an authentication session by lo
 
 {% include note.html content=""Only administrative users have access to all REST API endpoints. %}
 
-## Creating a Bearer Token by Using the REST API
+## Creating a Bearer Token by Using the Qumulo Core REST API
 
 1. Begin an authentication session by calling the `/v1/session/login` REST API endpoint and specify the username and password. For example:
 

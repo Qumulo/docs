@@ -55,7 +55,7 @@ You can list the incomplete multipart uploads for a single S3 bucket by using th
     --bucket my-bucket
   ```
 
-* To list incomplete uploads by using the REST API, send a `GET` request to the `/v1/s3/buckets/<bucket-name>/uploads/` endpoint and specify the bucket name.
+* To list incomplete uploads by using the Qumulo Core REST API, send a `GET` request to the `/v1/s3/buckets/<bucket-name>/uploads/` endpoint and specify the bucket name.
 
 The output from the `qq` CLI and REST API is the same. The following example output is a single JSON object that contains the list of objects for the specified bucket. The list shows information for each multipart S3 upload, including:
 

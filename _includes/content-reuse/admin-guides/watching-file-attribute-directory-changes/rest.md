@@ -206,7 +206,7 @@ In this example, Qumulo Core streams all [notification types](#notification-type
 To terminate the stream, send a `SIGQUIT` signal.
 
 
-## Streaming Change Notifications by Using the REST API
+## Streaming Change Notifications by Using the Qumulo Core REST API
 Make a `GET` request to the REST endpoint in the following format:
 
 ```

@@ -1,7 +1,7 @@
 When your Qumulo cluster is [joined to AD](kerberos-prerequisites-joining-cluster-active-directory.html), you must configure the [NFSv4.1 server](../nfs/nfsv4.1-enabling-using.html) and NFSv4.1 security settings.
 
 ## To Configure Security Settings by Using the qq CLI
-Qumulo provides configuration for the permitted NFSv4.1 authentication flavors in the `qq` CLI or directly through the REST API.
+Qumulo provides configuration for the permitted NFSv4.1 authentication flavors in the `qq` CLI or directly through the Qumulo Core REST API.
 
 1. Use the `qq` CLI to get the current settings:
 
