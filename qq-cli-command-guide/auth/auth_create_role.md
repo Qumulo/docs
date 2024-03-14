@@ -40,7 +40,7 @@ Run the `qq auth_create_role` command and specify the custom role name, descript
 qq auth_create_role \
   --role "SMB-Manager" \
   --description "Manage SMB Shares" \
-  --privileges-file PRIVILEGES
+  --privileges-file privileges.txt
 ```
 
 {% include content-reuse/cli-guide/add-multiple-privileges-to-new-custom-role.md %}
