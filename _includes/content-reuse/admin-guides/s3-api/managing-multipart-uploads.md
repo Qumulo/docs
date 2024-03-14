@@ -24,7 +24,7 @@ The following conditions are true for multipart S3 uploads in Qumulo Core.
 
 * Qumulo Core doesn't delete multipart data unless it [aborts and cleans up the multipart upload automatically](#cleaning-up-uploads-automatically) or you [abort and clean up the multipart upload manually](#cleaning-up-uploads-manually).
 
-To check how much space incomplete multipart uploads use on your cluster, you can list the uploads by using the Qumulo REST API or `qq` CLI. For more information, see [Listing Multipart Uploads](#listing-uploads).
+To check how much space incomplete multipart uploads use on your cluster, you can list the uploads by using the Qumulo Core REST API or `qq` CLI. For more information, see [Listing Multipart Uploads](#listing-uploads).
 
 <a id="system-initiated-uploads"></a>
 ### How System-Initiated Multipart S3 Uploads Work
@@ -39,12 +39,12 @@ However, if Qumulo Core is unable to clean up the incomplete upload data immedia
 
 <a id="listing-uploads"></a>
 ## Listing Incomplete Multipart S3 Uploads
-You can list the incomplete multipart uploads for a single S3 bucket by using the Qumulo REST API or `qq` CLI.
+You can list the incomplete multipart uploads for a single S3 bucket by using the Qumulo Core REST API or `qq` CLI.
 
 {{site.data.alerts.note}}
 <ul>
   <li>If you use the <code>ListMultipartUploads</code> S3 API action, the system doesn't show <a href="#system-initiated-uploads">system-initiated uploads</a> or how much space the uploads use on your cluster.</li>
-  <li>If you use the Qumulo REST API or <code>qq</code> CLI, Qumulo Core shows <a href="#system-initiated-uploads">system-initiated uploads</a> and how much space each upload uses on your cluster.</li>
+  <li>If you use the Qumulo Core REST API or <code>qq</code> CLI, Qumulo Core shows <a href="#system-initiated-uploads">system-initiated uploads</a> and how much space each upload uses on your cluster.</li>
 </ul>
 {{site.data.alerts.end}}
 
@@ -119,7 +119,7 @@ The output from the `qq` CLI and REST API is the same. The following example out
 ## Aborting and Cleaning Up Multipart S3 Uploads Automatically
 Qumulo Core automatically aborts and cleans up an incomplete multipart S3 if the upload doesn't receive any data after the configured _expiry interval_ (1 day by default).
 
-When Qumulo Core removes a multipart upload, it frees up the space that the upload uses on the cluster. You can configure the expiry interval by using the Qumulo REST API or `qq` CLI.
+When Qumulo Core removes a multipart upload, it frees up the space that the upload uses on the cluster. You can configure the expiry interval by using the Qumulo Core REST API or `qq` CLI.
 
 To configure the expiry interval for all current and future multipart uploads by using the `qq` CLI, use the `s3_modify_settings` command and the `--multipart-upload-expiry-interval` flag and specify one of the following:
 
@@ -150,7 +150,7 @@ $ qq s3_modify_settings \
 
 <a id="cleaning-up-uploads-manually"></a>
 ## Aborting or Cleaning Up Multipart S3 Uploads Manually
-Use the Qumulo REST API or `qq` CLI to abort and clean up the upload. You need the bucket name and upload ID. For more information about looking up this information, see [Listing Incomplete Multipart S3 Uploads](#listing-uploads).
+Use the Qumulo Core REST API or `qq` CLI to abort and clean up the upload. You need the bucket name and upload ID. For more information about looking up this information, see [Listing Incomplete Multipart S3 Uploads](#listing-uploads).
 
 {% include note.html content="If you are an administrative user or the user who initiated the upload, you can use the `AbortMultipartUpload` S3 API action. In addition to the bucket name and upload ID, you also need the object key for the upload." %}
 
@@ -162,7 +162,7 @@ Use the Qumulo REST API or `qq` CLI to abort and clean up the upload. You need t
     --upload-id 000000000example
   ```
 
-* To abort an upload by using the Qumulo REST API, send a `DELETE` request to the `/v1/s3/buckets/<bucket-name>/uploads/<upload-ID>` endpoint and specify the upload ID. For example:
+* To abort an upload by using the Qumulo Core REST API, send a `DELETE` request to the `/v1/s3/buckets/<bucket-name>/uploads/<upload-ID>` endpoint and specify the upload ID. For example:
 
   ```
   DELETE /v1/s3/buckets/my-bucket/uploads/000000000example

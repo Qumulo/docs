@@ -124,7 +124,7 @@ The following table describes the subset of the [Amazon S3 API Actions](https://
 
 {{site.data.alerts.note}}
 <ul>
-  <li>Certain permissions (such as <code>s3:AbortMultipartUpload</code>) grant permission to both S3 API and Qumulo REST API variants of an API call.</li>
+  <li>Certain permissions (such as <code>s3:AbortMultipartUpload</code>) grant permission to both S3 API and Qumulo Core REST API variants of an API call.</li>
   <li>Certain permissions (such as <code>s3:GetBucketAcl</code>) grant permission to S3 APIs that are currently implemented partially within Qumulo Core.</li>
   <li><code>s3:*</code> matches all S3 API actions.</li>
 </ul>
@@ -261,7 +261,7 @@ The following table describes examples of principals which Qumulo Core supports.
     </tr>
     <tr>
       <td><code>local:Jane</code></td>
-      <td>A user or group created by using the Qumulo REST API in the <code>local</code> domain, prefixed by <code>local:</code></td>
+      <td>A user or group created by using the Qumulo Core REST API in the <code>local</code> domain, prefixed by <code>local:</code></td>
     </tr>   
     <tr>
       <td><code>local:guest</code></td>
