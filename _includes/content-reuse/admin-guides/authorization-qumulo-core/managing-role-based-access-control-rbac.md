@@ -60,7 +60,7 @@ This section explains how to add a member to, and remove a member from, an exist
 
 1. On the **Role Management** page, next to the role to assign, click **Add Member**.
 
-1. In the **Add Member to <Role Type>** dialog box, enter the **Trustee** and then click **Yes, Add Member**.
+1. In the **Add Member to &lt;Role Type&gt;** dialog box, enter the **Trustee** and then click **Yes, Add Member**.
 
    {% capture validExamples %}For examples of valid trustees, click {% include shared_inline_image.html alt="Question Mark" file="shared-images/admin-guides/question-mark.png" max-width="40" %}.{% endcapture %}
    {% include tip.html content=validExamples %}
@@ -94,4 +94,4 @@ This section explains how to add a member to, and remove a member from, an exist
 
 1. On the **Cluster Management** page, next to the role to edit, click {% include shared_inline_image.html alt="Edit" file="shared-images/admin-guides/delete.png" max-width="40" %}.
 
-1. On the **Edit <Role Name>** page, select the privileges to include in the role and click **Save**.
+1. On the **Edit &lt;Role Name&gt;** page, select the privileges to include in the role and click **Save**.
