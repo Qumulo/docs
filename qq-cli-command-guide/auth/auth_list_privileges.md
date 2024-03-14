@@ -35,7 +35,7 @@ To view all existing users and groups with role-based control for your Qumulo cl
 
 ## Examples
 
-## To View the Privileges for an Existing Qumulo Core Role
+### To View the Privileges for an Existing Qumulo Core Role
 Run the `qq auth_list_privileges` command and use `grep` to filter only the privileges that contain the word `SMB`. For example:
 
 ```bash
