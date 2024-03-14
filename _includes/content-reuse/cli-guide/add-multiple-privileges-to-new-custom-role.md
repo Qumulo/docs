@@ -8,7 +8,7 @@ For this operation, you must use the `qq auth_list_privileges` and `qq auth_crea
      grep WRITE > privileges.txt
    ```
 
-2. Run the `qq auth_create_role` command and specify the `privileges.txt` file. For example:
+2. Run the `qq auth_create_role` command and specify the `privileges.txt` file to create a custom role. For example:
 
    ```bash
    qq auth_create_role -r "Write-Everything" \
