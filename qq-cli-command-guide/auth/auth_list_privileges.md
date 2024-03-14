@@ -27,3 +27,10 @@ usage: qq auth_list_privileges [-h] [-r ROLE] [-v] [--json]
 zendesk_source: qq CLI Command Guide
 
 ---
+For more information, see:
+* {{site.xref.adminANQ.manageRBAC}}
+* {{site.xref.adminOnPrem.manageRBAC}}
+
+## Examples
+
+{% include content-reuse/cli-guide/add-multiple-privileges-to-new-custom-role.md %}

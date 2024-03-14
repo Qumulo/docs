@@ -39,3 +39,17 @@ usage: qq auth_modify_role [-h] -r ROLE [-d DESCRIPTION] [-p PRIVILEGES_FILE] [-
 zendesk_source: qq CLI Command Guide
 
 ---
+For more information, see:
+* {{site.xref.adminANQ.manageRBAC}}
+* {{site.xref.adminOnPrem.manageRBAC}}
+
+## Examples
+
+### To Add a Privilege to an Existing Custom Qumulo Core Role
+Run the `qq auth_modify_role` command and specify the custom role name and the privilege to add. For example:
+
+```bash
+qq auth_modify_role \
+  -r SMB-Manager \
+  -G PRIVILEGE_SMB_SHARE_READ \
+```

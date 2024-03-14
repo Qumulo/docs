@@ -23,3 +23,23 @@ usage: qq auth_assign_role [-h] -r ROLE -t TRUSTEE
 zendesk_source: qq CLI Command Guide
 
 ---
+For more information, see:
+* {{site.xref.adminANQ.manageRBAC}}
+* {{site.xref.adminOnPrem.manageRBAC}}
+
+## Examples
+
+### To Add a Trustee to an Existing Qumulo Core Role
+Run the `qq auth_assign_role` command and specify the role and trustee. For example:
+
+```bash
+qq auth_assign_role \
+  --role Observers \
+  --trustee Everyone
+```
+
+```bash
+qq auth_assign_role \
+  --role Administrators \
+  --trustee uid:1000
+```
