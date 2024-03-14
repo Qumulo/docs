@@ -126,6 +126,10 @@ entries:
       url: /azure-administrator-guide/authorization-qumulo-core/managing-cross-protocol-permissions-xpp.html
       output: web, pdf
 
+    - title: Using SMB Host Restrictions
+      url: /azure-administrator-guide/authorization-qumulo-core/using-smb-host-restrictions.html
+      output: web, pdf
+
     - title: Using Active Directory for POSIX Attributes
       url: /azure-administrator-guide/authorization-qumulo-core/using-active-directory-for-posix-attributes.html
       output: web, pdf

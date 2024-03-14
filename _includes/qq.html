@@ -1,0 +1,5 @@
+{% raw %}
+{% assign parts = include.command | split: "_" %}
+{% assign section = parts | first %}
+<a target="_blank" href="https://docs.qumulo.com/qq-cli-command-guide/{{ section }}/{{ include.command }}.html">https://docs.qumulo.com/qq-cli-command-guide/{{ section }}/{{ include.command }}.html</a>
+{% endraw %}
