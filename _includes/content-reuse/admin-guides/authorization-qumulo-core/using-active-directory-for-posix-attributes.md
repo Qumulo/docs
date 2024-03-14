@@ -47,16 +47,16 @@ To toggle Qumulo Core's ability to use Active Directory for POSIX attributes, us
 
 To map identities from one domain to another, use the following REST API endpoints.
 
-{% include note.html content="It is possible for one UID to be mapped to multiple SIDs." %}
-
 * **GID to SIDs:** `/v1/ad/uids/:gid:/sids`
 * **Local Username to All Related Identities:** `/v1/auth/local-username/:username:/related-identities`
-* **POSIX UID to All Related Identities:** `/v1/auth/posix-uids/:id:/related-identities`
 * **POSIX GID to All Related Identities:** `/v1/auth/posix-gids/:id:/related-identities`
-* **SID to GID:** `/v1/ad/uids/:uid:/gid`
+* **POSIX UID to All Related Identities:** `/v1/auth/posix-uids/:id:/related-identities`
 * **SID to Expanded Group SIDs:** `/v1/ad/uids/:gid:/sids`
+* **SID to GID:** `/v1/ad/uids/:uid:/gid`
 * **SID to UID:** `/v1/ad/uids/:sid:/uid`
 * **UID to SIDs:** `/v1/ad/uids/:uid:/sids`
 * **Windows NT SID to All Related Identities:** `/v1/auth/sids/:id:/related-identities`
+
+{% include note.html content="It is possible for one UID to be mapped to multiple SIDs." %}
 
 To retrieve related identities, use the `/v1/auth/auth-ids/:id:/related-identities` REST API endpoint.
