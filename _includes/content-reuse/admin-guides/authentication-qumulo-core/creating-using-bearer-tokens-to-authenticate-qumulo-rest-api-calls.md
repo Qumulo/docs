@@ -1,4 +1,4 @@
-When you use the Qumulo Core REST API, you begin an authentication session by logging in to a Qumulo cluster. Different REST endpoints require different types of authentication: For example, certain REST API endpoints, such as `/v1/version`, don't require ay authentication, while the `/v1/session/login` API endpoint requires a username and a password.
+When you use the Qumulo Core REST API, you begin an authentication session by logging in to a Qumulo cluster. Different REST endpoints require different types of authentication: For example, certain REST API endpoints, such as `/v1/version`, don't require any authentication, while the `/v1/session/login` API endpoint requires a username and a password.
 
 Calling the login API gives you a _bearer token_ (or _access token_)&mdash;a temporary credential that Qumulo Core sends together with subsequent API calls as proof of authentication. A bearer token is valid for 10 hours. After a bearer token expires, you must create a new bearer token.
 
@@ -19,7 +19,7 @@ curl -k -X POST https://{{site.exampleIP0}}:8000/v1/session/login \
    
 {{site.exampleOutput}}
 
-```
+```json
 { "bearer_token": "1:EXAMPLElSnp6MVZvUXhRQUViN2RCYUFVZy9zTElB..." }
 ```
 
