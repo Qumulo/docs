@@ -72,7 +72,7 @@ This section explains how to add a member to, and remove a member from, an exist
 
 1. Click **Cluster > Role Management**.
 
-1. On the **Role Management** page, next to the user or group to remove from a role, click {% include shared_inline_image.html alt="Delete" file="shared-images/admin-guides/edit-large.png" max-width="40" %}.
+1. On the **Role Management** page, next to the user or group to remove from a role, click {% include shared_inline_image.html alt="Delete" file="shared-images/admin-guides/edit-large.png" max-width="20" %}.
 
 ### To Create a Custom Qumulo Core Role
 1. {{site.logIntoWebUI}}
@@ -92,6 +92,6 @@ This section explains how to add a member to, and remove a member from, an exist
 
 1. Click **Cluster > Role Management**.
 
-1. On the **Cluster Management** page, next to the role to edit, click {% include shared_inline_image.html alt="Edit" file="shared-images/admin-guides/pencil.png" max-width="40" %}.
+1. On the **Cluster Management** page, next to the role to edit, click {% include shared_inline_image.html alt="Edit" file="shared-images/admin-guides/delete.png" max-width="40" %}.
 
 1. On the **Edit <Role Name>** page, select the privileges to include in the role and click **Save**.
