@@ -1,12 +1,6 @@
 To share management responsibilities with others, you can grant specific privileges to a user or group&mdash;locally or through Active Directory&mdash;by using RBAC.
 
-<a id="custom-roles"></a>For information about managing RBAC and creating custom rols by using the `qq` CLI, see the following sections in the {{site.guides.cli}}:
-
-* [`qq auth_assign_role`](https://docs.qumulo.com/qq-cli-command-guide/auth/auth_assign_role.html)
-* [`qq auth_create_role`](https://docs.qumulo.com/qq-cli-command-guide/auth/auth_create_role.html)
-* [`qq auth_list_privileges`](https://docs.qumulo.com/qq-cli-command-guide/auth/auth_list_privileges.html)
-* [`qq auth_modify_role`](https://docs.qumulo.com/qq-cli-command-guide/auth/auth_modify_role.html)
-* [`qq auth_unassign_role`](https://docs.qumulo.com/qq-cli-command-guide/auth/auth_unassign_role.html)
+<a id="custom-roles"></a>
 
 {{site.data.alerts.important}}
 <ul>
@@ -15,10 +9,8 @@ To share management responsibilities with others, you can grant specific privile
 </ul>
 {{site.data.alerts.end}}
 
-## Role Types in Qumulo Core
-This section explains the Administrators, Data-Administrators, and Observers role types in Qumulo Core.
-
-For information about creating a custom role by using the `qq` CLI, see [`qq auth_create_role`](https://docs.qumulo.com/qq-cli-command-guide/auth/auth_create_role.html) in the {{site.guides.cli}}.
+## Qumulo Core Role Types
+This section explains the Administrators, Data-Administrators, Observers, and Custom role types in Qumulo Core.
 
 ### Administrators
 {% include note.html content="Only the default administrator account can access a Qumulo cluster by using SSH." %}
@@ -49,4 +41,57 @@ This role is suitable for users or groups who can access the Qumulo Core Web UI 
 {{site.data.alerts.end}}
 
 ### Custom
-You can [configure custom roles by using the `qq` CLI](#custom-roles)
+For information about managing RBAC and creating custom rols by using the `qq` CLI, see the following sections in the {{site.guides.cli}}:
+
+* [`qq auth_assign_role`](https://docs.qumulo.com/qq-cli-command-guide/auth/auth_assign_role.html)
+* [`qq auth_create_role`](https://docs.qumulo.com/qq-cli-command-guide/auth/auth_create_role.html)
+* [`qq auth_list_privileges`](https://docs.qumulo.com/qq-cli-command-guide/auth/auth_list_privileges.html)
+* [`qq auth_modify_role`](https://docs.qumulo.com/qq-cli-command-guide/auth/auth_modify_role.html)
+* [`qq auth_unassign_role`](https://docs.qumulo.com/qq-cli-command-guide/auth/auth_unassign_role.html)
+
+
+## Managing Roles by Using the Qumulo Core Web UI
+This section explains how to add a member to, and remove a member from, an existing Qumulo Core role and how to create and edit a custom role.
+
+### To Add a Member to an Existing Qumulo Core Role
+1. {{site.logIntoWebUI}}
+
+1. Click **Cluster > Role Management**.
+
+1. On the **Role Management** page, next to the role to assign, click **Add Member**.
+
+1. In the **Add Member to <Role Type>** dialog box, enter the **Trustee** and then click **Yes, Add Member**.
+
+   {% capture validExamples %}For examples of valid trustees, click {% include shared_inline_image.html alt="Question Mark" file="shared-images/admin-guides/question-mark.png" max-width="40" %}.{% endcapture %}
+   {% include tip.html content=validExamples %}
+   
+1. Click **Yes, Assign Role**.
+
+### To Remove a Member from an Existing Qumulo Core Role
+1. {{site.logIntoWebUI}}
+
+1. Click **Cluster > Role Management**.
+
+1. On the **Role Management** page, next to the user or group to remove from a role, click {% include shared_inline_image.html alt="Delete" file="shared-images/admin-guides/question-mark.png" max-width="40" %}.
+
+### To Create a Custom Qumulo Core Role
+1. {{site.logIntoWebUI}}
+
+1. Click **Cluster > Role Management**.
+
+1. On the **Role Management** page, on the the upper-right side, click **Create Role**.
+
+1. On the **Create Role** page, do the following:
+
+   1. Enter a **Name** and **Description**.
+
+   1. Select the privileges to add to the role and click **Save**.
+
+### To Edit a Custom Qumulo Core Role
+1. {{site.logIntoWebUI}}
+
+1. Click **Cluster > Role Management**.
+
+1. On the **Cluster Management** page, next to the role to edit, click {% include shared_inline_image.html alt="Edit" file="shared-images/admin-guides/question-mark.png" max-width="40" %}.
+
+1. On the **Edit <Role Name>** page, select the privileges to include in the role and click **Save**.
