@@ -4,10 +4,10 @@ Calling the login API gives you a _bearer token_ (or _access token_)&mdash;a tem
 
 {% include note.html content="Only administrative users have access to all REST API endpoints." %}
 
-## Acquiring a Bearer Token
-To acquire a bearer token, you can use the Qumulo REST API or Qumulo Core Web UI.
+## Creating a Bearer Token
+To create a bearer token, you can use the Qumulo REST API or Qumulo Core Web UI.
 
-### To Acquire a Bearer Token by Using the REST API
+### To Create a Bearer Token by Using the REST API
 Begin an authentication session by calling the `/v1/session/login` REST API endpoint and specify the username and password. For example:
 
 ```bash
