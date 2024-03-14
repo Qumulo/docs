@@ -125,7 +125,7 @@ entries:
       output: web, pdf
 
     - title: Using Active Directory for POSIX Attributes
-      url: /administrator-guide/using-active-directory-for-posix-attributes.html
+      url: /administrator-guide/authorization-qumulo-core/using-active-directory-for-posix-attributes.html
       output: web, pdf
 
   - title: Network Configuration
