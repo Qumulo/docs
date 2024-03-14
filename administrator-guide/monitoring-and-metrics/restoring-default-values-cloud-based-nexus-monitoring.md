@@ -15,7 +15,7 @@ When you no longer [connect to Cloud-Based Monitoring by using a custom proxy](c
    ssh admin@{{site.exampleIP0}}
    ```
 
-1. Log in to Qumulo Core by using the administrative account. For example:
+1. {{site.logIntoWebUI}}by using the administrative account. For example:
 
    ```bash
    qq login -u admin -p mypassword

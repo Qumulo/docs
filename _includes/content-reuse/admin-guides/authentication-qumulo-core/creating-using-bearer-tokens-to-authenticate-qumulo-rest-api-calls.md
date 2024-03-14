@@ -24,7 +24,7 @@ curl -k -X POST https://{{site.exampleIP0}}:8000/v1/session/login \
 ```
 
 ### To Create a Bearer Token by Using the Qumulo Core Web UI
-1. Log in to Qumulo Core.
+1. {{site.logIntoWebUI}}
 
 1. Click **APIs & Tools**.
 
