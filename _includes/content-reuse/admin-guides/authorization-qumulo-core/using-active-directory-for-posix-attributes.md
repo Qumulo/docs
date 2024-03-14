@@ -1,0 +1,9 @@
+{% include important.html content="For changes to take effect, any Qumulo clusters that are already joined to an Active Directory domain must leave the domain and rejoin it." %}
+
+Because the SMB and NFS protocols have unique identifiers and exist in different identity domains, it becomes difficult to link the two protocols when they represent the same identity. In addition, storage devices can't determine the entity that attempts to access a file; as a result, a file that a Linux system writes can be inaccessible on a Windows machine.
+
+One solution to this issue is _full credential expansion_, which involves mapping the two identities&mdash;Windows identities for SMB clients and POSIX identities for NFS clients&mdash;by using Active Directory as a central reference. For more information, see {% include rfc.html rfc='2307' %}. This approach ensures that, when you use Active Directory to maintain identity mappings from POSIX to Windows, Qumulo Core abides by the mappings.
+
+To enable user identity mapping from your Windows SID to your NFS UID, you must assign a _user object_ (SID or `objectSid`) to every object in Windows and enter the NFS UID of the user as an object attribute. For example, this allows Qumulo Core to correlate NFS UID `2053` to SID `S-1-5-21-...` in Windows. Whenever this user identity is required (for example, to check permissions), Qumulo Core uses the established mapping to retrieve the entire identity for the user by referencing the NFS UIDs and GIDs, as well as all SIDs, including the group IDs of any relevant parent groups.
+
+{% include note.html content="The full credential expansion method lets your Qumulo Core cluster support more than 16 group memberships for your NFS users, as long as Active Directory configures the group memberships." %}
