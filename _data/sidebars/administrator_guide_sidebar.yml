@@ -124,6 +124,10 @@ entries:
       url: /administrator-guide/authorization-qumulo-core/managing-cross-protocol-permissions-xpp.html
       output: web, pdf
 
+    - title: Using Active Directory for POSIX Attributes
+      url: /administrator-guide/using-active-directory-for-posix-attributes.html
+      output: web, pdf
+
   - title: Network Configuration
     url: /administrator-guide/network-configuration/index.html
     output: web, pdf
