@@ -120,7 +120,7 @@ For more information, see [Role-Based Access Control (RBAC) with Qumulo Core](ht
 
 <a id="step-4-create-configure-secrets"></a>
 ### Step 4: Create and Configure Secrets
-To allow the CSI driver to operate with your Qumulo cluster, you must create and configure Secrets. You may use either Basic Authentication with a username and password, or an [Access Token](../authentication-qumulo-core/acquiring-using-bearer-tokens-to-authenticate-qumulo-rest-api-calls.html). Depending on configuration, Basic Authentication may be disallowed and using an Access Token will be required.
+To allow the CSI driver to operate with your Qumulo cluster, you must create and configure Secrets. You may use either Basic Authentication with a username and password, or an [Access Token](https://care.qumulo.com/hc/en-us/articles/360004600994). Depending on configuration, Basic Authentication may be disallowed and using an Access Token will be required.
 
 1. Configure one of the following authentication types.
 
