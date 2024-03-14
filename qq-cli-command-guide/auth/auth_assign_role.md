@@ -29,7 +29,7 @@ For more information, see:
 
 ## Examples
 
-### To Add a Trustee to an Existing Role
+### To Add a Trustee to an Existing Qumulo Core Role
 Run the `qq auth_assign_role` command and specify the role and trustee. For example:
 
 ```bash
