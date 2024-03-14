@@ -30,7 +30,7 @@ For more information, see:
 ## Examples
 
 ### To Add a Trustee to an Existing Role
-Use the `qq auth_assign_role` command and specify the role and trustee. For example:
+Run the `qq auth_assign_role` command and specify the role and trustee. For example:
 
 ```bash
 qq auth_assign_role \
