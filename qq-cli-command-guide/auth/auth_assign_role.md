@@ -23,3 +23,6 @@ usage: qq auth_assign_role [-h] -r ROLE -t TRUSTEE
 zendesk_source: qq CLI Command Guide
 
 ---
+For more information, see:
+* {{site.xref.adminANQ.manageRBAC}}
+* {{site.xref.adminOnPrem.manageRBAC}}
