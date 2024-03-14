@@ -29,7 +29,7 @@
      -out private.key
    ```
 
-1. Use the [`qq login`](https://docs.qumulo.com/qq-cli-command-guide/login/login.html) command to log in to your Qumulo cluster as an administrator. For example:
+1. Use the {% include qq.html command="login" %} command to log in to your Qumulo cluster as an administrator. For example:
 
    ```bash
    qq login \
@@ -37,7 +37,7 @@
      --host {{site.exampleIP0}}
    ```
 
-1. Use the [`qq ssl_modify_certificate`](https://docs.qumulo.com/qq-cli-command-guide/ssl/ssl_modify_certificate.html) command to install your certificate. For example:
+1. Use the {% include qq.html command="ssl_modify_certificate" %} command to install your certificate. For example:
 
    ```bash
    qq ssl_modify_certificate \
