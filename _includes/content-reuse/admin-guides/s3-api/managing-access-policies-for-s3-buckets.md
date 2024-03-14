@@ -285,11 +285,11 @@ The following table describes examples of principals which Qumulo Core supports.
     </tr>
     <tr>
       <td><code>uid:1234</code></td>
-      <td>A POSIX UID that identifies users by their <a href="https://www.rfc-editor.org/rfc/rfc2307">RFC-2307 details</a>, prefixed by <code>uid:</code></td>
+      <td>A POSIX UID that identifies users by their {% include rfc.html rfc='2307' %}, prefixed by <code>uid:</code></td>
     </tr>
     <tr>
       <td><code>gid:1234</code></td>
-      <td>A Posix GID that identifies users by their <a href="https://www.rfc-editor.org/rfc/rfc2307">RFC-2307 details</a>, prefixed by <code>gid:</code></td>
+      <td>A Posix GID that identifies users by their {% include rfc.html rfc='2307' %}, prefixed by <code>gid:</code></td>
     </tr>
     <tr>
       <td><code>auth_id:12345678</code></td>

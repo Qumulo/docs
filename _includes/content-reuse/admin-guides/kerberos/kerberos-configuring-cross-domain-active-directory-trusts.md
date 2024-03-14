@@ -17,8 +17,8 @@ The following example has trust between between `parent.example.com` and `child.
 CN=Users,DC=parent,DC=example,DC=com;CN=Users,DC=child,DC=parent,DC=example,DC=com
 ```
 
-{% include note.html content="AD doesn't prevent duplicate UID or GID numbers from being added to [RFC 2307](https://datatracker.ietf.org/doc/html/rfc2307) values. Such improper configuration can cause UID and GID collisions across trusted domains. On Linux, if any collisions occur, the system chooses the first UID or GID that it finds." %}
-
+{% capture duplicateNumbers %}AD doesn't prevent duplicate UID or GID numbers from being added to {% include rfc.html rfc='2307' %} values. Such improper configuration can cause UID and GID collisions across trusted domains. On Linux, if any collisions occur, the system chooses the first UID or GID that it finds.{% endcapture %}
+{% include note.html content=duplicateNumbers %}
 
 ## Enabling More Secure Trust Encryption Types
 While Linux systems disallow deprecated encryption types for Kerberos, Windows prefers RC4 for cross-domain traffic (which Linux systems consider to be deprecated).
