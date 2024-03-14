@@ -118,6 +118,10 @@ entries:
     output: web, pdf
     folderitems:
 
+    - title: Managing Role-Based Access Control (RBAC)
+      url: /azure-administrator-guide/authorization-qumulo-core/managing-role-based-access-control-rbac.html
+      output: web, pdf
+
     - title: Managing Cross-Protocol Permissions
       url: /azure-administrator-guide/authorization-qumulo-core/managing-cross-protocol-permissions-xpp.html
       output: web, pdf

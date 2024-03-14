@@ -1,8 +1,8 @@
-{% include note.html content="You can configure an S3 bucket to allow [read-only, anonymous access](managing-access-to-s3-buckets.html#enabling-anonymous-access-for-an-s3-bucket). This approach requires no credentials but limits users to non-modifying operations. For more information, see [To Enable Anonymous Access to S3 Buckets by Using the qq CLI](managing-access-to-s3-buckets.html#to-enable-anonymous-access-to-an-s3-bucket-by-using-the-qq-cli)." %}
+i% include note.html content="You can configure an S3 bucket to allow [read-only, anonymous access](managing-access-to-s3-buckets.html#enabling-anonymous-access-for-an-s3-bucket). This approach requires no credentials but limits users to non-modifying operations. For more information, see [To Enable Anonymous Access to S3 Buckets by Using the qq CLI](managing-access-to-s3-buckets.html#to-enable-anonymous-access-to-an-s3-bucket-by-using-the-qq-cli)." %}
 
 
 ## Prerequisites
-Managing S3 access keys requires the following [role-based access control (RBAC)](https://care.qumulo.com/hc/en-us/articles/360036591633) privileges:
+Managing S3 access keys requires the following [role-based access control (RBAC)](../authorization-qumulo-core/managing-role-based-access-control-rbac.html) privileges:
 
   * `PRIVILEGE_S3_BUCKETS_WRITE`: Create and delete S3 access keys
   

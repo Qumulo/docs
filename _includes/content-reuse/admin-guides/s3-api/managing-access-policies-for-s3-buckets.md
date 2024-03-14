@@ -27,7 +27,7 @@ The following prerequisites let you manage the access policy for an S3 bucket ef
 
 * Configure [inheritable file ACLs](managing-access-to-s3-buckets.html#inheritable-aces) by using the `qq` CLI, SMB, or [NFSv4.1 access control lists (ACLs)](../nfs/nfsv4.1-acls.html).
 
-* Ensure that you have the following required [role-based access control (RBAC)](https://care.qumulo.com/hc/en-us/articles/360036591633) privileges. 
+* Ensure that you have the following required [role-based access control (RBAC)](../authorization-qumulo-core/managing-role-based-access-control-rbac.html) privileges. 
   
   * `PRIVILEGE_S3_BUCKETS_READ`
     

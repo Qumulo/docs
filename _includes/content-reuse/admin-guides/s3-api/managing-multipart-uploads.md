@@ -4,7 +4,7 @@ Qumulo Core supports the [multipart upload functionality]({{site.s3.docs.multipa
 
 
 ## Prerequisites
-To manage multipart S3 uploads by using the `qq` CLI, you need the following [role-based access control (RBAC)](https://care.qumulo.com/hc/en-us/articles/360036591633) privileges:
+To manage multipart S3 uploads by using the `qq` CLI, you need the following [role-based access control (RBAC)](../authorization-qumulo-core/managing-role-based-access-control-rbac.html) privileges:
 
 * `PRIVILEGE_S3_SETTINGS_WRITE`: Configure frequency of multipart upload cleanup
 

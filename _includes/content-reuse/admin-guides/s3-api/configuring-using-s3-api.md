@@ -103,7 +103,7 @@ To create and manage S3 buckets, you must configure AWS CLI to work with your Qu
 
 
 ## Step 5: Create an S3 Bucket
-{% include note.html content="Creating buckets requires the `PRIVILEGE_S3_BUCKETS_WRITE` [role-based access control (RBAC)](https://care.qumulo.com/hc/en-us/articles/360036591633) privilege and permission to create a directory under the cluster's root directory." %}
+{% include note.html content="Creating buckets requires the `PRIVILEGE_S3_BUCKETS_WRITE` [role-based access control (RBAC)](../authorization-qumulo-core/managing-role-based-access-control-rbac.html) privilege and permission to create a directory under the cluster's root directory." %}
 
 Run the `aws s3api create-bucket` command and specify the bucket name. For example:
 

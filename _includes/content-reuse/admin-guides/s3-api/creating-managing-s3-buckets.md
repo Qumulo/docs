@@ -2,7 +2,7 @@ You can create and work with S3 buckets {{site.s3.permissions.APIorCLI}}. {{site
 
 
 ## Prerequisites
-To create and manage S3 buckets {{site.s3.permissions.APIorCLI}}, you need the following [role-based access control (RBAC)](https://care.qumulo.com/hc/en-us/articles/360036591633) privileges:
+To create and manage S3 buckets {{site.s3.permissions.APIorCLI}}, you need the following [role-based access control (RBAC)](../authorization-qumulo-core/managing-role-based-access-control-rbac.html) privileges:
 
   * `PRIVILEGE_S3_BUCKETS_WRITE`: Create and delete S3 buckets
   
