@@ -11,6 +11,9 @@ For information about upgrade types for each release, see <a href='mode-referenc
 
 <style>div#toc{height:200px;overflow:auto;}</style>
 
+## Qumulo Core 7.0.2
+{{page.varDownloadsRelnotes}}
+
 ## Qumulo Core 7.0.1.1
 {{page.varDownloadsRelnotes}}
 {% include important.html content="This release resolves a scenario in Qumulo Core 7.0.1 where a node in a Qumulo cluster could go offline if a tree delete operation was performed on a directory while an SMB client was watching it for changes." %}
