@@ -33,11 +33,14 @@ For more information, see:
 
 ## Examples
 
-### To Remove a Trustee from an Existing Role
-Run the `qq auth_unassign_role` command and specify the role and trustee. For example:
+## To Create a New Custom Qumulo Core Role
+Use the `qq auth_create_role` command and specify the custom role name, description, and the file that lists the necessary privileges. For example:
 
 ```bash
-qq auth_unassign_role \
-  --role observers \
-  --trustee uid:2000
+qq auth_create_role \
+  --role "SMB-Manager" \
+  --description "Manage SMB Shares" \
+  --privileges-file PRIVILEGES
 ```
+
+{% include content-reuse/cli-guide/add-multiple-privileges-to-new-custom-role.md %}
