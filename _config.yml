@@ -186,7 +186,6 @@ hardware:
   irmcCreds:
     fprx: The default iRMC username is <code>admin</code> and the default password is printed on the System ID Card attached to the node.
     
-
 led:
   red: <span class="emoji">🔴</span>
   brown: <span class="emoji">🟤</span>
@@ -197,14 +196,6 @@ led:
   purple: <span class="emoji">🟣</span>
   black: <span class="emoji">⚫️</span>
   white: <span class="emoji">⚪️</span>
-
-xrefUSBinstaller: <a href="https://docs.qumulo.com/hardware-guide/getting-started/creating-usb-drive-installer.html" class="no_icon">Qumulo Core USB Drive Installer</a>
-xref:
-  adminANQ:
-    manageAccessS3: <a href="https://docs.qumulo.com/azure-administrator-guide/s3-api/managing-access-policies-for-s3-buckets.html">Managing Access Policies for an S3 Bucket in a Qumulo Cluster</a> in the Azure Native Qumulo Administrator Guide
-  adminOnPrem:
-    manageAccessS3: <a href="https://docs.qumulo.com/administrator-guide/s3-api/managing-access-policies-for-s3-buckets.html">Managing Access Policies for an S3 Bucket in a Qumulo Cluster</a> in the Qumulo On-Premises Administrator Guide
-
 
 splitIlo: We strongly recommend separating your iLO access network from your client-facing network.
 partReplaceDefine: When you replace a component such as the motherboard or a NIC card in your node, you must ensure that the firmware version and configuration are correct for your new components. To do this, you must perform the part replacement procedure by using the FVT.
@@ -360,3 +351,12 @@ guides:
   cli: Qumulo <code>qq</code> CLI Command Guide
   hard: Qumulo-Certified Hardware Servicing Guide
   integ: Qumulo Integration Guide
+
+xrefUSBinstaller: <a href="https://docs.qumulo.com/hardware-guide/getting-started/creating-usb-drive-installer.html" class="no_icon">Qumulo Core USB Drive Installer</a>
+xref:
+  adminANQ:
+    manageAccessS3: <a href="https://docs.qumulo.com/azure-administrator-guide/s3-api/managing-access-policies-for-s3-buckets.html">Managing Access Policies for an S3 Bucket in a Qumulo Cluster</a> in the Azure Native Qumulo Administrator Guide
+    manageRBAC: <a href="https://docs.qumulo.com/azure-administrator-guide/authorization-qumulo-core/managing-role-based-access-control-rbac.html">Managing Role-Based Access Control (RBAC) for Users and Groups in Qumulo Core</a> in the Azure Native Qumulo Administrator Guide
+  adminOnPrem:
+    manageAccessS3: <a href="https://docs.qumulo.com/administrator-guide/s3-api/managing-access-policies-for-s3-buckets.html">Managing Access Policies for an S3 Bucket in a Qumulo Cluster</a> in the Qumulo On-Premises Administrator Guide
+    manageRBAC: <a href="https://docs.qumulo.com/administrator-guide/authorization-qumulo-core/managing-role-based-access-control-rbac.html">Managing Role-Based Access Control (RBAC) for Users and Groups in Qumulo Core</a> in the Qumulo On-Premises Administrator Guide
