@@ -39,7 +39,7 @@ qq auth_assign_role \
 ```
 
 ```bash
-qq auth_assign_role
-  --role Administrators
+qq auth_assign_role \
+  --role Administrators \
   --trustee uid:1000
 ```
