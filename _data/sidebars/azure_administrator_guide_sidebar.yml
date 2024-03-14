@@ -118,7 +118,7 @@ entries:
     output: web, pdf
     folderitems:
 
-    - title: Managing Role-Based Access Control (RBAC)
+    - title: Managing Role-Based Access Control
       url: /azure-administrator-guide/authorization-qumulo-core/managing-role-based-access-control-rbac.html
       output: web, pdf
 
