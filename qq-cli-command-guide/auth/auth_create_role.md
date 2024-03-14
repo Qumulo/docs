@@ -27,3 +27,17 @@ usage: qq auth_create_role [-h] -r ROLE [-d DESCRIPTION] [-p PRIVILEGES_FILE]
 zendesk_source: qq CLI Command Guide
 
 ---
+For more information, see:
+* {{site.xref.adminANQ.manageRBAC}}
+* {{site.xref.adminOnPrem.manageRBAC}}
+
+## Examples
+
+### To Remove a Trustee from an Existing Role
+Run the `qq auth_unassign_role` command and specify the role and trustee. For example:
+
+```bash
+qq auth_unassign_role \
+  --role observers \
+  --trustee uid:2000
+```
