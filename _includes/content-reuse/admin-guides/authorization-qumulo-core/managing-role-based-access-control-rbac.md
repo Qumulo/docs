@@ -1,6 +1,6 @@
 To share management responsibilities with others, you can grant specific privileges to a user or group&mdash;locally or through Active Directory&mdash;by using RBAC.
 
-For information about managing RBAC by using the `qq` CLI, see the following sections in the {{site.guides.CLI}}:
+<a id="custom-roles"></a>For information about managing RBAC and creating custom rols by using the `qq` CLI, see the following sections in the {{site.guides.cli}}:
 
 * [`qq auth_assign_role`](https://docs.qumulo.com/qq-cli-command-guide/auth/auth_assign_role.html)
 * [`qq auth_create_role`](https://docs.qumulo.com/qq-cli-command-guide/auth/auth_create_role.html)
@@ -18,7 +18,7 @@ For information about managing RBAC by using the `qq` CLI, see the following sec
 ## Role Types in Qumulo Core
 This section explains the Administrators, Data-Administrators, and Observers role types in Qumulo Core.
 
-For information about creating a custom role by using the `qq` CLI, see [`qq auth_create_role`](https://docs.qumulo.com/qq-cli-command-guide/auth/auth_create_role.html) in the {{site.guides.CLI}}.
+For information about creating a custom role by using the `qq` CLI, see [`qq auth_create_role`](https://docs.qumulo.com/qq-cli-command-guide/auth/auth_create_role.html) in the {{site.guides.cli}}.
 
 ### Administrators
 {% include note.html content="Only the default administrator account can access a Qumulo cluster by using SSH." %}
@@ -47,3 +47,6 @@ This role is suitable for users or groups who can access the Qumulo Core Web UI 
   <li>It is possible to assign both Data-Administrators and Observers roles to a single user. This can give the user the ability to manage data on your Qumulo cluster by using the Qumulo Core Web UI without full administrative access.</li>
 </ul>
 {{site.data.alerts.end}}
+
+### Custom
+You can [configure custom roles by using the `qq` CLI](#custom-roles)
