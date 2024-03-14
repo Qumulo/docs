@@ -9,7 +9,7 @@ When you use the Qumulo REST API, you begin an authentication session by logging
    ```bash
    curl -k -X POST https://{{site.exampleIP0}}:8000/v1/session/login \
      -H "Content-Type: application/json" \
-     -d '{"username":"myusername", "password":"mypassword"}'
+     -d '{ "username": "myusername", "password": "mypassword"}'
    ```
    
    {{site.exampleOutput}}
