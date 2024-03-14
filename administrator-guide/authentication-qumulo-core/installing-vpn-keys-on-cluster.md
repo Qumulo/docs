@@ -20,7 +20,7 @@ Before you begin, make sure that you have done the following.
 
 * Whitelist the following domains in your firewall rules:
 
-  * `ep.qumulo.com`
+  * `ep1.qumulo.com`
 
   * `api.missionq.qumulo.com`
 
