@@ -33,7 +33,7 @@ For more information, see:
 
 ## Examples
 
-## To Create a New Custom Qumulo Core Role
+### To Create a New Custom Qumulo Core Role
 Run the `qq auth_create_role` command and specify the custom role name, description, and the file that lists the necessary privileges. For example:
 
 ```bash
