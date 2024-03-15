@@ -151,6 +151,10 @@ entries:
       url: /azure-administrator-guide/network-configuration/connecting-multiple-virtual-networks.html
       output: web, pdf
 
+    - title: Configuring Round-Robin DNS on Windows Server
+      url: /azure-administrator-guide/network-configuration/configuring-round-robin-dns-windows-server.html
+      output: web, pdf
+
   - title: Web UI
     url: /azure-administrator-guide/web-ui/index.html
     output: web, pdf

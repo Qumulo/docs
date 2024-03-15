@@ -149,6 +149,10 @@ entries:
       url: /administrator-guide/network-configuration/connecting-multiple-virtual-networks.html
       output: web, pdf
 
+    - title: Configuring Round-Robin DNS on Windows Server
+      url: /administrator-guide/network-configuration/configuring-round-robin-dns-windows-server.html
+      output: web, pdf
+
   - title: Network Multitenancy
     url: /administrator-guide/network-multitenancy/index.html
     output: web, pdf
