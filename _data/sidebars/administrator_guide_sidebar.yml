@@ -180,6 +180,10 @@ entries:
     output: web, pdf
     folderitems:
 
+    - title: Getting Started with the qq CLI
+      url: /administrator-guide/qq-cli/getting-started.html
+      output: web, pdf
+
     - title: Enabling Autocomplete for the qq CLI
       url: /administrator-guide/qq-cli/enabling-autocomplete.html
       output: web, pdf
