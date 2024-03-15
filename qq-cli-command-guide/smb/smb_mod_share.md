@@ -143,3 +143,12 @@ ID Trustee                        Type    Rights
 == ============================== ======= ===============================
 1  {{site.exampleNetworkSegment0}}, {{site.exampleNetworkSegment1}} Allowed Read, Write, Change permissions
 ```
+
+### To Remove All Host Restrictions from an Existing SMB Share
+
+Run the `qq smb_mod_shre` command, specify the share ID, and specify full control. For example:
+
+```bash
+qq smb_mod_share --id=4 \
+  --full-control="*"
+```
