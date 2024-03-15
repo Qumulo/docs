@@ -2,7 +2,7 @@ You can create and work with S3 buckets {{site.s3.permissions.APIorCLI}}. {{site
 
 
 ## Prerequisites
-To create and manage S3 buckets {{site.s3.permissions.APIorCLI}}, you need the following [role-based access control (RBAC)](https://care.qumulo.com/hc/en-us/articles/360036591633) privileges:
+To create and manage S3 buckets {{site.s3.permissions.APIorCLI}}, you need the following [role-based access control (RBAC)](../authorization-qumulo-core/managing-role-based-access-control-rbac.html) privileges:
 
   * `PRIVILEGE_S3_BUCKETS_WRITE`: Create and delete S3 buckets
   
@@ -89,7 +89,7 @@ You specify the [bucket root directory](#bucket-root) depending on how you creat
 
 * When you create an S3 bucket by using the `CreateBucket` S3 API action, the API creates a new directory with the same name as the bucket under the default bucket directory prefix. For more information, see [Configuring the Default Bucket Directory Prefix for S3 Buckets](#default-directory-prefix). 
 
-* If you don't specify a directory, the Qumulo REST API and `qq` CLI use the {{page.varDefaultPrefix}}.
+* If you don't specify a directory, the Qumulo Core REST API and `qq` CLI use the {{page.varDefaultPrefix}}.
 
 The user that creates a new directory for a new bucket owns the directory. For more information, see [Managing Access to S3 Buckets in a Qumulo Cluster](managing-access-to-s3-buckets.html).
 
@@ -97,7 +97,7 @@ The user that creates a new directory for a new bucket owns the directory. For m
 ## Creating S3 Buckets
 You can create an S3 bucket {{site.s3.permissions.APIorCLI}}. {{site.s3.permissions.directAPI}}
 
-While the Qumulo REST API and `qq` CLI let you use an existing directory as the new bucket root, the S3 API always creates a new directory for the bucket root.
+While the Qumulo Core REST API and `qq` CLI let you use an existing directory as the new bucket root, the S3 API always creates a new directory for the bucket root.
 
 {{site.data.alerts.important}}
 <ul>
@@ -262,7 +262,7 @@ Run the `aws s3api list-buckets` command. This command uses the [`ListBuckets`](
 ## Deleting S3 Buckets
 You can delete an S3 bucket {{site.s3.permissions.APIorCLI}}. {{site.s3.permissions.directAPI}}
 
-While the Qumulo REST API and `qq` CLI let you choose whether to also delete the bucket root directory, the S3 API always deletes the bucket root directory.
+While the Qumulo Core REST API and `qq` CLI let you choose whether to also delete the bucket root directory, the S3 API always deletes the bucket root directory.
 
 {% capture deleteNote %}Before you delete your S3 bucket, you must either let all in-progress upload operations for the bucket ({{page.varUploadKinds}}) complete or you must abort the operations.{% endcapture %}
 {% include note.html content=deleteNote %}

@@ -9,7 +9,7 @@ NFSv4.1 with Kerberos and the general AD configuration in Qumulo Core support th
 
 
 ## Configuring the Base DN
-For identity mapping to work, you must configure LDAP Base DNs correctly on your Qumulo cluster and on your client. This helps avoid `nobody` or `66534` identity responses that occur when you inspect files that contain trusted users (stored as identities) from other domains. For more information about configuring the Base DN, see [Using Active Directory for POSIX Attributes](https://care.qumulo.com/hc/en-us/articles/115008011927) on Qumulo Care.
+For identity mapping to work, you must configure LDAP Base DNs correctly on your Qumulo cluster and on your client. This helps avoid `nobody` or `66534` identity responses that occur when you inspect files that contain trusted users (stored as identities) from other domains. For more information about configuring the Base DN, see [Using Active Directory for POSIX Attributes in Qumulo Core](https://docs.qumulo.com/administrator-guide/authorization-qumulo-core/using-active-directory-for-posix-attributes.html).
 
 The following example has trust between between `parent.example.com` and `child.example.com`. In order for both domains' identities to authenticate against a Qumulo cluster, you must configure the cluster and your client with the following Base DN.
 
@@ -17,8 +17,8 @@ The following example has trust between between `parent.example.com` and `child.
 CN=Users,DC=parent,DC=example,DC=com;CN=Users,DC=child,DC=parent,DC=example,DC=com
 ```
 
-{% include note.html content="AD doesn't prevent duplicate UID or GID numbers from being added to [RFC 2307](https://datatracker.ietf.org/doc/html/rfc2307) values. Such improper configuration can cause UID and GID collisions across trusted domains. On Linux, if any collisions occur, the system chooses the first UID or GID that it finds." %}
-
+{% capture duplicateNumbers %}AD doesn't prevent duplicate UID or GID numbers from being added to {% include rfc.html rfc='2307' %} values. Such improper configuration can cause UID and GID collisions across trusted domains. On Linux, if any collisions occur, the system chooses the first UID or GID that it finds.{% endcapture %}
+{% include note.html content=duplicateNumbers %}
 
 ## Enabling More Secure Trust Encryption Types
 While Linux systems disallow deprecated encryption types for Kerberos, Windows prefers RC4 for cross-domain traffic (which Linux systems consider to be deprecated).

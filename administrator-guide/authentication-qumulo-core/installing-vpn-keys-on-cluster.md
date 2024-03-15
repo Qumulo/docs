@@ -20,7 +20,7 @@ Before you begin, make sure that you have done the following.
 
 * Whitelist the following domains in your firewall rules:
 
-  * `ep.qumulo.com`
+  * `ep1.qumulo.com`
 
   * `api.missionq.qumulo.com`
 
@@ -36,7 +36,7 @@ Before you begin, make sure that you have done the following.
 ## To Install VPN Keys from a Networked Machine
 {{page.varCopyFile}}
 
-1. Install the `qq` CLI on the same computer. For more information, see [QQ CLI: Get Started](https://care.qumulo.com/hc/en-us/articles/115008165008) on Qumulo Care.
+1. Install the `qq` CLI on the same computer. For more information, see [Getting Started with the qq CLI](../qq-cli/getting-started.html).
 
 1. To log in to your cluster, use the `qq` CLI and specify your cluster's IP address. For example:
 

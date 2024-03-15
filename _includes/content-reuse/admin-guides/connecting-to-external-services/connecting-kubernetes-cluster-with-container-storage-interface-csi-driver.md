@@ -116,7 +116,7 @@ To connect your Kubernetes cluster to your Qumulo cluster, you must either use a
    
    * Perform `TreeDelete` operations on volume directories: `PRIVILEGE_FS_DELETE_TREE_WRITE`
 
-For more information, see [Role-Based Access Control (RBAC) with Qumulo Core](https://care.qumulo.com/hc/en-us/articles/360036591633) on Qumulo Care.
+For more information, see [Role-Based Access Control (RBAC) with Qumulo Core](../authorization-qumulo-core/managing-role-based-access-control-rbac.html) on Qumulo Care.
 
 <a id="step-4-create-configure-secrets"></a>
 ### Step 4: Create and Configure Secrets

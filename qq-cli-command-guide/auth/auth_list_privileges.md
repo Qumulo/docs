@@ -27,3 +27,19 @@ usage: qq auth_list_privileges [-h] [-r ROLE] [-v] [--json]
 zendesk_source: qq CLI Command Guide
 
 ---
+For more information, see:
+* {{site.xref.adminANQ.manageRBAC}}
+* {{site.xref.adminOnPrem.manageRBAC}}
+
+To view all existing users and groups with role-based control for your Qumulo cluster, run the `qq auth_list_roles` command.
+
+## Examples
+
+### To View the Privileges for an Existing Qumulo Core Role
+Run the `qq auth_list_privileges` command and use `grep` to filter only the privileges that contain the word `SMB`. For example:
+
+```bash
+qq auth_list_privileges | grep SMB
+```
+
+{% include content-reuse/cli-guide/add-multiple-privileges-to-new-custom-role.md %}

@@ -1,8 +1,8 @@
-{% include note.html content="You can configure an S3 bucket to allow [read-only, anonymous access](managing-access-to-s3-buckets.html#enabling-anonymous-access-for-an-s3-bucket). This approach requires no credentials but limits users to non-modifying operations. For more information, see [To Enable Anonymous Access to S3 Buckets by Using the qq CLI](managing-access-to-s3-buckets.html#to-enable-anonymous-access-to-an-s3-bucket-by-using-the-qq-cli)." %}
+i% include note.html content="You can configure an S3 bucket to allow [read-only, anonymous access](managing-access-to-s3-buckets.html#enabling-anonymous-access-for-an-s3-bucket). This approach requires no credentials but limits users to non-modifying operations. For more information, see [To Enable Anonymous Access to S3 Buckets by Using the qq CLI](managing-access-to-s3-buckets.html#to-enable-anonymous-access-to-an-s3-bucket-by-using-the-qq-cli)." %}
 
 
 ## Prerequisites
-Managing S3 access keys requires the following [role-based access control (RBAC)](https://care.qumulo.com/hc/en-us/articles/360036591633) privileges:
+Managing S3 access keys requires the following [role-based access control (RBAC)](../authorization-qumulo-core/managing-role-based-access-control-rbac.html) privileges:
 
   * `PRIVILEGE_S3_BUCKETS_WRITE`: Create and delete S3 access keys
   
@@ -51,7 +51,7 @@ To authenticate S3 API requests, Qumulo Core retrieves existing access key pairs
 {% include important.html content=secretAccessKeysOneTime %}
 
 ### S3 Access Key Lifecycle in Qumulo Core
-Qumulo Core doesn't limit how long you can use an access key pair after you create it. Your system administrators must take responsibility for using the Qumulo REST API or `qq` CLI to view the creation dates for access keys and revoke any pair at their discretion.
+Qumulo Core doesn't limit how long you can use an access key pair after you create it. Your system administrators must take responsibility for using the Qumulo Core REST API or `qq` CLI to view the creation dates for access keys and revoke any pair at their discretion.
 
 For more information, see [Listing S3 Access Keys for a Qumulo Cluster](#listing-s3-access-keys).
 
@@ -120,7 +120,7 @@ You can specify an identity by using:
 {% capture noRecover %}{{site.s3.permissions.secretAccessKeys}}{% endcapture %}
 {% include important.html content=noRecover %}
 
-### To Create an S3 Access Key by Using the Qumulo REST API
+### To Create an S3 Access Key by Using the Qumulo Core REST API
 Send a `POST` request to the `/v1/s3/access-keys/` endpoint with the following body. You must include at least one of the following keys:
 
 * `auth_id`
@@ -195,11 +195,11 @@ To list S3 access keys, you must have {{site.s3.permissions.bucketsRead}}.
 
 * For JSON output, use the `--json` flag.
 
-  {{site.exampleOutput}} The command returns a single JSON object that contains the combined responses from calls to the `/v1/s3/access-keys/` Qumulo REST API endpoint. 
+  {{site.exampleOutput}} The command returns a single JSON object that contains the combined responses from calls to the `/v1/s3/access-keys/` Qumulo Core REST API endpoint. 
 
 {{listAccessKeysResponse}}
 
-### To List S3 Access Keys by Using the Qumulo REST API
+### To List S3 Access Keys by Using the Qumulo Core REST API
 To list the S3 access keys that your Qumulo cluster knows, send a `GET` request to the `/v1/s3/access-keys/` endpoint.
 
 {% capture restrictResults %}To restrict the number of returned results, up to the maximum of {{page.varListMax}} access keys (this is the default limit), include the optional `limit` query parameter in the request.{% endcapture %}
@@ -222,8 +222,8 @@ $ qq s3_delete_access_key \
   --id 000000000001fEXAMPLE
 ```
 
-### To Delete an S3 Access Key by Using the Qumulo REST API
-Send a `DELETE` request to the `/v1/s3/access-keys/<access-key-id>` Qumulo REST API endpoint and specify the access key ID.
+### To Delete an S3 Access Key by Using the Qumulo Core REST API
+Send a `DELETE` request to the `/v1/s3/access-keys/<access-key-id>` Qumulo Core REST API endpoint and specify the access key ID.
 
 
 ## Configuring Active Directory (AD) for S3

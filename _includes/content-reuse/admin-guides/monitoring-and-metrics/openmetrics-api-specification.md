@@ -1,4 +1,4 @@
-The Qumulo OpenMetrics API has a single endpoint that provides a complete view of point-in-time telemetry from Qumulo Core to monitoring systems. These systems, such as [Prometheus](https://github.com/prometheus/prometheus), can consume the OpenMetrics data format that the Qumulo REST API emits without custom code or a monitoring agent. For more information about data formats, see your monitoring system's documentation.
+The Qumulo OpenMetrics API has a single endpoint that provides a complete view of point-in-time telemetry from Qumulo Core to monitoring systems. These systems, such as [Prometheus](https://github.com/prometheus/prometheus), can consume the OpenMetrics data format that the Qumulo Core REST API emits without custom code or a monitoring agent. For more information about data formats, see your monitoring system's documentation.
 
 
 ## Accessing Qumulo Metrics
@@ -8,7 +8,7 @@ Qumulo metrics are available at the following endpoint.
 https://<my-cluster-hostname>:8000/v2/metrics/endpoints/default/data
 ```
 
-You can configure a monitoring system that supports the [OpenMetrics Specification](https://github.com/OpenObservability/OpenMetrics/blob/main/specification/OpenMetrics.md) to use [bearer token authentication](../external-services/using-access-tokens.html) to access this endpoint.
+You can configure a monitoring system that supports the [OpenMetrics Specification](https://github.com/OpenObservability/OpenMetrics/blob/main/specification/OpenMetrics.md) to use [bearer token authentication](../connecting-to-external-services/creating-using-access-tokens-to-authenticate-external-services-qumulo-core.html) to access this endpoint.
 
 ## Metric Types
 All Qumulo metrics belong to one of the following OpenMetrics types.

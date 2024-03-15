@@ -46,3 +46,36 @@ usage: qq fs_write [-h] (--path PATH | --id ID) [--stream-id STREAM_ID | --strea
 zendesk_source: qq CLI Command Guide
 
 ---
+
+## Examples
+
+### To Write a File to a Directory on a Qumulo Cluster
+Run the `qq fs_write` command, use the `--create` flag and specify the source of and target locations for the file. For example:
+
+```bash
+qq fs_write --create \
+  --file /upgrade/qinstall.qimg \
+  --path /qinstall.qimg
+```
+
+{{site.exampleOutput}}
+
+```json
+{
+  "blocks": "139355",
+  "change_time": "2024-02-04T00:28:50.778788345Z",
+  "child_count": 0,
+  "creation_time": "2024-02-04T00:28:50.766408341Z",
+  "file_number": "6981",
+  "group": "2",
+  "id": "6981",
+  "mode": "0644",
+  "modification_time": "2024-02-04T00:29:32.967968707Z",
+  "name": "",
+  "num_links": 1,
+  "owner": "500",
+  "path": "/qinstall.qimg",
+  "size": "570798080",
+  "type": "FS_FILE_TYPE_FILE"
+}
+```

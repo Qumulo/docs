@@ -103,3 +103,68 @@ usage: "qq smb_mod_share [-h] (--id ID | --name NAME) [--tenant-id TENANT_ID] [-
 zendesk_source: qq CLI Command Guide
 
 ---
+
+## Examples
+
+### Modifying Host Restrictions
+For more information, see:
+* {{site.xref.adminANQ.usingSMBhostRestrict}}
+* {{site.xref.adminOnPrem.usingSMBhostRestrict}}
+
+#### To Modify Host Restrictions for an Existing SMB Share
+{{site.data.alerts.note}}
+<ul>
+  <li>{{site.xref.smbCLI.addModSameFlag}}</li>
+  <li>If you specify new host restrictions, they overwrite any existing host restrictions. You must explicitly specify which host restrictions to retain.</li>
+  <li>If you don't include any flags, no changes take place.</li>
+</ul>
+{{site.data.alerts.end}}
+
+Run the `qq smb_mod_share` command and {{site.xref.smbCLI.addModCommand}} In the following example, Qumulo Core grants hosts {{site.exampleNetworkSegment0}} and {{site.exampleNetworkSegment1}} full control, and denies all other hosts.
+
+{{site.exampleOutput}}
+
+```
+ID: 4
+Name: share2
+Path: /
+Description:
+Access Based Enumeration: False
+Encryption Required: False
+Default File Create Mode: 0644
+Default Directory Create Mode: 0755
+
+Permissions:
+ID Trustee  Type    Rights 
+== ======== ======= ===============================
+1  Everyone Allowed Read, Write, Change permissions
+
+Network Permissions:
+ID Trustee                        Type    Rights 
+== ============================== ======= ===============================
+1  {{site.exampleNetworkSegment0}}, {{site.exampleNetworkSegment1}} Allowed Read, Write, Change permissions
+```
+
+#### To Remove All Host Restrictions from an Existing SMB Share
+Run the `qq smb_mod_share` command, specify the share ID, and specify full control. For example:
+
+For more information, see:
+* {{site.xref.adminANQ.manageSMB3encrypt}}
+* {{site.xref.adminOnPrem.manageSMB3encrypt}}
+```bash
+qq smb_mod_share --id=4 \
+  --full-control="*"
+```
+
+### Configuring SMB3 Encryption
+For more information, see:
+* {{site.xref.adminANQ.manageSMB3encrypt}}
+* {{site.xref.adminOnPrem.manageSMB3encrypt}}
+
+#### To Configure Share-Level SMB3 Encryption
+Run the `qq smb_mod_share` command, specify the share name or ID, and use the `--require-encryption` flag to specify `true` or `false`. For example:
+
+```bash
+qq smb_mod_share --name my_share \
+  --require-encryption true
+```

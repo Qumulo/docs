@@ -107,13 +107,13 @@ $ qq multitenancy_modify_tenant \
 ```
 
 ### Configuring the SMB Protocol Globally or for a Tenant
-You can use _global settings_ that apply to all tenants. For example, to require encryption for all tenants, use the `qq smb_modify_settings --encryption-mode required` command. For more information about SMB settings, see the following resources in Qumulo Care:
+You can use _global settings_ that apply to all tenants. For example, to require encryption for all tenants, use the `qq smb_modify_settings --encryption-mode required` command. For more information about SMB settings, see the following resources:
 
-* [SMB3 Encryption with Qumulo Core](https://care.qumulo.com/hc/en-us/articles/360037249854)
+* [Managing SMB3 Encryption in Transit in Qumulo Core](../encryption-data-security/managing-smb3-encryption-in-transit.html)
 
-* [SMB Host Restrictions](https://care.qumulo.com/hc/en-us/articles/360041155254)
+* [Using SMB Host Restrictions in Qumulo Core](../authorization-qumulo-core/using-smb-host-restrictions.html)
 
-* [Hide an SMB Share](https://care.qumulo.com/hc/en-us/articles/360005375333)
+* [Hiding an SMB Share](../authorization-qumulo-core/using-smb-host-restrictions.html#hiding-an-smb-share)
 
 * [Snapshots: Snapshot Directory Mode](https://care.qumulo.com/hc/en-us/articles/360042053973)
 
@@ -158,7 +158,7 @@ $ qq smb_mod_share -–tenant-id 2 \
 ```
 
 #### Using the Microsoft Management Console (MMC)
-To create, modify, and delete SMB shares for each tenant, you can use the MMC Shared Folders snap-in. For more information, see [Manage File Shares with Shared Folders MMC Snap-in](https://care.qumulo.com/hc/en-us/articles/360043419473) on Qumulo Care.
+To create, modify, and delete SMB shares for each tenant, you can use the MMC Shared Folders snap-in. For more information, see [Managing Qumulo Core File Shares by Using the Shared Folders MMC Snap-In](../smb/managing-file-shares-shared-folders-mmc.html).
 
 {% include important.html content="Because folder paths always start at the root of the file shstem, using the MMC on a Windows client on a tenant’s network causes the MMC to modify that tenant’s shares." %}
 

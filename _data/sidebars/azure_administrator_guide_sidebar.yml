@@ -96,26 +96,42 @@ entries:
       url: /azure-administrator-guide/authentication-qumulo-core/configuring-ldap.html
       output: web, pdf
 
+    - title: Creating and Using Bearer Tokens
+      url: /azure-administrator-guide/authentication-qumulo-core/creating-using-bearer-tokens-to-authenticate-qumulo-rest-api-calls.html
+      output: web, pdf
+
+  - title: Connecting to External Services
+    url: /azure-administrator-guide/connecting-to-external-services/index.html
+    output: web, pdf
+    folderitems:
+
+    - title: Creating and Using Access Tokens
+      url: /azure-administrator-guide/connecting-to-external-services/creating-using-access-tokens-to-authenticate-external-services-qumulo-core.html
+      output: web, pdf
+
+    - title: Connecting a Kubernetes Cluster
+      url: /azure-administrator-guide/connecting-to-external-services/connecting-kubernetes-cluster-with-container-storage-interface-csi-driver.html
+      output: web, pdf
+
   - title: Authorization
     url: /azure-administrator-guide/authorization-qumulo-core/index.html
     output: web, pdf
     folderitems:
 
+    - title: Managing Role-Based Access Control
+      url: /azure-administrator-guide/authorization-qumulo-core/managing-role-based-access-control-rbac.html
+      output: web, pdf
+
     - title: Managing Cross-Protocol Permissions
       url: /azure-administrator-guide/authorization-qumulo-core/managing-cross-protocol-permissions-xpp.html
       output: web, pdf
 
-  - title: External Services
-    url: /azure-administrator-guide/external-services/index.html
-    output: web, pdf
-    folderitems:
-
-    - title: Using Access Tokens
-      url: /azure-administrator-guide/external-services/using-access-tokens.html
+    - title: Using SMB Host Restrictions
+      url: /azure-administrator-guide/authorization-qumulo-core/using-smb-host-restrictions.html
       output: web, pdf
 
-    - title: Connecting a Kubernetes Cluster
-      url: /azure-administrator-guide/external-services/connecting-kubernetes-cluster-with-container-storage-interface-csi-driver.html
+    - title: Using Active Directory for POSIX Attributes
+      url: /azure-administrator-guide/authorization-qumulo-core/using-active-directory-for-posix-attributes.html
       output: web, pdf
 
   - title: Network Configuration
@@ -127,8 +143,16 @@ entries:
       url: /azure-administrator-guide/network-configuration/required-ports.html
       output: web, pdf
 
+    - title: Configuring IPv6
+      url: /azure-administrator-guide/network-configuration/configuring-ipv6.html
+      output: web, pdf
+
     - title: Connecting to Multiple Virtual Networks
       url: /azure-administrator-guide/network-configuration/connecting-multiple-virtual-networks.html
+      output: web, pdf
+
+    - title: Configuring Round-Robin DNS on Windows Server
+      url: /azure-administrator-guide/network-configuration/configuring-round-robin-dns-windows-server.html
       output: web, pdf
 
   - title: Web UI
@@ -148,6 +172,10 @@ entries:
     url: /azure-administrator-guide/qq-cli/index.html
     output: web, pdf
     folderitems:
+
+    - title: Getting Started with the qq CLI
+      url: /azure-administrator-guide/qq-cli/getting-started.html
+      output: web, pdf
 
     - title: Enabling Autocomplete for the qq CLI
       url: /azure-administrator-guide/qq-cli/enabling-autocomplete.html
@@ -187,6 +215,10 @@ entries:
     url: /azure-administrator-guide/encryption-data-security/index.html
     output: web, pdf
     folderitems:
+
+    - title: Managing SMB3 Encryption in Transit
+      url: /azure-administrator-guide/encryption-data-security/managing-smb3-encryption-in-transit.html
+      output: web, pdf
 
     - title: Generating and Storing ECDSA Keys
       url: /azure-administrator-guide/encryption-data-security/generating-storing-ecdsa-keys.html
@@ -299,6 +331,10 @@ entries:
 
     - title: Creating and Managing an SMB Share
       url: /azure-administrator-guide/smb/creating-smb-share.html
+      output: web, pdf
+
+    - title: Managing File Shares by Using the Shared Folders MMC Snap-In
+      url: /azure-administrator-guide/smb/managing-file-shares-shared-folders-mmc.html
       output: web, pdf
 
   - title: S3 API

@@ -114,7 +114,7 @@
     </tr>
     <tr>
       <td>NFS Groups</td>
-      <td>16, when not using LDAP or Active Directory for <a href="https://www.rfc-editor.org/rfc/rfc2307.html">RFC 2307</a> attributes</td>
+      <td>16, when not using LDAP or Active Directory for {% include rfc.html rfc='2307' %} attributes</td>
     </tr>
     <tr>
       <td>Characters in Cluster Name</td>

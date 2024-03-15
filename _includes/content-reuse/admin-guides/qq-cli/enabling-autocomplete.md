@@ -42,7 +42,7 @@ The `qq` CLI supports [Python argparse completion](https://docs.python.org/3/lib
    source ~/.bashrc
    ```
 
-You can now use the **Tab** key to autocomplete `qq` CLI commands. The `qq` CLI supports autocomplete for all CLI arguments and Qumulo REST API command arguments.
+You can now use the **Tab** key to autocomplete `qq` CLI commands. The `qq` CLI supports autocomplete for all CLI arguments and Qumulo Core REST API command arguments.
 
 
 ## Enabling Autocomplete for qq CLI Command Aliases

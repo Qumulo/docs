@@ -25,7 +25,7 @@ To configure management protocols, your user must have membership in a Qumulo ro
 
 
 ## Enabling and Disabling REST API Access
-The Qumulo REST API lets you manage clusters by using the `qq` CLI, Python bindings, and REST API calls.
+The Qumulo Core REST API lets you manage clusters by using the `qq` CLI, Python bindings, and REST API calls.
 
 * To enable REST API access, use the `qq multitenancy_modify_tenant` command, specify the tenant ID, and use the `--enable-rest-api` flag.
 

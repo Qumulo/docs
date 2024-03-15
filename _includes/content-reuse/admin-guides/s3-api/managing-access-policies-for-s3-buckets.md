@@ -3,10 +3,10 @@ Access policies let you control specific sets of S3 API actions that each user o
 Managing access policies for S3 buckets in Qumulo clusters is similar to managing SMB share access, only with a larger set of items that you can specify in the [`Actions`](#actions) field of the [policy statement](#access-policy-statements).
 
 For information about working with access policies for S3 buckets and for `qq` CLI examples, see the following sections in the {{site.guides.cli}}:
-* [`qq s3_get_bucket_policy`](https://docs.qumulo.com/qq-cli-command-guide/s3/s3_get_bucket_policy.html)
-* [`qq s3_set_bucket_policy`](https://docs.qumulo.com/qq-cli-command-guide/s3/s3_set_bucket_policy.html)
-* [`qq s3_modify_bucket_policy`](https://docs.qumulo.com/qq-cli-command-guide/s3/s3_modify_bucket_policy.html)
-* [`qq s3_delete_bucket_policy`](https://docs.qumulo.com/qq-cli-command-guide/s3/s3_delete_bucket_policy.html)
+* {% include qq.html command="s3_get_bucket_policy" %}
+* {% include qq.html command="s3_set_bucket_policy" %}
+* {% include qq.html command="s3_modify_bucket_policy" %}
+* {% include qq.html command="s3_delete_bucket_policy" %}
 
 
 ## Default No-Policy State
@@ -27,7 +27,7 @@ The following prerequisites let you manage the access policy for an S3 bucket ef
 
 * Configure [inheritable file ACLs](managing-access-to-s3-buckets.html#inheritable-aces) by using the `qq` CLI, SMB, or [NFSv4.1 access control lists (ACLs)](../nfs/nfsv4.1-acls.html).
 
-* Ensure that you have the following required [role-based access control (RBAC)](https://care.qumulo.com/hc/en-us/articles/360036591633) privileges. 
+* Ensure that you have the following required [role-based access control (RBAC)](../authorization-qumulo-core/managing-role-based-access-control-rbac.html) privileges. 
   
   * `PRIVILEGE_S3_BUCKETS_READ`
     
@@ -124,7 +124,7 @@ The following table describes the subset of the [Amazon S3 API Actions](https://
 
 {{site.data.alerts.note}}
 <ul>
-  <li>Certain permissions (such as <code>s3:AbortMultipartUpload</code>) grant permission to both S3 API and Qumulo REST API variants of an API call.</li>
+  <li>Certain permissions (such as <code>s3:AbortMultipartUpload</code>) grant permission to both S3 API and Qumulo Core REST API variants of an API call.</li>
   <li>Certain permissions (such as <code>s3:GetBucketAcl</code>) grant permission to S3 APIs that are currently implemented partially within Qumulo Core.</li>
   <li><code>s3:*</code> matches all S3 API actions.</li>
 </ul>
@@ -261,7 +261,7 @@ The following table describes examples of principals which Qumulo Core supports.
     </tr>
     <tr>
       <td><code>local:Jane</code></td>
-      <td>A user or group created by using the Qumulo REST API in the <code>local</code> domain, prefixed by <code>local:</code></td>
+      <td>A user or group created by using the Qumulo Core REST API in the <code>local</code> domain, prefixed by <code>local:</code></td>
     </tr>   
     <tr>
       <td><code>local:guest</code></td>
@@ -285,11 +285,11 @@ The following table describes examples of principals which Qumulo Core supports.
     </tr>
     <tr>
       <td><code>uid:1234</code></td>
-      <td>A POSIX UID that identifies users by their <a href="https://www.rfc-editor.org/rfc/rfc2307">RFC-2307 details</a>, prefixed by <code>uid:</code></td>
+      <td>A POSIX UID that identifies users by their {% include rfc.html rfc='2307' %}, prefixed by <code>uid:</code></td>
     </tr>
     <tr>
       <td><code>gid:1234</code></td>
-      <td>A Posix GID that identifies users by their <a href="https://www.rfc-editor.org/rfc/rfc2307">RFC-2307 details</a>, prefixed by <code>gid:</code></td>
+      <td>A Posix GID that identifies users by their {% include rfc.html rfc='2307' %}, prefixed by <code>gid:</code></td>
     </tr>
     <tr>
       <td><code>auth_id:12345678</code></td>

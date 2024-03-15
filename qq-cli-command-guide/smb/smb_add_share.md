@@ -123,3 +123,47 @@ usage: "qq smb_add_share [-h] [--tenant-id TENANT_ID] --name NAME --fs-path FS_P
 zendesk_source: qq CLI Command Guide
 
 ---
+For more information, see:
+* {{site.xref.adminANQ.usingSMBhostRestrict}}
+* {{site.xref.adminOnPrem.usingSMBhostRestrict}}
+
+## Examples
+
+### To Create an SMB Share with Host Restrictions
+{% capture sameFlags %}{{site.xref.smbCLI.addModSameFlag}}{% endcapture %}
+{% include note.html content=sameFlags %}
+
+Run the `qq smb_add_share` command and {{site.xref.smbCLI.addModCommand}} In the following example, Qumulo Core grants hosts {{site.exampleIP42}} and {{site.exampleIP84}} full control, all hosts in {{site.exampleNetworkSegment1}} read-only access, and denies all other hosts.
+
+```bash
+qq smb_add_share --fs-path / \
+  --name my-share \
+  --all-access \
+  --full-control-hosts {{site.exampleIP42}} {{site.exampleIP84}} \
+  --read-only-hosts {{site.exampleNetworkSegment1}}
+```
+
+{{site.exampleOutput}}
+
+```
+ID: 3
+Name: share
+Path: /
+Description:
+Access Based Enumeration: False
+Encryption Required: False
+Default File Create Mode: 0644
+Default Directory Create Mode: 0755
+
+Permissions:
+ID Trustee  Type    Rights 
+== ======== ======= ===============================
+1  Everyone Allowed Read, Write, Change permissions
+
+Network Permissions:
+ID Trustee                    Type    Rights 
+== ========================== ======= ===============================
+1  {{site.exampleNetworkSegment1}}             Denied  Write, Change permissions 
+2  {{site.exampleNetworkSegment1}}              Allowed Read 
+3  {{site.exampleIP42}}, {{site.exampleIP84}} Allowed Read, Write, Change permissions
+```

@@ -115,7 +115,7 @@ access_provider = ad
 ### Configuring LDAP Queries against the Domain Controller (DC) by using sssd
 Like Qumulo clusters, Linux systems can resolve details about user and group objects by querying the DC over LDAP. In particular, a Linux system looks for an object with a matching `sAMAccountName` (user) or `CN` (group)
 
-1. To toggle [RFC 2307](https://datatracker.ietf.org/doc/html/rfc2307) for mappings in the `sssd.conf` file, configure the [ldap_id_mapping field](https://linux.die.net/man/5/sssd-ad).
+1. To toggle {% include rfc.html rfc='2307' %} for mappings in the `sssd.conf` file, configure the [ldap_id_mapping field](https://linux.die.net/man/5/sssd-ad).
 
    * When you set the field to `False`, the client checks whether the RFC 2307 `uidNumber` or `gidNumber` are set on an object.
   
