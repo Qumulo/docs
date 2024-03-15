@@ -33,7 +33,7 @@ The following table compares the features of {{site.azure.qumuloOnAzureShort}} w
 {{site.data.alerts.note}}
 <p>Because {{site.azure.qumuloOnAzureShort}} is a fully managed service, direct access to hosts with SSH is unavailable. To configure the service, you can use:</p>
 <ul>
-  <li><a href="https://care.qumulo.com/hc/en-us/articles/115014875988"><code>qq</code>CLI</a>&mdash;from a remote machine</li>
+  <li><a href="https://docs.qumulo.com/administrator-guide/qq-cli/getting-started.html"><code>qq</code>CLI</a>&mdash;from a remote machine</li>
   <li>Qumulo Core Web UI&mdash;by using any of the service's IP addresses</li>
 </ul>
 {{site.data.alerts.end}}
