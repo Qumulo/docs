@@ -34,7 +34,7 @@ For more information, see:
 
 ## Examples
 
-## To View Existing SMB Share Host Restrictions
+### To View Existing SMB Share Host Restrictions
 Run the `qq smb_list_share` command and specify the share ID. For example:
 
 ```bash
