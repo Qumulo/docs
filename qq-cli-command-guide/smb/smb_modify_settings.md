@@ -67,3 +67,11 @@ usage: "qq smb_modify_settings [-h] [-e {none,preferred,required}] [-d dialect_1
 zendesk_source: qq CLI Command Guide
 
 ---
+For more information, see:
+* {{site.xref.adminANQ.usingSMBhostRestrict}}
+* {{site.xref.adminOnPrem.usingSMBhostRestrict}}
+
+## Examples
+
+### To Hide an SMB Share from Unauthorized Hosts
+Run the `qq smb_modify_settings` command and set the `--hide-shares-from-unauthorized-hosts` flag to `true`.
