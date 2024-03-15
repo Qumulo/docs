@@ -6,8 +6,8 @@ The `qq` CLI works with Python 3.8 to 3.11.
 
 {{site.data.alerts.tip}}
 <ul>
-  <li>On Linux or macOS, run the `chmod +x qq` command to make the `qq` CLI executable.</li>
-  <li>On Windows, use the `python.exe` interpreter to run the `qq` CLI.</li>
+  <li>On Linux or macOS, run the <code>chmod +x qq</code> command to make the <code>qq</code> CLI executable.</li>
+  <li>On Windows, use the <code>python.exe</code> interpreter to run the <code>qq</code> CLI.</li>
 </ul>
 {{site.data.alerts.end}}
 
