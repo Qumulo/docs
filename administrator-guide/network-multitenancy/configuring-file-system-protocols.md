@@ -107,13 +107,13 @@ $ qq multitenancy_modify_tenant \
 ```
 
 ### Configuring the SMB Protocol Globally or for a Tenant
-You can use _global settings_ that apply to all tenants. For example, to require encryption for all tenants, use the `qq smb_modify_settings --encryption-mode required` command. For more information about SMB settings, see the following resources in Qumulo Care:
+You can use _global settings_ that apply to all tenants. For example, to require encryption for all tenants, use the `qq smb_modify_settings --encryption-mode required` command. For more information about SMB settings, see the following resources:
 
 * [SMB3 Encryption with Qumulo Core](https://care.qumulo.com/hc/en-us/articles/360037249854)
 
-* [SMB Host Restrictions](https://care.qumulo.com/hc/en-us/articles/360041155254)
+* [Using SMB Host Restrictions in Qumulo Core](../authorization-qumulo-core/using-smb-host-restrictions.html)
 
-* [Hide an SMB Share](https://care.qumulo.com/hc/en-us/articles/360005375333)
+* [Hiding an SMB Share](../authorization-qumulo-core/using-smb-host-restrictions.html#hiding-an-smb-share)
 
 * [Snapshots: Snapshot Directory Mode](https://care.qumulo.com/hc/en-us/articles/360042053973)
 
