@@ -69,20 +69,40 @@ zendesk_source: qq CLI Command Guide
 ---
 ## Examples
 
-### To Hide an SMB Share from Unauthorized Hosts
-Run the `qq smb_modify_settings` command and set the `--hide-shares-from-unauthorized-hosts` flag to `true`.
-
+### Hiding an SMB Share from Unauthorized Hosts
 For more information, see:
 * {{site.xref.adminANQ.usingSMBhostRestrict}}
 * {{site.xref.adminOnPrem.usingSMBhostRestrict}}
 
-### To Configure Cluster-Level SMB3 Encryption
+#### To Hide an SMB Share from Unauthorized Hosts
+Run the `qq smb_modify_settings` command and set the `--hide-shares-from-unauthorized-hosts` flag to `true`.
+
+
+### Configuring Cluster-Level SMB3 Encrypton
+For more information, see:
+* {{site.xref.adminANQ.manageSMB3encrypt}}
+* {{site.xref.adminOnPrem.manageSMB3encrypt}}
+
+#### To Configure Cluster-Level SMB3 Encryption
 Run the `qq smb_modify_settings` command and set the `--encryption-mode` flag to one of the following:
 
 * `NONE`
 * `PREFER`
 * `REQUIRE`
 
-For more information, see:
-* {{site.xref.adminANQ.manageSMB3encrypt}}
-* {{site.xref.adminOnPrem.manageSMB3encrypt}}
+#### To Disable SMB3 Negotiation to Improve Workload Performance
+Run the `qq smb_modify_settings` command and specify the supported SMB dialects. For example:
+
+```bash
+qq smb_modify_settings \
+  --supported-dialects SMB2_DIALECT_2_1
+```
+
+#### To Enable SMB3 Negotiation
+Run the `qq smb_modify_settings1` command and specify the supported SMB dialects. For example:
+
+```bash
+qq smb_modify_settings \
+  --supported-dialects SMB2_DIALECT_2_1 \
+    SMB2_DIALECT_3_0
+```
