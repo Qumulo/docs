@@ -103,14 +103,15 @@ usage: "qq smb_mod_share [-h] (--id ID | --name NAME) [--tenant-id TENANT_ID] [-
 zendesk_source: qq CLI Command Guide
 
 ---
+
+## Examples
+
+### Modifying Host Restrictions
 For more information, see:
 * {{site.xref.adminANQ.usingSMBhostRestrict}}
 * {{site.xref.adminOnPrem.usingSMBhostRestrict}}
 
-## Examples
-
-### To Modify Host Restrictions for an Existing SMB Share
-
+#### To Modify Host Restrictions for an Existing SMB Share
 {{site.data.alerts.note}}
 <ul>
   <li>{{site.xref.smbCLI.addModSameFlag}}</li>
@@ -144,11 +145,26 @@ ID Trustee                        Type    Rights
 1  {{site.exampleNetworkSegment0}}, {{site.exampleNetworkSegment1}} Allowed Read, Write, Change permissions
 ```
 
-### To Remove All Host Restrictions from an Existing SMB Share
+#### To Remove All Host Restrictions from an Existing SMB Share
+Run the `qq smb_mod_share` command, specify the share ID, and specify full control. For example:
 
-Run the `qq smb_mod_shre` command, specify the share ID, and specify full control. For example:
-
+For more information, see:
+* {{site.xref.adminANQ.manageSMB3encrypt}}
+* {{site.xref.adminOnPrem.manageSMB3encrypt}}
 ```bash
 qq smb_mod_share --id=4 \
   --full-control="*"
+```
+
+### Configuring SMB3 Encryption
+For more information, see:
+* {{site.xref.adminANQ.manageSMB3encrypt}}
+* {{site.xref.adminOnPrem.manageSMB3encrypt}}
+
+#### To Configure Share-Level SMB3 Encryption
+Run the `qq smb_mod_share` command, specify the share name or ID, and use the `--require-encryption` flag to specify `true` or `false`. For example:
+
+```bash
+qq smb_mod_share --name my_share \
+  --require-encryption true
 ```
