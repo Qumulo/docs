@@ -1,6 +1,6 @@
 To confirm the settings for your cluster from the Qumulo Core Web UI, click **Sharing > SMB Shares > SMB Settings**. By default, Qumulo Core supports AES-128-GCM and AES-128-CCM encryption, sets cluster-level SMB encryption to **None** and share-level encryption to **Unencrypted**.
 
-For all clusters created by using Qumulo Core 3.1.5 (and higher), [Qumulo Core enables at-rest encryption automatically](managing-encryption-at-rest.html).
+For all clusters created by using Qumulo Core 3.1.5 (and higher), [Qumulo Core enables at-rest encryption automatically](/administrator-guide/encryption-data-security/managing-encryption-at-rest.html).
 
 {{site.data.alerts.note}}
 <ul>
