@@ -139,3 +139,28 @@ qq smb_add_share --fs-path / \
   --full-control-hosts {{site.exampleIP42}} {{site.exampleIP84}} \
   --read-only-hosts {{site.exampleNetworkSegment1}}
 ```
+
+{{site.exampleOutput}}
+
+```
+ID: 3
+Name: share
+Path: /
+Description:
+Access Based Enumeration: False
+Encryption Required: False
+Default File Create Mode: 0644
+Default Directory Create Mode: 0755
+
+Permissions:
+ID Trustee  Type    Rights 
+== ======== ======= ===============================
+1  Everyone Allowed Read, Write, Change permissions
+
+Network Permissions:
+ID Trustee                    Type    Rights 
+== ========================== ======= ===============================
+1  {{site.exampleNetworkSegment1}}             Denied  Write, Change permissions 
+2  {{site.exampleNetworkSegment1}}              Allowed Read 
+3  {{site.exampleIP42}}, {{site.exampleIP84}} Allowed Read, Write, Change permissions
+```
