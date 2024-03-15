@@ -22,14 +22,3 @@ usage: qq login [-h] -u USERNAME [-p PASSWORD]
 zendesk_source: qq CLI Command Guide
 
 ---
-
-## Examples
-
-## To Log in to Your Qumulo Cluster
-Run the `qq login` command and specify the IP address of one of the nodes in your cluster and your credentials. For example:
-
-```bash
-qq login --host {{site.exampleIP0}} \
-  -u admin
-  -p NW0bJbixtQcQzkq5q4sp
-```
