@@ -164,6 +164,12 @@ exampleGatewayRange2: 192.168.0.11-21
 exampleDNSserver1: 8.8.8.8
 exampleUUID41: 12345a6b-7c89-0d12-3456-78fe9012f345
 exampleUUID42: abcde1f2-g3hi-j4kl-mnop-qr56stuv7wxy
+exampleUUID43: c3a7be37-d65b-42ec-831a-1d0e94a171de
+exampleUUID44: 31b43286-2b03-4dc7-af27-a8c4c35719ab
+exampleMAC1: d0:82:77:72:01:1f
+exampleMAC2: a0:2c:55:a3:3d:ce
+exampleMAC3: ec:fd:7d:3f:0b:e5
+exampleMAC4: c4:e9:73:89:7c:76
 
 adp:
   before612AddOnly: Qumulo Core 6.1.0.1 and 6.1.1 support Adaptive Data Protection by letting you reconfigure your cluster's fault tolerance level and storage efficiency only when you add nodes to your cluster.
