@@ -94,11 +94,11 @@
 
 {% if page.platform == 'on-prem' %}
 {{site.data.alerts.note}}
-<p>For cluster formation and inter-node communication Qumulo Core requires the following:</p>
-<ul>
-  <li><strong>Hardware Platforms:</strong> Unblocked IPv6 traffic in the local subnet&mdash;for more information, see <a href="https://care.qumulo.com/hc/en-us/articles/115009002827">Configuring IPv6 in Qumulo Core</a> on Qumulo Care.</li>
-  <li><strong>Cloud Platforms:</strong> Unblocked IPv4 traffic in the local subnet</li>
-</ul>
+For cluster formation and inter-node communication Qumulo Core requires unblocked IPv6 traffic in the local subnet&mdash;for more information, see <a href="../network-configuration/configuring-ipv6.html">Configuring IPv6 in Qumulo Core</a>.
+{{site.data.alerts.end}}
+{% else %}
+{{site.data.alerts.note}}
+For cluster formation and inter-node communication, Qumulo Core requires unblocked IPv4 traffic in the local subnet.
 {{site.data.alerts.end}}
 {% endif %}
 
