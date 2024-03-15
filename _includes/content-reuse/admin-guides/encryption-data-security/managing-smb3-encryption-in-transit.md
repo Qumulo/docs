@@ -97,3 +97,31 @@ For information about configuring cluster-level and share-level encryption by us
 To avoid potential performance impact, you can prohibit Qumulo Core from advertising its encryption capabilities by turning off SMB3 negotiation.
 
 For more information, see {% include qq.html command="smb_modify_settings" %} in the {{site.guides.cli}}.
+
+
+## Checking Encryption of SMB3 Session
+To check whether an SMB3 client session is encrypted, run the `Get-SmbConnection` PowerShell command. For example:
+
+```bat
+Get-SmbConnection | Select-Object -property *
+```
+
+{{site.exampleOutput}}
+
+```
+SmbInstance : Default
+ContinuouslyAvailable : False
+Credential : SILENCE\jcage
+Dialect : 3.0
+Encrypted : False
+NumOpens : 2
+Redirected : False
+ServerName : qq
+ShareName : Files
+Signed : True
+UserName : SILENCE\jcage
+PSComputerName :
+CimClass : ROOT/Microsoft/Windows/SMB:MSFT_SmbConnection
+CimInstanceProperties : {ContinuouslyAvailable, Credential, Dialect, Encrypted...}
+CimSystemProperties : Microsoft.Management.Infrastructure.CimSystemProperties
+```
