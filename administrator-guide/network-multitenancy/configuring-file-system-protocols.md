@@ -158,7 +158,7 @@ $ qq smb_mod_share -–tenant-id 2 \
 ```
 
 #### Using the Microsoft Management Console (MMC)
-To create, modify, and delete SMB shares for each tenant, you can use the MMC Shared Folders snap-in. For more information, see [Manage File Shares with Shared Folders MMC Snap-in](https://care.qumulo.com/hc/en-us/articles/360043419473) on Qumulo Care.
+To create, modify, and delete SMB shares for each tenant, you can use the MMC Shared Folders snap-in. For more information, see [Managing Qumulo Core File Shares by Using the Shared Folders MMC Snap-In](../smb/managing-file-shares-shared-folders-mmc.html).
 
 {% include important.html content="Because folder paths always start at the root of the file shstem, using the MMC on a Windows client on a tenant’s network causes the MMC to modify that tenant’s shares." %}
 
