@@ -130,7 +130,10 @@ For more information, see:
 ## Examples
 
 ### To Create an SMB Share with Host Restrictions
-Run the `qq smb_add_share` command, specify the path, share name, and [host restriction level](https://docs.qumulo.com/administrator-guide/authorization-qumulo-core/using-smb-host-restrictions.html#how-smb-host-restriction-precedence-works). In the following example, Qumulo Core grants hosts {{site.exampleIP42}} and {{site.exampleIP84}} full control, all hosts in {{site.exampleNetworkSegment1}} read-only access, and denies all other hosts.
+{% capture sameFlags %}{{site.xref.smbCLI.addModSameFlag}}{% endcapture %}
+{% include note.html content=sameFlags %}
+
+Run the `qq smb_add_share` command and {{site.xref.smbCLI.addModCommand}} In the following example, Qumulo Core grants hosts {{site.exampleIP42}} and {{site.exampleIP84}} full control, all hosts in {{site.exampleNetworkSegment1}} read-only access, and denies all other hosts.
 
 ```bash
 qq smb_add_share --fs-path / \
