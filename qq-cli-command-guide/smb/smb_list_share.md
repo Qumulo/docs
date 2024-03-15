@@ -28,3 +28,38 @@ usage: qq smb_list_share [-h] (--id ID | --name NAME) [--tenant-id TENANT_ID] [-
 zendesk_source: qq CLI Command Guide
 
 ---
+For more information, see:
+* {{site.xref.adminANQ.usingSMBhostRestrict}}
+* {{site.xref.adminOnPrem.usingSMBhostRestrict}}
+
+## Examples
+
+## To View Existing SMB Share Host Restrictions
+Run the `qq smb_list_share` command and specify the share ID. For example:
+
+```bash
+qq smb_list_share --id 4
+```
+
+{{site.exampleOutput}}
+
+```
+ID: 4
+Name: share2
+Path: /
+Description:
+Access Based Enumeration: False
+Encryption Required: False
+Default File Create Mode: 0644
+Default Directory Create Mode: 0755
+
+Permissions:
+ID Trustee  Type    Rights 
+== ======== ======= ===============================
+1  Everyone Allowed Read, Write, Change permissions
+
+Network Permissions:
+ID Trustee        Type    Rights 
+== ============== ======= ===============================
+1  {{site.exampleNetworkSegment1}} Allowed Read, Write, Change permissions
+```
