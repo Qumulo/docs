@@ -28,3 +28,29 @@ This section explains how to download the `qq` CLI from your Qumulo cluster or h
 
 ### To Install the qq CLI by Using the Python SDK
 Run the `pip install qumulo_api` command.
+
+
+## Exploring Your Qumulo Cluster by Using the qq CLI
+The best way to start exploring your Qumulo cluster by using the `qq` CLI is to learn about its most frequently used commands. For example:
+
+* **{% include qq.html command='login' %}:** Connect to the IP address of one of the nodes in your cluster and log in.
+* **{% include qq.html command='nodes_list' %}:** List information about the nodes in your cluster.
+* **{% include qq.html command='version' %}:** Show the version of Qumulo Core running on your cluster.
+* **{% include qq.html command='fs_read_dir' %}:** List the contents of a directory on your cluster.
+* **{% include qq.html command='fs_write' %}:** List the contents of a directory on your cluster.
+* **{% include qq.html command='fs_write' %}:** Write a file to a directory on your cluster.
+
+{% include tip.html content="To get a complete list of `qq` CLI commands, run the `qq --help` command." %}
+
+### To Run qq CLI from a Remote Machine
+Run the `qq login` command and specify the IP address of one of the nodes in your cluster and your credentials. For example:
+
+```bash
+qq login --host {{site.exampleIP0}} \
+  -u admin
+  -p NW0bJbixtQcQzkq5q4sp
+```
+
+### To Run qq CLI from a Node in Your ClusterUse SSH to log in to one of the nodes in your cluster.
+
+{% include note.html content="It is possible to run `qq` CLI commands as the administrative Linux user. However, to do this, you must authenticate by using the `qq login` commqand." %}
