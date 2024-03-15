@@ -99,7 +99,7 @@ qq smb_modify_settings \
 ```
 
 #### To Enable SMB3 Negotiation
-Run the `qq smb_modify_settings1` command and specify the supported SMB dialects. For example:
+Run the `qq smb_modify_settings` command and specify the supported SMB dialects. For example:
 
 ```bash
 qq smb_modify_settings \
