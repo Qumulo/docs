@@ -20,7 +20,7 @@ zendesk_source: qq CLI Command Guide
 ## Examples
 
 ### To List Information about Nodes in Your Cluster
-Run the `qq nodes_list` command. For example:
+Run the `qq nodes_list` command.
 
 {{site.exampleOutput}} This example shows a cluster with 4 nodes.
 
