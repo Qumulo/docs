@@ -20,11 +20,7 @@ zendesk_source: qq CLI Command Guide
 ## Examples
 
 ### To List Information about Nodes in Your Cluster
-Run the `qq nodes_list` command, and specify the IP address of one of the nodes in your cluster. For example:
-
-```bash
-qq nodes_list --host {{site.exampleIP0}}
-```
+Run the `qq nodes_list` command. For example:
 
 {{site.exampleOutput}} This example shows a cluster with 4 nodes.
 
