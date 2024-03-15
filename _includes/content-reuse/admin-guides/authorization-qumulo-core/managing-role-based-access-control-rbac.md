@@ -43,11 +43,11 @@ This role is suitable for users or groups who can access the Qumulo Core Web UI 
 ### Custom
 For information about managing RBAC and creating custom roles by using the `qq` CLI, see the following sections in the {{site.guides.cli}}:
 
-* [`qq auth_assign_role`](https://docs.qumulo.com/qq-cli-command-guide/auth/auth_assign_role.html)
-* [`qq auth_create_role`](https://docs.qumulo.com/qq-cli-command-guide/auth/auth_create_role.html)
-* [`qq auth_list_privileges`](https://docs.qumulo.com/qq-cli-command-guide/auth/auth_list_privileges.html)
-* [`qq auth_modify_role`](https://docs.qumulo.com/qq-cli-command-guide/auth/auth_modify_role.html)
-* [`qq auth_unassign_role`](https://docs.qumulo.com/qq-cli-command-guide/auth/auth_unassign_role.html)
+* {% include qq.html command="auth_assign_role" %}
+* {% include qq.html command="auth_create_role" %}
+* {% include qq.html command="auth_list_privileges" %}
+* {% include qq.html command="auth_modify_role" %}
+* {% include qq.html command="auth_unassign_role" %}
 
 
 ## Managing Roles by Using the Qumulo Core Web UI

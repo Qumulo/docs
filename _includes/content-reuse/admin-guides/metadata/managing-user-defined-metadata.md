@@ -45,7 +45,7 @@ qq fs_set_user_metadata \
 
 {{site.udm.hex}}
 
-For more information, see [`qq fs_set_user_metadata`](https://docs.qumulo.com/qq-cli-command-guide/fs/fs_set_user_metadata.html) in the {{site.guides.cli}}.
+For more information, see {% include qq.html command="fs_set_user_metadata" %} in the {{site.guides.cli}}.
 
 ### To Retrieve a Generic {{site.udm.t}} Entry for a File by Using the qq CLI
 Use `fs_get_user_metadata` command and specify the path to the file and the key. For example:
@@ -59,7 +59,7 @@ qq fs_get_user_metadata \
 * {{site.udm.hex}}
 * {{site.udm.snap}}
 
-For more information, see [`qq fs_get_user_metadata`](https://docs.qumulo.com/qq-cli-command-guide/fs/fs_get_user_metadata.html) in the {{site.guides.cli}}.
+For more information, see {% include qq.html command="fs_get_user_metadata" %} in the {{site.guides.cli}}.
 
 ### To List All Generic {{site.udm.t}} Entries for a File by Using the qq CLI
 Run the `fs_list_user_metadata` command and specify the path to the file. For example:
@@ -72,7 +72,7 @@ qq fs_list_user_metadata \
 * {{site.udm.hex}}
 * {{site.udm.snap}}
 
-For more information, see [`qq fs_list_user_metadata`](https://docs.qumulo.com/qq-cli-command-guide/fs/fs_list_user_metadata.html) in the {{site.guides.cli}}.
+For more information, see {% include qq.html command="fs_list_user_metadata" %} in the {{site.guides.cli}}.
 
 ### To Delete a Generic {{site.udm.t}} Entry for a File by Using the qq CLI
 Run the `fs_delete_user_metadata` command and specify the path to the file and the key. For example:
@@ -83,7 +83,7 @@ Run the `fs_delete_user_metadata` command and specify the path to the file and t
     --key my-key
 ```
 
-For more information, see [`qq fs_delete_user_metadata`](https://docs.qumulo.com/qq-cli-command-guide/fs/fs_delete_user_metadata.html) in the {{site.guides.cli}}.
+For more information, see {% include qq.html command="fs_delete_user_metadata" %} in the {{site.guides.cli}}.
 
 
 ## Managing {{site.udm.t}} by Using the S3 API

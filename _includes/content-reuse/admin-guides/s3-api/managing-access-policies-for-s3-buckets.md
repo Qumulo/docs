@@ -3,10 +3,10 @@ Access policies let you control specific sets of S3 API actions that each user o
 Managing access policies for S3 buckets in Qumulo clusters is similar to managing SMB share access, only with a larger set of items that you can specify in the [`Actions`](#actions) field of the [policy statement](#access-policy-statements).
 
 For information about working with access policies for S3 buckets and for `qq` CLI examples, see the following sections in the {{site.guides.cli}}:
-* [`qq s3_get_bucket_policy`](https://docs.qumulo.com/qq-cli-command-guide/s3/s3_get_bucket_policy.html)
-* [`qq s3_set_bucket_policy`](https://docs.qumulo.com/qq-cli-command-guide/s3/s3_set_bucket_policy.html)
-* [`qq s3_modify_bucket_policy`](https://docs.qumulo.com/qq-cli-command-guide/s3/s3_modify_bucket_policy.html)
-* [`qq s3_delete_bucket_policy`](https://docs.qumulo.com/qq-cli-command-guide/s3/s3_delete_bucket_policy.html)
+* {% include qq.html command="s3_get_bucket_policy" %}
+* {% include qq.html command="s3_set_bucket_policy" %}
+* {% include qq.html command="s3_modify_bucket_policy" %}
+* {% include qq.html command="s3_delete_bucket_policy" %}
 
 
 ## Default No-Policy State
