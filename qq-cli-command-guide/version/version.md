@@ -16,11 +16,7 @@ zendesk_source: qq CLI Command Guide
 ## Examples
 
 ### To Show the Version of Qumulo Core Running on Your Cluster
-Run the `qq version` command and specify the IP address of one of the nodes in your cluster. For example:
-
-```bash
-qq version --host {{site.exampleIP0}}
-```
+Run the `qq version` command. For example:
 
 {{site.exampleOutput}}
 
