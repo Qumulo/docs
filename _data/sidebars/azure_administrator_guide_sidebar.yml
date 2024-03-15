@@ -212,6 +212,10 @@ entries:
     output: web, pdf
     folderitems:
 
+    - title: Managing SMB3 Encryption in Transit
+      url: /azure-administrator-guide/encryption-data-security/managing-smb3-encryption-in-transit.html
+      output: web, pdf
+
     - title: Generating and Storing ECDSA Keys
       url: /azure-administrator-guide/encryption-data-security/generating-storing-ecdsa-keys.html
       output: web, pdf
