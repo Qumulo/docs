@@ -24,11 +24,17 @@ When you create or modify an SMB share, you can use one of the following SMB hos
 1. **Full Access:** IP address ranges to which Qumulo Core permits full access
 
    {% include important.html content="The file's permissions and the share's user permissions must also grant full access." %}
-   
+
+<a id="hiding-an-smb-share"></a>
 ## Managing SMB Host Restrictions by Using the qq CLI
 For information about viewing, modifying, and removing host restrictions and hiding SMB shares from unauthorized hosts by using the `qq` CLI, see the following sections in the {{site.guides.cli}}:
 
 * {% include qq.html command="smb_add_share" %}
+
 * {% include qq.html command="smb_list_share" %}
+
 * {% include qq.html command="smb_mod_share" %}
+
 * {% include qq.html command="smb_modify_settings" %}
+
+  {% include tip.html content="To hide an SMB share in the Web UI, append `$` to its name. To access the share, you must use the fully qualified domain name (FQDN). For example: `\\storage.example.com\MyShare$`." %}
