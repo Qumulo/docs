@@ -34,7 +34,7 @@ To decide whether your system should ignore LDAP referrals, consider the Qumulo 
 
 #### Unaffected Authentication Processes
 * Kerberos SMB SSO logins from Domain Local or Trusted Domain users
-* NTMLv2 SMB logins (username and password) from Domain Local or Trusted Domain users
+* NTLMv2 SMB logins (username and password) from Domain Local or Trusted Domain users
 * Domain Local groups that contain users and groups from other Trusted Domains
 * Users or groups added to SMB share permissions by using the Qumulo Core Web UI or `qq` CLI
 * Security Identifiers (SIDs) resolved to usernames by using client dialog boxes, for example in macOS Finder or Windows File Explorer

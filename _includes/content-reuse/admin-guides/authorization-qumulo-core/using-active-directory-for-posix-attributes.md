@@ -5,7 +5,7 @@ Because the SMB and NFS protocols have unique identifiers and exist in different
 
 One solution to this issue is _full credential expansion_, which involves mapping the two identities&mdash;Windows identities for SMB clients and POSIX identities for NFS clients&mdash;by using Active Directory as a central reference. For more information, see {% include rfc.html rfc='2307' %}. This approach ensures that, when you use Active Directory to maintain identity mappings from POSIX to Windows, Qumulo Core abides by the mappings.
 
-After you enable Active Diretory for POSIX attributes in Qumulo Core, you must enable user identity mapping from your Windows SID to your NFS UID. To do this, assign a _user object_ (SID or `objectSid`) to every object in Windows and enter the NFS UID of the user as an object attribute. {{page.varMapExample}}
+After you enable Active Directory for POSIX attributes in Qumulo Core, you must enable user identity mapping from your Windows SID to your NFS UID. To do this, assign a _user object_ (SID or `objectSid`) to every object in Windows and enter the NFS UID of the user as an object attribute. {{page.varMapExample}}
 
 Whenever this user identity is required (for example, to check permissions), Qumulo Core uses the established mapping to retrieve the entire identity for the user by referencing the NFS UIDs and GIDs, and all SIDs, including the group IDs of any relevant parent groups.
 

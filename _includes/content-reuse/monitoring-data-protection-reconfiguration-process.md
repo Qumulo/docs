@@ -9,7 +9,7 @@ To view the progress of the three stages of the data protection reconfiguration 
 
    When this stage is complete, your data is protected according to the cluster's new configuration and the system begins to use the new drive and node fault tolerance levels.
 
-1. Qumulo Core adds new capacity to your cluster and the Qumulo Core Web UI displays the message **Rabalancing**.
+1. Qumulo Core adds new capacity to your cluster and the Qumulo Core Web UI displays the message **Rebalancing**.
 
    If you initiated the reconfiguration process as part of a node replacement step, the system migrates data from the existing nodes in the cluster.
 
@@ -24,7 +24,7 @@ Your cluster remains available throughout the data protection reconfiguration pr
 
 {{site.data.alerts.note}}
 <ul>
-  <li>To avoid impact to frontend workloads, Qumulo Core slows down the reconfiguration process automatically.</li>
+  <li>To avoid impact to front-end workloads, Qumulo Core slows down the reconfiguration process automatically.</li>
   <li>When Qumulo Core finds missing nodes or drives, it pauses the reconfiguration process. When you replace or bring the nodes or drives online, the reconfiguration process continues.</li>
   <li>It isn't possible to add or replace nodes during the reconfiguration process.</li>
 </ul>

@@ -159,7 +159,7 @@ When you use the `qq` CLI to create a bucket, you can use a new or existing dire
     --fs-path /products/web/appliances/
   ```
   
-* To create a bucket for a path that doesn’t exist yet, specify the name and path and add the `--create-fs-path` flag. For example:
+* To create a bucket for a path that doesn't exist yet, specify the name and path and add the `--create-fs-path` flag. For example:
 
   ```bash
   $ qq s3_add_bucket \

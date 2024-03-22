@@ -22,8 +22,8 @@ sidebar: administrator_guide_sidebar
 
    {{site.data.alerts.note}}
    <ul>
-     <li>When a tradeoff between increasing node fault tolerance and maximizing usable capacity is available for your cluster, the <strong>Cluster &gt; Add Nodes</strong> page shows the <strong>Accept a trade-off in the increase of usable capacity</strong> checkbox.</li>
-     <li>When a tradeoff isn't available, the page shows an message which indicates that it is possible to increase the node fault tolerance level.</li>
+     <li>When a trade-off between increasing node fault tolerance and maximizing usable capacity is available for your cluster, the <strong>Cluster &gt; Add Nodes</strong> page shows the <strong>Accept a trade-off in the increase of usable capacity</strong> checkbox.</li>
+     <li>When a trade-off isn't available, the page shows an message which indicates that it is possible to increase the node fault tolerance level.</li>
    </ul>
    {{site.data.alerts.end}}
 

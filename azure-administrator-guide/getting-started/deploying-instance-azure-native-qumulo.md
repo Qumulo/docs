@@ -87,7 +87,7 @@ To log in to the Qumulo Core Web UI, you must identify your service endpoint.
 1. Click **Overview** and then copy the **Qumulo Core Web UI Login** URL. For example:
 
    ```
-   https://192.0.0.4/login
+   https://{{site.exampleGateway1}}/login
    ```
    
 1. Enter the URL into a browser from a machine that runs, or is connected to, the virtual network where you deployed {{site.azure.qumuloOnAzureShort}}.

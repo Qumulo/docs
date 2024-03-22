@@ -1,7 +1,7 @@
 ## How Continuous Replication Works
 
 {% if page.platform == 'on-prem' %}
-{% include important.html content="Qumulo Core supports replication between different versions only if either the source or target cluster is running Qumulo Core 2.12.0 (or higher). For more information, see [Replication Version Requirements and Upgrade Recommentations](../upgrading-qumulo-core/replication-version-requirements-upgrade-recommendations.html)." %}
+{% include important.html content="Qumulo Core supports replication between different versions only if either the source or target cluster is running Qumulo Core 2.12.0 (or higher). For more information, see [Replication Version Requirements and Upgrade Recommendations](../upgrading-qumulo-core/replication-version-requirements-upgrade-recommendations.html)." %}
 {% else %}
 {% include important.html content="Qumulo Core supports replication between different versions only if either the source or target cluster is running Qumulo Core 2.12.0 (or higher). For more information, see [Replication Version Requirements](../getting-started/replication-version-requirements.html)" %}
 {% endif %}
@@ -165,7 +165,7 @@ The following privileges are required for continuous replication.
   <li><strong>Local Users and Groups:</strong> Continuous replication doesn't support replicating local user or group information and fails when it encounters a file associated with local users or groups.</li>
   <li><strong>Target Directory Permissions</strong> When you create a replication relationship, Qumulo Core updates these permissions from read-write to read-only. When you delete the relationship, the permissions revert to read-write automatically.</li>
 {% if page.platform == 'on-prem' %}
-  <li><strong>Root Directory:</strong> Including this directory makes the entire target cluster read-only and might prohibit administrative functions such as upgrades. For more information, see <a href="../upgrading-qumulo-core/replication-version-requirements-upgrade-recommendations.html">Replication Version Requirements and Upgrade Recommentations</a></li>
+  <li><strong>Root Directory:</strong> Including this directory makes the entire target cluster read-only and might prohibit administrative functions such as upgrades. For more information, see <a href="../upgrading-qumulo-core/replication-version-requirements-upgrade-recommendations.html">Replication Version Requirements and Upgrade Recommendations</a></li>
   <li><strong>Upgrades During Replication:</strong> Before you perform any Qumulo Core upgrades, you must wait until the replication job is complete. Upgrading Qumulo Core while a replication job is in progress causes the job to fail. When both clusters return to a state where replication is possible (the versions are the same), continuous replication can continue.</li>
 {% endif %}
 </ul>

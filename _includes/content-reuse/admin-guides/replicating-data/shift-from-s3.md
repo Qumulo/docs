@@ -78,7 +78,7 @@ Qumulo Core performs the following steps when it creates a Shift-From relationsh
 
 1. Lists the contents of the S3 folder and downloads the objects to the specified directory on your Qumulo cluster.
 
-1. Forms the full path of the file on the Qumulo custer by appending the path of the object (relative to the S3 folder) to the directory path on the Qumulo cluster.
+1. Forms the full path of the file on the Qumulo cluster by appending the path of the object (relative to the S3 folder) to the directory path on the Qumulo cluster.
 
    For example, the following object is downloaded to `/my-dir/my-project/file.text`, where `my-folder` is the specified S3 folder and `my-dir` is the directory on your Qumulo cluster.
 

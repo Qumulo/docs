@@ -22,7 +22,7 @@ Qumulo provides configuration for the permitted NFSv4.1 authentication flavors i
 
 1. To harden security, configure your cluster to use only Kerberos by disabling `AUTH_SYS` (without changing `AUTH_KRB5`). For example:
 
-   {% include important.html content="Because it uses authentication based on a simple UID and GID passed over the wire in plain text, RPC `AUTH_SYS` is inherently insecure. In a trusted environment, `AUTH_SYS` might be sufficient for enforcing basic permissions and preventing good-faith actors from making mistakes. In all other cases, you must treat `AUTH_SYS` as if it provides _no security whatseover_." %}
+   {% include important.html content="Because it uses authentication based on a simple UID and GID passed over the wire in plain text, RPC `AUTH_SYS` is inherently insecure. In a trusted environment, `AUTH_SYS` might be sufficient for enforcing basic permissions and preventing good-faith actors from making mistakes. In all other cases, you must treat `AUTH_SYS` as if it provides _no security whatsoever_." %}
 
    ```bash
    $ qq nfs_modify_settings --disable-auth-sys  

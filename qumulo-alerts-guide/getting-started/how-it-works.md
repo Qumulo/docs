@@ -26,7 +26,7 @@ Qumulo Alerts includes a CLI for the following operating systems:
 * Windows Server 2019 and Windows 10 and 11
 
 ## Known Limitations of Qumulo Alerts
-This section lists the currenly known limitations for Qumulo Alerts.
+This section lists the currently known limitations for Qumulo Alerts.
 
 * **Floating IP Addresses or Network Load Balancing (NLB):** To prevent overloading any node in a Qumulo cluster, Qumulo Alerts plugins connect to all nodes in the cluster by using floating IP addresses or an NLB.
 

@@ -52,7 +52,7 @@ For information about joining Microsoft Entra DS, see the following resources in
 
    For more information, see [Custom DNS Configuration](https://care.qumulo.com/hc/en-us/articles/360026611494) on Qumulo Care.
    
-1. To finish configuring your file system to work with Microsoft Entra DS, join your cluster ton AD by logging in to the Qumulo Core Web UI and clickng **Cluster > Active Directory**.
+1. To finish configuring your file system to work with Microsoft Entra DS, join your cluster ton AD by logging in to the Qumulo Core Web UI and clicking **Cluster > Active Directory**.
 
    {% include note.html content="We recommend giving an administrative role to the user who joins the domain. For newly created users, the system requires a password reset when the user logs in to the [Azure portal](https://azure.microsoft.com/en-us/)." %}
 

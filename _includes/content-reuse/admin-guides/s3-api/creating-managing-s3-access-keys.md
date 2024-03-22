@@ -98,7 +98,7 @@ You can specify an identity by using:
 {{site.exampleOutput}}
 
 {% capture createAccessKeyResponse %}{
-  "access_key_id": "000000000001fEXAMPLE",
+  "access_key_id": "{{site.exampleAWSaccessKeyID}}",
   "creation_time": "2022-12-12T21:37:53.553457928Z",
   "owner": {
     "auth_id": "501",
@@ -108,7 +108,7 @@ You can specify an identity by using:
     "sid": "S-0-1-23-4567890123-456789012-345678901-234",
     "uid": null
   },
-  "secret_access_key": "TEIT4liMZ8A32iI7JXmqIiLWp5co/jmkjEXAMPLE"
+  "secret_access_key": "{{site.exampleAWSsecretKey}}"
 }{% endcapture %}
 
 ```json
@@ -162,7 +162,7 @@ To list S3 access keys, you must have {{site.s3.permissions.bucketsRead}}.
 {
   "entries": [
     {
-      "access_key_id": "000000000001fEXAMPLE",
+      "access_key_id": "{{site.exampleAWSaccessKeyID}}",
       "creation_time": "2022-12-12T21:37:53.553457928Z",
       "owner": {
         "auth_id": "501",

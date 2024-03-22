@@ -87,7 +87,7 @@ Every Qumulo Core upgrade has two phases, _preparation_ and _commit_.
   <li>Before beginning the upgrade process, make sure that you have the correct <a href="https://nexus.qumulo.com/downloads?platform=cloud">cloud upgrade image</a>{{site.loginRequired}} or <a href="https://nexus.qumulo.com/downloads?platform=onprem">on-premises upgrade image</a>{{site.loginRequired}}.</li>
   <li>To allow certain background processes to run, multiple sequential Qumulo Core upgrades might require a waiting period between specific releases. Before installing multiple Qumulo Core releases within an extended maintenance window, {{site.contactQumuloCare}}.</li>
   <li>When the node to which you are connected reboots, the Qumulo Core Web UI might redirect you to the <strong>Cluster is booting...</strong> page. To view the reboot status, you can connect to a different node or wait until the current node goes online and then click <strong>Support > Software Upgrade</strong>.</li>
-  <li>During rolling reboots, the system reboots one or more nodes (depending on the configured protection level) in the cluster in succession. If your cluster is under heavy load due to write or delete operations, this proces can take a long time.</li>
+  <li>During rolling reboots, the system reboots one or more nodes (depending on the configured protection level) in the cluster in succession. If your cluster is under heavy load due to write or delete operations, this process can take a long time.</li>
 </ul>
 {{site.data.alerts.end}}
 

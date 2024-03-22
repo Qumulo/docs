@@ -78,7 +78,7 @@ For more information, see:
 Run the `qq smb_modify_settings` command and set the `--hide-shares-from-unauthorized-hosts` flag to `true`.
 
 
-### Configuring Cluster-Level SMB3 Encrypton
+### Configuring Cluster-Level SMB3 Encryption
 For more information, see:
 * {{site.xref.adminANQ.manageSMB3encrypt}}
 * {{site.xref.adminOnPrem.manageSMB3encrypt}}

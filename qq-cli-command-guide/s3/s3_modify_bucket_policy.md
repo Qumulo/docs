@@ -35,7 +35,7 @@ Run the `qq s3_modify_bucket_policy` command and use the `--bucket` flag to spec
 * Use the `--type` flag to specify the statement type.
 * Use the `--sid` flag to specify the security identifier.
 * Use the `--new-principals` flag to specify a comma-separated list of principals (with which to replace the existing ones), enclosed in quotation marks (`"`).
-* Use the `--new-actions` flag to specify a comma-separated list of S3 API actions (wih which to replace the existing ones), enclosed in quotation marks (`"`).
+* Use the `--new-actions` flag to specify a comma-separated list of S3 API actions (with which to replace the existing ones), enclosed in quotation marks (`"`).
 
 For example:
 

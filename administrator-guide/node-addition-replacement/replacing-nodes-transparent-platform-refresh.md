@@ -130,7 +130,7 @@ Ensure that the number of static and floating IP addresses is equal to or greate
 
 1. Wait for the node replacement step to complete.
 
-   After each node replacement step, Qumulo Core begins to migrate data from existing nodes in the backround.
+   After each node replacement step, Qumulo Core begins to migrate data from existing nodes in the background.
    
    {% include note.html content="This is a long process (that can take days or weeks). When the data migration is complete, Qumulo Core removes the nodes marked for replacement from the cluster. These nodes no longer appear on the **Cluster** page of the Qumulo Core Web UI." %}
 
@@ -139,7 +139,7 @@ Ensure that the number of static and floating IP addresses is equal to or greate
 1. Initiate the next node replacement step.
 
 
-## Viewing, Editing, and Cancelling the Node Replacement Plan
+## Viewing, Editing, and Canceling the Node Replacement Plan
 
 * To view the current node replacement plan, use the `qq replace_nodes get_plan` command.
 
@@ -149,7 +149,7 @@ Ensure that the number of static and floating IP addresses is equal to or greate
 
 * To cancel the current node replacement plan, use the `qq replace_nodes cancel_plan` command.
 
-  {% include important.html content="Caneling a node replacement plan after executing one or more steps might make it impossible to reregister and complete the plan." %}
+  {% include important.html content="Canceling a node replacement plan after executing one or more steps might make it impossible to reregister and complete the plan." %}
 
 
 <a id="monitoring-data-protection-reconfiguration"></a>

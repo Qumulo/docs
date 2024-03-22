@@ -19,7 +19,7 @@ Before you begin, make sure that you have done the following.
 
   {% include note.html content="You can use trusts, as long as the Base DN covers all users that might require access to your cluster." %}
   
-* Configure your IdP to return AD User Principal Names (UPNs, for example `alice@example.com`) or an email address as a NameID. A _NameID_ is an identifier for an authenticated user. Typically, a NameID uses the format of an email address.
+* Configure your IdP to return AD User Principal Names (UPNs, for example `alice@example.com`) or an email address as a name identifier for an authenticated user. Typically, a `nameID` uses the format of an email address.
 
 
 ## To Configure SAML SSO for Your Qumulo Cluster
@@ -115,7 +115,7 @@ Qumulo Core supports three SAML SSO workflows:
 </ul>
 {{site.data.alerts.end}}
 
-### IdP-Initiated SSO Worfklow
+### IdP-Initiated SSO Workflow
 1. A user authenticates to her organization's SSO portal and then selects the Qumulo cluster on the SSO portal.
    
 1. The SSO portal redirects the user to the cluster's endpoint.
@@ -176,7 +176,7 @@ In Qumulo Core 5.3.0 (and higher), a user can authenticate a `qq` CLI session by
 <ul>
   <li>If you use the <code>--require-sso</code> flag, you can no longer use the <code>qq login</code> command with your AD account password. Instead, you must <a href="#sso-login">use the <code>qq sso_login</code> command</a>.</li>
   <li>This setting doesn't restrict access through file protocols such as SMB.</li>
-  <li>Because the FTP protocol sends passwords in plaintext, it is inherently insecure. In addition, many FTP clients don't support Transport Layer Security (TSL) or fall back quietly to the plaintext protocol. For this reason, all Qumulo clusters have FTP disabled by default.</li>
+  <li>Because the FTP protocol sends passwords in plaintext, it is inherently insecure. In addition, many FTP clients don't support Transport Layer Security (TLS) or fall back quietly to the plaintext protocol. For this reason, all Qumulo clusters have FTP disabled by default.</li>
 </ul>
 {{site.data.alerts.end}}
 
@@ -226,7 +226,7 @@ Several AD configuration issues can cause a **User not found** error:
 
 * The Qumulo cluster is joined to AD that isn't connected to the IdP.
 
-* IdP sends usernames (NameID) in an unusual format.
+* IdP sends usernames (`nameID`) in an unusual format.
 
   To verify that you can use a username, run the `qq auth_find_identity` command. For example:
 

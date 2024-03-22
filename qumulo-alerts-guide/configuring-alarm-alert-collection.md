@@ -47,7 +47,7 @@ In the following example, we include the plugins `Disks` and `Nodes`.
 {{site.data.alerts.note}}
 <ul>
   <li>For the <code>--nlb</code> flag, the <code>false</code> setting requires floating IP address configuration.</li>
-  <li>To prevent spreading the load of a plugin's API requests across all nodes in a Qumulo cluster, each alarm or alert plugin that you configure communicates with your cluster by using either a network load balancer or floating IPs. You can configure <em>one</em>&mdash;but not both&mdash;of these communication methods.</li>
+  <li>To prevent spreading the load of a plugin's API requests across all nodes in a Qumulo cluster, each alarm or alert plugin that you configure communicates with your cluster by using either a network load balancer or floating IP addresses. You can configure <em>one</em>&mdash;but not both&mdash;of these communication methods.</li>
 </ul>
 {{site.data.alerts.end}}
 

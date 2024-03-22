@@ -1,4 +1,4 @@
-Access policies let you control specific sets of S3 API actions that each user or group can perform. They provide an _additional_ layer of access management for S3 buckets by adding further restrictions to those of access keys, pre-signed URLs, and file system [access control lists](managing-access-to-s3-buckets.html#inheritable-aces).
+Access policies let you control specific sets of S3 API actions that each user or group can perform. They provide an _additional_ layer of access management for S3 buckets by adding further restrictions to those of access keys, presigned URLs, and file system [access control lists](managing-access-to-s3-buckets.html#inheritable-aces).
 
 Managing access policies for S3 buckets in Qumulo clusters is similar to managing SMB share access, only with a larger set of items that you can specify in the [`Actions`](#actions) field of the [policy statement](#access-policy-statements).
 
@@ -289,7 +289,7 @@ The following table describes examples of principals which Qumulo Core supports.
     </tr>
     <tr>
       <td><code>gid:1234</code></td>
-      <td>A Posix GID that identifies users by their {% include rfc.html rfc='2307' %}, prefixed by <code>gid:</code></td>
+      <td>A POSIX GID that identifies users by their {% include rfc.html rfc='2307' %}, prefixed by <code>gid:</code></td>
     </tr>
     <tr>
       <td><code>auth_id:12345678</code></td>

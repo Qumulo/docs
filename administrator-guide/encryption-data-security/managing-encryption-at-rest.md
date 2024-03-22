@@ -9,8 +9,7 @@ redirect_from:
 sidebar: administrator_guide_sidebar
 varLocalKey: The master key is stored locally.
 varKmsKey: The master key is stored in a KMS.
-varExampleKeyID: abcd-1234-efgh-5678
-varExampleHostname: kms-server.example.com
+varExampleHostname: kms.example.com
 ---
 
 {{site.data.alerts.important}}
@@ -80,7 +79,7 @@ Run the `qq encryption_get_key_store` command.
   "config_details": {
     "config_creation_time": "2024-02-28T20:01:25.683207795Z",
     "hostname": "{{page.varExampleHostname}}",
-      "key_id": "{{page.varExampleKeyID}}",
+      "key_id": "{{site.exampleKeyID}}",
       "port": 5696
     },
   "config_type": "KMS"
@@ -128,7 +127,7 @@ This section explains how to configure Qumulo Core to use a master key stored lo
      --client-cert path/to/client_cert.pem \
      --client-private-key path/to/client_pk.pem \
      --server-ca-cert /path/to/server_cert.pem \
-     --key-id {{page.varExampleKeyID}} \
+     --key-id {{site.exampleKeyID}} \
      --host-name {{page.varExampleHostname}}
    ```
 
@@ -154,7 +153,7 @@ This section explains how to rotate the master key and check the encryption stat
 1. Run the `qq rotate_encryption_keys` command and specify the key ID. For example:
 
    ```bash
-   qq rotate_encryption_keys --key-id {{page.varExampleKeyID}}
+   qq rotate_encryption_keys --key-id {{site.exampleKeyID}}
    ```
    
    {% include tip.html content="The key ID might be different from the key name." %}

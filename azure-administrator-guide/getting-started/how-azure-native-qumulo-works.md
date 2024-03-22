@@ -92,7 +92,7 @@ The following table compares the features of {{site.azure.qumuloOnAzureShort}} w
       <td></td>
     </tr>      
     <tr>
-      <td>Payment for pre-provisioned file system capacity</td>
+      <td>Payment for preprovisioned file system capacity</td>
       <td></td>
       <td>&#10003;</td>
       <td>&#10003;</td>
@@ -261,7 +261,7 @@ The following table lists regions in US, Canada, Europe, and the UK that {{site.
       <td>&#10003;</td>
     </tr>
     <tr>
-      <td>Europe (Gavle)</td>
+      <td>Europe (G&auml;vle)</td>
       <td>Sweden Central</td>
       <td>&#10003;</td>
       <td>&#10003;</td>
@@ -309,7 +309,7 @@ The following table lists regions in US, Canada, Europe, and the UK that {{site.
       <td></td>
     </tr>
     <tr>
-      <td>Brazil (São Paulo State)</td>
+      <td>Brazil (S&atilde;o Paulo State)</td>
       <td>Brazil South</td>
       <td>&#10003;</td>
       <td></td>

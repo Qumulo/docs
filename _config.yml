@@ -28,20 +28,23 @@ port: 4000
 # the port where the preview is rendered. You can leave this as is unless you have other Jekyll builds using this same port that might cause conflicts. in that case, use another port such as 4006.
 
 exclude:
-  - .idea/
   - .gitignore
+  - .idea
+  - .ignore-error
+  - .spelling-allowlist
+  - .spelling-ignorefiles
   - tools/
   - "*.sh"
+  - "*.rb"
   - "*.yml"
   - "*.drawio"
   - "*.lua"
-  - var
-  - vendor
   - docker/
-  - README.developer
   - Gemfile
   - Gemfile.lock
   - createtag
+  - var # Deleting this line will cause tests to fail
+  - vendor # Deleting this line will cause tests to fail                 
 # these are the files and directories that jekyll will exclude from the build
 
 feedback_subject_line: Qumulo Documentation
@@ -139,12 +142,19 @@ relative_links:
 plugins:
   - jekyll-redirect-from
 
-# Global include variables
+# BEGIN SPELLCHECK HERE
+
 loginRequired: <span class="emoji">🔒</span>
 
 nexusDownloads: For downloads, release notes, and upgrade paths for on-premises and cloud releases of Qumulo Core, see <a target="_blank" href="https://nexus.qumulo.com/downloads">Qumulo Nexus</a>
 contactQumuloCare: <a href="https://docs.qumulo.com/contacting-qumulo-care-team.html">contact the Qumulo Care team</a>
 
+exampleUsernameUppercase1: JSMITH
+exampleClusterNameUppercase1: MYCLUSTER
+exampleAWSaccessKeyID: AKIAIOSFODNN7EXAMPLE
+exampleAWSsecretKey: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+examplePassword: HTEj0kGIOsNOAA0
+exampleKeyID: abcd-1234-efgh-5678
 exampleIP0: 203.0.113.0
 exampleIP1: 203.0.113.1
 exampleIP2: 203.0.113.2
@@ -188,7 +198,7 @@ adp:
 determineUUIDs: 1. To determine the UUIDs of the nodes to add to your cluster, use the <code>qq unconfigured_nodes_list</code> command.
 noteDownUUIDs: 1. Write down the UUIDs of the nodes that you want to add to the cluster, in the order that you want to add them.
 rackNewNodes: 1. Rack and wire your new nodes and then power them on.
-cannotReorderNodes: it isn’t possible to revert this operation or reorder nodes after adding them to a cluster.
+cannotReorderNodes: it isn't possible to revert this operation or reorder nodes after adding them to a cluster.
 
 hardware:
   ipmiConfig:
@@ -219,7 +229,7 @@ splitIlo: We strongly recommend separating your iLO access network from your cli
 partReplaceDefine: When you replace a component such as the motherboard or a NIC card in your node, you must ensure that the firmware version and configuration are correct for your new components. To do this, you must perform the part replacement procedure by using the FVT.
 partReplaceDcms: Before you replace the motherboard, you must request a new Data Center Management Suite (DCMS) license key from Supermicro and apply it before you run the FVT. (The license key uses the BMC MAC address which changes with the motherboard.) If you don't install a DCMS license on your node, the Field Verification Tool (FVT) fails, preventing you from running the part replacement procedure in the FVT, which normalizes the firmware and BIOS configuration for your new motherboard.
 
-varKerberosDns: Kerberos relies on DNS to identify machines involved in authentication. NFS clients and servers require DNS <code>A</code> records for forward-DNS lookups and <code>PTR</code> records for reverse-DNS lookups.
+varKerberosDns: Kerberos relies on DNS to identify machines involved in authentication. NFS clients and servers require DNS <code>A</code> records for forward-DNS look-ups and <code>PTR</code> records for reverse-DNS look-ups.
 varNfsConf: In versions of Ubuntu lower than 22.04 (and possibly on other Linux distributions), you can't use the <code>/etc/nfs.conf</code> file to configure <code>gssd</code>. If this is the case for your system, we recommend starting the <code>rpc.gssd</code> service by using the <code>-n</code> flag.
 
 unifySplitDepends: Depending on its [technical specifications](technical-specifications.html), your node uses _unified_ or _split networking configuration_.

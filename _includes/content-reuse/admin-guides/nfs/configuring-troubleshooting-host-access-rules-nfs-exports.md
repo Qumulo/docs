@@ -36,13 +36,13 @@ The following examples show the elements that a host access rule can include.
 ## Prerequisites
 To be able to use hostnames, you must:
 
-* Enable and configure reverse lookups on your DNS server.
+* Enable and configure reverse look-ups on your DNS server.
   
 * Use fully qualified domain names (FQDNs).
 
 * Use wildcards carefully because they match only one hostname level. For example, `*.accounting.example.com` matches `user1.accounting.example.com` but not `machine.user1.accounting.example.com`.
 
-* [Optimize your system for reverse-dns lookups.](#optimize-for-reverse-dns)
+* [Optimize your system for reverse-dns look-ups.](#optimize-for-reverse-dns)
 
 
 ## Adding a Host Access Rule to an Existing NFS Export
@@ -211,8 +211,8 @@ This section describes the troubleshooting steps for a scenario in which an NFS 
 
 
 <a id="optimize-for-reverse-dns"></a>
-## Optimizing Your System for Reverse-DNS Lookups
-Qumulo Core checks hostnames by performing a reverse-DNS lookup on the cluster. Because continuous reverse-DNS lookups can affect system performance, Qumulo Core caches the results on the cluster. Because Qumulo Core's cache abides by the DNS TTL, a low TTL can cause cache entries to expire frequently, which might require a new query.
+## Optimizing Your System for Reverse-DNS Look-Ups
+Qumulo Core checks hostnames by performing a reverse-DNS lookup on the cluster. Because continuous reverse-DNS look-ups can affect system performance, Qumulo Core caches the results on the cluster. Because Qumulo Core's cache abides by the DNS TTL, a low TTL can cause cache entries to expire frequently, which might require a new query.
 
 By increasing TTL, you can reduce the number of DNS requests that your cluster makes. However, this might cause your cluster to keep outdated results for a longer time. For the most optimal configuration, list your organization's DNS servers first in your DNS configuration.
 

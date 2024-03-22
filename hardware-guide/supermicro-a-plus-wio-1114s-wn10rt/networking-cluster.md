@@ -1,6 +1,6 @@
 ---
 title: "Networking Your Supermicro A+ WIO 1114S-WN10RT Cluster"
-summary: "This section explains how to network a Supermicro 114S cluster, lists the networking prerequisites, outlines the recommended configuration, and explains how to connect to redundant switches or to a single switch."
+summary: "This section explains how to network a Supermicro 1114S cluster, lists the networking prerequisites, outlines the recommended configuration, and explains how to connect to redundant switches or to a single switch."
 permalink: /hardware-guide/supermicro-a-plus-wio-1114s-wn10rt/networking-cluster.html
 redirect_from:
   - /hardware/supermicro-a-plus-wio-1114s-wn10rt/networking-cluster.html
@@ -62,7 +62,7 @@ We recommend the following configuration for your node.
 
 * Firewall protocols or ports allowed for proactive monitoring
 
-* Where `N` is the number of nodes, `N-1` floating IPs for each node, for each client-facing VLAN
+* Where `N` is the number of nodes, `N-1` floating IP addresses for each node, for each client-facing VLAN
 
 
 ## Connecting to Redundant Switches

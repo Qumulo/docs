@@ -186,14 +186,14 @@ You can use your private key to generate a verification signature and then provi
 
    * **AWS KMS API:** [`Sign`](https://docs.aws.amazon.com/kms/latest/APIReference/API_Sign.html) in the AWS Key Management Service API Reference
 
-1. Specify the ECDSA_SHA_256 algorithm.
+1. Specify the `ECDSA_SHA_256` algorithm.
 
    The response returns a Base64-encoded verification signature.
 
 ### To Sign a Security Challenge by Using the GCP Cloud Key Management Service (Cloud CMS)
 1. Sign a security challenge by using the GCP Cloud Console, Cloud CLI, or Cloud API. For more information, see [Creating a signature](https://cloud.google.com/kms/docs/create-validate-signatures#create_signature) in the Cloud Key Management Service documentation.
 
-1. Specify the sha256 digest algorithm.
+1. Specify the `SHA256` digest algorithm.
 
 1. If the signature in the response is comprised of raw bytes (not a Base64-encoded string) encode the signature file by using the `base64` CLI tool on the signature file that the Cloud CLI generates. For example:
 

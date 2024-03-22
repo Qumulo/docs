@@ -41,7 +41,7 @@ Run the `./alerts quota_add` command and specify the quota path, the email addre
 ```
 
 ## Notifying Directory Owners Automatically
-To ue this method, you must first add an AD server to Qumulo Alerts and then configure the default quota to use AD lookup to retrieve users' email addresses.
+To use this method, you must first add an AD server to Qumulo Alerts and then configure the default quota to use AD lookup to retrieve users' email addresses.
 
 ### Step 1: Connect Qumulo Alerts to an Active Directory Server
 Run the `./alerts ad_server_add` command and specify the AD server, AD login name, AD password, the search base for looking up users, and the fully qualified domain name (FQDN) of your Qumulo cluster. For example:
@@ -50,7 +50,7 @@ Run the `./alerts ad_server_add` command and specify the AD server, AD login nam
 ./alerts ad_server_add \
   --server-name "ad.example.com" \
   --login-name "example.com\LookupUser" \
-  --password MyPassword123 \
+  --password {{site.examaplePassword}} \
   --search-base "CN=Users,DC=example,DC=com" \
   --cluster-include cluster.example.com
 ```

@@ -83,7 +83,7 @@ You can use the following trustee representation formats.
 | `GROUP@` | &mdash; | The group owner of a file. |
 | `OWNER@` | &mdash; | The owner of a file. |
 
-You you can use all trusteee representations interchangeably, even within a single ACL. For example, the following ACL is possible for a file:
+You you can use all trustee representations interchangeably, even within a single ACL. For example, the following ACL is possible for a file:
 
 ```bash
 $ nfs4_getfacl /mnt/qumulo/my-file
