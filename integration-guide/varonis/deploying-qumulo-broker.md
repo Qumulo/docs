@@ -67,7 +67,7 @@ You can now configure Varonis to communicate with your Qumulo cluster.
 ## Step 3: Configure Qumulo Audit Logging by Using the qq CLI
 This section explains how to configure audit logging on your Qumulo cluster.
 
-1. To configure audit logging on your Qumulo cluster, use the {% include qq.html command="qq audit_set_syslog_config" %} command with the `--enable` flag, use the `--json` flag to request logging in JSON format, and specify the IP address or hostname and port number for your Qumulo Broker machine. For example:
+1. To configure audit logging on your Qumulo cluster, run the {% include qq.html command="qq audit_set_syslog_config" %} command with the `--enable` flag, use the `--json` flag to request logging in JSON format, and specify the IP address or hostname and port number for your Qumulo Broker machine. For example:
 
    ```bash
    qq audit_set_syslog_config \
@@ -79,7 +79,7 @@ This section explains how to configure audit logging on your Qumulo cluster.
    
    Qumulo Core enables audit logging for your cluster.
    
-1. To confirm the audit logging configuration for your cluster, use the {% include qq.html command="audit_get_syslog_config" %} command.
+1. To confirm the audit logging configuration for your cluster, run the {% include qq.html command="audit_get_syslog_config" %} command.
 
    In the following example output, audit logging is enabled in JSON format.
    
@@ -93,7 +93,7 @@ This section explains how to configure audit logging on your Qumulo cluster.
    }
    ```
    
-1. To confirm the connection between the Qumulo Broker and the rsyslog instance, use the {% include qq.html command="qq audit_get_syslog_status" %} command.
+1. To confirm the connection between the Qumulo Broker and the rsyslog instance, run the {% include qq.html command="qq audit_get_syslog_status" %} command.
 
    The command returns one of three possible values for the `connection_status` field:
 

@@ -21,7 +21,7 @@
    private.key: PEM RSA private key
    ```
 
-1. (Optional) If your file isn't an RSA key, use the `openssl rsa` command to convert your key. For example:
+1. (Optional) If your file isn't an RSA key, run the `openssl rsa` command to convert your key. For example:
 
    ```bash
    openssl rsa \

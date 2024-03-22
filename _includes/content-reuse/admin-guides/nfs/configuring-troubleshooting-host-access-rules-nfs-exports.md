@@ -183,7 +183,7 @@ This section describes the troubleshooting steps for a scenario in which an NFS 
 
    * Ensure the NFS client configuration entry is correct.
      
-   * Use the [`dns_resolve_ips`](#dns_resolve_ips) command to verify that the IP address maps to the correct name.
+   * Run the [`dns_resolve_ips`](#dns_resolve_ips) command to verify that the IP address maps to the correct name.
    
    * Update the host access rules for `user2.accounting.example.com`.
      

@@ -195,7 +195,7 @@ adp:
   before612Description: Depending on your cluster, Qumulo Core shows configuration options that offer better fault tolerance levels, better storage efficiency, or both benefits. To enable Adaptive Data Protection for your cluster, you must
   after612AddReplace: In Qumulo Core 6.1.2 (and higher), you can change your cluster's data protection configuration when you add or replace nodes by using the <code>qq</code> CLI.
 
-determineUUIDs: 1. To determine the UUIDs of the nodes to add to your cluster, use the <code>qq unconfigured_nodes_list</code> command.
+determineUUIDs: 1. To determine the UUIDs of the nodes to add to your cluster, run the <code>qq unconfigured_nodes_list</code> command.
 noteDownUUIDs: 1. Write down the UUIDs of the nodes that you want to add to the cluster, in the order that you want to add them.
 rackNewNodes: 1. Rack and wire your new nodes and then power them on.
 cannotReorderNodes: it isn't possible to revert this operation or reorder nodes after adding them to a cluster.
@@ -355,7 +355,7 @@ azure:
   
 varonis:
   separateMachine: Deploy Qumulo Broker on a stand-alone machine (or virtual machine) so that it sits between your Qumulo cluster and Varonis.
-  restartRsyslog: To restart the rsyslog service, use the `systemctl restart rsyslog` command.
+  restartRsyslog: To restart the rsyslog service, run the `systemctl restart rsyslog` command.
 
 monitoring:
   cloudBasedMonitoringEnabled: If your configuration is valid, the Qumulo Core Web UI shows the status **Enabled &#124; Connected**.

@@ -34,7 +34,7 @@ Qumulo provides configuration for the permitted NFSv4.1 authentication flavors i
      "auth_krb5i_enabled": true
    }
    ```
-1. (Optional) You can also use the following commands.
+1. (Optional) You can also run the following commands.
 
    | Command | Description |
    | ------- | ----------- |

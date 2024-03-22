@@ -84,7 +84,7 @@ To create and manage S3 buckets, you must configure AWS CLI to work with your Qu
    
    {% include note.html content="If you haven't installed an SSL certificate, append `--no-verify-ssl` to the end of the command." %}
 
-1. (Optional) If you haven't configured your machine to trust the SSL certificate installed on your Qumulo cluster, to configure the path to [the trusted SSL certificate bundle that you have created and installed earlier](#configuring-https) manually, use the `aws configure` command. For example:
+1. (Optional) If you haven't configured your machine to trust the SSL certificate installed on your Qumulo cluster, to configure the path to [the trusted SSL certificate bundle that you have created and installed earlier](#configuring-https) manually, run the `aws configure` command. For example:
   
    ```bash
    $ aws configure \

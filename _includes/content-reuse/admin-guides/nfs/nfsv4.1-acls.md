@@ -19,7 +19,7 @@ A::EVERYONE@:rtncy
 
 The entries in the ACL have four parts separated by colons (`:`). For more information, see the [nfs4_acl](https://linux.die.net/man/5/nfs4_acl) in the Linux documentation.
 
-The ACL in this example corresponds to `664` mode: The owner (`user1`) and group (`group1`) of the file are allowed to read and write, while others (`EVERYONE@`) are allowed to only read. To check the current mode, use the `stat` command, for example:
+The ACL in this example corresponds to `664` mode: The owner (`user1`) and group (`group1`) of the file are allowed to read and write, while others (`EVERYONE@`) are allowed to only read. To check the current mode, run the `stat` command, for example:
 
 ```bash
 $ stat -c %a /mnt/qumulo/my-file
@@ -27,7 +27,7 @@ $ stat -c %a /mnt/qumulo/my-file
 ```
 
 ### Editing the ACL of a File
-To edit the ACL of a file (by using the text editor specified in the `$EDITOR` environment variable), use the `nfs4_editfacl` (or `nfs4_setfacl -e`) command. For more information, see the [nfs4_editfacl](https://linux.die.net/man/1/nfs4_editfacl) and [nfs4_setfacl](https://linux.die.net/man/1/nfs4_setfacl) in the Linux documentation.
+To edit the ACL of a file (by using the text editor specified in the `$EDITOR` environment variable), run the {% include qq.html command="nfs4_editfacl" %} command (or the {% include qq.html command="nfs4_setfacl" %} command with the `-e` flag). For more information, see the [nfs4_editfacl](https://linux.die.net/man/1/nfs4_editfacl) and [nfs4_setfacl](https://linux.die.net/man/1/nfs4_setfacl) in the Linux documentation.
 
 ### Setting the ACL of a File
 To set the ACL of a file, you can use one of the following commands:

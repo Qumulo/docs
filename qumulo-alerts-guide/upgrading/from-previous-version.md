@@ -13,8 +13,8 @@ sidebar: qumulo_alerts_guide_sidebar
 
 1. In the Qumulo Alerts directory, run the `git pull` command.
   
-1. To remove all existing Qumulo Alerts Docker images from your machine, use the `docker system prune -a -f` command.
+1. To remove all existing Qumulo Alerts Docker images from your machine, run the `docker system prune -a -f` command.
 
    {% include note.html content="This release of Qumulo Alerts adds new Docker containers, making it necessary to remove all existing images." %}
 
-1. To restart the Docker containers for Qumulo Alerts, pull new Docker images from the Qumulo Docker repository, and restart all Docker containers, use the `./start-docker-qumulo-alerts.sh` command.
+1. To restart the Docker containers for Qumulo Alerts, pull new Docker images from the Qumulo Docker repository, and restart all Docker containers, run the `./start-docker-qumulo-alerts.sh` command.

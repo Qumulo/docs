@@ -1,4 +1,4 @@
-{% include tip.html content="It is possible to confuse the terms _access token_ and _session token_. Unlike access tokens, session tokens are short-lived and require a password to refresh, for example, to authenticate by using the `qq login` command. Access tokens are the focus of this section." %}
+{% include tip.html content="It is possible to confuse the terms _access token_ and _session token_. Unlike access tokens, session tokens are short-lived and require a password to refresh, for example, to authenticate by using the {% include qq.html command="qq login" %} command. Access tokens are the focus of this section." %}
 
 In Qumulo Core 5.3.0 (and higher), you can use _access tokens_ to let a user authenticate to the Qumulo Core REST API without having to complete repetitive login procedures.
 
@@ -23,7 +23,7 @@ Access tokens are long-lived. They provide an alternative to session-based authe
 {{page.varPrereqWrite}} This section explains how to create access tokens without or with an expiration time by using the `qq` CLI.
 
 ### To Create an Access Token without an Expiration Time
-Run the `auth_create_access_token` command and specify the user. For example:
+Run the {% include qq.html command="auth_create_access_token" %} command and specify the user. For example:
 
 ```bash
 $ qq auth_create_access_token jane
@@ -50,7 +50,7 @@ You can:
 
 <a id="json-bearer-token"></a>
 
-The `auth_create_access_token` command returns a JSON response that contains the bearer token body and the access token ID, which you can use to manage the access token.
+The {% include qq.html command="auth_create_access_token" %} command returns a JSON response that contains the bearer token body and the access token ID, which you can use to manage the access token.
 
 ```json
 {
@@ -190,7 +190,7 @@ expiration time       enabled
 2023-01-01T00:00:00Z  False
 ```
 
-To filter the command's output by user, use the `--user` flag and use the same format for the name as for the [`auth_create_access_token`](#create-token-format) command.
+To filter the command's output by user, use the `--user` flag and use the same format for the name as for the {% include qq.html command="auth_create_access_token" %} command.
 
 
 <a id="modifying-expiration-time-access-token"></a>

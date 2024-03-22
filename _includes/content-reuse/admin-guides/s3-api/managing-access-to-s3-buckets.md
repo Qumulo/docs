@@ -32,7 +32,7 @@ For more information, see [Authenticating Requests: Using Query Parameters (AWS 
 </ul>
 {{site.data.alerts.end}}
 
-To create a presigned URL, use the AWS CLI [`presign`](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/s3/presign.html) command. In the following example, the presigned URL expires in 10 minutes (600 seconds).
+To create a presigned URL, run the AWS CLI [`presign`](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/s3/presign.html) command. In the following example, the presigned URL expires in 10 minutes (600 seconds).
 
 ```bash
 $ aws2 s3 presign s3://my-bucket/my-file.txt \

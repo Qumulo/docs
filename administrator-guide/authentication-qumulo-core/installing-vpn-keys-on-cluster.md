@@ -66,13 +66,13 @@ Before you begin, make sure that you have done the following.
 
 {{page.varCopyFile}}
 
-1. To copy the VPN key files to one of your nodes, use the `scp` command. For example:
+1. To copy the VPN key files to one of your nodes, run the `scp` command. For example:
 
    ```bash
    scp /my-path/* admin@{{site.exampleIP0}}:~/
    ```
 
-1. To connect to the node to which you copied the VPN key files, use the `ssh` command. For example:
+1. To connect to the node to which you copied the VPN key files, run the `ssh` command. For example:
 
    ```bash
    ssh admin@{{site.exampleIP0}}

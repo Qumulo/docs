@@ -231,7 +231,7 @@ Send a `DELETE` request to the `/v1/s3/access-keys/<access-key-id>` Qumulo Core 
 
 For users that exist in an AD domain that has a trust relationship with the joined domain, you must append that domain's base DN to the base DN in your Qumulo cluster's AD configuration.
 
-To append the trusted base DN to the base DN in use&mdash;with a semicolon (`;`) separating the two&mdash;use the Qumulo Core Web UI or the `qq ad_reconfigure` command. For example:
+To append the trusted base DN to the base DN in use&mdash;with a semicolon (`;`) separating the two&mdash;use the Qumulo Core Web UI or the {% include qq.html command="ad_reconfigure" %} command. For example:
 
 ```bash
 $ qq ad_reconfigure \

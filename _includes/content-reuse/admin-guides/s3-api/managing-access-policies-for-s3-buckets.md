@@ -14,8 +14,8 @@ By default, S3 buckets have _no policy_ in a Qumulo cluster. In this state, ther
 
 {{site.data.alerts.note}}
 <ul>
-  <li>In the default non-policy state, Qumulo Core disallows unsigned, anonymous requests and the <a href="https://docs.qumulo.com/qq-cli-command-guide/s3/s3_get_bucket_policy.html"><code>qq s3_get_bucket_policy</code></a> command returns <code>{}</code>. To enable anonymous access, use the <a href="https://docs.qumulo.com/qq-cli-command-guide/s3/s3_set_bucket_policy.html"><code>qq s3_set_bucket_policy</code></a> command with an <code>Allow</code> statement that targets the <code>local:guest</code> account.</li>
-  <li>To remove an access policy from an S3 bucket, use the <a href="https://docs.qumulo.com/qq-cli-command-guide/s3/s3_delete_bucket_policy.html"><code>qq s3_delete_bucket_policy</code></a> command.</li>
+  <li>In the default non-policy state, Qumulo Core disallows unsigned, anonymous requests and the {% include qq.html command="s3_get_bucket_policy" %} command returns <code>{}</code>. To enable anonymous access, run the {% include qq.html command="s3_set_bucket_policy" %} command with an <code>Allow</code> statement that targets the <code>local:guest</code> account.</li>
+  <li>To remove an access policy from an S3 bucket, run the {% include qq.html command="s3_delete_bucket_policy" %} command.</li>
 </ul>
 {{site.data.alerts.end}}
 
@@ -98,7 +98,7 @@ The S3 bucket policy statement contains the following fields.
             <p><code>Index</code>: The system ignores this field when you configure the access policy for an S3 bucket.</p>
             {{site.data.alerts.note}}
             <ul>
-              <li>To retrieve index for a policy statement, use the <a href="https://docs.qumulo.com/qq-cli-command-guide/s3/s3_get_bucket_policy.html"><code>qq s3_get_bucket_policy</code></a> command.</li>
+              <li>To retrieve index for a policy statement, run the {% include qq.html command="s3_get_bucket_policy" %} command.</li>
               <li>You can target a specific policy statement by specifying its index for the <code>--index</code> flag with the <a href="https://docs.qumulo.com/qq-cli-command-guide/s3/s3_modify_bucket_policy.html"><code>qq s3_modify_bucket_policy modify_statement</code></a> command.</li>
             </ul>
             {{site.data.alerts.end}}

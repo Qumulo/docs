@@ -47,7 +47,7 @@ The following is an example configuration for joining a domain.
 ### To Join a Linux Client to a Domain by using realmd
 [realmd](https://manpages.debian.org/testing/realmd/realm.8.en.html) is a tool that allows managing realm-based authentication. It can be somewhat more difficult to use than `samba`. However, it creates a more complete configuration. For example, it configures the `sssd` tool during the domain-join process.
 
-1. To join a domain, use the `realm join` command. For example:
+1. To join a domain, run the `realm join` command. For example:
 
    ```bash
    $ realm join my-domain.example.com -U Administrator
@@ -177,7 +177,7 @@ Machine account authentication can be useful for simple scenarios in which trust
    use-machine-creds=true
    ```
 
-   {{page.varGSSDflag}} When you set the flag to `true`, `gssd` authenticates as the machine account for the system on behalf of the NFS client. (It performs a `kinit` operation as the machine account). The [credential cache](https://web.mit.edu/kerberos/krb5-1.12/doc/basic/ccache_def.html) that results from the `kinit` is usually located in `/tmp`. To search for the cache, use the `ls /tmp/*krb5*` command.
+   {{page.varGSSDflag}} When you set the flag to `true`, `gssd` authenticates as the machine account for the system on behalf of the NFS client. (It performs a `kinit` operation as the machine account). The [credential cache](https://web.mit.edu/kerberos/krb5-1.12/doc/basic/ccache_def.html) that results from the `kinit` is usually located in `/tmp`. To search for the cache, run the `ls /tmp/*krb5*` command.
 
    {{site.data.alerts.note}}
    {{site.varNfsConf}}
@@ -219,7 +219,7 @@ In environments where Linux systems map exactly to end users that have `kinit`-b
 
 1. When prompted for a password, use the AD domain password for the user.
 
-1. To confirm the result of the authentication operation, use the `sudo klist` command.
+1. To confirm the result of the authentication operation, run the `sudo klist` command.
 
 1. Confirm that the [/etc/nfs.conf file](https://man7.org/linux/man-pages/man8/rpc.gssd.8.html) contains the following flag:
 
@@ -259,7 +259,7 @@ In environments where Linux systems map exactly to end users that have `kinit`-b
    $ sudo login my-domain-user
    ```
 
-   Alternatively, you can use the following command.
+   Alternatively, you can run the following command.
 
    ```bash
    $ ssh my-domain_user@my-linux-system
