@@ -15,7 +15,7 @@ When there are no cross-protocol interactions, Qumulo Core operates according to
 For more information, see the following resources:
 
 * [Qumulo Core Permission Modes](https://care.qumulo.com/hc/en-us/articles/360020318054)
-* [Cross-Protocol Permissions (XPP) in Common Scenarios](https://care.qumulo.com/hc/en-us/articles/360020324014)
+* [Cross-Protocol Permissions (XPP) in Common Scenarios](https://care.qumulo.com/s/article/Cross-Protocol-Permissions-XPP-in-Common-Scenarios)
 * [Cross-Protocol Permissions Test Drive Website](https://sites.google.com/qumulo.com/xpp-test-drive).
 
 ### Common Workflow Scenarios for Working with Cross-Protocol Permissions (XPP)

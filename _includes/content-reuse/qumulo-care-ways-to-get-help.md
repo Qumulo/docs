@@ -1,10 +1,10 @@
 The Qumulo Care team is always here to help you. You can contact us by using any of the following ways.
 
-* <span class="emoji">📚</span> Browse the [Qumulo Knowledge Base](https://care.qumulo.com/hc/en-us/categories/115000637447)
+* <span class="emoji">📚</span> Browse the [Qumulo Knowledge Base](https://care.qumulo.com/s/knowledge)
 
 * <a id="open-a-case"></a>
 
-  <span class="emoji">🧑‍💻</span> Open a case by [filing a request](https://care.qumulo.com/hc/en-us/requests/new) or [emailing us](mailto:care@qumulo.com).
+  <span class="emoji">🧑‍💻</span> Open a case by [filing a request](https://qumulo.com/support/) or [emailing us](mailto:care@qumulo.com).
 
 * <span class="emoji">💬</span> [Message us on Slack](https://qumulocare.slack.com/) (if you are a current customer). For more information, see our [Slack Tips and Tricks](https://docs.qumulo.com/contacting-qumulo-care-team.html#slack-tips-and-tricks).
 
