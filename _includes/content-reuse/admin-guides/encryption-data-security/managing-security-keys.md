@@ -45,7 +45,7 @@ For more information, see [Extracting the Public Key from an ECDSA Private Key](
 ## Retrieving Public Key Information
 * To retrieve information for a single public key, run the {% include qq.html command="fs_security_key" %} and specify the key identifier or name.
 
-* To retrieve information for all public keys, run the {% include qq.html command="fs_security_list_keys" %}.
+* To retrieve information for all public keys, run the {% include qq.html command="fs_security_list_keys" %} command.
 
   {{site.jsonNotTable}}
 

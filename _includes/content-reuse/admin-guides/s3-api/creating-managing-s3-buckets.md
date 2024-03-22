@@ -118,7 +118,7 @@ By default, the default bucket directory prefix for newly created buckets is the
 * To change the default bucket directory prefix, you need {{site.s3.permissions.bucketsWrite}}.
 
 #### To Configure the Default Bucket Directory Prefix by Using the qq CLI
-1. To view the current default bucket directory prefix, run the {% include qq.html command="s3_get_settings" %}.
+1. To view the current default bucket directory prefix, run the {% include qq.html command="s3_get_settings" %} command.
 
    {{site.exampleOutput}}
 

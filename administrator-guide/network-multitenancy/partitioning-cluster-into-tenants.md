@@ -125,7 +125,7 @@ $ qq network_mod_network \
 To determine a tenant's network assignments and enabled management and file system protocols, you can view the tenant information.
 
 #### Viewing Information for a Single Tenant
-To view the information for a single tenant, run the {% include qq.html command="multitenancy_get_tenants" %}.
+To view the information for a single tenant, run the {% include qq.html command="multitenancy_get_tenants" %} command.
 
 ```bash
 $ qq multitenancy_get_tenant \
@@ -140,14 +140,14 @@ $ qq multitenancy_get_tenant \
 * In the `qq` CLI, run the {% include qq.html command="multitenancy_list_tenants" %} command.
 
 #### Determining the Tenant Assignment for Networks
-* To view the information for a single network, run the {% include qq.html command="network_get_network" %}.
+* To view the information for a single network, run the {% include qq.html command="network_get_network" %} command.
 
   ```bash
   $ qq network_get_network \
     --network-id 2
   ```
  
-* To view the information for all networks, run the {% include qq.html command="network_list_networks" %}.
+* To view the information for all networks, run the {% include qq.html command="network_list_networks" %} command.
 
 ### Step 4: Delete a Tenant
 {{site.data.alerts.important}}

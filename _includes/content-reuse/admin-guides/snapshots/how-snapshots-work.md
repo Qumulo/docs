@@ -47,7 +47,7 @@ More than one snapshot can reference _covered data_. It isn't possible to releas
 
 * To determine the total covered data, including data no longer present in the snapshot, run the {% include qq.html command="snapshot_get_capacity_used_per_snapshot" %} and specify multiple, comma-separated snapshot IDs.
 
-* To determine the total amount of data, including covered data that multiple snapshots reference, run the {% include qq.html command="snapshot_get_total_used_capacity" %}.
+* To determine the total amount of data, including covered data that multiple snapshots reference, run the {% include qq.html command="snapshot_get_total_used_capacity" %} command.
 
 When you delete a snapshot, Qumulo Core removes the data which that snapshot references but retains the data which any other snapshot references. This ensures a full file representation within the remaining snapshots. Qumulo Core uses a background process to recover the storage that the snapshot had consumed.
 

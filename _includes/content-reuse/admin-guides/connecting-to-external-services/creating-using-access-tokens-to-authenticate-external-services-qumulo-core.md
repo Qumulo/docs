@@ -287,11 +287,11 @@ We strongly recommend rotating access tokens for a service account at a regular 
 
 #### To Rotate an Access Token for a Service Account
 
-1. To ensure that there is only one access token for each service account, run the {% include qq.html command="auth_list_access_tokens" %}.
+1. To ensure that there is only one access token for each service account, run the {% include qq.html command="auth_list_access_tokens" %} command.
 
    If multiple access tokens exist, delete any unused access tokens.
 
-1. To create a new access token for the service account, run the {% include qq.html command="auth_create_access_token" %}.
+1. To create a new access token for the service account, run the {% include qq.html command="auth_create_access_token" %} command.
 
 1. In the credential store of your service, replace the old access token with the new one.
 
@@ -299,4 +299,4 @@ We strongly recommend rotating access tokens for a service account at a regular 
 
 1. Confirm that there is nothing else relying on the old access token by disabling it first. If this causes any disruptions then you can re-enable it while you resolve the issue.
 
-1. To delete the old access token, run the {% include qq.html command="auth_delete_access_token" %}.
+1. To delete the old access token, run the {% include qq.html command="auth_delete_access_token" %} command.

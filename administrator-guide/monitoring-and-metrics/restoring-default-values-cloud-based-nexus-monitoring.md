@@ -21,7 +21,7 @@ When you no longer [connect to Cloud-Based Monitoring by using a custom proxy](c
    qq login -u admin -p {{site.examplePassword}}
    ```
 
-1. To restore the default values for Cloud-Based and Nexus Monitoring, run the {% include qq.html command="set_monitoring_conf" %}.
+1. To restore the default values for Cloud-Based and Nexus Monitoring, run the {% include qq.html command="set_monitoring_conf" %} command.
 
    In the following example, we:
    

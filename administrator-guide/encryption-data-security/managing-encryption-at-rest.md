@@ -131,7 +131,7 @@ This section explains how to configure Qumulo Core to use a master key stored lo
      --host-name {{page.varExampleHostname}}
    ```
 
-1. To confirm that the system is configured correctly, run the {% include qq.html command="encryption_get_key_store" %}.
+1. To confirm that the system is configured correctly, run the {% include qq.html command="encryption_get_key_store" %} command.
 
    In the output, ensure that the `type` field is set to `KMS`.
 

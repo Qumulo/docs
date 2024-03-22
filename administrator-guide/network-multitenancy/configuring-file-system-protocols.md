@@ -80,7 +80,7 @@ $ qq nfs_add_export \
 {% capture mustSpecifyID %}{{page.varMustSpecifyTenantID}}{% endcapture %}
 {% include important.html content=mustSpecifyID %}
 
-To move an NFS export from one tenant to another, run the {% include qq.html command="nfs_mod_export" %}. In the following example, while the cluster denies access to clients in tenant 2, it lets clients in tenant 1 access the export `/my-export`.
+To move an NFS export from one tenant to another, run the {% include qq.html command="nfs_mod_export" %} command. In the following example, while the cluster denies access to clients in tenant 2, it lets clients in tenant 1 access the export `/my-export`.
 
 ```bash
 $ qq nfs_mod_export \
@@ -149,7 +149,7 @@ $ qq smb_add_share \
 
 {% include important.html content=mustSpecifyID %}
 
-To move an SMB share from one tenant to another, run the {% include qq.html command="smb_mode_share" %}. In then following example, while the cluster denies access to clients in tenant 2, it lets clients in tenant 1 access the share `/my-share`.
+To move an SMB share from one tenant to another, run the {% include qq.html command="smb_mode_share" %} command. In then following example, while the cluster denies access to clients in tenant 2, it lets clients in tenant 1 access the share `/my-share`.
 
 ```bash
 $ qq smb_mod_share -–tenant-id 2 \
@@ -172,7 +172,7 @@ For more information, see [S3 API](../s3-api/configuring-using-s3-api.html) in t
 
 
 ## Listing Client Connections
-To determine tenant activity and client types connected to the tenant, run the {% include qq.html command="network_list_connections" %}. For more information about balancing client connections to your Qumulo cluster, see [`qq network_list_connections`](https://docs.qumulo.com/qq-cli-command-guide/network/network_list_connections.html) in the {{site.guides.cli}}.
+To determine tenant activity and client types connected to the tenant, run the {% include qq.html command="network_list_connections" %} command. For more information about balancing client connections to your Qumulo cluster, see [`qq network_list_connections`](https://docs.qumulo.com/qq-cli-command-guide/network/network_list_connections.html) in the {{site.guides.cli}}.
 
 {{site.exampleOutput}}
 
