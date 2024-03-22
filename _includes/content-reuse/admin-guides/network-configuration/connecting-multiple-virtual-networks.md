@@ -55,4 +55,4 @@ After you configure the first network for your Qumulo cluster, you can add more 
 
 1. To view the details your networks, use the {% include qq.html command="network_list_networks" %} command.
 
-1. To view the IP adresses assigned to the nodes in your cluster, use the {% include qq.html command="network_poll" %} command.
+1. To view the IP addresses assigned to the nodes in your cluster, use the {% include qq.html command="network_poll" %} command.

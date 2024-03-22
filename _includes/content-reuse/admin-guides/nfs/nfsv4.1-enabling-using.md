@@ -9,7 +9,7 @@ For more information about NFSv4.1 and file access permissions, see [Managing Fi
 
 
 ## Configuring and Using Exports for NFSv4.1
-Qumulo's NFS exports can present a view of your cluster over NFS that might differ from the contents of the underlying file system. You can mark NFS exports as read-only, restricted (to allow access only from certain IP adresses), or configure specific user mappings. For more information, see [Create an NFS Export](https://care.qumulo.com/hc/en-us/articles/360000723928) on Qumulo Care.
+Qumulo's NFS exports can present a view of your cluster over NFS that might differ from the contents of the underlying file system. You can mark NFS exports as read-only, restricted (to allow access only from certain IP addresses), or configure specific user mappings. For more information, see [Create an NFS Export](https://care.qumulo.com/hc/en-us/articles/360000723928) on Qumulo Care.
 
 While NFSv3 and NFSv4.1 share each cluster's NFS export configuration, exports behave differently when you access them by using NFSv4.1. This section explains these differences and the new requirements for export configurations with NFSv4.1.
 
@@ -27,7 +27,7 @@ NFSv3 lets you mount one of these exports by specifying the full export name, fo
 
 ```bash
 mount -o nfsvers=3 \
-  cluster.qumulo.com:/read_only/home \
+  cluster.example.com:/read_only/home \
   /mnt/cluster/home
 ```
 
@@ -35,7 +35,7 @@ This command gives read-only access to the `/home` directory on the cluster by u
 
 ```bash
 mount -o nfsvers=3 \
-  cluster.qumulo.com:/read_only \
+  cluster.example.com:/read_only \
   /mnt/cluster/read_only
 ```
 
@@ -43,7 +43,7 @@ NFSv4.1 still lets you mount exports by specifying the full export name. However
 
 ```bash
 mount -o nfsvers=4.1 \
-  cluster.qumulo.com:/read_only \
+  cluster.example.com:/read_only \
   /mnt/cluster/read_only
 ```
 
@@ -88,7 +88,7 @@ NFSv4.1 respects IP address restrictions on exports: Only clients with allowed I
 
 ### 32-Bit Sanitization
 * In NFSv3, you can configure specific exports to return 32-bit sanitized data for individual fields. NFSv3 converts any data larger than 32 bits in configured fields to 32-bit data and returns the data. For example, it can sanitize file size to 32-bit format. This truncates the field to `max_uint32` whenever the NFSv3 server returns the attribute.
-* NFSv4.1 doesn't support 32-bit sanitization and ignores any sanitizations configured for an export.
+* NFSv4.1 doesn't support 32-bit sanitization and ignores any sanitization configured for an export.
 
 
 ## Enabling NFSv4.1 on a Qumulo Cluster
@@ -110,8 +110,8 @@ Typically, NFS clients find and use the highest version of the protocol that bot
 ```bash
 mount -t nfs \
   -o nconnect=16 \
-  your.qumulo.cluster:/mount_path \
-  /path/to/mountpoint
+  your.example.cluster:/mount_path \
+  /path/to/mount_point
 ```
 
 Because Qumulo's NFSv4.1 implementation currently doesn't have full feature parity with NFSv3, you must provide the `nfsvers=3` option for any mounts that require features (such as snapshot access) that only NFSv3 supports, for example:
@@ -119,8 +119,8 @@ Because Qumulo's NFSv4.1 implementation currently doesn't have full feature pari
 ```bash
 mount -t nfs \
   -o nfsvers=3,nconnect=16 \
-  your.qumulo.cluster:/mount_path \
-  /path/to/mountpoint
+  your.example.cluster:/mount_path \
+  /path/to/mount_point
 ```
 
 {% include note.html content="We recommend specifying the `nfsvers=4` or `nfsvers=4.1` option for any mounts that use NFSv4.1." %}
@@ -144,7 +144,7 @@ qq nfs_modify_settings --disable-v4
 ```
 
 
-## Configuring Floating IPs for Nodes
+## Configuring Floating IP Addresses for Nodes
 Currently, each Qumulo node is limited to 1,000 clients connected through NFSv4.1 simultaneously. To account for nodes going down, we recommend balancing the number of client connections across your nodes by configuring a sufficient number of floating IP addresses for each node. This prevents a node failover event from overloading the nodes to which the clients might fail over.
 
 For example, if you configure only one IP address for each node, on a cluster with 600 clients for each node, a single node failure might overload one of the remaining nodes, preventing 200 clients from connecting. If you assign multiple floating IP addresses to each node, the clients' connections are distributed across multiple nodes.

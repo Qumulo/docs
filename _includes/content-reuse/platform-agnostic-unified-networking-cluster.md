@@ -49,7 +49,7 @@ We recommend the following configuration for your node.
 
 * Firewall protocols or ports allowed for proactive monitoring
 
-* Where `N` is the number of nodes, `N-1` floating IPs for each node, for each client-facing VLAN
+* Where `N` is the number of nodes, `N-1` floating IP addresses for each node, for each client-facing VLAN
 
 
 ## Connecting to Redundant Switches

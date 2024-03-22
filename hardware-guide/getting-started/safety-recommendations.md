@@ -9,7 +9,7 @@ sidebar: hardware_guide_sidebar
 
 * **Operating Ambient Temperature:** When you install nodes in a closed or multi-unit rack assembly, the operating ambient temperature of the rack or cabinet environment can be greater than the ambient temperature of the room.
 
-  Install your equipment in an environment where the maximum ambient temperature (Tma) does't exceed 40&deg; C (104&deg; F).
+  Install your equipment in an environment where the maximum ambient temperature (Tma) doesn't exceed 40&deg; C (104&deg; F).
 
 * **Sufficient Airflow:** Install your equipment in a way that avoids compromising the amount of airflow required for the equipment's safe operation.
 

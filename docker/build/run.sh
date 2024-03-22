@@ -16,6 +16,11 @@ case "${1}" in
     clean)
         echo "Cleaning up HTML output"
         rm _site -rf ;;
+
+    proof)
+        echo "Checking spelling"
+        rm _site -rf
+        ruby spellcheck.rb ;;
     check)
         jekyll build -d _site
         echo "Checking HTML output"

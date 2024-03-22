@@ -38,7 +38,7 @@ The Qumulo CSI Driver supports:
 This section explains how you can configure, provision, and mount Qumulo storage for each _Pod_ (a logical wrapper for a container) on Kubernetes by using dynamic provisioning. This gives you more control over persistent volume capacity.
 
 ### Step 1: Install the Qumulo CSI Driver
-1. Log in to a machine that has kubectl and can access your Kubernetes cluster.
+1. Log in to a machine that has `kubectl` and can access your Kubernetes cluster.
 
 1. [Download the `.zip` file](https://csi-driver-qumulo.s3.us-west-2.amazonaws.com/deploy_v1.1.0.zip) or use one of the following commands.
 

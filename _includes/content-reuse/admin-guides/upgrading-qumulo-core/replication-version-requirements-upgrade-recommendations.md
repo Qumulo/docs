@@ -140,7 +140,7 @@ The following example shows a replication compatibility matrix for quarterly and
 
 <blockquote> 6.1.0 (q) <span class="thick-arrow-left">&#10148;</span> 6.1.0 (q) <span class="thick-arrow-left">&#10148;</span> &hellip; <span class="thick-arrow-left">&#10148;</span> 7.2.0 (q) <span class="thick-arrow-left">&#10148;</span> 7.3.0 (q) <span class="thick-arrow-left">&#10148;</span><span class="highlight-version"> 8.0.1 </span><span class="thick-arrow-right">&#10148;</span>  8.1.0 (q) <span class="thick-arrow-right">&#10148;</span>  8.2.0 (q) <span class="thick-arrow-right">&#10148;</span> &hellip; <span class="thick-arrow-right">&#10148;</span> 9.3.0 (q) <span class="thick-arrow-right">&#10148;</span> 10.0.0 (q) </blockquote>
 
-{% include note.html content="This schema doesn’t impact replication compatibility for versions lower than 6.0.0 that are still only compatible with a maximum of two quarterly versions." %}
+{% include note.html content="This schema doesn't impact replication compatibility for versions lower than 6.0.0 that are still only compatible with a maximum of two quarterly versions." %}
 
 ## Replication for Qumulo Core 5.0.1 to 6.0.0
 From Qumulo Core 5.0.1 to 5.3.4, clusters that run different versions can replicate _between the current version and up to two previous or future quarterly versions._

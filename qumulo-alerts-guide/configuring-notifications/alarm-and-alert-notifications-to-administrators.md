@@ -18,7 +18,7 @@ Run the `./alerts user_add` command and specify the administrator's full name, u
 ./alerts user_add \
   --full_name "Jane Johnson" \
   --username jjohnson \
-  --password MyPassword123 \
+  --password {{site.examplePassword}} \
   --email jjohnson@example.com \
   --language en_US \
   --timezone "America/Los_Angeles"

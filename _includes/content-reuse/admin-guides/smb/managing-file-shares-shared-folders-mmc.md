@@ -18,13 +18,13 @@ Windows 7, Windows Server 2008 R2 (or higher)
 
 1. In the **Add or Remove Snap-ins** dialog box, under **Available snap-ins**, click **Shared Folders**, and then click **Add**.
 
-1. In the **Shared Folders** window, in the left pane, right-click **Shared Folders (&lt;JSMITH-WORK-DESKTOP&gt;)**, and then click **Connect to another computer...**
+1. In the **Shared Folders** window, in the left pane, right-click **Shared Folders (&lt;{{site.exampleUsernameUppercase1}}-WORK-DESKTOP&gt;)**, and then click **Connect to another computer...**
 
 1. In the **Shared Folders** dialog box, do the following:
 
    1. Under **This snap-in will always manage**, click **Another computer** and enter your cluster's hostname, for example `mycluster.example.com`.
 
-      {% include important.html content="Don't place a slash (`/`) after your cluster's hostname. Although the Shared Folders snap-in doesn't display an error message in case of failure, adding the slash after the hostname causes the opertion to fail." %}
+      {% include important.html content="Don't place a slash (`/`) after your cluster's hostname. Although the Shared Folders snap-in doesn't display an error message in case of failure, adding the slash after the hostname causes the operation to fail." %}
 
    1. Under **View**, click **All**.
 
@@ -32,14 +32,14 @@ Windows 7, Windows Server 2008 R2 (or higher)
 
    MMC adds the Shared Folders snap-in to its left pane, under **Console Root**.
 
-1. (Optional) To view the existing shares on your Qumulo cluster, expand **Shared Folders (\\MYCLUSTER.EXAMPLE.COM)** and then click **Shares**.
+1. (Optional) To view the existing shares on your Qumulo cluster, expand **Shared Folders (\\{{site.exampleClusterNameUppercase1}}.EXAMPLE.COM)** and then click **Shares**.
 
 
 ## To Connect Your Qumulo Cluster to a Share on Your Windows Machine
 
 {% include note.html content="Shared folder permissions are unrelated to NTFS access control lists (ACLs)." %}
 
-1. In MMC, click **Shared Folders (&lt;JSMITH-WORK-DESKTOP&gt;)** and then on the menu bar click **Action > New Share...**
+1. In MMC, click **Shared Folders (&lt;{{site.exampleUsernameUppercase1}}-WORK-DESKTOP&gt;)** and then on the menu bar click **Action > New Share...**
 
 1. In the **Create a Shared Folder Wizard: Folder Path** dialog box, for **Folder path**, specify the path for the SMB share (for example `C:\Users\Jennifer\Reports`) and then click **Next**.
 
@@ -49,7 +49,7 @@ Windows 7, Windows Server 2008 R2 (or higher)
 
    1. Enter the **Share name**, for example `jennifer-reports`.
 
-   1. Enter the **Share path**, for example `\\JSMITH-WORK-DESKTOP\jennifer-reports`.
+   1. Enter the **Share path**, for example `\\{{site.exampleUsernameUppercase1}}-WORK-DESKTOP\jennifer-reports`.
 
    1. Click **Next**.
 
@@ -57,7 +57,7 @@ Windows 7, Windows Server 2008 R2 (or higher)
 
    * **All users have read-only access**
 
-   * **Administrators have full access; other uers have read-only access**
+   * **Administrators have full access; other users have read-only access**
 
    * **Administrators have full access; other users have no access**
 
@@ -72,7 +72,7 @@ Windows 7, Windows Server 2008 R2 (or higher)
 
 ## To Change the Configuration for an Existing Share on Your Windows Machine
 
-1. In MMC, click **Shared Folders (&lt;JSMITH-WORK-DESKTOP&gt;)** and then in the right pane right-click an existing share and then click **Properties**.
+1. In MMC, click **Shared Folders (&lt;{{site.exampleUsernameUppercase1}}-WORK-DESKTOP&gt;)** and then in the right pane right-click an existing share and then click **Properties**.
 
 1. In the **File Properties** dialog box, on the **General** tab, you can edit properties such as **Share name**, **Folder path**,  **Description**, and **User Limit**.
 
@@ -92,7 +92,7 @@ Windows 7, Windows Server 2008 R2 (or higher)
    </ul>
    {{site.data.alerts.end}}
 
-1. On the **Security** tab, ensure that the file permissions for the directory subtree under the share are conect.
+1. On the **Security** tab, ensure that the file permissions for the directory subtree under the share are connected.
 
 1. To save changes, click **Apply**.It is possible to add local users and groups from your Qumulo cluster by prefixing them with the name of your cluster followed by a backslash (`\`). For example: `accounting\admin`
 

@@ -17,7 +17,7 @@ sidebar: hardware_guide_sidebar
 
    {% include note.html content="The boot setting is persistent: When you boot from a USB drive once, the node continues to boot from the USB drive. After you finish installing Qumulo Core, remove the USB drive from the node." %}
 
-1. On the **Please select boot device:** screen, select your USB drive (usually labelled with `UEFI OS`) and boot into it.
+1. On the **Please select boot device:** screen, select your USB drive (usually labeled with `UEFI OS`) and boot into it.
 
 
 ## Step 3: Install Qumulo Core

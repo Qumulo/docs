@@ -15,7 +15,7 @@ The Qumulo-Varonis integration monitors file and directory operations in Qumulo 
 This section describes how the Qumulo-Varonis integration works. It provides an overview of the integration workflow; explains how Qumulo Broker gathers, processes, and emits Qumulo Core audit logs; and describes how Qumulo Broker uses rsyslog queues to ensure efficient data transfer.
 
 ### How Qumulo Clusters Send Audit Log Data to Varonis
-Qumulo Core sends audit logs for each [supported file- and directory-level operation](#supported-operations) in real time to Varonis for continuous monitoring. To detect anomalous behaviour that system administrators can use to detect potential activity from a bad actor (for example, abnormal or high-frequency changes in file activity&mdash;such as file creation, deletion, and modification&mdash;or changes to access permissions), Varonis applies machine learning to Qumulo Core audit logs and issues alerts. In addition to common patterns, Varonis uses thread feeds and blacklists to identify known ransomware and attack patterns.
+Qumulo Core sends audit logs for each [supported file- and directory-level operation](#supported-operations) in real time to Varonis for continuous monitoring. To detect anomalous behavior that system administrators can use to detect potential activity from a bad actor (for example, abnormal or high-frequency changes in file activity&mdash;such as file creation, deletion, and modification&mdash;or changes to access permissions), Varonis applies machine learning to Qumulo Core audit logs and issues alerts. In addition to common patterns, Varonis uses thread feeds and blacklists to identify known ransomware and attack patterns.
 
 The following architecture diagram shows the workflow between Qumulo Broker and Qumulo Core.
 
@@ -102,7 +102,7 @@ In addition to the Varonis firewall requirements, you must also define the follo
       <td>TCP</td>	    
       <td>Qumulo Core (persistent and floating IP addresses)</td>
       <td>Qumulo Broker</td>
-      <td>Qumulo Broker Syslog connection</td>
+      <td>Qumulo Broker syslog connection</td>
     </tr>
     <tr>
       <td>8000</td>

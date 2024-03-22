@@ -75,7 +75,7 @@ sidebar: hardware_guide_sidebar
     </tr>
     <tr>
       <td><strong>Power Requirements</strong></td>
-      <td colspan="6" style="text-align: center;">100&ndash;240 V, 50/60Hz</td>
+      <td colspan="6" style="text-align: center;">100&ndash;240 V, 50/60 Hz</td>
     </tr>
     <tr>
       <td><strong>Typical Power Consumption</strong></td>

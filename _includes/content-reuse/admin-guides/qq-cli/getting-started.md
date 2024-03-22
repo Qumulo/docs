@@ -53,4 +53,4 @@ qq login --host {{site.exampleIP0}} \
 ### To Run qq CLI from a Node in Your Cluster
 Use SSH to log in to one of the nodes in your cluster.
 
-{% include note.html content="It is possible to run `qq` CLI commands as the administrative Linux user. However, to do this, you must authenticate by using the `qq login` commqand." %}
+{% include note.html content="It is possible to run `qq` CLI commands as the administrative Linux user. However, to do this, you must authenticate by using the `qq login` command." %}

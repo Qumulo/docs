@@ -53,7 +53,7 @@
     <td>Sev3</td>
     <td>24&times;5</td>   
     <td>6 hours</td>
-    <td><strong>Low Priority:</strong> A Qumulo cluster or the Qumulo Core software experiences an issue, cosmetic UI defect, or minor performance degradation that has minimal or negligible impact on a production system or regular business operations.</td>
+    <td><strong>Low Priority:</strong> A Qumulo cluster or the Qumulo Core software experiences an issue, cosmetic Web UI defect, or minor performance degradation that has minimal or negligible impact on a production system or regular business operations.</td>
     <td>
       <ul>
         <li>PSU failure</li>

@@ -1,6 +1,6 @@
 ---
 title: "Qumulo Core Upgrade Mode Reference"
-summary: "This section provides a reference for Qumulo Core upgrade modes from version 3.3.3 onwards."
+summary: "This section provides a reference for Qumulo Core upgrade modes from version 3.3.3."
 permalink: /administrator-guide/upgrading-qumulo-core/mode-reference.html
 redirect_from:
   - /administrator-guide/upgrades/mode-reference.html

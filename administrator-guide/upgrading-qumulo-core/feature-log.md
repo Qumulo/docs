@@ -19,7 +19,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
 {% include important.html content="This release resolves a scenario in Qumulo Core 7.0.1 where a node in a Qumulo cluster could go offline if a tree delete operation was performed on a directory while an SMB client was watching it for changes." %}
 * Configured rolling reboots to restart `N-1` nodes at a time, where `N` is the number of nodes configured for the cluster's fault tolerance
 * Further improved NFSv3 random small-write performance
-* Added support for Active Directory Global Catalog for lookups
+* Added support for Active Directory Global Catalog for look-ups
 * Added support for `DeleteBucketPolicy` and `PutBucketPolicy` S3 API actions
 * Configured RBAC privileges to override bucket policies which deny a user access to API actions through the S3 API
 * Improved REST API and `qq` CLI operations for working with S3 buckets
@@ -56,7 +56,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
 {{site.data.alerts.important}}
 <ul>
   <li>This release resolves an issue with memory utilization during secure credential handling.</li>
-  <li>This release resolves an issue in Qumulo 6.2.1.1 that interrupted the functioning of cross-realm Kerberos authentication when the system returns CNAMEs for PTR records while performing reverse DNS lookups.</li>
+  <li>This release resolves an issue in Qumulo 6.2.1.1 that interrupted the functioning of cross-realm Kerberos authentication when the system returns CNAMEs for PTR records while performing reverse DNS look-ups.</li>
 </ul>
 {{site.data.alerts.end}}
 * Configured nodes to remain powered on after Transparent Platform Refresh operations
@@ -69,7 +69,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
 {{site.data.alerts.important}}
 <ul>
   <li>This release resolves an issue with memory utilization during secure credential handling.</li>
-  <li>This release resolves an issue in Qumulo 6.2.1.1 that interrupted the functioning of cross-realm Kerberos authentication when the system returns CNAMEs for PTR records while performing reverse DNS lookups.</li>
+  <li>This release resolves an issue in Qumulo 6.2.1.1 that interrupted the functioning of cross-realm Kerberos authentication when the system returns CNAMEs for PTR records while performing reverse DNS look-ups.</li>
   <li>This release resolves an issue with caching NFS hostnames from the NFS allowed list.</li>
 </ul>
 {{site.data.alerts.end}}
@@ -82,7 +82,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
 {{page.varDownloadsRelnotes}}
 {{site.data.alerts.important}}
 <ul>
-  <li>This release resolves an issue in Qumulo 6.2.1.1 that interrupted the functioning of cross-realm Kerberos authentication when the system returns CNAMEs for PTR records while performing reverse DNS lookups.</li>
+  <li>This release resolves an issue in Qumulo 6.2.1.1 that interrupted the functioning of cross-realm Kerberos authentication when the system returns CNAMEs for PTR records while performing reverse DNS look-ups.</li>
   <li>This release resolves an issue in Qumulo Core 6.2.1 that affected the persistence of cluster network settings configured by using the Qumulo Core Web UI.</li>
   <li>This release removes the flag <code>--dns-config-id</code> that was added in Qumulo Core 6.2.1. This flag prevents the normal functioning of the <code>qq fs_list_locks</code> command.</li>
   <li>This release resolves an issue that we have identified in Qumulo Core 6.1.0 (and higher), where a potential session impersonation exploit was possible when a client accesses a Qumulo cluster by using the SMB protocol.</li>
@@ -101,7 +101,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
 <ul>
   <li>The removal of the deprecated <code>/v1/smb/shares</code> REST API endpoints in this release can affect certain third-party backup or migration workflows.</li>
   <li>
-    <p>This release resolves an issue with Qumulo Core’s ability to route return packets back to clients when the following conditions are true for a cluster:</p>
+    <p>This release resolves an issue with Qumulo Core's ability to route return packets back to clients when the following conditions are true for a cluster:</p>
     <ul>
       <li>The cluster has a single tenant</li>
       <li>VLAN networks are configured</li>
@@ -125,12 +125,12 @@ For information about upgrade types for each release, see <a href='mode-referenc
   <li>
     <p>This release resolves:</p>
     <ul>
-      <li>An issue that affects parsing Kerberos principal names that contain special characters in Active Directory Kerberos authentication in Qumulo Core 6.1.2. This issue doesn’t prevent access to SMB shares by using NTLM-based authentication.</li>
+      <li>An issue that affects parsing Kerberos principal names that contain special characters in Active Directory Kerberos authentication in Qumulo Core 6.1.2. This issue doesn't prevent access to SMB shares by using NTLM-based authentication.</li>
       <li>An issue that affects upgrading Qumulo Core on the Quiver 1U Hybrid Gen2 platform in Qumulo Core 6.1.1.</li>
       <li>An issue that affects getting a useful core dump in Qumulo Core 6.1.1.</li>
    </ul>
   </li>
-  <li>We’ve identified a known issue that affects event processing in the Cloud-Based Monitoring (CBM) service Qumulo Core 6.1.0.3. This issue is resolved in Qumulo Core 6.2.0.1.</li>
+  <li>We've identified a known issue that affects event processing in the Cloud-Based Monitoring (CBM) service Qumulo Core 6.1.0.3. This issue is resolved in Qumulo Core 6.2.0.1.</li>
 </ul>
 {{site.data.alerts.end}}
 

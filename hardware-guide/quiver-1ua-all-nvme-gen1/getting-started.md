@@ -23,7 +23,7 @@ platform: q1uag1
    </ul>
    {{site.data.alerts.end}}
 
-1. On the **Please select boot device:** screen, select your USB drive (usually labelled with `UEFI OS`) and boot into it.
+1. On the **Please select boot device:** screen, select your USB drive (usually labeled with `UEFI OS`) and boot into it.
 
    The Qumulo Core installation begins.
    

@@ -4,7 +4,7 @@ Thank you for helping make Qumulo documentation better! Your feedback means a lo
 **Important:** Currently, we don't publish Qumulo documentation directly to the public GitHub repo. After we complete the automated build process, we mirror the `mainline` branch of the repository from the internal repo to the public repo and then publish the content to GitHub Pages. For this reason, the changes that you submit don't appear immediately.
 
 ## What Contributions We Look For
-We always appeciate it when users submit issues for:
+We always appreciate it when users submit issues for:
 
 * Inaccurate or incomplete information
 * Ideas for improving the usability (UX) of the Documentation Portal
