@@ -137,7 +137,7 @@ $ qq multitenancy_get_tenant \
 
 * Click **Cluster > Network Multitenancy**.
 
-* In the `qq` CLI, use the `multitenancy_list_tenants` command.
+* In the `qq` CLI, use the {% include qq.html command="multitenancy_list_tenants" %} command.
 
 #### Determining the Tenant Assignment for Networks
 * To view the information for a single network, use the `qq network_get_network` command.

@@ -48,7 +48,7 @@ You can list the incomplete multipart uploads for a single S3 bucket by using th
 </ul>
 {{site.data.alerts.end}}
 
-* To list incomplete uploads by using the `qq` CLI, use the `s3_list_uploads` command and specify the bucket name. For example:
+* To list incomplete uploads by using the `qq` CLI, use the {% include qq.html command="s3_list_uploads" %} command and specify the bucket name. For example:
 
   ```bash
   $ qq s3_list_uploads \
@@ -121,7 +121,7 @@ Qumulo Core automatically aborts and cleans up an incomplete multipart S3 if the
 
 When Qumulo Core removes a multipart upload, it frees up the space that the upload uses on the cluster. You can configure the expiry interval by using the Qumulo Core REST API or `qq` CLI.
 
-To configure the expiry interval for all current and future multipart uploads by using the `qq` CLI, use the `s3_modify_settings` command and the `--multipart-upload-expiry-interval` flag and specify one of the following:
+To configure the expiry interval for all current and future multipart uploads by using the `qq` CLI, use the {% include qq.html command="s3_modify_settings" %} command and the `--multipart-upload-expiry-interval` flag and specify one of the following:
 
 * The string `never`.
   
@@ -154,7 +154,7 @@ Use the Qumulo Core REST API or `qq` CLI to abort and clean up the upload. You n
 
 {% include note.html content="If you are an administrative user or the user who initiated the upload, you can use the `AbortMultipartUpload` S3 API action. In addition to the bucket name and upload ID, you also need the object key for the upload." %}
 
-* To abort an upload by using the `qq` CLI, use the `s3_abort_upload` command and specify the upload ID. For example:
+* To abort an upload by using the `qq` CLI, use the {% include qq.html command="s3_abort_upload" %} command and specify the upload ID. For example:
 
   ```bash
   $ qq s3_abort_upload \

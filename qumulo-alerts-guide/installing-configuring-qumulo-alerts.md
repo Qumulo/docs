@@ -59,7 +59,7 @@ To be able to generate access tokens, you must create a local user for Qumulo Al
 
 1. Use SSH to log in to any node in your cluster.
 
-1. To create a local user, use the `auth_add_user` command and specify a name and password.
+1. To create a local user, use the {% include qq.html command="auth_add_user" %} command and specify a name and password.
 
    ```bash
    qq auth_add_user --name QumuloAlerts \
