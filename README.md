@@ -74,9 +74,7 @@ To get started, choose one of the following guides.
 * [Performing Instant Software Upgrades and Platform Upgrades](/administrator-guide/upgrading-qumulo-core/instant-software-platform.html)
 
 ## Collaborate
-For announcements, general questions, and feature requests, see [Community Q](https://care.qumulo.com/hc/en-us/community/topics).
-
-We're currently in process of migrating legacy articles about Qumulo Core and hardware platform functionality from [Qumulo Care](https://care.qumulo.com/hc/en-us).
+We're currently in process of migrating legacy articles about Qumulo Core and hardware platform functionality from [Qumulo Care](https://care.qumulo.com/s/knowledge).
 
 ## Reach Out to Us
-If you need help, [open a case](https://care.qumulo.com/hc/en-us/requests/new), or {{site.contactQumuloCare}} through Slack, email, or by phone.
+If you need help, [open a case](https://qumulo.com/support/), or {{site.contactQumuloCare}} through Slack, email, or by phone.
