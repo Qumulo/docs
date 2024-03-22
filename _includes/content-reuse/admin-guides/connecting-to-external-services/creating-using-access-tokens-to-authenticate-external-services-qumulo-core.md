@@ -70,7 +70,7 @@ The `auth_create_access_token` command returns a JSON response that contains the
 
 <a id="create-token-expiration-time"></a>
 ### To Create an Access Token with an Expiration Time
-In Qumulo Core 5.3.2 (and higher), you can use the {% include qq.html command="auth_create_access_token" %} command and specify the expiration time. You can specify the expiration time in different formats. For example:
+In Qumulo Core 5.3.2 (and higher), you can run the {% include qq.html command="auth_create_access_token" %} command and specify the expiration time. You can specify the expiration time in different formats. For example:
 
 ```bash
 $ qq auth_create_access_token jane --expiration-time 'Jan 01 2023'
@@ -219,13 +219,13 @@ To help you check your system's security posture, Qumulo Core lets you disable a
 {% capture content_disable_token %}After you disable an access token, {{page.varBearerToken}}{% endcapture %}
 {% include important.html content=content_disable_token %}
 
-To disable an access token, use the {% include qq.html command="auth_modify_access_token" %} command, specify the access token ID, and use the `-d` flag. For example:
+To disable an access token, run the {% include qq.html command="auth_modify_access_token" %} command, specify the access token ID, and use the `-d` flag. For example:
 
 ```bash
 $ qq auth_modify_access_token 1234567890123456789012 -d
 ```
 
-To enable an access token, use the {% include qq.html command="auth_modify_access_token" %} command, specify the access token ID, and use the `-e` flag. For example:
+To enable an access token, run the {% include qq.html command="auth_modify_access_token" %} command, specify the access token ID, and use the `-e` flag. For example:
 
 ```bash
 $ qq auth_modify_access_token 1234567890123456789012 -e
@@ -238,7 +238,7 @@ $ qq auth_modify_access_token 1234567890123456789012 -e
 {% capture content_disable_token %}After you delete an access token, {{page.varBearerToken}}{% endcapture %}
 {% include important.html content=content_disable_token %}
 
-To delete an access token, use the {% include qq.html command="auth_delete_access_token" %} command and specify the access token ID. For example:
+To delete an access token, run the {% include qq.html command="auth_delete_access_token" %} command and specify the access token ID. For example:
 
 ```bash
 $ qq auth_delete_access_token 1234567890123456789012

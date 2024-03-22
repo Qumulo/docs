@@ -7,7 +7,7 @@ For more information about NFSv4.1, see [Enabling and Using NFSv4.1 on a Qumulo 
 In most Linux distributions, the `nfs-acl-tools` package contains the NFSv4.1 commands that let you manage ACLs for files.
 
 ### Showing the ACL of a File
-To show the ACL of a file, use the {% include qq.html command="nfs4_getfacl" %} command. In the following example, we create the file `my-file` and then show the ACL for it.
+To show the ACL of a file, run the {% include qq.html command="nfs4_getfacl" %} command. In the following example, we create the file `my-file` and then show the ACL for it.
 
 ```bash
 $ touch /mnt/qumulo/my-file

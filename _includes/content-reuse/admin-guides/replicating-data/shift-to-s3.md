@@ -162,7 +162,7 @@ This section describes how to use the Qumulo Core Web UI 3.2.5 (and higher) to c
 This section describes how to use the Qumulo CLI 3.2.5 (and higher) to copy files from a Qumulo cluster to Amazon S3, review Shift relationship details, stop a running copy job, repeat a completed copy job, and delete a relationship.
 
 ### Copying Files from Amazon S3
-To copy files, use the {% include qq.html command="replication_create_object_relationship" %} command and specify the following:
+To copy files, run the {% include qq.html command="replication_create_object_relationship" %} command and specify the following:
 * Local directory path on Qumulo cluster
 * Copy direction (copy-to)
 * S3 object folder

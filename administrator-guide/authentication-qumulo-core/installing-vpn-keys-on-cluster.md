@@ -7,7 +7,7 @@ redirect_from:
   - /administrator-guide/qumulo-core/installing-vpn-keys-on-cluster.html
 sidebar: administrator_guide_sidebar
 varCopyFile: 1. Copy the `.zip` file from Qumulo Care to a computer on the same network as your cluster, and decompress the file.
-varVerifyKeys: 1. To verify that the VPN keys installed correctly, use the {% include qq.html command="get_vpn_keys" %} command. For example&#58;
+varVerifyKeys: 1. To verify that the VPN keys installed correctly, run the {% include qq.html command="get_vpn_keys" %} command. For example&#58;
 ---
 
 {% capture dontDoIt %}Follow these steps only if a member of the Qumulo Care team instructs you to do so. Performing these steps incorrectly can cause network performance, connectivity, and data integrity issues. It can also expose your cluster to unauthorized access. For help with this task, {{site.contactQumuloCare}}.{% endcapture %}
@@ -99,7 +99,7 @@ Before you begin, make sure that you have done the following.
 
 ## To Register Cluster with Cloud-Based Monitoring
 
-1. To retrieve your cluster ID, use the {% include qq.html command="node_state_get" %} command.
+1. To retrieve your cluster ID, run the {% include qq.html command="node_state_get" %} command.
 
 1. Send the output of the command to Qumulo Care.
 

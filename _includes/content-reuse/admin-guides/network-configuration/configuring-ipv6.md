@@ -9,7 +9,7 @@
 
 ## To Configure IPv6 by Using the qq CLI
 
-1. To specify the default gateway for IPv4 and IPv6 traffic, use the {% include qq.html command="network_mod_interface" %} command. For example:
+1. To specify the default gateway for IPv4 and IPv6 traffic, run the {% include qq.html command="network_mod_interface" %} command. For example:
 
    ```bash
    qq network_mod_interface --default-gateway {{site.exampleGateway1}} \
@@ -17,7 +17,7 @@
      --mtu 1500
    ```
 
-1. To specify IPv6 addresses for your Qumulo cluster, use the {% include qq.html command="network_mod_network" %} command to modify the default network configuration. For example:
+1. To specify IPv6 addresses for your Qumulo cluster, run the {% include qq.html command="network_mod_network" %} command to modify the default network configuration. For example:
 
    ```bash
    qq network_mod_network --network-id 1 \

@@ -1,8 +1,8 @@
 ### Stopping a Copy Job in Progress
-To stop a copy job already in progress, use the {% include qq.html command="replication_abort_object_relationship" %} command and use the `--id` flag to specify the Shift relationship ID.
+To stop a copy job already in progress, run the {% include qq.html command="replication_abort_object_relationship" %} command and use the `--id` flag to specify the Shift relationship ID.
 
 ### Repeating a Completed Copy Job
-To repeat a completed copy job, use the {% include qq.html command="replication_start_object_relationship" %} command and use the `--id` flag to specify the Shift relationship ID.
+To repeat a completed copy job, run the {% include qq.html command="replication_start_object_relationship" %} command and use the `--id` flag to specify the Shift relationship ID.
 
 This command begins a new job for the existing relationship and downloads any content that changed in the S3 bucket or on the Qumulo cluster since the time the previous job ran.
 
