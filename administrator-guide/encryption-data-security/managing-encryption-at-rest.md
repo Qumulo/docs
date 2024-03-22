@@ -106,9 +106,9 @@ This section explains how to configure Qumulo Core to use a master key stored lo
 </ul>
 {{site.data.alerts.end}}
 
-1. To configure the system to use a local key store, use the `qq encryption_set_key_store local` command.
+1. To configure the system to use a local key store, run the {% include qq.html command="encryption_set_key_store local" %}.
 
-1. To confirm that the system is configured correctly, [use the `qq encryption_get_status` command](#encryption-get-status).
+1. To confirm that the system is configured correctly, {% include qq.html command="encryption_get_status" %}.
 
    In the output, ensure that the `type` field is set to `Local`.
 
@@ -131,7 +131,7 @@ This section explains how to configure Qumulo Core to use a master key stored lo
      --host-name {{page.varExampleHostname}}
    ```
 
-1. To confirm that the system is configured correctly, [use the `qq encryption_get_key_store` command](#encryption-get-key-store).
+1. To confirm that the system is configured correctly, run the {% include qq.html command="encryption_get_key_store" %}.
 
    In the output, ensure that the `type` field is set to `KMS`.
 
@@ -147,7 +147,7 @@ This section explains how to rotate the master key and check the encryption stat
 
    When the process is complete, the command shows the `Key rotation complete` message.
 
-1. To view your cluster's encryption status and the last key rotation time, [use the `qq encryption_get_status` command](#encryption-get-status).
+1. To view your cluster's encryption status and the last key rotation time, run {% include qq.html command="encryption_get_status" %}.
 
 ### To Rotate Master Keys Stored in a Key Management Server (KMS)
 1. Run the `qq rotate_encryption_keys` command and specify the key ID. For example:
@@ -158,7 +158,7 @@ This section explains how to rotate the master key and check the encryption stat
    
    {% include tip.html content="The key ID might be different from the key name." %}
    
-1. To ensure that the system is using the new key, [use the `qq encryption_get_key_store` command](#encryption-get-key-store).
+1. To ensure that the system is using the new key, run {% include qq.html command="encryption_get_key_store" %}.
 
    In the output, ensure that the `key_id` field lists the new key ID.
 

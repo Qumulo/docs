@@ -27,7 +27,7 @@ To configure management protocols, your user must have membership in a Qumulo ro
 ## Enabling and Disabling REST API Access
 The Qumulo Core REST API lets you manage clusters by using the `qq` CLI, Python bindings, and REST API calls.
 
-* To enable REST API access, use the `qq multitenancy_modify_tenant` command, specify the tenant ID, and use the `--enable-rest-api` flag.
+* To enable REST API access, run the {% include qq.html command="multitenancy_modify_tenant" %}, specify the tenant ID, and use the `--enable-rest-api` flag.
 
 * To disable access, use the `--disable-rest-api` flag.
 
@@ -46,7 +46,7 @@ The Qumulo Core Web UI lets you manage clusters from a browser.
 {% capture webUiNoReq %}Enabling Web UI {{page.varNoReq}}{% endcapture %}
 {% include note.html content=webUiNoReq %}
 
-* To enable REST API access, use the `qq multitenancy_modify_tenant` command, specify the tenant ID, and use the `--enable-web-ui` flag.
+* To enable REST API access, run the {% include qq.html command="multitenancy_modify_tenant" %}, specify the tenant ID, and use the `--enable-web-ui` flag.
 
 * To disable access, use the `--disable-web-ui` flag.
 
@@ -65,7 +65,7 @@ SSH lets you view logs and use the `qq` CLI by using a client to connect to node
 {% capture sshNoReq %}Enabling SSH {{page.varNoReq}}{% endcapture %}
 {% include note.html content=sshNoReq %}
 
-* To enable SSH access, use the `qq multitenancy_modify_tenant` command, specify the tenant ID, and use the `--enable-ssh` flag.
+* To enable SSH access, run the {% include qq.html command="multitenancy_modify_tenant" %}, specify the tenant ID, and use the `--enable-ssh` flag.
 
 * To disable access, use the `--disable-ssh` flag.
 
@@ -81,7 +81,7 @@ $ qq multitenancy_modify_tenant \
 ## Enabling and Disabling Replication Access
 Replication lets a cluster transfer data from a directory on one cluster to a directory on another cluster.
 
-* To enable replication access, use the `qq multitenancy_modify_tenant` command, specify the tenant ID, and use the `--enable-replication` flag.
+* To enable replication access, run the {% include qq.html command="multitenancy_modify_tenant" %}, specify the tenant ID, and use the `--enable-replication` flag.
 
 * To disable access, use the `--disable-replication` flag.
 

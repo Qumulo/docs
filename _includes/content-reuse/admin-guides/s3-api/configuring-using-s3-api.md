@@ -14,9 +14,9 @@ For information about configuring HTTPS for your cluster, see [Installing the Qu
 ### Enabling and Disabling Plaintext HTTP Connections
 {% include important.html content="If you configure the S3 API service to accept only plaintext HTTP connections, no requests made through the S3 API are encrypted." %}
 
-* To enable HTTP connections, use the `qq s3_modify_settings --insecure` command.
+* To enable HTTP connections, run the {% include qq.html command="s3_modify_settings" %} command and use the `--insecure` flag.
 
-* To revert to encrypted HTTPS requests, use the `qq s3_modify_settings --secure` command.
+* To revert to encrypted HTTPS requests, run the {% include qq.html command="s3_modify_settings" %} command and use the `--secure` flag.
 
 
 ## Step 2: Enable the S3 API for Your Qumulo Cluster

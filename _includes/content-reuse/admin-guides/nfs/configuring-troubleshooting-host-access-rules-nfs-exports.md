@@ -161,7 +161,7 @@ This section describes the troubleshooting steps for a scenario in which an NFS 
 
 1. <a id="dns_resolve_ips"></a>
 
-   To find the client's hostname, use the `qq dns_resolve_ips` command and specify the client's IP address. For example:
+   To find the client's hostname, run the {% include qq.html command="dns_resolve_ips" %} and specify the client's IP address. For example:
 
    ```bash
    qq dns_resolve_ips --ips {{site.exampleIP2}}
@@ -189,7 +189,7 @@ This section describes the troubleshooting steps for a scenario in which an NFS 
      
    * Ensure that your Qumulo cluster's DNS cache isn't out of date, for example, if `{{site.exampleIP2}}` should resolve to `user1.accounting.example.com`.
    
-     To reset your Qumulo cluster's DNS cache, use the `qq dns_clear_lookup_cache` command.
+     To reset your Qumulo cluster's DNS cache, run the {% include qq.html command="dns_clear_lookup_cache" %}.
 
    * Run the `qq dns_resolve_hostnames` command and specify the hostname to perform a lookup for `user1.accounting.example.com`.
   

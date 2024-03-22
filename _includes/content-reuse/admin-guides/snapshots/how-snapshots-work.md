@@ -36,7 +36,7 @@ Next, the following conditions take effect:
 
 
 ## Determining Snapshots' Storage Usage
-When Qumulo Core tracks the difference between the _saved_ (snapshotted) and _live_ (latest) versions of a file, it creates a _lineage_ of snapshots independent from each other. To determine the amount of data that a single snapshot references, use the `qq snapshot_get_capacity_used_per_snapshot` command and specify the snapshot ID. For example:
+When Qumulo Core tracks the difference between the _saved_ (snapshotted) and _live_ (latest) versions of a file, it creates a _lineage_ of snapshots independent from each other. To determine the amount of data that a single snapshot references, run the {% include qq.html command="snapshot_get_capacity_used_per_snapshot" %} and specify the snapshot ID. For example:
 
 ```bash
 qq snapshot_get_capacity_used_per_snapshot \
@@ -45,16 +45,16 @@ qq snapshot_get_capacity_used_per_snapshot \
 
 More than one snapshot can reference _covered data_. It isn't possible to release covered data until you delete all _covering snapshots_ that reference it.
 
-* To determine the total covered data, including data no longer present in the snapshot, use the `qq snapshot_get_capacity_used_per_snapshot` command and specify multiple, comma-separated snapshot IDs.
+* To determine the total covered data, including data no longer present in the snapshot, run the {% include qq.html command="snapshot_get_capacity_used_per_snapshot" %} and specify multiple, comma-separated snapshot IDs.
 
-* To determine the total amount of data, including covered data that multiple snapshots reference, use the `qq snapshot_get_total_used_capacity` command.
+* To determine the total amount of data, including covered data that multiple snapshots reference, run the {% include qq.html command="snapshot_get_total_used_capacity" %}.
 
 When you delete a snapshot, Qumulo Core removes the data which that snapshot references but retains the data which any other snapshot references. This ensures a full file representation within the remaining snapshots. Qumulo Core uses a background process to recover the storage that the snapshot had consumed.
 
 {% include note.html content="When you delete a snapshot, the background process might take some time. To track the reclaimed storage, run the `qq snapshot_get_total_used_capacity` command." %}
 
 ### Example: Tracking Covering Snapshots and Data Changes
-For example, if you use the `qq snapshot_get_total_used_capacity` command, Qumulo Core shows that storage usage is 1,319,413,953,331 Bytes (1.2 TiB). This amount includes the total snapshot data and the covering snapshots.
+For example, if you run the {% include qq.html command="snapshot_get_total_used_capacity" %}, Qumulo Core shows that storage usage is 1,319,413,953,331 Bytes (1.2 TiB). This amount includes the total snapshot data and the covering snapshots.
 
 If you add up the usage for all snapshots currently in the file system (by using the `qq snapshot_get_capacity_used_per_snapshot` command), Qumulo Core shows that total snapshot storage usage is 2,147,483,648 Bytes (2 GiB). This amount includes the data changes that each snapshot stores but doesn't include the unchanged file portions within each snapshot.
 

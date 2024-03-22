@@ -38,15 +38,15 @@ Qumulo provides configuration for the permitted NFSv4.1 authentication flavors i
 
    | Command | Description |
    | ------- | ----------- |
-   | `qq nfs_modify_settings --enable-auth-sys` | Enables `AUTH_SYS` without changing `AUTH_KRB5` |
-   | `qq nfs_modify_settings --enable-krb5` | Enables `AUTH_KRB5` without changing `AUTH_SYS` |
-   | `qq nfs_modify_settings --enable-krb5p` | Enables `AUTH_KRB5P` without changing `AUTH_SYS` |
-   | `qq nfs_modify_settings --enable-krb5i` | Enables `AUTH_KRB5I` without changing `AUTH_SYS` |
-   | `qq nfs_modify_settings --enable-v4` | Enables NFSv4.1 |
-   | `qq nfs_modify_settings --disable-v4` | Disables NFSv4.1 |
-   | `qq nfs_modify_settings --disable-krb5` | Disables `AUTH_KRB5` without changing `AUTH_SYS` |
-   | `qq nfs_modify_settings --disable-krb5p` | Disables `AUTH_KRB5P` without changing `AUTH_SYS` |
-   | `qq nfs_modify_settings --disable-krb5i` | Disables `AUTH_KRB5I` without changing `AUTH_SYS` |
+   | {% include qq.html command="nfs_modify_settings" %} `--enable-auth-sys` | Enables `AUTH_SYS` without changing `AUTH_KRB5` |
+   | {% include qq.html command="nfs_modify_settings" %} `--enable-krb5` | Enables `AUTH_KRB5` without changing `AUTH_SYS` |
+   | {% include qq.html command="nfs_modify_settings" %} `--enable-krb5p` | Enables `AUTH_KRB5P` without changing `AUTH_SYS` |
+   | {% include qq.html command="nfs_modify_settings" %} `--enable-krb5i` | Enables `AUTH_KRB5I` without changing `AUTH_SYS` |
+   | {% include qq.html command="nfs_modify_settings" %} `--enable-v4` | Enables NFSv4.1 |
+   | {% include qq.html command="nfs_modify_settings" %} `--disable-v4` | Disables NFSv4.1 |
+   | {% include qq.html command="nfs_modify_settings" %} `--disable-krb5` | Disables `AUTH_KRB5` without changing `AUTH_SYS` |
+   | {% include qq.html command="nfs_modify_settings" %} `--disable-krb5p` | Disables `AUTH_KRB5P` without changing `AUTH_SYS` |
+   | {% include qq.html command="nfs_modify_settings" %} `--disable-krb5i` | Disables `AUTH_KRB5I` without changing `AUTH_SYS` |
 
 {{site.data.alerts.note}}
 <ul>

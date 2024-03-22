@@ -141,13 +141,13 @@ Ensure that the number of static and floating IP addresses is equal to or greate
 
 ## Viewing, Editing, and Canceling the Node Replacement Plan
 
-* To view the current node replacement plan, use the `qq replace_nodes get_plan` command.
+* To view the current node replacement plan, run the {% include qq.html command="replace_nodes" %} command with the `get_plan` subcommand.
 
   If a node replacement step is in progress, the command shows the list of nodes in process of being replaced during the current step.
 
-* To edit the node replacement plan after you register it with your cluster, use the `qq replace_nodes register_plan` command with [a new node replacement plan](#register-node-replacement-plan).
+* To edit the node replacement plan after you register it with your cluster, run the {% include qq.html command="replace_nodes" %} with the `register_plan` subcommand and [a new node replacement plan](#register-node-replacement-plan).
 
-* To cancel the current node replacement plan, use the `qq replace_nodes cancel_plan` command.
+* To cancel the current node replacement plan, run the {% include qq.html command="replace_nodes" %} command with the `cancel_plan` subcommand.
 
   {% include important.html content="Canceling a node replacement plan after executing one or more steps might make it impossible to reregister and complete the plan." %}
 
