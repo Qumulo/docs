@@ -1,4 +1,5 @@
-{% include tip.html content="It is possible to confuse the terms _access token_ and _session token_. Unlike access tokens, session tokens are short-lived and require a password to refresh, for example, to authenticate by using the {% include qq.html command="qq login" %} command. Access tokens are the focus of this section." %}
+{% capture differentTerms %}It is possible to confuse the terms _access token_ and _session token_. Unlike access tokens, session tokens are short-lived and require a password to refresh, for example, to authenticate by using the {% include qq.html command="qq login" %} command. Access tokens are the focus of this section.{% endcapture %}
+{% include tip.html content=differentTerms %}
 
 In Qumulo Core 5.3.0 (and higher), you can use _access tokens_ to let a user authenticate to the Qumulo Core REST API without having to complete repetitive login procedures.
 

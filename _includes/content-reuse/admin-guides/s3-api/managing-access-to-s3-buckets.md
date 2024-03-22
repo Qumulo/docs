@@ -124,7 +124,7 @@ To add ACEs to a directory, use the `qq` CLI or use the File Explorer on a Windo
 The following sections show how to use the `qq` CLI to imitate bucket-level permissions by adding inheritable ACEs.
 
 ### Imitating Bucket-Level Read-Write Access
-Run the `qq fs_modify_acl` command. In the following example, we add the access control entry (ACE) to the bucket whose root directory is `/buckets/my-bucket` for the user group `MyWriters`.
+Run the {% include qq.html command="fs_modify_acl" %} command. In the following example, we add the access control entry (ACE) to the bucket whose root directory is `/buckets/my-bucket` for the user group `MyWriters`.
 
 ```bash
 $ qq fs_modify_acl \
@@ -146,7 +146,7 @@ Allowed  Object inherit, Container inherit  Delete child, Execute/Traverse, Read
 
 <a id="bucket-level-read-access"></a>
 ### Imitating Bucket-Level Read-Only Access
-Run the `qq fs_modify_acl` command. In the following example, we add the access control entry (ACE) to the bucket whose root directory is `/buckets/my-bucket` for the user group `MyReaders`:
+Run the {% include qq.html command="fs_modify_acl" %} command. In the following example, we add the access control entry (ACE) to the bucket whose root directory is `/buckets/my-bucket` for the user group `MyReaders`:
 
 ```bash
 $ qq fs_modify_acl
@@ -166,7 +166,7 @@ Allowed  Object inherit, Container inherit  Execute/Traverse, Read
 ```
 
 ### Imitating Bucket-Level List-Only Access
-Run the `qq fs_modify_acl` command. In the following example, we add two access control entries (ACEs) to the bucket whose root directory is `/buckets/my-bucket` for the user group `MyListers`.
+Run the {% include qq.html command="fs_modify_acl" %} command. In the following example, we add two access control entries (ACEs) to the bucket whose root directory is `/buckets/my-bucket` for the user group `MyListers`.
 
 ```bash
 $ qq fs_modify_acl

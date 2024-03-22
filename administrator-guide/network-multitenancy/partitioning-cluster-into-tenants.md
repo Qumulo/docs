@@ -15,7 +15,8 @@ For each tenant, you can specify individual [management protocol access and conf
 
 
 ## Prerequisites
-{% include important.html content="If your cluster runs a version of Qumulo Core lower than 6.1.0.3, you must run the {% include qq.html command="multitenancy_enable" %} to enable multitenancy for your cluster." %}
+{% capture lowerThan6103 %}If your cluster runs a version of Qumulo Core lower than 6.1.0.3, you must run the {% include qq.html command="multitenancy_enable" %} to enable multitenancy for your cluster.{% endcapture %}
+{% include important.html content=lowerThan6103 %}
 
 To manage network multitenancy and tenants, your user must have membership in a Qumulo role with the following privileges.
 
