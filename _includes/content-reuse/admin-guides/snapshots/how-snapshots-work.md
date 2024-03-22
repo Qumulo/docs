@@ -54,7 +54,7 @@ When you delete a snapshot, Qumulo Core removes the data which that snapshot ref
 {% include note.html content="When you delete a snapshot, the background process might take some time. To track the reclaimed storage, run the `qq snapshot_get_total_used_capacity` command." %}
 
 ### Example: Tracking Covering Snapshots and Data Changes
-For example, if you run the {% include qq.html command="snapshot_get_total_used_capacity" %}, Qumulo Core shows that storage usage is 1,319,413,953,331 Bytes (1.2 TiB). This amount includes the total snapshot data and the covering snapshots.
+For example, if you run the {% include qq.html command="snapshot_get_total_used_capacity" %} command, Qumulo Core shows that storage usage is 1,319,413,953,331 Bytes (1.2 TiB). This amount includes the total snapshot data and the covering snapshots.
 
 If you add up the usage for all snapshots currently in the file system (by using the `qq snapshot_get_capacity_used_per_snapshot` command), Qumulo Core shows that total snapshot storage usage is 2,147,483,648 Bytes (2 GiB). This amount includes the data changes that each snapshot stores but doesn't include the unchanged file portions within each snapshot.
 

@@ -90,9 +90,9 @@ To ensure that anonymous requests have permission to read files in a bucket, gra
    }
    ```
 
-1. Anonymous access to S3 buckets is disabled by default. To enable anonymous access, run the {% include qq.html command="s3_modify_bucket" %}, specify the bucket name, and use the `--enable-anonymous-access` flag.
+1. Anonymous access to S3 buckets is disabled by default. To enable anonymous access, run the {% include qq.html command="s3_modify_bucket" %} command, specify the bucket name, and use the `--enable-anonymous-access` flag.
 
-1. To disable anonymous access, run the {% include qq.html command="s3_modify_bucket" %}, specify the bucket name, and use the `--disable-anonymous-access` flag.
+1. To disable anonymous access, run the {% include qq.html command="s3_modify_bucket" %} command, specify the bucket name, and use the `--disable-anonymous-access` flag.
 
 
 <a id="inheritable-aces"></a>

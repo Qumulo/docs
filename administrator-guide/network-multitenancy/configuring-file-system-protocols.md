@@ -32,7 +32,7 @@ To configure file system protocols, your user must have membership in a Qumulo r
 This section explains how to enable the NFS protocol for a tenant, the difference between global settings and settings for each tenant, and how to configure NFS exports for a tenant.
 
 ### Enabling the NFS Protocol for a Tenant
-To let a tenant use NFS to access a specific set of exports, run the {% include qq.html command="multitenancy_modify_tenant" %}, specify the tenant ID, and use the `--enable-nfs` flag.
+To let a tenant use NFS to access a specific set of exports, run the {% include qq.html command="multitenancy_modify_tenant" %} command, specify the tenant ID, and use the `--enable-nfs` flag.
 
 {% include note.html content="Initially, the tenant has no exports to mount." %}
 
@@ -94,7 +94,7 @@ $ qq nfs_mod_export \
 This section explains how to enable the SMB protocol for a tenant, the difference between global settings and settings for each tenant, and how to configure SMB shares for a tenant.
 
 ### Enabling the SMB Protocol for a Tenant
-To let a tenant use SMB to access a specific set of shares, run the {% include qq.html command="multitenancy_modify_tenant" %}, specify the tenant ID, and use the `--enable-smb` flag.
+To let a tenant use SMB to access a specific set of shares, run the {% include qq.html command="multitenancy_modify_tenant" %} command, specify the tenant ID, and use the `--enable-smb` flag.
 
 {% include note.html content="Initially, the tenant has no shares to mount." %}
 
