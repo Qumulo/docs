@@ -291,7 +291,7 @@ When you use the `qq` CLI to delete a bucket, you can choose to also delete the 
   
   * {{varMpuInProgress}}
 
-* To delete a bucket together with its root directory, use the `qq s3_delete_bucket`, specify the bucket name, and use the `--delete-root-dir` flag. For example:
+* To delete a bucket together with its root directory, use the {% include qq.html command="s3_delete_bucket" %}, specify the bucket name, and use the `--delete-root-dir` flag. For example:
 
   ```bash
   $ qq s3_delete_bucket \

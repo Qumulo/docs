@@ -32,7 +32,7 @@ This section explains how to deploy Qumulo Broker on a standalone machine or vir
    docker compose version
    ```
    
-1. To start the Docker containers, use the `docker compose up -d` command.
+1. To start the Docker containers, run the `docker compose up -d` command.
 
    The command creates the network and containers. {{site.exampleOutput}}
    
@@ -43,7 +43,7 @@ This section explains how to deploy Qumulo Broker on a standalone machine or vir
     ⠿ Container api-proxy-1   Started      1.6s
    ```
    
-1. To view the status of running containers, use the `docker ps` command.
+1. To view the status of running containers, run the `docker ps` command.
 
    {{site.exampleOutput}}
 
@@ -59,7 +59,7 @@ This section explains how to deploy Qumulo Broker on a standalone machine or vir
    Up 5 seconds   0.0.0.0:3306->3306/tcp, :::3306->3306/tcp       api-db-1
    ```
    
-1. To view the logs of a specific container, use the `docker logs <container-id>` command.
+1. To view the logs of a specific container, run the `docker logs <container-id>` command.
 
 You can now configure Varonis to communicate with your Qumulo cluster.
 

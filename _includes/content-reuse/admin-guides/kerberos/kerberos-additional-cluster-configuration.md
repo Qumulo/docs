@@ -3,7 +3,9 @@ When your Qumulo cluster is [joined to AD](kerberos-prerequisites-joining-cluste
 ## To Configure Security Settings by Using the qq CLI
 Qumulo provides configuration for the permitted NFSv4.1 authentication flavors in the `qq` CLI or directly through the Qumulo Core REST API.
 
-1. Use the `qq` CLI to get the current settings:
+1. Run the {% include qq.html command="nfs_get_settings" %} command to get the current settings.
+
+   {{site.exampleOutput}}
 
    ```bash
    $ qq nfs_get_settings

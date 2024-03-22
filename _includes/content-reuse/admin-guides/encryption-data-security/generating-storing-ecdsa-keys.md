@@ -12,9 +12,9 @@
 This section explains how to generate a 256-bit ECDSA private key by using Linux CLI tools and AWS, GCP, and Azure CLI or API.
 
 ### To Generate a Private Key by Using Linux CLI Tools
-To generate a key in the `.pem` format, use the `openssl` or `ssh-keygen` tools.
+To generate a key in the `.pem` format, run the `openssl` or `ssh-keygen` tools.
 
-* Run the `openssl` command and specify the path to the private key. For example:
+* Run the `openssl` tool and specify the path to the private key. For example:
 
   ```bash
   openssl ecparam \
@@ -23,7 +23,7 @@ To generate a key in the `.pem` format, use the `openssl` or `ssh-keygen` tools.
     -out /private-key-path
   ```
 
-* Run the `ssh-keygen` command and specify the path to the private key. For example:
+* Run the `ssh-keygen` tool and specify the path to the private key. For example:
 
   ```bash
   ssh-keygen \
@@ -89,7 +89,7 @@ Use the Azure Key Vault and the Azure CLI. For more information, see [`az keyvau
 After you create a 256-bit ECDSA private key, you can extract a public key from it by using Linux CLI tools and AWS, GCP, and Azure CLI and API. You can [store the public key in the Qumulo file system key store](managing-security-keys.html#add-public-key).
 
 ### To Extract the Public Key by Using Linux CLI Tools
-1. Use the `openssl` tool and specify the path to the private key and the path for saving the public key. For example:
+1. Run the `openssl` tool and specify the path to the private key and the path for saving the public key. For example:
 
    ```bash
    openssl pkey \
@@ -97,7 +97,7 @@ After you create a 256-bit ECDSA private key, you can extract a public key from 
      -pubout > /public-key-path
    ```
 
-1. If your private key is in OpenSSH format, export the public key into the `.pem` format. Use the `ssh-keygen` tool and specify the path to the private key and the path for saving the public key. For example:
+1. If your private key is in OpenSSH format, export the public key into the `.pem` format. Run the `ssh-keygen` tool and specify the path to the private key and the path for saving the public key. For example:
 
    ```bash
    ssh-keygen \
@@ -106,7 +106,7 @@ After you create a 256-bit ECDSA private key, you can extract a public key from 
     -m PEM > /public-key-path
    ```
 
-1. To convert your private key to `.pem` format, you can use the `ssh-keygen` tool and specify the path to the private key. For example:
+1. To convert your private key to `.pem` format, run the `ssh-keygen` tool and specify the path to the private key. For example:
 
    ```bash
    ssh-keygen \
@@ -161,7 +161,7 @@ You can use your private key to generate a verification signature and then provi
 
    {% include note.html content="The `-n` flag ensures that there are no newline characters following the challenge." %}
 
-1. To sign the challenge, use the `openssl` tool and specify the path to the private key. For example:
+1. To sign the challenge, run the `openssl` tool and specify the path to the private key. For example:
 
    ```bash
    openssl dgst \
@@ -171,7 +171,7 @@ You can use your private key to generate a verification signature and then provi
      -out /tmp/signature.sha256 /tmp/challenge.out
    ```
 
-1. To encode the signature in Base64 format, use the `openssl` tool. For example:
+1. To encode the signature in Base64 format, run the `openssl` tool. For example:
 
    ```bash
    openssl base64 \

@@ -72,7 +72,7 @@ $ qq network_mod_network \
 ```
 
 #### Assigning Multiple Networks to an Existing Tenant
-To assign multiple networks to a tenant, modify _the networks that belong to the tenant._  Run the `qq multitenancy_modify_tenant` command and specify the tenant and network ID.
+To assign multiple networks to a tenant, modify _the networks that belong to the tenant._  Run the {% include qq.html command="multitenancy_modify_tenant" %} command and specify the tenant and network ID.
   
 {% include important.html content="Any existing networks not specified after the `--network-id` flag become unassigned." %}
   

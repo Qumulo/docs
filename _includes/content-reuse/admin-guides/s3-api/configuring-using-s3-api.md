@@ -29,7 +29,7 @@ After you run the command, all nodes in your cluster begin to accept S3 API traf
 ## Step 3: Create an Access Key Pair
 To create and manage S3 buckets you must have a valid S3 access key pair associated with a specific user in your Qumulo cluster or in a connected external identity provider (such as Active Directory). For more information, see [Creating and Managing S3 Access Keys](creating-managing-s3-access-keys.html).
 
-Use the `qq s3_create_access_key` and specify the username. For example:
+Use the {% include qq.html command="s3_create_access_key" %} and specify the username. For example:
 
 ```bash
 $ qq s3_create_access_key my-username
