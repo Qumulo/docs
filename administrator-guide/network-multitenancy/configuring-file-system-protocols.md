@@ -45,9 +45,9 @@ $ qq multitenancy_modify_tenant \
 ```
 
 ### Configuring the NFS Protocol Globally or for a Tenant
-You can use _global settings_ that apply to all tenants. For example, to enable NFSv4.1 for all tenants, run the {% include qq.html command="nfs_modify_settings --enable-v4" %}. For more information about NFS settings see [Enabling and Using NFSv4.1 on a Qumulo Cluster](../nfs/nfsv4.1-enabling-using.html) and [How NFSv4.1 works with Kerberos in Qumulo Core](../kerberos/kerberos-with-qumulo-core.html).
+You can use _global settings_ that apply to all tenants. For example, to enable NFSv4.1 for all tenants, run the {% include qq.html command="nfs_modify_settings" %} command and use the `--enable-v4` flag. For more information about NFS settings see [Enabling and Using NFSv4.1 on a Qumulo Cluster](../nfs/nfsv4.1-enabling-using.html) and [How NFSv4.1 works with Kerberos in Qumulo Core](../kerberos/kerberos-with-qumulo-core.html).
 
-To override this global setting, run the {% include qq.html command="multitenancy_nfs_modify_settings" %} to disable NFSv4.1 on a specific tenant, specify the tenant ID, and use the `--disable-v4` flag. In the following example, despite the global setting, the specified tenant no longer accepts NFSv4.1 traffic on port 2049, on all networks assigned to the tenant.
+To override this global setting, run the {% include qq.html command="multitenancy_nfs_modify_settings" %} command to disable NFSv4.1 on a specific tenant, specify the tenant ID, and use the `--disable-v4` flag. In the following example, despite the global setting, the specified tenant no longer accepts NFSv4.1 traffic on port 2049, on all networks assigned to the tenant.
 
 ```bash
 $ qq multitenancy_nfs_modify_settings \
@@ -149,7 +149,7 @@ $ qq smb_add_share \
 
 {% include important.html content=mustSpecifyID %}
 
-To move an SMB share from one tenant to another, run the {% include qq.html command="smb_mode_share" %} command. In then following example, while the cluster denies access to clients in tenant 2, it lets clients in tenant 1 access the share `/my-share`.
+To move an SMB share from one tenant to another, run the {% include qq.html command="smb_mod_share" %} command. In then following example, while the cluster denies access to clients in tenant 2, it lets clients in tenant 1 access the share `/my-share`.
 
 ```bash
 $ qq smb_mod_share -–tenant-id 2 \

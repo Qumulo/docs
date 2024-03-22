@@ -1,5 +1,5 @@
 ### Stopping a Copy Job in Progress
-To stop a copy job already in progress, run the {% include qq.html command="replication_abort_object_relationship" %} command and use the `--id` flag to specify the Shift relationship ID.
+To stop a copy job already in progress, run the {% include qq.html command="replication_abort_object_replication" %} command and use the `--id` flag to specify the Shift relationship ID.
 
 ### Repeating a Completed Copy Job
 To repeat a completed copy job, run the {% include qq.html command="replication_start_object_relationship" %} command and use the `--id` flag to specify the Shift relationship ID.

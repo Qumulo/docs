@@ -15,7 +15,7 @@ For each tenant, you can specify individual [management protocol access and conf
 
 
 ## Prerequisites
-{% capture lowerThan6103 %}If your cluster runs a version of Qumulo Core lower than 6.1.0.3, you must run the {% include qq.html command="multitenancy_enable" %} to enable multitenancy for your cluster.{% endcapture %}
+{% capture lowerThan6103 %}If your cluster runs a version of Qumulo Core lower than 6.1.0.3, you must run the `qq multitenancy_enable` command to enable multitenancy for your cluster.{% endcapture %}
 {% include important.html content=lowerThan6103 %}
 
 To manage network multitenancy and tenants, your user must have membership in a Qumulo role with the following privileges.
@@ -126,7 +126,7 @@ $ qq network_mod_network \
 To determine a tenant's network assignments and enabled management and file system protocols, you can view the tenant information.
 
 #### Viewing Information for a Single Tenant
-To view the information for a single tenant, run the {% include qq.html command="multitenancy_get_tenants" %} command.
+To view the information for a single tenant, run the {% include qq.html command="multitenancy_get_tenant" %} command.
 
 ```bash
 $ qq multitenancy_get_tenant \

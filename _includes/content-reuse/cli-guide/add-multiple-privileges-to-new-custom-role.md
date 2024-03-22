@@ -8,7 +8,7 @@ For this operation, you must run the {% include qq.html command="auth_list_privi
      grep WRITE > privileges.txt
    ```
 
-2. Run the {% include qq.html command="qq auth_create_role" %} command and specify the `privileges.txt` file to create a custom role. For example:
+2. Run the {% include qq.html command="auth_create_role" %} command and specify the `privileges.txt` file to create a custom role. For example:
 
    ```bash
    qq auth_create_role -r "Write-Everything" \

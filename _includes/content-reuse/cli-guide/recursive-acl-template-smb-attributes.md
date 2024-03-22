@@ -3,9 +3,9 @@ For this operation, you must run the {% include qq.html command="fs_walk_tree" %
 
 {% include note.html content="For very large directories, we recommend running the following command [in a screen session](https://linuxize.com/post/how-to-use-linux-screen/)." %}
 
-1. Ensure that the `jq` utility is installed on your system.
+1. Ensure that the `jq` tool is installed on your system.
 
-1. Run the {% include qq.html command="fs_walk_tree" %} command and use the `--path` flag to specify the path for the ACL. To extract the path for each item into an array, pipe the command to `jq`. To modify the ACL for each path, pipe the command to `xargs` which in turn runs the {% include qq.html command="fs_set_acl" %} command on each path. For example:
+1. Run the {% include qq.html command="fs_walk_tree" %} command and use the `--path` flag to specify the path for the ACL. To extract the path for each item into an array, pipe the command to the `jq` tool. To modify the ACL for each path, pipe the command to `xargs` which in turn runs the {% include qq.html command="fs_set_acl" %} command on each path. For example:
 
    ```bash
    qq fs_walk_tree --path /my_path | \
@@ -21,7 +21,7 @@ For this operation, you must run the {% include qq.html command="fs_walk_tree" %
 ### To Recursively Apply a Permissions Template
 For this operation, you must run the {% include qq.html command="fs_walk_tree" %} and {% include qq.html command="fs_modify_acl" %} commands.
 
-1. Ensure that the `jq` utility is installed on your system.
+1. Ensure that the `jq` tool is installed on your system.
 
 1. Use a new or existing file with the necessary permissions to capture the ACL and save it in JSON format by using the {% include qq.html command="fs_get_acl" %} command. For example:
    
@@ -30,7 +30,7 @@ For this operation, you must run the {% include qq.html command="fs_walk_tree" %
      --json >/history/new_permissions.json
    ```
 
-1. To apply the captured ACL, run the {% include qq.html command="fs_walk_tree" %} command and use the `--path` flag to specify the path for the ACL. To extract the path for each item into an array, pipe the command to `jq`. To modify the ACL for each path, pipe the command to `xargs` which in turn runs the {% include qq.html command="fs_set_acl" %} command on each path.
+1. To apply the captured ACL, run the {% include qq.html command="fs_walk_tree" %} command and use the `--path` flag to specify the path for the ACL. To extract the path for each item into an array, pipe the command to the `jq` tool. To modify the ACL for each path, pipe the command to `xargs` which in turn runs the {% include qq.html command="fs_set_acl" %} command on each path.
 
    ```bash
    qq fs_walk_tree --path /my_target_path | \
@@ -43,7 +43,7 @@ For this operation, you must run the {% include qq.html command="fs_walk_tree" %
 ### To Recursively Modify SMB Attributes
 For this operation, you must run the {% include qq.html command="fs_walk_tree" %} and {% include qq.html command="fs_modify_acl" %} commands.
 
-Run the {% include qq.html command="fs_walk_tree" %} command and use the `--path` flag to specify the path for the ACL. To extract the path for each item into an array, pipe the command to `jq`. To modify the ACL for each path, pipe the command to `xargs` which in turn runs the {% include qq.html command="qq fs_set_acl" %} command on each path.
+Run the {% include qq.html command="fs_walk_tree" %} command and use the `--path` flag to specify the path for the ACL. To extract the path for each item into an array, pipe the command to the `jq` tool. To modify the ACL for each path, pipe the command to `xargs` which in turn runs the {% include qq.html command="fs_set_acl" %} command on each path.
 
 ```bash
 qq fs_walk_tree --path /my_path | \

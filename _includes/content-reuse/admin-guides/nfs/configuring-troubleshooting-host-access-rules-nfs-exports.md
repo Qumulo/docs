@@ -189,7 +189,7 @@ This section describes the troubleshooting steps for a scenario in which an NFS 
      
    * Ensure that your Qumulo cluster's DNS cache isn't out of date, for example, if `{{site.exampleIP2}}` should resolve to `user1.accounting.example.com`.
    
-     To reset your Qumulo cluster's DNS cache, run the {% include qq.html command="dns_clear_lookup_cache" %} command.
+     To reset your Qumulo cluster's DNS cache, run the {% include qq.html command="dns_clear_cache" %} command.
 
    * Run the `qq dns_resolve_hostnames` command and specify the hostname to perform a lookup for `user1.accounting.example.com`.
   

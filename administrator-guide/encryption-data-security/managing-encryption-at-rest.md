@@ -92,7 +92,7 @@ This section explains how to configure Qumulo Core to use a master key stored lo
 
 {{site.data.alerts.note}}
 <ul>
-  <li>The <code>qq</code> CLI command <code>encryption_set_key_store</code> requires the <code>PRIVILEGE_ENCRYPTION_WRITE</code> privilege.</li>
+  <li>The <code>qq</code> CLI command {% include qq.html command="encryption_set_key_store" %} requires the <code>PRIVILEGE_ENCRYPTION_WRITE</code> privilege.</li>
   <li>To be able to configure an external KMS, the KMS must support Key Management Interoperability Protocol (KMIP) 1.0.</li>
 </ul>
 {{site.data.alerts.end}}
@@ -106,7 +106,7 @@ This section explains how to configure Qumulo Core to use a master key stored lo
 </ul>
 {{site.data.alerts.end}}
 
-1. To configure the system to use a local key store, run the {% include qq.html command="encryption_set_key_store local" %}.
+1. To configure the system to use a local key store, run the {% include qq.html command="encryption_set_key_store" %} with the `local` subcommand.
 
 1. To confirm that the system is configured correctly, {% include qq.html command="encryption_get_status" %}.
 

@@ -302,4 +302,4 @@ In environments where Linux systems map exactly to end users that have `kinit`-b
 ## Network Time Protocol (NTP) Server
 {% include content-reuse/kerberos-ntp-server.md %}
 
-There are many NTP d&aelig;mons for Linux. For example, Ubuntu uses the [NTP functionality in systemd](https://ubuntu.com/server/docs/network-ntp) (`timedatectl` and `timesyncd`).
+There are many NTP d&aelig;mons for Linux. For example, Ubuntu uses the [NTP functionality in systemd](https://ubuntu.com/server/docs/use-timedatectl-and-timesyncd) (`timedatectl` and `timesyncd`).

@@ -7,7 +7,7 @@ For more information about NFSv4.1, see [Enabling and Using NFSv4.1 on a Qumulo 
 In most Linux distributions, the `nfs-acl-tools` package contains the NFSv4.1 commands that let you manage ACLs for files.
 
 ### Showing the ACL of a File
-To show the ACL of a file, run the {% include qq.html command="nfs4_getfacl" %} command. In the following example, we create the file `my-file` and then show the ACL for it.
+To show the ACL of a file, run the `nfs4_getfacl` command. In the following example, we create the file `my-file` and then show the ACL for it.
 
 ```bash
 $ touch /mnt/qumulo/my-file
@@ -27,7 +27,7 @@ $ stat -c %a /mnt/qumulo/my-file
 ```
 
 ### Editing the ACL of a File
-To edit the ACL of a file (by using the text editor specified in the `$EDITOR` environment variable), run the {% include qq.html command="nfs4_editfacl" %} command (or the {% include qq.html command="nfs4_setfacl" %} command with the `-e` flag). For more information, see the [nfs4_editfacl](https://linux.die.net/man/1/nfs4_editfacl) and [nfs4_setfacl](https://linux.die.net/man/1/nfs4_setfacl) in the Linux documentation.
+To edit the ACL of a file (by using the text editor specified in the `$EDITOR` environment variable), run the [nfs4_editfacl](https://linux.die.net/man/1/nfs4_editfacl) command (or the [nfs4_setfacl](https://linux.die.net/man/1/nfs4_setfacl) command with the `-e` flag).
 
 ### Setting the ACL of a File
 To set the ACL of a file, you can use one of the following commands:
