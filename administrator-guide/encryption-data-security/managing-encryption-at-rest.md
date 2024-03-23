@@ -28,7 +28,8 @@ Qumulo Core uses a _master key_ to protect the _data key_ that encrypts the data
 ## Retrieving Information about a Qumulo Cluster's Encryption Configuration
 This section explains how to retrieve the status or detailed information about an active encryption configuration for a Qumulo cluster and gives examples for a system that uses a locally stored master key and a system that uses a Key Management Server (KMS).
 
-{% include note.html content="The `qq` CLI commands `encryption_get_key_store` and `encryption_get_status` require the `PRIVILEGE_ENCRYPTION_READ` privilege." %}
+{% capture requiredPrivileges %}The {% include qq.html command="encryption_get_key_store" %} and {% include qq.html command="encryption_get_status" %} commands require the `PRIVILEGE_ENCRYPTION_READ` privilege.{% endcapture %}
+{% include note.html content=requiredPrivileges %}
 
 <a id="encryption-get-status"></a>
 ### To View the Status of an Active Encryption Configuration

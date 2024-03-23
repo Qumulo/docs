@@ -117,7 +117,7 @@ You can use _global settings_ that apply to all tenants. For example, to require
 
 * [Snapshots: Snapshot Directory Mode](https://care.qumulo.com/hc/en-us/articles/360042053973)
 
-To override this global setting, run the {% include qq.html command="multitenancy_smb_modify_settings" %} to allow clients on only specific networks to require encryption. In the following example, despite the global setting, the specified tenant accepts unencrypted SMB requests on all networks assigned to the tenant.
+To override this global setting, run the {% include qq.html command="multitenancy_smb_modify_settings" %} command to allow clients on only specific networks to require encryption. In the following example, despite the global setting, the specified tenant accepts unencrypted SMB requests on all networks assigned to the tenant.
 
 ```bash
 $ qq multitenancy_smb_modify_settings \

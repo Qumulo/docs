@@ -11,7 +11,7 @@ sidebar: qumulo_alerts_guide_sidebar
 
 
 ## To Add a New Email Server to Qumulo Alerts
-Use the `./alerts email_server_add` command and specify the sender's email address, recipient's email address, email server hostname and port, language, and time zone. For example:
+Run the `./alerts email_server_add` command and specify the sender's email address, recipient's email address, email server hostname and port, language, and time zone. For example:
 
 ```bash
 ./alerts email_server_add \

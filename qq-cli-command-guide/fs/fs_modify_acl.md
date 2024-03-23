@@ -27,7 +27,7 @@ varCreateACL: "Run the `qq fs_modify_acl` command and use the `--path` flag to s
 ---
 
 ## Examples
-The following examples show how to run the {% include qq.html command="fs_modify_acl" %} to work with access control lists (ACLs).
+The following examples show how to run the {% include qq.html command="fs_modify_acl" %} command to work with access control lists (ACLs).
 
 {% include important.html content="Before deploying permissions changes in a production environment, we strongly recommend performing a dry run on a test directory." %}
 
