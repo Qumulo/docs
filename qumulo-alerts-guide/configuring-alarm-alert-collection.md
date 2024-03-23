@@ -5,7 +5,7 @@ permalink: /qumulo-alerts-guide/configuring-alarm-alert-collection.html
 redirect_from:
   - /qumulo-alerts-guide/installing-configuring/alarms-and-alerts.html
 sidebar: qumulo_alerts_guide_sidebar
-varFirstStep: Use the <code>./alerts cluster_add</code> command and specify the fully qualified domain name (FQDN) of your Qumulo cluster, your long-lived access token for the Qumulo Core REST API, and the plugins or plugin categories to include or exclude from monitoring. 
+varFirstStep: Run the <code>./alerts cluster_add</code> command and specify the fully qualified domain name (FQDN) of your Qumulo cluster, your long-lived access token for the Qumulo Core REST API, and the plugins or plugin categories to include or exclude from monitoring. 
 ---
 
 ## Collecting Information about Specific Alarms

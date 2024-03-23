@@ -22,7 +22,7 @@ You can configure quota monitoring by using _thresholds_.
 For more information about how quotas work, see [Configuring Quota Notifications to an Administrative Account](quotas-to-admins.html) and [Configuring Quota Notifications to a User Account](quotas-to-users.html).
 
 ## To List the Predefined No-Path Quota
-Qumulo Alerts comes with a predefined no-path quota. To get information about this quota, use the `./alerts default_quota_list` command.
+Qumulo Alerts comes with a predefined no-path quota. To get information about this quota, run the `./alerts default_quota_list` command.
 
 {{site.exampleOutput}}
 

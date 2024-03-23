@@ -43,9 +43,9 @@ For more information, see [Extracting the Public Key from an ECDSA Private Key](
 
 
 ## Retrieving Public Key Information
-* To retrieve information for a single public key, use the `qq fs_security_key` command and specify the key identifier or name.
+* To retrieve information for a single public key, run the {% include qq.html command="fs_security_get_key" %} command and specify the key identifier or name.
 
-* To retrieve information for all public keys, use the `qq fs_security_list_keys` command.
+* To retrieve information for all public keys, run the {% include qq.html command="fs_security_list_keys" %} command.
 
   {{site.jsonNotTable}}
 
@@ -58,7 +58,7 @@ Run the `qq fs_security_get_usage` command and specify the key identifier or nam
 
 
 ## Modifying a Public Key
-To modify the name or comment for a public key, use the `qq fs_security_modify_key` command and specify the key identifier or name and the flags for the fields to modify.
+To modify the name or comment for a public key, run the {% include qq.html command="fs_security_modify_key" %} command and specify the key identifier or name and the flags for the fields to modify.
 
 
 ## Rotating a Public Key
@@ -84,13 +84,13 @@ qq fs_security_replace_key \
 ```
 
 ### If You Don't Have Direct Access to the Existing and Replacement Private Keys
-1. To receive the key replacement challenge, use the `qq fs_security_get_key_replace_challenge` command and specify the identifier or name of the key to replace.
+1. To receive the key replacement challenge, run the {% include qq.html command="fs_security_get_key_replace_challenge" %} command and specify the identifier or name of the key to replace.
 
 1. To generate a verification signature, use the response from the challenge with the existing private key and another verification signature by using the challenge and the replacement private key.
 
    For more information, see [Signing a Security Challenge by Using an ECDSA Private Key](generating-storing-ecdsa-keys.html#signing-a-security-challenge-by-using-an-ecdsa-private-key).
 
-1. To rotate the key, use the `qq fs_security_replace_key` command and specify the key identifier or name, the replacement public key contents, the replacement key verification signature (Base64-encoded key replacement challenge signed with the replacement private key), and the existing key verification signature (Base64-encoded key replacement challenge signed with the existing private key). For example:
+1. To rotate the key, run the {% include qq.html command="fs_security_replace_key" %} command and specify the key identifier or name, the replacement public key contents, the replacement key verification signature (Base64-encoded key replacement challenge signed with the replacement private key), and the existing key verification signature (Base64-encoded key replacement challenge signed with the existing private key). For example:
 
    ```bash
    qq fs_security_replace_key \
@@ -108,7 +108,7 @@ qq fs_security_replace_key \
 ## Disabling a Public Key
 When you add a key to the Qumulo file system key store, Qumulo Core enables it automatically.
 
-* To disable a key, use the `qq fs_security_modify_key` command and specify the key identifier or name and the `--disable` flag.
+* To disable a key, run the {% include qq.html command="fs_security_modify_key" %} command and specify the key identifier or name and the `--disable` flag.
 
 * To re-enable a key, use the `--enable` flag.
 

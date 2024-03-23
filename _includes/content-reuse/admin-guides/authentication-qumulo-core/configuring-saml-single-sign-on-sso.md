@@ -79,7 +79,7 @@ This process requires coordination between the cluster administrator and SSO adm
      <qumulo-cluster>.<my-org>.com
      ```
 
-1. To configure and enable SAML login to the Qumulo cluster, the cluster administrator runs the `qq saml_modify_settings` command. For example:
+1. To configure and enable SAML login to the Qumulo cluster, the cluster administrator runs the {% include qq.html command="saml_modify_settings" %} command. For example:
 
    ```bash
    qq saml_modify_settings
@@ -92,8 +92,8 @@ This process requires coordination between the cluster administrator and SSO adm
    
    {{site.data.alerts.note}}
    <ul>
-     <li>To view the current SAML configuration, the cluster administrator can use the <code>qq saml_get_settings</code> command.</li>
-     <li>To allow specific changes (for example, correct a typo, update a DNS name or an expired certificate, or temporarily disable SAML SSO without losing any of the other settings), the cluster administrator can use the <code>qq saml_modify_settings</code> command to change individual SAML settings independently.</li>
+     <li>To view the current SAML configuration, the cluster administrator can run the {% include qq.html command="saml_get_settings" %} command.</li>
+     <li>To allow specific changes (for example, correct a typo, update a DNS name or an expired certificate, or temporarily disable SAML SSO without losing any of the other settings), the cluster administrator can run the {% include qq.html command="saml_modify_settings" %} command to change individual SAML settings independently.</li>
      <li>For first-time SAML configurations, the cluster administrator must provide all of the required settings.</li>
      <li>Aside from a basic check of the IdP certificate, Qumulo Core doesn't verify the configuration parameters. It is the cluster administrator's responsibility to ensure that IdP-initiated SAML login works correctly. (This login type initiates when the user clicks <strong>Continue to SSO login</strong> in the Qumulo Core Web UI or selects the Qumulo cluster on the SSO portal.)</li>
    </ul>
@@ -142,7 +142,7 @@ Qumulo Core supports three SAML SSO workflows:
 ### qq-CLI-Initiated SSO Workflow
 In Qumulo Core 5.3.0 (and higher), a user can authenticate a `qq` CLI session by using SSO.
 
-1. A user uses the `qq sso_login` CLI command. For example:
+1. A user uses the {% include qq.html command="sso_login" %} command. For example:
 
    ```bash
    qq --host {{site.exampleIP0}} sso_login
@@ -174,13 +174,13 @@ In Qumulo Core 5.3.0 (and higher), a user can authenticate a `qq` CLI session by
 ## Requiring SSO Authentication for Cluster Management
 {{site.data.alerts.important}}
 <ul>
-  <li>If you use the <code>--require-sso</code> flag, you can no longer use the <code>qq login</code> command with your AD account password. Instead, you must <a href="#sso-login">use the <code>qq sso_login</code> command</a>.</li>
+  <li>If you use the <code>--require-sso</code> flag, you can no longer run the {% include qq.html command="login" %} command with your AD account password. Instead, you must run the {% include qq.html command="sso_login" %} command</a>.</li>
   <li>This setting doesn't restrict access through file protocols such as SMB.</li>
   <li>Because the FTP protocol sends passwords in plaintext, it is inherently insecure. In addition, many FTP clients don't support Transport Layer Security (TLS) or fall back quietly to the plaintext protocol. For this reason, all Qumulo clusters have FTP disabled by default.</li>
 </ul>
 {{site.data.alerts.end}}
 
-In Qumulo Core 5.3.0 (and higher), you can use the `qq saml_modify_settings` CLI command to require AD users to use SSO authentication for managing your cluster. For example:
+In Qumulo Core 5.3.0 (and higher), you can run the {% include qq.html command="saml_modify_settings" %} command to require AD users to use SSO authentication for managing your cluster. For example:
 
 ```bash
 qq saml_modify_settings --require-sso true
@@ -207,7 +207,7 @@ When the cluster requires SSO authentication, your cluster rejects password-base
 This section explains troubleshooting common and uncommon SAML SSO authentication issues.
 
 ### Common Issues
-Typically, if SAML authentication fails, Qumulo Core's in-browser error message explains the reasons for failure and you can resolve the issue by setting the right configuration by using the `qq saml_modify_settings` command. Examples of this issue type include the following scenarios:
+Typically, if SAML authentication fails, Qumulo Core's in-browser error message explains the reasons for failure and you can resolve the issue by setting the right configuration by using the {% include qq.html command="saml_modify_settings" %} command. Examples of this issue type include the following scenarios:
 
 * SAML isn't enabled on the Qumulo cluster.
 
@@ -228,7 +228,7 @@ Several AD configuration issues can cause a **User not found** error:
 
 * IdP sends usernames (`nameID`) in an unusual format.
 
-  To verify that you can use a username, run the `qq auth_find_identity` command. For example:
+  To verify that you can use a username, run the {% include qq.html command="auth_find_identity" %} command. For example:
 
   ```bash
   qq auth_find_identity --name MyUsername
@@ -236,13 +236,13 @@ Several AD configuration issues can cause a **User not found** error:
 
 * The Configured Base DN doesn't include all users.
 
-  To find a security identifier (SID), run the `qq auth_find_identity` command. For example:
+  To find a security identifier (SID), run the {% include qq.html command="auth_find_identity" %} command. For example:
   
   ```bash
   qq auth_find_identity --name MyUsername
   ```
   
-  To verify that a username is discoverable, run the `qq ad_sid_to_account` command. For example:
+  To verify that a username is discoverable, run the {% include qq.html command="ad_sid_to_account" %} command. For example:
 
   ```bash
   qq ad_sid_to_account --sid S-1-5-32-544

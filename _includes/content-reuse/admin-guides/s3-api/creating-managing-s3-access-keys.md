@@ -69,7 +69,7 @@ To make S3 API requests to a Qumulo cluster as a specific user, you must create 
 To create S3 access keys, you must have an administrator account or have {{page.s3.permissions.bucketsWrite}}.
 
 ### To Create an Access Key by Using the qq CLI
-To create an S3 access key for a particular user [identity](#identity), use the `qq s3_create_access_key` command and specify an identity. For example:
+To create an S3 access key for a particular user [identity](#identity), run the {% include qq.html command="s3_create_access_key" %} command and specify an identity. For example:
 
 ```bash
 $ qq s3_create_access_key my_identity
@@ -183,7 +183,7 @@ To list S3 access keys, you must have {{site.s3.permissions.bucketsRead}}.
 
 ### To List S3 Access Keys by Using the qq CLI
 
-* To list the S3 access keys that your Qumulo cluster knows, use the `qq s3_list_access_keys` command:
+* To list the S3 access keys that your Qumulo cluster knows, run the {% include qq.html command="s3_list_access_keys" %}:
 
   {{site.exampleOutput}} {{site.s3.permissions.timesUTC}}
 
@@ -231,7 +231,7 @@ Send a `DELETE` request to the `/v1/s3/access-keys/<access-key-id>` Qumulo Core 
 
 For users that exist in an AD domain that has a trust relationship with the joined domain, you must append that domain's base DN to the base DN in your Qumulo cluster's AD configuration.
 
-To append the trusted base DN to the base DN in use&mdash;with a semicolon (`;`) separating the two&mdash;use the Qumulo Core Web UI or the `qq ad_reconfigure` command. For example:
+To append the trusted base DN to the base DN in use&mdash;with a semicolon (`;`) separating the two&mdash;use the Qumulo Core Web UI or the {% include qq.html command="ad_reconfigure" %} command. For example:
 
 ```bash
 $ qq ad_reconfigure \

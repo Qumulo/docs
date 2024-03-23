@@ -1,8 +1,9 @@
-{% include tip.html content="It is possible to confuse the terms _access token_ and _session token_. Unlike access tokens, session tokens are short-lived and require a password to refresh, for example, to authenticate by using the `qq login` command. Access tokens are the focus of this section." %}
+{% capture differentTerms %}It is possible to confuse the terms _access token_ and _session token_. Unlike access tokens, session tokens are short-lived and require a password to refresh, for example, to authenticate by using the {% include qq.html command="login" %} command. Access tokens are the focus of this section.{% endcapture %}
+{% include tip.html content=differentTerms %}
 
 In Qumulo Core 5.3.0 (and higher), you can use _access tokens_ to let a user authenticate to the Qumulo Core REST API without having to complete repetitive login procedures.
 
-Access tokens are long-lived. They provide an alternative to session-based authentication that the `qq login` command and the Qumulo Core Web UI use. They also support support authentication for services, long-lived automation processes, and programmatic REST API access that doesn't require user input.
+Access tokens are long-lived. They provide an alternative to session-based authentication that the {% include qq.html command="login" %} command and the Qumulo Core Web UI use. They also support support authentication for services, long-lived automation processes, and programmatic REST API access that doesn't require user input.
 
 {{site.data.alerts.important}}
 <ul>
@@ -23,7 +24,7 @@ Access tokens are long-lived. They provide an alternative to session-based authe
 {{page.varPrereqWrite}} This section explains how to create access tokens without or with an expiration time by using the `qq` CLI.
 
 ### To Create an Access Token without an Expiration Time
-Run the `auth_create_access_token` command and specify the user. For example:
+Run the {% include qq.html command="auth_create_access_token" %} command and specify the user. For example:
 
 ```bash
 $ qq auth_create_access_token jane
@@ -50,7 +51,7 @@ You can:
 
 <a id="json-bearer-token"></a>
 
-The `auth_create_access_token` command returns a JSON response that contains the bearer token body and the access token ID, which you can use to manage the access token.
+The {% include qq.html command="auth_create_access_token" %} command returns a JSON response that contains the bearer token body and the access token ID, which you can use to manage the access token.
 
 ```json
 {
@@ -70,7 +71,7 @@ The `auth_create_access_token` command returns a JSON response that contains the
 
 <a id="create-token-expiration-time"></a>
 ### To Create an Access Token with an Expiration Time
-In Qumulo Core 5.3.2 (and higher), you can use the `auth_create_access_token --expiration-time` command and specify the expiration time. You can specify the expiration time in different formats. For example:
+In Qumulo Core 5.3.2 (and higher), you can run the {% include qq.html command="auth_create_access_token" %} command and specify the expiration time. You can specify the expiration time in different formats. For example:
 
 ```bash
 $ qq auth_create_access_token jane --expiration-time 'Jan 01 2023'
@@ -190,7 +191,7 @@ expiration time       enabled
 2023-01-01T00:00:00Z  False
 ```
 
-To filter the command's output by user, use the `--user` flag and use the same format for the name as for the [`auth_create_access_token`](#create-token-format) command.
+To filter the command's output by user, use the `--user` flag and use the same format for the name as for the {% include qq.html command="auth_create_access_token" %} command.
 
 
 <a id="modifying-expiration-time-access-token"></a>
@@ -219,13 +220,13 @@ To help you check your system's security posture, Qumulo Core lets you disable a
 {% capture content_disable_token %}After you disable an access token, {{page.varBearerToken}}{% endcapture %}
 {% include important.html content=content_disable_token %}
 
-To disable an access token, use the `auth_modify_access_token` command, specify the access token ID, and use the `-d` flag. For example:
+To disable an access token, run the {% include qq.html command="auth_modify_access_token" %} command, specify the access token ID, and use the `-d` flag. For example:
 
 ```bash
 $ qq auth_modify_access_token 1234567890123456789012 -d
 ```
 
-To enable an access token, use the `auth_modify_access_token` command, specify the access token ID, and use the `-e` flag. For example:
+To enable an access token, run the {% include qq.html command="auth_modify_access_token" %} command, specify the access token ID, and use the `-e` flag. For example:
 
 ```bash
 $ qq auth_modify_access_token 1234567890123456789012 -e
@@ -238,7 +239,7 @@ $ qq auth_modify_access_token 1234567890123456789012 -e
 {% capture content_disable_token %}After you delete an access token, {{page.varBearerToken}}{% endcapture %}
 {% include important.html content=content_disable_token %}
 
-To delete an access token, use the `auth_delete_access_token` command and specify the access token ID. For example:
+To delete an access token, run the {% include qq.html command="auth_delete_access_token" %} command and specify the access token ID. For example:
 
 ```bash
 $ qq auth_delete_access_token 1234567890123456789012
@@ -287,11 +288,11 @@ We strongly recommend rotating access tokens for a service account at a regular 
 
 #### To Rotate an Access Token for a Service Account
 
-1. To ensure that there is only one access token for each service account, use the `qq auth_list_access_tokens` command.
+1. To ensure that there is only one access token for each service account, run the {% include qq.html command="auth_list_access_tokens" %} command.
 
    If multiple access tokens exist, delete any unused access tokens.
 
-1. To create a new access token for the service account, use the `qq auth_create_access_token` command.
+1. To create a new access token for the service account, run the {% include qq.html command="auth_create_access_token" %} command.
 
 1. In the credential store of your service, replace the old access token with the new one.
 
@@ -299,4 +300,4 @@ We strongly recommend rotating access tokens for a service account at a regular 
 
 1. Confirm that there is nothing else relying on the old access token by disabling it first. If this causes any disruptions then you can re-enable it while you resolve the issue.
 
-1. To delete the old access token, use the `qq auth_delete_access_token` command.
+1. To delete the old access token, run the {% include qq.html command="auth_delete_access_token" %} command.

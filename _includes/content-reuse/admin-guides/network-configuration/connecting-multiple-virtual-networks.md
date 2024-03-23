@@ -5,14 +5,14 @@ When you create a Qumulo cluster, its configuration includes a network named `De
 ## Step 1: Configure Default DHCP Settings
 You can configure your Qumulo cluster from the default DHCP configuration. If you have already configured a single static network, skip this step and [add another network](#add-more-networks).
 
-1. To assign a default gateway, use the {% include qq.html command="network_mod_interface" %} command. For example:
+1. To assign a default gateway, run the {% include qq.html command="network_mod_interface" %} command. For example:
 
    ```bash
    qq network_mod_interface \
      --default-gateway {{site.exampleIP0}}
    ```
 
-1. To configure the `Default` network to use static (rather than DHCP) addressing, use the {% include qq.html command="network_mod_network" %} command. For example:
+1. To configure the `Default` network to use static (rather than DHCP) addressing, run the {% include qq.html command="network_mod_network" %} command. For example:
 
    ```bash
    qq network_mod_network \
@@ -35,11 +35,11 @@ After you configure the first network for your Qumulo cluster, you can add more 
 <ul>
   <li>If you can add both static and floating IP addresses, they must be on the same network.</li>
   <li>You can use multiple <code>--floating-ip-ranges</code> or <code>--dns-servers</code> flags.</li>
-  <li>Each VLAN can have different MTU values, as long as the MTU value of the <code>Default</code> network is equal or greater than the combined MTU values of all networks in your Qumulo cluster. To set the MTU value for the <code>Default</code> network, use the <a href="https://docs.qumulo.com/qq-cli-command-guide/network/network_mod_interface.html"><code>qq network_mod_interface</code></a> command. Then, you can set an equal or smaller MTU value for the other networks.</li>
+  <li>Each VLAN can have different MTU values, as long as the MTU value of the <code>Default</code> network is equal or greater than the combined MTU values of all networks in your Qumulo cluster. To set the MTU value for the <code>Default</code> network, run the {% include qq.html command="network_mod_interface" %} command. Then, you can set an equal or smaller MTU value for the other networks.</li>
 </ul>
 {{site.data.alerts.end}}
 
-1. To add a network, use the {% include qq.html command="network_add_network" %} command. For example:
+1. To add a network, run the {% include qq.html command="network_add_network" %} command. For example:
 
    ```bash
    qq network_add_network \
@@ -53,6 +53,6 @@ After you configure the first network for your Qumulo cluster, you can add more 
      --vlan-id 200
    ```
 
-1. To view the details your networks, use the {% include qq.html command="network_list_networks" %} command.
+1. To view the details your networks, run the {% include qq.html command="network_list_networks" %} command.
 
-1. To view the IP addresses assigned to the nodes in your cluster, use the {% include qq.html command="network_poll" %} command.
+1. To view the IP addresses assigned to the nodes in your cluster, run the {% include qq.html command="network_poll" %} command.

@@ -141,7 +141,7 @@ This section describes how to use the Qumulo Core Web UI 4.2.5 (and higher) to c
 This section describes how to use the Qumulo CLI to copy files from Amazon S3 to a Qumulo cluster, review Shift relationship details, stop a running copy job, repeat a completed copy job, and delete a relationship.
 
 ### Copying Files to Amazon S3
-To copy files, use the `replication_create_object_relationship` command and specify the following:
+To copy files, run the {% include qq.html command="replication_create_object_relationship" %} command and specify the following:
 * Local directory path on Qumulo cluster
 * Copy direction (copy-from)
 * S3 object folder
@@ -235,7 +235,8 @@ Whenever Qumulo Core doesn't complete an operation successfully and returns an e
 We recommend the following best practices for working with Qumulo Shift-From for Amazon S3.
 * **Inheritable Permissions:** Because the system user creates the files that Shift-From for S3 copies, the system owns these files. By default, everyone is granted read permissions and administrators always have full access to the files.
 
-  {% include note.html content="To ensure that the copied files and subdirectories have the correct permissions, you must assign the necessary inheritable permissions to the root directory of the relationship _before_ you create a Shift-From S3 relationship. To edit directory permissions, you can use the Windows Security Dialog or the `qq fs_modify_acl` command. For more information, see [Qumulo File Permissions Overview](https://care.qumulo.com/hc/en-us/articles/115008211868) on Qumulo Care." %}
+  {% capture ensurePermissions %}To ensure that the copied files and subdirectories have the correct permissions, you must assign the necessary inheritable permissions to the root directory of the relationship _before_ you create a Shift-From S3 relationship. To edit directory permissions, you can use the Windows Security Dialog or the {% include qq.html command="fs_modify_acl" %} command. For more information, see [Qumulo File Permissions Overview](https://care.qumulo.com/hc/en-us/articles/115008211868) on Qumulo Care.{% endcapture %}
+  {% include note.html content=ensurePermissions %}
 
 * **VPC Endpoints:** For best performance when using a Qumulo cluster in AWS, configure a [VPC endpoint](https://docs.aws.amazon.com/vpc/latest/privatelink/vpc-endpoints.html) to S3. For on-premises Qumulo clusters, we recommend [AWS Direct Connect](https://docs.aws.amazon.com/whitepapers/latest/aws-vpc-connectivity-options/aws-direct-connect.html) or another high-bandwidth, low-latency connection to S3.
 * **Repeated Synchronization:** If you need to repeatedly synchronize an S3 folder with a Qumulo directory, we recommend reusing the same relationship. This lets you avoid repeated downloading of unchanged objects that already exist locally.

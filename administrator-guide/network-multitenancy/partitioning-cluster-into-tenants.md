@@ -15,7 +15,8 @@ For each tenant, you can specify individual [management protocol access and conf
 
 
 ## Prerequisites
-{% include important.html content="If your cluster runs a version of Qumulo Core lower than 6.1.0.3, you must use the `qq multitenancy_enable` command to enable multitenancy for your cluster." %}
+{% capture lowerThan6103 %}If your cluster runs a version of Qumulo Core lower than 6.1.0.3, you must use the `qq multitenancy_enable` command to enable multitenancy for your cluster.{% endcapture %}
+{% include important.html content=lowerThan6103 %}
 
 To manage network multitenancy and tenants, your user must have membership in a Qumulo role with the following privileges.
 
@@ -72,7 +73,7 @@ $ qq network_mod_network \
 ```
 
 #### Assigning Multiple Networks to an Existing Tenant
-To assign multiple networks to a tenant, modify _the networks that belong to the tenant._  Run the `qq multitenancy_modify_tenant` command and specify the tenant and network ID.
+To assign multiple networks to a tenant, modify _the networks that belong to the tenant._  Run the {% include qq.html command="multitenancy_modify_tenant" %} command and specify the tenant and network ID.
   
 {% include important.html content="Any existing networks not specified after the `--network-id` flag become unassigned." %}
   
@@ -125,7 +126,7 @@ $ qq network_mod_network \
 To determine a tenant's network assignments and enabled management and file system protocols, you can view the tenant information.
 
 #### Viewing Information for a Single Tenant
-To view the information for a single tenant, use the `qq multitenancy_get_tenants` command.
+To view the information for a single tenant, run the {% include qq.html command="multitenancy_get_tenant" %} command.
 
 ```bash
 $ qq multitenancy_get_tenant \
@@ -137,17 +138,17 @@ $ qq multitenancy_get_tenant \
 
 * Click **Cluster > Network Multitenancy**.
 
-* In the `qq` CLI, use the `multitenancy_list_tenants` command.
+* In the `qq` CLI, run the {% include qq.html command="multitenancy_list_tenants" %} command.
 
 #### Determining the Tenant Assignment for Networks
-* To view the information for a single network, use the `qq network_get_network` command.
+* To view the information for a single network, run the {% include qq.html command="network_get_network" %} command.
 
   ```bash
   $ qq network_get_network \
     --network-id 2
   ```
  
-* To view the information for all networks, use the `qq network_list_networks` command.
+* To view the information for all networks, run the {% include qq.html command="network_list_networks" %} command.
 
 ### Step 4: Delete a Tenant
 {{site.data.alerts.important}}
@@ -157,7 +158,7 @@ $ qq multitenancy_get_tenant \
 </ul>
 {{site.data.alerts.end}}
 
-To delete a tenant, use the `qq multitenancy_delete_tenant` command and specify the tenant ID.
+To delete a tenant, run the {% include qq.html command="multitenancy_delete_tenant" %} command and specify the tenant ID.
 
 ```bash
 $ qq multitenancy_delete_tenant \

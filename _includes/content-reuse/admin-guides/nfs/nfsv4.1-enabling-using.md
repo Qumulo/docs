@@ -127,7 +127,7 @@ mount -t nfs \
 
 
 ## Checking Whether NFSv4.1 is enabled
-To check whether NFSv4.1 is enabled on your cluster, use the following `qq` CLI command:
+To check whether NFSv4.1 is enabled on your cluster, run the following `qq` CLI command:
 
 ```bash
 qq nfs_get_settings
@@ -137,7 +137,7 @@ qq nfs_get_settings
 ## Disabling NFSv4.1 on a Qumulo Cluster
 {% include important.html content="Disabling NFSv4.1 makes any NFSv4.1 mounts unusable immediately. We recommend switching any NFSv4.1 mounts to NFSv3 before disabling NFSv4.1." %}
 
-To disable NFSv4.1 on an entire Qumulo cluster, use the following `qq` CLI command:
+To disable NFSv4.1 on an entire Qumulo cluster, run the following `qq` CLI command:
 
 ```bash
 qq nfs_modify_settings --disable-v4
@@ -162,7 +162,7 @@ The NFSv4.1 implementation in Qumulo Core has a non-configurable lease of one mi
 </ul>
 {{site.data.alerts.end}}
 
-To list NFSv4.1 byte-range locks in your cluster, use the following `qq` CLI command:
+To list NFSv4.1 byte-range locks in your cluster, run the following `qq` CLI command:
 
 ```bash
 qq fs_list_locks \

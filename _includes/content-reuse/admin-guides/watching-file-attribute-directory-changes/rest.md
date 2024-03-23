@@ -77,7 +77,7 @@ The following is a list of available notification types in [SSE event payloads](
       {{site.data.alerts.note}}
       <ul>
         <li>When a client modifies the <code>atime</code> field for a file directly, Qumulo Cores sends <code>atime</code> notifications for the file.</li>
-        <li>If you have enabled <code>atime</code> monitoring on your Qumulo Cluster, Qumulo Core sends <code>atime</code> notifications automatically. To configure <code>atime</code> monitoring, use the <code>/v1/file-system/settings/atime</code> REST API or the <code>qq fs_set_atime_settings</code> command.</li>
+        <li>If you have enabled <code>atime</code> monitoring on your Qumulo Cluster, Qumulo Core sends <code>atime</code> notifications automatically. To configure <code>atime</code> monitoring, use the <code>/v1/file-system/settings/atime</code> REST API or run the {% include qq.html command="fs_set_atime_settings" %} command.</li>
       </ul>
       {{site.data.alerts.end}}
     </td>

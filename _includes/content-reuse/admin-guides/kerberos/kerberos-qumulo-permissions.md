@@ -39,7 +39,7 @@ In the following example, we create a file in a mount over NFS.
 touch /mnt/mount_point/filename
 ```
 
-To view the exact permissions metadata for this file, use the `qq fs_file_get_attr` command. For example:
+To view the exact permissions metadata for this file, run the {% include qq.html command="fs_file_get_attr" %} command. For example:
 
 ```bash
 $ qq fs_file_get_attr --path /filename
@@ -56,7 +56,7 @@ $ qq fs_file_get_attr --path /filename
 }
 ```
 
-To view the permissions configured in an ACL, use the `qq fs_get_acl` command. For example:
+To view the permissions configured in an ACL, run the {% include qq.html command="fs_get_acl" %} command. For example:
 
 ```bash
 $ qq fs_get_acl --path /filename

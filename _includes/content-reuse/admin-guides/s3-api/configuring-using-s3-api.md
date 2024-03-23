@@ -14,9 +14,9 @@ For information about configuring HTTPS for your cluster, see [Installing the Qu
 ### Enabling and Disabling Plaintext HTTP Connections
 {% include important.html content="If you configure the S3 API service to accept only plaintext HTTP connections, no requests made through the S3 API are encrypted." %}
 
-* To enable HTTP connections, use the `qq s3_modify_settings --insecure` command.
+* To enable HTTP connections, run the {% include qq.html command="s3_modify_settings" %} command and use the `--insecure` flag.
 
-* To revert to encrypted HTTPS requests, use the `qq s3_modify_settings --secure` command.
+* To revert to encrypted HTTPS requests, run the {% include qq.html command="s3_modify_settings" %} command and use the `--secure` flag.
 
 
 ## Step 2: Enable the S3 API for Your Qumulo Cluster
@@ -29,7 +29,7 @@ After you run the command, all nodes in your cluster begin to accept S3 API traf
 ## Step 3: Create an Access Key Pair
 To create and manage S3 buckets you must have a valid S3 access key pair associated with a specific user in your Qumulo cluster or in a connected external identity provider (such as Active Directory). For more information, see [Creating and Managing S3 Access Keys](creating-managing-s3-access-keys.html).
 
-Use the `qq s3_create_access_key` and specify the username. For example:
+Use the {% include qq.html command="s3_create_access_key" %} command and specify the username. For example:
 
 ```bash
 $ qq s3_create_access_key my-username
@@ -84,7 +84,7 @@ To create and manage S3 buckets, you must configure AWS CLI to work with your Qu
    
    {% include note.html content="If you haven't installed an SSL certificate, append `--no-verify-ssl` to the end of the command." %}
 
-1. (Optional) If you haven't configured your machine to trust the SSL certificate installed on your Qumulo cluster, to configure the path to [the trusted SSL certificate bundle that you have created and installed earlier](#configuring-https) manually, use the `aws configure` command. For example:
+1. (Optional) If you haven't configured your machine to trust the SSL certificate installed on your Qumulo cluster, to configure the path to [the trusted SSL certificate bundle that you have created and installed earlier](#configuring-https) manually, run the `aws configure` command. For example:
   
    ```bash
    $ aws configure \

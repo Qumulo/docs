@@ -28,7 +28,8 @@ Qumulo Core uses a _master key_ to protect the _data key_ that encrypts the data
 ## Retrieving Information about a Qumulo Cluster's Encryption Configuration
 This section explains how to retrieve the status or detailed information about an active encryption configuration for a Qumulo cluster and gives examples for a system that uses a locally stored master key and a system that uses a Key Management Server (KMS).
 
-{% include note.html content="The `qq` CLI commands `encryption_get_key_store` and `encryption_get_status` require the `PRIVILEGE_ENCRYPTION_READ` privilege." %}
+{% capture requiredPrivileges %}The {% include qq.html command="encryption_get_key_store" %} and {% include qq.html command="encryption_get_status" %} commands require the `PRIVILEGE_ENCRYPTION_READ` privilege.{% endcapture %}
+{% include note.html content=requiredPrivileges %}
 
 <a id="encryption-get-status"></a>
 ### To View the Status of an Active Encryption Configuration
@@ -92,7 +93,7 @@ This section explains how to configure Qumulo Core to use a master key stored lo
 
 {{site.data.alerts.note}}
 <ul>
-  <li>The <code>qq</code> CLI command <code>encryption_set_key_store</code> requires the <code>PRIVILEGE_ENCRYPTION_WRITE</code> privilege.</li>
+  <li>The <code>qq</code> CLI command {% include qq.html command="encryption_set_key_store" %} requires the <code>PRIVILEGE_ENCRYPTION_WRITE</code> privilege.</li>
   <li>To be able to configure an external KMS, the KMS must support Key Management Interoperability Protocol (KMIP) 1.0.</li>
 </ul>
 {{site.data.alerts.end}}
@@ -106,9 +107,9 @@ This section explains how to configure Qumulo Core to use a master key stored lo
 </ul>
 {{site.data.alerts.end}}
 
-1. To configure the system to use a local key store, use the `qq encryption_set_key_store local` command.
+1. To configure the system to use a local key store, run the {% include qq.html command="encryption_set_key_store" %} with the `local` subcommand.
 
-1. To confirm that the system is configured correctly, [use the `qq encryption_get_status` command](#encryption-get-status).
+1. To confirm that the system is configured correctly, {% include qq.html command="encryption_get_status" %}.
 
    In the output, ensure that the `type` field is set to `Local`.
 
@@ -131,7 +132,7 @@ This section explains how to configure Qumulo Core to use a master key stored lo
      --host-name {{page.varExampleHostname}}
    ```
 
-1. To confirm that the system is configured correctly, [use the `qq encryption_get_key_store` command](#encryption-get-key-store).
+1. To confirm that the system is configured correctly, run the {% include qq.html command="encryption_get_key_store" %} command.
 
    In the output, ensure that the `type` field is set to `KMS`.
 
@@ -147,7 +148,7 @@ This section explains how to rotate the master key and check the encryption stat
 
    When the process is complete, the command shows the `Key rotation complete` message.
 
-1. To view your cluster's encryption status and the last key rotation time, [use the `qq encryption_get_status` command](#encryption-get-status).
+1. To view your cluster's encryption status and the last key rotation time, run {% include qq.html command="encryption_get_status" %}.
 
 ### To Rotate Master Keys Stored in a Key Management Server (KMS)
 1. Run the `qq rotate_encryption_keys` command and specify the key ID. For example:
@@ -158,7 +159,7 @@ This section explains how to rotate the master key and check the encryption stat
    
    {% include tip.html content="The key ID might be different from the key name." %}
    
-1. To ensure that the system is using the new key, [use the `qq encryption_get_key_store` command](#encryption-get-key-store).
+1. To ensure that the system is using the new key, run {% include qq.html command="encryption_get_key_store" %}.
 
    In the output, ensure that the `key_id` field lists the new key ID.
 

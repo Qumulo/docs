@@ -7,7 +7,7 @@ For more information about NFSv4.1, see [Enabling and Using NFSv4.1 on a Qumulo 
 In most Linux distributions, the `nfs-acl-tools` package contains the NFSv4.1 commands that let you manage ACLs for files.
 
 ### Showing the ACL of a File
-To show the ACL of a file, use the `nfs4_getfacl` command. In the following example, we create the file `my-file` and then show the ACL for it.
+To show the ACL of a file, run the `nfs4_getfacl` command. In the following example, we create the file `my-file` and then show the ACL for it.
 
 ```bash
 $ touch /mnt/qumulo/my-file
@@ -19,7 +19,7 @@ A::EVERYONE@:rtncy
 
 The entries in the ACL have four parts separated by colons (`:`). For more information, see the [nfs4_acl](https://linux.die.net/man/5/nfs4_acl) in the Linux documentation.
 
-The ACL in this example corresponds to `664` mode: The owner (`user1`) and group (`group1`) of the file are allowed to read and write, while others (`EVERYONE@`) are allowed to only read. To check the current mode, use the `stat` command, for example:
+The ACL in this example corresponds to `664` mode: The owner (`user1`) and group (`group1`) of the file are allowed to read and write, while others (`EVERYONE@`) are allowed to only read. To check the current mode, run the `stat` command, for example:
 
 ```bash
 $ stat -c %a /mnt/qumulo/my-file
@@ -27,7 +27,7 @@ $ stat -c %a /mnt/qumulo/my-file
 ```
 
 ### Editing the ACL of a File
-To edit the ACL of a file (by using the text editor specified in the `$EDITOR` environment variable), use the `nfs4_editfacl` (or `nfs4_setfacl -e`) command. For more information, see the [nfs4_editfacl](https://linux.die.net/man/1/nfs4_editfacl) and [nfs4_setfacl](https://linux.die.net/man/1/nfs4_setfacl) in the Linux documentation.
+To edit the ACL of a file (by using the text editor specified in the `$EDITOR` environment variable), run the [nfs4_editfacl](https://linux.die.net/man/1/nfs4_editfacl) command (or the [nfs4_setfacl](https://linux.die.net/man/1/nfs4_setfacl) command with the `-e` flag).
 
 ### Setting the ACL of a File
 To set the ACL of a file, you can use one of the following commands:

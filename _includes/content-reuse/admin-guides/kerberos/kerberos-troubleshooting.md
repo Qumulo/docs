@@ -58,7 +58,7 @@ Under certain conditions, you might receive mount-failed errors from `mount.nfs`
 
 1. Do one of the following:
 
-   * If you use a machine account or `kinit` authentication, confirm that the credentials are correct. You can use the keytab `ktutil` command or the credential cache `klist` command to list the encryption methods.
+   * If you use a machine account or `kinit` authentication, confirm that the credentials are correct. You can run the keytab `ktutil` command or the credential cache `klist` command to list the encryption methods.
 
    * Confirm that Kerberos tickets use AES-128 or AES-256 for service encryption by examining a packet capture or your Active Directory Kerberos settings.
 

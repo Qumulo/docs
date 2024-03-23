@@ -32,7 +32,7 @@ For more information, see [Authenticating Requests: Using Query Parameters (AWS 
 </ul>
 {{site.data.alerts.end}}
 
-To create a presigned URL, use the AWS CLI [`presign`](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/s3/presign.html) command. In the following example, the presigned URL expires in 10 minutes (600 seconds).
+To create a presigned URL, run the AWS CLI [`presign`](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/s3/presign.html) command. In the following example, the presigned URL expires in 10 minutes (600 seconds).
 
 ```bash
 $ aws2 s3 presign s3://my-bucket/my-file.txt \
@@ -72,7 +72,7 @@ To ensure that anonymous requests have permission to read files in a bucket, gra
 
 ### To Enable Anonymous Access to an S3 Bucket by Using the qq CLI
 
-1. To view the current bucket configuration, use the `qq s3_get_bucket` command and specify the bucket name. For example:
+1. To view the current bucket configuration, run the {% include qq.html command="s3_get_bucket" %} command and specify the bucket name. For example:
 
    ```bash
    $ qq s3_get_bucket \
@@ -90,9 +90,9 @@ To ensure that anonymous requests have permission to read files in a bucket, gra
    }
    ```
 
-1. Anonymous access to S3 buckets is disabled by default. To enable anonymous access, use the `qq s3_modify_bucket` command, specify the bucket name, and use the `--enable-anonymous-access` flag.
+1. Anonymous access to S3 buckets is disabled by default. To enable anonymous access, run the {% include qq.html command="s3_modify_bucket" %} command, specify the bucket name, and use the `--enable-anonymous-access` flag.
 
-1. To disable anonymous access, use the `qq s3_modify_bucket` command, specify the bucket name, and use the `--disable-anonymous-access` flag.
+1. To disable anonymous access, run the {% include qq.html command="s3_modify_bucket" %} command, specify the bucket name, and use the `--disable-anonymous-access` flag.
 
 
 <a id="inheritable-aces"></a>
@@ -124,7 +124,7 @@ To add ACEs to a directory, use the `qq` CLI or use the File Explorer on a Windo
 The following sections show how to use the `qq` CLI to imitate bucket-level permissions by adding inheritable ACEs.
 
 ### Imitating Bucket-Level Read-Write Access
-Run the `qq fs_modify_acl` command. In the following example, we add the access control entry (ACE) to the bucket whose root directory is `/buckets/my-bucket` for the user group `MyWriters`.
+Run the {% include qq.html command="fs_modify_acl" %} command. In the following example, we add the access control entry (ACE) to the bucket whose root directory is `/buckets/my-bucket` for the user group `MyWriters`.
 
 ```bash
 $ qq fs_modify_acl \
@@ -146,7 +146,7 @@ Allowed  Object inherit, Container inherit  Delete child, Execute/Traverse, Read
 
 <a id="bucket-level-read-access"></a>
 ### Imitating Bucket-Level Read-Only Access
-Run the `qq fs_modify_acl` command. In the following example, we add the access control entry (ACE) to the bucket whose root directory is `/buckets/my-bucket` for the user group `MyReaders`:
+Run the {% include qq.html command="fs_modify_acl" %} command. In the following example, we add the access control entry (ACE) to the bucket whose root directory is `/buckets/my-bucket` for the user group `MyReaders`:
 
 ```bash
 $ qq fs_modify_acl
@@ -166,7 +166,7 @@ Allowed  Object inherit, Container inherit  Execute/Traverse, Read
 ```
 
 ### Imitating Bucket-Level List-Only Access
-Run the `qq fs_modify_acl` command. In the following example, we add two access control entries (ACEs) to the bucket whose root directory is `/buckets/my-bucket` for the user group `MyListers`.
+Run the {% include qq.html command="fs_modify_acl" %} command. In the following example, we add two access control entries (ACEs) to the bucket whose root directory is `/buckets/my-bucket` for the user group `MyListers`.
 
 ```bash
 $ qq fs_modify_acl

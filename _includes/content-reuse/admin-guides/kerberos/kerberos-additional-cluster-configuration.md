@@ -3,7 +3,9 @@ When your Qumulo cluster is [joined to AD](kerberos-prerequisites-joining-cluste
 ## To Configure Security Settings by Using the qq CLI
 Qumulo provides configuration for the permitted NFSv4.1 authentication flavors in the `qq` CLI or directly through the Qumulo Core REST API.
 
-1. Use the `qq` CLI to get the current settings:
+1. Run the {% include qq.html command="nfs_get_settings" %} command to get the current settings.
+
+   {{site.exampleOutput}}
 
    ```bash
    $ qq nfs_get_settings
@@ -34,19 +36,19 @@ Qumulo provides configuration for the permitted NFSv4.1 authentication flavors i
      "auth_krb5i_enabled": true
    }
    ```
-1. (Optional) You can also use the following commands.
+1. (Optional) You can also run the following commands.
 
    | Command | Description |
    | ------- | ----------- |
-   | `qq nfs_modify_settings --enable-auth-sys` | Enables `AUTH_SYS` without changing `AUTH_KRB5` |
-   | `qq nfs_modify_settings --enable-krb5` | Enables `AUTH_KRB5` without changing `AUTH_SYS` |
-   | `qq nfs_modify_settings --enable-krb5p` | Enables `AUTH_KRB5P` without changing `AUTH_SYS` |
-   | `qq nfs_modify_settings --enable-krb5i` | Enables `AUTH_KRB5I` without changing `AUTH_SYS` |
-   | `qq nfs_modify_settings --enable-v4` | Enables NFSv4.1 |
-   | `qq nfs_modify_settings --disable-v4` | Disables NFSv4.1 |
-   | `qq nfs_modify_settings --disable-krb5` | Disables `AUTH_KRB5` without changing `AUTH_SYS` |
-   | `qq nfs_modify_settings --disable-krb5p` | Disables `AUTH_KRB5P` without changing `AUTH_SYS` |
-   | `qq nfs_modify_settings --disable-krb5i` | Disables `AUTH_KRB5I` without changing `AUTH_SYS` |
+   | {% include qq.html command="nfs_modify_settings" %} `--enable-auth-sys` | Enables `AUTH_SYS` without changing `AUTH_KRB5` |
+   | {% include qq.html command="nfs_modify_settings" %} `--enable-krb5` | Enables `AUTH_KRB5` without changing `AUTH_SYS` |
+   | {% include qq.html command="nfs_modify_settings" %} `--enable-krb5p` | Enables `AUTH_KRB5P` without changing `AUTH_SYS` |
+   | {% include qq.html command="nfs_modify_settings" %} `--enable-krb5i` | Enables `AUTH_KRB5I` without changing `AUTH_SYS` |
+   | {% include qq.html command="nfs_modify_settings" %} `--enable-v4` | Enables NFSv4.1 |
+   | {% include qq.html command="nfs_modify_settings" %} `--disable-v4` | Disables NFSv4.1 |
+   | {% include qq.html command="nfs_modify_settings" %} `--disable-krb5` | Disables `AUTH_KRB5` without changing `AUTH_SYS` |
+   | {% include qq.html command="nfs_modify_settings" %} `--disable-krb5p` | Disables `AUTH_KRB5P` without changing `AUTH_SYS` |
+   | {% include qq.html command="nfs_modify_settings" %} `--disable-krb5i` | Disables `AUTH_KRB5I` without changing `AUTH_SYS` |
 
 {{site.data.alerts.note}}
 <ul>
