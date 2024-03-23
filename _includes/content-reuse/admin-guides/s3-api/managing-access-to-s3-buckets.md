@@ -72,7 +72,7 @@ To ensure that anonymous requests have permission to read files in a bucket, gra
 
 ### To Enable Anonymous Access to an S3 Bucket by Using the qq CLI
 
-1. To view the current bucket configuration, run the {% include qq.html command="s3_get_bucket" %} and specify the bucket name. For example:
+1. To view the current bucket configuration, run the {% include qq.html command="s3_get_bucket" %} command and specify the bucket name. For example:
 
    ```bash
    $ qq s3_get_bucket \

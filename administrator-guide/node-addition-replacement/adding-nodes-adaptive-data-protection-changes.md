@@ -34,7 +34,7 @@ A cluster's data protection configuration includes the stripe configuration (for
 
 {{site.noteDownUUIDs}}
 
-1. To add your nodes to the cluster, run the {% include qq.html command="add_nodes" %} and specify the node UUIDs (their ordering in the command determines their ordering in the cluster), the configuration type, and the node fault tolerance level.
+1. To add your nodes to the cluster, run the {% include qq.html command="add_nodes" %} command and specify the node UUIDs (their ordering in the command determines their ordering in the cluster), the configuration type, and the node fault tolerance level.
 
    In the following example, we change the stripe configuration to 10.8 and the node fault tolerance level to 2 nodes.
 

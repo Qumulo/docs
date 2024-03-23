@@ -161,7 +161,7 @@ This section describes the troubleshooting steps for a scenario in which an NFS 
 
 1. <a id="dns_resolve_ips"></a>
 
-   To find the client's hostname, run the {% include qq.html command="dns_resolve_ips" %} and specify the client's IP address. For example:
+   To find the client's hostname, run the {% include qq.html command="dns_resolve_ips" %} command and specify the client's IP address. For example:
 
    ```bash
    qq dns_resolve_ips --ips {{site.exampleIP2}}

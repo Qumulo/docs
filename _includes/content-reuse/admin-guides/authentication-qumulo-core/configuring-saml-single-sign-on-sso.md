@@ -142,7 +142,7 @@ Qumulo Core supports three SAML SSO workflows:
 ### qq-CLI-Initiated SSO Workflow
 In Qumulo Core 5.3.0 (and higher), a user can authenticate a `qq` CLI session by using SSO.
 
-1. A user uses the {% include qq.html command="sso_login" %} CLI command. For example:
+1. A user uses the {% include qq.html command="sso_login" %} command. For example:
 
    ```bash
    qq --host {{site.exampleIP0}} sso_login
@@ -180,7 +180,7 @@ In Qumulo Core 5.3.0 (and higher), a user can authenticate a `qq` CLI session by
 </ul>
 {{site.data.alerts.end}}
 
-In Qumulo Core 5.3.0 (and higher), you can run the {% include qq.html command="saml_modify_settings" %} CLI command to require AD users to use SSO authentication for managing your cluster. For example:
+In Qumulo Core 5.3.0 (and higher), you can run the {% include qq.html command="saml_modify_settings" %} command to require AD users to use SSO authentication for managing your cluster. For example:
 
 ```bash
 qq saml_modify_settings --require-sso true

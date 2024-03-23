@@ -36,7 +36,7 @@ Next, the following conditions take effect:
 
 
 ## Determining Snapshots' Storage Usage
-When Qumulo Core tracks the difference between the _saved_ (snapshotted) and _live_ (latest) versions of a file, it creates a _lineage_ of snapshots independent from each other. To determine the amount of data that a single snapshot references, run the {% include qq.html command="snapshot_get_capacity_used_per_snapshot" %} and specify the snapshot ID. For example:
+When Qumulo Core tracks the difference between the _saved_ (snapshotted) and _live_ (latest) versions of a file, it creates a _lineage_ of snapshots independent from each other. To determine the amount of data that a single snapshot references, run the {% include qq.html command="snapshot_get_capacity_used_per_snapshot" %} command and specify the snapshot ID. For example:
 
 ```bash
 qq snapshot_get_capacity_used_per_snapshot \
@@ -45,7 +45,7 @@ qq snapshot_get_capacity_used_per_snapshot \
 
 More than one snapshot can reference _covered data_. It isn't possible to release covered data until you delete all _covering snapshots_ that reference it.
 
-* To determine the total covered data, including data no longer present in the snapshot, run the {% include qq.html command="snapshot_get_capacity_used_per_snapshot" %} and specify multiple, comma-separated snapshot IDs.
+* To determine the total covered data, including data no longer present in the snapshot, run the {% include qq.html command="snapshot_get_capacity_used_per_snapshot" %} command and specify multiple, comma-separated snapshot IDs.
 
 * To determine the total amount of data, including covered data that multiple snapshots reference, run the {% include qq.html command="snapshot_get_total_used_capacity" %} command.
 

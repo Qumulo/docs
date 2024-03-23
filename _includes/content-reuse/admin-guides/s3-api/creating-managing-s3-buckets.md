@@ -1,6 +1,5 @@
 You can create and work with S3 buckets {{site.s3.permissions.APIorCLI}}. {{site.s3.permissions.directAPI}}
 
-
 ## Prerequisites
 To create and manage S3 buckets {{site.s3.permissions.APIorCLI}}, you need the following [role-based access control (RBAC)](../authorization-qumulo-core/managing-role-based-access-control-rbac.html) privileges:
 
@@ -126,7 +125,7 @@ By default, the default bucket directory prefix for newly created buckets is the
    {"enabled": true, "base_path": "/buckets/", ...}
    ```
 
-1. To change the setting, run the {% include qq.html command="s3_modify_settings" %} and specify the new default bucket directory prefix. In the following example, we specify `/buckets`.
+1. To change the setting, run the {% include qq.html command="s3_modify_settings" %} command and specify the new default bucket directory prefix. In the following example, we specify `/buckets`.
 
    ```bash
    $ qq s3_modify_settings \
@@ -142,7 +141,7 @@ When you use the `qq` CLI to create a bucket, you can use a new or existing dire
 
 {% include note.html content="If an entry with the specified name or directory already exists, or if you don't have permission to create a directory, the command returns an error. For more information, see [Configuring the Default Bucket Directory Prefix for S3 Buckets](#default-directory-prefix)." %}
 
-* To create a new, empty bucket from the {{page.varDefaultPrefix}}, run the {% include qq.html command="s3_add_bucket" %} and specify the bucket name. For example:
+* To create a new, empty bucket from the {{page.varDefaultPrefix}}, run the {% include qq.html command="s3_add_bucket" %} command and specify the bucket name. For example:
 
   ```bash
   $ qq s3_add_bucket \
@@ -151,7 +150,7 @@ When you use the `qq` CLI to create a bucket, you can use a new or existing dire
 
   Qumulo Core creates a new directory named `my-bucket` under the default bucket directory prefix.
 
-* To create a bucket from an existing directory, run the {% include qq.html command="s3_add_bucket" %} and specify the bucket name and the directory path. For example:
+* To create a bucket from an existing directory, run the {% include qq.html command="s3_add_bucket" %} command and specify the bucket name and the directory path. For example:
 
   ```bash
   $ qq s3_add_bucket \
@@ -274,7 +273,7 @@ To delete an S3 bucket {{site.s3.permissions.APIorCLI}}, you need {{site.s3.perm
 
 When you use the `qq` CLI to delete a bucket, you can choose to also delete the bucket root directory.
 
-* To delete an S3 bucket, but not its root directory, run the {% include qq.html command="s3_delete_bucket" %} and specify the bucket name. For example:
+* To delete an S3 bucket, but not its root directory, run the {% include qq.html command="s3_delete_bucket" %} command and specify the bucket name. For example:
 
   ```bash
   $ qq s3_delete_bucket \
@@ -291,7 +290,7 @@ When you use the `qq` CLI to delete a bucket, you can choose to also delete the 
   
   * {{varMpuInProgress}}
 
-* To delete a bucket together with its root directory, use the {% include qq.html command="s3_delete_bucket" %}, specify the bucket name, and use the `--delete-root-dir` flag. For example:
+* To delete a bucket together with its root directory, use the {% include qq.html command="s3_delete_bucket" %} command, specify the bucket name, and use the `--delete-root-dir` flag. For example:
 
   ```bash
   $ qq s3_delete_bucket \

@@ -158,7 +158,7 @@ $ qq multitenancy_get_tenant \
 </ul>
 {{site.data.alerts.end}}
 
-To delete a tenant, run the {% include qq.html command="multitenancy_delete_tenant" %} and specify the tenant ID.
+To delete a tenant, run the {% include qq.html command="multitenancy_delete_tenant" %} command and specify the tenant ID.
 
 ```bash
 $ qq multitenancy_delete_tenant \

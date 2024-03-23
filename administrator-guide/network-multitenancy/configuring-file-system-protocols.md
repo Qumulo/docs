@@ -55,7 +55,7 @@ $ qq multitenancy_nfs_modify_settings \
   --disable-v4
 ```
 
-To revert to the global setting for a specific tenant, run the {% include qq.html command="multitenancy_nfs_delete_settings" %} and specify the tenant ID. For example:
+To revert to the global setting for a specific tenant, run the {% include qq.html command="multitenancy_nfs_delete_settings" %} command and specify the tenant ID. For example:
 
 ```bash
 $ qq multitenancy_nfs_delete_settings \
@@ -67,7 +67,7 @@ To isolate clients within a network in specific directories in the file system, 
 
 {% include note.html content="Because each new tenant has no exports initially, to give clients within that tenant's network access to the cluster over NFS, you must add exports. For more information, see [Create an NFS Export](https://care.qumulo.com/hc/en-us/articles/360000723928) on Qumulo Care." %}
 
-To create an NFS export for a tenant, run the {% include qq.html command="nfs_add_export" %} and specify the tenant ID, the export path, and the file system path and use the `--no-restrictions` flag. In the following example, a cluster lets clients access directory `/my-directory` from the export `/my-export` when the clients are in the network assigned to the tenant.
+To create an NFS export for a tenant, run the {% include qq.html command="nfs_add_export" %} command and specify the tenant ID, the export path, and the file system path and use the `--no-restrictions` flag. In the following example, a cluster lets clients access directory `/my-directory` from the export `/my-export` when the clients are in the network assigned to the tenant.
 
 ```bash
 $ qq nfs_add_export \
@@ -125,7 +125,7 @@ $ qq multitenancy_smb_modify_settings \
   --encryption-mode none
 ```
 
-To revert to the global setting for a specific tenant, run the {% include qq.html command="multitenancy_smb_delete_settings" %} and specify the tenant ID. For example:
+To revert to the global setting for a specific tenant, run the {% include qq.html command="multitenancy_smb_delete_settings" %} command and specify the tenant ID. For example:
 
 ```bash
 $ qq multitenancy_smb_delete_settings \
@@ -137,7 +137,7 @@ To isolate clients within a network in specific directories in the file system, 
 
 {% include note.html content="Because each new tenant has no shares initially, to give clients within that tenant's network access to the cluster over SMB, you must add shares. For more information, see [Create an SMB Share](https://care.qumulo.com/hc/en-us/articles/360000722428) on Qumulo Care." %}
 
-To create an SMB share for a tenant, run the {% include qq.html command="smb_add_share" %} and specify the tenant ID, the share path, and the file system path and use the `--all-access` flag. In the following example, a cluster lets clients access access directory `/my-directory` from the share `/my-share` when the clients are in the network assigned to the tenant.
+To create an SMB share for a tenant, run the {% include qq.html command="smb_add_share" %} command and specify the tenant ID, the share path, and the file system path and use the `--all-access` flag. In the following example, a cluster lets clients access access directory `/my-directory` from the share `/my-share` when the clients are in the network assigned to the tenant.
 
 ```bash
 $ qq smb_add_share \
