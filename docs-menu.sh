@@ -52,7 +52,7 @@ check_spelling_errors() {
 ingest_docs_portal() {
     echo "Ingesting docs.qumulo.com into Vectara corpus 2..."
     
-    if [ ! -d "~/git/vectara-ingest" ]; then
+    if [ ! -d ~/git/vectara-ingest ]; then
         echo "You must first clone the Vectara Ingest repository: https://github.com/Qumulo/vectara-ingest"
         return 1
     fi
@@ -70,7 +70,7 @@ ingest_docs_portal() {
 ingest_docs_portal() {
     echo "Ingesting docs.qumulo.com into Vectara..."
 
-    if [ ! -d "~/git/vectara-ingest" ]; then
+    if [ ! -d ~/git/vectara-ingest ]; then
         echo "You must first clone the Vectara Ingest repository: https://github.com/Qumulo/vectara-ingest"
         return 1
     fi
@@ -88,7 +88,7 @@ ingest_docs_portal() {
 ingest_corp_site() {
     echo "Ingesting docs.qumulo.com into Vectara..."
 
-    if [ ! -d "~/git/vectara-ingest" ]; then
+    if [ ! -d ~/git/vectara-ingest ]; then
         echo "You must first clone the Vectara Ingest repository: https://github.com/Qumulo/vectara-ingest"
         return 1
     fi
@@ -104,7 +104,7 @@ ingest_corp_site() {
 
 # Chedk ingestion status
 check_ingestion_status() {
-    docker ps -a --filter "name=vingest_" --format "table {{.Names}}\t{{.Status}}"
+    docker logs -f vingest
 }
 
 while true; do
