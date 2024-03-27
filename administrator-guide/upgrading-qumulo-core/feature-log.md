@@ -13,6 +13,8 @@ For information about upgrade types for each release, see <a href='mode-referenc
 
 ## Qumulo Core 7.0.2
 {{page.varDownloadsRelnotes}}
+* Added the ability for the system to explain user access that an S3 bucket access policy allows
+* Made changes to the REST API and `qq` CLI to support this functionality 
 
 ## Qumulo Core 7.0.1.1
 {{page.varDownloadsRelnotes}}
