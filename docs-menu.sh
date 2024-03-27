@@ -48,18 +48,85 @@ check_spelling_errors() {
     docker run --rm --user $(id -u):$(id -g) --name docs-container-proof -v $(pwd):/src:rw docs-builder proof
 }
 
+# Ingest docs.qumulo.com into Vectara corpus 2
+ingest_docs_portal() {
+    echo "Ingesting docs.qumulo.com into Vectara corpus 2..."
+    
+    if [ ! -d "~/git/vectara-ingest" ]; then
+        echo "You must first clone the Vectara Ingest repository: https://github.com/Qumulo/vectara-ingest"
+        return 1
+    fi
+
+    python_version=$(python -c 'import sys; print(sys.version_info[0])')
+    
+    if [ "$python_version" -lt 3 ]; then
+        export PATH=$(echo $PATH | sed "s|/opt/qumulo[^:]*:||g")
+    fi
+ 
+    cd ~/git/vectara-ingest; ./run.sh config/qumulo-documentation-portal-v2.yaml default; cd -
+}
+
+# Ingest care.qumulo.com into Vectara corpus 4
+ingest_docs_portal() {
+    echo "Ingesting docs.qumulo.com into Vectara..."
+
+    if [ ! -d "~/git/vectara-ingest" ]; then
+        echo "You must first clone the Vectara Ingest repository: https://github.com/Qumulo/vectara-ingest"
+        return 1
+    fi
+
+    python_version=$(python -c 'import sys; print(sys.version_info[0])')
+
+    if [ "$python_version" -lt 3 ]; then
+        export PATH=$(echo $PATH | sed "s|/opt/qumulo[^:]*:||g")
+    fi
+
+    cd ~/git/vectara-ingest; ./run.sh config/qumulo-care-v2.yaml default; cd -
+}
+
+# Ingest qumulo.com into Vectara corpus 5
+ingest_corp_site() {
+    echo "Ingesting docs.qumulo.com into Vectara..."
+
+    if [ ! -d "~/git/vectara-ingest" ]; then
+        echo "You must first clone the Vectara Ingest repository: https://github.com/Qumulo/vectara-ingest"
+        return 1
+    fi
+
+    python_version=$(python -c 'import sys; print(sys.version_info[0])')
+
+    if [ "$python_version" -lt 3 ]; then
+        export PATH=$(echo $PATH | sed "s|/opt/qumulo[^:]*:||g")
+    fi
+
+    cd ~/git/vectara-ingest; ./run.sh config/qumulo-main-v2.yaml default; cd -
+}
+
+# Chedk ingestion status
+check_ingestion_status() {
+    docker ps -a --filter "name=vingest_" --format "table {{.Names}}\t{{.Status}}"
+}
+
 while true; do
     echo -e "\033[1;33m🤖 Welcome to the Documentation Portal Repository\033[0m"
     echo ""
-    echo "1. 🚧 Rebuild the docs-builder container"
-    echo "2. ⚙️  Build HTML documentation"
-    echo "3. ⚙️  Build PDF documentation (requires Prince XML)"
-    echo "4. 🖥️  Only serve the documentation locally"
-    echo "5. ⚙️  🖥️  Build the documentation and serve it locally"
-    echo "6. ⚙️  🖥️  Build the documentation and serve it locally with LiveReload (can be unstable)"
-    echo "7. 📋 Check the documentation for link, script, and image errors"
-    echo "8. 📋 Check the documentation for spelling errors"
-    echo "q. 👋 Quit"
+    echo "Note: Building PDF documentation requires the docs-internal repo and Prince XML."
+    echo "      Ingesting websites into Vectara requires the vectara-ingest repo with secrets.toml."
+    echo ""
+    echo "1.  🚧 Rebuild the docs-builder container"
+    echo "2.  ⚙️  Build HTML documentation"
+    echo "3.  ⚙️  Build PDF documentation"
+    echo "4.  🖥️  Only serve the documentation locally"
+    echo "5.  ⚙️  🖥️  Build the documentation and serve it locally"
+    echo "6.  ⚙️  🖥️  Build the documentation and serve it locally with LiveReload (can be unstable)"
+    echo "7.  📋 Check the documentation for link, script, and image errors"
+    echo "8.  📋 Check the documentation for spelling errors"
+    echo "9.  🔍 Ingest docs.qumulo.com into Vectara"
+    echo "10. 🔍 Ingest care.qumulo.com into Vectara"
+    echo "11. 🔍 Ingest qumulo.com into Vectara"
+    echo "12. 📋 Check ingestion status"
+    echo ""
+    echo "q.  👋 Quit"
     echo ""
     read -p $'\033[1;33mWhat would you like to do? \033[0m' choice
 
@@ -72,6 +139,10 @@ while true; do
         6) build_serve_docs_locally_jekyll ;;
         7) check_docs_errors ;;
         8) check_spelling_errors ;;
+        9) ingest_docs_portal ;;
+        10) ingest_care_portal ;;
+        11) ingest_corp_site ;;
+        12) check_ingestion_status ;;
         q) exit ;;
         *) echo "Enter a valid option." ;;
     esac
