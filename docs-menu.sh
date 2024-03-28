@@ -146,6 +146,7 @@ check_ingestion_status() {
 }
 
 while true; do
+    echo
     echo -e "\033[1;33m🤖 Welcome to the Documentation Portal Repository\033[0m"
     echo
     echo "1.  🚧 Rebuild the docs-builder container"
@@ -160,7 +161,7 @@ while true; do
     echo "10. 🔍 Ingest care.qumulo.com into Vectara"
     echo "11. 🔍 Ingest qumulo.com into Vectara"
     echo "12. 📋 Check ingestion status"
-    echo "13.  👋 Quit"
+    echo "q.  👋 Quit"
     echo
     read -p $'\033[1;33mWhat would you like to do? \033[0m' choice
 
@@ -177,7 +178,7 @@ while true; do
         10) ingest_care_portal ;;
         11) ingest_corp_site ;;
         12) check_ingestion_status ;;
-        13) exit ;;
+        q) exit ;;
         *) echo "You must enter a valid option." ;;
     esac
 done
