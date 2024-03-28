@@ -48,14 +48,46 @@ check_spelling_errors() {
     docker run --rm --user $(id -u):$(id -g) --name docs-container-proof -v $(pwd):/src:rw docs-builder proof
 }
 
-# Ingest docs.qumulo.com into Vectara corpus 2
-ingest_docs_portal() {
-    echo "Ingesting docs.qumulo.com into Vectara corpus 2..."
-    
+# Function to check for the Vectara Ingest repository
+check_vectara_ingest_repo() {
     if [ ! -d ~/git/vectara-ingest ]; then
         echo "You must first clone the Vectara Ingest repository: https://github.com/Qumulo/vectara-ingest"
         return 1
+    else
+        return 0
     fi
+}
+
+# Function to check for the secrets.toml file
+check_secrets_toml() {
+    if [ ! -f ~/git/vectara-ingest/secrets.toml ]; then
+        echo ""
+        echo "To ingest data into Vectara, you must add secrets.toml to your Vectara Ingest directory"
+        echo "and then add your API keys to secrets.toml in the following format:"
+        echo
+        echo "[general]"
+        echo "api = 'vectara_api_value'"
+        echo
+        echo "[default]"
+        echo "api_key=\"<IndexService API Key>\""
+        echo
+        return 1
+    else
+        return 0
+    fi
+}
+
+# Ingest docs.qumulo.com into Vectara corpus 2
+ingest_docs_portal() {
+    echo "Ingesting docs.qumulo.com into Vectara corpus 2..."
+
+    if ! check_vectara_ingest_repo; then
+        return 1
+    fi
+
+    if ! check_secrets_toml; then
+        return 1
+    fi    
 
     python_version=$(python -c 'import sys; print(sys.version_info[0])')
     
@@ -70,8 +102,11 @@ ingest_docs_portal() {
 ingest_docs_portal() {
     echo "Ingesting docs.qumulo.com into Vectara..."
 
-    if [ ! -d ~/git/vectara-ingest ]; then
-        echo "You must first clone the Vectara Ingest repository: https://github.com/Qumulo/vectara-ingest"
+    if ! check_vectara_ingest_repo; then
+        return 1
+    fi
+
+    if ! check_secrets_toml; then
         return 1
     fi
 
@@ -88,8 +123,11 @@ ingest_docs_portal() {
 ingest_corp_site() {
     echo "Ingesting docs.qumulo.com into Vectara..."
 
-    if [ ! -d ~/git/vectara-ingest ]; then
-        echo "You must first clone the Vectara Ingest repository: https://github.com/Qumulo/vectara-ingest"
+    if ! check_vectara_ingest_repo; then
+        return 1
+    fi
+
+    if ! check_secrets_toml; then
         return 1
     fi
 
