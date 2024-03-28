@@ -115,7 +115,7 @@ You can use _global settings_ that apply to all tenants. For example, to require
 
 * [Hiding an SMB Share](../authorization-qumulo-core/using-smb-host-restrictions.html#hiding-an-smb-share)
 
-* [Snapshots: Snapshot Directory Mode](https://care.qumulo.com/hc/en-us/articles/360042053973)
+* {% include qq.html command="smb_modify_settings" %} in the {{site.guides.cli}} (set the `--snapshot-directory-mode` flag to `visible`, `hidden`, or `disabled`)
 
 To override this global setting, run the {% include qq.html command="multitenancy_smb_modify_settings" %} command to allow clients on only specific networks to require encryption. In the following example, despite the global setting, the specified tenant accepts unencrypted SMB requests on all networks assigned to the tenant.
 

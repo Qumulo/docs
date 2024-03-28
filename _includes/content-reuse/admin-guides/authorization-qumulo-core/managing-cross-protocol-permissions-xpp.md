@@ -47,4 +47,10 @@ Qumulo Core enables and disables XPP immediately, without scanning the directory
 
 
 ## Troubleshooting the Permissions for a File or Directory
-Explain Permissions Tools is a suite of diagnostic utilities that examines a file or directory and explains how the permissions for the file or directory were devised. For more information, see [Cross-Protocol (XPP) Explain Permissions Tools](https://care.qumulo.com/hc/en-us/articles/360019923994-Cross-Protocol-Explain-Permissions-Tools) on Qumulo Care.
+Explain Permissions Tools is a suite of diagnostic utilities that examines a file or directory and explains the structure of permissions for the file or directory. For more information, see the following sections in the {{site.guides.cli}}:
+
+* {% include qq.html command="fs_acl_explain_chmod" %}
+
+* {% include qq.html command="fs_acl_explain_posix_mode" %}
+
+* {% include qq.html command="fs_acl_explain_rights" %}
