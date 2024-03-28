@@ -70,7 +70,7 @@ do
     "Exit")
       exit 0
       ;;
-    *) echo "$REPLY is not valid. Try again."
+    *) echo "You must enter a valid option."
     ;;
   esac
 done
