@@ -61,7 +61,7 @@ check_vectara_ingest_repo() {
 # Function to check for the secrets.toml file
 check_secrets_toml() {
     if [ ! -f ~/git/vectara-ingest/secrets.toml ]; then
-        echo ""
+        echo
         echo "To ingest data into Vectara, you must add secrets.toml to your Vectara Ingest directory"
         echo "and then add your API keys to secrets.toml in the following format:"
         echo
@@ -147,10 +147,7 @@ check_ingestion_status() {
 
 while true; do
     echo -e "\033[1;33m🤖 Welcome to the Documentation Portal Repository\033[0m"
-    echo ""
-    echo "Note: Building PDF documentation requires the docs-internal repo and Prince XML."
-    echo "      Ingesting websites into Vectara requires the vectara-ingest repo with secrets.toml."
-    echo ""
+    echo
     echo "1.  🚧 Rebuild the docs-builder container"
     echo "2.  ⚙️  Build HTML documentation"
     echo "3.  ⚙️  Build PDF documentation"
@@ -163,9 +160,8 @@ while true; do
     echo "10. 🔍 Ingest care.qumulo.com into Vectara"
     echo "11. 🔍 Ingest qumulo.com into Vectara"
     echo "12. 📋 Check ingestion status"
-    echo ""
     echo "q.  👋 Quit"
-    echo ""
+    echo
     read -p $'\033[1;33mWhat would you like to do? \033[0m' choice
 
     case $choice in

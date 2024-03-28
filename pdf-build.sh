@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# Check if Prince XML is installed
+if ! command -v prince &> /dev/null; then
+    echo "To generate PDF files, you must install Prince XML: https://www.princexml.com/download/"
+    exit 1
+fi
+
 # Exit when you hit an error
 set -e
 
@@ -9,16 +15,19 @@ if [ $(docker ps | grep -c 'docs-container$') -gt 0 ]; then
   docker kill docs-container || true 
   docker wait docs-container || true
 fi
+echo
+echo -e "📄 \033[1;33mBuild PDF documentation\033[0m"
 
 # Declaring a future array of actions
 # Actions are what the script will do
 ACTIONS=()
 
 # Options are what the user will choose
-PS3='Choose a guide to build:'
+PS3='What would you like to build? '
 
 # Prints the options on screen
-options=("Qumulo-Certified Hardware Servicing Guide" "Azure Native Qumulo Administrator Guide" "Qumulo On-Premises Administrator Guide" "Qumulo Alerts Guide" "Qumulo qq CLI Command Guide" "Qumulo Integration Guide" "All Guides")
+options=("Qumulo-Certified Hardware Servicing Guide" "Azure Native Qumulo Administrator Guide" "Qumulo On-Premises Administrator Guide" "Qumulo Alerts Guide" "Qumulo qq CLI Command Guide" "Qumulo Integration Guide" "All Administrator Guides" "All Guides" "Exit")
+echo
 
 select opt in "${options[@]}"
 
@@ -50,11 +59,17 @@ do
       ACTIONS+=("Integration_Guide")
       break
       ;;
+    "All Administrator Guides")
+      ACTIONS+=("Azure_Guide" "Administrator_Guide")
+      break
+      ;;
     "All Guides")
-      # Perform all of the actions
       ACTIONS+=("Hardware_Guide" "Azure_Guide" "Administrator_Guide" "Qumulo_Alerts_Guide" "Qumulo_qq_CLI_Command_Guide" "Integration_Guide")
       break
-      ;;      
+      ;;
+    "Exit")
+      exit 0
+      ;;
     *) echo "$REPLY is not valid. Try again."
     ;;
   esac
