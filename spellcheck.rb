@@ -74,7 +74,7 @@ ignore_files = File.exist?('.spelling-ignorefiles') ? File.readlines('.spelling-
 # Array to store incorrect words with their filename and line number
 incorrect_words = []
 
-FFI::Hunspell.dict do |dict|
+FFI::Hunspell.dict('en_US') do |dict|
   Dir.glob("**/*.md").each do |filename|
     next if ignore_files.any? { |ignore_file| File.fnmatch?(ignore_file, filename) }
 
