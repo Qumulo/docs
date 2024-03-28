@@ -95,7 +95,7 @@ ingest_docs_portal() {
         export PATH=$(echo $PATH | sed "s|/opt/qumulo[^:]*:||g")
     fi
  
-    cd ~/git/vectara-ingest; ./run.sh config/qumulo-documentation-portal-v2.yaml default; cd -
+    cd ~/git/vectara-ingest; ./run.sh config/qumulo-documentation-portal-v3.yaml default; cd -
 }
 
 # Ingest care.qumulo.com into Vectara corpus 4
@@ -116,7 +116,7 @@ ingest_care_portal() {
         export PATH=$(echo $PATH | sed "s|/opt/qumulo[^:]*:||g")
     fi
 
-    cd ~/git/vectara-ingest; ./run.sh config/qumulo-care-v2.yaml default; cd -
+    cd ~/git/vectara-ingest; ./run.sh config/qumulo-care-v3.yaml default; cd -
 }
 
 # Ingest qumulo.com into Vectara corpus 5
@@ -137,7 +137,7 @@ ingest_corp_site() {
         export PATH=$(echo $PATH | sed "s|/opt/qumulo[^:]*:||g")
     fi
 
-    cd ~/git/vectara-ingest; ./run.sh config/qumulo-main-v2.yaml default; cd -
+    cd ~/git/vectara-ingest; ./run.sh config/qumulo-main-v3.yaml default; cd -
 }
 
 # Chedk ingestion status
