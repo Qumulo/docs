@@ -1,5 +1,38 @@
 #!/bin/bash
 
+# Install Docker and explain group changes
+install_docker() {
+  if ! command -v docker &> /dev/null; then
+    echo "Docker is required for documentation builds. Install Docker? (y/n)"
+    read -r answer
+    if [ "$answer" = "y" ]; then
+      echo "Installing Docker..."
+      sudo apt-get update && sudo apt-get install -y docker.io
+      sudo usermod -aG docker "$(whoami)"
+      sudo service docker start
+      echo "For the group change to take effect, you must log out of the system and then log back in."
+    elif [ "$answer" = "n" ]; then
+      echo "Can't continue without installing Docker. Exiting..."
+      return 1
+    fi
+  fi
+}
+
+# Install Noto Color Emoji required for documentation builds
+install_noto_emoji() {
+  if ! dpkg -l | grep -qw fonts-noto-color-emoji; then
+    echo "fonts-noto-color-emoji is required for documentation builds. Install package? (y/n)"
+    read -r answer
+    if [ "$answer" = "y" ]; then
+      echo "Installing fonts-noto-color-emoji..."
+      sudo apt-get update && sudo apt-get install -y fonts-noto-color-emoji
+    elif [ "$answer" = "n" ]; then
+      echo "Continue without installing fonts-noto-color-emoji."
+    fi
+  fi
+}
+
+
 # Rebuild the docs-builder container
 rebuild_container() {
     echo "Rebuilding the docs-builder container..."
@@ -9,7 +42,6 @@ rebuild_container() {
 # List CLI documentation with appended content
 find_modified_cli(){
 echo "Searching for CLI documentation with manually appended content..."
-echo
 find ~/git/docs-internal/qq-cli-command-guide -type f -name "*.md" | while read file; do
     start_line=$(grep -n -- '---' "$file" | sed '2q;d' | cut -d: -f1)
     if [ ! -z "$start_line" ]; then
@@ -182,6 +214,9 @@ ingest_corp_site() {
 check_ingestion_status() {
     docker logs -f vingest
 }
+
+install_docker
+install_noto_emoji
 
 while true; do
     echo
