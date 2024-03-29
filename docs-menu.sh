@@ -1,5 +1,50 @@
 #!/bin/bash
 
+# Check that the src repository exists
+check_docs_internal_repo() {
+    if [ ! -d ~/git/docs-internal ]; then
+        echo "You must first clone the docs-internal repository to ~/git: https://github.com/Qumulo/docs-internal"
+        echo "Exiting..."
+        exit 1
+    fi
+}
+
+# Check that the Vectara Ingest repository exists
+check_vectara_ingest_repo() {
+    if [ ! -d ~/git/vectara-ingest ]; then
+        echo "You must first clone the Vectara Ingest repository to ~/git: https://github.com/Qumulo/vectara-ingest"
+        echo "Exiting..."
+        exit 1
+    fi
+}
+
+# Check that the secrets.toml file exists
+check_secrets_toml() {
+    if [ ! -f ~/git/vectara-ingest/secrets.toml ]; then
+        echo
+        echo "To ingest data into Vectara, you must add secrets.toml to your Vectara Ingest directory"
+        echo "and then add your API keys to secrets.toml in the following format:"
+        echo
+        echo "[general]"
+        echo "api = 'vectara_api_value'"
+        echo
+        echo "[default]"
+        echo "api_key=\"<IndexService API Key>\""
+        echo
+        echo "Exiting..."
+        exit 1
+    fi
+}
+
+# Check whether the user is running Python 2 or Python 3
+check_python_version() {
+    python_version=$(python -c 'import sys; print(sys.version_info[0])')
+    if [ "$python_version" -lt 3 ]; then
+        export PATH=$(echo $PATH | sed "s|/opt/qumulo[^:]*:||g")
+    fi
+}
+
+
 # Install Docker and explain group changes
 install_docker() {
   if ! command -v docker &> /dev/null; then
@@ -13,7 +58,7 @@ install_docker() {
       echo "For the group change to take effect, you must log out of the system and then log back in."
     elif [ "$answer" = "n" ]; then
       echo "Can't continue without installing Docker. Exiting..."
-      return 1
+      exit 1
     fi
   fi
 }
@@ -52,7 +97,6 @@ find_modified_cli(){
             echo -e "\033[0;31m$file\033[0m"
             echo "$content"
             echo
-            # Ensure the script does not break; it should continue checking other files.
         fi
     fi
   done
@@ -68,21 +112,15 @@ find_modified_cli(){
 check_src_repo() {
     if [ ! -d ~/src ]; then
         echo "You must first clone the Vectara Ingest repository: https://qumulo.atlassian.net/wiki/spaces/EN/pages/1167851855/Manually+Checking+Out+Source"
-        return 1
-    else
-        return 0
+        exit 1
     fi
 }
 
 # Regenerate CLI documentation
 regen_cli_docs() {
     echo "Regenerating CLI documentation..."
-
-    if ! check_src_repo; then
-        return 1
-    fi
-
-    cd ~/src ; hg up default ; hg fetch ; ~/src/tools/extract_cli_help.py --base-dir ~/git/docs-internal ; cd -
+    check_src_repo
+    cd ~/src && hg up default && hg fetch && ~/src/tools/extract_cli_help.py --base-dir ~/git/docs-internal && cd -
 }
 
 # Build HTML documentation by using Jekyll
@@ -100,13 +138,13 @@ build_pdf_docs() {
 # Build the documentation and serve it locally on port 4000 by using http.server
 build_serve_docs_locally_python() {
     echo "Building documentation and serving it locally on port 4000 by using http.server..."
-    docker run --rm --user $(id -u):$(id -g) --name docs-container-build -v $(pwd):/src:rw docs-builder && cd _site && python3 -m http.server 4000; cd ..
+    docker run --rm --user $(id -u):$(id -g) --name docs-container-build -v $(pwd):/src:rw docs-builder && cd _site && python3 -m http.server 4000 && cd ..
 }
 
 # Only serve the documenttion locally on port 4000 by using http.server
 only_serve_docs_locally_python() {
     echo "Serving documentation locally on port 4000 by using http.server..."
-    cd _site && python3 -m http.server 4000; cd ..
+    cd _site && python3 -m http.server 4000 && cd ..
 }
 
 # Build the documentation and serve it locally on port 4000 by using Jekyll LiveReload
@@ -127,96 +165,31 @@ check_spelling_errors() {
     docker run --rm --user $(id -u):$(id -g) --name docs-container-proof -v $(pwd):/src:rw docs-builder proof
 }
 
-# Function to check for the Vectara Ingest repository
-check_vectara_ingest_repo() {
-    if [ ! -d ~/git/vectara-ingest ]; then
-        echo "You must first clone the Vectara Ingest repository: https://github.com/Qumulo/vectara-ingest"
-        return 1
-    else
-        return 0
-    fi
-}
-
-# Function to check for the secrets.toml file
-check_secrets_toml() {
-    if [ ! -f ~/git/vectara-ingest/secrets.toml ]; then
-        echo
-        echo "To ingest data into Vectara, you must add secrets.toml to your Vectara Ingest directory"
-        echo "and then add your API keys to secrets.toml in the following format:"
-        echo
-        echo "[general]"
-        echo "api = 'vectara_api_value'"
-        echo
-        echo "[default]"
-        echo "api_key=\"<IndexService API Key>\""
-        echo
-        return 1
-    else
-        return 0
-    fi
-}
-
 # Ingest docs.qumulo.com into Vectara corpus 2
 ingest_docs_portal() {
     echo "Ingesting docs.qumulo.com into Vectara corpus 2..."
-
-    if ! check_vectara_ingest_repo; then
-        return 1
-    fi
-
-    if ! check_secrets_toml; then
-        return 1
-    fi    
-
-    python_version=$(python -c 'import sys; print(sys.version_info[0])')
-    
-    if [ "$python_version" -lt 3 ]; then
-        export PATH=$(echo $PATH | sed "s|/opt/qumulo[^:]*:||g")
-    fi
- 
-    cd ~/git/vectara-ingest; ./run.sh config/qumulo-documentation-portal-v3.yaml default; cd -
+    check_vectara_ingest_repo
+    check_secrets_toml
+    check_python_version
+    cd ~/git/vectara-ingest && ./run.sh config/qumulo-documentation-portal-v3.yaml default && cd -
 }
 
 # Ingest care.qumulo.com into Vectara corpus 4
 ingest_care_portal() {
     echo "Ingesting cqre.qumulo.com into Vectara..."
-
-    if ! check_vectara_ingest_repo; then
-        return 1
-    fi
-
-    if ! check_secrets_toml; then
-        return 1
-    fi
-
-    python_version=$(python -c 'import sys; print(sys.version_info[0])')
-
-    if [ "$python_version" -lt 3 ]; then
-        export PATH=$(echo $PATH | sed "s|/opt/qumulo[^:]*:||g")
-    fi
-
-    cd ~/git/vectara-ingest; ./run.sh config/qumulo-care-v3.yaml default; cd -
+    check_vectara_ingest_repo
+    check_secrets_toml
+    check_python_version
+    cd ~/git/vectara-ingest && ./run.sh config/qumulo-care-v3.yaml default && cd -
 }
 
 # Ingest qumulo.com into Vectara corpus 5
 ingest_corp_site() {
     echo "Ingesting docs.qumulo.com into Vectara..."
-
-    if ! check_vectara_ingest_repo; then
-        return 1
-    fi
-
-    if ! check_secrets_toml; then
-        return 1
-    fi
-
-    python_version=$(python -c 'import sys; print(sys.version_info[0])')
-
-    if [ "$python_version" -lt 3 ]; then
-        export PATH=$(echo $PATH | sed "s|/opt/qumulo[^:]*:||g")
-    fi
-
-    cd ~/git/vectara-ingest; ./run.sh config/qumulo-main-v3.yaml default; cd -
+    check_vectara_ingest_repo
+    check_secrets_toml
+    check_python_version
+    cd ~/git/vectara-ingest && ./run.sh config/qumulo-main-v3.yaml default && cd -
 }
 
 # Check ingestion status
@@ -224,6 +197,7 @@ check_ingestion_status() {
     docker logs -f vingest
 }
 
+check_docs_internal_repo
 install_docker
 install_noto_emoji
 
