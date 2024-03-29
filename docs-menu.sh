@@ -41,7 +41,7 @@ regen_cli_docs() {
         return 1
     fi
 
-    ~/src/tools/extract_cli_help.py ; cd -
+    cd ~/src ; hg up default ; hg fetch ; ~/src/tools/extract_cli_help.py ; cd -
 }
 
 # Build HTML documentation by using Jekyll
