@@ -40,18 +40,28 @@ rebuild_container() {
 
 # List CLI documentation with appended content
 find_modified_cli(){
-echo "Searching for CLI documentation with manually appended content..."
-find ~/git/docs-internal/qq-cli-command-guide -type f -name "*.md" | while read file; do
+  echo "Searching for CLI documentation with manually appended content..."
+  local flag_file=$(mktemp)
+  find ~/git/docs-internal/qq-cli-command-guide -type f -name "*.md" | while IFS= read -r file; do
     start_line=$(grep -n -- '---' "$file" | sed '2q;d' | cut -d: -f1)
     if [ ! -z "$start_line" ]; then
-        content=$(tail -n +$((start_line + 1)) "$file" | awk 'NF {if(count<5)print; count++} END {if(count>5) print "..."}')
+        content=$(tail -n +$((start_line + 1)) "$file" | awk 'NF {if(count<5)print; count++} END {if(count>=5) print "..."}')
         if [[ $content =~ [^[:space:]] ]]; then
+            # File found, delete the flag file
+            rm -f "$flag_file"
             echo -e "\033[0;31m$file\033[0m"
             echo "$content"
             echo
+            # Ensure the script does not break; it should continue checking other files.
         fi
     fi
-done
+  done
+  
+  if [ -f "$flag_file" ]; then
+    echo "Can't find files with manually appended content."
+    # Clean up the flag file
+    rm -f "$flag_file"
+  fi
 }
 
 # Function to check for the src repository
