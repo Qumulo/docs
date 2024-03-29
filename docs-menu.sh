@@ -23,6 +23,27 @@ find ~/git/docs-internal/qq-cli-command-guide -type f -name "*.md" | while read 
 done
 }
 
+# Function to check for the src repository
+check_src_repo() {
+    if [ ! -d ~/src ]; then
+        echo "You must first clone the Vectara Ingest repository: https://qumulo.atlassian.net/wiki/spaces/EN/pages/1167851855/Manually+Checking+Out+Source"
+        return 1
+    else
+        return 0
+    fi
+}
+
+# Regenerate CLI documentation
+regen_cli_docs() {
+    echo "Regenerating CLI documentation..."
+
+    if ! check_src_repo; then
+        return 1
+    fi
+
+    ~/src/tools/extract_cli_help.py ; cd -
+}
+
 # Build HTML documentation by using Jekyll
 build_html_docs() {
     echo "Building HTML documentation..."
@@ -157,7 +178,7 @@ ingest_corp_site() {
     cd ~/git/vectara-ingest; ./run.sh config/qumulo-main-v3.yaml default; cd -
 }
 
-# Chedk ingestion status
+# Check ingestion status
 check_ingestion_status() {
     docker logs -f vingest
 }
@@ -166,37 +187,39 @@ while true; do
     echo
     echo -e "\033[1;33m🤖 Welcome to the Documentation Portal Repository\033[0m"
     echo
-    echo "1.  🚧 Rebuild the docs-builder container"
-    echo "2.  List CLI documentation with appended content"
-    echo "3.  ⚙️  Build HTML documentation"
-    echo "4.  ⚙️  Build PDF documentation"
-    echo "5.  🖥️  Only serve the documentation locally"
-    echo "6.  ⚙️  🖥️  Build the documentation and serve it locally"
-    echo "7.  ⚙️  🖥️  Build the documentation and serve it locally with LiveReload (can be unstable)"
-    echo "8.  📋 Check the documentation for link, script, and image errors"
-    echo "9.  📋 Check the documentation for spelling errors"
-    echo "10.  🔍 Ingest docs.qumulo.com into Vectara"
-    echo "11. 🔍 Ingest care.qumulo.com into Vectara"
-    echo "12. 🔍 Ingest qumulo.com into Vectara"
-    echo "13. 📋 Check ingestion status"
+    echo "1.  🚧 Rebuild docs-builder container"
+    echo "2.  ⚙️  Regenerate CLI documentation"
+    echo "3.  🆕 List CLI documentation with appended content"
+    echo "4.  ⚙️  Build HTML documentation"
+    echo "5.  ⚙️  Build PDF documentation"
+    echo "6.  🖥️  Only serve documentation locally"
+    echo "7.  🖥️  Build documentation and serve it locally"
+    echo "8.  🖥️  Build documentation and serve it locally with LiveReload (can be unstable)"
+    echo "9.  📋 Check documentation for link, script, and image errors"
+    echo "10. 📋 Check documentation for spelling errors"
+    echo "11. 🔍 Ingest docs.qumulo.com into Vectara"
+    echo "12. 🔍 Ingest care.qumulo.com into Vectara"
+    echo "13. 🔍 Ingest qumulo.com into Vectara"
+    echo "14. 📋 Check ingestion status"
     echo "q.  👋 Quit"
     echo
     read -p $'\033[1;33mWhat would you like to do? \033[0m' choice
 
     case $choice in
         1) rebuild_container ;;
-        2) find_modified_cli ;;
-        3) build_html_docs ;;
-        4) build_pdf_docs ;;
-        5) only_serve_docs_locally_python ;;
-        6) build_serve_docs_locally_python ;;
-        7) build_serve_docs_locally_jekyll ;;
-        8) check_docs_errors ;;
-        9) check_spelling_errors ;;
-        10) ingest_docs_portal ;;
-        11) ingest_care_portal ;;
-        12) ingest_corp_site ;;
-        13) check_ingestion_status ;;
+        2) regen_cli_docs ;;
+        3) find_modified_cli ;;
+        4) build_html_docs ;;
+        5) build_pdf_docs ;;
+        6) only_serve_docs_locally_python ;;
+        7) build_serve_docs_locally_python ;;
+        8) build_serve_docs_locally_jekyll ;;
+        9) check_docs_errors ;;
+        10) check_spelling_errors ;;
+        11) ingest_docs_portal ;;
+        12) ingest_care_portal ;;
+        13) ingest_corp_site ;;
+        14) check_ingestion_status ;;
         q) exit ;;
         *) echo "You must enter a valid option." ;;
     esac
