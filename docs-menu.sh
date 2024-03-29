@@ -27,11 +27,10 @@ install_noto_emoji() {
       echo "Installing fonts-noto-color-emoji..."
       sudo apt-get update && sudo apt-get install -y fonts-noto-color-emoji
     elif [ "$answer" = "n" ]; then
-      echo "Continue without installing fonts-noto-color-emoji."
+      echo "Continuing without installing fonts-noto-color-emoji..."
     fi
   fi
 }
-
 
 # Rebuild the docs-builder container
 rebuild_container() {
