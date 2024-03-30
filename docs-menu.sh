@@ -21,7 +21,6 @@ check_vectara_ingest_repo() {
 # Check that the secrets.toml file exists
 check_secrets_toml() {
     if [ ! -f ~/git/vectara-ingest/secrets.toml ]; then
-        echo
         echo "To ingest data into Vectara, you must add secrets.toml to your Vectara Ingest directory"
         echo "and then add your API keys to secrets.toml in the following format:"
         echo
@@ -100,7 +99,6 @@ find_modified_cli(){
         fi
     fi
   done
-  
   if [ -f "$flag_file" ]; then
     echo "Can't find files with manually appended content."
     # Clean up the flag file
