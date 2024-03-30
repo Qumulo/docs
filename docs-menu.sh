@@ -165,13 +165,23 @@ check_spelling_errors() {
     docker run --rm --user $(id -u):$(id -g) --name docs-container-proof -v $(pwd):/src:rw docs-builder proof
 }
 
+# Ingest documentation
+ingest_documentation() {
+    local yaml_file="$1"
+    if [ -z "$yaml_file" ]; then
+        echo "You must specify a YAML file."
+        exit 1
+    fi
+    cd ~/git/vectara-ingest && ./run.sh "config/$yaml_file" default && cd -
+}
+
 # Ingest docs.qumulo.com into Vectara corpus 2
 ingest_docs_portal() {
     echo "Ingesting docs.qumulo.com into Vectara corpus 2..."
     check_vectara_ingest_repo
     check_secrets_toml
     check_python_version
-    cd ~/git/vectara-ingest && ./run.sh config/qumulo-documentation-portal-v3.yaml default && cd -
+    ingest_documentation "qumulo-documentation-portal-v3.yaml"
 }
 
 # Ingest care.qumulo.com into Vectara corpus 4
@@ -180,7 +190,7 @@ ingest_care_portal() {
     check_vectara_ingest_repo
     check_secrets_toml
     check_python_version
-    cd ~/git/vectara-ingest && ./run.sh config/qumulo-care-v3.yaml default && cd -
+    ingest_documentation "qumulo-care-v3.yaml"
 }
 
 # Ingest qumulo.com into Vectara corpus 5
@@ -189,7 +199,7 @@ ingest_corp_site() {
     check_vectara_ingest_repo
     check_secrets_toml
     check_python_version
-    cd ~/git/vectara-ingest && ./run.sh config/qumulo-main-v3.yaml default && cd -
+    ingest_documentation "qumulo-main-v3.yaml"
 }
 
 # Check ingestion status
