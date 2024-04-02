@@ -107,6 +107,7 @@ build_prince () {
 
   echo ""
   echo "Building PDF-friendly HTML site..."
+  echo -e "\033[1;33mNote: You can ignore any warnings about setting the locale.\033[0m"
   docker run -ti \
     --rm \
     --user $(id -u):$(id -g) \

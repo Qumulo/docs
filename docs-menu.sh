@@ -1,5 +1,13 @@
 #!/bin/bash
 
+ignore_warnings() {
+    echo -e "\033[1;33mNote: You can ignore any warnings about setting the locale or about GitHub API authentication.\033[0m"
+}
+
+ignore_locale() {
+    echo -e "\033[1;33mNote: You can ignore any warnings about setting the locale.\033[0m"
+}
+
 # Check that the src repository exists
 check_docs_internal_repo() {
     if [ ! -d ~/git/docs-internal ]; then
@@ -124,6 +132,7 @@ regen_cli_docs() {
 # Build HTML documentation by using Jekyll
 build_html_docs() {
     echo "Building HTML documentation..."
+    ignore_warnings
     docker run --rm --user $(id -u):$(id -g) --name docs-container-build -v $(pwd):/src:rw docs-builder
 }
 
@@ -136,6 +145,7 @@ build_pdf_docs() {
 # Build the documentation and serve it locally on port 4000 by using http.server
 build_serve_docs_locally_python() {
     echo "Building documentation and serving it locally on port 4000 by using http.server..."
+    ignore_warnings
     docker run --rm --user $(id -u):$(id -g) --name docs-container-build -v $(pwd):/src:rw docs-builder && cd _site && python3 -m http.server 4000 && cd ..
 }
 
@@ -147,19 +157,22 @@ only_serve_docs_locally_python() {
 
 # Build the documentation and serve it locally on port 4000 by using Jekyll LiveReload
 build_serve_docs_locally_jekyll() {
-    echo "Serving documentation locally by using Jekyll LiveReload..."
+    echo "Building documentation and serving it locally by using Jekyll LiveReload..."
+    ignore_warnings
     docker run -ti --rm --user $(id -u):$(id -g) --name docs-container-serve -v $(pwd):/src:rw -P --network host docs-builder serve
 }
 
 # Check documentation for link, script, and image errors by using HTML Proofer
 check_docs_errors() {
     echo "Checking documentation for link, script, and image errors..."
+    ignore_locale
     docker run --rm --user $(id -u):$(id -g) --name docs-container-check -v $(pwd):/src:rw docs-builder check
 }
 
 # Check documentation for spelling errors by using Hunspell
 check_spelling_errors() {
     echo "Checking documentation for spelling errors..."
+    ignore_locale
     docker run --rm --user $(id -u):$(id -g) --name docs-container-proof -v $(pwd):/src:rw docs-builder proof
 }
 
