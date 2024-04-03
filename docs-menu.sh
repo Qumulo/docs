@@ -1,5 +1,9 @@
 #!/bin/bash
 
+sweep_toolchain() {
+  ~/src/toolchain/qpkg.py sweep
+}
+
 ignore_warnings() {
     echo -e "\033[1;33mNote: You can ignore any warnings about setting the locale or about GitHub API authentication.\033[0m"
 }
@@ -236,10 +240,11 @@ while true; do
     echo "8.  🖥️  Build documentation and serve it locally with LiveReload (can be unstable)"
     echo "9.  📋 Check documentation for link, script, and image errors"
     echo "10. 📋 Check documentation for spelling errors"
-    echo "11. 🔍 Ingest docs.qumulo.com into Vectara"
-    echo "12. 🔍 Ingest care.qumulo.com into Vectara"
-    echo "13. 🔍 Ingest qumulo.com into Vectara"
-    echo "14. 📋 Check ingestion status"
+    echo "11. 🧹 Sweep Toolchain"
+    echo "12. 🔍 Ingest docs.qumulo.com into Vectara"
+    echo "13. 🔍 Ingest care.qumulo.com into Vectara"
+    echo "14. 🔍 Ingest qumulo.com into Vectara"
+    echo "15. 📋 Check ingestion status"
     echo "q.  👋 Quit"
     echo
     read -p $'\033[1;33mWhat would you like to do? \033[0m' choice
@@ -255,10 +260,11 @@ while true; do
         8) build_serve_docs_locally_jekyll ;;
         9) check_docs_errors ;;
         10) check_spelling_errors ;;
-        11) ingest_docs_portal ;;
-        12) ingest_care_portal ;;
-        13) ingest_corp_site ;;
-        14) check_ingestion_status ;;
+        11) sweep_toolchain ;;
+        12) ingest_docs_portal ;;
+        13) ingest_care_portal ;;
+        14) ingest_corp_site ;;
+        15) check_ingestion_status ;;
         q) exit ;;
         *) echo "You must enter a valid option." ;;
     esac

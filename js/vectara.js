@@ -136,7 +136,7 @@ console.log("submitFn called with query:", query);
               start: startFrom, // offset
               contextConfig: {sentencesBefore, sentencesAfter, startTag: "<strong>", endTag: "</strong>"},
               summary: [{
-                summarizerPromptName: "vectara-summary-ext-v1.2.0",
+                summarizerPromptName: "vectara-summary-ext-v1.3.0",
                 maxSummarizedResults: maxSummarizedResults,
                 responseLang: "eng"
               }]
