@@ -77,4 +77,4 @@ To get started, choose one of the following guides.
 We're currently in process of migrating legacy articles about Qumulo Core and hardware platform functionality from [Qumulo Care](https://care.qumulo.com/s/knowledge).
 
 ## Reach Out to Us
-If you need help, [open a case](https://qumulo.com/support/), or {{site.contactQumuloCare}} through Slack, email, or by phone.
+If you need help, [open a case](https://care.qumulo.com/s/submit-a-case), or {{site.contactQumuloCare}} through Slack, email, or by phone.
