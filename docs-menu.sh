@@ -4,6 +4,10 @@ sweep_toolchain() {
   ~/src/toolchain/qpkg.py sweep
 }
 
+no_toolchain() {
+    export PATH=$(echo $PATH | sed "s|/opt/qumulo[^:]*:||g")
+}
+
 ignore_warnings() {
     echo -e "\033[1;33mNote: You can ignore any warnings about setting the locale or about GitHub API authentication.\033[0m"
 }
@@ -193,6 +197,7 @@ ingest_documentation() {
 # Ingest docs.qumulo.com into Vectara corpus 2
 ingest_docs_portal() {
     echo "Ingesting docs.qumulo.com into Vectara corpus 2..."
+    no_toolchain
     check_vectara_ingest_repo
     check_secrets_toml
     check_python_version
@@ -202,6 +207,7 @@ ingest_docs_portal() {
 # Ingest care.qumulo.com into Vectara corpus 4
 ingest_care_portal() {
     echo "Ingesting cqre.qumulo.com into Vectara..."
+    no_toolchain
     check_vectara_ingest_repo
     check_secrets_toml
     check_python_version
@@ -211,6 +217,7 @@ ingest_care_portal() {
 # Ingest qumulo.com into Vectara corpus 5
 ingest_corp_site() {
     echo "Ingesting docs.qumulo.com into Vectara..."
+    no_toolchain
     check_vectara_ingest_repo
     check_secrets_toml
     check_python_version
