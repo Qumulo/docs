@@ -43,7 +43,7 @@
       <td>
         <ul>
           <li>macOS 10.14 (and higher)</li>
-          <li>Linux Kernel 2.6.X (and higher)</li>
+          <li>Linux Kernel 2.6.x (and higher)</li>
         </ul>
       </td>
     </tr>
@@ -75,6 +75,17 @@
     </tr>
   </tbody>
 </table>
+
+{% if page.platform == 'on-prem' %}
+## Supported Switches
+
+Qumulo Core requires switches that meet the following criteria:
+
+* Enterprise-grade
+* Fully non-blocking
+* Managed
+* Supports IPv6
+{% endif %}  
 
 ## Known Limits
 
@@ -137,7 +148,7 @@
       <td>9 exabytes</td>
     </tr>
     <tr>
-      <td>Number of Files</td>
+      <td>Total Files</td>
       <td>18 quintillion</td>
     </tr>
     <tr>
@@ -162,10 +173,10 @@
     </tr>
     <tr>
       <td>Quotas</td>
-      <td><p>4.3 billion</p>{% include note.html content="This approximate value of 2<sup>32</sup> is equivalent to the maximum number of directories or the entire inode space." %}</td>
+      <td><p>4.3 billion</p>{% include note.html content="This approximate value of 2<sup>32</sup> is equivalent to the possible maximum of directories or the entire inode space." %}</td>
     </tr>
     <tr>
-      <td>Number of Replication Relationships</td>
+      <td>Total Replication Relationships</td>
       <td>100 {% include note.html content="If a directory is more than 100 levels below the file system root directory, you can't use it as a replication source." %}</td>
     </tr>
 {% if page.platform == 'on-prem' %}
