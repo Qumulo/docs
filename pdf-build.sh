@@ -145,7 +145,7 @@ do
   build_prince "$i"
 done
 
-echo "Deleting temporary build files..."
-cd _site && rm * -rf
+#echo "Deleting temporary build files..."
+#cd _site && rm * -rf
 
 echo "Done. The PDF output is in the /pdf directory."
