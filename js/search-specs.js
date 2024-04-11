@@ -2,8 +2,8 @@
 let searchWidget = createSearch(
   "zqt_8wQ3QoFUYf53ymz-8ceKXsxAnFNwEJsobnvK6A", // api key
   4077139778,                                   // customer id
-  [2],                                          // array of corpus ids
-                                                // 4 == QCare; 2 == Docs Portal
+  [2,4],                                        // array of corpus ids
+                                                // 2 == Docs Portal, 4 == Qumulo Care
   successFn,                                    // success function
   errorFn,                                      // error function
   "/images/magnifying-glass.png",               // custom icon for the search box
