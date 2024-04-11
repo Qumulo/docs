@@ -134,7 +134,7 @@ check_src_repo() {
 regen_cli_docs() {
     echo "Regenerating CLI documentation..."
     check_src_repo
-    cd ~/src && hg up default && hg fetch && ~/src/tools/extract_cli_help.py --base-dir ~/git/docs-internal && cd -
+    cd ~/src && hg up default && hg fetch && ./tools/extract_cli_help.py --base-dir ~/git/docs-internal && cd -
 }
 
 # Build HTML documentation by using Jekyll
