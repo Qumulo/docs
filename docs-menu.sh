@@ -51,15 +51,6 @@ check_secrets_toml() {
     fi
 }
 
-# Check whether the user is running Python 2 or Python 3
-check_python_version() {
-    python_version=$(python -c 'import sys; print(sys.version_info[0])')
-    if [ "$python_version" -lt 3 ]; then
-        export PATH=$(echo $PATH | sed "s|/opt/qumulo[^:]*:||g")
-    fi
-}
-
-
 # Install Docker and explain group changes
 install_docker() {
   if ! command -v docker &> /dev/null; then
@@ -200,7 +191,6 @@ ingest_docs_portal() {
     no_toolchain
     check_vectara_ingest_repo
     check_secrets_toml
-    check_python_version
     ingest_documentation "qumulo-documentation-portal-v3.yaml"
 }
 
@@ -210,7 +200,6 @@ ingest_care_portal() {
     no_toolchain
     check_vectara_ingest_repo
     check_secrets_toml
-    check_python_version
     ingest_documentation "qumulo-care-v3.yaml"
 }
 
@@ -220,7 +209,6 @@ ingest_corp_site() {
     no_toolchain
     check_vectara_ingest_repo
     check_secrets_toml
-    check_python_version
     ingest_documentation "qumulo-main-v3.yaml"
 }
 
