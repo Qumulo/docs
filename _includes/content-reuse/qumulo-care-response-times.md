@@ -12,7 +12,7 @@
   <tr style="background:rgb(255 153 153 / 0.75);">
     <td>Sev0</td>
     <td>24&times;7</td>   
-    <td>2 hours</td>
+    <td>30 minutes</td>
     <td>
       <p><strong>Business Impacting:</strong> A Qumulo cluster is offline, impacting regular business operations, with potential productivity or financial losses.</p>
       {% include important.html content="For Severity 0 cases, call one of our <a href='#toll-free-numbers'>toll-free numbers</a> or select <strong>Severity 0</strong> when you <a href='#open-a-case'>open a case</a>." %}
@@ -27,7 +27,7 @@
   <tr style="background:rgb(255 153 153 / 0.5);">
     <td>Sev1</td>
     <td>24&times;7</td>   
-    <td>2 hours</td>
+    <td>1 hour</td>
     <td><strong>High Priority:</strong> A Qumulo cluster is operational. However, a node is offline or the cluster experiences a severe performance degradation.</td>
     <td>
       <ul>
