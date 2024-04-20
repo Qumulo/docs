@@ -20,6 +20,8 @@ For information about upgrade types for each release, see <a href='mode-referenc
 {{page.varDownloadsRelnotes}}
 {% include important.html content="This release resolves a scenario in Qumulo Core 7.0.1 where a node in a Qumulo cluster could go offline if a tree delete operation was performed on a directory while an SMB client was watching it for changes." %}
 * Configured rolling reboots to restart `N-1` nodes at a time, where `N` is the number of nodes configured for the cluster's fault tolerance
+* Configured Shift-To S3 and Shift-From S3 to replicate file system user metadata.
+* Added support for S3 bucket policies and the ability to configure, retrieve, and delete policies for S3 buckets
 * Further improved NFSv3 random small-write performance
 * Added support for Active Directory Global Catalog for look-ups
 * Added support for `DeleteBucketPolicy` and `PutBucketPolicy` S3 API actions
