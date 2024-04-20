@@ -13,13 +13,11 @@ sidebar: administrator_guide_sidebar
 
 {% include important.html content="Cloud-Based Monitoring _doesn't_ collect file names, path names, client IP addresses, or account credentials." %}
 
-### Qumulo Care Response Times
-We use a proprietary application that aggregates diagnostic cluster data and alerts the Qumulo Care team if an issue arises. Depending on the issue severity and cluster state, a member of the Qumulo Care team reaches out. The following table outlines Qumulo Care response times.
+We use a proprietary application that aggregates diagnostic cluster data and alerts the Qumulo Care team if an issue arises. Depending on the issue severity and cluster state, a member of the Qumulo Care team reaches out. For more information, see:
 
-{% include content-reuse/qumulo-care-response-times.md %}
+* [Qumulo Care Response Times](https://docs.qumulo.com/contacting-qumulo-care-team.html#qumulo-care-response-times)
 
-### Ways to Get Help
-{% include content-reuse/qumulo-care-ways-to-get-help.md %}
+* [Ways to Get Help](https://docs.qumulo.com/contacting-qumulo-care-team.html#ways-to-get-help)
 
 
 ## How Remote Support Works
@@ -74,11 +72,11 @@ Cloud-Based Monitoring and Remote Support let your cluster send the following de
 
 
 ## Prerequisites
-Before you can use Cloud-Based monitoring and Remote Support, you must:
+Before you can use Cloud-Based Monitoring and Remote Support:
 
-* [Install VPN keys on your Qumulo cluster](../authentication-qumulo-core/installing-vpn-keys-on-cluster.html)
+* A member of the Qumulo Care Team must install VPN keys on your Qumulo cluster
 
-* Enable the following destination hostnames for TCP on port 443.
+* You must enable the following destination hostnames for TCP on port 443
 
   <table>
     <thead>
