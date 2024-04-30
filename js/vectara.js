@@ -125,6 +125,7 @@ console.log("submitFn called with query:", query);
       corpusIds.forEach((v) =>
         corpusKeys.push({ customer_id: customerId, corpus_id: v })
       );
+      let startTime = new Date().getTime();
       fetch("https://api.vectara.io/v1/query", {
         method: "post",
         body: JSON.stringify({
@@ -136,7 +137,7 @@ console.log("submitFn called with query:", query);
               start: startFrom, // offset
               contextConfig: {sentencesBefore, sentencesAfter, startTag: "<strong>", endTag: "</strong>"},
               summary: [{
-                summarizerPromptName: "vectara-summary-ext-v1.3.0",
+                summarizerPromptName: "vectara-experimental-summary-ext-2023-12-11-large",
                 maxSummarizedResults: maxSummarizedResults,
                 responseLang: "eng"
               }]
@@ -156,6 +157,8 @@ console.log("submitFn called with query:", query);
           if (data.responseSet[0] && data.responseSet[0].status[0]) {
             throw data;
           }
+          let endTime = new Date().getTime();
+          console.log(`fetch elapsedTime: ${ ( endTime - startTime ) / 1000 }`);
           return data;
         })
         .then(successFn)
