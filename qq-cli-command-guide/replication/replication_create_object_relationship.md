@@ -78,7 +78,7 @@ usage: "qq replication_create_object_relationship [-h] (--local-directory-id LOC
   \ [--object-store-address OBJECT_STORE_ADDRESS] --object-folder OBJECT_FOLDER\n\
   \    [--use-port USE_PORT] [--ca-certificate CA_CERTIFICATE] --bucket BUCKET\n \
   \   [--bucket-addressing-style {BUCKET_STYLE_PATH,BUCKET_STYLE_VIRTUAL_HOSTED}]\
-  \ --region REGION --access-key-id ACCESS_KEY_ID\n    [--secret-access-key SECRET_ACCESS_KEY]"
+  \ --region REGION --access-key-id\n    ACCESS_KEY_ID [--secret-access-key SECRET_ACCESS_KEY]"
 zendesk_source: qq CLI Command Guide
 
 ---

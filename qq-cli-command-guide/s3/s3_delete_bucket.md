@@ -3,13 +3,13 @@ category: s3
 command: s3_delete_bucket
 optional_options:
 - alternate: []
-  help: The name of the bucket to be deleted
+  help: The name of the S3 bucket to delete
   name: --name
   required: true
 - alternate: []
-  help: If set to true, the operation will only succeed if the bucket root directory
-    is empty, and the caller has the necessary permissions to unlink it. Otherwise,
-    the directory need not be empty.
+  help: If specified, the operation succeeds only if the bucket root directory is
+    empty, and the caller has the permissions for unlinking the bucket root directory
+    from the S3 bucket. By default, the directory to be deleted can contain objects.
   name: --delete-root-dir
   required: false
 permalink: /qq-cli-command-guide/s3/s3_delete_bucket.html

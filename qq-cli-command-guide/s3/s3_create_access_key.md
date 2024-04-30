@@ -3,14 +3,14 @@ category: s3
 command: s3_create_access_key
 optional_options:
 - alternate: []
-  help: Auth ID of the qumulo user
+  help: The auth_id of the Qumulo Core user
   name: --auth-id
   required: false
 permalink: /qq-cli-command-guide/s3/s3_create_access_key.html
 positional_options:
-- help: An auth_id, SID, or name optionally qualified with a domain prefix (e.g "local:name",
-    "ad:name", "AD\name") or an ID type (e.g. "auth_id:513", "SID:S-1-1-0"). Groups
-    are not supported for access keys, must be a user.
+- help: An auth_id, SID, or a name optionally qualified by a domain prefix (for example,
+    "local:name", "ad:name", "AD\name") or an ID type (for example, "auth_id:513",
+    "SID:S-1-1-0"). Qumulo Core supports only users (not groups) for S3 access keys.
   name: identifier
   required: true
 sidebar: qq_cli_command_reference_sidebar

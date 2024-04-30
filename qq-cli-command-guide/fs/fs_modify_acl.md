@@ -22,8 +22,10 @@ synopsis: Modify file ACL
 title: qq fs_modify_acl
 usage: qq fs_modify_acl [-h] (--path PATH | --id ID) [--json] {add_entry,remove_entry,modify_entry,set_posix_special_permissions}
   ...
+varCreateACL: Run the `qq fs_modify_acl` command and use the `--path` flag to specify
+  the path for the ACL.
 zendesk_source: qq CLI Command Guide
-varCreateACL: "Run the `qq fs_modify_acl` command and use the `--path` flag to specify the path for the ACL."
+
 ---
 
 ## Examples

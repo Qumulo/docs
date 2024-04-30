@@ -622,6 +622,7 @@ The following table lists metric label names, possible values, and descriptions.
       <td><a id="metric-label-io_type"></a><code>io_type</code></td>
       <td>
         <ul>
+          <li class="pdf-friendly"><code>composite</code></li>
           <li class="pdf-friendly"><code>none</code></li>
           <li class="pdf-friendly"><code>read</code></li>
           <li class="pdf-friendly"><code>wait</code>: A blocking operation that takes an indeterminate amount of time</li>
@@ -642,7 +643,7 @@ The following table lists metric label names, possible values, and descriptions.
     </tr>
     <tr>
       <td><a id="metric-label-op_name"></a><code>op_name</code></td>
-      <td>Any operation name, including NFSv3, NFSv4.1, SMBv2, SMBv3 or FTP</td>
+      <td>Any operation name, including NFSv3, NFSv4.1, SMBv2, SMBv3, REST, S3, replication, or FTP</td>
       <td>The recorded operation</td>
     </tr>
     <tr>
@@ -655,7 +656,10 @@ The following table lists metric label names, possible values, and descriptions.
       <td>
         <ul>
           <li class="pdf-friendly"><code>nfs</code>: NFSv3 or NFSv4.1</li>
-          <li class="pdf-friendly"><code>smb2</code>: SMBv2 or SMBv3</li>
+          <li class="pdf-friendly"><code>smb</code>: SMBv2 or SMBv3</li>
+          <li class="pdf-friendly"><code>rest</code></li>
+          <li class="pdf-friendly"><code>s3</code></li>
+          <li class="pdf-friendly"><code>replication</code></li>
           <li class="pdf-friendly"><code>ftp</code></li>
         </ul>
       </td>

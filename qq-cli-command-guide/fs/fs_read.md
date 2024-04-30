@@ -50,8 +50,8 @@ summary: This section explains how to use the <code>qq fs_read</code> command.
 synopsis: Read an object
 title: qq fs_read
 usage: "qq fs_read [-h] (--path PATH | --id ID) [--stream-id STREAM_ID | --stream-name\
-  \ STREAM_NAME] [--snapshot SNAPSHOT] [--offset OFFSET] [--length LENGTH] [--file\
-  \ FILE]\n    [--force] [--stdout]"
+  \ STREAM_NAME] [--snapshot SNAPSHOT] [--offset OFFSET] [--length LENGTH]\n    [--file\
+  \ FILE] [--force] [--stdout]"
 zendesk_source: qq CLI Command Guide
 
 ---

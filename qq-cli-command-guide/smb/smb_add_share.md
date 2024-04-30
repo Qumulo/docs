@@ -119,7 +119,7 @@ usage: "qq smb_add_share [-h] [--tenant-id TENANT_ID] --name NAME --fs-path FS_P
   \ ...]]\n    [--grant-read-write-access TRUSTEE [TRUSTEE ...]] [--grant-all-access\
   \ TRUSTEE [TRUSTEE ...]] [--deny-access TRUSTEE [TRUSTEE ...]]\n    [--full-control-hosts\
   \ IP/RANGE [IP/RANGE ...]] [--read-only-hosts IP/RANGE [IP/RANGE ...]] [--deny-hosts\
-  \ IP/RANGE [IP/RANGE ...]] [--deny-all-hosts]"
+  \ IP/RANGE [IP/RANGE ...]]\n    [--deny-all-hosts]"
 zendesk_source: qq CLI Command Guide
 
 ---

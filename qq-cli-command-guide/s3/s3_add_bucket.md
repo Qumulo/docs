@@ -3,17 +3,17 @@ category: s3
 command: s3_add_bucket
 optional_options:
 - alternate: []
-  help: The name of the bucket to be created
+  help: The name of the bucket to create
   name: --name
   required: true
 - alternate: []
-  help: The absolute path to be used as the root of the bucket. The user must have
-    permissions to read the directory.
+  help: The absolute path to use as the bucket root directory. The user must have
+    permission to read the directory.
   name: --fs-path
   required: false
 - alternate: []
-  help: Creates the bucket root if it does not exist. The user must have permission
-    to create the directory.
+  help: Create the bucket root directory if it does not already exist. The user must
+    have permission to create the bucket root directory.
   name: --create-fs-path
   required: false
 permalink: /qq-cli-command-guide/s3/s3_add_bucket.html

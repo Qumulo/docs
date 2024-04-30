@@ -92,9 +92,9 @@ title: qq set_monitoring_conf
 usage: "qq set_monitoring_conf [-h] [--enabled | --disabled] [--vpn-enabled | --vpn-disabled]\
   \ [--mq-host MQ_HOST] [--mq-port MQ_PORT] [--mq-proxy-host MQ_PROXY_HOST]\n    [--mq-proxy-port\
   \ MQ_PROXY_PORT] [--s3-proxy-host S3_PROXY_HOST] [--s3-proxy-port S3_PROXY_PORT]\
-  \ [--s3-proxy-disable-https] [--all-proxy-host HOST]\n    [--all-proxy-port PORT]\
-  \ [--period PERIOD] [--vpn-host VPN_HOST] [--nexus-enabled | --nexus-disabled] [--nexus-host\
-  \ NEXUS_HOST]\n    [--nexus-port NEXUS_PORT] [--nexus-interval NEXUS_INTERVAL]"
+  \ [--s3-proxy-disable-https]\n    [--all-proxy-host HOST] [--all-proxy-port PORT]\
+  \ [--period PERIOD] [--vpn-host VPN_HOST] [--nexus-enabled | --nexus-disabled]\n\
+  \    [--nexus-host NEXUS_HOST] [--nexus-port NEXUS_PORT] [--nexus-interval NEXUS_INTERVAL]"
 zendesk_source: qq CLI Command Guide
 
 ---

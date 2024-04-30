@@ -230,7 +230,7 @@ while true; do
     echo "3.  🆕 List CLI documentation with appended content"
     echo "4.  ⚙️  Build HTML documentation"
     echo "5.  ⚙️  Build PDF documentation"
-    echo "6.  🖥️  Only serve documentation locally"
+    echo "6.  🖥️  Only serve HTML documentation locally"
     echo "7.  🖥️  Build documentation and serve it locally"
     echo "8.  🖥️  Build documentation and serve it locally with LiveReload (can be unstable)"
     echo "9.  📋 Check documentation for link, script, and image errors"

@@ -3,7 +3,7 @@ category: s3
 command: s3_modify_bucket_policy
 optional_options:
 - alternate: []
-  help: The bucket whose policy will be modified.
+  help: The name of the S3 bucket whose access policy is to be modified
   name: --bucket
   required: true
 - alternate: []

@@ -3,7 +3,7 @@ category: s3
 command: s3_delete_access_key
 optional_options:
 - alternate: []
-  help: The ID of the access key to be deleted
+  help: The identifier of the access key to delete.
   name: --id
   required: true
 permalink: /qq-cli-command-guide/s3/s3_delete_access_key.html
