@@ -26,7 +26,7 @@ For information about the most important features from each release, click the Q
   </thead>
   <tbody>
     <tr>
-      <td><a href="feature-log.html#qumulo-core-710-quarterly">7.1.0 (Quarterly)</a></td>
+      <td><a href="feature-log.html#qumulo-core-7101-quarterly">7.1.0.1 (Quarterly)</a></td>
       <td colspan="2" class="shared-upgrade-mode platform">Platform</td>
     </tr>
     <tr>

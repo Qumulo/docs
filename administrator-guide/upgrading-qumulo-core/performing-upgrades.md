@@ -99,7 +99,7 @@ Every Qumulo Core upgrade has two phases, _preparation_ and _commit_.
 
 1. **Click Support > Software Upgrade**.
 
-1. On the **Software Upgrade** page, enter the file system path for the upgrade file without the leading slash, for example: `upgrade/qumulo_core_7.1.0.qimg`.
+1. On the **Software Upgrade** page, enter the file system path for the upgrade file without the leading slash, for example: `upgrade/qumulo_core_7.1.0.1.qimg`.
 
 1. Click **Upgrade...**
 
