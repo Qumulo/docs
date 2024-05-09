@@ -1,6 +1,6 @@
 ---
 title: "Racking Your Supermicro A+ ASG-2015S-E1CR24L Nodes"
-summary: "This section describes the rack rail system of Supermicro 2015S nodes and how to install the nodes in a data center."
+summary: "This section describes the rack rail system of the Supermicro 2015S node and how to install the node in a data center."
 permalink: /hardware-guide/supermicro-a-plus-asg-2015s-e1cr24l/racking-nodes.html
 sidebar: hardware_guide_sidebar
 ---
