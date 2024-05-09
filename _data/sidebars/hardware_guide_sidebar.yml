@@ -358,7 +358,7 @@ entries:
       url: /hardware-guide/supermicro-a-plus-asg-1014s-acr12n4h/technical-specifications.html
       output: web, pdf
 
-  - title: Supermicro A+ Supermicro A+ ASG-2015S-E1CR24L
+  - title: Supermicro A+ ASG-2015S-E1CR24L
     url: /hardware-guide/supermicro-a-plus-asg-1014s-acr12n4h/index.html
     output: web, pdf
     folderitems:
