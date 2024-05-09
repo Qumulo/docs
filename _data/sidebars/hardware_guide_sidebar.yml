@@ -359,7 +359,7 @@ entries:
       output: web, pdf
 
   - title: Supermicro A+ ASG-2015S-E1CR24L
-    url: /hardware-guide/supermicro-a-plus-asg-1014s-acr12n4h/index.html
+    url: /hardware-guide/supermicro-a-plus-asg-2015s-acr12n4h/index.html
     output: web, pdf
     folderitems:
 
