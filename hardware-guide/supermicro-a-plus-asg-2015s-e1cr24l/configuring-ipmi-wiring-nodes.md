@@ -7,26 +7,19 @@ sidebar: hardware_guide_sidebar
 
 {{site.unifyNetDefine}}
 
-{% capture unusedPorts %}{{site.unusedEthPorts}}{% endcapture %}
-{% include note.html content=unusedPorts %}
+{% capture OneOrTwoNICs %}The most common configuration for a {{site.sm2015s}} node includes a single NIC in position 1. An alternative configuration has an additional NIC in position 2.{% endcapture %}
+{% include note.html content=OneOrTwoNICs %}
 
 {% capture alt_tag %}Back Diagram of the {{site.sm2015sLong}} Node{% endcapture %}
-{% include image.html alt=alt_tag file="supermicro-1014s-back-diagram.png" url="/hardware-guide/supermicro-a-plus-asg-2015s-e1cr24l/images/supermicro-1014s-back-diagram.png" %}
+{% include image.html alt=alt_tag file="supermicro-2015s-back-diagram.png" url="/hardware-guide/supermicro-a-plus-asg-2015s-e1cr24l/images/supermicro-2015s-back-diagram.png" %}
 
 {% include content-reuse/platform-agnostic-ipmi.md %}
 {{site.hardware.ipmiConfig.smc}}
 {{site.hardware.ipmiCreds.smc}}
 {{site.data.alerts.note}}
-{{site.hardware.ipmiCreds.smcNote}} {{site.hardware.ipmiCreds.smcMoreInfo1014S}}
+{{site.hardware.ipmiCreds.smcNote}} {{site.hardware.ipmiCreds.smcMoreInfo2015S}}
 {{site.data.alerts.end}}
 
 {% include content-reuse/platform-agnostic-unified-networking-wiring.md bmcType="IPMI" ethernetSpeed="25 Gbps or 100 Gbps" portCompatibility=" (compatible with QSFP28 and QSFP56)" %}
-
-| NIC Manufacturer | Port Location | Port Labels |
-| ---------------- | ------------- | ----------- |
-| Broadcom         | Left          | 2 (`eth3`)  |
-| Broadcom         | Right         | 1 (`eth2`)  |
-| Mellanox         | Left          | 2 (`eth1`)  |
-| Mellanox         | Right         | 1 (`eth0`)  |
 
 {% include content-reuse/platform-agnostic-unified-networking-wiring-power.md ethernetSpeed="25 Gbps or 100 Gbps" %}
