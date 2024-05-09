@@ -6,7 +6,8 @@ sidebar: hardware_guide_sidebar
 ---
 
 ## To Install the Rack Rail System
-The {{site.sm2015s}} rack rail system comprises an inner rail secured to the chassis, an outer rail that secured to the rack, and a middle rail within the outer rail. For more information, see [Installing the System into a Rack](https://www.supermicro.com/manuals/superstorage/MNL-2628.pdf#page=24) in the Supermicro documentation.
+The {{site.sm2015s}} rack rail system comprises an inner rail secured to the chassis, an outer rail secured to the rack, and a middle rail within the outer rail. For more information, see [Installing the System into a Rack](https://www.supermicro.com/manuals/superstorage/MNL-2628.pdf#page=24) in the Supermicro documentation.
+
 
 ## To Insert the Chassis
 For information about inserting the {{site.sm2015s}} node chassis into the server rack, see [Installing the Server into the Rack](https://www.supermicro.com/manuals/superstorage/MNL-2628.pdf#page=28) in the Supermicro documentation.
