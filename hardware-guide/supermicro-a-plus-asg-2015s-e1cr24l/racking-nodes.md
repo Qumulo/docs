@@ -13,7 +13,7 @@ For information about inserting the {{site.sm2015s}} node chassis into the serve
 
 
 ## To Remove the Chassis
-The {{site.sm2015s}} node chassis rest on the inner rail lip of the left and right rails. Two front latches secure the chassis to the server rack.
+Two front latches secure the {{site.sm2015s}} node chassis to the server rack.
 
 1. Disconnect any cables from the chassis. 
 
