@@ -11,35 +11,37 @@ On the front, right side of your node, there are five LEDs.
 
 | Label                  | Color and Behavior     | Description                                 |
 | ---------------------- | ---------------------- | ------------------------------------------- |
-| Info                   | {{site.led.red}} (solid red)         | Node overheated                             |          
-| Info                   | {{site.led.red}} (1 s. blinking red) | Fan failed                                  |
-| Info                   | {{site.led.red}} (4 s. blinking red) | Power Supply Unit (PSU) failed              |
-| Info                   | {{site.led.blue}} (solid blue)        | Unit Identification (UID) activated locally |
-| Info                   | {{site.led.blue}} (blinking blue)     | UID activated from IPMI                     |
-| NIC 2 LED              | {{site.led.green}} (solid green)       | On                                          |
-| NIC 2 LED              | {{site.led.green}} (blinking)          | Network activity                            |
-| NIC 1 LED              | {{site.led.green}} (solid green)       | On                                          |
-| NIC 1 LED              | {{site.led.green}} (blinking)          | Network activity                            |
-| HDD LED                | {{site.led.green}} (blinking)          | Disk activity                               |
-| Power LED              | {{site.led.green}} (on)                | On                                          |
+| UID Button and LED     | Off                                       | UID off                                           |
+| UID Button and LED     | {{site.led.blue}} (solid blue)            | Unit identified at local site                     |
+| UID Button and LED     | {{site.led.blue}} (slow-blinking blue)    | Unit identified at remote site or system recovery |
+| Information LED        | {{site.led.red}} (solid red)              | System overheated                                 |
+| Information LED        | {{site.led.red}} (1 s. blinking red)      | Fan failed                                        |
+| Information LED        | {{site.led.red}} (4 s. blinking red)      | Power Supply Unit (PSU) failed                    |
+| Information LED and Power LED | {{site.led.red}} {{site.led.green}} (Info LED solid red, power LED blinking green) | Fault detected | 
+| Information LED        | {{site.led.blue}}/{{site.led.red}} (0.1 s. blinking blue/red) | Recovery mode |
+| Information LED        | {{site.led.blue}} (solid blue)            | UID activated locally                             |
+| Information LED        | {{site.led.blue}} (1 s. blinking blue)    | UID activated by using the BMC                    |
+| Information LED        | {{site.led.blue}} (0.5 s. blinking blue)  | BMC resetting                                     |
+| Information LED        | {{site.led.blue}} (0.25 s. blinking blue) | BMC configuring factory defaults                  |
+| Information LED and Power LED | {{site.led.blue}} {{site.led.green }} (Info LED solid blue, power LED 0.1 s. blinking green) | BMC or BIOS firmware updating |
 
 
 ## NVMe Drive Carrier LEDs
 
 Each NVMe drive carrier has two LEDs.
 
-| Label                  | Color or Behavior               | Description                          |
-| ---------------------- | ------------------------------- | -----------------------------------  |
-| Status LED             | Off                             | No issues detected                   |
-| Status LED             | {{site.led.red}} (solid red)                  | Drive failed                         |
-| Status LED             | {{site.led.red}} (1 s. blinking red)          | Drive rebuild activity               |
-| Status LED             | {{site.led.red}} (2 red links) then 1 s. stop | Hot spare drive                      |
-| Status LED             | {{site.led.red}} (5 s.) then off              | Power-on drive status                |
-| Status LED             | {{site.led.red}} (0.25 s. blinking red)       | Identifying or locating drive status |
-| Status LED             | {{site.led.green}} (on)                         | Drive is safe to remove              |
-| Status LED             | {{site.led.orange}} (solid amber)                | Drive isn't safe to remove           |
-| Activity LED           | {{site.led.blue}} (solid blue)                 | Drive installed                      |
-| Activity LED           | {{site.led.blue}} (blinking blue)              | Drive activity                       |
+| Label                  | Color or Behavior                          | Description                         |
+| ---------------------- | ------------------------------------------ | ----------------------------------- |
+| Status LED             | {{site.led.red}} (solid red)               | Drive failed                        |
+| Status LED             | {{site.led.red}} (1 s. blinking red)       | Rebuilding drive                    |
+| Status LED             | {{site.led.red}} (2 red blinks, 1 s. stop) | Hot spare for drive                 |
+| Status LED             | {{site.led.red}} (on for 5s., then off)    | Power on for drive                  |
+| Status LED             | {{site.led.red}} (0.25 s. blinking red)    | Identifying drive                   |
+| Status LED             | {{site.led.green}} (solid green)           | NVMe drive safe to remove           |
+| Status LED             | {{site.led.orange}} (1 s. blinking amber)  | NVMe drive not safe to remove       |
+| Activity LED           | {{site.led.blue}} (solid blue)             | Idle NVMe drive installed           |
+| Activity LED           | {{site.led.blue}} (blinking blue)          | Drive active                        |
+| Activity LED           | Off                                        | Idle SATA drive installed           |
 
 
 ## Rear LAN LEDs
