@@ -13,13 +13,13 @@ sidebar: hardware_guide_sidebar
   <thead>
     <tr>
       <th></th>
-      <th><strong>{{site.sm2015s}} 576 TB</strong></th>
+      <th style="text-align: center;"><strong>{{site.sm2015s}} 576 TB</strong></th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td><strong>Connectivity Ports (NIC)</strong></td>
-      <td style="text-align: center;">1 &#215; 25 GbE <br>or 1 &#215; 100 GbE (SMC AOC-A100G-B2CM-O)</td>
+      <td style="text-align: center;">1 &#215; 25 GbE <br>or 1 &#215; 100 GbE (SMC AOC-A100G-B2CM-O NIC)</td>
     </tr>
     <tr>
       <td><strong>Management Ports (BMC)</strong></td>
