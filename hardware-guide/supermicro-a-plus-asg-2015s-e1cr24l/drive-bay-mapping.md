@@ -1,6 +1,6 @@
 ---
 title: "Drive Bay Mapping in Supermicro A+ ASG-2015S-E1CR24L Nodes"
-summary: "This section explains the drive bay mapping in Supermicro 2015s nodes."
+summary: "This section explains the drive bay mapping in Supermicro 2015S nodes."
 permalink: /hardware-guide/supermicro-a-plus-asg-2015s-e1cr24l/drive-bay-mapping.html
 sidebar: hardware_guide_sidebar
 ---

@@ -1,6 +1,6 @@
 ---
 title: "Replacing Hardware Components in Your Supermicro A+ ASG-2015S-E1CR24L Nodes"
-summary: "This section explains how to replace hardware components in Supermicro 2015s nodes."
+summary: "This section explains how to replace hardware components in Supermicro 2015S nodes."
 permalink: /hardware-guide/supermicro-a-plus-asg-2015s-e1cr24l/replacing-hardware-components.html
 sidebar: hardware_guide_sidebar
 ---
