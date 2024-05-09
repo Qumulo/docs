@@ -11,7 +11,7 @@ sidebar: hardware_guide_sidebar
 {% include note.html content=OneOrTwoNICs %}
 
 {% capture alt_tag %}Back Diagram of the {{site.sm2015sLong}} Node{% endcapture %}
-{% include image.html alt=alt_tag file="supermicro-2015s-back-diagram.png" url="/hardware-guide/supermicro-a-plus-asg-2015s-e1cr24l/images/supermicro-2015s-back-diagram.png" %}
+{% include image.html alt=alt_tag file="supermicro-2015s-back-diagram.png" %}
 
 {% include content-reuse/platform-agnostic-ipmi.md %}
 {{site.hardware.ipmiConfig.smc}}
