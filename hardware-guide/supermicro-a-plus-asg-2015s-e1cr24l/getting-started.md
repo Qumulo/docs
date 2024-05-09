@@ -21,12 +21,8 @@ sidebar: hardware_guide_sidebar
 
 1. On the **Please select boot device:** screen, select your USB drive (usually labeled with `UEFI OS`) and boot into it.
 
+   The Qumulo Core installation begins.
 
-## Step 3: Install Qumulo Core
-
-{% include content-reuse/install-qumulo-core.md %}
-   
-
-## Step 4: Create and Configure Your Cluster
+## Step 3: Create and Configure Your Cluster
 
 {% include content-reuse/create-configure-cluster.md %}
