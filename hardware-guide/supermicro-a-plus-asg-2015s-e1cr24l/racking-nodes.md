@@ -1,6 +1,6 @@
 ---
 title: "Racking Your Supermicro A+ ASG-2015S-E1CR24L Nodes"
-summary: "This section describes the rack rail system that comprises an inner rail secured to the chassis, an outer rail that secured to the rack, and a middle rail within the outer rail. In addition, this section explains how to install Supermicro 2015S nodes in a data center. For more information, see <a href="https://www.supermicro.com/manuals/superstorage/MNL-2628.pdf#page=24">Installing the System into a Rack</a> in the Supermicro documentation."
+summary: "This section describes the rack rail system that comprises an inner rail secured to the chassis, an outer rail that secured to the rack, and a middle rail within the outer rail. In addition, this section explains how to install Supermicro 2015S nodes in a data center. For more information, see <a href='https://www.supermicro.com/manuals/superstorage/MNL-2628.pdf#page=24'>Installing the System into a Rack</a> in the Supermicro documentation."
 permalink: /hardware-guide/supermicro-a-plus-asg-2015s-e1cr24l/racking-nodes.html
 sidebar: hardware_guide_sidebar
 ---
