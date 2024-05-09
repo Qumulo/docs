@@ -358,6 +358,43 @@ entries:
       url: /hardware-guide/supermicro-a-plus-asg-1014s-acr12n4h/technical-specifications.html
       output: web, pdf
 
+  - title: Supermicro A+ Supermicro A+ ASG-2015S-E1CR24L
+    url: /hardware-guide/supermicro-a-plus-asg-1014s-acr12n4h/index.html
+    output: web, pdf
+    folderitems:
+
+    - title: Racking Nodes
+      url: /hardware-guide/supermicro-a-plus-asg-2015s-e1cr24l/racking-nodes.html
+      output: web, pdf
+
+    - title: Configuring IPMI and Wiring Nodes
+      url: /hardware-guide/supermicro-a-plus-asg-2015s-e1cr24l/configuring-ipmi-wiring-nodes.html
+      output: web, pdf
+
+    - title: Getting Started
+      url: /hardware-guide/supermicro-a-plus-asg-2015s-e1cr24l/getting-started.html
+      output: web, pdf
+
+    - title: Drive Bay Mapping
+      url: /hardware-guide/supermicro-a-plus-asg-2015s-e1cr24l/drive-bay-mapping.html
+      output: web, pdf
+
+    - title: Panel LEDs
+      url: /hardware-guide/supermicro-a-plus-asg-2015s-e1cr24l/panel-leds.html
+      output: web, pdf
+
+    - title: Cluster Networking
+      url: /hardware-guide/supermicro-a-plus-asg-2015s-e1cr24l/networking-cluster.html
+      output: web, pdf
+
+    - title: Replacing Hardware Components
+      url: /hardware-guide/supermicro-a-plus-asg-2015s-e1cr24l/replacing-hardware-components.html
+      output: web, pdf
+
+    - title: Technical Specifications
+      url: /hardware-guide/supermicro-a-plus-asg-2015s-e1cr24l/technical-specifications.html
+      output: web, pdf
+
   - title: Supermicro A+ WIO 1114S-WN10RT
     url: /hardware-guide/supermicro-a-plus-wio-1114s-wn10rt/index.html
     output: web, pdf
