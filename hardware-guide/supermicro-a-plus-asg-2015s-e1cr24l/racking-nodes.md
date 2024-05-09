@@ -5,21 +5,20 @@ permalink: /hardware-guide/supermicro-a-plus-asg-2015s-e1cr24l/racking-nodes.htm
 sidebar: hardware_guide_sidebar
 ---
 
-## Using the Toolless Rail System
-{{site.sm2015s}} nodes don't require any tools for attaching rails to your server rack. For more information, see [The Toolless Rail System](https://www.supermicro.com/manuals/superserver/1U/MNL-2436.pdf#page=18) in the Supermicro documentation.
+{{site.sm2015s}} nodes use a rack rail system that comprises an inner rail that you secure to the chassis, an outer rail that you secure to your rack, and the middle rail within the outer rail. For more information, see [Installing the System into a Rack](https://www.supermicro.com/manuals/superstorage/MNL-2628.pdf#page=24) in the Supermicro documentation.
 
 
 ## To Insert the Chassis
-For information about inserting the {{site.sm2015s}} node chassis into the server rack, see [Sliding the Chassis onto the Rack Rails](https://www.supermicro.com/manuals/superserver/1U/MNL-2436.pdf#page=21) in the Supermicro documentation.
+For information about inserting the {{site.sm2015s}} node chassis into the server rack, see [Installing the Server into the Rack](https://www.supermicro.com/manuals/superstorage/MNL-2628.pdf#page=28) in the Supermicro documentation.
 
 
 ## To Remove the Chassis
-The {{site.sm2015s}} node chassis rests on the inner rail lip of the left and right rails. Two thumb screws secure the chassis to the server rack.
+The {{site.sm2015s}} node chassis rest on the inner rail lip of the left and right rails. Two front latches secure the chassis to the server rack.
 
 1. Disconnect any cables from the chassis. 
 
-1. Remove one screw from each side of the front of the chassis.
+1. [Lift one latch on each side of the front of the chassis](https://www.supermicro.com/manuals/superstorage/MNL-2628.pdf#page=29).
 
 1. Pull the chassis out from the server rack.
 
-1. (Optional) To remove the toolless rails from your server rack completely, see [Removing the Rails](https://www.supermicro.com/manuals/superserver/1U/MNL-2436.pdf#page=22) in the Supermicro documentation.
+1. (Optional) To remove the outer rails from your server rack completely, see [Removing the Outer Rails from the Rack](https://www.supermicro.com/manuals/superstorage/MNL-2628.pdf#page=30) in the Supermicro documentation.
