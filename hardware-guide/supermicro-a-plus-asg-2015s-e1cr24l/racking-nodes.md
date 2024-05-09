@@ -2,8 +2,6 @@
 title: "Racking Your Supermicro A+ ASG-2015S-E1CR24L Nodes"
 summary: "This section describes how to use the toolless rail system to attach the rails to a server rack and install Supermicro 2015s nodes in a data center."
 permalink: /hardware-guide/supermicro-a-plus-asg-2015s-e1cr24l/racking-nodes.html
-redirect_from:
-  - /hardware/supermicro-a-plus-asg-2015s-e1cr24l/racking-nodes.html
 sidebar: hardware_guide_sidebar
 ---
 
