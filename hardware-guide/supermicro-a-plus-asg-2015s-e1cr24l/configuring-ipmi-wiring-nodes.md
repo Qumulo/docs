@@ -2,9 +2,6 @@
 title: "Configuring the Intelligent Platform Management Interface (IPMI) and Wiring Your Supermicro A+ ASG-2015S-E1CR24L Nodes"
 summary: "This section explains how to wire the out-of-band management (IPMI) port, 25 Gbps or 100 Gbps ports, and power on Supermicro 2015s nodes."
 permalink: /hardware-guide/supermicro-a-plus-asg-2015s-e1cr24l/configuring-ipmi-wiring-nodes.html
-redirect_from: /hardware-guide/supermicro-a-plus-asg-2015s-e1cr24l/wiring-nodes.html
-  - /hardware-guide/supermicro-a-plus-asg-2015s-e1cr24l/wiring-nodes.html
-  - /hardware/supermicro-a-plus-asg-2015s-e1cr24l/wiring-nodes.html
 sidebar: hardware_guide_sidebar
 ---
 

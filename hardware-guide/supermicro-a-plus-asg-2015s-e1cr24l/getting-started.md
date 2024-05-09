@@ -2,8 +2,6 @@
 title: "Getting Started with Qumulo on Supermicro A+ ASG-2015S-E1CR24L"
 summary: "This section explains how to prepare Supermicro 2015s nodes for creating a Qumulo cluster."
 permalink: /hardware-guide/supermicro-a-plus-asg-2015s-e1cr24l/getting-started.html
-redirect_from:
-  - /hardware/supermicro-a-plus-asg-2015s-e1cr24l/getting-started.html
 sidebar: hardware_guide_sidebar
 ---
 

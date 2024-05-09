@@ -2,8 +2,6 @@
 title: "Networking Your Supermicro A+ ASG-2015S-E1CR24L Cluster"
 summary: "This section explains how to network a Supermicro 2015s cluster, lists the networking prerequisites, outlines the recommended configuration, and explains how to connect to redundant switches or to a single switch."
 permalink: /hardware-guide/supermicro-a-plus-asg-2015s-e1cr24l/networking-cluster.html
-redirect_from:
-  - /hardware/supermicro-a-plus-asg-2015s-e1cr24l/networking-cluster.html
 sidebar: hardware_guide_sidebar
 ---
 

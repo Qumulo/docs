@@ -2,8 +2,6 @@
 title: "Panel LEDs on Supermicro A+ ASG-2015S-E1CR24L Nodes"
 summary: "This section explains the LEDs on Supermicro 2015s nodes."
 permalink: /hardware-guide/supermicro-a-plus-asg-2015s-e1cr24l/panel-leds.html
-redirect_from:
-  - /hardware/supermicro-a-plus-asg-2015s-e1cr24l/panel-leds.html
 sidebar: hardware_guide_sidebar
 ---
 
