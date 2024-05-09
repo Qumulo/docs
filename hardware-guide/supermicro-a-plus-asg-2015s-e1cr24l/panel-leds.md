@@ -7,23 +7,23 @@ sidebar: hardware_guide_sidebar
 
 ## Front Panel LEDs and Buttons
 
-On the front, right side of your node, there are five LEDs.
+On the front, right side of your node, there are seven LEDs. The following table describes the UID button and LED, the Information LED, and the Power LED.
 
 | Label                  | Color and Behavior     | Description                                 |
 | ---------------------- | ---------------------- | ------------------------------------------- |
 | UID Button and LED     | Off                                       | UID off                                           |
 | UID Button and LED     | {{site.led.blue}} (solid blue)            | Unit identified at local site                     |
 | UID Button and LED     | {{site.led.blue}} (slow-blinking blue)    | Unit identified at remote site or system recovery |
-| Information LED        | {{site.led.red}} (solid red)              | System overheated                                 |
-| Information LED        | {{site.led.red}} (1 s. blinking red)      | Fan failed                                        |
-| Information LED        | {{site.led.red}} (4 s. blinking red)      | Power Supply Unit (PSU) failed                    |
-| Information LED and Power LED | {{site.led.red}} {{site.led.green}} (Info LED solid red, power LED blinking green) | Fault detected | 
-| Information LED        | {{site.led.blue}}/{{site.led.red}} (0.1 s. blinking blue/red) | Recovery mode |
-| Information LED        | {{site.led.blue}} (solid blue)            | UID activated locally                             |
-| Information LED        | {{site.led.blue}} (1 s. blinking blue)    | UID activated by using the BMC                    |
-| Information LED        | {{site.led.blue}} (0.5 s. blinking blue)  | BMC resetting                                     |
-| Information LED        | {{site.led.blue}} (0.25 s. blinking blue) | BMC configuring factory defaults                  |
-| Information LED and Power LED | {{site.led.blue}} {{site.led.green }} (Info LED solid blue, power LED 0.1 s. blinking green) | BMC or BIOS firmware updating |
+| Info LED        | {{site.led.red}} (solid red)              | System overheated                                 |
+| Info LED        | {{site.led.red}} (1 s. blinking red)      | Fan failed                                        |
+| Info LED        | {{site.led.red}} (4 s. blinking red)      | Power Supply Unit (PSU) failed                    |
+| Info LED and Power LED | {{site.led.red}} {{site.led.green}} (Info LED solid red, power LED blinking green) | Fault detected | 
+| Info LED        | {{site.led.blue}}/{{site.led.red}} (0.1 s. blinking blue/red) | Recovery mode |
+| Info LED        | {{site.led.blue}} (solid blue)            | UID activated locally                             |
+| Info LED        | {{site.led.blue}} (1 s. blinking blue)    | UID activated by using the BMC                    |
+| Info LED        | {{site.led.blue}} (0.5 s. blinking blue)  | BMC resetting                                     |
+| Info LED        | {{site.led.blue}} (0.25 s. blinking blue) | BMC configuring factory defaults                  |
+| Info LED and Power LED | {{site.led.blue}} {{site.led.green }} (Info LED solid blue, power LED 0.1 s. blinking green) | BMC or BIOS firmware updating |
 
 
 ## NVMe Drive Carrier LEDs
