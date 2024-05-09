@@ -20,6 +20,6 @@ Your {{site.sm2015s}} chassis has four internal fans. For information about repl
 
 
 ## To Replace a DIMM
-Your {{site.sm2015s}} chassis has 16 DIMM slots. For information about replacing a DIMM, see [DIMM Installation] (https://www.supermicro.com/manuals/superstorage/MNL-2628.pdf#page=467) and [DIMM Module Population Sequence](https://www.supermicro.com/manuals/superstorage/MNL-2628.pdf#page=46) in the Supermicro documentation.
+Your {{site.sm2015s}} chassis has 16 DIMM slots. For information about replacing a DIMM, see [DIMM Installation](https://www.supermicro.com/manuals/superstorage/MNL-2628.pdf#page=467) and [DIMM Module Population Sequence](https://www.supermicro.com/manuals/superstorage/MNL-2628.pdf#page=46) in the Supermicro documentation.
 
 {% include note.html content="To identify which DIMM failed, you must use the baseboard management controller (BMC) on the node or another hardware monitoring solution." %}
