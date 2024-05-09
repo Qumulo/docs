@@ -7,4 +7,4 @@ sidebar: hardware_guide_sidebar
 
 {% include content-reuse/platform-agnostic-unified-networking-cluster.md ethernetSpeed="25 Gbps or 100 Gbps"%}
 
-{% include image.html alt="Four-Node Cluster Architecture Diagram" file="supermicro-1014s-four-node-cluster-architecture-diagram.png" url="/hardware-guide/supermicro-a-plus-asg-2015s-e1cr24l/images/supermicro-1014s-four-node-cluster-architecture-diagram.png" %}
+{% include image.html alt="Platform-Agnostic Unified Networking Four-Node Cluster Architecture Diagram" file="../../platform-agnostic/images/platform-agnostic-unified-networking-four-node-cluster.png" %}
