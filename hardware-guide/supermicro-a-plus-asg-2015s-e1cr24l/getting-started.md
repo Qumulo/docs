@@ -10,7 +10,7 @@ sidebar: hardware_guide_sidebar
 {% include content-reuse/platform-agnostic-verify-node-preamble.md %}
 
    {% capture alt_tag %}Diagram of the Front Panel of the {{site.sm2015sLong}} Node{% endcapture %}
-   {% include image.html alt=alt_tag file="supermicro-1014s-front-panel-diagram.png" %}
+   {% include image.html alt=alt_tag file="supermicro-2015s-front-panel-diagram.png" %}
 
 
 ## Step 2: Boot by Using the Qumulo Core USB Drive Installer
