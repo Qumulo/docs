@@ -11,6 +11,10 @@ For information about upgrade types for each release, see <a href='mode-referenc
 
 <style>div#toc{height:200px;overflow:auto;}</style>
 
+## Qumulo Core 7.1.1
+* {{page.varNoPublicChanges}}
+* Resolved two issues that could potentially cause a crash
+
 ## Qumulo Core 7.1.0.1 (Quarterly)
 {{page.varDownloadsRelnotes}}
 {% include important.html content="This release resolves an issue in Qumulo Core 7.1.0 that prevented Broadcom NIC firmware from being updated correctly." %}

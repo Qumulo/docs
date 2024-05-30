@@ -30,9 +30,9 @@ summary: This section explains how to use the <code>qq replication_create_source
 synopsis: Create a new replication relationship.
 title: qq replication_create_source_relationship
 usage: "qq replication_create_source_relationship [-h] (--source-id SOURCE_ID | --source-path\
-  \ SOURCE_PATH) --target-path TARGET_PATH --target-address TARGET_ADDRESS\n    [--target-port\
-  \ TARGET_PORT] [--enable-replication {true,false}] [--set-source-directory-read-only\
-  \ {true,false}]\n    [--map-local-ids-to-nfs-ids {true,false}]"
+  \ SOURCE_PATH) --target-path TARGET_PATH --target-address TARGET_ADDRESS [--target-port\
+  \ TARGET_PORT] [--enable-replication {true,false}]\n    [--set-source-directory-read-only\
+  \ {true,false}] [--map-local-ids-to-nfs-ids {true,false}]"
 zendesk_source: qq CLI Command Guide
 
 ---

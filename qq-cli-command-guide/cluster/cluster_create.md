@@ -33,7 +33,7 @@ optional_options:
   name: --reject-eula
   required: false
 - alternate: []
-  help: EC2 Instance ID of node receiving this request. AWS only.
+  help: Instance ID of node receiving this request. Cloud only.
   name: --host-instance-id
   required: false
 - alternate:
@@ -58,7 +58,7 @@ summary: This section explains how to use the <code>qq cluster_create</code> com
 synopsis: Creates a Qumulo Cluster
 title: qq cluster_create
 usage: "qq cluster_create [-h] --cluster-name CLUSTER_NAME [--admin-password ADMIN_PASSWORD]\
-  \ [--blocks-per-stripe BLOCKS_PER_STRIPE]\n    [--max-drive-failures MAX_DRIVE_FAILURES]\
+  \ [--blocks-per-stripe BLOCKS_PER_STRIPE] [--max-drive-failures MAX_DRIVE_FAILURES]\
   \ [--max-node-failures MAX_NODE_FAILURES] [--accept-eula] [--reject-eula]\n    [--host-instance-id\
   \ HOST_INSTANCE_ID] (--node-uuids NODE_UUIDS [NODE_UUIDS ...] | --node-ips NODE_IPS\
   \ [NODE_IPS ...] | --all-unconfigured)"
