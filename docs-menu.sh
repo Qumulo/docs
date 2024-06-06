@@ -123,9 +123,28 @@ check_src_repo() {
 
 # Regenerate CLI documentation
 regen_cli_docs() {
-    echo "Regenerating CLI documentation..."
     check_src_repo
-    cd ~/src && hg up default && hg fetch && ./tools/extract_cli_help.py --base-dir ~/git/docs-internal && cd -
+    while true; do
+        read -p "Generate the current (c) or future (f) version of the CLI docs? " version_choice
+        if [ "$version_choice" = "c" ]; then
+            echo "Regenerating current CLI documentation from default branch..."
+            cd ~/src && hg up default && hg fetch && ./tools/extract_cli_help.py --base-dir ~/git/docs-internal && cd -
+            break
+        elif [ "$version_choice" = "f" ]; then
+            while true; do
+                read -p "Enter the Qumulo Core release number in N.N.N format (for example, 7.1.2): " version_number
+                if [[ $version_number =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+                    echo "Regenerating CLI documentation from release-$version_number branch..."
+                    cd ~/src && hg up release-$version_number && hg fetch && ./tools/extract_cli_help.py --base-dir ~/git/docs-internal && cd -
+                    break 2
+                else
+                    echo "Enter a release version in the N.N.N format, where N is a number."
+                fi
+            done
+        else
+            echo "Invalid choice. Enter 'c' for the current version or 'f' for a future version."
+        fi
+    done
 }
 
 # Build HTML documentation by using Jekyll
