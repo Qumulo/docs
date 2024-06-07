@@ -12,6 +12,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
 <style>div#toc{height:200px;overflow:auto;}</style>
 
 ## Qumulo Core 7.1.1
+{{page.varDownloadsRelnotes}}
 * {{page.varNoPublicChanges}}
 * Resolved two issues that could potentially cause a crash
 
