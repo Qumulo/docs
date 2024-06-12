@@ -135,7 +135,7 @@ regen_cli_docs() {
                 read -p "Enter the Qumulo Core release number in N.N.N format (for example, 7.1.2): " version_number
                 if [[ $version_number =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
                     echo "Regenerating CLI documentation from release-$version_number branch..."
-                    cd ~/src && hg up release-$version_number && hg fetch && ./tools/extract_cli_help.py --base-dir ~/git/docs-internal && cd -
+                    cd ~/src && hg up default && hg fetch && hg up release-$version_number && ./tools/extract_cli_help.py --base-dir ~/git/docs-internal && cd -
                     break 2
                 else
                     echo "Enter a release version in the N.N.N format, where N is a number."
