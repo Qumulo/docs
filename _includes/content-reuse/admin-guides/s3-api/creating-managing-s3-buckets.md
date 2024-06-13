@@ -116,6 +116,8 @@ By default, the default bucket directory prefix for newly created buckets is the
 
 * To change the default bucket directory prefix, you need {{site.s3.permissions.bucketsWrite}}.
 
+* To enable or suspend S3 bucket versioning, use the {% include qq.html command="s3_modify_bucket" %} command.
+
 #### To Configure the Default Bucket Directory Prefix by Using the qq CLI
 1. To view the current default bucket directory prefix, run the {% include qq.html command="s3_get_settings" %} command.
 
@@ -220,9 +222,9 @@ To list your S3 buckets {{site.s3.permissions.APIorCLI}}, you need {{site.s3.per
   {{site.exampleOutput}} {{site.s3.permissions.timesUTC}}
 
   ```
-  name       creation_time                   path
-  =========  ==============================  ==========
-  my-bucket  2022-12-13T22:18:01.406433425Z  /my-bucket
+  name       creation_time                   path        versioning
+  =========  ==============================  ==========  ===========
+  my-bucket  2022-12-13T22:18:01.406433425Z  /my-bucket  Unversioned
   ```
 
 * For JSON output, use the `--json` flag.
@@ -236,7 +238,8 @@ To list your S3 buckets {{site.s3.permissions.APIorCLI}}, you need {{site.s3.per
         "anonymous_access_enabled": false,
         "creation_time": "2022-12-13T22:18:01.406433425Z",
         "name": "my-bucket",
-        "path": "/my-bucket"
+        "path": "/my-bucket",
+        "versioning": "Unversioned"
       }
     ]
   }

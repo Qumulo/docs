@@ -176,6 +176,10 @@ Qumulo Core requires switches that meet the following criteria:
       <td><p>4.3 billion</p>{% include note.html content="This approximate value of 2<sup>32</sup> is equivalent to the possible maximum of directories or the entire inode space." %}</td>
     </tr>
     <tr>
+      <td>S3 Bucket Object Versions</td>
+      <td>Unlimited (4,294,967,296 theoretical)</td>
+    </tr>    
+    <tr>
       <td>Total Replication Relationships</td>
       <td>100 {% include note.html content="If a directory is more than 100 levels below the file system root directory, you can't use it as a replication source." %}</td>
     </tr>

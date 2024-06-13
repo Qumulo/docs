@@ -11,6 +11,12 @@ For information about upgrade types for each release, see <a href='mode-referenc
 
 <style>div#toc{height:200px;overflow:auto;}</style>
 
+## Qumulo Core 7.1.2
+{{page.varDownloadsRelnotes}}
+* Added Amazon S3 object versioning
+* Improved the prefetcher's performance
+* Disabled automatic NIC firmware updates during platform upgrades
+
 ## Qumulo Core 7.1.1
 {{page.varDownloadsRelnotes}}
 * {{page.varNoPublicChanges}}

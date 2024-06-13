@@ -34,8 +34,8 @@ summary: This section explains how to use the <code>qq fs_read_dir_aggregates</c
 synopsis: Read directory aggregation entries
 title: qq fs_read_dir_aggregates
 usage: "qq fs_read_dir_aggregates [-h] --path PATH [--recursive] [--max-entries MAX_ENTRIES]\
-  \ [--max-depth MAX_DEPTH]\n    [--order-by {total_blocks,total_datablocks,total_named_stream_datablocks,total_metablocks,total_files,total_directories,total_symlinks,total_other,total_named_streams}]\
-  \ [--snapshot SNAPSHOT]"
+  \ [--max-depth MAX_DEPTH]\n    [--order-by {total_blocks,total_datablocks,total_named_stream_datablocks,total_metablocks,total_files,total_directories,total_symlinks,total_other,total_named_streams}]\n\
+  \    [--snapshot SNAPSHOT]"
 zendesk_source: qq CLI Command Guide
 
 ---

@@ -41,6 +41,10 @@ The following table lists the S3 API actions that Qumulo Core supports and the v
     <td class="fade-row">5.2.4</td>
   </tr>  
   <tr>
+    <td><code>DeleteBucketVersioning</code></td>
+    <td>7.1.2</td>
+  </tr>
+  <tr>
     <td><code>DeleteBucketPolicy</code></td>
     <td>7.0.1.1</td>
   </tr>  
@@ -49,13 +53,13 @@ The following table lists the S3 API actions that Qumulo Core supports and the v
     <td class="fade-row">5.2.1</td>
   </tr>
   <tr>
-    <td><code>DeleteObjectTagging</code></td>
-    <td>6.3.2</td>
-  </tr>   
-  <tr>
     <td><code>DeleteObjects</code></td>
     <td class="fade-row">5.2.2</td>
   </tr>
+  <tr>
+    <td><code>DeleteObjectTagging</code></td>
+    <td>6.3.2</td>
+  </tr>   
   <tr>
     <td><code>GetBucketAcl</code></td>
     <td>6.1.1</td>
@@ -64,6 +68,10 @@ The following table lists the S3 API actions that Qumulo Core supports and the v
     <td><code>GetBucketLocation</code></td>
     <td class="fade-row">5.1.2</td>
   </tr>    
+  <tr>
+    <td><code>GetBucketVersioning</code></td>
+    <td>7.1.2</td>
+  </tr>
   <tr>
     <td><code>GetBucketPolicy</code></td>
     <td>7.0.0.1</td>
@@ -75,6 +83,10 @@ The following table lists the S3 API actions that Qumulo Core supports and the v
   <tr>
     <td><code>GetObject</code></td>
     <td class="fade-row">5.0.4</td>
+  </tr>
+  <tr>
+    <td><code>GetObjectTagging</code></td>
+    <td>7.1.2</td>
   </tr>
   <tr>
     <td><code>GetObjectAcl</code></td>
@@ -117,6 +129,10 @@ The following table lists the S3 API actions that Qumulo Core supports and the v
     <td>7.0.1.1</td>
   </tr>    
   <tr>
+    <td><code>PutBucketVersioning</code></td>
+    <td>7.1.2</td>
+  </tr>
+  <tr>
     <td><code>PutObject</code></td>
     <td class="fade-row">5.2.1</td>
   </tr>
@@ -149,8 +165,6 @@ The following table lists some of the S3 API functionality that Qumulo Core does
 | Logging controls                          | &mdash;     |
 | Multi-chunk payload signing               | Qumulo Core doesn't support the [streaming version of Amazon Signature Version 4 (SigV4)](https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-streaming.html), only the [single-chunk version](https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-header-based-auth.html). |
 | Object locks                              | &mdash;     |
-| Object versioning                         | Qumulo objects have one object version. To preserve previous object contents in Qumulo Core, use snapshots. |
-| Policies                                  | &mdash;     |
 | Signature Version 2                       | Qumulo Core supports only SigV4 signatures. |
 | Storage classes                           | Qumulo Core doesn't use the [storage class](https://aws.amazon.com/s3/storage-classes/) concept. All objects have the same storage class status. |
 | Retention policies                        | &mdash;     |
@@ -210,6 +224,13 @@ The S3 API supports listing objects in a bucket by using the [`ListObjects`]({{s
 Qumulo Core supports authenticating requests by using only [Amazon Signature Version 4]({{site.s3.docs.signatureV4}}). Most S3 client applications support this authentication type.
 
 If your application attempts to use a previous Amazon signature version, you receive a `400 Bad Request` response with the error code `AuthorizationHeaderMalformed`.
+
+### Versioning
+* **Object Version Limits:** In Qumulo Core, S3 bucket versioning is consistent with that of Amazon S3, with the exception of individual object versions. Qumulo Core limits directories to approximately 4.3 billion child files. The approach that Qumulo Core takes to indexing files in a directory might cause object creation commands to output the `QumuloDirectoryEntryLimitReached` error when a directory gets close to its capacity. Because Qumulo Core gives object versions unique identifiers, it might be possible to retry the command successfully. However, if you begin to observe this error, we recommend removing previous object versions from your system.
+
+* **Creating Empty Versioned Directories:** Qumulo Core doesn't support creating empty, versioned directories.
+
+* **Deleting Versioned Objects:** If you don't specify an object version ID, the [DeleteObject](https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObject.html) and [DeleteObjects](https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObjects.html) S3 API actions create a _deletion marker_ for an object but don't delete any file system data. Because currently Qumulo Core doesn't support bucket lifecycle policies, the data remains accessible by using S3 API actions and the object version ID. To delete a specific object version permanently, specify its version ID when you use either of these API actions.
 
 
 ## Comparison of Known Limits between S3 in Qumulo and Amazon
@@ -282,6 +303,11 @@ This section compares the Qumulo Core S3 API limits with native Amazon S3 limits
     <td>1,530 characters, if there are no slash (<code>/</code>) characters in the key</td>    
     <td>1,024 characters</td>
   </tr>    
+  <tr>
+    <td>Maximum object versions</td>
+    <td>4,294,967,296 (theoretical)</td>
+    <td>Unlimited</td>
+  </tr>
 </tbody>
 </table>
 

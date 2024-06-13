@@ -418,6 +418,10 @@ entries:
       url: /administrator-guide/s3-api/managing-multipart-uploads.html
       output: web, pdf
 
+    - title: Managing S3 Bucket Versioning
+      url: /administrator-guide/s3-api/managing-s3-bucket-versioning.html
+      output: web, pdf
+
     - title: Supported Functionality and Limits
       url: /administrator-guide/s3-api/supported-s3-functionality-known-limits.html
       output: web, pdf

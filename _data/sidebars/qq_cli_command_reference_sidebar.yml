@@ -917,6 +917,9 @@ entries:
       title: s3_list_uploads
       url: /qq-cli-command-guide/s3/s3_list_uploads.html
     - output: web,pdf
+      title: s3_modify_bucket
+      url: /qq-cli-command-guide/s3/s3_modify_bucket.html
+    - output: web,pdf
       title: s3_modify_bucket_policy
       url: /qq-cli-command-guide/s3/s3_modify_bucket_policy.html
     - output: web,pdf
