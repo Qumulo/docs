@@ -9,7 +9,7 @@ sidebar: hardware_guide_sidebar
 ---
 
 ## Prerequisites
-* USB 3.0 (or higher) drive (4 GB minimum)
+* USB 3.0 (or higher) drive (8 GB minimum)
 * Qumulo Core USB installer image (to get the image, {{site.contactQumuloCare}})
 
 ## To Create a USB Drive Installer on macOS
