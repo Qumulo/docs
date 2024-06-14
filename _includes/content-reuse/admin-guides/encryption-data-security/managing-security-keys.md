@@ -9,7 +9,7 @@
 
 For information about protecting your snapshots by using a key from the Qumulo file system key store, see [Locking and Unlocking Snapshots](../snapshots/locking-unlocking-snapshots.html).
 
-{% include tip.html content="The response of the `qq fs_security_add_key` command includes the _key identifier._ When you use `qq fs_security` commands, you can specify either the key identifier (by using the `--id` flag) or the key name (by using the `--name` flag)." %}
+{% capture keyID %}{{site.fsSecurityCommands}}{% endcapture %}
 
 <a id="add-public-key"></a>
 ## Adding a Public Key
@@ -60,6 +60,8 @@ Run the `qq fs_security_get_usage` command and specify the key identifier or nam
 ## Modifying a Public Key
 To modify the name or comment for a public key, run the {% include qq.html command="fs_security_modify_key" %} command and specify the key identifier or name and the flags for the fields to modify.
 
+{% include note.html content=keyID %}
+
 
 ## Rotating a Public Key
 This section explains how to rotate a public key in the Qumulo file system key store.
@@ -68,6 +70,7 @@ This section explains how to rotate a public key in the Qumulo file system key s
 <ul>
   <li>Key rotation doesn't affect the resources that the key protects or change the identifier or name of the public key.</li>
   <li>When the key rotation is complete, only the replacement public key can unlock the protected resources.</li>
+  <li>{{site.fsSecurityCommands}}</li>  
 </ul>
 {{site.data.alerts.end}}
 
@@ -116,6 +119,7 @@ When you add a key to the Qumulo file system key store, Qumulo Core enables it a
 <ul>
   <li>It isn't possible to lock a Qumulo file system resource with a disabled key. However, you can still unlock resources that this key locked previously.</li>
   <li>It isn't possible to disable a key that Qumulo Core uses to create new resources. For example, you can't disable a key associated with a snapshot policy when the snapshot policy creates new snapshots by using the key. In this scenario, you must disassociate the key from the snapshot policy before you can disable it. {{page.varXrefUsage}}</li>
+  <li>{{site.fsSecurityCommands}}</li>
 </ul>
 {{site.data.alerts.end}}
 
@@ -123,5 +127,9 @@ When you add a key to the Qumulo file system key store, Qumulo Core enables it a
 ## Deleting a Public Key
 Run the `qq fs_security_delete_key` command and specify the key identifier or name.
 
-{% capture unlockBeforeDelete %}It isn't possible to delete a key that a Qumulo file system resource uses. {{page.varXrefUsage}}{% endcapture %}
-{% include note.html content=unlockBeforeDelete %}
+{{site.data.alerts.important}}
+<ul>
+  <li>It isn't possible to delete a key that a Qumulo file system resource uses. {{page.varXrefUsage}}</li>
+  <li>{{site.fsSecurityCommands}}</li>
+</ul>
+{{site.data.alerts.end}}
