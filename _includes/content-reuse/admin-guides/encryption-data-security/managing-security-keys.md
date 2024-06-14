@@ -105,7 +105,7 @@ qq fs_security_replace_key \
 
    For more information, see [Extracting the Public Key from an ECDSA Private Key](generating-storing-ecdsa-keys.html#extracting-the-public-key-from-an-ecdsa-private-key).
 
-   {% include important.html content="Because the key version is part of the challenge message, and this version changes when a user writes or modifies the key, any change to the key name or comment after you receive the challenge message makes the message stale." %}
+   {% include note.html content="Because the key version is part of the challenge message, and this version changes when a user writes or modifies the key, any change to the key name or comment after you receive the challenge message makes the message stale." %}
 
 
 ## Disabling a Public Key
@@ -127,7 +127,7 @@ When you add a key to the Qumulo file system key store, Qumulo Core enables it a
 ## Deleting a Public Key
 Run the `qq fs_security_delete_key` command and specify the key identifier or name.
 
-{{site.data.alerts.important}}
+{{site.data.alerts.note}}
 <ul>
   <li>It isn't possible to delete a key that a Qumulo file system resource uses. {{page.varXrefUsage}}</li>
   <li>{{site.fsSecurityCommands}}</li>
