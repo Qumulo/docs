@@ -16,7 +16,7 @@ Run the `./alerts user_add` command and specify the administrator's full name, u
 
 ```bash
 ./alerts user_add \
-  --full_name "Jane Johnson" \
+  --full-name "Jane Johnson" \
   --username jjohnson \
   --password {{site.examplePassword}} \
   --email jjohnson@example.com \
