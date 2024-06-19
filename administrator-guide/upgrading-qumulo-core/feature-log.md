@@ -11,7 +11,11 @@ For information about upgrade types for each release, see <a href='mode-referenc
 
 <style>div#toc{height:200px;overflow:auto;}</style>
 
-## Qumulo Core 7.1.2
+## Qumulo Core 7.1.3
+{{page.varDownloadsRelnotes}}
+Extended S3 object versioning support to additional API actions
+
+# Qumulo Core 7.1.2
 {{page.varDownloadsRelnotes}}
 * Added Amazon S3 object versioning
 * Improved the prefetcher's performance
