@@ -30,9 +30,9 @@ summary: This section explains how to use the <code>qq network_mod_interface</co
   command.
 synopsis: Modify interface configuration
 title: qq network_mod_interface
-usage: "qq network_mod_interface [-h] [--interface-id INTERFACE_ID] [--default-gateway\
-  \ DEFAULT_GATEWAY] [--default-gateway-ipv6 DEFAULT_GATEWAY_IPV6]\n    [--bonding-mode\
-  \ {ACTIVE_BACKUP,IEEE_8023AD}] [--mtu MTU]"
+usage: qq network_mod_interface [-h] [--interface-id INTERFACE_ID] [--default-gateway
+  DEFAULT_GATEWAY] [--default-gateway-ipv6 DEFAULT_GATEWAY_IPV6] [--bonding-mode {ACTIVE_BACKUP,IEEE_8023AD}]
+  [--mtu MTU]
 zendesk_source: qq CLI Command Guide
 
 ---
