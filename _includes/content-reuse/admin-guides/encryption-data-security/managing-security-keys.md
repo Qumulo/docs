@@ -19,7 +19,7 @@ This section explains how to add a public key to the Qumulo file system key stor
 {% capture cryptoLib %}{{site.protectingData.mustHaveCryptoLib}}{% endcapture %}
 {% include note.html content=cryptoLib %}
 
-Run the `qq fs_security_add_key` command and specify the key name, the path to the private key file, and an optional comment. For example:
+Run the {% include qq.html command="fs_security_add_key" %} command and specify the key name, the path to the private key file, and an optional comment. For example:
 
 ```bash
 qq fs_security_add_key \
@@ -29,7 +29,7 @@ qq fs_security_add_key \
 ```
 
 ### If You Don't Have Direct Access to the Private Key
-Run the `qq fs_security_add_key` command and specify the key name, the public key contents, the Base64-encoded verification signature (the key name signed with the private key), and an optional comment. For example:
+Run the {% include qq.html command="fs_security_add_key" %} command and specify the key name, the public key contents, the Base64-encoded verification signature (the key name signed with the private key), and an optional comment. For example:
 
 ```bash
 qq fs_security_add_key \
@@ -52,7 +52,7 @@ For more information, see [Extracting the Public Key from an ECDSA Private Key](
 
 <a id="retrieve-key-usage"></a>
 ## Retrieving Public Key Usage Information
-Run the `qq fs_security_get_usage` command and specify the key identifier or name.
+Run the {% include qq.html command="fs_security_get_usage" %} command and specify the key identifier or name.
 
 {{site.jsonNotTable}}
 
@@ -77,7 +77,7 @@ This section explains how to rotate a public key in the Qumulo file system key s
 ### If You Have Access to the Existing and Replacement Private Keys
 {% include note.html content=cryptoLib %}
 
-Run the `qq fs_security_replace_key` command and specify the key identifier or name, the path to the existing private key, and the path to the replacement private key. For example:
+Run the {% include qq.html command="fs_security_replace_key" %} command and specify the key identifier or name, the path to the existing private key, and the path to the replacement private key. For example:
 
 ```bash
 qq fs_security_replace_key \
@@ -125,7 +125,7 @@ When you add a key to the Qumulo file system key store, Qumulo Core enables it a
 
 
 ## Deleting a Public Key
-Run the `qq fs_security_delete_key` command and specify the key identifier or name.
+Run the {% include qq.html command="fs_security_delete_key" %} command and specify the key identifier or name.
 
 {{site.data.alerts.note}}
 <ul>
