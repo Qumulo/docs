@@ -52,7 +52,7 @@ For more information, see [Extracting the Public Key from an ECDSA Private Key](
 
 <a id="retrieve-key-usage"></a>
 ## Retrieving Public Key Usage Information
-Run the {% include qq.html command="fs_security_get_usage" %} command and specify the key identifier or name.
+Run the {% include qq.html command="fs_security_get_key_usage" %} command and specify the key identifier or name.
 
 {{site.jsonNotTable}}
 
