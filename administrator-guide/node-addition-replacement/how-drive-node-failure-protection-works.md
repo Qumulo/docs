@@ -35,7 +35,7 @@ To view the fault tolerance of your Qumulo cluster:
 * **REST API:** Call the `/v1/cluster/protection/status` endpoint
 
 ### Read-Only Mode Scenario for Hybrid Nodes
-When a hybrid node goes offline for a substantial period of time, there is a risk of the node entering read-only mode because Qumulo Core writes all inbound operations only to the node's SSDs.
+When a hybrid node goes offline for a substantial period of time, there is a risk of the cluster entering read-only mode because Qumulo Core writes all inbound operations only to the node's SSDs.
 
 The length of time before this scenario takes place depends on the number of drives in a node and the rate of incoming writes, deletes, and changes. For more information, see [Understanding Offline Nodes and Checking for Free Space](../node-addition-replacement/understanding-offline-nodes.html). If you encounter this scenario, {{site.contactQumuloCare}}.
 
