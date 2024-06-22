@@ -1,6 +1,6 @@
 ---
 title: "How Azure Native Qumulo Works"
-summary: "This section explains the main functionality of Azure Native Qumulo (ANQ) and the differences between ANQ v2 and ANQ v1, provides a feature comparison between ANQ and Qumulo on other platforms and ANQ's known limitations and compliance posture, gives an overview of deploying the service in Azure, and lists the supported Azure Regions for the service."
+summary: "This section explains the main functionality of Azure Native Qumulo (ANQ), provides a feature comparison between ANQ and Qumulo on other platforms. In addition, it explains the difference between ANQ Hot and Cold, specifies ANQ's known limitations and compliance posture, gives an overview of deploying the service in Azure, and lists the supported Azure Regions for the service."
 permalink: /azure-administrator-guide/getting-started/how-azure-native-qumulo-works.html
 redirect_from:
   - /azure-guide/how-qumulo-scalable-file-service-works.html
@@ -15,17 +15,12 @@ sidebar: azure_administrator_guide_sidebar
 {{site.azure.qumuloOnAzureShort}} makes it possible to configure file protocols, quotas, replication, and other features regardless of underlying infrastructure or storage and without tracking resource quotas or costs. The service receives the latest updates and features continuously and, if any issues occur, replaces compute and storage resources automatically. 
 
 ### Names and Versions
-In this guide, we refer to the features and functionality of Qumulo Core as _{{site.azure.qumuloOnAzureLong}} ({{site.azure.qumuloOnAzureShort}})_ or _the service._
+* In this guide, we refer to the features and functionality of Qumulo Core as _{{site.azure.qumuloOnAzureLong}} ({{site.azure.qumuloOnAzureShort}})_ or _the service._
 
-Following {{site.azure.qumuloOnAzureShort}}'s initial launch, we configured the Qumulo file system in Azure to have significant flexibility and performance improvements. This configuration appears in the Azure Portal as **{{site.azure.qumuloOnAzureShort}} v2**. For more information, see [Feature Comparison with Qumulo on Other Platforms](#anq-feature-comparison).
+* Following {{site.azure.qumuloOnAzureShort}}'s initial launch, we configured the Qumulo file system in Azure to have significant flexibility and performance improvements. For more information, see [Feature Comparison with Qumulo on Other Platforms](#anq-feature-comparison).
 
-{{site.data.alerts.note}}
-<ul>
-  <li>For a limited time, you can select the original <strong>{{site.azure.qumuloOnAzureShort}} v1</strong> configuration in the Azure Portal (after this time, <strong>{{site.azure.qumuloOnAzureShort}} v2</strong> remains the only available configuration).</li>
-  <li>For help with expanding {{site.azure.qumuloOnAzureShort}} v1 capacity, {{site.azure.emailAzure}}.</li>
-</ul>
-{{site.data.alerts.end}}
-   
+* Default {{site.azure.qumuloOnAzureShort}} workloads are called _Hot workloads_. Workloads that use the Azure Blob Storage Cold Tier are called [_Cold workloads_](#using-cold-workloads).
+
 <a id="anq-feature-comparison"></a>
 ### Feature Comparison with Qumulo on Other Platforms
 The following table compares the features of {{site.azure.qumuloOnAzureShort}} with those of Qumulo on other platforms.
@@ -42,8 +37,7 @@ The following table compares the features of {{site.azure.qumuloOnAzureShort}} w
   <thead>
     <tr>
       <th>Feature</th>
-      <th class="width-15">{{site.azure.qumuloOnAzureShort}} v2</th>
-      <th class="width-15">{{site.azure.qumuloOnAzureShort}} v1</th>
+      <th class="width-15">{{site.azure.qumuloOnAzureShort}}</th>
       <th class="width-15">Qumulo on AWS as an AMI</th>
       <th class="width-15">Qumulo on Premises</th>
     </tr>
@@ -52,7 +46,6 @@ The following table compares the features of {{site.azure.qumuloOnAzureShort}} w
     <tr>
       <td>Automatic deployment</td>
       <td>&#10003;</td>
-      <td>&#10003;</td>
       <td></td>
       <td></td>
     </tr>
@@ -60,19 +53,16 @@ The following table compares the features of {{site.azure.qumuloOnAzureShort}} w
       <td>Automatic infrastructure replacement</td>
       <td>&#10003;</td>
       <td>&#10003;</td>
-      <td>&#10003;</td>
       <td></td>
     </tr>    
     <tr>
       <td>Automatic updates</td>
-      <td>&#10003;</td>
       <td>&#10003;</td>
       <td></td>
       <td></td>
     </tr>
     <tr>
       <td>Availability in Cloud Marketplace</td>
-      <td>&#10003;</td>
       <td>&#10003;</td>
       <td>&#10003;</td>
       <td></td>
@@ -82,12 +72,10 @@ The following table compares the features of {{site.azure.qumuloOnAzureShort}} w
       <td>&#10003;</td>
       <td>&#10003;</td>
       <td>&#10003;</td>
-      <td>&#10003;</td>
     </tr>
     <tr>
       <td>Integration with Azure Portal</td>
       <td>&#10003;</td>
-      <td></td>
       <td></td>
       <td></td>
     </tr>      
@@ -96,12 +84,10 @@ The following table compares the features of {{site.azure.qumuloOnAzureShort}} w
       <td></td>
       <td>&#10003;</td>
       <td>&#10003;</td>
-      <td>&#10003;</td>
     </tr>
     <tr>
       <td>Payment for used storage space only</td>
       <td>&#10003;</td>
-      <td></td>
       <td></td>
       <td></td>
     </tr>    
@@ -110,12 +96,10 @@ The following table compares the features of {{site.azure.qumuloOnAzureShort}} w
       <td>&#10003;</td>
       <td></td>
       <td></td>
-      <td></td>
     </tr>
     <tr>
       <td>Performance scales with provisioned capacity</td>
       <td></td>
-      <td>&#10003;</td>
       <td>&#10003;</td>
       <td>&#10003;</td>
     </tr>
@@ -123,13 +107,11 @@ The following table compares the features of {{site.azure.qumuloOnAzureShort}} w
       <td>Qumulo Core features</td>
       <td>&#10003;</td>
       <td>&#10003;</td>
-      <td>&#10003;</td>
       <td>&#10003;</td>      
     </tr>
     <tr>
       <td>Simple and fast deployment under 15 Minutes</td>
       <td>&#10003;</td>
-      <td></td>
       <td></td>
       <td></td>
     </tr>
@@ -143,12 +125,16 @@ The following table compares the features of {{site.azure.qumuloOnAzureShort}} w
 
   To allow the `admin` user to authenticate over the SMB protocol, change the `admin` user's password.
 
-* **File Systems Larger than 1 PB:** This limitation applies only to {{site.azure.qumuloOnAzureShort}} v1.
-
-  To deploy {{site.azure.qumuloOnAzureShort}} v1 instances larger than 1 PB by using the Azure Portal, {{site.azure.emailAzure}}.
-
 ### Qumulo Compliance Posture
 For information about Qumulo's third-party attestations, including FIPS 140-2 Level 1, GDPR, HIPAA, and SOC 2 Type II, see [Qumulo Trust Center](https://qumulo.com/trust/).
+
+
+<a id="using-cold-workloads"></a>
+## Using {{site.azure.qumuloOnAzureLong}} Cold Workloads
+{{site.azure.qumuloOnAzureShort}} Cold uses Azure Blob Storage Cold Tier and has the same data integrity as {{site.azure.qumuloOnAzureShort}} Hot, a slightly lower (99% rather than 99.9%) guaranteed availability, and a sustained high performance and read throughput. {{site.azure.qumuloOnAzureShort}} Cold is designed for workloads in which the majority of the data is written once, read infrequently, and retained for a long time period.
+
+{% capture availabilityEvent %}When Azure Blob Storage Cold Tier causes an availability event, it affects only the data within the files, not the metadata. While the data of a specific file might become unavailable, the file system and data within other files remain accessible.{% endcapture %}
+{% include note.html content=availabilityEvent %}
 
 
 ## Deploying {{site.azure.qumuloOnAzureLong}}
@@ -160,10 +146,7 @@ This section outlines the process of configuring and deploying {{site.azure.qumu
 
    * **Networking Settings:** The virtual network in the same region. For more information, see [Virtual Networking Prerequisites](virtual-networking-prerequisites-azure-native-qumulo.html)
 
-   * **Usable Capacity:** For {{site.azure.qumuloOnAzureShort}} v1 instances, the available file system capacity (in TB).
-
-     {% capture v2inEB %}Because {{site.azure.qumuloOnAzureShort}} v2 instances use the Azure Blob Store capacity limit (in EB), it isn't necessary to configure usable capacity in advance.{% endcapture %}
-     {% include note.html content=v2inEB %}
+   * **Storage Class:** {{site.azure.anqColdImpact}} For more information, see [Using {{site.azure.qumuloOnAzureShort}} Cold Workloads](#using-cold-workloads).
 
 1. When Qumulo creates your {{site.azure.qumuloOnAzureShort}} instance, it deploys and configures the following Azure resources:
    
@@ -188,15 +171,15 @@ This section outlines the process of configuring and deploying {{site.azure.qumu
    
 
 ## Supported Azure Regions
-The following table lists regions in US, Canada, Europe, and the UK that {{site.azure.qumuloOnAzureShort}} supports.
+The following table lists the regions that {{site.azure.qumuloOnAzureShort}} supports. &#10033; indicates supported zoneless regions.
 
 <table>
   <thead>
     <tr>
       <th>Geographical Location</th>
       <th width="30%">Azure Region</th>
-      <th width="15%">{{site.azure.qumuloOnAzureShort}} v2</th>      
-      <th width="15%">{{site.azure.qumuloOnAzureShort}} v1</th>
+      <th width="15%">{{site.azure.qumuloOnAzureShort}} Hot</th>
+      <th width="15%">{{site.azure.qumuloOnAzureShort}} Cold</th>
     </tr>
   </thead>
   <tbody>
@@ -209,14 +192,14 @@ The following table lists regions in US, Canada, Europe, and the UK that {{site.
     <tr>
       <td>US (California)</td>
       <td>West US</td>
-      <td></td>      
-      <td>&#10003;</td>
+      <td>&#10003;&#10033;</td>
+      <td>&#10003;&#10033;</td>
     </tr>    
     <tr>
       <td>US (Illinois)</td>
       <td>North Central US</td>
-      <td></td>      
-      <td>&#10003;</td>
+      <td>&#10003;&#10033;</td>
+      <td>&#10003;&#10033;</td>
     </tr>    
     <tr>
       <td>US (Iowa)</td>
@@ -306,58 +289,67 @@ The following table lists regions in US, Canada, Europe, and the UK that {{site.
       <td>Australia (New South Wales)</td>
       <td>Australia East</td>
       <td>&#10003;</td>
-      <td></td>
+      <td>&#10003;</td>
     </tr>
     <tr>
       <td>Brazil (S&atilde;o Paulo State)</td>
       <td>Brazil South</td>
       <td>&#10003;</td>
-      <td></td>
+      <td>&#10003;</td>
     </tr>
     <tr>
       <td>India (Pune)</td>
       <td>Central India</td>
       <td>&#10003;</td>
-      <td></td>
+      <td>&#10003;</td>
     </tr>
     <tr>
       <td>Japan (Tokyo, Saitama)</td>
       <td>Japan East</td>
       <td>&#10003;</td>
-      <td></td>
+      <td>&#10003;</td>
     </tr>
     <tr>
       <td>Korea (Seoul)</td>
       <td>Korea Central</td>
       <td>&#10003;</td>
-      <td></td>
+      <td>&#10003;</td>
     </tr>
     <tr>
       <td>UAE (Dubai)</td>
       <td>UAE North</td>
       <td>&#10003;</td>
-      <td></td>
+      <td>&#10003;</td>
     </tr>
   </tbody>
 </table>
 
-## Usage Metering and Billing for {{site.azure.qumuloOnAzureLong}}
-Once an hour, {{site.azure.qumuloOnAzureShort}} reports a metering event to Azure Marketplace for each deployed instance. 
+## Usage Billing and Metering for {{site.azure.qumuloOnAzureLong}}
+Once an hour, every deployed {{site.azure.qumuloOnAzureShort}} Hot and Cold instance reports a metering event to Azure Marketplace.
 
-{% capture differentDimensions %}{{site.azure.qumuloOnAzureShort}} v1 and {{site.azure.qumuloOnAzureShort}} v2 use different dimensions for metering.{% endcapture %}
-{% include note.html content=differentDimensions %}
+{% capture pricingCalculator %}{{site.azure.pricingCalculator}}{% endcapture %}
+{% include note.html content=pricingCalculator %}
 
-### {{site.azure.qumuloOnAzureShort}} v1 Metering for Total Available Capacity
-Qumulo provisions {{site.azure.qumuloOnAzureShort}} v1 instances with a total available capacity (to increase this capacity, you can {{site.contactQumuloCare}}).
+### Billing for {{site.azure.qumuloOnAzureShort}} Cold Instances
+{{site.azure.qumuloOnAzureShort}} Cold instances:
 
-Qumulo performs metering on a single dimension&mdash;the total available capacity that your instance reports.
+* Are billed at a lower rate than {{site.azure.qumuloOnAzureShort}} Hot instances
 
-### {{site.azure.qumuloOnAzureShort}} v2 Metering for Used Capacity and Throughput
-Qumulo doesn't provision {{site.azure.qumuloOnAzureShort}} v2 instances with a total available capacity. Instead, it performs metering on two dimensions:
+* Include a set amount of used capacity, higher than that of an {{site.azure.qumuloOnAzureShort}} Hot instance
 
-* Used capacity
+* Include a set amount of data that you can retrieve per month
 
-* Used throughput
+  When you exceed this amount, we charge a per-gigabyte rate for reading data from the instance (regardless of protocol).
 
-  {% capture throughputCaveat %}Because the throughput for an instance can vary significantly within a given hour, Qumulo samples the used throughput _each minute_. It rounds the computed throughput value to 1 GBps and then multiplies it by the used capacity during the given minute. {{site.azure.pricingCalculator}}{% endcapture %}
-  {% include note.html content=throughputCaveat %}
+* Have a minimum data retention period of 120 days.
+
+  When you delete data early (before the retention period expires), you incur a_short-lived data charge,_ equal to the remaining duration of the retention period.
+
+### Metering Dimensions for {{site.azure.qumuloOnAzureShort}} Hot and Cold
+Both {{site.azure.qumuloOnAzureShort}} Hot and Cold use the `Used Capacity` metering dimension. In addition:
+
+* Metering for {{site.azure.qumuloOnAzureShort}} Hot instances uses the `Used capacity` and `Used throughput` dimensions
+
+* Metering for {{site.azure.qumuloOnAzureShort}} Cold instances uses the `Data read` and `Data deleted early` dimensions.
+
+{% include note.html content="Because the throughput of an instance can vary significantly within an hour, Qumulo Core samples the used throughput every minute, rounds the computed throughput value to 1 GBps, and then multiplies it by the used capacity during this minute." %}

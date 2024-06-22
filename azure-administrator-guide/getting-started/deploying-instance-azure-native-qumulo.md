@@ -44,9 +44,11 @@ This section explains how to deploy the {{site.azure.qumuloOnAzureShort}} servic
 
 1. In the **Qumulo file system details** section:
 
-   1. Select the **Standard** or **Performance** storage type.
+   1. If this opton is available in the region you chose, select an **Availability Zone** into which to deploy the {{site.azure.qumuloOnAzureShort}} instance.
    
-   1. Specify the size of the service to create in TB.
+   1. For **Storage Class**, select **Hot** or **Cold**.
+
+      {{site.azure.anqColdImpact}} For more information, see [Using {{site.azure.qumuloOnAzureShort}} Cold Workloads](how-azure-native-qumulo-works.html#using-cold-workloads).
 
 1. In the **Pricing plan** section, select a pricing plan.
 
