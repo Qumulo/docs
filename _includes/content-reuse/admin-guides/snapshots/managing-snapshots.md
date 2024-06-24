@@ -25,7 +25,7 @@ This section explains how to create on-demand snapshots and snapshot policies, v
 
 1. On the **Snapshot Policies** page, in the upper right, click **Create Policy**.
 
-1. On the **Create Snapshot Policy** page, do the following:
+1. On the **Create Snapshot Policy** page:
 
    1. Enter the **Policy Name**.
    

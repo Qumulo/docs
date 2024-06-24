@@ -67,51 +67,39 @@ sidebar: hardware_guide_sidebar
       <td><strong>Power Requirements</strong></td>
       <td colspan="4" style="text-align: center;">100&ndash;240 V, 50/60 Hz</td>
     </tr>
-    <!--
     <tr>
       <td><strong>Typical Power Consumption</strong></td>
-      <td>1.55 A @ 240 V<br>(3.39 A @ 110 V)</td>
-      <td>1.60 A @ 240 V<br>(3.50 A @ 110 V)</td>
-      <td>1.55 A @ 240 V<br>(3.39 A @ 110 V)</td>
-      <td>1.60 A @ 240 V<br>(3.35 A @ 110 V)</td>
+      <td colspan="4" style="text-align: center;">2.17 A @ 240 V<br>4.73 A @ 110 V</td>
     </tr>
     <tr>
       <td><strong>Typical Thermal Rating</strong></td>
-      <td>373 W (VA)<br>(1273 BTU/hr)</td>
-      <td>385 W (VA)<br>(1313 BTU/hr)</td>
-      <td>373 W (VA)<br>(1273 BTU/hr)</td>
-      <td>385 W (VA)<br>(1313 BTU/hr)</td>
+      <td colspan="4" style="text-align: center;">520 W (VA)<br>1,774 BTU/hr</td>
     </tr>
+{% comment %}
     <tr>
       <td><div><strong>Maximum Power Consumption</strong></div></td>
-      <td>1.72 A @ 240 V<br>(3.75 A @ 110 V)</td>
-      <td>1.84 A @ 240 V<br>(4.01 A @ 110 V)</td>
-      <td>1.84 A @ 240 V<br>(4.01 A @ 110 V)</td>
-      <td>1.95 A @ 240 V<br>(4.26 A @ 110 V)</td>
+      <td colspan="4">?? A @ 240 V<br>?? A @ 110 V</td>
     </tr>
     <tr>
       <td><strong>Maximum Thermal Rating</strong></td>
-      <td>413 W (VA)<br>(1409 BTU/hr)</td>
-      <td>441 W (VA)<br>(1505 BTU/hr)</td>
-      <td>441 W (VA)<br>(1505 BTU/hr)</td>
-      <td>469 W (VA)<br>(1600 BTU/hr)</td>
+      <td colspan="4">?? W (VA)<br>?? BTU/hr</td>
     </tr>
+{% endcomment %}
     <tr>
       <td><strong>Operating Temperature</strong></td>
-      <td colspan="4" style="text-align: center;">41&deg;F&ndash;95&deg;F (5&deg;C&ndash;35&deg;C)</td>
+      <td colspan="4" style="text-align: center;">50&deg;F&ndash;95&deg;F (10&deg;C&ndash;35&deg;C)</td>
     </tr>
     <tr>
       <td><strong>Non-Operating Temperature</strong></td>
-      <td colspan="4" style="text-align: center;">-40&deg;F&ndash;158&deg;F (-40&deg;C&ndash;70&deg;C)</td>
+      <td colspan="4" style="text-align: center;">-22&deg;F&ndash;140&deg;F (-6&deg;C&ndash;60&deg;C)</td>
     </tr>
     <tr>
       <td><strong>Operating Relative Humidity</strong></td>
-      <td colspan="4" style="text-align: center;">20%&ndash;85% (non-condensing)</td>
+      <td colspan="4" style="text-align: center;">8%&ndash;85% (non-condensing)</td>
     </tr>
     <tr>
       <td><div><strong>Non-Operating Relative Humidity</strong></div></td>
-      <td colspan="4" style="text-align: center;">10%&ndash;95% (non-condensing)</td>
+      <td colspan="4" style="text-align: center;">5%&ndash;95% (non-condensing)</td>
     </tr>
-    -->
   </tbody>
 </table>

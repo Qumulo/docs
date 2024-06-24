@@ -122,7 +122,7 @@ You can enable Cloud-Based Monitoring by using the Qumulo Core Web UI or `qq` CL
 
 1. Click **Support > Qumulo Care**.
 
-1. On the **Qumulo Care** page, do the following:
+1. On the **Qumulo Care** page:
 
    1. In the **Cloud-Based Monitoring** section, click **Edit**.
 
@@ -149,7 +149,7 @@ You can enable Remote Support by using the Qumulo Core Web UI or `qq` CLI.
 
 1. Click **Support > Qumulo Care**.
 
-1. On the **Qumulo Care** page, do the following:
+1. On the **Qumulo Care** page:
 
    1. In the **Remote Support** section, click **Edit**.
    

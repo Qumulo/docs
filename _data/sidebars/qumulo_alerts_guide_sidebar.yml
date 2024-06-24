@@ -73,6 +73,10 @@ entries:
       url: /qumulo-alerts-guide/upgrading/from-beta-version.html
       output: web, pdf
 
+    - title: Upgrading Grafana in Docker Container
+      url: /qumulo-alerts-guide/upgrading/grafana-in-docker-container.html
+      output: web, pdf
+
   - title: Configuring Notifications
     url: /qumulo-alerts-guide/configuring-notifications/index.html
     output: web, pdf

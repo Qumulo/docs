@@ -45,7 +45,7 @@ The following privileges are required for continuous replication.
 
 1. On the right side of the **Replication Relationships** page, click **Create Relationship**.
 
-1. On the **Create Replication Relationship** page, do the following:
+1. On the **Create Replication Relationship** page:
 
    1. For **Source Directory Path**, enter the existing directory from which to replicate data.
 

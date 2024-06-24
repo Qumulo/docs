@@ -6,7 +6,7 @@
 
 1. On the right side of the **Storage Quotas** page, click **Create Quota**.
 
-1. In the **Create Quota** dialog box, do the following:
+1. In the **Create Quota** dialog box:
 
    1. Enter the **Path** to the directory to which to add a quota.
       
