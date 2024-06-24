@@ -15,7 +15,7 @@ To perform these instructions, ensure that you have `root` privileges and that D
 
 1. To switch to the `root` user, run the `sudo -s` command.
 
-1. Navigate to the `/opt/qumulo/QumuloAlerts` directory which contains the Qumulo Alerts Docker configuration files.
+1. Navigate to the `/opt/qumulo/QumuloAlerts` directory that contains the Qumulo Alerts Docker configuration files.
 
 1. To update the Grafana configuration, ensure that the following line in the `docker-compose.yml` file specifies version `10.4.2`:
 
