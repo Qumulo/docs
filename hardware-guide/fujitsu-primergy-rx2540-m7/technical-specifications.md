@@ -69,11 +69,11 @@ sidebar: hardware_guide_sidebar
     </tr>
     <tr>
       <td><strong>Typical Power Consumption</strong></td>
-      <td>2.17 A @ 240 V<br>4.73 A @ 110 V</td>
+      <td colspan="4" style="text-align: center;">2.17 A @ 240 V<br>4.73 A @ 110 V</td>
     </tr>
     <tr>
       <td><strong>Typical Thermal Rating</strong></td>
-      <td colspan="4">520 W (VA)<br>1,774 BTU/hr</td>
+      <td colspan="4" style="text-align: center;">520 W (VA)<br>1,774 BTU/hr</td>
     </tr>
 {% comment %}
     <tr>
