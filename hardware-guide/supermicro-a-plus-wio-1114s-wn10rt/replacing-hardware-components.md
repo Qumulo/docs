@@ -22,7 +22,7 @@ Replacement drives, including the on-site spare drives that you received with yo
 
    {% include image.html alt="Supermicro 1114S Drive Bay Mapping" file="supermicro-1114s-drive-bay-mapping.png" url="/hardware-guide/supermicro-a-plus-wio-1114s-wn10rt/images/supermicro-1114s-drive-bay-mapping.png" %}
 
-1. To remove the existing drive, do the following:
+1. To remove the existing drive:
 
    1. Press the orange release button on the right of the drive carrier until the drive carrier handle extends on the left.
     
@@ -30,7 +30,7 @@ Replacement drives, including the on-site spare drives that you received with yo
 
    1. To remove the drive from the carrier, undo the mounting clips.
 
-1. To install a replacement drive, do the following:
+1. To install a replacement drive:
 
    1. Insert the new drive into the drive carrier with the printed circuit board (PCB) side facing down and the connector end facing towards the rear of the tray.
 

@@ -57,7 +57,7 @@ sidebar: hardware_guide_sidebar
 
    * If the SmartArray mode is **Secure**, **RAID**, or **Encrypted**, select **2) no, continue install in Non-Secure mode**.
 
-   * If the SmartArray mode is **Not Secure**, **HBA**, or **Unencrypted**, do the following:
+   * If the SmartArray mode is **Not Secure**, **HBA**, or **Unencrypted**:
 
      1. Select **1) SET ENCRYPTION, set SmartArrays in RAID mode, destroy all data, reboot node**.
 

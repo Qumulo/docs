@@ -20,7 +20,7 @@ Windows 7, Windows Server 2008 R2 (or higher)
 
 1. In the **Shared Folders** window, in the left pane, right-click **Shared Folders (&lt;{{site.exampleUsernameUppercase1}}-WORK-DESKTOP&gt;)**, and then click **Connect to another computer...**
 
-1. In the **Shared Folders** dialog box, do the following:
+1. In the **Shared Folders** dialog box:
 
    1. Under **This snap-in will always manage**, click **Another computer** and enter your cluster's hostname, for example `mycluster.example.com`.
 
@@ -45,7 +45,7 @@ Windows 7, Windows Server 2008 R2 (or higher)
 
    {% include note.html content="If you click **Browse...**, you might see the **q$** parent item in the directory tree. The is the root (`/`) of the file system." %}
 
-1. In the **Create a Shared Folder Wizard: Name, Description, and Settings** dialog box, do the following:
+1. In the **Create a Shared Folder Wizard: Name, Description, and Settings** dialog box:
 
    1. Enter the **Share name**, for example `jennifer-reports`.
 

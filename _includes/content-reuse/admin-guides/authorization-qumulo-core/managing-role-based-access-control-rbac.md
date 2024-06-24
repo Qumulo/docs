@@ -81,7 +81,7 @@ This section explains how to add a member to, and remove a member from, an exist
 
 1. On the **Role Management** page, on the the upper-right side, click **Create Role**.
 
-1. On the **Create Role** page, do the following:
+1. On the **Create Role** page:
 
    1. Enter a **Name** and **Description**.
 

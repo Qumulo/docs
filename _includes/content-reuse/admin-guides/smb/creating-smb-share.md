@@ -7,7 +7,7 @@
 
 1. On the right side of the **SMB Shares** page, click **Create Share**.
 
-1. On the **Create SMB Share** page, do the following:
+1. On the **Create SMB Share** page:
 
    1. Enter the **File system path** from the root of your file system.
 
@@ -31,7 +31,7 @@
      
       To delete a trustee, click {% include shared_inline_image.html alt="Delete" file="shared-images/admin-guides/delete.png" max-width="40" %}.
 
-   1. Under **Advanced Options**, do the following:
+   1. Under **Advanced Options**:
 
       1. Enter the **Default file create mode** (`0644` by default).
          

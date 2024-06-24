@@ -7,7 +7,7 @@
 
 1. On the right side of the **NFS Exports** page, click **Create Export**.
 
-1. On the **Create NFS Export** page, do the following:
+1. On the **Create NFS Export** page:
 
    1. Enter the **File system path** from the root of your file system.
 

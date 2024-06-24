@@ -20,7 +20,7 @@ This section explains how to enable Active Directory for POSIX attributes in Qum
 
 1. Click **Cluster > Active Directory**.
 
-1. On the **Active Directory** page, do the following:
+1. On the **Active Directory** page:
 
    1. Enter the details for your Active Directory server.
 
