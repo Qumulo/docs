@@ -73,18 +73,18 @@ sidebar: hardware_guide_sidebar
     </tr>
     <tr>
       <td><strong>Typical Thermal Rating</strong></td>
-      <td colspan="4" style="text-align: center;">520 W (VA)<br>1,774 BTU/hr</td>
+      <td colspan="4" style="text-align: center;">504 W (VA)<br>1,720 BTU/hr</td>
     </tr>
 {% comment %}
     <tr>
       <td><div><strong>Maximum Power Consumption</strong></div></td>
       <td colspan="4">?? A @ 240 V<br>?? A @ 110 V</td>
     </tr>
+{% endcomment %}
     <tr>
       <td><strong>Maximum Thermal Rating</strong></td>
-      <td colspan="4">?? W (VA)<br>?? BTU/hr</td>
+      <td colspan="4">763 W (VA)<br>2,604 BTU/hr</td>
     </tr>
-{% endcomment %}
     <tr>
       <td><strong>Operating Temperature</strong></td>
       <td colspan="4" style="text-align: center;">50&deg;F&ndash;95&deg;F (10&deg;C&ndash;35&deg;C)</td>
