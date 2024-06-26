@@ -20,6 +20,14 @@ td ul {
   margin-left: -20px;
 }
 
+table.tech-specs td {
+    text-align: center;
+}
+
+table.tech-specs td:first-child {
+    text-align: left;
+}
+
 a {
   /* This color is required to meet WCAG standards for accessible text.
      Note: This style overrides bootstrap.css.

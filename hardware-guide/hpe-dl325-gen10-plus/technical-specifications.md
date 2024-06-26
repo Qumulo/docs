@@ -7,7 +7,7 @@ redirect_from:
 sidebar: hardware_guide_sidebar
 ---
 
-<table>
+<table cellspacing="0" cellpadding="0" class="tech-specs">
 <thead>
   <tr>
     <th></th>
@@ -23,15 +23,15 @@ sidebar: hardware_guide_sidebar
   </tr>
   <tr>
     <td><strong>Raw Storage Capacity</strong></td>
-    <td style="text-align: center;">291 TB</td>    
-    <td style="text-align: center;">145 TB</td>
-    <td style="text-align: center;">34 TB</td>
+    <td>291 TB</td>    
+    <td>145 TB</td>
+    <td>34 TB</td>
   </tr>
   <tr>
     <td><strong>SSD or NVM3</strong></td>
-    <td style="text-align: center;">19 &times; 15.36 TB NVMe</td>
-    <td style="text-align: center;">19 &times; 7.68 TB NVMe</td>    
-    <td style="text-align: center;">9 &times; 3.84 TB NVMe</td>
+    <td>19 &times; 15.36 TB NVMe</td>
+    <td>19 &times; 7.68 TB NVMe</td>    
+    <td>9 &times; 3.84 TB NVMe</td>
   </tr>
   <tr>
     <td><strong>Networking</strong></td>
