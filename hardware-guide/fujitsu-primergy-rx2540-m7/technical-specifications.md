@@ -9,7 +9,7 @@ sidebar: hardware_guide_sidebar
 {% include content-reuse/hybrid-platforms-find-out-ssd-size.md %}
 {{site.data.alerts.end}}
 
-<table cellspacing="0" cellpadding="0">
+<table cellspacing="0" cellpadding="0" class="tech-specs">
   <thead>
     <tr>
       <th></th>
@@ -22,84 +22,82 @@ sidebar: hardware_guide_sidebar
   <tbody>
     <tr>
       <td><strong>Connectivity Ports (NIC)</strong></td>
-      <td colspan="4" style="text-align: center;">2 &#215; 25 GbE (1 &#215; Intel E810 NIC)</td>
+      <td colspan="4">2 &#215; 25 GbE (1 &#215; Intel E810 NIC)</td>
     </tr>
     <tr>
       <td><strong>Management Ports (BMC)</strong></td>
-      <td colspan="4" style="text-align: center;">1 &#215; 1 GbE Base-T (RJ45)</td>
+      <td colspan="4">1 &#215; 1 GbE Base-T (RJ45)</td>
     </tr>
     <tr>
       <td><strong>Solid State Storage Media (Cache)</strong></td>
-      <td colspan="4" style="text-align: center;">4 &#215; 1.6 TB NVMe</td>
+      <td colspan="4">4 &#215; 1.6 TB NVMe</td>
     </tr>
     <tr>
       <td><strong>HDD Storage Media</strong></td>
-      <td style="text-align: center;">12 &#215; 20 TB</td>      
-      <td style="text-align: center;">12 &#215; 12 TB</td>
-      <td style="text-align: center;">8 &#215; 12 TB</td>
-      <td style="text-align: center;">12 &#215; 4 TB</td>      
+      <td>12 &#215; 20 TB</td>      
+      <td>12 &#215; 12 TB</td>
+      <td>8 &#215; 12 TB</td>
+      <td>12 &#215; 4 TB</td>      
     </tr>    
     <tr>
       <td><strong>Boot Drives (Mirrored)</strong></td>
-      <td colspan="4" style="text-align: center;">2 &#215; 960 GB M.2 SATA (RAID 1)</td>
+      <td colspan="4">2 &#215; 960 GB M.2 SATA (RAID 1)</td>
     </tr>
     <tr>
       <td><strong>CPU</strong></td>
-      <td colspan="4" style="text-align: center;">2 &#215; Intel Xeon Silver 4410Y CPU @ 2.70 GHz</td>
+      <td colspan="4">2 &#215; Intel Xeon Silver 4410Y CPU @ 2.70 GHz</td>
     </tr>
     <tr>
       <td><strong>Memory</strong></td>
-      <td colspan="4" style="text-align: center;">128 GB (32 GB &#215; 4)</td>      
+      <td colspan="4">128 GB (32 GB &#215; 4)</td>      
     </tr>
     <tr>
       <td><strong>Power Supply</strong></td>
-      <td colspan="4" style="text-align: center;">2 &#215; 1,600 W Power Supplies</td>
+      <td colspan="4">2 &#215; 1,600 W Power Supplies</td>
     </tr>
     <tr>
       <td><strong>Dimensions (H &#215; W &#215; D)</strong></td>
-      <td colspan="4" style="text-align: center;">3.4" &#215; 17.1" &#215; 34.4" (8.6 mm &#215; 434 mm &#215; 873.8 mm)</td>
+      <td colspan="4">3.4" &#215; 17.1" &#215; 34.4" (8.6 mm &#215; 434 mm &#215; 873.8 mm)</td>
     </tr>
     <tr>
       <td><strong>Weight</strong></td>
-      <td colspan="4" style="text-align: center;">70.5 lbs (32 kg)</td>
+      <td colspan="4">70.5 lbs (32 kg)</td>
     </tr>
     <tr>
       <td><strong>Power Requirements</strong></td>
-      <td colspan="4" style="text-align: center;">100&ndash;240 V, 50/60 Hz</td>
+      <td colspan="4">100&ndash;240 V, 50/60 Hz</td>
     </tr>
     <tr>
       <td><strong>Typical Power Consumption</strong></td>
-      <td colspan="4" style="text-align: center;">2.17 A @ 240 V<br>4.73 A @ 110 V</td>
+      <td colspan="4">520 W</td>
     </tr>
     <tr>
       <td><strong>Typical Thermal Rating</strong></td>
-      <td colspan="4" style="text-align: center;">504 W (VA)<br>1,720 BTU/hr</td>
+      <td colspan="4">1,720 BTU/hr</td>
     </tr>
-{% comment %}
     <tr>
       <td><div><strong>Maximum Power Consumption</strong></div></td>
-      <td colspan="4">?? A @ 240 V<br>?? A @ 110 V</td>
+      <td colspan="4">763 W</td>
     </tr>
-{% endcomment %}
     <tr>
       <td><strong>Maximum Thermal Rating</strong></td>
-      <td colspan="4">763 W (VA)<br>2,604 BTU/hr</td>
+      <td colspan="4">2,604 BTU/hr</td>
     </tr>
     <tr>
       <td><strong>Operating Temperature</strong></td>
-      <td colspan="4" style="text-align: center;">50&deg;F&ndash;95&deg;F (10&deg;C&ndash;35&deg;C)</td>
+      <td colspan="4">50&deg;F&ndash;95&deg;F (10&deg;C&ndash;35&deg;C)</td>
     </tr>
     <tr>
       <td><strong>Non-Operating Temperature</strong></td>
-      <td colspan="4" style="text-align: center;">-22&deg;F&ndash;140&deg;F (-6&deg;C&ndash;60&deg;C)</td>
+      <td colspan="4">-22&deg;F&ndash;140&deg;F (-6&deg;C&ndash;60&deg;C)</td>
     </tr>
     <tr>
       <td><strong>Operating Relative Humidity</strong></td>
-      <td colspan="4" style="text-align: center;">8%&ndash;85% (non-condensing)</td>
+      <td colspan="4">8%&ndash;85% (non-condensing)</td>
     </tr>
     <tr>
       <td><div><strong>Non-Operating Relative Humidity</strong></div></td>
-      <td colspan="4" style="text-align: center;">5%&ndash;95% (non-condensing)</td>
+      <td colspan="4">5%&ndash;95% (non-condensing)</td>
     </tr>
   </tbody>
 </table>
