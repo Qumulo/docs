@@ -16,6 +16,36 @@ body {
   flex-direction:column;
 }
 
+/* START CLICK TO EXPAND */
+summary {
+  color: #245592;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+summary:hover {
+  text-decoration: underline;
+}
+
+details summary::before {
+  content: '\25B6'; /* Right-pointing triangle */
+  padding-right: 5px;
+  text-decoration: none; /* Ensure no underline on pseudo-element */
+  display: inline-block; /* Prevent text-decoration from affecting pseudo-element */
+}
+
+details[open] summary::before {
+  content: '\25BC'; /* Down-pointing triangle */
+  text-decoration: none; /* Ensure no underline on pseudo-element */
+  display: inline-block; /* Prevent text-decoration from affecting pseudo-element */
+}
+
+summary + table,
+details + p {
+  margin-top: 10px;
+}
+/* END CLICK TO EXPAND */
+
 td ul {
   margin-left: -20px;
 }
@@ -1183,9 +1213,21 @@ h4 {color: #808080; font-weight:bold; font-size:110%;}
     color: white;
 }
 
-ol li ol li {list-style-type: lower-alpha;}
-ol li ul li {list-style-type: disc;}
-ol li ul li ul li {list-style-type: circle;}
+ol li ol li {
+  list-style-type: lower-alpha;
+}
+
+ol li ul li {
+  list-style-type: disc;
+}
+
+ol li ul li ul li {
+  list-style-type: circle;
+}
+
+ol li ul {
+  margin-left: -20px;
+}
 
 li img {clear:both; }
 

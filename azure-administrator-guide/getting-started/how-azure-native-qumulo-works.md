@@ -343,7 +343,7 @@ Once an hour, every deployed {{site.azure.qumuloOnAzureShort}} Hot and Cold inst
 
 * Have a minimum data retention period of 120 days.
 
-  When you delete data early (before the retention period expires), you incur a_short-lived data charge,_ equal to the remaining duration of the retention period.
+  When you delete data early (before the retention period expires), you incur a short-lived data charge, equal to the remaining duration of the retention period.
 
 ### Metering Dimensions for {{site.azure.qumuloOnAzureShort}} Hot and Cold
 Both {{site.azure.qumuloOnAzureShort}} Hot and Cold use the `Used Capacity` metering dimension. In addition:
