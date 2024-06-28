@@ -106,7 +106,7 @@ Ensure that your host system meets the minimum requirements.
 </details>
 
 ### Step 2: Prepare the Host Operating System
-Before configuring your host operating system for installing the Qumulo Core Product Package, certain distributions require the following additional steps depending on the Linux distribution installed on your system. Ubuntu users can skip directly to step 3.
+Before configuring your host operating system for installing the Qumulo Core Product Package, certain Linux distributions require the following additional steps. Ubuntu users can skip directly to step 3.
 
 #### To Prepare a Rocky or Red Hat Enterprise Linux (RHEL) 9.3 System
 <details>
