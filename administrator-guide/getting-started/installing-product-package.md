@@ -106,7 +106,7 @@ Ensure that your host system meets the minimum requirements.
 </details>
 
 ### Step 2: Prepare the Host Operating System
-Before configuring your host operating system (OS) for installing the Qumulo Core Product Package, some preliminary configuration might be necessary.
+Before configuring your host operating system (OS) for installing the Qumulo Core Product Package, certain Linux distributions require some preliminary configuration.
 
 {% include note.html content="Ubuntu doesn't require any additional configuration. You can now [configure the host OS](#configure-host-os)." %}
 
