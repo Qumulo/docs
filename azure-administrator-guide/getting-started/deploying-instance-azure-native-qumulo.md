@@ -44,7 +44,7 @@ This section explains how to deploy the {{site.azure.qumuloOnAzureShort}} servic
 
 1. In the **Qumulo file system details** section:
 
-   1. If this opton is available in the region you chose, select an **Availability Zone** into which to deploy the {{site.azure.qumuloOnAzureShort}} instance.
+   1. If this option is available in the region you chose, select an **Availability Zone** into which to deploy the {{site.azure.qumuloOnAzureShort}} instance.
    
    1. For **Storage Class**, select **Hot** or **Cold**.
 

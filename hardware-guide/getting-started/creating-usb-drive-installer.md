@@ -8,6 +8,10 @@ redirect_from:
 sidebar: hardware_guide_sidebar
 ---
 
+{% include content-reuse/admin-guides/getting-started/qumulo-product-package-vs-qumulo-usb-installer.md %}
+
+For more information, see [Installing the Qumulo Core Product Package](https://docs.qumulo.com/administrator-guide/getting-started/installing-product-package.html) in the {{site.guides.onprem}}.
+
 ## Prerequisites
 * USB 3.0 (or higher) drive (8 GB minimum)
 * Qumulo Core USB installer image (to get the image, {{site.contactQumuloCare}})

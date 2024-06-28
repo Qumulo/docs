@@ -44,6 +44,10 @@ entries:
     output: web, pdf
     folderitems:
 
+    - title: Installing the Qumulo Core Product Package
+      url: /administrator-guide/getting-started/installing-product-package.html
+      output: web, pdf
+
     - title: Creating and Managing Directory Quotas
       url: /administrator-guide/getting-started/creating-directory-quotas.html
       output: web, pdf
