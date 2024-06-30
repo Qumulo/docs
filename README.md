@@ -1,14 +1,11 @@
 ---
 title: "Qumulo Documentation"
-summary: "Welcome to the Qumulo Documentation Portal. This repository uses <a href='https://www.writethedocs.org/guide/docs-as-code/'>docs-as-code principles</a> to provide guidance about working with Qumulo."
+summary: "Welcome to the Qumulo Documentation Portal. This repository uses <a href='https://www.writethedocs.org/guide/docs-as-code/'>docs-as-code principles</a> to provide guidance about working with Qumulo offerings."
 permalink: index.html
 breadcrumbs: exclude
-hideTOC: true
 ---
 
 To get started, choose one of the following guides.
-
-
 
 <div class="landing-page-buttons">
   <span class="guide-button">
@@ -65,6 +62,20 @@ To get started, choose one of the following guides.
       </picture><br>{{site.guides.integ}}</a>
   </span>
 </div>
+
+## Hot Topics
+The following are the most-accessed pages on the Documentation Portal.
+
+1. [Configuring Round-Robin DNS on Windows Server for Qumulo Core](/administrator-guide/network-configuration/configuring-round-robin-dns-windows-server.html)
+2. [Enabling Cloud-Based Monitoring and Remote Support](/administrator-guide/monitoring-and-metrics/enabling-cloud-based-monitoring-remote-support.html)
+3. [Qumulo Core Feature Log](/administrator-guide/upgrading-qumulo-core/feature-log.html)
+4. [Getting Started with the qq CLI](/administrator-guide/qq-cli/getting-started.html)
+5. [Supported Configurations and Known Limits for Qumulo Core](/administrator-guide/getting-started/supported-configurations-known-limits.html)
+6. [Managing Snapshots in Qumulo Core](/administrator-guide/snapshots/managing-snapshots.html)
+7. [Performing Qumulo Core Upgrades](/administrator-guide/upgrading-qumulo-core/performing-upgrades.html)
+8. [Creating and Managing S3 Buckets in Qumulo Core](/administrator-guide/s3-api/creating-managing-s3-buckets.html)
+9. [How Drive and Node Failure Protection Works in Qumulo Core](/administrator-guide/node-addition-replacement/how-drive-node-failure-protection-works.html)
+10. [Configuring and Using the S3 API in Qumulo Core](/administrator-guide/s3-api/configuring-using-s3-api.html)
 
 ## Get Qumulo Core
 {{site.nexusDownloads}} {{site.loginRequired}}.
