@@ -16,6 +16,10 @@ body {
   flex-direction:column;
 }
 
+#toc + p {
+  margin-top: 15px;
+}
+
 /* START CLICK TO EXPAND */
 summary {
   color: #245592;

@@ -1,14 +1,11 @@
 ---
 title: "Qumulo Documentation"
-summary: "Welcome to the Qumulo Documentation Portal. This repository uses <a href='https://www.writethedocs.org/guide/docs-as-code/'>docs-as-code principles</a> to provide guidance about working with Qumulo."
+summary: "Welcome to the Qumulo Documentation Portal. This repository uses <a href='https://www.writethedocs.org/guide/docs-as-code/'>docs-as-code principles</a> to provide guidance about working with Qumulo offerings."
 permalink: index.html
 breadcrumbs: exclude
-hideTOC: true
 ---
 
 To get started, choose one of the following guides.
-
-
 
 <div class="landing-page-buttons">
   <span class="guide-button">
@@ -65,7 +62,6 @@ To get started, choose one of the following guides.
       </picture><br>{{site.guides.integ}}</a>
   </span>
 </div>
-
 
 ## Hot Topics
 The following are the most-accessed pages on the Documentation Portal.
