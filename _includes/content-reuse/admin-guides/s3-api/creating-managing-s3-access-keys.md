@@ -1,4 +1,4 @@
-i% include note.html content="You can configure an S3 bucket to allow [read-only, anonymous access](managing-access-to-s3-buckets.html#enabling-anonymous-access-for-an-s3-bucket). This approach requires no credentials but limits users to non-modifying operations. For more information, see [To Enable Anonymous Access to S3 Buckets by Using the qq CLI](managing-access-to-s3-buckets.html#to-enable-anonymous-access-to-an-s3-bucket-by-using-the-qq-cli)." %}
+{% include note.html content="You can configure an S3 bucket to allow [read-only, anonymous access](managing-access-to-s3-buckets.html#enabling-anonymous-access-for-an-s3-bucket). This approach requires no credentials but limits users to non-modifying operations." %}
 
 
 ## Prerequisites
