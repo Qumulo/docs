@@ -83,7 +83,6 @@ To ensure that anonymous requests have permission to read files in a bucket, gra
 
    ```json
    {
-     "anonymous_access_enabled": false,
      "creation_time": "2022-12-20T19:42:26.833076147Z",
      "name": "my-bucket",
      "path": "/buckets/my-bucket"

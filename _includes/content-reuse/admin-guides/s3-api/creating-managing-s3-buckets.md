@@ -203,7 +203,6 @@ $ qq s3_get_bucket \
 
 ```json
 {
-  "anonymous_access_enabled": false,
   "creation_time": "2022-12-20T19:42:26.833076147Z",
   "name": "my-bucket",
   "path": "/buckets/my-bucket"
@@ -235,7 +234,6 @@ To list your S3 buckets {{site.s3.permissions.APIorCLI}}, you need {{site.s3.per
   {
     "buckets": [
       {
-        "anonymous_access_enabled": false,
         "creation_time": "2022-12-13T22:18:01.406433425Z",
         "name": "my-bucket",
         "path": "/my-bucket",
