@@ -16,3 +16,22 @@ usage: qq s3_get_bucket [-h] --name NAME
 zendesk_source: qq CLI Command Guide
 
 ---
+
+## Examples
+
+### To Get Configuration Information for an S3 Bucket
+Run the `qq s3_get_bucket` command and use the `--bucket` flag to specify the name of your bucket. For example:
+
+```bash
+qq s3_get_bucket_policy --bucket MyBucket
+```
+
+{{site.exampleOutput}} {{site.s3.permissions.timesUTC}}
+
+```json
+{
+  "creation_time": "2022-12-20T19:42:26.833076147Z",
+  "name": "MyBucket",
+  "path": "/buckets/my-bucket"
+}
+```

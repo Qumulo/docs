@@ -66,33 +66,9 @@ To ensure that anonymous requests have permission to read files in a bucket, gra
 
 {% include note.html content="If a file's ACL doesn't allow reads for the `Guest` user, an anonymous request can't read the file." %}
 
-* To view the current bucket configuration {{site.s3.permissions.APIorCLI}}, you need {{site.s3.permissions.bucketsRead}}.
+* To view the current bucket policy configuration {{site.s3.permissions.APIorCLI}}, you need {{site.s3.permissions.bucketsRead}}. For more information, see {% include qq.html command="s3_get_bucket_policy" %} in the {{site.guides.cli}}.
 
-* To change the bucket configuration, you need {{site.s3.permissions.bucketsWrite}}.
-
-### To Enable Anonymous Access to an S3 Bucket by Using the qq CLI
-
-1. To view the current bucket configuration, run the {% include qq.html command="s3_get_bucket" %} command and specify the bucket name. For example:
-
-   ```bash
-   $ qq s3_get_bucket \
-     --name my-bucket
-   ```
-
-   {{site.exampleOutput}} {{site.s3.permissions.timesUTC}}
-
-   ```json
-   {
-     "creation_time": "2022-12-20T19:42:26.833076147Z",
-     "name": "my-bucket",
-     "path": "/buckets/my-bucket"
-   }
-   ```
-
-1. Anonymous access to S3 buckets is disabled by default. To enable anonymous access, run the {% include qq.html command="s3_modify_bucket" %} command, specify the bucket name, and use the `--enable-anonymous-access` flag.
-
-1. To disable anonymous access, run the {% include qq.html command="s3_modify_bucket" %} command, specify the bucket name, and use the `--disable-anonymous-access` flag.
-
+* To change the bucket policy configuration, you need {{site.s3.permissions.bucketsWrite}}. For more information, see {% include qq.html command="s3_modify_bucket_policy" %} in the {{site.guides.cli}}.
 
 <a id="inheritable-aces"></a>
 ## Using Inheritable ACEs to Imitate Bucket-Level Permissions
