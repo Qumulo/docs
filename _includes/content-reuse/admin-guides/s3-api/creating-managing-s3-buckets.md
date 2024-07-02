@@ -185,29 +185,11 @@ Qumulo Core creates the bucket root directory under the {{page.varDefaultPrefix}
 ## Configuring S3 Buckets
 You can view and modify the settings for individual buckets {{site.s3.permissions.APIorCLI}}.
 
-Although you can configure global settings, such as the {{page.varDefaultPrefix}} for S3 buckets, the only individual S3 bucket setting that you can configure in Qumulo Core is anonymous access. For more information, see [Enabling Anonymous Access for an S3 Bucket](managing-access-to-s3-buckets.html#enabling-anonymous-access).
+You can configure global settings, such as the {{page.varDefaultPrefix}} for all S3 buckets. For more information about configuring anonymous access for individual S3 buckets, see, see [Enabling Anonymous Access for an S3 Bucket](managing-access-to-s3-buckets.html#enabling-anonymous-access).
 
-* To view the current bucket configuration {{site.s3.permissions.APIorCLI}}, you need {{site.s3.permissions.bucketsRead}}.
+* To view the current bucket configuration {{site.s3.permissions.APIorCLI}}, you need {{site.s3.permissions.bucketsRead}}. For more information, see {% include qq.html command="s3_get_bucket" %} in the {{site.guides.cli}}.
 
-* To change the bucket configuration, you need {{site.s3.permissions.bucketsWrite}}.
-
-### Viewing the Current S3 Bucket Configuration by Using the qq CLI
-Run the `qq s3_get_bucket` command and specify the bucket name. For example:
-
-```bash
-$ qq s3_get_bucket \
-  --name my-bucket
-```
-
-{{site.exampleOutput}} {{site.s3.permissions.timesUTC}}.
-
-```json
-{
-  "creation_time": "2022-12-20T19:42:26.833076147Z",
-  "name": "my-bucket",
-  "path": "/buckets/my-bucket"
-}
-```
+* To change the bucket configuration, you need {{site.s3.permissions.bucketsWrite}}. For more information, see {% include qq.html command="s3_modify_bucket" %} in the {{site.guides.cli}}.
 
 
 ## Listing S3 Buckets
