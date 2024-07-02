@@ -23,7 +23,7 @@ By default, S3 buckets have _no policy_ in a Qumulo cluster. In this state, ther
 ## Prerequisites
 The following prerequisites let you manage the access policy for an S3 bucket effectively.
 
-* Grant your users access to the S3 bucket by using [S3 access keys](creating-managing-s3-access-keys.html) or [presigned URLs](managing-access-to-s3-buckets.html#presigned-urls), or enable [read-only, anonymous access](managing-access-to-s3-buckets.html#enabling-anonymous-access-for-an-s3-bucket) to the S3 bucket.
+* Grant your users access to the S3 bucket by using [S3 access keys](creating-managing-s3-access-keys.html) or [presigned URLs](managing-access-to-s3-buckets.html#presigned-urls), or enable [read-only, anonymous access](managing-access-to-s3-buckets.html#enabling-anonymous-access) to the S3 bucket.
 
 * Configure [inheritable file ACLs](managing-access-to-s3-buckets.html#inheritable-aces) by using the `qq` CLI, SMB, or [NFSv4.1 access control lists (ACLs)](../nfs/nfsv4.1-acls.html).
 

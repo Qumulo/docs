@@ -1,4 +1,4 @@
-{% include note.html content="You can configure an S3 bucket to allow [read-only, anonymous access](managing-access-to-s3-buckets.html#enabling-anonymous-access-for-an-s3-bucket). This approach requires no credentials but limits users to non-modifying operations." %}
+{% include note.html content="You can configure an S3 bucket to allow [read-only, anonymous access](managing-access-to-s3-buckets.html#enabling-anonymous-access). This approach requires no credentials but limits users to non-modifying operations." %}
 
 
 ## Prerequisites

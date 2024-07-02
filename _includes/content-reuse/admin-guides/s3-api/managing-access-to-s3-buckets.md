@@ -1,6 +1,6 @@
 Managing user access to S3 buckets in a Qumulo cluster is very similar to managing access to SMB shares and NFS exports, with the following exceptions:
 
-* To let a user access S3 buckets in the cluster, you must [assign an S3 access key](creating-managing-s3-access-keys.html) to the user. Alternatively, you can create [presigned URLs](#presigned-urls) or enable [read-only, anonymous access](#enabling-anonymous-access-for-an-s3-bucket) for the entire S3 bucket.
+* To let a user access S3 buckets in the cluster, you must [assign an S3 access key](creating-managing-s3-access-keys.html) to the user. Alternatively, you can create [presigned URLs](#presigned-urls) or enable [read-only, anonymous access](#enabling-anonymous-access) for the entire S3 bucket.
 
 * Because a Qumulo cluster restricts S3 actions based on file access control lists (ACLs), an S3 bucket might work differently or have more restrictive permissions than expected.
 
@@ -54,7 +54,7 @@ X-Amz-Algorithm=AWS4-HMAC-SHA256
 ```
 
 
-<a id="anonymous-access"></a>
+<a id="enabling-anonymous-access"></a>
 ## Enabling Anonymous Access for an S3 Bucket
 In certain cases, it might be more practical to allow anonymous (unauthenticated) requests to access the contents of S3 buckets, for example, if you want to let users access objects from the S3 bucket by using a web browser or if the number of users who need read access is very large. When you enable anonymous access to an S3 bucket, your users can perform read-only S3 operations without authenticating their requests.
 

@@ -185,7 +185,7 @@ Qumulo Core creates the bucket root directory under the {{page.varDefaultPrefix}
 ## Configuring S3 Buckets
 You can view and modify the settings for individual buckets {{site.s3.permissions.APIorCLI}}.
 
-Although you can configure global settings, such as the {{page.varDefaultPrefix}} for S3 buckets, the only individual S3 bucket setting that you can configure in Qumulo Core is anonymous access. For more information, see [Enabling Anonymous Access for an S3 Bucket](managing-access-to-s3-buckets.html#anonymous-access).
+Although you can configure global settings, such as the {{page.varDefaultPrefix}} for S3 buckets, the only individual S3 bucket setting that you can configure in Qumulo Core is anonymous access. For more information, see [Enabling Anonymous Access for an S3 Bucket](managing-access-to-s3-buckets.html#enabling-anonymous-access).
 
 * To view the current bucket configuration {{site.s3.permissions.APIorCLI}}, you need {{site.s3.permissions.bucketsRead}}.
 
