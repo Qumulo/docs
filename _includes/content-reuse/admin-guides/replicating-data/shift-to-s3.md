@@ -12,7 +12,7 @@ For more information about copying objects from S3 to Qumulo, see [Using Qumulo 
     * [VPC endpoint](https://docs.aws.amazon.com/vpc/latest/privatelink/vpc-endpoints.html)
 
     * [AWS Direct Connect](https://docs.aws.amazon.com/whitepapers/latest/aws-vpc-connectivity-options/aws-direct-connect.html)
-    
+
     For more information, see [AWS IP address ranges](https://docs.aws.amazon.com/general/latest/gr/aws-ip-ranges.html) in the AWS General Reference.
 
 * Membership in a Qumulo role with the following privileges:
@@ -38,10 +38,12 @@ For more information about copying objects from S3 to Qumulo, see [Using Qumulo 
 
   * `s3:PutObject`
 
+  * `s3:PutObjectTagging`
+
   * `s3:ListBucket`
 
   For more information, see [Understanding and getting your AWS credentials](https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html) in the AWS General Reference
-  
+
 ### Example IAM Policy
 In the following example, the IAM policy gives permission to read from and write to the `my-folder` folder in the `my-bucket`. This policy can give users the permissions required to run Shift-To jobs.
 
@@ -57,8 +59,9 @@ In the following example, the IAM policy gives permission to read from and write
     {
       "Action": [
         "s3:AbortMultipartUpload",
-        "s3:GetObject", 
-        "s3:PutObject"
+        "s3:GetObject",
+        "s3:PutObject",
+        "s3:PutObjectTagging"
       ]
       "Effect": "Allow",
       "Resource": "arn:aws:s3:::my-bucket/my-folder/*"
@@ -93,22 +96,6 @@ Qumulo Core performs the following steps when it creates a Shift-To relationship
 
    {% include note.html content="This process doesn't encode or transform your data in any way. Shift-To replicates only the data in a regular file's primary stream, excluding alternate data streams and file system metadata such as access control lists (ACLs). To avoid transferring data across the public Internet, a server-side S3 copy operation also copies any hard links to files in the replication local directory to S3 as full copies of objects, with identical contents and metadata." %}
 
-   The following table explains how entities in the Qumulo file system map to entities in an S3 bucket.
-
-   | Entity in the Qumulo File System                | Entity in an Amazon S3 Bucket                                                                 |
-   | ----------------------------------------------- | --------------------------------------------------------------------------------------------- |
-   | Access control list (ACL)                       | Not copied                                                                                    |
-   | Alternate data streams                          | Not copied                                                                                    |
-   | Directory                                       | Not copied (directory structure is preserved in the object key for objects created for files) |
-   | Hard link to a non-regular file                 | Not copied                                                                                    |
-   | Hard link to a regular file                     | Copy of the S3 object                                                                         |
-   | Holes in sparse files                           | Zeroes (holes are expanded)                                                                   |
-   | Regular file                                    | S3 object (the object key is the file system path and the metadata is the field data)         |
-   | SMB extended file attributes                    | Not copied                                                                                    |
-   | Symbolic link                                   | Not copied                                                                                    |
-   | Timestamps (`mtime`, `ctime`, `atime`, `btime`) | Not copied                                                                                    |
-   | UNIX device file                                | Not copied                                                                                    |
-   
 1. Checks whether a file is already replicated. If the object exists in the remote S3 bucket, and neither the file nor the object are modified since the last successful replication, its data isn't retransferred to S3.
 
    {% include note.html content="Shift never deletes files in the remote S3 folder, even if the files are removed from the local directory since the last replication." %}
@@ -121,6 +108,69 @@ The Shift-To relationship remains on the Qumulo cluster. You can monitor the com
 If you repeatedly copy from the same Qumulo directory, you can speed up the upload process (and skip already uploaded files) by using the same relationship.
 
 A new relationship for subsequent uploads doesn't share any tracking information with previous relationships associated with a directory and might recopy data that is already uploaded.
+
+
+## How Entities in the Qumulo File System are Represented in an S3 Bucket
+This section explains which entity types Qumulo Core doesn't copy to an S3 bucket and how an S3 bucket represents the entities that Qumulo Core copies to an S3 bucket.
+
+### Entity Types that Qumulo Core Doesn't Copy
+* Access control list (ACL)
+
+* Alternate data stream
+
+* Directory
+
+  {% include note.html content="For objects created for files, the system preserves the directory structure in the object key." %}
+
+* Hard link to a [non-regular file](https://gcc.gnu.org/onlinedocs/gnat_rm/Reading-and-Writing-Non-Regular-Files.html)
+
+* SMB extended file attribute
+
+* Symbolic link
+
+* Timestamp (`mtime`, `ctime`, `atime`, `btime`)
+
+* UNIX device file
+
+### Entity Types that Qumulo Core Copies
+<table>
+  <thead>
+    <tr>
+      <th>Entity in the Qumulo File System</th>
+      <th>Representation in an Amazon S3 Bucket</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Hard link to <a target="_blank" href="https://eitca.org/cybersecurity/eitc-is-lsa-linux-system-administration/linux-filesystem/linux-file-types/examination-review-linux-file-types/what-are-regular-files-in-linux-and-how-can-they-be-identified/">a regular file</a></td>
+      <td>Copy of the S3 object</td>
+    </tr>
+    <tr>
+      <td>Generic user metadata</td>
+      <td>S3 tags</td>
+    </tr>   
+    <tr>
+      <td>Hole in sparse files</td>
+      <td>
+        Zero
+        {% include note.html content="The system expands any holes." %}
+      </td>
+    </tr>
+    <tr>
+      <td>Regular file</td>
+      <td>
+        S3 object
+        {% include note.html content="The object key is the file system path and the object value is the metadata." %}
+      </td>
+    </tr>
+    <tr>
+      <td>S3 Metadata</td>
+      <td>
+        Object metadata
+      </td>
+    </tr>
+  </tbody>
+</table>
 
 
 ## Using the Qumulo Core Web UI to Copy Files and Manage Relationships
@@ -153,7 +203,7 @@ This section describes how to use the Qumulo Core Web UI 3.2.5 (and higher) to c
 
 1. In the **Create Copy to S3?** dialog box, review the Shift relationship and then click **Yes, Create**.
 
-   The copy job begins.   
+   The copy job begins.
 
 {% include content-reuse/shift-view-config-details-stop-job-repeat-job-delete-relationship.md %}
 
@@ -250,7 +300,7 @@ Any fatal errors that occur during a copy job cause the job to fail, leaving a p
 Whenever Qumulo Core doesn't complete an operation successfully and returns an error from the API or CLI, the `error` field within the `last_job` field (that the `replication_list_object_relationship_statuses` command returns) contains a detailed failure message. For more troubleshooting details, see `qumulo-replication.log` on your Qumulo cluster.
 
 
-## Best Practices
+## Best Practices for Shift-to-S3
 We recommend the following best practices for working with Qumulo Shift-To for Amazon S3.
 * **Bucket Lifecycle Policy:** To abort any incomplete uploads older than several days and ensure the automatic clean-up of any storage that incomplete parts of large objects (left by failed or interrupted replication operations) use, configure a bucket lifecycle policy. For more information, see [Uploading and copying objects using multipart upload](https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config) in the _Amazon Simple Storage Service User Guide_.
 * **VPC Endpoints:** For best performance when using a Qumulo cluster in AWS, configure a [VPC endpoint](https://docs.aws.amazon.com/vpc/latest/privatelink/vpc-endpoints.html) to S3. For on-premises Qumulo clusters, we recommend [AWS Direct Connect](https://docs.aws.amazon.com/whitepapers/latest/aws-vpc-connectivity-options/aws-direct-connect.html) or another high-bandwidth, low-latency connection to S3.
@@ -258,9 +308,10 @@ We recommend the following best practices for working with Qumulo Shift-To for A
 * **Object Versioning:** To protect against unintended overwrites, enable object versioning. For more information, see [Using versioning in S3 buckets](https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectVersioning.html) in the _Amazon Simple Storage Service User Guide_.
 * **Completed Jobs:** If you don't plan to use a Shift relationship to download updates from S3, delete the relationship to free up any storage associated with it.
 * **Concurrent Replication Relationships:** To increase parallelism, especially across distinct datasets, use concurrent replication relationships to S3. To avoid having a large number of concurrent operations impact client I/O to the Qumulo cluster, limit the number of concurrent replication relationships. While there is no hard limit, we don't recommend creating more than 100 concurrent replication relationships on a cluster (including both Shift and Qumulo local replication relationships).
+* **User Metadata Limits:** Amazon S3's limits on object metadata (up to 2 kB across key bytes and value bytes) and tagging (10 entries with a key size of 128 bytes and a value size of 256 bytes) are more restrictive than those of Qumulo Core. When a metadata entry exceeds one of these limits, Qumulo Core omits the entry from a replication job. For more information, see [User Defined Object Metadata](https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingMetadata.html#UserMetadata) and [Categorizing your storage using tags](https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-tagging.html) in the Amazon Simple Storage Service User Guide.
 
 
-## Restrictions
+## Shift-to-S3 Restrictions
 * **Object-Locked Buckets:** You can't use buckets configured with S3 Object Lock and a default retention period for Shift-To. If possible, either remove the default retention period and set retention periods explicitly on objects uploaded outside of Shift or use a different S3 bucket without S3 Object Lock enabled. For more information, see [How S3 Object Lock works](https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock-overview.html) in the _Amazon Simple Storage Service User Guide_.
 * **File Size Limit:** The size of an individual file can't exceed 5 TiB (this is the maximum object size that S3 supports). There is no limit on the total size of all your files.
 * **File Path Limit:** The length of a file path must be shorter than 1,024 characters, including the configured object folder prefix, excluding the local directory path.

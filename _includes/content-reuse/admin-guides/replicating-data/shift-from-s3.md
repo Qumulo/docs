@@ -14,7 +14,7 @@ For more information about copying objects from Qumulo to S3, see [Using Qumulo 
     * [VPC endpoint](https://docs.aws.amazon.com/vpc/latest/privatelink/vpc-endpoints.html)
 
     * [AWS Direct Connect](https://docs.aws.amazon.com/whitepapers/latest/aws-vpc-connectivity-options/aws-direct-connect.html)
-    
+
     For more information, see [AWS IP address ranges](https://docs.aws.amazon.com/general/latest/gr/aws-ip-ranges.html) in the AWS General Reference.
 
 * Membership in a Qumulo role with the following privileges:
@@ -36,10 +36,12 @@ For more information about copying objects from Qumulo to S3, see [Using Qumulo 
 
   * `s3:GetObject`
 
+  * `s3:GetObjectTagging`
+
   * `s3:ListBucket`
 
   For more information, see [Understanding and getting your AWS credentials](https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html) in the AWS General Reference
-  
+
 ### Example IAM Policy
 In the following example, the IAM policy gives permission to read from and write to the `my-folder` folder in the `my-bucket`. This policy can give users the minimal set of permissions required to run Shift-From jobs. (Shift-To jobs require a less-restrictive policy. For more information and an example, see [Using Qumulo Shift-To for Amazon S3 to Copy Objects](/shift-to-s3.html).)
 
@@ -54,7 +56,8 @@ In the following example, the IAM policy gives permission to read from and write
     },
     {
       "Action": [
-        "s3:GetObject"
+        "s3:GetObject",
+        "s3:GetObjectTagging"
       ],
       "Effect": "Allow",
       "Resource": "arn:aws:s3:::my-bucket/my-folder/*"
@@ -231,7 +234,7 @@ Any fatal errors that occur during a copy job cause the job to fail, leaving a p
 Whenever Qumulo Core doesn't complete an operation successfully and returns an error from the API or CLI, the `error` field within the `last_job` field (that the `replication_list_object_relationship_statuses` command returns) contains a detailed failure message. For more troubleshooting details, see `qumulo-replication.log` on your Qumulo cluster.
 
 
-## Best Practices
+## Best Practices for Shift-from-S3
 We recommend the following best practices for working with Qumulo Shift-From for Amazon S3.
 * **Inheritable Permissions:** Because the system user creates the files that Shift-From for S3 copies, the system owns these files. By default, everyone is granted read permissions and administrators always have full access to the files.
 
@@ -244,7 +247,7 @@ We recommend the following best practices for working with Qumulo Shift-From for
 * **Concurrent Replication Relationships:** To increase parallelism, especially across distinct datasets, use concurrent replication relationships from S3. To avoid having a large number of concurrent operations impact client I/O to the Qumulo cluster, limit the number of concurrent replication relationships. While there is no hard limit, we don't recommend creating more than 100 concurrent replication relationships on a cluster (including both Shift and Qumulo local replication relationships).
 
 
-## Restrictions
+## Shift-from-S3 Restrictions
 * **S3-Compatible Object Stores:** S3-compatible object stores aren't supported. Currently, Qumulo Shift-From supports replication only from Amazon S3.
 * **HTTP:** HTTP isn't supported. All Qumulo connections are encrypted by using HTTPS and verify the S3 server's SSL certificate.
 * **Anonymous Access:** Anonymous access isn't supported. You must use valid AWS credentials.
