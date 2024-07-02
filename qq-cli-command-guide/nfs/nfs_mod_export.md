@@ -81,9 +81,9 @@ summary: This section explains how to use the <code>qq nfs_mod_export</code> com
 synopsis: Modify an export
 title: qq nfs_mod_export
 usage: "qq nfs_mod_export [-h] (--export-id EXPORT_ID | --export-path EXPORT_PATH)\
-  \ [--tenant-id TENANT_ID] [--new-export-path NEW_EXPORT_PATH] [--new-tenant-id NEW_TENANT_ID]\n\
-  \    [--fs-path FS_PATH] [--description DESCRIPTION] [--no-restrictions | --restrictions\
-  \ JSON_FILE_PATH] [--create-fs-path]\n    [--fields-to-present-as-32-bit FIELD [FIELD\
+  \ [--tenant-id TENANT_ID] [--new-export-path NEW_EXPORT_PATH] [--new-tenant-id NEW_TENANT_ID]\
+  \ [--fs-path FS_PATH] [--description DESCRIPTION]\n    [--no-restrictions | --restrictions\
+  \ JSON_FILE_PATH] [--create-fs-path] [--fields-to-present-as-32-bit FIELD [FIELD\
   \ ...]]"
 zendesk_source: qq CLI Command Guide
 

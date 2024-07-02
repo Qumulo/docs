@@ -74,11 +74,11 @@ synopsis: "\n    Create an object replication relationship that initiates a copy
   \ file data to or\n    from S3.\n    "
 title: qq replication_create_object_relationship
 usage: "qq replication_create_object_relationship [-h] (--local-directory-id LOCAL_DIRECTORY_ID\
-  \ | --local-directory-path LOCAL_DIRECTORY_PATH) --direction\n    {COPY_TO_OBJECT,COPY_FROM_OBJECT}\
-  \ [--object-store-address OBJECT_STORE_ADDRESS] --object-folder OBJECT_FOLDER\n\
-  \    [--use-port USE_PORT] [--ca-certificate CA_CERTIFICATE] --bucket BUCKET\n \
-  \   [--bucket-addressing-style {BUCKET_STYLE_PATH,BUCKET_STYLE_VIRTUAL_HOSTED}]\
-  \ --region REGION --access-key-id ACCESS_KEY_ID\n    [--secret-access-key SECRET_ACCESS_KEY]"
+  \ | --local-directory-path LOCAL_DIRECTORY_PATH) --direction {COPY_TO_OBJECT,COPY_FROM_OBJECT}\
+  \ [--object-store-address OBJECT_STORE_ADDRESS] --object-folder\n    OBJECT_FOLDER\
+  \ [--use-port USE_PORT] [--ca-certificate CA_CERTIFICATE] --bucket BUCKET [--bucket-addressing-style\
+  \ {BUCKET_STYLE_PATH,BUCKET_STYLE_VIRTUAL_HOSTED}] --region REGION --access-key-id\n\
+  \    ACCESS_KEY_ID [--secret-access-key SECRET_ACCESS_KEY]"
 zendesk_source: qq CLI Command Guide
 
 ---

@@ -323,7 +323,12 @@ The following table describes the relationship between Qumulo Core privileges an
   <tbody>
     <tr>
       <td><code>S3_BUCKETS_READ</code></td>
-      <td><code>s3:GetBucketPolicy</code></td>
+      <td>
+        <ul>
+          <li><code>s3:GetBucketPolicy</code></li>
+          <li><code>s3:GetBucketVersioning</code></li>
+        </ul>
+      </td>
     </tr>
     <tr>
       <td><code>S3_BUCKETS_WRITE</code></td>
@@ -332,6 +337,7 @@ The following table describes the relationship between Qumulo Core privileges an
           <li><code>s3:DeleteBucket</code></li>
           <li><code>s3:DeleteBucketPolicy</code></li>
           <li><code>s3:PutBucketPolicy</code></li>
+          <li><code>s3:PutBucketVersioning</code></li>
         </ul>
       </td>
     </tr>
