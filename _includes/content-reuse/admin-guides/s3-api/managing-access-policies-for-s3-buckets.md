@@ -9,15 +9,16 @@ For information about working with access policies for S3 buckets and for `qq` C
 * {% include qq.html command="s3_delete_bucket_policy" %}
 
 
-## Default No-Policy State
-By default, S3 buckets have _no policy_ in a Qumulo cluster. In this state, there are no additional restrictions for authenticated users and any user with a valid access key and file system permissions can perform any S3 API action on the S3 bucket. However, the access control list (ACL) of the S3 bucket's root directory must grant a user some amount of access.
+## Anonymous Access to S3 Buckets
+By default, S3 buckets in a Qumulo cluster are in a _no policy_ state, in which Qumulo Core disallows unsigned, anonymous requests and the {% include qq.html command="s3_get_bucket_policy" %} command returns <code>{}</code>.
 
-{{site.data.alerts.note}}
-<ul>
-  <li>In the default non-policy state, Qumulo Core disallows unsigned, anonymous requests and the {% include qq.html command="s3_get_bucket_policy" %} command returns <code>{}</code>. To enable anonymous access, run the {% include qq.html command="s3_set_bucket_policy" %} command with an <code>Allow</code> statement that targets the <code>local:guest</code> account.</li>
-  <li>To remove an access policy from an S3 bucket, run the {% include qq.html command="s3_delete_bucket_policy" %} command.</li>
-</ul>
-{{site.data.alerts.end}}
+In Qumulo Core, anonymous S3 connections use the system `Guest` account, which is restricted to read-only S3 API actions. To permit anonymous access in an S3 bucket policy, grant access to one of the following principals:
+
+* The `Everyone` group
+* The `Guest` account
+* Any group that includes the `Guest` account as a member
+
+{% include note.html content="When you upgrade Qumulo Core version 7.1.1, the system replaces anonymous S3 bucket access configuration with a default S3 bucket policy that permits all S3 API actions to all principals." %}
 
 
 ## Prerequisites
