@@ -70,6 +70,38 @@ To ensure that anonymous requests have permission to read files in a bucket, gra
 
 * To change the bucket policy configuration, you need {{site.s3.permissions.bucketsWrite}}. For more information, see {% include qq.html command="s3_modify_bucket_policy" %} in the {{site.guides.cli}}.
 
+  The following is an example policy that enables anonymous access:
+
+  ```json
+  {
+    "Id": "Anonymous Access Enabled",
+    "Statements": [{
+      "Action": [
+        "s3:*"
+      ],
+      "Effect": "Allow",
+      "Principal": {
+        "Qumulo": ["Authenticated Users"]
+       },
+      "Sid": "Authenticated Full Access"
+    },{
+      "Action": [
+        "s3:GetObject",
+        "s3:GetObjectAcl",
+        "s3:GetObjectAttributes",
+        "s3:GetObjectTagging",
+        "s3:ListBucket"
+      ],
+      "Effect": "Allow",
+      "Principal": {
+        "Qumulo": ["local:guest"]
+      },
+      "Sid": "Read-only Guest Access"
+    }],
+    "Version": "2012-10-17"
+  }
+  ```
+
 <a id="inheritable-aces"></a>
 ## Using Inheritable ACEs to Imitate Bucket-Level Permissions
 To grant multiple users access to all paths in a bucket and ensure that newly created directories inherit the correct permissions, use inheritable access control entries (ACEs).
