@@ -29,9 +29,11 @@ jobs:
 
       # Build and run the hot-topic Docker image
       - name: Build and run google-analytics-script Docker image
+        env:
+          ENGINEERING_JSON: ${{ secrets.ENGINEERING_JSON }}
         run: |
           echo "${{ secrets.ENGINEERING_JSON }}" > hot-topic/engineering-173019-49cb92815171.json
-          docker build -t google-analytics-script -f hot-topic/Dockerfile ./hot-topic
+          docker build --build-arg ENGINEERING_JSON="${{ secrets.ENGINEERING_JSON }}" -t google-analytics-script -f hot-topic/Dockerfile ./hot-topic
           docker run -v ${{ github.workspace }}/hot-topic/engineering-173019-49cb92815171.json:/app/engineering-173019-49cb92815171.json \
                      -v ${{ github.workspace }}/docs-internal/README.md:/app/README.md \
                      google-analytics-script
