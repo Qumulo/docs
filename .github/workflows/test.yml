@@ -12,37 +12,20 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
+      # It is recommended to use specific versions
       - uses: actions/checkout@v4
-
       - uses: actions/cache@v4
         with:
           path: vendor/bundle
           key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile') }}
           restore-keys: |
             ${{ runner.os }}-gems-
-
       - uses: ruby/setup-ruby@b256bd96bb4867e7d23e92e087d9bb697270b725  # v1.163.0
         with:
           ruby-version: '2.7'
           bundler-cache: true
-
-      # Write the JSON secret to the file
-      - name: Write JSON secret to file
-        run: echo "${{ secrets.ENGINEERING_JSON }}" > hot-topic/engineering-173019-49cb92815171.json
-
-      # Build and run the hot-topic Docker image
-      - name: Build and run google-analytics-script Docker image
-        run: |
-          docker build -t google-analytics-script -f hot-topic/Dockerfile ./hot-topic
-          docker run -v $(pwd)/hot-topic/engineering-173019-49cb92815171.json:/app/engineering-173019-49cb92815171.json \
-                     -v $(pwd)/docs-internal/README.md:/app/README.md \
-                     google-analytics-script
-
-      # Build the main docs-builder Docker image
-      - name: Build docs-builder Docker image
-        run: docker build -f docker/build/Dockerfile -t docs-builder .
-
       # This action builds the feature branch ephemerally
       # to prove that nothing is broken
       - name: Build feature branch
+        # `prod` is the name of the output directory
         run: JEKYLL_ENV=preview LC_ALL=C.UTF-8 bundle exec jekyll build -d test
