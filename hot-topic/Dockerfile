@@ -10,9 +10,6 @@ COPY . /app
 # Install any needed packages specified in requirements.txt
 RUN pip install --no-cache-dir google-analytics-data
 
-# Accept the JSON secret as a build argument and write it to a file
-ARG ENGINEERING_JSON
-RUN echo "$ENGINEERING_JSON" > engineering-173019-49cb92815171.json
-
 # Run hot-topic.py when the container launches
 CMD ["python", "hot-topic.py"]
+
