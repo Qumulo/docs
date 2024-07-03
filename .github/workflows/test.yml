@@ -26,13 +26,14 @@ jobs:
           ruby-version: '2.7'
           bundler-cache: true
 
+      # Write the JSON secret to the file
+      - name: Write JSON secret to file
+        run: echo "${{ secrets.ENGINEERING_JSON }}" > hot-topic/engineering-173019-49cb92815171.json
+
       # Build and run the hot-topic Docker image
       - name: Build and run google-analytics-script Docker image
-        env:
-          ENGINEERING_JSON: ${{ secrets.ENGINEERING_JSON }}
         run: |
-          echo "${{ secrets.ENGINEERING_JSON }}" > hot-topic/engineering-173019-49cb92815171.json
-          docker build --build-arg ENGINEERING_JSON="${{ secrets.ENGINEERING_JSON }}" -t google-analytics-script -f hot-topic/Dockerfile ./hot-topic
+          docker build -t google-analytics-script -f hot-topic/Dockerfile ./hot-topic
           docker run -v $(pwd)/hot-topic/engineering-173019-49cb92815171.json:/app/engineering-173019-49cb92815171.json \
                      -v $(pwd)/docs-internal/README.md:/app/README.md \
                      google-analytics-script
