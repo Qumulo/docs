@@ -12,7 +12,6 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      # It is recommended to use specific versions
       - uses: actions/checkout@v4
 
       - uses: actions/cache@v4
@@ -34,8 +33,8 @@ jobs:
         run: |
           echo "${{ secrets.ENGINEERING_JSON }}" > hot-topic/engineering-173019-49cb92815171.json
           docker build --build-arg ENGINEERING_JSON="${{ secrets.ENGINEERING_JSON }}" -t google-analytics-script -f hot-topic/Dockerfile ./hot-topic
-          docker run -v ${{ github.workspace }}/hot-topic/engineering-173019-49cb92815171.json:/app/engineering-173019-49cb92815171.json \
-                     -v ${{ github.workspace }}/docs-internal/README.md:/app/README.md \
+          docker run -v $(pwd)/hot-topic/engineering-173019-49cb92815171.json:/app/engineering-173019-49cb92815171.json \
+                     -v $(pwd)/docs-internal/README.md:/app/README.md \
                      google-analytics-script
 
       # Build the main docs-builder Docker image
@@ -45,5 +44,4 @@ jobs:
       # This action builds the feature branch ephemerally
       # to prove that nothing is broken
       - name: Build feature branch
-        # `prod` is the name of the output directory
         run: JEKYLL_ENV=preview LC_ALL=C.UTF-8 bundle exec jekyll build -d test
