@@ -45,7 +45,7 @@ The best way to start exploring your Qumulo cluster by using the `qq` CLI is to 
 Run the `qq login` command and specify the IP address of one of the nodes in your cluster and your credentials. For example:
 
 ```bash
-qq login --host {{site.exampleIP0}} \
+qq --host {{site.exampleIP0}} login \
   -u admin
   -p NW0bJbixtQcQzkq5q4sp
 ```
