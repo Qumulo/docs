@@ -42,6 +42,7 @@ Ensure that your host system meets the minimum requirements.
   <tr>
     <td>Kernel</td>
     <td>
+      {% include important.html content="Kernel versions prior to 5.19 have a bug that can cause core dumps from Qumulo Core to be truncated." %}      
       We've tested support for the following kernel versions:
       <ul>
         <li>Debian 6.1.0 (and higher)</li>
