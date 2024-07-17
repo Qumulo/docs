@@ -1,4 +1,4 @@
-name: push mainline branch to public repo
+name: Push mainline branch to public repo
 on:
   push:
     branches:
@@ -11,34 +11,42 @@ jobs:
         with:
           fetch-depth: 0
           ref: ${{ env.GITHUB_REF_NAME }}
-
       - uses: actions/cache@v4
         with:
           path: vendor/bundle
           key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile') }}
           restore-keys: |
             ${{ runner.os }}-gems-
-
       - uses: ruby/setup-ruby@b256bd96bb4867e7d23e92e087d9bb697270b725  # v1.163.0
         with:
           ruby-version: '2.7'
           bundler-cache: true
 
-      - name: Sanity Build site
+      - name: Write JSON secret to file
+        run: echo -n "${{ secrets.ENGINEERING_JSON }}" | base64 --decode > hot-topic/engineering-173019-49cb92815171.json
+
+      - name: Build and run google-analytics-script Docker image
+        run: |
+          docker build -t google-analytics-script -f hot-topic/Dockerfile ./hot-topic
+          docker run -v $(pwd)/hot-topic/engineering-173019-49cb92815171.json:/app/engineering-173019-49cb92815171.json \
+                     -v $(pwd)/README.md:/app/README.md \
+                     google-analytics-script
+
+      - name: Sanity build site
         run: JEKYLL_ENV=preview LC_ALL=C.UTF-8 bundle exec jekyll build -d prod
 
-      - name: prepare key
+      - name: Prepare SSH key
         run: |
           echo "${{ secrets.DOCS_PUBLISH_KEY }}" > /tmp/key
           chmod 400 /tmp/key
 
-      - name: push to remote gh-pages branch
+      - name: Push to remote gh-pages branch
         run: |
           git remote add -t ${GITHUB_REF_NAME} -m gh-pages public git@github.com:Qumulo/docs
           git push --set-upstream public ${GITHUB_REF_NAME}:gh-pages
         env:
           GIT_SSH_COMMAND: ssh -i /tmp/key
 
-      - name: cleanup key
+      - name: Clean up SSH key
         run: |
           rm -f /tmp/key

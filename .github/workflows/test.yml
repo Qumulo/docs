@@ -24,6 +24,20 @@ jobs:
         with:
           ruby-version: '2.7'
           bundler-cache: true
+
+      - name: Write JSON secret to file
+        run: echo -n "${{ secrets.ENGINEERING_JSON }}" | base64 --decode > hot-topic/engineering-173019-49cb92815171.json
+
+      - name: Build and run google-analytics-script Docker image
+        run: |
+          docker build -t google-analytics-script -f hot-topic/Dockerfile ./hot-topic
+          docker run -v $(pwd)/hot-topic/engineering-173019-49cb92815171.json:/app/engineering-173019-49cb92815171.json \
+                     -v $(pwd)/README.md:/app/README.md \
+                     google-analytics-script
+
+      - name: Build docs-builder Docker image
+        run: docker build -f docker/build/Dockerfile -t docs-builder .
+
       # This action builds the feature branch ephemerally
       # to prove that nothing is broken
       - name: Build feature branch

@@ -25,6 +25,17 @@ jobs:
         with:
           ruby-version: '2.7'
           bundler-cache: true
+
+      - name: Write JSON secret to file
+        run: echo -n "${{ secrets.ENGINEERING_JSON }}" | base64 --decode > hot-topic/engineering-173019-49cb92815171.json
+
+      - name: Build and run google-analytics-script Docker image
+        run: |
+          docker build -t google-analytics-script -f hot-topic/Dockerfile ./hot-topic
+          docker run -v $(pwd)/hot-topic/engineering-173019-49cb92815171.json:/app/engineering-173019-49cb92815171.json \
+                     -v $(pwd)/README.md:/app/README.md \
+                     google-analytics-script
+
       # Currently, this action doesn't do anything
       - name: Build site
         # `prod` is the name of the output directory
