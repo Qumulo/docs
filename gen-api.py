@@ -39,6 +39,10 @@ def generate_resource_md(category, endpoint, methods, permalink):
     }
 
     for method, details in methods.items():
+        response_key = list(details.get("responses", {}).keys())[0] if details.get("responses") else None
+        response_body = details.get("responses", {}).get(response_key, {}).get("content", {}).get("application/json", {}) if response_key else {}
+        request_body = details.get("requestBody", {}).get("content", {}).get("application/json", {})
+
         method_details = {
             "summary": details.get("summary", ""),
             "parameters": [
@@ -46,17 +50,17 @@ def generate_resource_md(category, endpoint, methods, permalink):
                 for param in details.get("parameters", [])
             ],
             "response_body": {
-                "status_code": list(details.get("responses", {}).keys())[0],
-                "description": details["responses"][list(details.get("responses", {}).keys())[0]]["description"],
-                "example_value": json.dumps(details["responses"][list(details.get("responses", {}).keys())[0]].get("content", {}).get("application/json", {}).get("example", "TO DO"), indent=2),
-                "schema": json.dumps(details["responses"][list(details.get("responses", {}).keys())[0]].get("content", {}).get("application/json", {}).get("schema", "TO DO"), indent=2)
-            }
+                "status_code": response_key,
+                "description": details["responses"][response_key]["description"] if response_key else "",
+                "example_value": json.dumps(response_body.get("example", "TO DO"), indent=2),
+                "schema": json.dumps(response_body.get("schema", "TO DO"), indent=2)
+            } if response_key else {},
         }
-        
-        if "requestBody" in details:
+
+        if request_body:
             method_details["request_body"] = {
-                "example_value": json.dumps(details["requestBody"].get("content", {}).get("application/json", {}).get("example", "TO DO"), indent=2),
-                "schema": json.dumps(details["requestBody"].get("content", {}).get("application/json", {}).get("schema", "TO DO"), indent=2)
+                "example_value": json.dumps(request_body.get("example", "TO DO"), indent=2),
+                "schema": json.dumps(request_body.get("schema", "TO DO"), indent=2)
             }
 
         yaml_content["methods"][method] = method_details
@@ -123,6 +127,10 @@ for path, path_item in api_definition["paths"].items():
         "title": create_sidebar_title(path, category),
         "url": permalink
     })
+
+# Alphabetize entries within each category
+for category in sidebar_entries_by_category:
+    sidebar_entries_by_category[category] = sorted(sidebar_entries_by_category[category], key=lambda x: x["title"])
 
 # Generate sidebar YAML content
 sidebar_content = {
