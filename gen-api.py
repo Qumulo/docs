@@ -80,8 +80,8 @@ def create_sidebar_title(path):
 response = requests.get(url)
 api_definition = response.json()
 
-# List to store sidebar entries
-sidebar_entries = []
+# Dictionary to store sidebar entries grouped by category
+sidebar_entries_by_category = {}
 
 # Main processing logic
 for path, path_item in api_definition["paths"].items():
@@ -104,16 +104,19 @@ for path, path_item in api_definition["paths"].items():
         write_markdown(index_md_path, index_md_content)
 
     # Clean up filename and write the individual resource file
-    resource_filename = clean_filename(f"{path.strip('/').replace('/', '_')}.md")
+    resource_name = path_segments[-1].replace('{', '').replace('}', '')
+    resource_filename = clean_filename(f"{resource_name}.md")
     resource_md_path = os.path.join(category_dir, resource_filename)
     permalink = f"/rest-api-guide/{category}/{resource_filename.replace('.md', '.html')}"
     resource_md_content = generate_resource_md(category, path, path_item, permalink)
     write_markdown(resource_md_path, resource_md_content)
 
     # Add entry to sidebar entries
-    sidebar_entries.append({
+    if category not in sidebar_entries_by_category:
+        sidebar_entries_by_category[category] = []
+    sidebar_entries_by_category[category].append({
         "output": "web,pdf",
-        "title": create_sidebar_title(path),
+        "title": resource_name,
         "url": permalink
     })
 
@@ -142,7 +145,14 @@ sidebar_content = {
                     "type": "navi"
                 },
                 {
-                    "folderitems": sidebar_entries,
+                    "folderitems": [
+                        {
+                            "output": "web,pdf",
+                            "title": category,
+                            "url": entries[0]["url"]
+                        }
+                        for category, entries in sidebar_entries_by_category.items()
+                    ],
                     "output": "web,pdf",
                     "title": "API Endpoints",
                     "type": "navi"
@@ -151,6 +161,15 @@ sidebar_content = {
         }
     ]
 }
+
+# Add folderitems for each category
+for category, entries in sidebar_entries_by_category.items():
+    sidebar_content["entries"][0]["folders"].append({
+        "folderitems": entries,
+        "output": "web,pdf",
+        "title": category,
+        "type": "navi"
+    })
 
 # Write the sidebar YAML file
 with open(sidebar_file_path, "w") as file:
