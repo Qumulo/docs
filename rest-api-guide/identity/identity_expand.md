@@ -13,5 +13,6 @@ methods:
       status_code: '200'
     summary: Find all equivalents and the group membership of the given identity.
 rest_endpoint: /v1/identity/expand
+permalink: /rest-api-guide/identity/identity_expand.html
 sidebar: rest_api_command_guide_sidebar
 ---

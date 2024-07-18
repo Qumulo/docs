@@ -17,5 +17,6 @@ methods:
       status_code: '200'
     summary: Returns the current sampled IOPS and throughput from the cluster.
 rest_endpoint: /v1/analytics/activity/current
+permalink: /rest-api-guide/analytics/analytics_activity_current.html
 sidebar: rest_api_command_guide_sidebar
 ---

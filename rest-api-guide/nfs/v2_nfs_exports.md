@@ -26,5 +26,6 @@ methods:
       status_code: '200'
     summary: This method adds an NFS export.
 rest_endpoint: /v2/nfs/exports/
+permalink: /rest-api-guide/nfs/v2_nfs_exports.html
 sidebar: rest_api_command_guide_sidebar
 ---

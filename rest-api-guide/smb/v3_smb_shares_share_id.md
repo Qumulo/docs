@@ -70,5 +70,6 @@ methods:
       status_code: '200'
     summary: Modify an SMB share's options.
 rest_endpoint: /v3/smb/shares/{share_id}
+permalink: /rest-api-guide/smb/v3_smb_shares_share_id.html
 sidebar: rest_api_command_guide_sidebar
 ---

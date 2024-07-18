@@ -13,5 +13,6 @@ methods:
       status_code: '200'
     summary: Return the AD account object that has the given SID.
 rest_endpoint: /v1/ad/sids/{sid}/object
+permalink: /rest-api-guide/ad/ad_sids_sid_object.html
 sidebar: rest_api_command_guide_sidebar
 ---

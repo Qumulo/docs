@@ -21,5 +21,6 @@ methods:
       status_code: '202'
     summary: Start unlinking this directory and all its contents.
 rest_endpoint: /v1/tree-delete/jobs/
+permalink: /rest-api-guide/tree-delete/tree-delete_jobs.html
 sidebar: rest_api_command_guide_sidebar
 ---

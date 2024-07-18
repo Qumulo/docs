@@ -27,5 +27,6 @@ methods:
       status_code: '200'
     summary: Creates a new snapshot and returns snapshot information.
 rest_endpoint: /v3/snapshots/
+permalink: /rest-api-guide/snapshots/v3_snapshots.html
 sidebar: rest_api_command_guide_sidebar
 ---

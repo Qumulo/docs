@@ -14,5 +14,6 @@ methods:
     summary: Return the UID Numbers of the given login name. This is found by issuing
       an LDAP query against the LDAP server configured
 rest_endpoint: /v1/ldap/login-name/{login_name}/uid-numbers
+permalink: /rest-api-guide/ldap/ldap_login-name_login_name_uid-numbers.html
 sidebar: rest_api_command_guide_sidebar
 ---

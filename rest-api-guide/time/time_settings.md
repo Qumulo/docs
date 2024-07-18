@@ -39,5 +39,6 @@ methods:
       status_code: '200'
     summary: Set the server's time-management configuration.
 rest_endpoint: /v1/time/settings
+permalink: /rest-api-guide/time/time_settings.html
 sidebar: rest_api_command_guide_sidebar
 ---

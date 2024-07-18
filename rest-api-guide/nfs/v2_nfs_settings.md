@@ -32,5 +32,6 @@ methods:
       status_code: '200'
     summary: Modify current NFS server configuration.
 rest_endpoint: /v2/nfs/settings
+permalink: /rest-api-guide/nfs/v2_nfs_settings.html
 sidebar: rest_api_command_guide_sidebar
 ---

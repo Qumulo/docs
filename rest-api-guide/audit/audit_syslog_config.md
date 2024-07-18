@@ -38,5 +38,6 @@ methods:
       status_code: '200'
     summary: Modifies audit log syslog configuration for the cluster.
 rest_endpoint: /v1/audit/syslog/config
+permalink: /rest-api-guide/audit/audit_syslog_config.html
 sidebar: rest_api_command_guide_sidebar
 ---

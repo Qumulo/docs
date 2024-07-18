@@ -17,5 +17,6 @@ methods:
     summary: Returns the statuses for all snapshots. Each snapshot's status includes
       additional non-configurable information about a snapshot.
 rest_endpoint: /v3/snapshots/status/
+permalink: /rest-api-guide/snapshots/v3_snapshots_status.html
 sidebar: rest_api_command_guide_sidebar
 ---

@@ -14,5 +14,6 @@ methods:
     summary: Return the SIDs for the given UID as found by issuing an AD query against
       the current domain the cluster is joined to.
 rest_endpoint: /v1/ad/uids/{uid}/sids/
+permalink: /rest-api-guide/ad/ad_uids_uid_sids.html
 sidebar: rest_api_command_guide_sidebar
 ---

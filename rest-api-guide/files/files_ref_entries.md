@@ -50,5 +50,6 @@ methods:
       use to rename an existing file. The return value is an attribute structure for
       the new file; refer to the 'Set Attributes' method for field descriptions.
 rest_endpoint: /v1/files/{ref}/entries/
+permalink: /rest-api-guide/files/files_ref_entries.html
 sidebar: rest_api_command_guide_sidebar
 ---

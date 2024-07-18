@@ -23,5 +23,6 @@ methods:
       for timeslots without capacity data. Returned history data will be sorted by
       ascending time.
 rest_endpoint: /v1/analytics/capacity-history/
+permalink: /rest-api-guide/analytics/analytics_capacity-history.html
 sidebar: rest_api_command_guide_sidebar
 ---

@@ -44,5 +44,6 @@ methods:
       status_code: '200'
     summary: Modify the quota for a given directory.
 rest_endpoint: /v1/files/quotas/{id}
+permalink: /rest-api-guide/files/files_quotas_id.html
 sidebar: rest_api_command_guide_sidebar
 ---

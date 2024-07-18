@@ -105,5 +105,6 @@ methods:
     summary: Add or update the user-defined metadata value for the current file by
       using the specified key.
 rest_endpoint: /v1/files/{ref}/user-metadata/{type}/{key}
+permalink: /rest-api-guide/files/files_ref_user-metadata_type_key.html
 sidebar: rest_api_command_guide_sidebar
 ---

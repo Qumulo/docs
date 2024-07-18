@@ -38,5 +38,6 @@ methods:
       status_code: '200'
     summary: Set settings for LDAP interaction
 rest_endpoint: /v2/ldap/settings
+permalink: /rest-api-guide/ldap/v2_ldap_settings.html
 sidebar: rest_api_command_guide_sidebar
 ---

@@ -24,5 +24,6 @@ methods:
       status_code: '200'
     summary: Returns a list of changed files and directories between two snapshots.
 rest_endpoint: /v2/snapshots/{newer_id}/changes-since/{older_id}
+permalink: /rest-api-guide/snapshots/v2_snapshots_newer_id_changes-since_older_id.html
 sidebar: rest_api_command_guide_sidebar
 ---

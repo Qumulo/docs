@@ -15,5 +15,6 @@ methods:
       favor of /v1/cluster/nodes/<id>/uid-light and /v2/metrics/endpoints/default/data
       for PSU information
 rest_endpoint: /v1/cluster/nodes/{id}/chassis
+permalink: /rest-api-guide/cluster/cluster_nodes_id_chassis.html
 sidebar: rest_api_command_guide_sidebar
 ---

@@ -32,5 +32,6 @@ methods:
       is an untagged STATIC network, the MTU will be computed based on the interface
       configuration.
 rest_endpoint: /v2/network/interfaces/{interface_id}/networks/
+permalink: /rest-api-guide/network/v2_network_interfaces_interface_id_networks.html
 sidebar: rest_api_command_guide_sidebar
 ---

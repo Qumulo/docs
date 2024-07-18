@@ -16,5 +16,6 @@ methods:
       status_code: '200'
     summary: Paths must be absolute and URL encoded.
 rest_endpoint: /v1/files/{ref}
+permalink: /rest-api-guide/files/files_ref.html
 sidebar: rest_api_command_guide_sidebar
 ---

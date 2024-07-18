@@ -13,5 +13,6 @@ methods:
       status_code: '200'
     summary: Get the status of an existing object replication relationship.
 rest_endpoint: /v3/replication/object-relationships/{id}/status
+permalink: /rest-api-guide/replication/v3_replication_object-relationships_id_status.html
 sidebar: rest_api_command_guide_sidebar
 ---

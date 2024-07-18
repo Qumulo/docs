@@ -19,5 +19,6 @@ methods:
       from the relationship's replication queue, but not delete the snapshot from
       the cluster.
 rest_endpoint: /v2/replication/source-relationships/{relationship_id}/queued-snapshots/{snapshot_id}
+permalink: /rest-api-guide/replication/v2_replication_source-relationships_relationship_id_queued-snapshots_snapshot_id.html
 sidebar: rest_api_command_guide_sidebar
 ---

@@ -10,5 +10,6 @@ methods:
       status_code: '200'
     summary: Retrieve all tenant-specific SMB configurations.
 rest_endpoint: /v1/multitenancy/smb/settings/
+permalink: /rest-api-guide/multitenancy/multitenancy_smb_settings.html
 sidebar: rest_api_command_guide_sidebar
 ---

@@ -24,5 +24,6 @@ methods:
       status_code: '200'
     summary: Sets advanced Active Directory settings.
 rest_endpoint: /v1/ad/settings
+permalink: /rest-api-guide/ad/ad_settings.html
 sidebar: rest_api_command_guide_sidebar
 ---

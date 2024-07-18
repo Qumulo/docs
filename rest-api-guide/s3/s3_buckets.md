@@ -21,5 +21,6 @@ methods:
       status_code: '200'
     summary: Create a new S3 bucket.
 rest_endpoint: /v1/s3/buckets/
+permalink: /rest-api-guide/s3/s3_buckets.html
 sidebar: rest_api_command_guide_sidebar
 ---

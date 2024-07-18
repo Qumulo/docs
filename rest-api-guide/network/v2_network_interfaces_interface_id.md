@@ -49,5 +49,6 @@ methods:
     summary: Set configuration of an interface. Changes in interface MTU will be applied
       to the untagged STATIC network as well as the interface.
 rest_endpoint: /v2/network/interfaces/{interface_id}
+permalink: /rest-api-guide/network/v2_network_interfaces_interface_id.html
 sidebar: rest_api_command_guide_sidebar
 ---

@@ -11,5 +11,6 @@ methods:
     summary: Returns floating IPs per node distribution based on the current network
       configuration. Returns status code 400 if the server is in DHCP mode.
 rest_endpoint: /v1/network/floating-ip-allocation
+permalink: /rest-api-guide/network/network_floating-ip-allocation.html
 sidebar: rest_api_command_guide_sidebar
 ---

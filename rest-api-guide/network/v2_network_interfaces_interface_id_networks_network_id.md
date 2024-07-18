@@ -77,5 +77,6 @@ methods:
       allowed if the network being updated is an untagged STATIC network. Please modify
       the interface config instead.
 rest_endpoint: /v2/network/interfaces/{interface_id}/networks/{network_id}
+permalink: /rest-api-guide/network/v2_network_interfaces_interface_id_networks_network_id.html
 sidebar: rest_api_command_guide_sidebar
 ---

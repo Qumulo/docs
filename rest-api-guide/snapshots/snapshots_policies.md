@@ -21,5 +21,6 @@ methods:
       status_code: '200'
     summary: Creates a new snapshot policy and returns its details.
 rest_endpoint: /v1/snapshots/policies/
+permalink: /rest-api-guide/snapshots/snapshots_policies.html
 sidebar: rest_api_command_guide_sidebar
 ---

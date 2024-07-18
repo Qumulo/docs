@@ -20,5 +20,6 @@ methods:
     summary: Replace the file system public key by using the name or identifier of
       the specified key.
 rest_endpoint: /v1/file-system/security/keys/{key_ref}/replace
+permalink: /rest-api-guide/file-system/file-system_security_keys_key_ref_replace.html
 sidebar: rest_api_command_guide_sidebar
 ---

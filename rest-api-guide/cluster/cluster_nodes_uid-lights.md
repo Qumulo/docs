@@ -10,5 +10,6 @@ methods:
       status_code: '200'
     summary: List the status of the identification lights for nodes.
 rest_endpoint: /v1/cluster/nodes/uid-lights/
+permalink: /rest-api-guide/cluster/cluster_nodes_uid-lights.html
 sidebar: rest_api_command_guide_sidebar
 ---

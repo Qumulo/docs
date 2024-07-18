@@ -93,5 +93,6 @@ methods:
       target stream must already exist, and the content-type of the request must be
       Application/Octet-stream.
 rest_endpoint: /v1/files/{ref}/streams/{stream_id}/data
+permalink: /rest-api-guide/files/files_ref_streams_stream_id_data.html
 sidebar: rest_api_command_guide_sidebar
 ---

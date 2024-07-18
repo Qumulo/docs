@@ -13,5 +13,6 @@ methods:
       status_code: '202'
     summary: Start a reboot cycle with the Reboot Manager system.
 rest_endpoint: /v1/shutdown/reboot/start
+permalink: /rest-api-guide/shutdown/shutdown_reboot_start.html
 sidebar: rest_api_command_guide_sidebar
 ---

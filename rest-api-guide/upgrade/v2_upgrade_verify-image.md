@@ -14,5 +14,6 @@ methods:
     summary: Verify that the given image can be used to upgrade the cluster and retrieve
       details about the upgrade that will occur.
 rest_endpoint: /v2/upgrade/verify-image
+permalink: /rest-api-guide/upgrade/v2_upgrade_verify-image.html
 sidebar: rest_api_command_guide_sidebar
 ---

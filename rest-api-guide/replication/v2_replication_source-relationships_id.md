@@ -65,5 +65,6 @@ methods:
     summary: Modify an existing replication relationship where this cluster is the
       source.
 rest_endpoint: /v2/replication/source-relationships/{id}
+permalink: /rest-api-guide/replication/v2_replication_source-relationships_id.html
 sidebar: rest_api_command_guide_sidebar
 ---

@@ -42,5 +42,6 @@ methods:
       status_code: '200'
     summary: Modify a local user.
 rest_endpoint: /v1/users/{id}
+permalink: /rest-api-guide/users/users_id.html
 sidebar: rest_api_command_guide_sidebar
 ---

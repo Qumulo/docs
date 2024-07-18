@@ -27,5 +27,6 @@ methods:
       so that subsequent reads will return zeroes. Returns the post-operation attributes
       of the stream.
 rest_endpoint: /v1/files/{ref}/streams/{stream_id}/punch-hole
+permalink: /rest-api-guide/files/files_ref_streams_stream_id_punch-hole.html
 sidebar: rest_api_command_guide_sidebar
 ---

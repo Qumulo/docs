@@ -14,5 +14,6 @@ methods:
     summary: Given a local username, return all related identities (equivalents in
       other domains, and containing groups). This API is deprecated in favor of /v1/identity/expand
 rest_endpoint: /v1/auth/local-username/{username}/related-identities/
+permalink: /rest-api-guide/auth/auth_local-username_username_related-identities.html
 sidebar: rest_api_command_guide_sidebar
 ---

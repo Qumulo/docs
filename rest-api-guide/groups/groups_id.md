@@ -42,5 +42,6 @@ methods:
       status_code: '200'
     summary: Modify a group. The 'id' field must match the id in the URI.
 rest_endpoint: /v1/groups/{id}
+permalink: /rest-api-guide/groups/groups_id.html
 sidebar: rest_api_command_guide_sidebar
 ---

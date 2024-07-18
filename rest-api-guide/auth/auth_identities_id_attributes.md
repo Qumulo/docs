@@ -38,5 +38,6 @@ methods:
       status_code: '200'
     summary: Set the identity attributes for an identity.
 rest_endpoint: /v1/auth/identities/{id}/attributes
+permalink: /rest-api-guide/auth/auth_identities_id_attributes.html
 sidebar: rest_api_command_guide_sidebar
 ---

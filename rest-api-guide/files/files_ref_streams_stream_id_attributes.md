@@ -46,5 +46,6 @@ methods:
       status_code: '200'
     summary: Update a subset of stream attributes
 rest_endpoint: /v1/files/{ref}/streams/{stream_id}/attributes
+permalink: /rest-api-guide/files/files_ref_streams_stream_id_attributes.html
 sidebar: rest_api_command_guide_sidebar
 ---

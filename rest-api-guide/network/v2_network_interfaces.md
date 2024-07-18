@@ -10,5 +10,6 @@ methods:
       status_code: '200'
     summary: Get configurations of all interfaces for the whole cluster.
 rest_endpoint: /v2/network/interfaces/
+permalink: /rest-api-guide/network/v2_network_interfaces.html
 sidebar: rest_api_command_guide_sidebar
 ---

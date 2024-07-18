@@ -15,5 +15,6 @@ methods:
       method for a description of the returned fields. Returns an empty array if the
       provided user is not a local user.
 rest_endpoint: /v1/users/{id}/groups/
+permalink: /rest-api-guide/users/users_id_groups.html
 sidebar: rest_api_command_guide_sidebar
 ---

@@ -14,5 +14,6 @@ methods:
       status_code: '200'
     summary: Returns all time series data maintained by the cluster.
 rest_endpoint: /v1/analytics/time-series/
+permalink: /rest-api-guide/analytics/analytics_time-series.html
 sidebar: rest_api_command_guide_sidebar
 ---

@@ -31,7 +31,7 @@ title: {category}
 """
 
 # Function to generate the content for individual REST resource files
-def generate_resource_md(category, endpoint, methods):
+def generate_resource_md(category, endpoint, methods, permalink):
     yaml_content = {
         "category": f"/{category}",
         "rest_endpoint": endpoint,
@@ -62,7 +62,7 @@ def generate_resource_md(category, endpoint, methods):
         yaml_content["methods"][method] = method_details
 
     yaml_string = yaml.dump(yaml_content, default_flow_style=False)
-    return f"---\n{yaml_string}sidebar: rest_api_command_guide_sidebar\n---\n"
+    return f"---\n{yaml_string}permalink: {permalink}\nsidebar: rest_api_command_guide_sidebar\n---\n"
 
 # Function to clean up filenames
 def clean_filename(filename):
@@ -106,14 +106,15 @@ for path, path_item in api_definition["paths"].items():
     # Clean up filename and write the individual resource file
     resource_filename = clean_filename(f"{path.strip('/').replace('/', '_')}.md")
     resource_md_path = os.path.join(category_dir, resource_filename)
-    resource_md_content = generate_resource_md(category, path, path_item)
+    permalink = f"/rest-api-guide/{category}/{resource_filename.replace('.md', '.html')}"
+    resource_md_content = generate_resource_md(category, path, path_item, permalink)
     write_markdown(resource_md_path, resource_md_content)
 
     # Add entry to sidebar entries
     sidebar_entries.append({
         "output": "web,pdf",
         "title": create_sidebar_title(path),
-        "url": f"/rest-api-guide/{category}/{resource_filename}"
+        "url": permalink
     })
 
 # Generate sidebar YAML content

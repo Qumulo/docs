@@ -61,5 +61,6 @@ methods:
       status_code: '200'
     summary: Modify a role.
 rest_endpoint: /v1/auth/roles/{role_name}
+permalink: /rest-api-guide/auth/auth_roles_role_name.html
 sidebar: rest_api_command_guide_sidebar
 ---

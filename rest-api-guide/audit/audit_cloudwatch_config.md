@@ -38,5 +38,6 @@ methods:
       status_code: '200'
     summary: Sets audit log CloudWatch configuration for the cluster.
 rest_endpoint: /v1/audit/cloudwatch/config
+permalink: /rest-api-guide/audit/audit_cloudwatch_config.html
 sidebar: rest_api_command_guide_sidebar
 ---

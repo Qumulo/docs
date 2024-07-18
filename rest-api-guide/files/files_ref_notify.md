@@ -81,5 +81,6 @@ methods:
       SSE data payload contains JSON-encoded event objects. For example: [{"type":
       <string>, "path": <string>, "stream_name": <optional string>}].'
 rest_endpoint: /v1/files/{ref}/notify
+permalink: /rest-api-guide/files/files_ref_notify.html
 sidebar: rest_api_command_guide_sidebar
 ---

@@ -62,5 +62,6 @@ methods:
       status_code: '200'
     summary: Set current tenant-specific NFS configuration.
 rest_endpoint: /v1/multitenancy/nfs/settings/{id}
+permalink: /rest-api-guide/multitenancy/multitenancy_nfs_settings_id.html
 sidebar: rest_api_command_guide_sidebar
 ---

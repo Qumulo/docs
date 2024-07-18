@@ -25,5 +25,6 @@ methods:
     summary: Authorize the specified replication relationship, establishing this cluster
       as the target of replication.
 rest_endpoint: /v2/replication/target-relationships/{id}/authorize
+permalink: /rest-api-guide/replication/v2_replication_target-relationships_id_authorize.html
 sidebar: rest_api_command_guide_sidebar
 ---

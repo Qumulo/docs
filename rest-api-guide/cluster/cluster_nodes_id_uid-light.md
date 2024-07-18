@@ -28,5 +28,6 @@ methods:
     summary: Turn the identification light on the node on or off. There may be a slight
       delay for the change to take effect.
 rest_endpoint: /v1/cluster/nodes/{id}/uid-light
+permalink: /rest-api-guide/cluster/cluster_nodes_id_uid-light.html
 sidebar: rest_api_command_guide_sidebar
 ---

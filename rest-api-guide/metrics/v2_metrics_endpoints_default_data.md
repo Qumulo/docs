@@ -10,5 +10,6 @@ methods:
       status_code: '200'
     summary: Get all metrics for the cluster.
 rest_endpoint: /v2/metrics/endpoints/default/data
+permalink: /rest-api-guide/metrics/v2_metrics_endpoints_default_data.html
 sidebar: rest_api_command_guide_sidebar
 ---

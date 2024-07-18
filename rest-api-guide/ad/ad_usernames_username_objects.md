@@ -13,5 +13,6 @@ methods:
       status_code: '200'
     summary: Return any AD account objects that have the given sAMAccountName.
 rest_endpoint: /v1/ad/usernames/{username}/objects/
+permalink: /rest-api-guide/ad/ad_usernames_username_objects.html
 sidebar: rest_api_command_guide_sidebar
 ---

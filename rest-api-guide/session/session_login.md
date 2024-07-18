@@ -14,5 +14,6 @@ methods:
     summary: Authenticate the user. To authenticate subsequent requests, provide the
       bearer token from the response in the Authorization header.
 rest_endpoint: /v1/session/login
+permalink: /rest-api-guide/session/session_login.html
 sidebar: rest_api_command_guide_sidebar
 ---

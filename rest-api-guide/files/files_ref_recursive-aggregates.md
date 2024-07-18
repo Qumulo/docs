@@ -39,5 +39,6 @@ methods:
       and max_depth parameters) or system-imposed limit. Directory entries that are
       smaller than 10% of the directory's total size are omitted.
 rest_endpoint: /v1/files/{ref}/recursive-aggregates/
+permalink: /rest-api-guide/files/files_ref_recursive-aggregates.html
 sidebar: rest_api_command_guide_sidebar
 ---

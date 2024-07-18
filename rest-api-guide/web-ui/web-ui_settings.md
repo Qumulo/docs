@@ -42,5 +42,6 @@ methods:
     summary: Replace all the settings that the Web UI uses. These settings take effect
       immediately for new UI sessions.
 rest_endpoint: /v1/web-ui/settings
+permalink: /rest-api-guide/web-ui/web-ui_settings.html
 sidebar: rest_api_command_guide_sidebar
 ---

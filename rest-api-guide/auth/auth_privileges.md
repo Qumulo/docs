@@ -10,5 +10,6 @@ methods:
       status_code: '200'
     summary: Get information about all privileges.
 rest_endpoint: /v1/auth/privileges/
+permalink: /rest-api-guide/auth/auth_privileges.html
 sidebar: rest_api_command_guide_sidebar
 ---

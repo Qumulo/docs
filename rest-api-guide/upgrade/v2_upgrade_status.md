@@ -11,5 +11,6 @@ methods:
     summary: Retrieve the current status of the upgrade system. This API is deprecated
       in favor of /v3/upgrade/status.
 rest_endpoint: /v2/upgrade/status
+permalink: /rest-api-guide/upgrade/v2_upgrade_status.html
 sidebar: rest_api_command_guide_sidebar
 ---

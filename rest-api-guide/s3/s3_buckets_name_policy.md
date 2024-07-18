@@ -33,5 +33,6 @@ methods:
     summary: 'Sets the policy on an S3 bucket. The format of the bucket policycan
       be found here: https://docs.qumulo.com/administrator-guide/s3-api/creating-managing-s3-buckets.html'
 rest_endpoint: /v1/s3/buckets/{name}/policy
+permalink: /rest-api-guide/s3/s3_buckets_name_policy.html
 sidebar: rest_api_command_guide_sidebar
 ---

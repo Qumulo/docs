@@ -40,5 +40,6 @@ methods:
       status_code: '200'
     summary: Update file access control list (ACL).
 rest_endpoint: /v2/files/{ref}/info/acl
+permalink: /rest-api-guide/files/v2_files_ref_info_acl.html
 sidebar: rest_api_command_guide_sidebar
 ---

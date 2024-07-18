@@ -38,5 +38,6 @@ methods:
       status_code: '202'
     summary: Set monitoring configuration.
 rest_endpoint: /v1/support/settings
+permalink: /rest-api-guide/support/support_settings.html
 sidebar: rest_api_command_guide_sidebar
 ---

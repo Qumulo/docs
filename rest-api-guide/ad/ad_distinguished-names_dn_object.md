@@ -13,5 +13,6 @@ methods:
       status_code: '200'
     summary: Return the AD account object that has the given distinguished name.
 rest_endpoint: /v1/ad/distinguished-names/{dn}/object
+permalink: /rest-api-guide/ad/ad_distinguished-names_dn_object.html
 sidebar: rest_api_command_guide_sidebar
 ---

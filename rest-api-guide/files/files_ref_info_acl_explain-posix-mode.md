@@ -20,5 +20,6 @@ methods:
       status_code: '200'
     summary: Explain the derived POSIX mode for a file/directory.
 rest_endpoint: /v1/files/{ref}/info/acl/explain-posix-mode
+permalink: /rest-api-guide/files/files_ref_info_acl_explain-posix-mode.html
 sidebar: rest_api_command_guide_sidebar
 ---

@@ -38,5 +38,6 @@ methods:
       status_code: '200'
     summary: Set global SMB configuration.
 rest_endpoint: /v1/multitenancy/smb/global-settings
+permalink: /rest-api-guide/multitenancy/multitenancy_smb_global-settings.html
 sidebar: rest_api_command_guide_sidebar
 ---

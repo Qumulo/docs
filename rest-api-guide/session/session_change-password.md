@@ -13,5 +13,6 @@ methods:
       status_code: '200'
     summary: Change the password for the logged in user.
 rest_endpoint: /v1/session/change-password
+permalink: /rest-api-guide/session/session_change-password.html
 sidebar: rest_api_command_guide_sidebar
 ---

@@ -14,5 +14,6 @@ methods:
     summary: Retrieve node-specific info, such as serial number, mac address, uuid,
       etc
 rest_endpoint: /v1/cluster/nodes/{id}
+permalink: /rest-api-guide/cluster/cluster_nodes_id.html
 sidebar: rest_api_command_guide_sidebar
 ---

@@ -30,5 +30,6 @@ methods:
       status_code: '200'
     summary: Get information about the member of the role.
 rest_endpoint: /v1/auth/roles/{role_name}/members/{member_id}
+permalink: /rest-api-guide/auth/auth_roles_role_name_members_member_id.html
 sidebar: rest_api_command_guide_sidebar
 ---

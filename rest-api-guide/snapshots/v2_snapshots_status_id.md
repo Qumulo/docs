@@ -13,5 +13,6 @@ methods:
       status_code: '200'
     summary: Returns the status on a snapshot.
 rest_endpoint: /v2/snapshots/status/{id}
+permalink: /rest-api-guide/snapshots/v2_snapshots_status_id.html
 sidebar: rest_api_command_guide_sidebar
 ---

@@ -26,5 +26,6 @@ methods:
       status_code: '200'
     summary: Add an SMB share with given options.
 rest_endpoint: /v1/smb/shares/
+permalink: /rest-api-guide/smb/smb_shares.html
 sidebar: rest_api_command_guide_sidebar
 ---

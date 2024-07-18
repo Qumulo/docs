@@ -13,5 +13,6 @@ methods:
       status_code: '200'
     summary: Create a Key in the Key Management Server.
 rest_endpoint: /v2/encryption/external-kms/keys/create
+permalink: /rest-api-guide/encryption/v2_encryption_external-kms_keys_create.html
 sidebar: rest_api_command_guide_sidebar
 ---

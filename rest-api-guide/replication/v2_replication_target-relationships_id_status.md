@@ -14,5 +14,6 @@ methods:
     summary: Get current status of the specified replication relationship where this
       cluster is the target.
 rest_endpoint: /v2/replication/target-relationships/{id}/status
+permalink: /rest-api-guide/replication/v2_replication_target-relationships_id_status.html
 sidebar: rest_api_command_guide_sidebar
 ---

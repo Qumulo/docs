@@ -14,5 +14,6 @@ methods:
     summary: Delete the specified replication relationship where this cluster is the
       target.
 rest_endpoint: /v2/replication/target-relationships/{id}/delete
+permalink: /rest-api-guide/replication/v2_replication_target-relationships_id_delete.html
 sidebar: rest_api_command_guide_sidebar
 ---

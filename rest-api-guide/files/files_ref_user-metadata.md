@@ -28,5 +28,6 @@ methods:
       status_code: '200'
     summary: Retrieve the Base64-encoded user-defined metadata for the specified file.
 rest_endpoint: /v1/files/{ref}/user-metadata/
+permalink: /rest-api-guide/files/files_ref_user-metadata.html
 sidebar: rest_api_command_guide_sidebar
 ---

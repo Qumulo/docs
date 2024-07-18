@@ -29,5 +29,6 @@ methods:
     summary: Add a member to a group. Refer to the 'Modify user' method for a description
       of the returned fields.
 rest_endpoint: /v1/groups/{group_id}/members/
+permalink: /rest-api-guide/groups/groups_group_id_members.html
 sidebar: rest_api_command_guide_sidebar
 ---

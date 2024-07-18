@@ -14,5 +14,6 @@ methods:
     summary: Retrieve the network statuses of all nodes on the underlying network
       interface
 rest_endpoint: /v2/network/interfaces/{id}/status/
+permalink: /rest-api-guide/network/v2_network_interfaces_id_status.html
 sidebar: rest_api_command_guide_sidebar
 ---

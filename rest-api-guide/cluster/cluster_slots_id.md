@@ -28,5 +28,6 @@ methods:
       status_code: '200'
     summary: Control the slot's locate LED.
 rest_endpoint: /v1/cluster/slots/{id}
+permalink: /rest-api-guide/cluster/cluster_slots_id.html
 sidebar: rest_api_command_guide_sidebar
 ---

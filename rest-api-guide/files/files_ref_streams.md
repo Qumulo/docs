@@ -40,5 +40,6 @@ methods:
       status_code: '200'
     summary: Create a named stream on provided object
 rest_endpoint: /v1/files/{ref}/streams/
+permalink: /rest-api-guide/files/files_ref_streams.html
 sidebar: rest_api_command_guide_sidebar
 ---

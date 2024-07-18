@@ -21,5 +21,6 @@ methods:
       status_code: '200'
     summary: Create a tenant.
 rest_endpoint: /v1/multitenancy/tenants/
+permalink: /rest-api-guide/multitenancy/multitenancy_tenants.html
 sidebar: rest_api_command_guide_sidebar
 ---

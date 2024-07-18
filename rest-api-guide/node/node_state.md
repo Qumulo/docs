@@ -10,5 +10,6 @@ methods:
       status_code: '200'
     summary: Retrieves node state of the node that the call was made to.
 rest_endpoint: /v1/node/state
+permalink: /rest-api-guide/node/node_state.html
 sidebar: rest_api_command_guide_sidebar
 ---

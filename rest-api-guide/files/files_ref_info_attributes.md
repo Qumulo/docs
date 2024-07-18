@@ -41,5 +41,6 @@ methods:
     summary: Update a subset of file attributes. Owner or mode bits change is done
       POSIX-style; file's ACL is updated to match the requested permissions.
 rest_endpoint: /v1/files/{ref}/info/attributes
+permalink: /rest-api-guide/files/files_ref_info_attributes.html
 sidebar: rest_api_command_guide_sidebar
 ---

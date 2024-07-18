@@ -10,5 +10,6 @@ methods:
       status_code: '200'
     summary: Get Active Directory configuration and status.
 rest_endpoint: /v1/ad/status
+permalink: /rest-api-guide/ad/ad_status.html
 sidebar: rest_api_command_guide_sidebar
 ---

@@ -13,5 +13,6 @@ methods:
       status_code: '200'
     summary: Clears the Qumulo local DNS cache
 rest_endpoint: /v1/dns/clear-dns-cache
+permalink: /rest-api-guide/dns/dns_clear-dns-cache.html
 sidebar: rest_api_command_guide_sidebar
 ---

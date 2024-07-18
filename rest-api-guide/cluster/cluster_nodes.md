@@ -22,5 +22,6 @@ methods:
     summary: Add one or more unconfigured nodes with the given node uuids and admin
       password. This endpoint is deprecated in favor of /v2/cluster/nodes.
 rest_endpoint: /v1/cluster/nodes/
+permalink: /rest-api-guide/cluster/cluster_nodes.html
 sidebar: rest_api_command_guide_sidebar
 ---

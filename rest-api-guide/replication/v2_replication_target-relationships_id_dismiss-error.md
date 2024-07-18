@@ -14,5 +14,6 @@ methods:
     summary: Clear the error associated with this target relationship's last replication
       attempt, if one exists.
 rest_endpoint: /v2/replication/target-relationships/{id}/dismiss-error
+permalink: /rest-api-guide/replication/v2_replication_target-relationships_id_dismiss-error.html
 sidebar: rest_api_command_guide_sidebar
 ---

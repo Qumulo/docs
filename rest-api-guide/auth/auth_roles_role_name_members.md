@@ -35,5 +35,6 @@ methods:
       status_code: '200'
     summary: Assign a member to a role
 rest_endpoint: /v1/auth/roles/{role_name}/members
+permalink: /rest-api-guide/auth/auth_roles_role_name_members.html
 sidebar: rest_api_command_guide_sidebar
 ---

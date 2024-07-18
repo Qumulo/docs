@@ -15,5 +15,6 @@ methods:
       the given login name is a member. This returns a vector of results in the case
       that the given login name maps to multiple uid numbers.
 rest_endpoint: /v1/ldap/login-name/{login_name}/gid-numbers
+permalink: /rest-api-guide/ldap/ldap_login-name_login_name_gid-numbers.html
 sidebar: rest_api_command_guide_sidebar
 ---

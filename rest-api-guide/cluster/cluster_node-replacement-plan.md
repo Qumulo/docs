@@ -22,5 +22,6 @@ methods:
       status_code: '200'
     summary: To initiate node replacement, specify the nodes to replace.
 rest_endpoint: /v1/cluster/node-replacement-plan/
+permalink: /rest-api-guide/cluster/cluster_node-replacement-plan.html
 sidebar: rest_api_command_guide_sidebar
 ---

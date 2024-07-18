@@ -16,5 +16,6 @@ methods:
       status_code: '200'
     summary: Explains the access of an identity due to the bucket policy.
 rest_endpoint: /v1/s3/buckets/{name}/policy/explain-access
+permalink: /rest-api-guide/s3/s3_buckets_name_policy_explain-access.html
 sidebar: rest_api_command_guide_sidebar
 ---

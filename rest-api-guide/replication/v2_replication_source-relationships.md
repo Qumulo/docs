@@ -23,5 +23,6 @@ methods:
       To begin replication, the corresponding relationship on the target cluster must
       be authorized using the authorize API.
 rest_endpoint: /v2/replication/source-relationships/
+permalink: /rest-api-guide/replication/v2_replication_source-relationships.html
 sidebar: rest_api_command_guide_sidebar
 ---

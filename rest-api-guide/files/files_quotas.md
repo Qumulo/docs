@@ -29,5 +29,6 @@ methods:
       status_code: '200'
     summary: Add a directory quota.
 rest_endpoint: /v1/files/quotas/
+permalink: /rest-api-guide/files/files_quotas.html
 sidebar: rest_api_command_guide_sidebar
 ---

@@ -16,5 +16,6 @@ methods:
       target replication relationship with its source directory. The revert action
       may take some time to complete before replication is resumed.
 rest_endpoint: /v2/replication/target-relationships/{id}/reconnect
+permalink: /rest-api-guide/replication/v2_replication_target-relationships_id_reconnect.html
 sidebar: rest_api_command_guide_sidebar
 ---

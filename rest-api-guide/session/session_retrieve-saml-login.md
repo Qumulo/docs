@@ -23,5 +23,6 @@ methods:
       the provided verification code mismatches with the expected code, return the
       400 Bad Request error.
 rest_endpoint: /v1/session/retrieve-saml-login
+permalink: /rest-api-guide/session/session_retrieve-saml-login.html
 sidebar: rest_api_command_guide_sidebar
 ---

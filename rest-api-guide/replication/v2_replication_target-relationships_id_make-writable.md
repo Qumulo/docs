@@ -18,5 +18,6 @@ methods:
       If the relationship is later reconnected, any changes made to the target directory
       since the relationship was disconnected will be reverted upon reconnecting.
 rest_endpoint: /v2/replication/target-relationships/{id}/make-writable
+permalink: /rest-api-guide/replication/v2_replication_target-relationships_id_make-writable.html
 sidebar: rest_api_command_guide_sidebar
 ---

@@ -18,5 +18,6 @@ methods:
       replication relationship creates. Changing the lock key applies only to snapshots
       that the system takes after you make a configuration change.
 rest_endpoint: /v2/replication/target-relationships/{id}/lock
+permalink: /rest-api-guide/replication/v2_replication_target-relationships_id_lock.html
 sidebar: rest_api_command_guide_sidebar
 ---

@@ -16,5 +16,6 @@ methods:
       status_code: '200'
     summary: Remove a member from a group.
 rest_endpoint: /v1/groups/{group_id}/members/{member_id}
+permalink: /rest-api-guide/groups/groups_group_id_members_member_id.html
 sidebar: rest_api_command_guide_sidebar
 ---

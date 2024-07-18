@@ -65,5 +65,6 @@ methods:
       status_code: '200'
     summary: Modifies a snapshot.
 rest_endpoint: /v1/snapshots/{id}
+permalink: /rest-api-guide/snapshots/snapshots_id.html
 sidebar: rest_api_command_guide_sidebar
 ---

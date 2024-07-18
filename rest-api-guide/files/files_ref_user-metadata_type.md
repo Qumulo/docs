@@ -32,5 +32,6 @@ methods:
     summary: Retrieve the user-defined metadata of a specified type for the current
       file. Values are base 64 encoded.
 rest_endpoint: /v1/files/{ref}/user-metadata/{type}/
+permalink: /rest-api-guide/files/files_ref_user-metadata_type.html
 sidebar: rest_api_command_guide_sidebar
 ---

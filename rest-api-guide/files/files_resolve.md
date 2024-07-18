@@ -18,5 +18,6 @@ methods:
     summary: Return the full paths for each specified file ID. If a file has more
       than one path (due to hard links) a canonical path is chosen.
 rest_endpoint: /v1/files/resolve
+permalink: /rest-api-guide/files/files_resolve.html
 sidebar: rest_api_command_guide_sidebar
 ---

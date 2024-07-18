@@ -15,5 +15,6 @@ methods:
       in other domains, and containing groups). This API is deprecated in favor of
       /v1/identity/expand
 rest_endpoint: /v1/auth/auth-ids/{id}/related-identities/
+permalink: /rest-api-guide/auth/auth_auth-ids_id_related-identities.html
 sidebar: rest_api_command_guide_sidebar
 ---

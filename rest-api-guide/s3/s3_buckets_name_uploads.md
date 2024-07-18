@@ -21,5 +21,6 @@ methods:
       status_code: '200'
     summary: List all in-progress S3 uploads for a specific bucket.
 rest_endpoint: /v1/s3/buckets/{name}/uploads/
+permalink: /rest-api-guide/s3/s3_buckets_name_uploads.html
 sidebar: rest_api_command_guide_sidebar
 ---

@@ -13,5 +13,6 @@ methods:
       status_code: '200'
     summary: Search for identity and populate all fields.
 rest_endpoint: /v1/identity/find
+permalink: /rest-api-guide/identity/identity_find.html
 sidebar: rest_api_command_guide_sidebar
 ---

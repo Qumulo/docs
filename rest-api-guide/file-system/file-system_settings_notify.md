@@ -24,5 +24,6 @@ methods:
       status_code: '200'
     summary: Set FS notify related settings.
 rest_endpoint: /v1/file-system/settings/notify
+permalink: /rest-api-guide/file-system/file-system_settings_notify.html
 sidebar: rest_api_command_guide_sidebar
 ---

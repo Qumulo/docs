@@ -10,5 +10,6 @@ methods:
       status_code: '200'
     summary: Retrieve the current status of the reboot manager.
 rest_endpoint: /v1/shutdown/reboot/status
+permalink: /rest-api-guide/shutdown/shutdown_reboot_status.html
 sidebar: rest_api_command_guide_sidebar
 ---

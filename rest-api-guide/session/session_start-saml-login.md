@@ -17,5 +17,6 @@ methods:
       API for SAML SSO credentials until the user completes the authentication process
       in the browser, or until the 5-minute limit elapses.
 rest_endpoint: /v1/session/start-saml-login
+permalink: /rest-api-guide/session/session_start-saml-login.html
 sidebar: rest_api_command_guide_sidebar
 ---

@@ -10,5 +10,6 @@ methods:
       status_code: '200'
     summary: Returns status information about all snapshot policies.
 rest_endpoint: /v1/snapshots/policies/status/
+permalink: /rest-api-guide/snapshots/snapshots_policies_status.html
 sidebar: rest_api_command_guide_sidebar
 ---

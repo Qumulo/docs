@@ -23,5 +23,6 @@ methods:
       status_code: '200'
     summary: Explain how rights are granted to a user for a file/directory.
 rest_endpoint: /v1/files/{ref}/info/acl/explain-rights
+permalink: /rest-api-guide/files/files_ref_info_acl_explain-rights.html
 sidebar: rest_api_command_guide_sidebar
 ---

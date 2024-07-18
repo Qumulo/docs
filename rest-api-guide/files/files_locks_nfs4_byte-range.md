@@ -27,5 +27,6 @@ methods:
       status_code: '200'
     summary: Return a list of all granted file locks that the specified machine owns.
 rest_endpoint: /v1/files/locks/nfs4/byte-range/
+permalink: /rest-api-guide/files/files_locks_nfs4_byte-range.html
 sidebar: rest_api_command_guide_sidebar
 ---

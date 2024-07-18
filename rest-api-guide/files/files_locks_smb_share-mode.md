@@ -21,5 +21,6 @@ methods:
       status_code: '200'
     summary: Return a list of all granted file locks that the specified machine owns.
 rest_endpoint: /v1/files/locks/smb/share-mode/
+permalink: /rest-api-guide/files/files_locks_smb_share-mode.html
 sidebar: rest_api_command_guide_sidebar
 ---

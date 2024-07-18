@@ -70,5 +70,6 @@ methods:
       status_code: '200'
     summary: This method sets all attributes of an NFS export.
 rest_endpoint: /v3/nfs/exports/{export_id}
+permalink: /rest-api-guide/nfs/v3_nfs_exports_export_id.html
 sidebar: rest_api_command_guide_sidebar
 ---

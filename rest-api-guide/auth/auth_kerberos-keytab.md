@@ -36,5 +36,6 @@ methods:
     summary: Set the Kerberos keytab from a generated keytab file. This API also accepts
       a kerberos keytab in the JSON form returned by the corresponding GET request.
 rest_endpoint: /v1/auth/kerberos-keytab
+permalink: /rest-api-guide/auth/auth_kerberos-keytab.html
 sidebar: rest_api_command_guide_sidebar
 ---

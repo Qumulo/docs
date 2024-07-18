@@ -61,5 +61,6 @@ methods:
       status_code: '200'
     summary: Set configuration of a tenant.
 rest_endpoint: /v1/multitenancy/tenants/{tenant_id}
+permalink: /rest-api-guide/multitenancy/multitenancy_tenants_tenant_id.html
 sidebar: rest_api_command_guide_sidebar
 ---

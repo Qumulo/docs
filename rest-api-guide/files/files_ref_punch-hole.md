@@ -24,5 +24,6 @@ methods:
       so that subsequent reads will return zeroes. Returns the post-operation attributes
       of the file.
 rest_endpoint: /v1/files/{ref}/punch-hole
+permalink: /rest-api-guide/files/files_ref_punch-hole.html
 sidebar: rest_api_command_guide_sidebar
 ---

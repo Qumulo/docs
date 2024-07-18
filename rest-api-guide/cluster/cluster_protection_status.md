@@ -10,5 +10,6 @@ methods:
       status_code: '200'
     summary: Gets detailed status information for the data protection of the cluster.
 rest_endpoint: /v1/cluster/protection/status
+permalink: /rest-api-guide/cluster/cluster_protection_status.html
 sidebar: rest_api_command_guide_sidebar
 ---

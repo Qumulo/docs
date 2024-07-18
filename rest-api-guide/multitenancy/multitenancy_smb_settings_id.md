@@ -62,5 +62,6 @@ methods:
       status_code: '200'
     summary: Set current tenant-specific SMB configuration.
 rest_endpoint: /v1/multitenancy/smb/settings/{id}
+permalink: /rest-api-guide/multitenancy/multitenancy_smb_settings_id.html
 sidebar: rest_api_command_guide_sidebar
 ---

@@ -13,5 +13,6 @@ methods:
       status_code: '202'
     summary: Joins the cluster to an Active Directory domain.
 rest_endpoint: /v1/ad/join
+permalink: /rest-api-guide/ad/ad_join.html
 sidebar: rest_api_command_guide_sidebar
 ---

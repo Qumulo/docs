@@ -23,5 +23,6 @@ methods:
       status_code: '200'
     summary: Explain the effect of setting a POSIX mode on a file/directory.
 rest_endpoint: /v1/files/{ref}/info/acl/explain-set-mode
+permalink: /rest-api-guide/files/files_ref_info_acl_explain-set-mode.html
 sidebar: rest_api_command_guide_sidebar
 ---

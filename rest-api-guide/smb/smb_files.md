@@ -25,5 +25,6 @@ methods:
       status_code: '200'
     summary: Enumerate open file handles
 rest_endpoint: /v1/smb/files/
+permalink: /rest-api-guide/smb/smb_files.html
 sidebar: rest_api_command_guide_sidebar
 ---

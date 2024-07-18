@@ -25,5 +25,6 @@ methods:
       status_code: '200'
     summary: Rename a stream on provided object
 rest_endpoint: /v1/files/{ref}/streams/{stream_id}/rename
+permalink: /rest-api-guide/files/files_ref_streams_stream_id_rename.html
 sidebar: rest_api_command_guide_sidebar
 ---

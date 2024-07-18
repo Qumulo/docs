@@ -16,5 +16,6 @@ methods:
       status_code: '200'
     summary: Retrieve the network status of a node on the underlying network interface
 rest_endpoint: /v2/network/interfaces/{interface_id}/status/{node_id}
+permalink: /rest-api-guide/network/v2_network_interfaces_interface_id_status_node_id.html
 sidebar: rest_api_command_guide_sidebar
 ---

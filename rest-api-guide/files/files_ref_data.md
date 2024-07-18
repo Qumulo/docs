@@ -82,5 +82,6 @@ methods:
     summary: Replace the contents of the file with the body of the request. The target
       file must already exist, and the content-type of the request must be application/octet-stream.
 rest_endpoint: /v1/files/{ref}/data
+permalink: /rest-api-guide/files/files_ref_data.html
 sidebar: rest_api_command_guide_sidebar
 ---

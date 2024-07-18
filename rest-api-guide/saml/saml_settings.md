@@ -38,5 +38,6 @@ methods:
       status_code: '200'
     summary: Set the SAML integration settings.
 rest_endpoint: /v1/saml/settings
+permalink: /rest-api-guide/saml/saml_settings.html
 sidebar: rest_api_command_guide_sidebar
 ---

@@ -33,5 +33,6 @@ methods:
     summary: Create a new S3 access key for the provided user identity. To add a new
       key, a user must have fewer than two keys.
 rest_endpoint: /v1/s3/access-keys/
+permalink: /rest-api-guide/s3/s3_access-keys.html
 sidebar: rest_api_command_guide_sidebar
 ---

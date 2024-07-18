@@ -10,5 +10,6 @@ methods:
       status_code: '202'
     summary: Cancel current join or leave operation.
 rest_endpoint: /v1/ad/cancel
+permalink: /rest-api-guide/ad/ad_cancel.html
 sidebar: rest_api_command_guide_sidebar
 ---

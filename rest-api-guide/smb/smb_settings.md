@@ -38,5 +38,6 @@ methods:
       status_code: '200'
     summary: Set settings for the SMB Server.
 rest_endpoint: /v1/smb/settings
+permalink: /rest-api-guide/smb/smb_settings.html
 sidebar: rest_api_command_guide_sidebar
 ---

@@ -24,5 +24,6 @@ methods:
       status_code: '200'
     summary: Enumerate open sessions
 rest_endpoint: /v1/smb/sessions/
+permalink: /rest-api-guide/smb/smb_sessions.html
 sidebar: rest_api_command_guide_sidebar
 ---

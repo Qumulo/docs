@@ -61,5 +61,6 @@ methods:
       status_code: '200'
     summary: Modifies a snapshot policy.
 rest_endpoint: /v2/snapshots/policies/{id}
+permalink: /rest-api-guide/snapshots/v2_snapshots_policies_id.html
 sidebar: rest_api_command_guide_sidebar
 ---

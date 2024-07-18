@@ -29,5 +29,6 @@ methods:
     summary: Return a list of all SMB byte range locks currently granted on the specified
       file.
 rest_endpoint: /v1/files/{ref}/locks/smb/byte-range/
+permalink: /rest-api-guide/files/files_ref_locks_smb_byte-range.html
 sidebar: rest_api_command_guide_sidebar
 ---

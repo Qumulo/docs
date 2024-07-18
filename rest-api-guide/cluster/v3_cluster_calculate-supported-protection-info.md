@@ -15,5 +15,6 @@ methods:
       includes the stripe width and usable capacity using that width. For use with
       unconfigured nodes only.
 rest_endpoint: /v3/cluster/calculate-supported-protection-info
+permalink: /rest-api-guide/cluster/v3_cluster_calculate-supported-protection-info.html
 sidebar: rest_api_command_guide_sidebar
 ---

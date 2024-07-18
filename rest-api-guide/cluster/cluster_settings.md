@@ -24,5 +24,6 @@ methods:
       status_code: '200'
     summary: Set the name of the cluster
 rest_endpoint: /v1/cluster/settings
+permalink: /rest-api-guide/cluster/cluster_settings.html
 sidebar: rest_api_command_guide_sidebar
 ---

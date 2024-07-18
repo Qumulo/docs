@@ -10,5 +10,6 @@ methods:
       status_code: '200'
     summary: Dismiss the last error recorded from a join, reconfigure, or leave operation.
 rest_endpoint: /v1/ad/dismiss-error
+permalink: /rest-api-guide/ad/ad_dismiss-error.html
 sidebar: rest_api_command_guide_sidebar
 ---
