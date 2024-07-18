@@ -15,5 +15,5 @@ methods:
       identity.
 rest_endpoint: /v2/cluster/settings/ssl/certificate
 permalink: /rest-api-guide/cluster/certificate.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

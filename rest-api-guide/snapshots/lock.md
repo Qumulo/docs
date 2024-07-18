@@ -18,5 +18,5 @@ methods:
       locked snapshot is extending its expiration time.
 rest_endpoint: /v3/snapshots/{id}/lock
 permalink: /rest-api-guide/snapshots/lock.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

@@ -30,5 +30,5 @@ methods:
       file.
 rest_endpoint: /v1/files/{ref}/locks/smb/share-mode/
 permalink: /rest-api-guide/files/share-mode.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

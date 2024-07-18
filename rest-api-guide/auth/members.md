@@ -36,5 +36,5 @@ methods:
     summary: Assign a member to a role
 rest_endpoint: /v1/auth/roles/{role_name}/members
 permalink: /rest-api-guide/auth/members.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

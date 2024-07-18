@@ -18,5 +18,5 @@ methods:
     summary: Delete an existing S3 bucket.
 rest_endpoint: /v1/s3/buckets/{name}
 permalink: /rest-api-guide/s3/name.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

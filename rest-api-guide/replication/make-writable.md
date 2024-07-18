@@ -19,5 +19,5 @@ methods:
       since the relationship was disconnected will be reverted upon reconnecting.
 rest_endpoint: /v2/replication/target-relationships/{id}/make-writable
 permalink: /rest-api-guide/replication/make-writable.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

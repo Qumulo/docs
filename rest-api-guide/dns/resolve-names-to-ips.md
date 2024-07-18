@@ -14,5 +14,5 @@ methods:
     summary: Resolve a list of hostnames to their set of associated IP addresses.
 rest_endpoint: /v1/dns/resolve-names-to-ips
 permalink: /rest-api-guide/dns/resolve-names-to-ips.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

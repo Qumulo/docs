@@ -14,5 +14,5 @@ methods:
     summary: Search for identity and populate all fields.
 rest_endpoint: /v1/identity/find
 permalink: /rest-api-guide/identity/find.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

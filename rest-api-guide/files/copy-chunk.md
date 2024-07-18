@@ -27,5 +27,5 @@ methods:
       to the destination stream. The stream must already exist.
 rest_endpoint: /v1/files/{ref}/streams/{stream_id}/copy-chunk
 permalink: /rest-api-guide/files/copy-chunk.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

@@ -15,5 +15,5 @@ methods:
       target.
 rest_endpoint: /v2/replication/target-relationships/{id}/delete
 permalink: /rest-api-guide/replication/delete.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

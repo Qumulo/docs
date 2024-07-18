@@ -19,5 +19,5 @@ methods:
       than one path (due to hard links) a canonical path is chosen.
 rest_endpoint: /v1/files/resolve
 permalink: /rest-api-guide/files/resolve.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

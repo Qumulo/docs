@@ -66,5 +66,5 @@ methods:
     summary: Modifies a snapshot.
 rest_endpoint: /v1/snapshots/{id}
 permalink: /rest-api-guide/snapshots/id.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

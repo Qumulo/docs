@@ -39,5 +39,5 @@ methods:
     summary: Modify metadata for the specified access token.
 rest_endpoint: /v1/auth/access-tokens/{id}
 permalink: /rest-api-guide/auth/id.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

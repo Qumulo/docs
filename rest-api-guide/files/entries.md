@@ -51,5 +51,5 @@ methods:
       the new file; refer to the 'Set Attributes' method for field descriptions.
 rest_endpoint: /v1/files/{ref}/entries/
 permalink: /rest-api-guide/files/entries.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

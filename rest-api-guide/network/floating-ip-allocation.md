@@ -12,5 +12,5 @@ methods:
       configuration. Returns status code 400 if the server is in DHCP mode.
 rest_endpoint: /v1/network/floating-ip-allocation
 permalink: /rest-api-guide/network/floating-ip-allocation.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

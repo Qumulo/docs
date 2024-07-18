@@ -50,5 +50,5 @@ methods:
       to the untagged STATIC network as well as the interface.
 rest_endpoint: /v2/network/interfaces/{interface_id}
 permalink: /rest-api-guide/network/interface_id.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

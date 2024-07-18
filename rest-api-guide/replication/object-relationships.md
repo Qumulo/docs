@@ -23,5 +23,5 @@ methods:
       start after the relationship is created.
 rest_endpoint: /v3/replication/object-relationships/
 permalink: /rest-api-guide/replication/object-relationships.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

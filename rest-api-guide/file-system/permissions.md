@@ -22,5 +22,5 @@ methods:
     summary: Set permissions settings.
 rest_endpoint: /v1/file-system/settings/permissions
 permalink: /rest-api-guide/file-system/permissions.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

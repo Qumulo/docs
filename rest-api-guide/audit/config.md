@@ -39,5 +39,5 @@ methods:
     summary: Sets audit log CloudWatch configuration for the cluster.
 rest_endpoint: /v1/audit/cloudwatch/config
 permalink: /rest-api-guide/audit/config.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

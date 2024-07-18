@@ -17,5 +17,5 @@ methods:
     summary: Aborts an in-progress upload and releases all allocated storage.
 rest_endpoint: /v1/s3/buckets/{name}/uploads/{id}
 permalink: /rest-api-guide/s3/id.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

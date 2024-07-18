@@ -62,5 +62,5 @@ methods:
     summary: Set configuration of a tenant.
 rest_endpoint: /v1/multitenancy/tenants/{tenant_id}
 permalink: /rest-api-guide/multitenancy/tenant_id.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

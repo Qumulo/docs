@@ -39,5 +39,5 @@ methods:
     summary: Set settings for LDAP interaction
 rest_endpoint: /v2/ldap/settings
 permalink: /rest-api-guide/ldap/settings.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

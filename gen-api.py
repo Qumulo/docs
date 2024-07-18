@@ -8,7 +8,7 @@ url = "https://music.eng.qumulo.com:8000/openapi.json"
 
 # Define the base directory for output
 output_base_dir = os.path.expanduser("~/git/docs-internal/rest-api-guide")
-sidebar_file_path = os.path.expanduser("~/git/docs-internal/_data/sidebars/rest_api_command_guide_sidebar.yml")
+sidebar_file_path = os.path.expanduser("~/git/docs-internal/_data/sidebars/rest_api_guide_sidebar.yml")
 
 # Function to create the directory if it does not exist
 def create_directory(path):
@@ -24,7 +24,7 @@ def write_markdown(file_path, content):
 def generate_index_md(category):
     return f"""---
 layout: landing_page
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 summary: Listing of commands for {category}
 title: {category}
 ---
@@ -62,7 +62,7 @@ def generate_resource_md(category, endpoint, methods, permalink):
         yaml_content["methods"][method] = method_details
 
     yaml_string = yaml.dump(yaml_content, default_flow_style=False)
-    return f"---\n{yaml_string}permalink: {permalink}\nsidebar: rest_api_command_guide_sidebar\n---\n"
+    return f"---\n{yaml_string}permalink: {permalink}\nsidebar: rest_api_guide_sidebar\n---\n"
 
 # Function to clean up filenames
 def clean_filename(filename):

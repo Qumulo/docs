@@ -14,5 +14,5 @@ methods:
     summary: Create a Key in the Key Management Server.
 rest_endpoint: /v2/encryption/external-kms/keys/create
 permalink: /rest-api-guide/encryption/create.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

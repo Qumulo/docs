@@ -12,5 +12,5 @@ methods:
       in favor of /v2/network/interfaces/1/status/.
 rest_endpoint: /v1/network/status/
 permalink: /rest-api-guide/network/status.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

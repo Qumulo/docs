@@ -26,5 +26,5 @@ methods:
       the supplied set.
 rest_endpoint: /v1/auth/user-defined-mappings/
 permalink: /rest-api-guide/auth/user-defined-mappings.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

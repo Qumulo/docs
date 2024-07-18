@@ -16,5 +16,5 @@ methods:
       unconfigured nodes only.
 rest_endpoint: /v3/cluster/calculate-supported-protection-info
 permalink: /rest-api-guide/cluster/calculate-supported-protection-info.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

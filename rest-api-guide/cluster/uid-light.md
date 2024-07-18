@@ -29,5 +29,5 @@ methods:
       delay for the change to take effect.
 rest_endpoint: /v1/cluster/nodes/{id}/uid-light
 permalink: /rest-api-guide/cluster/uid-light.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

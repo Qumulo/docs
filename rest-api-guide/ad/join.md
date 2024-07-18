@@ -14,5 +14,5 @@ methods:
     summary: Joins the cluster to an Active Directory domain.
 rest_endpoint: /v1/ad/join
 permalink: /rest-api-guide/ad/join.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

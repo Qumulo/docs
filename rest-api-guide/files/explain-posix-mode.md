@@ -21,5 +21,5 @@ methods:
     summary: Explain the derived POSIX mode for a file/directory.
 rest_endpoint: /v1/files/{ref}/info/acl/explain-posix-mode
 permalink: /rest-api-guide/files/explain-posix-mode.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

@@ -17,5 +17,5 @@ methods:
     summary: Remove a member from a group.
 rest_endpoint: /v1/groups/{group_id}/members/{member_id}
 permalink: /rest-api-guide/groups/member_id.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

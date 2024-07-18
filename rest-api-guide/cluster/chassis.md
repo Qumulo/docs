@@ -16,5 +16,5 @@ methods:
       for PSU information
 rest_endpoint: /v1/cluster/nodes/{id}/chassis
 permalink: /rest-api-guide/cluster/chassis.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

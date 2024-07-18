@@ -11,5 +11,5 @@ methods:
     summary: List the status of the identification lights for nodes.
 rest_endpoint: /v1/cluster/nodes/uid-lights/
 permalink: /rest-api-guide/cluster/uid-lights.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

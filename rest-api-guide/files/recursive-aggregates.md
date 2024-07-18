@@ -40,5 +40,5 @@ methods:
       smaller than 10% of the directory's total size are omitted.
 rest_endpoint: /v1/files/{ref}/recursive-aggregates/
 permalink: /rest-api-guide/files/recursive-aggregates.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

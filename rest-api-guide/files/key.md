@@ -106,5 +106,5 @@ methods:
       using the specified key.
 rest_endpoint: /v1/files/{ref}/user-metadata/{type}/{key}
 permalink: /rest-api-guide/files/key.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

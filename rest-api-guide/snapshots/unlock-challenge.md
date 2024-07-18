@@ -15,5 +15,5 @@ methods:
       call.
 rest_endpoint: /v3/snapshots/{id}/unlock-challenge
 permalink: /rest-api-guide/snapshots/unlock-challenge.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

@@ -26,5 +26,5 @@ methods:
     summary: Enumerate open file handles
 rest_endpoint: /v1/smb/files/
 permalink: /rest-api-guide/smb/files.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

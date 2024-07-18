@@ -22,5 +22,5 @@ methods:
     summary: List all in-progress S3 uploads for a specific bucket.
 rest_endpoint: /v1/s3/buckets/{name}/uploads/
 permalink: /rest-api-guide/s3/uploads.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

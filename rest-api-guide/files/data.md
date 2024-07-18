@@ -94,5 +94,5 @@ methods:
       Application/Octet-stream.
 rest_endpoint: /v1/files/{ref}/streams/{stream_id}/data
 permalink: /rest-api-guide/files/data.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

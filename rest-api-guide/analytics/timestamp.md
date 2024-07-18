@@ -17,5 +17,5 @@ methods:
       be reported separately.
 rest_endpoint: /v1/analytics/capacity-history/{timestamp}/
 permalink: /rest-api-guide/analytics/timestamp.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

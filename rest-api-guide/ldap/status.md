@@ -11,5 +11,5 @@ methods:
     summary: Get LDAP connection status if applicable.
 rest_endpoint: /v1/ldap/status
 permalink: /rest-api-guide/ldap/status.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

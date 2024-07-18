@@ -33,5 +33,5 @@ methods:
     summary: Create an access token for the specified user.
 rest_endpoint: /v1/auth/access-tokens/
 permalink: /rest-api-guide/auth/access-tokens.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

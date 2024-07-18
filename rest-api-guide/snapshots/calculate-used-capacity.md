@@ -15,5 +15,5 @@ methods:
       snapshots were deleted.
 rest_endpoint: /v1/snapshots/calculate-used-capacity
 permalink: /rest-api-guide/snapshots/calculate-used-capacity.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

@@ -11,5 +11,5 @@ methods:
     summary: Pause an in progress reboot cycle.
 rest_endpoint: /v1/shutdown/reboot/pause
 permalink: /rest-api-guide/shutdown/pause.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

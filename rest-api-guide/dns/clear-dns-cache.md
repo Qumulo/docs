@@ -14,5 +14,5 @@ methods:
     summary: Clears the Qumulo local DNS cache
 rest_endpoint: /v1/dns/clear-dns-cache
 permalink: /rest-api-guide/dns/clear-dns-cache.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

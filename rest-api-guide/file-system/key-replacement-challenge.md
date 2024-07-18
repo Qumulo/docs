@@ -16,5 +16,5 @@ methods:
       identifier of the specified key.
 rest_endpoint: /v1/file-system/security/keys/{key_ref}/key-replacement-challenge
 permalink: /rest-api-guide/file-system/key-replacement-challenge.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

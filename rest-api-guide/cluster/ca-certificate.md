@@ -39,5 +39,5 @@ methods:
       outbound connections.
 rest_endpoint: /v2/cluster/settings/ssl/ca-certificate
 permalink: /rest-api-guide/cluster/ca-certificate.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

@@ -15,5 +15,5 @@ methods:
       the current domain the cluster is joined to.
 rest_endpoint: /v1/ad/sids/{sid}/uid
 permalink: /rest-api-guide/ad/uid.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

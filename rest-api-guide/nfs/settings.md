@@ -33,5 +33,5 @@ methods:
     summary: Modify current NFS server configuration.
 rest_endpoint: /v2/nfs/settings
 permalink: /rest-api-guide/nfs/settings.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

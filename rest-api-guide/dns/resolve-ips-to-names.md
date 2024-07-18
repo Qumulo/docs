@@ -14,5 +14,5 @@ methods:
     summary: Resolve a list of IP addresses to canonical hostnames.
 rest_endpoint: /v1/dns/resolve-ips-to-names
 permalink: /rest-api-guide/dns/resolve-ips-to-names.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

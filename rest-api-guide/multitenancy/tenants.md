@@ -22,5 +22,5 @@ methods:
     summary: Create a tenant.
 rest_endpoint: /v1/multitenancy/tenants/
 permalink: /rest-api-guide/multitenancy/tenants.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

@@ -15,5 +15,5 @@ methods:
       attempt, if one exists.
 rest_endpoint: /v2/replication/target-relationships/{id}/dismiss-error
 permalink: /rest-api-guide/replication/dismiss-error.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

@@ -71,5 +71,5 @@ methods:
     summary: This method sets all attributes of an NFS export.
 rest_endpoint: /v3/nfs/exports/{export_id}
 permalink: /rest-api-guide/nfs/export_id.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

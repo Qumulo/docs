@@ -11,5 +11,5 @@ methods:
     summary: Retrieves audit log CloudWatch status for the cluster.
 rest_endpoint: /v1/audit/cloudwatch/status
 permalink: /rest-api-guide/audit/status.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

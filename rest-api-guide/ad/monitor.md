@@ -11,5 +11,5 @@ methods:
     summary: Gets details on a join or leave operation.
 rest_endpoint: /v1/ad/monitor
 permalink: /rest-api-guide/ad/monitor.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

@@ -34,5 +34,5 @@ methods:
       key, a user must have fewer than two keys.
 rest_endpoint: /v1/s3/access-keys/
 permalink: /rest-api-guide/s3/access-keys.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

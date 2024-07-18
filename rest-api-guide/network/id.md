@@ -16,5 +16,5 @@ methods:
       deprecated in favor of /v2/network/interfaces/1/status/{node_id}.
 rest_endpoint: /v1/network/status/{id}
 permalink: /rest-api-guide/network/id.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

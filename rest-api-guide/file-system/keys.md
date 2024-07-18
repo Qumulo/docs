@@ -22,5 +22,5 @@ methods:
     summary: Register a new file system public key.
 rest_endpoint: /v1/file-system/security/keys/
 permalink: /rest-api-guide/file-system/keys.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

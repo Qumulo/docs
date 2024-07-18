@@ -30,5 +30,5 @@ methods:
       of the returned fields.
 rest_endpoint: /v1/groups/{group_id}/members/
 permalink: /rest-api-guide/groups/members.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

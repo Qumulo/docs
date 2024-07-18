@@ -28,5 +28,5 @@ methods:
       of the stream.
 rest_endpoint: /v1/files/{ref}/streams/{stream_id}/punch-hole
 permalink: /rest-api-guide/files/punch-hole.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

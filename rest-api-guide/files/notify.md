@@ -82,5 +82,5 @@ methods:
       <string>, "path": <string>, "stream_name": <optional string>}].'
 rest_endpoint: /v1/files/{ref}/notify
 permalink: /rest-api-guide/files/notify.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

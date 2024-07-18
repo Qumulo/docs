@@ -39,5 +39,5 @@ methods:
     summary: Set the SAML integration settings.
 rest_endpoint: /v1/saml/settings
 permalink: /rest-api-guide/saml/settings.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

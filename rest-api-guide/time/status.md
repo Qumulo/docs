@@ -11,5 +11,5 @@ methods:
     summary: Retrieve the time status of the underlying system
 rest_endpoint: /v1/time/status
 permalink: /rest-api-guide/time/status.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

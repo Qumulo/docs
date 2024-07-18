@@ -25,5 +25,5 @@ methods:
     summary: Sets advanced Active Directory settings.
 rest_endpoint: /v1/ad/settings
 permalink: /rest-api-guide/ad/settings.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

@@ -39,5 +39,5 @@ methods:
     summary: Set settings for the SMB Server.
 rest_endpoint: /v1/smb/settings
 permalink: /rest-api-guide/smb/settings.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

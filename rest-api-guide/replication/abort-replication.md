@@ -15,5 +15,5 @@ methods:
       relationship.
 rest_endpoint: /v3/replication/object-relationships/{id}/abort-replication
 permalink: /rest-api-guide/replication/abort-replication.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

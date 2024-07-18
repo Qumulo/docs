@@ -27,5 +27,5 @@ methods:
       based on by-value property.
 rest_endpoint: /v1/files/{ref}/sample/
 permalink: /rest-api-guide/files/sample.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

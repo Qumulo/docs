@@ -18,5 +18,5 @@ methods:
       in the browser, or until the 5-minute limit elapses.
 rest_endpoint: /v1/session/start-saml-login
 permalink: /rest-api-guide/session/start-saml-login.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

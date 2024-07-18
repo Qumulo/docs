@@ -11,5 +11,5 @@ methods:
     summary: Return a list of NFS and SMB protocol connections to each node
 rest_endpoint: /v2/network/connections/
 permalink: /rest-api-guide/network/connections.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

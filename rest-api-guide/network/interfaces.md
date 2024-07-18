@@ -11,5 +11,5 @@ methods:
     summary: Get configurations of all interfaces for the whole cluster.
 rest_endpoint: /v2/network/interfaces/
 permalink: /rest-api-guide/network/interfaces.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

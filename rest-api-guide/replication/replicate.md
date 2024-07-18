@@ -14,5 +14,5 @@ methods:
     summary: Start a new replication job for the specified object relationship
 rest_endpoint: /v3/replication/object-relationships/{id}/replicate
 permalink: /rest-api-guide/replication/replicate.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

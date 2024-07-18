@@ -15,5 +15,5 @@ methods:
       operation. This endpoint is deprecated in favor of /v2/cluster/nodes/dry-run.
 rest_endpoint: /v1/cluster/calculate-node-add-capacity
 permalink: /rest-api-guide/cluster/calculate-node-add-capacity.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

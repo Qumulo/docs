@@ -11,5 +11,5 @@ methods:
     summary: List the unconfigured nodes discovered on the local network.
 rest_endpoint: /v1/unconfigured/nodes/
 permalink: /rest-api-guide/unconfigured/nodes.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

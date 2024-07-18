@@ -12,5 +12,5 @@ methods:
       be reclaimed if that snapshot were deleted.
 rest_endpoint: /v1/snapshots/capacity-used-per-snapshot/
 permalink: /rest-api-guide/snapshots/capacity-used-per-snapshot.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

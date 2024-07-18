@@ -50,5 +50,5 @@ methods:
     summary: Modify an SMB share's options.
 rest_endpoint: /v1/smb/shares/{id}
 permalink: /rest-api-guide/smb/id.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

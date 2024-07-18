@@ -32,5 +32,5 @@ methods:
     summary: Return aggregated data for a directory (like capacity, IOPS, etc.)
 rest_endpoint: /v1/files/{ref}/aggregates/
 permalink: /rest-api-guide/files/aggregates.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

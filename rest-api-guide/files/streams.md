@@ -41,5 +41,5 @@ methods:
     summary: Create a named stream on provided object
 rest_endpoint: /v1/files/{ref}/streams/
 permalink: /rest-api-guide/files/streams.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

@@ -12,5 +12,5 @@ methods:
       on each node.
 rest_endpoint: /v0/ftp/status
 permalink: /rest-api-guide/ftp/status.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

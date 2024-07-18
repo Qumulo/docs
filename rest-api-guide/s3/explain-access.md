@@ -17,5 +17,5 @@ methods:
     summary: Explains the access of an identity due to the bucket policy.
 rest_endpoint: /v1/s3/buckets/{name}/policy/explain-access
 permalink: /rest-api-guide/s3/explain-access.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

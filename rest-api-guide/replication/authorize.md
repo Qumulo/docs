@@ -26,5 +26,5 @@ methods:
       as the target of replication.
 rest_endpoint: /v2/replication/target-relationships/{id}/authorize
 permalink: /rest-api-guide/replication/authorize.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

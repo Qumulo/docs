@@ -14,5 +14,5 @@ methods:
     summary: Get the status of an existing object replication relationship.
 rest_endpoint: /v3/replication/object-relationships/{id}/status
 permalink: /rest-api-guide/replication/status.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

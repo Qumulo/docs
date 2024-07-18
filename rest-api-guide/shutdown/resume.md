@@ -11,5 +11,5 @@ methods:
     summary: Resume a paused reboot cycle.
 rest_endpoint: /v1/shutdown/reboot/resume
 permalink: /rest-api-guide/shutdown/resume.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

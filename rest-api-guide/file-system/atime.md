@@ -39,5 +39,5 @@ methods:
     summary: Set atime-related settings.
 rest_endpoint: /v1/file-system/settings/atime
 permalink: /rest-api-guide/file-system/atime.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

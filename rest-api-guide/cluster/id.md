@@ -29,5 +29,5 @@ methods:
     summary: Control the slot's locate LED.
 rest_endpoint: /v1/cluster/slots/{id}
 permalink: /rest-api-guide/cluster/id.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

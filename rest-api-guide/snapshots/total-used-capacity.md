@@ -12,5 +12,5 @@ methods:
       were deleted.
 rest_endpoint: /v1/snapshots/total-used-capacity
 permalink: /rest-api-guide/snapshots/total-used-capacity.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

@@ -15,5 +15,5 @@ methods:
       an LDAP query against the LDAP server configured
 rest_endpoint: /v1/ldap/login-name/{login_name}/uid-numbers
 permalink: /rest-api-guide/ldap/uid-numbers.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

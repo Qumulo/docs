@@ -15,5 +15,5 @@ methods:
       return the projected usable capacity and node fault tolerance level.
 rest_endpoint: /v2/cluster/nodes/dry-run
 permalink: /rest-api-guide/cluster/dry-run.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

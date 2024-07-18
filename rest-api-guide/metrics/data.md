@@ -11,5 +11,5 @@ methods:
     summary: Get all metrics for the cluster.
 rest_endpoint: /v2/metrics/endpoints/default/data
 permalink: /rest-api-guide/metrics/data.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

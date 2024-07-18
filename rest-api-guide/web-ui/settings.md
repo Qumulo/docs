@@ -43,5 +43,5 @@ methods:
       immediately for new UI sessions.
 rest_endpoint: /v1/web-ui/settings
 permalink: /rest-api-guide/web-ui/settings.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

@@ -39,5 +39,5 @@ methods:
     summary: Set the identity attributes for an identity.
 rest_endpoint: /v1/auth/identities/{id}/attributes
 permalink: /rest-api-guide/auth/attributes.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

@@ -23,5 +23,5 @@ methods:
     summary: Add a user.
 rest_endpoint: /v1/users/
 permalink: /rest-api-guide/users/users.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

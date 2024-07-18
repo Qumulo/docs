@@ -20,5 +20,5 @@ methods:
       the cluster.
 rest_endpoint: /v2/replication/source-relationships/{relationship_id}/queued-snapshots/{snapshot_id}
 permalink: /rest-api-guide/replication/snapshot_id.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

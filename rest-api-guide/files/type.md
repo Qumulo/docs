@@ -33,5 +33,5 @@ methods:
       file. Values are base 64 encoded.
 rest_endpoint: /v1/files/{ref}/user-metadata/{type}/
 permalink: /rest-api-guide/files/type.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

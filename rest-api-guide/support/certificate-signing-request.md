@@ -13,5 +13,5 @@ methods:
       used.
 rest_endpoint: /v1/support/vpn/key/certificate-signing-request
 permalink: /rest-api-guide/support/certificate-signing-request.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

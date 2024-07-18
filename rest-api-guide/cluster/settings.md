@@ -25,5 +25,5 @@ methods:
     summary: Set the name of the cluster
 rest_endpoint: /v1/cluster/settings
 permalink: /rest-api-guide/cluster/settings.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

@@ -11,5 +11,5 @@ methods:
     summary: Commit a prepared upgrade.
 rest_endpoint: /v2/upgrade/commit
 permalink: /rest-api-guide/upgrade/commit.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

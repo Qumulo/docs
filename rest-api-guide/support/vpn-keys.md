@@ -33,5 +33,5 @@ methods:
     summary: Set VPN keys.
 rest_endpoint: /v1/support/vpn-keys
 permalink: /rest-api-guide/support/vpn-keys.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

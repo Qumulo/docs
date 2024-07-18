@@ -11,5 +11,5 @@ methods:
     summary: Returns status information about all snapshot policies.
 rest_endpoint: /v1/snapshots/policies/status/
 permalink: /rest-api-guide/snapshots/status.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

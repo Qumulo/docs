@@ -26,5 +26,5 @@ methods:
     summary: Rename a stream on provided object
 rest_endpoint: /v1/files/{ref}/streams/{stream_id}/rename
 permalink: /rest-api-guide/files/rename.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

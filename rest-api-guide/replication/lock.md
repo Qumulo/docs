@@ -19,5 +19,5 @@ methods:
       that the system takes after you make a configuration change.
 rest_endpoint: /v2/replication/target-relationships/{id}/lock
 permalink: /rest-api-guide/replication/lock.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

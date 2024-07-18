@@ -21,5 +21,5 @@ methods:
       the specified key.
 rest_endpoint: /v1/file-system/security/keys/{key_ref}/replace
 permalink: /rest-api-guide/file-system/replace.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

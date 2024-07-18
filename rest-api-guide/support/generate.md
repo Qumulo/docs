@@ -12,5 +12,5 @@ methods:
       this overwrites that key.
 rest_endpoint: /v1/support/vpn/key/generate
 permalink: /rest-api-guide/support/generate.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

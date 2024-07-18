@@ -23,5 +23,5 @@ methods:
     summary: Add a group.
 rest_endpoint: /v1/groups/
 permalink: /rest-api-guide/groups/groups.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

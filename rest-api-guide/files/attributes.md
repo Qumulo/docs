@@ -47,5 +47,5 @@ methods:
     summary: Update a subset of stream attributes
 rest_endpoint: /v1/files/{ref}/streams/{stream_id}/attributes
 permalink: /rest-api-guide/files/attributes.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

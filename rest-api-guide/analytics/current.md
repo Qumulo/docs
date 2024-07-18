@@ -18,5 +18,5 @@ methods:
     summary: Returns the current sampled IOPS and throughput from the cluster.
 rest_endpoint: /v1/analytics/activity/current
 permalink: /rest-api-guide/analytics/current.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

@@ -29,5 +29,5 @@ methods:
       on the given object
 rest_endpoint: /v1/tree-delete/jobs/{id}
 permalink: /rest-api-guide/tree-delete/id.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

@@ -11,5 +11,5 @@ methods:
     summary: List slots.
 rest_endpoint: /v1/cluster/slots/
 permalink: /rest-api-guide/cluster/slots.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

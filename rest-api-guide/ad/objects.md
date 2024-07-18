@@ -14,5 +14,5 @@ methods:
     summary: Return any AD account objects that have the given sAMAccountName.
 rest_endpoint: /v1/ad/usernames/{username}/objects/
 permalink: /rest-api-guide/ad/objects.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

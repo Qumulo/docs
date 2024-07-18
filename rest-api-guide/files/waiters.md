@@ -30,5 +30,5 @@ methods:
       specified file.
 rest_endpoint: /v1/files/{ref}/locks/nlm/byte-range/waiters/
 permalink: /rest-api-guide/files/waiters.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

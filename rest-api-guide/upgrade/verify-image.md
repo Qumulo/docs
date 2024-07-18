@@ -15,5 +15,5 @@ methods:
       details about the upgrade that will occur.
 rest_endpoint: /v2/upgrade/verify-image
 permalink: /rest-api-guide/upgrade/verify-image.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

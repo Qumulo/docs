@@ -39,5 +39,5 @@ methods:
     summary: Set global SMB configuration.
 rest_endpoint: /v1/multitenancy/smb/global-settings
 permalink: /rest-api-guide/multitenancy/global-settings.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

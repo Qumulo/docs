@@ -15,5 +15,5 @@ methods:
       replacing configured nodes.
 rest_endpoint: /v2/cluster/nodes/
 permalink: /rest-api-guide/cluster/nodes.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

@@ -16,5 +16,5 @@ methods:
       that the given login name maps to multiple uid numbers.
 rest_endpoint: /v1/ldap/login-name/{login_name}/gid-numbers
 permalink: /rest-api-guide/ldap/gid-numbers.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

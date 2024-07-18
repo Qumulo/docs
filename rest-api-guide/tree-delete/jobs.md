@@ -22,5 +22,5 @@ methods:
     summary: Start unlinking this directory and all its contents.
 rest_endpoint: /v1/tree-delete/jobs/
 permalink: /rest-api-guide/tree-delete/jobs.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

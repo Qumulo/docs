@@ -12,5 +12,5 @@ methods:
       in favor of /v3/upgrade/status.
 rest_endpoint: /v2/upgrade/status
 permalink: /rest-api-guide/upgrade/status.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

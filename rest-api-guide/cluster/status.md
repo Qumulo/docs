@@ -13,5 +13,5 @@ methods:
       after v5.3.4.
 rest_endpoint: /v1/cluster/restriper/status
 permalink: /rest-api-guide/cluster/status.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

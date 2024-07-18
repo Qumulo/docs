@@ -24,5 +24,5 @@ methods:
       400 Bad Request error.
 rest_endpoint: /v1/session/retrieve-saml-login
 permalink: /rest-api-guide/session/retrieve-saml-login.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

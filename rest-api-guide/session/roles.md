@@ -12,5 +12,5 @@ methods:
       those assigned to a group to which the current user belongs.
 rest_endpoint: /v1/session/roles
 permalink: /rest-api-guide/session/roles.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

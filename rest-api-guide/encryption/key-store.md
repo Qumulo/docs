@@ -22,5 +22,5 @@ methods:
     summary: Update the active at-rest encryption configuration.
 rest_endpoint: /v2/encryption/key-store
 permalink: /rest-api-guide/encryption/key-store.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

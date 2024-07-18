@@ -41,5 +41,5 @@ methods:
     summary: Update file access control list (ACL).
 rest_endpoint: /v1/files/{ref}/info/acl
 permalink: /rest-api-guide/files/acl.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

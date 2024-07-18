@@ -16,5 +16,5 @@ methods:
       provided user is not a local user.
 rest_endpoint: /v1/users/{id}/groups/
 permalink: /rest-api-guide/users/groups.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

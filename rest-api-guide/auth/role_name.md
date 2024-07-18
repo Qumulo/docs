@@ -62,5 +62,5 @@ methods:
     summary: Modify a role.
 rest_endpoint: /v1/auth/roles/{role_name}
 permalink: /rest-api-guide/auth/role_name.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

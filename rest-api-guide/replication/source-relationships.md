@@ -24,5 +24,5 @@ methods:
       be authorized using the authorize API.
 rest_endpoint: /v2/replication/source-relationships/
 permalink: /rest-api-guide/replication/source-relationships.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

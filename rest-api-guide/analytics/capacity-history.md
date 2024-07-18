@@ -24,5 +24,5 @@ methods:
       ascending time.
 rest_endpoint: /v1/analytics/capacity-history/
 permalink: /rest-api-guide/analytics/capacity-history.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

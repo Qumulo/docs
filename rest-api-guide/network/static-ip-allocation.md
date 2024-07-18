@@ -26,5 +26,5 @@ methods:
       the try/floating query parameters are provided.
 rest_endpoint: /v1/network/static-ip-allocation
 permalink: /rest-api-guide/network/static-ip-allocation.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

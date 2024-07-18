@@ -20,5 +20,5 @@ methods:
       and cumulative sizes.
 rest_endpoint: /v1/files/quotas/status/
 permalink: /rest-api-guide/files/status.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

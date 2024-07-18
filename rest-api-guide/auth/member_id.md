@@ -31,5 +31,5 @@ methods:
     summary: Get information about the member of the role.
 rest_endpoint: /v1/auth/roles/{role_name}/members/{member_id}
 permalink: /rest-api-guide/auth/member_id.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

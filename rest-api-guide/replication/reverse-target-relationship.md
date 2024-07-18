@@ -21,5 +21,5 @@ methods:
       cluster.
 rest_endpoint: /v2/replication/source-relationships/reverse-target-relationship
 permalink: /rest-api-guide/replication/reverse-target-relationship.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

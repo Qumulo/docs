@@ -22,5 +22,5 @@ methods:
     summary: Creates a new snapshot policy and returns its details.
 rest_endpoint: /v1/snapshots/policies/
 permalink: /rest-api-guide/snapshots/policies.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

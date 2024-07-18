@@ -27,5 +27,5 @@ methods:
     summary: This method adds an NFS export.
 rest_endpoint: /v2/nfs/exports/
 permalink: /rest-api-guide/nfs/exports.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

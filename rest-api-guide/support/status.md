@@ -12,5 +12,5 @@ methods:
       connections are enabled/connected/etc.'
 rest_endpoint: /v1/support/status/
 permalink: /rest-api-guide/support/status.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

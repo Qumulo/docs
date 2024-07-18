@@ -31,5 +31,5 @@ methods:
     summary: Add an SMB share with given options.
 rest_endpoint: /v2/smb/shares/
 permalink: /rest-api-guide/smb/shares.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

@@ -15,5 +15,5 @@ methods:
       relationship.
 rest_endpoint: /v2/replication/source-relationships/{id}/queued-snapshots/
 permalink: /rest-api-guide/replication/queued-snapshots.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

@@ -17,5 +17,5 @@ methods:
     summary: Paths must be absolute and URL encoded.
 rest_endpoint: /v1/files/{ref}
 permalink: /rest-api-guide/files/ref.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

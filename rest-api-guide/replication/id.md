@@ -29,5 +29,5 @@ methods:
     summary: Get information about the specified object replication relationship.
 rest_endpoint: /v3/replication/object-relationships/{id}
 permalink: /rest-api-guide/replication/id.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

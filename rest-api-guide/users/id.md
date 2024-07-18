@@ -43,5 +43,5 @@ methods:
     summary: Modify a local user.
 rest_endpoint: /v1/users/{id}
 permalink: /rest-api-guide/users/id.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

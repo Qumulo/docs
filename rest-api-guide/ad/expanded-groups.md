@@ -16,5 +16,5 @@ methods:
       (including all nested groups).
 rest_endpoint: /v1/ad/sids/{sid}/expanded-groups/
 permalink: /rest-api-guide/ad/expanded-groups.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

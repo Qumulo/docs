@@ -23,5 +23,5 @@ methods:
     summary: To initiate node replacement, specify the nodes to replace.
 rest_endpoint: /v1/cluster/node-replacement-plan/
 permalink: /rest-api-guide/cluster/node-replacement-plan.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

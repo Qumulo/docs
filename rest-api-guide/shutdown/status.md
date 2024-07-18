@@ -11,5 +11,5 @@ methods:
     summary: Retrieve the current status of the reboot manager.
 rest_endpoint: /v1/shutdown/reboot/status
 permalink: /rest-api-guide/shutdown/status.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

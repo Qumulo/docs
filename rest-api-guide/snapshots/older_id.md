@@ -25,5 +25,5 @@ methods:
     summary: Returns a list of changed files and directories between two snapshots.
 rest_endpoint: /v2/snapshots/{newer_id}/changes-since/{older_id}
 permalink: /rest-api-guide/snapshots/older_id.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

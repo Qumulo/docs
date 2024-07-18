@@ -24,5 +24,5 @@ methods:
       specified key.
 rest_endpoint: /v1/file-system/security/keys/{key_ref}/usages
 permalink: /rest-api-guide/file-system/usages.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

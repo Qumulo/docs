@@ -15,5 +15,5 @@ methods:
       bearer token from the response in the Authorization header.
 rest_endpoint: /v1/session/login
 permalink: /rest-api-guide/session/login.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

@@ -15,5 +15,5 @@ methods:
       from GET /v1/smb/sessions.
 rest_endpoint: /v1/smb/sessions/close
 permalink: /rest-api-guide/smb/close.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

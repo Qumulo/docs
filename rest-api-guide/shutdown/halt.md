@@ -11,5 +11,5 @@ methods:
     summary: Shut down every node in the cluster and power off.
 rest_endpoint: /v1/shutdown/halt
 permalink: /rest-api-guide/shutdown/halt.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---

@@ -25,5 +25,5 @@ methods:
     summary: Set FS notify related settings.
 rest_endpoint: /v1/file-system/settings/notify
 permalink: /rest-api-guide/file-system/notify.html
-sidebar: rest_api_command_guide_sidebar
+sidebar: rest_api_guide_sidebar
 ---
