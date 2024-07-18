@@ -12,7 +12,6 @@ methods:
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"type\": \"string\"\
         \n  }\n}"
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         fs_api_ref_id_path\",\n    \"type\": \"object\",\n    \"properties\": {\n\
@@ -20,7 +19,9 @@ methods:
         ,\n        \"type\": \"string\"\n      },\n      \"path\": {\n        \"description\"\
         : \"Full path of this file or directory\",\n        \"type\": \"string\"\n\
         \      }\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Return the full paths for each specified file ID. If a file has more
       than one path (due to hard links) a canonical path is chosen.
 rest_endpoint: /v1/files/resolve

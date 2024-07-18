@@ -18,11 +18,10 @@ methods:
     - description: ETag for expected version
       name: If-Match
       required: false
-    response_body:
+    response_body: {}
+    responses:
+    - code: '200'
       description: Return value on success
-      example_value: '"TO DO"'
-      schema: '"TO DO"'
-      status_code: '200'
     summary: Delete the user-defined metadata entry for the current file by using
       the specified key.
   get:
@@ -44,14 +43,15 @@ methods:
       name: snapshot
       required: false
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_files_user_metadata_value\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"value\": {\n      \"type\": \"array\"\
         ,\n      \"items\": {\n        \"description\": \"The bytes that represent\
         \ the Base64-encoded value of the user-defined metadata entry.\",\n      \
         \  \"type\": \"number\"\n      }\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Retrieve the Base64-encoded user-defined metadata value for the current
       file by using the specified key.
   post:
@@ -78,11 +78,10 @@ methods:
         ,\n      \"items\": {\n        \"description\": \"The bytes that represent\
         \ the Base64-encoded value of the user-defined metadata entry.\",\n      \
         \  \"type\": \"number\"\n      }\n    }\n  }\n}"
-    response_body:
+    response_body: {}
+    responses:
+    - code: '200'
       description: Return value on success
-      example_value: '"TO DO"'
-      schema: '"TO DO"'
-      status_code: '200'
     summary: Add a user-defined metadata value to the current file by using the specified
       key and user-defined metadata type.
   put:
@@ -109,11 +108,10 @@ methods:
         ,\n      \"items\": {\n        \"description\": \"The bytes that represent\
         \ the Base64-encoded value of the user-defined metadata entry.\",\n      \
         \  \"type\": \"number\"\n      }\n    }\n  }\n}"
-    response_body:
+    response_body: {}
+    responses:
+    - code: '200'
       description: Return value on success
-      example_value: '"TO DO"'
-      schema: '"TO DO"'
-      status_code: '200'
     summary: Add or update the user-defined metadata value for the current file by
       using the specified key.
 rest_endpoint: /v1/files/{ref}/user-metadata/{type}/{key}

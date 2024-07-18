@@ -15,7 +15,6 @@ methods:
       name: limit
       required: false
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_byte_range_grants\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"grants\": {\n      \"type\": \"array\",\n  \
@@ -47,7 +46,9 @@ methods:
         \  \"node_address\": {\n            \"description\": \"The IP address of the\
         \ node that receives the request.\",\n            \"type\": \"string\"\n \
         \         }\n        }\n      }\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Return a list of all granted file locks that the specified machine owns.
 rest_endpoint: /v1/files/locks/smb/byte-range/
 permalink: /rest-api-guide/files/locks_smb_byte-range.html

@@ -4,7 +4,6 @@ methods:
   get:
     parameters: []
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_version_info\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"revision_id\": {\n      \"description\": \"\
@@ -13,7 +12,9 @@ methods:
         \    \"flavor\": {\n      \"description\": \"flavor\",\n      \"type\": \"\
         string\"\n    },\n    \"build_date\": {\n      \"description\": \"build_date\"\
         ,\n      \"type\": \"string\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Retrieve the version of the appliance.
 rest_endpoint: /v1/version
 permalink: /rest-api-guide/version/version.html

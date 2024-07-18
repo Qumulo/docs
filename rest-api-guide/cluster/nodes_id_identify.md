@@ -12,11 +12,10 @@ methods:
         ,\n  \"properties\": {\n    \"light_visible\": {\n      \"description\": \"\
         Visibility of the node identifier light\",\n      \"type\": \"boolean\"\n\
         \    }\n  }\n}"
-    response_body:
+    response_body: {}
+    responses:
+    - code: '200'
       description: Return value on success
-      example_value: '"TO DO"'
-      schema: '"TO DO"'
-      status_code: '200'
     summary: Turn the identification light on the node on or off. There may be a slight
       delay for the change to take effect.
 rest_endpoint: /v1/cluster/nodes/{id}/identify

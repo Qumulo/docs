@@ -7,7 +7,6 @@ methods:
       name: id
       required: true
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_queued_replication_snapshots\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"entries\": {\n      \"type\": \"\
@@ -43,7 +42,9 @@ methods:
         \          \"policy_id\": {\n            \"description\": \"Unique identifier\
         \ of the policy that created this snapshot\",\n            \"type\": \"number\"\
         \n          }\n        }\n      }\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: List information for all snapshots awaiting replication by the specified
       relationship.
 rest_endpoint: /v2/replication/source-relationships/{id}/queued-snapshots/

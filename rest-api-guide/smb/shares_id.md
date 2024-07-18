@@ -9,11 +9,10 @@ methods:
     - description: ETag for expected version
       name: If-Match
       required: false
-    response_body:
+    response_body: {}
+    responses:
+    - code: '200'
       description: Return value on success
-      example_value: '"TO DO"'
-      schema: '"TO DO"'
-      status_code: '200'
     summary: Delete an SMB share. Not undoable.
   get:
     parameters:
@@ -21,7 +20,6 @@ methods:
       name: id
       required: true
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_smb_share\",\n  \"type\": \"object\",\n\
         \  \"properties\": {\n    \"id\": {\n      \"description\": \"The unique ID\
@@ -44,7 +42,9 @@ methods:
         \  \"tenant_id\": {\n      \"description\": \"The tenant ID of the tenant\
         \ that the SMB share is a part of\",\n      \"type\": \"number\"\n    }\n\
         \  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Retrieve the specified SMB share. Refer to the 'Modify SMB share' method
       for a description of the returned fields.
   put:
@@ -83,7 +83,6 @@ methods:
         \ that the SMB share is a part of\",\n      \"type\": \"number\"\n    }\n\
         \  }\n}"
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_smb_share\",\n  \"type\": \"object\",\n\
         \  \"properties\": {\n    \"id\": {\n      \"description\": \"The unique ID\
@@ -106,7 +105,9 @@ methods:
         \  \"tenant_id\": {\n      \"description\": \"The tenant ID of the tenant\
         \ that the SMB share is a part of\",\n      \"type\": \"number\"\n    }\n\
         \  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Modify an SMB share's options.
 rest_endpoint: /v1/smb/shares/{id}
 permalink: /rest-api-guide/smb/shares_id.html

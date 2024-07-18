@@ -9,11 +9,10 @@ methods:
     - description: ETag for expected version
       name: If-Match
       required: false
-    response_body:
+    response_body: {}
+    responses:
+    - code: '200'
       description: Return value on success
-      example_value: '"TO DO"'
-      schema: '"TO DO"'
-      status_code: '200'
     summary: Delete the specified object replication relationship, which must not
       be running a job.
   get:
@@ -22,7 +21,6 @@ methods:
       name: id
       required: true
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_object_relationship_v3\",\n  \"type\":\
         \ \"object\",\n  \"properties\": {\n    \"id\": {\n      \"description\":\
@@ -53,7 +51,9 @@ methods:
         \ the bucket is located in\",\n      \"type\": \"string\"\n    },\n    \"\
         access_key_id\": {\n      \"description\": \"Access key ID to use when communicating\
         \ with the object store\",\n      \"type\": \"string\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Get information about the specified object replication relationship.
 rest_endpoint: /v3/replication/object-relationships/{id}
 permalink: /rest-api-guide/replication/v3_object-relationships_id.html

@@ -4,7 +4,6 @@ methods:
   get:
     parameters: []
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"time_status_response\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"config\": {\n      \"description\": \"config\"\
@@ -20,7 +19,9 @@ methods:
         \      ],\n      \"description\": \"status:\\n * `TIME_NOT_SYNCHRONIZING`\
         \ - TIME_NOT_SYNCHRONIZING,\\n * `TIME_SYNCHRONIZING` - TIME_SYNCHRONIZING\"\
         \n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Retrieve the time status of the underlying system
 rest_endpoint: /v1/time/status
 permalink: /rest-api-guide/time/status.html

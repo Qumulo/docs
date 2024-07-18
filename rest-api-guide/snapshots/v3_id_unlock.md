@@ -11,11 +11,10 @@ methods:
       schema: "{\n  \"description\": \"api_snapshot_unlock\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"signature\": {\n      \"description\": \"signature\"\
         ,\n      \"type\": \"string\"\n    }\n  }\n}"
-    response_body:
+    response_body: {}
+    responses:
+    - code: '200'
       description: Return value on success
-      example_value: '"TO DO"'
-      schema: '"TO DO"'
-      status_code: '200'
     summary: Unlock the specified snapshot. After you unlock a snapshot, you can modify
       it.
 rest_endpoint: /v3/snapshots/{id}/unlock

@@ -7,7 +7,6 @@ methods:
       name: id
       required: true
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_disk_slot\",\n  \"type\": \"object\",\n\
         \  \"properties\": {\n    \"id\": {\n      \"description\": \"Node:Slot representation\
@@ -58,7 +57,9 @@ methods:
         \  ],\n      \"description\": \"Current state of the slot's LED:\\n * `LED_PATTERN_FAILURE`\
         \ - failure,\\n * `LED_PATTERN_LOCATE` - locate,\\n * `LED_PATTERN_NORMAL`\
         \ - normal\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Retrieve info about the disk slot, such as its capacity, type, model,
       etc.
   patch:
@@ -75,7 +76,6 @@ methods:
         n * `LED_PATTERN_FAILURE` - failure,\\n * `LED_PATTERN_LOCATE` - locate,\\\
         n * `LED_PATTERN_NORMAL` - normal\"\n    }\n  }\n}"
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_disk_slot\",\n  \"type\": \"object\",\n\
         \  \"properties\": {\n    \"id\": {\n      \"description\": \"Node:Slot representation\
@@ -126,7 +126,9 @@ methods:
         \  ],\n      \"description\": \"Current state of the slot's LED:\\n * `LED_PATTERN_FAILURE`\
         \ - failure,\\n * `LED_PATTERN_LOCATE` - locate,\\n * `LED_PATTERN_NORMAL`\
         \ - normal\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Control the slot's locate LED.
 rest_endpoint: /v1/cluster/slots/{id}
 permalink: /rest-api-guide/cluster/slots_id.html

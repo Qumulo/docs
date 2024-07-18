@@ -4,7 +4,6 @@ methods:
   get:
     parameters: []
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"ftp_api_config\",\n  \"type\": \"object\",\n\
         \  \"properties\": {\n    \"enabled\": {\n      \"description\": \"When enabled,\
@@ -32,7 +31,9 @@ methods:
         ,\n          \"type\": \"string\"\n        }\n      }\n    },\n    \"greeting\"\
         : {\n      \"description\": \"Greeting to display with the 220 successful\
         \ connection message.\",\n      \"type\": \"string\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Retrieve the current FTP server settings. To see server status on all
       nodes, use Get FTP Server Status.
   patch:
@@ -69,7 +70,6 @@ methods:
         : {\n      \"description\": \"Greeting to display with the 220 successful\
         \ connection message.\",\n      \"type\": \"string\"\n    }\n  }\n}"
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"ftp_api_config\",\n  \"type\": \"object\",\n\
         \  \"properties\": {\n    \"enabled\": {\n      \"description\": \"When enabled,\
@@ -97,7 +97,9 @@ methods:
         ,\n          \"type\": \"string\"\n        }\n      }\n    },\n    \"greeting\"\
         : {\n      \"description\": \"Greeting to display with the 220 successful\
         \ connection message.\",\n      \"type\": \"string\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Modify the current FTP server settings. To see server status on all nodes,
       use Get FTP Server Status.
   put:
@@ -134,7 +136,6 @@ methods:
         : {\n      \"description\": \"Greeting to display with the 220 successful\
         \ connection message.\",\n      \"type\": \"string\"\n    }\n  }\n}"
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"ftp_api_config\",\n  \"type\": \"object\",\n\
         \  \"properties\": {\n    \"enabled\": {\n      \"description\": \"When enabled,\
@@ -162,7 +163,9 @@ methods:
         ,\n          \"type\": \"string\"\n        }\n      }\n    },\n    \"greeting\"\
         : {\n      \"description\": \"Greeting to display with the 220 successful\
         \ connection message.\",\n      \"type\": \"string\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Modify the current FTP server settings. To see server status on all nodes,
       use Get FTP Server Status.
 rest_endpoint: /v0/ftp/settings

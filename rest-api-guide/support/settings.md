@@ -4,7 +4,6 @@ methods:
   get:
     parameters: []
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"monitoring_config\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"enabled\": {\n      \"description\": \"enabled\"\
@@ -28,7 +27,9 @@ methods:
         : {\n      \"description\": \"nexus_port\",\n      \"type\": \"number\"\n\
         \    },\n    \"nexus_interval\": {\n      \"description\": \"nexus_interval\"\
         ,\n      \"type\": \"number\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Get monitoring configuration.
   patch:
     parameters:
@@ -59,13 +60,10 @@ methods:
         : {\n      \"description\": \"nexus_port\",\n      \"type\": \"number\"\n\
         \    },\n    \"nexus_interval\": {\n      \"description\": \"nexus_interval\"\
         ,\n      \"type\": \"number\"\n    }\n  }\n}"
-    response_body:
+    response_body: {}
+    responses:
+    - code: '202'
       description: Return value on success
-      example_value: '"TO DO"'
-      schema: "{\n  \"description\": \"api_monitor_uri\",\n  \"type\": \"object\"\
-        ,\n  \"properties\": {\n    \"monitor_uri\": {\n      \"description\": \"\
-        monitor_uri\",\n      \"type\": \"string\"\n    }\n  }\n}"
-      status_code: '202'
     summary: Partial set of monitoring configuration.
   put:
     parameters:
@@ -96,13 +94,10 @@ methods:
         : {\n      \"description\": \"nexus_port\",\n      \"type\": \"number\"\n\
         \    },\n    \"nexus_interval\": {\n      \"description\": \"nexus_interval\"\
         ,\n      \"type\": \"number\"\n    }\n  }\n}"
-    response_body:
+    response_body: {}
+    responses:
+    - code: '202'
       description: Return value on success
-      example_value: '"TO DO"'
-      schema: "{\n  \"description\": \"api_monitor_uri\",\n  \"type\": \"object\"\
-        ,\n  \"properties\": {\n    \"monitor_uri\": {\n      \"description\": \"\
-        monitor_uri\",\n      \"type\": \"string\"\n    }\n  }\n}"
-      status_code: '202'
     summary: Set monitoring configuration.
 rest_endpoint: /v1/support/settings
 permalink: /rest-api-guide/support/settings.html

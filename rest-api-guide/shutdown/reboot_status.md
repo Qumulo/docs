@@ -4,7 +4,6 @@ methods:
   get:
     parameters: []
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"reboot_status\",\n  \"type\": \"object\",\n\
         \  \"properties\": {\n    \"state\": {\n      \"type\": \"string\",\n    \
@@ -21,7 +20,9 @@ methods:
         ,\n      \"type\": \"number\"\n    },\n    \"error_message\": {\n      \"\
         description\": \"error_message\",\n      \"type\": \"string\"\n    }\n  }\n\
         }"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Retrieve the current status of the reboot manager.
 rest_endpoint: /v1/shutdown/reboot/status
 permalink: /rest-api-guide/shutdown/reboot_status.html

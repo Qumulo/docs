@@ -6,11 +6,10 @@ methods:
     - description: Bucket name
       name: name
       required: true
-    response_body:
+    response_body: {}
+    responses:
+    - code: '200'
       description: Return value on success
-      example_value: '"TO DO"'
-      schema: '"TO DO"'
-      status_code: '200'
     summary: Gets the policy on an S3 bucket.
   put:
     parameters:
@@ -25,11 +24,10 @@ methods:
     - description: ETag for expected version
       name: If-Match
       required: false
-    response_body:
+    response_body: {}
+    responses:
+    - code: '200'
       description: Return value on success
-      example_value: '"TO DO"'
-      schema: '"TO DO"'
-      status_code: '200'
     summary: 'Sets the policy on an S3 bucket. The format of the bucket policycan
       be found here: https://docs.qumulo.com/administrator-guide/s3-api/creating-managing-s3-buckets.html'
 rest_endpoint: /v1/s3/buckets/{name}/policy

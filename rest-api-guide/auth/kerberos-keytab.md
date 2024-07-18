@@ -6,16 +6,14 @@ methods:
     - description: ETag for expected version
       name: If-Match
       required: false
-    response_body:
+    response_body: {}
+    responses:
+    - code: '200'
       description: Return value on success
-      example_value: '"TO DO"'
-      schema: '"TO DO"'
-      status_code: '200'
     summary: Delete the current Kerberos keytab configuration
   get:
     parameters: []
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"kerberos_keytab\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"entries\": {\n      \"type\": \"array\",\n \
@@ -73,7 +71,9 @@ methods:
         \ \"key\": {\n            \"type\": \"array\",\n            \"items\": {\n\
         \              \"description\": \"key\",\n              \"type\": \"number\"\
         \n            }\n          }\n        }\n      }\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Get the entries from the current keytab configuration
   put:
     parameters:
@@ -84,7 +84,6 @@ methods:
       example_value: '"TO DO"'
       schema: "{\n  \"type\": \"object\"\n}"
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"kerberos_keytab\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"entries\": {\n      \"type\": \"array\",\n \
@@ -142,7 +141,9 @@ methods:
         \ \"key\": {\n            \"type\": \"array\",\n            \"items\": {\n\
         \              \"description\": \"key\",\n              \"type\": \"number\"\
         \n            }\n          }\n        }\n      }\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Set the Kerberos keytab from a generated keytab file. This API also accepts
       a kerberos keytab in the JSON form returned by the corresponding GET request.
 rest_endpoint: /v1/auth/kerberos-keytab

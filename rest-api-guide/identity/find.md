@@ -25,7 +25,6 @@ methods:
         : \"string\"\n    },\n    \"name\": {\n      \"description\": \"name\",\n\
         \      \"type\": \"string\"\n    }\n  }\n}"
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_identity\",\n  \"type\": \"object\",\n\
         \  \"properties\": {\n    \"domain\": {\n      \"type\": \"string\",\n   \
@@ -46,7 +45,9 @@ methods:
         \n    },\n    \"sid\": {\n      \"description\": \"sid\",\n      \"type\"\
         : \"string\"\n    },\n    \"name\": {\n      \"description\": \"name\",\n\
         \      \"type\": \"string\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Search for identity and populate all fields.
 rest_endpoint: /v1/identity/find
 permalink: /rest-api-guide/identity/find.html

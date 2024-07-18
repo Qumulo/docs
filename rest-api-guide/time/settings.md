@@ -4,7 +4,6 @@ methods:
   get:
     parameters: []
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"conf_time_state\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"use_ad_for_primary\": {\n      \"description\"\
@@ -12,7 +11,9 @@ methods:
         ,\n      \"type\": \"boolean\"\n    },\n    \"ntp_servers\": {\n      \"type\"\
         : \"array\",\n      \"items\": {\n        \"description\": \"List of NTP servers\"\
         ,\n        \"type\": \"string\"\n      }\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Retrieve the server's time-management configuration. Refer to the 'Set
       Time Configuration' method for a description of the returned fields.
   patch:
@@ -29,7 +30,6 @@ methods:
         : \"array\",\n      \"items\": {\n        \"description\": \"List of NTP servers\"\
         ,\n        \"type\": \"string\"\n      }\n    }\n  }\n}"
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"conf_time_state\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"use_ad_for_primary\": {\n      \"description\"\
@@ -37,7 +37,9 @@ methods:
         ,\n      \"type\": \"boolean\"\n    },\n    \"ntp_servers\": {\n      \"type\"\
         : \"array\",\n      \"items\": {\n        \"description\": \"List of NTP servers\"\
         ,\n        \"type\": \"string\"\n      }\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Set just the provided components of the server's time-management configuration.
   put:
     parameters:
@@ -53,7 +55,6 @@ methods:
         : \"array\",\n      \"items\": {\n        \"description\": \"List of NTP servers\"\
         ,\n        \"type\": \"string\"\n      }\n    }\n  }\n}"
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"conf_time_state\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"use_ad_for_primary\": {\n      \"description\"\
@@ -61,7 +62,9 @@ methods:
         ,\n      \"type\": \"boolean\"\n    },\n    \"ntp_servers\": {\n      \"type\"\
         : \"array\",\n      \"items\": {\n        \"description\": \"List of NTP servers\"\
         ,\n        \"type\": \"string\"\n      }\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Set the server's time-management configuration.
 rest_endpoint: /v1/time/settings
 permalink: /rest-api-guide/time/settings.html

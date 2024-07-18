@@ -28,13 +28,14 @@ methods:
         : {\n      \"description\": \"The name of the key that will be created in\
         \ the Key Management Server.\",\n      \"type\": \"string\"\n    }\n  }\n}"
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"encryption_api_v2_create_kmip_key_result\"\
         ,\n  \"type\": \"object\",\n  \"properties\": {\n    \"key_id\": {\n     \
         \ \"description\": \"The key id of the newly created key on the Key Management\
         \ Server.\",\n      \"type\": \"string\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Create a Key in the Key Management Server.
 rest_endpoint: /v2/encryption/external-kms/keys/create
 permalink: /rest-api-guide/encryption/v2_external-kms_keys_create.html

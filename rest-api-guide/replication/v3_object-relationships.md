@@ -4,7 +4,6 @@ methods:
   get:
     parameters: []
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         api_object_relationship_v3\",\n    \"type\": \"object\",\n    \"properties\"\
@@ -38,7 +37,9 @@ methods:
         \   },\n      \"access_key_id\": {\n        \"description\": \"Access key\
         \ ID to use when communicating with the object store\",\n        \"type\"\
         : \"string\"\n      }\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: List existing object replication relationships.
   post:
     parameters: []
@@ -87,7 +88,6 @@ methods:
         \ with the object store\",\n      \"type\": \"string\",\n      \"format\"\
         : \"password\"\n    }\n  }\n}"
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_object_relationship_v3\",\n  \"type\":\
         \ \"object\",\n  \"properties\": {\n    \"id\": {\n      \"description\":\
@@ -118,7 +118,9 @@ methods:
         \ the bucket is located in\",\n      \"type\": \"string\"\n    },\n    \"\
         access_key_id\": {\n      \"description\": \"Access key ID to use when communicating\
         \ with the object store\",\n      \"type\": \"string\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Create a new object replication relationship. Replication will automatically
       start after the relationship is created.
 rest_endpoint: /v3/replication/object-relationships/

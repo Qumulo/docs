@@ -4,7 +4,6 @@ methods:
   get:
     parameters: []
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_user_info\",\n  \"type\": \"object\",\n\
         \  \"properties\": {\n    \"id\": {\n      \"description\": \"The user's unique\
@@ -211,7 +210,9 @@ methods:
         \    },\n    \"access_token_id\": {\n      \"description\": \"The user's access\
         \ token ID. Only present when access token authentication is used.\",\n  \
         \    \"type\": \"string\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Retrieve information about the currently logged in user.
 rest_endpoint: /v1/session/who-am-i
 permalink: /rest-api-guide/session/who-am-i.html

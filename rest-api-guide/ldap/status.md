@@ -4,7 +4,6 @@ methods:
   get:
     parameters: []
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         api_ldap_connection_state\",\n    \"type\": \"object\",\n    \"properties\"\
@@ -27,7 +26,9 @@ methods:
         n * `INTERMITTENT_ERROR` - LDAP_HEALTH_INTERMITTENT_ERROR,\\n * `NO_RECENT_ERROR`\
         \ - LDAP_HEALTH_NO_RECENT_ERROR,\\n * `SUSTAINED_ERROR` - LDAP_HEALTH_SUSTAINED_ERROR\"\
         \n      }\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Get LDAP connection status if applicable.
 rest_endpoint: /v1/ldap/status
 permalink: /rest-api-guide/ldap/status.html

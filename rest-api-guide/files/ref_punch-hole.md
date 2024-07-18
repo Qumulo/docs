@@ -20,7 +20,6 @@ methods:
         : \"string\"\n    },\n    \"size\": {\n      \"description\": \"Size in bytes\
         \ of the hole to create.\",\n      \"type\": \"string\"\n    }\n  }\n}"
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_files_attributes\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"path\": {\n      \"description\": \"Filesystem\
@@ -119,7 +118,9 @@ methods:
         \ data.\",\n      \"type\": \"string\"\n    },\n    \"user_metadata_revision\"\
         : {\n      \"description\": \"The revision for changes to the user defined\
         \ metadata of the file.\",\n      \"type\": \"string\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Create a hole in a region of a file. Destroys all data within the hole
       so that subsequent reads will return zeroes. Returns the post-operation attributes
       of the file.

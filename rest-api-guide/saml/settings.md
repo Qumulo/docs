@@ -4,7 +4,6 @@ methods:
   get:
     parameters: []
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_v1_saml_settings\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"enabled\": {\n      \"description\": \"When\
@@ -34,7 +33,9 @@ methods:
         \ The cluster rejects password-based authentication from AD users of the Web\
         \ UI, qq CLI, and REST API. This setting does not restrict access over file\
         \ protocols such as SMB.\",\n      \"type\": \"boolean\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Retrieve the current SAML integration settings.
   patch:
     parameters:
@@ -73,7 +74,6 @@ methods:
         \ access over file protocols such as SMB.\",\n      \"type\": \"boolean\"\n\
         \    }\n  }\n}"
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_v1_saml_settings\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"enabled\": {\n      \"description\": \"When\
@@ -103,7 +103,9 @@ methods:
         \ The cluster rejects password-based authentication from AD users of the Web\
         \ UI, qq CLI, and REST API. This setting does not restrict access over file\
         \ protocols such as SMB.\",\n      \"type\": \"boolean\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Modify the SAML integration settings.
   put:
     parameters:
@@ -141,7 +143,6 @@ methods:
         \ UI, qq CLI, and REST API. This setting does not restrict access over file\
         \ protocols such as SMB.\",\n      \"type\": \"boolean\"\n    }\n  }\n}"
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_v1_saml_settings\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"enabled\": {\n      \"description\": \"When\
@@ -171,7 +172,9 @@ methods:
         \ The cluster rejects password-based authentication from AD users of the Web\
         \ UI, qq CLI, and REST API. This setting does not restrict access over file\
         \ protocols such as SMB.\",\n      \"type\": \"boolean\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Set the SAML integration settings.
 rest_endpoint: /v1/saml/settings
 permalink: /rest-api-guide/saml/settings.html

@@ -10,11 +10,10 @@ methods:
         Otherwise the root directory is not unlinked.
       name: delete-root-dir
       required: true
-    response_body:
+    response_body: {}
+    responses:
+    - code: '200'
       description: Return value on success
-      example_value: '"TO DO"'
-      schema: '"TO DO"'
-      status_code: '200'
     summary: Delete an existing S3 bucket.
 rest_endpoint: /v1/s3/buckets/{name}
 permalink: /rest-api-guide/s3/buckets_name.html

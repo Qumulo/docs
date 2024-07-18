@@ -10,11 +10,10 @@ methods:
         : \"The unique ID of the master key for at-rest encryption that Qumulo Core\
         \ uses if a Key Management Server is in use.\",\n      \"type\": \"string\"\
         \n    }\n  }\n}"
-    response_body:
+    response_body: {}
+    responses:
+    - code: '200'
       description: Return value on success
-      example_value: '"TO DO"'
-      schema: '"TO DO"'
-      status_code: '200'
     summary: Rotate the encryption at rest keys.
 rest_endpoint: /v2/encryption/rotate-keys
 permalink: /rest-api-guide/encryption/v2_rotate-keys.html

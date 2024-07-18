@@ -4,7 +4,6 @@ methods:
   get:
     parameters: []
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_nfs_exports_v3\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"entries\": {\n      \"type\": \"array\",\n \
@@ -83,7 +82,9 @@ methods:
         n * `FILE_SIZES` - Clamp large file sizes to 4GiB to fit in 32 bits.,\\n *\
         \ `FS_SIZE` - Clamp available, used and total space reported for the FS to\
         \ 4GiB.\"\n            }\n          }\n        }\n      }\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: This method lists NFS exports. Refer to the 'Modify NFS Export' method
       for a description of the returned fields.
   post:
@@ -159,7 +160,6 @@ methods:
         \ available, used and total space reported for the FS to 4GiB.\"\n      }\n\
         \    }\n  }\n}"
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_nfs_export_v3\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"The unique\
@@ -226,7 +226,9 @@ methods:
         n * `FILE_SIZES` - Clamp large file sizes to 4GiB to fit in 32 bits.,\\n *\
         \ `FS_SIZE` - Clamp available, used and total space reported for the FS to\
         \ 4GiB.\"\n      }\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: This method adds an NFS export.
 rest_endpoint: /v3/nfs/exports/
 permalink: /rest-api-guide/nfs/v3_exports.html

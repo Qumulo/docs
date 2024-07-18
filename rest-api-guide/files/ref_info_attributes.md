@@ -14,7 +14,6 @@ methods:
       name: snapshot
       required: false
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_files_attributes\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"path\": {\n      \"description\": \"Filesystem\
@@ -113,7 +112,9 @@ methods:
         \ data.\",\n      \"type\": \"string\"\n    },\n    \"user_metadata_revision\"\
         : {\n      \"description\": \"The revision for changes to the user defined\
         \ metadata of the file.\",\n      \"type\": \"string\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Get file attributes.
   patch:
     parameters:
@@ -222,7 +223,6 @@ methods:
         \ - FS_DIRECTORY_HASH_VERSION_FOLDED,\\n * `FS_DIRECTORY_HASH_VERSION_LOWER`\
         \ - FS_DIRECTORY_HASH_VERSION_LOWER\"\n    }\n  }\n}"
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_files_attributes\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"path\": {\n      \"description\": \"Filesystem\
@@ -321,7 +321,9 @@ methods:
         \ data.\",\n      \"type\": \"string\"\n    },\n    \"user_metadata_revision\"\
         : {\n      \"description\": \"The revision for changes to the user defined\
         \ metadata of the file.\",\n      \"type\": \"string\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Update a subset of file attributes. Owner or mode bits change is done
       POSIX-style; file's ACL is updated to match the requested permissions.
 rest_endpoint: /v1/files/{ref}/info/attributes

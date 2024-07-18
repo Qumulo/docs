@@ -14,7 +14,6 @@ methods:
         \ existing cluster\",\n        \"type\": \"string\"\n      }\n    }\n  }\n\
         }"
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_cluster_calculate_node_add_capacity_response\"\
         ,\n  \"type\": \"object\",\n  \"properties\": {\n    \"new_usable_capacity_in_bytes\"\
@@ -40,7 +39,9 @@ methods:
         \ of tolerable cluster node failures after node-add operations and optimization\
         \ for increased node fault tolerance\",\n          \"type\": \"number\"\n\
         \        }\n      }\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Calculate changes to cluster usable capacity from a proposed node-add
       operation. This endpoint is deprecated in favor of /v2/cluster/nodes/dry-run.
 rest_endpoint: /v1/cluster/calculate-node-add-capacity

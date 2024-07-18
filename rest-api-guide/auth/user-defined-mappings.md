@@ -4,7 +4,6 @@ methods:
   get:
     parameters: []
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         user_equivalence\",\n    \"type\": \"object\",\n    \"properties\": {\n  \
@@ -12,7 +11,9 @@ methods:
         ,\n        \"type\": \"string\"\n      },\n      \"ldap_name\": {\n      \
         \  \"description\": \"ldap_name\",\n        \"type\": \"string\"\n      }\n\
         \    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Get the configured set of AD/LDAP static user defined mappings.
   put:
     parameters:
@@ -28,7 +29,6 @@ methods:
         \  \"description\": \"ldap_name\",\n        \"type\": \"string\"\n      }\n\
         \    }\n  }\n}"
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         user_equivalence\",\n    \"type\": \"object\",\n    \"properties\": {\n  \
@@ -36,7 +36,9 @@ methods:
         ,\n        \"type\": \"string\"\n      },\n      \"ldap_name\": {\n      \
         \  \"description\": \"ldap_name\",\n        \"type\": \"string\"\n      }\n\
         \    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Replace the configured set of AD/LDAP static user defined mappings with
       the supplied set.
 rest_endpoint: /v1/auth/user-defined-mappings/

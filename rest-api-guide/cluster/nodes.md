@@ -4,7 +4,6 @@ methods:
   get:
     parameters: []
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         api_node\",\n    \"type\": \"object\",\n    \"properties\": {\n      \"id\"\
@@ -21,7 +20,9 @@ methods:
         Serial number\",\n        \"type\": \"string\"\n      },\n      \"mac_address\"\
         : {\n        \"description\": \"MAC address for the first network interface\
         \ on this node\",\n        \"type\": \"string\"\n      }\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: List nodes.
   post:
     parameters: []
@@ -37,13 +38,10 @@ methods:
         : {\n      \"description\": \"True to trade-off some increase in usable capacity\
         \ for increased node fault tolerance. Defaults to False.\",\n      \"type\"\
         : \"boolean\"\n    }\n  }\n}"
-    response_body:
+    response_body: {}
+    responses:
+    - code: '202'
       description: Return value on success
-      example_value: '"TO DO"'
-      schema: "{\n  \"description\": \"api_monitor_uri\",\n  \"type\": \"object\"\
-        ,\n  \"properties\": {\n    \"monitor_uri\": {\n      \"description\": \"\
-        monitor_uri\",\n      \"type\": \"string\"\n    }\n  }\n}"
-      status_code: '202'
     summary: Add one or more unconfigured nodes with the given node uuids and admin
       password. This endpoint is deprecated in favor of /v2/cluster/nodes.
 rest_endpoint: /v1/cluster/nodes/

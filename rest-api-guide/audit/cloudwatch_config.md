@@ -4,7 +4,6 @@ methods:
   get:
     parameters: []
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"cloudwatch_audit_user_config\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"enabled\": {\n      \"description\"\
@@ -12,7 +11,9 @@ methods:
         : {\n      \"description\": \"log_group_name\",\n      \"type\": \"string\"\
         \n    },\n    \"region\": {\n      \"description\": \"region\",\n      \"\
         type\": \"string\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Retrieves audit log CloudWatch configuration for the cluster.
   patch:
     parameters:
@@ -28,7 +29,6 @@ methods:
         \n    },\n    \"region\": {\n      \"description\": \"region\",\n      \"\
         type\": \"string\"\n    }\n  }\n}"
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"cloudwatch_audit_user_config\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"enabled\": {\n      \"description\"\
@@ -36,7 +36,9 @@ methods:
         : {\n      \"description\": \"log_group_name\",\n      \"type\": \"string\"\
         \n    },\n    \"region\": {\n      \"description\": \"region\",\n      \"\
         type\": \"string\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Modifies audit log CloudWatch configuration for the cluster.
   put:
     parameters:
@@ -52,7 +54,6 @@ methods:
         \n    },\n    \"region\": {\n      \"description\": \"region\",\n      \"\
         type\": \"string\"\n    }\n  }\n}"
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"cloudwatch_audit_user_config\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"enabled\": {\n      \"description\"\
@@ -60,7 +61,9 @@ methods:
         : {\n      \"description\": \"log_group_name\",\n      \"type\": \"string\"\
         \n    },\n    \"region\": {\n      \"description\": \"region\",\n      \"\
         type\": \"string\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Sets audit log CloudWatch configuration for the cluster.
 rest_endpoint: /v1/audit/cloudwatch/config
 permalink: /rest-api-guide/audit/cloudwatch_config.html

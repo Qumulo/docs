@@ -9,11 +9,10 @@ methods:
     - description: ETag for expected version
       name: If-Match
       required: false
-    response_body:
+    response_body: {}
+    responses:
+    - code: '200'
       description: Return value on success
-      example_value: '"TO DO"'
-      schema: '"TO DO"'
-      status_code: '200'
     summary: Delete the specified replication relationship where this cluster is the
       source.
   get:
@@ -22,7 +21,6 @@ methods:
       name: id
       required: true
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_source_relationship\",\n  \"type\": \"\
         object\",\n  \"properties\": {\n    \"id\": {\n      \"description\": \"Unique\
@@ -89,7 +87,9 @@ methods:
         \ never expire and 'same_as_policy' indicates snapshots should expire at the\
         \ same time as the snapshot policy specifies.\",\n            \"type\": \"\
         string\"\n          }\n        }\n      }\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Get information about the specified replication relationship where this
       cluster is the source.
   patch:
@@ -168,7 +168,6 @@ methods:
         \ same time as the snapshot policy specifies.\",\n            \"type\": \"\
         string\"\n          }\n        }\n      }\n    }\n  }\n}"
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_source_relationship\",\n  \"type\": \"\
         object\",\n  \"properties\": {\n    \"id\": {\n      \"description\": \"Unique\
@@ -235,7 +234,9 @@ methods:
         \ never expire and 'same_as_policy' indicates snapshots should expire at the\
         \ same time as the snapshot policy specifies.\",\n            \"type\": \"\
         string\"\n          }\n        }\n      }\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Modify a subset of fields of an existing replication relationship where
       this cluster is the source.
   put:
@@ -314,7 +315,6 @@ methods:
         \ same time as the snapshot policy specifies.\",\n            \"type\": \"\
         string\"\n          }\n        }\n      }\n    }\n  }\n}"
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_source_relationship\",\n  \"type\": \"\
         object\",\n  \"properties\": {\n    \"id\": {\n      \"description\": \"Unique\
@@ -381,7 +381,9 @@ methods:
         \ never expire and 'same_as_policy' indicates snapshots should expire at the\
         \ same time as the snapshot policy specifies.\",\n            \"type\": \"\
         string\"\n          }\n        }\n      }\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Modify an existing replication relationship where this cluster is the
       source.
 rest_endpoint: /v2/replication/source-relationships/{id}

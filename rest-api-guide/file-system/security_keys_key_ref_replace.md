@@ -20,7 +20,6 @@ methods:
         : {\n      \"description\": \"The key replacement challenge signed with the\
         \ replacement private key.\",\n      \"type\": \"string\"\n    }\n  }\n}"
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_change_lock_key\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"The identifier\
@@ -32,7 +31,9 @@ methods:
         : \"Specifies whether the key is disabled.\",\n      \"type\": \"boolean\"\
         \n    },\n    \"public_key\": {\n      \"description\": \"The contents of\
         \ the public key.\",\n      \"type\": \"string\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Replace the file system public key by using the name or identifier of
       the specified key.
 rest_endpoint: /v1/file-system/security/keys/{key_ref}/replace

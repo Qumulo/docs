@@ -9,11 +9,10 @@ methods:
     - description: ETag for expected version
       name: If-Match
       required: false
-    response_body:
+    response_body: {}
+    responses:
+    - code: '200'
       description: Return value on success
-      example_value: '"TO DO"'
-      schema: '"TO DO"'
-      status_code: '200'
     summary: Delete current NFS configuration, restoring the global settings for this
       tenant.
   get:
@@ -22,7 +21,6 @@ methods:
       name: id
       required: true
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_nfs_settings\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"v4_enabled\": {\n      \"description\": \"Whether\
@@ -34,7 +32,9 @@ methods:
         \ (integrity) is enabled\",\n      \"type\": \"boolean\"\n    },\n    \"auth_sys_enabled\"\
         : {\n      \"description\": \"Whether AUTH_SYS is enabled\",\n      \"type\"\
         : \"boolean\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Retrieve current tenant-specific NFS configuration.
   patch:
     parameters:
@@ -57,7 +57,6 @@ methods:
         : {\n      \"description\": \"Whether AUTH_SYS is enabled\",\n      \"type\"\
         : \"boolean\"\n    }\n  }\n}"
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_nfs_settings\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"v4_enabled\": {\n      \"description\": \"Whether\
@@ -69,7 +68,9 @@ methods:
         \ (integrity) is enabled\",\n      \"type\": \"boolean\"\n    },\n    \"auth_sys_enabled\"\
         : {\n      \"description\": \"Whether AUTH_SYS is enabled\",\n      \"type\"\
         : \"boolean\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Modify current tenant-specific NFS configuration.
   put:
     parameters:
@@ -92,7 +93,6 @@ methods:
         : {\n      \"description\": \"Whether AUTH_SYS is enabled\",\n      \"type\"\
         : \"boolean\"\n    }\n  }\n}"
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_nfs_settings\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"v4_enabled\": {\n      \"description\": \"Whether\
@@ -104,7 +104,9 @@ methods:
         \ (integrity) is enabled\",\n      \"type\": \"boolean\"\n    },\n    \"auth_sys_enabled\"\
         : {\n      \"description\": \"Whether AUTH_SYS is enabled\",\n      \"type\"\
         : \"boolean\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Set current tenant-specific NFS configuration.
 rest_endpoint: /v1/multitenancy/nfs/settings/{id}
 permalink: /rest-api-guide/multitenancy/nfs_settings_id.html

@@ -6,11 +6,10 @@ methods:
     - description: Access Token ID
       name: id
       required: true
-    response_body:
+    response_body: {}
+    responses:
+    - code: '200'
       description: Return value on success
-      example_value: '"TO DO"'
-      schema: '"TO DO"'
-      status_code: '200'
     summary: Delete the specified access token.
   get:
     parameters:
@@ -18,7 +17,6 @@ methods:
       name: id
       required: true
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_access_token_metadata\",\n  \"type\": \"\
         object\",\n  \"properties\": {\n    \"id\": {\n      \"description\": \"The\
@@ -73,7 +71,9 @@ methods:
         ,\n      \"type\": \"string\"\n    },\n    \"enabled\": {\n      \"description\"\
         : \"This access token can be used to authenticate.\",\n      \"type\": \"\
         boolean\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Get metadata about the specified access token.
   patch:
     parameters:
@@ -89,7 +89,6 @@ methods:
         : \"This access token can be used to authenticate.\",\n      \"type\": \"\
         boolean\"\n    }\n  }\n}"
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_access_token_metadata\",\n  \"type\": \"\
         object\",\n  \"properties\": {\n    \"id\": {\n      \"description\": \"The\
@@ -144,7 +143,9 @@ methods:
         ,\n      \"type\": \"string\"\n    },\n    \"enabled\": {\n      \"description\"\
         : \"This access token can be used to authenticate.\",\n      \"type\": \"\
         boolean\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Modify metadata for the specified access token.
 rest_endpoint: /v1/auth/access-tokens/{id}
 permalink: /rest-api-guide/auth/access-tokens_id.html

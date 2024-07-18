@@ -4,7 +4,6 @@ methods:
   get:
     parameters: []
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_snapshots_v1\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"entries\": {\n      \"type\": \"array\",\n \
@@ -30,7 +29,9 @@ methods:
         \ which is a normalized subset of ISO 8601. See http://tools.ietf.org/rfc/rfc3339.txt,\
         \ section 5.6 for ABNF.\",\n            \"type\": \"string\"\n          }\n\
         \        }\n      }\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Returns information about all snapshots.
   post:
     parameters:
@@ -51,7 +52,6 @@ methods:
         \ subset of ISO 8601. See http://tools.ietf.org/rfc/rfc3339.txt, section 5.6\
         \ for ABNF.\",\n      \"type\": \"string\"\n    }\n  }\n}"
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_snapshot_info_v1\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"Unique identifier\
@@ -72,7 +72,9 @@ methods:
         \ time set. Encoded as RFC 3339, which is a normalized subset of ISO 8601.\
         \ See http://tools.ietf.org/rfc/rfc3339.txt, section 5.6 for ABNF.\",\n  \
         \    \"type\": \"string\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Creates a new snapshot and returns its details.
 rest_endpoint: /v1/snapshots/
 permalink: /rest-api-guide/snapshots/snapshots.html

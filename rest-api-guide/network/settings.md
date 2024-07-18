@@ -4,7 +4,6 @@ methods:
   get:
     parameters: []
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_cluster_network_config_v1\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"assigned_by\": {\n      \"type\"\
@@ -35,7 +34,9 @@ methods:
         \n      ],\n      \"description\": \"Ethernet bonding mode (ACTIVE_BACKUP\
         \ or IEEE_8023AD), if the interface is bonded.:\\n * `ACTIVE_BACKUP` - BONDING_MODE_ACTIVE_BACKUP,\\\
         n * `IEEE_8023AD` - BONDING_MODE_IEEE_8023AD\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Get global networking configuration for the whole cluster. This API is
       deprecated in favor of /v2/network/interfaces/ and /v2/network/interfaces/1/networks/.
   patch:
@@ -71,13 +72,10 @@ methods:
         \n      ],\n      \"description\": \"Ethernet bonding mode (ACTIVE_BACKUP\
         \ or IEEE_8023AD), if the interface is bonded.:\\n * `ACTIVE_BACKUP` - BONDING_MODE_ACTIVE_BACKUP,\\\
         n * `IEEE_8023AD` - BONDING_MODE_IEEE_8023AD\"\n    }\n  }\n}"
-    response_body:
+    response_body: {}
+    responses:
+    - code: '202'
       description: Return value on success
-      example_value: '"TO DO"'
-      schema: "{\n  \"description\": \"api_monitor_uri\",\n  \"type\": \"object\"\
-        ,\n  \"properties\": {\n    \"monitor_uri\": {\n      \"description\": \"\
-        monitor_uri\",\n      \"type\": \"string\"\n    }\n  }\n}"
-      status_code: '202'
     summary: Update networking configuration for the whole cluster. This API is deprecated
       in favor of /v2/network/interfaces/ and /v2/network/interfaces/1/networks/.
   put:
@@ -116,13 +114,10 @@ methods:
         \n      ],\n      \"description\": \"Ethernet bonding mode (ACTIVE_BACKUP\
         \ or IEEE_8023AD), if the interface is bonded.:\\n * `ACTIVE_BACKUP` - BONDING_MODE_ACTIVE_BACKUP,\\\
         n * `IEEE_8023AD` - BONDING_MODE_IEEE_8023AD\"\n    }\n  }\n}"
-    response_body:
+    response_body: {}
+    responses:
+    - code: '202'
       description: Return value on success
-      example_value: '"TO DO"'
-      schema: "{\n  \"description\": \"api_monitor_uri\",\n  \"type\": \"object\"\
-        ,\n  \"properties\": {\n    \"monitor_uri\": {\n      \"description\": \"\
-        monitor_uri\",\n      \"type\": \"string\"\n    }\n  }\n}"
-      status_code: '202'
     summary: Change networking configuration for the whole cluster. This API is deprecated
       in favor of /v2/network/interfaces/ and /v2/network/interfaces/1/networks/.
 rest_endpoint: /v1/network/settings

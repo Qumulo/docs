@@ -4,7 +4,6 @@ methods:
   get:
     parameters: []
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         api_disk_slot\",\n    \"type\": \"object\",\n    \"properties\": {\n     \
@@ -59,7 +58,9 @@ methods:
         \        ],\n        \"description\": \"Current state of the slot's LED:\\\
         n * `LED_PATTERN_FAILURE` - failure,\\n * `LED_PATTERN_LOCATE` - locate,\\\
         n * `LED_PATTERN_NORMAL` - normal\"\n      }\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: List slots.
 rest_endpoint: /v1/cluster/slots/
 permalink: /rest-api-guide/cluster/slots.html

@@ -23,7 +23,6 @@ methods:
         : \"string\"\n    },\n    \"size\": {\n      \"description\": \"Size in bytes\
         \ of the hole to create.\",\n      \"type\": \"string\"\n    }\n  }\n}"
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_named_stream_attributes\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"name\": {\n      \"description\"\
@@ -33,7 +32,9 @@ methods:
         \     \"description\": \"datablocks\",\n      \"type\": \"string\"\n    },\n\
         \    \"data_revision\": {\n      \"description\": \"data_revision\",\n   \
         \   \"type\": \"string\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Create a hole in a region of a stream. Destroys all data within the hole
       so that subsequent reads will return zeroes. Returns the post-operation attributes
       of the stream.

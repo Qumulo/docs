@@ -15,7 +15,6 @@ methods:
       name: limit
       required: false
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_upload_description_list_model\",\n  \"\
         type\": \"object\",\n  \"properties\": {\n    \"uploads\": {\n      \"type\"\
@@ -68,7 +67,9 @@ methods:
         \   \"description\": \"The system has initiated the current upload as part\
         \ of a different request.\",\n            \"type\": \"boolean\"\n        \
         \  }\n        }\n      }\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: List all in-progress S3 uploads for a specific bucket.
 rest_endpoint: /v1/s3/buckets/{name}/uploads/
 permalink: /rest-api-guide/s3/buckets_name_uploads.html

@@ -4,7 +4,6 @@ methods:
   get:
     parameters: []
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"encryption_api_v2_key_store_response_union\"\
         ,\n  \"type\": \"object\",\n  \"properties\": {\n    \"type\": {\n      \"\
@@ -29,7 +28,9 @@ methods:
         \   },\n        \"config_creation_time\": {\n          \"description\": \"\
         The time at which the current configuration became active.\",\n          \"\
         type\": \"string\"\n        }\n      }\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: View the active at-rest encryption configuration.
   put:
     parameters: []
@@ -58,11 +59,10 @@ methods:
         \   \"description\": \"The unique ID of the master key for at-rest encryption\
         \ that is stored in the Key Management Server.\",\n          \"type\": \"\
         string\"\n        }\n      }\n    }\n  }\n}"
-    response_body:
+    response_body: {}
+    responses:
+    - code: '200'
       description: Return value on success
-      example_value: '"TO DO"'
-      schema: '"TO DO"'
-      status_code: '200'
     summary: Update the active at-rest encryption configuration.
 rest_endpoint: /v2/encryption/key-store
 permalink: /rest-api-guide/encryption/v2_key-store.html

@@ -6,11 +6,10 @@ methods:
     - description: Job ID (uint64)
       name: id
       required: true
-    response_body:
+    response_body: {}
+    responses:
+    - code: '200'
       description: Return value on success
-      example_value: '"TO DO"'
-      schema: '"TO DO"'
-      status_code: '200'
     summary: Cancel directory-tree deletion on the specified directory. If the job
       has finished, returns 404. Also returns 404 if there was never a job on the
       given object
@@ -20,7 +19,6 @@ methods:
       name: id
       required: true
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"tree_delete_job_status\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"The ID of\
@@ -47,7 +45,9 @@ methods:
         \ being deleted.\",\n      \"type\": \"string\"\n    },\n    \"remaining_files\"\
         : {\n      \"description\": \"Remaining number of non-directory files in the\
         \ tree being deleted.\",\n      \"type\": \"string\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Get status of directory-tree deletion on the specified directory. If
       the job has finished, returns 404. Also returns 404 if there was never a job
       on the given object

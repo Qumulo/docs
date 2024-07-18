@@ -4,7 +4,6 @@ methods:
   get:
     parameters: []
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         api_source_relationship\",\n    \"type\": \"object\",\n    \"properties\"\
@@ -75,7 +74,9 @@ methods:
         \ indicates snapshots should expire at the same time as the snapshot policy\
         \ specifies.\",\n              \"type\": \"string\"\n            }\n     \
         \     }\n        }\n      }\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: List existing replication relationships where this cluster is the source.
   post:
     parameters: []
@@ -151,7 +152,6 @@ methods:
         \ at the same time as the snapshot policy specifies.\",\n            \"type\"\
         : \"string\"\n          }\n        }\n      }\n    }\n  }\n}"
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_source_relationship\",\n  \"type\": \"\
         object\",\n  \"properties\": {\n    \"id\": {\n      \"description\": \"Unique\
@@ -218,7 +218,9 @@ methods:
         \ never expire and 'same_as_policy' indicates snapshots should expire at the\
         \ same time as the snapshot policy specifies.\",\n            \"type\": \"\
         string\"\n          }\n        }\n      }\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Create a new replication relationship with this cluster as the source.
       To begin replication, the corresponding relationship on the target cluster must
       be authorized using the authorize API.

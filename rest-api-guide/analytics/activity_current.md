@@ -11,7 +11,6 @@ methods:
       name: type
       required: false
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_rates\",\n  \"type\": \"object\",\n  \"\
         properties\": {\n    \"entries\": {\n      \"type\": \"array\",\n      \"\
@@ -31,7 +30,9 @@ methods:
         \ - HEAT_OP_TYPE_FILE_THROUGHPUT_WRITE,\\n * `metadata-iops-read` - HEAT_OP_TYPE_METADATA_IOPS_READ,\\\
         n * `metadata-iops-write` - HEAT_OP_TYPE_METADATA_IOPS_WRITE\"\n         \
         \ }\n        }\n      }\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Returns the current sampled IOPS and throughput from the cluster.
 rest_endpoint: /v1/analytics/activity/current
 permalink: /rest-api-guide/analytics/activity_current.html

@@ -4,7 +4,6 @@ methods:
   get:
     parameters: []
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_tenant_configs\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"entries\": {\n      \"type\": \"array\",\n \
@@ -32,7 +31,9 @@ methods:
         \     \"identity_config_id\": {\n            \"description\": \"Unique identifier\
         \ for the identity configuration to use for this tenant.\",\n            \"\
         type\": \"number\"\n          }\n        }\n      }\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Get configurations of all tenants.
   post:
     parameters: []
@@ -60,7 +61,6 @@ methods:
         \ for the identity configuration to use for this tenant.\",\n      \"type\"\
         : \"number\"\n    }\n  }\n}"
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_tenant_config\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"Unique identifier\
@@ -82,7 +82,9 @@ methods:
         ,\n        \"type\": \"number\"\n      }\n    },\n    \"identity_config_id\"\
         : {\n      \"description\": \"Unique identifier for the identity configuration\
         \ to use for this tenant.\",\n      \"type\": \"number\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Create a tenant.
 rest_endpoint: /v1/multitenancy/tenants/
 permalink: /rest-api-guide/multitenancy/tenants.html

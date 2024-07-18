@@ -7,7 +7,6 @@ methods:
       name: id
       required: true
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_snapshot_capacity_usage_info\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"id\": {\n      \"description\":\
@@ -15,7 +14,9 @@ methods:
         \    \"capacity_used_bytes\": {\n      \"description\": \"Amount of space\
         \ that would be reclaimed if the snapshot were deleted\",\n      \"type\"\
         : \"string\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Returns the approximate amount of space that would be reclaimed if the
       given snapshot were deleted.
 rest_endpoint: /v1/snapshots/capacity-used-per-snapshot/{id}

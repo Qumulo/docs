@@ -7,7 +7,6 @@ methods:
       name: id
       required: true
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"snapshots_api_policy_status_v2\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"id\": {\n      \"description\":\
@@ -96,7 +95,9 @@ methods:
         \        \"type\": \"object\",\n        \"properties\": {\n          \"id\"\
         : {\n            \"description\": \"id\",\n            \"type\": \"string\"\
         \n          }\n        }\n      }\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Returns status information about a specific snapshot policy.
 rest_endpoint: /v2/snapshots/policies/status/{id}
 permalink: /rest-api-guide/snapshots/v2_policies_status_id.html

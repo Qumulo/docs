@@ -25,7 +25,6 @@ methods:
       name: snapshot
       required: false
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_files_dir_aggregates\",\n  \"type\": \"\
         object\",\n  \"properties\": {\n    \"path\": {\n      \"description\": \"\
@@ -83,7 +82,9 @@ methods:
         \    \"description\": \"total_other_objects\",\n      \"type\": \"string\"\
         \n    },\n    \"total_named_streams\": {\n      \"description\": \"total_named_streams\"\
         ,\n      \"type\": \"string\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Return aggregated data for a directory (like capacity, IOPS, etc.)
 rest_endpoint: /v1/files/{ref}/aggregates/
 permalink: /rest-api-guide/files/ref_aggregates.html

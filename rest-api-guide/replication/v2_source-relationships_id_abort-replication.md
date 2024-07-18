@@ -11,11 +11,10 @@ methods:
         of retrying the current one. Defaults to false if not specified.
       name: skip-active-policy-snapshot
       required: false
-    response_body:
+    response_body: {}
+    responses:
+    - code: '200'
       description: Return value on success
-      example_value: '"TO DO"'
-      schema: '"TO DO"'
-      status_code: '200'
     summary: Abort any ongoing replication work for the specified replication relationship
       where this cluster is the source.
 rest_endpoint: /v2/replication/source-relationships/{id}/abort-replication

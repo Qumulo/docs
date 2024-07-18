@@ -7,7 +7,6 @@ methods:
       name: login_name
       required: true
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_ldap_login_name_to_uid_numbers\",\n  \"\
         type\": \"object\",\n  \"properties\": {\n    \"login_name\": {\n      \"\
@@ -15,7 +14,9 @@ methods:
         uid_numbers\": {\n      \"type\": \"array\",\n      \"items\": {\n       \
         \ \"description\": \"uid_numbers\",\n        \"type\": \"number\"\n      }\n\
         \    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Return the UID Numbers of the given login name. This is found by issuing
       an LDAP query against the LDAP server configured
 rest_endpoint: /v1/ldap/login-name/{login_name}/uid-numbers

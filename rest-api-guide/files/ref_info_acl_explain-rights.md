@@ -85,7 +85,6 @@ methods:
         \           \"type\": \"string\"\n          }\n        }\n      }\n    }\n\
         \  }\n}"
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_files_effective_rights_explanation\",\n\
         \  \"type\": \"object\",\n  \"properties\": {\n    \"owner\": {\n      \"\
@@ -546,7 +545,9 @@ methods:
         \ access,\\n * `WRITE_ATTR` - Attribute write access,\\n * `WRITE_EA` - Extended\
         \ attribute write access,\\n * `WRITE_GROUP` - Group write access\"\n    \
         \  }\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Explain how rights are granted to a user for a file/directory.
 rest_endpoint: /v1/files/{ref}/info/acl/explain-rights
 permalink: /rest-api-guide/files/ref_info_acl_explain-rights.html

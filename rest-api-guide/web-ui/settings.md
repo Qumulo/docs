@@ -4,7 +4,6 @@ methods:
   get:
     parameters: []
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"web_ui_settings\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"inactivity_timeout\": {\n      \"description\"\
@@ -15,7 +14,9 @@ methods:
         : {\n      \"description\": \"When set, the Web UI shows a banner with the\
         \ specified Markdown string on the login screen.\",\n      \"type\": \"string\"\
         \n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Return settings (such as the inactivity timeout) that the Web UI uses.
       Because the Web UI can apply these settings before the user logs in, this method
       doesn't require authentication.
@@ -36,7 +37,6 @@ methods:
         \ specified Markdown string on the login screen.\",\n      \"type\": \"string\"\
         \n    }\n  }\n}"
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"web_ui_settings\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"inactivity_timeout\": {\n      \"description\"\
@@ -47,7 +47,9 @@ methods:
         : {\n      \"description\": \"When set, the Web UI shows a banner with the\
         \ specified Markdown string on the login screen.\",\n      \"type\": \"string\"\
         \n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Replace individual Web UI settings. These settings take effect immediately
       for new Web UI sessions.
   put:
@@ -67,7 +69,6 @@ methods:
         \ specified Markdown string on the login screen.\",\n      \"type\": \"string\"\
         \n    }\n  }\n}"
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"web_ui_settings\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"inactivity_timeout\": {\n      \"description\"\
@@ -78,7 +79,9 @@ methods:
         : {\n      \"description\": \"When set, the Web UI shows a banner with the\
         \ specified Markdown string on the login screen.\",\n      \"type\": \"string\"\
         \n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Replace all the settings that the Web UI uses. These settings take effect
       immediately for new UI sessions.
 rest_endpoint: /v1/web-ui/settings

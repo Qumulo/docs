@@ -12,11 +12,10 @@ methods:
         lock entries are still listed under the old address.
       name: owner_address
       required: false
-    response_body:
+    response_body: {}
+    responses:
+    - code: '200'
       description: Return value on success
-      example_value: '"TO DO"'
-      schema: '"TO DO"'
-      status_code: '200'
     summary: Release all locks held by a particular client. This is dangerous, and
       should only be used after confirming that the client is dead.
   get:
@@ -39,7 +38,6 @@ methods:
       name: limit
       required: false
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_byte_range_grants\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"grants\": {\n      \"type\": \"array\",\n  \
@@ -71,7 +69,9 @@ methods:
         \  \"node_address\": {\n            \"description\": \"The IP address of the\
         \ node that receives the request.\",\n            \"type\": \"string\"\n \
         \         }\n        }\n      }\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Return a list of all granted file locks that the specified machine owns.
 rest_endpoint: /v1/files/locks/nlm/byte-range/
 permalink: /rest-api-guide/files/locks_nlm_byte-range.html

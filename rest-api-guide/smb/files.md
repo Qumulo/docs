@@ -19,7 +19,6 @@ methods:
       name: limit
       required: false
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_smb_files_get_response\",\n  \"type\":\
         \ \"object\",\n  \"properties\": {\n    \"file_handles\": {\n      \"type\"\
@@ -86,7 +85,9 @@ methods:
         \           \"path\": {\n                \"description\": \"path\",\n    \
         \            \"type\": \"string\"\n              }\n            }\n      \
         \    }\n        }\n      }\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Enumerate open file handles
 rest_endpoint: /v1/smb/files/
 permalink: /rest-api-guide/smb/files.html

@@ -13,11 +13,10 @@ methods:
         skip_forward_cache\": {\n      \"description\": \"When true, forward lookup\
         \ results will not be cleared from the cache.\",\n      \"type\": \"boolean\"\
         \n    }\n  }\n}"
-    response_body:
+    response_body: {}
+    responses:
+    - code: '200'
       description: Return value on success
-      example_value: '"TO DO"'
-      schema: '"TO DO"'
-      status_code: '200'
     summary: Clears the Qumulo local DNS cache
 rest_endpoint: /v1/dns/clear-dns-cache
 permalink: /rest-api-guide/dns/clear-dns-cache.html

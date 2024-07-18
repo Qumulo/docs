@@ -4,7 +4,6 @@ methods:
   get:
     parameters: []
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_ad_status\",\n  \"type\": \"object\",\n\
         \  \"properties\": {\n    \"status\": {\n      \"type\": \"string\",\n   \
@@ -49,7 +48,9 @@ methods:
         n * `NO_RECENT_ERROR` - LDAP_HEALTH_NO_RECENT_ERROR,\\n * `SUSTAINED_ERROR`\
         \ - LDAP_HEALTH_SUSTAINED_ERROR\"\n          }\n        }\n      }\n    }\n\
         \  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Get Active Directory configuration and status.
 rest_endpoint: /v1/ad/status
 permalink: /rest-api-guide/ad/status.html

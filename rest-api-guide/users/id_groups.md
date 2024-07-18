@@ -7,7 +7,6 @@ methods:
       name: id
       required: true
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         api_group\",\n    \"type\": \"object\",\n    \"properties\": {\n      \"id\"\
@@ -17,7 +16,9 @@ methods:
         \        \"description\": \"The group's SID\",\n        \"type\": \"string\"\
         \n      },\n      \"gid\": {\n        \"description\": \"The group's NFS gid\"\
         ,\n        \"type\": \"string\"\n      }\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Retrieve group membership of a specific user. Refer to the 'Modify group'
       method for a description of the returned fields. Returns an empty array if the
       provided user is not a local user.

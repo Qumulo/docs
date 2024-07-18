@@ -10,7 +10,6 @@ methods:
       name: node_id
       required: true
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_interface_network_statuses\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"node_id\": {\n      \"description\"\
@@ -130,7 +129,9 @@ methods:
         subnet_mask\": {\n          \"description\": \"Subnet mask of the instance's\
         \ network.\",\n          \"type\": \"string\"\n        }\n      }\n    }\n\
         \  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Retrieve the network status of a node on the underlying network interface
 rest_endpoint: /v2/network/interfaces/{interface_id}/status/{node_id}
 permalink: /rest-api-guide/network/v2_interfaces_interface_id_status_node_id.html

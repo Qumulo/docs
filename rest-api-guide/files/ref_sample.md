@@ -19,7 +19,6 @@ methods:
       name: limit
       required: true
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         api_files_aggregates\",\n    \"type\": \"object\",\n    \"properties\": {\n\
@@ -57,7 +56,9 @@ methods:
         : \"string\"\n      },\n      \"num_named_streams\": {\n        \"description\"\
         : \"Total number of named streams in the directory\",\n        \"type\": \"\
         string\"\n      }\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Retrieve a random sampling of files, with the probability of being chosen
       based on by-value property.
 rest_endpoint: /v1/files/{ref}/sample/

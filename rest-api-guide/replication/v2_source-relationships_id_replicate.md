@@ -6,13 +6,10 @@ methods:
     - description: Relationship identifier
       name: id
       required: true
-    response_body:
+    response_body: {}
+    responses:
+    - code: '202'
       description: Return value on success
-      example_value: '"TO DO"'
-      schema: "{\n  \"description\": \"api_monitor_uri\",\n  \"type\": \"object\"\
-        ,\n  \"properties\": {\n    \"monitor_uri\": {\n      \"description\": \"\
-        monitor_uri\",\n      \"type\": \"string\"\n    }\n  }\n}"
-      status_code: '202'
     summary: Replicate from the source to the target of the specified replication
       relationship where this cluster is the source.
 rest_endpoint: /v2/replication/source-relationships/{id}/replicate

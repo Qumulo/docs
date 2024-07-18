@@ -9,11 +9,10 @@ methods:
     - description: ETag for expected version
       name: If-Match
       required: false
-    response_body:
+    response_body: {}
+    responses:
+    - code: '200'
       description: Return value on success
-      example_value: '"TO DO"'
-      schema: '"TO DO"'
-      status_code: '200'
     summary: Delete current SMB configuration, restoring the global settings for this
       tenant.
   get:
@@ -22,7 +21,6 @@ methods:
       name: id
       required: true
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_smb_settings\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"session_encryption\": {\n      \"type\": \"\
@@ -53,7 +51,9 @@ methods:
         ,\n      \"type\": \"boolean\"\n    },\n    \"signing_required\": {\n    \
         \  \"description\": \"Requires messages from non-guest users to be signed.\"\
         ,\n      \"type\": \"boolean\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Retrieve current tenant-specific SMB configuration.
   patch:
     parameters:
@@ -95,7 +95,6 @@ methods:
         \  \"description\": \"Requires messages from non-guest users to be signed.\"\
         ,\n      \"type\": \"boolean\"\n    }\n  }\n}"
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_smb_settings\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"session_encryption\": {\n      \"type\": \"\
@@ -126,7 +125,9 @@ methods:
         ,\n      \"type\": \"boolean\"\n    },\n    \"signing_required\": {\n    \
         \  \"description\": \"Requires messages from non-guest users to be signed.\"\
         ,\n      \"type\": \"boolean\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Modify current tenant-specific SMB configuration.
   put:
     parameters:
@@ -168,7 +169,6 @@ methods:
         \  \"description\": \"Requires messages from non-guest users to be signed.\"\
         ,\n      \"type\": \"boolean\"\n    }\n  }\n}"
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_smb_settings\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"session_encryption\": {\n      \"type\": \"\
@@ -199,7 +199,9 @@ methods:
         ,\n      \"type\": \"boolean\"\n    },\n    \"signing_required\": {\n    \
         \  \"description\": \"Requires messages from non-guest users to be signed.\"\
         ,\n      \"type\": \"boolean\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Set current tenant-specific SMB configuration.
 rest_endpoint: /v1/multitenancy/smb/settings/{id}
 permalink: /rest-api-guide/multitenancy/smb_settings_id.html

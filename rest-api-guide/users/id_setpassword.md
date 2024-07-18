@@ -12,11 +12,10 @@ methods:
         \  \"properties\": {\n    \"new_password\": {\n      \"description\": \"new_password\"\
         ,\n      \"type\": \"string\",\n      \"format\": \"password\"\n    }\n  }\n\
         }"
-    response_body:
+    response_body: {}
+    responses:
+    - code: '200'
       description: Return value on success
-      example_value: '"TO DO"'
-      schema: '"TO DO"'
-      status_code: '200'
     summary: Set a local user's password.
 rest_endpoint: /v1/users/{id}/setpassword
 permalink: /rest-api-guide/users/id_setpassword.html

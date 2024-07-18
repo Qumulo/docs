@@ -4,7 +4,6 @@ methods:
   get:
     parameters: []
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         api_network_status_response\",\n    \"type\": \"object\",\n    \"properties\"\
@@ -77,7 +76,9 @@ methods:
         : \"UNIX epoch timestamp for when the network status was sampled.\",\n   \
         \         \"type\": \"string\"\n          }\n        }\n      }\n    }\n \
         \ }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: This method lists the network status of all nodes. This API is deprecated
       in favor of /v2/network/interfaces/1/status/.
 rest_endpoint: /v1/network/status/

@@ -14,7 +14,6 @@ methods:
       name: snapshot
       required: false
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_files_derive_mode_explanation\",\n  \"\
         type\": \"object\",\n  \"properties\": {\n    \"mode\": {\n      \"description\"\
@@ -468,7 +467,9 @@ methods:
         \    \"mode_bits_granted\": {\n            \"description\": \"Mode bits granted\
         \ by this ACE after previous DENYs are applied.\",\n            \"type\":\
         \ \"string\"\n          }\n        }\n      }\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Explain the derived POSIX mode for a file/directory.
 rest_endpoint: /v1/files/{ref}/info/acl/explain-posix-mode
 permalink: /rest-api-guide/files/ref_info_acl_explain-posix-mode.html

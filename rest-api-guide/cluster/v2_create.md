@@ -25,13 +25,10 @@ methods:
         \ will be able to sustain\",\n      \"type\": \"number\"\n    },\n    \"max_node_failures\"\
         : {\n      \"description\": \"The maximum number of node failures this cluster\
         \ will be able to sustain\",\n      \"type\": \"number\"\n    }\n  }\n}"
-    response_body:
+    response_body: {}
+    responses:
+    - code: '202'
       description: Return value on success
-      example_value: '"TO DO"'
-      schema: "{\n  \"description\": \"api_monitor_uri\",\n  \"type\": \"object\"\
-        ,\n  \"properties\": {\n    \"monitor_uri\": {\n      \"description\": \"\
-        monitor_uri\",\n      \"type\": \"string\"\n    }\n  }\n}"
-      status_code: '202'
     summary: Form a cluster with the given set of node UUIDs and admin password.
 rest_endpoint: /v2/cluster/create
 permalink: /rest-api-guide/cluster/v2_create.html

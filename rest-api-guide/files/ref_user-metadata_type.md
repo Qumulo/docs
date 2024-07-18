@@ -25,7 +25,6 @@ methods:
       name: limit
       required: false
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_files_user_metadata_range_result\",\n \
         \ \"type\": \"object\",\n  \"properties\": {\n    \"entries\": {\n      \"\
@@ -43,7 +42,9 @@ methods:
         \  \"description\": \"The data that the user-defined metadata entry stores.\"\
         ,\n              \"type\": \"number\"\n            }\n          }\n      \
         \  }\n      }\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Retrieve the user-defined metadata of a specified type for the current
       file. Values are base 64 encoded.
 rest_endpoint: /v1/files/{ref}/user-metadata/{type}/

@@ -9,11 +9,10 @@ methods:
     - description: ETag for expected version
       name: If-Match
       required: false
-    response_body:
+    response_body: {}
+    responses:
+    - code: '200'
       description: Return value on success
-      example_value: '"TO DO"'
-      schema: '"TO DO"'
-      status_code: '200'
     summary: Delete a role.
   get:
     parameters:
@@ -21,7 +20,6 @@ methods:
       name: role_name
       required: true
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"role_model\",\n  \"type\": \"object\",\n  \"\
         properties\": {\n    \"description\": {\n      \"description\": \"Description\
@@ -217,7 +215,9 @@ methods:
         \ configuration and status,\\n * `PRIVILEGE_UPGRADE_WRITE` - Perform upgrades,\\\
         n * `PRIVILEGE_WEB_UI_SETTINGS_WRITE` - Modify web UI settings\"\n      }\n\
         \    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Retrieve information about the role.
   patch:
     parameters:
@@ -424,7 +424,6 @@ methods:
         n * `PRIVILEGE_WEB_UI_SETTINGS_WRITE` - Modify web UI settings\"\n      }\n\
         \    }\n  }\n}"
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"role_model\",\n  \"type\": \"object\",\n  \"\
         properties\": {\n    \"description\": {\n      \"description\": \"Description\
@@ -620,7 +619,9 @@ methods:
         \ configuration and status,\\n * `PRIVILEGE_UPGRADE_WRITE` - Perform upgrades,\\\
         n * `PRIVILEGE_WEB_UI_SETTINGS_WRITE` - Modify web UI settings\"\n      }\n\
         \    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Modify fields on a role.
   put:
     parameters:
@@ -827,7 +828,6 @@ methods:
         n * `PRIVILEGE_WEB_UI_SETTINGS_WRITE` - Modify web UI settings\"\n      }\n\
         \    }\n  }\n}"
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"role_model\",\n  \"type\": \"object\",\n  \"\
         properties\": {\n    \"description\": {\n      \"description\": \"Description\
@@ -1023,7 +1023,9 @@ methods:
         \ configuration and status,\\n * `PRIVILEGE_UPGRADE_WRITE` - Perform upgrades,\\\
         n * `PRIVILEGE_WEB_UI_SETTINGS_WRITE` - Modify web UI settings\"\n      }\n\
         \    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Modify a role.
 rest_endpoint: /v1/auth/roles/{role_name}
 permalink: /rest-api-guide/auth/roles_role_name.html

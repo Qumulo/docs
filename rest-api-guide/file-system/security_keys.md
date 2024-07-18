@@ -4,7 +4,6 @@ methods:
   get:
     parameters: []
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_change_lock_keys\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"entries\": {\n      \"type\": \"array\",\n \
@@ -21,7 +20,9 @@ methods:
         \       },\n          \"public_key\": {\n            \"description\": \"The\
         \ contents of the public key.\",\n            \"type\": \"string\"\n     \
         \     }\n        }\n      }\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: "List the file system\u2019s public keys."
   post:
     parameters: []
@@ -37,7 +38,6 @@ methods:
         : \"The name of the key signed with the private key.\",\n      \"type\": \"\
         string\"\n    }\n  }\n}"
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_change_lock_key\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"The identifier\
@@ -49,7 +49,9 @@ methods:
         : \"Specifies whether the key is disabled.\",\n      \"type\": \"boolean\"\
         \n    },\n    \"public_key\": {\n      \"description\": \"The contents of\
         \ the public key.\",\n      \"type\": \"string\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Register a new file system public key.
 rest_endpoint: /v1/file-system/security/keys/
 permalink: /rest-api-guide/file-system/security_keys.html

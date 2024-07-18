@@ -7,7 +7,6 @@ methods:
       name: login_name
       required: true
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_ldap_login_name_to_gid_numbers\",\n  \"\
         type\": \"object\",\n  \"properties\": {\n    \"login_name\": {\n      \"\
@@ -20,7 +19,9 @@ methods:
         : \"array\",\n            \"items\": {\n              \"description\": \"\
         gid_numbers\",\n              \"type\": \"number\"\n            }\n      \
         \    }\n        }\n      }\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Query the LDAP server for the gid numbers for all the groups of which
       the given login name is a member. This returns a vector of results in the case
       that the given login name maps to multiple uid numbers.

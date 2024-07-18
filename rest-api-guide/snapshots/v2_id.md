@@ -6,11 +6,10 @@ methods:
     - description: Snapshot identifier
       name: id
       required: true
-    response_body:
+    response_body: {}
+    responses:
+    - code: '200'
       description: Return value on success
-      example_value: '"TO DO"'
-      schema: '"TO DO"'
-      status_code: '200'
     summary: Deletes a snapshot.
   get:
     parameters:
@@ -18,7 +17,6 @@ methods:
       name: id
       required: true
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_snapshot_info_v2\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"Unique identifier\
@@ -41,7 +39,9 @@ methods:
         \    \"type\": \"string\"\n    },\n    \"in_delete\": {\n      \"description\"\
         : \"Whether or not the snapshot is in the process of being deleted\",\n  \
         \    \"type\": \"boolean\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Returns information about a specific snapshot.
   patch:
     parameters:
@@ -82,7 +82,6 @@ methods:
         : \"Whether or not the snapshot is in the process of being deleted\",\n  \
         \    \"type\": \"boolean\"\n    }\n  }\n}"
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_snapshot_info_v2\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"Unique identifier\
@@ -105,7 +104,9 @@ methods:
         \    \"type\": \"string\"\n    },\n    \"in_delete\": {\n      \"description\"\
         : \"Whether or not the snapshot is in the process of being deleted\",\n  \
         \    \"type\": \"boolean\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Modifies a snapshot.
   put:
     parameters:
@@ -139,7 +140,6 @@ methods:
         : \"Whether or not the snapshot is in the process of being deleted\",\n  \
         \    \"type\": \"boolean\"\n    }\n  }\n}"
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_snapshot_info_v2\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"Unique identifier\
@@ -162,7 +162,9 @@ methods:
         \    \"type\": \"string\"\n    },\n    \"in_delete\": {\n      \"description\"\
         : \"Whether or not the snapshot is in the process of being deleted\",\n  \
         \    \"type\": \"boolean\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Modifies a snapshot.
 rest_endpoint: /v2/snapshots/{id}
 permalink: /rest-api-guide/snapshots/v2_id.html

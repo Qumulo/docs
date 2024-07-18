@@ -34,7 +34,6 @@ methods:
         \ \"name\",\n          \"type\": \"string\"\n        }\n      }\n    }\n \
         \ }\n}"
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_bucket_policy_access_explanation\",\n \
         \ \"type\": \"object\",\n  \"properties\": {\n    \"allowed_actions\": {\n\
@@ -76,7 +75,9 @@ methods:
         \              \"description\": \"The set of API actions to which the current\
         \ statement refers.\",\n              \"type\": \"string\"\n            }\n\
         \          }\n        }\n      }\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Explains the access of an identity due to the bucket policy.
 rest_endpoint: /v1/s3/buckets/{name}/policy/explain-access
 permalink: /rest-api-guide/s3/buckets_name_policy_explain-access.html

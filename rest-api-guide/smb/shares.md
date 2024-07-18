@@ -4,7 +4,6 @@ methods:
   get:
     parameters: []
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         api_smb_share\",\n    \"type\": \"object\",\n    \"properties\": {\n     \
@@ -29,7 +28,9 @@ methods:
         \      \"tenant_id\": {\n        \"description\": \"The tenant ID of the tenant\
         \ that the SMB share is a part of\",\n        \"type\": \"number\"\n     \
         \ }\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: List all SMB shares. Refer to the 'Modify SMB share' method for a description
       of the returned fields.
   post:
@@ -59,7 +60,6 @@ methods:
         \ 0755 if this field is empty)\",\n      \"type\": \"string\"\n    }\n  }\n\
         }"
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_smb_share\",\n  \"type\": \"object\",\n\
         \  \"properties\": {\n    \"id\": {\n      \"description\": \"The unique ID\
@@ -82,7 +82,9 @@ methods:
         \  \"tenant_id\": {\n      \"description\": \"The tenant ID of the tenant\
         \ that the SMB share is a part of\",\n      \"type\": \"number\"\n    }\n\
         \  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Add an SMB share with given options.
 rest_endpoint: /v1/smb/shares/
 permalink: /rest-api-guide/smb/shares.html

@@ -12,12 +12,13 @@ methods:
         ,\n  \"properties\": {\n    \"lock_key_ref\": {\n      \"description\": \"\
         lock_key_ref\",\n      \"type\": \"string\"\n    }\n  }\n}"
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_snapshot_lock\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"lock_key_ref\": {\n      \"description\": \"\
         lock_key_ref\",\n      \"type\": \"string\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Lock the specified snapshot. The only modification you can make to a
       locked snapshot is extending its expiration time.
 rest_endpoint: /v3/snapshots/{id}/lock

@@ -15,7 +15,6 @@ methods:
       name: interval
       required: false
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         overall_historical_capacity\",\n    \"type\": \"object\",\n    \"properties\"\
@@ -34,7 +33,9 @@ methods:
         n * `AVAILABLE` - DETAILED_PATH_CAPACITY_AVAILABLE,\\n * `PENDING` - DETAILED_PATH_CAPACITY_PENDING,\\\
         n * `UNAVAILABLE` - DETAILED_PATH_CAPACITY_UNAVAILABLE\"\n      }\n    }\n\
         \  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Returns capacity history data for the cluster. Does not return entries
       for timeslots without capacity data. Returned history data will be sorted by
       ascending time.

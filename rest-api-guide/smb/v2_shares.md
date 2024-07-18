@@ -8,7 +8,6 @@ methods:
       name: populate-trustee-names
       required: false
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         api_smb_share_v2\",\n    \"type\": \"object\",\n    \"properties\": {\n  \
@@ -135,7 +134,9 @@ methods:
         \      \"tenant_id\": {\n        \"description\": \"The tenant ID of the tenant\
         \ that the SMB share is a part of\",\n        \"type\": \"number\"\n     \
         \ }\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: List all SMB shares. Refer to the 'Modify SMB Share' method for a description
       of the returned fields.
   post:
@@ -263,7 +264,6 @@ methods:
         \ is false if this field is empty.\",\n      \"type\": \"boolean\"\n    }\n\
         \  }\n}"
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_smb_share_v2\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"The unique\
@@ -385,7 +385,9 @@ methods:
         ,\n      \"type\": \"boolean\"\n    },\n    \"tenant_id\": {\n      \"description\"\
         : \"The tenant ID of the tenant that the SMB share is a part of\",\n     \
         \ \"type\": \"number\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Add an SMB share with given options.
 rest_endpoint: /v2/smb/shares/
 permalink: /rest-api-guide/smb/v2_shares.html

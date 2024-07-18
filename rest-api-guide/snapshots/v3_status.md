@@ -10,7 +10,6 @@ methods:
       name: filter
       required: true
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_snapshot_statuses\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"entries\": {\n      \"type\": \"array\",\n \
@@ -49,7 +48,9 @@ methods:
         : \"The key that the snapshot is locked with. If set to null, the system does\
         \ not create locked snapshots under this policy.\",\n            \"type\"\
         : \"string\"\n          }\n        }\n      }\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Returns the statuses for all snapshots. Each snapshot's status includes
       additional non-configurable information about a snapshot.
 rest_endpoint: /v3/snapshots/status/

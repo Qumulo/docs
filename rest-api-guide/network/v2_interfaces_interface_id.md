@@ -7,7 +7,6 @@ methods:
       name: interface_id
       required: true
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_interface_config\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"Unique identifier\
@@ -25,7 +24,9 @@ methods:
         n * `IEEE_8023AD` - BONDING_MODE_IEEE_8023AD\"\n    },\n    \"mtu\": {\n \
         \     \"description\": \"Maximum transmission unit configuration value\",\n\
         \      \"type\": \"number\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Get configuration of an interface.
   patch:
     parameters:
@@ -53,13 +54,10 @@ methods:
         n * `IEEE_8023AD` - BONDING_MODE_IEEE_8023AD\"\n    },\n    \"mtu\": {\n \
         \     \"description\": \"Maximum transmission unit configuration value\",\n\
         \      \"type\": \"number\"\n    }\n  }\n}"
-    response_body:
+    response_body: {}
+    responses:
+    - code: '202'
       description: Return value on success
-      example_value: '"TO DO"'
-      schema: "{\n  \"description\": \"api_monitor_uri\",\n  \"type\": \"object\"\
-        ,\n  \"properties\": {\n    \"monitor_uri\": {\n      \"description\": \"\
-        monitor_uri\",\n      \"type\": \"string\"\n    }\n  }\n}"
-      status_code: '202'
     summary: Update a subset of an interface configuration. Changes in interface MTU
       will be applied to the untagged STATIC network as well as the interface.
   put:
@@ -88,13 +86,10 @@ methods:
         n * `IEEE_8023AD` - BONDING_MODE_IEEE_8023AD\"\n    },\n    \"mtu\": {\n \
         \     \"description\": \"Maximum transmission unit configuration value\",\n\
         \      \"type\": \"number\"\n    }\n  }\n}"
-    response_body:
+    response_body: {}
+    responses:
+    - code: '202'
       description: Return value on success
-      example_value: '"TO DO"'
-      schema: "{\n  \"description\": \"api_monitor_uri\",\n  \"type\": \"object\"\
-        ,\n  \"properties\": {\n    \"monitor_uri\": {\n      \"description\": \"\
-        monitor_uri\",\n      \"type\": \"string\"\n    }\n  }\n}"
-      status_code: '202'
     summary: Set configuration of an interface. Changes in interface MTU will be applied
       to the untagged STATIC network as well as the interface.
 rest_endpoint: /v2/network/interfaces/{interface_id}

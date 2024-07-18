@@ -14,7 +14,6 @@ methods:
         List of unconfigured node IPs to query supported protection levels and capacities\"\
         ,\n        \"type\": \"string\"\n      }\n    }\n  }\n}"
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_supported_protection_configs\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"supported_configs\": {\n      \"\
@@ -34,7 +33,9 @@ methods:
         description\": \"The usable capacity in bytes if the node/SKU configuration\
         \ uses this stripe config\",\n            \"type\": \"string\"\n         \
         \ }\n        }\n      }\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Returns list of supported data protection stripe configuration(s). This
       includes the stripe width and usable capacity using that width. For use with
       unconfigured nodes only.

@@ -4,7 +4,6 @@ methods:
   get:
     parameters: []
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"fs_notify_config\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"recursive_mode\": {\n      \"type\": \"string\"\
@@ -13,7 +12,9 @@ methods:
         n * `DISABLED_ERROR` - FS_NOTIFY_RECURSIVE_MODE_DISABLED_ERROR,\\n * `DISABLED_IGNORE`\
         \ - FS_NOTIFY_RECURSIVE_MODE_DISABLED_IGNORE,\\n * `ENABLED` - FS_NOTIFY_RECURSIVE_MODE_ENABLED\"\
         \n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Get FS notify related settings.
   put:
     parameters:
@@ -30,7 +31,6 @@ methods:
         \ - FS_NOTIFY_RECURSIVE_MODE_DISABLED_IGNORE,\\n * `ENABLED` - FS_NOTIFY_RECURSIVE_MODE_ENABLED\"\
         \n    }\n  }\n}"
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"fs_notify_config\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"recursive_mode\": {\n      \"type\": \"string\"\
@@ -39,7 +39,9 @@ methods:
         n * `DISABLED_ERROR` - FS_NOTIFY_RECURSIVE_MODE_DISABLED_ERROR,\\n * `DISABLED_IGNORE`\
         \ - FS_NOTIFY_RECURSIVE_MODE_DISABLED_IGNORE,\\n * `ENABLED` - FS_NOTIFY_RECURSIVE_MODE_ENABLED\"\
         \n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Set FS notify related settings.
 rest_endpoint: /v1/file-system/settings/notify
 permalink: /rest-api-guide/file-system/settings_notify.html

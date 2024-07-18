@@ -20,7 +20,6 @@ methods:
         : \"POSIX mode to explain application of on a file ACL.\",\n      \"type\"\
         : \"string\"\n    }\n  }\n}"
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_files_apply_mode_explanation\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"owner\": {\n      \"description\"\
@@ -612,7 +611,9 @@ methods:
         \ write access,\\n * `WRITE_EA` - Extended attribute write access,\\n * `WRITE_GROUP`\
         \ - Group write access\"\n                }\n              }\n           \
         \ }\n          }\n        }\n      }\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Explain the effect of setting a POSIX mode on a file/directory.
 rest_endpoint: /v1/files/{ref}/info/acl/explain-set-mode
 permalink: /rest-api-guide/files/ref_info_acl_explain-set-mode.html

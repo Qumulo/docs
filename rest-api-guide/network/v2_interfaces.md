@@ -4,7 +4,6 @@ methods:
   get:
     parameters: []
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         api_interface_config\",\n    \"type\": \"object\",\n    \"properties\": {\n\
@@ -24,7 +23,9 @@ methods:
         \n      },\n      \"mtu\": {\n        \"description\": \"Maximum transmission\
         \ unit configuration value\",\n        \"type\": \"number\"\n      }\n   \
         \ }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Get configurations of all interfaces for the whole cluster.
 rest_endpoint: /v2/network/interfaces/
 permalink: /rest-api-guide/network/v2_interfaces.html

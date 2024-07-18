@@ -14,7 +14,6 @@ methods:
       name: snapshot
       required: false
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_files_acl_v2\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"control\": {\n      \"description\": \"control\"\
@@ -100,7 +99,9 @@ methods:
         \ - Attribute write access,\\n * `WRITE_EA` - Extended attribute write access,\\\
         n * `WRITE_GROUP` - Group write access\"\n            }\n          }\n   \
         \     }\n      }\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Get file access control list (ACL).
   put:
     parameters:
@@ -200,7 +201,6 @@ methods:
         n * `WRITE_GROUP` - Group write access\"\n            }\n          }\n   \
         \     }\n      }\n    }\n  }\n}"
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_files_acl_v2\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"control\": {\n      \"description\": \"control\"\
@@ -286,7 +286,9 @@ methods:
         \ - Attribute write access,\\n * `WRITE_EA` - Extended attribute write access,\\\
         n * `WRITE_GROUP` - Group write access\"\n            }\n          }\n   \
         \     }\n      }\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Update file access control list (ACL).
 rest_endpoint: /v2/files/{ref}/info/acl
 permalink: /rest-api-guide/files/v2_ref_info_acl.html

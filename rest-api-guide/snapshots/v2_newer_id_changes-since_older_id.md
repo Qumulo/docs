@@ -18,7 +18,6 @@ methods:
       name: limit
       required: false
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_snapshot_tree_diff\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"entries\": {\n      \"type\": \"array\",\n \
@@ -30,7 +29,9 @@ methods:
         \ DELETE,\\n * `MODIFY` - MODIFY\"\n          },\n          \"path\": {\n\
         \            \"description\": \"path\",\n            \"type\": \"string\"\n\
         \          }\n        }\n      }\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Returns a list of changed files and directories between two snapshots.
 rest_endpoint: /v2/snapshots/{newer_id}/changes-since/{older_id}
 permalink: /rest-api-guide/snapshots/v2_newer_id_changes-since_older_id.html

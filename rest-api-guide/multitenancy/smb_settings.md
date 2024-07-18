@@ -3,11 +3,10 @@ category: /multitenancy
 methods:
   get:
     parameters: []
-    response_body:
+    response_body: {}
+    responses:
+    - code: '200'
       description: Return value on success
-      example_value: '"TO DO"'
-      schema: '"TO DO"'
-      status_code: '200'
     summary: Retrieve all tenant-specific SMB configurations.
 rest_endpoint: /v1/multitenancy/smb/settings/
 permalink: /rest-api-guide/multitenancy/smb_settings.html

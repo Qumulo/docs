@@ -7,7 +7,6 @@ methods:
       name: id
       required: true
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_node\",\n  \"type\": \"object\",\n  \"\
         properties\": {\n    \"id\": {\n      \"description\": \"id\",\n      \"type\"\
@@ -23,7 +22,9 @@ methods:
         \n    },\n    \"mac_address\": {\n      \"description\": \"MAC address for\
         \ the first network interface on this node\",\n      \"type\": \"string\"\n\
         \    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Retrieve node-specific info, such as serial number, mac address, uuid,
       etc
 rest_endpoint: /v1/cluster/nodes/{id}

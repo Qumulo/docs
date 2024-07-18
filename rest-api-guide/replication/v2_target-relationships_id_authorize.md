@@ -18,7 +18,6 @@ methods:
       name: allow-fs-path-create
       required: false
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_target_relationship_status\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"id\": {\n      \"description\":\
@@ -146,7 +145,9 @@ methods:
         \ or delete a lock key while the relationship is reversed and you then revert\
         \ the reversal, the original source-target relationship has no lock key until\
         \ you configure a new one.\",\n      \"type\": \"string\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Authorize the specified replication relationship, establishing this cluster
       as the target of replication.
 rest_endpoint: /v2/replication/target-relationships/{id}/authorize

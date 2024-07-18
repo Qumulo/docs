@@ -6,11 +6,10 @@ methods:
     - description: URI parameter id
       name: id
       required: true
-    response_body:
+    response_body: {}
+    responses:
+    - code: '200'
       description: Return value on success
-      example_value: '"TO DO"'
-      schema: '"TO DO"'
-      status_code: '200'
     summary: Delete the identity attributes for an identity.
   get:
     parameters:
@@ -18,12 +17,13 @@ methods:
       name: id
       required: true
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"identity_attributes\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"home_directory\": {\n      \"description\":\
         \ \"home_directory\",\n      \"type\": \"string\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Get the identity attributes for an identity.
   put:
     parameters:
@@ -36,12 +36,13 @@ methods:
         ,\n  \"properties\": {\n    \"home_directory\": {\n      \"description\":\
         \ \"home_directory\",\n      \"type\": \"string\"\n    }\n  }\n}"
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"identity_attributes\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"home_directory\": {\n      \"description\":\
         \ \"home_directory\",\n      \"type\": \"string\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Set the identity attributes for an identity.
 rest_endpoint: /v1/auth/identities/{id}/attributes
 permalink: /rest-api-guide/auth/identities_id_attributes.html

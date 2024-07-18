@@ -9,11 +9,10 @@ methods:
         UI URL-encodes the paths.
       name: ref
       required: true
-    response_body:
+    response_body: {}
+    responses:
+    - code: '200'
       description: Return value on success
-      example_value: '"TO DO"'
-      schema: '"TO DO"'
-      status_code: '200'
     summary: Paths must be absolute and URL encoded.
 rest_endpoint: /v1/files/{ref}
 permalink: /rest-api-guide/files/ref.html

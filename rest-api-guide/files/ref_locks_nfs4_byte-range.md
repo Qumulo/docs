@@ -22,7 +22,6 @@ methods:
       name: limit
       required: false
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_nfs4_byte_range_grants\",\n  \"type\":\
         \ \"object\",\n  \"properties\": {\n    \"grants\": {\n      \"type\": \"\
@@ -60,7 +59,9 @@ methods:
         \   },\n          \"node_id\": {\n            \"description\": \"The node\
         \ whose NFSv4.1 server holds the client state.\",\n            \"type\": \"\
         number\"\n          }\n        }\n      }\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Return a list of all NFSv4.1 byte range locks currently granted on the
       specified file.
 rest_endpoint: /v1/files/{ref}/locks/nfs4/byte-range/

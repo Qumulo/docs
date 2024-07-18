@@ -15,7 +15,6 @@ methods:
       name: limit
       required: false
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_key_description_list_model\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"entries\": {\n      \"type\": \"\
@@ -52,7 +51,9 @@ methods:
         : {\n            \"description\": \"The creation time of the current credentials.\"\
         ,\n            \"type\": \"string\"\n          }\n        }\n      }\n   \
         \ }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: List all S3 access keys present in the system.
   post:
     parameters: []
@@ -82,7 +83,6 @@ methods:
         \    \"name\": {\n          \"description\": \"name\",\n          \"type\"\
         : \"string\"\n        }\n      }\n    }\n  }\n}"
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_created_key\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"access_key_id\": {\n      \"description\": \"\
@@ -115,7 +115,9 @@ methods:
         ,\n      \"type\": \"string\"\n    },\n    \"creation_time\": {\n      \"\
         description\": \"The creation time of the current credentials.\",\n      \"\
         type\": \"string\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Create a new S3 access key for the provided user identity. To add a new
       key, a user must have fewer than two keys.
 rest_endpoint: /v1/s3/access-keys/

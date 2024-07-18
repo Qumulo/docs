@@ -4,7 +4,6 @@ methods:
   get:
     parameters: []
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"upgrade_status\",\n  \"type\": \"object\",\n\
         \  \"properties\": {\n    \"state\": {\n      \"type\": \"string\",\n    \
@@ -33,7 +32,9 @@ methods:
         description\": \"num_nodes_to_reboot\",\n          \"type\": \"number\"\n\
         \        }\n      }\n    },\n    \"error_info\": {\n      \"description\"\
         : \"error_info\",\n      \"type\": \"string\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Retrieve the current status of the upgrade system. This API is deprecated
       in favor of /v3/upgrade/status.
 rest_endpoint: /v2/upgrade/status

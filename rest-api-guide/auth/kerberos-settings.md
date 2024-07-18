@@ -4,13 +4,14 @@ methods:
   get:
     parameters: []
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"kerberos_config\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"use_alt_security_identities_mapping\": {\n \
         \     \"description\": \"use_alt_security_identities_mapping\",\n      \"\
         type\": \"boolean\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Get the Kerberos settings
   put:
     parameters:
@@ -24,13 +25,14 @@ methods:
         \     \"description\": \"use_alt_security_identities_mapping\",\n      \"\
         type\": \"boolean\"\n    }\n  }\n}"
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"kerberos_config\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"use_alt_security_identities_mapping\": {\n \
         \     \"description\": \"use_alt_security_identities_mapping\",\n      \"\
         type\": \"boolean\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Set the Kerberos settings
 rest_endpoint: /v1/auth/kerberos-settings
 permalink: /rest-api-guide/auth/kerberos-settings.html

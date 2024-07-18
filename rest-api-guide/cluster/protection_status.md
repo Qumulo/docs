@@ -4,7 +4,6 @@ methods:
   get:
     parameters: []
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_protection_status\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"blocks_per_stripe\": {\n      \"description\"\
@@ -36,7 +35,9 @@ methods:
         : {\n          \"description\": \"Number of simultaneous node failures supported\
         \ for this stripe config\",\n          \"type\": \"number\"\n        }\n \
         \     }\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Gets detailed status information for the data protection of the cluster.
 rest_endpoint: /v1/cluster/protection/status
 permalink: /rest-api-guide/cluster/protection_status.html

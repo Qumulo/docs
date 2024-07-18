@@ -4,7 +4,6 @@ methods:
   get:
     parameters: []
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"tree_delete_jobs_response\",\n  \"type\": \"\
         object\",\n  \"properties\": {\n    \"jobs\": {\n      \"type\": \"array\"\
@@ -38,7 +37,9 @@ methods:
         \          \"remaining_files\": {\n            \"description\": \"Remaining\
         \ number of non-directory files in the tree being deleted.\",\n          \
         \  \"type\": \"string\"\n          }\n        }\n      }\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Get status of all directory-tree deletion jobs.
   post:
     parameters: []
@@ -50,13 +51,10 @@ methods:
         \ the id field of responses of APIs that return file attributes. You must\
         \ URL-encode the paths. The APIs & Tools page in the Qumulo Core Web UI URL-encodes\
         \ the paths.\",\n      \"type\": \"string\"\n    }\n  }\n}"
-    response_body:
+    response_body: {}
+    responses:
+    - code: '202'
       description: Return value on success
-      example_value: '"TO DO"'
-      schema: "{\n  \"description\": \"api_monitor_uri\",\n  \"type\": \"object\"\
-        ,\n  \"properties\": {\n    \"monitor_uri\": {\n      \"description\": \"\
-        monitor_uri\",\n      \"type\": \"string\"\n    }\n  }\n}"
-      status_code: '202'
     summary: Start unlinking this directory and all its contents.
 rest_endpoint: /v1/tree-delete/jobs/
 permalink: /rest-api-guide/tree-delete/jobs.html

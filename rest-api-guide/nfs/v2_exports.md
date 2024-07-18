@@ -4,7 +4,6 @@ methods:
   get:
     parameters: []
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         api_nfs_export\",\n    \"type\": \"object\",\n    \"properties\": {\n    \
@@ -75,7 +74,9 @@ methods:
         \ space reported for the FS to 4GiB.\"\n        }\n      },\n      \"tenant_id\"\
         : {\n        \"description\": \"The tenant ID of the tenant that the NFS export\
         \ is a part of\",\n        \"type\": \"number\"\n      }\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: This method lists NFS exports. Refer to the 'Modify NFS Export' method
       for a description of the returned fields.
   post:
@@ -149,7 +150,6 @@ methods:
         \ available, used and total space reported for the FS to 4GiB.\"\n      }\n\
         \    }\n  }\n}"
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_nfs_export\",\n  \"type\": \"object\",\n\
         \  \"properties\": {\n    \"id\": {\n      \"description\": \"The unique ID\
@@ -216,7 +216,9 @@ methods:
         \ 4GiB.\"\n      }\n    },\n    \"tenant_id\": {\n      \"description\": \"\
         The tenant ID of the tenant that the NFS export is a part of\",\n      \"\
         type\": \"number\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: This method adds an NFS export.
 rest_endpoint: /v2/nfs/exports/
 permalink: /rest-api-guide/nfs/v2_exports.html

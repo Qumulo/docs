@@ -4,7 +4,6 @@ methods:
   get:
     parameters: []
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_nfs_settings\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"v4_enabled\": {\n      \"description\": \"Whether\
@@ -16,7 +15,9 @@ methods:
         \ (integrity) is enabled\",\n      \"type\": \"boolean\"\n    },\n    \"auth_sys_enabled\"\
         : {\n      \"description\": \"Whether AUTH_SYS is enabled\",\n      \"type\"\
         : \"boolean\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Retrieve global NFS configuration.
   patch:
     parameters:
@@ -36,7 +37,6 @@ methods:
         : {\n      \"description\": \"Whether AUTH_SYS is enabled\",\n      \"type\"\
         : \"boolean\"\n    }\n  }\n}"
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_nfs_settings\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"v4_enabled\": {\n      \"description\": \"Whether\
@@ -48,7 +48,9 @@ methods:
         \ (integrity) is enabled\",\n      \"type\": \"boolean\"\n    },\n    \"auth_sys_enabled\"\
         : {\n      \"description\": \"Whether AUTH_SYS is enabled\",\n      \"type\"\
         : \"boolean\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Modify global NFS configuration.
   put:
     parameters:
@@ -68,7 +70,6 @@ methods:
         : {\n      \"description\": \"Whether AUTH_SYS is enabled\",\n      \"type\"\
         : \"boolean\"\n    }\n  }\n}"
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_nfs_settings\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"v4_enabled\": {\n      \"description\": \"Whether\
@@ -80,7 +81,9 @@ methods:
         \ (integrity) is enabled\",\n      \"type\": \"boolean\"\n    },\n    \"auth_sys_enabled\"\
         : {\n      \"description\": \"Whether AUTH_SYS is enabled\",\n      \"type\"\
         : \"boolean\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Set global NFS configuration.
 rest_endpoint: /v1/multitenancy/nfs/global-settings
 permalink: /rest-api-guide/multitenancy/nfs_global-settings.html

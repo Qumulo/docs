@@ -27,7 +27,6 @@ methods:
         : \"The number of data blocks per stripe.\",\n          \"type\": \"number\"\
         \n        }\n      }\n    }\n  }\n}"
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_cluster_nodes_modify_dry_run_response\"\
         ,\n  \"type\": \"object\",\n  \"properties\": {\n    \"current_capacity\"\
@@ -39,7 +38,9 @@ methods:
         \ operation\",\n      \"type\": \"string\"\n    },\n    \"projected_max_node_failures\"\
         : {\n      \"description\": \"The cluster's node-fault-tolerance level after\
         \ the operation\",\n      \"type\": \"number\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Validate a node-add operation or node replacement step and, if it succeeds,
       return the projected usable capacity and node fault tolerance level.
 rest_endpoint: /v2/cluster/nodes/dry-run

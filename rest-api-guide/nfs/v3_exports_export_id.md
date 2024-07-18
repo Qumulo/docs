@@ -9,11 +9,10 @@ methods:
     - description: ETag for expected version
       name: If-Match
       required: false
-    response_body:
+    response_body: {}
+    responses:
+    - code: '200'
       description: Return value on success
-      example_value: '"TO DO"'
-      schema: '"TO DO"'
-      status_code: '200'
     summary: This method deletes an NFS export.
   get:
     parameters:
@@ -21,7 +20,6 @@ methods:
       name: export_id
       required: true
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_nfs_export_v3\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"The unique\
@@ -88,7 +86,9 @@ methods:
         n * `FILE_SIZES` - Clamp large file sizes to 4GiB to fit in 32 bits.,\\n *\
         \ `FS_SIZE` - Clamp available, used and total space reported for the FS to\
         \ 4GiB.\"\n      }\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: This method retrieves the specified NFS export. Refer to the 'Modify
       NFS Export' method for a description of the returned fields.
   patch:
@@ -171,7 +171,6 @@ methods:
         \ `FS_SIZE` - Clamp available, used and total space reported for the FS to\
         \ 4GiB.\"\n      }\n    }\n  }\n}"
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_nfs_export_v3\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"The unique\
@@ -238,7 +237,9 @@ methods:
         n * `FILE_SIZES` - Clamp large file sizes to 4GiB to fit in 32 bits.,\\n *\
         \ `FS_SIZE` - Clamp available, used and total space reported for the FS to\
         \ 4GiB.\"\n      }\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: This method modifies individual attributes of an NFS export.
   put:
     parameters:
@@ -320,7 +321,6 @@ methods:
         \ `FS_SIZE` - Clamp available, used and total space reported for the FS to\
         \ 4GiB.\"\n      }\n    }\n  }\n}"
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_nfs_export_v3\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"The unique\
@@ -387,7 +387,9 @@ methods:
         n * `FILE_SIZES` - Clamp large file sizes to 4GiB to fit in 32 bits.,\\n *\
         \ `FS_SIZE` - Clamp available, used and total space reported for the FS to\
         \ 4GiB.\"\n      }\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: This method sets all attributes of an NFS export.
 rest_endpoint: /v3/nfs/exports/{export_id}
 permalink: /rest-api-guide/nfs/v3_exports_export_id.html

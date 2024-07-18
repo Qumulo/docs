@@ -41,7 +41,6 @@ methods:
         \ this ETag will be validated against the server to ensure no intermediate\
         \ change has occurred.\",\n      \"type\": \"string\"\n    }\n  }\n}"
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_files_copy_chunk\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"source_id\": {\n      \"description\": \"File\
@@ -66,7 +65,9 @@ methods:
         \ source file returned from /v1/files/{source-id}/info/attributes. If provided,\
         \ this ETag will be validated against the server to ensure no intermediate\
         \ change has occurred.\",\n      \"type\": \"string\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Copies the contents of the source file specified in the body of the request
       to the destination stream. The stream must already exist.
 rest_endpoint: /v1/files/{ref}/streams/{stream_id}/copy-chunk

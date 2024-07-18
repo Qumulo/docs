@@ -10,7 +10,6 @@ methods:
       name: filter
       required: true
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_snapshots\",\n  \"type\": \"object\",\n\
         \  \"properties\": {\n    \"entries\": {\n      \"type\": \"array\",\n   \
@@ -34,7 +33,9 @@ methods:
         \     },\n          \"in_delete\": {\n            \"description\": \"Specifies\
         \ whether the snapshot is in the process of being deleted.\",\n          \
         \  \"type\": \"boolean\"\n          }\n        }\n      }\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Returns information about all snapshots.
   post:
     parameters: []
@@ -50,7 +51,6 @@ methods:
         \n    },\n    \"source_file_id\": {\n      \"description\": \"The ID of the\
         \ directory to snapshot.\",\n      \"type\": \"string\"\n    }\n  }\n}"
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_snapshot_info\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"The unique\
@@ -69,7 +69,9 @@ methods:
         \ never expires.\",\n      \"type\": \"string\"\n    },\n    \"in_delete\"\
         : {\n      \"description\": \"Specifies whether the snapshot is in the process\
         \ of being deleted.\",\n      \"type\": \"boolean\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Creates a new snapshot and returns snapshot information.
 rest_endpoint: /v3/snapshots/
 permalink: /rest-api-guide/snapshots/v3_snapshots.html

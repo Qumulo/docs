@@ -9,11 +9,10 @@ methods:
     - description: ETag for expected version
       name: If-Match
       required: false
-    response_body:
+    response_body: {}
+    responses:
+    - code: '200'
       description: Return value on success
-      example_value: '"TO DO"'
-      schema: '"TO DO"'
-      status_code: '200'
     summary: This method deletes an NFS export.
   get:
     parameters:
@@ -21,7 +20,6 @@ methods:
       name: ref
       required: true
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_nfs_export\",\n  \"type\": \"object\",\n\
         \  \"properties\": {\n    \"id\": {\n      \"description\": \"The unique ID\
@@ -88,7 +86,9 @@ methods:
         \ 4GiB.\"\n      }\n    },\n    \"tenant_id\": {\n      \"description\": \"\
         The tenant ID of the tenant that the NFS export is a part of\",\n      \"\
         type\": \"number\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: This method retrieves the specified NFS export. Refer to the 'Modify
       NFS Export' method for a description of the returned fields.
   patch:
@@ -171,7 +171,6 @@ methods:
         The tenant ID of the tenant that the NFS export is a part of\",\n      \"\
         type\": \"number\"\n    }\n  }\n}"
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_nfs_export\",\n  \"type\": \"object\",\n\
         \  \"properties\": {\n    \"id\": {\n      \"description\": \"The unique ID\
@@ -238,7 +237,9 @@ methods:
         \ 4GiB.\"\n      }\n    },\n    \"tenant_id\": {\n      \"description\": \"\
         The tenant ID of the tenant that the NFS export is a part of\",\n      \"\
         type\": \"number\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: This method modifies individual attributes of a NFS export.
   put:
     parameters:
@@ -320,7 +321,6 @@ methods:
         The tenant ID of the tenant that the NFS export is a part of\",\n      \"\
         type\": \"number\"\n    }\n  }\n}"
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_nfs_export\",\n  \"type\": \"object\",\n\
         \  \"properties\": {\n    \"id\": {\n      \"description\": \"The unique ID\
@@ -387,7 +387,9 @@ methods:
         \ 4GiB.\"\n      }\n    },\n    \"tenant_id\": {\n      \"description\": \"\
         The tenant ID of the tenant that the NFS export is a part of\",\n      \"\
         type\": \"number\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: This method sets all attributes of a NFS export.
 rest_endpoint: /v2/nfs/exports/{ref}
 permalink: /rest-api-guide/nfs/v2_exports_ref.html

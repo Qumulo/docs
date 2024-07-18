@@ -18,7 +18,6 @@ methods:
       name: limit
       required: false
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_smb_sessions_get_response\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"session_infos\": {\n      \"type\"\
@@ -71,7 +70,9 @@ methods:
         : {\n            \"type\": \"array\",\n            \"items\": {\n        \
         \      \"description\": \"share_names\",\n              \"type\": \"string\"\
         \n            }\n          }\n        }\n      }\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Enumerate open sessions
 rest_endpoint: /v1/smb/sessions/
 permalink: /rest-api-guide/smb/sessions.html

@@ -8,7 +8,6 @@ methods:
       name: begin-time
       required: false
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         api_time_series_dataset\",\n    \"type\": \"object\",\n    \"properties\"\
@@ -18,7 +17,9 @@ methods:
         type\": \"number\"\n        }\n      },\n      \"values\": {\n        \"type\"\
         : \"array\",\n        \"items\": {\n          \"description\": \"values\"\
         ,\n          \"type\": \"number\"\n        }\n      }\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Returns all time series data maintained by the cluster.
 rest_endpoint: /v1/analytics/time-series/
 permalink: /rest-api-guide/analytics/time-series.html

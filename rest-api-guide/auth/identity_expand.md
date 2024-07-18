@@ -78,7 +78,6 @@ methods:
         \           \"type\": \"string\"\n          }\n        }\n      }\n    }\n\
         \  }\n}"
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_expanded_id\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"The identity\
@@ -199,7 +198,9 @@ methods:
         ,\n            \"type\": \"string\"\n          },\n          \"name\": {\n\
         \            \"description\": \"name\",\n            \"type\": \"string\"\n\
         \          }\n        }\n      }\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Find all equivalents and the group membership of the given identity.
       This API is deprecated in favor of /v1/identity/expand
 rest_endpoint: /v1/auth/identity/expand

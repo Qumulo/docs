@@ -4,7 +4,6 @@ methods:
   get:
     parameters: []
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_smb_settings\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"session_encryption\": {\n      \"type\": \"\
@@ -35,7 +34,9 @@ methods:
         ,\n      \"type\": \"boolean\"\n    },\n    \"signing_required\": {\n    \
         \  \"description\": \"Requires messages from non-guest users to be signed.\"\
         ,\n      \"type\": \"boolean\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Get settings for the SMB Server.
   patch:
     parameters:
@@ -74,7 +75,6 @@ methods:
         \  \"description\": \"Requires messages from non-guest users to be signed.\"\
         ,\n      \"type\": \"boolean\"\n    }\n  }\n}"
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_smb_settings\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"session_encryption\": {\n      \"type\": \"\
@@ -105,7 +105,9 @@ methods:
         ,\n      \"type\": \"boolean\"\n    },\n    \"signing_required\": {\n    \
         \  \"description\": \"Requires messages from non-guest users to be signed.\"\
         ,\n      \"type\": \"boolean\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Partially set settings for the SMB Server.
   put:
     parameters:
@@ -144,7 +146,6 @@ methods:
         \  \"description\": \"Requires messages from non-guest users to be signed.\"\
         ,\n      \"type\": \"boolean\"\n    }\n  }\n}"
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_smb_settings\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"session_encryption\": {\n      \"type\": \"\
@@ -175,7 +176,9 @@ methods:
         ,\n      \"type\": \"boolean\"\n    },\n    \"signing_required\": {\n    \
         \  \"description\": \"Requires messages from non-guest users to be signed.\"\
         ,\n      \"type\": \"boolean\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Set settings for the SMB Server.
 rest_endpoint: /v1/smb/settings
 permalink: /rest-api-guide/smb/settings.html

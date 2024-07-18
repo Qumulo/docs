@@ -7,7 +7,6 @@ methods:
       name: id
       required: true
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         api_interface_network_statuses\",\n    \"type\": \"object\",\n    \"properties\"\
@@ -133,7 +132,9 @@ methods:
         \n          },\n          \"subnet_mask\": {\n            \"description\"\
         : \"Subnet mask of the instance's network.\",\n            \"type\": \"string\"\
         \n          }\n        }\n      }\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Retrieve the network statuses of all nodes on the underlying network
       interface
 rest_endpoint: /v2/network/interfaces/{id}/status/

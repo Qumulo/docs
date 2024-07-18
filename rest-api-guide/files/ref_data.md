@@ -23,11 +23,10 @@ methods:
         up to length.
       name: length
       required: false
-    response_body:
+    response_body: {}
+    responses:
+    - code: '200'
       description: Return value on success
-      example_value: '"TO DO"'
-      schema: '"TO DO"'
-      status_code: '200'
     summary: Return the contents of the file as an HTTP octet stream. The etag returned
       by this method represents the whole state of this file. In another word, if
       you are reading just a portion of the data, etag could be invalid because of
@@ -53,7 +52,6 @@ methods:
       example_value: '"TO DO"'
       schema: "{\n  \"type\": \"object\"\n}"
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_files_attributes\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"path\": {\n      \"description\": \"Filesystem\
@@ -152,7 +150,9 @@ methods:
         \ data.\",\n      \"type\": \"string\"\n    },\n    \"user_metadata_revision\"\
         : {\n      \"description\": \"The revision for changes to the user defined\
         \ metadata of the file.\",\n      \"type\": \"string\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Set the contents of the file, at the given offset, to the body of the
       request. The target file must already exist, and the Content-Type of the request
       must be application/octet-stream.
@@ -171,7 +171,6 @@ methods:
       example_value: '"TO DO"'
       schema: "{\n  \"type\": \"object\"\n}"
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_files_attributes\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"path\": {\n      \"description\": \"Filesystem\
@@ -270,7 +269,9 @@ methods:
         \ data.\",\n      \"type\": \"string\"\n    },\n    \"user_metadata_revision\"\
         : {\n      \"description\": \"The revision for changes to the user defined\
         \ metadata of the file.\",\n      \"type\": \"string\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Replace the contents of the file with the body of the request. The target
       file must already exist, and the content-type of the request must be application/octet-stream.
 rest_endpoint: /v1/files/{ref}/data

@@ -4,7 +4,6 @@ methods:
   get:
     parameters: []
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_nfs_settings\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"v4_enabled\": {\n      \"description\": \"Whether\
@@ -16,7 +15,9 @@ methods:
         \ (integrity) is enabled\",\n      \"type\": \"boolean\"\n    },\n    \"auth_sys_enabled\"\
         : {\n      \"description\": \"Whether AUTH_SYS is enabled\",\n      \"type\"\
         : \"boolean\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Retrieve current NFS server configuration.
   patch:
     parameters: []
@@ -33,7 +34,6 @@ methods:
         : {\n      \"description\": \"Whether AUTH_SYS is enabled\",\n      \"type\"\
         : \"boolean\"\n    }\n  }\n}"
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_nfs_settings\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"v4_enabled\": {\n      \"description\": \"Whether\
@@ -45,7 +45,9 @@ methods:
         \ (integrity) is enabled\",\n      \"type\": \"boolean\"\n    },\n    \"auth_sys_enabled\"\
         : {\n      \"description\": \"Whether AUTH_SYS is enabled\",\n      \"type\"\
         : \"boolean\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Modify current NFS server configuration.
   put:
     parameters: []
@@ -62,7 +64,6 @@ methods:
         : {\n      \"description\": \"Whether AUTH_SYS is enabled\",\n      \"type\"\
         : \"boolean\"\n    }\n  }\n}"
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_nfs_settings\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"v4_enabled\": {\n      \"description\": \"Whether\
@@ -74,7 +75,9 @@ methods:
         \ (integrity) is enabled\",\n      \"type\": \"boolean\"\n    },\n    \"auth_sys_enabled\"\
         : {\n      \"description\": \"Whether AUTH_SYS is enabled\",\n      \"type\"\
         : \"boolean\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Modify current NFS server configuration.
 rest_endpoint: /v2/nfs/settings
 permalink: /rest-api-guide/nfs/v2_settings.html

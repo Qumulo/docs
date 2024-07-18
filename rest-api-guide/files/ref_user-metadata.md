@@ -22,7 +22,6 @@ methods:
       name: limit
       required: false
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_files_user_metadata_range_result\",\n \
         \ \"type\": \"object\",\n  \"properties\": {\n    \"entries\": {\n      \"\
@@ -40,7 +39,9 @@ methods:
         \  \"description\": \"The data that the user-defined metadata entry stores.\"\
         ,\n              \"type\": \"number\"\n            }\n          }\n      \
         \  }\n      }\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Retrieve the Base64-encoded user-defined metadata for the specified file.
 rest_endpoint: /v1/files/{ref}/user-metadata/
 permalink: /rest-api-guide/files/ref_user-metadata.html

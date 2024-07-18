@@ -4,7 +4,6 @@ methods:
   get:
     parameters: []
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_v1_s3_config\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"enabled\": {\n      \"description\": \"When\
@@ -25,7 +24,9 @@ methods:
         \ true, the S3 server accepts only HTTP connections. By default, the S3 server\
         \ accepts only HTTP connections.\",\n      \"type\": \"boolean\"\n    }\n\
         \  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Retrieve the current S3 server settings.
   patch:
     parameters: []
@@ -51,7 +52,6 @@ methods:
         \ accepts only HTTP connections.\",\n      \"type\": \"boolean\"\n    }\n\
         \  }\n}"
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_v1_s3_config\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"enabled\": {\n      \"description\": \"When\
@@ -72,7 +72,9 @@ methods:
         \ true, the S3 server accepts only HTTP connections. By default, the S3 server\
         \ accepts only HTTP connections.\",\n      \"type\": \"boolean\"\n    }\n\
         \  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Modify the current S3 server settings.
 rest_endpoint: /v1/s3/settings
 permalink: /rest-api-guide/s3/settings.html

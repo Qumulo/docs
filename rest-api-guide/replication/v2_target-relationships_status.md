@@ -4,7 +4,6 @@ methods:
   get:
     parameters: []
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         api_target_relationship_status\",\n    \"type\": \"object\",\n    \"properties\"\
@@ -140,7 +139,9 @@ methods:
         \ then revert the reversal, the original source-target relationship has no\
         \ lock key until you configure a new one.\",\n        \"type\": \"string\"\
         \n      }\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: List statuses for all existing replication relationships where this cluster
       is the target.
 rest_endpoint: /v2/replication/target-relationships/status/

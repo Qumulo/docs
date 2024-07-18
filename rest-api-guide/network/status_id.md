@@ -7,7 +7,6 @@ methods:
       name: id
       required: true
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_network_status_response\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"id\": {\n      \"description\":\
@@ -75,7 +74,9 @@ methods:
         \n        },\n        \"timestamp\": {\n          \"description\": \"UNIX\
         \ epoch timestamp for when the network status was sampled.\",\n          \"\
         type\": \"string\"\n        }\n      }\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: This method retrieves the network configuration of the underlying system,
       including DHCP configuration, and status of any pending changes. This API is
       deprecated in favor of /v2/network/interfaces/1/status/{node_id}.

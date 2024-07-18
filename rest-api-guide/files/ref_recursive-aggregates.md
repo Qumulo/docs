@@ -30,7 +30,6 @@ methods:
       name: snapshot
       required: false
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         api_files_dir_aggregates\",\n    \"type\": \"object\",\n    \"properties\"\
@@ -92,7 +91,9 @@ methods:
         \ \"string\"\n      },\n      \"total_named_streams\": {\n        \"description\"\
         : \"total_named_streams\",\n        \"type\": \"string\"\n      }\n    }\n\
         \  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Return aggregated data for this directory and its children. It does a
       breadth-first traversal of directories up to the user-specified limit (see max_entries
       and max_depth parameters) or system-imposed limit. Directory entries that are

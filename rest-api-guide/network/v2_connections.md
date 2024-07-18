@@ -4,7 +4,6 @@ methods:
   get:
     parameters: []
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         api_connection_list_data\",\n    \"type\": \"object\",\n    \"properties\"\
@@ -25,7 +24,9 @@ methods:
         : {\n              \"description\": \"tenant_id\",\n              \"type\"\
         : \"number\"\n            }\n          }\n        }\n      }\n    }\n  }\n\
         }"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Return a list of NFS and SMB protocol connections to each node
 rest_endpoint: /v2/network/connections/
 permalink: /rest-api-guide/network/v2_connections.html

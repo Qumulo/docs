@@ -4,7 +4,6 @@ methods:
   get:
     parameters: []
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_bucket_description_list_model\",\n  \"\
         type\": \"object\",\n  \"properties\": {\n    \"buckets\": {\n      \"type\"\
@@ -23,7 +22,9 @@ methods:
         : \"The versioning state of the current S3 bucket: Unversioned, Enabled, or\
         \ Suspended.\",\n            \"type\": \"string\"\n          }\n        }\n\
         \      }\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: List all S3 buckets present in the system.
   post:
     parameters: []
@@ -38,7 +39,6 @@ methods:
         Specifies whether to create the bucket root if it doesn't exist.\",\n    \
         \  \"type\": \"boolean\"\n    }\n  }\n}"
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_bucket_description\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"name\": {\n      \"description\": \"The name\
@@ -52,7 +52,9 @@ methods:
         ,\n      \"type\": \"boolean\"\n    },\n    \"versioning\": {\n      \"description\"\
         : \"The versioning state of the current S3 bucket: Unversioned, Enabled, or\
         \ Suspended.\",\n      \"type\": \"string\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Create a new S3 bucket.
 rest_endpoint: /v1/s3/buckets/
 permalink: /rest-api-guide/s3/buckets.html

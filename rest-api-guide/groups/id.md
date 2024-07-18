@@ -6,11 +6,10 @@ methods:
     - description: The group's unique ID
       name: id
       required: true
-    response_body:
+    response_body: {}
+    responses:
+    - code: '200'
       description: Return value on success
-      example_value: '"TO DO"'
-      schema: '"TO DO"'
-      status_code: '200'
     summary: Delete a group.
   get:
     parameters:
@@ -18,7 +17,6 @@ methods:
       name: id
       required: true
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_group\",\n  \"type\": \"object\",\n  \"\
         properties\": {\n    \"id\": {\n      \"description\": \"The group's unique\
@@ -27,7 +25,9 @@ methods:
         \      \"description\": \"The group's SID\",\n      \"type\": \"string\"\n\
         \    },\n    \"gid\": {\n      \"description\": \"The group's NFS gid\",\n\
         \      \"type\": \"string\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Retrieve the attributes of a group. Refer to the 'Modify group' method
       for a description of the returned fields.
   put:
@@ -47,7 +47,6 @@ methods:
         \    \"gid\": {\n      \"description\": \"The group's NFS gid\",\n      \"\
         type\": \"string\"\n    }\n  }\n}"
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_group\",\n  \"type\": \"object\",\n  \"\
         properties\": {\n    \"id\": {\n      \"description\": \"The group's unique\
@@ -56,7 +55,9 @@ methods:
         \      \"description\": \"The group's SID\",\n      \"type\": \"string\"\n\
         \    },\n    \"gid\": {\n      \"description\": \"The group's NFS gid\",\n\
         \      \"type\": \"string\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Modify a group. The 'id' field must match the id in the URI.
 rest_endpoint: /v1/groups/{id}
 permalink: /rest-api-guide/groups/id.html

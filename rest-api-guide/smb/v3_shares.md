@@ -8,7 +8,6 @@ methods:
       name: populate-trustee-names
       required: false
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_smb_shares_v3\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"entries\": {\n      \"type\": \"array\",\n \
@@ -145,7 +144,9 @@ methods:
         \ encrypted. Clients without encryption capabilities will not be able to connect.\
         \ Default is false if this field is empty.\",\n            \"type\": \"boolean\"\
         \n          }\n        }\n      }\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: List all SMB shares. Refer to the 'Modify SMB Share' method for a description
       of the returned fields.
   post:
@@ -272,7 +273,6 @@ methods:
         \ not be able to connect. Default is false if this field is empty.\",\n  \
         \    \"type\": \"boolean\"\n    }\n  }\n}"
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_smb_share_v3\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"The unique\
@@ -391,7 +391,9 @@ methods:
         \ to this share to be encrypted. Clients without encryption capabilities will\
         \ not be able to connect. Default is false if this field is empty.\",\n  \
         \    \"type\": \"boolean\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Add an SMB share with given options.
 rest_endpoint: /v3/smb/shares/
 permalink: /rest-api-guide/smb/v3_shares.html

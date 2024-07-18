@@ -4,7 +4,6 @@ methods:
   get:
     parameters: []
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_dns_lookup_override_config\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"lookup_overrides\": {\n      \"\
@@ -15,7 +14,9 @@ methods:
         \    \"type\": \"array\",\n            \"items\": {\n              \"description\"\
         : \"aliases\",\n              \"type\": \"string\"\n            }\n      \
         \    }\n        }\n      }\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: List the DNS lookup overrides configured on the cluster. These rules
       override any lookup results from the configured DNS servers and serve as static
       mappings between IP address and hostname
@@ -36,7 +37,6 @@ methods:
         : \"aliases\",\n              \"type\": \"string\"\n            }\n      \
         \    }\n        }\n      }\n    }\n  }\n}"
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_dns_lookup_override_config\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"lookup_overrides\": {\n      \"\
@@ -47,7 +47,9 @@ methods:
         \    \"type\": \"array\",\n            \"items\": {\n              \"description\"\
         : \"aliases\",\n              \"type\": \"string\"\n            }\n      \
         \    }\n        }\n      }\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Overwrite the DNS lookup overrides configured on the cluster. These rules
       override any lookup results from the configured DNS servers and serve as static
       mappings between IP address and hostname

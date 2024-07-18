@@ -26,13 +26,10 @@ methods:
         \n        },\n        \"data_blocks_per_stripe\": {\n          \"description\"\
         : \"The number of data blocks per stripe.\",\n          \"type\": \"number\"\
         \n        }\n      }\n    }\n  }\n}"
-    response_body:
+    response_body: {}
+    responses:
+    - code: '202'
       description: Return value on success
-      example_value: '"TO DO"'
-      schema: "{\n  \"description\": \"api_monitor_uri\",\n  \"type\": \"object\"\
-        ,\n  \"properties\": {\n    \"monitor_uri\": {\n      \"description\": \"\
-        monitor_uri\",\n      \"type\": \"string\"\n    }\n  }\n}"
-      status_code: '202'
     summary: Modify the composition of the cluster by adding unconfigured nodes or
       replacing configured nodes.
 rest_endpoint: /v2/cluster/nodes/

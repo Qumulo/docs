@@ -15,13 +15,10 @@ methods:
         ,\n      \"type\": \"string\"\n    },\n    \"dns_config_id\": {\n      \"\
         description\": \"The unique ID of the DNS configuration to use for reconfiguring\
         \ this AD domain\",\n      \"type\": \"number\"\n    }\n  }\n}"
-    response_body:
+    response_body: {}
+    responses:
+    - code: '202'
       description: Return value on success
-      example_value: '"TO DO"'
-      schema: "{\n  \"description\": \"api_monitor_uri\",\n  \"type\": \"object\"\
-        ,\n  \"properties\": {\n    \"monitor_uri\": {\n      \"description\": \"\
-        monitor_uri\",\n      \"type\": \"string\"\n    }\n  }\n}"
-      status_code: '202'
     summary: Enables/disables POSIX attributes, sets Base DN.
 rest_endpoint: /v1/ad/reconfigure
 permalink: /rest-api-guide/ad/reconfigure.html

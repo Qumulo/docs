@@ -4,7 +4,6 @@ methods:
   get:
     parameters: []
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_snapshot_policies\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"entries\": {\n      \"type\": \"array\",\n \
@@ -102,7 +101,9 @@ methods:
         \     \"lock_key_ref\": {\n            \"description\": \"If non-empty, snapshots\
         \ taken for this policy will be locked with the given id.\",\n           \
         \ \"type\": \"string\"\n          }\n        }\n      }\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Returns information about all snapshot policies.
   post:
     parameters: []
@@ -193,7 +194,6 @@ methods:
         \ identifier to create locked snapshots under this policy.\",\n      \"type\"\
         : \"string\"\n    }\n  }\n}"
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_snapshot_policy_info\",\n  \"type\": \"\
         object\",\n  \"properties\": {\n    \"id\": {\n      \"description\": \"The\
@@ -278,7 +278,9 @@ methods:
         \n    },\n    \"lock_key_ref\": {\n      \"description\": \"If non-empty,\
         \ snapshots taken for this policy will be locked with the given id.\",\n \
         \     \"type\": \"string\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Creates a new snapshot policy and returns its information.
 rest_endpoint: /v3/snapshots/policies/
 permalink: /rest-api-guide/snapshots/v3_policies.html

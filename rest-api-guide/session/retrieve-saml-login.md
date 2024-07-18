@@ -13,12 +13,13 @@ methods:
         \ the SAML SSO authentication session is user-initiated.\",\n      \"type\"\
         : \"string\"\n    }\n  }\n}"
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"credentials\",\n  \"type\": \"object\",\n \
         \ \"properties\": {\n    \"bearer_token\": {\n      \"description\": \"bearer_token\"\
         ,\n      \"type\": \"string\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: This API resource supports the qq sso_login command.Check the status
       of the in-progress SAML single sign-on (SSO) authentication process that start-saml-login
       begins. When a user completes the authentication process, return the bearer_token

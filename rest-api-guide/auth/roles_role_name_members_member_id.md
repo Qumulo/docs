@@ -9,11 +9,10 @@ methods:
     - description: The member's unique ID
       name: member_id
       required: true
-    response_body:
+    response_body: {}
+    responses:
+    - code: '200'
       description: Return value on success
-      example_value: '"TO DO"'
-      schema: '"TO DO"'
-      status_code: '200'
     summary: Remove a member from a role
   get:
     parameters:
@@ -24,7 +23,6 @@ methods:
       name: member_id
       required: true
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_identity\",\n  \"type\": \"object\",\n\
         \  \"properties\": {\n    \"domain\": {\n      \"type\": \"string\",\n   \
@@ -45,7 +43,9 @@ methods:
         \n    },\n    \"sid\": {\n      \"description\": \"sid\",\n      \"type\"\
         : \"string\"\n    },\n    \"name\": {\n      \"description\": \"name\",\n\
         \      \"type\": \"string\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Get information about the member of the role.
 rest_endpoint: /v1/auth/roles/{role_name}/members/{member_id}
 permalink: /rest-api-guide/auth/roles_role_name_members_member_id.html

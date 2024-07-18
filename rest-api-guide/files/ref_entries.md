@@ -25,7 +25,6 @@ methods:
       name: limit
       required: false
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_files_directory_entries\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"path\": {\n      \"description\"\
@@ -147,7 +146,9 @@ methods:
         : {\n            \"description\": \"The revision for changes to the user defined\
         \ metadata of the file.\",\n            \"type\": \"string\"\n          }\n\
         \        }\n      }\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Get directory entries. Path or ID must reference a directory.
   post:
     parameters:
@@ -202,7 +203,6 @@ methods:
         : \"minor\",\n          \"type\": \"number\"\n        }\n      }\n    }\n\
         \  }\n}"
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_files_attributes\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"path\": {\n      \"description\": \"Filesystem\
@@ -301,7 +301,9 @@ methods:
         \ data.\",\n      \"type\": \"string\"\n    },\n    \"user_metadata_revision\"\
         : {\n      \"description\": \"The revision for changes to the user defined\
         \ metadata of the file.\",\n      \"type\": \"string\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Create a new file, link, or directory. In addition, this method can be
       use to rename an existing file. The return value is an attribute structure for
       the new file; refer to the 'Set Attributes' method for field descriptions.

@@ -4,7 +4,6 @@ methods:
   post:
     parameters: []
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_saml_login_info\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"login_id\": {\n      \"description\": \"The\
@@ -13,7 +12,9 @@ methods:
         \  \"description\": \"The login URL to present to the user. To complete the\
         \ authentication process, the user must open the login URL in a browser.\"\
         ,\n      \"type\": \"string\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: This API resource supports the qq sso_login command. Begin an interactive
       SAML single sign-on (SSO) authentication process for the cluster. Return the
       login_id and login_url strings required for the user to complete the authentication

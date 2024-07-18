@@ -4,7 +4,6 @@ methods:
   get:
     parameters: []
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_lone_ldap_config_v2\",\n  \"type\": \"\
         object\",\n  \"properties\": {\n    \"use_ldap\": {\n      \"description\"\
@@ -44,7 +43,9 @@ methods:
         \        }\n      }\n    },\n    \"encrypt_connection\": {\n      \"description\"\
         : \"If true, require to have encrypted connection with LDAP. Default is True.\"\
         ,\n      \"type\": \"boolean\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Get settings for LDAP interaction
   patch:
     parameters:
@@ -92,7 +93,6 @@ methods:
         : \"If true, require to have encrypted connection with LDAP. Default is True.\"\
         ,\n      \"type\": \"boolean\"\n    }\n  }\n}"
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_lone_ldap_config_v2\",\n  \"type\": \"\
         object\",\n  \"properties\": {\n    \"use_ldap\": {\n      \"description\"\
@@ -132,7 +132,9 @@ methods:
         \        }\n      }\n    },\n    \"encrypt_connection\": {\n      \"description\"\
         : \"If true, require to have encrypted connection with LDAP. Default is True.\"\
         ,\n      \"type\": \"boolean\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Partially Set LDAP interaction settings
   put:
     parameters:
@@ -180,7 +182,6 @@ methods:
         : \"If true, require to have encrypted connection with LDAP. Default is True.\"\
         ,\n      \"type\": \"boolean\"\n    }\n  }\n}"
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_lone_ldap_config_v2\",\n  \"type\": \"\
         object\",\n  \"properties\": {\n    \"use_ldap\": {\n      \"description\"\
@@ -220,7 +221,9 @@ methods:
         \        }\n      }\n    },\n    \"encrypt_connection\": {\n      \"description\"\
         : \"If true, require to have encrypted connection with LDAP. Default is True.\"\
         ,\n      \"type\": \"boolean\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Set settings for LDAP interaction
 rest_endpoint: /v2/ldap/settings
 permalink: /rest-api-guide/ldap/v2_settings.html

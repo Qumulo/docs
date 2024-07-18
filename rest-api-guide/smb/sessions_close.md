@@ -50,13 +50,14 @@ methods:
         : \"share_names\",\n          \"type\": \"string\"\n        }\n      }\n \
         \   }\n  }\n}"
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         api_smb2_session_close_result\",\n    \"type\": \"object\",\n    \"properties\"\
         : {\n      \"error_message\": {\n        \"description\": \"error_message\"\
         ,\n        \"type\": \"string\"\n      }\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: The request body must contain a list of sessions to close, as returned
       from GET /v1/smb/sessions.
 rest_endpoint: /v1/smb/sessions/close

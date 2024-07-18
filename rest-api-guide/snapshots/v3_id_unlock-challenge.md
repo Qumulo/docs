@@ -7,12 +7,13 @@ methods:
       name: id
       required: true
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_snapshot_unlock_challenge\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"challenge\": {\n      \"description\"\
         : \"challenge\",\n      \"type\": \"string\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Generate a snapshot unlock challenge to provide in the subsequent unlock
       call.
 rest_endpoint: /v3/snapshots/{id}/unlock-challenge

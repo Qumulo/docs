@@ -4,7 +4,6 @@ methods:
   get:
     parameters: []
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"syslog_audit_config\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"enabled\": {\n      \"description\": \"Enable\
@@ -18,7 +17,9 @@ methods:
         \        \"csv\",\n        \"json\"\n      ],\n      \"description\": \"Output\
         \ syslog as CSV or JSON.:\\n * `csv` - SYSLOG_AUDIT_FORMAT_CSV,\\n * `json`\
         \ - SYSLOG_AUDIT_FORMAT_JSON\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Retrieves audit log syslog configuration for the cluster.
   patch:
     parameters:
@@ -40,7 +41,6 @@ methods:
         \ \"description\": \"Output syslog as CSV or JSON.:\\n * `csv` - SYSLOG_AUDIT_FORMAT_CSV,\\\
         n * `json` - SYSLOG_AUDIT_FORMAT_JSON\"\n    }\n  }\n}"
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"syslog_audit_config\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"enabled\": {\n      \"description\": \"Enable\
@@ -54,7 +54,9 @@ methods:
         \        \"csv\",\n        \"json\"\n      ],\n      \"description\": \"Output\
         \ syslog as CSV or JSON.:\\n * `csv` - SYSLOG_AUDIT_FORMAT_CSV,\\n * `json`\
         \ - SYSLOG_AUDIT_FORMAT_JSON\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Modifies audit log syslog configuration for the cluster.
   put:
     parameters:
@@ -76,7 +78,6 @@ methods:
         \ syslog as CSV or JSON.:\\n * `csv` - SYSLOG_AUDIT_FORMAT_CSV,\\n * `json`\
         \ - SYSLOG_AUDIT_FORMAT_JSON\"\n    }\n  }\n}"
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"syslog_audit_config\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"enabled\": {\n      \"description\": \"Enable\
@@ -90,7 +91,9 @@ methods:
         \        \"csv\",\n        \"json\"\n      ],\n      \"description\": \"Output\
         \ syslog as CSV or JSON.:\\n * `csv` - SYSLOG_AUDIT_FORMAT_CSV,\\n * `json`\
         \ - SYSLOG_AUDIT_FORMAT_JSON\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Modifies audit log syslog configuration for the cluster.
 rest_endpoint: /v1/audit/syslog/config
 permalink: /rest-api-guide/audit/syslog_config.html

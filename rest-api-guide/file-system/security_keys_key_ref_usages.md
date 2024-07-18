@@ -16,7 +16,6 @@ methods:
       name: limit
       required: false
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_change_lock_key_usage_page\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"usages\": {\n      \"type\": \"\
@@ -30,7 +29,9 @@ methods:
         \ - FS_CHANGE_LOCK_KEY_USAGE_SNAPSHOT_POLICY\"\n          },\n          \"\
         id\": {\n            \"description\": \"id\",\n            \"type\": \"string\"\
         \n          }\n        }\n      }\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Get file system public key usage by using the name or identifier of the
       specified key.
 rest_endpoint: /v1/file-system/security/keys/{key_ref}/usages

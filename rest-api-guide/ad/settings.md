@@ -4,7 +4,6 @@ methods:
   get:
     parameters: []
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"ad_settings\",\n  \"type\": \"object\",\n \
         \ \"properties\": {\n    \"signing\": {\n      \"type\": \"string\",\n   \
@@ -24,7 +23,9 @@ methods:
         \ and sealing crypto.:\\n * `NO_AES` - Do not use AES.,\\n * `REQUIRE_AES`\
         \ - Require the use of AES.,\\n * `WANT_AES` - Prefer use of AES; allow server\
         \ to decide.\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Gets advanced Active Directory settings.
   put:
     parameters:
@@ -52,7 +53,6 @@ methods:
         \ - Require the use of AES.,\\n * `WANT_AES` - Prefer use of AES; allow server\
         \ to decide.\"\n    }\n  }\n}"
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"ad_settings\",\n  \"type\": \"object\",\n \
         \ \"properties\": {\n    \"signing\": {\n      \"type\": \"string\",\n   \
@@ -72,7 +72,9 @@ methods:
         \ and sealing crypto.:\\n * `NO_AES` - Do not use AES.,\\n * `REQUIRE_AES`\
         \ - Require the use of AES.,\\n * `WANT_AES` - Prefer use of AES; allow server\
         \ to decide.\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Sets advanced Active Directory settings.
 rest_endpoint: /v1/ad/settings
 permalink: /rest-api-guide/ad/settings.html

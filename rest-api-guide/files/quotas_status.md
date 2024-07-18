@@ -12,7 +12,6 @@ methods:
       name: limit
       required: false
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_files_quota_status_entries\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"quotas\": {\n      \"type\": \"\
@@ -27,7 +26,9 @@ methods:
         : {\n            \"description\": \"Capacity used by this directory and all\
         \ of its children, in bytes.\",\n            \"type\": \"string\"\n      \
         \    }\n        }\n      }\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: List all directory quotas and their corresponding directories' paths
       and cumulative sizes.
 rest_endpoint: /v1/files/quotas/status/

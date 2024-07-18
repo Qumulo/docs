@@ -11,11 +11,10 @@ methods:
         string\"\n    },\n    \"private_key\": {\n      \"description\": \"Private\
         \ key for the cluster in PEM format\",\n      \"type\": \"string\"\n    }\n\
         \  }\n}"
-    response_body:
+    response_body: {}
+    responses:
+    - code: '200'
       description: Return value on success
-      example_value: '"TO DO"'
-      schema: '"TO DO"'
-      status_code: '200'
     summary: Set the SSL certificates used by the cluster to authenticate its own
       identity.
 rest_endpoint: /v2/cluster/settings/ssl/certificate

@@ -7,7 +7,6 @@ methods:
       name: id
       required: true
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_files_quota_status\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"Unique ID\
@@ -18,7 +17,9 @@ methods:
         \      \"type\": \"string\"\n    },\n    \"capacity_usage\": {\n      \"description\"\
         : \"Capacity used by this directory and all of its children, in bytes.\",\n\
         \      \"type\": \"string\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Get the directory quota for a directory, its limit in bytes, and current
       capacity usage.
 rest_endpoint: /v1/files/quotas/status/{id}

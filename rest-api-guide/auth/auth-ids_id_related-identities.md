@@ -7,7 +7,6 @@ methods:
       name: id
       required: true
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         api_identity_v1\",\n    \"type\": \"object\",\n    \"properties\": {\n   \
@@ -20,7 +19,9 @@ methods:
         \ NFS_UID,\\n * `QUMULO_OPERATOR` - QUMULO_OPERATOR,\\n * `SMB_SID` - SMB_SID\"\
         \n      },\n      \"id_value\": {\n        \"description\": \"id_value\",\n\
         \        \"type\": \"string\"\n      }\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Given an auth_id of any kind, return all related identities (equivalents
       in other domains, and containing groups). This API is deprecated in favor of
       /v1/identity/expand

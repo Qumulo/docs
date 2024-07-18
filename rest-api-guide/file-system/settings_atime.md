@@ -4,7 +4,6 @@ methods:
   get:
     parameters: []
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"atime_config\",\n  \"type\": \"object\",\n\
         \  \"properties\": {\n    \"enabled\": {\n      \"description\": \"Whether\
@@ -14,7 +13,9 @@ methods:
         : \"Granularity for atime updates (HOUR/DAY/WEEEK):\\n * `DAY` - ATIME_GRANULARITY_DAY,\\\
         n * `HOUR` - ATIME_GRANULARITY_HOUR,\\n * `WEEK` - ATIME_GRANULARITY_WEEK\"\
         \n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Get atime-related settings.
   patch:
     parameters:
@@ -32,7 +33,6 @@ methods:
         n * `HOUR` - ATIME_GRANULARITY_HOUR,\\n * `WEEK` - ATIME_GRANULARITY_WEEK\"\
         \n    }\n  }\n}"
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"atime_config\",\n  \"type\": \"object\",\n\
         \  \"properties\": {\n    \"enabled\": {\n      \"description\": \"Whether\
@@ -42,7 +42,9 @@ methods:
         : \"Granularity for atime updates (HOUR/DAY/WEEEK):\\n * `DAY` - ATIME_GRANULARITY_DAY,\\\
         n * `HOUR` - ATIME_GRANULARITY_HOUR,\\n * `WEEK` - ATIME_GRANULARITY_WEEK\"\
         \n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Update atime-related settings.
   put:
     parameters:
@@ -60,7 +62,6 @@ methods:
         n * `HOUR` - ATIME_GRANULARITY_HOUR,\\n * `WEEK` - ATIME_GRANULARITY_WEEK\"\
         \n    }\n  }\n}"
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"atime_config\",\n  \"type\": \"object\",\n\
         \  \"properties\": {\n    \"enabled\": {\n      \"description\": \"Whether\
@@ -70,7 +71,9 @@ methods:
         : \"Granularity for atime updates (HOUR/DAY/WEEEK):\\n * `DAY` - ATIME_GRANULARITY_DAY,\\\
         n * `HOUR` - ATIME_GRANULARITY_HOUR,\\n * `WEEK` - ATIME_GRANULARITY_WEEK\"\
         \n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Set atime-related settings.
 rest_endpoint: /v1/file-system/settings/atime
 permalink: /rest-api-guide/file-system/settings_atime.html

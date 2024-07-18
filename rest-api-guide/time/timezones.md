@@ -4,11 +4,12 @@ methods:
   get:
     parameters: []
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"type\": \"string\"\
         \n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Get a list of all timezones supported by Qumulo Core
 rest_endpoint: /v1/time/timezones
 permalink: /rest-api-guide/time/timezones.html

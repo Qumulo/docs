@@ -17,7 +17,6 @@ methods:
       name: snapshot
       required: false
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_named_stream_attributes\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"name\": {\n      \"description\"\
@@ -27,7 +26,9 @@ methods:
         \     \"description\": \"datablocks\",\n      \"type\": \"string\"\n    },\n\
         \    \"data_revision\": {\n      \"description\": \"data_revision\",\n   \
         \   \"type\": \"string\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Get Stream attributes.
   patch:
     parameters:
@@ -139,7 +140,6 @@ methods:
         \ - FS_DIRECTORY_HASH_VERSION_FOLDED,\\n * `FS_DIRECTORY_HASH_VERSION_LOWER`\
         \ - FS_DIRECTORY_HASH_VERSION_LOWER\"\n    }\n  }\n}"
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_named_stream_attributes\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"name\": {\n      \"description\"\
@@ -149,7 +149,9 @@ methods:
         \     \"description\": \"datablocks\",\n      \"type\": \"string\"\n    },\n\
         \    \"data_revision\": {\n      \"description\": \"data_revision\",\n   \
         \   \"type\": \"string\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Update a subset of stream attributes
 rest_endpoint: /v1/files/{ref}/streams/{stream_id}/attributes
 permalink: /rest-api-guide/files/ref_streams_stream_id_attributes.html

@@ -4,7 +4,6 @@ methods:
   get:
     parameters: []
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"encryption_status_api_response\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"status\": {\n      \"type\": \"\
@@ -15,7 +14,9 @@ methods:
         : {\n      \"description\": \"When encryption at rest is enabled, the time\
         \ at which the current master key became active\",\n      \"type\": \"string\"\
         \n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: View the status of encryption at rest.
 rest_endpoint: /v1/encryption/status
 permalink: /rest-api-guide/encryption/status.html

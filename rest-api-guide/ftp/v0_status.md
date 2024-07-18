@@ -4,7 +4,6 @@ methods:
   get:
     parameters: []
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"ftp_status\",\n  \"type\": \"object\",\n  \"\
         properties\": {\n    \"settings\": {\n      \"description\": \"The current\
@@ -44,7 +43,9 @@ methods:
         \ \"status\": {\n            \"description\": \"The status of the server on\
         \ this node.\",\n            \"type\": \"string\"\n          }\n        }\n\
         \      }\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Retrieve the current FTP server settings and the status of the server
       on each node.
 rest_endpoint: /v0/ftp/status

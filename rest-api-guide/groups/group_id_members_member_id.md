@@ -9,11 +9,10 @@ methods:
     - description: The user's unique ID
       name: member_id
       required: true
-    response_body:
+    response_body: {}
+    responses:
+    - code: '200'
       description: Return value on success
-      example_value: '"TO DO"'
-      schema: '"TO DO"'
-      status_code: '200'
     summary: Remove a member from a group.
 rest_endpoint: /v1/groups/{group_id}/members/{member_id}
 permalink: /rest-api-guide/groups/group_id_members_member_id.html

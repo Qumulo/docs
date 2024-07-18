@@ -56,10 +56,10 @@ layout: default
                 <th>Code</th>
                 <th>Description</th>
             </tr>
-            {% for code in method_data.responses %}
+            {% for response in method_data.responses %}
                 <tr>
-                    <td>{{ code }}</td>
-                    <td>{{ method_data.responses[code].description }}</td>
+                    <td>{{ response.code }}</td>
+                    <td>{{ response.description }}</td>
                 </tr>
             {% endfor %}
         </table>

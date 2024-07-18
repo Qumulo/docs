@@ -4,7 +4,6 @@ methods:
   get:
     parameters: []
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         api_node_floating_ips\",\n    \"type\": \"object\",\n    \"properties\": {\n\
@@ -13,7 +12,9 @@ methods:
         : \"array\",\n        \"items\": {\n          \"description\": \"Floating\
         \ IPv4 or IPv6 addresses in 0.0.0.0 or :: format\",\n          \"type\": \"\
         string\"\n        }\n      }\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Returns floating IPs per node distribution based on the current network
       configuration. Returns status code 400 if the server is in DHCP mode.
 rest_endpoint: /v1/network/floating-ip-allocation

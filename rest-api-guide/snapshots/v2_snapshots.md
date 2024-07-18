@@ -8,7 +8,6 @@ methods:
       name: include-in-delete
       required: false
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_snapshots_v2\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"entries\": {\n      \"type\": \"array\",\n \
@@ -36,7 +35,9 @@ methods:
         \          \"in_delete\": {\n            \"description\": \"Whether or not\
         \ the snapshot is in the process of being deleted\",\n            \"type\"\
         : \"boolean\"\n          }\n        }\n      }\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Returns information about all snapshots.
   post:
     parameters:
@@ -59,7 +60,6 @@ methods:
         : {\n      \"description\": \"ID of directory to snapshot.\",\n      \"type\"\
         : \"string\"\n    }\n  }\n}"
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_snapshot_info_v2\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"Unique identifier\
@@ -82,7 +82,9 @@ methods:
         \    \"type\": \"string\"\n    },\n    \"in_delete\": {\n      \"description\"\
         : \"Whether or not the snapshot is in the process of being deleted\",\n  \
         \    \"type\": \"boolean\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Creates a new snapshot and returns its details.
 rest_endpoint: /v2/snapshots/
 permalink: /rest-api-guide/snapshots/v2_snapshots.html

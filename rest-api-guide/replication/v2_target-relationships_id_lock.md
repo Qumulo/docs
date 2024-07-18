@@ -26,7 +26,6 @@ methods:
         \ the reversal, the original source-target relationship has no lock key until\
         \ you configure a new one.\",\n      \"type\": \"string\"\n    }\n  }\n}"
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_target_relationship_lock\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"lock_key_ref\": {\n      \"description\"\
@@ -45,7 +44,9 @@ methods:
         \ or delete a lock key while the relationship is reversed and you then revert\
         \ the reversal, the original source-target relationship has no lock key until\
         \ you configure a new one.\",\n      \"type\": \"string\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Set or clear the snapshot lock key ID for snapshots that this target
       replication relationship creates. Changing the lock key applies only to snapshots
       that the system takes after you make a configuration change.

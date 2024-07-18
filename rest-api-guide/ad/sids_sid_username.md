@@ -7,10 +7,11 @@ methods:
       name: sid
       required: true
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"type\": \"string\"\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Return the Username for the given SID as found by querying the domain
       controller for the domain the cluster is joined to.
 rest_endpoint: /v1/ad/sids/{sid}/username

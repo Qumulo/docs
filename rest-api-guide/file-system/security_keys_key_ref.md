@@ -6,11 +6,10 @@ methods:
     - description: The name or identifier of the key.
       name: key_ref
       required: true
-    response_body:
+    response_body: {}
+    responses:
+    - code: '200'
       description: Return value on success
-      example_value: '"TO DO"'
-      schema: '"TO DO"'
-      status_code: '200'
     summary: Delete the file system public key by using the name or identifier of
       the specified key.
   get:
@@ -19,7 +18,6 @@ methods:
       name: key_ref
       required: true
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_change_lock_key\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"The identifier\
@@ -31,7 +29,9 @@ methods:
         : \"Specifies whether the key is disabled.\",\n      \"type\": \"boolean\"\
         \n    },\n    \"public_key\": {\n      \"description\": \"The contents of\
         \ the public key.\",\n      \"type\": \"string\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Get the file system public key by using the name or identifier of the
       specified key.
   patch:
@@ -55,7 +55,6 @@ methods:
         \n    },\n    \"public_key\": {\n      \"description\": \"The contents of\
         \ the public key.\",\n      \"type\": \"string\"\n    }\n  }\n}"
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_change_lock_key\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"The identifier\
@@ -67,7 +66,9 @@ methods:
         : \"Specifies whether the key is disabled.\",\n      \"type\": \"boolean\"\
         \n    },\n    \"public_key\": {\n      \"description\": \"The contents of\
         \ the public key.\",\n      \"type\": \"string\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Patch the file system public key by using the name or identifier of the
       specified key.
   put:
@@ -91,7 +92,6 @@ methods:
         \n    },\n    \"public_key\": {\n      \"description\": \"The contents of\
         \ the public key.\",\n      \"type\": \"string\"\n    }\n  }\n}"
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_change_lock_key\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"The identifier\
@@ -103,7 +103,9 @@ methods:
         : \"Specifies whether the key is disabled.\",\n      \"type\": \"boolean\"\
         \n    },\n    \"public_key\": {\n      \"description\": \"The contents of\
         \ the public key.\",\n      \"type\": \"string\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Put the file system public key by using the name or identifier of the
       specified key.
 rest_endpoint: /v1/file-system/security/keys/{key_ref}

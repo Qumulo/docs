@@ -12,11 +12,10 @@ methods:
     - description: Stream ID (uint64) to be deleted
       name: stream_id
       required: true
-    response_body:
+    response_body: {}
+    responses:
+    - code: '200'
       description: Return value on success
-      example_value: '"TO DO"'
-      schema: '"TO DO"'
-      status_code: '200'
     summary: Delete a named stream on provided object
 rest_endpoint: /v1/files/{ref}/streams/{stream_id}
 permalink: /rest-api-guide/files/ref_streams_stream_id.html

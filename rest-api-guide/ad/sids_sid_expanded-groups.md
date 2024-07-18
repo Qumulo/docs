@@ -8,13 +8,14 @@ methods:
       name: sid
       required: true
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         api_ad_group_sid\",\n    \"type\": \"object\",\n    \"properties\": {\n  \
         \    \"sid\": {\n        \"description\": \"sid\",\n        \"type\": \"string\"\
         \n      }\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Return the SIDs of all the groups that the given SID is a member of,
       (including all nested groups).
 rest_endpoint: /v1/ad/sids/{sid}/expanded-groups/

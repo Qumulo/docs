@@ -7,7 +7,6 @@ methods:
       name: id
       required: true
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_source_relationship_status\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"id\": {\n      \"description\":\
@@ -203,7 +202,9 @@ methods:
         \      \"description\": \"Whether or not the snapshot is in the process of\
         \ being deleted\",\n          \"type\": \"boolean\"\n        }\n      }\n\
         \    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Get current status of the specified replication relationship where this
       cluster is the source.
 rest_endpoint: /v2/replication/source-relationships/{id}/status

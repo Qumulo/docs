@@ -4,7 +4,6 @@ methods:
   post:
     parameters: []
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"ad_domain_monitor\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"status\": {\n      \"type\": \"string\",\n \
@@ -36,7 +35,9 @@ methods:
         \      \"description\": \"use_ad_posix_attributes\",\n      \"type\": \"boolean\"\
         \n    },\n    \"base_dn\": {\n      \"description\": \"base_dn\",\n      \"\
         type\": \"string\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Dismiss the last error recorded from a join, reconfigure, or leave operation.
 rest_endpoint: /v1/ad/dismiss-error
 permalink: /rest-api-guide/ad/dismiss-error.html

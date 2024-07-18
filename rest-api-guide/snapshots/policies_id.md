@@ -6,11 +6,10 @@ methods:
     - description: Policy identifier
       name: id
       required: true
-    response_body:
+    response_body: {}
+    responses:
+    - code: '200'
       description: Return value on success
-      example_value: '"TO DO"'
-      schema: '"TO DO"'
-      status_code: '200'
     summary: Deletes a snapshot policy.
   get:
     parameters:
@@ -18,7 +17,6 @@ methods:
       name: id
       required: true
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_snapshots_policy_info_v1\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"id\": {\n      \"description\":\
@@ -105,7 +103,9 @@ methods:
         \ },\n    \"enabled\": {\n      \"description\": \"Whether snapshot taking\
         \ is enabled for this policy (defaults to true)\",\n      \"type\": \"boolean\"\
         \n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Returns information about a specific snapshot policy.
   patch:
     parameters:
@@ -203,7 +203,6 @@ methods:
         \ is enabled for this policy (defaults to true)\",\n      \"type\": \"boolean\"\
         \n    }\n  }\n}"
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_snapshots_policy_info_v1\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"id\": {\n      \"description\":\
@@ -290,7 +289,9 @@ methods:
         \ },\n    \"enabled\": {\n      \"description\": \"Whether snapshot taking\
         \ is enabled for this policy (defaults to true)\",\n      \"type\": \"boolean\"\
         \n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Modifies a snapshot policy.
   put:
     parameters:
@@ -388,7 +389,6 @@ methods:
         \ is enabled for this policy (defaults to true)\",\n      \"type\": \"boolean\"\
         \n    }\n  }\n}"
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_snapshots_policy_info_v1\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"id\": {\n      \"description\":\
@@ -475,7 +475,9 @@ methods:
         \ },\n    \"enabled\": {\n      \"description\": \"Whether snapshot taking\
         \ is enabled for this policy (defaults to true)\",\n      \"type\": \"boolean\"\
         \n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Modifies a snapshot policy.
 rest_endpoint: /v1/snapshots/policies/{id}
 permalink: /rest-api-guide/snapshots/policies_id.html

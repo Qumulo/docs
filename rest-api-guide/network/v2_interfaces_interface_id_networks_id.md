@@ -12,13 +12,10 @@ methods:
     - description: ETag for expected version
       name: If-Match
       required: false
-    response_body:
+    response_body: {}
+    responses:
+    - code: '202'
       description: Return value on success
-      example_value: '"TO DO"'
-      schema: "{\n  \"description\": \"api_monitor_uri\",\n  \"type\": \"object\"\
-        ,\n  \"properties\": {\n    \"monitor_uri\": {\n      \"description\": \"\
-        monitor_uri\",\n      \"type\": \"string\"\n    }\n  }\n}"
-      status_code: '202'
     summary: Delete configuration of a network on an interface.
   get:
     parameters:
@@ -29,7 +26,6 @@ methods:
       name: network_id
       required: true
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_network_config_v2\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"name\": {\n      \"description\": \"name\",\n\
@@ -55,7 +51,9 @@ methods:
         \ for untagged networks.\",\n      \"type\": \"number\"\n    },\n    \"tenant_id\"\
         : {\n      \"description\": \"The tenant ID of the tenant that the network\
         \ is a part of.\",\n      \"type\": \"number\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Get configuration of a network on an interface.
   patch:
     parameters:
@@ -94,13 +92,10 @@ methods:
         \ for untagged networks.\",\n      \"type\": \"number\"\n    },\n    \"tenant_id\"\
         : {\n      \"description\": \"The tenant ID of the tenant that the network\
         \ is a part of.\",\n      \"type\": \"number\"\n    }\n  }\n}"
-    response_body:
+    response_body: {}
+    responses:
+    - code: '202'
       description: Return value on success
-      example_value: '"TO DO"'
-      schema: "{\n  \"description\": \"api_monitor_uri\",\n  \"type\": \"object\"\
-        ,\n  \"properties\": {\n    \"monitor_uri\": {\n      \"description\": \"\
-        monitor_uri\",\n      \"type\": \"string\"\n    }\n  }\n}"
-      status_code: '202'
     summary: Update a subset of configuration of a network on an interface. MTU change
       will not be allowed if the network being updated is an untagged STATIC network.
       Please modify the interface config instead.
@@ -141,13 +136,10 @@ methods:
         \ for untagged networks.\",\n      \"type\": \"number\"\n    },\n    \"tenant_id\"\
         : {\n      \"description\": \"The tenant ID of the tenant that the network\
         \ is a part of.\",\n      \"type\": \"number\"\n    }\n  }\n}"
-    response_body:
+    response_body: {}
+    responses:
+    - code: '202'
       description: Return value on success
-      example_value: '"TO DO"'
-      schema: "{\n  \"description\": \"api_monitor_uri\",\n  \"type\": \"object\"\
-        ,\n  \"properties\": {\n    \"monitor_uri\": {\n      \"description\": \"\
-        monitor_uri\",\n      \"type\": \"string\"\n    }\n  }\n}"
-      status_code: '202'
     summary: Set configuration of a network on an interface. MTU change will not be
       allowed if the network being updated is an untagged STATIC network. Please modify
       the interface config instead.

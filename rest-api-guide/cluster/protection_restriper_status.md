@@ -4,7 +4,6 @@ methods:
   get:
     parameters: []
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_restriper_status_v2\",\n  \"type\": \"\
         object\",\n  \"properties\": {\n    \"state\": {\n      \"type\": \"string\"\
@@ -31,7 +30,9 @@ methods:
         \n    },\n    \"coordinator_node\": {\n      \"description\": \"Restriper\
         \ coordinator node ID in this quorum, where reports are being recorded.\"\
         ,\n      \"type\": \"number\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Get current status of restriper, including data protection status and
       current restripe phase (if running)
 rest_endpoint: /v1/cluster/protection/restriper/status

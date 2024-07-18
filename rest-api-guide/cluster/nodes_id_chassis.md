@@ -7,7 +7,6 @@ methods:
       name: id
       required: true
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_node_chassis\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"id\",\n  \
@@ -30,7 +29,9 @@ methods:
         n * `bottom` - PSU_LOCATION_BOTTOM,\\n * `left` - PSU_LOCATION_LEFT,\\n *\
         \ `right` - PSU_LOCATION_RIGHT,\\n * `top` - PSU_LOCATION_TOP\"\n        \
         \  }\n        }\n      }\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: List the status of the chassis for a node. This API is deprecated in
       favor of /v1/cluster/nodes/<id>/uid-light and /v2/metrics/endpoints/default/data
       for PSU information

@@ -71,11 +71,10 @@ methods:
         REST API resource.
       name: recursive
       required: false
-    response_body:
+    response_body: {}
+    responses:
+    - code: '200'
       description: Return value on success
-      example_value: '"TO DO"'
-      schema: '"TO DO"'
-      status_code: '200'
     summary: 'Streams notifications for file system activity, monitoring only the
       files in the specified directory by using HTML server-sent events (SSE). The
       SSE data payload contains JSON-encoded event objects. For example: [{"type":

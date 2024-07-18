@@ -15,7 +15,6 @@ methods:
       name: limit
       required: false
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_access_token_metadata_list_model\",\n \
         \ \"type\": \"object\",\n  \"properties\": {\n    \"entries\": {\n      \"\
@@ -80,7 +79,9 @@ methods:
         \            \"description\": \"This access token can be used to authenticate.\"\
         ,\n            \"type\": \"boolean\"\n          }\n        }\n      }\n  \
         \  }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: List all access tokens for the cluster.
   post:
     parameters: []
@@ -113,7 +114,6 @@ methods:
         \ the access token is expired.\",\n      \"type\": \"string\"\n    }\n  }\n\
         }"
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_access_token\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"The access\
@@ -121,7 +121,9 @@ methods:
         \    },\n    \"bearer_token\": {\n      \"description\": \"The bearer token\
         \ for authenticating over REST. Can be used in qq, REST bindings, or an HTTP\
         \ Authorization header.\",\n      \"type\": \"string\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Create an access token for the specified user.
 rest_endpoint: /v1/auth/access-tokens/
 permalink: /rest-api-guide/auth/access-tokens.html

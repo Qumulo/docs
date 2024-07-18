@@ -7,7 +7,6 @@ methods:
       name: dn
       required: true
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"ad_ldap_object\",\n  \"type\": \"object\",\n\
         \  \"properties\": {\n    \"dn\": {\n      \"description\": \"dn\",\n    \
@@ -22,7 +21,9 @@ methods:
         \n    },\n    \"classes\": {\n      \"type\": \"array\",\n      \"items\"\
         : {\n        \"description\": \"classes\",\n        \"type\": \"string\"\n\
         \      }\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Return the AD account object that has the given distinguished name.
 rest_endpoint: /v1/ad/distinguished-names/{dn}/object
 permalink: /rest-api-guide/ad/distinguished-names_dn_object.html

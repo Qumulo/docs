@@ -7,7 +7,6 @@ methods:
       name: id
       required: true
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_snapshot_status_v2\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"Unique identifier\
@@ -35,7 +34,9 @@ methods:
         ,\n        \"type\": \"object\",\n        \"properties\": {\n          \"\
         id\": {\n            \"description\": \"id\",\n            \"type\": \"string\"\
         \n          }\n        }\n      }\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Returns the status on a snapshot.
 rest_endpoint: /v2/snapshots/status/{id}
 permalink: /rest-api-guide/snapshots/v2_status_id.html

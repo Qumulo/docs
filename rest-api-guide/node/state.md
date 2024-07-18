@@ -4,7 +4,6 @@ methods:
   get:
     parameters: []
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_node_state\",\n  \"type\": \"object\",\n\
         \  \"properties\": {\n    \"node_id\": {\n      \"description\": \"node-id\
@@ -19,7 +18,9 @@ methods:
         \ },\n    \"cluster_id\": {\n      \"description\": \"Unique identifier of\
         \ cluster the node belongs to or the empty string ('') if the node is unconfigured\"\
         ,\n      \"type\": \"string\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Retrieves node state of the node that the call was made to.
 rest_endpoint: /v1/node/state
 permalink: /rest-api-guide/node/state.html

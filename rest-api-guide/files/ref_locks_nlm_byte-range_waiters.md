@@ -22,7 +22,6 @@ methods:
       name: limit
       required: false
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_byte_range_waiters\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"waiters\": {\n      \"type\": \"array\",\n \
@@ -54,7 +53,9 @@ methods:
         \  \"node_address\": {\n            \"description\": \"The IP address of the\
         \ node that receives the request.\",\n            \"type\": \"string\"\n \
         \         }\n        }\n      }\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Return a list of all NLM byte range requests currently waiting on the
       specified file.
 rest_endpoint: /v1/files/{ref}/locks/nlm/byte-range/waiters/

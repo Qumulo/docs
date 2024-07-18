@@ -14,11 +14,10 @@ methods:
         smaller limit.
       name: limit
       required: false
-    response_body:
+    response_body: {}
+    responses:
+    - code: '200'
       description: Return value on success
-      example_value: '"TO DO"'
-      schema: '"TO DO"'
-      status_code: '200'
     summary: List all members of a role.
   post:
     parameters:
@@ -47,7 +46,6 @@ methods:
         : \"string\"\n    },\n    \"name\": {\n      \"description\": \"name\",\n\
         \      \"type\": \"string\"\n    }\n  }\n}"
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_identity\",\n  \"type\": \"object\",\n\
         \  \"properties\": {\n    \"domain\": {\n      \"type\": \"string\",\n   \
@@ -68,7 +66,9 @@ methods:
         \n    },\n    \"sid\": {\n      \"description\": \"sid\",\n      \"type\"\
         : \"string\"\n    },\n    \"name\": {\n      \"description\": \"name\",\n\
         \      \"type\": \"string\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Assign a member to a role
 rest_endpoint: /v1/auth/roles/{role_name}/members
 permalink: /rest-api-guide/auth/roles_role_name_members.html

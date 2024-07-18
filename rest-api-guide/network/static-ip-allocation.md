@@ -17,7 +17,6 @@ methods:
       name: floating
       required: false
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_static_ip_allocation_summary\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"total_ips\": {\n      \"description\"\
@@ -30,7 +29,9 @@ methods:
         \ ips\",\n      \"type\": \"number\"\n    },\n    \"surplus_floating_ips\"\
         : {\n      \"description\": \"Floating ip count too small or large\",\n  \
         \    \"type\": \"number\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Returns total/used/available numbers of IPs based on the current network
       configuration. Returns status code 400 if the server is in DHCP mode unless
       the try/floating query parameters are provided.

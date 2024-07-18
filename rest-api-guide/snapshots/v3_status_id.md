@@ -7,7 +7,6 @@ methods:
       name: id
       required: true
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_snapshot_status\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"The unique\
@@ -39,7 +38,9 @@ methods:
         \      \"description\": \"The key that the snapshot is locked with. If set\
         \ to null, the system does not create locked snapshots under this policy.\"\
         ,\n      \"type\": \"string\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Returns the status for a specific snapshot.
 rest_endpoint: /v3/snapshots/status/{id}
 permalink: /rest-api-guide/snapshots/v3_status_id.html

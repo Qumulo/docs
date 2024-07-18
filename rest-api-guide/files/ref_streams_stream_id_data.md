@@ -27,11 +27,10 @@ methods:
         possible, up to length. Will read the whole file if not specified.
       name: length
       required: false
-    response_body:
+    response_body: {}
+    responses:
+    - code: '200'
       description: Return value on success
-      example_value: '"TO DO"'
-      schema: '"TO DO"'
-      status_code: '200'
     summary: Return the contents of the file as an HTTP octet stream. The etag returned
       by this method represents the whole state of this file. In another word, if
       you are reading just a portion of the data, etag could be invalid because of
@@ -60,7 +59,6 @@ methods:
       example_value: '"TO DO"'
       schema: "{\n  \"type\": \"object\"\n}"
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_named_stream_attributes\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"name\": {\n      \"description\"\
@@ -70,7 +68,9 @@ methods:
         \     \"description\": \"datablocks\",\n      \"type\": \"string\"\n    },\n\
         \    \"data_revision\": {\n      \"description\": \"data_revision\",\n   \
         \   \"type\": \"string\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Set the contents of the stream, at the given offset, to the body of the
       request. The target stream must already exist, and the Content-Type of the request
       must be application/octet-stream.
@@ -92,7 +92,6 @@ methods:
       example_value: '"TO DO"'
       schema: "{\n  \"type\": \"object\"\n}"
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_named_stream_attributes\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"name\": {\n      \"description\"\
@@ -102,7 +101,9 @@ methods:
         \     \"description\": \"datablocks\",\n      \"type\": \"string\"\n    },\n\
         \    \"data_revision\": {\n      \"description\": \"data_revision\",\n   \
         \   \"type\": \"string\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Replace the contents of the stream with the body of the request. The
       target stream must already exist, and the content-type of the request must be
       Application/Octet-stream.

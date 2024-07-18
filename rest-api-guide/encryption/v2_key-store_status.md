@@ -4,7 +4,6 @@ methods:
   get:
     parameters: []
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"encryption_api_v2_status_response\",\n  \"\
         type\": \"object\",\n  \"properties\": {\n    \"type\": {\n      \"type\"\
@@ -32,7 +31,9 @@ methods:
         \ became active.\",\n      \"type\": \"string\"\n    },\n    \"last_status_update_time\"\
         : {\n      \"description\": \"The time at which this status of the configuration\
         \ was last updated.\",\n      \"type\": \"string\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: View the status of at-rest encryption.
 rest_endpoint: /v2/encryption/key-store/status
 permalink: /rest-api-guide/encryption/v2_key-store_status.html

@@ -6,24 +6,24 @@ methods:
     - description: ETag for expected version
       name: If-Match
       required: false
-    response_body:
+    response_body: {}
+    responses:
+    - code: '200'
       description: Return value on success
-      example_value: '"TO DO"'
-      schema: '"TO DO"'
-      status_code: '200'
     summary: Delete the SSL certificate authority the cluster trusts when authenticating
       outbound connections.
   get:
     parameters: []
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_cluster_ssl_ca_certificate_settings\",\n\
         \  \"type\": \"object\",\n  \"properties\": {\n    \"ca_certificate\": {\n\
         \      \"description\": \"Public certificate of the certificate authority\
         \ to trust for outbound connections\",\n      \"type\": \"string\"\n    }\n\
         \  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Get the SSL certificate authority the cluster trusts when authenticating
       outbound connections.
   put:
@@ -39,14 +39,15 @@ methods:
         \ to trust for outbound connections\",\n      \"type\": \"string\"\n    }\n\
         \  }\n}"
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_cluster_ssl_ca_certificate_settings\",\n\
         \  \"type\": \"object\",\n  \"properties\": {\n    \"ca_certificate\": {\n\
         \      \"description\": \"Public certificate of the certificate authority\
         \ to trust for outbound connections\",\n      \"type\": \"string\"\n    }\n\
         \  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Set the SSL certificate authority the cluster trusts when authenticating
       outbound connections.
 rest_endpoint: /v2/cluster/settings/ssl/ca-certificate

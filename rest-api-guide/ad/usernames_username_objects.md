@@ -7,7 +7,6 @@ methods:
       name: username
       required: true
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         ad_ldap_object\",\n    \"type\": \"object\",\n    \"properties\": {\n    \
@@ -24,7 +23,9 @@ methods:
         \  },\n      \"classes\": {\n        \"type\": \"array\",\n        \"items\"\
         : {\n          \"description\": \"classes\",\n          \"type\": \"string\"\
         \n        }\n      }\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Return any AD account objects that have the given sAMAccountName.
 rest_endpoint: /v1/ad/usernames/{username}/objects/
 permalink: /rest-api-guide/ad/usernames_username_objects.html

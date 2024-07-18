@@ -19,13 +19,10 @@ methods:
         \ or equal to the number of node failures that your cluster permits. By default,\
         \ the value is the number of permitted node failures minus 1 (1 node minimum).\"\
         ,\n      \"type\": \"number\"\n    }\n  }\n}"
-    response_body:
+    response_body: {}
+    responses:
+    - code: '202'
       description: Return value on success
-      example_value: '"TO DO"'
-      schema: "{\n  \"description\": \"api_monitor_uri\",\n  \"type\": \"object\"\
-        ,\n  \"properties\": {\n    \"monitor_uri\": {\n      \"description\": \"\
-        monitor_uri\",\n      \"type\": \"string\"\n    }\n  }\n}"
-      status_code: '202'
     summary: Prepare for upgrade.
 rest_endpoint: /v2/upgrade/prepare
 permalink: /rest-api-guide/upgrade/v2_prepare.html

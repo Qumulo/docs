@@ -21,7 +21,6 @@ methods:
         ,\n  \"properties\": {\n    \"stream_name\": {\n      \"description\": \"\
         Stream name to be created.\",\n      \"type\": \"string\"\n    }\n  }\n}"
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_named_stream_attributes\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"name\": {\n      \"description\"\
@@ -31,7 +30,9 @@ methods:
         \     \"description\": \"datablocks\",\n      \"type\": \"string\"\n    },\n\
         \    \"data_revision\": {\n      \"description\": \"data_revision\",\n   \
         \   \"type\": \"string\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Rename a stream on provided object
 rest_endpoint: /v1/files/{ref}/streams/{stream_id}/rename
 permalink: /rest-api-guide/files/ref_streams_stream_id_rename.html

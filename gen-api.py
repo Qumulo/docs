@@ -39,8 +39,8 @@ def generate_resource_md(category, endpoint, methods, permalink):
     }
 
     for method, details in methods.items():
-        response_key = list(details.get("responses", {}).keys())[0] if details.get("responses") else None
-        response_body = details.get("responses", {}).get(response_key, {}).get("content", {}).get("application/json", {}) if response_key else {}
+        response_details = details.get("responses", {})
+        response_body = response_details.get("200", {}).get("content", {}).get("application/json", {})
         request_body = details.get("requestBody", {}).get("content", {}).get("application/json", {})
 
         method_details = {
@@ -50,11 +50,13 @@ def generate_resource_md(category, endpoint, methods, permalink):
                 for param in details.get("parameters", [])
             ],
             "response_body": {
-                "status_code": response_key,
-                "description": details["responses"][response_key]["description"] if response_key else "",
                 "example_value": json.dumps(response_body.get("example", "TO DO"), indent=2),
                 "schema": json.dumps(response_body.get("schema", "TO DO"), indent=2)
-            } if response_key else {},
+            } if response_body else {},
+            "responses": [
+                {"code": code, "description": response.get("description", "")}
+                for code, response in response_details.items()
+            ]
         }
 
         if request_body:

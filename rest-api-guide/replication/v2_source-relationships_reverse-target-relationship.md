@@ -13,7 +13,6 @@ methods:
         \    \"source_port\": {\n      \"description\": \"Network port of the source\
         \ cluster (defaults to 3712)\",\n      \"type\": \"number\"\n    }\n  }\n}"
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_source_relationship\",\n  \"type\": \"\
         object\",\n  \"properties\": {\n    \"id\": {\n      \"description\": \"Unique\
@@ -80,7 +79,9 @@ methods:
         \ never expire and 'same_as_policy' indicates snapshots should expire at the\
         \ same time as the snapshot policy specifies.\",\n            \"type\": \"\
         string\"\n          }\n        }\n      }\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Reverse source and target for the specified replication relationship.
       This operation is initiated on the target cluster. The previous target directory
       will be made the new source, and the previous source directory will be made

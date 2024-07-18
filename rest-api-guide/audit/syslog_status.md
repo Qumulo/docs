@@ -4,7 +4,6 @@ methods:
   get:
     parameters: []
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"syslog_audit_log_status\",\n  \"type\": \"\
         object\",\n  \"properties\": {\n    \"connection_status\": {\n      \"type\"\
@@ -19,7 +18,9 @@ methods:
         error_details\": {\n      \"description\": \"Internal details for the current\
         \ error, if audit is disconnected.\",\n      \"type\": \"string\"\n    }\n\
         \  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Retrieves the syslog connection status of audit log.
 rest_endpoint: /v1/audit/syslog/status
 permalink: /rest-api-guide/audit/syslog_status.html

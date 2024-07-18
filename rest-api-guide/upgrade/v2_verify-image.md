@@ -9,7 +9,6 @@ methods:
         ,\n  \"properties\": {\n    \"image_path\": {\n      \"description\": \"image_path\"\
         ,\n      \"type\": \"string\"\n    }\n  }\n}"
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"upgrade_verify_result\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"target_version\": {\n      \"description\":\
@@ -19,7 +18,9 @@ methods:
         upgrade_type:\\n * `SOFTWARE_AND_PLATFORM` - SOFTWARE_AND_PLATFORM,\\n * `SOFTWARE_ONLY`\
         \ - SOFTWARE_ONLY\"\n    },\n    \"error\": {\n      \"description\": \"error\"\
         ,\n      \"type\": \"string\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Verify that the given image can be used to upgrade the cluster and retrieve
       details about the upgrade that will occur.
 rest_endpoint: /v2/upgrade/verify-image

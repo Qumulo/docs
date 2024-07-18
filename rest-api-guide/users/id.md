@@ -6,11 +6,10 @@ methods:
     - description: The user's unique ID
       name: id
       required: true
-    response_body:
+    response_body: {}
+    responses:
+    - code: '200'
       description: Return value on success
-      example_value: '"TO DO"'
-      schema: '"TO DO"'
-      status_code: '200'
     summary: Delete a local user.
   get:
     parameters:
@@ -18,7 +17,6 @@ methods:
       name: id
       required: true
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_user\",\n  \"type\": \"object\",\n  \"\
         properties\": {\n    \"id\": {\n      \"description\": \"The user's unique\
@@ -32,7 +30,9 @@ methods:
         \ the user's home directory\",\n      \"type\": \"string\"\n    },\n    \"\
         can_change_password\": {\n      \"description\": \"Specifies whether the user\
         \ can change the password\",\n      \"type\": \"boolean\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Retrieve information about a single local user. Refer to the 'Modify
       user' method for a description of the returned fields.
   put:
@@ -57,7 +57,6 @@ methods:
         The user's password\",\n      \"type\": \"string\",\n      \"format\": \"\
         password\"\n    }\n  }\n}"
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_user\",\n  \"type\": \"object\",\n  \"\
         properties\": {\n    \"id\": {\n      \"description\": \"The user's unique\
@@ -71,7 +70,9 @@ methods:
         \ the user's home directory\",\n      \"type\": \"string\"\n    },\n    \"\
         can_change_password\": {\n      \"description\": \"Specifies whether the user\
         \ can change the password\",\n      \"type\": \"boolean\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Modify a local user.
 rest_endpoint: /v1/users/{id}
 permalink: /rest-api-guide/users/id.html

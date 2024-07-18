@@ -9,11 +9,10 @@ methods:
     - description: ETag for expected version
       name: If-Match
       required: false
-    response_body:
+    response_body: {}
+    responses:
+    - code: '200'
       description: Return value on success
-      example_value: '"TO DO"'
-      schema: '"TO DO"'
-      status_code: '200'
     summary: Delete an SMB share. Not undoable.
   get:
     parameters:
@@ -21,7 +20,6 @@ methods:
       name: share_id
       required: true
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_smb_share_v3\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"The unique\
@@ -140,7 +138,9 @@ methods:
         \ to this share to be encrypted. Clients without encryption capabilities will\
         \ not be able to connect. Default is false if this field is empty.\",\n  \
         \    \"type\": \"boolean\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Retrieve the specified SMB share. Refer to the 'Modify SMB Share' method
       for a description of the returned fields.
   patch:
@@ -275,7 +275,6 @@ methods:
         \ not be able to connect. Default is false if this field is empty.\",\n  \
         \    \"type\": \"boolean\"\n    }\n  }\n}"
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_smb_share_v3\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"The unique\
@@ -394,7 +393,9 @@ methods:
         \ to this share to be encrypted. Clients without encryption capabilities will\
         \ not be able to connect. Default is false if this field is empty.\",\n  \
         \    \"type\": \"boolean\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Modify select fields in an SMB share.
   put:
     parameters:
@@ -528,7 +529,6 @@ methods:
         \ not be able to connect. Default is false if this field is empty.\",\n  \
         \    \"type\": \"boolean\"\n    }\n  }\n}"
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_smb_share_v3\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"The unique\
@@ -647,7 +647,9 @@ methods:
         \ to this share to be encrypted. Clients without encryption capabilities will\
         \ not be able to connect. Default is false if this field is empty.\",\n  \
         \    \"type\": \"boolean\"\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Modify an SMB share's options.
 rest_endpoint: /v3/smb/shares/{share_id}
 permalink: /rest-api-guide/smb/v3_shares_share_id.html

@@ -24,7 +24,6 @@ methods:
       name: limit
       required: false
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_snapshot_file_diff\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"entries\": {\n      \"type\": \"array\",\n \
@@ -40,7 +39,9 @@ methods:
         \ \"size\": {\n            \"description\": \"The size of the changed region\
         \ in bytes.\",\n            \"type\": \"string\"\n          }\n        }\n\
         \      }\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Returns a list of changed byte ranges between two snapshots of a regular
       file. The list includes new, modified, and deallocated regions of the file's
       contents.

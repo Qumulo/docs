@@ -4,7 +4,6 @@ methods:
   get:
     parameters: []
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_node_replacement_plan\",\n  \"type\": \"\
         object\",\n  \"properties\": {\n    \"nodes_to_be_replaced\": {\n      \"\
@@ -21,7 +20,9 @@ methods:
         ,\n          \"type\": \"number\"\n        },\n        \"data_blocks_per_stripe\"\
         : {\n          \"description\": \"The number of data blocks per stripe.\"\
         ,\n          \"type\": \"number\"\n        }\n      }\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Get the current node replacement plan. This plan lists the nodes pending
       replacement and nodes currently in process of being replaced.
   post:
@@ -39,11 +40,10 @@ methods:
         : \"number\"\n        },\n        \"data_blocks_per_stripe\": {\n        \
         \  \"description\": \"The number of data blocks per stripe.\",\n         \
         \ \"type\": \"number\"\n        }\n      }\n    }\n  }\n}"
-    response_body:
+    response_body: {}
+    responses:
+    - code: '200'
       description: Return value on success
-      example_value: '"TO DO"'
-      schema: '"TO DO"'
-      status_code: '200'
     summary: To initiate node replacement, specify the nodes to replace.
 rest_endpoint: /v1/cluster/node-replacement-plan/
 permalink: /rest-api-guide/cluster/node-replacement-plan.html

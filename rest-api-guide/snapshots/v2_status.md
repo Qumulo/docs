@@ -4,7 +4,6 @@ methods:
   get:
     parameters: []
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_snapshot_statuses_v2\",\n  \"type\": \"\
         object\",\n  \"properties\": {\n    \"entries\": {\n      \"type\": \"array\"\
@@ -38,7 +37,9 @@ methods:
         \              \"id\": {\n                  \"description\": \"id\",\n   \
         \               \"type\": \"string\"\n                }\n              }\n\
         \            }\n          }\n        }\n      }\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Returns the status on all snapshots.
 rest_endpoint: /v2/snapshots/status/
 permalink: /rest-api-guide/snapshots/v2_status.html

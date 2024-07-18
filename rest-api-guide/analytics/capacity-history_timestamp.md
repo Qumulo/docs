@@ -7,7 +7,6 @@ methods:
       name: timestamp
       required: true
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"historical_capacity_details\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"threshold_for_inclusion\": {\n \
@@ -23,7 +22,9 @@ methods:
         \          },\n          \"path\": {\n            \"description\": \"path\"\
         ,\n            \"type\": \"string\"\n          }\n        }\n      }\n   \
         \ }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Returns all paths using more than 0.1% of overall used capacity at a
       given timestamp. A path that meets the threshold with many items smaller than
       the threshold will be aggregated. Individual items above the threshold will

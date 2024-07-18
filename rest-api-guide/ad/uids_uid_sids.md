@@ -7,11 +7,12 @@ methods:
       name: uid
       required: true
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"type\": \"string\"\
         \n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Return the SIDs for the given UID as found by issuing an AD query against
       the current domain the cluster is joined to.
 rest_endpoint: /v1/ad/uids/{uid}/sids/

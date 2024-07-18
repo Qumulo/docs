@@ -4,7 +4,6 @@ methods:
   get:
     parameters: []
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_snapshot_policies_v2\",\n  \"type\": \"\
         object\",\n  \"properties\": {\n    \"entries\": {\n      \"type\": \"array\"\
@@ -100,7 +99,9 @@ methods:
         \    \"description\": \"Specifies whether taking snapshots is enabled for\
         \ this policy.\",\n            \"type\": \"boolean\"\n          }\n      \
         \  }\n      }\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Returns information about all snapshot policies.
   post:
     parameters: []
@@ -187,7 +188,6 @@ methods:
         \ snapshot taking is enabled for this policy (defaults to true).\",\n    \
         \  \"type\": \"boolean\"\n    }\n  }\n}"
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_snapshot_policy_info_v2\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"id\": {\n      \"description\":\
@@ -270,7 +270,9 @@ methods:
         \   }\n    },\n    \"enabled\": {\n      \"description\": \"Specifies whether\
         \ taking snapshots is enabled for this policy.\",\n      \"type\": \"boolean\"\
         \n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Creates a new snapshot policy and returns its information.
 rest_endpoint: /v2/snapshots/policies/
 permalink: /rest-api-guide/snapshots/v2_policies.html

@@ -7,7 +7,6 @@ methods:
       name: interface_id
       required: true
     response_body:
-      description: Return value on success
       example_value: '"TO DO"'
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         api_network_config_v2\",\n    \"type\": \"object\",\n    \"properties\": {\n\
@@ -36,7 +35,9 @@ methods:
         : \"number\"\n      },\n      \"tenant_id\": {\n        \"description\": \"\
         The tenant ID of the tenant that the network is a part of.\",\n        \"\
         type\": \"number\"\n      }\n    }\n  }\n}"
-      status_code: '200'
+    responses:
+    - code: '200'
+      description: Return value on success
     summary: Get configurations of all networks configured on an interface. This will
       always include at least one network, and exactly one if it is assigned by DHCP.
       Network 1 is created by default, but it may be removed if other networks are
@@ -72,13 +73,10 @@ methods:
         \ for untagged networks.\",\n      \"type\": \"number\"\n    },\n    \"tenant_id\"\
         : {\n      \"description\": \"The tenant ID of the tenant that the network\
         \ is a part of.\",\n      \"type\": \"number\"\n    }\n  }\n}"
-    response_body:
+    response_body: {}
+    responses:
+    - code: '202'
       description: Return value on success
-      example_value: '"TO DO"'
-      schema: "{\n  \"description\": \"api_monitor_uri\",\n  \"type\": \"object\"\
-        ,\n  \"properties\": {\n    \"monitor_uri\": {\n      \"description\": \"\
-        monitor_uri\",\n      \"type\": \"string\"\n    }\n  }\n}"
-      status_code: '202'
     summary: Add a network configuration to the interface. If the network being added
       is an untagged STATIC network, the MTU will be computed based on the interface
       configuration.

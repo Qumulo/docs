@@ -11,11 +11,10 @@ methods:
         password\"\n    },\n    \"new_password\": {\n      \"description\": \"The\
         \ new password\",\n      \"type\": \"string\",\n      \"format\": \"password\"\
         \n    }\n  }\n}"
-    response_body:
+    response_body: {}
+    responses:
+    - code: '200'
       description: Return value on success
-      example_value: '"TO DO"'
-      schema: '"TO DO"'
-      status_code: '200'
     summary: Change the password for the logged in user.
 rest_endpoint: /v1/session/change-password
 permalink: /rest-api-guide/session/change-password.html
