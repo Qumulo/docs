@@ -3,10 +3,14 @@ layout: default
 ---
 
 <div class="post-header">
-    <h1 class="post-title-main"><code>{{ page.rest_endpoint | remove_first: '/v1' }}</code></h1>
+    <h1 class="post-title-main">{{ page.rest_endpoint | remove_first: '/v1/' | remove_last: '/' }}</h1>
 </div>
 
 <div class="post-content">
+
+    {% unless page.toc == false %}
+    {% include toc.html %}
+    {% endunless %}
 
 <h2>Endpoint</h2>
 <div><code>{{ page.rest_endpoint }}</code></div>
@@ -44,9 +48,9 @@ layout: default
         {% if method_data.request_body %}
             <h4>Request</h4>
             <h5>Example Value</h5>
-            <pre><code class="language-json">{{ method_data.request_body.example_value }}</code></pre>
+{% highlight json %}{{ method_data.request_body.example_value }}{% endhighlight %}
             <h5>Schema</h5>
-            <pre><code class="language-json">{{ method_data.request_body.schema }}</code></pre>
+{% highlight json %}{{ method_data.request_body.schema }}{% endhighlight %}
         {% endif %}
 
         <h4>Response</h4>
@@ -64,9 +68,9 @@ layout: default
             {% endfor %}
         </table>
         <h5>Example Value</h5>
-        <pre><code class="language-json">{{ method_data.response_body.example_value }}</code></pre>
+{% highlight json %}{{ method_data.response_body.example_value }}{% endhighlight %}
         <h5>Schema</h5>
-        <pre><code class="language-json">{{ method_data.response_body.schema }}</code></pre>
+{% highlight json %}{{ method_data.response_body.schema }}{% endhighlight %}
     {% endif %}
 {% endfor %}
 
