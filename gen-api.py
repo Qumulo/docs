@@ -65,18 +65,18 @@ def generate_resource_md(category, endpoint, methods, permalink):
     return f"---\n{yaml_string}permalink: {permalink}\nsidebar: rest_api_guide_sidebar\n---\n"
 
 # Function to clean up filenames
-def clean_filename(filename):
-    filename = filename.replace('{', '_').replace('}', '')
+def clean_filename(category, filename):
+    filename = filename.replace(f'{category}_', '').replace('{', '_').replace('}', '').replace('__', '_').strip('_')
     filename = filename.replace('v1_', '')
     return filename
 
 # Function to create the sidebar title from the path
 def create_sidebar_title(path, category):
     # Remove leading /v1 and category
-    title = path.replace('/v1', '').replace(f'/{category}', '')
+    title = path.replace('/v1', '').replace(f'/{category}', '', 1)
     # Replace parameters {param} with {param}
     title = title.replace('{', '{').replace('}', '}')
-    # Omit opening / and trailing /
+    # Omit leading / and trailing /
     title = title.strip('/')
     return title
 
@@ -109,7 +109,7 @@ for path, path_item in api_definition["paths"].items():
 
     # Clean up filename and write the individual resource file
     resource_name = path.strip("/").replace("/", "_").replace("{", "_").replace("}", "")
-    resource_filename = clean_filename(f"{resource_name}.md")
+    resource_filename = clean_filename(category, f"{resource_name}.md")
     resource_md_path = os.path.join(category_dir, resource_filename)
     permalink = f"/rest-api-guide/{category}/{resource_filename.replace('.md', '.html')}"
     resource_md_content = generate_resource_md(category, path, path_item, permalink)
