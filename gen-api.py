@@ -66,15 +66,14 @@ def generate_resource_md(category, endpoint, methods, permalink):
 
 # Function to clean up filenames
 def clean_filename(filename):
-    filename = filename.replace('{', '').replace('}', '')
+    filename = filename.replace('{', '_').replace('}', '')
     filename = filename.replace('v1_', '')
-    filename = filename.replace('-_', '-')
     return filename
 
 # Function to create the sidebar title from the path
 def create_sidebar_title(path):
     # Remove leading /v1 and replace parameters {param} with {param}
-    return path.replace('/v1', '').replace('{', '{').replace('}', '}')
+    return path.replace('/v1', '')
 
 # Fetch the OpenAPI definition
 response = requests.get(url)
@@ -104,7 +103,7 @@ for path, path_item in api_definition["paths"].items():
         write_markdown(index_md_path, index_md_content)
 
     # Clean up filename and write the individual resource file
-    resource_name = path_segments[-1].replace('{', '').replace('}', '')
+    resource_name = path.strip("/").replace("/", "_").replace("{", "_").replace("}", "")
     resource_filename = clean_filename(f"{resource_name}.md")
     resource_md_path = os.path.join(category_dir, resource_filename)
     permalink = f"/rest-api-guide/{category}/{resource_filename.replace('.md', '.html')}"
@@ -116,7 +115,7 @@ for path, path_item in api_definition["paths"].items():
         sidebar_entries_by_category[category] = []
     sidebar_entries_by_category[category].append({
         "output": "web,pdf",
-        "title": resource_name,
+        "title": create_sidebar_title(path),
         "url": permalink
     })
 
