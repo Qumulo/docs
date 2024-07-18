@@ -81,7 +81,6 @@ defaults:
     values:
       layout: "page"
       comments: false
-      # if you don't want to use Commento.io and just hide comments, change true to false wherever you see the comments property
       search: true
       sidebar: home_sidebar
       topnav: topnav
@@ -100,7 +99,16 @@ defaults:
     values:
       layout: "cli"
       comments: false
-      # if you don't want to use Commento.io and just hide comments, change true to false wherever you see the comments property
+      search: true
+      sidebar: home_sidebar
+      topnav: topnav
+  -
+    scope:
+      path: "rest-api-guide"
+      type: "pages"
+    values:
+      layout: "api"
+      comments: false
       search: true
       sidebar: home_sidebar
       topnav: topnav
@@ -111,7 +119,6 @@ defaults:
     values:
       layout: "post"
       comments: false
-      # if you don't want to use Commento.io and just hide comments, change true to false wherever you see the comments property
       search: true
       sidebar: home_sidebar
       topnav: topnav

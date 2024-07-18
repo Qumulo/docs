@@ -71,9 +71,14 @@ def clean_filename(filename):
     return filename
 
 # Function to create the sidebar title from the path
-def create_sidebar_title(path):
-    # Remove leading /v1 and replace parameters {param} with {param}
-    return path.replace('/v1', '')
+def create_sidebar_title(path, category):
+    # Remove leading /v1 and category
+    title = path.replace('/v1', '').replace(f'/{category}', '')
+    # Replace parameters {param} with {param}
+    title = title.replace('{', '{').replace('}', '}')
+    # Omit opening / and trailing /
+    title = title.strip('/')
+    return title
 
 # Fetch the OpenAPI definition
 response = requests.get(url)
@@ -115,7 +120,7 @@ for path, path_item in api_definition["paths"].items():
         sidebar_entries_by_category[category] = []
     sidebar_entries_by_category[category].append({
         "output": "web,pdf",
-        "title": create_sidebar_title(path),
+        "title": create_sidebar_title(path, category),
         "url": permalink
     })
 

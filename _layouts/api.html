@@ -1,0 +1,78 @@
+---
+layout: default
+---
+
+<div class="post-header">
+    <h1 class="post-title-main">{{ page.rest_endpoint | remove_first: '/v1/' }}</h1>
+</div>
+
+<div class="post-content">
+
+    {% unless page.toc == false %}
+    {% include toc.html %}
+    {% endunless %}
+
+<h2>Endpoint</h2>
+<code>{{ page.rest_endpoint }}</code>
+
+<h2>HTTP Methods</h2>
+
+{% assign ordered_methods = "GET,HEAD,POST,PUT,DELETE,CONNECT,OPTIONS,TRACE,PATCH" | split: ',' %}
+{% for method in ordered_methods %}
+    {% assign method_key = method | downcase %}
+    {% assign method_data = page.methods[method_key] %}
+    {% if method_data %}
+        <h3>{{ method }}</h3>
+        <div>{{ method_data.summary }}</div>
+
+        <h4>Parameters</h4>
+        {% if method_data.parameters and method_data.parameters.size > 0 %}
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Required</th>
+                </tr>
+                {% for param in method_data.parameters %}
+                    <tr>
+                        <td><code>{{ param.name }}</code></td>
+                        <td>{{ param.description }}</td>
+                        <td>{% if param.required %}Yes{% else %}No{% endif %}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        {% else %}
+            <div>This resource has no parameters.</div>
+        {% endif %}
+
+        {% if method_data.request_body %}
+            <h4>Request</h4>
+            <h5>Example Value</h5>
+            <pre>{{ method_data.request_body.example_value }}</pre>
+            <h5>Schema</h5>
+            <pre>{{ method_data.request_body.schema }}</pre>
+        {% endif %}
+
+        <h4>Response</h4>
+        <h5>Response Codes</h5>
+        <table>
+            <tr>
+                <th>Code</th>
+                <th>Description</th>
+            </tr>
+            {% for code in method_data.responses %}
+                <tr>
+                    <td>{{ code }}</td>
+                    <td>{{ method_data.responses[code].description }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+        <h5>Example Value</h5>
+        <pre>{{ method_data.example_value }}</pre>
+        <h5>Schema</h5>
+        <pre>{{ method_data.schema }}</pre>
+    {% endif %}
+{% endfor %}
+
+</div>
+
