@@ -29,6 +29,10 @@ entries:
     - title: Qumulo Alerts Administrator Guide
       url: /qumulo-alerts-guide/
       output: web
+
+    - title: Qumulo REST API Guide
+      url: /rest-api-guide/
+      output: web
       
     - title: Qumulo qq CLI Command Guide
       url: /qq-cli-command-guide/

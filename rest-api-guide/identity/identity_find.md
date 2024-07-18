@@ -1,0 +1,17 @@
+---
+category: /identity
+methods:
+  post:
+    parameters: []
+    request_body:
+      example_value: TO DO
+      schema: TO DO
+    response_body:
+      description: Return value on success
+      example_value: TO DO
+      schema: TO DO
+      status_code: '200'
+    summary: Search for identity and populate all fields.
+rest_endpoint: /v1/identity/find
+sidebar: rest_api_command_guide_sidebar
+---

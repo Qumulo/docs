@@ -1,0 +1,865 @@
+entries:
+- folders:
+  - folderitems:
+    - output: pdf
+      title: ''
+      type: frontmatter
+      url: /titlepage.html
+    - output: pdf
+      title: ''
+      type: frontmatter
+      url: /tocpage.html
+    output: pdf
+    title: ''
+    type: frontmatter
+  - folderitems:
+    - output: web
+      title: Documentation Home
+      url: /index.html
+    - output: web
+      title: Qumulo REST API Guide Home
+      url: /rest-api-guide/
+    - output: web
+      title: Contacting the Qumulo Care Team
+      url: /contacting-qumulo-care-team.html
+    output: web
+    title: Qumulo REST API Guide
+    type: navi
+  - folderitems:
+    - output: web,pdf
+      title: /auth/access-tokens/
+      url: /rest-api-guide/auth/auth_access-tokens.md
+    - output: web,pdf
+      title: /auth/access-tokens/{id}
+      url: /rest-api-guide/auth/auth_access-tokens_id.md
+    - output: web,pdf
+      title: /ad/settings
+      url: /rest-api-guide/ad/ad_settings.md
+    - output: web,pdf
+      title: /ad/status
+      url: /rest-api-guide/ad/ad_status.md
+    - output: web,pdf
+      title: /ad/monitor
+      url: /rest-api-guide/ad/ad_monitor.md
+    - output: web,pdf
+      title: /ad/dismiss-error
+      url: /rest-api-guide/ad/ad_dismiss-error.md
+    - output: web,pdf
+      title: /ad/join
+      url: /rest-api-guide/ad/ad_join.md
+    - output: web,pdf
+      title: /ad/reconfigure
+      url: /rest-api-guide/ad/ad_reconfigure.md
+    - output: web,pdf
+      title: /ad/leave
+      url: /rest-api-guide/ad/ad_leave.md
+    - output: web,pdf
+      title: /ad/cancel
+      url: /rest-api-guide/ad/ad_cancel.md
+    - output: web,pdf
+      title: /ad/distinguished-names/{dn}/object
+      url: /rest-api-guide/ad/ad_distinguished-names_dn_object.md
+    - output: web,pdf
+      title: /ad/usernames/{username}/sids/
+      url: /rest-api-guide/ad/ad_usernames_username_sids.md
+    - output: web,pdf
+      title: /ad/usernames/{username}/objects/
+      url: /rest-api-guide/ad/ad_usernames_username_objects.md
+    - output: web,pdf
+      title: /ad/uids/{uid}/sids/
+      url: /rest-api-guide/ad/ad_uids_uid_sids.md
+    - output: web,pdf
+      title: /ad/sids/{sid}/uid
+      url: /rest-api-guide/ad/ad_sids_sid_uid.md
+    - output: web,pdf
+      title: /ad/sids/{sid}/username
+      url: /rest-api-guide/ad/ad_sids_sid_username.md
+    - output: web,pdf
+      title: /ad/sids/{sid}/gid
+      url: /rest-api-guide/ad/ad_sids_sid_gid.md
+    - output: web,pdf
+      title: /ad/sids/{sid}/object
+      url: /rest-api-guide/ad/ad_sids_sid_object.md
+    - output: web,pdf
+      title: /ad/gids/{gid}/sids/
+      url: /rest-api-guide/ad/ad_gids_gid_sids.md
+    - output: web,pdf
+      title: /ad/sids/{sid}/expanded-groups/
+      url: /rest-api-guide/ad/ad_sids_sid_expanded-groups.md
+    - output: web,pdf
+      title: /analytics/time-series/
+      url: /rest-api-guide/analytics/analytics_time-series.md
+    - output: web,pdf
+      title: /analytics/activity/current
+      url: /rest-api-guide/analytics/analytics_activity_current.md
+    - output: web,pdf
+      title: /analytics/capacity-history/
+      url: /rest-api-guide/analytics/analytics_capacity-history.md
+    - output: web,pdf
+      title: /analytics/capacity-history/{timestamp}/
+      url: /rest-api-guide/analytics/analytics_capacity-history_timestamp.md
+    - output: web,pdf
+      title: /audit/syslog/config
+      url: /rest-api-guide/audit/audit_syslog_config.md
+    - output: web,pdf
+      title: /audit/syslog/status
+      url: /rest-api-guide/audit/audit_syslog_status.md
+    - output: web,pdf
+      title: /audit/cloudwatch/config
+      url: /rest-api-guide/audit/audit_cloudwatch_config.md
+    - output: web,pdf
+      title: /audit/cloudwatch/status
+      url: /rest-api-guide/audit/audit_cloudwatch_status.md
+    - output: web,pdf
+      title: /auth/identity/find
+      url: /rest-api-guide/auth/auth_identity_find.md
+    - output: web,pdf
+      title: /auth/identity/expand
+      url: /rest-api-guide/auth/auth_identity_expand.md
+    - output: web,pdf
+      title: /auth/user-defined-mappings/
+      url: /rest-api-guide/auth/auth_user-defined-mappings.md
+    - output: web,pdf
+      title: /auth/clear-cache
+      url: /rest-api-guide/auth/auth_clear-cache.md
+    - output: web,pdf
+      title: /auth/kerberos-keytab
+      url: /rest-api-guide/auth/auth_kerberos-keytab.md
+    - output: web,pdf
+      title: /auth/kerberos-settings
+      url: /rest-api-guide/auth/auth_kerberos-settings.md
+    - output: web,pdf
+      title: /auth/local-username/{username}/related-identities/
+      url: /rest-api-guide/auth/auth_local-username_username_related-identities.md
+    - output: web,pdf
+      title: /auth/posix-uids/{id}/related-identities/
+      url: /rest-api-guide/auth/auth_posix-uids_id_related-identities.md
+    - output: web,pdf
+      title: /auth/posix-gids/{id}/related-identities/
+      url: /rest-api-guide/auth/auth_posix-gids_id_related-identities.md
+    - output: web,pdf
+      title: /auth/identities/{id}/attributes
+      url: /rest-api-guide/auth/auth_identities_id_attributes.md
+    - output: web,pdf
+      title: /auth/auth-ids/{id}/related-identities/
+      url: /rest-api-guide/auth/auth_auth-ids_id_related-identities.md
+    - output: web,pdf
+      title: /auth/sids/{id}/related-identities/
+      url: /rest-api-guide/auth/auth_sids_id_related-identities.md
+    - output: web,pdf
+      title: /v2/cluster/create
+      url: /rest-api-guide/cluster/v2_cluster_create.md
+    - output: web,pdf
+      title: /v3/cluster/calculate-supported-protection-info
+      url: /rest-api-guide/cluster/v3_cluster_calculate-supported-protection-info.md
+    - output: web,pdf
+      title: /cluster/protection/status
+      url: /rest-api-guide/cluster/cluster_protection_status.md
+    - output: web,pdf
+      title: /cluster/protection/restriper/status
+      url: /rest-api-guide/cluster/cluster_protection_restriper_status.md
+    - output: web,pdf
+      title: /cluster/calculate-node-add-capacity
+      url: /rest-api-guide/cluster/cluster_calculate-node-add-capacity.md
+    - output: web,pdf
+      title: /cluster/nodes/
+      url: /rest-api-guide/cluster/cluster_nodes.md
+    - output: web,pdf
+      title: /v2/cluster/nodes/
+      url: /rest-api-guide/cluster/v2_cluster_nodes.md
+    - output: web,pdf
+      title: /v2/cluster/nodes/dry-run
+      url: /rest-api-guide/cluster/v2_cluster_nodes_dry-run.md
+    - output: web,pdf
+      title: /cluster/nodes/chassis/
+      url: /rest-api-guide/cluster/cluster_nodes_chassis.md
+    - output: web,pdf
+      title: /cluster/nodes/uid-lights/
+      url: /rest-api-guide/cluster/cluster_nodes_uid-lights.md
+    - output: web,pdf
+      title: /cluster/node-replacement-plan/
+      url: /rest-api-guide/cluster/cluster_node-replacement-plan.md
+    - output: web,pdf
+      title: /cluster/restriper/status
+      url: /rest-api-guide/cluster/cluster_restriper_status.md
+    - output: web,pdf
+      title: /cluster/nodes/{id}
+      url: /rest-api-guide/cluster/cluster_nodes_id.md
+    - output: web,pdf
+      title: /cluster/nodes/{id}/uid-light
+      url: /rest-api-guide/cluster/cluster_nodes_id_uid-light.md
+    - output: web,pdf
+      title: /cluster/nodes/{id}/identify
+      url: /rest-api-guide/cluster/cluster_nodes_id_identify.md
+    - output: web,pdf
+      title: /cluster/nodes/{id}/chassis
+      url: /rest-api-guide/cluster/cluster_nodes_id_chassis.md
+    - output: web,pdf
+      title: /cluster/settings
+      url: /rest-api-guide/cluster/cluster_settings.md
+    - output: web,pdf
+      title: /cluster/settings/ssl
+      url: /rest-api-guide/cluster/cluster_settings_ssl.md
+    - output: web,pdf
+      title: /v2/cluster/settings/ssl/certificate
+      url: /rest-api-guide/cluster/v2_cluster_settings_ssl_certificate.md
+    - output: web,pdf
+      title: /v2/cluster/settings/ssl/ca-certificate
+      url: /rest-api-guide/cluster/v2_cluster_settings_ssl_ca-certificate.md
+    - output: web,pdf
+      title: /cluster/slots/
+      url: /rest-api-guide/cluster/cluster_slots.md
+    - output: web,pdf
+      title: /cluster/slots/{id}
+      url: /rest-api-guide/cluster/cluster_slots_id.md
+    - output: web,pdf
+      title: /node/state
+      url: /rest-api-guide/node/node_state.md
+    - output: web,pdf
+      title: /dns/resolve/
+      url: /rest-api-guide/dns/dns_resolve.md
+    - output: web,pdf
+      title: /dns/clear-dns-cache
+      url: /rest-api-guide/dns/dns_clear-dns-cache.md
+    - output: web,pdf
+      title: /dns/lookup-override-config
+      url: /rest-api-guide/dns/dns_lookup-override-config.md
+    - output: web,pdf
+      title: /dns/resolve-ips-to-names
+      url: /rest-api-guide/dns/dns_resolve-ips-to-names.md
+    - output: web,pdf
+      title: /dns/resolve-names-to-ips
+      url: /rest-api-guide/dns/dns_resolve-names-to-ips.md
+    - output: web,pdf
+      title: /files/quotas/
+      url: /rest-api-guide/files/files_quotas.md
+    - output: web,pdf
+      title: /files/quotas/status/
+      url: /rest-api-guide/files/files_quotas_status.md
+    - output: web,pdf
+      title: /files/quotas/status/{id}
+      url: /rest-api-guide/files/files_quotas_status_id.md
+    - output: web,pdf
+      title: /files/quotas/{id}
+      url: /rest-api-guide/files/files_quotas_id.md
+    - output: web,pdf
+      title: /encryption/rotate-keys
+      url: /rest-api-guide/encryption/encryption_rotate-keys.md
+    - output: web,pdf
+      title: /encryption/status
+      url: /rest-api-guide/encryption/encryption_status.md
+    - output: web,pdf
+      title: /v2/encryption/rotate-keys
+      url: /rest-api-guide/encryption/v2_encryption_rotate-keys.md
+    - output: web,pdf
+      title: /v2/encryption/key-store
+      url: /rest-api-guide/encryption/v2_encryption_key-store.md
+    - output: web,pdf
+      title: /v2/encryption/key-store/status
+      url: /rest-api-guide/encryption/v2_encryption_key-store_status.md
+    - output: web,pdf
+      title: /v2/encryption/external-kms/keys/create
+      url: /rest-api-guide/encryption/v2_encryption_external-kms_keys_create.md
+    - output: web,pdf
+      title: /v0/ftp/settings
+      url: /rest-api-guide/ftp/v0_ftp_settings.md
+    - output: web,pdf
+      title: /v0/ftp/status
+      url: /rest-api-guide/ftp/v0_ftp_status.md
+    - output: web,pdf
+      title: /file-system
+      url: /rest-api-guide/file-system/file-system.md
+    - output: web,pdf
+      title: /file-system/settings/permissions
+      url: /rest-api-guide/file-system/file-system_settings_permissions.md
+    - output: web,pdf
+      title: /file-system/settings/atime
+      url: /rest-api-guide/file-system/file-system_settings_atime.md
+    - output: web,pdf
+      title: /file-system/settings/notify
+      url: /rest-api-guide/file-system/file-system_settings_notify.md
+    - output: web,pdf
+      title: /file-system/security/keys/
+      url: /rest-api-guide/file-system/file-system_security_keys.md
+    - output: web,pdf
+      title: /file-system/security/keys/{key_ref}
+      url: /rest-api-guide/file-system/file-system_security_keys_key_ref.md
+    - output: web,pdf
+      title: /file-system/security/keys/{key_ref}/usages
+      url: /rest-api-guide/file-system/file-system_security_keys_key_ref_usages.md
+    - output: web,pdf
+      title: /file-system/security/keys/{key_ref}/key-replacement-challenge
+      url: /rest-api-guide/file-system/file-system_security_keys_key_ref_key-replacement-challenge.md
+    - output: web,pdf
+      title: /file-system/security/keys/{key_ref}/replace
+      url: /rest-api-guide/file-system/file-system_security_keys_key_ref_replace.md
+    - output: web,pdf
+      title: /files/resolve
+      url: /rest-api-guide/files/files_resolve.md
+    - output: web,pdf
+      title: /files/locks/nlm/byte-range/
+      url: /rest-api-guide/files/files_locks_nlm_byte-range.md
+    - output: web,pdf
+      title: /files/locks/nlm/byte-range/waiters/
+      url: /rest-api-guide/files/files_locks_nlm_byte-range_waiters.md
+    - output: web,pdf
+      title: /files/locks/smb/byte-range/
+      url: /rest-api-guide/files/files_locks_smb_byte-range.md
+    - output: web,pdf
+      title: /files/locks/smb/share-mode/
+      url: /rest-api-guide/files/files_locks_smb_share-mode.md
+    - output: web,pdf
+      title: /files/locks/nfs4/byte-range/
+      url: /rest-api-guide/files/files_locks_nfs4_byte-range.md
+    - output: web,pdf
+      title: /files/{ref}
+      url: /rest-api-guide/files/files_ref.md
+    - output: web,pdf
+      title: /files/{ref}/data
+      url: /rest-api-guide/files/files_ref_data.md
+    - output: web,pdf
+      title: /files/{ref}/copy-chunk
+      url: /rest-api-guide/files/files_ref_copy-chunk.md
+    - output: web,pdf
+      title: /files/{ref}/entries/
+      url: /rest-api-guide/files/files_ref_entries.md
+    - output: web,pdf
+      title: /v2/files/{ref}/info/acl
+      url: /rest-api-guide/files/v2_files_ref_info_acl.md
+    - output: web,pdf
+      title: /files/{ref}/info/acl
+      url: /rest-api-guide/files/files_ref_info_acl.md
+    - output: web,pdf
+      title: /files/{ref}/info/acl/explain-posix-mode
+      url: /rest-api-guide/files/files_ref_info_acl_explain-posix-mode.md
+    - output: web,pdf
+      title: /files/{ref}/info/acl/explain-set-mode
+      url: /rest-api-guide/files/files_ref_info_acl_explain-set-mode.md
+    - output: web,pdf
+      title: /files/{ref}/info/acl/explain-rights
+      url: /rest-api-guide/files/files_ref_info_acl_explain-rights.md
+    - output: web,pdf
+      title: /files/{ref}/info/attributes
+      url: /rest-api-guide/files/files_ref_info_attributes.md
+    - output: web,pdf
+      title: /files/{ref}/sample/
+      url: /rest-api-guide/files/files_ref_sample.md
+    - output: web,pdf
+      title: /files/{ref}/aggregates/
+      url: /rest-api-guide/files/files_ref_aggregates.md
+    - output: web,pdf
+      title: /files/{ref}/recursive-aggregates/
+      url: /rest-api-guide/files/files_ref_recursive-aggregates.md
+    - output: web,pdf
+      title: /files/{ref}/locks/nlm/byte-range/
+      url: /rest-api-guide/files/files_ref_locks_nlm_byte-range.md
+    - output: web,pdf
+      title: /files/{ref}/locks/nlm/byte-range/waiters/
+      url: /rest-api-guide/files/files_ref_locks_nlm_byte-range_waiters.md
+    - output: web,pdf
+      title: /files/{ref}/locks/nfs4/byte-range/
+      url: /rest-api-guide/files/files_ref_locks_nfs4_byte-range.md
+    - output: web,pdf
+      title: /files/{ref}/locks/smb/byte-range/
+      url: /rest-api-guide/files/files_ref_locks_smb_byte-range.md
+    - output: web,pdf
+      title: /files/{ref}/locks/smb/share-mode/
+      url: /rest-api-guide/files/files_ref_locks_smb_share-mode.md
+    - output: web,pdf
+      title: /files/{ref}/punch-hole
+      url: /rest-api-guide/files/files_ref_punch-hole.md
+    - output: web,pdf
+      title: /files/{ref}/streams/
+      url: /rest-api-guide/files/files_ref_streams.md
+    - output: web,pdf
+      title: /files/{ref}/notify
+      url: /rest-api-guide/files/files_ref_notify.md
+    - output: web,pdf
+      title: /files/{ref}/user-metadata/
+      url: /rest-api-guide/files/files_ref_user-metadata.md
+    - output: web,pdf
+      title: /files/{ref}/user-metadata/{type}/
+      url: /rest-api-guide/files/files_ref_user-metadata_type.md
+    - output: web,pdf
+      title: /files/{ref}/user-metadata/{type}/{key}
+      url: /rest-api-guide/files/files_ref_user-metadata_type_key.md
+    - output: web,pdf
+      title: /files/{ref}/streams/{stream_id}/punch-hole
+      url: /rest-api-guide/files/files_ref_streams_stream_id_punch-hole.md
+    - output: web,pdf
+      title: /files/{ref}/streams/{stream_id}/copy-chunk
+      url: /rest-api-guide/files/files_ref_streams_stream_id_copy-chunk.md
+    - output: web,pdf
+      title: /files/{ref}/streams/{stream_id}/data
+      url: /rest-api-guide/files/files_ref_streams_stream_id_data.md
+    - output: web,pdf
+      title: /files/{ref}/streams/{stream_id}
+      url: /rest-api-guide/files/files_ref_streams_stream_id.md
+    - output: web,pdf
+      title: /files/{ref}/streams/{stream_id}/rename
+      url: /rest-api-guide/files/files_ref_streams_stream_id_rename.md
+    - output: web,pdf
+      title: /files/{ref}/streams/{stream_id}/attributes
+      url: /rest-api-guide/files/files_ref_streams_stream_id_attributes.md
+    - output: web,pdf
+      title: /identity/find
+      url: /rest-api-guide/identity/identity_find.md
+    - output: web,pdf
+      title: /identity/expand
+      url: /rest-api-guide/identity/identity_expand.md
+    - output: web,pdf
+      title: /ldap/status
+      url: /rest-api-guide/ldap/ldap_status.md
+    - output: web,pdf
+      title: /v2/ldap/settings
+      url: /rest-api-guide/ldap/v2_ldap_settings.md
+    - output: web,pdf
+      title: /ldap/uid-number/{uid_number}/login-name
+      url: /rest-api-guide/ldap/ldap_uid-number_uid_number_login-name.md
+    - output: web,pdf
+      title: /ldap/login-name/{login_name}/gid-numbers
+      url: /rest-api-guide/ldap/ldap_login-name_login_name_gid-numbers.md
+    - output: web,pdf
+      title: /ldap/login-name/{login_name}/uid-numbers
+      url: /rest-api-guide/ldap/ldap_login-name_login_name_uid-numbers.md
+    - output: web,pdf
+      title: /groups/
+      url: /rest-api-guide/groups/groups.md
+    - output: web,pdf
+      title: /groups/{id}
+      url: /rest-api-guide/groups/groups_id.md
+    - output: web,pdf
+      title: /groups/{group_id}/members/
+      url: /rest-api-guide/groups/groups_group_id_members.md
+    - output: web,pdf
+      title: /groups/{group_id}/members/{member_id}
+      url: /rest-api-guide/groups/groups_group_id_members_member_id.md
+    - output: web,pdf
+      title: /users/
+      url: /rest-api-guide/users/users.md
+    - output: web,pdf
+      title: /users/{id}
+      url: /rest-api-guide/users/users_id.md
+    - output: web,pdf
+      title: /users/{id}/groups/
+      url: /rest-api-guide/users/users_id_groups.md
+    - output: web,pdf
+      title: /users/{id}/setpassword
+      url: /rest-api-guide/users/users_id_setpassword.md
+    - output: web,pdf
+      title: /v2/metrics/endpoints/default/data
+      url: /rest-api-guide/metrics/v2_metrics_endpoints_default_data.md
+    - output: web,pdf
+      title: /support/settings
+      url: /rest-api-guide/support/support_settings.md
+    - output: web,pdf
+      title: /support/status/
+      url: /rest-api-guide/support/support_status.md
+    - output: web,pdf
+      title: /support/vpn-keys
+      url: /rest-api-guide/support/support_vpn-keys.md
+    - output: web,pdf
+      title: /support/vpn/key/generate
+      url: /rest-api-guide/support/support_vpn_key_generate.md
+    - output: web,pdf
+      title: /support/vpn/key/certificate-signing-request
+      url: /rest-api-guide/support/support_vpn_key_certificate-signing-request.md
+    - output: web,pdf
+      title: /v3/nfs/exports/
+      url: /rest-api-guide/nfs/v3_nfs_exports.md
+    - output: web,pdf
+      title: /v3/nfs/exports/{export_id}
+      url: /rest-api-guide/nfs/v3_nfs_exports_export_id.md
+    - output: web,pdf
+      title: /v2/nfs/exports/
+      url: /rest-api-guide/nfs/v2_nfs_exports.md
+    - output: web,pdf
+      title: /v2/nfs/settings
+      url: /rest-api-guide/nfs/v2_nfs_settings.md
+    - output: web,pdf
+      title: /v2/nfs/exports/{ref}
+      url: /rest-api-guide/nfs/v2_nfs_exports_ref.md
+    - output: web,pdf
+      title: /multitenancy/nfs/settings/
+      url: /rest-api-guide/multitenancy/multitenancy_nfs_settings.md
+    - output: web,pdf
+      title: /multitenancy/nfs/global-settings
+      url: /rest-api-guide/multitenancy/multitenancy_nfs_global-settings.md
+    - output: web,pdf
+      title: /multitenancy/nfs/settings/{id}
+      url: /rest-api-guide/multitenancy/multitenancy_nfs_settings_id.md
+    - output: web,pdf
+      title: /v2/network/interfaces/
+      url: /rest-api-guide/network/v2_network_interfaces.md
+    - output: web,pdf
+      title: /v2/network/connections/
+      url: /rest-api-guide/network/v2_network_connections.md
+    - output: web,pdf
+      title: /v2/network/interfaces/{interface_id}
+      url: /rest-api-guide/network/v2_network_interfaces_interface_id.md
+    - output: web,pdf
+      title: /v2/network/interfaces/{interface_id}/networks/
+      url: /rest-api-guide/network/v2_network_interfaces_interface_id_networks.md
+    - output: web,pdf
+      title: /v2/network/interfaces/{id}/status/
+      url: /rest-api-guide/network/v2_network_interfaces_id_status.md
+    - output: web,pdf
+      title: /v2/network/interfaces/{interface_id}/networks/{network_id}
+      url: /rest-api-guide/network/v2_network_interfaces_interface_id_networks_network_id.md
+    - output: web,pdf
+      title: /v2/network/interfaces/{interface_id}/status/{node_id}
+      url: /rest-api-guide/network/v2_network_interfaces_interface_id_status_node_id.md
+    - output: web,pdf
+      title: /network/settings
+      url: /rest-api-guide/network/network_settings.md
+    - output: web,pdf
+      title: /network/static-ip-allocation
+      url: /rest-api-guide/network/network_static-ip-allocation.md
+    - output: web,pdf
+      title: /network/floating-ip-allocation
+      url: /rest-api-guide/network/network_floating-ip-allocation.md
+    - output: web,pdf
+      title: /network/status/
+      url: /rest-api-guide/network/network_status.md
+    - output: web,pdf
+      title: /network/status/{id}
+      url: /rest-api-guide/network/network_status_id.md
+    - output: web,pdf
+      title: /v2/replication/source-relationships/
+      url: /rest-api-guide/replication/v2_replication_source-relationships.md
+    - output: web,pdf
+      title: /v2/replication/source-relationships/status/
+      url: /rest-api-guide/replication/v2_replication_source-relationships_status.md
+    - output: web,pdf
+      title: /v2/replication/source-relationships/reverse-target-relationship
+      url: /rest-api-guide/replication/v2_replication_source-relationships_reverse-target-relationship.md
+    - output: web,pdf
+      title: /v2/replication/target-relationships/status/
+      url: /rest-api-guide/replication/v2_replication_target-relationships_status.md
+    - output: web,pdf
+      title: /v3/replication/object-relationships/
+      url: /rest-api-guide/replication/v3_replication_object-relationships.md
+    - output: web,pdf
+      title: /v3/replication/object-relationships/status/
+      url: /rest-api-guide/replication/v3_replication_object-relationships_status.md
+    - output: web,pdf
+      title: /v2/replication/source-relationships/{id}
+      url: /rest-api-guide/replication/v2_replication_source-relationships_id.md
+    - output: web,pdf
+      title: /v2/replication/source-relationships/{id}/abort-replication
+      url: /rest-api-guide/replication/v2_replication_source-relationships_id_abort-replication.md
+    - output: web,pdf
+      title: /v2/replication/source-relationships/{id}/dismiss-error
+      url: /rest-api-guide/replication/v2_replication_source-relationships_id_dismiss-error.md
+    - output: web,pdf
+      title: /v2/replication/source-relationships/{id}/queued-snapshots/
+      url: /rest-api-guide/replication/v2_replication_source-relationships_id_queued-snapshots.md
+    - output: web,pdf
+      title: /v2/replication/source-relationships/{id}/replicate
+      url: /rest-api-guide/replication/v2_replication_source-relationships_id_replicate.md
+    - output: web,pdf
+      title: /v2/replication/source-relationships/{id}/status
+      url: /rest-api-guide/replication/v2_replication_source-relationships_id_status.md
+    - output: web,pdf
+      title: /v2/replication/target-relationships/{id}/authorize
+      url: /rest-api-guide/replication/v2_replication_target-relationships_id_authorize.md
+    - output: web,pdf
+      title: /v2/replication/target-relationships/{id}/delete
+      url: /rest-api-guide/replication/v2_replication_target-relationships_id_delete.md
+    - output: web,pdf
+      title: /v2/replication/target-relationships/{id}/dismiss-error
+      url: /rest-api-guide/replication/v2_replication_target-relationships_id_dismiss-error.md
+    - output: web,pdf
+      title: /v2/replication/target-relationships/{id}/lock
+      url: /rest-api-guide/replication/v2_replication_target-relationships_id_lock.md
+    - output: web,pdf
+      title: /v2/replication/target-relationships/{id}/make-writable
+      url: /rest-api-guide/replication/v2_replication_target-relationships_id_make-writable.md
+    - output: web,pdf
+      title: /v2/replication/target-relationships/{id}/reconnect
+      url: /rest-api-guide/replication/v2_replication_target-relationships_id_reconnect.md
+    - output: web,pdf
+      title: /v2/replication/target-relationships/{id}/status
+      url: /rest-api-guide/replication/v2_replication_target-relationships_id_status.md
+    - output: web,pdf
+      title: /v3/replication/object-relationships/{id}/status
+      url: /rest-api-guide/replication/v3_replication_object-relationships_id_status.md
+    - output: web,pdf
+      title: /v3/replication/object-relationships/{id}/abort-replication
+      url: /rest-api-guide/replication/v3_replication_object-relationships_id_abort-replication.md
+    - output: web,pdf
+      title: /v3/replication/object-relationships/{id}
+      url: /rest-api-guide/replication/v3_replication_object-relationships_id.md
+    - output: web,pdf
+      title: /v3/replication/object-relationships/{id}/replicate
+      url: /rest-api-guide/replication/v3_replication_object-relationships_id_replicate.md
+    - output: web,pdf
+      title: /v2/replication/source-relationships/{relationship_id}/queued-snapshots/{snapshot_id}
+      url: /rest-api-guide/replication/v2_replication_source-relationships_relationship_id_queued-snapshots_snapshot_id.md
+    - output: web,pdf
+      title: /auth/privileges/
+      url: /rest-api-guide/auth/auth_privileges.md
+    - output: web,pdf
+      title: /auth/roles/
+      url: /rest-api-guide/auth/auth_roles.md
+    - output: web,pdf
+      title: /auth/roles/{role_name}
+      url: /rest-api-guide/auth/auth_roles_role_name.md
+    - output: web,pdf
+      title: /auth/roles/{role_name}/members
+      url: /rest-api-guide/auth/auth_roles_role_name_members.md
+    - output: web,pdf
+      title: /auth/roles/{role_name}/members/{member_id}
+      url: /rest-api-guide/auth/auth_roles_role_name_members_member_id.md
+    - output: web,pdf
+      title: /s3/settings
+      url: /rest-api-guide/s3/s3_settings.md
+    - output: web,pdf
+      title: /s3/access-keys/
+      url: /rest-api-guide/s3/s3_access-keys.md
+    - output: web,pdf
+      title: /s3/buckets/
+      url: /rest-api-guide/s3/s3_buckets.md
+    - output: web,pdf
+      title: /s3/access-keys/{id}
+      url: /rest-api-guide/s3/s3_access-keys_id.md
+    - output: web,pdf
+      title: /s3/buckets/{name}
+      url: /rest-api-guide/s3/s3_buckets_name.md
+    - output: web,pdf
+      title: /s3/buckets/{name}/uploads/
+      url: /rest-api-guide/s3/s3_buckets_name_uploads.md
+    - output: web,pdf
+      title: /s3/buckets/{name}/policy
+      url: /rest-api-guide/s3/s3_buckets_name_policy.md
+    - output: web,pdf
+      title: /s3/buckets/{name}/policy/explain-access
+      url: /rest-api-guide/s3/s3_buckets_name_policy_explain-access.md
+    - output: web,pdf
+      title: /s3/buckets/{name}/uploads/{id}
+      url: /rest-api-guide/s3/s3_buckets_name_uploads_id.md
+    - output: web,pdf
+      title: /saml/settings
+      url: /rest-api-guide/saml/saml_settings.md
+    - output: web,pdf
+      title: /smb/files/
+      url: /rest-api-guide/smb/smb_files.md
+    - output: web,pdf
+      title: /smb/files/close
+      url: /rest-api-guide/smb/smb_files_close.md
+    - output: web,pdf
+      title: /multitenancy/smb/settings/
+      url: /rest-api-guide/multitenancy/multitenancy_smb_settings.md
+    - output: web,pdf
+      title: /multitenancy/smb/global-settings
+      url: /rest-api-guide/multitenancy/multitenancy_smb_global-settings.md
+    - output: web,pdf
+      title: /multitenancy/smb/settings/{id}
+      url: /rest-api-guide/multitenancy/multitenancy_smb_settings_id.md
+    - output: web,pdf
+      title: /smb/settings
+      url: /rest-api-guide/smb/smb_settings.md
+    - output: web,pdf
+      title: /smb/sessions/
+      url: /rest-api-guide/smb/smb_sessions.md
+    - output: web,pdf
+      title: /smb/sessions/close
+      url: /rest-api-guide/smb/smb_sessions_close.md
+    - output: web,pdf
+      title: /v3/smb/shares/
+      url: /rest-api-guide/smb/v3_smb_shares.md
+    - output: web,pdf
+      title: /v3/smb/shares/{share_id}
+      url: /rest-api-guide/smb/v3_smb_shares_share_id.md
+    - output: web,pdf
+      title: /smb/shares/
+      url: /rest-api-guide/smb/smb_shares.md
+    - output: web,pdf
+      title: /smb/shares/{id}
+      url: /rest-api-guide/smb/smb_shares_id.md
+    - output: web,pdf
+      title: /v2/smb/shares/
+      url: /rest-api-guide/smb/v2_smb_shares.md
+    - output: web,pdf
+      title: /v2/smb/shares/{ref}
+      url: /rest-api-guide/smb/v2_smb_shares_ref.md
+    - output: web,pdf
+      title: /session/change-password
+      url: /rest-api-guide/session/session_change-password.md
+    - output: web,pdf
+      title: /session/login
+      url: /rest-api-guide/session/session_login.md
+    - output: web,pdf
+      title: /session/who-am-i
+      url: /rest-api-guide/session/session_who-am-i.md
+    - output: web,pdf
+      title: /session/roles
+      url: /rest-api-guide/session/session_roles.md
+    - output: web,pdf
+      title: /session/start-saml-login
+      url: /rest-api-guide/session/session_start-saml-login.md
+    - output: web,pdf
+      title: /session/retrieve-saml-login
+      url: /rest-api-guide/session/session_retrieve-saml-login.md
+    - output: web,pdf
+      title: /shutdown/reboot/start
+      url: /rest-api-guide/shutdown/shutdown_reboot_start.md
+    - output: web,pdf
+      title: /shutdown/reboot/pause
+      url: /rest-api-guide/shutdown/shutdown_reboot_pause.md
+    - output: web,pdf
+      title: /shutdown/reboot/resume
+      url: /rest-api-guide/shutdown/shutdown_reboot_resume.md
+    - output: web,pdf
+      title: /shutdown/reboot/status
+      url: /rest-api-guide/shutdown/shutdown_reboot_status.md
+    - output: web,pdf
+      title: /shutdown/halt
+      url: /rest-api-guide/shutdown/shutdown_halt.md
+    - output: web,pdf
+      title: /v3/snapshots/
+      url: /rest-api-guide/snapshots/v3_snapshots.md
+    - output: web,pdf
+      title: /v2/snapshots/
+      url: /rest-api-guide/snapshots/v2_snapshots.md
+    - output: web,pdf
+      title: /snapshots/
+      url: /rest-api-guide/snapshots/snapshots.md
+    - output: web,pdf
+      title: /v4/snapshots/status/
+      url: /rest-api-guide/snapshots/v4_snapshots_status.md
+    - output: web,pdf
+      title: /v3/snapshots/status/
+      url: /rest-api-guide/snapshots/v3_snapshots_status.md
+    - output: web,pdf
+      title: /v2/snapshots/status/
+      url: /rest-api-guide/snapshots/v2_snapshots_status.md
+    - output: web,pdf
+      title: /v3/snapshots/policies/
+      url: /rest-api-guide/snapshots/v3_snapshots_policies.md
+    - output: web,pdf
+      title: /v2/snapshots/policies/
+      url: /rest-api-guide/snapshots/v2_snapshots_policies.md
+    - output: web,pdf
+      title: /snapshots/policies/
+      url: /rest-api-guide/snapshots/snapshots_policies.md
+    - output: web,pdf
+      title: /v3/snapshots/policies/status/
+      url: /rest-api-guide/snapshots/v3_snapshots_policies_status.md
+    - output: web,pdf
+      title: /v2/snapshots/policies/status/
+      url: /rest-api-guide/snapshots/v2_snapshots_policies_status.md
+    - output: web,pdf
+      title: /snapshots/policies/status/
+      url: /rest-api-guide/snapshots/snapshots_policies_status.md
+    - output: web,pdf
+      title: /snapshots/total-used-capacity
+      url: /rest-api-guide/snapshots/snapshots_total-used-capacity.md
+    - output: web,pdf
+      title: /snapshots/calculate-used-capacity
+      url: /rest-api-guide/snapshots/snapshots_calculate-used-capacity.md
+    - output: web,pdf
+      title: /snapshots/capacity-used-per-snapshot/
+      url: /rest-api-guide/snapshots/snapshots_capacity-used-per-snapshot.md
+    - output: web,pdf
+      title: /snapshots/capacity-used-per-snapshot/{id}
+      url: /rest-api-guide/snapshots/snapshots_capacity-used-per-snapshot_id.md
+    - output: web,pdf
+      title: /v3/snapshots/policies/status/{id}
+      url: /rest-api-guide/snapshots/v3_snapshots_policies_status_id.md
+    - output: web,pdf
+      title: /v2/snapshots/policies/status/{id}
+      url: /rest-api-guide/snapshots/v2_snapshots_policies_status_id.md
+    - output: web,pdf
+      title: /snapshots/policies/status/{id}
+      url: /rest-api-guide/snapshots/snapshots_policies_status_id.md
+    - output: web,pdf
+      title: /v3/snapshots/policies/{id}
+      url: /rest-api-guide/snapshots/v3_snapshots_policies_id.md
+    - output: web,pdf
+      title: /v2/snapshots/policies/{id}
+      url: /rest-api-guide/snapshots/v2_snapshots_policies_id.md
+    - output: web,pdf
+      title: /snapshots/policies/{id}
+      url: /rest-api-guide/snapshots/snapshots_policies_id.md
+    - output: web,pdf
+      title: /v3/snapshots/status/{id}
+      url: /rest-api-guide/snapshots/v3_snapshots_status_id.md
+    - output: web,pdf
+      title: /v2/snapshots/status/{id}
+      url: /rest-api-guide/snapshots/v2_snapshots_status_id.md
+    - output: web,pdf
+      title: /v3/snapshots/{id}
+      url: /rest-api-guide/snapshots/v3_snapshots_id.md
+    - output: web,pdf
+      title: /v2/snapshots/{id}
+      url: /rest-api-guide/snapshots/v2_snapshots_id.md
+    - output: web,pdf
+      title: /snapshots/{id}
+      url: /rest-api-guide/snapshots/snapshots_id.md
+    - output: web,pdf
+      title: /v3/snapshots/{id}/lock
+      url: /rest-api-guide/snapshots/v3_snapshots_id_lock.md
+    - output: web,pdf
+      title: /v3/snapshots/{id}/unlock-challenge
+      url: /rest-api-guide/snapshots/v3_snapshots_id_unlock-challenge.md
+    - output: web,pdf
+      title: /v3/snapshots/{id}/unlock
+      url: /rest-api-guide/snapshots/v3_snapshots_id_unlock.md
+    - output: web,pdf
+      title: /v2/snapshots/{newer_id}/changes-since/{older_id}
+      url: /rest-api-guide/snapshots/v2_snapshots_newer_id_changes-since_older_id.md
+    - output: web,pdf
+      title: /v2/snapshots/{newer_id}/changes-since/{older_id}/files/{ref}
+      url: /rest-api-guide/snapshots/v2_snapshots_newer_id_changes-since_older_id_files_ref.md
+    - output: web,pdf
+      title: /multitenancy/tenants/
+      url: /rest-api-guide/multitenancy/multitenancy_tenants.md
+    - output: web,pdf
+      title: /multitenancy/tenants/{tenant_id}
+      url: /rest-api-guide/multitenancy/multitenancy_tenants_tenant_id.md
+    - output: web,pdf
+      title: /time/settings
+      url: /rest-api-guide/time/time_settings.md
+    - output: web,pdf
+      title: /time/status
+      url: /rest-api-guide/time/time_status.md
+    - output: web,pdf
+      title: /time/timezones
+      url: /rest-api-guide/time/time_timezones.md
+    - output: web,pdf
+      title: /tree-delete/jobs/
+      url: /rest-api-guide/tree-delete/tree-delete_jobs.md
+    - output: web,pdf
+      title: /tree-delete/jobs/{id}
+      url: /rest-api-guide/tree-delete/tree-delete_jobs_id.md
+    - output: web,pdf
+      title: /unconfigured/nodes/
+      url: /rest-api-guide/unconfigured/unconfigured_nodes.md
+    - output: web,pdf
+      title: /version
+      url: /rest-api-guide/version/version.md
+    - output: web,pdf
+      title: /v2/upgrade/blocked
+      url: /rest-api-guide/upgrade/v2_upgrade_blocked.md
+    - output: web,pdf
+      title: /v2/upgrade/verify-image
+      url: /rest-api-guide/upgrade/v2_upgrade_verify-image.md
+    - output: web,pdf
+      title: /v2/upgrade/prepare
+      url: /rest-api-guide/upgrade/v2_upgrade_prepare.md
+    - output: web,pdf
+      title: /v2/upgrade/commit
+      url: /rest-api-guide/upgrade/v2_upgrade_commit.md
+    - output: web,pdf
+      title: /v3/upgrade/status
+      url: /rest-api-guide/upgrade/v3_upgrade_status.md
+    - output: web,pdf
+      title: /v2/upgrade/status
+      url: /rest-api-guide/upgrade/v2_upgrade_status.md
+    - output: web,pdf
+      title: /web-ui/settings
+      url: /rest-api-guide/web-ui/web-ui_settings.md
+    output: web,pdf
+    title: API Endpoints
+    type: navi

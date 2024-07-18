@@ -1,0 +1,18 @@
+---
+category: /replication
+methods:
+  get:
+    parameters:
+    - description: Relationship identifier
+      name: id
+      required: true
+    response_body:
+      description: Return value on success
+      example_value: TO DO
+      schema: TO DO
+      status_code: '200'
+    summary: List information for all snapshots awaiting replication by the specified
+      relationship.
+rest_endpoint: /v2/replication/source-relationships/{id}/queued-snapshots/
+sidebar: rest_api_command_guide_sidebar
+---
