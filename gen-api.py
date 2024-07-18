@@ -144,19 +144,6 @@ sidebar_content = {
                     "title": "Qumulo REST API Guide",
                     "type": "navi"
                 },
-                {
-                    "folderitems": [
-                        {
-                            "output": "web,pdf",
-                            "title": category,
-                            "url": entries[0]["url"]
-                        }
-                        for category, entries in sidebar_entries_by_category.items()
-                    ],
-                    "output": "web,pdf",
-                    "title": "API Endpoints",
-                    "type": "navi"
-                }
             ]
         }
     ]
