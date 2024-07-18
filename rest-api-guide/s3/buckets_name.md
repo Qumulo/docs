@@ -12,8 +12,8 @@ methods:
       required: true
     response_body:
       description: Return value on success
-      example_value: TO DO
-      schema: TO DO
+      example_value: '"TO DO"'
+      schema: '"TO DO"'
       status_code: '200'
     summary: Delete an existing S3 bucket.
 rest_endpoint: /v1/s3/buckets/{name}

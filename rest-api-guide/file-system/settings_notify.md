@@ -5,8 +5,14 @@ methods:
     parameters: []
     response_body:
       description: Return value on success
-      example_value: TO DO
-      schema: TO DO
+      example_value: '"TO DO"'
+      schema: "{\n  \"description\": \"fs_notify_config\",\n  \"type\": \"object\"\
+        ,\n  \"properties\": {\n    \"recursive_mode\": {\n      \"type\": \"string\"\
+        ,\n      \"enum\": [\n        \"DISABLED_ERROR\",\n        \"DISABLED_IGNORE\"\
+        ,\n        \"ENABLED\"\n      ],\n      \"description\": \"recursive_mode:\\\
+        n * `DISABLED_ERROR` - FS_NOTIFY_RECURSIVE_MODE_DISABLED_ERROR,\\n * `DISABLED_IGNORE`\
+        \ - FS_NOTIFY_RECURSIVE_MODE_DISABLED_IGNORE,\\n * `ENABLED` - FS_NOTIFY_RECURSIVE_MODE_ENABLED\"\
+        \n    }\n  }\n}"
       status_code: '200'
     summary: Get FS notify related settings.
   put:
@@ -15,12 +21,24 @@ methods:
       name: If-Match
       required: false
     request_body:
-      example_value: TO DO
-      schema: TO DO
+      example_value: '"TO DO"'
+      schema: "{\n  \"description\": \"fs_notify_config\",\n  \"type\": \"object\"\
+        ,\n  \"properties\": {\n    \"recursive_mode\": {\n      \"type\": \"string\"\
+        ,\n      \"enum\": [\n        \"DISABLED_ERROR\",\n        \"DISABLED_IGNORE\"\
+        ,\n        \"ENABLED\"\n      ],\n      \"description\": \"recursive_mode:\\\
+        n * `DISABLED_ERROR` - FS_NOTIFY_RECURSIVE_MODE_DISABLED_ERROR,\\n * `DISABLED_IGNORE`\
+        \ - FS_NOTIFY_RECURSIVE_MODE_DISABLED_IGNORE,\\n * `ENABLED` - FS_NOTIFY_RECURSIVE_MODE_ENABLED\"\
+        \n    }\n  }\n}"
     response_body:
       description: Return value on success
-      example_value: TO DO
-      schema: TO DO
+      example_value: '"TO DO"'
+      schema: "{\n  \"description\": \"fs_notify_config\",\n  \"type\": \"object\"\
+        ,\n  \"properties\": {\n    \"recursive_mode\": {\n      \"type\": \"string\"\
+        ,\n      \"enum\": [\n        \"DISABLED_ERROR\",\n        \"DISABLED_IGNORE\"\
+        ,\n        \"ENABLED\"\n      ],\n      \"description\": \"recursive_mode:\\\
+        n * `DISABLED_ERROR` - FS_NOTIFY_RECURSIVE_MODE_DISABLED_ERROR,\\n * `DISABLED_IGNORE`\
+        \ - FS_NOTIFY_RECURSIVE_MODE_DISABLED_IGNORE,\\n * `ENABLED` - FS_NOTIFY_RECURSIVE_MODE_ENABLED\"\
+        \n    }\n  }\n}"
       status_code: '200'
     summary: Set FS notify related settings.
 rest_endpoint: /v1/file-system/settings/notify

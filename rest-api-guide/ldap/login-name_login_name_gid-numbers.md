@@ -8,8 +8,18 @@ methods:
       required: true
     response_body:
       description: Return value on success
-      example_value: TO DO
-      schema: TO DO
+      example_value: '"TO DO"'
+      schema: "{\n  \"description\": \"api_ldap_login_name_to_gid_numbers\",\n  \"\
+        type\": \"object\",\n  \"properties\": {\n    \"login_name\": {\n      \"\
+        description\": \"login_name\",\n      \"type\": \"string\"\n    },\n    \"\
+        uid_numbers_to_gid_numbers\": {\n      \"type\": \"array\",\n      \"items\"\
+        : {\n        \"description\": \"uid_numbers_to_gid_numbers\",\n        \"\
+        type\": \"object\",\n        \"properties\": {\n          \"uid_number\":\
+        \ {\n            \"description\": \"uid_number\",\n            \"type\": \"\
+        number\"\n          },\n          \"gid_numbers\": {\n            \"type\"\
+        : \"array\",\n            \"items\": {\n              \"description\": \"\
+        gid_numbers\",\n              \"type\": \"number\"\n            }\n      \
+        \    }\n        }\n      }\n    }\n  }\n}"
       status_code: '200'
     summary: Query the LDAP server for the gid numbers for all the groups of which
       the given login name is a member. This returns a vector of results in the case

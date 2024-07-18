@@ -9,8 +9,11 @@ methods:
       required: true
     response_body:
       description: Return value on success
-      example_value: TO DO
-      schema: TO DO
+      example_value: '"TO DO"'
+      schema: "{\n  \"description\": \"api_change_lock_key_replace_challenge\",\n\
+        \  \"type\": \"object\",\n  \"properties\": {\n    \"challenge\": {\n    \
+        \  \"description\": \"The security challenge for replacing the specified key.\"\
+        ,\n      \"type\": \"string\"\n    }\n  }\n}"
       status_code: '200'
     summary: Get file system public key replacement challenge by using the name or
       identifier of the specified key.

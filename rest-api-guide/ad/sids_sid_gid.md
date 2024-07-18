@@ -8,8 +8,10 @@ methods:
       required: true
     response_body:
       description: Return value on success
-      example_value: TO DO
-      schema: TO DO
+      example_value: '"TO DO"'
+      schema: "{\n  \"description\": \"api_ad_gid\",\n  \"type\": \"object\",\n  \"\
+        properties\": {\n    \"gid\": {\n      \"description\": \"gid\",\n      \"\
+        type\": \"number\"\n    }\n  }\n}"
       status_code: '200'
     summary: Return the GID for the given group SID as found by issuing an AD query
       against the current domain the cluster is joined to.

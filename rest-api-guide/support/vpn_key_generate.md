@@ -5,8 +5,8 @@ methods:
     parameters: []
     response_body:
       description: Return value on success
-      example_value: TO DO
-      schema: TO DO
+      example_value: '"TO DO"'
+      schema: '"TO DO"'
       status_code: '200'
     summary: Generate a new VPN private key. If there is an existing private key,
       this overwrites that key.

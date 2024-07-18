@@ -26,8 +26,23 @@ methods:
       required: false
     response_body:
       description: Return value on success
-      example_value: TO DO
-      schema: TO DO
+      example_value: '"TO DO"'
+      schema: "{\n  \"description\": \"api_files_user_metadata_range_result\",\n \
+        \ \"type\": \"object\",\n  \"properties\": {\n    \"entries\": {\n      \"\
+        type\": \"array\",\n      \"items\": {\n        \"description\": \"The list\
+        \ of user metadata entries.\",\n        \"type\": \"object\",\n        \"\
+        properties\": {\n          \"type\": {\n            \"type\": \"string\",\n\
+        \            \"enum\": [\n              \"GENERIC\",\n              \"S3\"\
+        \n            ],\n            \"description\": \"The type of user metadata.\
+        \ Generic user metadata is visible through the S3 api as object tags. S3 metadata\
+        \ is visible to the S3 protocol as object metadata.:\\n * `GENERIC` - FS_USER_METADATA_TYPE_GENERIC,\\\
+        n * `S3` - FS_USER_METADATA_TYPE_S3\"\n          },\n          \"key\": {\n\
+        \            \"description\": \"The key used to reference the user metadata.\"\
+        ,\n            \"type\": \"string\"\n          },\n          \"value\": {\n\
+        \            \"type\": \"array\",\n            \"items\": {\n            \
+        \  \"description\": \"The data that the user-defined metadata entry stores.\"\
+        ,\n              \"type\": \"number\"\n            }\n          }\n      \
+        \  }\n      }\n    }\n  }\n}"
       status_code: '200'
     summary: Retrieve the user-defined metadata of a specified type for the current
       file. Values are base 64 encoded.

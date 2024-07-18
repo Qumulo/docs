@@ -29,8 +29,8 @@ methods:
       required: false
     response_body:
       description: Return value on success
-      example_value: TO DO
-      schema: TO DO
+      example_value: '"TO DO"'
+      schema: '"TO DO"'
       status_code: '200'
     summary: Return the contents of the file as an HTTP octet stream. The etag returned
       by this method represents the whole state of this file. In another word, if
@@ -57,12 +57,19 @@ methods:
       name: If-Match
       required: false
     request_body:
-      example_value: TO DO
-      schema: TO DO
+      example_value: '"TO DO"'
+      schema: "{\n  \"type\": \"object\"\n}"
     response_body:
       description: Return value on success
-      example_value: TO DO
-      schema: TO DO
+      example_value: '"TO DO"'
+      schema: "{\n  \"description\": \"api_named_stream_attributes\",\n  \"type\"\
+        : \"object\",\n  \"properties\": {\n    \"name\": {\n      \"description\"\
+        : \"name\",\n      \"type\": \"string\"\n    },\n    \"id\": {\n      \"description\"\
+        : \"id\",\n      \"type\": \"string\"\n    },\n    \"size\": {\n      \"description\"\
+        : \"size\",\n      \"type\": \"string\"\n    },\n    \"datablocks\": {\n \
+        \     \"description\": \"datablocks\",\n      \"type\": \"string\"\n    },\n\
+        \    \"data_revision\": {\n      \"description\": \"data_revision\",\n   \
+        \   \"type\": \"string\"\n    }\n  }\n}"
       status_code: '200'
     summary: Set the contents of the stream, at the given offset, to the body of the
       request. The target stream must already exist, and the Content-Type of the request
@@ -82,12 +89,19 @@ methods:
       name: If-Match
       required: false
     request_body:
-      example_value: TO DO
-      schema: TO DO
+      example_value: '"TO DO"'
+      schema: "{\n  \"type\": \"object\"\n}"
     response_body:
       description: Return value on success
-      example_value: TO DO
-      schema: TO DO
+      example_value: '"TO DO"'
+      schema: "{\n  \"description\": \"api_named_stream_attributes\",\n  \"type\"\
+        : \"object\",\n  \"properties\": {\n    \"name\": {\n      \"description\"\
+        : \"name\",\n      \"type\": \"string\"\n    },\n    \"id\": {\n      \"description\"\
+        : \"id\",\n      \"type\": \"string\"\n    },\n    \"size\": {\n      \"description\"\
+        : \"size\",\n      \"type\": \"string\"\n    },\n    \"datablocks\": {\n \
+        \     \"description\": \"datablocks\",\n      \"type\": \"string\"\n    },\n\
+        \    \"data_revision\": {\n      \"description\": \"data_revision\",\n   \
+        \   \"type\": \"string\"\n    }\n  }\n}"
       status_code: '200'
     summary: Replace the contents of the stream with the body of the request. The
       target stream must already exist, and the content-type of the request must be

@@ -5,8 +5,15 @@ methods:
     parameters: []
     response_body:
       description: Return value on success
-      example_value: TO DO
-      schema: TO DO
+      example_value: '"TO DO"'
+      schema: "{\n  \"description\": \"atime_config\",\n  \"type\": \"object\",\n\
+        \  \"properties\": {\n    \"enabled\": {\n      \"description\": \"Whether\
+        \ atime update is enabled\",\n      \"type\": \"boolean\"\n    },\n    \"\
+        granularity\": {\n      \"type\": \"string\",\n      \"enum\": [\n       \
+        \ \"HOUR\",\n        \"DAY\",\n        \"WEEK\"\n      ],\n      \"description\"\
+        : \"Granularity for atime updates (HOUR/DAY/WEEEK):\\n * `DAY` - ATIME_GRANULARITY_DAY,\\\
+        n * `HOUR` - ATIME_GRANULARITY_HOUR,\\n * `WEEK` - ATIME_GRANULARITY_WEEK\"\
+        \n    }\n  }\n}"
       status_code: '200'
     summary: Get atime-related settings.
   patch:
@@ -15,12 +22,26 @@ methods:
       name: If-Match
       required: false
     request_body:
-      example_value: TO DO
-      schema: TO DO
+      example_value: '"TO DO"'
+      schema: "{\n  \"description\": \"atime_config_patch\",\n  \"type\": \"object\"\
+        ,\n  \"properties\": {\n    \"enabled\": {\n      \"description\": \"Whether\
+        \ atime update is enabled\",\n      \"type\": \"boolean\"\n    },\n    \"\
+        granularity\": {\n      \"type\": \"string\",\n      \"enum\": [\n       \
+        \ \"HOUR\",\n        \"DAY\",\n        \"WEEK\"\n      ],\n      \"description\"\
+        : \"Granularity for atime updates (HOUR/DAY/WEEEK):\\n * `DAY` - ATIME_GRANULARITY_DAY,\\\
+        n * `HOUR` - ATIME_GRANULARITY_HOUR,\\n * `WEEK` - ATIME_GRANULARITY_WEEK\"\
+        \n    }\n  }\n}"
     response_body:
       description: Return value on success
-      example_value: TO DO
-      schema: TO DO
+      example_value: '"TO DO"'
+      schema: "{\n  \"description\": \"atime_config\",\n  \"type\": \"object\",\n\
+        \  \"properties\": {\n    \"enabled\": {\n      \"description\": \"Whether\
+        \ atime update is enabled\",\n      \"type\": \"boolean\"\n    },\n    \"\
+        granularity\": {\n      \"type\": \"string\",\n      \"enum\": [\n       \
+        \ \"HOUR\",\n        \"DAY\",\n        \"WEEK\"\n      ],\n      \"description\"\
+        : \"Granularity for atime updates (HOUR/DAY/WEEEK):\\n * `DAY` - ATIME_GRANULARITY_DAY,\\\
+        n * `HOUR` - ATIME_GRANULARITY_HOUR,\\n * `WEEK` - ATIME_GRANULARITY_WEEK\"\
+        \n    }\n  }\n}"
       status_code: '200'
     summary: Update atime-related settings.
   put:
@@ -29,12 +50,26 @@ methods:
       name: If-Match
       required: false
     request_body:
-      example_value: TO DO
-      schema: TO DO
+      example_value: '"TO DO"'
+      schema: "{\n  \"description\": \"atime_config\",\n  \"type\": \"object\",\n\
+        \  \"properties\": {\n    \"enabled\": {\n      \"description\": \"Whether\
+        \ atime update is enabled\",\n      \"type\": \"boolean\"\n    },\n    \"\
+        granularity\": {\n      \"type\": \"string\",\n      \"enum\": [\n       \
+        \ \"HOUR\",\n        \"DAY\",\n        \"WEEK\"\n      ],\n      \"description\"\
+        : \"Granularity for atime updates (HOUR/DAY/WEEEK):\\n * `DAY` - ATIME_GRANULARITY_DAY,\\\
+        n * `HOUR` - ATIME_GRANULARITY_HOUR,\\n * `WEEK` - ATIME_GRANULARITY_WEEK\"\
+        \n    }\n  }\n}"
     response_body:
       description: Return value on success
-      example_value: TO DO
-      schema: TO DO
+      example_value: '"TO DO"'
+      schema: "{\n  \"description\": \"atime_config\",\n  \"type\": \"object\",\n\
+        \  \"properties\": {\n    \"enabled\": {\n      \"description\": \"Whether\
+        \ atime update is enabled\",\n      \"type\": \"boolean\"\n    },\n    \"\
+        granularity\": {\n      \"type\": \"string\",\n      \"enum\": [\n       \
+        \ \"HOUR\",\n        \"DAY\",\n        \"WEEK\"\n      ],\n      \"description\"\
+        : \"Granularity for atime updates (HOUR/DAY/WEEEK):\\n * `DAY` - ATIME_GRANULARITY_DAY,\\\
+        n * `HOUR` - ATIME_GRANULARITY_HOUR,\\n * `WEEK` - ATIME_GRANULARITY_WEEK\"\
+        \n    }\n  }\n}"
       status_code: '200'
     summary: Set atime-related settings.
 rest_endpoint: /v1/file-system/settings/atime

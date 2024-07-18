@@ -5,8 +5,8 @@ methods:
     parameters: []
     response_body:
       description: Return value on success
-      example_value: TO DO
-      schema: TO DO
+      example_value: '"TO DO"'
+      schema: '"TO DO"'
       status_code: '200'
     summary: Rotate the encryption at rest keys.
 rest_endpoint: /v1/encryption/rotate-keys

@@ -17,8 +17,19 @@ methods:
       required: false
     response_body:
       description: Return value on success
-      example_value: TO DO
-      schema: TO DO
+      example_value: '"TO DO"'
+      schema: "{\n  \"description\": \"api_change_lock_key_usage_page\",\n  \"type\"\
+        : \"object\",\n  \"properties\": {\n    \"usages\": {\n      \"type\": \"\
+        array\",\n      \"items\": {\n        \"description\": \"Usages of the key\"\
+        ,\n        \"type\": \"object\",\n        \"properties\": {\n          \"\
+        type\": {\n            \"type\": \"string\",\n            \"enum\": [\n  \
+        \            \"snapshot\",\n              \"snapshot_policy\",\n         \
+        \     \"replication_target\"\n            ],\n            \"description\"\
+        : \"type:\\n * `replication_target` - FS_CHANGE_LOCK_KEY_USAGE_REPLICATION,\\\
+        n * `snapshot` - FS_CHANGE_LOCK_KEY_USAGE_SNAPSHOT,\\n * `snapshot_policy`\
+        \ - FS_CHANGE_LOCK_KEY_USAGE_SNAPSHOT_POLICY\"\n          },\n          \"\
+        id\": {\n            \"description\": \"id\",\n            \"type\": \"string\"\
+        \n          }\n        }\n      }\n    }\n  }\n}"
       status_code: '200'
     summary: Get file system public key usage by using the name or identifier of the
       specified key.

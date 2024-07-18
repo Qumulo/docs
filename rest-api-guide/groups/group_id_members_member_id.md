@@ -11,8 +11,8 @@ methods:
       required: true
     response_body:
       description: Return value on success
-      example_value: TO DO
-      schema: TO DO
+      example_value: '"TO DO"'
+      schema: '"TO DO"'
       status_code: '200'
     summary: Remove a member from a group.
 rest_endpoint: /v1/groups/{group_id}/members/{member_id}

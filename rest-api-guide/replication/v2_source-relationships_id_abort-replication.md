@@ -13,8 +13,8 @@ methods:
       required: false
     response_body:
       description: Return value on success
-      example_value: TO DO
-      schema: TO DO
+      example_value: '"TO DO"'
+      schema: '"TO DO"'
       status_code: '200'
     summary: Abort any ongoing replication work for the specified replication relationship
       where this cluster is the source.

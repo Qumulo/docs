@@ -5,8 +5,10 @@ methods:
     parameters: []
     response_body:
       description: Return value on success
-      example_value: TO DO
-      schema: TO DO
+      example_value: '"TO DO"'
+      schema: "{\n  \"description\": \"api_monitor_uri\",\n  \"type\": \"object\"\
+        ,\n  \"properties\": {\n    \"monitor_uri\": {\n      \"description\": \"\
+        monitor_uri\",\n      \"type\": \"string\"\n    }\n  }\n}"
       status_code: '202'
     summary: Cancel current join or leave operation.
 rest_endpoint: /v1/ad/cancel

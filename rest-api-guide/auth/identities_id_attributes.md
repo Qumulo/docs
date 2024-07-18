@@ -8,8 +8,8 @@ methods:
       required: true
     response_body:
       description: Return value on success
-      example_value: TO DO
-      schema: TO DO
+      example_value: '"TO DO"'
+      schema: '"TO DO"'
       status_code: '200'
     summary: Delete the identity attributes for an identity.
   get:
@@ -19,8 +19,10 @@ methods:
       required: true
     response_body:
       description: Return value on success
-      example_value: TO DO
-      schema: TO DO
+      example_value: '"TO DO"'
+      schema: "{\n  \"description\": \"identity_attributes\",\n  \"type\": \"object\"\
+        ,\n  \"properties\": {\n    \"home_directory\": {\n      \"description\":\
+        \ \"home_directory\",\n      \"type\": \"string\"\n    }\n  }\n}"
       status_code: '200'
     summary: Get the identity attributes for an identity.
   put:
@@ -29,12 +31,16 @@ methods:
       name: id
       required: true
     request_body:
-      example_value: TO DO
-      schema: TO DO
+      example_value: '"TO DO"'
+      schema: "{\n  \"description\": \"identity_attributes\",\n  \"type\": \"object\"\
+        ,\n  \"properties\": {\n    \"home_directory\": {\n      \"description\":\
+        \ \"home_directory\",\n      \"type\": \"string\"\n    }\n  }\n}"
     response_body:
       description: Return value on success
-      example_value: TO DO
-      schema: TO DO
+      example_value: '"TO DO"'
+      schema: "{\n  \"description\": \"identity_attributes\",\n  \"type\": \"object\"\
+        ,\n  \"properties\": {\n    \"home_directory\": {\n      \"description\":\
+        \ \"home_directory\",\n      \"type\": \"string\"\n    }\n  }\n}"
       status_code: '200'
     summary: Set the identity attributes for an identity.
 rest_endpoint: /v1/auth/identities/{id}/attributes

@@ -8,8 +8,23 @@ methods:
       required: true
     response_body:
       description: Return value on success
-      example_value: TO DO
-      schema: TO DO
+      example_value: '"TO DO"'
+      schema: "{\n  \"description\": \"api_interface_config\",\n  \"type\": \"object\"\
+        ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"Unique identifier\
+        \ for this interface configuration\",\n      \"type\": \"number\"\n    },\n\
+        \    \"name\": {\n      \"description\": \"Name of the configured interface\
+        \ i.e. bond0\",\n      \"type\": \"string\"\n    },\n    \"default_gateway\"\
+        : {\n      \"description\": \"Default IPv4 gateway on which all traffic generated\
+        \ from nodes is sent out on this interface\",\n      \"type\": \"string\"\n\
+        \    },\n    \"default_gateway_ipv6\": {\n      \"description\": \"Default\
+        \ IPv6 gateway on which all traffic generated from nodes is sent out on this\
+        \ interface\",\n      \"type\": \"string\"\n    },\n    \"bonding_mode\":\
+        \ {\n      \"type\": \"string\",\n      \"enum\": [\n        \"ACTIVE_BACKUP\"\
+        ,\n        \"IEEE_8023AD\"\n      ],\n      \"description\": \"Linux bonding\
+        \ mode on this interface, if it is bonded.:\\n * `ACTIVE_BACKUP` - BONDING_MODE_ACTIVE_BACKUP,\\\
+        n * `IEEE_8023AD` - BONDING_MODE_IEEE_8023AD\"\n    },\n    \"mtu\": {\n \
+        \     \"description\": \"Maximum transmission unit configuration value\",\n\
+        \      \"type\": \"number\"\n    }\n  }\n}"
       status_code: '200'
     summary: Get configuration of an interface.
   patch:
@@ -21,12 +36,29 @@ methods:
       name: If-Match
       required: false
     request_body:
-      example_value: TO DO
-      schema: TO DO
+      example_value: '"TO DO"'
+      schema: "{\n  \"description\": \"api_interface_config\",\n  \"type\": \"object\"\
+        ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"Unique identifier\
+        \ for this interface configuration\",\n      \"type\": \"number\"\n    },\n\
+        \    \"name\": {\n      \"description\": \"Name of the configured interface\
+        \ i.e. bond0\",\n      \"type\": \"string\"\n    },\n    \"default_gateway\"\
+        : {\n      \"description\": \"Default IPv4 gateway on which all traffic generated\
+        \ from nodes is sent out on this interface\",\n      \"type\": \"string\"\n\
+        \    },\n    \"default_gateway_ipv6\": {\n      \"description\": \"Default\
+        \ IPv6 gateway on which all traffic generated from nodes is sent out on this\
+        \ interface\",\n      \"type\": \"string\"\n    },\n    \"bonding_mode\":\
+        \ {\n      \"type\": \"string\",\n      \"enum\": [\n        \"ACTIVE_BACKUP\"\
+        ,\n        \"IEEE_8023AD\"\n      ],\n      \"description\": \"Linux bonding\
+        \ mode on this interface, if it is bonded.:\\n * `ACTIVE_BACKUP` - BONDING_MODE_ACTIVE_BACKUP,\\\
+        n * `IEEE_8023AD` - BONDING_MODE_IEEE_8023AD\"\n    },\n    \"mtu\": {\n \
+        \     \"description\": \"Maximum transmission unit configuration value\",\n\
+        \      \"type\": \"number\"\n    }\n  }\n}"
     response_body:
       description: Return value on success
-      example_value: TO DO
-      schema: TO DO
+      example_value: '"TO DO"'
+      schema: "{\n  \"description\": \"api_monitor_uri\",\n  \"type\": \"object\"\
+        ,\n  \"properties\": {\n    \"monitor_uri\": {\n      \"description\": \"\
+        monitor_uri\",\n      \"type\": \"string\"\n    }\n  }\n}"
       status_code: '202'
     summary: Update a subset of an interface configuration. Changes in interface MTU
       will be applied to the untagged STATIC network as well as the interface.
@@ -39,12 +71,29 @@ methods:
       name: If-Match
       required: false
     request_body:
-      example_value: TO DO
-      schema: TO DO
+      example_value: '"TO DO"'
+      schema: "{\n  \"description\": \"api_interface_config\",\n  \"type\": \"object\"\
+        ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"Unique identifier\
+        \ for this interface configuration\",\n      \"type\": \"number\"\n    },\n\
+        \    \"name\": {\n      \"description\": \"Name of the configured interface\
+        \ i.e. bond0\",\n      \"type\": \"string\"\n    },\n    \"default_gateway\"\
+        : {\n      \"description\": \"Default IPv4 gateway on which all traffic generated\
+        \ from nodes is sent out on this interface\",\n      \"type\": \"string\"\n\
+        \    },\n    \"default_gateway_ipv6\": {\n      \"description\": \"Default\
+        \ IPv6 gateway on which all traffic generated from nodes is sent out on this\
+        \ interface\",\n      \"type\": \"string\"\n    },\n    \"bonding_mode\":\
+        \ {\n      \"type\": \"string\",\n      \"enum\": [\n        \"ACTIVE_BACKUP\"\
+        ,\n        \"IEEE_8023AD\"\n      ],\n      \"description\": \"Linux bonding\
+        \ mode on this interface, if it is bonded.:\\n * `ACTIVE_BACKUP` - BONDING_MODE_ACTIVE_BACKUP,\\\
+        n * `IEEE_8023AD` - BONDING_MODE_IEEE_8023AD\"\n    },\n    \"mtu\": {\n \
+        \     \"description\": \"Maximum transmission unit configuration value\",\n\
+        \      \"type\": \"number\"\n    }\n  }\n}"
     response_body:
       description: Return value on success
-      example_value: TO DO
-      schema: TO DO
+      example_value: '"TO DO"'
+      schema: "{\n  \"description\": \"api_monitor_uri\",\n  \"type\": \"object\"\
+        ,\n  \"properties\": {\n    \"monitor_uri\": {\n      \"description\": \"\
+        monitor_uri\",\n      \"type\": \"string\"\n    }\n  }\n}"
       status_code: '202'
     summary: Set configuration of an interface. Changes in interface MTU will be applied
       to the untagged STATIC network as well as the interface.

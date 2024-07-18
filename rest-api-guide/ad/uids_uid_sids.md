@@ -8,8 +8,9 @@ methods:
       required: true
     response_body:
       description: Return value on success
-      example_value: TO DO
-      schema: TO DO
+      example_value: '"TO DO"'
+      schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"type\": \"string\"\
+        \n  }\n}"
       status_code: '200'
     summary: Return the SIDs for the given UID as found by issuing an AD query against
       the current domain the cluster is joined to.

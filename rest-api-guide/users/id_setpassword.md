@@ -7,12 +7,15 @@ methods:
       name: id
       required: true
     request_body:
-      example_value: TO DO
-      schema: TO DO
+      example_value: '"TO DO"'
+      schema: "{\n  \"description\": \"new_password\",\n  \"type\": \"object\",\n\
+        \  \"properties\": {\n    \"new_password\": {\n      \"description\": \"new_password\"\
+        ,\n      \"type\": \"string\",\n      \"format\": \"password\"\n    }\n  }\n\
+        }"
     response_body:
       description: Return value on success
-      example_value: TO DO
-      schema: TO DO
+      example_value: '"TO DO"'
+      schema: '"TO DO"'
       status_code: '200'
     summary: Set a local user's password.
 rest_endpoint: /v1/users/{id}/setpassword

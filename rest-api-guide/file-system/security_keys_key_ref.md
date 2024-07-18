@@ -8,8 +8,8 @@ methods:
       required: true
     response_body:
       description: Return value on success
-      example_value: TO DO
-      schema: TO DO
+      example_value: '"TO DO"'
+      schema: '"TO DO"'
       status_code: '200'
     summary: Delete the file system public key by using the name or identifier of
       the specified key.
@@ -20,8 +20,17 @@ methods:
       required: true
     response_body:
       description: Return value on success
-      example_value: TO DO
-      schema: TO DO
+      example_value: '"TO DO"'
+      schema: "{\n  \"description\": \"api_change_lock_key\",\n  \"type\": \"object\"\
+        ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"The identifier\
+        \ associated with the specified key.\",\n      \"type\": \"string\"\n    },\n\
+        \    \"name\": {\n      \"description\": \"The unique name of the specified\
+        \ key.\",\n      \"type\": \"string\"\n    },\n    \"comment\": {\n      \"\
+        description\": \"A descriptive comment about the specified key.\",\n     \
+        \ \"type\": \"string\"\n    },\n    \"disabled\": {\n      \"description\"\
+        : \"Specifies whether the key is disabled.\",\n      \"type\": \"boolean\"\
+        \n    },\n    \"public_key\": {\n      \"description\": \"The contents of\
+        \ the public key.\",\n      \"type\": \"string\"\n    }\n  }\n}"
       status_code: '200'
     summary: Get the file system public key by using the name or identifier of the
       specified key.
@@ -34,12 +43,30 @@ methods:
       name: If-Match
       required: false
     request_body:
-      example_value: TO DO
-      schema: TO DO
+      example_value: '"TO DO"'
+      schema: "{\n  \"description\": \"api_change_lock_key_patch\",\n  \"type\": \"\
+        object\",\n  \"properties\": {\n    \"id\": {\n      \"description\": \"The\
+        \ identifier associated with the specified key.\",\n      \"type\": \"string\"\
+        \n    },\n    \"name\": {\n      \"description\": \"The unique name of the\
+        \ specified key.\",\n      \"type\": \"string\"\n    },\n    \"comment\":\
+        \ {\n      \"description\": \"A descriptive comment about the specified key.\"\
+        ,\n      \"type\": \"string\"\n    },\n    \"disabled\": {\n      \"description\"\
+        : \"Specifies whether the key is disabled.\",\n      \"type\": \"boolean\"\
+        \n    },\n    \"public_key\": {\n      \"description\": \"The contents of\
+        \ the public key.\",\n      \"type\": \"string\"\n    }\n  }\n}"
     response_body:
       description: Return value on success
-      example_value: TO DO
-      schema: TO DO
+      example_value: '"TO DO"'
+      schema: "{\n  \"description\": \"api_change_lock_key\",\n  \"type\": \"object\"\
+        ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"The identifier\
+        \ associated with the specified key.\",\n      \"type\": \"string\"\n    },\n\
+        \    \"name\": {\n      \"description\": \"The unique name of the specified\
+        \ key.\",\n      \"type\": \"string\"\n    },\n    \"comment\": {\n      \"\
+        description\": \"A descriptive comment about the specified key.\",\n     \
+        \ \"type\": \"string\"\n    },\n    \"disabled\": {\n      \"description\"\
+        : \"Specifies whether the key is disabled.\",\n      \"type\": \"boolean\"\
+        \n    },\n    \"public_key\": {\n      \"description\": \"The contents of\
+        \ the public key.\",\n      \"type\": \"string\"\n    }\n  }\n}"
       status_code: '200'
     summary: Patch the file system public key by using the name or identifier of the
       specified key.
@@ -52,12 +79,30 @@ methods:
       name: If-Match
       required: false
     request_body:
-      example_value: TO DO
-      schema: TO DO
+      example_value: '"TO DO"'
+      schema: "{\n  \"description\": \"api_change_lock_key\",\n  \"type\": \"object\"\
+        ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"The identifier\
+        \ associated with the specified key.\",\n      \"type\": \"string\"\n    },\n\
+        \    \"name\": {\n      \"description\": \"The unique name of the specified\
+        \ key.\",\n      \"type\": \"string\"\n    },\n    \"comment\": {\n      \"\
+        description\": \"A descriptive comment about the specified key.\",\n     \
+        \ \"type\": \"string\"\n    },\n    \"disabled\": {\n      \"description\"\
+        : \"Specifies whether the key is disabled.\",\n      \"type\": \"boolean\"\
+        \n    },\n    \"public_key\": {\n      \"description\": \"The contents of\
+        \ the public key.\",\n      \"type\": \"string\"\n    }\n  }\n}"
     response_body:
       description: Return value on success
-      example_value: TO DO
-      schema: TO DO
+      example_value: '"TO DO"'
+      schema: "{\n  \"description\": \"api_change_lock_key\",\n  \"type\": \"object\"\
+        ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"The identifier\
+        \ associated with the specified key.\",\n      \"type\": \"string\"\n    },\n\
+        \    \"name\": {\n      \"description\": \"The unique name of the specified\
+        \ key.\",\n      \"type\": \"string\"\n    },\n    \"comment\": {\n      \"\
+        description\": \"A descriptive comment about the specified key.\",\n     \
+        \ \"type\": \"string\"\n    },\n    \"disabled\": {\n      \"description\"\
+        : \"Specifies whether the key is disabled.\",\n      \"type\": \"boolean\"\
+        \n    },\n    \"public_key\": {\n      \"description\": \"The contents of\
+        \ the public key.\",\n      \"type\": \"string\"\n    }\n  }\n}"
       status_code: '200'
     summary: Put the file system public key by using the name or identifier of the
       specified key.

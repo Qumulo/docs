@@ -4,12 +4,20 @@ methods:
   post:
     parameters: []
     request_body:
-      example_value: TO DO
-      schema: TO DO
+      example_value: '"TO DO"'
+      schema: "{\n  \"description\": \"saml_login_verification\",\n  \"type\": \"\
+        object\",\n  \"properties\": {\n    \"login_id\": {\n      \"description\"\
+        : \"A unique, Qumulo-generated login_id associated with a SAML SSO authentication\
+        \ session.\",\n      \"type\": \"string\"\n    },\n    \"verification_code\"\
+        : {\n      \"description\": \"A one-time security code that helps ensure that\
+        \ the SAML SSO authentication session is user-initiated.\",\n      \"type\"\
+        : \"string\"\n    }\n  }\n}"
     response_body:
       description: Return value on success
-      example_value: TO DO
-      schema: TO DO
+      example_value: '"TO DO"'
+      schema: "{\n  \"description\": \"credentials\",\n  \"type\": \"object\",\n \
+        \ \"properties\": {\n    \"bearer_token\": {\n      \"description\": \"bearer_token\"\
+        ,\n      \"type\": \"string\"\n    }\n  }\n}"
       status_code: '200'
     summary: This API resource supports the qq sso_login command.Check the status
       of the in-progress SAML single sign-on (SSO) authentication process that start-saml-login

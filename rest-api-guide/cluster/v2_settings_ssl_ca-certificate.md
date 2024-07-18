@@ -8,8 +8,8 @@ methods:
       required: false
     response_body:
       description: Return value on success
-      example_value: TO DO
-      schema: TO DO
+      example_value: '"TO DO"'
+      schema: '"TO DO"'
       status_code: '200'
     summary: Delete the SSL certificate authority the cluster trusts when authenticating
       outbound connections.
@@ -17,8 +17,12 @@ methods:
     parameters: []
     response_body:
       description: Return value on success
-      example_value: TO DO
-      schema: TO DO
+      example_value: '"TO DO"'
+      schema: "{\n  \"description\": \"api_cluster_ssl_ca_certificate_settings\",\n\
+        \  \"type\": \"object\",\n  \"properties\": {\n    \"ca_certificate\": {\n\
+        \      \"description\": \"Public certificate of the certificate authority\
+        \ to trust for outbound connections\",\n      \"type\": \"string\"\n    }\n\
+        \  }\n}"
       status_code: '200'
     summary: Get the SSL certificate authority the cluster trusts when authenticating
       outbound connections.
@@ -28,12 +32,20 @@ methods:
       name: If-Match
       required: false
     request_body:
-      example_value: TO DO
-      schema: TO DO
+      example_value: '"TO DO"'
+      schema: "{\n  \"description\": \"api_cluster_ssl_ca_certificate_settings\",\n\
+        \  \"type\": \"object\",\n  \"properties\": {\n    \"ca_certificate\": {\n\
+        \      \"description\": \"Public certificate of the certificate authority\
+        \ to trust for outbound connections\",\n      \"type\": \"string\"\n    }\n\
+        \  }\n}"
     response_body:
       description: Return value on success
-      example_value: TO DO
-      schema: TO DO
+      example_value: '"TO DO"'
+      schema: "{\n  \"description\": \"api_cluster_ssl_ca_certificate_settings\",\n\
+        \  \"type\": \"object\",\n  \"properties\": {\n    \"ca_certificate\": {\n\
+        \      \"description\": \"Public certificate of the certificate authority\
+        \ to trust for outbound connections\",\n      \"type\": \"string\"\n    }\n\
+        \  }\n}"
       status_code: '200'
     summary: Set the SSL certificate authority the cluster trusts when authenticating
       outbound connections.

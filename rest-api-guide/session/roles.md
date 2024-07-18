@@ -5,8 +5,9 @@ methods:
     parameters: []
     response_body:
       description: Return value on success
-      example_value: TO DO
-      schema: TO DO
+      example_value: '"TO DO"'
+      schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"type\": \"string\"\
+        \n  }\n}"
       status_code: '200'
     summary: Retrieve a list of all the roles assigned to the current user, including
       those assigned to a group to which the current user belongs.

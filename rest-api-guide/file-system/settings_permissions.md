@@ -5,19 +5,34 @@ methods:
     parameters: []
     response_body:
       description: Return value on success
-      example_value: TO DO
-      schema: TO DO
+      example_value: '"TO DO"'
+      schema: "{\n  \"description\": \"api_permissions_settings\",\n  \"type\": \"\
+        object\",\n  \"properties\": {\n    \"mode\": {\n      \"type\": \"string\"\
+        ,\n      \"enum\": [\n        \"NATIVE\",\n        \"_DEPRECATED_MERGED_V1\"\
+        ,\n        \"CROSS_PROTOCOL\"\n      ],\n      \"description\": \"mode:\\\
+        n * `CROSS_PROTOCOL` - CROSS_PROTOCOL,\\n * `NATIVE` - NATIVE,\\n * `_DEPRECATED_MERGED_V1`\
+        \ - _DEPRECATED_MERGED_V1\"\n    }\n  }\n}"
       status_code: '200'
     summary: Get permissions settings.
   put:
     parameters: []
     request_body:
-      example_value: TO DO
-      schema: TO DO
+      example_value: '"TO DO"'
+      schema: "{\n  \"description\": \"api_permissions_settings\",\n  \"type\": \"\
+        object\",\n  \"properties\": {\n    \"mode\": {\n      \"type\": \"string\"\
+        ,\n      \"enum\": [\n        \"NATIVE\",\n        \"_DEPRECATED_MERGED_V1\"\
+        ,\n        \"CROSS_PROTOCOL\"\n      ],\n      \"description\": \"mode:\\\
+        n * `CROSS_PROTOCOL` - CROSS_PROTOCOL,\\n * `NATIVE` - NATIVE,\\n * `_DEPRECATED_MERGED_V1`\
+        \ - _DEPRECATED_MERGED_V1\"\n    }\n  }\n}"
     response_body:
       description: Return value on success
-      example_value: TO DO
-      schema: TO DO
+      example_value: '"TO DO"'
+      schema: "{\n  \"description\": \"api_permissions_settings\",\n  \"type\": \"\
+        object\",\n  \"properties\": {\n    \"mode\": {\n      \"type\": \"string\"\
+        ,\n      \"enum\": [\n        \"NATIVE\",\n        \"_DEPRECATED_MERGED_V1\"\
+        ,\n        \"CROSS_PROTOCOL\"\n      ],\n      \"description\": \"mode:\\\
+        n * `CROSS_PROTOCOL` - CROSS_PROTOCOL,\\n * `NATIVE` - NATIVE,\\n * `_DEPRECATED_MERGED_V1`\
+        \ - _DEPRECATED_MERGED_V1\"\n    }\n  }\n}"
       status_code: '200'
     summary: Set permissions settings.
 rest_endpoint: /v1/file-system/settings/permissions

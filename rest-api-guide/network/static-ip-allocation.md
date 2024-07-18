@@ -18,8 +18,18 @@ methods:
       required: false
     response_body:
       description: Return value on success
-      example_value: TO DO
-      schema: TO DO
+      example_value: '"TO DO"'
+      schema: "{\n  \"description\": \"api_static_ip_allocation_summary\",\n  \"type\"\
+        : \"object\",\n  \"properties\": {\n    \"total_ips\": {\n      \"description\"\
+        : \"Total number of IP addresses in the given IP ranges\",\n      \"type\"\
+        : \"number\"\n    },\n    \"used_ips\": {\n      \"description\": \"Number\
+        \ of IP addresses currently assigned to nodes\",\n      \"type\": \"number\"\
+        \n    },\n    \"available_ips\": {\n      \"description\": \"Number of IP\
+        \ addresses available; can be negative\",\n      \"type\": \"number\"\n  \
+        \  },\n    \"total_floating_ips\": {\n      \"description\": \"Total floating\
+        \ ips\",\n      \"type\": \"number\"\n    },\n    \"surplus_floating_ips\"\
+        : {\n      \"description\": \"Floating ip count too small or large\",\n  \
+        \    \"type\": \"number\"\n    }\n  }\n}"
       status_code: '200'
     summary: Returns total/used/available numbers of IPs based on the current network
       configuration. Returns status code 400 if the server is in DHCP mode unless

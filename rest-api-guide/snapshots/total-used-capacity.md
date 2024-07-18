@@ -5,8 +5,10 @@ methods:
     parameters: []
     response_body:
       description: Return value on success
-      example_value: TO DO
-      schema: TO DO
+      example_value: '"TO DO"'
+      schema: "{\n  \"description\": \"api_snapshot_capacity_used\",\n  \"type\":\
+        \ \"object\",\n  \"properties\": {\n    \"bytes\": {\n      \"description\"\
+        : \"bytes\",\n      \"type\": \"string\"\n    }\n  }\n}"
       status_code: '200'
     summary: Returns approximate amount of space that would be reclaimed if all snapshots
       were deleted.

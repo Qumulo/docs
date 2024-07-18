@@ -26,8 +26,63 @@ methods:
       required: false
     response_body:
       description: Return value on success
-      example_value: TO DO
-      schema: TO DO
+      example_value: '"TO DO"'
+      schema: "{\n  \"description\": \"api_files_dir_aggregates\",\n  \"type\": \"\
+        object\",\n  \"properties\": {\n    \"path\": {\n      \"description\": \"\
+        path\",\n      \"type\": \"string\"\n    },\n    \"id\": {\n      \"description\"\
+        : \"id\",\n      \"type\": \"string\"\n    },\n    \"files\": {\n      \"\
+        type\": \"array\",\n      \"items\": {\n        \"description\": \"files\"\
+        ,\n        \"type\": \"object\",\n        \"properties\": {\n          \"\
+        name\": {\n            \"description\": \"Name of this file or directory\"\
+        ,\n            \"type\": \"string\"\n          },\n          \"type\": {\n\
+        \            \"type\": \"string\",\n            \"enum\": [\n            \
+        \  \"FS_FILE_TYPE_FILE\",\n              \"FS_FILE_TYPE_DIRECTORY\",\n   \
+        \           \"FS_FILE_TYPE_SYMLINK\",\n              \"FS_FILE_TYPE_UNIX_PIPE\"\
+        ,\n              \"FS_FILE_TYPE_UNIX_CHARACTER_DEVICE\",\n              \"\
+        FS_FILE_TYPE_UNIX_BLOCK_DEVICE\",\n              \"FS_FILE_TYPE_UNIX_SOCKET\"\
+        \n            ],\n            \"description\": \"type:\\n * `FS_FILE_TYPE_DIRECTORY`\
+        \ - FS_FILE_TYPE_DIRECTORY,\\n * `FS_FILE_TYPE_FILE` - FS_FILE_TYPE_FILE,\\\
+        n * `FS_FILE_TYPE_SYMLINK` - FS_FILE_TYPE_SYMLINK,\\n * `FS_FILE_TYPE_UNIX_BLOCK_DEVICE`\
+        \ - FS_FILE_TYPE_UNIX_BLOCK_DEVICE,\\n * `FS_FILE_TYPE_UNIX_CHARACTER_DEVICE`\
+        \ - FS_FILE_TYPE_UNIX_CHARACTER_DEVICE,\\n * `FS_FILE_TYPE_UNIX_PIPE` - FS_FILE_TYPE_UNIX_PIPE,\\\
+        n * `FS_FILE_TYPE_UNIX_SOCKET` - FS_FILE_TYPE_UNIX_SOCKET\"\n          },\n\
+        \          \"id\": {\n            \"description\": \"Unique ID of this file\
+        \ or directory\",\n            \"type\": \"string\"\n          },\n      \
+        \    \"capacity_usage\": {\n            \"description\": \"Capacity used by\
+        \ this file, or directory and all its children, in bytes\",\n            \"\
+        type\": \"string\"\n          },\n          \"data_usage\": {\n          \
+        \  \"description\": \"Capacity used for data by this file, or directory and\
+        \ all its children, in bytes\",\n            \"type\": \"string\"\n      \
+        \    },\n          \"meta_usage\": {\n            \"description\": \"Capacity\
+        \ used for metadata by this file, or directory and all its children, in bytes\"\
+        ,\n            \"type\": \"string\"\n          },\n          \"num_files\"\
+        : {\n            \"description\": \"Total number of files in the directory\"\
+        ,\n            \"type\": \"string\"\n          },\n          \"num_directories\"\
+        : {\n            \"description\": \"Total number of directories in the directory\"\
+        ,\n            \"type\": \"string\"\n          },\n          \"num_symlinks\"\
+        : {\n            \"description\": \"Total number of symlinks in the directory\"\
+        ,\n            \"type\": \"string\"\n          },\n          \"num_other_objects\"\
+        : {\n            \"description\": \"Total number of Unix devices, pipes, and\
+        \ sockets in the directory\",\n            \"type\": \"string\"\n        \
+        \  },\n          \"named_stream_data_usage\": {\n            \"description\"\
+        : \"Capacity used for data by named streams on this file, or directory and\
+        \ all its children, in bytes\",\n            \"type\": \"string\"\n      \
+        \    },\n          \"num_named_streams\": {\n            \"description\":\
+        \ \"Total number of named streams in the directory\",\n            \"type\"\
+        : \"string\"\n          }\n        }\n      }\n    },\n    \"total_capacity\"\
+        : {\n      \"description\": \"total_capacity\",\n      \"type\": \"string\"\
+        \n    },\n    \"total_data\": {\n      \"description\": \"total_data\",\n\
+        \      \"type\": \"string\"\n    },\n    \"total_named_stream_data\": {\n\
+        \      \"description\": \"total_named_stream_data\",\n      \"type\": \"string\"\
+        \n    },\n    \"total_meta\": {\n      \"description\": \"total_meta\",\n\
+        \      \"type\": \"string\"\n    },\n    \"total_files\": {\n      \"description\"\
+        : \"total_files\",\n      \"type\": \"string\"\n    },\n    \"total_directories\"\
+        : {\n      \"description\": \"total_directories\",\n      \"type\": \"string\"\
+        \n    },\n    \"total_symlinks\": {\n      \"description\": \"total_symlinks\"\
+        ,\n      \"type\": \"string\"\n    },\n    \"total_other_objects\": {\n  \
+        \    \"description\": \"total_other_objects\",\n      \"type\": \"string\"\
+        \n    },\n    \"total_named_streams\": {\n      \"description\": \"total_named_streams\"\
+        ,\n      \"type\": \"string\"\n    }\n  }\n}"
       status_code: '200'
     summary: Return aggregated data for a directory (like capacity, IOPS, etc.)
 rest_endpoint: /v1/files/{ref}/aggregates/

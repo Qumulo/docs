@@ -8,8 +8,8 @@ methods:
       required: true
     response_body:
       description: Return value on success
-      example_value: TO DO
-      schema: TO DO
+      example_value: '"TO DO"'
+      schema: '"TO DO"'
       status_code: '200'
     summary: Get the status of an existing object replication relationship.
 rest_endpoint: /v3/replication/object-relationships/{id}/status

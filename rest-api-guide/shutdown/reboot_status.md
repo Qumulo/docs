@@ -5,8 +5,22 @@ methods:
     parameters: []
     response_body:
       description: Return value on success
-      example_value: TO DO
-      schema: TO DO
+      example_value: '"TO DO"'
+      schema: "{\n  \"description\": \"reboot_status\",\n  \"type\": \"object\",\n\
+        \  \"properties\": {\n    \"state\": {\n      \"type\": \"string\",\n    \
+        \  \"enum\": [\n        \"REBOOT_IDLE\",\n        \"REBOOT_IN_PROGRESS\",\n\
+        \        \"REBOOT_PAUSED\",\n        \"REBOOT_PAUSED_DUE_TO_ERROR\"\n    \
+        \  ],\n      \"description\": \"state:\\n * `REBOOT_IDLE` - REBOOT_IDLE,\\\
+        n * `REBOOT_IN_PROGRESS` - REBOOT_IN_PROGRESS,\\n * `REBOOT_PAUSED` - REBOOT_PAUSED,\\\
+        n * `REBOOT_PAUSED_DUE_TO_ERROR` - REBOOT_PAUSED_DUE_TO_ERROR\"\n    },\n\
+        \    \"rolling\": {\n      \"description\": \"rolling\",\n      \"type\":\
+        \ \"boolean\"\n    },\n    \"upgrade_initiated\": {\n      \"description\"\
+        : \"upgrade_initiated\",\n      \"type\": \"boolean\"\n    },\n    \"total_node_count\"\
+        : {\n      \"description\": \"total_node_count\",\n      \"type\": \"number\"\
+        \n    },\n    \"rebooted_node_count\": {\n      \"description\": \"rebooted_node_count\"\
+        ,\n      \"type\": \"number\"\n    },\n    \"error_message\": {\n      \"\
+        description\": \"error_message\",\n      \"type\": \"string\"\n    }\n  }\n\
+        }"
       status_code: '200'
     summary: Retrieve the current status of the reboot manager.
 rest_endpoint: /v1/shutdown/reboot/status

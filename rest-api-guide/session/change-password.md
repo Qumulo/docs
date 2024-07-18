@@ -4,12 +4,17 @@ methods:
   post:
     parameters: []
     request_body:
-      example_value: TO DO
-      schema: TO DO
+      example_value: '"TO DO"'
+      schema: "{\n  \"description\": \"password_change\",\n  \"type\": \"object\"\
+        ,\n  \"properties\": {\n    \"old_password\": {\n      \"description\": \"\
+        The current password\",\n      \"type\": \"string\",\n      \"format\": \"\
+        password\"\n    },\n    \"new_password\": {\n      \"description\": \"The\
+        \ new password\",\n      \"type\": \"string\",\n      \"format\": \"password\"\
+        \n    }\n  }\n}"
     response_body:
       description: Return value on success
-      example_value: TO DO
-      schema: TO DO
+      example_value: '"TO DO"'
+      schema: '"TO DO"'
       status_code: '200'
     summary: Change the password for the logged in user.
 rest_endpoint: /v1/session/change-password

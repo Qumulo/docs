@@ -48,15 +48,15 @@ def generate_resource_md(category, endpoint, methods, permalink):
             "response_body": {
                 "status_code": list(details.get("responses", {}).keys())[0],
                 "description": details["responses"][list(details.get("responses", {}).keys())[0]]["description"],
-                "example_value": "TO DO",
-                "schema": "TO DO"
+                "example_value": json.dumps(details["responses"][list(details.get("responses", {}).keys())[0]].get("content", {}).get("application/json", {}).get("example", "TO DO"), indent=2),
+                "schema": json.dumps(details["responses"][list(details.get("responses", {}).keys())[0]].get("content", {}).get("application/json", {}).get("schema", "TO DO"), indent=2)
             }
         }
         
         if "requestBody" in details:
             method_details["request_body"] = {
-                "example_value": "TO DO",
-                "schema": "TO DO"
+                "example_value": json.dumps(details["requestBody"].get("content", {}).get("application/json", {}).get("example", "TO DO"), indent=2),
+                "schema": json.dumps(details["requestBody"].get("content", {}).get("application/json", {}).get("schema", "TO DO"), indent=2)
             }
 
         yaml_content["methods"][method] = method_details

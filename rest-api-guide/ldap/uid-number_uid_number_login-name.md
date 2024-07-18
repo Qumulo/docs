@@ -8,8 +8,13 @@ methods:
       required: true
     response_body:
       description: Return value on success
-      example_value: TO DO
-      schema: TO DO
+      example_value: '"TO DO"'
+      schema: "{\n  \"description\": \"api_ldap_uid_number_to_login_names\",\n  \"\
+        type\": \"object\",\n  \"properties\": {\n    \"uid_number\": {\n      \"\
+        description\": \"uid_number\",\n      \"type\": \"number\"\n    },\n    \"\
+        login_names\": {\n      \"type\": \"array\",\n      \"items\": {\n       \
+        \ \"description\": \"login_names\",\n        \"type\": \"string\"\n      }\n\
+        \    }\n  }\n}"
       status_code: '200'
     summary: Return the login names for the given UID number as found by issuing an
       LDAP query against the LDAP server configured

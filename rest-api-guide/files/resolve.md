@@ -8,12 +8,18 @@ methods:
       name: snapshot
       required: false
     request_body:
-      example_value: TO DO
-      schema: TO DO
+      example_value: '"TO DO"'
+      schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"type\": \"string\"\
+        \n  }\n}"
     response_body:
       description: Return value on success
-      example_value: TO DO
-      schema: TO DO
+      example_value: '"TO DO"'
+      schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
+        fs_api_ref_id_path\",\n    \"type\": \"object\",\n    \"properties\": {\n\
+        \      \"id\": {\n        \"description\": \"Unique ID of this file or directory\"\
+        ,\n        \"type\": \"string\"\n      },\n      \"path\": {\n        \"description\"\
+        : \"Full path of this file or directory\",\n        \"type\": \"string\"\n\
+        \      }\n    }\n  }\n}"
       status_code: '200'
     summary: Return the full paths for each specified file ID. If a file has more
       than one path (due to hard links) a canonical path is chosen.

@@ -8,8 +8,10 @@ methods:
       required: true
     response_body:
       description: Return value on success
-      example_value: TO DO
-      schema: TO DO
+      example_value: '"TO DO"'
+      schema: "{\n  \"description\": \"api_snapshot_unlock_challenge\",\n  \"type\"\
+        : \"object\",\n  \"properties\": {\n    \"challenge\": {\n      \"description\"\
+        : \"challenge\",\n      \"type\": \"string\"\n    }\n  }\n}"
       status_code: '200'
     summary: Generate a snapshot unlock challenge to provide in the subsequent unlock
       call.

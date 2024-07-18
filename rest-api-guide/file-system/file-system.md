@@ -5,8 +5,16 @@ methods:
     parameters: []
     response_body:
       description: Return value on success
-      example_value: TO DO
-      schema: TO DO
+      example_value: '"TO DO"'
+      schema: "{\n  \"description\": \"api_fs_attributes\",\n  \"type\": \"object\"\
+        ,\n  \"properties\": {\n    \"block_size_bytes\": {\n      \"description\"\
+        : \"File system block size in bytes\",\n      \"type\": \"number\"\n    },\n\
+        \    \"total_size_bytes\": {\n      \"description\": \"Total file system size\
+        \ in bytes\",\n      \"type\": \"string\"\n    },\n    \"free_size_bytes\"\
+        : {\n      \"description\": \"Available file system size in bytes\",\n   \
+        \   \"type\": \"string\"\n    },\n    \"snapshot_size_bytes\": {\n      \"\
+        description\": \"Capacity used by all snapshots in bytes\",\n      \"type\"\
+        : \"string\"\n    }\n  }\n}"
       status_code: '200'
     summary: Retrieve general file system statistics.
 rest_endpoint: /v1/file-system

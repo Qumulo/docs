@@ -16,12 +16,23 @@ methods:
       name: If-Match
       required: false
     request_body:
-      example_value: TO DO
-      schema: TO DO
+      example_value: '"TO DO"'
+      schema: "{\n  \"description\": \"api_files_punch_hole\",\n  \"type\": \"object\"\
+        ,\n  \"properties\": {\n    \"offset\": {\n      \"description\": \"Offset\
+        \ in bytes specifying the start of the hole to create.\",\n      \"type\"\
+        : \"string\"\n    },\n    \"size\": {\n      \"description\": \"Size in bytes\
+        \ of the hole to create.\",\n      \"type\": \"string\"\n    }\n  }\n}"
     response_body:
       description: Return value on success
-      example_value: TO DO
-      schema: TO DO
+      example_value: '"TO DO"'
+      schema: "{\n  \"description\": \"api_named_stream_attributes\",\n  \"type\"\
+        : \"object\",\n  \"properties\": {\n    \"name\": {\n      \"description\"\
+        : \"name\",\n      \"type\": \"string\"\n    },\n    \"id\": {\n      \"description\"\
+        : \"id\",\n      \"type\": \"string\"\n    },\n    \"size\": {\n      \"description\"\
+        : \"size\",\n      \"type\": \"string\"\n    },\n    \"datablocks\": {\n \
+        \     \"description\": \"datablocks\",\n      \"type\": \"string\"\n    },\n\
+        \    \"data_revision\": {\n      \"description\": \"data_revision\",\n   \
+        \   \"type\": \"string\"\n    }\n  }\n}"
       status_code: '200'
     summary: Create a hole in a region of a stream. Destroys all data within the hole
       so that subsequent reads will return zeroes. Returns the post-operation attributes

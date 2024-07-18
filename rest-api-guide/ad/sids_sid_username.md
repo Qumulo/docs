@@ -8,8 +8,8 @@ methods:
       required: true
     response_body:
       description: Return value on success
-      example_value: TO DO
-      schema: TO DO
+      example_value: '"TO DO"'
+      schema: "{\n  \"type\": \"string\"\n}"
       status_code: '200'
     summary: Return the Username for the given SID as found by querying the domain
       controller for the domain the cluster is joined to.

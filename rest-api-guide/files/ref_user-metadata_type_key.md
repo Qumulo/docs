@@ -20,8 +20,8 @@ methods:
       required: false
     response_body:
       description: Return value on success
-      example_value: TO DO
-      schema: TO DO
+      example_value: '"TO DO"'
+      schema: '"TO DO"'
       status_code: '200'
     summary: Delete the user-defined metadata entry for the current file by using
       the specified key.
@@ -45,8 +45,12 @@ methods:
       required: false
     response_body:
       description: Return value on success
-      example_value: TO DO
-      schema: TO DO
+      example_value: '"TO DO"'
+      schema: "{\n  \"description\": \"api_files_user_metadata_value\",\n  \"type\"\
+        : \"object\",\n  \"properties\": {\n    \"value\": {\n      \"type\": \"array\"\
+        ,\n      \"items\": {\n        \"description\": \"The bytes that represent\
+        \ the Base64-encoded value of the user-defined metadata entry.\",\n      \
+        \  \"type\": \"number\"\n      }\n    }\n  }\n}"
       status_code: '200'
     summary: Retrieve the Base64-encoded user-defined metadata value for the current
       file by using the specified key.
@@ -68,12 +72,16 @@ methods:
       name: If-Match
       required: false
     request_body:
-      example_value: TO DO
-      schema: TO DO
+      example_value: '"TO DO"'
+      schema: "{\n  \"description\": \"api_files_user_metadata_value\",\n  \"type\"\
+        : \"object\",\n  \"properties\": {\n    \"value\": {\n      \"type\": \"array\"\
+        ,\n      \"items\": {\n        \"description\": \"The bytes that represent\
+        \ the Base64-encoded value of the user-defined metadata entry.\",\n      \
+        \  \"type\": \"number\"\n      }\n    }\n  }\n}"
     response_body:
       description: Return value on success
-      example_value: TO DO
-      schema: TO DO
+      example_value: '"TO DO"'
+      schema: '"TO DO"'
       status_code: '200'
     summary: Add a user-defined metadata value to the current file by using the specified
       key and user-defined metadata type.
@@ -95,12 +103,16 @@ methods:
       name: If-Match
       required: false
     request_body:
-      example_value: TO DO
-      schema: TO DO
+      example_value: '"TO DO"'
+      schema: "{\n  \"description\": \"api_files_user_metadata_value\",\n  \"type\"\
+        : \"object\",\n  \"properties\": {\n    \"value\": {\n      \"type\": \"array\"\
+        ,\n      \"items\": {\n        \"description\": \"The bytes that represent\
+        \ the Base64-encoded value of the user-defined metadata entry.\",\n      \
+        \  \"type\": \"number\"\n      }\n    }\n  }\n}"
     response_body:
       description: Return value on success
-      example_value: TO DO
-      schema: TO DO
+      example_value: '"TO DO"'
+      schema: '"TO DO"'
       status_code: '200'
     summary: Add or update the user-defined metadata value for the current file by
       using the specified key.

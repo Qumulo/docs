@@ -8,8 +8,8 @@ methods:
       required: true
     response_body:
       description: Return value on success
-      example_value: TO DO
-      schema: TO DO
+      example_value: '"TO DO"'
+      schema: '"TO DO"'
       status_code: '200'
     summary: Gets the policy on an S3 bucket.
   put:
@@ -27,8 +27,8 @@ methods:
       required: false
     response_body:
       description: Return value on success
-      example_value: TO DO
-      schema: TO DO
+      example_value: '"TO DO"'
+      schema: '"TO DO"'
       status_code: '200'
     summary: 'Sets the policy on an S3 bucket. The format of the bucket policycan
       be found here: https://docs.qumulo.com/administrator-guide/s3-api/creating-managing-s3-buckets.html'

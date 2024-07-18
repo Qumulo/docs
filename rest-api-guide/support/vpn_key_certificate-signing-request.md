@@ -5,8 +5,10 @@ methods:
     parameters: []
     response_body:
       description: Return value on success
-      example_value: TO DO
-      schema: TO DO
+      example_value: '"TO DO"'
+      schema: "{\n  \"description\": \"api_certificate_signing_request\",\n  \"type\"\
+        : \"object\",\n  \"properties\": {\n    \"request\": {\n      \"description\"\
+        : \"request\",\n      \"type\": \"string\"\n    }\n  }\n}"
       status_code: '200'
     summary: Get a certificate signing request for the generated private key. This
       returns empty if no private key was generated or if a manual private key is

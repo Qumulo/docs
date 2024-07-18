@@ -4,12 +4,18 @@ methods:
   post:
     parameters: []
     request_body:
-      example_value: TO DO
-      schema: TO DO
+      example_value: '"TO DO"'
+      schema: "{\n  \"description\": \"login\",\n  \"type\": \"object\",\n  \"properties\"\
+        : {\n    \"username\": {\n      \"description\": \"The username to authenticate\
+        \ with\",\n      \"type\": \"string\"\n    },\n    \"password\": {\n     \
+        \ \"description\": \"The password to authenticate with\",\n      \"type\"\
+        : \"string\",\n      \"format\": \"password\"\n    }\n  }\n}"
     response_body:
       description: Return value on success
-      example_value: TO DO
-      schema: TO DO
+      example_value: '"TO DO"'
+      schema: "{\n  \"description\": \"credentials\",\n  \"type\": \"object\",\n \
+        \ \"properties\": {\n    \"bearer_token\": {\n      \"description\": \"bearer_token\"\
+        ,\n      \"type\": \"string\"\n    }\n  }\n}"
       status_code: '200'
     summary: Authenticate the user. To authenticate subsequent requests, provide the
       bearer token from the response in the Authorization header.
