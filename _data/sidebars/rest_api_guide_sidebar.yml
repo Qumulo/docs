@@ -1105,3 +1105,10 @@ entries:
     title: web-ui
     type: navi
     url: /rest-api-guide/web-ui/
+  guidetitle: Qumulo REST API Guide
+  guideurl: /rest-api-guide/
+  output: web,pdf
+  pdftitle: qumulo-rest-api-guide.pdf
+  product: ''
+  title: Qumulo REST API Guide
+  version: ''
