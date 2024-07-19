@@ -63,6 +63,7 @@ methods:
       description: Return value on success
     summary: Update the active at-rest encryption configuration.
 rest_endpoint: /v2/encryption/key-store
+api_version: v2
 permalink: /rest-api-guide/encryption/v2_key-store.html
 sidebar: rest_api_guide_sidebar
 ---

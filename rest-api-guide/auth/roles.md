@@ -409,6 +409,7 @@ methods:
       description: Return value on success
     summary: Create a new role.
 rest_endpoint: /v1/auth/roles/
+api_version: v1
 permalink: /rest-api-guide/auth/roles.html
 sidebar: rest_api_guide_sidebar
 ---

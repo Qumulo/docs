@@ -71,6 +71,7 @@ methods:
       description: Return value on success
     summary: List all in-progress S3 uploads for a specific bucket.
 rest_endpoint: /v1/s3/buckets/{name}/uploads/
+api_version: v1
 permalink: /rest-api-guide/s3/buckets_name_uploads.html
 sidebar: rest_api_guide_sidebar
 ---

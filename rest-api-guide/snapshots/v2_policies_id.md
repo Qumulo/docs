@@ -458,6 +458,7 @@ methods:
       description: Return value on success
     summary: Modifies a snapshot policy.
 rest_endpoint: /v2/snapshots/policies/{id}
+api_version: v2
 permalink: /rest-api-guide/snapshots/v2_policies_id.html
 sidebar: rest_api_guide_sidebar
 ---

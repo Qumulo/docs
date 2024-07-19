@@ -18,6 +18,7 @@ methods:
     summary: Turn the identification light on the node on or off. There may be a slight
       delay for the change to take effect.
 rest_endpoint: /v1/cluster/nodes/{id}/identify
+api_version: v1
 permalink: /rest-api-guide/cluster/nodes_id_identify.html
 sidebar: rest_api_guide_sidebar
 ---

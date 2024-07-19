@@ -25,6 +25,7 @@ methods:
       description: Return value on success
     summary: Return the AD account object that has the given distinguished name.
 rest_endpoint: /v1/ad/distinguished-names/{dn}/object
+api_version: v1
 permalink: /rest-api-guide/ad/distinguished-names_dn_object.html
 sidebar: rest_api_guide_sidebar
 ---

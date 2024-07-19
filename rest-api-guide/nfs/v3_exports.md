@@ -228,6 +228,7 @@ methods:
       description: Return value on success
     summary: This method adds an NFS export.
 rest_endpoint: /v3/nfs/exports/
+api_version: v3
 permalink: /rest-api-guide/nfs/v3_exports.html
 sidebar: rest_api_guide_sidebar
 ---

@@ -16,6 +16,7 @@ methods:
       description: Return value on success
     summary: Set the SSL certificates used by the cluster. Mostly used for HTTP traffic.
 rest_endpoint: /v1/cluster/settings/ssl
+api_version: v1
 permalink: /rest-api-guide/cluster/settings_ssl.html
 sidebar: rest_api_guide_sidebar
 ---

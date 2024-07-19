@@ -14,6 +14,7 @@ methods:
     summary: Return the Username for the given SID as found by querying the domain
       controller for the domain the cluster is joined to.
 rest_endpoint: /v1/ad/sids/{sid}/username
+api_version: v1
 permalink: /rest-api-guide/ad/sids_sid_username.html
 sidebar: rest_api_guide_sidebar
 ---

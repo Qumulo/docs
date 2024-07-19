@@ -123,6 +123,7 @@ methods:
       description: Return value on success
     summary: Create an access token for the specified user.
 rest_endpoint: /v1/auth/access-tokens/
+api_version: v1
 permalink: /rest-api-guide/auth/access-tokens.html
 sidebar: rest_api_guide_sidebar
 ---

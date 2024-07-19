@@ -58,6 +58,7 @@ methods:
     summary: Return a list of all NLM byte range requests currently waiting on the
       specified file.
 rest_endpoint: /v1/files/{ref}/locks/nlm/byte-range/waiters/
+api_version: v1
 permalink: /rest-api-guide/files/ref_locks_nlm_byte-range_waiters.html
 sidebar: rest_api_guide_sidebar
 ---

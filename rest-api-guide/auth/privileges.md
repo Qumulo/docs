@@ -9,6 +9,7 @@ methods:
       description: Return value on success
     summary: Get information about all privileges.
 rest_endpoint: /v1/auth/privileges/
+api_version: v1
 permalink: /rest-api-guide/auth/privileges.html
 sidebar: rest_api_guide_sidebar
 ---

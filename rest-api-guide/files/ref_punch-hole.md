@@ -123,6 +123,7 @@ methods:
       so that subsequent reads will return zeroes. Returns the post-operation attributes
       of the file.
 rest_endpoint: /v1/files/{ref}/punch-hole
+api_version: v1
 permalink: /rest-api-guide/files/ref_punch-hole.html
 sidebar: rest_api_guide_sidebar
 ---

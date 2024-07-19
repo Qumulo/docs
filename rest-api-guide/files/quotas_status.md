@@ -31,6 +31,7 @@ methods:
     summary: List all directory quotas and their corresponding directories' paths
       and cumulative sizes.
 rest_endpoint: /v1/files/quotas/status/
+api_version: v1
 permalink: /rest-api-guide/files/quotas_status.html
 sidebar: rest_api_guide_sidebar
 ---

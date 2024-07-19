@@ -74,6 +74,7 @@ methods:
       description: Return value on success
     summary: Modify the current S3 server settings.
 rest_endpoint: /v1/s3/settings
+api_version: v1
 permalink: /rest-api-guide/s3/settings.html
 sidebar: rest_api_guide_sidebar
 ---

@@ -164,6 +164,7 @@ methods:
     summary: Modify the current FTP server settings. To see server status on all nodes,
       use Get FTP Server Status.
 rest_endpoint: /v0/ftp/settings
+api_version: v1
 permalink: /rest-api-guide/ftp/v0_settings.html
 sidebar: rest_api_guide_sidebar
 ---

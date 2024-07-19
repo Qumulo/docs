@@ -39,6 +39,7 @@ methods:
       description: Return value on success
     summary: Gets detailed status information for the data protection of the cluster.
 rest_endpoint: /v1/cluster/protection/status
+api_version: v1
 permalink: /rest-api-guide/cluster/protection_status.html
 sidebar: rest_api_guide_sidebar
 ---

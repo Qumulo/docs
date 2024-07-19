@@ -152,6 +152,7 @@ methods:
       description: Return value on success
     summary: Modifies a snapshot.
 rest_endpoint: /v1/snapshots/{id}
+api_version: v1
 permalink: /rest-api-guide/snapshots/id.html
 sidebar: rest_api_guide_sidebar
 ---

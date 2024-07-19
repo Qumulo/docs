@@ -199,6 +199,7 @@ methods:
       description: Return value on success
     summary: Set current tenant-specific SMB configuration.
 rest_endpoint: /v1/multitenancy/smb/settings/{id}
+api_version: v1
 permalink: /rest-api-guide/multitenancy/smb_settings_id.html
 sidebar: rest_api_guide_sidebar
 ---

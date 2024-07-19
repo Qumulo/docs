@@ -202,6 +202,7 @@ methods:
     summary: Find all equivalents and the group membership of the given identity.
       This API is deprecated in favor of /v1/identity/expand
 rest_endpoint: /v1/auth/identity/expand
+api_version: v1
 permalink: /rest-api-guide/auth/identity_expand.html
 sidebar: rest_api_guide_sidebar
 ---

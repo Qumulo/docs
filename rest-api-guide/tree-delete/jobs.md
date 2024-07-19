@@ -55,6 +55,7 @@ methods:
       description: Return value on success
     summary: Start unlinking this directory and all its contents.
 rest_endpoint: /v1/tree-delete/jobs/
+api_version: v1
 permalink: /rest-api-guide/tree-delete/jobs.html
 sidebar: rest_api_guide_sidebar
 ---

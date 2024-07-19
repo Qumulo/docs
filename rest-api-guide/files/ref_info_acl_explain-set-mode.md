@@ -614,6 +614,7 @@ methods:
       description: Return value on success
     summary: Explain the effect of setting a POSIX mode on a file/directory.
 rest_endpoint: /v1/files/{ref}/info/acl/explain-set-mode
+api_version: v1
 permalink: /rest-api-guide/files/ref_info_acl_explain-set-mode.html
 sidebar: rest_api_guide_sidebar
 ---

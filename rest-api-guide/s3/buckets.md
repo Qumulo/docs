@@ -54,6 +54,7 @@ methods:
       description: Return value on success
     summary: Create a new S3 bucket.
 rest_endpoint: /v1/s3/buckets/
+api_version: v1
 permalink: /rest-api-guide/s3/buckets.html
 sidebar: rest_api_guide_sidebar
 ---

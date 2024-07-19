@@ -39,6 +39,7 @@ methods:
       description: Return value on success
     summary: Dismiss the last error recorded from a join, reconfigure, or leave operation.
 rest_endpoint: /v1/ad/dismiss-error
+api_version: v1
 permalink: /rest-api-guide/ad/dismiss-error.html
 sidebar: rest_api_guide_sidebar
 ---

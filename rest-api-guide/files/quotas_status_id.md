@@ -22,6 +22,7 @@ methods:
     summary: Get the directory quota for a directory, its limit in bytes, and current
       capacity usage.
 rest_endpoint: /v1/files/quotas/status/{id}
+api_version: v1
 permalink: /rest-api-guide/files/quotas_status_id.html
 sidebar: rest_api_guide_sidebar
 ---

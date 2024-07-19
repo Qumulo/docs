@@ -36,6 +36,7 @@ methods:
       description: Return value on success
     summary: Create a Key in the Key Management Server.
 rest_endpoint: /v2/encryption/external-kms/keys/create
+api_version: v2
 permalink: /rest-api-guide/encryption/v2_external-kms_keys_create.html
 sidebar: rest_api_guide_sidebar
 ---

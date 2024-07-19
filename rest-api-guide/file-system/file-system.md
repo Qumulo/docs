@@ -18,6 +18,7 @@ methods:
       description: Return value on success
     summary: Retrieve general file system statistics.
 rest_endpoint: /v1/file-system
+api_version: v1
 permalink: /rest-api-guide/file-system/file-system.html
 sidebar: rest_api_guide_sidebar
 ---

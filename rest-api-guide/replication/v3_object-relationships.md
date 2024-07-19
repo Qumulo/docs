@@ -121,6 +121,7 @@ methods:
     summary: Create a new object replication relationship. Replication will automatically
       start after the relationship is created.
 rest_endpoint: /v3/replication/object-relationships/
+api_version: v3
 permalink: /rest-api-guide/replication/v3_object-relationships.html
 sidebar: rest_api_guide_sidebar
 ---

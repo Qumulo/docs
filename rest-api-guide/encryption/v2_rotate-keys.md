@@ -15,6 +15,7 @@ methods:
       description: Return value on success
     summary: Rotate the encryption at rest keys.
 rest_endpoint: /v2/encryption/rotate-keys
+api_version: v2
 permalink: /rest-api-guide/encryption/v2_rotate-keys.html
 sidebar: rest_api_guide_sidebar
 ---

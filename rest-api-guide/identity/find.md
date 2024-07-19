@@ -48,6 +48,7 @@ methods:
       description: Return value on success
     summary: Search for identity and populate all fields.
 rest_endpoint: /v1/identity/find
+api_version: v1
 permalink: /rest-api-guide/identity/find.html
 sidebar: rest_api_guide_sidebar
 ---

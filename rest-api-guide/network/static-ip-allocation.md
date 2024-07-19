@@ -35,6 +35,7 @@ methods:
       configuration. Returns status code 400 if the server is in DHCP mode unless
       the try/floating query parameters are provided.
 rest_endpoint: /v1/network/static-ip-allocation
+api_version: v1
 permalink: /rest-api-guide/network/static-ip-allocation.html
 sidebar: rest_api_guide_sidebar
 ---

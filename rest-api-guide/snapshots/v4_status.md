@@ -52,6 +52,7 @@ methods:
     summary: Returns the information for every snapshot. If a snapshot was created
       from a snapshot policy, returns information about the policy.
 rest_endpoint: /v4/snapshots/status/
+api_version: v4
 permalink: /rest-api-guide/snapshots/v4_status.html
 sidebar: rest_api_guide_sidebar
 ---

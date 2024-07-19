@@ -51,6 +51,7 @@ methods:
       the job has finished, returns 404. Also returns 404 if there was never a job
       on the given object
 rest_endpoint: /v1/tree-delete/jobs/{id}
+api_version: v1
 permalink: /rest-api-guide/tree-delete/jobs_id.html
 sidebar: rest_api_guide_sidebar
 ---

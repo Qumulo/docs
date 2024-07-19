@@ -74,6 +74,7 @@ methods:
       description: Return value on success
     summary: Sets advanced Active Directory settings.
 rest_endpoint: /v1/ad/settings
+api_version: v1
 permalink: /rest-api-guide/ad/settings.html
 sidebar: rest_api_guide_sidebar
 ---

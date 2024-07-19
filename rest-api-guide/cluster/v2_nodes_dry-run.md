@@ -42,6 +42,7 @@ methods:
     summary: Validate a node-add operation or node replacement step and, if it succeeds,
       return the projected usable capacity and node fault tolerance level.
 rest_endpoint: /v2/cluster/nodes/dry-run
+api_version: v2
 permalink: /rest-api-guide/cluster/v2_nodes_dry-run.html
 sidebar: rest_api_guide_sidebar
 ---

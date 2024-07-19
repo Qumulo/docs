@@ -35,6 +35,7 @@ methods:
       description: Return value on success
     summary: Set permissions settings.
 rest_endpoint: /v1/file-system/settings/permissions
+api_version: v1
 permalink: /rest-api-guide/file-system/settings_permissions.html
 sidebar: rest_api_guide_sidebar
 ---

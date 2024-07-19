@@ -30,6 +30,7 @@ methods:
       description: Return value on success
     summary: Form a cluster with the given set of node UUIDs and admin password.
 rest_endpoint: /v2/cluster/create
+api_version: v2
 permalink: /rest-api-guide/cluster/v2_create.html
 sidebar: rest_api_guide_sidebar
 ---

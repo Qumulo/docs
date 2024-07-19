@@ -84,6 +84,7 @@ methods:
       description: Return value on success
     summary: Create a tenant.
 rest_endpoint: /v1/multitenancy/tenants/
+api_version: v1
 permalink: /rest-api-guide/multitenancy/tenants.html
 sidebar: rest_api_guide_sidebar
 ---

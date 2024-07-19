@@ -29,6 +29,7 @@ methods:
       the threshold will be aggregated. Individual items above the threshold will
       be reported separately.
 rest_endpoint: /v1/analytics/capacity-history/{timestamp}/
+api_version: v1
 permalink: /rest-api-guide/analytics/capacity-history_timestamp.html
 sidebar: rest_api_guide_sidebar
 ---

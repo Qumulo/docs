@@ -176,6 +176,7 @@ methods:
       description: Return value on success
     summary: Set settings for the SMB Server.
 rest_endpoint: /v1/smb/settings
+api_version: v1
 permalink: /rest-api-guide/smb/settings.html
 sidebar: rest_api_guide_sidebar
 ---

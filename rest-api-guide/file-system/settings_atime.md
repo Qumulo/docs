@@ -71,6 +71,7 @@ methods:
       description: Return value on success
     summary: Set atime-related settings.
 rest_endpoint: /v1/file-system/settings/atime
+api_version: v1
 permalink: /rest-api-guide/file-system/settings_atime.html
 sidebar: rest_api_guide_sidebar
 ---

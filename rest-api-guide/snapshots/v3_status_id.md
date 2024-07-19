@@ -42,6 +42,7 @@ methods:
       description: Return value on success
     summary: Returns the status for a specific snapshot.
 rest_endpoint: /v3/snapshots/status/{id}
+api_version: v3
 permalink: /rest-api-guide/snapshots/v3_status_id.html
 sidebar: rest_api_guide_sidebar
 ---

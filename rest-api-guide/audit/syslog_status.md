@@ -22,6 +22,7 @@ methods:
       description: Return value on success
     summary: Retrieves the syslog connection status of audit log.
 rest_endpoint: /v1/audit/syslog/status
+api_version: v1
 permalink: /rest-api-guide/audit/syslog_status.html
 sidebar: rest_api_guide_sidebar
 ---

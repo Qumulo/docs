@@ -54,6 +54,7 @@ methods:
       description: Return value on success
     summary: Add a user.
 rest_endpoint: /v1/users/
+api_version: v1
 permalink: /rest-api-guide/users/users.html
 sidebar: rest_api_guide_sidebar
 ---

@@ -17,6 +17,7 @@ methods:
       description: Return value on success
     summary: Set a local user's password.
 rest_endpoint: /v1/users/{id}/setpassword
+api_version: v1
 permalink: /rest-api-guide/users/id_setpassword.html
 sidebar: rest_api_guide_sidebar
 ---

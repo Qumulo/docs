@@ -45,6 +45,7 @@ methods:
       file. The list includes new, modified, and deallocated regions of the file's
       contents.
 rest_endpoint: /v2/snapshots/{newer_id}/changes-since/{older_id}/files/{ref}
+api_version: v2
 permalink: /rest-api-guide/snapshots/v2_newer_id_changes-since_older_id_files_ref.html
 sidebar: rest_api_guide_sidebar
 ---

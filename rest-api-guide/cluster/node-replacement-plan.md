@@ -44,6 +44,7 @@ methods:
       description: Return value on success
     summary: To initiate node replacement, specify the nodes to replace.
 rest_endpoint: /v1/cluster/node-replacement-plan/
+api_version: v1
 permalink: /rest-api-guide/cluster/node-replacement-plan.html
 sidebar: rest_api_guide_sidebar
 ---

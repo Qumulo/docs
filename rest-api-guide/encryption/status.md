@@ -18,6 +18,7 @@ methods:
       description: Return value on success
     summary: View the status of encryption at rest.
 rest_endpoint: /v1/encryption/status
+api_version: v1
 permalink: /rest-api-guide/encryption/status.html
 sidebar: rest_api_guide_sidebar
 ---

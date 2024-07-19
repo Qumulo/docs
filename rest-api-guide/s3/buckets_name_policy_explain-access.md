@@ -78,6 +78,7 @@ methods:
       description: Return value on success
     summary: Explains the access of an identity due to the bucket policy.
 rest_endpoint: /v1/s3/buckets/{name}/policy/explain-access
+api_version: v1
 permalink: /rest-api-guide/s3/buckets_name_policy_explain-access.html
 sidebar: rest_api_guide_sidebar
 ---

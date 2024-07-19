@@ -43,6 +43,7 @@ methods:
       description: Return value on success
     summary: Retrieve the Base64-encoded user-defined metadata for the specified file.
 rest_endpoint: /v1/files/{ref}/user-metadata/
+api_version: v1
 permalink: /rest-api-guide/files/ref_user-metadata.html
 sidebar: rest_api_guide_sidebar
 ---

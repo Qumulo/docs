@@ -70,9 +70,11 @@ def generate_resource_md(category, endpoint, methods, permalink, api_version=Non
     return f"---\n{yaml_string}{version_string}permalink: {permalink}\nsidebar: rest_api_guide_sidebar\n---\n"
 
 # Function to clean up filenames
-def clean_filename(category, filename):
+def clean_filename(category, filename, api_version=None):
     filename = filename.replace(f'{category}_', '').replace('{', '_').replace('}', '').replace('__', '_').strip('_')
     filename = filename.replace('v1_', '').replace('v2_', '').replace('v3_', '').replace('v4_', '')
+    if api_version and api_version != 'v1':
+        filename = f"{api_version}_{filename}"
     return filename
 
 # Function to create the sidebar title from the path
@@ -83,7 +85,7 @@ def create_sidebar_title(path, category):
     title = title.replace('{', '{').replace('}', '}')
     # Omit leading / and trailing /
     title = title.strip('/')
-    return title
+    return title if title else category
 
 # Fetch the OpenAPI definition
 response = requests.get(url)
@@ -111,7 +113,7 @@ for path, path_item in api_definition["paths"].items():
     elif path.startswith('/v4'):
         api_version = 'v4'
     else:
-        api_version = None
+        api_version = 'v1'
 
     # Create category directory if it does not exist
     create_directory(category_dir)
@@ -124,7 +126,7 @@ for path, path_item in api_definition["paths"].items():
 
     # Clean up filename and write the individual resource file
     resource_name = path.strip("/").replace("/", "_").replace("{", "_").replace("}", "")
-    resource_filename = clean_filename(category, f"{resource_name}.md")
+    resource_filename = clean_filename(category, f"{resource_name}.md", api_version)
     resource_md_path = os.path.join(category_dir, resource_filename)
     permalink = f"/rest-api-guide/{category}/{resource_filename.replace('.md', '.html')}"
     resource_md_content = generate_resource_md(category, path, path_item, permalink, api_version)
@@ -140,14 +142,18 @@ for path, path_item in api_definition["paths"].items():
         "url": permalink
     }
     
-    if api_version:
+    if api_version != 'v1':
         sidebar_entry["apiversion"] = api_version
     
     sidebar_entries_by_category[category].append(sidebar_entry)
 
 # Alphabetize entries within each category
+def version_key(entry):
+    version = entry.get('apiversion', 'v1').replace('v', '')
+    return int(version)
+
 for category in sidebar_entries_by_category:
-    sidebar_entries_by_category[category] = sorted(sidebar_entries_by_category[category], key=lambda x: x["title"])
+    sidebar_entries_by_category[category] = sorted(sidebar_entries_by_category[category], key=lambda x: (x["title"], version_key(x)))
 
 # Generate sidebar YAML content
 sidebar_content = {

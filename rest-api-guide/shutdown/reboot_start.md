@@ -20,6 +20,7 @@ methods:
       description: Return value on success
     summary: Start a reboot cycle with the Reboot Manager system.
 rest_endpoint: /v1/shutdown/reboot/start
+api_version: v1
 permalink: /rest-api-guide/shutdown/reboot_start.html
 sidebar: rest_api_guide_sidebar
 ---

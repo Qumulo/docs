@@ -387,6 +387,7 @@ methods:
       description: Return value on success
     summary: Add an SMB share with given options.
 rest_endpoint: /v2/smb/shares/
+api_version: v2
 permalink: /rest-api-guide/smb/v2_shares.html
 sidebar: rest_api_guide_sidebar
 ---

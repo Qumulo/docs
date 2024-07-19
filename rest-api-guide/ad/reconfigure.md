@@ -20,6 +20,7 @@ methods:
       description: Return value on success
     summary: Enables/disables POSIX attributes, sets Base DN.
 rest_endpoint: /v1/ad/reconfigure
+api_version: v1
 permalink: /rest-api-guide/ad/reconfigure.html
 sidebar: rest_api_guide_sidebar
 ---

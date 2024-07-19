@@ -66,6 +66,7 @@ methods:
     summary: Copies the contents of the source file specified in the body of the request
       to the default stream. The file must already exist.
 rest_endpoint: /v1/files/{ref}/copy-chunk
+api_version: v1
 permalink: /rest-api-guide/files/ref_copy-chunk.html
 sidebar: rest_api_guide_sidebar
 ---

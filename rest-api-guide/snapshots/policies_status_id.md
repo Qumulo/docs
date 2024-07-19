@@ -108,6 +108,7 @@ methods:
       description: Return value on success
     summary: Returns status information about a specific snapshot policy.
 rest_endpoint: /v1/snapshots/policies/status/{id}
+api_version: v1
 permalink: /rest-api-guide/snapshots/policies_status_id.html
 sidebar: rest_api_guide_sidebar
 ---

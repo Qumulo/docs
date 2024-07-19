@@ -33,6 +33,7 @@ methods:
       description: Return value on success
     summary: Rename a stream on provided object
 rest_endpoint: /v1/files/{ref}/streams/{stream_id}/rename
+api_version: v1
 permalink: /rest-api-guide/files/ref_streams_stream_id_rename.html
 sidebar: rest_api_guide_sidebar
 ---

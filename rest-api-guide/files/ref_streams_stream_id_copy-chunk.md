@@ -69,6 +69,7 @@ methods:
     summary: Copies the contents of the source file specified in the body of the request
       to the destination stream. The stream must already exist.
 rest_endpoint: /v1/files/{ref}/streams/{stream_id}/copy-chunk
+api_version: v1
 permalink: /rest-api-guide/files/ref_streams_stream_id_copy-chunk.html
 sidebar: rest_api_guide_sidebar
 ---

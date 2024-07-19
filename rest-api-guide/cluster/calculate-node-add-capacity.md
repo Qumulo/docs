@@ -43,6 +43,7 @@ methods:
     summary: Calculate changes to cluster usable capacity from a proposed node-add
       operation. This endpoint is deprecated in favor of /v2/cluster/nodes/dry-run.
 rest_endpoint: /v1/cluster/calculate-node-add-capacity
+api_version: v1
 permalink: /rest-api-guide/cluster/calculate-node-add-capacity.html
 sidebar: rest_api_guide_sidebar
 ---

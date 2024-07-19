@@ -17,6 +17,7 @@ methods:
     summary: Unlock the specified snapshot. After you unlock a snapshot, you can modify
       it.
 rest_endpoint: /v3/snapshots/{id}/unlock
+api_version: v3
 permalink: /rest-api-guide/snapshots/v3_id_unlock.html
 sidebar: rest_api_guide_sidebar
 ---

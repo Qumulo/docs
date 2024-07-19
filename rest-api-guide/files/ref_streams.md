@@ -56,6 +56,7 @@ methods:
       description: Return value on success
     summary: Create a named stream on provided object
 rest_endpoint: /v1/files/{ref}/streams/
+api_version: v1
 permalink: /rest-api-guide/files/ref_streams.html
 sidebar: rest_api_guide_sidebar
 ---

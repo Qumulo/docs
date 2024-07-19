@@ -32,6 +32,7 @@ methods:
     summary: Modify the composition of the cluster by adding unconfigured nodes or
       replacing configured nodes.
 rest_endpoint: /v2/cluster/nodes/
+api_version: v2
 permalink: /rest-api-guide/cluster/v2_nodes.html
 sidebar: rest_api_guide_sidebar
 ---

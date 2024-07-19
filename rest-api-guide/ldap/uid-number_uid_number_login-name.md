@@ -19,6 +19,7 @@ methods:
     summary: Return the login names for the given UID number as found by issuing an
       LDAP query against the LDAP server configured
 rest_endpoint: /v1/ldap/uid-number/{uid_number}/login-name
+api_version: v1
 permalink: /rest-api-guide/ldap/uid-number_uid_number_login-name.html
 sidebar: rest_api_guide_sidebar
 ---

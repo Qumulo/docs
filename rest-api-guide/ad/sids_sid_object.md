@@ -25,6 +25,7 @@ methods:
       description: Return value on success
     summary: Return the AD account object that has the given SID.
 rest_endpoint: /v1/ad/sids/{sid}/object
+api_version: v1
 permalink: /rest-api-guide/ad/sids_sid_object.html
 sidebar: rest_api_guide_sidebar
 ---

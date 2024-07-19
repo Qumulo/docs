@@ -97,6 +97,7 @@ methods:
       description: Return value on success
     summary: Set monitoring configuration.
 rest_endpoint: /v1/support/settings
+api_version: v1
 permalink: /rest-api-guide/support/settings.html
 sidebar: rest_api_guide_sidebar
 ---

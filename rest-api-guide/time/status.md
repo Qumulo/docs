@@ -23,6 +23,7 @@ methods:
       description: Return value on success
     summary: Retrieve the time status of the underlying system
 rest_endpoint: /v1/time/status
+api_version: v1
 permalink: /rest-api-guide/time/status.html
 sidebar: rest_api_guide_sidebar
 ---

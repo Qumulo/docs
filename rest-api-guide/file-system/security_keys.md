@@ -51,6 +51,7 @@ methods:
       description: Return value on success
     summary: Register a new file system public key.
 rest_endpoint: /v1/file-system/security/keys/
+api_version: v1
 permalink: /rest-api-guide/file-system/security_keys.html
 sidebar: rest_api_guide_sidebar
 ---

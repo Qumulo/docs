@@ -74,6 +74,7 @@ methods:
       description: Return value on success
     summary: Enumerate open sessions
 rest_endpoint: /v1/smb/sessions/
+api_version: v1
 permalink: /rest-api-guide/smb/sessions.html
 sidebar: rest_api_guide_sidebar
 ---

@@ -91,6 +91,7 @@ methods:
       description: Return value on success
     summary: Modifies audit log syslog configuration for the cluster.
 rest_endpoint: /v1/audit/syslog/config
+api_version: v1
 permalink: /rest-api-guide/audit/syslog_config.html
 sidebar: rest_api_guide_sidebar
 ---

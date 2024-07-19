@@ -59,6 +59,7 @@ methods:
     summary: The request body must contain a list of sessions to close, as returned
       from GET /v1/smb/sessions.
 rest_endpoint: /v1/smb/sessions/close
+api_version: v1
 permalink: /rest-api-guide/smb/sessions_close.html
 sidebar: rest_api_guide_sidebar
 ---

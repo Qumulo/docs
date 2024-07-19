@@ -25,6 +25,7 @@ methods:
       (equivalents in other domains, and containing groups). This API is deprecated
       in favor of /v1/identity/expand
 rest_endpoint: /v1/auth/sids/{id}/related-identities/
+api_version: v1
 permalink: /rest-api-guide/auth/sids_id_related-identities.html
 sidebar: rest_api_guide_sidebar
 ---

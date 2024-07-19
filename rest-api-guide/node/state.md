@@ -22,6 +22,7 @@ methods:
       description: Return value on success
     summary: Retrieves node state of the node that the call was made to.
 rest_endpoint: /v1/node/state
+api_version: v1
 permalink: /rest-api-guide/node/state.html
 sidebar: rest_api_guide_sidebar
 ---

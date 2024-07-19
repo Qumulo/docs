@@ -18,6 +18,7 @@ methods:
       description: Return value on success
     summary: Removes the cluster from Active Directory.
 rest_endpoint: /v1/ad/leave
+api_version: v1
 permalink: /rest-api-guide/ad/leave.html
 sidebar: rest_api_guide_sidebar
 ---

@@ -61,6 +61,7 @@ methods:
     summary: Retrieve a random sampling of files, with the probability of being chosen
       based on by-value property.
 rest_endpoint: /v1/files/{ref}/sample/
+api_version: v1
 permalink: /rest-api-guide/files/ref_sample.html
 sidebar: rest_api_guide_sidebar
 ---

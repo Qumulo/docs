@@ -24,6 +24,7 @@ methods:
       description: Return value on success
     summary: Prepare for upgrade.
 rest_endpoint: /v2/upgrade/prepare
+api_version: v2
 permalink: /rest-api-guide/upgrade/v2_prepare.html
 sidebar: rest_api_guide_sidebar
 ---

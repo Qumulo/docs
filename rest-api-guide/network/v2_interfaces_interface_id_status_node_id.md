@@ -133,6 +133,7 @@ methods:
       description: Return value on success
     summary: Retrieve the network status of a node on the underlying network interface
 rest_endpoint: /v2/network/interfaces/{interface_id}/status/{node_id}
+api_version: v2
 permalink: /rest-api-guide/network/v2_interfaces_interface_id_status_node_id.html
 sidebar: rest_api_guide_sidebar
 ---

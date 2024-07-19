@@ -144,6 +144,7 @@ methods:
     summary: List statuses for all existing replication relationships where this cluster
       is the target.
 rest_endpoint: /v2/replication/target-relationships/status/
+api_version: v2
 permalink: /rest-api-guide/replication/v2_target-relationships_status.html
 sidebar: rest_api_guide_sidebar
 ---

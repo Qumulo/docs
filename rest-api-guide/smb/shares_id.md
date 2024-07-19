@@ -107,6 +107,7 @@ methods:
       description: Return value on success
     summary: Modify an SMB share's options.
 rest_endpoint: /v1/smb/shares/{id}
+api_version: v1
 permalink: /rest-api-guide/smb/shares_id.html
 sidebar: rest_api_guide_sidebar
 ---

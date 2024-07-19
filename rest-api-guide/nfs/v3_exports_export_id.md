@@ -387,6 +387,7 @@ methods:
       description: Return value on success
     summary: This method sets all attributes of an NFS export.
 rest_endpoint: /v3/nfs/exports/{export_id}
+api_version: v3
 permalink: /rest-api-guide/nfs/v3_exports_export_id.html
 sidebar: rest_api_guide_sidebar
 ---

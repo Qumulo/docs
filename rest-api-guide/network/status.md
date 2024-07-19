@@ -81,6 +81,7 @@ methods:
     summary: This method lists the network status of all nodes. This API is deprecated
       in favor of /v2/network/interfaces/1/status/.
 rest_endpoint: /v1/network/status/
+api_version: v1
 permalink: /rest-api-guide/network/status.html
 sidebar: rest_api_guide_sidebar
 ---

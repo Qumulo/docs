@@ -71,6 +71,7 @@ methods:
       description: Return value on success
     summary: Creates a new snapshot and returns snapshot information.
 rest_endpoint: /v3/snapshots/
+api_version: v3
 permalink: /rest-api-guide/snapshots/v3_snapshots.html
 sidebar: rest_api_guide_sidebar
 ---

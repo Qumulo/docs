@@ -51,6 +51,7 @@ methods:
       override any lookup results from the configured DNS servers and serve as static
       mappings between IP address and hostname
 rest_endpoint: /v1/dns/lookup-override-config
+api_version: v1
 permalink: /rest-api-guide/dns/lookup-override-config.html
 sidebar: rest_api_guide_sidebar
 ---

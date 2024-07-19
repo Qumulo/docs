@@ -153,6 +153,7 @@ methods:
       description: Return value on success
     summary: Set configuration of a tenant.
 rest_endpoint: /v1/multitenancy/tenants/{tenant_id}
+api_version: v1
 permalink: /rest-api-guide/multitenancy/tenants_tenant_id.html
 sidebar: rest_api_guide_sidebar
 ---

@@ -89,6 +89,7 @@ methods:
       description: Return value on success
     summary: Enumerate open file handles
 rest_endpoint: /v1/smb/files/
+api_version: v1
 permalink: /rest-api-guide/smb/files.html
 sidebar: rest_api_guide_sidebar
 ---

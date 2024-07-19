@@ -151,6 +151,7 @@ methods:
       description: Return value on success
     summary: Update a subset of stream attributes
 rest_endpoint: /v1/files/{ref}/streams/{stream_id}/attributes
+api_version: v1
 permalink: /rest-api-guide/files/ref_streams_stream_id_attributes.html
 sidebar: rest_api_guide_sidebar
 ---

@@ -36,6 +36,7 @@ methods:
       description: Return value on success
     summary: Retrieve the current status of the upgrade system.
 rest_endpoint: /v3/upgrade/status
+api_version: v3
 permalink: /rest-api-guide/upgrade/v3_status.html
 sidebar: rest_api_guide_sidebar
 ---

@@ -128,6 +128,7 @@ methods:
       description: Return value on success
     summary: Control the slot's locate LED.
 rest_endpoint: /v1/cluster/slots/{id}
+api_version: v1
 permalink: /rest-api-guide/cluster/slots_id.html
 sidebar: rest_api_guide_sidebar
 ---

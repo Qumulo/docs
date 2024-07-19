@@ -57,6 +57,7 @@ methods:
       description: Return value on success
     summary: Modify a group. The 'id' field must match the id in the URI.
 rest_endpoint: /v1/groups/{id}
+api_version: v1
 permalink: /rest-api-guide/groups/id.html
 sidebar: rest_api_guide_sidebar
 ---

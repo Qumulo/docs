@@ -18,6 +18,7 @@ methods:
       description: Return value on success
     summary: Delete a named stream on provided object
 rest_endpoint: /v1/files/{ref}/streams/{stream_id}
+api_version: v1
 permalink: /rest-api-guide/files/ref_streams_stream_id.html
 sidebar: rest_api_guide_sidebar
 ---

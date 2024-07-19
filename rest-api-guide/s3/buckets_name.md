@@ -16,6 +16,7 @@ methods:
       description: Return value on success
     summary: Delete an existing S3 bucket.
 rest_endpoint: /v1/s3/buckets/{name}
+api_version: v1
 permalink: /rest-api-guide/s3/buckets_name.html
 sidebar: rest_api_guide_sidebar
 ---

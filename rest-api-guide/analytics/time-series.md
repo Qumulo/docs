@@ -21,6 +21,7 @@ methods:
       description: Return value on success
     summary: Returns all time series data maintained by the cluster.
 rest_endpoint: /v1/analytics/time-series/
+api_version: v1
 permalink: /rest-api-guide/analytics/time-series.html
 sidebar: rest_api_guide_sidebar
 ---

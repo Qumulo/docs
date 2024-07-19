@@ -30,6 +30,7 @@ methods:
       description: Return value on success
     summary: Get LDAP connection status if applicable.
 rest_endpoint: /v1/ldap/status
+api_version: v1
 permalink: /rest-api-guide/ldap/status.html
 sidebar: rest_api_guide_sidebar
 ---

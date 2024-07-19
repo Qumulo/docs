@@ -280,6 +280,7 @@ methods:
       description: Return value on success
     summary: Update file access control list (ACL).
 rest_endpoint: /v1/files/{ref}/info/acl
+api_version: v1
 permalink: /rest-api-guide/files/ref_info_acl.html
 sidebar: rest_api_guide_sidebar
 ---

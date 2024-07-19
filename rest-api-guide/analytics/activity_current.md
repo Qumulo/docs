@@ -34,6 +34,7 @@ methods:
       description: Return value on success
     summary: Returns the current sampled IOPS and throughput from the cluster.
 rest_endpoint: /v1/analytics/activity/current
+api_version: v1
 permalink: /rest-api-guide/analytics/activity_current.html
 sidebar: rest_api_guide_sidebar
 ---

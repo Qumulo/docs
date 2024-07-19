@@ -18,6 +18,7 @@ methods:
     summary: Abort any ongoing replication work for the specified replication relationship
       where this cluster is the source.
 rest_endpoint: /v2/replication/source-relationships/{id}/abort-replication
+api_version: v2
 permalink: /rest-api-guide/replication/v2_source-relationships_id_abort-replication.html
 sidebar: rest_api_guide_sidebar
 ---

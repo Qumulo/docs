@@ -23,6 +23,7 @@ methods:
       description: Return value on success
     summary: Deprecated. Use /v1/dns/resolve-ips-to-names instead.
 rest_endpoint: /v1/dns/resolve/
+api_version: v1
 permalink: /rest-api-guide/dns/resolve.html
 sidebar: rest_api_guide_sidebar
 ---

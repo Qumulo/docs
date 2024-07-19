@@ -35,6 +35,7 @@ methods:
     summary: Get current status of restriper, including data protection status and
       current restripe phase (if running)
 rest_endpoint: /v1/cluster/protection/restriper/status
+api_version: v1
 permalink: /rest-api-guide/cluster/protection_restriper_status.html
 sidebar: rest_api_guide_sidebar
 ---

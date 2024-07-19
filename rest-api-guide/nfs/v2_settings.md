@@ -75,6 +75,7 @@ methods:
       description: Return value on success
     summary: Modify current NFS server configuration.
 rest_endpoint: /v2/nfs/settings
+api_version: v2
 permalink: /rest-api-guide/nfs/v2_settings.html
 sidebar: rest_api_guide_sidebar
 ---

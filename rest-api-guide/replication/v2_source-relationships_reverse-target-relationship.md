@@ -89,6 +89,7 @@ methods:
       configurations if desired and reconnect the relationship from the new target
       cluster.
 rest_endpoint: /v2/replication/source-relationships/reverse-target-relationship
+api_version: v2
 permalink: /rest-api-guide/replication/v2_source-relationships_reverse-target-relationship.html
 sidebar: rest_api_guide_sidebar
 ---

@@ -18,6 +18,7 @@ methods:
     summary: Get file system public key replacement challenge by using the name or
       identifier of the specified key.
 rest_endpoint: /v1/file-system/security/keys/{key_ref}/key-replacement-challenge
+api_version: v1
 permalink: /rest-api-guide/file-system/security_keys_key_ref_key-replacement-challenge.html
 sidebar: rest_api_guide_sidebar
 ---

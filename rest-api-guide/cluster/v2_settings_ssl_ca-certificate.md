@@ -48,6 +48,7 @@ methods:
     summary: Set the SSL certificate authority the cluster trusts when authenticating
       outbound connections.
 rest_endpoint: /v2/cluster/settings/ssl/ca-certificate
+api_version: v2
 permalink: /rest-api-guide/cluster/v2_settings_ssl_ca-certificate.html
 sidebar: rest_api_guide_sidebar
 ---

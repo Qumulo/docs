@@ -118,6 +118,7 @@ methods:
     summary: Change networking configuration for the whole cluster. This API is deprecated
       in favor of /v2/network/interfaces/ and /v2/network/interfaces/1/networks/.
 rest_endpoint: /v1/network/settings
+api_version: v1
 permalink: /rest-api-guide/network/settings.html
 sidebar: rest_api_guide_sidebar
 ---

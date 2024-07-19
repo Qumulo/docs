@@ -35,6 +35,7 @@ methods:
     summary: 'List the monitoring status of all nodes: whether various kinds of monitoring
       connections are enabled/connected/etc.'
 rest_endpoint: /v1/support/status/
+api_version: v1
 permalink: /rest-api-guide/support/status.html
 sidebar: rest_api_guide_sidebar
 ---

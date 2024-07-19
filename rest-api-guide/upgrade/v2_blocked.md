@@ -15,6 +15,7 @@ methods:
       description: Return value on success
     summary: Check if upgrade is currently blocked.
 rest_endpoint: /v2/upgrade/blocked
+api_version: v2
 permalink: /rest-api-guide/upgrade/v2_blocked.html
 sidebar: rest_api_guide_sidebar
 ---

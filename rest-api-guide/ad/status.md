@@ -52,6 +52,7 @@ methods:
       description: Return value on success
     summary: Get Active Directory configuration and status.
 rest_endpoint: /v1/ad/status
+api_version: v1
 permalink: /rest-api-guide/ad/status.html
 sidebar: rest_api_guide_sidebar
 ---

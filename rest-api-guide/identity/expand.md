@@ -201,6 +201,7 @@ methods:
       description: Return value on success
     summary: Find all equivalents and the group membership of the given identity.
 rest_endpoint: /v1/identity/expand
+api_version: v1
 permalink: /rest-api-guide/identity/expand.html
 sidebar: rest_api_guide_sidebar
 ---

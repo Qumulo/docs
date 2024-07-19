@@ -16,6 +16,7 @@ methods:
       description: Return value on success
     summary: Change the password for the logged in user.
 rest_endpoint: /v1/session/change-password
+api_version: v1
 permalink: /rest-api-guide/session/change-password.html
 sidebar: rest_api_guide_sidebar
 ---

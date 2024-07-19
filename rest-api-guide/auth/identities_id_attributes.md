@@ -42,6 +42,7 @@ methods:
       description: Return value on success
     summary: Set the identity attributes for an identity.
 rest_endpoint: /v1/auth/identities/{id}/attributes
+api_version: v1
 permalink: /rest-api-guide/auth/identities_id_attributes.html
 sidebar: rest_api_guide_sidebar
 ---

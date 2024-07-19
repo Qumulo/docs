@@ -39,6 +39,7 @@ methods:
       description: Return value on success
     summary: Gets details on a join or leave operation.
 rest_endpoint: /v1/ad/monitor
+api_version: v1
 permalink: /rest-api-guide/ad/monitor.html
 sidebar: rest_api_guide_sidebar
 ---

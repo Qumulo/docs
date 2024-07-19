@@ -34,6 +34,7 @@ methods:
       description: Return value on success
     summary: List the unconfigured nodes discovered on the local network.
 rest_endpoint: /v1/unconfigured/nodes/
+api_version: v1
 permalink: /rest-api-guide/unconfigured/nodes.html
 sidebar: rest_api_guide_sidebar
 ---

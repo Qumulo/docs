@@ -62,6 +62,7 @@ methods:
       description: Return value on success
     summary: Set the server's time-management configuration.
 rest_endpoint: /v1/time/settings
+api_version: v1
 permalink: /rest-api-guide/time/settings.html
 sidebar: rest_api_guide_sidebar
 ---

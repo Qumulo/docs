@@ -104,6 +104,7 @@ methods:
       description: Return value on success
     summary: Set current tenant-specific NFS configuration.
 rest_endpoint: /v1/multitenancy/nfs/settings/{id}
+api_version: v1
 permalink: /rest-api-guide/multitenancy/nfs_settings_id.html
 sidebar: rest_api_guide_sidebar
 ---

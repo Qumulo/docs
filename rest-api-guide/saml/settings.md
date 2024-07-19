@@ -172,6 +172,7 @@ methods:
       description: Return value on success
     summary: Set the SAML integration settings.
 rest_endpoint: /v1/saml/settings
+api_version: v1
 permalink: /rest-api-guide/saml/settings.html
 sidebar: rest_api_guide_sidebar
 ---

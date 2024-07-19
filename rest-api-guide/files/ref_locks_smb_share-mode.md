@@ -56,6 +56,7 @@ methods:
     summary: Return a list of all SMB share mode locks currently granted on the specified
       file.
 rest_endpoint: /v1/files/{ref}/locks/smb/share-mode/
+api_version: v1
 permalink: /rest-api-guide/files/ref_locks_smb_share-mode.html
 sidebar: rest_api_guide_sidebar
 ---

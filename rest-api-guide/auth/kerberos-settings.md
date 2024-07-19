@@ -32,6 +32,7 @@ methods:
       description: Return value on success
     summary: Set the Kerberos settings
 rest_endpoint: /v1/auth/kerberos-settings
+api_version: v1
 permalink: /rest-api-guide/auth/kerberos-settings.html
 sidebar: rest_api_guide_sidebar
 ---

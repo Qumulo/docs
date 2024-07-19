@@ -48,6 +48,7 @@ methods:
     summary: Retrieve the current FTP server settings and the status of the server
       on each node.
 rest_endpoint: /v0/ftp/status
+api_version: v1
 permalink: /rest-api-guide/ftp/v0_status.html
 sidebar: rest_api_guide_sidebar
 ---

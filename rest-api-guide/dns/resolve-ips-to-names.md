@@ -23,6 +23,7 @@ methods:
       description: Return value on success
     summary: Resolve a list of IP addresses to canonical hostnames.
 rest_endpoint: /v1/dns/resolve-ips-to-names
+api_version: v1
 permalink: /rest-api-guide/dns/resolve-ips-to-names.html
 sidebar: rest_api_guide_sidebar
 ---

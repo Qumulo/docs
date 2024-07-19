@@ -88,6 +88,7 @@ methods:
     summary: Return a list of all NLM byte range locks currently granted on the specified
       file.
 rest_endpoint: /v1/files/{ref}/locks/nlm/byte-range/
+api_version: v1
 permalink: /rest-api-guide/files/ref_locks_nlm_byte-range.html
 sidebar: rest_api_guide_sidebar
 ---

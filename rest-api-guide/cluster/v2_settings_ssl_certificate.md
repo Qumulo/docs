@@ -17,6 +17,7 @@ methods:
     summary: Set the SSL certificates used by the cluster to authenticate its own
       identity.
 rest_endpoint: /v2/cluster/settings/ssl/certificate
+api_version: v2
 permalink: /rest-api-guide/cluster/v2_settings_ssl_certificate.html
 sidebar: rest_api_guide_sidebar
 ---

@@ -27,6 +27,7 @@ methods:
       description: Return value on success
     summary: Return any AD account objects that have the given sAMAccountName.
 rest_endpoint: /v1/ad/usernames/{username}/objects/
+api_version: v1
 permalink: /rest-api-guide/ad/usernames_username_objects.html
 sidebar: rest_api_guide_sidebar
 ---

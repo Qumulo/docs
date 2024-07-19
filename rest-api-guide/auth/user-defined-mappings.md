@@ -39,6 +39,7 @@ methods:
     summary: Replace the configured set of AD/LDAP static user defined mappings with
       the supplied set.
 rest_endpoint: /v1/auth/user-defined-mappings/
+api_version: v1
 permalink: /rest-api-guide/auth/user-defined-mappings.html
 sidebar: rest_api_guide_sidebar
 ---

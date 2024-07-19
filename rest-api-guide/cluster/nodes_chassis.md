@@ -34,6 +34,7 @@ methods:
       of /v1/cluster/nodes/uid-lights and /v2/metrics/endpoints/default/data for PSU
       information
 rest_endpoint: /v1/cluster/nodes/chassis/
+api_version: v1
 permalink: /rest-api-guide/cluster/nodes_chassis.html
 sidebar: rest_api_guide_sidebar
 ---

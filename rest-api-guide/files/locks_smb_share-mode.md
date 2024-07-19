@@ -48,6 +48,7 @@ methods:
       description: Return value on success
     summary: Return a list of all granted file locks that the specified machine owns.
 rest_endpoint: /v1/files/locks/smb/share-mode/
+api_version: v1
 permalink: /rest-api-guide/files/locks_smb_share-mode.html
 sidebar: rest_api_guide_sidebar
 ---

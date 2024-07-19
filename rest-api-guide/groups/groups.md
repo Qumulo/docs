@@ -37,6 +37,7 @@ methods:
       description: Return value on success
     summary: Add a group.
 rest_endpoint: /v1/groups/
+api_version: v1
 permalink: /rest-api-guide/groups/groups.html
 sidebar: rest_api_guide_sidebar
 ---

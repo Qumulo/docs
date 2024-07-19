@@ -284,6 +284,7 @@ methods:
       description: Return value on success
     summary: Creates a new snapshot policy and returns its details.
 rest_endpoint: /v1/snapshots/policies/
+api_version: v1
 permalink: /rest-api-guide/snapshots/policies.html
 sidebar: rest_api_guide_sidebar
 ---

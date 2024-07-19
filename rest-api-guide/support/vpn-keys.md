@@ -55,6 +55,7 @@ methods:
       description: Return value on success
     summary: Set VPN keys.
 rest_endpoint: /v1/support/vpn-keys
+api_version: v1
 permalink: /rest-api-guide/support/vpn-keys.html
 sidebar: rest_api_guide_sidebar
 ---

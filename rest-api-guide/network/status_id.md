@@ -80,6 +80,7 @@ methods:
       including DHCP configuration, and status of any pending changes. This API is
       deprecated in favor of /v2/network/interfaces/1/status/{node_id}.
 rest_endpoint: /v1/network/status/{id}
+api_version: v1
 permalink: /rest-api-guide/network/status_id.html
 sidebar: rest_api_guide_sidebar
 ---

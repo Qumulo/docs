@@ -69,6 +69,7 @@ methods:
       description: Return value on success
     summary: Assign a member to a role
 rest_endpoint: /v1/auth/roles/{role_name}/members
+api_version: v1
 permalink: /rest-api-guide/auth/roles_role_name_members.html
 sidebar: rest_api_guide_sidebar
 ---

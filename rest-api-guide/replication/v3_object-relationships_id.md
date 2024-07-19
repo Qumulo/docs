@@ -55,6 +55,7 @@ methods:
       description: Return value on success
     summary: Get information about the specified object replication relationship.
 rest_endpoint: /v3/replication/object-relationships/{id}
+api_version: v3
 permalink: /rest-api-guide/replication/v3_object-relationships_id.html
 sidebar: rest_api_guide_sidebar
 ---

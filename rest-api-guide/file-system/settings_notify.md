@@ -41,6 +41,7 @@ methods:
       description: Return value on success
     summary: Set FS notify related settings.
 rest_endpoint: /v1/file-system/settings/notify
+api_version: v1
 permalink: /rest-api-guide/file-system/settings_notify.html
 sidebar: rest_api_guide_sidebar
 ---

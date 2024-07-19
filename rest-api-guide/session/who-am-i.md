@@ -214,6 +214,7 @@ methods:
       description: Return value on success
     summary: Retrieve information about the currently logged in user.
 rest_endpoint: /v1/session/who-am-i
+api_version: v1
 permalink: /rest-api-guide/session/who-am-i.html
 sidebar: rest_api_guide_sidebar
 ---

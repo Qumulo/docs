@@ -20,6 +20,7 @@ methods:
     summary: Lock the specified snapshot. The only modification you can make to a
       locked snapshot is extending its expiration time.
 rest_endpoint: /v3/snapshots/{id}/lock
+api_version: v3
 permalink: /rest-api-guide/snapshots/v3_id_lock.html
 sidebar: rest_api_guide_sidebar
 ---

@@ -305,6 +305,7 @@ methods:
       use to rename an existing file. The return value is an attribute structure for
       the new file; refer to the 'Set Attributes' method for field descriptions.
 rest_endpoint: /v1/files/{ref}/entries/
+api_version: v1
 permalink: /rest-api-guide/files/ref_entries.html
 sidebar: rest_api_guide_sidebar
 ---

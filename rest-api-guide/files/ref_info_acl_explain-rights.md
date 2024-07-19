@@ -548,6 +548,7 @@ methods:
       description: Return value on success
     summary: Explain how rights are granted to a user for a file/directory.
 rest_endpoint: /v1/files/{ref}/info/acl/explain-rights
+api_version: v1
 permalink: /rest-api-guide/files/ref_info_acl_explain-rights.html
 sidebar: rest_api_guide_sidebar
 ---

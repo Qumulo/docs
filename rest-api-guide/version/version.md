@@ -16,6 +16,7 @@ methods:
       description: Return value on success
     summary: Retrieve the version of the appliance.
 rest_endpoint: /v1/version
+api_version: v1
 permalink: /rest-api-guide/version/version.html
 sidebar: rest_api_guide_sidebar
 ---

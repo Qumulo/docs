@@ -62,6 +62,7 @@ methods:
       description: Return value on success
     summary: List slots.
 rest_endpoint: /v1/cluster/slots/
+api_version: v1
 permalink: /rest-api-guide/cluster/slots.html
 sidebar: rest_api_guide_sidebar
 ---

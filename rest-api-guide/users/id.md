@@ -72,6 +72,7 @@ methods:
       description: Return value on success
     summary: Modify a local user.
 rest_endpoint: /v1/users/{id}
+api_version: v1
 permalink: /rest-api-guide/users/id.html
 sidebar: rest_api_guide_sidebar
 ---

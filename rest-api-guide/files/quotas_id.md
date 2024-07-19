@@ -57,6 +57,7 @@ methods:
       description: Return value on success
     summary: Modify the quota for a given directory.
 rest_endpoint: /v1/files/quotas/{id}
+api_version: v1
 permalink: /rest-api-guide/files/quotas_id.html
 sidebar: rest_api_guide_sidebar
 ---

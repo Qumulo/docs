@@ -80,6 +80,7 @@ methods:
     summary: Replace all the settings that the Web UI uses. These settings take effect
       immediately for new UI sessions.
 rest_endpoint: /v1/web-ui/settings
+api_version: v1
 permalink: /rest-api-guide/web-ui/settings.html
 sidebar: rest_api_guide_sidebar
 ---

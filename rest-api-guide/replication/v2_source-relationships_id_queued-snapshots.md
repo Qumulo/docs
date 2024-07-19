@@ -47,6 +47,7 @@ methods:
     summary: List information for all snapshots awaiting replication by the specified
       relationship.
 rest_endpoint: /v2/replication/source-relationships/{id}/queued-snapshots/
+api_version: v2
 permalink: /rest-api-guide/replication/v2_source-relationships_id_queued-snapshots.html
 sidebar: rest_api_guide_sidebar
 ---

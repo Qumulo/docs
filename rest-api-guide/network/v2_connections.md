@@ -28,6 +28,7 @@ methods:
       description: Return value on success
     summary: Return a list of NFS and SMB protocol connections to each node
 rest_endpoint: /v2/network/connections/
+api_version: v2
 permalink: /rest-api-guide/network/v2_connections.html
 sidebar: rest_api_guide_sidebar
 ---

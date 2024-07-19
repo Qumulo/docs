@@ -50,6 +50,7 @@ methods:
       description: Return value on success
     summary: Return a list of all granted file locks that the specified machine owns.
 rest_endpoint: /v1/files/locks/smb/byte-range/
+api_version: v1
 permalink: /rest-api-guide/files/locks_smb_byte-range.html
 sidebar: rest_api_guide_sidebar
 ---

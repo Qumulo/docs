@@ -1023,6 +1023,7 @@ methods:
       description: Return value on success
     summary: Modify a role.
 rest_endpoint: /v1/auth/roles/{role_name}
+api_version: v1
 permalink: /rest-api-guide/auth/roles_role_name.html
 sidebar: rest_api_guide_sidebar
 ---

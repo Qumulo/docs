@@ -145,6 +145,7 @@ methods:
       description: Return value on success
     summary: Modify metadata for the specified access token.
 rest_endpoint: /v1/auth/access-tokens/{id}
+api_version: v1
 permalink: /rest-api-guide/auth/access-tokens_id.html
 sidebar: rest_api_guide_sidebar
 ---
