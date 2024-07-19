@@ -180,15 +180,31 @@ entries:
     - output: web,pdf
       title: calculate-node-add-capacity
       url: /rest-api-guide/cluster/calculate-node-add-capacity.html
+    - api_version: v3
+      output: web,pdf
+      title: calculate-supported-protection-info
+      url: /rest-api-guide/cluster/calculate-supported-protection-info.html
+    - api_version: v2
+      output: web,pdf
+      title: create
+      url: /rest-api-guide/cluster/create.html
     - output: web,pdf
       title: node-replacement-plan
       url: /rest-api-guide/cluster/node-replacement-plan.html
     - output: web,pdf
       title: nodes
       url: /rest-api-guide/cluster/nodes.html
+    - api_version: v2
+      output: web,pdf
+      title: nodes
+      url: /rest-api-guide/cluster/nodes.html
     - output: web,pdf
       title: nodes/chassis
       url: /rest-api-guide/cluster/nodes_chassis.html
+    - api_version: v2
+      output: web,pdf
+      title: nodes/dry-run
+      url: /rest-api-guide/cluster/nodes_dry-run.html
     - output: web,pdf
       title: nodes/uid-lights
       url: /rest-api-guide/cluster/nodes_uid-lights.html
@@ -219,30 +235,20 @@ entries:
     - output: web,pdf
       title: settings/ssl
       url: /rest-api-guide/cluster/settings_ssl.html
+    - api_version: v2
+      output: web,pdf
+      title: settings/ssl/ca-certificate
+      url: /rest-api-guide/cluster/settings_ssl_ca-certificate.html
+    - api_version: v2
+      output: web,pdf
+      title: settings/ssl/certificate
+      url: /rest-api-guide/cluster/settings_ssl_certificate.html
     - output: web,pdf
       title: slots
       url: /rest-api-guide/cluster/slots.html
     - output: web,pdf
       title: slots/{id}
       url: /rest-api-guide/cluster/slots_id.html
-    - output: web,pdf
-      title: v2/create
-      url: /rest-api-guide/cluster/v2_create.html
-    - output: web,pdf
-      title: v2/nodes
-      url: /rest-api-guide/cluster/v2_nodes.html
-    - output: web,pdf
-      title: v2/nodes/dry-run
-      url: /rest-api-guide/cluster/v2_nodes_dry-run.html
-    - output: web,pdf
-      title: v2/settings/ssl/ca-certificate
-      url: /rest-api-guide/cluster/v2_settings_ssl_ca-certificate.html
-    - output: web,pdf
-      title: v2/settings/ssl/certificate
-      url: /rest-api-guide/cluster/v2_settings_ssl_certificate.html
-    - output: web,pdf
-      title: v3/calculate-supported-protection-info
-      url: /rest-api-guide/cluster/v3_calculate-supported-protection-info.html
     output: web,pdf
     title: cluster
     type: navi
@@ -304,9 +310,6 @@ entries:
       title: resolve
       url: /rest-api-guide/files/resolve.html
     - output: web,pdf
-      title: v2/{ref}/info/acl
-      url: /rest-api-guide/files/v2_ref_info_acl.html
-    - output: web,pdf
       title: '{ref}'
       url: /rest-api-guide/files/ref.html
     - output: web,pdf
@@ -321,6 +324,10 @@ entries:
     - output: web,pdf
       title: '{ref}/entries'
       url: /rest-api-guide/files/ref_entries.html
+    - api_version: v2
+      output: web,pdf
+      title: '{ref}/info/acl'
+      url: /rest-api-guide/files/ref_info_acl.html
     - output: web,pdf
       title: '{ref}/info/acl'
       url: /rest-api-guide/files/ref_info_acl.html
@@ -397,24 +404,28 @@ entries:
     title: files
     type: navi
   - folderitems:
+    - api_version: v2
+      output: web,pdf
+      title: external-kms/keys/create
+      url: /rest-api-guide/encryption/external-kms_keys_create.html
+    - api_version: v2
+      output: web,pdf
+      title: key-store
+      url: /rest-api-guide/encryption/key-store.html
+    - api_version: v2
+      output: web,pdf
+      title: key-store/status
+      url: /rest-api-guide/encryption/key-store_status.html
     - output: web,pdf
+      title: rotate-keys
+      url: /rest-api-guide/encryption/rotate-keys.html
+    - api_version: v2
+      output: web,pdf
       title: rotate-keys
       url: /rest-api-guide/encryption/rotate-keys.html
     - output: web,pdf
       title: status
       url: /rest-api-guide/encryption/status.html
-    - output: web,pdf
-      title: v2/external-kms/keys/create
-      url: /rest-api-guide/encryption/v2_external-kms_keys_create.html
-    - output: web,pdf
-      title: v2/key-store
-      url: /rest-api-guide/encryption/v2_key-store.html
-    - output: web,pdf
-      title: v2/key-store/status
-      url: /rest-api-guide/encryption/v2_key-store_status.html
-    - output: web,pdf
-      title: v2/rotate-keys
-      url: /rest-api-guide/encryption/v2_rotate-keys.html
     output: web,pdf
     title: encryption
     type: navi
@@ -476,15 +487,16 @@ entries:
     - output: web,pdf
       title: login-name/{login_name}/uid-numbers
       url: /rest-api-guide/ldap/login-name_login_name_uid-numbers.html
+    - api_version: v2
+      output: web,pdf
+      title: settings
+      url: /rest-api-guide/ldap/settings.html
     - output: web,pdf
       title: status
       url: /rest-api-guide/ldap/status.html
     - output: web,pdf
       title: uid-number/{uid_number}/login-name
       url: /rest-api-guide/ldap/uid-number_uid_number_login-name.html
-    - output: web,pdf
-      title: v2/settings
-      url: /rest-api-guide/ldap/v2_settings.html
     output: web,pdf
     title: ldap
     type: navi
@@ -521,9 +533,10 @@ entries:
     title: users
     type: navi
   - folderitems:
-    - output: web,pdf
-      title: v2/endpoints/default/data
-      url: /rest-api-guide/metrics/v2_endpoints_default_data.html
+    - api_version: v2
+      output: web,pdf
+      title: endpoints/default/data
+      url: /rest-api-guide/metrics/endpoints_default_data.html
     output: web,pdf
     title: metrics
     type: navi
@@ -547,21 +560,26 @@ entries:
     title: support
     type: navi
   - folderitems:
-    - output: web,pdf
-      title: v2/exports
-      url: /rest-api-guide/nfs/v2_exports.html
-    - output: web,pdf
-      title: v2/exports/{ref}
-      url: /rest-api-guide/nfs/v2_exports_ref.html
-    - output: web,pdf
-      title: v2/settings
-      url: /rest-api-guide/nfs/v2_settings.html
-    - output: web,pdf
-      title: v3/exports
-      url: /rest-api-guide/nfs/v3_exports.html
-    - output: web,pdf
-      title: v3/exports/{export_id}
-      url: /rest-api-guide/nfs/v3_exports_export_id.html
+    - api_version: v3
+      output: web,pdf
+      title: exports
+      url: /rest-api-guide/nfs/exports.html
+    - api_version: v2
+      output: web,pdf
+      title: exports
+      url: /rest-api-guide/nfs/exports.html
+    - api_version: v3
+      output: web,pdf
+      title: exports/{export_id}
+      url: /rest-api-guide/nfs/exports_export_id.html
+    - api_version: v2
+      output: web,pdf
+      title: exports/{ref}
+      url: /rest-api-guide/nfs/exports_ref.html
+    - api_version: v2
+      output: web,pdf
+      title: settings
+      url: /rest-api-guide/nfs/settings.html
     output: web,pdf
     title: nfs
     type: navi
@@ -594,9 +612,37 @@ entries:
     title: multitenancy
     type: navi
   - folderitems:
+    - api_version: v2
+      output: web,pdf
+      title: connections
+      url: /rest-api-guide/network/connections.html
     - output: web,pdf
       title: floating-ip-allocation
       url: /rest-api-guide/network/floating-ip-allocation.html
+    - api_version: v2
+      output: web,pdf
+      title: interfaces
+      url: /rest-api-guide/network/interfaces.html
+    - api_version: v2
+      output: web,pdf
+      title: interfaces/{id}/status
+      url: /rest-api-guide/network/interfaces_id_status.html
+    - api_version: v2
+      output: web,pdf
+      title: interfaces/{interface_id}
+      url: /rest-api-guide/network/interfaces_interface_id.html
+    - api_version: v2
+      output: web,pdf
+      title: interfaces/{interface_id}/networks
+      url: /rest-api-guide/network/interfaces_interface_id_networks.html
+    - api_version: v2
+      output: web,pdf
+      title: interfaces/{interface_id}/networks/{network_id}
+      url: /rest-api-guide/network/interfaces_interface_id_networks_id.html
+    - api_version: v2
+      output: web,pdf
+      title: interfaces/{interface_id}/status/{node_id}
+      url: /rest-api-guide/network/interfaces_interface_id_status_node_id.html
     - output: web,pdf
       title: settings
       url: /rest-api-guide/network/settings.html
@@ -609,103 +655,106 @@ entries:
     - output: web,pdf
       title: status/{id}
       url: /rest-api-guide/network/status_id.html
-    - output: web,pdf
-      title: v2/connections
-      url: /rest-api-guide/network/v2_connections.html
-    - output: web,pdf
-      title: v2/interfaces
-      url: /rest-api-guide/network/v2_interfaces.html
-    - output: web,pdf
-      title: v2/interfaces/{id}/status
-      url: /rest-api-guide/network/v2_interfaces_id_status.html
-    - output: web,pdf
-      title: v2/interfaces/{interface_id}
-      url: /rest-api-guide/network/v2_interfaces_interface_id.html
-    - output: web,pdf
-      title: v2/interfaces/{interface_id}/networks
-      url: /rest-api-guide/network/v2_interfaces_interface_id_networks.html
-    - output: web,pdf
-      title: v2/interfaces/{interface_id}/networks/{network_id}
-      url: /rest-api-guide/network/v2_interfaces_interface_id_networks_id.html
-    - output: web,pdf
-      title: v2/interfaces/{interface_id}/status/{node_id}
-      url: /rest-api-guide/network/v2_interfaces_interface_id_status_node_id.html
     output: web,pdf
     title: network
     type: navi
   - folderitems:
-    - output: web,pdf
-      title: v2/source-relationships
-      url: /rest-api-guide/replication/v2_source-relationships.html
-    - output: web,pdf
-      title: v2/source-relationships/reverse-target-relationship
-      url: /rest-api-guide/replication/v2_source-relationships_reverse-target-relationship.html
-    - output: web,pdf
-      title: v2/source-relationships/status
-      url: /rest-api-guide/replication/v2_source-relationships_status.html
-    - output: web,pdf
-      title: v2/source-relationships/{id}
-      url: /rest-api-guide/replication/v2_source-relationships_id.html
-    - output: web,pdf
-      title: v2/source-relationships/{id}/abort-replication
-      url: /rest-api-guide/replication/v2_source-relationships_id_abort-replication.html
-    - output: web,pdf
-      title: v2/source-relationships/{id}/dismiss-error
-      url: /rest-api-guide/replication/v2_source-relationships_id_dismiss-error.html
-    - output: web,pdf
-      title: v2/source-relationships/{id}/queued-snapshots
-      url: /rest-api-guide/replication/v2_source-relationships_id_queued-snapshots.html
-    - output: web,pdf
-      title: v2/source-relationships/{id}/replicate
-      url: /rest-api-guide/replication/v2_source-relationships_id_replicate.html
-    - output: web,pdf
-      title: v2/source-relationships/{id}/status
-      url: /rest-api-guide/replication/v2_source-relationships_id_status.html
-    - output: web,pdf
-      title: v2/source-relationships/{relationship_id}/queued-snapshots/{snapshot_id}
-      url: /rest-api-guide/replication/v2_source-relationships_relationship_id_queued-snapshots_snapshot_id.html
-    - output: web,pdf
-      title: v2/target-relationships/status
-      url: /rest-api-guide/replication/v2_target-relationships_status.html
-    - output: web,pdf
-      title: v2/target-relationships/{id}/authorize
-      url: /rest-api-guide/replication/v2_target-relationships_id_authorize.html
-    - output: web,pdf
-      title: v2/target-relationships/{id}/delete
-      url: /rest-api-guide/replication/v2_target-relationships_id_delete.html
-    - output: web,pdf
-      title: v2/target-relationships/{id}/dismiss-error
-      url: /rest-api-guide/replication/v2_target-relationships_id_dismiss-error.html
-    - output: web,pdf
-      title: v2/target-relationships/{id}/lock
-      url: /rest-api-guide/replication/v2_target-relationships_id_lock.html
-    - output: web,pdf
-      title: v2/target-relationships/{id}/make-writable
-      url: /rest-api-guide/replication/v2_target-relationships_id_make-writable.html
-    - output: web,pdf
-      title: v2/target-relationships/{id}/reconnect
-      url: /rest-api-guide/replication/v2_target-relationships_id_reconnect.html
-    - output: web,pdf
-      title: v2/target-relationships/{id}/status
-      url: /rest-api-guide/replication/v2_target-relationships_id_status.html
-    - output: web,pdf
-      title: v3/object-relationships
-      url: /rest-api-guide/replication/v3_object-relationships.html
-    - output: web,pdf
-      title: v3/object-relationships/status
-      url: /rest-api-guide/replication/v3_object-relationships_status.html
-    - output: web,pdf
-      title: v3/object-relationships/{id}
-      url: /rest-api-guide/replication/v3_object-relationships_id.html
-    - output: web,pdf
-      title: v3/object-relationships/{id}/abort-replication
-      url: /rest-api-guide/replication/v3_object-relationships_id_abort-replication.html
-    - output: web,pdf
-      title: v3/object-relationships/{id}/replicate
-      url: /rest-api-guide/replication/v3_object-relationships_id_replicate.html
-    - output: web,pdf
-      title: v3/object-relationships/{id}/status
-      url: /rest-api-guide/replication/v3_object-relationships_id_status.html
+    - api_version: v3
+      output: web,pdf
+      title: object-relationships
+      url: /rest-api-guide/replication/object-relationships.html
+    - api_version: v3
+      output: web,pdf
+      title: object-relationships/status
+      url: /rest-api-guide/replication/object-relationships_status.html
+    - api_version: v3
+      output: web,pdf
+      title: object-relationships/{id}
+      url: /rest-api-guide/replication/object-relationships_id.html
+    - api_version: v3
+      output: web,pdf
+      title: object-relationships/{id}/abort-replication
+      url: /rest-api-guide/replication/object-relationships_id_abort-replication.html
+    - api_version: v3
+      output: web,pdf
+      title: object-relationships/{id}/replicate
+      url: /rest-api-guide/replication/object-relationships_id_replicate.html
+    - api_version: v3
+      output: web,pdf
+      title: object-relationships/{id}/status
+      url: /rest-api-guide/replication/object-relationships_id_status.html
+    - api_version: v2
+      output: web,pdf
+      title: source-relationships
+      url: /rest-api-guide/replication/source-relationships.html
+    - api_version: v2
+      output: web,pdf
+      title: source-relationships/reverse-target-relationship
+      url: /rest-api-guide/replication/source-relationships_reverse-target-relationship.html
+    - api_version: v2
+      output: web,pdf
+      title: source-relationships/status
+      url: /rest-api-guide/replication/source-relationships_status.html
+    - api_version: v2
+      output: web,pdf
+      title: source-relationships/{id}
+      url: /rest-api-guide/replication/source-relationships_id.html
+    - api_version: v2
+      output: web,pdf
+      title: source-relationships/{id}/abort-replication
+      url: /rest-api-guide/replication/source-relationships_id_abort-replication.html
+    - api_version: v2
+      output: web,pdf
+      title: source-relationships/{id}/dismiss-error
+      url: /rest-api-guide/replication/source-relationships_id_dismiss-error.html
+    - api_version: v2
+      output: web,pdf
+      title: source-relationships/{id}/queued-snapshots
+      url: /rest-api-guide/replication/source-relationships_id_queued-snapshots.html
+    - api_version: v2
+      output: web,pdf
+      title: source-relationships/{id}/replicate
+      url: /rest-api-guide/replication/source-relationships_id_replicate.html
+    - api_version: v2
+      output: web,pdf
+      title: source-relationships/{id}/status
+      url: /rest-api-guide/replication/source-relationships_id_status.html
+    - api_version: v2
+      output: web,pdf
+      title: source-relationships/{relationship_id}/queued-snapshots/{snapshot_id}
+      url: /rest-api-guide/replication/source-relationships_relationship_id_queued-snapshots_snapshot_id.html
+    - api_version: v2
+      output: web,pdf
+      title: target-relationships/status
+      url: /rest-api-guide/replication/target-relationships_status.html
+    - api_version: v2
+      output: web,pdf
+      title: target-relationships/{id}/authorize
+      url: /rest-api-guide/replication/target-relationships_id_authorize.html
+    - api_version: v2
+      output: web,pdf
+      title: target-relationships/{id}/delete
+      url: /rest-api-guide/replication/target-relationships_id_delete.html
+    - api_version: v2
+      output: web,pdf
+      title: target-relationships/{id}/dismiss-error
+      url: /rest-api-guide/replication/target-relationships_id_dismiss-error.html
+    - api_version: v2
+      output: web,pdf
+      title: target-relationships/{id}/lock
+      url: /rest-api-guide/replication/target-relationships_id_lock.html
+    - api_version: v2
+      output: web,pdf
+      title: target-relationships/{id}/make-writable
+      url: /rest-api-guide/replication/target-relationships_id_make-writable.html
+    - api_version: v2
+      output: web,pdf
+      title: target-relationships/{id}/reconnect
+      url: /rest-api-guide/replication/target-relationships_id_reconnect.html
+    - api_version: v2
+      output: web,pdf
+      title: target-relationships/{id}/status
+      url: /rest-api-guide/replication/target-relationships_id_status.html
     output: web,pdf
     title: replication
     type: navi
@@ -763,24 +812,28 @@ entries:
     - output: web,pdf
       title: settings
       url: /rest-api-guide/smb/settings.html
+    - api_version: v3
+      output: web,pdf
+      title: shares
+      url: /rest-api-guide/smb/shares.html
     - output: web,pdf
+      title: shares
+      url: /rest-api-guide/smb/shares.html
+    - api_version: v2
+      output: web,pdf
       title: shares
       url: /rest-api-guide/smb/shares.html
     - output: web,pdf
       title: shares/{id}
       url: /rest-api-guide/smb/shares_id.html
-    - output: web,pdf
-      title: v2/shares
-      url: /rest-api-guide/smb/v2_shares.html
-    - output: web,pdf
-      title: v2/shares/{ref}
-      url: /rest-api-guide/smb/v2_shares_ref.html
-    - output: web,pdf
-      title: v3/shares
-      url: /rest-api-guide/smb/v3_shares.html
-    - output: web,pdf
-      title: v3/shares/{share_id}
-      url: /rest-api-guide/smb/v3_shares_share_id.html
+    - api_version: v2
+      output: web,pdf
+      title: shares/{ref}
+      url: /rest-api-guide/smb/shares_ref.html
+    - api_version: v3
+      output: web,pdf
+      title: shares/{share_id}
+      url: /rest-api-guide/smb/shares_share_id.html
     output: web,pdf
     title: smb
     type: navi
@@ -826,6 +879,14 @@ entries:
     title: shutdown
     type: navi
   - folderitems:
+    - api_version: v3
+      output: web,pdf
+      title: ''
+      url: /rest-api-guide/snapshots/snapshots.html
+    - api_version: v2
+      output: web,pdf
+      title: ''
+      url: /rest-api-guide/snapshots/snapshots.html
     - output: web,pdf
       title: ''
       url: /rest-api-guide/snapshots/snapshots.html
@@ -838,90 +899,104 @@ entries:
     - output: web,pdf
       title: capacity-used-per-snapshot/{id}
       url: /rest-api-guide/snapshots/capacity-used-per-snapshot_id.html
-    - output: web,pdf
+    - api_version: v3
+      output: web,pdf
+      title: policies
+      url: /rest-api-guide/snapshots/policies.html
+    - api_version: v2
+      output: web,pdf
       title: policies
       url: /rest-api-guide/snapshots/policies.html
     - output: web,pdf
+      title: policies
+      url: /rest-api-guide/snapshots/policies.html
+    - api_version: v3
+      output: web,pdf
+      title: policies/status
+      url: /rest-api-guide/snapshots/policies_status.html
+    - api_version: v2
+      output: web,pdf
       title: policies/status
       url: /rest-api-guide/snapshots/policies_status.html
     - output: web,pdf
+      title: policies/status
+      url: /rest-api-guide/snapshots/policies_status.html
+    - api_version: v3
+      output: web,pdf
+      title: policies/status/{id}
+      url: /rest-api-guide/snapshots/policies_status_id.html
+    - api_version: v2
+      output: web,pdf
       title: policies/status/{id}
       url: /rest-api-guide/snapshots/policies_status_id.html
     - output: web,pdf
+      title: policies/status/{id}
+      url: /rest-api-guide/snapshots/policies_status_id.html
+    - api_version: v3
+      output: web,pdf
+      title: policies/{id}
+      url: /rest-api-guide/snapshots/policies_id.html
+    - api_version: v2
+      output: web,pdf
       title: policies/{id}
       url: /rest-api-guide/snapshots/policies_id.html
     - output: web,pdf
+      title: policies/{id}
+      url: /rest-api-guide/snapshots/policies_id.html
+    - api_version: v4
+      output: web,pdf
+      title: status
+      url: /rest-api-guide/snapshots/status.html
+    - api_version: v3
+      output: web,pdf
+      title: status
+      url: /rest-api-guide/snapshots/status.html
+    - api_version: v2
+      output: web,pdf
+      title: status
+      url: /rest-api-guide/snapshots/status.html
+    - api_version: v3
+      output: web,pdf
+      title: status/{id}
+      url: /rest-api-guide/snapshots/status_id.html
+    - api_version: v2
+      output: web,pdf
+      title: status/{id}
+      url: /rest-api-guide/snapshots/status_id.html
+    - output: web,pdf
       title: total-used-capacity
       url: /rest-api-guide/snapshots/total-used-capacity.html
-    - output: web,pdf
-      title: v2
-      url: /rest-api-guide/snapshots/v2_snapshots.html
-    - output: web,pdf
-      title: v2/policies
-      url: /rest-api-guide/snapshots/v2_policies.html
-    - output: web,pdf
-      title: v2/policies/status
-      url: /rest-api-guide/snapshots/v2_policies_status.html
-    - output: web,pdf
-      title: v2/policies/status/{id}
-      url: /rest-api-guide/snapshots/v2_policies_status_id.html
-    - output: web,pdf
-      title: v2/policies/{id}
-      url: /rest-api-guide/snapshots/v2_policies_id.html
-    - output: web,pdf
-      title: v2/status
-      url: /rest-api-guide/snapshots/v2_status.html
-    - output: web,pdf
-      title: v2/status/{id}
-      url: /rest-api-guide/snapshots/v2_status_id.html
-    - output: web,pdf
-      title: v2/{id}
-      url: /rest-api-guide/snapshots/v2_id.html
-    - output: web,pdf
-      title: v2/{newer_id}/changes-since/{older_id}
-      url: /rest-api-guide/snapshots/v2_newer_id_changes-since_older_id.html
-    - output: web,pdf
-      title: v2/{newer_id}/changes-since/{older_id}/files/{ref}
-      url: /rest-api-guide/snapshots/v2_newer_id_changes-since_older_id_files_ref.html
-    - output: web,pdf
-      title: v3
-      url: /rest-api-guide/snapshots/v3_snapshots.html
-    - output: web,pdf
-      title: v3/policies
-      url: /rest-api-guide/snapshots/v3_policies.html
-    - output: web,pdf
-      title: v3/policies/status
-      url: /rest-api-guide/snapshots/v3_policies_status.html
-    - output: web,pdf
-      title: v3/policies/status/{id}
-      url: /rest-api-guide/snapshots/v3_policies_status_id.html
-    - output: web,pdf
-      title: v3/policies/{id}
-      url: /rest-api-guide/snapshots/v3_policies_id.html
-    - output: web,pdf
-      title: v3/status
-      url: /rest-api-guide/snapshots/v3_status.html
-    - output: web,pdf
-      title: v3/status/{id}
-      url: /rest-api-guide/snapshots/v3_status_id.html
-    - output: web,pdf
-      title: v3/{id}
-      url: /rest-api-guide/snapshots/v3_id.html
-    - output: web,pdf
-      title: v3/{id}/lock
-      url: /rest-api-guide/snapshots/v3_id_lock.html
-    - output: web,pdf
-      title: v3/{id}/unlock
-      url: /rest-api-guide/snapshots/v3_id_unlock.html
-    - output: web,pdf
-      title: v3/{id}/unlock-challenge
-      url: /rest-api-guide/snapshots/v3_id_unlock-challenge.html
-    - output: web,pdf
-      title: v4/status
-      url: /rest-api-guide/snapshots/v4_status.html
+    - api_version: v3
+      output: web,pdf
+      title: '{id}'
+      url: /rest-api-guide/snapshots/id.html
+    - api_version: v2
+      output: web,pdf
+      title: '{id}'
+      url: /rest-api-guide/snapshots/id.html
     - output: web,pdf
       title: '{id}'
       url: /rest-api-guide/snapshots/id.html
+    - api_version: v3
+      output: web,pdf
+      title: '{id}/lock'
+      url: /rest-api-guide/snapshots/id_lock.html
+    - api_version: v3
+      output: web,pdf
+      title: '{id}/unlock'
+      url: /rest-api-guide/snapshots/id_unlock.html
+    - api_version: v3
+      output: web,pdf
+      title: '{id}/unlock-challenge'
+      url: /rest-api-guide/snapshots/id_unlock-challenge.html
+    - api_version: v2
+      output: web,pdf
+      title: '{newer_id}/changes-since/{older_id}'
+      url: /rest-api-guide/snapshots/newer_id_changes-since_older_id.html
+    - api_version: v2
+      output: web,pdf
+      title: '{newer_id}/changes-since/{older_id}/files/{ref}'
+      url: /rest-api-guide/snapshots/newer_id_changes-since_older_id_files_ref.html
     output: web,pdf
     title: snapshots
     type: navi
@@ -963,24 +1038,30 @@ entries:
     title: version
     type: navi
   - folderitems:
-    - output: web,pdf
-      title: v2/blocked
-      url: /rest-api-guide/upgrade/v2_blocked.html
-    - output: web,pdf
-      title: v2/commit
-      url: /rest-api-guide/upgrade/v2_commit.html
-    - output: web,pdf
-      title: v2/prepare
-      url: /rest-api-guide/upgrade/v2_prepare.html
-    - output: web,pdf
-      title: v2/status
-      url: /rest-api-guide/upgrade/v2_status.html
-    - output: web,pdf
-      title: v2/verify-image
-      url: /rest-api-guide/upgrade/v2_verify-image.html
-    - output: web,pdf
-      title: v3/status
-      url: /rest-api-guide/upgrade/v3_status.html
+    - api_version: v2
+      output: web,pdf
+      title: blocked
+      url: /rest-api-guide/upgrade/blocked.html
+    - api_version: v2
+      output: web,pdf
+      title: commit
+      url: /rest-api-guide/upgrade/commit.html
+    - api_version: v2
+      output: web,pdf
+      title: prepare
+      url: /rest-api-guide/upgrade/prepare.html
+    - api_version: v3
+      output: web,pdf
+      title: status
+      url: /rest-api-guide/upgrade/status.html
+    - api_version: v2
+      output: web,pdf
+      title: status
+      url: /rest-api-guide/upgrade/status.html
+    - api_version: v2
+      output: web,pdf
+      title: verify-image
+      url: /rest-api-guide/upgrade/verify-image.html
     output: web,pdf
     title: upgrade
     type: navi
