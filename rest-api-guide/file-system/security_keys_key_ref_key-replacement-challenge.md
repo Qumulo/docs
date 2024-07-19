@@ -8,7 +8,6 @@ methods:
       name: key_ref
       required: true
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_change_lock_key_replace_challenge\",\n\
         \  \"type\": \"object\",\n  \"properties\": {\n    \"challenge\": {\n    \
         \  \"description\": \"The security challenge for replacing the specified key.\"\

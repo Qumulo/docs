@@ -4,7 +4,6 @@ methods:
   get:
     parameters: []
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_bucket_description_list_model\",\n  \"\
         type\": \"object\",\n  \"properties\": {\n    \"buckets\": {\n      \"type\"\
         : \"array\",\n      \"items\": {\n        \"description\": \"buckets\",\n\
@@ -29,7 +28,6 @@ methods:
   post:
     parameters: []
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_bucket_options\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"name\": {\n      \"description\": \"name\",\n\
         \      \"type\": \"string\"\n    },\n    \"path\": {\n      \"description\"\
@@ -39,7 +37,6 @@ methods:
         Specifies whether to create the bucket root if it doesn't exist.\",\n    \
         \  \"type\": \"boolean\"\n    }\n  }\n}"
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_bucket_description\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"name\": {\n      \"description\": \"The name\
         \ of the S3 bucket.\",\n      \"type\": \"string\"\n    },\n    \"creation_time\"\

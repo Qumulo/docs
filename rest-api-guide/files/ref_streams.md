@@ -14,7 +14,6 @@ methods:
       name: snapshot
       required: false
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         api_named_stream_attributes\",\n    \"type\": \"object\",\n    \"properties\"\
         : {\n      \"name\": {\n        \"description\": \"name\",\n        \"type\"\
@@ -40,12 +39,10 @@ methods:
       name: If-Match
       required: false
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_named_stream_entry\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"stream_name\": {\n      \"description\": \"\
         Stream name to be created.\",\n      \"type\": \"string\"\n    }\n  }\n}"
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_named_stream_attributes\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"name\": {\n      \"description\"\
         : \"name\",\n      \"type\": \"string\"\n    },\n    \"id\": {\n      \"description\"\

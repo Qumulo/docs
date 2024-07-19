@@ -4,7 +4,6 @@ methods:
   get:
     parameters: []
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_cluster_network_config_v1\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"assigned_by\": {\n      \"type\"\
         : \"string\",\n      \"enum\": [\n        \"DHCP\",\n        \"STATIC\",\n\
@@ -42,7 +41,6 @@ methods:
   patch:
     parameters: []
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_cluster_network_config_v1\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"assigned_by\": {\n      \"type\"\
         : \"string\",\n      \"enum\": [\n        \"DHCP\",\n        \"STATIC\",\n\
@@ -84,7 +82,6 @@ methods:
       name: If-Match
       required: false
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_cluster_network_config_v1\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"assigned_by\": {\n      \"type\"\
         : \"string\",\n      \"enum\": [\n        \"DHCP\",\n        \"STATIC\",\n\

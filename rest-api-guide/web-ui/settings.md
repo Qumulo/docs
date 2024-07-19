@@ -4,7 +4,6 @@ methods:
   get:
     parameters: []
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"web_ui_settings\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"inactivity_timeout\": {\n      \"description\"\
         : \"When set, the Web UI logs out users after they are inactive for the specified\
@@ -26,7 +25,6 @@ methods:
       name: If-Match
       required: false
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"web_ui_settings_patch\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"inactivity_timeout\": {\n      \"description\"\
         : \"When set, the Web UI logs out users after they are inactive for the specified\
@@ -37,7 +35,6 @@ methods:
         \ specified Markdown string on the login screen.\",\n      \"type\": \"string\"\
         \n    }\n  }\n}"
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"web_ui_settings\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"inactivity_timeout\": {\n      \"description\"\
         : \"When set, the Web UI logs out users after they are inactive for the specified\
@@ -58,7 +55,6 @@ methods:
       name: If-Match
       required: false
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"web_ui_settings\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"inactivity_timeout\": {\n      \"description\"\
         : \"When set, the Web UI logs out users after they are inactive for the specified\
@@ -69,7 +65,6 @@ methods:
         \ specified Markdown string on the login screen.\",\n      \"type\": \"string\"\
         \n    }\n  }\n}"
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"web_ui_settings\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"inactivity_timeout\": {\n      \"description\"\
         : \"When set, the Web UI logs out users after they are inactive for the specified\

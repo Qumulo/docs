@@ -7,7 +7,6 @@ methods:
       name: id
       required: true
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_queued_replication_snapshots\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"entries\": {\n      \"type\": \"\
         array\",\n      \"items\": {\n        \"description\": \"List of information\

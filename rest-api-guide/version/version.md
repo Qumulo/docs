@@ -4,7 +4,6 @@ methods:
   get:
     parameters: []
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_version_info\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"revision_id\": {\n      \"description\": \"\
         revision_id\",\n      \"type\": \"string\"\n    },\n    \"build_id\": {\n\

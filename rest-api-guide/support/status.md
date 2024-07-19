@@ -4,7 +4,6 @@ methods:
   get:
     parameters: []
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         api_node_monitoring_status\",\n    \"type\": \"object\",\n    \"properties\"\
         : {\n      \"node_id\": {\n        \"description\": \"Node Id\",\n       \

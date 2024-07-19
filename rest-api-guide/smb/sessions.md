@@ -18,7 +18,6 @@ methods:
       name: limit
       required: false
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_smb_sessions_get_response\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"session_infos\": {\n      \"type\"\
         : \"array\",\n      \"items\": {\n        \"description\": \"session_infos\"\

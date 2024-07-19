@@ -4,7 +4,6 @@ methods:
   get:
     parameters: []
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_snapshot_policies\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"entries\": {\n      \"type\": \"array\",\n \
         \     \"items\": {\n        \"description\": \"List of snapshot policy information\"\
@@ -108,7 +107,6 @@ methods:
   post:
     parameters: []
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_snapshot_policy_create\",\n  \"type\":\
         \ \"object\",\n  \"properties\": {\n    \"policy_name\": {\n      \"description\"\
         : \"The snapshot policy name.\",\n      \"type\": \"string\"\n    },\n   \
@@ -194,7 +192,6 @@ methods:
         \ identifier to create locked snapshots under this policy.\",\n      \"type\"\
         : \"string\"\n    }\n  }\n}"
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_snapshot_policy_info\",\n  \"type\": \"\
         object\",\n  \"properties\": {\n    \"id\": {\n      \"description\": \"The\
         \ unique identifier for the snapshot policy.\",\n      \"type\": \"number\"\

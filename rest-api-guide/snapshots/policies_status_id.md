@@ -7,7 +7,6 @@ methods:
       name: id
       required: true
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"snapshots_api_policy_status_v1\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"id\": {\n      \"description\":\
         \ \"Unique identifier for the snapshot policy\",\n      \"type\": \"number\"\

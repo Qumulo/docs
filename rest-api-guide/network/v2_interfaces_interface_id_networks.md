@@ -7,7 +7,6 @@ methods:
       name: interface_id
       required: true
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         api_network_config_v2\",\n    \"type\": \"object\",\n    \"properties\": {\n\
         \      \"name\": {\n        \"description\": \"name\",\n        \"type\":\
@@ -48,7 +47,6 @@ methods:
       name: interface_id
       required: true
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_network_config_v2\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"name\": {\n      \"description\": \"name\",\n\
         \      \"type\": \"string\"\n    },\n    \"id\": {\n      \"description\"\

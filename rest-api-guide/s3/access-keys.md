@@ -15,7 +15,6 @@ methods:
       name: limit
       required: false
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_key_description_list_model\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"entries\": {\n      \"type\": \"\
         array\",\n      \"items\": {\n        \"description\": \"entries\",\n    \
@@ -58,7 +57,6 @@ methods:
   post:
     parameters: []
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_key_creation_options\",\n  \"type\": \"\
         object\",\n  \"properties\": {\n    \"user\": {\n      \"description\": \"\
         user\",\n      \"type\": \"object\",\n      \"properties\": {\n        \"\
@@ -83,7 +81,6 @@ methods:
         \    \"name\": {\n          \"description\": \"name\",\n          \"type\"\
         : \"string\"\n        }\n      }\n    }\n  }\n}"
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_created_key\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"access_key_id\": {\n      \"description\": \"\
         The access key ID of the S3 credentials to use in signed requests.\",\n  \

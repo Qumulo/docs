@@ -21,7 +21,6 @@ methods:
       name: limit
       required: false
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_byte_range_waiters\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"waiters\": {\n      \"type\": \"array\",\n \
         \     \"items\": {\n        \"description\": \"waiters\",\n        \"type\"\

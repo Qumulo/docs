@@ -4,7 +4,6 @@ methods:
   get:
     parameters: []
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_certificate_signing_request\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"request\": {\n      \"description\"\
         : \"request\",\n      \"type\": \"string\"\n    }\n  }\n}"

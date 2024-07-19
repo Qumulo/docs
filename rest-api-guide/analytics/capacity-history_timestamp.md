@@ -7,7 +7,6 @@ methods:
       name: timestamp
       required: true
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"historical_capacity_details\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"threshold_for_inclusion\": {\n \
         \     \"description\": \"threshold_for_inclusion\",\n      \"type\": \"string\"\

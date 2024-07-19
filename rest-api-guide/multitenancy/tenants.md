@@ -4,7 +4,6 @@ methods:
   get:
     parameters: []
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_tenant_configs\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"entries\": {\n      \"type\": \"array\",\n \
         \     \"items\": {\n        \"description\": \"List of tenant configs\",\n\
@@ -38,7 +37,6 @@ methods:
   post:
     parameters: []
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_tenant_config_post\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"name\": {\n      \"description\": \"Unique name\
         \ of the tenant chosen by the user.\",\n      \"type\": \"string\"\n    },\n\
@@ -61,7 +59,6 @@ methods:
         \ for the identity configuration to use for this tenant.\",\n      \"type\"\
         : \"number\"\n    }\n  }\n}"
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_tenant_config\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"Unique identifier\
         \ for this tenant configuration.\",\n      \"type\": \"number\"\n    },\n\

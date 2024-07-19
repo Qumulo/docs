@@ -4,7 +4,6 @@ methods:
   get:
     parameters: []
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"encryption_api_v2_status_response\",\n  \"\
         type\": \"object\",\n  \"properties\": {\n    \"type\": {\n      \"type\"\
         : \"string\",\n      \"enum\": [\n        \"Local\",\n        \"KMS\"\n  \

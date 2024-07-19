@@ -15,7 +15,6 @@ methods:
   get:
     parameters: []
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_cluster_ssl_ca_certificate_settings\",\n\
         \  \"type\": \"object\",\n  \"properties\": {\n    \"ca_certificate\": {\n\
         \      \"description\": \"Public certificate of the certificate authority\
@@ -32,14 +31,12 @@ methods:
       name: If-Match
       required: false
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_cluster_ssl_ca_certificate_settings\",\n\
         \  \"type\": \"object\",\n  \"properties\": {\n    \"ca_certificate\": {\n\
         \      \"description\": \"Public certificate of the certificate authority\
         \ to trust for outbound connections\",\n      \"type\": \"string\"\n    }\n\
         \  }\n}"
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_cluster_ssl_ca_certificate_settings\",\n\
         \  \"type\": \"object\",\n  \"properties\": {\n    \"ca_certificate\": {\n\
         \      \"description\": \"Public certificate of the certificate authority\

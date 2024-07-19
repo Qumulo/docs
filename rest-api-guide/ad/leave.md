@@ -4,7 +4,6 @@ methods:
   post:
     parameters: []
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"ad_domain_leave_args\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"domain\": {\n      \"description\": \"domain\"\
         ,\n      \"type\": \"string\"\n    },\n    \"user\": {\n      \"description\"\

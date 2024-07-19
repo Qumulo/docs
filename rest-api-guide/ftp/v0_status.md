@@ -4,7 +4,6 @@ methods:
   get:
     parameters: []
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"ftp_status\",\n  \"type\": \"object\",\n  \"\
         properties\": {\n    \"settings\": {\n      \"description\": \"The current\
         \ FTP server settings.\",\n      \"type\": \"object\",\n      \"properties\"\

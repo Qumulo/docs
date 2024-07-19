@@ -19,7 +19,6 @@ methods:
       name: id
       required: true
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"tree_delete_job_status\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"The ID of\
         \ the directory being deleted.\",\n      \"type\": \"string\"\n    },\n  \

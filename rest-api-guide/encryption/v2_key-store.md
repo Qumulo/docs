@@ -4,7 +4,6 @@ methods:
   get:
     parameters: []
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"encryption_api_v2_key_store_response_union\"\
         ,\n  \"type\": \"object\",\n  \"properties\": {\n    \"type\": {\n      \"\
         type\": \"string\",\n      \"enum\": [\n        \"Local\",\n        \"KMS\"\
@@ -35,7 +34,6 @@ methods:
   put:
     parameters: []
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"encryption_api_v2_put_key_store_union\",\n\
         \  \"type\": \"object\",\n  \"properties\": {\n    \"type\": {\n      \"type\"\
         : \"string\",\n      \"enum\": [\n        \"Local\",\n        \"KMS\"\n  \

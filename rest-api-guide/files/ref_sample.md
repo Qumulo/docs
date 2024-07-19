@@ -19,7 +19,6 @@ methods:
       name: limit
       required: true
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         api_files_aggregates\",\n    \"type\": \"object\",\n    \"properties\": {\n\
         \      \"name\": {\n        \"description\": \"Name of this file or directory\"\

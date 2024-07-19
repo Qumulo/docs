@@ -25,7 +25,6 @@ methods:
       name: limit
       required: false
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_files_user_metadata_range_result\",\n \
         \ \"type\": \"object\",\n  \"properties\": {\n    \"entries\": {\n      \"\
         type\": \"array\",\n      \"items\": {\n        \"description\": \"The list\

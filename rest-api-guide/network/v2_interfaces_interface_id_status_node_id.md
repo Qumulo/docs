@@ -10,7 +10,6 @@ methods:
       name: node_id
       required: true
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_interface_network_statuses\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"node_id\": {\n      \"description\"\
         : \"Node Id\",\n      \"type\": \"number\"\n    },\n    \"node_name\": {\n\

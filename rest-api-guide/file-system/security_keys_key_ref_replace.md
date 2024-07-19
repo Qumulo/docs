@@ -10,7 +10,6 @@ methods:
       name: If-Match
       required: false
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_change_lock_key_replace_request\",\n  \"\
         type\": \"object\",\n  \"properties\": {\n    \"replacement_key\": {\n   \
         \   \"description\": \"The replacement public key.\",\n      \"type\": \"\
@@ -20,7 +19,6 @@ methods:
         : {\n      \"description\": \"The key replacement challenge signed with the\
         \ replacement private key.\",\n      \"type\": \"string\"\n    }\n  }\n}"
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_change_lock_key\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"The identifier\
         \ associated with the specified key.\",\n      \"type\": \"string\"\n    },\n\

@@ -7,7 +7,6 @@ methods:
       name: id
       required: true
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_snapshot_unlock\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"signature\": {\n      \"description\": \"signature\"\
         ,\n      \"type\": \"string\"\n    }\n  }\n}"

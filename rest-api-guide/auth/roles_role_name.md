@@ -20,7 +20,6 @@ methods:
       name: role_name
       required: true
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"role_model\",\n  \"type\": \"object\",\n  \"\
         properties\": {\n    \"description\": {\n      \"description\": \"Description\
         \ of the role\",\n      \"type\": \"string\"\n    },\n    \"privileges\":\
@@ -228,7 +227,6 @@ methods:
       name: If-Match
       required: false
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"role_model_delta\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"description\": {\n      \"description\": \"\
         Description of the role\",\n      \"type\": \"string\"\n    },\n    \"privileges\"\
@@ -424,7 +422,6 @@ methods:
         n * `PRIVILEGE_WEB_UI_SETTINGS_WRITE` - Modify web UI settings\"\n      }\n\
         \    }\n  }\n}"
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"role_model\",\n  \"type\": \"object\",\n  \"\
         properties\": {\n    \"description\": {\n      \"description\": \"Description\
         \ of the role\",\n      \"type\": \"string\"\n    },\n    \"privileges\":\
@@ -632,7 +629,6 @@ methods:
       name: If-Match
       required: false
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"role_model\",\n  \"type\": \"object\",\n  \"\
         properties\": {\n    \"description\": {\n      \"description\": \"Description\
         \ of the role\",\n      \"type\": \"string\"\n    },\n    \"privileges\":\
@@ -828,7 +824,6 @@ methods:
         n * `PRIVILEGE_WEB_UI_SETTINGS_WRITE` - Modify web UI settings\"\n      }\n\
         \    }\n  }\n}"
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"role_model\",\n  \"type\": \"object\",\n  \"\
         properties\": {\n    \"description\": {\n      \"description\": \"Description\
         \ of the role\",\n      \"type\": \"string\"\n    },\n    \"privileges\":\

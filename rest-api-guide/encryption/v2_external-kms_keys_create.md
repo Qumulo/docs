@@ -4,7 +4,6 @@ methods:
   post:
     parameters: []
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"encryption_api_v2_create_kmip_key\",\n  \"\
         type\": \"object\",\n  \"properties\": {\n    \"kms_config\": {\n      \"\
         description\": \"The Key Management Server server parameters. If this is omitted\
@@ -28,7 +27,6 @@ methods:
         : {\n      \"description\": \"The name of the key that will be created in\
         \ the Key Management Server.\",\n      \"type\": \"string\"\n    }\n  }\n}"
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"encryption_api_v2_create_kmip_key_result\"\
         ,\n  \"type\": \"object\",\n  \"properties\": {\n    \"key_id\": {\n     \
         \ \"description\": \"The key id of the newly created key on the Key Management\

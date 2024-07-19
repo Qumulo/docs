@@ -12,7 +12,6 @@ methods:
       name: limit
       required: false
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_files_quota_entries\",\n  \"type\": \"\
         object\",\n  \"properties\": {\n    \"quotas\": {\n      \"type\": \"array\"\
         ,\n      \"items\": {\n        \"description\": \"quotas\",\n        \"type\"\
@@ -29,7 +28,6 @@ methods:
   post:
     parameters: []
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_files_quota\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"Unique ID\
         \ of this directory.\",\n      \"type\": \"string\"\n    },\n    \"limit\"\
@@ -37,7 +35,6 @@ methods:
         \ directory and its descendants.\",\n      \"type\": \"string\"\n    }\n \
         \ }\n}"
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_files_quota\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"Unique ID\
         \ of this directory.\",\n      \"type\": \"string\"\n    },\n    \"limit\"\

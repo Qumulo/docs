@@ -56,10 +56,8 @@ methods:
       name: If-Match
       required: false
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"type\": \"object\"\n}"
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_named_stream_attributes\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"name\": {\n      \"description\"\
         : \"name\",\n      \"type\": \"string\"\n    },\n    \"id\": {\n      \"description\"\
@@ -89,10 +87,8 @@ methods:
       name: If-Match
       required: false
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"type\": \"object\"\n}"
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_named_stream_attributes\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"name\": {\n      \"description\"\
         : \"name\",\n      \"type\": \"string\"\n    },\n    \"id\": {\n      \"description\"\

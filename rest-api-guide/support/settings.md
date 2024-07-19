@@ -4,7 +4,6 @@ methods:
   get:
     parameters: []
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"monitoring_config\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"enabled\": {\n      \"description\": \"enabled\"\
         ,\n      \"type\": \"boolean\"\n    },\n    \"mq_host\": {\n      \"description\"\
@@ -37,7 +36,6 @@ methods:
       name: If-Match
       required: false
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"monitoring_config\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"enabled\": {\n      \"description\": \"enabled\"\
         ,\n      \"type\": \"boolean\"\n    },\n    \"mq_host\": {\n      \"description\"\
@@ -71,7 +69,6 @@ methods:
       name: If-Match
       required: false
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"monitoring_config\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"enabled\": {\n      \"description\": \"enabled\"\
         ,\n      \"type\": \"boolean\"\n    },\n    \"mq_host\": {\n      \"description\"\

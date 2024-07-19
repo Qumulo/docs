@@ -15,7 +15,6 @@ methods:
       name: limit
       required: false
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_access_token_metadata_list_model\",\n \
         \ \"type\": \"object\",\n  \"properties\": {\n    \"entries\": {\n      \"\
         type\": \"array\",\n      \"items\": {\n        \"description\": \"entries\"\
@@ -86,7 +85,6 @@ methods:
   post:
     parameters: []
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_create_access_token_request\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"user\": {\n      \"description\"\
         : \"User to create an access token for.\",\n      \"type\": \"object\",\n\
@@ -114,7 +112,6 @@ methods:
         \ the access token is expired.\",\n      \"type\": \"string\"\n    }\n  }\n\
         }"
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_access_token\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"The access\
         \ token's identifier for management APIs.\",\n      \"type\": \"string\"\n\

@@ -4,7 +4,6 @@ methods:
   get:
     parameters: []
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_dns_lookup_override_config\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"lookup_overrides\": {\n      \"\
         type\": \"array\",\n      \"items\": {\n        \"description\": \"lookup_overrides\"\
@@ -26,7 +25,6 @@ methods:
       name: If-Match
       required: false
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_dns_lookup_override_config\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"lookup_overrides\": {\n      \"\
         type\": \"array\",\n      \"items\": {\n        \"description\": \"lookup_overrides\"\
@@ -37,7 +35,6 @@ methods:
         : \"aliases\",\n              \"type\": \"string\"\n            }\n      \
         \    }\n        }\n      }\n    }\n  }\n}"
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_dns_lookup_override_config\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"lookup_overrides\": {\n      \"\
         type\": \"array\",\n      \"items\": {\n        \"description\": \"lookup_overrides\"\

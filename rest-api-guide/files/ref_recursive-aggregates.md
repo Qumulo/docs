@@ -30,7 +30,6 @@ methods:
       name: snapshot
       required: false
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         api_files_dir_aggregates\",\n    \"type\": \"object\",\n    \"properties\"\
         : {\n      \"path\": {\n        \"description\": \"path\",\n        \"type\"\

@@ -4,7 +4,6 @@ methods:
   post:
     parameters: []
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_cluster_nodes_modify_request_v2\",\n  \"\
         type\": \"object\",\n  \"properties\": {\n    \"node_uuids\": {\n      \"\
         type\": \"array\",\n      \"items\": {\n        \"description\": \"The UUIDs\
@@ -27,7 +26,6 @@ methods:
         : \"The number of data blocks per stripe.\",\n          \"type\": \"number\"\
         \n        }\n      }\n    }\n  }\n}"
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_cluster_nodes_modify_dry_run_response\"\
         ,\n  \"type\": \"object\",\n  \"properties\": {\n    \"current_capacity\"\
         : {\n      \"description\": \"The cluster's current usable capacity (in bytes)\"\

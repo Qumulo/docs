@@ -15,7 +15,6 @@ methods:
       name: limit
       required: false
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_upload_description_list_model\",\n  \"\
         type\": \"object\",\n  \"properties\": {\n    \"uploads\": {\n      \"type\"\
         : \"array\",\n      \"items\": {\n        \"description\": \"uploads\",\n\

@@ -8,7 +8,6 @@ methods:
       name: sid
       required: true
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         api_ad_group_sid\",\n    \"type\": \"object\",\n    \"properties\": {\n  \
         \    \"sid\": {\n        \"description\": \"sid\",\n        \"type\": \"string\"\

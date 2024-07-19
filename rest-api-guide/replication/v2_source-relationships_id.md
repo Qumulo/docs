@@ -21,7 +21,6 @@ methods:
       name: id
       required: true
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_source_relationship\",\n  \"type\": \"\
         object\",\n  \"properties\": {\n    \"id\": {\n      \"description\": \"Unique\
         \ identifier of the replication relationship\",\n      \"type\": \"string\"\
@@ -101,7 +100,6 @@ methods:
       name: If-Match
       required: false
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_source_relationship\",\n  \"type\": \"\
         object\",\n  \"properties\": {\n    \"id\": {\n      \"description\": \"Unique\
         \ identifier of the replication relationship\",\n      \"type\": \"string\"\
@@ -168,7 +166,6 @@ methods:
         \ same time as the snapshot policy specifies.\",\n            \"type\": \"\
         string\"\n          }\n        }\n      }\n    }\n  }\n}"
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_source_relationship\",\n  \"type\": \"\
         object\",\n  \"properties\": {\n    \"id\": {\n      \"description\": \"Unique\
         \ identifier of the replication relationship\",\n      \"type\": \"string\"\
@@ -248,7 +245,6 @@ methods:
       name: If-Match
       required: false
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_source_relationship\",\n  \"type\": \"\
         object\",\n  \"properties\": {\n    \"id\": {\n      \"description\": \"Unique\
         \ identifier of the replication relationship\",\n      \"type\": \"string\"\
@@ -315,7 +311,6 @@ methods:
         \ same time as the snapshot policy specifies.\",\n            \"type\": \"\
         string\"\n          }\n        }\n      }\n    }\n  }\n}"
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_source_relationship\",\n  \"type\": \"\
         object\",\n  \"properties\": {\n    \"id\": {\n      \"description\": \"Unique\
         \ identifier of the replication relationship\",\n      \"type\": \"string\"\

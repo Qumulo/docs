@@ -7,7 +7,6 @@ methods:
       name: uid_number
       required: true
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_ldap_uid_number_to_login_names\",\n  \"\
         type\": \"object\",\n  \"properties\": {\n    \"uid_number\": {\n      \"\
         description\": \"uid_number\",\n      \"type\": \"number\"\n    },\n    \"\

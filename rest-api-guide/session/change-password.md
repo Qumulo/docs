@@ -4,7 +4,6 @@ methods:
   post:
     parameters: []
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"password_change\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"old_password\": {\n      \"description\": \"\
         The current password\",\n      \"type\": \"string\",\n      \"format\": \"\

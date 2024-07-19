@@ -20,7 +20,6 @@ methods:
       name: export_id
       required: true
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_nfs_export_v3\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"The unique\
         \ ID of the NFS export\",\n      \"type\": \"string\"\n    },\n    \"export_path\"\
@@ -104,7 +103,6 @@ methods:
       name: If-Match
       required: false
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_nfs_export_patch_v3\",\n  \"type\": \"\
         object\",\n  \"properties\": {\n    \"id\": {\n      \"description\": \"The\
         \ unique ID of the NFS export\",\n      \"type\": \"string\"\n    },\n   \
@@ -171,7 +169,6 @@ methods:
         \ `FS_SIZE` - Clamp available, used and total space reported for the FS to\
         \ 4GiB.\"\n      }\n    }\n  }\n}"
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_nfs_export_v3\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"The unique\
         \ ID of the NFS export\",\n      \"type\": \"string\"\n    },\n    \"export_path\"\
@@ -254,7 +251,6 @@ methods:
       name: If-Match
       required: false
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_nfs_export_v3\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"The unique\
         \ ID of the NFS export\",\n      \"type\": \"string\"\n    },\n    \"export_path\"\
@@ -321,7 +317,6 @@ methods:
         \ `FS_SIZE` - Clamp available, used and total space reported for the FS to\
         \ 4GiB.\"\n      }\n    }\n  }\n}"
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_nfs_export_v3\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"The unique\
         \ ID of the NFS export\",\n      \"type\": \"string\"\n    },\n    \"export_path\"\

@@ -7,7 +7,6 @@ methods:
       name: sid
       required: true
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"type\": \"string\"\n}"
     responses:
     - code: '200'

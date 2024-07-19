@@ -21,7 +21,6 @@ methods:
       name: id
       required: true
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_smb_settings\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"session_encryption\": {\n      \"type\": \"\
         string\",\n      \"enum\": [\n        \"NONE\",\n        \"PREFERRED\",\n\
@@ -64,7 +63,6 @@ methods:
       name: If-Match
       required: false
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_smb_settings_patch\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"session_encryption\": {\n      \"type\": \"\
         string\",\n      \"enum\": [\n        \"NONE\",\n        \"PREFERRED\",\n\
@@ -95,7 +93,6 @@ methods:
         \  \"description\": \"Requires messages from non-guest users to be signed.\"\
         ,\n      \"type\": \"boolean\"\n    }\n  }\n}"
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_smb_settings\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"session_encryption\": {\n      \"type\": \"\
         string\",\n      \"enum\": [\n        \"NONE\",\n        \"PREFERRED\",\n\
@@ -138,7 +135,6 @@ methods:
       name: If-Match
       required: false
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_smb_settings\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"session_encryption\": {\n      \"type\": \"\
         string\",\n      \"enum\": [\n        \"NONE\",\n        \"PREFERRED\",\n\
@@ -169,7 +165,6 @@ methods:
         \  \"description\": \"Requires messages from non-guest users to be signed.\"\
         ,\n      \"type\": \"boolean\"\n    }\n  }\n}"
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_smb_settings\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"session_encryption\": {\n      \"type\": \"\
         string\",\n      \"enum\": [\n        \"NONE\",\n        \"PREFERRED\",\n\

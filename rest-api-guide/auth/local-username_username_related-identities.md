@@ -7,7 +7,6 @@ methods:
       name: username
       required: true
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         api_identity_v1\",\n    \"type\": \"object\",\n    \"properties\": {\n   \
         \   \"id_type\": {\n        \"type\": \"string\",\n        \"enum\": [\n \

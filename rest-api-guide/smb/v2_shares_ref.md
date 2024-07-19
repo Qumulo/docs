@@ -20,7 +20,6 @@ methods:
       name: ref
       required: true
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_smb_share_v2\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"The unique\
         \ ID of the SMB share\",\n      \"type\": \"string\"\n    },\n    \"share_name\"\
@@ -159,7 +158,6 @@ methods:
       name: If-Match
       required: false
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_smb_share_v2\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"The unique\
         \ ID of the SMB share\",\n      \"type\": \"string\"\n    },\n    \"share_name\"\
@@ -281,7 +279,6 @@ methods:
         : \"The tenant ID of the tenant that the SMB share is a part of\",\n     \
         \ \"type\": \"number\"\n    }\n  }\n}"
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_smb_share_v2\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"The unique\
         \ ID of the SMB share\",\n      \"type\": \"string\"\n    },\n    \"share_name\"\
@@ -419,7 +416,6 @@ methods:
       name: If-Match
       required: false
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_smb_share_v2\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"The unique\
         \ ID of the SMB share\",\n      \"type\": \"string\"\n    },\n    \"share_name\"\
@@ -541,7 +537,6 @@ methods:
         : \"The tenant ID of the tenant that the SMB share is a part of\",\n     \
         \ \"type\": \"number\"\n    }\n  }\n}"
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_smb_share_v2\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"The unique\
         \ ID of the SMB share\",\n      \"type\": \"string\"\n    },\n    \"share_name\"\

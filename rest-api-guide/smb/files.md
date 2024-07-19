@@ -19,7 +19,6 @@ methods:
       name: limit
       required: false
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_smb_files_get_response\",\n  \"type\":\
         \ \"object\",\n  \"properties\": {\n    \"file_handles\": {\n      \"type\"\
         : \"array\",\n      \"items\": {\n        \"description\": \"file_handles\"\

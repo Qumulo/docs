@@ -7,7 +7,6 @@ methods:
       name: username
       required: true
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         ad_ldap_object\",\n    \"type\": \"object\",\n    \"properties\": {\n    \
         \  \"dn\": {\n        \"description\": \"dn\",\n        \"type\": \"string\"\

@@ -4,7 +4,6 @@ methods:
   post:
     parameters: []
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"saml_login_verification\",\n  \"type\": \"\
         object\",\n  \"properties\": {\n    \"login_id\": {\n      \"description\"\
         : \"A unique, Qumulo-generated login_id associated with a SAML SSO authentication\
@@ -13,7 +12,6 @@ methods:
         \ the SAML SSO authentication session is user-initiated.\",\n      \"type\"\
         : \"string\"\n    }\n  }\n}"
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"credentials\",\n  \"type\": \"object\",\n \
         \ \"properties\": {\n    \"bearer_token\": {\n      \"description\": \"bearer_token\"\
         ,\n      \"type\": \"string\"\n    }\n  }\n}"

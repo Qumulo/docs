@@ -7,7 +7,6 @@ methods:
       name: id
       required: true
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_node_chassis\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"id\",\n  \
         \    \"type\": \"number\"\n    },\n    \"light_visible\": {\n      \"description\"\

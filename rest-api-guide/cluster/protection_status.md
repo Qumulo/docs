@@ -4,7 +4,6 @@ methods:
   get:
     parameters: []
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_protection_status\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"blocks_per_stripe\": {\n      \"description\"\
         : \"The total number of blocks per stripe, including parity.\",\n      \"\

@@ -4,7 +4,6 @@ methods:
   post:
     parameters: []
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_cluster_calculate_node_add_capacity_request\"\
         ,\n  \"type\": \"object\",\n  \"properties\": {\n    \"node_uuids\": {\n \
         \     \"type\": \"array\",\n      \"items\": {\n        \"description\": \"\
@@ -14,7 +13,6 @@ methods:
         \ existing cluster\",\n        \"type\": \"string\"\n      }\n    }\n  }\n\
         }"
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_cluster_calculate_node_add_capacity_response\"\
         ,\n  \"type\": \"object\",\n  \"properties\": {\n    \"new_usable_capacity_in_bytes\"\
         : {\n      \"description\": \"The cluster's usable capacity (in bytes) after\

@@ -4,7 +4,6 @@ methods:
   get:
     parameters: []
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"fs_notify_config\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"recursive_mode\": {\n      \"type\": \"string\"\
         ,\n      \"enum\": [\n        \"DISABLED_ERROR\",\n        \"DISABLED_IGNORE\"\
@@ -22,7 +21,6 @@ methods:
       name: If-Match
       required: false
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"fs_notify_config\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"recursive_mode\": {\n      \"type\": \"string\"\
         ,\n      \"enum\": [\n        \"DISABLED_ERROR\",\n        \"DISABLED_IGNORE\"\
@@ -31,7 +29,6 @@ methods:
         \ - FS_NOTIFY_RECURSIVE_MODE_DISABLED_IGNORE,\\n * `ENABLED` - FS_NOTIFY_RECURSIVE_MODE_ENABLED\"\
         \n    }\n  }\n}"
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"fs_notify_config\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"recursive_mode\": {\n      \"type\": \"string\"\
         ,\n      \"enum\": [\n        \"DISABLED_ERROR\",\n        \"DISABLED_IGNORE\"\

@@ -4,7 +4,6 @@ methods:
   get:
     parameters: []
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         api_user\",\n    \"type\": \"object\",\n    \"properties\": {\n      \"id\"\
         : {\n        \"description\": \"The user's unique id\",\n        \"type\"\
@@ -27,7 +26,6 @@ methods:
   post:
     parameters: []
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_user_post\",\n  \"type\": \"object\",\n\
         \  \"properties\": {\n    \"name\": {\n      \"description\": \"The user's\
         \ account name\",\n      \"type\": \"string\"\n    },\n    \"primary_group\"\
@@ -39,7 +37,6 @@ methods:
         The user's password\",\n      \"type\": \"string\",\n      \"format\": \"\
         password\"\n    }\n  }\n}"
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_user\",\n  \"type\": \"object\",\n  \"\
         properties\": {\n    \"id\": {\n      \"description\": \"The user's unique\
         \ id\",\n      \"type\": \"string\"\n    },\n    \"name\": {\n      \"description\"\

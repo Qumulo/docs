@@ -8,11 +8,9 @@ methods:
       name: snapshot
       required: false
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"type\": \"string\"\
         \n  }\n}"
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         fs_api_ref_id_path\",\n    \"type\": \"object\",\n    \"properties\": {\n\
         \      \"id\": {\n        \"description\": \"Unique ID of this file or directory\"\

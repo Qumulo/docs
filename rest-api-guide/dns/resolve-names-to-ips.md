@@ -4,11 +4,9 @@ methods:
   post:
     parameters: []
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"type\": \"string\"\
         \n  }\n}"
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         api_resolved_hostname\",\n    \"type\": \"object\",\n    \"properties\": {\n\
         \      \"hostname\": {\n        \"description\": \"The hostname which was\

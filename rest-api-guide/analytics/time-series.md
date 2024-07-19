@@ -8,7 +8,6 @@ methods:
       name: begin-time
       required: false
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         api_time_series_dataset\",\n    \"type\": \"object\",\n    \"properties\"\
         : {\n      \"id\": {\n        \"description\": \"id\",\n        \"type\":\

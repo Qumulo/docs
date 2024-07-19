@@ -21,7 +21,6 @@ methods:
       name: id
       required: true
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_object_relationship_v3\",\n  \"type\":\
         \ \"object\",\n  \"properties\": {\n    \"id\": {\n      \"description\":\
         \ \"Unique identifier of the replication relationship\",\n      \"type\":\

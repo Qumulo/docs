@@ -4,7 +4,6 @@ methods:
   get:
     parameters: []
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"vpn_keys\",\n  \"type\": \"object\",\n  \"\
         properties\": {\n    \"mqvpn_client_crt\": {\n      \"description\": \"mqvpn_client_crt\"\
         ,\n      \"type\": \"string\"\n    },\n    \"mqvpn_client_key\": {\n     \
@@ -18,7 +17,6 @@ methods:
   patch:
     parameters: []
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"vpn_keys_patch\",\n  \"type\": \"object\",\n\
         \  \"properties\": {\n    \"mqvpn_client_crt\": {\n      \"description\":\
         \ \"mqvpn_client_crt\",\n      \"type\": \"string\"\n    },\n    \"mqvpn_client_key\"\
@@ -26,7 +24,6 @@ methods:
         \n    },\n    \"qumulo_ca_crt\": {\n      \"description\": \"qumulo_ca_crt\"\
         ,\n      \"type\": \"string\"\n    }\n  }\n}"
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"vpn_keys\",\n  \"type\": \"object\",\n  \"\
         properties\": {\n    \"mqvpn_client_crt\": {\n      \"description\": \"mqvpn_client_crt\"\
         ,\n      \"type\": \"string\"\n    },\n    \"mqvpn_client_key\": {\n     \
@@ -40,7 +37,6 @@ methods:
   put:
     parameters: []
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"vpn_keys\",\n  \"type\": \"object\",\n  \"\
         properties\": {\n    \"mqvpn_client_crt\": {\n      \"description\": \"mqvpn_client_crt\"\
         ,\n      \"type\": \"string\"\n    },\n    \"mqvpn_client_key\": {\n     \
@@ -48,7 +44,6 @@ methods:
         \ },\n    \"qumulo_ca_crt\": {\n      \"description\": \"qumulo_ca_crt\",\n\
         \      \"type\": \"string\"\n    }\n  }\n}"
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"vpn_keys\",\n  \"type\": \"object\",\n  \"\
         properties\": {\n    \"mqvpn_client_crt\": {\n      \"description\": \"mqvpn_client_crt\"\
         ,\n      \"type\": \"string\"\n    },\n    \"mqvpn_client_key\": {\n     \

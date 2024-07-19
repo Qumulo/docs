@@ -4,7 +4,6 @@ methods:
   get:
     parameters: []
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         api_nfs_export\",\n    \"type\": \"object\",\n    \"properties\": {\n    \
         \  \"id\": {\n        \"description\": \"The unique ID of the NFS export\"\
@@ -86,7 +85,6 @@ methods:
       name: allow-fs-path-create
       required: false
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_nfs_export_post\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"export_path\": {\n      \"description\": \"\
         The NFS export path\",\n      \"type\": \"string\"\n    },\n    \"fs_path\"\
@@ -150,7 +148,6 @@ methods:
         \ available, used and total space reported for the FS to 4GiB.\"\n      }\n\
         \    }\n  }\n}"
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_nfs_export\",\n  \"type\": \"object\",\n\
         \  \"properties\": {\n    \"id\": {\n      \"description\": \"The unique ID\
         \ of the NFS export\",\n      \"type\": \"string\"\n    },\n    \"export_path\"\

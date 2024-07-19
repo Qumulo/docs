@@ -43,7 +43,6 @@ methods:
       name: snapshot
       required: false
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_files_user_metadata_value\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"value\": {\n      \"type\": \"array\"\
         ,\n      \"items\": {\n        \"description\": \"The bytes that represent\
@@ -72,7 +71,6 @@ methods:
       name: If-Match
       required: false
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_files_user_metadata_value\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"value\": {\n      \"type\": \"array\"\
         ,\n      \"items\": {\n        \"description\": \"The bytes that represent\
@@ -102,7 +100,6 @@ methods:
       name: If-Match
       required: false
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_files_user_metadata_value\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"value\": {\n      \"type\": \"array\"\
         ,\n      \"items\": {\n        \"description\": \"The bytes that represent\

@@ -17,7 +17,6 @@ methods:
       name: floating
       required: false
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_static_ip_allocation_summary\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"total_ips\": {\n      \"description\"\
         : \"Total number of IP addresses in the given IP ranges\",\n      \"type\"\

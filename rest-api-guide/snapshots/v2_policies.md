@@ -4,7 +4,6 @@ methods:
   get:
     parameters: []
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_snapshot_policies_v2\",\n  \"type\": \"\
         object\",\n  \"properties\": {\n    \"entries\": {\n      \"type\": \"array\"\
         ,\n      \"items\": {\n        \"description\": \"List of snapshot policy\
@@ -106,7 +105,6 @@ methods:
   post:
     parameters: []
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_snapshot_policy_create_v2\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"policy_name\": {\n      \"description\"\
         : \"The snapshot policy name.\",\n      \"type\": \"string\"\n    },\n   \
@@ -188,7 +186,6 @@ methods:
         \ snapshot taking is enabled for this policy (defaults to true).\",\n    \
         \  \"type\": \"boolean\"\n    }\n  }\n}"
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_snapshot_policy_info_v2\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"id\": {\n      \"description\":\
         \ \"The unique identifier for the snapshot policy.\",\n      \"type\": \"\

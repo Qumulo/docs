@@ -20,7 +20,6 @@ methods:
       name: id
       required: true
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_snapshot_info\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"The unique\
         \ snapshot identifier.\",\n      \"type\": \"number\"\n    },\n    \"name\"\
@@ -51,7 +50,6 @@ methods:
       name: If-Match
       required: false
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_snapshot_info\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"The unique\
         \ snapshot identifier.\",\n      \"type\": \"number\"\n    },\n    \"name\"\
@@ -70,7 +68,6 @@ methods:
         : {\n      \"description\": \"Specifies whether the snapshot is in the process\
         \ of being deleted.\",\n      \"type\": \"boolean\"\n    }\n  }\n}"
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_snapshot_info\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"The unique\
         \ snapshot identifier.\",\n      \"type\": \"number\"\n    },\n    \"name\"\
@@ -101,7 +98,6 @@ methods:
       name: If-Match
       required: false
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_snapshot_info\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"The unique\
         \ snapshot identifier.\",\n      \"type\": \"number\"\n    },\n    \"name\"\
@@ -120,7 +116,6 @@ methods:
         : {\n      \"description\": \"Specifies whether the snapshot is in the process\
         \ of being deleted.\",\n      \"type\": \"boolean\"\n    }\n  }\n}"
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_snapshot_info\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"The unique\
         \ snapshot identifier.\",\n      \"type\": \"number\"\n    },\n    \"name\"\

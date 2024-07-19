@@ -22,7 +22,6 @@ methods:
       name: limit
       required: false
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_share_mode_grants\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"grants\": {\n      \"type\": \"array\",\n  \
         \    \"items\": {\n        \"description\": \"grants\",\n        \"type\"\

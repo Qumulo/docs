@@ -21,7 +21,6 @@ methods:
       name: limit
       required: false
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_nfs4_byte_range_grants\",\n  \"type\":\
         \ \"object\",\n  \"properties\": {\n    \"grants\": {\n      \"type\": \"\
         array\",\n      \"items\": {\n        \"description\": \"grants\",\n     \

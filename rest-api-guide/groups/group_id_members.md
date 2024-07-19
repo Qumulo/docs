@@ -7,7 +7,6 @@ methods:
       name: group_id
       required: true
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         api_user\",\n    \"type\": \"object\",\n    \"properties\": {\n      \"id\"\
         : {\n        \"description\": \"The user's unique id\",\n        \"type\"\
@@ -33,12 +32,10 @@ methods:
       name: group_id
       required: true
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_member_auth_id\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"member_id\": {\n      \"description\": \"Unique\
         \ ID of a user\",\n      \"type\": \"string\"\n    }\n  }\n}"
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_user\",\n  \"type\": \"object\",\n  \"\
         properties\": {\n    \"id\": {\n      \"description\": \"The user's unique\
         \ id\",\n      \"type\": \"string\"\n    },\n    \"name\": {\n      \"description\"\

@@ -7,7 +7,6 @@ methods:
       name: id
       required: true
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_disk_slot\",\n  \"type\": \"object\",\n\
         \  \"properties\": {\n    \"id\": {\n      \"description\": \"Node:Slot representation\
         \ identifying the slot\",\n      \"type\": \"string\"\n    },\n    \"node_id\"\
@@ -68,7 +67,6 @@ methods:
       name: id
       required: true
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_disk_slot_patch\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"led_pattern\": {\n      \"type\": \"string\"\
         ,\n      \"enum\": [\n        \"LED_PATTERN_NORMAL\",\n        \"LED_PATTERN_LOCATE\"\
@@ -76,7 +74,6 @@ methods:
         n * `LED_PATTERN_FAILURE` - failure,\\n * `LED_PATTERN_LOCATE` - locate,\\\
         n * `LED_PATTERN_NORMAL` - normal\"\n    }\n  }\n}"
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_disk_slot\",\n  \"type\": \"object\",\n\
         \  \"properties\": {\n    \"id\": {\n      \"description\": \"Node:Slot representation\
         \ identifying the slot\",\n      \"type\": \"string\"\n    },\n    \"node_id\"\

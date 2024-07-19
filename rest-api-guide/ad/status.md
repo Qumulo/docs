@@ -4,7 +4,6 @@ methods:
   get:
     parameters: []
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_ad_status\",\n  \"type\": \"object\",\n\
         \  \"properties\": {\n    \"status\": {\n      \"type\": \"string\",\n   \
         \   \"enum\": [\n        \"NOT_IN_DOMAIN\",\n        \"JOINED_TO_DOMAIN\"\n\

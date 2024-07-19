@@ -4,7 +4,6 @@ methods:
   get:
     parameters: []
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         api_smb_share\",\n    \"type\": \"object\",\n    \"properties\": {\n     \
         \ \"id\": {\n        \"description\": \"The unique ID of the SMB share\",\n\
@@ -40,7 +39,6 @@ methods:
       name: allow-fs-path-create
       required: false
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_smb_share_post\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"share_name\": {\n      \"description\": \"The\
         \ SMB share name\",\n      \"type\": \"string\"\n    },\n    \"fs_path\":\
@@ -60,7 +58,6 @@ methods:
         \ 0755 if this field is empty)\",\n      \"type\": \"string\"\n    }\n  }\n\
         }"
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_smb_share\",\n  \"type\": \"object\",\n\
         \  \"properties\": {\n    \"id\": {\n      \"description\": \"The unique ID\
         \ of the SMB share\",\n      \"type\": \"string\"\n    },\n    \"share_name\"\

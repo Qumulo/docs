@@ -4,7 +4,6 @@ methods:
   get:
     parameters: []
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_node_replacement_plan\",\n  \"type\": \"\
         object\",\n  \"properties\": {\n    \"nodes_to_be_replaced\": {\n      \"\
         type\": \"array\",\n      \"items\": {\n        \"description\": \"Nodes selected\
@@ -28,7 +27,6 @@ methods:
   post:
     parameters: []
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_cluster_node_replacement_request\",\n \
         \ \"type\": \"object\",\n  \"properties\": {\n    \"nodes_to_be_replaced\"\
         : {\n      \"type\": \"array\",\n      \"items\": {\n        \"description\"\

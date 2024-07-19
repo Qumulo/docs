@@ -13,7 +13,6 @@ methods:
       name: If-Match
       required: false
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_files_copy_chunk\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"source_id\": {\n      \"description\": \"File\
         \ ID of the source file. Exactly one of source_id or source_path must be provided.\"\
@@ -38,7 +37,6 @@ methods:
         \ this ETag will be validated against the server to ensure no intermediate\
         \ change has occurred.\",\n      \"type\": \"string\"\n    }\n  }\n}"
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_files_copy_chunk\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"source_id\": {\n      \"description\": \"File\
         \ ID of the source file. Exactly one of source_id or source_path must be provided.\"\

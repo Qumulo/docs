@@ -23,7 +23,6 @@ methods:
       name: member_id
       required: true
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_identity\",\n  \"type\": \"object\",\n\
         \  \"properties\": {\n    \"domain\": {\n      \"type\": \"string\",\n   \
         \   \"enum\": [\n        \"LOCAL\",\n        \"API_NULL_DOMAIN\",\n      \

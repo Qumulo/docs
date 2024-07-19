@@ -4,7 +4,6 @@ methods:
   get:
     parameters: []
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"atime_config\",\n  \"type\": \"object\",\n\
         \  \"properties\": {\n    \"enabled\": {\n      \"description\": \"Whether\
         \ atime update is enabled\",\n      \"type\": \"boolean\"\n    },\n    \"\
@@ -23,7 +22,6 @@ methods:
       name: If-Match
       required: false
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"atime_config_patch\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"enabled\": {\n      \"description\": \"Whether\
         \ atime update is enabled\",\n      \"type\": \"boolean\"\n    },\n    \"\
@@ -33,7 +31,6 @@ methods:
         n * `HOUR` - ATIME_GRANULARITY_HOUR,\\n * `WEEK` - ATIME_GRANULARITY_WEEK\"\
         \n    }\n  }\n}"
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"atime_config\",\n  \"type\": \"object\",\n\
         \  \"properties\": {\n    \"enabled\": {\n      \"description\": \"Whether\
         \ atime update is enabled\",\n      \"type\": \"boolean\"\n    },\n    \"\
@@ -52,7 +49,6 @@ methods:
       name: If-Match
       required: false
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"atime_config\",\n  \"type\": \"object\",\n\
         \  \"properties\": {\n    \"enabled\": {\n      \"description\": \"Whether\
         \ atime update is enabled\",\n      \"type\": \"boolean\"\n    },\n    \"\
@@ -62,7 +58,6 @@ methods:
         n * `HOUR` - ATIME_GRANULARITY_HOUR,\\n * `WEEK` - ATIME_GRANULARITY_WEEK\"\
         \n    }\n  }\n}"
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"atime_config\",\n  \"type\": \"object\",\n\
         \  \"properties\": {\n    \"enabled\": {\n      \"description\": \"Whether\
         \ atime update is enabled\",\n      \"type\": \"boolean\"\n    },\n    \"\

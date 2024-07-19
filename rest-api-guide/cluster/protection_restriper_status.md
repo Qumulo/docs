@@ -4,7 +4,6 @@ methods:
   get:
     parameters: []
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_restriper_status_v2\",\n  \"type\": \"\
         object\",\n  \"properties\": {\n    \"state\": {\n      \"type\": \"string\"\
         ,\n      \"enum\": [\n        \"NOT_STARTED\",\n        \"RUNNING\",\n   \

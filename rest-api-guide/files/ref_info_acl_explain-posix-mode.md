@@ -14,7 +14,6 @@ methods:
       name: snapshot
       required: false
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_files_derive_mode_explanation\",\n  \"\
         type\": \"object\",\n  \"properties\": {\n    \"mode\": {\n      \"description\"\
         : \"The resulting mode\",\n      \"type\": \"string\"\n    },\n    \"owner\"\

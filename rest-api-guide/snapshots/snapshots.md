@@ -4,7 +4,6 @@ methods:
   get:
     parameters: []
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_snapshots_v1\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"entries\": {\n      \"type\": \"array\",\n \
         \     \"items\": {\n        \"description\": \"List of snapshot information\"\
@@ -43,7 +42,6 @@ methods:
       name: expiration-time-to-live
       required: false
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_snapshot_create_v1\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"name\": {\n      \"description\": \"Name of\
         \ the snapshot\",\n      \"type\": \"string\"\n    },\n    \"expiration\"\
@@ -52,7 +50,6 @@ methods:
         \ subset of ISO 8601. See http://tools.ietf.org/rfc/rfc3339.txt, section 5.6\
         \ for ABNF.\",\n      \"type\": \"string\"\n    }\n  }\n}"
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_snapshot_info_v1\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"Unique identifier\
         \ of the snapshot\",\n      \"type\": \"number\"\n    },\n    \"name\": {\n\

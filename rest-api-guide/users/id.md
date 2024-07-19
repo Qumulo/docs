@@ -17,7 +17,6 @@ methods:
       name: id
       required: true
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_user\",\n  \"type\": \"object\",\n  \"\
         properties\": {\n    \"id\": {\n      \"description\": \"The user's unique\
         \ id\",\n      \"type\": \"string\"\n    },\n    \"name\": {\n      \"description\"\
@@ -44,7 +43,6 @@ methods:
       name: If-Match
       required: false
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_user_put\",\n  \"type\": \"object\",\n\
         \  \"properties\": {\n    \"id\": {\n      \"description\": \"The user's unique\
         \ ID\",\n      \"type\": \"string\"\n    },\n    \"name\": {\n      \"description\"\
@@ -57,7 +55,6 @@ methods:
         The user's password\",\n      \"type\": \"string\",\n      \"format\": \"\
         password\"\n    }\n  }\n}"
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_user\",\n  \"type\": \"object\",\n  \"\
         properties\": {\n    \"id\": {\n      \"description\": \"The user's unique\
         \ id\",\n      \"type\": \"string\"\n    },\n    \"name\": {\n      \"description\"\

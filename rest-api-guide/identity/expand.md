@@ -4,7 +4,6 @@ methods:
   post:
     parameters: []
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_id_to_expand\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"The identity\
         \ to expand.\",\n      \"type\": \"object\",\n      \"properties\": {\n  \
@@ -78,7 +77,6 @@ methods:
         \           \"type\": \"string\"\n          }\n        }\n      }\n    }\n\
         \  }\n}"
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_expanded_id\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"The identity\
         \ that was expanded.\",\n      \"type\": \"object\",\n      \"properties\"\

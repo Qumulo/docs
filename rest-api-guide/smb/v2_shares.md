@@ -8,7 +8,6 @@ methods:
       name: populate-trustee-names
       required: false
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         api_smb_share_v2\",\n    \"type\": \"object\",\n    \"properties\": {\n  \
         \    \"id\": {\n        \"description\": \"The unique ID of the SMB share\"\
@@ -146,7 +145,6 @@ methods:
       name: allow-fs-path-create
       required: false
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_smb_share_post_v2\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"share_name\": {\n      \"description\": \"The\
         \ SMB share name\",\n      \"type\": \"string\"\n    },\n    \"fs_path\":\
@@ -264,7 +262,6 @@ methods:
         \ is false if this field is empty.\",\n      \"type\": \"boolean\"\n    }\n\
         \  }\n}"
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_smb_share_v2\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"The unique\
         \ ID of the SMB share\",\n      \"type\": \"string\"\n    },\n    \"share_name\"\

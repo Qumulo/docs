@@ -7,7 +7,6 @@ methods:
       name: sid
       required: true
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_ad_gid\",\n  \"type\": \"object\",\n  \"\
         properties\": {\n    \"gid\": {\n      \"description\": \"gid\",\n      \"\
         type\": \"number\"\n    }\n  }\n}"

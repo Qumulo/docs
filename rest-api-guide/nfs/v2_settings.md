@@ -4,7 +4,6 @@ methods:
   get:
     parameters: []
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_nfs_settings\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"v4_enabled\": {\n      \"description\": \"Whether\
         \ NFSv4 is enabled\",\n      \"type\": \"boolean\"\n    },\n    \"krb5_enabled\"\
@@ -22,7 +21,6 @@ methods:
   patch:
     parameters: []
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_nfs_settings_patch\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"v4_enabled\": {\n      \"description\": \"Whether\
         \ NFSv4 is enabled\",\n      \"type\": \"boolean\"\n    },\n    \"krb5_enabled\"\
@@ -34,7 +32,6 @@ methods:
         : {\n      \"description\": \"Whether AUTH_SYS is enabled\",\n      \"type\"\
         : \"boolean\"\n    }\n  }\n}"
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_nfs_settings\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"v4_enabled\": {\n      \"description\": \"Whether\
         \ NFSv4 is enabled\",\n      \"type\": \"boolean\"\n    },\n    \"krb5_enabled\"\
@@ -52,7 +49,6 @@ methods:
   put:
     parameters: []
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_nfs_settings\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"v4_enabled\": {\n      \"description\": \"Whether\
         \ NFSv4 is enabled\",\n      \"type\": \"boolean\"\n    },\n    \"krb5_enabled\"\
@@ -64,7 +60,6 @@ methods:
         : {\n      \"description\": \"Whether AUTH_SYS is enabled\",\n      \"type\"\
         : \"boolean\"\n    }\n  }\n}"
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_nfs_settings\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"v4_enabled\": {\n      \"description\": \"Whether\
         \ NFSv4 is enabled\",\n      \"type\": \"boolean\"\n    },\n    \"krb5_enabled\"\

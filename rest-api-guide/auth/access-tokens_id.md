@@ -17,7 +17,6 @@ methods:
       name: id
       required: true
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_access_token_metadata\",\n  \"type\": \"\
         object\",\n  \"properties\": {\n    \"id\": {\n      \"description\": \"The\
         \ access token's identifier for management APIs.\",\n      \"type\": \"string\"\
@@ -81,7 +80,6 @@ methods:
       name: id
       required: true
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_access_token_modify_metadata_patch\",\n\
         \  \"type\": \"object\",\n  \"properties\": {\n    \"expiration_time\": {\n\
         \      \"description\": \"The time after which the access token is expired.\"\
@@ -89,7 +87,6 @@ methods:
         : \"This access token can be used to authenticate.\",\n      \"type\": \"\
         boolean\"\n    }\n  }\n}"
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_access_token_metadata\",\n  \"type\": \"\
         object\",\n  \"properties\": {\n    \"id\": {\n      \"description\": \"The\
         \ access token's identifier for management APIs.\",\n      \"type\": \"string\"\

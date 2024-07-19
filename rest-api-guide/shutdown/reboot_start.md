@@ -4,7 +4,6 @@ methods:
   post:
     parameters: []
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_reboot_start_options\",\n  \"type\": \"\
         object\",\n  \"properties\": {\n    \"is_rolling\": {\n      \"description\"\
         : \"If true, kick off a rolling reboot, otherwise do it concurrently. Defaults\

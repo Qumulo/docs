@@ -4,7 +4,6 @@ methods:
   get:
     parameters: []
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_fs_attributes\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"block_size_bytes\": {\n      \"description\"\
         : \"File system block size in bytes\",\n      \"type\": \"number\"\n    },\n\

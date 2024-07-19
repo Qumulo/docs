@@ -4,7 +4,6 @@ methods:
   post:
     parameters: []
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_saml_login_info\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"login_id\": {\n      \"description\": \"The\
         \ unique identifier for the pending login. Use the login_id with the check-saml-login\

@@ -4,7 +4,6 @@ methods:
   post:
     parameters: []
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_reverse_request\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"target_relationship_id\": {\n      \"description\"\
         : \"The identifier of the target relationship to reverse\",\n      \"type\"\
@@ -13,7 +12,6 @@ methods:
         \    \"source_port\": {\n      \"description\": \"Network port of the source\
         \ cluster (defaults to 3712)\",\n      \"type\": \"number\"\n    }\n  }\n}"
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_source_relationship\",\n  \"type\": \"\
         object\",\n  \"properties\": {\n    \"id\": {\n      \"description\": \"Unique\
         \ identifier of the replication relationship\",\n      \"type\": \"string\"\

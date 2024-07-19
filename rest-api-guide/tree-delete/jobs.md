@@ -4,7 +4,6 @@ methods:
   get:
     parameters: []
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"tree_delete_jobs_response\",\n  \"type\": \"\
         object\",\n  \"properties\": {\n    \"jobs\": {\n      \"type\": \"array\"\
         ,\n      \"items\": {\n        \"description\": \"jobs\",\n        \"type\"\
@@ -44,7 +43,6 @@ methods:
   post:
     parameters: []
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"tree_delete_job_post\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"The file ID\
         \ or the absolute path to the file system object. File IDs can be found in\

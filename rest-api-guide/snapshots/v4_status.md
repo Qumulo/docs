@@ -9,7 +9,6 @@ methods:
       name: filter
       required: false
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_snapshot_statuses\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"entries\": {\n      \"type\": \"array\",\n \
         \     \"items\": {\n        \"description\": \"List of snapshot statuses\"\

@@ -4,7 +4,6 @@ methods:
   post:
     parameters: []
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_cluster_creation_request_v2\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"eula_accepted\": {\n      \"description\"\
         : \"User accepts the End User License Agreement\",\n      \"type\": \"boolean\"\

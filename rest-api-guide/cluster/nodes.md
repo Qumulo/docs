@@ -4,7 +4,6 @@ methods:
   get:
     parameters: []
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         api_node\",\n    \"type\": \"object\",\n    \"properties\": {\n      \"id\"\
         : {\n        \"description\": \"id\",\n        \"type\": \"number\"\n    \
@@ -27,7 +26,6 @@ methods:
   post:
     parameters: []
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_cluster_nodes_modify_request_v1\",\n  \"\
         type\": \"object\",\n  \"properties\": {\n    \"node_uuids\": {\n      \"\
         type\": \"array\",\n      \"items\": {\n        \"description\": \"Identifiers\

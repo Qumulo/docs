@@ -4,7 +4,6 @@ methods:
   post:
     parameters: []
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"ad_domain_monitor\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"status\": {\n      \"type\": \"string\",\n \
         \     \"enum\": [\n        \"LEAVE_SUCCEEDED\",\n        \"JOIN_SUCCEEDED\"\

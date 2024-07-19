@@ -4,7 +4,6 @@ methods:
   get:
     parameters: []
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"ftp_api_config\",\n  \"type\": \"object\",\n\
         \  \"properties\": {\n    \"enabled\": {\n      \"description\": \"When enabled,\
         \ the cluster allows FTP connections.\",\n      \"type\": \"boolean\"\n  \
@@ -42,7 +41,6 @@ methods:
       name: If-Match
       required: false
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"ftp_api_config\",\n  \"type\": \"object\",\n\
         \  \"properties\": {\n    \"enabled\": {\n      \"description\": \"When enabled,\
         \ the cluster allows FTP connections.\",\n      \"type\": \"boolean\"\n  \
@@ -70,7 +68,6 @@ methods:
         : {\n      \"description\": \"Greeting to display with the 220 successful\
         \ connection message.\",\n      \"type\": \"string\"\n    }\n  }\n}"
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"ftp_api_config\",\n  \"type\": \"object\",\n\
         \  \"properties\": {\n    \"enabled\": {\n      \"description\": \"When enabled,\
         \ the cluster allows FTP connections.\",\n      \"type\": \"boolean\"\n  \
@@ -108,7 +105,6 @@ methods:
       name: If-Match
       required: false
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"ftp_api_config\",\n  \"type\": \"object\",\n\
         \  \"properties\": {\n    \"enabled\": {\n      \"description\": \"When enabled,\
         \ the cluster allows FTP connections.\",\n      \"type\": \"boolean\"\n  \
@@ -136,7 +132,6 @@ methods:
         : {\n      \"description\": \"Greeting to display with the 220 successful\
         \ connection message.\",\n      \"type\": \"string\"\n    }\n  }\n}"
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"ftp_api_config\",\n  \"type\": \"object\",\n\
         \  \"properties\": {\n    \"enabled\": {\n      \"description\": \"When enabled,\
         \ the cluster allows FTP connections.\",\n      \"type\": \"boolean\"\n  \

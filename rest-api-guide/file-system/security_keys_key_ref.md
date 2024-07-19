@@ -18,7 +18,6 @@ methods:
       name: key_ref
       required: true
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_change_lock_key\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"The identifier\
         \ associated with the specified key.\",\n      \"type\": \"string\"\n    },\n\
@@ -43,7 +42,6 @@ methods:
       name: If-Match
       required: false
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_change_lock_key_patch\",\n  \"type\": \"\
         object\",\n  \"properties\": {\n    \"id\": {\n      \"description\": \"The\
         \ identifier associated with the specified key.\",\n      \"type\": \"string\"\
@@ -55,7 +53,6 @@ methods:
         \n    },\n    \"public_key\": {\n      \"description\": \"The contents of\
         \ the public key.\",\n      \"type\": \"string\"\n    }\n  }\n}"
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_change_lock_key\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"The identifier\
         \ associated with the specified key.\",\n      \"type\": \"string\"\n    },\n\
@@ -80,7 +77,6 @@ methods:
       name: If-Match
       required: false
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_change_lock_key\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"The identifier\
         \ associated with the specified key.\",\n      \"type\": \"string\"\n    },\n\
@@ -92,7 +88,6 @@ methods:
         \n    },\n    \"public_key\": {\n      \"description\": \"The contents of\
         \ the public key.\",\n      \"type\": \"string\"\n    }\n  }\n}"
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_change_lock_key\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"The identifier\
         \ associated with the specified key.\",\n      \"type\": \"string\"\n    },\n\

@@ -10,7 +10,6 @@ methods:
       name: filter
       required: true
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_snapshots\",\n  \"type\": \"object\",\n\
         \  \"properties\": {\n    \"entries\": {\n      \"type\": \"array\",\n   \
         \   \"items\": {\n        \"description\": \"List of snapshot information\"\
@@ -40,7 +39,6 @@ methods:
   post:
     parameters: []
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_snapshot_create\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"name_suffix\": {\n      \"description\": \"\
         The snapshot name. Qumulo Core prepends the snapshot ID to the name. If not\
@@ -51,7 +49,6 @@ methods:
         \n    },\n    \"source_file_id\": {\n      \"description\": \"The ID of the\
         \ directory to snapshot.\",\n      \"type\": \"string\"\n    }\n  }\n}"
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_snapshot_info\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"The unique\
         \ snapshot identifier.\",\n      \"type\": \"number\"\n    },\n    \"name\"\

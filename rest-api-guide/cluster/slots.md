@@ -4,7 +4,6 @@ methods:
   get:
     parameters: []
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         api_disk_slot\",\n    \"type\": \"object\",\n    \"properties\": {\n     \
         \ \"id\": {\n        \"description\": \"Node:Slot representation identifying\

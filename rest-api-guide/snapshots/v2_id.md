@@ -17,7 +17,6 @@ methods:
       name: id
       required: true
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_snapshot_info_v2\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"Unique identifier\
         \ of the snapshot\",\n      \"type\": \"number\"\n    },\n    \"name\": {\n\
@@ -59,7 +58,6 @@ methods:
       name: If-Match
       required: false
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_snapshot_info_v2\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"Unique identifier\
         \ of the snapshot\",\n      \"type\": \"number\"\n    },\n    \"name\": {\n\
@@ -82,7 +80,6 @@ methods:
         : \"Whether or not the snapshot is in the process of being deleted\",\n  \
         \    \"type\": \"boolean\"\n    }\n  }\n}"
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_snapshot_info_v2\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"Unique identifier\
         \ of the snapshot\",\n      \"type\": \"number\"\n    },\n    \"name\": {\n\
@@ -117,7 +114,6 @@ methods:
       name: If-Match
       required: false
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_snapshot_info_v2\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"Unique identifier\
         \ of the snapshot\",\n      \"type\": \"number\"\n    },\n    \"name\": {\n\
@@ -140,7 +136,6 @@ methods:
         : \"Whether or not the snapshot is in the process of being deleted\",\n  \
         \    \"type\": \"boolean\"\n    }\n  }\n}"
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_snapshot_info_v2\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"Unique identifier\
         \ of the snapshot\",\n      \"type\": \"number\"\n    },\n    \"name\": {\n\

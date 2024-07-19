@@ -4,7 +4,6 @@ methods:
   post:
     parameters: []
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_upgrade_prepare_request\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"image_path\": {\n      \"description\"\
         : \"Path to image to install\",\n      \"type\": \"string\"\n    },\n    \"\

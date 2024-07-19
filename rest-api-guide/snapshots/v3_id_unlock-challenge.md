@@ -7,7 +7,6 @@ methods:
       name: id
       required: true
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_snapshot_unlock_challenge\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"challenge\": {\n      \"description\"\
         : \"challenge\",\n      \"type\": \"string\"\n    }\n  }\n}"

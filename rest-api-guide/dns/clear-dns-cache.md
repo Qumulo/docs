@@ -4,7 +4,6 @@ methods:
   post:
     parameters: []
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_dns_clear_cache\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"dns_config_id\": {\n      \"description\": \"\
         dns_config_id\",\n      \"type\": \"number\"\n    },\n    \"skip_reverse_cache\"\

@@ -14,7 +14,6 @@ methods:
   get:
     parameters: []
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"kerberos_keytab\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"entries\": {\n      \"type\": \"array\",\n \
         \     \"items\": {\n        \"description\": \"entries\",\n        \"type\"\
@@ -81,10 +80,8 @@ methods:
       name: If-Match
       required: false
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"type\": \"object\"\n}"
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"kerberos_keytab\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"entries\": {\n      \"type\": \"array\",\n \
         \     \"items\": {\n        \"description\": \"entries\",\n        \"type\"\

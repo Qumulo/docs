@@ -16,7 +16,6 @@ methods:
       name: limit
       required: false
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_change_lock_key_usage_page\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"usages\": {\n      \"type\": \"\
         array\",\n      \"items\": {\n        \"description\": \"Usages of the key\"\

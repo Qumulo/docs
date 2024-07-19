@@ -4,7 +4,6 @@ methods:
   get:
     parameters: []
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"time_status_response\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"config\": {\n      \"description\": \"config\"\
         ,\n      \"type\": \"object\",\n      \"properties\": {\n        \"use_ad_for_primary\"\

@@ -4,7 +4,6 @@ methods:
   get:
     parameters: []
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_permissions_settings\",\n  \"type\": \"\
         object\",\n  \"properties\": {\n    \"mode\": {\n      \"type\": \"string\"\
         ,\n      \"enum\": [\n        \"NATIVE\",\n        \"_DEPRECATED_MERGED_V1\"\
@@ -18,7 +17,6 @@ methods:
   put:
     parameters: []
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_permissions_settings\",\n  \"type\": \"\
         object\",\n  \"properties\": {\n    \"mode\": {\n      \"type\": \"string\"\
         ,\n      \"enum\": [\n        \"NATIVE\",\n        \"_DEPRECATED_MERGED_V1\"\
@@ -26,7 +24,6 @@ methods:
         n * `CROSS_PROTOCOL` - CROSS_PROTOCOL,\\n * `NATIVE` - NATIVE,\\n * `_DEPRECATED_MERGED_V1`\
         \ - _DEPRECATED_MERGED_V1\"\n    }\n  }\n}"
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_permissions_settings\",\n  \"type\": \"\
         object\",\n  \"properties\": {\n    \"mode\": {\n      \"type\": \"string\"\
         ,\n      \"enum\": [\n        \"NATIVE\",\n        \"_DEPRECATED_MERGED_V1\"\

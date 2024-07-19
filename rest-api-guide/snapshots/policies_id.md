@@ -17,7 +17,6 @@ methods:
       name: id
       required: true
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_snapshots_policy_info_v1\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"id\": {\n      \"description\":\
         \ \"Unique identifier for the snapshot policy\",\n      \"type\": \"number\"\
@@ -116,7 +115,6 @@ methods:
       name: If-Match
       required: false
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_snapshots_policy_info_v1\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"id\": {\n      \"description\":\
         \ \"Unique identifier for the snapshot policy\",\n      \"type\": \"number\"\
@@ -203,7 +201,6 @@ methods:
         \ is enabled for this policy (defaults to true)\",\n      \"type\": \"boolean\"\
         \n    }\n  }\n}"
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_snapshots_policy_info_v1\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"id\": {\n      \"description\":\
         \ \"Unique identifier for the snapshot policy\",\n      \"type\": \"number\"\
@@ -302,7 +299,6 @@ methods:
       name: If-Match
       required: false
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_snapshots_policy_info_v1\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"id\": {\n      \"description\":\
         \ \"Unique identifier for the snapshot policy\",\n      \"type\": \"number\"\
@@ -389,7 +385,6 @@ methods:
         \ is enabled for this policy (defaults to true)\",\n      \"type\": \"boolean\"\
         \n    }\n  }\n}"
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_snapshots_policy_info_v1\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"id\": {\n      \"description\":\
         \ \"Unique identifier for the snapshot policy\",\n      \"type\": \"number\"\

@@ -49,10 +49,8 @@ methods:
       name: If-Match
       required: false
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"type\": \"object\"\n}"
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_files_attributes\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"path\": {\n      \"description\": \"Filesystem\
         \ path of the object\",\n      \"type\": \"string\"\n    },\n    \"name\"\
@@ -168,10 +166,8 @@ methods:
       name: If-Match
       required: false
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"type\": \"object\"\n}"
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_files_attributes\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"path\": {\n      \"description\": \"Filesystem\
         \ path of the object\",\n      \"type\": \"string\"\n    },\n    \"name\"\

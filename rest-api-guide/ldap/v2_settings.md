@@ -4,7 +4,6 @@ methods:
   get:
     parameters: []
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_lone_ldap_config_v2\",\n  \"type\": \"\
         object\",\n  \"properties\": {\n    \"use_ldap\": {\n      \"description\"\
         : \"Top-level LDAP enablement switch, indicating whether Qumulo Core should\
@@ -53,7 +52,6 @@ methods:
       name: If-Match
       required: false
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_lone_ldap_config_v2\",\n  \"type\": \"\
         object\",\n  \"properties\": {\n    \"use_ldap\": {\n      \"description\"\
         : \"Top-level LDAP enablement switch, indicating whether Qumulo Core should\
@@ -93,7 +91,6 @@ methods:
         : \"If true, require to have encrypted connection with LDAP. Default is True.\"\
         ,\n      \"type\": \"boolean\"\n    }\n  }\n}"
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_lone_ldap_config_v2\",\n  \"type\": \"\
         object\",\n  \"properties\": {\n    \"use_ldap\": {\n      \"description\"\
         : \"Top-level LDAP enablement switch, indicating whether Qumulo Core should\
@@ -142,7 +139,6 @@ methods:
       name: If-Match
       required: false
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_lone_ldap_config_v2\",\n  \"type\": \"\
         object\",\n  \"properties\": {\n    \"use_ldap\": {\n      \"description\"\
         : \"Top-level LDAP enablement switch, indicating whether Qumulo Core should\
@@ -182,7 +178,6 @@ methods:
         : \"If true, require to have encrypted connection with LDAP. Default is True.\"\
         ,\n      \"type\": \"boolean\"\n    }\n  }\n}"
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_lone_ldap_config_v2\",\n  \"type\": \"\
         object\",\n  \"properties\": {\n    \"use_ldap\": {\n      \"description\"\
         : \"Top-level LDAP enablement switch, indicating whether Qumulo Core should\

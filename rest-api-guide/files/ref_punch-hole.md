@@ -13,14 +13,12 @@ methods:
       name: If-Match
       required: false
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_files_punch_hole\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"offset\": {\n      \"description\": \"Offset\
         \ in bytes specifying the start of the hole to create.\",\n      \"type\"\
         : \"string\"\n    },\n    \"size\": {\n      \"description\": \"Size in bytes\
         \ of the hole to create.\",\n      \"type\": \"string\"\n    }\n  }\n}"
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_files_attributes\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"path\": {\n      \"description\": \"Filesystem\
         \ path of the object\",\n      \"type\": \"string\"\n    },\n    \"name\"\

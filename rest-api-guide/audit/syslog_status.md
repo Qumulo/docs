@@ -4,7 +4,6 @@ methods:
   get:
     parameters: []
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"syslog_audit_log_status\",\n  \"type\": \"\
         object\",\n  \"properties\": {\n    \"connection_status\": {\n      \"type\"\
         : \"string\",\n      \"enum\": [\n        \"AUDIT_LOG_CONNECTED\",\n     \

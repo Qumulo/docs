@@ -4,7 +4,6 @@ methods:
   get:
     parameters: []
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"ad_settings\",\n  \"type\": \"object\",\n \
         \ \"properties\": {\n    \"signing\": {\n      \"type\": \"string\",\n   \
         \   \"enum\": [\n        \"NO_SIGNING\",\n        \"WANT_SIGNING\",\n    \
@@ -33,7 +32,6 @@ methods:
       name: If-Match
       required: false
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"ad_settings\",\n  \"type\": \"object\",\n \
         \ \"properties\": {\n    \"signing\": {\n      \"type\": \"string\",\n   \
         \   \"enum\": [\n        \"NO_SIGNING\",\n        \"WANT_SIGNING\",\n    \
@@ -53,7 +51,6 @@ methods:
         \ - Require the use of AES.,\\n * `WANT_AES` - Prefer use of AES; allow server\
         \ to decide.\"\n    }\n  }\n}"
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"ad_settings\",\n  \"type\": \"object\",\n \
         \ \"properties\": {\n    \"signing\": {\n      \"type\": \"string\",\n   \
         \   \"enum\": [\n        \"NO_SIGNING\",\n        \"WANT_SIGNING\",\n    \

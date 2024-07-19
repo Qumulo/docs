@@ -14,7 +14,6 @@ methods:
       name: snapshot
       required: false
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_files_attributes\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"path\": {\n      \"description\": \"Filesystem\
         \ path of the object\",\n      \"type\": \"string\"\n    },\n    \"name\"\
@@ -128,7 +127,6 @@ methods:
       name: If-Match
       required: false
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_settable_files_attributes\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"path\": {\n      \"description\"\
         : \"Filesystem path of the object\",\n      \"type\": \"string\"\n    },\n\
@@ -223,7 +221,6 @@ methods:
         \ - FS_DIRECTORY_HASH_VERSION_FOLDED,\\n * `FS_DIRECTORY_HASH_VERSION_LOWER`\
         \ - FS_DIRECTORY_HASH_VERSION_LOWER\"\n    }\n  }\n}"
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_files_attributes\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"path\": {\n      \"description\": \"Filesystem\
         \ path of the object\",\n      \"type\": \"string\"\n    },\n    \"name\"\

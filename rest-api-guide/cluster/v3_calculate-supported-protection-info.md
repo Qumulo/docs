@@ -4,7 +4,6 @@ methods:
   post:
     parameters: []
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_supported_protection_info_request_v2\"\
         ,\n  \"type\": \"object\",\n  \"properties\": {\n    \"node_uuids\": {\n \
         \     \"type\": \"array\",\n      \"items\": {\n        \"description\": \"\
@@ -14,7 +13,6 @@ methods:
         List of unconfigured node IPs to query supported protection levels and capacities\"\
         ,\n        \"type\": \"string\"\n      }\n    }\n  }\n}"
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_supported_protection_configs\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"supported_configs\": {\n      \"\
         type\": \"array\",\n      \"items\": {\n        \"description\": \"Vector\

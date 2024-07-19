@@ -20,7 +20,6 @@ methods:
       name: id
       required: true
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_files_quota\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"Unique ID\
         \ of this directory.\",\n      \"type\": \"string\"\n    },\n    \"limit\"\
@@ -40,7 +39,6 @@ methods:
       name: If-Match
       required: false
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_files_quota\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"Unique ID\
         \ of this directory.\",\n      \"type\": \"string\"\n    },\n    \"limit\"\
@@ -48,7 +46,6 @@ methods:
         \ directory and its descendants.\",\n      \"type\": \"string\"\n    }\n \
         \ }\n}"
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_files_quota\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"Unique ID\
         \ of this directory.\",\n      \"type\": \"string\"\n    },\n    \"limit\"\

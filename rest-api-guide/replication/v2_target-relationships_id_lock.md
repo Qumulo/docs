@@ -7,7 +7,6 @@ methods:
       name: id
       required: true
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_target_relationship_lock\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"lock_key_ref\": {\n      \"description\"\
         : \"The key that locks the policy-created snapshots for the specified target\
@@ -26,7 +25,6 @@ methods:
         \ the reversal, the original source-target relationship has no lock key until\
         \ you configure a new one.\",\n      \"type\": \"string\"\n    }\n  }\n}"
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_target_relationship_lock\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"lock_key_ref\": {\n      \"description\"\
         : \"The key that locks the policy-created snapshots for the specified target\

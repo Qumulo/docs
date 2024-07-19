@@ -7,7 +7,6 @@ methods:
       name: interface_id
       required: true
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_interface_config\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"Unique identifier\
         \ for this interface configuration\",\n      \"type\": \"number\"\n    },\n\
@@ -37,7 +36,6 @@ methods:
       name: If-Match
       required: false
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_interface_config\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"Unique identifier\
         \ for this interface configuration\",\n      \"type\": \"number\"\n    },\n\
@@ -69,7 +67,6 @@ methods:
       name: If-Match
       required: false
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_interface_config\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"Unique identifier\
         \ for this interface configuration\",\n      \"type\": \"number\"\n    },\n\

@@ -4,7 +4,6 @@ methods:
   get:
     parameters: []
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         api_ldap_connection_state\",\n    \"type\": \"object\",\n    \"properties\"\
         : {\n      \"node_id\": {\n        \"description\": \"node_id\",\n       \

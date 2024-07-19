@@ -4,7 +4,6 @@ methods:
   get:
     parameters: []
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"syslog_audit_config\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"enabled\": {\n      \"description\": \"Enable\
         \ remote audit log.\",\n      \"type\": \"boolean\"\n    },\n    \"server_address\"\
@@ -27,7 +26,6 @@ methods:
       name: If-Match
       required: false
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"syslog_audit_config_delta\",\n  \"type\": \"\
         object\",\n  \"properties\": {\n    \"enabled\": {\n      \"description\"\
         : \"Enable remote audit log.\",\n      \"type\": \"boolean\"\n    },\n   \
@@ -41,7 +39,6 @@ methods:
         \ \"description\": \"Output syslog as CSV or JSON.:\\n * `csv` - SYSLOG_AUDIT_FORMAT_CSV,\\\
         n * `json` - SYSLOG_AUDIT_FORMAT_JSON\"\n    }\n  }\n}"
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"syslog_audit_config\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"enabled\": {\n      \"description\": \"Enable\
         \ remote audit log.\",\n      \"type\": \"boolean\"\n    },\n    \"server_address\"\
@@ -64,7 +61,6 @@ methods:
       name: If-Match
       required: false
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"syslog_audit_config\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"enabled\": {\n      \"description\": \"Enable\
         \ remote audit log.\",\n      \"type\": \"boolean\"\n    },\n    \"server_address\"\
@@ -78,7 +74,6 @@ methods:
         \ syslog as CSV or JSON.:\\n * `csv` - SYSLOG_AUDIT_FORMAT_CSV,\\n * `json`\
         \ - SYSLOG_AUDIT_FORMAT_JSON\"\n    }\n  }\n}"
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"syslog_audit_config\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"enabled\": {\n      \"description\": \"Enable\
         \ remote audit log.\",\n      \"type\": \"boolean\"\n    },\n    \"server_address\"\

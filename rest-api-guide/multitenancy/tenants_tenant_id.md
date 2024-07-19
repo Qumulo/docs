@@ -20,7 +20,6 @@ methods:
       name: tenant_id
       required: true
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_tenant_config\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"Unique identifier\
         \ for this tenant configuration.\",\n      \"type\": \"number\"\n    },\n\
@@ -54,7 +53,6 @@ methods:
       name: If-Match
       required: false
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_tenant_config_patch\",\n  \"type\": \"\
         object\",\n  \"properties\": {\n    \"id\": {\n      \"description\": \"Unique\
         \ identifier for this tenant configuration.\",\n      \"type\": \"number\"\
@@ -76,7 +74,6 @@ methods:
         : {\n      \"description\": \"Unique identifier for the identity configuration\
         \ to use for this tenant.\",\n      \"type\": \"number\"\n    }\n  }\n}"
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_tenant_config\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"Unique identifier\
         \ for this tenant configuration.\",\n      \"type\": \"number\"\n    },\n\
@@ -110,7 +107,6 @@ methods:
       name: If-Match
       required: false
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_tenant_config\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"Unique identifier\
         \ for this tenant configuration.\",\n      \"type\": \"number\"\n    },\n\
@@ -132,7 +128,6 @@ methods:
         : {\n      \"description\": \"Unique identifier for the identity configuration\
         \ to use for this tenant.\",\n      \"type\": \"number\"\n    }\n  }\n}"
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_tenant_config\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"Unique identifier\
         \ for this tenant configuration.\",\n      \"type\": \"number\"\n    },\n\

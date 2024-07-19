@@ -14,7 +14,6 @@ methods:
       name: snapshot
       required: false
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_files_effective_rights_post\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"user\": {\n      \"description\"\
         : \"The user for whom to explain effective rights.\",\n      \"type\": \"\
@@ -85,7 +84,6 @@ methods:
         \           \"type\": \"string\"\n          }\n        }\n      }\n    }\n\
         \  }\n}"
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_files_effective_rights_explanation\",\n\
         \  \"type\": \"object\",\n  \"properties\": {\n    \"owner\": {\n      \"\
         description\": \"The user that owns the file.\",\n      \"type\": \"object\"\

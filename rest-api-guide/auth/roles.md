@@ -11,7 +11,6 @@ methods:
   post:
     parameters: []
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"named_role_model\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"name\": {\n      \"description\": \"Name of\
         \ the role. Role names are case-insensitive and may not contain whitespace.\"\
@@ -209,7 +208,6 @@ methods:
         n * `PRIVILEGE_WEB_UI_SETTINGS_WRITE` - Modify web UI settings\"\n      }\n\
         \    }\n  }\n}"
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"named_role_model\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"name\": {\n      \"description\": \"Name of\
         \ the role. Role names are case-insensitive and may not contain whitespace.\"\

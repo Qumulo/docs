@@ -26,7 +26,6 @@ methods:
       name: network_id
       required: true
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_network_config_v2\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"name\": {\n      \"description\": \"name\",\n\
         \      \"type\": \"string\"\n    },\n    \"id\": {\n      \"description\"\
@@ -67,7 +66,6 @@ methods:
       name: If-Match
       required: false
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_network_config_v2\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"name\": {\n      \"description\": \"name\",\n\
         \      \"type\": \"string\"\n    },\n    \"id\": {\n      \"description\"\
@@ -111,7 +109,6 @@ methods:
       name: If-Match
       required: false
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_network_config_v2\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"name\": {\n      \"description\": \"name\",\n\
         \      \"type\": \"string\"\n    },\n    \"id\": {\n      \"description\"\

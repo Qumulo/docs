@@ -4,7 +4,6 @@ methods:
   get:
     parameters: []
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         api_group\",\n    \"type\": \"object\",\n    \"properties\": {\n      \"id\"\
         : {\n        \"description\": \"The group's unique id\",\n        \"type\"\
@@ -21,13 +20,11 @@ methods:
   post:
     parameters: []
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_group_post\",\n  \"type\": \"object\",\n\
         \  \"properties\": {\n    \"name\": {\n      \"description\": \"The group\
         \ name\",\n      \"type\": \"string\"\n    },\n    \"gid\": {\n      \"description\"\
         : \"The group's NFS gid\",\n      \"type\": \"string\"\n    }\n  }\n}"
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_group\",\n  \"type\": \"object\",\n  \"\
         properties\": {\n    \"id\": {\n      \"description\": \"The group's unique\
         \ id\",\n      \"type\": \"string\"\n    },\n    \"name\": {\n      \"description\"\

@@ -15,7 +15,6 @@ methods:
       name: interval
       required: false
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         overall_historical_capacity\",\n    \"type\": \"object\",\n    \"properties\"\
         : {\n      \"period_start_time\": {\n        \"description\": \"period_start_time\"\

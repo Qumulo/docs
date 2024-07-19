@@ -12,7 +12,6 @@ methods:
       name: limit
       required: false
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_files_quota_status_entries\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"quotas\": {\n      \"type\": \"\
         array\",\n      \"items\": {\n        \"description\": \"quotas\",\n     \

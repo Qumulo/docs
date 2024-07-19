@@ -20,7 +20,6 @@ methods:
       name: share_id
       required: true
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_smb_share_v3\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"The unique\
         \ ID of the SMB share\",\n      \"type\": \"string\"\n    },\n    \"share_name\"\
@@ -156,7 +155,6 @@ methods:
       name: If-Match
       required: false
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_smb_share_v3\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"The unique\
         \ ID of the SMB share\",\n      \"type\": \"string\"\n    },\n    \"share_name\"\
@@ -275,7 +273,6 @@ methods:
         \ not be able to connect. Default is false if this field is empty.\",\n  \
         \    \"type\": \"boolean\"\n    }\n  }\n}"
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_smb_share_v3\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"The unique\
         \ ID of the SMB share\",\n      \"type\": \"string\"\n    },\n    \"share_name\"\
@@ -410,7 +407,6 @@ methods:
       name: If-Match
       required: false
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_smb_share_v3\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"The unique\
         \ ID of the SMB share\",\n      \"type\": \"string\"\n    },\n    \"share_name\"\
@@ -529,7 +525,6 @@ methods:
         \ not be able to connect. Default is false if this field is empty.\",\n  \
         \    \"type\": \"boolean\"\n    }\n  }\n}"
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_smb_share_v3\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"The unique\
         \ ID of the SMB share\",\n      \"type\": \"string\"\n    },\n    \"share_name\"\

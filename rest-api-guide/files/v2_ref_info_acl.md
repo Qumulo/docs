@@ -14,7 +14,6 @@ methods:
       name: snapshot
       required: false
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_files_acl_v2\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"control\": {\n      \"description\": \"control\"\
         ,\n      \"type\": \"array\",\n      \"items\": {\n        \"type\": \"string\"\
@@ -115,7 +114,6 @@ methods:
       name: If-Match
       required: false
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_files_acl_v2\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"control\": {\n      \"description\": \"control\"\
         ,\n      \"type\": \"array\",\n      \"items\": {\n        \"type\": \"string\"\
@@ -201,7 +199,6 @@ methods:
         n * `WRITE_GROUP` - Group write access\"\n            }\n          }\n   \
         \     }\n      }\n    }\n  }\n}"
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_files_acl_v2\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"control\": {\n      \"description\": \"control\"\
         ,\n      \"type\": \"array\",\n      \"items\": {\n        \"type\": \"string\"\

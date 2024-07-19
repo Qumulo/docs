@@ -4,7 +4,6 @@ methods:
   get:
     parameters: []
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_v1_saml_settings\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"enabled\": {\n      \"description\": \"When\
         \ enabled, the cluster accepts SAML authentication. It is necessary first\
@@ -43,7 +42,6 @@ methods:
       name: If-Match
       required: false
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_v1_saml_settings_patch\",\n  \"type\":\
         \ \"object\",\n  \"properties\": {\n    \"enabled\": {\n      \"description\"\
         : \"When enabled, the cluster accepts SAML authentication. It is necessary\
@@ -74,7 +72,6 @@ methods:
         \ access over file protocols such as SMB.\",\n      \"type\": \"boolean\"\n\
         \    }\n  }\n}"
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_v1_saml_settings\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"enabled\": {\n      \"description\": \"When\
         \ enabled, the cluster accepts SAML authentication. It is necessary first\
@@ -113,7 +110,6 @@ methods:
       name: If-Match
       required: false
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_v1_saml_settings\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"enabled\": {\n      \"description\": \"When\
         \ enabled, the cluster accepts SAML authentication. It is necessary first\
@@ -143,7 +139,6 @@ methods:
         \ UI, qq CLI, and REST API. This setting does not restrict access over file\
         \ protocols such as SMB.\",\n      \"type\": \"boolean\"\n    }\n  }\n}"
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_v1_saml_settings\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"enabled\": {\n      \"description\": \"When\
         \ enabled, the cluster accepts SAML authentication. It is necessary first\

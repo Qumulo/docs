@@ -7,7 +7,6 @@ methods:
       name: sid
       required: true
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_ad_uid\",\n  \"type\": \"object\",\n  \"\
         properties\": {\n    \"uid\": {\n      \"description\": \"uid\",\n      \"\
         type\": \"number\"\n    }\n  }\n}"

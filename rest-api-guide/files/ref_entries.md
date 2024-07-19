@@ -25,7 +25,6 @@ methods:
       name: limit
       required: false
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_files_directory_entries\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"path\": {\n      \"description\"\
         : \"path\",\n      \"type\": \"string\"\n    },\n    \"id\": {\n      \"description\"\
@@ -159,7 +158,6 @@ methods:
       name: ref
       required: true
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_files_create_entry\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"name\": {\n      \"description\": \"Name of\
         \ file to create\",\n      \"type\": \"string\"\n    },\n    \"action\": {\n\
@@ -203,7 +201,6 @@ methods:
         : \"minor\",\n          \"type\": \"number\"\n        }\n      }\n    }\n\
         \  }\n}"
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_files_attributes\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"path\": {\n      \"description\": \"Filesystem\
         \ path of the object\",\n      \"type\": \"string\"\n    },\n    \"name\"\

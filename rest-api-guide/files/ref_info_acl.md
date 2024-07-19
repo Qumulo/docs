@@ -14,7 +14,6 @@ methods:
       name: snapshot
       required: false
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_files_acl_out\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"generated\": {\n      \"description\": \"Set\
         \ to true if the system has generated an ACL from Unix permissions\",\n  \
@@ -116,7 +115,6 @@ methods:
       name: If-Match
       required: false
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_files_acl\",\n  \"type\": \"object\",\n\
         \  \"properties\": {\n    \"control\": {\n      \"description\": \"control\"\
         ,\n      \"type\": \"array\",\n      \"items\": {\n        \"type\": \"string\"\
@@ -192,7 +190,6 @@ methods:
         n * `WRITE_GROUP` - Group write access\"\n            }\n          }\n   \
         \     }\n      }\n    }\n  }\n}"
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_files_acl_out\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"generated\": {\n      \"description\": \"Set\
         \ to true if the system has generated an ACL from Unix permissions\",\n  \

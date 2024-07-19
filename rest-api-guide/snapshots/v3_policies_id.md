@@ -20,7 +20,6 @@ methods:
       name: id
       required: true
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_snapshot_policy_info\",\n  \"type\": \"\
         object\",\n  \"properties\": {\n    \"id\": {\n      \"description\": \"The\
         \ unique identifier for the snapshot policy.\",\n      \"type\": \"number\"\
@@ -117,7 +116,6 @@ methods:
       name: If-Match
       required: false
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_snapshot_policy_info\",\n  \"type\": \"\
         object\",\n  \"properties\": {\n    \"id\": {\n      \"description\": \"The\
         \ unique identifier for the snapshot policy.\",\n      \"type\": \"number\"\
@@ -202,7 +200,6 @@ methods:
         \ snapshots taken for this policy will be locked with the given id.\",\n \
         \     \"type\": \"string\"\n    }\n  }\n}"
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_snapshot_policy_info\",\n  \"type\": \"\
         object\",\n  \"properties\": {\n    \"id\": {\n      \"description\": \"The\
         \ unique identifier for the snapshot policy.\",\n      \"type\": \"number\"\
@@ -299,7 +296,6 @@ methods:
       name: If-Match
       required: false
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_snapshot_policy_info\",\n  \"type\": \"\
         object\",\n  \"properties\": {\n    \"id\": {\n      \"description\": \"The\
         \ unique identifier for the snapshot policy.\",\n      \"type\": \"number\"\
@@ -384,7 +380,6 @@ methods:
         \ snapshots taken for this policy will be locked with the given id.\",\n \
         \     \"type\": \"string\"\n    }\n  }\n}"
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_snapshot_policy_info\",\n  \"type\": \"\
         object\",\n  \"properties\": {\n    \"id\": {\n      \"description\": \"The\
         \ unique identifier for the snapshot policy.\",\n      \"type\": \"number\"\

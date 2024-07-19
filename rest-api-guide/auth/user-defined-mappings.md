@@ -4,7 +4,6 @@ methods:
   get:
     parameters: []
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         user_equivalence\",\n    \"type\": \"object\",\n    \"properties\": {\n  \
         \    \"down_level_logon_name\": {\n        \"description\": \"down_level_logon_name\"\
@@ -21,7 +20,6 @@ methods:
       name: If-Match
       required: false
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         user_equivalence\",\n    \"type\": \"object\",\n    \"properties\": {\n  \
         \    \"down_level_logon_name\": {\n        \"description\": \"down_level_logon_name\"\
@@ -29,7 +27,6 @@ methods:
         \  \"description\": \"ldap_name\",\n        \"type\": \"string\"\n      }\n\
         \    }\n  }\n}"
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         user_equivalence\",\n    \"type\": \"object\",\n    \"properties\": {\n  \
         \    \"down_level_logon_name\": {\n        \"description\": \"down_level_logon_name\"\

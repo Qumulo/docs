@@ -4,7 +4,6 @@ methods:
   get:
     parameters: []
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_snapshot_capacity_used_per_snapshot\",\n\
         \  \"type\": \"object\",\n  \"properties\": {\n    \"entries\": {\n      \"\
         type\": \"array\",\n      \"items\": {\n        \"description\": \"List of\

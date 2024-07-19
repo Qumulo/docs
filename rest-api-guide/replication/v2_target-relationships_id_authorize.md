@@ -18,7 +18,6 @@ methods:
       name: allow-fs-path-create
       required: false
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_target_relationship_status\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"id\": {\n      \"description\":\
         \ \"Unique identifier of the replication relationship\",\n      \"type\":\

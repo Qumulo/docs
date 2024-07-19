@@ -4,7 +4,6 @@ methods:
   get:
     parameters: []
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_v1_s3_config\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"enabled\": {\n      \"description\": \"When\
         \ enabled, allows the cluster to make S3 connections.\",\n      \"type\":\
@@ -31,7 +30,6 @@ methods:
   patch:
     parameters: []
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_v1_s3_config_patch\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"enabled\": {\n      \"description\": \"When\
         \ enabled, allows the cluster to make S3 connections.\",\n      \"type\":\
@@ -52,7 +50,6 @@ methods:
         \ accepts only HTTP connections.\",\n      \"type\": \"boolean\"\n    }\n\
         \  }\n}"
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_v1_s3_config\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"enabled\": {\n      \"description\": \"When\
         \ enabled, allows the cluster to make S3 connections.\",\n      \"type\":\

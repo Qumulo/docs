@@ -17,7 +17,6 @@ methods:
       name: id
       required: true
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"identity_attributes\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"home_directory\": {\n      \"description\":\
         \ \"home_directory\",\n      \"type\": \"string\"\n    }\n  }\n}"
@@ -31,12 +30,10 @@ methods:
       name: id
       required: true
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"identity_attributes\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"home_directory\": {\n      \"description\":\
         \ \"home_directory\",\n      \"type\": \"string\"\n    }\n  }\n}"
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"identity_attributes\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"home_directory\": {\n      \"description\":\
         \ \"home_directory\",\n      \"type\": \"string\"\n    }\n  }\n}"

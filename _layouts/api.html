@@ -2,77 +2,78 @@
 layout: default
 ---
 
+{% assign truncated_title = page.rest_endpoint | remove_first: '/v1/' %}
+{% assign truncated_title = truncated_title | remove_first: '/v2/' %}
+{% assign truncated_title = truncated_title | remove_first: '/v3/' %}
+{% assign truncated_title = truncated_title | remove_last: '/' %}
+
 <div class="post-header">
-    <h1 class="post-title-main">{{ page.rest_endpoint | remove_first: '/v1/' | remove_last: '/' }}</h1>
+  <h1 class="post-title-main">{{ truncated_title }}</h1>
 </div>
 
 <div class="post-content">
 
-    {% unless page.toc == false %}
-    {% include toc.html %}
-    {% endunless %}
+  {% unless page.toc == false %}
+  {% include toc.html %}
+  {% endunless %}
 
 <h2>Endpoint</h2>
-<div><code>{{ page.rest_endpoint }}</code></div>
-
-<h2>HTTP Methods</h2>
+<code>{{ page.rest_endpoint }}</code>
 
 {% assign ordered_methods = "GET,HEAD,POST,PUT,DELETE,CONNECT,OPTIONS,TRACE,PATCH" | split: ',' %}
 {% for method in ordered_methods %}
-    {% assign method_key = method | downcase %}
-    {% assign method_data = page.methods[method_key] %}
-    {% if method_data %}
-        <h3>{{ method }}</h3>
-        <div>{{ method_data.summary }}</div>
+  {% assign method_key = method | downcase %}
+  {% assign method_data = page.methods[method_key] %}
+  {% if method_data %}
+<h2>{{ method }}</h2>
+{{ method_data.summary }}
 
-        <h4>Parameters</h4>
-        {% if method_data.parameters and method_data.parameters.size > 0 %}
-            <table>
-                <tr>
-                    <th>Name</th>
-                    <th>Description</th>
-                    <th>Required</th>
-                </tr>
-                {% for param in method_data.parameters %}
-                    <tr>
-                        <td><code>{{ param.name }}</code></td>
-                        <td>{{ param.description }}</td>
-                        <td>{% if param.required %}Yes{% else %}No{% endif %}</td>
-                    </tr>
-                {% endfor %}
-            </table>
-        {% else %}
-            <div>This resource has no parameters.</div>
-        {% endif %}
+<h3>Parameters</h3>
+{% if method_data.parameters and method_data.parameters.size > 0 %}
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Required</th>
+  </tr>
+  {% for param in method_data.parameters %}
+  <tr>
+    <td><code>{{ param.name }}</code></td>
+    <td>{{ param.description }}</td>
+    <td>{% if param.required %}Yes{% else %}No{% endif %}</td>
+  </tr>
+{% endfor %}
+</table>
+{% else %}
+This resource has no parameters.
+{% endif %}
 
-        {% if method_data.request_body %}
-            <h4>Request</h4>
-            <h5>Example Value</h5>
-{% highlight json %}{{ method_data.request_body.example_value }}{% endhighlight %}
-            <h5>Schema</h5>
+{% if method_data.request_body %}
+<h3>Request</h3>
+<h4>Schema</h4>
 {% highlight json %}{{ method_data.request_body.schema }}{% endhighlight %}
-        {% endif %}
+{% endif %}
 
-        <h4>Response</h4>
-        <h5>Response Codes</h5>
-        <table>
-            <tr>
-                <th>Code</th>
-                <th>Description</th>
-            </tr>
-            {% for response in method_data.responses %}
-                <tr>
-                    <td>{{ response.code }}</td>
-                    <td>{{ response.description }}</td>
-                </tr>
-            {% endfor %}
-        </table>
-        <h5>Example Value</h5>
-{% highlight json %}{{ method_data.response_body.example_value }}{% endhighlight %}
-        <h5>Schema</h5>
+<h3>Response</h3>
+<h4>Codes</h4>
+<table>
+  <tr>
+    <th>Code</th>
+    <th>Description</th>
+  </tr>
+{% for response in method_data.responses %}
+  <tr>
+    <td>{{ response.code }}</td>
+    <td>{{ response.description }}</td>
+  </tr>
+{% endfor %}
+</table>
+
+{% if method_data.response_body.schema %}
+<h4>Schema</h4>
 {% highlight json %}{{ method_data.response_body.schema }}{% endhighlight %}
-    {% endif %}
+{% endif %}
+{% endif %}
 {% endfor %}
 
 </div>
-

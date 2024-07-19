@@ -8,7 +8,6 @@ methods:
       name: populate-trustee-names
       required: false
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_smb_shares_v3\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"entries\": {\n      \"type\": \"array\",\n \
         \     \"items\": {\n        \"description\": \"List of SMB shares\",\n   \
@@ -156,7 +155,6 @@ methods:
       name: allow-fs-path-create
       required: false
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_smb_share_post_v3\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"share_name\": {\n      \"description\": \"The\
         \ SMB share name\",\n      \"type\": \"string\"\n    },\n    \"tenant_id\"\
@@ -273,7 +271,6 @@ methods:
         \ not be able to connect. Default is false if this field is empty.\",\n  \
         \    \"type\": \"boolean\"\n    }\n  }\n}"
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_smb_share_v3\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"The unique\
         \ ID of the SMB share\",\n      \"type\": \"string\"\n    },\n    \"share_name\"\

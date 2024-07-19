@@ -4,7 +4,6 @@ methods:
   get:
     parameters: []
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"conf_time_state\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"use_ad_for_primary\": {\n      \"description\"\
         : \"Whether to use the Active Directory controller as the primary NTP server\"\
@@ -22,7 +21,6 @@ methods:
       name: If-Match
       required: false
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"conf_time_state_patch\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"use_ad_for_primary\": {\n      \"description\"\
         : \"Whether to use the Active Directory controller as the primary NTP server\"\
@@ -30,7 +28,6 @@ methods:
         : \"array\",\n      \"items\": {\n        \"description\": \"List of NTP servers\"\
         ,\n        \"type\": \"string\"\n      }\n    }\n  }\n}"
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"conf_time_state\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"use_ad_for_primary\": {\n      \"description\"\
         : \"Whether to use the Active Directory controller as the primary NTP server\"\
@@ -47,7 +44,6 @@ methods:
       name: If-Match
       required: false
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"conf_time_state\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"use_ad_for_primary\": {\n      \"description\"\
         : \"Whether to use the Active Directory controller as the primary NTP server\"\
@@ -55,7 +51,6 @@ methods:
         : \"array\",\n      \"items\": {\n        \"description\": \"List of NTP servers\"\
         ,\n        \"type\": \"string\"\n      }\n    }\n  }\n}"
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"conf_time_state\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"use_ad_for_primary\": {\n      \"description\"\
         : \"Whether to use the Active Directory controller as the primary NTP server\"\

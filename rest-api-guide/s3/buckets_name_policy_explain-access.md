@@ -7,7 +7,6 @@ methods:
       name: name
       required: true
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_bucket_policy_access_explanation_options\"\
         ,\n  \"type\": \"object\",\n  \"properties\": {\n    \"identity\": {\n   \
         \   \"description\": \"The identity to explain bucket access for, if None\
@@ -34,7 +33,6 @@ methods:
         \ \"name\",\n          \"type\": \"string\"\n        }\n      }\n    }\n \
         \ }\n}"
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_bucket_policy_access_explanation\",\n \
         \ \"type\": \"object\",\n  \"properties\": {\n    \"allowed_actions\": {\n\
         \      \"type\": \"array\",\n      \"items\": {\n        \"description\":\

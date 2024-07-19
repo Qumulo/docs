@@ -4,7 +4,6 @@ methods:
   post:
     parameters: []
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         api_file_handle\",\n    \"type\": \"object\",\n    \"properties\": {\n   \
         \   \"file_number\": {\n        \"description\": \"file_number\",\n      \
@@ -63,7 +62,6 @@ methods:
         \            \"description\": \"path\",\n            \"type\": \"string\"\n\
         \          }\n        }\n      }\n    }\n  }\n}"
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         api_smb2_file_close_result\",\n    \"type\": \"object\",\n    \"properties\"\
         : {\n      \"error_message\": {\n        \"description\": \"error_message\"\

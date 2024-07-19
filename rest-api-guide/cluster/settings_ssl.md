@@ -4,7 +4,6 @@ methods:
   put:
     parameters: []
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_cluster_ssl_settings\",\n  \"type\": \"\
         object\",\n  \"properties\": {\n    \"certificate\": {\n      \"description\"\
         : \"Public certificate for the cluster in PEM format\",\n      \"type\": \"\

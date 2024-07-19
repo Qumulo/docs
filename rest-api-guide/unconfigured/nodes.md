@@ -4,7 +4,6 @@ methods:
   get:
     parameters: []
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_unconfigured_nodes_response\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"nodes\": {\n      \"type\": \"array\"\
         ,\n      \"items\": {\n        \"description\": \"nodes\",\n        \"type\"\

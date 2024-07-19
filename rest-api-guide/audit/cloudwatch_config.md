@@ -4,7 +4,6 @@ methods:
   get:
     parameters: []
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"cloudwatch_audit_user_config\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"enabled\": {\n      \"description\"\
         : \"enabled\",\n      \"type\": \"boolean\"\n    },\n    \"log_group_name\"\
@@ -21,7 +20,6 @@ methods:
       name: If-Match
       required: false
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"cloudwatch_audit_user_config_delta\",\n  \"\
         type\": \"object\",\n  \"properties\": {\n    \"enabled\": {\n      \"description\"\
         : \"enabled\",\n      \"type\": \"boolean\"\n    },\n    \"log_group_name\"\
@@ -29,7 +27,6 @@ methods:
         \n    },\n    \"region\": {\n      \"description\": \"region\",\n      \"\
         type\": \"string\"\n    }\n  }\n}"
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"cloudwatch_audit_user_config\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"enabled\": {\n      \"description\"\
         : \"enabled\",\n      \"type\": \"boolean\"\n    },\n    \"log_group_name\"\
@@ -46,7 +43,6 @@ methods:
       name: If-Match
       required: false
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"cloudwatch_audit_user_config\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"enabled\": {\n      \"description\"\
         : \"enabled\",\n      \"type\": \"boolean\"\n    },\n    \"log_group_name\"\
@@ -54,7 +50,6 @@ methods:
         \n    },\n    \"region\": {\n      \"description\": \"region\",\n      \"\
         type\": \"string\"\n    }\n  }\n}"
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"cloudwatch_audit_user_config\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"enabled\": {\n      \"description\"\
         : \"enabled\",\n      \"type\": \"boolean\"\n    },\n    \"log_group_name\"\

@@ -4,7 +4,6 @@ methods:
   get:
     parameters: []
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"reboot_status\",\n  \"type\": \"object\",\n\
         \  \"properties\": {\n    \"state\": {\n      \"type\": \"string\",\n    \
         \  \"enum\": [\n        \"REBOOT_IDLE\",\n        \"REBOOT_IN_PROGRESS\",\n\

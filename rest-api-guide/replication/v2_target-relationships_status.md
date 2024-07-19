@@ -4,7 +4,6 @@ methods:
   get:
     parameters: []
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         api_target_relationship_status\",\n    \"type\": \"object\",\n    \"properties\"\
         : {\n      \"id\": {\n        \"description\": \"Unique identifier of the\

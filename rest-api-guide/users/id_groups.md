@@ -7,7 +7,6 @@ methods:
       name: id
       required: true
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         api_group\",\n    \"type\": \"object\",\n    \"properties\": {\n      \"id\"\
         : {\n        \"description\": \"The group's unique id\",\n        \"type\"\

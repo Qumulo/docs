@@ -14,13 +14,11 @@ methods:
       name: snapshot
       required: false
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_files_apply_mode_explanation_post\",\n\
         \  \"type\": \"object\",\n  \"properties\": {\n    \"mode\": {\n      \"description\"\
         : \"POSIX mode to explain application of on a file ACL.\",\n      \"type\"\
         : \"string\"\n    }\n  }\n}"
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_files_apply_mode_explanation\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"owner\": {\n      \"description\"\
         : \"The user that owns the file.\",\n      \"type\": \"object\",\n      \"\

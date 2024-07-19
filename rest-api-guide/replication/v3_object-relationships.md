@@ -4,7 +4,6 @@ methods:
   get:
     parameters: []
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         api_object_relationship_v3\",\n    \"type\": \"object\",\n    \"properties\"\
         : {\n      \"id\": {\n        \"description\": \"Unique identifier of the\
@@ -44,7 +43,6 @@ methods:
   post:
     parameters: []
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_object_create_request_v3\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"direction\": {\n      \"type\":\
         \ \"string\",\n      \"enum\": [\n        \"COPY_TO_OBJECT\",\n        \"\
@@ -88,7 +86,6 @@ methods:
         \ with the object store\",\n      \"type\": \"string\",\n      \"format\"\
         : \"password\"\n    }\n  }\n}"
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_object_relationship_v3\",\n  \"type\":\
         \ \"object\",\n  \"properties\": {\n    \"id\": {\n      \"description\":\
         \ \"Unique identifier of the replication relationship\",\n      \"type\":\

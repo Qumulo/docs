@@ -4,7 +4,6 @@ methods:
   get:
     parameters: []
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"kerberos_config\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"use_alt_security_identities_mapping\": {\n \
         \     \"description\": \"use_alt_security_identities_mapping\",\n      \"\
@@ -19,13 +18,11 @@ methods:
       name: If-Match
       required: false
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"kerberos_config\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"use_alt_security_identities_mapping\": {\n \
         \     \"description\": \"use_alt_security_identities_mapping\",\n      \"\
         type\": \"boolean\"\n    }\n  }\n}"
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"kerberos_config\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"use_alt_security_identities_mapping\": {\n \
         \     \"description\": \"use_alt_security_identities_mapping\",\n      \"\

@@ -7,7 +7,6 @@ methods:
       name: id
       required: true
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_node_uid_light\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"light_visible\": {\n      \"description\": \"\
         Visibility of the node identifier light\",\n      \"type\": \"boolean\"\n\
@@ -22,7 +21,6 @@ methods:
       name: id
       required: true
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_node_uid_light\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"light_visible\": {\n      \"description\": \"\
         Visibility of the node identifier light\",\n      \"type\": \"boolean\"\n\

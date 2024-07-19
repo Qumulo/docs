@@ -50,7 +50,7 @@ def generate_resource_md(category, endpoint, methods, permalink):
                 for param in details.get("parameters", [])
             ],
             "response_body": {
-                "example_value": json.dumps(response_body.get("example", ""), indent=2),
+                #"example_value": json.dumps(response_body.get("example", ""), indent=2),
                 "schema": json.dumps(response_body.get("schema", ""), indent=2)
             } if response_body else {},
             "responses": [
@@ -61,7 +61,7 @@ def generate_resource_md(category, endpoint, methods, permalink):
 
         if request_body:
             method_details["request_body"] = {
-                "example_value": json.dumps(request_body.get("example", ""), indent=2),
+                #"example_value": json.dumps(request_body.get("example", ""), indent=2),
                 "schema": json.dumps(request_body.get("schema", ""), indent=2)
             }
 

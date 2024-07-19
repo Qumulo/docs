@@ -4,7 +4,6 @@ methods:
   get:
     parameters: []
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_upgrade_blocked_response\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"is_blocked\": {\n      \"description\"\
         : \"is_blocked\",\n      \"type\": \"boolean\"\n    },\n    \"cluster_degraded\"\

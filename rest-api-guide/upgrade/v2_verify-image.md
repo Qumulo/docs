@@ -4,12 +4,10 @@ methods:
   post:
     parameters: []
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"api_verify_request\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"image_path\": {\n      \"description\": \"image_path\"\
         ,\n      \"type\": \"string\"\n    }\n  }\n}"
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"upgrade_verify_result\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"target_version\": {\n      \"description\":\
         \ \"target_version\",\n      \"type\": \"string\"\n    },\n    \"upgrade_type\"\

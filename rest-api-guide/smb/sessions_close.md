@@ -4,7 +4,6 @@ methods:
   post:
     parameters: []
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         api_smb_session_info\",\n    \"type\": \"object\",\n    \"properties\": {\n\
         \      \"location\": {\n        \"description\": \"location\",\n        \"\
@@ -50,7 +49,6 @@ methods:
         : \"share_names\",\n          \"type\": \"string\"\n        }\n      }\n \
         \   }\n  }\n}"
     response_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         api_smb2_session_close_result\",\n    \"type\": \"object\",\n    \"properties\"\
         : {\n      \"error_message\": {\n        \"description\": \"error_message\"\

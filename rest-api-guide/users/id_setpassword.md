@@ -7,7 +7,6 @@ methods:
       name: id
       required: true
     request_body:
-      example_value: '"TO DO"'
       schema: "{\n  \"description\": \"new_password\",\n  \"type\": \"object\",\n\
         \  \"properties\": {\n    \"new_password\": {\n      \"description\": \"new_password\"\
         ,\n      \"type\": \"string\",\n      \"format\": \"password\"\n    }\n  }\n\
