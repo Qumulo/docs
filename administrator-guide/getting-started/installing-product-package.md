@@ -63,6 +63,7 @@ Ensure that your host system meets the minimum requirements.
     <td>
       <ul>
         <li><a target="_blank" href="https://en.wikipedia.org/wiki/X86-64#Microarchitecture_levels">x86-64-v3 Microarchitecture</a> (or higher)</li>
+        <li><a target="_blank" href="https://en.wikipedia.org/wiki/AES_instruction_set#x86_architecture_processors">Advanced Encryption Standard (AES) New Instructions</a></li>        
         <li><a target="_blank" href="https://en.wikipedia.org/wiki/Advanced_Vector_Extensions">Advanced Vector Extensions (AVX)</a></li>
         <li><a target="_blank" href="https://en.wikipedia.org/wiki/CLMUL_instruction_set#New_instructions">Carry-Less Multiplication (PCLMUL)</a></li>
       </ul>
