@@ -1,0 +1,19 @@
+destination: _site/
+url: "http://127.0.0.1:4001"
+baseurl: "/qumulo-doc"
+port: 4001
+output: pdf
+#product: Qumulo Alerts Guide
+print_title: Qumulo REST API Guide
+#print_subtitle: Version 3.3.0
+defaults:
+  -
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "api_print"
+      comments: true
+      search: true
+
+pdf_sidebar: qq_rest_api_guide_sidebar

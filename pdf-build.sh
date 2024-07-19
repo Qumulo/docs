@@ -26,7 +26,7 @@ ACTIONS=()
 PS3='What would you like to build? '
 
 # Prints the options on screen
-options=("Qumulo-Certified Hardware Servicing Guide" "Azure Native Qumulo Administrator Guide" "Qumulo On-Premises Administrator Guide" "Qumulo Alerts Guide" "Qumulo qq CLI Command Guide" "Qumulo Integration Guide" "All Administrator Guides" "All Guides" "Exit")
+options=("Qumulo-Certified Hardware Servicing Guide" "Azure Native Qumulo Administrator Guide" "Qumulo On-Premises Administrator Guide" "Qumulo Alerts Guide" "Qumulo qq CLI Command Guide" "Qumulo REST API Guide" "Qumulo Integration Guide" "All Administrator Guides" "All Guides" "Exit")
 echo
 
 select opt in "${options[@]}"
@@ -53,6 +53,10 @@ do
       ;;
     "Qumulo qq CLI Command Guide")
       ACTIONS+=("Qumulo_qq_CLI_Command_Guide")
+      break
+      ;;
+    "Qumulo REST API Guide")
+      ACTIONS+=("Qumulo_REST_API_Guide")
       break
       ;;
     "Qumulo Integration Guide")
@@ -98,6 +102,10 @@ build_prince () {
     "Qumulo_qq_CLI_Command_Guide")
       JEKYLL_CONFIG=config_qq_cli_command_guide_pdf.yml
       PRINCE_OUTPUT=qumulo-qq-cli-command-guide.pdf
+      ;;
+    "Qumulo_REST_API_Guide")
+      JEKYLL_CONFIG=config_qumulo_rest_api_guide_pdf.yml
+      PRINCE_OUTPUT=qumulo-rest-api-guide.pdf
       ;;
     "Integration_Guide")
       JEKYLL_CONFIG=config_integration_guide_pdf.yml
