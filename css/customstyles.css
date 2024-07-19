@@ -16,6 +16,14 @@ body {
   flex-direction:column;
 }
 
+.apiversion {
+  background-color: #00a3ca;
+  color: white;
+  padding: 2px 5px 2px 5px;
+  font-size: 10pt;
+  border-radius: 5px;
+}
+
 #toc + p {
   margin-top: 15px;
 }
