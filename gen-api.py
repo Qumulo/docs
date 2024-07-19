@@ -31,7 +31,7 @@ title: {category}
 """
 
 # Function to generate the content for individual REST resource files
-def generate_resource_md(category, endpoint, methods, permalink):
+def generate_resource_md(category, endpoint, methods, permalink, api_version=None):
     yaml_content = {
         "category": f"/{category}",
         "rest_endpoint": endpoint,
@@ -50,7 +50,6 @@ def generate_resource_md(category, endpoint, methods, permalink):
                 for param in details.get("parameters", [])
             ],
             "response_body": {
-                #"example_value": json.dumps(response_body.get("example", ""), indent=2),
                 "schema": json.dumps(response_body.get("schema", ""), indent=2)
             } if response_body else {},
             "responses": [
@@ -61,25 +60,25 @@ def generate_resource_md(category, endpoint, methods, permalink):
 
         if request_body:
             method_details["request_body"] = {
-                #"example_value": json.dumps(request_body.get("example", ""), indent=2),
                 "schema": json.dumps(request_body.get("schema", ""), indent=2)
             }
 
         yaml_content["methods"][method] = method_details
 
     yaml_string = yaml.dump(yaml_content, default_flow_style=False)
-    return f"---\n{yaml_string}permalink: {permalink}\nsidebar: rest_api_guide_sidebar\n---\n"
+    version_string = f"api_version: {api_version}\n" if api_version else ""
+    return f"---\n{yaml_string}{version_string}permalink: {permalink}\nsidebar: rest_api_guide_sidebar\n---\n"
 
 # Function to clean up filenames
 def clean_filename(category, filename):
     filename = filename.replace(f'{category}_', '').replace('{', '_').replace('}', '').replace('__', '_').strip('_')
-    filename = filename.replace('v1_', '')
+    filename = filename.replace('v1_', '').replace('v2_', '').replace('v3_', '').replace('v4_', '')
     return filename
 
 # Function to create the sidebar title from the path
 def create_sidebar_title(path, category):
-    # Remove leading /v1 and category
-    title = path.replace('/v1', '').replace(f'/{category}', '', 1)
+    # Remove leading /v1, /v2, /v3, /v4 and category
+    title = path.replace('/v1', '').replace('/v2', '').replace('/v3', '').replace('/v4', '').replace(f'/{category}', '', 1)
     # Replace parameters {param} with {param}
     title = title.replace('{', '{').replace('}', '}')
     # Omit leading / and trailing /
@@ -104,6 +103,16 @@ for path, path_item in api_definition["paths"].items():
     category = path_segments[1]
     category_dir = os.path.join(output_base_dir, category)
 
+    # Determine API version
+    if path.startswith('/v2'):
+        api_version = 'v2'
+    elif path.startswith('/v3'):
+        api_version = 'v3'
+    elif path.startswith('/v4'):
+        api_version = 'v4'
+    else:
+        api_version = None
+
     # Create category directory if it does not exist
     create_directory(category_dir)
 
@@ -118,17 +127,23 @@ for path, path_item in api_definition["paths"].items():
     resource_filename = clean_filename(category, f"{resource_name}.md")
     resource_md_path = os.path.join(category_dir, resource_filename)
     permalink = f"/rest-api-guide/{category}/{resource_filename.replace('.md', '.html')}"
-    resource_md_content = generate_resource_md(category, path, path_item, permalink)
+    resource_md_content = generate_resource_md(category, path, path_item, permalink, api_version)
     write_markdown(resource_md_path, resource_md_content)
 
     # Add entry to sidebar entries
     if category not in sidebar_entries_by_category:
         sidebar_entries_by_category[category] = []
-    sidebar_entries_by_category[category].append({
+    
+    sidebar_entry = {
         "output": "web,pdf",
         "title": create_sidebar_title(path, category),
         "url": permalink
-    })
+    }
+    
+    if api_version:
+        sidebar_entry["apiversion"] = api_version
+    
+    sidebar_entries_by_category[category].append(sidebar_entry)
 
 # Alphabetize entries within each category
 for category in sidebar_entries_by_category:

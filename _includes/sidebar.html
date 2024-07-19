@@ -37,12 +37,32 @@
           {% if folderitem.external_url %}
           <li><a title="{{folderitem.title}}" href="{{folderitem.external_url}}" target="_blank" rel="noopener">{{folderitem.title}}</a></li>
           {% elsif page.url == folderitem.url %}
-          <li class="active"><a title="{{folderitem.title}}" href="{{folderitem.url | relative_url }}">{{folderitem.title}}</a></li>
+          <li class="active">
+            <a title="{{folderitem.title}}" href="{{folderitem.url | relative_url }}">
+              {% if folderitem.apiversion %}
+                <span class="apiversion {{folderitem.apiversion}}">{{folderitem.apiversion}}</span>
+              {% endif %}
+              {{folderitem.title}}
+            </a>
+          </li>
           {% elsif folderitem.type == "empty" %}
-          <li><a title="{{folderitem.title}}" href="{{folderitem.url | relative_url }}">{{folderitem.title}}</a></li>
-
+          <li>
+            <a title="{{folderitem.title}}" href="{{folderitem.url | relative_url }}">
+              {% if folderitem.apiversion %}
+                <span class="apiversion {{folderitem.apiversion}}">{{folderitem.apiversion}}</span>
+              {% endif %}
+              {{folderitem.title}}
+            </a>
+          </li>
           {% else %}
-          <li><a title="{{folderitem.title}}" href="{{folderitem.url | relative_url }}">{{folderitem.title}}</a></li>
+          <li>
+            <a title="{{folderitem.title}}" href="{{folderitem.url | relative_url }}">
+              {% if folderitem.apiversion %}
+                <span class="apiversion {{folderitem.apiversion}}">{{folderitem.apiversion}}</span>
+              {% endif %}
+              {{folderitem.title}}
+            </a>
+          </li>
           {% endif %}
           {% for subfolders in folderitem.subfolders %}        
           {% if subfolders.output contains "web" %}
@@ -53,11 +73,30 @@
                   {% if subfolderitem.output contains "web" %}
 
                   {% if subfolderitem.external_url %}
-                  <li><a title="{{subfolderitem.title}}" href="{{subfolderitem.external_url}}" target="_blank" rel="noopener">{{subfolderitem.title}}</a></li>
+                  <li><a title="{{subfolderitem.title}}" href="{{subfolderitem.external_url}}" target="_blank" rel="noopener">
+                    {% if subfolderitem.apiversion %}
+                      <span class="apiversion {{subfolderitem.apiversion}}">{{subfolderitem.apiversion}}</span>
+                    {% endif %}
+                    {{subfolderitem.title}}
+                  </a></li>
                   {% elsif page.url == subfolderitem.url or indexURL == subfolderitem.url %}
-                  <li class="active"><a title="{{subfolderitem.title}}" href="{{subfolderitem.url | relative_url }}">{{subfolderitem.title}}</a></li>
+                  <li class="active">
+                    <a title="{{subfolderitem.title}}" href="{{subfolderitem.url | relative_url }}">
+                      {% if subfolderitem.apiversion %}
+                        <span class="apiversion {{subfolderitem.apiversion}}">{{subfolderitem.apiversion}}</span>
+                      {% endif %}
+                      {{subfolderitem.title}}
+                    </a>
+                  </li>
                   {% else %}
-                  <li><a title="{{subfolderitem.title}}" href="{{subfolderitem.url | relative_url }}">{{subfolderitem.title}}</a></li>
+                  <li>
+                    <a title="{{subfolderitem.title}}" href="{{subfolderitem.url | relative_url }}">
+                      {% if subfolderitem.apiversion %}
+                        <span class="apiversion {{subfolderitem.apiversion}}">{{subfolderitem.apiversion}}</span>
+                      {% endif %}
+                      {{subfolderitem.title}}
+                    </a>
+                  </li>
                   {% endif %}
                   {% endif %}
                   {% endfor %}
@@ -83,3 +122,4 @@
 
 <!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
 <script>$("li.active").parents('li').addClass("active");</script>
+
