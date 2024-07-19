@@ -86,6 +86,7 @@ entries:
     output: web,pdf
     title: auth
     type: navi
+    url: /rest-api-guide/auth/
   - folderitems:
     - output: web,pdf
       title: cancel
@@ -144,6 +145,7 @@ entries:
     output: web,pdf
     title: ad
     type: navi
+    url: /rest-api-guide/ad/
   - folderitems:
     - output: web,pdf
       title: activity/current
@@ -160,6 +162,7 @@ entries:
     output: web,pdf
     title: analytics
     type: navi
+    url: /rest-api-guide/analytics/
   - folderitems:
     - output: web,pdf
       title: cloudwatch/config
@@ -176,6 +179,7 @@ entries:
     output: web,pdf
     title: audit
     type: navi
+    url: /rest-api-guide/audit/
   - folderitems:
     - output: web,pdf
       title: calculate-node-add-capacity
@@ -252,6 +256,7 @@ entries:
     output: web,pdf
     title: cluster
     type: navi
+    url: /rest-api-guide/cluster/
   - folderitems:
     - output: web,pdf
       title: state
@@ -259,6 +264,7 @@ entries:
     output: web,pdf
     title: node
     type: navi
+    url: /rest-api-guide/node/
   - folderitems:
     - output: web,pdf
       title: clear-dns-cache
@@ -278,6 +284,7 @@ entries:
     output: web,pdf
     title: dns
     type: navi
+    url: /rest-api-guide/dns/
   - folderitems:
     - output: web,pdf
       title: locks/nfs4/byte-range
@@ -403,6 +410,7 @@ entries:
     output: web,pdf
     title: files
     type: navi
+    url: /rest-api-guide/files/
   - folderitems:
     - apiversion: v2
       output: web,pdf
@@ -429,6 +437,7 @@ entries:
     output: web,pdf
     title: encryption
     type: navi
+    url: /rest-api-guide/encryption/
   - folderitems:
     - output: web,pdf
       title: v0/settings
@@ -439,6 +448,7 @@ entries:
     output: web,pdf
     title: ftp
     type: navi
+    url: /rest-api-guide/ftp/
   - folderitems:
     - output: web,pdf
       title: file-system
@@ -470,6 +480,7 @@ entries:
     output: web,pdf
     title: file-system
     type: navi
+    url: /rest-api-guide/file-system/
   - folderitems:
     - output: web,pdf
       title: expand
@@ -480,6 +491,7 @@ entries:
     output: web,pdf
     title: identity
     type: navi
+    url: /rest-api-guide/identity/
   - folderitems:
     - output: web,pdf
       title: login-name/{login_name}/gid-numbers
@@ -500,6 +512,7 @@ entries:
     output: web,pdf
     title: ldap
     type: navi
+    url: /rest-api-guide/ldap/
   - folderitems:
     - output: web,pdf
       title: groups
@@ -516,6 +529,7 @@ entries:
     output: web,pdf
     title: groups
     type: navi
+    url: /rest-api-guide/groups/
   - folderitems:
     - output: web,pdf
       title: users
@@ -532,6 +546,7 @@ entries:
     output: web,pdf
     title: users
     type: navi
+    url: /rest-api-guide/users/
   - folderitems:
     - apiversion: v2
       output: web,pdf
@@ -540,6 +555,7 @@ entries:
     output: web,pdf
     title: metrics
     type: navi
+    url: /rest-api-guide/metrics/
   - folderitems:
     - output: web,pdf
       title: settings
@@ -559,6 +575,7 @@ entries:
     output: web,pdf
     title: support
     type: navi
+    url: /rest-api-guide/support/
   - folderitems:
     - apiversion: v2
       output: web,pdf
@@ -583,6 +600,7 @@ entries:
     output: web,pdf
     title: nfs
     type: navi
+    url: /rest-api-guide/nfs/
   - folderitems:
     - output: web,pdf
       title: nfs/global-settings
@@ -611,6 +629,7 @@ entries:
     output: web,pdf
     title: multitenancy
     type: navi
+    url: /rest-api-guide/multitenancy/
   - folderitems:
     - apiversion: v2
       output: web,pdf
@@ -658,6 +677,7 @@ entries:
     output: web,pdf
     title: network
     type: navi
+    url: /rest-api-guide/network/
   - folderitems:
     - apiversion: v3
       output: web,pdf
@@ -758,6 +778,7 @@ entries:
     output: web,pdf
     title: replication
     type: navi
+    url: /rest-api-guide/replication/
   - folderitems:
     - output: web,pdf
       title: access-keys
@@ -789,6 +810,7 @@ entries:
     output: web,pdf
     title: s3
     type: navi
+    url: /rest-api-guide/s3/
   - folderitems:
     - output: web,pdf
       title: settings
@@ -796,6 +818,7 @@ entries:
     output: web,pdf
     title: saml
     type: navi
+    url: /rest-api-guide/saml/
   - folderitems:
     - output: web,pdf
       title: files
@@ -837,6 +860,7 @@ entries:
     output: web,pdf
     title: smb
     type: navi
+    url: /rest-api-guide/smb/
   - folderitems:
     - output: web,pdf
       title: change-password
@@ -859,6 +883,7 @@ entries:
     output: web,pdf
     title: session
     type: navi
+    url: /rest-api-guide/session/
   - folderitems:
     - output: web,pdf
       title: halt
@@ -878,6 +903,7 @@ entries:
     output: web,pdf
     title: shutdown
     type: navi
+    url: /rest-api-guide/shutdown/
   - folderitems:
     - output: web,pdf
       title: calculate-used-capacity
@@ -1000,6 +1026,7 @@ entries:
     output: web,pdf
     title: snapshots
     type: navi
+    url: /rest-api-guide/snapshots/
   - folderitems:
     - output: web,pdf
       title: settings
@@ -1013,6 +1040,7 @@ entries:
     output: web,pdf
     title: time
     type: navi
+    url: /rest-api-guide/time/
   - folderitems:
     - output: web,pdf
       title: jobs
@@ -1023,6 +1051,7 @@ entries:
     output: web,pdf
     title: tree-delete
     type: navi
+    url: /rest-api-guide/tree-delete/
   - folderitems:
     - output: web,pdf
       title: nodes
@@ -1030,6 +1059,7 @@ entries:
     output: web,pdf
     title: unconfigured
     type: navi
+    url: /rest-api-guide/unconfigured/
   - folderitems:
     - output: web,pdf
       title: version
@@ -1037,6 +1067,7 @@ entries:
     output: web,pdf
     title: version
     type: navi
+    url: /rest-api-guide/version/
   - folderitems:
     - apiversion: v2
       output: web,pdf
@@ -1065,6 +1096,7 @@ entries:
     output: web,pdf
     title: upgrade
     type: navi
+    url: /rest-api-guide/upgrade/
   - folderitems:
     - output: web,pdf
       title: settings
@@ -1072,3 +1104,4 @@ entries:
     output: web,pdf
     title: web-ui
     type: navi
+    url: /rest-api-guide/web-ui/
