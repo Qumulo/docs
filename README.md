@@ -27,12 +27,12 @@ To get started, choose one of the following guides.
   </span>
 
   <span class="guide-button">
-    <a class="multilink" href="qumulo-alerts-guide/">
+    <a class="multilink" href="hardware-guide/">
       <picture>
-        <source type="image/webp" srcset="images/qumulo-alerts-guide.webp">
-        <source type="image/png" srcset="images/qumulo-alerts-guide.png">
-        <img src="images/qumulo-alerts-guide.png" alt="An image of a computer screen showing a warning triangle behind a stylized image of a cog wheel, symbolizing administering Qumulo Alerts instances" class="landing-page-icon" width="301" height="301">
-      </picture><br>{{site.guides.alert}}</a>
+        <source type="image/webp" srcset="images/hardware-guide.webp" width="301" height="301">
+        <source type="image/png" srcset="images/hardware-guide.png" width="301" height="301">
+        <img src="images/hardware-guide.png" alt="A stylized image of a server rack, symbolizing installing, configuring, and maintaining hardware" class="landing-page-icon" width="301" height="301">
+      </picture><br>{{site.guides.hard}}</a>
   </span>
 
   <span class="guide-button">
@@ -45,12 +45,21 @@ To get started, choose one of the following guides.
   </span>
 
   <span class="guide-button">
-    <a class="multilink" href="hardware-guide/">
+    <a class="multilink" href="rest-api-guide/">
       <picture>
-        <source type="image/webp" srcset="images/hardware-guide.webp" width="301" height="301">
-        <source type="image/png" srcset="images/hardware-guide.png" width="301" height="301">
-        <img src="images/hardware-guide.png" alt="A stylized image of a server rack, symbolizing installing, configuring, and maintaining hardware" class="landing-page-icon" width="301" height="301">
-      </picture><br>{{site.guides.hard}}</a>
+        <source type="image/webp" srcset="images/qumulo-rest-api-guide.webp">
+        <source type="image/png" srcset="images/qumulo-rest-api-guide.png">
+        <img src="images/qumulo-rest-api-guide.png" alt="An image of a computer screen showing a terminal window with a Qumulo REST API call" class="landing-page-icon" width="301" height="301">
+      </picture><br>{{site.guides.rest}}</a>
+  </span>
+
+  <span class="guide-button">
+    <a class="multilink" href="qumulo-alerts-guide/">
+      <picture>
+        <source type="image/webp" srcset="images/qumulo-alerts-guide.webp">
+        <source type="image/png" srcset="images/qumulo-alerts-guide.png">
+        <img src="images/qumulo-alerts-guide.png" alt="An image of a computer screen showing a warning triangle behind a stylized image of a cog wheel, symbolizing administering Qumulo Alerts instances" class="landing-page-icon" width="301" height="301">
+      </picture><br>{{site.guides.alert}}</a>
   </span>
 
   <span class="guide-button">

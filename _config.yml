@@ -389,9 +389,10 @@ udm:
 guides:
   anq: Azure Native Qumulo Administrator Guide
   onprem: Qumulo On-Premises Administrator Guide
-  alert: Qumulo Alerts Administrator Guide
-  cli: Qumulo <code>qq</code> CLI Command Guide
   hard: Qumulo-Certified Hardware Servicing Guide
+  cli: Qumulo <code>qq</code> CLI Command Guide
+  rest: Qumulo REST API Guide
+  alert: Qumulo Alerts Administrator Guide
   integ: Qumulo Integration Guide
 
 xrefUSBinstaller: <a href="https://docs.qumulo.com/hardware-guide/getting-started/creating-usb-drive-installer.html" class="no_icon">Qumulo Core USB Drive Installer</a>
