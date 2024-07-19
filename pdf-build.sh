@@ -104,7 +104,7 @@ build_prince () {
       PRINCE_OUTPUT=qumulo-qq-cli-command-guide.pdf
       ;;
     "Qumulo_REST_API_Guide")
-      JEKYLL_CONFIG=config_qumulo_rest_api_guide_pdf.yml
+      JEKYLL_CONFIG=config_rest_api_guide_pdf.yml
       PRINCE_OUTPUT=qumulo-rest-api-guide.pdf
       ;;
     "Integration_Guide")

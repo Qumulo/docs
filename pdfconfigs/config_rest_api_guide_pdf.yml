@@ -16,4 +16,4 @@ defaults:
       comments: true
       search: true
 
-pdf_sidebar: qq_rest_api_guide_sidebar
+pdf_sidebar: rest_api_guide_sidebar
