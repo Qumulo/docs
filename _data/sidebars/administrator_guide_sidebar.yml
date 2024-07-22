@@ -447,6 +447,10 @@ entries:
       url: /administrator-guide/monitoring-and-metrics/restoring-default-values-cloud-based-nexus-monitoring.html
       output: web, pdf
 
+    - title: Tracking File System Operations by Using Audit Logging
+      url: /administrator-guide/monitoring-and-metrics/tracking-file-system-operations-audit-logging.html
+      output: web, pdf
+
     - title: OpenMetrics API Specification
       url: /administrator-guide/monitoring-and-metrics/openmetrics-api-specification.html
       output: web, pdf

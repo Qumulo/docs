@@ -379,6 +379,10 @@ entries:
     output: web, pdf
     folderitems:
 
+    - title: Tracking File System Operations by Using Audit Logging
+      url: /azure-administrator-guide/monitoring-and-metrics/tracking-file-system-operations-audit-logging.html
+      output: web, pdf
+
     - title: OpenMetrics API Specification
       url: /azure-administrator-guide/monitoring-and-metrics/openmetrics-api-specification.html
       output: web, pdf
