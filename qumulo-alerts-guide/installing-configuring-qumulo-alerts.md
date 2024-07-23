@@ -77,7 +77,7 @@ To be able to generate access tokens, you must create a local user for Qumulo Al
      "id": "1234",
      "name": "QumuloAlerts",
      "primary_group": "999",
-     "sid": "S-1-5-21-1234567890-098765432-1234567890-1234",
+     "sid": "{{site.exampleSID6}}",
      "uid": ""
    }
    ```

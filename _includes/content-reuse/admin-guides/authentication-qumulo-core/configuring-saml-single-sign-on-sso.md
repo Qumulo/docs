@@ -245,7 +245,7 @@ Several AD configuration issues can cause a **User not found** error:
   To verify that a username is discoverable, run the {% include qq.html command="ad_sid_to_account" %} command. For example:
 
   ```bash
-  qq ad_sid_to_account --sid S-1-5-32-544
+  qq ad_sid_to_account --sid {{site.adminGroupSID}}
   ```
   
   If an error occurs, contact your AD administrator and request the correct Base DN. For more information, see [Specifying the Base Distinguished Name (Base DN)](../kerberos/kerberos-prerequisites-joining-cluster-active-directory.html#specifying-the-base-distinguished-name-base-dn).
