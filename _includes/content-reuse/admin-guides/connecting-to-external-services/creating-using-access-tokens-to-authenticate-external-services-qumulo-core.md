@@ -40,7 +40,7 @@ You can:
   * `local:jane`
 * Specify ID types, for example:
   * `auth_id:1234`
-  * `SID:S-1-1-0`
+  * `SID:{{site.everyoneGroupSID}}`
 
 {{site.data.alerts.note}}
 <ul>
@@ -150,7 +150,7 @@ For example:
     "domain": "LOCAL",
     "gid": null,
     "name": "admin",
-    "sid": "S-1-1-12-12345678-1234567890-1234567890-500",
+    "sid": "{{site.exampleSID1}}",
     "uid": null
   },
   "enabled": true,
@@ -161,7 +161,7 @@ For example:
     "domain": "LOCAL",
     "gid": null,
     "name": "svc",
-    "sid": "S-1-1-12-12345678-1234567890-1234567890-1002",
+    "sid": "{{site.exampleSID2}}",
     "uid": null
   }
 }

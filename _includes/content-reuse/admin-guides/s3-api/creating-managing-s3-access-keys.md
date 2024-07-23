@@ -87,7 +87,7 @@ You can specify an identity by using:
 
   * `MY_NAME`
 
-* An Active Directory Security Identifier. For example: `SID:S-1-1-0`
+* An Active Directory Security Identifier. For example: `SID:{{site.everyoneGroupSID}}`
 
 * <a id="auth-id"></a>
 
