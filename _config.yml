@@ -196,6 +196,21 @@ exampleMAC1: d0:82:77:72:01:1f
 exampleMAC2: a0:2c:55:a3:3d:ce
 exampleMAC3: ec:fd:7d:3f:0b:e5
 exampleMAC4: c4:e9:73:89:7c:76
+exampleSID1: S-1-1-12-12345678-2345678901-1234567890-500
+exampleSID2: S-1-1-12-12345678-2345678901-1234567890-1002
+exampleSID3: S-1-5-21-123456790-3456789012-1234567890-123
+exampleSID4: S-1-5-21-1234567890-345678912-1234567890-1234
+exampleSID5: S-1-5-21-1234567890-4567890123-9876543210-513
+exampleSID6: S-1-5-21-1234567890-4567890123-9876543210-13507
+exampleSID7: S-1-5-21-9876543210-5678901234-1234567890-1
+exampleSID8: S-1-5-21-9876543210-5678901234-1234567890-500
+exampleShortSID1: S-1-5-1234
+exampleShortSID2: S-1-5-5678
+exampleShortSID3: S-1-5-2-3-4
+exampleShortSID4: S-1-5-8-9
+exampleShortSID5: S-1-5-32-544
+everyoneGroupSID: S-1-1-0
+adminGroupSID: S-1-5-32-544
 
 adp:
   before612AddOnly: Qumulo Core 6.1.0.1 and 6.1.1 support Adaptive Data Protection by letting you reconfigure your cluster's fault tolerance level and storage efficiency only when you add nodes to your cluster.
