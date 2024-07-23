@@ -1,4 +1,6 @@
-Qumulo Core creates a descriptive audit log message for every operation that a client attempts and sends the audit log messages to the remote syslog instance that the audit logging configuration specifies in compliance with {% include rfc.html rfc='5424' %}.
+Qumulo Core creates a descriptive audit log message for every operation that a client attempts and sends the audit log messages to the remote syslog instance that the audit logging configuration specifies in compliance with {% include rfc.html rfc='5424' %}. By default, Qumulo Core formats audit log messages in the syslog CSV format, prefaced by the date, time, and the name of the machine that issues the operation. The syslog CSV format includes the following fields in the following order within the log message body.
+
+This section explains the differences between the levels of details that audit logging in [syslog CSV](#details-in-syslog-csv-format), [syslog JSON](#details-in-syslog-json-format), and [CloudWatch JSON](#details-in-cloudwatch-json-format) formats provide.
 
 {{site.data.alerts.note}}
 <p>Qumulo Core doesn't parse, analyze, index, or visualize the data. For more information, see the following articles on Qumulo Care:</p>
@@ -9,13 +11,8 @@ Qumulo Core creates a descriptive audit log message for every operation that a c
 </ul>
 {{site.data.alerts.end}}
 
-## How Audit Log Messages are Structured
-This section explains the differences between the levels of details that audit logging in syslog CSV and JSON and CloudWatch JSON formats provide.
-
 <a id="details-in-syslog-csv-format"></a>
-### Details Included in the Syslog CSV Format
-By default, Qumulo Core formats audit log messages in the syslog CSV format, prefaced by the date, time, and the name of the machine that issues the operation. The CSV format includes the following fields in the following order within the log message body.
-
+## Details Included in the Default Syslog CSV Format
 {{site.data.alerts.note}}
 <ul>
   <li>Because the user ID, path fields, and secondary path fields can contain characters that must be escaped (such as quotation marks and commas), you must enclose these fields in quotation marks.</li>
@@ -150,8 +147,10 @@ By default, Qumulo Core formats audit log messages in the syslog CSV format, pre
 
 For example:
 
-```
-Jun 6 14:52:28 my-machine qumulo {{site.exampleIP0}},"system",internal,remote_syslog_startup,ok,,"",""
+<details>
+  <summary>Click to expand</summary>
+  <div class="highlight">
+    <pre class="highlight">Jun 6 14:52:28 my-machine qumulo {{site.exampleIP0}},"system",internal,remote_syslog_startup,ok,,"",""
 Jun 6 14:52:28 my-machine qumulo {{site.exampleIP0}},"AD\alice",api,audit_modify_syslog_config,ok,,"",""
 Jun 6 14:52:40 my-machine qumulo {{site.exampleIP0}},"AD\alice",api,rest_login,ok,,"",""
 Jun 6 14:53:22 my-machine qumulo {{site.exampleIP0}},"AD\alice",api,fs_read_metadata,ok,3,"/my_file",""
@@ -160,10 +159,12 @@ Jun 6 14:53:22 my-machine qumulo {{site.exampleIP0}},"AD\alice",api,fs_write_dat
 Jun 6 14:54:05 my-machine qumulo {{site.exampleIP0}},"AD\alice",api,fs_rename,ok,3,"/my_file","/another_file"
 Jun 6 14:55:24 my-machine qumulo {{site.exampleIP0}},"AD\alice",api,begin_audit_modify_syslog_config,ok,,"",""
 Jun 6 14:55:24 my-machine qumulo {{site.exampleIP0}},"system",internal,remote_syslog_shutdown,ok,,"","
-```
+    </pre>
+  </div>
+</details>
 
 <a id="details-in-syslog-json-format"></a>
-### Details Included in the Syslog JSON Format
+## Details Included in the Syslog JSON Format
 You can configure Qumulo Core to format audit log messages in the syslog JSON format. The fields in this format are similar to [the fields that the syslog CSV format provides](#details-in-csv-format), with the following exceptions.
 
 {% include note.html content="The syslog JSON format isn't available in the Web UI." %}
@@ -225,8 +226,10 @@ You can configure Qumulo Core to format audit log messages in the syslog JSON fo
 
 For example:
 
-```
-Jun 6 14:52:28 my-machine qumulo {"user_id": {"auth_id": "1", "sid": "{{site.exampleSID7}}", "name": "system"}, "user_ip": "{{site.exampleIP0}}", "protocol": "internal", "operation": "remote_syslog_startup", "status": "ok", "details": {}}
+<details>
+  <summary>Click to expand</summary>
+  <div class="highlight">
+    <pre class="highlight">Jun 6 14:52:28 my-machine qumulo {"user_id": {"auth_id": "1", "sid": "{{site.exampleSID7}}", "name": "system"}, "user_ip": "{{site.exampleIP0}}", "protocol": "internal", "operation": "remote_syslog_startup", "status": "ok", "details": {}}
 Jun 6 14:52:28 my-machine qumulo {"user_id": {"sid": "{{site.exampleSID8}}", "auth_id": "500", "name": "admin"}, "user_ip": "{{site.exampleIP0}}", "protocol": "api", "operation": "audit_modify_syslog_config", "status": "ok", "details": {"second_extra_name": "", "extra_name": ""}}
 Jun 6 14:52:40 my-machine qumulo {"user_id": {"auth_id": "500", "name": "admin", "sid": "{{site.exampleSID8}}"}, "user_ip": "{{site.exampleIP0}}", "protocol": "api", "operation": "rest_login", "status": "ok", "details": {"second_extra_name": "", "extra_name": ""}}
 Jun 6 14:53:22 my-machine qumulo {"user_id": {"sid": "{{site.exampleSID8}}", "name": "admin", "auth_id": "500"}, "user_ip": "{{site.exampleIP0}}", "protocol": "api", "operation": "fs_read_metadata", "status": "ok", "details": {"path": "/my_file", "file_id": "4"}}
@@ -235,9 +238,11 @@ Jun 6 14:53:22 my-machine qumulo {"user_id": {"auth_id": "500", "sid": "{{site.e
 Jun 6 14:54:05 my-machine qumulo {"user_id": {"name": "admin", "auth_id": "500", "sid": "{{site.exampleSID8}}"}, "user_ip": "{{site.exampleIP0}}", "protocol": "api", "operation": "fs_rename", "status": "fs_entry_exists_error", "details": {"path": "/my_file", "target": "/another_file", "file_id": "4"}}
 Jun 6 14:55:24 my-machine qumulo {"user_id": {"sid": "{{site.exampleSID8}}", "auth_id": "500", "name": "admin"}, "user_ip": "{{site.exampleIP0}}", "protocol": "api", "operation": "begin_audit_modify_syslog_config", "status": "ok", "details": {"second_extra_name": "", "extra_name": ""}}
 Jun 6 14:55:24 my-machine qumulo {"user_id": {"auth_id": "1", "sid": "{{site.exampleSID7}}", "name": "system"}, "user_ip": "{{site.exampleIP0}}", "protocol": "internal", "operation": "remote_syslog_shutdown", "status": "ok", "details": {}}
-```
+    </pre>
+  </div>
+</details>
 
-### Possible Error Status Messages
+## Possible Error Status Messages
 The following are possible error status messages in Qumulo Core.
 
 <details>
