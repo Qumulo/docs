@@ -9,7 +9,7 @@ optional_options:
 - alternate: []
   help: Show access tokens belonging to a specific user. Use an auth_id, SID, or name
     optionally qualified with a domain prefix (e.g "local:name", "ad:name", "AD\name")
-    or an ID type (e.g. "auth_id:513", "SID:S-1-1-0"). Groups are not supported for
+    or an ID type (e.g. "auth_id:513", "SID:{{site.everyoneGroupSID}}"). Groups are not supported for
     access tokens, must be a user.
   name: --user
   required: false

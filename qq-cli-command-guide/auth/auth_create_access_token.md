@@ -17,7 +17,7 @@ optional_options:
 permalink: /qq-cli-command-guide/auth/auth_create_access_token.html
 positional_options:
 - help: An auth_id, SID, or name optionally qualified with a domain prefix (e.g "local:name",
-    "ad:name", "AD\name") or an ID type (e.g. "auth_id:513", "SID:S-1-1-0"). Groups
+    "ad:name", "AD\name") or an ID type (e.g. "auth_id:513", "SID:{{site.everyoneGroupSID}}"). Groups
     are not supported for access tokens, must be a user.
   name: identifier
   required: true

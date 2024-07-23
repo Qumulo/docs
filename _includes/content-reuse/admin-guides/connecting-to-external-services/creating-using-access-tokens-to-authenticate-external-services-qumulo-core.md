@@ -40,7 +40,7 @@ You can:
   * `local:jane`
 * Specify ID types, for example:
   * `auth_id:1234`
-  * `SID:S-1-1-0`
+  * `SID:{{site.everyoneGroupSID}}`
 
 {{site.data.alerts.note}}
 <ul>
