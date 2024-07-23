@@ -218,6 +218,7 @@ You can configure Qumulo Core to format audit log messages in the syslog JSON fo
             <li><code>file_size</code>: The size of the operation</li>
           </ul>
         </li>
+      </ul>
     </td>
   </tr>
 </table>
