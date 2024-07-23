@@ -9,7 +9,7 @@ optional_options:
   required: true
 - alternate:
   - --trustee
-  help: Unassign the role from this trustee.  e.g. Everyone, uid:1000, gid:1001, sid:{{site.exampleShortSID3}},
+  help: Unassign the role from this trustee.  e.g. Everyone, uid:1000, gid:1001, sid:S-1-5-2-3-4,
     or auth_id:500
   name: -t
   required: true

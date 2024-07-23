@@ -10,9 +10,9 @@ optional_options:
   help: "\n                List only the sessions that match the specified user's\
     \ identity in one of the\n                following forms: a name or a SID optionally\
     \ qualified with a domain prefix (for\n                example, \"local:name\"\
-    , \"{{site.everyoneGroupSID}}\", \"name\", \"world:Everyone\", \"ldap_user:name\",\n           \
+    , \"S-1-1-0\", \"name\", \"world:Everyone\", \"ldap_user:name\",\n           \
     \     \"ad:name\"), or an ID type (for example, \"uid:1001\", \"auth_id:513\"\
-    , \"SID:{{site.everyoneGroupSID}}\").\n                "
+    , \"SID:S-1-1-0\").\n                "
   name: --identity
   required: false
 permalink: /qq-cli-command-guide/smb/smb_list_sessions.html

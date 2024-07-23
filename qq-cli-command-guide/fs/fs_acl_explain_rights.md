@@ -12,7 +12,7 @@ optional_options:
   required: false
 - alternate:
   - --user
-  help: User for whom to explain rights. e.g. Alice, uid:1000, sid:{{site.exampleShortSID3}}, or
+  help: User for whom to explain rights. e.g. Alice, uid:1000, sid:S-1-5-2-3-4, or
     auth_id:500.  If multiple are given, they will be considered equivalent for the
     purpose of the explanation.
   name: -u
