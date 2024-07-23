@@ -35,6 +35,7 @@ exclude:
   - .spelling-ignorefiles
   - tools/
   - "*.sh"
+  - "*.py"
   - "*.rb"
   - "*.yml"
   - "*.drawio"

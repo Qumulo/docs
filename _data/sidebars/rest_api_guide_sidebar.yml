@@ -85,7 +85,6 @@ entries:
       url: /rest-api-guide/auth/user-defined-mappings.html
     output: web,pdf
     title: auth
-    type: navi
     url: /rest-api-guide/auth/
   - folderitems:
     - output: web,pdf
@@ -144,7 +143,6 @@ entries:
       url: /rest-api-guide/ad/usernames_username_sids.html
     output: web,pdf
     title: ad
-    type: navi
     url: /rest-api-guide/ad/
   - folderitems:
     - output: web,pdf
@@ -161,7 +159,6 @@ entries:
       url: /rest-api-guide/analytics/time-series.html
     output: web,pdf
     title: analytics
-    type: navi
     url: /rest-api-guide/analytics/
   - folderitems:
     - output: web,pdf
@@ -178,7 +175,6 @@ entries:
       url: /rest-api-guide/audit/syslog_status.html
     output: web,pdf
     title: audit
-    type: navi
     url: /rest-api-guide/audit/
   - folderitems:
     - output: web,pdf
@@ -255,7 +251,6 @@ entries:
       url: /rest-api-guide/cluster/slots_id.html
     output: web,pdf
     title: cluster
-    type: navi
     url: /rest-api-guide/cluster/
   - folderitems:
     - output: web,pdf
@@ -263,7 +258,6 @@ entries:
       url: /rest-api-guide/node/state.html
     output: web,pdf
     title: node
-    type: navi
     url: /rest-api-guide/node/
   - folderitems:
     - output: web,pdf
@@ -283,7 +277,6 @@ entries:
       url: /rest-api-guide/dns/resolve-names-to-ips.html
     output: web,pdf
     title: dns
-    type: navi
     url: /rest-api-guide/dns/
   - folderitems:
     - output: web,pdf
@@ -409,7 +402,6 @@ entries:
       url: /rest-api-guide/files/ref_user-metadata_type_key.html
     output: web,pdf
     title: files
-    type: navi
     url: /rest-api-guide/files/
   - folderitems:
     - apiversion: v2
@@ -436,7 +428,6 @@ entries:
       url: /rest-api-guide/encryption/status.html
     output: web,pdf
     title: encryption
-    type: navi
     url: /rest-api-guide/encryption/
   - folderitems:
     - output: web,pdf
@@ -447,7 +438,6 @@ entries:
       url: /rest-api-guide/ftp/v0_status.html
     output: web,pdf
     title: ftp
-    type: navi
     url: /rest-api-guide/ftp/
   - folderitems:
     - output: web,pdf
@@ -479,7 +469,6 @@ entries:
       url: /rest-api-guide/file-system/settings_permissions.html
     output: web,pdf
     title: file-system
-    type: navi
     url: /rest-api-guide/file-system/
   - folderitems:
     - output: web,pdf
@@ -490,7 +479,6 @@ entries:
       url: /rest-api-guide/identity/find.html
     output: web,pdf
     title: identity
-    type: navi
     url: /rest-api-guide/identity/
   - folderitems:
     - output: web,pdf
@@ -511,7 +499,6 @@ entries:
       url: /rest-api-guide/ldap/uid-number_uid_number_login-name.html
     output: web,pdf
     title: ldap
-    type: navi
     url: /rest-api-guide/ldap/
   - folderitems:
     - output: web,pdf
@@ -528,7 +515,6 @@ entries:
       url: /rest-api-guide/groups/id.html
     output: web,pdf
     title: groups
-    type: navi
     url: /rest-api-guide/groups/
   - folderitems:
     - output: web,pdf
@@ -545,7 +531,6 @@ entries:
       url: /rest-api-guide/users/id_setpassword.html
     output: web,pdf
     title: users
-    type: navi
     url: /rest-api-guide/users/
   - folderitems:
     - apiversion: v2
@@ -554,7 +539,6 @@ entries:
       url: /rest-api-guide/metrics/v2_endpoints_default_data.html
     output: web,pdf
     title: metrics
-    type: navi
     url: /rest-api-guide/metrics/
   - folderitems:
     - output: web,pdf
@@ -574,7 +558,6 @@ entries:
       url: /rest-api-guide/support/vpn_key_generate.html
     output: web,pdf
     title: support
-    type: navi
     url: /rest-api-guide/support/
   - folderitems:
     - apiversion: v2
@@ -599,7 +582,6 @@ entries:
       url: /rest-api-guide/nfs/v2_settings.html
     output: web,pdf
     title: nfs
-    type: navi
     url: /rest-api-guide/nfs/
   - folderitems:
     - output: web,pdf
@@ -628,7 +610,6 @@ entries:
       url: /rest-api-guide/multitenancy/tenants_tenant_id.html
     output: web,pdf
     title: multitenancy
-    type: navi
     url: /rest-api-guide/multitenancy/
   - folderitems:
     - apiversion: v2
@@ -676,7 +657,6 @@ entries:
       url: /rest-api-guide/network/status_id.html
     output: web,pdf
     title: network
-    type: navi
     url: /rest-api-guide/network/
   - folderitems:
     - apiversion: v3
@@ -777,7 +757,6 @@ entries:
       url: /rest-api-guide/replication/v2_target-relationships_id_status.html
     output: web,pdf
     title: replication
-    type: navi
     url: /rest-api-guide/replication/
   - folderitems:
     - output: web,pdf
@@ -809,7 +788,6 @@ entries:
       url: /rest-api-guide/s3/settings.html
     output: web,pdf
     title: s3
-    type: navi
     url: /rest-api-guide/s3/
   - folderitems:
     - output: web,pdf
@@ -817,7 +795,6 @@ entries:
       url: /rest-api-guide/saml/settings.html
     output: web,pdf
     title: saml
-    type: navi
     url: /rest-api-guide/saml/
   - folderitems:
     - output: web,pdf
@@ -859,7 +836,6 @@ entries:
       url: /rest-api-guide/smb/v3_shares_share_id.html
     output: web,pdf
     title: smb
-    type: navi
     url: /rest-api-guide/smb/
   - folderitems:
     - output: web,pdf
@@ -882,7 +858,6 @@ entries:
       url: /rest-api-guide/session/who-am-i.html
     output: web,pdf
     title: session
-    type: navi
     url: /rest-api-guide/session/
   - folderitems:
     - output: web,pdf
@@ -902,7 +877,6 @@ entries:
       url: /rest-api-guide/shutdown/reboot_status.html
     output: web,pdf
     title: shutdown
-    type: navi
     url: /rest-api-guide/shutdown/
   - folderitems:
     - output: web,pdf
@@ -1025,7 +999,6 @@ entries:
       url: /rest-api-guide/snapshots/v2_newer_id_changes-since_older_id_files_ref.html
     output: web,pdf
     title: snapshots
-    type: navi
     url: /rest-api-guide/snapshots/
   - folderitems:
     - output: web,pdf
@@ -1039,7 +1012,6 @@ entries:
       url: /rest-api-guide/time/timezones.html
     output: web,pdf
     title: time
-    type: navi
     url: /rest-api-guide/time/
   - folderitems:
     - output: web,pdf
@@ -1050,7 +1022,6 @@ entries:
       url: /rest-api-guide/tree-delete/jobs_id.html
     output: web,pdf
     title: tree-delete
-    type: navi
     url: /rest-api-guide/tree-delete/
   - folderitems:
     - output: web,pdf
@@ -1058,7 +1029,6 @@ entries:
       url: /rest-api-guide/unconfigured/nodes.html
     output: web,pdf
     title: unconfigured
-    type: navi
     url: /rest-api-guide/unconfigured/
   - folderitems:
     - output: web,pdf
@@ -1066,7 +1036,6 @@ entries:
       url: /rest-api-guide/version/version.html
     output: web,pdf
     title: version
-    type: navi
     url: /rest-api-guide/version/
   - folderitems:
     - apiversion: v2
@@ -1095,7 +1064,6 @@ entries:
       url: /rest-api-guide/upgrade/v2_verify-image.html
     output: web,pdf
     title: upgrade
-    type: navi
     url: /rest-api-guide/upgrade/
   - folderitems:
     - output: web,pdf
@@ -1103,12 +1071,4 @@ entries:
       url: /rest-api-guide/web-ui/settings.html
     output: web,pdf
     title: web-ui
-    type: navi
     url: /rest-api-guide/web-ui/
-  guidetitle: Qumulo REST API Guide
-  guideurl: /rest-api-guide/
-  output: web,pdf
-  pdftitle: qumulo-rest-api-guide.pdf
-  product: ''
-  title: Qumulo REST API Guide
-  version: ''

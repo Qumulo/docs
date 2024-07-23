@@ -190,7 +190,6 @@ for category, entries in sidebar_entries_by_category.items():
         "folderitems": entries,
         "output": "web,pdf",
         "title": category,
-        "type": "navi",
         "url": f"/rest-api-guide/{category}/"
     })
 
