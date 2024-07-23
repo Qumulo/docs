@@ -299,8 +299,8 @@ The following table describes examples of principals which Qumulo Core supports.
     <tr>
       <td>
         <ul>
-          <li><code>{{site.exampleShortSID2}}</code></li>
-          <li><code>sid:{{site.exampleShortSID3}}</code></li>
+          <li><code>{{site.exampleShortSID1}}</code></li>
+          <li><code>sid:{{site.exampleShortSID2}}</code></li>
         </ul>
       </td>
       <td>A <a href="https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/understand-security-identifiers">Windows-style security identifier (SID)</a>, optionally prefixed by <code>sid:</code></td>

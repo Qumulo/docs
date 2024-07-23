@@ -66,7 +66,7 @@ optional_options:
   required: false
 - alternate: []
   help: "\n            Grant read access to the specified trustees. For example: Everyone,\
-    \ uid:1000, gid:1001,\n            sid:{{site.exampleShortSID1}}, auth_id:500\n            "
+    \ uid:1000, gid:1001,\n            sid:{{site.exampleShortSID3}}, auth_id:500\n            "
   name: --grant-read-access
   required: false
 - alternate: []
