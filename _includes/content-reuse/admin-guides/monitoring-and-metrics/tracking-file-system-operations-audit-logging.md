@@ -121,91 +121,8 @@ By default, Qumulo Core formats audit log messages in the syslog CSV format, pre
     <td>A success status or an error status.</td>
     <td>
       <ul>
-        <li>Success status: <code>ok</code></li>
-        <li>
-          Error status:
-          <details>
-            <summary>Click to expand</summary>
-            <ul>
-              <li><code>cred_error</code></li>
-              <li><code>cred_identity_not_supported_error</code></li>
-              <li><code>cred_invalid_local_user_error</code></li>
-              <li><code>cred_invalid_sid_error</code></li>
-              <li><code>cred_remote_resource_unavailable_error</code></li>
-              <li><code>fs_access_denied_error</code></li>
-              <li><code>fs_access_error</code></li>
-              <li><code>fs_access_perm_not_owner_error</code></li>
-              <li><code>fs_already_read_only_error</code></li>
-              <li><code>fs_default_stream_of_directory_error</code></li>
-              <li><code>fs_directory_cycle_error</code></li>
-              <li><code>fs_directory_error</code></li>
-              <li><code>fs_directory_hash_exhaustion_error</code></li>
-              <li><code>fs_directory_is_symlink_error</code></li>
-              <li><code>fs_directory_not_empty_error</code></li>
-              <li><code>fs_encountered_portal_error</code></li>
-              <li><code>fs_entry_exists_error</code></li>
-              <li><code>fs_entry_hardlink_ambiguity_error</code></li>
-              <li><code>fs_entry_not_in_subtree_error</code></li>
-              <li><code>fs_exceeded_maximum_stream_count_error</code></li>
-              <li><code>fs_file_dirent_id_stale_error</code></li>
-              <li><code>fs_file_is_named_stream_error</code></li>
-              <li><code>fs_file_is_symlink_error</code></li>
-              <li><code>fs_file_not_covered_by_snapshot_error</code></li>
-              <li><code>fs_file_not_empty_error</code></li>
-              <li><code>fs_file_path_invalid_error</code></li>
-              <li><code>fs_file_size_error</code></li>
-              <li><code>fs_file_too_many_links_error</code></li>
-              <li><code>fs_invalid_acl_error</code></li>
-              <li><code>fs_invalid_attrs_error</code></li>
-              <li><code>fs_invalid_file_type_error</code></li>
-              <li><code>fs_invalid_name_error</code></li>
-              <li><code>fs_invalid_offset_error</code></li>
-              <li><code>fs_invalid_size_error</code></li>
-              <li><code>fs_name_size_error</code></li>
-              <li><code>fs_no_such_entry_error</code></li>
-              <li><code>fs_no_such_file_version_error</code></li>
-              <li><code>fs_no_such_inode_error</code></li>
-              <li><code>fs_no_such_path_error</code></li>
-              <li><code>fs_not_a_directory_error</code></li>
-              <li><code>fs_not_a_file_error</code></li>
-              <li><code>fs_not_a_symlink_error</code></li>
-              <li><code>fs_opened_file_stale_error</code></li>
-              <li><code>fs_path_size_error</code></li>
-              <li><code>fs_permissions_mode_operation_unsupported_error</code></li>
-              <li><code>fs_portal_create_orphanage_error</code></li>
-              <li><code>fs_portal_disconnected_error</code></li>
-              <li><code>fs_portal_ended_error</code></li>
-              <li><code>fs_portal_error</code></li>
-              <li><code>fs_portal_eviction_error</code></li>
-              <li><code>fs_portal_inconsistent_data_error</code></li>
-              <li><code>fs_portal_incorrect_state_error</code></li>
-              <li><code>fs_portal_invalid_lease_break_range_error</code></li>
-              <li><code>fs_portal_not_covered_by_snapshot_error</code></li>
-              <li><code>fs_portal_not_found_error</code></li>
-              <li><code>fs_portal_out_of_order_lease_break_error</code></li>
-              <li><code>fs_quota_limit_already_set_error</code></li>
-              <li><code>fs_quota_limit_does_not_exist_error</code></li>
-              <li><code>fs_quota_no_space_error</code></li>
-              <li><code>fs_read_only_error</code></li>
-              <li><code>fs_revision_mismatch_error</code></li>
-              <li><code>fs_s3_versioning_full_error</code></li>
-              <li><code>fs_same_inode_error</code></li>
-              <li><code>fs_sharing_violation_error</code></li>
-              <li><code>fs_smb_share_root_deleted_error</code></li>
-              <li><code>fs_stream_is_default_error</code></li>
-              <li><code>fs_symlink_loop_error</code></li>
-              <li><code>fs_tag_mismatch_error</code></li>
-              <li><code>fs_too_many_aces_error</code></li>
-              <li><code>fs_user_metadata_continuation_token_type_mismatch</code></li>
-              <li><code>fs_user_metadata_empty_insertion_error</code></li>
-              <li><code>fs_user_metadata_hash_exhaustion_error</code></li>
-              <li><code>fs_user_metadata_key_already_exists</code></li>
-              <li><code>fs_user_metadata_key_not_found</code></li>
-              <li><code>fs_user_metadata_too_large</code></li>
-              <li><code>fs_watcher_missed_events_error</code></li>
-            </ul>
-          </details>
-        </li>
+        <li>Success status message: <code>ok</code></li>
+        <li><a href="possible-error-status-messages">Error status message</a></li>
       </ul>
     </td>
   </tr>
@@ -318,3 +235,88 @@ Jun 6 14:54:05 my-machine qumulo {"user_id": {"name": "admin", "auth_id": "500",
 Jun 6 14:55:24 my-machine qumulo {"user_id": {"sid": "{{site.exampleSID8}}", "auth_id": "500", "name": "admin"}, "user_ip": "{{site.exampleIP0}}", "protocol": "api", "operation": "begin_audit_modify_syslog_config", "status": "ok", "details": {"second_extra_name": "", "extra_name": ""}}
 Jun 6 14:55:24 my-machine qumulo {"user_id": {"auth_id": "1", "sid": "{{site.exampleSID7}}", "name": "system"}, "user_ip": "{{site.exampleIP0}}", "protocol": "internal", "operation": "remote_syslog_shutdown", "status": "ok", "details": {}}
 ```
+
+### Possible Error Status Messages
+The following are possible error status messages in Qumulo Core.
+
+<details>
+  <summary>Click to expand</summary>
+  <ul>
+    <li><code>cred_error</code></li>
+    <li><code>cred_identity_not_supported_error</code></li>
+    <li><code>cred_invalid_local_user_error</code></li>
+    <li><code>cred_invalid_sid_error</code></li>
+    <li><code>cred_remote_resource_unavailable_error</code></li>
+    <li><code>fs_access_denied_error</code></li>
+    <li><code>fs_access_error</code></li>
+    <li><code>fs_access_perm_not_owner_error</code></li>
+    <li><code>fs_already_read_only_error</code></li>
+    <li><code>fs_default_stream_of_directory_error</code></li>
+    <li><code>fs_directory_cycle_error</code></li>
+    <li><code>fs_directory_error</code></li>
+    <li><code>fs_directory_hash_exhaustion_error</code></li>
+    <li><code>fs_directory_is_symlink_error</code></li>
+    <li><code>fs_directory_not_empty_error</code></li>
+    <li><code>fs_encountered_portal_error</code></li>
+    <li><code>fs_entry_exists_error</code></li>
+    <li><code>fs_entry_hardlink_ambiguity_error</code></li>
+    <li><code>fs_entry_not_in_subtree_error</code></li>
+    <li><code>fs_exceeded_maximum_stream_count_error</code></li>
+    <li><code>fs_file_dirent_id_stale_error</code></li>
+    <li><code>fs_file_is_named_stream_error</code></li>
+    <li><code>fs_file_is_symlink_error</code></li>
+    <li><code>fs_file_not_covered_by_snapshot_error</code></li>
+    <li><code>fs_file_not_empty_error</code></li>
+    <li><code>fs_file_path_invalid_error</code></li>
+    <li><code>fs_file_size_error</code></li>
+    <li><code>fs_file_too_many_links_error</code></li>
+    <li><code>fs_invalid_acl_error</code></li>
+    <li><code>fs_invalid_attrs_error</code></li>
+    <li><code>fs_invalid_file_type_error</code></li>
+    <li><code>fs_invalid_name_error</code></li>
+    <li><code>fs_invalid_offset_error</code></li>
+    <li><code>fs_invalid_size_error</code></li>
+    <li><code>fs_name_size_error</code></li>
+    <li><code>fs_no_such_entry_error</code></li>
+    <li><code>fs_no_such_file_version_error</code></li>
+    <li><code>fs_no_such_inode_error</code></li>
+    <li><code>fs_no_such_path_error</code></li>
+    <li><code>fs_not_a_directory_error</code></li>
+    <li><code>fs_not_a_file_error</code></li>
+    <li><code>fs_not_a_symlink_error</code></li>
+    <li><code>fs_opened_file_stale_error</code></li>
+    <li><code>fs_path_size_error</code></li>
+    <li><code>fs_permissions_mode_operation_unsupported_error</code></li>
+    <li><code>fs_portal_create_orphanage_error</code></li>
+    <li><code>fs_portal_disconnected_error</code></li>
+    <li><code>fs_portal_ended_error</code></li>
+    <li><code>fs_portal_error</code></li>
+    <li><code>fs_portal_eviction_error</code></li>
+    <li><code>fs_portal_inconsistent_data_error</code></li>
+    <li><code>fs_portal_incorrect_state_error</code></li>
+    <li><code>fs_portal_invalid_lease_break_range_error</code></li>
+    <li><code>fs_portal_not_covered_by_snapshot_error</code></li>
+    <li><code>fs_portal_not_found_error</code></li>
+    <li><code>fs_portal_out_of_order_lease_break_error</code></li>
+    <li><code>fs_quota_limit_already_set_error</code></li>
+    <li><code>fs_quota_limit_does_not_exist_error</code></li>
+    <li><code>fs_quota_no_space_error</code></li>
+    <li><code>fs_read_only_error</code></li>
+    <li><code>fs_revision_mismatch_error</code></li>
+    <li><code>fs_s3_versioning_full_error</code></li>
+    <li><code>fs_same_inode_error</code></li>
+    <li><code>fs_sharing_violation_error</code></li>
+    <li><code>fs_smb_share_root_deleted_error</code></li>
+    <li><code>fs_stream_is_default_error</code></li>
+    <li><code>fs_symlink_loop_error</code></li>
+    <li><code>fs_tag_mismatch_error</code></li>
+    <li><code>fs_too_many_aces_error</code></li>
+    <li><code>fs_user_metadata_continuation_token_type_mismatch</code></li>
+    <li><code>fs_user_metadata_empty_insertion_error</code></li>
+    <li><code>fs_user_metadata_hash_exhaustion_error</code></li>
+    <li><code>fs_user_metadata_key_already_exists</code></li>
+    <li><code>fs_user_metadata_key_not_found</code></li>
+    <li><code>fs_user_metadata_too_large</code></li>
+    <li><code>fs_watcher_missed_events_error</code></li>
+  </ul>
+</details>
