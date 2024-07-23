@@ -89,14 +89,14 @@ $ qq fs_get_acl --path /filename --json
   "aces": [{
     "trustee": {
       "name": "AD\\myusername",
-      "sid": "{{site.exampleSID5}}",
+      "sid": "{{site.exampleSID6}}",
       ...
     },
     ...
   }, {
     "trustee": {
       "name": "AD\\Domain Users",
-      "sid": "{{site.exampleSID4}}",
+      "sid": "{{site.exampleSID5}}",
       ...
     },
     ...

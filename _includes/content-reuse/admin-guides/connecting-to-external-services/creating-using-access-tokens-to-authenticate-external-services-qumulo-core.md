@@ -150,7 +150,7 @@ For example:
     "domain": "LOCAL",
     "gid": null,
     "name": "admin",
-    "sid": "{{site.exampleSID2}}",
+    "sid": "{{site.exampleSID1}}",
     "uid": null
   },
   "enabled": true,
@@ -161,7 +161,7 @@ For example:
     "domain": "LOCAL",
     "gid": null,
     "name": "svc",
-    "sid": "{{site.exampleSID3}}",
+    "sid": "{{site.exampleSID2}}",
     "uid": null
   }
 }

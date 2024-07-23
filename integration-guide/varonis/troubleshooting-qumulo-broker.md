@@ -30,7 +30,7 @@ sidebar: integration_guide_sidebar
    Mar  3 14:08:51 q-varonis-1 qumulo
    {
      "user_id": {
-       "sid": "{{site.exampleSID1}}",
+       "sid": "{{site.exampleSID3}}",
        "auth_id": "500",
        "name": "admin"
      },
@@ -53,7 +53,7 @@ sidebar: integration_guide_sidebar
    2023-03-03T14:08:51.058379Z q-varonis-1 qumulo
    {
      "user_id": {
-       "sid": "{{site.exampleSID1}}",
+       "sid": "{{site.exampleSID3}}",
        "auth_id": "500",
        "name": "admin"
      },
