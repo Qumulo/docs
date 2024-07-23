@@ -75,41 +75,11 @@ This section explains the differences between the levels of details that audit l
     <td>The operation that the user or the system attempts to perform.</td>
     <td>
       <ul>
-        <li>
-          File system operation, for example:
-          <ul>
-            <li>
-              <code>fs_create</code>
-              {% include note.html content="This operation type applies to any but the following file types." %}
-            </li>
-            <li><code>fs_create_directory</code></li>
-            <li><code>fs_create_file</code></li>
-            <li><code>fs_create_hard_link</code></li>
-            <li><code>fs_create_symlink</code></li>
-            <li><code>fs_delete</code></li>
-            <li><code>fs_fsstat</code></li>
-            <li><code>fs_read_metadata</code></li>
-            <li><code>fs_list_directory</code></li>
-            <li><code>fs_open</code></li>
-            <li><code>fs_read_data</code></li>
-            <li><code>fs_read_link</code></li>
-            <li><code>fs_rename</code></li>
-            <li><code>fs_write_data</code></li>
-            <li><code>fs_write_metadata</code></li>
-          </ul>
-        </li>
-        <li>
-          Management operation, for example:
-          <ul>
-            <li><code>auth_create_user</code></li>
-            <li><code>smb_create_share</code></li>
-            <li><code>smb_login</code></li>
-            <li><code>nfs_create_export</code></li>
-            <li><code>nfs_mount</code></li>
-            <li><code>replication_create_source_relationship</code></li>       
-            <li><code>snapshot_create_snapshot</code></li>
-          </ul>
-        </li>
+        <li><a href="#connectivity-operations">Connectivity operation</a>, such as <code>ftp_login</code></li>
+        <li><a href="#audit-logging-operations">Audit logging operation</a>, such as <code>remote_syslog_startup</code></li>
+        <li><a href="#file-system-operations">File system operation</a>, such as <code>fs_create</code></li>
+        <li><a href="#smb-specific-operations">SMB-Specific operation</a>, such as <code>smb_create_share</code></li>
+        <li><a href="#rest-api-operations">REST API operation</a>, such as <code>ad_join</code></li>
       </ul>
     </td>
   </tr>
@@ -119,7 +89,14 @@ This section explains the differences between the levels of details that audit l
     <td>
       <ul>
         <li>Success status message: <code>ok</code></li>
-        <li><a href="possible-error-status-messages">Error status message</a></li>
+        <li>
+          Error message:
+          <ul>
+            <li><a href="#credential-error-messages">Credential error message</a>, such as <code>cred_invalid_sid_error</code></li>
+            <li><a href="#smb-specific-error-messages">SMB-specific error message</a>, such as <code>smb2_unhandled_error</code></li>
+            <li><a href="#file-system-operation-error-messages">File system operation error message</a>, such as <code>fs_access_perm_not_owner_error</code></li>
+          </ul>
+        </li>
       </ul>
     </td>
   </tr>
@@ -158,8 +135,7 @@ Jun 6 14:53:22 my-machine qumulo {{site.exampleIP0}},"AD\alice",api,fs_write_met
 Jun 6 14:53:22 my-machine qumulo {{site.exampleIP0}},"AD\alice",api,fs_write_data,ok,3,"/my_file",""
 Jun 6 14:54:05 my-machine qumulo {{site.exampleIP0}},"AD\alice",api,fs_rename,ok,3,"/my_file","/another_file"
 Jun 6 14:55:24 my-machine qumulo {{site.exampleIP0}},"AD\alice",api,begin_audit_modify_syslog_config,ok,,"",""
-Jun 6 14:55:24 my-machine qumulo {{site.exampleIP0}},"system",internal,remote_syslog_shutdown,ok,,"","
-    </pre>
+Jun 6 14:55:24 my-machine qumulo {{site.exampleIP0}},"system",internal,remote_syslog_shutdown,ok,,"","</pre>
   </div>
 </details>
 
@@ -193,7 +169,7 @@ You can configure Qumulo Core to format audit log messages in the syslog JSON fo
           For most file system operations, instead of the file path, secondary file path, and file ID fields, the <code>details</code> object comprises:
           <ul>
             <li><code>path</code>: File path</li>
-            <li><code>target</code>: Secndary file path</li>
+            <li><code>target</code>: Secondary file path</li>
             <li><code>file_id</code>: File ID</li>
           </ul>
         </li>
@@ -210,7 +186,6 @@ You can configure Qumulo Core to format audit log messages in the syslog JSON fo
               </ul>
             </li>
           </ul>
-          Ea
         </li>
         <li>
           For <code>fs_write_*</code> and <code>fs_read_*</code> operations, the object includes:
@@ -237,22 +212,227 @@ Jun 6 14:53:22 my-machine qumulo {"user_id": {"name": "admin", "sid": "{{site.ex
 Jun 6 14:53:22 my-machine qumulo {"user_id": {"auth_id": "500", "sid": "{{site.exampleSID8}}", "name": "admin"}, "user_ip": "{{site.exampleIP0}}", "protocol": "api", "operation": "fs_write_data", "status": "ok", "details": {"path": "/my_file", "size": 261456, "file_id": "4", "offset": 0, "file_size": 261456}}
 Jun 6 14:54:05 my-machine qumulo {"user_id": {"name": "admin", "auth_id": "500", "sid": "{{site.exampleSID8}}"}, "user_ip": "{{site.exampleIP0}}", "protocol": "api", "operation": "fs_rename", "status": "fs_entry_exists_error", "details": {"path": "/my_file", "target": "/another_file", "file_id": "4"}}
 Jun 6 14:55:24 my-machine qumulo {"user_id": {"sid": "{{site.exampleSID8}}", "auth_id": "500", "name": "admin"}, "user_ip": "{{site.exampleIP0}}", "protocol": "api", "operation": "begin_audit_modify_syslog_config", "status": "ok", "details": {"second_extra_name": "", "extra_name": ""}}
-Jun 6 14:55:24 my-machine qumulo {"user_id": {"auth_id": "1", "sid": "{{site.exampleSID7}}", "name": "system"}, "user_ip": "{{site.exampleIP0}}", "protocol": "internal", "operation": "remote_syslog_shutdown", "status": "ok", "details": {}}
-    </pre>
+Jun 6 14:55:24 my-machine qumulo {"user_id": {"auth_id": "1", "sid": "{{site.exampleSID7}}", "name": "system"}, "user_ip": "{{site.exampleIP0}}", "protocol": "internal", "operation": "remote_syslog_shutdown", "status": "ok", "details": {}}</pre>
   </div>
 </details>
 
-## Possible Error Status Messages
-The following are possible error status messages in Qumulo Core.
+<a id="operation-names"></a>
+## Operation Names
+This section lists the operation names in Qumulo Core audit logging.
 
+<a id="connectivity-operations"></a>
+## Connectivity Operations
+* `ftp_login`
+* `nfs_mount`
+* `rest_login`
+* `share_connect`
+* `smb_close_handle`
+* `smb_close_session`
+* `smb_login`
+
+<a id="audit-logging-operations"></a>
+## Audit Logging Operations
+* `remote_syslog_shutdown`
+* `remote_syslog_startup`
+
+<a id="smb-specific-operations"></a>
+## SMB-Specific Operations
+* `smb_create_share`
+* `smb_modify_share`
+* `smb_delete_share`
+* `smb2_notify_req`
+
+<a id="file-system-operations"></a>
+### File System Operations
+* `fs_copy_chunk`
+* `fs_create_directory`
+* `fs_create_directories`
+* `fs_create_file`
+* `fs_create_hard_link`
+* `fs_create_symlink`
+* `fs_create_stream`
+* `fs_create`
+  {% include note.html content="This operation type applies to any but the previous file types." %}
+* `fs_delete`
+* `fs_fsstat`
+* `fs_list_directory`
+* `fs_open`
+* `fs_read_data`
+* `fs_read_link`
+* `fs_read_metadata`
+* `fs_read_user_metadata`
+* `fs_rename`
+* `fs_set_quota`
+* `fs_tree_delete`
+* `fs_write_data`
+* `fs_write_metadata`
+* `fs_write_file_lock`
+* `fs_write_user_metadata`
+
+<a id="rest-api-operations"></a>
+### REST API Operations
 <details>
   <summary>Click to expand</summary>
   <ul>
-    <li><code>cred_error</code></li>
-    <li><code>cred_identity_not_supported_error</code></li>
-    <li><code>cred_invalid_local_user_error</code></li>
-    <li><code>cred_invalid_sid_error</code></li>
-    <li><code>cred_remote_resource_unavailable_error</code></li>
+    <li><code>ad_cancel_operation</code>
+    <li><code>ad_dismiss_error</code>
+    <li><code>ad_join</code>
+    <li><code>ad_kerberos_renew_ticket</code>
+    <li><code>ad_leave</code>
+    <li><code>ad_modify_settings</code>
+    <li><code>ad_reconfigure</code>
+    <li><code>audit_modify_cloudwatch_config</code>
+    <li><code>audit_modify_syslog_config</code>
+    <li><code>auth_add_group</code>
+    <li><code>auth_add_member_to_group</code>
+    <li><code>auth_assign_role</code>
+    <li><code>auth_create_access_token</code>
+    <li><code>auth_create_role</code>
+    <li><code>auth_create_user</code>
+    <li><code>auth_delete_access_token</code>
+    <li><code>auth_delete_group</code>
+    <li><code>auth_delete_identity_attributes</code>
+    <li><code>auth_delete_role</code>
+    <li><code>auth_delete_user</code>
+    <li><code>auth_get_access_token</code>
+    <li><code>auth_get_access_tokens</code>
+    <li><code>auth_modify_access_token</code>
+    <li><code>auth_modify_group</code>
+    <li><code>auth_modify_identity_attributes</code>
+    <li><code>auth_modify_role</code>
+    <li><code>auth_modify_user</code>
+    <li><code>auth_modify_user_password</code>
+    <li><code>auth_remove_member_from_group</code>
+    <li><code>auth_set_user_defined_mappings</code>
+    <li><code>auth_unassign_role</code>
+    <li><code>cluster_add_nodes</code>
+    <li><code>cluster_calculate_node_add_capacity</code>
+    <li><code>cluster_generate_vpn_private_key</code>
+    <li><code>cluster_initiate_node_replacement_plan</code>
+    <li><code>cluster_install_vpn_keys</code>
+    <li><code>cluster_locate_disk_slot</code>
+    <li><code>cluster_modify_config</code>
+    <li><code>cluster_modify_monitoring_config</code>
+    <li><code>cluster_modify_nodes</code>
+    <li><code>cluster_modify_nodes_dry_run</code>
+    <li><code>cluster_modify_upgrade_config</code>
+    <li><code>cluster_nodes_resolve_indeterminate_modification</code>
+    <li><code>dns_create</code>
+    <li><code>dns_delete</code>
+    <li><code>dns_modify</code>
+    <li><code>dns_set_lookup_overrides</code>
+    <li><code>encryption_create_key</code>
+    <li><code>encryption_rotate_keys</code>
+    <li><code>encryption_update_config</code>
+    <li><code>fs_create_public_key</code>
+    <li><code>fs_delete_public_key</code>
+    <li><code>fs_modify_atime_settings</code>
+    <li><code>fs_modify_notify_settings</code>
+    <li><code>fs_modify_permissions_settings</code>
+    <li><code>fs_modify_public_key</code>
+    <li><code>fs_release_nlm_locks_by_client</code>
+    <li><code>fs_release_nlm_locks_by_file</code>
+    <li><code>fs_replace_public_key</code>
+    <li><code>fs_sample</code>
+    <li><code>ftp_modify_settings</code>
+    <li><code>identity_create</code>
+    <li><code>identity_delete</code>
+    <li><code>identity_modify</code>
+    <li><code>kerberos_delete_keytab</code>
+    <li><code>kerberos_modify_settings</code>
+    <li><code>kerberos_set_keytab</code>
+    <li><code>ldap_modify_settings</code>
+    <li><code>network_create_config</code>
+    <li><code>network_delete_config</code>
+    <li><code>network_modify_config</code>
+    <li><code>network_modify_interface</code>
+    <li><code>nfs_create_export</code>
+    <li><code>nfs_delete_export</code>
+    <li><code>nfs_delete_settings</code>
+    <li><code>nfs_modify_export</code>
+    <li><code>nfs_modify_settings</code>
+    <li><code>node_halt</code>
+    <li><code>node_restart</code>
+    <li><code>node_set_identify_light</code>
+    <li><code>reboot_pause</code>
+    <li><code>reboot_resume</code>
+    <li><code>reboot_start</code>
+    <li><code>replication_abort</code>
+    <li><code>replication_abort_object_relationship</code>
+    <li><code>replication_authorize_target_relationship</code>
+    <li><code>replication_create_object_relationship</code>
+    <li><code>replication_create_source_relationship</code>
+    <li><code>replication_delete_object_relationship</code>
+    <li><code>replication_delete_source_relationship</code>
+    <li><code>replication_delete_target_relationship</code>
+    <li><code>replication_dismiss_source_relationship_error</code>
+    <li><code>replication_dismiss_target_relationship_error</code>
+    <li><code>replication_make_target_writable</code>
+    <li><code>replication_modify_source_relationship</code>
+    <li><code>replication_reconnect_target_relationship</code>
+    <li><code>replication_release_queued_snapshot</code>
+    <li><code>replication_replicate_object_relationship</code>
+    <li><code>replication_reverse_target_relationship</code>
+    <li><code>replication_start</code>
+    <li><code>replication_target_relationship_lock</code>
+    <li><code>s3_abort_upload</code>
+    <li><code>s3_add_bucket</code>
+    <li><code>s3_bucket_policy_explain_access</code>
+    <li><code>s3_create_key</code>
+    <li><code>s3_delete_bucket</code>
+    <li><code>s3_delete_key</code>
+    <li><code>s3_get_bucket_policy</code>
+    <li><code>s3_modify_bucket</code>
+    <li><code>s3_modify_settings</code>
+    <li><code>s3_put_bucket_policy</code>
+    <li><code>saml_modify_settings</code>
+    <li><code>session_change_password</code>
+    <li><code>shutdown_halt</code>
+    <li><code>smb_delete_settings</code>
+    <li><code>smb_modify_settings</code>
+    <li><code>snapshot_create_policy</code>
+    <li><code>snapshot_create_snapshot</code>
+    <li><code>snapshot_delete_policy</code>
+    <li><code>snapshot_delete_snapshot</code>
+    <li><code>snapshot_lock_snapshot</code>
+    <li><code>snapshot_modify_policy</code>
+    <li><code>snapshot_modify_snapshot</code>
+    <li><code>snapshot_unlock_snapshot</code>
+    <li><code>snapshot_unlock_snapshot_challege</code>
+    <li><code>ssl_delete_ca_certificate</code>
+    <li><code>ssl_modify_ca_certificate</code>
+    <li><code>ssl_modify_certificate</code>
+    <li><code>tenant_create</code>
+    <li><code>tenant_delete</code>
+    <li><code>tenant_modify</code>
+    <li><code>time_modify_config</code>
+    <li><code>tree_delete_cancel</code>
+    <li><code>tree_delete_start</code>
+    <li><code>web_ui_modify_settings</code>
+  </ul>
+</details>    
+
+<a id="error-status-messages"></a>
+## Error Status Messages
+The following are possible error status messages in Qumulo Core.
+
+<a id="credential-error-messages"></a>
+### Credential Error Messages
+* `cred_error`
+* `cred_identity_not_supported_error`
+* `cred_invalid_local_user_error`
+* `cred_invalid_sid_error`
+* `cred_remote_resource_unavailable_error`
+
+<a id="smb-specific-error-messages"></a>
+### SMB-Specific Error Messages
+* `smb2_unhandled_error`
+
+<a id="file-system-operation-error-messages"></a>
+### File System Operation Error Messages
+<details>
+  <summary>Click to expand</summary>
+  <ul>
     <li><code>fs_access_denied_error</code></li>
     <li><code>fs_access_error</code></li>
     <li><code>fs_access_perm_not_owner_error</code></li>
