@@ -14,7 +14,7 @@ By default, Qumulo Core formats audit log messages in CSV format. For example:
 
 <details>
 <summary>Click to expand</summary>
-{% highlight csv %}
+{% highlight %}
 Jun 6 14:52:28 qfsd-1 qumulo {{exampleIP0}},"system",internal,remote_syslog_startup,ok,,"",""
 Jun 6 14:52:28 qfsd-1 qumulo {{exampleIP0}},"admin",api,audit_modify_syslog_config,ok,,"",""
 Jun 6 14:52:40 qfsd-1 qumulo {{exampleIP0}},"admin",api,rest_login,ok,,"",""
