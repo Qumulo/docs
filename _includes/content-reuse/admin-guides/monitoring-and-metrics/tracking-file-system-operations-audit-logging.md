@@ -12,7 +12,8 @@ Qumulo Core creates a descriptive audit log message for every operation that a c
 ## How Audit Log Messages are Structured
 This section explains the differences between the levels of details that audit logging and CSV and JSON formats provide.
 
-### Details Included in the Default CSV Audit Log Format
+<a id="details-in-csv-format"></a>
+### Details Included in the CSV Syslog Format
 By default, Qumulo Core formats audit log messages in CSV format, prefaced by the date, time, and the name of the machine that issues the operation. The CSV format includes the following fields:
 
 * User IP address (IPv4 and IPv6) 
@@ -38,8 +39,8 @@ Jun 6 14:55:24 my-machine qumulo {{site.exampleIP0}},"admin",api,begin_audit_mod
 Jun 6 14:55:24 my-machine qumulo {{site.exampleIP0}},"system",internal,remote_syslog_shutdown,ok,,"","</pre>
 </details>
 
-### Additional Details in the JSON Audit Log Format
-You can configure Qumulo Core to format audit log messages in JSON format. In addition to the fields that the CSV format provides, the JSON format also includes:
+### Details Included in the JSON Syslog Format
+You can configure Qumulo Core to format audit log messages in JSON format. In addition to [the fields that the CSV syslog format provides](#details-in-csv-format), the JSON syslog format also includes:
 
 * A `user_id` object that comprises:
   * `sid`: security identifier
