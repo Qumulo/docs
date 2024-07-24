@@ -286,8 +286,3 @@ li.pdf-friendly {
     border: none;
     border-radius: none;
 }
-
-pre.wide-example {
-  overflow-x: unset;
-  white-space: unset;
-}
