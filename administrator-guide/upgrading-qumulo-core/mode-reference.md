@@ -26,6 +26,10 @@ For information about the most important features from each release, click the Q
   </thead>
   <tbody>
     <tr>
+      <td><a href="feature-log.html#qumulo-core-714">7.1.4</a></td>
+      <td colspan="2" class="shared-upgrade-mode">Instant</td>
+    </tr>
+    <tr>
       <td><a href="feature-log.html#qumulo-core-713">7.1.3</a></td>
       <td colspan="2" class="shared-upgrade-mode">Instant</td>
     </tr> 

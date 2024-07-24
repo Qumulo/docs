@@ -160,6 +160,10 @@ The following table describes the subset of the [Amazon S3 API Actions](https://
       <td>Delete all tags from any object in the S3 bucket</td>
     </tr>
     <tr>
+      <td><code>s3:DeleteObjectVersion</code></td>
+      <td>Delete any object version from the S3 bucket</td>
+    </tr>
+    <tr>
       <td><code>s3:GetBucketAcl</code></td>
       <td>Retrieve the access control list (ACL) for the S3 bucket</td>
     </tr>
@@ -232,6 +236,10 @@ The following table describes the subset of the [Amazon S3 API Actions](https://
     <tr>
       <td><code>s3:PutBucketPolicy</code></td>
       <td>Configure the access policy for the S3 bucket</td>
+    </tr>
+    <tr>
+      <td><code>s3:PutBucketVersioning</code></td>
+      <td>Configure bucket versioning for the S3 bucket</td>
     </tr>
     <tr>
       <td><code>s3:PutObject</code></td>
