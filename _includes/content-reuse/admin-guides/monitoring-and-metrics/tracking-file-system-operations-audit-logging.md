@@ -1,6 +1,6 @@
-Qumulo Core creates a descriptive audit log message for every operation that a client attempts and sends the audit log messages to the remote syslog instance that the audit logging configuration specifies in compliance with {% include rfc.html rfc='5424' %}. By default, Qumulo Core formats audit log messages in the syslog CSV format, prefaced by the date, time, and the name of the machine that issues the operation. The syslog CSV format includes the following fields in the following order within the log message body.
+Qumulo Core creates a descriptive audit log message for every operation that a client attempts. Then, Qumulo Core sends the audit log messages to the remote syslog instance that the audit logging configuration specifies in compliance with {% include rfc.html rfc='5424' %}. 
 
-This section explains the differences between the levels of details that audit logging in [syslog CSV](#details-in-syslog-csv-format), [syslog JSON](#details-in-syslog-json-format), and [CloudWatch JSON](#details-in-cloudwatch-json-format) formats provide.
+This section explains the differences between the levels of detail of audit logs in [syslog CSV](#details-in-syslog-csv-format), [syslog JSON](#details-in-syslog-json-format), and [CloudWatch JSON](#details-in-cloudwatch-json-format) formats.
 
 {{site.data.alerts.note}}
 <p>Qumulo Core doesn't parse, analyze, index, or visualize the data. For more information, see the following articles on Qumulo Care:</p>
@@ -18,15 +18,17 @@ This section explains the differences between the levels of details that audit l
   <li>Because the user ID, path fields, and secondary path fields can contain characters that must be escaped (such as quotation marks and commas), you must enclose these fields in quotation marks.</li>
   <li>Qumulo Core system strips out the <code>\n</code> and <code>\r</code> newline characters from the user ID, file path, and secondary file path fields.</li>
   <li>The system deduplicates only multiple, repeated operations that cause metadata changes, such as multiple, repeated attempts to modify an access-control list (ACL).</li>
-  <li>Unlike the <a href="#details-in-syslog-json-format">syslog JSON format</a>, there are only values (no keys) and the fields are empty when unused. The following table helps explain the fields and their possible values.</li> 
+  <li>Unlike the <a href="#details-in-syslog-json-format">syslog JSON format</a>, the syslog CSV format has only values (no keys) and the fields are empty when unused. The following table helps explain the fields and their possible values.</li> 
 </ul>
 {{site.data.alerts.end}}
 
+By default, Qumulo Core formats audit log messages in the syslog CSV format, prefaced by the date, time, and the name of the machine that issues the operation. The syslog CSV format includes the following fields in the following order within the log message body.
+
 <table>
   <tr>
-    <th>Field</th>
-    <th>Description</th>
-    <th>Possible Values</th>
+    <th style="width: 20%;">Field</th>
+    <th style="width: 40%;">Description</th>
+    <th style="width: 40%;">Possible Values</th>
   </tr> 
   <tr>
     <td>User IP address</td>
@@ -40,7 +42,10 @@ This section explains the differences between the levels of details that audit l
   </tr>
   <tr>
     <td>User ID</td>
-    <td>The ID of the user who performed the operation.</td>
+    <td>
+      The ID of the user who performed the operation.
+      {% include note.html content="Qumulo Core specifies the Qumulo authentication ID if it can't resolve any of the other following user ID types." %}
+    </td>
     <td>
       String in quotation marks:
       <ul>
@@ -48,10 +53,7 @@ This section explains the differences between the levels of details that audit l
         <li>Qumulo local username</li>
         <li>POSIX user ID (UID)</li>
         <li>Windows security identifier (SID)</li>
-        <li>
-          Qumulo authentication ID
-          {% include note.html content="Qumulo Core uses this user ID if it can't resolve any of the other user ID types." %}
-        </li>
+        <li>Qumulo authentication ID</li>
       </ul>
     </td>
   </tr>
@@ -147,34 +149,47 @@ You can configure Qumulo Core to format audit log messages in the syslog JSON fo
 
 <table>
   <tr>
-    <th>Field</th>
-    <th>Description</th>
-  </tr>
+    <th style="width: 20%;">Field</th>
+    <th style="width: 40%;">Description</th>
+    <th style="width: 40%;">Possible Values</th>
+  </tr> 
   <tr>
     <td><code>user_id</code> Object</td>
+    <td>In Qumulo Core 6.0.1 (and higher) the <code>user_id</code> object replaces the single user ID field in the syslog CSV format and contains the fields <code>sid</code>, <code>auth_id</code>, and <code>name</code>.</td>
     <td>
-      Instead of a single user ID field, in Qumulo Core 6.0.1 (and higher) the <code>user_id</code> object comprises:
       <ul>
         <li><code>sid</code>: Security identifier</li>
         <li><code>auth_id</code>: Authentication ID</li>
         <li><code>name</code>: User role</li>
-      </ul>
+      </ul>      
     </td>
   </tr>
   <tr>
     <td><code>details</code> Object</td>
     <td>
       <ul>
+        <li>For most file system operations, the <code>details</code> object replaces the file path, secondary file path, and file ID fields in the syslog CSV format and contains the fields <code>path</code>, <code>target</code>, and <code>file_id</code>.</li>
+        <li>For <code>fs_write_*</code> and <code>fs_read_*</code> operations, the <code>details</code> object also includes the <code>offset</code> and <code>file_size</code> fields.</li>
+        <li>For operations that write metadata or change access-control lists (ACLs), the <code>details</code> object also includes the <code>after</code> and <code>before</code> objects that include fields for current and previous metadata.</li>
+      </ul>
+    </td>
+    <td>
+      <ul>
         <li>
-          For most file system operations, instead of the file path, secondary file path, and file ID fields, the <code>details</code> object comprises:
+          <code>details</code> object:
           <ul>
             <li><code>path</code>: File path</li>
             <li><code>target</code>: Secondary file path</li>
             <li><code>file_id</code>: File ID</li>
           </ul>
+          <code>fs_write_*</code> and <code>fs_read_*</code> operations only:
+          <ul>
+            <li><code>offset</code>: The starting position of the operation</li>
+            <li><code>file_size</code>: The size of the operation</li>                
+          </ul>          
         </li>
         <li>
-          For operations that write metadata or change access-control lists (ACLs), the <code>details</code> object also includes the <code>after</code> and <code>before</code> objects that include the following fields for the current and previous metadata:
+          <code>after</code> and <code>before</code> objects:
           <ul>
             <li><code>ctime</code>: Changed timestamp</li>
             <li><code>mtime</code>: Modified timestamp</li>
@@ -185,14 +200,7 @@ You can configure Qumulo Core to format audit log messages in the syslog JSON fo
                 <li><code>auth_id</code>: Authentication ID</li>
               </ul>
             </li>
-          </ul>
-        </li>
-        <li>
-          For <code>fs_write_*</code> and <code>fs_read_*</code> operations, the object includes:
-          <ul>
-            <li><code>offset</code>: The starting position of the operation</li>
-            <li><code>file_size</code>: The size of the operation</li>
-          </ul>
+          </ul>          
         </li>
       </ul>
     </td>
