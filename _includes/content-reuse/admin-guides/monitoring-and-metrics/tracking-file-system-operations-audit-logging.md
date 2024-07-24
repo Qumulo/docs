@@ -11,6 +11,7 @@ This section explains the differences between the levels of detail of audit logs
 </ul>
 {{site.data.alerts.end}}
 
+
 <a id="details-in-syslog-csv-format"></a>
 ## Details Included in the Default Syslog CSV Format
 {{site.data.alerts.note}}
@@ -78,9 +79,9 @@ By default, Qumulo Core formats audit log messages in the syslog CSV format, pre
     <td>
       <ul>
         <li><a href="#connectivity-operations">Connectivity operation</a>, such as <code>ftp_login</code></li>
+        <li><a href="#smb-specific-operations">SMB-Specific operation</a>, such as <code>smb_create_share</code></li>        
         <li><a href="#audit-logging-operations">Audit logging operation</a>, such as <code>remote_syslog_startup</code></li>
         <li><a href="#file-system-operations">File system operation</a>, such as <code>fs_create</code></li>
-        <li><a href="#smb-specific-operations">SMB-Specific operation</a>, such as <code>smb_create_share</code></li>
         <li><a href="#rest-api-operations">REST API operation</a>, such as <code>ad_join</code></li>
       </ul>
     </td>
@@ -139,6 +140,7 @@ Jun 6 14:55:24 my-machine qumulo {{site.exampleIP0}},"AD\alice",api,begin_audit_
 Jun 6 14:55:24 my-machine qumulo {{site.exampleIP0}},"system",internal,remote_syslog_shutdown,ok,,"","</pre>
   </div>
 </details>
+
 
 <a id="details-in-syslog-json-format"></a>
 ## Details Included in the Syslog JSON Format
@@ -223,12 +225,12 @@ Jun 6 14:55:24 my-machine qumulo {"user_id": {"auth_id": "1", "sid": "{{site.exa
   </div>
 </details>
 
-<a id="operation-names"></a>
-## Operation Names
+
+## Operation Names in Audit Logging
 This section lists the operation names in Qumulo Core audit logging.
 
 <a id="connectivity-operations"></a>
-## Connectivity Operations
+### Connectivity Operations
 * `ftp_login`
 * `nfs_mount`
 * `rest_login`
@@ -237,17 +239,17 @@ This section lists the operation names in Qumulo Core audit logging.
 * `smb_close_session`
 * `smb_login`
 
-<a id="audit-logging-operations"></a>
-## Audit Logging Operations
-* `remote_syslog_shutdown`
-* `remote_syslog_startup`
-
 <a id="smb-specific-operations"></a>
 ## SMB-Specific Operations
 * `smb_create_share`
 * `smb_modify_share`
 * `smb_delete_share`
 * `smb2_notify_req`
+
+<a id="audit-logging-operations"></a>
+### Audit Logging Operations
+* `remote_syslog_shutdown`
+* `remote_syslog_startup`
 
 <a id="file-system-operations"></a>
 ### File System Operations
@@ -419,9 +421,9 @@ This section lists the operation names in Qumulo Core audit logging.
   </ul>
 </details>    
 
-<a id="error-status-messages"></a>
+
 ## Error Status Messages
-The following are possible error status messages in Qumulo Core.
+This section lists the error status messages in Qumulo Core audit logging.
 
 <a id="credential-error-messages"></a>
 ### Credential Error Messages
