@@ -286,3 +286,7 @@ li.pdf-friendly {
     border: none;
     border-radius: none;
 }
+
+details  summary {
+    display: none;
+}
