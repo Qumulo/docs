@@ -227,7 +227,7 @@ Jun 6 14:55:24 my-machine qumulo {"user_id": {"auth_id": "1", "sid": "{{site.exa
 ## Details Included in the Amazon CloudWatch JSON Format
 You can configure Qumulo Core to format audit log messages in the Amazon CloudWatch JSON format.
 
-{% include tip.html content="To download the audit log from the CloudWatch console, on the left navigation panel click **Logs &gt; Log groups &gt;**, click a log group, and then on the **Log events** page, in the upper-right, click **Actions &gt; Copy search results (ASCII)**." %}
+{% include tip.html content="To download the audit log from the CloudWatch console, on the left navigation panel click **Logs &gt; Log groups**, click a log group, and then on the **Log events** page click **Actions &gt; Copy search results (ASCII)**." %}
 
 Rather than preface each line of CSV or JSON with the date and time, CloudWatch creates an ASCII table, which contains Unix timestamps in its first column. The second column contains the fields that are similar to the fields that both [the syslog CSV format](#details-in-syslog-csv-format) and [the syslog JSON format](#details-in-syslog-json-format) provide, with the following exceptions.
 
@@ -235,9 +235,9 @@ Rather than preface each line of CSV or JSON with the date and time, CloudWatch 
 
 * The <code>object_id</code> field replaces the File ID <code>file_id</code> field.
 
-* The <code>path_1</td> field replaces the File Path or <code>path</code> field.
+* The <code>path_1</code> field replaces the File Path or <code>path</code> field.
 
-* The <code>path_2</td> field replaces the Target File Path or <code>target</code> field.
+* The <code>path_2</code> field replaces the Target File Path or <code>target</code> field.
 
 For example:
 
@@ -245,9 +245,9 @@ For example:
 {% include tip.html content=scrollTip %}
 {% endif %}
 
-<div class="highlight"><pre class="highlight wide-example">-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-|   timestamp   |                                                                                         message                                                                                     |
-|---------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+<div class="highlight"><pre class="highlight wide-example">------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|   timestamp   |                                                                                         message                                                                                    |
+|---------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 1717679548000 | {"ip_address": "{{site.exampleIP0}}", "user": "system", "protocol": "internal", "operation": "remote_syslog_startup", "result": "ok", "object_id": "", "path_1": "", "path_2": ""}         |
 | 1717679548000 | {"ip_address": "{{site.exampleIP0}}", "user": "AD\alice", "protocol": "api", "operation": "audit_modify_syslog_config", "result": "ok", "object_id": "", "path_1": "", "path_2": ""}       |
 | 1717679560000 | {"ip_address": "{{site.exampleIP0}}", "user": "AD\alice", "protocol": "api", "operation": "rest_login", "result": "ok", "object_id": "", "path_1": "", "path_2": ""}                       |
