@@ -149,6 +149,8 @@ loginRequired: <span class="emoji">🔒</span>
 nexusDownloads: For downloads, release notes, and upgrade paths for on-premises and cloud releases of Qumulo Core, see <a target="_blank" href="https://nexus.qumulo.com/downloads">Qumulo Nexus</a>
 contactQumuloCare: <a href="https://docs.qumulo.com/contacting-qumulo-care-team.html">contact the Qumulo Care team</a>
 
+exampleTooWide: The following example is too wide for the page. To explore the following example, you can toggle Reading Mode or scroll the example horizontally.
+
 exampleUsernameUppercase1: JSMITH
 exampleClusterNameUppercase1: MYCLUSTER
 exampleAWSaccessKeyID: AKIAIOSFODNN7EXAMPLE
