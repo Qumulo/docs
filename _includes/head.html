@@ -56,13 +56,27 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<!-- Load local stylesheets -->
-<link rel="stylesheet" href="{{ "css/boxshadowproperties.css" | relative_url }}">
-<link rel="stylesheet" href="{{ "css/customstyles.css" | relative_url }}">
-<link rel="stylesheet" href="{{ "css/grt-cookies-consent.css" | relative_url }}">
-<link rel="stylesheet" href="{{ "css/modern-business.css" | relative_url }}">
-<link rel="stylesheet" href="{{ "css/syntax.css" | relative_url }}">
-<link rel="stylesheet" href="{{ "css/theme-blue.css" | relative_url }}">
+<!-- Load local stylesheets inline -->
+<script>
+const cssFiles = [
+  "{{ 'css/boxshadowproperties.css' | relative_url }}",
+  "{{ 'css/customstyles.css' | relative_url }}",
+  "{{ 'css/grt-cookies-consent.css' | relative_url }}",
+  "{{ 'css/modern-business.css' | relative_url }}",
+  "{{ 'css/syntax.css' | relative_url }}",
+  "{{ 'css/theme-blue.css' | relative_url }}"
+];
+cssFiles.forEach(file => {
+  fetch(file)
+    .then(response => response.text())
+    .then(css => {
+      const style = document.createElement('style');
+      style.innerHTML = css;
+      document.head.appendChild(style);
+     })
+     .catch(console.error);
+});
+</script>
 
 <!-- Optimize web font load
      * Loading Noto Color Emoji by using `link rel=stylesheet`
