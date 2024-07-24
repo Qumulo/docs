@@ -95,7 +95,6 @@ By default, Qumulo Core formats audit log messages in the syslog CSV format, pre
           Error message:
           <ul>
             <li><a href="#credential-error-messages">Credential error message</a>, such as <code>cred_invalid_sid_error</code></li>
-            <li><a href="#smb-specific-error-messages">SMB-specific error message</a>, such as <code>smb2_unhandled_error</code></li>
             <li><a href="#file-system-operation-error-messages">File system operation error message</a>, such as <code>fs_access_perm_not_owner_error</code></li>
           </ul>
         </li>
@@ -431,10 +430,6 @@ The following are possible error status messages in Qumulo Core.
 * `cred_invalid_local_user_error`
 * `cred_invalid_sid_error`
 * `cred_remote_resource_unavailable_error`
-
-<a id="smb-specific-error-messages"></a>
-### SMB-Specific Error Messages
-* `smb2_unhandled_error`
 
 <a id="file-system-operation-error-messages"></a>
 ### File System Operation Error Messages
