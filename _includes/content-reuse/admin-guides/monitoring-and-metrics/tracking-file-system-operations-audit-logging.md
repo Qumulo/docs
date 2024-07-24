@@ -240,7 +240,7 @@ This section lists the operation names in Qumulo Core audit logging.
 * `smb_login`
 
 <a id="smb-specific-operations"></a>
-## SMB-Specific Operations
+### SMB-Specific Operations
 * `smb_create_share`
 * `smb_modify_share`
 * `smb_delete_share`
