@@ -379,6 +379,10 @@ entries:
     output: web, pdf
     folderitems:
 
+    - title: How Audit Logging Works in Qumulo Core
+      url: /azure-administrator-guide/monitoring-and-metrics/how-audit-logging-works.html
+      output: web, pdf
+
     - title: OpenMetrics API Specification
       url: /azure-administrator-guide/monitoring-and-metrics/openmetrics-api-specification.html
       output: web, pdf

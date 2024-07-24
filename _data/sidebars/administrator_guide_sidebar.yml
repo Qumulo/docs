@@ -447,6 +447,10 @@ entries:
       url: /administrator-guide/monitoring-and-metrics/restoring-default-values-cloud-based-nexus-monitoring.html
       output: web, pdf
 
+    - title: How Audit Logging Works in Qumulo Core
+      url: /administrator-guide/monitoring-and-metrics/how-audit-logging-works.html
+      output: web, pdf
+
     - title: OpenMetrics API Specification
       url: /administrator-guide/monitoring-and-metrics/openmetrics-api-specification.html
       output: web, pdf

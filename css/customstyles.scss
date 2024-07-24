@@ -38,6 +38,13 @@ body {
   margin-top: 15px;
 }
 
+@media screen {
+  pre.wide-example {
+    overflow-x: scroll;
+    white-space: pre;
+  }
+}
+
 /* START CLICK TO EXPAND */
 summary {
   color: #245592;
