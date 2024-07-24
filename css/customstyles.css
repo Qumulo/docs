@@ -20,6 +20,11 @@ body {
   margin-top: 15px;
 }
 
+pre.wide-example {
+  overflow-x: scroll;
+  white-space: pre;
+}
+
 /* START CLICK TO EXPAND */
 summary {
   color: #245592;
