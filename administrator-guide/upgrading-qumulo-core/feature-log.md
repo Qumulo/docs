@@ -11,6 +11,12 @@ For information about upgrade types for each release, see <a href='mode-referenc
 
 <style>div#toc{height:200px;overflow:auto;}</style>
 
+## Qumulo Core 7.1.4
+{{page.varDownloadsRelnotes}}
+* {{page.varNoPublicChanges}}
+* Fixed issues with the default (empty) policy for S3 buckets
+* Configured Qumulo Core to permit anonymous users to perform read-only API actions on S3 buckts
+
 ## Qumulo Core 7.1.3
 {{page.varDownloadsRelnotes}}
 Extended S3 object versioning support to additional API actions
