@@ -1,6 +1,6 @@
 Qumulo Core creates a descriptive audit log message for every operation that a client attempts. Then, Qumulo Core sends the audit log messages to the remote syslog instance that the audit logging configuration specifies in compliance with {% include rfc.html rfc='5424' %}. 
 
-This section explains the differences between the levels of detail of audit logs in [syslog CSV](#details-in-syslog-csv-format), [syslog JSON](#details-in-syslog-json-format), and [CloudWatch JSON](#details-in-cloudwatch-json-format) formats.
+This section explains the differences between the levels of detail of audit logs in [syslog CSV](#details-in-syslog-csv-format), [syslog JSON](#details-in-syslog-json-format), and [CloudWatch JSON](#details-in-cloudwatch-json-format) formats. (In general, the syslog CSV and CloudWatch JSON formats contain audit logs contain an identical number of fields, some named differently, while the syslog JSON format has additional audit logging information.)
 
 {{site.data.alerts.note}}
 <p>Qumulo Core doesn't parse, analyze, index, or visualize the data. For more information, see the following articles on Qumulo Care:</p>
@@ -118,7 +118,7 @@ By default, Qumulo Core formats audit log messages in the syslog CSV format, pre
     <td>String in quotation marks</td>
   </tr>
   <tr>
-    <td>Secondary File Path</td>
+    <td>Target File Path</td>
     <td>The target path to the file on which the system performed a rename or move operation.</td>
     <td>String in quotation marks</td>
   </tr>
@@ -177,7 +177,7 @@ You can configure Qumulo Core to format audit log messages in the syslog JSON fo
           <code>details</code> object:
           <ul>
             <li><code>path</code>: File path</li>
-            <li><code>target</code>: Secondary file path</li>
+            <li><code>target</code>: Target file path</li>
             <li><code>file_id</code>: File ID</li>
           </ul>
           <code>fs_write_*</code> and <code>fs_read_*</code> operations only:
@@ -208,18 +208,57 @@ You can configure Qumulo Core to format audit log messages in the syslog JSON fo
 For example:
 
 {% if site.output == "web" %}
-{% include tip.html content="The following syslog JSON audit log example is too wide for the page. To explore the following example, you can toggle Reading Mode or scroll the example horizontally." %}
+{% capture scrollTip %}{{site.exampleTooWide}}{% endcapture %}
+{% include tip.html content=scrollTip %}
 {% endif %}
 
 <div class="highlight"><pre class="highlight wide-example">Jun 6 14:52:28 my-machine qumulo {"user_id": {"auth_id": "1", "sid": "{{site.exampleSID7}}", "name": "system"}, "user_ip": "{{site.exampleIP0}}", "protocol": "internal", "operation": "remote_syslog_startup", "status": "ok", "details": {}}
-Jun 6 14:52:28 my-machine qumulo {"user_id": {"sid": "{{site.exampleSID8}}", "auth_id": "500", "name": "admin"}, "user_ip": "{{site.exampleIP0}}", "protocol": "api", "operation": "audit_modify_syslog_config", "status": "ok", "details": {"second_extra_name": "", "extra_name": ""}}
-Jun 6 14:52:40 my-machine qumulo {"user_id": {"auth_id": "500", "name": "admin", "sid": "{{site.exampleSID8}}"}, "user_ip": "{{site.exampleIP0}}", "protocol": "api", "operation": "rest_login", "status": "ok", "details": {"second_extra_name": "", "extra_name": ""}}
-Jun 6 14:53:22 my-machine qumulo {"user_id": {"sid": "{{site.exampleSID8}}", "name": "admin", "auth_id": "500"}, "user_ip": "{{site.exampleIP0}}", "protocol": "api", "operation": "fs_read_metadata", "status": "ok", "details": {"path": "/my_file", "file_id": "4"}}
-Jun 6 14:53:22 my-machine qumulo {"user_id": {"name": "admin", "sid": "{{site.exampleSID8}}", "auth_id": "500"}, "user_ip": "{{site.exampleIP0}}", "protocol": "api", "operation": "fs_write_metadata", "status": "ok", "details": {"file_id": "4", "after": {"ctime": "2024-06-11T14:55:58.187394089Z", "mtime": "2024-06-11T14:55:58.187394089Z", "owner": {"sid": "{{site.exampleSID8}}", "auth_id": "500"}}, "path": "/my_file", "before": {"ctime": "2024-06-11T14:55:43.616292461Z", "mtime": "2024-06-11T14:55:43.616292461Z", "owner": {"sid": "{{site.exampleSID8}}", "auth_id": "500"}}}}
-Jun 6 14:53:22 my-machine qumulo {"user_id": {"auth_id": "500", "sid": "{{site.exampleSID8}}", "name": "admin"}, "user_ip": "{{site.exampleIP0}}", "protocol": "api", "operation": "fs_write_data", "status": "ok", "details": {"path": "/my_file", "size": 261456, "file_id": "4", "offset": 0, "file_size": 261456}}
-Jun 6 14:54:05 my-machine qumulo {"user_id": {"name": "admin", "auth_id": "500", "sid": "{{site.exampleSID8}}"}, "user_ip": "{{site.exampleIP0}}", "protocol": "api", "operation": "fs_rename", "status": "fs_entry_exists_error", "details": {"path": "/my_file", "target": "/another_file", "file_id": "4"}}
-Jun 6 14:55:24 my-machine qumulo {"user_id": {"sid": "{{site.exampleSID8}}", "auth_id": "500", "name": "admin"}, "user_ip": "{{site.exampleIP0}}", "protocol": "api", "operation": "begin_audit_modify_syslog_config", "status": "ok", "details": {"second_extra_name": "", "extra_name": ""}}
+Jun 6 14:52:28 my-machine qumulo {"user_id": {"sid": "{{site.exampleSID8}}", "auth_id": "500", "name": "AD\alice"}, "user_ip": "{{site.exampleIP0}}", "protocol": "api", "operation": "audit_modify_syslog_config", "status": "ok", "details": {"second_extra_name": "", "extra_name": ""}}
+Jun 6 14:52:40 my-machine qumulo {"user_id": {"auth_id": "500", "name": "AD\alice", "sid": "{{site.exampleSID8}}"}, "user_ip": "{{site.exampleIP0}}", "protocol": "api", "operation": "rest_login", "status": "ok", "details": {"second_extra_name": "", "extra_name": ""}}
+Jun 6 14:53:22 my-machine qumulo {"user_id": {"sid": "{{site.exampleSID8}}", "name": "AD\alice", "auth_id": "500"}, "user_ip": "{{site.exampleIP0}}", "protocol": "api", "operation": "fs_read_metadata", "status": "ok", "details": {"path": "/my_file", "file_id": "4"}}
+Jun 6 14:53:22 my-machine qumulo {"user_id": {"name": "AD\alice", "sid": "{{site.exampleSID8}}", "auth_id": "500"}, "user_ip": "{{site.exampleIP0}}", "protocol": "api", "operation": "fs_write_metadata", "status": "ok", "details": {"file_id": "4", "after": {"ctime": "2024-06-11T14:55:58.187394089Z", "mtime": "2024-06-11T14:55:58.187394089Z", "owner": {"sid": "{{site.exampleSID8}}", "auth_id": "500"}}, "path": "/my_file", "before": {"ctime": "2024-06-11T14:55:43.616292461Z", "mtime": "2024-06-11T14:55:43.616292461Z", "owner": {"sid": "{{site.exampleSID8}}", "auth_id": "500"}}}}
+Jun 6 14:53:22 my-machine qumulo {"user_id": {"auth_id": "500", "sid": "{{site.exampleSID8}}", "name": "AD\alice"}, "user_ip": "{{site.exampleIP0}}", "protocol": "api", "operation": "fs_write_data", "status": "ok", "details": {"path": "/my_file", "size": 261456, "file_id": "4", "offset": 0, "file_size": 261456}}
+Jun 6 14:54:05 my-machine qumulo {"user_id": {"name": "AD\alice", "auth_id": "500", "sid": "{{site.exampleSID8}}"}, "user_ip": "{{site.exampleIP0}}", "protocol": "api", "operation": "fs_rename", "status": "fs_entry_exists_error", "details": {"path": "/my_file", "target": "/another_file", "file_id": "4"}}
+Jun 6 14:55:24 my-machine qumulo {"user_id": {"sid": "{{site.exampleSID8}}", "auth_id": "500", "name": "AD\alice"}, "user_ip": "{{site.exampleIP0}}", "protocol": "api", "operation": "begin_audit_modify_syslog_config", "status": "ok", "details": {"second_extra_name": "", "extra_name": ""}}
 Jun 6 14:55:24 my-machine qumulo {"user_id": {"auth_id": "1", "sid": "{{site.exampleSID7}}", "name": "system"}, "user_ip": "{{site.exampleIP0}}", "protocol": "internal", "operation": "remote_syslog_shutdown", "status": "ok", "details": {}}</pre></div>
+
+
+<a id="details-in-cloudwatch-json-format"></a>
+## Details Included in the Amazon CloudWatch JSON Format
+You can configure Qumulo Core to format audit log messages in the Amazon CloudWatch JSON format.
+
+{% include tip.html content="To download the audit log from the CloudWatch console, on the left navigation panel click **Logs &gt; Log groups &gt;**, click a log group, and then on the **Log events** page, in the upper-right, click **Actions &gt; Copy search results (ASCII)**." %}
+
+Rather than preface each line of CSV or JSON with the date and time, CloudWatch creates an ASCII table, which contains Unix timestamps in its first column. The second column contains the fields that are similar to the fields that both [the syslog CSV format](#details-in-syslog-csv-format) and [the syslog JSON format](#details-in-syslog-json-format) provide, with the following exceptions.
+
+* The <code>result</code> field replaces the Operation Status or <code>status</code> field.
+
+* The <code>object_id</code> field replaces the File ID <code>file_id</code> field.
+
+* The <code>path_1</td> field replaces the File Path or <code>path</code> field.
+
+* The <code>path_2</td> field replaces the Target File Path or <code>target</code> field.
+
+For example:
+
+{% if site.output == "web" %}
+{% include tip.html content=scrollTip %}
+{% endif %}
+
+<div class="highlight"><pre class="highlight wide-example">-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|   timestamp   |                                                                                         message                                                                                     |
+|---------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 1717679548000 | {"ip_address": "{{site.exampleIP0}}", "user": "system", "protocol": "internal", "operation": "remote_syslog_startup", "result": "ok", "object_id": "", "path_1": "", "path_2": ""}         |
+| 1717679548000 | {"ip_address": "{{site.exampleIP0}}", "user": "AD\alice", "protocol": "api", "operation": "audit_modify_syslog_config", "result": "ok", "object_id": "", "path_1": "", "path_2": ""}       |
+| 1717679560000 | {"ip_address": "{{site.exampleIP0}}", "user": "AD\alice", "protocol": "api", "operation": "rest_login", "result": "ok", "object_id": "", "path_1": "", "path_2": ""}                       |
+| 1717679602000 | {"ip_address": "{{site.exampleIP0}}", "user": "AD\alice", "protocol": "api", "operation": "fs_read_metadata", "result": "ok", "object_id": "3", "path_1": "/my_file", "path_2": ""}        |
+| 1717679602000 | {"ip_address": "{{site.exampleIP0}}", "user": "AD\alice", "protocol": "api", "operation": "fs_write_metadata", "result": "ok", "object_id": "3", "path_1": "/my_file", "path_2": ""}       |
+| 1717679602000 | {"ip_address": "{{site.exampleIP0}}", "user": "AD\alice", "protocol": "api", "operation": "fs_write_data", "result": "ok", "object_id": "3", "path_1": "/my_file", "path_2": ""}           |
+| 1717679645000 | {"ip_address": "{{site.exampleIP0}}", "user": "AD\alice", "protocol": "api", "operation": "fs_rename", "result": "ok", "object_id": "3", "path_1": "/my_file", "path_2": "/another_file"}  |
+| 1717679724000 | {"ip_address": "{{site.exampleIP0}}", "user": "AD\alice", "protocol": "api", "operation": "begin_audit_modify_syslog_config", "result": "ok", "object_id": "", "path_1": "", "path_2": ""} |
+| 1717679724000 | {"ip_address": "{{site.exampleIP0}}", "user": "system", "protocol": "internal", "operation": "remote_syslog_shutdown", "result": "ok", "object_id": "", "path_1": "", "path_2": ""}        |
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</pre></div>
+
 
 ## Operation Names in Audit Logging
 This section lists the operation names in Qumulo Core audit logging.
