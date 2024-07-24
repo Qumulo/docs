@@ -208,7 +208,7 @@ You can configure Qumulo Core to format audit log messages in the syslog JSON fo
 For example:
 
 {% if site.output == "web" %}
-{% include tip.html content="The following syslog JSON audit log example is too wide for the page. To explore the following example, you can toggle <a id="tg-sb-link" href="#" data-proofer-ignore><i id="tg-sb-icon" class="fa fa-toggle-off"></i> Reading Mode</a> or scroll the example horizontally." %}
+{% include tip.html content="The following syslog JSON audit log example is too wide for the page. To explore the following example, you can toggle Reading Mode or scroll the example horizontally." %}
 {% endif %}
 
 <div class="highlight"><pre class="highlight wide-example">Jun 6 14:52:28 my-machine qumulo {"user_id": {"auth_id": "1", "sid": "{{site.exampleSID7}}", "name": "system"}, "user_ip": "{{site.exampleIP0}}", "protocol": "internal", "operation": "remote_syslog_startup", "status": "ok", "details": {}}
