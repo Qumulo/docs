@@ -18,7 +18,7 @@ This section explains the differences between the levels of detail of audit logs
 <ul>
   <li>Because the user ID, path fields, and secondary path fields can contain characters that must be escaped (such as quotation marks and commas), you must enclose these fields in quotation marks.</li>
   <li>Qumulo Core system strips out the <code>\n</code> and <code>\r</code> newline characters from the user ID, file path, and secondary file path fields.</li>
-  <li>The system deduplicates only multiple, repeated operations that cause metadata changes, such as multiple, repeated attempts to modify an access-control list (ACL).</li>
+  <li>Both syslog CSV and syslog JSON formats deduplicate repeated file reads. However, for metadata changes&mdash;such as modifications to an access-control list (ACL)&mdash;only the syslog CSV deduplicates repeated operations.</li>
   <li>Unlike the <a href="#details-in-syslog-json-format">syslog JSON format</a>, the syslog CSV format has only values (no keys) and the fields are empty when unused. The following table helps explain the fields and their possible values.</li> 
 </ul>
 {{site.data.alerts.end}}
