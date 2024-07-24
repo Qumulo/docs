@@ -11,7 +11,7 @@
   $.fn.grtCookie = function (options) {
     // Default options
     var settings = $.extend({
-            duration: 365
+      duration: 365
     }, options);
 
     // Check cookie
@@ -22,12 +22,12 @@
       var days1 = settings.duration;
       d1.setTime(d1.getTime() + days1 * 24 * 60 * 60 * 1000);
       var expiredate = "expires=" + d1.toUTCString();
-      document.cookie = "acceptgrt=1;" + expiredate + ";path=/";
+      document.cookie = "acceptgrt=1;" + expiredate + ";path=/;SameSite=Lax;Secure";
 
       // On click accept button
       $(".grt-cookie-button").on("click", function () {
         $(this).parent().remove();
-        document.cookie = "acceptgrt=0;" + expiredate + ";path=/";
+        document.cookie = "acceptgrt=0;" + expiredate + ";path=/;SameSite=Lax;Secure";
       });
     } else {
       this.remove();

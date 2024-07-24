@@ -23,13 +23,8 @@
     <span class="grt-cookie-button">Accept</span>
   </div>
   <script async src="{{ "js/grt-cookie-consent.js" | relative_url }}"></script>
-  <script>
-    // Custom Settings
-    $(".grt-cookie").grtCookie({
-      // Duration in days
-      duration: 365,
-    });
-  </script>	
+  <script> $(".grt-cookie").grtCookie();</script>
+  
   <script src="{{ "js/fixdoubledashes.js" | relative_url }}"></script>
 {% if page.vectaraScripts %}  <script src="{{ "js/vectara.js" | relative_url }}"></script>
   <script src="{{ "js/search-specs.js" | relative_url }}"></script>{% endif %}
