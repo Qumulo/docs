@@ -9,7 +9,7 @@
 <!-- BEGIN TO PREPARE WEBSITE RESOURCES -->
 
 <!-- Preload LCP image -->
-<link rel="preload" href="https://docs.qumulo.com/images/below-header.webp" as="image">
+<link rel="preload" href="https://docs.qumulo.com/images/below-header.webp" as="image" type="image/webp">
     
 <!-- Preload from jsdelivr.net:
      * Bootstrap stylesheet and script
@@ -59,12 +59,12 @@
 <!-- Load local stylesheets inline -->
 <script>
 const cssFiles = [
-  "{{ 'css/boxshadowproperties.css' | relative_url }}",
-  "{{ 'css/customstyles.css' | relative_url }}",
   "{{ 'css/grt-cookies-consent.css' | relative_url }}",
+  "{{ 'css/customstyles.css' | relative_url }}",
   "{{ 'css/modern-business.css' | relative_url }}",
   "{{ 'css/syntax.css' | relative_url }}",
-  "{{ 'css/theme-blue.css' | relative_url }}"
+  "{{ 'css/theme-blue.css' | relative_url }}",
+  "{{ 'css/boxshadowproperties.css' | relative_url }}"
 ];
 
 async function loadCSS(file) {
@@ -72,14 +72,14 @@ async function loadCSS(file) {
   let css = localStorage.getItem(cacheKey);
 
   if (!css) {
-const response = await fetch(file);
-if (response.ok) {
-  css = await response.text();
-  localStorage.setItem(cacheKey, css);
-} else {
-  console.error(`Failed to load CSS file: ${file}`);
-  return;
-}
+    const response = await fetch(file);
+    if (response.ok) {
+      css = await response.text();
+      localStorage.setItem(cacheKey, css);
+    } else {
+      console.error(`Failed to load CSS file: ${file}`);
+      return;
+    }
   }
 
   const style = document.createElement('style');
@@ -89,7 +89,7 @@ if (response.ok) {
 
 async function loadAllCSS() {
   for (const file of cssFiles) {
-await loadCSS(file);
+    await loadCSS(file);
   }
 }
 
