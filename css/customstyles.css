@@ -1674,9 +1674,10 @@ span.label.label-primary {
     }
 
 a code {
-    /* This color is required to meet WCAG standards for accessible text. */  
-    color: #0379a7;
+    color: #005d80; /* This color is required to meet WCAG standards for accessible text. */  
     background-color: transparent;
+    margin-left: -2.5px; /* These two items remove awkward spacing around inline code inside links;
+    margin-right: -2.5px;
 }
 
 table th code {
