@@ -78,19 +78,21 @@ async function loadCSS(file) {
       localStorage.setItem(cacheKey, css);
     } else {
       console.error(`Failed to load CSS file: ${file}`);
-      return;
+      return '';
     }
   }
-
-  const style = document.createElement('style');
-  style.innerHTML = css;
-  document.head.appendChild(style);
+  return css;
 }
 
 async function loadAllCSS() {
+  let combinedCSS = '';
   for (const file of cssFiles) {
-    await loadCSS(file);
+    combinedCSS += await loadCSS(file);
   }
+
+  const style = document.createElement('style');
+  style.innerHTML = combinedCSS;
+  document.head.appendChild(style);
 }
 
 loadAllCSS();
