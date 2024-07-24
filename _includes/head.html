@@ -58,24 +58,6 @@
 
 <!-- Load local stylesheets inline -->
 <script>
-async function loadCSSFiles(files) {
-  for (const file of files) {
-    try {
-      const response = await fetch(file);
-      if (response.ok) {
-        const css = await response.text();
-        const style = document.createElement('style');
-        style.innerHTML = css;
-        document.head.appendChild(style);
-      } else {
-        console.error('Failed to load CSS file:', file);
-      }
-    } catch (error) {
-      console.error('Error loading CSS file:', file, error);
-    }
-  }
-}
-
 const cssFiles = [
   "{{ 'css/boxshadowproperties.css' | relative_url }}",
   "{{ 'css/customstyles.css' | relative_url }}",
@@ -85,7 +67,33 @@ const cssFiles = [
   "{{ 'css/theme-blue.css' | relative_url }}"
 ];
 
-loadCSSFiles(cssFiles);
+async function loadCSS(file) {
+  const cacheKey = `css:${file}`;
+  let css = localStorage.getItem(cacheKey);
+
+  if (!css) {
+const response = await fetch(file);
+if (response.ok) {
+  css = await response.text();
+  localStorage.setItem(cacheKey, css);
+} else {
+  console.error(`Failed to load CSS file: ${file}`);
+  return;
+}
+  }
+
+  const style = document.createElement('style');
+  style.innerHTML = css;
+  document.head.appendChild(style);
+}
+
+async function loadAllCSS() {
+  for (const file of cssFiles) {
+await loadCSS(file);
+  }
+}
+
+loadAllCSS();
 </script>
 
 <!-- Optimize web font load
