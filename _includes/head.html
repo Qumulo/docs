@@ -6,11 +6,7 @@
 <title>{{ page.title }} | {{ site.site_title }}</title>
 <link rel="canonical" href="{{ site.url }}{{ page.url }}">
 
-<!-- BEGIN TO PREPARE WEBSITE RESOURCES -->
-
-<!-- Preload LCP image -->
-<link rel="preload" href="https://docs.qumulo.com/images/below-header.webp" as="image" type="image/webp">
-    
+<!-- BEGIN TO PREPARE WEBSITE RESOURCES -->  
 <!-- Preload from jsdelivr.net:
      * Bootstrap stylesheet and script
      * Font Awesome
@@ -57,46 +53,12 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <!-- Load local stylesheets inline -->
-<script>
-const cssFiles = [
-  "{{ 'css/grt-cookies-consent.css' | relative_url }}",
-  "{{ 'css/customstyles.css' | relative_url }}",
-  "{{ 'css/modern-business.css' | relative_url }}",
-  "{{ 'css/syntax.css' | relative_url }}",
-  "{{ 'css/theme-blue.css' | relative_url }}",
-  "{{ 'css/boxshadowproperties.css' | relative_url }}"
-];
-
-async function loadCSS(file) {
-  const cacheKey = `css:${file}`;
-  let css = localStorage.getItem(cacheKey);
-
-  if (!css) {
-    const response = await fetch(file);
-    if (response.ok) {
-      css = await response.text();
-      localStorage.setItem(cacheKey, css);
-    } else {
-      console.error(`Failed to load CSS file: ${file}`);
-      return '';
-    }
-  }
-  return css;
-}
-
-async function loadAllCSS() {
-  let combinedCSS = '';
-  for (const file of cssFiles) {
-    combinedCSS += await loadCSS(file);
-  }
-
-  const style = document.createElement('style');
-  style.innerHTML = combinedCSS;
-  document.head.appendChild(style);
-}
-
-loadAllCSS();
-</script>
+<link rel="stylesheet" href="{{ "css/boxshadowproperties.css" | relative_url }}">
+<link rel="stylesheet" href="{{ "css/customstyles.css" | relative_url }}">
+<link rel="stylesheet" href="{{ "css/grt-cookies-consent.css" | relative_url }}">
+<link rel="stylesheet" href="{{ "css/modern-business.css" | relative_url }}">
+<link rel="stylesheet" href="{{ "css/syntax.css" | relative_url }}">
+<link rel="stylesheet" href="{{ "css/theme-blue.css" | relative_url }}">
 
 <!-- Optimize web font load
      * Loading Noto Color Emoji by using `link rel=stylesheet`
