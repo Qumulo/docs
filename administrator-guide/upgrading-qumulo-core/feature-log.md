@@ -15,7 +15,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
 {{page.varDownloadsRelnotes}}
 * {{page.varNoPublicChanges}}
 * Fixed issues with the default (empty) policy for S3 buckets
-* Configured Qumulo Core to permit anonymous users to perform read-only API actions on S3 buckts
+* Configured Qumulo Core to permit anonymous users to perform read-only API actions on S3 buckets
 
 ## Qumulo Core 7.1.3
 {{page.varDownloadsRelnotes}}
