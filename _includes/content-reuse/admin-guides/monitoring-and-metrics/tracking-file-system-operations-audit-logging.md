@@ -209,7 +209,7 @@ For example:
 
 {% if site.output == "web" %}
 {% include tip.html content="The following syslog JSON audit log is too wide. To explore the following example, scroll it horizontally." %}
-{% endunless %}
+{% endif %}
 
 <div class="highlight"><pre class="highlight wide-example">Jun 6 14:52:28 my-machine qumulo {"user_id": {"auth_id": "1", "sid": "{{site.exampleSID7}}", "name": "system"}, "user_ip": "{{site.exampleIP0}}", "protocol": "internal", "operation": "remote_syslog_startup", "status": "ok", "details": {}}
 Jun 6 14:52:28 my-machine qumulo {"user_id": {"sid": "{{site.exampleSID8}}", "auth_id": "500", "name": "admin"}, "user_ip": "{{site.exampleIP0}}", "protocol": "api", "operation": "audit_modify_syslog_config", "status": "ok", "details": {"second_extra_name": "", "extra_name": ""}}
