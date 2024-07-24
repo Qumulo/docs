@@ -379,8 +379,8 @@ entries:
     output: web, pdf
     folderitems:
 
-    - title: Tracking File System Operations by Using Audit Logging
-      url: /azure-administrator-guide/monitoring-and-metrics/tracking-file-system-operations-audit-logging.html
+    - title: How Audit Logging Works in Qumulo Core
+      url: /azure-administrator-guide/monitoring-and-metrics/how-audit-logging-works.html
       output: web, pdf
 
     - title: OpenMetrics API Specification
