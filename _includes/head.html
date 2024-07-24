@@ -32,8 +32,10 @@
 <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js" as="script">
 <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/5.0.0/anchor.min.js" as="script">
 
-<!-- Preload local scripts -->
-<link rel="preload" href="https://docs.qumulo.com/js/grt-cookie-consent.js" as="script">
+<!-- Preload JavaScript resources -->
+<link rel="preload" href="/js/grt-cookie-consent.js" as="script">
+<link rel="preload" href="/js/googletag.js" as="script">
+<link rel="preload" href="https://www.googletagmanager.com/gtag/js?id=G-81J7N4LMSE" as="script">
 
 <!-- Prefetch DNS from CDNs -->
 <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
@@ -132,5 +134,5 @@
 <![endif]-->
 
 <!-- Load Google Analytics and exclude GDPR countries from collection -->
-<script defer src="https://www.googletagmanager.com/gtag/js?id=G-81J7N4LMSE"></script>
 <script defer src="{{ "js/googletag.js" | relative_url }}"></script>
+<script defer src="https://www.googletagmanager.com/gtag/js?id=G-81J7N4LMSE"></script>
