@@ -45,7 +45,7 @@ By default, Qumulo Core formats audit log messages in the syslog CSV format, pre
     <td>User ID</td>
     <td>
       The ID of the user who performed the operation.
-      {% include note.html content="Qumulo Core specifies the Qumulo authentication ID if it can't resolve any of the other following user ID types." %}
+      {% include note.html content="Qumulo Core specifies the Qumulo authentication ID if it can't resolve any of the other user ID types." %}
     </td>
     <td>
       String in quotation marks:
