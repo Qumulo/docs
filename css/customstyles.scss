@@ -45,6 +45,53 @@ body {
   }
 }
 
+
+/* START API HEADING COLOURS */
+
+/* Colour-coded HTTP verb headings */
+h2#endpoint ~ h2#get,
+h2#endpoint ~ h2#post,
+h2#endpoint ~ h2#put,
+h2#endpoint ~ h2#delete,
+h2#endpoint ~ h2#patch {
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  width: fit-content;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 25px;
+}
+
+h2#get    { background-color: #0298ff; }
+h2#post   { background-color: #8ee002; }
+h2#put    { background-color: #ff9a00; }
+h2#delete { background-color: #ff1b5b; }
+h2#patch  { background-color: #00a3ca; }
+
+/* Anchor link for heading */
+h2#get    a,
+h2#post   a,
+h2#put    a,
+h2#delete a,
+h2#patch  a {
+  margin-left: -5px !important;
+  padding-right: 10px !important;
+  padding-left: 10px !important;
+  color: white !important;
+}
+
+h2#get    a:hover,
+h2#post   a:hover,
+h2#put    a:hover,
+h2#delete a:hover,
+h2#patch  a:hover {
+  color: white !important;
+}
+
+/* END API HEADING COLOUR */
+
+
 /* START CLICK TO EXPAND */
 summary {
   color: #245592;
