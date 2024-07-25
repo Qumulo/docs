@@ -82,7 +82,7 @@ def create_sidebar_title(path, category):
     # Remove leading /v1, /v2, /v3, /v4 and category
     title = path.replace('/v1', '').replace('/v2', '').replace('/v3', '').replace('/v4', '').replace(f'/{category}', '', 1)
     # Replace parameters {param} with {param}
-    title = title.replace('{', '{').replace('}', '}')
+    title = title.replace('{', '&#123;').replace('}', '&#125;')
     # Omit leading / and trailing /
     title = title.strip('/')
     return title if title else category
