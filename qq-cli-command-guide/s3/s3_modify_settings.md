@@ -32,7 +32,7 @@ optional_options:
   name: --secure
   required: false
 - alternate: []
-  help: Configure the S3 server to accept only HTTPS connections
+  help: Configure the S3 server to accept both HTTP and HTTPS connections
   name: --insecure
   required: false
 permalink: /qq-cli-command-guide/s3/s3_modify_settings.html
