@@ -1,6 +1,6 @@
 ---
 layout: landing_page
 sidebar: rest_api_guide_sidebar
-summary: Listing of commands for tree-delete
-title: tree-delete
+summary: "Tree Delete Module"
+title: Tree Delete (Tree Delete)
 ---

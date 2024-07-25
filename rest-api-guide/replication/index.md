@@ -1,6 +1,6 @@
 ---
 layout: landing_page
 sidebar: rest_api_guide_sidebar
-summary: Listing of commands for replication
-title: replication
+summary: "Methods to manage replication relationships."
+title: Replication (Replication)
 ---

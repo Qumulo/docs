@@ -1,5 +1,5 @@
 ---
-category: /file-system
+category: /File System
 methods:
   get:
     parameters: []

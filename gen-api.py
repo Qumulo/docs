@@ -21,19 +21,19 @@ def write_markdown(file_path, content):
         file.write(content)
 
 # Function to generate the content for index.md
-def generate_index_md(category):
+def generate_index_md(tag, tag_info):
     return f"""---
 layout: landing_page
 sidebar: rest_api_guide_sidebar
-summary: Listing of commands for {category}
-title: {category}
+summary: "{tag_info['description']}"
+title: {tag_info['name']} ({tag})
 ---
 """
 
 # Function to generate the content for individual REST resource files
-def generate_resource_md(category, endpoint, methods, permalink, api_version=None):
+def generate_resource_md(tag, endpoint, methods, permalink, api_version=None):
     yaml_content = {
-        "category": f"/{category}",
+        "category": f"/{tag}",
         "rest_endpoint": endpoint,
         "methods": {}
     }
@@ -70,29 +70,35 @@ def generate_resource_md(category, endpoint, methods, permalink, api_version=Non
     return f"---\n{yaml_string}{version_string}permalink: {permalink}\nsidebar: rest_api_guide_sidebar\n---\n"
 
 # Function to clean up filenames
-def clean_filename(category, filename, api_version=None):
-    filename = filename.replace(f'{category}_', '').replace('{', '_').replace('}', '').replace('__', '_').strip('_')
+def clean_filename(tag, filename, api_version=None):
+    filename = filename.replace(f'{tag}_', '').replace('{', '_').replace('}', '').replace('__', '_').strip('_')
     filename = filename.replace('v1_', '').replace('v2_', '').replace('v3_', '').replace('v4_', '')
     if api_version and api_version != 'v1':
         filename = f"{api_version}_{filename}"
     return filename
 
-# Function to create the sidebar title from the path
-def create_sidebar_title(path, category):
-    # Remove leading /v1, /v2, /v3, /v4 and category
-    title = path.replace('/v1', '').replace('/v2', '').replace('/v3', '').replace('/v4', '').replace(f'/{category}', '', 1)
-    # Replace parameters {param} with {param}
-    title = title.replace('{', '&#123;').replace('}', '&#125;')
-    # Omit leading / and trailing /
-    title = title.strip('/')
-    return title if title else category
+# Function to create the sidebar title from the tag
+def create_sidebar_title(tag, tag_info):
+    return f"{tag_info['name']} ({tag})"
+
+# Function to find the tag for a category based on the path item
+def find_tags_for_category(path_item):
+    tags = set()
+    for method, details in path_item.items():
+        if method in ["get", "post", "put", "delete", "patch", "options", "head"]:
+            if "tags" in details:
+                tags.update(details["tags"])
+    return tags
 
 # Fetch the OpenAPI definition
 response = requests.get(url)
 api_definition = response.json()
 
-# Dictionary to store sidebar entries grouped by category
-sidebar_entries_by_category = {}
+# Dictionary to store sidebar entries grouped by tag
+sidebar_entries_by_tag = {}
+
+# Dictionary to store the tag information
+tag_info_dict = {tag['name']: tag for tag in api_definition['tags']}
 
 # Main processing logic
 for path, path_item in api_definition["paths"].items():
@@ -101,9 +107,11 @@ for path, path_item in api_definition["paths"].items():
         print(f"Skipping path '{path}' as it does not have enough segments.")
         continue
     
-    # Extract category from the path
-    category = path_segments[1]
-    category_dir = os.path.join(output_base_dir, category)
+    # Find the tags for the category
+    tags = find_tags_for_category(path_item)
+    if not tags:
+        print(f"Skipping path '{path}' as it does not have any tags.")
+        continue
 
     # Determine API version
     if path.startswith('/v2'):
@@ -115,82 +123,64 @@ for path, path_item in api_definition["paths"].items():
     else:
         api_version = 'v1'
 
-    # Create category directory if it does not exist
-    create_directory(category_dir)
+    for tag in tags:
+        tag_dir = os.path.join(output_base_dir, tag.lower().replace(" ", "-"))
+        create_directory(tag_dir)
 
-    # Write the index.md file for the category
-    index_md_path = os.path.join(category_dir, "index.md")
-    if not os.path.exists(index_md_path):
-        index_md_content = generate_index_md(category)
-        write_markdown(index_md_path, index_md_content)
+        # Generate the index.md file for the tag
+        if tag not in sidebar_entries_by_tag:
+            tag_info = tag_info_dict.get(tag, {'name': tag, 'description': 'Listing of commands for ' + tag})
+            index_md_content = generate_index_md(tag, tag_info)
+            index_md_path = os.path.join(tag_dir, "index.md")
+            write_markdown(index_md_path, index_md_content)
+            sidebar_entries_by_tag[tag] = []
 
-    # Clean up filename and write the individual resource file
-    resource_name = path.strip("/").replace("/", "_").replace("{", "_").replace("}", "")
-    resource_filename = clean_filename(category, f"{resource_name}.md", api_version)
-    resource_md_path = os.path.join(category_dir, resource_filename)
-    permalink = f"/rest-api-guide/{category}/{resource_filename.replace('.md', '.html')}"
-    resource_md_content = generate_resource_md(category, path, path_item, permalink, api_version)
-    write_markdown(resource_md_path, resource_md_content)
+        # Clean up filename and write the individual resource file
+        resource_name = path.strip("/").replace("/", "_").replace("{", "_").replace("}", "")
+        resource_filename = clean_filename(tag, f"{resource_name}.md", api_version)
+        resource_md_path = os.path.join(tag_dir, resource_filename)
+        permalink = f"/rest-api-guide/{tag.lower().replace(' ', '-')}/{resource_filename.replace('.md', '.html')}"
+        resource_md_content = generate_resource_md(tag, path, path_item, permalink, api_version)
+        write_markdown(resource_md_path, resource_md_content)
 
-    # Add entry to sidebar entries
-    if category not in sidebar_entries_by_category:
-        sidebar_entries_by_category[category] = []
-    
-    sidebar_entry = {
-        "output": "web,pdf",
-        "title": create_sidebar_title(path, category),
-        "url": permalink
-    }
-    
-    if api_version != 'v1':
-        sidebar_entry["apiversion"] = api_version
-    
-    sidebar_entries_by_category[category].append(sidebar_entry)
+        # Add entry to sidebar entries
+        sidebar_entry = {
+            "output": "web,pdf",
+            "title": create_sidebar_title(path, tag_info_dict.get(tag, {'name': tag})) if len(path_segments) == 2 else resource_filename.replace('.md', ''),
+            "url": permalink
+        }
 
-# Alphabetize entries within each category
+        if api_version != 'v1':
+            sidebar_entry["apiversion"] = api_version
+
+        sidebar_entries_by_tag[tag].append(sidebar_entry)
+
+# Alphabetize entries within each tag
 def version_key(entry):
     version = entry.get('apiversion', 'v1').replace('v', '')
     return int(version)
 
-for category in sidebar_entries_by_category:
-    sidebar_entries_by_category[category] = sorted(sidebar_entries_by_category[category], key=lambda x: (x["title"], version_key(x)))
+for tag in sidebar_entries_by_tag:
+    sidebar_entries_by_tag[tag] = sorted(sidebar_entries_by_tag[tag], key=lambda x: (x["title"], version_key(x)))
 
 # Generate sidebar YAML content
 sidebar_content = {
     "entries": [
         {
-            "folders": [
-                {
-                    "folderitems": [
-                        {"output": "pdf", "title": "", "type": "frontmatter", "url": "/titlepage.html"},
-                        {"output": "pdf", "title": "", "type": "frontmatter", "url": "/tocpage.html"},
-                    ],
-                    "output": "pdf",
-                    "title": "",
-                    "type": "frontmatter"
-                },
-                {
-                    "folderitems": [
-                        {"output": "web", "title": "Documentation Home", "url": "/index.html"},
-                        {"output": "web", "title": "Qumulo REST API Guide Home", "url": "/rest-api-guide/"},
-                        {"output": "web", "title": "Contacting the Qumulo Care Team", "url": "/contacting-qumulo-care-team.html"},
-                    ],
-                    "output": "web",
-                    "title": "Qumulo REST API Guide",
-                    "type": "navi"
-                },
-            ]
+            "folders": []
         }
     ]
 }
 
-# Add folderitems for each category
-for category, entries in sidebar_entries_by_category.items():
+# Add folderitems for each tag
+for tag, entries in sidebar_entries_by_tag.items():
+    tag_info = tag_info_dict.get(tag, {'name': tag})
+    parent_title = create_sidebar_title(tag, tag_info)
     sidebar_content["entries"][0]["folders"].append({
         "folderitems": entries,
         "output": "web,pdf",
-        "title": category,
-        "url": f"/rest-api-guide/{category}/"
+        "title": parent_title,
+        "url": f"/rest-api-guide/{tag.lower().replace(' ', '-')}/"
     })
 
 # Write the sidebar YAML file

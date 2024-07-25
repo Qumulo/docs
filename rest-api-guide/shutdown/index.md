@@ -1,6 +1,6 @@
 ---
 layout: landing_page
 sidebar: rest_api_guide_sidebar
-summary: Listing of commands for shutdown
-title: shutdown
+summary: "Methods for cluster shutdown."
+title: Shutdown (Shutdown)
 ---

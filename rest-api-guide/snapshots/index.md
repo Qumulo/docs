@@ -1,6 +1,6 @@
 ---
 layout: landing_page
 sidebar: rest_api_guide_sidebar
-summary: Listing of commands for snapshots
-title: snapshots
+summary: "Snapshot Management API"
+title: Snapshots (Snapshots)
 ---

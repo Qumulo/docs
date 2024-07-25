@@ -1,5 +1,5 @@
 ---
-category: /version
+category: /Version
 methods:
   get:
     parameters: []

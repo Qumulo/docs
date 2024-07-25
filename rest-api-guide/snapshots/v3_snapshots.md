@@ -1,5 +1,5 @@
 ---
-category: /snapshots
+category: /Snapshots
 methods:
   get:
     parameters:

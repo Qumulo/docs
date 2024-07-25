@@ -1,6 +1,6 @@
 ---
 layout: landing_page
 sidebar: rest_api_guide_sidebar
-summary: Listing of commands for file-system
-title: file-system
+summary: "Methods for accessing general file system statistics and settings."
+title: File System (File System)
 ---
