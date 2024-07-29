@@ -9,10 +9,8 @@
    "contactPoint": {
      "@type": "ContactPoint",
      "contactType": "Customer Support",
-     "url": "https://docs.qumulo.com/contacting-qumulo-care-team.html"
-   },
-   "sameAs": [
-     "https://care.qumulo.com/s/submit-a-case"
-   ]
+     "url": "https://docs.qumulo.com/contacting-qumulo-care-team.html",
+     "sameAs": "https://care.qumulo.com/s/submit-a-case"
+   }
  }] 
 }
