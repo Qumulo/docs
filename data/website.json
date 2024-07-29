@@ -1,0 +1,16 @@
+{
+ "@context": "http://schema.org",
+ "@graph": [{
+   "@type": "WebSite",
+   "@id": "https://docs.qumulo.com/#website",
+  "url": "https://docs.qumulo.com",   
+   "name": "Qumulo Documentation Portal",
+   "alternateName": "docs.qumulo.com",
+   "sameAs": [
+     "https://qumulo.com/",
+     "https://qumulo.com/technical-overview/",
+     "https://qumulo.com/reference-architecture",
+     "https://www.youtube.com/qumulo"
+   ]
+ }] 
+}

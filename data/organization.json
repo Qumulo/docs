@@ -1,0 +1,18 @@
+{
+ "@context": "http://schema.org",
+ "@graph": [{
+   "@type": "Organization",
+   "@id": "https://qumulo.com/#organization",
+   "url": "https://qumulo.com",
+   "name": "Qumulo",
+   "logo": "https://qumulo.com/wp-content/uploads/2024/01/Qumulo-logo-A-tagline.webp",
+   "contactPoint": {
+     "@type": "ContactPoint",
+     "contactType": "Customer Support",
+     "url": "https://docs.qumulo.com/contacting-qumulo-care-team.html"
+   },
+   "sameAs": [
+     "https://care.qumulo.com/s/submit-a-case"
+   ]
+ }] 
+}

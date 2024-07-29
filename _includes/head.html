@@ -6,6 +6,30 @@
 <title>{{ page.title }} | {{ site.site_title }}</title>
 <link rel="canonical" href="{{ site.url }}{{ page.url }}">
 
+<!-- Organization JSON-LD Schema -->
+<script>
+fetch('/data/organization.json')
+.then(response => response.text())
+.then(structuredDataText => {
+  const script = document.createElement('script');
+  script.setAttribute('type', 'application/ld+json');
+  script.textContent = structuredDataText;
+  document.head.appendChild(script);
+});    
+</script>
+
+<!-- Website JSON-LD Schema -->
+<script>
+fetch('/data/website.json')
+.then(response => response.text())
+.then(structuredDataText => {
+  const script = document.createElement('script');
+  script.setAttribute('type', 'application/ld+json');
+  script.textContent = structuredDataText;
+  document.head.appendChild(script);
+});    
+</script>
+
 <!-- BEGIN TO PREPARE WEBSITE RESOURCES -->  
 <!-- Preload from jsdelivr.net:
      * Bootstrap stylesheet and script
