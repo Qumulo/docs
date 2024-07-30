@@ -428,9 +428,20 @@ header {
 }
 
 .logo img {
-  max-height: 45px;
+  max-height: 53px;
   margin-top: -17.5px;
-  margin-left: -10px;
+  margin-left: -5px;
+}
+
+.header-logo {
+  width: 150px;
+  height: 53px;
+}
+
+.footer-logo {
+  width: 120px;
+  height: 43px;
+  margin-top: 12px;
 }
 
 .user-nav {
