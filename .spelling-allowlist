@@ -1,23 +1,7 @@
-AVX
-ENI
-SELinux
-x86
-netplan
-PCLMUL
-unpartitioned
-QFSD
-Microarchitecture
-microarchitecture
-NetworkManager
-zoneless
-html
-prefetcher's
-ASG-2015S-E1CR24L
-AOC-A100G-B2CM-O
 1014S
-2015S
 1114S
 1U
+2015S
 2CQD
 2FA
 4410Y
@@ -41,8 +25,10 @@ Alletra
 analytics
 ANQ
 AOC
+AOC-A100G-B2CM-O
 APIs
 ASG
+ASG-2015S-E1CR24L
 ASG-2015S-E1CR24L
 ASUS
 Auth0
@@ -52,6 +38,7 @@ autocomplete
 Autocomplete
 autocompletion
 autofs
+AVX
 b2C
 b2S
 backplane
@@ -92,6 +79,7 @@ EC2
 ECC
 ECDSA
 ECR
+ENI
 Entra
 EoPS
 EPYC
@@ -123,6 +111,7 @@ hostname
 Hostname
 HPE
 HSM
+html
 HTML5
 HTTP
 HTTPS
@@ -175,6 +164,8 @@ macOS
 MBR
 Mellanox
 MiB
+microarchitecture
+Microarchitecture
 MMC
 MNT
 MPO
@@ -189,6 +180,8 @@ namespace
 natively
 Netlogon
 netmask
+netplan
+NetworkManager
 NFS
 NFSv3
 NFSv4.1
@@ -217,6 +210,7 @@ PAM4
 Paulo
 PCI
 PCIe
+PCLMUL
 PDU
 PEM
 plaintext
@@ -224,6 +218,7 @@ Plaintext
 POSIX
 PowerShell
 preconfigured
+prefetcher's
 preprovisioned
 presigned
 Presigned
@@ -235,6 +230,7 @@ PTR
 PYBRR0B
 QaaS
 QCT
+QFSD
 qq
 QRL
 QSF
@@ -271,6 +267,7 @@ SAS
 SATA
 schemas
 SDK
+SELinux
 ServerView
 SFF
 SIDs
@@ -324,6 +321,7 @@ unconfigured
 unencrypted
 Unencrypted
 unmount
+unpartitioned
 Unrack
 uplink
 uplinks
@@ -344,8 +342,10 @@ Win32
 WIO
 Wireshark
 WN10RT
+x86
 Xeon
 XPP
 XSS
 XXVD
 YAML
+zoneless
