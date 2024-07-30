@@ -13,7 +13,7 @@ This section explains the differences between the levels of detail of audit logs
 
 
 <a id="details-in-syslog-csv-format"></a>
-## Details Included in the Default Syslog CSV Format
+## Details Included in the Default syslog CSV Format
 {{site.data.alerts.note}}
 <ul>
   <li>Because the user ID, path fields, and secondary path fields can contain characters that must be escaped (such as quotation marks and commas), you must enclose these fields in quotation marks.</li>
@@ -140,7 +140,7 @@ Jun 6 14:55:24 my-machine qumulo {{site.exampleIP0}},"system",internal,remote_sy
 
 
 <a id="details-in-syslog-json-format"></a>
-## Details Included in the Syslog JSON Format
+## Details Included in the syslog JSON Format
 You can configure Qumulo Core to format audit log messages in the syslog JSON format. The fields in this format are similar to [the fields that the syslog CSV format provides](#details-in-syslog-csv-format), with the following exceptions.
 
 {% include note.html content="The syslog JSON format isn't available in the Web UI." %}

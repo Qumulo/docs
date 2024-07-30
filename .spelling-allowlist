@@ -2,6 +2,8 @@
 1114S
 192T
 1U
+1UA
+1UH
 2015S
 2CQD
 2FA
@@ -78,6 +80,7 @@ CSV
 DAC
 DACs
 DCE
+DCERPC
 DDR5
 deduplicate
 deduplicates
@@ -232,6 +235,7 @@ NVM3
 NVMe
 ODX
 Okta
+OpenLDAP
 OpenMetrics
 OpenSSH
 OpenVPN
@@ -371,6 +375,7 @@ Unrack
 uplink
 uplinks
 UPN
+UPNs
 URI
 UrlBase64
 UTF
