@@ -19,8 +19,8 @@ def preprocess_content(content, filename, logger)
   end
 
   # Remove content within <code> and <pre> tags
-  content.gsub!(/<code>.*?<\/code>/m, ' ')
-  content.gsub!(/<pre>.*?<\/pre>/m, ' ')
+  content.gsub!(/<code>[\s\S]*?<\/code>/m, ' ')
+  content.gsub!(/<pre>[\s\S]*?<\/pre>/m, ' ')
 
   content
     .gsub(/\[.*?\]\((.*?)\)/, ' ')                  # Ignore Markdown links
@@ -43,6 +43,7 @@ def preprocess_content(content, filename, logger)
     .gsub(/\bNIC\d+\b/, ' ')                        # Ignore NIC<N> patterns
     .gsub(/\b\d+T\b/, ' ')                          # Ignore <N>T patterns
     .gsub(/\bGen\d+\b/, ' ')                        # Ignore Gen<N> patterns
+    .gsub(/\b[A-Z]\d\b/, ' ')                       # Ignore <L><N> patterns where L is a letter and N is a single digit
 end
 
 # Initialize misspelling counter

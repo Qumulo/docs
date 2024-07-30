@@ -31,6 +31,8 @@ analytics
 ANQ
 AOC
 AOC-A100G-B2CM-O
+AOCs
+AOC-S25G-b2S
 APIs
 ASG
 ASG-2015S-E1CR24L
@@ -102,6 +104,7 @@ failover
 FIPS
 FlexibleLOM
 FQDN
+FS
 FVT
 GbE
 Gbps
