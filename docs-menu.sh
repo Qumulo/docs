@@ -236,6 +236,42 @@ check_ingestion_status() {
     docker logs -f vingest
 }
 
+# Find unused scripts
+find_unused_scripts() {
+ # Navigate to the js/ directory relative to the current directory
+    cd "$(dirname "$0")/js" || { echo "js directory not found"; return 1; }
+
+    # Get the list of .js files in the js/ directory
+    js_files=$(find . -name "*.js")
+
+    # Initialize an array to hold unused scripts
+    unused_scripts=()
+
+    # Go up a level to the parent directory
+    cd ..
+
+    # Loop through each .js file and check if it is used in the parent directory
+    for js_file in $js_files; do
+        js_file_name=$(basename "$js_file")
+        # Search for occurrences of the .js file in various contexts
+        usage=$(grep -rE "(src=['\"].*\/$js_file_name['\"]|$js_file_name)" . 2>/dev/null)
+
+        if [ -z "$usage" ]; then
+            unused_scripts+=("$js_file_name")
+        fi
+    done
+
+    # Report back the names of unused scripts
+    if [ ${#unused_scripts[@]} -eq 0 ]; then
+        echo "All scripts are used."
+    else
+        echo "Unused scripts:"
+        for script in "${unused_scripts[@]}"; do
+            echo "$script"
+        done
+    fi
+}
+
 check_docs_internal_repo
 install_docker
 install_noto_emoji
@@ -259,6 +295,7 @@ while true; do
     echo "13. 🔍 Ingest care.qumulo.com into Vectara"
     echo "14. 🔍 Ingest qumulo.com into Vectara"
     echo "15. 📋 Check ingestion status"
+    echo "16. ❌ Find unused .js scripts"
     echo "q.  👋 Quit"
     echo
     read -p $'\033[1;33mWhat would you like to do? \033[0m' choice
@@ -279,6 +316,7 @@ while true; do
         13) ingest_care_portal ;;
         14) ingest_corp_site ;;
         15) check_ingestion_status ;;
+        16) find_unused_scripts ;;
         q) exit ;;
         *) echo "You must enter a valid option." ;;
     esac
