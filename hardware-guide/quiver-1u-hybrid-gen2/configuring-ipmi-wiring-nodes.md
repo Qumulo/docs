@@ -44,7 +44,7 @@ In the following examples, the `lan set 1` command specifies LAN channel 1.
    ipmitool lan set 1 defgw ipaddr {{site.exampleGateway1}}
    ````
 
-1. To enable Address Resolution Protocl (ARP), which Qumulo Core often requires for `ping` to function properly, use the `arp` subcommand. For example:
+1. To enable Address Resolution Protocol (ARP), which Qumulo Core often requires for `ping` to function properly, use the `arp` subcommand. For example:
 
    ```bash
    ipmitool lan set 1 arp respond on

@@ -93,17 +93,17 @@ This section explains how to configure audit logging on your Qumulo cluster.
    }
    ```
    
-1. To confirm the connection between the Qumulo Broker and the rsyslog instance, run the {% include qq.html command="audit_get_syslog_status" %} command.
+1. To confirm the connection between the Qumulo Broker and the `rsyslog` instance, run the {% include qq.html command="audit_get_syslog_status" %} command.
 
    The command returns one of three possible values for the `connection_status` field:
 
-   * `AUDIT_LOG_CONNECTED`: The rsyslog instance is connected to your Qumulo Broker machine and all audit log messages are being transferred correctly.
+   * `AUDIT_LOG_CONNECTED`: The `rsyslog` instance is connected to your Qumulo Broker machine and all audit log messages are being transferred correctly.
 
-   * `AUDIT_LOG_DISCONNECTED`: The rsyslog instance is disconnected from your Qumulo Broker. Your Qumulo cluster is configured to buffer all outgoing audit log messages until it fills its buffer. When the rsyslog instance reconnects to your Qumulo Broker the cluster attempts to send all buffered messages.
+   * `AUDIT_LOG_DISCONNECTED`: The `rsyslog` instance is disconnected from your Qumulo Broker. Your Qumulo cluster is configured to buffer all outgoing audit log messages until it fills its buffer. When the `rsyslog` instance reconnects to your Qumulo Broker the cluster attempts to send all buffered messages.
      
      {{site.data.alerts.caution}}
      <ul>
-       <li>When the message buffer fills up, Qumulo Core discards all new messages. To change the buffer size, configure rsyslog parameters.</li>
+       <li>When the message buffer fills up, Qumulo Core discards all new messages. To change the buffer size, configure `rsyslog` parameters.</li>
        <li>If a power outage or cluster reboot occurs while Qumulo Core is waiting to send its messages, all unsent messages are lost.</li>
      </ul>
      {{site.data.alerts.end}}
@@ -112,9 +112,9 @@ This section explains how to configure audit logging on your Qumulo cluster.
 
 <a id="configure-rsyslog-communication"></a>
 ## Step 4: Configure rsyslog to Communicate with Qumulo Broker
-This section explains how to configure rsyslog on the Qumulo Broker machine.
+This section explains how to configure `rsyslog` on the Qumulo Broker machine.
 
-{% include important.html content="Before you restart the rsyslog service to apply a new configuration, you must always [ensure that Qumulo Broker is deployed](#deploy-qumulo-broker)." %}
+{% include important.html content="Before you restart the `rsyslog` service to apply a new configuration, you must always [ensure that Qumulo Broker is deployed](#deploy-qumulo-broker)." %}
 
 1. Change the file permission of the Qumulo Broker binary file.
 
@@ -124,9 +124,9 @@ This section explains how to configure rsyslog on the Qumulo Broker machine.
 
 <a id="rsyslog-with-single-cluster"></a>
 ### Configuring rsyslog to Communicate with a Single Cluster
-Configure the following rsyslog parameters in the `/etc/rsyslog.d/10-qumulo.conf` file.
+Configure the following `rsyslog` parameters in the `/etc/rsyslog.d/10-qumulo.conf` file.
 
-The following complete, annotated configuration file lets rsyslog on the Qumulo Broker machine communicate with a single Qumulo cluster.
+The following complete, annotated configuration file lets `rsyslog` on the Qumulo Broker machine communicate with a single Qumulo cluster.
 
 ```
 # PARSE AND PUBLISH QUMULO AUDIT LOGS
@@ -195,7 +195,7 @@ if ($app-name startswith "qumulo") then {
 
 <a id="rsyslog-with-multiple-clusters"></a>
 ### Configuring rsyslog to Communicate with Multiple Clusters
-The `queue.size` and `queue.workerThreads` rsyslog parameters in [the `/etc/rsyslog.d/10-qumulo.conf` file](#rsyslog-with-single-cluster) let rsyslog on the Qumulo Broker machine communicate with multiple Qumulo clusters.
+The `queue.size` and `queue.workerThreads` `rsyslog` parameters in [the `/etc/rsyslog.d/10-qumulo.conf` file](#rsyslog-with-single-cluster) let `rsyslog` on the Qumulo Broker machine communicate with multiple Qumulo clusters.
 
 * `queue.size`: Set the maximum size of the queue to 200,000 messages
 

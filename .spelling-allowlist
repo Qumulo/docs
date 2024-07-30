@@ -106,6 +106,7 @@ FAT32
 FIPS
 FlexibleLOM
 FQDN
+FQDNs
 FS
 FVT
 GbE
@@ -227,6 +228,7 @@ ODX
 Okta
 OpenMetrics
 OpenSSH
+OpenVPN
 OSUpgrade
 OU
 OUs
@@ -283,6 +285,7 @@ RJ45
 routable
 RPC
 RSA
+rsyslog
 RX2540
 S100G
 S25G

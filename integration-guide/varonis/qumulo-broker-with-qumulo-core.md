@@ -12,7 +12,7 @@ The Qumulo-Varonis integration monitors file and directory operations in Qumulo 
 
 
 ## How the Qumulo-Varonis Integration Works
-This section describes how the Qumulo-Varonis integration works. It provides an overview of the integration workflow; explains how Qumulo Broker gathers, processes, and emits Qumulo Core audit logs; and describes how Qumulo Broker uses rsyslog queues to ensure efficient data transfer.
+This section describes how the Qumulo-Varonis integration works. It provides an overview of the integration workflow; explains how Qumulo Broker gathers, processes, and emits Qumulo Core audit logs; and describes how Qumulo Broker uses `rsyslog` queues to ensure efficient data transfer.
 
 ### How Qumulo Clusters Send Audit Log Data to Varonis
 Qumulo Core sends audit logs for each [supported file- and directory-level operation](#supported-operations) in real time to Varonis for continuous monitoring. To detect anomalous behavior that system administrators can use to detect potential activity from a bad actor (for example, abnormal or high-frequency changes in file activity&mdash;such as file creation, deletion, and modification&mdash;or changes to access permissions), Varonis applies machine learning to Qumulo Core audit logs and issues alerts. In addition to common patterns, Varonis uses thread feeds and blacklists to identify known ransomware and attack patterns.
@@ -32,7 +32,7 @@ In Qumulo Core, each audit log has a specific logging requirement (for example, 
 
 Typically, Qumulo Core sends the audit logs to a single remote syslog instance. In the Qumulo-Varonis integration, Qumulo Broker receives the audit logs from multiple Qumulo clusters, converts them to various formats, and then sends them to Varonis.
 
-{% include note.html content="Qumulo Core can send audit logs to only one target syslog instance. For information about sending your Qumulo audit logs to different target systems in addition to Varonis, see [Configuring rsyslog to Communicate with Multiple Clusters](deploying-qumulo-broker.html#rsyslog-with-multiple-clusters)." %}
+{% include note.html content="Qumulo Core can send audit logs to only one target syslog instance. For information about sending your Qumulo audit logs to different target systems in addition to Varonis, see [Configuring `rsyslog` to Communicate with Multiple Clusters](deploying-qumulo-broker.html#rsyslog-with-multiple-clusters)." %}
 
 The following architecture diagram shows how Qumulo Broker gathers, processes, and emits data.
 
@@ -56,11 +56,11 @@ Deploying [Qumulo Broker](https://github.com/Qumulo/QumuloBroker) requires:
 
 * Qumulo Core 6.0.2 (and higher)
 
-* Git
+* `git`
 
-* Docker 23.0.1 (and higher)
+* `docker` 23.0.1 (and higher)
 
-* rsyslog 8.2001 (and higher)
+* `rsyslog` 8.2001 (and higher)
 
 ### Firewall Definitions
 In addition to the Varonis firewall requirements, you must also define the following firewall rules for Qumulo Broker connections.
