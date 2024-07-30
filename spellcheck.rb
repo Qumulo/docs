@@ -12,6 +12,8 @@ def preprocess_content(content, filename, allowlist_words)
   end
 
   content
+    #.gsub(/G&auml;vle/, 'Gävle')                                             # Ignore special cases
+    #.gsub(/d&aelig;/i, 'dæmons')
     .gsub(/(`[^`]*`)\s*(`[^`]*`)?\s*(`[^`]*`)?\s*(`[^`]*`)?/, ' ')           # Ignore all instances of inline `code`
     .gsub(/(```[\s\S]*?```)\s*(```[\s\S]*?```)?\s*(```[\s\S]*?```)?/, ' ')   # Ignore all instances od ```code blocks```
     .gsub(/<pre class="[^"]*">[\s\S]*?<\/pre>/m, ' ')                        # Ignore <pre> tags
@@ -27,8 +29,6 @@ def preprocess_content(content, filename, allowlist_words)
     .gsub(/\[.*?\]\((.*?)\)/, ' ')                                           # Ignore Markdown links, capturing the URLs in parentheses
     .gsub(/\[([^\]]+)\]\([^)]+\)/, '\1')                                     # Ignore Markdown links, keeping only the text within square brackets
     .gsub(/\b[A-Za-z]*-?[A-Za-z]+(?:ing|ING)\b(?!_SPACE_)/, '_SPACE_')       # Ensure `ing` doesn't get separated from word root
-    .gsub(/G&auml;vle/, 'Gävle')                                             # Ignore special cases
-    .gsub(/d&aelig;/i, 'dæmons')
     .gsub(/\{%\s*capture\s+[\s\S]*?%\}[\s\S]*?\{%\s*endcapture\s*%\}/m, '')  # Ignore Liquid capture tags comprised entirely of JSON
     .gsub(/="[^"]+\.(?:png|jpg)"/, '')                                       # Ignore image files
     .gsub(/(?:&shy;)/, '')                                                   # Ignore `&shy;`
@@ -91,8 +91,7 @@ FFI::Hunspell.dict('en_US') do |dict|
         line.gsub!(/\b#{Regexp.escape(phrase)}\b/, '') if line.include?(phrase)
       end
 
-      # Adjust the regex to treat words with hyphens or underscores as single words
-      words = line.scan(/\b(?:F\d+|K-\d+[A-Z]|C-\d+[A-Z]|[\w']+(?<!-)\b)/)
+      words = line.scan(/(?:F\d+|K-\d+[A-Z]|C-\d+[A-Z]|[\w'-]+)/)
 
       words.each do |word|
         normalized_word = word.gsub(/^[[:punct:]]+|[[:punct:]]+$/, '')

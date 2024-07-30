@@ -98,9 +98,6 @@ E810
 EBS
 EC2
 ECC
-ECC
-NIST
-P256
 ECDSA
 ECR
 ENI
@@ -123,6 +120,7 @@ GbE
 Gbps
 GBps
 GBPS
+GCM
 GCP
 GDPR
 GiB
@@ -249,6 +247,7 @@ OU
 OUs
 P2100G
 P225P
+P256
 PAM4
 Paulo
 PCI
@@ -319,6 +318,7 @@ SDK
 SELinux
 ServerView
 SFF
+SHA
 SIDs
 SKU
 SLO
