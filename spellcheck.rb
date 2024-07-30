@@ -17,6 +17,7 @@ def preprocess_content(content, filename, allowlist_words)
     .gsub(/\b\d+TB\b/, ' ')                                                  # Ignore <N>TB patterns
     .gsub(/\beth\d+\b/, ' ')                                                 # Ignore eth<N> patterns
     .gsub(/\bSev\d+\b/, ' ')                                                 # Ignore Sev<N> patterns
+    .gsub(/SMBv\d+(\.\d+)?/, ' ')                                            # Ignore `SMBv<N>`
     .gsub(/(v\d+)\b/, ' ')                                                   # Ignore `v<N>`
     .gsub(/<code>.*?<\/code>/m, ' ')                                         # Ignore content within <code> tags
     .gsub(/<pre>.*?<\/pre>/m, ' ')                                           # Ignore content within <pre> tags
