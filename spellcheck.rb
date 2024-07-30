@@ -12,9 +12,10 @@ def preprocess_content(content, filename, allowlist_words)
   end
 
   content
+    .gsub(/(`[^`]*`)\s*(`[^`]*`)?\s*(`[^`]*`)?\s*(`[^`]*`)?/, ' ')           # Ignore all instances of inline `code`
+    .gsub(/(```[\s\S]*?```)\s*(```[\s\S]*?```)?\s*(```[\s\S]*?```)?/, ' ')   # Ignore all instances od ```code blocks```
     .gsub(/<pre class="[^"]*">[\s\S]*?<\/pre>/m, ' ')                        # Ignore <pre> tags
     .gsub(/```[\s\S]*?```/, ' ')                                             # Enhanced removal of code blocks with optional language specifiers
-    .gsub(/`[^`]*`/, '')                                                     # Ignore inline code surrounded by backticks
     .gsub(/\b\d+T\b/, ' ')                                                   # Ignore <N>T patterns
     .gsub(/\b\d+TB\b/, ' ')                                                  # Ignore <N>TB patterns
     .gsub(/\beth\d+\b/, ' ')                                                 # Ignore eth<N> patterns
