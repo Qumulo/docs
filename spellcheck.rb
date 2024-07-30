@@ -86,6 +86,7 @@ FFI::Hunspell.dict('en_US') do |dict|
         line.gsub!(/\b#{Regexp.escape(phrase)}\b/, '') if line.include?(phrase)
       end
 
+      # Adjust the regex to treat words with hyphens or underscores as single words
       words = line.scan(/\b(?:F\d+|K-\d+[A-Z]|C-\d+[A-Z]|[\w']+(?<!-)\b)/)
 
       words.each do |word|
