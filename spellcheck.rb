@@ -18,9 +18,10 @@ def preprocess_content(content, filename, logger)
     end
   end
 
-  # Remove content within <code> and <pre> tags
+  # Remove content within <code>, <pre>, and Liquid tags
   content.gsub!(/<code>[\s\S]*?<\/code>/m, ' ')
   content.gsub!(/<pre>[\s\S]*?<\/pre>/m, ' ')
+  content.gsub!(/\{\{.*?\}\}/, ' ')
 
   content
     .gsub(/\[.*?\]\((.*?)\)/, ' ')                  # Ignore Markdown links
@@ -28,7 +29,6 @@ def preprocess_content(content, filename, logger)
     .gsub(/`[^`]*`/, ' ')                           # Ignore inline code in backticks
     .gsub(/<style>.*?<\/style>/m, ' ')              # Ignore <style> tags
     .gsub(/<!--.*?-->/m, ' ')                       # Ignore HTML comments
-    .gsub(/\{\{.*?\}\}/, ' ')                       # Ignore Liquid variables
     .gsub(/{%\s*.*?\s*%}/, ' ')                     # Ignore Liquid tags
     .gsub(/&\w+;/, ' ')                             # Ignore HTML entities
     .gsub(/<\/?[^>]+>/, ' ')                        # Ignore remaining HTML tags
