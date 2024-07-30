@@ -12,7 +12,9 @@ def preprocess_content(content, filename, allowlist_words)
   end
 
   content
-    .gsub(/```[\w-]*.*?```/m, ' ')                                           # Enhanced removal of code blocks with optional language specifiers
+    .gsub(/<pre class="[^"]*">[\s\S]*?<\/pre>/m, ' ')                        # Ignore <pre> tags
+    .gsub(/```[\s\S]*?```/, ' ')                                             # Enhanced removal of code blocks with optional language specifiers
+    .gsub(/`[^`]*`/, '')                                                     # Ignore inline code surrounded by backticks
     .gsub(/\b\d+T\b/, ' ')                                                   # Ignore <N>T patterns
     .gsub(/\b\d+TB\b/, ' ')                                                  # Ignore <N>TB patterns
     .gsub(/\beth\d+\b/, ' ')                                                 # Ignore eth<N> patterns
@@ -28,7 +30,6 @@ def preprocess_content(content, filename, allowlist_words)
     .gsub(/d&aelig;/i, 'dæmons')
     .gsub(/\{%\s*capture\s+[\s\S]*?%\}[\s\S]*?\{%\s*endcapture\s*%\}/m, '')  # Ignore Liquid capture tags comprised entirely of JSON
     .gsub(/="[^"]+\.(?:png|jpg)"/, '')                                       # Ignore image files
-    .gsub(/`[^`]*`/, '')                                                     # Ignore inline code surrounded by backticks
     .gsub(/(?:&shy;)/, '')                                                   # Ignore `&shy;`
     .gsub(/(?:permalink|redirect_from|sidebar|include_content|layout|redirect_to|search|platform):\s*.*$/, '') # Exclude specific YAML key value
     .gsub(/---(.*?)---/m) do |match|                                         # Extract values from YAML front matter, keeping them as plain text
@@ -59,7 +60,7 @@ def preprocess_content(content, filename, allowlist_words)
     .gsub(/\{%\s*capture\s+[^\s]+\s*%\}/, ' ')                               # Ignore variable capture statements
     .gsub(/content=\S+\s+%}/, ' ')                                           # Ignore usage of captured variables
     .gsub(/\{%\s*endcapture\s*%\}/, ' ')                                     # Ignore {% endcapture %} Liquid tags
-    .gsub(/\{%\s*endif\s*%\}/, ' ')                                     # Ignore {% endif %} Liquid tags
+    .gsub(/\{%\s*endif\s*%\}/, ' ')                                          # Ignore {% endif %} Liquid tags
     .gsub(/\b\w+\b\s*=/, '')                                                 # Exclude any variable name followed by an equal sign
     .gsub(/\b(#{allowlist_words.join('|')}|[A-Za-z]+-\d+-[A-Za-z]+)\b/, '_SPACE_') # Replace allowed phrases with placeholders
     .gsub(/_SPACE_/, '')                                                     # Remove placeholders
