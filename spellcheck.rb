@@ -12,6 +12,7 @@ def preprocess_content(content, filename, allowlist_words)
   end
 
   content
+    .gsub(/```[\w-]*.*?```/m, ' ')                                           # Enhanced removal of code blocks with optional language specifiers
     .gsub(/\b\d+T\b/, ' ')                                                   # Ignore <N>T patterns
     .gsub(/\b\d+TB\b/, ' ')                                                  # Ignore <N>TB patterns
     .gsub(/\beth\d+\b/, ' ')                                                 # Ignore eth<N> patterns
@@ -50,7 +51,6 @@ def preprocess_content(content, filename, allowlist_words)
     .gsub(/C-\d+[A-Za-z]*\b/, ' ')                                           # Ignore `C-<N>T`
     .gsub(/K-\d+[A-Za-z]*\b/, ' ')                                           # Ignore `K-<N>T`
     .gsub(/ConnectX-\d+\b/, ' ')                                             # Ignore `ConnectX-<N>`
-    .gsub(/```[\w-]*.*?```/m, ' ')                                           # Enhanced removal of code blocks with optional language specifiers
     .gsub(/\{\{.+?\}\}/, ' ')                                                # Ignore Liquid variables
     .gsub(/{%\s*include\s+[^\s]+(.+?)%}/m) { "{% include #{$1} %}" }         # Preserve include content, ignore filename
     .gsub(/<\/?[^>]+>/, ' ')                                                 # Ignore remaining HTML tags, keeping content intact
