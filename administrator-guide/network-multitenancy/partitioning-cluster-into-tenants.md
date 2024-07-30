@@ -28,6 +28,8 @@ To manage network multitenancy and tenants, your user must have membership in a 
 ## Creating, Configuring, and Unassigning Tenants by Using the qq CLI.
 This section explains the lifecycle of working with tenants, including creating tenants, assigning networks to new and existing tenants, viewing tenant configuration, and unassigning tenants.
 
+{% include important.html content="Creating a tenant and assigning a network to it causes the removal of any static routes from all nodes in a cluster. After creating the new tenant, you must reapply the static routes to your nodes." %}
+
 ### Step 1: Create a New Tenant
 After you enable multitenancy for your cluster, you can create a new tenant.
 
