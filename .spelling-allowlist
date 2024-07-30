@@ -139,6 +139,7 @@ HMAD
 hostname
 Hostname
 hostnames
+Hostnames
 HPE
 HSM
 html
@@ -166,6 +167,7 @@ JSON
 K-144T
 K-168T
 K-432T
+kB
 KDC
 Kerberos
 Keychain

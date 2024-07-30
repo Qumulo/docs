@@ -12,6 +12,11 @@ def preprocess_content(content, filename, allowlist_words)
   end
 
   content
+    .gsub(/\b\d+T\b/, ' ')                                                   # Ignore <N>T patterns
+    .gsub(/\b\d+TB\b/, ' ')                                                  # Ignore <N>TB patterns
+    .gsub(/\beth\d+\b/, ' ')                                                 # Ignore eth<N> patterns
+    .gsub(/\bSev\d+\b/, ' ')                                                 # Ignore Sev<N> patterns
+    .gsub(/(v\d+)\b/, ' ')                                                   # Ignore `v<N>`
     .gsub(/<code>.*?<\/code>/m, ' ')                                         # Ignore content within <code> tags
     .gsub(/<pre>.*?<\/pre>/m, ' ')                                           # Ignore content within <pre> tags
     .gsub(/\[.*?\]\((.*?)\)/, ' ')                                           # Ignore Markdown links, capturing the URLs in parentheses
@@ -37,13 +42,9 @@ def preprocess_content(content, filename, allowlist_words)
     .gsub(/&apos;/, "'")                                                     # Replace &apos; with '
     .gsub(/\[[^\]]*\]\([^)]*\([^)]*\)\)/, '[]()')                            # Ignore Markdown URLs
     .gsub(/Sev\d+\b/, ' ')                                                   # Ignore `Sev<N>`
-    .gsub(/eth\d+\b/, ' ')                                                   # Ignore `eth<N>`
     .gsub(/[A-Z]\d+\b/, ' ')                                                 # Ignore a single capital letter followed by a number
-    .gsub(/\d+T\b/, ' ')                                                     # Ignore `<N>T`
     .gsub(/{%\s*comment\s*%}.*?{%\s*endcomment\s*%}/m, ' ')                  # Ignore comments
     .gsub(/{%\s*include image\.html .*?%}/m, ' ')                            # Ignore images       
-    .gsub(/\dTB\b/, ' ')                                                     # Ignore `<N>TB`                                   
-    .gsub(/(v\d+)\b/, ' ')                                                   # Ignore `v<N>`
     .gsub(/(SHA\d+)\b/, ' ')                                                 # Ignore `SHA<N>`
     .gsub(/(Gen\d+)\b/, ' ')                                                 # Ignore `Gen<N>`
     .gsub(/C-\d+[A-Za-z]*\b/, ' ')                                           # Ignore `C-<N>T`
@@ -57,6 +58,7 @@ def preprocess_content(content, filename, allowlist_words)
     .gsub(/\{%\s*capture\s+[^\s]+\s*%\}/, ' ')                               # Ignore variable capture statements
     .gsub(/content=\S+\s+%}/, ' ')                                           # Ignore usage of captured variables
     .gsub(/\{%\s*endcapture\s*%\}/, ' ')                                     # Ignore {% endcapture %} Liquid tags
+    .gsub(/\{%\s*endif\s*%\}/, ' ')                                     # Ignore {% endif %} Liquid tags
     .gsub(/\b\w+\b\s*=/, '')                                                 # Exclude any variable name followed by an equal sign
     .gsub(/\b(#{allowlist_words.join('|')}|[A-Za-z]+-\d+-[A-Za-z]+)\b/, '_SPACE_') # Replace allowed phrases with placeholders
     .gsub(/_SPACE_/, '')                                                     # Remove placeholders
