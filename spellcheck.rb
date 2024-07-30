@@ -12,8 +12,8 @@ def preprocess_content(content, filename, allowlist_words)
   end
 
   content
-    #.gsub(/G&auml;vle/, 'Gävle')                                             # Ignore special cases
-    #.gsub(/d&aelig;/i, 'dæmons')
+    .gsub(/G&auml;vle/, ' ')                                             # Ignore special cases
+    .gsub(/d&aelig;mons/i, ' ')
     .gsub(/(`[^`]*`)\s*(`[^`]*`)?\s*(`[^`]*`)?\s*(`[^`]*`)?/, ' ')           # Ignore all instances of inline `code`
     .gsub(/(```[\s\S]*?```)\s*(```[\s\S]*?```)?\s*(```[\s\S]*?```)?/, ' ')   # Ignore all instances od ```code blocks```
     .gsub(/<pre class="[^"]*">[\s\S]*?<\/pre>/m, ' ')                        # Ignore <pre> tags
