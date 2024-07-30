@@ -79,10 +79,13 @@ DAC
 DACs
 DCE
 DDR5
+deduplicate
+deduplicates
 DHCP
 DIMM
 DIMMs
 DN
+DNs
 DNS
 DnsAdmins
 DriveKey
@@ -92,6 +95,7 @@ E810
 EBS
 EC2
 ECC
+ECC_NIST_P256
 ECDSA
 ECR
 ENI
@@ -103,7 +107,7 @@ ETag
 ExpressRoute
 failover
 FAT32
-FIPS
+FIP _includes/content-reuse/admin-guides/kerberos/kerberos-troubleshooting.mdS
 FlexibleLOM
 FQDN
 FQDNs
@@ -178,6 +182,7 @@ Lan
 LAN1
 LAN2
 LDAP
+LDAPS
 LEDs
 LFF
 lifecycle
@@ -195,6 +200,7 @@ MMC
 MNT
 MPO
 MQ
+MSDN
 MTU
 multistream
 multitenancy
@@ -323,6 +329,7 @@ SSDs
 SSL
 SSO
 sssd
+StartTLS
 stateful
 STATUS_ENUM_DIR
 subcommand
