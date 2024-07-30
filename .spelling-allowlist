@@ -5,6 +5,7 @@
 1UA
 1UH
 2015S
+2015S
 2CQD
 2FA
 336T
@@ -18,28 +19,22 @@
 802.3x
 82599ES
 90T
+A100G
 AAAA
 ACEs
 ACL
 ACLs
 ACR12N4H
 AES
-AES-128
+AES
 AES128
-AES-128-CCM
-AES-128-GCM
-AES-256
 Alletra
 analytics
 ANQ
 AOC
-AOC-A100G-B2CM-O
 AOCs
-AOC-S25G-b2S
 APIs
 ASG
-ASG-2015S-E1CR24L
-ASG-2015S-E1CR24L
 ASUS
 Auth0
 AUTH_SYS
@@ -50,6 +45,8 @@ autocompletion
 autofs
 AVX
 b2C
+B2CM
+b2S
 backplane
 Base64
 BMC
@@ -61,6 +58,7 @@ C-432T
 C-432T
 C-72T
 CBM
+CCM
 CHANGE_NOTIFY
 checksumming
 Checksums
@@ -95,11 +93,14 @@ DnsAdmins
 DriveKey
 DS
 Dx
+E1CR24L
 E810
 EBS
 EC2
 ECC
-ECC_NIST_P256
+ECC
+NIST
+P256
 ECDSA
 ECR
 ENI
@@ -112,7 +113,6 @@ ETags
 ExpressRoute
 failover
 FAT32
-FIP _includes/content-reuse/admin-guides/kerberos/kerberos-troubleshooting.mdS
 FIPS
 FlexibleLOM
 FQDN
@@ -304,6 +304,7 @@ RSA
 rsyslog
 RX2540
 S100G
+S25G
 S25G
 S3
 SaaS
