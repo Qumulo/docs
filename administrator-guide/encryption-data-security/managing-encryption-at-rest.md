@@ -20,7 +20,7 @@ varExampleHostname: kms.example.com
 {{site.data.alerts.end}}
 
 ## How Encryption at Rest and Master Keys Work in Qumulo Core
-In Qumulo Core 3.1.5 (and higher), in addition to encrypting data _in transit_ (for example, to clients that use SMBv.3.1), software-based encryption also secures data _at rest_ for on-premises clusters. Qumulo Core encrypts all data and metadata in the file system. Removing or reinserting drives and replication doesn't affect encryption at rest. For more information, see [Encryption Limitations](#encryption-limitations).
+In Qumulo Core 3.1.5 (and higher), in addition to encrypting data _in transit_ (for example, to clients that use SMBv3.1), software-based encryption also secures data _at rest_ for on-premises clusters. Qumulo Core encrypts all data and metadata in the file system. Removing or reinserting drives and replication doesn't affect encryption at rest. For more information, see [Encryption Limitations](#encryption-limitations).
 
 Qumulo Core uses a _master key_ to protect the _data key_ that encrypts the data on the cluster. The master key is stored either locally&mdash;on the boot drive of every node, in a file that only the `root` user can access&mdash;or on an external Key Management Server (KMS)&mdash;from where the system retrieves the master key upon startup. Both approaches help protect your data from potential threats such as a malicious actor's access to stolen or decommissioned disks.
 
