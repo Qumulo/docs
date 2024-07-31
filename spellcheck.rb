@@ -92,7 +92,9 @@ FFI::Hunspell.dict('en_US') do |dict|
         line.gsub!(/\b#{Regexp.escape(phrase)}\b/, '') if line.include?(phrase)
       end
 
-      words = line.scan(/(?:F\d+|K-\d+[A-Z]|C-\d+[A-Z]|[\w'-]+)/)
+#      words = line.scan(/(?:F\d+|K-\d+[A-Z]|C-\d+[A-Z]|[\w'-]+)/)
+
+words = line.scan(/[a-zA-Z0-9_\-']+/)
 
       words.each do |word|
         normalized_word = word.gsub(/^[[:punct:]]+|[[:punct:]]+$/, '')
