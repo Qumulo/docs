@@ -1,7 +1,7 @@
 ---
 ---
 
-/* NOTE: This is not actually an .scss file. As Toim Johnson explained on the Jekyll
+/* NOTE: This is not actually an .scss file. As Tom Johnson explained on the Jekyll
    forums, "Even if your theme doesn’t use Sass, you could just rename your .css file
    to .scss and add that compressed property [to _config.yml] You don’t have to
    actually use any Sass techniques in your CSS. When your site builds, Jekyll will
@@ -1759,7 +1759,7 @@ span.label.label-primary {
 a code {
     color: #005d80; /* This color is required to meet WCAG standards for accessible text. */  
     background-color: transparent;
-    margin-left: -2.5px; /* These two items remove awkward spacing around inline code inside links;
+    margin-left: -2.5px; /* These two items remove awkward spacing around inline code inside links. */
     margin-right: -2.5px;
 }
 
