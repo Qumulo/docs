@@ -392,8 +392,7 @@ a.header-link[href^="http://"]:after, a.header-link[href^="https://"]:after {
   min-height: 50px;
   background-image: url("../images/below-header.webp");
   background-position: center center;
-  background-size: 180%;
-  background-color: #1e1e32;
+  background-size: 100%;
 }
 
 .header-container {
