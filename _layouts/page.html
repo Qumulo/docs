@@ -4,7 +4,7 @@ layout: default
 {% assign processed_content = content | replace: '<p><a id="', '<a id="' | replace: '"></a></p>', '"></a>' %}
 
 {% if page.rest_endpoint %}
-  {% assign title = page.rest_endpoint | replace_first: '/v1/', '' | replace_first: '/v2/', '' | replace_first: '/v3/', '' %}
+  {% assign title = page.rest_endpoint | replace_first: '/v1/', '' | replace_first: '/v2/', '' | replace_first: '/v3/', '' | replace_first: '/v4/', '' %}
 {% else %}
   {% assign title = page.title %}
 {% endif %}
