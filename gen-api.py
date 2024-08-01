@@ -229,5 +229,18 @@ for tag, entries in sidebar_entries_by_tag.items():
 with open(sidebar_file_path, "w") as file:
     yaml.dump(sidebar_content, file, default_flow_style=False)
 
+# Manually append the additional YAML content
+additional_yaml_content = """  guidetitle: Qumulo REST API Guide
+  guideurl: /rest-api-guide/
+  output: web,pdf
+  pdftitle: qumulo-rest-api-guide.pdf
+  product: ''
+  title: Qumulo REST API Guide
+  version: ''
+"""
+
+with open(sidebar_file_path, "a") as file:
+    file.write(additional_yaml_content)
+
 print("API documentation generation completed.")
 
