@@ -167,7 +167,49 @@ for tag in sidebar_entries_by_tag:
 sidebar_content = {
     "entries": [
         {
-            "folders": []
+            "folders": [
+                {
+                    "folderitems": [
+                        {
+                            "output": "pdf",
+                            "title": "",
+                            "type": "frontmatter",
+                            "url": "/titlepage.html"
+                        },
+                        {
+                            "output": "pdf",
+                            "title": "",
+                            "type": "frontmatter",
+                            "url": "/tocpage.html"
+                        }
+                    ],
+                    "output": "pdf",
+                    "title": "",
+                    "type": "frontmatter"
+                },
+                {
+                    "folderitems": [
+                        {
+                            "output": "web",
+                            "title": "Documentation Home",
+                            "url": "/index.html"
+                        },
+                        {
+                            "output": "web",
+                            "title": "Qumulo REST API Guide Home",
+                            "url": "/rest-api-guide/"
+                        },
+                        {
+                            "output": "web",
+                            "title": "Contacting the Qumulo Care Team",
+                            "url": "/contacting-qumulo-care-team.html"
+                        }
+                    ],
+                    "output": "web",
+                    "title": "Qumulo REST API Guide",
+                    "type": "navi"
+                }
+            ]
         }
     ]
 }

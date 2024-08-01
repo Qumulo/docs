@@ -1,6 +1,31 @@
 entries:
 - folders:
   - folderitems:
+    - output: pdf
+      title: ''
+      type: frontmatter
+      url: /titlepage.html
+    - output: pdf
+      title: ''
+      type: frontmatter
+      url: /tocpage.html
+    output: pdf
+    title: ''
+    type: frontmatter
+  - folderitems:
+    - output: web
+      title: Documentation Home
+      url: /index.html
+    - output: web
+      title: Qumulo REST API Guide Home
+      url: /rest-api-guide/
+    - output: web
+      title: Contacting the Qumulo Care Team
+      url: /contacting-qumulo-care-team.html
+    output: web
+    title: Qumulo REST API Guide
+    type: navi
+  - folderitems:
     - output: web,pdf
       title: auth_access-tokens
       url: /rest-api-guide/access-tokens/auth_access-tokens.html
