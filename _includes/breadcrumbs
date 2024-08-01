@@ -14,6 +14,11 @@
   {% endfor %}
 {% endfor %}
 
+{% if page.rest_endpoint %}
+  {% assign title = page.rest_endpoint %}
+{% else %}
+  {% assign title = page.title %}
+{% endif %}
 
 {% if page.breadcrumbs != "exclude" %}
 <nav>
@@ -24,11 +29,11 @@
   <a href='{{ guideurl }}'>{{ guidetitle }}</a> <span>&rsaquo;</span>
 {% endif %}
 
-{% if parent_title and parent_title != page.title and parent_title != guidetitle %}
+{% if parent_title and parent_title != title and parent_title != guidetitle %}
   <a href='{{ parent_url }}'>{{ parent_title }}</a> <span>&rsaquo;</span>
 {% endif %}
 
-  {{page.title}}
+  {{title}}
   </div>
 </nav>
 {% endif %}
