@@ -63,11 +63,11 @@ h2#endpoint ~ h2#post,
 h2#endpoint ~ h2#put,
 h2#endpoint ~ h2#delete,
 h2#endpoint ~ h2#patch,
-#toc a[href*="#get"],
-#toc a[href*="#post"],
-#toc a[href*="#put"],
-#toc a[href*="#delete"],
-#toc a[href*="#patch"] {
+#toc a[href="#get"],
+#toc a[href="#post"],
+#toc a[href="#put"],
+#toc a[href="#delete"],
+#toc a[href="#patch"] {
   color: white;
   font-weight: bold;
   border-radius: 5px;
@@ -77,11 +77,11 @@ h2#endpoint ~ h2#patch,
   padding-left: 25px;
 }
 
-h2#get,    #toc a[href*="#get"]    { background-color: #0298ff; }
-h2#post,   #toc a[href*="#post"]   { background-color: #8ee002; }
-h2#put,    #toc a[href*="#put"]    { background-color: #ff9a00; }
-h2#delete, #toc a[href*="#delete"] { background-color: #ff1b5b; }
-h2#patch,  #toc a[href*="#patch"]  { background-color: #00a3ca; }
+h2#get,    #toc a[href="#get"]    { background-color: #0298ff; }
+h2#post,   #toc a[href="#post"]   { background-color: #8ee002; }
+h2#put,    #toc a[href="#put"]    { background-color: #ff9a00; }
+h2#delete, #toc a[href="#delete"] { background-color: #ff1b5b; }
+h2#patch,  #toc a[href="#patch"]  { background-color: #00a3ca; }
 
 /* Anchor link for heading */
 h2#get    a,
@@ -108,29 +108,20 @@ h2#patch  a:hover {
 
 /* START API MINI-TOC COLOUR */
 
-#toc a[href*="#get"],
-#toc a[href*="#post"],
-#toc a[href*="#put"],
-#toc a[href*="#delete"],
-#toc a[href*="#patch"] {
+#toc a[href="#get"],
+#toc a[href="#post"],
+#toc a[href="#put"],
+#toc a[href="#delete"],
+#toc a[href="#patch"] {
   padding-right: 7px;
   padding-left: 5px;
 }
 
-/*
-#toc a[href*="#get"]::after,
-#toc a[href*="#post"]::after,
-#toc a[href*="#put"]::after,
-#toc a[href*="#delete"]::after,
-#toc a[href*="#patch"]::after {
-  content: "";
-}*/
-
-#toc a[href*="#get"] + .anchorjs-link,
-#toc a[href*="#post"] + .anchorjs-link,
-#toc a[href*="#put"] + .anchorjs-link,
-#toc a[href*="#delete"] + .anchorjs-link,
-#toc a[href*="#patch"] + .anchorjs-link {
+#toc a[href="#get"] + .anchorjs-link,
+#toc a[href="#post"] + .anchorjs-link,
+#toc a[href="#put"] + .anchorjs-link,
+#toc a[href="#delete"] + .anchorjs-link,
+#toc a[href="#patch"] + .anchorjs-link {
   display: none;
 }
 
