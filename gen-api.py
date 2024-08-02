@@ -90,25 +90,13 @@ def find_tags_for_category(path_item):
                 tags.update(details["tags"])
     return tags
 
-# Function to get the correct segment from the resource name
-def get_segment_from_resource_name(resource_name):
-    parts = resource_name.split('_')
-    if parts[0].startswith('v') and parts[0][1:].isdigit():
-        # Remove the version part and use the next segment
-        return parts[1] if len(parts) > 1 else parts[0]
-    else:
-        # Use the first segment
-        return parts[0]
-
 # Function to clean up path for titles
 def clean_path_for_title(path, is_parent=False):
     parts = path.strip('/').split('/')
     if parts[0].startswith('v') and parts[0][1:].isdigit():
         parts.pop(0)  # Remove the version segment
-    if is_parent and len(parts) > 1:
+    if is_parent:
         return parts[0]
-    if not is_parent:
-        parts.pop(0)  # Remove the first segment if there are more segments
     return '/'.join(parts)
 
 # Fetch the OpenAPI definition
@@ -178,7 +166,7 @@ for path, path_item in api_definition["paths"].items():
         # Generate the index.md file for the tag
         if len(sidebar_entries_by_tag[tag]) == 1:  # Only create the index.md once per tag
             tag_info = tag_info_dict.get(tag, {'name': tag, 'description': 'Listing of commands for ' + tag})
-            first_segment = get_segment_from_resource_name(resource_name)
+            first_segment = clean_path_for_title(path, is_parent=True)
             index_md_title = create_sidebar_title(tag, first_segment)
             index_md_content = generate_index_md(tag, index_md_title, tag_info)
             index_md_path = os.path.join(tag_dir, "index.md")
