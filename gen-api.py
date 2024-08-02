@@ -77,9 +77,9 @@ def clean_filename(tag, filename, api_version=None):
         filename = f"{api_version}_{filename}"
     return filename
 
-# Function to create the sidebar title from the tag
-def create_sidebar_title(tag, tag_info):
-    return f"{tag_info['name']} ({tag})"
+# Function to create the sidebar title from the tag and segment
+def create_sidebar_title(tag, segment):
+    return f"{tag} ({segment})"
 
 # Function to find the tag for a category based on the path item
 def find_tags_for_category(path_item):
@@ -89,6 +89,16 @@ def find_tags_for_category(path_item):
             if "tags" in details:
                 tags.update(details["tags"])
     return tags
+
+# Function to get the correct segment from the resource name
+def get_segment_from_resource_name(resource_name):
+    parts = resource_name.split('_')
+    if parts[0].startswith('v') and parts[0][1:].isdigit():
+        # Remove the version part and use the next segment
+        return parts[1] if len(parts) > 1 else parts[0]
+    else:
+        # Use the first segment
+        return parts[0]
 
 # Fetch the OpenAPI definition
 response = requests.get(url)
@@ -146,7 +156,7 @@ for path, path_item in api_definition["paths"].items():
         # Add entry to sidebar entries
         sidebar_entry = {
             "output": "web,pdf",
-            "title": create_sidebar_title(path, tag_info_dict.get(tag, {'name': tag})) if len(path_segments) == 2 else resource_filename.replace('.md', ''),
+            "title": resource_name.replace('.md', ''),
             "url": permalink
         }
 
@@ -217,26 +227,30 @@ sidebar_content = {
 # Add folderitems for each tag
 for tag, entries in sidebar_entries_by_tag.items():
     tag_info = tag_info_dict.get(tag, {'name': tag})
-    parent_title = create_sidebar_title(tag, tag_info)
-    sidebar_content["entries"][0]["folders"].append({
-        "folderitems": entries,
-        "output": "web,pdf",
-        "title": parent_title,
-        "url": f"/rest-api-guide/{tag.lower().replace(' ', '-')}/"
-    })
+    if entries:
+        # Extract the segment from the URL of the first entry
+        first_segment = get_segment_from_resource_name(entries[0]["title"])
+        parent_title = create_sidebar_title(tag, first_segment)
+        sidebar_content["entries"][0]["folders"].append({
+            "folderitems": entries,
+            "output": "web,pdf",
+            "title": parent_title,
+            "url": f"/rest-api-guide/{tag.lower().replace(' ', '-')}/"
+        })
 
 # Write the sidebar YAML file
 with open(sidebar_file_path, "w") as file:
     yaml.dump(sidebar_content, file, default_flow_style=False)
 
 # Manually append the additional YAML content
-additional_yaml_content = """  guidetitle: Qumulo REST API Guide
-  guideurl: /rest-api-guide/
-  output: web,pdf
-  pdftitle: qumulo-rest-api-guide.pdf
-  product: ''
-  title: Qumulo REST API Guide
-  version: ''
+additional_yaml_content = """
+guidetitle: Qumulo REST API Guide
+guideurl: /rest-api-guide/
+output: web,pdf
+pdftitle: qumulo-rest-api-guide.pdf
+product: ''
+title: Qumulo REST API Guide
+version: ''
 """
 
 with open(sidebar_file_path, "a") as file:
