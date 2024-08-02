@@ -21,12 +21,12 @@ def write_markdown(file_path, content):
         file.write(content)
 
 # Function to generate the content for index.md
-def generate_index_md(tag, tag_info):
+def generate_index_md(tag, title, tag_info):
     return f"""---
 layout: landing_page
 sidebar: rest_api_guide_sidebar
 summary: "{tag_info['description']}"
-title: {tag_info['name']} ({tag})
+title: {title}
 ---
 """
 
@@ -137,12 +137,8 @@ for path, path_item in api_definition["paths"].items():
         tag_dir = os.path.join(output_base_dir, tag.lower().replace(" ", "-"))
         create_directory(tag_dir)
 
-        # Generate the index.md file for the tag
+        # Initialize the sidebar entries dictionary for the tag if not already present
         if tag not in sidebar_entries_by_tag:
-            tag_info = tag_info_dict.get(tag, {'name': tag, 'description': 'Listing of commands for ' + tag})
-            index_md_content = generate_index_md(tag, tag_info)
-            index_md_path = os.path.join(tag_dir, "index.md")
-            write_markdown(index_md_path, index_md_content)
             sidebar_entries_by_tag[tag] = []
 
         # Clean up filename and write the individual resource file
@@ -164,6 +160,15 @@ for path, path_item in api_definition["paths"].items():
             sidebar_entry["apiversion"] = api_version
 
         sidebar_entries_by_tag[tag].append(sidebar_entry)
+
+        # Generate the index.md file for the tag
+        if len(sidebar_entries_by_tag[tag]) == 1:  # Only create the index.md once per tag
+            tag_info = tag_info_dict.get(tag, {'name': tag, 'description': 'Listing of commands for ' + tag})
+            first_segment = get_segment_from_resource_name(resource_name)
+            index_md_title = create_sidebar_title(tag, first_segment)
+            index_md_content = generate_index_md(tag, index_md_title, tag_info)
+            index_md_path = os.path.join(tag_dir, "index.md")
+            write_markdown(index_md_path, index_md_content)
 
 # Alphabetize entries within each tag
 def version_key(entry):
@@ -243,14 +248,13 @@ with open(sidebar_file_path, "w") as file:
     yaml.dump(sidebar_content, file, default_flow_style=False)
 
 # Manually append the additional YAML content
-additional_yaml_content = """
-guidetitle: Qumulo REST API Guide
-guideurl: /rest-api-guide/
-output: web,pdf
-pdftitle: qumulo-rest-api-guide.pdf
-product: ''
-title: Qumulo REST API Guide
-version: ''
+additional_yaml_content = """  guidetitle: Qumulo REST API Guide
+  guideurl: /rest-api-guide/
+  output: web,pdf
+  pdftitle: qumulo-rest-api-guide.pdf
+  product: ''
+  title: Qumulo REST API Guide
+  version: ''
 """
 
 with open(sidebar_file_path, "a") as file:

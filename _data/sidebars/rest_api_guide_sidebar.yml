@@ -1140,11 +1140,10 @@ entries:
     output: web,pdf
     title: Web UI Settings (web-ui)
     url: /rest-api-guide/web-ui-settings/
-
-guidetitle: Qumulo REST API Guide
-guideurl: /rest-api-guide/
-output: web,pdf
-pdftitle: qumulo-rest-api-guide.pdf
-product: ''
-title: Qumulo REST API Guide
-version: ''
+  guidetitle: Qumulo REST API Guide
+  guideurl: /rest-api-guide/
+  output: web,pdf
+  pdftitle: qumulo-rest-api-guide.pdf
+  product: ''
+  title: Qumulo REST API Guide
+  version: ''
