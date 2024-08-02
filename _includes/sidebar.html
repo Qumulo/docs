@@ -29,7 +29,7 @@
   <li>
   {% endif %}
 
-<a title="{{folder.title}}" href="{% if page.url != folder.url and indexURL != folder.url %}{{folder.url}}{% else %}#{% endif %}" data-proofer-ignore>
+  <a title="{{folder.title}}" href="{% if page.url != folder.url and indexURL != folder.url %}{{folder.url}}{% else %}#{% endif %}" data-proofer-ignore>
   {% assign version = '' %}
   {% assign title_without_version = '' %}
   {% assign title_parts = folder.title | split: ' ' %}
@@ -47,7 +47,7 @@
   {% endfor %}
   
   {{ title_without_version }}{% if version != '' %} <span class="apiversion parentversion {{ version | downcase }}">{{ version }}</span>{% endif %}
-</a>
+  </a>
  
       <ul>
           {% for folderitem in folder.folderitems %}
