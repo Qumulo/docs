@@ -100,6 +100,17 @@ def get_segment_from_resource_name(resource_name):
         # Use the first segment
         return parts[0]
 
+# Function to clean up path for titles
+def clean_path_for_title(path, is_parent=False):
+    parts = path.strip('/').split('/')
+    if parts[0].startswith('v') and parts[0][1:].isdigit():
+        parts.pop(0)  # Remove the version segment
+    if is_parent and len(parts) > 1:
+        return parts[0]
+    if not is_parent:
+        parts.pop(0)  # Remove the first segment if there are more segments
+    return '/'.join(parts)
+
 # Fetch the OpenAPI definition
 response = requests.get(url)
 api_definition = response.json()
@@ -149,10 +160,13 @@ for path, path_item in api_definition["paths"].items():
         resource_md_content = generate_resource_md(tag, path, path_item, permalink, api_version)
         write_markdown(resource_md_path, resource_md_content)
 
+        # Clean path for child title
+        cleaned_path = clean_path_for_title(path)
+
         # Add entry to sidebar entries
         sidebar_entry = {
             "output": "web,pdf",
-            "title": resource_name.replace('.md', ''),
+            "title": cleaned_path,  # Use the cleaned path for the child title
             "url": permalink
         }
 
@@ -233,8 +247,8 @@ sidebar_content = {
 for tag, entries in sidebar_entries_by_tag.items():
     tag_info = tag_info_dict.get(tag, {'name': tag})
     if entries:
-        # Extract the segment from the URL of the first entry
-        first_segment = get_segment_from_resource_name(entries[0]["title"])
+        # Extract the first segment from the first entry's path
+        first_segment = clean_path_for_title(entries[0]["title"], is_parent=True)
         parent_title = create_sidebar_title(tag, first_segment)
         sidebar_content["entries"][0]["folders"].append({
             "folderitems": entries,
