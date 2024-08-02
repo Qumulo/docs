@@ -136,8 +136,14 @@ console.log("submitFn called with query:", query);
               corpus_key: corpusKeys,
               start: startFrom, // offset
               contextConfig: {sentencesBefore, sentencesAfter, startTag: "<strong>", endTag: "</strong>"},
+              rerankingConfig: {
+                rerankerId: 272725719
+                //mmrConfig: {
+                //  diversityBias: 0.4
+                //}
+              },
               summary: [{
-                summarizerPromptName: "vectara-summary-ext-24-05-large",
+                summarizerPromptName: "mockingbird-1.0-2024-07-16",
                 maxSummarizedResults: maxSummarizedResults,
                 responseLang: "eng"
               }]

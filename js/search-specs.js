@@ -7,7 +7,7 @@ let searchWidget = createSearch(
   successFn,                                    // success function
   errorFn,                                      // error function
   "/images/magnifying-glass.png",               // custom icon for the search box
-  20,                                           // number of results to return
+  25,                                           // number of results to return
   5,                                            // max number of results to summarize
   1,                                            // number of sentences to show before each matching snippet
   1,                                            // number of sentences to show after each matching snippet
