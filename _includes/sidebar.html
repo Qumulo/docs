@@ -28,9 +28,27 @@
   {% else %}
   <li>
   {% endif %}
-    
-    <a title="{{folder.title}}" href="{% if page.url != folder.url and indexURL != folder.url %}{{folder.url}}{% else %}#{% endif %}" data-proofer-ignore>{{folder.title}}</a>
-    
+
+<a title="{{folder.title}}" href="{% if page.url != folder.url and indexURL != folder.url %}{{folder.url}}{% else %}#{% endif %}" data-proofer-ignore>
+  {% assign version = '' %}
+  {% assign title_without_version = '' %}
+  {% assign title_parts = folder.title | split: ' ' %}
+  
+  {% for part in title_parts %}
+    {% if part == 'V1' or part == 'V2' or part == 'V3' or part == 'V4' %}
+      {% assign version = part %}
+    {% else %}
+      {% if title_without_version == '' %}
+        {% assign title_without_version = part %}
+      {% else %}
+        {% assign title_without_version = title_without_version | append: ' ' | append: part %}
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+  
+  {{ title_without_version }}{% if version != '' %} <span class="apiversion parentversion {{ version | downcase }}">{{ version }}</span>{% endif %}
+</a>
+ 
       <ul>
           {% for folderitem in folder.folderitems %}
           {% if folderitem.output contains "web" %}
