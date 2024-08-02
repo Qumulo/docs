@@ -97,6 +97,8 @@ def clean_path_for_title(path, is_parent=False):
         parts.pop(0)  # Remove the version segment
     if is_parent:
         return parts[0]
+    if len(parts) > 1:
+        parts.pop(0)  # Remove the first segment
     return '/'.join(parts)
 
 # Fetch the OpenAPI definition
@@ -235,9 +237,7 @@ sidebar_content = {
 for tag, entries in sidebar_entries_by_tag.items():
     tag_info = tag_info_dict.get(tag, {'name': tag})
     if entries:
-        # Extract the first segment from the first entry's path
-        first_segment = clean_path_for_title(entries[0]["title"], is_parent=True)
-        parent_title = create_sidebar_title(tag, first_segment)
+        parent_title = f"{tag} ({entries[0]['title'].split('/')[0]})"
         sidebar_content["entries"][0]["folders"].append({
             "folderitems": entries,
             "output": "web,pdf",
