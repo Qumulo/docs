@@ -15,4 +15,4 @@ For information about NICs and ports on {{site.all4140}}, {{site.contactQumuloCa
 
 {% include content-reuse/platform-agnostic-unified-networking-cluster.md ethernetSpeed="10 Gbps or 25 Gbps"%}
 
-{% include image.html alt="Platform-Agnostic Unified Networking Four-Node Cluster Architecture Diagram" file="../../platform-agnostic/images/platform-agnostic-unified-networking-four-node-cluster.png" %}
+{% include image.html alt="Platform-Agnostic Unified Networking Four-Node Cluster Architecture Diagram" file="../platform-agnostic/images/platform-agnostic-unified-networking-four-node-cluster.png" %}
