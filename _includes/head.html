@@ -118,6 +118,25 @@ fetch('/data/website.json')
 <meta name="theme-color" content="#ffffff">
 <meta name="google-site-verification" content="_KoxPR0qF_ZeMyH6uWvlX84cFRujO_AZ1eq0eT9alAg">
 
+<!-- Open Graph Meta Tags -->
+<meta property="og:title" content="{{ page.title }} | {{ site.site_title }}">
+<meta property="og:url" content="{{ site.url }}{{ page.url }}">
+<meta property="og:site_name" content="{{ site.site_title }}">
+<meta property="og:description" content="{% if page.summary %}{{ page.summary | strip_html | strip_newlines }}{% endif %}">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://docs.qumulo.com/images/docs.qumulo.com-qumulo-documentation-portal-630px.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<!-- Twitter Meta Tags -->
+<meta name="twitter:title" content="{{ page.title }} | {{ site.site_title }}">
+<meta property="twitter:url" content="{{ site.url }}{{ page.url }}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:description" content="{% if page.summary %}{{ page.summary | strip_html | strip_newlines }}{% endif %}">
+<meta name="twitter:image" content="https://docs.qumulo.com/images/docs.qumulo.com-qumulo-documentation-portal-418px.png">
+<meta property="twitter:domain" content="docs.qumulo.com">
+
 <!-- Define favicon variants -->
 <link rel="apple-touch-icon" sizes="180x180" href="{{ "images/apple-touch-icon.png" | relative_url }}">
 <link rel="icon" type="image/png" sizes="32x32" href="{{ "images/favicon-32x32.png" | relative_url }}">
