@@ -19,7 +19,7 @@ sidebar: hardware_guide_sidebar
       <td><strong>Connectivity Ports (NIC)</strong></td>
       <td colspan="3">
         4 &#215; 100 GbE (2 &#215; Mellanox ConnectX-6 NICs)<br>
-        or 4 &#215; 100 GbE (2 &#215; Intel E810)
+        or 4 &#215; 100 GbE (2 &#215; Intel E810 NICs)
       </td>
     </tr>
     <tr>

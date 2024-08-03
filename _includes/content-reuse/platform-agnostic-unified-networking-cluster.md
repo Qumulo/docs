@@ -1,9 +1,11 @@
+{% if page.nicInfo == nil %}
 {{site.data.alerts.note}}
 <ul>
  <li>{{site.seeTechSpecs}}</li>
  <li>{{site.hardware.ethDiff}}</li>
 </ul>
 {{site.data.alerts.end}}
+{% endif %}
 
 ##  Prerequisites
 {{site.data.alerts.note}}

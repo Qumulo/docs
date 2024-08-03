@@ -9,40 +9,42 @@ sidebar: hardware_guide_sidebar
   <thead>
     <tr>
       <th></th>
-      <th><strong>{{site.all4140}} 307TB</strong></th>
-      <th><strong>{{site.all4140}} 153TB</strong></th>
-      <th><strong>{{site.all4140}} 38TB</strong></th>
+      <th><strong>{{site.all4140}} 1600TB (Archive)</strong></th>
+      <th><strong>{{site.all4140}} 1200TB (Archive)</strong></th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td><strong>Connectivity Ports (NIC)</strong></td>
-      <td colspan="3">
-        4 &#215; 100 GbE (2 &#215; Mellanox ConnectX-6 NICs)<br>
-        or 4 &#215; 100 GbE (2 &#215; Intel E810)
+      <td colspan="2">
+        2 &#215; 10 GbE (1 &#215; NICs)<br>
+        or 2 &#215; 10 GbE (1 &#215; NICs)
       </td>
     </tr>
     <tr>
       <td><strong>Management Ports (BMC)</strong></td>
-      <td colspan="4">1 &#215; 1 GbE Base-T (RJ45)</td>
+      <td colspan="2">1 &#215; 1 GbE Base-T (RJ45)</td>
     </tr>
+{% comment %}
     <tr>
       <td><strong>NVMe Storage Media</strong></td>
       <td>20 &#215; 15.36 TB</td>
       <td>20 &#215; 7.68 TB</td>      
       <td>10 &#215; 3.84 TB</td>
-    </tr>    
+    </tr>
+{% endcomment %}
     <tr>
       <td><strong>Boot Drive</strong></td>
-      <td colspan="4">
-        1 &#215; 480 GB HPE NS204i-u Gen11 NVMe<br>
+      <td colspan="2">
+        2 &#215; 480 GB M.2 Drives in the HPE NS204i-u Gen11 NVMe<br>
         Hot Plug Boot Optimized Storage Device
       </td>
     </tr>  
     <tr>
       <td><strong>CPU</strong></td>
-      <td colspan="4">1 &#215; Intel Xeon Silver 4410Y 2.10 GHz 12 cores @ 1.90 GHz</td>
+      <td colspan="2">1 &#215; Intel Xeon Scalable 4410Y{% comment %}2.10 GHz 12 cores @ 1.90 GHz{% endcomment %}</td>
     </tr>
+{% comment %}
     <tr>
       <td><strong>Memory</strong></td>
       <td colspan="4">128 GB (16 GB &#215; 8)</td>
@@ -51,18 +53,22 @@ sidebar: hardware_guide_sidebar
       <td><strong>Power Supply</strong></td>
       <td colspan="4">2 &#215; 1,600 W Power Supplies</td>
     </tr>
+{% endcomment %}
     <tr>
       <td><strong>Dimensions (H &#215; W &#215; D)</strong></td>
-      <td colspan="4">1.69" &#215; 17.11" &#215; 28.85" (42.93 mm &#215; 434.59 mm &#215; 732.79 mm)</td>
+      <td>6.92" &#215; 17.64" &#215; 42.40"<br>(175.80 mm &#215; 448 mm &#215; 1,076.94 mm)</td>
+      <td>6.92" &#215; 17.64" &#215; 33.90"<br>(175.80 mm &#215; 448 mm &#215; 860.94 mm )</td>
     </tr>
     <tr>
       <td><strong>Net Weight</strong></td>
-      <td colspan="4">43.96 lb (19.94 kg)</td>
+      <td>325.42 lb (147.47 kg)</td>
+      <td>259.11 lb (117.53 kg)</td>
     </tr>
     <tr>
       <td><strong>Power Requirements</strong></td>
       <td colspan="4">100&ndash;240 V, 50/60 Hz</td>
     </tr>
+{% comment %}
     <tr>
       <td><strong>Idle Power Consumption</strong></td>
       <td colspan="2">1.80 A @ 240 V<br>3.92 A @ 110 V</td>
@@ -102,15 +108,18 @@ sidebar: hardware_guide_sidebar
       <td><strong>Maximum Thermal Rating</strong></td>
       <td colspan="2">2,218 BTU/hr</td>
       <td>2,034 BTU/hr</td>
-    </tr>    
+    </tr>
+{% endcomment %}
     <tr>
       <td><strong>Operating Temperature</strong></td>
       <td colspan="4">50&deg; F to 95&deg; F (10&deg; C to 35&deg; C)</td>
     </tr>
+{% comment %}
     <tr>
       <td><strong>Non-Operating Temperature</strong></td>
       <td colspan="4">-22&deg; F to 140&deg; F (-30&deg; C to 60&deg; C)</td>
     </tr>
+{% endcomment %}
     <tr>
       <td><div><strong>Operating Relative Humidity</strong></div></td>
       <td colspan="4">8% to 90% (non-condensing)</td>

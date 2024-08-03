@@ -3,15 +3,16 @@ title: "Wiring Nodes and Networking Your HPE Alletra 4140 Cluster"
 summary: "This section explains how to wire NIC ports on HPE Alletra 4140 nodes and how to network a cluster."
 permalink: /hardware-guide/hpe-alletra-4140/wiring-nodes-networking-cluster.html
 sidebar: hardware_guide_sidebar
-platform: all4140
+nicInfo: false
 ---
 
-{% include content-reuse/run-anywhere-conditional-admonitions.md %}
+{{site.unifyNetDefine}}
 
 ## Node NICs and Ports
-The following diagrams show the NICs and ports on {{site.all4140}} node types.
+For information about NICs and ports on {{site.all4140}}, {{site.contactQumuloCare}}.
 
-{% capture alt_tag %}Back Diagram of the {{site.all4140}} Node{% endcapture %}
-{% include image.html alt=alt_tag file="hpe-alletra-4140-back-diagram.png" url="/hardware-guide/hpe-alletra-4140/images/hpe-alletra-4140-back-diagram.png" %}
+{% include important.html content="For your node to work correctly, you must connect at least one port in the NIC." %}
 
-{% include content-reuse/platform-agnostic-split-wiring-networking-cluster.md ethernetSpeed="100 Gbps" %}
+{% include content-reuse/platform-agnostic-unified-networking-cluster.md ethernetSpeed="10 Gbps or 25 Gbps"%}
+
+{% include image.html alt="Platform-Agnostic Unified Networking Four-Node Cluster Architecture Diagram" file="../../platform-agnostic/images/platform-agnostic-unified-networking-four-node-cluster.png" %}
