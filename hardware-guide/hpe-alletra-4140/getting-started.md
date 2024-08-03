@@ -26,13 +26,15 @@ platform: all4140
 
    * If the **Legacy BIOS One-Time Boot Menu** option is available, click it.
 
-   * If the **Legacy BIOS One-Time Boot Menu** option is unavailable, click **Generic USB Boot** and continue to run the Field Verification Tool (FVT).
+   * If the **Legacy BIOS One-Time Boot Menu** option is unavailable, click **Generic USB Boot**.
 
 1. In the **Question** dialog box, click **OK**.
 
    {% include note.html content="The **Default Boot Override Options** page might take a few minutes to appear." %}
 
 1. In the **Default Boot Override Options** menu, select **2) One Time Boot to USB DriveKey**.
+
+   The Qumulo Core Installation begins.
 
 ## Step 3: Create and Configure Your Cluster
 
