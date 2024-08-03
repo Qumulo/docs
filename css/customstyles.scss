@@ -941,10 +941,17 @@ div#toc {
     margin-bottom: 0px;
 }
 
+/* First level of mini-TOC */
 div#toc ul li {
     margin: 8px 0px 8px 22px;
-    font-size: 90%;
+    font-size: 11pt;
     list-style: square;
+}
+
+/* Second level of mini-TOC */
+div#toc ul li ul li {
+    list-style-type: disc;
+    margin: 5px 0px 0px 9px;
 }
 
 div#toc ul {
@@ -960,10 +967,6 @@ div#toc ul {
 div#toc ul li ul {
     padding-left:8px;
 
-}
-
-div#toc ul li ul li::before {
-    content: "–  ";
 }
 
 div#toc >ul::before {
@@ -1353,11 +1356,6 @@ ol li ul {
 }
 
 li img {clear:both; }
-
-div#toc ul li ul li {
-    list-style-type: none;
-    margin: 5px 0px 0px 0px;
-}
 
 .tab-content {
     padding: 15px;

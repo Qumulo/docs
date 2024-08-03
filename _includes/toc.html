@@ -2,6 +2,26 @@
 <!-- Create the automatic mini-TOC on a page (unless disabled with #toc{display:none;}.
      Note: If you use HTML tags, add an ID to the heading so that it appears in the mini-TOC.
 -->
+{% if page.rest_endpoint %}
+<script>
+$(document).ready(function() {
+    $('#toc').toc({
+      minimumHeaders: 3,
+      listType: 'ul',
+      showSpeed: 0,
+      headers: 'h2,h3'
+    });
+
+    /* Account for the space that the floating toolbar takes up. */
+    $('#toc').on('click', 'a', function() {
+      var target = $(this.getAttribute('href')), 
+          scroll_target = target.offset().top
+          $(window).scrollTop(scroll_target - 10);
+      return false
+    });
+});
+</script>
+{% else %}
 <script>
 $(document).ready(function() {
     $('#toc').toc({
@@ -20,5 +40,6 @@ $(document).ready(function() {
     });
 });
 </script>
+{% endif  %}
 
 <div id="toc"></div>
