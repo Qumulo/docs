@@ -3,7 +3,7 @@ title: "Wiring Nodes and Networking Your HPE Alletra 4140 Cluster"
 summary: "This section explains how to wire NIC ports on HPE Alletra 4140 nodes and how to network a cluster."
 permalink: /hardware-guide/hpe-alletra-4140/wiring-nodes-networking-cluster.html
 sidebar: hardware_guide_sidebar
-platform: all4110
+platform: all4140
 ---
 
 {% include content-reuse/run-anywhere-conditional-admonitions.md %}

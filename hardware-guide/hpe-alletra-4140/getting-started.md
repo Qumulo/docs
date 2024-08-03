@@ -16,6 +16,8 @@ platform: all4140
 
 {% include content-reuse/platform-agnostic-verify-node-preamble.md %}
 
+   {% include tip.html content="On this platform, the power button is located on the back of the node. For more information, see [Front Panel LEDs and Buttons](https://support.hpe.com/hpesc/public/docDisplay?docId=sd00003805en_us&page=GUID-D3D2588E-465D-49B5-977E-305234A3EDB6.html) in the HPE Alletra Storage Server 4140 Setup and Installation Guide." %}
+
 ## Step 2: Boot by Using the Qumulo Core USB Drive Installer
 
 1. When the node powers on and begins to boot, on the **HPE Alletra** screen, press **F11**.

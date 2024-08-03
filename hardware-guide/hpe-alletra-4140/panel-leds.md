@@ -6,44 +6,21 @@ sidebar: hardware_guide_sidebar
 ---
 
 ## Front Panel LEDs and Buttons
-On the front, right side of your node, there are four LEDs.  The following diagram shows the LEDs and buttons on the front panel.
+On the front, right side of your node, there are four LEDs:
 
-{% capture alt_tag %}The System Power LED and Power On or Standby Button, Health LED, NIC Status LED, and UID Button and LED on a {{site.all4140}} node{% endcapture %}
-{% include image.html alt=alt_tag file="hpe-alletra-4140-front-panel-led.png" %}
+* UID Button and LED
 
-| Label                                           | Color and Behavior                                       | Description                                       |
-| ----------------------------------------------- | -------------------------------------------------------- | ------------------------------------------------- |
-| System Power LED and Power On or Standby Button | {{site.led.green}} (solid green)                         | System is powered on                              |
-| System Power LED and Power On or Standby Button | {{site.led.green}} (1 s. blinking green)                 | Performing power-on sequence                      |
-| System Power LED and Power On or Standby Button | {{site.led.orange}} (solid amber)                        | System is on standby                              |
-| System Power LED and Power On or Standby Button | Off                                                      | System is powered off                             |
-| Health LED                                      | {{site.led.green}} (solid green)                         | Health is normal                                  |
-| Health LED                                      | {{site.led.green}} (1 s. blinking green)                 | iLO is rebooting                                  |
-| Health LED                                      | {{site.led.orange}} (blinking amber)                     | System state degraded                             |
-| Health LED                                      | {{site.led.red}} (1 s. blinking red)                     | System state critical                             |
-| NIC Status LED                                  | {{site.led.green}} (solid green)                         | Linked to network                                 |
-| NIC Status LED                                  | {{site.led.green}} (1 s. flashing green)                 | Network active                                    |
-| NIC Status LED                                  | Off                                                      | No network activity                               |
-| UID Button and LED                              | {{site.led.blue }} (solid blue)                          | UID activated                                     |
-| UID Button and LED                              | {{site.led.blue }} (1 s. blinking blue)                  | Remote management or firmware upgrade in progress |
-| UID Button and LED                              | {{site.led.blue }} (0.25 s. blinking blue)               | Manual iLO reboot sequence initiated              |
-| UID Button and LED                              | {{site.led.blue }} (0.125 s. blinking blue)              | Manual iLO reboot sequence in progress            |
-| UID Button and LED                              | {{site.led.blue }} (1 fast blue blink) then 3 s. stop    | iLO service port status is `Complete`             |
-| UID Button and LED                              | {{site.led.blue }} (4 medium blue blinks) then 1 s. stop | iLO service port status is `Busy`                 |
-| UID Button and LED                              | {{site.led.blue }} (8 fast blue blinks) then 1 s. stop   | iLO service port status is `Error`                |
-| UID Button and LED                              | {{site.led.blue }} Off                                   | UID deactivated                                   |
+* NIC Status LED
+
+* Health LED
+
+* Power On/Standby Button and System Power LED 
+
+For more information about the color and behavior of these LEDs, see [Front Panel LEDs and Buttons](https://support.hpe.com/hpesc/public/docDisplay?docId=sd00003805en_us&page=GUID-D3D2588E-465D-49B5-977E-305234A3EDB6.html) in the HPE Alletra Storage Server 4140 Setup and Installation Guide.
 
 
 ## Rear Panel LED
-On the back of your node, there is a UID LED.
-
-| Color and Behavior                         | Description                                       |
-| ------------------------------------------ | ------------------------------------------------- |
-| {{site.led.blue}} (solid blue)             | UID activated                                     |
-| {{site.led.blue}} (1 s. blinking blue)     | Remote management or firmware upgrade in progress |
-| {{site.led.blue}} (0.25 s. blinking blue)  | Manual iLO reboot sequence has been initiated     |
-| {{site.led.blue}} (0.125 s. blinking blue) | Manual iLO reboot sequence is in progress         |
-| Off                                        | UID deactivated                                   |
+On the back of your node, there is a UID LED. For more information about the color and behavior of this LEDs, see [Rear Panel LEDs](https://support.hpe.com/hpesc/public/docDisplay?docId=sd00003805en_us&page=GUID-5823604B-73C4-4642-9F1D-67A96838947E.html) in the HPE Alletra Storage Server 4140 Setup and Installation Guide.
 
 
 ## Rear LAN LEDs

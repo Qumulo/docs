@@ -10,4 +10,4 @@ sidebar: hardware_guide_sidebar
 {% capture alt_back %}The location of the iLO port on the rear of the {{site.all4110}} node{% endcapture %}
 {% include image.html alt=alt_back file="hpe-alletra-4110-rear-panel-ilo-port.png" max-width="250"%}
 
-{% include content-reuse/platform-agnostic-ilo-configuration.md iloUserGuide="* [HPE iLO 6 1.50 User Guide](https://support.hpe.com/hpesc/public/docDisplay?docId=sd00002007en_us)" %}
+{% include content-reuse/platform-agnostic-ilo-configuration.md iloUserGuide="* [HPE iLO 6 User Guide](https://support.hpe.com/hpesc/public/docDisplay?docId=sd00002007en_us)" %}

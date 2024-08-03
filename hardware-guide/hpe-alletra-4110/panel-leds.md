@@ -6,7 +6,7 @@ sidebar: hardware_guide_sidebar
 ---
 
 ## Front Panel LEDs and Buttons
-On the front, right side of your node, there are four LEDs.  The following diagram shows the LEDs and buttons on the front panel.
+On the front, right side of your node, there are four LEDs. The following diagram shows the LEDs and buttons on the front panel.
 
 {% capture alt_tag %}The System Power LED and Power On or Standby Button, Health LED, NIC Status LED, and UID Button and LED on a {{site.all4110}} node{% endcapture %}
 {% include image.html alt=alt_tag file="hpe-alletra-4110-front-panel-led.png" %}

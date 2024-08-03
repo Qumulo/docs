@@ -14,4 +14,4 @@ sidebar: hardware_guide_sidebar
 {% capture alt_tag %}The location of the iLO port on the {{site.a4200g9}} node{% endcapture %}
 {% include image.html alt=alt_tag file="hpe-gen9-ilo.png" %}
 
-{% include content-reuse/platform-agnostic-ilo-configuration.md iloUserGuide="* [HPE iLO 4 2.82 User Guide](https://support.hpe.com/hpesc/public/docDisplay?docId=a00105236en_us)" %}
+{% include content-reuse/platform-agnostic-ilo-configuration.md iloUserGuide="* [HPE iLO 4 User Guide](https://support.hpe.com/hpesc/public/docDisplay?docId=a00105236en_us)" %}
