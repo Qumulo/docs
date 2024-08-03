@@ -11,9 +11,9 @@ There are 2 large form factor (LFF) drive drawers at the front of the {{site.all
 ## 1600TB Nodes
 In [1600TB nodes](technical-specifications.md), the first 92 of the total 98 drive bays are populated:
 
-* 1&ndash;49 in drive drawer 1
+* Bays 1&ndash;49 in drive drawer 1
 
-* 50&ndash;92 in drive drawer 2
+* Bays 50&ndash;92 in drive drawer 2
 
 For more information, see [35-Bay Drive Drawer 1 and 2 Numbering](https://support.hpe.com/hpesc/public/docDisplay?docId=sd00003805en_us&page=GUID-CDBBC56B-6F77-4637-BE62-391B833C6FAF.html) in the HPE Alletra Storage Server 4140 Setup and Installation Guide. 
 
@@ -21,9 +21,9 @@ For more information, see [35-Bay Drive Drawer 1 and 2 Numbering](https://suppor
 ## 1200TB Nodes
 In [1200TB Nodes](technical-specifications.md), the first 62 of the total 70 drive bays are populated:
 
-* 1&ndash;35 in drive drawer 1
+* Bays 1&ndash;35 in drive drawer 1
 
-* 36&ndash;70 in drive drawer 2
+* Bays 36&ndash;70 in drive drawer 2
 
 For more information, see [49-Bay Drive Drawer 1 and 2 Numbering](https://support.hpe.com/hpesc/public/docDisplay?docId=sd00003805en_us&page=GUID-CDBBC56B-6F77-4637-BE62-391B833C6FAF.html) in the HPE Alletra Storage Server 4140 Setup and Installation Guide.
 

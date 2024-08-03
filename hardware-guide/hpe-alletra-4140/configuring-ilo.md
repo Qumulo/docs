@@ -3,6 +3,7 @@ title: "Configuring Integrated Lights Out (iLO) on HPE Alletra 4140 Nodes"
 summary: "This section explains how to configure Integrated Lights Out (iLO) on HPE Alletra 4140 nodes."
 permalink: /hardware-guide/hpe-alletra-4140/configuring-ilo.html
 sidebar: hardware_guide_sidebar
+portLoc: false
 ---
 
 {% include content-reuse/platform-agnostic-ilo-preamble.md %}
