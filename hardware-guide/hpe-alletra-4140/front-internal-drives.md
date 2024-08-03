@@ -1,21 +1,35 @@
 ---
 title: "Front and Internal Drive Bays on HPE Alletra 4140 Nodes"
-summary: "This section shows the locations of front drive bays in HPE Alletra 4140 nodes."
+summary: "This section describes the locations of front drive bays and the internal NVMe boot drive in HPE Alletra 4140 nodes."
 permalink: /hardware-guide/hpe-alletra-4140/front-internal-drives.html
 sidebar: hardware_guide_sidebar
 ---
 
 There are 2 large form factor (LFF) drive drawers at the front of the {{site.all4140}} node, populated according to your node type.
 
+
 ## 1600TB Nodes
-In [1600TB nodes](technical-specifications.md), the first 92 of the total 98 drive bays are populated, 1&ndash;49 in drive drawer 1, and 50&ndash;92 in drive drawer 2. For more information, see [35-Bay Drive Drawer 1 and 2 Numbering](https://support.hpe.com/hpesc/public/docDisplay?docId=sd00003805en_us&page=GUID-CDBBC56B-6F77-4637-BE62-391B833C6FAF.html) in the HPE Alletra Storage Server 4140 Setup and Installation Guide. 
+In [1600TB nodes](technical-specifications.md), the first 92 of the total 98 drive bays are populated:
+
+* 1&ndash;49 in drive drawer 1
+
+* 50&ndash;92 in drive drawer 2
+
+For more information, see [35-Bay Drive Drawer 1 and 2 Numbering](https://support.hpe.com/hpesc/public/docDisplay?docId=sd00003805en_us&page=GUID-CDBBC56B-6F77-4637-BE62-391B833C6FAF.html) in the HPE Alletra Storage Server 4140 Setup and Installation Guide. 
+
 
 ## 1200TB Nodes
-In [1200TB Nodes](technical-specifications.md), the first 62 of the total 70 drive bays are populqted, 1&ndash;35 in drive drawer 1, and 36&ndash;70 in drive drawer 2. For more information, see [49-Bay Drive Drawer 1 and 2 Numbering](https://support.hpe.com/hpesc/public/docDisplay?docId=sd00003805en_us&page=GUID-CDBBC56B-6F77-4637-BE62-391B833C6FAF.html) in the HPE Alletra Storage Server 4140 Setup and Installation Guide.
+In [1200TB Nodes](technical-specifications.md), the first 62 of the total 70 drive bays are populated:
+
+* 1&ndash;35 in drive drawer 1
+
+* 36&ndash;70 in drive drawer 2
+
+For more information, see [49-Bay Drive Drawer 1 and 2 Numbering](https://support.hpe.com/hpesc/public/docDisplay?docId=sd00003805en_us&page=GUID-CDBBC56B-6F77-4637-BE62-391B833C6FAF.html) in the HPE Alletra Storage Server 4140 Setup and Installation Guide.
 
 
-## M.2 Boot Drive
-The M.2 boot drive is located inside the HPE NS204i-u Hot Plug Boot Optimized Storage Device.
+## NVMe Boot Drive
+The NVMe boot drive is located inside the HPE NS204i-u Hot Plug Boot Optimized Storage Device.
 
 {{site.data.alerts.important}}
 <ul>
