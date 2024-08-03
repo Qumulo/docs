@@ -25,14 +25,16 @@ sidebar: hardware_guide_sidebar
       <td><strong>Management Ports (BMC)</strong></td>
       <td colspan="2">1 &#215; 1 GbE Base-T (RJ45)</td>
     </tr>
-{% comment %}
+    <tr>
+      <td><strong>HDD Storage Media</strong></td>
+      <td>18 &#215; 18 TB</td>
+      <td>20 &#215; 20 TB</td>
+    </tr>
     <tr>
       <td><strong>NVMe Storage Media</strong></td>
-      <td>20 &#215; 15.36 TB</td>
-      <td>20 &#215; 7.68 TB</td>      
-      <td>10 &#215; 3.84 TB</td>
+      <td>8 &#215; 7.68 TB</td>
+      <td>6 &#215; 7.68 TB</td>      
     </tr>
-{% endcomment %}
     <tr>
       <td><strong>Boot Drive</strong></td>
       <td colspan="2">

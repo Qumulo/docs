@@ -5,10 +5,10 @@ permalink: /hardware-guide/hpe-alletra-4140/front-internal-drives.html
 sidebar: hardware_guide_sidebar
 ---
 
-There are 2 large form factor (LFF) drive drawers at the front of the {{site.all4140}} node, populated according to your node type.
+## HDD Storage Media
+There are 2 large form factor (LFF) drive drawers at the front of the {{site.all4140}} node, populated according to your node type. For more information, see [Removing and Replacing a Hot-Plug Drive from a Drive Drawer](https://support.hpe.com/hpesc/public/docDisplay?docId=sd00003806en_us&page=GUID-95022634-89E1-4F6B-8838-AEEA4CDFE580.html).
 
-
-## 1600TB Nodes
+### 1600TB Nodes
 In [1600TB nodes](technical-specifications.md), the first 92 of the total 98 drive bays are populated:
 
 * Bays 1&ndash;49 in drive drawer 1
@@ -18,7 +18,7 @@ In [1600TB nodes](technical-specifications.md), the first 92 of the total 98 dri
 For more information, see [35-Bay Drive Drawer 1 and 2 Numbering](https://support.hpe.com/hpesc/public/docDisplay?docId=sd00003805en_us&page=GUID-CDBBC56B-6F77-4637-BE62-391B833C6FAF.html) in the HPE Alletra Storage Server 4140 Setup and Installation Guide. 
 
 
-## 1200TB Nodes
+### 1200TB Nodes
 In [1200TB Nodes](technical-specifications.md), the first 62 of the total 70 drive bays are populated:
 
 * Bays 1&ndash;35 in drive drawer 1
