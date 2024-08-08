@@ -19,6 +19,8 @@ Your {{site.q1uag1}} chassis contains up to 12 2.5" hot-swap NVMe drives in fron
 ## NVMe Drives in Internal Storage Bays
 {{site.q1uag1Drives.internalStorageBays}}
 
+{% include caution.html content="To access the internal storage bays, you must slide the chassis out of its rack. While pulled out of the rack, the chassis must have support." %}
+
 {% capture alt_tag_nvme %}{{site.q1uag1Long}} NVMe Internal Storage Bay Mapping{% endcapture %}
 {% include image.html alt=alt_tag_nvme file="quiver-1ua-all-nvme-gen1-nvme-internal-storage-bay-mapping.png" %}
 
