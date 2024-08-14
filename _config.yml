@@ -256,6 +256,7 @@ led:
 
 splitIlo: We strongly recommend separating your iLO access network from your client-facing network.
 partReplaceDefine: When you replace a component such as the motherboard or a NIC card in your node, you must ensure that the firmware version and configuration are correct for your new components. To do this, you must perform the part replacement procedure by using the FVT.
+partReplaceDcmsShort: Before you replace the motherboard, you must request a new Data Center Management Suite (DCMS) license key from Supermicro.
 partReplaceDcms: Before you replace the motherboard, you must request a new Data Center Management Suite (DCMS) license key from Supermicro and apply it before you run the FVT. (The license key uses the BMC MAC address which changes with the motherboard.) If you don't install a DCMS license on your node, the Field Verification Tool (FVT) fails, preventing you from running the part replacement procedure in the FVT, which normalizes the firmware and BIOS configuration for your new motherboard.
 
 fsSecurityCommands: The response of the <code>qq fs_security_add_key</code> command includes the <em>key identifier.</em> When you use <code>qq fs_security</code> commands, you can specify either the key identifier (by using the <code>--id</code> flag) or the key name (by using the <code>--name</code> flag).
