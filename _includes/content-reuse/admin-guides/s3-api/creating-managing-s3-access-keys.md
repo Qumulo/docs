@@ -66,7 +66,7 @@ For more information, see [Listing S3 Access Keys for a Qumulo Cluster](#listing
 ## Creating S3 Access Keys for a Qumulo Cluster
 To make S3 API requests to a Qumulo cluster as a specific user, you must create an S3 access key pair for that user [identity](#identity) {{site.s3.permissions.APIorCLI}}.
 
-To create S3 access keys, you must have an administrator account or have {{page.s3.permissions.bucketsWrite}}.
+To create S3 access keys, you must have an administrator account or have {{site.s3.permissions.bucketsWrite}}.
 
 ### To Create an Access Key by Using the qq CLI
 To create an S3 access key for a particular user [identity](#identity), run the {% include qq.html command="s3_create_access_key" %} command and specify an identity. For example:
