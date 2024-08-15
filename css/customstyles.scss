@@ -463,11 +463,11 @@ a.header-left {
 }
 
 a.header-left:hover {
-  text-decoration:underline;
+  text-decoration: underline;
 }
 
 a.header-right {
-  padding-right:20px;
+  padding-right: 40px;
 }
 
 a.header-link[href^="http://"]:after, a.header-link[href^="https://"]:after {
@@ -2047,6 +2047,10 @@ h4.panel-title {
 .flex-links,
 .contact-links {
   display: inline-block;
+}
+
+.flex-links {
+  margin-right: 5%;
 }
 
 @media (max-width: 911px) {
