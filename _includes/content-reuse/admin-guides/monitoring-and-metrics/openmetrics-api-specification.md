@@ -74,11 +74,33 @@ The following table lists metric names, types, labels, and descriptions.
           <li class="pdf-friendly"><code>platform</code></li>
           <li class="pdf-friendly"><code>service_model</code></li>
           <li class="pdf-friendly"><code>uuid</code></li>
-          <li class="pdf-friendly"><code>version</code></li>
+          <li class="pdf-friendly">
+            <code>version</code>
+            {% include tip.html content="Don't confuse this label for the <em>Qumulo Core version</em> with the identically named label for the <em>kernel version</em> for the <code>qumulo_kernel</code> metric." %} 
+          </li>
         </ul>
       </td>
       <td>5.3.0</td>
-      <td>Qumulo Core information, including the cluster name, cluster UUID, and the current Qumulo Core version</td>
+      <td>Qumulo Core information, including the cluster name, cluster UUID, and the current Qumulo Core version.</td>
+    </tr>
+    <tr>
+      <td><code>qumulo_kernel</code></td>
+      <td><a href="#metric-type-info"><code>info</code></a></td>
+      <td>
+        <ul>
+          <li class="pdf-friendly"><code>cmdline</code></li>
+          <li class="pdf-friendly"><code>node_id</code></li>          
+          <li class="pdf-friendly">
+            <code>version</code>
+            {% include tip.html content="Don't confuse this label for the <em>kernel version</em> with the identically named label for the <em>Qumulo Core version</em> for the <code>qumulo</code> metric." %}
+          </li>
+        </ul>
+      </td>
+      <td>7.2.0</td>
+      <td>
+        Kernel information for each node in a cluster, including the command-line arguments that were used for starting the kernel, the node ID, and the kernel version.
+        {% include note.html content="The <code>qumulo_kernel</code> metric is available only on nodes configured by using the <a href='../getting-started/installing-product-package.html'>Qumulo Core Product Package</a>." %} 
+      </td>
     </tr>
     <tr>
       <td><code>qumulo_node</code></td>
@@ -127,6 +149,18 @@ The following table lists metric names, types, labels, and descriptions.
       </td>
       <td>5.3.0</td>
       <td>The total number of completed AD <code>NETLOGON</code> operations</td>
+    </tr>
+    <tr>
+      <td><code>qumulo_cpu_crit_temperature_celsius</code></td>
+      <td><a href="#metric-type-gauge"><code>gauge</code></a></td>
+      <td>
+        <ul>
+          <li class="pdf-friendly"><a href="#metric-label-cpu"><code>cpu</code></a></li>
+          <li class="pdf-friendly"><a href="#metric-label-node_id"><code>node_id</code></a></li>
+        </ul>
+      </td>
+      <td>7.2.0</td>
+      <td>The critical temperature threshold for each physical CPU</td>
     </tr>
     <tr>
       <td><code>qumulo_cpu_max_temperature<br>_celsius</code></td>
@@ -690,6 +724,6 @@ The following table lists metric label names, possible values, and descriptions.
         </ul>
       </td>
       <td>The data type that uses space</td>
-    </tr>
+    </tr>          
   </tbody>
 </table>

@@ -14,6 +14,10 @@ optional_options:
   help: Enables object versioning
   name: --enable-versioning
   required: false
+- alternate: []
+  help: Enable object locking (requires versioning enabled)
+  name: --enable-locking
+  required: false
 permalink: /qq-cli-command-guide/s3/s3_modify_bucket.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar
@@ -23,6 +27,7 @@ synopsis: Modify the settings of the given bucket. Use this command to update th
   has been disabled, use s3_set_bucket_policy instead.
 title: qq s3_modify_bucket
 usage: qq s3_modify_bucket [-h] --name NAME [--suspend-versioning | --enable-versioning]
+  [--enable-locking]
 zendesk_source: qq CLI Command Guide
 
 ---

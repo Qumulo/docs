@@ -50,9 +50,9 @@ sidebar: qq_cli_command_reference_sidebar
 summary: This section explains how to use the <code>qq fs_list_locks</code> command.
 synopsis: List file locks held by clients.
 title: qq fs_list_locks
-usage: "qq fs_list_locks [-h] --protocol {smb,nfs4,nlm} --lock-type {share-mode,byte-range}\
-  \ [--path PATH | --id ID | --ip IP | --hostname HOSTNAME] [--snapshot SNAPSHOT]\n\
-  \    [--no-resolve] [--json] [--sort {file,client}]"
+usage: qq fs_list_locks [-h] --protocol {nfs4,nlm,smb} --lock-type {byte-range,share-mode}
+  [--path PATH | --id ID | --ip IP | --hostname HOSTNAME] [--snapshot SNAPSHOT] [--no-resolve]
+  [--json] [--sort {file,client}]
 zendesk_source: qq CLI Command Guide
 
 ---

@@ -11,6 +11,11 @@ For information about upgrade types for each release, see <a href='mode-referenc
 
 <style>div#toc{height:200px;overflow:auto;}</style>
 
+## Qumulo Core 7.2.0
+{{page.varDownloadsRelnotes}}
+* {{page.varNoPublicChanges}}
+* Resolved an issue with the **APIs & Tools** page in the Web UI not showing certain REST endpoints correctly
+
 ## Qumulo Core 7.1.4
 {{page.varDownloadsRelnotes}}
 * {{page.varNoPublicChanges}}

@@ -258,6 +258,12 @@ entries:
       title: dns_get_lookup_overrides
       url: /qq-cli-command-guide/dns/dns_get_lookup_overrides.html
     - output: web,pdf
+      title: dns_get_system_config
+      url: /qq-cli-command-guide/dns/dns_get_system_config.html
+    - output: web,pdf
+      title: dns_modify_system_config
+      url: /qq-cli-command-guide/dns/dns_modify_system_config.html
+    - output: web,pdf
       title: dns_resolve_hostnames
       url: /qq-cli-command-guide/dns/dns_resolve_hostnames.html
     - output: web,pdf
@@ -332,6 +338,9 @@ entries:
     - output: web,pdf
       title: fs_file_set_attr
       url: /qq-cli-command-guide/fs/fs_file_set_attr.html
+    - output: web,pdf
+      title: fs_file_set_lock
+      url: /qq-cli-command-guide/fs/fs_file_set_lock.html
     - output: web,pdf
       title: fs_file_set_smb_attrs
       url: /qq-cli-command-guide/fs/fs_file_set_smb_attrs.html
@@ -1126,6 +1135,9 @@ entries:
     - output: web,pdf
       title: tree_delete_list
       url: /qq-cli-command-guide/tree/tree_delete_list.html
+    - output: web,pdf
+      title: tree_delete_restart
+      url: /qq-cli-command-guide/tree/tree_delete_restart.html
     output: web,pdf
     title: tree
     url: /qq-cli-command-guide/tree/
