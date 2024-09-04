@@ -426,14 +426,14 @@ xref:
     manageRBAC: <a href="https://docs.qumulo.com/azure-administrator-guide/authorization-qumulo-core/managing-role-based-access-control-rbac.html">Managing Role-Based Access Control (RBAC) for Users and Groups in Qumulo Core</a> in the Azure Native Qumulo Administrator Guide
     usingSMBhostRestrict: <a href="https://docs.qumulo.com/azure-administrator-guide/authorization-qumulo-core/using-smb-host-restrictions.html">Using SMB Host Restrictions in Qumulo Core</a> in the Azure Native Qumulo Administrator Guide
     manageSMB3encrypt: <a href="https://docs.qumulo.com/azure-administrator-guide/encryption-data-security/managing-smb3-encryption-in-transit.html">Managing SMB3 Encryption in Transit in Qumulo Core</a> in the Azure Native Qumulo Administrator Guide
-    fileLock: <a href="https://docs.qumulo.com/azure-administrator-guide/authorization-qumulo-core/managing-file-locks.md">How File Locks Work in Qumulo Core</a> in the Azure Native Qumulo Administrator Guide
+    fileLock: <a href="https://docs.qumulo.com/azure-administrator-guide/authorization-qumulo-core/managing-file-locks.html">How File Locks Work in Qumulo Core</a> in the Azure Native Qumulo Administrator Guide
   adminOnPrem:
     manageVersioningS3: <a href="https://docs.qumulo.com/administrator-guide/s3-api/managing-s3-bucket-versioning.html">Managing S3 Bucket Versioning in a Qumulo Cluster</a> in the Qumulo On-Premises Administrator Guide
     manageAccessS3: <a href="https://docs.qumulo.com/administrator-guide/s3-api/managing-access-policies-for-s3-buckets.html">Managing Access Policies for an S3 Bucket in a Qumulo Cluster</a> in the Qumulo On-Premises Administrator Guide
     manageRBAC: <a href="https://docs.qumulo.com/administrator-guide/authorization-qumulo-core/managing-role-based-access-control-rbac.html">Managing Role-Based Access Control (RBAC) for Users and Groups in Qumulo Core</a> in the Qumulo On-Premises Administrator Guide
     usingSMBhostRestrict: <a href="https://docs.qumulo.com/administrator-guide/authorization-qumulo-core/using-smb-host-restrictions.html">Using SMB Host Restrictions in Qumulo Core</a> in the Qumulo On-Premises Administrator Guide
     manageSMB3encrypt: <a href="https://docs.qumulo.com/administrator-guide/encryption-data-security/managing-smb3-encryption-in-transit.html">Managing SMB3 Encryption in Transit in Qumulo Core</a> in the Qumulo On-Premises Administrator Guide
-    fileLock: <a href="https://docs.qumulo.com/administrator-guide/authorization-qumulo-core/managing-file-locks.md">How File Locks Work in Qumulo Core</a> in the Qumulo On-Premises Administrator Guide
+    fileLock: <a href="https://docs.qumulo.com/administrator-guide/authorization-qumulo-core/managing-file-locks.html">How File Locks Work in Qumulo Core</a> in the Qumulo On-Premises Administrator Guide
   smbCLI:
     addModSameFlag: The <code>qq smb_add_share</code> and <code>qq smb_mod_share</code> commands use the same flags.
     addModCommand: specify the path, share name, and <a href="https://docs.qumulo.com/administrator-guide/authorization-qumulo-core/using-smb-host-restrictions.html#how-smb-host-restriction-precedence-works">host restriction level</a>.
