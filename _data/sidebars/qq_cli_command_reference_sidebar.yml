@@ -333,14 +333,14 @@ entries:
       title: fs_file_get_attr
       url: /qq-cli-command-guide/fs/fs_file_get_attr.html
     - output: web,pdf
+      title: fs_file_modify_lock
+      url: /qq-cli-command-guide/fs/fs_file_modify_lock.html
+    - output: web,pdf
       title: fs_file_samples
       url: /qq-cli-command-guide/fs/fs_file_samples.html
     - output: web,pdf
       title: fs_file_set_attr
       url: /qq-cli-command-guide/fs/fs_file_set_attr.html
-    - output: web,pdf
-      title: fs_file_set_lock
-      url: /qq-cli-command-guide/fs/fs_file_set_lock.html
     - output: web,pdf
       title: fs_file_set_smb_attrs
       url: /qq-cli-command-guide/fs/fs_file_set_smb_attrs.html
@@ -550,6 +550,13 @@ entries:
     output: web,pdf
     title: ldap
     url: /qq-cli-command-guide/ldap/
+  - folderitems:
+    - output: web,pdf
+      title: license_get_status
+      url: /qq-cli-command-guide/license/license_get_status.html
+    output: web,pdf
+    title: license
+    url: /qq-cli-command-guide/license/
   - folderitems:
     - output: web,pdf
       title: login

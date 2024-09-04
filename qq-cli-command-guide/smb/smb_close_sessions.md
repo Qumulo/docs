@@ -18,6 +18,13 @@ optional_options:
   name: --location
   required: false
 - alternate: []
+  help: "\n                Close only the sessions that are connected to the share\
+    \ with the specified\n                case-sensitive name. Sessions connected\
+    \ to multiple shares will disconnect from all\n                shares using the\
+    \ session.\n                "
+  name: --share-name
+  required: false
+- alternate: []
   help: Close only the sessions that originate from the specified IP address.
   name: --ip
   required: false
@@ -27,8 +34,8 @@ sidebar: qq_cli_command_reference_sidebar
 summary: This section explains how to use the <code>qq smb_close_sessions</code> command.
 synopsis: Force close SMB sessions matching one or more of a set of filters.
 title: qq smb_close_sessions
-usage: qq smb_close_sessions [-h] [--identity IDENTITY] [--location LOCATION] [--ip
-  IP]
+usage: qq smb_close_sessions [-h] [--identity IDENTITY] [--location LOCATION] [--share-name
+  SHARE_NAME] [--ip IP]
 zendesk_source: qq CLI Command Guide
 
 ---

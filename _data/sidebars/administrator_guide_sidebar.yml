@@ -120,6 +120,10 @@ entries:
     output: web, pdf
     folderitems:
 
+    - title: Managing File Locks
+      url: /administrator-guide/authorization-qumulo-core/managing-file-locks.html
+      output: web, pdf
+
     - title: Managing Role-Based Access Control
       url: /administrator-guide/authorization-qumulo-core/managing-role-based-access-control-rbac.html
       output: web, pdf

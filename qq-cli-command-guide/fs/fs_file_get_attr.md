@@ -37,3 +37,27 @@ usage: qq fs_file_get_attr [-h] (--path PATH | --id ID) [--snapshot SNAPSHOT] [-
 zendesk_source: qq CLI Command Guide
 
 ---
+For more information, see:
+* {{site.xref.adminANQ.fileLock}}
+* {{site.xref.adminOnPrem.fileLock}}
+
+## Examples
+{% include note.html content="The following operations require Read ACL permissions for the file." %}
+
+### To Retrieve the Lock Status for a File
+Run the `fs_file_get_attr` command, specify the path to the file, and use the `--retrieve-file-lock` flag. For example:
+
+```bash
+qq fs_file_get_attr \
+  --path /path-to/my-file \
+  --retrieve-file-lock
+```
+
+{{site.exampleOutput}}
+
+```json
+{
+  "legal_hold": true,
+  "retention_period": "2024-09-15T23:41:40Z"
+}
+```

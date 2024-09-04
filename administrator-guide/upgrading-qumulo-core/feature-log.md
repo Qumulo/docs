@@ -11,6 +11,14 @@ For information about upgrade types for each release, see <a href='mode-referenc
 
 <style>div#toc{height:200px;overflow:auto;}</style>
 
+## Qumulo Core 7.2.1
+{{page.varDownloadsRelnotes}}
+* Released the Qumulo Core Product Package in `.deb` and `.rpm` formats
+* Allowed Object Lock to be enabled to for newly created S3 buckets
+* Added support for resuming TLS sessions over FTP
+* Made improvements in SMB session handling
+* Made improvements in audit logging
+
 ## Qumulo Core 7.2.0 (Quarterly)
 {{page.varDownloadsRelnotes}}
 * {{page.varNoPublicChanges}}

@@ -192,13 +192,37 @@ You can configure global settings, such as the {{page.varDefaultPrefix}} for all
 * To change the bucket configuration, you need {{site.s3.permissions.bucketsWrite}}. For more information, see {% include qq.html command="s3_modify_bucket" %} in the {{site.guides.cli}}.
 
 
+<a id="enable-object-lock"></a>
+## Enabling Object Lock for S3 Buckets
+An [Object Lock](https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock.html) can prevent an S3 object from being deleted for a limited time or indefinitely. For information about file locks in Qumulo Core, see [Managing File Locks](../authorization-qumulo-core/managing-file-locks.html).
+
+### To Enable Object Lock for an S3 Bucket by Using the qq CLI
+1. Use an account with the `S3_BUCKETS_WRITE` [role-based access control (RBAC) role](../authorization-qumulo-core/managing-role-based-access-control-rbac.html).
+
+1. Run the {% include qq.html command="s3_modify_bucket" %} command, specify the bucket name, and use the `--enable-object-locking` flag. For example:
+
+```bash
+$ qq s3_modify_bucket \
+  --name my-bucket \
+  --enable-object-locking
+```
+
+### To Enable Object Lock for an S3 Bucket by Using the S3 API
+{% capture noDefRet %}{{site.s3.objectLocknoDefaultRetention}}{% endcapture %}
+{% include note.html content="Currently, because Qumulo Core doesn't support default retention periods, you can set only a [compliance retention period](https://docs.aws.amazon.com/AmazonS3/latest/userguide/batch-ops-retention-date.html) on an individual object in an S3 bucket by using the [`PutObjectRetention`](https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectRetention.html) API action." %}
+
+1. To enable versioning for your S3 bucket, use the [`PutBucketVersioning`](https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketVersioning.html) API action.
+
+1. To enable Object Lock for your S3 bucket, use the [`PutObjectLockConfiguration`](https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectLockConfiguration.html) API action.
+
+
 ## Listing S3 Buckets
 You can list all S3 buckets in your Qumulo cluster {{site.s3.permissions.APIorCLI}}. {{site.s3.permissions.directAPI}}
 
 ### To List S3 Buckets by Using the qq CLI
 To list your S3 buckets {{site.s3.permissions.APIorCLI}}, you need {{site.s3.permissions.bucketsRead}}.
 
-* Run the `qq s3_list_buckets` command.
+* Run the {% include qq.html command="s3_list_buckets" %} command.
 
   {{site.exampleOutput}} {{site.s3.permissions.timesUTC}}
 

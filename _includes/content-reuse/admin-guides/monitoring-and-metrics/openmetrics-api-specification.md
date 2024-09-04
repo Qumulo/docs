@@ -83,6 +83,7 @@ The following table lists metric names, types, labels, and descriptions.
       <td>5.3.0</td>
       <td>Qumulo Core information, including the cluster name, cluster UUID, and the current Qumulo Core version.</td>
     </tr>
+{% if page.platform == 'on-prem' %}
     <tr>
       <td><code>qumulo_kernel</code></td>
       <td><a href="#metric-type-info"><code>info</code></a></td>
@@ -102,6 +103,7 @@ The following table lists metric names, types, labels, and descriptions.
         {% include note.html content="The <code>qumulo_kernel</code> metric is available only on nodes configured by using the <a href='../getting-started/installing-product-package.html'>Qumulo Core Product Package</a>." %} 
       </td>
     </tr>
+{% endif %}
     <tr>
       <td><code>qumulo_node</code></td>
       <td><a href="#metric-type-info"><code>info</code></a></td>
