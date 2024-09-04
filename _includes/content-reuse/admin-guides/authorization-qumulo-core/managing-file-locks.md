@@ -1,4 +1,4 @@
-## How File Locking Works in Qumulo Core
+## How File Locks Works in Qumulo Core
 A _file lock_ can prevent a regular file from being modified. There are two file lock types, both of which require the `FS_FILE_LOCK_WRITE` privilege.
 
 * **Legal Hold:** A file lock that you can enable for an indefinite time period. This file lock type is best suited for temporary scenarios.
