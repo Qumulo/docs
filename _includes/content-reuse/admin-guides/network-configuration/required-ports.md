@@ -28,9 +28,7 @@
 {% if page.platform == 'on-prem' or page.platform == 'aws' %}
     <tr>
       <td>22</td>
-      <td>
-        <p>TCP</p>
-      </td>
+      <td>TCP</td>
       <td>SSH</td>
     </tr>
 {% endif %}    

@@ -1,8 +1,9 @@
 {% if page.platform != 'aws' %}
 For information about upgrade types for each release, see <a href='mode-reference.html'>Qumulo Core Upgrade Mode Reference</a>.
-{% endif %}
-
+<style>div#toc{overflow:auto;}</style>
+{% else %}
 <style>div#toc{height:200px;overflow:auto;}</style>
+{% endif %}
 
 ## Qumulo Core 7.2.1
 {{page.varDownloadsRelnotes}}
