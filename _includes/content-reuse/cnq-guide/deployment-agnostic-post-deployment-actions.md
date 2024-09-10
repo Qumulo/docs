@@ -203,7 +203,7 @@ Deleting a cluster is a two-step process. First, you delete your {{site.cnqLong}
 
 #### Step 2: To Delete Your Cluster's Persistent Storage
 1. Navigate to the `persistent-storage` directory.
-1. Edit your `terraform.tfvars` file and set the `prevent_destroy` parameter to `false.
+1. Edit your `terraform.tfvars` file and set the `prevent_destroy` parameter to `false`.
 1. {{site.cnq.runTFapply}}
 1. {{site.cnq.runTFdestroy}}
 

@@ -14,7 +14,7 @@ This section explains how to deploy the S3 buckets that act as persistent storag
 
 1. {{site.cnq.copyDebAndConfig}}
 
-1. Copy {% if page.deployment == "cfn" %}`aws-cloudformation-cnq.zip` to the `my-s3-bucket-name/my-s3-bucket-prefix/aws-cloudformation-cnq` directory.{% elsif page.deployment == "tf" %}aws-terraform-cnq.zip` to your Terraform environment{% endif %} and decompress it.
+1. Copy {% if page.deployment == "cfn" %}`aws-cloudformation-cnq.zip` to the `my-s3-bucket-name/my-s3-bucket-prefix/aws-cloudformation-cnq` directory.{% elsif page.deployment == "tf" %}`aws-terraform-cnq.zip` to your Terraform environment{% endif %} and decompress it.
 {% if page.deployment == "cfn" %}
 1. Clone the {{page.varRepoLink}} to an S3 bucket and find the URL to `templates/persistent-storage.template.yaml`. For example:
 
