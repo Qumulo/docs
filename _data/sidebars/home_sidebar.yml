@@ -18,6 +18,10 @@ entries:
       url: /azure-administrator-guide/
       output: web
 
+    - title: Cloud Native Qumulo Deployment Guide
+      url: /aws-administrator-guide/
+      output: web
+
     - title: Qumulo On-Premises Administrator Guide
       url: /administrator-guide/
       output: web

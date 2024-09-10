@@ -1,0 +1,17 @@
+destination: _site/
+url: "http://127.0.0.1:4001"
+baseurl: "/qumulo-doc"
+port: 4001
+output: pdf
+print_title: Cloud Native Qumulo on AWS Administrator Guide
+defaults:
+  -
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page_print"
+      comments: true
+      search: true
+
+pdf_sidebar: aws_administrator_guide_sidebar

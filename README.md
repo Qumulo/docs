@@ -13,8 +13,17 @@ To get started, choose one of the following guides.
       <picture>
         <source type="image/webp" srcset="images/azure-native-qumulo-administrator-guide.webp">
         <source type="image/png" srcset="images/azure-native-qumulo-administrator-guide.png">
-        <img src="images/azure-native-qumulo-administrator-guide.png" alt="An image of a computer screen with a stylized Qumulo Core interface behind an image of a cloud, symbolizing cloud deployments" class="landing-page-icon" width="301" height="301">
+        <img src="images/azure-native-qumulo-administrator-guide.png" alt="An image of a computer screen with a stylized Qumulo Core interface, symbolizing cloud deployments on Azure" class="landing-page-icon" width="301" height="301">
       </picture><br>{{site.guides.anq}}</a>
+  </span>
+
+  <span class="guide-button">
+    <a class="multilink" href="aws-administrator-guide/">
+      <picture>
+        <source type="image/webp" srcset="images/cloud-native-qumulo-on-aws-administrator-guide.webp">
+        <source type="image/png" srcset="images/cloud-native-qumulo-on-aws-administrator-guide.png">
+        <img src="images/cloud-native-qumulo-on-aws-administrator-guide.png" alt="An image of a computer screen with a stylized Qumulo Core interface behind an image of a cloud, symbolizing cloud native deployments" class="landing-page-icon" width="301" height="301">
+      </picture><br>Cloud Native<br>Qumulo on AWS<br>Administrator Guide</a>
   </span>
 
   <span class="guide-button">

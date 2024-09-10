@@ -31,6 +31,4 @@ usage: qq s3_bucket_policy_explain_access [-h] --bucket BUCKET [--auth-id AUTH_I
 zendesk_source: qq CLI Command Guide
 
 ---
-For more information, see:
-* {{site.xref.adminANQ.manageAccessS3}}
-* {{site.xref.adminOnPrem.manageAccessS3}}
+For more information, see {{site.xref.adminOnPrem.manageAccessS3}}.

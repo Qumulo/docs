@@ -298,16 +298,33 @@ a.navbar-brand {
   }
 }
 
-/* Colour only body links when :visited for accessibility */
+ul.three-columns {
+  columns: 3;
+  -webkit-columns: 3;
+  -moz-columns: 3;
+}
+
+ul.three-columns li {
+  break-inside: avoid; /* Prevents items from breaking across columns */
+}
+
+/* Fix first column */
+ul.three-columns li:first-child {
+    margin-top: 0px;
+}
+
+/* Colour links when :visited for accessibility */
 a:visited {
-  color:#3d33b7;
+  color: #3d33b7;
 }
 
 /* The colour of mini-TOC links never changes because we
    consider in-page links as "visited by default" */
-#toc > ul > li > a:visited {
+div#toc a,
+div#toc a:hover,
+div#toc a:visited {
     /* This color is required to meet WCAG standards for accessible text. */
-    color:#0379a7;    
+    color: #00587b;   
 }
 
 /* Remove the anchor icon after mini-TOC links */

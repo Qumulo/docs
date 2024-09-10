@@ -290,3 +290,8 @@ li.pdf-friendly {
 details  summary {
     display: none;
 }
+
+/* Weird PDF-only regression for a Tip inside of a step
+.post-content .alert ul li {
+    margin-left: 40px !important;
+}*/

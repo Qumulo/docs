@@ -31,9 +31,7 @@ usage: qq s3_modify_bucket [-h] --name NAME [--suspend-versioning | --enable-ver
 zendesk_source: qq CLI Command Guide
 
 ---
-For more information, see:
-* {{site.xref.adminANQ.manageAccessS3}}
-* {{site.xref.adminOnPrem.manageAccessS3}}
+For more information, see {{site.xref.adminOnPrem.manageAccessS3}}.
 
 {% include note.html content="By default, an S3 bucket is in the `Unversioned` state." %}
 

@@ -123,9 +123,7 @@ usage: "qq smb_add_share [-h] [--tenant-id TENANT_ID] --name NAME --fs-path FS_P
 zendesk_source: qq CLI Command Guide
 
 ---
-For more information, see:
-* {{site.xref.adminANQ.usingSMBhostRestrict}}
-* {{site.xref.adminOnPrem.usingSMBhostRestrict}}
+For more information, see {{site.xref.adminOnPrem.usingSMBhostRestrict}}.
 
 ## Examples
 

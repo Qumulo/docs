@@ -39,9 +39,7 @@ usage: qq auth_modify_role [-h] -r ROLE [-d DESCRIPTION] [-p PRIVILEGES_FILE] [-
 zendesk_source: qq CLI Command Guide
 
 ---
-For more information, see:
-* {{site.xref.adminANQ.manageRBAC}}
-* {{site.xref.adminOnPrem.manageRBAC}}
+For more information, see {{site.xref.adminOnPrem.manageRBAC}}.
 
 ## Examples
 

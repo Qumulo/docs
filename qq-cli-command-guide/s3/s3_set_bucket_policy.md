@@ -28,9 +28,7 @@ usage: qq s3_set_bucket_policy [-h] --bucket BUCKET --file FILE [--allow-remove-
 zendesk_source: qq CLI Command Guide
 
 ---
-For more information, see:
-* {{site.xref.adminANQ.manageAccessS3}}
-* {{site.xref.adminOnPrem.manageAccessS3}}
+For more information, see {{site.xref.adminOnPrem.manageAccessS3}}.
   
 ## Examples
 

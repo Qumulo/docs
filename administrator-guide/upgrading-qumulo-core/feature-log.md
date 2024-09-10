@@ -5,7 +5,10 @@ permalink: /administrator-guide/upgrading-qumulo-core/feature-log.html
 sidebar: administrator_guide_sidebar
 varNoPublicChanges: The majority of functionality and stability improvements in this Qumulo Core release are internal.
 varDownloadsRelnotes: <p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a></p>
+include_content: content-reuse/admin-guides/upgrading-qumulo-core/feature-log.md
 ---
+<<<<<<< HEAD
+=======
 
 For information about upgrade types for each release, see <a href='mode-reference.html'>Qumulo Core Upgrade Mode Reference</a>.
 
@@ -618,3 +621,4 @@ Fixed important issues in:
 * Added Instant Software Upgrade
 * Made Qumulo Shift performance improvements and Web UI enhancements
 * Updated the HPE Service Pack Pro (SPP) Update for {{site.a4200g10}} clusters
+>>>>>>> mainline

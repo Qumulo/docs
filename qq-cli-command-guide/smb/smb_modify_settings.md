@@ -70,18 +70,14 @@ zendesk_source: qq CLI Command Guide
 ## Examples
 
 ### Hiding an SMB Share from Unauthorized Hosts
-For more information, see:
-* {{site.xref.adminANQ.usingSMBhostRestrict}}
-* {{site.xref.adminOnPrem.usingSMBhostRestrict}}
+For more information, see {{site.xref.adminOnPrem.usingSMBhostRestrict}}.
 
 #### To Hide an SMB Share from Unauthorized Hosts
 Run the `qq smb_modify_settings` command and set the `--hide-shares-from-unauthorized-hosts` flag to `true`.
 
 
 ### Configuring Cluster-Level SMB3 Encryption
-For more information, see:
-* {{site.xref.adminANQ.manageSMB3encrypt}}
-* {{site.xref.adminOnPrem.manageSMB3encrypt}}
+For more information, see {{site.xref.adminOnPrem.manageSMB3encrypt}}.
 
 #### To Configure Cluster-Level SMB3 Encryption
 Run the `qq smb_modify_settings` command and set the `--encryption-mode` flag to one of the following:

@@ -27,9 +27,7 @@ usage: qq auth_list_privileges [-h] [-r ROLE] [-v] [--json]
 zendesk_source: qq CLI Command Guide
 
 ---
-For more information, see:
-* {{site.xref.adminANQ.manageRBAC}}
-* {{site.xref.adminOnPrem.manageRBAC}}
+For more information, see {{site.xref.adminOnPrem.manageRBAC}}.
 
 To view all existing users and groups with role-based control for your Qumulo cluster, run the `qq auth_list_roles` command.
 

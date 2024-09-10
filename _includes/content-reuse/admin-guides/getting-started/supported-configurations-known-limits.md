@@ -105,12 +105,6 @@ Qumulo Core requires switches that meet the following criteria:
       <td>Cloud Cluster Size</td>
       <td>100 nodes</td>
     </tr>
-{% if page.platform == 'on-prem' %}
-    <tr>
-      <td>Floating IP Addresses for Each Node</td>
-      <td>10</td>
-    </tr>
-{% endif %}
     <tr>
       <td>NFS Exports</td>
       <td>64,000</td>

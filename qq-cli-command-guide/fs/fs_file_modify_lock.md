@@ -45,9 +45,7 @@ usage: qq fs_file_modify_lock [-h] (--path PATH | --id ID) [--enable-legal-hold 
 zendesk_source: qq CLI Command Guide
 
 ---
-For more information, see:
-* {{site.xref.adminANQ.fileLock}}
-* {{site.xref.adminOnPrem.fileLock}}
+For more information, see {{site.xref.adminOnPrem.fileLock}}.
 
 ## Examples
 {% include note.html content="The following operations require Write ACL permissions for the file and a role with the `FS_FILE_LOCK_WRITE` role-based access control (RBAC) privilege." %}

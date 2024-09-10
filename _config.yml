@@ -389,7 +389,33 @@ azure:
   pricingCalculator: For more information about pay-as-you-go price estimates, see the <a href="https://azure.qumulo.com/calculator">Pricing and Performance Calculator</a>.
   detailedDeploymentInstructions: For detailed instructions, see <a href="deploying-instance-azure-native-qumulo.html">Deploying and Viewing Information about Your Azure Native Qumulo Instance</a>. 
   anqColdImpact: The storage class has an impact on billing, metering, and how the system stores data.
- 
+
+aws:
+  cnqAWSlong: Cloud Native Qumulo on AWS
+  cnqAWSshort: CNQ on AWS
+
+cnqLong: Cloud Native Qumulo
+cnqShort: CNQ
+
+cnq:
+  cloneOpenRepo: to your system and navigate to the directory into which you cloned the repository
+  logIntoCFN: Log in to the <a href="https://console.aws.amazon.com/cloudformation/home">AWS CloudFormation console</a>.
+  logIntoS3: Log in to the <a href="https://console.aws.amazon.com/s3/home">Amazon S3 console</a>.
+  logIntoWebUI: To check that the cluster is healthy, log in to the Web UI.
+  changeQnodeCount: Edit <code>terraform.tfvars</code> and change the value of <code>q_node_count</code>
+  runTFapply: Run the <code>terraform apply</code> command.
+  runTFdestroy: Run the <code>terraform destroy</code> command.
+  tfCreatesNewBuckets: Terraform creates new S3 buckets as necessary.
+  cfnUpdateStackComputeCache: On the <strong>Stacks</strong> page, select your compute and cache deployment stack and then, in the upper right, click <strong>Update</strong>.
+  cfnUpdateStackPersistentStorage: On the <strong>Stacks</strong> page, select your persistent storage stack and then, in the upper right, click <strong>Update</strong>.
+  cfnUseExistingTemplate: On the <strong>Update stack</strong> page, click <strong>Use existing template</strong> and then click <strong>Next</strong>.
+  cfnConfigureStackOptions: On the <strong>Configure stack options</strong> page, click <strong>Next</strong>.
+  cfnRollbackOnFailure: On the <strong>Review &lt;my-stack-name&gt;</strong> page, click <strong>Rollback on failure</strong> and then click <strong>Submit</strong>.
+  monitorProvisionerStatus: To monitor the provisioner's status, you can watch the Terraform status posts in your terminal or in the AWS Parameter Store, under <code>/qumulo/&lt;my-deployment-name&gt;/last-run-status</code>.
+  createSubdirInS3bucket: "In your S3 bucket, create the `qumulo-core-install` directory. Within this directory, create another directory with the Qumulo Core version as its name. The following is an example path:"
+  qCoreVerTip: Make a new subdirectory for every new release of Qumulo Core.
+  copyDebAndConfig: Copy `qumulo-core.deb` and `host_configuration.tar.gz` into the directory named after the Qumulo Core version (in this example, it is `7.2.3`).
+
 varonis:
   separateMachine: Deploy Qumulo Broker on a stand-alone machine (or virtual machine) so that it sits between your Qumulo cluster and Varonis.
   restartRsyslog: To restart the rsyslog service, run the `systemctl restart rsyslog` command.
@@ -411,6 +437,7 @@ udm:
 
 guides:
   anq: Azure Native Qumulo Administrator Guide
+  cnq: Cloud Native Qumulo on AWS Administrator Guide
   onprem: Qumulo On-Premises Administrator Guide
   hard: Qumulo-Certified Hardware Servicing Guide
   cli: Qumulo <code>qq</code> CLI Command Guide
@@ -420,20 +447,13 @@ guides:
 
 xrefUSBinstaller: <a href="https://docs.qumulo.com/hardware-guide/getting-started/creating-usb-drive-installer.html" class="no_icon">Qumulo Core USB Drive Installer</a>
 xref:
-  adminANQ:
-    manageVersioningS3: <a href="https://docs.qumulo.com/azure-administrator-guide/s3-api/managing-s3-bucket-versioning.html">Managing S3 Bucket Versioning in a Qumulo Cluster</a> in the Azure Native Qumulo Administrator Guide
-    manageAccessS3: <a href="https://docs.qumulo.com/azure-administrator-guide/s3-api/managing-access-policies-for-s3-buckets.html">Managing Access Policies for an S3 Bucket in a Qumulo Cluster</a> in the Azure Native Qumulo Administrator Guide
-    manageRBAC: <a href="https://docs.qumulo.com/azure-administrator-guide/authorization-qumulo-core/managing-role-based-access-control-rbac.html">Managing Role-Based Access Control (RBAC) for Users and Groups in Qumulo Core</a> in the Azure Native Qumulo Administrator Guide
-    usingSMBhostRestrict: <a href="https://docs.qumulo.com/azure-administrator-guide/authorization-qumulo-core/using-smb-host-restrictions.html">Using SMB Host Restrictions in Qumulo Core</a> in the Azure Native Qumulo Administrator Guide
-    manageSMB3encrypt: <a href="https://docs.qumulo.com/azure-administrator-guide/encryption-data-security/managing-smb3-encryption-in-transit.html">Managing SMB3 Encryption in Transit in Qumulo Core</a> in the Azure Native Qumulo Administrator Guide
-    fileLock: <a href="https://docs.qumulo.com/azure-administrator-guide/authorization-qumulo-core/managing-file-locks.html">How File Locks Work in Qumulo Core</a> in the Azure Native Qumulo Administrator Guide
   adminOnPrem:
-    manageVersioningS3: <a href="https://docs.qumulo.com/administrator-guide/s3-api/managing-s3-bucket-versioning.html">Managing S3 Bucket Versioning in a Qumulo Cluster</a> in the Qumulo On-Premises Administrator Guide
-    manageAccessS3: <a href="https://docs.qumulo.com/administrator-guide/s3-api/managing-access-policies-for-s3-buckets.html">Managing Access Policies for an S3 Bucket in a Qumulo Cluster</a> in the Qumulo On-Premises Administrator Guide
-    manageRBAC: <a href="https://docs.qumulo.com/administrator-guide/authorization-qumulo-core/managing-role-based-access-control-rbac.html">Managing Role-Based Access Control (RBAC) for Users and Groups in Qumulo Core</a> in the Qumulo On-Premises Administrator Guide
-    usingSMBhostRestrict: <a href="https://docs.qumulo.com/administrator-guide/authorization-qumulo-core/using-smb-host-restrictions.html">Using SMB Host Restrictions in Qumulo Core</a> in the Qumulo On-Premises Administrator Guide
-    manageSMB3encrypt: <a href="https://docs.qumulo.com/administrator-guide/encryption-data-security/managing-smb3-encryption-in-transit.html">Managing SMB3 Encryption in Transit in Qumulo Core</a> in the Qumulo On-Premises Administrator Guide
-    fileLock: <a href="https://docs.qumulo.com/administrator-guide/authorization-qumulo-core/managing-file-locks.html">How File Locks Work in Qumulo Core</a> in the Qumulo On-Premises Administrator Guide
+    manageVersioningS3: <a href="https://docs.qumulo.com/administrator-guide/s3-api/managing-s3-bucket-versioning.html">Managing S3 Bucket Versioning in a Qumulo Cluster</a> in the Qumulo Administrator Guide
+    manageAccessS3: <a href="https://docs.qumulo.com/administrator-guide/s3-api/managing-access-policies-for-s3-buckets.html">Managing Access Policies for an S3 Bucket in a Qumulo Cluster</a> in the Qumulo Administrator Guide
+    manageRBAC: <a href="https://docs.qumulo.com/administrator-guide/authorization-qumulo-core/managing-role-based-access-control-rbac.html">Managing Role-Based Access Control (RBAC) for Users and Groups in Qumulo Core</a> in the Qumulo Administrator Guide
+    usingSMBhostRestrict: <a href="https://docs.qumulo.com/administrator-guide/authorization-qumulo-core/using-smb-host-restrictions.html">Using SMB Host Restrictions in Qumulo Core</a> in the Qumulo Administrator Guide
+    manageSMB3encrypt: <a href="https://docs.qumulo.com/administrator-guide/encryption-data-security/managing-smb3-encryption-in-transit.html">Managing SMB3 Encryption in Transit in Qumulo Core</a> in the Qumulo Administrator Guide
+    fileLock: <a href="https://docs.qumulo.com/administrator-guide/authorization-qumulo-core/managing-file-locks.html">How File Locks Work in Qumulo Core</a> in the Qumulo Administrator Guide
   smbCLI:
     addModSameFlag: The <code>qq smb_add_share</code> and <code>qq smb_mod_share</code> commands use the same flags.
     addModCommand: specify the path, share name, and <a href="https://docs.qumulo.com/administrator-guide/authorization-qumulo-core/using-smb-host-restrictions.html#how-smb-host-restriction-precedence-works">host restriction level</a>.

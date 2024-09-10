@@ -37,9 +37,7 @@ usage: qq fs_file_get_attr [-h] (--path PATH | --id ID) [--snapshot SNAPSHOT] [-
 zendesk_source: qq CLI Command Guide
 
 ---
-For more information, see:
-* {{site.xref.adminANQ.fileLock}}
-* {{site.xref.adminOnPrem.fileLock}}
+For more information, see {{site.xref.adminOnPrem.fileLock}}.
 
 ## Examples
 {% include note.html content="The following operations require Read ACL permissions for the file." %}

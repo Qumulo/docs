@@ -1,0 +1,410 @@
+entries:
+- title:
+  pdftitle: qumulo-aws-administrator-guide.pdf
+  product:
+  version:
+  guidetitle: Cloud Native Qumulo on AWS Administrator Guide
+  guideurl: /aws-administrator-guide/
+  folders:
+
+  - title:
+    output: pdf
+    type: frontmatter
+    folderitems:
+
+    - title:
+      url: /titlepage.html
+      output: pdf
+      type: frontmatter
+
+    - title:
+      url: /tocpage.html
+      output: pdf
+      type: frontmatter
+
+  - title: Cloud Native Qumulo on AWS Administrator Guide
+    output: web
+    type: navi
+    folderitems:
+
+    - title: Documentation Home
+      url: /index.html
+      output: web
+
+    - title: Cloud Native Qumulo on AWS Administrator Guide Home
+      url: /aws-administrator-guide/
+      output: web
+
+    - title: Contacting the Qumulo Care Team
+      url: /contacting-qumulo-care-team.html
+      output: web
+
+  - title: Getting Started
+    url: /aws-administrator-guide/getting-started/index.html
+    output: web, pdf
+    folderitems:
+
+    - title: How Cloud Native Qumulo Works
+      url: /aws-administrator-guide/getting-started/how-cloud-native-qumulo-works.html
+      output: web, pdf
+
+    - title: Deploying with Terraform
+      url: /aws-administrator-guide/getting-started/terraform.html
+      output: web, pdf
+
+    - title: Deploying with CloudFormation
+      url: /aws-administrator-guide/getting-started/cloudformation.html
+      output: web, pdf
+
+    - title: Creating and Managing Directory Quotas
+      url: /aws-administrator-guide/getting-started/creating-directory-quotas.html
+      output: web, pdf
+
+    - title: Supported Configurations and Known Limits
+      url: /aws-administrator-guide/getting-started/supported-configurations-known-limits.html
+      output: web, pdf
+
+  - title: System Upgrades
+    url: /aws-administrator-guide/upgrading-qumulo-core/index.html
+    output: web, pdf
+    folderitems:
+
+    - title: Feature Log
+      url: /aws-administrator-guide/upgrading-qumulo-core/feature-log.html
+      output: web, pdf
+
+    - title: Performing Upgrades
+      url: /aws-administrator-guide/upgrading-qumulo-core/performing-upgrades.html
+      output: web, pdf
+
+    - title: Replication Version Requirements and Upgrade Recommendations
+      url: /aws-administrator-guide/upgrading-qumulo-core/replication-version-requirements-upgrade-recommendations.html
+      output: web, pdf
+
+  - title: Authentication
+    url: /aws-administrator-guide/authentication-qumulo-core/index.html
+    output: web, pdf
+    folderitems:
+
+    - title: Configuring SAML Single Sign-On (SSO)
+      url: /aws-administrator-guide/authentication-qumulo-core/configuring-saml-single-sign-on-sso.html
+      output: web, pdf
+
+    - title: Configuring Search Trusted Domains
+      url: /aws-administrator-guide/authentication-qumulo-core/configuring-search-trusted-domains-active-directory.html
+      output: web, pdf
+
+    - title: Configuring LDAP
+      url: /aws-administrator-guide/authentication-qumulo-core/configuring-ldap.html
+      output: web, pdf
+
+    - title: Creating and Using Bearer Tokens
+      url: /aws-administrator-guide/authentication-qumulo-core/creating-using-bearer-tokens-to-authenticate-qumulo-rest-api-calls.html
+      output: web, pdf
+
+  - title: Connecting to External Services
+    url: /aws-administrator-guide/connecting-to-external-services/index.html
+    output: web, pdf
+    folderitems:
+
+    - title: Creating and Using Access Tokens
+      url: /aws-administrator-guide/connecting-to-external-services/creating-using-access-tokens-to-authenticate-external-services-qumulo-core.html
+      output: web, pdf
+
+    - title: Connecting a Kubernetes Cluster
+      url: /aws-administrator-guide/connecting-to-external-services/connecting-kubernetes-cluster-with-container-storage-interface-csi-driver.html
+      output: web, pdf
+
+  - title: Authorization
+    url: /aws-administrator-guide/authorization-qumulo-core/index.html
+    output: web, pdf
+    folderitems:
+
+    - title: Managing File Locks
+      url: /aws-administrator-guide/authorization-qumulo-core/managing-file-locks.html
+      output: web, pdf
+
+    - title: Managing Role-Based Access Control
+      url: /aws-administrator-guide/authorization-qumulo-core/managing-role-based-access-control-rbac.html
+      output: web, pdf
+
+    - title: Managing Cross-Protocol Permissions
+      url: /aws-administrator-guide/authorization-qumulo-core/managing-cross-protocol-permissions-xpp.html
+      output: web, pdf
+
+    - title: Using SMB Host Restrictions
+      url: /aws-administrator-guide/authorization-qumulo-core/using-smb-host-restrictions.html
+      output: web, pdf
+
+    - title: Using Active Directory for POSIX Attributes
+      url: /aws-administrator-guide/authorization-qumulo-core/using-active-directory-for-posix-attributes.html
+      output: web, pdf
+
+  - title: Network Configuration
+    url: /aws-administrator-guide/network-configuration/index.html
+    output: web, pdf
+    folderitems:
+
+    - title: Required Networking Ports
+      url: /aws-administrator-guide/network-configuration/required-ports.html
+      output: web, pdf
+
+    - title: Configuring IPv6
+      url: /aws-administrator-guide/network-configuration/configuring-ipv6.html
+      output: web, pdf
+
+    - title: Connecting to Multiple Virtual Networks
+      url: /aws-administrator-guide/network-configuration/connecting-multiple-virtual-networks.html
+      output: web, pdf
+
+    - title: Configuring Round-Robin DNS on Windows Server
+      url: /aws-administrator-guide/network-configuration/configuring-round-robin-dns-windows-server.html
+      output: web, pdf
+
+  - title: Web UI
+    url: /aws-administrator-guide/web-ui/index.html
+    output: web, pdf
+    folderitems:
+
+    - title: Setting the Web UI Login Banner
+      url: /aws-administrator-guide/web-ui/login-banner.html
+      output: web, pdf
+
+    - title: Setting the Web UI Inactivity Timeout
+      url: /aws-administrator-guide/web-ui/inactivity-timeout.html
+      output: web, pdf
+
+  - title: qq CLI
+    url: /aws-administrator-guide/qq-cli/index.html
+    output: web, pdf
+    folderitems:
+
+    - title: Getting Started with the qq CLI
+      url: /aws-administrator-guide/qq-cli/getting-started.html
+      output: web, pdf
+
+    - title: Enabling Autocomplete for the qq CLI
+      url: /aws-administrator-guide/qq-cli/enabling-autocomplete.html
+      output: web, pdf
+
+  - title: Metadata
+    url: /aws-administrator-guide/metadata/index.html
+    output: web, pdf
+    folderitems:
+
+    - title: Managing User-Defined Metadata
+      url: /aws-administrator-guide/metadata/managing-user-defined-metadata.html
+      output: web, pdf
+
+  - title: Snapshots
+    url: /aws-administrator-guide/snapshots/index.html
+    output: web, pdf
+    folderitems:
+
+    - title: How Snapshots Work
+      url: /aws-administrator-guide/snapshots/how-snapshots-work.html
+      output: web, pdf
+
+    - title: Managing Snapshots
+      url: /aws-administrator-guide/snapshots/managing-snapshots.html
+      output: web, pdf
+
+    - title: Locking and Unlocking Snapshots
+      url: /aws-administrator-guide/snapshots/locking-unlocking-snapshots.html
+      output: web, pdf
+
+    - title: Recovering Files by Using Snapshots
+      url: /aws-administrator-guide/snapshots/recovering-files.html
+      output: web, pdf
+
+  - title: Encryption and Data Security
+    url: /aws-administrator-guide/encryption-data-security/index.html
+    output: web, pdf
+    folderitems:
+
+    - title: Managing Encryption at Rest
+      url: /aws-administrator-guide/encryption-data-security/managing-encryption-at-rest.html
+      output: web, pdf
+
+    - title: Managing SMB3 Encryption in Transit
+      url: /aws-administrator-guide/encryption-data-security/managing-smb3-encryption-in-transit.html
+      output: web, pdf
+
+    - title: Generating and Storing ECDSA Keys
+      url: /aws-administrator-guide/encryption-data-security/generating-storing-ecdsa-keys.html
+      output: web, pdf
+
+    - title: Managing Security Keys
+      url: /aws-administrator-guide/encryption-data-security/managing-security-keys.html
+      output: web, pdf
+
+    - title: Installing a Signed SSL Certificate
+      url: /aws-administrator-guide/encryption-data-security/installing-signed-ssl-certificate.html
+      output: web, pdf
+
+  - title: Data Replication
+    url: /aws-administrator-guide/replicating-data/index.html
+    output: web, pdf
+    folderitems:
+
+    - title: Creating and Managing a Continuous Replication Relationship
+      url: /aws-administrator-guide/replicating-data/creating-managing-continuous-replication-relationship.html
+      output: web, pdf
+
+    - title: Shift-To Amazon S3
+      url: /aws-administrator-guide/replicating-data/shift-to-s3.html
+      output: web, pdf
+
+    - title: Shift-From Amazon S3
+      url: /aws-administrator-guide/replicating-data/shift-from-s3.html
+      output: web, pdf
+
+  - title: File System Changes
+    url: /aws-administrator-guide/watching-file-attribute-directory-changes/index.html
+    output: web, pdf
+    folderitems:
+
+    - title: How File System Change Notifications Work
+      url: /aws-administrator-guide/watching-file-attribute-directory-changes/how-file-system-change-notifications-work.html
+      output: web, pdf
+
+    - title: Watching for Changes with SMB2 CHANGE_NOTIFY
+      url: /aws-administrator-guide/watching-file-attribute-directory-changes/smb2-change-notify.html
+      output: web, pdf
+
+    - title: Watching for Changes with REST
+      url: /aws-administrator-guide/watching-file-attribute-directory-changes/rest.html
+      output: web, pdf
+
+  - title: NFS
+    url: /aws-administrator-guide/nfs/index.html
+    output: web, pdf
+    folderitems:
+
+    - title: Creating and Managing an NFS Export
+      url: /aws-administrator-guide/nfs/creating-nfs-export.html
+      output: web, pdf
+
+    - title: Enabling and Using NFSv4.1
+      url: /aws-administrator-guide/nfs/nfsv4.1-enabling-using.html
+      output: web, pdf
+
+    - title: Managing File Access Permissions with ACLs
+      url: /aws-administrator-guide/nfs/nfsv4.1-acls.html
+      output: web, pdf
+
+    - title: Host Access Rules for NFS Exports
+      url: /aws-administrator-guide/nfs/configuring-troubleshooting-host-access-rules-nfs-exports.html
+      output: web, pdf
+
+  - title: NFSv4.1 with Kerberos
+    url: /aws-administrator-guide/kerberos/index.html
+    output: web, pdf
+    folderitems:
+
+    - title: How NFSv4.1 Works with Kerberos
+      url: /aws-administrator-guide/kerberos/kerberos-with-qumulo-core.html
+      output: web, pdf
+
+    - title: Prerequisites for Joining to Active Directory
+      url: /aws-administrator-guide/kerberos/kerberos-prerequisites-joining-cluster-active-directory.html
+      output: web, pdf
+
+    - title: Configuring Active Directory
+      url: /aws-administrator-guide/kerberos/kerberos-configuring-active-directory.html
+      output: web, pdf
+
+    - title: Performing Additional Cluster Configuration
+      url: /aws-administrator-guide/kerberos/kerberos-additional-cluster-configuration.html
+      output: web, pdf
+
+    - title: Using Kerberos Permissions
+      url: /aws-administrator-guide/kerberos/kerberos-qumulo-permissions.html
+      output: web, pdf
+
+    - title: Configuring a Linux Client
+      url: /aws-administrator-guide/kerberos/kerberos-configuring-linux-client.html
+      output: web, pdf
+
+    - title: Configuring Cross-Domain Active Directory Trusts
+      url: /aws-administrator-guide/kerberos/kerberos-configuring-cross-domain-active-directory-trusts.html
+      output: web, pdf
+
+    - title: Troubleshooting NFSv4.1 with Kerberos
+      url: /aws-administrator-guide/kerberos/kerberos-troubleshooting.html
+      output: web, pdf
+
+  - title: SMB
+    url: /aws-administrator-guide/smb/index.html
+    output: web, pdf
+    folderitems:
+
+    - title: Creating and Managing an SMB Share
+      url: /aws-administrator-guide/smb/creating-smb-share.html
+      output: web, pdf
+
+    - title: Managing File Shares by Using the Shared Folders MMC Snap-In
+      url: /aws-administrator-guide/smb/managing-file-shares-shared-folders-mmc.html
+      output: web, pdf
+
+  - title: S3 API
+    url: /aws-administrator-guide/s3-api/index.html
+    output: web, pdf
+    folderitems:
+
+    - title: Configuring and Using the S3 API
+      url: /aws-administrator-guide/s3-api/configuring-using-s3-api.html
+      output: web, pdf
+
+    - title: Creating and Managing S3 Access Keys
+      url: /aws-administrator-guide/s3-api/creating-managing-s3-access-keys.html
+      output: web, pdf
+
+    - title: Creating and Managing S3 Buckets
+      url: /aws-administrator-guide/s3-api/creating-managing-s3-buckets.html
+      output: web, pdf
+
+    - title: Managing Access to S3 Buckets
+      url: /aws-administrator-guide/s3-api/managing-access-to-s3-buckets.html
+      output: web, pdf
+
+    - title: Managing Access Policies for S3 Buckets
+      url: /aws-administrator-guide/s3-api/managing-access-policies-for-s3-buckets.html
+      output: web, pdf
+
+    - title: Managing Multipart S3 Uploads
+      url: /aws-administrator-guide/s3-api/managing-multipart-uploads.html
+      output: web, pdf
+
+    - title: Managing S3 Bucket Versioning
+      url: /aws-administrator-guide/s3-api/managing-s3-bucket-versioning.html
+      output: web, pdf
+
+    - title: Supported Functionality and Limits
+      url: /aws-administrator-guide/s3-api/supported-s3-functionality-known-limits.html
+      output: web, pdf
+
+  - title: Monitoring and Metrics
+    url: /aws-administrator-guide/monitoring-and-metrics/index.html
+    output: web, pdf
+    folderitems:
+
+    - title: Configuring Cloud-Based Monitoring and Remote Support
+      url: /aws-administrator-guide/monitoring-and-metrics/configuring-cloud-based-monitoring-remote-support.html
+      output: web, pdf
+
+    - title: Connecting to Cloud-Based Monitoring and S3 with a Custom Proxy
+      url: /aws-administrator-guide/monitoring-and-metrics/connecting-cloud-based-monitoring-s3-custom-proxy.html
+      output: web, pdf
+
+    - title: Restoring the Default Values for Cloud-Based and Nexus Monitoring
+      url: /aws-administrator-guide/monitoring-and-metrics/restoring-default-values-cloud-based-nexus-monitoring.html
+      output: web, pdf
+
+    - title: How Audit Logging Works in Qumulo Core
+      url: /aws-administrator-guide/monitoring-and-metrics/how-audit-logging-works.html
+      output: web, pdf
+
+    - title: OpenMetrics API Specification
+      url: /aws-administrator-guide/monitoring-and-metrics/openmetrics-api-specification.html
+      output: web, pdf

@@ -100,7 +100,9 @@ The following table lists metric names, types, labels, and descriptions.
       <td>7.2.0</td>
       <td>
         Kernel information for each node in a cluster, including the command-line arguments that were used for starting the kernel, the node ID, and the kernel version.
+        {% if page.platform == 'on-prem' %}
         {% include note.html content="The <code>qumulo_kernel</code> metric is available only on nodes configured by using the <a href='../getting-started/installing-product-package.html'>Qumulo Core Product Package</a>." %} 
+        {% endif %}
       </td>
     </tr>
 {% endif %}

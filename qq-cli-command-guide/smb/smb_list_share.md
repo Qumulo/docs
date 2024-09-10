@@ -28,9 +28,7 @@ usage: qq smb_list_share [-h] (--id ID | --name NAME) [--tenant-id TENANT_ID] [-
 zendesk_source: qq CLI Command Guide
 
 ---
-For more information, see:
-* {{site.xref.adminANQ.usingSMBhostRestrict}}
-* {{site.xref.adminOnPrem.usingSMBhostRestrict}}
+For more information, see {{site.xref.adminOnPrem.usingSMBhostRestrict}}.
 
 ## Examples
 

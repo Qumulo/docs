@@ -194,7 +194,7 @@ From Qumulo Core 2.11.0 to 5.0.0, clusters that run different versions can repli
 </tbody>
 </table>
 
-{% if page.platform == 'on-prem' %}
+{% if page.platform == 'on-prem' or page.platform == 'aws' %}
 ## Upgrade Recommendations
 Because the target directory of an existing replication relationship is read-only to all client access, use the following recommendations to upgrade a cluster whose file system root directory is the target of a replication relationship.
 

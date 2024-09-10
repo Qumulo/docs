@@ -26,7 +26,7 @@ ACTIONS=()
 PS3='What would you like to build? '
 
 # Prints the options on screen
-options=("Qumulo-Certified Hardware Servicing Guide" "Azure Native Qumulo Administrator Guide" "Qumulo On-Premises Administrator Guide" "Qumulo Alerts Guide" "Qumulo qq CLI Command Guide" "Qumulo REST API Guide" "Qumulo Integration Guide" "All Administrator Guides" "All Guides" "Exit")
+options=("Qumulo-Certified Hardware Servicing Guide" "Azure Native Qumulo Administrator Guide" "Cloud Native Qumulo on AWS Administrator Guide" "Qumulo On-Premises Administrator Guide" "Qumulo Alerts Guide" "Qumulo qq CLI Command Guide" "Qumulo REST API Guide" "Qumulo Integration Guide" "All Administrator Guides" "All Guides" "Exit")
 echo
 
 select opt in "${options[@]}"
@@ -41,6 +41,10 @@ do
       ;;
     "Azure Native Qumulo Administrator Guide")
       ACTIONS+=("Azure_Guide")
+      break
+      ;;
+    "Cloud Native Qumulo on AWS Administrator Guide")
+      ACTIONS+=("CNQ_Guide")
       break
       ;;
     "Qumulo On-Premises Administrator Guide")
@@ -64,11 +68,11 @@ do
       break
       ;;
     "All Administrator Guides")
-      ACTIONS+=("Azure_Guide" "Administrator_Guide")
+      ACTIONS+=("Azure_Guide" "CNQ_Guide" "Administrator_Guide")
       break
       ;;
     "All Guides")
-      ACTIONS+=("Hardware_Guide" "Azure_Guide" "Administrator_Guide" "Qumulo_Alerts_Guide" "Qumulo_qq_CLI_Command_Guide" "Integration_Guide")
+      ACTIONS+=("Hardware_Guide" "Azure_Guide" "CNQ_Guide" "Administrator_Guide" "Qumulo_Alerts_Guide" "Qumulo_qq_CLI_Command_Guide" "Integration_Guide")
       break
       ;;
     "Exit")
@@ -89,7 +93,11 @@ build_prince () {
       ;;
     "Azure_Guide")
       JEKYLL_CONFIG=config_azure_guide_pdf.yml
-      PRINCE_OUTPUT=qumulo-azure-guide.pdf
+      PRINCE_OUTPUT=qumulo-azure-administrator-guide.pdf
+      ;;
+    "CNQ_Guide")
+      JEKYLL_CONFIG=config_aws_guide_pdf.yml
+      PRINCE_OUTPUT=qumulo-aws-administrator-guide.pdf
       ;;
     "Administrator_Guide")
       JEKYLL_CONFIG=config_administrator_guide_pdf.yml
