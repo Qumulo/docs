@@ -4,6 +4,8 @@ summary: "This section explains how to deploy Cloud Native Qumulo (CNQ) by creat
 permalink: /aws-administrator-guide/getting-started/terraform.html
 sidebar: aws_administrator_guide_sidebar
 varRepoLink: <code>aws-terraform-cnq.zip</code> file
+redirect_from:
+  - /aws-administrator-guide/getting-started/deploying-instance-terraform.html
 deployment: tf
 ---
 
