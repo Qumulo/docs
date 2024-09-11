@@ -22,8 +22,9 @@ For information about upgrade types for each release, see <a href='mode-referenc
 * Made improvements in SMB session handling
 * Made improvements in audit logging
 
-## Qumulo Core 7.2.0 (Quarterly)
+## Qumulo Core 7.2.0.1 (Quarterly)
 {{page.varDownloadsRelnotes}}
+{% include important.html content="This release resolves a memory leak issue on HPE Apollo 4200 Gen 10 36T, 90T, 192T, and 336T Encrypted nodes when querying for system data." %}
 * {{page.varNoPublicChanges}}
 * Resolved an issue with the **APIs & Tools** page in the Web UI not showing certain REST endpoints correctly
 
