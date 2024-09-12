@@ -63,10 +63,6 @@ entries:
       url: /azure-administrator-guide/getting-started/connecting-azure-native-qumulo-to-microsoft-entra-domain-services.html
       output: web, pdf
 
-    - title: Creating and Managing Directory Quotas
-      url: /azure-administrator-guide/getting-started/creating-directory-quotas.html
-      output: web, pdf
-
     - title: Performance Characteristics and Default Limits
       url: /azure-administrator-guide/getting-started/performance-characteristics-default-limits-azure-native-qumulo.html
       output: web, pdf
@@ -137,6 +133,15 @@ entries:
     - title: Using Active Directory for POSIX Attributes
       url: /azure-administrator-guide/authorization-qumulo-core/using-active-directory-for-posix-attributes.html
       output: web, pdf
+
+  - title: Storage Management
+    url: /azure-administrator-guide/storage-management/index.html
+    output: web, pdf
+    folderitems:
+
+      - title: Creating and Managing Directory Quotas
+        url: /azure-administrator-guide/storage-management/creating-directory-quotas.html
+        output: web, pdf
 
   - title: Network Configuration
     url: /azure-administrator-guide/network-configuration/index.html

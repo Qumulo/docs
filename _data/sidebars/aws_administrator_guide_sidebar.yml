@@ -56,10 +56,6 @@ entries:
       url: /aws-administrator-guide/getting-started/cloudformation.html
       output: web, pdf
 
-    - title: Creating and Managing Directory Quotas
-      url: /aws-administrator-guide/getting-started/creating-directory-quotas.html
-      output: web, pdf
-
     - title: Supported Configurations and Known Limits
       url: /aws-administrator-guide/getting-started/supported-configurations-known-limits.html
       output: web, pdf
@@ -139,6 +135,15 @@ entries:
     - title: Using Active Directory for POSIX Attributes
       url: /aws-administrator-guide/authorization-qumulo-core/using-active-directory-for-posix-attributes.html
       output: web, pdf
+
+  - title: Storage Management
+    url: /aws-administrator-guide/storage-management/index.html
+    output: web, pdf
+    folderitems:
+
+      - title: Creating and Managing Directory Quotas
+        url: /aws-administrator-guide/storage-management/creating-directory-quotas.html
+        output: web, pdf
 
   - title: Network Configuration
     url: /aws-administrator-guide/network-configuration/index.html
