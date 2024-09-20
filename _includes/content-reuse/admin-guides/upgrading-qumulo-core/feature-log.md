@@ -12,9 +12,15 @@ For information about upgrade types for each release, see <a href='mode-referenc
 * Made improvements in SMB session handling
 * Made improvements in audit logging
 
-## Qumulo Core 7.2.0.1 (Quarterly)
+## Qumulo Core 7.2.0.2 (Quarterly)
 {{page.varDownloadsRelnotes}}
-{% include important.html content="This release resolves an issue on HPE platforms by maximizing the reuse of existing REST client connections and by restarting the iLO monitor regularly. Previously, REST connections within the iLO monitor consumed all available memory after running for approximately longer than one week." %}
+{{site.data.alerts.important}}
+<ul>
+  <li>This release resolves an issue in Qumulo Core 7.2.0 and 7.2.0.1 that could cause a cluster to become unresponsive due to incorrectly closed LDAP connections.</li>
+  <li>This release resolves an issue on HPE platforms by maximizing the reuse of existing REST client connections and by restarting the iLO monitor regularly. Previously, REST connections within the iLO monitor consumed all available memory after running for approximately longer than one week.</li>
+</ul>
+{{site.data.alerts.end}}
+
 * {{page.varNoPublicChanges}}
 * Resolved an issue with the **APIs & Tools** page in the Web UI not showing certain REST endpoints correctly
 
