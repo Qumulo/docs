@@ -35,7 +35,7 @@ This section explains the prerequisites to deploying {{site.aws.cnqAWSshort}}.
             <li><a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html#sc-dynamic-data-access">Infrequent Access S3 access tier</a></li>
           </ul>
         </td>
-        <td>7.2.0</td>
+        <td>7.2.0.2</td>
       </tr>
       <tr>
         <td>

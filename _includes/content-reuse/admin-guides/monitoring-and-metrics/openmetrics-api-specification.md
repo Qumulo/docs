@@ -97,7 +97,7 @@ The following table lists metric names, types, labels, and descriptions.
           </li>
         </ul>
       </td>
-      <td>7.2.0</td>
+      <td>7.2.0.2</td>
       <td>
         Kernel information for each node in a cluster, including the command-line arguments that were used for starting the kernel, the node ID, and the kernel version.
         {% if page.platform == 'on-prem' %}
@@ -163,7 +163,7 @@ The following table lists metric names, types, labels, and descriptions.
           <li class="pdf-friendly"><a href="#metric-label-node_id"><code>node_id</code></a></li>
         </ul>
       </td>
-      <td>7.2.0</td>
+      <td>7.2.0.2</td>
       <td>The critical temperature threshold for each physical CPU</td>
     </tr>
     <tr>
