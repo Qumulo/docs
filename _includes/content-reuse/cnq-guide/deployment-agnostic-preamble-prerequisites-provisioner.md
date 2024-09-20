@@ -26,7 +26,7 @@ This section explains the prerequisites to deploying {{site.aws.cnqAWSshort}}.
             <li>Increasing the soft capacity limit for an existing {{site.cnqShort}} cluster</li>
           </ul>
         </td>
-        <td>7.2.1</td>
+        <td>7.2.1.1</td>
       </tr>      
       <tr>
         <td>

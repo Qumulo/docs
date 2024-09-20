@@ -4,8 +4,9 @@ For information about upgrade types for each release, see <a href='mode-referenc
 
 <style>div#toc{height:200px;overflow:auto;}</style>
 
-## Qumulo Core 7.2.1
+## Qumulo Core 7.2.1.1
 {{page.varDownloadsRelnotes}}
+{% include important.html content="This release resolves an issue in Qumulo Core 7.2.0, 7.2.0.1, and 7.2.1 that could cause a cluster to become unresponsive due to incorrectly closed LDAP connections." %}
 * Released the Qumulo Core Product Package in `.deb` and `.rpm` formats
 * Allowed Object Lock to be enabled to for newly created S3 buckets
 * Added support for resuming TLS sessions over FTP
