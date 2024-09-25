@@ -4,6 +4,13 @@ For information about upgrade types for each release, see <a href='mode-referenc
 
 <style>div#toc{height:200px;overflow:auto;}</style>
 
+## Qumulo Core 7.2.2
+{{page.varDownloadsRelnotes}}
+* Configured Qumulo Core to permit more than 10 floating IP addresses for each node
+* Added support for floating IP addresses to {{site.cnqLong}} on AWS
+* Made improvements to the S3 API
+* Added two REST API resources for controlling SSL ciphers
+
 ## Qumulo Core 7.2.1.1
 {{page.varDownloadsRelnotes}}
 {% include important.html content="This release resolves an issue in Qumulo Core 7.2.0, 7.2.0.1, and 7.2.1 that could cause a cluster to become unresponsive due to incorrectly closed LDAP connections." %}
