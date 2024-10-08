@@ -8,6 +8,8 @@ if [[ -f /build.sha256 ]]; then
         echo "#  Rebuild this container to ensure you are running with the latest #"
         echo "#  dependencies.                                                    #"
         echo "#####################################################################"
+        echo "Expected $(</build.sha256)"
+        echo "Found $(sha256sum --check /build.sha256)"
         exit 1
     fi
 fi

@@ -36,7 +36,7 @@ jobs:
       - name: Set up Ruby
         uses: ruby/setup-ruby@b256bd96bb4867e7d23e92e087d9bb697270b725  # v1.163.0
         with:
-          ruby-version: '3.0' # Not needed with a .ruby-version file
+          ruby-version: '3.3' # Not needed with a .ruby-version file
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically
           cache-version: 0 # Increment this number if you need to re-download cached gems
 
