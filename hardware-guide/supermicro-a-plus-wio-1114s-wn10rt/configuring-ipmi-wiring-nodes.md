@@ -18,10 +18,6 @@ sidebar: hardware_guide_sidebar
 
 {% include content-reuse/platform-agnostic-ipmi.md %}
 {{site.hardware.ipmiConfig.smc}}
-{{site.hardware.ipmiCreds.smc}}
-{{site.data.alerts.note}}
-{{site.hardware.ipmiCreds.smcNote}} {{site.hardware.ipmiCreds.smcMoreInfo1114S}}
-{{site.data.alerts.end}}
 
 ## Step 2: Connecting the 100 Gbps Ports
 After you connect the IPMI port, connect your front-end and back-end 100 Gbps ports (compatible with QSFP28 and QSFP56). There are four 100 Gbps ports on the back of your node. To maximize redundancy, split interfaces across subnets by connecting each port to a different switch.

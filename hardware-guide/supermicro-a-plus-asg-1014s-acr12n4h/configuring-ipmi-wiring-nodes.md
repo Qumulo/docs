@@ -18,10 +18,6 @@ sidebar: hardware_guide_sidebar
 
 {% include content-reuse/platform-agnostic-ipmi.md %}
 {{site.hardware.ipmiConfig.smc}}
-{{site.hardware.ipmiCreds.smc}}
-{{site.data.alerts.note}}
-{{site.hardware.ipmiCreds.smcNote}} {{site.hardware.ipmiCreds.smcMoreInfo1014S}}
-{{site.data.alerts.end}}
 
 {% include content-reuse/platform-agnostic-unified-networking-wiring.md bmcType="IPMI" ethernetSpeed="25 Gbps or 100 Gbps" portCompatibility=" (compatible with QSFP28 and QSFP56)" %}
 

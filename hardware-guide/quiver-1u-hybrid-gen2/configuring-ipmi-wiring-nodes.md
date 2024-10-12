@@ -13,7 +13,7 @@ sidebar: hardware_guide_sidebar
 {% include image.html alt=alt_tag file="quiver-1u-hybrid-gen2-back-diagram.png" url="/hardware-guide/quiver-1u-hybrid-gen2/images/quiver-1u-hybrid-gen2-back-diagram.png" %}
 
 {% include content-reuse/platform-agnostic-ipmi.md %}
-To configure the IPMI port, you must use the BMC UI. For more information, see the [BMC section in the {{site.q1uhg2Long}} Service Guide (p.107)](https://care.qumulo.com/hc/en-us/articles/19236348044947-Quiver-1U-Hybrid-Gen2-Service-Guide) {{site.loginRequired}}. {{site.hardware.ipmiCreds.quiver}}
+To configure the IPMI port, you must use the BMC UI. For more information, see the [BMC section in the {{site.q1uhg2Long}} Service Guide (p.107)](https://care.qumulo.com/hc/en-us/articles/19236348044947-Quiver-1U-Hybrid-Gen2-Service-Guide) {{site.loginRequired}}.
 
 ### To Configure the IPMI Port by Using ipmitool
 Alternatively, you can configure the IPMI port by using `ipmitool`.

@@ -5,8 +5,6 @@ Your nodes receive DHCP address assignments by default. When you configure a nod
 
 To access iLO configuration from the BIOS System Utilities menu, press **F9**.
 
-{{site.hardware.ipmiCreds.hpe}}
-
 {% include note.html content="The IMPI username and password are unrelated to your Qumulo administrative credentials." %}
 
 ## iLO Configuration
