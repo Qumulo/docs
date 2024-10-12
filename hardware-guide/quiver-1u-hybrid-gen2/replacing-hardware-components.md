@@ -82,7 +82,7 @@ Your {{site.q1uhg2}} chassis contains an NVMe boot drive inserted vertically int
 
 <a id="replace-hdd"></a>
 ## To Replace an HDD
-Your {{site.q1uhg2}} chassis contains 12 HDDs. For more information, see [HDD Drives](drive-bay-mapping.html#hdd-drives).
+Your {{site.q1uhg2}} chassis contains 12 or 6 HDDs. For more information, see [HDD Drives](drive-bay-mapping.html#hdd-drives).
 
 {{site.data.alerts.note}}
 <ul>
@@ -112,7 +112,7 @@ Your {{site.q1uhg2}} chassis contains 12 HDDs. For more information, see [HDD Dr
 
 <a id="replace-nvme-drive"></a>
 ## To Replace an NVMe Drive
-Your {{site.q1uhg2}} chassis contains 4 NVMe drives. For more information, see [NVMe Drives](drive-bay-mapping.html#nvme-drives).
+Your {{site.q1uhg2}} chassis contains 4 or 3 NVMe drives. For more information, see [NVMe Drives](drive-bay-mapping.html#nvme-drives).
 
 1. {{page.varNoHotPlug}}
 
