@@ -155,11 +155,3 @@ qq snapshot_modify_snapshot \
   -i 1234567
   -e ''
 ```
-
-In the following example, the snapshot with ID `1234567` expires after one month.
-
-```bash
-qq snapshot_modify_snapshot \
-  -i 1234567 \
-  -t 1month
-```
