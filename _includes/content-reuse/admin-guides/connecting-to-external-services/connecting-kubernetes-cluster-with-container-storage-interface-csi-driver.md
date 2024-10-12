@@ -62,7 +62,7 @@ This section explains how you can configure, provision, and mount Qumulo storage
 
      ```bash
      cd deploy_v1.1.0
-     chmod +x install_driver.sh
+     chmod +x install-driver.sh
      ./install-driver.sh
      ```
    
