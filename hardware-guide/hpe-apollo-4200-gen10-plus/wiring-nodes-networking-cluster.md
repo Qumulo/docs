@@ -10,7 +10,12 @@ sidebar: hardware_guide_sidebar
 ## Node NIC and Ports
 The following diagrams show the NIC and ports on {{site.a4200g10p}} node types.
 
-{% include important.html content="For your node to work correctly, you must connect at least one port in the NIC." %}
+{{site.data.alerts.important}}
+<ul>
+  <li>For your node to work correctly, you must connect at least one port in the NIC.</li>
+  <li>{{site.hardware.ethDiff}}</li>
+</ul>
+{{site.data.alerts.end}}
 
 {% capture alt_tag %}Back Diagram of the {{site.a4200g10p}} Node{% endcapture %}
 {% include image.html alt=alt_tag file="hpe-apollo-4200-gen10-plus-back-diagram.png" url="/hardware-guide/hpe-apollo-4200-gen10-plus/images/hpe-apollo-4200-gen10-plus-back-diagram.png" %}
