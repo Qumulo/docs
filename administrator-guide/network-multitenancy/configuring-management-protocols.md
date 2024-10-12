@@ -46,7 +46,7 @@ The Qumulo Core Web UI lets you manage clusters from a browser.
 {% capture webUiNoReq %}Enabling Web UI {{page.varNoReq}}{% endcapture %}
 {% include note.html content=webUiNoReq %}
 
-* To enable REST API access, run the {% include qq.html command="multitenancy_modify_tenant" %} command, specify the tenant ID, and use the `--enable-web-ui` flag.
+* To enable Web UI access, run the {% include qq.html command="multitenancy_modify_tenant" %} command, specify the tenant ID, and use the `--enable-web-ui` flag.
 
 * To disable access, use the `--disable-web-ui` flag.
 
