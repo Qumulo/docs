@@ -114,7 +114,7 @@ Changing the EC2 instance type is a three-step process. First, you create a new 
 #### Step 2: Remove the Existing Instances
 {% if page.deployment == "tf" %}
 1. To select the previous Terraform workspace (for example, `default`), run the `terraform workspace select <default>` command.
-1. To ensure that the correct workspace is selected, run the `terraform output` command.
+1. To ensure that the correct workspace is selected, run the `terraform workspace show` command.
 1. To delete the previous instance in its entirety, run the `terraform destroy` command.
 {% elsif page.deployment == "cfn" %}
 1. To delete the previous CloudFormation stack, on the <strong>Stacks</strong> page, select the stack name for your previous deployment and then, in the upper right, click <strong>Delete</strong>.
