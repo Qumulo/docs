@@ -8,6 +8,5 @@
     </ul>
   </li>
   <li>We don’t recommend updating firmware on Qumulo-certified hardware nodes unless the equipment manufacturer or a member of the Qumulo Care team advises you to do so. For questions about this process, {{site.contactQumuloCare}}.</li>
-  <li>{{site.seeTechSpecs}}</li>
 </ul>
 {{site.data.alerts.end}}

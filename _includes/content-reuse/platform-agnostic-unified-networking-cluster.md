@@ -1,10 +1,6 @@
 {% if page.nicInfo == nil %}
-{{site.data.alerts.note}}
-<ul>
- <li>{{site.seeTechSpecs}}</li>
- <li>{{site.hardware.ethDiff}}</li>
-</ul>
-{{site.data.alerts.end}}
+{% capture eth %}{{site.hardware.ethDiff}}{% endcapture %}
+{% include note.html content=eth %}
 {% endif %}
 
 ##  Prerequisites

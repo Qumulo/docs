@@ -54,12 +54,8 @@ Your {{site.fprx2540m7}} chassis contains two mirrored NVMe boot drives, each of
 ## To Replace an HDD
 Your {{site.fprx2540m7}} chassis contains 12 or 8 HDDs. For more information, see [HDD Drives](drive-bay-mapping.html#hdd-drives).
 
-{{site.data.alerts.note}}
-<ul>
-  <li>{{page.varHotPlug}}</li>
-  <li>{{site.seeTechSpecs}}</li>
-</ul>
-{{site.data.alerts.end}}
+{% capture hotPlug %}{{page.varHotPlug}}{% endcapture %}
+{% include note.html content=hotPlug %}
 
 {{site.fprx2540m7followDocs}} <a href="https://docs.qumulo.com/pdf/fujitsu-primergy-rx2540-m7-upgrade-maintenance-manual-09-2023.pdf#page=150" class="pdf">Installing 3.5-inch HDD modules (p. 150)</a>.
 
