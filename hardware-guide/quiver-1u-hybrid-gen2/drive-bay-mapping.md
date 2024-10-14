@@ -11,8 +11,6 @@ sidebar: hardware_guide_sidebar
 
 All {{site.q1uhg2}} nodes contain one boot drive in an internal M.2 expansion slot.
 
-Your {{site.q1uhg2}} chassis contains 12 HDDs, 4 NVMe drives, and one boot drive in an internal M.2 expansion slot. The following is the mapping for the drives.
-
 ## HDD Drives
 
 * For 240T and 96T nodes, all drive bays are populated.
@@ -31,7 +29,9 @@ For more information, see [To Replace an HDD](replacing-hardware-components.html
 
 * For 48T nodes, only the following drive bays are populated: 0, 1, 2.
 
-For more information, see [To Replace an NVMe Drive](replacing-hardware-components.html#replace-nvme-m2-boot-drive) 
+  {% include important.html content="When replacing faulty drives, use only the originally populared drive bays." %}
+
+For more information, see [To Replace an NVMe Drive](replacing-hardware-components.html#replace-nvme-m2-boot-drive)
 
 {% capture alt_tag_nvme %}{{site.q1uhg2Long}} NVMe Drive Bay Mapping{% endcapture %}
 {% include image.html alt=alt_tag_nvme file="quiver-1u-hybrid-gen2-nvme-drive-bay-mapping.png" url="/hardware-guide/quiver-1u-hybrid-gen2/images/quiver-1u-hybrid-gen2-nvme-drive-bay-mapping.png" %}
