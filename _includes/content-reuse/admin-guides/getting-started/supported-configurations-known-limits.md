@@ -85,7 +85,7 @@ Qumulo Core requires switches that meet the following criteria:
 * Fully non-blocking
 * Managed
 * Supports IPv6
-{% endif %}  
+{% endif %}
 
 ## Known Limits
 
@@ -167,21 +167,49 @@ Qumulo Core requires switches that meet the following criteria:
     </tr>
     <tr>
       <td>Quotas</td>
-      <td><p>4.3 billion</p>{% include note.html content="This approximate value of 2<sup>32</sup> is equivalent to the possible maximum of directories or the entire inode space." %}</td>
+      <td>
+        4.3 billion
+        {% include note.html content="This approximate value of 2<sup>32</sup> is equivalent to the possible maximum of directories or the entire inode space." %}
+      </td>
     </tr>
     <tr>
       <td>S3 Bucket Object Versions</td>
       <td>Unlimited (4,294,967,296 theoretical)</td>
-    </tr>    
+    </tr>
     <tr>
       <td>Total Replication Relationships</td>
-      <td>100 {% include note.html content="If a directory is more than 100 levels below the file system root directory, you can't use it as a replication source." %}</td>
+      <td>
+        100
+        {% include note.html content="If a directory is more than 100 levels below the file system root directory, you can't use it as a replication source." %}
+      </td>
     </tr>
 {% if page.platform == 'on-prem' %}
     <tr>
       <td>Usable Provisioned Capacity on Cluster</td>
       <td>100%</td>
     </tr>
-{% endif %}    
+{% endif %}
+    <tr>
+      <td>NFS Sockets</td>
+      <td>
+        8,000 TCP sockets for each node
+        {% include note.html content="A client configured with the NFS <code>nconnect</code> mount option uses multiple sockets." %}
+      </td>
+    </tr>    
+    <tr>
+      <td>SMB Sockets</td>
+      <td>
+        5,000 TCP sockets for each node
+        {% include note.html content="A client configured with the SMB Multichannel feature uses multiple sockets." %}
+      </td>
+    </tr>    
+    <tr>
+      <td>REST API Sockets</td>
+      <td>1,000 TCP sockets for each node</td>
+    </tr>
+    <tr>
+      <td>S3 API Sockets</td>
+      <td>1,000 TCP sockets for each node</td>
+    </tr>    
   </tbody>
 </table>

@@ -145,9 +145,9 @@ qq nfs_modify_settings --disable-v4
 
 
 ## Configuring Floating IP Addresses for Nodes
-Currently, each Qumulo node is limited to 1,000 clients connected through NFSv4.1 simultaneously. To account for nodes going down, we recommend balancing the number of client connections across your nodes by configuring a sufficient number of floating IP addresses for each node. This prevents a node failover event from overloading the nodes to which the clients might fail over.
+Each Qumulo node supports a limited number of clients connected through NFSv4.1 simultaneously (for more information, see [Known Limits](../getting-started/supported-configurations-known-limits.html)). To account for nodes going offline, and to prevent a node failover event from overloading the nodes to which clients reconnect, we recommend balancing the number of client connections across your nodes by configuring a sufficient number of floating IP addresses for each node.
 
-For example, if you configure only one IP address for each node, on a cluster with 600 clients for each node, a single node failure might overload one of the remaining nodes, preventing 200 clients from connecting. If you assign multiple floating IP addresses to each node, the clients' connections are distributed across multiple nodes.
+For example, if you configure a single IP address for each node on a cluster with 600 clients connected to each node, with all clients configured with the `nconnect=8` mount option, a single node failure can overload one of the remaining nodes, preventing 200 clients from connecting. If you assign multiple floating IP addresses to each node, the client connections are distributed across multiple nodes.
 
 
 ## Listing NFSv4.1 Byte-Range Locks
