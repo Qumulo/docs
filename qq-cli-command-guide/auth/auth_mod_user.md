@@ -42,8 +42,8 @@ summary: This section explains how to use the <code>qq auth_mod_user</code> comm
 synopsis: Modify a user
 title: qq auth_mod_user
 usage: "qq auth_mod_user [-h] --id ID [--name NAME] [--primary-group PRIMARY_GROUP]\
-  \ [--uid UID] [--add-group ADD_GROUP] [--remove-group REMOVE_GROUP]\n    [--home-directory\
-  \ HOME_DIRECTORY] [-p [PASSWORD]]"
+  \ [--uid UID] [--add-group ADD_GROUP] [--remove-group REMOVE_GROUP] [--home-directory\
+  \ HOME_DIRECTORY]\n    [-p [PASSWORD]]"
 zendesk_source: qq CLI Command Guide
 
 ---

@@ -13,14 +13,18 @@ methods:
         use. If not specified, use the head version.
       name: snapshot
       required: false
+    - description: When specified, retrieve the file lock state for this file. Optional
+        because retrieving the file lock requires READ_ACL permissions.
+      name: retrieve-file-lock
+      required: false
     response_body:
-      schema: "{\n  \"description\": \"api_files_attributes\",\n  \"type\": \"object\"\
-        ,\n  \"properties\": {\n    \"path\": {\n      \"description\": \"Filesystem\
-        \ path of the object\",\n      \"type\": \"string\"\n    },\n    \"name\"\
-        : {\n      \"description\": \"Name of this file\",\n      \"type\": \"string\"\
-        \n    },\n    \"num_links\": {\n      \"description\": \"How many directory\
-        \ entries are associated with this file\",\n      \"type\": \"number\"\n \
-        \   },\n    \"type\": {\n      \"type\": \"string\",\n      \"enum\": [\n\
+      schema: "{\n  \"description\": \"api_get_files_attributes\",\n  \"type\": \"\
+        object\",\n  \"properties\": {\n    \"path\": {\n      \"description\": \"\
+        Filesystem path of the object\",\n      \"type\": \"string\"\n    },\n   \
+        \ \"name\": {\n      \"description\": \"Name of this file\",\n      \"type\"\
+        : \"string\"\n    },\n    \"num_links\": {\n      \"description\": \"How many\
+        \ directory entries are associated with this file\",\n      \"type\": \"number\"\
+        \n    },\n    \"type\": {\n      \"type\": \"string\",\n      \"enum\": [\n\
         \        \"FS_FILE_TYPE_FILE\",\n        \"FS_FILE_TYPE_DIRECTORY\",\n   \
         \     \"FS_FILE_TYPE_SYMLINK\",\n        \"FS_FILE_TYPE_UNIX_PIPE\",\n   \
         \     \"FS_FILE_TYPE_UNIX_CHARACTER_DEVICE\",\n        \"FS_FILE_TYPE_UNIX_BLOCK_DEVICE\"\
@@ -110,7 +114,15 @@ methods:
         \      \"description\": \"The revision for changes to the underlying file\
         \ data.\",\n      \"type\": \"string\"\n    },\n    \"user_metadata_revision\"\
         : {\n      \"description\": \"The revision for changes to the user defined\
-        \ metadata of the file.\",\n      \"type\": \"string\"\n    }\n  }\n}"
+        \ metadata of the file.\",\n      \"type\": \"string\"\n    },\n    \"lock\"\
+        : {\n      \"description\": \"When requested, the lock applied preventing\
+        \ file modification. Requires READ_ACL to read.\",\n      \"type\": \"object\"\
+        ,\n      \"properties\": {\n        \"retention_period\": {\n          \"\
+        description\": \"A permanent retention period preventing files from being\
+        \ deleted or modified. The period can only be extended.\",\n          \"type\"\
+        : \"string\"\n        },\n        \"legal_hold\": {\n          \"description\"\
+        : \"A removable lock under which files cannot be deleted or modified.\",\n\
+        \          \"type\": \"boolean\"\n        }\n      }\n    }\n  }\n}"
     responses:
     - code: '200'
       description: Return value on success

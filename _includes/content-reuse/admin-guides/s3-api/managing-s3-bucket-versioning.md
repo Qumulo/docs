@@ -7,7 +7,7 @@ Qumulo Core stores S3 object versions as independent files in the file system. Q
 
 In the following example:
 
-* The versioned files are stored in `/dir/.s3-versioning/obj`.
+* The versioned files are stored in `/dir/.s3-versioning~/obj`.
 
   {% include important.html content="Because `.s3-versioning~` is a normal, hidden directory, visible and accessible to other protocols. To ensure consistent S3 API behavior, we strongly recommend avoiding the use of other protocols to write to the directory. Any protocol can read from the directory safely." %}
 
@@ -15,8 +15,8 @@ In the following example:
 
   {{site.data.alerts.note}}
   <ul>
-    <li>To access a specific version of a file by using CLI or REST API, specify the version ID. </li>    
-    <li>To access the <em>head version</em> (current version) of a file, omit the omit the version ID.</li>
+    <li>To access a specific version of a file by using CLI or REST API, specify the version ID. </li>
+    <li>To access the <em>head version</em> (current version) of a file, omit the version ID.</li>
   </ul>
   {{site.data.alerts.end}}
 

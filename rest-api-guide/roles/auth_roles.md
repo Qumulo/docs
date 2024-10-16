@@ -76,8 +76,11 @@ methods:
         ,\n          \"PRIVILEGE_FILE_READ_ACCESS\",\n          \"PRIVILEGE_PORTAL_SPOKE_READ\"\
         ,\n          \"PRIVILEGE_PORTAL_SPOKE_WRITE\",\n          \"PRIVILEGE_PORTAL_SPOKE_EVICT\"\
         ,\n          \"PRIVILEGE_PORTAL_HUB_READ\",\n          \"PRIVILEGE_PORTAL_HUB_WRITE\"\
-        ,\n          \"PRIVILEGE_PORTAL_GLOBAL_READ\"\n        ],\n        \"description\"\
-        : \"Privileges the role has been granted:\\n * `PRIVILEGE_ACCESS_TOKENS_READ`\
+        ,\n          \"PRIVILEGE_PORTAL_GLOBAL_READ\",\n          \"PRIVILEGE_FS_FILE_LOCK_WRITE\"\
+        ,\n          \"PRIVILEGE_LICENSE_READ\",\n          \"PRIVILEGE_CAPACITY_READ\"\
+        ,\n          \"PRIVILEGE_CAPACITY_WRITE\",\n          \"PRIVILEGE_OBJECT_STORAGE_URIS_READ\"\
+        ,\n          \"PRIVILEGE_OBJECT_STORAGE_URIS_WRITE\"\n        ],\n       \
+        \ \"description\": \"Privileges the role has been granted:\\n * `PRIVILEGE_ACCESS_TOKENS_READ`\
         \ - View any access tokens present in the system,\\n * `PRIVILEGE_ACCESS_TOKENS_WRITE`\
         \ - Create or delete access tokens for any user in the system,\\n * `PRIVILEGE_AD_READ`\
         \ - Read Qumulo Active Directory settings,\\n * `PRIVILEGE_AD_USE` - Use Qumulo's\
@@ -86,11 +89,13 @@ methods:
         \ - Read cluster analytics,\\n * `PRIVILEGE_AUDIT_READ` - Read audit settings,\\\
         n * `PRIVILEGE_AUDIT_WRITE` - Modify audit settings,\\n * `PRIVILEGE_AUTH_CACHE_READ`\
         \ - Internal-Only: Read authentication cache settings,\\n * `PRIVILEGE_AUTH_CACHE_WRITE`\
-        \ - Internal-Only: Modify authentication cache settings,\\n * `PRIVILEGE_CHECKSUMMING_READ`\
-        \ - View the status of checksumming,\\n * `PRIVILEGE_CLUSTER_READ` - View\
-        \ nodes, disks, protection status, and SSL certificate,\\n * `PRIVILEGE_CLUSTER_WRITE`\
-        \ - Modify cluster settings and disk/identify LEDs,\\n * `PRIVILEGE_DEBUG`\
-        \ - Internal-Only: Perform debug operations on the cluster,\\n * `PRIVILEGE_DNS_READ`\
+        \ - Internal-Only: Modify authentication cache settings,\\n * `PRIVILEGE_CAPACITY_READ`\
+        \ - View the capacity clamp value.,\\n * `PRIVILEGE_CAPACITY_WRITE` - Set\
+        \ the capacity clamp value.,\\n * `PRIVILEGE_CHECKSUMMING_READ` - View the\
+        \ status of checksumming,\\n * `PRIVILEGE_CLUSTER_READ` - View nodes, disks,\
+        \ protection status, and SSL certificate,\\n * `PRIVILEGE_CLUSTER_WRITE` -\
+        \ Modify cluster settings and disk/identify LEDs,\\n * `PRIVILEGE_DEBUG` -\
+        \ Internal-Only: Perform debug operations on the cluster,\\n * `PRIVILEGE_DNS_READ`\
         \ - Read DNS settings,\\n * `PRIVILEGE_DNS_USE` - Perform DNS lookups,\\n\
         \ * `PRIVILEGE_DNS_WRITE` - Modify DNS settings,\\n * `PRIVILEGE_ENCRYPTION_READ`\
         \ - View the status of at-rest-encryption,\\n * `PRIVILEGE_ENCRYPTION_WRITE`\
@@ -101,7 +106,8 @@ methods:
         \ the status of directory tree delete operations,\\n * `PRIVILEGE_FS_DELETE_TREE_WRITE`\
         \ - Use directory tree delete API. Granting this privilege allows the deletion\
         \ of any file or directory on the cluster. File and directory permissions\
-        \ are not taken into account. Not required for `rm -r`.,\\n * `PRIVILEGE_FS_KEY_MANAGEMENT_READ`\
+        \ are not taken into account. Not required for `rm -r`.,\\n * `PRIVILEGE_FS_FILE_LOCK_WRITE`\
+        \ - Set or extend file lock retention periods and legal holds.,\\n * `PRIVILEGE_FS_KEY_MANAGEMENT_READ`\
         \ - Read and list public keys for various FS security features.,\\n * `PRIVILEGE_FS_KEY_MANAGEMENT_WRITE`\
         \ - Create and manage public keys for various FS security features.,\\n *\
         \ `PRIVILEGE_FS_LOCK_READ` - View NLM and SMB locks and waiters,\\n * `PRIVILEGE_FS_LOCK_WRITE`\
@@ -121,8 +127,9 @@ methods:
         \ - Modify Kerberos settings,\\n * `PRIVILEGE_KV_READ` - DEPRECATED: Read\
         \ and delete KV store entries for all users,\\n * `PRIVILEGE_LDAP_READ` -\
         \ View LDAP settings,\\n * `PRIVILEGE_LDAP_USE` - Use Qumulo's APIs for performing\
-        \ LDAP queries,\\n * `PRIVILEGE_LDAP_WRITE` - Modify LDAP settings,\\n * `PRIVILEGE_LOCAL_GROUP_READ`\
-        \ - View local groups and members,\\n * `PRIVILEGE_LOCAL_GROUP_WRITE` - Modify\
+        \ LDAP queries,\\n * `PRIVILEGE_LDAP_WRITE` - Modify LDAP settings,\\n * `PRIVILEGE_LICENSE_READ`\
+        \ - Get the cluster's license status.,\\n * `PRIVILEGE_LOCAL_GROUP_READ` -\
+        \ View local groups and members,\\n * `PRIVILEGE_LOCAL_GROUP_WRITE` - Modify\
         \ local groups and membership,\\n * `PRIVILEGE_LOCAL_USER_READ` - Get information\
         \ about local users,\\n * `PRIVILEGE_LOCAL_USER_WRITE` - Create and modify\
         \ all local users,\\n * `PRIVILEGE_METRICS_CONFIG_READ` - View metrics configuration,\\\
@@ -134,9 +141,11 @@ methods:
         \ NFS exports,\\n * `PRIVILEGE_NFS_EXPORT_WRITE` - Create, modify, and delete\
         \ NFS exports,\\n * `PRIVILEGE_NFS_SETTINGS_READ` - Internal-Only: View NFS\
         \ server settings,\\n * `PRIVILEGE_NFS_SETTINGS_WRITE` - Internal-Only: Modify\
-        \ NFS server settings,\\n * `PRIVILEGE_PORTAL_GLOBAL_READ` - View global portal\
-        \ settings and status,\\n * `PRIVILEGE_PORTAL_HUB_READ` - View hub portal\
-        \ relationship status and configuration,\\n * `PRIVILEGE_PORTAL_HUB_WRITE`\
+        \ NFS server settings,\\n * `PRIVILEGE_OBJECT_STORAGE_URIS_READ` - View the\
+        \ object storage URIs.,\\n * `PRIVILEGE_OBJECT_STORAGE_URIS_WRITE` - Add new\
+        \ object storage URIs.,\\n * `PRIVILEGE_PORTAL_GLOBAL_READ` - View global\
+        \ portal settings and status,\\n * `PRIVILEGE_PORTAL_HUB_READ` - View hub\
+        \ portal relationship status and configuration,\\n * `PRIVILEGE_PORTAL_HUB_WRITE`\
         \ - Authorize, modify, and delete hub portal relationships. Granting this\
         \ privilege allows authorizing proposed relationships. Depending on existing\
         \ file and directory permissions, this privilege can allow remote access to\
@@ -273,8 +282,11 @@ methods:
         ,\n          \"PRIVILEGE_FILE_READ_ACCESS\",\n          \"PRIVILEGE_PORTAL_SPOKE_READ\"\
         ,\n          \"PRIVILEGE_PORTAL_SPOKE_WRITE\",\n          \"PRIVILEGE_PORTAL_SPOKE_EVICT\"\
         ,\n          \"PRIVILEGE_PORTAL_HUB_READ\",\n          \"PRIVILEGE_PORTAL_HUB_WRITE\"\
-        ,\n          \"PRIVILEGE_PORTAL_GLOBAL_READ\"\n        ],\n        \"description\"\
-        : \"Privileges the role has been granted:\\n * `PRIVILEGE_ACCESS_TOKENS_READ`\
+        ,\n          \"PRIVILEGE_PORTAL_GLOBAL_READ\",\n          \"PRIVILEGE_FS_FILE_LOCK_WRITE\"\
+        ,\n          \"PRIVILEGE_LICENSE_READ\",\n          \"PRIVILEGE_CAPACITY_READ\"\
+        ,\n          \"PRIVILEGE_CAPACITY_WRITE\",\n          \"PRIVILEGE_OBJECT_STORAGE_URIS_READ\"\
+        ,\n          \"PRIVILEGE_OBJECT_STORAGE_URIS_WRITE\"\n        ],\n       \
+        \ \"description\": \"Privileges the role has been granted:\\n * `PRIVILEGE_ACCESS_TOKENS_READ`\
         \ - View any access tokens present in the system,\\n * `PRIVILEGE_ACCESS_TOKENS_WRITE`\
         \ - Create or delete access tokens for any user in the system,\\n * `PRIVILEGE_AD_READ`\
         \ - Read Qumulo Active Directory settings,\\n * `PRIVILEGE_AD_USE` - Use Qumulo's\
@@ -283,11 +295,13 @@ methods:
         \ - Read cluster analytics,\\n * `PRIVILEGE_AUDIT_READ` - Read audit settings,\\\
         n * `PRIVILEGE_AUDIT_WRITE` - Modify audit settings,\\n * `PRIVILEGE_AUTH_CACHE_READ`\
         \ - Internal-Only: Read authentication cache settings,\\n * `PRIVILEGE_AUTH_CACHE_WRITE`\
-        \ - Internal-Only: Modify authentication cache settings,\\n * `PRIVILEGE_CHECKSUMMING_READ`\
-        \ - View the status of checksumming,\\n * `PRIVILEGE_CLUSTER_READ` - View\
-        \ nodes, disks, protection status, and SSL certificate,\\n * `PRIVILEGE_CLUSTER_WRITE`\
-        \ - Modify cluster settings and disk/identify LEDs,\\n * `PRIVILEGE_DEBUG`\
-        \ - Internal-Only: Perform debug operations on the cluster,\\n * `PRIVILEGE_DNS_READ`\
+        \ - Internal-Only: Modify authentication cache settings,\\n * `PRIVILEGE_CAPACITY_READ`\
+        \ - View the capacity clamp value.,\\n * `PRIVILEGE_CAPACITY_WRITE` - Set\
+        \ the capacity clamp value.,\\n * `PRIVILEGE_CHECKSUMMING_READ` - View the\
+        \ status of checksumming,\\n * `PRIVILEGE_CLUSTER_READ` - View nodes, disks,\
+        \ protection status, and SSL certificate,\\n * `PRIVILEGE_CLUSTER_WRITE` -\
+        \ Modify cluster settings and disk/identify LEDs,\\n * `PRIVILEGE_DEBUG` -\
+        \ Internal-Only: Perform debug operations on the cluster,\\n * `PRIVILEGE_DNS_READ`\
         \ - Read DNS settings,\\n * `PRIVILEGE_DNS_USE` - Perform DNS lookups,\\n\
         \ * `PRIVILEGE_DNS_WRITE` - Modify DNS settings,\\n * `PRIVILEGE_ENCRYPTION_READ`\
         \ - View the status of at-rest-encryption,\\n * `PRIVILEGE_ENCRYPTION_WRITE`\
@@ -298,7 +312,8 @@ methods:
         \ the status of directory tree delete operations,\\n * `PRIVILEGE_FS_DELETE_TREE_WRITE`\
         \ - Use directory tree delete API. Granting this privilege allows the deletion\
         \ of any file or directory on the cluster. File and directory permissions\
-        \ are not taken into account. Not required for `rm -r`.,\\n * `PRIVILEGE_FS_KEY_MANAGEMENT_READ`\
+        \ are not taken into account. Not required for `rm -r`.,\\n * `PRIVILEGE_FS_FILE_LOCK_WRITE`\
+        \ - Set or extend file lock retention periods and legal holds.,\\n * `PRIVILEGE_FS_KEY_MANAGEMENT_READ`\
         \ - Read and list public keys for various FS security features.,\\n * `PRIVILEGE_FS_KEY_MANAGEMENT_WRITE`\
         \ - Create and manage public keys for various FS security features.,\\n *\
         \ `PRIVILEGE_FS_LOCK_READ` - View NLM and SMB locks and waiters,\\n * `PRIVILEGE_FS_LOCK_WRITE`\
@@ -318,8 +333,9 @@ methods:
         \ - Modify Kerberos settings,\\n * `PRIVILEGE_KV_READ` - DEPRECATED: Read\
         \ and delete KV store entries for all users,\\n * `PRIVILEGE_LDAP_READ` -\
         \ View LDAP settings,\\n * `PRIVILEGE_LDAP_USE` - Use Qumulo's APIs for performing\
-        \ LDAP queries,\\n * `PRIVILEGE_LDAP_WRITE` - Modify LDAP settings,\\n * `PRIVILEGE_LOCAL_GROUP_READ`\
-        \ - View local groups and members,\\n * `PRIVILEGE_LOCAL_GROUP_WRITE` - Modify\
+        \ LDAP queries,\\n * `PRIVILEGE_LDAP_WRITE` - Modify LDAP settings,\\n * `PRIVILEGE_LICENSE_READ`\
+        \ - Get the cluster's license status.,\\n * `PRIVILEGE_LOCAL_GROUP_READ` -\
+        \ View local groups and members,\\n * `PRIVILEGE_LOCAL_GROUP_WRITE` - Modify\
         \ local groups and membership,\\n * `PRIVILEGE_LOCAL_USER_READ` - Get information\
         \ about local users,\\n * `PRIVILEGE_LOCAL_USER_WRITE` - Create and modify\
         \ all local users,\\n * `PRIVILEGE_METRICS_CONFIG_READ` - View metrics configuration,\\\
@@ -331,9 +347,11 @@ methods:
         \ NFS exports,\\n * `PRIVILEGE_NFS_EXPORT_WRITE` - Create, modify, and delete\
         \ NFS exports,\\n * `PRIVILEGE_NFS_SETTINGS_READ` - Internal-Only: View NFS\
         \ server settings,\\n * `PRIVILEGE_NFS_SETTINGS_WRITE` - Internal-Only: Modify\
-        \ NFS server settings,\\n * `PRIVILEGE_PORTAL_GLOBAL_READ` - View global portal\
-        \ settings and status,\\n * `PRIVILEGE_PORTAL_HUB_READ` - View hub portal\
-        \ relationship status and configuration,\\n * `PRIVILEGE_PORTAL_HUB_WRITE`\
+        \ NFS server settings,\\n * `PRIVILEGE_OBJECT_STORAGE_URIS_READ` - View the\
+        \ object storage URIs.,\\n * `PRIVILEGE_OBJECT_STORAGE_URIS_WRITE` - Add new\
+        \ object storage URIs.,\\n * `PRIVILEGE_PORTAL_GLOBAL_READ` - View global\
+        \ portal settings and status,\\n * `PRIVILEGE_PORTAL_HUB_READ` - View hub\
+        \ portal relationship status and configuration,\\n * `PRIVILEGE_PORTAL_HUB_WRITE`\
         \ - Authorize, modify, and delete hub portal relationships. Granting this\
         \ privilege allows authorizing proposed relationships. Depending on existing\
         \ file and directory permissions, this privilege can allow remote access to\

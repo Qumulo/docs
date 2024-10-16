@@ -112,9 +112,9 @@ The _default bucket directory prefix_ is the directory under which Qumulo Core c
 
 By default, the default bucket directory prefix for newly created buckets is the cluster's root directory (`/`). Thus, if you create a bucket named `my-bucket`, its root directory is `/my-bucket`.
 
-* To view the current default bucket directory prefix {{site.s3.permissions.APIorCLI}}, you need {{site.s3.permissions.bucketsRead}}.
+* To view the current default bucket directory prefix {{site.s3.permissions.APIorCLI}}, you need the {{site.s3.permissions.bucketsRead}}.
 
-* To change the default bucket directory prefix, you need {{site.s3.permissions.bucketsWrite}}.
+* To change the default bucket directory prefix, you need the {{site.s3.permissions.bucketsWrite}}.
 
 * To enable or suspend S3 bucket versioning, use the {% include qq.html command="s3_modify_bucket" %} command.
 
@@ -135,7 +135,7 @@ By default, the default bucket directory prefix for newly created buckets is the
    ```
 
 ### Creating an S3 Bucket by Using the qq CLI
-To create an S3 bucket {{site.s3.permissions.APIorCLI}}, you need {{site.s3.permissions.bucketsWrite}}.
+To create an S3 bucket {{site.s3.permissions.APIorCLI}}, you need the {{site.s3.permissions.bucketsWrite}}.
 
 {% include important.html content="In Qumulo Core 6.0.1.1 (and higher), the `qq` CLI command changed from `s3_create_bucket` to `s3_add_bucket` and the flag for specifying the directory path has changed from `--path` to `--fs-path`." %}
 
@@ -187,9 +187,9 @@ You can view and modify the settings for individual buckets {{site.s3.permission
 
 You can configure global settings, such as the {{page.varDefaultPrefix}} for all S3 buckets. For more information about configuring anonymous access for individual S3 buckets, see, see [Enabling Anonymous Access for an S3 Bucket](managing-access-to-s3-buckets.html#enabling-anonymous-access).
 
-* To view the current bucket configuration {{site.s3.permissions.APIorCLI}}, you need {{site.s3.permissions.bucketsRead}}. For more information, see {% include qq.html command="s3_get_bucket" %} in the {{site.guides.cli}}.
+* To view the current bucket configuration {{site.s3.permissions.APIorCLI}}, you need the {{site.s3.permissions.bucketsRead}}. For more information, see {% include qq.html command="s3_get_bucket" %} in the {{site.guides.cli}}.
 
-* To change the bucket configuration, you need {{site.s3.permissions.bucketsWrite}}. For more information, see {% include qq.html command="s3_modify_bucket" %} in the {{site.guides.cli}}.
+* To change the bucket configuration, you need the {{site.s3.permissions.bucketsWrite}}. For more information, see {% include qq.html command="s3_modify_bucket" %} in the {{site.guides.cli}}.
 
 
 <a id="enable-object-lock"></a>
@@ -220,7 +220,7 @@ $ qq s3_modify_bucket \
 You can list all S3 buckets in your Qumulo cluster {{site.s3.permissions.APIorCLI}}. {{site.s3.permissions.directAPI}}
 
 ### To List S3 Buckets by Using the qq CLI
-To list your S3 buckets {{site.s3.permissions.APIorCLI}}, you need {{site.s3.permissions.bucketsRead}}.
+To list your S3 buckets {{site.s3.permissions.APIorCLI}}, you need the {{site.s3.permissions.bucketsRead}}.
 
 * Run the {% include qq.html command="s3_list_buckets" %} command.
 
@@ -276,7 +276,7 @@ While the Qumulo Core REST API and `qq` CLI let you choose whether to also delet
 ### Deleting an S3 Bucket by Using the qq CLI
 {% capture varMpuInProgress %}The bucket has in-progress upload operations ({{page.varUploadKinds}}).{% endcapture %}
 
-To delete an S3 bucket {{site.s3.permissions.APIorCLI}}, you need {{site.s3.permissions.bucketsWrite}}.
+To delete an S3 bucket {{site.s3.permissions.APIorCLI}}, you need the {{site.s3.permissions.bucketsWrite}}.
 
 When you use the `qq` CLI to delete a bucket, you can choose to also delete the bucket root directory.
 
@@ -293,7 +293,7 @@ When you use the `qq` CLI to delete a bucket, you can choose to also delete the 
 
   * {{page.varNoBucket}}
   
-  * You don't have {{site.s3.permissions.bucketsWrite}}.
+  * You don't have the {{site.s3.permissions.bucketsWrite}}.
   
   * {{varMpuInProgress}}
 

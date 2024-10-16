@@ -19,8 +19,21 @@ methods:
         \ statement that targets the local:guest account.\",\n            \"type\"\
         : \"boolean\"\n          },\n          \"versioning\": {\n            \"description\"\
         : \"The versioning state of the current S3 bucket: Unversioned, Enabled, or\
-        \ Suspended.\",\n            \"type\": \"string\"\n          }\n        }\n\
-        \      }\n    }\n  }\n}"
+        \ Suspended.\",\n            \"type\": \"string\"\n          },\n        \
+        \  \"lock_config\": {\n            \"description\": \"The Object Lock configuration\
+        \ for the S3 bucket.\",\n            \"type\": \"object\",\n            \"\
+        properties\": {\n              \"enabled\": {\n                \"description\"\
+        : \"Specifies whether Object Lock is enabled for the S3 bucket.\",\n     \
+        \           \"type\": \"boolean\"\n              },\n              \"default_retention\"\
+        : {\n                \"description\": \"The default retention period for the\
+        \ S3 bucket.\",\n                \"type\": \"object\",\n                \"\
+        properties\": {\n                  \"units\": {\n                    \"description\"\
+        : \"The units of the retention, either DAYS or YEARS\",\n                \
+        \    \"type\": \"string\"\n                  },\n                  \"value\"\
+        : {\n                    \"description\": \"The number of either DAYS or YEARS\
+        \ in the retention period\",\n                    \"type\": \"number\"\n \
+        \                 }\n                }\n              }\n            }\n \
+        \         }\n        }\n      }\n    }\n  }\n}"
     responses:
     - code: '200'
       description: Return value on success
@@ -35,7 +48,9 @@ methods:
         \ caller must have permission to look up this directory.\",\n      \"type\"\
         : \"string\"\n    },\n    \"create_fs_path\": {\n      \"description\": \"\
         Specifies whether to create the bucket root if it doesn't exist.\",\n    \
-        \  \"type\": \"boolean\"\n    }\n  }\n}"
+        \  \"type\": \"boolean\"\n    },\n    \"object_lock_enabled\": {\n      \"\
+        description\": \"Specifies whether to enable object locking.\",\n      \"\
+        type\": \"boolean\"\n    }\n  }\n}"
     response_body:
       schema: "{\n  \"description\": \"api_bucket_description\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"name\": {\n      \"description\": \"The name\
@@ -48,7 +63,19 @@ methods:
         \ policy command with an Allow statement that targets the local:guest account.\"\
         ,\n      \"type\": \"boolean\"\n    },\n    \"versioning\": {\n      \"description\"\
         : \"The versioning state of the current S3 bucket: Unversioned, Enabled, or\
-        \ Suspended.\",\n      \"type\": \"string\"\n    }\n  }\n}"
+        \ Suspended.\",\n      \"type\": \"string\"\n    },\n    \"lock_config\":\
+        \ {\n      \"description\": \"The Object Lock configuration for the S3 bucket.\"\
+        ,\n      \"type\": \"object\",\n      \"properties\": {\n        \"enabled\"\
+        : {\n          \"description\": \"Specifies whether Object Lock is enabled\
+        \ for the S3 bucket.\",\n          \"type\": \"boolean\"\n        },\n   \
+        \     \"default_retention\": {\n          \"description\": \"The default retention\
+        \ period for the S3 bucket.\",\n          \"type\": \"object\",\n        \
+        \  \"properties\": {\n            \"units\": {\n              \"description\"\
+        : \"The units of the retention, either DAYS or YEARS\",\n              \"\
+        type\": \"string\"\n            },\n            \"value\": {\n           \
+        \   \"description\": \"The number of either DAYS or YEARS in the retention\
+        \ period\",\n              \"type\": \"number\"\n            }\n         \
+        \ }\n        }\n      }\n    }\n  }\n}"
     responses:
     - code: '200'
       description: Return value on success

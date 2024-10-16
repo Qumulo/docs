@@ -4,167 +4,171 @@ The following table lists the S3 API actions that Qumulo Core supports and the v
 {{site.data.alerts.note}}
 <ul>
   <li>The S3 API became generally available in Qumulo Core 5.3.3. This guide doesn't document enabling or using API actions that became available with preview functionality in versions of Qumulo Core lower than 5.3.3.</li>
-  <li>The Qumulo S3 protocol creates data that supports all file system functionality, such as quotas, snapshots, and replication.</li>
+  <li>The Qumulo S3 protocol creates data that supports all file system functionality, such as quotas, snapshots, replication, and Global Namespace functionality.</li>
 </ul>
-{{site.data.alerts.end}}  
-<table>
-  <thead>
-    <tr>
-      <th>API Action</th>
-      <th>Supported from Qumulo Core Version</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>AbortMultipartUpload</code></td>
-      <td>5.3.3</td>
-    </tr>
-    <tr>
-      <td><code>CompleteMultipartUpload</code></td>
-      <td>5.3.3</td>
-    </tr>
-    <tr>
-      <td><code>CopyObject</code></td>
-      <td>5.3.3</td>
-    </tr>
-    <tr>
-      <td><code>CreateBucket</code></td>
-      <td class="fade-row">5.2.3</td>
-    </tr>
-    <tr>
-      <td><code>CreateMultipartUpload</code></td>
-      <td>5.3.3</td>
-    </tr>
-    <tr>
-      <td><code>DeleteBucket</code></td>
-      <td class="fade-row">5.2.4</td>
-    </tr>
-    <tr>
-      <td><code>DeleteBucketVersioning</code></td>
-      <td>7.1.2</td>
-    </tr>
-    <tr>
-      <td><code>DeleteBucketPolicy</code></td>
-      <td>7.0.1.1</td>
-    </tr>
-    <tr>
-      <td><code>DeleteObject</code></td>
-      <td class="fade-row">5.2.1</td>
-    </tr>
-    <tr>
-      <td><code>DeleteObjects</code></td>
-      <td class="fade-row">5.2.2</td>
-    </tr>
-    <tr>
-      <td><code>DeleteObjectTagging</code></td>
-      <td>6.3.2</td>
-    </tr>
-    <tr>
-      <td><code>GetBucketAcl</code></td>
-      <td>6.1.1</td>
-    </tr>
-    <tr>
-      <td><code>GetBucketLocation</code></td>
-      <td class="fade-row">5.1.2</td>
-    </tr>
-    <tr>
-      <td><code>GetBucketVersioning</code></td>
-      <td>7.1.2</td>
-    </tr>
-    <tr>
-      <td><code>GetBucketPolicy</code></td>
-      <td>7.0.0.1</td>
-    </tr>
-    <tr>
-      <td><code>GetBucketVersioning</code></td>
-      <td>7.0.0.1</td>
-    </tr>
-    <tr>
-      <td><code>GetObject</code></td>
-      <td class="fade-row">5.0.4</td>
-    </tr>
-    <tr>
-      <td><code>GetObjectLockConfiguration</code></td>
-      <td>7.2.1.1</td>
-    </tr>
-    <tr>
-      <td><code>GetObjectRetention</code></td>
-      <td>7.2.1.1</td>
-    </tr>
-    <tr>
-      <td><code>GetObjectTagging</code></td>
-      <td>7.1.2</td>
-    </tr>
-    <tr>
-      <td><code>GetObjectAcl</code></td>
-      <td>6.1.1</td>
-    </tr>
-    <tr>
-      <td><code>GetObjectLockConfiguration</code></td>
-      <td>7.0.0.1</td>
-    </tr>
-    <tr>
-      <td><code>HeadBucket</code></td>
-      <td class="fade-row">5.1.2</td>
-    </tr>
-    <tr>
-      <td><code>HeadObject</code></td>
-      <td class="fade-row">5.0.4</td>
-    </tr>
-    <tr>
-      <td><code>ListBuckets</code></td>
-      <td class="fade-row">5.0.4</td>
-    </tr>
-    <tr>
-      <td><code>ListMultipartUploads</code></td>
-      <td>5.3.3</td>
-    </tr>
-    <tr>
-      <td><code>ListObjects</code></td>
-      <td class="fade-row">5.0.5</td>
-    </tr>
-    <tr>
-      <td><code>ListObjectsV2</code></td>
-      <td class="fade-row">5.0.4</td>
-    </tr>
-    <tr>
-      <td><code>ListParts</code></td>
-      <td>5.3.3</td>
-    </tr>
-    <tr>
-      <td><code>PutBucketPolicy</code></td>
-      <td>7.0.1.1</td>
-    </tr>
-    <tr>
-      <td><code>PutBucketVersioning</code></td>
-      <td>7.1.2</td>
-    </tr>
-    <tr>
-      <td><code>PutObject</code></td>
-      <td class="fade-row">5.2.1</td>
-    </tr>
-    <tr>
-      <td><code>PutObjectLockConfiguration</code></td>
-      <td>7.2.1.1</td>
-    </tr>
-    <tr>
-      <td><code>PutObjectRetention</code></td>
-      <td>7.2.1.1</td>
-    </tr>
-    <tr>
-      <td><code>PutObjectTagging</code></td>
-      <td>6.3.2</td>
-    </tr>
-    <tr>
-      <td><code>UploadPart</code></td>
-      <td>5.3.3</td>
-    </tr>
-    <tr>
-      <td><code>UploadPartCopy</code></td>
-      <td>6.0.2</td>
-    </tr>
-  </tbody>
-</table>
+{{site.data.alerts.end}}
+
+<details>
+  <summary>Click to expand</summary>
+  <table>
+    <thead>
+      <tr>
+        <th>API Action</th>
+        <th>Supported from Qumulo Core Version</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>AbortMultipartUpload</code></td>
+        <td>5.3.3</td>
+      </tr>
+      <tr>
+        <td><code>CompleteMultipartUpload</code></td>
+        <td>5.3.3</td>
+      </tr>
+      <tr>
+        <td><code>CopyObject</code></td>
+        <td>5.3.3</td>
+      </tr>
+      <tr>
+        <td><code>CreateBucket</code></td>
+        <td class="fade-row">5.2.3</td>
+      </tr>
+      <tr>
+        <td><code>CreateMultipartUpload</code></td>
+        <td>5.3.3</td>
+      </tr>
+      <tr>
+        <td><code>DeleteBucket</code></td>
+        <td class="fade-row">5.2.4</td>
+      </tr>
+      <tr>
+        <td><code>DeleteBucketPolicy</code></td>
+        <td>7.0.1.1</td>
+      </tr>    
+      <tr>
+        <td><code>DeleteBucketVersioning</code></td>
+        <td>7.1.2</td>
+      </tr>
+      <tr>
+        <td><code>DeleteObject</code></td>
+        <td class="fade-row">5.2.1</td>
+      </tr>
+      <tr>
+        <td><code>DeleteObjects</code></td>
+        <td class="fade-row">5.2.2</td>
+      </tr>
+      <tr>
+        <td><code>DeleteObjectTagging</code></td>
+        <td>6.3.2</td>
+      </tr>
+      <tr>
+        <td><code>GetBucketAcl</code></td>
+        <td>6.1.1</td>
+      </tr>
+      <tr>
+        <td><code>GetBucketLocation</code></td>
+        <td class="fade-row">5.1.2</td>
+      </tr>
+      <tr>
+        <td><code>GetBucketPolicy</code></td>
+        <td>7.0.0.1</td>
+      </tr>    
+      <tr>
+        <td><code>GetBucketVersioning</code></td>
+        <td>7.1.2</td>
+      </tr>
+      <tr>
+        <td><code>GetObject</code></td>
+        <td class="fade-row">5.0.4</td>
+      </tr>
+      <tr>
+        <td><code>GetObjectAcl</code></td>
+        <td>6.1.1</td>
+      </tr>    
+      <tr>
+        <td><code>GetObjectLegalHold</code></td>
+        <td>7.2.3</td>
+      </tr>
+      <tr>
+        <td><code>GetObjectLockConfiguration</code></td>
+        <td>7.0.0.1</td>
+      </tr>    
+      <tr>
+        <td><code>GetObjectRetention</code></td>
+        <td>7.2.1.1</td>
+      </tr>
+      <tr>
+        <td><code>GetObjectTagging</code></td>
+        <td>7.1.2</td>
+      </tr>
+      <tr>
+        <td><code>HeadBucket</code></td>
+        <td class="fade-row">5.1.2</td>
+      </tr>
+      <tr>
+        <td><code>HeadObject</code></td>
+        <td class="fade-row">5.0.4</td>
+      </tr>
+      <tr>
+        <td><code>ListBuckets</code></td>
+        <td class="fade-row">5.0.4</td>
+      </tr>
+      <tr>
+        <td><code>ListMultipartUploads</code></td>
+        <td>5.3.3</td>
+      </tr>
+      <tr>
+        <td><code>ListObjects</code></td>
+        <td class="fade-row">5.0.5</td>
+      </tr>
+      <tr>
+        <td><code>ListObjectsV2</code></td>
+        <td class="fade-row">5.0.4</td>
+      </tr>
+      <tr>
+        <td><code>ListParts</code></td>
+        <td>5.3.3</td>
+      </tr>
+      <tr>
+        <td><code>PutBucketPolicy</code></td>
+        <td>7.0.1.1</td>
+      </tr>
+      <tr>
+        <td><code>PutBucketVersioning</code></td>
+        <td>7.1.2</td>
+      </tr>
+      <tr>
+        <td><code>PutObject</code></td>
+        <td class="fade-row">5.2.1</td>
+      </tr>
+      <tr>
+        <td><code>PutObjectLegalHold</code></td>
+        <td>7.2.3</td>
+      </tr>    
+      <tr>
+        <td><code>PutObjectLockConfiguration</code></td>
+        <td>7.2.3</td>
+      </tr>
+      <tr>
+        <td><code>PutObjectRetention</code></td>
+        <td>7.2.1.1</td>
+      </tr>
+      <tr>
+        <td><code>PutObjectTagging</code></td>
+        <td>6.3.2</td>
+      </tr>
+      <tr>
+        <td><code>UploadPart</code></td>
+        <td>5.3.3</td>
+      </tr>
+      <tr>
+        <td><code>UploadPartCopy</code></td>
+        <td>6.0.2</td>
+      </tr>
+    </tbody>
+  </table>
+</details>
 
 ## Unsupported S3 Functionality
 The following table lists some of the S3 API functionality that Qumulo Core doesn't support.
@@ -176,12 +180,11 @@ The following table lists some of the S3 API functionality that Qumulo Core does
 | Bucket lifecycle configurations           | &mdash;     |
 | Bucket notifications                      | &mdash;     |
 | Control of server-side encryption         | All Qumulo Core data is encrypted at rest. You can't control this functionality by using the S3 API. |
+| Object Lock in governance mode            | Qumulo Core supports only compliance mode. |
 | Logging controls                          | &mdash;     |
 | Multi-chunk payload signing               | Qumulo Core doesn't support the [streaming version of Amazon Signature Version 4 (SigV4)](https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-streaming.html), only the [single-chunk version](https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-header-based-auth.html). |
-| Object locks                              | &mdash;     |
 | Signature Version 2                       | Qumulo Core supports only SigV4 signatures. |
 | Storage classes                           | Qumulo Core doesn't use the [storage class](https://aws.amazon.com/s3/storage-classes/) concept. All objects have the same storage class status. |
-| Retention policies                        | &mdash;     |
 | Temporary access credentials              | &mdash;     |
 | Virtual-hosted bucket addressing          | Qumulo Core supports only [path-style bucket addressing]({{site.s3.docs.pathStyleAddressing}}). |
 | Web hosting configuration                 | &mdash;     |
@@ -210,19 +213,19 @@ The S3 API supports listing objects in a bucket by using the [`ListObjects`]({{s
   <tr>
     <th width="33%">Function</th>
     <th width="33%">Qumulo Core</th>
-    <th width="33%">Amazon S3</th>    
+    <th width="33%">Amazon S3</th>
   </tr>
 </thead>
 <tbody>
   <tr>
     <td>Returning results</td>
     <td>Consistent but non-alphabetical order</td>
-    <td>Alphabetical order, by object key</td>    
+    <td>Alphabetical order, by object key</td>
   </tr>
   <tr>
     <td>Arbitrary prefix</td>
     <td>Partial support for <code>Prefix</code>, only if <code>Prefix</code> is a path to a file or directory under the <a href="creating-managing-s3-buckets.html#bucket-root">bucket root directory</a></td>
-    <td><code>Prefix</code> limits results to object keys that begin with the prefix</td>    
+    <td><code>Prefix</code> limits results to object keys that begin with the prefix</td>
   </tr>
   <tr>
     <td>Arbitrary delimiter</td>
@@ -257,7 +260,7 @@ This section compares the Qumulo Core S3 API limits with native Amazon S3 limits
   <tr>
     <th width="33%">Limit</th>
     <th width="33%">Qumulo Core</th>
-    <th width="33%">Amazon S3</th>    
+    <th width="33%">Amazon S3</th>
   </tr>
 </thead>
 <tbody>
@@ -269,7 +272,7 @@ This section compares the Qumulo Core S3 API limits with native Amazon S3 limits
   <tr>
     <td>Maximum number of objects in one bucket</td>
     <td>Nominally unlimited</td>
-    <td>Unlimited</td>    
+    <td>Unlimited</td>
   </tr>
   <tr>
     <td>Minimum bucket name length</td>
@@ -278,7 +281,7 @@ This section compares the Qumulo Core S3 API limits with native Amazon S3 limits
   <tr>
     <td>Maximum bucket name length</td>
     <td colspan="2" class="joined-cell">63 characters</td>
-  </tr>  
+  </tr>
 </tbody>
 </table>
 
@@ -291,7 +294,7 @@ This section compares the Qumulo Core S3 API limits with native Amazon S3 limits
   <tr>
     <th width="33%">Limit</th>
     <th width="33%">Qumulo Core</th>
-    <th width="33%">Amazon S3</th>    
+    <th width="33%">Amazon S3</th>
   </tr>
 </thead>
 <tbody>
@@ -310,13 +313,13 @@ This section compares the Qumulo Core S3 API limits with native Amazon S3 limits
   </tr>
   <tr>
     <td>Minimum object key length</td>
-    <td colspan="2" class="joined-cell">1 character</td>    
+    <td colspan="2" class="joined-cell">1 character</td>
   </tr>
   <tr>
     <td>Maximum object key length</td>
-    <td>1,530 characters, if there are no slash (<code>/</code>) characters in the key</td>    
+    <td>1,530 characters, if there are no slash (<code>/</code>) characters in the key</td>
     <td>1,024 characters</td>
-  </tr>    
+  </tr>
   <tr>
     <td>Maximum object versions</td>
     <td>4,294,967,296 (theoretical)</td>
@@ -332,7 +335,7 @@ This section compares the Qumulo Core S3 API limits with native Amazon S3 limits
   <tr>
     <th width="33%">Limit</th>
     <th width="33%">Qumulo Core</th>
-    <th width="33%">Amazon S3</th>    
+    <th width="33%">Amazon S3</th>
   </tr>
 </thead>
 <tbody>
@@ -351,7 +354,7 @@ This section compares the Qumulo Core S3 API limits with native Amazon S3 limits
   <tr>
     <td>Maximum number of parts for each upload</td>
     <td colspan="2" class="joined-cell">10,000</td>
-  </tr>  
+  </tr>
   <tr>
     <td>Minimum part size</td>
     <td colspan="2" class="joined-cell">5 MiB (except for the last part of an upload)</td>
@@ -364,7 +367,7 @@ This section compares the Qumulo Core S3 API limits with native Amazon S3 limits
     <td>Additional part size requirements</td>
     <td>Must be a multiple of 4 KiB (4,096 bytes), except for the last part of an upload</td>
     <td>&mdash;</td>
-  </tr>    
+  </tr>
 </tbody>
 </table>
 
@@ -397,11 +400,11 @@ This section compares the Qumulo Core S3 API limits with native Amazon S3 limits
     <td>Parts that <code>ListParts</code> returns</td>
     <td>Unlimited</td>
     <td>1,000</td>
-  </tr>  
+  </tr>
   <tr>
     <td>Uploads that <code>ListMultipartUploads</code> returns</td>
     <td colspan="2" class="joined-cell">1,000</td>
-  </tr>   
+  </tr>
 </tbody>
 </table>
 

@@ -88,7 +88,7 @@ entries:
       url: /azure-administrator-guide/authentication-qumulo-core/configuring-search-trusted-domains-active-directory.html
       output: web, pdf
 
-    - title: Configuring LDAP 
+    - title: Configuring LDAP
       url: /azure-administrator-guide/authentication-qumulo-core/configuring-ldap.html
       output: web, pdf
 
@@ -158,6 +158,23 @@ entries:
 
     - title: Configuring Round-Robin DNS on Windows Server
       url: /azure-administrator-guide/network-configuration/configuring-round-robin-dns-windows-server.html
+      output: web, pdf
+
+  - title: Global Namespace
+    url: /azure-administrator-guide/global-namespace/index.html
+    output: web, pdf
+    folderitems:
+
+    - title: Enabling a Global Namespace
+      url: /azure-administrator-guide/global-namespace/how-portal-creation-enables-global-namespace.html
+      output: web, pdf
+
+    - title: Configuring a Portal Relationship
+      url: /azure-administrator-guide/global-namespace/configuring-portal-relationship.html
+      output: web, pdf
+
+    - title: Configuring Cache Management
+      url: /azure-administrator-guide/global-namespace/configuring-cache-management-for-spoke-portals.html
       output: web, pdf
 
   - title: Web UI
@@ -373,6 +390,10 @@ entries:
 
     - title: Managing S3 Bucket Versioning
       url: /azure-administrator-guide/s3-api/managing-s3-bucket-versioning.html
+      output: web, pdf
+
+    - title: Managing Object Lock for S3 Buckets
+      url: /azure-administrator-guide/s3-api/managing-object-lock-for-s3-buckets.html
       output: web, pdf
 
     - title: Supported Functionality and Limits

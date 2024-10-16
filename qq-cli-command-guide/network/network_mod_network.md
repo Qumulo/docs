@@ -80,9 +80,9 @@ title: qq network_mod_network
 usage: "qq network_mod_network [-h] --network-id NETWORK_ID [--name NAME] [--assigned-by\
   \ {DHCP,STATIC}] [--netmask <netmask-or-subnet>]\n    [--ip-ranges <address-or-range>\
   \ [<address-or-range> ...]] [--floating-ip-ranges <address-or-range> [<address-or-range>\
-  \ ...]]\n    [--clear-floating-ip-ranges] [--dns-servers <address-or-range> [<address-or-range>\
-  \ ...]] [--clear-dns-servers]\n    [--dns-search-domains <search-domain> [<search-domain>\
-  \ ...]] [--clear-dns-search-domains] [--mtu MTU] [--vlan-id VLAN_ID]\n    [--tenant-id\
+  \ ...]] [--clear-floating-ip-ranges]\n    [--dns-servers <address-or-range> [<address-or-range>\
+  \ ...]] [--clear-dns-servers] [--dns-search-domains <search-domain> [<search-domain>\
+  \ ...]]\n    [--clear-dns-search-domains] [--mtu MTU] [--vlan-id VLAN_ID] [--tenant-id\
   \ TENANT_ID | --clear-tenant-id]"
 zendesk_source: qq CLI Command Guide
 

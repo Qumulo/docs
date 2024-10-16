@@ -51,7 +51,7 @@ synopsis: Read an object
 title: qq fs_read
 usage: "qq fs_read [-h] (--path PATH | --id ID) [--stream-id STREAM_ID | --stream-name\
   \ STREAM_NAME] [--snapshot SNAPSHOT] [--offset OFFSET] [--length LENGTH] [--file\
-  \ FILE]\n    [--force] [--stdout]"
+  \ FILE] [--force]\n    [--stdout]"
 zendesk_source: qq CLI Command Guide
 
 ---

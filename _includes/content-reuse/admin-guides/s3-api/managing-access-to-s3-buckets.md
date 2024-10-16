@@ -66,9 +66,9 @@ To ensure that anonymous requests have permission to read files in a bucket, gra
 
 {% include note.html content="If a file's ACL doesn't allow reads for the `Guest` user, an anonymous request can't read the file." %}
 
-* To view the current bucket policy configuration {{site.s3.permissions.APIorCLI}}, you need {{site.s3.permissions.bucketsRead}}. For more information, see {% include qq.html command="s3_get_bucket_policy" %} in the {{site.guides.cli}}.
+* To view the current bucket policy configuration {{site.s3.permissions.APIorCLI}}, you need the {{site.s3.permissions.bucketsRead}}. For more information, see {% include qq.html command="s3_get_bucket_policy" %} in the {{site.guides.cli}}.
 
-* To change the bucket policy configuration, you need {{site.s3.permissions.bucketsWrite}}. For more information, see {% include qq.html command="s3_modify_bucket_policy" %} in the {{site.guides.cli}}.
+* To change the bucket policy configuration, you need the {{site.s3.permissions.bucketsWrite}}. For more information, see {% include qq.html command="s3_modify_bucket_policy" %} in the {{site.guides.cli}}.
 
   The following is an example policy that enables anonymous access:
 

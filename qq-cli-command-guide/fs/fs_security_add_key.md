@@ -37,8 +37,8 @@ summary: This section explains how to use the <code>qq fs_security_add_key</code
 synopsis: Add a key to the file system key-store.
 title: qq fs_security_add_key
 usage: "qq fs_security_add_key [-h] --name NAME [--private-key-file PRIVATE_KEY_FILE]\
-  \ [--public-key PUBLIC_KEY] [--verification-signature VERIFICATION_SIGNATURE]\n\
-  \    [--comment COMMENT] [--json]"
+  \ [--public-key PUBLIC_KEY] [--verification-signature VERIFICATION_SIGNATURE] [--comment\
+  \ COMMENT]\n    [--json]"
 zendesk_source: qq CLI Command Guide
 
 ---

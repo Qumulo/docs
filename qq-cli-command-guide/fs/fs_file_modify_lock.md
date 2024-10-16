@@ -25,12 +25,12 @@ optional_options:
 - alternate: []
   help: Set the retention period for a file lock to the specified number of days from
     now.
-  name: --days
+  name: --retention-days
   required: false
 - alternate: []
   help: Set the retention period for a file lock to the specified number of years
     from now.
-  name: --years
+  name: --retention-years
   required: false
 permalink: /qq-cli-command-guide/fs/fs_file_modify_lock.html
 positional_options: []
@@ -39,9 +39,9 @@ summary: This section explains how to use the <code>qq fs_file_modify_lock</code
   command.
 synopsis: Modify a retention period or legal hold on a file.
 title: qq fs_file_modify_lock
-usage: qq fs_file_modify_lock [-h] (--path PATH | --id ID) [--enable-legal-hold |
-  --disable-legal-hold] [--retention-period RETENTION_PERIOD | --days DAYS | --years
-  YEARS]
+usage: "qq fs_file_modify_lock [-h] (--path PATH | --id ID) [--enable-legal-hold |\
+  \ --disable-legal-hold]\n    [--retention-period RETENTION_PERIOD | --retention-days\
+  \ RETENTION_DAYS | --retention-years RETENTION_YEARS]"
 zendesk_source: qq CLI Command Guide
 
 ---

@@ -174,6 +174,10 @@ entries:
       output: web,pdf
       title: cluster/create
       url: /rest-api-guide/cluster-creation/v2_cluster_create.html
+    - apiversion: v4
+      output: web,pdf
+      title: cluster/object-backed/create
+      url: /rest-api-guide/cluster-creation/v4_cluster_object-backed_create.html
     output: web,pdf
     title: Cluster Creation (cluster)
     url: /rest-api-guide/cluster-creation/
@@ -223,6 +227,14 @@ entries:
     - output: web,pdf
       title: cluster/nodes/{id}/uid-light
       url: /rest-api-guide/cluster-management/cluster_nodes_id_uid-light.html
+    - apiversion: v2
+      output: web,pdf
+      title: cluster/object-backed/nodes
+      url: /rest-api-guide/cluster-management/v2_cluster_object-backed_nodes.html
+    - apiversion: v2
+      output: web,pdf
+      title: cluster/object-backed/nodes/dry-run
+      url: /rest-api-guide/cluster-management/v2_cluster_object-backed_nodes_dry-run.html
     - output: web,pdf
       title: cluster/restriper/status
       url: /rest-api-guide/cluster-management/cluster_restriper_status.html
@@ -244,6 +256,10 @@ entries:
       output: web,pdf
       title: cluster/settings/ssl/certificate
       url: /rest-api-guide/cluster-settings/v2_cluster_settings_ssl_certificate.html
+    - apiversion: v2
+      output: web,pdf
+      title: cluster/settings/ssl/ciphers
+      url: /rest-api-guide/cluster-settings/v2_cluster_settings_ssl_ciphers.html
     output: web,pdf
     title: Cluster Settings (cluster)
     url: /rest-api-guide/cluster-settings/
@@ -264,6 +280,20 @@ entries:
     output: web,pdf
     title: Unconfigured Node Management (node)
     url: /rest-api-guide/unconfigured-node-management/
+  - folderitems:
+    - output: web,pdf
+      title: node/state
+      url: /rest-api-guide/configured-node-management/node_state.html
+    output: web,pdf
+    title: Configured Node Management (node)
+    url: /rest-api-guide/configured-node-management/
+  - folderitems:
+    - output: web,pdf
+      title: dns/configs/system
+      url: /rest-api-guide/dns-config-methods/dns_configs_system.html
+    output: web,pdf
+    title: DNS Config Methods (dns)
+    url: /rest-api-guide/dns-config-methods/
   - folderitems:
     - output: web,pdf
       title: dns/clear-dns-cache
@@ -405,6 +435,9 @@ entries:
       title: files/{ref}/entries
       url: /rest-api-guide/files/files_ref_entries.html
     - output: web,pdf
+      title: files/{ref}/file-lock
+      url: /rest-api-guide/files/files_ref_file-lock.html
+    - output: web,pdf
       title: files/{ref}/info/acl
       url: /rest-api-guide/files/files_ref_info_acl.html
     - apiversion: v2
@@ -485,6 +518,40 @@ entries:
     url: /rest-api-guide/files/
   - folderitems:
     - output: web,pdf
+      title: portal/hubs
+      url: /rest-api-guide/global-namespace/portal_hubs.html
+    - output: web,pdf
+      title: portal/hubs/{id}
+      url: /rest-api-guide/global-namespace/portal_hubs_id.html
+    - output: web,pdf
+      title: portal/hubs/{id}/authorize
+      url: /rest-api-guide/global-namespace/portal_hubs_id_authorize.html
+    - output: web,pdf
+      title: portal/spokes
+      url: /rest-api-guide/global-namespace/portal_spokes.html
+    - output: web,pdf
+      title: portal/spokes/eviction-settings
+      url: /rest-api-guide/global-namespace/portal_spokes_eviction-settings.html
+    - output: web,pdf
+      title: portal/spokes/{id}
+      url: /rest-api-guide/global-namespace/portal_spokes_id.html
+    - output: web,pdf
+      title: portal/spokes/{id}/evict-data
+      url: /rest-api-guide/global-namespace/portal_spokes_id_evict-data.html
+    - output: web,pdf
+      title: portal/spokes/{id}/evict-link
+      url: /rest-api-guide/global-namespace/portal_spokes_id_evict-link.html
+    - output: web,pdf
+      title: portal/spokes/{id}/evict-tree
+      url: /rest-api-guide/global-namespace/portal_spokes_id_evict-tree.html
+    - output: web,pdf
+      title: portal/spokes/{id}/propose
+      url: /rest-api-guide/global-namespace/portal_spokes_id_propose.html
+    output: web,pdf
+    title: Global Namespace (portal)
+    url: /rest-api-guide/global-namespace/
+  - folderitems:
+    - output: web,pdf
       title: identity/expand
       url: /rest-api-guide/identity/identity_expand.html
     - output: web,pdf
@@ -513,6 +580,16 @@ entries:
     output: web,pdf
     title: LDAP Server (ldap)
     url: /rest-api-guide/ldap-server/
+  - folderitems:
+    - output: web,pdf
+      title: license/enforcement
+      url: /rest-api-guide/license-management/license_enforcement.html
+    - output: web,pdf
+      title: license/status
+      url: /rest-api-guide/license-management/license_status.html
+    output: web,pdf
+    title: License Management (license)
+    url: /rest-api-guide/license-management/
   - folderitems:
     - output: web,pdf
       title: groups
@@ -664,6 +741,16 @@ entries:
     output: web,pdf
     title: Network Configuration V1 (network)
     url: /rest-api-guide/network-configuration-v1/
+  - folderitems:
+    - output: web,pdf
+      title: object-storage/add-uris
+      url: /rest-api-guide/object-storage/object-storage_add-uris.html
+    - output: web,pdf
+      title: object-storage/uris
+      url: /rest-api-guide/object-storage/object-storage_uris.html
+    output: web,pdf
+    title: Object Storage (object-storage)
+    url: /rest-api-guide/object-storage/
   - folderitems:
     - apiversion: v3
       output: web,pdf
@@ -1086,11 +1173,21 @@ entries:
       title: tree-delete/jobs
       url: /rest-api-guide/tree-delete/tree-delete_jobs.html
     - output: web,pdf
+      title: tree-delete/jobs/restart/{id}
+      url: /rest-api-guide/tree-delete/tree-delete_jobs_restart_id.html
+    - output: web,pdf
       title: tree-delete/jobs/{id}
       url: /rest-api-guide/tree-delete/tree-delete_jobs_id.html
     output: web,pdf
     title: Tree Delete (tree-delete)
     url: /rest-api-guide/tree-delete/
+  - folderitems:
+    - output: web,pdf
+      title: unconfigured/nodes
+      url: /rest-api-guide/unconfigured-nodes/unconfigured_nodes.html
+    output: web,pdf
+    title: Unconfigured Nodes (unconfigured)
+    url: /rest-api-guide/unconfigured-nodes/
   - folderitems:
     - output: web,pdf
       title: unconfigured/nodes
@@ -1105,6 +1202,13 @@ entries:
     output: web,pdf
     title: Version (version)
     url: /rest-api-guide/version/
+  - folderitems:
+    - output: web,pdf
+      title: version
+      url: /rest-api-guide/unconfigured-version/version.html
+    output: web,pdf
+    title: Unconfigured Version (version)
+    url: /rest-api-guide/unconfigured-version/
   - folderitems:
     - apiversion: v2
       output: web,pdf

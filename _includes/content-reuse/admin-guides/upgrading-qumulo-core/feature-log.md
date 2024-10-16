@@ -4,6 +4,19 @@ For information about upgrade types for each release, see <a href='mode-referenc
 
 <style>div#toc{height:200px;overflow:auto;}</style>
 
+## Qumulo Core 7.2.3
+{{page.varDownloadsRelnotes}}
+* Added support for read-only Global Namespace functionality between two or more Qumulo clusters.
+* Made CNQ on Azure available on Qumulo Nexus.
+* Added support for three-node clusters to CNQ on Azure and CNQ on AWS.
+* Added support for CNQ clusters that adjust to multi-AZ configurations automatically.
+* Improved S3 Object Lock functionality and made changes to corresponding S3 API actions.
+* Made improvements in S3 Versioning API actions and the `CopyObject` S3 API action.
+* Allowed users without administrative role-based access control (RBAC) roles to modify S3 access keys and made changes to corresponding `qq` CLI commands.
+* Updated some of the error types and HTTP status codes that appear during cluster membership operations.
+* Added REST API resources and `qq` CLI commands for creation and membership change of CNQ clusters.
+* Resolved an issue with an SSL configuration change while the S3 server is in plaintext mode.
+
 ## Qumulo Core 7.2.2
 {{page.varDownloadsRelnotes}}
 * Configured Qumulo Core to permit more than 10 floating IP addresses for each node

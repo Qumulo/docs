@@ -87,6 +87,9 @@ entries:
     - output: web,pdf
       title: add_nodes
       url: /qq-cli-command-guide/add/add_nodes.html
+    - output: web,pdf
+      title: add_object_storage_uris
+      url: /qq-cli-command-guide/add/add_object_storage_uris.html
     output: web,pdf
     title: add
     url: /qq-cli-command-guide/add/
@@ -243,6 +246,13 @@ entries:
     output: web,pdf
     title: cluster
     url: /qq-cli-command-guide/cluster/
+  - folderitems:
+    - output: web,pdf
+      title: create_object_backed_cluster
+      url: /qq-cli-command-guide/create/create_object_backed_cluster.html
+    output: web,pdf
+    title: create
+    url: /qq-cli-command-guide/create/
   - folderitems:
     - output: web,pdf
       title: current_activity_get
@@ -470,6 +480,12 @@ entries:
     url: /qq-cli-command-guide/ftp/
   - folderitems:
     - output: web,pdf
+      title: get_object_backed_nodes
+      url: /qq-cli-command-guide/get/get_object_backed_nodes.html
+    - output: web,pdf
+      title: get_object_storage_uris
+      url: /qq-cli-command-guide/get/get_object_storage_uris.html
+    - output: web,pdf
       title: get_vpn_keys
       url: /qq-cli-command-guide/get/get_vpn_keys.html
     output: web,pdf
@@ -578,6 +594,13 @@ entries:
     output: web,pdf
     title: metrics
     url: /qq-cli-command-guide/metrics/
+  - folderitems:
+    - output: web,pdf
+      title: modify_object_backed_cluster_membership
+      url: /qq-cli-command-guide/modify/modify_object_backed_cluster_membership.html
+    output: web,pdf
+    title: modify
+    url: /qq-cli-command-guide/modify/
   - folderitems:
     - output: web,pdf
       title: monitoring_conf
@@ -722,6 +745,61 @@ entries:
     output: web,pdf
     title: nodes
     url: /qq-cli-command-guide/nodes/
+  - folderitems:
+    - output: web,pdf
+      title: portal_authorize_hub
+      url: /qq-cli-command-guide/portal/portal_authorize_hub.html
+    - output: web,pdf
+      title: portal_create
+      url: /qq-cli-command-guide/portal/portal_create.html
+    - output: web,pdf
+      title: portal_delete_hub
+      url: /qq-cli-command-guide/portal/portal_delete_hub.html
+    - output: web,pdf
+      title: portal_delete_spoke
+      url: /qq-cli-command-guide/portal/portal_delete_spoke.html
+    - output: web,pdf
+      title: portal_evict_data
+      url: /qq-cli-command-guide/portal/portal_evict_data.html
+    - output: web,pdf
+      title: portal_evict_link
+      url: /qq-cli-command-guide/portal/portal_evict_link.html
+    - output: web,pdf
+      title: portal_evict_tree
+      url: /qq-cli-command-guide/portal/portal_evict_tree.html
+    - output: web,pdf
+      title: portal_get_eviction_settings
+      url: /qq-cli-command-guide/portal/portal_get_eviction_settings.html
+    - output: web,pdf
+      title: portal_get_hub
+      url: /qq-cli-command-guide/portal/portal_get_hub.html
+    - output: web,pdf
+      title: portal_get_spoke
+      url: /qq-cli-command-guide/portal/portal_get_spoke.html
+    - output: web,pdf
+      title: portal_list
+      url: /qq-cli-command-guide/portal/portal_list.html
+    - output: web,pdf
+      title: portal_list_hubs
+      url: /qq-cli-command-guide/portal/portal_list_hubs.html
+    - output: web,pdf
+      title: portal_list_spokes
+      url: /qq-cli-command-guide/portal/portal_list_spokes.html
+    - output: web,pdf
+      title: portal_modify_hub
+      url: /qq-cli-command-guide/portal/portal_modify_hub.html
+    - output: web,pdf
+      title: portal_modify_spoke
+      url: /qq-cli-command-guide/portal/portal_modify_spoke.html
+    - output: web,pdf
+      title: portal_propose_hub
+      url: /qq-cli-command-guide/portal/portal_propose_hub.html
+    - output: web,pdf
+      title: portal_set_eviction_settings
+      url: /qq-cli-command-guide/portal/portal_set_eviction_settings.html
+    output: web,pdf
+    title: portal
+    url: /qq-cli-command-guide/portal/
   - folderitems:
     - output: web,pdf
       title: protection_status_get
@@ -1088,11 +1166,17 @@ entries:
       title: ssl_get_ca_certificate
       url: /qq-cli-command-guide/ssl/ssl_get_ca_certificate.html
     - output: web,pdf
+      title: ssl_get_ciphers
+      url: /qq-cli-command-guide/ssl/ssl_get_ciphers.html
+    - output: web,pdf
       title: ssl_modify_ca_certificate
       url: /qq-cli-command-guide/ssl/ssl_modify_ca_certificate.html
     - output: web,pdf
       title: ssl_modify_certificate
       url: /qq-cli-command-guide/ssl/ssl_modify_certificate.html
+    - output: web,pdf
+      title: ssl_modify_ciphers
+      url: /qq-cli-command-guide/ssl/ssl_modify_ciphers.html
     output: web,pdf
     title: ssl
     url: /qq-cli-command-guide/ssl/

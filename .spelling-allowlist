@@ -216,6 +216,8 @@ Multitenancy
 Multithreading
 MyRoleName
 namespace
+namespace
+Namespace
 natively
 Netlogon
 netmask
@@ -289,8 +291,10 @@ RBSU
 RDP
 realmd
 Rebalancing
+recache
 redownloading
 reencodes
+refetched
 reprotect
 reregister
 RESTful

@@ -43,7 +43,9 @@ methods:
         : {\n      \"description\": \"Remaining number of directories in the tree\
         \ being deleted.\",\n      \"type\": \"string\"\n    },\n    \"remaining_files\"\
         : {\n      \"description\": \"Remaining number of non-directory files in the\
-        \ tree being deleted.\",\n      \"type\": \"string\"\n    }\n  }\n}"
+        \ tree being deleted.\",\n      \"type\": \"string\"\n    },\n    \"last_error_message\"\
+        : {\n      \"description\": \"The message from the last error that caused\
+        \ this job to be aborted.\",\n      \"type\": \"string\"\n    }\n  }\n}"
     responses:
     - code: '200'
       description: Return value on success

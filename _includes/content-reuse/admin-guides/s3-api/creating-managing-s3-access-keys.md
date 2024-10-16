@@ -1,12 +1,13 @@
 {% include note.html content="You can configure an S3 bucket to allow [read-only, anonymous access](managing-access-to-s3-buckets.html#enabling-anonymous-access). This approach requires no credentials but limits users to non-modifying operations." %}
 
+In Qumulo Core 7.2.3 (and higher), system users can list, create, and delete S3 access keys for their [identities](#identity).
 
 ## Prerequisites
-Managing S3 access keys requires the following [role-based access control (RBAC)](../authorization-qumulo-core/managing-role-based-access-control-rbac.html) privileges:
+Administrative control over S3 access keys requires the following [role-based access control (RBAC)](../authorization-qumulo-core/managing-role-based-access-control-rbac.html) privileges:
 
-  * `PRIVILEGE_S3_BUCKETS_WRITE`: Create and delete S3 access keys
-  
-  * `PRIVILEGE_S3_BUCKETS_READ`: List S3 access keys
+* `PRIVILEGE_S3_BUCKETS_WRITE`: Create or delete any S3 access keys on a Qumulo cluster
+
+* `PRIVILEGE_S3_BUCKETS_READ`: List all S3 access keys on a Qumulo cluster
 
 
 ## How S3 Access Keys Work in Qumulo Core
@@ -24,7 +25,7 @@ An _access key_ (or _access key pair)_ is comprised of an S3 access key ID and a
 
 * <a id="secret-access-key"></a>
 
-  The _secret access key_ (or _secret key)_ is the private component of an S3 access key pair. The client uses the secret access key to sign requests and the server uses the secret access key to validate request signatures.
+  The _secret access key_ (or _secret key_) is the private component of an S3 access key pair. The client uses the secret access key to sign requests. The server uses the secret access key to validate request signatures.
 
 {{site.data.alerts.important}}
 <ul>
@@ -38,14 +39,14 @@ Qumulo Core creates an access key pair whenever an authorized user requests it. 
 The way in which Qumulo Core access keys let you access your Qumulo cluster makes the process similar to  the way in which [IAM Access Keys](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html) let you access Amazon S3 resources. For this reason, applications that access objects stored in a Qumulo cluster can use the Qumulo S3 API similarly to the native Amazon S3 API.
 
 ### How S3 Access Keys work with Identities
-An S3 access key doesn't grant any additional permissions. It associates an S3 API request with a specific [identity](#identity) that the Qumulo cluster knows.
+An S3 access key doesn't grant any additional permissions. It associates an S3 API request with a specific [identity](#identity) known to the Qumulo cluster.
 
 When Qumulo Core processes a request, it evaluates permissions by using the Qumulo ACL (QACL) mechanism that operates like the access control list (ACL) mechanism that all file system protocols use. When the QACL grants or denies permissions to an associated identity, it also grants or denies the same permissions to the request being processed.
 
 For more information, see [Managing Access to S3 Buckets in a Qumulo Cluster](managing-access-to-s3-buckets.html).
 
 ### How Qumulo Core Stores S3 Access Keys
-To authenticate S3 API requests, Qumulo Core retrieves existing access key pairs that it stores securely as configuration metadata in your Qumulo cluster. Qumulo Core encrypts secret access keys on disk and holds decrypted secret access keys in memory only while it processes a request.
+To authenticate S3 API requests, Qumulo Core retrieves existing access key pairs that it stores securely as configuration metadata in your Qumulo cluster. Qumulo Core encrypts secret access keys on disk and holds decrypted secret access keys in memory (only while it processes a request).
 
 {% capture secretAccessKeysOneTime %}Because (unlike _secret access keys)_ your _access key IDs_ aren't a cryptographic secret, Qumulo Core _can_ log and display access key IDs. {{site.s3.permissions.secretAccessKeys}}{% endcapture %}
 {% include important.html content=secretAccessKeysOneTime %}
@@ -66,13 +67,43 @@ For more information, see [Listing S3 Access Keys for a Qumulo Cluster](#listing
 ## Creating S3 Access Keys for a Qumulo Cluster
 To make S3 API requests to a Qumulo cluster as a specific user, you must create an S3 access key pair for that user [identity](#identity) {{site.s3.permissions.APIorCLI}}.
 
-To create S3 access keys, you must have an administrator account or have {{site.s3.permissions.bucketsWrite}}.
-
-### To Create an Access Key by Using the qq CLI
-To create an S3 access key for a particular user [identity](#identity), run the {% include qq.html command="s3_create_access_key" %} command and specify an identity. For example:
+### To Create an Access Key for Your Own User Identity by Using the qq CLI
+Run the {% include qq.html command="s3_create_access_key" %} command and use the `--self` flag. For example:
 
 ```bash
-$ qq s3_create_access_key my_identity
+$ qq s3_create_access_key --self
+```
+
+{{site.exampleOutput}}
+
+{% capture createAccessKeyResponse %}{
+  "access_key_id": "{{site.exampleAWSaccessKeyID}}",
+  "creation_time": "2022-12-12T21:37:53.553457928Z",
+  "owner": {
+    "auth_id": "501",
+    "domain": "LOCAL",
+    "gid": null,
+    "name": "guest",
+    "sid": "{{site.exampleSID1}}",
+    "uid": null
+  },
+  "secret_access_key": "{{site.exampleAWSsecretKey}}"
+}{% endcapture %}
+
+```json
+{{createAccessKeyResponse}}
+```
+
+{% capture noRecover %}{{site.s3.permissions.secretAccessKeys}}{% endcapture %}
+{% include important.html content=noRecover %}
+
+### To Create an Access Key for Another User Identity by Using the qq CLI
+To create S3 access keys for another user [identity](#identity), you must have an administrator account or have the {{site.s3.permissions.bucketsWrite}}.
+
+To create an S3 access key for a particular user , run the {% include qq.html command="s3_create_access_key" %} command and specify an identity. For example:
+
+```bash
+$ qq s3_create_access_key ANOTHER_IDENTITY
 ```
 
 You can specify an identity by using:
@@ -98,24 +129,22 @@ You can specify an identity by using:
 {{site.exampleOutput}}
 
 {% capture createAccessKeyResponse %}{
-  "access_key_id": "{{site.exampleAWSaccessKeyID}}",
+  "access_key_id": "{{site.exampleAWSaccessKeyID2}}",
   "creation_time": "2022-12-12T21:37:53.553457928Z",
   "owner": {
     "auth_id": "501",
     "domain": "LOCAL",
     "gid": null,
     "name": "guest",
-    "sid": "S-0-1-23-4567890123-456789012-345678901-234",
+    "sid": "{{site.exampleSID1}}",
     "uid": null
   },
-  "secret_access_key": "{{site.exampleAWSsecretKey}}"
+  "secret_access_key": "{{site.exampleAWSsecretKey2}}"
 }{% endcapture %}
 
 ```json
 {{createAccessKeyResponse}}
 ```
-
-{{page.varResultKeys}}
 
 {% capture noRecover %}{{site.s3.permissions.secretAccessKeys}}{% endcapture %}
 {% include important.html content=noRecover %}
@@ -134,7 +163,7 @@ For example:
 ```json
 {
   "user": {
-    "sid": "S-0-1-23-4567890123-456789012-345678901-234"
+    "sid": "{{site.exampleSID1}}"
   }
 }
 ```
@@ -145,16 +174,11 @@ For example:
 {{createAccessKeyResponse}}
 ```
 
-{{page.varResultKeys}}
-
-{% capture noRecover %}{{site.s3.permissions.secretAccessKeys}}{% endcapture %}
 {% include important.html content=noRecover %}
 
 <a id="listing-s3-access-keys"></a>
 ## Listing S3 Access Keys for a Qumulo Cluster
-You can list every S3 access key that your Qumulo cluster knows, {{page.varKeyDoAlso}}, {{site.s3.permissions.APIorCLI}}.
-
-To list S3 access keys, you must have {{site.s3.permissions.bucketsRead}}.
+You can list every S3 access key known to your Qumulo cluster, {{page.varKeyDoAlso}}, {{site.s3.permissions.APIorCLI}}. The {{site.s3.permissions.bucketsRead}} is required.
 
 {% include note.html content="Qumulo Core doesn't list access keys in any particular order. To sort keys according to fields such as `creation_time` or `owner` you must process or filter the response." %}
 
@@ -181,9 +205,13 @@ To list S3 access keys, you must have {{site.s3.permissions.bucketsRead}}.
 }
 ```{% endcapture %}
 
-### To List S3 Access Keys by Using the qq CLI
+### To List S3 Access Keys for Your Own User Identity by Using the qq CLI
 
-* To list the S3 access keys that your Qumulo cluster knows, run the {% include qq.html command="s3_list_access_keys" %}:
+* To list the S3 access keys for your user known to your Qumulo cluster, run the {% include qq.html command="s3_list_access_keys" %}:
+
+  ```bash
+  $ qq s3_list_access_keys  --self
+  ```
 
   {{site.exampleOutput}} {{site.s3.permissions.timesUTC}}
 
@@ -195,12 +223,31 @@ To list S3 access keys, you must have {{site.s3.permissions.bucketsRead}}.
 
 * For JSON output, use the `--json` flag.
 
-  {{site.exampleOutput}} The command returns a single JSON object that contains the combined responses from calls to the `/v1/s3/access-keys/` Qumulo Core REST API endpoint. 
+  {{site.exampleOutput}} The command returns a single JSON object that contains the combined responses from calls to the `/v1/s3/access-keys/` Qumulo Core REST API endpoint.
+
+{{listAccessKeysResponse}}
+
+### To List S3 Access Keys for All User Identities by Using the qq CLI
+The {{site.s3.permissions.bucketsRead}} is required.
+
+* To list all S3 access keys on your Qumulo cluster, run the {% include qq.html command="s3_list_access_keys" %} command.
+
+  {{site.exampleOutput}} {{site.s3.permissions.timesUTC}}
+
+  ```
+  access_key_id         owner  creation_time
+  ====================  =====  ==============================
+  000000000001fEXAMPLE  Guest  2022-12-12T21:37:53.553457928Z
+  ```
+
+* For JSON output, use the `--json` flag.
+
+  {{site.exampleOutput}} The command returns a single JSON object that contains the combined responses from calls to the `/v1/s3/access-keys/` Qumulo Core REST API endpoint.
 
 {{listAccessKeysResponse}}
 
 ### To List S3 Access Keys by Using the Qumulo Core REST API
-To list the S3 access keys that your Qumulo cluster knows, send a `GET` request to the `/v1/s3/access-keys/` endpoint.
+To list all S3 access keys known to your Qumulo cluster, send a `GET` request to the `/v1/s3/access-keys/` endpoint.
 
 {% capture restrictResults %}To restrict the number of returned results, up to the maximum of {{page.varListMax}} access keys (this is the default limit), include the optional `limit` query parameter in the request.{% endcapture %}
 {% include note.html content=restrictResults %}
@@ -210,9 +257,7 @@ To list the S3 access keys that your Qumulo cluster knows, send a `GET` request 
 {{listAccessKeysResponse}}
 
 ## Revoking S3 Access Keys for a Qumulo Cluster
-To revoke an S3 access key, you must delete the access key from your Qumulo cluster. You can delete an S3 access key {{site.s3.permissions.APIorCLI}}.
-
-To revoke an access key, you must have {{site.s3.permissions.bucketsWrite}}.
+To revoke an S3 access key, you must delete the access key from your Qumulo cluster {{site.s3.permissions.APIorCLI}}. The {{site.s3.permissions.bucketsWrite}} is required.
 
 ### To Delete an S3 Access Key by Using the qq CLI
 Run the `qq s3_delete_access_key` command and specify the access key ID. For example:
@@ -235,7 +280,8 @@ To append the trusted base DN to the base DN in use&mdash;with a semicolon (`;`)
 
 ```bash
 $ qq ad_reconfigure \
-  --base-dn 'CN=Users,DC=joined_domain,DC=example,DC=com;CN=Users,DC=trusted_domain,DC=example,DC=com'
+  --base-dn 'CN=Users, DC=joined_domain,DC=example,DC=com;\
+  CN=Users,DC=trusted_domain,DC=example,DC=com'
 ```
 
 For more information, see [Configuring Cross-Domain Active Directory Trusts](../kerberos/kerberos-configuring-cross-domain-active-directory-trusts.html)

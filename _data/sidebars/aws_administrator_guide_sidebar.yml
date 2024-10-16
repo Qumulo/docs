@@ -166,6 +166,23 @@ entries:
       url: /aws-administrator-guide/network-configuration/configuring-round-robin-dns-windows-server.html
       output: web, pdf
 
+  - title: Global Namespace
+    url: /aws-administrator-guide/global-namespace/index.html
+    output: web, pdf
+    folderitems:
+
+    - title: Enabling a Global Namespace
+      url: /aws-administrator-guide/global-namespace/how-portal-creation-enables-global-namespace.html
+      output: web, pdf
+
+    - title: Configuring a Portal Relationship
+      url: /aws-administrator-guide/global-namespace/configuring-portal-relationship.html
+      output: web, pdf
+
+    - title: Configuring Cache Management
+      url: /aws-administrator-guide/global-namespace/configuring-cache-management-for-spoke-portals.html
+      output: web, pdf
+
   - title: Web UI
     url: /aws-administrator-guide/web-ui/index.html
     output: web, pdf
@@ -383,6 +400,10 @@ entries:
 
     - title: Managing S3 Bucket Versioning
       url: /aws-administrator-guide/s3-api/managing-s3-bucket-versioning.html
+      output: web, pdf
+
+    - title: Managing Object Lock
+      url: /aws-administrator-guide/s3-api/managing-object-lock-for-s3-buckets.html
       output: web, pdf
 
     - title: Supported Functionality and Limits

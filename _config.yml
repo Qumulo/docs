@@ -45,7 +45,7 @@ exclude:
   - Gemfile.lock
   - createtag
   - var # Deleting this line will cause tests to fail
-  - vendor # Deleting this line will cause tests to fail                 
+  - vendor # Deleting this line will cause tests to fail
 # these are the files and directories that jekyll will exclude from the build
 
 feedback_subject_line: Qumulo Documentation
@@ -165,7 +165,9 @@ exampleTooWide: The following example is too wide for the page. To explore this 
 exampleUsernameUppercase1: JSMITH
 exampleClusterNameUppercase1: MYCLUSTER
 exampleAWSaccessKeyID: AKIAIOSFODNN7EXAMPLE
+exampleAWSaccessKeyID2: AKIAJKSBDMSS8EXAMPLE
 exampleAWSsecretKey: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+exampleAWSsecretKey2: aGsfgDFdfEGWD/D5DWERF/sRsRdsXQEXAMPLEKEY
 examplePassword: HTEj0kGIOsNOAA0
 exampleKeyID: abcd-1234-efgh-5678
 exampleIP0: 203.0.113.0
@@ -306,7 +308,7 @@ fprx2540m7followDocs: "Follow the instructions in the Fujitsu Upgrade and Mainte
 
 q1uag1Drives:
   frontStorageBays: There are 12 2.5" hot-swap NVMe drives attached with four screws to trays in front storage bays. For more information, see <a href="https://dlcdnets.asus.com/pub/ASUS/server/RS500A-E12-RS12U/Manual/E21507_RS500A-E12-RS12U_UM_V2_WEB.pdf?model=RS500A-E12-RS12U#page=45">Installing a 2.5-Inch Storage Device to a Front Storage Bay</a> in the ASUS documentation.
-  internalStorageBays: There are 4 2.5" hot-swap NVMe drives in snap-in, toolless trays in internal storage bays. For more information, see <a href="https://dlcdnets.asus.com/pub/ASUS/server/RS500A-E12-RS12U/Manual/E21507_RS500A-E12-RS12U_UM_V2_WEB.pdf?model=RS500A-E12-RS12U#page=46">Installing a 2.5-Inch Storage Device to an Internal Storage Bay</a> in the ASUS documentation. 
+  internalStorageBays: There are 4 2.5" hot-swap NVMe drives in snap-in, toolless trays in internal storage bays. For more information, see <a href="https://dlcdnets.asus.com/pub/ASUS/server/RS500A-E12-RS12U/Manual/E21507_RS500A-E12-RS12U_UM_V2_WEB.pdf?model=RS500A-E12-RS12U#page=46">Installing a 2.5-Inch Storage Device to an Internal Storage Bay</a> in the ASUS documentation.
   internalBootDrive: The boot drive is located at the M.2 expansion slot at connector NGFF1. For more information, see <a href="https://dlcdnets.asus.com/pub/ASUS/server/RS500A-E12-RS12U/Manual/E21507_RS500A-E12-RS12U_UM_V2_WEB.pdf?model=RS500A-E12-RS12U#page=58">Installing M.2 (NGFF) Cards</a> in the ASUS documentation.
 
 qumuloalerts:
@@ -338,8 +340,8 @@ s3:
   permissions:
     APIorCLI: by using the Qumulo REST API or <code>qq</code> CLI
     directAPI: You can also use the S3 API directly.
-    bucketsRead: the <code>PRIVILEGE_S3_BUCKETS_READ</code> privilege
-    bucketsWrite: the <code>PRIVILEGE_S3_BUCKETS_WRITE</code> privilege
+    bucketsRead: <code>PRIVILEGE_S3_BUCKETS_READ</code> privilege
+    bucketsWrite: <code>PRIVILEGE_S3_BUCKETS_WRITE</code> privilege
     timesUTC: All times are in the UTC time zone.
     secretAccessKeys: After Qumulo Core initially creates your secret access keys, it never logs or displays them again. If you lose your secret access key, it isn't possible to recover it and you must create a new access key pair.
   docs:
@@ -368,7 +370,9 @@ s3:
     ListObjects: https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjects.html
     ListObjectsV2: https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjectsV2.html
     ListParts: https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListParts.html
+    PutLegalHold: https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectLegalHold.html
     PutObject: https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html
+    PutObjectRetention: https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectRetention.html
     UploadPart: https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html
 
 azure:
@@ -376,7 +380,7 @@ azure:
   qumuloOnAzureShort: ANQ
   emailAzure: email <a href="mailto:azure@qumulo.com">Azure Native Qumulo Support</a>
   pricingCalculator: For more information about pay-as-you-go price estimates, see the <a href="https://azure.qumulo.com/calculator">Pricing and Performance Calculator</a>.
-  detailedDeploymentInstructions: For detailed instructions, see <a href="deploying-instance-azure-native-qumulo.html">Deploying and Viewing Information about Your Azure Native Qumulo Instance</a>. 
+  detailedDeploymentInstructions: For detailed instructions, see <a href="deploying-instance-azure-native-qumulo.html">Deploying and Viewing Information about Your Azure Native Qumulo Instance</a>.
   anqColdImpact: The storage class has an impact on billing, metering, and how the system stores data.
 
 aws:
@@ -414,6 +418,23 @@ monitoring:
 
 changeNotify:
   useRESTnotSMB: Qumulo provides REST access to the same [change notification system](how-file-system-change-notifications-work.html) that backs SMB2 `CHANGE_NOTIFY`. Because the notification interface and types are easier to work with compared to SMB2, we recommend programming by using REST rather than SMB `CHANGE_NOTIFY`.
+
+gns:
+  uniquePortalIDs: Portal IDs are unique within each cluster. It isn&apos;t possible to use a portal ID from a spoke portal to identify the other side of the relationship, or the other way around.
+  spokePortalsReadOnly: To ensure strict consistency with the hub portal, all file system objects under the spoke portal root directory are read-only.
+  ephemeralCache: The cache of a spoke portal is inherently ephemeral. You must not use it in place of data replication or backup.
+  firstTimeAccess: Although first-time data access to data in the spoke portal root directory is subject to round-trip latency between the spoke portal host cluster and the hub portal host cluster, subsequent access to the data is faster. Making changes to data under the hub portal root directory is also subject to latency when the system recaches these changes upon access.
+  spokePortalInitiates: The spoke portal initiates the creation of a hub portal.
+  dirOnCluster: A directory on a cluster defines the _root directory_ for
+  adminAccess: Only system administrators can access the files and directories that cluster-local users own on the hub portal host cluster.
+  spokeConnectivity: A spoke portal is inaccessible without full connectivity between the two clusters in a portal relationship.
+  versionRequirement: A spoke portal is inaccessible if the hub portal host cluster and the spoke portal host cluster run different versions of Qumulo Core.
+  singleRelationship: A Qumulo cluster can be a portal host for any number of hub portals or for a single spoke portal. It isn&apos;t possible for a Qumulo cluster to be a host for spoke and hub portals simultaneously.
+  upgradeCacheDrop: Future Qumulo Core upgrades might remove cached data from the spoke portal, which can result in a temporary increase in data access latency.
+  protocolLimitations: It isn&apos;t possible to create a spoke portal on a cluster with the NFSv4.1, FTP, or S3 protocols enabled or to enable these protocols on an existing spoke potal host cluster.
+  protocolLocking: Protocol locks don&apos;t synchronize between the hub portal host cluster and the spoke portal host cluster. Specifically, NFSv3 or NLM byte-range locks, SMB share-mode locks, SMB byte-range locks, and SMB leases function independently on the two clusters.
+  changeNotify: Qumulo Core doesn&apos;t send SMB2 `CHANGE_NOTIFY` messages for changes within the spoke portal root directory.
+  quorumBounce: This action makes both clusters in the portal relationship unavailable for less than 30 seconds while the systems reconfigure.
 
 RBACoverrides: For the S3 API and Qumulo REST API, if a user has the <a href="https://care.qumulo.com/hc/en-us/articles/360036591633">role-based access control privilege (RBAC)</a> to perform an API action, Qumulo Core <a href="#rbac-overrides">ignores the access policy</a> and permits the API action.
 

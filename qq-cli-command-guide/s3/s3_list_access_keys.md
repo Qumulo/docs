@@ -13,6 +13,10 @@ optional_options:
     access tokens, must be a user.
   name: --user
   required: false
+- alternate: []
+  help: List only access keys that target yourself.
+  name: --self
+  required: false
 permalink: /qq-cli-command-guide/s3/s3_list_access_keys.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar
@@ -20,7 +24,7 @@ summary: This section explains how to use the <code>qq s3_list_access_keys</code
   command.
 synopsis: List S3 access keys
 title: qq s3_list_access_keys
-usage: qq s3_list_access_keys [-h] [--json] [--user USER]
+usage: qq s3_list_access_keys [-h] [--json] [--user USER | --self]
 zendesk_source: qq CLI Command Guide
 
 ---

@@ -291,7 +291,9 @@ details  summary {
     display: none;
 }
 
-/* Weird PDF-only regression for a Tip inside of a step
-.post-content .alert ul li {
+ol li div.alert.alert-success ul li, 
+ol li div.alert.alert-info ul li,
+ol li div.alert.alert-warning ul li,
+ol li div.alert.alert-danger ul li {
     margin-left: 40px !important;
-}*/
+}

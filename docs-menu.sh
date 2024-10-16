@@ -147,6 +147,13 @@ regen_cli_docs() {
     done
 }
 
+# Regenerate API documentation
+regen_api_docs() {
+    check_src_repo
+    echo "Building API documentation from the Music cluster..."
+    python3 gen-api.py
+}
+
 # Build HTML documentation by using Jekyll
 build_html_docs() {
     echo "Building HTML documentation..."
@@ -282,20 +289,21 @@ while true; do
     echo
     echo "1.  🚧 Rebuild docs-builder container"
     echo "2.  ⚙️  Regenerate CLI documentation"
-    echo "3.  🆕 List CLI documentation with appended content"
-    echo "4.  ⚙️  Build HTML documentation"
-    echo "5.  ⚙️  Build PDF documentation"
-    echo "6.  🖥️  Only serve HTML documentation locally"
-    echo "7.  🖥️  Build documentation and serve it locally"
-    echo "8.  🖥️  Build documentation and serve it locally with LiveReload (can be unstable)"
-    echo "9.  📋 Check documentation for link, script, and image errors"
-    echo "10. 📋 Check documentation for spelling errors"
-    echo "11. 🧹 Sweep Toolchain"
-    echo "12. 🔍 Ingest docs.qumulo.com into Vectara"
-    echo "13. 🔍 Ingest care.qumulo.com into Vectara"
-    echo "14. 🔍 Ingest qumulo.com into Vectara"
-    echo "15. 📋 Check ingestion status"
-    echo "16. ❌ Find unused .js scripts"
+    echo "3.  ⚙️  Regenerate API documentation"
+    echo "4.  🆕 List CLI documentation with appended content"
+    echo "5.  ⚙️  Build HTML documentation"
+    echo "6.  ⚙️  Build PDF documentation"
+    echo "7.  🖥️  Only serve HTML documentation locally"
+    echo "8.  🖥️  Build documentation and serve it locally"
+    echo "9.  🖥️  Build documentation and serve it locally with LiveReload (can be unstable)"
+    echo "10.  📋 Check documentation for link, script, and image errors"
+    echo "11. 📋 Check documentation for spelling errors"
+    echo "12. 🧹 Sweep Toolchain"
+    echo "13. 🔍 Ingest docs.qumulo.com into Vectara"
+    echo "14. 🔍 Ingest care.qumulo.com into Vectara"
+    echo "15. 🔍 Ingest qumulo.com into Vectara"
+    echo "16. 📋 Check ingestion status"
+    echo "17. ❌ Find unused .js scripts"
     echo "q.  👋 Quit"
     echo
     read -p $'\033[1;33mWhat would you like to do? \033[0m' choice
@@ -303,20 +311,21 @@ while true; do
     case $choice in
         1) rebuild_container ;;
         2) regen_cli_docs ;;
-        3) find_modified_cli ;;
-        4) build_html_docs ;;
-        5) build_pdf_docs ;;
-        6) only_serve_docs_locally_python ;;
-        7) build_serve_docs_locally_python ;;
-        8) build_serve_docs_locally_jekyll ;;
-        9) check_docs_errors ;;
-        10) check_spelling_errors ;;
-        11) sweep_toolchain ;;
-        12) ingest_docs_portal ;;
-        13) ingest_care_portal ;;
-        14) ingest_corp_site ;;
-        15) check_ingestion_status ;;
-        16) find_unused_scripts ;;
+        3) regen_api_docs ;;
+        4) find_modified_cli ;;
+        5) build_html_docs ;;
+        6) build_pdf_docs ;;
+        7) only_serve_docs_locally_python ;;
+        8) build_serve_docs_locally_python ;;
+        9) build_serve_docs_locally_jekyll ;;
+        10) check_docs_errors ;;
+        11) check_spelling_errors ;;
+        12) sweep_toolchain ;;
+        13) ingest_docs_portal ;;
+        14) ingest_care_portal ;;
+        15) ingest_corp_site ;;
+        16) check_ingestion_status ;;
+        17) find_unused_scripts ;;
         q) exit ;;
         *) echo "You must enter a valid option." ;;
     esac

@@ -18,7 +18,7 @@ optional_options:
   required: false
 - alternate: []
   help: Create the bucket with versioning and object locking enabled.
-  name: --object-lock-enabled
+  name: --enable-object-lock
   required: false
 permalink: /qq-cli-command-guide/s3/s3_add_bucket.html
 positional_options: []
@@ -26,7 +26,7 @@ sidebar: qq_cli_command_reference_sidebar
 summary: This section explains how to use the <code>qq s3_add_bucket</code> command.
 synopsis: Create an S3 bucket
 title: qq s3_add_bucket
-usage: qq s3_add_bucket [-h] --name NAME [--fs-path FS_PATH] [--create-fs-path] [--object-lock-enabled]
+usage: qq s3_add_bucket [-h] --name NAME [--fs-path FS_PATH] [--create-fs-path] [--enable-object-lock]
 zendesk_source: qq CLI Command Guide
 
 ---
