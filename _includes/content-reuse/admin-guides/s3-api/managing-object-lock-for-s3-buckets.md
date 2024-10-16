@@ -21,13 +21,6 @@ You can configure Object Lock for an S3 Bucket in three ways:
 
 It isn't possible to change any data or attributes of an object with a valid lock (with a manual or default retention period) or with a legal hold by using any of the protocols which Qumulo Core supports.
 
-{{site.data.alerts.note}}
-<ul>
-  <li>Because Qumulo Core uses hardlinks for changing the location of S3 bucket versions, it is possible to remove links from locked objects through any protocol. However, attempting to delete the last remaining link to a locked object results in a read-only error.</li>
-  <li>Even if a cross-protocol user deletes the hardlink that points to the latest version of a locked object, the object remains accessible by its version ID.</li>
-</ul>
-{{site.data.alerts.end}}
-
 
 ## Enabling S3 Object Lock Configuration
 You can configure S3 bucket locking {{site.s3.permissions.APIorCLI}}. For more information, see {% include qq.html command="s3_modify_bucket" %} and {% include qq.html command="s3_add_bucket" %} in the {{site.guides.cli}}. {{site.s3.permissions.directAPI}}
