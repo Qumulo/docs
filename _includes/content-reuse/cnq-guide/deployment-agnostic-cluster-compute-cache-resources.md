@@ -12,7 +12,6 @@ This section explains how to deploy compute and cache resources for a Qumulo clu
 {% endif %}  
   <li>If you plan to deploy multiple Qumulo clusters, give the <code>q_cluster_name</code> variable a unique name for each cluster.</li>
   <li>(Optional) If you use Amazon Route 53 <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/hosted-zones-private.html">private hosted zones</a>, give the <code>q_fqdn_name</code> variable a unique name for each cluster</li>
-  <li>Familiarize yourself with <a href="#how-the-provisioner-works">how the {{site.aws.cnqAWSshort}} Provisioner works</a> and don't interfere with its operation.</li>
 </ul>
 {{site.data.alerts.end}}
 
