@@ -70,9 +70,9 @@ This section explains how to deploy the S3 buckets that act as persistent storag
 
       Terraform creates resources according the execution plan and displays:
 
-      * The message `Apply complete! Resources: <x> added, 0 changed, 0 destroyed.`
+      * The `Apply complete!` message
         
-      * The names of the S3 buckets
+      * The names of the create S3 buckets
         
       * Your deployment's unique name
   
@@ -81,6 +81,8 @@ This section explains how to deploy the S3 buckets that act as persistent storag
       For example:
      
       ```
+      Apply complete! Resources: 15 added, 0 changed, 0 destroyed.
+      
       Outputs:
 
       bucket_names = [
@@ -90,7 +92,6 @@ This section explains how to deploy the S3 buckets that act as persistent storag
         "{{site.exampleBucketName4}}",
       ]
       deployment_unique_name = "{{site.cnq.deploymentUniqueNameExample}}"
-      prevent_destroy = true
-      soft_capacity_limit = "500 TB"
+      ...
       ```
 {% endif %}
