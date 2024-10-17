@@ -33,7 +33,7 @@ This section lists the {{site.aws.cnqAWSshort}} limits.
 
 * **24-Node Clusters (CloudFormation):** Although the {{site.cnqLong}} architecture can scale to a high number of nodes, CloudFormation deployments of {{site.aws.cnqAWSshort}} are limited to a maximum of 24 nodes. For more information, {{site.contactQumuloCare}}.
 
-* **Elastic Block Storage (EBS) gp3 EBS Volume Optimization:** When you use configurations with IOPS or throughput values greater than the defaults of 125 IOPS and 3000 MiB/s, you must ensure that your EBS volumes complete their optimization when you run performance tasks.
+* **Elastic Block Storage (EBS) gp3 EBS Volume Optimization:** When you use configurations with IOPS or throughput values greater than the defaults of 125 IOPS and 3000 MiB/s, you must ensure that your EBS volumes complete their optimization before you run high performance tasks.
 
   {% include tip.html content="Because all volumes for a Qumulo cluster are tagged with the same deployment name, you can use the deployment name to filter volumes in the AWS Console." %}
 
