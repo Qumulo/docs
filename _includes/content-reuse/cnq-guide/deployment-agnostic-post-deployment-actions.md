@@ -8,7 +8,26 @@ This section describes the common actions you can perform on a {{site.cnqShort}}
 
 {% if page.deployment == "tf" %}
 1. {{site.cnq.changeQnodeCount}} to a new value.
-1. {{site.cnq.runTFapply}}
+1. {{site.cnq.runTFapplyWithFile}}
+1. Terraform displays its execution plan.
+
+   Review the Terraform execution plan and then enter `yes`.
+   
+   Terraform changes resources according the execution plan and displays an additional primary (static) IP for the new node:
+   
+   For example:
+   
+   ```
+   qumulo_primary_ips = [
+     "{{site.exampleIP0}}",
+     "{{site.exampleIP1}}",
+     "{{site.exampleIP2}}",
+     "{{site.exampleIP3}}",
+     "{{site.exampleIP3}}"   
+   ]
+   ...
+   qumulo_private_url_node1 = "https://{{site.exampleEndpointIP0}}"
+   ```   
 {% elsif page.deployment == "cfn" %}
 1. {{site.cnq.logIntoCFN}}
 1. {{site.cnq.cfnUpdateStackComputeCache}}
