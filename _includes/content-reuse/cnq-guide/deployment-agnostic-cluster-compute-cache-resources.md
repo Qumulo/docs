@@ -69,17 +69,17 @@ This section explains how to deploy compute and cache resources for a Qumulo clu
      "{{site.exampleIP42}}",
      "{{site.exampleIP84}}",
      ...
-  ]
-  ...
-  ...
-  qumulo_primary_ips = [
-    "{{site.exampleIP0}}",
-    "{{site.exampleIP1}}",
-    "{{site.exampleIP2}}",
-    "{{site.exampleIP3}}",
-  ]
-  ...
-  qumulo_private_url_node1 = "https://{{site.exampleEndpointIP0}}"
+   ]
+   ...
+   ...
+   qumulo_primary_ips = [
+     "{{site.exampleIP0}}",
+     "{{site.exampleIP1}}",
+     "{{site.exampleIP2}}",
+     "{{site.exampleIP3}}",
+   ]
+   ...
+   qumulo_private_url_node1 = "https://{{site.exampleEndpointIP0}}"
    ```
 
 {% elsif page.deployment == "cfn" %}
@@ -105,5 +105,3 @@ This section explains how to deploy compute and cache resources for a Qumulo clu
    You can use the Web UI to create and manage [NFS exports](../nfs/creating-nfs-export.html), [SMB shares](../smb/creating-smb-share.html), [snapshots](../snapshots/managing-snapshots.html), and [continuous replication relationships](../replicating-data/creating-managing-continuous-replication-relationship.html) You can also [join your cluster to Active Directory](https://care.qumulo.com/s/article/Join-your-Qumulo-Cluster-to-Active-Directory), [configure LDAP](../authentication-qumulo-core/configuring-ldap.html), and [perform many other operations](../).
 
 1. Mount your Qumulo file system by using NFS or SMB and your cluster's DNS name or IP address.
-
-   {% include tip.html content="You can configure DNS names with a Route 53 private hosted zone by using a template." %}
