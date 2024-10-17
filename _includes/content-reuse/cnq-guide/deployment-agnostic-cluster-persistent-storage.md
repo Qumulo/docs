@@ -16,7 +16,7 @@ This section explains how to deploy the S3 buckets that act as persistent storag
 
 1. {{site.cnq.copyDebAndConfig}}
 
-1. Copy {% if page.deployment == "cfn" %}`aws-cloudformation-cnq-&lt;x.y&gt;.zip` to the `my-s3-bucket-name/my-s3-bucket-prefix/aws-cloudformation-cnq` directory.{% elsif page.deployment == "tf" %}`aws-terraform-cnq-&lt;x.y&gt;.zip` to your Terraform environment{% endif %} and decompress it.
+1. Copy {% if page.deployment == "cfn" %}`aws-cloudformation-cnq-<x.y>.zip` to the `my-s3-bucket-name/my-s3-bucket-prefix/aws-cloudformation-cnq` directory.{% elsif page.deployment == "tf" %}`aws-terraform-cnq-<x.y>.zip` to your Terraform environment{% endif %} and decompress it.
 {% if page.deployment == "cfn" %}
 1. Clone the {{page.varRepoLink}} to an S3 bucket and find the URL to `templates/persistent-storage.template.yaml`. For example:
 
@@ -47,7 +47,7 @@ This section explains how to deploy the S3 buckets that act as persistent storag
 
    CloudFormation creates S3 buckets and their stack.
 {% elsif page.deployment == "tf" %}
-1. Navigate to the `aws-terraform-cnq-&lt;x.y&gt;` directory and then run the `terraform init` command.
+1. Navigate to the `aws-terraform-cnq-<x.y>` directory and then run the `terraform init` command.
 
    Terraform prepares its environment and displays the message `Terraform has been successfully initialized!`
 
@@ -71,7 +71,7 @@ This section explains how to deploy the S3 buckets that act as persistent storag
 
       Terraform creates resources according the execution plan and displays:
 
-      * The message `Apply complete! Resources: &lt;x&gt; added, 0 changed, 0 destroyed.`
+      * The message `Apply complete! Resources: <x> added, 0 changed, 0 destroyed.`
         
       * The names of the S3 buckets
         
