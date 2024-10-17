@@ -89,7 +89,7 @@ This section explains how to deploy the S3 buckets that act as persistent storag
         "{{site.exampleBucketName3}}",
         "{{site.exampleBucketName4}}",
       ]
-      deployment_unique_name = "my-deployment-ABCDEFGH1IJ"
+      deployment_unique_name = "{{site.cnq.deploymentUniqueNameExample}}"
       prevent_destroy = true
       soft_capacity_limit = "500 TB"
       ```
