@@ -20,9 +20,13 @@ This section explains how to deploy compute and cache resources for a Qumulo clu
    {% include important.html content="It isn't possible to deploy your cluster without a gateway." %}
 
 {% if page.deployment == "tf" %}
-1. Navigate to the `aws-terraform-cnq-<x.y>` directory.
+1. Navigate to the `aws-terraform-cnq-<x.y>` directory and then run the `terraform init` command.
 
-1. Choose `config-standard.tfvars` or `config-advanced.tfvars` and fill in the values for all required variables. For more information, see `readme.pdf` in `aws-terraform-cnq-<x.y>.zip`.
+   Terraform prepares its environment and displays the message `Terraform has been successfully initialized!`
+
+1. Choose `config-standard.tfvars` or `config-advanced.tfvars` and fill in the values for all variables.
+
+   For more information, see `readme.pdf` in `aws-terraform-cnq-<x.y>.zip`.
 {% elsif page.deployment == "cfn" %}
 1. Log in to the [AWS CloudFormation console](https://console.aws.amazon.com/cloudformation/home).
 
