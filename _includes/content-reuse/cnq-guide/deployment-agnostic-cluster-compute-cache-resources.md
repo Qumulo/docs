@@ -27,6 +27,61 @@ This section explains how to deploy compute and cache resources for a Qumulo clu
 1. Choose `config-standard.tfvars` or `config-advanced.tfvars` and fill in the values for all variables.
 
    For more information, see `README.pdf` in `aws-terraform-cnq-<x.y>.zip`.
+
+1. Run the `terraform apply -var-file config-standard.tfvars` command.
+
+   Terraform displays its execution plan.
+
+1. Review the Terraform execution plan and then enter `yes`.
+
+
+   Terraform creates resources according the execution plan and displays:
+
+   * The `Apply complete!` message
+      
+   * Your deployment's unique name
+  
+   * The names of the created S3 buckets
+     
+   * The floating IP addresses for your Qumulo cluster
+     
+   * The primary (static) IP addresses for your Qumulo cluster
+     
+   * The Qumulo Core Web UI endpoint
+   
+   For example:
+   
+   ```
+   Apply complete! Resources: 62 added, 0 changed, 0 destroyed.
+  
+   Outputs:
+  
+   cluster_provisioned = "Success"
+   deployment_unique_name = "{{site.cnq.deploymentUniqueNameExample}}"
+   ...
+   persistent_storage_bucket_names = tolist([
+     "{{site.exampleBucketName1}}",
+     "{{site.exampleBucketName2}}",
+     "{{site.exampleBucketName3}}",
+     "{{site.exampleBucketName3}}",
+   ])
+   qumulo_floating_ips = [
+     "{{site.exampleIP42}}",
+     "{{site.exampleIP84}}",
+     ...
+  ]
+  ...
+  ...
+  qumulo_primary_ips = [
+    "{{site.exampleIP0}}",
+    "{{site.exampleIP1}}",
+    "{{site.exampleIP2}}",
+    "{{site.exampleIP3}}",
+  ]
+  ...
+  qumulo_private_url_node1 = "https://{{site.exampleEndpointIP0}}"
+   ```
+
 {% elsif page.deployment == "cfn" %}
 1. Log in to the [AWS CloudFormation console](https://console.aws.amazon.com/cloudformation/home).
 
@@ -43,7 +98,7 @@ This section explains how to deploy compute and cache resources for a Qumulo clu
    CloudFormation creates S3 buckets and their stack.
 {% endif %}
 
-1. To log in to your cluster's Web UI, use the IP address from the {% if page.deployment == "tf" %}Terraform output{% elsif page.deployment == "cfn" %}top-level stack output{% endif %} as the endpoint and the username and password that you have configured during deployment as the credentials.
+1. To log in to your cluster's Web UI, use the endpoint from the {% if page.deployment == "tf" %}Terraform output{% elsif page.deployment == "cfn" %}top-level stack output{% endif %} as the endpoint and the username and password that you have configured during deployment as the credentials.
 
    {% include important.html content="If you change the administrative password for your cluster by using the Qumulo Web UI, `qq` CLI, or REST API after deployment, you must add your new password to AWS Secrets Manager." %}
 
