@@ -174,6 +174,8 @@ exampleEndpointIP0: 203.0.113.10
 exampleIP0: 203.0.113.0
 exampleIP1: 203.0.113.1
 exampleIP2: 203.0.113.2
+exampleIP3: 203.0.113.3
+exampleIP4: 203.0.113.4
 exampleIP42: 203.0.113.42
 exampleIP84: 203.0.113.84
 exampleIPv60: 2001:db8:60e0:7352:e9d2:e180:e7e8:cdb8
