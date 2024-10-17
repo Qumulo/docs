@@ -28,7 +28,7 @@ This section explains how to deploy compute and cache resources for a Qumulo clu
 
    For more information, see `README.pdf` in `aws-terraform-cnq-<x.y>.zip`.
 
-1. Run the `terraform apply -var-file config-standard.tfvars` command.
+1. {{site.cnq.runTFapplyWithFile}}
 
    Terraform displays its execution plan.
 
