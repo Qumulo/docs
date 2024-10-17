@@ -3,7 +3,7 @@ title: "Deploying Cloud Native Qumulo on AWS with CloudFormation"
 summary: "This section explains how to deploy Cloud Native Qumulo (CNQ) by creating the persistent storage and the cluster compute and cache resources with CloudFormation. It also provides information about post-deployment actions and optimization."
 permalink: /aws-administrator-guide/getting-started/cloudformation.html
 sidebar: aws_administrator_guide_sidebar
-varRepoLink: <code>aws-cloudformation-cnq.zip</code> file
+varRepoLink: <code>aws-cloudformation-cnq-<X.Y>.zip</code> file (the version in the file name corresponds to the provisioning scripts, not the version of Qumulo Core)
 redirect_from:
   - /aws-administrator-guide/getting-started/deploying-instance-cloudformation.html
 deployment: cfn
