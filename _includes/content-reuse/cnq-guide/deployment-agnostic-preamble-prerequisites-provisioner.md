@@ -49,7 +49,7 @@ This section explains the prerequisites to deploying {{site.aws.cnqAWSshort}}.
           {% capture sepDep %}You must create persistent storage by using a separate {% if page.deployment == "cfn" %}CloudFormation stack{% elsif page.deployment == "tf" %}Terraform deployment{% endif %} <em>before</em> you deploy the compute and cache resources for your cluster.{% endcapture %}
           {% include important.html content=sepDep %}
         </td>
-        <td>7.1.3 with version 4.0 of this repository</td>
+        <td>7.1.3 with version 4.0 of the deployment scripts</td>
       </tr>
     </tbody>
   </table>
