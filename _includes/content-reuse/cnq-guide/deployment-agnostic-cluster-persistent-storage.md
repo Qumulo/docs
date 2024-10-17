@@ -53,6 +53,10 @@ This section explains how to deploy the S3 buckets that act as persistent storag
 
 1. Navigate to the `persistent-storage` directory and then take the following steps:
 
+   1. Run the `terraform init` command.
+
+      Terraform prepares its environment and displays the message `Terraform has been successfully initialized!`
+
    1. Review the `terraform.tfvars` file.
 
       * Specify the correct `aws_region` for your cluster's persistent storage.
