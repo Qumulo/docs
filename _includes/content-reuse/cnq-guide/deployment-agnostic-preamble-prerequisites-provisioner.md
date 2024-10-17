@@ -86,30 +86,4 @@ The {{site.cnqShort}} Provisioner is an m5.large EC2 instance that configures yo
 
 {% if page.deployment == "cfn" %}{% capture dontDelete %}Don't delete the {{site.cnqShort}} Provisioner's EC2 instance. It is necessary for EC2 updates.{% endcapture %}{% include important.html content=dontDelete %}{% endif %}
 
-The Provisioner stores all necessary state information in the AWS Parameter Store and shuts down automatically when it completes any of its following major tasks:
-
-  <details>
-    <summary>Click to expand</summary>
-    <strong>Qumulo Cluster Configuration</strong>
-    <ul>
-      <li>Forms the first quorum with specific Hot or Cold parameters</li>
-      <li>Adds nodes to the quorum (when expanding the cluster)</li>
-      <li>Assigns floating IP addresses to nodes in the cluster</li>
-      <li>Manages cluster replacement (new compute and cache resources) for changing instance sizes</li>
-      <li>Manages the addition of S3 buckets and soft capacity limit increases</li>
-      <li>Changes the administrative password</li>
-    </ul>
-    <strong>AWS Configuration</strong>
-    <ul>
-      <li>Checks for connectivity to Amazon S3</li>
-      <li>Checks for the presence of an S3 Gateway in the VPC (this is required for provisioning)</li>
-      <li>Checks that all S3 buckets are empty before forming quorum</li>
-      <li>Checks for connectivity to the public Internet running a <code>curl</code> command against <code>api.missionq.qumulo.com/</code></li>
-{% if page.deployment == "cfn" %}      <li>Assigns a policy to the top-level CloudFormation stack to protect the cluster during subsequent stack updates</li>{% endif %}      
-      <li>Configures the throughput and IOPS for the EBS gp3 volume</li>
-      <li>Tags EBS volumes with {% if page.deployment == "cfn" %}the stack name{% elsif page.deployment == "tf" %}<code>deployment_unique_name</code>{% endif %}  and volume type</li>
-      <li>Tracks software versions, cluster IP addresses, instance IDs, and UUID in the AWS Parameter Store</li>
-      <li>Tracks the <code>last-run-status</code> for the Provisioner in the Parameter Store</li>
-{% if page.deployment == "cfn" %}      <li>Configures Termination Protection for the stack and the EC2 Instances</li>{% endif %}
-    </ul>
-  </details>
+The Provisioner stores all necessary state information in the AWS Parameter Store and shuts down automatically when it completes its tasks.
