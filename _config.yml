@@ -219,6 +219,10 @@ exampleShortSID4: S-1-5-8-9
 exampleShortSID5: S-1-5-32-544
 everyoneGroupSID: S-1-1-0
 adminGroupSID: S-1-5-32-544
+exampleBucketName1: ab5cdefghij-my-deployment-klmnopqr9st-qps-1
+exampleBucketName2: ab4cdefghij-my-deployment-klmnopqr8st-qps-2
+exampleBucketName3: ab3cdefghij-my-deployment-klmnopqr7st-qps-3
+exampleBucketName4: ab2cdefghij-my-deployment-klmnopqr6st-qps-4
 
 adp:
   before612AddOnly: Qumulo Core 6.1.0.1 and 6.1.1 support Adaptive Data Protection by letting you reconfigure your cluster's fault tolerance level and storage efficiency only when you add nodes to your cluster.
