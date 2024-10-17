@@ -47,9 +47,6 @@ This section explains how to deploy the S3 buckets that act as persistent storag
 
    CloudFormation creates S3 buckets and their stack.
 {% elsif page.deployment == "tf" %}
-1. Navigate to the `aws-terraform-cnq-<x.y>` directory and then run the `terraform init` command.
-
-   Terraform prepares its environment and displays the message `Terraform has been successfully initialized!`
 
 1. Navigate to the `persistent-storage` directory and then take the following steps:
 
