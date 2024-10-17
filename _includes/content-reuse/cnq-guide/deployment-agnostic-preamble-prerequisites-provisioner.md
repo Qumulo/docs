@@ -7,7 +7,13 @@ This section explains the prerequisites to deploying {{site.aws.cnqAWSshort}}.
 
 * To allow your Qumulo instance to report metrics to Qumulo, your AWS VPC must have outbound Internet connectivity through a NAT gateway or a firewall. Your instance shares no file data during this process.
 
-  {% include important.html content="Connectivity to `api.missionq.qumulo.com` is required for a successful deployment of a Qumulo instance and the formation of a quorum." %}
+  {{site.data.alerts.important}}
+  Connectivity to the following endpoints is required for a successful deployment of a Qumulo instance and quorum formation:
+  <ul>
+    <li><code>api.missionq.qumulo.com</code></li>
+    <li><code>api.nexus.qumulo.com</code></li>
+  </ul>
+  {{site.data.alerts.end}}
 
 * The following features require specific versions of Qumulo Core:
 
