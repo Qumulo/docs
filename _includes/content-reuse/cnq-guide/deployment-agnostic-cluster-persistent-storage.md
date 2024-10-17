@@ -68,8 +68,6 @@ This section explains how to deploy the S3 buckets that act as persistent storag
 
    1. Review the Terraform execution plan and then enter `yes`.
 
-      {% include tip.html content="Note the value for `deployment_unique_name` that Terraform outputs. You will need this value for deploying your cluster." %}
-
       Terraform creates resources according the execution plan and displays:
 
       * The message `Apply complete! Resources: <x> added, 0 changed, 0 destroyed.`
@@ -77,6 +75,8 @@ This section explains how to deploy the S3 buckets that act as persistent storag
       * The names of the S3 buckets
         
       * Your deployment's unique name
+  
+        {% include tip.html content="You will need the `deployment_unique_name` value to deploy your cluster." %}
      
       For example:
      
