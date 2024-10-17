@@ -82,7 +82,7 @@ This section explains the prerequisites to deploying {{site.aws.cnqAWSshort}}.
 
 <a id="how-the-provisioner-works"></a>
 ### How the {{site.cnqShort}} Provisioner Works
-The {{site.cnqShort}} Provisioner is an m5.large EC2 instance that uses custom user data to configure your Qumulo cluster and any additional AWS environment requirements.
+The {{site.cnqShort}} Provisioner is an m5.large EC2 instance that configures your Qumulo cluster and any additional AWS environment requirements.
 
 {% if page.deployment == "cfn" %}{% capture dontDelete %}Don't delete the {{site.cnqShort}} Provisioner's EC2 instance. It is necessary for EC2 updates.{% endcapture %}{% include important.html content=dontDelete %}{% endif %}
 
