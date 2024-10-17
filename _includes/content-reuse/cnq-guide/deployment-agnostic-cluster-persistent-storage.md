@@ -16,7 +16,7 @@ This section explains how to deploy the S3 buckets that act as persistent storag
 
 1. {{site.cnq.copyDebAndConfig}}
 
-1. Copy {% if page.deployment == "cfn" %}`aws-cloudformation-cnq.zip` to the `my-s3-bucket-name/my-s3-bucket-prefix/aws-cloudformation-cnq` directory.{% elsif page.deployment == "tf" %}`aws-terraform-cnq.zip` to your Terraform environment{% endif %} and decompress it.
+1. Copy {% if page.deployment == "cfn" %}`aws-cloudformation-cnq-&lt;x.y&gt;.zip` to the `my-s3-bucket-name/my-s3-bucket-prefix/aws-cloudformation-cnq` directory.{% elsif page.deployment == "tf" %}`aws-terraform-cnq-&lt;x.y&gt;.zip` to your Terraform environment{% endif %} and decompress it.
 {% if page.deployment == "cfn" %}
 1. Clone the {{page.varRepoLink}} to an S3 bucket and find the URL to `templates/persistent-storage.template.yaml`. For example:
 
@@ -47,7 +47,9 @@ This section explains how to deploy the S3 buckets that act as persistent storag
 
    CloudFormation creates S3 buckets and their stack.
 {% elsif page.deployment == "tf" %}
-1. Navigate to the `aws-terraform-cnq` directory and then run the `terraform init` command.
+1. Navigate to the `aws-terraform-cnq-&lt;x.y&gt;` directory and then run the `terraform init` command.
+
+   Terraform prepares its environment and displays the message `Terraform has been successfully initialized!`
 
 1. Navigate to the `persistent-storage` directory and then take the following steps:
 
@@ -55,11 +57,39 @@ This section explains how to deploy the S3 buckets that act as persistent storag
 
       * Specify the correct `aws_region` for your cluster's persistent storage.
         
-      * Enter the `soft_capacity_limit`.
+      * Leave the `soft_capacity_limit` at `500`.
+
+   1. Use the `aws` CLI to authenticate to your AWS account.
 
    1. Run the `terraform apply` command.
+  
+      Terraform displays its execution plan.
+
+   1. Review the Terraform execution plan and then enter `yes`.
 
       {% include tip.html content="Note the value for `deployment_unique_name` that Terraform outputs. You will need this value for deploying your cluster." %}
 
-   Terraform creates each S3 bucket with a unique state for its deployment.
+      Terraform creates resources according the execution plan and displays:
+
+      * The message `Apply complete! Resources: &lt;x&gt; added, 0 changed, 0 destroyed.`
+        
+      * The names of the S3 buckets
+        
+      * Your deployment's unique name
+     
+      For example:
+     
+      ```
+      Outputs:
+
+      bucket_names = [
+        "{{site.exampleBucketName1}}",
+        "{{site.exampleBucketName2}}",
+        "{{site.exampleBucketName3}}",
+        "{{site.exampleBucketName4}}",
+      ]
+      deployment_unique_name = "my-deployment-ABCDEFGH1IJ"
+      prevent_destroy = true
+      soft_capacity_limit = "500 TB"
+      ```
 {% endif %}
