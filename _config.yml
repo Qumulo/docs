@@ -413,6 +413,7 @@ cnq:
   createSubdirInS3bucket: "In your S3 bucket, create the `qumulo-core-install` directory. Within this directory, create another directory with the Qumulo Core version as its name. The following is an example path:"
   qCoreVerTip: Make a new subdirectory for every new release of Qumulo Core.
   copyDebAndConfig: Copy `qumulo-core.deb` and `host_configuration.tar.gz` into the directory named after the Qumulo Core version (in this example, it is `7.2.3`).
+  deploymentUniqueNameExample: my-deployment-ABCDEFGH1IJ
 
 varonis:
   separateMachine: Deploy Qumulo Broker on a stand-alone machine (or virtual machine) so that it sits between your Qumulo cluster and Varonis.
