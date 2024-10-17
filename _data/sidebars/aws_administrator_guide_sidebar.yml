@@ -48,12 +48,12 @@ entries:
       url: /aws-administrator-guide/getting-started/how-cloud-native-qumulo-works.html
       output: web, pdf
 
-    - title: Deploying with Terraform
-      url: /aws-administrator-guide/getting-started/terraform.html
-      output: web, pdf
-
     - title: Deploying with CloudFormation
       url: /aws-administrator-guide/getting-started/cloudformation.html
+      output: web, pdf
+
+    - title: Deploying with Terraform
+      url: /aws-administrator-guide/getting-started/terraform.html
       output: web, pdf
 
     - title: Supported Configurations and Known Limits
