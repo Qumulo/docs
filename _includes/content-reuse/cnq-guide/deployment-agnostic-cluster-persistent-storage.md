@@ -1,7 +1,9 @@
 <a id="deploy-persistent-storage"></a>
 ## Step 1: Deploying Cluster Persistent Storage
 This section explains how to deploy the S3 buckets that act as persistent storage for your Qumulo cluster.
-1. Log in to Nexus, click **Downloads > Deployment on AWS**, and then download the {% if page.deployment == "cfn" %}CloudFormation template{% elsif page.deployment == "tf" %}Terraform configuration{% endif %}, Debian package, and host configuration file.
+1. Log in to Nexus and click **Downloads > Deploy Cloud Native Qumulo**.
+
+1. In the **Download the required files** section, select the Qumulo Core version that you want to deploy and then download the corresponding {% if page.deployment == "cfn" %}CloudFormation template{% elsif page.deployment == "tf" %}Terraform configuration{% endif %}, Debian package, and host configuration file.
 
 1. {{site.cnq.createSubdirInS3bucket}}
 
