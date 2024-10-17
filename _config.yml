@@ -402,6 +402,7 @@ cnq:
   logIntoWebUI: To check that the cluster is healthy, log in to the Web UI.
   changeQnodeCount: Edit <code>config-standard.tfvars</code> or <code>config-advanced.tfvars</code> and change the value of <code>q_node_count</code>
   runTFapply: Run the <code>terraform apply</code> command.
+  runTFapplyWithFile: Run the <code>terraform apply -var-file config-standard.tfvars</code> command.
   runTFdestroy: Run the <code>terraform destroy</code> command.
   tfCreatesNewBuckets: Terraform creates new S3 buckets as necessary.
   cfnUpdateStackComputeCache: On the <strong>Stacks</strong> page, select your compute and cache deployment stack and then, in the upper right, click <strong>Update</strong>.
