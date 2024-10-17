@@ -26,7 +26,7 @@ This section explains how to deploy compute and cache resources for a Qumulo clu
 
 1. Choose `config-standard.tfvars` or `config-advanced.tfvars` and fill in the values for all variables.
 
-   For more information, see `readme.pdf` in `aws-terraform-cnq-<x.y>.zip`.
+   For more information, see `README.pdf` in `aws-terraform-cnq-<x.y>.zip`.
 {% elsif page.deployment == "cfn" %}
 1. Log in to the [AWS CloudFormation console](https://console.aws.amazon.com/cloudformation/home).
 
