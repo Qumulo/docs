@@ -34,7 +34,6 @@ This section explains how to deploy compute and cache resources for a Qumulo clu
 
 1. Review the Terraform execution plan and then enter `yes`.
 
-
    Terraform creates resources according the execution plan and displays:
 
    * The `Apply complete!` message
@@ -76,7 +75,7 @@ This section explains how to deploy compute and cache resources for a Qumulo clu
      "{{site.exampleIP0}}",
      "{{site.exampleIP1}}",
      "{{site.exampleIP2}}",
-     "{{site.exampleIP3}}",
+     "{{site.exampleIP3}}"
    ]
    ...
    qumulo_private_url_node1 = "https://{{site.exampleEndpointIP0}}"
