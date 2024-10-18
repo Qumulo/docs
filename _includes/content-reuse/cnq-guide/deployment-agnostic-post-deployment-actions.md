@@ -23,10 +23,8 @@ This section describes the common actions you can perform on a {{site.cnqShort}}
      "{{site.exampleIP1}}",
      "{{site.exampleIP2}}",
      "{{site.exampleIP3}}",
-     "{{site.exampleIP3}}"   
+     "{{site.exampleIP4}}"   
    ]
-   ...
-   qumulo_private_url_node1 = "https://{{site.exampleEndpointIP0}}"
    ```   
 {% elsif page.deployment == "cfn" %}
 1. {{site.cnq.logIntoCFN}}
