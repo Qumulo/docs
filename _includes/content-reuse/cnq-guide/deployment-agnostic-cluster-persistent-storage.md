@@ -72,7 +72,7 @@ This section explains how to deploy the S3 buckets that act as persistent storag
 
       * The `Apply complete!` message
         
-      * The names of the create S3 buckets
+      * The names of the created S3 buckets
         
       * Your deployment's unique name
   
