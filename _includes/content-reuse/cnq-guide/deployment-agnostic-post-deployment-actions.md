@@ -45,7 +45,9 @@ Removing a node from an existing cluster is a two-step process. First, you remov
 #### Step 1: Remove the Node from the Cluster's Quorum
 You must perform this step while the cluster is running.
 
-1. Copy the `remove-nodes.sh` script from the `utilities` directory to an AWS Linux 2 AMI running in your VPC.
+{% include important.html content="After you remove nodes from your cluster, you must clean up these nodes' cloud infrastructure by using CloudFormation or Terraform." %}
+
+1. Copy the `remove-nodes.sh` script from the `utilities` directory to a machine running in your VPC that has the AWS CLI tools installed (for example, an AWS Linux 2 AMI).
 
    {{site.data.alerts.tip}}
    <ul>
@@ -66,7 +68,35 @@ You must perform this step while the cluster is running.
      --finalnodecount 4
    ```
    
-1. When prompted, confirm  the nodes' removal.
+1. Review the nodes to be removed and then enter `y`.
+
+1. Enter the administrator password for your cluster.
+
+   The script removes the nodes and displays:
+
+   * Confirmation that your cluster formed a new quorum
+
+   * Confirmation that the new quorum is active
+  
+   * The new total number of nodes in the quorum
+  
+   * The EC2 identifiers for the removed nodes
+  
+   * The endpoint for your cluster's Web UI
+  
+   ```
+   {"monitor_uri": "/v1/node/state"}
+        --Waiting for new quorum
+        --New quorum formed
+        --Quorum is ACTIVE
+        --Validating quorum
+        --4 Nodes in Quorum
+        --REMOVED: EC2 ID={{site.exampleEC2id1}} >> Qumulo node_id=5
+        --REMOVED: EC2 ID={{site.exampleEC2id2}} >> Qumulo node_id=6
+   **Verify the cluster is healthy in the Qumulo UI at https://{{site.exampleEndpointIP0}}
+   ...
+   ```
+
 1. {{site.cnq.logIntoWebUI}}
 
 #### Step 2: Tidy Up Your AWS Resources
