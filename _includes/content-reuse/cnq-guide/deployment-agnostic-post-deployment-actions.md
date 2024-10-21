@@ -47,7 +47,7 @@ You must perform this step while the cluster is running.
 
 {% include important.html content="After you remove nodes from your cluster, you must clean up these nodes' cloud infrastructure by using CloudFormation or Terraform." %}
 
-1. Copy the `remove-nodes.sh` script from the `utilities` directory to a machine running in your VPC that has the AWS CLI tools installed (for example, an AWS Linux 2 AMI).
+1. Copy the `remove-nodes.sh` script from the `aws-terraform-cnq-<x.y>/utilities` directory to a machine running in your VPC that has the AWS CLI tools installed (for example, an AWS Linux 2 AMI).
 
    {{site.data.alerts.tip}}
    <ul>
@@ -101,6 +101,7 @@ You must perform this step while the cluster is running.
 
 #### Step 2: Tidy Up Your AWS Resources
 {% if page.deployment == "tf" %}
+1. Navigate to the `aws-terraform-cnq-<x.y>` directory.
 1. {{site.cnq.changeQnodeCount}} to a lower value (for example, 4).
 1. {{site.cnq.runTFapply}}
 1. {{site.cnq.monitorProvisionerStatus}}
