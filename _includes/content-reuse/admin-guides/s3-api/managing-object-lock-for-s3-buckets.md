@@ -23,7 +23,13 @@ It isn't possible to change any data or attributes of an object with a valid loc
 
 
 ## Enabling S3 Object Lock Configuration
-You can configure S3 bucket locking {{site.s3.permissions.APIorCLI}}. For more information, see {% include qq.html command="s3_modify_bucket" %} and {% include qq.html command="s3_add_bucket" %} in the {{site.guides.cli}}. {{site.s3.permissions.directAPI}}
+You can configure S3 bucket locking by using one of the following methods:
+
+* {% include rest.html verb="GET" command="s3-server-methods/s3_buckets" %} and {% include rest.html verb="POST" command="s3-server-methods/s3_buckets" %} REST APIs
+
+* {% include qq.html command="s3_modify_bucket" %} and {% include qq.html command="s3_add_bucket" %} CLI commands
+
+* S3 API
 
 
 ## Viewing S3 Object Lock Configuration

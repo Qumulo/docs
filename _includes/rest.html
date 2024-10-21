@@ -1,0 +1,17 @@
+{%- assign parts = include.command | split: "/" -%}
+{%- assign section = parts[0] -%}
+{%- assign command = parts[1] -%}
+{%- assign command_parts = command | replace: "_", "/" | split: "/" -%}
+{%- if command_parts[0] == "v2" or command_parts[0] == "v3" or command_parts[0] == "v4" -%}
+  {%- assign version = command_parts[0] -%}
+  {%- assign path = command_parts | slice: 1, command_parts.size | join: "/" -%}
+{%- else -%}
+  {%- assign version = "v1" -%}
+  {%- assign path = command_parts | join: "/" -%}
+{%- endif -%}
+{%- if include.verb -%}
+  {%- assign verb = include.verb | upcase -%}
+{%- else -%}
+  {%- assign verb = "" -%}
+{%- endif -%}
+<a href="https://docs.qumulo.com/rest-api-guide/{{ section }}/{{ command }}.html"><code>{% if verb != "" %}{{ verb }} {% endif %}/{{ version }}/{{ path }}</code></a>
