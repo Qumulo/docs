@@ -16,7 +16,7 @@ This section describes the common actions you can perform on a {{site.cnqShort}}
    Terraform changes resources according the execution plan and displays an additional primary (static) IP for the new node:
    
    For example:
-   
+
    ```
    qumulo_primary_ips = [
      "{{site.exampleIP0}}",
@@ -103,7 +103,24 @@ You must perform this step while the cluster is running.
 {% if page.deployment == "tf" %}
 1. Navigate to the `aws-terraform-cnq-<x.y>` directory.
 1. {{site.cnq.changeQnodeCount}} to a lower value (for example, 4).
-1. {{site.cnq.runTFapply}}
+1. {{site.cnq.runTFapplyWithFile}}
+
+   Review the Terraform execution plan and then enter `yes`.
+   
+   Terraform removes the resources for the removed nodes according the execution plan and displays the primary (static) IPs for the remaining nodes:
+
+   For example:
+
+   ```
+   qumulo_primary_ips = [
+     "{{site.exampleIP0}}",
+     "{{site.exampleIP1}}",
+     "{{site.exampleIP2}}",
+     "{{site.exampleIP3}}",
+     "{{site.exampleIP4}}"   
+   ]
+   ```
+
 1. {{site.cnq.monitorProvisionerStatus}}
 {% elsif page.deployment == "cfn" %}
 1. {{site.cnq.cfnUpdateStackComputeCache}}
