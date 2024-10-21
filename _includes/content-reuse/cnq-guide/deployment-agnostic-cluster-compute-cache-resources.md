@@ -5,7 +5,7 @@ This section explains how to deploy compute and cache resources for a Qumulo clu
 {{site.data.alerts.important}}
 <ul>
 {% if page.deployment == "cfn" %}
-  <li>Only when the CloudFormation stack finishes running should you begin to monitor the AWS Parameter Store for the <code>last-ran-status</code> value for the provisioning instance. Until the provisioning instance shuts down automatically, the provisoning process isn't complete and the Qumulo cluster isn't yet functional.</li>  
+  <li>Only when the CloudFormation stack finishes running should you begin to monitor {{site.cnq.paramStore}} for the <code>last-ran-status</code> value for the provisioning instance. Until the provisioning instance shuts down automatically, the provisoning process isn't complete and the Qumulo cluster isn't yet functional.</li>  
 {% elsif page.deployment == "tf" %}
   <li>Provisioning completes successfully when the provisioning instance shuts down automatically. If the provisioning instance doesn't shut down, the provisioning cycle has failed and must be troubleshooted. {{site.cnq.monitorProvisionerStatus}}</li>
   <li>The first variable in the example configuration files in the <code>aws-terraform-cnq</code> repository is <code>deployment_name</code>. To help avoid conflicts between Network Load Balancers (NLBs), resource groups, cross-region CloudWatch views, and other deployment components, Terraform ignores the <code>deployment_name</code> value and any changes to it. Terraform generates the additional <code>deployment_unique_name</code> variable; appends a random, 11-digit alphanumeric value to it; and then tags all future resources with this variable, which never changes during subsequent Terraform deployments.</li>

@@ -412,11 +412,12 @@ cnq:
   cfnUseExistingTemplate: On the <strong>Update stack</strong> page, click <strong>Use existing template</strong> and then click <strong>Next</strong>.
   cfnConfigureStackOptions: On the <strong>Configure stack options</strong> page, click <strong>Next</strong>.
   cfnRollbackOnFailure: On the <strong>Review &lt;my-stack-name&gt;</strong> page, click <strong>Rollback on failure</strong> and then click <strong>Submit</strong>.
-  monitorProvisionerStatus: To monitor the provisioner's status, you can watch the Terraform status posts in your terminal or in the AWS Parameter Store, under <code>/qumulo/&lt;my-deployment-name&gt;/last-run-status</code>.
+  monitorProvisionerStatus: To monitor the provisioner's status, you can watch the Terraform status posts in your terminal or in AWS Systems Manager (**Application Management > Parameter Store**), under <code>/qumulo/&lt;my-deployment-name&gt;/last-run-status</code>.
   createSubdirInS3bucket: "In your S3 bucket, create the `qumulo-core-install` directory. Within this directory, create another directory with the Qumulo Core version as its name. The following is an example path:"
   qCoreVerTip: Make a new subdirectory for every new release of Qumulo Core.
   copyDebAndConfig: Copy `qumulo-core.deb` and `host_configuration.tar.gz` into the directory named after the Qumulo Core version (in this example, it is `7.2.3`).
   deploymentUniqueNameExample: my-deployment-ABCDEFGH1IJ
+  paramStore: in AWS Systems Manager (**Application Management > Parameter Store**)
 
 varonis:
   separateMachine: Deploy Qumulo Broker on a stand-alone machine (or virtual machine) so that it sits between your Qumulo cluster and Varonis.

@@ -34,7 +34,7 @@ This section describes the common actions you can perform on a {{site.cnqShort}}
 1. {{site.cnq.cfnConfigureStackOptions}}
 1. {{site.cnq.cfnRollbackOnFailure}}
 {% endif %}
-{% capture verifyProvis %}To ensure that the Provisioner shut downs automatically, review the `/qumulo/{% if page.deployment == "tf" %}my-deployment-name{% elsif page.deployment == "cfn" %}my-stack-name{% endif %}/last-run-status` parameter in the AWS Parameter Store.{% endcapture %}
+{% capture verifyProvis %}To ensure that the Provisioner shut downs automatically, review the `/qumulo/{% if page.deployment == "tf" %}my-deployment-name{% elsif page.deployment == "cfn" %}my-stack-name{% endif %}/last-run-status` parameter {{site.cnq.paramStore}}.{% endcapture %}
 1. {{verifyProvis}}
 1. {{site.cnq.logIntoWebUI}}
 

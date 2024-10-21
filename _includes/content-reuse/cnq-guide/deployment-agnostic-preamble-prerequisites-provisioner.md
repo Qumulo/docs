@@ -86,4 +86,4 @@ The {{site.cnqShort}} Provisioner is an m5.large EC2 instance that configures yo
 
 {% if page.deployment == "cfn" %}{% capture dontDelete %}Don't delete the {{site.cnqShort}} Provisioner's EC2 instance. It is necessary for EC2 updates.{% endcapture %}{% include important.html content=dontDelete %}{% endif %}
 
-The Provisioner stores all necessary state information in the AWS Parameter Store and shuts down automatically when it completes its tasks.
+The Provisioner stores all necessary state information {{site.cnq.paramStore}} and shuts down automatically when it completes its tasks.
