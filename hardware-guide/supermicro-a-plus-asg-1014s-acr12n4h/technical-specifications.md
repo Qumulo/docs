@@ -5,6 +5,6 @@ permalink: /hardware-guide/supermicro-a-plus-asg-1014s-acr12n4h/technical-specif
 redirect_from:
   - /hardware/supermicro-a-plus-asg-1014s-acr12n4h/technical-specifications.html
 redirect_to:
-  - https://sizing.qumulo.com/
+  - https://qumulo.com/product/data-centers/
 search: exclude
 ---

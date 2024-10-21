@@ -5,6 +5,6 @@ permalink: /hardware-guide/hpe-dl325-gen10-plus/technical-specifications.html
 redirect_from:
   - /hardware/hpe-dl325-gen10-plus/technical-specifications.html
 redirect_to:
-  - https://sizing.qumulo.com/
+  - https://qumulo.com/product/data-centers/
 search: exclude
 ---

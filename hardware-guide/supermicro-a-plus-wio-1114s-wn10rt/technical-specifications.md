@@ -5,6 +5,6 @@ permalink: /hardware-guide/supermicro-a-plus-wio-1114s-wn10rt/technical-specific
 redirect_from:
   - /hardware/supermicro-a-plus-wio-1114s-wn10rt/technical-specifications.html
 redirect_to:
-  - https://sizing.qumulo.com/
+  - https://qumulo.com/product/data-centers/
 search: exclude
 ---

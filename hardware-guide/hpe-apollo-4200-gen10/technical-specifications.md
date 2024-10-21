@@ -5,6 +5,6 @@ permalink: /hardware-guide/hpe-apollo-4200-gen10/technical-specifications.html
 redirect_from:
   - /hardware/hpe-apollo-4200-gen10/technical-specifications.html
 redirect_to:
-  - https://sizing.qumulo.com/
+  - https://qumulo.com/product/data-centers/
 search: exclude
 ---
