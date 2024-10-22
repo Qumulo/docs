@@ -8,7 +8,7 @@ This section explains how to deploy the S3 buckets that act as persistent storag
 1. {{site.cnq.createSubdirInS3bucket}}
 
    ```
-   my-s3-bucket-name/my-s3-bucket-prefix/qumulo-core-install/7.2.3
+   my-s3-bucket-name/my-s3-bucket-prefix/qumulo-core-install/7.2.3.1
    ```
 
    {% capture newVer %}{{site.cnq.qCoreVerTip}}{% endcapture %}

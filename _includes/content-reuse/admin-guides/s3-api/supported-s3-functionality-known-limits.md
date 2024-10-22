@@ -88,7 +88,7 @@ The following table lists the S3 API actions that Qumulo Core supports and the v
       </tr>    
       <tr>
         <td><code>GetObjectLegalHold</code></td>
-        <td>7.2.3</td>
+        <td>7.2.3.1</td>
       </tr>
       <tr>
         <td><code>GetObjectLockConfiguration</code></td>
@@ -144,11 +144,11 @@ The following table lists the S3 API actions that Qumulo Core supports and the v
       </tr>
       <tr>
         <td><code>PutObjectLegalHold</code></td>
-        <td>7.2.3</td>
+        <td>7.2.3.1</td>
       </tr>    
       <tr>
         <td><code>PutObjectLockConfiguration</code></td>
-        <td>7.2.3</td>
+        <td>7.2.3.1</td>
       </tr>
       <tr>
         <td><code>PutObjectRetention</code></td>

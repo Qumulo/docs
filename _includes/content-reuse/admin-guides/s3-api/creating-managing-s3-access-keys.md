@@ -1,6 +1,6 @@
 {% include note.html content="You can configure an S3 bucket to allow [read-only, anonymous access](managing-access-to-s3-buckets.html#enabling-anonymous-access). This approach requires no credentials but limits users to non-modifying operations." %}
 
-In Qumulo Core 7.2.3 (and higher), system users can list, create, and delete S3 access keys for their [identities](#identity).
+In Qumulo Core 7.2.3.1 (and higher), system users can list, create, and delete S3 access keys for their [identities](#identity).
 
 ## Prerequisites
 Administrative control over S3 access keys requires the following [role-based access control (RBAC)](../authorization-qumulo-core/managing-role-based-access-control-rbac.html) privileges:

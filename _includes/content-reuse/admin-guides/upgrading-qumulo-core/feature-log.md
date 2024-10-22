@@ -4,8 +4,15 @@ For information about upgrade types for each release, see <a href='mode-referenc
 
 <style>div#toc{height:200px;overflow:auto;}</style>
 
-## Qumulo Core 7.2.3
+## Qumulo Core 7.2.3.1
 {{page.varDownloadsRelnotes}}
+{{site.data.alerts.important}}
+<ul>
+  <li>If your Qumulo cluster's nodes haven't been configured to use static routes, it isn't necessary to upgrade from Qumulo Core 7.2.3 to 7.2.3.1. To determine whether your cluster's nodes use static routes, SSH into the node and run the <code>ip route show</code> command. Typically, static routes do not have tags such as <code>proto dhcp</code> or <code>proto kernel</code>. For further help, {{site.contactQumuloCare}}.</li>
+  <li>If your Qumulo cluster's nodes use static routes, this release resolves an issue in Qumulo Core 7.2.3 that, under certain conditions, caused the system to lose its static route configurations after a quorum event.</li>
+</ul>
+{{site.data.alerts.end}}
+
 * Added support for read-only Global Namespace functionality between two or more Qumulo clusters.
 * Made CNQ on Azure available on Qumulo Nexus.
 * Added support for three-node clusters to CNQ on Azure and CNQ on AWS.
