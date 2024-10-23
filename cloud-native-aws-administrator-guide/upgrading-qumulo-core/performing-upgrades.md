@@ -1,7 +1,9 @@
 ---
 title: "Performing Qumulo Core Upgrades"
 summary: "This section explains the difference between Qumulo Core Instant Software Upgrades and Platform Upgrades and how to perform upgrades."
-permalink: /aws-administrator-guide/upgrading-qumulo-core/performing-upgrades.html
+redirect_from:
+  - /aws-administrator-guide/upgrading-qumulo-core/performing-upgrades.html
+permalink: /cloud-native-aws-administrator-guide/upgrading-qumulo-core/performing-upgrades.html
 sidebar: cloud_native_aws_administrator_guide_sidebar
 varContactQumuloCare: If you perform multiple upgrades back to back, you might encounter one or more platform upgrades in one of the incremental releases; you must install these upgrades before you continue. Before performing back to back upgrades, <a href="https://docs.qumulo.com/contacting-qumulo-care-team.html">contact the Qumulo Care team</a> for guidance.
 varViewUpgradeStatus: "To view your cluster's upgrade phase and status, run the `qq upgrade_status` command."

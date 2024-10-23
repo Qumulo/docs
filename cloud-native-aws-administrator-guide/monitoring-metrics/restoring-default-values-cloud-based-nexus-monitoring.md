@@ -1,7 +1,9 @@
 ---
 title: "Restoring the Default Values for Cloud-Based and Nexus Monitoring"
 summary: "This section explains how to set the default values for Cloud-Based Monitoring and Nexus Monitoring."
-permalink: /aws-administrator-guide/monitoring-and-metrics/restoring-default-values-cloud-based-nexus-monitoring.html
+redirect_from:
+  - /aws-administrator-guide/monitoring-and-metrics/restoring-default-values-cloud-based-nexus-monitoring.html
+permalink: /cloud-native-aws-administrator-guide/monitoring-and-metrics/restoring-default-values-cloud-based-nexus-monitoring.html
 sidebar: cloud_native_aws_administrator_guide_sidebar
 ---
 
