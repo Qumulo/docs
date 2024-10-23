@@ -10,7 +10,7 @@ To get started, choose one of the following guides.
 
 <h2 class="frontpage">Self-Managed File System on Cloud Infrastructure</h2>
 <span class="guide-button single-button">
-  <a class="multilink" href="aws-administrator-guide/">
+  <a class="multilink" href="cloud-native-aws-administrator-guide/">
     <picture>
       <source type="image/webp" srcset="images/cloud-native-qumulo-on-aws-administrator-guide.webp">
       <source type="image/png" srcset="images/cloud-native-qumulo-on-aws-administrator-guide.png">
