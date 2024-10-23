@@ -97,7 +97,7 @@ build_prince () {
       ;;
     "CNQ_Guide")
       JEKYLL_CONFIG=config_aws_guide_pdf.yml
-      PRINCE_OUTPUT=qumulo-aws-administrator-guide.pdf
+      PRINCE_OUTPUT=cloud-native-qumulo-on-aws-administrator-guide.pdf
       ;;
     "Administrator_Guide")
       JEKYLL_CONFIG=config_administrator_guide_pdf.yml
