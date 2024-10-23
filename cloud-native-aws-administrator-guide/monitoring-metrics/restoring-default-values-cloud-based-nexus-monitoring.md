@@ -2,7 +2,7 @@
 title: "Restoring the Default Values for Cloud-Based and Nexus Monitoring"
 summary: "This section explains how to set the default values for Cloud-Based Monitoring and Nexus Monitoring."
 permalink: /aws-administrator-guide/monitoring-and-metrics/restoring-default-values-cloud-based-nexus-monitoring.html
-sidebar: aws_administrator_guide_sidebar
+sidebar: cloud_native_aws_administrator_guide_sidebar
 ---
 
 When you no longer [connect to Cloud-Based Monitoring by using a custom proxy](connecting-cloud-based-monitoring-s3-custom-proxy.html), you can use the `qq` CLI to restore the default values for Cloud-Based and Nexus Monitoring.

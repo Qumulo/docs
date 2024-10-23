@@ -4,7 +4,7 @@ summary: "This section explains how to create, modify, and delete directory quot
 permalink: /aws-administrator-guide/storage-management/creating-directory-quotas.html
 redirect_from:
   - /aws-administrator-guide/getting-started/creating-directory-quotas.html
-sidebar: aws_administrator_guide_sidebar
+sidebar: cloud_native_aws_administrator_guide_sidebar
 include_content: content-reuse/admin-guides/storage-management/creating-directory-quotas.md
 ---
 

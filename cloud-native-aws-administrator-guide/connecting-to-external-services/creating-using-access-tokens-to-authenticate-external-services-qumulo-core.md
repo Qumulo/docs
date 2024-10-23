@@ -2,7 +2,7 @@
 title: "Creating and Using Access Tokens to Authenticate External Services to Qumulo Core"
 summary: "This section explains how to create and use access tokens&mdash;by using the Qumulo Core REST API, Python SDK, and <code>qq</code> CLI&mdash;to authenticate external services to Qumulo Core."
 permalink: /aws-administrator-guide/connecting-to-external-services/creating-using-access-tokens-to-authenticate-external-services-qumulo-core.html
-sidebar: aws_administrator_guide_sidebar
+sidebar: cloud_native_aws_administrator_guide_sidebar
 varAccessTokenWarning: An attacker can use an access token to authenticate as the token's user to Qumulo Core REST API (through HTTP, the Python SDK, or the <code>qq</code> CLI) and gain all of the user's privileges.
 varAccessTokenBestPractices: Treat access tokens, and the bearer tokens they generate, like passwords. Store your tokens securely, rotate your tokens often, and create a token revocation policy for your organization.
 varAccessTokenAdminWarning: To decrease the risk of giving an attacker full administrative access&mdash;including access to cluster data&mdash;avoid generating tokens for accounts with administrative privileges.
