@@ -46,8 +46,8 @@ function successFn(results) {
       link.innerHTML = `qq CLI Commands: ${link.textContent}`;
     } else if (link.href.includes("/administrator-guide/")) {
       link.innerHTML = `On-Prem: ${link.textContent}`;
-    } else if (link.href.includes("/azure-administrator-guide/")) {
-      link.innerHTML = `Azure: ${link.textContent}`;
+    } else if (link.href.includes("/azure-native-administrator-guide/")) {
+      link.innerHTML = `Azure Native: ${link.textContent}`;
     }
   });
 

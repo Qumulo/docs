@@ -1,7 +1,9 @@
 ---
 title: "Deploying and Viewing Information about Your Azure Native Qumulo Instance"
 summary: "This section explains how to deploy Azure Native Qumulo (ANQ), view information about your service, and connect to the Qumulo Web UI."
-permalink: /azure-administrator-guide/getting-started/deploying-instance-azure-native-qumulo.html
+redirect_from:
+  - /azure-administrator-guide/getting-started/deploying-instance-azure-native-qumulo.html
+permalink: /azure-native-administrator-guide/getting-started/deploying-instance-azure-native-qumulo.html
 redirect_from:
   - /azure-guide/getting-started-qumulo-scalable-file-service.html
 sidebar: azure_administrator_guide_sidebar

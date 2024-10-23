@@ -1,7 +1,9 @@
 ---
 title: "Required Networking Ports for Qumulo Core"
 summary: "This section explains which inbound and outbound networking ports Qumulo Core requires."
-permalink: /azure-administrator-guide/network-configuration/required-ports.html
+redirect_from:
+  - /azure-administrator-guide/network-configuration/required-ports.html
+permalink: /azure-native-administrator-guide/network-configuration/required-ports.html
 redirect_from:
   - /azure-administrator-guide/networking/required-networking-ports.html
 sidebar: azure_administrator_guide_sidebar

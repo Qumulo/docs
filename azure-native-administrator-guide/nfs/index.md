@@ -1,7 +1,9 @@
 ---
 title: "Working with the NFS Protocol"
 layout: landing_page
-permalink: /azure-administrator-guide/nfs/
+redirect_from:
+  - /azure-administrator-guide/nfs/
+permalink: /azure-native-administrator-guide/nfs/
 sidebar: azure_administrator_guide_sidebar
 search: exclude
 ---

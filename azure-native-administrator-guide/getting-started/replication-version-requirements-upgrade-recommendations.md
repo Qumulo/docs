@@ -1,7 +1,9 @@
 ---
 title: "Replication Version Requirements for Qumulo Core"
 summary: "This section explains the relationship between the version of Qumulo Core that a cluster runs and data replication between it and other clusters."
-permalink: /azure-administrator-guide/getting-started/replication-version-requirements.html
+redirect_from:
+  - /azure-administrator-guide/getting-started/replication-version-requirements.html
+permalink: /azure-native-administrator-guide/getting-started/replication-version-requirements.html
 sidebar: azure_administrator_guide_sidebar
 varExample: The following example shows replication options for a cluster running the 
 platform: azure

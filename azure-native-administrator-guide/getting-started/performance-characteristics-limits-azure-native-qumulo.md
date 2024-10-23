@@ -1,7 +1,9 @@
 ---
 title: "Performance Characteristics and Default Service Limits of Azure Native Qumulo v2"
 summary: "This section describes the performance characteristics and default service limits of Azure Native Qumulo (ANQ) v2."
-permalink: /azure-administrator-guide/getting-started/performance-characteristics-default-limits-azure-native-qumulo.html
+redirect_from:
+  - /azure-administrator-guide/getting-started/performance-characteristics-default-limits-azure-native-qumulo.html
+permalink: /azure-native-administrator-guide/getting-started/performance-characteristics-default-limits-azure-native-qumulo.html
 sidebar: azure_administrator_guide_sidebar
 ---
 

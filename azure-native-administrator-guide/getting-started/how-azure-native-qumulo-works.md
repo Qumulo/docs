@@ -1,7 +1,9 @@
 ---
 title: "How Azure Native Qumulo Works"
 summary: "This section explains the main functionality of Azure Native Qumulo (ANQ), provides a feature comparison between ANQ and Qumulo on other platforms. In addition, it explains the difference between ANQ Hot and Cold, specifies ANQ's known limitations and compliance posture, gives an overview of deploying the service in Azure, and lists the supported Azure Regions for the service."
-permalink: /azure-administrator-guide/getting-started/how-azure-native-qumulo-works.html
+redirect_from:
+  - /azure-administrator-guide/getting-started/how-azure-native-qumulo-works.html
+permalink: /azure-native-administrator-guide/getting-started/how-azure-native-qumulo-works.html
 redirect_from:
   - /azure-guide/how-qumulo-scalable-file-service-works.html
 sidebar: azure_administrator_guide_sidebar

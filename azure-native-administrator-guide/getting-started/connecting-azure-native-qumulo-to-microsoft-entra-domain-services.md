@@ -1,7 +1,9 @@
 ---
 title: "Connecting Azure Native Qumulo to Microsoft Entra Domain Services"
 summary: "This section explains how to connect Azure Native Qumulo (ANQ) to Microsoft Entra Domain Services (DS)."
-permalink: /azure-administrator-guide/getting-started/connecting-azure-native-qumulo-to-microsoft-entra-domain-services.html
+redirect_from:
+  - /azure-administrator-guide/getting-started/connecting-azure-native-qumulo-to-microsoft-entra-domain-services.html
+permalink: /azure-native-administrator-guide/getting-started/connecting-azure-native-qumulo-to-microsoft-entra-domain-services.html
 redirect_from:
   - /azure-guide/connecting-to-azure-active-directory-domain-services.html
 sidebar: azure_administrator_guide_sidebar
