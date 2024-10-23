@@ -176,6 +176,9 @@ exampleIP1: 203.0.113.1
 exampleIP2: 203.0.113.2
 exampleIP3: 203.0.113.3
 exampleIP4: 203.0.113.4
+exampleIP5: 203.0.113.5
+exampleIP6: 203.0.113.6
+exampleIP7: 203.0.113.7
 exampleIP42: 203.0.113.42
 exampleIP84: 203.0.113.84
 exampleIPv60: 2001:db8:60e0:7352:e9d2:e180:e7e8:cdb8
@@ -408,7 +411,8 @@ cnq:
   runTFapply: Run the <code>terraform apply</code> command.
   runTFapplyWithFile: Run the <code>terraform apply -var-file config-standard.tfvars</code> command.
   runTFdestroy: Run the <code>terraform destroy</code> command.
-  tfCreatesNewBuckets: Terraform creates new S3 buckets as necessary.
+  runTFdestroyWithFile: Run the <code>terraform destroy -var-file config-standard.tfvars</code> command.
+  tfCreatesNewBuckets: Terraform creates new S3 buckets as necessary
   cfnUpdateStackComputeCache: On the <strong>Stacks</strong> page, select your compute and cache deployment stack and then, in the upper right, click <strong>Update</strong>.
   cfnUpdateStackPersistentStorage: On the <strong>Stacks</strong> page, select your persistent storage stack and then, in the upper right, click <strong>Update</strong>.
   cfnUseExistingTemplate: On the <strong>Update stack</strong> page, click <strong>Use existing template</strong> and then click <strong>Next</strong>.

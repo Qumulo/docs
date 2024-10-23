@@ -52,7 +52,7 @@ This section explains how to deploy the S3 buckets that act as persistent storag
 
    1. Run the `terraform init` command.
 
-      Terraform prepares its environment and displays the message `Terraform has been successfully initialized!`
+      Terraform prepares the environment and displays the message `Terraform has been successfully initialized!`
 
    1. Review the `terraform.tfvars` file.
 
@@ -70,7 +70,7 @@ This section explains how to deploy the S3 buckets that act as persistent storag
 
       Terraform creates resources according the execution plan and displays:
 
-      * The `Apply complete!` message
+      * The `Apply complete!` message with a count of added resources
         
       * The names of the created S3 buckets
         

@@ -22,7 +22,7 @@ This section explains how to deploy compute and cache resources for a Qumulo clu
 {% if page.deployment == "tf" %}
 1. Navigate to the `aws-terraform-cnq-<x.y>` directory and then run the `terraform init` command.
 
-   Terraform prepares its environment and displays the message `Terraform has been successfully initialized!`
+   Terraform prepares the environment and displays the message `Terraform has been successfully initialized!`
 
 1. Choose `config-standard.tfvars` or `config-advanced.tfvars` and fill in the values for all variables.
 
@@ -36,7 +36,7 @@ This section explains how to deploy compute and cache resources for a Qumulo clu
 
    Terraform creates resources according the execution plan and displays:
 
-   * The `Apply complete!` message
+   * The `Apply complete!` message with a count of added resources
       
    * Your deployment's unique name
   
@@ -99,7 +99,7 @@ This section explains how to deploy compute and cache resources for a Qumulo clu
 
 1. To log in to your cluster's Web UI, use the endpoint from the {% if page.deployment == "tf" %}Terraform output{% elsif page.deployment == "cfn" %}top-level stack output{% endif %} as the endpoint and the username and password that you have configured during deployment as the credentials.
 
-   {% include important.html content="If you change the administrative password for your cluster by using the Qumulo Web UI, `qq` CLI, or REST API after deployment, you must add your new password to AWS Secrets Manager." %}
+   {% include important.html content="If you change the administrative password for your cluster by using the Qumulo Core Web UI, `qq` CLI, or REST API after deployment, you must add your new password to AWS Secrets Manager." %}
 
    You can use the Web UI to create and manage [NFS exports](../nfs/creating-nfs-export.html), [SMB shares](../smb/creating-smb-share.html), [snapshots](../snapshots/managing-snapshots.html), and [continuous replication relationships](../replicating-data/creating-managing-continuous-replication-relationship.html) You can also [join your cluster to Active Directory](https://care.qumulo.com/s/article/Join-your-Qumulo-Cluster-to-Active-Directory), [configure LDAP](../authentication-qumulo-core/configuring-ldap.html), and [perform many other operations](../).
 
