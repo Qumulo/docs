@@ -14,11 +14,7 @@ entries:
       type: norel
       output: web
 
-    - title: Azure Native Qumulo Administrator Guide
-      url: /azure-administrator-guide/
-      output: web
-
-    - title: Cloud Native Qumulo Deployment Guide
+    - title: Cloud Native Qumulo on AWS Administrator Guide
       url: /aws-administrator-guide/
       output: web
 
@@ -28,6 +24,10 @@ entries:
 
     - title: Qumulo-Certified Hardware Servicing Guide
       url: /hardware-guide/
+      output: web
+
+    - title: Azure Native Qumulo Administrator Guide
+      url: /azure-native-administrator-guide/
       output: web
 
     - title: Qumulo qq CLI Command Guide

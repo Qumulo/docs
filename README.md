@@ -42,9 +42,9 @@ To get started, choose one of the following guides.
   </span>
 </div>
 
-<h2 class="frontpage">Qumulo-Managed File System in Your Environment</h2>
+<h2 class="frontpage">Qumulo-Managed File System on Cloud Infrastructure</h2>
 <span class="guide-button single-button">
-  <a class="multilink" href="azure-administrator-guide/">
+  <a class="multilink" href="azure-native-administrator-guide/">
     <picture>
       <source type="image/webp" srcset="images/azure-native-qumulo-administrator-guide.webp">
       <source type="image/png" srcset="images/azure-native-qumulo-administrator-guide.png">

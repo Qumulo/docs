@@ -93,7 +93,7 @@ build_prince () {
       ;;
     "Azure_Guide")
       JEKYLL_CONFIG=config_azure_guide_pdf.yml
-      PRINCE_OUTPUT=qumulo-azure-administrator-guide.pdf
+      PRINCE_OUTPUT=azure-native-qumulo-administrator-guide.pdf
       ;;
     "CNQ_Guide")
       JEKYLL_CONFIG=config_aws_guide_pdf.yml
