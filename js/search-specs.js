@@ -42,12 +42,18 @@ function successFn(results) {
   // Add prefixes to qq CLI, On-Prem, and Azure guides
   const qqCLIlinks = document.querySelectorAll(".vuiSearchResult a");
   qqCLIlinks.forEach(function(link) {
-    if (link.href.includes("/qq-cli-command-guide/")) {
-      link.innerHTML = `qq CLI Commands: ${link.textContent}`;
+    if (link.href.includes("/cloud-native-aws-administrator-guide/")) {
+      link.innerHTML = `CNQ on AWS: ${link.textContent}`;
+    } else if (link.href.includes("/cloud-native-azure-administrator-guide/")) {
+      link.innerHTML = `CNQ on Azure: ${link.textContent}`;
     } else if (link.href.includes("/administrator-guide/")) {
       link.innerHTML = `On-Prem: ${link.textContent}`;
     } else if (link.href.includes("/azure-native-administrator-guide/")) {
       link.innerHTML = `Azure Native: ${link.textContent}`;
+    } else if (link.href.includes("/qq-cli-command-guide/")) {
+      link.innerHTML = `qq CLI: ${link.textContent}`;
+    } else if (link.href.includes("/rest-api-guide/")) {
+      link.innerHTML = `REST API: ${link.textContent}`;
     }
   });
 
