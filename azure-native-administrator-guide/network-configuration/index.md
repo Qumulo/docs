@@ -6,6 +6,6 @@ redirect_from:
 permalink: /azure-native-administrator-guide/network-configuration/
 redirect_from:
   - /azure-administrator-guide/networking/
-sidebar: azure_administrator_guide_sidebar
+sidebar: azure_native_administrator_guide_sidebar
 search: exclude
 ---

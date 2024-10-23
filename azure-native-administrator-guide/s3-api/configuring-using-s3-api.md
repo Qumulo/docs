@@ -4,7 +4,7 @@ summary: "This section explains how to configure and get started working with th
 redirect_from:
   - /azure-administrator-guide/s3-api/configuring-using-s3-api.html
 permalink: /azure-native-administrator-guide/s3-api/configuring-using-s3-api.html
-sidebar: azure_administrator_guide_sidebar
+sidebar: azure_native_administrator_guide_sidebar
 include_content: content-reuse/admin-guides/s3-api/configuring-using-s3-api.md
 ---
 

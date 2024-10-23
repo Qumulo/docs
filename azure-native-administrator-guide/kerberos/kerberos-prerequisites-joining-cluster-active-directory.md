@@ -4,7 +4,7 @@ summary: "This section describes the prerequisites for joining a Qumulo Cluster 
 redirect_from:
   - /azure-administrator-guide/kerberos/kerberos-prerequisites-joining-cluster-active-directory.html
 permalink: /azure-native-administrator-guide/kerberos/kerberos-prerequisites-joining-cluster-active-directory.html
-sidebar: azure_administrator_guide_sidebar
+sidebar: azure_native_administrator_guide_sidebar
 include_content: content-reuse/admin-guides/kerberos/kerberos-prerequisites-joining-cluster-active-directory.md
 ---
 

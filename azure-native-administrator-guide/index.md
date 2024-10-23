@@ -11,6 +11,6 @@ redirect_from:
   - /cloud/
   - /cloud/azure/
   - /cloud-guide/azure/
-sidebar: azure_administrator_guide_sidebar
+sidebar: azure_native_administrator_guide_sidebar
 search: exclude
 ---

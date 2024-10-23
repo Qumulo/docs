@@ -6,7 +6,7 @@ redirect_from:
 permalink: /azure-native-administrator-guide/getting-started/how-azure-native-qumulo-works.html
 redirect_from:
   - /azure-guide/how-qumulo-scalable-file-service-works.html
-sidebar: azure_administrator_guide_sidebar
+sidebar: azure_native_administrator_guide_sidebar
 ---
 
 {{site.azure.detailedDeploymentInstructions}}

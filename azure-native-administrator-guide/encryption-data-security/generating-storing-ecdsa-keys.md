@@ -4,7 +4,7 @@ summary: "This section explains how to generate Elliptic Curve Digital Signature
 redirect_from:
   - /azure-administrator-guide/encryption-data-security/generating-storing-ecdsa-keys.html
 permalink: /azure-native-administrator-guide/encryption-data-security/generating-storing-ecdsa-keys.html
-sidebar: azure_administrator_guide_sidebar
+sidebar: azure_native_administrator_guide_sidebar
 varSpecifyDetails: When you create a key pair, specify the following details&#58;
 include_content: content-reuse/admin-guides/encryption-data-security/generating-storing-ecdsa-keys.md
 ---

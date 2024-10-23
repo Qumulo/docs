@@ -4,6 +4,6 @@ layout: landing_page
 redirect_from:
   - /azure-administrator-guide/storage-management/
 permalink: /azure-native-administrator-guide/storage-management/
-sidebar: azure_administrator_guide_sidebar
+sidebar: azure_native_administrator_guide_sidebar
 search: exclude
 ---

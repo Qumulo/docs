@@ -4,6 +4,6 @@ summary: "This section explains how file locks, legal holds, and retention perio
 redirect_from:
   - /azure-administrator-guide/authorization-qumulo-core/managing-file-locks.html
 permalink: /azure-native-administrator-guide/authorization-qumulo-core/managing-file-locks.html
-sidebar: azure_administrator_guide_sidebar
+sidebar: azure_native_administrator_guide_sidebar
 include_content: content-reuse/admin-guides/authorization-qumulo-core/managing-file-locks.md
 ---

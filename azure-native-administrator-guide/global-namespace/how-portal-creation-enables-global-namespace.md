@@ -4,6 +4,6 @@ summary: "This section explains how creating portals on Qumulo clusters, and est
 redirect_from:
   - /azure-administrator-guide/global-namespace/how-portal-creation-enables-global-namespace.html
 permalink: /azure-native-administrator-guide/global-namespace/how-portal-creation-enables-global-namespace.html
-sidebar: azure_administrator_guide_sidebar
+sidebar: azure_native_administrator_guide_sidebar
 include_content: content-reuse/admin-guides/global-namespace/how-portal-creation-enables-global-namespace.md
 ---

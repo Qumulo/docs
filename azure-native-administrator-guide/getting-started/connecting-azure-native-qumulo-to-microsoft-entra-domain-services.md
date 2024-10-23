@@ -6,7 +6,7 @@ redirect_from:
 permalink: /azure-native-administrator-guide/getting-started/connecting-azure-native-qumulo-to-microsoft-entra-domain-services.html
 redirect_from:
   - /azure-guide/connecting-to-azure-active-directory-domain-services.html
-sidebar: azure_administrator_guide_sidebar
+sidebar: azure_native_administrator_guide_sidebar
 ---
 
 {% include important.html content="On October 1, 2023, Microsoft renamed Azure Active Directory Domain Services to Microsoft Entra Domain Services." %}

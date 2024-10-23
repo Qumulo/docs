@@ -4,7 +4,7 @@ summary: "This section provides an overview of how NFSv4.1 works with Kerberos i
 redirect_from:
   - /azure-administrator-guide/kerberos/kerberos-with-qumulo-core.html
 permalink: /azure-native-administrator-guide/kerberos/kerberos-with-qumulo-core.html
-sidebar: azure_administrator_guide_sidebar
+sidebar: azure_native_administrator_guide_sidebar
 include_content: content-reuse/admin-guides/kerberos/kerberos-with-qumulo-core.md
 ---
 

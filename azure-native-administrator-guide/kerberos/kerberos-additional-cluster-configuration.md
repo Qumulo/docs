@@ -4,7 +4,7 @@ summary: "This section describes additional Qumulo cluster configuration that ca
 redirect_from:
   - /azure-administrator-guide/kerberos/kerberos-additional-cluster-configuration.html
 permalink: /azure-native-administrator-guide/kerberos/kerberos-additional-cluster-configuration.html
-sidebar: azure_administrator_guide_sidebar
+sidebar: azure_native_administrator_guide_sidebar
 include_content: content-reuse/admin-guides/kerberos/kerberos-additional-cluster-configuration.md
 ---
 

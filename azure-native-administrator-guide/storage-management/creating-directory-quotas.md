@@ -6,7 +6,7 @@ redirect_from:
 permalink: /azure-native-administrator-guide/storage-management/creating-directory-quotas.html
 redirect_from:
   - /azure-administrator-guide/getting-started/creating-directory-quotas.html
-sidebar: azure_administrator_guide_sidebar
+sidebar: azure_native_administrator_guide_sidebar
 include_content: content-reuse/admin-guides/storage-management/creating-directory-quotas.md
 ---
 

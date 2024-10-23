@@ -4,7 +4,7 @@ summary: "This section explains how to use Qumulo Core's implementation of NFSv4
 redirect_from:
   - /azure-administrator-guide/nfs/nfsv4.1-acls.html
 permalink: /azure-native-administrator-guide/nfs/nfsv4.1-acls.html
-sidebar: azure_administrator_guide_sidebar
+sidebar: azure_native_administrator_guide_sidebar
 include_content: content-reuse/admin-guides/nfs/nfsv4.1-acls.md
 ---
 

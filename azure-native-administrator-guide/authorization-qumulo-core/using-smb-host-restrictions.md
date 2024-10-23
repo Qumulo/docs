@@ -4,6 +4,6 @@ summary: "This section explains how to use SMB host restrictions in Qumulo Core 
 redirect_from:
   - /azure-administrator-guide/authorization-qumulo-core/using-smb-host-restrictions.html
 permalink: /azure-native-administrator-guide/authorization-qumulo-core/using-smb-host-restrictions.html
-sidebar: azure_administrator_guide_sidebar
+sidebar: azure_native_administrator_guide_sidebar
 include_content: content-reuse/admin-guides/authorization-qumulo-core/using-smb-host-restrictions.md
 ---

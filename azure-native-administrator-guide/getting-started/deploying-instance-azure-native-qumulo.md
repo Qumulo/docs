@@ -6,7 +6,7 @@ redirect_from:
 permalink: /azure-native-administrator-guide/getting-started/deploying-instance-azure-native-qumulo.html
 redirect_from:
   - /azure-guide/getting-started-qumulo-scalable-file-service.html
-sidebar: azure_administrator_guide_sidebar
+sidebar: azure_native_administrator_guide_sidebar
 ---
 
 For an introduction, see [How {{site.azure.qumuloOnAzureLong}} Works](how-azure-native-qumulo-works.html).

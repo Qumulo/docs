@@ -4,7 +4,7 @@ summary: "This section explains how to create on-demand snapshots and snapshot p
 redirect_from:
   - /azure-administrator-guide/snapshots/managing-snapshots.html
 permalink: /azure-native-administrator-guide/snapshots/managing-snapshots.html
-sidebar: azure_administrator_guide_sidebar
+sidebar: azure_native_administrator_guide_sidebar
 varSaved: 1. Click **Cluster > Saved Snapshots**.
 var433Only: In Qumulo Core version 4.3.3 (and higher),
 varSeeLockUnlock: For more information, see <a href="locking-unlocking-snapshots.html">Locking and Unlocking Snapshots in Qumulo Core</a>.

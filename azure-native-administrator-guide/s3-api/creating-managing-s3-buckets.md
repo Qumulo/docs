@@ -4,7 +4,7 @@ summary: "This section explains how to create and manage S3 buckets for a Qumulo
 redirect_from:
   - /azure-administrator-guide/s3-api/creating-managing-s3-buckets.html
 permalink: /azure-native-administrator-guide/s3-api/creating-managing-s3-buckets.html
-sidebar: azure_administrator_guide_sidebar
+sidebar: azure_native_administrator_guide_sidebar
 varListJSON: The JSON output contains an array named <code>Buckets</code> that contains the individual buckets as objects.
 varUploadKinds: <code>UploadPart</code>, <code>PutObject</code>, or <code>CopyObject</code>
 varNoBucket: The specified bucket doesn't exist.

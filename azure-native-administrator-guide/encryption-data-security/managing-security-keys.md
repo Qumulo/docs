@@ -4,7 +4,7 @@ summary: "This section explains how to manage security keys in the Qumulo file s
 redirect_from:
   - /azure-administrator-guide/encryption-data-security/managing-security-keys.html
 permalink: /azure-native-administrator-guide/encryption-data-security/managing-security-keys.html
-sidebar: azure_administrator_guide_sidebar
+sidebar: azure_native_administrator_guide_sidebar
 varXrefUsage: For more information, see <a href="#retrieve-key-usage">Retrieving Public Key Usage Information</a>.
 include_content: content-reuse/admin-guides/encryption-data-security/managing-security-keys.md
 ---

@@ -4,7 +4,7 @@ summary: "This section explains how to use Shift-To to copy objects from a direc
 redirect_from:
   - /azure-administrator-guide/replicating-data/shift-to-s3.html
 permalink: /azure-native-administrator-guide/replicating-data/shift-to-s3.html
-sidebar: azure_administrator_guide_sidebar
+sidebar: azure_native_administrator_guide_sidebar
 include_content: content-reuse/admin-guides/replicating-data/shift-to-s3.md
 ---
 

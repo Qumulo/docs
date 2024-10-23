@@ -4,6 +4,6 @@ layout: landing_page
 redirect_from:
   - /azure-administrator-guide/web-ui/
 permalink: /azure-native-administrator-guide/web-ui/
-sidebar: azure_administrator_guide_sidebar
+sidebar: azure_native_administrator_guide_sidebar
 search: exclude
 ---

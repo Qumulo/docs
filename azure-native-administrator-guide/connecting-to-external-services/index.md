@@ -6,6 +6,6 @@ redirect_from:
 permalink: /azure-native-administrator-guide/connecting-to-external-services/
 redirect_from:
   - /azure-administration-guide/external-services/
-sidebar: azure_administrator_guide_sidebar
+sidebar: azure_native_administrator_guide_sidebar
 search: exclude
 ---

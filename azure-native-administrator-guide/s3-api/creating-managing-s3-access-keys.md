@@ -4,7 +4,7 @@ summary: "This section explains how to create and manage credentials that S3 API
 redirect_from:
   - /azure-administrator-guide/s3-api/creating-managing-s3-access-keys.html
 permalink: /azure-native-administrator-guide/s3-api/creating-managing-s3-access-keys.html
-sidebar: azure_administrator_guide_sidebar
+sidebar: azure_native_administrator_guide_sidebar
 varPaginatedResponsePart1: The `entries` list contains the access keys, limited to the first
 varListMax: "10,000"
 varPaginatedResponsePart2: The `paging.next` field contains the URI to which you can send a `GET` request to retrieve the next page of access keys. By making `GET` requests with all returned `paging.next` values, you can iterate over all of the access keys in the cluster.

@@ -4,7 +4,7 @@ summary: "This section describes how NFSv4.1 interacts with the secure file perm
 redirect_from:
   - /azure-administrator-guide/kerberos/kerberos-qumulo-permissions.html
 permalink: /azure-native-administrator-guide/kerberos/kerberos-qumulo-permissions.html
-sidebar: azure_administrator_guide_sidebar
+sidebar: azure_native_administrator_guide_sidebar
 include_content: content-reuse/admin-guides/kerberos/kerberos-qumulo-permissions.md
 ---
 

@@ -4,7 +4,7 @@ summary: "This section explains how to create, authorize, modify, and delete a r
 redirect_from:
   - /azure-administrator-guide/replicating-data/creating-managing-continuous-replication-relationship.html
 permalink: /azure-native-administrator-guide/replicating-data/creating-managing-continuous-replication-relationship.html
-sidebar: azure_administrator_guide_sidebar
+sidebar: azure_native_administrator_guide_sidebar
 platform: azure
 include_content: content-reuse/admin-guides/replicating-data/creating-managing-continuous-replication-relationship.md
 ---

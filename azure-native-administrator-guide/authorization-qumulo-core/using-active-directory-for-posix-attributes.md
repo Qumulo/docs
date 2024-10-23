@@ -4,7 +4,7 @@ summary: "This section explains how to use Active Directory (AD) for POSIX attri
 redirect_from:
   - /azure-administrator-guide/authorization-qumulo-core/using-active-directory-for-posix-attributes.html
 permalink: /azure-native-administrator-guide/authorization-qumulo-core/using-active-directory-for-posix-attributes.html
-sidebar: azure_administrator_guide_sidebar
+sidebar: azure_native_administrator_guide_sidebar
 include_content: content-reuse/admin-guides/authorization-qumulo-core/using-active-directory-for-posix-attributes.md
 varMapExample: "This configuration allows Qumulo Core to correlate an NFS UID (for example, `2053`) to a SID on Windows (for example, `S-1-5-21-...`)."
 ---

@@ -4,6 +4,6 @@ summary: "This section explains how to use the Global Namespace functionality in
 redirect_from:
   - /azure-administrator-guide/global-namespace/configuring-portal-relationship.html
 permalink: /azure-native-administrator-guide/global-namespace/configuring-portal-relationship.html
-sidebar: azure_administrator_guide_sidebar
+sidebar: azure_native_administrator_guide_sidebar
 include_content: content-reuse/admin-guides/global-namespace/configuring-portal-relationship.md
 ---

@@ -4,7 +4,7 @@ summary: "This section explains the relationship between the version of Qumulo C
 redirect_from:
   - /azure-administrator-guide/getting-started/replication-version-requirements.html
 permalink: /azure-native-administrator-guide/getting-started/replication-version-requirements.html
-sidebar: azure_administrator_guide_sidebar
+sidebar: azure_native_administrator_guide_sidebar
 varExample: The following example shows replication options for a cluster running the 
 platform: azure
 include_content: content-reuse/admin-guides/upgrading-qumulo-core/replication-version-requirements-upgrade-recommendations.md

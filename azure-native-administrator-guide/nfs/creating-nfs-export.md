@@ -4,7 +4,7 @@ summary: "This section explains how to create, modify, and delete an NFS export 
 redirect_from:
   - /azure-administrator-guide/nfs/creating-nfs-export.html
 permalink: /azure-native-administrator-guide/nfs/creating-nfs-export.html
-sidebar: azure_administrator_guide_sidebar
+sidebar: azure_native_administrator_guide_sidebar
 include_content: content-reuse/admin-guides/nfs/creating-nfs-export.md
 ---
 

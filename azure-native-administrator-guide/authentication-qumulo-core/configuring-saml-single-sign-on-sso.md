@@ -4,7 +4,7 @@ summary: "This section explains how to integrate your Qumulo cluster with your o
 redirect_from:
   - /azure-administrator-guide/authentication-qumulo-core/configuring-saml-single-sign-on-sso.html
 permalink: /azure-native-administrator-guide/authentication-qumulo-core/configuring-saml-single-sign-on-sso.html
-sidebar: azure_administrator_guide_sidebar
+sidebar: azure_native_administrator_guide_sidebar
 include_content: content-reuse/admin-guides/authentication-qumulo-core/configuring-saml-single-sign-on-sso.md
 ---
 

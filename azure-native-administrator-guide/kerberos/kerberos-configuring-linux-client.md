@@ -4,7 +4,7 @@ summary: "This section describes how to configure a Linux client for using NFSv4
 redirect_from:
   - /azure-administrator-guide/kerberos/kerberos-configuring-linux-client.html
 permalink: /azure-native-administrator-guide/kerberos/kerberos-configuring-linux-client.html
-sidebar: azure_administrator_guide_sidebar
+sidebar: azure_native_administrator_guide_sidebar
 varConfig: Configure the `sssd` and `idmapd` tools manually. For more information, see [Mapping External Identities to Linux Identities](#mapping-external-identities-to-linux-identities).
 varGSSDflag: The `use-machine-creds` flag specifies whether authentication uses machine credentials when `sudo mount` is invoked for NFSv4.1 with Kerberos.
 varMountKRB5: Mount your cluster by using the `krb5` security mechanism. For example&#58;

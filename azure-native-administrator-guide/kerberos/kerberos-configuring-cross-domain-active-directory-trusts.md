@@ -4,7 +4,7 @@ summary: "This section describes how the configuration of cross-domain Active Di
 redirect_from:
   - /azure-administrator-guide/kerberos/kerberos-configuring-cross-domain-active-directory-trusts.html
 permalink: /azure-native-administrator-guide/kerberos/kerberos-configuring-cross-domain-active-directory-trusts.html
-sidebar: azure_administrator_guide_sidebar
+sidebar: azure_native_administrator_guide_sidebar
 include_content: content-reuse/admin-guides/kerberos/kerberos-configuring-cross-domain-active-directory-trusts.md
 ---
 

@@ -4,6 +4,6 @@ summary: "This section explains how to configure automated removal of cached dat
 redirect_from:
   - /azure-administrator-guide/global-namespace/configuring-cache-management-for-spoke-portals.html
 permalink: /azure-native-administrator-guide/global-namespace/configuring-cache-management-for-spoke-portals.html
-sidebar: azure_administrator_guide_sidebar
+sidebar: azure_native_administrator_guide_sidebar
 include_content: content-reuse/admin-guides/global-namespace/configuring-cache-management-for-spoke-portals.md
 ---

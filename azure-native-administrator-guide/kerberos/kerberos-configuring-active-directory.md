@@ -4,7 +4,7 @@ summary: "This section describes the Active Directory Domain Controller (DC) con
 redirect_from:
   - /azure-administrator-guide/kerberos/kerberos-configuring-active-directory.html
 permalink: /azure-native-administrator-guide/kerberos/kerberos-configuring-active-directory.html
-sidebar: azure_administrator_guide_sidebar
+sidebar: azure_native_administrator_guide_sidebar
 varMachineAccount: To find the machine account name in the Qumulo Core Web UI, click **Cluster > Active Directory** and write down the name under **Machine Account**.
 varLowercase: To maximize compatibility with Linux, we recommend formatting SPN entries in lowercase.
 include_content: content-reuse/admin-guides/kerberos/kerberos-configuring-active-directory.md

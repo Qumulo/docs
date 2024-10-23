@@ -4,6 +4,6 @@ summary: "By connecting the Shared Folders Microsoft Management Console (MMC) Sn
 redirect_from:
   - /azure-administrator-guide/smb/managing-file-shares-shared-folders-mmc.html
 permalink: /azure-native-administrator-guide/smb/managing-file-shares-shared-folders-mmc.html
-sidebar: azure_administrator_guide_sidebar
+sidebar: azure_native_administrator_guide_sidebar
 include_content: content-reuse/admin-guides/smb/managing-file-shares-shared-folders-mmc.md
 ---

@@ -4,6 +4,6 @@ summary: "This section explains how to configure IPv6 in Qumulo Core by configur
 redirect_from:
   - /azure-administrator-guide/network-configuration/configuring-ipv6.html
 permalink: /azure-native-administrator-guide/network-configuration/configuring-ipv6.html
-sidebar: azure_administrator_guide_sidebar
+sidebar: azure_native_administrator_guide_sidebar
 include_content: content-reuse/admin-guides/network-configuration/configuring-ipv6.md
 ---

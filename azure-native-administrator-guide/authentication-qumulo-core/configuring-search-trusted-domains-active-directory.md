@@ -4,7 +4,7 @@ summary: "This section explains how to restrict the scope of LDAP queries by usi
 redirect_from:
   - /azure-administrator-guide/authentication-qumulo-core/configuring-search-trusted-domains-active-directory.html
 permalink: /azure-native-administrator-guide/authentication-qumulo-core/configuring-search-trusted-domains-active-directory.html
-sidebar: azure_administrator_guide_sidebar
+sidebar: azure_native_administrator_guide_sidebar
 include_content: content-reuse/admin-guides/authentication-qumulo-core/configuring-search-trusted-domains-active-directory.md
 ---
 

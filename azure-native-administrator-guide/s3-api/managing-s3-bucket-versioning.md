@@ -4,6 +4,6 @@ summary: "This section explains how <a href='https://docs.aws.amazon.com/AmazonS
 redirect_from:
   - /azure-administrator-guide/s3-api/managing-s3-bucket-versioning.html
 permalink: /azure-native-administrator-guide/s3-api/managing-s3-bucket-versioning.html
-sidebar: azure_administrator_guide_sidebar
+sidebar: azure_native_administrator_guide_sidebar
 include_content: content-reuse/admin-guides/s3-api/managing-s3-bucket-versioning.md
 ---

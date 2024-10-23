@@ -4,7 +4,7 @@ summary: "This section explains snapshots, their storage usage, and their lockin
 redirect_from:
   - /azure-administrator-guide/snapshots/how-snapshots-work.html
 permalink: /azure-native-administrator-guide/snapshots/how-snapshots-work.html
-sidebar: azure_administrator_guide_sidebar
+sidebar: azure_native_administrator_guide_sidebar
 include_content: content-reuse/admin-guides/snapshots/how-snapshots-work.md
 ---
 

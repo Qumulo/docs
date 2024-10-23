@@ -4,7 +4,7 @@ summary: "This section explains how to enable automatic command completion for t
 redirect_from:
   - /azure-administrator-guide/qq-cli/enabling-autocomplete.html
 permalink: /azure-native-administrator-guide/qq-cli/enabling-autocomplete.html
-sidebar: azure_administrator_guide_sidebar
+sidebar: azure_native_administrator_guide_sidebar
 include_content: content-reuse/admin-guides/qq-cli/enabling-autocomplete.md
 ---
 

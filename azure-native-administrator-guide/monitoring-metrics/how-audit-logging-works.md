@@ -4,6 +4,6 @@ summary: "This section explains the different formats of audit logs for file sys
 redirect_from:
   - /azure-administrator-guide/monitoring-and-metrics/how-audit-logging-works.html
 permalink: /azure-native-administrator-guide/monitoring-and-metrics/how-audit-logging-works.html
-sidebar: azure_administrator_guide_sidebar
+sidebar: azure_native_administrator_guide_sidebar
 include_content: content-reuse/admin-guides/monitoring-and-metrics/how-audit-logging-works.md
 ---

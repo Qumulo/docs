@@ -4,7 +4,7 @@ summary: "This section describes the performance characteristics and default ser
 redirect_from:
   - /azure-administrator-guide/getting-started/performance-characteristics-default-limits-azure-native-qumulo.html
 permalink: /azure-native-administrator-guide/getting-started/performance-characteristics-default-limits-azure-native-qumulo.html
-sidebar: azure_administrator_guide_sidebar
+sidebar: azure_native_administrator_guide_sidebar
 ---
 
 {{site.azure.qumuloOnAzureShort}} v2 introduces a file system architecture that offers improved performance and flexibility for file systems of any size. For this reason, we eliminated the concept of _total available capacity._ You pay only for the data you store and, separately, for the throughput you use.

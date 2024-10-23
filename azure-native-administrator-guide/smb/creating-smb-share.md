@@ -4,7 +4,7 @@ summary: "This section explains how to create, modify, and delete an SMB share b
 redirect_from:
   - /azure-administrator-guide/smb/creating-smb-share.html
 permalink: /azure-native-administrator-guide/smb/creating-smb-share.html
-sidebar: azure_administrator_guide_sidebar
+sidebar: azure_native_administrator_guide_sidebar
 include_content: content-reuse/admin-guides/smb/creating-smb-share.md
 ---
 
