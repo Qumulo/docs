@@ -11,10 +11,10 @@ redirect_from:
 deployment: tf
 ---
 
-{% include content-reuse/cnq-guide/deployment-agnostic-preamble-prerequisites-provisioner.md %}
+{% include content-reuse/cnq-guide-aws/deployment-agnostic-preamble-prerequisites-provisioner.md %}
 
-{% include content-reuse/cnq-guide/deployment-agnostic-cluster-persistent-storage.md %}
+{% include content-reuse/cnq-guide-aws/deployment-agnostic-cluster-persistent-storage.md %}
 
-{% include content-reuse/cnq-guide/deployment-agnostic-cluster-compute-cache-resources.md %}
+{% include content-reuse/cnq-guide-aws/deployment-agnostic-cluster-compute-cache-resources.md %}
 
-{% include content-reuse/cnq-guide/deployment-agnostic-post-deployment-actions.md %}
+{% include content-reuse/cnq-guide-aws/deployment-agnostic-post-deployment-actions.md %}

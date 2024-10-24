@@ -1,11 +1,11 @@
 <a id="deploy-persistent-storage"></a>
 ## Step 1: Deploying Cluster Persistent Storage
 This section explains how to deploy the S3 buckets that act as persistent storage for your Qumulo cluster.
-1. Log in to Nexus and click **Downloads > Deploy Cloud Native Qumulo**.
+1. Log in to Nexus and click **Downloads > {{site.cnq.nexusDropDown}}**.
 
-1. In the **Download the required files** section, select the Qumulo Core version that you want to deploy and then download the corresponding {% if page.deployment == "cfn" %}CloudFormation template{% elsif page.deployment == "tf" %}Terraform configuration{% endif %}, Debian package, and host configuration file.
+1. Click the **AWS** tab and, in the **Download the required files** section, select the Qumulo Core version that you want to deploy and then download the corresponding {% if page.deployment == "cfn" %}CloudFormation template{% elsif page.deployment == "tf" %}Terraform configuration{% endif %}, Debian package, and host configuration file.
 
-1. {{site.cnq.createSubdirInS3bucket}}
+1. In your S3 bucket, create the `qumulo-core-install` directory. Within this directory, create another directory with the Qumulo Core version as its name. The following is an example path:
 
    ```
    my-s3-bucket-name/my-s3-bucket-prefix/qumulo-core-install/7.2.3.1
@@ -48,7 +48,7 @@ This section explains how to deploy the S3 buckets that act as persistent storag
    CloudFormation creates S3 buckets and their stack.
 {% elsif page.deployment == "tf" %}
 
-1. Navigate to the `persistent-storage` directory and then take the following steps:
+1. Navigate to the `persistent-storage` directory and take the following steps:
 
    1. Run the `terraform init` command.
 
@@ -56,7 +56,7 @@ This section explains how to deploy the S3 buckets that act as persistent storag
 
    1. Review the `terraform.tfvars` file.
 
-      * Specify the correct `aws_region` for your cluster's persistent storage.
+      * Specify the `deployment_name` and the correct `aws_region` for your cluster's persistent storage.
         
       * Leave the `soft_capacity_limit` at `500`.
 
@@ -64,9 +64,9 @@ This section explains how to deploy the S3 buckets that act as persistent storag
 
    1. Run the `terraform apply` command.
   
-      Terraform displays its execution plan.
+      {{site.cnq.tfDispExecPlan}}
 
-   1. Review the Terraform execution plan and then enter `yes`.
+   1. {{site.cnq.reviewExecPlan}}
 
       Terraform creates resources according the execution plan and displays:
 
@@ -75,8 +75,6 @@ This section explains how to deploy the S3 buckets that act as persistent storag
       * The names of the created S3 buckets
         
       * Your deployment's unique name
-  
-        {% include tip.html content="You will need the `deployment_unique_name` value to deploy your cluster." %}
      
       For example:
      
@@ -94,4 +92,6 @@ This section explains how to deploy the S3 buckets that act as persistent storag
       deployment_unique_name = "{{site.cnq.deploymentUniqueNameExample}}"
       ...
       ```
+
+      {% include tip.html content="You will need the `deployment_unique_name` value to deploy your cluster." %}
 {% endif %}

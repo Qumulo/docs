@@ -9,15 +9,27 @@ To get started, choose one of the following guides.
 
 
 <h2 class="frontpage">Self-Managed File System on Cloud Infrastructure</h2>
-<span class="guide-button single-button">
-  <a class="multilink" href="cloud-native-aws-administrator-guide/">
-    <picture>
-      <source type="image/webp" srcset="images/cloud-native-qumulo-on-aws-administrator-guide.webp">
-      <source type="image/png" srcset="images/cloud-native-qumulo-on-aws-administrator-guide.png">
-      <img src="images/cloud-native-qumulo-on-aws-administrator-guide.png" alt="An image of a computer screen with a stylized Qumulo Core interface behind an image of a cloud, symbolizing cloud native deployments" class="landing-page-icon" width="301" height="301">
-    </picture><br>Cloud Native<br>Qumulo on AWS<br>Administrator Guide
-  </a>
-</span>
+<div class="landing-page-buttons">
+  <span class="guide-button">
+    <a class="multilink" href="cloud-native-aws-administrator-guide/">
+      <picture>
+        <source type="image/webp" srcset="images/cloud-native-qumulo-on-aws-administrator-guide.webp">
+        <source type="image/png" srcset="images/cloud-native-qumulo-on-aws-administrator-guide.png">
+        <img src="images/cloud-native-qumulo-on-aws-administrator-guide.png" alt="An image of a computer screen with a stylized Qumulo Core interface behind an image of a cloud, symbolizing cloud native deployments on AWS" class="landing-page-icon" width="301" height="301">
+      </picture><br>Cloud Native<br>Qumulo on AWS<br>Administrator Guide
+    </a>
+  </span>
+
+  <span class="guide-button">
+    <a class="multilink" href="cloud-native-azure-administrator-guide/">
+      <picture>
+        <source type="image/webp" srcset="images/cloud-native-qumulo-on-azure-administrator-guide.webp">
+        <source type="image/png" srcset="images/cloud-native-qumulo-on-azure-administrator-guide.png">
+        <img src="images/cloud-native-qumulo-on-azure-administrator-guide.png" alt="An image of a computer screen with a stylized Qumulo Core interface behind an image of a cloud, symbolizing cloud native deployments on Azure" class="landing-page-icon" width="301" height="301">
+      </picture><br>Cloud Native<br>Qumulo on Azure<br>Administrator Guide
+    </a>
+  </span>
+</div>
 
 <h2 class="frontpage">Self-Managed File System on Hardware Infrastructure</h2>
 <div class="landing-page-buttons">
@@ -48,7 +60,7 @@ To get started, choose one of the following guides.
     <picture>
       <source type="image/webp" srcset="images/azure-native-qumulo-administrator-guide.webp">
       <source type="image/png" srcset="images/azure-native-qumulo-administrator-guide.png">
-      <img src="images/azure-native-qumulo-administrator-guide.png" alt="An image of a computer screen with a stylized Qumulo Core interface, symbolizing cloud deployments on Azure" class="landing-page-icon" width="301" height="301">
+      <img src="images/azure-native-qumulo-administrator-guide.png" alt="An image of a computer screen with a stylized Qumulo Core interface, symbolizing Azure native deployments" class="landing-page-icon" width="301" height="301">
     </picture><br>{{site.guides.anq}}
   </a>
 </span>

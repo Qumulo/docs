@@ -15,7 +15,11 @@ entries:
       output: web
 
     - title: Cloud Native Qumulo on AWS Administrator Guide
-      url: /aws-administrator-guide/
+      url: /cloud-native-aws-administrator-guide/
+      output: web
+
+    - title: Cloud Native Qumulo on Azure Administrator Guide
+      url: /cloud-native-azure-administrator-guide/
       output: web
 
     - title: Qumulo On-Premises Administrator Guide

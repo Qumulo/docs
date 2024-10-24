@@ -229,6 +229,10 @@ exampleBucketName1: ab5cdefghij-my-deployment-klmnopqr9st-qps-1
 exampleBucketName2: ab4cdefghij-my-deployment-klmnopqr8st-qps-2
 exampleBucketName3: ab3cdefghij-my-deployment-klmnopqr7st-qps-3
 exampleBucketName4: ab2cdefghij-my-deployment-klmnopqr6st-qps-4
+exampleStorageAccountName1: ab5cdefghij1
+exampleStorageAccountName2: ab4cdefghij2
+exampleStorageAccountName3: ab3cdefghij3
+exampleStorageAccountName4: ab2cdefghij4
 exampleEC2id1: i-0ab12345678c9012d
 exampleEC2id2: i-9dc87654321b0987a
 
@@ -398,6 +402,9 @@ azure:
 aws:
   cnqAWSlong: Cloud Native Qumulo on AWS
   cnqAWSshort: CNQ on AWS
+azure:
+  cnqAzureLong: Cloud Native Qumulo on Azure
+  cnqAzureShort: CNQ on Azure
 
 cnqLong: Cloud Native Qumulo
 cnqShort: CNQ
@@ -408,22 +415,26 @@ cnq:
   logIntoS3: Log in to the <a href="https://console.aws.amazon.com/s3/home">Amazon S3 console</a>.
   logIntoWebUI: To check that the cluster is healthy, log in to the Web UI.
   changeQnodeCount: Edit <code>config-standard.tfvars</code> or <code>config-advanced.tfvars</code> and change the value of <code>q_node_count</code>
+  changeQnodeCountAzure: Edit <code>terraform.tfvars</code> and change the value of <code>q_node_count</code>
   runTFapply: Run the <code>terraform apply</code> command.
   runTFapplyWithFile: Run the <code>terraform apply -var-file config-standard.tfvars</code> command.
   runTFdestroy: Run the <code>terraform destroy</code> command.
   runTFdestroyWithFile: Run the <code>terraform destroy -var-file config-standard.tfvars</code> command.
   tfCreatesNewBuckets: Terraform creates new S3 buckets as necessary
+  tfCreatesNewStorageAccounts: Terraform creates new Azure Storage Accounts as necessary
   cfnUpdateStackComputeCache: On the <strong>Stacks</strong> page, select your compute and cache deployment stack and then, in the upper right, click <strong>Update</strong>.
   cfnUpdateStackPersistentStorage: On the <strong>Stacks</strong> page, select your persistent storage stack and then, in the upper right, click <strong>Update</strong>.
   cfnUseExistingTemplate: On the <strong>Update stack</strong> page, click <strong>Use existing template</strong> and then click <strong>Next</strong>.
   cfnConfigureStackOptions: On the <strong>Configure stack options</strong> page, click <strong>Next</strong>.
   cfnRollbackOnFailure: On the <strong>Review &lt;my-stack-name&gt;</strong> page, click <strong>Rollback on failure</strong> and then click <strong>Submit</strong>.
-  monitorProvisionerStatus: To monitor the provisioner's status, you can watch the Terraform status posts in your terminal or in AWS Systems Manager (<strong>Application Management &gt; Parameter Store</strong>), under <code>/qumulo/&lt;my-deployment-name&gt;/last-run-status</code>.
-  createSubdirInS3bucket: "In your S3 bucket, create the `qumulo-core-install` directory. Within this directory, create another directory with the Qumulo Core version as its name. The following is an example path:"
   qCoreVerTip: Make a new subdirectory for every new release of Qumulo Core.
-  copyDebAndConfig: Copy `qumulo-core.deb` and `host_configuration.tar.gz` into the directory named after the Qumulo Core version (in this example, it is `7.2.3`).
+  copyDebAndConfig: Copy `qumulo-core.deb` and `host_configuration.tar.gz` into the directory named after the Qumulo Core version (in this example, it is `7.2.3.1`).
   deploymentUniqueNameExample: my-deployment-ABCDEFGH1IJ
   paramStore: in AWS Systems Manager (<strong>Application Management &gt; Parameter Store</strong>)
+  azureAppConfig: in Azure App Configuration (on the left navigation panel, click <strong>Operations &gt; Configuration Explorer</strong>)
+  tfDispExecPlan: Terraform displays the execution plan.
+  reviewExecPlan: Review the Terraform execution plan and then enter <code>yes</code>.
+  nexusDropDown: Cloud Native Qumulo Downloads
 
 varonis:
   separateMachine: Deploy Qumulo Broker on a stand-alone machine (or virtual machine) so that it sits between your Qumulo cluster and Varonis.

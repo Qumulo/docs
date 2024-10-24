@@ -1,6 +1,6 @@
 ---
 title: "How Cloud Native Qumulo on AWS Works"
-summary: "This section explains the main functionality of Cloud Native Qumulo on AWS (CNQ), shows the reference architecture, and lists the known limits. In addition, it provides an overview of the two-phase deployment."
+summary: "This section explains the main functionality of Cloud Native Qumulo on AWS (CNQ), shows the reference architecture, and lists the known limits. In addition, it provides an overview of the two-phase deployment, the post-deployment actions, and deployment optimization."
 redirect_from:
   - /aws-administrator-guide/getting-started/how-cloud-native-qumulo-works.html
 permalink: /cloud-native-aws-administrator-guide/getting-started/how-cloud-native-qumulo-works.html

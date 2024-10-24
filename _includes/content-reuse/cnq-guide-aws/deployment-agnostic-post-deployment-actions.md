@@ -9,9 +9,9 @@ This section describes the common actions you can perform on a {{site.cnqShort}}
 {% if page.deployment == "tf" %}
 1. {{site.cnq.changeQnodeCount}} to a new value.
 1. {{site.cnq.runTFapplyWithFile}}
-1. Terraform displays its execution plan.
+1. {{site.cnq.tfDispExecPlan}}
 
-   Review the Terraform execution plan and then enter `yes`.
+   {{site.cnq.reviewExecPlan}}
    
    Terraform changes resources according the execution plan and displays an additional primary (static) IP for the new node. For example:
 
@@ -106,7 +106,7 @@ You must perform this step while the cluster is running.
 1. {{site.cnq.changeQnodeCount}} to a lower value (for example, `4`).
 1. {{site.cnq.runTFapplyWithFile}}
 
-   Review the Terraform execution plan and then enter `yes`.
+   {{site.cnq.reviewExecPlan}}
    
    Terraform removes the resources for the removed nodes according the execution plan and displays the primary (static) IPs for the remaining nodes. For example:
 
@@ -133,6 +133,78 @@ You must perform this step while the cluster is running.
 
 1. {{site.cnq.logIntoWebUI}}
 
+
+<a id="increasing-soft-capacity-limit-existing-cluster"></a>
+### Increasing the Soft Capacity Limit for an Existing Cluster
+Increasing the soft capacity limit for an existing cluster is a two-step process:
+
+1. Configure new persistent storage parameters.
+2. Configure new compute and cache deployment parameters.
+
+#### Step 1: Set New Persistent Storage Parameters
+{% if page.deployment == "tf" %}
+1. Edit the `terraform.tfvars` file in the `persistent-storage` directory and set the `soft_capacity_limit` variable to a higher value.
+1. {{site.cnq.runTFapply}}
+
+   {{site.cnq.reviewExecPlan}}
+
+   {{site.cnq.tfCreatesNewBuckets}} and displays:
+
+   * The `Apply complete!` message with a count of changed resources
+     
+   * The names of the created S3 buckets
+     
+   * Your deployment’s unique name
+     
+   * The new soft capacity limit
+
+   ```
+   Apply complete! Resources: 0 added, 1 changed, 0 destroyed.
+
+   Outputs:
+
+   bucket_names = [
+     "{{site.exampleBucketName1}}",
+     "{{site.exampleBucketName2}}",
+     "{{site.exampleBucketName3}}",
+     "{{site.exampleBucketName3}}",
+   ]
+   deployment_unique_name = "lucia-deployment-GKMVD58UF2F"
+   ...
+   soft_capacity_limit = "1000 TB"
+   ```
+
+#### Step 2: Update Existing Compute and Cache Resource Deployment
+1. Navigate to the root directory of the `aws-terraform-cnq-<x.y>` repository.
+1. {{site.cnq.runTFapplyWithFile}}
+
+   {{site.cnq.reviewExecPlan}}
+
+   Terraform updates the necessary IAM roles and S3 bucket policies, adds S3 buckets to the persistent storage list for the cluster, increases the soft capacity limit, and displays the `Apply complete!` message.
+   
+   When the Provisioner shuts down automatically, this process is complete.
+
+{% elsif page.deployment == "cfn" %}
+1. {{site.cnq.cfnUpdateStackPersistentStorage}}
+1. {{site.cnq.cfnUseExistingTemplate}}
+1. On the **Specify stack details** page, enter a higher value for **QSoftCapacityLimit** and then click **Next**.
+1. {{site.cnq.cfnConfigureStackOptions}}
+1. {{site.cnq.cfnRollbackOnFailure}}
+
+   CloudFormation creates new S3 buckets as necessary.
+
+#### Step 2: Update Existing Compute and Cache Resource Deployment
+1. {{site.cnq.cfnUpdateStackComputeCache}}
+1. {{site.cnq.cfnUseExistingTemplate}}
+1. On the **Specify stack details** page click **Next**.
+1. {{site.cnq.cfnConfigureStackOptions}}
+1. {{site.cnq.cfnRollbackOnFailure}}
+
+   CloudFormation updates the necessary IAM roles and S3 bucket policies, adds S3 buckets to the persistent storage list for the cluster, and increases the soft capacity limit.
+   When the Provisioner shuts down automatically, this process is complete.
+{% endif %}
+
+
 ### Scaling Your Existing CNQ on AWS Cluster
 {% include important.html content="To minimize potential availability interruptions, you must perform this _cluster replacement procedure_ as a two-quorum event. For example, if you stop the existing EC2 instances by using the AWS Management Console and change the EC2 instance types, two quorum events occur _for each node_ and the read and write cache isn't optimized for the EC2 instance type." %}
 
@@ -155,7 +227,7 @@ You can scale an existing {{site.aws.cnqAWSshort}} cluster by changing the EC2 i
 
 1. {{site.cnq.runTFapplyWithFile}}
 
-   Review the Terraform execution plan and then enter `yes`.
+   {{site.cnq.reviewExecPlan}}
    
    Terraform creates resources according the execution plan and displays:
 
@@ -190,7 +262,6 @@ You can scale an existing {{site.aws.cnqAWSshort}} cluster by changing the EC2 i
      "{{site.exampleIP84}}",
      ...
    ]
-   ...
    ...
    qumulo_primary_ips = [
      "{{site.exampleIP4}}",
@@ -228,7 +299,7 @@ You can scale an existing {{site.aws.cnqAWSshort}} cluster by changing the EC2 i
 1. To ensure that the correct workspace is selected, run the `terraform workspace show` command.
 1. {{site.cnq.runTFdestroyWithFile}}
 
-   Review the Terraform execution plan and then enter `yes`.
+   {{site.cnq.reviewExecPlan}}
 
    Terraform deletes resources according to the execution plan and displays the `Destroy complete!` message with a count of destroyed resources.
 {% elsif page.deployment == "cfn" %}
@@ -248,7 +319,7 @@ You can scale an existing {{site.aws.cnqAWSshort}} cluster by changing the EC2 i
 1. Edit the `config-standard.tfvars` or `config-advanced.tfvars` file and set the `q_replacement_cluster` variable to `false`.
 1. {{site.cnq.runTFapplyWithFile}} This ensures that the S3 bucket policies have least privilege.
 
-   Review the Terraform execution plan and then enter `yes`.
+   {{site.cnq.reviewExecPlan}}
 
    Terraform deletes resources according to the execution plan and displays the `Apply complete!` message with a count of destroyed resources.
 {% elsif page.deployment == "cfn" %}
@@ -257,76 +328,6 @@ You can scale an existing {{site.aws.cnqAWSshort}} cluster by changing the EC2 i
 1. On the **Specify stack details** page, for **QReplacementCluster**, click **No**.
 1. {{site.cnq.cfnConfigureStackOptions}}
 1. {{site.cnq.cfnRollbackOnFailure}}
-{% endif %}
-
-<a id="increasing-soft-capacity-limit-existing-cluster"></a>
-### Increasing the Soft Capacity Limit for an Existing Cluster
-Increasing the soft capacity limit for an existing cluster is a two-step process:
-
-1. Configure new persistent storage parameters.
-2. Configure new compute and cache deployment parameters.
-
-#### Step 1: Set New Persistent Storage Parameters
-{% if page.deployment == "tf" %}
-1. Edit the `terraform.tfvars` file in the `persistent-storage` directory and set the `soft_capacity_limit` variable to a higher value.
-1. {{site.cnq.runTFapply}}
-
-   Review the Terraform execution plan and then enter `yes`.
-
-   {{site.cnq.tfCreatesNewBuckets}} and displays:
-
-   * The `Apply complete!` message with a count of changed resources
-     
-   * The names of the created S3 buckets
-     
-   * Your deployment’s unique name
-     
-   * The new soft capacity limit
-
-   ```
-   Apply complete! Resources: 0 added, 1 changed, 0 destroyed.
-
-   Outputs:
-
-   bucket_names = [
-     "{{site.exampleBucketName1}}",
-     "{{site.exampleBucketName2}}",
-     "{{site.exampleBucketName3}}",
-     "{{site.exampleBucketName3}}",
-   ]
-   deployment_unique_name = "lucia-deployment-GKMVD58UF2F"
-   ...
-   soft_capacity_limit = "1000 TB"
-   ```
-
-#### Step 2: Update Existing Compute and Cache Resource Deployment
-1. Navigate to the root directory of the `aws-terraform-cnq-<x.y>` repository.
-1. {{site.cnq.runTFapplyWithFile}}
-
-   Review the Terraform execution plan and then enter `yes`.
-
-   Terraform updates the necessary IAM roles and S3 bucket policies, adds S3 buckets to the persistent storage list for the cluster, increases the soft capacity limit, and displays the `Apply complete!` message.
-   
-   When the Provisioner shuts down automatically, this process is complete.
-
-{% elsif page.deployment == "cfn" %}
-1. {{site.cnq.cfnUpdateStackPersistentStorage}}
-1. {{site.cnq.cfnUseExistingTemplate}}
-1. On the **Specify stack details** page, enter a higher value for **QSoftCapacityLimit** and then click **Next**.
-1. {{site.cnq.cfnConfigureStackOptions}}
-1. {{site.cnq.cfnRollbackOnFailure}}
-
-   CloudFormation creates new S3 buckets as necessary.
-
-#### Step 2: Update Existing Compute and Cache Resource Deployment
-1. {{site.cnq.cfnUpdateStackComputeCache}}
-1. {{site.cnq.cfnUseExistingTemplate}}
-1. On the **Specify stack details** page click **Next**.
-1. {{site.cnq.cfnConfigureStackOptions}}
-1. {{site.cnq.cfnRollbackOnFailure}}
-
-   CloudFormation updates the necessary IAM roles and S3 bucket policies, adds S3 buckets to the persistent storage list for the cluster, and increases the soft capacity limit.
-   When the Provisioner shuts down automatically, this process is complete.
 {% endif %}
 
 <a id="deleting-existing-cluster"></a>
@@ -344,7 +345,8 @@ Deleting a cluster is a two-step process:
 {{site.data.alerts.end}}
 
 {% if page.deployment == "cfn" %}
-1. After you back up your data safely, [disable termination protection](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html) for your CloudFormation stack.
+1. Back up your data safely.
+1. [Disable termination protection](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html) for your CloudFormation stack.
 1. To update your stack, do the following:
    1. On the **Stacks** page, select the existing stack and then, in the upper right, click **Update**.
    1. On the **Update stack** page, click **Use existing template** and then click **Next**.
@@ -357,13 +359,13 @@ Deleting a cluster is a two-step process:
 1. After you back up your data safely, edit your `config-standard.tfvars` or `config-advanced.tfvars` file and set the `term_protection` variable to `false`.
 1. {{site.cnq.runTFapplyWithFile}}
 
-   Review the Terraform execution plan and then enter `yes`.
+   {{site.cnq.reviewExecPlan}}
 
    Terraform marks resources for deletion according to the execution plan and displays the `Apply complete!` message with a count of changed resources.
    
 1. {{site.cnq.runTFdestroyWithFile}}
 
-   Review the Terraform execution plan and then enter `yes`.
+   {{site.cnq.reviewExecPlan}}
 
    Terraform deletes all of your cluster's {{site.cnqShort}} resources and displays the `Destroy complete!` message and a count of destroyed resources.
 
@@ -372,13 +374,13 @@ Deleting a cluster is a two-step process:
 1. Edit your `terraform.tfvars` file and set the `prevent_destroy` parameter to `false`.
 1. {{site.cnq.runTFapply}}
 
-   Review the Terraform execution plan and then enter `yes`.
+   {{site.cnq.reviewExecPlan}}
 
    Terraform marks resources for deletion according to the execution plan and displays the `Apply complete!` message with a count of changed resources.
    
 1. {{site.cnq.runTFdestroy}}
 
-   Review the Terraform execution plan and then enter `yes`.
+   {{site.cnq.reviewExecPlan}}
 
    Terraform deletes all of your cluster's persistent storage and displays the `Destroy complete!` message and a count of destroyed resources.
 {% endif %}
