@@ -151,16 +151,16 @@ Before installing the Qumulo Core Product Package, you must configure your host 
 
 1. To install Qumulo Core, use the correct installation package for your Linux distribution:
 
-   * For the `.deb` package, run the `dpkg` command. For example:
+   * For the `.deb` package, run the `apt` command. For example:
 
      ```bash
-     sudo dpkg -i qumulo-core.deb
+     sudo apt install ./qumulo-core.deb
      ```
 
-   * For the `.rpm` package, run the `rpm` command. For example:
+   * For the `.rpm` package, run the `dnf` command. For example:
 
      ```bash
-     sudo rpm -i qumulo-core.rpm
+     sudo dnf install ./qumulo-core.rpm
      ```
 1. To verify that the Qumulo Core service has started successfully, run the `systemctl` command. For example:
 
