@@ -61,7 +61,15 @@ install_docker() {
       sudo apt-get update && sudo apt-get install -y docker.io
       sudo usermod -aG docker "$(whoami)"
       sudo service docker start
-      echo "For the group change to take effect, you must log out of the system and then log back in."
+      echo -e "\e[31mFor the group change to take effect, you must log out of the system and then log back in.\e[0m"
+      echo -e "\e[31mLog out now? (y/n)\e[0m"
+      read -r logout_now     
+      if [ "$logout_now" = "y" ]; then
+        echo "Logging out..."
+        pkill -KILL -u "$(whoami)"
+      else
+        echo "Remember to log out and then log back in later."
+      fi
     elif [ "$answer" = "n" ]; then
       echo "Can't continue without installing Docker. Exiting..."
       exit 1
@@ -116,7 +124,7 @@ find_modified_cli(){
 # Function to check for the src repository
 check_src_repo() {
     if [ ! -d ~/src ]; then
-        echo "You must first clone the Vectara Ingest repository: https://qumulo.atlassian.net/wiki/spaces/EN/pages/1167851855/Manually+Checking+Out+Source"
+        echo "You must first bootstrap the dev environment: https://qumulo.atlassian.net/wiki/spaces/EN/pages/1167851855/Manually+Checking+Out+Source#Bootstrap-the-DEV-environment"
         exit 1
     fi
 }
