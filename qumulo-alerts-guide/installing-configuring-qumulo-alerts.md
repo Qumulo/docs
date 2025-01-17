@@ -8,7 +8,7 @@ sidebar: qumulo_alerts_guide_sidebar
 ---
 
 ## Prerequisites
-This section lists the prerequisites for Qumulo Alerts. Hello WOrld!
+This section lists the prerequisites for Qumulo Alerts.
 
 ### Firewall Ports
 Qumulo Alerts requires the following firewall ports to be open from the Qumulo Alerts instance
