@@ -1,5 +1,7 @@
 #!/bin/bash
 
+eval $(~/src/environment)
+
 sweep_toolchain() {
   ~/src/toolchain/qpkg.py sweep
 }
