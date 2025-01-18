@@ -6,6 +6,10 @@ sweep_toolchain() {
   ~/src/toolchain/qpkg.py sweep
 }
 
+prune_docker() {
+  docker builder prune && docker image prune && docker container prune
+}
+
 no_toolchain() {
     export PATH=$(echo $PATH | sed "s|/opt/qumulo[^:]*:||g")
 }
@@ -309,11 +313,12 @@ while true; do
     echo "10. 📋 Check documentation for link, script, and image errors"
     echo "11. 📋 Check documentation for spelling errors"
     echo "12. 🧹 Sweep Toolchain"
-    echo "13. 🔍 Ingest docs.qumulo.com into Vectara"
-    echo "14. 🔍 Ingest care.qumulo.com into Vectara"
-    echo "15. 🔍 Ingest qumulo.com into Vectara"
-    echo "16. 📋 Check ingestion status"
-    echo "17. ❌ Find unused .js scripts"
+    echo "13. 🧹 Prune Docker"
+    echo "14. 🔍 Ingest docs.qumulo.com into Vectara"
+    echo "15. 🔍 Ingest care.qumulo.com into Vectara"
+    echo "16. 🔍 Ingest qumulo.com into Vectara"
+    echo "17. 📋 Check ingestion status"
+    echo "18. ❌ Find unused .js scripts"
     echo "q.  👋 Quit"
     echo
     read -p $'\033[1;33mWhat would you like to do? \033[0m' choice
@@ -331,11 +336,12 @@ while true; do
         10) check_docs_errors ;;
         11) check_spelling_errors ;;
         12) sweep_toolchain ;;
-        13) ingest_docs_portal ;;
-        14) ingest_care_portal ;;
-        15) ingest_corp_site ;;
-        16) check_ingestion_status ;;
-        17) find_unused_scripts ;;
+        13) prune_docker ;;
+        14) ingest_docs_portal ;;
+        15) ingest_care_portal ;;
+        16) ingest_corp_site ;;
+        17) check_ingestion_status ;;
+        18) find_unused_scripts ;;
         q) exit ;;
         *) echo "You must enter a valid option." ;;
     esac
