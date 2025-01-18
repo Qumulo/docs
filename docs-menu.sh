@@ -334,7 +334,7 @@ while true; do
         8) build_serve_docs_locally_python ;;
         9) build_serve_docs_locally_jekyll ;;
         10) check_docs_errors ;;
-        11) check_spelling_errors ;;
+        11) echo -e "⚠️  \033[1;31mThe spellcheker is disabled temporarily.\033[0m" ;;
         12) sweep_toolchain ;;
         13) prune_docker ;;
         14) ingest_docs_portal ;;
