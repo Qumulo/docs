@@ -22,6 +22,7 @@ echo "Commits containing 'Regen PDF' per month (case-insensitive):"
 
 # Initialize totals
 grand_total=0
+grand_months=0
 
 # Iterate through each month from the start date to the current date
 while [ $year -lt $CURRENT_YEAR ] || [ $year -eq $CURRENT_YEAR -a $month -le $CURRENT_MONTH ]; do
@@ -38,12 +39,21 @@ while [ $year -lt $CURRENT_YEAR ] || [ $year -eq $CURRENT_YEAR -a $month -le $CU
     # Accumulate the total for the current year
     ((year_total += count))
     ((grand_total += count))
+    ((year_months += 1))
+    ((grand_months += 1))
     
     # Print the result, grouped by year
     if [ $month -eq 1 ] || [ $year -eq $START_YEAR -a $month -eq $START_MONTH ]; then
         if [ $month -ne $START_MONTH ]; then
+            if [ $year_months -gt 0 ]; then
+                year_avg=$(echo "scale=2; $year_total / $year_months" | bc)
+            else
+                year_avg=0
+            fi
             echo "  Total for $((year - 1)): $year_total"
+            echo "  Average per month: $year_avg"
             year_total=0
+            year_months=0
         fi
         echo ""
         echo "$year:"
@@ -58,10 +68,22 @@ while [ $year -lt $CURRENT_YEAR ] || [ $year -eq $CURRENT_YEAR -a $month -le $CU
     fi
 done
 
-# Print the total for the last year
+# Print the total and average for the last year
+if [ $year_months -gt 0 ]; then
+    year_avg=$(echo "scale=2; $year_total / $year_months" | bc)
+else
+    year_avg=0
+fi
 echo "  Total for $((year - 1)): $year_total"
+echo "  Average per month: $year_avg"
 
-# Print the grand total
+# Print the grand total and grand average
+if [ $grand_months -gt 0 ]; then
+    grand_avg=$(echo "scale=2; $grand_total / $grand_months" | bc)
+else
+    grand_avg=0
+fi
 echo ""
 echo "Grand Total: $grand_total"
+echo "Average per month (subtotal): $grand_avg"
 
