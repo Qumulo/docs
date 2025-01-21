@@ -272,7 +272,7 @@ ingest_documentation() {
         echo "You must specify a YAML file."
         exit 1
     fi
-    cd ~/git/vectara-ingest && ./run.sh "config/$yaml_file" default && cd -
+    cd ~/git/vectara-ingest && ./run.sh "config/$yaml_file" boomerang && cd -
 }
 
 # Ingest docs.qumulo.com into Vectara corpus 2
