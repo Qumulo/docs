@@ -52,8 +52,7 @@ check_secrets_toml() {
         echo "[default]"
         echo "api_key=\"<IndexService API Key>\""
         echo
-        echo "Exiting..."
-        exit 1
+        return 1
     fi
 }
 
@@ -63,8 +62,7 @@ check_qumulo_config_files(){
         echo "To ingest data into Vectara, you must add qumulo-*.yaml files to the config/ subdirectory"
         echo "of your Vectara Ingest directory."
         echo
-        echo "Exiting..."
-        exit 1
+        return 1
     fi
 }
 
@@ -76,13 +74,21 @@ refresh_vectara_ingest_repo() {
     if [ "$answer" = "y" ]; then
         check_vectara_ingest_repo
 
-        check_qumulo_config_files
+        cd ~/git/vectara-ingest
         cp ../backup/qumulo-documentation-portal.yaml config/
         cp ../backup/qumulo-care.yaml config/
         cp ../backup/qumulo-main.yaml config/
 
-        check_secrets_toml
+        if ! check_qumulo_config_files; then
+            exit 1
+        fi
+
+        cd ~/git/vectara-ingest
         cp ../backup/secrets.toml .
+
+        if ! check_secrets_toml; then
+            exit 1
+        fi
 
         echo "Pulling down latest updates... This process overwrites all local configuration files."
         cd ~/git/vectara-ingest
