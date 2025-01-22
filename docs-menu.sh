@@ -6,6 +6,10 @@ sweep_toolchain() {
   ~/src/toolchain/qpkg.py sweep
 }
 
+prune_docker() {
+  docker builder prune && docker image prune && docker container prune
+}
+
 no_toolchain() {
     export PATH=$(echo $PATH | sed "s|/opt/qumulo[^:]*:||g")
 }
@@ -47,6 +51,56 @@ check_secrets_toml() {
         echo
         echo "[default]"
         echo "api_key=\"<IndexService API Key>\""
+        echo
+        return 1
+    fi
+}
+
+# Check that the Qumulo configuration files exist
+check_qumulo_config_files(){
+    if ! ls ~/git/vectara-ingest/config/qumulo-*.yaml >/dev/null 2>&1; then
+        echo "To ingest data into Vectara, you must add qumulo-*.yaml files to the config/ subdirectory"
+        echo "of your Vectara Ingest directory."
+        echo
+        return 1
+    fi
+}
+
+# Refresh Vectara Ingest repo
+refresh_vectara_ingest_repo() {
+    echo "Refreshing the Vectara Ingest repository requires synchronizing our fork."
+    echo "This removes all modifications from the repository. Continue? (y/n)"
+    read -r answer
+    if [ "$answer" = "y" ]; then
+        check_vectara_ingest_repo
+
+        cd ~/git/vectara-ingest
+        cp ../backup/qumulo-documentation-portal.yaml config/
+        cp ../backup/qumulo-care.yaml config/
+        cp ../backup/qumulo-main.yaml config/
+
+        if ! check_qumulo_config_files; then
+            exit 1
+        fi
+
+        cd ~/git/vectara-ingest
+        cp ../backup/secrets.toml .
+
+        if ! check_secrets_toml; then
+            exit 1
+        fi
+
+        echo "Pulling down latest updates... This process overwrites all local configuration files."
+        cd ~/git/vectara-ingest
+        git reset --hard upstream/main
+        git push origin main --force
+
+        echo "Preparing repository..."
+        chmod +x run.sh
+
+        echo "Committing changes..."
+        git add --all && git commit -m "Added configuration files" && git push
+    elif [ "$answer" = "n" ]; then
         echo
         echo "Exiting..."
         exit 1
@@ -218,7 +272,7 @@ ingest_documentation() {
         echo "You must specify a YAML file."
         exit 1
     fi
-    cd ~/git/vectara-ingest && ./run.sh "config/$yaml_file" default && cd -
+    cd ~/git/vectara-ingest && ./run.sh "config/$yaml_file" boomerang && cd -
 }
 
 # Ingest docs.qumulo.com into Vectara corpus 2
@@ -227,7 +281,7 @@ ingest_docs_portal() {
     no_toolchain
     check_vectara_ingest_repo
     check_secrets_toml
-    ingest_documentation "qumulo-documentation-portal-v3.yaml"
+    ingest_documentation "qumulo-documentation-portal.yaml"
 }
 
 # Ingest care.qumulo.com into Vectara corpus 4
@@ -236,7 +290,7 @@ ingest_care_portal() {
     no_toolchain
     check_vectara_ingest_repo
     check_secrets_toml
-    ingest_documentation "qumulo-care-v4.yaml"
+    ingest_documentation "qumulo-care.yaml"
 }
 
 # Ingest qumulo.com into Vectara corpus 5
@@ -245,7 +299,7 @@ ingest_corp_site() {
     no_toolchain
     check_vectara_ingest_repo
     check_secrets_toml
-    ingest_documentation "qumulo-main-v3.yaml"
+    ingest_documentation "qumulo-main.yaml"
 }
 
 # Check ingestion status
@@ -309,11 +363,13 @@ while true; do
     echo "10. 📋 Check documentation for link, script, and image errors"
     echo "11. 📋 Check documentation for spelling errors"
     echo "12. 🧹 Sweep Toolchain"
-    echo "13. 🔍 Ingest docs.qumulo.com into Vectara"
-    echo "14. 🔍 Ingest care.qumulo.com into Vectara"
-    echo "15. 🔍 Ingest qumulo.com into Vectara"
-    echo "16. 📋 Check ingestion status"
-    echo "17. ❌ Find unused .js scripts"
+    echo "13. 🧹 Prune Docker"
+    echo "14. 🧹 Refresh Vectara Ingest repo"
+    echo "15. 🔍 Ingest docs.qumulo.com into Vectara"
+    echo "16. 🔍 Ingest care.qumulo.com into Vectara"
+    echo "17. 🔍 Ingest qumulo.com into Vectara"
+    echo "18. 📋 Check ingestion status"
+    echo "19. ❌ Find unused .js scripts"
     echo "q.  👋 Quit"
     echo
     read -p $'\033[1;33mWhat would you like to do? \033[0m' choice
@@ -329,13 +385,15 @@ while true; do
         8) build_serve_docs_locally_python ;;
         9) build_serve_docs_locally_jekyll ;;
         10) check_docs_errors ;;
-        11) check_spelling_errors ;;
+        11) echo -e "⚠️  \033[1;31mThe spellcheker is disabled temporarily.\033[0m" ;;
         12) sweep_toolchain ;;
-        13) ingest_docs_portal ;;
-        14) ingest_care_portal ;;
-        15) ingest_corp_site ;;
-        16) check_ingestion_status ;;
-        17) find_unused_scripts ;;
+        13) prune_docker ;;
+        14) refresh_vectara_ingest_repo;;
+        15) ingest_docs_portal ;;
+        16) ingest_care_portal ;;
+        17) ingest_corp_site ;;
+        18) check_ingestion_status ;;
+        19) find_unused_scripts ;;
         q) exit ;;
         *) echo "You must enter a valid option." ;;
     esac

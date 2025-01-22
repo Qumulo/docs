@@ -4,6 +4,12 @@ For information about upgrade types for each release, see <a href='mode-referenc
 
 <style>div#toc{height:200px;overflow:auto;}</style>
 
+## Qumulo Core 7.4.0 (Quarterly)
+{{page.varDownloadsRelnotes}}
+{{page.varNoPublicChanges}}
+
+Improved UID and GID sorting in the Web UI.
+
 ## Qumulo Core 7.3.2.1
 {{page.varDownloadsRelnotes}} 
 * Removed the limit from the number of floating IP addresses per cluster
@@ -27,7 +33,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
 * Resolved an issue with NLM connections
 * Resolved an issue with tree deletion operations
 
-## Qumulo Core 7.3.0
+## Qumulo Core 7.3.0 (Quarterly)
 {{page.varDownloadsRelnotes}}
 * Added the _self-service_ permission model to Qumulo REST API access tokens and made changes to corresponding `qq` CLI commands
 * Made it possible for a user to perform operations on their own access keys without having RBAC privileges
