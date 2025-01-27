@@ -43,7 +43,7 @@ function hideOverlay() {
   if (document.querySelector('.vuiTitle')) {
     return;
   } else {
-    document.querySelectorAll('.post-title-main, .nav, #mysidebar').forEach(element => {
+    document.querySelectorAll('.post-title-main, .nav, #mysidebar, .search-grumpquat').forEach(element => {
       element.style.display = 'block';
     });
   }
