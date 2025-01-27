@@ -41,21 +41,29 @@ function successFn(results, query) {
     }
   });
 
-  // Add prefixes to qq CLI, On-Prem, and Azure guides
+  // Add prefixes to Docs Portal guides, Qumulo Blog, and Qumulo Care
   const qqCLIlinks = document.querySelectorAll(".vuiSearchResult a");
   qqCLIlinks.forEach(function(link) {
     if (link.href.includes("/cloud-native-aws-administrator-guide/")) {
       link.innerHTML = `CNQ on AWS: ${link.textContent}`;
     } else if (link.href.includes("/cloud-native-azure-administrator-guide/")) {
       link.innerHTML = `CNQ on Azure: ${link.textContent}`;
-    } else if (link.href.includes("/administrator-guide/")) {
-      link.innerHTML = `On-Prem: ${link.textContent}`;
     } else if (link.href.includes("/azure-native-administrator-guide/")) {
       link.innerHTML = `Azure Native: ${link.textContent}`;
+    } else if (link.href.includes("/administrator-guide/")) {
+      link.innerHTML = `On-Prem: ${link.textContent}`;
+    } else if (link.href.includes("/hardware-guide/")) {
+      link.innerHTML = `Platinum-Tier HW: ${link.textContent}`;
+    } else if (link.href.includes("/gold-tier-hardware-servicing-guide/")) {
+      link.innerHTML = `Gold-Tier HW: ${link.textContent}`;
     } else if (link.href.includes("/qq-cli-command-guide/")) {
       link.innerHTML = `qq CLI: ${link.textContent}`;
     } else if (link.href.includes("/rest-api-guide/")) {
       link.innerHTML = `REST API: ${link.textContent}`;
+    } else if (link.href.includes("qumulo.com/blog/")) {
+      link.innerHTML = `Qumulo Blog: ${link.textContent}`;
+    } else if (link.href.includes("care.qumulo.com/s/")) {
+      link.innerHTML = `Qumulo Care: ${link.textContent}`;
     }
   });
 
