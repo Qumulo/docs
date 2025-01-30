@@ -1,7 +1,12 @@
 ## Prerequisites
 To use the S3 API, you must install the [`aws`]({{site.s3.docs.cli}}) and [`qq` CLI](../qq-cli/getting-started.html).
 
-{% include important.html content="The following instructions are for Ubuntu 18.04 (and higher)." %}
+{{site.data.alerts.important}}
+<ul>
+  <li>We recommend using Qumulo Core with version 1.22.75 of the AWS CLI, whose operation we have tested.</li>
+  <li>The following instructions are for Ubuntu 18.04 (and higher).</li>
+</ul>
+{{site.data.alerts.end}}
 
 <a id="configuring-https"></a>
 ## Step 1: Configure HTTPS
