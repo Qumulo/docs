@@ -136,7 +136,9 @@ Before configuring your host operating system (OS) for installing the Qumulo Cor
 ### Step 3: Configure the Host Operating System
 Before installing the Qumulo Core Product Package, you must configure your host operating system.
 
-* To ensure that Qumulo Core has full control over network configuration, disable or remove the default network configuration tool (such as ENI, netplan.io, NetworkManager and so on).
+* To ensure that Qumulo Core has full control over network configuration, disable or remove the default network configuration tool (such as ENI, netplan.io, NetworkManager).
+
+{% include content-reuse/admin-guides/getting-started/configuring-host-managed-networking-prerequisites.md %}
 
 
 ## To Install the Qumulo Core Product Package
@@ -233,3 +235,6 @@ Depending on the issue, you can troubleshoot the Qumulo Core Product Package fro
     </td>
   </tr>
 </table>
+
+
+{% include content-reuse/admin-guides/getting-started/configuring-host-managed-networking.md %}

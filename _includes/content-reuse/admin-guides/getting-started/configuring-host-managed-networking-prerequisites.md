@@ -1,0 +1,5 @@
+{% if page.title == 'Installing the Qumulo Core Product Package' %}* {% endif %}{% if page.title != 'Installing the Qumulo Core Product Package' %}When [using the Product Package to install Qumulo Core](../getting-started/installing-product-package.html), it{% else %}It{% endif %} is possible to install Qumulo Core by using _host-managed networking,_ where the user configures and maintains the network, or _Qumulo-managed networking,_ where Qumulo configures and maintains the network.
+
+{% if page.title == 'Installing the Qumulo Core Product Package' %}<p class="custom-indent">{% endif %}Because the Qumulo Core Product Package uses host-managed networking by default, no additional action is necessary to enable it. For Qumulo-managed networking, you must run the <code>export QUMULO_MANAGED_NETWORK=true</code> command before beginning the installation.{% if page.title == 'Installing the Qumulo Core Product Package' %}</p>{% endif %}
+
+{% include note.html content="You can use host-managed networking with or without the Qumulo REST API. However, using floating IP addresses requires tagging with alternative names and REST API access." %}

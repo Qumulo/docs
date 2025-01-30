@@ -457,6 +457,10 @@ li {
   list-style-type: none;
 }
 
+p.custom-indent {
+  margin-left: 40px;
+}
+
 @media screen {
   /* Insert CLICK TO ENLARGE overlay for images with URLs */
   .enlargeimage {
