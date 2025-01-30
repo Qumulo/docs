@@ -17,6 +17,7 @@ The following alarms report hardware changes in a Qumulo cluster.
 | Fans        | Speed deviation, failure |
 | Network     | Link failure             |
 | Nodes       | Addition, failure        |
+| PSU         | Power Supply failure     |
 
 ## Alerts
 The following alerts report software changes and changes in environmental conditions for a Qumulo cluster.
@@ -31,10 +32,12 @@ The following alerts report software changes and changes in environmental condit
 | Groups      | Local groups added, modified, or deleted                                  |
 | Monitoring  | Cloud-based monitoring enabled, disabled, or unreachable                  |
 | Quotas      | Quota notification (configured percentage for specified directories)      |
+| Replication | Replication added/deleted, enabled/disabled, or error message             |
 | Restriper   | Restriper started, stopped, or percentage complete                        |
 | Shares      | SMB shares added, modified, or deleted                                    |
 | Softquotas  | Soft quota notification (configured percentage for specified directories) |
 | Users       | Local users added, modified, or deleted                                   |
+| VPN         | Remote Support enabled or disabled                                        |
 
 ## Informational
 The following informational notifications show performance and status information for a Qumulo cluster.
