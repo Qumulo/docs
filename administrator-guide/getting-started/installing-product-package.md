@@ -136,8 +136,6 @@ Before configuring your host operating system (OS) for installing the Qumulo Cor
 ### Step 3: Configure the Host Operating System
 Before installing the Qumulo Core Product Package, you must configure your host operating system.
 
-* To provide the `systemd-nspawn` tool for the Qumulo Core container, install the `systemd-container` package.
-
 * To ensure that Qumulo Core has full control over network configuration, disable or remove the default network configuration tool (such as ENI, netplan.io, NetworkManager and so on).
 
 
