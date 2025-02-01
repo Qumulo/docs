@@ -143,7 +143,7 @@ console.log("submitFn called with query:", query);
                 //}
               },
               summary: [{
-                summarizerPromptName: "mockingbird-1.0-2024-07-16",
+                summarizerPromptName: "vectara-summary-table-md-query-ext-jan-2025-gpt-4-turbo",
                 maxSummarizedResults: maxSummarizedResults,
                 responseLang: "eng"
               }]
