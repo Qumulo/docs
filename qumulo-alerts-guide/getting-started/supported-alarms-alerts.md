@@ -32,7 +32,7 @@ The following alerts report software changes and changes in environmental condit
 | Groups      | Local groups added, modified, or deleted                                  |
 | Monitoring  | Cloud-based monitoring enabled, disabled, or unreachable                  |
 | Quotas      | Quota notification (configured percentage for specified directories)      |
-| Replication | Replication added/deleted, enabled/disabled, or error message             |
+| Replication | Replication added, deleted, enabled, or disabled; or an error message     |
 | Restriper   | Restriper started, stopped, or percentage complete                        |
 | Shares      | SMB shares added, modified, or deleted                                    |
 | Softquotas  | Soft quota notification (configured percentage for specified directories) |
