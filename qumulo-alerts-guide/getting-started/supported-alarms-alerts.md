@@ -17,7 +17,7 @@ The following alarms report hardware changes in a Qumulo cluster.
 | Fans        | Speed deviation, failure |
 | Network     | Link failure             |
 | Nodes       | Addition, failure        |
-| PSU         | Power Supply failure     |
+| PSU         | Power supply failure     |
 
 ## Alerts
 The following alerts report software changes and changes in environmental conditions for a Qumulo cluster.
