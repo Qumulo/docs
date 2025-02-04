@@ -37,9 +37,8 @@ This section explains how to create on-demand snapshots and snapshot policies, v
  
    1. Click **Create Policy**.
 
-<a name="associate-lock-key-snapshot-policy"></a>
 ### To Associate a Lock Key with a Snapshot Policy
-{{site.protectingData.lockKeyPolicyExamples}}
+You can use a single _lock key_ (private key) with multiple snapshot policies, or use a unique lock key for each snapshot policy.
 
 1. {{site.logIntoWebUI}}
 
@@ -49,6 +48,11 @@ This section explains how to create on-demand snapshots and snapshot policies, v
 
 1. On the **Edit Snapshot Policy** page, in the **Enable Snapshot Locking by Using a Lock Key** section, select **Enable snapshot locking with lock key &lt;your-key-name&gt; (ID: &lt;N&gt;)** and then click **Save**.
 
+   Qumulo Core begins to lock all new snapshots that the policy creates with the specified lock key.
+
+   {% include note.html content="Snapshots created prior to this configuration remain unlocked." %}
+
+For more information, see <a href="../encryption-data-security/managing-security-keys.html">Managing Security Keys in the Qumulo File System Key Store</a>. {{site.protectingData.lockKeyPolicyExamples}}
 
 ### To View Existing Snapshots
 The **Snapshots** page lets you navigate a large number of snapshots.
