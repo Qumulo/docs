@@ -1,7 +1,9 @@
 ## How Snapshot Locking Works in Qumulo Core
-Qumulo Core allows locking snapshots to prevent them from being deleted before their expiration time. Qumulo Core removes both locked and unlocked snapshots at their expiration time automatically. While it isn't possible to delete or shorten the expiration time of a locked snapshot it is possible to extend the expiration time of a locked snapshot.
+Qumulo Core allows locking snapshots to prevent them from being deleted before their expiration time. Qumulo Core removes both locked and unlocked snapshots at their expiration time automatically.
 
-You can lock a snapshot by using the following methods:
+While it isn't possible to delete or shorten the expiration time of a locked snapshot it is possible to extend the expiration time of a locked snapshot.
+
+You can lock a snapshot by using the following methods.
 
 ### Locking a Snapshot by Using a Public Key
 In Qumulo Core 6.1.0.3 (and higher) you can lock a snapshot by using a public key.
@@ -39,9 +41,7 @@ For clusters in a replication relationship, you can lock a snapshot on the desti
 
 
 ## How Snapshot Unlocking Works in Qumulo Core
-Unlocking a snapshot requires a cryptographic signature generated from a private key.
-
-To unlock your snapshot normally, after its expiration time, [use the `qq` CLI](#unlock-snapshot-qq-cli).
+Unlocking a snapshot requires a cryptographic signature generated from a private key. To unlock a snapshot after its expiration time, [use the `qq` CLI](#unlock-snapshot-qq-cli).
 
 
 <a id="locking-unlocking-snapshots"></a>
@@ -80,9 +80,11 @@ qq snapshot_unlock_snapshot \
 To lock all policy-created snapshots by using a lock key, you can associate the key with a replication target relationship.
 
 ### How Relationship Reversal Affects Replication
-It is important to understand how reversing the relationship between clusters can affect the replicationn process:
+It is important to understand how reversing the relationship between clusters can affect the replication process:
 
-* If you reverse the relationship by switching the source and target, the new target can't use the existing key and you must set a key for the new target. However, if you revert the relationship by returning the source and target to their original assignments, Qumulo Core lets you use the key from the original source-target relationship.
+* If you reverse the relationship by switching the source and target, the new target can't use the existing key and you must set a key for the new target.
+
+  However, if you revert the relationship by returning the source and target to their original assignments, Qumulo Core lets you use the key from the original source-target relationship.
 
 * If a target replication relationship uses a key, you can't disable or delete the key, unless you reverse the relationship.
 
@@ -90,14 +92,17 @@ It is important to understand how reversing the relationship between clusters ca
 
 <a id="retrieve-relationship-id">
 ### Retrieving the Relationship ID from the Source Cluster
-Before you begin, retrieve the relationship ID from the source cluster by using the {% include qq.html command="replication_list_source_relationship_statuses" %} command. If the command returns multiple relationships, you can pipe the command to the following `jq` query to sort the output. The first column lists the replication IDs.
+Before you begin, retrieve the relationship ID from the source cluster by using the {% include qq.html command="replication_list_source_relationship_statuses" %} command.
+
+If the command returns multiple relationships, you can pipe the command to the following `jq` query to sort the output. The first column lists the replication IDs.
 
 ```bash
-qq replication_list_source_relationship_statuses | jq -r
+qq replication_list_source_relationship_statuses | jq -r \
   '(["id", "srcRoot", "tgtRoot", "replicationSnap", \
   "replicationMode", "tgtClusterName", "targetIP"]), \
   (.[] | [.id, .source_root_path, .target_root_path, \
-  (if .replicating_snapshot.id == null then "null" else .replicating_snapshot.id end), \
+  (if .replicating_snapshot.id == null then "null" else \
+  .replicating_snapshot.id end), \
   .replication_mode, .target_cluster_name, .target_address]) \
   | @tsv' | column -t -s $'\t'
 ```
