@@ -17,21 +17,21 @@ In Qumulo Core 6.1.0.3 (and higher) you can lock a snapshot by using a public ke
 ### Locking a Snapshot by Using a Private Key
 In Qumulo Core 6.1.1 (and higher) you can lock a snapshot by using a _lock key_ (private key).
 
-1. [Generate a private key](../encryption-data-security/generating-storing-ecdsa-keys.htmli#generating-an-ecdsa-private-key).
+1. [Generate a private key](../encryption-data-security/generating-storing-ecdsa-keys.html#generating-an-ecdsa-private-key).
 
 1. [Lock your snapshot by using the `qq` CLI](#lock-snapshot-qq-cli).
 
 ### Locking a Snapshot by Using a Private Key in a Snapshot Policy
 In Qumulo Core 6.1.0.3 (and higher), you can configure a snapshot policy to lock all new snapshots with a _lock key_ (private key).
  
-1. [Generate a private key](../encryption-data-security/generating-storing-ecdsa-keys.htmli#generating-an-ecdsa-private-key).
+1. [Generate a private key](../encryption-data-security/generating-storing-ecdsa-keys.html#generating-an-ecdsa-private-key).
 
 1. [Associate your lock key with a snapshot policy by using the Web UI](managing-snapshots.html#to-associate-a-lock-key-with-a-snapshot-policy).
 
 ### Locking a Snapshot by Using a Private Key on a Target Cluster Following Replication
 For clusters in a replication relationship, you can lock a snapshot on the destination cluster after the replication process finishes.
 
-1. [Generate a private key](../encryption-data-security/generating-storing-ecdsa-keys.htmli#generating-an-ecdsa-private-key).
+1. [Generate a private key](../encryption-data-security/generating-storing-ecdsa-keys.html#generating-an-ecdsa-private-key).
 
 1. [Retrieve the relationship ID from the source cluster by using the `qq` CLI](#retrieve-relationship-id).
 
@@ -72,15 +72,14 @@ qq snapshot_unlock_snapshot \
 ## Associating a Lock Key with a Replication Target Relationship by Using the qq CLI
 To lock all policy-created snapshots by using a lock key, you can associate the key with a replication target relationship.
 
-{{site.data.alerts.note}}
-<ul>
-  <li>Qumulo Core locks only policy-created snapshots that have an expiration time.</li>
-  <li>If you reverse the relationship by switching the source and target, the new target can't use the existing key and you must set a key for the new target. However, if you revert the relationship by returning the source and target to their original assignments, Qumulo Core lets you use the key from the original source-target relationship.</li>
-  <li>If a target replication relationship uses a key, you can't disable or delete the key, unless you reverse the relationship.</li>
-  <li>If you disable or delete a key while a target replication relationship is reversed and then return the source and target to their original assignments, you must set a new key to be able to lock future snapshots.</li>
-  </li>
-</ul>
-{{site.data.alerts.end}}
+### How Relationship Reversal Affects Replication
+It is important to understand how reversing the relationship between clusters can affect the replicationn process:
+
+* If you reverse the relationship by switching the source and target, the new target can't use the existing key and you must set a key for the new target. However, if you revert the relationship by returning the source and target to their original assignments, Qumulo Core lets you use the key from the original source-target relationship.
+
+* If a target replication relationship uses a key, you can't disable or delete the key, unless you reverse the relationship.
+
+* If you disable or delete a key while a target replication relationship is reversed and then return the source and target to their original assignments, you must set a new key to be able to lock future snapshots.
 
 <a id="retrieve-relationship-id">
 ### Retrieving the Relationship ID from the Source Cluster
@@ -108,7 +107,7 @@ qq replication_set_target_relationship_lock \
 
 <a id="disassociating-lock-key-from-replication-target-relationship">
 ### Disassociating a Lock Key from a Replication Target Relationship
-On the target cluster, run the {% include qq.html command="replication_set_target_relationship_lock" %} command and specify the relationship ID and and `--clear-lock-key` flag. For example:
+On the target cluster, run the {% include qq.html command="replication_set_target_relationship_lock" %} command and specify the relationship ID and use the `--clear-lock-key` flag. For example:
 
 ```bash
 qq replication_set_target_relationship_lock \
