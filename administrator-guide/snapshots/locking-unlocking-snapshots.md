@@ -1,6 +1,6 @@
 ---
 title: "Locking and Unlocking Snapshots in Qumulo Core"
-summary: "This section explains how to lock or unlock a snapshot by using a key located in the Qumulo file system key store and the <code>qq</code> CLI. In addition, it explains how to lock policy-created snapshots for local policies and for policies that are part of a replication target relationship."
+summary: "This section explains how to lock or unlock a snapshot by using the <code>qq</code> CLI. In addition, it explains how to lock policy-created snapshots for local policies and for policies that are part of a replication target relationship."
 permalink: /administrator-guide/snapshots/locking-unlocking-snapshots.html
 redirect_from:
   - /managing-snapshots.html#locking-and-unlocking-snapshots
