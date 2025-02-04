@@ -1,7 +1,7 @@
 ## How Snapshot Locking Works in Qumulo Core
 Qumulo Core allows locking snapshots to prevent them from being deleted before their expiration time. Qumulo Core removes both locked and unlocked snapshots at their expiration time automatically. While it isn't possible to delete or shorten the expiration time of a locked snapshot it is possible to extend the expiration time of a locked snapshot.
 
-You can lock a snapshot by using the following methods. Unlocking a snapshot requires a cryptographic signature generated from a private key.
+You can lock a snapshot by using the following methods:
 
 ### Locking a Snapshot by Using a Public Key
 In Qumulo Core 6.1.0.3 (and higher) you can lock a snapshot by using a public key.
@@ -37,11 +37,18 @@ For clusters in a replication relationship, you can lock a snapshot on the desti
 
 1. [Associate your lock key with a replication target relationship by using the `qq` CLI](#associate-lock-key-with-replication-target-relationship).
 
+
+## How Snapshot Unlocking Works in Qumulo Core
 Unlocking a snapshot requires a cryptographic signature generated from a private key.
+
+To unlock your snapshot normally, after its expiration time, [use the `qq` CLI](#unlock-snapshot-qq-cli).
+
 
 <a id="locking-unlocking-snapshots"></a>
 ## Locking and Unlocking Snapshots by Using the qq CLI
 This section explains how to lock and unlock snapshots by using the `qq` CLI.
+
+{% include tip.html content="To list your snapshots and their lock statuses, use the `sudo qq snapshot_list_statuses | egrep 'lock_key|source_file_path'` command." %}
 
 <a id="lock-snapshot-qq-cli"></a>
 ### Locking a Snapshot
