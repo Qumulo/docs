@@ -1,7 +1,7 @@
 ## How Snapshot Locking Works in Qumulo Core
 Qumulo Core allows locking snapshots to prevent them from being deleted before their expiration time. Qumulo Core removes both locked and unlocked snapshots at their expiration time automatically.
 
-While it isn't possible to delete or shorten the expiration time of a locked snapshot it is possible to extend the expiration time of a locked snapshot.
+While it isn't possible to delete or shorten the expiration time of a locked snapshot, it is possible to extend the expiration time of a locked snapshot.
 
 You can lock a snapshot by using the following methods.
 
@@ -113,16 +113,16 @@ On the target cluster, run the {% include qq.html command="replication_set_targe
 
 ```bash
 qq replication_set_target_relationship_lock \
-  --relationship-id {{site.exampleUUID41}}
+  --relationship-id {{site.exampleUUID41}} \
   --lock-key my-key-name
 ```
 
 <a id="disassociating-lock-key-from-replication-target-relationship">
 ### Disassociating a Lock Key from a Replication Target Relationship
-On the target cluster, run the {% include qq.html command="replication_set_target_relationship_lock" %} command and specify the relationship ID and use the `--clear-lock-key` flag. For example:
+On the target cluster, run the {% include qq.html command="replication_set_target_relationship_lock" %} command, specify the relationship ID, and use the `--clear-lock-key` flag. For example:
 
 ```bash
 qq replication_set_target_relationship_lock \
-  --relationship-id {{site.exampleUUID41}}
+  --relationship-id {{site.exampleUUID41}} \
   --clear-lock-key
 ```
