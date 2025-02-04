@@ -1,6 +1,6 @@
 ---
 title: "Locking and Unlocking Snapshots in Qumulo Core"
-summary: "This section explains how to lock or unlock a snapshot by using the Qumulo Core Web UI and the <code>qq</code> CLI. In addition, it explains how to lock policy-created snapshots for local policies and for policies that are part of a replication target relationship."
+summary: "This section explains how to lock or unlock a snapshot by using the <code>qq</code> CLI. In addition, it explains how to lock policy-created snapshots for local policies and for policies that are part of a replication target relationship."
 redirect_from:
   - /aws-administrator-guide/snapshots/locking-unlocking-snapshots.html
 permalink: /cloud-native-aws-administrator-guide/snapshots/locking-unlocking-snapshots.html
