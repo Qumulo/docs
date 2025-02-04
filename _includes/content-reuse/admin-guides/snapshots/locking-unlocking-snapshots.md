@@ -1,21 +1,19 @@
-## How Snapshot Expiration Time Works in Qumulo Core
+## How Snapshot Locking Works in Qumulo Core
 Qumulo Core allows locking snapshots to prevent them from being deleted before their expiration time. Qumulo Core removes both locked and unlocked snapshots at their expiration time automatically.
 
 While it isn't possible to delete or shorten the expiration time of a locked snapshot it is possible to extend the expiration time of a locked snapshot.
 
-
-## Prerequisites
-You can lock snapshot by using a public key or a private key:
+You can lock a snapshot by using the following methods:
 
 * **With a Public Key:** In Qumulo Core 6.1.0.3 (and higher), you can use a public key from the Qumulo file system key store.
 
   For more information, see [Generating and Storing ECDSA Keys on a Qumulo Cluster](../encryption-data-security/generating-storing-ecdsa-keys.html) and [Managing Security Keys in the Qumulo File System Key Store](../encryption-data-security/managing-security-keys.html).
 
-* **With a Private Key in a Snapshot Policy:** In Qumulo Core 6.1.0.3 (and higher), you can configure a snapshot policy to lock all new snapshots by using the same _lock key_ (private key).
+* **With a Private Key in a Snapshot Policy:** In Qumulo Core 6.1.0.3 (and higher), you can configure a snapshot policy to lock all new snapshots with the same _lock key_ (private key).
 
-  Fore more information, see [To Associate a Lock Key with a Snapshotn Policy](managing-snapshots.html#to-associate-a-lock-key-with-a-snapshot-policy). {{site.protectingData.lockKeyPolicyExamples}}
+  Fore more information, see [To Associate a Lock Key with a Snapshot Policy](managing-snapshots.html#to-associate-a-lock-key-with-a-snapshot-policy). {{site.protectingData.lockKeyPolicyExamples}}
 
-* **With a Private Key:** In Qumulo Core 6.1.1 (and higher), you can configure a replication target relationship to lock all new policy snapshots by using the same _lock key_ (private key).
+* **With a Private Key:** In Qumulo Core 6.1.1 (and higher), you can configure a replication target relationship to lock all new policy snapshots with the same _lock key_ (private key).
 
   For more information, see [Associating a Lock Key with a Replication Target Relationship](#replication-target-locking).
 
