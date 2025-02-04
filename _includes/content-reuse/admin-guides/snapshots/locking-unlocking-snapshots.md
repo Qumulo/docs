@@ -12,7 +12,7 @@ In Qumulo Core 6.1.0.3 (and higher) you can lock a snapshot by using a public ke
 
 1. [Extract a public key from the private key](../encryption-data-security/generating-storing-ecdsa-keys.html#extracting-the-public-key-from-an-ecdsa-private-key).
 
-1. [Store the public key on your cluster](../encryption-data-security/managing-security-keys.html#managing-security-keys.html#adding-a-public-key).
+1. [Store the public key on your cluster](../encryption-data-security/managing-security-keys.html#adding-a-public-key).
 
 1. [Lock your snapshot by using the `qq` CLI](#lock-snapshot-qq-cli).
 
