@@ -364,6 +364,7 @@ protectingData:
   mustHaveCryptoLib: Before you begin, install the <a target="_blank" href="https://pypi.org/project/cryptography/">Python `cryptography` library</a>.
   storeKeysProtectResources: In Qumulo Core 6.1.0 (and higher), you can store multiple ECDSA public keys in the Qumulo file system key store and use these keys to protect file system resources.
   supportedKeys: Currently, Qumulo Core supports only 256-bit ECDSA keys in <code>.pem</code> and <code>.der</code> formats. Qumulo Core doesn't support storing ECDSA keys of other lengths and formats.
+  lockKeyPolicyExamples: For more information, see <a href="../encryption-data-security/managing-security-keys.html">Managing Security Keys in the Qumulo File System Key Store</a>. For examples of policies that set the lock key and clear it, see <a href="managing-snapshots.html#creating-snapshots-on-a-schedule-by-using-a-snapshot-policy">Creating Snapshots on a Schedule by Using a Snapshot Policy</a>.
 
 s3:
   permissions:

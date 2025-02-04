@@ -37,6 +37,19 @@ This section explains how to create on-demand snapshots and snapshot policies, v
  
    1. Click **Create Policy**.
 
+<a name="associate-lock-key-snapshot-policy"></a>
+### To Associate a Lock Key with a Snapshot Policy
+{{site.protectingData.lockKeyPolicyExamples}}
+
+1. {{site.logIntoWebUI}}
+
+1. Click **Cluster > Policy**.
+
+1. On the **Snapshot Policies** page, next to a policy, click {% include shared_inline_image.html alt="Pagination controls" file="shared-images/admin-guides/vertical-ellipsis.png" max-width="40" %} **&gt; Edit Policy**.
+
+1. On the **Edit Snapshot Policy** page, in the **Enable Snapshot Locking by Using a Lock Key** section, select **Enable snapshot locking with lock key &lt;your-key-name&gt; (ID: &lt;N&gt;)** and then click **Save**.
+
+
 ### To View Existing Snapshots
 The **Snapshots** page lets you navigate a large number of snapshots.
 

@@ -16,7 +16,7 @@ You can lock snapshots in a number of ways:
 
 * **With a Private Key in a Snapshot Policy:** In Qumulo Core 6.1.0.3 (and higher), you can configure a snapshot policy to lock all new snapshots by using the same _lock key_ (private key).
 
-  For examples of policies that set the lock key and clear it, see [Creating Snapshots on a Schedule by Using a Snapshot Policy](managing-snapshots.html#creating-snapshots-on-a-schedule-by-using-a-snapshot-policy).
+  {{site.protectingData.lockKeyPolicyExamples}}
 
 * **With a Private Key:** In Qumulo Core 6.1.1 (and higher), you can configure a replication target relationship to lock all new policy snapshots by using the same _lock key_ (private key).
 
