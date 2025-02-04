@@ -93,7 +93,7 @@ To get started, choose one of the following guides.
           <source type="image/png" srcset="images/gold-tier-hardware-servicing-guide.png" width="301" height="301">
           <img src="images/gold-tier-hardware-servicing-guide.png" alt="A stylized image of a server rack, symbolizing installing, configuring, and maintaining hardware" width="301" height="301">
         </picture>
-        <figcaption>{{site.guides.hardGold}}</figcaption>
+        <figcaption class="gold-tier-caption">{{site.guides.hardGold}}</figcaption>
       </figure>
     </a>
   </div>
