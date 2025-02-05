@@ -46,9 +46,6 @@ check_secrets_toml() {
         echo "To ingest data into Vectara, you must add secrets.toml to your Vectara Ingest directory"
         echo "and then add your API keys to secrets.toml in the following format:"
         echo
-        echo "[general]"
-        echo "api = 'vectara_api_value'"
-        echo
         echo "[default]"
         echo "api_key=\"<IndexService API Key>\""
         echo
@@ -74,31 +71,38 @@ refresh_vectara_ingest_repo() {
     if [ "$answer" = "y" ]; then
         check_vectara_ingest_repo
 
-        cd ~/git/vectara-ingest
-        cp ../backup/qumulo-documentation-portal.yaml config/
-        cp ../backup/qumulo-care.yaml config/
-        cp ../backup/qumulo-main.yaml config/
+        cd ~/git/vectara-ingest || { echo "Couldn't find ~/git/vectara-ingest does not seem to exist. Clone the repository and add a symlink."; exit 1; }
 
         if ! check_qumulo_config_files; then
             exit 1
         fi
 
         cd ~/git/vectara-ingest
-        cp ../backup/secrets.toml .
 
         if ! check_secrets_toml; then
             exit 1
         fi
 
         echo "Pulling down latest updates... This process overwrites all local configuration files."
-        cd ~/git/vectara-ingest
+        git checkout main
+        git fetch upstream
         git reset --hard upstream/main
-        git push origin main --force
+        git push --force origin main
+        git checkout local-config
+        git rebase main
 
         echo "Preparing repository..."
         chmod +x run.sh
 
-        echo "Committing changes..."
+        if ! git diff --quiet; then
+          echo "Committing changes..."
+          git add --all
+          git commit -m "Adding configuration files."
+          git push
+        else
+          echo "No changes to commit."
+        fi
+
         git add --all && git commit -m "Added configuration files" && git push
     elif [ "$answer" = "n" ]; then
         echo
