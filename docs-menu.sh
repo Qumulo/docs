@@ -75,6 +75,7 @@ refresh_vectara_ingest_repo() {
 
         echo "Pulling down latest updates..."
         git checkout main
+        git remote add upstream https://github.com/vectara/vectara-ingest >/dev/null 2>&1
         git fetch upstream
         git reset --hard upstream/main
         git push --force origin main
