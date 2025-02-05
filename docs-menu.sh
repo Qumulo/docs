@@ -79,6 +79,7 @@ refresh_vectara_ingest_repo() {
         git reset --hard upstream/main
         git push --force origin main
         git checkout local-config
+        git pull local-config
         git rebase main
         echo "config/qumulo-*.yaml" >> .git/info/exclude
 
