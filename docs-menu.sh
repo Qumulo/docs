@@ -292,7 +292,7 @@ ingest_docs_portal() {
       ingest_documentation "qumulo-documentation-portal.yaml"
     else
       NUM_PROCS=$(printf "%.${2:-0}f" "$(bc <<< "0.625*$(nproc)")")
-      sed -i "s/^  ray workers:.*/  ray workers: ${NUM_PROCS}/" ~/git/vectara-ingest/config/qumulo-documentation-portal.yaml
+      sed -i "s/^  ray_workers:.*/  ray_workers: ${NUM_PROCS}/" ~/git/vectara-ingest/config/qumulo-documentation-portal.yaml
       ingest_documentation "qumulo-documentation-portal.yaml"
     fi
 }
@@ -308,7 +308,7 @@ ingest_care_portal() {
       ingest_documentation "qumulo-care.yaml"
     else
       NUM_PROCS=$(printf "%.${2:-0}f" "$(bc <<< "0.625*$(nproc)")")
-      sed -i "s/^  ray workers:.*/  ray workers: ${NUM_PROCS}/" ~/git/vectara-ingest/config/qumulo-care.yaml
+      sed -i "s/^  ray_workers:.*/  ray_workers: ${NUM_PROCS}/" ~/git/vectara-ingest/config/qumulo-care.yaml
       ingest_documentation "qumulo-care.yaml"
     fi
 }
@@ -324,7 +324,7 @@ ingest_corp_site() {
       ingest_documentation "qumulo-main.yaml"
     else
       NUM_PROCS=$(printf "%.${2:-0}f" "$(bc <<< "0.625*$(nproc)")")
-      sed -i "s/^  ray workers:.*/  ray workers: ${NUM_PROCS}/" ~/git/vectara-ingest/config/qumulo-main.yaml
+      sed -i "s/^  ray_workers:.*/  ray_workers: ${NUM_PROCS}/" ~/git/vectara-ingest/config/qumulo-main.yaml
       ingest_documentation "qumulo-care.yaml"
     fi
 }
