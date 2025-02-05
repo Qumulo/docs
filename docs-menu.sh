@@ -73,16 +73,6 @@ refresh_vectara_ingest_repo() {
 
         cd ~/git/vectara-ingest || { echo "Couldn't find ~/git/vectara-ingest does not seem to exist. Clone the repository and add a symlink."; exit 1; }
 
-        if ! check_qumulo_config_files; then
-            exit 1
-        fi
-
-        cd ~/git/vectara-ingest
-
-        if ! check_secrets_toml; then
-            exit 1
-        fi
-
         echo "Pulling down latest updates... This process overwrites all local configuration files."
         git checkout main
         git fetch upstream
@@ -90,6 +80,7 @@ refresh_vectara_ingest_repo() {
         git push --force origin main
         git checkout local-config
         git rebase main
+        echo "config/qumulo-*.yaml" >> .git/info/exclude
 
         echo "Preparing repository..."
         chmod +x run.sh
