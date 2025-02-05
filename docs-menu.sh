@@ -88,14 +88,15 @@ refresh_vectara_ingest_repo() {
 
         if [ "$LOCAL" != "$REMOTE" ]; then
           echo "Your local-config branch has diverged from origin/local-config."
-          echo -e "\e[31mProceeding overwrites local changes. Continue? (y/n)\e[0m"
+          echo -e "\e[31mTo stop without discarding changes to your local configuration files, select 'n'.\e[0m"
+          echo -e "\e[31mTo discard changes to your local configuration files, select 'y'.\e[0m"
+          echo -e "\e[31mContinue? (y/n)\e[0m"
           read -r overwrite_answer
           if [ "$overwrite_answer" = "y" ]; then
             echo "Importing configuration files..."
             git reset --hard origin/local-config
           else
             echo "Exiting..."
-            echo "Commit the local changes to your configuration files and then rerun this script."
             exit 1
           fi
         fi
