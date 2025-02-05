@@ -368,7 +368,7 @@ while true; do
     echo "11. 📋 Check documentation for spelling errors"
     echo "12. 🧹 Sweep Toolchain"
     echo "13. 🧹 Prune Docker"
-    echo "14. 🧹 Refresh Vectara Ingest repo"
+    echo "14. 🔄 Refresh Vectara Ingest repo"
     echo "15. 🔍 Ingest docs.qumulo.com into Vectara"
     echo "16. 🔍 Ingest care.qumulo.com into Vectara"
     echo "17. 🔍 Ingest qumulo.com into Vectara"
