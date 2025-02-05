@@ -65,37 +65,45 @@ check_qumulo_config_files(){
 
 # Refresh Vectara Ingest repo
 refresh_vectara_ingest_repo() {
-    echo "Refreshing the Vectara Ingest repository requires synchronizing our fork."
+    echo "Refreshing the vectara-ingest repository requires synchronizing our fork."
     echo "This removes all modifications from the repository. Continue? (y/n)"
     read -r answer
     if [ "$answer" = "y" ]; then
         check_vectara_ingest_repo
 
-        cd ~/git/vectara-ingest || { echo "Couldn't find ~/git/vectara-ingest does not seem to exist. Clone the repository and add a symlink."; exit 1; }
+        cd ~/git/vectara-ingest || { echo "Couldn't find ~/git/vectara-ingest. Clone the repository and add a symlink."; exit 1; }
 
-        echo "Pulling down latest updates... This process overwrites all local configuration files."
+        echo "Pulling down latest updates..."
         git checkout main
         git fetch upstream
         git reset --hard upstream/main
         git push --force origin main
         git checkout local-config
-        git pull origin local-config
+        git fetch origin local-config
+
+        LOCAL=$(git rev-parse @)
+        REMOTE=$(git rev-parse origin/local-config)
+        BASE=$(git merge-base @ origin/local-config)
+
+        if [ "$LOCAL" != "$REMOTE" ]; then
+          echo "Your local-config branch has diverged from origin/local-config."
+          echo "Proceeding overwrites local changes. Continue? (y/n)"
+          read -r overwrite_answer
+          if [ "$overwrite_answer" = "y" ]; then
+            echo "Importing configuration files..."
+            git reset --hard origin/local-config
+          else
+            echo "Exiting..."
+            echo "Commit the local changes to your configuration files and then rerun this script."
+            exit 1
+          fi
+        fi
+
         git rebase main
-        echo "config/qumulo-*.yaml" >> .git/info/exclude
 
         echo "Preparing repository..."
         chmod +x run.sh
 
-        if ! git diff --quiet; then
-          echo "Committing changes..."
-          git add --all
-          git commit -m "Adding configuration files."
-          git push
-        else
-          echo "No changes to commit."
-        fi
-
-        git add --all && git commit -m "Added configuration files" && git push
     elif [ "$answer" = "n" ]; then
         echo
         echo "Exiting..."
