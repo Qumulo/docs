@@ -66,7 +66,7 @@ check_qumulo_config_files(){
 # Refresh Vectara Ingest repo
 refresh_vectara_ingest_repo() {
     echo "Refreshing the vectara-ingest repository requires synchronizing our fork."
-    echo "This removes all modifications from the repository. Continue? (y/n)"
+    echo -e "\e[31mThis removes all modifications from the repository. Continue? (y/n)\e[0m"
     read -r answer
     if [ "$answer" = "y" ]; then
         check_vectara_ingest_repo
@@ -87,7 +87,7 @@ refresh_vectara_ingest_repo() {
 
         if [ "$LOCAL" != "$REMOTE" ]; then
           echo "Your local-config branch has diverged from origin/local-config."
-          echo "Proceeding overwrites local changes. Continue? (y/n)"
+          echo -e "\e[31mProceeding overwrites local changes. Continue? (y/n)\e[0m"
           read -r overwrite_answer
           if [ "$overwrite_answer" = "y" ]; then
             echo "Importing configuration files..."
@@ -99,7 +99,7 @@ refresh_vectara_ingest_repo() {
           fi
         fi
 
-        git rebase main
+        git merge main
 
         echo "Preparing repository..."
         chmod +x run.sh
