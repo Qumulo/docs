@@ -46,9 +46,6 @@ check_secrets_toml() {
         echo "To ingest data into Vectara, you must add secrets.toml to your Vectara Ingest directory"
         echo "and then add your API keys to secrets.toml in the following format:"
         echo
-        echo "[general]"
-        echo "api = 'vectara_api_value'"
-        echo
         echo "[default]"
         echo "api_key=\"<IndexService API Key>\""
         echo
@@ -68,38 +65,47 @@ check_qumulo_config_files(){
 
 # Refresh Vectara Ingest repo
 refresh_vectara_ingest_repo() {
-    echo "Refreshing the Vectara Ingest repository requires synchronizing our fork."
-    echo "This removes all modifications from the repository. Continue? (y/n)"
+    echo "Refreshing the vectara-ingest repository requires synchronizing our fork."
+    echo -e "\e[31mThis removes all modifications from the repository. Continue? (y/n)\e[0m"
     read -r answer
     if [ "$answer" = "y" ]; then
         check_vectara_ingest_repo
 
-        cd ~/git/vectara-ingest
-        cp ../backup/qumulo-documentation-portal.yaml config/
-        cp ../backup/qumulo-care.yaml config/
-        cp ../backup/qumulo-main.yaml config/
+        cd ~/git/vectara-ingest || { echo "Couldn't find ~/git/vectara-ingest. Clone the repository and add a symlink."; exit 1; }
 
-        if ! check_qumulo_config_files; then
-            exit 1
-        fi
-
-        cd ~/git/vectara-ingest
-        cp ../backup/secrets.toml .
-
-        if ! check_secrets_toml; then
-            exit 1
-        fi
-
-        echo "Pulling down latest updates... This process overwrites all local configuration files."
-        cd ~/git/vectara-ingest
+        echo "Pulling down latest updates..."
+        git checkout main
+        git remote add upstream https://github.com/vectara/vectara-ingest >/dev/null 2>&1
+        git fetch upstream
         git reset --hard upstream/main
-        git push origin main --force
+        git push --force origin main
+        git checkout local-config
+        git fetch origin local-config
+
+        LOCAL=$(git rev-parse @)
+        REMOTE=$(git rev-parse origin/local-config)
+        BASE=$(git merge-base @ origin/local-config)
+
+        if [ "$LOCAL" != "$REMOTE" ]; then
+          echo "Your local-config branch has diverged from origin/local-config."
+          echo -e "\e[31mTo stop without discarding changes to your local configuration files, select 'n'.\e[0m"
+          echo -e "\e[31mTo discard changes to your local configuration files, select 'y'.\e[0m"
+          echo -e "\e[31mContinue? (y/n)\e[0m"
+          read -r overwrite_answer
+          if [ "$overwrite_answer" = "y" ]; then
+            echo "Importing configuration files..."
+            git reset --hard origin/local-config
+          else
+            echo "Exiting..."
+            exit 1
+          fi
+        fi
+
+        git merge main
 
         echo "Preparing repository..."
         chmod +x run.sh
 
-        echo "Committing changes..."
-        git add --all && git commit -m "Added configuration files" && git push
     elif [ "$answer" = "n" ]; then
         echo
         echo "Exiting..."
@@ -281,7 +287,14 @@ ingest_docs_portal() {
     no_toolchain
     check_vectara_ingest_repo
     check_secrets_toml
-    ingest_documentation "qumulo-documentation-portal.yaml"
+    check_qumulo_config_files
+    if [[ "$(hostname)" == *"plena-lucis"* ]]; then
+      ingest_documentation "qumulo-documentation-portal.yaml"
+    else
+      NUM_PROCS=$(printf "%.${2:-0}f" "$(bc <<< "0.625*$(nproc)")")
+      sed -i "s/^  ray_workers:.*/  ray_workers: ${NUM_PROCS}/" ~/git/vectara-ingest/config/qumulo-documentation-portal.yaml
+      ingest_documentation "qumulo-documentation-portal.yaml"
+    fi
 }
 
 # Ingest care.qumulo.com into Vectara corpus 4
@@ -290,7 +303,14 @@ ingest_care_portal() {
     no_toolchain
     check_vectara_ingest_repo
     check_secrets_toml
-    ingest_documentation "qumulo-care.yaml"
+    check_qumulo_config_files
+    if [[ "$(hostname)" == *"plena-lucis"* ]]; then
+      ingest_documentation "qumulo-care.yaml"
+    else
+      NUM_PROCS=$(printf "%.${2:-0}f" "$(bc <<< "0.625*$(nproc)")")
+      sed -i "s/^  ray_workers:.*/  ray_workers: ${NUM_PROCS}/" ~/git/vectara-ingest/config/qumulo-care.yaml
+      ingest_documentation "qumulo-care.yaml"
+    fi
 }
 
 # Ingest qumulo.com into Vectara corpus 5
@@ -299,7 +319,14 @@ ingest_corp_site() {
     no_toolchain
     check_vectara_ingest_repo
     check_secrets_toml
-    ingest_documentation "qumulo-main.yaml"
+    check_qumulo_config_files
+    if [[ "$(hostname)" == *"plena-lucis"* ]]; then
+      ingest_documentation "qumulo-main.yaml"
+    else
+      NUM_PROCS=$(printf "%.${2:-0}f" "$(bc <<< "0.625*$(nproc)")")
+      sed -i "s/^  ray_workers:.*/  ray_workers: ${NUM_PROCS}/" ~/git/vectara-ingest/config/qumulo-main.yaml
+      ingest_documentation "qumulo-care.yaml"
+    fi
 }
 
 # Check ingestion status
@@ -364,7 +391,7 @@ while true; do
     echo "11. 📋 Check documentation for spelling errors"
     echo "12. 🧹 Sweep Toolchain"
     echo "13. 🧹 Prune Docker"
-    echo "14. 🧹 Refresh Vectara Ingest repo"
+    echo "14. 🔄 Refresh Vectara Ingest repo"
     echo "15. 🔍 Ingest docs.qumulo.com into Vectara"
     echo "16. 🔍 Ingest care.qumulo.com into Vectara"
     echo "17. 🔍 Ingest qumulo.com into Vectara"
@@ -385,7 +412,7 @@ while true; do
         8) build_serve_docs_locally_python ;;
         9) build_serve_docs_locally_jekyll ;;
         10) check_docs_errors ;;
-        11) echo -e "⚠️  \033[1;31mThe spellcheker is disabled temporarily.\033[0m" ;;
+        11) check_spelling_errors ;;
         12) sweep_toolchain ;;
         13) prune_docker ;;
         14) refresh_vectara_ingest_repo;;

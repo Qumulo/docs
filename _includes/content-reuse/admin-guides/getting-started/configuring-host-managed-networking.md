@@ -8,7 +8,7 @@ You can configure alternative names to be always enabled while `systemd-networkd
 
 1. To your `/etc/systemd/network/` directory, add the file `10-altname.link`.
 
-1. Add the PCI address and altertative name for the network interface to the `10-altname.link` file. For example:
+1. Add the PCI address and alternative name for the network interface to the `10-altname.link` file. For example:
 
    ```
    [Match]
@@ -92,7 +92,7 @@ This section gives examples of network configurations with and without alternati
     </div>
   </li>
   <li>
-    <strong>Three Network Intefaces with a Link (Three Front-End and One Back-End on the Same Link):</strong> In the following example, Qumulo Core labels interfaces <code>eth0</code> and <code>eth1</code> as <code>USE_FOR_FRONTEND</code> and <code>eth2</code> as <code>USE_FOR_FRONTEND_AND_BACKEND</code>.
+    <strong>Three Network Interfaces with a Link (Three Front-End and One Back-End on the Same Link):</strong> In the following example, Qumulo Core labels interfaces <code>eth0</code> and <code>eth1</code> as <code>USE_FOR_FRONTEND</code> and <code>eth2</code> as <code>USE_FOR_FRONTEND_AND_BACKEND</code>.
 
   <div class="language-bash highlighter-rouge"><div class="highlight">
 <pre class="highlight"><code><span class="nb">sudo</span> ip <span class="nb">link</span> <span class="se">\</span>
@@ -129,8 +129,8 @@ This section gives examples of network configurations with and without alternati
   <li><strong>One Network Interface with a Link:</strong> Qumulo Core labels the interface with <code>USE_FOR_<wbr>FRONTEND_AND_<wbr>BACKEND</code>.</li>
   <li><strong>Two Network Interfaces with a Link:</strong> Qumulo Core labels the interface with the lower PCIe address as <code>USE_FOR_<wbr>FRONTEND_AND_<wbr>BACKEND</code> and the interface with the higher PCIe address as <code>USE_FOR_<wbr>FRONTEND</code>.</li>
   <li>
-    <p><strong>Three Network Interfaces with a Link:</strong> Qumulo Core labels the inteface with the lowest PCIe address as <code>USE_FOR_<wbr>FRONTEND_AND_<wbr>BACKEND</code> and the interfaces with the next highest an the highest PCIe addresses as <code>USE_FOR_<wbr>FRONTEND</code>.</p>
-    {% include note.html content="Although the interface with the lowest PCIe address is labelled for both front-end and back-end connections, only front-end traffic flows through this interface." %}
+    <p><strong>Three Network Interfaces with a Link:</strong> Qumulo Core labels the interface with the lowest PCIe address as <code>USE_FOR_<wbr>FRONTEND_AND_<wbr>BACKEND</code> and the interfaces with the next highest an the highest PCIe addresses as <code>USE_FOR_<wbr>FRONTEND</code>.</p>
+    {% include note.html content="Although the interface with the lowest PCIe address is labeled for both front-end and back-end connections, only front-end traffic flows through this interface." %}
   </li>
 </ul>
 </details>
