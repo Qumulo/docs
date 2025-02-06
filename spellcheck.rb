@@ -23,6 +23,7 @@ def preprocess_content(content, filename, allowlist_words)
 
 content
   .gsub(/\[([^\]]+)\]\([^)]+\)/, '\1')                                          # Ignore Markdown links, keeping only the text within square brackets
+  .gsub(/{%\s*include\s+content-reuse\/[^\n%]+\.md\s*%}/, ' ')
   .gsub(/G&auml;vle/, ' ')                                             		# Ignore special cases
   .gsub(/d&aelig;mons/i, ' ')
   .gsub(/([[:alnum:]]+(_|-))+[[:alnum:]]+/, ' ')                       		# Ignore underscores and dashes
@@ -52,7 +53,6 @@ content
   .gsub(/C-\d+[A-Za-z]*\b/, ' ')                                       		# Ignore `C-<N>T` patternws
   .gsub(/K-\d+[A-Za-z]*\b/, ' ')                                       		# Ignore `K-<N>T` patterns
   .gsub(/ConnectX-\d+\b/, ' ')                                         		# Ignore `ConnectX-<N>` patterns
-#  .gsub(/\{%\s*capture\s+[\s\S]*?%\}[\s\S]*?\{%\s*endcapture\s*%\}/m, '') 	# Ignore Liquid capture tags comprised entirely of JSON
   .gsub(/{%\s*capture\s+[^%]+%}\s*([\s\S]*?){%\s*endcapture\s*%}/m, ' ')
   .gsub(/{%\s*if page\.[^%]+%}\s*([\s\S]*?)(?:{%\s*(?:elsif[^%]+|else)\s*%}\s*([\s\S]*?))?{%\s*endif\s*%}/m, ' ')
   .gsub(/{%\s*unless[^%]+%}\s*([\s\S]*?){%\s*endunless\s*%}/m, ' ')             # Ignore Liquid unless conditionals
@@ -60,14 +60,14 @@ content
   .gsub(/{%\s*include\s+qq\.html\s+command="[^']*"\s*%}/, ' ')                  # Ignore Liquid qq CLI links
   .gsub(/{%\s*assign\s+\w+\s*=.*?%}/m, ' ')                            		# Ignore Liquid {% assign %} tags
   .gsub(/{%\s*comment\s*%}.*?{%\s*endcomment\s*%}/m, ' ')              		# Ignore Liquid comments
-  .gsub(/{%\s*include image\.html .*?%}/m, ' ')                        		# Ignore Liquid images   
-#  .gsub(/{%\s*include\s+content-reuse\/[^%]+%}/, ' ')
-  .gsub(/{%\s*include\s+content-reuse\/[\s\S]+?%}/, ' ')
+  .gsub(/{%\s*include image\.html .*?%}/m, ' ')                        		# Ignore Liquid images
+  #.gsub(/{%\s*include shared_image\.html .*?%}/m, ' ')                          # Ignore Liquid shared images 
+  .gsub(/{%\s*include\s+shared_image\.html[\s\S]+?%}/, ' ')
   .gsub(/\{\{.+?\}\}/, ' ')                                            		# Ignore Liquid variables
   .gsub(/var[[:alpha:]]*/, ' ')							# Ignore local variables in YAML
   .gsub(/\{%\s*endcapture\s*%\}/, ' ')                                 		# Ignore {% endcapture %} Liquid tags
   .gsub(/\{%\s*endif\s*%\}/, ' ')                                      		# Ignore {% endif %} Liquid tags
-  .gsub(/\{%\s*endunless\s*%\}/, ' ')                                               # Ignore {% endunless %} Liquid tags
+  .gsub(/\{%\s*endunless\s*%\}/, ' ')                                           # Ignore {% endunless %} Liquid tags
   .gsub(/="[^"]+\.(?:png|jpg|jpeg|webp)"/, '')                                 	# Ignore image files
   .gsub(/(?:&shy;)/, '')                                               		# Ignore `&shy;`
   .gsub(/&apos;/, "'")                                                 		# Replace &apos; with '
