@@ -109,7 +109,7 @@ To avoid incurring additional costs, we recommend tidying up the AWS resources f
 
    {{site.cnq.reviewExecPlan}}
    
-   Terraform removes the resources for the removed nodes according the execution plan and displays the primary (static) IPs for the remaining nodes. For example:
+   Terraform removes the resources for the removed nodes according the execution plan and displays the primary (static) IP addresses for the remaining nodes. For example:
 
    ```
    qumulo_primary_ips = [
