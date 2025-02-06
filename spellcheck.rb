@@ -23,7 +23,8 @@ def preprocess_content(content, filename, allowlist_words)
 
 content
   .gsub(/\[([^\]]+)\]\([^)]+\)/, '\1')                                          # Ignore Markdown links, keeping only the text within square brackets
-  .gsub(/{%\s*include\s+content-reuse\/[^\n%]+\.md\s*%}/, ' ')
+#  .gsub(/{%\s*include\s+content-reuse\/[^\n%]+\.md\s*%}/, ' ')
+  .gsub(/{%\s*include\s+content-reuse\/[^\n%]+\.md(?:\s+\w+="[^"]*")*\s*%}/, ' ') # Ignore transcludes
   .gsub(/G&auml;vle/, ' ')                                             		# Ignore special cases
   .gsub(/d&aelig;mons/i, ' ')
   .gsub(/([[:alnum:]]+(_|-))+[[:alnum:]]+/, ' ')                       		# Ignore underscores and dashes
