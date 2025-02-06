@@ -26,11 +26,3 @@ This section outlines the process of configuring and deploying {{site.azure.cnqA
 1. Perform post-deployment actions.
 
 1. Optimize your deployment.
-
-
-{% comment %}
-## {{site.azure.cnqAzureShort}} Limits
-This section lists the {{site.azure.cnqAzureShort}} limits.
-
-* **XXX: TBD**
-{% endcomment %}

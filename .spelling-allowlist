@@ -133,6 +133,7 @@ HMAC
 HMAD
 HPE
 HSM
+HTM
 HTML
 HTML5
 HTTP
@@ -407,6 +408,7 @@ presigned
 programmatically
 provisioner's
 qq
+qumulocare
 realmd
 recache
 recaches
@@ -436,6 +438,7 @@ syslog
 systemd
 timestamping
 toolless
+tz
 unassign
 uncomment
 unconfigured
