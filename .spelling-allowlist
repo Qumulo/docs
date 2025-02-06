@@ -8,6 +8,7 @@
 2015S
 2CQD
 2FA
+2m
 336T
 36T
 4410Y
@@ -40,6 +41,7 @@ AVX
 Alletra
 Auth0
 Autocomplete
+Autofs
 B2CM
 BMC
 Base64
@@ -83,6 +85,7 @@ DNs
 DS
 DeleteObject
 DeleteObjects
+Dev
 DnsAdmins
 DriveKey
 Dx
@@ -108,6 +111,7 @@ FQDN
 FQDNs
 FS
 FVT
+Failover
 FileSystemWatcher
 FlexibleLOM
 GBPS
@@ -140,6 +144,7 @@ IFTTT
 IML
 IOPS
 IPMI
+IPs
 IPv4
 IPv6
 ISOHybrid
@@ -302,6 +307,7 @@ Supermicro
 TCP
 TFN
 TFNs
+TGS
 TLD
 TLS
 TTL
@@ -348,6 +354,7 @@ Xeon
 YAML
 acknowledgements
 analytics
+argparse
 arp
 autocomplete
 autocompletion
@@ -378,6 +385,7 @@ kinit
 kms
 krb5.conf
 lifecycle
+m5
 macOS
 mc
 microarchitecture
@@ -388,6 +396,8 @@ namespace
 natively
 netmask
 netplan
+nfs
+nfsidmap
 permalink
 plaintext
 preconfigured
@@ -423,6 +433,7 @@ subtree
 swappable
 symlinks
 syslog
+systemd
 timestamping
 toolless
 unassign
@@ -434,5 +445,6 @@ unpartitioned
 uplink
 uplinks
 vSphere
+winbase
 x86
 zoneless
