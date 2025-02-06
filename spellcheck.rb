@@ -2,70 +2,83 @@ require 'ffi/hunspell'
 
 def preprocess_content(content, filename, allowlist_words)
   if filename.start_with?('qq-cli-command-guide/')
-    # For files under qq-cli-command-guide/, keep only help, summary, and synopsis fields
     content.gsub!(/---(.*?)---/m) do |match|
       yaml_content = match
-      # Keep only help, summary, and synopsis fields
       kept_fields = yaml_content.scan(/(help|summary|synopsis):.*?\n(?! )/m).join
+      "---\n#{kept_fields}---"
+    end
+  elsif filename.start_with?('rest-api-guide/')
+    content.gsub!(/---(.*?)---/m) do |match|
+      yaml_content = match
+      kept_fields = yaml_content.scan(/(description|summary):.*?\n(?! )/m).join
+      "---\n#{kept_fields}---"
+    end
+  else
+    content.gsub!(/---(.*?)---/m) do |match|
+      yaml_content = match
+      kept_fields = yaml_content.scan(/(title|summary):.*?\n(?! )/m).join
       "---\n#{kept_fields}---"
     end
   end
 
 content
-  .gsub(/G&auml;vle/, ' ')                                             # Ignore special cases
+  .gsub(/\{\{.+?\}\}/, ' ')                                                     # Ignore Liquid variables
+  .gsub(/{%\s*include\s+shared_image\.html.*%}/, ' ')                           # Ignore Liquid shared images
+  .gsub(/{%\s*capture\s+[^\s]+\s*%\}\s*(.*){%\s?endcapture\s?%}/, '\1')
+  .gsub(/{%\s?capture[^}]*}(?:\n)?{(?:.*\n)*^}(?:.*\n)?{%\s?endcapture\s?%}/m, ' ') # Ignore capture statements comprised entirely of JSON
+  .gsub(/content=\S+\s+%}/, ' ')                                                # Ignore usage of captured variables
+  .gsub(/\[([^\]]+)\]\([^)]+\)/, '\1')                                          # Ignore Markdown links, keeping only the text within square brackets
+  .gsub(/{%\s*include\s+content-reuse\/[^\n%]+\.md(?:\s+\w+="[^"]*")*\s*%}/, ' ') # Ignore transcludes
+  .gsub(/G&auml;vle/, ' ')                                             		# Ignore special cases
   .gsub(/d&aelig;mons/i, ' ')
-  .gsub(/```[\s\S]*?```/, ' ')                                         # Ignore all instances of ```code blocks```
-  .gsub(/`[^`]*`/, ' ')                                                # Ignore all instances of inline `code`
-  .gsub(/<pre class="[^"]*">[\s\S]*?<\/pre>/m, ' ')                    # Ignore <pre> tags
-  .gsub(/```[\s\S]*?```/, ' ')                                         # Enhanced removal of code blocks with optional language specifiers
-  .gsub(/\b\d+T\b/, ' ')                                               # Ignore <N>T patterns
-  .gsub(/\b\d+TB\b/, ' ')                                              # Ignore <N>TB patterns
-  .gsub(/\beth\d+\b/, ' ')                                             # Ignore eth<N> patterns
-  .gsub(/\bSev\d+\b/, ' ')                                             # Ignore Sev<N> patterns
-  .gsub(/SMBv\d+(\.\d+)?/, ' ')                                        # Ignore `SMBv<N>`
-  .gsub(/(v\d+)\b/, ' ')                                               # Ignore `v<N>`
-  .gsub(/<code>.*?<\/code>/m, ' ')                                     # Ignore content within <code> tags
-  .gsub(/<pre>.*?<\/pre>/m, ' ')                                       # Ignore content within <pre> tags
-  .gsub(/\[.*?\]\((.*?)\)/, ' ')                                       # Ignore Markdown links, capturing the URLs in parentheses
-  .gsub(/\[([^\]]+)\]\([^)]+\)/, '\1')                                 # Ignore Markdown links, keeping only the text within square brackets
-  .gsub(/\b[A-Za-z]*-?[A-Za-z]+(?:ing|ING)\b(?!_SPACE_)/, '_SPACE_')   # Ensure `ing` doesn't get separated from word root
-  .gsub(/\{%\s*capture\s+[\s\S]*?%\}[\s\S]*?\{%\s*endcapture\s*%\}/m, '') # Ignore Liquid capture tags comprised entirely of JSON
-  .gsub(/="[^"]+\.(?:png|jpg)"/, '')                                   # Ignore image files
-  .gsub(/(?:&shy;)/, '')                                               # Ignore `&shy;`
-  .gsub(/(?:permalink|redirect_from|sidebar|include_content|layout|redirect_to|search|platform):\s*.*$/, '') # Exclude specific YAML key value
-  .gsub(/---(.*?)---/m) do |match|                                     # Extract values from YAML front matter, keeping them as plain text
+  .gsub(/([[:alnum:]]+(_|-))+[[:alnum:]]+/, ' ')                       		# Ignore underscores and dashes
+  .gsub(/\b[A-Za-z]*-?[A-Za-z]+(?:ing|ING)\b(?!_SPACE_)/, '_SPACE_')   		# Ensure `ing` doesn't get separated from word root
+  .gsub(/---(.*?)---/m) do |match|                                     		# Extract values from YAML front matter, keeping them as plain text
     match.scan(/:\s*([^\n]+)/).flatten.join(' ')
   end
-  .gsub(/\{% if page\.platform == '[^']+' %\}(.*?)\{% endif %\}/m, '\1') # Ignore terms of if-else conditions
-  .gsub(/<style>.*?<\/style>/m, ' ')                                   # Ignore <style> tags
-  .gsub(/{%\s*include\s+qq\.html\s+command=['"][^'"]*['"]\s*%}/, ' ')  # Ignore qq CLI Guide links
-  .gsub(/\[[^\]]*\]\([^)]*\([^)]*\)\)/, '[]()')                        # Ignore Markdown URLs
-  .gsub(/{%\s*assign\s+\w+\s*=.*?%}/m, ' ')                            # Ignore {% assign %} Liquid tags
-  .gsub(/\b\d+[ap]m\b/, ' ')                                           # Ignore `<N>am` and `<N>pm`
-  .gsub(/{%\s*include\s+rfc\.html\s+rfc='[^']*'\s*%}/, ' ')            # Ignore RFC links
-  .gsub(/&apos;/, "'")                                                 # Replace &apos; with '
-  .gsub(/\[[^\]]*\]\([^)]*\([^)]*\)\)/, '[]()')                        # Ignore Markdown URLs
-  .gsub(/Sev\d+\b/, ' ')                                               # Ignore `Sev<N>`
-  .gsub(/[A-Z]\d+\b/, ' ')                                             # Ignore a single capital letter followed by a number
-  .gsub(/{%\s*comment\s*%}.*?{%\s*endcomment\s*%}/m, ' ')              # Ignore comments
-  .gsub(/{%\s*include image\.html .*?%}/m, ' ')                        # Ignore images       
-  .gsub(/(SHA\d+)\b/, ' ')                                             # Ignore `SHA<N>`
-  .gsub(/(Gen\d+)\b/, ' ')                                             # Ignore `Gen<N>`
-  .gsub(/C-\d+[A-Za-z]*\b/, ' ')                                       # Ignore `C-<N>T`
-  .gsub(/K-\d+[A-Za-z]*\b/, ' ')                                       # Ignore `K-<N>T`
-  .gsub(/ConnectX-\d+\b/, ' ')                                         # Ignore `ConnectX-<N>`
-  .gsub(/\{\{.+?\}\}/, ' ')                                            # Ignore Liquid variables
-  .gsub(/{%\s*include\s+[^\s]+(.+?)%}/m) { "{% include #{$1} %}" }     # Preserve include content, ignore filename
-  .gsub(/<\/?[^>]+>/, ' ')                                             # Ignore remaining HTML tags, keeping content intact
-  .gsub(/&\w+;/, ' ')                                                  # Convert HTML entities to spaces
-  .gsub(/\{%\s*capture\s+[^\s]+\s*%\}/, ' ')                           # Ignore variable capture statements
-  .gsub(/content=\S+\s+%}/, ' ')                                       # Ignore usage of captured variables
-  .gsub(/\{%\s*endcapture\s*%\}/, ' ')                                 # Ignore {% endcapture %} Liquid tags
-  .gsub(/\{%\s*endif\s*%\}/, ' ')                                      # Ignore {% endif %} Liquid tags
-  .gsub(/\b\w+\b\s*=/, '')                                             # Exclude any variable name followed by an equal sign
+  .gsub(/```[\s\S]*?```/, ' ')                                         		# Ignore all instances of ```code blocks```, with or without syntax highlighting specifiers
+  .gsub(/`[^`]*`/, ' ')                                               		# Ignore all instances of inline `code`
+  .gsub(/<code>.*?<\/code>/m, ' ')                                     		# Ignore content in <code> tags
+  .gsub(/<pre>.*?<\/pre>/m, ' ')                                       		# Ignore content in <pre> tags
+  .gsub(/<code class="[^"]*">[\s\S]*?<\/code>/m, ' ')                  		# Ignore content in <code> tags with attached class
+  .gsub(/<pre class="[^"]*">[\s\S]*?<\/pre>/m, ' ')                    		# Ignore content in <pre> tags with attached class
+  .gsub(/<style>.*?<\/style>/m, ' ')                                   		# Ignore <style> tags
+  .gsub(/[A-Z]\d+\b/, ' ')                                             		# Ignore a single capital letter followed by a number
+  .gsub(/\b\d+T\b/, ' ')                                               		# Ignore <N>T patterns
+  .gsub(/\b\d+TB\b/, ' ')                                              		# Ignore <N>TB patterns
+  .gsub(/\b\d+U\b/, ' ')                                                        # Ignore <N>U patterns
+  .gsub(/\b\d+UH\b/, ' ')                                                       # Ignore <N>T patterns
+  .gsub(/\beth\d+\b/, ' ')                                             		# Ignore eth<N> patterns
+  .gsub(/\bSev\d+\b/, ' ')                                             		# Ignore Sev<N> patterns
+  .gsub(/SMBv\d+(\.\d+)?/, ' ')                                       		# Ignore `SMBv<N>` patterns
+  .gsub(/(v\d+)\b/, ' ')                                               		# Ignore `v<N>` patterns
+  .gsub(/\b\d+[ap]m\b/, ' ')                                           		# Ignore `<N>am` and `<N>pm` patterns
+  .gsub(/(SHA\d+)\b/, ' ')                                            		# Ignore `SHA<N>` patterns
+  .gsub(/(Gen\d+)\b/, ' ')                                             		# Ignore `Gen<N>` patterns
+  .gsub(/C-\d+[A-Za-z]*\b/, ' ')                                       		# Ignore `C-<N>T` patternws
+  .gsub(/K-\d+[A-Za-z]*\b/, ' ')                                       		# Ignore `K-<N>T` patterns
+  .gsub(/ConnectX-\d+\b/, ' ')                                         		# Ignore `ConnectX-<N>` patterns
+  .gsub(/{%\s*if page\.[^%]+%}\s*([\s\S]*?)(?:{%\s*(?:elsif[^%]+|else)\s*%}\s*([\s\S]*?))?{%\s*endif\s*%}/m, ' ')
+  .gsub(/{%\s*unless[^%]+%}\s*([\s\S]*?){%\s*endunless\s*%}/m, ' ')             # Ignore Liquid unless conditionals
+  .gsub(/{%\s*include\s+rfc\.html\s+rfc='[^']*'\s*%}/, ' ')            		# Ignore Liquid RFC links
+  .gsub(/{%\s*include\s+qq\.html\s+command="[^']*"\s*%}/, ' ')                  # Ignore Liquid qq CLI links
+  .gsub(/{%\s*assign\s+\w+\s*=.*?%}/m, ' ')                            		# Ignore Liquid {% assign %} tags
+  .gsub(/{%\s*comment\s*%}.*?{%\s*endcomment\s*%}/m, ' ')              		# Ignore Liquid comments
+  .gsub(/{%\s*include image\.html .*?%}/m, ' ')                        		# Ignore Liquid images
+  .gsub(/var[[:alpha:]]*/, ' ')							# Ignore local variables in YAML
+  .gsub(/\{%\s*endcapture\s*%\}/, ' ')                                 		# Ignore {% endcapture %} Liquid tags
+  .gsub(/\{%\s*endif\s*%\}/, ' ')                                      		# Ignore {% endif %} Liquid tags
+  .gsub(/\{%\s*endunless\s*%\}/, ' ')                                           # Ignore {% endunless %} Liquid tags
+  .gsub(/="[^"]+\.(?:png|jpg|jpeg|webp)"/, '')                                 	# Ignore image files
+  .gsub(/(?:&shy;)/, '')                                               		# Ignore `&shy;`
+  .gsub(/&apos;/, "'")                                                 		# Replace &apos; with '
+  .gsub(/<\/?[^>]+>/, ' ')                                             		# Ignore remaining HTML tags, keeping content intact
+  .gsub(/&\w+;/, ' ')                                                  		# Convert HTML entities to spaces
+  .gsub(/\{%\s*capture\s+[^\s]+\s*%\}/, ' ')                           		# Ignore variable capture statements
+  .gsub(/content=\S+\s+%}/, ' ')                                       		# Ignore usage of captured variables
+  .gsub(/\b\w+\b\s*=/, '')                                             		# Exclude any variable name followed by an equal sign
   .gsub(/\b(#{allowlist_words.join('|')}|[A-Za-z]+-\d+-[A-Za-z]+)\b/, '_SPACE_') # Replace allowed phrases with placeholders
-  .gsub(/_SPACE_/, '')                                                 # Remove placeholders
-
+  .gsub(/_SPACE_/, '')                                                 		# Remove placeholders
 end
 
 # Initialize misspelling counter

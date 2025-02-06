@@ -29,7 +29,7 @@ For more information, see [To Replace an HDD](replacing-hardware-components.html
 
 * For 48T nodes, only the following drive bays are populated: 0, 1, 2.
 
-  {% include important.html content="When replacing faulty drives, use only the originally populared drive bays." %}
+  {% include important.html content="When replacing faulty drives, use only the originally populated drive bays." %}
 
 For more information, see [To Replace an NVMe Drive](replacing-hardware-components.html#replace-nvme-m2-boot-drive)
 
