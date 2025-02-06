@@ -22,8 +22,10 @@ def preprocess_content(content, filename, allowlist_words)
   end
 
 content
-  .gsub(/\{%\s*capture\s+[\s\S]*?%\}[\s\S]*?\{%\s*endcapture\s*%\}/m, '')	# Ignore Liquid capture tags comprised entirely of JSON
-  .gsub(/\{%\s*capture\s+[^\s]+\s*%\}/, ' ')                                    # Ignore variable capture statements
+  .gsub(/\{\{.+?\}\}/, ' ')                                                     # Ignore Liquid variables
+  .gsub(/{%\s*include\s+shared_image\.html.*%}/, ' ')                           # Ignore Liquid shared images
+  .gsub(/{%\s*capture\s+[^\s]+\s*%\}\s*(.*){%\s?endcapture\s?%}/, '\1')
+  .gsub(/{%\s?capture[^}]*}(?:\n)?{(?:.*\n)*^}(?:.*\n)?{%\s?endcapture\s?%}/m, ' ') # Ignore capture statements comprised entirely of JSON
   .gsub(/content=\S+\s+%}/, ' ')                                                # Ignore usage of captured variables
   .gsub(/\[([^\]]+)\]\([^)]+\)/, '\1')                                          # Ignore Markdown links, keeping only the text within square brackets
   .gsub(/{%\s*include\s+content-reuse\/[^\n%]+\.md(?:\s+\w+="[^"]*")*\s*%}/, ' ') # Ignore transcludes
@@ -63,8 +65,6 @@ content
   .gsub(/{%\s*assign\s+\w+\s*=.*?%}/m, ' ')                            		# Ignore Liquid {% assign %} tags
   .gsub(/{%\s*comment\s*%}.*?{%\s*endcomment\s*%}/m, ' ')              		# Ignore Liquid comments
   .gsub(/{%\s*include image\.html .*?%}/m, ' ')                        		# Ignore Liquid images
-  .gsub(/{%\s*include\s+shared_image\.html[\s\S]+?%}/, ' ')
-  .gsub(/\{\{.+?\}\}/, ' ')                                            		# Ignore Liquid variables
   .gsub(/var[[:alpha:]]*/, ' ')							# Ignore local variables in YAML
   .gsub(/\{%\s*endcapture\s*%\}/, ' ')                                 		# Ignore {% endcapture %} Liquid tags
   .gsub(/\{%\s*endif\s*%\}/, ' ')                                      		# Ignore {% endif %} Liquid tags
