@@ -2,7 +2,8 @@
 
 # Check if Prince XML is installed
 if ! command -v prince &> /dev/null; then
-    echo "To generate PDF files, you must install Prince XML: https://www.princexml.com/download/"
+    echo "To generate PDF files, you must download Prince XML 14.4 for your OS (https://www.princexml.com/download/14/)"
+    echo "and then install it (https://www.princexml.com/doc/installing/)."
     exit 1
 fi
 
