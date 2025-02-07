@@ -238,30 +238,37 @@ build_pdf_docs() {
 }
 
 # Build the documentation and serve it locally by using Tailscale
-build_serve_docs_locally_python() {
-    echo "Building documentation and serving it locally on port 4000 by using http.server..."
+build_serve_docs_locally_tailscale() {
+    echo -e "Building documentation and serving it locally on \e[31m$(hostname).qumulo.ts.net\e[0m by using Tailscale..."
     ignore_warnings
     docker run --rm --user $(id -u):$(id -g) --name docs-container-build -v $(pwd):/src:rw docs-builder && cd _site && sudo tailscale serve $PWD && cd ..
 }
 
-# Only serve the documenttion locally on port 4000 by using http.server
+# Build the documentation and serve it locally on port 4000 by using Python
+build_serve_docs_locally_python() {
+    echo -e "Building documentation and serving it locally on \e[31m$(hostname):4000\e[0m by using Python..."
+    ignore_warnings
+    docker run --rm --user $(id -u):$(id -g) --name docs-container-build -v $(pwd):/src:rw docs-builder && cd _site && python3 -m http.server 4000 && cd ..
+}
+
+# Build the documentation and serve it locally on port 4000 by using Jekyll LiveReload
+build_serve_docs_locally_jekyll() {
+    echo "Building documentation and serving it locally on \e[31m$(hostname):4000\e[0m by using Jekyll LiveReload..."
+    ignore_warnings
+    docker run -ti --rm --user $(id -u):$(id -g) --name docs-container-serve -v $(pwd):/src:rw -P --network host docs-builder serve
+}
+
+# Only serve the documentation locally on port 4000 by using http.server
 only_serve_docs_locally_python() {
     echo -e "Serving documentation locally on \e[31m$(hostname):4000\e[0m by using Python..."
     echo -e "\e[31m⚠️  Caution: This method of running an HTTP server is insecure.\e[0m"
     cd _site && python3 -m http.server 4000 && cd ..
 }
 
-# Only serve the documenttion locally by using Tailscale
+# Only serve the documentation locally by using Tailscale
 only_serve_docs_locally_tailscale() {
     echo -e "Serving documentation locally on \e[31m$(hostname).qumulo.ts.net\e[0m by using Tailscale..."
     cd _site && sudo tailscale serve $PWD && cd ..
-}
-
-# Build the documentation and serve it locally on port 4000 by using Jekyll LiveReload
-build_serve_docs_locally_jekyll() {
-    echo "Building documentation and serving it locally by using Jekyll LiveReload..."
-    ignore_warnings
-    docker run -ti --rm --user $(id -u):$(id -g) --name docs-container-serve -v $(pwd):/src:rw -P --network host docs-builder serve
 }
 
 # Check documentation for link, script, and image errors by using HTML Proofer
@@ -391,20 +398,21 @@ while true; do
     echo "4.  🆕 List CLI documentation with appended content"
     echo "5.  ⚙️  Only build HTML documentation"
     echo "6.  ⚙️  Only build PDF documentation"
-    echo "7.  🖥️  Only serve documentation locally (⚠️  Python over HTTP)"
-    echo "8.  🖥️  Only serve documentation locally (Tailscale over HTTPS)"
-    echo "9.  🖥️  Build documentation and serve it locally"
-    echo "10. 🖥️  Build documentation and serve it locally with LiveReload (⚠️  Can be unstable)"
-    echo "11. 📋 Check documentation for link, script, and image errors"
-    echo "12. 📋 Check documentation for spelling errors"
-    echo "13. 🧹 Sweep Toolchain"
-    echo "14. 🧹 Prune Docker"
-    echo "15. 🔄 Refresh Vectara Ingest repo"
-    echo "16. 🔍 Ingest docs.qumulo.com into Vectara"
-    echo "17. 🔍 Ingest care.qumulo.com into Vectara"
-    echo "18. 🔍 Ingest qumulo.com into Vectara"
-    echo "19. 📋 Check ingestion status"
-    echo "20. ❌ Find unused .js scripts"
+    echo "7.  🖥️  Only serve documentation locally (Tailscale over HTTPS)"
+    echo "8.  🖥️  Only serve documentation locally (Python over HTTP)"
+    echo "9.  🖥️  Build documentation and serve it locally (Tailscale over HTTPS)"
+    echo "10. 🖥️  Build documentation and serve it locally (Python over HTTP)"
+    echo "11. 🖥️  Build documentation and serve it locally (Jekyll with LiveReload over HTTP)"
+    echo "12. 📋 Check documentation for link, script, and image errors"
+    echo "13. 📋 Check documentation for spelling errors"
+    echo "14. 🧹 Sweep Toolchain"
+    echo "15. 🧹 Prune Docker"
+    echo "16. 🔄 Refresh Vectara Ingest repo"
+    echo "17. 🔍 Ingest docs.qumulo.com into Vectara"
+    echo "18. 🔍 Ingest care.qumulo.com into Vectara"
+    echo "19. 🔍 Ingest qumulo.com into Vectara"
+    echo "20. 📋 Check ingestion status"
+    echo "21. ❌ Find unused .js scripts"
     echo "q.  👋 Quit"
     echo
     read -p $'\033[1;33mWhat would you like to do? \033[0m' choice
@@ -416,20 +424,21 @@ while true; do
         4) find_modified_cli ;;
         5) build_html_docs ;;
         6) build_pdf_docs ;;
-        7) only_serve_docs_locally_python ;;
-        8) only_serve_docs_locally_tailscale ;;
-        9) build_serve_docs_locally_python ;;
-        10) build_serve_docs_locally_jekyll ;;
-        11) check_docs_errors ;;
-        12) check_spelling_errors ;;
-        13) sweep_toolchain ;;
-        14) prune_docker ;;
-        15) refresh_vectara_ingest_repo;;
-        16) ingest_docs_portal ;;
-        17) ingest_care_portal ;;
-        18) ingest_corp_site ;;
-        19) check_ingestion_status ;;
-        20) find_unused_scripts ;;
+        7) only_serve_docs_locally_tailscale ;;
+        8) only_serve_docs_locally_python ;;
+        9) build_serve_docs_locally_tailscale ;;
+        10) build_serve_docs_locally_python ;;
+        11) build_serve_docs_locally_jekyll ;;
+        12) check_docs_errors ;;
+        13) check_spelling_errors ;;
+        14) sweep_toolchain ;;
+        15) prune_docker ;;
+        16) refresh_vectara_ingest_repo;;
+        17) ingest_docs_portal ;;
+        18) ingest_care_portal ;;
+        19) ingest_corp_site ;;
+        20) check_ingestion_status ;;
+        21) find_unused_scripts ;;
         q) exit ;;
         *) echo "You must enter a valid option." ;;
     esac
