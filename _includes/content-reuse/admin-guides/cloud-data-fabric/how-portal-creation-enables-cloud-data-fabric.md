@@ -24,7 +24,7 @@ The following key terms help define the components of Cloud Data Fabric function
 * <a id="cluster"></a>**Cluster:** Any Qumulo cluster that shares a portion of its file system for a hub portal or a spoke portal. {{site.gns.dirOnCluster}} a spoke portal or a hub portal.
 
   {{site.data.alerts.tip}}
-  <p>Because _a portion_ of a Qumulo cluster's file system can hold the hub portal root directory or spoke portal root directory, using the correct terminology can help avoid confusion:</p>
+  <p>Because <em>a portion</em> of a Qumulo cluster's file system can hold the hub portal root directory or spoke portal root directory, using the correct terminology can help avoid confusion:</p>
   <ul>
     <li><span class="emoji">❌</span> hub cluster</li>
     <li><span class="emoji">✅</span> hub portal host cluster</li>

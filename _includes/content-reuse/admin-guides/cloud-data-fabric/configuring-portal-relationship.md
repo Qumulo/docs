@@ -59,7 +59,7 @@ This section explains how to create the [spoke portal](how-portal-creation-enabl
    ```
    ID  State    Type  Spoke Root        Hub Host     Hub Root   Hub Portal ID
    ==  =======  ====  ================  ===========  =========  =============
-   2   Pending  RW    /remote/projects  {{site.exampleIP0}}  123456  4
+   2   Pending  RW    /remote/projects  {{site.exampleIP0}}  123456     4
    ```
 
    Hub Portal ID `4` is the ID that the hub portal host cluster allocates for this portal relationship. You can use it to authorize the relationship on the hub portal host cluster as described later.
