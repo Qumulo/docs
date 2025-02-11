@@ -463,6 +463,7 @@ changeNotify:
   useRESTnotSMB: Qumulo provides REST access to the same [change notification system](how-file-system-change-notifications-work.html) that backs SMB2 `CHANGE_NOTIFY`. Because the notification interface and types are easier to work with compared to SMB2, we recommend programming by using REST rather than SMB `CHANGE_NOTIFY`.
 
 gns:
+  nameChange: Global Namespace is now Cloud Data Fabric. This feature's core functionality remains the same.
   uniquePortalIDs: Portal IDs are unique within each cluster. It isn&apos;t possible to use a portal ID from a spoke portal to identify the other side of the relationship, or the other way around.
   spokePortalsReadOnly: To ensure strict consistency with the hub portal, all file system objects under the spoke portal root directory are read-only.
   ephemeralCache: The cache of a spoke portal is inherently ephemeral. You must not use it in place of data replication or backup.

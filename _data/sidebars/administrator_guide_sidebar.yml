@@ -187,21 +187,21 @@ entries:
       url: /administrator-guide/network-multitenancy/configuring-file-system-protocols.html
       output: web, pdf
 
-  - title: Global Namespace
-    url: /administrator-guide/global-namespace/index.html
+  - title: Cloud Data Fabric
+    url: /administrator-guide/cloud-data-fabric/index.html
     output: web, pdf
     folderitems:
 
-    - title: Enabling a Global Namespace
-      url: /administrator-guide/global-namespace/how-portal-creation-enables-global-namespace.html
+    - title: Enabling a Cloud Data Fabric
+      url: /administrator-guide/cloud-data-fabric/how-portal-creation-enables-cloud-data-fabric.html
       output: web, pdf
 
     - title: Configuring a Portal Relationship
-      url: /administrator-guide/global-namespace/configuring-portal-relationship.html
+      url: /administrator-guide/cloud-data-fabric/configuring-portal-relationship.html
       output: web, pdf
 
     - title: Configuring Cache Management
-      url: /administrator-guide/global-namespace/configuring-cache-management-for-spoke-portals.html
+      url: /administrator-guide/cloud-data-fabric/configuring-cache-management-for-spoke-portals.html
       output: web, pdf
 
   - title: Web UI

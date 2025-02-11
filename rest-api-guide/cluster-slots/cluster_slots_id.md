@@ -46,8 +46,10 @@ methods:
         : \"Capacity in bytes (0 if slot is empty)\",\n      \"type\": \"string\"\n\
         \    },\n    \"raw_capacity\": {\n      \"description\": \"Raw capacity in\
         \ bytes (0 if slot is empty)\",\n      \"type\": \"string\"\n    },\n    \"\
-        minimum_raw_capacity\": {\n      \"description\": \"Minimum raw capacity in\
-        \ bytes for slot\",\n      \"type\": \"string\"\n    },\n    \"high_endurance\"\
+        slot_command_capacity\": {\n      \"description\": \"The number of in-flight\
+        \ I/Os this device can handle.\",\n      \"type\": \"number\"\n    },\n  \
+        \  \"minimum_raw_capacity\": {\n      \"description\": \"Minimum raw capacity\
+        \ in bytes for slot\",\n      \"type\": \"string\"\n    },\n    \"high_endurance\"\
         : {\n      \"description\": \"Is this device a high endurance model\",\n \
         \     \"type\": \"boolean\"\n    },\n    \"drive_bay\": {\n      \"description\"\
         : \"Drive bay label\",\n      \"type\": \"string\"\n    },\n    \"led_pattern\"\
@@ -113,8 +115,10 @@ methods:
         : \"Capacity in bytes (0 if slot is empty)\",\n      \"type\": \"string\"\n\
         \    },\n    \"raw_capacity\": {\n      \"description\": \"Raw capacity in\
         \ bytes (0 if slot is empty)\",\n      \"type\": \"string\"\n    },\n    \"\
-        minimum_raw_capacity\": {\n      \"description\": \"Minimum raw capacity in\
-        \ bytes for slot\",\n      \"type\": \"string\"\n    },\n    \"high_endurance\"\
+        slot_command_capacity\": {\n      \"description\": \"The number of in-flight\
+        \ I/Os this device can handle.\",\n      \"type\": \"number\"\n    },\n  \
+        \  \"minimum_raw_capacity\": {\n      \"description\": \"Minimum raw capacity\
+        \ in bytes for slot\",\n      \"type\": \"string\"\n    },\n    \"high_endurance\"\
         : {\n      \"description\": \"Is this device a high endurance model\",\n \
         \     \"type\": \"boolean\"\n    },\n    \"drive_bay\": {\n      \"description\"\
         : \"Drive bay label\",\n      \"type\": \"string\"\n    },\n    \"led_pattern\"\

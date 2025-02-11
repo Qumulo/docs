@@ -19,14 +19,22 @@ optional_options:
   name: -p
   required: false
 - alternate: []
-  help: Full path to the prospective directory that will serve as the hub portal root
-    directory
+  help: The full path to the prospective directory that will serve as the hub portal
+    root directory
   name: --hub-root
   required: true
 - alternate:
   - --json
   help: Pretty-print JSON
   name: -j
+  required: false
+- alternate:
+  - --read-only-spoke
+  help: 'Create a read-only spoke portal. Read-only spoke portals prevent users from
+    creating or modifying files or directories under the hub portal root directory.
+    Important: It isn''t possible to change a read-only spoke portal to a read-write
+    portal after creating it.'
+  name: -r
   required: false
 permalink: /qq-cli-command-guide/portal/portal_create.html
 positional_options: []
@@ -35,7 +43,7 @@ summary: This section explains how to use the <code>qq portal_create</code> comm
 synopsis: Create a spoke portal and propose a hub portal relationship on another cluster
 title: qq portal_create
 usage: qq portal_create [-h] --spoke-root SPOKE_ROOT -a HUB_ADDRESS [-p HUB_PORT]
-  --hub-root HUB_ROOT [-j]
+  --hub-root HUB_ROOT [-j] [-r]
 zendesk_source: qq CLI Command Guide
 
 ---

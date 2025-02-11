@@ -27,7 +27,7 @@ methods:
         \ - REPLICATION_CONTINUOUS,\\n * `REPLICATION_SNAPSHOT_POLICY` - REPLICATION_SNAPSHOT_POLICY,\\\
         n * `REPLICATION_SNAPSHOT_POLICY_WITH_CONTINUOUS` - REPLICATION_SNAPSHOT_POLICY_WITH_CONTINUOUS\"\
         \n      },\n      \"blackout_window_timezone\": {\n        \"description\"\
-        : \"The timezone in which the blackout windows should be interpreted (e.g,\
+        : \"The time zone in which the blackout windows should be interpreted (e.g,\
         \ America/Los_Angeles or UTC)\",\n        \"type\": \"string\"\n      },\n\
         \      \"blackout_windows\": {\n        \"type\": \"array\",\n        \"items\"\
         : {\n          \"description\": \"List of blackout windows for the relationship\"\

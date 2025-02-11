@@ -27,12 +27,12 @@ methods:
         : {\n                  \"description\": \"Structure defining when to take\
         \ snapshots\",\n                  \"type\": \"object\",\n                \
         \  \"properties\": {\n                    \"timezone\": {\n              \
-        \        \"description\": \"The timezone in which the schedule should be interpreted\
-        \ (e.g. America/Los_Angeles or UTC).\",\n                      \"type\": \"\
-        string\"\n                    },\n                    \"frequency\": {\n \
-        \                     \"type\": \"string\",\n                      \"enum\"\
-        : [\n                        \"SCHEDULE_MONTHLY\",\n                     \
-        \   \"SCHEDULE_DAILY_OR_WEEKLY\",\n                        \"SCHEDULE_HOURLY_OR_LESS\"\
+        \        \"description\": \"The time zone in which the schedule should be\
+        \ interpreted (e.g. America/Los_Angeles or UTC).\",\n                    \
+        \  \"type\": \"string\"\n                    },\n                    \"frequency\"\
+        : {\n                      \"type\": \"string\",\n                      \"\
+        enum\": [\n                        \"SCHEDULE_MONTHLY\",\n               \
+        \         \"SCHEDULE_DAILY_OR_WEEKLY\",\n                        \"SCHEDULE_HOURLY_OR_LESS\"\
         \n                      ],\n                      \"description\": \"Coarse\
         \ frequency (MONTHLY, DAILY_OR_WEEKLY, or HOURLY_OR_LESS) at which to take\
         \ snapshot:\\n * `SCHEDULE_DAILY_OR_WEEKLY` - SCHEDULE_DAILY_OR_WEEKLY,\\\
@@ -125,7 +125,7 @@ methods:
         ,\n            \"type\": \"number\"\n          },\n          \"creation_schedule\"\
         : {\n            \"description\": \"Structure defining when to take snapshots\"\
         ,\n            \"type\": \"object\",\n            \"properties\": {\n    \
-        \          \"timezone\": {\n                \"description\": \"The timezone\
+        \          \"timezone\": {\n                \"description\": \"The time zone\
         \ in which the schedule should be interpreted (e.g. America/Los_Angeles or\
         \ UTC).\",\n                \"type\": \"string\"\n              },\n     \
         \         \"frequency\": {\n                \"type\": \"string\",\n      \
@@ -211,7 +211,7 @@ methods:
         ,\n            \"type\": \"number\"\n          },\n          \"creation_schedule\"\
         : {\n            \"description\": \"Structure defining when to take snapshots\"\
         ,\n            \"type\": \"object\",\n            \"properties\": {\n    \
-        \          \"timezone\": {\n                \"description\": \"The timezone\
+        \          \"timezone\": {\n                \"description\": \"The time zone\
         \ in which the schedule should be interpreted (e.g. America/Los_Angeles or\
         \ UTC).\",\n                \"type\": \"string\"\n              },\n     \
         \         \"frequency\": {\n                \"type\": \"string\",\n      \

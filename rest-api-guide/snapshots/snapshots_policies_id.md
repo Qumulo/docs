@@ -34,7 +34,7 @@ methods:
         ,\n            \"type\": \"number\"\n          },\n          \"creation_schedule\"\
         : {\n            \"description\": \"Structure defining when to take snapshots\"\
         ,\n            \"type\": \"object\",\n            \"properties\": {\n    \
-        \          \"timezone\": {\n                \"description\": \"The timezone\
+        \          \"timezone\": {\n                \"description\": \"The time zone\
         \ in which the schedule should be interpreted (e.g. America/Los_Angeles or\
         \ UTC).\",\n                \"type\": \"string\"\n              },\n     \
         \         \"frequency\": {\n                \"type\": \"string\",\n      \
@@ -132,7 +132,7 @@ methods:
         ,\n            \"type\": \"number\"\n          },\n          \"creation_schedule\"\
         : {\n            \"description\": \"Structure defining when to take snapshots\"\
         ,\n            \"type\": \"object\",\n            \"properties\": {\n    \
-        \          \"timezone\": {\n                \"description\": \"The timezone\
+        \          \"timezone\": {\n                \"description\": \"The time zone\
         \ in which the schedule should be interpreted (e.g. America/Los_Angeles or\
         \ UTC).\",\n                \"type\": \"string\"\n              },\n     \
         \         \"frequency\": {\n                \"type\": \"string\",\n      \
@@ -218,7 +218,7 @@ methods:
         ,\n            \"type\": \"number\"\n          },\n          \"creation_schedule\"\
         : {\n            \"description\": \"Structure defining when to take snapshots\"\
         ,\n            \"type\": \"object\",\n            \"properties\": {\n    \
-        \          \"timezone\": {\n                \"description\": \"The timezone\
+        \          \"timezone\": {\n                \"description\": \"The time zone\
         \ in which the schedule should be interpreted (e.g. America/Los_Angeles or\
         \ UTC).\",\n                \"type\": \"string\"\n              },\n     \
         \         \"frequency\": {\n                \"type\": \"string\",\n      \
@@ -316,7 +316,7 @@ methods:
         ,\n            \"type\": \"number\"\n          },\n          \"creation_schedule\"\
         : {\n            \"description\": \"Structure defining when to take snapshots\"\
         ,\n            \"type\": \"object\",\n            \"properties\": {\n    \
-        \          \"timezone\": {\n                \"description\": \"The timezone\
+        \          \"timezone\": {\n                \"description\": \"The time zone\
         \ in which the schedule should be interpreted (e.g. America/Los_Angeles or\
         \ UTC).\",\n                \"type\": \"string\"\n              },\n     \
         \         \"frequency\": {\n                \"type\": \"string\",\n      \
@@ -402,7 +402,7 @@ methods:
         ,\n            \"type\": \"number\"\n          },\n          \"creation_schedule\"\
         : {\n            \"description\": \"Structure defining when to take snapshots\"\
         ,\n            \"type\": \"object\",\n            \"properties\": {\n    \
-        \          \"timezone\": {\n                \"description\": \"The timezone\
+        \          \"timezone\": {\n                \"description\": \"The time zone\
         \ in which the schedule should be interpreted (e.g. America/Los_Angeles or\
         \ UTC).\",\n                \"type\": \"string\"\n              },\n     \
         \         \"frequency\": {\n                \"type\": \"string\",\n      \

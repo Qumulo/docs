@@ -13,7 +13,7 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Delete configuration of a tenant.
+    summary: '[preview] Delete configuration of a tenant.'
   get:
     parameters:
     - description: The unique ID of the tenant
@@ -43,7 +43,7 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Get configuration of a tenant.
+    summary: '[preview] Get configuration of a tenant.'
   patch:
     parameters:
     - description: The unique ID of the tenant
@@ -97,7 +97,7 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Update the configuration of a tenant.
+    summary: '[preview] Update the configuration of a tenant.'
   put:
     parameters:
     - description: The unique ID of the tenant
@@ -151,7 +151,7 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Set configuration of a tenant.
+    summary: '[preview] Set configuration of a tenant.'
 rest_endpoint: /v1/multitenancy/tenants/{tenant_id}
 api_version: v1
 permalink: /rest-api-guide/tenant-configuration/multitenancy_tenants_tenant_id.html

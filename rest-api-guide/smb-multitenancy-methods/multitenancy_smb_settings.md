@@ -7,7 +7,7 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Retrieve all tenant-specific SMB configurations.
+    summary: '[preview] Retrieve all tenant-specific SMB configurations.'
 rest_endpoint: /v1/multitenancy/smb/settings/
 api_version: v1
 permalink: /rest-api-guide/smb-multitenancy-methods/multitenancy_smb_settings.html

@@ -13,8 +13,8 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Delete current SMB configuration, restoring the global settings for this
-      tenant.
+    summary: '[preview] Delete current SMB configuration, restoring the global settings
+      for this tenant.'
   get:
     parameters:
     - description: The tenant ID of the SMB settings.
@@ -53,7 +53,7 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Retrieve current tenant-specific SMB configuration.
+    summary: '[preview] Retrieve current tenant-specific SMB configuration.'
   patch:
     parameters:
     - description: The tenant ID of the SMB settings.
@@ -125,7 +125,7 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Modify current tenant-specific SMB configuration.
+    summary: '[preview] Modify current tenant-specific SMB configuration.'
   put:
     parameters:
     - description: The tenant ID of the SMB settings.
@@ -197,7 +197,7 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Set current tenant-specific SMB configuration.
+    summary: '[preview] Set current tenant-specific SMB configuration.'
 rest_endpoint: /v1/multitenancy/smb/settings/{id}
 api_version: v1
 permalink: /rest-api-guide/smb-multitenancy-methods/multitenancy_smb_settings_id.html

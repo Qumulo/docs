@@ -84,8 +84,8 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: This method lists NFS exports. Refer to the 'Modify NFS Export' method
-      for a description of the returned fields.
+    summary: '[preview] This method lists NFS exports. Refer to the ''Modify NFS Export''
+      method for a description of the returned fields.'
   post:
     parameters:
     - description: Specifies whether the file system path can be created if it does
@@ -226,7 +226,7 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: This method adds an NFS export.
+    summary: '[preview] This method adds an NFS export.'
 rest_endpoint: /v3/nfs/exports/
 api_version: v3
 permalink: /rest-api-guide/nfs-methods/v3_nfs_exports.html

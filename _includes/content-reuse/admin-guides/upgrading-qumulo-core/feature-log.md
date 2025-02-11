@@ -46,14 +46,14 @@ Improved UID and GID sorting in the Web UI.
 {{page.varDownloadsRelnotes}}
 {{site.data.alerts.important}}
 <ul>
-  <li>This release resolves an issue with Global Namespace functionality in Qumulo Core 7.2.3.1 that could cause files to become unavailable temporarily.</li>
+  <li>This release resolves an issue with Cloud Data Fabric functionality in Qumulo Core 7.2.3.1 that could cause files to become unavailable temporarily.</li>
   <li>If your Qumulo cluster's nodes haven't been configured to use static routes, it isn't necessary to upgrade from Qumulo Core 7.2.3 to 7.2.3.1. To determine whether your cluster's nodes use static routes, SSH into the node and run the <code>ip route show</code> command. Typically, static routes do not have tags such as <code>proto dhcp</code> or <code>proto kernel</code>. For further help, {{site.contactQumuloCare}}.</li>
   <li>If your Qumulo cluster's nodes use static routes, this release resolves an issue in Qumulo Core 7.2.3 that, under certain conditions, caused the system to lose its static route configurations after a quorum event.</li>
 </ul>
 {{site.data.alerts.end}}
 
 * Made CNQ on Azure available on Qumulo Nexus.
-* Added support for read-only Global Namespace functionality between two or more Qumulo clusters.
+* Added support for read-only Cloud Data Fabric functionality between two or more Qumulo clusters.
 * Added support for three-node clusters to CNQ on Azure and CNQ on AWS.
 * Added support for CNQ clusters that adjust to multi-AZ configurations automatically.
 * Improved S3 Object Lock functionality and made changes to corresponding S3 API actions.

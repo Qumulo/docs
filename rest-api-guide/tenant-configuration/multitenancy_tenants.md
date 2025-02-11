@@ -33,7 +33,7 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Get configurations of all tenants.
+    summary: '[preview] Get configurations of all tenants.'
   post:
     parameters: []
     request_body:
@@ -82,7 +82,7 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Create a tenant.
+    summary: '[preview] Create a tenant.'
 rest_endpoint: /v1/multitenancy/tenants/
 api_version: v1
 permalink: /rest-api-guide/tenant-configuration/multitenancy_tenants.html

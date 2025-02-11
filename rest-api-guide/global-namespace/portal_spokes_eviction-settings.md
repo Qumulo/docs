@@ -13,8 +13,8 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Retrieve the configuration for recovering cluster capacity by removing
-      cached data automatically.
+    summary: '[preview] Retrieve the configuration for recovering cluster capacity
+      by removing cached data automatically.'
   patch:
     parameters:
     - description: ETag for expected version
@@ -37,8 +37,8 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Change the configuration for recovering cluster capacity by removing
-      cached data automatically.
+    summary: '[preview] Change the configuration for recovering cluster capacity by
+      removing cached data automatically.'
   put:
     parameters:
     - description: ETag for expected version
@@ -61,8 +61,8 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Overwrite the configuration for recovering cluster capacity by removing
-      cached data automatically.
+    summary: '[preview] Overwrite the configuration for recovering cluster capacity
+      by removing cached data automatically.'
 rest_endpoint: /v1/portal/spokes/eviction-settings
 api_version: v1
 permalink: /rest-api-guide/global-namespace/portal_spokes_eviction-settings.html

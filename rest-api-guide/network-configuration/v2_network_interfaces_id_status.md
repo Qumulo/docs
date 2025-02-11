@@ -69,46 +69,46 @@ methods:
         \ name\",\n              \"type\": \"string\"\n            },\n          \
         \  \"assigned_by\": {\n              \"type\": \"string\",\n             \
         \ \"enum\": [\n                \"DHCP\",\n                \"STATIC\",\n  \
-        \              \"LINK_LOCAL\"\n              ],\n              \"description\"\
-        : \"How to assign IP address, either DHCP, STATIC, or LINK_LOCAL:\\n * `DHCP`\
-        \ - NETWORK_ASSIGNED_BY_DHCP,\\n * `LINK_LOCAL` - NETWORK_ASSIGNED_BY_LINK_LOCAL,\\\
-        n * `STATIC` - NETWORK_ASSIGNED_BY_STATIC\"\n            },\n            \"\
-        address\": {\n              \"description\": \"The IPv4 or IPv6 address in\
-        \ 0.0.0.0 or :: format\",\n              \"type\": \"string\"\n          \
-        \  },\n            \"floating_addresses\": {\n              \"type\": \"array\"\
-        ,\n              \"items\": {\n                \"description\": \"Floating\
-        \ IPv4 or IPv6 addresses in 0.0.0.0 or :: format\",\n                \"type\"\
-        : \"string\"\n              }\n            },\n            \"dns_servers\"\
-        : {\n              \"type\": \"array\",\n              \"items\": {\n    \
-        \            \"description\": \"The list of DNS servers\",\n             \
-        \   \"type\": \"string\"\n              }\n            },\n            \"\
-        dns_search_domains\": {\n              \"type\": \"array\",\n            \
-        \  \"items\": {\n                \"description\": \"The list of DNS search\
-        \ domains\",\n                \"type\": \"string\"\n              }\n    \
-        \        },\n            \"netmask\": {\n              \"description\": \"\
-        The IPv4 or IPv6 netmask in 0.0.0.0 or :: format, or the IPv4 or IPv6 subnet\
-        \ CIDR\",\n              \"type\": \"string\"\n            },\n          \
-        \  \"mtu\": {\n              \"description\": \"The maximum transfer unit\
-        \ in bytes\",\n              \"type\": \"number\"\n            },\n      \
-        \      \"vlan_id\": {\n              \"description\": \"User-assigned vlan_id\
-        \ tag for network configuration.\",\n              \"type\": \"number\"\n\
-        \            }\n          }\n        }\n      },\n      \"aws_status\": {\n\
-        \        \"description\": \"AWS Network Status.\",\n        \"type\": \"object\"\
-        ,\n        \"properties\": {\n          \"eni_id\": {\n            \"description\"\
-        : \"ID of the network interface.\",\n            \"type\": \"string\"\n  \
-        \        },\n          \"device_number\": {\n            \"description\":\
-        \ \"Device number of the interface.\",\n            \"type\": \"number\"\n\
-        \          },\n          \"private_ipv4_addresses\": {\n            \"type\"\
-        : \"array\",\n            \"items\": {\n              \"description\": \"\
-        All private IP addresses associated with the interface.\",\n             \
-        \ \"type\": \"string\"\n            }\n          },\n          \"subnet_id\"\
-        : {\n            \"description\": \"ID of the subnet for the interface.\"\
-        ,\n            \"type\": \"string\"\n          },\n          \"subnet_mask\"\
-        : {\n            \"description\": \"Subnet mask of the interface.\",\n   \
-        \         \"type\": \"string\"\n          },\n          \"vpc_id\": {\n  \
-        \          \"description\": \"ID of the VPC for the interface.\",\n      \
-        \      \"type\": \"string\"\n          },\n          \"security_groups\":\
-        \ {\n            \"type\": \"array\",\n            \"items\": {\n        \
+        \              \"LINK_LOCAL\",\n                \"HOST\"\n              ],\n\
+        \              \"description\": \"How to assign IP address, either DHCP, STATIC,\
+        \ or LINK_LOCAL:\\n * `DHCP` - NETWORK_ASSIGNED_BY_DHCP,\\n * `HOST` - NETWORK_ASSIGNED_BY_HOST,\\\
+        n * `LINK_LOCAL` - NETWORK_ASSIGNED_BY_LINK_LOCAL,\\n * `STATIC` - NETWORK_ASSIGNED_BY_STATIC\"\
+        \n            },\n            \"address\": {\n              \"description\"\
+        : \"The IPv4 or IPv6 address in 0.0.0.0 or :: format\",\n              \"\
+        type\": \"string\"\n            },\n            \"floating_addresses\": {\n\
+        \              \"type\": \"array\",\n              \"items\": {\n        \
+        \        \"description\": \"Floating IPv4 or IPv6 addresses in 0.0.0.0 or\
+        \ :: format\",\n                \"type\": \"string\"\n              }\n  \
+        \          },\n            \"dns_servers\": {\n              \"type\": \"\
+        array\",\n              \"items\": {\n                \"description\": \"\
+        The list of DNS servers\",\n                \"type\": \"string\"\n       \
+        \       }\n            },\n            \"dns_search_domains\": {\n       \
+        \       \"type\": \"array\",\n              \"items\": {\n               \
+        \ \"description\": \"The list of DNS search domains\",\n                \"\
+        type\": \"string\"\n              }\n            },\n            \"netmask\"\
+        : {\n              \"description\": \"The IPv4 or IPv6 netmask in 0.0.0.0\
+        \ or :: format, or the IPv4 or IPv6 subnet CIDR\",\n              \"type\"\
+        : \"string\"\n            },\n            \"mtu\": {\n              \"description\"\
+        : \"The maximum transfer unit in bytes\",\n              \"type\": \"number\"\
+        \n            },\n            \"vlan_id\": {\n              \"description\"\
+        : \"User-assigned vlan_id tag for network configuration.\",\n            \
+        \  \"type\": \"number\"\n            }\n          }\n        }\n      },\n\
+        \      \"aws_status\": {\n        \"description\": \"AWS Network Status.\"\
+        ,\n        \"type\": \"object\",\n        \"properties\": {\n          \"\
+        eni_id\": {\n            \"description\": \"ID of the network interface.\"\
+        ,\n            \"type\": \"string\"\n          },\n          \"device_number\"\
+        : {\n            \"description\": \"Device number of the interface.\",\n \
+        \           \"type\": \"number\"\n          },\n          \"private_ipv4_addresses\"\
+        : {\n            \"type\": \"array\",\n            \"items\": {\n        \
+        \      \"description\": \"All private IP addresses associated with the interface.\"\
+        ,\n              \"type\": \"string\"\n            }\n          },\n     \
+        \     \"subnet_id\": {\n            \"description\": \"ID of the subnet for\
+        \ the interface.\",\n            \"type\": \"string\"\n          },\n    \
+        \      \"subnet_mask\": {\n            \"description\": \"Subnet mask of the\
+        \ interface.\",\n            \"type\": \"string\"\n          },\n        \
+        \  \"vpc_id\": {\n            \"description\": \"ID of the VPC for the interface.\"\
+        ,\n            \"type\": \"string\"\n          },\n          \"security_groups\"\
+        : {\n            \"type\": \"array\",\n            \"items\": {\n        \
         \      \"description\": \"Names of the security groups applied.\",\n     \
         \         \"type\": \"string\"\n            }\n          }\n        }\n  \
         \    },\n      \"azure_status\": {\n        \"description\": \"Azure Network\

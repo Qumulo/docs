@@ -7,7 +7,7 @@ methods:
       schema: "{\n  \"description\": \"encryption_api_v2_key_store_response_union\"\
         ,\n  \"type\": \"object\",\n  \"properties\": {\n    \"type\": {\n      \"\
         type\": \"string\",\n      \"enum\": [\n        \"Local\",\n        \"KMS\"\
-        \n      ],\n      \"description\": \"d:\\n * `KMS` - ENCRYPTION_TYPE_KMS,\\\
+        \n      ],\n      \"description\": \"type:\\n * `KMS` - ENCRYPTION_TYPE_KMS,\\\
         n * `Local` - ENCRYPTION_TYPE_LOCAL\"\n    },\n    \"local_store\": {\n  \
         \    \"description\": \"Value present when type is ENCRYPTION_TYPE_LOCAL.\"\
         ,\n      \"type\": \"object\",\n      \"properties\": {\n        \"status\"\
@@ -37,8 +37,8 @@ methods:
       schema: "{\n  \"description\": \"encryption_api_v2_put_key_store_union\",\n\
         \  \"type\": \"object\",\n  \"properties\": {\n    \"type\": {\n      \"type\"\
         : \"string\",\n      \"enum\": [\n        \"Local\",\n        \"KMS\"\n  \
-        \    ],\n      \"description\": \"d:\\n * `KMS` - ENCRYPTION_TYPE_KMS,\\n\
-        \ * `Local` - ENCRYPTION_TYPE_LOCAL\"\n    },\n    \"kms_store\": {\n    \
+        \    ],\n      \"description\": \"type:\\n * `KMS` - ENCRYPTION_TYPE_KMS,\\\
+        n * `Local` - ENCRYPTION_TYPE_LOCAL\"\n    },\n    \"kms_store\": {\n    \
         \  \"description\": \"Value present when type is ENCRYPTION_TYPE_KMS.\",\n\
         \      \"type\": \"object\",\n      \"properties\": {\n        \"server_ca_cert\"\
         : {\n          \"description\": \"The Certificate Authority certificate that\

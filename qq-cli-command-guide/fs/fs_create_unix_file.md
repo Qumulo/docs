@@ -11,7 +11,7 @@ optional_options:
   name: --id
   required: false
 - alternate: []
-  help: Major and minor numbers
+  help: Major and minor numbers for Character Device or Block Device
   name: --major-minor-numbers
   required: false
 - alternate: []
@@ -19,7 +19,8 @@ optional_options:
   name: --name
   required: true
 - alternate: []
-  help: type of UNIX file to create
+  help: 'Type of UNIX file to create: FS_FILE_TYPE_UNIX_PIPE, FS_FILE_TYPE_UNIX_CHARACTER_DEVICE,
+    FS_FILE_TYPE_UNIX_BLOCK_DEVICE, FS_FILE_TYPE_UNIX_SOCKET'
   name: --type
   required: true
 permalink: /qq-cli-command-guide/fs/fs_create_unix_file.html
@@ -30,7 +31,7 @@ summary: This section explains how to use the <code>qq fs_create_unix_file</code
 synopsis: Create a new pipe, character device, block device or socket
 title: qq fs_create_unix_file
 usage: qq fs_create_unix_file [-h] (--path PATH | --id ID) [--major-minor-numbers
-  MAJOR_MINOR_NUMBERS] --name NAME --type TYPE
+  major,minor] --name NAME --type TYPE
 zendesk_source: qq CLI Command Guide
 
 ---

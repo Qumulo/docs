@@ -29,7 +29,7 @@ methods:
         \ REPLICATION_CONTINUOUS,\\n * `REPLICATION_SNAPSHOT_POLICY` - REPLICATION_SNAPSHOT_POLICY,\\\
         n * `REPLICATION_SNAPSHOT_POLICY_WITH_CONTINUOUS` - REPLICATION_SNAPSHOT_POLICY_WITH_CONTINUOUS\"\
         \n      },\n      \"blackout_window_timezone\": {\n        \"description\"\
-        : \"The timezone in which the blackout windows should be interpreted (e.g,\
+        : \"The time zone in which the blackout windows should be interpreted (e.g,\
         \ America/Los_Angeles or UTC)\",\n        \"type\": \"string\"\n      },\n\
         \      \"blackout_windows\": {\n        \"type\": \"array\",\n        \"items\"\
         : {\n          \"description\": \"List of blackout windows for the relationship\"\
@@ -106,15 +106,15 @@ methods:
         n * `REPLICATION_CONTINUOUS` - REPLICATION_CONTINUOUS,\\n * `REPLICATION_SNAPSHOT_POLICY`\
         \ - REPLICATION_SNAPSHOT_POLICY,\\n * `REPLICATION_SNAPSHOT_POLICY_WITH_CONTINUOUS`\
         \ - REPLICATION_SNAPSHOT_POLICY_WITH_CONTINUOUS\"\n    },\n    \"blackout_window_timezone\"\
-        : {\n      \"description\": \"The timezone in which the blackout windows should\
-        \ be interpreted (e.g., America/Los_Angeles or UTC)\",\n      \"type\": \"\
-        string\"\n    },\n    \"blackout_windows\": {\n      \"type\": \"array\",\n\
-        \      \"items\": {\n        \"description\": \"List of blackout windows for\
-        \ the relationship (defaults to empty)\",\n        \"type\": \"object\",\n\
-        \        \"properties\": {\n          \"start_hour\": {\n            \"description\"\
-        : \"Hour of day [0, 23] at which the blackout window begins\",\n         \
-        \   \"type\": \"number\"\n          },\n          \"start_minute\": {\n  \
-        \          \"description\": \"Minute of hour [0, 59] at which the blackout\
+        : {\n      \"description\": \"The time zone in which the blackout windows\
+        \ should be interpreted (e.g., America/Los_Angeles or UTC)\",\n      \"type\"\
+        : \"string\"\n    },\n    \"blackout_windows\": {\n      \"type\": \"array\"\
+        ,\n      \"items\": {\n        \"description\": \"List of blackout windows\
+        \ for the relationship (defaults to empty)\",\n        \"type\": \"object\"\
+        ,\n        \"properties\": {\n          \"start_hour\": {\n            \"\
+        description\": \"Hour of day [0, 23] at which the blackout window begins\"\
+        ,\n            \"type\": \"number\"\n          },\n          \"start_minute\"\
+        : {\n            \"description\": \"Minute of hour [0, 59] at which the blackout\
         \ window begins\",\n            \"type\": \"number\"\n          },\n     \
         \     \"end_hour\": {\n            \"description\": \"Hour of day [0, 23]\
         \ at which the blackout window ends\",\n            \"type\": \"number\"\n\
@@ -173,7 +173,7 @@ methods:
         \ REPLICATION_CONTINUOUS,\\n * `REPLICATION_SNAPSHOT_POLICY` - REPLICATION_SNAPSHOT_POLICY,\\\
         n * `REPLICATION_SNAPSHOT_POLICY_WITH_CONTINUOUS` - REPLICATION_SNAPSHOT_POLICY_WITH_CONTINUOUS\"\
         \n    },\n    \"blackout_window_timezone\": {\n      \"description\": \"The\
-        \ timezone in which the blackout windows should be interpreted (e.g, America/Los_Angeles\
+        \ time zone in which the blackout windows should be interpreted (e.g, America/Los_Angeles\
         \ or UTC)\",\n      \"type\": \"string\"\n    },\n    \"blackout_windows\"\
         : {\n      \"type\": \"array\",\n      \"items\": {\n        \"description\"\
         : \"List of blackout windows for the relationship\",\n        \"type\": \"\

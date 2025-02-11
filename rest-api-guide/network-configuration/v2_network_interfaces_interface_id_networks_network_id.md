@@ -31,8 +31,9 @@ methods:
         \      \"type\": \"string\"\n    },\n    \"id\": {\n      \"description\"\
         : \"id\",\n      \"type\": \"number\"\n    },\n    \"assigned_by\": {\n  \
         \    \"type\": \"string\",\n      \"enum\": [\n        \"DHCP\",\n       \
-        \ \"STATIC\",\n        \"LINK_LOCAL\"\n      ],\n      \"description\": \"\
-        assigned_by:\\n * `DHCP` - NETWORK_ASSIGNED_BY_DHCP,\\n * `LINK_LOCAL` - NETWORK_ASSIGNED_BY_LINK_LOCAL,\\\
+        \ \"STATIC\",\n        \"LINK_LOCAL\",\n        \"HOST\"\n      ],\n     \
+        \ \"description\": \"assigned_by:\\n * `DHCP` - NETWORK_ASSIGNED_BY_DHCP,\\\
+        n * `HOST` - NETWORK_ASSIGNED_BY_HOST,\\n * `LINK_LOCAL` - NETWORK_ASSIGNED_BY_LINK_LOCAL,\\\
         n * `STATIC` - NETWORK_ASSIGNED_BY_STATIC\"\n    },\n    \"floating_ip_ranges\"\
         : {\n      \"type\": \"array\",\n      \"items\": {\n        \"description\"\
         : \"floating_ip_ranges\",\n        \"type\": \"string\"\n      }\n    },\n\
@@ -71,8 +72,9 @@ methods:
         \      \"type\": \"string\"\n    },\n    \"id\": {\n      \"description\"\
         : \"id\",\n      \"type\": \"number\"\n    },\n    \"assigned_by\": {\n  \
         \    \"type\": \"string\",\n      \"enum\": [\n        \"DHCP\",\n       \
-        \ \"STATIC\",\n        \"LINK_LOCAL\"\n      ],\n      \"description\": \"\
-        assigned_by:\\n * `DHCP` - NETWORK_ASSIGNED_BY_DHCP,\\n * `LINK_LOCAL` - NETWORK_ASSIGNED_BY_LINK_LOCAL,\\\
+        \ \"STATIC\",\n        \"LINK_LOCAL\",\n        \"HOST\"\n      ],\n     \
+        \ \"description\": \"assigned_by:\\n * `DHCP` - NETWORK_ASSIGNED_BY_DHCP,\\\
+        n * `HOST` - NETWORK_ASSIGNED_BY_HOST,\\n * `LINK_LOCAL` - NETWORK_ASSIGNED_BY_LINK_LOCAL,\\\
         n * `STATIC` - NETWORK_ASSIGNED_BY_STATIC\"\n    },\n    \"floating_ip_ranges\"\
         : {\n      \"type\": \"array\",\n      \"items\": {\n        \"description\"\
         : \"floating_ip_ranges\",\n        \"type\": \"string\"\n      }\n    },\n\
@@ -114,8 +116,9 @@ methods:
         \      \"type\": \"string\"\n    },\n    \"id\": {\n      \"description\"\
         : \"id\",\n      \"type\": \"number\"\n    },\n    \"assigned_by\": {\n  \
         \    \"type\": \"string\",\n      \"enum\": [\n        \"DHCP\",\n       \
-        \ \"STATIC\",\n        \"LINK_LOCAL\"\n      ],\n      \"description\": \"\
-        assigned_by:\\n * `DHCP` - NETWORK_ASSIGNED_BY_DHCP,\\n * `LINK_LOCAL` - NETWORK_ASSIGNED_BY_LINK_LOCAL,\\\
+        \ \"STATIC\",\n        \"LINK_LOCAL\",\n        \"HOST\"\n      ],\n     \
+        \ \"description\": \"assigned_by:\\n * `DHCP` - NETWORK_ASSIGNED_BY_DHCP,\\\
+        n * `HOST` - NETWORK_ASSIGNED_BY_HOST,\\n * `LINK_LOCAL` - NETWORK_ASSIGNED_BY_LINK_LOCAL,\\\
         n * `STATIC` - NETWORK_ASSIGNED_BY_STATIC\"\n    },\n    \"floating_ip_ranges\"\
         : {\n      \"type\": \"array\",\n      \"items\": {\n        \"description\"\
         : \"floating_ip_ranges\",\n        \"type\": \"string\"\n      }\n    },\n\

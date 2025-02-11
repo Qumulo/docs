@@ -164,42 +164,42 @@ methods:
         \      \"type\": \"string\",\n      \"enum\": [\n        \"CREATE_FILE\",\n\
         \        \"CREATE_DIRECTORY\",\n        \"CREATE_SYMLINK\",\n        \"CREATE_LINK\"\
         ,\n        \"RENAME\",\n        \"CREATE_UNIX_FILE\"\n      ],\n      \"description\"\
-        : \"Operation to perform:\\n * `CREATE_DIRECTORY` - CREATE_DIRECTORY,\\n *\
-        \ `CREATE_FILE` - CREATE_FILE,\\n * `CREATE_LINK` - CREATE_LINK,\\n * `CREATE_SYMLINK`\
-        \ - CREATE_SYMLINK,\\n * `CREATE_UNIX_FILE` - CREATE_UNIX_FILE,\\n * `RENAME`\
-        \ - RENAME\"\n    },\n    \"old_path\": {\n      \"description\": \"Rename\
-        \ source or link target\",\n      \"type\": \"string\"\n    },\n    \"clobber\"\
-        : {\n      \"description\": \"When action is RENAME, setting this to true\
-        \ will clobber the destination if it exists.\",\n      \"type\": \"boolean\"\
-        \n    },\n    \"symlink_target_type\": {\n      \"type\": \"string\",\n  \
-        \    \"enum\": [\n        \"FS_FILE_TYPE_UNKNOWN\",\n        \"FS_FILE_TYPE_FILE\"\
-        ,\n        \"FS_FILE_TYPE_DIRECTORY\"\n      ],\n      \"description\": \"\
-        The file type of the target to which the symbolic link points. If you don't\
-        \ specify the file type, or if it is FS_FILE_TYPE_UNKNOWN, the effect is the\
-        \ same as running the 'ln -s' command on a Unix NFS client. If the file type\
-        \ is FS_FILE_TYPE_FILE or FS_FILE_TYPE_DIRECTORY, the effect is the same as\
-        \ running the 'mklink' or 'mklink /D' command on a Windows SMB client.:\\\
-        n * `FS_FILE_TYPE_DIRECTORY` - API_SYMLINK_TARGET_DIRECTORY,\\n * `FS_FILE_TYPE_FILE`\
-        \ - API_SYMLINK_TARGET_FILE,\\n * `FS_FILE_TYPE_UNKNOWN` - API_SYMLINK_TARGET_UNKNOWN\"\
-        \n    },\n    \"unix_file_type\": {\n      \"type\": \"string\",\n      \"\
-        enum\": [\n        \"FS_FILE_TYPE_FILE\",\n        \"FS_FILE_TYPE_DIRECTORY\"\
-        ,\n        \"FS_FILE_TYPE_SYMLINK\",\n        \"FS_FILE_TYPE_UNIX_PIPE\",\n\
-        \        \"FS_FILE_TYPE_UNIX_CHARACTER_DEVICE\",\n        \"FS_FILE_TYPE_UNIX_BLOCK_DEVICE\"\
-        ,\n        \"FS_FILE_TYPE_UNIX_SOCKET\"\n      ],\n      \"description\":\
-        \ \"Required when the action is CREATE_UNIX_FILE. You are given the choice\
-        \ of FS_FILE_TYPE_UNIX_BLOCK_DEVICE, FS_FILE_TYPE_UNIX_CHARACTER_DEVICE, FS_FILE_TYPE_UNIX_PIPE\
-        \ or FS_FILE_TYPE_UNIX_SOCKET:\\n * `FS_FILE_TYPE_DIRECTORY` - FS_FILE_TYPE_DIRECTORY,\\\
-        n * `FS_FILE_TYPE_FILE` - FS_FILE_TYPE_FILE,\\n * `FS_FILE_TYPE_SYMLINK` -\
-        \ FS_FILE_TYPE_SYMLINK,\\n * `FS_FILE_TYPE_UNIX_BLOCK_DEVICE` - FS_FILE_TYPE_UNIX_BLOCK_DEVICE,\\\
-        n * `FS_FILE_TYPE_UNIX_CHARACTER_DEVICE` - FS_FILE_TYPE_UNIX_CHARACTER_DEVICE,\\\
-        n * `FS_FILE_TYPE_UNIX_PIPE` - FS_FILE_TYPE_UNIX_PIPE,\\n * `FS_FILE_TYPE_UNIX_SOCKET`\
-        \ - FS_FILE_TYPE_UNIX_SOCKET\"\n    },\n    \"major_minor_numbers\": {\n \
-        \     \"description\": \"When creating a UNIX device file, these are the major\
-        \ and minor numbers\",\n      \"type\": \"object\",\n      \"properties\"\
-        : {\n        \"major\": {\n          \"description\": \"major\",\n       \
-        \   \"type\": \"number\"\n        },\n        \"minor\": {\n          \"description\"\
-        : \"minor\",\n          \"type\": \"number\"\n        }\n      }\n    }\n\
-        \  }\n}"
+        : \"Operation to perform:\\n * `CREATE_DIRECTORY` - API_FILES_CREATE_DIRECTORY,\\\
+        n * `CREATE_FILE` - API_FILES_CREATE_FILE,\\n * `CREATE_LINK` - API_FILES_CREATE_LINK,\\\
+        n * `CREATE_SYMLINK` - API_FILES_CREATE_SYMLINK,\\n * `CREATE_UNIX_FILE` -\
+        \ API_FILES_CREATE_UNIX_FILE,\\n * `RENAME` - API_FILES_RENAME\"\n    },\n\
+        \    \"old_path\": {\n      \"description\": \"Rename source or link target\"\
+        ,\n      \"type\": \"string\"\n    },\n    \"clobber\": {\n      \"description\"\
+        : \"When action is RENAME, setting this to true will clobber the destination\
+        \ if it exists.\",\n      \"type\": \"boolean\"\n    },\n    \"symlink_target_type\"\
+        : {\n      \"type\": \"string\",\n      \"enum\": [\n        \"FS_FILE_TYPE_UNKNOWN\"\
+        ,\n        \"FS_FILE_TYPE_FILE\",\n        \"FS_FILE_TYPE_DIRECTORY\"\n  \
+        \    ],\n      \"description\": \"The file type of the target to which the\
+        \ symbolic link points. If you don't specify the file type, or if it is FS_FILE_TYPE_UNKNOWN,\
+        \ the effect is the same as running the 'ln -s' command on a Unix NFS client.\
+        \ If the file type is FS_FILE_TYPE_FILE or FS_FILE_TYPE_DIRECTORY, the effect\
+        \ is the same as running the 'mklink' or 'mklink /D' command on a Windows\
+        \ SMB client.:\\n * `FS_FILE_TYPE_DIRECTORY` - API_SYMLINK_TARGET_DIRECTORY,\\\
+        n * `FS_FILE_TYPE_FILE` - API_SYMLINK_TARGET_FILE,\\n * `FS_FILE_TYPE_UNKNOWN`\
+        \ - API_SYMLINK_TARGET_UNKNOWN\"\n    },\n    \"unix_file_type\": {\n    \
+        \  \"type\": \"string\",\n      \"enum\": [\n        \"FS_FILE_TYPE_FILE\"\
+        ,\n        \"FS_FILE_TYPE_DIRECTORY\",\n        \"FS_FILE_TYPE_SYMLINK\",\n\
+        \        \"FS_FILE_TYPE_UNIX_PIPE\",\n        \"FS_FILE_TYPE_UNIX_CHARACTER_DEVICE\"\
+        ,\n        \"FS_FILE_TYPE_UNIX_BLOCK_DEVICE\",\n        \"FS_FILE_TYPE_UNIX_SOCKET\"\
+        \n      ],\n      \"description\": \"Required when the action is CREATE_UNIX_FILE.\
+        \ You are given the choice of FS_FILE_TYPE_UNIX_BLOCK_DEVICE, FS_FILE_TYPE_UNIX_CHARACTER_DEVICE,\
+        \ FS_FILE_TYPE_UNIX_PIPE or FS_FILE_TYPE_UNIX_SOCKET:\\n * `FS_FILE_TYPE_DIRECTORY`\
+        \ - FS_FILE_TYPE_DIRECTORY,\\n * `FS_FILE_TYPE_FILE` - FS_FILE_TYPE_FILE,\\\
+        n * `FS_FILE_TYPE_SYMLINK` - FS_FILE_TYPE_SYMLINK,\\n * `FS_FILE_TYPE_UNIX_BLOCK_DEVICE`\
+        \ - FS_FILE_TYPE_UNIX_BLOCK_DEVICE,\\n * `FS_FILE_TYPE_UNIX_CHARACTER_DEVICE`\
+        \ - FS_FILE_TYPE_UNIX_CHARACTER_DEVICE,\\n * `FS_FILE_TYPE_UNIX_PIPE` - FS_FILE_TYPE_UNIX_PIPE,\\\
+        n * `FS_FILE_TYPE_UNIX_SOCKET` - FS_FILE_TYPE_UNIX_SOCKET\"\n    },\n    \"\
+        major_minor_numbers\": {\n      \"description\": \"When creating a UNIX device\
+        \ file, these are the major and minor numbers\",\n      \"type\": \"object\"\
+        ,\n      \"properties\": {\n        \"major\": {\n          \"description\"\
+        : \"major\",\n          \"type\": \"number\"\n        },\n        \"minor\"\
+        : {\n          \"description\": \"minor\",\n          \"type\": \"number\"\
+        \n        }\n      }\n    }\n  }\n}"
     response_body:
       schema: "{\n  \"description\": \"api_files_attributes\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"path\": {\n      \"description\": \"Filesystem\

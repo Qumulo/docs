@@ -20,9 +20,10 @@ methods:
         ,\n      \"properties\": {\n        \"id\": {\n          \"description\":\
         \ \"Node Id\",\n          \"type\": \"number\"\n        },\n        \"assigned_by\"\
         : {\n          \"type\": \"string\",\n          \"enum\": [\n            \"\
-        DHCP\",\n            \"STATIC\",\n            \"LINK_LOCAL\"\n          ],\n\
-        \          \"description\": \"How to assign IP address, either DHCP or STATIC:\\\
-        n * `DHCP` - NETWORK_ASSIGNED_BY_DHCP,\\n * `LINK_LOCAL` - NETWORK_ASSIGNED_BY_LINK_LOCAL,\\\
+        DHCP\",\n            \"STATIC\",\n            \"LINK_LOCAL\",\n          \
+        \  \"HOST\"\n          ],\n          \"description\": \"How to assign IP address,\
+        \ either DHCP or STATIC:\\n * `DHCP` - NETWORK_ASSIGNED_BY_DHCP,\\n * `HOST`\
+        \ - NETWORK_ASSIGNED_BY_HOST,\\n * `LINK_LOCAL` - NETWORK_ASSIGNED_BY_LINK_LOCAL,\\\
         n * `STATIC` - NETWORK_ASSIGNED_BY_STATIC\"\n        },\n        \"address\"\
         : {\n          \"description\": \"The IPv4 or IPv6 address in 0.0.0.0 or ::\
         \ format\",\n          \"type\": \"string\"\n        },\n        \"floating_addresses\"\

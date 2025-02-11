@@ -17,7 +17,7 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Retrieve global NFS configuration.
+    summary: '[preview] Retrieve global NFS configuration.'
   patch:
     parameters:
     - description: ETag for expected version
@@ -48,7 +48,7 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Modify global NFS configuration.
+    summary: '[preview] Modify global NFS configuration.'
   put:
     parameters:
     - description: ETag for expected version
@@ -79,7 +79,7 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Set global NFS configuration.
+    summary: '[preview] Set global NFS configuration.'
 rest_endpoint: /v1/multitenancy/nfs/global-settings
 api_version: v1
 permalink: /rest-api-guide/nfs-multitenancy-methods/multitenancy_nfs_global-settings.html

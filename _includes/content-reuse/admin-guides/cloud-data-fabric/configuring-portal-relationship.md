@@ -1,17 +1,20 @@
+{% capture nameChange %}{{site.gns.nameChange}}{% endcapture %}
+{% include note.html content=nameChange %}
+
 {{site.data.alerts.important}}
 <ul>
-  <li>Before you begin to implement Global Namespace in your organization, we strongly recommend reviewing <a href="how-portal-creation-enables-global-namespace.html">How Portal Relationships between Qumulo Clusters Enable a Global Namespace in Qumulo Core</a>, especially the <a href="how-portal-creation-enables-global-namespace.html#known-limitations">Known Limitations</a> section.</li>
+  <li>Before you begin to implement Cloud Data Fabric in your organization, we strongly recommend reviewing <a href="how-portal-creation-enables-cloud-data-fabric.html">How Portal Relationships between Qumulo Clusters Enable a Cloud Data Fabric in Qumulo Core</a>, especially the <a href="how-portal-creation-enables-cloud-data-fabric.html#known-limitations">Known Limitations</a> section.</li>
   <li>For any questions, {{site.contactQumuloCare}}.</li>
 </ul>
 {{site.data.alerts.end}}
 
 ## Configuring a Portal Relationship Between Two Qumulo Clusters
-This section explains how to configure a [portal relationship](how-portal-creation-enables-global-namespace.html#portal-relationship) between two Qumulo clusters by using the `qq` CLI.
+This section explains how to configure a [portal relationship](how-portal-creation-enables-cloud-data-fabric.html#portal-relationship) between two Qumulo clusters by using the `qq` CLI.
 
 ### Prerequisites
 * Two clusters with the same version of Qumulo Core
 
-* Network connectivity on TCP port 3713 from the cluster that shares a portion of its file system for the [spoke portal root directory](how-portal-creation-enables-global-namespace.html#portal-root-directory) to the cluster that will share a portion of its file system for the [hub portal root directory](how-portal-creation-enables-global-namespace.html#portal-root-directory)
+* Network connectivity on TCP port 3713 from the cluster that shares a portion of its file system for the [spoke portal root directory](how-portal-creation-enables-cloud-data-fabric.html#portal-root-directory) to the cluster that will share a portion of its file system for the [hub portal root directory](how-portal-creation-enables-cloud-data-fabric.html#portal-root-directory)
 
 * `PRIVILEGE_PORTAL_GLOBAL_READ` for viewing the status for a hub portal or spoke portal and retrieving general portal information
 
@@ -38,9 +41,9 @@ This section explains how to configure a [portal relationship](how-portal-creati
 
 
 ### Step 1: Create the Spoke Portal
-This section explains how to create the [spoke portal](how-portal-creation-enables-global-namespace.html#spoke-portal) on one cluster and propose the creation of a [portal relationship](how-portal-creation-enables-global-namespace.html#portal-relationship) to another cluster (which creates the [hub portal](how-portal-creation-enables-global-namespace.html#hub-portal)).
+This section explains how to create the [spoke portal](how-portal-creation-enables-cloud-data-fabric.html#spoke-portal) on one cluster and propose the creation of a [portal relationship](how-portal-creation-enables-cloud-data-fabric.html#portal-relationship) to another cluster (which creates the [hub portal](how-portal-creation-enables-cloud-data-fabric.html#hub-portal)).
 
-1. On one cluster, choose a location for the spoke [portal root directory](how-portal-creation-enables-global-namespace.html#portal-root-directory). For example, `/remote/projects`.
+1. On one cluster, choose a location for the spoke [portal root directory](how-portal-creation-enables-cloud-data-fabric.html#portal-root-directory). For example, `/remote/projects`.
 
 1. To propose an initial portal relationship, run the {% include qq.html command="portal_create" %} command and specify the spoke portal root directory, the IP address of the proposed hub portal host cluster, and the proposed hub portal root directory on that cluster. For example:
 
@@ -107,7 +110,7 @@ This section explains how to create the [spoke portal](how-portal-creation-enabl
         ```
 
 ### Step 2: Authorize the Portal Relationship
-This section explains how to authorize the [portal relationship](how-portal-creation-enables-global-namespace.html#portal-relationship) from the [hub portal](how-portal-creation-enables-global-namespace.html#hub-portal) to the [spoke portal](how-portal-creation-enables-global-namespace.html#spoke-portal).
+This section explains how to authorize the [portal relationship](how-portal-creation-enables-cloud-data-fabric.html#portal-relationship) from the [hub portal](how-portal-creation-enables-cloud-data-fabric.html#hub-portal) to the [spoke portal](how-portal-creation-enables-cloud-data-fabric.html#spoke-portal).
 
 {% capture varQuorumBounce %}{{site.gns.quorumBounce}}{% endcapture %}
 {% include caution.html content=varQuorumBounce %}
@@ -139,7 +142,7 @@ This section explains how to authorize the [portal relationship](how-portal-crea
    After a few seconds, the spoke portal enters the `Active` state as well. You can now use the spoke portal root directory.
 
 ## Deleting a Portal Relationship Between Two Qumulo Clusters
-When you delete the [spoke portal](how-portal-creation-enables-global-namespace.html#spoke-portal) and the [hub portal](how-portal-creation-enables-global-namespace.html#hub-portal) (in any order), the [portal relationship](how-portal-creation-enables-global-namespace.html#portal-relationship) is deleted completely. This section explains how to delete a portal relationship between two Qumulo clusters by using the `qq` CLI.
+When you delete the [spoke portal](how-portal-creation-enables-cloud-data-fabric.html#spoke-portal) and the [hub portal](how-portal-creation-enables-cloud-data-fabric.html#hub-portal) (in any order), the [portal relationship](how-portal-creation-enables-cloud-data-fabric.html#portal-relationship) is deleted completely. This section explains how to delete a portal relationship between two Qumulo clusters by using the `qq` CLI.
 
 {% capture varQuorumBounce %}{{site.gns.quorumBounce}}{% endcapture %}
 {% include caution.html content=varQuorumBounce %}
