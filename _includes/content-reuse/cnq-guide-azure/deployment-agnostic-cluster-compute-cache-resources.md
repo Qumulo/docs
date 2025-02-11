@@ -41,6 +41,8 @@ This section explains how to deploy compute and cache resources for a Qumulo clu
    * The IP address for your Provisioner
 
    * The floating IP addresses for your Qumulo cluster
+  
+     {% include note.html content="You must specify the floating IP addresses in your `terraform.tfvars` file explicitly." %}
 
    * The primary (static) IP addresses for your Qumulo cluster
 
