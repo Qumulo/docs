@@ -6,7 +6,7 @@ This section explains how to configure a [portal relationship](how-portal-creati
 
 {{site.data.alerts.important}}
 <ul>
-  <li>Before you begin to implement Cloud Data Fabric in your organization, we strongly recommend reviewing <a href="how-portal-creation-enables-cloud-data-fabric.html">How Portal Relationships between Qumulo Clusters Enable a Cloud Data Fabric in Qumulo Core</a>, especially the <a href="how-portal-creation-enables-cloud-data-fabric.html#known-limitations">Known Limitations</a> section.</li>
+  <li>Before you begin to implement Cloud Data Fabric in your organization, we strongly recommend reviewing <a href="how-portal-creation-enables-cloud-data-fabric.html">How Portal Relationships between Qumulo Clusters Enable Cloud Data Fabric in Qumulo Core</a>, especially the <a href="how-portal-creation-enables-cloud-data-fabric.html#known-limitations">Known Limitations</a> section.</li>
   <li>For any questions, {{site.contactQumuloCare}}.</li>
 </ul>
 {{site.data.alerts.end}}

@@ -165,7 +165,7 @@ entries:
     output: web, pdf
     folderitems:
 
-    - title: Enabling a Cloud Data Fabric
+    - title: Enabling Cloud Data Fabric
       url: /azure-native-administrator-guide/cloud-data-fabric/how-portal-creation-enables-cloud-data-fabric.html
       output: web, pdf
 
