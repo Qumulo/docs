@@ -62,7 +62,7 @@ This section explains how to create the [spoke portal](how-portal-creation-enabl
    2   Pending  RW    /remote/projects  {{site.exampleIP0}}  123456  4
    ```
 
-   Hub Portal ID `4` is the ID that the hub portal host cluster allocated for this portal relationship. You can use it to authorize the relationship on the hub portal host cluster as described later.
+   Hub Portal ID `4` is the ID that the hub portal host cluster allocates for this portal relationship. You can use it to authorize the relationship on the hub portal host cluster as described later.
 
    If Qumulo Core can't establish a connection from the cluster with the spoke portal portion to the cluster with the hub portal portion, it displays an error message and the spoke portal enters the `Unlinked` state.
 

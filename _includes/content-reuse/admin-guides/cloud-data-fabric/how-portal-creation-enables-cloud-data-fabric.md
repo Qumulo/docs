@@ -137,7 +137,7 @@ The Cloud Data Fabric functionality lets you:
 
 * Move your cold (infrequently accessed) data to a central archive cluster and then provide access to this data by using a portal on the original cluster.
 
-  The active workload clusters can reclaim most of the data set capacity that was tiered to the data archive cluster. In other words, it is possible to access all the data as before, while using only the capacity on the active workload clusters for the data that your system reads through the portal.
+  The active workload clusters can reclaim most of the data set capacity that was tiered to the data archive cluster. This makes it possible to access all of the data as before, while using only the capacity on the active workload clusters for the data that your system reads through the portal.
 
 * Serve specific archive capacity and performance needs by scaling the archive cluster independently of any active workflow clusters.
 
