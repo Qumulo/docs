@@ -26,6 +26,8 @@ This section explains how to deploy compute and cache resources for a Qumulo clu
 
 1. In `terraform.tfvars`, fill in the values for all variables.
 
+   (Optional) Specify an existing `advanced_az_resource_group_name`.
+
    For more information, see `README.pdf` in `azure-terraform-cnq-<x.y>.zip`.
 
 1. {{site.cnq.runTFapply}}
