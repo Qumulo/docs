@@ -57,9 +57,9 @@ This section explains how to create the [spoke portal](how-portal-creation-enabl
    The spoke portal enters the `Pending` state. The following is example output from the command.
 
    ```
-   ID  State    Spoke Root        Hub Host     Hub Root ID  Hub Portal ID
-   ==  =======  ================  ===========  ===========  =============
-   2   Pending  /remote/projects  {{site.exampleIP0}}  3            4
+   ID  State    Type  Spoke Root        Hub Host     Hub Root   Hub Portal ID
+   ==  =======  ====  ================  ===========  =========  =============
+   2   Pending  RW    /remote/projects  {{site.exampleIP0}}  116...331  4
    ```
 
    Hub Portal ID `4` is the ID that the hub portal host cluster allocated for this portal relationship. You can use it to authorize the relationship on the hub portal host cluster as described later.
@@ -134,9 +134,9 @@ This section explains how to authorize the [portal relationship](how-portal-crea
    The following is example output from the command that shows that the portal relationship for the hub portal is in the `Active` state.
 
    ```
-   ID  State   Hub Root   Spoke Host   Spoke Name
-   ==  ======  =========  ===========  ==========
-   4   Active  /projects  {{site.exampleIP1}}  qfsd-edge
+   ID  State   Hub Root   Spoke Host   Spoke Name  Spoke Type
+   ==  ======  =========  ===========  ==========  ==========
+   4   Active  /projects  {{site.exampleIP1}}  qfsd-edge   RW
    ```
 
    After a few seconds, the spoke portal enters the `Active` state as well. You can now use the spoke portal root directory.
@@ -160,7 +160,7 @@ You can delete a spoke portal in any state (`Unlinked`, `Pending`, `Active`, or 
 1. To find the spoke portal ID, run the {% include qq.html command="portal_list" %} command.
 
    {{site.gns.portalDeleteOutput}}
-   
+
    ```
    ID  State     Role   Local Root
    ==  ========  =====  ================
@@ -168,13 +168,13 @@ You can delete a spoke portal in any state (`Unlinked`, `Pending`, `Active`, or 
    ```
 
 1. To delete the spoke portal run the {% include qq.html command="portal_delete_spoke" %} command and specify the spoke portal ID. For example:
-   
+
    ```bash
    qq portal_delete_spoke --id 3
    ```
 
    Qumulo Core deletes the spoke portal and begins to reclaim the spoke portal's cluster capacity in the background.
-   
+
    If the spoke portal can connect to the hub portal, the hub portal detects the relationship change automatically and enters the `Ended` state without affecting any of the data on the hub portal host cluster.
 
 ### Step 2: Delete the Hub Portal
@@ -193,7 +193,7 @@ You can delete a hub portal in any state (`Pending`, `Active`, or `Ended`) and w
    ```
 
 1. To delete the hub portal, run the {% include qq.html command="portal_delete_hub" %} command and specify the hub portal ID. For example:
-   
+
    ```bash
    qq portal_delete_hub --id 4
    ```
