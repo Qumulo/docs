@@ -6,7 +6,7 @@
 </ul>
 {{site.data.alerts.end}}
 
-{% comment %}In{% endcomment %}Qumulo {% comment %}Core 7.2.0 (and higher),{% endcomment %} clusters can take advantage of the Cloud Data Fabric functionality that lets clusters across disparate geographic or infrastructural locations (on-premises and in the cloud) access the same data while maintaining independent namespace structures on each cluster (for example, by setting only a portion of the cluster's file system as the _portal root directory_).
+{% comment %}In{% endcomment %}Qumulo {% comment %}Core 7.2.0 (and higher),{% endcomment %} clusters can take advantage of the Cloud Data Fabric functionality that lets clusters across disparate geographic or infrastructural locations (on-premises and in the cloud) access the same data while maintaining independent namespace structures on each cluster (for example, by setting only a portion of the cluster's file system as the _portal root directory)._
 
 To enable Cloud Data Fabric functionality, you must define a [_spoke portal_](#spoke-portal) on one cluster, a [_hub portal_](#hub-portal) on another cluster, and then propose a [_portal relationship_](#portal-relationship) between the two.
 
@@ -24,7 +24,7 @@ The following key terms help define the components of Cloud Data Fabric function
 * <a id="cluster"></a>**Cluster:** Any Qumulo cluster that shares a portion of its file system for a hub portal or a spoke portal. {{site.gns.dirOnCluster}} a spoke portal or a hub portal.
 
   {{site.data.alerts.tip}}
-  <p>Because part of a Qumulo cluster's file system can hold the hub portal root directory or spoke portal root directory, using the correct terminology can help avoid confusion:</p>
+  <p>Because _a portion_ of a Qumulo cluster's file system can hold the hub portal root directory or spoke portal root directory, using the correct terminology can help avoid confusion:</p>
   <ul>
     <li><span class="emoji">❌</span> hub cluster</li>
     <li><span class="emoji">✅</span> hub portal host cluster</li>
@@ -40,15 +40,16 @@ The following key terms help define the components of Cloud Data Fabric function
 ### Portals
 * <a id="spoke-portal"></a>**Spoke Portal:** An interface point on a Qumulo cluster that accesses a portion of the file system on another cluster (which has a _hub portal)_. {{site.gns.dirOnCluster}} spoke portal. {{site.gns.spokePortalInitiates}}
 
-  * <a id="read-write-portal"></a>**Read-Write Portal:** A spoke portal that can access, modify, and create any files or directories under the hub portal root directory according to the file system permissions.
+  * <a id="read-write-portal"></a>**Read-Write Portal:** A spoke portal that can access, modify, and create any files or directories within the hub portal root directory according to the file system permissions.
 
-  * <a id="read-only-portal"></a>**Read-Only Portal:** A spoke portal that can access any files or directories under the hub portal root directory according to the file system permissions, but can't modify or create any files or directories regardless of file system permissions.
+  * <a id="read-only-portal"></a>**Read-Only Portal:** A spoke portal that can access any files or directories within the hub portal root directory according to the file system permissions, but can't modify or create any files or directories regardless of file system permissions.
 
-* <a id="hub-portal"></a>**Hub Portal:** An interface point on a Qumulo cluster that shares a portion of its file system with another cluster (which has a _spoke portal)_. {{site.gns.dirOnCluster}} hub portal. {{site.gns.spokePortalInitiates}} You may configure multiple portal relationships with the same hub portal root directory and with nested or independent directories.
+* <a id="hub-portal"></a>**Hub Portal:** An interface point on a Qumulo cluster that shares a portion of its file system with another cluster (which has a _spoke portal)_. {{site.gns.dirOnCluster}} hub portal. {{site.gns.spokePortalInitiates}} You can configure multiple portal relationships, with the same hub portal root directory, with nested directories, or with independent ones.
 
   {{site.data.alerts.note}}
   <ul>
-    <li>It isn't possible to create hub portal without a spoke portal. For example, a spoke portal on Cluster A can propose a portal relationship to Cluster B. This action initiates the creation of a hub portal in a <code>Pending</code> state on Cluster B. You must authorize the portal relationship before you can use it.</li>
+    <li>It isn't possible to create hub portal without a spoke portal. For example, a spoke portal on Cluster A can propose a portal relationship to Cluster B. This action initiates the creation of a hub portal in a <code>Pending</code> state on Cluster B.</li>
+    <li>You must authorize the portal relationship before you can use it.</li>
     <li>While a spoke portal can be either <em>read-only</em> or <em>read-write</em>, a hub portal is always read-write.</li>
   </ul>
   {{site.data.alerts.end}}
