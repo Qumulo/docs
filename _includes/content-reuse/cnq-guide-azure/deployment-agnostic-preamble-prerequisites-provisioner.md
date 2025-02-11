@@ -24,7 +24,7 @@ This section explains the prerequisites to deploying {{site.azure.cnqAzureShort}
     <li><code>Contributor</code></li>
   </ul>
 
-  
+* For scenarios in which your {{site.cnqShort}} cluster must run in a secure environment, you must set the `disable_public_network_access` variable to `true` and specify the resource group name for the `privatelink_blob_dns_zone_resource_group_name` variable in the `terraform.tfvars` file before deploying your cluster's persistent storage.
 
 <a id="how-the-provisioner-works"></a>
 ### How the {{site.cnqShort}} Provisioner Works
