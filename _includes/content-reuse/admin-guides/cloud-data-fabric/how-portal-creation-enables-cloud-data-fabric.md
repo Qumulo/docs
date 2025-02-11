@@ -1,8 +1,6 @@
-{% capture nameChange %}{{site.gns.nameChange}}{% endcapture %}
-{% include tip.html content=nameChange %}
-
 {{site.data.alerts.tip}}
 <ul>
+  <li>{{site.gns.nameChange}}</li>
   <li>For a general conceptual introduction, see <a target="_blank" href="https://www.cbtnuggets.com/blog/technology/networking/what-is-hub-and-spoke-topology">What is Hub and Spoke Topology?</a></li>
   <li>For specific implementation of the Cloud Data Fabric functionality in Qumulo Core, see <a href="#example-cloud-data-fabric-scenarios">Example Cloud Data Fabric Scenarios</a>.</li>
 </ul>

@@ -1,15 +1,15 @@
 {% capture nameChange %}{{site.gns.nameChange}}{% endcapture %}
 {% include tip.html content=nameChange %}
 
+## Configuring a Portal Relationship Between Two Qumulo Clusters
+This section explains how to configure a [portal relationship](how-portal-creation-enables-cloud-data-fabric.html#portal-relationship) between two Qumulo clusters by using the `qq` CLI.
+
 {{site.data.alerts.important}}
 <ul>
   <li>Before you begin to implement Cloud Data Fabric in your organization, we strongly recommend reviewing <a href="how-portal-creation-enables-cloud-data-fabric.html">How Portal Relationships between Qumulo Clusters Enable a Cloud Data Fabric in Qumulo Core</a>, especially the <a href="how-portal-creation-enables-cloud-data-fabric.html#known-limitations">Known Limitations</a> section.</li>
   <li>For any questions, {{site.contactQumuloCare}}.</li>
 </ul>
 {{site.data.alerts.end}}
-
-## Configuring a Portal Relationship Between Two Qumulo Clusters
-This section explains how to configure a [portal relationship](how-portal-creation-enables-cloud-data-fabric.html#portal-relationship) between two Qumulo clusters by using the `qq` CLI.
 
 ### Prerequisites
 * Two clusters with the same version of Qumulo Core
