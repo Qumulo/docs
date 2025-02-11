@@ -10,4 +10,4 @@ search: exclude
 ---
 
 {% capture nameChange %}{{site.gns.nameChange}}{% endcapture %}
-{% include note.html content=nameChange %}
+{% include tip.html content=nameChange %}
