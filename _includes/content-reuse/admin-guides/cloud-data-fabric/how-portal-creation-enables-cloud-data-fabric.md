@@ -40,9 +40,9 @@ The following key terms help define the components of Cloud Data Fabric function
 ### Portals
 * <a id="spoke-portal"></a>**Spoke Portal:** An interface point on a Qumulo cluster that accesses a portion of the file system on another cluster (which has a _hub portal)_. {{site.gns.dirOnCluster}} spoke portal. {{site.gns.spokePortalInitiates}}
 
-  * <a id="read-only-portal"></a>**Read-Only Portal:** A spoke portal that can access any files or directories under the hub portal root directory according to the file system permissions, but can't modify or create any files or directories regardless of file system permissions.
-
   * <a id="read-write-portal"></a>**Read-Write Portal:** A spoke portal that can access, modify, and create any files or directories under the hub portal root directory according to the file system permissions.
+
+  * <a id="read-only-portal"></a>**Read-Only Portal:** A spoke portal that can access any files or directories under the hub portal root directory according to the file system permissions, but can't modify or create any files or directories regardless of file system permissions.
 
 * <a id="hub-portal"></a>**Hub Portal:** An interface point on a Qumulo cluster that shares a portion of its file system with another cluster (which has a _spoke portal)_. {{site.gns.dirOnCluster}} hub portal. {{site.gns.spokePortalInitiates}} You may configure multiple portal relationships with the same hub portal root directory and with nested or independent directories.
 
@@ -89,11 +89,11 @@ Throughout the process of creating a [_spoke portal_](#spoke-portal) and proposi
 ## Working with the Cloud Data Fabric Functionality
 When the [hub portal](#hub-portal) _authorizes_ the [portal relationship](#portal-relationship), the contents of the hub portal root directory become available to the [spoke portal](#spoke-portal) immediately.
 
-The first time a client accesses a spoke portal root directory, the spoke portal begins to read and cache data from the hub portal. Subsequent access to the same data accesses the cache of the spoke portal host cluster, with performance characteristics equivalent to access to non-portal data on the spoke portal host cluster. Caching takes place on demand, when a client with access to the spoke portal accesses new portions of the namespace that the hub portal provides. For more information, see [Configuring Cache Management for Spoke Portals in Qumulo Core](configuring-cache-management-for-spoke-portals.html).
+The first time a client accesses a spoke portal root directory, the spoke portal begins to read and cache data from the hub portal. Subsequent access to the same data accesses the cache of the spoke portal host cluster, with performance characteristics equivalent to access to non-portal data on the spoke portal host cluster. Caching takes place on demand, when a client with access to the spoke portal retrieves new portions of the namespace that the hub portal provides. For more information, see [Configuring Cache Management for Spoke Portals in Qumulo Core](configuring-cache-management-for-spoke-portals.html).
 
 For read-write portals, data synchronization is bidirectional, asychronous, and strictly consistent upon access. For example, when a client creates or modifies files or directories in the spoke portal root directory, the spoke portal synchronizes these changes to the hub portal in the background. Clients that access the hub portal can see these changes immediately.
 
-To ensure that any changes on one portal become available immediately to any client tha reads data from the portal's peers, Qumulo Core uses a proprietary locking synchronization mechanism.
+To ensure that any changes on one portal become available immediately to any client that reads data from the portal's peers, Qumulo Core uses a proprietary locking synchronization mechanism.
 
 {% capture varEphemeralCache %}{{site.gns.ephemeralCache}}{% endcapture %}
 {% include caution.html content=varEphemeralCache %}
