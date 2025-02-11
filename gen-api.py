@@ -4,7 +4,8 @@ import yaml
 import requests
 
 # URL to fetch the OpenAPI definition
-url = "https://music.eng.qumulo.com:8000/openapi.json"
+#url = "https://music.eng.qumulo.com:8000/openapi.json"
+url = "https://gravyweb.eng.qumulo.com/home/avoecks/share/qontent/7.4.1/openapi.json" 
 
 # Define the base directory for output
 output_base_dir = os.path.expanduser("~/git/docs-internal/rest-api-guide")
