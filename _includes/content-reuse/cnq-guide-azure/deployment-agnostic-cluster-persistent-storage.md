@@ -32,6 +32,8 @@ This section explains how to deploy the Azure Storage Accounts that act as persi
       * Specify the correct `az_location` for your cluster's persistent storage.
 
       * Leave the `soft_capacity_limit` at `1000`.
+     
+      * (Optional) Specify an existing `advanced_az_resource_group_name`.
 
    1. Use the `az` CLI to authenticate to your Azure account.
 
