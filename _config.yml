@@ -474,7 +474,7 @@ gns:
   versionRequirement: A spoke portal is inaccessible if the hub portal host cluster and the spoke portal host cluster run different versions of Qumulo Core.
   singleRelationship: A Qumulo cluster can be a portal host for any number of hub portals or for a single spoke portal. It isn&apos;t possible for a Qumulo cluster to be a host for spoke and hub portals simultaneously.
   upgradeCacheDrop: Future Qumulo Core upgrades might remove cached data from the spoke portal, which can result in a temporary increase in data access latency.
-  protocolLimitations: It isn&apos;t possible to create a spoke portal on a cluster with the NFSv4.1, FTP, or S3 protocols enabled or to enable these protocols on an existing spoke potal host cluster.
+  protocolLimitations: It isn&apos;t possible to create a spoke portal on a cluster with the NFSv4.1 or S3 protocols enabled or to enable these protocols on an existing spoke potal host cluster.
   protocolLocking: Protocol locks don&apos;t synchronize between the hub portal host cluster and the spoke portal host cluster. Specifically, NFSv3 or NLM byte-range locks, SMB share-mode locks, SMB byte-range locks, and SMB leases function independently on the two clusters.
   changeNotify: Qumulo Core doesn&apos;t send SMB2 `CHANGE_NOTIFY` messages for changes within the spoke portal root directory.
   quorumBounce: This action makes both clusters in the portal relationship unavailable for less than 30 seconds while the systems reconfigure.
