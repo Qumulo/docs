@@ -6,6 +6,14 @@ For information about upgrade types for each release, see <a href='mode-referenc
 
 ## Qumulo Core 7.4.1
 {{page.varDownloadsRelnotes}}
+{{site.gns.nameChange}}
+
+* Made _read-write spoke portals_ available by default
+* Eliminated the REST APIs for manual data removal from spoke portals (no changes to automatic data removal)
+* Improved file identifiers to distinguish between cluster-local and spoke-cached data
+* Implemented Read Cache v2 architecture for new cloud clusters
+* Renamed the designation `preview` (previously, `beta`) which marks REST APIs under development
+* Made public the REST API endpoints and `qq` CLI commands that manage a cluster's DNS configuration
 
 ## Qumulo Core 7.4.0 (Quarterly)
 {{page.varDownloadsRelnotes}}
