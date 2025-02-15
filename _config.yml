@@ -474,7 +474,8 @@ gns:
   accessConnectivity: For a spoke portal to be accessible, there must be full connectivity between the two clusters in a portal relationship, without which files or directories with outstanding modifications on one portal are inaccessible on other portals.
   versionRequirement: A spoke portal is inaccessible if the hub portal host cluster and the spoke portal host cluster run different versions of Qumulo Core.
   singleRelationship: A Qumulo cluster can be a portal host for any number of hub portals or for a single spoke portal. It isn&apos;t possible for a Qumulo cluster to be a host for spoke and hub portals simultaneously.
-  protocolLimitations: It isn&apos;t possible to create a spoke portal on a cluster with the NFSv4.1, FTP, or S3 protocols enabled or to enable these protocols on an existing spoke potal host cluster.
+  upgradeCacheDrop: Future Qumulo Core upgrades might remove cached data from the spoke portal, which can result in a temporary increase in data access latency.
+  protocolLimitations: It isn&apos;t possible to create a spoke portal on a cluster with the NFSv4.1 or S3 protocols enabled or to enable these protocols on an existing spoke potal host cluster.
   protocolLocking: Protocol locks don&apos;t synchronize between the hub portal host cluster and the spoke portal host cluster. Specifically, NFSv3 or NLM byte-range locks, SMB share-mode locks, SMB byte-range locks, and SMB leases function independently on the two clusters.
   quorumBounce: This action makes both clusters in the portal relationship unavailable for less than 30 seconds while the systems reconfigure.
   portalDeleteOutput: The following is example output from the command that shows the portal ID, state, role, and root directory.
