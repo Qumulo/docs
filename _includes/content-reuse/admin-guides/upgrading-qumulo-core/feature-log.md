@@ -11,7 +11,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
 * Made _read-write spoke portals_ available by default
 * Eliminated the REST APIs for manual removal of cached data from spoke portals (no changes to automatic cached data removal)
 * Improved file identifiers to distinguish between cluster-local and spoke-cached data
-* Implemented Read Cache v2 architecture for new cloud clusters
+* Implemented Predictive Read Cache architecture for new cloud clusters
 * Renamed the designation `preview` (previously, `beta`) which marks REST APIs under development
 * Made public the REST API endpoints and `qq` CLI commands that manage a cluster's DNS configuration
 
