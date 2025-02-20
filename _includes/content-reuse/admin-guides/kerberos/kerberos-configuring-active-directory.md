@@ -50,6 +50,8 @@ Unless you need direct access to a specific node through a DNS fully qualified d
 ## Configuring the Service Principal Name (SPN) for NFS
 The SPN is a string that identifies the Kerberos services that a particular host provides. We recommend configuring the Qumulo cluster to provide the NFS service. When you configure the SPN, clients can enumerate the cluster and the NFS service as part of a service-ticket-granting request. 
 
+{% include note.html content="If the cluster's SPN is already configured in Active Directory, no further configuration is necessary." %}
+
 ### To Configure the SPN for NFS by Using the Windows Server Attribute Editor
 {{site.data.alerts.note}}
 {{page.varLowercase}}

@@ -10,7 +10,7 @@
 
   * The root CA
 
-## To Install a Signed SSL Certificate on a Qumulo Cluster from the Command Line
+## To Install Signed SSL Certificates on a Qumulo Cluster from the Command Line
 
 1. Verify that your certificate and the CA-bundle are in the PEM format by running the `file *` command.
 
@@ -37,13 +37,20 @@
      --host {{site.exampleIP0}}
    ```
 
-1. Run the {% include qq.html command="ssl_modify_certificate" %} command to install your certificate. For example:
+1. To install the SSL certificate for the Qumulo Core Web UI, run the {% include qq.html command="ssl_modify_certificate" %} command. For example:
 
    ```bash
    qq ssl_modify_certificate \
      --host {{site.exampleIP0}} \
      -c certbundle.pem \
      -k private.key.insecure
+   ```
+
+1. To install the SSL certificate for the LDAP server, run the {% include qq.html command="ssl_modify_ca_certificate" %} command. For example:
+
+   ```bash
+   qq ssl_modify_ca_certificate \
+     -c myCertificate.pem
    ```
 
 ## To Import a Certificate Authority (CA) Certificate on macOS
