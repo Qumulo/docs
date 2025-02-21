@@ -56,7 +56,7 @@ The following is an example configuration for joining a domain.
 1. {{page.varConfig}}
 
 
-## To Configure DNS and Service Principal Name (SPN)
+## To Configure DNS and the Service Principal Name (SPN) for a Linux Client
 {{site.varKerberosDns}}
 
 1. After you configure DNS, check DNS resolution from your client. For example:
@@ -70,7 +70,7 @@ The following is an example configuration for joining a domain.
    {% include note.html content="Running this command resets the SPN to the default value for your machine." %}
 
    ```bash
-   setspn -r my-client_machine
+   setspn -s my-client_machine
    ```
 
 
