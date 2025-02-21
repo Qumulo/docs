@@ -4,7 +4,7 @@ This section explains how to deploy the Azure Storage Accounts that act as persi
 
 1. Log in to Nexus and click **Downloads > {{site.cnq.nexusDropDown}}**.
 
-1. On the **Azure** tab and, in the **Download the required files** section, select the Qumulo Core version that you want to deploy and then download the corresponding Terraform configuration, Debian package, and host configuration file.
+1. On the **Azure** tab and, in the **Download the required files** section, select the Qumulo Core version that you want to deploy and then download the corresponding Terraform configuration, Debian package.
 
 1. In an Azure Storage Account Container named `qumulo`, create the `images` directory. Within this directory, create another directory with the Qumulo Core version as its name. The following is an example path:
 
