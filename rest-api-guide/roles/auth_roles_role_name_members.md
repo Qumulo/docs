@@ -14,6 +14,7 @@ methods:
         smaller limit.
       name: limit
       required: false
+    preview: false
     response_body: {}
     responses:
     - code: '200'
@@ -24,6 +25,7 @@ methods:
     - description: The name of the role (This page URL-encodes the name for you)
       name: role_name
       required: true
+    preview: false
     request_body:
       schema: "{\n  \"description\": \"api_identity\",\n  \"type\": \"object\",\n\
         \  \"properties\": {\n    \"domain\": {\n      \"type\": \"string\",\n   \

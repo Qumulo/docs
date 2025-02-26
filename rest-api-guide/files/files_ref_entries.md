@@ -24,6 +24,7 @@ methods:
         smaller limit.
       name: limit
       required: false
+    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_files_directory_entries\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"path\": {\n      \"description\"\
@@ -157,6 +158,7 @@ methods:
         UI URL-encodes the paths.
       name: ref
       required: true
+    preview: false
     request_body:
       schema: "{\n  \"description\": \"api_files_create_entry\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"name\": {\n      \"description\": \"Name of\

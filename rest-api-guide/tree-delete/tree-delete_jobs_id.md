@@ -6,6 +6,7 @@ methods:
     - description: Job ID
       name: id
       required: true
+    preview: false
     response_body: {}
     responses:
     - code: '200'
@@ -18,6 +19,7 @@ methods:
     - description: Job ID
       name: id
       required: true
+    preview: false
     response_body:
       schema: "{\n  \"description\": \"tree_delete_job_status\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"The ID of\

@@ -6,6 +6,7 @@ methods:
     - description: File or Directory ID
       name: file_id
       required: true
+    preview: true
     response_body:
       schema: "{\n  \"description\": \"api_portal_eviction_result\",\n  \"type\":\
         \ \"object\",\n  \"properties\": {\n    \"evicted_blocks\": {\n      \"description\"\
@@ -22,6 +23,4 @@ rest_endpoint: /v1/portal/files/{file_id}/evict
 api_version: v1
 permalink: /rest-api-guide/cloud-data-fabric/portal_files_file_id_evict.html
 sidebar: rest_api_guide_sidebar
-redirect_from:
-  - /rest-api-guide/global-namespace/portal_files_file_id_evict.html
 ---

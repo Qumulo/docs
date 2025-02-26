@@ -13,6 +13,7 @@ methods:
         use. If not specified, use the head version.
       name: snapshot
       required: false
+    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_files_acl_v2\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"control\": {\n      \"description\": \"control\"\
@@ -120,6 +121,7 @@ methods:
     - description: ETag for expected version
       name: If-Match
       required: false
+    preview: false
     request_body:
       schema: "{\n  \"description\": \"api_files_acl_v2\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"control\": {\n      \"description\": \"control\"\

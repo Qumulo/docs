@@ -3,6 +3,7 @@ category: /SMB Multitenancy Methods
 methods:
   get:
     parameters: []
+    preview: true
     response_body: {}
     responses:
     - code: '200'

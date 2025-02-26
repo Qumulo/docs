@@ -6,6 +6,7 @@ methods:
     - description: The name or identifier of the key.
       name: key_ref
       required: true
+    preview: false
     response_body: {}
     responses:
     - code: '200'
@@ -17,6 +18,7 @@ methods:
     - description: The name or identifier of the key.
       name: key_ref
       required: true
+    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_change_lock_key\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"The identifier\
@@ -41,6 +43,7 @@ methods:
     - description: ETag for expected version
       name: If-Match
       required: false
+    preview: false
     request_body:
       schema: "{\n  \"description\": \"api_change_lock_key_patch\",\n  \"type\": \"\
         object\",\n  \"properties\": {\n    \"id\": {\n      \"description\": \"The\
@@ -76,6 +79,7 @@ methods:
     - description: ETag for expected version
       name: If-Match
       required: false
+    preview: false
     request_body:
       schema: "{\n  \"description\": \"api_change_lock_key\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"The identifier\

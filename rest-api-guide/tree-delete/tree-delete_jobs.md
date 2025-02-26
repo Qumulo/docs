@@ -3,6 +3,7 @@ category: /Tree Delete
 methods:
   get:
     parameters: []
+    preview: false
     response_body:
       schema: "{\n  \"description\": \"tree_delete_jobs_response\",\n  \"type\": \"\
         object\",\n  \"properties\": {\n    \"jobs\": {\n      \"type\": \"array\"\
@@ -43,6 +44,7 @@ methods:
     summary: Get status of all directory-tree deletion jobs.
   post:
     parameters: []
+    preview: false
     request_body:
       schema: "{\n  \"description\": \"tree_delete_job_post\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"The file ID\

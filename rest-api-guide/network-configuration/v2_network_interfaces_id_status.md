@@ -6,6 +6,7 @@ methods:
     - description: The unique ID of the network interface
       name: id
       required: true
+    preview: false
     response_body:
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         api_interface_network_statuses\",\n    \"type\": \"object\",\n    \"properties\"\

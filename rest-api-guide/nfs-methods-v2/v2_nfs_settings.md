@@ -3,6 +3,7 @@ category: /NFS Methods V2
 methods:
   get:
     parameters: []
+    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_nfs_settings\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"v4_enabled\": {\n      \"description\": \"Whether\
@@ -20,6 +21,7 @@ methods:
     summary: Retrieve current NFS server configuration.
   patch:
     parameters: []
+    preview: false
     request_body:
       schema: "{\n  \"description\": \"api_nfs_settings_patch\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"v4_enabled\": {\n      \"description\": \"Whether\
@@ -48,6 +50,7 @@ methods:
     summary: Modify current NFS server configuration.
   put:
     parameters: []
+    preview: false
     request_body:
       schema: "{\n  \"description\": \"api_nfs_settings\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"v4_enabled\": {\n      \"description\": \"Whether\

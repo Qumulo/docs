@@ -6,6 +6,7 @@ methods:
     - description: URI parameter node_id
       name: node_id
       required: true
+    preview: false
     response_body: {}
     responses:
     - code: '200'

@@ -3,6 +3,7 @@ category: /NFS Multitenancy Methods
 methods:
   get:
     parameters: []
+    preview: true
     response_body:
       schema: "{\n  \"description\": \"api_nfs_settings\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"v4_enabled\": {\n      \"description\": \"Whether\
@@ -23,6 +24,7 @@ methods:
     - description: ETag for expected version
       name: If-Match
       required: false
+    preview: true
     request_body:
       schema: "{\n  \"description\": \"api_nfs_settings_patch\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"v4_enabled\": {\n      \"description\": \"Whether\
@@ -54,6 +56,7 @@ methods:
     - description: ETag for expected version
       name: If-Match
       required: false
+    preview: true
     request_body:
       schema: "{\n  \"description\": \"api_nfs_settings\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"v4_enabled\": {\n      \"description\": \"Whether\

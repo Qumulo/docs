@@ -3,6 +3,7 @@ category: /Cloud Data Fabric
 methods:
   get:
     parameters: []
+    preview: true
     response_body:
       schema: "{\n  \"description\": \"api_portal_spoke_relationships\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"entries\": {\n      \"type\": \"\
@@ -43,6 +44,7 @@ methods:
       portals on the current cluster.'
   post:
     parameters: []
+    preview: true
     request_body:
       schema: "{\n  \"description\": \"api_portal_create_request\",\n  \"type\": \"\
         object\",\n  \"properties\": {\n    \"spoke_root\": {\n      \"description\"\
@@ -62,6 +64,4 @@ rest_endpoint: /v1/portal/spokes/
 api_version: v1
 permalink: /rest-api-guide/cloud-data-fabric/portal_spokes.html
 sidebar: rest_api_guide_sidebar
-redirect_from:
-  - /rest-api-guide/global-namespace/portal_spokes.html
 ---

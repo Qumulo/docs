@@ -6,6 +6,7 @@ methods:
     - description: The unique ID of the node
       name: id
       required: true
+    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_network_status_response\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"id\": {\n      \"description\":\

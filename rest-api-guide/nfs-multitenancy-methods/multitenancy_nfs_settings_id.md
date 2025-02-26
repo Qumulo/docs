@@ -9,6 +9,7 @@ methods:
     - description: ETag for expected version
       name: If-Match
       required: false
+    preview: true
     response_body: {}
     responses:
     - code: '200'
@@ -20,6 +21,7 @@ methods:
     - description: The tenant ID of the NFS settings.
       name: id
       required: true
+    preview: true
     response_body:
       schema: "{\n  \"description\": \"api_nfs_settings\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"v4_enabled\": {\n      \"description\": \"Whether\
@@ -43,6 +45,7 @@ methods:
     - description: ETag for expected version
       name: If-Match
       required: false
+    preview: true
     request_body:
       schema: "{\n  \"description\": \"api_nfs_settings_patch\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"v4_enabled\": {\n      \"description\": \"Whether\
@@ -77,6 +80,7 @@ methods:
     - description: ETag for expected version
       name: If-Match
       required: false
+    preview: true
     request_body:
       schema: "{\n  \"description\": \"api_nfs_settings\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"v4_enabled\": {\n      \"description\": \"Whether\

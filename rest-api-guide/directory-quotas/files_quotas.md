@@ -11,6 +11,7 @@ methods:
         smaller limit.
       name: limit
       required: false
+    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_files_quota_entries\",\n  \"type\": \"\
         object\",\n  \"properties\": {\n    \"quotas\": {\n      \"type\": \"array\"\
@@ -27,6 +28,7 @@ methods:
     summary: List all set directory quotas.
   post:
     parameters: []
+    preview: false
     request_body:
       schema: "{\n  \"description\": \"api_files_quota\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"Unique ID\

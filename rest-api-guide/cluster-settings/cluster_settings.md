@@ -3,6 +3,7 @@ category: /Cluster Settings
 methods:
   get:
     parameters: []
+    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_cluster_name_settings\",\n  \"type\": \"\
         object\",\n  \"properties\": {\n    \"cluster_name\": {\n      \"description\"\
@@ -16,6 +17,7 @@ methods:
     - description: ETag for expected version
       name: If-Match
       required: false
+    preview: false
     request_body:
       schema: "{\n  \"description\": \"api_cluster_name_settings\",\n  \"type\": \"\
         object\",\n  \"properties\": {\n    \"cluster_name\": {\n      \"description\"\

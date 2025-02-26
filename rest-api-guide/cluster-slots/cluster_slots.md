@@ -3,6 +3,7 @@ category: /Cluster Slots
 methods:
   get:
     parameters: []
+    preview: false
     response_body:
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         api_disk_slot\",\n    \"type\": \"object\",\n    \"properties\": {\n     \

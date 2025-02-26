@@ -6,6 +6,7 @@ methods:
     - description: The unique ID of the network interface
       name: interface_id
       required: true
+    preview: false
     response_body:
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         api_network_config_v2\",\n    \"type\": \"object\",\n    \"properties\": {\n\
@@ -46,6 +47,7 @@ methods:
     - description: The unique ID of the network interface
       name: interface_id
       required: true
+    preview: false
     request_body:
       schema: "{\n  \"description\": \"api_network_config_v2\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"name\": {\n      \"description\": \"name\",\n\

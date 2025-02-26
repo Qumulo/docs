@@ -6,6 +6,7 @@ methods:
     - description: Portal ID
       name: id
       required: true
+    preview: true
     response_body: {}
     responses:
     - code: '200'
@@ -16,6 +17,7 @@ methods:
     - description: Portal ID
       name: id
       required: true
+    preview: true
     response_body:
       schema: "{\n  \"description\": \"api_portal_spoke_relationship\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"id\": {\n      \"description\":\
@@ -55,6 +57,7 @@ methods:
     - description: ETag for expected version
       name: If-Match
       required: false
+    preview: true
     request_body:
       schema: "{\n  \"description\": \"api_portal_spoke_relationship_patch\",\n  \"\
         type\": \"object\",\n  \"properties\": {\n    \"id\": {\n      \"description\"\
@@ -115,6 +118,4 @@ rest_endpoint: /v1/portal/spokes/{id}
 api_version: v1
 permalink: /rest-api-guide/cloud-data-fabric/portal_spokes_id.html
 sidebar: rest_api_guide_sidebar
-redirect_from:
-  - /rest-api-guide/global-namespace/portal_spokes_id.html
 ---

@@ -3,6 +3,7 @@ category: /Time Configuration Methods
 methods:
   get:
     parameters: []
+    preview: false
     response_body:
       schema: "{\n  \"description\": \"time_status_response\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"config\": {\n      \"description\": \"config\"\

@@ -3,6 +3,7 @@ category: /Unconfigured Nodes
 methods:
   get:
     parameters: []
+    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_unconfigured_nodes_response\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"nodes\": {\n      \"type\": \"array\"\

@@ -11,6 +11,7 @@ methods:
         smaller limit.
       name: limit
       required: false
+    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_files_quota_status_entries\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"quotas\": {\n      \"type\": \"\

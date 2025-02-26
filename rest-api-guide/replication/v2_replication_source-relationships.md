@@ -3,6 +3,7 @@ category: /Replication
 methods:
   get:
     parameters: []
+    preview: false
     response_body:
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         api_source_relationship\",\n    \"type\": \"object\",\n    \"properties\"\
@@ -79,6 +80,7 @@ methods:
     summary: List existing replication relationships where this cluster is the source.
   post:
     parameters: []
+    preview: false
     request_body:
       schema: "{\n  \"description\": \"api_source_create_request\",\n  \"type\": \"\
         object\",\n  \"properties\": {\n    \"target_address\": {\n      \"description\"\

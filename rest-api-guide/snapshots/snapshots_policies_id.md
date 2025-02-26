@@ -6,6 +6,7 @@ methods:
     - description: Policy identifier
       name: id
       required: true
+    preview: false
     response_body: {}
     responses:
     - code: '200'
@@ -16,6 +17,7 @@ methods:
     - description: Policy identifier
       name: id
       required: true
+    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_snapshots_policy_info_v1\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"id\": {\n      \"description\":\
@@ -114,6 +116,7 @@ methods:
     - description: ETag for expected version
       name: If-Match
       required: false
+    preview: false
     request_body:
       schema: "{\n  \"description\": \"api_snapshots_policy_info_v1\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"id\": {\n      \"description\":\
@@ -298,6 +301,7 @@ methods:
     - description: ETag for expected version
       name: If-Match
       required: false
+    preview: false
     request_body:
       schema: "{\n  \"description\": \"api_snapshots_policy_info_v1\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"id\": {\n      \"description\":\

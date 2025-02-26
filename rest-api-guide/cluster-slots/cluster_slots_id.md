@@ -6,6 +6,7 @@ methods:
     - description: The unique ID of the disk slot
       name: id
       required: true
+    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_disk_slot\",\n  \"type\": \"object\",\n\
         \  \"properties\": {\n    \"id\": {\n      \"description\": \"Node:Slot representation\
@@ -68,6 +69,7 @@ methods:
     - description: The unique ID of the disk slot
       name: id
       required: true
+    preview: false
     request_body:
       schema: "{\n  \"description\": \"api_disk_slot_patch\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"led_pattern\": {\n      \"type\": \"string\"\

@@ -7,6 +7,7 @@ methods:
         are not returned.
       name: populate-trustee-names
       required: false
+    preview: false
     response_body:
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         api_smb_share_v2\",\n    \"type\": \"object\",\n    \"properties\": {\n  \
@@ -144,6 +145,7 @@ methods:
         not already exist.
       name: allow-fs-path-create
       required: false
+    preview: false
     request_body:
       schema: "{\n  \"description\": \"api_smb_share_post_v2\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"share_name\": {\n      \"description\": \"The\

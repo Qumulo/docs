@@ -3,6 +3,7 @@ category: /Shutdown
 methods:
   post:
     parameters: []
+    preview: false
     request_body:
       schema: "{\n  \"description\": \"api_reboot_start_options\",\n  \"type\": \"\
         object\",\n  \"properties\": {\n    \"is_rolling\": {\n      \"description\"\

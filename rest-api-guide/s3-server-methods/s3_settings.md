@@ -3,6 +3,7 @@ category: /S3 Server Methods
 methods:
   get:
     parameters: []
+    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_v1_s3_config\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"enabled\": {\n      \"description\": \"When\
@@ -29,6 +30,7 @@ methods:
     summary: Retrieve the current S3 server settings.
   patch:
     parameters: []
+    preview: false
     request_body:
       schema: "{\n  \"description\": \"api_v1_s3_config_patch\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"enabled\": {\n      \"description\": \"When\

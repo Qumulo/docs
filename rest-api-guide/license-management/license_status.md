@@ -3,6 +3,7 @@ category: /License Management
 methods:
   get:
     parameters: []
+    preview: true
     response_body:
       schema: "{\n  \"description\": \"api_license_status\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"state\": {\n      \"type\": \"string\",\n  \

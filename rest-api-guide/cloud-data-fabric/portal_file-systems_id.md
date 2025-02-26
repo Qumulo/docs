@@ -6,6 +6,7 @@ methods:
     - description: File System UUID
       name: id
       required: true
+    preview: true
     response_body:
       schema: "{\n  \"description\": \"api_portal_fs_info\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"uuid\": {\n      \"description\": \"File System\
@@ -20,6 +21,4 @@ rest_endpoint: /v1/portal/file-systems/{id}
 api_version: v1
 permalink: /rest-api-guide/cloud-data-fabric/portal_file-systems_id.html
 sidebar: rest_api_guide_sidebar
-redirect_from:
-  - /rest-api-guide/global-namespace/portal_file-systems_id.html
 ---

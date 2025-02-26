@@ -29,6 +29,7 @@ methods:
         use. If not specified, use the head version.
       name: snapshot
       required: false
+    preview: false
     response_body:
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         api_files_dir_aggregates\",\n    \"type\": \"object\",\n    \"properties\"\

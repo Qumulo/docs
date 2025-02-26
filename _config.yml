@@ -506,6 +506,9 @@ guides:
   alertShort: Qumulo Alerts Admin Guide
   integ: Qumulo Integration Guide
 
+api:
+  preview: This preview REST API is under development. Its functionality or backwards compatibility can change without notice.
+
 xrefUSBinstaller: <a href="https://docs.qumulo.com/hardware-guide/getting-started/creating-usb-drive-installer.html" class="no_icon">Qumulo Core USB Drive Installer</a>
 xref:
   adminOnPrem:

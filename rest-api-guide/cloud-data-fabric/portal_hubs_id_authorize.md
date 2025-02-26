@@ -6,6 +6,7 @@ methods:
     - description: Portal ID
       name: id
       required: true
+    preview: true
     request_body:
       schema: "{\n  \"description\": \"api_portal_authorize_request\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"spoke_address\": {\n      \"description\"\
@@ -46,6 +47,4 @@ rest_endpoint: /v1/portal/hubs/{id}/authorize
 api_version: v1
 permalink: /rest-api-guide/cloud-data-fabric/portal_hubs_id_authorize.html
 sidebar: rest_api_guide_sidebar
-redirect_from:
-  - /rest-api-guide/global-namespace/portal_hubs_id_authorize.html
 ---

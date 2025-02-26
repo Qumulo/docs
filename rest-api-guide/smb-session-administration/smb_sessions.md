@@ -17,6 +17,7 @@ methods:
         smaller limit.
       name: limit
       required: false
+    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_smb_sessions_get_response\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"session_infos\": {\n      \"type\"\

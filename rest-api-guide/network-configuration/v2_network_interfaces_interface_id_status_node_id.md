@@ -9,6 +9,7 @@ methods:
     - description: The unique ID of the node
       name: node_id
       required: true
+    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_interface_network_statuses\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"node_id\": {\n      \"description\"\

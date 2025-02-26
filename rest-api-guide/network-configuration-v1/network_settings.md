@@ -3,6 +3,7 @@ category: /Network Configuration V1
 methods:
   get:
     parameters: []
+    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_cluster_network_config_v1\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"assigned_by\": {\n      \"type\"\
@@ -41,6 +42,7 @@ methods:
       deprecated in favor of /v2/network/interfaces/ and /v2/network/interfaces/1/networks/.
   patch:
     parameters: []
+    preview: false
     request_body:
       schema: "{\n  \"description\": \"api_cluster_network_config_v1\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"assigned_by\": {\n      \"type\"\
@@ -83,6 +85,7 @@ methods:
     - description: ETag for expected version
       name: If-Match
       required: false
+    preview: false
     request_body:
       schema: "{\n  \"description\": \"api_cluster_network_config_v1\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"assigned_by\": {\n      \"type\"\

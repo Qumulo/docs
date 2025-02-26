@@ -6,6 +6,7 @@ methods:
     - description: Policy identifier
       name: id
       required: true
+    preview: false
     response_body:
       schema: "{\n  \"description\": \"snapshots_api_policy_status_v1\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"id\": {\n      \"description\":\

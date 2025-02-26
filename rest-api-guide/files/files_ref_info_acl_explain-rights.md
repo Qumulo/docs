@@ -13,6 +13,7 @@ methods:
         use. If not specified, use the head version.
       name: snapshot
       required: false
+    preview: false
     request_body:
       schema: "{\n  \"description\": \"api_files_effective_rights_post\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"user\": {\n      \"description\"\

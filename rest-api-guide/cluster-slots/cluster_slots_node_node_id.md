@@ -6,6 +6,7 @@ methods:
     - description: The unique ID of the node
       name: node_id
       required: true
+    preview: false
     response_body:
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         api_disk_slot\",\n    \"type\": \"object\",\n    \"properties\": {\n     \

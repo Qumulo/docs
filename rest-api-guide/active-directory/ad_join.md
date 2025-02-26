@@ -3,6 +3,7 @@ category: /Active Directory
 methods:
   post:
     parameters: []
+    preview: false
     request_body:
       schema: "{\n  \"description\": \"ad_domain_join_args\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"domain\": {\n      \"description\": \"domain\"\

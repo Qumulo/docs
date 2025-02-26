@@ -3,6 +3,7 @@ category: /NFS Methods V2
 methods:
   get:
     parameters: []
+    preview: false
     response_body:
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         api_nfs_export\",\n    \"type\": \"object\",\n    \"properties\": {\n    \
@@ -84,6 +85,7 @@ methods:
         not already exist.
       name: allow-fs-path-create
       required: false
+    preview: false
     request_body:
       schema: "{\n  \"description\": \"api_nfs_export_post\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"export_path\": {\n      \"description\": \"\

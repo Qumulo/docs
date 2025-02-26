@@ -3,6 +3,7 @@ category: /Replication
 methods:
   get:
     parameters: []
+    preview: false
     response_body:
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         api_object_relationship_v3\",\n    \"type\": \"object\",\n    \"properties\"\
@@ -42,6 +43,7 @@ methods:
     summary: List existing object replication relationships.
   post:
     parameters: []
+    preview: false
     request_body:
       schema: "{\n  \"description\": \"api_object_create_request_v3\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"direction\": {\n      \"type\":\

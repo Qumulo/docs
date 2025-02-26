@@ -26,33 +26,46 @@ layout: default
   {% assign method_data = page.methods[method_key] %}
   {% if method_data %}
 <h2>{{ method }}</h2>
-{{ method_data.summary }}
+
+    {% assign display_summary = method_data.summary %}
+    
+    {% if method_data.summary contains "[preview]" %}
+      {% assign preview_end = method_data.summary | split: "[preview]" | last %}
+      {% assign display_summary = preview_end | strip %}
+    {% endif %}
+
+    {{ display_summary }}
+
+    {% if method_data.summary contains "[preview]" %}
+      {% capture previewAPI %}{{ site.api.preview }}{% endcapture %}
+      {% include important.html content=previewAPI %}
+    {% endif %}
 
 <h3>Parameters</h3>
-{% if method_data.parameters and method_data.parameters.size > 0 %}
+    {% if method_data.parameters and method_data.parameters.size > 0 %}
 <table>
   <tr>
     <th>Name</th>
     <th>Description</th>
     <th>Required</th>
   </tr>
-  {% for param in method_data.parameters %}
+      {% for param in method_data.parameters %}
   <tr>
     <td><code>{{ param.name }}</code></td>
     <td>{{ param.description }}</td>
     <td>{% if param.required %}Yes{% else %}No{% endif %}</td>
   </tr>
-{% endfor %}
+      {% endfor %}
 </table>
-{% else %}
-This resource has no parameters.
-{% endif %}
+    {% else %}
+    This resource has no parameters.
+    {% endif %}
 
-{% if method_data.request_body %}
+    {% if method_data.request_body %}
 <h3>Request</h3>
 <h4>Schema</h4>
-{% highlight json %}{{ method_data.request_body.schema }}{% endhighlight %}
-{% endif %}
+    {% highlight json %}{{ method_data.request_body.schema }}{% endhighlight %}
+    {% endif %}
 
 <h3>Response</h3>
 <h4>Codes</h4>
@@ -61,19 +74,19 @@ This resource has no parameters.
     <th>Code</th>
     <th>Description</th>
   </tr>
-{% for response in method_data.responses %}
+      {% for response in method_data.responses %}
   <tr>
     <td>{{ response.code }}</td>
     <td>{{ response.description }}</td>
   </tr>
-{% endfor %}
+      {% endfor %}
 </table>
 
-{% if method_data.response_body.schema %}
+    {% if method_data.response_body.schema %}
 <h4>Schema</h4>
-{% highlight json %}{{ method_data.response_body.schema }}{% endhighlight %}
-{% endif %}
-{% endif %}
+    {% highlight json %}{{ method_data.response_body.schema }}{% endhighlight %}
+    {% endif %}
+  {% endif %}
 {% endfor %}
 
 </div>

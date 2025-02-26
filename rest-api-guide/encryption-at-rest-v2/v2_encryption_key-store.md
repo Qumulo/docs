@@ -3,6 +3,7 @@ category: /Encryption at Rest V2
 methods:
   get:
     parameters: []
+    preview: false
     response_body:
       schema: "{\n  \"description\": \"encryption_api_v2_key_store_response_union\"\
         ,\n  \"type\": \"object\",\n  \"properties\": {\n    \"type\": {\n      \"\
@@ -33,6 +34,7 @@ methods:
     summary: View the active at-rest encryption configuration.
   put:
     parameters: []
+    preview: false
     request_body:
       schema: "{\n  \"description\": \"encryption_api_v2_put_key_store_union\",\n\
         \  \"type\": \"object\",\n  \"properties\": {\n    \"type\": {\n      \"type\"\

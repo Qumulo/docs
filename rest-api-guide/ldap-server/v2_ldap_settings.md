@@ -3,6 +3,7 @@ category: /LDAP Server
 methods:
   get:
     parameters: []
+    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_lone_ldap_config_v2\",\n  \"type\": \"\
         object\",\n  \"properties\": {\n    \"use_ldap\": {\n      \"description\"\
@@ -51,6 +52,7 @@ methods:
     - description: ETag for expected version
       name: If-Match
       required: false
+    preview: false
     request_body:
       schema: "{\n  \"description\": \"api_lone_ldap_config_v2\",\n  \"type\": \"\
         object\",\n  \"properties\": {\n    \"use_ldap\": {\n      \"description\"\
@@ -138,6 +140,7 @@ methods:
     - description: ETag for expected version
       name: If-Match
       required: false
+    preview: false
     request_body:
       schema: "{\n  \"description\": \"api_lone_ldap_config_v2\",\n  \"type\": \"\
         object\",\n  \"properties\": {\n    \"use_ldap\": {\n      \"description\"\

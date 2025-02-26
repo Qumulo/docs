@@ -7,6 +7,7 @@ methods:
         for key replacement.
       name: key_ref
       required: true
+    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_change_lock_key_replace_challenge\",\n\
         \  \"type\": \"object\",\n  \"properties\": {\n    \"challenge\": {\n    \

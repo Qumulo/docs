@@ -18,6 +18,7 @@ methods:
     - description: Maximum number of entries returned
       name: limit
       required: true
+    preview: false
     response_body:
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         api_files_aggregates\",\n    \"type\": \"object\",\n    \"properties\": {\n\

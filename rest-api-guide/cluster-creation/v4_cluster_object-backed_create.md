@@ -3,6 +3,7 @@ category: /Cluster Creation
 methods:
   post:
     parameters: []
+    preview: false
     request_body:
       schema: "{\n  \"description\": \"api_cluster_creation_object_backed_request_v4\"\
         ,\n  \"type\": \"object\",\n  \"properties\": {\n    \"eula_accepted\": {\n\

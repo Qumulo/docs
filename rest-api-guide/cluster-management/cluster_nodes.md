@@ -3,6 +3,7 @@ category: /Cluster Management
 methods:
   get:
     parameters: []
+    preview: false
     response_body:
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         api_node\",\n    \"type\": \"object\",\n    \"properties\": {\n      \"id\"\
@@ -25,6 +26,7 @@ methods:
     summary: List nodes.
   post:
     parameters: []
+    preview: false
     request_body:
       schema: "{\n  \"description\": \"api_cluster_nodes_modify_request_v1\",\n  \"\
         type\": \"object\",\n  \"properties\": {\n    \"node_uuids\": {\n      \"\

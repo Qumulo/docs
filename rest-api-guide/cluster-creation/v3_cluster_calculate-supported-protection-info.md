@@ -3,6 +3,7 @@ category: /Cluster Creation
 methods:
   post:
     parameters: []
+    preview: false
     request_body:
       schema: "{\n  \"description\": \"api_supported_protection_info_request_v2\"\
         ,\n  \"type\": \"object\",\n  \"properties\": {\n    \"node_uuids\": {\n \

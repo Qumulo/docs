@@ -3,6 +3,7 @@ category: /Monitoring Configuration and Status
 methods:
   get:
     parameters: []
+    preview: false
     response_body:
       schema: "{\n  \"description\": \"vpn_keys\",\n  \"type\": \"object\",\n  \"\
         properties\": {\n    \"mqvpn_client_crt\": {\n      \"description\": \"mqvpn_client_crt\"\
@@ -16,6 +17,7 @@ methods:
     summary: Get VPN keys.
   patch:
     parameters: []
+    preview: false
     request_body:
       schema: "{\n  \"description\": \"vpn_keys_patch\",\n  \"type\": \"object\",\n\
         \  \"properties\": {\n    \"mqvpn_client_crt\": {\n      \"description\":\
@@ -36,6 +38,7 @@ methods:
     summary: Set VPN keys.
   put:
     parameters: []
+    preview: false
     request_body:
       schema: "{\n  \"description\": \"vpn_keys\",\n  \"type\": \"object\",\n  \"\
         properties\": {\n    \"mqvpn_client_crt\": {\n      \"description\": \"mqvpn_client_crt\"\

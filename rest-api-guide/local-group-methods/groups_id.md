@@ -6,6 +6,7 @@ methods:
     - description: The group's unique ID
       name: id
       required: true
+    preview: false
     response_body: {}
     responses:
     - code: '200'
@@ -16,6 +17,7 @@ methods:
     - description: The group's unique ID
       name: id
       required: true
+    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_group\",\n  \"type\": \"object\",\n  \"\
         properties\": {\n    \"id\": {\n      \"description\": \"The group's unique\
@@ -37,6 +39,7 @@ methods:
     - description: ETag for expected version
       name: If-Match
       required: false
+    preview: false
     request_body:
       schema: "{\n  \"description\": \"api_group_put\",\n  \"type\": \"object\",\n\
         \  \"properties\": {\n    \"id\": {\n      \"description\": \"The group's\

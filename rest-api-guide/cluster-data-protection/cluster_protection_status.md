@@ -3,6 +3,7 @@ category: /Cluster Data Protection
 methods:
   get:
     parameters: []
+    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_protection_status\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"blocks_per_stripe\": {\n      \"description\"\

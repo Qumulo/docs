@@ -3,6 +3,7 @@ category: /Cloud Data Fabric
 methods:
   get:
     parameters: []
+    preview: true
     response_body:
       schema: "{\n  \"description\": \"api_portal_hub_relationships\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"entries\": {\n      \"type\": \"\
@@ -43,6 +44,4 @@ rest_endpoint: /v1/portal/hubs/
 api_version: v1
 permalink: /rest-api-guide/cloud-data-fabric/portal_hubs.html
 sidebar: rest_api_guide_sidebar
-redirect_from:
-  - /rest-api-guide/global-namespace/portal_hubs.html
 ---

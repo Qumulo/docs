@@ -3,6 +3,7 @@ category: /Session Management
 methods:
   post:
     parameters: []
+    preview: false
     request_body:
       schema: "{\n  \"description\": \"login\",\n  \"type\": \"object\",\n  \"properties\"\
         : {\n    \"username\": {\n      \"description\": \"The username to authenticate\

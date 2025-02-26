@@ -16,6 +16,7 @@ methods:
         configured floating IP range.
       name: floating
       required: false
+    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_static_ip_allocation_summary\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"total_ips\": {\n      \"description\"\

@@ -9,6 +9,7 @@ methods:
         UI URL-encodes the paths.
       name: ref
       required: true
+    preview: false
     response_body: {}
     responses:
     - code: '200'

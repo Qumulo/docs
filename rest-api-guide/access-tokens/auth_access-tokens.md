@@ -14,6 +14,7 @@ methods:
         smaller limit.
       name: limit
       required: false
+    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_access_token_metadata_list_model\",\n \
         \ \"type\": \"object\",\n  \"properties\": {\n    \"entries\": {\n      \"\
@@ -85,6 +86,7 @@ methods:
       is required to list keys for users other than yourself
   post:
     parameters: []
+    preview: false
     request_body:
       schema: "{\n  \"description\": \"api_create_access_token_request\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"user\": {\n      \"description\"\

@@ -3,6 +3,7 @@ category: /Snapshots
 methods:
   get:
     parameters: []
+    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_snapshot_policies\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"entries\": {\n      \"type\": \"array\",\n \
@@ -106,6 +107,7 @@ methods:
     summary: Returns information about all snapshot policies.
   post:
     parameters: []
+    preview: false
     request_body:
       schema: "{\n  \"description\": \"api_snapshot_policy_create\",\n  \"type\":\
         \ \"object\",\n  \"properties\": {\n    \"policy_name\": {\n      \"description\"\

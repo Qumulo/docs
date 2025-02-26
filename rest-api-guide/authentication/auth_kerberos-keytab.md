@@ -6,6 +6,7 @@ methods:
     - description: ETag for expected version
       name: If-Match
       required: false
+    preview: false
     response_body: {}
     responses:
     - code: '200'
@@ -13,6 +14,7 @@ methods:
     summary: Delete the current Kerberos keytab configuration
   get:
     parameters: []
+    preview: false
     response_body:
       schema: "{\n  \"description\": \"kerberos_keytab\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"entries\": {\n      \"type\": \"array\",\n \
@@ -79,6 +81,7 @@ methods:
     - description: ETag for expected version
       name: If-Match
       required: false
+    preview: false
     request_body:
       schema: "{\n  \"type\": \"object\"\n}"
     response_body:

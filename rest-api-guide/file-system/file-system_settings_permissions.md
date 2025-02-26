@@ -3,6 +3,7 @@ category: /File System
 methods:
   get:
     parameters: []
+    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_permissions_settings\",\n  \"type\": \"\
         object\",\n  \"properties\": {\n    \"mode\": {\n      \"type\": \"string\"\
@@ -16,6 +17,7 @@ methods:
     summary: Get permissions settings.
   put:
     parameters: []
+    preview: false
     request_body:
       schema: "{\n  \"description\": \"api_permissions_settings\",\n  \"type\": \"\
         object\",\n  \"properties\": {\n    \"mode\": {\n      \"type\": \"string\"\

@@ -10,6 +10,7 @@ methods:
         Otherwise the root directory is not unlinked.
       name: delete-root-dir
       required: true
+    preview: false
     response_body: {}
     responses:
     - code: '200'
@@ -20,6 +21,7 @@ methods:
     - description: Bucket name
       name: name
       required: true
+    preview: false
     request_body:
       schema: "{\n  \"description\": \"api_bucket_patch\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"anonymous_access_enabled\": {\n      \"description\"\

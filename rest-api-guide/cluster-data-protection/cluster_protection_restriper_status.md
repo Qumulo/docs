@@ -3,6 +3,7 @@ category: /Cluster Data Protection
 methods:
   get:
     parameters: []
+    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_restriper_status_v2\",\n  \"type\": \"\
         object\",\n  \"properties\": {\n    \"state\": {\n      \"type\": \"string\"\

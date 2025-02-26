@@ -13,6 +13,7 @@ methods:
         use. If not specified, use the head version.
       name: snapshot
       required: false
+    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_files_derive_mode_explanation\",\n  \"\
         type\": \"object\",\n  \"properties\": {\n    \"mode\": {\n      \"description\"\

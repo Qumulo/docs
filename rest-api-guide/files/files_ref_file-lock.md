@@ -12,6 +12,7 @@ methods:
     - description: ETag for expected version
       name: If-Match
       required: false
+    preview: false
     request_body:
       schema: "{\n  \"description\": \"api_patch_file_lock\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"retention_period\": {\n      \"description\"\
