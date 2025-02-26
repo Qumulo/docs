@@ -10,6 +10,7 @@ methods:
         \ - metadata-iops-read,\n * `metadata-iops-write` - metadata-iops-write"
       name: type
       required: false
+    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_rates\",\n  \"type\": \"object\",\n  \"\
         properties\": {\n    \"entries\": {\n      \"type\": \"array\",\n      \"\

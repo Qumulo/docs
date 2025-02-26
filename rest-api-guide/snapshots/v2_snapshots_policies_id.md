@@ -9,6 +9,7 @@ methods:
     - description: ETag for expected version
       name: If-Match
       required: false
+    preview: false
     response_body: {}
     responses:
     - code: '200'
@@ -19,6 +20,7 @@ methods:
     - description: Snapshot Policy Identifier
       name: id
       required: true
+    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_snapshot_policy_info_v2\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"id\": {\n      \"description\":\
@@ -36,7 +38,7 @@ methods:
         ,\n          \"type\": \"number\"\n        },\n        \"creation_schedule\"\
         : {\n          \"description\": \"Structure defining when to take snapshots\"\
         ,\n          \"type\": \"object\",\n          \"properties\": {\n        \
-        \    \"timezone\": {\n              \"description\": \"The timezone in which\
+        \    \"timezone\": {\n              \"description\": \"The time zone in which\
         \ the schedule should be interpreted (e.g. America/Los_Angeles or UTC).\"\
         ,\n              \"type\": \"string\"\n            },\n            \"frequency\"\
         : {\n              \"type\": \"string\",\n              \"enum\": [\n    \
@@ -113,6 +115,7 @@ methods:
     - description: ETag for expected version
       name: If-Match
       required: false
+    preview: false
     request_body:
       schema: "{\n  \"description\": \"api_snapshot_policy_info_v2\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"id\": {\n      \"description\":\
@@ -130,7 +133,7 @@ methods:
         ,\n          \"type\": \"number\"\n        },\n        \"creation_schedule\"\
         : {\n          \"description\": \"Structure defining when to take snapshots\"\
         ,\n          \"type\": \"object\",\n          \"properties\": {\n        \
-        \    \"timezone\": {\n              \"description\": \"The timezone in which\
+        \    \"timezone\": {\n              \"description\": \"The time zone in which\
         \ the schedule should be interpreted (e.g. America/Los_Angeles or UTC).\"\
         ,\n              \"type\": \"string\"\n            },\n            \"frequency\"\
         : {\n              \"type\": \"string\",\n              \"enum\": [\n    \
@@ -212,7 +215,7 @@ methods:
         ,\n          \"type\": \"number\"\n        },\n        \"creation_schedule\"\
         : {\n          \"description\": \"Structure defining when to take snapshots\"\
         ,\n          \"type\": \"object\",\n          \"properties\": {\n        \
-        \    \"timezone\": {\n              \"description\": \"The timezone in which\
+        \    \"timezone\": {\n              \"description\": \"The time zone in which\
         \ the schedule should be interpreted (e.g. America/Los_Angeles or UTC).\"\
         ,\n              \"type\": \"string\"\n            },\n            \"frequency\"\
         : {\n              \"type\": \"string\",\n              \"enum\": [\n    \
@@ -289,6 +292,7 @@ methods:
     - description: ETag for expected version
       name: If-Match
       required: false
+    preview: false
     request_body:
       schema: "{\n  \"description\": \"api_snapshot_policy_info_v2\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"id\": {\n      \"description\":\
@@ -306,7 +310,7 @@ methods:
         ,\n          \"type\": \"number\"\n        },\n        \"creation_schedule\"\
         : {\n          \"description\": \"Structure defining when to take snapshots\"\
         ,\n          \"type\": \"object\",\n          \"properties\": {\n        \
-        \    \"timezone\": {\n              \"description\": \"The timezone in which\
+        \    \"timezone\": {\n              \"description\": \"The time zone in which\
         \ the schedule should be interpreted (e.g. America/Los_Angeles or UTC).\"\
         ,\n              \"type\": \"string\"\n            },\n            \"frequency\"\
         : {\n              \"type\": \"string\",\n              \"enum\": [\n    \
@@ -388,7 +392,7 @@ methods:
         ,\n          \"type\": \"number\"\n        },\n        \"creation_schedule\"\
         : {\n          \"description\": \"Structure defining when to take snapshots\"\
         ,\n          \"type\": \"object\",\n          \"properties\": {\n        \
-        \    \"timezone\": {\n              \"description\": \"The timezone in which\
+        \    \"timezone\": {\n              \"description\": \"The time zone in which\
         \ the schedule should be interpreted (e.g. America/Los_Angeles or UTC).\"\
         ,\n              \"type\": \"string\"\n            },\n            \"frequency\"\
         : {\n              \"type\": \"string\",\n              \"enum\": [\n    \

@@ -3,6 +3,7 @@ category: /Upgrade
 methods:
   post:
     parameters: []
+    preview: false
     response_body: {}
     responses:
     - code: '202'

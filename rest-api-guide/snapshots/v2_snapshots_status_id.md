@@ -6,6 +6,7 @@ methods:
     - description: Snapshot identifier
       name: id
       required: true
+    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_snapshot_status_v2\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"Unique identifier\

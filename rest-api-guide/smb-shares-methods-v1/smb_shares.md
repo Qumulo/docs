@@ -3,6 +3,7 @@ category: /SMB Shares Methods V1
 methods:
   get:
     parameters: []
+    preview: false
     response_body:
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         api_smb_share\",\n    \"type\": \"object\",\n    \"properties\": {\n     \
@@ -38,6 +39,7 @@ methods:
         not already exist.
       name: allow-fs-path-create
       required: false
+    preview: false
     request_body:
       schema: "{\n  \"description\": \"api_smb_share_post\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"share_name\": {\n      \"description\": \"The\

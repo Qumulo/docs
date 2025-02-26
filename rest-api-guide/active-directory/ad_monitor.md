@@ -3,6 +3,7 @@ category: /Active Directory
 methods:
   get:
     parameters: []
+    preview: false
     response_body:
       schema: "{\n  \"description\": \"ad_domain_monitor\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"status\": {\n      \"type\": \"string\",\n \

@@ -72,9 +72,9 @@ summary: This section explains how to use the <code>qq ldap_update_settings</cod
   command.
 synopsis: Update settings for LDAP interaction
 title: qq ldap_update_settings
-usage: "qq ldap_update_settings [-h] [--use-ldap {false,true}] [--bind-uri BIND_URI]\
+usage: "qq ldap_update_settings [-h] [--use-ldap {true,false}] [--bind-uri BIND_URI]\
   \ [--base-dn BASE_DN] [--bind-username BIND_USERNAME] [--bind-password BIND_PASSWORD]\
-  \ [--encrypt-connection {false,true}] [--rfc2307]\n    [--custom-group-member-attribute\
+  \ [--encrypt-connection {true,false}] [--rfc2307]\n    [--custom-group-member-attribute\
   \ CUSTOM_GROUP_MEMBER_ATTRIBUTE] [--custom-user-group-identifier-attribute CUSTOM_USER_GROUP_IDENTIFIER_ATTRIBUTE]\
   \ [--custom-login-name-attribute CUSTOM_LOGIN_NAME_ATTRIBUTE]\n    [--custom-group-name-attribute\
   \ CUSTOM_GROUP_NAME_ATTRIBUTE] [--custom-user-object-class CUSTOM_USER_OBJECT_CLASS]\

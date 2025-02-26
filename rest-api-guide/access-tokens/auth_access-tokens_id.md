@@ -6,6 +6,7 @@ methods:
     - description: Access Token ID
       name: id
       required: true
+    preview: false
     response_body: {}
     responses:
     - code: '200'
@@ -17,6 +18,7 @@ methods:
     - description: Access Token ID
       name: id
       required: true
+    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_access_token_metadata\",\n  \"type\": \"\
         object\",\n  \"properties\": {\n    \"id\": {\n      \"description\": \"The\
@@ -81,6 +83,7 @@ methods:
     - description: Access Token ID
       name: id
       required: true
+    preview: false
     request_body:
       schema: "{\n  \"description\": \"api_access_token_modify_metadata_patch\",\n\
         \  \"type\": \"object\",\n  \"properties\": {\n    \"expiration_time\": {\n\

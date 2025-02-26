@@ -32,6 +32,7 @@
   <a title="{{folder.title}}" href="{% if page.url != folder.url and indexURL != folder.url %}{{folder.url}}{% else %}#{% endif %}" data-proofer-ignore>
   {% assign version = '' %}
   {% assign title_without_version = '' %}
+  {% assign is_preview = '' %}
   {% assign title_parts = folder.title | split: ' ' %}
   
   {% for part in title_parts %}
@@ -45,8 +46,14 @@
       {% endif %}
     {% endif %}
   {% endfor %}
-  
-  {{ title_without_version }}{% if version != '' %} <span class="apiversion parentversion {{ version | downcase }}">{{ version }}</span>{% endif %}
+
+  {% if folder.preview %}
+    {% assign is_preview = '<span class="apipreview">preview</span>' %}
+  {% endif %}
+
+  {% assign excluded_titles = "SMB Shares Methods V1 (smb),Network Configuration V1 (network)" | split: "," %}
+
+  {{ title_without_version }}{% unless excluded_titles contains folder.title %}{% if folder.apiversion and folder.apiversion != 'v1' %}<span class="apiversion parentversion {{ folder.apiversion | downcase }}">{{ folder.apiversion }}</span>{% elsif version != '' %}<span class="apiversion parentversion {{ version | downcase }}">{{ version }}</span>{% endif %}{% endunless %}{% if folder.preview %}<span class="apipreview parentpreview">preview</span>{% endif %}
   </a>
  
       <ul>
@@ -57,28 +64,43 @@
           {% elsif page.url == folderitem.url %}
           <li class="active">
             <a title="{{folderitem.title}}" href="{{folderitem.url | relative_url }}">
+              {{folderitem.title}}
+              <span class="tag-container">
               {% if folderitem.apiversion %}
                 <span class="apiversion {{folderitem.apiversion}}">{{folderitem.apiversion}}</span>
               {% endif %}
-              {{folderitem.title}}
+              {% if folderitem.preview %}
+                <span class="apipreview">preview</span>
+              {% endif %}
+              </span>
             </a>
           </li>
           {% elsif folderitem.type == "empty" %}
           <li>
             <a title="{{folderitem.title}}" href="{{folderitem.url | relative_url }}">
+              {{folderitem.title}}
+              <span class="tag-container">
               {% if folderitem.apiversion %}
                 <span class="apiversion {{folderitem.apiversion}}">{{folderitem.apiversion}}</span>
               {% endif %}
-              {{folderitem.title}}
+              {% if folderitem.preview %}
+                <span class="apipreview">preview</span>
+              {% endif %}
+              </span>
             </a>
           </li>
           {% else %}
           <li>
             <a title="{{folderitem.title}}" href="{{folderitem.url | relative_url }}">
+              {{folderitem.title}}     
+              <span class="tag-container">
               {% if folderitem.apiversion %}
                 <span class="apiversion {{folderitem.apiversion}}">{{folderitem.apiversion}}</span>
               {% endif %}
-              {{folderitem.title}}
+              {% if folderitem.preview %}
+                <span class="apipreview">preview</span>
+              {% endif %}
+              </span>
             </a>
           </li>
           {% endif %}

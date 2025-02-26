@@ -6,6 +6,7 @@ methods:
     - description: ETag for expected version
       name: If-Match
       required: false
+    preview: false
     response_body: {}
     responses:
     - code: '200'
@@ -14,6 +15,7 @@ methods:
       outbound connections.
   get:
     parameters: []
+    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_cluster_ssl_ca_certificate_settings\",\n\
         \  \"type\": \"object\",\n  \"properties\": {\n    \"ca_certificate\": {\n\
@@ -30,6 +32,7 @@ methods:
     - description: ETag for expected version
       name: If-Match
       required: false
+    preview: false
     request_body:
       schema: "{\n  \"description\": \"api_cluster_ssl_ca_certificate_settings\",\n\
         \  \"type\": \"object\",\n  \"properties\": {\n    \"ca_certificate\": {\n\

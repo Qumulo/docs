@@ -6,6 +6,7 @@ methods:
     - description: The user's unique ID
       name: id
       required: true
+    preview: false
     response_body: {}
     responses:
     - code: '200'
@@ -16,6 +17,7 @@ methods:
     - description: The user's unique ID
       name: id
       required: true
+    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_user\",\n  \"type\": \"object\",\n  \"\
         properties\": {\n    \"id\": {\n      \"description\": \"The user's unique\
@@ -42,6 +44,7 @@ methods:
     - description: ETag for expected version
       name: If-Match
       required: false
+    preview: false
     request_body:
       schema: "{\n  \"description\": \"api_user_put\",\n  \"type\": \"object\",\n\
         \  \"properties\": {\n    \"id\": {\n      \"description\": \"The user's unique\

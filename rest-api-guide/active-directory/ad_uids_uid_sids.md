@@ -6,6 +6,7 @@ methods:
     - description: The UID to use to look up its SIDs
       name: uid
       required: true
+    preview: false
     response_body:
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"type\": \"string\"\
         \n  }\n}"

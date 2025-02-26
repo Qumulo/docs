@@ -6,6 +6,7 @@ methods:
     - description: Time in epoch seconds
       name: timestamp
       required: true
+    preview: false
     response_body:
       schema: "{\n  \"description\": \"historical_capacity_details\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"threshold_for_inclusion\": {\n \

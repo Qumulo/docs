@@ -3,6 +3,7 @@ category: /LDAP Server
 methods:
   get:
     parameters: []
+    preview: false
     response_body:
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         api_ldap_connection_state\",\n    \"type\": \"object\",\n    \"properties\"\

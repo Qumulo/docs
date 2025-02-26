@@ -3,6 +3,7 @@ category: /Local Group Methods
 methods:
   get:
     parameters: []
+    preview: false
     response_body:
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         api_group\",\n    \"type\": \"object\",\n    \"properties\": {\n      \"id\"\
@@ -19,6 +20,7 @@ methods:
       of the returned fields.
   post:
     parameters: []
+    preview: false
     request_body:
       schema: "{\n  \"description\": \"api_group_post\",\n  \"type\": \"object\",\n\
         \  \"properties\": {\n    \"name\": {\n      \"description\": \"The group\

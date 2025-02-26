@@ -3,6 +3,7 @@ category: /Cluster Management
 methods:
   get:
     parameters: []
+    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_cluster_object_backed_nodes_get_response\"\
         ,\n  \"type\": \"object\",\n  \"properties\": {\n    \"membership\": {\n \
@@ -23,6 +24,7 @@ methods:
     summary: List all object backed nodes in the cluster.
   post:
     parameters: []
+    preview: false
     request_body:
       schema: "{\n  \"description\": \"api_cluster_object_backed_nodes_modify_request_v2\"\
         ,\n  \"type\": \"object\",\n  \"properties\": {\n    \"target_membership\"\

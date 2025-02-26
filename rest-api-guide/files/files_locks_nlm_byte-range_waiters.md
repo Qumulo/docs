@@ -20,6 +20,7 @@ methods:
         smaller limit.
       name: limit
       required: false
+    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_byte_range_waiters\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"waiters\": {\n      \"type\": \"array\",\n \

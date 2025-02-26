@@ -3,6 +3,7 @@ category: /Snapshots
 methods:
   get:
     parameters: []
+    preview: false
     response_body:
       schema: "{\n  \"description\": \"snapshots_api_policy_statuses_v1\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"entries\": {\n      \"type\": \"\
@@ -22,7 +23,7 @@ methods:
         creation_schedule\": {\n                  \"description\": \"Structure defining\
         \ when to take snapshots\",\n                  \"type\": \"object\",\n   \
         \               \"properties\": {\n                    \"timezone\": {\n \
-        \                     \"description\": \"The timezone in which the schedule\
+        \                     \"description\": \"The time zone in which the schedule\
         \ should be interpreted (e.g. America/Los_Angeles or UTC).\",\n          \
         \            \"type\": \"string\"\n                    },\n              \
         \      \"frequency\": {\n                      \"type\": \"string\",\n   \

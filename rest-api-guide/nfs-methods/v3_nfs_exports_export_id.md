@@ -9,16 +9,18 @@ methods:
     - description: ETag for expected version
       name: If-Match
       required: false
+    preview: true
     response_body: {}
     responses:
     - code: '200'
       description: Return value on success
-    summary: This method deletes an NFS export.
+    summary: '[preview] This method deletes an NFS export.'
   get:
     parameters:
     - description: The unique NFS export ID.
       name: export_id
       required: true
+    preview: true
     response_body:
       schema: "{\n  \"description\": \"api_nfs_export_v3\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"The unique\
@@ -88,8 +90,8 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: This method retrieves the specified NFS export. Refer to the 'Modify
-      NFS Export' method for a description of the returned fields.
+    summary: '[preview] This method retrieves the specified NFS export. Refer to the
+      ''Modify NFS Export'' method for a description of the returned fields.'
   patch:
     parameters:
     - description: The unique NFS export ID.
@@ -102,6 +104,7 @@ methods:
     - description: ETag for expected version
       name: If-Match
       required: false
+    preview: true
     request_body:
       schema: "{\n  \"description\": \"api_nfs_export_patch_v3\",\n  \"type\": \"\
         object\",\n  \"properties\": {\n    \"id\": {\n      \"description\": \"The\
@@ -237,7 +240,7 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: This method modifies individual attributes of an NFS export.
+    summary: '[preview] This method modifies individual attributes of an NFS export.'
   put:
     parameters:
     - description: The unique NFS export ID.
@@ -250,6 +253,7 @@ methods:
     - description: ETag for expected version
       name: If-Match
       required: false
+    preview: true
     request_body:
       schema: "{\n  \"description\": \"api_nfs_export_v3\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"The unique\
@@ -385,7 +389,7 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: This method sets all attributes of an NFS export.
+    summary: '[preview] This method sets all attributes of an NFS export.'
 rest_endpoint: /v3/nfs/exports/{export_id}
 api_version: v3
 permalink: /rest-api-guide/nfs-methods/v3_nfs_exports_export_id.html

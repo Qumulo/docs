@@ -9,6 +9,7 @@ methods:
     - description: The member's unique ID
       name: member_id
       required: true
+    preview: false
     response_body: {}
     responses:
     - code: '200'
@@ -22,6 +23,7 @@ methods:
     - description: The member's unique ID
       name: member_id
       required: true
+    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_identity\",\n  \"type\": \"object\",\n\
         \  \"properties\": {\n    \"domain\": {\n      \"type\": \"string\",\n   \

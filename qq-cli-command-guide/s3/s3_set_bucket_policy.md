@@ -7,8 +7,9 @@ optional_options:
   name: --bucket
   required: true
 - alternate: []
-  help: The access policy file to upload. For an access policy template, use the --example
-    flag.
+  help: The access policy file to upload. For an access policy template, use the qq
+    s3_get_bucket_policy --example command. For what actions you are allowed use,
+    run the qq s3_bucket_policy_explain_access admin command on the bucket.
   name: --file
   required: true
 - alternate: []

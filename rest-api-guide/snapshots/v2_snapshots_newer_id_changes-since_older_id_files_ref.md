@@ -23,6 +23,7 @@ methods:
         smaller limit.
       name: limit
       required: false
+    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_snapshot_file_diff\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"entries\": {\n      \"type\": \"array\",\n \

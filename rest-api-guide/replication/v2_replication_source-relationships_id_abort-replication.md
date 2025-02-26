@@ -11,6 +11,7 @@ methods:
         of retrying the current one. Defaults to false if not specified.
       name: skip-active-policy-snapshot
       required: false
+    preview: false
     response_body: {}
     responses:
     - code: '200'

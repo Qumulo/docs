@@ -3,6 +3,7 @@ category: /Configured Node Management
 methods:
   get:
     parameters: []
+    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_node_state\",\n  \"type\": \"object\",\n\
         \  \"properties\": {\n    \"node_id\": {\n      \"description\": \"node-id\

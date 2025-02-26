@@ -3,6 +3,7 @@ category: /Roles
 methods:
   get:
     parameters: []
+    preview: false
     response_body: {}
     responses:
     - code: '200'
@@ -10,6 +11,7 @@ methods:
     summary: List all roles.
   post:
     parameters: []
+    preview: false
     request_body:
       schema: "{\n  \"description\": \"named_role_model\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"name\": {\n      \"description\": \"Name of\

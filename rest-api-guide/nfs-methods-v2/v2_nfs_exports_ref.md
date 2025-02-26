@@ -9,6 +9,7 @@ methods:
     - description: ETag for expected version
       name: If-Match
       required: false
+    preview: false
     response_body: {}
     responses:
     - code: '200'
@@ -19,6 +20,7 @@ methods:
     - description: A unique identifier of the NFS export, either ID or export path
       name: ref
       required: true
+    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_nfs_export\",\n  \"type\": \"object\",\n\
         \  \"properties\": {\n    \"id\": {\n      \"description\": \"The unique ID\
@@ -102,6 +104,7 @@ methods:
     - description: ETag for expected version
       name: If-Match
       required: false
+    preview: false
     request_body:
       schema: "{\n  \"description\": \"api_nfs_export_patch\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"The unique\
@@ -250,6 +253,7 @@ methods:
     - description: ETag for expected version
       name: If-Match
       required: false
+    preview: false
     request_body:
       schema: "{\n  \"description\": \"api_nfs_export\",\n  \"type\": \"object\",\n\
         \  \"properties\": {\n    \"id\": {\n      \"description\": \"The unique ID\

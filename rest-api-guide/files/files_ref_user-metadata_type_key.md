@@ -18,6 +18,7 @@ methods:
     - description: ETag for expected version
       name: If-Match
       required: false
+    preview: false
     response_body: {}
     responses:
     - code: '200'
@@ -42,6 +43,7 @@ methods:
         use. If not specified, use the head version.
       name: snapshot
       required: false
+    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_files_user_metadata_value\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"value\": {\n      \"type\": \"array\"\
@@ -70,6 +72,7 @@ methods:
     - description: ETag for expected version
       name: If-Match
       required: false
+    preview: false
     request_body:
       schema: "{\n  \"description\": \"api_files_user_metadata_value\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"value\": {\n      \"type\": \"array\"\
@@ -99,6 +102,7 @@ methods:
     - description: ETag for expected version
       name: If-Match
       required: false
+    preview: false
     request_body:
       schema: "{\n  \"description\": \"api_files_user_metadata_value\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"value\": {\n      \"type\": \"array\"\

@@ -3,6 +3,7 @@ category: /Version
 methods:
   get:
     parameters: []
+    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_version_info\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"revision_id\": {\n      \"description\": \"\

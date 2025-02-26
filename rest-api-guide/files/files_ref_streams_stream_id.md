@@ -12,6 +12,7 @@ methods:
     - description: Stream ID (uint64) to be deleted
       name: stream_id
       required: true
+    preview: false
     response_body: {}
     responses:
     - code: '200'

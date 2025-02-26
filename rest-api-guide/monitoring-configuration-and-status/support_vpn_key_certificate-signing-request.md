@@ -3,6 +3,7 @@ category: /Monitoring Configuration and Status
 methods:
   get:
     parameters: []
+    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_certificate_signing_request\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"request\": {\n      \"description\"\

@@ -4,7 +4,7 @@ The following table lists the S3 API actions that Qumulo Core supports and the v
 {{site.data.alerts.note}}
 <ul>
   <li>The S3 API became generally available in Qumulo Core 5.3.3. This guide doesn't document enabling or using API actions that became available with preview functionality in versions of Qumulo Core lower than 5.3.3.</li>
-  <li>The Qumulo S3 protocol creates data that supports all file system functionality, such as quotas, snapshots, replication, and Global Namespace functionality.</li>
+  <li>The Qumulo S3 protocol creates data that supports all file system functionality, such as quotas, snapshots, replication, and Cloud Data Fabric functionality.</li>
 </ul>
 {{site.data.alerts.end}}
 

@@ -3,6 +3,7 @@ category: /SMB File Administration
 methods:
   post:
     parameters: []
+    preview: false
     request_body:
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         api_file_handle\",\n    \"type\": \"object\",\n    \"properties\": {\n   \

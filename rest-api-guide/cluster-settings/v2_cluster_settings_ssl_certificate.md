@@ -3,6 +3,7 @@ category: /Cluster Settings
 methods:
   put:
     parameters: []
+    preview: false
     request_body:
       schema: "{\n  \"description\": \"api_cluster_ssl_settings\",\n  \"type\": \"\
         object\",\n  \"properties\": {\n    \"certificate\": {\n      \"description\"\

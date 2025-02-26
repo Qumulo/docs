@@ -3,6 +3,7 @@ category: /Snapshots
 methods:
   get:
     parameters: []
+    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_snapshot_capacity_used\",\n  \"type\":\
         \ \"object\",\n  \"properties\": {\n    \"bytes\": {\n      \"description\"\

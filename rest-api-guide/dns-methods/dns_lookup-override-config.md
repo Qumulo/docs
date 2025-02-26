@@ -3,6 +3,7 @@ category: /DNS Methods
 methods:
   get:
     parameters: []
+    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_dns_lookup_override_config\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"lookup_overrides\": {\n      \"\
@@ -24,6 +25,7 @@ methods:
     - description: ETag for expected version
       name: If-Match
       required: false
+    preview: false
     request_body:
       schema: "{\n  \"description\": \"api_dns_lookup_override_config\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"lookup_overrides\": {\n      \"\

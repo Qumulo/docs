@@ -3,6 +3,7 @@ category: /Object Storage
 methods:
   post:
     parameters: []
+    preview: false
     request_body:
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"type\": \"string\"\
         \n  }\n}"

@@ -71,6 +71,7 @@ methods:
         REST API resource.
       name: recursive
       required: false
+    preview: false
     response_body: {}
     responses:
     - code: '200'

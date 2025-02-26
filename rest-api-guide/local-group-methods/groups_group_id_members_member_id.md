@@ -9,6 +9,7 @@ methods:
     - description: The user's unique ID
       name: member_id
       required: true
+    preview: false
     response_body: {}
     responses:
     - code: '200'

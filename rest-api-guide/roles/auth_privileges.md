@@ -3,6 +3,7 @@ category: /Roles
 methods:
   get:
     parameters: []
+    preview: false
     response_body: {}
     responses:
     - code: '200'

@@ -3,6 +3,7 @@ category: /Encryption at Rest V2
 methods:
   get:
     parameters: []
+    preview: false
     response_body:
       schema: "{\n  \"description\": \"encryption_api_v2_status_response\",\n  \"\
         type\": \"object\",\n  \"properties\": {\n    \"type\": {\n      \"type\"\

@@ -9,6 +9,7 @@ methods:
     - description: Snapshot identifier
       name: snapshot_id
       required: true
+    preview: false
     response_body: {}
     responses:
     - code: '200'

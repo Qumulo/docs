@@ -3,6 +3,7 @@ category: /Session Management
 methods:
   post:
     parameters: []
+    preview: false
     request_body:
       schema: "{\n  \"description\": \"password_change\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"old_password\": {\n      \"description\": \"\

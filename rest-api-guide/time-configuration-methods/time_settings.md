@@ -3,6 +3,7 @@ category: /Time Configuration Methods
 methods:
   get:
     parameters: []
+    preview: false
     response_body:
       schema: "{\n  \"description\": \"conf_time_state\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"use_ad_for_primary\": {\n      \"description\"\
@@ -20,6 +21,7 @@ methods:
     - description: ETag for expected version
       name: If-Match
       required: false
+    preview: false
     request_body:
       schema: "{\n  \"description\": \"conf_time_state_patch\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"use_ad_for_primary\": {\n      \"description\"\
@@ -43,6 +45,7 @@ methods:
     - description: ETag for expected version
       name: If-Match
       required: false
+    preview: false
     request_body:
       schema: "{\n  \"description\": \"conf_time_state\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"use_ad_for_primary\": {\n      \"description\"\

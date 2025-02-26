@@ -3,6 +3,7 @@ category: /Active Directory
 methods:
   get:
     parameters: []
+    preview: false
     response_body:
       schema: "{\n  \"description\": \"ad_settings\",\n  \"type\": \"object\",\n \
         \ \"properties\": {\n    \"signing\": {\n      \"type\": \"string\",\n   \
@@ -31,6 +32,7 @@ methods:
     - description: ETag for expected version
       name: If-Match
       required: false
+    preview: false
     request_body:
       schema: "{\n  \"description\": \"ad_settings\",\n  \"type\": \"object\",\n \
         \ \"properties\": {\n    \"signing\": {\n      \"type\": \"string\",\n   \

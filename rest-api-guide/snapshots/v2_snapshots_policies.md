@@ -3,6 +3,7 @@ category: /Snapshots
 methods:
   get:
     parameters: []
+    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_snapshot_policies_v2\",\n  \"type\": \"\
         object\",\n  \"properties\": {\n    \"entries\": {\n      \"type\": \"array\"\
@@ -26,7 +27,7 @@ methods:
         : {\n                \"description\": \"Structure defining when to take snapshots\"\
         ,\n                \"type\": \"object\",\n                \"properties\":\
         \ {\n                  \"timezone\": {\n                    \"description\"\
-        : \"The timezone in which the schedule should be interpreted (e.g. America/Los_Angeles\
+        : \"The time zone in which the schedule should be interpreted (e.g. America/Los_Angeles\
         \ or UTC).\",\n                    \"type\": \"string\"\n                \
         \  },\n                  \"frequency\": {\n                    \"type\": \"\
         string\",\n                    \"enum\": [\n                      \"SCHEDULE_MONTHLY\"\
@@ -104,6 +105,7 @@ methods:
     summary: Returns information about all snapshot policies.
   post:
     parameters: []
+    preview: false
     request_body:
       schema: "{\n  \"description\": \"api_snapshot_policy_create_v2\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"policy_name\": {\n      \"description\"\
@@ -121,7 +123,7 @@ methods:
         \ },\n        \"creation_schedule\": {\n          \"description\": \"Structure\
         \ defining when to take snapshots\",\n          \"type\": \"object\",\n  \
         \        \"properties\": {\n            \"timezone\": {\n              \"\
-        description\": \"The timezone in which the schedule should be interpreted\
+        description\": \"The time zone in which the schedule should be interpreted\
         \ (e.g. America/Los_Angeles or UTC).\",\n              \"type\": \"string\"\
         \n            },\n            \"frequency\": {\n              \"type\": \"\
         string\",\n              \"enum\": [\n                \"SCHEDULE_MONTHLY\"\
@@ -202,7 +204,7 @@ methods:
         ,\n          \"type\": \"number\"\n        },\n        \"creation_schedule\"\
         : {\n          \"description\": \"Structure defining when to take snapshots\"\
         ,\n          \"type\": \"object\",\n          \"properties\": {\n        \
-        \    \"timezone\": {\n              \"description\": \"The timezone in which\
+        \    \"timezone\": {\n              \"description\": \"The time zone in which\
         \ the schedule should be interpreted (e.g. America/Los_Angeles or UTC).\"\
         ,\n              \"type\": \"string\"\n            },\n            \"frequency\"\
         : {\n              \"type\": \"string\",\n              \"enum\": [\n    \
