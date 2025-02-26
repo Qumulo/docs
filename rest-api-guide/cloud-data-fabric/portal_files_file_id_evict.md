@@ -23,4 +23,6 @@ rest_endpoint: /v1/portal/files/{file_id}/evict
 api_version: v1
 permalink: /rest-api-guide/cloud-data-fabric/portal_files_file_id_evict.html
 sidebar: rest_api_guide_sidebar
+redirect_from:
+  - /rest-api-guide/global-namespace/portal_files_file_id_evict.html
 ---
