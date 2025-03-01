@@ -6,6 +6,7 @@ methods:
     - description: The login name to use to lookup its UID numbers
       name: login_name
       required: true
+    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_ldap_login_name_to_uid_numbers\",\n  \"\
         type\": \"object\",\n  \"properties\": {\n    \"login_name\": {\n      \"\

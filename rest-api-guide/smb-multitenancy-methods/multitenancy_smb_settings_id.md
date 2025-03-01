@@ -9,17 +9,19 @@ methods:
     - description: ETag for expected version
       name: If-Match
       required: false
+    preview: true
     response_body: {}
     responses:
     - code: '200'
       description: Return value on success
-    summary: Delete current SMB configuration, restoring the global settings for this
-      tenant.
+    summary: '[preview] Delete current SMB configuration, restoring the global settings
+      for this tenant.'
   get:
     parameters:
     - description: The tenant ID of the SMB settings.
       name: id
       required: true
+    preview: true
     response_body:
       schema: "{\n  \"description\": \"api_smb_settings\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"session_encryption\": {\n      \"type\": \"\
@@ -53,7 +55,7 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Retrieve current tenant-specific SMB configuration.
+    summary: '[preview] Retrieve current tenant-specific SMB configuration.'
   patch:
     parameters:
     - description: The tenant ID of the SMB settings.
@@ -62,6 +64,7 @@ methods:
     - description: ETag for expected version
       name: If-Match
       required: false
+    preview: true
     request_body:
       schema: "{\n  \"description\": \"api_smb_settings_patch\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"session_encryption\": {\n      \"type\": \"\
@@ -125,7 +128,7 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Modify current tenant-specific SMB configuration.
+    summary: '[preview] Modify current tenant-specific SMB configuration.'
   put:
     parameters:
     - description: The tenant ID of the SMB settings.
@@ -134,6 +137,7 @@ methods:
     - description: ETag for expected version
       name: If-Match
       required: false
+    preview: true
     request_body:
       schema: "{\n  \"description\": \"api_smb_settings\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"session_encryption\": {\n      \"type\": \"\
@@ -197,7 +201,7 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Set current tenant-specific SMB configuration.
+    summary: '[preview] Set current tenant-specific SMB configuration.'
 rest_endpoint: /v1/multitenancy/smb/settings/{id}
 api_version: v1
 permalink: /rest-api-guide/smb-multitenancy-methods/multitenancy_smb_settings_id.html

@@ -17,6 +17,7 @@ methods:
         because retrieving the file lock requires READ_ACL permissions.
       name: retrieve-file-lock
       required: false
+    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_get_files_attributes\",\n  \"type\": \"\
         object\",\n  \"properties\": {\n    \"path\": {\n      \"description\": \"\
@@ -138,6 +139,7 @@ methods:
     - description: ETag for expected version
       name: If-Match
       required: false
+    preview: false
     request_body:
       schema: "{\n  \"description\": \"api_settable_files_attributes\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"path\": {\n      \"description\"\

@@ -6,6 +6,7 @@ methods:
     - description: The SID to use to looukup a username
       name: sid
       required: true
+    preview: false
     response_body:
       schema: "{\n  \"type\": \"string\"\n}"
     responses:

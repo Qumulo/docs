@@ -27,6 +27,7 @@ methods:
         possible, up to length. Will read the whole file if not specified.
       name: length
       required: false
+    preview: false
     response_body: {}
     responses:
     - code: '200'
@@ -55,6 +56,7 @@ methods:
     - description: ETag for expected version
       name: If-Match
       required: false
+    preview: false
     request_body:
       schema: "{\n  \"type\": \"object\"\n}"
     response_body:
@@ -86,6 +88,7 @@ methods:
     - description: ETag for expected version
       name: If-Match
       required: false
+    preview: false
     request_body:
       schema: "{\n  \"type\": \"object\"\n}"
     response_body:

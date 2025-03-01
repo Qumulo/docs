@@ -3,6 +3,7 @@ category: /Local User Methods
 methods:
   get:
     parameters: []
+    preview: false
     response_body:
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         api_user\",\n    \"type\": \"object\",\n    \"properties\": {\n      \"id\"\
@@ -25,6 +26,7 @@ methods:
       method for a description of the returned fields.
   post:
     parameters: []
+    preview: false
     request_body:
       schema: "{\n  \"description\": \"api_user_post\",\n  \"type\": \"object\",\n\
         \  \"properties\": {\n    \"name\": {\n      \"description\": \"The user's\

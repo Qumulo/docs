@@ -3,6 +3,7 @@ category: /DNS Config Methods
 methods:
   get:
     parameters: []
+    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_dns_config\",\n  \"type\": \"object\",\n\
         \  \"properties\": {\n    \"id\": {\n      \"description\": \"Unique identifier\
@@ -31,6 +32,7 @@ methods:
     - description: ETag for expected version
       name: If-Match
       required: false
+    preview: false
     request_body:
       schema: "{\n  \"description\": \"api_system_dns_config_patch\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"dns_servers\": {\n      \"type\"\

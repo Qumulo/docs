@@ -12,6 +12,7 @@ methods:
     - description: ETag for expected version
       name: If-Match
       required: false
+    preview: false
     request_body:
       schema: "{\n  \"description\": \"api_files_copy_chunk\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"source_id\": {\n      \"description\": \"File\

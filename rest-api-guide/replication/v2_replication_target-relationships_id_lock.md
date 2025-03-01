@@ -6,6 +6,7 @@ methods:
     - description: Relationship identifier
       name: id
       required: true
+    preview: false
     request_body:
       schema: "{\n  \"description\": \"api_target_relationship_lock\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"lock_key_ref\": {\n      \"description\"\

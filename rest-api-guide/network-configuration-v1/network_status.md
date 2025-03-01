@@ -3,6 +3,7 @@ category: /Network Configuration V1
 methods:
   get:
     parameters: []
+    preview: false
     response_body:
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         api_network_status_response\",\n    \"type\": \"object\",\n    \"properties\"\
@@ -19,33 +20,34 @@ methods:
         : \"Node Id\",\n            \"type\": \"number\"\n          },\n         \
         \ \"assigned_by\": {\n            \"type\": \"string\",\n            \"enum\"\
         : [\n              \"DHCP\",\n              \"STATIC\",\n              \"\
-        LINK_LOCAL\"\n            ],\n            \"description\": \"How to assign\
-        \ IP address, either DHCP or STATIC:\\n * `DHCP` - NETWORK_ASSIGNED_BY_DHCP,\\\
-        n * `LINK_LOCAL` - NETWORK_ASSIGNED_BY_LINK_LOCAL,\\n * `STATIC` - NETWORK_ASSIGNED_BY_STATIC\"\
-        \n          },\n          \"address\": {\n            \"description\": \"\
-        The IPv4 or IPv6 address in 0.0.0.0 or :: format\",\n            \"type\"\
-        : \"string\"\n          },\n          \"floating_addresses\": {\n        \
-        \    \"type\": \"array\",\n            \"items\": {\n              \"description\"\
-        : \"Floating IPv4 or IPv6 addresses in 0.0.0.0 or :: format\",\n         \
-        \     \"type\": \"string\"\n            }\n          },\n          \"netmask\"\
-        : {\n            \"description\": \"The IPv4 or IPv6 netmask in 0.0.0.0 or\
-        \ :: format, or the IPv4 or IPv6 subnet CIDR\",\n            \"type\": \"\
-        string\"\n          },\n          \"gateway\": {\n            \"description\"\
-        : \"The IPv4 gateway in 0.0.0.0 format\",\n            \"type\": \"string\"\
-        \n          },\n          \"gateway_ipv6\": {\n            \"description\"\
-        : \"The IPv6 gateway in :: format\",\n            \"type\": \"string\"\n \
-        \         },\n          \"dns_servers\": {\n            \"type\": \"array\"\
-        ,\n            \"items\": {\n              \"description\": \"The list of\
-        \ DNS servers\",\n              \"type\": \"string\"\n            }\n    \
-        \      },\n          \"dns_search_domains\": {\n            \"type\": \"array\"\
-        ,\n            \"items\": {\n              \"description\": \"The list of\
-        \ DNS search domains\",\n              \"type\": \"string\"\n            }\n\
-        \          },\n          \"mtu\": {\n            \"description\": \"The maximum\
-        \ transfer unit in bytes\",\n            \"type\": \"number\"\n          },\n\
-        \          \"bonding_mode\": {\n            \"type\": \"string\",\n      \
-        \      \"enum\": [\n              \"ACTIVE_BACKUP\",\n              \"IEEE_8023AD\"\
-        \n            ],\n            \"description\": \"Ethernet bonding mode (ACTIVE_BACKUP\
-        \ or IEEE_8023AD), if the interface is bonded.:\\n * `ACTIVE_BACKUP` - BONDING_MODE_ACTIVE_BACKUP,\\\
+        LINK_LOCAL\",\n              \"HOST\"\n            ],\n            \"description\"\
+        : \"How to assign IP address, either DHCP or STATIC:\\n * `DHCP` - NETWORK_ASSIGNED_BY_DHCP,\\\
+        n * `HOST` - NETWORK_ASSIGNED_BY_HOST,\\n * `LINK_LOCAL` - NETWORK_ASSIGNED_BY_LINK_LOCAL,\\\
+        n * `STATIC` - NETWORK_ASSIGNED_BY_STATIC\"\n          },\n          \"address\"\
+        : {\n            \"description\": \"The IPv4 or IPv6 address in 0.0.0.0 or\
+        \ :: format\",\n            \"type\": \"string\"\n          },\n         \
+        \ \"floating_addresses\": {\n            \"type\": \"array\",\n          \
+        \  \"items\": {\n              \"description\": \"Floating IPv4 or IPv6 addresses\
+        \ in 0.0.0.0 or :: format\",\n              \"type\": \"string\"\n       \
+        \     }\n          },\n          \"netmask\": {\n            \"description\"\
+        : \"The IPv4 or IPv6 netmask in 0.0.0.0 or :: format, or the IPv4 or IPv6\
+        \ subnet CIDR\",\n            \"type\": \"string\"\n          },\n       \
+        \   \"gateway\": {\n            \"description\": \"The IPv4 gateway in 0.0.0.0\
+        \ format\",\n            \"type\": \"string\"\n          },\n          \"\
+        gateway_ipv6\": {\n            \"description\": \"The IPv6 gateway in :: format\"\
+        ,\n            \"type\": \"string\"\n          },\n          \"dns_servers\"\
+        : {\n            \"type\": \"array\",\n            \"items\": {\n        \
+        \      \"description\": \"The list of DNS servers\",\n              \"type\"\
+        : \"string\"\n            }\n          },\n          \"dns_search_domains\"\
+        : {\n            \"type\": \"array\",\n            \"items\": {\n        \
+        \      \"description\": \"The list of DNS search domains\",\n            \
+        \  \"type\": \"string\"\n            }\n          },\n          \"mtu\": {\n\
+        \            \"description\": \"The maximum transfer unit in bytes\",\n  \
+        \          \"type\": \"number\"\n          },\n          \"bonding_mode\"\
+        : {\n            \"type\": \"string\",\n            \"enum\": [\n        \
+        \      \"ACTIVE_BACKUP\",\n              \"IEEE_8023AD\"\n            ],\n\
+        \            \"description\": \"Ethernet bonding mode (ACTIVE_BACKUP or IEEE_8023AD),\
+        \ if the interface is bonded.:\\n * `ACTIVE_BACKUP` - BONDING_MODE_ACTIVE_BACKUP,\\\
         n * `IEEE_8023AD` - BONDING_MODE_IEEE_8023AD\"\n          }\n        }\n \
         \     },\n      \"network_details\": {\n        \"description\": \"network_details\"\
         ,\n        \"type\": \"object\",\n        \"properties\": {\n          \"\

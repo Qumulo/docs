@@ -9,6 +9,7 @@ methods:
         \ - exclude_in_delete,\n * `only_in_delete` - only_in_delete"
       name: filter
       required: true
+    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_snapshots\",\n  \"type\": \"object\",\n\
         \  \"properties\": {\n    \"entries\": {\n      \"type\": \"array\",\n   \
@@ -38,6 +39,7 @@ methods:
     summary: Returns information about all snapshots.
   post:
     parameters: []
+    preview: false
     request_body:
       schema: "{\n  \"description\": \"api_snapshot_create\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"name_suffix\": {\n      \"description\": \"\

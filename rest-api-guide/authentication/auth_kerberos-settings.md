@@ -3,6 +3,7 @@ category: /Authentication
 methods:
   get:
     parameters: []
+    preview: false
     response_body:
       schema: "{\n  \"description\": \"kerberos_config\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"use_alt_security_identities_mapping\": {\n \
@@ -17,6 +18,7 @@ methods:
     - description: ETag for expected version
       name: If-Match
       required: false
+    preview: false
     request_body:
       schema: "{\n  \"description\": \"kerberos_config\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"use_alt_security_identities_mapping\": {\n \

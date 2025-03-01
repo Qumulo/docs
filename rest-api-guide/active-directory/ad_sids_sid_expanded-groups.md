@@ -7,6 +7,7 @@ methods:
         SID belongs to (this includes all nested groups).
       name: sid
       required: true
+    preview: false
     response_body:
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         api_ad_group_sid\",\n    \"type\": \"object\",\n    \"properties\": {\n  \

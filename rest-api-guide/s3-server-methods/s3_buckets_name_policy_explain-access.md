@@ -6,6 +6,7 @@ methods:
     - description: Bucket name
       name: name
       required: true
+    preview: false
     request_body:
       schema: "{\n  \"description\": \"api_bucket_policy_access_explanation_options\"\
         ,\n  \"type\": \"object\",\n  \"properties\": {\n    \"identity\": {\n   \

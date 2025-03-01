@@ -9,6 +9,7 @@ methods:
     - description: ETag for expected version
       name: If-Match
       required: false
+    preview: false
     response_body: {}
     responses:
     - code: '200'
@@ -20,6 +21,7 @@ methods:
     - description: Relationship identifier
       name: id
       required: true
+    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_source_relationship\",\n  \"type\": \"\
         object\",\n  \"properties\": {\n    \"id\": {\n      \"description\": \"Unique\
@@ -44,7 +46,7 @@ methods:
         \ REPLICATION_CONTINUOUS,\\n * `REPLICATION_SNAPSHOT_POLICY` - REPLICATION_SNAPSHOT_POLICY,\\\
         n * `REPLICATION_SNAPSHOT_POLICY_WITH_CONTINUOUS` - REPLICATION_SNAPSHOT_POLICY_WITH_CONTINUOUS\"\
         \n    },\n    \"blackout_window_timezone\": {\n      \"description\": \"The\
-        \ timezone in which the blackout windows should be interpreted (e.g, America/Los_Angeles\
+        \ time zone in which the blackout windows should be interpreted (e.g, America/Los_Angeles\
         \ or UTC)\",\n      \"type\": \"string\"\n    },\n    \"blackout_windows\"\
         : {\n      \"type\": \"array\",\n      \"items\": {\n        \"description\"\
         : \"List of blackout windows for the relationship\",\n        \"type\": \"\
@@ -99,6 +101,7 @@ methods:
     - description: ETag for expected version
       name: If-Match
       required: false
+    preview: false
     request_body:
       schema: "{\n  \"description\": \"api_source_relationship\",\n  \"type\": \"\
         object\",\n  \"properties\": {\n    \"id\": {\n      \"description\": \"Unique\
@@ -123,7 +126,7 @@ methods:
         \ REPLICATION_CONTINUOUS,\\n * `REPLICATION_SNAPSHOT_POLICY` - REPLICATION_SNAPSHOT_POLICY,\\\
         n * `REPLICATION_SNAPSHOT_POLICY_WITH_CONTINUOUS` - REPLICATION_SNAPSHOT_POLICY_WITH_CONTINUOUS\"\
         \n    },\n    \"blackout_window_timezone\": {\n      \"description\": \"The\
-        \ timezone in which the blackout windows should be interpreted (e.g, America/Los_Angeles\
+        \ time zone in which the blackout windows should be interpreted (e.g, America/Los_Angeles\
         \ or UTC)\",\n      \"type\": \"string\"\n    },\n    \"blackout_windows\"\
         : {\n      \"type\": \"array\",\n      \"items\": {\n        \"description\"\
         : \"List of blackout windows for the relationship\",\n        \"type\": \"\
@@ -189,7 +192,7 @@ methods:
         \ REPLICATION_CONTINUOUS,\\n * `REPLICATION_SNAPSHOT_POLICY` - REPLICATION_SNAPSHOT_POLICY,\\\
         n * `REPLICATION_SNAPSHOT_POLICY_WITH_CONTINUOUS` - REPLICATION_SNAPSHOT_POLICY_WITH_CONTINUOUS\"\
         \n    },\n    \"blackout_window_timezone\": {\n      \"description\": \"The\
-        \ timezone in which the blackout windows should be interpreted (e.g, America/Los_Angeles\
+        \ time zone in which the blackout windows should be interpreted (e.g, America/Los_Angeles\
         \ or UTC)\",\n      \"type\": \"string\"\n    },\n    \"blackout_windows\"\
         : {\n      \"type\": \"array\",\n      \"items\": {\n        \"description\"\
         : \"List of blackout windows for the relationship\",\n        \"type\": \"\
@@ -244,6 +247,7 @@ methods:
     - description: ETag for expected version
       name: If-Match
       required: false
+    preview: false
     request_body:
       schema: "{\n  \"description\": \"api_source_relationship\",\n  \"type\": \"\
         object\",\n  \"properties\": {\n    \"id\": {\n      \"description\": \"Unique\
@@ -268,7 +272,7 @@ methods:
         \ REPLICATION_CONTINUOUS,\\n * `REPLICATION_SNAPSHOT_POLICY` - REPLICATION_SNAPSHOT_POLICY,\\\
         n * `REPLICATION_SNAPSHOT_POLICY_WITH_CONTINUOUS` - REPLICATION_SNAPSHOT_POLICY_WITH_CONTINUOUS\"\
         \n    },\n    \"blackout_window_timezone\": {\n      \"description\": \"The\
-        \ timezone in which the blackout windows should be interpreted (e.g, America/Los_Angeles\
+        \ time zone in which the blackout windows should be interpreted (e.g, America/Los_Angeles\
         \ or UTC)\",\n      \"type\": \"string\"\n    },\n    \"blackout_windows\"\
         : {\n      \"type\": \"array\",\n      \"items\": {\n        \"description\"\
         : \"List of blackout windows for the relationship\",\n        \"type\": \"\
@@ -334,7 +338,7 @@ methods:
         \ REPLICATION_CONTINUOUS,\\n * `REPLICATION_SNAPSHOT_POLICY` - REPLICATION_SNAPSHOT_POLICY,\\\
         n * `REPLICATION_SNAPSHOT_POLICY_WITH_CONTINUOUS` - REPLICATION_SNAPSHOT_POLICY_WITH_CONTINUOUS\"\
         \n    },\n    \"blackout_window_timezone\": {\n      \"description\": \"The\
-        \ timezone in which the blackout windows should be interpreted (e.g, America/Los_Angeles\
+        \ time zone in which the blackout windows should be interpreted (e.g, America/Los_Angeles\
         \ or UTC)\",\n      \"type\": \"string\"\n    },\n    \"blackout_windows\"\
         : {\n      \"type\": \"array\",\n      \"items\": {\n        \"description\"\
         : \"List of blackout windows for the relationship\",\n        \"type\": \"\

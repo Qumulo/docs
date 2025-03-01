@@ -17,8 +17,8 @@ optional_options:
   name: -p
   required: false
 - alternate: []
-  help: Full path to the prospective directory that will serve as the hub portal root
-    directory
+  help: The full path to the prospective directory that will serve as the hub portal
+    root directory
   name: --hub-root
   required: true
 - alternate:

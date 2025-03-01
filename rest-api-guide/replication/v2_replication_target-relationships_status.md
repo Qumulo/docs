@@ -3,6 +3,7 @@ category: /Replication
 methods:
   get:
     parameters: []
+    preview: false
     response_body:
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         api_target_relationship_status\",\n    \"type\": \"object\",\n    \"properties\"\

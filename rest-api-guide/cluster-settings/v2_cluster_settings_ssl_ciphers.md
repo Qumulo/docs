@@ -3,6 +3,7 @@ category: /Cluster Settings
 methods:
   get:
     parameters: []
+    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_cluster_ssl_ciphers\",\n  \"type\": \"\
         object\",\n  \"properties\": {\n    \"tls_1_2\": {\n      \"type\": \"array\"\
@@ -20,6 +21,7 @@ methods:
     - description: ETag for expected version
       name: If-Match
       required: false
+    preview: false
     request_body:
       schema: "{\n  \"description\": \"api_cluster_ssl_ciphers\",\n  \"type\": \"\
         object\",\n  \"properties\": {\n    \"tls_1_2\": {\n      \"type\": \"array\"\

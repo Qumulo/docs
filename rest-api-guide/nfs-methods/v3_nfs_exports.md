@@ -3,6 +3,7 @@ category: /NFS Methods
 methods:
   get:
     parameters: []
+    preview: true
     response_body:
       schema: "{\n  \"description\": \"api_nfs_exports_v3\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"entries\": {\n      \"type\": \"array\",\n \
@@ -84,14 +85,15 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: This method lists NFS exports. Refer to the 'Modify NFS Export' method
-      for a description of the returned fields.
+    summary: '[preview] This method lists NFS exports. Refer to the ''Modify NFS Export''
+      method for a description of the returned fields.'
   post:
     parameters:
     - description: Specifies whether the file system path can be created if it does
         not already exist.
       name: allow-fs-path-create
       required: false
+    preview: true
     request_body:
       schema: "{\n  \"description\": \"api_nfs_export_post_v3\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"export_path\": {\n      \"description\": \"\
@@ -226,7 +228,7 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: This method adds an NFS export.
+    summary: '[preview] This method adds an NFS export.'
 rest_endpoint: /v3/nfs/exports/
 api_version: v3
 permalink: /rest-api-guide/nfs-methods/v3_nfs_exports.html

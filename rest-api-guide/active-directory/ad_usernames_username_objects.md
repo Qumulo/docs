@@ -6,6 +6,7 @@ methods:
     - description: The sAMAccountName to use to look up AD users or groups.
       name: username
       required: true
+    preview: false
     response_body:
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         ad_ldap_object\",\n    \"type\": \"object\",\n    \"properties\": {\n    \

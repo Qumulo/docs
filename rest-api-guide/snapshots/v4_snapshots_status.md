@@ -8,6 +8,7 @@ methods:
         snapshots, and unlocked snapshots. By default, includes all snapshots.
       name: filter
       required: false
+    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_snapshot_statuses\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"entries\": {\n      \"type\": \"array\",\n \

@@ -9,6 +9,7 @@ methods:
     - description: ETag for expected version
       name: If-Match
       required: false
+    preview: false
     request_body:
       schema: "{\n  \"description\": \"api_change_lock_key_replace_request\",\n  \"\
         type\": \"object\",\n  \"properties\": {\n    \"replacement_key\": {\n   \

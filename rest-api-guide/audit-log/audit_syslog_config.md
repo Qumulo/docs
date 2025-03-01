@@ -3,6 +3,7 @@ category: /Audit Log
 methods:
   get:
     parameters: []
+    preview: false
     response_body:
       schema: "{\n  \"description\": \"syslog_audit_config\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"enabled\": {\n      \"description\": \"Enable\
@@ -25,6 +26,7 @@ methods:
     - description: ETag for expected version
       name: If-Match
       required: false
+    preview: false
     request_body:
       schema: "{\n  \"description\": \"syslog_audit_config_delta\",\n  \"type\": \"\
         object\",\n  \"properties\": {\n    \"enabled\": {\n      \"description\"\
@@ -60,6 +62,7 @@ methods:
     - description: ETag for expected version
       name: If-Match
       required: false
+    preview: false
     request_body:
       schema: "{\n  \"description\": \"syslog_audit_config\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"enabled\": {\n      \"description\": \"Enable\

@@ -3,6 +3,7 @@ category: /FTP Methods
 methods:
   get:
     parameters: []
+    preview: false
     response_body:
       schema: "{\n  \"description\": \"ftp_status\",\n  \"type\": \"object\",\n  \"\
         properties\": {\n    \"settings\": {\n      \"description\": \"The current\

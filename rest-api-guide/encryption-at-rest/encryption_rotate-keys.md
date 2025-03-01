@@ -3,6 +3,7 @@ category: /Encryption at Rest
 methods:
   post:
     parameters: []
+    preview: false
     response_body: {}
     responses:
     - code: '200'

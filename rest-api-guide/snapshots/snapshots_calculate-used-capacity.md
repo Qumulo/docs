@@ -3,6 +3,7 @@ category: /Snapshots
 methods:
   post:
     parameters: []
+    preview: false
     request_body:
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"type\": \"number\"\
         \n  }\n}"

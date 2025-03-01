@@ -125,7 +125,7 @@ install_docker() {
       sudo service docker start
       echo -e "\e[31mFor the group change to take effect, you must log out of the system and then log back in.\e[0m"
       echo -e "\e[31mLog out now? (y/n)\e[0m"
-      read -r logout_now     
+      read -r logout_now
       if [ "$logout_now" = "y" ]; then
         echo "Logging out..."
         pkill -KILL -u "$(whoami)"
@@ -384,7 +384,7 @@ find_unused_scripts() {
     fi
 }
 
-check_docs_internal_repo
+# check_docs_internal_repo
 install_docker
 install_noto_emoji
 

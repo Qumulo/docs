@@ -17,7 +17,7 @@ entries:
       title: Documentation Home
       url: /index.html
     - output: web
-      title: Guide Table of Contents
+      title: Qumulo qq CLI Command Guide Home
       url: /qq-cli-command-guide/
     - output: web
       title: Contacting the Qumulo Care Team
@@ -252,6 +252,13 @@ entries:
     output: web,pdf
     title: cluster
     url: /qq-cli-command-guide/cluster/
+  - folderitems:
+    - output: web,pdf
+      title: container_restart
+      url: /qq-cli-command-guide/container/container_restart.html
+    output: web,pdf
+    title: container
+    url: /qq-cli-command-guide/container/
   - folderitems:
     - output: web,pdf
       title: create_object_backed_cluster
@@ -772,17 +779,11 @@ entries:
       title: portal_delete_spoke
       url: /qq-cli-command-guide/portal/portal_delete_spoke.html
     - output: web,pdf
-      title: portal_evict_data
-      url: /qq-cli-command-guide/portal/portal_evict_data.html
-    - output: web,pdf
-      title: portal_evict_link
-      url: /qq-cli-command-guide/portal/portal_evict_link.html
-    - output: web,pdf
-      title: portal_evict_tree
-      url: /qq-cli-command-guide/portal/portal_evict_tree.html
-    - output: web,pdf
       title: portal_get_eviction_settings
       url: /qq-cli-command-guide/portal/portal_get_eviction_settings.html
+    - output: web,pdf
+      title: portal_get_file_system
+      url: /qq-cli-command-guide/portal/portal_get_file_system.html
     - output: web,pdf
       title: portal_get_hub
       url: /qq-cli-command-guide/portal/portal_get_hub.html
@@ -792,6 +793,9 @@ entries:
     - output: web,pdf
       title: portal_list
       url: /qq-cli-command-guide/portal/portal_list.html
+    - output: web,pdf
+      title: portal_list_file_systems
+      url: /qq-cli-command-guide/portal/portal_list_file_systems.html
     - output: web,pdf
       title: portal_list_hubs
       url: /qq-cli-command-guide/portal/portal_list_hubs.html

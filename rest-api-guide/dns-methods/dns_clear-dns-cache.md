@@ -3,6 +3,7 @@ category: /DNS Methods
 methods:
   post:
     parameters: []
+    preview: false
     request_body:
       schema: "{\n  \"description\": \"api_dns_clear_cache\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"dns_config_id\": {\n      \"description\": \"\

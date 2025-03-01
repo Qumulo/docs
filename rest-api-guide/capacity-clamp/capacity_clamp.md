@@ -3,6 +3,7 @@ category: /Capacity Clamp
 methods:
   get:
     parameters: []
+    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_capacity_clamp\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"capacity_clamp\": {\n      \"description\":\
@@ -17,6 +18,7 @@ methods:
       of the maximum capacity of the underlying storage.
   put:
     parameters: []
+    preview: false
     request_body:
       schema: "{\n  \"description\": \"api_capacity_clamp\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"capacity_clamp\": {\n      \"description\":\

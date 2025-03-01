@@ -6,6 +6,7 @@ methods:
     - description: Directory ID
       name: id
       required: true
+    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_files_quota_status\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"Unique ID\

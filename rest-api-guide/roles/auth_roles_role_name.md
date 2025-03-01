@@ -9,6 +9,7 @@ methods:
     - description: ETag for expected version
       name: If-Match
       required: false
+    preview: false
     response_body: {}
     responses:
     - code: '200'
@@ -19,6 +20,7 @@ methods:
     - description: The name of the role (This page URL-encodes the name for you)
       name: role_name
       required: true
+    preview: false
     response_body:
       schema: "{\n  \"description\": \"role_model\",\n  \"type\": \"object\",\n  \"\
         properties\": {\n    \"description\": {\n      \"description\": \"Description\
@@ -235,6 +237,7 @@ methods:
     - description: ETag for expected version
       name: If-Match
       required: false
+    preview: false
     request_body:
       schema: "{\n  \"description\": \"role_model_delta\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"description\": {\n      \"description\": \"\
@@ -655,6 +658,7 @@ methods:
     - description: ETag for expected version
       name: If-Match
       required: false
+    preview: false
     request_body:
       schema: "{\n  \"description\": \"role_model\",\n  \"type\": \"object\",\n  \"\
         properties\": {\n    \"description\": {\n      \"description\": \"Description\

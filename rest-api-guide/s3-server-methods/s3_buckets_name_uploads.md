@@ -14,6 +14,7 @@ methods:
         smaller limit.
       name: limit
       required: false
+    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_upload_description_list_model\",\n  \"\
         type\": \"object\",\n  \"properties\": {\n    \"uploads\": {\n      \"type\"\

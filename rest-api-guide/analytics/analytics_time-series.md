@@ -7,6 +7,7 @@ methods:
         seconds. If not specified, defaults to the current system time.
       name: begin-time
       required: false
+    preview: false
     response_body:
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         api_time_series_dataset\",\n    \"type\": \"object\",\n    \"properties\"\

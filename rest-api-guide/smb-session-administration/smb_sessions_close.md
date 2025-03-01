@@ -3,6 +3,7 @@ category: /SMB Session Administration
 methods:
   post:
     parameters: []
+    preview: false
     request_body:
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         api_smb_session_info\",\n    \"type\": \"object\",\n    \"properties\": {\n\

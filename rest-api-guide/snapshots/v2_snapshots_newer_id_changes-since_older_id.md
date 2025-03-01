@@ -17,6 +17,7 @@ methods:
         smaller limit.
       name: limit
       required: false
+    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_snapshot_tree_diff\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"entries\": {\n      \"type\": \"array\",\n \
@@ -24,10 +25,11 @@ methods:
         : \"object\",\n        \"properties\": {\n          \"op\": {\n          \
         \  \"type\": \"string\",\n            \"enum\": [\n              \"CREATE\"\
         ,\n              \"MODIFY\",\n              \"DELETE\"\n            ],\n \
-        \           \"description\": \"op:\\n * `CREATE` - CREATE,\\n * `DELETE` -\
-        \ DELETE,\\n * `MODIFY` - MODIFY\"\n          },\n          \"path\": {\n\
-        \            \"description\": \"path\",\n            \"type\": \"string\"\n\
-        \          }\n        }\n      }\n    }\n  }\n}"
+        \           \"description\": \"op:\\n * `CREATE` - API_SNAPSHOT_TREE_DIFF_OP_CREATE,\\\
+        n * `DELETE` - API_SNAPSHOT_TREE_DIFF_OP_DELETE,\\n * `MODIFY` - API_SNAPSHOT_TREE_DIFF_OP_MODIFY\"\
+        \n          },\n          \"path\": {\n            \"description\": \"path\"\
+        ,\n            \"type\": \"string\"\n          }\n        }\n      }\n   \
+        \ }\n  }\n}"
     responses:
     - code: '200'
       description: Return value on success

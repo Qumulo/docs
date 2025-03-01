@@ -6,6 +6,7 @@ methods:
     - description: The username to use to look up SIDs
       name: username
       required: true
+    preview: false
     response_body:
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"type\": \"string\"\
         \n  }\n}"
