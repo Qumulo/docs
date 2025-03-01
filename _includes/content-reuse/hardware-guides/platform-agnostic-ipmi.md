@@ -1,4 +1,4 @@
-{% if page.platform != 'goldTier' %}## Step 1: Connecting the Out-of-Band Management (IPMI) Port{% elsif page.platform == 'goldTier' %}##How the IPMI Port Works{% endif %}
+{% if page.platform != 'goldTier' %}## Step 1: Connecting the Out-of-Band Management (IPMI) Port{% elsif page.platform == 'goldTier' %}## How the IPMI Port Works{% endif %}
 
 The dedicated out-of-band management port allows functionality such as remote display, control, and power. {% if page.platform != 'goldTier' %}The port uses the Intelligent Platform Management Interface (IPMI) protocol.{% endif %}
 

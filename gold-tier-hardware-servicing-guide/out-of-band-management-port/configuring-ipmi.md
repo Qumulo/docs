@@ -1,5 +1,5 @@
 ---
-title: "Configuring the Intelligent Platform Management Interface (IPMI) Out-of-Band Management Port"
+title: "Configuring the Intelligent Platform Management Interface (IPMI) Port"
 summary: "This section explains how to configure the out-of-band management port on platforms that use the Intelligent Platform Management Interface (IPMI)."
 permalink: /gold-tier-hardware-servicing-guide/out-of-band-management-port/configuring-ipmi.html
 redirect_from:

@@ -1,5 +1,5 @@
 ---
-title: "Configuring the Integrated Lights Out (iLO) Out-of-Band Management Port"
+title: "Configuring the Integrated Lights Out (iLO) Port"
 summary: "This section explains how to configure the out-of-band management port on platforms that use the Integrated Lights Out (iLO) interface."
 permalink: /gold-tier-hardware-servicing-guide/out-of-band-management-port/configuring-ilo.html
 redirect_from:
