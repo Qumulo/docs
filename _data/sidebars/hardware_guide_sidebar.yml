@@ -135,39 +135,6 @@ entries:
       url: /hardware-guide/hpe-alletra-4110/technical-specifications.html
       output: web
 
-  - title: HPE Alletra 4140
-    url: /hardware-guide/hpe-alletra-4140/index.html
-    output: web, pdf
-    folderitems:
-
-    - title: Wiring Nodes and Networking a Cluster
-      url: /hardware-guide/hpe-alletra-4140/wiring-nodes-networking-cluster.html
-      output: web, pdf
-
-    - title: Creating and Configuring a Cluster
-      url: /hardware-guide/hpe-alletra-4140/creating-configuring-cluster.html
-      output: web, pdf
-
-    - title: Front and Internal Drives
-      url: /hardware-guide/hpe-alletra-4140/front-internal-drives.html
-      output: web, pdf
-
-    - title: Panel LEDs
-      url: /hardware-guide/hpe-alletra-4140/panel-leds.html
-      output: web, pdf
-
-    - title: Configuring iLO
-      url: /hardware-guide/hpe-alletra-4140/configuring-ilo.html
-      output: web, pdf
-
-    - title: Replacing Hardware Components
-      url: /hardware-guide/hpe-alletra-4140/replacing-hardware-components.html
-      output: web, pdf
-
-    - title: Technical Specifications
-      url: /hardware-guide/hpe-alletra-4140/technical-specifications.html
-      output: web
-
   - title: HPE Apollo 4200 Gen9
     url: /hardware-guide/hpe-apollo-4200-gen9/index.html
     output: web, pdf
@@ -442,43 +409,6 @@ entries:
 
     - title: Technical Specifications
       url: /hardware-guide/supermicro-a-plus-asg-1014s-acr12n4h/technical-specifications.html
-      output: web
-
-  - title: Supermicro A+ ASG-2015S-E1CR24L
-    url: /hardware-guide/supermicro-a-plus-asg-2015s-e1cr24l/index.html
-    output: web, pdf
-    folderitems:
-
-    - title: Racking Nodes
-      url: /hardware-guide/supermicro-a-plus-asg-2015s-e1cr24l/racking-nodes.html
-      output: web, pdf
-
-    - title: Configuring IPMI and Wiring Nodes
-      url: /hardware-guide/supermicro-a-plus-asg-2015s-e1cr24l/configuring-ipmi-wiring-nodes.html
-      output: web, pdf
-
-    - title: Creating and Configuring a Cluster
-      url: /hardware-guide/supermicro-a-plus-asg-2015s-e1cr24l/creating-configuring-cluster.html
-      output: web, pdf
-
-    - title: Drive Bay Mapping
-      url: /hardware-guide/supermicro-a-plus-asg-2015s-e1cr24l/drive-bay-mapping.html
-      output: web, pdf
-
-    - title: Panel LEDs
-      url: /hardware-guide/supermicro-a-plus-asg-2015s-e1cr24l/panel-leds.html
-      output: web, pdf
-
-    - title: Cluster Networking
-      url: /hardware-guide/supermicro-a-plus-asg-2015s-e1cr24l/networking-cluster.html
-      output: web, pdf
-
-    - title: Replacing Hardware Components
-      url: /hardware-guide/supermicro-a-plus-asg-2015s-e1cr24l/replacing-hardware-components.html
-      output: web, pdf
-
-    - title: Technical Specifications
-      url: /hardware-guide/supermicro-a-plus-asg-2015s-e1cr24l/technical-specifications.html
       output: web
 
   - title: Supermicro A+ WIO 1114S-WN10RT
