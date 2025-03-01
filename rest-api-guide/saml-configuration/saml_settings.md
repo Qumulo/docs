@@ -3,6 +3,7 @@ category: /SAML Configuration
 methods:
   get:
     parameters: []
+    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_v1_saml_settings\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"enabled\": {\n      \"description\": \"When\
@@ -41,6 +42,7 @@ methods:
     - description: ETag for expected version
       name: If-Match
       required: false
+    preview: false
     request_body:
       schema: "{\n  \"description\": \"api_v1_saml_settings_patch\",\n  \"type\":\
         \ \"object\",\n  \"properties\": {\n    \"enabled\": {\n      \"description\"\
@@ -109,6 +111,7 @@ methods:
     - description: ETag for expected version
       name: If-Match
       required: false
+    preview: false
     request_body:
       schema: "{\n  \"description\": \"api_v1_saml_settings\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"enabled\": {\n      \"description\": \"When\

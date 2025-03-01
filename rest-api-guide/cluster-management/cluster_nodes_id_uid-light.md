@@ -6,6 +6,7 @@ methods:
     - description: The unique ID of the node
       name: id
       required: true
+    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_node_uid_light\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"light_visible\": {\n      \"description\": \"\
@@ -20,6 +21,7 @@ methods:
     - description: The unique ID of the node
       name: id
       required: true
+    preview: false
     request_body:
       schema: "{\n  \"description\": \"api_node_uid_light\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"light_visible\": {\n      \"description\": \"\

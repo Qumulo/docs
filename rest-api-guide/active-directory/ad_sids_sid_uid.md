@@ -6,6 +6,7 @@ methods:
     - description: The SID to use to look up a UID
       name: sid
       required: true
+    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_ad_uid\",\n  \"type\": \"object\",\n  \"\
         properties\": {\n    \"uid\": {\n      \"description\": \"uid\",\n      \"\

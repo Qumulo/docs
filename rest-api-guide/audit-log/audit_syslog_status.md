@@ -3,6 +3,7 @@ category: /Audit Log
 methods:
   get:
     parameters: []
+    preview: false
     response_body:
       schema: "{\n  \"description\": \"syslog_audit_log_status\",\n  \"type\": \"\
         object\",\n  \"properties\": {\n    \"connection_status\": {\n      \"type\"\

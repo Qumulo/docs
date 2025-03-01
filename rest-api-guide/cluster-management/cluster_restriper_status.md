@@ -3,6 +3,7 @@ category: /Cluster Management
 methods:
   get:
     parameters: []
+    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_restriper_status\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"status\": {\n      \"type\": \"string\",\n \

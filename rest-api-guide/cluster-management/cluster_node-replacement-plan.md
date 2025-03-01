@@ -3,6 +3,7 @@ category: /Cluster Management
 methods:
   get:
     parameters: []
+    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_node_replacement_plan\",\n  \"type\": \"\
         object\",\n  \"properties\": {\n    \"nodes_to_be_replaced\": {\n      \"\
@@ -26,6 +27,7 @@ methods:
       replacement and nodes currently in process of being replaced.
   post:
     parameters: []
+    preview: false
     request_body:
       schema: "{\n  \"description\": \"api_cluster_node_replacement_request\",\n \
         \ \"type\": \"object\",\n  \"properties\": {\n    \"nodes_to_be_replaced\"\

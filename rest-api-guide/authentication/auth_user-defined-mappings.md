@@ -3,6 +3,7 @@ category: /Authentication
 methods:
   get:
     parameters: []
+    preview: false
     response_body:
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         user_equivalence\",\n    \"type\": \"object\",\n    \"properties\": {\n  \
@@ -19,6 +20,7 @@ methods:
     - description: ETag for expected version
       name: If-Match
       required: false
+    preview: false
     request_body:
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         user_equivalence\",\n    \"type\": \"object\",\n    \"properties\": {\n  \

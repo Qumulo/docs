@@ -6,6 +6,7 @@ methods:
     - description: The unique ID of the network interface
       name: interface_id
       required: true
+    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_interface_config\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"Unique identifier\
@@ -35,6 +36,7 @@ methods:
     - description: ETag for expected version
       name: If-Match
       required: false
+    preview: false
     request_body:
       schema: "{\n  \"description\": \"api_interface_config\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"Unique identifier\
@@ -66,6 +68,7 @@ methods:
     - description: ETag for expected version
       name: If-Match
       required: false
+    preview: false
     request_body:
       schema: "{\n  \"description\": \"api_interface_config\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"Unique identifier\

@@ -3,6 +3,7 @@ category: /Network Configuration
 methods:
   get:
     parameters: []
+    preview: false
     response_body:
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         api_interface_config\",\n    \"type\": \"object\",\n    \"properties\": {\n\

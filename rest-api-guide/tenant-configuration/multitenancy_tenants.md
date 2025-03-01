@@ -3,6 +3,7 @@ category: /Tenant Configuration
 methods:
   get:
     parameters: []
+    preview: true
     response_body:
       schema: "{\n  \"description\": \"api_tenant_configs\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"entries\": {\n      \"type\": \"array\",\n \
@@ -33,9 +34,10 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Get configurations of all tenants.
+    summary: '[preview] Get configurations of all tenants.'
   post:
     parameters: []
+    preview: true
     request_body:
       schema: "{\n  \"description\": \"api_tenant_config_post\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"name\": {\n      \"description\": \"Unique name\
@@ -82,7 +84,7 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Create a tenant.
+    summary: '[preview] Create a tenant.'
 rest_endpoint: /v1/multitenancy/tenants/
 api_version: v1
 permalink: /rest-api-guide/tenant-configuration/multitenancy_tenants.html

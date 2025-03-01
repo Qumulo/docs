@@ -3,6 +3,7 @@ category: /File System
 methods:
   get:
     parameters: []
+    preview: false
     response_body:
       schema: "{\n  \"description\": \"fs_notify_config\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"recursive_mode\": {\n      \"type\": \"string\"\
@@ -20,6 +21,7 @@ methods:
     - description: ETag for expected version
       name: If-Match
       required: false
+    preview: false
     request_body:
       schema: "{\n  \"description\": \"fs_notify_config\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"recursive_mode\": {\n      \"type\": \"string\"\

@@ -3,6 +3,7 @@ category: /Upgrade
 methods:
   post:
     parameters: []
+    preview: false
     request_body:
       schema: "{\n  \"description\": \"api_verify_request\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"image_path\": {\n      \"description\": \"image_path\"\

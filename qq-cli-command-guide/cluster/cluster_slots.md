@@ -6,13 +6,17 @@ optional_options:
   help: Slot ID
   name: --slot
   required: false
+- alternate: []
+  help: Node ID
+  name: --node
+  required: false
 permalink: /qq-cli-command-guide/cluster/cluster_slots.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar
 summary: This section explains how to use the <code>qq cluster_slots</code> command.
 synopsis: Get the cluster disk slots status
 title: qq cluster_slots
-usage: qq cluster_slots [-h] [--slot SLOT]
+usage: qq cluster_slots [-h] [--slot SLOT | --node NODE]
 zendesk_source: qq CLI Command Guide
 
 ---

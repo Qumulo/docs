@@ -6,6 +6,7 @@ methods:
     - description: Bucket name
       name: name
       required: true
+    preview: false
     response_body: {}
     responses:
     - code: '200'
@@ -24,6 +25,7 @@ methods:
     - description: ETag for expected version
       name: If-Match
       required: false
+    preview: false
     response_body: {}
     responses:
     - code: '200'

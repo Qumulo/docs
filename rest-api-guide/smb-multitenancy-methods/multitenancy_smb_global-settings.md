@@ -3,6 +3,7 @@ category: /SMB Multitenancy Methods
 methods:
   get:
     parameters: []
+    preview: true
     response_body:
       schema: "{\n  \"description\": \"api_smb_settings\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"session_encryption\": {\n      \"type\": \"\
@@ -36,12 +37,13 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Retrieve global SMB configuration.
+    summary: '[preview] Retrieve global SMB configuration.'
   patch:
     parameters:
     - description: ETag for expected version
       name: If-Match
       required: false
+    preview: true
     request_body:
       schema: "{\n  \"description\": \"api_smb_settings_patch\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"session_encryption\": {\n      \"type\": \"\
@@ -105,12 +107,13 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Modify global SMB configuration.
+    summary: '[preview] Modify global SMB configuration.'
   put:
     parameters:
     - description: ETag for expected version
       name: If-Match
       required: false
+    preview: true
     request_body:
       schema: "{\n  \"description\": \"api_smb_settings\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"session_encryption\": {\n      \"type\": \"\
@@ -174,7 +177,7 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Set global SMB configuration.
+    summary: '[preview] Set global SMB configuration.'
 rest_endpoint: /v1/multitenancy/smb/global-settings
 api_version: v1
 permalink: /rest-api-guide/smb-multitenancy-methods/multitenancy_smb_global-settings.html

@@ -3,6 +3,7 @@ category: /Snapshots
 methods:
   get:
     parameters: []
+    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_snapshot_statuses_v2\",\n  \"type\": \"\
         object\",\n  \"properties\": {\n    \"entries\": {\n      \"type\": \"array\"\

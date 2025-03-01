@@ -3,6 +3,7 @@ category: /Cluster Data Protection
 methods:
   get:
     parameters: []
+    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_object_backed_fault_tolerance\",\n  \"\
         type\": \"object\",\n  \"properties\": {\n    \"disks\": {\n      \"description\"\

@@ -6,6 +6,7 @@ methods:
     - description: URI parameter id
       name: id
       required: true
+    preview: false
     response_body: {}
     responses:
     - code: '200'
@@ -16,6 +17,7 @@ methods:
     - description: URI parameter id
       name: id
       required: true
+    preview: false
     response_body:
       schema: "{\n  \"description\": \"identity_attributes\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"home_directory\": {\n      \"description\":\
@@ -29,6 +31,7 @@ methods:
     - description: URI parameter id
       name: id
       required: true
+    preview: false
     request_body:
       schema: "{\n  \"description\": \"identity_attributes\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"home_directory\": {\n      \"description\":\

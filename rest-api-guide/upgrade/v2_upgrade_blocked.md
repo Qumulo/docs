@@ -3,6 +3,7 @@ category: /Upgrade
 methods:
   get:
     parameters: []
+    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_upgrade_blocked_response\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"is_blocked\": {\n      \"description\"\

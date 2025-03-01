@@ -7,6 +7,7 @@ methods:
         being deleted. Defaults to false if not specified.
       name: include-in-delete
       required: false
+    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_snapshots_v2\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"entries\": {\n      \"type\": \"array\",\n \
@@ -47,6 +48,7 @@ methods:
         not specified.
       name: expiration-time-to-live
       required: false
+    preview: false
     request_body:
       schema: "{\n  \"description\": \"api_snapshot_create_v2\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"name\": {\n      \"description\": \"Name of\

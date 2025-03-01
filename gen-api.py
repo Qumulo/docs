@@ -10,6 +10,22 @@ url = "https://music.eng.qumulo.com:8000/openapi.json"
 output_base_dir = os.path.expanduser("~/git/docs-internal/rest-api-guide")
 sidebar_file_path = os.path.expanduser("~/git/docs-internal/_data/sidebars/rest_api_guide_sidebar.yml")
 
+# Hard-coded tag configuration for all exceptions
+TAG_CONFIG = {
+    # Format: "Tag Name": (sort_order, api_version_for_parent, api_version_for_children)
+    "Network Configuration V1": (1, None, "v1"),     # Sort first, no parent tag
+    "Network Configuration": (2, "v2", "v2"),        # Sort second, parent tag v2
+    "NFS Methods V2": (1, "v2", "v2"),               # Sort first, parent tag v2
+    "NFS Methods": (2, "v3", "v3"),                  # Sort second, parent tag v3
+    "SMB Shares Methods V1": (1, None, "v1"),        # Sort first, no parent tag
+    "SMB Shares Methods V2": (2, "v2", "v2"),        # Sort second, parent tag v2
+    "SMB Shares Methods": (3, "v3", "v3"),           # Sort third, parent tag v3
+
+    # Deal with dual-tagged APIs
+    "Configured Node Management": (1, None, "v1"),
+    "Unconfigured Node Management": (2, None, "v1")
+}
+
 # Function to create the directory if it does not exist
 def create_directory(path):
     if not os.path.exists(path):
@@ -43,6 +59,8 @@ def generate_resource_md(tag, endpoint, methods, permalink, api_version=None):
         response_body = response_details.get("200", {}).get("content", {}).get("application/json", {})
         request_body = details.get("requestBody", {}).get("content", {}).get("application/json", {})
 
+        is_preview = "[preview]" in details.get("summary", "").lower()
+        
         method_details = {
             "summary": details.get("summary", ""),
             "parameters": [
@@ -55,13 +73,17 @@ def generate_resource_md(tag, endpoint, methods, permalink, api_version=None):
             "responses": [
                 {"code": code, "description": response.get("description", "")}
                 for code, response in response_details.items()
-            ]
+            ],
+            "preview": is_preview
         }
 
         if request_body:
             method_details["request_body"] = {
                 "schema": json.dumps(request_body.get("schema", ""), indent=2)
             }
+
+        if is_preview:
+            method_details["preview"] = True
 
         yaml_content["methods"][method] = method_details
 
@@ -79,6 +101,9 @@ def clean_filename(tag, filename, api_version=None):
 
 # Function to create the sidebar title from the tag and segment
 def create_sidebar_title(tag, segment):
+    # Special case for Configured Node Management
+    if tag == "Configured Node Management":
+        return f"Node Management ({segment})"
     return f"{tag} ({segment})"
 
 # Function to find the tag for a category based on the path item
@@ -98,6 +123,22 @@ def clean_path_for_title(path, is_parent=False):
     if is_parent:
         return parts[0]
     return '/'.join(parts)
+
+# Function to determine API version for a tag
+def get_api_version_for_tag(tag, path):
+    # If tag is in our config, use the specified child version
+    if tag in TAG_CONFIG:
+        return TAG_CONFIG[tag][2]
+    
+    # Default: determine by path
+    if path.startswith('/v2'):
+        return 'v2'
+    elif path.startswith('/v3'):
+        return 'v3'
+    elif path.startswith('/v4'):
+        return 'v4'
+    else:
+        return 'v1'
 
 # Fetch the OpenAPI definition
 response = requests.get(url)
@@ -122,17 +163,12 @@ for path, path_item in api_definition["paths"].items():
         print(f"Skipping path '{path}' as it does not have any tags.")
         continue
 
-    # Determine API version
-    if path.startswith('/v2'):
-        api_version = 'v2'
-    elif path.startswith('/v3'):
-        api_version = 'v3'
-    elif path.startswith('/v4'):
-        api_version = 'v4'
-    else:
-        api_version = 'v1'
+    is_preview = any("[preview]" in details.get("summary", "").lower() for details in path_item.values())
 
     for tag in tags:
+        # Get API version using our function
+        api_version = get_api_version_for_tag(tag, path)
+        
         tag_dir = os.path.join(output_base_dir, tag.lower().replace(" ", "-"))
         create_directory(tag_dir)
 
@@ -157,6 +193,9 @@ for path, path_item in api_definition["paths"].items():
             "title": cleaned_path,  # Use the cleaned path for the child title
             "url": permalink
         }
+
+        if is_preview:
+            sidebar_entry["preview"] = True
 
         if api_version != 'v1':
             sidebar_entry["apiversion"] = api_version
@@ -231,6 +270,9 @@ sidebar_content = {
     ]
 }
 
+# Create unsorted list of folder entries
+folders = []
+
 # Add folderitems for each tag
 for tag, entries in sidebar_entries_by_tag.items():
     tag_info = tag_info_dict.get(tag, {'name': tag})
@@ -238,12 +280,53 @@ for tag, entries in sidebar_entries_by_tag.items():
         # Extract the first segment from the first entry's path
         first_segment = clean_path_for_title(entries[0]["title"], is_parent=True)
         parent_title = create_sidebar_title(tag, first_segment)
-        sidebar_content["entries"][0]["folders"].append({
+
+        # Check if all child entries don't have preview: false
+        all_preview = all(entry.get("preview", False) for entry in entries)
+
+        # Create the parent folder entry
+        parent_entry = {
             "folderitems": entries,
             "output": "web,pdf",
             "title": parent_title,
             "url": f"/rest-api-guide/{tag.lower().replace(' ', '-')}/"
-        })
+        }
+
+        # If all children are preview, mark the parent as preview
+        if all_preview:
+            parent_entry["preview"] = True
+
+        # Get config for this tag if it exists
+        tag_config = TAG_CONFIG.get(tag)
+        if tag_config:
+            sort_order = tag_config[0]
+            parent_version = tag_config[1]
+            
+            # Add parent version tag if specified
+            if parent_version and parent_version != 'v1':
+                parent_entry["apiversion"] = parent_version
+        else:
+            # Default sort order for non-configured tags
+            sort_order = 100
+            
+            # For non-configured tags, if all children have the same non-v1 version, add it to parent
+            all_versions = set(entry.get('apiversion', 'v1') for entry in entries)
+            if len(all_versions) == 1 and 'v1' not in all_versions:
+                parent_entry["apiversion"] = next(iter(all_versions))
+        
+        # For sorting, extract tag base name (strip V1, V2, etc.)
+        tag_base = tag
+        if " V" in tag and tag[-2:] in ["V1", "V2", "V3", "V4"]:
+            tag_base = tag[:-3]
+            
+        # Add the entry with sorting info
+        folders.append((tag_base, sort_order, tag, parent_entry))
+
+# Sort folders first by tag base, then by the specified sort order
+folders.sort(key=lambda x: (x[0], x[1]))
+
+# Add sorted folders to the sidebar
+sidebar_content["entries"][0]["folders"].extend([entry for _, _, _, entry in folders])
 
 # Write the sidebar YAML file
 with open(sidebar_file_path, "w") as file:
@@ -263,4 +346,3 @@ with open(sidebar_file_path, "a") as file:
     file.write(additional_yaml_content)
 
 print("API documentation generation completed.")
-

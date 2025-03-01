@@ -3,6 +3,7 @@ category: /Upgrade
 methods:
   get:
     parameters: []
+    preview: false
     response_body:
       schema: "{\n  \"description\": \"upgrade_status\",\n  \"type\": \"object\",\n\
         \  \"properties\": {\n    \"state\": {\n      \"type\": \"string\",\n    \

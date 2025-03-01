@@ -6,6 +6,7 @@ methods:
     - description: The snapshot identifier.
       name: id
       required: true
+    preview: false
     request_body:
       schema: "{\n  \"description\": \"api_snapshot_unlock\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"signature\": {\n      \"description\": \"signature\"\

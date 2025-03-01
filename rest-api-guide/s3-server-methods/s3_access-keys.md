@@ -14,6 +14,7 @@ methods:
         smaller limit.
       name: limit
       required: false
+    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_key_description_list_model\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"entries\": {\n      \"type\": \"\
@@ -57,6 +58,7 @@ methods:
       Privilege S3_CREDENTIALS_READ is required to list keys other than for yourself.
   post:
     parameters: []
+    preview: false
     request_body:
       schema: "{\n  \"description\": \"api_key_creation_options\",\n  \"type\": \"\
         object\",\n  \"properties\": {\n    \"user\": {\n      \"description\": \"\

@@ -3,6 +3,7 @@ category: /Monitoring Configuration and Status
 methods:
   get:
     parameters: []
+    preview: false
     response_body:
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         api_node_monitoring_status\",\n    \"type\": \"object\",\n    \"properties\"\

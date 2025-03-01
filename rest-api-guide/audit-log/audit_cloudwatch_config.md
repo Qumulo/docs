@@ -3,6 +3,7 @@ category: /Audit Log
 methods:
   get:
     parameters: []
+    preview: false
     response_body:
       schema: "{\n  \"description\": \"cloudwatch_audit_user_config\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"enabled\": {\n      \"description\"\
@@ -19,6 +20,7 @@ methods:
     - description: ETag for expected version
       name: If-Match
       required: false
+    preview: false
     request_body:
       schema: "{\n  \"description\": \"cloudwatch_audit_user_config_delta\",\n  \"\
         type\": \"object\",\n  \"properties\": {\n    \"enabled\": {\n      \"description\"\
@@ -42,6 +44,7 @@ methods:
     - description: ETag for expected version
       name: If-Match
       required: false
+    preview: false
     request_body:
       schema: "{\n  \"description\": \"cloudwatch_audit_user_config\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"enabled\": {\n      \"description\"\

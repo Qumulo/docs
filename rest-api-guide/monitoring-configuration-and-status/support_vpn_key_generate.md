@@ -3,6 +3,7 @@ category: /Monitoring Configuration and Status
 methods:
   post:
     parameters: []
+    preview: false
     response_body: {}
     responses:
     - code: '200'

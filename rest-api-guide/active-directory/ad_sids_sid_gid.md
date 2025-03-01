@@ -6,6 +6,7 @@ methods:
     - description: The group SID to use to look up a GID
       name: sid
       required: true
+    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_ad_gid\",\n  \"type\": \"object\",\n  \"\
         properties\": {\n    \"gid\": {\n      \"description\": \"gid\",\n      \"\

@@ -3,6 +3,7 @@ category: /Cluster Management
 methods:
   post:
     parameters: []
+    preview: false
     request_body:
       schema: "{\n  \"description\": \"api_cluster_calculate_node_add_capacity_request\"\
         ,\n  \"type\": \"object\",\n  \"properties\": {\n    \"node_uuids\": {\n \

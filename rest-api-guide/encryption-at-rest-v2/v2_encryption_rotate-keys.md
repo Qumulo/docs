@@ -3,6 +3,7 @@ category: /Encryption at Rest V2
 methods:
   post:
     parameters: []
+    preview: false
     request_body:
       schema: "{\n  \"description\": \"api_encryption_rotate_key_v2\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"key_id\": {\n      \"description\"\

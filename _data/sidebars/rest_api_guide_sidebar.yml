@@ -17,7 +17,7 @@ entries:
       title: Documentation Home
       url: /index.html
     - output: web
-      title: Guide Table of Contents
+      title: Qumulo REST API Guide Home
       url: /rest-api-guide/
     - output: web
       title: Contacting the Qumulo Care Team
@@ -173,6 +173,51 @@ entries:
     title: Capacity Clamp (capacity)
     url: /rest-api-guide/capacity-clamp/
   - folderitems:
+    - output: web,pdf
+      preview: true
+      title: portal/file-systems
+      url: /rest-api-guide/cloud-data-fabric/portal_file-systems.html
+    - output: web,pdf
+      preview: true
+      title: portal/file-systems/{id}
+      url: /rest-api-guide/cloud-data-fabric/portal_file-systems_id.html
+    - output: web,pdf
+      preview: true
+      title: portal/files/{file_id}/evict
+      url: /rest-api-guide/cloud-data-fabric/portal_files_file_id_evict.html
+    - output: web,pdf
+      preview: true
+      title: portal/hubs
+      url: /rest-api-guide/cloud-data-fabric/portal_hubs.html
+    - output: web,pdf
+      preview: true
+      title: portal/hubs/{id}
+      url: /rest-api-guide/cloud-data-fabric/portal_hubs_id.html
+    - output: web,pdf
+      preview: true
+      title: portal/hubs/{id}/authorize
+      url: /rest-api-guide/cloud-data-fabric/portal_hubs_id_authorize.html
+    - output: web,pdf
+      preview: true
+      title: portal/spokes
+      url: /rest-api-guide/cloud-data-fabric/portal_spokes.html
+    - output: web,pdf
+      preview: true
+      title: portal/spokes/eviction-settings
+      url: /rest-api-guide/cloud-data-fabric/portal_spokes_eviction-settings.html
+    - output: web,pdf
+      preview: true
+      title: portal/spokes/{id}
+      url: /rest-api-guide/cloud-data-fabric/portal_spokes_id.html
+    - output: web,pdf
+      preview: true
+      title: portal/spokes/{id}/propose
+      url: /rest-api-guide/cloud-data-fabric/portal_spokes_id_propose.html
+    output: web,pdf
+    preview: true
+    title: Cloud Data Fabric (portal)
+    url: /rest-api-guide/cloud-data-fabric/
+  - folderitems:
     - apiversion: v3
       output: web,pdf
       title: cluster/calculate-supported-protection-info
@@ -278,6 +323,9 @@ entries:
       title: cluster/slots
       url: /rest-api-guide/cluster-slots/cluster_slots.html
     - output: web,pdf
+      title: cluster/slots/node/{node_id}
+      url: /rest-api-guide/cluster-slots/cluster_slots_node_node_id.html
+    - output: web,pdf
       title: cluster/slots/{id}
       url: /rest-api-guide/cluster-slots/cluster_slots_id.html
     output: web,pdf
@@ -288,15 +336,8 @@ entries:
       title: node/state
       url: /rest-api-guide/configured-node-management/node_state.html
     output: web,pdf
-    title: Configured Node Management (node)
+    title: Node Management (node)
     url: /rest-api-guide/configured-node-management/
-  - folderitems:
-    - output: web,pdf
-      title: node/state
-      url: /rest-api-guide/unconfigured-node-management/node_state.html
-    output: web,pdf
-    title: Unconfigured Node Management (node)
-    url: /rest-api-guide/unconfigured-node-management/
   - folderitems:
     - output: web,pdf
       title: dns/configs/system
@@ -349,7 +390,8 @@ entries:
     output: web,pdf
     title: Encryption at Rest (encryption)
     url: /rest-api-guide/encryption-at-rest/
-  - folderitems:
+  - apiversion: v2
+    folderitems:
     - apiversion: v2
       output: web,pdf
       title: encryption/external-kms/keys/create
@@ -528,40 +570,6 @@ entries:
     url: /rest-api-guide/files/
   - folderitems:
     - output: web,pdf
-      title: portal/hubs
-      url: /rest-api-guide/global-namespace/portal_hubs.html
-    - output: web,pdf
-      title: portal/hubs/{id}
-      url: /rest-api-guide/global-namespace/portal_hubs_id.html
-    - output: web,pdf
-      title: portal/hubs/{id}/authorize
-      url: /rest-api-guide/global-namespace/portal_hubs_id_authorize.html
-    - output: web,pdf
-      title: portal/spokes
-      url: /rest-api-guide/global-namespace/portal_spokes.html
-    - output: web,pdf
-      title: portal/spokes/eviction-settings
-      url: /rest-api-guide/global-namespace/portal_spokes_eviction-settings.html
-    - output: web,pdf
-      title: portal/spokes/{id}
-      url: /rest-api-guide/global-namespace/portal_spokes_id.html
-    - output: web,pdf
-      title: portal/spokes/{id}/evict-data
-      url: /rest-api-guide/global-namespace/portal_spokes_id_evict-data.html
-    - output: web,pdf
-      title: portal/spokes/{id}/evict-link
-      url: /rest-api-guide/global-namespace/portal_spokes_id_evict-link.html
-    - output: web,pdf
-      title: portal/spokes/{id}/evict-tree
-      url: /rest-api-guide/global-namespace/portal_spokes_id_evict-tree.html
-    - output: web,pdf
-      title: portal/spokes/{id}/propose
-      url: /rest-api-guide/global-namespace/portal_spokes_id_propose.html
-    output: web,pdf
-    title: Global Namespace (portal)
-    url: /rest-api-guide/global-namespace/
-  - folderitems:
-    - output: web,pdf
       title: identity/expand
       url: /rest-api-guide/identity/identity_expand.html
     - output: web,pdf
@@ -592,12 +600,15 @@ entries:
     url: /rest-api-guide/ldap-server/
   - folderitems:
     - output: web,pdf
+      preview: true
       title: license/enforcement
       url: /rest-api-guide/license-management/license_enforcement.html
     - output: web,pdf
+      preview: true
       title: license/status
       url: /rest-api-guide/license-management/license_status.html
     output: web,pdf
+    preview: true
     title: License Management (license)
     url: /rest-api-guide/license-management/
   - folderitems:
@@ -632,7 +643,8 @@ entries:
     output: web,pdf
     title: Local User Methods (users)
     url: /rest-api-guide/local-user-methods/
-  - folderitems:
+  - apiversion: v2
+    folderitems:
     - apiversion: v2
       output: web,pdf
       title: metrics/endpoints/default/data
@@ -659,19 +671,8 @@ entries:
     output: web,pdf
     title: Monitoring Configuration and Status (support)
     url: /rest-api-guide/monitoring-configuration-and-status/
-  - folderitems:
-    - apiversion: v3
-      output: web,pdf
-      title: nfs/exports
-      url: /rest-api-guide/nfs-methods/v3_nfs_exports.html
-    - apiversion: v3
-      output: web,pdf
-      title: nfs/exports/{export_id}
-      url: /rest-api-guide/nfs-methods/v3_nfs_exports_export_id.html
-    output: web,pdf
-    title: NFS Methods (nfs)
-    url: /rest-api-guide/nfs-methods/
-  - folderitems:
+  - apiversion: v2
+    folderitems:
     - apiversion: v2
       output: web,pdf
       title: nfs/exports
@@ -687,20 +688,60 @@ entries:
     output: web,pdf
     title: NFS Methods V2 (nfs)
     url: /rest-api-guide/nfs-methods-v2/
+  - apiversion: v3
+    folderitems:
+    - apiversion: v3
+      output: web,pdf
+      preview: true
+      title: nfs/exports
+      url: /rest-api-guide/nfs-methods/v3_nfs_exports.html
+    - apiversion: v3
+      output: web,pdf
+      preview: true
+      title: nfs/exports/{export_id}
+      url: /rest-api-guide/nfs-methods/v3_nfs_exports_export_id.html
+    output: web,pdf
+    preview: true
+    title: NFS Methods (nfs)
+    url: /rest-api-guide/nfs-methods/
   - folderitems:
     - output: web,pdf
+      preview: true
       title: multitenancy/nfs/global-settings
       url: /rest-api-guide/nfs-multitenancy-methods/multitenancy_nfs_global-settings.html
     - output: web,pdf
+      preview: true
       title: multitenancy/nfs/settings
       url: /rest-api-guide/nfs-multitenancy-methods/multitenancy_nfs_settings.html
     - output: web,pdf
+      preview: true
       title: multitenancy/nfs/settings/{id}
       url: /rest-api-guide/nfs-multitenancy-methods/multitenancy_nfs_settings_id.html
     output: web,pdf
+    preview: true
     title: NFS Multitenancy Methods (multitenancy)
     url: /rest-api-guide/nfs-multitenancy-methods/
   - folderitems:
+    - output: web,pdf
+      title: network/floating-ip-allocation
+      url: /rest-api-guide/network-configuration-v1/network_floating-ip-allocation.html
+    - output: web,pdf
+      title: network/settings
+      url: /rest-api-guide/network-configuration-v1/network_settings.html
+    - output: web,pdf
+      title: network/static-ip-allocation
+      url: /rest-api-guide/network-configuration-v1/network_static-ip-allocation.html
+    - output: web,pdf
+      title: network/status
+      url: /rest-api-guide/network-configuration-v1/network_status.html
+    - output: web,pdf
+      title: network/status/{id}
+      url: /rest-api-guide/network-configuration-v1/network_status_id.html
+    output: web,pdf
+    title: Network Configuration V1 (network)
+    url: /rest-api-guide/network-configuration-v1/
+  - apiversion: v2
+    folderitems:
     - apiversion: v2
       output: web,pdf
       title: network/connections
@@ -732,25 +773,6 @@ entries:
     output: web,pdf
     title: Network Configuration (network)
     url: /rest-api-guide/network-configuration/
-  - folderitems:
-    - output: web,pdf
-      title: network/floating-ip-allocation
-      url: /rest-api-guide/network-configuration-v1/network_floating-ip-allocation.html
-    - output: web,pdf
-      title: network/settings
-      url: /rest-api-guide/network-configuration-v1/network_settings.html
-    - output: web,pdf
-      title: network/static-ip-allocation
-      url: /rest-api-guide/network-configuration-v1/network_static-ip-allocation.html
-    - output: web,pdf
-      title: network/status
-      url: /rest-api-guide/network-configuration-v1/network_status.html
-    - output: web,pdf
-      title: network/status/{id}
-      url: /rest-api-guide/network-configuration-v1/network_status_id.html
-    output: web,pdf
-    title: Network Configuration V1 (network)
-    url: /rest-api-guide/network-configuration-v1/
   - folderitems:
     - output: web,pdf
       title: object-storage/add-uris
@@ -930,15 +952,19 @@ entries:
     url: /rest-api-guide/smb-file-administration/
   - folderitems:
     - output: web,pdf
+      preview: true
       title: multitenancy/smb/global-settings
       url: /rest-api-guide/smb-multitenancy-methods/multitenancy_smb_global-settings.html
     - output: web,pdf
+      preview: true
       title: multitenancy/smb/settings
       url: /rest-api-guide/smb-multitenancy-methods/multitenancy_smb_settings.html
     - output: web,pdf
+      preview: true
       title: multitenancy/smb/settings/{id}
       url: /rest-api-guide/smb-multitenancy-methods/multitenancy_smb_settings_id.html
     output: web,pdf
+    preview: true
     title: SMB Multitenancy Methods (multitenancy)
     url: /rest-api-guide/smb-multitenancy-methods/
   - folderitems:
@@ -959,18 +985,6 @@ entries:
     title: SMB Session Administration (smb)
     url: /rest-api-guide/smb-session-administration/
   - folderitems:
-    - apiversion: v3
-      output: web,pdf
-      title: smb/shares
-      url: /rest-api-guide/smb-shares-methods/v3_smb_shares.html
-    - apiversion: v3
-      output: web,pdf
-      title: smb/shares/{share_id}
-      url: /rest-api-guide/smb-shares-methods/v3_smb_shares_share_id.html
-    output: web,pdf
-    title: SMB Shares Methods (smb)
-    url: /rest-api-guide/smb-shares-methods/
-  - folderitems:
     - output: web,pdf
       title: smb/shares
       url: /rest-api-guide/smb-shares-methods-v1/smb_shares.html
@@ -980,7 +994,8 @@ entries:
     output: web,pdf
     title: SMB Shares Methods V1 (smb)
     url: /rest-api-guide/smb-shares-methods-v1/
-  - folderitems:
+  - apiversion: v2
+    folderitems:
     - apiversion: v2
       output: web,pdf
       title: smb/shares
@@ -992,6 +1007,22 @@ entries:
     output: web,pdf
     title: SMB Shares Methods V2 (smb)
     url: /rest-api-guide/smb-shares-methods-v2/
+  - apiversion: v3
+    folderitems:
+    - apiversion: v3
+      output: web,pdf
+      preview: true
+      title: smb/shares
+      url: /rest-api-guide/smb-shares-methods/v3_smb_shares.html
+    - apiversion: v3
+      output: web,pdf
+      preview: true
+      title: smb/shares/{share_id}
+      url: /rest-api-guide/smb-shares-methods/v3_smb_shares_share_id.html
+    output: web,pdf
+    preview: true
+    title: SMB Shares Methods (smb)
+    url: /rest-api-guide/smb-shares-methods/
   - folderitems:
     - output: web,pdf
       title: session/change-password
@@ -1016,8 +1047,14 @@ entries:
     url: /rest-api-guide/session-management/
   - folderitems:
     - output: web,pdf
+      title: shutdown/container-restart/{node_id}
+      url: /rest-api-guide/shutdown/shutdown_container-restart_node_id.html
+    - output: web,pdf
       title: shutdown/halt
       url: /rest-api-guide/shutdown/shutdown_halt.html
+    - output: web,pdf
+      title: shutdown/halt/{node_id}
+      url: /rest-api-guide/shutdown/shutdown_halt_node_id.html
     - output: web,pdf
       title: shutdown/reboot/pause
       url: /rest-api-guide/shutdown/shutdown_reboot_pause.html
@@ -1030,6 +1067,9 @@ entries:
     - output: web,pdf
       title: shutdown/reboot/status
       url: /rest-api-guide/shutdown/shutdown_reboot_status.html
+    - output: web,pdf
+      title: shutdown/reboot/{node_id}
+      url: /rest-api-guide/shutdown/shutdown_reboot_node_id.html
     output: web,pdf
     title: Shutdown (shutdown)
     url: /rest-api-guide/shutdown/
@@ -1157,12 +1197,15 @@ entries:
     url: /rest-api-guide/snapshots/
   - folderitems:
     - output: web,pdf
+      preview: true
       title: multitenancy/tenants
       url: /rest-api-guide/tenant-configuration/multitenancy_tenants.html
     - output: web,pdf
+      preview: true
       title: multitenancy/tenants/{tenant_id}
       url: /rest-api-guide/tenant-configuration/multitenancy_tenants_tenant_id.html
     output: web,pdf
+    preview: true
     title: Tenant Configuration (multitenancy)
     url: /rest-api-guide/tenant-configuration/
   - folderitems:
@@ -1193,11 +1236,11 @@ entries:
     url: /rest-api-guide/tree-delete/
   - folderitems:
     - output: web,pdf
-      title: unconfigured/nodes
-      url: /rest-api-guide/unconfigured-nodes-discovery/unconfigured_nodes.html
+      title: node/state
+      url: /rest-api-guide/unconfigured-node-management/node_state.html
     output: web,pdf
-    title: Unconfigured Nodes Discovery (unconfigured)
-    url: /rest-api-guide/unconfigured-nodes-discovery/
+    title: Unconfigured Node Management (node)
+    url: /rest-api-guide/unconfigured-node-management/
   - folderitems:
     - output: web,pdf
       title: unconfigured/nodes
@@ -1207,11 +1250,11 @@ entries:
     url: /rest-api-guide/unconfigured-nodes/
   - folderitems:
     - output: web,pdf
-      title: version
-      url: /rest-api-guide/version/version.html
+      title: unconfigured/nodes
+      url: /rest-api-guide/unconfigured-nodes-discovery/unconfigured_nodes.html
     output: web,pdf
-    title: Version (version)
-    url: /rest-api-guide/version/
+    title: Unconfigured Nodes Discovery (unconfigured)
+    url: /rest-api-guide/unconfigured-nodes-discovery/
   - folderitems:
     - output: web,pdf
       title: version
@@ -1247,6 +1290,13 @@ entries:
     output: web,pdf
     title: Upgrade (upgrade)
     url: /rest-api-guide/upgrade/
+  - folderitems:
+    - output: web,pdf
+      title: version
+      url: /rest-api-guide/version/version.html
+    output: web,pdf
+    title: Version (version)
+    url: /rest-api-guide/version/
   - folderitems:
     - output: web,pdf
       title: web-ui/settings

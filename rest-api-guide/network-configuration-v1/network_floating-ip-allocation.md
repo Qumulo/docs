@@ -3,6 +3,7 @@ category: /Network Configuration V1
 methods:
   get:
     parameters: []
+    preview: false
     response_body:
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         api_node_floating_ips\",\n    \"type\": \"object\",\n    \"properties\": {\n\

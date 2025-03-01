@@ -3,6 +3,7 @@ category: /S3 Server Methods
 methods:
   get:
     parameters: []
+    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_bucket_description_list_model\",\n  \"\
         type\": \"object\",\n  \"properties\": {\n    \"buckets\": {\n      \"type\"\
@@ -40,6 +41,7 @@ methods:
     summary: List all S3 buckets present in the system.
   post:
     parameters: []
+    preview: false
     request_body:
       schema: "{\n  \"description\": \"api_bucket_options\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"name\": {\n      \"description\": \"name\",\n\

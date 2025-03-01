@@ -9,6 +9,7 @@ methods:
         \ - exclude_in_delete,\n * `only_in_delete` - only_in_delete"
       name: filter
       required: true
+    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_snapshot_statuses\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"entries\": {\n      \"type\": \"array\",\n \

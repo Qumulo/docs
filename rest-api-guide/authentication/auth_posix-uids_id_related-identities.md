@@ -6,6 +6,7 @@ methods:
     - description: The POSIX UID to expand.
       name: id
       required: true
+    preview: false
     response_body:
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         api_identity_v1\",\n    \"type\": \"object\",\n    \"properties\": {\n   \

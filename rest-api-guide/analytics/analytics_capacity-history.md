@@ -14,6 +14,7 @@ methods:
         \ * `daily` - daily,\n * `hourly` - hourly,\n * `weekly` - weekly"
       name: interval
       required: false
+    preview: false
     response_body:
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         overall_historical_capacity\",\n    \"type\": \"object\",\n    \"properties\"\

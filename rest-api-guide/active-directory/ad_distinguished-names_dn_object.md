@@ -6,6 +6,7 @@ methods:
     - description: The distinguished name to use to look up an AD user or group.
       name: dn
       required: true
+    preview: false
     response_body:
       schema: "{\n  \"description\": \"ad_ldap_object\",\n  \"type\": \"object\",\n\
         \  \"properties\": {\n    \"dn\": {\n      \"description\": \"dn\",\n    \

@@ -6,6 +6,7 @@ methods:
     - description: The user's unique ID
       name: id
       required: true
+    preview: false
     response_body:
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         api_group\",\n    \"type\": \"object\",\n    \"properties\": {\n      \"id\"\

@@ -3,6 +3,7 @@ category: /Cluster Management
 methods:
   get:
     parameters: []
+    preview: false
     response_body:
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         api_node_chassis\",\n    \"type\": \"object\",\n    \"properties\": {\n  \

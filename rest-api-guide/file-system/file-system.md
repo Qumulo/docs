@@ -3,6 +3,7 @@ category: /File System
 methods:
   get:
     parameters: []
+    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_fs_attributes\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"block_size_bytes\": {\n      \"description\"\

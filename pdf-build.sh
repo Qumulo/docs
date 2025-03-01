@@ -141,7 +141,7 @@ build_prince () {
   echo ""
   echo "Building PDF-friendly HTML site..."
   echo -e "\033[1;33mNote: You can ignore any warnings about setting the locale.\033[0m"
-  docker run -ti \
+  CONTAINER_ID=$(docker run \
     --rm \
     --user $(id -u):$(id -g) \
     --name docs-container \
@@ -152,15 +152,28 @@ build_prince () {
     --network host \
     docs-builder \
     serve \
-    --config "_config.yml,pdfconfigs/${JEKYLL_CONFIG}"
+    --config "_config.yml,pdfconfigs/${JEKYLL_CONFIG}")
 
-  # -F: sets the field delimiter to colon 
+  # Check if the container started successfully
+  if [ -z "$CONTAINER_ID" ]; then
+    echo "[ERROR] Couldn't start container."
+    exit 1
+  fi
+
+  # Start streaming logs in the background
+  docker logs -f "$CONTAINER_ID" &
+  LOG_PID=$!  # Capture process ID of log streaming
+
+  # Wait for Jekyll server to be ready by checking the port
   port=$(grep '^port:' "pdfconfigs/${JEKYLL_CONFIG}" | awk -F: '{print $2;}')
 
-  echo "Waiting for port$port to become available..."
-  while ! nc -z localhost $port; do
+  echo "Waiting for port $port to become available..."
+  while ! nc -z localhost "$port"; do
     sleep 0.2
   done
+
+  # Kill the log streaming process after server is ready
+  kill "$LOG_PID" 2>/dev/null || true
 
   echo "Building the PDF..."
   prince --javascript --input-list=_site/pdfconfigs/prince-list.txt -o "pdf/${PRINCE_OUTPUT}"

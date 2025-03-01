@@ -6,6 +6,7 @@ methods:
     - description: Job ID
       name: id
       required: true
+    preview: false
     response_body: {}
     responses:
     - code: '202'

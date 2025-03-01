@@ -12,6 +12,7 @@ methods:
     - description: ETag for expected version
       name: If-Match
       required: false
+    preview: false
     response_body: {}
     responses:
     - code: '202'
@@ -25,14 +26,16 @@ methods:
     - description: The unique ID of the virtual network
       name: network_id
       required: true
+    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_network_config_v2\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"name\": {\n      \"description\": \"name\",\n\
         \      \"type\": \"string\"\n    },\n    \"id\": {\n      \"description\"\
         : \"id\",\n      \"type\": \"number\"\n    },\n    \"assigned_by\": {\n  \
         \    \"type\": \"string\",\n      \"enum\": [\n        \"DHCP\",\n       \
-        \ \"STATIC\",\n        \"LINK_LOCAL\"\n      ],\n      \"description\": \"\
-        assigned_by:\\n * `DHCP` - NETWORK_ASSIGNED_BY_DHCP,\\n * `LINK_LOCAL` - NETWORK_ASSIGNED_BY_LINK_LOCAL,\\\
+        \ \"STATIC\",\n        \"LINK_LOCAL\",\n        \"HOST\"\n      ],\n     \
+        \ \"description\": \"assigned_by:\\n * `DHCP` - NETWORK_ASSIGNED_BY_DHCP,\\\
+        n * `HOST` - NETWORK_ASSIGNED_BY_HOST,\\n * `LINK_LOCAL` - NETWORK_ASSIGNED_BY_LINK_LOCAL,\\\
         n * `STATIC` - NETWORK_ASSIGNED_BY_STATIC\"\n    },\n    \"floating_ip_ranges\"\
         : {\n      \"type\": \"array\",\n      \"items\": {\n        \"description\"\
         : \"floating_ip_ranges\",\n        \"type\": \"string\"\n      }\n    },\n\
@@ -65,14 +68,16 @@ methods:
     - description: ETag for expected version
       name: If-Match
       required: false
+    preview: false
     request_body:
       schema: "{\n  \"description\": \"api_network_config_v2\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"name\": {\n      \"description\": \"name\",\n\
         \      \"type\": \"string\"\n    },\n    \"id\": {\n      \"description\"\
         : \"id\",\n      \"type\": \"number\"\n    },\n    \"assigned_by\": {\n  \
         \    \"type\": \"string\",\n      \"enum\": [\n        \"DHCP\",\n       \
-        \ \"STATIC\",\n        \"LINK_LOCAL\"\n      ],\n      \"description\": \"\
-        assigned_by:\\n * `DHCP` - NETWORK_ASSIGNED_BY_DHCP,\\n * `LINK_LOCAL` - NETWORK_ASSIGNED_BY_LINK_LOCAL,\\\
+        \ \"STATIC\",\n        \"LINK_LOCAL\",\n        \"HOST\"\n      ],\n     \
+        \ \"description\": \"assigned_by:\\n * `DHCP` - NETWORK_ASSIGNED_BY_DHCP,\\\
+        n * `HOST` - NETWORK_ASSIGNED_BY_HOST,\\n * `LINK_LOCAL` - NETWORK_ASSIGNED_BY_LINK_LOCAL,\\\
         n * `STATIC` - NETWORK_ASSIGNED_BY_STATIC\"\n    },\n    \"floating_ip_ranges\"\
         : {\n      \"type\": \"array\",\n      \"items\": {\n        \"description\"\
         : \"floating_ip_ranges\",\n        \"type\": \"string\"\n      }\n    },\n\
@@ -108,14 +113,16 @@ methods:
     - description: ETag for expected version
       name: If-Match
       required: false
+    preview: false
     request_body:
       schema: "{\n  \"description\": \"api_network_config_v2\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"name\": {\n      \"description\": \"name\",\n\
         \      \"type\": \"string\"\n    },\n    \"id\": {\n      \"description\"\
         : \"id\",\n      \"type\": \"number\"\n    },\n    \"assigned_by\": {\n  \
         \    \"type\": \"string\",\n      \"enum\": [\n        \"DHCP\",\n       \
-        \ \"STATIC\",\n        \"LINK_LOCAL\"\n      ],\n      \"description\": \"\
-        assigned_by:\\n * `DHCP` - NETWORK_ASSIGNED_BY_DHCP,\\n * `LINK_LOCAL` - NETWORK_ASSIGNED_BY_LINK_LOCAL,\\\
+        \ \"STATIC\",\n        \"LINK_LOCAL\",\n        \"HOST\"\n      ],\n     \
+        \ \"description\": \"assigned_by:\\n * `DHCP` - NETWORK_ASSIGNED_BY_DHCP,\\\
+        n * `HOST` - NETWORK_ASSIGNED_BY_HOST,\\n * `LINK_LOCAL` - NETWORK_ASSIGNED_BY_LINK_LOCAL,\\\
         n * `STATIC` - NETWORK_ASSIGNED_BY_STATIC\"\n    },\n    \"floating_ip_ranges\"\
         : {\n      \"type\": \"array\",\n      \"items\": {\n        \"description\"\
         : \"floating_ip_ranges\",\n        \"type\": \"string\"\n      }\n    },\n\

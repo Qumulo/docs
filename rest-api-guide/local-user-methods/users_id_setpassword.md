@@ -6,6 +6,7 @@ methods:
     - description: The user's unique ID
       name: id
       required: true
+    preview: false
     request_body:
       schema: "{\n  \"description\": \"new_password\",\n  \"type\": \"object\",\n\
         \  \"properties\": {\n    \"new_password\": {\n      \"description\": \"new_password\"\

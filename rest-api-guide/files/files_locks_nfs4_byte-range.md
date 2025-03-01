@@ -20,6 +20,7 @@ methods:
         smaller limit.
       name: limit
       required: false
+    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_nfs4_byte_range_grants\",\n  \"type\":\
         \ \"object\",\n  \"properties\": {\n    \"grants\": {\n      \"type\": \"\

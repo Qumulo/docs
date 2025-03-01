@@ -12,6 +12,7 @@ methods:
     - description: ETag for expected version
       name: If-Match
       required: false
+    preview: false
     request_body:
       schema: "{\n  \"description\": \"api_files_punch_hole\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"offset\": {\n      \"description\": \"Offset\

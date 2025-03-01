@@ -3,6 +3,7 @@ category: /File System
 methods:
   get:
     parameters: []
+    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_change_lock_keys\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"entries\": {\n      \"type\": \"array\",\n \
@@ -25,6 +26,7 @@ methods:
     summary: "List the file system\u2019s public keys."
   post:
     parameters: []
+    preview: false
     request_body:
       schema: "{\n  \"description\": \"api_change_lock_key_create_request\",\n  \"\
         type\": \"object\",\n  \"properties\": {\n    \"name\": {\n      \"description\"\

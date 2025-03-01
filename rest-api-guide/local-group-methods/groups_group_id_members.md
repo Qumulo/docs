@@ -6,6 +6,7 @@ methods:
     - description: The group's unique ID
       name: group_id
       required: true
+    preview: false
     response_body:
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         api_user\",\n    \"type\": \"object\",\n    \"properties\": {\n      \"id\"\
@@ -31,6 +32,7 @@ methods:
     - description: The group's unique ID
       name: group_id
       required: true
+    preview: false
     request_body:
       schema: "{\n  \"description\": \"api_member_auth_id\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"member_id\": {\n      \"description\": \"Unique\
