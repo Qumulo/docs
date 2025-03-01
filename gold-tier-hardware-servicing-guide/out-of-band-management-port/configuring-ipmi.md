@@ -5,7 +5,10 @@ permalink: /gold-tier-hardware-servicing-guide/out-of-band-management-port/confi
 redirect_from:
   - https://docs.qumulo.com/hardware-guide/supermicro-a-plus-asg-2015s-e1cr24l/configuring-ipmi-wiring-nodes.html
 sidebar: gold_tier_hardware_servicing_guide_sidebar
+platform: goldTier
 ---
 
 {% include content-reuse/hardware-guides/platform-agnostic-ipmi.md %}
+
+## IPMI Configuration
 {{site.hardware.ipmiConfig.agnostic}}
