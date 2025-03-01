@@ -73,6 +73,19 @@ entries:
       url: /gold-tier-hardware-servicing-guide/cluster-networking/split-networking.html
       output: web, pdf
 
+  - title: Configuring the Out-of-Band Management Port
+    url: /gold-tier-hardware-servicing-guide/out-of-band-management-port/index.html
+    output: web, pdf
+    folderitems:
+
+    - title: Configuring iLO
+      url: /gold-tier-hardware-servicing-guide/out-of-band-management-port/configuring-ilo.html
+      output: web, pdf
+
+    - title: Configuring IPMI
+      url: /gold-tier-hardware-servicing-guide/out-of-band-management-port/configuring-ipmi.html
+      output: web, pdf
+
   - title: Replacing Hardware Components
     url: /gold-tier-hardware-servicing-guide/replacing-hardware-components.html
     output: web, pdf
