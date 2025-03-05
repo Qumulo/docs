@@ -8,7 +8,7 @@ This section explains how to deploy the S3 buckets that act as persistent storag
 {% endif %}
 1. Log in to Nexus and click **Downloads > {{site.cnq.nexusDropDown}}**.
 
-1. On the **AWS** tab and, in the **Download the required files** section, select the Qumulo Core version that you want to deploy and then download the corresponding {% if page.deployment == "cfn" %}CloudFormation template{% elsif page.deployment == "tf" %}Terraform configuration{% endif %}, Debian package, and host configuration file.
+1. On the **AWS** tab and, in the **Download the required files** section, select the Qumulo Core version that you want to deploy and then download the corresponding {% if page.deployment == "cfn" %}CloudFormation template{% elsif page.deployment == "tf" %}Terraform configuration{% endif %}, Debian package.
 
 1. Create a new S3 bucket and, within your S3 bucket prefix, create the `qumulo-core-install` directory.
 
