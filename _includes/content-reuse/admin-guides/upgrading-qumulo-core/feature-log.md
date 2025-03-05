@@ -10,6 +10,13 @@ For information about upgrade types for each release, see <a href='mode-referenc
 ## Qumulo Core 7.4.1
 {{page.varDownloadsRelnotes}}
 {{site.gns.nameChange}}
+{{site.data.alerts.important}}
+<ul>
+  <li>This release resolves an issue that we identified in Qumulo Core releases 7.3.1.2 to 7.4.0, where making changes to networking configuration by using the <strong>API Tools</strong> page in the Web UI or by using the <code>qq</code> CLI caused the default gateway to not populate.</li>
+  <li>{{site.gns.nameChange}}</li>
+  <li>To enable upgrades to this version of Qumulo Core, you must delete any existing spoke portals or hub portals from your cluster and then wait for any related tree-delete operations to complete before beginning the upgrade process.</li>
+</ul>
+{{site.data.alerts.end}}
 
 * Made _read-write spoke portals_ available by default
 * Eliminated the REST APIs for manual removal of cached data from spoke portals (no changes to automatic cached data removal)
