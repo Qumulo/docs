@@ -676,8 +676,8 @@ The following table lists metric label names, possible values, and descriptions.
       <td><a id="metric-label-fs_type"></a><code>fs_type</code></td>
       <td>
         <ul>
-          <li class="pdf-friendly"><code>local</code>: Main file system for all non-cached data, including those in portal hub root directories</li>
-          <li class="pdf-friendly"><code>spoke</code>: File system for spoke cached data</li>
+          <li class="pdf-friendly"><code>local</code>: The portion of the file system used for non-cached data, including the data in hub portal root directories</li>
+          <li class="pdf-friendly"><code>spoke</code>: The portion of the file system used for cached data on spoke portals</li>
         </ul>
       </td>
       <td>File system type</td>
@@ -724,8 +724,8 @@ The following table lists metric label names, possible values, and descriptions.
       <td><a id="metric-label-portal_state"></a><code>portal_state</code></td>
       <td>
         <ul>
-          <li class="pdf-friendly"><code>authorized</code>: An authorized spoke portal or hub portal that can be used for file system access</li>
-          <li class="pdf-friendly"><code>deleting</code>: A portal in the process of synchronizing outstanding changes before deletion</li>
+          <li class="pdf-friendly"><code>authorized</code>: A portal ready for file system access whose portal relationship has been approved by both clusters</li>
+          <li class="pdf-friendly"><code>deleting</code>: A portal in process of synchronizing outstanding changes before being deleted</li>
         </ul>
       </td>
       <td>State of a spoke or hub portal</td>
