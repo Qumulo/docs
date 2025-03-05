@@ -439,7 +439,7 @@ cnq:
   cfnConfigureStackOptions: On the <strong>Configure stack options</strong> page, click <strong>Next</strong>.
   cfnRollbackOnFailure: On the <strong>Configure stack options</strong> page, in the <strong>Stack failure options</strong> section, click <strong>Roll back all stack resources</strong>, read and accept the two acknowledgements, and then click <strong>Next</strong>.
   qCoreVerTip: Make a new subdirectory for every new release of Qumulo Core.
-  copyDebAndConfig: Copy `qumulo-core.deb` and `host_configuration.tar.gz` into the directory named after the Qumulo Core version (in this example, it is `7.2.3.2`).
+  copyDebAndConfig: Copy `qumulo-core.deb` into the directory named after the Qumulo Core version (in this example, it is `7.2.3.2`).
   deploymentUniqueNameExampleAWS: myname-deployment-ABCDE01EG2H
   deploymentUniqueNameExampleAzure: mynameCompute-ABCDEFG
   persistentStorageResourceGroupAzure: mynamePStore-abcde
