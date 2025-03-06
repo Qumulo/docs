@@ -1,10 +1,9 @@
 ---
 title: "Virtual Networking Prerequisites for Azure Native Qumulo"
 summary: "This section lists the prerequisites for Azure Native Qumulo (ANQ), describes the components of virtual networking for the service, explains how to configure them, and provides virtual networking best practices."
-redirect_from:
-  -  /azure-administrator-guide/getting-started/virtual-networking-prerequisites-azure-native-qumulo.html
 permalink:  /azure-native-administrator-guide/getting-started/virtual-networking-prerequisites-azure-native-qumulo.html
 redirect_from:
+  - /azure-administrator-guide/getting-started/virtual-networking-prerequisites-azure-native-qumulo.html
   - /azure-guide/configuring-virtual-networking-qumulo-scalable-file-service.html
 sidebar: azure_native_administrator_guide_sidebar
 ---
