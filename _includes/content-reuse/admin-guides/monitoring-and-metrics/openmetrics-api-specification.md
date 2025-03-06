@@ -304,7 +304,7 @@ The following table lists metric names, types, labels, and descriptions.
       <td>5.3.0</td>
       <td>
         The free space on the cluster, in bytes
-        {% include note.html content="This metric doesn't include the data cached on spoke portals." %}
+        {% include note.html content="This metric doesn't include the data cached in spoke portals." %}
       </td>
     </tr>
     <tr>
@@ -335,7 +335,7 @@ The following table lists metric names, types, labels, and descriptions.
         </ul>
       </td>
       <td>7.4.2</td>
-      <td>The amount of space that fs type uses, in bytes</td>
+      <td>The amount of space that file system type uses, in bytes</td>
     </tr>
     <tr>
       <td><code>qumulo_ldap_lookup<br>_request_errors</code></td>
@@ -680,7 +680,7 @@ The following table lists metric label names, possible values, and descriptions.
       <td>
         <ul>
           <li class="pdf-friendly"><code>local</code>: The portion of the file system used for non-cached data, including the data in hub portal root directories</li>
-          <li class="pdf-friendly"><code>spoke</code>: The portion of the file system used for cached data on spoke portals</li>
+          <li class="pdf-friendly"><code>spoke</code>: The portion of the file system used for cached data in spoke portals</li>
         </ul>
       </td>
       <td>File system type</td>
