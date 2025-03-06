@@ -3,7 +3,6 @@ To use the S3 API, you must install the [`aws`]({{site.s3.docs.cli}}) and [`qq` 
 
 {{site.data.alerts.important}}
 <ul>
-  <li>We recommend using Qumulo Core with version 1.22.75 of the AWS CLI, whose operation we have tested.</li>
   <li>The following instructions are for Ubuntu 18.04 (and higher).</li>
 </ul>
 {{site.data.alerts.end}}
@@ -62,6 +61,16 @@ To create and manage S3 buckets, you must configure AWS CLI to work with your Qu
    $ aws configure \
      --profile my-qumulo-profile set s3.addressing_style path
    ```
+
+1. Configure the AWS CLI to only include checksum calculations in requests when required by using the `aws configure` command.
+
+   ```bash
+   $ aws configure set request_checksum_calculation when_required
+   ```
+
+{{site.data.alerts.note}}
+Qumulo Core does not support trailing checksums in requests, so these should be avoided.
+{{site.data.alerts.end}}
 
 1. Use [the access key pair that you have created earlier](#creating-access-key) and the `aws configure` command to:
 
