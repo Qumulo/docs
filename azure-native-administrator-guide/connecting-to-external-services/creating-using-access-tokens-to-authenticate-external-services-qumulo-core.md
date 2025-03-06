@@ -1,9 +1,9 @@
 ---
 title: "Creating and Using Access Tokens to Authenticate External Services to Qumulo Core"
 summary: "This section explains how to create and use access tokens&mdash;by using the Qumulo REST API, Python SDK, and <code>qq</code> CLI&mdash;to authenticate external services to Qumulo Core."
+permalink: /azure-native-administrator-guide/connecting-to-external-services/creating-using-access-tokens-to-authenticate-external-services-qumulo-core.html
 redirect_from:
   - /azure-administrator-guide/connecting-to-external-services/creating-using-access-tokens-to-authenticate-external-services-qumulo-core.html
-permalink: /azure-native-administrator-guide/connecting-to-external-services/creating-using-access-tokens-to-authenticate-external-services-qumulo-core.html
 redirect_from:
   - /azure-administrator-guide/external-services/using-access-tokens.html
 sidebar: azure_native_administrator_guide_sidebar
