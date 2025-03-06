@@ -1,9 +1,9 @@
 ---
 title: "Creating and Managing S3 Access Keys in Qumulo Core"
 summary: "This section explains how to create and manage credentials that S3 API actions in Qumulo Core require to access file system resources, such as access key pairs that sign requests."
+permalink: /azure-native-administrator-guide/s3-api/creating-managing-s3-access-keys.html
 redirect_from:
   - /azure-administrator-guide/s3-api/creating-managing-s3-access-keys.html
-permalink: /azure-native-administrator-guide/s3-api/creating-managing-s3-access-keys.html
 sidebar: azure_native_administrator_guide_sidebar
 varPaginatedResponsePart1: The `entries` list contains the access keys, limited to the first
 varListMax: "10,000"
