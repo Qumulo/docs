@@ -679,8 +679,8 @@ The following table lists metric label names, possible values, and descriptions.
       <td><a id="metric-label-fs_type"></a><code>fs_type</code></td>
       <td>
         <ul>
-          <li class="pdf-friendly"><code>local</code>: The portion of the file system reserved for persistent data (including data in hub portal root directories)</li>
-          <li class="pdf-friendly"><code>spoke</code>: The portion of the file system used for cached data (on spoke portals)</li>
+          <li class="pdf-friendly"><code>local</code>: The portion of the file system used for persistent data, including data in hub portal root directories</li>
+          <li class="pdf-friendly"><code>spoke</code>: The portion of the file system used for cached data on spoke portals</li>
         </ul>
       </td>
       <td>File system type</td>
