@@ -317,7 +317,7 @@ The following table lists metric names, types, labels, and descriptions.
         </ul>
       </td>
       <td>7.4.2</td>
-      <td>Number of portals in each state, does not include pending or unlinked portals.</td>
+      <td>The number of portals for each state, not including portals in <code>PENDING</code> and <code>UNLINKED</code> states</td>
     </tr>
     <tr>
       <td><code>qumulo_fs_snapshots</code></td>
@@ -335,7 +335,7 @@ The following table lists metric names, types, labels, and descriptions.
         </ul>
       </td>
       <td>7.4.2</td>
-      <td>The amount of space that file system type uses, in bytes</td>
+      <td>The amount of space that the file system type uses, in bytes</td>
     </tr>
     <tr>
       <td><code>qumulo_ldap_lookup<br>_request_errors</code></td>
@@ -679,8 +679,8 @@ The following table lists metric label names, possible values, and descriptions.
       <td><a id="metric-label-fs_type"></a><code>fs_type</code></td>
       <td>
         <ul>
-          <li class="pdf-friendly"><code>local</code>: The portion of the file system used for non-cached data, including the data in hub portal root directories</li>
-          <li class="pdf-friendly"><code>spoke</code>: The portion of the file system used for cached data in spoke portals</li>
+          <li class="pdf-friendly"><code>local</code>: The portion of the file system reserved for persistent data (including data in hub portal root directories)</li>
+          <li class="pdf-friendly"><code>spoke</code>: The portion of the file system used for cached data (on spoke portals)</li>
         </ul>
       </td>
       <td>File system type</td>
@@ -731,7 +731,7 @@ The following table lists metric label names, possible values, and descriptions.
           <li class="pdf-friendly"><code>deleting</code>: A portal in process of synchronizing outstanding changes before being deleted</li>
         </ul>
       </td>
-      <td>State of a spoke or hub portal</td>
+      <td>The state of a spoke portal or a hub portal</td>
     </tr>
     <tr>
       <td><a id="metric-label-portal_type"></a><code>portal_state</code></td>
@@ -741,7 +741,7 @@ The following table lists metric label names, possible values, and descriptions.
           <li class="pdf-friendly"><code>spoke</code>: Spoke portal</li>
         </ul>
       </td>
-      <td>Type of a portal</td>
+      <td>The portal type</td>
     </tr>
     <tr>
       <td><a id="metric-label-protocol"></a><code>protocol</code></td>
