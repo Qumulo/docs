@@ -503,7 +503,7 @@ Extended S3 object versioning support to additional API actions
 
 ## Qumulo Core 5.0.4
 {{page.varDownloadsRelnotes}}
-* Enabled advanced data integrity for new clusters
+* Enabled Advanced Data Integrity for new clusters to provide checksumming functionality
 * Added a check to confirm whether an upgrade can begin
 * Added an initial release of the S3 protocol
 * Deprecated reboot `qq` CLI commands
