@@ -724,7 +724,7 @@ The following table lists metric label names, possible values, and descriptions.
       <td><a id="metric-label-portal_state"></a><code>portal_state</code></td>
       <td>
         <ul>
-          <li class="pdf-friendly"><code>authorized</code>: A portal ready for file system access whose portal relationship has been approved by both clusters</li>
+          <li class="pdf-friendly"><code>authorized</code>: A portal, ready for file system access, for which both clusters approved a portal relationship</li>
           <li class="pdf-friendly"><code>deleting</code>: A portal in process of synchronizing outstanding changes before being deleted</li>
         </ul>
       </td>
