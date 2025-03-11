@@ -163,7 +163,7 @@ The following table lists metric names, types, labels, and descriptions.
       </td>
       <td>7.2.0.2</td>
       <td>The critical temperature threshold for each physical CPU</td>
-    </tr>    
+    </tr>
     <tr>
       <td><code>qumulo_cpu_max_temperature<br>_celsius</code></td>
       <td><a href="#metric-type-gauge"><code>gauge</code></a></td>
