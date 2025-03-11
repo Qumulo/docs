@@ -187,7 +187,7 @@ The following table lists metric names, types, labels, and descriptions.
       </td>
       <td>5.3.0</td>
       <td>The temperature for each physical CPU, in degrees Celsius</td>
-    </tr>
+    </tr>    
     <tr>
       <td><code>qumulo_disk_endurance<br>_percent</code></td>
       <td><a href="#metric-type-gauge"><code>gauge</code></a></td>
