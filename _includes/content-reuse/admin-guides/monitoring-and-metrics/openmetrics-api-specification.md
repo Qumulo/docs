@@ -302,10 +302,7 @@ The following table lists metric names, types, labels, and descriptions.
       <td><a href="#metric-type-gauge"><code>gauge</code></a></td>
       <td>&mdash;</td>
       <td>5.3.0</td>
-      <td>
-        The free space on the cluster, in bytes
-        {% include note.html content="This metric doesn't include the data cached in spoke portals." %}
-      </td>
+      <td>The free space on the cluster, in bytes {% include note.html content="This metric doesn't include the cached data on spoke portals." %}</td>
     </tr>
     <tr>
       <td><code>qumulo_fs_portal_count</code></td>
