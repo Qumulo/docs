@@ -302,7 +302,19 @@ The following table lists metric names, types, labels, and descriptions.
       <td><a href="#metric-type-gauge"><code>gauge</code></a></td>
       <td>&mdash;</td>
       <td>5.3.0</td>
-      <td>The free space on the cluster, in bytes</td>
+      <td>The free space on the cluster, in bytes {% include note.html content="This metric doesn't include the cached data on spoke portals." %}</td>
+    </tr>
+    <tr>
+      <td><code>qumulo_fs_portal_count</code></td>
+      <td><a href="#metric-type-gauge"><code>gauge</code></a></td>
+      <td>
+        <ul>
+          <li class="pdf-friendly"><a href="#metric-label-portal_state"><code>portal_state</code></a></li>
+          <li class="pdf-friendly"><a href="#metric-label-portal_type"><code>portal_type</code></a></li>
+        </ul>
+      </td>
+      <td>7.4.2</td>
+      <td>The number of portals for each state, not including portals in <code>prending</code> and <code>unlinked</code> states</td>
     </tr>
     <tr>
       <td><code>qumulo_fs_snapshots</code></td>
@@ -310,6 +322,17 @@ The following table lists metric names, types, labels, and descriptions.
       <td>&mdash;</td>
       <td>5.3.0</td>
       <td>The number of snapshots on the cluster</td>
+    </tr>
+    <tr>
+      <td><code>qumulo_fs_used_bytes</code></td>
+      <td><a href="#metric-type-gauge"><code>gauge</code></a></td>
+      <td>
+        <ul>
+          <li class="pdf-friendly"><a href="#metric-label-fs_type"><code>fs_type</code></a></li>
+        </ul>
+      </td>
+      <td>7.4.2</td>
+      <td>The amount of space that the file system type uses, in bytes</td>
     </tr>
     <tr>
       <td><code>qumulo_ldap_lookup<br>_request_errors</code></td>
@@ -650,6 +673,16 @@ The following table lists metric label names, possible values, and descriptions.
       <td>The fan name</td>
     </tr>
     <tr>
+      <td><a id="metric-label-fs_type"></a><code>fs_type</code></td>
+      <td>
+        <ul>
+          <li class="pdf-friendly"><code>local</code>: The portion of the file system used for persistent data, including data in hub portal root directories</li>
+          <li class="pdf-friendly"><code>spoke</code>: The portion of the file system used for cached data on spoke portals</li>
+        </ul>
+      </td>
+      <td>File system type</td>
+    </tr>
+    <tr>
       <td><a id="metric-label-interface"></a><code>interface</code></td>
       <td>An interface name, for example <code>eth0</code></td>
       <td>The interface name</td>
@@ -686,6 +719,26 @@ The following table lists metric label names, possible values, and descriptions.
       <td><a id="metric-label-path"></a><code>path</code></td>
       <td>Slash (<code>/</code>)</td>
       <td>The path to a directory in the file system</td>
+    </tr>
+    <tr>
+      <td><a id="metric-label-portal_state"></a><code>portal_state</code></td>
+      <td>
+        <ul>
+          <li class="pdf-friendly"><code>authorized</code>: A portal, ready for file system access, for which both clusters approved a portal relationship</li>
+          <li class="pdf-friendly"><code>deleting</code>: A portal in process of synchronizing outstanding changes before being deleted</li>
+        </ul>
+      </td>
+      <td>The state of a spoke portal or a hub portal</td>
+    </tr>
+    <tr>
+      <td><a id="metric-label-portal_type"></a><code>portal_state</code></td>
+      <td>
+        <ul>
+          <li class="pdf-friendly"><code>hub</code>: Hub portal</li>
+          <li class="pdf-friendly"><code>spoke</code>: Spoke portal</li>
+        </ul>
+      </td>
+      <td>The portal type</td>
     </tr>
     <tr>
       <td><a id="metric-label-protocol"></a><code>protocol</code></td>
