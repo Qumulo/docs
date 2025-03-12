@@ -398,8 +398,8 @@ while true; do
     echo
     echo -e "\033[1;33m🤖 Welcome to the Documentation Portal Repository\033[0m"
     echo
-    echo "1.  🚧 Rebuild Ruby gems"
-    echo "2.  🚧 Rebuild docs-builder container"
+    echo "1.  🚧 Rebuild docs-builder container"
+    echo "2.  🚧 Rebuild Ruby gems"
     echo "3.  ⚙️  Regenerate CLI documentation"
     echo "4.  ⚙️  Regenerate API documentation"
     echo "5.  🆕 List CLI documentation with appended content"
@@ -425,8 +425,8 @@ while true; do
     read -p $'\033[1;33mWhat would you like to do? \033[0m' choice
 
     case $choice in
-        1) rebuild_ruby_gems ;;
-        2) rebuild_container ;;
+        1) rebuild_container ;;
+        2) rebuild_ruby_gems ;;
         3) regen_cli_docs ;;
         4) regen_api_docs ;;
         5) find_modified_cli ;;
