@@ -314,7 +314,7 @@ The following table lists metric names, types, labels, and descriptions.
         </ul>
       </td>
       <td>7.4.2</td>
-      <td>The number of portals for each state, not including portals in <code>prending</code> and <code>unlinked</code> states</td>
+      <td>The number of portals for each state, not including portals in <code>Pending</code> and <code>Unlinked</code> states</td>
     </tr>
     <tr>
       <td><code>qumulo_fs_snapshots</code></td>
