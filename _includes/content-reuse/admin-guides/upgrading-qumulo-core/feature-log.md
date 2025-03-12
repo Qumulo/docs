@@ -7,6 +7,14 @@ For information about upgrade types for each release, see <a href='mode-referenc
 ## Qumulo Core 7.4.1
 {{page.varDownloadsRelnotes}}
 {{site.gns.nameChange}}
+{{site.data.alerts.important}}
+<ul>
+  <li>This release resolves an issue that we identified in Qumulo Core releases 7.3.1.2 to 7.4.0, where making changes to networking configuration by using the <strong>API Tools</strong> page in the Web UI or by using the <code>qq</code> CLI caused the default gateway to not populate.</li>
+  <li>{{site.gns.nameChange}}</li>
+  <li>To enable upgrades to this version of Qumulo Core, you must delete any existing spoke portals or hub portals from your cluster and then wait for any related tree-delete operations to complete before beginning the upgrade process.</li>
+  <li>To enable the QFSD API to distinguish between cluster-local and spoke-cached data, from this release of Qumulo Core onward, 64-bit integers can no longer represent QFSD API file identifiers. API integrations must treat them as variable-length strings, in accordance with the OpenAPI schema. Although this change affects all REST API endpoints the Qumulo REST API continues to accept old-style identifiers for backwards compatibility.</li>
+</ul>
+{{site.data.alerts.end}}
 
 * Made _read-write spoke portals_ available by default
 * Eliminated the REST APIs for manual removal of cached data from spoke portals (no changes to automatic cached data removal)
@@ -492,7 +500,7 @@ Extended S3 object versioning support to additional API actions
 
 ## Qumulo Core 5.0.4
 {{page.varDownloadsRelnotes}}
-* Enabled advanced data integrity for new clusters
+* Enabled Advanced Data Integrity for new clusters to provide checksumming functionality
 * Added a check to confirm whether an upgrade can begin
 * Added an initial release of the S3 protocol
 * Deprecated reboot `qq` CLI commands
