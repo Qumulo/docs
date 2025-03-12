@@ -1,6 +1,14 @@
 #!/bin/bash
 
-eval $(~/src/environment)
+check_environment() {
+    if ! eval $(~/src/environment) 2>&1 | grep -q "FileNotFoundError: \[Errno 2\] No such file or directory: '/opt/qumulo/env/.*/lib/environment.sh'"; then
+        return
+    fi
+
+    echo "Remediating toolchain..."
+    cd ~/src
+    hg up default && hg fetch && hg prebuild
+}
 
 check_symlinks() {
     local git_dir="$HOME/git"
@@ -490,6 +498,7 @@ find_unused_scripts() {
     fi
 }
 
+check_environment
 check_symlinks
 global_docs_menu
 install_docker
