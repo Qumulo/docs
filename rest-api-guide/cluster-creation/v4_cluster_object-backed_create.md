@@ -61,7 +61,7 @@ methods:
     responses:
     - code: '202'
       description: Return value on success
-    summary: Form an object backed cluster with the given set of node IPs, fault domain
+    summary: Form an object-backed cluster with the given set of node IPs, fault domain
       IDs, object storage URIs and admin password.
 rest_endpoint: /v4/cluster/object-backed/create
 api_version: v4

@@ -9,17 +9,20 @@ methods:
         UI URL-encodes the paths.
       name: ref
       required: true
+    - description: Name of the directory entry to be deleted
+      name: name
+      required: true
     preview: false
     response_body: {}
     responses:
     - code: '200'
       description: Return value on success
-    summary: Delete the file system object specified by 'ref'. When 'ref' is a path,
-      the exact specified name is deleted. If 'ref' is a file ID and the file has
-      mulitple links, then the link to be deleted is the one that '/v1/files/resolve'
-      would return.
-rest_endpoint: /v1/files/{ref}
+    summary: Delete the link specified by 'name' in the directory specified by 'ref'.
+      The file system object is deleted if this was its last link. This operation
+      is more convenient than 'DELETE /v1/files/<ref>' when the file ID of the directory
+      is known in advance for deleting multiple files in one directory.
+rest_endpoint: /v1/files/{ref}/entries/{name}
 api_version: v1
-permalink: /rest-api-guide/files/files_ref.html
+permalink: /rest-api-guide/files/files_ref_entries_name.html
 sidebar: rest_api_guide_sidebar
 ---
