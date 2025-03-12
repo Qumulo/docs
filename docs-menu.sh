@@ -6,7 +6,6 @@ check_symlinks() {
     local git_dir="$HOME/git"
     local docs_symlink="$git_dir/docs-internal"
     local vectara_symlink="$git_dir/vectara-ingest"
-    local docs_menu="$git_dir/docs-menu.sh"
 
     # Detect current script directory as default repo location
     local script_path
@@ -55,12 +54,41 @@ check_symlinks() {
     fi
 }
 
+global_docs_menu() {
+    # If 'dm' already exists, exit silently
+    [[ -f "$HOME/.local/bin/dm" ]] && return
+
+    echo "Making docs-menu.sh globally accessible as 'dm'..."
+
+    mkdir -p ~/.local/bin
+    chmod +x ~/git/docs-internal/docs-menu.sh
+
+    # Create the 'dm' wrapper script
+    echo '#!/bin/bash' > ~/.local/bin/dm
+    echo '"$HOME/git/docs-internal/docs-menu.sh" "$@"' >> ~/.local/bin/dm
+    chmod +x ~/.local/bin/dm
+
+    # Ensure ~/.local/bin is in PATH
+    if ! echo "$PATH" | grep -q "$HOME/.local/bin"; then
+        echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc
+        export PATH="$HOME/.local/bin:$PATH"
+        echo "Added ~/.local/bin to PATH. Restart your shell or run 'source ~/.bashrc' to apply."
+    fi
+
+    echo "'dm' is now globally accessible. You can run it by typing: dm"
+}
+
+start_in_docs_dir() {
+    cd ~/git/docs-internal
+}
+
 sweep_toolchain() {
-  ~/src/toolchain/qpkg.py sweep
+    ~/src/toolchain/qpkg.py sweep
 }
 
 prune_docker() {
-  docker builder prune && docker image prune && docker container prune
+    start_in_docs_dir
+    docker builder prune && docker image prune && docker container prune
 }
 
 no_toolchain() {
@@ -118,6 +146,7 @@ check_qumulo_config_files(){
 
 # Refresh Vectara Ingest repo
 refresh_vectara_ingest_repo() {
+    start_in_docs_dir
     echo "Refreshing the vectara-ingest repository requires synchronizing our fork."
     echo -e "\e[31mThis removes all modifications from the repository. Continue? (y/n)\e[0m"
     read -r answer
@@ -168,78 +197,81 @@ refresh_vectara_ingest_repo() {
 
 # Install Docker and explain group changes
 install_docker() {
-  if ! command -v docker &> /dev/null; then
-    echo "Docker is required for documentation builds. Install Docker? (y/n)"
-    read -r answer
-    if [ "$answer" = "y" ]; then
-      echo "Installing Docker..."
-      sudo apt-get update && sudo apt-get install -y docker.io
-      sudo usermod -aG docker "$(whoami)"
-      sudo service docker start
-      echo -e "\e[31mFor the group change to take effect, you must log out of the system and then log back in.\e[0m"
-      echo -e "\e[31mLog out now? (y/n)\e[0m"
-      read -r logout_now
-      if [ "$logout_now" = "y" ]; then
-        echo "Logging out..."
-        pkill -KILL -u "$(whoami)"
-      else
-        echo "Remember to log out and then log back in later."
-      fi
-    elif [ "$answer" = "n" ]; then
-      echo "Can't continue without installing Docker. Exiting..."
-      exit 1
+    if ! command -v docker &> /dev/null; then
+        echo "Docker is required for documentation builds. Install Docker? (y/n)"
+        read -r answer
+        if [ "$answer" = "y" ]; then
+            echo "Installing Docker..."
+            sudo apt-get update && sudo apt-get install -y docker.io
+            sudo usermod -aG docker "$(whoami)"
+            sudo service docker start
+            echo -e "\e[31mFor the group change to take effect, you must log out of the system and then log back in.\e[0m"
+            echo -e "\e[31mLog out now? (y/n)\e[0m"
+            read -r logout_now
+            if [ "$logout_now" = "y" ]; then
+                echo "Logging out..."
+                pkill -KILL -u "$(whoami)"
+            else
+                echo "Remember to log out and then log back in later."
+            fi
+        elif [ "$answer" = "n" ]; then
+            echo "Can't continue without installing Docker. Exiting..."
+            exit 1
+        fi
     fi
-  fi
 }
 
 # Install Noto Color Emoji required for documentation builds
 install_noto_emoji() {
-  if ! dpkg -l | grep -qw fonts-noto-color-emoji; then
-    echo "fonts-noto-color-emoji is required for documentation builds. Install package? (y/n)"
-    read -r answer
-    if [ "$answer" = "y" ]; then
-      echo "Installing fonts-noto-color-emoji..."
-      sudo apt-get update && sudo apt-get install -y fonts-noto-color-emoji
-    elif [ "$answer" = "n" ]; then
-      echo "Continuing without installing fonts-noto-color-emoji..."
+    if ! dpkg -l | grep -qw fonts-noto-color-emoji; then
+        echo "fonts-noto-color-emoji is required for documentation builds. Install package? (y/n)"
+        read -r answer
+        if [ "$answer" = "y" ]; then
+            echo "Installing fonts-noto-color-emoji..."
+            sudo apt-get update && sudo apt-get install -y fonts-noto-color-emoji
+        elif [ "$answer" = "n" ]; then
+            echo "Continuing without installing fonts-noto-color-emoji..."
+        fi
     fi
-  fi
 }
 
 # Rebuild the Ruby gems
 rebuild_ruby_gems() {
+    start_in_docs_dir
     echo "Rebuilding the ruby gems..."
     docker run -ti --user $(id -u):$(id -g) --entrypoint /bin/bash -v $(pwd):/src docs-builder -c "bundle update --bundler; bundle install"
 }
 
 # Rebuild the docs-builder container
 rebuild_container() {
+    start_in_docs_dir
     echo "Rebuilding the docs-builder container..."
     docker build -f docker/build/Dockerfile -t docs-builder .
 }
 
 # List CLI documentation with appended content
 find_modified_cli(){
-  echo "Searching for CLI documentation with manually appended content..."
-  local flag_file=$(mktemp)
-  find ~/git/docs-internal/qq-cli-command-guide -type f -name "*.md" | while IFS= read -r file; do
-    start_line=$(grep -n -- '---' "$file" | sed '2q;d' | cut -d: -f1)
-    if [ ! -z "$start_line" ]; then
-        content=$(tail -n +$((start_line + 1)) "$file" | awk 'NF {if(count<5)print; count++} END {if(count>=5) print "..."}')
-        if [[ $content =~ [^[:space:]] ]]; then
-            # File found, delete the flag file
-            rm -f "$flag_file"
-            echo -e "\033[0;31m$file\033[0m"
-            echo "$content"
-            echo
+    start_in_docs_dir
+    echo "Searching for CLI documentation with manually appended content..."
+    local flag_file=$(mktemp)
+    find ~/git/docs-internal/qq-cli-command-guide -type f -name "*.md" | while IFS= read -r file; do
+        start_line=$(grep -n -- '---' "$file" | sed '2q;d' | cut -d: -f1)
+        if [ ! -z "$start_line" ]; then
+            content=$(tail -n +$((start_line + 1)) "$file" | awk 'NF {if(count<5)print; count++} END {if(count>=5) print "..."}')
+            if [[ $content =~ [^[:space:]] ]]; then
+                # File found, delete the flag file
+                rm -f "$flag_file"
+                echo -e "\033[0;31m$file\033[0m"
+                echo "$content"
+                echo
+            fi
         fi
+    done
+    if [ -f "$flag_file" ]; then
+        echo "Can't find files with manually appended content."
+        # Clean up the flag file
+        rm -f "$flag_file"
     fi
-  done
-  if [ -f "$flag_file" ]; then
-    echo "Can't find files with manually appended content."
-    # Clean up the flag file
-    rm -f "$flag_file"
-  fi
 }
 
 # Function to check for the src repository
@@ -252,6 +284,7 @@ check_src_repo() {
 
 # Regenerate CLI documentation
 regen_cli_docs() {
+    start_in_docs_dir
     check_src_repo
     while true; do
         read -p "Generate the current (c) or future (f) version of the CLI docs? " version_choice
@@ -278,6 +311,7 @@ regen_cli_docs() {
 
 # Regenerate API documentation
 regen_api_docs() {
+    start_in_docs_dir
     check_src_repo
     echo "Building API documentation from the Music cluster..."
     python3 gen-api.py
@@ -285,6 +319,7 @@ regen_api_docs() {
 
 # Build HTML documentation by using Jekyll
 build_html_docs() {
+    start_in_docs_dir
     echo "Building HTML documentation..."
     ignore_warnings
     docker run --rm --user $(id -u):$(id -g) --name docs-container-build -v $(pwd):/src:rw docs-builder
@@ -292,12 +327,14 @@ build_html_docs() {
 
 # Build PDF documentation by using Jekyll and PrinceXML
 build_pdf_docs() {
+    start_in_docs_dir
     echo "Building PDF documentation..."
     ./pdf-build.sh
 }
 
 # Build the documentation and serve it locally by using Tailscale
 build_serve_docs_locally_tailscale() {
+    start_in_docs_dir
     echo -e "Building documentation and serving it locally on \e[31m$(hostname).qumulo.ts.net\e[0m by using Tailscale..."
     ignore_warnings
     docker run --rm --user $(id -u):$(id -g) --name docs-container-build -v $(pwd):/src:rw docs-builder && cd _site && sudo tailscale serve $PWD && cd ..
@@ -305,6 +342,7 @@ build_serve_docs_locally_tailscale() {
 
 # Build the documentation and serve it locally on port 4000 by using Python
 build_serve_docs_locally_python() {
+    start_in_docs_dir
     echo -e "Building documentation and serving it locally on \e[31m$(hostname):4000\e[0m by using Python..."
     ignore_warnings
     docker run --rm --user $(id -u):$(id -g) --name docs-container-build -v $(pwd):/src:rw docs-builder && cd _site && python3 -m http.server 4000 && cd ..
@@ -312,6 +350,7 @@ build_serve_docs_locally_python() {
 
 # Build the documentation and serve it locally on port 4000 by using Jekyll LiveReload
 build_serve_docs_locally_jekyll() {
+    start_in_docs_dir
     echo "Building documentation and serving it locally on \e[31m$(hostname):4000\e[0m by using Jekyll LiveReload..."
     ignore_warnings
     docker run -ti --rm --user $(id -u):$(id -g) --name docs-container-serve -v $(pwd):/src:rw -P --network host docs-builder serve
@@ -319,6 +358,7 @@ build_serve_docs_locally_jekyll() {
 
 # Only serve the documentation locally on port 4000 by using http.server
 only_serve_docs_locally_python() {
+    start_in_docs_dir
     echo -e "Serving documentation locally on \e[31m$(hostname):4000\e[0m by using Python..."
     echo -e "\e[31m⚠️  Caution: This method of running an HTTP server is insecure.\e[0m"
     cd _site && python3 -m http.server 4000 && cd ..
@@ -326,12 +366,14 @@ only_serve_docs_locally_python() {
 
 # Only serve the documentation locally by using Tailscale
 only_serve_docs_locally_tailscale() {
+    start_in_docs_dir
     echo -e "Serving documentation locally on \e[31m$(hostname).qumulo.ts.net\e[0m by using Tailscale..."
     cd _site && sudo tailscale serve $PWD && cd ..
 }
 
 # Check documentation for link, script, and image errors by using HTML Proofer
 check_docs_errors() {
+    start_in_docs_dir
     echo "Checking documentation for link, script, and image errors..."
     ignore_locale
     docker run --rm --user $(id -u):$(id -g) --name docs-container-check -v $(pwd):/src:rw docs-builder check
@@ -339,6 +381,7 @@ check_docs_errors() {
 
 # Check documentation for spelling errors by using Hunspell
 check_spelling_errors() {
+    start_in_docs_dir
     echo "Checking documentation for spelling errors..."
     ignore_locale
     docker run --rm --user $(id -u):$(id -g) --name docs-container-proof -v $(pwd):/src:rw docs-builder proof
@@ -346,6 +389,7 @@ check_spelling_errors() {
 
 # Ingest documentation
 ingest_documentation() {
+    start_in_docs_dir
     local yaml_file="$1"
     if [ -z "$yaml_file" ]; then
         echo "You must specify a YAML file."
@@ -356,6 +400,7 @@ ingest_documentation() {
 
 # Ingest docs.qumulo.com into Vectara corpus 2
 ingest_docs_portal() {
+    start_in_docs_dir
     echo "Ingesting docs.qumulo.com into Vectara corpus 2..."
     no_toolchain
     check_vectara_ingest_repo
@@ -372,6 +417,7 @@ ingest_docs_portal() {
 
 # Ingest care.qumulo.com into Vectara corpus 4
 ingest_care_portal() {
+    start_in_docs_dir
     echo "Ingesting cqre.qumulo.com into Vectara..."
     no_toolchain
     check_vectara_ingest_repo
@@ -388,6 +434,7 @@ ingest_care_portal() {
 
 # Ingest qumulo.com into Vectara corpus 5
 ingest_corp_site() {
+    start_in_docs_dir
     echo "Ingesting docs.qumulo.com into Vectara..."
     no_toolchain
     check_vectara_ingest_repo
@@ -444,7 +491,7 @@ find_unused_scripts() {
 }
 
 check_symlinks
-# check_docs_internal_repo
+global_docs_menu
 install_docker
 install_noto_emoji
 
