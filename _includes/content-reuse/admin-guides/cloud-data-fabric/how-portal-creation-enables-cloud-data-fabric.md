@@ -109,6 +109,7 @@ A _portal status_ indicates the accessibility of any portal.
         <ul>
           <li>The <a href="#portal-relationship">portal relationship</a> is in process of being configured.</li>
           <li>Full connectivity isn't required at this time.</li>
+          <li>The portal is inaccessible.</li>
         </ul>
       </td>
     </tr>
