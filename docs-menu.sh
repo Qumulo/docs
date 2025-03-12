@@ -1,13 +1,13 @@
 #!/bin/bash
 
 check_environment() {
-    if ! eval $(~/src/environment) 2>&1 | grep -q "FileNotFoundError: \[Errno 2\] No such file or directory: '/opt/qumulo/env/.*/lib/environment.sh'"; then
+    if ! eval $(~/src/environment) 2>&1 | grep -q "FileNotFoundError"; then
         return
     fi
 
     echo "Remediating toolchain..."
     cd ~/src
-    hg up default && hg fetch && hg prebuild
+    hg up default && hg fetch && ./prebuild
 }
 
 check_symlinks() {
