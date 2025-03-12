@@ -1,13 +1,20 @@
 #!/bin/bash
 
 check_environment() {
-    if eval $(~/src/environment) >/dev/null 2>&1; then
-        return
+    eval $(~/src/environment) 2>&1
+    if [[ $? -ne 0 ]]; then
+        echo "Detected an error while running environment script. Remediating toolchain..."
+        cd ~/src
+        hg up default && hg fetch && hg prebuild
     fi
 
-    echo "Remediating toolchain..."
-    cd ~/src
-    hg up default && hg fetch && ./prebuild
+    #if eval $(~/src/environment) >/dev/null 2>&1; then
+    #    return
+    #fi
+
+    #echo "Remediating toolchain..."
+    #cd ~/src
+    #hg up default && hg fetch && ./prebuild
 }
 
 check_symlinks() {
