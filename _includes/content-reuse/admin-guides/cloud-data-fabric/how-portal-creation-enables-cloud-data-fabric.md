@@ -57,7 +57,7 @@ The following key terms help define the components of Cloud Data Fabric function
 * <a id="portal-relationship"></a>**Portal Relationship:** A proposal that a spoke portal on one Qumulo cluster issues to another Qumulo cluster (with a _hub portal)_, which the Qumulo cluster with the hub portal _authorizes_.
 
 ### Portal States
-Throughout the process of creating a [_spoke portal_](#spoke-portal) and proposing a [_portal relationship_](#portal-relationship), either portal type can be in one of the following states.
+A _portal state_ indicates the stages of the [_spoke portal_](#spoke-portal) creation process and the proposal of a [_portal relationship_](#portal-relationship).
 
 <table>
   <thead>
@@ -69,15 +69,20 @@ Throughout the process of creating a [_spoke portal_](#spoke-portal) and proposi
   <tbody>
     <tr>
       <td><code>Unlinked</code></td>
-      <td>Qumulo Core has created the spoke portal, but wasn't able to established a relationship for it or automatically clean up. Use the {% include qq.html command="portal_delete_spoke" %} command to manually clean up the spoke portal before trying configuration again.</td>
+      <td>
+        <p>Qumulo Core created the spoke portal, but couldn't establish a relationship for it or clean up the spoke portal automatically.</p>
+        <p>Before retrying the configuration, use the {% include qq.html command="portal_delete_spoke" %} command to clean up the spoke portal manually.</p>
+      </td>
     </tr>
     <tr>
       <td><code>Pending</code></td>
-      <td>Qumulo Core has established a relationship between the spoke portal and a hub portal, but the hub portal hasn't given its authorization. Use the {% include qq.html command="portal_authorize_hub" %} command.</td>
+      <td>
+        <p>Qumulo Core established a relationship between the spoke portal and a hub portal, but the hub portal did not give its authorization.</p>
+        <p>Use the {% include qq.html command="portal_authorize_hub" %} command to give the authorization.</td>
     </tr>
     <tr>
       <td><code>Authorized</code></td>
-      <td>The portal relationship has been approved by both clusters and the spoke portal root directory is accessible if full connectivity is established.</td>
+      <td>The portal relationship is approved by both clusters and the spoke portal root directory is accessible, if full connectivity is established.</td>
     </tr>
     <tr>
       <td><code>Deleting</code></td>
@@ -88,8 +93,7 @@ Throughout the process of creating a [_spoke portal_](#spoke-portal) and proposi
 
 
 ### Portal Statuses
-
-All portals will have one of the following statuses which indicate whether they are ready to be accessed. Full connectivity is required for the portal to have the `Active` status.
+A _portal status_ indicates the accessibility of any portal.
 
 <table>
   <thead>
@@ -101,15 +105,32 @@ All portals will have one of the following statuses which indicate whether they 
   <tbody>
     <tr>
       <td><code>Inactive</code></td>
-      <td>The portal relationship is still being configured and full connectivity is not yet required.</td>
+      <td>
+        <ul>
+          <li>The <a href="#portal-relationship">portal relationship</a> is in process of being configured.</li>
+          <li>Full connectivity isn't required at this time.</li>
+        </ul>
+      </td>
     </tr>
     <tr>
       <td><code>Active</code></td>
-      <td>All required connections have been formed between the spoke portal and hub portal. The portal is fully accessible.</td>
+      <td>
+        <ul>
+          <li>All required connections between the <a href="#spoke-portal">spoke portal</a> and <a href="#hub-portal">hub portal</a> are established.</li>
+          <li>The portal requires full connectivity.</li>
+          <li>The portal is fully accessible.</li>
+        </ul>
+      </td>
     </tr>
     <tr>
       <td><code>Degraded</code></td>
-      <td>Some or all of the required connections between the spoke portal and hub portal are missing. Qumulo Core is actively attempting to reform those connections. The portal may be inaccessible.</td>
+      <td>
+        <ul>
+          <li>Some or all required connections between the spoke portal and hub portal are missing.</li>
+          <li>Qumulo Core is attemping to restore connectivity.</li>
+          <li>The portal might be inaccessible.</li>
+        </ul>
+      </td>
     </tr>
   </tbody>
 </table>
