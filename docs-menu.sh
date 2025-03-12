@@ -8,53 +8,49 @@ check_symlinks() {
     local vectara_symlink="$git_dir/vectara-ingest"
     local docs_menu="$git_dir/docs-menu.sh"
 
+    # Detect current script directory as default repo location
+    local script_path
+    script_path="$(realpath "$0")"
+    local default_repo_dir
+    default_repo_dir="$(dirname "$script_path")"
+    local parent_dir
+    parent_dir="$(dirname "$default_repo_dir")"
+
     # Ensure ~/git exists
     if [[ ! -d "$git_dir" ]]; then
         read -p "Directory $git_dir does not exist. Create it? (y/n): " create_git
         if [[ "$create_git" == "y" ]]; then
             mkdir -p "$git_dir"
             echo "Created $git_dir."
-        else
-            echo "Can't continue. Exiting..."
+        elif [[ "$create_git" == "n" ]]; then
+            echo "Skipping directory creation. Exiting."
             return 1
         fi
     fi
 
     # Check and create docs-internal symlink
     if [[ ! -L "$docs_symlink" ]]; then
-        read -p "Symlink $docs_symlink does not exist. Create it? (y/n): " create_docs
+        read -p "Create symlink for $docs_symlink? Use default path ($default_repo_dir)? (y/n): " create_docs
         if [[ "$create_docs" == "y" ]]; then
+            ln -s "$default_repo_dir" "$docs_symlink"
+            echo "Created symlink $docs_symlink -> $default_repo_dir."
+        elif [[ "$create_docs" == "n" ]]; then
             read -p "Enter the full path of the docs-internal repo: " docs_path
             ln -s "$docs_path" "$docs_symlink"
             echo "Created symlink $docs_symlink -> $docs_path."
-        else
-            echo "Can't continue. Exiting..."
-            return 1
         fi
     fi
 
     # Check and create vectara-ingest symlink
     if [[ ! -L "$vectara_symlink" ]]; then
-        read -p "Symlink $vectara_symlink does not exist. Create it? (y/n): " create_vectara
+        read -p "Create symlink for $vectara_symlink? Use default path ($parent_dir/vectara-ingest)? (y/n): " create_vectara
         if [[ "$create_vectara" == "y" ]]; then
+            ln -s "$parent_dir/vectara-ingest" "$vectara_symlink"
+            echo "Created symlink $vectara_symlink -> $parent_dir/vectara-ingest."
+        elif [[ "$create_vectara" == "n" ]]; then
             read -p "Enter the full path of the vectara-ingest repo: " vectara_path
             ln -s "$vectara_path" "$vectara_symlink"
             echo "Created symlink $vectara_symlink -> $vectara_path."
-        else
-            echo "Can't continue. Exiting..."
-            return 1
-        fi
-    fi
-
-    # Ensure docs-menu.sh exists and is accessible globally
-    if [[ ! -f "$docs_menu" ]]; then
-        read -p "docs-menu.sh is missing. Enter the full path where docs-menu.sh exists: " docs_menu_path
-        if [[ -f "$docs_menu_path" ]]; then
-            ln -s "$docs_menu_path" "$docs_menu"
-            echo "Symlinked $docs_menu -> $docs_menu_path."
-        else
-            echo "docs-menu.sh not found. Can't continue. Exiting..."
-            return 1
         fi
     fi
 }
