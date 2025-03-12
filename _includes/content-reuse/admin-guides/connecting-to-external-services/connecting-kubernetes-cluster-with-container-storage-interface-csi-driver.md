@@ -86,7 +86,7 @@ To prepare your Qumulo cluster for connecting to your Kubernetes cluster, you mu
 
 1. For `storeExportPath`, create the NFS export for hosting the persistent volume.
 
-1. If your cluster has more than one tenant, specify the tenant ID that contains your NFS export for the `tenantId` parameter. For more information, see [Configure Multi-Tenancy with Qumulo](https://care.qumulo.com/hc/en-us/articles/360054089954) on Qumulo Care.
+1. If your cluster has more than one tenant, specify the tenant ID that contains your NFS export for the `tenantId` parameter.
 
    {{site.data.alerts.note}}
    <ul>
