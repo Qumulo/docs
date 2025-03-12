@@ -68,26 +68,26 @@ A _portal state_ indicates the stages of the [_spoke portal_](#spoke-portal) cre
   </thead>
   <tbody>
     <tr>
-      <td><code>Unlinked</code></td>
+      <td><p><code>Unlinked</code></p></td>
       <td>
         <p>Qumulo Core created the spoke portal, but couldn't establish a relationship for it or clean up the spoke portal automatically.</p>
         <p>Before retrying the configuration, use the {% include qq.html command="portal_delete_spoke" %} command to clean up the spoke portal manually.</p>
       </td>
     </tr>
     <tr>
-      <td><code>Pending</code></td>
+      <td><p><code>Pending</code></p></td>
       <td>
         <p>Qumulo Core established a relationship between the spoke portal and a hub portal, but the hub portal did not give its authorization.</p>
         <p>Use the {% include qq.html command="portal_authorize_hub" %} command to give the authorization.</p>
       </td>
     </tr>
     <tr>
-      <td><code>Authorized</code></td>
-      <td>The portal relationship is approved by both clusters and the spoke portal root directory is accessible, if full connectivity is established.</td>
+      <td><p><code>Authorized</code></p></td>
+      <td><p>The portal relationship is approved by both clusters and the spoke portal root directory is accessible, if full connectivity is established.</p></td>
     </tr>
     <tr>
-      <td><code>Deleting</code></td>
-      <td>The spoke portal root directory is inaccessible because the relationship between the hub portal and spoke portal was removed.</td>
+      <td><p><code>Deleting</code></p></td>
+      <td><p>The spoke portal root directory is inaccessible because the relationship between the hub portal and spoke portal was removed.</p></td>
     </tr>
   </tbody>
 </table>
@@ -105,7 +105,7 @@ A _portal status_ indicates the accessibility of any portal.
   </thead>
   <tbody>
     <tr>
-      <td><code>Inactive</code></td>
+      <td><p><code>Inactive</code></p></td>
       <td>
         <p>The <a href="#portal-relationship">portal relationship</a> is in process of being configured.</p>
         <ul>
@@ -115,7 +115,7 @@ A _portal status_ indicates the accessibility of any portal.
       </td>
     </tr>
     <tr>
-      <td><code>Active</code></td>
+      <td><p><code>Active</code></p></td>
       <td>
         <p>All required connections between the <a href="#spoke-portal">spoke portal</a> and <a href="#hub-portal">hub portal</a> are established.</p>
         <ul>
@@ -125,7 +125,7 @@ A _portal status_ indicates the accessibility of any portal.
       </td>
     </tr>
     <tr>
-      <td><code>Degraded</code></td>
+      <td><p><code>Degraded</code></p></td>
       <td>
         <p>Some or all required connections between the spoke portal and hub portal are missing.</p>        
         <ul>
