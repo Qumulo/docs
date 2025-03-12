@@ -78,7 +78,8 @@ A _portal state_ indicates the stages of the [_spoke portal_](#spoke-portal) cre
       <td><code>Pending</code></td>
       <td>
         <p>Qumulo Core established a relationship between the spoke portal and a hub portal, but the hub portal did not give its authorization.</p>
-        <p>Use the {% include qq.html command="portal_authorize_hub" %} command to give the authorization.</td>
+        <p>Use the {% include qq.html command="portal_authorize_hub" %} command to give the authorization.</p>
+      </td>
     </tr>
     <tr>
       <td><code>Authorized</code></td>
@@ -106,8 +107,8 @@ A _portal status_ indicates the accessibility of any portal.
     <tr>
       <td><code>Inactive</code></td>
       <td>
+        <p>The <a href="#portal-relationship">portal relationship</a> is in process of being configured.</p>
         <ul>
-          <li>The <a href="#portal-relationship">portal relationship</a> is in process of being configured.</li>
           <li>Full connectivity isn't required at this time.</li>
           <li>The portal is inaccessible.</li>
         </ul>
@@ -116,8 +117,8 @@ A _portal status_ indicates the accessibility of any portal.
     <tr>
       <td><code>Active</code></td>
       <td>
+        <p>All required connections between the <a href="#spoke-portal">spoke portal</a> and <a href="#hub-portal">hub portal</a> are established.</p>
         <ul>
-          <li>All required connections between the <a href="#spoke-portal">spoke portal</a> and <a href="#hub-portal">hub portal</a> are established.</li>
           <li>The portal requires full connectivity.</li>
           <li>The portal is fully accessible.</li>
         </ul>
@@ -126,9 +127,9 @@ A _portal status_ indicates the accessibility of any portal.
     <tr>
       <td><code>Degraded</code></td>
       <td>
+        <p>Some or all required connections between the spoke portal and hub portal are missing.</p>        
         <ul>
-          <li>Some or all required connections between the spoke portal and hub portal are missing.</li>
-          <li>Qumulo Core is attemping to restore connectivity.</li>
+          <li>Qumulo Core is attempting to restore connectivity.</li>
           <li>The portal might be inaccessible.</li>
         </ul>
       </td>
