@@ -71,7 +71,7 @@ A _portal state_ indicates the stages of the [_spoke portal_](#spoke-portal) cre
       <td><p><code>Unlinked</code></p></td>
       <td>
         <p>Qumulo Core created the spoke portal, but couldn't establish a relationship for it or clean up the spoke portal automatically.</p>
-        <p>Before retrying the configuration, use the {% include qq.html command="portal_delete_spoke" %} command to clean up the spoke portal manually.</p>
+        <p>Before trying to re-establish the portal relationship, use the {% include qq.html command="portal_delete_spoke" %} command to clean up the spoke portal manually.</p>
       </td>
     </tr>
     <tr>
