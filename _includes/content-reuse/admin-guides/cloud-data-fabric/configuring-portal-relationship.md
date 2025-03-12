@@ -64,37 +64,39 @@ This section explains how to create the [spoke portal](how-portal-creation-enabl
 
    Hub Portal ID `4` is the ID that the hub portal host cluster allocates for this portal relationship. You can use it to authorize the relationship on the hub portal host cluster as described later.
 
-   If Qumulo Core can't establish a connection from the cluster with the spoke portal portion to the cluster with the hub portal portion, it displays an error message and configuration can be attempted again.
+   {{site.data.alerts.note}}
+   <ul>
+     <li>We recommend using floating IP addresses.</li>
+     <li>Qumulo Core doesn't support fully qualified domain names (FQDNs) for this operation.</li>
+     <li>{{site.gns.uniquePortalIDs}}</li>
+   </ul>
+   {{site.data.alerts.end}}
 
-      {{site.data.alerts.note}}
-      <ul>
-         <li>We recommend using floating IP addresses.</li>
-         <li>Qumulo Core doesn't support fully qualified domain names (FQDNs) for this operation.</li>
-         <li>{{site.gns.uniquePortalIDs}}</li>
-      </ul>
-      {{site.data.alerts.end}}
+   * If Qumulo Core can't establish a connection from the spoke portal host cluster to the hub portal host cluster, it displays an error message. Retry establishing the portal relationship.
 
-   1. When the portal relationship is established, both spoke portal and hub portal enter the `Pending` state.
+   * When the portal relationship is established, both spoke portal and hub portal enter the `Pending` state.
 
-      {% include note.html content="In this state, the spoke portal root directory is empty and Qumulo Core doesn't transfer any data until the hub portal authorizes the portal relationship." %}
+     {% include note.html content="In this state, the spoke portal root directory is empty and Qumulo Core doesn't transfer any data until the hub portal authorizes the portal relationship." %}
 
-      You can check the status of a cluster by using the {% include qq.html command="portal_list" %} command. The following is example output from the command that shows the portal ID, state, status, role, and root directory.
+1. To check the status of a cluster, use the {% include qq.html command="portal_list" %} command.
 
-      * From the spoke portal host cluster
+   The following is example output from the command that shows the portal ID, state, status, role, and root directory.
 
-        ```
-        ID  State     Status    Role   Local Root
-        ==  ========  ========  =====  ================
-        2   Pending   Inactive  Spoke  /remote/projects
-        ```
+   * From the spoke portal host cluster
 
-      * From the hub portal host cluster
+     ```
+     ID  State     Status    Role   Local Root
+     ==  ========  ========  =====  ================
+     2   Pending   Inactive  Spoke  /remote/projects
+     ```
 
-        ```
-        ID  State     Status    Role   Local Root
-        ==  ========  ========  =====  ==========
-        4   Pending   Inactive  Hub    /projects/
-        ```
+   * From the hub portal host cluster
+
+     ```
+     ID  State     Status    Role   Local Root
+     ==  ========  ========  =====  ==========
+     4   Pending   Inactive  Hub    /projects/
+     ```
 
 ### Step 2: Authorize the Portal Relationship
 This section explains how to authorize the [portal relationship](how-portal-creation-enables-cloud-data-fabric.html#portal-relationship) from the [hub portal](how-portal-creation-enables-cloud-data-fabric.html#hub-portal) to the [spoke portal](how-portal-creation-enables-cloud-data-fabric.html#spoke-portal).
