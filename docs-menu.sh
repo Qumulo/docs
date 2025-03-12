@@ -1,7 +1,7 @@
 #!/bin/bash
 
 check_environment() {
-    if ! eval $(~/src/environment) 2>&1 | grep -q "FileNotFoundError"; then
+    if eval $(~/src/environment) >/dev/null 2>&1; then
         return
     fi
 
