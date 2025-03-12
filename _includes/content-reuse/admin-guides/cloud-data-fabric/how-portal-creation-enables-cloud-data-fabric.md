@@ -94,7 +94,7 @@ A _portal state_ indicates the stages of the [_spoke portal_](#spoke-portal) cre
 
 
 ### Portal Statuses
-A _portal status_ indicates the accessibility of any portal.
+A _portal status_ indicates the accessibility of a [_spoke portal_](#spoke-portal) or [_hub portal_](#hub-portal).
 
 <table>
   <thead>
