@@ -56,8 +56,8 @@ The following key terms help define the components of Cloud Data Fabric function
 
 * <a id="portal-relationship"></a>**Portal Relationship:** A proposal that a spoke portal on one Qumulo cluster issues to another Qumulo cluster (with a _hub portal)_, which the Qumulo cluster with the hub portal _authorizes_.
 
-### Portal States
-A _portal state_ indicates the stages of the [_spoke portal_](#spoke-portal) creation process and the proposal of a [_portal relationship_](#portal-relationship).
+#### Portal States
+A _portal state_ indicates the stages of the [_spoke portal_](#spoke-portal) creation process, and the proposal or deletion of a [_portal relationship_](#portal-relationship).
 
 <table>
   <thead>
@@ -93,7 +93,7 @@ A _portal state_ indicates the stages of the [_spoke portal_](#spoke-portal) cre
 </table>
 
 
-### Portal Statuses
+#### Portal Statuses
 A _portal status_ indicates the accessibility of a [_spoke portal_](#spoke-portal) or [_hub portal_](#hub-portal).
 
 <table>
@@ -136,6 +136,7 @@ A _portal status_ indicates the accessibility of a [_spoke portal_](#spoke-porta
     </tr>
   </tbody>
 </table>
+
 
 ## Working with the Cloud Data Fabric Functionality
 When the [hub portal](#hub-portal) _authorizes_ the [portal relationship](#portal-relationship), the contents of the hub portal root directory become available to the [spoke portal](#spoke-portal) immediately.
