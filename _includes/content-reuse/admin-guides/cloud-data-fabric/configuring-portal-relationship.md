@@ -72,11 +72,11 @@ This section explains how to create the [spoke portal](how-portal-creation-enabl
    </ul>
    {{site.data.alerts.end}}
 
-   * If Qumulo Core can't establish a connection from the spoke portal host cluster to the hub portal host cluster, it displays an error message. Retry establishing the portal relationship.
+   When Qumulo Core can't establish a connection from the spoke portal host cluster to the hub portal host cluster, it displays an error message. Try re-establishing the portal relationship.
 
-   * When the portal relationship is established, both spoke portal and hub portal enter the `Pending` state.
+   When the portal relationship is established, both spoke portal and hub portal enter the `Pending` state.
 
-     {% include note.html content="In this state, the spoke portal root directory is empty and Qumulo Core doesn't transfer any data until the hub portal authorizes the portal relationship." %}
+   {% include note.html content="In this state, the spoke portal root directory is empty and Qumulo Core doesn't transfer any data until the hub portal authorizes the portal relationship." %}
 
 1. To check the status of a cluster, use the {% include qq.html command="portal_list" %} command.
 
