@@ -56,8 +56,8 @@ The following key terms help define the components of Cloud Data Fabric function
 
 * <a id="portal-relationship"></a>**Portal Relationship:** A proposal that a spoke portal on one Qumulo cluster issues to another Qumulo cluster (with a _hub portal)_, which the Qumulo cluster with the hub portal _authorizes_.
 
-### Portal States
-Throughout the process of creating a [_spoke portal_](#spoke-portal) and proposing a [_portal relationship_](#portal-relationship), either portal type can be in one of the following states.
+#### Portal States
+A _portal state_ indicates the stages of the [_spoke portal_](#spoke-portal) creation process, and the proposal or deletion of a [_portal relationship_](#portal-relationship).
 
 <table>
   <thead>
@@ -68,20 +68,71 @@ Throughout the process of creating a [_spoke portal_](#spoke-portal) and proposi
   </thead>
   <tbody>
     <tr>
-      <td><code>Unlinked</code></td>
-      <td>Qumulo Core has created the spoke portal, but hasn't established a relationship for it. Use the {% include qq.html command="portal_propose_hub" %} command.</td>
+      <td><p><code>Unlinked</code></p></td>
+      <td>
+        <p>Qumulo Core created the spoke portal, but couldn't establish a relationship for it or clean up the spoke portal automatically.</p>
+        <p>Before trying to re-establish the portal relationship, use the {% include qq.html command="portal_delete_spoke" %} command to clean up the spoke portal manually.</p>
+      </td>
     </tr>
     <tr>
-      <td><code>Pending</code></td>
-      <td>Qumulo Core has established a relationship between the spoke portal and a hub portal, but the hub portal hasn't given its authorization. Use the {% include qq.html command="portal_authorize_hub" %} command.</td>
+      <td><p><code>Pending</code></p></td>
+      <td>
+        <p>Qumulo Core established a relationship between the spoke portal and a hub portal, but the hub portal has not yet given its authorization.</p>
+        <p>Use the {% include qq.html command="portal_authorize_hub" %} command to give the authorization.</p>
+      </td>
     </tr>
     <tr>
-      <td><code>Active</code></td>
-      <td>The portal relationship is operational for both clusters and the spoke portal root directory is accessible if full connectivity is established.</td>
+      <td><p><code>Authorized</code></p></td>
+      <td><p>The portal relationship is approved by both clusters and the spoke portal root directory is accessible, if full connectivity is established.</p></td>
     </tr>
     <tr>
-      <td><code>Ended</code></td>
-      <td>The spoke portal root directory is inaccessible because the relationship between the hub portal and spoke portal was removed.</td>
+      <td><p><code>Deleting</code></p></td>
+      <td><p>The spoke portal root directory is inaccessible because the relationship between the hub portal and spoke portal was removed.</p></td>
+    </tr>
+  </tbody>
+</table>
+
+
+#### Portal Statuses
+A _portal status_ indicates the accessibility of a [_spoke portal_](#spoke-portal) or [_hub portal_](#hub-portal).
+
+<table>
+  <thead>
+    <tr>
+      <th>Status</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><p><code>Inactive</code></p></td>
+      <td>
+        <p>The <a href="#portal-relationship">portal relationship</a> is in process of being configured.</p>
+        <ul>
+          <li>Full connectivity isn't required at this time.</li>
+          <li>The portal is inaccessible.</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td><p><code>Active</code></p></td>
+      <td>
+        <p>All required connections between the <a href="#spoke-portal">spoke portal</a> and <a href="#hub-portal">hub portal</a> are established.</p>
+        <ul>
+          <li>The portal requires full connectivity.</li>
+          <li>The portal is fully accessible.</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td><p><code>Degraded</code></p></td>
+      <td>
+        <p>Some or all required connections between the spoke portal and hub portal are missing.</p>        
+        <ul>
+          <li>Qumulo Core is attempting to restore connectivity.</li>
+          <li>The portal might be inaccessible.</li>
+        </ul>
+      </td>
     </tr>
   </tbody>
 </table>
@@ -110,9 +161,9 @@ Qumulo Core enforces permissions in the same way for files and directories in th
 
 You can remove the portal relationship from either the spoke or hub portal.
 
-* If you remove the spoke portal, Qumulo Core also deletes its root directory, reclaims the capacity consumed by cached data, and the hub portal enters the `Ended` state.
+* If you remove the spoke portal, Qumulo Core also deletes its root directory and reclaims the capacity consumed by cached data.
 
-* If you remove the hub portal, all data transfer to the spoke portal stops immediately and the spoke portal enters the `Ended` state.
+* If you remove the hub portal, all data transfer to the spoke portal stops immediately.
 
 * When you remove a portal relationship, any files or directories on the hub portal that were inaccessible, due to _both_ connectivity loss and outstanding spoke portal modifications, become accessible.
 
