@@ -77,7 +77,7 @@ A _portal state_ indicates the stages of the [_spoke portal_](#spoke-portal) cre
     <tr>
       <td><p><code>Pending</code></p></td>
       <td>
-        <p>Qumulo Core established a relationship between the spoke portal and a hub portal, but the hub portal did not give its authorization.</p>
+        <p>Qumulo Core established a relationship between the spoke portal and a hub portal, but the hub portal has not yet given its authorization.</p>
         <p>Use the {% include qq.html command="portal_authorize_hub" %} command to give the authorization.</p>
       </td>
     </tr>
