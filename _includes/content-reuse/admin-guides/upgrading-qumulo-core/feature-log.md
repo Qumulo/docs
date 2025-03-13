@@ -7,7 +7,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
 ## Qumulo Core 7.4.2
 {{page.varDownloadsRelnotes}}
 
-* Added support for 1-node and 2-node clusters on {{site.aws.cnqAWSlong}} and {{site.azure.cnqAzureLong}} clusters
+* Added support for 1-node and 2-node clusters on {{site.aws.cnqAWSlong}} (CloudFormation deployments)
 * Made improvements to Cloud Data Fabric:
   * Moved the REST APIs out of Preview status
   * Removed a `qq` CLI command in favor of automatic clean-up of partially configured portal relationships 
