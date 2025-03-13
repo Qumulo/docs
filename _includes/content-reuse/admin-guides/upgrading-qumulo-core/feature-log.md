@@ -10,7 +10,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
 * Added support for 1-node and 2-node clusters on {{site.aws.cnqAWSlong}} and {{site.azure.cnqAzureLong}} clusters
 * Made improvements to Cloud Data Fabric:
   * Moved the REST APIs out of Preview status
-  * Removed the `qq portal_propose_hub` command in favor of automatic clean-up of partially configured portal relationships 
+  * Removed a `qq` CLI command in favor of automatic clean-up of partially configured portal relationships 
   * Added support for FTP communications for spoke portals and hub portals
   * Changed the names of _portal states,_ which indicate the stages of the spoke portal creation process and the proposal or deletion of a portal relationship
   * Added new _portal statuses,_ which indicate the accessibility of a spoke portal or a hub portal
