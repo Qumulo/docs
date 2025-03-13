@@ -1,6 +1,21 @@
 #!/bin/bash
 
-eval $(~/src/environment)
+check_environment() {
+    eval $(~/src/environment) 2>&1
+    if [[ $? -ne 0 ]]; then
+        echo "Detected an error while running environment script. Remediating toolchain..."
+        cd ~/src
+        hg up default && hg fetch && hg prebuild
+    fi
+
+    #if eval $(~/src/environment) >/dev/null 2>&1; then
+    #    return
+    #fi
+
+    #echo "Remediating toolchain..."
+    #cd ~/src
+    #hg up default && hg fetch && ./prebuild
+}
 
 check_symlinks() {
     local git_dir="$HOME/git"
@@ -490,6 +505,7 @@ find_unused_scripts() {
     fi
 }
 
+check_environment
 check_symlinks
 global_docs_menu
 install_docker
