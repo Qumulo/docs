@@ -344,7 +344,7 @@ build_html_docs() {
 build_pdf_docs() {
     start_in_docs_dir
     echo "Building PDF documentation..."
-    ./pdf-build.sh
+    ./tools/pdf-build.sh
 }
 
 # Build the documentation and serve it locally by using Tailscale
