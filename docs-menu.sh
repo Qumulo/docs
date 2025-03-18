@@ -288,10 +288,22 @@ find_modified_cli(){
     fi
 }
 
-# Function to check for the src repository
+# Check that the ~/src repository exists
 check_src_repo() {
     if [ ! -d ~/src ]; then
-        echo "You must first bootstrap the dev environment: https://qumulo.atlassian.net/wiki/spaces/EN/pages/1167851855/Manually+Checking+Out+Source#Bootstrap-the-DEV-environment"
+        echo "You must first bootstrap the dev environment."
+        echo "For more information, see"
+        echo "https://qumulo.atlassian.net/wiki/spaces/EN/pages/1167851855/Manually+Checking+Out+Source#Bootstrap-the-DEV-environment"
+        exit 1
+    fi
+}
+
+# Check that the SSH keys are added to the agent
+check_ssh_keys() {
+    if ! ssh-add -l &>/dev/null; then
+        echo "You must add SSH keys to the agent."
+        echo "For more information, see:"
+        echo "https://qumulo.atlassian.net/wiki/spaces/EN/pages/590414149/Dev+Environment+Setup#Create-an-SSH-key-pair-and-Request-Access-to-Mercurial"
         exit 1
     fi
 }
@@ -300,6 +312,7 @@ check_src_repo() {
 regen_cli_docs() {
     start_in_docs_dir
     check_src_repo
+    check_ssh_keys
     while true; do
         read -p "Generate the current (c) or future (f) version of the CLI docs? " version_choice
         if [ "$version_choice" = "c" ]; then
