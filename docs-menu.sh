@@ -513,7 +513,9 @@ install_noto_emoji
 
 while true; do
     echo
-    echo -e "\033[1;33m🤖 Welcome to the Documentation Portal Repository\033[0m"
+    echo -e "\033[1;33m🤖 Hello and welcome to the Documentation Portal Repository!\033[0m"
+    echo -e "\033[1;33m   My name is Robert the helpful documentation robot.\033[0m"
+    echo -e "\033[1;33m   How can I assist you?\033[0m"
     echo
     echo "1.  🚧 Rebuild docs-builder container"
     echo "2.  🚧 Rebuild Ruby gems"
