@@ -62,22 +62,31 @@ check_symlinks() {
 }
 
 global_docs_menu() {
-    # If 'dm' already exists, exit silently
+    # Check if 'dm' exists but is NOT a regular file (i.e., broken symlink or dir)
+    if [[ -e "$HOME/.local/bin/dm" && ! -f "$HOME/.local/bin/dm" ]]; then
+        echo "Warning: ~/.local/bin/dm exists but is not a regular file. Removing..."
+        rm -rf "$HOME/.local/bin/dm"
+    fi
+
+    # If 'dm' is already properly set up, exit
     [[ -f "$HOME/.local/bin/dm" ]] && return
 
     echo "Making docs-menu.sh globally accessible as 'dm'..."
 
-    mkdir -p ~/.local/bin
-    chmod +x ~/git/docs-internal/tools/docs-menu.sh
+    mkdir -p "$HOME/.local/bin"
+    chmod +x "$HOME/git/docs-internal/tools/docs-menu.sh"
 
     # Create the 'dm' wrapper script
-    echo '#!/bin/bash' > ~/.local/bin/dm
-    echo '"$HOME/git/docs-internal/tools/docs-menu.sh" "$@"' >> ~/.local/bin/dm
-    chmod +x ~/.local/bin/dm
+    cat <<EOF > "$HOME/.local/bin/dm"
+#!/bin/bash
+exec "\$HOME/git/docs-internal/tools/docs-menu.sh" "\$@"
+EOF
+
+    chmod +x "$HOME/.local/bin/dm"
 
     # Ensure ~/.local/bin is in PATH
     if ! echo "$PATH" | grep -q "$HOME/.local/bin"; then
-        echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc
+        echo 'export PATH="$HOME/.local/bin:$PATH"' >> "$HOME/.bashrc"
         export PATH="$HOME/.local/bin:$PATH"
         echo "Added ~/.local/bin to PATH. Restart your shell or run 'source ~/.bashrc' to apply."
     fi
