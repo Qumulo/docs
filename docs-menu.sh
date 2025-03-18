@@ -7,14 +7,6 @@ check_environment() {
         cd ~/src
         hg up default && hg fetch && hg prebuild
     fi
-
-    #if eval $(~/src/environment) >/dev/null 2>&1; then
-    #    return
-    #fi
-
-    #echo "Remediating toolchain..."
-    #cd ~/src
-    #hg up default && hg fetch && ./prebuild
 }
 
 check_symlinks() {
@@ -262,6 +254,13 @@ rebuild_container() {
     start_in_docs_dir
     echo "Rebuilding the docs-builder container..."
     docker build -f docker/build/Dockerfile -t docs-builder .
+}
+
+# Rebuild the docs-container-check container
+rebuild_check_container() {
+    start_in_docs_dir
+    echo "Rebuilding the docs-container-check container..."
+    docker build -f docker/build/Dockerfile -t docs-container-check .
 }
 
 # List CLI documentation with appended content
@@ -519,26 +518,27 @@ while true; do
     echo
     echo "1.  🚧 Rebuild Ruby gems"
     echo "2.  🚧 Rebuild docs-builder container"
-    echo "3.  ⚙️  Regenerate CLI documentation"
-    echo "4.  ⚙️  Regenerate API documentation"
-    echo "5.  🆕 List CLI documentation with appended content"
-    echo "6.  ⚙️  Only build HTML documentation"
-    echo "7.  ⚙️  Only build PDF documentation"
-    echo "8.  🖥️  Only serve documentation locally (Tailscale over HTTPS)"
-    echo "9.  🖥️  Only serve documentation locally (Python over HTTP)"
-    echo "10. 🖥️  Build documentation and serve it locally (Tailscale over HTTPS)"
-    echo "11. 🖥️  Build documentation and serve it locally (Python over HTTP)"
-    echo "12. 🖥️  Build documentation and serve it locally (Jekyll with LiveReload over HTTP)"
-    echo "13. 📋 Check documentation for link, script, and image errors"
-    echo "14. 📋 Check documentation for spelling errors"
-    echo "15. 🧹 Sweep Toolchain"
-    echo "16. 🧹 Prune Docker"
-    echo "17. 🔄 Refresh Vectara Ingest repo"
-    echo "18. 🔍 Ingest docs.qumulo.com into Vectara"
-    echo "19. 🔍 Ingest care.qumulo.com into Vectara"
-    echo "20. 🔍 Ingest qumulo.com into Vectara"
-    echo "21. 📋 Check ingestion status"
-    echo "22. ❌ Find unused .js scripts"
+    echo "3.  🚧 Rebuild docs-container-check container"
+    echo "4.  ⚙️  Regenerate CLI documentation"
+    echo "5.  ⚙️  Regenerate API documentation"
+    echo "6.  🆕 List CLI documentation with appended content"
+    echo "7.  ⚙️  Only build HTML documentation"
+    echo "8.  ⚙️  Only build PDF documentation"
+    echo "9.  🖥️  Only serve documentation locally (Tailscale over HTTPS)"
+    echo "10. 🖥️  Only serve documentation locally (Python over HTTP)"
+    echo "11. 🖥️  Build documentation and serve it locally (Tailscale over HTTPS)"
+    echo "12. 🖥️  Build documentation and serve it locally (Python over HTTP)"
+    echo "13. 🖥️  Build documentation and serve it locally (Jekyll with LiveReload over HTTP)"
+    echo "14. 📋 Check documentation for link, script, and image errors"
+    echo "15. 📋 Check documentation for spelling errors"
+    echo "16. 🧹 Sweep Toolchain"
+    echo "17. 🧹 Prune Docker"
+    echo "18. 🔄 Refresh Vectara Ingest repo"
+    echo "19. 🔍 Ingest docs.qumulo.com into Vectara"
+    echo "20. 🔍 Ingest care.qumulo.com into Vectara"
+    echo "21. 🔍 Ingest qumulo.com into Vectara"
+    echo "22. 📋 Check ingestion status"
+    echo "23. ❌ Find unused .js scripts"
     echo "q.  👋 Quit"
     echo
     read -p $'\033[1;33mWhat would you like to do? \033[0m' choice
@@ -546,26 +546,27 @@ while true; do
     case $choice in
         1) rebuild_ruby_gems ;;
         2) rebuild_container ;;
-        3) regen_cli_docs ;;
-        4) regen_api_docs ;;
-        5) find_modified_cli ;;
-        6) build_html_docs ;;
-        7) build_pdf_docs ;;
-        8) only_serve_docs_locally_tailscale ;;
-        9) only_serve_docs_locally_python ;;
-        10) build_serve_docs_locally_tailscale ;;
-        11) build_serve_docs_locally_python ;;
-        12) build_serve_docs_locally_jekyll ;;
-        13) check_docs_errors ;;
-        14) check_spelling_errors ;;
-        15) sweep_toolchain ;;
-        16) prune_docker ;;
-        17) refresh_vectara_ingest_repo;;
-        18) ingest_docs_portal ;;
-        19) ingest_care_portal ;;
-        20) ingest_corp_site ;;
-        21) check_ingestion_status ;;
-        22) find_unused_scripts ;;
+        3) rebuild_check_container ;;
+        4) regen_cli_docs ;;
+        5) regen_api_docs ;;
+        6) find_modified_cli ;;
+        7) build_html_docs ;;
+        8) build_pdf_docs ;;
+        9) only_serve_docs_locally_tailscale ;;
+        10) only_serve_docs_locally_python ;;
+        11) build_serve_docs_locally_tailscale ;;
+        12) build_serve_docs_locally_python ;;
+        13) build_serve_docs_locally_jekyll ;;
+        14) check_docs_errors ;;
+        15) check_spelling_errors ;;
+        16) sweep_toolchain ;;
+        17) prune_docker ;;
+        18) refresh_vectara_ingest_repo;;
+        19) ingest_docs_portal ;;
+        20) ingest_care_portal ;;
+        21) ingest_corp_site ;;
+        22) check_ingestion_status ;;
+        23) find_unused_scripts ;;
         q) exit ;;
         *) echo "You must enter a valid option." ;;
     esac
