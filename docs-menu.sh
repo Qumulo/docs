@@ -329,7 +329,7 @@ regen_api_docs() {
     start_in_docs_dir
     check_src_repo
     echo "Building API documentation from the Music cluster..."
-    python3 gen-api.py
+    python3 tools/gen-api.py
 }
 
 # Build HTML documentation by using Jekyll
