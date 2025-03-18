@@ -85,10 +85,10 @@ end
 misspelling_count = 0
 
 # Load the allowlist of words and phrases
-allowlist_words = File.exist?('.spelling-allowlist') ? File.readlines('.spelling-allowlist', chomp: true) : []
+allowlist_words = File.exist?('tools/.spelling-allowlist') ? File.readlines('tools/.spelling-allowlist', chomp: true) : []
 
 # Load the list of files to exclude from spellchecking
-ignore_files = File.exist?('.spelling-ignorefiles') ? File.readlines('.spelling-ignorefiles', chomp: true) : []
+ignore_files = File.exist?('tools/.spelling-ignorefiles') ? File.readlines('tools/.spelling-ignorefiles', chomp: true) : []
 
 # Array to store incorrect words with their filename and line number
 incorrect_words = []

@@ -30,9 +30,6 @@ port: 4000
 exclude:
   - .gitignore
   - .idea
-  - .ignore-error
-  - .spelling-allowlist
-  - .spelling-ignorefiles
   - tools/
   - "*.sh"
   - "*.py"

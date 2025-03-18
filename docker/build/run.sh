@@ -30,13 +30,13 @@ case "${1}" in
     proof)
         echo "Checking spelling"
         rm _site -rf
-        ruby spellcheck.rb ;;
+        ruby tools/spellcheck.rb ;;
     check)
         jekyll build -d _site
         echo "Checking HTML output"
-        if [ -f .ignore-error ]; then
+        if [ -f tools/.ignore-error ]; then
             # Use a leading comma, otherwise htmlproofer seems to ignore the first entry
-            proofer_args="--ignore-urls \",$(cat .ignore-error | tr '\n' ',')\""
+            proofer_args="--ignore-urls \",$(cat /src/tools/.ignore-error | tr '\n' ',')\""
         fi
         htmlproofer --only-4xx --allow-missing-href=true ${proofer_args} _site ;;
     serve)
