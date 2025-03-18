@@ -68,11 +68,11 @@ global_docs_menu() {
     echo "Making docs-menu.sh globally accessible as 'dm'..."
 
     mkdir -p ~/.local/bin
-    chmod +x ~/git/docs-internal/docs-menu.sh
+    chmod +x ~/git/docs-internal/tools/docs-menu.sh
 
     # Create the 'dm' wrapper script
     echo '#!/bin/bash' > ~/.local/bin/dm
-    echo '"$HOME/git/docs-internal/docs-menu.sh" "$@"' >> ~/.local/bin/dm
+    echo '"$HOME/git/docs-internal/tools/docs-menu.sh" "$@"' >> ~/.local/bin/dm
     chmod +x ~/.local/bin/dm
 
     # Ensure ~/.local/bin is in PATH
