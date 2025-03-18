@@ -25,7 +25,7 @@ Run the `./alerts clicksend_server_add` command and specify the username, token,
 {{site.data.alerts.note}}
 <ul>
   <li>For the <code>--username</code> and <code>--token</code> flags, see <a href="https://help.clicksend.com/article/dghaoyf7tg-api-credentials">API Credentials</a> in the ClickSend documentation.</li>
-  <li>The <code>--senderid</code> flag is mandatory for the U.S. and Canada. For more information, see <a href="https://help.clicksend.com/article/b06v2x81sy-toll-free-number-tfn-verification">Toll-Free Number (TFN) Verification</a> in the ClickSend documentation.</li>
+  <li>The <code>--senderid</code> flag is mandatory for the U.S. and Canada. For more information, see <a href="https://help.clicksend.com/article/nu1dkqqpi0-how-to-register-a-toll-free-number-tfn-with-click-send">How to Register a Toll-Free Number (TFN) with ClickSend</a> in the ClickSend documentation.</li>
   <li>{{site.qumuloalerts.locale}} {{site.qumuloalerts.consTrans}}</li>
   <li>{{site.qumuloalerts.tz}}</li>
 </ul>
