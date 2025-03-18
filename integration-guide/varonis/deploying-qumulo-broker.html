@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Integrating Qumulo Core with Varonis | Qumulo Documentation</title>
+<link rel="canonical" href="https://docs.qumulo.com/integration-guide/varonis/deploying-qumulo-broker.html">
+
+<!-- Organization JSON-LD Schema -->
+<script>
+fetch('/data/organization.json')
+.then(response => response.text())
+.then(structuredDataText => {
+  const script = document.createElement('script');
+  script.setAttribute('type', 'application/ld+json');
+  script.textContent = structuredDataText;
+  document.head.appendChild(script);
+});    
+</script>
+
+<!-- Website JSON-LD Schema -->
+<script>
+fetch('/data/website.json')
+.then(response => response.text())
+.then(structuredDataText => {
+  const script = document.createElement('script');
+  script.setAttribute('type', 'application/ld+json');
+  script.textContent = structuredDataText;
+  document.head.appendChild(script);
+});    
+</script>
+
+<!-- BEGIN TO PREPARE WEBSITE RESOURCES -->  
+<!-- Preload from jsdelivr.net:
+     * Bootstrap stylesheet and script
+     * Font Awesome
+-->
+<link rel="preload" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" as="style" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="preload" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" as="script" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
+<link rel="preload" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" as="style">
+
+<!-- Preload web fonts from fonts.googleapis.com as stylesheets -->
+<link rel="preload" href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" as="style">
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap" as="style">
+
+<!-- Preload scripts from cloudflare.com
+     * jQuery
+     * jQuery Cookie
+     * Anchor JS
+-->
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" as="script">
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js" as="script">
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/5.0.0/anchor.min.js" as="script">
+
+<!-- Preload JavaScript resources -->
+<link rel="preload" href="/js/grt-cookie-consent.js" as="script">
+<link rel="preload" href="/js/googletag.js" as="script">
+<link rel="preload" href="https://www.googletagmanager.com/gtag/js?id=G-81J7N4LMSE" as="script">
+
+<!-- Prefetch DNS from CDNs -->
+<link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+<link rel="dns-prefetch" href="https://fonts.googleapis.com">
+<link rel="dns-prefetch" href="https://fonts.gstatic.com" crossorigin>
+<link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+<link rel="dns-prefetch" href="https://maxcdn.bootstrapcdn.com">
+
+<!-- Preconnect to CDNs -->
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdnjs.cloudflare.com">
+<link rel="preconnect" href="https://maxcdn.bootstrapcdn.com">
+
+<!-- BEGIN TO LOAD WEBSITE RESOURCES -->
+<!-- Load Bootstrap and Font Awesome -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!-- Load local stylesheets inline -->
+<link rel="stylesheet" href="/css/boxshadowproperties.css">
+<link rel="stylesheet" href="/css/customstyles.css">
+<link rel="stylesheet" href="/css/grt-cookies-consent.css">
+<link rel="stylesheet" href="/css/modern-business.css">
+<link rel="stylesheet" href="/css/syntax.css">
+<link rel="stylesheet" href="/css/theme-blue.css">
+
+<!-- Optimize web font load
+     * Loading Noto Color Emoji by using `link rel=stylesheet`
+       syntax causes multiple versions of the font to load.
+     * Additional instructions are necessary for Font Awesome
+       to load with the font-display attribute.
+-->
+<style>
+  @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap');
+  @font-face {
+    font-family:'FontAwesome';
+    src: url('/fonts/fontawesome-webfont.woff?v=4.7.0') format('woff'),
+         url('/fonts/fontawesome-webfont.woff2?v=4.7.0') format('woff2');
+    font-display: swap;
+  }
+</style>
+
+<!-- Web font fallbacks for older browsers -->
+<noscript>
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Montserrat&display=swap">
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap">
+</noscript>
+
+<!-- Define page metadata -->
+<meta name="description" content="This section explains how to integrate Qumulo Core with Varonis by deploying Qumulo Broker.">
+<meta name="apple-mobile-web-app-title" content="Qumulo Documentation">
+<meta name="application-name" content="Qumulo Documentation">
+<meta name="msapplication-TileColor" content="#2b5797">
+<meta name="msapplication-TileImage" content="/images/mstile-144x144.png">
+<meta name="msapplication-config" content="/images/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+<meta name="google-site-verification" content="_KoxPR0qF_ZeMyH6uWvlX84cFRujO_AZ1eq0eT9alAg">
+
+<!-- Open Graph Meta Tags -->
+<meta property="og:title" content="Integrating Qumulo Core with Varonis | Qumulo Documentation">
+<meta property="og:url" content="https://docs.qumulo.com/integration-guide/varonis/deploying-qumulo-broker.html">
+<meta property="og:site_name" content="Qumulo Documentation">
+<meta property="og:description" content="This section explains how to integrate Qumulo Core with Varonis by deploying Qumulo Broker.">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://docs.qumulo.com/images/docs.qumulo.com-qumulo-documentation-portal-630px.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<!-- Twitter Meta Tags -->
+<meta name="twitter:title" content="Integrating Qumulo Core with Varonis | Qumulo Documentation">
+<meta property="twitter:url" content="https://docs.qumulo.com/integration-guide/varonis/deploying-qumulo-broker.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:description" content="This section explains how to integrate Qumulo Core with Varonis by deploying Qumulo Broker.">
+<meta name="twitter:image" content="https://docs.qumulo.com/images/docs.qumulo.com-qumulo-documentation-portal-418px.png">
+<meta property="twitter:domain" content="docs.qumulo.com">
+
+<!-- Define favicon variants -->
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="194x194" href="/images/favicon-194x194.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/images/android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+<link rel="manifest" href="/images/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+<!-- Define RSS feed -->
+<!-- TEMPORARILY DISABLED
+<link rel="alternate" href="https://docs.qumulo.com/feed.xml" type="application/rss+xml" title="docs">
+-->
+
+<!-- Load scripts from cloudflare.com -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+<!-- Load local scripts with dependencies on jQuery -->
+<script src="/js/jquery.navgoco.min.js"></script>
+
+<!-- Load scripts from jsdelivr.net and cloudflare.com -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/5.0.0/anchor.min.js"></script>
+
+<!-- Load local scripts with dependencies on Bootstrap and Anchor JS -->
+<script src="/js/toc.js"></script>
+<script src="/js/customscripts.js"></script>
+
+<!-- Fallback for IE9 -->
+<!--[if lt IE 9]>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<!-- Load Google Analytics and exclude GDPR countries from collection -->
+<script defer src="/js/googletag.js"></script>
+<script defer src="https://www.googletagmanager.com/gtag/js?id=G-81J7N4LMSE"></script>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
+    
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: true,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 400,
+                    easing: 'swing'
+                }
+            });
+
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    <script>
+        $(document).ready(function() {
+            // By default, Reading Mode is off and the button is dark.
+            if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
+                // On the landing page, hide the sidebar, make content full-width, and hide the toggle link.
+                $("#tg-sb-sidebar").hide();
+                $("#tg-sb-content").removeClass('col-md-9').addClass('col-md-12');
+                $("#tg-sb-link").hide();
+                $(".projectTitle").hide();
+                $(".navbar-brand").hide();
+                return;
+            }
+
+            if (Cookies.get('reading_mode') == '1' ) {
+                $("#tg-sb-sidebar").toggle();
+                $("#tg-sb-content").toggleClass('col-md-9');
+                $("#tg-sb-content").toggleClass('col-md-12');
+                $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                $("#tg-sb-icon").toggleClass('fa-toggle-off');                   
+            }
+            
+            $("#tg-sb-link").click(function() {
+                if (Cookies.get('reading_mode') == '1' ) {
+                    // If the Reading Mode is on, remove the cookie.
+                    Cookies.remove('reading_mode');
+                } else {
+                    // If the Reading Mode is on, place the cookie.
+                    Cookies.set('reading_mode', '1');
+                }
+                
+                // Toggle the Reading Mode and change the button color.
+                $("#tg-sb-sidebar").toggle();
+                $("#tg-sb-content").toggleClass('col-md-9');
+                $("#tg-sb-content").toggleClass('col-md-12');
+                $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                $("#tg-sb-icon").toggleClass('fa-toggle-off');
+            });
+        });
+    </script>
+    
+
+</head>
+<body>
+<!-- ==================== TOPNAV START ==================== -->
+<div class="above-header"></div>
+
+<div class="header-container">
+<header class="header">
+  <div class="logo">
+    <a class="header-link" href="https://docs.qumulo.com/">
+      <picture>
+	<source type="image/webp" srcset="/images/qumulo-logo.webp">
+	<source type="image/png" srcset="/images/qumulo-logo.png">	      
+        <img class="header-logo" src="/images/qumulo-logo.png" alt="Qumulo Logo">
+      </picture>
+    </a>
+  </div>
+
+  <div class="nav-wrapper">
+    <span class="icon-menu"></span>
+    <nav class="user-nav" id="user-nav">
+      <div class="qf2header">
+        <div class="flex-links">
+          <a class="header-link header-right" href="https://qumulo.com/company/about-qumulo/" target="_blank">About Qumulo</a>
+          <a class="header-link header-right" href="https://care.qumulo.com/s/knowledge" target="_blank">Knowledge Base</a>
+          <a class="header-link header-right" href="https://nexus.qumulo.com/" target="_blank">Nexus</a>
+        </div>
+        <div class="contact-links">
+          <a class="btn-contact no_icon" href="https://qumulocare.slack.com/">Send Slack Message</a>
+          <a class="btn-contact no_icon" href="https://care.qumulo.com/s/submit-a-case">Open a Case</a>
+        </div>
+      </div>
+    </nav>
+</div>
+</header>
+</div>
+<div class="below-header navbar navbar-inverse navbar-static-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/index.html">&nbsp;<span class="projectTitle"> Qumulo Documentation</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- toggle sidebar button -->
+                <li><a id="tg-sb-link" href="#" data-proofer-ignore><i id="tg-sb-icon" class="fa fa-toggle-off"></i> Reading Mode</a></li>
+                <!-- entries without drop-downs appear here -->
+
+
+
+
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+                <li>
+                  <div id="search-demo-container">
+                    <div class="parent">
+                      <div class="search_container">
+                        <main id="search-widget">
+                          <div class="vectara__search_Box">
+                            <form id="vectara__search_form" action="/search.html" method="GET">
+                              <input class="vectara__search_field" name="query" id="search-input" placeholder="What would you like to know?" autofocus>
+                              <button class="vectara__logo_btn">
+                                <img class="vectara__search_logo" width="26" height="28" src="/images/magnifying-glass.png" alt="Search">
+                              </button>
+                            </form>
+                          </div>
+                        </main>
+                        <ul class="tags" id="widget-tags"></ul>
+                      </div>
+                    </div>
+                  </div>
+                  <ul id="list"></ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+        <!-- /.container -->
+</div>
+<!-- ==================== TOPNAV END ==================== -->
+
+<!-- Page Content -->
+
+<div class="container">
+  <div id="main">
+    <!-- Content Row -->
+    <div class="row">
+        
+        
+
+            <!-- Sidebar Column -->
+            <div class="col-md-3" id="tg-sb-sidebar">
+                
+
+<div class="nav nav-buttons">
+  
+    <a target="_blank" rel="noopener" href="https://github.com/qumulo/docs/blob/gh-pages/integration-guide/varonis/deploying-qumulo-broker.md" class="btn btn-default githubEditButton no_icon" role="button" data-proofer-ignore><span class="fa fa-github fa-lg"></span> Edit on GitHub</a>
+  
+
+  
+    <a target="_blank" rel="noopener" href="/pdf/qumulo-integration-guide.pdf" class="btn btn-default downloadPDFButton no_icon" role="button"><span class="glyphicon glyphicon-file" aria-hidden="true"></span> Download PDF</a>
+  
+</div>
+
+<ul id="mysidebar" class="nav">
+  <li class="sidebarTitle"> </li>
+  
+  
+  
+      
+  
+  
+  
+
+  
+  
+  
+  <li>
+  
+
+  <a title="Qumulo Integration Guide" href="" data-proofer-ignore>
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  Qumulo Integration Guide
+  </a>
+ 
+      <ul>
+          
+          
+          
+          <li>
+            <a title="Documentation Home" href="/index.html">
+              Documentation Home     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Guide Table of Contents" href="/integration-guide/">
+              Guide Table of Contents     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Contacting the Qumulo Care Team" href="/contacting-qumulo-care-team.html">
+              Contacting the Qumulo Care Team     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  
+
+  
+  
+  
+  <li>
+  
+
+  <a title="Integrating with Varonis" href="/integration-guide/varonis/index.html" data-proofer-ignore>
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  Integrating with Varonis
+  </a>
+ 
+      <ul>
+          
+          
+          
+          <li>
+            <a title="How Qumulo Core Integrates with Varonis" href="/integration-guide/varonis/qumulo-broker-with-qumulo-core.html">
+              How Qumulo Core Integrates with Varonis     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li class="active">
+            <a title="Integrating Qumulo Core with Varonis" href="/integration-guide/varonis/deploying-qumulo-broker.html">
+              Integrating Qumulo Core with Varonis
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Troubleshooting the Integration" href="/integration-guide/varonis/troubleshooting-qumulo-broker.html">
+              Troubleshooting the Integration     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+      
+      
+</ul>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').addClass("active");</script>
+
+
+            </div>
+            
+        
+
+        <!-- Content Column -->
+        <div class="col-md-9" id="tg-sb-content">
+            
+
+
+
+
+
+
+
+<nav>
+<div class="breadcrumb-line">
+  <a href='/'>Home</a> <span>&rsaquo;</span> 
+
+
+
+
+  <a href='/integration-guide/varonis/index.html'>Integrating with Varonis</a> <span>&rsaquo;</span>
+
+
+  Integrating Qumulo Core with Varonis
+  </div>
+</nav>
+
+
+            
+
+<div class="post-header">
+   <h1 class="post-title-main">Integrating Qumulo Core with Varonis</h1>
+</div>
+
+
+
+<div class="post-content">
+
+    
+    
+<!-- Create the automatic mini-TOC on a page (unless disabled with #toc{display:none;}.
+     Note: If you use HTML tags, add an ID to the heading so that it appears in the mini-TOC.
+-->
+
+<script>
+$(document).ready(function() {
+    $('#toc').toc({
+      minimumHeaders: 2,
+      listType: 'ul',
+      showSpeed: 0,
+      headers: 'h2'
+    });
+
+    /* Account for the space that the floating toolbar takes up. */
+    $('#toc').on('click', 'a', function() {
+      var target = $(this.getAttribute('href')), 
+          scroll_target = target.offset().top
+          $(window).scrollTop(scroll_target - 10);
+      return false
+    });
+});
+</script>
+
+
+<div id="toc"></div>
+
+    
+
+   <p>This section explains how to integrate Qumulo Core with Varonis by deploying Qumulo Broker.</p>
+   
+     <p>Deploy Qumulo Broker on a stand-alone machine (or virtual machine) so that it sits between your Qumulo cluster and Varonis. For more information, see the <a href="qumulo-broker-with-qumulo-core.html#integration-architecture-diagram">Qumulo-Varonis integration architecture diagram</a>.</p>
+
+<h2 id="step-1-prepare-for-deploying-qumulo-broker">Step 1: Prepare for Deploying Qumulo Broker</h2>
+<p>This section explains how to prepare your Qumulo Broker machine for deployment.</p>
+
+<ol>
+  <li>
+    <p>Clone the <a href="https://github.com/Qumulo/QumuloBroker">Qumulo Broker</a> repository from GitHub into the <code class="language-plaintext highlighter-rouge">/opt/qumulo</code> directory on your Qumulo Broker machine.</p>
+  </li>
+  <li>
+    <p>To configure the system to use the MariaDB database, edit the <code class="language-plaintext highlighter-rouge">/opt/qumulo/QumuloBroker/api/.env</code> file and specify the values for the <code class="language-plaintext highlighter-rouge">MYSQL_ROOT_PASSWORD</code> and <code class="language-plaintext highlighter-rouge">MYSQL_PASSWORD</code> variables.</p>
+
+    <div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> Leave the <code class="language-plaintext highlighter-rouge">MYSQL_DATABASE</code> and <code class="language-plaintext highlighter-rouge">MYSQL_USERNAME</code> variables unchanged.</div>
+  </li>
+</ol>
+
+<a id="deploy-qumulo-broker"></a>
+<h2 id="step-2-deploy-the-qumulo-broker-api-server">Step 2: Deploy the Qumulo Broker API Server</h2>
+<p>This section explains how to deploy Qumulo Broker on a standalone machine or virtual machine.</p>
+
+<ol>
+  <li>
+    <p>Navigate to the <code class="language-plaintext highlighter-rouge">/opt/qumulo/QumuloBroker/api/</code> directory on your Qumulo Broker machine.</p>
+  </li>
+  <li>
+    <p>Ensure that Docker and Docker Compose are installed on your Qumulo Broker machine.</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker version
+docker compose version
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>To start the Docker containers, run the <code class="language-plaintext highlighter-rouge">docker compose up -d</code> command.</p>
+
+    <p>The command creates the network and containers. The following is example output.</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> ⠿ Network api_qumulo-net  Created      0.1s
+ ⠿ Container api-db-1      Started      1.2s
+ ⠿ Container api-web-1     Started      1.3s
+ ⠿ Container api-proxy-1   Started      1.6s
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>To view the status of running containers, run the <code class="language-plaintext highlighter-rouge">docker ps</code> command.</p>
+
+    <p>The following is example output.</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>CONTAINER ID   IMAGE          COMMAND                  CREATED         
+1a234567b089   nginx:latest   "/docker-entrypoint.…"   6 seconds ago  
+a1234567bcde   api-web        "app/main.py"            6 seconds ago   
+123ab45678cd   mariadb        "docker-entrypoint.s…"   7 seconds ago   
+   
+STATUS         PORTS                                           NAMES
+Up 4 seconds   80/tcp, 0.0.0.0:443-&gt;443/tcp, :::443-&gt;443/tcp   api-proxy-1
+Up 5 seconds   0.0.0.0:8000-&gt;8000/tcp, :::8000-&gt;8000/tcp       api-web-1
+Up 5 seconds   0.0.0.0:3306-&gt;3306/tcp, :::3306-&gt;3306/tcp       api-db-1
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>To view the logs of a specific container, run the <code class="language-plaintext highlighter-rouge">docker logs &lt;container-id&gt;</code> command.</p>
+  </li>
+</ol>
+
+<p>You can now configure Varonis to communicate with your Qumulo cluster.</p>
+
+<a id="configure-audit-logging"></a>
+<h2 id="step-3-configure-qumulo-audit-logging-by-using-the-qq-cli">Step 3: Configure Qumulo Audit Logging by Using the qq CLI</h2>
+<p>This section explains how to configure audit logging on your Qumulo cluster.</p>
+
+<ol>
+  <li>
+    <p>To configure audit logging on your Qumulo cluster, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/audit/audit_set_syslog_config.html"><code>qq audit_set_syslog_config</code></a>
+ command with the <code class="language-plaintext highlighter-rouge">--enable</code> flag, use the <code class="language-plaintext highlighter-rouge">--json</code> flag to request logging in JSON format, and specify the IP address or hostname and port number for your Qumulo Broker machine. For example:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq audit_set_syslog_config <span class="se">\</span>
+  <span class="nt">--enable</span> <span class="se">\</span>
+  <span class="nt">--json</span> <span class="se">\</span>
+  <span class="nt">--server-address</span> 203.0.113.1 <span class="se">\</span>
+  <span class="nt">--server-port</span> 514
+</code></pre></div>    </div>
+
+    <p>Qumulo Core enables audit logging for your cluster.</p>
+  </li>
+  <li>
+    <p>To confirm the audit logging configuration for your cluster, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/audit/audit_get_syslog_config.html"><code>qq audit_get_syslog_config</code></a>
+ command.</p>
+
+    <p>In the following example output, audit logging is enabled in JSON format.</p>
+
+    <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"json"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"local_enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"server_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"203.0.113.1"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"server_port"</span><span class="p">:</span><span class="w"> </span><span class="mi">514</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>    </div>
+  </li>
+  <li>
+    <p>To confirm the connection between the Qumulo Broker and the <code class="language-plaintext highlighter-rouge">rsyslog</code> instance, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/audit/audit_get_syslog_status.html"><code>qq audit_get_syslog_status</code></a>
+ command.</p>
+
+    <p>The command returns one of three possible values for the <code class="language-plaintext highlighter-rouge">connection_status</code> field:</p>
+
+    <ul>
+      <li>
+        <p><code class="language-plaintext highlighter-rouge">AUDIT_LOG_CONNECTED</code>: The <code class="language-plaintext highlighter-rouge">rsyslog</code> instance is connected to your Qumulo Broker machine and all audit log messages are being transferred correctly.</p>
+      </li>
+      <li>
+        <p><code class="language-plaintext highlighter-rouge">AUDIT_LOG_DISCONNECTED</code>: The <code class="language-plaintext highlighter-rouge">rsyslog</code> instance is disconnected from your Qumulo Broker. Your Qumulo cluster is configured to buffer all outgoing audit log messages until it fills its buffer. When the <code class="language-plaintext highlighter-rouge">rsyslog</code> instance reconnects to your Qumulo Broker the cluster attempts to send all buffered messages.</p>
+
+        <div class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> <b>Caution</b><br />
+<ul>
+  <li>When the message buffer fills up, Qumulo Core discards all new messages. To change the buffer size, configure `rsyslog` parameters.</li>
+  <li>If a power outage or cluster reboot occurs while Qumulo Core is waiting to send its messages, all unsent messages are lost.</li>
+</ul>
+</div>
+      </li>
+      <li>
+        <p><code class="language-plaintext highlighter-rouge">AUDIT_LOG_DISABLED</code>: Audit logging has been disabled explicitly for this Qumulo cluster.</p>
+      </li>
+    </ul>
+  </li>
+</ol>
+
+<a id="configure-rsyslog-communication"></a>
+<h2 id="step-4-configure-rsyslog-to-communicate-with-qumulo-broker">Step 4: Configure rsyslog to Communicate with Qumulo Broker</h2>
+<p>This section explains how to configure <code class="language-plaintext highlighter-rouge">rsyslog</code> on the Qumulo Broker machine.</p>
+
+<div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> Before you restart the <code class="language-plaintext highlighter-rouge">rsyslog</code> service to apply a new configuration, you must always <a href="#deploy-qumulo-broker">ensure that Qumulo Broker is deployed</a>.</div>
+
+<ol>
+  <li>
+    <p>Change the file permission of the Qumulo Broker binary file.</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">chmod </span>a+x /opt/qumulo/QumuloBroker/events/Broker
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<a id="rsyslog-with-single-cluster"></a>
+<h3 id="configuring-rsyslog-to-communicate-with-a-single-cluster">Configuring rsyslog to Communicate with a Single Cluster</h3>
+<p>Configure the following <code class="language-plaintext highlighter-rouge">rsyslog</code> parameters in the <code class="language-plaintext highlighter-rouge">/etc/rsyslog.d/10-qumulo.conf</code> file.</p>
+
+<p>The following complete, annotated configuration file lets <code class="language-plaintext highlighter-rouge">rsyslog</code> on the Qumulo Broker machine communicate with a single Qumulo cluster.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># PARSE AND PUBLISH QUMULO AUDIT LOGS
+
+# TCP connection for receiving audit logs
+module(load="imtcp")
+input(type="imtcp" port="514")
+
+# To let rsyslog use standard input (to pass messages to an external 
+# script that parses and performs custom processing on audit log data),
+# load the omprog syslog module.
+module(load="omprog")
+
+if ($app-name startswith "qumulo") then {
+  # If the log show an issue related to audit log operations, uncomment
+  # the following line and restart the resyslog service.
+  # action(type="omfile" file="/var/log/qumulo_audit.log")
+  action(
+    # Invoke the omprog module
+    type="omprog" 
+    name="QumuloLog"
+    
+    # The full path and any CLI parameters for the external script
+    binary="/opt/qumulo/QumuloBroker/events/Broker"
+         
+    # The queue type to use
+    queue.type="LinkedList"
+
+    # The maximum queue size (100,000 messages)
+    # Tip: To configure rsyslog to communicate with multiple Qumulo 
+    #      clusters, set this value to 200,000.
+    queue.size="100000"
+            
+    # When enabled, the system saves data while shutting down
+    queue.saveOnShutdown="on"
+
+    # The maximum number of worker threads that can run in parallel
+    # Tip: To configure rsyslog to communicate with multiple Qumulo
+    #      clusters, set this value to 16.
+    queue.workerThreads="8"
+
+    # The number of messages that a worker thread processes before 
+    # rsyslog creates another worker thread. For example, if you set 
+    # queue.workerThreads to 200 and there are 201 messages in the 
+    # queue, rsyslog creates a second worker thread.
+    # Note: The queue.workerThreads parameter limits the maximum 
+    #       value of the queue.size parameter.
+    queue.workerThreadMinimumMessages="10000"
+    
+    # The interval after which the system retries the action, 30
+    # seconds by default. If multiple retries fail, in order to prevent
+    # the excessive resource use, the system extends the interval
+    # automatically by using a specific formula.
+    # Note: The suspension interval increases as the number of
+    #       retries increases.
+    action.resumeInterval="10"
+            
+    # The location where the system stores the output of the
+    # publisher script for system troubleshooting.
+    output="/var/log/varonis_publisher.log"
+  )
+  stop
+} else
+  action(type="omfile" file="/dev/null")
+</code></pre></div></div>
+
+<a id="rsyslog-with-multiple-clusters"></a>
+<h3 id="configuring-rsyslog-to-communicate-with-multiple-clusters">Configuring rsyslog to Communicate with Multiple Clusters</h3>
+<p>The <code class="language-plaintext highlighter-rouge">queue.size</code> and <code class="language-plaintext highlighter-rouge">queue.workerThreads</code> <code class="language-plaintext highlighter-rouge">rsyslog</code> parameters in <a href="#rsyslog-with-single-cluster">the <code class="language-plaintext highlighter-rouge">/etc/rsyslog.d/10-qumulo.conf</code> file</a> let <code class="language-plaintext highlighter-rouge">rsyslog</code> on the Qumulo Broker machine communicate with multiple Qumulo clusters.</p>
+
+<ul>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">queue.size</code>: Set the maximum size of the queue to 200,000 messages</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">queue.workerThreads</code>: Set the maximum number of worker threads that can run in parallel to 16 threads</p>
+  </li>
+</ul>
+
+<p>To restart the rsyslog service, run the <code class="language-plaintext highlighter-rouge">systemctl restart rsyslog</code> command.</p>
+
+
+   
+
+
+
+
+  
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+      
+<h2 id="related-topics" class="clickable-header top-level-header">Related Topics</h2>
+<ul id="related-topics-list">
+        
+        
+          
+            
+            
+  <li><a href="/integration-guide/varonis/qumulo-broker-with-qumulo-core.html">How Qumulo Core Integrates with Varonis</a></li>
+            
+          
+            
+            
+          
+            
+            
+  <li><a href="/integration-guide/varonis/troubleshooting-qumulo-broker.html">Troubleshooting the Integration</a></li>
+            
+          
+        
+</ul>
+        
+    
+      
+        
+    
+  
+
+
+</div>
+
+        </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+</div>
+<!-- /#main -->
+    </div>
+
+<footer>
+  <div class="footer">
+    <div class="footer-text">
+      Copyright &copy; 2021&ndash;2025 Qumulo, Inc.<br>
+
+      <a class="no_icon footer_link" href="https://qumulo.com/legal/privacy-policy/">Privacy Policy</a> &VerticalSeparator; <a class="no_icon footer_link" href="https://qumulo.com/legal/cookie-policy/">Cookie Policy</a> &VerticalSeparator; <a class="no_icon footer_link" href="https://qumulo.com/terms-hub/">Terms Hub</a><br>
+      <p>
+        <picture>
+          <source type="image/webp" srcset="/images/qumulo-logo-inverse.webp">
+          <source type="image/png" srcset="/images/qumulo-logo-inverse.png">       
+          <img class="footer-logo" src="/images/qumulo-logo-inverse.png" alt="Qumulo Logo">
+        </picture>
+      </p>
+    </div>
+    <div class="footer-grumpquats">
+      <picture>
+        <source type="image/webp" srcset="/images/grumpquats.webp">
+        <source type="image/png" srcset="/images/grumpquats.png"> 
+        <img src="/images/grumpquats.png" class="three-grumpquats" alt="Three Grumpquats">
+      </picture>
+    </div>
+  </div>
+
+  <!-- Cookie Consent - GRT Plugin -->	
+  <div id="cookie-banner" class="grt-cookie">
+    <div class="grt-cookies-msg">
+      <p>We use cookies to improve your user experience and remember your preferences on this website. If you continue to use this website, we will assume that you accept and understand our <a class="no_icon" href="https://qumulo.com/legal/privacy-policy">Privacy Policy</a>, <a class="no_icon" href="https://qumulo.com/legal/cookie-policy/">Cookie Policy</a>, and <a class="no_icon" href="https://qumulo.com/terms-hub/">Terms Hub</a>.</p>
+    </div>
+    <span class="grt-cookie-button">Accept</span>
+  </div>
+  <script src="/js/grt-cookie-consent.js"></script>
+  <script>$(".grt-cookie").grtCookie();</script>
+  
+  <script src="/js/fixdoubledashes.js"></script>
+
+  <script src="/js/expand-collapse.js"></script>
+</footer>
+
+
+</body>
+
+</html>

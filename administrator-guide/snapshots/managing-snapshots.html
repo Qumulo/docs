@@ -1,0 +1,3112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Managing Snapshots in Qumulo Core | Qumulo Documentation</title>
+<link rel="canonical" href="https://docs.qumulo.com/administrator-guide/snapshots/managing-snapshots.html">
+
+<!-- Organization JSON-LD Schema -->
+<script>
+fetch('/data/organization.json')
+.then(response => response.text())
+.then(structuredDataText => {
+  const script = document.createElement('script');
+  script.setAttribute('type', 'application/ld+json');
+  script.textContent = structuredDataText;
+  document.head.appendChild(script);
+});    
+</script>
+
+<!-- Website JSON-LD Schema -->
+<script>
+fetch('/data/website.json')
+.then(response => response.text())
+.then(structuredDataText => {
+  const script = document.createElement('script');
+  script.setAttribute('type', 'application/ld+json');
+  script.textContent = structuredDataText;
+  document.head.appendChild(script);
+});    
+</script>
+
+<!-- BEGIN TO PREPARE WEBSITE RESOURCES -->  
+<!-- Preload from jsdelivr.net:
+     * Bootstrap stylesheet and script
+     * Font Awesome
+-->
+<link rel="preload" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" as="style" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="preload" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" as="script" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
+<link rel="preload" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" as="style">
+
+<!-- Preload web fonts from fonts.googleapis.com as stylesheets -->
+<link rel="preload" href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" as="style">
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap" as="style">
+
+<!-- Preload scripts from cloudflare.com
+     * jQuery
+     * jQuery Cookie
+     * Anchor JS
+-->
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" as="script">
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js" as="script">
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/5.0.0/anchor.min.js" as="script">
+
+<!-- Preload JavaScript resources -->
+<link rel="preload" href="/js/grt-cookie-consent.js" as="script">
+<link rel="preload" href="/js/googletag.js" as="script">
+<link rel="preload" href="https://www.googletagmanager.com/gtag/js?id=G-81J7N4LMSE" as="script">
+
+<!-- Prefetch DNS from CDNs -->
+<link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+<link rel="dns-prefetch" href="https://fonts.googleapis.com">
+<link rel="dns-prefetch" href="https://fonts.gstatic.com" crossorigin>
+<link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+<link rel="dns-prefetch" href="https://maxcdn.bootstrapcdn.com">
+
+<!-- Preconnect to CDNs -->
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdnjs.cloudflare.com">
+<link rel="preconnect" href="https://maxcdn.bootstrapcdn.com">
+
+<!-- BEGIN TO LOAD WEBSITE RESOURCES -->
+<!-- Load Bootstrap and Font Awesome -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!-- Load local stylesheets inline -->
+<link rel="stylesheet" href="/css/boxshadowproperties.css">
+<link rel="stylesheet" href="/css/customstyles.css">
+<link rel="stylesheet" href="/css/grt-cookies-consent.css">
+<link rel="stylesheet" href="/css/modern-business.css">
+<link rel="stylesheet" href="/css/syntax.css">
+<link rel="stylesheet" href="/css/theme-blue.css">
+
+<!-- Optimize web font load
+     * Loading Noto Color Emoji by using `link rel=stylesheet`
+       syntax causes multiple versions of the font to load.
+     * Additional instructions are necessary for Font Awesome
+       to load with the font-display attribute.
+-->
+<style>
+  @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap');
+  @font-face {
+    font-family:'FontAwesome';
+    src: url('/fonts/fontawesome-webfont.woff?v=4.7.0') format('woff'),
+         url('/fonts/fontawesome-webfont.woff2?v=4.7.0') format('woff2');
+    font-display: swap;
+  }
+</style>
+
+<!-- Web font fallbacks for older browsers -->
+<noscript>
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Montserrat&display=swap">
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap">
+</noscript>
+
+<!-- Define page metadata -->
+<meta name="description" content="This section explains how to create on-demand snapshots and snapshot policies, view and search for existing snapshots, and delete snapshots by using the Qumulo Core Web UI. It also explains how to create snapshots on a schedule, create a snapshot with an expiration time, and modify a snapshot's expiration time.">
+<meta name="apple-mobile-web-app-title" content="Qumulo Documentation">
+<meta name="application-name" content="Qumulo Documentation">
+<meta name="msapplication-TileColor" content="#2b5797">
+<meta name="msapplication-TileImage" content="/images/mstile-144x144.png">
+<meta name="msapplication-config" content="/images/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+<meta name="google-site-verification" content="_KoxPR0qF_ZeMyH6uWvlX84cFRujO_AZ1eq0eT9alAg">
+
+<!-- Open Graph Meta Tags -->
+<meta property="og:title" content="Managing Snapshots in Qumulo Core | Qumulo Documentation">
+<meta property="og:url" content="https://docs.qumulo.com/administrator-guide/snapshots/managing-snapshots.html">
+<meta property="og:site_name" content="Qumulo Documentation">
+<meta property="og:description" content="This section explains how to create on-demand snapshots and snapshot policies, view and search for existing snapshots, and delete snapshots by using the Qumulo Core Web UI. It also explains how to create snapshots on a schedule, create a snapshot with an expiration time, and modify a snapshot's expiration time.">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://docs.qumulo.com/images/docs.qumulo.com-qumulo-documentation-portal-630px.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<!-- Twitter Meta Tags -->
+<meta name="twitter:title" content="Managing Snapshots in Qumulo Core | Qumulo Documentation">
+<meta property="twitter:url" content="https://docs.qumulo.com/administrator-guide/snapshots/managing-snapshots.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:description" content="This section explains how to create on-demand snapshots and snapshot policies, view and search for existing snapshots, and delete snapshots by using the Qumulo Core Web UI. It also explains how to create snapshots on a schedule, create a snapshot with an expiration time, and modify a snapshot's expiration time.">
+<meta name="twitter:image" content="https://docs.qumulo.com/images/docs.qumulo.com-qumulo-documentation-portal-418px.png">
+<meta property="twitter:domain" content="docs.qumulo.com">
+
+<!-- Define favicon variants -->
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="194x194" href="/images/favicon-194x194.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/images/android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+<link rel="manifest" href="/images/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+<!-- Define RSS feed -->
+<!-- TEMPORARILY DISABLED
+<link rel="alternate" href="https://docs.qumulo.com/feed.xml" type="application/rss+xml" title="docs">
+-->
+
+<!-- Load scripts from cloudflare.com -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+<!-- Load local scripts with dependencies on jQuery -->
+<script src="/js/jquery.navgoco.min.js"></script>
+
+<!-- Load scripts from jsdelivr.net and cloudflare.com -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/5.0.0/anchor.min.js"></script>
+
+<!-- Load local scripts with dependencies on Bootstrap and Anchor JS -->
+<script src="/js/toc.js"></script>
+<script src="/js/customscripts.js"></script>
+
+<!-- Fallback for IE9 -->
+<!--[if lt IE 9]>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<!-- Load Google Analytics and exclude GDPR countries from collection -->
+<script defer src="/js/googletag.js"></script>
+<script defer src="https://www.googletagmanager.com/gtag/js?id=G-81J7N4LMSE"></script>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
+    
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: true,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 400,
+                    easing: 'swing'
+                }
+            });
+
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    <script>
+        $(document).ready(function() {
+            // By default, Reading Mode is off and the button is dark.
+            if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
+                // On the landing page, hide the sidebar, make content full-width, and hide the toggle link.
+                $("#tg-sb-sidebar").hide();
+                $("#tg-sb-content").removeClass('col-md-9').addClass('col-md-12');
+                $("#tg-sb-link").hide();
+                $(".projectTitle").hide();
+                $(".navbar-brand").hide();
+                return;
+            }
+
+            if (Cookies.get('reading_mode') == '1' ) {
+                $("#tg-sb-sidebar").toggle();
+                $("#tg-sb-content").toggleClass('col-md-9');
+                $("#tg-sb-content").toggleClass('col-md-12');
+                $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                $("#tg-sb-icon").toggleClass('fa-toggle-off');                   
+            }
+            
+            $("#tg-sb-link").click(function() {
+                if (Cookies.get('reading_mode') == '1' ) {
+                    // If the Reading Mode is on, remove the cookie.
+                    Cookies.remove('reading_mode');
+                } else {
+                    // If the Reading Mode is on, place the cookie.
+                    Cookies.set('reading_mode', '1');
+                }
+                
+                // Toggle the Reading Mode and change the button color.
+                $("#tg-sb-sidebar").toggle();
+                $("#tg-sb-content").toggleClass('col-md-9');
+                $("#tg-sb-content").toggleClass('col-md-12');
+                $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                $("#tg-sb-icon").toggleClass('fa-toggle-off');
+            });
+        });
+    </script>
+    
+
+</head>
+<body>
+<!-- ==================== TOPNAV START ==================== -->
+<div class="above-header"></div>
+
+<div class="header-container">
+<header class="header">
+  <div class="logo">
+    <a class="header-link" href="https://docs.qumulo.com/">
+      <picture>
+	<source type="image/webp" srcset="/images/qumulo-logo.webp">
+	<source type="image/png" srcset="/images/qumulo-logo.png">	      
+        <img class="header-logo" src="/images/qumulo-logo.png" alt="Qumulo Logo">
+      </picture>
+    </a>
+  </div>
+
+  <div class="nav-wrapper">
+    <span class="icon-menu"></span>
+    <nav class="user-nav" id="user-nav">
+      <div class="qf2header">
+        <div class="flex-links">
+          <a class="header-link header-right" href="https://qumulo.com/company/about-qumulo/" target="_blank">About Qumulo</a>
+          <a class="header-link header-right" href="https://care.qumulo.com/s/knowledge" target="_blank">Knowledge Base</a>
+          <a class="header-link header-right" href="https://nexus.qumulo.com/" target="_blank">Nexus</a>
+        </div>
+        <div class="contact-links">
+          <a class="btn-contact no_icon" href="https://qumulocare.slack.com/">Send Slack Message</a>
+          <a class="btn-contact no_icon" href="https://care.qumulo.com/s/submit-a-case">Open a Case</a>
+        </div>
+      </div>
+    </nav>
+</div>
+</header>
+</div>
+<div class="below-header navbar navbar-inverse navbar-static-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/index.html">&nbsp;<span class="projectTitle"> Qumulo Documentation</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- toggle sidebar button -->
+                <li><a id="tg-sb-link" href="#" data-proofer-ignore><i id="tg-sb-icon" class="fa fa-toggle-off"></i> Reading Mode</a></li>
+                <!-- entries without drop-downs appear here -->
+
+
+
+
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+                <li>
+                  <div id="search-demo-container">
+                    <div class="parent">
+                      <div class="search_container">
+                        <main id="search-widget">
+                          <div class="vectara__search_Box">
+                            <form id="vectara__search_form" action="/search.html" method="GET">
+                              <input class="vectara__search_field" name="query" id="search-input" placeholder="What would you like to know?" autofocus>
+                              <button class="vectara__logo_btn">
+                                <img class="vectara__search_logo" width="26" height="28" src="/images/magnifying-glass.png" alt="Search">
+                              </button>
+                            </form>
+                          </div>
+                        </main>
+                        <ul class="tags" id="widget-tags"></ul>
+                      </div>
+                    </div>
+                  </div>
+                  <ul id="list"></ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+        <!-- /.container -->
+</div>
+<!-- ==================== TOPNAV END ==================== -->
+
+<!-- Page Content -->
+
+<div class="container">
+  <div id="main">
+    <!-- Content Row -->
+    <div class="row">
+        
+        
+
+            <!-- Sidebar Column -->
+            <div class="col-md-3" id="tg-sb-sidebar">
+                
+
+<div class="nav nav-buttons">
+  
+    <a target="_blank" rel="noopener" href="https://github.com/qumulo/docs/blob/gh-pages/administrator-guide/snapshots/managing-snapshots.md" class="btn btn-default githubEditButton no_icon" role="button" data-proofer-ignore><span class="fa fa-github fa-lg"></span> Edit on GitHub</a>
+  
+
+  
+    <a target="_blank" rel="noopener" href="/pdf/qumulo-administrator-guide.pdf" class="btn btn-default downloadPDFButton no_icon" role="button"><span class="glyphicon glyphicon-file" aria-hidden="true"></span> Download PDF</a>
+  
+</div>
+
+<ul id="mysidebar" class="nav">
+  <li class="sidebarTitle"> </li>
+  
+  
+  
+      
+  
+  
+  
+
+  
+  
+  
+  <li>
+  
+
+  <a title="Qumulo On-Premises Administrator Guide" href="" data-proofer-ignore>
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  Qumulo On-Premises Administrator Guide
+  </a>
+ 
+      <ul>
+          
+          
+          
+          <li>
+            <a title="Documentation Home" href="/index.html">
+              Documentation Home     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Guide Table of Contents" href="/administrator-guide/">
+              Guide Table of Contents     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Contacting the Qumulo Care Team" href="/contacting-qumulo-care-team.html">
+              Contacting the Qumulo Care Team     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  
+
+  
+  
+  
+  <li>
+  
+
+  <a title="Getting Started" href="/administrator-guide/getting-started/index.html" data-proofer-ignore>
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  Getting Started
+  </a>
+ 
+      <ul>
+          
+          
+          
+          <li>
+            <a title="Installing the Qumulo Core Product Package" href="/administrator-guide/getting-started/installing-product-package.html">
+              Installing the Qumulo Core Product Package     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Supported Configurations and Known Limits" href="/administrator-guide/getting-started/supported-configurations-known-limits.html">
+              Supported Configurations and Known Limits     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  
+
+  
+  
+  
+  <li>
+  
+
+  <a title="System Upgrades" href="/administrator-guide/upgrading-qumulo-core/index.html" data-proofer-ignore>
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  System Upgrades
+  </a>
+ 
+      <ul>
+          
+          
+          
+          <li>
+            <a title="Feature Log" href="/administrator-guide/upgrading-qumulo-core/feature-log.html">
+              Feature Log     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Upgrade Modes" href="/administrator-guide/upgrading-qumulo-core/mode-reference.html">
+              Upgrade Modes     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Performing Upgrades" href="/administrator-guide/upgrading-qumulo-core/performing-upgrades.html">
+              Performing Upgrades     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Replication Version Requirements and Upgrade Recommendations" href="/administrator-guide/upgrading-qumulo-core/replication-version-requirements-upgrade-recommendations.html">
+              Replication Version Requirements and Upgrade Recommendations     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  
+
+  
+  
+  
+  <li>
+  
+
+  <a title="Authentication" href="/administrator-guide/authentication-qumulo-core/index.html" data-proofer-ignore>
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  Authentication
+  </a>
+ 
+      <ul>
+          
+          
+          
+          <li>
+            <a title="Installing VPN Keys" href="/administrator-guide/authentication-qumulo-core/installing-vpn-keys-on-cluster.html">
+              Installing VPN Keys     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Configuring SAML Single Sign-On (SSO)" href="/administrator-guide/authentication-qumulo-core/configuring-saml-single-sign-on-sso.html">
+              Configuring SAML Single Sign-On (SSO)     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Configuring Search Trusted Domains" href="/administrator-guide/authentication-qumulo-core/configuring-search-trusted-domains-active-directory.html">
+              Configuring Search Trusted Domains     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Configuring LDAP" href="/administrator-guide/authentication-qumulo-core/configuring-ldap.html">
+              Configuring LDAP     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Creating and Using Bearer Tokens" href="/administrator-guide/authentication-qumulo-core/creating-using-bearer-tokens-to-authenticate-qumulo-rest-api-calls.html">
+              Creating and Using Bearer Tokens     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  
+
+  
+  
+  
+  <li>
+  
+
+  <a title="Connecting to External Services" href="/administrator-guide/connecting-to-external-services/index.html" data-proofer-ignore>
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  Connecting to External Services
+  </a>
+ 
+      <ul>
+          
+          
+          
+          <li>
+            <a title="Creating and Using Access Tokens" href="/administrator-guide/connecting-to-external-services/creating-using-access-tokens-to-authenticate-external-services-qumulo-core.html">
+              Creating and Using Access Tokens     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Connecting a Kubernetes Cluster" href="/administrator-guide/connecting-to-external-services/connecting-kubernetes-cluster-with-container-storage-interface-csi-driver.html">
+              Connecting a Kubernetes Cluster     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  
+
+  
+  
+  
+  <li>
+  
+
+  <a title="Authorization" href="/administrator-guide/authorization-qumulo-core/index.html" data-proofer-ignore>
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  Authorization
+  </a>
+ 
+      <ul>
+          
+          
+          
+          <li>
+            <a title="Managing File Locks" href="/administrator-guide/authorization-qumulo-core/managing-file-locks.html">
+              Managing File Locks     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Managing Role-Based Access Control" href="/administrator-guide/authorization-qumulo-core/managing-role-based-access-control-rbac.html">
+              Managing Role-Based Access Control     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Managing Cross-Protocol Permissions" href="/administrator-guide/authorization-qumulo-core/managing-cross-protocol-permissions-xpp.html">
+              Managing Cross-Protocol Permissions     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Using SMB Host Restrictions" href="/administrator-guide/authorization-qumulo-core/using-smb-host-restrictions.html">
+              Using SMB Host Restrictions     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Using Active Directory for POSIX Attributes" href="/administrator-guide/authorization-qumulo-core/using-active-directory-for-posix-attributes.html">
+              Using Active Directory for POSIX Attributes     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  
+
+  
+  
+  
+  <li>
+  
+
+  <a title="Storage Management" href="/administrator-guide/storage-management/index.html" data-proofer-ignore>
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  Storage Management
+  </a>
+ 
+      <ul>
+          
+          
+          
+          <li>
+            <a title="Creating and Managing Directory Quotas" href="/administrator-guide/storage-management/creating-directory-quotas.html">
+              Creating and Managing Directory Quotas     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  
+
+  
+  
+  
+  <li>
+  
+
+  <a title="Network Configuration" href="/administrator-guide/network-configuration/index.html" data-proofer-ignore>
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  Network Configuration
+  </a>
+ 
+      <ul>
+          
+          
+          
+          <li>
+            <a title="Required Networking Ports" href="/administrator-guide/network-configuration/required-ports.html">
+              Required Networking Ports     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Configuring IPv6" href="/administrator-guide/network-configuration/configuring-ipv6.html">
+              Configuring IPv6     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Connecting to Multiple Virtual Networks" href="/administrator-guide/network-configuration/connecting-multiple-virtual-networks.html">
+              Connecting to Multiple Virtual Networks     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Configuring Round-Robin DNS on Windows Server" href="/administrator-guide/network-configuration/configuring-round-robin-dns-windows-server.html">
+              Configuring Round-Robin DNS on Windows Server     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  
+
+  
+  
+  
+  <li>
+  
+
+  <a title="Network Multitenancy" href="/administrator-guide/network-multitenancy/index.html" data-proofer-ignore>
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  Network Multitenancy
+  </a>
+ 
+      <ul>
+          
+          
+          
+          <li>
+            <a title="Partitioning a Cluster into Tenants" href="/administrator-guide/network-multitenancy/partitioning-cluster-into-tenants.html">
+              Partitioning a Cluster into Tenants     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Configuring Management Protocols" href="/administrator-guide/network-multitenancy/configuring-management-protocols.html">
+              Configuring Management Protocols     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Configuring File System Protocols" href="/administrator-guide/network-multitenancy/configuring-file-system-protocols.html">
+              Configuring File System Protocols     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  
+
+  
+  
+  
+  <li>
+  
+
+  <a title="Cloud Data Fabric" href="/administrator-guide/cloud-data-fabric/index.html" data-proofer-ignore>
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  Cloud Data Fabric
+  </a>
+ 
+      <ul>
+          
+          
+          
+          <li>
+            <a title="Enabling Cloud Data Fabric" href="/administrator-guide/cloud-data-fabric/how-portal-creation-enables-cloud-data-fabric.html">
+              Enabling Cloud Data Fabric     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Configuring a Portal Relationship" href="/administrator-guide/cloud-data-fabric/configuring-portal-relationship.html">
+              Configuring a Portal Relationship     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Configuring Cache Management" href="/administrator-guide/cloud-data-fabric/configuring-cache-management-for-spoke-portals.html">
+              Configuring Cache Management     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  
+
+  
+  
+  
+  <li>
+  
+
+  <a title="Web UI" href="/administrator-guide/web-ui/index.html" data-proofer-ignore>
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  Web UI
+  </a>
+ 
+      <ul>
+          
+          
+          
+          <li>
+            <a title="Setting the Web UI Login Banner" href="/administrator-guide/web-ui/login-banner.html">
+              Setting the Web UI Login Banner     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Setting the Web UI Inactivity Timeout" href="/administrator-guide/web-ui/inactivity-timeout.html">
+              Setting the Web UI Inactivity Timeout     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  
+
+  
+  
+  
+  <li>
+  
+
+  <a title="qq CLI" href="/administrator-guide/qq-cli/index.html" data-proofer-ignore>
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  qq CLI
+  </a>
+ 
+      <ul>
+          
+          
+          
+          <li>
+            <a title="Getting Started with the qq CLI" href="/administrator-guide/qq-cli/getting-started.html">
+              Getting Started with the qq CLI     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Enabling Autocomplete for the qq CLI" href="/administrator-guide/qq-cli/enabling-autocomplete.html">
+              Enabling Autocomplete for the qq CLI     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  
+
+  
+  
+  
+  <li>
+  
+
+  <a title="Metadata" href="/administrator-guide/metadata/index.html" data-proofer-ignore>
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  Metadata
+  </a>
+ 
+      <ul>
+          
+          
+          
+          <li>
+            <a title="Managing User-Defined Metadata" href="/administrator-guide/metadata/managing-user-defined-metadata.html">
+              Managing User-Defined Metadata     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  
+
+  
+  
+  
+  <li>
+  
+
+  <a title="Snapshots" href="/administrator-guide/snapshots/index.html" data-proofer-ignore>
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  Snapshots
+  </a>
+ 
+      <ul>
+          
+          
+          
+          <li>
+            <a title="How Snapshots Work" href="/administrator-guide/snapshots/how-snapshots-work.html">
+              How Snapshots Work     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li class="active">
+            <a title="Managing Snapshots" href="/administrator-guide/snapshots/managing-snapshots.html">
+              Managing Snapshots
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Locking and Unlocking Snapshots" href="/administrator-guide/snapshots/locking-unlocking-snapshots.html">
+              Locking and Unlocking Snapshots     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Recovering Files by Using Snapshots" href="/administrator-guide/snapshots/recovering-files.html">
+              Recovering Files by Using Snapshots     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  
+
+  
+  
+  
+  <li>
+  
+
+  <a title="Encryption and Data Security" href="/administrator-guide/encryption-data-security/index.html" data-proofer-ignore>
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  Encryption and Data Security
+  </a>
+ 
+      <ul>
+          
+          
+          
+          <li>
+            <a title="Managing Encryption at Rest" href="/administrator-guide/encryption-data-security/managing-encryption-at-rest.html">
+              Managing Encryption at Rest     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Managing SMB3 Encryption in Transit" href="/administrator-guide/encryption-data-security/managing-smb3-encryption-in-transit.html">
+              Managing SMB3 Encryption in Transit     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Generating and Storing ECDSA Keys" href="/administrator-guide/encryption-data-security/generating-storing-ecdsa-keys.html">
+              Generating and Storing ECDSA Keys     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Managing Security Keys" href="/administrator-guide/encryption-data-security/managing-security-keys.html">
+              Managing Security Keys     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Installing a Signed SSL Certificate" href="/administrator-guide/encryption-data-security/installing-signed-ssl-certificate.html">
+              Installing a Signed SSL Certificate     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  
+
+  
+  
+  
+  <li>
+  
+
+  <a title="Node Addition and Replacement" href="/administrator-guide/node-addition-replacement/index.html" data-proofer-ignore>
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  Node Addition and Replacement
+  </a>
+ 
+      <ul>
+          
+          
+          
+          <li>
+            <a title="How Drive and Node Failure Protection Works" href="/administrator-guide/node-addition-replacement/how-drive-node-failure-protection-works.html">
+              How Drive and Node Failure Protection Works     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Adding Nodes to an Existing Cluster" href="/administrator-guide/node-addition-replacement/adding-nodes-existing-cluster.html">
+              Adding Nodes to an Existing Cluster     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Increasing the Node Fault Tolerance Level during Node-Add Operations" href="/administrator-guide/node-addition-replacement/increasing-node-fault-tolerance-level.html">
+              Increasing the Node Fault Tolerance Level during Node-Add Operations     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Adding Nodes with Adaptive Data Protection" href="/administrator-guide/node-addition-replacement/adding-nodes-adaptive-data-protection.html">
+              Adding Nodes with Adaptive Data Protection     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Replacing Nodes by Performing a Transparent Platform Refresh" href="/administrator-guide/node-addition-replacement/replacing-nodes-transparent-platform-refresh.html">
+              Replacing Nodes by Performing a Transparent Platform Refresh     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Improving Performance by Migrating a Cluster to a Different License Class" href="/administrator-guide/node-addition-replacement/migrating-license-class.html">
+              Improving Performance by Migrating a Cluster to a Different License Class     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Understanding Offline Nodes" href="/administrator-guide/node-addition-replacement/understanding-offline-nodes.html">
+              Understanding Offline Nodes     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  
+
+  
+  
+  
+  <li>
+  
+
+  <a title="Data Replication" href="/administrator-guide/replicating-data/index.html" data-proofer-ignore>
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  Data Replication
+  </a>
+ 
+      <ul>
+          
+          
+          
+          <li>
+            <a title="Creating and Managing a Continuous Replication Relationship" href="/administrator-guide/replicating-data/creating-managing-continuous-replication-relationship.html">
+              Creating and Managing a Continuous Replication Relationship     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Shift-To Amazon S3" href="/administrator-guide/replicating-data/shift-to-s3.html">
+              Shift-To Amazon S3     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Shift-From Amazon S3" href="/administrator-guide/replicating-data/shift-from-s3.html">
+              Shift-From Amazon S3     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  
+
+  
+  
+  
+  <li>
+  
+
+  <a title="File System Changes" href="/administrator-guide/watching-file-attribute-directory-changes/index.html" data-proofer-ignore>
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  File System Changes
+  </a>
+ 
+      <ul>
+          
+          
+          
+          <li>
+            <a title="How File System Change Notifications Work" href="/administrator-guide/watching-file-attribute-directory-changes/how-file-system-change-notifications-work.html">
+              How File System Change Notifications Work     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Watching for Changes with SMB2 CHANGE_NOTIFY" href="/administrator-guide/watching-file-attribute-directory-changes/smb2-change-notify.html">
+              Watching for Changes with SMB2 CHANGE_NOTIFY     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Watching for Changes with REST" href="/administrator-guide/watching-file-attribute-directory-changes/rest.html">
+              Watching for Changes with REST     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  
+
+  
+  
+  
+  <li>
+  
+
+  <a title="NFS" href="/administrator-guide/nfs/index.html" data-proofer-ignore>
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  NFS
+  </a>
+ 
+      <ul>
+          
+          
+          
+          <li>
+            <a title="Creating and Managing an NFS Export" href="/administrator-guide/nfs/creating-nfs-export.html">
+              Creating and Managing an NFS Export     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Enabling and Using NFSv4.1" href="/administrator-guide/nfs/nfsv4.1-enabling-using.html">
+              Enabling and Using NFSv4.1     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Managing File Access Permissions with ACLs" href="/administrator-guide/nfs/nfsv4.1-acls.html">
+              Managing File Access Permissions with ACLs     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Host Access Rules for NFS Exports" href="/administrator-guide/nfs/configuring-troubleshooting-host-access-rules-nfs-exports.html">
+              Host Access Rules for NFS Exports     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  
+
+  
+  
+  
+  <li>
+  
+
+  <a title="NFSv4.1 with Kerberos" href="/administrator-guide/kerberos/index.html" data-proofer-ignore>
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  NFSv4.1 with Kerberos
+  </a>
+ 
+      <ul>
+          
+          
+          
+          <li>
+            <a title="How NFSv4.1 Works with Kerberos" href="/administrator-guide/kerberos/kerberos-with-qumulo-core.html">
+              How NFSv4.1 Works with Kerberos     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Prerequisites for Joining to Active Directory" href="/administrator-guide/kerberos/kerberos-prerequisites-joining-cluster-active-directory.html">
+              Prerequisites for Joining to Active Directory     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Configuring Active Directory" href="/administrator-guide/kerberos/kerberos-configuring-active-directory.html">
+              Configuring Active Directory     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Performing Additional Cluster Configuration" href="/administrator-guide/kerberos/kerberos-additional-cluster-configuration.html">
+              Performing Additional Cluster Configuration     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Using Kerberos Permissions" href="/administrator-guide/kerberos/kerberos-qumulo-permissions.html">
+              Using Kerberos Permissions     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Configuring a Linux Client" href="/administrator-guide/kerberos/kerberos-configuring-linux-client.html">
+              Configuring a Linux Client     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Configuring Cross-Domain Active Directory Trusts" href="/administrator-guide/kerberos/kerberos-configuring-cross-domain-active-directory-trusts.html">
+              Configuring Cross-Domain Active Directory Trusts     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Troubleshooting NFSv4.1 with Kerberos" href="/administrator-guide/kerberos/kerberos-troubleshooting.html">
+              Troubleshooting NFSv4.1 with Kerberos     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  
+
+  
+  
+  
+  <li>
+  
+
+  <a title="SMB" href="/administrator-guide/smb/index.html" data-proofer-ignore>
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  SMB
+  </a>
+ 
+      <ul>
+          
+          
+          
+          <li>
+            <a title="Creating and Managing an SMB Share" href="/administrator-guide/smb/creating-smb-share.html">
+              Creating and Managing an SMB Share     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Managing File Shares by Using the Shared Folders MMC Snap-In" href="/administrator-guide/smb/managing-file-shares-shared-folders-mmc.html">
+              Managing File Shares by Using the Shared Folders MMC Snap-In     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  
+
+  
+  
+  
+  <li>
+  
+
+  <a title="S3 API" href="/administrator-guide/s3-api/index.html" data-proofer-ignore>
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  S3 API
+  </a>
+ 
+      <ul>
+          
+          
+          
+          <li>
+            <a title="Configuring and Using the S3 API" href="/administrator-guide/s3-api/configuring-using-s3-api.html">
+              Configuring and Using the S3 API     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Creating and Managing S3 Access Keys" href="/administrator-guide/s3-api/creating-managing-s3-access-keys.html">
+              Creating and Managing S3 Access Keys     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Creating and Managing S3 Buckets" href="/administrator-guide/s3-api/creating-managing-s3-buckets.html">
+              Creating and Managing S3 Buckets     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Managing Access to S3 Buckets" href="/administrator-guide/s3-api/managing-access-to-s3-buckets.html">
+              Managing Access to S3 Buckets     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Managing Access Policies for S3 Buckets" href="/administrator-guide/s3-api/managing-access-policies-for-s3-buckets.html">
+              Managing Access Policies for S3 Buckets     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Managing Multipart S3 Uploads" href="/administrator-guide/s3-api/managing-multipart-uploads.html">
+              Managing Multipart S3 Uploads     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Managing S3 Bucket Versioning" href="/administrator-guide/s3-api/managing-s3-bucket-versioning.html">
+              Managing S3 Bucket Versioning     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Managing Object Lock for S3 Buckets" href="/administrator-guide/s3-api/managing-object-lock-for-s3-buckets.html">
+              Managing Object Lock for S3 Buckets     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Supported Functionality and Limits" href="/administrator-guide/s3-api/supported-s3-functionality-known-limits.html">
+              Supported Functionality and Limits     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  
+
+  
+  
+  
+  <li>
+  
+
+  <a title="Monitoring and Metrics" href="/administrator-guide/monitoring-and-metrics/index.html" data-proofer-ignore>
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  Monitoring and Metrics
+  </a>
+ 
+      <ul>
+          
+          
+          
+          <li>
+            <a title="Enabling Cloud-Based Monitoring and Remote Support" href="/administrator-guide/monitoring-and-metrics/enabling-cloud-based-monitoring-remote-support.html">
+              Enabling Cloud-Based Monitoring and Remote Support     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Connecting to Cloud-Based Monitoring and S3 with a Custom Proxy" href="/administrator-guide/monitoring-and-metrics/connecting-cloud-based-monitoring-s3-custom-proxy.html">
+              Connecting to Cloud-Based Monitoring and S3 with a Custom Proxy     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Restoring the Default Values for Cloud-Based and Nexus Monitoring" href="/administrator-guide/monitoring-and-metrics/restoring-default-values-cloud-based-nexus-monitoring.html">
+              Restoring the Default Values for Cloud-Based and Nexus Monitoring     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="How Audit Logging Works in Qumulo Core" href="/administrator-guide/monitoring-and-metrics/how-audit-logging-works.html">
+              How Audit Logging Works in Qumulo Core     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="OpenMetrics API Specification" href="/administrator-guide/monitoring-and-metrics/openmetrics-api-specification.html">
+              OpenMetrics API Specification     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+      
+      
+</ul>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').addClass("active");</script>
+
+
+            </div>
+            
+        
+
+        <!-- Content Column -->
+        <div class="col-md-9" id="tg-sb-content">
+            
+
+
+
+
+
+
+
+<nav>
+<div class="breadcrumb-line">
+  <a href='/'>Home</a> <span>&rsaquo;</span> 
+
+
+  <a href='/administrator-guide/'>Qumulo On-Premises Administrator Guide</a> <span>&rsaquo;</span>
+
+
+
+  <a href='/administrator-guide/snapshots/index.html'>Snapshots</a> <span>&rsaquo;</span>
+
+
+  Managing Snapshots in Qumulo Core
+  </div>
+</nav>
+
+
+            
+
+<div class="post-header">
+   <h1 class="post-title-main">Managing Snapshots in Qumulo Core</h1>
+</div>
+
+
+
+<div class="post-content">
+
+    
+    
+<!-- Create the automatic mini-TOC on a page (unless disabled with #toc{display:none;}.
+     Note: If you use HTML tags, add an ID to the heading so that it appears in the mini-TOC.
+-->
+
+<script>
+$(document).ready(function() {
+    $('#toc').toc({
+      minimumHeaders: 2,
+      listType: 'ul',
+      showSpeed: 0,
+      headers: 'h2'
+    });
+
+    /* Account for the space that the floating toolbar takes up. */
+    $('#toc').on('click', 'a', function() {
+      var target = $(this.getAttribute('href')), 
+          scroll_target = target.offset().top
+          $(window).scrollTop(scroll_target - 10);
+      return false
+    });
+});
+</script>
+
+
+<div id="toc"></div>
+
+    
+
+   <p>This section explains how to create on-demand snapshots and snapshot policies, view and search for existing snapshots, and delete snapshots by using the Qumulo Core Web UI. It also explains how to create snapshots on a schedule, create a snapshot with an expiration time, and modify a snapshot's expiration time.</p>
+   
+     
+     <h2 id="managing-snapshots-by-using-the-qumulo-core-web-ui">Managing Snapshots by Using the Qumulo Core Web UI</h2>
+<p>This section explains how to create on-demand snapshots and snapshot policies, view and search for existing snapshots, and delete snapshots by using the Qumulo Core Web UI.</p>
+
+<h3 id="to-create-an-on-demand-snapshot">To Create an On-Demand Snapshot</h3>
+<ol>
+  <li>
+    <p>Log in to the Qumulo Core Web UI.</p>
+  </li>
+  <li>
+    <p>Click <strong>Cluster &gt; Saved Snapshots</strong>.</p>
+  </li>
+  <li>
+    <p>On the <strong>Saved Snapshots</strong> page, in the upper right, click <strong>Take Snapshot</strong>.</p>
+  </li>
+  <li>
+    <p>In the <strong>On Demand Snapshot</strong> dialog box, do the following.</p>
+
+    <ol>
+      <li>
+        <p>Enter the <strong>Snapshot Name</strong>.</p>
+      </li>
+      <li>
+        <p>For <strong>Apply to Directory</strong>, enter the directory to snapshot.</p>
+      </li>
+      <li>
+        <p>For <strong>Delete Snapshot</strong>, specify whether Qumulo Core should never delete the snapshot or delete it after a specified time period.</p>
+      </li>
+      <li>
+        <p>Click <strong>Save</strong>.</p>
+      </li>
+    </ol>
+  </li>
+</ol>
+
+<h3 id="to-create-a-snapshot-policy">To Create a Snapshot Policy</h3>
+<ol>
+  <li>
+    <p>Log in to the Qumulo Core Web UI.</p>
+  </li>
+  <li>
+    <p>Click <strong>Cluster &gt; Policy</strong>.</p>
+  </li>
+  <li>
+    <p>On the <strong>Snapshot Policies</strong> page, in the upper right, click <strong>Create Policy</strong>.</p>
+  </li>
+  <li>
+    <p>On the <strong>Create Snapshot Policy</strong> page:</p>
+
+    <ol>
+      <li>
+        <p>Enter the <strong>Policy Name</strong>.</p>
+      </li>
+      <li>
+        <p>For <strong>Apply to Directory</strong>, enter the directory to snapshot.</p>
+      </li>
+      <li>
+        <p>In the <strong>Run Policy on the Following Schedule</strong> section, specify the snapshot frequency and when to delete snapshots.</p>
+      </li>
+      <li>
+        <p>Click <strong>Enable policy upon creation</strong>.</p>
+      </li>
+      <li>
+        <p>Click <strong>Create Policy</strong>.</p>
+      </li>
+    </ol>
+  </li>
+</ol>
+
+<h3 id="to-associate-a-lock-key-with-a-snapshot-policy">To Associate a Lock Key with a Snapshot Policy</h3>
+<p>You can use a single <em>lock key</em> (private key) with multiple snapshot policies, or use a unique lock key for each snapshot policy.</p>
+
+<ol>
+  <li>
+    <p>Log in to the Qumulo Core Web UI.</p>
+  </li>
+  <li>
+    <p>Click <strong>Cluster &gt; Policy</strong>.</p>
+  </li>
+  <li>
+    <p>On the <strong>Snapshot Policies</strong> page, next to a policy, click <img class="inline" src="/images/shared-images/admin-guides/vertical-ellipsis.png" alt="Pagination controls" style="max-width: 40px" />
+ <strong>&gt; Edit Policy</strong>.</p>
+  </li>
+  <li>
+    <p>On the <strong>Edit Snapshot Policy</strong> page, in the <strong>Enable Snapshot Locking by Using a Lock Key</strong> section, select <strong>Enable snapshot locking with lock key &lt;your-key-name&gt; (ID: &lt;N&gt;)</strong> and then click <strong>Save</strong>.</p>
+
+    <p>Qumulo Core begins to lock all new snapshots that the policy creates with the specified lock key.</p>
+
+    <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Snapshots created prior to this configuration remain unlocked.</div>
+  </li>
+</ol>
+
+<p>For more information, see <a href="../encryption-data-security/managing-security-keys.html">Managing Security Keys in the Qumulo File System Key Store</a>. For examples of policies that set the lock key and clear it, see <a href="managing-snapshots.html#creating-snapshots-on-a-schedule-by-using-a-snapshot-policy">Creating Snapshots on a Schedule by Using a Snapshot Policy</a>.</p>
+
+<h3 id="to-view-existing-snapshots">To View Existing Snapshots</h3>
+<p>The <strong>Snapshots</strong> page lets you navigate a large number of snapshots.</p>
+
+<ol>
+  <li>
+    <p>Log in to the Qumulo Core Web UI.</p>
+  </li>
+  <li>
+    <p>Click <strong>Cluster &gt; Saved Snapshots</strong>.</p>
+  </li>
+  <li>
+    <p>In Qumulo Core version 4.3.3 (and higher), if you have more than 50 snapshots, use <img class="inline" src="/images/shared-images/admin-guides/snapshots/managing-snapshots-pagination.png" alt="Pagination controls" style="max-width: 40px" />
+ to navigate the snapshot pages.</p>
+
+    <p>You can also use the controls at the bottom of the table to navigate to a specific page or change the number of rows for each page.</p>
+  </li>
+</ol>
+
+<h3 id="to-find-a-specific-snapshot">To Find a Specific Snapshot</h3>
+<p>In Qumulo Core version 4.3.3 (and higher), you can search for a specific snapshot by name, creation time, and so on.</p>
+
+<ol>
+  <li>
+    <p>Log in to the Qumulo Core Web UI.</p>
+  </li>
+  <li>
+    <p>Click <strong>Cluster &gt; Saved Snapshots</strong>.</p>
+  </li>
+  <li>
+    <p>At the top of the table, click <strong>enable filters</strong>.</p>
+
+    <p>The <strong>Search…</strong> field appears.</p>
+  </li>
+  <li>
+    <p>Enter a search query.</p>
+
+    <p>The table rows match your query as you type.</p>
+  </li>
+  <li>
+    <p>(Optional) To turn off filtering, click <strong>disable filters</strong>.</p>
+  </li>
+</ol>
+
+<h3 id="to-delete-a-single-snapshot">To Delete a Single Snapshot</h3>
+<ol>
+  <li>
+    <p>Log in to the Qumulo Core Web UI.</p>
+  </li>
+  <li>
+    <p>Click <strong>Cluster &gt; Saved Snapshots</strong>.</p>
+  </li>
+  <li>
+    <p>On the right side of a snapshot’s row, click <img class="inline" src="/images/shared-images/admin-guides/snapshots/managing-snapshots-delete.png" alt="Delete icon" style="max-width: 25px" />
+.</p>
+  </li>
+</ol>
+
+<h3 id="to-delete-multiple-snapshots">To Delete Multiple Snapshots</h3>
+<p>In Qumulo Core version 4.3.3 (and higher), you can delete multiple snapshots at once.</p>
+
+<ol>
+  <li>
+    <p>Log in to the Qumulo Core Web UI.</p>
+  </li>
+  <li>
+    <p>Click <strong>Cluster &gt; Saved Snapshots</strong>.</p>
+  </li>
+  <li>
+    <p>On the left side of the table, select every snapshot to delete.</p>
+
+    <p>When you select more than one row, the <strong>Bulk Delete</strong> button appears.</p>
+  </li>
+  <li>
+    <p>When you finish selecting snapshots, click <strong>Bulk Delete</strong>.</p>
+  </li>
+</ol>
+
+<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Because all selection and deletion controls operate only on the current page, it isn’t possible to delete a snapshot accidentally if it isn’t listed on the current page.</div>
+
+<h2 id="managing-snapshots-by-using-the-qq-cli">Managing Snapshots by Using the qq CLI</h2>
+<p>This section explains how to create snapshots on a schedule, create a snapshot with an expiration time, and modify a snapshot’s expiration time by using the <code class="language-plaintext highlighter-rouge">qq</code> CLI.</p>
+
+<div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> Creating and modifying snapshot policies with an associated lock requires the <code class="language-plaintext highlighter-rouge">SNAPSHOT_LOCK</code> permission in addition to policy permissions.</div>
+
+<p><a id="create-snapshot-with-policy"></a></p>
+<h3 id="creating-snapshots-on-a-schedule-by-using-a-snapshot-policy">Creating Snapshots on a Schedule by Using a Snapshot Policy</h3>
+<p>Run the <code class="language-plaintext highlighter-rouge">qq snapshot_create_policy</code> command to create a snapshot policy and specify the interval at which Qumulo Core takes and deletes snapshots.</p>
+
+<p>In the following example, we create a policy named <code class="language-plaintext highlighter-rouge">every_day</code> that takes a snapshot every midnight in the Pacific time zone and retains the snapshot for two days. Every new snapshot that this policy creates is locked with a key named <code class="language-plaintext highlighter-rouge">my-key-name</code>.  For more information, see <a href="locking-unlocking-snapshots.html">Locking and Unlocking Snapshots in Qumulo Core</a>.</p>
+
+<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> The <code class="language-plaintext highlighter-rouge">timezone</code> flag uses values from the <a href="https://en.wikipedia.org/wiki/Tz_database">tz database</a>. If you don’t specify a time zone, the snapshot policy uses UTC time.</div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq snapshot_create_policy daily <span class="se">\</span>
+  <span class="nt">--name</span> every_day <span class="se">\</span>
+  <span class="nt">--days-of-week</span> all <span class="se">\</span>
+  <span class="nt">--at</span> 00:00 <span class="se">\</span>
+  <span class="nt">--timezone</span> America/Los_Angeles <span class="se">\</span>
+  <span class="nt">--time-to-live</span> 7days
+  <span class="nt">--lock-key</span> my-key-name
+</code></pre></div></div>
+
+<p>In the following example, we change a previously created policy with ID <code class="language-plaintext highlighter-rouge">1</code> to a policy named <code class="language-plaintext highlighter-rouge">hourly</code> that takes a snapshot every hour, but only during business hours (Monday to Friday, 8am to 6pm in the Pacific time zone), and retains snapshots for two days. Every new snapshot that this policy creates is unlocked (previously created snapshots remain locked). For more information, see <a href="locking-unlocking-snapshots.html">Locking and Unlocking Snapshots in Qumulo Core</a>.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq snapshot_modify_policy change_to_hourly_or_less <span class="se">\</span>
+  <span class="nt">-i</span> 1 <span class="se">\</span>
+  <span class="nt">--name</span> hourly <span class="se">\</span>
+  <span class="nt">--period</span> 1hours <span class="se">\</span>
+  <span class="nt">--days-of-week</span> MON,TUE,WED,THU,FRI <span class="se">\</span>
+  <span class="nt">--start-time</span> 08:00 <span class="se">\</span>
+  <span class="nt">--end-time</span> 18:00 <span class="se">\</span>
+  <span class="nt">--timezone</span> America/Los_Angeles <span class="se">\</span>
+  <span class="nt">--time-to-live</span> 2days
+  <span class="nt">--clear-lock-key</span>
+</code></pre></div></div>
+
+<h3 id="creating-an-on-demand-snapshot-with-an-expiration-time">Creating an On-Demand Snapshot with an Expiration Time</h3>
+<p>Run the <code class="language-plaintext highlighter-rouge">qq_snapshot_create_snapshot</code> command to specify an expiration date or expiration time before Qumulo Core deletes the snapshot.</p>
+
+<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> If you don’t specify an expiration date or expiration time before deletion, Qumulo Core never deletes the snapshot.</div>
+
+<p>In the following example, the snapshot expires on December 31, 2030, at midnight, in UTC time.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq snapshot_create_snapshot <span class="se">\</span>
+  <span class="nt">--expiration</span> 2030-12-31T00:00:00Z
+</code></pre></div></div>
+
+<p>In the following example, Qumulo Core deletes the snapshot in one year from the snapshot’s creation time.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq snapshot_create_snapshot <span class="se">\</span>
+  <span class="nt">--time-to-live</span> 12months
+</code></pre></div></div>
+
+<h3 id="modifying-a-snapshots-expiration-time">Modifying a Snapshot’s Expiration Time</h3>
+<p>Run the <code class="language-plaintext highlighter-rouge">qq snapshot_modify_snapshot</code> command and specify the snapshot ID from the <strong>Saved Snapshots</strong> page in the Qumulo Core Web UI (for example, for the <code class="language-plaintext highlighter-rouge">1234567_replication_from_prod</code> snapshot, the ID is <code class="language-plaintext highlighter-rouge">1234567</code>).</p>
+
+<p>In the following example, the snapshot with ID <code class="language-plaintext highlighter-rouge">1234567</code> never expires.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq snapshot_modify_snapshot <span class="se">\</span>
+  <span class="nt">-i</span> 1234567
+  <span class="nt">-e</span> <span class="s1">''</span>
+</code></pre></div></div>
+
+   
+
+
+
+
+  
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+      
+<h2 id="related-topics" class="clickable-header top-level-header">Related Topics</h2>
+<ul id="related-topics-list">
+        
+        
+          
+            
+            
+  <li><a href="/administrator-guide/snapshots/how-snapshots-work.html">How Snapshots Work</a></li>
+            
+          
+            
+            
+          
+            
+            
+  <li><a href="/administrator-guide/snapshots/locking-unlocking-snapshots.html">Locking and Unlocking Snapshots</a></li>
+            
+          
+            
+            
+  <li><a href="/administrator-guide/snapshots/recovering-files.html">Recovering Files by Using Snapshots</a></li>
+            
+          
+        
+</ul>
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+
+
+</div>
+
+        </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+</div>
+<!-- /#main -->
+    </div>
+
+<footer>
+  <div class="footer">
+    <div class="footer-text">
+      Copyright &copy; 2021&ndash;2025 Qumulo, Inc.<br>
+
+      <a class="no_icon footer_link" href="https://qumulo.com/legal/privacy-policy/">Privacy Policy</a> &VerticalSeparator; <a class="no_icon footer_link" href="https://qumulo.com/legal/cookie-policy/">Cookie Policy</a> &VerticalSeparator; <a class="no_icon footer_link" href="https://qumulo.com/terms-hub/">Terms Hub</a><br>
+      <p>
+        <picture>
+          <source type="image/webp" srcset="/images/qumulo-logo-inverse.webp">
+          <source type="image/png" srcset="/images/qumulo-logo-inverse.png">       
+          <img class="footer-logo" src="/images/qumulo-logo-inverse.png" alt="Qumulo Logo">
+        </picture>
+      </p>
+    </div>
+    <div class="footer-grumpquats">
+      <picture>
+        <source type="image/webp" srcset="/images/grumpquats.webp">
+        <source type="image/png" srcset="/images/grumpquats.png"> 
+        <img src="/images/grumpquats.png" class="three-grumpquats" alt="Three Grumpquats">
+      </picture>
+    </div>
+  </div>
+
+  <!-- Cookie Consent - GRT Plugin -->	
+  <div id="cookie-banner" class="grt-cookie">
+    <div class="grt-cookies-msg">
+      <p>We use cookies to improve your user experience and remember your preferences on this website. If you continue to use this website, we will assume that you accept and understand our <a class="no_icon" href="https://qumulo.com/legal/privacy-policy">Privacy Policy</a>, <a class="no_icon" href="https://qumulo.com/legal/cookie-policy/">Cookie Policy</a>, and <a class="no_icon" href="https://qumulo.com/terms-hub/">Terms Hub</a>.</p>
+    </div>
+    <span class="grt-cookie-button">Accept</span>
+  </div>
+  <script src="/js/grt-cookie-consent.js"></script>
+  <script>$(".grt-cookie").grtCookie();</script>
+  
+  <script src="/js/fixdoubledashes.js"></script>
+
+  <script src="/js/expand-collapse.js"></script>
+</footer>
+
+
+</body>
+
+</html>

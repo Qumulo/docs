@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Qumulo Documentation | Qumulo Documentation</title>
+<link rel="canonical" href="https://docs.qumulo.com/index.html">
+
+<!-- Organization JSON-LD Schema -->
+<script>
+fetch('/data/organization.json')
+.then(response => response.text())
+.then(structuredDataText => {
+  const script = document.createElement('script');
+  script.setAttribute('type', 'application/ld+json');
+  script.textContent = structuredDataText;
+  document.head.appendChild(script);
+});    
+</script>
+
+<!-- Website JSON-LD Schema -->
+<script>
+fetch('/data/website.json')
+.then(response => response.text())
+.then(structuredDataText => {
+  const script = document.createElement('script');
+  script.setAttribute('type', 'application/ld+json');
+  script.textContent = structuredDataText;
+  document.head.appendChild(script);
+});    
+</script>
+
+<!-- BEGIN TO PREPARE WEBSITE RESOURCES -->  
+<!-- Preload from jsdelivr.net:
+     * Bootstrap stylesheet and script
+     * Font Awesome
+-->
+<link rel="preload" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" as="style" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="preload" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" as="script" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
+<link rel="preload" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" as="style">
+
+<!-- Preload web fonts from fonts.googleapis.com as stylesheets -->
+<link rel="preload" href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" as="style">
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap" as="style">
+
+<!-- Preload scripts from cloudflare.com
+     * jQuery
+     * jQuery Cookie
+     * Anchor JS
+-->
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" as="script">
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js" as="script">
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/5.0.0/anchor.min.js" as="script">
+
+<!-- Preload JavaScript resources -->
+<link rel="preload" href="/js/grt-cookie-consent.js" as="script">
+<link rel="preload" href="/js/googletag.js" as="script">
+<link rel="preload" href="https://www.googletagmanager.com/gtag/js?id=G-81J7N4LMSE" as="script">
+
+<!-- Prefetch DNS from CDNs -->
+<link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+<link rel="dns-prefetch" href="https://fonts.googleapis.com">
+<link rel="dns-prefetch" href="https://fonts.gstatic.com" crossorigin>
+<link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+<link rel="dns-prefetch" href="https://maxcdn.bootstrapcdn.com">
+
+<!-- Preconnect to CDNs -->
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdnjs.cloudflare.com">
+<link rel="preconnect" href="https://maxcdn.bootstrapcdn.com">
+
+<!-- BEGIN TO LOAD WEBSITE RESOURCES -->
+<!-- Load Bootstrap and Font Awesome -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!-- Load local stylesheets inline -->
+<link rel="stylesheet" href="/css/boxshadowproperties.css">
+<link rel="stylesheet" href="/css/customstyles.css">
+<link rel="stylesheet" href="/css/grt-cookies-consent.css">
+<link rel="stylesheet" href="/css/modern-business.css">
+<link rel="stylesheet" href="/css/syntax.css">
+<link rel="stylesheet" href="/css/theme-blue.css">
+
+<!-- Optimize web font load
+     * Loading Noto Color Emoji by using `link rel=stylesheet`
+       syntax causes multiple versions of the font to load.
+     * Additional instructions are necessary for Font Awesome
+       to load with the font-display attribute.
+-->
+<style>
+  @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap');
+  @font-face {
+    font-family:'FontAwesome';
+    src: url('/fonts/fontawesome-webfont.woff?v=4.7.0') format('woff'),
+         url('/fonts/fontawesome-webfont.woff2?v=4.7.0') format('woff2');
+    font-display: swap;
+  }
+</style>
+
+<!-- Web font fallbacks for older browsers -->
+<noscript>
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Montserrat&display=swap">
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap">
+</noscript>
+
+<!-- Define page metadata -->
+<meta name="description" content="Welcome to the Qumulo Documentation Portal. This repository uses docs-as-code principles to provide guidance about deploying, configuring, and working with Qumulo offerings.">
+<meta name="apple-mobile-web-app-title" content="Qumulo Documentation">
+<meta name="application-name" content="Qumulo Documentation">
+<meta name="msapplication-TileColor" content="#2b5797">
+<meta name="msapplication-TileImage" content="/images/mstile-144x144.png">
+<meta name="msapplication-config" content="/images/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+<meta name="google-site-verification" content="_KoxPR0qF_ZeMyH6uWvlX84cFRujO_AZ1eq0eT9alAg">
+
+<!-- Open Graph Meta Tags -->
+<meta property="og:title" content="Qumulo Documentation | Qumulo Documentation">
+<meta property="og:url" content="https://docs.qumulo.com/index.html">
+<meta property="og:site_name" content="Qumulo Documentation">
+<meta property="og:description" content="Welcome to the Qumulo Documentation Portal. This repository uses docs-as-code principles to provide guidance about deploying, configuring, and working with Qumulo offerings.">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://docs.qumulo.com/images/docs.qumulo.com-qumulo-documentation-portal-630px.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<!-- Twitter Meta Tags -->
+<meta name="twitter:title" content="Qumulo Documentation | Qumulo Documentation">
+<meta property="twitter:url" content="https://docs.qumulo.com/index.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:description" content="Welcome to the Qumulo Documentation Portal. This repository uses docs-as-code principles to provide guidance about deploying, configuring, and working with Qumulo offerings.">
+<meta name="twitter:image" content="https://docs.qumulo.com/images/docs.qumulo.com-qumulo-documentation-portal-418px.png">
+<meta property="twitter:domain" content="docs.qumulo.com">
+
+<!-- Define favicon variants -->
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="194x194" href="/images/favicon-194x194.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/images/android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+<link rel="manifest" href="/images/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+<!-- Define RSS feed -->
+<!-- TEMPORARILY DISABLED
+<link rel="alternate" href="https://docs.qumulo.com/feed.xml" type="application/rss+xml" title="docs">
+-->
+
+<!-- Load scripts from cloudflare.com -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+<!-- Load local scripts with dependencies on jQuery -->
+<script src="/js/jquery.navgoco.min.js"></script>
+
+<!-- Load scripts from jsdelivr.net and cloudflare.com -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/5.0.0/anchor.min.js"></script>
+
+<!-- Load local scripts with dependencies on Bootstrap and Anchor JS -->
+<script src="/js/toc.js"></script>
+<script src="/js/customscripts.js"></script>
+
+<!-- Fallback for IE9 -->
+<!--[if lt IE 9]>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<!-- Load Google Analytics and exclude GDPR countries from collection -->
+<script defer src="/js/googletag.js"></script>
+<script defer src="https://www.googletagmanager.com/gtag/js?id=G-81J7N4LMSE"></script>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
+    
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: true,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 400,
+                    easing: 'swing'
+                }
+            });
+
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    <script>
+        $(document).ready(function() {
+            // By default, Reading Mode is off and the button is dark.
+            if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
+                // On the landing page, hide the sidebar, make content full-width, and hide the toggle link.
+                $("#tg-sb-sidebar").hide();
+                $("#tg-sb-content").removeClass('col-md-9').addClass('col-md-12');
+                $("#tg-sb-link").hide();
+                $(".projectTitle").hide();
+                $(".navbar-brand").hide();
+                return;
+            }
+
+            if (Cookies.get('reading_mode') == '1' ) {
+                $("#tg-sb-sidebar").toggle();
+                $("#tg-sb-content").toggleClass('col-md-9');
+                $("#tg-sb-content").toggleClass('col-md-12');
+                $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                $("#tg-sb-icon").toggleClass('fa-toggle-off');                   
+            }
+            
+            $("#tg-sb-link").click(function() {
+                if (Cookies.get('reading_mode') == '1' ) {
+                    // If the Reading Mode is on, remove the cookie.
+                    Cookies.remove('reading_mode');
+                } else {
+                    // If the Reading Mode is on, place the cookie.
+                    Cookies.set('reading_mode', '1');
+                }
+                
+                // Toggle the Reading Mode and change the button color.
+                $("#tg-sb-sidebar").toggle();
+                $("#tg-sb-content").toggleClass('col-md-9');
+                $("#tg-sb-content").toggleClass('col-md-12');
+                $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                $("#tg-sb-icon").toggleClass('fa-toggle-off');
+            });
+        });
+    </script>
+    
+
+</head>
+<body>
+<!-- ==================== TOPNAV START ==================== -->
+<div class="above-header"></div>
+
+<div class="header-container">
+<header class="header">
+  <div class="logo">
+    <a class="header-link" href="https://docs.qumulo.com/">
+      <picture>
+	<source type="image/webp" srcset="/images/qumulo-logo.webp">
+	<source type="image/png" srcset="/images/qumulo-logo.png">	      
+        <img class="header-logo" src="/images/qumulo-logo.png" alt="Qumulo Logo">
+      </picture>
+    </a>
+  </div>
+
+  <div class="nav-wrapper">
+    <span class="icon-menu"></span>
+    <nav class="user-nav" id="user-nav">
+      <div class="qf2header">
+        <div class="flex-links">
+          <a class="header-link header-right" href="https://qumulo.com/company/about-qumulo/" target="_blank">About Qumulo</a>
+          <a class="header-link header-right" href="https://care.qumulo.com/s/knowledge" target="_blank">Knowledge Base</a>
+          <a class="header-link header-right" href="https://nexus.qumulo.com/" target="_blank">Nexus</a>
+        </div>
+        <div class="contact-links">
+          <a class="btn-contact no_icon" href="https://qumulocare.slack.com/">Send Slack Message</a>
+          <a class="btn-contact no_icon" href="https://care.qumulo.com/s/submit-a-case">Open a Case</a>
+        </div>
+      </div>
+    </nav>
+</div>
+</header>
+</div>
+<div class="below-header navbar navbar-inverse navbar-static-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/index.html">&nbsp;<span class="projectTitle"> Qumulo Documentation</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- toggle sidebar button -->
+                <li><a id="tg-sb-link" href="#" data-proofer-ignore><i id="tg-sb-icon" class="fa fa-toggle-off"></i> Reading Mode</a></li>
+                <!-- entries without drop-downs appear here -->
+
+
+
+
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+                <li>
+                  <div id="search-demo-container">
+                    <div class="parent">
+                      <div class="search_container">
+                        <main id="search-widget">
+                          <div class="vectara__search_Box">
+                            <form id="vectara__search_form" action="/search.html" method="GET">
+                              <input class="vectara__search_field" name="query" id="search-input" placeholder="What would you like to know?" autofocus>
+                              <button class="vectara__logo_btn">
+                                <img class="vectara__search_logo" width="26" height="28" src="/images/magnifying-glass.png" alt="Search">
+                              </button>
+                            </form>
+                          </div>
+                        </main>
+                        <ul class="tags" id="widget-tags"></ul>
+                      </div>
+                    </div>
+                  </div>
+                  <ul id="list"></ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+        <!-- /.container -->
+</div>
+<!-- ==================== TOPNAV END ==================== -->
+
+<!-- Page Content -->
+
+<div class="container">
+  <div id="main">
+    <!-- Content Row -->
+    <div class="row">
+        
+        
+
+            <!-- Sidebar Column -->
+            <div class="col-md-3" id="tg-sb-sidebar">
+                
+
+<div class="nav nav-buttons">
+  
+    <a target="_blank" rel="noopener" href="https://github.com/qumulo/docs/blob/gh-pages/README.md" class="btn btn-default githubEditButton no_icon" role="button" data-proofer-ignore><span class="fa fa-github fa-lg"></span> Edit on GitHub</a>
+  
+
+  
+</div>
+
+<ul id="mysidebar" class="nav">
+  <li class="sidebarTitle"> </li>
+  
+  
+  
+  
+  
+
+  
+  
+  
+  <li>
+  
+
+  <a title="Qumulo Guides" href="/" data-proofer-ignore>
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  Qumulo Guides
+  </a>
+ 
+      <ul>
+          
+          
+          
+          <li class="active">
+            <a title="Documentation Home" href="/index.html">
+              Documentation Home
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Cloud Native Qumulo on AWS Administrator Guide" href="/cloud-native-aws-administrator-guide/">
+              Cloud Native Qumulo on AWS Administrator Guide     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Cloud Native Qumulo on Azure Administrator Guide" href="/cloud-native-azure-administrator-guide/">
+              Cloud Native Qumulo on Azure Administrator Guide     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Azure Native Qumulo Administrator Guide" href="/azure-native-administrator-guide/">
+              Azure Native Qumulo Administrator Guide     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Qumulo On-Premises Administrator Guide" href="/administrator-guide/">
+              Qumulo On-Premises Administrator Guide     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Qumulo-Certified Platinum-Tier Hardware Servicing Guide" href="/hardware-guide/">
+              Qumulo-Certified Platinum-Tier Hardware Servicing Guide     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Gold-Tier Hardware Servicing Guide for Qumulo" href="/gold-tier-hardware-servicing-guide/">
+              Gold-Tier Hardware Servicing Guide for Qumulo     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Qumulo qq CLI Command Guide" href="/qq-cli-command-guide/">
+              Qumulo qq CLI Command Guide     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Qumulo REST API Guide" href="/rest-api-guide/">
+              Qumulo REST API Guide     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Qumulo Alerts Administrator Guide" href="/qumulo-alerts-guide/">
+              Qumulo Alerts Administrator Guide     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Qumulo Integration Guide" href="/integration-guide/">
+              Qumulo Integration Guide     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Contacting the Qumulo Care Team" href="/contacting-qumulo-care-team.html">
+              Contacting the Qumulo Care Team     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+      
+      
+</ul>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').addClass("active");</script>
+
+
+            </div>
+            
+        
+
+        <!-- Content Column -->
+        <div class="col-md-9" id="tg-sb-content">
+            
+
+
+
+
+
+
+
+
+            
+
+<div class="post-header">
+   <h1 class="post-title-main">Qumulo Documentation</h1>
+</div>
+
+
+
+<div class="post-content">
+
+    
+    
+<!-- Create the automatic mini-TOC on a page (unless disabled with #toc{display:none;}.
+     Note: If you use HTML tags, add an ID to the heading so that it appears in the mini-TOC.
+-->
+
+<script>
+$(document).ready(function() {
+    $('#toc').toc({
+      minimumHeaders: 2,
+      listType: 'ul',
+      showSpeed: 0,
+      headers: 'h2'
+    });
+
+    /* Account for the space that the floating toolbar takes up. */
+    $('#toc').on('click', 'a', function() {
+      var target = $(this.getAttribute('href')), 
+          scroll_target = target.offset().top
+          $(window).scrollTop(scroll_target - 10);
+      return false
+    });
+});
+</script>
+
+
+<div id="toc"></div>
+
+    
+
+   <p>Welcome to the Qumulo Documentation Portal. This repository uses <a href='https://www.writethedocs.org/guide/docs-as-code/'>docs-as-code principles</a> to provide guidance about deploying, configuring, and working with Qumulo offerings.</p>
+   
+     <style>
+#toc ul li:nth-child(-n+5) {
+    display: none;
+}
+</style>
+
+<p>To get started, choose one of the following guides.</p>
+
+<h2 class="frontpage">Cloud: Self-Managed File System</h2>
+<div class="guide-buttons">
+  <div class="guide-button">
+    <a href="cloud-native-aws-administrator-guide/">
+      <figure>
+        <picture>
+          <source type="image/webp" srcset="images/cloud-native-qumulo-on-aws-administrator-guide.webp" />
+          <source type="image/png" srcset="images/cloud-native-qumulo-on-aws-administrator-guide.png" />
+          <img src="images/cloud-native-qumulo-on-aws-administrator-guide.png" alt="An image of a computer screen with a stylized Qumulo Core interface behind an image of a cloud, symbolizing cloud native deployments on AWS" width="301" height="301" />
+        </picture>
+        <figcaption>Cloud Native Qumulo on AWS Admin Guide</figcaption>
+      </figure>
+    </a>
+  </div>
+
+  <div class="guide-button">
+    <a href="cloud-native-azure-administrator-guide/">
+      <figure>
+        <picture>
+          <source type="image/webp" srcset="images/cloud-native-qumulo-on-azure-administrator-guide.webp" />
+          <source type="image/png" srcset="images/cloud-native-qumulo-on-azure-administrator-guide.png" />
+          <img src="images/cloud-native-qumulo-on-azure-administrator-guide.png" alt="An image of a computer screen with a stylized Qumulo Core interface behind an image of a cloud, symbolizing cloud native deployments on Azure" width="301" height="301" />
+        </picture>
+        <figcaption>Cloud Native Qumulo on Azure Admin Guide</figcaption>
+      </figure>
+    </a>
+  </div>
+</div>
+
+<h2 class="frontpage">Cloud: Qumulo-Managed File System</h2>
+<div class="guide-button">
+  <a href="azure-native-administrator-guide/">
+    <figure>
+      <picture>
+        <source type="image/webp" srcset="images/azure-native-qumulo-administrator-guide.webp" />
+        <source type="image/png" srcset="images/azure-native-qumulo-administrator-guide.png" />
+        <img src="images/azure-native-qumulo-administrator-guide.png" alt="An image of a computer screen with a stylized Qumulo Core interface, symbolizing Azure native deployments; above the image of the computer screen there is an image of the Qumulo logo, symbolizing the file system being Qumulo-managed" width="301" height="301" />
+      </picture>
+      <figcaption>Azure Native Qumulo Admin Guide</figcaption>
+    </figure>
+  </a>
+</div>
+
+<h2 class="frontpage">On-Premises: Self-Managed File System</h2>
+<div class="guide-buttons">
+  <div class="guide-button">
+    <a href="administrator-guide/">
+      <figure>
+        <picture>
+          <source type="image/webp" srcset="images/on-premises-administrator-guide.webp" />
+          <source type="image/png" srcset="images/on-premises-administrator-guide.png" />
+          <img src="images/on-premises-administrator-guide.png" alt="An image of a computer screen with a stylized Qumulo Core interface behind an image of a server blade, symbolizing administering on-premises hardware" width="301" height="301" />
+        </picture>
+        <figcaption>Qumulo On-Premises Admin Guide</figcaption>
+      </figure>
+    </a>
+  </div>
+
+  <div class="guide-button">
+    <a href="hardware-guide/">
+      <figure>  
+        <picture>
+          <source type="image/webp" srcset="images/qumulo-certified-platinum-tier-hardware-servicing-guide.webp" width="301" height="301" />
+          <source type="image/png" srcset="images/qumulo-certified-platinum-tier-hardware-servicing-guide.png" width="301" height="301" />
+          <img src="images/qumulo-certified-platinum-tier-hardware-servicing-guide.png" alt="A stylized image of a server rack, symbolizing installing, configuring, and maintaining hardware; above the image of the server rack there is an image of a ribbbon with the Qumulo logo, symbolizing the hardware being Qumulo-certified" width="301" height="301" />
+        </picture>
+        <figcaption class="platinum-tier-caption">Qumulo-Certified Platinum-Tier Hardware Servicing Guide</figcaption>
+      </figure>
+    </a>
+  </div>
+
+  <div class="guide-button">
+    <a href="gold-tier-hardware-servicing-guide/">
+      <figure>
+        <picture>
+          <source type="image/webp" srcset="images/gold-tier-hardware-servicing-guide.webp" width="301" height="301" />
+          <source type="image/png" srcset="images/gold-tier-hardware-servicing-guide.png" width="301" height="301" />
+          <img src="images/gold-tier-hardware-servicing-guide.png" alt="A stylized image of a server rack, symbolizing installing, configuring, and maintaining hardware" width="301" height="301" />
+        </picture>
+        <figcaption class="gold-tier-caption">Gold-Tier Hardware Servicing Guide for Qumulo</figcaption>
+      </figure>
+    </a>
+  </div>
+</div>
+
+<h2 class="frontpage">Developer Tools and Interfaces</h2>
+<div class="guide-buttons">
+  <div class="guide-button">
+    <a href="qq-cli-command-guide/">
+      <figure>
+        <picture>
+          <source type="image/webp" srcset="images/qumulo-qq-cli-command-guide.webp" />
+          <source type="image/png" srcset="images/qumulo-qq-cli-command-guide.png" />
+          <img src="images/qumulo-alerts-guide.png" alt="An image of a computer screen showing a terminal window with a Qumulo qq CLI command" width="301" height="301" />
+        </picture>
+        <figcaption>Qumulo <code>qq</code> CLI Command Guide</figcaption>
+      </figure>
+    </a>
+  </div>
+
+  <div class="guide-button">
+    <a href="rest-api-guide/">
+      <figure>
+        <picture>
+          <source type="image/webp" srcset="images/qumulo-rest-api-guide.webp" />
+          <source type="image/png" srcset="images/qumulo-rest-api-guide.png" />
+          <img src="images/qumulo-rest-api-guide.png" alt="An image of a computer screen showing a terminal window with a Qumulo REST API call" width="301" height="301" />
+        </picture>
+        <figcaption>Qumulo REST API Guide</figcaption>
+      </figure>
+    </a>
+  </div>
+</div>
+
+<h2 class="frontpage">External Alerting and Monitoring</h2>
+<div class="guide-buttons">
+  <div class="guide-button">
+    <a href="qumulo-alerts-guide/">
+      <figure>
+        <picture>
+          <source type="image/webp" srcset="images/qumulo-alerts-guide.webp" />
+          <source type="image/png" srcset="images/qumulo-alerts-guide.png" />
+          <img src="images/qumulo-alerts-guide.png" alt="An image of a computer screen showing a warning triangle behind a stylized image of a cog wheel, symbolizing administering Qumulo Alerts instances" width="301" height="301" />
+        </picture>
+        <figcaption>Qumulo Alerts Admin Guide</figcaption>
+      </figure>
+    </a>
+  </div>
+
+  <div class="guide-button">
+    <a href="integration-guide/">
+      <figure>
+        <picture>
+          <source type="image/webp" srcset="images/qumulo-integration-guide.webp" />
+          <source type="image/png" srcset="images/qumulo-integration-guide.png" />
+          <img src="images/qumulo-integration-guide.png" alt="A stylized image of two entities combining together with three items orbiting them, symbolizing integration" width="301" height="301" />
+        </picture>
+        <figcaption>Qumulo Integration Guide</figcaption>
+      </figure>
+    </a>
+  </div>
+</div>
+
+<h2 id="hot-topics">Hot Topics</h2>
+<p>The following are the most-accessed pages on the Documentation Portal.</p>
+
+<ol>
+  <li><a href="/administrator-guide/network-configuration/configuring-round-robin-dns-windows-server.html">Configuring Round-Robin DNS on Windows Server for Qumulo Core</a></li>
+  <li><a href="/administrator-guide/monitoring-and-metrics/enabling-cloud-based-monitoring-remote-support.html">Enabling Cloud-Based Monitoring and Remote Support</a></li>
+  <li><a href="/administrator-guide/upgrading-qumulo-core/feature-log.html">Qumulo Core Feature Log</a></li>
+  <li><a href="/administrator-guide/qq-cli/getting-started.html">Getting Started with the qq CLI</a></li>
+  <li><a href="/administrator-guide/getting-started/supported-configurations-known-limits.html">Supported Configurations and Known Limits for Qumulo Core</a></li>
+  <li><a href="/administrator-guide/snapshots/managing-snapshots.html">Managing Snapshots in Qumulo Core</a></li>
+  <li><a href="/administrator-guide/upgrading-qumulo-core/performing-upgrades.html">Performing Qumulo Core Upgrades</a></li>
+  <li><a href="/administrator-guide/s3-api/creating-managing-s3-buckets.html">Creating and Managing S3 Buckets in Qumulo Core</a></li>
+  <li><a href="/administrator-guide/node-addition-replacement/how-drive-node-failure-protection-works.html">How Drive and Node Failure Protection Works in Qumulo Core</a></li>
+  <li><a href="/administrator-guide/s3-api/configuring-using-s3-api.html">Configuring and Using the S3 API in Qumulo Core</a></li>
+</ol>
+
+<h2 id="get-qumulo-core">Get Qumulo Core</h2>
+<p>For downloads, release notes, and upgrade paths for on-premises and cloud releases of Qumulo Core, see <a target="_blank" href="https://nexus.qumulo.com/downloads">Qumulo Nexus</a> <span class="emoji">🔒</span>.</p>
+
+<p>For information about upgrading, see:</p>
+<ul>
+  <li><a href="/administrator-guide/upgrading-qumulo-core/feature-log.html">Feature Log</a></li>
+  <li><a href="/administrator-guide/upgrading-qumulo-core/mode-reference.html">Qumulo Core Upgrade Mode Reference</a></li>
+  <li><a href="/administrator-guide/upgrading-qumulo-core/instant-software-platform.html">Performing Instant Software Upgrades and Platform Upgrades</a></li>
+</ul>
+
+<h2 id="reach-out-to-us">Reach Out to Us</h2>
+<p>If you need help, <a href="https://care.qumulo.com/s/submit-a-case">open a case</a>, or <a href="https://docs.qumulo.com/contacting-qumulo-care-team.html">contact the Qumulo Care team</a> through Slack, email, or by phone.</p>
+
+<h2 id="report-a-documentation-issue">Report a Documentation Issue</h2>
+<p>You can <a href="https://github.com/qumulo/docs/blob/gh-pages/README.md">view this page in GitHub</a> and <a href="https://github.com/Qumulo/docs/issues">suggest corrections by opening an issue</a>.</p>
+
+   
+
+
+
+
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+
+
+</div>
+
+        </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+</div>
+<!-- /#main -->
+    </div>
+
+<footer>
+  <div class="footer">
+    <div class="footer-text">
+      Copyright &copy; 2021&ndash;2025 Qumulo, Inc.<br>
+
+      <a class="no_icon footer_link" href="https://qumulo.com/legal/privacy-policy/">Privacy Policy</a> &VerticalSeparator; <a class="no_icon footer_link" href="https://qumulo.com/legal/cookie-policy/">Cookie Policy</a> &VerticalSeparator; <a class="no_icon footer_link" href="https://qumulo.com/terms-hub/">Terms Hub</a><br>
+      <p>
+        <picture>
+          <source type="image/webp" srcset="/images/qumulo-logo-inverse.webp">
+          <source type="image/png" srcset="/images/qumulo-logo-inverse.png">       
+          <img class="footer-logo" src="/images/qumulo-logo-inverse.png" alt="Qumulo Logo">
+        </picture>
+      </p>
+    </div>
+    <div class="footer-grumpquats">
+      <picture>
+        <source type="image/webp" srcset="/images/grumpquats.webp">
+        <source type="image/png" srcset="/images/grumpquats.png"> 
+        <img src="/images/grumpquats.png" class="three-grumpquats" alt="Three Grumpquats">
+      </picture>
+    </div>
+  </div>
+
+  <!-- Cookie Consent - GRT Plugin -->	
+  <div id="cookie-banner" class="grt-cookie">
+    <div class="grt-cookies-msg">
+      <p>We use cookies to improve your user experience and remember your preferences on this website. If you continue to use this website, we will assume that you accept and understand our <a class="no_icon" href="https://qumulo.com/legal/privacy-policy">Privacy Policy</a>, <a class="no_icon" href="https://qumulo.com/legal/cookie-policy/">Cookie Policy</a>, and <a class="no_icon" href="https://qumulo.com/terms-hub/">Terms Hub</a>.</p>
+    </div>
+    <span class="grt-cookie-button">Accept</span>
+  </div>
+  <script src="/js/grt-cookie-consent.js"></script>
+  <script>$(".grt-cookie").grtCookie();</script>
+  
+  <script src="/js/fixdoubledashes.js"></script>
+
+  <script src="/js/expand-collapse.js"></script>
+</footer>
+
+
+</body>
+
+</html>

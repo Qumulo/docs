@@ -1,0 +1,2747 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Panel LEDs on Quiver 1U All-NVMe Gen1 Nodes | Qumulo Documentation</title>
+<link rel="canonical" href="https://docs.qumulo.com/hardware-guide/quiver-1ua-all-nvme-gen1/panel-leds.html">
+
+<!-- Organization JSON-LD Schema -->
+<script>
+fetch('/data/organization.json')
+.then(response => response.text())
+.then(structuredDataText => {
+  const script = document.createElement('script');
+  script.setAttribute('type', 'application/ld+json');
+  script.textContent = structuredDataText;
+  document.head.appendChild(script);
+});    
+</script>
+
+<!-- Website JSON-LD Schema -->
+<script>
+fetch('/data/website.json')
+.then(response => response.text())
+.then(structuredDataText => {
+  const script = document.createElement('script');
+  script.setAttribute('type', 'application/ld+json');
+  script.textContent = structuredDataText;
+  document.head.appendChild(script);
+});    
+</script>
+
+<!-- BEGIN TO PREPARE WEBSITE RESOURCES -->  
+<!-- Preload from jsdelivr.net:
+     * Bootstrap stylesheet and script
+     * Font Awesome
+-->
+<link rel="preload" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" as="style" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="preload" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" as="script" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
+<link rel="preload" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" as="style">
+
+<!-- Preload web fonts from fonts.googleapis.com as stylesheets -->
+<link rel="preload" href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" as="style">
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap" as="style">
+
+<!-- Preload scripts from cloudflare.com
+     * jQuery
+     * jQuery Cookie
+     * Anchor JS
+-->
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" as="script">
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js" as="script">
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/5.0.0/anchor.min.js" as="script">
+
+<!-- Preload JavaScript resources -->
+<link rel="preload" href="/js/grt-cookie-consent.js" as="script">
+<link rel="preload" href="/js/googletag.js" as="script">
+<link rel="preload" href="https://www.googletagmanager.com/gtag/js?id=G-81J7N4LMSE" as="script">
+
+<!-- Prefetch DNS from CDNs -->
+<link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+<link rel="dns-prefetch" href="https://fonts.googleapis.com">
+<link rel="dns-prefetch" href="https://fonts.gstatic.com" crossorigin>
+<link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+<link rel="dns-prefetch" href="https://maxcdn.bootstrapcdn.com">
+
+<!-- Preconnect to CDNs -->
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdnjs.cloudflare.com">
+<link rel="preconnect" href="https://maxcdn.bootstrapcdn.com">
+
+<!-- BEGIN TO LOAD WEBSITE RESOURCES -->
+<!-- Load Bootstrap and Font Awesome -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!-- Load local stylesheets inline -->
+<link rel="stylesheet" href="/css/boxshadowproperties.css">
+<link rel="stylesheet" href="/css/customstyles.css">
+<link rel="stylesheet" href="/css/grt-cookies-consent.css">
+<link rel="stylesheet" href="/css/modern-business.css">
+<link rel="stylesheet" href="/css/syntax.css">
+<link rel="stylesheet" href="/css/theme-blue.css">
+
+<!-- Optimize web font load
+     * Loading Noto Color Emoji by using `link rel=stylesheet`
+       syntax causes multiple versions of the font to load.
+     * Additional instructions are necessary for Font Awesome
+       to load with the font-display attribute.
+-->
+<style>
+  @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap');
+  @font-face {
+    font-family:'FontAwesome';
+    src: url('/fonts/fontawesome-webfont.woff?v=4.7.0') format('woff'),
+         url('/fonts/fontawesome-webfont.woff2?v=4.7.0') format('woff2');
+    font-display: swap;
+  }
+</style>
+
+<!-- Web font fallbacks for older browsers -->
+<noscript>
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Montserrat&display=swap">
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap">
+</noscript>
+
+<!-- Define page metadata -->
+<meta name="description" content="This section explains the LEDs on Quiver 1UA Gen1 nodes.">
+<meta name="apple-mobile-web-app-title" content="Qumulo Documentation">
+<meta name="application-name" content="Qumulo Documentation">
+<meta name="msapplication-TileColor" content="#2b5797">
+<meta name="msapplication-TileImage" content="/images/mstile-144x144.png">
+<meta name="msapplication-config" content="/images/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+<meta name="google-site-verification" content="_KoxPR0qF_ZeMyH6uWvlX84cFRujO_AZ1eq0eT9alAg">
+
+<!-- Open Graph Meta Tags -->
+<meta property="og:title" content="Panel LEDs on Quiver 1U All-NVMe Gen1 Nodes | Qumulo Documentation">
+<meta property="og:url" content="https://docs.qumulo.com/hardware-guide/quiver-1ua-all-nvme-gen1/panel-leds.html">
+<meta property="og:site_name" content="Qumulo Documentation">
+<meta property="og:description" content="This section explains the LEDs on Quiver 1UA Gen1 nodes.">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://docs.qumulo.com/images/docs.qumulo.com-qumulo-documentation-portal-630px.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<!-- Twitter Meta Tags -->
+<meta name="twitter:title" content="Panel LEDs on Quiver 1U All-NVMe Gen1 Nodes | Qumulo Documentation">
+<meta property="twitter:url" content="https://docs.qumulo.com/hardware-guide/quiver-1ua-all-nvme-gen1/panel-leds.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:description" content="This section explains the LEDs on Quiver 1UA Gen1 nodes.">
+<meta name="twitter:image" content="https://docs.qumulo.com/images/docs.qumulo.com-qumulo-documentation-portal-418px.png">
+<meta property="twitter:domain" content="docs.qumulo.com">
+
+<!-- Define favicon variants -->
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="194x194" href="/images/favicon-194x194.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/images/android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+<link rel="manifest" href="/images/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+<!-- Define RSS feed -->
+<!-- TEMPORARILY DISABLED
+<link rel="alternate" href="https://docs.qumulo.com/feed.xml" type="application/rss+xml" title="docs">
+-->
+
+<!-- Load scripts from cloudflare.com -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+<!-- Load local scripts with dependencies on jQuery -->
+<script src="/js/jquery.navgoco.min.js"></script>
+
+<!-- Load scripts from jsdelivr.net and cloudflare.com -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/5.0.0/anchor.min.js"></script>
+
+<!-- Load local scripts with dependencies on Bootstrap and Anchor JS -->
+<script src="/js/toc.js"></script>
+<script src="/js/customscripts.js"></script>
+
+<!-- Fallback for IE9 -->
+<!--[if lt IE 9]>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<!-- Load Google Analytics and exclude GDPR countries from collection -->
+<script defer src="/js/googletag.js"></script>
+<script defer src="https://www.googletagmanager.com/gtag/js?id=G-81J7N4LMSE"></script>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
+    
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: true,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 400,
+                    easing: 'swing'
+                }
+            });
+
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    <script>
+        $(document).ready(function() {
+            // By default, Reading Mode is off and the button is dark.
+            if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
+                // On the landing page, hide the sidebar, make content full-width, and hide the toggle link.
+                $("#tg-sb-sidebar").hide();
+                $("#tg-sb-content").removeClass('col-md-9').addClass('col-md-12');
+                $("#tg-sb-link").hide();
+                $(".projectTitle").hide();
+                $(".navbar-brand").hide();
+                return;
+            }
+
+            if (Cookies.get('reading_mode') == '1' ) {
+                $("#tg-sb-sidebar").toggle();
+                $("#tg-sb-content").toggleClass('col-md-9');
+                $("#tg-sb-content").toggleClass('col-md-12');
+                $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                $("#tg-sb-icon").toggleClass('fa-toggle-off');                   
+            }
+            
+            $("#tg-sb-link").click(function() {
+                if (Cookies.get('reading_mode') == '1' ) {
+                    // If the Reading Mode is on, remove the cookie.
+                    Cookies.remove('reading_mode');
+                } else {
+                    // If the Reading Mode is on, place the cookie.
+                    Cookies.set('reading_mode', '1');
+                }
+                
+                // Toggle the Reading Mode and change the button color.
+                $("#tg-sb-sidebar").toggle();
+                $("#tg-sb-content").toggleClass('col-md-9');
+                $("#tg-sb-content").toggleClass('col-md-12');
+                $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                $("#tg-sb-icon").toggleClass('fa-toggle-off');
+            });
+        });
+    </script>
+    
+
+</head>
+<body>
+<!-- ==================== TOPNAV START ==================== -->
+<div class="above-header"></div>
+
+<div class="header-container">
+<header class="header">
+  <div class="logo">
+    <a class="header-link" href="https://docs.qumulo.com/">
+      <picture>
+	<source type="image/webp" srcset="/images/qumulo-logo.webp">
+	<source type="image/png" srcset="/images/qumulo-logo.png">	      
+        <img class="header-logo" src="/images/qumulo-logo.png" alt="Qumulo Logo">
+      </picture>
+    </a>
+  </div>
+
+  <div class="nav-wrapper">
+    <span class="icon-menu"></span>
+    <nav class="user-nav" id="user-nav">
+      <div class="qf2header">
+        <div class="flex-links">
+          <a class="header-link header-right" href="https://qumulo.com/company/about-qumulo/" target="_blank">About Qumulo</a>
+          <a class="header-link header-right" href="https://care.qumulo.com/s/knowledge" target="_blank">Knowledge Base</a>
+          <a class="header-link header-right" href="https://nexus.qumulo.com/" target="_blank">Nexus</a>
+        </div>
+        <div class="contact-links">
+          <a class="btn-contact no_icon" href="https://qumulocare.slack.com/">Send Slack Message</a>
+          <a class="btn-contact no_icon" href="https://care.qumulo.com/s/submit-a-case">Open a Case</a>
+        </div>
+      </div>
+    </nav>
+</div>
+</header>
+</div>
+<div class="below-header navbar navbar-inverse navbar-static-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/index.html">&nbsp;<span class="projectTitle"> Qumulo Documentation</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- toggle sidebar button -->
+                <li><a id="tg-sb-link" href="#" data-proofer-ignore><i id="tg-sb-icon" class="fa fa-toggle-off"></i> Reading Mode</a></li>
+                <!-- entries without drop-downs appear here -->
+
+
+
+
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+                <li>
+                  <div id="search-demo-container">
+                    <div class="parent">
+                      <div class="search_container">
+                        <main id="search-widget">
+                          <div class="vectara__search_Box">
+                            <form id="vectara__search_form" action="/search.html" method="GET">
+                              <input class="vectara__search_field" name="query" id="search-input" placeholder="What would you like to know?" autofocus>
+                              <button class="vectara__logo_btn">
+                                <img class="vectara__search_logo" width="26" height="28" src="/images/magnifying-glass.png" alt="Search">
+                              </button>
+                            </form>
+                          </div>
+                        </main>
+                        <ul class="tags" id="widget-tags"></ul>
+                      </div>
+                    </div>
+                  </div>
+                  <ul id="list"></ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+        <!-- /.container -->
+</div>
+<!-- ==================== TOPNAV END ==================== -->
+
+<!-- Page Content -->
+
+<div class="container">
+  <div id="main">
+    <!-- Content Row -->
+    <div class="row">
+        
+        
+
+            <!-- Sidebar Column -->
+            <div class="col-md-3" id="tg-sb-sidebar">
+                
+
+<div class="nav nav-buttons">
+  
+    <a target="_blank" rel="noopener" href="https://github.com/qumulo/docs/blob/gh-pages/hardware-guide/quiver-1ua-all-nvme-gen1/panel-leds.md" class="btn btn-default githubEditButton no_icon" role="button" data-proofer-ignore><span class="fa fa-github fa-lg"></span> Edit on GitHub</a>
+  
+
+  
+    <a target="_blank" rel="noopener" href="/pdf/qumulo-certified-platinum-tier-hardware-guide.pdf" class="btn btn-default downloadPDFButton no_icon" role="button"><span class="glyphicon glyphicon-file" aria-hidden="true"></span> Download PDF</a>
+  
+</div>
+
+<ul id="mysidebar" class="nav">
+  <li class="sidebarTitle"> </li>
+  
+  
+  
+      
+  
+  
+  
+
+  
+  
+  
+  <li>
+  
+
+  <a title="Qumulo-Certified Platinum-Tier Hardware Servicing Guide" href="" data-proofer-ignore>
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  Qumulo-Certified Platinum-Tier Hardware Servicing Guide
+  </a>
+ 
+      <ul>
+          
+          
+          
+          <li>
+            <a title="Documentation Home" href="/index.html">
+              Documentation Home     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Guide Table of Contents" href="/hardware-guide/">
+              Guide Table of Contents     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Contacting the Qumulo Care Team" href="/contacting-qumulo-care-team.html">
+              Contacting the Qumulo Care Team     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  
+
+  
+  
+  
+  <li>
+  
+
+  <a title="Getting Started" href="/hardware-guide/getting-started/index.html" data-proofer-ignore>
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  Getting Started
+  </a>
+ 
+      <ul>
+          
+          
+          
+          <li>
+            <a title="Safety Recommendations" href="/hardware-guide/getting-started/safety-recommendations.html">
+              Safety Recommendations     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Identifying NICs and Choosing Transceivers and Cables" href="/hardware-guide/getting-started/nics-transceivers-cables.html">
+              Identifying NICs and Choosing Transceivers and Cables     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Creating a USB Drive Installer" href="/hardware-guide/getting-started/creating-usb-drive-installer.html">
+              Creating a USB Drive Installer     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  
+
+  
+  
+  
+  <li>
+  
+
+  <a title="C-192T, C-432T, and K-432T" href="/hardware-guide/c-192t-c-432t-k-432t/index.html" data-proofer-ignore>
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  C-192T, C-432T, and K-432T
+  </a>
+ 
+      <ul>
+          
+          
+          
+          <li>
+            <a title="Replacing the Chassis" href="/hardware-guide/c-192t-c-432t-k-432t/replacing-chassis.html">
+              Replacing the Chassis     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  
+
+  
+  
+  
+  <li>
+  
+
+  <a title="Fujitsu PRIMERGY RX2540 M7" href="/hardware-guide/fujitsu-primergy-rx2540-m7/index.html" data-proofer-ignore>
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  Fujitsu PRIMERGY RX2540 M7
+  </a>
+ 
+      <ul>
+          
+          
+          
+          <li>
+            <a title="Racking Nodes" href="/hardware-guide/fujitsu-primergy-rx2540-m7/racking-nodes.html">
+              Racking Nodes     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Configuring iRMC and Wiring Nodes" href="/hardware-guide/fujitsu-primergy-rx2540-m7/configuring-irmc-wiring-nodes.html">
+              Configuring iRMC and Wiring Nodes     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Creating and Configuring a Cluster" href="/hardware-guide/fujitsu-primergy-rx2540-m7/creating-configuring-cluster.html">
+              Creating and Configuring a Cluster     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Drive Bay Mapping" href="/hardware-guide/fujitsu-primergy-rx2540-m7/drive-bay-mapping.html">
+              Drive Bay Mapping     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Panel LEDs" href="/hardware-guide/fujitsu-primergy-rx2540-m7/panel-leds.html">
+              Panel LEDs     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Cluster Networking" href="/hardware-guide/fujitsu-primergy-rx2540-m7/networking-cluster.html">
+              Cluster Networking     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Replacing Hardware Components" href="/hardware-guide/fujitsu-primergy-rx2540-m7/replacing-hardware-components.html">
+              Replacing Hardware Components     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Technical Specifications" href="/hardware-guide/fujitsu-primergy-rx2540-m7/technical-specifications.html">
+              Technical Specifications     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  
+
+  
+  
+  
+  <li>
+  
+
+  <a title="HPE Alletra 4110" href="/hardware-guide/hpe-alletra-4110/index.html" data-proofer-ignore>
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  HPE Alletra 4110
+  </a>
+ 
+      <ul>
+          
+          
+          
+          <li>
+            <a title="Wiring Nodes and Networking a Cluster" href="/hardware-guide/hpe-alletra-4110/wiring-nodes-networking-cluster.html">
+              Wiring Nodes and Networking a Cluster     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Creating and Configuring a Cluster" href="/hardware-guide/hpe-alletra-4110/creating-configuring-cluster.html">
+              Creating and Configuring a Cluster     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Front and Internal Drives" href="/hardware-guide/hpe-alletra-4110/front-internal-drives.html">
+              Front and Internal Drives     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Panel LEDs" href="/hardware-guide/hpe-alletra-4110/panel-leds.html">
+              Panel LEDs     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Configuring iLO" href="/hardware-guide/hpe-alletra-4110/configuring-ilo.html">
+              Configuring iLO     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Replacing Hardware Components" href="/hardware-guide/hpe-alletra-4110/replacing-hardware-components.html">
+              Replacing Hardware Components     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Technical Specifications" href="/hardware-guide/hpe-alletra-4110/technical-specifications.html">
+              Technical Specifications     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  
+
+  
+  
+  
+  <li>
+  
+
+  <a title="HPE Apollo 4200 Gen9" href="/hardware-guide/hpe-apollo-4200-gen9/index.html" data-proofer-ignore>
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  HPE Apollo 4200 Gen9
+  </a>
+ 
+      <ul>
+          
+          
+          
+          <li>
+            <a title="Wiring Nodes and Networking a Cluster" href="/hardware-guide/hpe-apollo-4200-gen9/wiring-nodes-networking-cluster.html">
+              Wiring Nodes and Networking a Cluster     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Creating and Configuring a Cluster" href="/hardware-guide/hpe-apollo-4200-gen9/creating-configuring-cluster.html">
+              Creating and Configuring a Cluster     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Front and Rear Drives" href="/hardware-guide/hpe-apollo-4200-gen9/front-rear-drives.html">
+              Front and Rear Drives     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Panel LEDs" href="/hardware-guide/hpe-apollo-4200-gen9/panel-leds.html">
+              Panel LEDs     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Drive LEDs" href="/hardware-guide/hpe-apollo-4200-gen9/drive-leds.html">
+              Drive LEDs     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Configuring iLO" href="/hardware-guide/hpe-apollo-4200-gen9/configuring-ilo.html">
+              Configuring iLO     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Replacing Hardware Components" href="/hardware-guide/hpe-apollo-4200-gen9/replacing-hardware-components.html">
+              Replacing Hardware Components     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  
+
+  
+  
+  
+  <li>
+  
+
+  <a title="HPE Apollo 4200 Gen10" href="/hardware-guide/hpe-apollo-4200-gen10/index.html" data-proofer-ignore>
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  HPE Apollo 4200 Gen10
+  </a>
+ 
+      <ul>
+          
+          
+          
+          <li>
+            <a title="Wiring Nodes and Networking a Cluster" href="/hardware-guide/hpe-apollo-4200-gen10/wiring-nodes-networking-cluster.html">
+              Wiring Nodes and Networking a Cluster     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Creating and Configuring a Cluster" href="/hardware-guide/hpe-apollo-4200-gen10/creating-configuring-cluster.html">
+              Creating and Configuring a Cluster     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Front and Rear Drives" href="/hardware-guide/hpe-apollo-4200-gen10/front-rear-drives.html">
+              Front and Rear Drives     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Panel LEDs" href="/hardware-guide/hpe-apollo-4200-gen10/panel-leds.html">
+              Panel LEDs     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Drive LEDs" href="/hardware-guide/hpe-apollo-4200-gen10/drive-leds.html">
+              Drive LEDs     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Configuring iLO" href="/hardware-guide/hpe-apollo-4200-gen10/configuring-ilo.html">
+              Configuring iLO     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Replacing Hardware Components" href="/hardware-guide/hpe-apollo-4200-gen10/replacing-hardware-components.html">
+              Replacing Hardware Components     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Technical Specifications" href="/hardware-guide/hpe-apollo-4200-gen10/technical-specifications.html">
+              Technical Specifications     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  
+
+  
+  
+  
+  <li>
+  
+
+  <a title="HPE Apollo 4200 Gen10 Plus" href="/hardware-guide/hpe-apollo-4200-gen10-plus/index.html" data-proofer-ignore>
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  HPE Apollo 4200 Gen10 Plus
+  </a>
+ 
+      <ul>
+          
+          
+          
+          <li>
+            <a title="Wiring Nodes and Networking a Cluster" href="/hardware-guide/hpe-apollo-4200-gen10-plus/wiring-nodes-networking-cluster.html">
+              Wiring Nodes and Networking a Cluster     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Creating and Configuring a Cluster" href="/hardware-guide/hpe-apollo-4200-gen10-plus/creating-configuring-cluster.html">
+              Creating and Configuring a Cluster     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Front and Internal Drives" href="/hardware-guide/hpe-apollo-4200-gen10-plus/front-internal-drives.html">
+              Front and Internal Drives     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Panel LEDs" href="/hardware-guide/hpe-apollo-4200-gen10-plus/panel-leds.html">
+              Panel LEDs     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Configuring iLO" href="/hardware-guide/hpe-apollo-4200-gen10-plus/configuring-ilo.html">
+              Configuring iLO     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Replacing Hardware Components" href="/hardware-guide/hpe-apollo-4200-gen10-plus/replacing-hardware-components.html">
+              Replacing Hardware Components     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Technical Specifications" href="/hardware-guide/hpe-apollo-4200-gen10-plus/technical-specifications.html">
+              Technical Specifications     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  
+
+  
+  
+  
+  <li>
+  
+
+  <a title="HPE ProLiant DL325 Gen10 Plus" href="/hardware-guide/hpe-dl325-gen10-plus/index.html" data-proofer-ignore>
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  HPE ProLiant DL325 Gen10 Plus
+  </a>
+ 
+      <ul>
+          
+          
+          
+          <li>
+            <a title="Wiring Nodes and Networking a Cluster" href="/hardware-guide/hpe-dl325-gen10-plus/wiring-nodes-networking-cluster.html">
+              Wiring Nodes and Networking a Cluster     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Creating and Configuring a Cluster" href="/hardware-guide/hpe-dl325-gen10-plus/creating-configuring-cluster.html">
+              Creating and Configuring a Cluster     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Front and Rear Drives" href="/hardware-guide/hpe-dl325-gen10-plus/front-rear-drives.html">
+              Front and Rear Drives     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Configuring iLO" href="/hardware-guide/hpe-dl325-gen10-plus/configuring-ilo.html">
+              Configuring iLO     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Replacing Hardware Components" href="/hardware-guide/hpe-dl325-gen10-plus/replacing-hardware-components.html">
+              Replacing Hardware Components     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Technical Specifications" href="/hardware-guide/hpe-dl325-gen10-plus/technical-specifications.html">
+              Technical Specifications     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  
+
+  
+  
+  
+  <li>
+  
+
+  <a title="Quiver 1U All-NVMe Gen1" href="/hardware-guide/quiver-1ua-all-nvme-gen1/index.html" data-proofer-ignore>
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  Quiver 1U All-NVMe Gen1
+  </a>
+ 
+      <ul>
+          
+          
+          
+          <li>
+            <a title="Racking Nodes" href="/hardware-guide/quiver-1ua-all-nvme-gen1/racking-nodes.html">
+              Racking Nodes     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Configuring IPMI and Wiring Nodes" href="/hardware-guide/quiver-1ua-all-nvme-gen1/configuring-ipmi-wiring-nodes.html">
+              Configuring IPMI and Wiring Nodes     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Creating and Configuring a Cluster" href="/hardware-guide/quiver-1ua-all-nvme-gen1/creating-configuring-cluster.html">
+              Creating and Configuring a Cluster     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Drive Bay Mapping" href="/hardware-guide/quiver-1ua-all-nvme-gen1/drive-bay-mapping.html">
+              Drive Bay Mapping     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li class="active">
+            <a title="Panel LEDs" href="/hardware-guide/quiver-1ua-all-nvme-gen1/panel-leds.html">
+              Panel LEDs
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Cluster Networking" href="/hardware-guide/quiver-1ua-all-nvme-gen1/networking-cluster.html">
+              Cluster Networking     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Replacing Hardware Components" href="/hardware-guide/quiver-1ua-all-nvme-gen1/replacing-hardware-components.html">
+              Replacing Hardware Components     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Technical Specifications" href="/hardware-guide/quiver-1ua-all-nvme-gen1/technical-specifications.html">
+              Technical Specifications     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  
+
+  
+  
+  
+  <li>
+  
+
+  <a title="Quiver 1U Hybrid Gen2" href="/hardware-guide/quiver-1u-hybrid-gen2/index.html" data-proofer-ignore>
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  Quiver 1U Hybrid Gen2
+  </a>
+ 
+      <ul>
+          
+          
+          
+          <li>
+            <a title="Racking Nodes" href="/hardware-guide/quiver-1u-hybrid-gen2/racking-nodes.html">
+              Racking Nodes     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Configuring IPMI and Wiring Nodes" href="/hardware-guide/quiver-1u-hybrid-gen2/configuring-ipmi-wiring-nodes.html">
+              Configuring IPMI and Wiring Nodes     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Creating and Configuring a Cluster" href="/hardware-guide/quiver-1u-hybrid-gen2/creating-configuring-cluster.html">
+              Creating and Configuring a Cluster     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Drive Bay Mapping" href="/hardware-guide/quiver-1u-hybrid-gen2/drive-bay-mapping.html">
+              Drive Bay Mapping     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Panel LEDs" href="/hardware-guide/quiver-1u-hybrid-gen2/panel-leds.html">
+              Panel LEDs     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Cluster Networking" href="/hardware-guide/quiver-1u-hybrid-gen2/networking-cluster.html">
+              Cluster Networking     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Replacing Hardware Components" href="/hardware-guide/quiver-1u-hybrid-gen2/replacing-hardware-components.html">
+              Replacing Hardware Components     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Technical Specifications" href="/hardware-guide/quiver-1u-hybrid-gen2/technical-specifications.html">
+              Technical Specifications     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  
+
+  
+  
+  
+  <li>
+  
+
+  <a title="Quiver 2U Hybrid Gen2" href="/hardware-guide/quiver-2u-hybrid-gen2/index.html" data-proofer-ignore>
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  Quiver 2U Hybrid Gen2
+  </a>
+ 
+      <ul>
+          
+          
+          
+          <li>
+            <a title="Configuring IPMI and Wiring Nodes" href="/hardware-guide/quiver-2u-hybrid-gen2/configuring-ipmi-wiring-nodes.html">
+              Configuring IPMI and Wiring Nodes     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Creating and Configuring a Cluster" href="/hardware-guide/quiver-2u-hybrid-gen2/creating-configuring-cluster.html">
+              Creating and Configuring a Cluster     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Drive Bay Mapping" href="/hardware-guide/quiver-2u-hybrid-gen2/drive-bay-mapping.html">
+              Drive Bay Mapping     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Panel LEDs" href="/hardware-guide/quiver-2u-hybrid-gen2/panel-leds.html">
+              Panel LEDs     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Cluster Networking" href="/hardware-guide/quiver-2u-hybrid-gen2/networking-cluster.html">
+              Cluster Networking     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Replacing Hardware Components" href="/hardware-guide/quiver-2u-hybrid-gen2/replacing-hardware-components.html">
+              Replacing Hardware Components     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Technical Specifications" href="/hardware-guide/quiver-2u-hybrid-gen2/technical-specifications.html">
+              Technical Specifications     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  
+
+  
+  
+  
+  <li>
+  
+
+  <a title="Supermicro A+ ASG-1014S-ACR12N4H" href="/hardware-guide/supermicro-a-plus-asg-1014s-acr12n4h/index.html" data-proofer-ignore>
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  Supermicro A+ ASG-1014S-ACR12N4H
+  </a>
+ 
+      <ul>
+          
+          
+          
+          <li>
+            <a title="Racking Nodes" href="/hardware-guide/supermicro-a-plus-asg-1014s-acr12n4h/racking-nodes.html">
+              Racking Nodes     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Configuring IPMI and Wiring Nodes" href="/hardware-guide/supermicro-a-plus-asg-1014s-acr12n4h/configuring-ipmi-wiring-nodes.html">
+              Configuring IPMI and Wiring Nodes     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Creating and Configuring a Cluster" href="/hardware-guide/supermicro-a-plus-asg-1014s-acr12n4h/creating-configuring-cluster.html">
+              Creating and Configuring a Cluster     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Drive Bay Mapping" href="/hardware-guide/supermicro-a-plus-asg-1014s-acr12n4h/drive-bay-mapping.html">
+              Drive Bay Mapping     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Panel LEDs" href="/hardware-guide/supermicro-a-plus-asg-1014s-acr12n4h/panel-leds.html">
+              Panel LEDs     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Cluster Networking" href="/hardware-guide/supermicro-a-plus-asg-1014s-acr12n4h/networking-cluster.html">
+              Cluster Networking     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Replacing Hardware Components" href="/hardware-guide/supermicro-a-plus-asg-1014s-acr12n4h/replacing-hardware-components.html">
+              Replacing Hardware Components     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Technical Specifications" href="/hardware-guide/supermicro-a-plus-asg-1014s-acr12n4h/technical-specifications.html">
+              Technical Specifications     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  
+
+  
+  
+  
+  <li>
+  
+
+  <a title="Supermicro A+ WIO 1114S-WN10RT" href="/hardware-guide/supermicro-a-plus-wio-1114s-wn10rt/index.html" data-proofer-ignore>
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  Supermicro A+ WIO 1114S-WN10RT
+  </a>
+ 
+      <ul>
+          
+          
+          
+          <li>
+            <a title="Racking Nodes" href="/hardware-guide/supermicro-a-plus-wio-1114s-wn10rt/racking-nodes.html">
+              Racking Nodes     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Configuring IPMI and Wiring Nodes" href="/hardware-guide/supermicro-a-plus-wio-1114s-wn10rt/configuring-ipmi-wiring-nodes.html">
+              Configuring IPMI and Wiring Nodes     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Creating and Configuring a Cluster" href="/hardware-guide/supermicro-a-plus-wio-1114s-wn10rt/creating-configuring-cluster.html">
+              Creating and Configuring a Cluster     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Drive Bay Mapping" href="/hardware-guide/supermicro-a-plus-wio-1114s-wn10rt/drive-bay-mapping.html">
+              Drive Bay Mapping     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Panel LEDs" href="/hardware-guide/supermicro-a-plus-wio-1114s-wn10rt/panel-leds.html">
+              Panel LEDs     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Cluster Networking" href="/hardware-guide/supermicro-a-plus-wio-1114s-wn10rt/networking-cluster.html">
+              Cluster Networking     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Replacing Hardware Components" href="/hardware-guide/supermicro-a-plus-wio-1114s-wn10rt/replacing-hardware-components.html">
+              Replacing Hardware Components     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Technical Specifications" href="/hardware-guide/supermicro-a-plus-wio-1114s-wn10rt/technical-specifications.html">
+              Technical Specifications     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+      
+      
+</ul>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').addClass("active");</script>
+
+
+            </div>
+            
+        
+
+        <!-- Content Column -->
+        <div class="col-md-9" id="tg-sb-content">
+            
+
+
+
+
+
+
+
+<nav>
+<div class="breadcrumb-line">
+  <a href='/'>Home</a> <span>&rsaquo;</span> 
+
+
+  <a href='/hardware-guide/'>Qumulo-Certified Platinum-Tier Hardware Servicing Guide</a> <span>&rsaquo;</span>
+
+
+
+  <a href='/hardware-guide/quiver-1ua-all-nvme-gen1/index.html'>Quiver 1U All-NVMe Gen1</a> <span>&rsaquo;</span>
+
+
+  Panel LEDs on Quiver 1U All-NVMe Gen1 Nodes
+  </div>
+</nav>
+
+
+            
+
+<div class="post-header">
+   <h1 class="post-title-main">Panel LEDs on Quiver 1U All-NVMe Gen1 Nodes</h1>
+</div>
+
+
+
+<div class="post-content">
+
+    
+    
+<!-- Create the automatic mini-TOC on a page (unless disabled with #toc{display:none;}.
+     Note: If you use HTML tags, add an ID to the heading so that it appears in the mini-TOC.
+-->
+
+<script>
+$(document).ready(function() {
+    $('#toc').toc({
+      minimumHeaders: 2,
+      listType: 'ul',
+      showSpeed: 0,
+      headers: 'h2'
+    });
+
+    /* Account for the space that the floating toolbar takes up. */
+    $('#toc').on('click', 'a', function() {
+      var target = $(this.getAttribute('href')), 
+          scroll_target = target.offset().top
+          $(window).scrollTop(scroll_target - 10);
+      return false
+    });
+});
+</script>
+
+
+<div id="toc"></div>
+
+    
+
+   <p>This section explains the LEDs on Quiver 1UA Gen1 nodes.</p>
+   
+     <h2 id="front-panel-leds-and-buttons">Front Panel LEDs and Buttons</h2>
+
+<p>On the front, right side of your node, there are four LEDs.</p>
+
+<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> The LAN1 and LAN2 LEDs are unused.</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Label</th>
+      <th>Color and Behavior</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Power LED</td>
+      <td><span class="emoji">🟢</span> (solid green)</td>
+      <td>The node is powered on</td>
+    </tr>
+    <tr>
+      <td>Message LED</td>
+      <td>Off</td>
+      <td>The node is functioning normally</td>
+    </tr>
+    <tr>
+      <td>Message LED</td>
+      <td><span class="emoji">🟠</span> (solid amber)</td>
+      <td>A hardware event has occurred</td>
+    </tr>
+    <tr>
+      <td>Location LED</td>
+      <td>Off</td>
+      <td>The node is functioning normally</td>
+    </tr>
+    <tr>
+      <td>Location LED</td>
+      <td><span class="emoji">🔵</span> (solid blue)</td>
+      <td>The location button has been pressed</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="front-and-internal-storage-bay-nvme-drive-carrier-leds">Front and Internal Storage Bay NVMe Drive Carrier LEDs</h2>
+
+<p>Each NVMe drive carrier in front and internal storage bays has a red LED at the top and a green LED at the bottom</p>
+
+<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> When both LEDs are off, the storage device isn’t present</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Location</th>
+      <th>Color and Behavior</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Top</td>
+      <td><span class="emoji">🔴</span> (solid red)</td>
+      <td>Storage device failed</td>
+    </tr>
+    <tr>
+      <td>Top</td>
+      <td>Off</td>
+      <td>Storage device healthy</td>
+    </tr>
+    <tr>
+      <td>Bottom</td>
+      <td><span class="emoji">🟢</span> (solid green)</td>
+      <td>Storage device is powered on</td>
+    </tr>
+    <tr>
+      <td>Bottom</td>
+      <td><span class="emoji">🟢</span> (blinking green)</td>
+      <td>Reading data from, or writing data to the storage device</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="rear-panel-leds-and-buttons">Rear Panel LEDs and Buttons</h2>
+
+<p>On the back of your node, there are three LEDs.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Label</th>
+      <th>Color and Behavior</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Q-Code LED</td>
+      <td><span class="emoji">🟠</span> (solid amber)</td>
+      <td>Indicates a post code for troubleshooting. For more information, see the <a href="https://dlcdnets.asus.com/pub/ASUS/server/RS500A-E12-RS12U/Manual/E21507_RS500A-E12-RS12U_UM_V2_WEB.pdf?model=RS500A-E12-RS12U#page=23">Q-Code Table</a> in the ASUS documentation.</td>
+    </tr>
+    <tr>
+      <td>Location Button LED</td>
+      <td><span class="emoji">🔵</span> (solid blue)</td>
+      <td>The location button has been pressed. To turn off the LED, press the location button again.</td>
+    </tr>
+    <tr>
+      <td>Power LED</td>
+      <td><span class="emoji">🟢</span> (solid green)</td>
+      <td>The node is powered on.</td>
+    </tr>
+  </tbody>
+</table>
+
+   
+
+
+
+
+  
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+      
+<h2 id="related-topics" class="clickable-header top-level-header">Related Topics</h2>
+<ul id="related-topics-list">
+        
+        
+          
+            
+            
+  <li><a href="/hardware-guide/quiver-1ua-all-nvme-gen1/racking-nodes.html">Racking Nodes</a></li>
+            
+          
+            
+            
+  <li><a href="/hardware-guide/quiver-1ua-all-nvme-gen1/configuring-ipmi-wiring-nodes.html">Configuring IPMI and Wiring Nodes</a></li>
+            
+          
+            
+            
+  <li><a href="/hardware-guide/quiver-1ua-all-nvme-gen1/creating-configuring-cluster.html">Creating and Configuring a Cluster</a></li>
+            
+          
+            
+            
+  <li><a href="/hardware-guide/quiver-1ua-all-nvme-gen1/drive-bay-mapping.html">Drive Bay Mapping</a></li>
+            
+          
+            
+            
+          
+            
+            
+  <li><a href="/hardware-guide/quiver-1ua-all-nvme-gen1/networking-cluster.html">Cluster Networking</a></li>
+            
+          
+            
+            
+  <li><a href="/hardware-guide/quiver-1ua-all-nvme-gen1/replacing-hardware-components.html">Replacing Hardware Components</a></li>
+            
+          
+            
+            
+  <li><a href="/hardware-guide/quiver-1ua-all-nvme-gen1/technical-specifications.html">Technical Specifications</a></li>
+            
+          
+        
+</ul>
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+
+
+</div>
+
+        </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+</div>
+<!-- /#main -->
+    </div>
+
+<footer>
+  <div class="footer">
+    <div class="footer-text">
+      Copyright &copy; 2021&ndash;2025 Qumulo, Inc.<br>
+
+      <a class="no_icon footer_link" href="https://qumulo.com/legal/privacy-policy/">Privacy Policy</a> &VerticalSeparator; <a class="no_icon footer_link" href="https://qumulo.com/legal/cookie-policy/">Cookie Policy</a> &VerticalSeparator; <a class="no_icon footer_link" href="https://qumulo.com/terms-hub/">Terms Hub</a><br>
+      <p>
+        <picture>
+          <source type="image/webp" srcset="/images/qumulo-logo-inverse.webp">
+          <source type="image/png" srcset="/images/qumulo-logo-inverse.png">       
+          <img class="footer-logo" src="/images/qumulo-logo-inverse.png" alt="Qumulo Logo">
+        </picture>
+      </p>
+    </div>
+    <div class="footer-grumpquats">
+      <picture>
+        <source type="image/webp" srcset="/images/grumpquats.webp">
+        <source type="image/png" srcset="/images/grumpquats.png"> 
+        <img src="/images/grumpquats.png" class="three-grumpquats" alt="Three Grumpquats">
+      </picture>
+    </div>
+  </div>
+
+  <!-- Cookie Consent - GRT Plugin -->	
+  <div id="cookie-banner" class="grt-cookie">
+    <div class="grt-cookies-msg">
+      <p>We use cookies to improve your user experience and remember your preferences on this website. If you continue to use this website, we will assume that you accept and understand our <a class="no_icon" href="https://qumulo.com/legal/privacy-policy">Privacy Policy</a>, <a class="no_icon" href="https://qumulo.com/legal/cookie-policy/">Cookie Policy</a>, and <a class="no_icon" href="https://qumulo.com/terms-hub/">Terms Hub</a>.</p>
+    </div>
+    <span class="grt-cookie-button">Accept</span>
+  </div>
+  <script src="/js/grt-cookie-consent.js"></script>
+  <script>$(".grt-cookie").grtCookie();</script>
+  
+  <script src="/js/fixdoubledashes.js"></script>
+
+  <script src="/js/expand-collapse.js"></script>
+</footer>
+
+
+</body>
+
+</html>

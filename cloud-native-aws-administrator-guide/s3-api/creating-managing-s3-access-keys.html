@@ -1,0 +1,3015 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Creating and Managing S3 Access Keys in Qumulo Core | Qumulo Documentation</title>
+<link rel="canonical" href="https://docs.qumulo.com/cloud-native-aws-administrator-guide/s3-api/creating-managing-s3-access-keys.html">
+
+<!-- Organization JSON-LD Schema -->
+<script>
+fetch('/data/organization.json')
+.then(response => response.text())
+.then(structuredDataText => {
+  const script = document.createElement('script');
+  script.setAttribute('type', 'application/ld+json');
+  script.textContent = structuredDataText;
+  document.head.appendChild(script);
+});    
+</script>
+
+<!-- Website JSON-LD Schema -->
+<script>
+fetch('/data/website.json')
+.then(response => response.text())
+.then(structuredDataText => {
+  const script = document.createElement('script');
+  script.setAttribute('type', 'application/ld+json');
+  script.textContent = structuredDataText;
+  document.head.appendChild(script);
+});    
+</script>
+
+<!-- BEGIN TO PREPARE WEBSITE RESOURCES -->  
+<!-- Preload from jsdelivr.net:
+     * Bootstrap stylesheet and script
+     * Font Awesome
+-->
+<link rel="preload" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" as="style" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="preload" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" as="script" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
+<link rel="preload" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" as="style">
+
+<!-- Preload web fonts from fonts.googleapis.com as stylesheets -->
+<link rel="preload" href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" as="style">
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap" as="style">
+
+<!-- Preload scripts from cloudflare.com
+     * jQuery
+     * jQuery Cookie
+     * Anchor JS
+-->
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" as="script">
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js" as="script">
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/5.0.0/anchor.min.js" as="script">
+
+<!-- Preload JavaScript resources -->
+<link rel="preload" href="/js/grt-cookie-consent.js" as="script">
+<link rel="preload" href="/js/googletag.js" as="script">
+<link rel="preload" href="https://www.googletagmanager.com/gtag/js?id=G-81J7N4LMSE" as="script">
+
+<!-- Prefetch DNS from CDNs -->
+<link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+<link rel="dns-prefetch" href="https://fonts.googleapis.com">
+<link rel="dns-prefetch" href="https://fonts.gstatic.com" crossorigin>
+<link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+<link rel="dns-prefetch" href="https://maxcdn.bootstrapcdn.com">
+
+<!-- Preconnect to CDNs -->
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdnjs.cloudflare.com">
+<link rel="preconnect" href="https://maxcdn.bootstrapcdn.com">
+
+<!-- BEGIN TO LOAD WEBSITE RESOURCES -->
+<!-- Load Bootstrap and Font Awesome -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!-- Load local stylesheets inline -->
+<link rel="stylesheet" href="/css/boxshadowproperties.css">
+<link rel="stylesheet" href="/css/customstyles.css">
+<link rel="stylesheet" href="/css/grt-cookies-consent.css">
+<link rel="stylesheet" href="/css/modern-business.css">
+<link rel="stylesheet" href="/css/syntax.css">
+<link rel="stylesheet" href="/css/theme-blue.css">
+
+<!-- Optimize web font load
+     * Loading Noto Color Emoji by using `link rel=stylesheet`
+       syntax causes multiple versions of the font to load.
+     * Additional instructions are necessary for Font Awesome
+       to load with the font-display attribute.
+-->
+<style>
+  @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap');
+  @font-face {
+    font-family:'FontAwesome';
+    src: url('/fonts/fontawesome-webfont.woff?v=4.7.0') format('woff'),
+         url('/fonts/fontawesome-webfont.woff2?v=4.7.0') format('woff2');
+    font-display: swap;
+  }
+</style>
+
+<!-- Web font fallbacks for older browsers -->
+<noscript>
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Montserrat&display=swap">
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap">
+</noscript>
+
+<!-- Define page metadata -->
+<meta name="description" content="This section explains how to create and manage credentials that S3 API actions in Qumulo Core require to access file system resources, such as access key pairs that sign requests.">
+<meta name="apple-mobile-web-app-title" content="Qumulo Documentation">
+<meta name="application-name" content="Qumulo Documentation">
+<meta name="msapplication-TileColor" content="#2b5797">
+<meta name="msapplication-TileImage" content="/images/mstile-144x144.png">
+<meta name="msapplication-config" content="/images/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+<meta name="google-site-verification" content="_KoxPR0qF_ZeMyH6uWvlX84cFRujO_AZ1eq0eT9alAg">
+
+<!-- Open Graph Meta Tags -->
+<meta property="og:title" content="Creating and Managing S3 Access Keys in Qumulo Core | Qumulo Documentation">
+<meta property="og:url" content="https://docs.qumulo.com/cloud-native-aws-administrator-guide/s3-api/creating-managing-s3-access-keys.html">
+<meta property="og:site_name" content="Qumulo Documentation">
+<meta property="og:description" content="This section explains how to create and manage credentials that S3 API actions in Qumulo Core require to access file system resources, such as access key pairs that sign requests.">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://docs.qumulo.com/images/docs.qumulo.com-qumulo-documentation-portal-630px.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<!-- Twitter Meta Tags -->
+<meta name="twitter:title" content="Creating and Managing S3 Access Keys in Qumulo Core | Qumulo Documentation">
+<meta property="twitter:url" content="https://docs.qumulo.com/cloud-native-aws-administrator-guide/s3-api/creating-managing-s3-access-keys.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:description" content="This section explains how to create and manage credentials that S3 API actions in Qumulo Core require to access file system resources, such as access key pairs that sign requests.">
+<meta name="twitter:image" content="https://docs.qumulo.com/images/docs.qumulo.com-qumulo-documentation-portal-418px.png">
+<meta property="twitter:domain" content="docs.qumulo.com">
+
+<!-- Define favicon variants -->
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="194x194" href="/images/favicon-194x194.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/images/android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+<link rel="manifest" href="/images/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+<!-- Define RSS feed -->
+<!-- TEMPORARILY DISABLED
+<link rel="alternate" href="https://docs.qumulo.com/feed.xml" type="application/rss+xml" title="docs">
+-->
+
+<!-- Load scripts from cloudflare.com -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+<!-- Load local scripts with dependencies on jQuery -->
+<script src="/js/jquery.navgoco.min.js"></script>
+
+<!-- Load scripts from jsdelivr.net and cloudflare.com -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/5.0.0/anchor.min.js"></script>
+
+<!-- Load local scripts with dependencies on Bootstrap and Anchor JS -->
+<script src="/js/toc.js"></script>
+<script src="/js/customscripts.js"></script>
+
+<!-- Fallback for IE9 -->
+<!--[if lt IE 9]>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<!-- Load Google Analytics and exclude GDPR countries from collection -->
+<script defer src="/js/googletag.js"></script>
+<script defer src="https://www.googletagmanager.com/gtag/js?id=G-81J7N4LMSE"></script>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
+    
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: true,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 400,
+                    easing: 'swing'
+                }
+            });
+
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    <script>
+        $(document).ready(function() {
+            // By default, Reading Mode is off and the button is dark.
+            if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
+                // On the landing page, hide the sidebar, make content full-width, and hide the toggle link.
+                $("#tg-sb-sidebar").hide();
+                $("#tg-sb-content").removeClass('col-md-9').addClass('col-md-12');
+                $("#tg-sb-link").hide();
+                $(".projectTitle").hide();
+                $(".navbar-brand").hide();
+                return;
+            }
+
+            if (Cookies.get('reading_mode') == '1' ) {
+                $("#tg-sb-sidebar").toggle();
+                $("#tg-sb-content").toggleClass('col-md-9');
+                $("#tg-sb-content").toggleClass('col-md-12');
+                $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                $("#tg-sb-icon").toggleClass('fa-toggle-off');                   
+            }
+            
+            $("#tg-sb-link").click(function() {
+                if (Cookies.get('reading_mode') == '1' ) {
+                    // If the Reading Mode is on, remove the cookie.
+                    Cookies.remove('reading_mode');
+                } else {
+                    // If the Reading Mode is on, place the cookie.
+                    Cookies.set('reading_mode', '1');
+                }
+                
+                // Toggle the Reading Mode and change the button color.
+                $("#tg-sb-sidebar").toggle();
+                $("#tg-sb-content").toggleClass('col-md-9');
+                $("#tg-sb-content").toggleClass('col-md-12');
+                $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                $("#tg-sb-icon").toggleClass('fa-toggle-off');
+            });
+        });
+    </script>
+    
+
+</head>
+<body>
+<!-- ==================== TOPNAV START ==================== -->
+<div class="above-header"></div>
+
+<div class="header-container">
+<header class="header">
+  <div class="logo">
+    <a class="header-link" href="https://docs.qumulo.com/">
+      <picture>
+	<source type="image/webp" srcset="/images/qumulo-logo.webp">
+	<source type="image/png" srcset="/images/qumulo-logo.png">	      
+        <img class="header-logo" src="/images/qumulo-logo.png" alt="Qumulo Logo">
+      </picture>
+    </a>
+  </div>
+
+  <div class="nav-wrapper">
+    <span class="icon-menu"></span>
+    <nav class="user-nav" id="user-nav">
+      <div class="qf2header">
+        <div class="flex-links">
+          <a class="header-link header-right" href="https://qumulo.com/company/about-qumulo/" target="_blank">About Qumulo</a>
+          <a class="header-link header-right" href="https://care.qumulo.com/s/knowledge" target="_blank">Knowledge Base</a>
+          <a class="header-link header-right" href="https://nexus.qumulo.com/" target="_blank">Nexus</a>
+        </div>
+        <div class="contact-links">
+          <a class="btn-contact no_icon" href="https://qumulocare.slack.com/">Send Slack Message</a>
+          <a class="btn-contact no_icon" href="https://care.qumulo.com/s/submit-a-case">Open a Case</a>
+        </div>
+      </div>
+    </nav>
+</div>
+</header>
+</div>
+<div class="below-header navbar navbar-inverse navbar-static-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/index.html">&nbsp;<span class="projectTitle"> Qumulo Documentation</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- toggle sidebar button -->
+                <li><a id="tg-sb-link" href="#" data-proofer-ignore><i id="tg-sb-icon" class="fa fa-toggle-off"></i> Reading Mode</a></li>
+                <!-- entries without drop-downs appear here -->
+
+
+
+
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+                <li>
+                  <div id="search-demo-container">
+                    <div class="parent">
+                      <div class="search_container">
+                        <main id="search-widget">
+                          <div class="vectara__search_Box">
+                            <form id="vectara__search_form" action="/search.html" method="GET">
+                              <input class="vectara__search_field" name="query" id="search-input" placeholder="What would you like to know?" autofocus>
+                              <button class="vectara__logo_btn">
+                                <img class="vectara__search_logo" width="26" height="28" src="/images/magnifying-glass.png" alt="Search">
+                              </button>
+                            </form>
+                          </div>
+                        </main>
+                        <ul class="tags" id="widget-tags"></ul>
+                      </div>
+                    </div>
+                  </div>
+                  <ul id="list"></ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+        <!-- /.container -->
+</div>
+<!-- ==================== TOPNAV END ==================== -->
+
+<!-- Page Content -->
+
+<div class="container">
+  <div id="main">
+    <!-- Content Row -->
+    <div class="row">
+        
+        
+
+            <!-- Sidebar Column -->
+            <div class="col-md-3" id="tg-sb-sidebar">
+                
+
+<div class="nav nav-buttons">
+  
+    <a target="_blank" rel="noopener" href="https://github.com/qumulo/docs/blob/gh-pages/cloud-native-aws-administrator-guide/s3-api/creating-managing-s3-access-keys.md" class="btn btn-default githubEditButton no_icon" role="button" data-proofer-ignore><span class="fa fa-github fa-lg"></span> Edit on GitHub</a>
+  
+
+  
+    <a target="_blank" rel="noopener" href="/pdf/cloud-native-qumulo-on-aws-administrator-guide.pdf" class="btn btn-default downloadPDFButton no_icon" role="button"><span class="glyphicon glyphicon-file" aria-hidden="true"></span> Download PDF</a>
+  
+</div>
+
+<ul id="mysidebar" class="nav">
+  <li class="sidebarTitle"> </li>
+  
+  
+  
+      
+  
+  
+  
+
+  
+  
+  
+  <li>
+  
+
+  <a title="Cloud Native Qumulo on AWS Administrator Guide" href="" data-proofer-ignore>
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  Cloud Native Qumulo on AWS Administrator Guide
+  </a>
+ 
+      <ul>
+          
+          
+          
+          <li>
+            <a title="Documentation Home" href="/index.html">
+              Documentation Home     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Guide Table of Contents" href="/cloud-native-aws-administrator-guide/">
+              Guide Table of Contents     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Contacting the Qumulo Care Team" href="/contacting-qumulo-care-team.html">
+              Contacting the Qumulo Care Team     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  
+
+  
+  
+  
+  <li>
+  
+
+  <a title="Getting Started" href="/cloud-native-aws-administrator-guide/getting-started/index.html" data-proofer-ignore>
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  Getting Started
+  </a>
+ 
+      <ul>
+          
+          
+          
+          <li>
+            <a title="How Cloud Native Qumulo Works" href="/cloud-native-aws-administrator-guide/getting-started/how-cloud-native-qumulo-works.html">
+              How Cloud Native Qumulo Works     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Deploying with CloudFormation" href="/cloud-native-aws-administrator-guide/getting-started/cloudformation.html">
+              Deploying with CloudFormation     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Deploying with Terraform" href="/cloud-native-aws-administrator-guide/getting-started/terraform.html">
+              Deploying with Terraform     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Supported Configurations and Known Limits" href="/cloud-native-aws-administrator-guide/getting-started/supported-configurations-known-limits.html">
+              Supported Configurations and Known Limits     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  
+
+  
+  
+  
+  <li>
+  
+
+  <a title="System Upgrades" href="/cloud-native-aws-administrator-guide/upgrading-qumulo-core/index.html" data-proofer-ignore>
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  System Upgrades
+  </a>
+ 
+      <ul>
+          
+          
+          
+          <li>
+            <a title="Feature Log" href="/cloud-native-aws-administrator-guide/upgrading-qumulo-core/feature-log.html">
+              Feature Log     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Performing Upgrades" href="/cloud-native-aws-administrator-guide/upgrading-qumulo-core/performing-upgrades.html">
+              Performing Upgrades     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Replication Version Requirements and Upgrade Recommendations" href="/cloud-native-aws-administrator-guide/upgrading-qumulo-core/replication-version-requirements-upgrade-recommendations.html">
+              Replication Version Requirements and Upgrade Recommendations     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  
+
+  
+  
+  
+  <li>
+  
+
+  <a title="Authentication" href="/cloud-native-aws-administrator-guide/authentication-qumulo-core/index.html" data-proofer-ignore>
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  Authentication
+  </a>
+ 
+      <ul>
+          
+          
+          
+          <li>
+            <a title="Configuring SAML Single Sign-On (SSO)" href="/cloud-native-aws-administrator-guide/authentication-qumulo-core/configuring-saml-single-sign-on-sso.html">
+              Configuring SAML Single Sign-On (SSO)     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Configuring Search Trusted Domains" href="/cloud-native-aws-administrator-guide/authentication-qumulo-core/configuring-search-trusted-domains-active-directory.html">
+              Configuring Search Trusted Domains     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Configuring LDAP" href="/cloud-native-aws-administrator-guide/authentication-qumulo-core/configuring-ldap.html">
+              Configuring LDAP     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Creating and Using Bearer Tokens" href="/cloud-native-aws-administrator-guide/authentication-qumulo-core/creating-using-bearer-tokens-to-authenticate-qumulo-rest-api-calls.html">
+              Creating and Using Bearer Tokens     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  
+
+  
+  
+  
+  <li>
+  
+
+  <a title="Connecting to External Services" href="/cloud-native-aws-administrator-guide/connecting-to-external-services/index.html" data-proofer-ignore>
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  Connecting to External Services
+  </a>
+ 
+      <ul>
+          
+          
+          
+          <li>
+            <a title="Creating and Using Access Tokens" href="/cloud-native-aws-administrator-guide/connecting-to-external-services/creating-using-access-tokens-to-authenticate-external-services-qumulo-core.html">
+              Creating and Using Access Tokens     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Connecting a Kubernetes Cluster" href="/cloud-native-aws-administrator-guide/connecting-to-external-services/connecting-kubernetes-cluster-with-container-storage-interface-csi-driver.html">
+              Connecting a Kubernetes Cluster     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  
+
+  
+  
+  
+  <li>
+  
+
+  <a title="Authorization" href="/cloud-native-aws-administrator-guide/authorization-qumulo-core/index.html" data-proofer-ignore>
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  Authorization
+  </a>
+ 
+      <ul>
+          
+          
+          
+          <li>
+            <a title="Managing File Locks" href="/cloud-native-aws-administrator-guide/authorization-qumulo-core/managing-file-locks.html">
+              Managing File Locks     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Managing Role-Based Access Control" href="/cloud-native-aws-administrator-guide/authorization-qumulo-core/managing-role-based-access-control-rbac.html">
+              Managing Role-Based Access Control     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Managing Cross-Protocol Permissions" href="/cloud-native-aws-administrator-guide/authorization-qumulo-core/managing-cross-protocol-permissions-xpp.html">
+              Managing Cross-Protocol Permissions     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Using SMB Host Restrictions" href="/cloud-native-aws-administrator-guide/authorization-qumulo-core/using-smb-host-restrictions.html">
+              Using SMB Host Restrictions     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Using Active Directory for POSIX Attributes" href="/cloud-native-aws-administrator-guide/authorization-qumulo-core/using-active-directory-for-posix-attributes.html">
+              Using Active Directory for POSIX Attributes     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  
+
+  
+  
+  
+  <li>
+  
+
+  <a title="Storage Management" href="/cloud-native-aws-administrator-guide/storage-management/index.html" data-proofer-ignore>
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  Storage Management
+  </a>
+ 
+      <ul>
+          
+          
+          
+          <li>
+            <a title="Creating and Managing Directory Quotas" href="/cloud-native-aws-administrator-guide/storage-management/creating-directory-quotas.html">
+              Creating and Managing Directory Quotas     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  
+
+  
+  
+  
+  <li>
+  
+
+  <a title="Network Configuration" href="/cloud-native-aws-administrator-guide/network-configuration/index.html" data-proofer-ignore>
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  Network Configuration
+  </a>
+ 
+      <ul>
+          
+          
+          
+          <li>
+            <a title="Required Networking Ports" href="/cloud-native-aws-administrator-guide/network-configuration/required-ports.html">
+              Required Networking Ports     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Configuring IPv6" href="/cloud-native-aws-administrator-guide/network-configuration/configuring-ipv6.html">
+              Configuring IPv6     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Connecting to Multiple Virtual Networks" href="/cloud-native-aws-administrator-guide/network-configuration/connecting-multiple-virtual-networks.html">
+              Connecting to Multiple Virtual Networks     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Configuring Round-Robin DNS on Windows Server" href="/cloud-native-aws-administrator-guide/network-configuration/configuring-round-robin-dns-windows-server.html">
+              Configuring Round-Robin DNS on Windows Server     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  
+
+  
+  
+  
+  <li>
+  
+
+  <a title="Cloud Data Fabric" href="/cloud-native-aws-administrator-guide/cloud-data-fabric/index.html" data-proofer-ignore>
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  Cloud Data Fabric
+  </a>
+ 
+      <ul>
+          
+          
+          
+          <li>
+            <a title="Enabling Cloud Data Fabric" href="/cloud-native-aws-administrator-guide/cloud-data-fabric/how-portal-creation-enables-cloud-data-fabric.html">
+              Enabling Cloud Data Fabric     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Configuring a Portal Relationship" href="/cloud-native-aws-administrator-guide/cloud-data-fabric/configuring-portal-relationship.html">
+              Configuring a Portal Relationship     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Configuring Cache Management" href="/cloud-native-aws-administrator-guide/cloud-data-fabric/configuring-cache-management-for-spoke-portals.html">
+              Configuring Cache Management     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  
+
+  
+  
+  
+  <li>
+  
+
+  <a title="Web UI" href="/cloud-native-aws-administrator-guide/web-ui/index.html" data-proofer-ignore>
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  Web UI
+  </a>
+ 
+      <ul>
+          
+          
+          
+          <li>
+            <a title="Setting the Web UI Login Banner" href="/cloud-native-aws-administrator-guide/web-ui/login-banner.html">
+              Setting the Web UI Login Banner     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Setting the Web UI Inactivity Timeout" href="/cloud-native-aws-administrator-guide/web-ui/inactivity-timeout.html">
+              Setting the Web UI Inactivity Timeout     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  
+
+  
+  
+  
+  <li>
+  
+
+  <a title="qq CLI" href="/cloud-native-aws-administrator-guide/qq-cli/index.html" data-proofer-ignore>
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  qq CLI
+  </a>
+ 
+      <ul>
+          
+          
+          
+          <li>
+            <a title="Getting Started with the qq CLI" href="/cloud-native-aws-administrator-guide/qq-cli/getting-started.html">
+              Getting Started with the qq CLI     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Enabling Autocomplete for the qq CLI" href="/cloud-native-aws-administrator-guide/qq-cli/enabling-autocomplete.html">
+              Enabling Autocomplete for the qq CLI     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  
+
+  
+  
+  
+  <li>
+  
+
+  <a title="Metadata" href="/cloud-native-aws-administrator-guide/metadata/index.html" data-proofer-ignore>
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  Metadata
+  </a>
+ 
+      <ul>
+          
+          
+          
+          <li>
+            <a title="Managing User-Defined Metadata" href="/cloud-native-aws-administrator-guide/metadata/managing-user-defined-metadata.html">
+              Managing User-Defined Metadata     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  
+
+  
+  
+  
+  <li>
+  
+
+  <a title="Snapshots" href="/cloud-native-aws-administrator-guide/snapshots/index.html" data-proofer-ignore>
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  Snapshots
+  </a>
+ 
+      <ul>
+          
+          
+          
+          <li>
+            <a title="How Snapshots Work" href="/cloud-native-aws-administrator-guide/snapshots/how-snapshots-work.html">
+              How Snapshots Work     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Managing Snapshots" href="/cloud-native-aws-administrator-guide/snapshots/managing-snapshots.html">
+              Managing Snapshots     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Locking and Unlocking Snapshots" href="/cloud-native-aws-administrator-guide/snapshots/locking-unlocking-snapshots.html">
+              Locking and Unlocking Snapshots     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Recovering Files by Using Snapshots" href="/cloud-native-aws-administrator-guide/snapshots/recovering-files.html">
+              Recovering Files by Using Snapshots     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  
+
+  
+  
+  
+  <li>
+  
+
+  <a title="Encryption and Data Security" href="/cloud-native-aws-administrator-guide/encryption-data-security/index.html" data-proofer-ignore>
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  Encryption and Data Security
+  </a>
+ 
+      <ul>
+          
+          
+          
+          <li>
+            <a title="Managing Encryption at Rest" href="/cloud-native-aws-administrator-guide/encryption-data-security/managing-encryption-at-rest.html">
+              Managing Encryption at Rest     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Managing SMB3 Encryption in Transit" href="/cloud-native-aws-administrator-guide/encryption-data-security/managing-smb3-encryption-in-transit.html">
+              Managing SMB3 Encryption in Transit     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Generating and Storing ECDSA Keys" href="/cloud-native-aws-administrator-guide/encryption-data-security/generating-storing-ecdsa-keys.html">
+              Generating and Storing ECDSA Keys     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Managing Security Keys" href="/cloud-native-aws-administrator-guide/encryption-data-security/managing-security-keys.html">
+              Managing Security Keys     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Installing a Signed SSL Certificate" href="/cloud-native-aws-administrator-guide/encryption-data-security/installing-signed-ssl-certificate.html">
+              Installing a Signed SSL Certificate     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  
+
+  
+  
+  
+  <li>
+  
+
+  <a title="Data Replication" href="/cloud-native-aws-administrator-guide/replicating-data/index.html" data-proofer-ignore>
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  Data Replication
+  </a>
+ 
+      <ul>
+          
+          
+          
+          <li>
+            <a title="Creating and Managing a Continuous Replication Relationship" href="/cloud-native-aws-administrator-guide/replicating-data/creating-managing-continuous-replication-relationship.html">
+              Creating and Managing a Continuous Replication Relationship     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Shift-To Amazon S3" href="/cloud-native-aws-administrator-guide/replicating-data/shift-to-s3.html">
+              Shift-To Amazon S3     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Shift-From Amazon S3" href="/cloud-native-aws-administrator-guide/replicating-data/shift-from-s3.html">
+              Shift-From Amazon S3     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  
+
+  
+  
+  
+  <li>
+  
+
+  <a title="File System Changes" href="/cloud-native-aws-administrator-guide/watching-file-attribute-directory-changes/index.html" data-proofer-ignore>
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  File System Changes
+  </a>
+ 
+      <ul>
+          
+          
+          
+          <li>
+            <a title="How File System Change Notifications Work" href="/cloud-native-aws-administrator-guide/watching-file-attribute-directory-changes/how-file-system-change-notifications-work.html">
+              How File System Change Notifications Work     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Watching for Changes with SMB2 CHANGE_NOTIFY" href="/cloud-native-aws-administrator-guide/watching-file-attribute-directory-changes/smb2-change-notify.html">
+              Watching for Changes with SMB2 CHANGE_NOTIFY     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Watching for Changes with REST" href="/cloud-native-aws-administrator-guide/watching-file-attribute-directory-changes/rest.html">
+              Watching for Changes with REST     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  
+
+  
+  
+  
+  <li>
+  
+
+  <a title="NFS" href="/cloud-native-aws-administrator-guide/nfs/index.html" data-proofer-ignore>
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  NFS
+  </a>
+ 
+      <ul>
+          
+          
+          
+          <li>
+            <a title="Creating and Managing an NFS Export" href="/cloud-native-aws-administrator-guide/nfs/creating-nfs-export.html">
+              Creating and Managing an NFS Export     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Enabling and Using NFSv4.1" href="/cloud-native-aws-administrator-guide/nfs/nfsv4.1-enabling-using.html">
+              Enabling and Using NFSv4.1     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Managing File Access Permissions with ACLs" href="/cloud-native-aws-administrator-guide/nfs/nfsv4.1-acls.html">
+              Managing File Access Permissions with ACLs     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Host Access Rules for NFS Exports" href="/cloud-native-aws-administrator-guide/nfs/configuring-troubleshooting-host-access-rules-nfs-exports.html">
+              Host Access Rules for NFS Exports     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  
+
+  
+  
+  
+  <li>
+  
+
+  <a title="NFSv4.1 with Kerberos" href="/cloud-native-aws-administrator-guide/kerberos/index.html" data-proofer-ignore>
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  NFSv4.1 with Kerberos
+  </a>
+ 
+      <ul>
+          
+          
+          
+          <li>
+            <a title="How NFSv4.1 Works with Kerberos" href="/cloud-native-aws-administrator-guide/kerberos/kerberos-with-qumulo-core.html">
+              How NFSv4.1 Works with Kerberos     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Prerequisites for Joining to Active Directory" href="/cloud-native-aws-administrator-guide/kerberos/kerberos-prerequisites-joining-cluster-active-directory.html">
+              Prerequisites for Joining to Active Directory     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Configuring Active Directory" href="/cloud-native-aws-administrator-guide/kerberos/kerberos-configuring-active-directory.html">
+              Configuring Active Directory     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Performing Additional Cluster Configuration" href="/cloud-native-aws-administrator-guide/kerberos/kerberos-additional-cluster-configuration.html">
+              Performing Additional Cluster Configuration     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Using Kerberos Permissions" href="/cloud-native-aws-administrator-guide/kerberos/kerberos-qumulo-permissions.html">
+              Using Kerberos Permissions     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Configuring a Linux Client" href="/cloud-native-aws-administrator-guide/kerberos/kerberos-configuring-linux-client.html">
+              Configuring a Linux Client     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Configuring Cross-Domain Active Directory Trusts" href="/cloud-native-aws-administrator-guide/kerberos/kerberos-configuring-cross-domain-active-directory-trusts.html">
+              Configuring Cross-Domain Active Directory Trusts     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Troubleshooting NFSv4.1 with Kerberos" href="/cloud-native-aws-administrator-guide/kerberos/kerberos-troubleshooting.html">
+              Troubleshooting NFSv4.1 with Kerberos     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  
+
+  
+  
+  
+  <li>
+  
+
+  <a title="SMB" href="/cloud-native-aws-administrator-guide/smb/index.html" data-proofer-ignore>
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  SMB
+  </a>
+ 
+      <ul>
+          
+          
+          
+          <li>
+            <a title="Creating and Managing an SMB Share" href="/cloud-native-aws-administrator-guide/smb/creating-smb-share.html">
+              Creating and Managing an SMB Share     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Managing File Shares by Using the Shared Folders MMC Snap-In" href="/cloud-native-aws-administrator-guide/smb/managing-file-shares-shared-folders-mmc.html">
+              Managing File Shares by Using the Shared Folders MMC Snap-In     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  
+
+  
+  
+  
+  <li>
+  
+
+  <a title="S3 API" href="/cloud-native-aws-administrator-guide/s3-api/index.html" data-proofer-ignore>
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  S3 API
+  </a>
+ 
+      <ul>
+          
+          
+          
+          <li>
+            <a title="Configuring and Using the S3 API" href="/cloud-native-aws-administrator-guide/s3-api/configuring-using-s3-api.html">
+              Configuring and Using the S3 API     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li class="active">
+            <a title="Creating and Managing S3 Access Keys" href="/cloud-native-aws-administrator-guide/s3-api/creating-managing-s3-access-keys.html">
+              Creating and Managing S3 Access Keys
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Creating and Managing S3 Buckets" href="/cloud-native-aws-administrator-guide/s3-api/creating-managing-s3-buckets.html">
+              Creating and Managing S3 Buckets     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Managing Access to S3 Buckets" href="/cloud-native-aws-administrator-guide/s3-api/managing-access-to-s3-buckets.html">
+              Managing Access to S3 Buckets     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Managing Access Policies for S3 Buckets" href="/cloud-native-aws-administrator-guide/s3-api/managing-access-policies-for-s3-buckets.html">
+              Managing Access Policies for S3 Buckets     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Managing Multipart S3 Uploads" href="/cloud-native-aws-administrator-guide/s3-api/managing-multipart-uploads.html">
+              Managing Multipart S3 Uploads     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Managing S3 Bucket Versioning" href="/cloud-native-aws-administrator-guide/s3-api/managing-s3-bucket-versioning.html">
+              Managing S3 Bucket Versioning     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Managing Object Lock" href="/cloud-native-aws-administrator-guide/s3-api/managing-object-lock-for-s3-buckets.html">
+              Managing Object Lock     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Supported Functionality and Limits" href="/cloud-native-aws-administrator-guide/s3-api/supported-s3-functionality-known-limits.html">
+              Supported Functionality and Limits     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  
+
+  
+  
+  
+  <li>
+  
+
+  <a title="Monitoring and Metrics" href="/cloud-native-aws-administrator-guide/monitoring-and-metrics/index.html" data-proofer-ignore>
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  Monitoring and Metrics
+  </a>
+ 
+      <ul>
+          
+          
+          
+          <li>
+            <a title="Configuring Cloud-Based Monitoring and Remote Support" href="/cloud-native-aws-administrator-guide/monitoring-and-metrics/configuring-cloud-based-monitoring-remote-support.html">
+              Configuring Cloud-Based Monitoring and Remote Support     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Connecting to Cloud-Based Monitoring and S3 with a Custom Proxy" href="/cloud-native-aws-administrator-guide/monitoring-and-metrics/connecting-cloud-based-monitoring-s3-custom-proxy.html">
+              Connecting to Cloud-Based Monitoring and S3 with a Custom Proxy     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Restoring the Default Values for Cloud-Based and Nexus Monitoring" href="/cloud-native-aws-administrator-guide/monitoring-and-metrics/restoring-default-values-cloud-based-nexus-monitoring.html">
+              Restoring the Default Values for Cloud-Based and Nexus Monitoring     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="How Audit Logging Works in Qumulo Core" href="/cloud-native-aws-administrator-guide/monitoring-and-metrics/how-audit-logging-works.html">
+              How Audit Logging Works in Qumulo Core     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="OpenMetrics API Specification" href="/cloud-native-aws-administrator-guide/monitoring-and-metrics/openmetrics-api-specification.html">
+              OpenMetrics API Specification     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+      
+      
+</ul>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').addClass("active");</script>
+
+
+            </div>
+            
+        
+
+        <!-- Content Column -->
+        <div class="col-md-9" id="tg-sb-content">
+            
+
+
+
+
+
+
+
+<nav>
+<div class="breadcrumb-line">
+  <a href='/'>Home</a> <span>&rsaquo;</span> 
+
+
+  <a href='/cloud-native-aws-administrator-guide/'>Cloud Native Qumulo on AWS Administrator Guide</a> <span>&rsaquo;</span>
+
+
+
+  <a href='/cloud-native-aws-administrator-guide/s3-api/index.html'>S3 API</a> <span>&rsaquo;</span>
+
+
+  Creating and Managing S3 Access Keys in Qumulo Core
+  </div>
+</nav>
+
+
+            
+
+<div class="post-header">
+   <h1 class="post-title-main">Creating and Managing S3 Access Keys in Qumulo Core</h1>
+</div>
+
+
+
+<div class="post-content">
+
+    
+    
+<!-- Create the automatic mini-TOC on a page (unless disabled with #toc{display:none;}.
+     Note: If you use HTML tags, add an ID to the heading so that it appears in the mini-TOC.
+-->
+
+<script>
+$(document).ready(function() {
+    $('#toc').toc({
+      minimumHeaders: 2,
+      listType: 'ul',
+      showSpeed: 0,
+      headers: 'h2'
+    });
+
+    /* Account for the space that the floating toolbar takes up. */
+    $('#toc').on('click', 'a', function() {
+      var target = $(this.getAttribute('href')), 
+          scroll_target = target.offset().top
+          $(window).scrollTop(scroll_target - 10);
+      return false
+    });
+});
+</script>
+
+
+<div id="toc"></div>
+
+    
+
+   <p>This section explains how to create and manage credentials that S3 API actions in Qumulo Core require to access file system resources, such as access key pairs that sign requests.</p>
+   
+     
+     <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> You can configure an S3 bucket to allow <a href="managing-access-to-s3-buckets.html#enabling-anonymous-access">read-only, anonymous access</a>. This approach requires no credentials but limits users to non-modifying operations.</div>
+
+<p>In Qumulo Core 7.2.3.2 (and higher), system users can list, create, and delete S3 access keys for their <a href="#identity">identities</a>.</p>
+
+<h2 id="prerequisites">Prerequisites</h2>
+<p>Administrative control over S3 access keys requires the following <a href="../authorization-qumulo-core/managing-role-based-access-control-rbac.html">role-based access control (RBAC)</a> privileges:</p>
+
+<ul>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">PRIVILEGE_S3_BUCKETS_WRITE</code>: Create or delete any S3 access keys on a Qumulo cluster</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">PRIVILEGE_S3_BUCKETS_READ</code>: List all S3 access keys on a Qumulo cluster</p>
+  </li>
+</ul>
+
+<h2 id="how-s3-access-keys-work-in-qumulo-core">How S3 Access Keys Work in Qumulo Core</h2>
+<p><a id="identity"></a></p>
+
+<p>An <em>identity</em> is a single principal from an identity provider (IdP). Examples of identities include SMB security identifiers (SIDs), Active Directory user principal names (UPNs), POSIX user identifiers (UIDs), and local users in a Qumulo cluster.</p>
+
+<div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> It isn’t possible to create access keys for UIDs in an Active Directory environment that has POSIX extensions enabled. However, it is possible to use Active Directory identity identifiers (SIDs, UPNs, and so on).</div>
+
+<p>An <em>access key</em> (or <em>access key pair)</em> is comprised of an S3 access key ID and an S3 secret access key.</p>
+
+<ul>
+  <li>
+    <p><a id="access-key-id"></a></p>
+
+    <p>The <em>access key ID</em> is the public component of an S3 access key pair. It identifies the user that performs an S3 request.</p>
+  </li>
+  <li>
+    <p><a id="secret-access-key"></a></p>
+
+    <p>The <em>secret access key</em> (or <em>secret key</em>) is the private component of an S3 access key pair. The client uses the secret access key to sign requests. The server uses the secret access key to validate request signatures.</p>
+  </li>
+</ul>
+
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
+<ul>
+  <li>Qumulo Core uses a cryptographically secure source, certified according to FIPS 140-2 requirements, to derive secret access keys.</li>
+  <li>Because access keys are cluster-local, you can't use an access key for an identity in one Qumulo cluster on a different Qumulo cluster.</li>
+</ul>
+</div>
+
+<p>Qumulo Core creates an access key pair whenever an authorized user requests it. For more information, see <a href="#creating-s3-access-keys-for-a-qumulo-cluster">Creating S3 Access Keys for a Qumulo Cluster</a>.</p>
+
+<p>The way in which Qumulo Core access keys let you access your Qumulo cluster makes the process similar to  the way in which <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html">IAM Access Keys</a> let you access Amazon S3 resources. For this reason, applications that access objects stored in a Qumulo cluster can use the Qumulo S3 API similarly to the native Amazon S3 API.</p>
+
+<h3 id="how-s3-access-keys-work-with-identities">How S3 Access Keys work with Identities</h3>
+<p>An S3 access key doesn’t grant any additional permissions. It associates an S3 API request with a specific <a href="#identity">identity</a> known to the Qumulo cluster.</p>
+
+<p>When Qumulo Core processes a request, it evaluates permissions by using the Qumulo ACL (QACL) mechanism that operates like the access control list (ACL) mechanism that all file system protocols use. When the QACL grants or denies permissions to an associated identity, it also grants or denies the same permissions to the request being processed.</p>
+
+<p>For more information, see <a href="managing-access-to-s3-buckets.html">Managing Access to S3 Buckets in a Qumulo Cluster</a>.</p>
+
+<h3 id="how-qumulo-core-stores-s3-access-keys">How Qumulo Core Stores S3 Access Keys</h3>
+<p>To authenticate S3 API requests, Qumulo Core retrieves existing access key pairs that it stores securely as configuration metadata in your Qumulo cluster. Qumulo Core encrypts secret access keys on disk and holds decrypted secret access keys in memory (only while it processes a request).</p>
+
+<div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> Because (unlike <em>secret access keys)</em> your <em>access key IDs</em> aren’t a cryptographic secret, Qumulo Core <em>can</em> log and display access key IDs. After Qumulo Core initially creates your secret access keys, it never logs or displays them again. If you lose your secret access key, it isn’t possible to recover it and you must create a new access key pair.</div>
+
+<h3 id="s3-access-key-lifecycle-in-qumulo-core">S3 Access Key Lifecycle in Qumulo Core</h3>
+<p>Qumulo Core doesn’t limit how long you can use an access key pair after you create it. Your system administrators must take responsibility for using the Qumulo REST API or <code class="language-plaintext highlighter-rouge">qq</code> CLI to view the creation dates for access keys and revoke any pair at their discretion.</p>
+
+<p>For more information, see <a href="#listing-s3-access-keys">Listing S3 Access Keys for a Qumulo Cluster</a>.</p>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note</b><br />
+<ul>
+ <li>To facilitate key rotation, each user <a href="#identity">identity</a> can have at most two S3 access key pairs associated with it. It is a good practice to delete a user's old access key after you create a new one and test that the new key works.</li>
+  <li>If you revoke an access key pair, it isn't possible to restore it. Before you revoke an access key pair, ensure that no critical applications depend on it.</li>
+</ul>
+</div>
+
+<h2 id="creating-s3-access-keys-for-a-qumulo-cluster">Creating S3 Access Keys for a Qumulo Cluster</h2>
+<p>To make S3 API requests to a Qumulo cluster as a specific user, you must create an S3 access key pair for that user <a href="#identity">identity</a> by using the Qumulo REST API or <code>qq</code> CLI.</p>
+
+<h3 id="to-create-an-access-key-for-your-own-user-identity-by-using-the-qq-cli">To Create an Access Key for Your Own User Identity by Using the qq CLI</h3>
+<p>Run the <a href="https://docs.qumulo.com/qq-cli-command-guide/s3/s3_create_access_key.html"><code>qq s3_create_access_key</code></a>
+ command and use the <code class="language-plaintext highlighter-rouge">--self</code> flag. For example:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>qq s3_create_access_key <span class="nt">--self</span>
+</code></pre></div></div>
+
+<p>The following is example output.</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"access_key_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AKIAIOSFODNN7EXAMPLE"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"creation_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-12-12T21:37:53.553457928Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"owner"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"auth_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"501"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"domain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LOCAL"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"gid"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"guest"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"sid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"S-1-1-12-12345678-2345678901-1234567890-500"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"uid"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"secret_access_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> After Qumulo Core initially creates your secret access keys, it never logs or displays them again. If you lose your secret access key, it isn’t possible to recover it and you must create a new access key pair.</div>
+
+<h3 id="to-create-an-access-key-for-another-user-identity-by-using-the-qq-cli">To Create an Access Key for Another User Identity by Using the qq CLI</h3>
+<p>To create S3 access keys for another user <a href="#identity">identity</a>, you must have an administrator account or have the <code>PRIVILEGE_S3_BUCKETS_WRITE</code> privilege.</p>
+
+<p>To create an S3 access key for a particular user , run the <a href="https://docs.qumulo.com/qq-cli-command-guide/s3/s3_create_access_key.html"><code>qq s3_create_access_key</code></a>
+ command and specify an identity. For example:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>qq s3_create_access_key ANOTHER_IDENTITY
+</code></pre></div></div>
+
+<p>You can specify an identity by using:</p>
+
+<ul>
+  <li>
+    <p>A name, optionally qualified with a domain prefix:</p>
+
+    <ul>
+      <li>
+        <p><code class="language-plaintext highlighter-rouge">ad:MY_NAME</code></p>
+      </li>
+      <li>
+        <p><code class="language-plaintext highlighter-rouge">AD\MY_NAME</code></p>
+      </li>
+      <li>
+        <p><code class="language-plaintext highlighter-rouge">local:MY_NAME</code></p>
+      </li>
+      <li>
+        <p><code class="language-plaintext highlighter-rouge">MY_NAME</code></p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>An Active Directory Security Identifier. For example: <code class="language-plaintext highlighter-rouge">SID:S-1-1-0</code></p>
+  </li>
+  <li>
+    <p><a id="auth-id"></a></p>
+
+    <p>A Qumulo <em>auth ID</em>, Qumulo Core’s common representation for identities, in the form of a numeric identifier. For example: <code class="language-plaintext highlighter-rouge">auth_id:513</code></p>
+  </li>
+</ul>
+
+<div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> Currently, it isn’t possible to associate an S3 access key with a POSIX group ID (GID).</div>
+
+<p>The following is example output.</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"access_key_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AKIAJKSBDMSS8EXAMPLE"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"creation_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-12-12T21:37:53.553457928Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"owner"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"auth_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"501"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"domain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LOCAL"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"gid"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"guest"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"sid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"S-1-1-12-12345678-2345678901-1234567890-500"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"uid"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"secret_access_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"aGsfgDFdfEGWD/D5DWERF/sRsRdsXQEXAMPLEKEY"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> After Qumulo Core initially creates your secret access keys, it never logs or displays them again. If you lose your secret access key, it isn’t possible to recover it and you must create a new access key pair.</div>
+
+<h3 id="to-create-an-s3-access-key-by-using-the-qumulo-rest-api">To Create an S3 Access Key by Using the Qumulo REST API</h3>
+<p>Send a <code class="language-plaintext highlighter-rouge">POST</code> request to the <code class="language-plaintext highlighter-rouge">/v1/s3/access-keys/</code> endpoint with the following body. You must include at least one of the following keys:</p>
+
+<ul>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">auth_id</code></p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">sid</code></p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">uid</code></p>
+  </li>
+</ul>
+
+<p>For example:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"sid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"S-1-1-12-12345678-2345678901-1234567890-500"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>The following is example output.</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"access_key_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AKIAJKSBDMSS8EXAMPLE"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"creation_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-12-12T21:37:53.553457928Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"owner"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"auth_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"501"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"domain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LOCAL"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"gid"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"guest"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"sid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"S-1-1-12-12345678-2345678901-1234567890-500"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"uid"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"secret_access_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"aGsfgDFdfEGWD/D5DWERF/sRsRdsXQEXAMPLEKEY"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> After Qumulo Core initially creates your secret access keys, it never logs or displays them again. If you lose your secret access key, it isn’t possible to recover it and you must create a new access key pair.</div>
+
+<p><a id="listing-s3-access-keys"></a></p>
+<h2 id="listing-s3-access-keys-for-a-qumulo-cluster">Listing S3 Access Keys for a Qumulo Cluster</h2>
+<p>You can list every S3 access key known to your Qumulo cluster, along with the identities associated with the key and the key creation times, by using the Qumulo REST API or <code>qq</code> CLI. The <code>PRIVILEGE_S3_BUCKETS_READ</code> privilege is required.</p>
+
+<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Qumulo Core doesn’t list access keys in any particular order. To sort keys according to fields such as <code class="language-plaintext highlighter-rouge">creation_time</code> or <code class="language-plaintext highlighter-rouge">owner</code> you must process or filter the response.</div>
+
+<h3 id="to-list-s3-access-keys-for-your-own-user-identity-by-using-the-qq-cli">To List S3 Access Keys for Your Own User Identity by Using the qq CLI</h3>
+
+<ul>
+  <li>
+    <p>To list the S3 access keys for your user known to your Qumulo cluster, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/s3/s3_list_access_keys.html"><code>qq s3_list_access_keys</code></a>
+:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>qq s3_list_access_keys  <span class="nt">--self</span>
+</code></pre></div>    </div>
+
+    <p>The following is example output. All times are in the UTC time zone.</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>access_key_id         owner  creation_time
+====================  =====  ==============================
+000000000001fEXAMPLE  Guest  2022-12-12T21:37:53.553457928Z
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>For JSON output, use the <code class="language-plaintext highlighter-rouge">--json</code> flag.</p>
+
+    <p>The following is example output. The command returns a single JSON object that contains the combined responses from calls to the <code class="language-plaintext highlighter-rouge">/v1/s3/access-keys/</code> Qumulo REST API endpoint.</p>
+  </li>
+</ul>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"entries"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"access_key_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AKIAIOSFODNN7EXAMPLE"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"creation_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-12-12T21:37:53.553457928Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"owner"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"auth_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"501"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"domain"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"gid"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"sid"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"uid"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"paging"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"next"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="to-list-s3-access-keys-for-all-user-identities-by-using-the-qq-cli">To List S3 Access Keys for All User Identities by Using the qq CLI</h3>
+<p>The <code>PRIVILEGE_S3_BUCKETS_READ</code> privilege is required.</p>
+
+<ul>
+  <li>
+    <p>To list all S3 access keys on your Qumulo cluster, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/s3/s3_list_access_keys.html"><code>qq s3_list_access_keys</code></a>
+ command.</p>
+
+    <p>The following is example output. All times are in the UTC time zone.</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>access_key_id         owner  creation_time
+====================  =====  ==============================
+000000000001fEXAMPLE  Guest  2022-12-12T21:37:53.553457928Z
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>For JSON output, use the <code class="language-plaintext highlighter-rouge">--json</code> flag.</p>
+
+    <p>The following is example output. The command returns a single JSON object that contains the combined responses from calls to the <code class="language-plaintext highlighter-rouge">/v1/s3/access-keys/</code> Qumulo REST API endpoint.</p>
+  </li>
+</ul>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"entries"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"access_key_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AKIAIOSFODNN7EXAMPLE"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"creation_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-12-12T21:37:53.553457928Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"owner"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"auth_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"501"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"domain"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"gid"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"sid"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"uid"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"paging"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"next"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="to-list-s3-access-keys-by-using-the-qumulo-rest-api">To List S3 Access Keys by Using the Qumulo REST API</h3>
+<p>To list all S3 access keys known to your Qumulo cluster, send a <code class="language-plaintext highlighter-rouge">GET</code> request to the <code class="language-plaintext highlighter-rouge">/v1/s3/access-keys/</code> endpoint.</p>
+
+<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> To restrict the number of returned results, up to the maximum of 10,000 access keys (this is the default limit), include the optional <code class="language-plaintext highlighter-rouge">limit</code> query parameter in the request.</div>
+
+<p>The following is example output. The <code class="language-plaintext highlighter-rouge">entries</code> list contains the access keys, limited to the first 10,000. The <code class="language-plaintext highlighter-rouge">paging.next</code> field contains the URI to which you can send a <code class="language-plaintext highlighter-rouge">GET</code> request to retrieve the next page of access keys. By making <code class="language-plaintext highlighter-rouge">GET</code> requests with all returned <code class="language-plaintext highlighter-rouge">paging.next</code> values, you can iterate over all of the access keys in the cluster.</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"entries"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"access_key_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AKIAIOSFODNN7EXAMPLE"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"creation_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-12-12T21:37:53.553457928Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"owner"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"auth_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"501"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"domain"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"gid"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"sid"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"uid"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"paging"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"next"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h2 id="revoking-s3-access-keys-for-a-qumulo-cluster">Revoking S3 Access Keys for a Qumulo Cluster</h2>
+<p>To revoke an S3 access key, you must delete the access key from your Qumulo cluster by using the Qumulo REST API or <code>qq</code> CLI. The <code>PRIVILEGE_S3_BUCKETS_WRITE</code> privilege is required.</p>
+
+<h3 id="to-delete-an-s3-access-key-by-using-the-qq-cli">To Delete an S3 Access Key by Using the qq CLI</h3>
+<p>Run the <code class="language-plaintext highlighter-rouge">qq s3_delete_access_key</code> command and specify the access key ID. For example:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>qq s3_delete_access_key <span class="se">\</span>
+  <span class="nt">--id</span> 000000000001fEXAMPLE
+</code></pre></div></div>
+
+<h3 id="to-delete-an-s3-access-key-by-using-the-qumulo-rest-api">To Delete an S3 Access Key by Using the Qumulo REST API</h3>
+<p>Send a <code class="language-plaintext highlighter-rouge">DELETE</code> request to the <code class="language-plaintext highlighter-rouge">/v1/s3/access-keys/&lt;access-key-id&gt;</code> Qumulo REST API endpoint and specify the access key ID.</p>
+
+<h2 id="configuring-active-directory-ad-for-s3">Configuring Active Directory (AD) for S3</h2>
+<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> To be able to create access keys for a user in a joined AD domain, the user must exist within the domain’s base DN.</div>
+
+<p>For users that exist in an AD domain that has a trust relationship with the joined domain, you must append that domain’s base DN to the base DN in your Qumulo cluster’s AD configuration.</p>
+
+<p>To append the trusted base DN to the base DN in use—with a semicolon (<code class="language-plaintext highlighter-rouge">;</code>) separating the two—use the Qumulo Core Web UI or the <a href="https://docs.qumulo.com/qq-cli-command-guide/ad/ad_reconfigure.html"><code>qq ad_reconfigure</code></a>
+ command. For example:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>qq ad_reconfigure <span class="se">\</span>
+  <span class="nt">--base-dn</span> <span class="s1">'CN=Users, DC=joined_domain,DC=example,DC=com;\
+  CN=Users,DC=trusted_domain,DC=example,DC=com'</span>
+</code></pre></div></div>
+
+<p>For more information, see <a href="../kerberos/kerberos-configuring-cross-domain-active-directory-trusts.html">Configuring Cross-Domain Active Directory Trusts</a></p>
+
+   
+
+
+
+
+  
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+      
+<h2 id="related-topics" class="clickable-header top-level-header">Related Topics</h2>
+<ul id="related-topics-list">
+        
+        
+          
+            
+            
+  <li><a href="/cloud-native-aws-administrator-guide/s3-api/configuring-using-s3-api.html">Configuring and Using the S3 API</a></li>
+            
+          
+            
+            
+          
+            
+            
+  <li><a href="/cloud-native-aws-administrator-guide/s3-api/creating-managing-s3-buckets.html">Creating and Managing S3 Buckets</a></li>
+            
+          
+            
+            
+  <li><a href="/cloud-native-aws-administrator-guide/s3-api/managing-access-to-s3-buckets.html">Managing Access to S3 Buckets</a></li>
+            
+          
+            
+            
+  <li><a href="/cloud-native-aws-administrator-guide/s3-api/managing-access-policies-for-s3-buckets.html">Managing Access Policies for S3 Buckets</a></li>
+            
+          
+            
+            
+  <li><a href="/cloud-native-aws-administrator-guide/s3-api/managing-multipart-uploads.html">Managing Multipart S3 Uploads</a></li>
+            
+          
+            
+            
+  <li><a href="/cloud-native-aws-administrator-guide/s3-api/managing-s3-bucket-versioning.html">Managing S3 Bucket Versioning</a></li>
+            
+          
+            
+            
+  <li><a href="/cloud-native-aws-administrator-guide/s3-api/managing-object-lock-for-s3-buckets.html">Managing Object Lock</a></li>
+            
+          
+            
+            
+  <li><a href="/cloud-native-aws-administrator-guide/s3-api/supported-s3-functionality-known-limits.html">Supported Functionality and Limits</a></li>
+            
+          
+        
+</ul>
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+
+
+</div>
+
+        </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+</div>
+<!-- /#main -->
+    </div>
+
+<footer>
+  <div class="footer">
+    <div class="footer-text">
+      Copyright &copy; 2021&ndash;2025 Qumulo, Inc.<br>
+
+      <a class="no_icon footer_link" href="https://qumulo.com/legal/privacy-policy/">Privacy Policy</a> &VerticalSeparator; <a class="no_icon footer_link" href="https://qumulo.com/legal/cookie-policy/">Cookie Policy</a> &VerticalSeparator; <a class="no_icon footer_link" href="https://qumulo.com/terms-hub/">Terms Hub</a><br>
+      <p>
+        <picture>
+          <source type="image/webp" srcset="/images/qumulo-logo-inverse.webp">
+          <source type="image/png" srcset="/images/qumulo-logo-inverse.png">       
+          <img class="footer-logo" src="/images/qumulo-logo-inverse.png" alt="Qumulo Logo">
+        </picture>
+      </p>
+    </div>
+    <div class="footer-grumpquats">
+      <picture>
+        <source type="image/webp" srcset="/images/grumpquats.webp">
+        <source type="image/png" srcset="/images/grumpquats.png"> 
+        <img src="/images/grumpquats.png" class="three-grumpquats" alt="Three Grumpquats">
+      </picture>
+    </div>
+  </div>
+
+  <!-- Cookie Consent - GRT Plugin -->	
+  <div id="cookie-banner" class="grt-cookie">
+    <div class="grt-cookies-msg">
+      <p>We use cookies to improve your user experience and remember your preferences on this website. If you continue to use this website, we will assume that you accept and understand our <a class="no_icon" href="https://qumulo.com/legal/privacy-policy">Privacy Policy</a>, <a class="no_icon" href="https://qumulo.com/legal/cookie-policy/">Cookie Policy</a>, and <a class="no_icon" href="https://qumulo.com/terms-hub/">Terms Hub</a>.</p>
+    </div>
+    <span class="grt-cookie-button">Accept</span>
+  </div>
+  <script src="/js/grt-cookie-consent.js"></script>
+  <script>$(".grt-cookie").grtCookie();</script>
+  
+  <script src="/js/fixdoubledashes.js"></script>
+
+  <script src="/js/expand-collapse.js"></script>
+</footer>
+
+
+</body>
+
+</html>

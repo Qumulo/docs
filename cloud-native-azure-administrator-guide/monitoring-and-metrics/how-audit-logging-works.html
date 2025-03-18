@@ -1,0 +1,3177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How Audit Logging Works | Qumulo Documentation</title>
+<link rel="canonical" href="https://docs.qumulo.com/cloud-native-azure-administrator-guide/monitoring-and-metrics/how-audit-logging-works.html">
+
+<!-- Organization JSON-LD Schema -->
+<script>
+fetch('/data/organization.json')
+.then(response => response.text())
+.then(structuredDataText => {
+  const script = document.createElement('script');
+  script.setAttribute('type', 'application/ld+json');
+  script.textContent = structuredDataText;
+  document.head.appendChild(script);
+});    
+</script>
+
+<!-- Website JSON-LD Schema -->
+<script>
+fetch('/data/website.json')
+.then(response => response.text())
+.then(structuredDataText => {
+  const script = document.createElement('script');
+  script.setAttribute('type', 'application/ld+json');
+  script.textContent = structuredDataText;
+  document.head.appendChild(script);
+});    
+</script>
+
+<!-- BEGIN TO PREPARE WEBSITE RESOURCES -->  
+<!-- Preload from jsdelivr.net:
+     * Bootstrap stylesheet and script
+     * Font Awesome
+-->
+<link rel="preload" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" as="style" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="preload" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" as="script" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
+<link rel="preload" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" as="style">
+
+<!-- Preload web fonts from fonts.googleapis.com as stylesheets -->
+<link rel="preload" href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" as="style">
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap" as="style">
+
+<!-- Preload scripts from cloudflare.com
+     * jQuery
+     * jQuery Cookie
+     * Anchor JS
+-->
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" as="script">
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js" as="script">
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/5.0.0/anchor.min.js" as="script">
+
+<!-- Preload JavaScript resources -->
+<link rel="preload" href="/js/grt-cookie-consent.js" as="script">
+<link rel="preload" href="/js/googletag.js" as="script">
+<link rel="preload" href="https://www.googletagmanager.com/gtag/js?id=G-81J7N4LMSE" as="script">
+
+<!-- Prefetch DNS from CDNs -->
+<link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+<link rel="dns-prefetch" href="https://fonts.googleapis.com">
+<link rel="dns-prefetch" href="https://fonts.gstatic.com" crossorigin>
+<link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+<link rel="dns-prefetch" href="https://maxcdn.bootstrapcdn.com">
+
+<!-- Preconnect to CDNs -->
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdnjs.cloudflare.com">
+<link rel="preconnect" href="https://maxcdn.bootstrapcdn.com">
+
+<!-- BEGIN TO LOAD WEBSITE RESOURCES -->
+<!-- Load Bootstrap and Font Awesome -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!-- Load local stylesheets inline -->
+<link rel="stylesheet" href="/css/boxshadowproperties.css">
+<link rel="stylesheet" href="/css/customstyles.css">
+<link rel="stylesheet" href="/css/grt-cookies-consent.css">
+<link rel="stylesheet" href="/css/modern-business.css">
+<link rel="stylesheet" href="/css/syntax.css">
+<link rel="stylesheet" href="/css/theme-blue.css">
+
+<!-- Optimize web font load
+     * Loading Noto Color Emoji by using `link rel=stylesheet`
+       syntax causes multiple versions of the font to load.
+     * Additional instructions are necessary for Font Awesome
+       to load with the font-display attribute.
+-->
+<style>
+  @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap');
+  @font-face {
+    font-family:'FontAwesome';
+    src: url('/fonts/fontawesome-webfont.woff?v=4.7.0') format('woff'),
+         url('/fonts/fontawesome-webfont.woff2?v=4.7.0') format('woff2');
+    font-display: swap;
+  }
+</style>
+
+<!-- Web font fallbacks for older browsers -->
+<noscript>
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Montserrat&display=swap">
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap">
+</noscript>
+
+<!-- Define page metadata -->
+<meta name="description" content="This section explains the different formats of audit logs for file system operations that Qumulo Core generates whenever a connected client sends a request to a Qumulo cluster.">
+<meta name="apple-mobile-web-app-title" content="Qumulo Documentation">
+<meta name="application-name" content="Qumulo Documentation">
+<meta name="msapplication-TileColor" content="#2b5797">
+<meta name="msapplication-TileImage" content="/images/mstile-144x144.png">
+<meta name="msapplication-config" content="/images/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+<meta name="google-site-verification" content="_KoxPR0qF_ZeMyH6uWvlX84cFRujO_AZ1eq0eT9alAg">
+
+<!-- Open Graph Meta Tags -->
+<meta property="og:title" content="How Audit Logging Works | Qumulo Documentation">
+<meta property="og:url" content="https://docs.qumulo.com/cloud-native-azure-administrator-guide/monitoring-and-metrics/how-audit-logging-works.html">
+<meta property="og:site_name" content="Qumulo Documentation">
+<meta property="og:description" content="This section explains the different formats of audit logs for file system operations that Qumulo Core generates whenever a connected client sends a request to a Qumulo cluster.">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://docs.qumulo.com/images/docs.qumulo.com-qumulo-documentation-portal-630px.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<!-- Twitter Meta Tags -->
+<meta name="twitter:title" content="How Audit Logging Works | Qumulo Documentation">
+<meta property="twitter:url" content="https://docs.qumulo.com/cloud-native-azure-administrator-guide/monitoring-and-metrics/how-audit-logging-works.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:description" content="This section explains the different formats of audit logs for file system operations that Qumulo Core generates whenever a connected client sends a request to a Qumulo cluster.">
+<meta name="twitter:image" content="https://docs.qumulo.com/images/docs.qumulo.com-qumulo-documentation-portal-418px.png">
+<meta property="twitter:domain" content="docs.qumulo.com">
+
+<!-- Define favicon variants -->
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="194x194" href="/images/favicon-194x194.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/images/android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+<link rel="manifest" href="/images/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+<!-- Define RSS feed -->
+<!-- TEMPORARILY DISABLED
+<link rel="alternate" href="https://docs.qumulo.com/feed.xml" type="application/rss+xml" title="docs">
+-->
+
+<!-- Load scripts from cloudflare.com -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+<!-- Load local scripts with dependencies on jQuery -->
+<script src="/js/jquery.navgoco.min.js"></script>
+
+<!-- Load scripts from jsdelivr.net and cloudflare.com -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/5.0.0/anchor.min.js"></script>
+
+<!-- Load local scripts with dependencies on Bootstrap and Anchor JS -->
+<script src="/js/toc.js"></script>
+<script src="/js/customscripts.js"></script>
+
+<!-- Fallback for IE9 -->
+<!--[if lt IE 9]>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<!-- Load Google Analytics and exclude GDPR countries from collection -->
+<script defer src="/js/googletag.js"></script>
+<script defer src="https://www.googletagmanager.com/gtag/js?id=G-81J7N4LMSE"></script>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
+    
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: true,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 400,
+                    easing: 'swing'
+                }
+            });
+
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    <script>
+        $(document).ready(function() {
+            // By default, Reading Mode is off and the button is dark.
+            if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
+                // On the landing page, hide the sidebar, make content full-width, and hide the toggle link.
+                $("#tg-sb-sidebar").hide();
+                $("#tg-sb-content").removeClass('col-md-9').addClass('col-md-12');
+                $("#tg-sb-link").hide();
+                $(".projectTitle").hide();
+                $(".navbar-brand").hide();
+                return;
+            }
+
+            if (Cookies.get('reading_mode') == '1' ) {
+                $("#tg-sb-sidebar").toggle();
+                $("#tg-sb-content").toggleClass('col-md-9');
+                $("#tg-sb-content").toggleClass('col-md-12');
+                $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                $("#tg-sb-icon").toggleClass('fa-toggle-off');                   
+            }
+            
+            $("#tg-sb-link").click(function() {
+                if (Cookies.get('reading_mode') == '1' ) {
+                    // If the Reading Mode is on, remove the cookie.
+                    Cookies.remove('reading_mode');
+                } else {
+                    // If the Reading Mode is on, place the cookie.
+                    Cookies.set('reading_mode', '1');
+                }
+                
+                // Toggle the Reading Mode and change the button color.
+                $("#tg-sb-sidebar").toggle();
+                $("#tg-sb-content").toggleClass('col-md-9');
+                $("#tg-sb-content").toggleClass('col-md-12');
+                $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                $("#tg-sb-icon").toggleClass('fa-toggle-off');
+            });
+        });
+    </script>
+    
+
+</head>
+<body>
+<!-- ==================== TOPNAV START ==================== -->
+<div class="above-header"></div>
+
+<div class="header-container">
+<header class="header">
+  <div class="logo">
+    <a class="header-link" href="https://docs.qumulo.com/">
+      <picture>
+	<source type="image/webp" srcset="/images/qumulo-logo.webp">
+	<source type="image/png" srcset="/images/qumulo-logo.png">	      
+        <img class="header-logo" src="/images/qumulo-logo.png" alt="Qumulo Logo">
+      </picture>
+    </a>
+  </div>
+
+  <div class="nav-wrapper">
+    <span class="icon-menu"></span>
+    <nav class="user-nav" id="user-nav">
+      <div class="qf2header">
+        <div class="flex-links">
+          <a class="header-link header-right" href="https://qumulo.com/company/about-qumulo/" target="_blank">About Qumulo</a>
+          <a class="header-link header-right" href="https://care.qumulo.com/s/knowledge" target="_blank">Knowledge Base</a>
+          <a class="header-link header-right" href="https://nexus.qumulo.com/" target="_blank">Nexus</a>
+        </div>
+        <div class="contact-links">
+          <a class="btn-contact no_icon" href="https://qumulocare.slack.com/">Send Slack Message</a>
+          <a class="btn-contact no_icon" href="https://care.qumulo.com/s/submit-a-case">Open a Case</a>
+        </div>
+      </div>
+    </nav>
+</div>
+</header>
+</div>
+<div class="below-header navbar navbar-inverse navbar-static-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/index.html">&nbsp;<span class="projectTitle"> Qumulo Documentation</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- toggle sidebar button -->
+                <li><a id="tg-sb-link" href="#" data-proofer-ignore><i id="tg-sb-icon" class="fa fa-toggle-off"></i> Reading Mode</a></li>
+                <!-- entries without drop-downs appear here -->
+
+
+
+
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+                <li>
+                  <div id="search-demo-container">
+                    <div class="parent">
+                      <div class="search_container">
+                        <main id="search-widget">
+                          <div class="vectara__search_Box">
+                            <form id="vectara__search_form" action="/search.html" method="GET">
+                              <input class="vectara__search_field" name="query" id="search-input" placeholder="What would you like to know?" autofocus>
+                              <button class="vectara__logo_btn">
+                                <img class="vectara__search_logo" width="26" height="28" src="/images/magnifying-glass.png" alt="Search">
+                              </button>
+                            </form>
+                          </div>
+                        </main>
+                        <ul class="tags" id="widget-tags"></ul>
+                      </div>
+                    </div>
+                  </div>
+                  <ul id="list"></ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+        <!-- /.container -->
+</div>
+<!-- ==================== TOPNAV END ==================== -->
+
+<!-- Page Content -->
+
+<div class="container">
+  <div id="main">
+    <!-- Content Row -->
+    <div class="row">
+        
+        
+
+            <!-- Sidebar Column -->
+            <div class="col-md-3" id="tg-sb-sidebar">
+                
+
+<div class="nav nav-buttons">
+  
+    <a target="_blank" rel="noopener" href="https://github.com/qumulo/docs/blob/gh-pages/cloud-native-azure-administrator-guide/monitoring-metrics/how-audit-logging-works.md" class="btn btn-default githubEditButton no_icon" role="button" data-proofer-ignore><span class="fa fa-github fa-lg"></span> Edit on GitHub</a>
+  
+
+  
+    <a target="_blank" rel="noopener" href="/pdf/cloud-native-qumulo-on-azure-administrator-guide.pdf" class="btn btn-default downloadPDFButton no_icon" role="button"><span class="glyphicon glyphicon-file" aria-hidden="true"></span> Download PDF</a>
+  
+</div>
+
+<ul id="mysidebar" class="nav">
+  <li class="sidebarTitle"> </li>
+  
+  
+  
+      
+  
+  
+  
+
+  
+  
+  
+  <li>
+  
+
+  <a title="Cloud Native Qumulo on Azure Administrator Guide" href="" data-proofer-ignore>
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  Cloud Native Qumulo on Azure Administrator Guide
+  </a>
+ 
+      <ul>
+          
+          
+          
+          <li>
+            <a title="Documentation Home" href="/index.html">
+              Documentation Home     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Guide Table of Contents" href="/cloud-native-azure-administrator-guide/">
+              Guide Table of Contents     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Contacting the Qumulo Care Team" href="/contacting-qumulo-care-team.html">
+              Contacting the Qumulo Care Team     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  
+
+  
+  
+  
+  <li>
+  
+
+  <a title="Getting Started" href="/cloud-native-azure-administrator-guide/getting-started/index.html" data-proofer-ignore>
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  Getting Started
+  </a>
+ 
+      <ul>
+          
+          
+          
+          <li>
+            <a title="How Cloud Native Qumulo Works" href="/cloud-native-azure-administrator-guide/getting-started/how-cloud-native-qumulo-works.html">
+              How Cloud Native Qumulo Works     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Deploying with Terraform" href="/cloud-native-azure-administrator-guide/getting-started/terraform.html">
+              Deploying with Terraform     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Supported Configurations and Known Limits" href="/cloud-native-azure-administrator-guide/getting-started/supported-configurations-known-limits.html">
+              Supported Configurations and Known Limits     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  
+
+  
+  
+  
+  <li>
+  
+
+  <a title="System Upgrades" href="/cloud-native-azure-administrator-guide/upgrading-qumulo-core/index.html" data-proofer-ignore>
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  System Upgrades
+  </a>
+ 
+      <ul>
+          
+          
+          
+          <li>
+            <a title="Feature Log" href="/cloud-native-azure-administrator-guide/upgrading-qumulo-core/feature-log.html">
+              Feature Log     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Performing Upgrades" href="/cloud-native-azure-administrator-guide/upgrading-qumulo-core/performing-upgrades.html">
+              Performing Upgrades     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Replication Version Requirements and Upgrade Recommendations" href="/cloud-native-azure-administrator-guide/upgrading-qumulo-core/replication-version-requirements-upgrade-recommendations.html">
+              Replication Version Requirements and Upgrade Recommendations     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  
+
+  
+  
+  
+  <li>
+  
+
+  <a title="Authentication" href="/cloud-native-azure-administrator-guide/authentication-qumulo-core/index.html" data-proofer-ignore>
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  Authentication
+  </a>
+ 
+      <ul>
+          
+          
+          
+          <li>
+            <a title="Configuring SAML Single Sign-On (SSO)" href="/cloud-native-azure-administrator-guide/authentication-qumulo-core/configuring-saml-single-sign-on-sso.html">
+              Configuring SAML Single Sign-On (SSO)     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Configuring Search Trusted Domains" href="/cloud-native-azure-administrator-guide/authentication-qumulo-core/configuring-search-trusted-domains-active-directory.html">
+              Configuring Search Trusted Domains     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Configuring LDAP" href="/cloud-native-azure-administrator-guide/authentication-qumulo-core/configuring-ldap.html">
+              Configuring LDAP     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Creating and Using Bearer Tokens" href="/cloud-native-azure-administrator-guide/authentication-qumulo-core/creating-using-bearer-tokens-to-authenticate-qumulo-rest-api-calls.html">
+              Creating and Using Bearer Tokens     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  
+
+  
+  
+  
+  <li>
+  
+
+  <a title="Connecting to External Services" href="/cloud-native-azure-administrator-guide/connecting-to-external-services/index.html" data-proofer-ignore>
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  Connecting to External Services
+  </a>
+ 
+      <ul>
+          
+          
+          
+          <li>
+            <a title="Creating and Using Access Tokens" href="/cloud-native-azure-administrator-guide/connecting-to-external-services/creating-using-access-tokens-to-authenticate-external-services-qumulo-core.html">
+              Creating and Using Access Tokens     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Connecting a Kubernetes Cluster" href="/cloud-native-azure-administrator-guide/connecting-to-external-services/connecting-kubernetes-cluster-with-container-storage-interface-csi-driver.html">
+              Connecting a Kubernetes Cluster     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  
+
+  
+  
+  
+  <li>
+  
+
+  <a title="Authorization" href="/cloud-native-azure-administrator-guide/authorization-qumulo-core/index.html" data-proofer-ignore>
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  Authorization
+  </a>
+ 
+      <ul>
+          
+          
+          
+          <li>
+            <a title="Managing File Locks" href="/cloud-native-azure-administrator-guide/authorization-qumulo-core/managing-file-locks.html">
+              Managing File Locks     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Managing Role-Based Access Control" href="/cloud-native-azure-administrator-guide/authorization-qumulo-core/managing-role-based-access-control-rbac.html">
+              Managing Role-Based Access Control     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Managing Cross-Protocol Permissions" href="/cloud-native-azure-administrator-guide/authorization-qumulo-core/managing-cross-protocol-permissions-xpp.html">
+              Managing Cross-Protocol Permissions     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Using SMB Host Restrictions" href="/cloud-native-azure-administrator-guide/authorization-qumulo-core/using-smb-host-restrictions.html">
+              Using SMB Host Restrictions     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Using Active Directory for POSIX Attributes" href="/cloud-native-azure-administrator-guide/authorization-qumulo-core/using-active-directory-for-posix-attributes.html">
+              Using Active Directory for POSIX Attributes     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  
+
+  
+  
+  
+  <li>
+  
+
+  <a title="Storage Management" href="/cloud-native-azure-administrator-guide/storage-management/index.html" data-proofer-ignore>
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  Storage Management
+  </a>
+ 
+      <ul>
+          
+          
+          
+          <li>
+            <a title="Creating and Managing Directory Quotas" href="/cloud-native-azure-administrator-guide/storage-management/creating-directory-quotas.html">
+              Creating and Managing Directory Quotas     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  
+
+  
+  
+  
+  <li>
+  
+
+  <a title="Network Configuration" href="/cloud-native-azure-administrator-guide/network-configuration/index.html" data-proofer-ignore>
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  Network Configuration
+  </a>
+ 
+      <ul>
+          
+          
+          
+          <li>
+            <a title="Required Networking Ports" href="/cloud-native-azure-administrator-guide/network-configuration/required-ports.html">
+              Required Networking Ports     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Configuring IPv6" href="/cloud-native-azure-administrator-guide/network-configuration/configuring-ipv6.html">
+              Configuring IPv6     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Connecting to Multiple Virtual Networks" href="/cloud-native-azure-administrator-guide/network-configuration/connecting-multiple-virtual-networks.html">
+              Connecting to Multiple Virtual Networks     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Configuring Round-Robin DNS on Windows Server" href="/cloud-native-azure-administrator-guide/network-configuration/configuring-round-robin-dns-windows-server.html">
+              Configuring Round-Robin DNS on Windows Server     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  
+
+  
+  
+  
+  <li>
+  
+
+  <a title="Cloud Data Fabric" href="/cloud-native-azure-administrator-guide/cloud-data-fabric/index.html" data-proofer-ignore>
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  Cloud Data Fabric
+  </a>
+ 
+      <ul>
+          
+          
+          
+          <li>
+            <a title="Enabling Cloud Data Fabric" href="/cloud-native-azure-administrator-guide/cloud-data-fabric/how-portal-creation-enables-cloud-data-fabric.html">
+              Enabling Cloud Data Fabric     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Configuring a Portal Relationship" href="/cloud-native-azure-administrator-guide/cloud-data-fabric/configuring-portal-relationship.html">
+              Configuring a Portal Relationship     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Configuring Cache Management" href="/cloud-native-azure-administrator-guide/cloud-data-fabric/configuring-cache-management-for-spoke-portals.html">
+              Configuring Cache Management     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  
+
+  
+  
+  
+  <li>
+  
+
+  <a title="Web UI" href="/cloud-native-azure-administrator-guide/web-ui/index.html" data-proofer-ignore>
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  Web UI
+  </a>
+ 
+      <ul>
+          
+          
+          
+          <li>
+            <a title="Setting the Web UI Login Banner" href="/cloud-native-azure-administrator-guide/web-ui/login-banner.html">
+              Setting the Web UI Login Banner     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Setting the Web UI Inactivity Timeout" href="/cloud-native-azure-administrator-guide/web-ui/inactivity-timeout.html">
+              Setting the Web UI Inactivity Timeout     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  
+
+  
+  
+  
+  <li>
+  
+
+  <a title="qq CLI" href="/cloud-native-azure-administrator-guide/qq-cli/index.html" data-proofer-ignore>
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  qq CLI
+  </a>
+ 
+      <ul>
+          
+          
+          
+          <li>
+            <a title="Getting Started with the qq CLI" href="/cloud-native-azure-administrator-guide/qq-cli/getting-started.html">
+              Getting Started with the qq CLI     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Enabling Autocomplete for the qq CLI" href="/cloud-native-azure-administrator-guide/qq-cli/enabling-autocomplete.html">
+              Enabling Autocomplete for the qq CLI     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  
+
+  
+  
+  
+  <li>
+  
+
+  <a title="Metadata" href="/cloud-native-azure-administrator-guide/metadata/index.html" data-proofer-ignore>
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  Metadata
+  </a>
+ 
+      <ul>
+          
+          
+          
+          <li>
+            <a title="Managing User-Defined Metadata" href="/cloud-native-azure-administrator-guide/metadata/managing-user-defined-metadata.html">
+              Managing User-Defined Metadata     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  
+
+  
+  
+  
+  <li>
+  
+
+  <a title="Snapshots" href="/cloud-native-azure-administrator-guide/snapshots/index.html" data-proofer-ignore>
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  Snapshots
+  </a>
+ 
+      <ul>
+          
+          
+          
+          <li>
+            <a title="How Snapshots Work" href="/cloud-native-azure-administrator-guide/snapshots/how-snapshots-work.html">
+              How Snapshots Work     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Managing Snapshots" href="/cloud-native-azure-administrator-guide/snapshots/managing-snapshots.html">
+              Managing Snapshots     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Locking and Unlocking Snapshots" href="/cloud-native-azure-administrator-guide/snapshots/locking-unlocking-snapshots.html">
+              Locking and Unlocking Snapshots     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Recovering Files by Using Snapshots" href="/cloud-native-azure-administrator-guide/snapshots/recovering-files.html">
+              Recovering Files by Using Snapshots     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  
+
+  
+  
+  
+  <li>
+  
+
+  <a title="Encryption and Data Security" href="/cloud-native-azure-administrator-guide/encryption-data-security/index.html" data-proofer-ignore>
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  Encryption and Data Security
+  </a>
+ 
+      <ul>
+          
+          
+          
+          <li>
+            <a title="Managing Encryption at Rest" href="/cloud-native-azure-administrator-guide/encryption-data-security/managing-encryption-at-rest.html">
+              Managing Encryption at Rest     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Managing SMB3 Encryption in Transit" href="/cloud-native-azure-administrator-guide/encryption-data-security/managing-smb3-encryption-in-transit.html">
+              Managing SMB3 Encryption in Transit     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Generating and Storing ECDSA Keys" href="/cloud-native-azure-administrator-guide/encryption-data-security/generating-storing-ecdsa-keys.html">
+              Generating and Storing ECDSA Keys     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Managing Security Keys" href="/cloud-native-azure-administrator-guide/encryption-data-security/managing-security-keys.html">
+              Managing Security Keys     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Installing a Signed SSL Certificate" href="/cloud-native-azure-administrator-guide/encryption-data-security/installing-signed-ssl-certificate.html">
+              Installing a Signed SSL Certificate     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  
+
+  
+  
+  
+  <li>
+  
+
+  <a title="Data Replication" href="/cloud-native-azure-administrator-guide/replicating-data/index.html" data-proofer-ignore>
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  Data Replication
+  </a>
+ 
+      <ul>
+          
+          
+          
+          <li>
+            <a title="Creating and Managing a Continuous Replication Relationship" href="/cloud-native-azure-administrator-guide/replicating-data/creating-managing-continuous-replication-relationship.html">
+              Creating and Managing a Continuous Replication Relationship     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Shift-To Amazon S3" href="/cloud-native-azure-administrator-guide/replicating-data/shift-to-s3.html">
+              Shift-To Amazon S3     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Shift-From Amazon S3" href="/cloud-native-azure-administrator-guide/replicating-data/shift-from-s3.html">
+              Shift-From Amazon S3     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  
+
+  
+  
+  
+  <li>
+  
+
+  <a title="File System Changes" href="/cloud-native-azure-administrator-guide/watching-file-attribute-directory-changes/index.html" data-proofer-ignore>
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  File System Changes
+  </a>
+ 
+      <ul>
+          
+          
+          
+          <li>
+            <a title="How File System Change Notifications Work" href="/cloud-native-azure-administrator-guide/watching-file-attribute-directory-changes/how-file-system-change-notifications-work.html">
+              How File System Change Notifications Work     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Watching for Changes with SMB2 CHANGE_NOTIFY" href="/cloud-native-azure-administrator-guide/watching-file-attribute-directory-changes/smb2-change-notify.html">
+              Watching for Changes with SMB2 CHANGE_NOTIFY     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Watching for Changes with REST" href="/cloud-native-azure-administrator-guide/watching-file-attribute-directory-changes/rest.html">
+              Watching for Changes with REST     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  
+
+  
+  
+  
+  <li>
+  
+
+  <a title="NFS" href="/cloud-native-azure-administrator-guide/nfs/index.html" data-proofer-ignore>
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  NFS
+  </a>
+ 
+      <ul>
+          
+          
+          
+          <li>
+            <a title="Creating and Managing an NFS Export" href="/cloud-native-azure-administrator-guide/nfs/creating-nfs-export.html">
+              Creating and Managing an NFS Export     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Enabling and Using NFSv4.1" href="/cloud-native-azure-administrator-guide/nfs/nfsv4.1-enabling-using.html">
+              Enabling and Using NFSv4.1     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Managing File Access Permissions with ACLs" href="/cloud-native-azure-administrator-guide/nfs/nfsv4.1-acls.html">
+              Managing File Access Permissions with ACLs     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Host Access Rules for NFS Exports" href="/cloud-native-azure-administrator-guide/nfs/configuring-troubleshooting-host-access-rules-nfs-exports.html">
+              Host Access Rules for NFS Exports     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  
+
+  
+  
+  
+  <li>
+  
+
+  <a title="NFSv4.1 with Kerberos" href="/cloud-native-azure-administrator-guide/kerberos/index.html" data-proofer-ignore>
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  NFSv4.1 with Kerberos
+  </a>
+ 
+      <ul>
+          
+          
+          
+          <li>
+            <a title="How NFSv4.1 Works with Kerberos" href="/cloud-native-azure-administrator-guide/kerberos/kerberos-with-qumulo-core.html">
+              How NFSv4.1 Works with Kerberos     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Prerequisites for Joining to Active Directory" href="/cloud-native-azure-administrator-guide/kerberos/kerberos-prerequisites-joining-cluster-active-directory.html">
+              Prerequisites for Joining to Active Directory     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Configuring Active Directory" href="/cloud-native-azure-administrator-guide/kerberos/kerberos-configuring-active-directory.html">
+              Configuring Active Directory     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Performing Additional Cluster Configuration" href="/cloud-native-azure-administrator-guide/kerberos/kerberos-additional-cluster-configuration.html">
+              Performing Additional Cluster Configuration     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Using Kerberos Permissions" href="/cloud-native-azure-administrator-guide/kerberos/kerberos-qumulo-permissions.html">
+              Using Kerberos Permissions     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Configuring a Linux Client" href="/cloud-native-azure-administrator-guide/kerberos/kerberos-configuring-linux-client.html">
+              Configuring a Linux Client     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Configuring Cross-Domain Active Directory Trusts" href="/cloud-native-azure-administrator-guide/kerberos/kerberos-configuring-cross-domain-active-directory-trusts.html">
+              Configuring Cross-Domain Active Directory Trusts     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Troubleshooting NFSv4.1 with Kerberos" href="/cloud-native-azure-administrator-guide/kerberos/kerberos-troubleshooting.html">
+              Troubleshooting NFSv4.1 with Kerberos     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  
+
+  
+  
+  
+  <li>
+  
+
+  <a title="SMB" href="/cloud-native-azure-administrator-guide/smb/index.html" data-proofer-ignore>
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  SMB
+  </a>
+ 
+      <ul>
+          
+          
+          
+          <li>
+            <a title="Creating and Managing an SMB Share" href="/cloud-native-azure-administrator-guide/smb/creating-smb-share.html">
+              Creating and Managing an SMB Share     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Managing File Shares by Using the Shared Folders MMC Snap-In" href="/cloud-native-azure-administrator-guide/smb/managing-file-shares-shared-folders-mmc.html">
+              Managing File Shares by Using the Shared Folders MMC Snap-In     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  
+
+  
+  
+  
+  <li>
+  
+
+  <a title="S3 API" href="/cloud-native-azure-administrator-guide/s3-api/index.html" data-proofer-ignore>
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  S3 API
+  </a>
+ 
+      <ul>
+          
+          
+          
+          <li>
+            <a title="Configuring and Using the S3 API" href="/cloud-native-azure-administrator-guide/s3-api/configuring-using-s3-api.html">
+              Configuring and Using the S3 API     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Creating and Managing S3 Access Keys" href="/cloud-native-azure-administrator-guide/s3-api/creating-managing-s3-access-keys.html">
+              Creating and Managing S3 Access Keys     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Creating and Managing S3 Buckets" href="/cloud-native-azure-administrator-guide/s3-api/creating-managing-s3-buckets.html">
+              Creating and Managing S3 Buckets     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Managing Access to S3 Buckets" href="/cloud-native-azure-administrator-guide/s3-api/managing-access-to-s3-buckets.html">
+              Managing Access to S3 Buckets     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Managing Access Policies for S3 Buckets" href="/cloud-native-azure-administrator-guide/s3-api/managing-access-policies-for-s3-buckets.html">
+              Managing Access Policies for S3 Buckets     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Managing Multipart S3 Uploads" href="/cloud-native-azure-administrator-guide/s3-api/managing-multipart-uploads.html">
+              Managing Multipart S3 Uploads     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Managing S3 Bucket Versioning" href="/cloud-native-azure-administrator-guide/s3-api/managing-s3-bucket-versioning.html">
+              Managing S3 Bucket Versioning     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Managing Object Lock" href="/cloud-native-azure-administrator-guide/s3-api/managing-object-lock-for-s3-buckets.html">
+              Managing Object Lock     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Supported Functionality and Limits" href="/cloud-native-azure-administrator-guide/s3-api/supported-s3-functionality-known-limits.html">
+              Supported Functionality and Limits     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  
+
+  
+  
+  
+  <li>
+  
+
+  <a title="Monitoring and Metrics" href="/cloud-native-azure-administrator-guide/monitoring-and-metrics/index.html" data-proofer-ignore>
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  Monitoring and Metrics
+  </a>
+ 
+      <ul>
+          
+          
+          
+          <li>
+            <a title="Configuring Cloud-Based Monitoring and Remote Support" href="/cloud-native-azure-administrator-guide/monitoring-and-metrics/configuring-cloud-based-monitoring-remote-support.html">
+              Configuring Cloud-Based Monitoring and Remote Support     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Connecting to Cloud-Based Monitoring and S3 with a Custom Proxy" href="/cloud-native-azure-administrator-guide/monitoring-and-metrics/connecting-cloud-based-monitoring-s3-custom-proxy.html">
+              Connecting to Cloud-Based Monitoring and S3 with a Custom Proxy     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Restoring the Default Values for Cloud-Based and Nexus Monitoring" href="/cloud-native-azure-administrator-guide/monitoring-and-metrics/restoring-default-values-cloud-based-nexus-monitoring.html">
+              Restoring the Default Values for Cloud-Based and Nexus Monitoring     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li class="active">
+            <a title="How Audit Logging Works in Qumulo Core" href="/cloud-native-azure-administrator-guide/monitoring-and-metrics/how-audit-logging-works.html">
+              How Audit Logging Works in Qumulo Core
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="OpenMetrics API Specification" href="/cloud-native-azure-administrator-guide/monitoring-and-metrics/openmetrics-api-specification.html">
+              OpenMetrics API Specification     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+      
+      
+</ul>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').addClass("active");</script>
+
+
+            </div>
+            
+        
+
+        <!-- Content Column -->
+        <div class="col-md-9" id="tg-sb-content">
+            
+
+
+
+
+
+
+
+<nav>
+<div class="breadcrumb-line">
+  <a href='/'>Home</a> <span>&rsaquo;</span> 
+
+
+  <a href='/cloud-native-azure-administrator-guide/'>Cloud Native Qumulo on Azure Administrator Guide</a> <span>&rsaquo;</span>
+
+
+
+  <a href='/cloud-native-azure-administrator-guide/monitoring-and-metrics/index.html'>Monitoring and Metrics</a> <span>&rsaquo;</span>
+
+
+  How Audit Logging Works
+  </div>
+</nav>
+
+
+            
+
+<div class="post-header">
+   <h1 class="post-title-main">How Audit Logging Works</h1>
+</div>
+
+
+
+<div class="post-content">
+
+    
+    
+<!-- Create the automatic mini-TOC on a page (unless disabled with #toc{display:none;}.
+     Note: If you use HTML tags, add an ID to the heading so that it appears in the mini-TOC.
+-->
+
+<script>
+$(document).ready(function() {
+    $('#toc').toc({
+      minimumHeaders: 2,
+      listType: 'ul',
+      showSpeed: 0,
+      headers: 'h2'
+    });
+
+    /* Account for the space that the floating toolbar takes up. */
+    $('#toc').on('click', 'a', function() {
+      var target = $(this.getAttribute('href')), 
+          scroll_target = target.offset().top
+          $(window).scrollTop(scroll_target - 10);
+      return false
+    });
+});
+</script>
+
+
+<div id="toc"></div>
+
+    
+
+   <p>This section explains the different formats of audit logs for file system operations that Qumulo Core generates whenever a connected client sends a request to a Qumulo cluster.</p>
+   
+     
+     <p>Qumulo Core creates a descriptive audit log message for every operation that a client attempts. Then, Qumulo Core sends the audit log messages to the remote syslog instance that the audit logging configuration specifies in compliance with <a target="_blank" href="https://www.ietf.org/rfc/rfc5424.txt">RFC 5424</a>
+.</p>
+
+<p>This section explains the differences between the levels of detail of audit logs in <a href="#details-in-syslog-csv-format">syslog CSV</a>, <a href="#details-in-syslog-json-format">syslog JSON</a>, and <a href="#details-in-cloudwatch-json-format">CloudWatch JSON</a> formats. (In general, the syslog CSV and CloudWatch JSON formats contain audit logs contain an identical number of fields, some named differently, while the syslog JSON format has additional audit logging information.)</p>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note</b><br />
+<p>Qumulo Core doesn't parse, analyze, index, or visualize the data. For more information, see the following articles on Qumulo Care:</p>
+<ul>
+  <li><a target="_blank" href="https://care.qumulo.com/s/article/Sending-Audit-Logs-for-a-Qumulo-Cloud-Cluster-to-CloudWatch">Sending Audit Logs for a Qumulo Cloud Cluster to Amazon CloudWatch</a></li>
+  <li><a target="_blank" href="https://care.qumulo.com/s/article/Qumulo-Core-Audit-Logging-with-Elasticsearch">Using Qumulo Core Audit Logging with Elasticsearch</a></li>
+  <li><a target="_blank" href="https://care.qumulo.com/s/article/Using-Splunk-with-Qumulo-Core-Audit-Logging">Using Splunk with Qumulo Core Audit Logging</a></li>
+</ul>
+</div>
+
+<p><a id="details-in-syslog-csv-format"></a></p>
+<h2 id="details-included-in-the-default-syslog-csv-format">Details Included in the Default syslog CSV Format</h2>
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note</b><br />
+<ul>
+  <li>Because the user ID, path fields, and secondary path fields can contain characters that must be escaped (such as quotation marks and commas), you must enclose these fields in quotation marks.</li>
+  <li>Qumulo Core system strips out the <code>\n</code> and <code>\r</code> newline characters from the user ID, file path, and secondary file path fields.</li>
+  <li>Both syslog CSV and syslog JSON formats deduplicate repeated file reads. However, for metadata changes&mdash;such as modifications to an access-control list (ACL)&mdash;only the syslog CSV deduplicates repeated operations.</li>
+  <li>Unlike the <a href="#details-in-syslog-json-format">syslog JSON format</a>, the syslog CSV format has only values (no keys) and the fields are empty when unused. The following table helps explain the fields and their possible values.</li> 
+</ul>
+</div>
+
+<p>By default, Qumulo Core formats audit log messages in the syslog CSV format, prefaced by the date, time, and the name of the machine that issues the operation. The syslog CSV format includes the following fields in the following order within the log message body.</p>
+
+<table>
+  <tr>
+    <th style="width: 20%;">Field</th>
+    <th style="width: 40%;">Description</th>
+    <th style="width: 40%;">Possible Values</th>
+  </tr> 
+  <tr>
+    <td>User IP address</td>
+    <td>The IP address of the user that performed the operation.</td>
+    <td>
+      <ul>
+        <li>IPv4 address</li>
+        <li>IPv6 address</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>User ID</td>
+    <td>
+      The ID of the user who performed the operation.
+      <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Qumulo Core specifies the Qumulo authentication ID if it can’t resolve any of the other user ID types.</div>
+
+    </td>
+    <td>
+      String in quotation marks:
+      <ul>
+        <li>Active Directory (AD) username</li>
+        <li>Qumulo local username</li>
+        <li>POSIX user ID (UID)</li>
+        <li>Windows security identifier (SID)</li>
+        <li>Qumulo authentication ID</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>Protocol</td>
+    <td>The protocol that the operation uses.</td>
+    <td>
+      <ul>
+        <li><code>api</code></li>
+        <li><code>ftp</code></li>
+        <li><code>internal</code></li>
+        <li><code>nfsv3</code></li>
+        <li><code>nfsv4.1</code></li>
+        <li><code>s3</code></li>        
+        <li><code>smb</code></li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>Operation Type</td>
+    <td>The operation that the user or the system attempts to perform.</td>
+    <td>
+      <ul>
+        <li><a href="#connectivity-operations">Connectivity operation</a>, such as <code>ftp_login</code></li>
+        <li><a href="#smb-specific-operations">SMB-Specific operation</a>, such as <code>smb_create_share</code></li>        
+        <li><a href="#audit-logging-operations">Audit logging operation</a>, such as <code>remote_syslog_startup</code></li>
+        <li><a href="#file-system-operations">File system operation</a>, such as <code>fs_create</code></li>
+        <li><a href="#rest-api-operations">REST API operation</a>, such as <code>ad_join</code></li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>Operation Status</td>
+    <td>A success status or an error status.</td>
+    <td>
+      <ul>
+        <li>Success status message: <code>ok</code></li>
+        <li>
+          Error message:
+          <ul>
+            <li><a href="#credential-error-messages">Credential error message</a>, such as <code>cred_invalid_sid_error</code></li>
+            <li><a href="#file-system-operation-error-messages">File system operation error message</a>, such as <code>fs_access_perm_not_owner_error</code></li>
+          </ul>
+        </li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>File ID</td>
+    <td>
+      The ID of the file on which the system performed an operation.
+      <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> For non-file entities, this field is empty.</div>
+
+    </td>
+    <td>Integer</td>
+  </tr>
+  <tr>
+    <td>File Path</td>
+    <td>
+      The path to the file on which the system performed an operation.
+      <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> For files accessed by using a snapshot, the system prefixes the path with <code>/.snapshot</code>. (This is the same path prefix that the system uses to access snapshotted files through NFSv3 and SMB.)</div>
+</td>
+    <td>String in quotation marks</td>
+  </tr>
+  <tr>
+    <td>Target File Path</td>
+    <td>The target path to the file on which the system performed a rename or move operation.</td>
+    <td>String in quotation marks</td>
+  </tr>
+</table>
+
+<p>For example:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Jun 6 14:52:28 my-machine qumulo 203.0.113.0,"system",internal,remote_syslog_startup,ok,,"",""
+Jun 6 14:52:28 my-machine qumulo 203.0.113.0,"AD\alice",api,audit_modify_syslog_config,ok,,"",""
+Jun 6 14:52:40 my-machine qumulo 203.0.113.0,"AD\alice",api,rest_login,ok,,"",""
+Jun 6 14:53:22 my-machine qumulo 203.0.113.0,"AD\alice",api,fs_read_metadata,ok,3,"/my_file",""
+Jun 6 14:53:22 my-machine qumulo 203.0.113.0,"AD\alice",api,fs_write_metadata,ok,3,"/my_file",""
+Jun 6 14:53:22 my-machine qumulo 203.0.113.0,"AD\alice",api,fs_write_data,ok,3,"/my_file",""
+Jun 6 14:54:05 my-machine qumulo 203.0.113.0,"AD\alice",api,fs_rename,ok,3,"/my_file","/another_file"
+Jun 6 14:55:24 my-machine qumulo 203.0.113.0,"AD\alice",api,begin_audit_modify_syslog_config,ok,,"",""
+Jun 6 14:55:24 my-machine qumulo 203.0.113.0,"system",internal,remote_syslog_shutdown,ok,,"","
+</code></pre></div></div>
+
+<p><a id="details-in-syslog-json-format"></a></p>
+<h2 id="details-included-in-the-syslog-json-format">Details Included in the syslog JSON Format</h2>
+<p>You can configure Qumulo Core to format audit log messages in the syslog JSON format. The fields in this format are similar to <a href="#details-in-syslog-csv-format">the fields that the syslog CSV format provides</a>, with the following exceptions.</p>
+
+<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> The syslog JSON format isn’t available in the Qumulo Core Web UI.</div>
+
+<table>
+  <tr>
+    <th style="width: 20%;">Field</th>
+    <th style="width: 40%;">Description</th>
+    <th style="width: 40%;">Possible Values</th>
+  </tr> 
+  <tr>
+    <td><code>user_id</code> Object</td>
+    <td>In Qumulo Core 6.0.1 (and higher) the <code>user_id</code> object replaces the single user ID field in the syslog CSV format and contains the fields <code>sid</code>, <code>auth_id</code>, and <code>name</code>.</td>
+    <td>
+      <ul>
+        <li><code>sid</code>: Security identifier</li>
+        <li><code>auth_id</code>: Authentication ID</li>
+        <li><code>name</code>: User role</li>
+      </ul>      
+    </td>
+  </tr>
+  <tr>
+    <td><code>details</code> Object</td>
+    <td>
+      <ul>
+        <li>For most file system operations, the <code>details</code> object replaces the file path, secondary file path, and file ID fields in the syslog CSV format and contains the fields <code>path</code>, <code>target</code>, and <code>file_id</code>.</li>
+        <li>For <code>fs_write_*</code> and <code>fs_read_*</code> operations, the <code>details</code> object also includes the <code>offset</code> and <code>file_size</code> fields.</li>
+        <li>For operations that write metadata or change access-control lists (ACLs), the <code>details</code> object also includes the <code>after</code> and <code>before</code> objects that include fields for current and previous metadata.</li>
+      </ul>
+    </td>
+    <td>
+      <ul>
+        <li>
+          <code>details</code> object:
+          <ul>
+            <li><code>path</code>: File path</li>
+            <li><code>target</code>: Target file path</li>
+            <li><code>file_id</code>: File ID</li>
+          </ul>
+          <code>fs_write_*</code> and <code>fs_read_*</code> operations only:
+          <ul>
+            <li><code>offset</code>: The starting position of the operation</li>
+            <li><code>file_size</code>: The size of the operation</li>                
+          </ul>          
+        </li>
+        <li>
+          <code>after</code> and <code>before</code> objects:
+          <ul>
+            <li><code>ctime</code>: Changed timestamp</li>
+            <li><code>mtime</code>: Modified timestamp</li>
+            <li>
+              <code>owner</code>
+              <ul>
+                <li><code>sid</code>: Security identifier</li>
+                <li><code>auth_id</code>: Authentication ID</li>
+              </ul>
+            </li>
+          </ul>          
+        </li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<p>For example:</p>
+
+<div class="alert alert-success" role="alert"><span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br /> The following example is too wide for the page. To explore this example, you can toggle Reading Mode or scroll the example horizontally.</div>
+
+<div class="highlight"><pre class="highlight wide-example">Jun 6 14:52:28 my-machine qumulo {"user_id": {"auth_id": "1", "sid": "S-1-5-21-9876543210-5678901234-1234567890-1", "name": "system"}, "user_ip": "203.0.113.0", "protocol": "internal", "operation": "remote_syslog_startup", "status": "ok", "details": {}}
+Jun 6 14:52:28 my-machine qumulo {"user_id": {"sid": "S-1-5-21-9876543210-5678901234-1234567890-500", "auth_id": "500", "name": "AD\alice"}, "user_ip": "203.0.113.0", "protocol": "api", "operation": "audit_modify_syslog_config", "status": "ok", "details": {"second_extra_name": "", "extra_name": ""}}
+Jun 6 14:52:40 my-machine qumulo {"user_id": {"auth_id": "500", "name": "AD\alice", "sid": "S-1-5-21-9876543210-5678901234-1234567890-500"}, "user_ip": "203.0.113.0", "protocol": "api", "operation": "rest_login", "status": "ok", "details": {"second_extra_name": "", "extra_name": ""}}
+Jun 6 14:53:22 my-machine qumulo {"user_id": {"sid": "S-1-5-21-9876543210-5678901234-1234567890-500", "name": "AD\alice", "auth_id": "500"}, "user_ip": "203.0.113.0", "protocol": "api", "operation": "fs_read_metadata", "status": "ok", "details": {"path": "/my_file", "file_id": "4"}}
+Jun 6 14:53:22 my-machine qumulo {"user_id": {"name": "AD\alice", "sid": "S-1-5-21-9876543210-5678901234-1234567890-500", "auth_id": "500"}, "user_ip": "203.0.113.0", "protocol": "api", "operation": "fs_write_metadata", "status": "ok", "details": {"file_id": "4", "after": {"ctime": "2024-06-11T14:55:58.187394089Z", "mtime": "2024-06-11T14:55:58.187394089Z", "owner": {"sid": "S-1-5-21-9876543210-5678901234-1234567890-500", "auth_id": "500"}}, "path": "/my_file", "before": {"ctime": "2024-06-11T14:55:43.616292461Z", "mtime": "2024-06-11T14:55:43.616292461Z", "owner": {"sid": "S-1-5-21-9876543210-5678901234-1234567890-500", "auth_id": "500"}}}}
+Jun 6 14:53:22 my-machine qumulo {"user_id": {"auth_id": "500", "sid": "S-1-5-21-9876543210-5678901234-1234567890-500", "name": "AD\alice"}, "user_ip": "203.0.113.0", "protocol": "api", "operation": "fs_write_data", "status": "ok", "details": {"path": "/my_file", "size": 261456, "file_id": "4", "offset": 0, "file_size": 261456}}
+Jun 6 14:54:05 my-machine qumulo {"user_id": {"name": "AD\alice", "auth_id": "500", "sid": "S-1-5-21-9876543210-5678901234-1234567890-500"}, "user_ip": "203.0.113.0", "protocol": "api", "operation": "fs_rename", "status": "fs_entry_exists_error", "details": {"path": "/my_file", "target": "/another_file", "file_id": "4"}}
+Jun 6 14:55:24 my-machine qumulo {"user_id": {"sid": "S-1-5-21-9876543210-5678901234-1234567890-500", "auth_id": "500", "name": "AD\alice"}, "user_ip": "203.0.113.0", "protocol": "api", "operation": "begin_audit_modify_syslog_config", "status": "ok", "details": {"second_extra_name": "", "extra_name": ""}}
+Jun 6 14:55:24 my-machine qumulo {"user_id": {"auth_id": "1", "sid": "S-1-5-21-9876543210-5678901234-1234567890-1", "name": "system"}, "user_ip": "203.0.113.0", "protocol": "internal", "operation": "remote_syslog_shutdown", "status": "ok", "details": {}}</pre></div>
+
+<p><a id="details-in-cloudwatch-json-format"></a></p>
+<h2 id="details-included-in-the-amazon-cloudwatch-json-format">Details Included in the Amazon CloudWatch JSON Format</h2>
+<p>You can configure Qumulo Core to format audit log messages in the Amazon CloudWatch JSON format.</p>
+
+<div class="alert alert-success" role="alert"><span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br /> To download the audit log from the CloudWatch console, on the left navigation panel click <strong>Logs &gt; Log groups</strong>, click a log group, and then on the <strong>Log events</strong> page click <strong>Actions &gt; Copy search results (ASCII)</strong>.</div>
+
+<p>Rather than preface each line of CSV or JSON with the date and time, CloudWatch creates an ASCII table, which contains Unix timestamps in its first column. The second column contains the fields that are similar to the fields that both <a href="#details-in-syslog-csv-format">the syslog CSV format</a> and <a href="#details-in-syslog-json-format">the syslog JSON format</a> provide, with the following exceptions.</p>
+
+<ul>
+  <li>
+    <p>The <code>result</code> field replaces the Operation Status or <code>status</code> field.</p>
+  </li>
+  <li>
+    <p>The <code>object_id</code> field replaces the File ID <code>file_id</code> field.</p>
+  </li>
+  <li>
+    <p>The <code>path_1</code> field replaces the File Path or <code>path</code> field.</p>
+  </li>
+  <li>
+    <p>The <code>path_2</code> field replaces the Target File Path or <code>target</code> field.</p>
+  </li>
+</ul>
+
+<p>For example:</p>
+
+<div class="alert alert-success" role="alert"><span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br /> The following example is too wide for the page. To explore this example, you can toggle Reading Mode or scroll the example horizontally.</div>
+
+<div class="highlight"><pre class="highlight wide-example">------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|   timestamp   |                                                                                         message                                                                                    |
+|---------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 1717679548000 | {"ip_address": "203.0.113.0", "user": "system", "protocol": "internal", "operation": "remote_syslog_startup", "result": "ok", "object_id": "", "path_1": "", "path_2": ""}         |
+| 1717679548000 | {"ip_address": "203.0.113.0", "user": "AD\alice", "protocol": "api", "operation": "audit_modify_syslog_config", "result": "ok", "object_id": "", "path_1": "", "path_2": ""}       |
+| 1717679560000 | {"ip_address": "203.0.113.0", "user": "AD\alice", "protocol": "api", "operation": "rest_login", "result": "ok", "object_id": "", "path_1": "", "path_2": ""}                       |
+| 1717679602000 | {"ip_address": "203.0.113.0", "user": "AD\alice", "protocol": "api", "operation": "fs_read_metadata", "result": "ok", "object_id": "3", "path_1": "/my_file", "path_2": ""}        |
+| 1717679602000 | {"ip_address": "203.0.113.0", "user": "AD\alice", "protocol": "api", "operation": "fs_write_metadata", "result": "ok", "object_id": "3", "path_1": "/my_file", "path_2": ""}       |
+| 1717679602000 | {"ip_address": "203.0.113.0", "user": "AD\alice", "protocol": "api", "operation": "fs_write_data", "result": "ok", "object_id": "3", "path_1": "/my_file", "path_2": ""}           |
+| 1717679645000 | {"ip_address": "203.0.113.0", "user": "AD\alice", "protocol": "api", "operation": "fs_rename", "result": "ok", "object_id": "3", "path_1": "/my_file", "path_2": "/another_file"}  |
+| 1717679724000 | {"ip_address": "203.0.113.0", "user": "AD\alice", "protocol": "api", "operation": "begin_audit_modify_syslog_config", "result": "ok", "object_id": "", "path_1": "", "path_2": ""} |
+| 1717679724000 | {"ip_address": "203.0.113.0", "user": "system", "protocol": "internal", "operation": "remote_syslog_shutdown", "result": "ok", "object_id": "", "path_1": "", "path_2": ""}        |
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</pre></div>
+
+<h2 id="operation-names-in-audit-logging">Operation Names in Audit Logging</h2>
+<p>This section lists the operation names in Qumulo Core audit logging.</p>
+
+<p><a id="connectivity-operations"></a></p>
+<h3 id="connectivity-operations">Connectivity Operations</h3>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">ftp_login</code></li>
+  <li><code class="language-plaintext highlighter-rouge">nfs_mount</code></li>
+  <li><code class="language-plaintext highlighter-rouge">rest_login</code></li>
+  <li><code class="language-plaintext highlighter-rouge">share_connect</code></li>
+  <li><code class="language-plaintext highlighter-rouge">smb_close_handle</code></li>
+  <li><code class="language-plaintext highlighter-rouge">smb_close_session</code></li>
+  <li><code class="language-plaintext highlighter-rouge">smb_login</code></li>
+</ul>
+
+<p><a id="smb-specific-operations"></a></p>
+<h3 id="smb-specific-operations">SMB-Specific Operations</h3>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">smb_create_share</code></li>
+  <li><code class="language-plaintext highlighter-rouge">smb_modify_share</code></li>
+  <li><code class="language-plaintext highlighter-rouge">smb_delete_share</code></li>
+  <li><code class="language-plaintext highlighter-rouge">smb2_notify_req</code></li>
+</ul>
+
+<p><a id="audit-logging-operations"></a></p>
+<h3 id="audit-logging-operations">Audit Logging Operations</h3>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">remote_syslog_shutdown</code></li>
+  <li><code class="language-plaintext highlighter-rouge">remote_syslog_startup</code></li>
+</ul>
+
+<p><a id="file-system-operations"></a></p>
+<h3 id="file-system-operations">File System Operations</h3>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">fs_copy_chunk</code></li>
+  <li><code class="language-plaintext highlighter-rouge">fs_create_directory</code></li>
+  <li><code class="language-plaintext highlighter-rouge">fs_create_directories</code></li>
+  <li><code class="language-plaintext highlighter-rouge">fs_create_file</code></li>
+  <li><code class="language-plaintext highlighter-rouge">fs_create_hard_link</code></li>
+  <li><code class="language-plaintext highlighter-rouge">fs_create_symlink</code></li>
+  <li><code class="language-plaintext highlighter-rouge">fs_create_stream</code></li>
+  <li><code class="language-plaintext highlighter-rouge">fs_create</code>
+    <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> This operation type applies to any but the previous file types.</div>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">fs_delete</code></li>
+  <li><code class="language-plaintext highlighter-rouge">fs_fsstat</code></li>
+  <li><code class="language-plaintext highlighter-rouge">fs_list_directory</code></li>
+  <li><code class="language-plaintext highlighter-rouge">fs_open</code></li>
+  <li><code class="language-plaintext highlighter-rouge">fs_read_data</code></li>
+  <li><code class="language-plaintext highlighter-rouge">fs_read_link</code></li>
+  <li><code class="language-plaintext highlighter-rouge">fs_read_metadata</code></li>
+  <li><code class="language-plaintext highlighter-rouge">fs_read_user_metadata</code></li>
+  <li><code class="language-plaintext highlighter-rouge">fs_rename</code></li>
+  <li><code class="language-plaintext highlighter-rouge">fs_set_quota</code></li>
+  <li><code class="language-plaintext highlighter-rouge">fs_tree_delete</code></li>
+  <li><code class="language-plaintext highlighter-rouge">fs_write_data</code></li>
+  <li><code class="language-plaintext highlighter-rouge">fs_write_metadata</code></li>
+  <li><code class="language-plaintext highlighter-rouge">fs_write_file_lock</code></li>
+  <li><code class="language-plaintext highlighter-rouge">fs_write_user_metadata</code></li>
+</ul>
+
+<p><a id="rest-api-operations"></a></p>
+<h3 id="rest-api-operations">REST API Operations</h3>
+<details>
+  <summary>Click to expand</summary>
+  <ul>
+    <li><code>ad_cancel_operation</code></li>
+    <li><code>ad_dismiss_error</code></li>
+    <li><code>ad_join</code></li>
+    <li><code>ad_kerberos_renew_ticket</code></li>
+    <li><code>ad_leave</code></li>
+    <li><code>ad_modify_settings</code></li>
+    <li><code>ad_reconfigure</code></li>
+    <li><code>audit_modify_cloudwatch_config</code></li>
+    <li><code>audit_modify_syslog_config</code></li>
+    <li><code>auth_add_group</code></li>
+    <li><code>auth_add_member_to_group</code></li>
+    <li><code>auth_assign_role</code></li>
+    <li><code>auth_create_access_token</code></li>
+    <li><code>auth_create_role</code></li>
+    <li><code>auth_create_user</code></li>
+    <li><code>auth_delete_access_token</code></li>
+    <li><code>auth_delete_group</code></li>
+    <li><code>auth_delete_identity_attributes</code></li>
+    <li><code>auth_delete_role</code></li>
+    <li><code>auth_delete_user</code></li>
+    <li><code>auth_get_access_token</code></li>
+    <li><code>auth_get_access_tokens</code></li>
+    <li><code>auth_modify_access_token</code></li>
+    <li><code>auth_modify_group</code></li>
+    <li><code>auth_modify_identity_attributes</code></li>
+    <li><code>auth_modify_role</code></li>
+    <li><code>auth_modify_user</code></li>
+    <li><code>auth_modify_user_password</code></li>
+    <li><code>auth_remove_member_from_group</code></li>
+    <li><code>auth_set_user_defined_mappings</code></li>
+    <li><code>auth_unassign_role</code></li>
+    <li><code>cluster_add_nodes</code></li>
+    <li><code>cluster_calculate_node_add_capacity</code></li>
+    <li><code>cluster_generate_vpn_private_key</code></li>
+    <li><code>cluster_initiate_node_replacement_plan</code></li>
+    <li><code>cluster_install_vpn_keys</code></li>
+    <li><code>cluster_locate_disk_slot</code></li>
+    <li><code>cluster_modify_config</code></li>
+    <li><code>cluster_modify_monitoring_config</code></li>
+    <li><code>cluster_modify_nodes</code></li>
+    <li><code>cluster_modify_nodes_dry_run</code></li>
+    <li><code>cluster_modify_upgrade_config</code></li>
+    <li><code>cluster_nodes_resolve_indeterminate_modification</code></li>
+    <li><code>dns_create</code></li>
+    <li><code>dns_delete</code></li>
+    <li><code>dns_modify</code></li>
+    <li><code>dns_set_lookup_overrides</code></li>
+    <li><code>encryption_create_key</code></li>
+    <li><code>encryption_rotate_keys</code></li>
+    <li><code>encryption_update_config</code></li>
+    <li><code>fs_create_public_key</code></li>
+    <li><code>fs_delete_public_key</code></li>
+    <li><code>fs_modify_atime_settings</code></li>
+    <li><code>fs_modify_notify_settings</code></li>
+    <li><code>fs_modify_permissions_settings</code></li>
+    <li><code>fs_modify_public_key</code></li>
+    <li><code>fs_release_nlm_locks_by_client</code></li>
+    <li><code>fs_release_nlm_locks_by_file</code></li>
+    <li><code>fs_replace_public_key</code></li>
+    <li><code>fs_sample</code></li>
+    <li><code>ftp_modify_settings</code></li>
+    <li><code>identity_create</code></li>
+    <li><code>identity_delete</code></li>
+    <li><code>identity_modify</code></li>
+    <li><code>kerberos_delete_keytab</code></li>
+    <li><code>kerberos_modify_settings</code></li>
+    <li><code>kerberos_set_keytab</code></li>
+    <li><code>ldap_modify_settings</code></li>
+    <li><code>network_create_config</code></li>
+    <li><code>network_delete_config</code></li>
+    <li><code>network_modify_config</code></li>
+    <li><code>network_modify_interface</code></li>
+    <li><code>nfs_create_export</code></li>
+    <li><code>nfs_delete_export</code></li>
+    <li><code>nfs_delete_settings</code></li>
+    <li><code>nfs_modify_export</code></li>
+    <li><code>nfs_modify_settings</code></li>
+    <li><code>node_halt</code></li>
+    <li><code>node_restart</code></li>
+    <li><code>node_set_identify_light</code></li>
+    <li><code>reboot_pause</code></li>
+    <li><code>reboot_resume</code></li>
+    <li><code>reboot_start</code></li>
+    <li><code>replication_abort</code></li>
+    <li><code>replication_abort_object_relationship</code></li>
+    <li><code>replication_authorize_target_relationship</code></li>
+    <li><code>replication_create_object_relationship</code></li>
+    <li><code>replication_create_source_relationship</code></li>
+    <li><code>replication_delete_object_relationship</code></li>
+    <li><code>replication_delete_source_relationship</code></li>
+    <li><code>replication_delete_target_relationship</code></li>
+    <li><code>replication_dismiss_source_relationship_error</code></li>
+    <li><code>replication_dismiss_target_relationship_error</code></li>
+    <li><code>replication_make_target_writable</code></li>
+    <li><code>replication_modify_source_relationship</code></li>
+    <li><code>replication_reconnect_target_relationship</code></li>
+    <li><code>replication_release_queued_snapshot</code></li>
+    <li><code>replication_replicate_object_relationship</code></li>
+    <li><code>replication_reverse_target_relationship</code></li>
+    <li><code>replication_start</code></li>
+    <li><code>replication_target_relationship_lock</code></li>
+    <li><code>s3_abort_upload</code></li>
+    <li><code>s3_add_bucket</code></li>
+    <li><code>s3_bucket_policy_explain_access</code></li>
+    <li><code>s3_create_key</code></li>
+    <li><code>s3_delete_bucket</code></li>
+    <li><code>s3_delete_key</code></li>
+    <li><code>s3_get_bucket_policy</code></li>
+    <li><code>s3_modify_bucket</code></li>
+    <li><code>s3_modify_settings</code></li>
+    <li><code>s3_put_bucket_policy</code></li>
+    <li><code>saml_modify_settings</code></li>
+    <li><code>session_change_password</code></li>
+    <li><code>shutdown_halt</code></li>
+    <li><code>smb_delete_settings</code></li>
+    <li><code>smb_modify_settings</code></li>
+    <li><code>snapshot_create_policy</code></li>
+    <li><code>snapshot_create_snapshot</code></li>
+    <li><code>snapshot_delete_policy</code></li>
+    <li><code>snapshot_delete_snapshot</code></li>
+    <li><code>snapshot_lock_snapshot</code></li>
+    <li><code>snapshot_modify_policy</code></li>
+    <li><code>snapshot_modify_snapshot</code></li>
+    <li><code>snapshot_unlock_snapshot</code></li>
+    <li><code>snapshot_unlock_snapshot_challege</code></li>
+    <li><code>ssl_delete_ca_certificate</code></li>
+    <li><code>ssl_modify_ca_certificate</code></li>
+    <li><code>ssl_modify_certificate</code></li>
+    <li><code>tenant_create</code></li>
+    <li><code>tenant_delete</code></li>
+    <li><code>tenant_modify</code></li>
+    <li><code>time_modify_config</code></li>
+    <li><code>tree_delete_cancel</code></li>
+    <li><code>tree_delete_start</code></li>
+    <li><code>web_ui_modify_settings</code></li>
+  </ul>
+</details>
+
+<h2 id="error-status-messages">Error Status Messages</h2>
+<p>This section lists the error status messages in Qumulo Core audit logging.</p>
+
+<p><a id="credential-error-messages"></a></p>
+<h3 id="credential-error-messages">Credential Error Messages</h3>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">cred_error</code></li>
+  <li><code class="language-plaintext highlighter-rouge">cred_identity_not_supported_error</code></li>
+  <li><code class="language-plaintext highlighter-rouge">cred_invalid_local_user_error</code></li>
+  <li><code class="language-plaintext highlighter-rouge">cred_invalid_sid_error</code></li>
+  <li><code class="language-plaintext highlighter-rouge">cred_remote_resource_unavailable_error</code></li>
+</ul>
+
+<p><a id="file-system-operation-error-messages"></a></p>
+<h3 id="file-system-operation-error-messages">File System Operation Error Messages</h3>
+<details>
+  <summary>Click to expand</summary>
+  <ul>
+    <li><code>fs_access_denied_error</code></li>
+    <li><code>fs_access_error</code></li>
+    <li><code>fs_access_perm_not_owner_error</code></li>
+    <li><code>fs_already_read_only_error</code></li>
+    <li><code>fs_default_stream_of_directory_error</code></li>
+    <li><code>fs_directory_cycle_error</code></li>
+    <li><code>fs_directory_error</code></li>
+    <li><code>fs_directory_hash_exhaustion_error</code></li>
+    <li><code>fs_directory_is_symlink_error</code></li>
+    <li><code>fs_directory_not_empty_error</code></li>
+    <li><code>fs_encountered_portal_error</code></li>
+    <li><code>fs_entry_exists_error</code></li>
+    <li><code>fs_entry_hardlink_ambiguity_error</code></li>
+    <li><code>fs_entry_not_in_subtree_error</code></li>
+    <li><code>fs_exceeded_maximum_stream_count_error</code></li>
+    <li><code>fs_file_dirent_id_stale_error</code></li>
+    <li><code>fs_file_is_named_stream_error</code></li>
+    <li><code>fs_file_is_symlink_error</code></li>
+    <li><code>fs_file_not_covered_by_snapshot_error</code></li>
+    <li><code>fs_file_not_empty_error</code></li>
+    <li><code>fs_file_path_invalid_error</code></li>
+    <li><code>fs_file_size_error</code></li>
+    <li><code>fs_file_too_many_links_error</code></li>
+    <li><code>fs_invalid_acl_error</code></li>
+    <li><code>fs_invalid_attrs_error</code></li>
+    <li><code>fs_invalid_file_type_error</code></li>
+    <li><code>fs_invalid_name_error</code></li>
+    <li><code>fs_invalid_offset_error</code></li>
+    <li><code>fs_invalid_size_error</code></li>
+    <li><code>fs_name_size_error</code></li>
+    <li><code>fs_no_such_entry_error</code></li>
+    <li><code>fs_no_such_file_version_error</code></li>
+    <li><code>fs_no_such_inode_error</code></li>
+    <li><code>fs_no_such_path_error</code></li>
+    <li><code>fs_not_a_directory_error</code></li>
+    <li><code>fs_not_a_file_error</code></li>
+    <li><code>fs_not_a_symlink_error</code></li>
+    <li><code>fs_opened_file_stale_error</code></li>
+    <li><code>fs_path_size_error</code></li>
+    <li><code>fs_permissions_mode_operation_unsupported_error</code></li>
+    <li><code>fs_portal_create_orphanage_error</code></li>
+    <li><code>fs_portal_disconnected_error</code></li>
+    <li><code>fs_portal_ended_error</code></li>
+    <li><code>fs_portal_error</code></li>
+    <li><code>fs_portal_eviction_error</code></li>
+    <li><code>fs_portal_inconsistent_data_error</code></li>
+    <li><code>fs_portal_incorrect_state_error</code></li>
+    <li><code>fs_portal_invalid_lease_break_range_error</code></li>
+    <li><code>fs_portal_not_covered_by_snapshot_error</code></li>
+    <li><code>fs_portal_not_found_error</code></li>
+    <li><code>fs_portal_out_of_order_lease_break_error</code></li>
+    <li><code>fs_quota_limit_already_set_error</code></li>
+    <li><code>fs_quota_limit_does_not_exist_error</code></li>
+    <li><code>fs_quota_no_space_error</code></li>
+    <li><code>fs_read_only_error</code></li>
+    <li><code>fs_revision_mismatch_error</code></li>
+    <li><code>fs_s3_versioning_full_error</code></li>
+    <li><code>fs_same_inode_error</code></li>
+    <li><code>fs_sharing_violation_error</code></li>
+    <li><code>fs_smb_share_root_deleted_error</code></li>
+    <li><code>fs_stream_is_default_error</code></li>
+    <li><code>fs_symlink_loop_error</code></li>
+    <li><code>fs_tag_mismatch_error</code></li>
+    <li><code>fs_too_many_aces_error</code></li>
+    <li><code>fs_user_metadata_continuation_token_type_mismatch</code></li>
+    <li><code>fs_user_metadata_empty_insertion_error</code></li>
+    <li><code>fs_user_metadata_hash_exhaustion_error</code></li>
+    <li><code>fs_user_metadata_key_already_exists</code></li>
+    <li><code>fs_user_metadata_key_not_found</code></li>
+    <li><code>fs_user_metadata_too_large</code></li>
+    <li><code>fs_watcher_missed_events_error</code></li>
+  </ul>
+</details>
+
+   
+
+
+
+
+  
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+      
+<h2 id="related-topics" class="clickable-header top-level-header">Related Topics</h2>
+<ul id="related-topics-list">
+        
+        
+          
+            
+            
+  <li><a href="/cloud-native-azure-administrator-guide/monitoring-and-metrics/configuring-cloud-based-monitoring-remote-support.html">Configuring Cloud-Based Monitoring and Remote Support</a></li>
+            
+          
+            
+            
+  <li><a href="/cloud-native-azure-administrator-guide/monitoring-and-metrics/connecting-cloud-based-monitoring-s3-custom-proxy.html">Connecting to Cloud-Based Monitoring and S3 with a Custom Proxy</a></li>
+            
+          
+            
+            
+  <li><a href="/cloud-native-azure-administrator-guide/monitoring-and-metrics/restoring-default-values-cloud-based-nexus-monitoring.html">Restoring the Default Values for Cloud-Based and Nexus Monitoring</a></li>
+            
+          
+            
+            
+          
+            
+            
+  <li><a href="/cloud-native-azure-administrator-guide/monitoring-and-metrics/openmetrics-api-specification.html">OpenMetrics API Specification</a></li>
+            
+          
+        
+</ul>
+        
+    
+      
+        
+    
+  
+
+
+</div>
+
+        </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+</div>
+<!-- /#main -->
+    </div>
+
+<footer>
+  <div class="footer">
+    <div class="footer-text">
+      Copyright &copy; 2021&ndash;2025 Qumulo, Inc.<br>
+
+      <a class="no_icon footer_link" href="https://qumulo.com/legal/privacy-policy/">Privacy Policy</a> &VerticalSeparator; <a class="no_icon footer_link" href="https://qumulo.com/legal/cookie-policy/">Cookie Policy</a> &VerticalSeparator; <a class="no_icon footer_link" href="https://qumulo.com/terms-hub/">Terms Hub</a><br>
+      <p>
+        <picture>
+          <source type="image/webp" srcset="/images/qumulo-logo-inverse.webp">
+          <source type="image/png" srcset="/images/qumulo-logo-inverse.png">       
+          <img class="footer-logo" src="/images/qumulo-logo-inverse.png" alt="Qumulo Logo">
+        </picture>
+      </p>
+    </div>
+    <div class="footer-grumpquats">
+      <picture>
+        <source type="image/webp" srcset="/images/grumpquats.webp">
+        <source type="image/png" srcset="/images/grumpquats.png"> 
+        <img src="/images/grumpquats.png" class="three-grumpquats" alt="Three Grumpquats">
+      </picture>
+    </div>
+  </div>
+
+  <!-- Cookie Consent - GRT Plugin -->	
+  <div id="cookie-banner" class="grt-cookie">
+    <div class="grt-cookies-msg">
+      <p>We use cookies to improve your user experience and remember your preferences on this website. If you continue to use this website, we will assume that you accept and understand our <a class="no_icon" href="https://qumulo.com/legal/privacy-policy">Privacy Policy</a>, <a class="no_icon" href="https://qumulo.com/legal/cookie-policy/">Cookie Policy</a>, and <a class="no_icon" href="https://qumulo.com/terms-hub/">Terms Hub</a>.</p>
+    </div>
+    <span class="grt-cookie-button">Accept</span>
+  </div>
+  <script src="/js/grt-cookie-consent.js"></script>
+  <script>$(".grt-cookie").grtCookie();</script>
+  
+  <script src="/js/fixdoubledashes.js"></script>
+
+  <script src="/js/expand-collapse.js"></script>
+</footer>
+
+
+</body>
+
+</html>

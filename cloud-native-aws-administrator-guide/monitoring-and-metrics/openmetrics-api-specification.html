@@ -1,0 +1,3350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Qumulo OpenMetrics API Specification | Qumulo Documentation</title>
+<link rel="canonical" href="https://docs.qumulo.com/cloud-native-aws-administrator-guide/monitoring-and-metrics/openmetrics-api-specification.html">
+
+<!-- Organization JSON-LD Schema -->
+<script>
+fetch('/data/organization.json')
+.then(response => response.text())
+.then(structuredDataText => {
+  const script = document.createElement('script');
+  script.setAttribute('type', 'application/ld+json');
+  script.textContent = structuredDataText;
+  document.head.appendChild(script);
+});    
+</script>
+
+<!-- Website JSON-LD Schema -->
+<script>
+fetch('/data/website.json')
+.then(response => response.text())
+.then(structuredDataText => {
+  const script = document.createElement('script');
+  script.setAttribute('type', 'application/ld+json');
+  script.textContent = structuredDataText;
+  document.head.appendChild(script);
+});    
+</script>
+
+<!-- BEGIN TO PREPARE WEBSITE RESOURCES -->  
+<!-- Preload from jsdelivr.net:
+     * Bootstrap stylesheet and script
+     * Font Awesome
+-->
+<link rel="preload" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" as="style" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="preload" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" as="script" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
+<link rel="preload" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" as="style">
+
+<!-- Preload web fonts from fonts.googleapis.com as stylesheets -->
+<link rel="preload" href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" as="style">
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap" as="style">
+
+<!-- Preload scripts from cloudflare.com
+     * jQuery
+     * jQuery Cookie
+     * Anchor JS
+-->
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" as="script">
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js" as="script">
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/5.0.0/anchor.min.js" as="script">
+
+<!-- Preload JavaScript resources -->
+<link rel="preload" href="/js/grt-cookie-consent.js" as="script">
+<link rel="preload" href="/js/googletag.js" as="script">
+<link rel="preload" href="https://www.googletagmanager.com/gtag/js?id=G-81J7N4LMSE" as="script">
+
+<!-- Prefetch DNS from CDNs -->
+<link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+<link rel="dns-prefetch" href="https://fonts.googleapis.com">
+<link rel="dns-prefetch" href="https://fonts.gstatic.com" crossorigin>
+<link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+<link rel="dns-prefetch" href="https://maxcdn.bootstrapcdn.com">
+
+<!-- Preconnect to CDNs -->
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdnjs.cloudflare.com">
+<link rel="preconnect" href="https://maxcdn.bootstrapcdn.com">
+
+<!-- BEGIN TO LOAD WEBSITE RESOURCES -->
+<!-- Load Bootstrap and Font Awesome -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!-- Load local stylesheets inline -->
+<link rel="stylesheet" href="/css/boxshadowproperties.css">
+<link rel="stylesheet" href="/css/customstyles.css">
+<link rel="stylesheet" href="/css/grt-cookies-consent.css">
+<link rel="stylesheet" href="/css/modern-business.css">
+<link rel="stylesheet" href="/css/syntax.css">
+<link rel="stylesheet" href="/css/theme-blue.css">
+
+<!-- Optimize web font load
+     * Loading Noto Color Emoji by using `link rel=stylesheet`
+       syntax causes multiple versions of the font to load.
+     * Additional instructions are necessary for Font Awesome
+       to load with the font-display attribute.
+-->
+<style>
+  @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap');
+  @font-face {
+    font-family:'FontAwesome';
+    src: url('/fonts/fontawesome-webfont.woff?v=4.7.0') format('woff'),
+         url('/fonts/fontawesome-webfont.woff2?v=4.7.0') format('woff2');
+    font-display: swap;
+  }
+</style>
+
+<!-- Web font fallbacks for older browsers -->
+<noscript>
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Montserrat&display=swap">
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap">
+</noscript>
+
+<!-- Define page metadata -->
+<meta name="description" content="This section lists the names, types, labels, and descriptions for the metrics that Qumulo Core 5.3.0 (and higher) emits in OpenMetrics API format.">
+<meta name="apple-mobile-web-app-title" content="Qumulo Documentation">
+<meta name="application-name" content="Qumulo Documentation">
+<meta name="msapplication-TileColor" content="#2b5797">
+<meta name="msapplication-TileImage" content="/images/mstile-144x144.png">
+<meta name="msapplication-config" content="/images/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+<meta name="google-site-verification" content="_KoxPR0qF_ZeMyH6uWvlX84cFRujO_AZ1eq0eT9alAg">
+
+<!-- Open Graph Meta Tags -->
+<meta property="og:title" content="Qumulo OpenMetrics API Specification | Qumulo Documentation">
+<meta property="og:url" content="https://docs.qumulo.com/cloud-native-aws-administrator-guide/monitoring-and-metrics/openmetrics-api-specification.html">
+<meta property="og:site_name" content="Qumulo Documentation">
+<meta property="og:description" content="This section lists the names, types, labels, and descriptions for the metrics that Qumulo Core 5.3.0 (and higher) emits in OpenMetrics API format.">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://docs.qumulo.com/images/docs.qumulo.com-qumulo-documentation-portal-630px.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<!-- Twitter Meta Tags -->
+<meta name="twitter:title" content="Qumulo OpenMetrics API Specification | Qumulo Documentation">
+<meta property="twitter:url" content="https://docs.qumulo.com/cloud-native-aws-administrator-guide/monitoring-and-metrics/openmetrics-api-specification.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:description" content="This section lists the names, types, labels, and descriptions for the metrics that Qumulo Core 5.3.0 (and higher) emits in OpenMetrics API format.">
+<meta name="twitter:image" content="https://docs.qumulo.com/images/docs.qumulo.com-qumulo-documentation-portal-418px.png">
+<meta property="twitter:domain" content="docs.qumulo.com">
+
+<!-- Define favicon variants -->
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="194x194" href="/images/favicon-194x194.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/images/android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+<link rel="manifest" href="/images/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+<!-- Define RSS feed -->
+<!-- TEMPORARILY DISABLED
+<link rel="alternate" href="https://docs.qumulo.com/feed.xml" type="application/rss+xml" title="docs">
+-->
+
+<!-- Load scripts from cloudflare.com -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+<!-- Load local scripts with dependencies on jQuery -->
+<script src="/js/jquery.navgoco.min.js"></script>
+
+<!-- Load scripts from jsdelivr.net and cloudflare.com -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/5.0.0/anchor.min.js"></script>
+
+<!-- Load local scripts with dependencies on Bootstrap and Anchor JS -->
+<script src="/js/toc.js"></script>
+<script src="/js/customscripts.js"></script>
+
+<!-- Fallback for IE9 -->
+<!--[if lt IE 9]>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<!-- Load Google Analytics and exclude GDPR countries from collection -->
+<script defer src="/js/googletag.js"></script>
+<script defer src="https://www.googletagmanager.com/gtag/js?id=G-81J7N4LMSE"></script>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
+    
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: true,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 400,
+                    easing: 'swing'
+                }
+            });
+
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    <script>
+        $(document).ready(function() {
+            // By default, Reading Mode is off and the button is dark.
+            if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
+                // On the landing page, hide the sidebar, make content full-width, and hide the toggle link.
+                $("#tg-sb-sidebar").hide();
+                $("#tg-sb-content").removeClass('col-md-9').addClass('col-md-12');
+                $("#tg-sb-link").hide();
+                $(".projectTitle").hide();
+                $(".navbar-brand").hide();
+                return;
+            }
+
+            if (Cookies.get('reading_mode') == '1' ) {
+                $("#tg-sb-sidebar").toggle();
+                $("#tg-sb-content").toggleClass('col-md-9');
+                $("#tg-sb-content").toggleClass('col-md-12');
+                $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                $("#tg-sb-icon").toggleClass('fa-toggle-off');                   
+            }
+            
+            $("#tg-sb-link").click(function() {
+                if (Cookies.get('reading_mode') == '1' ) {
+                    // If the Reading Mode is on, remove the cookie.
+                    Cookies.remove('reading_mode');
+                } else {
+                    // If the Reading Mode is on, place the cookie.
+                    Cookies.set('reading_mode', '1');
+                }
+                
+                // Toggle the Reading Mode and change the button color.
+                $("#tg-sb-sidebar").toggle();
+                $("#tg-sb-content").toggleClass('col-md-9');
+                $("#tg-sb-content").toggleClass('col-md-12');
+                $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                $("#tg-sb-icon").toggleClass('fa-toggle-off');
+            });
+        });
+    </script>
+    
+
+</head>
+<body>
+<!-- ==================== TOPNAV START ==================== -->
+<div class="above-header"></div>
+
+<div class="header-container">
+<header class="header">
+  <div class="logo">
+    <a class="header-link" href="https://docs.qumulo.com/">
+      <picture>
+	<source type="image/webp" srcset="/images/qumulo-logo.webp">
+	<source type="image/png" srcset="/images/qumulo-logo.png">	      
+        <img class="header-logo" src="/images/qumulo-logo.png" alt="Qumulo Logo">
+      </picture>
+    </a>
+  </div>
+
+  <div class="nav-wrapper">
+    <span class="icon-menu"></span>
+    <nav class="user-nav" id="user-nav">
+      <div class="qf2header">
+        <div class="flex-links">
+          <a class="header-link header-right" href="https://qumulo.com/company/about-qumulo/" target="_blank">About Qumulo</a>
+          <a class="header-link header-right" href="https://care.qumulo.com/s/knowledge" target="_blank">Knowledge Base</a>
+          <a class="header-link header-right" href="https://nexus.qumulo.com/" target="_blank">Nexus</a>
+        </div>
+        <div class="contact-links">
+          <a class="btn-contact no_icon" href="https://qumulocare.slack.com/">Send Slack Message</a>
+          <a class="btn-contact no_icon" href="https://care.qumulo.com/s/submit-a-case">Open a Case</a>
+        </div>
+      </div>
+    </nav>
+</div>
+</header>
+</div>
+<div class="below-header navbar navbar-inverse navbar-static-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/index.html">&nbsp;<span class="projectTitle"> Qumulo Documentation</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- toggle sidebar button -->
+                <li><a id="tg-sb-link" href="#" data-proofer-ignore><i id="tg-sb-icon" class="fa fa-toggle-off"></i> Reading Mode</a></li>
+                <!-- entries without drop-downs appear here -->
+
+
+
+
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+                <li>
+                  <div id="search-demo-container">
+                    <div class="parent">
+                      <div class="search_container">
+                        <main id="search-widget">
+                          <div class="vectara__search_Box">
+                            <form id="vectara__search_form" action="/search.html" method="GET">
+                              <input class="vectara__search_field" name="query" id="search-input" placeholder="What would you like to know?" autofocus>
+                              <button class="vectara__logo_btn">
+                                <img class="vectara__search_logo" width="26" height="28" src="/images/magnifying-glass.png" alt="Search">
+                              </button>
+                            </form>
+                          </div>
+                        </main>
+                        <ul class="tags" id="widget-tags"></ul>
+                      </div>
+                    </div>
+                  </div>
+                  <ul id="list"></ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+        <!-- /.container -->
+</div>
+<!-- ==================== TOPNAV END ==================== -->
+
+<!-- Page Content -->
+
+<div class="container">
+  <div id="main">
+    <!-- Content Row -->
+    <div class="row">
+        
+        
+
+            <!-- Sidebar Column -->
+            <div class="col-md-3" id="tg-sb-sidebar">
+                
+
+<div class="nav nav-buttons">
+  
+    <a target="_blank" rel="noopener" href="https://github.com/qumulo/docs/blob/gh-pages/cloud-native-aws-administrator-guide/monitoring-metrics/openmetrics-api-specification.md" class="btn btn-default githubEditButton no_icon" role="button" data-proofer-ignore><span class="fa fa-github fa-lg"></span> Edit on GitHub</a>
+  
+
+  
+    <a target="_blank" rel="noopener" href="/pdf/cloud-native-qumulo-on-aws-administrator-guide.pdf" class="btn btn-default downloadPDFButton no_icon" role="button"><span class="glyphicon glyphicon-file" aria-hidden="true"></span> Download PDF</a>
+  
+</div>
+
+<ul id="mysidebar" class="nav">
+  <li class="sidebarTitle"> </li>
+  
+  
+  
+      
+  
+  
+  
+
+  
+  
+  
+  <li>
+  
+
+  <a title="Cloud Native Qumulo on AWS Administrator Guide" href="" data-proofer-ignore>
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  Cloud Native Qumulo on AWS Administrator Guide
+  </a>
+ 
+      <ul>
+          
+          
+          
+          <li>
+            <a title="Documentation Home" href="/index.html">
+              Documentation Home     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Guide Table of Contents" href="/cloud-native-aws-administrator-guide/">
+              Guide Table of Contents     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Contacting the Qumulo Care Team" href="/contacting-qumulo-care-team.html">
+              Contacting the Qumulo Care Team     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  
+
+  
+  
+  
+  <li>
+  
+
+  <a title="Getting Started" href="/cloud-native-aws-administrator-guide/getting-started/index.html" data-proofer-ignore>
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  Getting Started
+  </a>
+ 
+      <ul>
+          
+          
+          
+          <li>
+            <a title="How Cloud Native Qumulo Works" href="/cloud-native-aws-administrator-guide/getting-started/how-cloud-native-qumulo-works.html">
+              How Cloud Native Qumulo Works     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Deploying with CloudFormation" href="/cloud-native-aws-administrator-guide/getting-started/cloudformation.html">
+              Deploying with CloudFormation     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Deploying with Terraform" href="/cloud-native-aws-administrator-guide/getting-started/terraform.html">
+              Deploying with Terraform     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Supported Configurations and Known Limits" href="/cloud-native-aws-administrator-guide/getting-started/supported-configurations-known-limits.html">
+              Supported Configurations and Known Limits     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  
+
+  
+  
+  
+  <li>
+  
+
+  <a title="System Upgrades" href="/cloud-native-aws-administrator-guide/upgrading-qumulo-core/index.html" data-proofer-ignore>
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  System Upgrades
+  </a>
+ 
+      <ul>
+          
+          
+          
+          <li>
+            <a title="Feature Log" href="/cloud-native-aws-administrator-guide/upgrading-qumulo-core/feature-log.html">
+              Feature Log     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Performing Upgrades" href="/cloud-native-aws-administrator-guide/upgrading-qumulo-core/performing-upgrades.html">
+              Performing Upgrades     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Replication Version Requirements and Upgrade Recommendations" href="/cloud-native-aws-administrator-guide/upgrading-qumulo-core/replication-version-requirements-upgrade-recommendations.html">
+              Replication Version Requirements and Upgrade Recommendations     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  
+
+  
+  
+  
+  <li>
+  
+
+  <a title="Authentication" href="/cloud-native-aws-administrator-guide/authentication-qumulo-core/index.html" data-proofer-ignore>
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  Authentication
+  </a>
+ 
+      <ul>
+          
+          
+          
+          <li>
+            <a title="Configuring SAML Single Sign-On (SSO)" href="/cloud-native-aws-administrator-guide/authentication-qumulo-core/configuring-saml-single-sign-on-sso.html">
+              Configuring SAML Single Sign-On (SSO)     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Configuring Search Trusted Domains" href="/cloud-native-aws-administrator-guide/authentication-qumulo-core/configuring-search-trusted-domains-active-directory.html">
+              Configuring Search Trusted Domains     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Configuring LDAP" href="/cloud-native-aws-administrator-guide/authentication-qumulo-core/configuring-ldap.html">
+              Configuring LDAP     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Creating and Using Bearer Tokens" href="/cloud-native-aws-administrator-guide/authentication-qumulo-core/creating-using-bearer-tokens-to-authenticate-qumulo-rest-api-calls.html">
+              Creating and Using Bearer Tokens     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  
+
+  
+  
+  
+  <li>
+  
+
+  <a title="Connecting to External Services" href="/cloud-native-aws-administrator-guide/connecting-to-external-services/index.html" data-proofer-ignore>
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  Connecting to External Services
+  </a>
+ 
+      <ul>
+          
+          
+          
+          <li>
+            <a title="Creating and Using Access Tokens" href="/cloud-native-aws-administrator-guide/connecting-to-external-services/creating-using-access-tokens-to-authenticate-external-services-qumulo-core.html">
+              Creating and Using Access Tokens     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Connecting a Kubernetes Cluster" href="/cloud-native-aws-administrator-guide/connecting-to-external-services/connecting-kubernetes-cluster-with-container-storage-interface-csi-driver.html">
+              Connecting a Kubernetes Cluster     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  
+
+  
+  
+  
+  <li>
+  
+
+  <a title="Authorization" href="/cloud-native-aws-administrator-guide/authorization-qumulo-core/index.html" data-proofer-ignore>
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  Authorization
+  </a>
+ 
+      <ul>
+          
+          
+          
+          <li>
+            <a title="Managing File Locks" href="/cloud-native-aws-administrator-guide/authorization-qumulo-core/managing-file-locks.html">
+              Managing File Locks     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Managing Role-Based Access Control" href="/cloud-native-aws-administrator-guide/authorization-qumulo-core/managing-role-based-access-control-rbac.html">
+              Managing Role-Based Access Control     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Managing Cross-Protocol Permissions" href="/cloud-native-aws-administrator-guide/authorization-qumulo-core/managing-cross-protocol-permissions-xpp.html">
+              Managing Cross-Protocol Permissions     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Using SMB Host Restrictions" href="/cloud-native-aws-administrator-guide/authorization-qumulo-core/using-smb-host-restrictions.html">
+              Using SMB Host Restrictions     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Using Active Directory for POSIX Attributes" href="/cloud-native-aws-administrator-guide/authorization-qumulo-core/using-active-directory-for-posix-attributes.html">
+              Using Active Directory for POSIX Attributes     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  
+
+  
+  
+  
+  <li>
+  
+
+  <a title="Storage Management" href="/cloud-native-aws-administrator-guide/storage-management/index.html" data-proofer-ignore>
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  Storage Management
+  </a>
+ 
+      <ul>
+          
+          
+          
+          <li>
+            <a title="Creating and Managing Directory Quotas" href="/cloud-native-aws-administrator-guide/storage-management/creating-directory-quotas.html">
+              Creating and Managing Directory Quotas     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  
+
+  
+  
+  
+  <li>
+  
+
+  <a title="Network Configuration" href="/cloud-native-aws-administrator-guide/network-configuration/index.html" data-proofer-ignore>
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  Network Configuration
+  </a>
+ 
+      <ul>
+          
+          
+          
+          <li>
+            <a title="Required Networking Ports" href="/cloud-native-aws-administrator-guide/network-configuration/required-ports.html">
+              Required Networking Ports     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Configuring IPv6" href="/cloud-native-aws-administrator-guide/network-configuration/configuring-ipv6.html">
+              Configuring IPv6     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Connecting to Multiple Virtual Networks" href="/cloud-native-aws-administrator-guide/network-configuration/connecting-multiple-virtual-networks.html">
+              Connecting to Multiple Virtual Networks     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Configuring Round-Robin DNS on Windows Server" href="/cloud-native-aws-administrator-guide/network-configuration/configuring-round-robin-dns-windows-server.html">
+              Configuring Round-Robin DNS on Windows Server     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  
+
+  
+  
+  
+  <li>
+  
+
+  <a title="Cloud Data Fabric" href="/cloud-native-aws-administrator-guide/cloud-data-fabric/index.html" data-proofer-ignore>
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  Cloud Data Fabric
+  </a>
+ 
+      <ul>
+          
+          
+          
+          <li>
+            <a title="Enabling Cloud Data Fabric" href="/cloud-native-aws-administrator-guide/cloud-data-fabric/how-portal-creation-enables-cloud-data-fabric.html">
+              Enabling Cloud Data Fabric     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Configuring a Portal Relationship" href="/cloud-native-aws-administrator-guide/cloud-data-fabric/configuring-portal-relationship.html">
+              Configuring a Portal Relationship     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Configuring Cache Management" href="/cloud-native-aws-administrator-guide/cloud-data-fabric/configuring-cache-management-for-spoke-portals.html">
+              Configuring Cache Management     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  
+
+  
+  
+  
+  <li>
+  
+
+  <a title="Web UI" href="/cloud-native-aws-administrator-guide/web-ui/index.html" data-proofer-ignore>
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  Web UI
+  </a>
+ 
+      <ul>
+          
+          
+          
+          <li>
+            <a title="Setting the Web UI Login Banner" href="/cloud-native-aws-administrator-guide/web-ui/login-banner.html">
+              Setting the Web UI Login Banner     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Setting the Web UI Inactivity Timeout" href="/cloud-native-aws-administrator-guide/web-ui/inactivity-timeout.html">
+              Setting the Web UI Inactivity Timeout     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  
+
+  
+  
+  
+  <li>
+  
+
+  <a title="qq CLI" href="/cloud-native-aws-administrator-guide/qq-cli/index.html" data-proofer-ignore>
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  qq CLI
+  </a>
+ 
+      <ul>
+          
+          
+          
+          <li>
+            <a title="Getting Started with the qq CLI" href="/cloud-native-aws-administrator-guide/qq-cli/getting-started.html">
+              Getting Started with the qq CLI     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Enabling Autocomplete for the qq CLI" href="/cloud-native-aws-administrator-guide/qq-cli/enabling-autocomplete.html">
+              Enabling Autocomplete for the qq CLI     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  
+
+  
+  
+  
+  <li>
+  
+
+  <a title="Metadata" href="/cloud-native-aws-administrator-guide/metadata/index.html" data-proofer-ignore>
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  Metadata
+  </a>
+ 
+      <ul>
+          
+          
+          
+          <li>
+            <a title="Managing User-Defined Metadata" href="/cloud-native-aws-administrator-guide/metadata/managing-user-defined-metadata.html">
+              Managing User-Defined Metadata     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  
+
+  
+  
+  
+  <li>
+  
+
+  <a title="Snapshots" href="/cloud-native-aws-administrator-guide/snapshots/index.html" data-proofer-ignore>
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  Snapshots
+  </a>
+ 
+      <ul>
+          
+          
+          
+          <li>
+            <a title="How Snapshots Work" href="/cloud-native-aws-administrator-guide/snapshots/how-snapshots-work.html">
+              How Snapshots Work     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Managing Snapshots" href="/cloud-native-aws-administrator-guide/snapshots/managing-snapshots.html">
+              Managing Snapshots     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Locking and Unlocking Snapshots" href="/cloud-native-aws-administrator-guide/snapshots/locking-unlocking-snapshots.html">
+              Locking and Unlocking Snapshots     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Recovering Files by Using Snapshots" href="/cloud-native-aws-administrator-guide/snapshots/recovering-files.html">
+              Recovering Files by Using Snapshots     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  
+
+  
+  
+  
+  <li>
+  
+
+  <a title="Encryption and Data Security" href="/cloud-native-aws-administrator-guide/encryption-data-security/index.html" data-proofer-ignore>
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  Encryption and Data Security
+  </a>
+ 
+      <ul>
+          
+          
+          
+          <li>
+            <a title="Managing Encryption at Rest" href="/cloud-native-aws-administrator-guide/encryption-data-security/managing-encryption-at-rest.html">
+              Managing Encryption at Rest     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Managing SMB3 Encryption in Transit" href="/cloud-native-aws-administrator-guide/encryption-data-security/managing-smb3-encryption-in-transit.html">
+              Managing SMB3 Encryption in Transit     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Generating and Storing ECDSA Keys" href="/cloud-native-aws-administrator-guide/encryption-data-security/generating-storing-ecdsa-keys.html">
+              Generating and Storing ECDSA Keys     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Managing Security Keys" href="/cloud-native-aws-administrator-guide/encryption-data-security/managing-security-keys.html">
+              Managing Security Keys     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Installing a Signed SSL Certificate" href="/cloud-native-aws-administrator-guide/encryption-data-security/installing-signed-ssl-certificate.html">
+              Installing a Signed SSL Certificate     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  
+
+  
+  
+  
+  <li>
+  
+
+  <a title="Data Replication" href="/cloud-native-aws-administrator-guide/replicating-data/index.html" data-proofer-ignore>
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  Data Replication
+  </a>
+ 
+      <ul>
+          
+          
+          
+          <li>
+            <a title="Creating and Managing a Continuous Replication Relationship" href="/cloud-native-aws-administrator-guide/replicating-data/creating-managing-continuous-replication-relationship.html">
+              Creating and Managing a Continuous Replication Relationship     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Shift-To Amazon S3" href="/cloud-native-aws-administrator-guide/replicating-data/shift-to-s3.html">
+              Shift-To Amazon S3     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Shift-From Amazon S3" href="/cloud-native-aws-administrator-guide/replicating-data/shift-from-s3.html">
+              Shift-From Amazon S3     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  
+
+  
+  
+  
+  <li>
+  
+
+  <a title="File System Changes" href="/cloud-native-aws-administrator-guide/watching-file-attribute-directory-changes/index.html" data-proofer-ignore>
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  File System Changes
+  </a>
+ 
+      <ul>
+          
+          
+          
+          <li>
+            <a title="How File System Change Notifications Work" href="/cloud-native-aws-administrator-guide/watching-file-attribute-directory-changes/how-file-system-change-notifications-work.html">
+              How File System Change Notifications Work     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Watching for Changes with SMB2 CHANGE_NOTIFY" href="/cloud-native-aws-administrator-guide/watching-file-attribute-directory-changes/smb2-change-notify.html">
+              Watching for Changes with SMB2 CHANGE_NOTIFY     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Watching for Changes with REST" href="/cloud-native-aws-administrator-guide/watching-file-attribute-directory-changes/rest.html">
+              Watching for Changes with REST     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  
+
+  
+  
+  
+  <li>
+  
+
+  <a title="NFS" href="/cloud-native-aws-administrator-guide/nfs/index.html" data-proofer-ignore>
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  NFS
+  </a>
+ 
+      <ul>
+          
+          
+          
+          <li>
+            <a title="Creating and Managing an NFS Export" href="/cloud-native-aws-administrator-guide/nfs/creating-nfs-export.html">
+              Creating and Managing an NFS Export     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Enabling and Using NFSv4.1" href="/cloud-native-aws-administrator-guide/nfs/nfsv4.1-enabling-using.html">
+              Enabling and Using NFSv4.1     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Managing File Access Permissions with ACLs" href="/cloud-native-aws-administrator-guide/nfs/nfsv4.1-acls.html">
+              Managing File Access Permissions with ACLs     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Host Access Rules for NFS Exports" href="/cloud-native-aws-administrator-guide/nfs/configuring-troubleshooting-host-access-rules-nfs-exports.html">
+              Host Access Rules for NFS Exports     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  
+
+  
+  
+  
+  <li>
+  
+
+  <a title="NFSv4.1 with Kerberos" href="/cloud-native-aws-administrator-guide/kerberos/index.html" data-proofer-ignore>
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  NFSv4.1 with Kerberos
+  </a>
+ 
+      <ul>
+          
+          
+          
+          <li>
+            <a title="How NFSv4.1 Works with Kerberos" href="/cloud-native-aws-administrator-guide/kerberos/kerberos-with-qumulo-core.html">
+              How NFSv4.1 Works with Kerberos     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Prerequisites for Joining to Active Directory" href="/cloud-native-aws-administrator-guide/kerberos/kerberos-prerequisites-joining-cluster-active-directory.html">
+              Prerequisites for Joining to Active Directory     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Configuring Active Directory" href="/cloud-native-aws-administrator-guide/kerberos/kerberos-configuring-active-directory.html">
+              Configuring Active Directory     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Performing Additional Cluster Configuration" href="/cloud-native-aws-administrator-guide/kerberos/kerberos-additional-cluster-configuration.html">
+              Performing Additional Cluster Configuration     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Using Kerberos Permissions" href="/cloud-native-aws-administrator-guide/kerberos/kerberos-qumulo-permissions.html">
+              Using Kerberos Permissions     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Configuring a Linux Client" href="/cloud-native-aws-administrator-guide/kerberos/kerberos-configuring-linux-client.html">
+              Configuring a Linux Client     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Configuring Cross-Domain Active Directory Trusts" href="/cloud-native-aws-administrator-guide/kerberos/kerberos-configuring-cross-domain-active-directory-trusts.html">
+              Configuring Cross-Domain Active Directory Trusts     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Troubleshooting NFSv4.1 with Kerberos" href="/cloud-native-aws-administrator-guide/kerberos/kerberos-troubleshooting.html">
+              Troubleshooting NFSv4.1 with Kerberos     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  
+
+  
+  
+  
+  <li>
+  
+
+  <a title="SMB" href="/cloud-native-aws-administrator-guide/smb/index.html" data-proofer-ignore>
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  SMB
+  </a>
+ 
+      <ul>
+          
+          
+          
+          <li>
+            <a title="Creating and Managing an SMB Share" href="/cloud-native-aws-administrator-guide/smb/creating-smb-share.html">
+              Creating and Managing an SMB Share     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Managing File Shares by Using the Shared Folders MMC Snap-In" href="/cloud-native-aws-administrator-guide/smb/managing-file-shares-shared-folders-mmc.html">
+              Managing File Shares by Using the Shared Folders MMC Snap-In     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  
+
+  
+  
+  
+  <li>
+  
+
+  <a title="S3 API" href="/cloud-native-aws-administrator-guide/s3-api/index.html" data-proofer-ignore>
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  S3 API
+  </a>
+ 
+      <ul>
+          
+          
+          
+          <li>
+            <a title="Configuring and Using the S3 API" href="/cloud-native-aws-administrator-guide/s3-api/configuring-using-s3-api.html">
+              Configuring and Using the S3 API     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Creating and Managing S3 Access Keys" href="/cloud-native-aws-administrator-guide/s3-api/creating-managing-s3-access-keys.html">
+              Creating and Managing S3 Access Keys     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Creating and Managing S3 Buckets" href="/cloud-native-aws-administrator-guide/s3-api/creating-managing-s3-buckets.html">
+              Creating and Managing S3 Buckets     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Managing Access to S3 Buckets" href="/cloud-native-aws-administrator-guide/s3-api/managing-access-to-s3-buckets.html">
+              Managing Access to S3 Buckets     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Managing Access Policies for S3 Buckets" href="/cloud-native-aws-administrator-guide/s3-api/managing-access-policies-for-s3-buckets.html">
+              Managing Access Policies for S3 Buckets     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Managing Multipart S3 Uploads" href="/cloud-native-aws-administrator-guide/s3-api/managing-multipart-uploads.html">
+              Managing Multipart S3 Uploads     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Managing S3 Bucket Versioning" href="/cloud-native-aws-administrator-guide/s3-api/managing-s3-bucket-versioning.html">
+              Managing S3 Bucket Versioning     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Managing Object Lock" href="/cloud-native-aws-administrator-guide/s3-api/managing-object-lock-for-s3-buckets.html">
+              Managing Object Lock     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Supported Functionality and Limits" href="/cloud-native-aws-administrator-guide/s3-api/supported-s3-functionality-known-limits.html">
+              Supported Functionality and Limits     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  
+
+  
+  
+  
+  <li>
+  
+
+  <a title="Monitoring and Metrics" href="/cloud-native-aws-administrator-guide/monitoring-and-metrics/index.html" data-proofer-ignore>
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  Monitoring and Metrics
+  </a>
+ 
+      <ul>
+          
+          
+          
+          <li>
+            <a title="Configuring Cloud-Based Monitoring and Remote Support" href="/cloud-native-aws-administrator-guide/monitoring-and-metrics/configuring-cloud-based-monitoring-remote-support.html">
+              Configuring Cloud-Based Monitoring and Remote Support     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Connecting to Cloud-Based Monitoring and S3 with a Custom Proxy" href="/cloud-native-aws-administrator-guide/monitoring-and-metrics/connecting-cloud-based-monitoring-s3-custom-proxy.html">
+              Connecting to Cloud-Based Monitoring and S3 with a Custom Proxy     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Restoring the Default Values for Cloud-Based and Nexus Monitoring" href="/cloud-native-aws-administrator-guide/monitoring-and-metrics/restoring-default-values-cloud-based-nexus-monitoring.html">
+              Restoring the Default Values for Cloud-Based and Nexus Monitoring     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="How Audit Logging Works in Qumulo Core" href="/cloud-native-aws-administrator-guide/monitoring-and-metrics/how-audit-logging-works.html">
+              How Audit Logging Works in Qumulo Core     
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li class="active">
+            <a title="OpenMetrics API Specification" href="/cloud-native-aws-administrator-guide/monitoring-and-metrics/openmetrics-api-specification.html">
+              OpenMetrics API Specification
+              <span class="tag-container">
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+      
+      
+</ul>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').addClass("active");</script>
+
+
+            </div>
+            
+        
+
+        <!-- Content Column -->
+        <div class="col-md-9" id="tg-sb-content">
+            
+
+
+
+
+
+
+
+<nav>
+<div class="breadcrumb-line">
+  <a href='/'>Home</a> <span>&rsaquo;</span> 
+
+
+  <a href='/cloud-native-aws-administrator-guide/'>Cloud Native Qumulo on AWS Administrator Guide</a> <span>&rsaquo;</span>
+
+
+
+  <a href='/cloud-native-aws-administrator-guide/monitoring-and-metrics/index.html'>Monitoring and Metrics</a> <span>&rsaquo;</span>
+
+
+  Qumulo OpenMetrics API Specification
+  </div>
+</nav>
+
+
+            
+
+<div class="post-header">
+   <h1 class="post-title-main">Qumulo OpenMetrics API Specification</h1>
+</div>
+
+
+
+<div class="post-content">
+
+    
+    
+<!-- Create the automatic mini-TOC on a page (unless disabled with #toc{display:none;}.
+     Note: If you use HTML tags, add an ID to the heading so that it appears in the mini-TOC.
+-->
+
+<script>
+$(document).ready(function() {
+    $('#toc').toc({
+      minimumHeaders: 2,
+      listType: 'ul',
+      showSpeed: 0,
+      headers: 'h2'
+    });
+
+    /* Account for the space that the floating toolbar takes up. */
+    $('#toc').on('click', 'a', function() {
+      var target = $(this.getAttribute('href')), 
+          scroll_target = target.offset().top
+          $(window).scrollTop(scroll_target - 10);
+      return false
+    });
+});
+</script>
+
+
+<div id="toc"></div>
+
+    
+
+   <p>This section lists the names, types, labels, and descriptions for the metrics that Qumulo Core 5.3.0 (and higher) emits in OpenMetrics API format.</p>
+   
+     
+     <p>The Qumulo OpenMetrics API has a single endpoint that provides a complete view of point-in-time telemetry from Qumulo Core to monitoring systems. These systems, such as <a href="https://github.com/prometheus/prometheus">Prometheus</a>, can consume the OpenMetrics data format that the Qumulo REST API emits without custom code or a monitoring agent. For more information about data formats, see your monitoring system’s documentation.</p>
+
+<h2 id="accessing-qumulo-metrics">Accessing Qumulo Metrics</h2>
+<p>Qumulo metrics are available at the following endpoint.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>https://&lt;my-cluster-hostname&gt;:8000/v2/metrics/endpoints/default/data
+</code></pre></div></div>
+
+<p>You can configure a monitoring system that supports the <a href="https://github.com/OpenObservability/OpenMetrics/blob/main/specification/OpenMetrics.md">OpenMetrics Specification</a> to use <a href="../connecting-to-external-services/creating-using-access-tokens-to-authenticate-external-services-qumulo-core.html">bearer token authentication</a> to access this endpoint.</p>
+
+<h2 id="metric-types">Metric Types</h2>
+<p>All Qumulo metrics belong to one of the following OpenMetrics types.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th class="width-15">Metric Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a id="metric-type-counter"></a><code>counter</code></td>
+      <td>An integer that increases monotonically from zero, stored in <code>&lt;metric_name&gt;_count</code>. <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> During normal operation, the value of <code>counter</code> never decreases.</div>
+</td>
+    </tr>
+    <tr>
+      <td><a id="metric-type-gauge"></a><code>gauge</code></td>
+      <td>A value that represents a single integer (similar to <code>counter</code>), stored in <code>&lt;metric_name&gt;</code>. <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> During normal operation, the value of a <code>gauge</code> metric might increase or decrease.</div>
+</td>
+    </tr>
+    <tr>
+      <td><a id="metric-type-histogram"></a><code>histogram</code></td>
+      <td><p>A representation of a series of <em>buckets</em>, where each bucket tracks values within a specific range.</p><p>A histogram has a <code>count</code> field and a <code>sum</code> field, stored in <code>&lt;metric_name&gt;_count</code> (the total number of samples) and <code>&lt;metric_name&gt;_sum</code> (the sum of all samples). Qumulo Core emits a single bucket that contains all samples.</p> <div class="alert alert-success" role="alert"><span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br /> You can use <code>histogram</code> metrics to keep track of averages by dividing the <code>sum</code> field by the <code>count</code> field.</div>
+</td>
+    </tr>
+    <tr>
+      <td><a id="metric-type-info"></a><code>info</code></td>
+      <td>Informational text about the system, stored in <code>&lt;metric_name&gt;_info</code>. An <code>info</code> metric always has a value of <code>1</code> and labels that contain detailed information.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>For more information, see <a href="https://github.com/OpenObservability/OpenMetrics/blob/main/specification/OpenMetrics.md#metric-types">Metric Types</a> in the OpenMetrics Specification.</p>
+
+<h2 id="metric-labels">Metric Labels</h2>
+<p>The OpenMetrics format allows for metric labeling for communicating additional information. To provide context for metrics, Qumulo Core emits metric-specific labels. For example, the <code class="language-plaintext highlighter-rouge">name</code> of a protocol operation or the <code class="language-plaintext highlighter-rouge">url</code> of a remote server. For more information, see <a href="#available-labels">Available Labels</a>.</p>
+
+<h2 id="available-metrics">Available Metrics</h2>
+<p>The following table lists metric names, types, labels, and descriptions.</p>
+
+<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> For Qumulo as a Service, all metrics with a <code class="language-plaintext highlighter-rouge">node_id</code> label are unavailable because they refer to specific hardware.</div>
+
+<table class="pdf-reduce">
+  <thead>
+    <tr>
+      <th class="width-30">Metric Name</th>
+      <th class="width-13">Metric Type</th>
+      <th>Labels</th>
+      <th class="width-10">Suppor&shy;ted from Qumulo Core Version</th>
+      <th class="width-20">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>qumulo</code></td>
+      <td><a href="#metric-type-info"><code>info</code></a></td>
+      <td>
+        <ul>
+          <li class="pdf-friendly"><code>max_drive_failures</code></li>
+          <li class="pdf-friendly"><code>max_node_failures</code></li>
+          <li class="pdf-friendly"><code>name</code></li>
+          <li class="pdf-friendly"><code>platform</code></li>
+          <li class="pdf-friendly"><code>service_model</code></li>
+          <li class="pdf-friendly"><code>uuid</code></li>
+          <li class="pdf-friendly">
+            <code>version</code>
+            <div class="alert alert-success" role="alert"><span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br /> Don’t confuse this label for the <em>Qumulo Core version</em> with the identically named label for the <em>kernel version</em> for the <code>qumulo_kernel</code> metric.</div>
+ 
+          </li>
+        </ul>
+      </td>
+      <td>5.3.0</td>
+      <td>Qumulo Core information, including the cluster name, cluster UUID, and the current Qumulo Core version.</td>
+    </tr>
+
+    <tr>
+      <td><code>qumulo_node</code></td>
+      <td><a href="#metric-type-info"><code>info</code></a></td>
+      <td>
+        <ul>
+          <li class="pdf-friendly"><a href="#metric-label-node_id"><code>node_id</code></a></li>
+          <li class="pdf-friendly"><code>node_model</code></li>
+        </ul>
+      </td>
+      <td>6.0.2</td>
+      <td>Information about the nodes in the cluster, including the node ID and the node model</td>
+    </tr>
+    <tr>
+      <td><code>qumulo_ad_netlogon_request<br />_errors</code></td>
+      <td><a href="#metric-type-counter"><code>counter</code></a></td>
+      <td>
+        <ul>
+          <li class="pdf-friendly"><a href="#metric-label-domain_url"><code>domain_url</code></a></li>
+          <li class="pdf-friendly"><a href="#metric-label-server_url"><code>server_url</code></a></li>
+        </ul>
+      </td>
+      <td>5.3.0</td>
+      <td>The total number of Active Directory (AD) <code>NETLOGON</code> requests that resulted in an error</td>
+    </tr>
+    <tr>
+      <td><code>qumulo_ad_netlogon_request<br />_latency_seconds</code></td>
+      <td><a href="#metric-type-histogram"><code>histogram</code></a></td>
+      <td>
+        <ul>
+          <li class="pdf-friendly"><a href="#metric-label-domain_url"><code>domain_url</code></a></li>
+          <li class="pdf-friendly"><a href="#metric-label-server_url"><code>server_url</code></a></li>
+        </ul>
+      </td>
+      <td>5.3.0</td>
+      <td>The total latency for AD <code>NETLOGON</code> requests</td>
+    </tr>
+    <tr>
+      <td><code>qumulo_ad_netlogon_requests</code></td>
+      <td><a href="#metric-type-counter"><code>counter</code></a></td>
+      <td>
+        <ul>
+          <li class="pdf-friendly"><a href="#metric-label-domain_url"><code>domain_url</code></a></li>
+          <li class="pdf-friendly"><a href="#metric-label-server_url"><code>server_url</code></a></li>
+        </ul>
+      </td>
+      <td>5.3.0</td>
+      <td>The total number of completed AD <code>NETLOGON</code> operations</td>
+    </tr>
+    <tr>
+      <td><code>qumulo_cpu_crit_temperature_celsius</code></td>
+      <td><a href="#metric-type-gauge"><code>gauge</code></a></td>
+      <td>
+        <ul>
+          <li class="pdf-friendly"><a href="#metric-label-cpu"><code>cpu</code></a></li>
+          <li class="pdf-friendly"><a href="#metric-label-node_id"><code>node_id</code></a></li>
+        </ul>
+      </td>
+      <td>7.2.0.2</td>
+      <td>The critical temperature threshold for each physical CPU</td>
+    </tr>
+    <tr>
+      <td><code>qumulo_cpu_max_temperature<br />_celsius</code></td>
+      <td><a href="#metric-type-gauge"><code>gauge</code></a></td>
+      <td>
+        <ul>
+          <li class="pdf-friendly"><a href="#metric-label-cpu"><code>cpu</code></a></li>
+          <li class="pdf-friendly"><a href="#metric-label-node_id"><code>node_id</code></a></li>
+        </ul>
+      </td>
+      <td>5.3.1</td>
+      <td>The maximum temperature threshold for each physical CPU</td>
+    </tr>
+    <tr>
+      <td><code>qumulo_cpu_temperature<br />_celsius</code></td>
+      <td><a href="#metric-type-gauge"><code>gauge</code></a></td>
+      <td>
+        <ul>
+          <li class="pdf-friendly"><a href="#metric-label-cpu"><code>cpu</code></a></li>
+          <li class="pdf-friendly"><a href="#metric-label-node_id"><code>node_id</code></a></li>
+        </ul>
+      </td>
+      <td>5.3.0</td>
+      <td>The temperature for each physical CPU, in degrees Celsius</td>
+    </tr>    
+    <tr>
+      <td><code>qumulo_disk_endurance<br />_percent</code></td>
+      <td><a href="#metric-type-gauge"><code>gauge</code></a></td>
+      <td>
+        <ul>
+          <li class="pdf-friendly"><a href="#metric-label-disk_type"><code>disk_type</code></a></li>
+          <li class="pdf-friendly"><a href="#metric-label-drive_bay"><code>drive_bay</code></a></li>
+          <li class="pdf-friendly"><a href="#metric-label-node_id"><code>node_id</code></a></li>
+        </ul>
+      </td>
+      <td>5.3.1</td>
+      <td>The remaining disk endurance value for each disk in the cluster, ranging <code>100</code> (no disk wear) to <code>0</code> (disk is worn fully)</td>
+    </tr>
+    <tr>
+      <td><code>qumulo_disk_transport<br />_errors</code></td>
+      <td><a href="#metric-type-counter"><code>counter</code></a></td>
+      <td>
+        <ul>
+          <li class="pdf-friendly"><a href="#metric-label-disk_type"><code>disk_type</code></a></li>
+          <li class="pdf-friendly"><a href="#metric-label-drive_bay"><code>drive_bay</code></a></li>
+          <li class="pdf-friendly"><a href="#metric-label-node_id"><code>node_id</code></a></li>
+        </ul>
+      </td>
+      <td>5.3.2</td>
+      <td>The total number of communication errors between the specified drive and its host.</td>
+    </tr>
+    <tr>
+      <td><code>qumulo_disk_uncorrectable<br />_media_errors</code></td>
+      <td><a href="#metric-type-counter"><code>counter</code></a></td>
+      <td>
+        <ul>
+          <li class="pdf-friendly"><a href="#metric-label-disk_type"><code>disk_type</code></a></li>
+          <li class="pdf-friendly"><a href="#metric-label-drive_bay"><code>drive_bay</code></a></li>
+          <li class="pdf-friendly"><a href="#metric-label-node_id"><code>node_id</code></a></li>
+        </ul>
+      </td>
+      <td>5.3.2</td>
+      <td>The total number of uncorrectable errors on the specified drive's physical media.</td>
+    </tr>
+    <tr>
+      <td><code>qumulo_disk_is_unhealthy</code></td>
+      <td><a href="#metric-type-gauge"><code>gauge</code></a></td>
+      <td>
+        <ul>
+          <li class="pdf-friendly"><a href="#metric-label-disk_type"><code>disk_type</code></a></li>
+          <li class="pdf-friendly"><a href="#metric-label-drive_bay"><code>drive_bay</code></a></li>
+          <li class="pdf-friendly"><a href="#metric-label-node_id"><code>node_id</code></a></li>
+        </ul>
+      </td>
+      <td>5.3.0</td>
+      <td>The health of each disk in the cluster, ranging from <code>0</code> (the disk is healthy) to <code>1</code> (the disk is unhealthy)</td>
+    </tr>
+    <tr>
+      <td><code>qumulo_disk_operation<br />_latency_seconds</code></td>
+      <td><a href="#metric-type-histogram"><code>histogram</code></a></td>
+      <td>
+        <ul>
+          <li class="pdf-friendly"><a href="#metric-label-disk_type"><code>disk_type</code></a></li>
+          <li class="pdf-friendly"><a href="#metric-label-drive_bay"><code>drive_bay</code></a></li>
+          <li class="pdf-friendly"><a href="#metric-label-io_type"><code>io_type</code></a></li>
+          <li class="pdf-friendly"><a href="#metric-label-node_id"><code>node_id</code></a></li>
+        </ul>
+      </td>
+      <td>5.3.0</td>
+      <td>The total latency for disk I/O operations</td>
+    </tr>
+    <tr>
+      <td><code>qumulo_fan_speed_rpm</code></td>
+      <td><a href="#metric-type-gauge"><code>gauge</code></a></td>
+      <td>
+        <ul>
+          <li class="pdf-friendly"><a href="#metric-label-fan"><code>fan</code></a></li>
+          <li class="pdf-friendly"><a href="#metric-label-node_id"><code>node_id</code></a></li>
+        </ul>
+      </td>
+      <td>5.3.0</td>
+      <td>The fan speed, in RPM</td>
+    </tr>
+    <tr>
+      <td><code>qumulo_fs_capacity_bytes</code></td>
+      <td><a href="#metric-type-gauge"><code>gauge</code></a></td>
+      <td>&mdash;</td>
+      <td>5.3.0</td>
+      <td>The total cluster space, in bytes</td>
+    </tr>
+    <tr>
+      <td><code>qumulo_fs_directory<br />_tree_entries</code></td>
+      <td><a href="#metric-type-gauge"><code>gauge</code></a></td>
+      <td>
+        <ul>
+          <li class="pdf-friendly"><a href="#metric-label-entry_type"><code>entry_type</code></a></li>
+          <li class="pdf-friendly"><a href="#metric-label-path"><code>path</code></a></li>
+        </ul>
+      </td>
+      <td>5.3.0</td>
+      <td>The number of file system objects on the cluster, sorted by object type</td>
+    </tr>
+    <tr>
+      <td><code>qumulo_fs_directory<br />_used_bytes</code></td>
+      <td><a href="#metric-type-gauge"><code>gauge</code></a></td>
+      <td>
+        <ul>
+          <li class="pdf-friendly"><a href="#metric-label-path"><code>path</code></a></li>
+          <li class="pdf-friendly"><a href="#metric-label-usage_type"><code>usage_type</code></a></li>
+        </ul>
+      </td>
+      <td>5.3.0</td>
+      <td>The amount of space that object types use, in bytes</td>
+    </tr>
+    <tr>
+      <td><code>qumulo_fs_free_bytes</code></td>
+      <td><a href="#metric-type-gauge"><code>gauge</code></a></td>
+      <td>&mdash;</td>
+      <td>5.3.0</td>
+      <td>The free space on the cluster, in bytes</td>
+    </tr>
+    <tr>
+      <td><code>qumulo_fs_snapshots</code></td>
+      <td><a href="#metric-type-gauge"><code>gauge</code></a></td>
+      <td>&mdash;</td>
+      <td>5.3.0</td>
+      <td>The number of snapshots on the cluster</td>
+    </tr>
+    <tr>
+      <td><code>qumulo_ldap_lookup<br />_request_errors</code></td>
+      <td><a href="#metric-type-counter"><code>counter</code></a></td>
+      <td>
+        <ul>
+          <li class="pdf-friendly"><a href="#metric-label-domain_url"><code>domain_url</code></a></li>
+          <li class="pdf-friendly"><a href="#metric-label-server_url"><code>server_url</code></a></li>
+        </ul>
+      </td>
+      <td>5.3.0</td>
+      <td>The total number of LDAP requests that resulted in an error</td>
+    </tr>
+    <tr>
+      <td><code>qumulo_ldap_lookup<br />_request_latency_seconds</code></td>
+      <td><a href="#metric-type-histogram"><code>histogram</code></a></td>
+      <td>
+        <ul>
+          <li class="pdf-friendly"><a href="#metric-label-domain_url"><code>domain_url</code></a></li>
+          <li class="pdf-friendly"><a href="#metric-label-server_url"><code>server_url</code></a></li>
+        </ul>
+      </td>
+      <td>5.3.0</td>
+      <td>The total latency of LDAP requests</td>
+    </tr>
+    <tr>
+      <td><code>qumulo_ldap_lookup<br />_requests</code></td>
+      <td><a href="#metric-type-counter"><code>counter</code></a></td>
+      <td>
+        <ul>
+          <li class="pdf-friendly"><a href="#metric-label-domain_url"><code>domain_url</code></a></li>
+          <li class="pdf-friendly"><a href="#metric-label-server_url"><code>server_url</code></a></li>
+        </ul>
+      </td>
+      <td>5.3.0</td>
+      <td>The total number of completed LDAP requests</td>
+    </tr>
+    <tr>
+      <td><code>qumulo_ldap_operation<br />_errors</code></td>
+      <td><a href="#metric-type-counter"><code>counter</code></a></td>
+      <td><a href="#metric-label-domain_url"><code>domain_url</code></a></td>
+      <td>5.3.0</td>
+      <td>The total number of LDAP operations that resulted in an error</td>
+    </tr>
+    <tr>
+      <td><code>qumulo_ldap_operation<br />_latency_seconds</code></td>
+      <td><a href="#metric-type-histogram"><code>histogram</code></a></td>
+      <td><a href="#metric-label-domain_url"><code>domain_url</code></a></td>
+      <td>5.3.0</td>
+      <td>The total latency for LDAP operations</td>
+    </tr>
+    <tr>
+      <td><code>qumulo_ldap_operations</code></td>
+      <td><a href="#metric-type-counter"><code>counter</code></a></td>
+      <td><a href="#metric-label-domain_url"><code>domain_url</code></a></td>
+      <td>5.3.0</td>
+      <td>The total number of completed LDAP operations</td>
+    </tr>
+    <tr>
+      <td><code>qumulo_memory_correctable<br />_ecc_errors</code></td>
+      <td><a href="#metric-type-counter"><code>counter</code></a></td>
+      <td><a href="#metric-label-node_id"><code>node_id</code></a></td>
+      <td>5.3.0</td>
+      <td>The total number of memory errors that Qumulo Core corrected automatically</td>
+    </tr>
+    <tr>
+      <td><code>qumulo_network_interface<br />_is_down</code></td>
+      <td><a href="#metric-type-gauge"><code>gauge</code></a></td>
+      <td>
+        <ul>
+          <li class="pdf-friendly"><a href="#metric-label-bond"><code>bond</code></a></li>
+          <li class="pdf-friendly"><a href="#metric-label-interface"><code>interface</code></a></li>
+          <li class="pdf-friendly"><a href="#metric-label-role"><code>role</code></a></li>
+          <li class="pdf-friendly"><a href="#metric-label-node_id"><code>node_id</code></a></li>
+        </ul>
+      </td>
+      <td>5.3.0</td>
+      <td>The interface status, <code>0</code> (interface is up) or <code>1</code> (interface is down)</td>
+    </tr>
+    <tr>
+      <td><code>qumulo_network_interface<br />_link_speed_bits_per_second</code></td>
+      <td><a href="#metric-type-gauge"><code>gauge</code></a></td>
+      <td>
+        <ul>
+          <li class="pdf-friendly"><a href="#metric-label-bond"><code>bond</code></a></li>
+          <li class="pdf-friendly"><a href="#metric-label-interface"><code>interface</code></a></li>
+          <li class="pdf-friendly"><a href="#metric-label-role"><code>role</code></a></li>
+          <li class="pdf-friendly"><a href="#metric-label-node_id"><code>node_id</code></a></li>
+        </ul>
+      </td>
+      <td>5.3.0</td>
+      <td>The negotiated link speed for the specified interface</td>
+    </tr>
+    <tr>
+      <td><code>qumulo_network_interface<br />_receive_errors</code></td>
+      <td><a href="#metric-type-counter"><code>counter</code></a></td>
+      <td>
+        <ul>
+          <li class="pdf-friendly"><a href="#metric-label-bond"><code>bond</code></a></li>
+          <li class="pdf-friendly"><a href="#metric-label-interface"><code>interface</code></a></li>
+          <li class="pdf-friendly"><a href="#metric-label-role"><code>role</code></a></li>
+          <li class="pdf-friendly"><a href="#metric-label-node_id"><code>node_id</code></a></li>
+        </ul>
+      </td>
+      <td>5.3.0</td>
+      <td>The total number of receive errors on the specified interface</td>
+    </tr>
+    <tr>
+      <td><code>qumulo_network_interface<br />_received_bytes</code></td>
+      <td><a href="#metric-type-counter"><code>counter</code></a></td>
+      <td>
+        <ul>
+          <li class="pdf-friendly"><a href="#metric-label-bond"><code>bond</code></a></li>
+          <li class="pdf-friendly"><a href="#metric-label-interface"><code>interface</code></a></li>
+          <li class="pdf-friendly"><a href="#metric-label-role"><code>role</code></a></li>
+          <li class="pdf-friendly"><a href="#metric-label-node_id"><code>node_id</code></a></li>
+        </ul>
+      </td>
+      <td>5.3.0</td>
+      <td>The total bytes received on the specified interface</td>
+    </tr>
+    <tr>
+      <td><code>qumulo_network_interface<br />_received_packets</code></td>
+      <td><a href="#metric-type-counter"><code>counter</code></a></td>
+      <td>
+        <ul>
+          <li class="pdf-friendly"><a href="#metric-label-bond"><code>bond</code></a></li>
+          <li class="pdf-friendly"><a href="#metric-label-interface"><code>interface</code></a></li>
+          <li class="pdf-friendly"><a href="#metric-label-role"><code>role</code></a></li>
+          <li class="pdf-friendly"><a href="#metric-label-node_id"><code>node_id</code></a></li>
+        </ul>
+      </td>
+      <td>5.3.0</td>
+      <td>The total number of packets received on the specified interface</td>
+    </tr>
+    <tr>
+      <td><code>qumulo_network_interface<br />_transmit_errors</code></td>
+      <td><a href="#metric-type-counter"><code>counter</code></a></td>
+      <td>
+        <ul>
+          <li class="pdf-friendly"><a href="#metric-label-bond"><code>bond</code></a></li>
+          <li class="pdf-friendly"><a href="#metric-label-interface"><code>interface</code></a></li>
+          <li class="pdf-friendly"><a href="#metric-label-role"><code>role</code></a></li>
+          <li class="pdf-friendly"><a href="#metric-label-node_id"><code>node_id</code></a></li>
+        </ul>
+      </td>
+      <td>5.3.0</td>
+      <td>The total number of transmission errors on the specified interface</td>
+    </tr>
+    <tr>
+      <td><code>qumulo_network_interface<br />_transmitted_bytes</code></td>
+      <td><a href="#metric-type-counter"><code>counter</code></a></td>
+      <td>
+        <ul>
+          <li class="pdf-friendly"><a href="#metric-label-bond"><code>bond</code></a></li>
+          <li class="pdf-friendly"><a href="#metric-label-interface"><code>interface</code></a></li>
+          <li class="pdf-friendly"><a href="#metric-label-role"><code>role</code></a></li>
+          <li class="pdf-friendly"><a href="#metric-label-node_id"><code>node_id</code></a></li>
+        </ul>
+      </td>
+      <td>5.3.0</td>
+      <td>The total number of bytes transmitted on the specified interface</td>
+    </tr>
+    <tr>
+      <td><code>qumulo_network_interface<br />_transmitted_packets</code></td>
+      <td><a href="#metric-type-counter"><code>counter</code></a></td>
+      <td>
+        <ul>
+          <li class="pdf-friendly"><a href="#metric-label-bond"><code>bond</code></a></li>
+          <li class="pdf-friendly"><a href="#metric-label-interface"><code>interface</code></a></li>
+          <li class="pdf-friendly"><a href="#metric-label-role"><code>role</code></a></li>
+          <li class="pdf-friendly"><a href="#metric-label-node_id"><code>node_id</code></a></li>
+        </ul>
+      </td>
+      <td>5.3.0</td>
+      <td>The total number of packets transmitted on the specified interface</td>
+    </tr>
+    <tr>
+      <td><code>qumulo_power_supply<br />_is_unhealthy</code></td>
+      <td><a href="#metric-type-gauge"><code>gauge</code></a></td>
+      <td>
+        <ul>
+          <li class="pdf-friendly"><a href="#metric-label-location"><code>location</code></a></li>
+          <li class="pdf-friendly"><a href="#metric-label-node_id"><code>node_id</code></a></li>
+        </ul>
+      </td>
+      <td>5.3.0</td>
+      <td>PSU health, <code>0</code> (healthy) or <code>1</code> (unplugged, removed, or unresponsive)</td>
+    </tr>
+    <tr>
+      <td><code>qumulo_protocol_client<br />_connections</code></td>
+      <td><a href="#metric-type-counter"><code>counter</code></a></td>
+      <td><a href="#metric-label-protocol"><code>protocol</code></a></td>
+      <td>5.3.0</td>
+      <td>The total number of clients that have connected to the specified protocol</td>
+    </tr>
+    <tr>
+      <td><code>qumulo_protocol_client<br />_disconnections</code></td>
+      <td><a href="#metric-type-counter"><code>counter</code></a></td>
+      <td><a href="#metric-label-protocol"><code>protocol</code></a></td>
+      <td>5.3.0</td>
+      <td>The total number of clients that have disconnected from the specified protocol</td>
+    </tr>
+    <tr>
+      <td><code>qumulo_protocol_operation<br />_bytes</code></td>
+      <td><a href="#metric-type-counter"><code>counter</code></a></td>
+      <td>
+        <ul>
+          <li class="pdf-friendly"><a href="#metric-label-data_type"><code>data_type</code></a></li>
+          <li class="pdf-friendly"><a href="#metric-label-io_type"><code>io_type</code></a></li>
+          <li class="pdf-friendly"><a href="#metric-label-op_name"><code>op_name</code></a></li>
+          <li class="pdf-friendly"><a href="#metric-label-protocol"><code>protocol</code></a></li>
+        </ul>
+      </td>
+      <td>5.3.0</td>
+      <td>The total bytes that protocol operations have transferred</td>
+    </tr>
+    <tr>
+      <td><code>qumulo_protocol_operation<br />_latency_seconds</code></td>
+      <td><a href="#metric-type-histogram"><code>histogram</code></a></td>
+      <td>
+        <ul>
+          <li class="pdf-friendly"><a href="#metric-label-data_type"><code>data_type</code></a></li>
+          <li class="pdf-friendly"><a href="#metric-label-io_type"><code>io_type</code></a></li>
+          <li class="pdf-friendly"><a href="#metric-label-op_name"><code>op_name</code></a></li>
+          <li class="pdf-friendly"><a href="#metric-label-protocol"><code>protocol</code></a></li>
+        </ul>
+      </td>
+      <td>5.3.0</td>
+      <td>The total latency for protocol operations</td>
+    </tr>
+    <tr>
+      <td><code>qumulo_protocol_operations</code></td>
+      <td><a href="#metric-type-counter"><code>counter</code></a></td>
+      <td>
+        <ul>
+          <li class="pdf-friendly"><a href="#metric-label-data_type"><code>data_type</code></a></li>
+          <li class="pdf-friendly"><a href="#metric-label-io_type"><code>io_type</code></a></li>
+          <li class="pdf-friendly"><a href="#metric-label-op_name"><code>op_name</code></a></li>
+          <li class="pdf-friendly"><a href="#metric-label-protocol"><code>protocol</code></a></li>
+        </ul>
+      </td>
+      <td>5.3.0</td>
+      <td>The total number of completed protocol operations</td>
+    </tr>
+    <tr>
+      <td><code>qumulo_quorum_node_is<br />_offline</code></td>
+      <td><a href="#metric-type-gauge"><code>gauge</code></a></td>
+      <td><a href="#metric-label-node_id"><code>node_id</code></a></td>
+      <td>5.3.0</td>
+      <td>The online status for each node in the cluster, <code>0</code> (node online) or <code>1</code> (node offline)</td>
+    </tr>
+    <tr>
+      <td><code>qumulo_time_is_not_synchronizing</code></td>
+      <td><a href="#metric-type-gauge"><code>gauge</code></a></td>
+      <td><a href="#metric-label-node_id"><code>node_id</code></a></td>
+      <td>5.3.0</td>
+      <td>The time synchronization status for each node in the cluster, <code>0</code> (time is synchronized) or <code>1</code> (time isn't synchronized)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="available-labels">Available Labels</h2>
+<p>The following table lists metric label names, possible values, and descriptions.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Label Name</th>
+      <th>Possible Values</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a id="metric-label-bond"></a><code>bond</code></td>
+      <td>
+        <ul>
+          <li class="pdf-friendly"><code>bond0</code></li>
+          <li class="pdf-friendly"><code>bond1</code></li>
+        </ul>
+      </td>
+      <td>The bond to which a network interface belongs</td>
+    </tr>
+    <tr>
+      <td><a id="metric-label-cpu"></a><code>cpu</code></td>
+      <td>A non-negative integer</td>
+      <td>The CPU index in the node</td>
+    </tr>
+    <tr>
+      <td><a id="metric-label-data_type"></a><code>data_type</code></td>
+      <td>
+        <ul>
+          <li class="pdf-friendly"><code>data</code>: Read or write operations on the data of a file.</li>
+          <li class="pdf-friendly"><code>metadata</code>: Operations (such as <code>lookup</code>, <code>stat</code>, or <code>getattr</code>) unrelated to a file's data</li>
+          <li class="pdf-friendly"><code>none</code>: Operations that operate on neither the file data nor the metadata. <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> The protocol often requires these operations for session negotiation and authentication.</div>
+</li>
+        </ul>
+      </td>
+      <td>The data type that an operation transfers</td>
+    </tr>
+    <tr>
+      <td><a id="metric-label-disk_type"></a><code>disk_type</code></td>
+      <td>
+        <ul>
+          <li class="pdf-friendly"><code>hdd</code>: Hard Disk Drive</li>
+          <li class="pdf-friendly"><code>ssd</code>: Solid-State Drive</li>
+        </ul>
+      </td>
+      <td>The underlying storage type</td>
+    </tr>
+    <tr>
+      <td><a id="metric-label-domain_url"></a><code>domain_url</code></td>
+      <td>An Active Directory domain (for example, <code>my-domain.com</code>) or an LDAP bind URI (for example, <code>ldap://my-server.my-domain.com</code>)</td>
+      <td>The URL of the domain</td>
+    </tr>
+    <tr>
+      <td><a id="metric-label-drive_bay"></a><code>drive_bay</code></td>
+      <td>A drive bay name. For example: <code>b3</code>, <code>1.1</code></td>
+      <td>The physical drive bay in the chassis.</td>
+    </tr>
+    <tr>
+      <td><a id="metric-label-entry_type"></a><code>entry_type</code></td>
+      <td>
+        <ul>
+          <li class="pdf-friendly"><code>alternate_data_stream</code></li>
+          <li class="pdf-friendly"><code>directory</code></li>
+          <li class="pdf-friendly"><code>file</code></li>
+          <li class="pdf-friendly"><code>other</code></li>
+          <li class="pdf-friendly"><code>symlink</code></li>
+        </ul>
+      </td>
+      <td>The file system object type</td>
+    </tr>
+    <tr>
+      <td><a id="metric-label-fan"></a><code>fan</code></td>
+      <td>A fan name, for example <code>system fan 1</code></td>
+      <td>The fan name</td>
+    </tr>
+    <tr>
+      <td><a id="metric-label-interface"></a><code>interface</code></td>
+      <td>An interface name, for example <code>eth0</code></td>
+      <td>The interface name</td>
+    </tr>
+    <tr>
+      <td><a id="metric-label-io_type"></a><code>io_type</code></td>
+      <td>
+        <ul>
+          <li class="pdf-friendly"><code>composite</code></li>
+          <li class="pdf-friendly"><code>none</code></li>
+          <li class="pdf-friendly"><code>read</code></li>
+          <li class="pdf-friendly"><code>wait</code>: A blocking operation that takes an indeterminate amount of time</li>
+          <li class="pdf-friendly"><code>write</code></li>
+        </ul>
+      </td>
+      <td>The I/O that an operation performs</td>
+    </tr>
+    <tr>
+      <td><a id="metric-label-location"></a><code>location</code></td>
+      <td>A location on the chassis, for example <code>left</code> or <code>right</code></td>
+      <td>The location on the chassis. <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> For PSU, this location is relative to the back of the node.</div>
+</td>
+    </tr>
+    <tr>
+      <td><a id="metric-label-node_id"></a><code>node_id</code></td>
+      <td>A positive integer that represents a node ID in the cluster.</td>
+      <td>A value that differentiates between the different nodes in a cluster</td>
+    </tr>
+    <tr>
+      <td><a id="metric-label-op_name"></a><code>op_name</code></td>
+      <td>Any operation name, including NFSv3, NFSv4.1, SMBv2, SMBv3, REST, S3, replication, or FTP</td>
+      <td>The recorded operation</td>
+    </tr>
+    <tr>
+      <td><a id="metric-label-path"></a><code>path</code></td>
+      <td>Slash (<code>/</code>)</td>
+      <td>The path to a directory in the file system</td>
+    </tr>
+    <tr>
+      <td><a id="metric-label-protocol"></a><code>protocol</code></td>
+      <td>
+        <ul>
+          <li class="pdf-friendly"><code>nfs</code>: NFSv3 or NFSv4.1</li>
+          <li class="pdf-friendly"><code>smb</code>: SMBv2 or SMBv3</li>
+          <li class="pdf-friendly"><code>rest</code></li>
+          <li class="pdf-friendly"><code>s3</code></li>
+          <li class="pdf-friendly"><code>replication</code></li>
+          <li class="pdf-friendly"><code>ftp</code></li>
+        </ul>
+      </td>
+      <td>The protocol of the recorded operation</td>
+    </tr>
+    <tr>
+      <td><a id="metric-label-role"></a><code>role</code></td>
+      <td>
+        <ul>
+          <li class="pdf-friendly"><code>frontend</code></li>
+          <li class="pdf-friendly"><code>backend</code></li>
+        </ul>
+      </td>
+      <td>The role of the interface <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> <code>frontend</code> includes protocol, management, and replication traffic. <code>backend</code> includes all intra-node communications.</div>
+</td>
+    </tr>
+    <tr>
+      <td><a id="metric-label-server_url"></a><code>server_url</code></td>
+      <td>A hostname (for example, <code>ad.my-domain.com</code>) or an IP address</td>
+      <td>The URL of a remote server</td>
+    </tr>
+    <tr>
+      <td><a id="metric-label-usage_type"></a><code>usage_type</code></td>
+      <td>
+        <ul>
+          <li class="pdf-friendly"><code>data</code></li>
+          <li class="pdf-friendly"><code>metadata</code></li>
+          <li class="pdf-friendly"><code>snapshot</code></li>
+        </ul>
+      </td>
+      <td>The data type that uses space</td>
+    </tr>          
+  </tbody>
+</table>
+
+   
+
+
+
+
+  
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+      
+<h2 id="related-topics" class="clickable-header top-level-header">Related Topics</h2>
+<ul id="related-topics-list">
+        
+        
+          
+            
+            
+  <li><a href="/cloud-native-aws-administrator-guide/monitoring-and-metrics/configuring-cloud-based-monitoring-remote-support.html">Configuring Cloud-Based Monitoring and Remote Support</a></li>
+            
+          
+            
+            
+  <li><a href="/cloud-native-aws-administrator-guide/monitoring-and-metrics/connecting-cloud-based-monitoring-s3-custom-proxy.html">Connecting to Cloud-Based Monitoring and S3 with a Custom Proxy</a></li>
+            
+          
+            
+            
+  <li><a href="/cloud-native-aws-administrator-guide/monitoring-and-metrics/restoring-default-values-cloud-based-nexus-monitoring.html">Restoring the Default Values for Cloud-Based and Nexus Monitoring</a></li>
+            
+          
+            
+            
+  <li><a href="/cloud-native-aws-administrator-guide/monitoring-and-metrics/how-audit-logging-works.html">How Audit Logging Works in Qumulo Core</a></li>
+            
+          
+            
+            
+          
+        
+</ul>
+        
+    
+  
+
+
+</div>
+
+        </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+</div>
+<!-- /#main -->
+    </div>
+
+<footer>
+  <div class="footer">
+    <div class="footer-text">
+      Copyright &copy; 2021&ndash;2025 Qumulo, Inc.<br>
+
+      <a class="no_icon footer_link" href="https://qumulo.com/legal/privacy-policy/">Privacy Policy</a> &VerticalSeparator; <a class="no_icon footer_link" href="https://qumulo.com/legal/cookie-policy/">Cookie Policy</a> &VerticalSeparator; <a class="no_icon footer_link" href="https://qumulo.com/terms-hub/">Terms Hub</a><br>
+      <p>
+        <picture>
+          <source type="image/webp" srcset="/images/qumulo-logo-inverse.webp">
+          <source type="image/png" srcset="/images/qumulo-logo-inverse.png">       
+          <img class="footer-logo" src="/images/qumulo-logo-inverse.png" alt="Qumulo Logo">
+        </picture>
+      </p>
+    </div>
+    <div class="footer-grumpquats">
+      <picture>
+        <source type="image/webp" srcset="/images/grumpquats.webp">
+        <source type="image/png" srcset="/images/grumpquats.png"> 
+        <img src="/images/grumpquats.png" class="three-grumpquats" alt="Three Grumpquats">
+      </picture>
+    </div>
+  </div>
+
+  <!-- Cookie Consent - GRT Plugin -->	
+  <div id="cookie-banner" class="grt-cookie">
+    <div class="grt-cookies-msg">
+      <p>We use cookies to improve your user experience and remember your preferences on this website. If you continue to use this website, we will assume that you accept and understand our <a class="no_icon" href="https://qumulo.com/legal/privacy-policy">Privacy Policy</a>, <a class="no_icon" href="https://qumulo.com/legal/cookie-policy/">Cookie Policy</a>, and <a class="no_icon" href="https://qumulo.com/terms-hub/">Terms Hub</a>.</p>
+    </div>
+    <span class="grt-cookie-button">Accept</span>
+  </div>
+  <script src="/js/grt-cookie-consent.js"></script>
+  <script>$(".grt-cookie").grtCookie();</script>
+  
+  <script src="/js/fixdoubledashes.js"></script>
+
+  <script src="/js/expand-collapse.js"></script>
+</footer>
+
+
+</body>
+
+</html>
