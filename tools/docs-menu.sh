@@ -345,11 +345,11 @@ regen_cli_docs() {
     done
 }
 
-# Regenerate API documentation
+# Regenerate REST API documentation
 regen_api_docs() {
     start_in_docs_dir
     check_src_repo
-    echo "Building API documentation from the Music cluster..."
+    echo "Building REST API documentation from the Music cluster..."
     python3 tools/gen-api.py
 }
 
@@ -395,16 +395,32 @@ build_serve_docs_locally_jekyll() {
 # Only serve the documentation locally on port 4000 by using http.server
 only_serve_docs_locally_python() {
     start_in_docs_dir
-    echo -e "Serving documentation locally on \e[31m$(hostname):4000\e[0m by using Python..."
+    
+    if [[ ! -d "_site" ]]; then
+        echo -e "\e[31mThe _site directory doesn't exist. You must build the documentation first.\e[0m"
+        return 1
+    fi
+
+    echo -e "Serving documentation locally on \e[31m$(hostname):4000\e[0m using Python..."
     echo -e "\e[31m⚠️  Caution: This method of running an HTTP server is insecure.\e[0m"
-    cd _site && python3 -m http.server 4000 && cd ..
+
+    cd _site || return 1
+    python3 -m http.server 4000
 }
 
 # Only serve the documentation locally by using Tailscale
 only_serve_docs_locally_tailscale() {
     start_in_docs_dir
-    echo -e "Serving documentation locally on \e[31m$(hostname).qumulo.ts.net\e[0m by using Tailscale..."
-    cd _site && sudo tailscale serve $PWD && cd ..
+
+    if [[ ! -d "_site" ]]; then
+        echo -e "\e[31mThe _site directory doesn't exist. You must build the documentation first.\e[0m"
+        return 1
+    fi
+
+    echo -e "Serving documentation locally on \e[31m$(hostname).qumulo.ts.net\e[0m using Tailscale..."
+
+    cd _site || return 1
+    sudo tailscale serve "$PWD"
 }
 
 # Check documentation for link, script, and image errors by using HTML Proofer
@@ -542,7 +558,7 @@ while true; do
     echo "2.  🚧 Rebuild docs-builder container"
     echo "3.  🚧 Rebuild docs-container-check container"
     echo "4.  ⚙️  Regenerate CLI documentation"
-    echo "5.  ⚙️  Regenerate API documentation"
+    echo "5.  ⚙️  Regenerate REST API documentation"
     echo "6.  🆕 List CLI documentation with appended content"
     echo "7.  ⚙️  Only build HTML documentation"
     echo "8.  ⚙️  Only build PDF documentation"
