@@ -35,7 +35,7 @@ check_symlinks() {
     fi
 
     # Check and create docs-internal symlink
-    if [[ ! -L "$docs_symlink" ]]; then
+    if [[ ! -e "$docs_symlink" ]]; then
         read -p "Create symlink for $docs_symlink? Use default path ($default_repo_dir)? (y/n): " create_docs
         if [[ "$create_docs" == "y" ]]; then
             ln -s "$default_repo_dir" "$docs_symlink"
@@ -48,7 +48,7 @@ check_symlinks() {
     fi
 
     # Check and create vectara-ingest symlink
-    if [[ ! -L "$vectara_symlink" ]]; then
+    if [[ ! -e "$vectara_symlink" ]]; then
         read -p "Create symlink for $vectara_symlink? Use default path ($parent_dir/vectara-ingest)? (y/n): " create_vectara
         if [[ "$create_vectara" == "y" ]]; then
             ln -s "$parent_dir/vectara-ingest" "$vectara_symlink"
