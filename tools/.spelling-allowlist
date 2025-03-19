@@ -217,6 +217,7 @@ OSUpgrade
 OU
 OUs
 Okta
+OpenAPI
 OpenLDAP
 OpenMetrics
 OpenSSH
@@ -364,6 +365,7 @@ b2C
 b2S
 backplane
 checksumming
+checksums
 chown
 deduplicate
 deduplicates

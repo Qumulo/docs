@@ -37,7 +37,7 @@ positional_options: []
 sidebar: qq_cli_command_reference_sidebar
 summary: This section explains how to use the <code>qq modify_object_backed_cluster_membership</code>
   command.
-synopsis: Modify the membership of an object backed cluster by specifying the desired
+synopsis: Modify the membership of an object-backed cluster by specifying the desired
   list of nodes expected to be part of the cluster after the modification. The nodes
   to be added, removed, or replaced are implicitly derived using the specified target
   membership and the current membership of the cluster.

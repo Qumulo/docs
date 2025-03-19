@@ -174,47 +174,36 @@ entries:
     url: /rest-api-guide/capacity-clamp/
   - folderitems:
     - output: web,pdf
-      preview: true
       title: portal/file-systems
       url: /rest-api-guide/cloud-data-fabric/portal_file-systems.html
     - output: web,pdf
-      preview: true
       title: portal/file-systems/{id}
       url: /rest-api-guide/cloud-data-fabric/portal_file-systems_id.html
     - output: web,pdf
-      preview: true
       title: portal/files/{file_id}/evict
       url: /rest-api-guide/cloud-data-fabric/portal_files_file_id_evict.html
     - output: web,pdf
-      preview: true
       title: portal/hubs
       url: /rest-api-guide/cloud-data-fabric/portal_hubs.html
     - output: web,pdf
-      preview: true
       title: portal/hubs/{id}
       url: /rest-api-guide/cloud-data-fabric/portal_hubs_id.html
     - output: web,pdf
-      preview: true
       title: portal/hubs/{id}/authorize
       url: /rest-api-guide/cloud-data-fabric/portal_hubs_id_authorize.html
     - output: web,pdf
-      preview: true
       title: portal/spokes
       url: /rest-api-guide/cloud-data-fabric/portal_spokes.html
     - output: web,pdf
-      preview: true
       title: portal/spokes/eviction-settings
       url: /rest-api-guide/cloud-data-fabric/portal_spokes_eviction-settings.html
     - output: web,pdf
-      preview: true
       title: portal/spokes/{id}
       url: /rest-api-guide/cloud-data-fabric/portal_spokes_id.html
     - output: web,pdf
-      preview: true
       title: portal/spokes/{id}/propose
       url: /rest-api-guide/cloud-data-fabric/portal_spokes_id_propose.html
     output: web,pdf
-    preview: true
     title: Cloud Data Fabric (portal)
     url: /rest-api-guide/cloud-data-fabric/
   - folderitems:
@@ -331,13 +320,6 @@ entries:
     output: web,pdf
     title: Cluster Slots (cluster)
     url: /rest-api-guide/cluster-slots/
-  - folderitems:
-    - output: web,pdf
-      title: node/state
-      url: /rest-api-guide/configured-node-management/node_state.html
-    output: web,pdf
-    title: Node Management (node)
-    url: /rest-api-guide/configured-node-management/
   - folderitems:
     - output: web,pdf
       title: dns/configs/system
@@ -486,6 +468,9 @@ entries:
     - output: web,pdf
       title: files/{ref}/entries
       url: /rest-api-guide/files/files_ref_entries.html
+    - output: web,pdf
+      title: files/{ref}/entries/{name}
+      url: /rest-api-guide/files/files_ref_entries_name.html
     - output: web,pdf
       title: files/{ref}/file-lock
       url: /rest-api-guide/files/files_ref_file-lock.html
@@ -773,6 +758,13 @@ entries:
     output: web,pdf
     title: Network Configuration (network)
     url: /rest-api-guide/network-configuration/
+  - folderitems:
+    - output: web,pdf
+      title: node/state
+      url: /rest-api-guide/node-management/node_state.html
+    output: web,pdf
+    title: Node Management (node)
+    url: /rest-api-guide/node-management/
   - folderitems:
     - output: web,pdf
       title: object-storage/add-uris
