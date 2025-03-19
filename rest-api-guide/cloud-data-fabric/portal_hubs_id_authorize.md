@@ -6,7 +6,7 @@ methods:
     - description: Portal ID
       name: id
       required: true
-    preview: true
+    preview: false
     request_body:
       schema: "{\n  \"description\": \"api_portal_authorize_request\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"spoke_address\": {\n      \"description\"\
@@ -23,10 +23,14 @@ methods:
         \ the spoke portal:\\n * `SPOKE_READ_ONLY` - SPOKE_READ_ONLY,\\n * `SPOKE_READ_WRITE`\
         \ - SPOKE_READ_WRITE\"\n    },\n    \"state\": {\n      \"type\": \"string\"\
         ,\n      \"enum\": [\n        \"UNLINKED\",\n        \"PENDING\",\n      \
-        \  \"ACTIVE\",\n        \"ENDED\"\n      ],\n      \"description\": \"State\
-        \ of the portal:\\n * `ACTIVE` - PORTAL_ACTIVE,\\n * `ENDED` - PORTAL_ENDED,\\\
-        n * `PENDING` - PORTAL_PENDING,\\n * `UNLINKED` - PORTAL_UNLINKED\"\n    },\n\
-        \    \"root\": {\n      \"description\": \"Local hub portal root directory\
+        \  \"AUTHORIZED\",\n        \"DELETING\"\n      ],\n      \"description\"\
+        : \"State of the portal:\\n * `AUTHORIZED` - PORTAL_AUTHORIZED,\\n * `DELETING`\
+        \ - PORTAL_DELETING,\\n * `PENDING` - PORTAL_PENDING,\\n * `UNLINKED` - PORTAL_UNLINKED\"\
+        \n    },\n    \"status\": {\n      \"type\": \"string\",\n      \"enum\":\
+        \ [\n        \"INACTIVE\",\n        \"ACTIVE\",\n        \"DEGRADED\"\n  \
+        \    ],\n      \"description\": \"Status of the portal:\\n * `ACTIVE` - PORTAL_ACTIVE,\\\
+        n * `DEGRADED` - PORTAL_DEGRADED,\\n * `INACTIVE` - PORTAL_INACTIVE\"\n  \
+        \  },\n    \"root\": {\n      \"description\": \"Local hub portal root directory\
         \ file ID\",\n      \"type\": \"string\"\n    },\n    \"root_path\": {\n \
         \     \"description\": \"Local hub portal root directory path\",\n      \"\
         type\": \"string\"\n    },\n    \"spoke_cluster_uuid\": {\n      \"description\"\
@@ -41,8 +45,8 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: '[preview] Authorize the specified pending hub portal. Authorizing a
-      hub portal establishes a relationship with a spoke portal.'
+    summary: Authorize the specified pending hub portal. Authorizing a hub portal
+      establishes a relationship with a spoke portal.
 rest_endpoint: /v1/portal/hubs/{id}/authorize
 api_version: v1
 permalink: /rest-api-guide/cloud-data-fabric/portal_hubs_id_authorize.html

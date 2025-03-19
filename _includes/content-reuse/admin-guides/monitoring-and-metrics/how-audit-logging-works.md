@@ -514,7 +514,6 @@ This section lists the error status messages in Qumulo Core audit logging.
     <li><code>fs_permissions_mode_operation_unsupported_error</code></li>
     <li><code>fs_portal_create_orphanage_error</code></li>
     <li><code>fs_portal_disconnected_error</code></li>
-    <li><code>fs_portal_ended_error</code></li>
     <li><code>fs_portal_error</code></li>
     <li><code>fs_portal_eviction_error</code></li>
     <li><code>fs_portal_inconsistent_data_error</code></li>

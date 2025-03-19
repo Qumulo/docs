@@ -4,6 +4,19 @@ For information about upgrade types for each release, see <a href='mode-referenc
 
 <style>div#toc{height:200px;overflow:auto;}</style>
 
+## Qumulo Core 7.4.2
+{{page.varDownloadsRelnotes}}
+
+* Added support for {{site.cnqLong}} ({{site.cnqShort}}) clusters with 1, 3, or more nodes
+* Made improvements to Cloud Data Fabric:
+  * Moved the REST APIs out of Preview status
+  * Removed a `qq` CLI command in favor of automatic clean-up of partially configured portal relationships 
+  * Added support for FTP communications for spoke portals
+  * Changed the names of _portal states,_ which indicate the stages of the spoke portal creation process and the proposal or deletion of a portal relationship
+  * Added new _portal statuses,_ which indicate the accessibility of a spoke portal or a hub portal
+* Updated the default configuration for new NFS exports
+* Added a REST API and `qq` CLI command to facilitate deleting files from directories without constructing full paths
+
 ## Qumulo Core 7.4.1
 {{page.varDownloadsRelnotes}}
 {{site.gns.nameChange}}

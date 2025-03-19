@@ -473,6 +473,9 @@ entries:
       title: fs_set_user_metadata
       url: /qq-cli-command-guide/fs/fs_set_user_metadata.html
     - output: web,pdf
+      title: fs_unlink
+      url: /qq-cli-command-guide/fs/fs_unlink.html
+    - output: web,pdf
       title: fs_walk_tree
       url: /qq-cli-command-guide/fs/fs_walk_tree.html
     - output: web,pdf
@@ -808,9 +811,6 @@ entries:
     - output: web,pdf
       title: portal_modify_spoke
       url: /qq-cli-command-guide/portal/portal_modify_spoke.html
-    - output: web,pdf
-      title: portal_propose_hub
-      url: /qq-cli-command-guide/portal/portal_propose_hub.html
     - output: web,pdf
       title: portal_set_eviction_settings
       url: /qq-cli-command-guide/portal/portal_set_eviction_settings.html

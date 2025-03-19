@@ -21,7 +21,7 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: List all object backed nodes in the cluster.
+    summary: List all object-backed nodes in the cluster.
   post:
     parameters: []
     preview: false
@@ -44,7 +44,7 @@ methods:
     responses:
     - code: '202'
       description: Return value on success
-    summary: Modify the composition of the object backed cluster by adding unconfigured
+    summary: Modify the composition of the object-backed cluster by adding unconfigured
       nodes or replacing configured nodes. Allows for the specification of fault domains
       on added or replaced nodes.
 rest_endpoint: /v2/cluster/object-backed/nodes
