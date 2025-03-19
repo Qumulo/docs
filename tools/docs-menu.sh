@@ -345,11 +345,11 @@ regen_cli_docs() {
     done
 }
 
-# Regenerate API documentation
+# Regenerate REST API documentation
 regen_api_docs() {
     start_in_docs_dir
     check_src_repo
-    echo "Building API documentation from the Music cluster..."
+    echo "Building REST API documentation from the Music cluster..."
     python3 tools/gen-api.py
 }
 
@@ -558,7 +558,7 @@ while true; do
     echo "2.  🚧 Rebuild docs-builder container"
     echo "3.  🚧 Rebuild docs-container-check container"
     echo "4.  ⚙️  Regenerate CLI documentation"
-    echo "5.  ⚙️  Regenerate API documentation"
+    echo "5.  ⚙️  Regenerate REST API documentation"
     echo "6.  🆕 List CLI documentation with appended content"
     echo "7.  ⚙️  Only build HTML documentation"
     echo "8.  ⚙️  Only build PDF documentation"
