@@ -313,7 +313,7 @@ The following table lists metric names, types, labels, and descriptions.
           <li class="pdf-friendly"><a href="#metric-label-portal_type"><code>portal_type</code></a></li>
         </ul>
       </td>
-      <td>7.4.2</td>
+      <td>7.4.2.1</td>
       <td>The number of portals for each state, not including portals in <code>Pending</code> and <code>Unlinked</code> states</td>
     </tr>
     <tr>
@@ -331,7 +331,7 @@ The following table lists metric names, types, labels, and descriptions.
           <li class="pdf-friendly"><a href="#metric-label-fs_type"><code>fs_type</code></a></li>
         </ul>
       </td>
-      <td>7.4.2</td>
+      <td>7.4.2.1</td>
       <td>The amount of space that the file system type uses, in bytes</td>
     </tr>
     <tr>

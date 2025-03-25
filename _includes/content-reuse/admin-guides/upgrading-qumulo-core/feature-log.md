@@ -4,8 +4,10 @@ For information about upgrade types for each release, see <a href='mode-referenc
 
 <style>div#toc{height:200px;overflow:auto;}</style>
 
-## Qumulo Core 7.4.2
+## Qumulo Core 7.4.2.1
 {{page.varDownloadsRelnotes}}
+
+{% include important.html content="This release resolves an issue that can occur while following a non-standard upgrade path." %} 
 
 * Added support for {{site.cnqLong}} ({{site.cnqShort}}) clusters with 1, 3, or more nodes
 * Made improvements to Cloud Data Fabric:
@@ -17,11 +19,11 @@ For information about upgrade types for each release, see <a href='mode-referenc
 * Updated the default configuration for new NFS exports
 * Added a REST API and `qq` CLI command to facilitate deleting files from directories without constructing full paths
 
-## Qumulo Core 7.4.1
+## Qumulo Core 7.4.1.1
 {{page.varDownloadsRelnotes}}
-{{site.gns.nameChange}}
 {{site.data.alerts.important}}
 <ul>
+  <li>This release resolves an issue where previously Qumulo hub portal host clusters that communicated with read-write spoke portals crashed if the portal contained files with very large file IDs.</li>
   <li>This release resolves an issue that we identified in Qumulo Core releases 7.3.1.2 to 7.4.0, where making changes to networking configuration by using the <strong>API Tools</strong> page in the Web UI or by using the <code>qq</code> CLI caused the default gateway to not populate.</li>
   <li>{{site.gns.nameChange}}</li>
   <li>To enable upgrades to this version of Qumulo Core, you must delete any existing spoke portals or hub portals from your cluster and then wait for any related tree-delete operations to complete before beginning the upgrade process.</li>
