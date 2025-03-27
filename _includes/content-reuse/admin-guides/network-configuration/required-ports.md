@@ -70,6 +70,11 @@
       <td>Replication</td>
     </tr>
     <tr>
+      <td>3713</td>
+      <td>TCP</td>
+      <td>Cloud Data Fabric</td>
+    </tr>
+    <tr>
       <td>8000</td>
       <td>TCP</td>
       <td>REST API</td>
@@ -159,6 +164,11 @@ For cluster formation and inter-node communication, Qumulo Core requires unblock
       <td>3712</td>
       <td>TCP</td>
       <td>Replication (by default)</td>
+    </tr>
+    <tr>
+      <td>3713</td>
+      <td>TCP</td>
+      <td>Cloud Data Fabric</td>
     </tr>
   </tbody>
 </table>
