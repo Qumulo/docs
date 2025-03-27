@@ -7,9 +7,6 @@ sidebar: administrator_guide_sidebar
 
 The Qumulo Core Product Package permits flexible deployment: For example, it can let your organization adhere to its security and compliance requirements, or use a specific Linux distribution that has become standardized across the entire system fleet.
 
-{% capture contactUs %}The Qumulo Core Product Package is currently in Private Availability. To obtain a copy, {{site.contactQumuloCare}}.{% endcapture %}
-{% include tip.html content=contactUs %}
-
 {% include content-reuse/admin-guides/getting-started/qumulo-product-package-vs-qumulo-usb-installer.md %}
 
 For more information, see [Creating a Qumulo Core USB Drive Installer](https://docs.qumulo.com/hardware-guide/getting-started/creating-usb-drive-installer.html) in the {{site.guides.hard}}.
@@ -140,14 +137,9 @@ To ensure that Qumulo Core has full control over network configuration, disable 
 
 
 ## To Install the Qumulo Core Product Package
-{{site.data.alerts.note}}
-<ul>
-  <li>{{contactUs}}</li>
-  <li>Use the latest, official image available for your Linux distribution on the distribution's website or cloud marketplace.</li>
-</ul>
-{{site.data.alerts.end}}
+{% include note.html content="Use the latest, official image available for your Linux distribution on the distribution's website or cloud marketplace." %}
 
-1. To install Qumulo Core, use the correct installation package for your Linux distribution:
+1. To install Qumulo Core, {{site.nexusProductPackage}} for your Linux distribution.
 
    * For the `.deb` package, run the `apt` command. For example:
 

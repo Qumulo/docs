@@ -156,6 +156,7 @@ loginRequired: <span class="emoji">🔒</span>
 ipmiLoginRequired: For more information, see <a href="https://care.qumulo.com/s/article/Default-IPMI-Usernames-Passwords">Default IPMI Usernames and Passwords</a> <span class="emoji">🔒</span> on Qumulo Care.
 
 nexusDownloads: For downloads, release notes, and upgrade paths for on-premises and cloud releases of Qumulo Core, see <a target="_blank" href="https://nexus.qumulo.com/downloads">Qumulo Nexus</a>
+nexusProductPackage: <a target="_blank" href="https://nexus.qumulo.com/deploy/aws">download the installation package</a>
 contactQumuloCare: <a href="https://docs.qumulo.com/contacting-qumulo-care-team.html">contact the Qumulo Care team</a>
 
 exampleTooWide: The following example is too wide for the page. To explore this example, you can toggle Reading Mode or scroll the example horizontally.
