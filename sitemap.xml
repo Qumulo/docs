@@ -5,25 +5,34 @@ search: exclude
 
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-  {% for page in site.html_pages %}
-  {% unless page.search == "exclude" %}
-  {% assign full_page_url = site.url | append: page.url %}
-  {% assign page_last_char = page.url | slice: -1 %}
-  {% assign page_last_five_chars = page.url | slice: -5, 5 %}
-  <url>
-    <loc>{{ full_page_url }}</loc>
-    <lastmod>{{ site.time | date: '%Y-%m-%dT%H:%M:%S%:z' }}</lastmod>
-    <changefreq>weekly</changefreq>
-    {% if full_page_url == "https://docs.qumulo.com/index.html" %}
-      <priority>1.0</priority>
-    {% elsif page_last_char == "/" %}
-      <priority>0.7</priority>
-    {% elsif page_last_five_chars == ".html" %}
-      <priority>0.9</priority>
-    {% else %}
-      <priority>0.5</priority>
-    {% endif %}
-  </url>
-  {% endunless %}
+
+  {% assign all_docs = site.pages %}
+  {% for coll in site.collections %}
+    {% assign coll_docs = coll.docs %}
+    {% assign all_docs = all_docs | concat: coll_docs %}
   {% endfor %}
+
+  {% for page in all_docs %}
+    {% unless page.search == "exclude" or page.url == nil %}
+      <url>
+        <loc>{{ site.url }}{{ page.url }}</loc>
+        {% if page.last_modified_at %}
+          <lastmod>{{ page.last_modified_at | date: '%Y-%m-%dT%H:%M:%S%:z' }}</lastmod>
+        {% else %}
+          <lastmod>{{ site.time | date: '%Y-%m-%dT%H:%M:%S%:z' }}</lastmod>
+        {% endif %}
+        <changefreq>weekly</changefreq>
+        {% assign last_char = page.url | slice: -1 %}
+        {% if page.url == "/index.html" %}
+          <priority>1.0</priority>
+        {% elsif last_char == "/" %}
+          <priority>0.7</priority>
+        {% else %}
+          <priority>0.5</priority>
+        {% endif %}
+      </url>
+    {% endunless %}
+  {% endfor %}
+
 </urlset>
+

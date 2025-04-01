@@ -13,3 +13,5 @@ gem 'html-proofer'
 gem 'faraday-retry'
 
 gem 'ffi-hunspell'
+
+gem 'jekyll-last-modified-at'

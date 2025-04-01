@@ -149,6 +149,7 @@ relative_links:
 # Enable server-side redirects. For more information, see https://github.com/jekyll/jekyll-redirect-from
 plugins:
   - jekyll-redirect-from
+  - jekyll-last-modified-at
 
 # BEGIN SPELLCHECK HERE
 
