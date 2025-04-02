@@ -42,7 +42,7 @@ The length of time before this scenario takes place depends on the number of dri
 The following sections describe various drive and node failure protection configurations and how they correspond to failure scenarios and data protection states.
 
 ## 2-Drive, 1-Node Protection (2,1)
-This is the default system configuration. {{page.varMinConfig}} 4 nodes.
+{{page.varMinConfig}} 4 nodes.
 
 <table>
   <thead>
@@ -80,7 +80,7 @@ This is the default system configuration. {{page.varMinConfig}} 4 nodes.
 </table>
 
 ## 2-Drive, 2-Node Protection (2,2)
-This is the default system configuration. {{page.varMinConfig}} 8 nodes.
+{{page.varMinConfig}} 8 nodes.
 
 <table>
   <thead>
@@ -109,7 +109,7 @@ This is the default system configuration. {{page.varMinConfig}} 8 nodes.
     <tr>
       <td>
         3 or more drive failures,<br>
-        or multiple node failures
+        or more than 2 node failures
       </td>
       <td>{{page.varHigh}}</td>
       <td>{{page.varDataUnavailOK}}</td>
@@ -130,12 +130,12 @@ This configuration requires a minimum of 5 nodes.
   </thead>
   <tbody>
     <tr>
-      <td>1 drive failure</td>
+      <td>1 or 2 drive failures</td>
       <td>{{page.varLow}}</td>
       <td>{{page.varDataOK}} {{page.varRepDriveAny}}</td>
     </tr>
     <tr>
-      <td>2 or 3 drive failures</td>
+      <td>3 drive failures</td>
       <td>{{page.varMedium}}</td>
       <td>{{page.varDataOK}} {{page.varRepDriveAny}}</td>
     </tr>
