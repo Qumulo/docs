@@ -70,13 +70,51 @@ This is the default system configuration. {{page.varMinConfig}} 4 nodes.
     </tr>
     <tr>
       <td>
-        3 (or more) drive failures
+        3 or more drive failures,<br>
         or multiple node failures
       </td>
       <td>{{page.varHigh}}</td>
       <td>{{page.varDataUnavailOK}}</td>
     </tr>
   </tbody>    
+</table>
+
+## 2-Drive, 2-Node Protection (2,2)
+This is the default system configuration. {{page.varMinConfig}} 8 nodes.
+
+<table>
+  <thead>
+    <tr>
+      <th width="42%">Failure Scenario</th>
+      <th width="16%">Severity</th>
+      <th width="42%">Data Protection State</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1 drive failure</td>
+      <td>{{page.varLow}}</td>
+      <td>{{page.varDataOK}} {{page.varRepDriveAny}}</td>
+    </tr>
+    <tr>
+      <td>2 drive failures</td>
+      <td>{{page.varMedium}}</td>
+      <td>{{page.varDataOK}} {{page.varRepDriveAny}}</td>
+    </tr>
+    <tr>
+      <td>1 or 2 node failures</td>
+      <td>{{page.varHigh}}</td>
+      <td>{{page.varDataOK}} {{page.varReadOnlyRisk}}</td>
+    </tr>
+    <tr>
+      <td>
+        3 or more drive failures,<br>
+        or multiple node failures
+      </td>
+      <td>{{page.varHigh}}</td>
+      <td>{{page.varDataUnavailOK}}</td>
+    </tr>
+  </tbody>
 </table>
 
 ## 3-Drive, 1-Node Protection (3,1)
@@ -97,12 +135,7 @@ This configuration requires a minimum of 5 nodes.
       <td>{{page.varDataOK}} {{page.varRepDriveAny}}</td>
     </tr>
     <tr>
-      <td>2 drive failures</td>
-      <td>{{page.varMedium}}</td>
-      <td>{{page.varDataOK}} {{page.varRepDriveAny}}</td>
-    </tr>
-    <tr>
-      <td>3 drive failures</td>
+      <td>2 or 3 drive failures</td>
       <td>{{page.varMedium}}</td>
       <td>{{page.varDataOK}} {{page.varRepDriveAny}}</td>
     </tr>
@@ -113,56 +146,8 @@ This configuration requires a minimum of 5 nodes.
     </tr>
     <tr>
       <td>
-        4 (or more) drive failures<br>
+        4 or more drive failures,<br>
         or multiple node failures
-      </td>
-      <td>{{page.varHigh}}</td>
-      <td>{{page.varDataUnavailOK}}</td>
-    </tr>
-  </tbody>    
-</table>
-
-## 3-Drive, 2-Node Protection (3,2)
-{{page.varMinConfig}} 11 nodes.
-
-<table>
-  <thead>
-    <tr>
-      <th width="42%">Failure Scenario</th>
-      <th width="16%">Severity</th>
-      <th width="42%">Data Protection State</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>1 drive failure</td>
-      <td>{{page.varLow}}</td>
-      <td>{{page.varDataOK}} {{page.varRepDriveAny}}</td>
-    </tr>
-    <tr>
-      <td>2 drive failure</td>
-      <td>{{page.varLow}}</td>
-      <td>{{page.varDataOK}} {{page.varRepDriveAny}}</td>
-    </tr>
-    <tr>
-      <td>3 drive failures</td>
-      <td>{{page.varMedium}}</td>
-      <td>{{page.varDataOK}} {{page.varRepDriveAny}}</td>
-    </tr>
-    <tr>
-      <td>1 node failure</td>
-      <td>{{page.varHigh}}</td>
-      <td>{{page.varDataOK}} {{page.varReadOnlyRisk}}</td>
-    </tr>
-    <tr>
-      <td>2 node failures</td>
-      <td>{{page.varHigh}}</td>
-      <td>{{page.varDataOK}} {{page.varReadOnlyRisk}}</td>
-    </tr>
-    <tr>
-      <td>
-        4 (or more) drive failures<br>
-        or more than 2 node failures
       </td>
       <td>{{page.varHigh}}</td>
       <td>{{page.varDataUnavailOK}}</td>
@@ -183,12 +168,7 @@ This configuration requires a minimum of 5 nodes.
   </thead>
   <tbody>  
     <tr>
-      <td>1 drive failure</td>
-      <td>{{page.varLow}}</td>
-      <td>{{page.varDataOK}} {{page.varRepDriveAny}}</td>
-    </tr>
-    <tr>
-      <td>2 drive failures</td>
+      <td>1 or 2 drive failures</td>
       <td>{{page.varLow}}</td>
       <td>{{page.varDataOK}} {{page.varRepDriveAny}}</td>
     </tr>
@@ -198,23 +178,13 @@ This configuration requires a minimum of 5 nodes.
       <td>{{page.varDataOK}} {{page.varRepDriveAny}}</td>
     </tr>
     <tr>
-      <td>1 node failure</td>
-      <td>{{page.varHigh}}</td>
-      <td>{{page.varDataOK}} {{page.varReadOnlyRisk}}</td>
-    </tr>
-    <tr>
-      <td>2 node failures</td>
-      <td>{{page.varHigh}}</td>
-      <td>{{page.varDataOK}} {{page.varReadOnlyRisk}}</td>
-    </tr>
-    <tr>
-      <td>3 node failures</td>
+      <td>1, 2, or 3 node failures</td>
       <td>{{page.varHigh}}</td>
       <td>{{page.varDataOK}} {{page.varReadOnlyRisk}}</td>
     </tr>
     <tr>
       <td>
-        4 (or more) drive failure<br>
+        4 or more drive failures,<br>
         or more than 3 node failures
       </td>
       <td>{{page.varHigh}}</td>
@@ -236,97 +206,24 @@ This configuration requires a minimum of 5 nodes.
   </thead>
   <tbody>  
     <tr>
-      <td>1 drive failure</td>
+      <td>1 or 2 drive failure</td>
       <td>{{page.varLow}}</td>
       <td>{{page.varDataOK}} {{page.varRepDriveAny}}</td>
     </tr>
     <tr>
-      <td>2 drive failures</td>
-      <td>{{page.varLow}}</td>
-      <td>Data is protected. You may replace a failed drive at any time.</td>
-    </tr>
-    <tr>
-      <td>3 drive failures</td>
+      <td>3 or 4 drive failures</td>
       <td>{{page.varMedium}}</td>
-      <td>Data is protected. You may replace a failed drive at any time.</td>
+      <td>{{page.varDataOK}} {{page.varRepDriveAny}}</td>
     </tr>
     <tr>
-      <td>4 drive failures</td>
-      <td>{{page.varMedium}}</td>
-      <td>Data is protected. You may replace a failed drive at any time.</td>
-    </tr>
-    <tr>
-      <td>1 node failure</td>
-      <td>{{page.varHigh}}</td>
-      <td>{{page.varDataOK}} {{page.varReadOnlyRisk}}</td>
-    </tr>
-    <tr>
-      <td>2 node failures</td>
+      <td>1 or 2 node failures</td>
       <td>{{page.varHigh}}</td>
       <td>{{page.varDataOK}} {{page.varReadOnlyRisk}}</td>
     </tr>
     <tr>
       <td>
-        5 (or more) drive failures<br>
+        5 or more drive failures,<br>
         or more than 2 node failures
-      </td>
-      <td>{{page.varHigh}}</td>
-      <td>{{page.varDataUnavailOK}}</td>
-    </tr>
-  </tbody>
-</table>
-
-## 4-Drive, 3-Node Protection (4,3)
-{{page.varMinConfig}} 24 nodes.
-
-<table>
-  <thead>
-    <tr>
-      <th width="42%">Failure Scenario</th>
-      <th width="16%">Severity</th>
-      <th width="42%">Data Protection State</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>1 drive failure</td>
-      <td>{{page.varLow}}</td>
-      <td>{{page.varDataOK}} {{page.varRepDriveAny}}</td>
-    </tr>
-    <tr>
-      <td>2 drive failures</td>
-      <td>{{page.varLow}}</td>
-      <td>{{page.varDataOK}} {{page.varRepDriveAny}}</td>
-    </tr>
-    <tr>
-      <td>3 drive failures</td>
-      <td>{{page.varMedium}}</td>
-      <td>{{page.varDataOK}} {{page.varRepDriveAny}}</td>
-    </tr>
-    <tr>
-      <td>4 drive failures</td>
-      <td>{{page.varMedium}}</td>
-      <td>{{page.varDataOK}} {{page.varRepDriveAny}}</td>
-    </tr>
-    <tr>
-      <td>1 node failure</td>
-      <td>{{page.varHigh}}</td>
-      <td>{{page.varDataOK}} {{page.varReadOnlyRisk}}</td>
-    </tr>
-    <tr>
-      <td>2 node failures</td>
-      <td>{{page.varHigh}}</td>
-      <td>{{page.varDataOK}} {{page.varReadOnlyRisk}}</td>
-    </tr>
-    <tr>
-      <td>3 node failures</td>
-      <td>{{page.varHigh}}</td>
-      <td>{{page.varDataOK}} {{page.varReadOnlyRisk}}</td>
-    </tr>
-    <tr>
-      <td>
-        5 (or more) drive failure<br>
-        or more than 3 node failure
       </td>
       <td>{{page.varHigh}}</td>
       <td>{{page.varDataUnavailOK}}</td>
@@ -347,48 +244,23 @@ This configuration requires a minimum of 5 nodes.
   </thead>
   <tbody>
     <tr>
-      <td>1 drive failure</td>
+      <td>1 or 2 drive failures</td>
       <td>{{page.varLow}}</td>
       <td>{{page.varDataOK}} {{page.varRepDriveAny}}</td>
     </tr>
     <tr>
-      <td>2 drive failures</td>
-      <td>{{page.varLow}}</td>
-      <td>{{page.varDataOK}} {{page.varRepDriveAny}}</td>
-    </tr>
-    <tr>
-      <td>3 drive failures</td>
+      <td>3 or 4 drive failures</td>
       <td>{{page.varMedium}}</td>
       <td>{{page.varDataOK}} {{page.varRepDriveAny}}</td>
     </tr>
     <tr>
-      <td>4 drive failures</td>
-      <td>{{page.varMedium}}</td>
-      <td>{{page.varDataOK}} {{page.varRepDriveAny}}</td>
-    </tr>
-    <tr>
-      <td>1 node failure</td>
-      <td>{{page.varHigh}}</td>
-      <td>{{page.varDataOK}} {{page.varReadOnlyRisk}}</td>
-    </tr>
-    <tr>
-      <td>2 node failures</td>
-      <td>{{page.varHigh}}</td>
-      <td>{{page.varDataOK}} {{page.varReadOnlyRisk}}</td>
-    </tr>
-    <tr>
-      <td>3 node failures</td>
-      <td>{{page.varHigh}}</td>
-      <td>{{page.varDataOK}} {{page.varReadOnlyRisk}}</td>
-    </tr>
-    <tr>
-      <td>4 node failures</td>
+      <td>1, 2, 3, or 4 node failures</td>
       <td>{{page.varHigh}}</td>
       <td>{{page.varDataOK}} {{page.varReadOnlyRisk}}</td>
     </tr>
     <tr>
       <td>
-        5 (or more) drive failures<br>
+        5 or more drive failures,<br>
         or more than 4 node failures
       </td>
       <td>{{page.varHigh}}</td>
