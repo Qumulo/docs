@@ -1,6 +1,6 @@
 For an overview of {{site.aws.cnqAWSshort}}, its prerequisites, and limits, see [How Cloud Native Qumulo Works](how-cloud-native-qumulo-works.html).
 
-The {{page.varRepoLink}} contains comprehensive {% if page.deployment == "tf" %}Terraform configurations{% elsif page.deployment == "cfn" %}CloudFormation templates{% endif %} that let you deploy S3 buckets and then create a {{site.cnqShort}} cluster with 4 to 24 instances that adhere to the [AWS Well-Architected Framework](https://aws.amazon.com/architecture/well-architected/) and have fully elastic compute and capacity.
+The {{page.varRepoLink}} contains comprehensive {% if page.deployment == "tf" %}Terraform configurations{% elsif page.deployment == "cfn" %}CloudFormation templates{% endif %} that let you deploy S3 buckets and then create a {{site.cnqShort}} cluster with 3 to 24 instances that adhere to the [AWS Well-Architected Framework](https://aws.amazon.com/architecture/well-architected/) and have fully elastic compute and capacity.
 
 ## Prerequisites
 This section explains the prerequisites to deploying {{site.aws.cnqAWSshort}}.
