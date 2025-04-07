@@ -128,7 +128,7 @@ The S3 API creates the new directory `/my-bucket/`. All of the bucket's objects 
 <a id="writing-reading-objects"></a>
 ## Step 6: Test Writing and Reading S3 Objects
 
-1. To test writing data to your Qumulo cluster, perform a `PutObject` S3 API action by using the `aws s3api put-object` command. For example:
+1. To test writing data to your Qumulo cluster, perform a `PutObject` S3 API action by using the `aws s3api put-object` command. Specify the S3 bucket name, the object key, and the object data. For example:
 
    ```bash
    $ aws s3api put-object \
@@ -139,7 +139,7 @@ The S3 API creates the new directory `/my-bucket/`. All of the bucket's objects 
    
    The S3 API uploads the contents of `my-local-file.zip` into an object named `my-remote-file.zip`.
 
-1. To test reading read data from and S3 bucket, perform a `GetObject` S3 API action by using the `aws s3api get-object` command. For example:
+1. To test reading read data from and S3 bucket, perform a `GetObject` S3 API action by using the `aws s3api get-object` command. Specify the S3 bucket name, the object key, and the file name for saving the contents. For example:
 
    ```bash
    $ aws s3api get-object \
@@ -152,8 +152,8 @@ The S3 API creates the new directory `/my-bucket/`. All of the bucket's objects 
    ```json
    {
      "AcceptRanges": "bytes",
-     "LastModified": "Wed, 14 Dec 2022 20:42:46 GMT",
-     "ETag": "\"-gUAAAAAAAAAAwAAAAAAAAA\"",
+     "LastModified": "2025-04-06T01:54:11+00:00",
+     "ETag": "\"-aBCDEFGHIJKLmNOPQRSTUV\"",
      "ContentType": "binary/octet-stream",
      "Metadata": {}
    }
