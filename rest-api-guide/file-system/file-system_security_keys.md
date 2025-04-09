@@ -2,8 +2,8 @@
 category: /File System
 methods:
   get:
+    summary: "List the file system\u2019s public keys."
     parameters: []
-    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_change_lock_keys\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"entries\": {\n      \"type\": \"array\",\n \
@@ -23,20 +23,10 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: "List the file system\u2019s public keys."
-  post:
-    parameters: []
     preview: false
-    request_body:
-      schema: "{\n  \"description\": \"api_change_lock_key_create_request\",\n  \"\
-        type\": \"object\",\n  \"properties\": {\n    \"name\": {\n      \"description\"\
-        : \"The unique name of the specified key.\",\n      \"type\": \"string\"\n\
-        \    },\n    \"comment\": {\n      \"description\": \"A descriptive comment\
-        \ about the specified key.\",\n      \"type\": \"string\"\n    },\n    \"\
-        public_key\": {\n      \"description\": \"The public key.\",\n      \"type\"\
-        : \"string\"\n    },\n    \"verification_signature\": {\n      \"description\"\
-        : \"The name of the key signed with the private key.\",\n      \"type\": \"\
-        string\"\n    }\n  }\n}"
+  post:
+    summary: Register a new file system public key.
+    parameters: []
     response_body:
       schema: "{\n  \"description\": \"api_change_lock_key\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"The identifier\
@@ -51,7 +41,17 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Register a new file system public key.
+    preview: false
+    request_body:
+      schema: "{\n  \"description\": \"api_change_lock_key_create_request\",\n  \"\
+        type\": \"object\",\n  \"properties\": {\n    \"name\": {\n      \"description\"\
+        : \"The unique name of the specified key.\",\n      \"type\": \"string\"\n\
+        \    },\n    \"comment\": {\n      \"description\": \"A descriptive comment\
+        \ about the specified key.\",\n      \"type\": \"string\"\n    },\n    \"\
+        public_key\": {\n      \"description\": \"The public key.\",\n      \"type\"\
+        : \"string\"\n    },\n    \"verification_signature\": {\n      \"description\"\
+        : \"The name of the key signed with the private key.\",\n      \"type\": \"\
+        string\"\n    }\n  }\n}"
 rest_endpoint: /v1/file-system/security/keys/
 api_version: v1
 permalink: /rest-api-guide/file-system/file-system_security_keys.html

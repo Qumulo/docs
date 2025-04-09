@@ -2,13 +2,13 @@
 category: /Audit Log
 methods:
   get:
+    summary: Retrieves audit log CloudWatch status for the cluster.
     parameters: []
-    preview: false
     response_body: {}
     responses:
     - code: '200'
       description: Return value on success
-    summary: Retrieves audit log CloudWatch status for the cluster.
+    preview: false
 rest_endpoint: /v1/audit/cloudwatch/status
 api_version: v1
 permalink: /rest-api-guide/audit-log/audit_cloudwatch_status.html

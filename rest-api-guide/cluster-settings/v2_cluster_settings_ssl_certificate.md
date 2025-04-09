@@ -2,7 +2,13 @@
 category: /Cluster Settings
 methods:
   put:
+    summary: Set the SSL certificates used by the cluster to authenticate its own
+      identity.
     parameters: []
+    response_body: {}
+    responses:
+    - code: '200'
+      description: Return value on success
     preview: false
     request_body:
       schema: "{\n  \"description\": \"api_cluster_ssl_settings\",\n  \"type\": \"\
@@ -11,12 +17,6 @@ methods:
         string\"\n    },\n    \"private_key\": {\n      \"description\": \"Private\
         \ key for the cluster in PEM format\",\n      \"type\": \"string\"\n    }\n\
         \  }\n}"
-    response_body: {}
-    responses:
-    - code: '200'
-      description: Return value on success
-    summary: Set the SSL certificates used by the cluster to authenticate its own
-      identity.
 rest_endpoint: /v2/cluster/settings/ssl/certificate
 api_version: v2
 permalink: /rest-api-guide/cluster-settings/v2_cluster_settings_ssl_certificate.html

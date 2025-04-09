@@ -1,58 +1,28 @@
 ---
 category: /Files
 methods:
-  delete:
-    parameters:
-    - description: The file ID or the absolute path to the file system object. File
-        IDs can be found in the id field of responses of APIs that return file attributes.
-        You must URL-encode the paths. The APIs & Tools page in the Qumulo Core Web
-        UI URL-encodes the paths.
-      name: ref
-      required: true
-    - description: Offset of the range to release
-      name: offset
-      required: true
-    - description: Size of range to release. Zero releases to the maximum file size.
-      name: size
-      required: true
-    - description: Opaque, unique identifier for the process that owns the lock. This
-        is the owner_id attribute on entries returned by GET.
-      name: owner_id
-      required: true
-    - description: The snapshot ID that specifies the version of the filesystem to
-        use. If not specified, use the head version.
-      name: snapshot
-      required: false
-    preview: false
-    response_body: {}
-    responses:
-    - code: '200'
-      description: Return value on success
-    summary: Release an arbitrary lock range. This is dangerous, and should only be
-      used after confirming that the owning process has leaked the lock, and only
-      if there is a very good reason why the situation should not be resolved by terminating
-      that process.
   get:
+    summary: Return a list of all NLM byte range locks currently granted on the specified
+      file.
     parameters:
-    - description: The file ID or the absolute path to the file system object. File
+    - name: ref
+      description: The file ID or the absolute path to the file system object. File
         IDs can be found in the id field of responses of APIs that return file attributes.
         You must URL-encode the paths. The APIs & Tools page in the Qumulo Core Web
         UI URL-encodes the paths.
-      name: ref
       required: true
-    - description: The snapshot ID that specifies the version of the filesystem to
+    - name: snapshot
+      description: The snapshot ID that specifies the version of the filesystem to
         use. If not specified, use the head version.
-      name: snapshot
       required: false
-    - description: Return entries after the given key (keys are returned in the paging
+    - name: after
+      description: Return entries after the given key (keys are returned in the paging
         object)
-      name: after
       required: false
-    - description: Return no more than this many entries; the system may choose a
+    - name: limit
+      description: Return no more than this many entries; the system may choose a
         smaller limit.
-      name: limit
       required: false
-    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_byte_range_grants\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"grants\": {\n      \"type\": \"array\",\n  \
@@ -87,8 +57,38 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Return a list of all NLM byte range locks currently granted on the specified
-      file.
+    preview: false
+  delete:
+    summary: Release an arbitrary lock range. This is dangerous, and should only be
+      used after confirming that the owning process has leaked the lock, and only
+      if there is a very good reason why the situation should not be resolved by terminating
+      that process.
+    parameters:
+    - name: ref
+      description: The file ID or the absolute path to the file system object. File
+        IDs can be found in the id field of responses of APIs that return file attributes.
+        You must URL-encode the paths. The APIs & Tools page in the Qumulo Core Web
+        UI URL-encodes the paths.
+      required: true
+    - name: offset
+      description: Offset of the range to release
+      required: true
+    - name: size
+      description: Size of range to release. Zero releases to the maximum file size.
+      required: true
+    - name: owner_id
+      description: Opaque, unique identifier for the process that owns the lock. This
+        is the owner_id attribute on entries returned by GET.
+      required: true
+    - name: snapshot
+      description: The snapshot ID that specifies the version of the filesystem to
+        use. If not specified, use the head version.
+      required: false
+    response_body: {}
+    responses:
+    - code: '200'
+      description: Return value on success
+    preview: false
 rest_endpoint: /v1/files/{ref}/locks/nlm/byte-range/
 api_version: v1
 permalink: /rest-api-guide/files/files_ref_locks_nlm_byte-range.html

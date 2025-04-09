@@ -2,7 +2,12 @@
 category: /Active Directory
 methods:
   post:
+    summary: Enables/disables POSIX attributes, sets Base DN.
     parameters: []
+    response_body: {}
+    responses:
+    - code: '202'
+      description: Return value on success
     preview: false
     request_body:
       schema: "{\n  \"description\": \"ad_domain_reconfigure_args\",\n  \"type\":\
@@ -15,11 +20,6 @@ methods:
         ,\n      \"type\": \"string\"\n    },\n    \"dns_config_id\": {\n      \"\
         description\": \"The unique ID of the DNS configuration to use for reconfiguring\
         \ this AD domain\",\n      \"type\": \"number\"\n    }\n  }\n}"
-    response_body: {}
-    responses:
-    - code: '202'
-      description: Return value on success
-    summary: Enables/disables POSIX attributes, sets Base DN.
 rest_endpoint: /v1/ad/reconfigure
 api_version: v1
 permalink: /rest-api-guide/active-directory/ad_reconfigure.html

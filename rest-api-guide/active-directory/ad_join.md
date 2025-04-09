@@ -2,7 +2,12 @@
 category: /Active Directory
 methods:
   post:
+    summary: Joins the cluster to an Active Directory domain.
     parameters: []
+    response_body: {}
+    responses:
+    - code: '202'
+      description: Return value on success
     preview: false
     request_body:
       schema: "{\n  \"description\": \"ad_domain_join_args\",\n  \"type\": \"object\"\
@@ -21,11 +26,6 @@ methods:
         \ },\n    \"dns_config_id\": {\n      \"description\": \"The unique ID of\
         \ the DNS configuration to use for joining this AD domain\",\n      \"type\"\
         : \"number\"\n    }\n  }\n}"
-    response_body: {}
-    responses:
-    - code: '202'
-      description: Return value on success
-    summary: Joins the cluster to an Active Directory domain.
 rest_endpoint: /v1/ad/join
 api_version: v1
 permalink: /rest-api-guide/active-directory/ad_join.html

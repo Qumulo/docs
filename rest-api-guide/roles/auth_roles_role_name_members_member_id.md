@@ -1,29 +1,15 @@
 ---
 category: /Roles
 methods:
-  delete:
-    parameters:
-    - description: The name of the role (This page URL-encodes the name for you)
-      name: role_name
-      required: true
-    - description: The member's unique ID
-      name: member_id
-      required: true
-    preview: false
-    response_body: {}
-    responses:
-    - code: '200'
-      description: Return value on success
-    summary: Remove a member from a role
   get:
+    summary: Get information about the member of the role.
     parameters:
-    - description: The name of the role (This page URL-encodes the name for you)
-      name: role_name
+    - name: role_name
+      description: The name of the role (This page URL-encodes the name for you)
       required: true
-    - description: The member's unique ID
-      name: member_id
+    - name: member_id
+      description: The member's unique ID
       required: true
-    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_identity\",\n  \"type\": \"object\",\n\
         \  \"properties\": {\n    \"domain\": {\n      \"type\": \"string\",\n   \
@@ -47,7 +33,21 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Get information about the member of the role.
+    preview: false
+  delete:
+    summary: Remove a member from a role
+    parameters:
+    - name: role_name
+      description: The name of the role (This page URL-encodes the name for you)
+      required: true
+    - name: member_id
+      description: The member's unique ID
+      required: true
+    response_body: {}
+    responses:
+    - code: '200'
+      description: Return value on success
+    preview: false
 rest_endpoint: /v1/auth/roles/{role_name}/members/{member_id}
 api_version: v1
 permalink: /rest-api-guide/roles/auth_roles_role_name_members_member_id.html

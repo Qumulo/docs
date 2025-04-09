@@ -2,8 +2,8 @@
 category: /Time Configuration Methods
 methods:
   get:
+    summary: Retrieve the time status of the underlying system
     parameters: []
-    preview: false
     response_body:
       schema: "{\n  \"description\": \"time_status_response\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"config\": {\n      \"description\": \"config\"\
@@ -22,7 +22,7 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Retrieve the time status of the underlying system
+    preview: false
 rest_endpoint: /v1/time/status
 api_version: v1
 permalink: /rest-api-guide/time-configuration-methods/time_status.html

@@ -2,8 +2,9 @@
 category: /Monitoring Configuration and Status
 methods:
   get:
+    summary: 'List the monitoring status of all nodes: whether various kinds of monitoring
+      connections are enabled/connected/etc.'
     parameters: []
-    preview: false
     response_body:
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         api_node_monitoring_status\",\n    \"type\": \"object\",\n    \"properties\"\
@@ -33,8 +34,7 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: 'List the monitoring status of all nodes: whether various kinds of monitoring
-      connections are enabled/connected/etc.'
+    preview: false
 rest_endpoint: /v1/support/status/
 api_version: v1
 permalink: /rest-api-guide/monitoring-configuration-and-status/support_status.html

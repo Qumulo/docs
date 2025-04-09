@@ -3,8 +3,8 @@ category: raw
 command: raw
 optional_options:
 - alternate: []
-  help: 'Content MIME type. Use application/octet-stream for binary input. (Default:
-    application/json)'
+  help: 'Content MIME type for sending data with PATCH, POST, and PUT. Use application/octet-stream
+    for binary input. (Default: application/json)'
   name: --content-type
   required: false
 permalink: /qq-cli-command-guide/raw/raw.html

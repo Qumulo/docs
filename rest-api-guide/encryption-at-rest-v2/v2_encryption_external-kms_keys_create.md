@@ -2,7 +2,16 @@
 category: /Encryption at Rest V2
 methods:
   post:
+    summary: Create a Key in the Key Management Server.
     parameters: []
+    response_body:
+      schema: "{\n  \"description\": \"encryption_api_v2_create_kmip_key_result\"\
+        ,\n  \"type\": \"object\",\n  \"properties\": {\n    \"key_id\": {\n     \
+        \ \"description\": \"The key id of the newly created key on the Key Management\
+        \ Server.\",\n      \"type\": \"string\"\n    }\n  }\n}"
+    responses:
+    - code: '200'
+      description: Return value on success
     preview: false
     request_body:
       schema: "{\n  \"description\": \"encryption_api_v2_create_kmip_key\",\n  \"\
@@ -27,15 +36,6 @@ methods:
         \        \"type\": \"number\"\n        }\n      }\n    },\n    \"key_name\"\
         : {\n      \"description\": \"The name of the key that will be created in\
         \ the Key Management Server.\",\n      \"type\": \"string\"\n    }\n  }\n}"
-    response_body:
-      schema: "{\n  \"description\": \"encryption_api_v2_create_kmip_key_result\"\
-        ,\n  \"type\": \"object\",\n  \"properties\": {\n    \"key_id\": {\n     \
-        \ \"description\": \"The key id of the newly created key on the Key Management\
-        \ Server.\",\n      \"type\": \"string\"\n    }\n  }\n}"
-    responses:
-    - code: '200'
-      description: Return value on success
-    summary: Create a Key in the Key Management Server.
 rest_endpoint: /v2/encryption/external-kms/keys/create
 api_version: v2
 permalink: /rest-api-guide/encryption-at-rest-v2/v2_encryption_external-kms_keys_create.html

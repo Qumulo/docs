@@ -2,16 +2,15 @@
 category: /Replication
 methods:
   post:
+    summary: Reverse source and target for the specified replication relationship.
+      This operation is initiated on the target cluster. The previous target directory
+      will be made the new source, and the previous source directory will be made
+      the new target. Any relationship configurations on the source will be retained,
+      and any configurations on the target that have been retained from a previous
+      reversal will be reapplied. To resume replication after reversal, edit any relationship
+      configurations if desired and reconnect the relationship from the new target
+      cluster.
     parameters: []
-    preview: false
-    request_body:
-      schema: "{\n  \"description\": \"api_reverse_request\",\n  \"type\": \"object\"\
-        ,\n  \"properties\": {\n    \"target_relationship_id\": {\n      \"description\"\
-        : \"The identifier of the target relationship to reverse\",\n      \"type\"\
-        : \"string\"\n    },\n    \"source_address\": {\n      \"description\": \"\
-        The IP address of the source cluster\",\n      \"type\": \"string\"\n    },\n\
-        \    \"source_port\": {\n      \"description\": \"Network port of the source\
-        \ cluster (defaults to 3712)\",\n      \"type\": \"number\"\n    }\n  }\n}"
     response_body:
       schema: "{\n  \"description\": \"api_source_relationship\",\n  \"type\": \"\
         object\",\n  \"properties\": {\n    \"id\": {\n      \"description\": \"Unique\
@@ -81,14 +80,15 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Reverse source and target for the specified replication relationship.
-      This operation is initiated on the target cluster. The previous target directory
-      will be made the new source, and the previous source directory will be made
-      the new target. Any relationship configurations on the source will be retained,
-      and any configurations on the target that have been retained from a previous
-      reversal will be reapplied. To resume replication after reversal, edit any relationship
-      configurations if desired and reconnect the relationship from the new target
-      cluster.
+    preview: false
+    request_body:
+      schema: "{\n  \"description\": \"api_reverse_request\",\n  \"type\": \"object\"\
+        ,\n  \"properties\": {\n    \"target_relationship_id\": {\n      \"description\"\
+        : \"The identifier of the target relationship to reverse\",\n      \"type\"\
+        : \"string\"\n    },\n    \"source_address\": {\n      \"description\": \"\
+        The IP address of the source cluster\",\n      \"type\": \"string\"\n    },\n\
+        \    \"source_port\": {\n      \"description\": \"Network port of the source\
+        \ cluster (defaults to 3712)\",\n      \"type\": \"number\"\n    }\n  }\n}"
 rest_endpoint: /v2/replication/source-relationships/reverse-target-relationship
 api_version: v2
 permalink: /rest-api-guide/replication/v2_replication_source-relationships_reverse-target-relationship.html

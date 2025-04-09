@@ -2,11 +2,11 @@
 category: /Active Directory
 methods:
   get:
+    summary: Return the AD account object that has the given SID.
     parameters:
-    - description: The SID to use to look up an AD user or group.
-      name: sid
+    - name: sid
+      description: The SID to use to look up an AD user or group.
       required: true
-    preview: false
     response_body:
       schema: "{\n  \"description\": \"ad_ldap_object\",\n  \"type\": \"object\",\n\
         \  \"properties\": {\n    \"dn\": {\n      \"description\": \"dn\",\n    \
@@ -24,7 +24,7 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Return the AD account object that has the given SID.
+    preview: false
 rest_endpoint: /v1/ad/sids/{sid}/object
 api_version: v1
 permalink: /rest-api-guide/active-directory/ad_sids_sid_object.html

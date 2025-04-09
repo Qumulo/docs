@@ -2,8 +2,8 @@
 category: /Audit Log
 methods:
   get:
+    summary: Retrieves the syslog connection status of audit log.
     parameters: []
-    preview: false
     response_body:
       schema: "{\n  \"description\": \"syslog_audit_log_status\",\n  \"type\": \"\
         object\",\n  \"properties\": {\n    \"connection_status\": {\n      \"type\"\
@@ -21,7 +21,7 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Retrieves the syslog connection status of audit log.
+    preview: false
 rest_endpoint: /v1/audit/syslog/status
 api_version: v1
 permalink: /rest-api-guide/audit-log/audit_syslog_status.html

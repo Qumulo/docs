@@ -2,23 +2,18 @@
 category: /Files
 methods:
   post:
+    summary: Explain the effect of setting a POSIX mode on a file/directory.
     parameters:
-    - description: The file ID or the absolute path to the file system object. File
+    - name: ref
+      description: The file ID or the absolute path to the file system object. File
         IDs can be found in the id field of responses of APIs that return file attributes.
         You must URL-encode the paths. The APIs & Tools page in the Qumulo Core Web
         UI URL-encodes the paths.
-      name: ref
       required: true
-    - description: The snapshot ID that specifies the version of the filesystem to
+    - name: snapshot
+      description: The snapshot ID that specifies the version of the filesystem to
         use. If not specified, use the head version.
-      name: snapshot
       required: false
-    preview: false
-    request_body:
-      schema: "{\n  \"description\": \"api_files_apply_mode_explanation_post\",\n\
-        \  \"type\": \"object\",\n  \"properties\": {\n    \"mode\": {\n      \"description\"\
-        : \"POSIX mode to explain application of on a file ACL.\",\n      \"type\"\
-        : \"string\"\n    }\n  }\n}"
     response_body:
       schema: "{\n  \"description\": \"api_files_apply_mode_explanation\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"owner\": {\n      \"description\"\
@@ -697,7 +692,12 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Explain the effect of setting a POSIX mode on a file/directory.
+    preview: false
+    request_body:
+      schema: "{\n  \"description\": \"api_files_apply_mode_explanation_post\",\n\
+        \  \"type\": \"object\",\n  \"properties\": {\n    \"mode\": {\n      \"description\"\
+        : \"POSIX mode to explain application of on a file ACL.\",\n      \"type\"\
+        : \"string\"\n    }\n  }\n}"
 rest_endpoint: /v1/files/{ref}/info/acl/explain-set-mode
 api_version: v1
 permalink: /rest-api-guide/files/files_ref_info_acl_explain-set-mode.html

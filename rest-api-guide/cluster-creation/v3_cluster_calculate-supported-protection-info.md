@@ -2,17 +2,10 @@
 category: /Cluster Creation
 methods:
   post:
+    summary: Returns list of supported data protection stripe configuration(s). This
+      includes the stripe width and usable capacity using that width. For use with
+      unconfigured nodes only.
     parameters: []
-    preview: false
-    request_body:
-      schema: "{\n  \"description\": \"api_supported_protection_info_request_v2\"\
-        ,\n  \"type\": \"object\",\n  \"properties\": {\n    \"node_uuids\": {\n \
-        \     \"type\": \"array\",\n      \"items\": {\n        \"description\": \"\
-        List of unconfigured node UUIDs to query supported protection levels and capacities\"\
-        ,\n        \"type\": \"string\"\n      }\n    },\n    \"node_ips\": {\n  \
-        \    \"type\": \"array\",\n      \"items\": {\n        \"description\": \"\
-        List of unconfigured node IPs to query supported protection levels and capacities\"\
-        ,\n        \"type\": \"string\"\n      }\n    }\n  }\n}"
     response_body:
       schema: "{\n  \"description\": \"api_supported_protection_configs\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"supported_configs\": {\n      \"\
@@ -35,9 +28,16 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Returns list of supported data protection stripe configuration(s). This
-      includes the stripe width and usable capacity using that width. For use with
-      unconfigured nodes only.
+    preview: false
+    request_body:
+      schema: "{\n  \"description\": \"api_supported_protection_info_request_v2\"\
+        ,\n  \"type\": \"object\",\n  \"properties\": {\n    \"node_uuids\": {\n \
+        \     \"type\": \"array\",\n      \"items\": {\n        \"description\": \"\
+        List of unconfigured node UUIDs to query supported protection levels and capacities\"\
+        ,\n        \"type\": \"string\"\n      }\n    },\n    \"node_ips\": {\n  \
+        \    \"type\": \"array\",\n      \"items\": {\n        \"description\": \"\
+        List of unconfigured node IPs to query supported protection levels and capacities\"\
+        ,\n        \"type\": \"string\"\n      }\n    }\n  }\n}"
 rest_endpoint: /v3/cluster/calculate-supported-protection-info
 api_version: v3
 permalink: /rest-api-guide/cluster-creation/v3_cluster_calculate-supported-protection-info.html

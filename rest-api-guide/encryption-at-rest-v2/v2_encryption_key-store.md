@@ -2,8 +2,8 @@
 category: /Encryption at Rest V2
 methods:
   get:
+    summary: View the active at-rest encryption configuration.
     parameters: []
-    preview: false
     response_body:
       schema: "{\n  \"description\": \"encryption_api_v2_key_store_response_union\"\
         ,\n  \"type\": \"object\",\n  \"properties\": {\n    \"type\": {\n      \"\
@@ -31,9 +31,14 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: View the active at-rest encryption configuration.
+    preview: false
   put:
+    summary: Update the active at-rest encryption configuration.
     parameters: []
+    response_body: {}
+    responses:
+    - code: '200'
+      description: Return value on success
     preview: false
     request_body:
       schema: "{\n  \"description\": \"encryption_api_v2_put_key_store_union\",\n\
@@ -59,11 +64,6 @@ methods:
         \   \"description\": \"The unique ID of the master key for at-rest encryption\
         \ that is stored in the Key Management Server.\",\n          \"type\": \"\
         string\"\n        }\n      }\n    }\n  }\n}"
-    response_body: {}
-    responses:
-    - code: '200'
-      description: Return value on success
-    summary: Update the active at-rest encryption configuration.
 rest_endpoint: /v2/encryption/key-store
 api_version: v2
 permalink: /rest-api-guide/encryption-at-rest-v2/v2_encryption_key-store.html

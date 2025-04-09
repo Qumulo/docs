@@ -219,6 +219,10 @@ entries:
       output: web,pdf
       title: cluster/object-backed/create
       url: /rest-api-guide/cluster-creation/v4_cluster_object-backed_create.html
+    - apiversion: v5
+      output: web,pdf
+      title: cluster/object-backed/create
+      url: /rest-api-guide/cluster-creation/v5_cluster_object-backed_create.html
     output: web,pdf
     title: Cluster Creation (cluster)
     url: /rest-api-guide/cluster-creation/

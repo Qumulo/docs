@@ -2,19 +2,19 @@
 category: /S3 Server Methods
 methods:
   get:
+    summary: List all in-progress S3 uploads for a specific bucket.
     parameters:
-    - description: Bucket name
-      name: name
+    - name: name
+      description: Bucket name
       required: true
-    - description: Return entries after the given key (keys are returned in the paging
+    - name: after
+      description: Return entries after the given key (keys are returned in the paging
         object)
-      name: after
       required: false
-    - description: Return no more than this many entries; the system may choose a
+    - name: limit
+      description: Return no more than this many entries; the system may choose a
         smaller limit.
-      name: limit
       required: false
-    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_upload_description_list_model\",\n  \"\
         type\": \"object\",\n  \"properties\": {\n    \"uploads\": {\n      \"type\"\
@@ -70,7 +70,7 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: List all in-progress S3 uploads for a specific bucket.
+    preview: false
 rest_endpoint: /v1/s3/buckets/{name}/uploads/
 api_version: v1
 permalink: /rest-api-guide/s3-server-methods/s3_buckets_name_uploads.html

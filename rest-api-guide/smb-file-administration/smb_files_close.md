@@ -2,7 +2,17 @@
 category: /SMB File Administration
 methods:
   post:
+    summary: The request body must contain a list of file handles to close, as returned
+      from GET /v1/smb/files. Fields other than 'location' are ignored.
     parameters: []
+    response_body:
+      schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
+        api_smb2_file_close_result\",\n    \"type\": \"object\",\n    \"properties\"\
+        : {\n      \"error_message\": {\n        \"description\": \"error_message\"\
+        ,\n        \"type\": \"string\"\n      }\n    }\n  }\n}"
+    responses:
+    - code: '200'
+      description: Return value on success
     preview: false
     request_body:
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
@@ -63,16 +73,6 @@ methods:
         ,\n            \"type\": \"string\"\n          },\n          \"path\": {\n\
         \            \"description\": \"path\",\n            \"type\": \"string\"\n\
         \          }\n        }\n      }\n    }\n  }\n}"
-    response_body:
-      schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
-        api_smb2_file_close_result\",\n    \"type\": \"object\",\n    \"properties\"\
-        : {\n      \"error_message\": {\n        \"description\": \"error_message\"\
-        ,\n        \"type\": \"string\"\n      }\n    }\n  }\n}"
-    responses:
-    - code: '200'
-      description: Return value on success
-    summary: The request body must contain a list of file handles to close, as returned
-      from GET /v1/smb/files. Fields other than 'location' are ignored.
 rest_endpoint: /v1/smb/files/close
 api_version: v1
 permalink: /rest-api-guide/smb-file-administration/smb_files_close.html

@@ -2,22 +2,22 @@
 category: /SMB Session Administration
 methods:
   get:
+    summary: Enumerate open sessions
     parameters:
-    - description: 'List only sessions matching a user identity in the form of: [1]
+    - name: identity
+      description: 'List only sessions matching a user identity in the form of: [1]
         A name or a SID optionally qualified with a domain prefix (e.g local:name,
         S-1-1-0, name, world:Everyone, ldap_user:name, or ad:name), or [2] An ID type
         (e.g. uid:1001, auth_id:513, SID:S-1-1-0).)'
-      name: identity
       required: false
-    - description: Return entries after the given key (keys are returned in the paging
+    - name: after
+      description: Return entries after the given key (keys are returned in the paging
         object)
-      name: after
       required: false
-    - description: Return no more than this many entries; the system may choose a
+    - name: limit
+      description: Return no more than this many entries; the system may choose a
         smaller limit.
-      name: limit
       required: false
-    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_smb_sessions_get_response\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"session_infos\": {\n      \"type\"\
@@ -73,7 +73,7 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Enumerate open sessions
+    preview: false
 rest_endpoint: /v1/smb/sessions/
 api_version: v1
 permalink: /rest-api-guide/smb-session-administration/smb_sessions.html

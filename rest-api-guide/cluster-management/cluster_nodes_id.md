@@ -2,11 +2,12 @@
 category: /Cluster Management
 methods:
   get:
+    summary: Retrieve node-specific info, such as serial number, mac address, uuid,
+      etc
     parameters:
-    - description: The unique ID of the node
-      name: id
+    - name: id
+      description: The unique ID of the node
       required: true
-    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_node\",\n  \"type\": \"object\",\n  \"\
         properties\": {\n    \"id\": {\n      \"description\": \"id\",\n      \"type\"\
@@ -25,8 +26,7 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Retrieve node-specific info, such as serial number, mac address, uuid,
-      etc
+    preview: false
 rest_endpoint: /v1/cluster/nodes/{id}
 api_version: v1
 permalink: /rest-api-guide/cluster-management/cluster_nodes_id.html

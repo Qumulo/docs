@@ -2,8 +2,8 @@
 category: /Tree Delete
 methods:
   get:
+    summary: Get status of all directory-tree deletion jobs.
     parameters: []
-    preview: false
     response_body:
       schema: "{\n  \"description\": \"tree_delete_jobs_response\",\n  \"type\": \"\
         object\",\n  \"properties\": {\n    \"jobs\": {\n      \"type\": \"array\"\
@@ -41,9 +41,14 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Get status of all directory-tree deletion jobs.
+    preview: false
   post:
+    summary: Start unlinking this directory and all its contents.
     parameters: []
+    response_body: {}
+    responses:
+    - code: '202'
+      description: Return value on success
     preview: false
     request_body:
       schema: "{\n  \"description\": \"tree_delete_job_post\",\n  \"type\": \"object\"\
@@ -52,11 +57,6 @@ methods:
         \ the id field of responses of APIs that return file attributes. You must\
         \ URL-encode the paths. The APIs & Tools page in the Qumulo Core Web UI URL-encodes\
         \ the paths.\",\n      \"type\": \"string\"\n    }\n  }\n}"
-    response_body: {}
-    responses:
-    - code: '202'
-      description: Return value on success
-    summary: Start unlinking this directory and all its contents.
 rest_endpoint: /v1/tree-delete/jobs/
 api_version: v1
 permalink: /rest-api-guide/tree-delete/tree-delete_jobs.html

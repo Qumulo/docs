@@ -2,34 +2,37 @@
 category: /Files
 methods:
   get:
+    summary: Return aggregated data for this directory and its children. It does a
+      breadth-first traversal of directories up to the user-specified limit (see max_entries
+      and max_depth parameters) or system-imposed limit. Directory entries that are
+      smaller than 10% of the directory's total size are omitted.
     parameters:
-    - description: The file ID or the absolute path to the file system object. File
+    - name: ref
+      description: The file ID or the absolute path to the file system object. File
         IDs can be found in the id field of responses of APIs that return file attributes.
         You must URL-encode the paths. The APIs & Tools page in the Qumulo Core Web
         UI URL-encodes the paths.
-      name: ref
       required: true
-    - description: 'Maximum directory entries we see before breaking out of the tree
+    - name: max-entries
+      description: 'Maximum directory entries we see before breaking out of the tree
         walk (default: 1000, system limit: 5000)'
-      name: max-entries
       required: false
-    - description: 'Maximum depth to traverse while doing the tree walk (default:
+    - name: max-depth
+      description: 'Maximum depth to traverse while doing the tree walk (default:
         10, system limit: 5000)'
-      name: max-depth
       required: false
-    - description: "Ordering field used for top N selection and sorting (default:\
+    - name: order-by
+      description: "Ordering field used for top N selection and sorting (default:\
         \ total_blocks):\n * `total_blocks` - total_blocks,\n * `total_datablocks`\
         \ - total_datablocks,\n * `total_directories` - total_directories,\n * `total_files`\
         \ - total_files,\n * `total_metablocks` - total_metablocks,\n * `total_named_stream_datablocks`\
         \ - total_named_stream_datablocks,\n * `total_named_streams` - total_named_streams,\n\
         \ * `total_other` - total_other,\n * `total_symlinks` - total_symlinks"
-      name: order-by
       required: false
-    - description: The snapshot ID that specifies the version of the filesystem to
+    - name: snapshot
+      description: The snapshot ID that specifies the version of the filesystem to
         use. If not specified, use the head version.
-      name: snapshot
       required: false
-    preview: false
     response_body:
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         api_files_dir_aggregates\",\n    \"type\": \"object\",\n    \"properties\"\
@@ -94,10 +97,7 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Return aggregated data for this directory and its children. It does a
-      breadth-first traversal of directories up to the user-specified limit (see max_entries
-      and max_depth parameters) or system-imposed limit. Directory entries that are
-      smaller than 10% of the directory's total size are omitted.
+    preview: false
 rest_endpoint: /v1/files/{ref}/recursive-aggregates/
 api_version: v1
 permalink: /rest-api-guide/files/files_ref_recursive-aggregates.html

@@ -2,11 +2,13 @@
 category: /Local User Methods
 methods:
   get:
+    summary: Retrieve group membership of a specific user. Refer to the 'Modify group'
+      method for a description of the returned fields. Returns an empty array if the
+      provided user is not a local user.
     parameters:
-    - description: The user's unique ID
-      name: id
+    - name: id
+      description: The user's unique ID
       required: true
-    preview: false
     response_body:
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         api_group\",\n    \"type\": \"object\",\n    \"properties\": {\n      \"id\"\
@@ -19,9 +21,7 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Retrieve group membership of a specific user. Refer to the 'Modify group'
-      method for a description of the returned fields. Returns an empty array if the
-      provided user is not a local user.
+    preview: false
 rest_endpoint: /v1/users/{id}/groups/
 api_version: v1
 permalink: /rest-api-guide/local-user-methods/users_id_groups.html

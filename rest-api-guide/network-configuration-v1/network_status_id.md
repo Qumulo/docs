@@ -2,11 +2,13 @@
 category: /Network Configuration V1
 methods:
   get:
+    summary: This method retrieves the network configuration of the underlying system,
+      including DHCP configuration, and status of any pending changes. This API is
+      deprecated in favor of /v2/network/interfaces/1/status/{node_id}.
     parameters:
-    - description: The unique ID of the node
-      name: id
+    - name: id
+      description: The unique ID of the node
       required: true
-    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_network_status_response\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"id\": {\n      \"description\":\
@@ -78,9 +80,7 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: This method retrieves the network configuration of the underlying system,
-      including DHCP configuration, and status of any pending changes. This API is
-      deprecated in favor of /v2/network/interfaces/1/status/{node_id}.
+    preview: false
 rest_endpoint: /v1/network/status/{id}
 api_version: v1
 permalink: /rest-api-guide/network-configuration-v1/network_status_id.html

@@ -2,19 +2,12 @@
 category: /Cloud Data Fabric
 methods:
   post:
+    summary: Propose a relationship from the specified unlinked spoke portal on the
+      current cluster. This action creates a pending hub portal on the specified cluster.
     parameters:
-    - description: Portal ID
-      name: id
+    - name: id
+      description: Portal ID
       required: true
-    preview: false
-    request_body:
-      schema: "{\n  \"description\": \"api_portal_propose_request\",\n  \"type\":\
-        \ \"object\",\n  \"properties\": {\n    \"hub_root\": {\n      \"description\"\
-        : \"Full path to the hub portal root directory\",\n      \"type\": \"string\"\
-        \n    },\n    \"hub_address\": {\n      \"description\": \"IP address of a\
-        \ node in the remote cluster\",\n      \"type\": \"string\"\n    },\n    \"\
-        hub_port\": {\n      \"description\": \"TCP port for the remote cluster\"\
-        ,\n      \"type\": \"number\"\n    }\n  }\n}"
     response_body:
       schema: "{\n  \"description\": \"api_portal_spoke_relationship\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"id\": {\n      \"description\":\
@@ -48,8 +41,15 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Propose a relationship from the specified unlinked spoke portal on the
-      current cluster. This action creates a pending hub portal on the specified cluster.
+    preview: false
+    request_body:
+      schema: "{\n  \"description\": \"api_portal_propose_request\",\n  \"type\":\
+        \ \"object\",\n  \"properties\": {\n    \"hub_root\": {\n      \"description\"\
+        : \"Full path to the hub portal root directory\",\n      \"type\": \"string\"\
+        \n    },\n    \"hub_address\": {\n      \"description\": \"IP address of a\
+        \ node in the remote cluster\",\n      \"type\": \"string\"\n    },\n    \"\
+        hub_port\": {\n      \"description\": \"TCP port for the remote cluster\"\
+        ,\n      \"type\": \"number\"\n    }\n  }\n}"
 rest_endpoint: /v1/portal/spokes/{id}/propose
 api_version: v1
 permalink: /rest-api-guide/cloud-data-fabric/portal_spokes_id_propose.html

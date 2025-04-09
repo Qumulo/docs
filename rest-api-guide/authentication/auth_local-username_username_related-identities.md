@@ -2,11 +2,12 @@
 category: /Authentication
 methods:
   get:
+    summary: Given a local username, return all related identities (equivalents in
+      other domains, and containing groups). This API is deprecated in favor of /v1/identity/expand
     parameters:
-    - description: The local username to expand.
-      name: username
+    - name: username
+      description: The local username to expand.
       required: true
-    preview: false
     response_body:
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         api_identity_v1\",\n    \"type\": \"object\",\n    \"properties\": {\n   \
@@ -22,8 +23,7 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Given a local username, return all related identities (equivalents in
-      other domains, and containing groups). This API is deprecated in favor of /v1/identity/expand
+    preview: false
 rest_endpoint: /v1/auth/local-username/{username}/related-identities/
 api_version: v1
 permalink: /rest-api-guide/authentication/auth_local-username_username_related-identities.html

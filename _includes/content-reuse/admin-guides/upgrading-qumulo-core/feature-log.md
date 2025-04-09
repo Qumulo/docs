@@ -4,6 +4,17 @@ For information about upgrade types for each release, see <a href='mode-referenc
 
 <style>div#toc{height:200px;overflow:auto;}</style>
 
+## Qumulo Core 7.4.3
+{{page.varDownloadsRelnotes}}
+
+* Added the ability to use the NFSv4.1 protocol with spoke portals
+* Added the ability to perform punch hole operations on spoke portals by using the `qq` CLI and REST API
+* Added automatic functionality that cleans up portal relationships after synchronizing spoke portal changes
+* Improved NeuralCache (formerly Predictive Read Cache) intelligent data ingestion and retention policy
+* Added support for using EBS volumes for NeuralCache in AWS Local Zones
+* Resolved an issue with NTLM authentication for certain image scanning devices and SMB shares
+* Resolved an issue with the SMB server and showing previous versions for files and directories
+
 ## Qumulo Core 7.4.2.1
 {{page.varDownloadsRelnotes}}
 
@@ -34,7 +45,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
 * Made _read-write spoke portals_ available by default
 * Eliminated the REST APIs for manual removal of cached data from spoke portals (no changes to automatic cached data removal)
 * Improved file identifiers to distinguish between cluster-local and spoke-cached data
-* Implemented Predictive Read Cache architecture for new cloud clusters
+* Implemented NeuralCache architecture for new cloud clusters
 * Renamed the designation `preview` (previously, `beta`) which marks REST APIs under development
 * Made public the REST API endpoints and `qq` CLI commands that manage a cluster's DNS configuration
 

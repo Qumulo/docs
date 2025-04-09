@@ -2,24 +2,20 @@
 category: /Files
 methods:
   post:
+    summary: Rename a stream on provided object
     parameters:
-    - description: The file ID or the absolute path to the file system object. File
+    - name: ref
+      description: The file ID or the absolute path to the file system object. File
         IDs can be found in the id field of responses of APIs that return file attributes.
         You must URL-encode the paths. The APIs & Tools page in the Qumulo Core Web
         UI URL-encodes the paths.
-      name: ref
       required: true
-    - description: Stream ID (uint64) to be renamed
-      name: stream_id
+    - name: stream_id
+      description: Stream ID (uint64) to be renamed
       required: true
-    - description: ETag for expected version
-      name: If-Match
+    - name: If-Match
+      description: ETag for expected version
       required: false
-    preview: false
-    request_body:
-      schema: "{\n  \"description\": \"api_named_stream_entry\",\n  \"type\": \"object\"\
-        ,\n  \"properties\": {\n    \"stream_name\": {\n      \"description\": \"\
-        Stream name to be created.\",\n      \"type\": \"string\"\n    }\n  }\n}"
     response_body:
       schema: "{\n  \"description\": \"api_named_stream_attributes\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"name\": {\n      \"description\"\
@@ -32,7 +28,11 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Rename a stream on provided object
+    preview: false
+    request_body:
+      schema: "{\n  \"description\": \"api_named_stream_entry\",\n  \"type\": \"object\"\
+        ,\n  \"properties\": {\n    \"stream_name\": {\n      \"description\": \"\
+        Stream name to be created.\",\n      \"type\": \"string\"\n    }\n  }\n}"
 rest_endpoint: /v1/files/{ref}/streams/{stream_id}/rename
 api_version: v1
 permalink: /rest-api-guide/files/files_ref_streams_stream_id_rename.html

@@ -2,8 +2,8 @@
 category: /Cluster Management
 methods:
   get:
+    summary: List all object-backed nodes in the cluster.
     parameters: []
-    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_cluster_object_backed_nodes_get_response\"\
         ,\n  \"type\": \"object\",\n  \"properties\": {\n    \"membership\": {\n \
@@ -21,9 +21,16 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: List all object-backed nodes in the cluster.
+    preview: false
   post:
+    summary: Modify the composition of the object-backed cluster by adding unconfigured
+      nodes or replacing configured nodes. Allows for the specification of fault domains
+      on added or replaced nodes.
     parameters: []
+    response_body: {}
+    responses:
+    - code: '202'
+      description: Return value on success
     preview: false
     request_body:
       schema: "{\n  \"description\": \"api_cluster_object_backed_nodes_modify_request_v2\"\
@@ -40,13 +47,6 @@ methods:
         fault_domain_id\": {\n                \"description\": \"fault_domain_id\"\
         ,\n                \"type\": \"number\"\n              }\n            }\n\
         \          }\n        }\n      }\n    }\n  }\n}"
-    response_body: {}
-    responses:
-    - code: '202'
-      description: Return value on success
-    summary: Modify the composition of the object-backed cluster by adding unconfigured
-      nodes or replacing configured nodes. Allows for the specification of fault domains
-      on added or replaced nodes.
 rest_endpoint: /v2/cluster/object-backed/nodes
 api_version: v2
 permalink: /rest-api-guide/cluster-management/v2_cluster_object-backed_nodes.html

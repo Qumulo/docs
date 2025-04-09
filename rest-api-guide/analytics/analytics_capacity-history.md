@@ -2,19 +2,21 @@
 category: /Analytics
 methods:
   get:
+    summary: Returns capacity history data for the cluster. Does not return entries
+      for timeslots without capacity data. Returned history data will be sorted by
+      ascending time.
     parameters:
-    - description: Lower bound on history returned, in RFC 3339 format or epoch seconds.
-      name: begin-time
+    - name: begin-time
+      description: Lower bound on history returned, in RFC 3339 format or epoch seconds.
       required: true
-    - description: Upper bound on history returned, in RFC 3339 format or epoch seconds.
+    - name: end-time
+      description: Upper bound on history returned, in RFC 3339 format or epoch seconds.
         If not specified, defaults to the current system time.
-      name: end-time
       required: false
-    - description: "Sampling interval. If not specified, defaults to 'hourly'.:\n\
+    - name: interval
+      description: "Sampling interval. If not specified, defaults to 'hourly'.:\n\
         \ * `daily` - daily,\n * `hourly` - hourly,\n * `weekly` - weekly"
-      name: interval
       required: false
-    preview: false
     response_body:
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         overall_historical_capacity\",\n    \"type\": \"object\",\n    \"properties\"\
@@ -36,9 +38,7 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Returns capacity history data for the cluster. Does not return entries
-      for timeslots without capacity data. Returned history data will be sorted by
-      ascending time.
+    preview: false
 rest_endpoint: /v1/analytics/capacity-history/
 api_version: v1
 permalink: /rest-api-guide/analytics/analytics_capacity-history.html

@@ -2,8 +2,8 @@
 category: /Active Directory
 methods:
   get:
+    summary: Get Active Directory configuration and status.
     parameters: []
-    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_ad_status\",\n  \"type\": \"object\",\n\
         \  \"properties\": {\n    \"status\": {\n      \"type\": \"string\",\n   \
@@ -51,7 +51,7 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Get Active Directory configuration and status.
+    preview: false
 rest_endpoint: /v1/ad/status
 api_version: v1
 permalink: /rest-api-guide/active-directory/ad_status.html

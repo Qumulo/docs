@@ -2,8 +2,8 @@
 category: /Upgrade
 methods:
   get:
+    summary: Retrieve the current status of the upgrade system.
     parameters: []
-    preview: false
     response_body:
       schema: "{\n  \"description\": \"upgrade_status\",\n  \"type\": \"object\",\n\
         \  \"properties\": {\n    \"state\": {\n      \"type\": \"string\",\n    \
@@ -35,7 +35,7 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Retrieve the current status of the upgrade system.
+    preview: false
 rest_endpoint: /v3/upgrade/status
 api_version: v3
 permalink: /rest-api-guide/upgrade/v3_upgrade_status.html

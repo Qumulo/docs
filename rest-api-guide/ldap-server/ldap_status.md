@@ -2,8 +2,8 @@
 category: /LDAP Server
 methods:
   get:
+    summary: Get LDAP connection status if applicable.
     parameters: []
-    preview: false
     response_body:
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         api_ldap_connection_state\",\n    \"type\": \"object\",\n    \"properties\"\
@@ -29,7 +29,7 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Get LDAP connection status if applicable.
+    preview: false
 rest_endpoint: /v1/ldap/status
 api_version: v1
 permalink: /rest-api-guide/ldap-server/ldap_status.html

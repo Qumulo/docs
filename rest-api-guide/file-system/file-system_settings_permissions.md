@@ -1,9 +1,9 @@
 ---
 category: /File System
 methods:
-  get:
+  put:
+    summary: Set permissions settings.
     parameters: []
-    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_permissions_settings\",\n  \"type\": \"\
         object\",\n  \"properties\": {\n    \"mode\": {\n      \"type\": \"string\"\
@@ -14,9 +14,6 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Get permissions settings.
-  put:
-    parameters: []
     preview: false
     request_body:
       schema: "{\n  \"description\": \"api_permissions_settings\",\n  \"type\": \"\
@@ -25,6 +22,9 @@ methods:
         ,\n        \"CROSS_PROTOCOL\"\n      ],\n      \"description\": \"mode:\\\
         n * `CROSS_PROTOCOL` - CROSS_PROTOCOL,\\n * `NATIVE` - NATIVE,\\n * `_DEPRECATED_MERGED_V1`\
         \ - _DEPRECATED_MERGED_V1\"\n    }\n  }\n}"
+  get:
+    summary: Get permissions settings.
+    parameters: []
     response_body:
       schema: "{\n  \"description\": \"api_permissions_settings\",\n  \"type\": \"\
         object\",\n  \"properties\": {\n    \"mode\": {\n      \"type\": \"string\"\
@@ -35,7 +35,7 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Set permissions settings.
+    preview: false
 rest_endpoint: /v1/file-system/settings/permissions
 api_version: v1
 permalink: /rest-api-guide/file-system/file-system_settings_permissions.html

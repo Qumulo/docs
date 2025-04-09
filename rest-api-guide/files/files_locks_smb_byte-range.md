@@ -2,19 +2,19 @@
 category: /Files
 methods:
   get:
+    summary: Return a list of all granted file locks that the specified machine owns.
     parameters:
-    - description: IP Address of the client that owns the lock.
-      name: owner_address
+    - name: owner_address
+      description: IP Address of the client that owns the lock.
       required: false
-    - description: Return entries after the given key (keys are returned in the paging
+    - name: after
+      description: Return entries after the given key (keys are returned in the paging
         object)
-      name: after
       required: false
-    - description: Return no more than this many entries; the system may choose a
+    - name: limit
+      description: Return no more than this many entries; the system may choose a
         smaller limit.
-      name: limit
       required: false
-    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_byte_range_grants\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"grants\": {\n      \"type\": \"array\",\n  \
@@ -49,7 +49,7 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Return a list of all granted file locks that the specified machine owns.
+    preview: false
 rest_endpoint: /v1/files/locks/smb/byte-range/
 api_version: v1
 permalink: /rest-api-guide/files/files_locks_smb_byte-range.html

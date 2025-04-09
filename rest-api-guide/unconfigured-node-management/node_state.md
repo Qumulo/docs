@@ -2,8 +2,8 @@
 category: /Unconfigured Node Management
 methods:
   get:
+    summary: Retrieves node state of the node that the call was made to.
     parameters: []
-    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_node_state\",\n  \"type\": \"object\",\n\
         \  \"properties\": {\n    \"node_id\": {\n      \"description\": \"node-id\
@@ -21,7 +21,7 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Retrieves node state of the node that the call was made to.
+    preview: false
 rest_endpoint: /v1/node/state
 api_version: v1
 permalink: /rest-api-guide/unconfigured-node-management/node_state.html

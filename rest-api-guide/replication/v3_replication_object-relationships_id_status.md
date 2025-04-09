@@ -2,16 +2,16 @@
 category: /Replication
 methods:
   get:
+    summary: Get the status of an existing object replication relationship.
     parameters:
-    - description: Relationship identifier
-      name: id
+    - name: id
+      description: Relationship identifier
       required: true
-    preview: false
     response_body: {}
     responses:
     - code: '200'
       description: Return value on success
-    summary: Get the status of an existing object replication relationship.
+    preview: false
 rest_endpoint: /v3/replication/object-relationships/{id}/status
 api_version: v3
 permalink: /rest-api-guide/replication/v3_replication_object-relationships_id_status.html

@@ -2,17 +2,17 @@
 category: /Replication
 methods:
   post:
+    summary: Abort any ongoing replication job for the specified object replication
+      relationship.
     parameters:
-    - description: Relationship identifier
-      name: id
+    - name: id
+      description: Relationship identifier
       required: true
-    preview: false
     response_body: {}
     responses:
     - code: '200'
       description: Return value on success
-    summary: Abort any ongoing replication job for the specified object replication
-      relationship.
+    preview: false
 rest_endpoint: /v3/replication/object-relationships/{id}/abort-replication
 api_version: v3
 permalink: /rest-api-guide/replication/v3_replication_object-relationships_id_abort-replication.html

@@ -2,18 +2,12 @@
 category: /Cloud Data Fabric
 methods:
   post:
+    summary: Authorize the specified pending hub portal. Authorizing a hub portal
+      establishes a relationship with a spoke portal.
     parameters:
-    - description: Portal ID
-      name: id
+    - name: id
+      description: Portal ID
       required: true
-    preview: false
-    request_body:
-      schema: "{\n  \"description\": \"api_portal_authorize_request\",\n  \"type\"\
-        : \"object\",\n  \"properties\": {\n    \"spoke_address\": {\n      \"description\"\
-        : \"IP address of a node in the cluster that proposed the portal relationship\"\
-        ,\n      \"type\": \"string\"\n    },\n    \"spoke_port\": {\n      \"description\"\
-        : \"TCP port for the cluster that proposed the portal relationship\",\n  \
-        \    \"type\": \"number\"\n    }\n  }\n}"
     response_body:
       schema: "{\n  \"description\": \"api_portal_hub_relationship\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"id\": {\n      \"description\":\
@@ -45,8 +39,14 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Authorize the specified pending hub portal. Authorizing a hub portal
-      establishes a relationship with a spoke portal.
+    preview: false
+    request_body:
+      schema: "{\n  \"description\": \"api_portal_authorize_request\",\n  \"type\"\
+        : \"object\",\n  \"properties\": {\n    \"spoke_address\": {\n      \"description\"\
+        : \"IP address of a node in the cluster that proposed the portal relationship\"\
+        ,\n      \"type\": \"string\"\n    },\n    \"spoke_port\": {\n      \"description\"\
+        : \"TCP port for the cluster that proposed the portal relationship\",\n  \
+        \    \"type\": \"number\"\n    }\n  }\n}"
 rest_endpoint: /v1/portal/hubs/{id}/authorize
 api_version: v1
 permalink: /rest-api-guide/cloud-data-fabric/portal_hubs_id_authorize.html

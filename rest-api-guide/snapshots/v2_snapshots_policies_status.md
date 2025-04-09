@@ -2,8 +2,9 @@
 category: /Snapshots
 methods:
   get:
+    summary: Returns status information about all snapshot policies. A policy status
+      includes non-configurable policy information.
     parameters: []
-    preview: false
     response_body:
       schema: "{\n  \"description\": \"snapshots_api_policy_statuses_v2\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"entries\": {\n      \"type\": \"\
@@ -111,8 +112,7 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Returns status information about all snapshot policies. A policy status
-      includes non-configurable policy information.
+    preview: false
 rest_endpoint: /v2/snapshots/policies/status/
 api_version: v2
 permalink: /rest-api-guide/snapshots/v2_snapshots_policies_status.html

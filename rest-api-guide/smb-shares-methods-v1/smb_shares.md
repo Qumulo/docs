@@ -2,8 +2,9 @@
 category: /SMB Shares Methods V1
 methods:
   get:
+    summary: List all SMB shares. Refer to the 'Modify SMB share' method for a description
+      of the returned fields.
     parameters: []
-    preview: false
     response_body:
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         api_smb_share\",\n    \"type\": \"object\",\n    \"properties\": {\n     \
@@ -31,34 +32,14 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: List all SMB shares. Refer to the 'Modify SMB share' method for a description
-      of the returned fields.
-  post:
-    parameters:
-    - description: Specifies whether the file system path can be created if it does
-        not already exist.
-      name: allow-fs-path-create
-      required: false
     preview: false
-    request_body:
-      schema: "{\n  \"description\": \"api_smb_share_post\",\n  \"type\": \"object\"\
-        ,\n  \"properties\": {\n    \"share_name\": {\n      \"description\": \"The\
-        \ SMB share name\",\n      \"type\": \"string\"\n    },\n    \"fs_path\":\
-        \ {\n      \"description\": \"The filesystem path to SMB share\",\n      \"\
-        type\": \"string\"\n    },\n    \"description\": {\n      \"description\"\
-        : \"Description of this SMB share\",\n      \"type\": \"string\"\n    },\n\
-        \    \"read_only\": {\n      \"description\": \"Sets the SMB share to read-only\"\
-        ,\n      \"type\": \"boolean\"\n    },\n    \"allow_guest_access\": {\n  \
-        \    \"description\": \"Allows guest access to this SMB share\",\n      \"\
-        type\": \"boolean\"\n    },\n    \"access_based_enumeration_enabled\": {\n\
-        \      \"description\": \"Enable Access-based Enumeration on this SMB share\"\
-        ,\n      \"type\": \"boolean\"\n    },\n    \"default_file_create_mode\":\
-        \ {\n      \"description\": \"Default POSIX file create mode bits on this\
-        \ SMB share (octal, default 0644 if this field is empty)\",\n      \"type\"\
-        : \"string\"\n    },\n    \"default_directory_create_mode\": {\n      \"description\"\
-        : \"Default POSIX directory create mode bits on this SMB share (octal, default\
-        \ 0755 if this field is empty)\",\n      \"type\": \"string\"\n    }\n  }\n\
-        }"
+  post:
+    summary: Add an SMB share with given options.
+    parameters:
+    - name: allow-fs-path-create
+      description: Specifies whether the file system path can be created if it does
+        not already exist.
+      required: false
     response_body:
       schema: "{\n  \"description\": \"api_smb_share\",\n  \"type\": \"object\",\n\
         \  \"properties\": {\n    \"id\": {\n      \"description\": \"The unique ID\
@@ -84,7 +65,26 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Add an SMB share with given options.
+    preview: false
+    request_body:
+      schema: "{\n  \"description\": \"api_smb_share_post\",\n  \"type\": \"object\"\
+        ,\n  \"properties\": {\n    \"share_name\": {\n      \"description\": \"The\
+        \ SMB share name\",\n      \"type\": \"string\"\n    },\n    \"fs_path\":\
+        \ {\n      \"description\": \"The filesystem path to SMB share\",\n      \"\
+        type\": \"string\"\n    },\n    \"description\": {\n      \"description\"\
+        : \"Description of this SMB share\",\n      \"type\": \"string\"\n    },\n\
+        \    \"read_only\": {\n      \"description\": \"Sets the SMB share to read-only\"\
+        ,\n      \"type\": \"boolean\"\n    },\n    \"allow_guest_access\": {\n  \
+        \    \"description\": \"Allows guest access to this SMB share\",\n      \"\
+        type\": \"boolean\"\n    },\n    \"access_based_enumeration_enabled\": {\n\
+        \      \"description\": \"Enable Access-based Enumeration on this SMB share\"\
+        ,\n      \"type\": \"boolean\"\n    },\n    \"default_file_create_mode\":\
+        \ {\n      \"description\": \"Default POSIX file create mode bits on this\
+        \ SMB share (octal, default 0644 if this field is empty)\",\n      \"type\"\
+        : \"string\"\n    },\n    \"default_directory_create_mode\": {\n      \"description\"\
+        : \"Default POSIX directory create mode bits on this SMB share (octal, default\
+        \ 0755 if this field is empty)\",\n      \"type\": \"string\"\n    }\n  }\n\
+        }"
 rest_endpoint: /v1/smb/shares/
 api_version: v1
 permalink: /rest-api-guide/smb-shares-methods-v1/smb_shares.html

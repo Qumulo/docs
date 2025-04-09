@@ -2,23 +2,23 @@
 category: /SMB File Administration
 methods:
   get:
+    summary: Enumerate open file handles
     parameters:
-    - description: File ID. Limits result to handles on the specified file.
-      name: file_number
+    - name: file_number
+      description: File ID. Limits result to handles on the specified file.
       required: false
-    - description: Includes the paths to each file in the results. Resolving many
+    - name: resolve_paths
+      description: Includes the paths to each file in the results. Resolving many
         paths can be slow.
-      name: resolve_paths
       required: false
-    - description: Return entries after the given key (keys are returned in the paging
+    - name: after
+      description: Return entries after the given key (keys are returned in the paging
         object)
-      name: after
       required: false
-    - description: Return no more than this many entries; the system may choose a
+    - name: limit
+      description: Return no more than this many entries; the system may choose a
         smaller limit.
-      name: limit
       required: false
-    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_smb_files_get_response\",\n  \"type\":\
         \ \"object\",\n  \"properties\": {\n    \"file_handles\": {\n      \"type\"\
@@ -90,7 +90,7 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Enumerate open file handles
+    preview: false
 rest_endpoint: /v1/smb/files/
 api_version: v1
 permalink: /rest-api-guide/smb-file-administration/smb_files.html

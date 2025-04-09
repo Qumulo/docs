@@ -2,7 +2,17 @@
 category: /SMB Session Administration
 methods:
   post:
+    summary: The request body must contain a list of sessions to close, as returned
+      from GET /v1/smb/sessions.
     parameters: []
+    response_body:
+      schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
+        api_smb2_session_close_result\",\n    \"type\": \"object\",\n    \"properties\"\
+        : {\n      \"error_message\": {\n        \"description\": \"error_message\"\
+        ,\n        \"type\": \"string\"\n      }\n    }\n  }\n}"
+    responses:
+    - code: '200'
+      description: Return value on success
     preview: false
     request_body:
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
@@ -49,16 +59,6 @@ methods:
         : {\n        \"type\": \"array\",\n        \"items\": {\n          \"description\"\
         : \"share_names\",\n          \"type\": \"string\"\n        }\n      }\n \
         \   }\n  }\n}"
-    response_body:
-      schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
-        api_smb2_session_close_result\",\n    \"type\": \"object\",\n    \"properties\"\
-        : {\n      \"error_message\": {\n        \"description\": \"error_message\"\
-        ,\n        \"type\": \"string\"\n      }\n    }\n  }\n}"
-    responses:
-    - code: '200'
-      description: Return value on success
-    summary: The request body must contain a list of sessions to close, as returned
-      from GET /v1/smb/sessions.
 rest_endpoint: /v1/smb/sessions/close
 api_version: v1
 permalink: /rest-api-guide/smb-session-administration/smb_sessions_close.html

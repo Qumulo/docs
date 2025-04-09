@@ -2,7 +2,13 @@
 category: /Cluster Management
 methods:
   post:
+    summary: Modify the composition of the cluster by adding unconfigured nodes or
+      replacing configured nodes.
     parameters: []
+    response_body: {}
+    responses:
+    - code: '202'
+      description: Return value on success
     preview: false
     request_body:
       schema: "{\n  \"description\": \"api_cluster_nodes_modify_request_v2\",\n  \"\
@@ -26,12 +32,6 @@ methods:
         \n        },\n        \"data_blocks_per_stripe\": {\n          \"description\"\
         : \"The number of data blocks per stripe.\",\n          \"type\": \"number\"\
         \n        }\n      }\n    }\n  }\n}"
-    response_body: {}
-    responses:
-    - code: '202'
-      description: Return value on success
-    summary: Modify the composition of the cluster by adding unconfigured nodes or
-      replacing configured nodes.
 rest_endpoint: /v2/cluster/nodes/
 api_version: v2
 permalink: /rest-api-guide/cluster-management/v2_cluster_nodes.html

@@ -2,23 +2,15 @@
 category: /File System
 methods:
   post:
+    summary: Replace the file system public key by using the name or identifier of
+      the specified key.
     parameters:
-    - description: The name or identifier of the key to replace.
-      name: key_ref
+    - name: key_ref
+      description: The name or identifier of the key to replace.
       required: true
-    - description: ETag for expected version
-      name: If-Match
+    - name: If-Match
+      description: ETag for expected version
       required: false
-    preview: false
-    request_body:
-      schema: "{\n  \"description\": \"api_change_lock_key_replace_request\",\n  \"\
-        type\": \"object\",\n  \"properties\": {\n    \"replacement_key\": {\n   \
-        \   \"description\": \"The replacement public key.\",\n      \"type\": \"\
-        string\"\n    },\n    \"old_key_verification_signature\": {\n      \"description\"\
-        : \"The key replacement challenge signed with the current private key.\",\n\
-        \      \"type\": \"string\"\n    },\n    \"replacement_key_verification_signature\"\
-        : {\n      \"description\": \"The key replacement challenge signed with the\
-        \ replacement private key.\",\n      \"type\": \"string\"\n    }\n  }\n}"
     response_body:
       schema: "{\n  \"description\": \"api_change_lock_key\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"The identifier\
@@ -33,8 +25,16 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Replace the file system public key by using the name or identifier of
-      the specified key.
+    preview: false
+    request_body:
+      schema: "{\n  \"description\": \"api_change_lock_key_replace_request\",\n  \"\
+        type\": \"object\",\n  \"properties\": {\n    \"replacement_key\": {\n   \
+        \   \"description\": \"The replacement public key.\",\n      \"type\": \"\
+        string\"\n    },\n    \"old_key_verification_signature\": {\n      \"description\"\
+        : \"The key replacement challenge signed with the current private key.\",\n\
+        \      \"type\": \"string\"\n    },\n    \"replacement_key_verification_signature\"\
+        : {\n      \"description\": \"The key replacement challenge signed with the\
+        \ replacement private key.\",\n      \"type\": \"string\"\n    }\n  }\n}"
 rest_endpoint: /v1/file-system/security/keys/{key_ref}/replace
 api_version: v1
 permalink: /rest-api-guide/file-system/file-system_security_keys_key_ref_replace.html

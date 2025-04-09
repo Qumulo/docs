@@ -2,23 +2,19 @@
 category: /Files
 methods:
   post:
+    summary: Create a hole in a region of a file. Destroys all data within the hole
+      so that subsequent reads will return zeroes. Returns the post-operation attributes
+      of the file.
     parameters:
-    - description: The file ID or the absolute path to the file system object. File
+    - name: ref
+      description: The file ID or the absolute path to the file system object. File
         IDs can be found in the id field of responses of APIs that return file attributes.
         You must URL-encode the paths. The APIs & Tools page in the Qumulo Core Web
         UI URL-encodes the paths.
-      name: ref
       required: true
-    - description: ETag for expected version
-      name: If-Match
+    - name: If-Match
+      description: ETag for expected version
       required: false
-    preview: false
-    request_body:
-      schema: "{\n  \"description\": \"api_files_punch_hole\",\n  \"type\": \"object\"\
-        ,\n  \"properties\": {\n    \"offset\": {\n      \"description\": \"Offset\
-        \ in bytes specifying the start of the hole to create.\",\n      \"type\"\
-        : \"string\"\n    },\n    \"size\": {\n      \"description\": \"Size in bytes\
-        \ of the hole to create.\",\n      \"type\": \"string\"\n    }\n  }\n}"
     response_body:
       schema: "{\n  \"description\": \"api_files_attributes\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"path\": {\n      \"description\": \"Filesystem\
@@ -120,9 +116,13 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Create a hole in a region of a file. Destroys all data within the hole
-      so that subsequent reads will return zeroes. Returns the post-operation attributes
-      of the file.
+    preview: false
+    request_body:
+      schema: "{\n  \"description\": \"api_files_punch_hole\",\n  \"type\": \"object\"\
+        ,\n  \"properties\": {\n    \"offset\": {\n      \"description\": \"Offset\
+        \ in bytes specifying the start of the hole to create.\",\n      \"type\"\
+        : \"string\"\n    },\n    \"size\": {\n      \"description\": \"Size in bytes\
+        \ of the hole to create.\",\n      \"type\": \"string\"\n    }\n  }\n}"
 rest_endpoint: /v1/files/{ref}/punch-hole
 api_version: v1
 permalink: /rest-api-guide/files/files_ref_punch-hole.html

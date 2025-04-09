@@ -2,8 +2,9 @@
 category: /Local Group Methods
 methods:
   get:
+    summary: List all groups. Refer to the 'Modify group' method for a description
+      of the returned fields.
     parameters: []
-    preview: false
     response_body:
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         api_group\",\n    \"type\": \"object\",\n    \"properties\": {\n      \"id\"\
@@ -16,16 +17,10 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: List all groups. Refer to the 'Modify group' method for a description
-      of the returned fields.
-  post:
-    parameters: []
     preview: false
-    request_body:
-      schema: "{\n  \"description\": \"api_group_post\",\n  \"type\": \"object\",\n\
-        \  \"properties\": {\n    \"name\": {\n      \"description\": \"The group\
-        \ name\",\n      \"type\": \"string\"\n    },\n    \"gid\": {\n      \"description\"\
-        : \"The group's NFS gid\",\n      \"type\": \"string\"\n    }\n  }\n}"
+  post:
+    summary: Add a group.
+    parameters: []
     response_body:
       schema: "{\n  \"description\": \"api_group\",\n  \"type\": \"object\",\n  \"\
         properties\": {\n    \"id\": {\n      \"description\": \"The group's unique\
@@ -37,7 +32,12 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Add a group.
+    preview: false
+    request_body:
+      schema: "{\n  \"description\": \"api_group_post\",\n  \"type\": \"object\",\n\
+        \  \"properties\": {\n    \"name\": {\n      \"description\": \"The group\
+        \ name\",\n      \"type\": \"string\"\n    },\n    \"gid\": {\n      \"description\"\
+        : \"The group's NFS gid\",\n      \"type\": \"string\"\n    }\n  }\n}"
 rest_endpoint: /v1/groups/
 api_version: v1
 permalink: /rest-api-guide/local-group-methods/groups.html

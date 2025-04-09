@@ -2,11 +2,8 @@
 category: /DNS Methods
 methods:
   post:
+    summary: Deprecated. Use /v1/dns/resolve-ips-to-names instead.
     parameters: []
-    preview: false
-    request_body:
-      schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"type\": \"string\"\
-        \n  }\n}"
     response_body:
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         api_resolved_ip\",\n    \"type\": \"object\",\n    \"properties\": {\n   \
@@ -22,7 +19,10 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Deprecated. Use /v1/dns/resolve-ips-to-names instead.
+    preview: false
+    request_body:
+      schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"type\": \"string\"\
+        \n  }\n}"
 rest_endpoint: /v1/dns/resolve/
 api_version: v1
 permalink: /rest-api-guide/dns-methods/dns_resolve.html

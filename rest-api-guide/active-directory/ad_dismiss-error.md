@@ -2,8 +2,8 @@
 category: /Active Directory
 methods:
   post:
+    summary: Dismiss the last error recorded from a join, reconfigure, or leave operation.
     parameters: []
-    preview: false
     response_body:
       schema: "{\n  \"description\": \"ad_domain_monitor\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"status\": {\n      \"type\": \"string\",\n \
@@ -38,7 +38,7 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Dismiss the last error recorded from a join, reconfigure, or leave operation.
+    preview: false
 rest_endpoint: /v1/ad/dismiss-error
 api_version: v1
 permalink: /rest-api-guide/active-directory/ad_dismiss-error.html

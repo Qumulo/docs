@@ -2,7 +2,12 @@
 category: /Shutdown
 methods:
   post:
+    summary: Start a reboot cycle with the Reboot Manager system.
     parameters: []
+    response_body: {}
+    responses:
+    - code: '202'
+      description: Return value on success
     preview: false
     request_body:
       schema: "{\n  \"description\": \"api_reboot_start_options\",\n  \"type\": \"\
@@ -15,11 +20,6 @@ methods:
         \ than or equal to the number of node failures that your cluster permits.\
         \ By default, the value is the number of permitted node failures minus 1 (1\
         \ node minimum).\",\n      \"type\": \"number\"\n    }\n  }\n}"
-    response_body: {}
-    responses:
-    - code: '202'
-      description: Return value on success
-    summary: Start a reboot cycle with the Reboot Manager system.
 rest_endpoint: /v1/shutdown/reboot/start
 api_version: v1
 permalink: /rest-api-guide/shutdown/shutdown_reboot_start.html

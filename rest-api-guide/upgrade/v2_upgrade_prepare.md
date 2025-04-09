@@ -2,7 +2,12 @@
 category: /Upgrade
 methods:
   post:
+    summary: Prepare for upgrade.
     parameters: []
+    response_body: {}
+    responses:
+    - code: '202'
+      description: Return value on success
     preview: false
     request_body:
       schema: "{\n  \"description\": \"api_upgrade_prepare_request\",\n  \"type\"\
@@ -19,11 +24,6 @@ methods:
         \ or equal to the number of node failures that your cluster permits. By default,\
         \ the value is the number of permitted node failures minus 1 (1 node minimum).\"\
         ,\n      \"type\": \"number\"\n    }\n  }\n}"
-    response_body: {}
-    responses:
-    - code: '202'
-      description: Return value on success
-    summary: Prepare for upgrade.
 rest_endpoint: /v2/upgrade/prepare
 api_version: v2
 permalink: /rest-api-guide/upgrade/v2_upgrade_prepare.html

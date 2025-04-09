@@ -2,16 +2,16 @@
 category: /Shutdown
 methods:
   post:
+    summary: Shut down a single node.
     parameters:
-    - description: URI parameter node_id
-      name: node_id
+    - name: node_id
+      description: URI parameter node_id
       required: true
-    preview: false
     response_body: {}
     responses:
     - code: '200'
       description: Return value on success
-    summary: Shut down a single node.
+    preview: false
 rest_endpoint: /v1/shutdown/halt/{node_id}
 api_version: v1
 permalink: /rest-api-guide/shutdown/shutdown_halt_node_id.html

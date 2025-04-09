@@ -2,8 +2,8 @@
 category: /File System
 methods:
   get:
+    summary: Retrieve general file system statistics.
     parameters: []
-    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_fs_attributes\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"block_size_bytes\": {\n      \"description\"\
@@ -17,7 +17,7 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Retrieve general file system statistics.
+    preview: false
 rest_endpoint: /v1/file-system
 api_version: v1
 permalink: /rest-api-guide/file-system/file-system.html

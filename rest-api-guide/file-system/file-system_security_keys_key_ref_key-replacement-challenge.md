@@ -2,12 +2,13 @@
 category: /File System
 methods:
   get:
+    summary: Get file system public key replacement challenge by using the name or
+      identifier of the specified key.
     parameters:
-    - description: The name or identifier of the key for which to get a security challenge
+    - name: key_ref
+      description: The name or identifier of the key for which to get a security challenge
         for key replacement.
-      name: key_ref
       required: true
-    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_change_lock_key_replace_challenge\",\n\
         \  \"type\": \"object\",\n  \"properties\": {\n    \"challenge\": {\n    \
@@ -16,8 +17,7 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Get file system public key replacement challenge by using the name or
-      identifier of the specified key.
+    preview: false
 rest_endpoint: /v1/file-system/security/keys/{key_ref}/key-replacement-challenge
 api_version: v1
 permalink: /rest-api-guide/file-system/file-system_security_keys_key_ref_key-replacement-challenge.html

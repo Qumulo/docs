@@ -2,8 +2,8 @@
 category: /Network Configuration
 methods:
   get:
+    summary: Get configurations of all interfaces for the whole cluster.
     parameters: []
-    preview: false
     response_body:
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         api_interface_config\",\n    \"type\": \"object\",\n    \"properties\": {\n\
@@ -26,7 +26,7 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Get configurations of all interfaces for the whole cluster.
+    preview: false
 rest_endpoint: /v2/network/interfaces/
 api_version: v2
 permalink: /rest-api-guide/network-configuration/v2_network_interfaces.html

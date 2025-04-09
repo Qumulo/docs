@@ -2,13 +2,13 @@
 category: /Encryption at Rest
 methods:
   post:
+    summary: Rotate the encryption at rest keys.
     parameters: []
-    preview: false
     response_body: {}
     responses:
     - code: '200'
       description: Return value on success
-    summary: Rotate the encryption at rest keys.
+    preview: false
 rest_endpoint: /v1/encryption/rotate-keys
 api_version: v1
 permalink: /rest-api-guide/encryption-at-rest/encryption_rotate-keys.html

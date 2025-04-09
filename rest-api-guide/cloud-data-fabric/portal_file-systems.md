@@ -2,8 +2,8 @@
 category: /Cloud Data Fabric
 methods:
   get:
+    summary: Retrieve portal information for all file systems.
     parameters: []
-    preview: false
     response_body:
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         api_portal_fs_info\",\n    \"type\": \"object\",\n    \"properties\": {\n\
@@ -14,7 +14,7 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Retrieve portal information for all file systems.
+    preview: false
 rest_endpoint: /v1/portal/file-systems/
 api_version: v1
 permalink: /rest-api-guide/cloud-data-fabric/portal_file-systems.html

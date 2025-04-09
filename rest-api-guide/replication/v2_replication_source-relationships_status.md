@@ -2,8 +2,9 @@
 category: /Replication
 methods:
   get:
+    summary: List statuses for all existing replication relationships where this cluster
+      is the source.
     parameters: []
-    preview: false
     response_body:
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         api_source_relationship_status\",\n    \"type\": \"object\",\n    \"properties\"\
@@ -210,8 +211,7 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: List statuses for all existing replication relationships where this cluster
-      is the source.
+    preview: false
 rest_endpoint: /v2/replication/source-relationships/status/
 api_version: v2
 permalink: /rest-api-guide/replication/v2_replication_source-relationships_status.html

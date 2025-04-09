@@ -2,23 +2,24 @@
 category: /Files
 methods:
   get:
+    summary: Retrieve a random sampling of files, with the probability of being chosen
+      based on by-value property.
     parameters:
-    - description: The file ID or the absolute path to the file system object. File
+    - name: ref
+      description: The file ID or the absolute path to the file system object. File
         IDs can be found in the id field of responses of APIs that return file attributes.
         You must URL-encode the paths. The APIs & Tools page in the Qumulo Core Web
         UI URL-encodes the paths.
-      name: ref
       required: true
-    - description: "Weight the sampling by the value specified: capacity (total bytes\
+    - name: by-value
+      description: "Weight the sampling by the value specified: capacity (total bytes\
         \ used for data and metadata), data (total bytes used for data only), file\
         \ (file count), named_streams (named stream count):\n * `capacity` - capacity,\n\
         \ * `data` - data,\n * `file` - file,\n * `named_streams` - named_streams"
-      name: by-value
       required: true
-    - description: Maximum number of entries returned
-      name: limit
+    - name: limit
+      description: Maximum number of entries returned
       required: true
-    preview: false
     response_body:
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         api_files_aggregates\",\n    \"type\": \"object\",\n    \"properties\": {\n\
@@ -59,8 +60,7 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Retrieve a random sampling of files, with the probability of being chosen
-      based on by-value property.
+    preview: false
 rest_endpoint: /v1/files/{ref}/sample/
 api_version: v1
 permalink: /rest-api-guide/files/files_ref_sample.html

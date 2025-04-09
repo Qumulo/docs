@@ -2,12 +2,9 @@
 category: /Upgrade
 methods:
   post:
+    summary: Verify that the given image can be used to upgrade the cluster and retrieve
+      details about the upgrade that will occur.
     parameters: []
-    preview: false
-    request_body:
-      schema: "{\n  \"description\": \"api_verify_request\",\n  \"type\": \"object\"\
-        ,\n  \"properties\": {\n    \"image_path\": {\n      \"description\": \"image_path\"\
-        ,\n      \"type\": \"string\"\n    }\n  }\n}"
     response_body:
       schema: "{\n  \"description\": \"upgrade_verify_result\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"target_version\": {\n      \"description\":\
@@ -20,8 +17,11 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Verify that the given image can be used to upgrade the cluster and retrieve
-      details about the upgrade that will occur.
+    preview: false
+    request_body:
+      schema: "{\n  \"description\": \"api_verify_request\",\n  \"type\": \"object\"\
+        ,\n  \"properties\": {\n    \"image_path\": {\n      \"description\": \"image_path\"\
+        ,\n      \"type\": \"string\"\n    }\n  }\n}"
 rest_endpoint: /v2/upgrade/verify-image
 api_version: v2
 permalink: /rest-api-guide/upgrade/v2_upgrade_verify-image.html

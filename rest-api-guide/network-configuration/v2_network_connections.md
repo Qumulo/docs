@@ -2,8 +2,8 @@
 category: /Network Configuration
 methods:
   get:
+    summary: Return a list of NFS and SMB protocol connections to each node
     parameters: []
-    preview: false
     response_body:
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         api_connection_list_data\",\n    \"type\": \"object\",\n    \"properties\"\
@@ -27,7 +27,7 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Return a list of NFS and SMB protocol connections to each node
+    preview: false
 rest_endpoint: /v2/network/connections/
 api_version: v2
 permalink: /rest-api-guide/network-configuration/v2_network_connections.html

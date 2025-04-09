@@ -2,11 +2,13 @@
 category: /LDAP Server
 methods:
   get:
+    summary: Query the LDAP server for the gid numbers for all the groups of which
+      the given login name is a member. This returns a vector of results in the case
+      that the given login name maps to multiple uid numbers.
     parameters:
-    - description: The login name to use to lookup its GID numbers
-      name: login_name
+    - name: login_name
+      description: The login name to use to lookup its GID numbers
       required: true
-    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_ldap_login_name_to_gid_numbers\",\n  \"\
         type\": \"object\",\n  \"properties\": {\n    \"login_name\": {\n      \"\
@@ -22,9 +24,7 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Query the LDAP server for the gid numbers for all the groups of which
-      the given login name is a member. This returns a vector of results in the case
-      that the given login name maps to multiple uid numbers.
+    preview: false
 rest_endpoint: /v1/ldap/login-name/{login_name}/gid-numbers
 api_version: v1
 permalink: /rest-api-guide/ldap-server/ldap_login-name_login_name_gid-numbers.html

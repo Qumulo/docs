@@ -2,8 +2,8 @@
 category: /Unconfigured Nodes
 methods:
   get:
+    summary: List the unconfigured nodes discovered on the local network.
     parameters: []
-    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_unconfigured_nodes_response\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"nodes\": {\n      \"type\": \"array\"\
@@ -33,7 +33,7 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: List the unconfigured nodes discovered on the local network.
+    preview: false
 rest_endpoint: /v1/unconfigured/nodes/
 api_version: v1
 permalink: /rest-api-guide/unconfigured-nodes/unconfigured_nodes.html

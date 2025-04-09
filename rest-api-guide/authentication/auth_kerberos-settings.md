@@ -2,8 +2,8 @@
 category: /Authentication
 methods:
   get:
+    summary: Get the Kerberos settings
     parameters: []
-    preview: false
     response_body:
       schema: "{\n  \"description\": \"kerberos_config\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"use_alt_security_identities_mapping\": {\n \
@@ -12,27 +12,27 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Get the Kerberos settings
+    preview: false
   put:
+    summary: Set the Kerberos settings
     parameters:
-    - description: ETag for expected version
-      name: If-Match
+    - name: If-Match
+      description: ETag for expected version
       required: false
+    response_body:
+      schema: "{\n  \"description\": \"kerberos_config\",\n  \"type\": \"object\"\
+        ,\n  \"properties\": {\n    \"use_alt_security_identities_mapping\": {\n \
+        \     \"description\": \"use_alt_security_identities_mapping\",\n      \"\
+        type\": \"boolean\"\n    }\n  }\n}"
+    responses:
+    - code: '200'
+      description: Return value on success
     preview: false
     request_body:
       schema: "{\n  \"description\": \"kerberos_config\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"use_alt_security_identities_mapping\": {\n \
         \     \"description\": \"use_alt_security_identities_mapping\",\n      \"\
         type\": \"boolean\"\n    }\n  }\n}"
-    response_body:
-      schema: "{\n  \"description\": \"kerberos_config\",\n  \"type\": \"object\"\
-        ,\n  \"properties\": {\n    \"use_alt_security_identities_mapping\": {\n \
-        \     \"description\": \"use_alt_security_identities_mapping\",\n      \"\
-        type\": \"boolean\"\n    }\n  }\n}"
-    responses:
-    - code: '200'
-      description: Return value on success
-    summary: Set the Kerberos settings
 rest_endpoint: /v1/auth/kerberos-settings
 api_version: v1
 permalink: /rest-api-guide/authentication/auth_kerberos-settings.html

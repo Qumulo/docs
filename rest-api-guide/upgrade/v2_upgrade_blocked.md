@@ -2,8 +2,8 @@
 category: /Upgrade
 methods:
   get:
+    summary: Check if upgrade is currently blocked.
     parameters: []
-    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_upgrade_blocked_response\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"is_blocked\": {\n      \"description\"\
@@ -14,7 +14,7 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Check if upgrade is currently blocked.
+    preview: false
 rest_endpoint: /v2/upgrade/blocked
 api_version: v2
 permalink: /rest-api-guide/upgrade/v2_upgrade_blocked.html

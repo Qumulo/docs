@@ -2,11 +2,12 @@
 category: /Directory Quotas
 methods:
   get:
+    summary: Get the directory quota for a directory, its limit in bytes, and current
+      capacity usage.
     parameters:
-    - description: Directory ID
-      name: id
+    - name: id
+      description: Directory ID
       required: true
-    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_files_quota_status\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"Unique ID\
@@ -20,8 +21,7 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Get the directory quota for a directory, its limit in bytes, and current
-      capacity usage.
+    preview: false
 rest_endpoint: /v1/files/quotas/status/{id}
 api_version: v1
 permalink: /rest-api-guide/directory-quotas/files_quotas_status_id.html

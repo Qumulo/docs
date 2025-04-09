@@ -2,8 +2,9 @@
 category: /Cluster Data Protection
 methods:
   get:
+    summary: Get current status of restriper, including data protection status and
+      current restriper phase (if running)
     parameters: []
-    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_restriper_status_v2\",\n  \"type\": \"\
         object\",\n  \"properties\": {\n    \"state\": {\n      \"type\": \"string\"\
@@ -33,8 +34,7 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Get current status of restriper, including data protection status and
-      current restriper phase (if running)
+    preview: false
 rest_endpoint: /v1/cluster/protection/restriper/status
 api_version: v1
 permalink: /rest-api-guide/cluster-data-protection/cluster_protection_restriper_status.html

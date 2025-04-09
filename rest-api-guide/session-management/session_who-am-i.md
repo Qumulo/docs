@@ -2,8 +2,8 @@
 category: /Session Management
 methods:
   get:
+    summary: Retrieve information about the currently logged in user.
     parameters: []
-    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_user_info\",\n  \"type\": \"object\",\n\
         \  \"properties\": {\n    \"id\": {\n      \"description\": \"The user's unique\
@@ -222,7 +222,7 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Retrieve information about the currently logged in user.
+    preview: false
 rest_endpoint: /v1/session/who-am-i
 api_version: v1
 permalink: /rest-api-guide/session-management/session_who-am-i.html

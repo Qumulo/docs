@@ -1,44 +1,26 @@
 ---
 category: /Files
 methods:
-  delete:
-    parameters:
-    - description: The lock owner's name. The client provides the name. Typically,
-        it is the client hostname.
-      name: owner_name
-      required: false
-    - description: The lock owner's address. This is the IP address of the machine
-        that acquires the lock. If the machine's IP address changes, any existing
-        lock entries are still listed under the old address.
-      name: owner_address
-      required: false
-    preview: false
-    response_body: {}
-    responses:
-    - code: '200'
-      description: Return value on success
-    summary: Release all locks held by a particular client. This is dangerous, and
-      should only be used after confirming that the client is dead.
   get:
+    summary: Return a list of all granted file locks that the specified machine owns.
     parameters:
-    - description: The lock owner's name. The client provides the name. Typically,
+    - name: owner_name
+      description: The lock owner's name. The client provides the name. Typically,
         it is the client hostname.
-      name: owner_name
       required: false
-    - description: The lock owner's address. This is the IP address of the machine
+    - name: owner_address
+      description: The lock owner's address. This is the IP address of the machine
         that acquires the lock. If the machine's IP address changes, any existing
         lock entries are still listed under the old address.
-      name: owner_address
       required: false
-    - description: Return entries after the given key (keys are returned in the paging
+    - name: after
+      description: Return entries after the given key (keys are returned in the paging
         object)
-      name: after
       required: false
-    - description: Return no more than this many entries; the system may choose a
+    - name: limit
+      description: Return no more than this many entries; the system may choose a
         smaller limit.
-      name: limit
       required: false
-    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_byte_range_grants\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"grants\": {\n      \"type\": \"array\",\n  \
@@ -73,7 +55,25 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Return a list of all granted file locks that the specified machine owns.
+    preview: false
+  delete:
+    summary: Release all locks held by a particular client. This is dangerous, and
+      should only be used after confirming that the client is dead.
+    parameters:
+    - name: owner_name
+      description: The lock owner's name. The client provides the name. Typically,
+        it is the client hostname.
+      required: false
+    - name: owner_address
+      description: The lock owner's address. This is the IP address of the machine
+        that acquires the lock. If the machine's IP address changes, any existing
+        lock entries are still listed under the old address.
+      required: false
+    response_body: {}
+    responses:
+    - code: '200'
+      description: Return value on success
+    preview: false
 rest_endpoint: /v1/files/locks/nlm/byte-range/
 api_version: v1
 permalink: /rest-api-guide/files/files_locks_nlm_byte-range.html

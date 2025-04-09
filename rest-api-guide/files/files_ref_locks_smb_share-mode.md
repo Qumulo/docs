@@ -2,26 +2,27 @@
 category: /Files
 methods:
   get:
+    summary: Return a list of all SMB share mode locks currently granted on the specified
+      file.
     parameters:
-    - description: The file ID or the absolute path to the file system object. File
+    - name: ref
+      description: The file ID or the absolute path to the file system object. File
         IDs can be found in the id field of responses of APIs that return file attributes.
         You must URL-encode the paths. The APIs & Tools page in the Qumulo Core Web
         UI URL-encodes the paths.
-      name: ref
       required: true
-    - description: The snapshot ID that specifies the version of the filesystem to
+    - name: snapshot
+      description: The snapshot ID that specifies the version of the filesystem to
         use. If not specified, use the head version.
-      name: snapshot
       required: false
-    - description: Return entries after the given key (keys are returned in the paging
+    - name: after
+      description: Return entries after the given key (keys are returned in the paging
         object)
-      name: after
       required: false
-    - description: Return no more than this many entries; the system may choose a
+    - name: limit
+      description: Return no more than this many entries; the system may choose a
         smaller limit.
-      name: limit
       required: false
-    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_share_mode_grants\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"grants\": {\n      \"type\": \"array\",\n  \
@@ -54,8 +55,7 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Return a list of all SMB share mode locks currently granted on the specified
-      file.
+    preview: false
 rest_endpoint: /v1/files/{ref}/locks/smb/share-mode/
 api_version: v1
 permalink: /rest-api-guide/files/files_ref_locks_smb_share-mode.html

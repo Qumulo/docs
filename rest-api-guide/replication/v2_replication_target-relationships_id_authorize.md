@@ -2,22 +2,23 @@
 category: /Replication
 methods:
   post:
+    summary: Authorize the specified replication relationship, establishing this cluster
+      as the target of replication.
     parameters:
-    - description: Relationship identifier
-      name: id
+    - name: id
+      description: Relationship identifier
       required: true
-    - description: Specifies whether the replication relationship may be authorized
+    - name: allow-non-empty-directory
+      description: Specifies whether the replication relationship may be authorized
         when the target directory is not empty. If set to true, existing data in the
         target directory that does not match the source directory will be overwritten
         or deleted. Defaults to false if not specified.
-      name: allow-non-empty-directory
       required: false
-    - description: Specifies whether the target directory may be created with inherited
+    - name: allow-fs-path-create
+      description: Specifies whether the target directory may be created with inherited
         permissions if the directory does not already exist. Defaults to false if
         not specified.
-      name: allow-fs-path-create
       required: false
-    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_target_relationship_status\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"id\": {\n      \"description\":\
@@ -148,8 +149,7 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Authorize the specified replication relationship, establishing this cluster
-      as the target of replication.
+    preview: false
 rest_endpoint: /v2/replication/target-relationships/{id}/authorize
 api_version: v2
 permalink: /rest-api-guide/replication/v2_replication_target-relationships_id_authorize.html

@@ -2,6 +2,63 @@ import os
 import json
 import yaml
 import requests
+import re
+
+# Helper function for preserving manually added YAML keys
+def update_frontmatter_preserving_custom_fields(md_path, updates):
+    def create_directory(path):
+        if not os.path.exists(path):
+            os.makedirs(path)
+
+    create_directory(os.path.dirname(md_path))
+
+    if not os.path.exists(md_path):
+        with open(md_path, "w") as f:
+            f.write("---\n")
+            f.write(yaml.dump(updates, default_flow_style=False, sort_keys=False))
+            f.write("---\n")
+        return
+
+    with open(md_path, "r") as f:
+        content = f.read()
+
+    match = re.match(r"(?s)^---\n(.*?)\n---\n(.*)", content)
+    if not match:
+        raise ValueError(f"Missing or malformed frontmatter in {md_path}")
+
+    frontmatter_text, body = match.groups()
+    frontmatter_lines = frontmatter_text.splitlines()
+
+    new_lines = []
+    keys_updated = set()
+    skip_key = None
+
+    for line in frontmatter_lines:
+        if skip_key:
+            if re.match(r"^\S", line):
+                skip_key = None
+            else:
+                continue
+
+        key = line.split(":", 1)[0].strip()
+        if key in updates:
+            val = yaml.dump({key: updates[key]}, default_flow_style=False, sort_keys=False).strip()
+            new_lines.extend(val.splitlines())
+            keys_updated.add(key)
+            skip_key = key
+        else:
+            new_lines.append(line)
+
+    for key, val in updates.items():
+        if key not in keys_updated:
+            val_str = yaml.dump({key: val}, default_flow_style=False, sort_keys=False).strip()
+            new_lines.extend(val_str.splitlines())
+
+    with open(md_path, "w") as f:
+        f.write("---\n")
+        f.write("\n".join(new_lines) + "\n")
+        f.write("---\n")
+        f.write(body)
 
 # URL to fetch the OpenAPI definition
 url = "https://music.eng.qumulo.com:8000/openapi.json"
@@ -89,12 +146,13 @@ def generate_resource_md(tag, endpoint, methods, permalink, api_version=None):
 
     yaml_string = yaml.dump(yaml_content, default_flow_style=False)
     version_string = f"api_version: {api_version}\n" if api_version else ""
-    return f"---\n{yaml_string}{version_string}permalink: {permalink}\nsidebar: rest_api_guide_sidebar\n---\n"
+    full_md = f"---\n{yaml_string}{version_string}permalink: {permalink}\nsidebar: rest_api_guide_sidebar\n---\n"
+    return full_md, yaml_content
 
 # Function to clean up filenames
 def clean_filename(tag, filename, api_version=None):
     filename = filename.replace(f'{tag}_', '').replace('{', '_').replace('}', '').replace('__', '_').strip('_')
-    filename = filename.replace('v1_', '').replace('v2_', '').replace('v3_', '').replace('v4_', '')
+    filename = filename.replace('v1_', '').replace('v2_', '').replace('v3_', '').replace('v4_', '').replace('v5_', '')
     if api_version and api_version != 'v1':
         filename = f"{api_version}_{filename}"
     return filename
@@ -137,6 +195,8 @@ def get_api_version_for_tag(tag, path):
         return 'v3'
     elif path.startswith('/v4'):
         return 'v4'
+    elif path.startswith('/v5'):
+        return 'v5'
     else:
         return 'v1'
 
@@ -181,8 +241,15 @@ for path, path_item in api_definition["paths"].items():
         resource_filename = clean_filename(tag, f"{resource_name}.md", api_version)
         resource_md_path = os.path.join(tag_dir, resource_filename)
         permalink = f"/rest-api-guide/{tag.lower().replace(' ', '-')}/{resource_filename.replace('.md', '.html')}"
-        resource_md_content = generate_resource_md(tag, path, path_item, permalink, api_version)
-        write_markdown(resource_md_path, resource_md_content)
+        resource_md_content, yaml_content = generate_resource_md(tag, path, path_item, permalink, api_version)
+        update_frontmatter_preserving_custom_fields(resource_md_path, {
+            "category": f"/{tag}",
+            "methods": yaml_content["methods"],
+            "rest_endpoint": path,
+            "api_version": api_version,
+            "permalink": permalink,
+            "sidebar": "rest_api_guide_sidebar"
+        })
 
         # Clean path for child title
         cleaned_path = clean_path_for_title(path)
@@ -316,7 +383,7 @@ for tag, entries in sidebar_entries_by_tag.items():
         
         # For sorting, extract tag base name (strip V1, V2, etc.)
         tag_base = tag
-        if " V" in tag and tag[-2:] in ["V1", "V2", "V3", "V4"]:
+        if " V" in tag and tag[-2:] in ["V1", "V2", "V3", "V4", "V5"]:
             tag_base = tag[:-3]
             
         # Add the entry with sorting info

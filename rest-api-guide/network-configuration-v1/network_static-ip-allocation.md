@@ -2,21 +2,23 @@
 category: /Network Configuration V1
 methods:
   get:
+    summary: Returns total/used/available numbers of IPs based on the current network
+      configuration. Returns status code 400 if the server is in DHCP mode unless
+      the try/floating query parameters are provided.
     parameters:
-    - description: Netmask to apply to the try and/or floating range arguments, overriding
+    - name: netmask
+      description: Netmask to apply to the try and/or floating range arguments, overriding
         whatever is currently configured. Required if network is currently in DHCP
         mode.
-      name: netmask
       required: false
-    - description: Comma-separated static IP range(s) to try. Defaults to currently
+    - name: try
+      description: Comma-separated static IP range(s) to try. Defaults to currently
         configured static IP range.
-      name: try
       required: false
-    - description: Comma-separated floating IP range(s) to try. Defaults to currently
+    - name: floating
+      description: Comma-separated floating IP range(s) to try. Defaults to currently
         configured floating IP range.
-      name: floating
       required: false
-    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_static_ip_allocation_summary\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"total_ips\": {\n      \"description\"\
@@ -32,9 +34,7 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Returns total/used/available numbers of IPs based on the current network
-      configuration. Returns status code 400 if the server is in DHCP mode unless
-      the try/floating query parameters are provided.
+    preview: false
 rest_endpoint: /v1/network/static-ip-allocation
 api_version: v1
 permalink: /rest-api-guide/network-configuration-v1/network_static-ip-allocation.html

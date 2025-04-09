@@ -2,8 +2,9 @@
 category: /Upgrade
 methods:
   get:
+    summary: Retrieve the current status of the upgrade system. This API is deprecated
+      in favor of /v3/upgrade/status.
     parameters: []
-    preview: false
     response_body:
       schema: "{\n  \"description\": \"upgrade_status\",\n  \"type\": \"object\",\n\
         \  \"properties\": {\n    \"state\": {\n      \"type\": \"string\",\n    \
@@ -35,8 +36,7 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Retrieve the current status of the upgrade system. This API is deprecated
-      in favor of /v3/upgrade/status.
+    preview: false
 rest_endpoint: /v2/upgrade/status
 api_version: v2
 permalink: /rest-api-guide/upgrade/v2_upgrade_status.html

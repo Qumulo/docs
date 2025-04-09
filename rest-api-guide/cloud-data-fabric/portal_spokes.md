@@ -1,9 +1,28 @@
 ---
 category: /Cloud Data Fabric
 methods:
-  get:
+  post:
+    summary: Create a spoke portal in the UNLINKED state in the current cluster. It
+      is now possible to propose a relationship between this spoke portal and a hub
+      portal on another cluster.
     parameters: []
+    response_body:
+      schema: "{\n  \"type\": \"number\"\n}"
+    responses:
+    - code: '200'
+      description: Return value on success
     preview: false
+    request_body:
+      schema: "{\n  \"description\": \"api_portal_create_request\",\n  \"type\": \"\
+        object\",\n  \"properties\": {\n    \"spoke_root\": {\n      \"description\"\
+        : \"Full path to the spoke portal root directory\",\n      \"type\": \"string\"\
+        \n    },\n    \"is_writable_spoke\": {\n      \"description\": \"Whether the\
+        \ spoke portal is writable. Default to false. In-development feature.\",\n\
+        \      \"type\": \"boolean\"\n    }\n  }\n}"
+  get:
+    summary: List the relationship status and configuration for all spoke portals
+      on the current cluster.
+    parameters: []
     response_body:
       schema: "{\n  \"description\": \"api_portal_spoke_relationships\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"entries\": {\n      \"type\": \"\
@@ -45,26 +64,7 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: List the relationship status and configuration for all spoke portals
-      on the current cluster.
-  post:
-    parameters: []
     preview: false
-    request_body:
-      schema: "{\n  \"description\": \"api_portal_create_request\",\n  \"type\": \"\
-        object\",\n  \"properties\": {\n    \"spoke_root\": {\n      \"description\"\
-        : \"Full path to the spoke portal root directory\",\n      \"type\": \"string\"\
-        \n    },\n    \"is_writable_spoke\": {\n      \"description\": \"Whether the\
-        \ spoke portal is writable. Default to false. In-development feature.\",\n\
-        \      \"type\": \"boolean\"\n    }\n  }\n}"
-    response_body:
-      schema: "{\n  \"type\": \"number\"\n}"
-    responses:
-    - code: '200'
-      description: Return value on success
-    summary: Create a spoke portal in the UNLINKED state in the current cluster. It
-      is now possible to propose a relationship between this spoke portal and a hub
-      portal on another cluster.
 rest_endpoint: /v1/portal/spokes/
 api_version: v1
 permalink: /rest-api-guide/cloud-data-fabric/portal_spokes.html

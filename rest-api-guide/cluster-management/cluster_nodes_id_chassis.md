@@ -2,11 +2,13 @@
 category: /Cluster Management
 methods:
   get:
+    summary: List the status of the chassis for a node. This API is deprecated in
+      favor of /v1/cluster/nodes/<id>/uid-light and /v2/metrics/endpoints/default/data
+      for PSU information
     parameters:
-    - description: The unique ID of the node
-      name: id
+    - name: id
+      description: The unique ID of the node
       required: true
-    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_node_chassis\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"id\",\n  \
@@ -32,9 +34,7 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: List the status of the chassis for a node. This API is deprecated in
-      favor of /v1/cluster/nodes/<id>/uid-light and /v2/metrics/endpoints/default/data
-      for PSU information
+    preview: false
 rest_endpoint: /v1/cluster/nodes/{id}/chassis
 api_version: v1
 permalink: /rest-api-guide/cluster-management/cluster_nodes_id_chassis.html

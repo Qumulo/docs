@@ -2,17 +2,17 @@
 category: /Replication
 methods:
   post:
+    summary: Replicate from the source to the target of the specified replication
+      relationship where this cluster is the source.
     parameters:
-    - description: Relationship identifier
-      name: id
+    - name: id
+      description: Relationship identifier
       required: true
-    preview: false
     response_body: {}
     responses:
     - code: '202'
       description: Return value on success
-    summary: Replicate from the source to the target of the specified replication
-      relationship where this cluster is the source.
+    preview: false
 rest_endpoint: /v2/replication/source-relationships/{id}/replicate
 api_version: v2
 permalink: /rest-api-guide/replication/v2_replication_source-relationships_id_replicate.html

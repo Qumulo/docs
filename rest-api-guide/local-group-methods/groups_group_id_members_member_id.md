@@ -2,19 +2,19 @@
 category: /Local Group Methods
 methods:
   delete:
+    summary: Remove a member from a group.
     parameters:
-    - description: The group's unique ID
-      name: group_id
+    - name: group_id
+      description: The group's unique ID
       required: true
-    - description: The user's unique ID
-      name: member_id
+    - name: member_id
+      description: The user's unique ID
       required: true
-    preview: false
     response_body: {}
     responses:
     - code: '200'
       description: Return value on success
-    summary: Remove a member from a group.
+    preview: false
 rest_endpoint: /v1/groups/{group_id}/members/{member_id}
 api_version: v1
 permalink: /rest-api-guide/local-group-methods/groups_group_id_members_member_id.html

@@ -2,28 +2,30 @@
 category: /Snapshots
 methods:
   get:
+    summary: Returns a list of changed byte ranges between two snapshots of a regular
+      file. The list includes new, modified, and deallocated regions of the file's
+      contents.
     parameters:
-    - description: Newer snapshot
-      name: newer_id
+    - name: newer_id
+      description: Newer snapshot
       required: true
-    - description: Older snapshot
-      name: older_id
+    - name: older_id
+      description: Older snapshot
       required: true
-    - description: The file ID or the absolute path to the file system object. File
+    - name: ref
+      description: The file ID or the absolute path to the file system object. File
         IDs can be found in the id field of responses of APIs that return file attributes.
         You must URL-encode the paths. The APIs & Tools page in the Qumulo Core Web
         UI URL-encodes the paths.
-      name: ref
       required: true
-    - description: Return entries after the given key (keys are returned in the paging
+    - name: after
+      description: Return entries after the given key (keys are returned in the paging
         object)
-      name: after
       required: false
-    - description: Return no more than this many entries; the system may choose a
+    - name: limit
+      description: Return no more than this many entries; the system may choose a
         smaller limit.
-      name: limit
       required: false
-    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_snapshot_file_diff\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"entries\": {\n      \"type\": \"array\",\n \
@@ -42,9 +44,7 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Returns a list of changed byte ranges between two snapshots of a regular
-      file. The list includes new, modified, and deallocated regions of the file's
-      contents.
+    preview: false
 rest_endpoint: /v2/snapshots/{newer_id}/changes-since/{older_id}/files/{ref}
 api_version: v2
 permalink: /rest-api-guide/snapshots/v2_snapshots_newer_id_changes-since_older_id_files_ref.html

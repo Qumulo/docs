@@ -2,8 +2,8 @@
 category: /Cluster Data Protection
 methods:
   get:
+    summary: Gets the current fault tolerance of an object-backed cluster.
     parameters: []
-    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_object_backed_fault_tolerance\",\n  \"\
         type\": \"object\",\n  \"properties\": {\n    \"disks\": {\n      \"description\"\
@@ -17,7 +17,7 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Gets the current fault tolerance of an object-backed cluster.
+    preview: false
 rest_endpoint: /v1/cluster/object-backed/protection/fault-tolerance
 api_version: v1
 permalink: /rest-api-guide/cluster-data-protection/cluster_object-backed_protection_fault-tolerance.html

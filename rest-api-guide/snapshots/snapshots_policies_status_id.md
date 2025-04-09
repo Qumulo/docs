@@ -2,11 +2,11 @@
 category: /Snapshots
 methods:
   get:
+    summary: Returns status information about a specific snapshot policy.
     parameters:
-    - description: Policy identifier
-      name: id
+    - name: id
+      description: Policy identifier
       required: true
-    preview: false
     response_body:
       schema: "{\n  \"description\": \"snapshots_api_policy_status_v1\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"id\": {\n      \"description\":\
@@ -107,7 +107,7 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Returns status information about a specific snapshot policy.
+    preview: false
 rest_endpoint: /v1/snapshots/policies/status/{id}
 api_version: v1
 permalink: /rest-api-guide/snapshots/snapshots_policies_status_id.html

@@ -2,21 +2,21 @@
 category: /Files
 methods:
   get:
+    summary: Get Stream attributes.
     parameters:
-    - description: The file ID or the absolute path to the file system object. File
+    - name: ref
+      description: The file ID or the absolute path to the file system object. File
         IDs can be found in the id field of responses of APIs that return file attributes.
         You must URL-encode the paths. The APIs & Tools page in the Qumulo Core Web
         UI URL-encodes the paths.
-      name: ref
       required: true
-    - description: Stream ID (uint64) to get
-      name: stream_id
+    - name: stream_id
+      description: Stream ID (uint64) to get
       required: true
-    - description: The snapshot ID that specifies the version of the filesystem to
+    - name: snapshot
+      description: The snapshot ID that specifies the version of the filesystem to
         use. If not specified, use the head version.
-      name: snapshot
       required: false
-    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_named_stream_attributes\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"name\": {\n      \"description\"\
@@ -29,21 +29,34 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Get Stream attributes.
+    preview: false
   patch:
+    summary: Update a subset of stream attributes
     parameters:
-    - description: The file ID or the absolute path to the file system object. File
+    - name: ref
+      description: The file ID or the absolute path to the file system object. File
         IDs can be found in the id field of responses of APIs that return file attributes.
         You must URL-encode the paths. The APIs & Tools page in the Qumulo Core Web
         UI URL-encodes the paths.
-      name: ref
       required: true
-    - description: Stream ID (uint64) to get
-      name: stream_id
+    - name: stream_id
+      description: Stream ID (uint64) to get
       required: true
-    - description: ETag for expected version
-      name: If-Match
+    - name: If-Match
+      description: ETag for expected version
       required: false
+    response_body:
+      schema: "{\n  \"description\": \"api_named_stream_attributes\",\n  \"type\"\
+        : \"object\",\n  \"properties\": {\n    \"name\": {\n      \"description\"\
+        : \"name\",\n      \"type\": \"string\"\n    },\n    \"id\": {\n      \"description\"\
+        : \"id\",\n      \"type\": \"string\"\n    },\n    \"size\": {\n      \"description\"\
+        : \"size\",\n      \"type\": \"string\"\n    },\n    \"datablocks\": {\n \
+        \     \"description\": \"datablocks\",\n      \"type\": \"string\"\n    },\n\
+        \    \"data_revision\": {\n      \"description\": \"data_revision\",\n   \
+        \   \"type\": \"string\"\n    }\n  }\n}"
+    responses:
+    - code: '200'
+      description: Return value on success
     preview: false
     request_body:
       schema: "{\n  \"description\": \"api_settable_files_attributes\",\n  \"type\"\
@@ -139,19 +152,6 @@ methods:
         : \"Hash policy for directory entries:\\n * `FS_DIRECTORY_HASH_VERSION_FOLDED`\
         \ - FS_DIRECTORY_HASH_VERSION_FOLDED,\\n * `FS_DIRECTORY_HASH_VERSION_LOWER`\
         \ - FS_DIRECTORY_HASH_VERSION_LOWER\"\n    }\n  }\n}"
-    response_body:
-      schema: "{\n  \"description\": \"api_named_stream_attributes\",\n  \"type\"\
-        : \"object\",\n  \"properties\": {\n    \"name\": {\n      \"description\"\
-        : \"name\",\n      \"type\": \"string\"\n    },\n    \"id\": {\n      \"description\"\
-        : \"id\",\n      \"type\": \"string\"\n    },\n    \"size\": {\n      \"description\"\
-        : \"size\",\n      \"type\": \"string\"\n    },\n    \"datablocks\": {\n \
-        \     \"description\": \"datablocks\",\n      \"type\": \"string\"\n    },\n\
-        \    \"data_revision\": {\n      \"description\": \"data_revision\",\n   \
-        \   \"type\": \"string\"\n    }\n  }\n}"
-    responses:
-    - code: '200'
-      description: Return value on success
-    summary: Update a subset of stream attributes
 rest_endpoint: /v1/files/{ref}/streams/{stream_id}/attributes
 api_version: v1
 permalink: /rest-api-guide/files/files_ref_streams_stream_id_attributes.html

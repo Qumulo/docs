@@ -2,8 +2,9 @@
 category: /Cloud Data Fabric
 methods:
   get:
+    summary: List the relationship status and configuration for all hub portals on
+      the current cluster.
     parameters: []
-    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_portal_hub_relationships\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"entries\": {\n      \"type\": \"\
@@ -42,8 +43,7 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: List the relationship status and configuration for all hub portals on
-      the current cluster.
+    preview: false
 rest_endpoint: /v1/portal/hubs/
 api_version: v1
 permalink: /rest-api-guide/cloud-data-fabric/portal_hubs.html

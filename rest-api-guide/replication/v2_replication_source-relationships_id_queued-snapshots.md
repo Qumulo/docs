@@ -2,11 +2,12 @@
 category: /Replication
 methods:
   get:
+    summary: List information for all snapshots awaiting replication by the specified
+      relationship.
     parameters:
-    - description: Relationship identifier
-      name: id
+    - name: id
+      description: Relationship identifier
       required: true
-    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_queued_replication_snapshots\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"entries\": {\n      \"type\": \"\
@@ -45,8 +46,7 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: List information for all snapshots awaiting replication by the specified
-      relationship.
+    preview: false
 rest_endpoint: /v2/replication/source-relationships/{id}/queued-snapshots/
 api_version: v2
 permalink: /rest-api-guide/replication/v2_replication_source-relationships_id_queued-snapshots.html

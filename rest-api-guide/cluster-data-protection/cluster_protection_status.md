@@ -2,8 +2,8 @@
 category: /Cluster Data Protection
 methods:
   get:
+    summary: Gets detailed status information for the data protection of the cluster.
     parameters: []
-    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_protection_status\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"blocks_per_stripe\": {\n      \"description\"\
@@ -38,7 +38,7 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Gets detailed status information for the data protection of the cluster.
+    preview: false
 rest_endpoint: /v1/cluster/protection/status
 api_version: v1
 permalink: /rest-api-guide/cluster-data-protection/cluster_protection_status.html

@@ -2,11 +2,8 @@
 category: /DNS Methods
 methods:
   post:
+    summary: Resolve a list of IP addresses to canonical hostnames.
     parameters: []
-    preview: false
-    request_body:
-      schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"type\": \"string\"\
-        \n  }\n}"
     response_body:
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         api_resolved_ip\",\n    \"type\": \"object\",\n    \"properties\": {\n   \
@@ -22,7 +19,10 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Resolve a list of IP addresses to canonical hostnames.
+    preview: false
+    request_body:
+      schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"type\": \"string\"\
+        \n  }\n}"
 rest_endpoint: /v1/dns/resolve-ips-to-names
 api_version: v1
 permalink: /rest-api-guide/dns-methods/dns_resolve-ips-to-names.html

@@ -2,11 +2,14 @@
 category: /Analytics
 methods:
   get:
+    summary: Returns all paths using more than 0.1% of overall used capacity at a
+      given timestamp. A path that meets the threshold with many items smaller than
+      the threshold will be aggregated. Individual items above the threshold will
+      be reported separately.
     parameters:
-    - description: Time in epoch seconds
-      name: timestamp
+    - name: timestamp
+      description: Time in epoch seconds
       required: true
-    preview: false
     response_body:
       schema: "{\n  \"description\": \"historical_capacity_details\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"threshold_for_inclusion\": {\n \
@@ -25,10 +28,7 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Returns all paths using more than 0.1% of overall used capacity at a
-      given timestamp. A path that meets the threshold with many items smaller than
-      the threshold will be aggregated. Individual items above the threshold will
-      be reported separately.
+    preview: false
 rest_endpoint: /v1/analytics/capacity-history/{timestamp}/
 api_version: v1
 permalink: /rest-api-guide/analytics/analytics_capacity-history_timestamp.html

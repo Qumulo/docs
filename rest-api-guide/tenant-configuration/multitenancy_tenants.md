@@ -2,8 +2,8 @@
 category: /Tenant Configuration
 methods:
   get:
+    summary: '[preview] Get configurations of all tenants.'
     parameters: []
-    preview: true
     response_body:
       schema: "{\n  \"description\": \"api_tenant_configs\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"entries\": {\n      \"type\": \"array\",\n \
@@ -34,32 +34,10 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: '[preview] Get configurations of all tenants.'
-  post:
-    parameters: []
     preview: true
-    request_body:
-      schema: "{\n  \"description\": \"api_tenant_config_post\",\n  \"type\": \"object\"\
-        ,\n  \"properties\": {\n    \"name\": {\n      \"description\": \"Unique name\
-        \ of the tenant chosen by the user.\",\n      \"type\": \"string\"\n    },\n\
-        \    \"web_ui_enabled\": {\n      \"description\": \"Web UI is accessible\
-        \ from this tenant. Defaults to false.\",\n      \"type\": \"boolean\"\n \
-        \   },\n    \"rest_api_enabled\": {\n      \"description\": \"Rest API is\
-        \ accessible from this tenant. Defaults to false.\",\n      \"type\": \"boolean\"\
-        \n    },\n    \"ssh_enabled\": {\n      \"description\": \"SSH is accessible\
-        \ from this tenant. Defaults to false.\",\n      \"type\": \"boolean\"\n \
-        \   },\n    \"replication_enabled\": {\n      \"description\": \"Replication\
-        \ is accessible from this tenant. Defaults to false.\",\n      \"type\": \"\
-        boolean\"\n    },\n    \"nfs_enabled\": {\n      \"description\": \"NFS is\
-        \ accessible from this tenant. Defaults to false.\",\n      \"type\": \"boolean\"\
-        \n    },\n    \"smb_enabled\": {\n      \"description\": \"SMB is accessible\
-        \ from this tenant. Defaults to false.\",\n      \"type\": \"boolean\"\n \
-        \   },\n    \"networks\": {\n      \"type\": \"array\",\n      \"items\":\
-        \ {\n        \"description\": \"List of network IDs associated with this tenant.\
-        \ Defaults to empty.\",\n        \"type\": \"number\"\n      }\n    },\n \
-        \   \"identity_config_id\": {\n      \"description\": \"Unique identifier\
-        \ for the identity configuration to use for this tenant.\",\n      \"type\"\
-        : \"number\"\n    }\n  }\n}"
+  post:
+    summary: '[preview] Create a tenant.'
+    parameters: []
     response_body:
       schema: "{\n  \"description\": \"api_tenant_config\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"Unique identifier\
@@ -84,7 +62,29 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: '[preview] Create a tenant.'
+    preview: true
+    request_body:
+      schema: "{\n  \"description\": \"api_tenant_config_post\",\n  \"type\": \"object\"\
+        ,\n  \"properties\": {\n    \"name\": {\n      \"description\": \"Unique name\
+        \ of the tenant chosen by the user.\",\n      \"type\": \"string\"\n    },\n\
+        \    \"web_ui_enabled\": {\n      \"description\": \"Web UI is accessible\
+        \ from this tenant. Defaults to false.\",\n      \"type\": \"boolean\"\n \
+        \   },\n    \"rest_api_enabled\": {\n      \"description\": \"Rest API is\
+        \ accessible from this tenant. Defaults to false.\",\n      \"type\": \"boolean\"\
+        \n    },\n    \"ssh_enabled\": {\n      \"description\": \"SSH is accessible\
+        \ from this tenant. Defaults to false.\",\n      \"type\": \"boolean\"\n \
+        \   },\n    \"replication_enabled\": {\n      \"description\": \"Replication\
+        \ is accessible from this tenant. Defaults to false.\",\n      \"type\": \"\
+        boolean\"\n    },\n    \"nfs_enabled\": {\n      \"description\": \"NFS is\
+        \ accessible from this tenant. Defaults to false.\",\n      \"type\": \"boolean\"\
+        \n    },\n    \"smb_enabled\": {\n      \"description\": \"SMB is accessible\
+        \ from this tenant. Defaults to false.\",\n      \"type\": \"boolean\"\n \
+        \   },\n    \"networks\": {\n      \"type\": \"array\",\n      \"items\":\
+        \ {\n        \"description\": \"List of network IDs associated with this tenant.\
+        \ Defaults to empty.\",\n        \"type\": \"number\"\n      }\n    },\n \
+        \   \"identity_config_id\": {\n      \"description\": \"Unique identifier\
+        \ for the identity configuration to use for this tenant.\",\n      \"type\"\
+        : \"number\"\n    }\n  }\n}"
 rest_endpoint: /v1/multitenancy/tenants/
 api_version: v1
 permalink: /rest-api-guide/tenant-configuration/multitenancy_tenants.html

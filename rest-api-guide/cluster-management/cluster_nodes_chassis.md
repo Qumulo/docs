@@ -2,8 +2,10 @@
 category: /Cluster Management
 methods:
   get:
+    summary: List the status of the chassis for nodes. This API is deprecated in favor
+      of /v1/cluster/nodes/uid-lights and /v2/metrics/endpoints/default/data for PSU
+      information
     parameters: []
-    preview: false
     response_body:
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         api_node_chassis\",\n    \"type\": \"object\",\n    \"properties\": {\n  \
@@ -31,9 +33,7 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: List the status of the chassis for nodes. This API is deprecated in favor
-      of /v1/cluster/nodes/uid-lights and /v2/metrics/endpoints/default/data for PSU
-      information
+    preview: false
 rest_endpoint: /v1/cluster/nodes/chassis/
 api_version: v1
 permalink: /rest-api-guide/cluster-management/cluster_nodes_chassis.html

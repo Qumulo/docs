@@ -2,8 +2,9 @@
 category: /Snapshots
 methods:
   get:
+    summary: Returns approximate amount of space that would be reclaimed if all snapshots
+      were deleted.
     parameters: []
-    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_snapshot_capacity_used\",\n  \"type\":\
         \ \"object\",\n  \"properties\": {\n    \"bytes\": {\n      \"description\"\
@@ -11,8 +12,7 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Returns approximate amount of space that would be reclaimed if all snapshots
-      were deleted.
+    preview: false
 rest_endpoint: /v1/snapshots/total-used-capacity
 api_version: v1
 permalink: /rest-api-guide/snapshots/snapshots_total-used-capacity.html

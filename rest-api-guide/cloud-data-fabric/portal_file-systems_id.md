@@ -2,11 +2,11 @@
 category: /Cloud Data Fabric
 methods:
   get:
+    summary: Retrieve portal information for a file system.
     parameters:
-    - description: File System UUID
-      name: id
+    - name: id
+      description: File System UUID
       required: true
-    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_portal_fs_info\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"uuid\": {\n      \"description\": \"File System\
@@ -16,7 +16,7 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Retrieve portal information for a file system.
+    preview: false
 rest_endpoint: /v1/portal/file-systems/{id}
 api_version: v1
 permalink: /rest-api-guide/cloud-data-fabric/portal_file-systems_id.html

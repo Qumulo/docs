@@ -2,8 +2,9 @@
 category: /Network Configuration V1
 methods:
   get:
+    summary: Returns floating IPs per node distribution based on the current network
+      configuration. Returns status code 400 if the server is in DHCP mode.
     parameters: []
-    preview: false
     response_body:
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         api_node_floating_ips\",\n    \"type\": \"object\",\n    \"properties\": {\n\
@@ -15,8 +16,7 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Returns floating IPs per node distribution based on the current network
-      configuration. Returns status code 400 if the server is in DHCP mode.
+    preview: false
 rest_endpoint: /v1/network/floating-ip-allocation
 api_version: v1
 permalink: /rest-api-guide/network-configuration-v1/network_floating-ip-allocation.html

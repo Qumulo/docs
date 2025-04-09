@@ -2,8 +2,8 @@
 category: /Version
 methods:
   get:
+    summary: Retrieve the version of the appliance.
     parameters: []
-    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_version_info\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"revision_id\": {\n      \"description\": \"\
@@ -15,7 +15,7 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Retrieve the version of the appliance.
+    preview: false
 rest_endpoint: /v1/version
 api_version: v1
 permalink: /rest-api-guide/version/version.html

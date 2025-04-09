@@ -2,8 +2,8 @@
 category: /S3 Server Methods
 methods:
   get:
+    summary: List all S3 buckets present in the system.
     parameters: []
-    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_bucket_description_list_model\",\n  \"\
         type\": \"object\",\n  \"properties\": {\n    \"buckets\": {\n      \"type\"\
@@ -38,21 +38,10 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: List all S3 buckets present in the system.
-  post:
-    parameters: []
     preview: false
-    request_body:
-      schema: "{\n  \"description\": \"api_bucket_options\",\n  \"type\": \"object\"\
-        ,\n  \"properties\": {\n    \"name\": {\n      \"description\": \"name\",\n\
-        \      \"type\": \"string\"\n    },\n    \"path\": {\n      \"description\"\
-        : \"The absolute path to the directory to use as bucket root directory. The\
-        \ caller must have permission to look up this directory.\",\n      \"type\"\
-        : \"string\"\n    },\n    \"create_fs_path\": {\n      \"description\": \"\
-        Specifies whether to create the bucket root if it doesn't exist.\",\n    \
-        \  \"type\": \"boolean\"\n    },\n    \"object_lock_enabled\": {\n      \"\
-        description\": \"Specifies whether to enable object locking.\",\n      \"\
-        type\": \"boolean\"\n    }\n  }\n}"
+  post:
+    summary: Create a new S3 bucket.
+    parameters: []
     response_body:
       schema: "{\n  \"description\": \"api_bucket_description\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"name\": {\n      \"description\": \"The name\
@@ -81,7 +70,18 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Create a new S3 bucket.
+    preview: false
+    request_body:
+      schema: "{\n  \"description\": \"api_bucket_options\",\n  \"type\": \"object\"\
+        ,\n  \"properties\": {\n    \"name\": {\n      \"description\": \"name\",\n\
+        \      \"type\": \"string\"\n    },\n    \"path\": {\n      \"description\"\
+        : \"The absolute path to the directory to use as bucket root directory. The\
+        \ caller must have permission to look up this directory.\",\n      \"type\"\
+        : \"string\"\n    },\n    \"create_fs_path\": {\n      \"description\": \"\
+        Specifies whether to create the bucket root if it doesn't exist.\",\n    \
+        \  \"type\": \"boolean\"\n    },\n    \"object_lock_enabled\": {\n      \"\
+        description\": \"Specifies whether to enable object locking.\",\n      \"\
+        type\": \"boolean\"\n    }\n  }\n}"
 rest_endpoint: /v1/s3/buckets/
 api_version: v1
 permalink: /rest-api-guide/s3-server-methods/s3_buckets.html

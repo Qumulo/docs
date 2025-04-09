@@ -1,27 +1,12 @@
 ---
 category: /Replication
 methods:
-  delete:
-    parameters:
-    - description: Relationship identifier
-      name: id
-      required: true
-    - description: ETag for expected version
-      name: If-Match
-      required: false
-    preview: false
-    response_body: {}
-    responses:
-    - code: '200'
-      description: Return value on success
-    summary: Delete the specified object replication relationship, which must not
-      be running a job.
   get:
+    summary: Get information about the specified object replication relationship.
     parameters:
-    - description: Relationship identifier
-      name: id
+    - name: id
+      description: Relationship identifier
       required: true
-    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_object_relationship_v3\",\n  \"type\":\
         \ \"object\",\n  \"properties\": {\n    \"id\": {\n      \"description\":\
@@ -55,7 +40,22 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Get information about the specified object replication relationship.
+    preview: false
+  delete:
+    summary: Delete the specified object replication relationship, which must not
+      be running a job.
+    parameters:
+    - name: id
+      description: Relationship identifier
+      required: true
+    - name: If-Match
+      description: ETag for expected version
+      required: false
+    response_body: {}
+    responses:
+    - code: '200'
+      description: Return value on success
+    preview: false
 rest_endpoint: /v3/replication/object-relationships/{id}
 api_version: v3
 permalink: /rest-api-guide/replication/v3_replication_object-relationships_id.html

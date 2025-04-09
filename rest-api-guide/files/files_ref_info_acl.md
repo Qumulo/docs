@@ -1,19 +1,18 @@
 ---
 category: /Files
 methods:
-  get:
+  put:
+    summary: Update file access control list (ACL).
     parameters:
-    - description: The file ID or the absolute path to the file system object. File
+    - name: ref
+      description: The file ID or the absolute path to the file system object. File
         IDs can be found in the id field of responses of APIs that return file attributes.
         You must URL-encode the paths. The APIs & Tools page in the Qumulo Core Web
         UI URL-encodes the paths.
-      name: ref
       required: true
-    - description: The snapshot ID that specifies the version of the filesystem to
-        use. If not specified, use the head version.
-      name: snapshot
+    - name: If-Match
+      description: ETag for expected version
       required: false
-    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_files_acl_out\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"generated\": {\n      \"description\": \"Set\
@@ -112,18 +111,6 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Get file access control list (ACL).
-  put:
-    parameters:
-    - description: The file ID or the absolute path to the file system object. File
-        IDs can be found in the id field of responses of APIs that return file attributes.
-        You must URL-encode the paths. The APIs & Tools page in the Qumulo Core Web
-        UI URL-encodes the paths.
-      name: ref
-      required: true
-    - description: ETag for expected version
-      name: If-Match
-      required: false
     preview: false
     request_body:
       schema: "{\n  \"description\": \"api_files_acl\",\n  \"type\": \"object\",\n\
@@ -207,6 +194,19 @@ methods:
         \ - Attribute write access,\\n * `API_FILES_ACCESS_WRITE_EA` - Extended attribute\
         \ write access,\\n * `API_FILES_ACCESS_WRITE_GROUP` - Group write access\"\
         \n            }\n          }\n        }\n      }\n    }\n  }\n}"
+  get:
+    summary: Get file access control list (ACL).
+    parameters:
+    - name: ref
+      description: The file ID or the absolute path to the file system object. File
+        IDs can be found in the id field of responses of APIs that return file attributes.
+        You must URL-encode the paths. The APIs & Tools page in the Qumulo Core Web
+        UI URL-encodes the paths.
+      required: true
+    - name: snapshot
+      description: The snapshot ID that specifies the version of the filesystem to
+        use. If not specified, use the head version.
+      required: false
     response_body:
       schema: "{\n  \"description\": \"api_files_acl_out\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"generated\": {\n      \"description\": \"Set\
@@ -305,7 +305,7 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Update file access control list (ACL).
+    preview: false
 rest_endpoint: /v1/files/{ref}/info/acl
 api_version: v1
 permalink: /rest-api-guide/files/files_ref_info_acl.html

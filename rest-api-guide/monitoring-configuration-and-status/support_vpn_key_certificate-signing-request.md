@@ -2,8 +2,10 @@
 category: /Monitoring Configuration and Status
 methods:
   get:
+    summary: Get a certificate signing request for the generated private key. This
+      returns empty if no private key was generated or if a manual private key is
+      used.
     parameters: []
-    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_certificate_signing_request\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"request\": {\n      \"description\"\
@@ -11,9 +13,7 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Get a certificate signing request for the generated private key. This
-      returns empty if no private key was generated or if a manual private key is
-      used.
+    preview: false
 rest_endpoint: /v1/support/vpn/key/certificate-signing-request
 api_version: v1
 permalink: /rest-api-guide/monitoring-configuration-and-status/support_vpn_key_certificate-signing-request.html

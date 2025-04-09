@@ -2,11 +2,12 @@
 category: /LDAP Server
 methods:
   get:
+    summary: Return the login names for the given UID number as found by issuing an
+      LDAP query against the LDAP server configured
     parameters:
-    - description: The UID number to use to lookup its login name
-      name: uid_number
+    - name: uid_number
+      description: The UID number to use to lookup its login name
       required: true
-    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_ldap_uid_number_to_login_names\",\n  \"\
         type\": \"object\",\n  \"properties\": {\n    \"uid_number\": {\n      \"\
@@ -17,8 +18,7 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Return the login names for the given UID number as found by issuing an
-      LDAP query against the LDAP server configured
+    preview: false
 rest_endpoint: /v1/ldap/uid-number/{uid_number}/login-name
 api_version: v1
 permalink: /rest-api-guide/ldap-server/ldap_uid-number_uid_number_login-name.html

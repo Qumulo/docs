@@ -2,12 +2,13 @@
 category: /Active Directory
 methods:
   get:
+    summary: Return the SIDs of all the groups that the given SID is a member of,
+      (including all nested groups).
     parameters:
-    - description: The SID to use to look up the SIDs of all the groups that this
+    - name: sid
+      description: The SID to use to look up the SIDs of all the groups that this
         SID belongs to (this includes all nested groups).
-      name: sid
       required: true
-    preview: false
     response_body:
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         api_ad_group_sid\",\n    \"type\": \"object\",\n    \"properties\": {\n  \
@@ -16,8 +17,7 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Return the SIDs of all the groups that the given SID is a member of,
-      (including all nested groups).
+    preview: false
 rest_endpoint: /v1/ad/sids/{sid}/expanded-groups/
 api_version: v1
 permalink: /rest-api-guide/active-directory/ad_sids_sid_expanded-groups.html

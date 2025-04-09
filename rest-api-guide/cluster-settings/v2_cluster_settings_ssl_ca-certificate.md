@@ -1,21 +1,13 @@
 ---
 category: /Cluster Settings
 methods:
-  delete:
-    parameters:
-    - description: ETag for expected version
-      name: If-Match
-      required: false
-    preview: false
-    response_body: {}
-    responses:
-    - code: '200'
-      description: Return value on success
-    summary: Delete the SSL certificate authority the cluster trusts when authenticating
+  put:
+    summary: Set the SSL certificate authority the cluster trusts when authenticating
       outbound connections.
-  get:
-    parameters: []
-    preview: false
+    parameters:
+    - name: If-Match
+      description: ETag for expected version
+      required: false
     response_body:
       schema: "{\n  \"description\": \"api_cluster_ssl_ca_certificate_settings\",\n\
         \  \"type\": \"object\",\n  \"properties\": {\n    \"ca_certificate\": {\n\
@@ -25,13 +17,6 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Get the SSL certificate authority the cluster trusts when authenticating
-      outbound connections.
-  put:
-    parameters:
-    - description: ETag for expected version
-      name: If-Match
-      required: false
     preview: false
     request_body:
       schema: "{\n  \"description\": \"api_cluster_ssl_ca_certificate_settings\",\n\
@@ -39,6 +24,10 @@ methods:
         \      \"description\": \"Public certificate of the certificate authority\
         \ to trust for outbound connections\",\n      \"type\": \"string\"\n    }\n\
         \  }\n}"
+  get:
+    summary: Get the SSL certificate authority the cluster trusts when authenticating
+      outbound connections.
+    parameters: []
     response_body:
       schema: "{\n  \"description\": \"api_cluster_ssl_ca_certificate_settings\",\n\
         \  \"type\": \"object\",\n  \"properties\": {\n    \"ca_certificate\": {\n\
@@ -48,8 +37,19 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Set the SSL certificate authority the cluster trusts when authenticating
+    preview: false
+  delete:
+    summary: Delete the SSL certificate authority the cluster trusts when authenticating
       outbound connections.
+    parameters:
+    - name: If-Match
+      description: ETag for expected version
+      required: false
+    response_body: {}
+    responses:
+    - code: '200'
+      description: Return value on success
+    preview: false
 rest_endpoint: /v2/cluster/settings/ssl/ca-certificate
 api_version: v2
 permalink: /rest-api-guide/cluster-settings/v2_cluster_settings_ssl_ca-certificate.html

@@ -1,25 +1,14 @@
 ---
 category: /Tree Delete
 methods:
-  delete:
-    parameters:
-    - description: Job ID
-      name: id
-      required: true
-    preview: false
-    response_body: {}
-    responses:
-    - code: '200'
-      description: Return value on success
-    summary: Cancel directory-tree deletion on the specified directory. If the job
-      has finished, returns 404. Also returns 404 if there was never a job on the
-      given object
   get:
+    summary: Get status of directory-tree deletion on the specified directory. If
+      the job has finished, returns 404. Also returns 404 if there was never a job
+      on the given object
     parameters:
-    - description: Job ID
-      name: id
+    - name: id
+      description: Job ID
       required: true
-    preview: false
     response_body:
       schema: "{\n  \"description\": \"tree_delete_job_status\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"The ID of\
@@ -49,9 +38,20 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Get status of directory-tree deletion on the specified directory. If
-      the job has finished, returns 404. Also returns 404 if there was never a job
-      on the given object
+    preview: false
+  delete:
+    summary: Cancel directory-tree deletion on the specified directory. If the job
+      has finished, returns 404. Also returns 404 if there was never a job on the
+      given object
+    parameters:
+    - name: id
+      description: Job ID
+      required: true
+    response_body: {}
+    responses:
+    - code: '200'
+      description: Return value on success
+    preview: false
 rest_endpoint: /v1/tree-delete/jobs/{id}
 api_version: v1
 permalink: /rest-api-guide/tree-delete/tree-delete_jobs_id.html

@@ -2,8 +2,8 @@
 category: /Snapshots
 methods:
   get:
+    summary: Returns status information about all snapshot policies.
     parameters: []
-    preview: false
     response_body:
       schema: "{\n  \"description\": \"snapshots_api_policy_statuses_v1\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"entries\": {\n      \"type\": \"\
@@ -119,7 +119,7 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Returns status information about all snapshot policies.
+    preview: false
 rest_endpoint: /v1/snapshots/policies/status/
 api_version: v1
 permalink: /rest-api-guide/snapshots/snapshots_policies_status.html

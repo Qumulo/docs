@@ -2,8 +2,8 @@
 category: /Snapshots
 methods:
   get:
+    summary: Returns the status on all snapshots.
     parameters: []
-    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_snapshot_statuses_v2\",\n  \"type\": \"\
         object\",\n  \"properties\": {\n    \"entries\": {\n      \"type\": \"array\"\
@@ -40,7 +40,7 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Returns the status on all snapshots.
+    preview: false
 rest_endpoint: /v2/snapshots/status/
 api_version: v2
 permalink: /rest-api-guide/snapshots/v2_snapshots_status.html

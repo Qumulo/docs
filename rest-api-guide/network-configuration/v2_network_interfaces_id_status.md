@@ -2,11 +2,12 @@
 category: /Network Configuration
 methods:
   get:
+    summary: Retrieve the network statuses of all nodes on the underlying network
+      interface
     parameters:
-    - description: The unique ID of the network interface
-      name: id
+    - name: id
+      description: The unique ID of the network interface
       required: true
-    preview: false
     response_body:
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         api_interface_network_statuses\",\n    \"type\": \"object\",\n    \"properties\"\
@@ -135,8 +136,7 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Retrieve the network statuses of all nodes on the underlying network
-      interface
+    preview: false
 rest_endpoint: /v2/network/interfaces/{id}/status/
 api_version: v2
 permalink: /rest-api-guide/network-configuration/v2_network_interfaces_id_status.html

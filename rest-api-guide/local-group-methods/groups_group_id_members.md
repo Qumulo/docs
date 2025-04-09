@@ -2,11 +2,12 @@
 category: /Local Group Methods
 methods:
   get:
+    summary: List members of a group, which are among the local users. Refer to the
+      'Modify user' method for a description of the returned fields.
     parameters:
-    - description: The group's unique ID
-      name: group_id
+    - name: group_id
+      description: The group's unique ID
       required: true
-    preview: false
     response_body:
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         api_user\",\n    \"type\": \"object\",\n    \"properties\": {\n      \"id\"\
@@ -25,18 +26,14 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: List members of a group, which are among the local users. Refer to the
-      'Modify user' method for a description of the returned fields.
-  post:
-    parameters:
-    - description: The group's unique ID
-      name: group_id
-      required: true
     preview: false
-    request_body:
-      schema: "{\n  \"description\": \"api_member_auth_id\",\n  \"type\": \"object\"\
-        ,\n  \"properties\": {\n    \"member_id\": {\n      \"description\": \"Unique\
-        \ ID of a user\",\n      \"type\": \"string\"\n    }\n  }\n}"
+  post:
+    summary: Add a member to a group. Refer to the 'Modify user' method for a description
+      of the returned fields.
+    parameters:
+    - name: group_id
+      description: The group's unique ID
+      required: true
     response_body:
       schema: "{\n  \"description\": \"api_user\",\n  \"type\": \"object\",\n  \"\
         properties\": {\n    \"id\": {\n      \"description\": \"The user's unique\
@@ -53,8 +50,11 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Add a member to a group. Refer to the 'Modify user' method for a description
-      of the returned fields.
+    preview: false
+    request_body:
+      schema: "{\n  \"description\": \"api_member_auth_id\",\n  \"type\": \"object\"\
+        ,\n  \"properties\": {\n    \"member_id\": {\n      \"description\": \"Unique\
+        \ ID of a user\",\n      \"type\": \"string\"\n    }\n  }\n}"
 rest_endpoint: /v1/groups/{group_id}/members/
 api_version: v1
 permalink: /rest-api-guide/local-group-methods/groups_group_id_members.html

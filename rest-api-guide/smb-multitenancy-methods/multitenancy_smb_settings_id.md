@@ -1,27 +1,12 @@
 ---
 category: /SMB Multitenancy Methods
 methods:
-  delete:
-    parameters:
-    - description: The tenant ID of the SMB settings.
-      name: id
-      required: true
-    - description: ETag for expected version
-      name: If-Match
-      required: false
-    preview: true
-    response_body: {}
-    responses:
-    - code: '200'
-      description: Return value on success
-    summary: '[preview] Delete current SMB configuration, restoring the global settings
-      for this tenant.'
   get:
+    summary: '[preview] Retrieve current tenant-specific SMB configuration.'
     parameters:
-    - description: The tenant ID of the SMB settings.
-      name: id
+    - name: id
+      description: The tenant ID of the SMB settings.
       required: true
-    preview: true
     response_body:
       schema: "{\n  \"description\": \"api_smb_settings\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"session_encryption\": {\n      \"type\": \"\
@@ -55,15 +40,122 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: '[preview] Retrieve current tenant-specific SMB configuration.'
-  patch:
+    preview: true
+  put:
+    summary: '[preview] Set current tenant-specific SMB configuration.'
     parameters:
-    - description: The tenant ID of the SMB settings.
-      name: id
+    - name: id
+      description: The tenant ID of the SMB settings.
       required: true
-    - description: ETag for expected version
-      name: If-Match
+    - name: If-Match
+      description: ETag for expected version
       required: false
+    response_body:
+      schema: "{\n  \"description\": \"api_smb_settings\",\n  \"type\": \"object\"\
+        ,\n  \"properties\": {\n    \"session_encryption\": {\n      \"type\": \"\
+        string\",\n      \"enum\": [\n        \"NONE\",\n        \"PREFERRED\",\n\
+        \        \"REQUIRED\"\n      ],\n      \"description\": \"Session-level encryption\
+        \ setting.:\\n * `NONE` - SMB_SESSION_ENCRYPTION_SETTING_NONE,\\n * `PREFERRED`\
+        \ - SMB_SESSION_ENCRYPTION_SETTING_PREFERRED,\\n * `REQUIRED` - SMB_SESSION_ENCRYPTION_SETTING_REQUIRED\"\
+        \n    },\n    \"supported_dialects\": {\n      \"type\": \"array\",\n    \
+        \  \"items\": {\n        \"type\": \"string\",\n        \"enum\": [\n    \
+        \      \"SMB2_DIALECT_2_002\",\n          \"SMB2_DIALECT_2_1\",\n        \
+        \  \"SMB2_DIALECT_3_0\",\n          \"SMB2_DIALECT_3_11\"\n        ],\n  \
+        \      \"description\": \"supported_dialects:\\n * `SMB2_DIALECT_2_002` -\
+        \ API_SMB2_DIALECT_2_002,\\n * `SMB2_DIALECT_2_1` - API_SMB2_DIALECT_2_1,\\\
+        n * `SMB2_DIALECT_3_0` - API_SMB2_DIALECT_3_0,\\n * `SMB2_DIALECT_3_11` -\
+        \ API_SMB2_DIALECT_3_11\"\n      }\n    },\n    \"hide_shares_from_unauthorized_users\"\
+        : {\n      \"description\": \"If share permissions deny a logged in user access\
+        \ to a share, that share will not be visible in the share listing.\",\n  \
+        \    \"type\": \"boolean\"\n    },\n    \"hide_shares_from_unauthorized_hosts\"\
+        : {\n      \"description\": \"If share permissions deny a connected host access\
+        \ to a share, that share will not be visible in the share listing.\",\n  \
+        \    \"type\": \"boolean\"\n    },\n    \"snapshot_directory_mode\": {\n \
+        \     \"type\": \"string\",\n      \"enum\": [\n        \"VISIBLE\",\n   \
+        \     \"HIDDEN\",\n        \"DISABLED\"\n      ],\n      \"description\":\
+        \ \"Whether the special .snapshot directory should be visible or accessible.:\\\
+        n * `DISABLED` - SNAPSHOT_METADIR_DISABLED,\\n * `HIDDEN` - SNAPSHOT_METADIR_HIDDEN,\\\
+        n * `VISIBLE` - SNAPSHOT_METADIR_VISIBLE\"\n    },\n    \"bypass_traverse_checking\"\
+        : {\n      \"description\": \"Skip directory traversal checking for all users.\"\
+        ,\n      \"type\": \"boolean\"\n    },\n    \"signing_required\": {\n    \
+        \  \"description\": \"Requires messages from non-guest users to be signed.\"\
+        ,\n      \"type\": \"boolean\"\n    }\n  }\n}"
+    responses:
+    - code: '200'
+      description: Return value on success
+    preview: true
+    request_body:
+      schema: "{\n  \"description\": \"api_smb_settings\",\n  \"type\": \"object\"\
+        ,\n  \"properties\": {\n    \"session_encryption\": {\n      \"type\": \"\
+        string\",\n      \"enum\": [\n        \"NONE\",\n        \"PREFERRED\",\n\
+        \        \"REQUIRED\"\n      ],\n      \"description\": \"Session-level encryption\
+        \ setting.:\\n * `NONE` - SMB_SESSION_ENCRYPTION_SETTING_NONE,\\n * `PREFERRED`\
+        \ - SMB_SESSION_ENCRYPTION_SETTING_PREFERRED,\\n * `REQUIRED` - SMB_SESSION_ENCRYPTION_SETTING_REQUIRED\"\
+        \n    },\n    \"supported_dialects\": {\n      \"type\": \"array\",\n    \
+        \  \"items\": {\n        \"type\": \"string\",\n        \"enum\": [\n    \
+        \      \"SMB2_DIALECT_2_002\",\n          \"SMB2_DIALECT_2_1\",\n        \
+        \  \"SMB2_DIALECT_3_0\",\n          \"SMB2_DIALECT_3_11\"\n        ],\n  \
+        \      \"description\": \"supported_dialects:\\n * `SMB2_DIALECT_2_002` -\
+        \ API_SMB2_DIALECT_2_002,\\n * `SMB2_DIALECT_2_1` - API_SMB2_DIALECT_2_1,\\\
+        n * `SMB2_DIALECT_3_0` - API_SMB2_DIALECT_3_0,\\n * `SMB2_DIALECT_3_11` -\
+        \ API_SMB2_DIALECT_3_11\"\n      }\n    },\n    \"hide_shares_from_unauthorized_users\"\
+        : {\n      \"description\": \"If share permissions deny a logged in user access\
+        \ to a share, that share will not be visible in the share listing.\",\n  \
+        \    \"type\": \"boolean\"\n    },\n    \"hide_shares_from_unauthorized_hosts\"\
+        : {\n      \"description\": \"If share permissions deny a connected host access\
+        \ to a share, that share will not be visible in the share listing.\",\n  \
+        \    \"type\": \"boolean\"\n    },\n    \"snapshot_directory_mode\": {\n \
+        \     \"type\": \"string\",\n      \"enum\": [\n        \"VISIBLE\",\n   \
+        \     \"HIDDEN\",\n        \"DISABLED\"\n      ],\n      \"description\":\
+        \ \"Whether the special .snapshot directory should be visible or accessible.:\\\
+        n * `DISABLED` - SNAPSHOT_METADIR_DISABLED,\\n * `HIDDEN` - SNAPSHOT_METADIR_HIDDEN,\\\
+        n * `VISIBLE` - SNAPSHOT_METADIR_VISIBLE\"\n    },\n    \"bypass_traverse_checking\"\
+        : {\n      \"description\": \"Skip directory traversal checking for all users.\"\
+        ,\n      \"type\": \"boolean\"\n    },\n    \"signing_required\": {\n    \
+        \  \"description\": \"Requires messages from non-guest users to be signed.\"\
+        ,\n      \"type\": \"boolean\"\n    }\n  }\n}"
+  patch:
+    summary: '[preview] Modify current tenant-specific SMB configuration.'
+    parameters:
+    - name: id
+      description: The tenant ID of the SMB settings.
+      required: true
+    - name: If-Match
+      description: ETag for expected version
+      required: false
+    response_body:
+      schema: "{\n  \"description\": \"api_smb_settings\",\n  \"type\": \"object\"\
+        ,\n  \"properties\": {\n    \"session_encryption\": {\n      \"type\": \"\
+        string\",\n      \"enum\": [\n        \"NONE\",\n        \"PREFERRED\",\n\
+        \        \"REQUIRED\"\n      ],\n      \"description\": \"Session-level encryption\
+        \ setting.:\\n * `NONE` - SMB_SESSION_ENCRYPTION_SETTING_NONE,\\n * `PREFERRED`\
+        \ - SMB_SESSION_ENCRYPTION_SETTING_PREFERRED,\\n * `REQUIRED` - SMB_SESSION_ENCRYPTION_SETTING_REQUIRED\"\
+        \n    },\n    \"supported_dialects\": {\n      \"type\": \"array\",\n    \
+        \  \"items\": {\n        \"type\": \"string\",\n        \"enum\": [\n    \
+        \      \"SMB2_DIALECT_2_002\",\n          \"SMB2_DIALECT_2_1\",\n        \
+        \  \"SMB2_DIALECT_3_0\",\n          \"SMB2_DIALECT_3_11\"\n        ],\n  \
+        \      \"description\": \"supported_dialects:\\n * `SMB2_DIALECT_2_002` -\
+        \ API_SMB2_DIALECT_2_002,\\n * `SMB2_DIALECT_2_1` - API_SMB2_DIALECT_2_1,\\\
+        n * `SMB2_DIALECT_3_0` - API_SMB2_DIALECT_3_0,\\n * `SMB2_DIALECT_3_11` -\
+        \ API_SMB2_DIALECT_3_11\"\n      }\n    },\n    \"hide_shares_from_unauthorized_users\"\
+        : {\n      \"description\": \"If share permissions deny a logged in user access\
+        \ to a share, that share will not be visible in the share listing.\",\n  \
+        \    \"type\": \"boolean\"\n    },\n    \"hide_shares_from_unauthorized_hosts\"\
+        : {\n      \"description\": \"If share permissions deny a connected host access\
+        \ to a share, that share will not be visible in the share listing.\",\n  \
+        \    \"type\": \"boolean\"\n    },\n    \"snapshot_directory_mode\": {\n \
+        \     \"type\": \"string\",\n      \"enum\": [\n        \"VISIBLE\",\n   \
+        \     \"HIDDEN\",\n        \"DISABLED\"\n      ],\n      \"description\":\
+        \ \"Whether the special .snapshot directory should be visible or accessible.:\\\
+        n * `DISABLED` - SNAPSHOT_METADIR_DISABLED,\\n * `HIDDEN` - SNAPSHOT_METADIR_HIDDEN,\\\
+        n * `VISIBLE` - SNAPSHOT_METADIR_VISIBLE\"\n    },\n    \"bypass_traverse_checking\"\
+        : {\n      \"description\": \"Skip directory traversal checking for all users.\"\
+        ,\n      \"type\": \"boolean\"\n    },\n    \"signing_required\": {\n    \
+        \  \"description\": \"Requires messages from non-guest users to be signed.\"\
+        ,\n      \"type\": \"boolean\"\n    }\n  }\n}"
+    responses:
+    - code: '200'
+      description: Return value on success
     preview: true
     request_body:
       schema: "{\n  \"description\": \"api_smb_settings_patch\",\n  \"type\": \"object\"\
@@ -95,113 +187,21 @@ methods:
         ,\n      \"type\": \"boolean\"\n    },\n    \"signing_required\": {\n    \
         \  \"description\": \"Requires messages from non-guest users to be signed.\"\
         ,\n      \"type\": \"boolean\"\n    }\n  }\n}"
-    response_body:
-      schema: "{\n  \"description\": \"api_smb_settings\",\n  \"type\": \"object\"\
-        ,\n  \"properties\": {\n    \"session_encryption\": {\n      \"type\": \"\
-        string\",\n      \"enum\": [\n        \"NONE\",\n        \"PREFERRED\",\n\
-        \        \"REQUIRED\"\n      ],\n      \"description\": \"Session-level encryption\
-        \ setting.:\\n * `NONE` - SMB_SESSION_ENCRYPTION_SETTING_NONE,\\n * `PREFERRED`\
-        \ - SMB_SESSION_ENCRYPTION_SETTING_PREFERRED,\\n * `REQUIRED` - SMB_SESSION_ENCRYPTION_SETTING_REQUIRED\"\
-        \n    },\n    \"supported_dialects\": {\n      \"type\": \"array\",\n    \
-        \  \"items\": {\n        \"type\": \"string\",\n        \"enum\": [\n    \
-        \      \"SMB2_DIALECT_2_002\",\n          \"SMB2_DIALECT_2_1\",\n        \
-        \  \"SMB2_DIALECT_3_0\",\n          \"SMB2_DIALECT_3_11\"\n        ],\n  \
-        \      \"description\": \"supported_dialects:\\n * `SMB2_DIALECT_2_002` -\
-        \ API_SMB2_DIALECT_2_002,\\n * `SMB2_DIALECT_2_1` - API_SMB2_DIALECT_2_1,\\\
-        n * `SMB2_DIALECT_3_0` - API_SMB2_DIALECT_3_0,\\n * `SMB2_DIALECT_3_11` -\
-        \ API_SMB2_DIALECT_3_11\"\n      }\n    },\n    \"hide_shares_from_unauthorized_users\"\
-        : {\n      \"description\": \"If share permissions deny a logged in user access\
-        \ to a share, that share will not be visible in the share listing.\",\n  \
-        \    \"type\": \"boolean\"\n    },\n    \"hide_shares_from_unauthorized_hosts\"\
-        : {\n      \"description\": \"If share permissions deny a connected host access\
-        \ to a share, that share will not be visible in the share listing.\",\n  \
-        \    \"type\": \"boolean\"\n    },\n    \"snapshot_directory_mode\": {\n \
-        \     \"type\": \"string\",\n      \"enum\": [\n        \"VISIBLE\",\n   \
-        \     \"HIDDEN\",\n        \"DISABLED\"\n      ],\n      \"description\":\
-        \ \"Whether the special .snapshot directory should be visible or accessible.:\\\
-        n * `DISABLED` - SNAPSHOT_METADIR_DISABLED,\\n * `HIDDEN` - SNAPSHOT_METADIR_HIDDEN,\\\
-        n * `VISIBLE` - SNAPSHOT_METADIR_VISIBLE\"\n    },\n    \"bypass_traverse_checking\"\
-        : {\n      \"description\": \"Skip directory traversal checking for all users.\"\
-        ,\n      \"type\": \"boolean\"\n    },\n    \"signing_required\": {\n    \
-        \  \"description\": \"Requires messages from non-guest users to be signed.\"\
-        ,\n      \"type\": \"boolean\"\n    }\n  }\n}"
-    responses:
-    - code: '200'
-      description: Return value on success
-    summary: '[preview] Modify current tenant-specific SMB configuration.'
-  put:
+  delete:
+    summary: '[preview] Delete current SMB configuration, restoring the global settings
+      for this tenant.'
     parameters:
-    - description: The tenant ID of the SMB settings.
-      name: id
+    - name: id
+      description: The tenant ID of the SMB settings.
       required: true
-    - description: ETag for expected version
-      name: If-Match
+    - name: If-Match
+      description: ETag for expected version
       required: false
-    preview: true
-    request_body:
-      schema: "{\n  \"description\": \"api_smb_settings\",\n  \"type\": \"object\"\
-        ,\n  \"properties\": {\n    \"session_encryption\": {\n      \"type\": \"\
-        string\",\n      \"enum\": [\n        \"NONE\",\n        \"PREFERRED\",\n\
-        \        \"REQUIRED\"\n      ],\n      \"description\": \"Session-level encryption\
-        \ setting.:\\n * `NONE` - SMB_SESSION_ENCRYPTION_SETTING_NONE,\\n * `PREFERRED`\
-        \ - SMB_SESSION_ENCRYPTION_SETTING_PREFERRED,\\n * `REQUIRED` - SMB_SESSION_ENCRYPTION_SETTING_REQUIRED\"\
-        \n    },\n    \"supported_dialects\": {\n      \"type\": \"array\",\n    \
-        \  \"items\": {\n        \"type\": \"string\",\n        \"enum\": [\n    \
-        \      \"SMB2_DIALECT_2_002\",\n          \"SMB2_DIALECT_2_1\",\n        \
-        \  \"SMB2_DIALECT_3_0\",\n          \"SMB2_DIALECT_3_11\"\n        ],\n  \
-        \      \"description\": \"supported_dialects:\\n * `SMB2_DIALECT_2_002` -\
-        \ API_SMB2_DIALECT_2_002,\\n * `SMB2_DIALECT_2_1` - API_SMB2_DIALECT_2_1,\\\
-        n * `SMB2_DIALECT_3_0` - API_SMB2_DIALECT_3_0,\\n * `SMB2_DIALECT_3_11` -\
-        \ API_SMB2_DIALECT_3_11\"\n      }\n    },\n    \"hide_shares_from_unauthorized_users\"\
-        : {\n      \"description\": \"If share permissions deny a logged in user access\
-        \ to a share, that share will not be visible in the share listing.\",\n  \
-        \    \"type\": \"boolean\"\n    },\n    \"hide_shares_from_unauthorized_hosts\"\
-        : {\n      \"description\": \"If share permissions deny a connected host access\
-        \ to a share, that share will not be visible in the share listing.\",\n  \
-        \    \"type\": \"boolean\"\n    },\n    \"snapshot_directory_mode\": {\n \
-        \     \"type\": \"string\",\n      \"enum\": [\n        \"VISIBLE\",\n   \
-        \     \"HIDDEN\",\n        \"DISABLED\"\n      ],\n      \"description\":\
-        \ \"Whether the special .snapshot directory should be visible or accessible.:\\\
-        n * `DISABLED` - SNAPSHOT_METADIR_DISABLED,\\n * `HIDDEN` - SNAPSHOT_METADIR_HIDDEN,\\\
-        n * `VISIBLE` - SNAPSHOT_METADIR_VISIBLE\"\n    },\n    \"bypass_traverse_checking\"\
-        : {\n      \"description\": \"Skip directory traversal checking for all users.\"\
-        ,\n      \"type\": \"boolean\"\n    },\n    \"signing_required\": {\n    \
-        \  \"description\": \"Requires messages from non-guest users to be signed.\"\
-        ,\n      \"type\": \"boolean\"\n    }\n  }\n}"
-    response_body:
-      schema: "{\n  \"description\": \"api_smb_settings\",\n  \"type\": \"object\"\
-        ,\n  \"properties\": {\n    \"session_encryption\": {\n      \"type\": \"\
-        string\",\n      \"enum\": [\n        \"NONE\",\n        \"PREFERRED\",\n\
-        \        \"REQUIRED\"\n      ],\n      \"description\": \"Session-level encryption\
-        \ setting.:\\n * `NONE` - SMB_SESSION_ENCRYPTION_SETTING_NONE,\\n * `PREFERRED`\
-        \ - SMB_SESSION_ENCRYPTION_SETTING_PREFERRED,\\n * `REQUIRED` - SMB_SESSION_ENCRYPTION_SETTING_REQUIRED\"\
-        \n    },\n    \"supported_dialects\": {\n      \"type\": \"array\",\n    \
-        \  \"items\": {\n        \"type\": \"string\",\n        \"enum\": [\n    \
-        \      \"SMB2_DIALECT_2_002\",\n          \"SMB2_DIALECT_2_1\",\n        \
-        \  \"SMB2_DIALECT_3_0\",\n          \"SMB2_DIALECT_3_11\"\n        ],\n  \
-        \      \"description\": \"supported_dialects:\\n * `SMB2_DIALECT_2_002` -\
-        \ API_SMB2_DIALECT_2_002,\\n * `SMB2_DIALECT_2_1` - API_SMB2_DIALECT_2_1,\\\
-        n * `SMB2_DIALECT_3_0` - API_SMB2_DIALECT_3_0,\\n * `SMB2_DIALECT_3_11` -\
-        \ API_SMB2_DIALECT_3_11\"\n      }\n    },\n    \"hide_shares_from_unauthorized_users\"\
-        : {\n      \"description\": \"If share permissions deny a logged in user access\
-        \ to a share, that share will not be visible in the share listing.\",\n  \
-        \    \"type\": \"boolean\"\n    },\n    \"hide_shares_from_unauthorized_hosts\"\
-        : {\n      \"description\": \"If share permissions deny a connected host access\
-        \ to a share, that share will not be visible in the share listing.\",\n  \
-        \    \"type\": \"boolean\"\n    },\n    \"snapshot_directory_mode\": {\n \
-        \     \"type\": \"string\",\n      \"enum\": [\n        \"VISIBLE\",\n   \
-        \     \"HIDDEN\",\n        \"DISABLED\"\n      ],\n      \"description\":\
-        \ \"Whether the special .snapshot directory should be visible or accessible.:\\\
-        n * `DISABLED` - SNAPSHOT_METADIR_DISABLED,\\n * `HIDDEN` - SNAPSHOT_METADIR_HIDDEN,\\\
-        n * `VISIBLE` - SNAPSHOT_METADIR_VISIBLE\"\n    },\n    \"bypass_traverse_checking\"\
-        : {\n      \"description\": \"Skip directory traversal checking for all users.\"\
-        ,\n      \"type\": \"boolean\"\n    },\n    \"signing_required\": {\n    \
-        \  \"description\": \"Requires messages from non-guest users to be signed.\"\
-        ,\n      \"type\": \"boolean\"\n    }\n  }\n}"
+    response_body: {}
     responses:
     - code: '200'
       description: Return value on success
-    summary: '[preview] Set current tenant-specific SMB configuration.'
+    preview: true
 rest_endpoint: /v1/multitenancy/smb/settings/{id}
 api_version: v1
 permalink: /rest-api-guide/smb-multitenancy-methods/multitenancy_smb_settings_id.html

@@ -2,7 +2,12 @@
 category: /Cluster Creation
 methods:
   post:
+    summary: Form a cluster with the given set of node UUIDs and admin password.
     parameters: []
+    response_body: {}
+    responses:
+    - code: '202'
+      description: Return value on success
     preview: false
     request_body:
       schema: "{\n  \"description\": \"api_cluster_creation_request_v2\",\n  \"type\"\
@@ -25,11 +30,6 @@ methods:
         \ will be able to sustain\",\n      \"type\": \"number\"\n    },\n    \"max_node_failures\"\
         : {\n      \"description\": \"The maximum number of node failures this cluster\
         \ will be able to sustain\",\n      \"type\": \"number\"\n    }\n  }\n}"
-    response_body: {}
-    responses:
-    - code: '202'
-      description: Return value on success
-    summary: Form a cluster with the given set of node UUIDs and admin password.
 rest_endpoint: /v2/cluster/create
 api_version: v2
 permalink: /rest-api-guide/cluster-creation/v2_cluster_create.html

@@ -2,8 +2,8 @@
 category: /License Management
 methods:
   get:
+    summary: '[preview] Retrieve the current license and whether it is active.'
     parameters: []
-    preview: true
     response_body:
       schema: "{\n  \"description\": \"api_license_status\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"state\": {\n      \"type\": \"string\",\n  \
@@ -16,7 +16,7 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: '[preview] Retrieve the current license and whether it is active.'
+    preview: true
 rest_endpoint: /v1/license/status
 api_version: v1
 permalink: /rest-api-guide/license-management/license_status.html

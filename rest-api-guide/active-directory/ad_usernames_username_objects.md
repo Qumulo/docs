@@ -2,11 +2,11 @@
 category: /Active Directory
 methods:
   get:
+    summary: Return any AD account objects that have the given sAMAccountName.
     parameters:
-    - description: The sAMAccountName to use to look up AD users or groups.
-      name: username
+    - name: username
+      description: The sAMAccountName to use to look up AD users or groups.
       required: true
-    preview: false
     response_body:
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         ad_ldap_object\",\n    \"type\": \"object\",\n    \"properties\": {\n    \
@@ -26,7 +26,7 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Return any AD account objects that have the given sAMAccountName.
+    preview: false
 rest_endpoint: /v1/ad/usernames/{username}/objects/
 api_version: v1
 permalink: /rest-api-guide/active-directory/ad_usernames_username_objects.html

@@ -2,11 +2,13 @@
 category: /Authentication
 methods:
   get:
+    summary: Given a Windows NT Security IDentifier, return all related identities
+      (equivalents in other domains, and containing groups). This API is deprecated
+      in favor of /v1/identity/expand
     parameters:
-    - description: The Windows NT security identifier to expand.
-      name: id
+    - name: id
+      description: The Windows NT security identifier to expand.
       required: true
-    preview: false
     response_body:
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         api_identity_v1\",\n    \"type\": \"object\",\n    \"properties\": {\n   \
@@ -22,9 +24,7 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Given a Windows NT Security IDentifier, return all related identities
-      (equivalents in other domains, and containing groups). This API is deprecated
-      in favor of /v1/identity/expand
+    preview: false
 rest_endpoint: /v1/auth/sids/{id}/related-identities/
 api_version: v1
 permalink: /rest-api-guide/authentication/auth_sids_id_related-identities.html

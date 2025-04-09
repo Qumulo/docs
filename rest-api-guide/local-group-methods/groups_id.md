@@ -1,23 +1,13 @@
 ---
 category: /Local Group Methods
 methods:
-  delete:
-    parameters:
-    - description: The group's unique ID
-      name: id
-      required: true
-    preview: false
-    response_body: {}
-    responses:
-    - code: '200'
-      description: Return value on success
-    summary: Delete a group.
   get:
+    summary: Retrieve the attributes of a group. Refer to the 'Modify group' method
+      for a description of the returned fields.
     parameters:
-    - description: The group's unique ID
-      name: id
+    - name: id
+      description: The group's unique ID
       required: true
-    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_group\",\n  \"type\": \"object\",\n  \"\
         properties\": {\n    \"id\": {\n      \"description\": \"The group's unique\
@@ -29,16 +19,27 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Retrieve the attributes of a group. Refer to the 'Modify group' method
-      for a description of the returned fields.
+    preview: false
   put:
+    summary: Modify a group. The 'id' field must match the id in the URI.
     parameters:
-    - description: The group's unique ID
-      name: id
+    - name: id
+      description: The group's unique ID
       required: true
-    - description: ETag for expected version
-      name: If-Match
+    - name: If-Match
+      description: ETag for expected version
       required: false
+    response_body:
+      schema: "{\n  \"description\": \"api_group\",\n  \"type\": \"object\",\n  \"\
+        properties\": {\n    \"id\": {\n      \"description\": \"The group's unique\
+        \ id\",\n      \"type\": \"string\"\n    },\n    \"name\": {\n      \"description\"\
+        : \"The group name\",\n      \"type\": \"string\"\n    },\n    \"sid\": {\n\
+        \      \"description\": \"The group's SID\",\n      \"type\": \"string\"\n\
+        \    },\n    \"gid\": {\n      \"description\": \"The group's NFS gid\",\n\
+        \      \"type\": \"string\"\n    }\n  }\n}"
+    responses:
+    - code: '200'
+      description: Return value on success
     preview: false
     request_body:
       schema: "{\n  \"description\": \"api_group_put\",\n  \"type\": \"object\",\n\
@@ -47,18 +48,17 @@ methods:
         \  \"description\": \"The group name\",\n      \"type\": \"string\"\n    },\n\
         \    \"gid\": {\n      \"description\": \"The group's NFS gid\",\n      \"\
         type\": \"string\"\n    }\n  }\n}"
-    response_body:
-      schema: "{\n  \"description\": \"api_group\",\n  \"type\": \"object\",\n  \"\
-        properties\": {\n    \"id\": {\n      \"description\": \"The group's unique\
-        \ id\",\n      \"type\": \"string\"\n    },\n    \"name\": {\n      \"description\"\
-        : \"The group name\",\n      \"type\": \"string\"\n    },\n    \"sid\": {\n\
-        \      \"description\": \"The group's SID\",\n      \"type\": \"string\"\n\
-        \    },\n    \"gid\": {\n      \"description\": \"The group's NFS gid\",\n\
-        \      \"type\": \"string\"\n    }\n  }\n}"
+  delete:
+    summary: Delete a group.
+    parameters:
+    - name: id
+      description: The group's unique ID
+      required: true
+    response_body: {}
     responses:
     - code: '200'
       description: Return value on success
-    summary: Modify a group. The 'id' field must match the id in the URI.
+    preview: false
 rest_endpoint: /v1/groups/{id}
 api_version: v1
 permalink: /rest-api-guide/local-group-methods/groups_id.html

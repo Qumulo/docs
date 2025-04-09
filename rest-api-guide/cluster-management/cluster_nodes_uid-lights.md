@@ -2,8 +2,8 @@
 category: /Cluster Management
 methods:
   get:
+    summary: List the status of the identification lights for nodes.
     parameters: []
-    preview: false
     response_body:
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         api_node_uid_light_status\",\n    \"type\": \"object\",\n    \"properties\"\
@@ -14,7 +14,7 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: List the status of the identification lights for nodes.
+    preview: false
 rest_endpoint: /v1/cluster/nodes/uid-lights/
 api_version: v1
 permalink: /rest-api-guide/cluster-management/cluster_nodes_uid-lights.html

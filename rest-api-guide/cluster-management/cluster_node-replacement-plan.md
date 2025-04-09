@@ -2,8 +2,9 @@
 category: /Cluster Management
 methods:
   get:
+    summary: Get the current node replacement plan. This plan lists the nodes pending
+      replacement and nodes currently in process of being replaced.
     parameters: []
-    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_node_replacement_plan\",\n  \"type\": \"\
         object\",\n  \"properties\": {\n    \"nodes_to_be_replaced\": {\n      \"\
@@ -23,10 +24,14 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Get the current node replacement plan. This plan lists the nodes pending
-      replacement and nodes currently in process of being replaced.
+    preview: false
   post:
+    summary: To initiate node replacement, specify the nodes to replace.
     parameters: []
+    response_body: {}
+    responses:
+    - code: '200'
+      description: Return value on success
     preview: false
     request_body:
       schema: "{\n  \"description\": \"api_cluster_node_replacement_request\",\n \
@@ -40,11 +45,6 @@ methods:
         : \"number\"\n        },\n        \"data_blocks_per_stripe\": {\n        \
         \  \"description\": \"The number of data blocks per stripe.\",\n         \
         \ \"type\": \"number\"\n        }\n      }\n    }\n  }\n}"
-    response_body: {}
-    responses:
-    - code: '200'
-      description: Return value on success
-    summary: To initiate node replacement, specify the nodes to replace.
 rest_endpoint: /v1/cluster/node-replacement-plan/
 api_version: v1
 permalink: /rest-api-guide/cluster-management/cluster_node-replacement-plan.html

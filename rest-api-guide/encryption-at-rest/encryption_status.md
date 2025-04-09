@@ -2,8 +2,8 @@
 category: /Encryption at Rest
 methods:
   get:
+    summary: View the status of encryption at rest.
     parameters: []
-    preview: false
     response_body:
       schema: "{\n  \"description\": \"encryption_status_api_response\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"status\": {\n      \"type\": \"\
@@ -17,7 +17,7 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: View the status of encryption at rest.
+    preview: false
 rest_endpoint: /v1/encryption/status
 api_version: v1
 permalink: /rest-api-guide/encryption-at-rest/encryption_status.html

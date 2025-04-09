@@ -2,13 +2,14 @@
 category: /Snapshots
 methods:
   get:
+    summary: Returns the information for every snapshot. If a snapshot was created
+      from a snapshot policy, returns information about the policy.
     parameters:
-    - description: Filter the list of snapshots to exclude any combination of snapshots
+    - name: filter
+      description: Filter the list of snapshots to exclude any combination of snapshots
         in process of being deleted, snapshots not in process of being deleted, locked
         snapshots, and unlocked snapshots. By default, includes all snapshots.
-      name: filter
       required: false
-    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_snapshot_statuses\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"entries\": {\n      \"type\": \"array\",\n \
@@ -50,8 +51,7 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Returns the information for every snapshot. If a snapshot was created
-      from a snapshot policy, returns information about the policy.
+    preview: false
 rest_endpoint: /v4/snapshots/status/
 api_version: v4
 permalink: /rest-api-guide/snapshots/v4_snapshots_status.html

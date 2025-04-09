@@ -2,16 +2,16 @@
 category: /Replication
 methods:
   post:
+    summary: Start a new replication job for the specified object relationship
     parameters:
-    - description: Relationship identifier
-      name: id
+    - name: id
+      description: Relationship identifier
       required: true
-    preview: false
     response_body: {}
     responses:
     - code: '202'
       description: Return value on success
-    summary: Start a new replication job for the specified object relationship
+    preview: false
 rest_endpoint: /v3/replication/object-relationships/{id}/replicate
 api_version: v3
 permalink: /rest-api-guide/replication/v3_replication_object-relationships_id_replicate.html

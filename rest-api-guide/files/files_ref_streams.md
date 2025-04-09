@@ -2,18 +2,18 @@
 category: /Files
 methods:
   get:
+    summary: List all named streams on provided object
     parameters:
-    - description: The file ID or the absolute path to the file system object. File
+    - name: ref
+      description: The file ID or the absolute path to the file system object. File
         IDs can be found in the id field of responses of APIs that return file attributes.
         You must URL-encode the paths. The APIs & Tools page in the Qumulo Core Web
         UI URL-encodes the paths.
-      name: ref
       required: true
-    - description: The snapshot ID that specifies the version of the filesystem to
+    - name: snapshot
+      description: The snapshot ID that specifies the version of the filesystem to
         use. If not specified, use the head version.
-      name: snapshot
       required: false
-    preview: false
     response_body:
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         api_named_stream_attributes\",\n    \"type\": \"object\",\n    \"properties\"\
@@ -27,23 +27,19 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: List all named streams on provided object
+    preview: false
   post:
+    summary: Create a named stream on provided object
     parameters:
-    - description: The file ID or the absolute path to the file system object. File
+    - name: ref
+      description: The file ID or the absolute path to the file system object. File
         IDs can be found in the id field of responses of APIs that return file attributes.
         You must URL-encode the paths. The APIs & Tools page in the Qumulo Core Web
         UI URL-encodes the paths.
-      name: ref
       required: true
-    - description: ETag for expected version
-      name: If-Match
+    - name: If-Match
+      description: ETag for expected version
       required: false
-    preview: false
-    request_body:
-      schema: "{\n  \"description\": \"api_named_stream_entry\",\n  \"type\": \"object\"\
-        ,\n  \"properties\": {\n    \"stream_name\": {\n      \"description\": \"\
-        Stream name to be created.\",\n      \"type\": \"string\"\n    }\n  }\n}"
     response_body:
       schema: "{\n  \"description\": \"api_named_stream_attributes\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"name\": {\n      \"description\"\
@@ -56,7 +52,11 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Create a named stream on provided object
+    preview: false
+    request_body:
+      schema: "{\n  \"description\": \"api_named_stream_entry\",\n  \"type\": \"object\"\
+        ,\n  \"properties\": {\n    \"stream_name\": {\n      \"description\": \"\
+        Stream name to be created.\",\n      \"type\": \"string\"\n    }\n  }\n}"
 rest_endpoint: /v1/files/{ref}/streams/
 api_version: v1
 permalink: /rest-api-guide/files/files_ref_streams.html

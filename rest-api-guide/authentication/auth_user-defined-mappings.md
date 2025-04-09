@@ -1,9 +1,13 @@
 ---
 category: /Authentication
 methods:
-  get:
-    parameters: []
-    preview: false
+  put:
+    summary: Replace the configured set of AD/LDAP static user defined mappings with
+      the supplied set.
+    parameters:
+    - name: If-Match
+      description: ETag for expected version
+      required: false
     response_body:
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         user_equivalence\",\n    \"type\": \"object\",\n    \"properties\": {\n  \
@@ -14,12 +18,6 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Get the configured set of AD/LDAP static user defined mappings.
-  put:
-    parameters:
-    - description: ETag for expected version
-      name: If-Match
-      required: false
     preview: false
     request_body:
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
@@ -28,6 +26,9 @@ methods:
         ,\n        \"type\": \"string\"\n      },\n      \"ldap_name\": {\n      \
         \  \"description\": \"ldap_name\",\n        \"type\": \"string\"\n      }\n\
         \    }\n  }\n}"
+  get:
+    summary: Get the configured set of AD/LDAP static user defined mappings.
+    parameters: []
     response_body:
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         user_equivalence\",\n    \"type\": \"object\",\n    \"properties\": {\n  \
@@ -38,8 +39,7 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Replace the configured set of AD/LDAP static user defined mappings with
-      the supplied set.
+    preview: false
 rest_endpoint: /v1/auth/user-defined-mappings/
 api_version: v1
 permalink: /rest-api-guide/authentication/auth_user-defined-mappings.html

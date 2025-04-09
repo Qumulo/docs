@@ -2,17 +2,9 @@
 category: /Cluster Management
 methods:
   post:
+    summary: Calculate changes to cluster usable capacity from a proposed node-add
+      operation. This endpoint is deprecated in favor of /v2/cluster/nodes/dry-run.
     parameters: []
-    preview: false
-    request_body:
-      schema: "{\n  \"description\": \"api_cluster_calculate_node_add_capacity_request\"\
-        ,\n  \"type\": \"object\",\n  \"properties\": {\n    \"node_uuids\": {\n \
-        \     \"type\": \"array\",\n      \"items\": {\n        \"description\": \"\
-        Identifiers of nodes to add to existing cluster\",\n        \"type\": \"string\"\
-        \n      }\n    },\n    \"node_ips\": {\n      \"type\": \"array\",\n     \
-        \ \"items\": {\n        \"description\": \"IP addresses of nodes to add to\
-        \ existing cluster\",\n        \"type\": \"string\"\n      }\n    }\n  }\n\
-        }"
     response_body:
       schema: "{\n  \"description\": \"api_cluster_calculate_node_add_capacity_response\"\
         ,\n  \"type\": \"object\",\n  \"properties\": {\n    \"new_usable_capacity_in_bytes\"\
@@ -41,8 +33,16 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Calculate changes to cluster usable capacity from a proposed node-add
-      operation. This endpoint is deprecated in favor of /v2/cluster/nodes/dry-run.
+    preview: false
+    request_body:
+      schema: "{\n  \"description\": \"api_cluster_calculate_node_add_capacity_request\"\
+        ,\n  \"type\": \"object\",\n  \"properties\": {\n    \"node_uuids\": {\n \
+        \     \"type\": \"array\",\n      \"items\": {\n        \"description\": \"\
+        Identifiers of nodes to add to existing cluster\",\n        \"type\": \"string\"\
+        \n      }\n    },\n    \"node_ips\": {\n      \"type\": \"array\",\n     \
+        \ \"items\": {\n        \"description\": \"IP addresses of nodes to add to\
+        \ existing cluster\",\n        \"type\": \"string\"\n      }\n    }\n  }\n\
+        }"
 rest_endpoint: /v1/cluster/calculate-node-add-capacity
 api_version: v1
 permalink: /rest-api-guide/cluster-management/cluster_calculate-node-add-capacity.html

@@ -2,11 +2,14 @@
 category: /Replication
 methods:
   post:
+    summary: Make the target directory read-only and revert any changes made to the
+      target directory since the latest recovery point. Then reconnect the specified
+      target replication relationship with its source directory. The revert action
+      may take some time to complete before replication is resumed.
     parameters:
-    - description: Relationship identifier
-      name: id
+    - name: id
+      description: Relationship identifier
       required: true
-    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_target_relationship_status\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"id\": {\n      \"description\":\
@@ -137,10 +140,7 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Make the target directory read-only and revert any changes made to the
-      target directory since the latest recovery point. Then reconnect the specified
-      target replication relationship with its source directory. The revert action
-      may take some time to complete before replication is resumed.
+    preview: false
 rest_endpoint: /v2/replication/target-relationships/{id}/reconnect
 api_version: v2
 permalink: /rest-api-guide/replication/v2_replication_target-relationships_id_reconnect.html

@@ -2,8 +2,8 @@
 category: /Cluster Management
 methods:
   get:
+    summary: List nodes.
     parameters: []
-    preview: false
     response_body:
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         api_node\",\n    \"type\": \"object\",\n    \"properties\": {\n      \"id\"\
@@ -23,9 +23,15 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: List nodes.
+    preview: false
   post:
+    summary: Add one or more unconfigured nodes with the given node uuids and admin
+      password. This endpoint is deprecated in favor of /v2/cluster/nodes.
     parameters: []
+    response_body: {}
+    responses:
+    - code: '202'
+      description: Return value on success
     preview: false
     request_body:
       schema: "{\n  \"description\": \"api_cluster_nodes_modify_request_v1\",\n  \"\
@@ -38,12 +44,6 @@ methods:
         : {\n      \"description\": \"True to trade-off some increase in usable capacity\
         \ for increased node fault tolerance. Defaults to False.\",\n      \"type\"\
         : \"boolean\"\n    }\n  }\n}"
-    response_body: {}
-    responses:
-    - code: '202'
-      description: Return value on success
-    summary: Add one or more unconfigured nodes with the given node uuids and admin
-      password. This endpoint is deprecated in favor of /v2/cluster/nodes.
 rest_endpoint: /v1/cluster/nodes/
 api_version: v1
 permalink: /rest-api-guide/cluster-management/cluster_nodes.html

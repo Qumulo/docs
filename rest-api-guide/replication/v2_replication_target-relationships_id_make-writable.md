@@ -2,11 +2,16 @@
 category: /Replication
 methods:
   post:
+    summary: Revert target directory to the latest recovery point to ensure that it
+      is in a point-in-time consistent state. Then disconnect the specified target
+      replication relationship, breaking the relationship with the source and making
+      the target directory writable. The revert action may take some time to complete.
+      If the relationship is later reconnected, any changes made to the target directory
+      since the relationship was disconnected will be reverted upon reconnecting.
     parameters:
-    - description: Relationship identifier
-      name: id
+    - name: id
+      description: Relationship identifier
       required: true
-    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_target_relationship_status\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"id\": {\n      \"description\":\
@@ -137,12 +142,7 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Revert target directory to the latest recovery point to ensure that it
-      is in a point-in-time consistent state. Then disconnect the specified target
-      replication relationship, breaking the relationship with the source and making
-      the target directory writable. The revert action may take some time to complete.
-      If the relationship is later reconnected, any changes made to the target directory
-      since the relationship was disconnected will be reverted upon reconnecting.
+    preview: false
 rest_endpoint: /v2/replication/target-relationships/{id}/make-writable
 api_version: v2
 permalink: /rest-api-guide/replication/v2_replication_target-relationships_id_make-writable.html

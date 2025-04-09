@@ -2,16 +2,17 @@
 category: /Directory Quotas
 methods:
   get:
+    summary: List all directory quotas and their corresponding directories' paths
+      and cumulative sizes.
     parameters:
-    - description: Return entries after the given key (keys are returned in the paging
+    - name: after
+      description: Return entries after the given key (keys are returned in the paging
         object)
-      name: after
       required: false
-    - description: Return no more than this many entries; the system may choose a
+    - name: limit
+      description: Return no more than this many entries; the system may choose a
         smaller limit.
-      name: limit
       required: false
-    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_files_quota_status_entries\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"quotas\": {\n      \"type\": \"\
@@ -29,8 +30,7 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: List all directory quotas and their corresponding directories' paths
-      and cumulative sizes.
+    preview: false
 rest_endpoint: /v1/files/quotas/status/
 api_version: v1
 permalink: /rest-api-guide/directory-quotas/files_quotas_status.html

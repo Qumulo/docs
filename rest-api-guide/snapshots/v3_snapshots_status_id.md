@@ -2,11 +2,11 @@
 category: /Snapshots
 methods:
   get:
+    summary: Returns the status for a specific snapshot.
     parameters:
-    - description: Snapshot identifier
-      name: id
+    - name: id
+      description: Snapshot identifier
       required: true
-    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_snapshot_status\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"The unique\
@@ -41,7 +41,7 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Returns the status for a specific snapshot.
+    preview: false
 rest_endpoint: /v3/snapshots/status/{id}
 api_version: v3
 permalink: /rest-api-guide/snapshots/v3_snapshots_status_id.html

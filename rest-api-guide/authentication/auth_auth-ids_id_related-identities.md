@@ -2,11 +2,13 @@
 category: /Authentication
 methods:
   get:
+    summary: Given an auth_id of any kind, return all related identities (equivalents
+      in other domains, and containing groups). This API is deprecated in favor of
+      /v1/identity/expand
     parameters:
-    - description: The auth_id to expand to all its related identities.
-      name: id
+    - name: id
+      description: The auth_id to expand to all its related identities.
       required: true
-    preview: false
     response_body:
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         api_identity_v1\",\n    \"type\": \"object\",\n    \"properties\": {\n   \
@@ -22,9 +24,7 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Given an auth_id of any kind, return all related identities (equivalents
-      in other domains, and containing groups). This API is deprecated in favor of
-      /v1/identity/expand
+    preview: false
 rest_endpoint: /v1/auth/auth-ids/{id}/related-identities/
 api_version: v1
 permalink: /rest-api-guide/authentication/auth_auth-ids_id_related-identities.html

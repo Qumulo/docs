@@ -2,8 +2,9 @@
 category: /FTP Methods
 methods:
   get:
+    summary: Retrieve the current FTP server settings and the status of the server
+      on each node.
     parameters: []
-    preview: false
     response_body:
       schema: "{\n  \"description\": \"ftp_status\",\n  \"type\": \"object\",\n  \"\
         properties\": {\n    \"settings\": {\n      \"description\": \"The current\
@@ -46,8 +47,7 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Retrieve the current FTP server settings and the status of the server
-      on each node.
+    preview: false
 rest_endpoint: /v0/ftp/status
 api_version: v1
 permalink: /rest-api-guide/ftp-methods/v0_ftp_status.html

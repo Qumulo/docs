@@ -2,8 +2,8 @@
 category: /Shutdown
 methods:
   get:
+    summary: Retrieve the current status of the reboot manager.
     parameters: []
-    preview: false
     response_body:
       schema: "{\n  \"description\": \"reboot_status\",\n  \"type\": \"object\",\n\
         \  \"properties\": {\n    \"state\": {\n      \"type\": \"string\",\n    \
@@ -23,7 +23,7 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Retrieve the current status of the reboot manager.
+    preview: false
 rest_endpoint: /v1/shutdown/reboot/status
 api_version: v1
 permalink: /rest-api-guide/shutdown/shutdown_reboot_status.html

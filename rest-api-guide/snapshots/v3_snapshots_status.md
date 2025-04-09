@@ -2,14 +2,15 @@
 category: /Snapshots
 methods:
   get:
+    summary: Returns the statuses for all snapshots. Each snapshot's status includes
+      additional non-configurable information about a snapshot.
     parameters:
-    - description: "Filter the list of snapshots to exclude snapshots in process of\
+    - name: filter
+      description: "Filter the list of snapshots to exclude snapshots in process of\
         \ being deleted, or include only snapshots in process of being deleted. By\
         \ default, includes all snapshots.:\n * `all` - all,\n * `exclude_in_delete`\
         \ - exclude_in_delete,\n * `only_in_delete` - only_in_delete"
-      name: filter
       required: true
-    preview: false
     response_body:
       schema: "{\n  \"description\": \"api_snapshot_statuses\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"entries\": {\n      \"type\": \"array\",\n \
@@ -51,8 +52,7 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Returns the statuses for all snapshots. Each snapshot's status includes
-      additional non-configurable information about a snapshot.
+    preview: false
 rest_endpoint: /v3/snapshots/status/
 api_version: v3
 permalink: /rest-api-guide/snapshots/v3_snapshots_status.html

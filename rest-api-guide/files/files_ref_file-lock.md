@@ -2,25 +2,18 @@
 category: /Files
 methods:
   patch:
+    summary: Apply a permanent retention period or removable legal hold preventing
+      deletion or modification of a file. The target file must already exist.
     parameters:
-    - description: The file ID or the absolute path to the file system object. File
+    - name: ref
+      description: The file ID or the absolute path to the file system object. File
         IDs can be found in the id field of responses of APIs that return file attributes.
         You must URL-encode the paths. The APIs & Tools page in the Qumulo Core Web
         UI URL-encodes the paths.
-      name: ref
       required: true
-    - description: ETag for expected version
-      name: If-Match
+    - name: If-Match
+      description: ETag for expected version
       required: false
-    preview: false
-    request_body:
-      schema: "{\n  \"description\": \"api_patch_file_lock\",\n  \"type\": \"object\"\
-        ,\n  \"properties\": {\n    \"retention_period\": {\n      \"description\"\
-        : \"A permanent retention period preventing files from being deleted or modified.\
-        \ The period can only be extended.\",\n      \"type\": \"string\"\n    },\n\
-        \    \"legal_hold\": {\n      \"description\": \"A removable lock under which\
-        \ files cannot be deleted or modified.\",\n      \"type\": \"boolean\"\n \
-        \   }\n  }\n}"
     response_body:
       schema: "{\n  \"description\": \"api_get_files_attributes\",\n  \"type\": \"\
         object\",\n  \"properties\": {\n    \"path\": {\n      \"description\": \"\
@@ -130,8 +123,15 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: Apply a permanent retention period or removable legal hold preventing
-      deletion or modification of a file. The target file must already exist.
+    preview: false
+    request_body:
+      schema: "{\n  \"description\": \"api_patch_file_lock\",\n  \"type\": \"object\"\
+        ,\n  \"properties\": {\n    \"retention_period\": {\n      \"description\"\
+        : \"A permanent retention period preventing files from being deleted or modified.\
+        \ The period can only be extended.\",\n      \"type\": \"string\"\n    },\n\
+        \    \"legal_hold\": {\n      \"description\": \"A removable lock under which\
+        \ files cannot be deleted or modified.\",\n      \"type\": \"boolean\"\n \
+        \   }\n  }\n}"
 rest_endpoint: /v1/files/{ref}/file-lock
 api_version: v1
 permalink: /rest-api-guide/files/files_ref_file-lock.html

@@ -2,8 +2,9 @@
 category: /Replication
 methods:
   get:
+    summary: List statuses for all existing replication relationships where this cluster
+      is the target.
     parameters: []
-    preview: false
     response_body:
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
         api_target_relationship_status\",\n    \"type\": \"object\",\n    \"properties\"\
@@ -142,8 +143,7 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    summary: List statuses for all existing replication relationships where this cluster
-      is the target.
+    preview: false
 rest_endpoint: /v2/replication/target-relationships/status/
 api_version: v2
 permalink: /rest-api-guide/replication/v2_replication_target-relationships_status.html

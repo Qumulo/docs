@@ -83,6 +83,7 @@ DN
 DNS
 DNs
 DS
+Datasheet
 DeleteObject
 DeleteObjects
 Dev
@@ -212,6 +213,7 @@ NVMe
 Namespace
 Netlogon
 NetworkManager
+NeuralCache
 ODX
 OSUpgrade
 OU
