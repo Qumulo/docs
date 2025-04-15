@@ -519,3 +519,6 @@ xref:
   smbCLI:
     addModSameFlag: The <code>qq smb_add_share</code> and <code>qq smb_mod_share</code> commands use the same flags.
     addModCommand: specify the path, share name, and <a href="https://docs.qumulo.com/administrator-guide/authorization-qumulo-core/using-smb-host-restrictions.html#how-smb-host-restriction-precedence-works">host restriction level</a>.
+
+eops:
+  c192c432k432: "The C-192T, C-432T, and K-432T platforms will reach their End of Platform Support (EoPS) on May 9, 2030."
