@@ -12,7 +12,12 @@ redirect_from:
 sidebar: hardware_guide_sidebar
 ---
 
-{% include important.html content="We strongly recommend having another person help you with this process." %}
+{{site.data.alerts.important}}
+<ul>
+  <li>{{site.eops.c192c432k432}}</li>
+  <li>We strongly recommend having another person help you with this process.</li>
+</ul>
+{{site.data.alerts.end}}
 
 ## Step 1: Prepare for Chassis Replacement
 
