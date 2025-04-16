@@ -23,19 +23,24 @@ To let trusted users perform S3 API actions&mdash;such as `GetObject` or `Upload
 For more information, see [Authenticating Requests: Using Query Parameters (AWS Signature Version 4)](https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html) in the Amazon Simple Storage Service API Reference.
 
 {{site.data.alerts.note}}
-<p>Qumulo Core accepts only presigned requests that use the <code>PUT</code>, <code>GET</code>, <code>HEAD</code>, and <code>DELETE</code> HTTP methods. Qumulo Core rejects presigned requests for <code>POST</code> requests, such as the following:</p>
 <ul>
-  <li><code>AbortMultipartUpload</code></li>
-  <li><code>CompleteMultipartUpload</code></li>
-  <li><code>CreateMultipartUpload</code></li>
-  <li><code>DeleteObjects</code></li>
+  <li>
+    <p>Qumulo Core accepts only presigned requests that use the <code>PUT</code>, <code>GET</code>, <code>HEAD</code>, and <code>DELETE</code> HTTP methods. Qumulo Core rejects presigned requests for <code>POST</code> requests, such as the following:</p>
+    <ul>
+      <li><code>AbortMultipartUpload</code></li>
+      <li><code>CompleteMultipartUpload</code></li>
+      <li><code>CreateMultipartUpload</code></li>
+      <li><code>DeleteObjects</code></li>
+    </ul>
+  </li>
+  <li>{{site.supportAWScliLong}}</li>
 </ul>
 {{site.data.alerts.end}}
 
 To create a presigned URL, run the AWS CLI [`presign`](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/s3/presign.html) command. In the following example, the presigned URL expires in 10 minutes (600 seconds).
 
 ```bash
-$ aws2 s3 presign s3://my-bucket/my-file.txt \
+$ aws s3 presign s3://my-bucket/my-file.txt \
   --endpoint-url https://{{site.exampleIP0}}:9000 \
   --profile my-qumulo-profile \
   --expires-in 600

@@ -16,7 +16,7 @@
           <li>FTPS</li>
           <li>NFSv3</li>
           <li><a href="../nfs/nfsv4.1-enabling-using.html">NFSv4.1</a></li>
-          <li><a href="../s3-api/configuring-using-s3-api.html">S3 API</a></li>
+          <li><a href="../s3-api/configuring-using-s3-api.html">S3 API</a> ({{site.supportAWScliShort}}</li>
           <li>SMB 2.002</li>
           <li>SMB 2.1</li>
           <li>SMB 3.0</li>

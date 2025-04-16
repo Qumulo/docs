@@ -13,7 +13,7 @@ To create and manage S3 buckets by using the S3 API, you also need:
 
   * [A valid Qumulo S3 access key](creating-managing-s3-access-keys.html)
 
-  * [A configured AWS CLI](configuring-using-s3-api.html#configuring-aws-cli)
+  * [A configured AWS CLI](configuring-using-s3-api.html#configuring-aws-cli) ({{site.supportAWScliShort}})
 
 
 ## How S3 Buckets Map to the Qumulo File System

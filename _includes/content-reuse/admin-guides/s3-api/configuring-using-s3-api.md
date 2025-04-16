@@ -1,5 +1,5 @@
 ## Prerequisites
-To use the S3 API, you must install the [`aws`]({{site.s3.docs.cli}}) and [`qq` CLI](../qq-cli/getting-started.html).
+To use the S3 API, you must install the [{{site.supportAWScliShort}}]({{site.s3.docs.cli}}) and [`qq` CLI](../qq-cli/getting-started.html).
 
 {% include note.html content="The following instructions are for Ubuntu 18.04 (and higher)." %}
 
