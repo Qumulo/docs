@@ -9,6 +9,9 @@ redirect_from:
 sidebar: hardware_guide_sidebar
 ---
 
+{% capture eops %}{{site.eops.sm1114s}}{% endcapture %}
+{% include important.html content=eops %}
+
 ## Step 1: Verify Your Node
 
 {% include content-reuse/hardware-guides/platform-agnostic-verify-node-preamble.md %}

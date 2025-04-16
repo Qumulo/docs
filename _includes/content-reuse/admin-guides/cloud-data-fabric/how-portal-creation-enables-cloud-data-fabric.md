@@ -230,7 +230,7 @@ The Cloud Data Fabric functionality lets you:
 * {{site.gns.protocolLimitations}}
 
 #### NFS
-* While NFSv3 is a stateless protocol, NFSv4.1 is a stateful protocol which permits open file handles to remain open without being unlinked unexpectedly. However, Qumulo Core doesn't always maintain access to files deleted from a portal in a relationship. For example, if you open a file on the spoke portal host cluster and then delete the same file on the hub portal host cluster, an application that uses the file on the spoke portal host cluster will lose access to the file unexpectedly. 
-* It isn't possible to use NFSv4.1 and Kerberos together with an Active Directory configuration on a remote Qumulo cluster.
+* While NFSv3 is a stateless protocol, NFSv4.1 is a stateful protocol which permits open file handles to remain open after a file is unlinked. However, Qumulo Core doesn't always maintain access to files deleted from a portal in a relationship. For example, if you open a file on the spoke portal host cluster and then delete the same file on the hub portal host cluster, an application that uses the file on the spoke portal host cluster will lose access to the file unexpectedly.
+* When you authenticate over NFSv4.1 by using Kerberos, you can use Kerberos principals only from the Active Directory domain associated with the Qumulo cluster to which you are connected. It isn't possible to use principals from a remote Qumulo cluster."
 * When you edit ACLs over NFSv4.1 by using `editfacl` or similar tools, you can use only Kerberos principals from the Active Directory domain associated with the Qumulo cluster to which you are connected. It isn't possible to use principals from a remote Qumulo cluster.
 * {{site.gns.protocolLocking}}

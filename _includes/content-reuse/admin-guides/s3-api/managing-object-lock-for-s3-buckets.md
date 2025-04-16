@@ -1,6 +1,7 @@
 ## Prerequisites
-Before you can enable Object Lock for an S3 bucket, you must first [enable S3 Bucket versioning](managing-s3-bucket-versioning.html).
+* Before you can enable Object Lock for an S3 bucket, you must first [enable S3 Bucket versioning](managing-s3-bucket-versioning.html).
 
+* {{site.supportAWScliLong}}
 
 ## How Object Lock for S3 Buckets Works in Qumulo Core
 You can configure Object Lock for an S3 Bucket in three ways:
