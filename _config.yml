@@ -519,3 +519,6 @@ xref:
   smbCLI:
     addModSameFlag: The <code>qq smb_add_share</code> and <code>qq smb_mod_share</code> commands use the same flags.
     addModCommand: specify the path, share name, and <a href="https://docs.qumulo.com/administrator-guide/authorization-qumulo-core/using-smb-host-restrictions.html#how-smb-host-restriction-precedence-works">host restriction level</a>.
+
+eops:
+    sm1114s: 'The Supermicro A+ WIO 1114S-WN10RT platform has reached its End of Life (EoL) on April 18, 2025. For more information about End of Platform Support (EoPS), contact <a href="https://www.supermicro.com/en/support">Supermicro support</a>.'
