@@ -446,4 +446,4 @@ entries:
 
     - title: Technical Specifications
       url: /hardware-guide/supermicro-a-plus-wio-1114s-wn10rt/technical-specifications.html
-      output: web
+      output: web, pdf
