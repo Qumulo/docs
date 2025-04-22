@@ -594,7 +594,7 @@ while true; do
     echo -e "9.  ❌\tFind unused .js scripts"
     echo
     echo -e "\033[1;33mGenerate Documentation\033[0m"
-    echo -e "10.  ⚙️\tRegenerate CLI documentation"
+    echo -e "10. ⚙️\tRegenerate CLI documentation"
     echo -e "11. 🆕\tList CLI documentation with appended content"
     echo -e "12. ⚙️\tRegenerate REST API documentation"
     echo -e "13. ⚙️\tOnly build HTML documentation"
