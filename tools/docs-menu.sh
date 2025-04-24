@@ -1,11 +1,12 @@
 #!/bin/bash
 
 check_environment() {
-    eval $(~/src/environment) 2>&1
-    if [[ $? -ne 0 ]]; then
+    if ! ~/src/environment > /tmp/env.out 2>&1; then
         echo "Detected an error while running environment script. Remediating toolchain..."
         cd ~/src
-        hg up default && hg fetch && hg prebuild
+        hg up default && hg fetch && ./prebuild
+    else
+        eval "$(cat /tmp/env.out)"
     fi
 }
 
