@@ -5,9 +5,6 @@ permalink: /hardware-guide/supermicro-a-plus-wio-1114s-wn10rt/technical-specific
 sidebar: hardware_guide_sidebar
 ---
 
-{% capture eops %}{{site.eops.sm1114s}}{% endcapture %}
-{% include important.html content=eops %}
-
 <table cellspacing="0" cellpadding="0" class="tech-specs">
 <thead>
   <tr>

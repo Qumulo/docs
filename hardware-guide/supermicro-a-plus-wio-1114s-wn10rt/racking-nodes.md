@@ -7,9 +7,6 @@ redirect_from:
 sidebar: hardware_guide_sidebar
 ---
 
-{% capture eops %}{{site.eops.sm1114s}}{% endcapture %}
-{% include important.html content=eops %}
-
 ## To Attach the Outer and Inner Rails
 {{site.data.alerts.note}}
 <ul>

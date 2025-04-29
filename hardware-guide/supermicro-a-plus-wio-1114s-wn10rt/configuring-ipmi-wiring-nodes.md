@@ -8,9 +8,6 @@ redirect_from:
 sidebar: hardware_guide_sidebar
 ---
 
-{% capture eops %}{{site.eops.sm1114s}}{% endcapture %}
-{% include important.html content=eops %}
-
 {{site.splitNetDefine}}
 
 {% capture unusedPorts %}{{site.unusedEthPorts}}{% endcapture %}

@@ -7,6 +7,3 @@ redirect_from:
 sidebar: hardware_guide_sidebar
 search: exclude
 ---
-
-{% capture eops %}{{site.eops.sm1114s}}{% endcapture %}
-{% include important.html content=eops %}
