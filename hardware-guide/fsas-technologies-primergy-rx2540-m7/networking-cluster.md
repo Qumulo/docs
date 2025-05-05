@@ -1,7 +1,9 @@
 ---
-title: "Networking Your Fujitsu PRIMERGY RX2540 M7 Cluster"
-summary: "This section explains how to network a Fujitsu PRIMERGY RX2540 M7 cluster."
-permalink: /hardware-guide/fujitsu-primergy-rx2540-m7/networking-cluster.html
+title: "Networking Your Fsas Technologies PRIMERGY RX2540 M7 Cluster"
+summary: "This section explains how to network a Fsas Technologies PRIMERGY RX2540 M7 cluster."
+permalink: /hardware-guide/fsas-technologies-primergy-rx2540-m7/networking-cluster.html
+redirect_from:
+  - /hardware-guide/fujitsu-primergy-rx2540-m7/networking-cluster.html
 sidebar: hardware_guide_sidebar
 ---
 
