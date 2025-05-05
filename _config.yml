@@ -256,6 +256,7 @@ hardware:
     smc: To configure the IPMI port, you must use the IPMI Management Utility installed on the motherboard. For more information, see <a href="https://www.supermicro.com/manuals/other/BMC_Users_Guide_X12_H12.pdf">Supermicro BMC User Guide X12</a>.
     agnostic: For information about configuring the IPMI port, see the documentation from your hardware vendor.
   fromAIC: in the documentation provided to Qumulo by AIC
+  seeTechSpecs: For this platform's technical specifications, navigate to the
 
 led:
   red: <span class="emoji">🔴</span>

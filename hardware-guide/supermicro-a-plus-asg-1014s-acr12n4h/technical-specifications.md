@@ -4,6 +4,7 @@ summary: "This section provides technical specifications for Supermicro 1014S no
 permalink: /hardware-guide/supermicro-a-plus-asg-1014s-acr12n4h/technical-specifications.html
 redirect_from:
   - /hardware/supermicro-a-plus-asg-1014s-acr12n4h/technical-specifications.html
-redirect_to: https://et5yrgdebta.exactdn.com/wp-content/uploads/2024/09/Supermicro-and-Qumulo-Data-Sheet-September-2024.pdf
-search: exclude
+sidebar: hardware_guide_sidebar
 ---
+
+{{site.hardware.seeTechSpecs}} [Qumulo and Supermicro](https://qumulo.com/product/supermicro/) page and then click **Download the Datasheet**.
