@@ -559,6 +559,13 @@ entries:
     url: /rest-api-guide/files/
   - folderitems:
     - output: web,pdf
+      title: health/ssd-endurance
+      url: /rest-api-guide/hardware-health-methods/health_ssd-endurance.html
+    output: web,pdf
+    title: Hardware Health Methods (health)
+    url: /rest-api-guide/hardware-health-methods/
+  - folderitems:
+    - output: web,pdf
       title: identity/expand
       url: /rest-api-guide/identity/identity_expand.html
     - output: web,pdf

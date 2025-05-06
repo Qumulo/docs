@@ -112,6 +112,22 @@ no_toolchain() {
     export PATH=$(echo $PATH | sed "s|/opt/qumulo[^:]*:||g")
 }
 
+check_tqdm() {
+    no_toolchain
+    USER_SITE=$(python3 -m site --user-site)
+
+    if ! PYTHONPATH="$USER_SITE:$PYTHONPATH" python3 -c "import tqdm" &>/dev/null; then
+        read -p "Package tqdm isn't installed or not visible. Install it? (y/n): " REPLY
+        if [[ "$REPLY" == "y" ]]; then
+            pip3 install --user tqdm
+        else
+            echo "Can't continue without tqdm. Exiting..."
+            return 1
+        fi
+    fi
+    return 0
+}
+
 ignore_warnings() {
     echo -e "\033[1;33mNote: You can ignore any warnings about setting the locale or about GitHub API authentication.\033[0m"
 }
@@ -378,8 +394,11 @@ regen_cli_docs() {
 regen_api_docs() {
     start_in_docs_dir
     check_src_repo
+    check_tqdm || return 1
     echo "Building REST API documentation from the Music cluster..."
-    python3 tools/gen-api.py
+    no_toolchain
+    USER_SITE=$(python3 -m site --user-site)
+    PYTHONPATH="$USER_SITE:$PYTHONPATH" python3 tools/gen-api.py
 }
 
 # Build HTML documentation by using Jekyll

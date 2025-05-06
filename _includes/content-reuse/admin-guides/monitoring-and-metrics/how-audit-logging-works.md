@@ -402,6 +402,15 @@ This section lists the operation names in Qumulo Core audit logging.
     <li><code>node_halt</code></li>
     <li><code>node_restart</code></li>
     <li><code>node_set_identify_light</code></li>
+    <li><code>portals_authorize_hub_portal</code></li>
+    <li><code>portals_create_spoke_portal</code></li>
+    <li><code>portals_delete_hub_portal</code></li>
+    <li><code>portals_delete_spoke_portal</code></li>
+    <li><code>portals_evict_inode</code></li>
+    <li><code>portals_modify_eviction_configuration</code></li>
+    <li><code>portals_modify_hub_portal</code></li>
+    <li><code>portals_modify_spoke_portal</code></li>
+    <li><code>portals_propose_portal_relationship</code></li>
     <li><code>reboot_pause</code></li>
     <li><code>reboot_resume</code></li>
     <li><code>reboot_start</code></li>

@@ -3,6 +3,7 @@ import json
 import yaml
 import requests
 import re
+from tqdm import tqdm
 
 # Helper function for preserving manually added YAML keys
 def update_frontmatter_preserving_custom_fields(md_path, updates):
@@ -211,16 +212,18 @@ sidebar_entries_by_tag = {}
 tag_info_dict = {tag['name']: tag for tag in api_definition['tags']}
 
 # Main processing logic
-for path, path_item in api_definition["paths"].items():
+paths_items = list(api_definition["paths"].items())
+for path, path_item in tqdm(paths_items, desc="Generating API docs", unit="endpoint"):
     path_segments = path.strip("/").split("/")
-    if len(path_segments) < 2:
-        print(f"Skipping path '{path}' as it does not have enough segments.")
+    if path == "/openapi.json" or len(path_segments) < 2:
+        if path != "/openapi.json":
+            tqdm.write(f"Skipping path {repr(path)} (segments: {len(path_segments)}): too short.")
         continue
     
     # Find the tags for the category
     tags = find_tags_for_category(path_item)
     if not tags:
-        print(f"Skipping path '{path}' as it does not have any tags.")
+        tqdm.write(f"Skipping path '{path}' as it does not have any tags.")
         continue
 
     is_preview = any("[preview]" in details.get("summary", "").lower() for details in path_item.values())

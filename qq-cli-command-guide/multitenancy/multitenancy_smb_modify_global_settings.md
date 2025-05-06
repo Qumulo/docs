@@ -61,9 +61,9 @@ summary: This section explains how to use the <code>qq multitenancy_smb_modify_g
 synopsis: Modify global default SMB settings
 title: qq multitenancy_smb_modify_global_settings
 usage: "qq multitenancy_smb_modify_global_settings [-h] [-e {none,preferred,required}]\
-  \ [-d dialect_1 [dialect_2 ...]] [--hide-shares-from-unauthorized-hosts {true,false}]\n\
-  \    [--hide-shares-from-unauthorized-users {true,false}] [--snapshot-directory-mode\
-  \ {visible,hidden,disabled}]\n    [--bypass-traverse-checking {true,false}] [--signing-required\
+  \ [-d dialect_1 [dialect_2 ...]] [--hide-shares-from-unauthorized-hosts {true,false}]\
+  \ [--hide-shares-from-unauthorized-users {true,false}]\n    [--snapshot-directory-mode\
+  \ {visible,hidden,disabled}] [--bypass-traverse-checking {true,false}] [--signing-required\
   \ {true,false}]"
 zendesk_source: qq CLI Command Guide
 
