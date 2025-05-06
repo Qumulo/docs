@@ -37,6 +37,54 @@ The following key terms help define the components of Cloud Data Fabric function
 
   According to the file system permissions that a hub portal might impose, you can access a spoke portal root directory by using NFSv3, SMB, or the Qumulo REST API. Qumulo Core 7.4.3 (and higher) supports NFSv4.1.
 
+  * <a id="hub-portal-data"></a>**Hub Portal Data:** Accessible to other Qumulo clusters through a [portal relationship](#portal-relationship) or through replication, and to clients that connect to the [hub portal host cluster](#cluster)
+
+  * <a id="spoke-portal-data"></a>**Spoke Portal Data:** Accessible only to clients that connect to the [spoke portal host cluster](#cluster)
+
+  * <a id="cluster-local-data"></a>**Cluster-Local Data:** Data on a [hub portal host cluster or spoke portal host cluster](#cluster) which is located outside of the corresponding [portal root directory](#portal-root-directory), accessible to clients that connect to the cluster or to other Qumulo clusters through replication
+
+  {% include note.html content="Qumulo Core allows the S3 protocol to access only hub portal data and cluster-local data." %}
+
+  The following table illustrates the various content types and ways in which this data can be accessed.
+
+  <table class="info-matrix">
+    <thead>
+      <tr>
+        <th style="vertical-align:middle" rowspan="2">Data Type</th>
+        <th style="text-align:center" colspan="4">Data Accessible Through&hellip;</th>
+      </tr>
+      <tr>
+        <th style="width:20%">Other Qumulo clusters through portal relationships</th>
+        <th style="width:20%">Other Qumulo clusters through replication</th>
+        <th style="width:20%">Clients that access the spoke portal host cluster</th>
+        <th style="width:20%">Clients that access the hub portal host cluster</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">Hub Portal Data</th>
+        <td><span class="emoji">✅</span></td>
+        <td><span class="emoji">✅</span></td>
+        <td><span class="emoji">❌</span></td>
+        <td><span class="emoji">✅</span></td>
+      </tr>
+      <tr>
+        <th scope="row">Spoke Portal Data</th>
+        <td><span class="emoji">❌</span></td>
+        <td><span class="emoji">❌</span></td>
+        <td><span class="emoji">✅</span></td>
+        <td><span class="emoji">❌</span></td>
+      </tr>
+      <tr>
+        <th scope="row">Cluster-Local Data</th>
+        <td><span class="emoji">❌</span></td>
+        <td><span class="emoji">✅</span></td>
+        <td><span class="emoji">✅</span></td>
+        <td><span class="emoji">✅</span></td>
+      </tr>
+    </tbody>
+  </table>
+
 ### Portals
 * <a id="spoke-portal"></a>**Spoke Portal:** An interface point on a Qumulo cluster that accesses a portion of the file system on another cluster (which has a _hub portal)_. {{site.gns.dirOnCluster}} spoke portal. {{site.gns.spokePortalInitiates}}
 
@@ -141,7 +189,7 @@ A _portal status_ indicates the accessibility of a [_spoke portal_](#spoke-porta
 ## How Cloud Data Fabric Functionality Works
 This section explains the creation of portal relationships, data caching and synchronization, permissions in portal root directories, and the deletion of portal relationships.
 
-### Creation of Portal Relationships
+### Portal Relationship Creation
 When the [hub portal](#hub-portal) _authorizes_ the [portal relationship](#portal-relationship), the contents of the hub portal root directory become available to the [spoke portal](#spoke-portal) immediately.
 
 ### Data Synchronization
@@ -157,7 +205,7 @@ The first time a client accesses a spoke portal root directory, the spoke portal
 
 Caching takes place on demand, when a client with access to the spoke portal retrieves new portions of the namespace that the hub portal provides. For more information, see [Configuring Cache Management for Spoke Portals in Qumulo Core](configuring-cache-management-for-spoke-portals.html).
 
-### Permissions in Portal Root Directories
+### Portal Root Directory Permissions
 Qumulo Core enforces permissions in the same way for files and directories in the spoke portal root directory and the hub portal root directory.
 
 {{site.data.alerts.important}}
@@ -167,7 +215,7 @@ Qumulo Core enforces permissions in the same way for files and directories in th
 </ul>
 {{site.data.alerts.end}}
 
-### Deletion of Portal Relationships
+### Portal Relationship Deletion
 This section explains the sequence of events when you request the removal of the portal relationship from the spoke portal or the hub portal.
 
 1. When you request the removal of the spoke portal, the relationship becomes read-only and enters the `Deleting` state and Qumulo Core begins to synchronize any outstanding changes from the spoke portal to the hub portal.
@@ -181,6 +229,11 @@ This section explains the sequence of events when you request the removal of the
    1. Deletes the spoke portal root directory and reclaims the capacity previously consumed by cached data.
 
 {% include note.html content="When you remove a portal relationship, any files or directories on the hub portal that were inaccessible, due to _both_ connectivity loss and outstanding spoke portal modifications, become accessible." %}
+
+### Portal Operation Audit Logging
+* For clients accessing [spoke portal data](#spoke-portal-data), audit logging is determined by the configuration on the spoke portal host cluster.
+
+* For clients accessing [hub portal data](#hub-portal-data), audit logging is determined by the configuration on the hub portal host cluster.
 
 ## Example Cloud Data Fabric Scenarios
 The following are examples of some of the most common scenarios for workloads that use Cloud Data Fabric functionality.
@@ -227,7 +280,8 @@ The Cloud Data Fabric functionality lets you:
 
 ### Protocols
 #### S3
-* {{site.gns.protocolLimitations}}
+* Currently, Qumulo Core allows the S3 protocol to access only [hub portal data](#hub-portal-data) and [cluster-local data](#cluster-local-data).
+* Attempting to access [spoke portal data](#spoke-portal-data) returns a `NoSuchKey` error.
 
 #### NFS
 * While NFSv3 is a stateless protocol, NFSv4.1 is a stateful protocol which permits open file handles to remain open after a file is unlinked. However, Qumulo Core doesn't always maintain access to files deleted from a portal in a relationship. For example, if you open a file on the spoke portal host cluster and then delete the same file on the hub portal host cluster, an application that uses the file on the spoke portal host cluster will lose access to the file unexpectedly.

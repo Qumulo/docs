@@ -290,6 +290,11 @@ table.tech-specs td:first-child {
     text-align: left;
 }
 
+table.info-matrix td:nth-child(n+2) {
+  vertical-align: middle;
+  text-align: center;
+}
+
 a {
   /* This color is required to meet WCAG standards for accessible text.
      Note: This style overrides bootstrap.css.

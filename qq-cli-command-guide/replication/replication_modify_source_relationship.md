@@ -29,8 +29,8 @@ summary: This section explains how to use the <code>qq replication_modify_source
 synopsis: Modify an existing source replication relationship.
 title: qq replication_modify_source_relationship
 usage: "qq replication_modify_source_relationship [-h] --id ID [--new-target-address\
-  \ NEW_TARGET_ADDRESS] [--new-target-port NEW_TARGET_PORT] [-z TIMEZONE]\n    [--enable-replication\
-  \ {true,false}] [--set-source-directory-read-only {true,false}] [--map-local-ids-to-nfs-ids\
+  \ NEW_TARGET_ADDRESS] [--new-target-port NEW_TARGET_PORT] [-z TIMEZONE] [--enable-replication\
+  \ {true,false}] [--set-source-directory-read-only {true,false}]\n    [--map-local-ids-to-nfs-ids\
   \ {true,false}]"
 zendesk_source: qq CLI Command Guide
 

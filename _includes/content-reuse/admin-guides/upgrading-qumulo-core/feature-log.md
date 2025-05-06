@@ -4,6 +4,24 @@ For information about upgrade types for each release, see <a href='mode-referenc
 
 <style>div#toc{height:200px;overflow:auto;}</style>
 
+## Qumulo Core 7.4.4
+{{page.varDownloadsRelnotes}}
+{{site.data.alerts.important}}
+<p>Qumulo Core 7.4.4 is a <em>platform upgrade for on-premises clusters</em> which includes an update of the underlying Ubuntu operating system, from version 20.04 to 24.04.</p>
+<ul>
+  <li><strong>HPE hardware platforms users:</strong> We strongly recommend downloading and installing the latest HPE Service Pack (SPP) from the <a target="_blank" href="https://support.hpe.com/">HPE Support Center</a>. Lab testing of the upgrade process has shown that certain components (such as NICs and transceivers) can experience compatibility issues when running older firmware on Ubuntu 24.04.</li>
+  <li><strong>All hardware platform users:</strong> You must perform a rolling reboot (rebooting the nodes in your cluster one at a time) in order to avoid the interruption of connectivity between nodes in your cluster.</li>
+</ul>
+{{site.data.alerts.end}}
+
+* Made improvements to Cloud Data Fabric:
+  * Added the ability to enable the S3 protocol for a spoke portal host cluster
+  * Removed previous restrictions from the placement of replication targets
+  * Enabled compression for data transferred between clusters in a portal relationship
+  * Made significant performance improvements for small-I/O workloads on the hub portal and for locally cached files on the spoke portal
+* Added Web UI notifications about SSD endurance levels and a corresponding REST API endpoint
+* Resolved an issue that previously affected read leases in the hub portal root directory
+
 ## Qumulo Core 7.4.3
 {{page.varDownloadsRelnotes}}
 
