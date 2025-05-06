@@ -1,7 +1,9 @@
 ---
-title: "Panel LEDs on Fujitsu PRIMERGY RX2540 M7 Nodes"
-summary: "This section explains the LEDs on Fujitsu RX2540 M7 nodes."
-permalink: /hardware-guide/fujitsu-primergy-rx2540-m7/panel-leds.html
+title: "Panel LEDs on Fsas Technologies PRIMERGY RX2540 M7 Nodes"
+summary: "This section explains the LEDs on Fsas Technologies RX2540 M7 nodes."
+permalink: /hardware-guide/fsas-technologies-primergy-rx2540-m7/panel-leds.html
+redirect_from:
+  - /hardware-guide/fujitsu-primergy-rx2540-m7/panel-leds.html
 sidebar: hardware_guide_sidebar
 ---
 

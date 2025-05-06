@@ -269,8 +269,7 @@ led:
   black: <span class="emoji">⚫️</span>
   white: <span class="emoji">⚪️</span>
 
-bootDriveInit: After you replace the boot drive, you must initialize the replacement boot drive by using the Qumulo Core Installer.
-bootDriveInitPreamble: This section explains how to replace and initialize the M.2 boot drive in your chassis.
+bootDriveInit: After you replace the boot drive, you must initialize the replacement boot drive by using the Qumulo Core Installer and then rebuild the replacement boot drive by using a script on the node in your cluster.
 
 splitIlo: We strongly recommend separating your iLO access network from your client-facing network.
 partReplaceDefine: When you replace a component such as the motherboard or a NIC card in your node, you must ensure that the firmware version and configuration are correct for your new components. To do this, you must perform the part replacement procedure by using the FVT.
@@ -327,10 +326,10 @@ q2uhg2: Quiver 2UH Gen2
 q1uag1Long: Quiver 1U All-NVMe Gen1
 q1uag1: Quiver 1UA Gen1
 
-fprx2540m7Long: Fujitsu PRIMERGY RX2540 M7
-fprx2540m7: Fujitsu RX2540 M7
+fprx2540m7Long: Fsas Technologies PRIMERGY RX2540 M7
+fprx2540m7: Fsas Technologies RX2540 M7
 
-fprx2540m7followDocs: "Follow the instructions in the Fujitsu Upgrade and Maintenance Manual:"
+fprx2540m7followDocs: "Follow the instructions in the Fsas Technologies Upgrade and Maintenance Manual:"
 
 q1uag1Drives:
   frontStorageBays: There are 12 2.5" hot-swap NVMe drives attached with four screws to trays in front storage bays. For more information, see <a href="https://dlcdnets.asus.com/pub/ASUS/server/RS500A-E12-RS12U/Manual/E21507_RS500A-E12-RS12U_UM_V2_WEB.pdf?model=RS500A-E12-RS12U#page=45">Installing a 2.5-Inch Storage Device to a Front Storage Bay</a> in the ASUS documentation.
