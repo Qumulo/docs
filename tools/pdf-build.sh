@@ -27,7 +27,7 @@ ACTIONS=()
 PS3='What would you like to build? '
 
 # Prints the options on screen
-options=("Qumulo-Certified Platinum-Tier Hardware Servicing Guide" "Gold-Tier Hardware Servicing Guide for Qumulo" "Azure Native Qumulo Administrator Guide" "Cloud Native Qumulo on AWS Administrator Guide" "Cloud Native Qumulo on Azure Administrator Guide" "Qumulo On-Premises Administrator Guide" "Qumulo Alerts Guide" "Qumulo qq CLI Command Guide" "Qumulo REST API Guide" "Qumulo Integration Guide" "All Administrator Guides" "All Guides" "Exit")
+options=("Qumulo-Certified Platinum-Tier Hardware Servicing Guide" "Gold-Tier Hardware Servicing Guide for Qumulo" "Azure Native Qumulo Administrator Guide" "Cloud Native Qumulo on AWS Administrator Guide" "Cloud Native Qumulo on Azure Administrator Guide" "Qumulo On-Premises Administrator Guide" "Qumulo Alerts Guide" "Qumulo qq CLI Command Guide" "Qumulo REST API Guide" "Qumulo Integration Guide" "All Administrator Guides" "All Hardware Guides" "All Guides" "Exit")
 echo
 
 select opt in "${options[@]}"
@@ -78,6 +78,10 @@ do
       ;;
     "All Administrator Guides")
       ACTIONS+=("ANQ_Guide" "CNQ_AWS_Guide" "CNQ_Azure_Guide" "Administrator_Guide")
+      break
+      ;;
+    "All Hardware Guides")
+      ACTIONS+=("Platinum_Tier_Hardware_Guide" "Gold_Tier_Hardware_Guide")
       break
       ;;
     "All Guides")
