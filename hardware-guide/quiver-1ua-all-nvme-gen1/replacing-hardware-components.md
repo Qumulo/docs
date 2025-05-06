@@ -26,7 +26,7 @@ Follow the instructions in the ASUS documentation:
 
 
 <a id="replace-nic"></a>
-## To Replace the NIC
+## Replacing a NIC
 {% include note.html content="Certain node types have two NICs. For more information, see [Technical Specifications](technical-specifications.html)." %}
 
 Follow the instructions in the ASUS documentation:
@@ -37,25 +37,27 @@ Follow the instructions in the ASUS documentation:
 
 
 <a id="replace-nvme-m2-boot-drive"></a>
-## To Replace the M.2 Boot Drive
+## Replacing an M.2 Boot Drive
 {{site.q1uag1Drives.internalBootDrive}}
 
-{{site.bootDriveInit}}
 
+## Initializing the Replacement Boot Drive
+{{site.bootDriveInit}}
 {% include content-reuse/hardware-guides/platform-agnostic-boot-drive-replacement.md %}
 
+
 <a id="replace-nvme-drive-front-storage-bay"></a>
-## To Replace an NVMe Drive in Front Storage Bays
+## Replacing an NVMe Drive in a Front Storage Bay
 {{site.q1uag1Drives.frontStorageBays}}
 
 
 <a id="replace-nvme-drive-internal-storage-bay"></a>
-## To Replace an NVMe Drive in Internal Storage Bays
+## Replacing an NVMe Drive in an Internal Storage Bay
 {{site.q1uag1Drives.internalStorageBays}}
 
 
 <a id="replace-psu"></a>
-## To Replace a Power Supply Unit (PSU)
+## Replacing a Power Supply Unit (PSU)
 Your {{site.q1uag1}} chassis contains two PSUs. Follow the instructions to [replace a power supply module](https://dlcdnets.asus.com/pub/ASUS/server/RS500A-E12-RS12U/Manual/E21507_RS500A-E12-RS12U_UM_V2_WEB.pdf?model=RS500A-E12-RS12U#page=71) in the ASUS documentation.
 
 
@@ -69,13 +71,13 @@ Your {{site.q1uag1}} chassis has five system fans on the left and two on the rig
 
 
 <a id="replace-dimms"></a>
-## To Replace a DIMM
+## Replacing a DIMM
 Your {{site.q1uag1}} chassis has 24 DDR5 DIMM slots. For more information, see [System Memory](https://dlcdnets.asus.com/pub/ASUS/server/RS500A-E12-RS12U/Manual/E21507_RS500A-E12-RS12U_UM_V2_WEB.pdf?model=RS500A-E12-RS12U#page=39) and [Memory Configurations](https://dlcdnets.asus.com/pub/ASUS/server/RS500A-E12-RS12U/Manual/E21507_RS500A-E12-RS12U_UM_V2_WEB.pdf?model=RS500A-E12-RS12U#page=40) in the ASUS documentation.
 
 Follow the instructions for [removing and installing a DIMM](https://dlcdnets.asus.com/pub/ASUS/server/RS500A-E12-RS12U/Manual/E21507_RS500A-E12-RS12U_UM_V2_WEB.pdf?model=RS500A-E12-RS12U#page=41) in the ASUS documentation.
 
 
-## To Replace the Node Chassis
+## Replacing the Node Chassis
 {% include important.html content="After you perform a chassis swap, you must reconfigure the IPMI settings for your node." %}
 
 ### Step 1: Remove the Existing Components

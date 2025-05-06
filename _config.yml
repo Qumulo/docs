@@ -269,8 +269,7 @@ led:
   black: <span class="emoji">⚫️</span>
   white: <span class="emoji">⚪️</span>
 
-bootDriveInit: After you replace the boot drive, you must initialize the replacement boot drive by using the Qumulo Core Installer.
-bootDriveInitPreamble: This section explains how to replace and initialize the M.2 boot drive in your chassis.
+bootDriveInit: After you replace the boot drive, you must initialize the replacement boot drive by using the Qumulo Core Installer and then rebuild the replacement boot drive by using a script on the node in your cluster.
 
 splitIlo: We strongly recommend separating your iLO access network from your client-facing network.
 partReplaceDefine: When you replace a component such as the motherboard or a NIC card in your node, you must ensure that the firmware version and configuration are correct for your new components. To do this, you must perform the part replacement procedure by using the FVT.

@@ -13,7 +13,7 @@ Your {{site.fprx2540m7}} chassis contains 12 or 8 HDDs in the front, 4 NVMe driv
 
 <a id="hdd-drives"></a>
 ## Front HDD Drives
-For more information, see [To Replace an HDD](replacing-hardware-components.html#to-replace-an-hdd).
+For more information, see [To Replace an HDD](replacing-hardware-components.html#replace-hdd).
 
 ### 48TB and 144TB Nodes
 In [48TB and 144TB Nodes](technical-specifications.html), all drive bays are populated.

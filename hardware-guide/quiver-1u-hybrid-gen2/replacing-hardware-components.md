@@ -44,7 +44,7 @@ Your {{site.q1uhg2}} chassis contains a PCIe riser card inserted vertically into
 
 
 <a id="replace-nic"></a>
-## To Replace the NIC
+## To Replace a NIC
 Your {{site.q1uhg2}} chassis contains a NIC inserted horizontally into the PCIe riser card.
 
 {% include note.html content="Although the NIC installation is toolless, depending on the NIC that ships with your node model, you might have to replace the exterior-facing metal frame on your NIC with a different one. For more information, see [Technical Specifications](technical-specifications.html)." %}
@@ -61,10 +61,8 @@ Your {{site.q1uhg2}} chassis contains a NIC inserted horizontally into the PCIe 
 
 
 <a id="replace-nvme-m2-boot-drive"></a>
-## Replacing the M.2 Boot Drive
-{{site.bootDriveInitPreamble}} Your {{site.q1uhg2}} chassis contains an NVMe boot drive inserted vertically into an M.2 expansion slot on the PCIe riser card. For more information, see [NVMe M.2 Boot Drive](drive-bay-mapping.html#nvme-m2-boot-drive).
-
-### To Replace the M.2 Boot Drive in the PCIe Slot
+## To Replace an M.2 Boot Drive
+Your {{site.q1uhg2}} chassis contains an NVMe boot drive inserted vertically into an M.2 expansion slot on the PCIe riser card. For more information, see [NVMe M.2 Boot Drive](drive-bay-mapping.html#nvme-m2-boot-drive).
 
 1. {{page.varNoHotPlug}}
 
@@ -84,10 +82,12 @@ Your {{site.q1uhg2}} chassis contains a NIC inserted horizontally into the PCIe 
    
 1. Insert the PCIe riser card vertically into the PCIe slot.
 
-### To Initialize the Replacement M.2 Boot Drive
+
+## Initializing the Replacement Boot Drive
 {{site.bootDriveInit}}
 
 {% include content-reuse/hardware-guides/platform-agnostic-boot-drive-replacement.md %}
+
 
 <a id="replace-hdd"></a>
 ## To Replace an HDD
@@ -193,7 +193,7 @@ Your {{site.q1uhg2}} chassis has 12 DIMM slots, with a locking latch on each sid
 {% include note.html content="To identify which DIMM failed, you must use the baseboard management controller (BMC) on the node or another hardware monitoring solution." %}
 
 
-## To Replace the Node Chassis
+## Replacing the Node Chassis
 {% include important.html content="After you perform a chassis swap, you must reconfigure the IPMI settings for your node." %}
 
 ### Step 1: Remove the Existing Components

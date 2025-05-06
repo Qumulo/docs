@@ -3,6 +3,7 @@ title: "Replacing Hardware Components in Your Nodes"
 summary: "This section explains how to replace hardware components in your platform's nodes."
 permalink: /gold-tier-hardware-servicing-guide/replacing-hardware-components.html
 sidebar: gold_tier_hardware_servicing_guide_sidebar
+platform: agnostic
 ---
 
 For detailed instructions, see the documentation from your hardware vendor.
@@ -24,7 +25,5 @@ Gold-Tier hardware doesn't use predefined drive mapping or panel LEDs to indicat
 
 ## Initializing a Replacement Boot Drive
 {{site.bootDriveInit}}
-
-### To Initialize the Replacement Boot Drive
 
 {% include content-reuse/hardware-guides/platform-agnostic-boot-drive-replacement.md %}

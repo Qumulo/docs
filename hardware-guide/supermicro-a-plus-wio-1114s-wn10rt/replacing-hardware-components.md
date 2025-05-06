@@ -48,12 +48,12 @@ Replacement drives, including the on-site spare drives that you received with yo
 
 {% include note.html content="If you remove and reinsert a drive extremely quickly (faster than one second), the baseboard management controller (BMC) doesn't recognize the drive and the activity LEDs don't return to their normal states. To resolve this issue, remove the drive, wait five seconds, and then reinsert it." %}
 
-## To Replace an M.2 Boot Drive
-The boot drive is located in the internal M.2 expansion slot.
 
+## Initializing the Replacement Boot Drive
 {{site.bootDriveInit}}
 
 {% include content-reuse/hardware-guides/platform-agnostic-boot-drive-replacement.md %}
+
 
 ## To Replace a Power Supply Unit (PSU)
 The two hot-swap PSUs are located at the front of your {{site.sm1114s}} chassis. If either of the two PSUs fails, the other PSU takes on the full load and lets the node continue operating without interruption.
