@@ -523,4 +523,5 @@ xref:
     addModCommand: specify the path, share name, and <a href="https://docs.qumulo.com/administrator-guide/authorization-qumulo-core/using-smb-host-restrictions.html#how-smb-host-restriction-precedence-works">host restriction level</a>.
 
 eops:
+  c192c432k432: "The C-192T, C-432T, and K-432T platforms will reach their End of Platform Support (EoPS) on May 9, 2030."
   sm1114s: 'The Supermicro A+ WIO 1114S-WN10RT platform has reached its End of Life (EoL) on April 18, 2025. For more information about End of Platform Support (EoPS), contact <a href="https://www.supermicro.com/en/support">Supermicro support</a>.'
