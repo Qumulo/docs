@@ -1,5 +1,3 @@
-{% include important.html content="For changes to take effect, any Qumulo clusters that are already joined to an Active Directory domain must leave the domain and then rejoin it." %}
-
 ## How Full Credential Expansion Works in Qumulo Core
 Because the SMB and NFS protocols have unique identifiers and exist in different identity domains, it becomes difficult to link the two protocols when they represent the same identity. In addition, storage devices can't determine the entity that attempts to access a file; as a result, a file that a Linux system writes can be inaccessible on a Windows machine.
 
