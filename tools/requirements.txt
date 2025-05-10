@@ -1,5 +1,0 @@
-PyYAML==6.0
-requests==2.32.0
-tqdm==4.66.3
-types-PyYAML==6.0.0
-types-requests==2.25.1
