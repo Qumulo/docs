@@ -590,6 +590,10 @@ find_unused_scripts() {
     fi
 }
 
+determine_lowest_replication_version(){
+    ~/src/release_management/determine_lowest_replication_version.py
+}
+
 check_environment
 check_symlinks
 global_docs_menu
@@ -614,28 +618,29 @@ while true; do
     echo -e "9.  ❌\tFind unused .js scripts"
     echo
     echo -e "\033[1;33mGenerate Documentation\033[0m"
-    echo -e "10. ⚙️\tRegenerate CLI documentation"
-    echo -e "11. 🆕\tList CLI documentation with appended content"
-    echo -e "12. ⚙️\tRegenerate REST API documentation"
-    echo -e "13. ⚙️\tOnly build HTML documentation"
-    echo -e "14. ⚙️\tOnly build PDF documentation"
+    echo -e "10. ⬇️\tDetermine lowest replication version"
+    echo -e "11. ⚙️\tRegenerate CLI documentation"
+    echo -e "12. 🆕\tList CLI documentation with appended content"
+    echo -e "13. ⚙️\tRegenerate REST API documentation"
+    echo -e "14. ⚙️\tOnly build HTML documentation"
+    echo -e "15. ⚙️\tOnly build PDF documentation"
     echo
     echo -e "\033[1;33mPreview Documentation\033[0m"
-    echo -e "15. 🖥️\tOnly serve documentation locally (Tailscale over HTTPS)"
-    echo -e "16. 🖥️\tOnly serve documentation locally (Python over HTTP)"
-    echo -e "17. 🖥️\tBuild documentation and serve it locally (Tailscale over HTTPS)"
-    echo -e "18. 🖥️\tBuild documentation and serve it locally (Python over HTTP)"
-    echo -e "19. 🖥️\tBuild documentation and serve it locally (Jekyll with LiveReload over HTTP)"
+    echo -e "16. 🖥️\tOnly serve documentation locally (Tailscale over HTTPS)"
+    echo -e "18. 🖥️\tOnly serve documentation locally (Python over HTTP)"
+    echo -e "19. 🖥️\tBuild documentation and serve it locally (Tailscale over HTTPS)"
+    echo -e "20. 🖥️\tBuild documentation and serve it locally (Python over HTTP)"
+    echo -e "21. 🖥️\tBuild documentation and serve it locally (Jekyll with LiveReload over HTTP)"
     echo
     echo -e "\033[1;33mTest Documentation\033[0m"
-    echo -e "20. 📋\tCheck documentation for link, script, and image errors"
-    echo -e "21. 📋\tCheck documentation for spelling errors"
+    echo -e "22. 📋\tCheck documentation for link, script, and image errors"
+    echo -e "23. 📋\tCheck documentation for spelling errors"
     echo
     echo -e "\033[1;33mIndex Documentation\033[0m"
-    echo -e "22. 🔍\tIngest docs.qumulo.com into Vectara"
-    echo -e "23. 🔍\tIngest care.qumulo.com into Vectara"
-    echo -e "24. 🔍\tIngest qumulo.com into Vectara"
-    echo -e "25. 📋\tCheck ingestion status"
+    echo -e "24. 🔍\tIngest docs.qumulo.com into Vectara"
+    echo -e "25. 🔍\tIngest care.qumulo.com into Vectara"
+    echo -e "26. 🔍\tIngest qumulo.com into Vectara"
+    echo -e "27. 📋\tCheck ingestion status"
     echo
     echo -e "q.  👋\tQuit"
     echo
@@ -651,22 +656,23 @@ while true; do
         7) prune_docker ;;
         8) refresh_vectara_ingest_repo;;
         9) find_unused_scripts ;;
-        10) regen_cli_docs ;;
-        11) find_modified_cli ;;
-        12) regen_api_docs ;;
-        13) build_html_docs ;;
-        14) build_pdf_docs ;;
-        15) only_serve_docs_locally_tailscale ;;
-        16) only_serve_docs_locally_python ;;
-        17) build_serve_docs_locally_tailscale ;;
-        18) build_serve_docs_locally_python ;;
-        19) build_serve_docs_locally_jekyll ;;
-        20) check_docs_errors ;;
-        21) check_spelling_errors ;;
-        22) ingest_docs_portal ;;
-        23) ingest_care_portal ;;
-        24) ingest_corp_site ;;
-        25) check_ingestion_status ;;
+        10) determine_lowest_replication_version ;;
+        11) regen_cli_docs ;;
+        12) find_modified_cli ;;
+        13) regen_api_docs ;;
+        14) build_html_docs ;;
+        15) build_pdf_docs ;;
+        16) only_serve_docs_locally_tailscale ;;
+        17) only_serve_docs_locally_python ;;
+        19) build_serve_docs_locally_tailscale ;;
+        20) build_serve_docs_locally_python ;;
+        21) build_serve_docs_locally_jekyll ;;
+        22) check_docs_errors ;;
+        23) check_spelling_errors ;;
+        24) ingest_docs_portal ;;
+        25) ingest_care_portal ;;
+        26) ingest_corp_site ;;
+        27) check_ingestion_status ;;
         q) exit ;;
         *) echo "You must enter a valid option." ;;
     esac
