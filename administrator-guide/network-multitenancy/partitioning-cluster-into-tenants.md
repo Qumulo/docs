@@ -167,7 +167,7 @@ $ qq multitenancy_delete_tenant \
   --id 2
 ```
 
-## Known Network Multitenancy Limitations in Qumulo Core
+## Known Limits
 Currently, Qumulo Core doesn't support:
 
 * Creating or modifying tenants on cloud-based clusters

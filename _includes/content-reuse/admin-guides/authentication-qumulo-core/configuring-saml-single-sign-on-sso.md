@@ -189,7 +189,7 @@ qq saml_modify_settings --require-sso true
 When the cluster requires SSO authentication, your cluster rejects password-based authentication from AD users in the Qumulo Core Web UI, REST API, and `qq` CLI.
 
 
-## Known Issues and Limitations
+## Known Limits
 * Local users (the built-in `admin` user and any additional users) can always use their passwords to authenticate to the Qumulo Core Web UI and the `qq` CLI.
 
   {% include important.html content="We recommend setting a strong password for the built-in `admin` user and using this account only for emergencies." %} 

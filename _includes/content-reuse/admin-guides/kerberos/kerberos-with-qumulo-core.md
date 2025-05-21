@@ -15,7 +15,7 @@ Qumulo Core 5.1.5 (and higher) supports Kerberos for authenticating AD users ove
 1. Join Linux systems to your AD domain.
 1. Connect to a Linux system and mount the Qumulo cluster by using one of the [available mount options](#choosing-a-kerberos-security-flavor).
 
-## Known Kerberos Limitations for Qumulo Core
+## Known Limits
 Qumulo Core supports only the following features:
 
 * NFSv4.1
