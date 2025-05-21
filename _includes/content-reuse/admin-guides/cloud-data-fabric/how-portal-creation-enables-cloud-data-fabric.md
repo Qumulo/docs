@@ -12,7 +12,7 @@ To enable Cloud Data Fabric functionality, you must define a [_spoke portal_](#s
 
 {{site.data.alerts.important}}
 <ul>
-  <li>Before you begin to implement Cloud Data Fabric in your organization, we strongly recommend reviewing this page, especially the <a href="#known-limitations">Known Limitations</a> section.</li>
+  <li>Before you begin to implement Cloud Data Fabric in your organization, we strongly recommend reviewing this page, especially the <a href="#known-limits">Known Limits</a> section.</li>
   <li>For any questions, {{site.contactQumuloCare}}.</li>
 </ul>
 {{site.data.alerts.end}}
@@ -260,8 +260,8 @@ The Cloud Data Fabric functionality lets you:
 * Serve specific archive capacity and performance needs by scaling the archive cluster independently of any active workflow clusters.
 
 
-<a id="known-limitations"></a>
-## Known Limitations of the Cloud Data Fabric Functionality in Qumulo Core
+<a id="known-limits"></a>
+## Known Limits
 
 ### General
 * Currently, it is possible to configure and manage Cloud Data Fabric functionality only by using the `qq` CLI.

@@ -164,7 +164,7 @@ The following privileges are required for continuous replication.
 1. In the **Delete relationship** dialog box, review the source and target clusters and then click **Yes, Delete**.
 
 
-## Known Continuous Replication Limitations in Qumulo Core
+## Known Limits
 <ul>
   <li><strong>Continuous Replication:</strong> Depending on applications in use while a replication job runs, continuous replication increases the load on the cluster and can cause latency delays.</li>
   <li><strong>Local Users and Groups:</strong> Continuous replication doesn't support replicating local user or group information and fails when it encounters a file associated with local users or groups.</li>

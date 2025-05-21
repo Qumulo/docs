@@ -119,7 +119,7 @@ The following table compares the features of {{site.azure.qumuloOnAzureShort}} w
   </tbody>
 </table>
 
-### Known Limitations 
+### Known Limits
 * **IPv6 Addresses:** Currently, Azure Networking features don't support IPv6 addresses.
 
 * **Initial Authentication over SMB:** When you deploy the service initially, all users can use the SMB protocol. However, the `admin` user can authenticate over all protocols except over SMB.
