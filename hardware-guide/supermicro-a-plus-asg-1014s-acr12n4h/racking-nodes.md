@@ -7,6 +7,9 @@ redirect_from:
 sidebar: hardware_guide_sidebar
 ---
 
+{% capture eops %}{{site.eops.sm1014s}}{% endcapture %}
+{% include important.html content=eops %}
+
 ## Using the Toolless Rail System
 {{site.sm1014s}} nodes don't require any tools for attaching rails to your server rack. For more information, see [The Toolless Rail System](https://www.supermicro.com/manuals/superserver/1U/MNL-2436.pdf#page=18) in the Supermicro documentation.
 

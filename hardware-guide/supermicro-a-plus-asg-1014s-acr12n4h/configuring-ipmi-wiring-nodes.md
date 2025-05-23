@@ -8,6 +8,9 @@ redirect_from: /hardware-guide/supermicro-a-plus-asg-1014s-acr12n4h/wiring-nodes
 sidebar: hardware_guide_sidebar
 ---
 
+{% capture eops %}{{site.eops.sm1014s}}{% endcapture %}
+{% include important.html content=eops %}
+
 {{site.unifyNetDefine}}
 
 {% capture unusedPorts %}{{site.unusedEthPorts}}{% endcapture %}

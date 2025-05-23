@@ -7,6 +7,9 @@ redirect_from:
 sidebar: hardware_guide_sidebar
 ---
 
+{% capture eops %}{{site.eops.sm1014s}}{% endcapture %}
+{% include important.html content=eops %}
+
 Your {{site.sm1014s}} chassis contains 12 HDDs, 4 NVMe drives, and one NVMe boot drive in an internal M.2 expansion slot. The following is the mapping for the drives.
 
 ## HDD Drives
