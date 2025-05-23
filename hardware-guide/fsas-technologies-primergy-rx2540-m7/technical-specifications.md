@@ -4,7 +4,7 @@ summary: "This section provides technical specifications for Fsas Technologies P
 permalink: /hardware-guide/fsas-technologies-primergy-rx2540-m7/technical-specifications.html
 redirect_from:
   - /hardware-guide/fujitsu-primergy-rx2540-m7/technical-specifications.html
-redirect_to: https://www.fujitsu.com/global/products/computing/servers/primergy/rack/rx2540m7/#specs
 sidebar: hardware_guide_sidebar
-search: exclude
 ---
+
+{{site.hardware.seeTechSpecs}} [Qumulo and Fsas Technologies](https://qumulo.com/product/fujitsu/) and then click **Download Datasheet**.
