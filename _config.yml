@@ -525,3 +525,4 @@ xref:
 eops:
   c192c432k432: "The C-192T, C-432T, and K-432T platforms will reach their End of Platform Support (EoPS) on May 9, 2030."
   sm1114s: 'The Supermicro A+ WIO 1114S-WN10RT platform has reached its End of Life (EoL) on April 18, 2025. For more information about End of Platform Support (EoPS), contact <a href="https://www.supermicro.com/en/support">Supermicro support</a>.'
+  sm1014s: 'The Supermicro A+ WIO 1114S-WN10RT platform has reached its End of Life (EoL) on May 23, 2025. For more information about End of Platform Support (EoPS), contact <a href="https://www.supermicro.com/en/support">Supermicro support</a>.'

@@ -10,6 +10,9 @@ platform:
   - sm1014s
 ---
 
+{% capture eops %}{{site.eops.sm1014s}}{% endcapture %}
+{% include important.html content=eops %}
+
 {% include content-reuse/hardware-guides/platform-agnostic-part-replacement-admonitions.md %}
 
 {% include content-reuse/hardware-guides/platform-agnostic-part-replacement-procedure-fvt.md %}

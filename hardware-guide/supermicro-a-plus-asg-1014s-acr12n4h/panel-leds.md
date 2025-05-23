@@ -7,6 +7,9 @@ redirect_from:
 sidebar: hardware_guide_sidebar
 ---
 
+{% capture eops %}{{site.eops.sm1014s}}{% endcapture %}
+{% include important.html content=eops %}
+
 ## Front Panel LEDs and Buttons
 
 On the front, right side of your node, there are five LEDs.

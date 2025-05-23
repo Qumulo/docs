@@ -7,6 +7,9 @@ redirect_from:
 sidebar: hardware_guide_sidebar
 ---
 
+{% capture eops %}{{site.eops.sm1014s}}{% endcapture %}
+{% include important.html content=eops %}
+
 {% include content-reuse/hardware-guides/platform-agnostic-unified-networking-cluster.md ethernetSpeed="25 Gbps or 100 Gbps"%}
 
 {% include image.html alt="Four-Node Cluster Architecture Diagram" file="supermicro-1014s-four-node-cluster-architecture-diagram.png" url="/hardware-guide/supermicro-a-plus-asg-1014s-acr12n4h/images/supermicro-1014s-four-node-cluster-architecture-diagram.png" %}
