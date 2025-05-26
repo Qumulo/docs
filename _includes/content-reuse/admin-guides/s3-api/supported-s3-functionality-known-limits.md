@@ -8,8 +8,10 @@ The following table lists the S3 API actions that Qumulo Core supports and the v
 </ul>
 {{site.data.alerts.end}}
 
+{% comment %}
 <details>
   <summary>Click to expand</summary>
+{% endcomment %}
   <table>
     <thead>
       <tr>
@@ -168,7 +170,7 @@ The following table lists the S3 API actions that Qumulo Core supports and the v
       </tr>
     </tbody>
   </table>
-</details>
+{% comment %}</details>{% endcomment %}
 
 ## Unsupported S3 Functionality
 The following table lists some of the S3 API functionality that Qumulo Core doesn't support.
