@@ -165,6 +165,10 @@ entries:
     - title: Configuring Round-Robin DNS on Windows Server
       url: /administrator-guide/network-configuration/configuring-round-robin-dns-windows-server.html
       output: web, pdf
+      
+    - title: Configuring Qumulo Authoritative DNS (QDNS)
+      url: /administrator-guide/network-configuration/configuring-authoritative-dns.html
+      output: web, pdf
 
   - title: Network Multitenancy
     url: /administrator-guide/network-multitenancy/index.html

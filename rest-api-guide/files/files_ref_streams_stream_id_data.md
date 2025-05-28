@@ -13,7 +13,7 @@ methods:
         UI URL-encodes the paths.
       required: true
     - name: stream_id
-      description: Stream ID (uint64) to be modified
+      description: Stream ID (u64) to be modified
       required: true
     - name: offset
       description: 'Write the provided data at the given 64-bit integer offset. If
@@ -50,7 +50,7 @@ methods:
         UI URL-encodes the paths.
       required: true
     - name: stream_id
-      description: Stream ID (uint64) to be modified
+      description: Stream ID (u64) to be modified
       required: true
     - name: If-Match
       description: ETag for expected version
@@ -84,7 +84,7 @@ methods:
         UI URL-encodes the paths.
       required: true
     - name: stream_id
-      description: Stream ID (uint64) to be modified
+      description: Stream ID (u64) to be modified
       required: true
     - name: snapshot
       description: The snapshot ID that specifies the version of the filesystem to

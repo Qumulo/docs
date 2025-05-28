@@ -76,7 +76,7 @@ The following table lists metric names, types, labels, and descriptions.
           <li class="pdf-friendly"><code>uuid</code></li>
           <li class="pdf-friendly">
             <code>version</code>
-            {% include tip.html content="Don't confuse this label for the <em>Qumulo Core version</em> with the identically named label for the <em>kernel version</em> for the <code>qumulo_kernel</code> metric." %} 
+            {% include tip.html content="Don't confuse this label for the <em>Qumulo Core version</em> with the identically named label for the <em>kernel version</em> for the <code>qumulo_kernel</code> metric." %}
           </li>
         </ul>
       </td>
@@ -90,7 +90,7 @@ The following table lists metric names, types, labels, and descriptions.
       <td>
         <ul>
           <li class="pdf-friendly"><code>cmdline</code></li>
-          <li class="pdf-friendly"><code>node_id</code></li>          
+          <li class="pdf-friendly"><code>node_id</code></li>
           <li class="pdf-friendly">
             <code>version</code>
             {% include tip.html content="Don't confuse this label for the <em>kernel version</em> with the identically named label for the <em>Qumulo Core version</em> for the <code>qumulo</code> metric." %}
@@ -100,7 +100,7 @@ The following table lists metric names, types, labels, and descriptions.
       <td>7.2.0.2</td>
       <td>
         Kernel information for each node in a cluster, including the command-line arguments that were used for starting the kernel, the node ID, and the kernel version.
-        {% include note.html content="The <code>qumulo_kernel</code> metric is available only on nodes configured by using the <a href='../getting-started/installing-product-package.html'>Qumulo Core Product Package</a>." %} 
+        {% include note.html content="The <code>qumulo_kernel</code> metric is available only on nodes configured by using the <a href='../getting-started/installing-product-package.html'>Qumulo Core Product Package</a>." %}
       </td>
     </tr>
 {% endif %}
@@ -187,7 +187,7 @@ The following table lists metric names, types, labels, and descriptions.
       </td>
       <td>5.3.0</td>
       <td>The temperature for each physical CPU, in degrees Celsius</td>
-    </tr>    
+    </tr>
     <tr>
       <td><code>qumulo_disk_endurance<br>_percent</code></td>
       <td><a href="#metric-type-gauge"><code>gauge</code></a></td>
@@ -329,10 +329,11 @@ The following table lists metric names, types, labels, and descriptions.
       <td>
         <ul>
           <li class="pdf-friendly"><a href="#metric-label-fs_type"><code>fs_type</code></a></li>
+          <li class="pdf-friendly"><a href="#metric-label-fs_uuid"><code>fs_uuid</code></a></li>
         </ul>
       </td>
       <td>7.4.2.1</td>
-      <td>The amount of space that the file system type uses, in bytes</td>
+      <td>The amount of space that a file system uses, in bytes</td>
     </tr>
     <tr>
       <td><code>qumulo_ldap_lookup<br>_request_errors</code></td>
@@ -683,6 +684,14 @@ The following table lists metric label names, possible values, and descriptions.
       <td>File system type</td>
     </tr>
     <tr>
+      <td><a id="metric-label-fs_uuid"></a><code>fs_uuid</code></td>
+      <td>
+        <p>A UUID that identifies a local file system.</p>
+        {% include note.html content="The UUID of a spoke portal file system is identical to the UUID of the corresponding hub portal file system." %}
+      </td>
+      <td>File system ID</td>
+    </tr>
+    <tr>
       <td><a id="metric-label-interface"></a><code>interface</code></td>
       <td>An interface name, for example <code>eth0</code></td>
       <td>The interface name</td>
@@ -779,6 +788,6 @@ The following table lists metric label names, possible values, and descriptions.
         </ul>
       </td>
       <td>The data type that uses space</td>
-    </tr>          
+    </tr>
   </tbody>
 </table>

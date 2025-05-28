@@ -160,6 +160,10 @@ entries:
       url: /azure-native-administrator-guide/network-configuration/configuring-round-robin-dns-windows-server.html
       output: web, pdf
 
+    - title: Configuring Qumulo Authoritative DNS (QDNS)
+      url: /azure-native-administrator-guide/network-configuration/configuring-authoritative-dns.html
+      output: web, pdf
+
   - title: Cloud Data Fabric
     url: /azure-native-administrator-guide/cloud-data-fabric/index.html
     output: web, pdf

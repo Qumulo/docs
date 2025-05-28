@@ -11,7 +11,7 @@ methods:
         UI URL-encodes the paths.
       required: true
     - name: stream_id
-      description: Stream ID (uint64) to be renamed
+      description: Stream ID (u64) to be renamed
       required: true
     - name: If-Match
       description: ETag for expected version

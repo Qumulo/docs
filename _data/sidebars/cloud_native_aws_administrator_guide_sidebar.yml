@@ -166,6 +166,10 @@ entries:
       url: /cloud-native-aws-administrator-guide/network-configuration/configuring-round-robin-dns-windows-server.html
       output: web, pdf
 
+    - title: Configuring Qumulo Authoritative DNS (QDNS)
+      url: /cloud-native-aws-administrator-guide/network-configuration/configuring-authoritative-dns.html
+      output: web, pdf
+
   - title: Cloud Data Fabric
     url: /cloud-native-aws-administrator-guide/cloud-data-fabric/index.html
     output: web, pdf
