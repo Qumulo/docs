@@ -11,7 +11,7 @@ methods:
         UI URL-encodes the paths.
       required: true
     - name: stream_id
-      description: Stream ID (uint64) to get
+      description: Stream ID (u64) to get
       required: true
     - name: snapshot
       description: The snapshot ID that specifies the version of the filesystem to
@@ -40,7 +40,7 @@ methods:
         UI URL-encodes the paths.
       required: true
     - name: stream_id
-      description: Stream ID (uint64) to get
+      description: Stream ID (u64) to get
       required: true
     - name: If-Match
       description: ETag for expected version

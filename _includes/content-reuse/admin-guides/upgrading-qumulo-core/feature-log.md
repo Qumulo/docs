@@ -4,6 +4,15 @@ For information about upgrade types for each release, see <a href='mode-referenc
 
 <style>div#toc{height:200px;overflow:auto;}</style>
 
+## Qumulo Core 7.5.0 (Quarterly)
+{{page.varDownloadsRelnotes}}
+
+* Made improvements to Cloud Data Fabric:
+  * Enabled the creation of multiple spoke portals (up to a maximum of 32) on a single Qumulo cluster
+  * Improved file creation latency and throughput for spoke portals
+  * Added the Priority Sync feature for read-write spoke portals
+* Added the Qumulo Authoritative DNS (QDNS) to Qumulo Core
+
 ## Qumulo Core 7.4.4
 {{page.varDownloadsRelnotes}}
 {{site.data.alerts.important}}

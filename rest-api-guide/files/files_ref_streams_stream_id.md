@@ -11,7 +11,7 @@ methods:
         UI URL-encodes the paths.
       required: true
     - name: stream_id
-      description: Stream ID (uint64) to be deleted
+      description: Stream ID (u64) to be deleted
       required: true
     response_body: {}
     responses:

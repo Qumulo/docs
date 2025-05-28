@@ -86,7 +86,7 @@ The following key terms help define the components of Cloud Data Fabric function
   </table>
 
 ### Portals
-* <a id="spoke-portal"></a>**Spoke Portal:** An interface point on a Qumulo cluster that accesses a portion of the file system on another cluster (which has a _hub portal)_. {{site.gns.dirOnCluster}} spoke portal. {{site.gns.spokePortalInitiates}}
+* <a id="spoke-portal"></a>**Spoke Portal:** An interface point on a Qumulo cluster that accesses a portion of the file system on another cluster (which has a _hub portal)_. {{site.gns.dirOnCluster}} spoke portal. {{site.gns.spokePortalInitiates}} You can configure multiple spoke portals on the same Qumulo cluster, as long as the spoke portal root directories don't overlap and the host cluster for each portal relationship is unique.
 
   * <a id="read-write-portal"></a>**Read-Write Portal:** A spoke portal that can access, modify, and create any files or directories within the hub portal root directory according to the file system permissions.
 
@@ -269,6 +269,14 @@ The Cloud Data Fabric functionality lets you:
 ### File System
 * {{site.gns.singleRelationship}}
 * {{site.gns.crossFileSystem}}
+
+#### Spoke Portals
+* It is possible to create up to a maximum of 32 hub portals&mdash;or 32 spoke portals (Qumulo Core 7.5.0 and higher)&mdash;on a single Qumulo cluster.
+* It isn't possible to nest spoke portal root directories within other spoke portal root directories.
+* The host cluster for each portal relationship must be unique. For example:
+  * A spoke portal on Cluster A can propose a relationship to a hub portal on Cluster B.
+  * Another spoke portal on Cluster A can propose a relationship to a hub portal on Cluster C.
+  * However, another spoke portal on Cluster A can’t propose a relationship to a hub portal on Cluster B, because a relationship between portals on the host clusters already exists.
 
 ### Data Caching
 * {{site.gns.firstTimeAccess}}

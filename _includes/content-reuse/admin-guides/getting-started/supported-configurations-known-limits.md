@@ -48,18 +48,18 @@
       </td>
     </tr>
     <tr>
-      <td>Linux Configuration</td>
+      <td>Linux configuration</td>
       <td>Qumulo Core is up to date with all Ubuntu 20.04 security updates.</td>
     </tr>
     <tr>
-      <td>Domain-Functional Level</td>
+      <td>Domain functional level</td>
       <td>
         Microsoft Windows Server 2008 R2 (and higher)
         {% include note.html content="Qumulo Core doesn't support Samba Domain Controllers." %}
       </td>
     </tr>
     <tr>
-      <td>Kerberos V5 Encryption Types</td>
+      <td>Kerberos V5 encryption types</td>
       <td>
          <ul>
            <li>RC4-HMAC-MD5</li>
@@ -69,11 +69,11 @@
       </td>
     </tr>
     <tr>
-      <td>LDAP Servers</td>
+      <td>LDAP servers</td>
       <td>OpenLDAP for Group Expansion</td>
     </tr>
     <tr>
-      <td>Python Version for <code>qq</code> CLI</td>
+      <td>Python version for <code>qq</code> CLI</td>
       <td>3.8 (and higher)</td>
     </tr>
   </tbody>
@@ -101,7 +101,7 @@ Qumulo Core requires switches that meet the following criteria:
   </thead>
   <tbody>
     <tr>
-      <td>Cluster Size</td>
+      <td>Cluster size</td>
 {% if page.platform != 'anq' %}
       <td>265 nodes</td>
 {% else %}
@@ -109,11 +109,15 @@ Qumulo Core requires switches that meet the following criteria:
 {% endif %}
     </tr>
     <tr>
-      <td>NFS Exports</td>
+      <td>Hub portals or spoke portals for each node</td>
+      <td>32 hub portals or 32 spoke portals (Qumulo Core 7.5.0 and higher)</td>
+    </tr>
+    <tr>
+      <td>NFS exports</td>
       <td>64,000</td>
     </tr>
     <tr>
-      <td>SMB Shares</td>
+      <td>SMB shares</td>
       <td>40,000</td>
     </tr>
     <tr>
@@ -121,47 +125,47 @@ Qumulo Core requires switches that meet the following criteria:
       <td>200</td>
     </tr>
     <tr>
-      <td>NFS Groups</td>
+      <td>NFS groups</td>
       <td>16, when not using LDAP or Active Directory for {% include rfc.html rfc='2307' %} attributes</td>
     </tr>
     <tr>
-      <td>Characters in Cluster Name</td>
+      <td>Characters in a cluster name</td>
       <td>2-15, alphanumeric and hyphen (<code>-</code>)</td>
     </tr>
     <tr>
-      <td>Characters in Full Path (Path Name)</td>
+      <td>Characters in a full path (path name)</td>
       <td>32,760 (limited by protocol)</td>
     </tr>
     <tr>
-      <td>Characters in File Path Component (File or Directory)</td>
+      <td>Characters in a file path component (file or directory)</td>
       <td>255 (limited by protocol)</td>
     </tr>
     <tr>
-      <td>Files in a Directory</td>
+      <td>Files in a directory</td>
       <td>4.3 billion</td>
     </tr>
     <tr>
-      <td>File Size</td>
+      <td>File size</td>
       <td>9 exabytes</td>
     </tr>
     <tr>
-      <td>Total Files</td>
+      <td>Total files</td>
       <td>18 quintillion</td>
     </tr>
     <tr>
-      <td>Hard Links for Each File</td>
+      <td>Hard links for each file</td>
       <td>1,024</td>
     </tr>
     <tr>
-      <td>LDAP Domains</td>
+      <td>LDAP domains</td>
       <td>1</td>
     </tr>
     <tr>
-      <td>Active Directory Domains</td>
+      <td>Active Directory domains</td>
       <td>1</td>
     </tr>
     <tr>
-      <td>DNS Servers</td>
+      <td>DNS servers</td>
       <td>3</td>
     </tr>
     <tr>
@@ -176,11 +180,11 @@ Qumulo Core requires switches that meet the following criteria:
       </td>
     </tr>
     <tr>
-      <td>S3 Bucket Object Versions</td>
+      <td>S3 Bucket object versions</td>
       <td>Unlimited (4,294,967,296 theoretical)</td>
     </tr>
     <tr>
-      <td>Total Replication Relationships</td>
+      <td>Total replication relationships</td>
       <td>
         100
         {% include note.html content="If a directory is more than 100 levels below the file system root directory, you can't use it as a replication source." %}
@@ -188,33 +192,33 @@ Qumulo Core requires switches that meet the following criteria:
     </tr>
 {% if page.platform == 'on-prem' %}
     <tr>
-      <td>Usable Provisioned Capacity on Cluster</td>
+      <td>Usable provisioned capacity on cluster</td>
       <td>100%</td>
     </tr>
 {% endif %}   
     <tr>
-      <td>NFS Sockets</td>
+      <td>NFS sockets</td>
       <td>
         8,000 TCP sockets for each node
         {% include note.html content="A client configured with the NFS <code>nconnect</code> mount option uses multiple sockets." %}
       </td>
     </tr>    
     <tr>
-      <td>SMB Sockets</td>
+      <td>SMB sockets</td>
       <td>
         5,000 TCP sockets for each node
         {% include note.html content="A client configured with the SMB Multichannel feature uses multiple sockets." %}
       </td>
     </tr>
     <tr>
-      <td>S3 API Sockets</td>
+      <td>S3 API sockets</td>
       <td>
         8,000 TCP sockets for each node
         {% include note.html content="By default, a maximum of 5,000 connections can execute actively." %}
       </td>
     </tr>
     <tr>
-      <td>REST API Sockets</td>
+      <td>REST API sockets</td>
       <td>1,000 TCP sockets for each node</td>
     </tr>     
   </tbody>

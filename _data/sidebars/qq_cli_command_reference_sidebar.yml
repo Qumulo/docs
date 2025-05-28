@@ -208,6 +208,16 @@ entries:
     url: /qq-cli-command-guide/auth/
   - folderitems:
     - output: web,pdf
+      title: authoritative_dns_get_settings
+      url: /qq-cli-command-guide/authoritative/authoritative_dns_get_settings.html
+    - output: web,pdf
+      title: authoritative_dns_modify_settings
+      url: /qq-cli-command-guide/authoritative/authoritative_dns_modify_settings.html
+    output: web,pdf
+    title: authoritative
+    url: /qq-cli-command-guide/authoritative/
+  - folderitems:
+    - output: web,pdf
       title: capacity_clamp_get
       url: /qq-cli-command-guide/capacity/capacity_clamp_get.html
     - output: web,pdf
