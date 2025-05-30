@@ -42,20 +42,18 @@ To route DNS queries from your cluster's FQDN to QDNS, you must configure DNS de
 * **Other DNS Providers:** If you use a cloud DNS provider (such as Amazon Route 53, Microsoft Azure DNS, or Google Cloud DNS) and the cloud service isn't able to communicate with your Qumulo cluster directly, you must create `NS` (Name Server) records in the parent zone and point them to your Qumulo cluster's name server IP addresses. For example:
 
   ```
-  grumpquat-lb.example.com. NS ns1.grumpquat-lb.example.com.
-  grumpquat-lb.example.com. NS ns2.grumpquat-lb.example.com.
-  grumpquat-lb.example.com. NS ns3.grumpquat-lb.example.com.
-  grumpquat-lb.example.com. NS ns4.grumpquat-lb.example.com.
+  grumpquat-lb.example.com. NS grumpquat-lb-ns1.example.com.
+  grumpquat-lb.example.com. NS grumpquat-lb-ns2.example.com.
+  grumpquat-lb.example.com. NS grumpquat-lb-ns3.example.com.
     
-  ns1.grumpquat-lb.example.com. A {{ site.exampleIP1 }}
-  ns2.grumpquat-lb.example.com. A {{ site.exampleIP2 }}
-  ns3.grumpquat-lb.example.com. A {{ site.exampleIP3 }}
-  ns4.grumpquat-lb.example.com. A {{ site.exampleIP4 }}
+  grumpquat-lb-ns1.example.com. A {{ site.exampleIP1 }}
+  grumpquat-lb-ns2.example.com. A {{ site.exampleIP2 }}
+  grumpquat-lb-ns3.example.com. A {{ site.exampleIP3 }}
   ```
 
   When you specify the name server IP addresses, use approximately four floating IP addresses from your Qumulo cluster which will act as the DNS endpoints that respond to queries for the delegated zone.
 
-  {% include note.html content="For multi-tenant clusters, ensure that your organization's DNS resolvers can reach at least one of the IP addresses from at least one network in your DNS infrastructure." %}
+  {% include important.html content="To use cloud DNS resolvers and recursive resolution, ensure that your organization's DNS resolvers can reach your Qumulo nodes." %}
 
 
 ## Configuring QDNS by Using the qq CLI
