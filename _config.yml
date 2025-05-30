@@ -188,7 +188,7 @@ exampleIPrange1: 203.0.113.0-203.0.113.10
 exampleIPrange2: 203.0.113.0-10
 exampleIPrange3: 203.0.113.10-20
 exampleIPv6range1: 2001:db8:0:0:1::1-2001:db8:0:0:1::ffff
-exampleIPv6range2: 2001:db8:0:0:2::1-2001:db8:0:0:2::ffff
+exampleIPv6range2: 2001:db8:0:0:2::1-2001:db8:0:0:2::ff
 exampleIPv6range3: 2001:db8::/64
 exampleNetworkSegment0: 203.0.113.0/16
 exampleNetworkSegment1: 203.0.113.0/24
