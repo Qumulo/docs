@@ -53,7 +53,7 @@ To route DNS queries from your cluster's FQDN to QDNS, you must configure DNS de
 
   When you specify the name server IP addresses, use approximately four floating IP addresses from your Qumulo cluster which will act as the DNS endpoints that respond to queries for the delegated zone.
 
-  {% include important.html content="To use cloud DNS resolvers and recursive resolution, ensure that your organization's DNS resolvers can reach your Qumulo nodes." %}
+  {% include important.html content="If you use a cloud-hosted DNS resolver, the resolver must be able to reach the nodes in your Qumulo cluster." %}
 
 
 ## Configuring QDNS by Using the qq CLI
