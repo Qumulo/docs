@@ -76,11 +76,19 @@ For information about upgrade types for each release, see <a href='mode-referenc
 * Renamed the designation `preview` (previously, `beta`) which marks REST APIs under development
 * Made public the REST API endpoints and `qq` CLI commands that manage a cluster's DNS configuration
 
-## Qumulo Core 7.4.0 (Quarterly)
+## Qumulo Core 7.4.0.1 (Quarterly)
 {{page.varDownloadsRelnotes}}
 {{page.varNoPublicChanges}}
 
 Improved UID and GID sorting in the Web UI.
+
+{{site.data.alerts.important}}
+This release resolves the following on-premises cluster issues:
+<ul>
+  <li>For clusters with certain erasure coding configurations deployed before July 4, 2020, this release resolves an issue that previously could occur during quorum formation, resulting in internal metadata being in an inconsistent state.</li>
+  <li>This release makes Qumulo Core more resilient to unexpected drive controller behavior.</li>
+</ul>
+{{site.data.alerts.end}}
 
 ## Qumulo Core 7.3.2.1
 {{page.varDownloadsRelnotes}} 
@@ -105,8 +113,16 @@ Improved UID and GID sorting in the Web UI.
 * Resolved an issue with NLM connections
 * Resolved an issue with tree deletion operations
 
-## Qumulo Core 7.3.0 (Quarterly)
+## Qumulo Core 7.3.0.2 (Quarterly)
 {{page.varDownloadsRelnotes}}
+{{site.data.alerts.important}}
+This release resolves the following on-premises cluster issues:
+<ul>
+  <li>For clusters with certain erasure coding configurations deployed before July 4, 2020, this release resolves an issue that previously could occur during quorum formation, resulting in internal metadata being in an inconsistent state.</li>
+  <li>This release makes Qumulo Core more resilient to unexpected drive controller behavior.</li>
+</ul>
+{{site.data.alerts.end}}
+
 * Added the _self-service_ permission model to Qumulo REST API access tokens and made changes to corresponding `qq` CLI commands
 * Made it possible for a user to perform operations on their own access keys without having RBAC privileges
 * Resolved issues concerning cached data on a spoke portal host cluster, directory metadata block updates made by S3 API actions, and the `GetObject` S3 API action with the Veeam client
@@ -149,12 +165,19 @@ Improved UID and GID sorting in the Web UI.
 * Made improvements in SMB session handling
 * Made improvements in audit logging
 
-## Qumulo Core 7.2.0.2 (Quarterly)
+## Qumulo Core 7.2.0.3 (Quarterly)
 {{page.varDownloadsRelnotes}}
 {{site.data.alerts.important}}
 <ul>
+  <li>
+    This release resolves the following on-premises cluster issues:
+    <ul>
+      <li>For clusters with certain erasure coding configurations deployed before July 4, 2020, this release resolves an issue that previously could occur during quorum formation, resulting in internal metadata being in an inconsistent state.</li>
+      <li>This release makes Qumulo Core more resilient to unexpected drive controller behavior.</li>
+      <li>This release resolves a memory leak issue on HPE Apollo 4200 Gen 10 36T, 90T, 192T, and 336T Encrypted nodes when querying for system data.</li>
+    </ul>
+  </li>
   <li>This release resolves an issue in Qumulo Core 7.2.0 and 7.2.0.1 that could cause a cluster to become unresponsive due to incorrectly closed LDAP connections.</li>
-  <li>This release resolves an issue on HPE platforms by maximizing the reuse of existing REST client connections and by restarting the iLO monitor regularly. Previously, REST connections within the iLO monitor consumed all available memory after running for approximately longer than one week.</li>
 </ul>
 {{site.data.alerts.end}}
 
@@ -185,9 +208,17 @@ Extended S3 object versioning support to additional API actions
 * {{page.varNoPublicChanges}}
 * Resolved two issues that could potentially cause a crash
 
-## Qumulo Core 7.1.0.1 (Quarterly)
+## Qumulo Core 7.1.0.2 (Quarterly)
 {{page.varDownloadsRelnotes}}
-{% include important.html content="This release resolves an issue in Qumulo Core 7.1.0 that prevented Broadcom NIC firmware from being updated correctly." %}
+{{site.data.alerts.important}}
+This release resolves the following on-premises cluster issues:
+<ul>
+  <li>For clusters with certain erasure coding configurations deployed before July 4, 2020, this release resolves an issue that previously could occur during quorum formation, resulting in internal metadata being in an inconsistent state.</li>
+  <li>This release makes Qumulo Core more resilient to unexpected drive controller behavior.</li>
+  <li>This release resolves an issue in Qumulo Core 7.1.0 that previously prevented Broadcom NIC firmware from being updated correctly.</li>
+</ul>
+{{site.data.alerts.end}}
+
 * Improved NFSv4.1 performance for writes and reads
 * Configured Qumulo Core to move a minimal number of IP addresses
 * Configured S3 and HTTP servers to accept HTTP headers with empty values
