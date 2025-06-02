@@ -17,8 +17,8 @@ check_symlinks() {
 
     # Detect current script directory as default repo location
     local script_path
-    script_path="$(realpath "$0")"
-    local default_repo_dir
+    script_path="$(realpath "${BASH_SOURCE[0]}")" # Resolve the path of the file with the currently
+    local default_repo_dir			  # running function, even if it's invoked from elsewhere
     default_repo_dir="$(dirname "$script_path")"
     local parent_dir
     parent_dir="$(dirname "$default_repo_dir")"
@@ -39,11 +39,11 @@ check_symlinks() {
     if [[ ! -e "$docs_symlink" ]]; then
         read -p "Create symlink for $docs_symlink? Use default path ($default_repo_dir)? (y/n): " create_docs
         if [[ "$create_docs" == "y" ]]; then
-            ln -s "$default_repo_dir" "$docs_symlink"
+            ln -s "$(realpath "$default_repo_dir")" "$docs_symlink"
             echo "Created symlink $docs_symlink -> $default_repo_dir."
         elif [[ "$create_docs" == "n" ]]; then
             read -p "Enter the full path of the docs-internal repo: " docs_path
-            ln -s "$docs_path" "$docs_symlink"
+            ln -s "$(realpath "$docs_path")" "$docs_symlink"
             echo "Created symlink $docs_symlink -> $docs_path."
         fi
     fi
@@ -52,11 +52,11 @@ check_symlinks() {
     if [[ ! -e "$vectara_symlink" ]]; then
         read -p "Create symlink for $vectara_symlink? Use default path ($parent_dir/vectara-ingest)? (y/n): " create_vectara
         if [[ "$create_vectara" == "y" ]]; then
-            ln -s "$parent_dir/vectara-ingest" "$vectara_symlink"
+            ln -s "$(realpath "$parent_dir/vectara-ingest")" "$vectara_symlink"
             echo "Created symlink $vectara_symlink -> $parent_dir/vectara-ingest."
         elif [[ "$create_vectara" == "n" ]]; then
             read -p "Enter the full path of the vectara-ingest repo: " vectara_path
-            ln -s "$vectara_path" "$vectara_symlink"
+            ln -s "$(realpath "$vectara_path")" "$vectara_symlink"
             echo "Created symlink $vectara_symlink -> $vectara_path."
         fi
     fi
@@ -513,6 +513,7 @@ ingest_docs_portal() {
       sed -i "s/^  ray_workers:.*/  ray_workers: ${NUM_PROCS}/" ~/git/vectara-ingest/config/qumulo-documentation-portal.yaml
       ingest_documentation "qumulo-documentation-portal.yaml"
     fi
+    docker logs -f vingest-qumulo-documentation-portal
 }
 
 # Ingest care.qumulo.com into Vectara corpus 4
@@ -530,6 +531,7 @@ ingest_care_portal() {
       sed -i "s/^  ray_workers:.*/  ray_workers: ${NUM_PROCS}/" ~/git/vectara-ingest/config/qumulo-care.yaml
       ingest_documentation "qumulo-care.yaml"
     fi
+    docker logs -f vingest-qumulo-care
 }
 
 # Ingest qumulo.com into Vectara corpus 5
@@ -547,6 +549,7 @@ ingest_corp_site() {
       sed -i "s/^  ray_workers:.*/  ray_workers: ${NUM_PROCS}/" ~/git/vectara-ingest/config/qumulo-main.yaml
       ingest_documentation "qumulo-care.yaml"
     fi
+    docker logs -f vingest-qumulo-main
 }
 
 # Check ingestion status
@@ -640,7 +643,6 @@ while true; do
     echo -e "24. 🔍\tIngest docs.qumulo.com into Vectara"
     echo -e "25. 🔍\tIngest care.qumulo.com into Vectara"
     echo -e "26. 🔍\tIngest qumulo.com into Vectara"
-    echo -e "27. 📋\tCheck ingestion status"
     echo
     echo -e "q.  👋\tQuit"
     echo
@@ -672,7 +674,6 @@ while true; do
         24) ingest_docs_portal ;;
         25) ingest_care_portal ;;
         26) ingest_corp_site ;;
-        27) check_ingestion_status ;;
         q) exit ;;
         *) echo "You must enter a valid option." ;;
     esac
