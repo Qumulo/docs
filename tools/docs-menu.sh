@@ -395,7 +395,7 @@ regen_api_docs() {
     start_in_docs_dir
     check_src_repo
     check_tqdm || return 1
-    echo "Building REST API documentation from the Music cluster..."
+    echo "Building REST API documentation from artifacts.eng.qumulo.com ..."
     no_toolchain
     USER_SITE=$(python3 -m site --user-site)
     PYTHONPATH="$USER_SITE:$PYTHONPATH" python3 tools/gen-api.py

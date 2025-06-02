@@ -62,7 +62,22 @@ def update_frontmatter_preserving_custom_fields(md_path, updates):
         f.write(body)
 
 # URL to fetch the OpenAPI definition
-url = "https://music.eng.qumulo.com:8000/openapi.json"
+while True:
+    version_input = input("Which version of REST API docs to generate docs for? Enter a valid Qumulo Core version or q to quit. ").strip()
+    if version_input.lower() == 'q':
+        print("Exiting.")
+        exit(0)
+
+    url = f"https://artifacts.eng.qumulo.com/release/{version_input}/src/build/debug/iodocs/openapi.json"
+    print(f"Building REST API documentation from {url} ...")
+
+    try:
+        response = requests.get(url)
+        response.raise_for_status()
+        api_definition = response.json()
+        break
+    except (requests.RequestException, json.JSONDecodeError):
+        print("Enter a valid Qumulo Core version or q to quit.")
 
 # Define the base directory for output
 output_base_dir = os.path.expanduser("~/git/docs-internal/rest-api-guide")
