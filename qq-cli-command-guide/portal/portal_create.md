@@ -40,7 +40,8 @@ permalink: /qq-cli-command-guide/portal/portal_create.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar
 summary: This section explains how to use the <code>qq portal_create</code> command.
-synopsis: Create a spoke portal and propose a hub portal relationship on another cluster
+synopsis: Create a spoke portal on the current cluster and propose a hub portal on
+  another cluster
 title: qq portal_create
 usage: qq portal_create [-h] --spoke-root SPOKE_ROOT -a HUB_ADDRESS [-p HUB_PORT]
   --hub-root HUB_ROOT [-j] [-r]

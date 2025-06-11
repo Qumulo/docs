@@ -4,6 +4,14 @@ For information about upgrade types for each release, see <a href='mode-referenc
 
 <style>div#toc{height:200px;overflow:auto;}</style>
 
+## Qumulo Core 7.5.1
+{{page.varDownloadsRelnotes}}
+* For CNQ on Oracle Cloud Infrastructure (OCI), added support for Cold clusters
+* Made improvements to the S3 API:
+  * Resolved an issue with S3 directory deletion
+  * Modified the XML response bodies for S3 API actions to return the canonical XML header
+* Modified `files` REST APIs to return entity tag (ETag) values correctly
+
 ## Qumulo Core 7.5.0.1 (Quarterly)
 {{page.varDownloadsRelnotes}}
 
@@ -56,7 +64,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
 
 * Added support for {{site.cnqLong}} ({{site.cnqShort}}) clusters with 1, 3, or more nodes
 * Made improvements to Cloud Data Fabric:
-  * Moved the REST APIs out of Preview status
+  * Moved the REST APIs out of preview
   * Removed a `qq` CLI command in favor of automatic clean-up of partially configured portal relationships 
   * Added support for FTP communications for spoke portals
   * Changed the names of _portal states,_ which indicate the stages of the spoke portal creation process and the proposal or deletion of a portal relationship

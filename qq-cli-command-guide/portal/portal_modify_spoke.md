@@ -27,7 +27,7 @@ positional_options: []
 sidebar: qq_cli_command_reference_sidebar
 summary: This section explains how to use the <code>qq portal_modify_spoke</code>
   command.
-synopsis: Change the configuration for a spoke portal
+synopsis: Change the configuration for a spoke portal on the current cluster
 title: qq portal_modify_spoke
 usage: qq portal_modify_spoke [-h] -i ID -a HUB_ADDRESS [-p HUB_PORT] [-j]
 zendesk_source: qq CLI Command Guide

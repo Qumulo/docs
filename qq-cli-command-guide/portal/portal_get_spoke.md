@@ -16,7 +16,7 @@ permalink: /qq-cli-command-guide/portal/portal_get_spoke.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar
 summary: This section explains how to use the <code>qq portal_get_spoke</code> command.
-synopsis: Get the configuration and state for the specified spoke portal
+synopsis: Get the configuration and status for a spoke portal on the current cluster
 title: qq portal_get_spoke
 usage: qq portal_get_spoke [-h] -i ID [-j]
 zendesk_source: qq CLI Command Guide

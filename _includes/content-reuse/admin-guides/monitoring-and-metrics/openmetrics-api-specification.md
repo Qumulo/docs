@@ -109,12 +109,28 @@ The following table lists metric names, types, labels, and descriptions.
       <td><a href="#metric-type-info"><code>info</code></a></td>
       <td>
         <ul>
+          <li class="pdf-friendly"><code>form_factor</code></li>
+          <li class="pdf-friendly"><a href="#metric-label-hardware_detection_mode"><code>hardware_detection_mode</code></a></li>          
+          <li class="pdf-friendly"><a href="#metric-label-network_management_mode"><code>network_management_mode</code></a></li>          
           <li class="pdf-friendly"><a href="#metric-label-node_id"><code>node_id</code></a></li>
           <li class="pdf-friendly"><code>node_model</code></li>
+          <li class="pdf-friendly"><code>node_uuid</code></li>
+          <li class="pdf-friendly"><code>serial_number</code></li>
         </ul>
       </td>
       <td>6.0.2</td>
-      <td>Information about the nodes in the cluster, including the node ID and the node model</td>
+      <td>
+        Information about nodes in the cluster, including:
+        <ul>
+          <li class="pdf-friendly">Form factor (Qumulo Core 7.2.2 and higher)</li>
+          <li class="pdf-friendly">Hardware detection mode</li>
+          <li class="pdf-friendly">Network management mode (Qumulo Core 7.5.1 and higher)</li>          
+          <li class="pdf-friendly">ID</li>
+          <li class="pdf-friendly">Model (Qumulo Core 6.0.2 and higher)</li>
+          <li class="pdf-friendly">UUID</li>
+          <li class="pdf-friendly">Serial number</li>
+        </ul>
+      </td>
     </tr>
     <tr>
       <td><code>qumulo_ad_netlogon_request<br>_errors</code></td>
@@ -692,6 +708,16 @@ The following table lists metric label names, possible values, and descriptions.
       <td>File system ID</td>
     </tr>
     <tr>
+      <td><a id="metric-label-hardware_detection_mode"></a><code>hardware_detection_mode</code></td>
+      <td>
+        <ul>
+          <li class="pdf-friendly"><code>chassis</code>: Uses a predefined, static hardware layout (chassis files) for component identification</li>
+          <li class="pdf-friendly"><code>run_anywhere</code>: Detects available hardware components automatically and adapts behavior dynamically</li>
+        </ul>
+      </td>
+      <td>The method for detecting and managing hardware</td>
+    </tr>
+    <tr>
       <td><a id="metric-label-interface"></a><code>interface</code></td>
       <td>An interface name, for example <code>eth0</code></td>
       <td>The interface name</td>
@@ -713,6 +739,16 @@ The following table lists metric label names, possible values, and descriptions.
       <td><a id="metric-label-location"></a><code>location</code></td>
       <td>A location on the chassis, for example <code>left</code> or <code>right</code></td>
       <td>The location on the chassis. {% include note.html content="For PSU, this location is relative to the back of the node." %}</td>
+    </tr>
+    <tr>
+      <td><a id="metric-label-network_management_mode"></a><code>network_management_mode</code></td>
+      <td>
+        <ul>
+          <li class="pdf-friendly"><code>host_managed</code>: Network interfaces managed by the host system</li>
+          <li class="pdf-friendly"><code>qumulo_managed</code>: Network interfaces managed by Qumulo Core</li>
+        </ul>
+      </td>
+      <td>The management mode for network interfaces</td>
     </tr>
     <tr>
       <td><a id="metric-label-node_id"></a><code>node_id</code></td>
@@ -740,7 +776,7 @@ The following table lists metric label names, possible values, and descriptions.
       <td>The state of a spoke portal or a hub portal</td>
     </tr>
     <tr>
-      <td><a id="metric-label-portal_type"></a><code>portal_state</code></td>
+      <td><a id="metric-label-portal_type"></a><code>portal_type</code></td>
       <td>
         <ul>
           <li class="pdf-friendly"><code>hub</code>: Hub portal</li>

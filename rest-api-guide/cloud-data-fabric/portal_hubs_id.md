@@ -6,7 +6,7 @@ methods:
       hub portal.
     parameters:
     - name: id
-      description: Remote Cluster ID
+      description: Portal ID
       required: true
     response_body:
       schema: "{\n  \"description\": \"api_portal_hub_relationship\",\n  \"type\"\
@@ -44,7 +44,7 @@ methods:
     summary: Delete the specified hub portal from the current cluster.
     parameters:
     - name: id
-      description: Remote Cluster ID
+      description: Portal ID
       required: true
     - name: force
       description: null
@@ -58,7 +58,7 @@ methods:
     summary: Change configuration for the specified hub portal.
     parameters:
     - name: id
-      description: Remote Cluster ID
+      description: Portal ID
       required: true
     - name: If-Match
       description: ETag for expected version
