@@ -6,7 +6,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
 
 ## Qumulo Core 7.5.1
 {{page.varDownloadsRelnotes}}
-* For CNQ on Oracle Cloud Infrastructure (OCI), added support for Cold clusters
+* For CNQ on Oracle Cloud Infrastructure (OCI), added support for Cold clusters with an object tier for infrequent access to files and directories
 * Made improvements to the S3 API:
   * Resolved an issue with S3 directory deletion
   * Modified the XML response bodies for S3 API actions to return the canonical XML header
