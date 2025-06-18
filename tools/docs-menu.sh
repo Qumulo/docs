@@ -629,8 +629,8 @@ while true; do
     echo -e "9.  ❌\tFind unused .js scripts"
     echo
     echo -e "\033[1;33mRetrieve Information\033[0m"
-    echo -e "10. ⬇️\tDetermine whether on-prem Qumulo Core release includes a host upgrade"
-    echo -e "11. ⬇️\tDetermine whether cloud Qumulo Core release includes a host upgrade"
+    echo -e "10. ⬆️\tDetermine whether on-prem Qumulo Core release includes a host upgrade"
+    echo -e "11. ⬆️\tDetermine whether cloud Qumulo Core release includes a host upgrade"
     echo -e "12. ⬇️\tDetermine lowest replication version for Qumulo Core release"
     echo -e "13. 🆕\tList CLI documentation with appended content"
     echo
