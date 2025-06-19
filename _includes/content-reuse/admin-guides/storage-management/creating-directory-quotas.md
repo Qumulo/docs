@@ -1,3 +1,7 @@
+In Qumulo Core, directory quotas are designed to strike a balance between the traditional approaches of _hard quotas_ (that block operations as soon as the directory reaches a set limit) and _soft quotas_ (that only warn about the directory reaching a set limit).
+
+When you create a directory quota, Qumulo Core checks the directory tree every few seconds for usage and marks the directory as full and read-only when it reaches its quota. This design often permits a client to finish writing a file, while still preventing the directory's usage from expanding indefinitely.
+
 ## To Create a Directory Quota
 
 1. {{site.logIntoWebUI}}
