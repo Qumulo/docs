@@ -163,7 +163,6 @@ To ensure that Qumulo Core has full control over network configuration, disable 
 {{site.data.alerts.important}}
 <ul>
   <li>Don't attempt to upgrade the Qumulo Core Produce Package by installing a newer <code>.deb</code> or <code>.rpm</code> package on your system.</li>  
-  <li>The Qumulo Core Product Package doesn't have separate versions for on-premises and cloud platforms. You must use the on-premises upgrade image for upgrading both on-premises and cloud clusters.</li>
   <li>You must upgrade all the nodes in your cluster at the same time, by using the Web UI, Qumulo REST API, or the <code>qq</code> CLI. The Qumulo Core Product Package doesn't support upgrading individual nodes and attempting to do so takes the cluster offline.</li>
 </ul>
 {{site.data.alerts.end}}

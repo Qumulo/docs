@@ -282,12 +282,14 @@ td ul {
   margin-left: -20px;
 }
 
-table.tech-specs td {
-    text-align: center;
+table.tech-specs td,
+table.upgrade-mode td:nth-of-type(2),
+table.upgrade-mode th {
+  text-align: center;
 }
 
 table.tech-specs td:first-child {
-    text-align: left;
+  text-align: left;
 }
 
 table.info-matrix td:nth-child(n+2) {
