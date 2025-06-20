@@ -50,7 +50,7 @@ The OpenMetrics format allows for metric labeling for communicating additional i
 ## Available Metrics
 The following table lists metric names, types, labels, and descriptions.
 
-{% include note.html content="For Qumulo as a Service, all metrics with a `node_id` label are unavailable because they refer to specific hardware." %}
+{% include note.html content="For Azure Native Qumulo (ANQ), all metrics with a `node_id` label are unavailable because they refer to specific hardware." %}
 
 <table class="pdf-reduce">
   <thead>

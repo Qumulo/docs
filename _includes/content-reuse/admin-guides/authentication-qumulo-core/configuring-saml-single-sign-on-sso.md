@@ -197,10 +197,14 @@ When the cluster requires SSO authentication, your cluster rejects password-base
 * If SSO is required for a Qumulo cluster, it isn't possible to log in to the **Interactive API documentation** section of the **APIs & Tools** page in the Qumulo Core Web UI.
 
 * Qumulo Core doesn't support:
+
   * **SAML Single Logout (SLO):** We recommend clicking **Sign out** in the Qumulo Core Web UI.
+
   * **Automatic Configuration from Metadata XML:** You must specify each parameter by using the `qq` CLI.
+
   * **Returning to Previous Web UI Page:** You can't return to a previous page after re-authenticating (for example, after a timeout).
-  * **Azure AD SAML Toolkit:** Currently, due to a configuration deficiency in the toolkit, IdP-initiated SSO isn't operational for Qumulo as a Service. Use the [SP-initiated SSO workflow](#sp-inititated-sso-workflow).
+
+  * **Azure AD SAML Toolkit:** Currently, due to a configuration deficiency in the toolkit, IdP-initiated SSO isn't operational for Azure Native Qumulo (ANQ). Use the [SP-initiated SSO workflow](#sp-inititated-sso-workflow).
 
 
 ## Troubleshooting SAML SSO Authentication
