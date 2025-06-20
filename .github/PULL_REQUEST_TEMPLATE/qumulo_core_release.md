@@ -16,10 +16,6 @@
 - [ ] Docs updates
   - [ ] Release-relevant PRs
 
-## Testing
-- [ ] Spellchecker
-- [ ] Script, link, and image checker
-
 ## Automated Documentation
 - [ ] REST API docs
 - [ ] `qq` CLI docs
