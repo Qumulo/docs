@@ -4,17 +4,19 @@ For information about upgrade types for each release, see <a href='mode-referenc
 
 <style>div#toc{height:200px;overflow:auto;}</style>
 
-## Qumulo Core 7.5.1
+## Qumulo Core 7.5.1.1
 {{page.varDownloadsRelnotes}}
+{% include important.html content="This release resolves an issue that previously caused an increase in logging output levels on CNQ and ANQ." %}
+
 * For CNQ on Oracle Cloud Infrastructure (OCI), added support for Cold clusters with an object tier for infrequent access to files and directories
 * Made improvements to the S3 API:
   * Resolved an issue with S3 directory deletion
   * Modified the XML response bodies for S3 API actions to return the canonical XML header
 * Modified `files` REST APIs to return entity tag (ETag) values correctly
+* Added support for latest Western Digital Ultrastar DC SN640 SSD firmware
 
-## Qumulo Core 7.5.0.1 (Quarterly)
+## Qumulo Core 7.5.0.2 (Quarterly)
 {{page.varDownloadsRelnotes}}
-
 {{site.data.alerts.important}}
 <ul>
   <li>This release resolves a rare issue where previously, under certain conditions, concurrent quorum-related activity could result in file system data being overwritten.</li>
@@ -30,10 +32,12 @@ For information about upgrade types for each release, see <a href='mode-referenc
 {{site.data.alerts.end}}
 
 * Made improvements to Cloud Data Fabric:
-  * Enabled the creation of multiple spoke portals (up to a maximum of 32) on a single Qumulo cluster
+  * Enabled the creation of up to 32 spoke portals on a single Qumulo cluster
   * Improved file creation latency and throughput for spoke portals
   * Added the Priority Sync feature for read-write spoke portals
 * Added the Qumulo Authoritative DNS (QDNS) to Qumulo Core
+* Added support for latest Western Digital Ultrastar DC SN640 SSD firmware
+* Resolved an issue with incorrect drive types for nodes in on-premises clusters
 
 ## Qumulo Core 7.4.4
 {{page.varDownloadsRelnotes}}
@@ -84,7 +88,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
 {{site.data.alerts.important}}
 <ul>
   <li>This release resolves an issue where previously Qumulo hub portal host clusters that communicated with read-write spoke portals crashed if the portal contained files with very large file IDs.</li>
-  <li>This release resolves an issue that we identified in Qumulo Core releases 7.3.1.2 to 7.4.0.2, where making changes to networking configuration by using the <strong>API Tools</strong> page in the Web UI or by using the <code>qq</code> CLI caused the default gateway to not populate.</li>
+  <li>This release resolves an issue that we identified in Qumulo Core releases 7.3.1.2 to 7.4.0.3, where making changes to networking configuration by using the <strong>API Tools</strong> page in the Web UI or by using the <code>qq</code> CLI caused the default gateway to not populate.</li>
   <li>{{site.gns.nameChange}}</li>
   <li>To enable upgrades to this version of Qumulo Core, you must delete any existing spoke portals or hub portals from your cluster and then wait for any related tree-delete operations to complete before beginning the upgrade process.</li>
   <li>To enable the QFSD API to distinguish between cluster-local and spoke-cached data, from this release of Qumulo Core onward, 64-bit integers can no longer represent QFSD API file identifiers. API integrations must treat them as variable-length strings, in accordance with the OpenMetrics API schema. Although this change affects all REST API endpoints the Qumulo REST API continues to accept old-style identifiers for backwards compatibility.</li>
@@ -98,11 +102,13 @@ For information about upgrade types for each release, see <a href='mode-referenc
 * Renamed the designation `preview` (previously, `beta`) which marks REST APIs under development
 * Made public the REST API endpoints and `qq` CLI commands that manage a cluster's DNS configuration
 
-## Qumulo Core 7.4.0.2 (Quarterly)
+## Qumulo Core 7.4.0.3 (Quarterly)
 {{page.varDownloadsRelnotes}}
 {{page.varNoPublicChanges}}
 
-Improved UID and GID sorting in the Web UI.
+* Added support for latest Western Digital Ultrastar DC SN640 SSD firmware
+* Improved UID and GID sorting in the Web UI
+* Resolved an issue with `PutObject` and `CopyObject` S3 API actions
 
 {{site.data.alerts.important}}
 <ul>

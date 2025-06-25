@@ -110,7 +110,7 @@ Qumulo Core requires switches that meet the following criteria:
     </tr>
     <tr>
       <td>Hub portals or spoke portals for each node</td>
-      <td>32 hub portals or 32 spoke portals (Qumulo Core 7.5.0.1 and higher)</td>
+      <td>32 hub portals or 32 spoke portals (Qumulo Core 7.5.0.2 and higher)</td>
     </tr>
     <tr>
       <td>NFS exports</td>

@@ -13,11 +13,15 @@ For information about the most important features from each release, click the Q
   </thead>
   <tbody>
     <tr>
+      <td><a href="feature-log.html#qumulo-core-7511">7.5.1.1</a></td>
+      <td colspan="2" class="shared-upgrade-mode">Instant</td>
+    </tr>
+    <tr>
       <td><a href="feature-log.html#qumulo-core-751">7.5.1</a></td>
       <td>Instant</td>
     </tr>
     <tr>
-      <td><a href="feature-log.html#qumulo-core-7501-quarterly">7.5.0.1 (Quarterly)</a></td>
+      <td><a href="feature-log.html#qumulo-core-7502-quarterly">7.5.0.2 (Quarterly)</a></td>
       <td>Instant</td>
     </tr>
     <tr>
@@ -37,8 +41,8 @@ For information about the most important features from each release, click the Q
       <td>Instant</td>
     </tr>
     <tr>
-      <td><a href="feature-log.html#qumulo-core-7402-quarterly">7.4.0.2 (Quarterly)</a></td>
-      <td>Instant</td>
+      <td><a href="feature-log.html#qumulo-core-7403-quarterly">7.4.0.3 (Quarterly)</a></td>
+      <td colspan="2" class="shared-upgrade-mode">Instant</td>
     </tr>
     <tr>
       <td><a href="feature-log.html#qumulo-core-7321">7.3.2.1</a></td>

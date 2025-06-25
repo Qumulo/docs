@@ -124,7 +124,7 @@ The following table lists metric names, types, labels, and descriptions.
         <ul>
           <li class="pdf-friendly">Form factor (Qumulo Core 7.2.2 and higher)</li>
           <li class="pdf-friendly">Hardware detection mode</li>
-          <li class="pdf-friendly">Network management mode (Qumulo Core 7.5.1 and higher)</li>          
+          <li class="pdf-friendly">Network management mode (Qumulo Core 7.5.1.1 and higher)</li>          
           <li class="pdf-friendly">ID</li>
           <li class="pdf-friendly">Model (Qumulo Core 6.0.2 and higher)</li>
           <li class="pdf-friendly">UUID</li>
