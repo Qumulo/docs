@@ -264,23 +264,28 @@ The Cloud Data Fabric functionality lets you:
 ## Known Limits
 
 ### General
-* Currently, it is possible to configure and manage Cloud Data Fabric functionality only by using the `qq` CLI.
+Currently, it is possible to configure and manage Cloud Data Fabric functionality only by using the `qq` CLI.
 
 ### File System
-* {{site.gns.singleRelationship}}
 * {{site.gns.crossFileSystem}}
 
 #### Spoke Portals
 * It is possible to create up to a maximum of 32 hub portals&mdash;or 32 spoke portals (Qumulo Core 7.5.0.2 and higher)&mdash;on a single Qumulo cluster.
 * It isn't possible to nest spoke portal root directories within other spoke portal root directories.
-* The host cluster for each portal relationship must be unique. For example:
-  * A spoke portal on Cluster A can propose a relationship to a hub portal on Cluster B.
-  * Another spoke portal on Cluster A can propose a relationship to a hub portal on Cluster C.
-  * However, another spoke portal on Cluster A can’t propose a relationship to a hub portal on Cluster B, because a relationship between portals on the host clusters already exists.
 
 ### Data Caching
 * {{site.gns.firstTimeAccess}}
 * {{site.gns.ephemeralCache}}
+
+### Portal Relationships
+* {{site.gns.multiRelationship}}
+  * Currently, Qumulo Core doesn't support a single cluster establishing two portal relationships with the same remote cluster.
+* {{site.gns.singleRelationship}}
+* Your cluster's Qumulo Core version determines whether the host cluster for each portal relationship must be unique. For example:
+  * A spoke portal on Cluster A can propose a relationship to a hub portal on Cluster B.
+  * Another spoke portal on Cluster A can propose a relationship to a hub portal on Cluster C.
+  * In Qumulo Core 7.5.2 (and higher), it is possible for a spoke portal on Cluster B to propose a relationship to a hub portal on Cluster A or Cluster C (despite Cluster B already having a hub portal).
+  * In Qumulo Core versions lower than 7.5.2, another spoke portal on Cluster A can’t propose a relationship to a hub portal on Cluster B, because a relationship of that type between portals on the host clusters already exists.
 
 ### Portal Connectivity
 * {{site.gns.accessConnectivity}}

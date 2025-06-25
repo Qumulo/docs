@@ -15,7 +15,7 @@ company_name: Qumulo, Inc.
 github_editme_path: qumulo/docs/blob/gh-pages/
 # if you're using Github, provide the basepath to the branch you've created for reviews, following the sample here. if not, leave this value blank.
 
-#gitlab_editme_path: tomjoht/documentation-theme-jekyll/blob/gh-pages/
+# gitlab_editme_path: tomjoht/documentation-theme-jekyll/blob/gh-pages/
 # if you're using GitLab, provide the basepath to the branch you've created for reviews, following the sample here. if not, leave this value blank.
 
 # google_analytics: UA-66296557-1
@@ -470,9 +470,10 @@ gns:
   firstTimeAccess: Although first-time data access to data in a portal root directory is subject to round-trip latency between the spoke portal host cluster and the hub portal host cluster, subsequent access to the data is faster. Making changes to data under a portal root directory is also subject to latency when the system recaches these changes upon access.
   spokePortalInitiates: The spoke portal initiates the creation of a hub portal.
   dirOnCluster: A directory on a cluster defines the _root directory_ for
-  accessConnectivity: For a spoke portal to be accessible, there must be full connectivity between the two clusters in a portal relationship, without which files or directories with outstanding modifications on one portal are inaccessible on other portals.
+  accessConnectivity: For a spoke portal to be accessible, there must be full connectivity between the two clusters in a portal relationship, without which files or directories with outstanding modifications on one portal are inaccessible on other portals. Specifically, every node in the spoke portal host cluster must be able to connect to the configured hub portal host cluster address, and the other way around.
   versionRequirement: A spoke portal is inaccessible if the hub portal host cluster and the spoke portal host cluster run different versions of Qumulo Core.
-  singleRelationship: A Qumulo cluster can be a portal host for any number of hub portals or up to 32 spoke portals. It isn&apos;t possible for a Qumulo cluster to be a host for both spoke and hub portals simultaneously.
+  singleRelationship: In Qumulo Core 7.5.0.1 to 7.5.1, it is possible for a Qumulo cluster to host only up to 32 hub portals <em>or</em> up to 32 spoke portals.
+  multiRelationship: In Qumulo Core 7.5.2 (and higher), it is possible for a Qumulo cluster to host both up to 32 spoke portals <em>and</em> up to 32 hub portals at the same time.
   upgradeCacheDrop: Future Qumulo Core upgrades might remove cached data from the spoke portal, which can result in a temporary increase in data access latency.
   protocolLocking: Protocol locks don&apos;t synchronize between the hub portal host cluster and the spoke portal host cluster. Specifically, NFSv3 or NLM byte-range locks, NFSv4.1 locking operations, SMB share-mode locks, SMB byte-range locks, and SMB leases function independently on the two clusters. For example, while two exclusive locks on the same spoke portal host cluster contend with each each other, an exclusive lock on a spoke portal host cluster doesn't contend with an exclusive lock on the hub portal host cluster.
   quorumBounce: This action makes both clusters in the portal relationship unavailable for less than 30 seconds while the systems reconfigure.

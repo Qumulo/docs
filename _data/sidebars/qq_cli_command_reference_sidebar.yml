@@ -723,6 +723,27 @@ entries:
     - output: web,pdf
       title: network_poll
       url: /qq-cli-command-guide/network/network_poll.html
+    - output: web,pdf
+      title: network_preview_add_network
+      url: /qq-cli-command-guide/network/network_preview_add_network.html
+    - output: web,pdf
+      title: network_preview_backend_interfaces
+      url: /qq-cli-command-guide/network/network_preview_backend_interfaces.html
+    - output: web,pdf
+      title: network_preview_delete_network
+      url: /qq-cli-command-guide/network/network_preview_delete_network.html
+    - output: web,pdf
+      title: network_preview_frontend_interfaces
+      url: /qq-cli-command-guide/network/network_preview_frontend_interfaces.html
+    - output: web,pdf
+      title: network_preview_get_config
+      url: /qq-cli-command-guide/network/network_preview_get_config.html
+    - output: web,pdf
+      title: network_preview_put_config
+      url: /qq-cli-command-guide/network/network_preview_put_config.html
+    - output: web,pdf
+      title: network_preview_status
+      url: /qq-cli-command-guide/network/network_preview_status.html
     output: web,pdf
     title: network
     url: /qq-cli-command-guide/network/

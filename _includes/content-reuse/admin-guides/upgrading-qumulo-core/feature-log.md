@@ -4,7 +4,18 @@ For information about upgrade types for each release, see <a href='mode-referenc
 
 <style>div#toc{height:200px;overflow:auto;}</style>
 
-## Qumulo Core 7.5.1.1
+## Qumulo Core 7.5.2
+{{page.varDownloadsRelnotes}}
+* Added the ability to upgrade NeuralCache on Azure Native Qumulo (ANQ) and Cloud Native Qumulo (CNQ) instances deployed on Qumulo Core versions lower than 7.4.1
+* Added the ability to configure up to 32 hub portals and up to 32 spoke portals on the same cluster at the same time
+* Made improvements to the S3 API:
+  * Extended the expiration of presigned S3 URLs
+  * Changed the `PutObject` S3 API action to accept all valid HTTP header keys
+  * Resolved issues with the `CopyObject` S3 API action
+* Added OpenMetrics for self-managed, on-premises clusters and CNQ instances
+* Added support for latest Western Digital Ultrastar DC SN640 SSD firmware
+
+## Qumulo Core 7.5.1.2
 {{page.varDownloadsRelnotes}}
 {% include important.html content="This release resolves an issue that previously caused an increase in logging output levels on CNQ and ANQ." %}
 

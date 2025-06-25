@@ -23,15 +23,25 @@ All Qumulo metrics belong to one of the following OpenMetrics types.
   <tbody>
     <tr>
       <td><a id="metric-type-counter"></a><code>counter</code></td>
-      <td>An integer that increases monotonically from zero, stored in <code>&lt;metric_name&gt;_count</code>. {% include note.html content="During normal operation, the value of <code>counter</code> never decreases." %}</td>
+      <td>
+        An integer that increases monotonically from zero, stored in <code>&lt;metric_name&gt;_count</code>.
+        {% include note.html content="During normal operation, the value of <code>counter</code> never decreases." %}
+      </td>
     </tr>
     <tr>
       <td><a id="metric-type-gauge"></a><code>gauge</code></td>
-      <td>A value that represents a single integer (similar to <code>counter</code>), stored in <code>&lt;metric_name&gt;</code>. {% include note.html content="During normal operation, the value of a <code>gauge</code> metric might increase or decrease." %}</td>
+      <td>
+        A value that represents a single integer (similar to <code>counter</code>), stored in <code>&lt;metric_name&gt;</code>.
+        {% include note.html content="During normal operation, the value of a <code>gauge</code> metric might increase or decrease." %}
+      </td>
     </tr>
     <tr>
       <td><a id="metric-type-histogram"></a><code>histogram</code></td>
-      <td><p>A representation of a series of <em>buckets</em>, where each bucket tracks values within a specific range.</p><p>A histogram has a <code>count</code> field and a <code>sum</code> field, stored in <code>&lt;metric_name&gt;_count</code> (the total number of samples) and <code>&lt;metric_name&gt;_sum</code> (the sum of all samples). Qumulo Core emits a single bucket that contains all samples.</p> {% include tip.html content="You can use <code>histogram</code> metrics to keep track of averages by dividing the <code>sum</code> field by the <code>count</code> field." %}</td>
+      <td>
+        <p>A representation of a series of <em>buckets</em>, where each bucket tracks values within a specific range.</p>
+        <p>A histogram has a <code>count</code> field and a <code>sum</code> field, stored in <code>&lt;metric_name&gt;_count</code> (the total number of samples) and <code>&lt;metric_name&gt;_sum</code> (the sum of all samples). Qumulo Core emits a single bucket that contains all samples.</p>
+        {% include tip.html content="You can use <code>histogram</code> metrics to keep track of averages by dividing the <code>sum</code> field by the <code>count</code> field." %}
+      </td>
     </tr>
     <tr>
       <td><a id="metric-type-info"></a><code>info</code></td>
@@ -81,7 +91,10 @@ The following table lists metric names, types, labels, and descriptions.
         </ul>
       </td>
       <td>5.3.0</td>
-      <td>Qumulo Core information, including the cluster name, cluster UUID, and the current Qumulo Core version.</td>
+      <td>
+        Qumulo Core information, including the cluster name, cluster UUID, and the current Qumulo Core version.
+        {% include note.html content="For Azure Native Qumulo (ANQ), `max_drive_failures` and `max_node_failures` labels aren't available." %}
+      </td>
     </tr>
 {% if page.platform == 'on-prem' %}
     <tr>
@@ -124,7 +137,7 @@ The following table lists metric names, types, labels, and descriptions.
         <ul>
           <li class="pdf-friendly">Form factor (Qumulo Core 7.2.2 and higher)</li>
           <li class="pdf-friendly">Hardware detection mode</li>
-          <li class="pdf-friendly">Network management mode (Qumulo Core 7.5.1.1 and higher)</li>          
+          <li class="pdf-friendly">Network management mode (Qumulo Core 7.5.1.2 and higher)</li>          
           <li class="pdf-friendly">ID</li>
           <li class="pdf-friendly">Model (Qumulo Core 6.0.2 and higher)</li>
           <li class="pdf-friendly">UUID</li>
@@ -283,6 +296,30 @@ The following table lists metric names, types, labels, and descriptions.
       <td>The fan speed, in RPM</td>
     </tr>
     <tr>
+      <td><code>qumulo_fault_tolerance_metrics_current_remaining_disk_failures</code></td>
+      <td><a href="#metric-type-gauge"><code>gauge</code></a></td>
+      <td>&mdash;</td>
+      <td>7.5.2</td>
+      <td>The current number of disk failures that the cluster can tolerate.</td>
+    </tr>
+    <tr>
+      <td><code>qumulo_fault_tolerance_metrics_current_remaining_fault_domain_failures</code></td>
+      <td><a href="#metric-type-gauge"><code>gauge</code></a></td>
+      <td>&mdash;</td>
+      <td>7.5.2</td>
+      <td>
+        The current number of fault domain failures that the cluster can tolerate.
+        {% include note.html content="This metric isn't available for Cloud Native Qumulo (CNQ) or Azure Native Qumulo (ANQ) clusters." %}
+      </td>
+    </tr>
+    <tr>
+      <td><code>qumulo_fault_tolerance_metrics_current_remaining_node_failures</code></td>
+      <td><a href="#metric-type-gauge"><code>gauge</code></a></td>
+      <td>&mdash;</td>
+      <td>7.5.2</td>
+      <td>The current number of node failures that the cluster can tolerate.</td>
+    </tr>
+    <tr>
       <td><code>qumulo_fs_capacity_bytes</code></td>
       <td><a href="#metric-type-gauge"><code>gauge</code></a></td>
       <td>&mdash;</td>
@@ -318,7 +355,10 @@ The following table lists metric names, types, labels, and descriptions.
       <td><a href="#metric-type-gauge"><code>gauge</code></a></td>
       <td>&mdash;</td>
       <td>5.3.0</td>
-      <td>The free space on the cluster, in bytes {% include note.html content="This metric doesn't include the cached data on spoke portals." %}</td>
+      <td>
+        The free space on the cluster, in bytes
+        {% include note.html content="This metric doesn't include the cached data on spoke portals." %}
+      </td>
     </tr>
     <tr>
       <td><code>qumulo_fs_portal_count</code></td>
@@ -646,7 +686,10 @@ The following table lists metric label names, possible values, and descriptions.
         <ul>
           <li class="pdf-friendly"><code>data</code>: Read or write operations on the data of a file.</li>
           <li class="pdf-friendly"><code>metadata</code>: Operations (such as <code>lookup</code>, <code>stat</code>, or <code>getattr</code>) unrelated to a file's data</li>
-          <li class="pdf-friendly"><code>none</code>: Operations that operate on neither the file data nor the metadata. {% include note.html content="The protocol often requires these operations for session negotiation and authentication." %}</li>
+          <li class="pdf-friendly">
+            <code>none</code>: Operations that apply to neither the file data nor the metadata.
+            {% include note.html content="The protocol often requires these operations for session negotiation and authentication." %}
+          </li>
         </ul>
       </td>
       <td>The data type that an operation transfers</td>
@@ -702,7 +745,7 @@ The following table lists metric label names, possible values, and descriptions.
     <tr>
       <td><a id="metric-label-fs_uuid"></a><code>fs_uuid</code></td>
       <td>
-        <p>A UUID that identifies a local file system.</p>
+        A UUID that identifies a local file system.
         {% include note.html content="The UUID of a spoke portal file system is identical to the UUID of the corresponding hub portal file system." %}
       </td>
       <td>File system ID</td>
@@ -738,7 +781,10 @@ The following table lists metric label names, possible values, and descriptions.
     <tr>
       <td><a id="metric-label-location"></a><code>location</code></td>
       <td>A location on the chassis, for example <code>left</code> or <code>right</code></td>
-      <td>The location on the chassis. {% include note.html content="For PSU, this location is relative to the back of the node." %}</td>
+      <td>
+        The location on the chassis.
+        {% include note.html content="For PSU, this location is relative to the back of the node." %}
+      </td>
     </tr>
     <tr>
       <td><a id="metric-label-network_management_mode"></a><code>network_management_mode</code></td>
@@ -807,7 +853,10 @@ The following table lists metric label names, possible values, and descriptions.
           <li class="pdf-friendly"><code>backend</code></li>
         </ul>
       </td>
-      <td>The role of the interface {% include note.html content="<code>frontend</code> includes protocol, management, and replication traffic. <code>backend</code> includes all intra-node communications." %}</td>
+      <td>
+        The role of the interface
+        {% include note.html content="<code>frontend</code> includes protocol, management, and replication traffic. <code>backend</code> includes all intra-node communications." %}
+      </td>
     </tr>
     <tr>
       <td><a id="metric-label-server_url"></a><code>server_url</code></td>

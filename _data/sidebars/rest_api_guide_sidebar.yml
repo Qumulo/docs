@@ -769,6 +769,42 @@ entries:
     output: web,pdf
     title: Network Configuration (network)
     url: /rest-api-guide/network-configuration/
+  - apiversion: v3
+    folderitems:
+    - apiversion: v3
+      output: web,pdf
+      preview: true
+      title: network
+      url: /rest-api-guide/network-configuration-v3/v3_network.html
+    - apiversion: v3
+      output: web,pdf
+      preview: true
+      title: network/backend-interfaces
+      url: /rest-api-guide/network-configuration-v3/v3_network_backend-interfaces.html
+    - apiversion: v3
+      output: web,pdf
+      preview: true
+      title: network/frontend-interfaces
+      url: /rest-api-guide/network-configuration-v3/v3_network_frontend-interfaces.html
+    - apiversion: v3
+      output: web,pdf
+      preview: true
+      title: network/status
+      url: /rest-api-guide/network-configuration-v3/v3_network_status.html
+    - apiversion: v3
+      output: web,pdf
+      preview: true
+      title: network/status/{node_id}
+      url: /rest-api-guide/network-configuration-v3/v3_network_status_node_id.html
+    - apiversion: v3
+      output: web,pdf
+      preview: true
+      title: network/validate
+      url: /rest-api-guide/network-configuration-v3/v3_network_validate.html
+    output: web,pdf
+    preview: true
+    title: Network Configuration V3 (network)
+    url: /rest-api-guide/network-configuration-v3/
   - folderitems:
     - output: web,pdf
       title: node/state
