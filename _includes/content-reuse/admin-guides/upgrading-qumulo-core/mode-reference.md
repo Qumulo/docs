@@ -16,8 +16,9 @@ For information about the most important features from each release, click the Q
       <td><a href="feature-log.html#qumulo-core-752">7.5.2</a></td>
       <td>Instant</td>
     </tr>
+    <tr>
       <td><a href="feature-log.html#qumulo-core-7512">7.5.1.2</a></td>
-      <td colspan="2" class="shared-upgrade-mode">Instant</td>
+      <td>Instant</td>
     </tr>
     <tr>
       <td><a href="feature-log.html#qumulo-core-7502-quarterly">7.5.0.2 (Quarterly)</a></td>
@@ -41,7 +42,7 @@ For information about the most important features from each release, click the Q
     </tr>
     <tr>
       <td><a href="feature-log.html#qumulo-core-7403-quarterly">7.4.0.3 (Quarterly)</a></td>
-      <td colspan="2" class="shared-upgrade-mode">Instant</td>
+      <td>Instant</td>
     </tr>
     <tr>
       <td><a href="feature-log.html#qumulo-core-7321">7.3.2.1</a></td>
@@ -89,7 +90,7 @@ For information about the most important features from each release, click the Q
     </tr> 
     <tr>
       <td><a href="feature-log.html#qumulo-core-7102-quarterly">7.1.0.2 (Quarterly)</a></td>
-      <td>Platform</td>
+      <td class="platform">Platform</td>
     </tr>
     <tr>
       <td><a href="feature-log.html#qumulo-core-702">7.0.2</a></td>
@@ -113,7 +114,7 @@ For information about the most important features from each release, click the Q
     </tr>
     <tr>
       <td><a href="feature-log.html#qumulo-core-6301-quarterly">6.3.0.1 (Quarterly)</a></td>
-      <td>Platform</td>
+      <td class="platform">Platform</td>
     </tr>
     <tr>
       <td><a href="feature-log.html#qumulo-core-6222">6.2.2.2</a></td>
@@ -129,11 +130,11 @@ For information about the most important features from each release, click the Q
     </tr>
     <tr>
       <td><a href="feature-log.html#qumulo-core-6122">6.1.2.2</a></td>
-      <td>Platform</td>
+      <td class="platform">Platform</td>
     </tr>
     <tr>
       <td><a href="feature-log.html#qumulo-core-611">6.1.1</a></td>
-      <td>Platform</td>
+      <td class="platform">Platform</td>
     </tr>
     <tr>
       <td><a href="feature-log.html#qumulo-core-6103-quarterly">6.1.0.3 (Quarterly)</a></td>
@@ -145,7 +146,7 @@ For information about the most important features from each release, click the Q
     </tr>
     <tr>
       <td><a href="feature-log.html#qumulo-core-6011">6.0.1.1</a></td>
-      <td>Platform</td>
+      <td class="platform">Platform</td>
     </tr>
     <tr>
       <td><a href="feature-log.html#qumulo-core-6002-quarterly">6.0.0.2 (Quarterly)</a></td>
@@ -165,7 +166,7 @@ For information about the most important features from each release, click the Q
     </tr>
     <tr>
       <td><a href="feature-log.html#qumulo-core-531">5.3.1</a></td>
-      <td>Platform</td>  
+      <td class="platform">Platform</td>  
     </tr>    
     <tr>
       <td><a href="feature-log.html#qumulo-core-530-quarterly">5.3.0 (Quarterly)</a></td>
@@ -197,7 +198,7 @@ For information about the most important features from each release, click the Q
     </tr>
     <tr>
       <td><a href="feature-log.html#qumulo-core-515">5.1.5</a></td>
-      <td>Platform</td>
+      <td class="platform">Platform</td>
     </tr>
     <tr>
       <td><a href="feature-log.html#qumulo-core-5141">5.1.4.1</a></td>
@@ -213,7 +214,7 @@ For information about the most important features from each release, click the Q
     </tr>
     <tr>
       <td><a href="feature-log.html#qumulo-core-511">5.1.1</a></td>
-      <td>Platform</td>
+      <td class="platform">Platform</td>
     </tr>
     <tr>
       <td><a href="feature-log.html#qumulo-core-5101-quarterly">5.1.0.1 (Quarterly)</a></td>
@@ -277,7 +278,7 @@ For information about the most important features from each release, click the Q
     </tr>
     <tr>
       <td><a href="feature-log.html#qumulo-core-424">4.2.4</a></td>
-      <td>Platform</td>
+      <td class="platform">Platform</td>
     </tr>
     <tr>
       <td><a href="feature-log.html#qumulo-core-423">4.2.3</a></td>
@@ -289,7 +290,7 @@ For information about the most important features from each release, click the Q
     </tr>
     <tr>
       <td><a href="feature-log.html#qumulo-core-421">4.2.1</a></td>
-      <td>Platform</td>
+      <td class="platform">Platform</td>
     </tr>
     <tr>
       <td><a href="feature-log.html#qumulo-core-420-quarterly">4.2.0 (Quarterly)</a></td>
