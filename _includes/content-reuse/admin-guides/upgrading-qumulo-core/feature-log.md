@@ -4,6 +4,9 @@ For information about upgrade types for each release, see <a href='mode-referenc
 
 <style>div#toc{height:200px;overflow:auto;}</style>
 
+## Qumulo Core 7.5.3
+{{page.varDownloadsRelnotes}}
+
 ## Qumulo Core 7.5.2
 {{page.varDownloadsRelnotes}}
 * Added the ability to upgrade NeuralCache on Azure Native Qumulo (ANQ) and Cloud Native Qumulo (CNQ) instances deployed on Qumulo Core versions lower than 7.4.1
