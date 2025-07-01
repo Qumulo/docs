@@ -6,6 +6,13 @@ For information about upgrade types for each release, see <a href='mode-referenc
 
 ## Qumulo Core 7.5.3
 {{page.varDownloadsRelnotes}}
+* Made improvements to the S3 API:
+  * Added the ability for the S3 API to access spoke portal data
+  * Removed the requirement to have the `ObjectLockEnabled` setting for an S3 bucket from the `GetObjectRetention` and `GetObjectLegalHold` S3 API actions
+* Made significant improvements to NFSv4.1 `readdir` operation performance for:
+  * Clusters with numerous export host restrictions
+  * Active Directory for POSIX attributes where files have AD owners with numerous group memberships
+* Added an OpenMetrics metric for tracking shared data for a hub portal root directory
 
 ## Qumulo Core 7.5.2
 {{page.varDownloadsRelnotes}}
