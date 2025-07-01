@@ -31,7 +31,7 @@ The Qumulo CSI Driver supports:
 ## Requirements
 * A Qumulo cluster
  
-* Kubernetes 1.19 (and higher)
+* Kubernetes 1.22 (and higher)
 
 
 ## Connecting Your Qumulo Cluster to Kubernetes
