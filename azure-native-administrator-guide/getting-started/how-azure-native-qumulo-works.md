@@ -39,7 +39,6 @@ The following table compares the features of {{site.azure.qumuloOnAzureShort}} w
     <tr>
       <th>Feature</th>
       <th class="width-15">{{site.azure.qumuloOnAzureShort}}</th>
-      <th class="width-15">Qumulo on AWS as an AMI</th>
       <th class="width-15">Qumulo on Premises</th>
     </tr>
   </thead>
@@ -48,11 +47,9 @@ The following table compares the features of {{site.azure.qumuloOnAzureShort}} w
       <td>Automatic deployment</td>
       <td>&#10003;</td>
       <td></td>
-      <td></td>
     </tr>
     <tr>
       <td>Automatic infrastructure replacement</td>
-      <td>&#10003;</td>
       <td>&#10003;</td>
       <td></td>
     </tr>    
@@ -60,11 +57,9 @@ The following table compares the features of {{site.azure.qumuloOnAzureShort}} w
       <td>Automatic updates</td>
       <td>&#10003;</td>
       <td></td>
-      <td></td>
     </tr>
     <tr>
       <td>Availability in Cloud Marketplace</td>
-      <td>&#10003;</td>
       <td>&#10003;</td>
       <td></td>
     </tr>  
@@ -72,48 +67,40 @@ The following table compares the features of {{site.azure.qumuloOnAzureShort}} w
       <td>Customer support</td>
       <td>&#10003;</td>
       <td>&#10003;</td>
-      <td>&#10003;</td>
     </tr>
     <tr>
       <td>Integration with Azure Portal</td>
       <td>&#10003;</td>
-      <td></td>
       <td></td>
     </tr>      
     <tr>
       <td>Payment for preprovisioned file system capacity</td>
       <td></td>
       <td>&#10003;</td>
-      <td>&#10003;</td>
     </tr>
     <tr>
       <td>Payment for used storage space only</td>
       <td>&#10003;</td>
-      <td></td>
       <td></td>
     </tr>    
     <tr>
       <td>Performance scales elastically at any capacity</td>
       <td>&#10003;</td>
       <td></td>
-      <td></td>
     </tr>
     <tr>
       <td>Performance scales with provisioned capacity</td>
       <td></td>
       <td>&#10003;</td>
-      <td>&#10003;</td>
     </tr>
     <tr>
       <td>Qumulo Core features</td>
-      <td>&#10003;</td>
       <td>&#10003;</td>
       <td>&#10003;</td>      
     </tr>
     <tr>
       <td>Simple and fast deployment under 15 Minutes</td>
       <td>&#10003;</td>
-      <td></td>
       <td></td>
     </tr>
   </tbody>
