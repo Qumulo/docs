@@ -78,8 +78,16 @@ entries:
     output: web, pdf
     folderitems:
 
+    - title: Installing a Signed SSL Certificate
+      url: /administrator-guide/authentication-qumulo-core/installing-signed-ssl-certificate.html
+      output: web, pdf
+
     - title: Installing VPN Keys
       url: /administrator-guide/authentication-qumulo-core/installing-vpn-keys-on-cluster.html
+      output: web, pdf
+
+    - title: Configuring LDAP
+      url: /administrator-guide/authentication-qumulo-core/configuring-ldap.html
       output: web, pdf
 
     - title: Configuring SAML Single Sign-On (SSO)
@@ -88,10 +96,6 @@ entries:
 
     - title: Configuring Search Trusted Domains
       url: /administrator-guide/authentication-qumulo-core/configuring-search-trusted-domains-active-directory.html
-      output: web, pdf
-
-    - title: Configuring LDAP
-      url: /administrator-guide/authentication-qumulo-core/configuring-ldap.html
       output: web, pdf
 
     - title: Creating and Using Bearer Tokens
@@ -116,10 +120,6 @@ entries:
     output: web, pdf
     folderitems:
 
-    - title: Managing File Locks
-      url: /administrator-guide/authorization-qumulo-core/managing-file-locks.html
-      output: web, pdf
-
     - title: Managing Role-Based Access Control
       url: /administrator-guide/authorization-qumulo-core/managing-role-based-access-control-rbac.html
       output: web, pdf
@@ -134,6 +134,49 @@ entries:
 
     - title: Using Active Directory for POSIX Attributes
       url: /administrator-guide/authorization-qumulo-core/using-active-directory-for-posix-attributes.html
+      output: web, pdf
+
+    - title: Managing File Locks
+      url: /administrator-guide/authorization-qumulo-core/managing-file-locks.html
+      output: web, pdf
+
+  - title: Encryption at Rest
+    url: /administrator-guide/encryption-at-rest/index.html
+    output: web, pdf
+    folderitems:
+
+    - title: Managing Encryption at Rest
+      url: /administrator-guide/encryption-at-rest/managing-encryption-at-rest.html
+      output: web, pdf
+
+  - title: Encryption in Transit
+    url: /administrator-guide/encryption-in-transit/index.html
+    output: web, pdf
+    folderitems:
+
+    - title: Managing SMB3 Encryption in Transit
+      url: /administrator-guide/encryption-in-transit/managing-smb3-encryption-in-transit.html
+      output: web, pdf
+
+    - title: How NFSv4.1 Works with Kerberos
+      url: /administrator-guide/kerberos/kerberos-with-qumulo-core.html
+      output: web
+
+    - title: Host Access Rules for NFS Exports
+      url: /administrator-guide/nfs/configuring-troubleshooting-host-access-rules-nfs-exports.html
+      output: web
+
+  - title: Cryptographic Key Management
+    url: /administrator-guide/cryptographic-key-management/index.html
+    output: web, pdf
+    folderitems:
+
+    - title: Generating and Storing ECDSA Keys
+      url: /administrator-guide/cryptographic-key-management/generating-storing-ecdsa-keys.html
+      output: web, pdf
+
+    - title: Managing Security Keys
+      url: /administrator-guide/cryptographic-key-management/managing-security-keys.html
       output: web, pdf
 
   - title: Storage Management
@@ -258,31 +301,6 @@ entries:
 
     - title: Recovering Files by Using Snapshots
       url: /administrator-guide/snapshots/recovering-files.html
-      output: web, pdf
-
-  - title: Encryption and Data Security
-    url: /administrator-guide/encryption-data-security/index.html
-    output: web, pdf
-    folderitems:
-
-    - title: Managing Encryption at Rest
-      url: /administrator-guide/encryption-data-security/managing-encryption-at-rest.html
-      output: web, pdf
-
-    - title: Managing SMB3 Encryption in Transit
-      url: /administrator-guide/encryption-data-security/managing-smb3-encryption-in-transit.html
-      output: web, pdf
-
-    - title: Generating and Storing ECDSA Keys
-      url: /administrator-guide/encryption-data-security/generating-storing-ecdsa-keys.html
-      output: web, pdf
-
-    - title: Managing Security Keys
-      url: /administrator-guide/encryption-data-security/managing-security-keys.html
-      output: web, pdf
-
-    - title: Installing a Signed SSL Certificate
-      url: /administrator-guide/encryption-data-security/installing-signed-ssl-certificate.html
       output: web, pdf
 
   - title: Node Addition and Replacement
