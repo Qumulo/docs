@@ -81,7 +81,7 @@ entries:
     folderitems:
 
     - title: Installing a Signed SSL Certificate
-      url: /azure-native-administrator-guide/encryption-data-security/installing-signed-ssl-certificate.html
+      url: /azure-native-administrator-guide/authentication-qumulo-core/installing-signed-ssl-certificate.html
       output: web, pdf
 
     - title: Configuring LDAP
