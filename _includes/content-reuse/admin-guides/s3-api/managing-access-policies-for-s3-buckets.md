@@ -18,8 +18,9 @@ In Qumulo Core, anonymous S3 connections use the system `Guest` account, which i
 * The `Guest` account
 * Any group that includes the `Guest` account as a member
 
-{% include note.html content="When you upgrade Qumulo Core version 7.1.1, the system replaces anonymous S3 bucket access configuration with a default S3 bucket policy that permits all S3 API actions to all principals." %}
-
+{% if page.platform contains 'anq' %}
+{% include note.html content="When you upgrade to Qumulo Core version 7.1.1, the system replaces anonymous S3 bucket access configuration with a default S3 bucket policy that permits all S3 API actions to all principals." %}
+{% endif %}
 
 ## Prerequisites
 The following prerequisites let you manage the access policy for an S3 bucket effectively.
