@@ -24,7 +24,8 @@ check_symlinks() {
     fi
     #script_path="$(realpath "${BASH_SOURCE[0]}")" # Resolve the path of the file with the currently
     local default_repo_dir			  # running function, even if it's invoked from elsewhere
-    default_repo_dir="$(dirname "$script_path")"
+    #default_repo_dir="$(dirname "$script_path")"
+    default_repo_dir="$(dirname "$(dirname "$script_path")")"
     local parent_dir
     parent_dir="$(dirname "$default_repo_dir")"
 
