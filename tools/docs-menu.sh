@@ -17,9 +17,16 @@ check_symlinks() {
 
     # Detect current script directory as default repo location
     local script_path
-    script_path="$(realpath "${BASH_SOURCE[0]}")" # Resolve the path of the file with the currently
-    local default_repo_dir			  # running function, even if it's invoked from elsewhere
-    default_repo_dir="$(dirname "$script_path")"
+    if [[ -n "${BASH_SOURCE[0]}" ]]; then
+        script_path="$(realpath "${BASH_SOURCE[0]}")"
+    else
+        script_path="$(realpath "$0")"
+    fi
+
+    # Resolve the path of the file with the currently running function, even if it's invoked from elsewhere
+    local default_repo_dir
+    default_repo_dir="$(dirname "$(dirname "$script_path")")"
+
     local parent_dir
     parent_dir="$(dirname "$default_repo_dir")"
 
@@ -36,7 +43,7 @@ check_symlinks() {
     fi
 
     # Check and create docs-internal symlink
-    if [[ ! -e "$docs_symlink" ]]; then
+    if [[ ! -L "$docs_symlink" || ! -e "$docs_symlink" ]]; then
         read -p "Create symlink for $docs_symlink? Use default path ($default_repo_dir)? (y/n): " create_docs
         if [[ "$create_docs" == "y" ]]; then
             ln -s "$(realpath "$default_repo_dir")" "$docs_symlink"
@@ -49,7 +56,7 @@ check_symlinks() {
     fi
 
     # Check and create vectara-ingest symlink
-    if [[ ! -e "$vectara_symlink" ]]; then
+    if [[ ! -L "$vectara_symlink" || ! -e "$vectara_symlink" ]]; then
         read -p "Create symlink for $vectara_symlink? Use default path ($parent_dir/vectara-ingest)? (y/n): " create_vectara
         if [[ "$create_vectara" == "y" ]]; then
             ln -s "$(realpath "$parent_dir/vectara-ingest")" "$vectara_symlink"
