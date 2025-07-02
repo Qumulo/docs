@@ -1,8 +1,13 @@
+{% capture nonANQ %}In case of replication processes, Qumulo Core maintains the encryption type after data transfers. Although source and target clusters don't require encryption for replication, we strongly recommend encrypting both source and target clusters.{% endcapture %}
 {{site.data.alerts.important}}
+{% if page.platform contains 'anq' %}
+{{nonANQ}}
+{% else %}
 <ul>
   <li>Upgrading a Qumulo cluster from a version of Qumulo Core lower than 3.1.5 doesn't enable encryption automatically. You must rebuild your cluster to take advantage of this feature. When you <a href="https://care.qumulo.com/hc/en-us/articles/115014525587">create a new cluster</a>, Qumulo Core enables encryption automatically and distributes the master key to all nodes in the cluster.</li>
-  <li>In case of replication processes, Qumulo Core maintains the encryption type after data transfers. Although source and target clusters don't require encryption for replication, we strongly recommend encrypting both source and target clusters.</li>
+  <li>{{nonANQ}}</li>
 </ul>
+{% endif %}
 {{site.data.alerts.end}}
 
 ## How Encryption at Rest and Master Keys Work in Qumulo Core

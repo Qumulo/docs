@@ -138,6 +138,15 @@ entries:
       url: /azure-native-administrator-guide/authorization-qumulo-core/managing-file-locks.html
       output: web, pdf
 
+  - title: Encryption at Rest
+    url: /azure-native-administrator-guide/encryption-at-rest/index.html
+    output: web, pdf
+    folderitems:
+
+    - title: Managing Encryption at Rest
+      url: /azure-native-administrator-guide/encryption-at-rest/managing-encryption-at-rest.html
+      output: web, pdf
+
   - title: Encryption in Transit
     url: /azure-native-administrator-guide/encryption-in-transit/index.html
     output: web, pdf
