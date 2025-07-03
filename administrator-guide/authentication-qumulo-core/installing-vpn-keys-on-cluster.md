@@ -19,7 +19,7 @@ Before you begin, make sure that you have done the following.
 
 * Obtain a `.zip` file with VPN keys from Qumulo Care
 
-* Whitelist the following domains in your firewall rules:
+* Add the following domains to your firewall's allowlist:
 
   * `ep1.qumulo.com`
 
