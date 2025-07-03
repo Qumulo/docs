@@ -161,7 +161,7 @@ entries:
       output: web
 
     - title: Host Access Rules for NFS Exports
-      url: /azure-administrator-guide/nfs/configuring-troubleshooting-host-access-rules-nfs-exports.html
+      url: /azure-native-administrator-guide/nfs/configuring-troubleshooting-host-access-rules-nfs-exports.html
       output: web
 
   - title: Cryptographic Key Management
