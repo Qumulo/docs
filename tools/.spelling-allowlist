@@ -362,6 +362,7 @@ XXVD
 Xeon
 YAML
 acknowledgements
+allowlist
 analytics
 argparse
 arp
@@ -376,6 +377,8 @@ checksums
 chown
 deduplicate
 deduplicates
+denylist
+denylists
 failover
 gp3
 hostname
