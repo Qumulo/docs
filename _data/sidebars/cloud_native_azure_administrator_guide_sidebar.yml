@@ -168,11 +168,11 @@ entries:
     folderitems:
 
     - title: Generating and Storing ECDSA Keys
-      url: /cloud-native-azure-cloud-native-azure-administrator-guide/cryptographic-key-management/generating-storing-ecdsa-keys.html
+      url: /cloud-native-azure-administrator-guide/cryptographic-key-management/generating-storing-ecdsa-keys.html
       output: web, pdf
 
     - title: Managing Security Keys
-      url: /cloud-native-azure-cloud-native-azure-administrator-guide/cryptographic-key-management/managing-security-keys.html
+      url: /cloud-native-azure-administrator-guide/cryptographic-key-management/managing-security-keys.html
       output: web, pdf
 
   - title: Storage Management
