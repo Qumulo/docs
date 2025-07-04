@@ -165,7 +165,7 @@ entries:
       output: web
 
   - title: Cryptographic Key Management
-    url: /azure-administrator-guide/cryptographic-key-management/index.html
+    url: /azure-native-administrator-guide/cryptographic-key-management/index.html
     output: web, pdf
     folderitems:
 
