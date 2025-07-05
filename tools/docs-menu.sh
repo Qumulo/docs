@@ -324,6 +324,13 @@ rebuild_check_container() {
     docker build -f docker/build/Dockerfile -t docs-container-check .
 }
 
+# Rebuild the docs-container-check container
+rebuild_check_container_bypass_cache() {
+    start_in_docs_dir
+    echo "Rebuilding the docs-container-check container while bypassing the cache..."
+    docker build --no-cache -f docker/build/Dockerfile -t docs-container-check .
+}
+
 # List CLI documentation with appended content
 find_modified_cli(){
     start_in_docs_dir
@@ -604,10 +611,6 @@ determine_host_upgrade_onprem_release(){
    ~/src/release_management/list_host_upgrades.py
 } 
 
-determine_host_upgrade_cloud_release() {
-   ~/src/release_management/list_host_upgrades.py --cloud
-}
-
 determine_lowest_replication_version() {
     ~/src/release_management/determine_lowest_replication_version.py
 }
@@ -628,16 +631,16 @@ while true; do
     echo -e "1.  📦\tRebuild docs-builder container"
     echo -e "2.  📦\tRebuild docs-builder container while bypassing the cache"
     echo -e "3.  📦\tRebuild docs-container-check container"
-    echo -e "4.  💎\tUpdate specific Ruby gem"
-    echo -e "5.  💎\tRebuild Ruby gems"
-    echo -e "6.  🧹\tSweep Toolchain"
-    echo -e "7.  🧹\tPrune Docker"
-    echo -e "8.  🔄\tRefresh Vectara Ingest repo"
-    echo -e "9.  ❌\tFind unused .js scripts"
+    echo -e "4.  📦\tRebuild docs-container-check container while bypassing the cache"
+    echo -e "5.  💎\tUpdate specific Ruby gem"
+    echo -e "6.  💎\tRebuild Ruby gems"
+    echo -e "7.  🧹\tSweep Toolchain"
+    echo -e "8.  🧹\tPrune Docker"
+    echo -e "9.  🔄\tRefresh Vectara Ingest repo"
+    echo -e "10. ❌\tFind unused .js scripts"
     echo
     echo -e "\033[1;33mRetrieve Information\033[0m"
-    echo -e "10. ⬆️\tDetermine whether on-prem Qumulo Core release includes a host upgrade"
-    echo -e "11. ⬆️\tDetermine whether cloud Qumulo Core release includes a host upgrade"
+    echo -e "11. ⬆️\tDetermine whether a Qumulo Core release includes a host upgrade"
     echo -e "12. ⬇️\tDetermine lowest replication version for Qumulo Core release"
     echo -e "13. 🆕\tList CLI documentation with appended content"
     echo
@@ -671,14 +674,14 @@ while true; do
         1) rebuild_container ;;
         2) rebuild_container_bypass_cache ;;
         3) rebuild_check_container ;;
-        4) update_specific_ruby_gem ;;
-        5) rebuild_ruby_gems ;;
-        6) sweep_toolchain ;;
-        7) prune_docker ;;
-        8) refresh_vectara_ingest_repo;;
-        9) find_unused_scripts ;;
-        10) determine_host_upgrade_onprem_release ;;
-        11) determine_host_upgrade_cloud_release ;;
+        4) rebuild_check_container_bypass_cache ;;
+        5) update_specific_ruby_gem ;;
+        6) rebuild_ruby_gems ;;
+        7) sweep_toolchain ;;
+        8) prune_docker ;;
+        9) refresh_vectara_ingest_repo;;
+        10) find_unused_scripts ;;
+        11) determine_host_upgrade_onprem_release ;;
         12) determine_lowest_replication_version ;;
         13) find_modified_cli ;;
         14) regen_cli_docs ;;
