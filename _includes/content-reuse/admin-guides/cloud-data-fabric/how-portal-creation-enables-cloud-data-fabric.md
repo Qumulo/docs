@@ -306,7 +306,7 @@ Currently, it is possible to configure and manage Cloud Data Fabric functionalit
   {{site.data.alerts.important}}
   <ul>
     <li>An S3 bucket created in a portal root directory cannot be viewed or accessed from the cluster with which the current cluster has a portal relationship.</li>
-    <li>To access [spoke portal data](#spoke-portal-data) through the S3 protocol, it is necessary to create a new bucket on the spoke portal host cluster, even if the corresponding [hub portal data](#hub-portal-data) is already present in an S3 bucket on the hub portal host cluster.</li>
+    <li>To access <a href="#spoke-portal-data">spoke portal data</a> through the S3 protocol, it is necessary to create a new bucket on the spoke portal host cluster, even if the corresponding <a href="#hub-portal-data">hub portal data</a> is already present in an S3 bucket on the hub portal host cluster.</li>
   </ul>
   {{site.data.alerts.end}}
 
