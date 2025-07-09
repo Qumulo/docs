@@ -123,8 +123,8 @@ The following table lists metric names, types, labels, and descriptions.
       <td>
         <ul>
           <li class="pdf-friendly"><code>form_factor</code></li>
-          <li class="pdf-friendly"><a href="#metric-label-hardware_detection_mode"><code>hardware_detection_mode</code></a></li>          
-          <li class="pdf-friendly"><a href="#metric-label-network_management_mode"><code>network_management_mode</code></a></li>          
+          <li class="pdf-friendly"><a href="#metric-label-hardware_detection_mode"><code>hardware_detection_mode</code></a></li>
+          <li class="pdf-friendly"><a href="#metric-label-network_management_mode"><code>network_management_mode</code></a></li>
           <li class="pdf-friendly"><a href="#metric-label-node_id"><code>node_id</code></a></li>
           <li class="pdf-friendly"><code>node_model</code></li>
           <li class="pdf-friendly"><code>node_uuid</code></li>
@@ -135,11 +135,11 @@ The following table lists metric names, types, labels, and descriptions.
       <td>
         Information about nodes in the cluster, including:
         <ul>
-          <li class="pdf-friendly">Form factor (Qumulo Core 7.2.2 and higher)</li>
+          <li class="pdf-friendly">Form factor in Qumulo Core 7.2.2 (and higher)</li>
           <li class="pdf-friendly">Hardware detection mode</li>
-          <li class="pdf-friendly">Network management mode (Qumulo Core 7.5.1.2 and higher)</li>          
+          <li class="pdf-friendly">Network management mode in Qumulo Core 7.5.1.2 (and higher)</li>          
           <li class="pdf-friendly">ID</li>
-          <li class="pdf-friendly">Model (Qumulo Core 6.0.2 and higher)</li>
+          <li class="pdf-friendly">Model in Qumulo Core 6.0.2 (and higher)</li>
           <li class="pdf-friendly">UUID</li>
           <li class="pdf-friendly">Serial number</li>
         </ul>
@@ -371,6 +371,19 @@ The following table lists metric names, types, labels, and descriptions.
       </td>
       <td>7.4.2.1</td>
       <td>The number of portals for each state, not including portals in <code>Pending</code> and <code>Unlinked</code> states</td>
+    </tr>
+    <tr>
+      <td><code>qumulo_fs_portal_root_shared_bytes</code></td>
+      <td><a href="#metric-type-gauge"><code>gauge</code></a></td>
+      <td>
+        <ul>
+          <li class="pdf-friendly"><a href="#metric-label-portal_peer"><code>portal_peer</code></a></li>
+          <li class="pdf-friendly"><a href="#metric-label-portal_root"><code>portal_root</code></a></li>
+          <li class="pdf-friendly"><a href="#metric-label-portal_type"><code>portal_type</code></a></li>
+        </ul>
+      </td>
+      <td>7.5.3</td>
+      <td>The amount of data that a hub portal root directory shares with the cluster in a portal relationship with the current cluster.</td>
     </tr>
     <tr>
       <td><code>qumulo_fs_snapshots</code></td>
@@ -822,6 +835,16 @@ The following table lists metric label names, possible values, and descriptions.
       <td>The state of a spoke portal or a hub portal</td>
     </tr>
     <tr>
+      <td><a id="metric-label-portal_peer"></a><code>portal_peer</code></td>
+      <td>A version 4 UUID</td>
+      <td>The UUID of the cluster in a portal relationship with the current cluster.</td>
+    </tr>
+    <tr>
+      <td><a id="metric-label-portal_root"></a><code>portal_root</code></td>
+      <td>A QFSD API file ID string</td>
+      <td>The file ID of the hub portal root directory.</td>
+    </tr>
+    <tr>
       <td><a id="metric-label-portal_type"></a><code>portal_type</code></td>
       <td>
         <ul>
@@ -830,7 +853,7 @@ The following table lists metric label names, possible values, and descriptions.
         </ul>
       </td>
       <td>The portal type</td>
-    </tr>
+    </tr>    
     <tr>
       <td><a id="metric-label-protocol"></a><code>protocol</code></td>
       <td>
