@@ -293,8 +293,22 @@ Currently, it is possible to configure and manage Cloud Data Fabric functionalit
 
 ### Protocols
 #### S3
-* Currently, Qumulo Core allows the S3 protocol to access only [hub portal data](#hub-portal-data) and [cluster-local data](#cluster-local-data).
-* Attempting to access [spoke portal data](#spoke-portal-data) returns a `NoSuchKey` error.
+* Currently, Qumulo Core allows only partial access to portal data through the S3 protocol, including:
+
+  *  Full read and write access to [cluster-local data](#cluster-local-data) and [hub portal data](#hub-portal-data)
+
+  *  Read-only access to [spoke portal data](#spoke-portal-data)
+
+     {% include note.html content="Attempting to modify [spoke portal data](#spoke-portal-data) returns an error." %}
+
+* S3 buckets are always _local_ to the Qumulo cluster on which they are created.
+
+  {{site.data.alerts.important}}
+  <ul>
+    <li>An S3 bucket created in a portal root directory cannot be viewed or accessed from the cluster with which the current cluster has a portal relationship.</li>
+    <li>To access <a href="#spoke-portal-data">spoke portal data</a> through the S3 protocol, it is necessary to create a new bucket on the spoke portal host cluster, even if the corresponding <a href="#hub-portal-data">hub portal data</a> is already present in an S3 bucket on the hub portal host cluster.</li>
+  </ul>
+  {{site.data.alerts.end}}
 
 #### NFS
 * While NFSv3 is a stateless protocol, NFSv4.1 is a stateful protocol which permits open file handles to remain open after a file is unlinked. However, Qumulo Core doesn't always maintain access to files deleted from a portal in a relationship. For example, if you open a file on the spoke portal host cluster and then delete the same file on the hub portal host cluster, an application that uses the file on the spoke portal host cluster will lose access to the file unexpectedly.
