@@ -59,6 +59,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
 * Added the Qumulo Authoritative DNS (QDNS) to Qumulo Core
 * Added support for latest Western Digital Ultrastar DC SN640 SSD firmware
 * Resolved an issue with incorrect drive types for nodes in on-premises clusters
+* Modified the `ListBuckets` S3 API action to use the `BucketPolicy` permission together with Role-Based Access Control (RBAC) in Qumulo Core
 
 ## Qumulo Core 7.4.4
 {{page.varDownloadsRelnotes}}
