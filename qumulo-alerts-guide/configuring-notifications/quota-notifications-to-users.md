@@ -50,7 +50,7 @@ Run the `./alerts ad_server_add` command and specify the AD server, AD login nam
 ./alerts ad_server_add \
   --server-name "ad.example.com" \
   --login-name "example.com\LookupUser" \
-  --password {{site.examaplePassword}} \
+  --password {{site.examplePassword}} \
   --search-base "CN=Users,DC=example,DC=com" \
   --cluster-include cluster.example.com
 ```

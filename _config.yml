@@ -152,6 +152,7 @@ plugins:
   - jekyll-last-modified-at
 
 # BEGIN SPELLCHECK HERE
+scanVars: true
 
 loginRequired: <span class="emoji">🔒</span>
 ipmiLoginRequired: For more information, see <a href="https://care.qumulo.com/s/article/Default-IPMI-Usernames-Passwords">Default IPMI Usernames and Passwords</a> <span class="emoji">🔒</span> on Qumulo Care.

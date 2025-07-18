@@ -202,5 +202,3 @@ The `queue.size` and `queue.workerThreads` `rsyslog` parameters in [the `/etc/rs
 * `queue.workerThreads`: Set the maximum number of worker threads that can run in parallel to 16 threads
 
 {{site.varonis.restartRsyslog}}
-
-{{site.varonis.statusRsyslog}}

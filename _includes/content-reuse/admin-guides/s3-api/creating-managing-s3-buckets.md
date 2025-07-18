@@ -208,7 +208,6 @@ $ qq s3_modify_bucket \
 ```
 
 ### To Enable Object Lock for an S3 Bucket by Using the S3 API
-{% capture noDefRet %}{{site.s3.objectLocknoDefaultRetention}}{% endcapture %}
 {% include note.html content="Currently, because Qumulo Core doesn't support default retention periods, you can set only a [compliance retention period](https://docs.aws.amazon.com/AmazonS3/latest/userguide/batch-ops-retention-date.html) on an individual object in an S3 bucket by using the [`PutObjectRetention`](https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectRetention.html) API action." %}
 
 1. To enable versioning for your S3 bucket, use the [`PutBucketVersioning`](https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketVersioning.html) API action.
