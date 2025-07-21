@@ -36,16 +36,18 @@ For information about upgrade types for each release, see <a href='mode-referenc
 * Modified `files` REST APIs to return entity tag (ETag) values correctly
 * Added support for latest Western Digital Ultrastar DC SN640 SSD firmware
 
-## Qumulo Core 7.5.0.2 (Quarterly)
+## Qumulo Core 7.5.0.3 (Quarterly)
 {{page.varDownloadsRelnotes}}
 {{site.data.alerts.important}}
 <ul>
+  <li>This release resolves an issue with Authoritative DNS (QNS) by reducing the amount of logging for the feature.</li>
   <li>This release resolves a rare issue where previously, under certain conditions, concurrent quorum-related activity could result in file system data being overwritten.</li>
   <li>This release resolves an issue that previously occurred after a spoke portal was deleted.</li>
   <li>
     This release resolves the following on-premises cluster issues:
     <ul>
       <li>For clusters with certain erasure coding configurations deployed before July 4, 2020, this release resolves an issue that previously could occur during quorum formation, resulting in internal metadata being in an inconsistent state.</li>
+      <li>This release resolves unexpected SAS controller behavior on hardware nodes, where previously hot-plugging drives could cause cluster instability.</li>
       <li>This release makes Qumulo Core more resilient to unexpected drive controller behavior.</li>
     </ul>
   </li>

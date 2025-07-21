@@ -25,7 +25,7 @@ For information about the most important features from each release, click the Q
       <td>Instant</td>
     </tr>
     <tr>
-      <td><a href="feature-log.html#qumulo-core-7502-quarterly">7.5.0.2 (Quarterly)</a></td>
+      <td><a href="feature-log.html#qumulo-core-7503-quarterly">7.5.0.3 (Quarterly)</a></td>
       <td>Instant</td>
     </tr>
     <tr>
