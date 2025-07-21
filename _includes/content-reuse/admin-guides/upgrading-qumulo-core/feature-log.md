@@ -40,7 +40,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
 {{page.varDownloadsRelnotes}}
 {{site.data.alerts.important}}
 <ul>
-  <li>This release resolves an issue with Authoritative DNS (QNS) by reducing the amount of logging for the feature.</li>
+  <li>This release resolves an issue with Authoritative DNS (QDNS) by reducing the amount of logging for the feature.</li>
   <li>This release resolves a rare issue where previously, under certain conditions, concurrent quorum-related activity could result in file system data being overwritten.</li>
   <li>This release resolves an issue that previously occurred after a spoke portal was deleted.</li>
   <li>
