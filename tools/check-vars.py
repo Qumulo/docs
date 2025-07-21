@@ -91,8 +91,8 @@ def main():
         if not any(var.startswith(p) or var == p for p in IGNORED_PATTERNS)
     )
 
-    print("\nUndefined Variables")
     if undefined:
+        print("\nUndefined Variables")
         for var in undefined:
             files = sorted(var_to_files.get(var, []))
             for file in files:
@@ -100,8 +100,8 @@ def main():
     else:
         print("No undefined variables found.")
 
-    print("\nUnused Variables")
     if unused:
+        print("\nUnused Variables")
         for var in unused:
             print(var)
     else:

@@ -573,7 +573,9 @@ check_ingestion_status() {
 
 # Find unused scripts
 find_unused_scripts() {
- # Navigate to the js/ directory relative to the current directory
+    start_in_docs_dir
+ 
+    # Navigate to the js/ directory relative to the current directory
     cd "$(dirname "$0")/js" || { echo "js directory not found"; return 1; }
 
     # Get the list of .js files in the js/ directory
@@ -607,6 +609,11 @@ find_unused_scripts() {
     fi
 }
 
+find_unused_undefined_vars() {
+    start_in_docs_dir
+    python3 tools/check-vars.py
+}
+
 determine_host_upgrade_onprem_release(){
    ~/src/release_management/list_host_upgrades.py
 } 
@@ -638,33 +645,34 @@ while true; do
     echo -e "8.  🧹\tPrune Docker"
     echo -e "9.  🔄\tRefresh Vectara Ingest repo"
     echo -e "10. ❌\tFind unused .js scripts"
+    echo -e "11. ❌\tFind unused and undefined Jekyll/Liquid variables"
     echo
     echo -e "\033[1;33mRetrieve Information\033[0m"
-    echo -e "11. ⬆️\tDetermine whether a Qumulo Core release includes a host upgrade"
-    echo -e "12. ⬇️\tDetermine lowest replication version for Qumulo Core release"
-    echo -e "13. 🆕\tList CLI documentation with appended content"
+    echo -e "12. ⬆️\tDetermine whether a Qumulo Core release includes a host upgrade"
+    echo -e "13. ⬇️\tDetermine lowest replication version for Qumulo Core release"
+    echo -e "14. 🆕\tList CLI documentation with appended content"
     echo
     echo -e "\033[1;33mGenerate Documentation\033[0m"
-    echo -e "14. ⚙️\tRegenerate CLI documentation"
-    echo -e "15. ⚙️\tRegenerate REST API documentation"
-    echo -e "16. ⚙️\tOnly build HTML documentation"
-    echo -e "17. ⚙️\tOnly build PDF documentation"
+    echo -e "15. ⚙️\tRegenerate CLI documentation"
+    echo -e "16. ⚙️\tRegenerate REST API documentation"
+    echo -e "17. ⚙️\tOnly build HTML documentation"
+    echo -e "18. ⚙️\tOnly build PDF documentation"
     echo
     echo -e "\033[1;33mPreview Documentation\033[0m"
-    echo -e "18. 🖥️\tOnly serve documentation locally (Tailscale over HTTPS)"
-    echo -e "19. 🖥️\tOnly serve documentation locally (Python over HTTP)"
-    echo -e "20. 🖥️\tBuild documentation and serve it locally (Tailscale over HTTPS)"
-    echo -e "21. 🖥️\tBuild documentation and serve it locally (Python over HTTP)"
-    echo -e "22. 🖥️\tBuild documentation and serve it locally (Jekyll with LiveReload over HTTP)"
+    echo -e "19. 🖥️\tOnly serve documentation locally (Tailscale over HTTPS)"
+    echo -e "20. 🖥️\tOnly serve documentation locally (Python over HTTP)"
+    echo -e "21. 🖥️\tBuild documentation and serve it locally (Tailscale over HTTPS)"
+    echo -e "22. 🖥️\tBuild documentation and serve it locally (Python over HTTP)"
+    echo -e "23. 🖥️\tBuild documentation and serve it locally (Jekyll with LiveReload over HTTP)"
     echo
     echo -e "\033[1;33mTest Documentation\033[0m"
-    echo -e "23. 📋\tCheck documentation for link, script, and image errors"
-    echo -e "24. 📋\tCheck documentation for spelling errors"
+    echo -e "24. 📋\tCheck documentation for link, script, and image errors"
+    echo -e "25. 📋\tCheck documentation for spelling errors"
     echo
     echo -e "\033[1;33mIndex Documentation\033[0m"
-    echo -e "25. 🔍\tIngest docs.qumulo.com into Vectara"
-    echo -e "26. 🔍\tIngest care.qumulo.com into Vectara"
-    echo -e "27. 🔍\tIngest qumulo.com into Vectara"
+    echo -e "26. 🔍\tIngest docs.qumulo.com into Vectara"
+    echo -e "27. 🔍\tIngest care.qumulo.com into Vectara"
+    echo -e "28. 🔍\tIngest qumulo.com into Vectara"
     echo
     echo -e "q.  👋\tQuit"
     echo
@@ -681,23 +689,24 @@ while true; do
         8) prune_docker ;;
         9) refresh_vectara_ingest_repo;;
         10) find_unused_scripts ;;
-        11) determine_host_upgrade_onprem_release ;;
-        12) determine_lowest_replication_version ;;
-        13) find_modified_cli ;;
-        14) regen_cli_docs ;;
-        15) regen_api_docs ;;
-        16) build_html_docs ;;
-        17) build_pdf_docs ;;
-        18) only_serve_docs_locally_tailscale ;;
-        19) only_serve_docs_locally_python ;;
-        20) build_serve_docs_locally_tailscale ;;
-        21) build_serve_docs_locally_python ;;
-        22) build_serve_docs_locally_jekyll ;;
-        23) check_docs_errors ;;
-        24) check_spelling_errors ;;
-        25) ingest_docs_portal ;;
-        26) ingest_care_portal ;;
-        27) ingest_corp_site ;;
+        11) find_unused_undefined_vars ;;
+        12) determine_host_upgrade_onprem_release ;;
+        13) determine_lowest_replication_version ;;
+        14) find_modified_cli ;;
+        15) regen_cli_docs ;;
+        16) regen_api_docs ;;
+        17) build_html_docs ;;
+        18) build_pdf_docs ;;
+        19) only_serve_docs_locally_tailscale ;;
+        20) only_serve_docs_locally_python ;;
+        21) build_serve_docs_locally_tailscale ;;
+        22) build_serve_docs_locally_python ;;
+        23) build_serve_docs_locally_jekyll ;;
+        24) check_docs_errors ;;
+        25) check_spelling_errors ;;
+        26) ingest_docs_portal ;;
+        27) ingest_care_portal ;;
+        28) ingest_corp_site ;;
         q) exit ;;
         *) echo "You must enter a valid option." ;;
     esac
