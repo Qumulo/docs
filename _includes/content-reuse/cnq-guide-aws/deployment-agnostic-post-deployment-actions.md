@@ -3,26 +3,24 @@
 This section describes the common actions you can perform on a {{site.cnqShort}} cluster after deploying it.
 
 <a id="adding-node-to-existing-cluster"></a>
-### Adding a Node to an Existing Cluster
-{% include important.html content="To add a node to an existing cluster, the total node count must be greater than that of the current deployment." %}
+### Adding Nodes to an Existing Cluster
+{% include important.html content="To add nodes to an existing cluster, the total node count must be greater than that of the current deployment." %}
 
 {% if page.deployment == "tf" %}
 1. {{site.cnq.changeQnodeCount}} to a new value.
-1. {{site.cnq.runTFapplyWithFile}}
-1. {{site.cnq.tfDispExecPlan}}
-
-   {{site.cnq.reviewExecPlan}}
+1. {{site.cnq.runTFapply}}
+1. {{site.cnq.reviewExecPlan}}
    
-   Terraform changes resources according the execution plan and displays an additional primary (static) IP for the new node. For example:
+   Terraform displays an additional primary (static) IP for the new node. For example:
 
    ```
-   qumulo_primary_ips = [
-     "{{site.exampleIP0}}",
-     "{{site.exampleIP1}}",
-     "{{site.exampleIP2}}",
-     "{{site.exampleIP3}}",
-     "{{site.exampleIP4}}"   
-   ]
+   qumulo_primary_ips = tolist([
+     "{{site.exampleIP5}}",
+     "{{site.exampleIP6}}",
+     "{{site.exampleIP7}}",
+     "{{site.exampleIP8}}",
+     "{{site.exampleIP9}}"   
+   ])
    ```   
 {% elsif page.deployment == "cfn" %}
 1. {{site.cnq.logIntoCFN}}
@@ -30,108 +28,129 @@ This section describes the common actions you can perform on a {{site.cnqShort}}
 1. {{site.cnq.cfnUseExistingTemplate}}
 1. On the **Specify stack details** page, enter a new value for **Number of Qumulo EC2 instances** and then click **Next**.
 1. {{site.cnq.cfnRollbackOnFailure}}
-1. On the **Review &lt;my-stack-name&gt;** page, click **Submit**.
+1. On the **Review &lt;my-unique-deployment-name&gt;** page, click **Submit**.
 
    CloudFormation creates resources for the stack and displays the **CREATE_COMPLETE** status for each resource.
 {% endif %}
-{% capture verifyProvis %}To ensure that the Provisioner shut downs automatically, monitor the `/qumulo/{% if page.deployment == "tf" %}my-deployment-name{% elsif page.deployment == "cfn" %}my-stack-name{% endif %}/last-run-status` parameter for the Provisioner. {{site.cnq.paramStore}}{% endcapture %}
+{% capture verifyProvis %}To ensure that the Provisioner shut downs automatically, monitor the `/qumulo/{% if page.deployment == "tf" %}my-deployment-name{% elsif page.deployment == "cfn" %}my-unique-deployment-name{% endif %}/last-run-status` parameter for the Provisioner. {{site.cnq.monitorProvisioner}}{% endcapture %}
 1. {{verifyProvis}}
 1. {{site.cnq.logIntoWebUI}}
 
 <a id="removing-node-from-existing-cluster"></a>
-### Removing a Node from an Existing Cluster
-Removing a node from an existing cluster is a two-step process:
+### Removing Nodes from an Existing Cluster
+Removing nodes from an existing cluster is a two-step process:
 
-1. Remove the node from your cluster's quorum.
+1. Remove the nodes from your cluster's quorum.
 1. Tidy up the AWS resources for the removed nodes.
 
-#### Step 1: Remove the Node from the Cluster's Quorum
+#### Step 1: Remove Nodes from the Cluster's Quorum
 You must perform this step while the cluster is running.
 
-1. Copy the `remove-nodes.sh` script from the {% if page.deployment == "tf" %}`aws-terraform-cnq-<x.y>/utilities`{% elsif page.deployment == "cfn" %}`aws-cloudformation-cnq-<x.y>/utilities`{% endif %} directory to a machine running in your VPC that has the AWS CLI tools installed (for example, an Amazon Linux 2 AMI).
+1. Edit the `terraform.tfvars` file, setting the value of `q_target_node_count` to a reduced number of nodes in the cluster.
 
-   {{site.data.alerts.tip}}
-   <ul>
-     <li>To make the script executable, run the <code>chmod +x remove-nodes.sh</code> command.</li>
-     <li>To see a list of required parameters, run <code>remove-nodes.sh</code></li>
-   </ul>
-   {{site.data.alerts.end}}
+1. {{site.cnq.runTFapply}}
 
-1. Run the `remove-nodes.sh` script and specify the AWS region, the unique deployment name, the current node count, and the final node count.
+1. Review the nodes to be removed and then enter `yes`.
 
-   In the following example, we reduce a cluster from 6 to 4 nodes.
+   Terraform removes the nodes and displays:
 
-   ```bash
-   ./remove-nodes.sh \
-     --region us-west-2 \
-     --qstackname my-unique-deployment-name \
-     --currentnodecount 6 \
-     --finalnodecount 4
-   ```
+   * The `Apply complete!` message with a count of removed resources
+
+   * Your deployment's unique name
+
+   * The remaining S3 buckets for your Qumulo cluster
+
+   * The primary (static) IP addresses for the node removed from your Qumulo cluster
+
+   * The Qumulo Core Web UI endpoint
    
-1. Review the nodes to be removed and then enter `y`.
+   For example:
 
-1. Enter the administrator password for your cluster.
-
-   The script removes the nodes and displays:
-
-   * Confirmation that your cluster formed a new quorum
-
-   * Confirmation that the new quorum is active
-  
-   * The new total number of nodes in the quorum
-  
-   * The EC2 identifiers for the removed nodes
-  
-   * The endpoint for your cluster's Web UI
-  
    ```
-   {"monitor_uri": "/v1/node/state"}
-        --Waiting for new quorum
-        --New quorum formed
-        --Quorum is ACTIVE
-        --Validating quorum
-        --4 Nodes in Quorum
-        --REMOVED: EC2 ID={{site.exampleEC2id1}} >> Qumulo node_id=5
-        --REMOVED: EC2 ID={{site.exampleEC2id2}} >> Qumulo node_id=6
-   **Verify the cluster is healthy in the Qumulo UI at https://{{site.exampleEndpointIP0}}
+   Apply complete! Resources: 0 added, 0 changed, 1 destroyed.
+
+   Outputs:
+
+   cluster_provisioned = "Success"
+   deployment_unique_name = "{{site.cnq.deploymentUniqueNameExampleAWS}}"
    ...
+   persistent_storage_bucket_names = tolist([
+     "{{site.exampleBucketName1}}",
+     "{{site.exampleBucketName2}}",
+     "{{site.exampleBucketName3}}",
+     ...
+     "{{site.exampleBucketNameNoNumber}}16"
+   ])
+   qumulo_floating_ips = tolist([
+     "{{site.exampleIP42}}",
+     "{{site.exampleIP84}}",
+     ...
+   ])
+   ...
+   qumulo_primary_ips_removed_nodes = "{{site.exampleIP24}}",
+   ...
+   qumulo_private_url_node1 = "https://{{site.exampleEndpointIP0}}"
    ```
-
-1. {{site.cnq.logIntoWebUI}}
 
 #### Step 2: Tidy Up AWS Resources for Removed Nodes
-To avoid incurring additional costs, we recommend tidying up the AWS resources for the removed nodes.
-{% if page.deployment == "tf" %}
-1. Navigate to the `aws-terraform-cnq-<x.y>` directory.
-1. {{site.cnq.changeQnodeCount}} to a lower value (for example, `4`).
-1. {{site.cnq.runTFapplyWithFile}}
+1. Edit the `terraform.tfvars` file:
 
-   {{site.cnq.reviewExecPlan}}
-   
-   Terraform removes the resources for the removed nodes according the execution plan and displays the primary (static) IP addresses for the remaining nodes. For example:
+   1. Set the value of the `q_node_count` variable to a reduced number of nodes in the cluster.
 
-   ```
-   qumulo_primary_ips = [
-     "{{site.exampleIP0}}",
-     "{{site.exampleIP1}}",
-     "{{site.exampleIP2}}",
-     "{{site.exampleIP3}}",
-     "{{site.exampleIP4}}"   
-   ]
-   ```
-{% elsif page.deployment == "cfn" %}
-1. {{site.cnq.cfnUpdateStackComputeCache}}
-1. {{site.cnq.cfnUseExistingTemplate}}
-1. On the **Specify stack details** page, enter a lower value for **Number of Qumulo EC2 instances** (for example, `4`) and then click **Next**.
-1. {{site.cnq.cfnRollbackOnFailure}}
-1. On the **Review &lt;my-stack-name&gt;** page, click **Submit**.
-{% endif %}
+   1. Set the value of the `q_target_node_count` to `null`.
 
-   The node and the infrastructure associated with the node are removed.
+1. {{site.cnq.runTFapply}}
+
+1. Review the resources to be removed and then enter `yes`.
 
 1. {{site.cnq.logIntoWebUI}}
 
+   Terraform tidies up the resources for removed nodes and displays:
+
+   * The `Apply complete!` message with a count of removed resources
+
+   * Your deployment's unique name
+
+   * The remaining S3 buckets for your Qumulo cluster
+
+   * The remaining floating IP addresses for your Qumulo cluster
+
+   * The remaining primary (static) IP addresses for your Qumulo cluster
+
+   * The Qumulo Core Web UI endpoint
+
+   For example:
+
+   ```
+   Apply complete! Resources: 0 added, 0 changed, 66 destroyed.
+
+   Outputs:
+
+   cluster_provisioned = "Success"
+   deployment_unique_name = "{{site.cnq.deploymentUniqueNameExampleAWS}}"
+   ...
+   persistent_storage_bucket_names = tolist([
+     "{{site.exampleBucketName1}}",
+     "{{site.exampleBucketName2}}",
+     "{{site.exampleBucketName3}}",
+     ...
+     "{{site.exampleBucketNameNoNumber}}16"
+   ])
+   qumulo_floating_ips = tolist([
+     "{{site.exampleIP42}}",
+     "{{site.exampleIP84}}",
+     ...
+   ])
+   ...
+   qumulo_primary_ips = tolist([
+     "{{site.exampleIP4}}",
+     "{{site.exampleIP5}}",
+     "{{site.exampleIP6}}",
+     "{{site.exampleIP7}}"
+   ])
+   ...
+   qumulo_private_url_node1 = "https://{{site.exampleEndpointIP0}}"
+   ```
 
 <a id="increasing-soft-capacity-limit-existing-cluster"></a>
 ### Increasing the Soft Capacity Limit for an Existing Cluster
@@ -157,17 +176,20 @@ Increasing the soft capacity limit for an existing cluster is a two-step process
      
    * The new soft capacity limit
 
+   For example:
+
    ```
    Apply complete! Resources: 0 added, 1 changed, 0 destroyed.
 
    Outputs:
 
-   bucket_names = [
+   persistent_storage_bucket_names = tolist([
      "{{site.exampleBucketName1}}",
      "{{site.exampleBucketName2}}",
      "{{site.exampleBucketName3}}",
-     "{{site.exampleBucketName3}}",
-   ]
+     ...
+     "{{site.exampleBucketNameNoNumber}}-16"
+   ])
    deployment_unique_name = "{{site.cnq.deploymentUniqueNameExampleAWS}}"
    ...
    soft_capacity_limit = "1000 TB"
@@ -175,7 +197,7 @@ Increasing the soft capacity limit for an existing cluster is a two-step process
 
 #### Step 2: Update Existing Compute and Cache Resource Deployment
 1. Navigate to the root directory of the `aws-terraform-cnq-<x.y>` repository.
-1. {{site.cnq.runTFapplyWithFile}}
+1. {{site.cnq.runTFapply}}
 
    {{site.cnq.reviewExecPlan}}
 
@@ -188,7 +210,7 @@ Increasing the soft capacity limit for an existing cluster is a two-step process
 1. {{site.cnq.cfnUseExistingTemplate}}
 1. On the **Specify stack details** page, select a higher value for **Soft Capacity Limit** and then click **Next**.
 1. {{site.cnq.cfnRollbackOnFailure}}
-1. On the **Review &lt;my-stack-name&gt;** page, click **Submit**.
+1. On the **Review &lt;my-unique-deployment-name&gt;** page, click **Submit**.
 
    CloudFormation updates resources for the stack and displays the **CREATE_COMPLETE** status for each resource.
 
@@ -199,7 +221,7 @@ Increasing the soft capacity limit for an existing cluster is a two-step process
 1. {{site.cnq.cfnUseExistingTemplate}}
 1. On the **Specify stack details** page click **Next**.
 1. {{site.cnq.cfnRollbackOnFailure}}
-1. On the **Review &lt;my-stack-name&gt;** page, click **Submit**.
+1. On the **Review &lt;my-unique-deployment-name&gt;** page, click **Submit**.
 
    CloudFormation updates resources for the stack and displays the **CREATE_COMPLETE** status for each resource.
 
@@ -207,10 +229,17 @@ Increasing the soft capacity limit for an existing cluster is a two-step process
 {% endif %}
 
 
-### Scaling Your Existing CNQ on AWS Cluster
-{% include important.html content="To minimize potential availability interruptions, you must perform this _cluster replacement procedure_ as a two-quorum event. For example, if you stop the existing EC2 instances by using the AWS Management Console and change the EC2 instance types, two quorum events occur _for each node_ and the read and write cache isn't optimized for the EC2 instance type." %}
+### Changing the EC2 Instance Type of Your CNQ on AWS Cluster
+You can change the EC2 instance type, node count, and to convert your cluster from single-AZ to multi-AZ, or the other way around.
 
-You can scale an existing {{site.aws.cnqAWSshort}} cluster by changing the EC2 instance type. This is a three-step process:
+{{site.data.alerts.important}}
+<ul>
+  <li>To minimize potential availability interruptions, you must perform the <em>cluster replacement procedure</em> as a two-quorum event. For example, if you stop the existing EC2 instances by using the AWS Management Console and change the EC2 instance types, two quorum events occur <em>for each node</em> and the read and write cache isn't optimized for the EC2 instance type.</li>
+  <li>Performing the cluster replacement procedure ensures that the required EC2 instance types are available in advance.</li>
+</ul>
+{{site.data.alerts.end}}
+
+Changing the EC2 instance type of your {{site.aws.cnqAWSshort}} cluster is a three-step process:
 
 1. Create a new deployment in a new {% if page.deployment == "tf" %}Terraform workspace{% elsif page.deployment == "cfn" %}CloudFormation stack{% endif %} and join the new EC2 instances to a quorum.
 1. Remove the existing EC2 instances.
@@ -219,19 +248,24 @@ You can scale an existing {{site.aws.cnqAWSshort}} cluster by changing the EC2 i
 {% if page.deployment == "tf" %}
 #### Step 1: Create a New Deployment in a New Terraform Workspace
 1. To create a new Terraform workspace, run the `terraform workspace new my-new-workspace-name` command.
-1. To initialize the workspace, run the `terraform init` command.
-1. Edit `config-standard.tfvars` or `config-advanced.tfvars`:
+1. Edit the `terraform.tfvars` file:
+
+   1. Specify the value for the `private_subnet_id` variable.
+
+      {% include note.html content="For multi-AZ deployments, specify values as a comma-delimited list." %}
 
    1. Specify the value for the `q_instance_type` variable.
    1. Set the value of the `q_replacement_cluster` variable to `true`.
    1. Set the value of the `q_existing_deployment_unique_name` variable to the current deployment's name.
    1. (Optional) To change the number of nodes, specify the value for the `q_node_count` variable.
 
-1. {{site.cnq.runTFapplyWithFile}}
+   {% include important.html content="Leave the other variables unchanged." %}
+
+1. {{site.cnq.runTFapply}}
 
    {{site.cnq.reviewExecPlan}}
    
-   Terraform creates resources according the execution plan and displays:
+   Terraform displays:
 
    * The `Apply complete!` message with a count of added resources
       
@@ -245,6 +279,8 @@ You can scale an existing {{site.aws.cnqAWSshort}} cluster by changing the EC2 i
      
    * The Qumulo Core Web UI endpoint
 
+   For example:
+
    ```
    Apply complete! Resources: 66 added, 0 changed, 0 destroyed.
 
@@ -257,20 +293,21 @@ You can scale an existing {{site.aws.cnqAWSshort}} cluster by changing the EC2 i
      "{{site.exampleBucketName1}}",
      "{{site.exampleBucketName2}}",
      "{{site.exampleBucketName3}}",
-     "{{site.exampleBucketName3}}",
+     ...
+     "{{site.exampleBucketNameNoNumber}}-16"
    ])
-   qumulo_floating_ips = [
+   qumulo_floating_ips = tolist([
      "{{site.exampleIP42}}",
      "{{site.exampleIP84}}",
      ...
-   ]
+   ])
    ...
-   qumulo_primary_ips = [
+   qumulo_primary_ips = tolist([
      "{{site.exampleIP4}}",
      "{{site.exampleIP5}}",
      "{{site.exampleIP6}}",
      "{{site.exampleIP7}}"
-   ]
+   ])
    ...
    qumulo_private_url_node1 = "https://{{site.exampleEndpointIP0}}"
    ```
@@ -339,17 +376,15 @@ You can scale an existing {{site.aws.cnqAWSshort}} cluster by changing the EC2 i
 1. {{verifyProvis}}
 1. {{site.cnq.logIntoWebUI}}
 
-{% if page.deployment == "tf" %}{% include note.html content="To perform future node addition or removal operations, edit the `config-standard.tfvars` or `config-advanced.tfvars` file and set the `q_replacement_cluster` variable to `false`." %}{% endif %}
-
-#### Step 2: Remove the Existing EC2 Instances
+#### Step 2: Remove the Previous Deployment
 {% if page.deployment == "tf" %}
 1. To select the previous Terraform workspace (for example, `default`), run the `terraform workspace select default` command.
 1. To ensure that the correct workspace is selected, run the `terraform workspace show` command.
-1. {{site.cnq.runTFdestroyWithFile}}
+1. {{site.cnq.runTFdestroy}}
 
    {{site.cnq.reviewExecPlan}}
 
-   Terraform deletes resources according to the execution plan and displays the `Destroy complete!` message with a count of destroyed resources.
+   Terraform displays the `Destroy complete!` message with a count of destroyed resources.
 {% elsif page.deployment == "cfn" %}
 1. To delete the previous CloudFormation stack, on the <strong>Stacks</strong> page, select the stack name for your previous deployment and then, in the upper right, click <strong>Stack actions &gt; Edit termination protection</strong>.
 1. In the <strong>Edit termination protection for &lt;stack-name&gt;?</strong> dialog box, under <strong>Termination protection</strong>, click <strong>Deactivated</strong> and then click <strong>Save</strong>.
@@ -358,7 +393,7 @@ You can scale an existing {{site.aws.cnqAWSshort}} cluster by changing the EC2 i
 1. To ensure that the stack is deleted correctly, watch the deletion process.
 {% endif %}
 
-   The previous EC2 instances are deleted.
+   The previous deployment is deleted.
 
 {% capture origPersStore %}The persistent storage deployment remains in its original {% if page.deployment == "tf" %}Terraform workspace{% elsif page.deployment == "cfn" %}CloudFormation stack{% endif %}. You can perform the next cluster replacement procedure in the {% if page.deployment == "tf" %}`default` workspace{% elsif page.deployment == "cfn" %}original CloudFormation stack{% endif %}.{% endcapture %}
 {% include note.html content=origPersStore %}
@@ -367,18 +402,18 @@ You can scale an existing {{site.aws.cnqAWSshort}} cluster by changing the EC2 i
 {% if page.deployment == "tf" %}
 1. To list your Terraform workspaces, run the `terraform workspace list` command.
 1. To select your new Terraform workspace, run the `terraform workspace select <my-new-workspace-name>` command.
-1. Edit the `config-standard.tfvars` or `config-advanced.tfvars` file and set the `q_replacement_cluster` variable to `false`.
-1. {{site.cnq.runTFapplyWithFile}} This ensures that the S3 bucket policies have least privilege.
+1. Edit the `terraform.tfvars` file and set the `q_replacement_cluster` variable to `false`.
+1. {{site.cnq.runTFapply}} This ensures that the S3 bucket policies have least privilege.
 
    {{site.cnq.reviewExecPlan}}
 
-   Terraform deletes resources according to the execution plan and displays the `Apply complete!` message with a count of destroyed resources.
+   Terraform displays the `Apply complete!` message with a count of destroyed resources.
 {% elsif page.deployment == "cfn" %}
 1. On the <strong>Stacks</strong> page, select the newly created stack and then, in the upper right, click <strong>Update</strong>.
 1. {{site.cnq.cfnUseExistingTemplate}}
 1. On the **Specify stack details** page, for **Replacement Cluster**, click **No**.
 1. {{site.cnq.cfnRollbackOnFailure}}
-1. On the **Review &lt;my-stack-name&gt;** page, click **Submit**.
+1. On the **Review &lt;my-unique-deployment-name&gt;** page, click **Submit**.
 
    CloudFormation updates resources for the stack and displays the **CREATE_COMPLETE** status for each resource.
 {% endif %}
@@ -387,7 +422,7 @@ You can scale an existing {{site.aws.cnqAWSshort}} cluster by changing the EC2 i
 ### Deleting an Existing Cluster
 Deleting a cluster is a two-step process:
 
-1. Delete your {{site.cnqLong}} resources.
+1. Delete your cluster's compute and cache resources.
 1. Delete your persistent storage.
 
 {{site.data.alerts.caution}}
@@ -405,22 +440,22 @@ Deleting a cluster is a two-step process:
    1. On the **Update stack** page, click **Use existing template** and then click **Next**.
    1. On the **Specify stack details** page, click **Next**.
    1. On the **Configure stack options** page, read and accept the two acknowledgements, and then click **Next**.
-   1. On the **Review &lt;my-stack-name&gt;** page, click **Rollback on failure** and then click **Submit**.
+   1. On the **Review &lt;my-unique-deployment-name&gt;** page, click **Rollback on failure** and then click **Submit**.
 1. [Delete your CloudFormation stack](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-console-delete-stack.html).
 {% elsif page.deployment == "tf" %}
-#### Step 1: To Delete Your Cluster's {{site.cnqLong}} Resources
-1. After you back up your data safely, edit your `config-standard.tfvars` or `config-advanced.tfvars` file and set the `term_protection` variable to `false`.
-1. {{site.cnq.runTFapplyWithFile}}
+#### Step 1: To Delete Your Cluster's Compute and Cache Resources
+1. After you back up your data safely, edit your `terraform.tfvars` file and set the `term_protection` variable to `false`.
+1. {{site.cnq.runTFapply}}
 
    {{site.cnq.reviewExecPlan}}
 
-   Terraform marks resources for deletion according to the execution plan and displays the `Apply complete!` message with a count of changed resources.
+   Terraform displays the `Apply complete!` message with a count of changed resources.
    
-1. {{site.cnq.runTFdestroyWithFile}}
+1. {{site.cnq.runTFdestroy}}
 
    {{site.cnq.reviewExecPlan}}
 
-   Terraform deletes all of your cluster's {{site.cnqShort}} resources and displays the `Destroy complete!` message and a count of destroyed resources.
+   Terraform deletes all of your cluster's compute and cache resources and displays the `Destroy complete!` message and a count of destroyed resources.
 
 #### Step 2: To Delete Your Cluster's Persistent Storage
 1. Navigate to the `persistent-storage` directory.
@@ -429,7 +464,7 @@ Deleting a cluster is a two-step process:
 
    {{site.cnq.reviewExecPlan}}
 
-   Terraform marks resources for deletion according to the execution plan and displays the `Apply complete!` message with a count of changed resources.
+   Terraform displays the `Apply complete!` message with a count of changed resources.
    
 1. {{site.cnq.runTFdestroy}}
 

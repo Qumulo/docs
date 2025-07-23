@@ -2,39 +2,47 @@
 ## Step 2: Deploying Cluster Compute and Cache Resources
 This section explains how to deploy compute and cache resources for a Qumulo cluster by using a Ubuntu AMI and the Qumulo Core `.deb` installer.
 
-{{site.data.alerts.important}}
-<ul>
-{% if page.deployment == "cfn" %}
-  <li>Only when the CloudFormation stack finishes running can you begin to monitor the Provisioner. {{site.cnq.paramStore}} Until the Provisioner shuts down automatically, the provisioning process isn't complete and the Qumulo cluster isn't yet functional.</li>  
-{% elsif page.deployment == "tf" %}
-  <li>Provisioning completes successfully when the Provisioner shuts down automatically. If the Provisioner doesn't shut down, the provisioning cycle has failed and you must troubleshoot it. To monitor the provisioner's status, you can watch the Terraform status posts in your terminal or monitor the Provisioner. {{site.cnq.paramStore}}.</li>
-  <li>The first variable in the example configuration files in the <code>aws-terraform-cnq</code> repository is <code>deployment_name</code>. To help avoid conflicts between Network Load Balancers (NLBs), resource groups, cross-region CloudWatch views, and other deployment components, Terraform ignores the <code>deployment_name</code> value and any changes to it. Terraform generates the additional <code>deployment_unique_name</code> variable; appends a random, 11-digit alphanumeric value to it; and then tags all future resources with this variable, which never changes during subsequent Terraform deployments.</li>
-{% endif %}  
-  <li>If you plan to deploy multiple Qumulo clusters, give the <code>q_cluster_name</code> variable a unique name for each cluster.</li>
-  <li>(Optional) If you use Amazon Route 53 <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/hosted-zones-private.html">private hosted zones</a>, give the <code>q_fqdn_name</code> variable a unique name for each cluster</li>
-</ul>
-{{site.data.alerts.end}}
+### Recommendations
+{% include important.html content="We strongly recommend reviewing the following recommendations before beginning this process." %}
 
+{% if page.deployment == "cfn" %}
+* Only when the CloudFormation stack finishes running can you begin to monitor the Provisioner. {{site.cnq.paramStore}} Until the Provisioner shuts down automatically, the provisioning process isn't complete and the Qumulo cluster isn't yet functional. 
+{% elsif page.deployment == "tf" %}
+* Provisioning completes successfully when the Provisioner shuts down automatically. If the Provisioner doesn't shut down, the provisioning cycle has failed and you must troubleshoot it. {{site.cnq.monitorProvisioner}}
+
+* The first variable in the example configuration files in the `aws-terraform-cnq` repository is `deployment_name`. To help avoid conflicts between Network Load Balancers (NLBs), resource groups, cross-region CloudWatch views, and other deployment components, Terraform ignores the `deployment_name` value and any changes to it. Terraform generates the additional `deployment_unique_name` variable; appends a random, 11-digit alphanumeric value to it; and then tags all future resources with this variable, which never changes during subsequent Terraform deployments.
+{% endif %}  
+
+* If you plan to deploy multiple Qumulo clusters, give the `q_cluster_name` variable a unique name for each cluster.
+
+* We recommend forwarding DNS queries to [Qumulo Authoritative DNS (QDNS)](../network-configuration/configuring-authoritative-dns.html). For a single-AZ deployment, to allow Qumulo Core to create an Amazon Route 53 outbound resolver, specify values for the `q_cluster_fqdn` and `second_private_subnet_id` variables. The resolver uses the `q_cluster_fqdn` variable to forward DNS requests to your cluster, where Qumulo Core resolves DNS for your floating IP addresses.
+
+### To Deploy the Cluster Compute and Cache Resources
 1. Configure your VPC to use the gateway VPC endpoint for S3.
 
-   {% include important.html content="It isn't possible to deploy your cluster without a gateway." %}
-
 {% if page.deployment == "tf" %}
+1. Edit the `provider.tf` file:
+
+   * To store the Terraform state remotely, add the name of an S3 bucket to the sections that begin with `backend "s3" {` and `data "terraform_remote_state" "persistent_storage" {`.
+
+   * To store the Terraform state locally, comment the sections that begin with `backend "s3" {` and `data "terraform_remote_state" "persistent_storage" {` and uncomment the section that contains `backend = "local"`.
+
+     {% capture noLocal %}{{site.cnq.dontRecommendLocalState}}{% endcapture %}
+     {% include important.html content=noLocal %}
+
 1. Navigate to the `aws-terraform-cnq-<x.y>` directory and then run the `terraform init` command.
 
    Terraform prepares the environment and displays the message `Terraform has been successfully initialized!`
 
-1. Choose `config-standard.tfvars` or `config-advanced.tfvars` and fill in the values for all variables.
+1. Edit the `terraform.tfvars` file, specifying the values for all variables.
 
    For more information, see `README.pdf` in `aws-terraform-cnq-<x.y>.zip`.
 
-1. {{site.cnq.runTFapplyWithFile}}
-
-   {{site.cnq.tfDispExecPlan}}
+1. {{site.cnq.runTFapply}}
 
 1. {{site.cnq.reviewExecPlan}}
 
-   Terraform creates resources according the execution plan and displays:
+   Terraform displays:
 
    * The `Apply complete!` message with a count of added resources
       
@@ -62,22 +70,22 @@ This section explains how to deploy compute and cache resources for a Qumulo clu
      "{{site.exampleBucketName1}}",
      "{{site.exampleBucketName2}}",
      "{{site.exampleBucketName3}}",
-     "{{site.exampleBucketName3}}",
+     ...
+     "{{site.exampleBucketNameNoNumber}}16",
    ])
-   qumulo_floating_ips = [
+   qumulo_floating_ips = tolist([
      "{{site.exampleIP42}}",
      "{{site.exampleIP84}}",
      ...
-   ]
+   ])
    ...
-   qumulo_primary_ips = [
-     "{{site.exampleIP0}}",
-     "{{site.exampleIP1}}",
-     "{{site.exampleIP2}}",
-     "{{site.exampleIP3}}"
-   ]
+   qumulo_primary_ips = tolist([
+     "{{site.exampleIP5}}",
+     "{{site.exampleIP6}}",
+     "{{site.exampleIP7}}"
+   ])
    ...
-   qumulo_private_url_node1 = "https://{{site.exampleEndpointIP0}}"
+   qumulo_private_url_node1 = "https://{{site.exampleEndpointIP5}}"
    ```
 
 {% elsif page.deployment == "cfn" %}
@@ -148,7 +156,7 @@ This section explains how to deploy compute and cache resources for a Qumulo clu
 
 1. To log in to your cluster's Web UI, use the endpoint from the {% if page.deployment == "tf" %}Terraform output{% elsif page.deployment == "cfn" %}the **QumuloPrivateIP** key on the **Outputs** tab for this stack {% endif %} and the username and password that you have configured.
 
-   {% include important.html content="If you change the administrative password for your cluster by using the Qumulo Core Web UI, `qq` CLI, or REST API after deployment, you must add your new password to AWS Secrets Manager." %}
+   {% include important.html content="If you change the administrative password for your cluster by using the Qumulo Core Web UI, `qq` CLI, or REST API after deployment, you must update your password in AWS Secrets Manager." %}
 
    You can use the Qumulo Core Web UI to create and manage [NFS exports](../nfs/creating-nfs-export.html), [SMB shares](../smb/creating-smb-share.html), [snapshots](../snapshots/managing-snapshots.html), and [continuous replication relationships](../replicating-data/creating-managing-continuous-replication-relationship.html) You can also [join your cluster to Active Directory](https://care.qumulo.com/s/article/Join-your-Qumulo-Cluster-to-Active-Directory), [configure LDAP](../authentication-qumulo-core/configuring-ldap.html), and [perform many other operations](../).
 

@@ -8,9 +8,7 @@ This section describes the common actions you can perform on a {{site.cnqShort}}
 
 1. {{site.cnq.changeQnodeCountAzure}} to a new value.
 1. {{site.cnq.runTFapply}}
-1. {{site.cnq.tfDispExecPlan}}
-
-   {{site.cnq.reviewExecPlan}}
+1. {{site.cnq.reviewExecPlan}}
 
    Terraform changes resources according the execution plan and displays an additional primary (static) IP for the new node. For example:
 
@@ -23,7 +21,7 @@ This section describes the common actions you can perform on a {{site.cnqShort}}
      "{{site.exampleIP5}}"
    ]
    ```
-{% capture verifyProvis %}To ensure that the Provisioner shut downs automatically, review the `last-run-status` parameter {{site.cnq.azureAppConfig}}.{% endcapture %}
+{% capture verifyProvis %}To ensure that the Provisioner shuts down automatically, review the `last-run-status` parameter {{site.cnq.azureAppConfig}}.{% endcapture %}
 1. {{verifyProvis}}
 1. {{site.cnq.logIntoWebUI}}
 

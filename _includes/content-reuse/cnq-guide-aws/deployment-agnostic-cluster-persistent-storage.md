@@ -2,20 +2,20 @@
 ## Step 1: Deploying Cluster Persistent Storage
 This section explains how to deploy the S3 buckets that act as persistent storage for your Qumulo cluster.
 
-{% if page.deployment == "cfn" %}
 <a id="prepare-required-files"></a>
 ### Part 1: Prepare the Required Files
-{% endif %}
-1. Log in to Nexus and click **Downloads > {{site.cnq.nexusDropDown}}**.
+Before you can deploy the persistent storage for your cluster, you must download and prepare the required files.
 
-1. On the **AWS** tab and, in the **Download the required files** section, select the Qumulo Core version that you want to deploy and then download the corresponding {% if page.deployment == "cfn" %}CloudFormation template{% elsif page.deployment == "tf" %}Terraform configuration{% endif %}, Debian package.
+1. {{site.cnq.logIntoNexus}} and click **Downloads > {{site.cnq.nexusDropDown}}**.
 
-1. Create a new S3 bucket and, within your S3 bucket prefix, create the `qumulo-core-install` directory.
+1. On the **AWS** tab, in the **Download the required files** section, select the Qumulo Core version that you want to deploy and then download the corresponding {% if page.deployment == "cfn" %}CloudFormation template{% elsif page.deployment == "tf" %}Terraform configuration{% endif %} and Debian or RPM package.
+
+1. In a new or existing S3 bucket, within your S3 bucket prefix, create the `qumulo-core-install` directory.
 
 1. Within this directory, create another directory with the Qumulo Core version as its name. For example:
 
    ```
-   my-s3-bucket-name/my-s3-bucket-prefix/qumulo-core-install/7.2.3.2
+   my-s3-bucket-name/my-s3-bucket-prefix/qumulo-core-install/7.5.0
    ```
 
    {% capture newVer %}{{site.cnq.qCoreVerTip}}{% endcapture %}
@@ -26,7 +26,7 @@ This section explains how to deploy the S3 buckets that act as persistent storag
 {% if page.deployment == "cfn" %}
 1. Decompress `aws-cloudformation-cnq-<x.y>.zip` locally and copy it to your S3 bucket prefix.
 {% elsif page.deployment == "tf" %}
-1. Copy `aws-terraform-cnq-<x.y>.zip` to your Terraform environment and decompress.
+1. Copy `aws-terraform-cnq-<x.y>.zip` to your Terraform environment and then decompress the file.
 {% endif %}
 
 {% if page.deployment == "cfn" %}
@@ -66,28 +66,38 @@ This section explains how to deploy the S3 buckets that act as persistent storag
 
    CloudFormation creates resources for the stack and displays the **CREATE_COMPLETE** status for each resource.
 {% elsif page.deployment == "tf" %}
+<a id="create-necessary-resources"></a>
+### Part 2: Create the Necessary Resources
+1. Navigate to the `persistent-storage` directory.
 
-1. Navigate to the `persistent-storage` directory and take the following steps:
+1. Edit the `provider.tf` file:
 
-   1. Run the `terraform init` command.
+   * To store the Terraform state remotely, add the name of an S3 bucket to the sections that begin with `backend "s3" {`.
 
-      Terraform prepares the environment and displays the message `Terraform has been successfully initialized!`
+   * To store the Terraform state locally, comment the sections that begin with `backend "s3" {`.
 
-   1. Review the `terraform.tfvars` file.
+     {% capture noLocal %}{{site.cnq.dontRecommendLocalState}}{% endcapture %}
+     {% include important.html content=noLocal %}
 
-      * Specify the `deployment_name` and the correct `aws_region` for your cluster's persistent storage.
+1. Run the `terraform init` command.
+
+   Terraform prepares the environment and displays the message `Terraform has been successfully initialized!`
+
+1. Edit the `terraform.tfvars` file.
+
+   * Specify the `deployment_name` and the correct `aws_region` for your cluster's persistent storage.
         
-      * Leave the `soft_capacity_limit` at `500`.
+   * Set the `soft_capacity_limit` to `500` (or higher).
 
-   1. Use the `aws` CLI to authenticate to your AWS account.
+     {% include note.html content="This value specifies the initial capacity limit of your Qumulo clusters (in TB). It is possible to increase this limit at any time." %}
 
-   1. Run the `terraform apply` command.
+1. Use the `aws` CLI to authenticate to your AWS account.
+
+   1. {{site.cnq.runTFapply}}
   
-      {{site.cnq.tfDispExecPlan}}
-
    1. {{site.cnq.reviewExecPlan}}
 
-      Terraform creates resources according the execution plan and displays:
+      Terraform displays:
 
       * The `Apply complete!` message with a count of added resources
         
@@ -102,15 +112,14 @@ This section explains how to deploy the S3 buckets that act as persistent storag
       
       Outputs:
 
-      bucket_names = [
+      persistent_storage_bucket_names = tolist([
         "{{site.exampleBucketName1}}",
         "{{site.exampleBucketName2}}",
         "{{site.exampleBucketName3}}",
-        "{{site.exampleBucketName4}}",
-      ]
+        ...
+        "{{site.exampleBucketNameNoNumber}}16"
+      ])
       deployment_unique_name = "{{site.cnq.deploymentUniqueNameExampleAWS}}"
       ...
       ```
-
-      {% include tip.html content="You will need the `deployment_unique_name` value to deploy your cluster." %}
 {% endif %}

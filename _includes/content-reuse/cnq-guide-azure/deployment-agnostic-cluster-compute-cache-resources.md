@@ -32,8 +32,6 @@ This section explains how to deploy compute and cache resources for a Qumulo clu
 
 1. {{site.cnq.runTFapply}}
 
-   {{site.cnq.tfDispExecPlan}}
-
 1. {{site.cnq.reviewExecPlan}}
 
    Terraform creates resources according the execution plan and displays:

@@ -171,6 +171,7 @@ exampleAWSsecretKey: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
 exampleAWSsecretKey2: aGsfgDFdfEGWD/D5DWERF/sRsRdsXQEXAMPLEKEY
 examplePassword: HTEj0kGIOsNOAA0
 exampleKeyID: abcd-1234-efgh-5678
+exampleEndpointIP5: 203.0.113.5
 exampleEndpointIP0: 203.0.113.10
 exampleIP0: 203.0.113.0
 exampleIP1: 203.0.113.1
@@ -180,6 +181,9 @@ exampleIP4: 203.0.113.4
 exampleIP5: 203.0.113.5
 exampleIP6: 203.0.113.6
 exampleIP7: 203.0.113.7
+exampleIP8: 203.0.113.8
+exampleIP9: 203.0.113.9
+exampleIP24: 203.0.113.24
 exampleIP42: 203.0.113.42
 exampleIP84: 203.0.113.84
 exampleIPv60: 2001:db8:60e0:7352:e9d2:e180:e7e8:cdb8
@@ -230,6 +234,7 @@ exampleBucketName1: ab5cdefghij-my-deployment-klmnopqr9st-qps-1
 exampleBucketName2: ab4cdefghij-my-deployment-klmnopqr8st-qps-2
 exampleBucketName3: ab3cdefghij-my-deployment-klmnopqr7st-qps-3
 exampleBucketName4: ab2cdefghij-my-deployment-klmnopqr6st-qps-4
+exampleBucketNameNoNumber: ab2cdefghij-my-deployment-klmnopqr6st-qps-
 exampleStorageAccountName1: ab5cdefghij1
 exampleStorageAccountName2: ab4cdefghij2
 exampleStorageAccountName3: ab3cdefghij3
@@ -426,14 +431,17 @@ cnq:
   cloneOpenRepo: to your system and navigate to the directory into which you cloned the repository
   logIntoCFN: Log in to the <a href="https://console.aws.amazon.com/cloudformation/home">AWS CloudFormation console</a>.
   logIntoS3: Log in to the <a href="https://console.aws.amazon.com/s3/home">Amazon S3 console</a>.
-  logIntoWebUI: To check that the cluster is healthy, log in to the Qumulo Core Web UI.
+  logIntoNexus: Log in to <a href="https://nexus.qumulo.com/login">Qumulo Nexus</a>
+  logIntoWebUI: To check that the cluster is healthy and has the needed number of nodes, log in to the Qumulo Core Web UI.
   logIntoWebUIcapacity: To check the cluster's total usable storage, log in to the Qumulo Core Web UI.
-  changeQnodeCount: Edit <code>config-standard.tfvars</code> or <code>config-advanced.tfvars</code> and change the value of <code>q_node_count</code>
+  changeQnodeCount: Edit <code>terraform.tfvars</code> and change the value of <code>q_node_count</code>
   changeQnodeCountAzure: Edit <code>terraform.tfvars</code> and change the value of <code>q_node_count</code>
+  dontRecommendLocalState: We don't recommend storing the Terraform state locally for production deployments.
   runTFapply: Run the <code>terraform apply</code> command.
   runTFapplyWithFile: Run the <code>terraform apply -var-file config-standard.tfvars</code> command.
   runTFdestroy: Run the <code>terraform destroy</code> command.
   runTFdestroyWithFile: Run the <code>terraform destroy -var-file config-standard.tfvars</code> command.
+  monitorProvisioner:  To monitor the Provisioner's status, you can watch the Terraform operations in your terminal or <a href="#monitor-provisioner-status">monitor the Provisioner in AWS Systems Manager</a>.
   tfCreatesNewBuckets: Terraform creates new S3 buckets as necessary
   tfCreatesNewStorageAccounts: Terraform creates new Azure Storage Accounts as necessary
   cfnUpdateStackComputeCache: On the <strong>Stacks</strong> page, select <a href="#compute-cache-stack-name">your compute and cache deployment stack</a> and then, in the upper right, click <strong>Update</strong>.
@@ -442,13 +450,12 @@ cnq:
   cfnConfigureStackOptions: On the <strong>Configure stack options</strong> page, click <strong>Next</strong>.
   cfnRollbackOnFailure: On the <strong>Configure stack options</strong> page, in the <strong>Stack failure options</strong> section, click <strong>Roll back all stack resources</strong>, read and accept the two acknowledgements, and then click <strong>Next</strong>.
   qCoreVerTip: Make a new subdirectory for every new release of Qumulo Core.
-  copyDebAndConfig: Copy `qumulo-core.deb` into the directory named after the Qumulo Core version (in this example, it is `7.2.3.2`).
+  copyDebAndConfig: Copy `qumulo-core.deb` or `qumulo-core.rpm` into the directory named after the Qumulo Core version (in this example, it is `7.5.0`).
   deploymentUniqueNameExampleAWS: myname-deployment-ABCDE01EG2H
   deploymentUniqueNameExampleAzure: mynameCompute-ABCDEFG
   persistentStorageResourceGroupAzure: mynamePStore-abcde
-  paramStore: (In AWS Systems Manager, click <strong>Application Management &gt; Parameter Store &gt; /qumulo/&lt;my-stack-name&gt;/last-run-status</strong>. On the <strong>History</strong> tab, click <span class="emoji">⚙️</span>, and then in the <strong>Preferences</strong> dialog box, click <strong>Parameter history properties &gt; Value &gt; Confirm</strong>.)
+  paramStore: (In AWS Systems Manager, click <strong>Application Management &gt; Parameter Store &gt; /qumulo/&lt;my-unique-deployment-name&gt;/last-run-status</strong>. On the <strong>History</strong> tab, click <span class="emoji">⚙️</span>, and then in the <strong>Preferences</strong> dialog box, click <strong>Parameter history properties &gt; Value &gt; Confirm</strong>.)
   azureAppConfig: in Azure App Configuration (on the left navigation panel, click <strong>Operations &gt; Configuration Explorer</strong>)
-  tfDispExecPlan: Terraform displays the execution plan.
   reviewExecPlan: Review the Terraform execution plan and then enter <code>yes</code>.
   nexusDropDown: Cloud Native Qumulo Downloads
 

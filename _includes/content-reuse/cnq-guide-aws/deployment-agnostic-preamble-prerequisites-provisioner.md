@@ -1,11 +1,11 @@
 For an overview of {{site.aws.cnqAWSshort}}, its prerequisites, and limits, see [How Cloud Native Qumulo Works](how-cloud-native-qumulo-works.html).
 
-The {{page.varRepoLink}} contains comprehensive {% if page.deployment == "tf" %}Terraform configurations{% elsif page.deployment == "cfn" %}CloudFormation templates{% endif %} that let you deploy S3 buckets and then create a {{site.cnqShort}} cluster with 3 to 24 instances that adhere to the [AWS Well-Architected Framework](https://aws.amazon.com/architecture/well-architected/) and have fully elastic compute and capacity.
+The {{page.varRepoLink}} contains comprehensive {% if page.deployment == "tf" %}Terraform configurations{% elsif page.deployment == "cfn" %}CloudFormation templates{% endif %} that let you deploy S3 buckets and then create a {{site.cnqShort}} cluster with 1 or 3&ndash;24 instances that adhere to the [AWS Well-Architected Framework](https://aws.amazon.com/architecture/well-architected/) and have fully elastic compute and capacity.
 
 ## Prerequisites
 This section explains the prerequisites to deploying {{site.aws.cnqAWSshort}}.
 
-* To allow your Qumulo instance to report metrics to Qumulo, your AWS VPC must have outbound Internet connectivity through a NAT gateway or a firewall. Your instance shares no file data during this process.
+* To allow your Qumulo cluster to report metrics to Qumulo, your AWS VPC must have outbound Internet connectivity through a NAT gateway or a firewall. Your instance shares no file data during this process.
 
   {{site.data.alerts.important}}
   Connectivity to the following endpoints is required for a successful deployment of a Qumulo instance and quorum formation:
@@ -14,6 +14,8 @@ This section explains the prerequisites to deploying {{site.aws.cnqAWSshort}}.
     <li><code>api.nexus.qumulo.com</code></li>
   </ul>
   {{site.data.alerts.end}}
+
+* To deploy your Qumulo cluster with a VPC S3 gateway, you must configure your VPC to use the S3 gateway VPC endpoint.
 
 * The following features require specific versions of Qumulo Core:
 
@@ -59,6 +61,13 @@ This section explains the prerequisites to deploying {{site.aws.cnqAWSshort}}.
 * Before you configure your Terraform environment, you must sign in to the AWS CLI.
 {% endif %}
 
+  {{site.data.alerts.important}}
+  <ul>
+    <li>Unless you use the <code>AdministratorAccess</code> managed IAM policy for your user or role, you can run the <code>iam_tester.py</code> script in the <code>utilities</code> directory to validate your IAM role.</li> 
+    <li>For an explicit list of privileges recommended for least-privilege access, see the IAM documentation in the <code>utilities</code> directory.</li>
+  </ul>
+  {{site.data.alerts.end}}
+
   A custom IAM role or user must include the following AWS services:
 
   <ul class="three-columns">
@@ -86,4 +95,6 @@ The {{site.cnqShort}} Provisioner is an m5.large EC2 instance that configures yo
 
 {% if page.deployment == "cfn" %}{% capture dontDelete %}Don't delete the {{site.cnqShort}} Provisioner's EC2 instance. It is necessary for EC2 updates.{% endcapture %}{% include important.html content=dontDelete %}{% endif %}
 
-The Provisioner stores all necessary state information in the Parameter Store and shuts down automatically when it completes its tasks. {{site.cnq.paramStore}}
+<a id="monitor-provisioner-status"></a>
+#### To Monitor the Provisioner's Status
+{% include content-reuse/cnq-guide-aws/deployment-agnostic-monitor-provisioner-status.md %}

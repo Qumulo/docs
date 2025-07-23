@@ -39,8 +39,6 @@ This section explains how to deploy the Azure Storage Accounts that act as persi
 
    1. Run the `terraform apply` command.
   
-      {{site.cnq.tfDispExecPlan}}
-
    1. {{site.cnq.reviewExecPlan}}
 
       Terraform creates resources according the execution plan and displays:
