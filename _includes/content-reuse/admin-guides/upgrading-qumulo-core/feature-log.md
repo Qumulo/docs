@@ -4,6 +4,11 @@ For information about upgrade types for each release, see <a href='mode-referenc
 
 <style>div#toc{height:200px;overflow:auto;}</style>
 
+## Qumulo Core 7.5.4
+{{page.varDownloadsRelnotes}}
+* Improved the efficiency of parallel operations for workloads that perform a high number of small transactions on the spoke portal
+* Modified the `PutObject` S3 API action to accept the `x-amz-tagging `header that contains properly encoded key-value pairs
+
 ## Qumulo Core 7.5.3
 {{page.varDownloadsRelnotes}}
 * Made improvements to the S3 API:
