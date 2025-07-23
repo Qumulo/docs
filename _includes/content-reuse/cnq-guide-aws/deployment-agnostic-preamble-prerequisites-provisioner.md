@@ -80,6 +80,7 @@ This section explains the prerequisites to deploying {{site.aws.cnqAWSshort}}.
     <li><code>logs:*</code></li>
     <li><code>resource-groups:*</code></li>
     <li><code>route53:*</code></li>
+    <li><code>route53resolver:*</code></li>
     <li><code>s3:*</code></li>
     <li><code>secretsmanager:*</code></li>
     <li><code>sns:*</code></li>
