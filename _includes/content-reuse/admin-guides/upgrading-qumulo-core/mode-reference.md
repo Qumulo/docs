@@ -2,7 +2,7 @@
 * A [_platform upgrade_](performing-upgrades.html#platform-upgrade) requires either a complete reboot (rebooting all nodes in your cluster at the same time) or a rolling reboot (rebooting the nodes in your cluster one at a time).
 * A <em>quarterly upgrade</em> aggregates all improvements and fixes since the last quarterly upgrade. The version number of a quarterly upgrade ends in `.0`.
 
-{{site.nexusDownloads}} {{site.loginRequired}}.
+{{site.nexus.downloads}} {{site.loginRequired}}.
 
 ## Qumulo Core Upgrade Modes
 For information about the most important features from each release, click the Qumulo Core version.

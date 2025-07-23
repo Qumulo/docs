@@ -45,6 +45,10 @@ entries:
     - title: Qumulo REST API Guide
       url: /rest-api-guide/
       output: web
+
+    - title: Qumulo Nexus Configuration Guide
+      url: /qumulo-nexus-configuration-guide/
+      output: web
       
     - title: Qumulo Alerts Administrator Guide
       url: /qumulo-alerts-guide/

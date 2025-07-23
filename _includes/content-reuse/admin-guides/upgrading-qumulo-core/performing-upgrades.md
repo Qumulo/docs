@@ -6,7 +6,7 @@
 </ul>
 {{site.data.alerts.end}}
 
-{{site.nexusDownloads}} {{site.loginRequired}}.
+{{site.nexus.downloads}} {{site.loginRequired}}.
 
 {% if page.platform == 'on-prem' %}
 ## Understanding the Differences Between Upgrade Modes

@@ -154,14 +154,23 @@ plugins:
 # BEGIN SPELLCHECK HERE
 scanVars: true
 
+contactQumuloCare: <a href="https://docs.qumulo.com/contacting-qumulo-care-team.html">contact the Qumulo Care team</a>
+
 loginRequired: <span class="emoji">🔒</span>
 ipmiLoginRequired: For more information, see <a href="https://care.qumulo.com/s/article/Default-IPMI-Usernames-Passwords">Default IPMI Usernames and Passwords</a> <span class="emoji">🔒</span> on Qumulo Care.
 
-nexusDownloads: For downloads, release notes, and upgrade paths for Qumulo Core releases, see <a target="_blank" href="https://nexus.qumulo.com/downloads">Qumulo Nexus</a>
-nexusProductPackage: <a target="_blank" href="https://nexus.qumulo.com/deploy/aws">download the installation package</a>
-contactQumuloCare: <a href="https://docs.qumulo.com/contacting-qumulo-care-team.html">contact the Qumulo Care team</a>
+nexus:
+  downloads: For downloads, release notes, and upgrade paths for Qumulo Core releases, see <a target="_blank" href="https://nexus.qumulo.com/downloads">Qumulo Nexus</a>
+  productPackage: <a target="_blank" href="https://nexus.qumulo.com/deploy/aws">download the installation package</a>
+  entityID: Entity ID (your Nexus account's unique identifier)
+  acsURL: ACS URL (the Assertion Consumer Service URL that receives SAML responses)
+  logIn: <a href="https://nexus.qumulo.com/login">Log in to Qumulo Nexus.</a>
+  sso:
+    orgSet: In the upper-right corner, click your username and then click <strong>Organization Settings</strong>.
+    confSSO: On your organization's page, click <strong>SAML SSO</strong>, and then click <strong>Configure SSO</strong>.
+  idpPP: Nexus IdP functionality is currently in private preview.
 
-exampleTooWide: The following example is too wide for the page. To explore this example, you can toggle Reading Mode or scroll the example horizontally.
+exampleTooWide: The following example is too wide for the page. To explore this example, click <strong>Reading Mode</strong> or scroll the example horizontally.
 
 exampleUsernameUppercase1: JSMITH
 exampleClusterNameUppercase1: MYCLUSTER
@@ -514,6 +523,7 @@ guides:
   alert: Qumulo Alerts Administrator Guide
   alertShort: Qumulo Alerts Admin Guide
   integ: Qumulo Integration Guide
+  nexus: Qumulo Nexus Configuration Guide
 
 api:
   preview: This preview REST API is under development. Its functionality or backwards compatibility can change without notice.

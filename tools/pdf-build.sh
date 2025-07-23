@@ -27,7 +27,7 @@ ACTIONS=()
 PS3='What would you like to build? '
 
 # Prints the options on screen
-options=("Qumulo-Certified Platinum-Tier Hardware Servicing Guide" "Gold-Tier Hardware Servicing Guide for Qumulo" "Azure Native Qumulo Administrator Guide" "Cloud Native Qumulo on AWS Administrator Guide" "Cloud Native Qumulo on Azure Administrator Guide" "Qumulo On-Premises Administrator Guide" "Qumulo Alerts Guide" "Qumulo qq CLI Command Guide" "Qumulo REST API Guide" "Qumulo Integration Guide" "All Administrator Guides" "All Hardware Guides" "All Guides" "Exit")
+options=("Qumulo-Certified Platinum-Tier Hardware Servicing Guide" "Gold-Tier Hardware Servicing Guide for Qumulo" "Azure Native Qumulo Administrator Guide" "Cloud Native Qumulo on AWS Administrator Guide" "Cloud Native Qumulo on Azure Administrator Guide" "Qumulo On-Premises Administrator Guide" "Qumulo Nexus Configuration Guide" "Qumulo Alerts Administrator Guide" "Qumulo qq CLI Command Guide" "Qumulo REST API Guide" "Qumulo Integration Guide" "All Administrator Guides" "All Hardware Guides" "All Guides" "Exit")
 echo
 
 select opt in "${options[@]}"
@@ -60,7 +60,11 @@ do
       ACTIONS+=("Administrator_Guide")
       break
       ;;
-    "Qumulo Alerts Guide")
+    "Qumulo Nexus Configuration Guide")
+      ACTIONS+=("Qumulo_Nexus_Guide")
+      break
+      ;;
+    "Qumulo Alerts Administrator Guide")
       ACTIONS+=("Qumulo_Alerts_Guide")
       break
       ;;
@@ -123,6 +127,10 @@ build_prince () {
     "Administrator_Guide")
       JEKYLL_CONFIG=config_administrator_guide_pdf.yml
       PRINCE_OUTPUT=qumulo-administrator-guide.pdf
+      ;;
+    "Qumulo_Nexus_Guide")
+      JEKYLL_CONFIG=config_qumulo_nexus_configuration_guide_pdf.yml
+      PRINCE_OUTPUT=qumulo-nexus-configuration-guide.pdf
       ;;
     "Qumulo_Alerts_Guide")
       JEKYLL_CONFIG=config_qumulo_alerts_guide_pdf.yml

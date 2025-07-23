@@ -1,0 +1,51 @@
+entries:
+- title:
+  pdftitle: qumulo-nexus-configuration-guide.pdf
+  product:
+  version:
+  folders:
+
+  - title:
+    output: pdf
+    type: frontmatter
+    folderitems:
+
+    - title:
+      url: /titlepage.html
+      output: pdf
+      type: frontmatter
+
+    - title:
+      url: /tocpage.html
+      output: pdf
+      type: frontmatter
+
+  - title: Qumulo Nexus Configuration Guide
+    output: web
+    type: navi
+    folderitems:
+
+    - title: Documentation Home
+      url: /index.html
+      output: web
+
+    - title: Guide Table of Contents
+      url: /qumulo-nexus-configuration-guide/
+      output: web
+
+    - title: Contacting the Qumulo Care Team
+      url: /contacting-qumulo-care-team.html
+      output: web
+
+  - title: Enabling Single Sign-On (SSO)
+    url: /qumulo-nexus-configuration-guide/enabling-sso-with-idp/index.html
+    output: web, pdf
+    folderitems:
+
+    - title: Storage Administrator Configuration Workflow
+      url: /qumulo-nexus-configuration-guide/enabling-sso-with-idp/storage-administrator-configuration-workflow.html
+      output: web, pdf
+
+    - title: System Administrator Configuration Workflow
+      url: /qumulo-nexus-configuration-guide/enabling-sso-with-idp/system-administrator-configuration-workflow.html
+      output: web, pdf

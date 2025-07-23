@@ -25,6 +25,10 @@ body {
   flex-direction:column;
 }
 
+blockquote {
+  font-size: 16px;
+}
+
 /* API VERSION AND PREVIEW TAGS STARTS */
 @media screen {
   .nav li ul li a {

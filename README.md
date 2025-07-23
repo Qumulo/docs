@@ -131,6 +131,19 @@ To get started, choose one of the following guides.
 <h2 class="frontpage">External Alerting and Monitoring</h2>
 <div class="guide-buttons">
   <div class="guide-button">
+    <a href="qumulo-nexus-configuration-guide/">
+      <figure>
+        <picture>
+          <source type="image/webp" srcset="images/qumulo-nexus-configuration-guide.webp">
+          <source type="image/png" srcset="images/qumulo-nexus-configuration-guide.png">
+          <img src="images/qumulo-nexus-configuration-guide.png" alt="An image of a computer screen showing the Qumulo Nexus logo behind a stylized image of a cog wheel, symbolizing configuring Qumulo Nexus" width="333" height="70">
+        </picture>
+        <figcaption>{{site.guides.nexus}}</figcaption>
+      </figure>
+    </a>
+  </div>
+
+  <div class="guide-button">
     <a href="qumulo-alerts-guide/">
       <figure>
         <picture>
@@ -172,7 +185,7 @@ The following are the most-accessed pages on the Documentation Portal.
 10. [Configuring and Using the S3 API in Qumulo Core](/administrator-guide/s3-api/configuring-using-s3-api.html)
 
 ## Get Qumulo Core
-{{site.nexusDownloads}} {{site.loginRequired}}.
+{{site.nexus.downloads}} {{site.loginRequired}}.
 
 For information about upgrading, see:
 * [Feature Log](/administrator-guide/upgrading-qumulo-core/feature-log.html)

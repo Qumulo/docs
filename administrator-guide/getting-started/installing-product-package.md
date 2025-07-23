@@ -139,7 +139,7 @@ To ensure that Qumulo Core has full control over network configuration, disable 
 ## To Install the Qumulo Core Product Package
 {% include note.html content="Use the latest, official image available for your Linux distribution on the distribution's website or cloud marketplace." %}
 
-1. To install Qumulo Core, {{site.nexusProductPackage}} for your Linux distribution.
+1. To install Qumulo Core, {{site.nexus.productPackage}} for your Linux distribution.
 
    * For the `.deb` package, run the `apt` command. For example:
 
