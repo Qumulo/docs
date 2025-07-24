@@ -156,6 +156,10 @@ blockquote {
     padding-right: 10px;
   }
 
+  a.big-button:visited {
+    color: #245592; /* Firefox hack */
+  }
+
   .guide-button a:hover {
     background: white;
   }

@@ -17,7 +17,7 @@ To get started, choose one of the following guides.
 <h2 class="frontpage">Cloud: Self-Managed File System</h2>
 <div class="guide-buttons">
   <div class="guide-button">
-    <a href="cloud-native-aws-administrator-guide/">
+    <a class="big-button" href="cloud-native-aws-administrator-guide/">
       <figure>
         <picture>
           <source type="image/webp" srcset="images/cloud-native-qumulo-on-aws-administrator-guide.webp">
@@ -30,7 +30,7 @@ To get started, choose one of the following guides.
   </div>
 
   <div class="guide-button">
-    <a href="cloud-native-azure-administrator-guide/">
+    <a class="big-button" href="cloud-native-azure-administrator-guide/">
       <figure>
         <picture>
           <source type="image/webp" srcset="images/cloud-native-qumulo-on-azure-administrator-guide.webp">
@@ -45,7 +45,7 @@ To get started, choose one of the following guides.
 
 <h2 class="frontpage">Cloud: Qumulo-Managed File System</h2>
 <div class="guide-button">
-  <a href="azure-native-administrator-guide/">
+  <a class="big-button" href="azure-native-administrator-guide/">
     <figure>
       <picture>
         <source type="image/webp" srcset="images/azure-native-qumulo-administrator-guide.webp">
@@ -60,7 +60,7 @@ To get started, choose one of the following guides.
 <h2 class="frontpage">On-Premises: Self-Managed File System</h2>
 <div class="guide-buttons">
   <div class="guide-button">
-    <a href="administrator-guide/">
+    <a class="big-button" href="administrator-guide/">
       <figure>
         <picture>
           <source type="image/webp" srcset="images/on-premises-administrator-guide.webp">
@@ -73,7 +73,7 @@ To get started, choose one of the following guides.
   </div>
 
   <div class="guide-button">
-    <a href="hardware-guide/">
+    <a class="big-button" href="hardware-guide/">
       <figure>  
         <picture>
           <source type="image/webp" srcset="images/qumulo-certified-platinum-tier-hardware-servicing-guide.webp" width="301" height="301">
@@ -86,7 +86,7 @@ To get started, choose one of the following guides.
   </div>
 
   <div class="guide-button">
-    <a href="gold-tier-hardware-servicing-guide/">
+    <a class="big-button" href="gold-tier-hardware-servicing-guide/">
       <figure>
         <picture>
           <source type="image/webp" srcset="images/gold-tier-hardware-servicing-guide.webp" width="301" height="301">
@@ -102,7 +102,7 @@ To get started, choose one of the following guides.
 <h2 class="frontpage">Developer Tools and Interfaces</h2>
 <div class="guide-buttons">
   <div class="guide-button">
-    <a href="qq-cli-command-guide/">
+    <a class="big-button" href="qq-cli-command-guide/">
       <figure>
         <picture>
           <source type="image/webp" srcset="images/qumulo-qq-cli-command-guide.webp">
@@ -115,7 +115,7 @@ To get started, choose one of the following guides.
   </div>
 
   <div class="guide-button">
-    <a href="rest-api-guide/">
+    <a class="big-button" href="rest-api-guide/">
       <figure>
         <picture>
           <source type="image/webp" srcset="images/qumulo-rest-api-guide.webp">
@@ -131,7 +131,7 @@ To get started, choose one of the following guides.
 <h2 class="frontpage">External Alerting and Monitoring</h2>
 <div class="guide-buttons">
   <div class="guide-button">
-    <a href="qumulo-nexus-configuration-guide/">
+    <a class="big-button" href="qumulo-nexus-configuration-guide/">
       <figure>
         <picture>
           <source type="image/webp" srcset="images/qumulo-nexus-configuration-guide.webp">
@@ -144,7 +144,7 @@ To get started, choose one of the following guides.
   </div>
 
   <div class="guide-button">
-    <a href="qumulo-alerts-guide/">
+    <a class="big-button" href="qumulo-alerts-guide/">
       <figure>
         <picture>
           <source type="image/webp" srcset="images/qumulo-alerts-guide.webp">
@@ -157,7 +157,7 @@ To get started, choose one of the following guides.
   </div>
 
   <div class="guide-button">
-    <a href="integration-guide/">
+    <a class="big-button" href="integration-guide/">
       <figure>
         <picture>
           <source type="image/webp" srcset="images/qumulo-integration-guide.webp">
