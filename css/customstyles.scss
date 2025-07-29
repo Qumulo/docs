@@ -96,8 +96,7 @@ blockquote {
   }
 
   .projectTitle {
-    margin-left: -9px;
-    letter-spacing: -0.75px !important;
+    margin-left: -8px;
   }
 
   .platinum-tier-caption {
@@ -183,12 +182,6 @@ blockquote {
     margin-top: 3px;
   }
   /* ------------------ LANDING PAGE ENDS -------------------- */
-}
-
-@media (max-width: 1200px) {
-  .projectTitle {
-    letter-spacing: unset !important;
-  }
 }
 
 /* START API HEADING COLOURS */
