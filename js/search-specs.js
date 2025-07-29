@@ -33,7 +33,7 @@ function successFn(results, query) {
   renderResults(results, "search-widget-results");
 
   // Remove suffixes from all elements within .vuiSearchResult
-  const suffixToRemove = " | Qumulo Documentation";
+  const suffixToRemove = " | Qumulo Documentation Portal";
   const searchResultElements = document.querySelectorAll(".vuiSearchResult a, .vuiSearchResult strong");
   searchResultElements.forEach(function(element) {
     if (element.textContent.includes(suffixToRemove)) {

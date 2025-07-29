@@ -108,8 +108,8 @@ fetch('/data/website.json')
 
 <!-- Define page metadata -->
 {% if page.rest_endpoint %}{% assign apiDescription = 'REST API Documentation for ' | append: page.rest_endpoint %}<meta name="description" content="{{ apiDescription }}">{% else %}<meta name="description" content="{% if page.summary %}{{ page.summary | strip_html | strip_newlines }}{% endif %}">{% endif %}
-<meta name="apple-mobile-web-app-title" content="Qumulo Documentation">
-<meta name="application-name" content="Qumulo Documentation">
+<meta name="apple-mobile-web-app-title" content="Qumulo Documentation Portal">
+<meta name="application-name" content="Qumulo Documentation Portal">
 <meta name="msapplication-TileColor" content="#2b5797">
 <meta name="msapplication-TileImage" content="{{ "images/mstile-144x144.png" | relative_url }}">
 <meta name="msapplication-config" content="{{ "images/browserconfig.xml" | relative_url }}">

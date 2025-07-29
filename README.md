@@ -1,5 +1,5 @@
 ---
-title: "Qumulo Documentation"
+title: "Qumulo Documentation Portal"
 summary: "Welcome to the Qumulo Documentation Portal. This repository uses <a href='https://www.writethedocs.org/guide/docs-as-code/'>docs-as-code principles</a> to provide guidance about deploying, configuring, and working with Qumulo offerings."
 permalink: index.html
 breadcrumbs: exclude

@@ -3,10 +3,10 @@ repository: qumulo/docs
 output: web
 # this property is useful for conditional filtering of content that is separate from the PDF.
 
-topnav_title: Qumulo Documentation
+topnav_title: Qumulo Documentation Portal
 # this appears on the top navigation bar next to the home button
 
-site_title: Qumulo Documentation
+site_title: Qumulo Documentation Portal
 # this appears in the html browser tab for the site title (seen mostly by search engines, not users)
 
 company_name: Qumulo, Inc.
@@ -45,7 +45,7 @@ exclude:
   - vendor # Deleting this line will cause tests to fail
 # these are the files and directories that jekyll will exclude from the build
 
-feedback_subject_line: Qumulo Documentation
+feedback_subject_line: Qumulo Documentation Portal Feedback
 
 feedback_email: qontent@qumulo.com
 # used as a contact email for the Feedback link in the top navigation bar

@@ -1,7 +1,7 @@
 ---
 ---
 
-/* NOTE: This is not actually an .scss file. As Tom Johnson explained on the Jekyll
+/* NOTE: This is not actually an .scss file. As Tom Johnson explains on the Jekyll
    forums, "Even if your theme doesn’t use Sass, you could just rename your .css file
    to .scss and add that compressed property [to _config.yml] You don’t have to
    actually use any Sass techniques in your CSS. When your site builds, Jekyll will
@@ -96,7 +96,8 @@ blockquote {
   }
 
   .projectTitle {
-    margin-left: 10px;
+    margin-left: -9px;
+    letter-spacing: -0.75px !important;
   }
 
   .platinum-tier-caption {
@@ -182,6 +183,12 @@ blockquote {
     margin-top: 3px;
   }
   /* ------------------ LANDING PAGE ENDS -------------------- */
+}
+
+@media (max-width: 1200px) {
+  .projectTitle {
+    letter-spacing: unset !important;
+  }
 }
 
 /* START API HEADING COLOURS */

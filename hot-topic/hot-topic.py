@@ -54,7 +54,7 @@ def generate_markdown(filtered_rows):
     for idx, row in enumerate(filtered_rows[:10], start=1):
         dimensions = row.dimension_values
         page_path = dimensions[0].value
-        page_title = dimensions[1].value.replace(" | Qumulo Documentation", "")
+        page_title = dimensions[1].value.replace(" | Qumulo Documentation Portal", "")
         markdown_lines.append("{}. [{}]({})".format(idx, page_title, page_path))
 
     markdown_lines.append("\n")  # Add a blank line after the last item
