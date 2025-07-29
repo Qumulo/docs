@@ -4,6 +4,7 @@ summary: "Welcome to the Qumulo Documentation Portal. This repository uses <a hr
 permalink: index.html
 breadcrumbs: exclude
 tocTrue: true
+isHomepage: true
 ---
 
 <style>
