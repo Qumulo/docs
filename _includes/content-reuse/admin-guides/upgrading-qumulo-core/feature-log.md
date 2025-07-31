@@ -4,10 +4,17 @@ For information about upgrade types for each release, see <a href='mode-referenc
 
 <style>div#toc{height:200px;overflow:auto;}</style>
 
-## Qumulo Core 7.5.4
+## Qumulo Core 7.5.4.1
 {{page.varDownloadsRelnotes}}
+{{site.data.alerts.important}}
+<ul>
+  <li>This release resolves an issue where File Explorer becomes unresponsive and then displays the <strong>Unable to create shortcut</strong> error when a user attempts to create a shortcut inside an SMB share on a Qumulo cluster.</li>
+  <li>This release resolves unexpected SAS controller behavior on hardware nodes, where previously hot-plugging drives could cause cluster instability.</li>
+</ul>
+{{site.data.alerts.end}}
+
 * Improved the efficiency of parallel operations for workloads that perform a high number of small transactions on the spoke portal
-* Modified the `PutObject` S3 API action to accept the `x-amz-tagging `header that contains properly encoded key-value pairs
+* Modified the `PutObject` S3 API action to accept the `x-amz-tagging` header that contains properly encoded key-value pairs
 
 ## Qumulo Core 7.5.3
 {{page.varDownloadsRelnotes}}
