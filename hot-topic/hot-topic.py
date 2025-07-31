@@ -51,14 +51,25 @@ def generate_markdown(filtered_rows):
         ""
     ]
 
-    for idx, row in enumerate(filtered_rows[:10], start=1):
+    seen_paths = set() # Start tracking unique pagePath instances
+
+    for row in filtered_rows:
         dimensions = row.dimension_values
         page_path = dimensions[0].value
+
+        if page_path in seen_paths:  # Skip pagePath if already added
+            continue
+        seen_paths.add(page_path) # Mark pagePath as seen 
+
         if dimensions[1].value == "Qumulo Documentation Portal" or dimensions[1].value == "Qumulo Documentation":
             page_title = "Qumulo Documentation Portal Home"
         else:
             page_title = dimensions[1].value.replace(" | Qumulo Documentation Portal", "").replace(" | Qumulo Documentation", "")
-        markdown_lines.append("{}. [{}]({})".format(idx, page_title, page_path))
+        # Build Markdown-formatted numbered list item with a link
+        markdown_lines.append("{}. [{}]({})".format(len(seen_paths), page_title, page_path))
+
+        if len(seen_paths) == 10: # Stop after encountering 10 unique pagePath instances
+            break
 
     markdown_lines.append("\n")  # Add a blank line after the last item
     return "\n".join(markdown_lines)
