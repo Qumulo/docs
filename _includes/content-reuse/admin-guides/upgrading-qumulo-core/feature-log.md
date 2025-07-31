@@ -10,6 +10,8 @@ For information about upgrade types for each release, see <a href='mode-referenc
 <ul>
   <li>This release resolves an issue where File Explorer becomes unresponsive and then displays the <strong>Unable to create shortcut</strong> error when a user attempts to create a shortcut inside an SMB share on a Qumulo cluster.</li>
   <li>This release resolves unexpected SAS controller behavior on hardware nodes, where previously hot-plugging drives could cause cluster instability.</li>
+  <li>It isn’t possible for a customer to upgrade a cluster running this (or higher) version of Qumulo Core until the restriper removes all legacy read-tier layouts from <code>pbmap</code>.</li>
+  <li>Because it normally takes only a few seconds to run the restriper on an ANQ or CNQ instance, we don’t expect this requirement to block any upgrades. However, in the unlikely event that this process does block an upgrade, the system displays an error message, asking the customer to wait for the restriper to complete its work before retrying the upgrade.</li>
 </ul>
 {{site.data.alerts.end}}
 
