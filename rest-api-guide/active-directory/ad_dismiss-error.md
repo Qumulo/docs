@@ -34,7 +34,9 @@ methods:
         ,\n      \"type\": \"boolean\"\n    },\n    \"use_ad_posix_attributes\": {\n\
         \      \"description\": \"use_ad_posix_attributes\",\n      \"type\": \"boolean\"\
         \n    },\n    \"base_dn\": {\n      \"description\": \"base_dn\",\n      \"\
-        type\": \"string\"\n    }\n  }\n}"
+        type\": \"string\"\n    },\n    \"configured_dcs\": {\n      \"type\": \"\
+        array\",\n      \"items\": {\n        \"description\": \"configured_dcs\"\
+        ,\n        \"type\": \"string\"\n      }\n    }\n  }\n}"
     responses:
     - code: '200'
       description: Return value on success

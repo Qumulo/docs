@@ -6,7 +6,7 @@ methods:
       cached data automatically.
     parameters: []
     response_body:
-      schema: "{\n  \"description\": \"api_portal_eviction_settings\",\n  \"type\"\
+      schema: "{\n  \"description\": \"v1_portal_eviction_settings\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"free_threshold\": {\n      \"description\"\
         : \"Fraction of free total cluster capacity that the system will try to maintain\
         \ by evicting cached spoke portal data, in the range [0.0, 1.0]. Default is\
@@ -24,7 +24,7 @@ methods:
       description: ETag for expected version
       required: false
     response_body:
-      schema: "{\n  \"description\": \"api_portal_eviction_settings\",\n  \"type\"\
+      schema: "{\n  \"description\": \"v1_portal_eviction_settings\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"free_threshold\": {\n      \"description\"\
         : \"Fraction of free total cluster capacity that the system will try to maintain\
         \ by evicting cached spoke portal data, in the range [0.0, 1.0]. Default is\
@@ -35,7 +35,7 @@ methods:
       description: Return value on success
     preview: false
     request_body:
-      schema: "{\n  \"description\": \"api_portal_eviction_settings\",\n  \"type\"\
+      schema: "{\n  \"description\": \"v1_portal_eviction_settings\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"free_threshold\": {\n      \"description\"\
         : \"Fraction of free total cluster capacity that the system will try to maintain\
         \ by evicting cached spoke portal data, in the range [0.0, 1.0]. Default is\
@@ -49,7 +49,7 @@ methods:
       description: ETag for expected version
       required: false
     response_body:
-      schema: "{\n  \"description\": \"api_portal_eviction_settings\",\n  \"type\"\
+      schema: "{\n  \"description\": \"v1_portal_eviction_settings\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"free_threshold\": {\n      \"description\"\
         : \"Fraction of free total cluster capacity that the system will try to maintain\
         \ by evicting cached spoke portal data, in the range [0.0, 1.0]. Default is\
@@ -60,7 +60,7 @@ methods:
       description: Return value on success
     preview: false
     request_body:
-      schema: "{\n  \"description\": \"api_portal_eviction_settings\",\n  \"type\"\
+      schema: "{\n  \"description\": \"v1_portal_eviction_settings\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"free_threshold\": {\n      \"description\"\
         : \"Fraction of free total cluster capacity that the system will try to maintain\
         \ by evicting cached spoke portal data, in the range [0.0, 1.0]. Default is\

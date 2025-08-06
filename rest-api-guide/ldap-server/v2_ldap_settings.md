@@ -9,7 +9,8 @@ methods:
         object\",\n  \"properties\": {\n    \"use_ldap\": {\n      \"description\"\
         : \"Top-level LDAP enablement switch, indicating whether Qumulo Core should\
         \ use LDAP or not.\",\n      \"type\": \"boolean\"\n    },\n    \"bind_uri\"\
-        : {\n      \"description\": \"LDAP URI used to bind. Example: ldap://ldap-server.example.com\"\
+        : {\n      \"description\": \"LDAP URI(s) used to bind. Multiple URIs may\
+        \ be specified, separated by commas. Example: ldap://server1.com,ldap://server2.com\"\
         ,\n      \"type\": \"string\"\n    },\n    \"user\": {\n      \"description\"\
         : \"Binding user's distinguished name. Default is empty, for anonymous authentication.\"\
         ,\n      \"type\": \"string\"\n    },\n    \"password\": {\n      \"description\"\
@@ -58,7 +59,8 @@ methods:
         object\",\n  \"properties\": {\n    \"use_ldap\": {\n      \"description\"\
         : \"Top-level LDAP enablement switch, indicating whether Qumulo Core should\
         \ use LDAP or not.\",\n      \"type\": \"boolean\"\n    },\n    \"bind_uri\"\
-        : {\n      \"description\": \"LDAP URI used to bind. Example: ldap://ldap-server.example.com\"\
+        : {\n      \"description\": \"LDAP URI(s) used to bind. Multiple URIs may\
+        \ be specified, separated by commas. Example: ldap://server1.com,ldap://server2.com\"\
         ,\n      \"type\": \"string\"\n    },\n    \"user\": {\n      \"description\"\
         : \"Binding user's distinguished name. Default is empty, for anonymous authentication.\"\
         ,\n      \"type\": \"string\"\n    },\n    \"password\": {\n      \"description\"\
@@ -101,7 +103,8 @@ methods:
         object\",\n  \"properties\": {\n    \"use_ldap\": {\n      \"description\"\
         : \"Top-level LDAP enablement switch, indicating whether Qumulo Core should\
         \ use LDAP or not.\",\n      \"type\": \"boolean\"\n    },\n    \"bind_uri\"\
-        : {\n      \"description\": \"LDAP URI used to bind. Example: ldap://ldap-server.example.com\"\
+        : {\n      \"description\": \"LDAP URI(s) used to bind. Multiple URIs may\
+        \ be specified, separated by commas. Example: ldap://server1.com,ldap://server2.com\"\
         ,\n      \"type\": \"string\"\n    },\n    \"user\": {\n      \"description\"\
         : \"Binding user's distinguished name. Default is empty, for anonymous authentication.\"\
         ,\n      \"type\": \"string\"\n    },\n    \"password\": {\n      \"description\"\
@@ -146,7 +149,8 @@ methods:
         object\",\n  \"properties\": {\n    \"use_ldap\": {\n      \"description\"\
         : \"Top-level LDAP enablement switch, indicating whether Qumulo Core should\
         \ use LDAP or not.\",\n      \"type\": \"boolean\"\n    },\n    \"bind_uri\"\
-        : {\n      \"description\": \"LDAP URI used to bind. Example: ldap://ldap-server.example.com\"\
+        : {\n      \"description\": \"LDAP URI(s) used to bind. Multiple URIs may\
+        \ be specified, separated by commas. Example: ldap://server1.com,ldap://server2.com\"\
         ,\n      \"type\": \"string\"\n    },\n    \"user\": {\n      \"description\"\
         : \"Binding user's distinguished name. Default is empty, for anonymous authentication.\"\
         ,\n      \"type\": \"string\"\n    },\n    \"password\": {\n      \"description\"\
@@ -189,7 +193,8 @@ methods:
         object\",\n  \"properties\": {\n    \"use_ldap\": {\n      \"description\"\
         : \"Top-level LDAP enablement switch, indicating whether Qumulo Core should\
         \ use LDAP or not.\",\n      \"type\": \"boolean\"\n    },\n    \"bind_uri\"\
-        : {\n      \"description\": \"LDAP URI used to bind. Example: ldap://ldap-server.example.com\"\
+        : {\n      \"description\": \"LDAP URI(s) used to bind. Multiple URIs may\
+        \ be specified, separated by commas. Example: ldap://server1.com,ldap://server2.com\"\
         ,\n      \"type\": \"string\"\n    },\n    \"user\": {\n      \"description\"\
         : \"Binding user's distinguished name. Default is empty, for anonymous authentication.\"\
         ,\n      \"type\": \"string\"\n    },\n    \"password\": {\n      \"description\"\

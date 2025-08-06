@@ -7,7 +7,7 @@ optional_options:
   name: --use-ldap
   required: true
 - alternate: []
-  help: 'LDAP URI used to bind. Example: ldap://ldap-server.example.com'
+  help: 'LDAP URIs used to bind. Separate multiple URIs using commas. Example: ldap://server1.com,ldap://server2.com'
   name: --bind-uri
   required: true
 - alternate: []

@@ -9,11 +9,11 @@ methods:
       description: Portal ID
       required: true
     response_body:
-      schema: "{\n  \"description\": \"api_portal_spoke_relationship\",\n  \"type\"\
-        : \"object\",\n  \"properties\": {\n    \"id\": {\n      \"description\":\
-        \ \"Spoke portal ID\",\n      \"type\": \"number\"\n    },\n    \"spoke_type\"\
-        : {\n      \"type\": \"string\",\n      \"enum\": [\n        \"SPOKE_READ_ONLY\"\
-        ,\n        \"SPOKE_READ_WRITE\"\n      ],\n      \"description\": \"Type of\
+      schema: "{\n  \"description\": \"v1_portal_spoke\",\n  \"type\": \"object\"\
+        ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"Spoke portal\
+        \ ID\",\n      \"type\": \"number\"\n    },\n    \"spoke_type\": {\n     \
+        \ \"type\": \"string\",\n      \"enum\": [\n        \"SPOKE_READ_ONLY\",\n\
+        \        \"SPOKE_READ_WRITE\"\n      ],\n      \"description\": \"Type of\
         \ the spoke portal:\\n * `SPOKE_READ_ONLY` - SPOKE_READ_ONLY,\\n * `SPOKE_READ_WRITE`\
         \ - SPOKE_READ_WRITE\"\n    },\n    \"state\": {\n      \"type\": \"string\"\
         ,\n      \"enum\": [\n        \"UNLINKED\",\n        \"PENDING\",\n      \
@@ -43,8 +43,8 @@ methods:
       description: Return value on success
     preview: false
     request_body:
-      schema: "{\n  \"description\": \"api_portal_propose_request\",\n  \"type\":\
-        \ \"object\",\n  \"properties\": {\n    \"hub_root\": {\n      \"description\"\
+      schema: "{\n  \"description\": \"v1_portal_propose_request\",\n  \"type\": \"\
+        object\",\n  \"properties\": {\n    \"hub_root\": {\n      \"description\"\
         : \"Full path to the hub portal root directory\",\n      \"type\": \"string\"\
         \n    },\n    \"hub_address\": {\n      \"description\": \"IP address of a\
         \ node in the remote cluster\",\n      \"type\": \"string\"\n    },\n    \"\

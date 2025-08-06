@@ -6,9 +6,9 @@ methods:
     parameters: []
     response_body:
       schema: "{\n  \"type\": \"array\",\n  \"items\": {\n    \"description\": \"\
-        api_portal_fs_info\",\n    \"type\": \"object\",\n    \"properties\": {\n\
-        \      \"uuid\": {\n        \"description\": \"File System UUID\",\n     \
-        \   \"type\": \"string\"\n      },\n      \"usage_bytes\": {\n        \"description\"\
+        v1_portal_fs_info\",\n    \"type\": \"object\",\n    \"properties\": {\n \
+        \     \"uuid\": {\n        \"description\": \"File System UUID\",\n      \
+        \  \"type\": \"string\"\n      },\n      \"usage_bytes\": {\n        \"description\"\
         : \"Capacity used by portal data in bytes\",\n        \"type\": \"string\"\
         \n      }\n    }\n  }\n}"
     responses:

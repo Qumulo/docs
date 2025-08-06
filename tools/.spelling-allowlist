@@ -140,6 +140,7 @@ HTML
 HTML5
 HTTP
 HTTPS
+HTTPS
 Hostname
 Hostnames
 IAM
@@ -333,6 +334,7 @@ UIDs
 UPN
 UPNs
 URI
+URIs
 UTF
 UUID
 UUIDs
@@ -363,8 +365,10 @@ XXVD
 Xeon
 YAML
 acknowledgements
+acs
 allowlist
 analytics
+api
 argparse
 arp
 autocomplete
@@ -385,6 +389,7 @@ gp3
 hostname
 hostnames
 html
+https
 iLO
 iRMC
 idmapd
@@ -406,6 +411,7 @@ mc
 microarchitecture
 multistream
 multitenancy
+mysubdomain
 namespace
 namespace
 natively
@@ -437,6 +443,7 @@ retransferred
 reuploading
 routable
 rsyslog
+saml
 sanitization
 schemas
 snapshotted

@@ -9,8 +9,8 @@ methods:
       description: File or Directory ID
       required: true
     response_body:
-      schema: "{\n  \"description\": \"api_portal_eviction_result\",\n  \"type\":\
-        \ \"object\",\n  \"properties\": {\n    \"evicted_blocks\": {\n      \"description\"\
+      schema: "{\n  \"description\": \"v1_portal_eviction_result\",\n  \"type\": \"\
+        object\",\n  \"properties\": {\n    \"evicted_blocks\": {\n      \"description\"\
         : \"Number of 4096 byte blocks that have been freed. It can be less than requested\
         \ and even 0 if no eviction was possible. The cluster's reported free capacity\
         \ may take time to reflect the eviction.\",\n      \"type\": \"string\"\n\

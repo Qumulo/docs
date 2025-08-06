@@ -80,9 +80,10 @@ methods:
         ,\n          \"PRIVILEGE_PORTAL_GLOBAL_READ\",\n          \"PRIVILEGE_FS_FILE_LOCK_WRITE\"\
         ,\n          \"PRIVILEGE_LICENSE_READ\",\n          \"PRIVILEGE_CAPACITY_READ\"\
         ,\n          \"PRIVILEGE_CAPACITY_WRITE\",\n          \"PRIVILEGE_OBJECT_STORAGE_URIS_READ\"\
-        ,\n          \"PRIVILEGE_OBJECT_STORAGE_URIS_WRITE\"\n        ],\n       \
-        \ \"description\": \"The user's privileges:\\n * `PRIVILEGE_ACCESS_TOKENS_READ`\
-        \ - View any access tokens present in the system,\\n * `PRIVILEGE_ACCESS_TOKENS_WRITE`\
+        ,\n          \"PRIVILEGE_OBJECT_STORAGE_URIS_WRITE\",\n          \"PRIVILEGE_DISK_ERROR_WRITE\"\
+        ,\n          \"PRIVILEGE_DISK_ERROR_READ\"\n        ],\n        \"description\"\
+        : \"The user's privileges:\\n * `PRIVILEGE_ACCESS_TOKENS_READ` - View any\
+        \ access tokens present in the system,\\n * `PRIVILEGE_ACCESS_TOKENS_WRITE`\
         \ - Create or delete access tokens for any user in the system,\\n * `PRIVILEGE_AD_READ`\
         \ - Read Qumulo Active Directory settings,\\n * `PRIVILEGE_AD_USE` - Use Qumulo's\
         \ APIs for performing queries against Active Directory,\\n * `PRIVILEGE_AD_WRITE`\
@@ -96,9 +97,11 @@ methods:
         \ status of checksumming,\\n * `PRIVILEGE_CLUSTER_READ` - View nodes, disks,\
         \ protection status, and SSL certificate,\\n * `PRIVILEGE_CLUSTER_WRITE` -\
         \ Modify cluster settings and disk/identify LEDs,\\n * `PRIVILEGE_DEBUG` -\
-        \ Internal-Only: Perform debug operations on the cluster,\\n * `PRIVILEGE_DNS_READ`\
-        \ - Read DNS settings,\\n * `PRIVILEGE_DNS_USE` - Perform DNS lookups,\\n\
-        \ * `PRIVILEGE_DNS_WRITE` - Modify DNS settings,\\n * `PRIVILEGE_ENCRYPTION_READ`\
+        \ Internal-Only: Perform debug operations on the cluster,\\n * `PRIVILEGE_DISK_ERROR_READ`\
+        \ - Internal-Only: Read disk error threshold and status.,\\n * `PRIVILEGE_DISK_ERROR_WRITE`\
+        \ - Internal-Only: Modify disk error threshold and revive rejected disks.,\\\
+        n * `PRIVILEGE_DNS_READ` - Read DNS settings,\\n * `PRIVILEGE_DNS_USE` - Perform\
+        \ DNS lookups,\\n * `PRIVILEGE_DNS_WRITE` - Modify DNS settings,\\n * `PRIVILEGE_ENCRYPTION_READ`\
         \ - View the status of at-rest-encryption,\\n * `PRIVILEGE_ENCRYPTION_WRITE`\
         \ - Rotate encryption keys for clusters with at-rest-encryption,\\n * `PRIVILEGE_FILE_FULL_ACCESS`\
         \ - Provides full access to all files regardless of permissions,\\n * `PRIVILEGE_FILE_READ_ACCESS`\

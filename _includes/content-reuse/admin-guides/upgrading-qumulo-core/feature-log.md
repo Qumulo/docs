@@ -4,6 +4,13 @@ For information about upgrade types for each release, see <a href='mode-referenc
 
 <style>div#toc{height:200px;overflow:auto;}</style>
 
+## Qumulo Core 7.5.5
+{{page.varDownloadsRelnotes}}
+* Added the ability to specify a comma-separated list of bind URIs when configuring LDAP
+* Changed the error message when a user attempts to write to a read-only S3 bucket on a spoke portal
+* Resolved an issue with unexpected SAS controller behavior on hardware nodes
+* Added the ability for CNQ clusters to use the REST API and `qq` CLI to modify cloud monitoring settings
+
 ## Qumulo Core 7.5.4.1
 {{page.varDownloadsRelnotes}}
 {{site.data.alerts.important}}

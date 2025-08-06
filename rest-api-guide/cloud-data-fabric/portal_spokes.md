@@ -13,7 +13,7 @@ methods:
       description: Return value on success
     preview: false
     request_body:
-      schema: "{\n  \"description\": \"api_portal_create_request\",\n  \"type\": \"\
+      schema: "{\n  \"description\": \"v1_portal_create_request\",\n  \"type\": \"\
         object\",\n  \"properties\": {\n    \"spoke_root\": {\n      \"description\"\
         : \"Full path to the spoke portal root directory\",\n      \"type\": \"string\"\
         \n    },\n    \"is_writable_spoke\": {\n      \"description\": \"Whether the\
@@ -24,13 +24,13 @@ methods:
       on the current cluster.
     parameters: []
     response_body:
-      schema: "{\n  \"description\": \"api_portal_spoke_relationships\",\n  \"type\"\
-        : \"object\",\n  \"properties\": {\n    \"entries\": {\n      \"type\": \"\
-        array\",\n      \"items\": {\n        \"description\": \"List of spoke portals\"\
-        ,\n        \"type\": \"object\",\n        \"properties\": {\n          \"\
-        id\": {\n            \"description\": \"Spoke portal ID\",\n            \"\
-        type\": \"number\"\n          },\n          \"spoke_type\": {\n          \
-        \  \"type\": \"string\",\n            \"enum\": [\n              \"SPOKE_READ_ONLY\"\
+      schema: "{\n  \"description\": \"v1_portal_spokes\",\n  \"type\": \"object\"\
+        ,\n  \"properties\": {\n    \"entries\": {\n      \"type\": \"array\",\n \
+        \     \"items\": {\n        \"description\": \"List of spoke portals\",\n\
+        \        \"type\": \"object\",\n        \"properties\": {\n          \"id\"\
+        : {\n            \"description\": \"Spoke portal ID\",\n            \"type\"\
+        : \"number\"\n          },\n          \"spoke_type\": {\n            \"type\"\
+        : \"string\",\n            \"enum\": [\n              \"SPOKE_READ_ONLY\"\
         ,\n              \"SPOKE_READ_WRITE\"\n            ],\n            \"description\"\
         : \"Type of the spoke portal:\\n * `SPOKE_READ_ONLY` - SPOKE_READ_ONLY,\\\
         n * `SPOKE_READ_WRITE` - SPOKE_READ_WRITE\"\n          },\n          \"state\"\

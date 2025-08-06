@@ -2,7 +2,8 @@
 category: /Files
 methods:
   get:
-    summary: Return aggregated data for a directory (like capacity, IOPS, etc.)
+    summary: Return aggregated data for a directory (used capacity, number of files,
+      and so on)
     parameters:
     - name: ref
       description: The file ID or the absolute path to the file system object. File

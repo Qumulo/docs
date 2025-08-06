@@ -9,20 +9,20 @@ methods:
       description: Portal ID
       required: true
     response_body:
-      schema: "{\n  \"description\": \"api_portal_hub_relationship\",\n  \"type\"\
-        : \"object\",\n  \"properties\": {\n    \"id\": {\n      \"description\":\
-        \ \"Hub portal ID\",\n      \"type\": \"number\"\n    },\n    \"spoke_type\"\
-        : {\n      \"type\": \"string\",\n      \"enum\": [\n        \"SPOKE_READ_ONLY\"\
-        ,\n        \"SPOKE_READ_WRITE\"\n      ],\n      \"description\": \"Type of\
-        \ the spoke portal:\\n * `SPOKE_READ_ONLY` - SPOKE_READ_ONLY,\\n * `SPOKE_READ_WRITE`\
-        \ - SPOKE_READ_WRITE\"\n    },\n    \"state\": {\n      \"type\": \"string\"\
-        ,\n      \"enum\": [\n        \"UNLINKED\",\n        \"PENDING\",\n      \
-        \  \"AUTHORIZED\",\n        \"DELETING\"\n      ],\n      \"description\"\
-        : \"State of the portal:\\n * `AUTHORIZED` - PORTAL_AUTHORIZED,\\n * `DELETING`\
-        \ - PORTAL_DELETING,\\n * `PENDING` - PORTAL_PENDING,\\n * `UNLINKED` - PORTAL_UNLINKED\"\
-        \n    },\n    \"status\": {\n      \"type\": \"string\",\n      \"enum\":\
-        \ [\n        \"INACTIVE\",\n        \"ACTIVE\",\n        \"DEGRADED\"\n  \
-        \    ],\n      \"description\": \"Status of the portal:\\n * `ACTIVE` - PORTAL_ACTIVE,\\\
+      schema: "{\n  \"description\": \"v1_portal_hub\",\n  \"type\": \"object\",\n\
+        \  \"properties\": {\n    \"id\": {\n      \"description\": \"Hub portal ID\"\
+        ,\n      \"type\": \"number\"\n    },\n    \"spoke_type\": {\n      \"type\"\
+        : \"string\",\n      \"enum\": [\n        \"SPOKE_READ_ONLY\",\n        \"\
+        SPOKE_READ_WRITE\"\n      ],\n      \"description\": \"Type of the spoke portal:\\\
+        n * `SPOKE_READ_ONLY` - SPOKE_READ_ONLY,\\n * `SPOKE_READ_WRITE` - SPOKE_READ_WRITE\"\
+        \n    },\n    \"state\": {\n      \"type\": \"string\",\n      \"enum\": [\n\
+        \        \"UNLINKED\",\n        \"PENDING\",\n        \"AUTHORIZED\",\n  \
+        \      \"DELETING\"\n      ],\n      \"description\": \"State of the portal:\\\
+        n * `AUTHORIZED` - PORTAL_AUTHORIZED,\\n * `DELETING` - PORTAL_DELETING,\\\
+        n * `PENDING` - PORTAL_PENDING,\\n * `UNLINKED` - PORTAL_UNLINKED\"\n    },\n\
+        \    \"status\": {\n      \"type\": \"string\",\n      \"enum\": [\n     \
+        \   \"INACTIVE\",\n        \"ACTIVE\",\n        \"DEGRADED\"\n      ],\n \
+        \     \"description\": \"Status of the portal:\\n * `ACTIVE` - PORTAL_ACTIVE,\\\
         n * `DEGRADED` - PORTAL_DEGRADED,\\n * `INACTIVE` - PORTAL_INACTIVE\"\n  \
         \  },\n    \"root\": {\n      \"description\": \"Local hub portal root directory\
         \ file ID\",\n      \"type\": \"string\"\n    },\n    \"root_path\": {\n \
@@ -41,7 +41,7 @@ methods:
       description: Return value on success
     preview: false
     request_body:
-      schema: "{\n  \"description\": \"api_portal_authorize_request\",\n  \"type\"\
+      schema: "{\n  \"description\": \"v1_portal_authorize_request\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"spoke_address\": {\n      \"description\"\
         : \"IP address of a node in the cluster that proposed the portal relationship\"\
         ,\n      \"type\": \"string\"\n    },\n    \"spoke_port\": {\n      \"description\"\

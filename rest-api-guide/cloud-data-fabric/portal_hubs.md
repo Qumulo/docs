@@ -6,12 +6,12 @@ methods:
       the current cluster.
     parameters: []
     response_body:
-      schema: "{\n  \"description\": \"api_portal_hub_relationships\",\n  \"type\"\
-        : \"object\",\n  \"properties\": {\n    \"entries\": {\n      \"type\": \"\
-        array\",\n      \"items\": {\n        \"description\": \"List of hub portals\"\
-        ,\n        \"type\": \"object\",\n        \"properties\": {\n          \"\
-        id\": {\n            \"description\": \"Hub portal ID\",\n            \"type\"\
-        : \"number\"\n          },\n          \"spoke_type\": {\n            \"type\"\
+      schema: "{\n  \"description\": \"v1_portal_hubs\",\n  \"type\": \"object\",\n\
+        \  \"properties\": {\n    \"entries\": {\n      \"type\": \"array\",\n   \
+        \   \"items\": {\n        \"description\": \"List of hub portals\",\n    \
+        \    \"type\": \"object\",\n        \"properties\": {\n          \"id\": {\n\
+        \            \"description\": \"Hub portal ID\",\n            \"type\": \"\
+        number\"\n          },\n          \"spoke_type\": {\n            \"type\"\
         : \"string\",\n            \"enum\": [\n              \"SPOKE_READ_ONLY\"\
         ,\n              \"SPOKE_READ_WRITE\"\n            ],\n            \"description\"\
         : \"Type of the spoke portal:\\n * `SPOKE_READ_ONLY` - SPOKE_READ_ONLY,\\\
