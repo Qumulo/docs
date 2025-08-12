@@ -1,33 +1,5 @@
 #!/bin/bash
 
-
-check_path() {
-    # Check whether current PATH contains an invalid /home/<username> directory
-    local current_user
-    current_user="$(basename "$HOME")"
-    declare -A _seen_invalid_users=()
-    local _path_elems
-    IFS=':' read -r -a _path_elems <<< "$PATH"
-    for _p in "${_path_elems[@]}"; do
-        case "$_p" in
-            /home/*)
-                _rest="${_p#/home/}"           # strip /home/
-                _u="${_rest%%/*}"              # username part
-                if [[ -n "$_u" && "$_u" != "$current_user" ]]; then
-                    _seen_invalid_users["$_u"]=1
-                fi
-                ;;
-        esac
-    done
-    if (( ${#_seen_invalid_users[@]} )); then
-        for _u in "${!_seen_invalid_users[@]}"; do
-            echo "Invalid path \`/home/${_u}\` found. Correct your PATH and try again."
-        done
-        echo "$PATH"
-        exit 1
-    fi
-}
-
 check_environment() {
     # If ~/src is missing, offer to bootstrap the dev environment.
     if [[ ! -d "$HOME/src" ]]; then
@@ -670,7 +642,6 @@ determine_lowest_replication_version() {
     ~/src/release_management/determine_lowest_replication_version.py
 }
 
-#check_path
 check_environment
 check_symlinks
 global_docs_menu
