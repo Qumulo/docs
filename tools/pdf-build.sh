@@ -2,9 +2,40 @@
 
 # Check if Prince XML is installed
 if ! command -v prince &> /dev/null; then
-    echo "To generate PDF files, you must download Prince XML 14.4 for your OS (https://www.princexml.com/download/14/)"
-    echo "and then install it (https://www.princexml.com/doc/installing/)."
-    exit 1
+    read -rp "Prince XML 14 not installed. Install it? (y/n): " install_prince
+    if [[ "$install_prince" == "y" ]]; then
+        wget https://www.princexml.com/download/prince_14.4-1_ubuntu22.04_amd64.deb
+        sudo apt install -y gdebi-core
+
+        # On Ubuntu 24.04, handle libtiff5 and patch gdebi
+        if lsb_release -a 2>/dev/null | grep -q "24\.04"; then
+            wget http://security.ubuntu.com/ubuntu/pool/main/t/tiff/libtiff5_4.3.0-6ubuntu0.10_amd64.deb
+            if sudo apt install -y ./libtiff5_4.3.0-6ubuntu0.10_amd64.deb; then
+                rm libtiff5_4.3.0-6ubuntu0.10_amd64.deb
+            fi
+            sudo sed -i -E \
+              's|^([[:space:]]*)c = findall\("[^"]*", msg\)\[0\]\.lower\(\)|\1c = findall(r"\\[(\\S)/\\S\\]", msg)[0].lower()|' \
+              /usr/bin/gdebi
+        fi
+
+        if sudo gdebi prince_14.4-1_ubuntu22.04_amd64.deb; then
+            rm prince_14.4-1_ubuntu22.04_amd64.deb
+        fi
+
+        sudo mkdir -p /usr/lib/prince
+        sudo tee /usr/lib/prince/license.dat >/dev/null <<'EOF'
+<license id="1003074">
+    <name>Desktop License</name>
+    <vendor>YesLogic</vendor>
+    <product>Prince</product>
+    <version>14</version>
+    <end-user>Qumulo</end-user>
+    <date>2022-08-03</date>
+    <signature>ASK LUCIA FOR THIS LINE</signature>
+    <option id="upgrades">20230803</option>
+</license>
+EOF
+    fi
 fi
 
 # Exit when you hit an error
