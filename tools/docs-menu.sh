@@ -469,7 +469,7 @@ build_serve_docs_locally_python() {
 # Build the documentation and serve it locally on port 4000 by using Jekyll LiveReload
 build_serve_docs_locally_jekyll() {
     start_in_docs_dir
-    echo "Building documentation and serving it locally on \e[31m$(hostname):4000\e[0m by using Jekyll LiveReload..."
+    echo -e "Building documentation and serving it locally on \e[31m$(hostname):4000\e[0m by using Jekyll LiveReload..."
     ignore_warnings
     docker run -ti --rm --user $(id -u):$(id -g) --name docs-container-serve -v $(pwd):/src:rw -P --network host docs-builder serve
 }
