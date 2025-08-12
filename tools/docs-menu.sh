@@ -1,10 +1,58 @@
 #!/bin/bash
 
+
+check_path() {
+    # Check whether current PATH contains an invalid /home/<username> directory
+    local current_user
+    current_user="$(basename "$HOME")"
+    declare -A _seen_invalid_users=()
+    local _path_elems
+    IFS=':' read -r -a _path_elems <<< "$PATH"
+    for _p in "${_path_elems[@]}"; do
+        case "$_p" in
+            /home/*)
+                _rest="${_p#/home/}"           # strip /home/
+                _u="${_rest%%/*}"              # username part
+                if [[ -n "$_u" && "$_u" != "$current_user" ]]; then
+                    _seen_invalid_users["$_u"]=1
+                fi
+                ;;
+        esac
+    done
+    if (( ${#_seen_invalid_users[@]} )); then
+        for _u in "${!_seen_invalid_users[@]}"; do
+            echo "Invalid path \`/home/${_u}\` found. Correct your PATH and try again."
+        done
+        echo "$PATH"
+        exit 1
+    fi
+}
+
 check_environment() {
-    if ! ~/src/environment > /tmp/env.out 2>&1; then
+    # If ~/src is missing, offer to bootstrap the dev environment.
+    if [[ ! -d "$HOME/src" ]]; then
+        read -rp "~/src does not exist. Set up development environment? (y/n): " setup_env
+        if [[ "$setup_env" == "y" ]]; then
+            read -rp "Enter your full name: " full_name
+            read -rp "Enter your Qumulo login (email): " qumulo_email
+            echo "Setting up development environment..."
+            if ! curl -fsSL https://gravyweb.eng.qumulo.com/home/onboarding/install_source.sh \
+                 | bash -s -- "$full_name" "$qumulo_email"; then
+                echo "Bootstrap failed. Exiting..."
+                exit 1
+            fi
+        elif [[ "$setup_env" == "n" ]]; then
+            echo "Can't continue without ~/src. Exiting..."
+            exit 1
+        fi
+    fi
+
+    # Remediate the toolchain when necessary
+    if ! "$HOME/src/environment" > /tmp/env.out 2>&1; then
         echo "Detected an error while running environment script. Remediating toolchain..."
-        cd ~/src
-        hg up default && hg fetch && ./prebuild
+        if [[ -d "$HOME/src" ]]; then
+            cd "$HOME/src" && hg up default && hg fetch && ./prebuild
+        fi
     else
         eval "$(cat /tmp/env.out)"
     fi
@@ -622,6 +670,7 @@ determine_lowest_replication_version() {
     ~/src/release_management/determine_lowest_replication_version.py
 }
 
+#check_path
 check_environment
 check_symlinks
 global_docs_menu
