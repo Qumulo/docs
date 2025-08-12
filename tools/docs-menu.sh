@@ -49,9 +49,9 @@ check_environment() {
 
     # Remediate the toolchain when necessary
     if ! "$HOME/src/environment" > /tmp/env.out 2>&1; then
-        echo "Detected an error while running environment script. Remediating toolchain..."
-        if [[ -d "$HOME/src" ]]; then
-            cd "$HOME/src" && hg up default && hg fetch && ./prebuild
+        if [[ -d "~/src" ]]; then
+            echo "Detected an error while running environment script. Remediating toolchain..."
+            cd "~/src" && hg up default && hg fetch && ./prebuild
         fi
     else
         eval "$(cat /tmp/env.out)"
