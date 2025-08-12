@@ -49,9 +49,9 @@ check_environment() {
 
     # Remediate the toolchain when necessary
     if ! "$HOME/src/environment" > /tmp/env.out 2>&1; then
-        if [[ -d "~/src" ]]; then
+        if [[ -d "$HOME/src" ]]; then
             echo "Detected an error while running environment script. Remediating toolchain..."
-            cd "~/src" && hg up default && hg fetch && ./prebuild
+            cd "$HOME/src" && hg up default && hg fetch && ./prebuild
         fi
     else
         eval "$(cat /tmp/env.out)"
@@ -624,7 +624,7 @@ find_unused_scripts() {
     start_in_docs_dir
  
     # Navigate to the js/ directory relative to the current directory
-    cd "$(dirname "$0")/js" || { echo "js directory not found"; return 1; }
+    cd js || { echo "js directory not found"; return 1; }
 
     # Get the list of .js files in the js/ directory
     js_files=$(find . -name "*.js")
