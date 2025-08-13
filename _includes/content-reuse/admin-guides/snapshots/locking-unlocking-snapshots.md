@@ -28,7 +28,7 @@ In Qumulo Core 6.1.0.3 (and higher), you can configure a snapshot policy to lock
  
 1. [Generate a private key](../cryptographic-key-management/generating-storing-ecdsa-keys.html#generating-an-ecdsa-private-key).
 
-1. [Associate your lock key with a snapshot policy by using the Web UI](managing-snapshots.html#to-associate-a-lock-key-with-a-snapshot-policy).
+1. [Associate your lock key with a snapshot policy by using the Qumulo Core Web UI](managing-snapshots.html#to-associate-a-lock-key-with-a-snapshot-policy).
 
 ### Locking a Snapshot by Using a Private Key on a Target Cluster Following Replication
 For clusters in a replication relationship, you can lock a snapshot on the destination cluster after the replication process finishes.

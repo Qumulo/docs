@@ -97,7 +97,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
   * Removed previous restrictions from the placement of replication targets
   * Enabled compression for data transferred between clusters in a portal relationship
   * Made significant performance improvements for small-I/O workloads on the hub portal and for locally cached files on the spoke portal
-* Added Web UI notifications about SSD endurance levels and a corresponding REST API endpoint
+* Added Qumulo Core Web UI notifications about SSD endurance levels and a corresponding REST API endpoint
 * Resolved an issue that previously affected read leases in the hub portal root directory
 
 ## Qumulo Core 7.4.3
@@ -131,7 +131,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
 {{site.data.alerts.important}}
 <ul>
   <li>This release resolves an issue where previously Qumulo hub portal host clusters that communicated with read-write spoke portals crashed if the portal contained files with very large file IDs.</li>
-  <li>This release resolves an issue that we identified in Qumulo Core releases 7.3.1.2 to 7.4.0.3, where making changes to networking configuration by using the <strong>API Tools</strong> page in the Web UI or by using the <code>qq</code> CLI caused the default gateway to not populate.</li>
+  <li>This release resolves an issue that we identified in Qumulo Core releases 7.3.1.2 to 7.4.0.3, where making changes to networking configuration by using the <strong>API Tools</strong> page in the Qumulo Core Web UI or by using the <code>qq</code> CLI caused the default gateway to not populate.</li>
   <li>{{site.gns.nameChange}}</li>
   <li>To enable upgrades to this version of Qumulo Core, you must delete any existing spoke portals or hub portals from your cluster and then wait for any related tree-delete operations to complete before beginning the upgrade process.</li>
   <li>To enable the QFSD API to distinguish between cluster-local and spoke-cached data, from this release of Qumulo Core onward, 64-bit integers can no longer represent QFSD API file identifiers. API integrations must treat them as variable-length strings, in accordance with the OpenMetrics API schema. Although this change affects all REST API endpoints the Qumulo REST API continues to accept old-style identifiers for backwards compatibility.</li>
@@ -150,7 +150,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
 {{page.varNoPublicChanges}}
 
 * Added support for latest Western Digital Ultrastar DC SN640 SSD firmware
-* Improved UID and GID sorting in the Web UI
+* Improved UID and GID sorting in the Qumulo Core Web UI
 * Resolved an issue with `PutObject` and `CopyObject` S3 API actions
 
 {{site.data.alerts.important}}

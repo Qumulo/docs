@@ -12,7 +12,7 @@ For detailed instructions, see the documentation from your hardware vendor.
 ## Locating a Failed Drive
 Gold-Tier hardware doesn't use predefined drive mapping or panel LEDs to indicate drive health.
 
-### To Locate a Failed Drive by using the Web UI
+### To Locate a Failed Drive by using the Qumulo Core Web UI
 
 1. Log in to Qumulo Core.
 
