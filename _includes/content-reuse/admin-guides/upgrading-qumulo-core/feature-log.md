@@ -6,6 +6,8 @@ For information about upgrade types for each release, see <a href='mode-referenc
 
 ## Qumulo Core 7.5.5.1
 {{page.varDownloadsRelnotes}}
+{% include important.html content="This release resolves an issue identified in Qumulo Core 7.5.4 where, under certain conditions, a node could become unavailable during an update." %}
+
 * Added the ability to specify a comma-separated list of bind URIs when configuring LDAP
 * Changed the error message when a user attempts to write to a read-only S3 bucket on a spoke portal
 * Resolved an issue with unexpected SAS controller behavior on hardware nodes
@@ -15,6 +17,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
 {{page.varDownloadsRelnotes}}
 {{site.data.alerts.important}}
 <ul>
+  <li>This release resolves an issue identified in Qumulo Core 7.5.4 where, under certain conditions, a node could become unavailable during an update.</li>
   <li>This release resolves an issue where File Explorer becomes unresponsive and then displays the <strong>Unable to create shortcut</strong> error when a user attempts to create a shortcut inside an SMB share on a Qumulo cluster.</li>
   <li>This release resolves unexpected SAS controller behavior on hardware nodes, where previously hot-plugging drives could cause cluster instability.</li>
 </ul>
