@@ -4,6 +4,6 @@ summary: "This section explains how to download and get started with the <code>q
 permalink: /cloud-native-aws-administrator-guide/qq-cli/getting-started.html
 redirect_from:
   - /aws-administrator-guide/qq-cli/getting-started.html
-sidebar: azure-aws_administrator_guide_sidebar
+sidebar: cloud_native_aws_administrator_guide_sidebar
 include_content: content-reuse/admin-guides/qq-cli/getting-started.md
 ---
