@@ -4,6 +4,6 @@ summary: "This section explains how to configure a single namespace on your Qumu
 permalink: /azure-native-administrator-guide/network-configuration/configuring-round-robin-dns-windows-server.html
 redirect_from:
   - /azure-administrator-guide/network-configuration/configuring-round-robin-dns-windows-server.html
-sidebar: azure_administrator_guide_sidebar
+sidebar: azure_native_administrator_guide_sidebar
 include_content: content-reuse/admin-guides/network-configuration/configuring-round-robin-dns-windows-server.md
 ---
