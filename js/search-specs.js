@@ -2,7 +2,7 @@
 let searchWidget = createSearch(
   "zqt_8wQ3QoFUYf53ymz-8ceKXsxAnFNwEJsobnvK6A", // api key
   4077139778,                                   // customer id
-  [2,4],                                        // array of corpus ids
+  ['Qumulo_Documentation_Portal_2', 'Qumulo_Care_4'],                                        // array of corpus keys
                                                 // 2 == Docs Portal, 4 == Qumulo Care
   successFn,                                    // success function
   errorFn,                                      // error function

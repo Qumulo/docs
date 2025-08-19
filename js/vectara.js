@@ -56,7 +56,7 @@ function hideOverlay() {
 function createSearch(
   apikey,
   customerId,
-  corpusIds,
+  corpusKeys,
   successFn,
   errorFn,
   icon,
@@ -114,84 +114,86 @@ function createSearch(
    * function can be called from anywhere like vectaraSearch.submitFn(query)
    * @param {string} query results will come on behalf of query string
    */
-  function submitFn(query, startFrom = offset) {
-console.log("submitFn called with query:", query);
+
+function submitFn(query, startFrom = offset) {
+    console.log("submitFn called with query:", query);
     if (query !== "") {
-      queryText = query;
-      pulseLogo.classList.add("vectara__search_loading");
-      showOverlay();
-      searchInput.value = query;
-      let corpusKeys = [];
-      corpusIds.forEach((v) =>
-        corpusKeys.push({ customer_id: customerId, corpus_id: v })
-      );
-      let startTime = new Date().getTime();
-      fetch("https://api.vectara.io/v1/query", {
-        method: "post",
-        body: JSON.stringify({
-          query: [
-            {
-              query: query, // text to make search
-              num_results: pageSize, // results per page
-              corpus_key: corpusKeys,
-              start: startFrom, // offset
-              contextConfig: {sentencesBefore, sentencesAfter, startTag: "<strong>", endTag: "</strong>"},
-              rerankingConfig: {
-                rerankerId: 272725719
-                //mmrConfig: {
-                //  diversityBias: 0.4
-                //}
-              },
-              summary: [{
-                summarizerPromptName: "vectara-summary-table-md-query-ext-jan-2025-gpt-4-turbo",
-                maxSummarizedResults: maxSummarizedResults,
-                responseLang: "eng"
-              }]
+        queryText = query;
+        pulseLogo.classList.add("vectara__search_loading");
+        showOverlay();
+        searchInput.value = query;
+
+        const corpusKeyObjArr = [];
+        corpusKeys.forEach(element => {
+            corpusKeyObject = {"corpus_key": element, "lexical_interpolation": 0.1};
+            corpusKeyObjArr.push(corpusKeyObject);
+        });
+
+        let startTime = new Date().getTime();
+        fetch("https://api.vectara.io/v2/query", {
+            method: "post",
+            body: JSON.stringify({
+                "query": query, // text to run the search
+                "search": {
+                    "offset": startFrom, // for pagination
+                    "limit": pageSize,   // for pagination
+                    "context_configuration": {
+                        "sentences_before": sentencesBefore,
+                        "sentences_after": sentencesAfter,
+                        "start_tag": "<strong>",
+                        "end_tag": "</strong>"
+                    },
+                    "corpora": corpusKeyObjArr,
+                    "reranker": {
+                        "type": "customer_reranker",
+                        "reranker_name": "Rerank_Multilingual_v1"
+                    }
+                },
+                "generation": {
+                    "generation_preset_name": "vectara-summary-table-md-query-ext-jan-2025-gpt-4o",
+                    "response_language": "eng",
+                    "max_used_search_results": maxSummarizedResults
+                }
+            }),
+            headers: {
+                "x-api-key": apikey,
+                "Content-Type": "application/json",
             },
-          ],
-        }),
-        headers: {
-          "customer-id": customerId,
-          "x-api-key": apikey,
-          "Content-Type": "application/json",
-        },
-      })
+        })
         .then(async function (response) {
-          pulseLogo.classList.remove("vectara__search_loading");
-          const data = await response.json(); // parse promise
-          length = data.responseSet[0]?.response.length || 0; // length of response
-          if (data.responseSet[0] && data.responseSet[0].status[0]) {
-            throw data;
-          }
-          let endTime = new Date().getTime();
-          console.log(`fetch elapsedTime: ${ ( endTime - startTime ) / 1000 }`);
-          return data;
+            pulseLogo.classList.remove("vectara__search_loading");
+            const data = await response.json(); // parse promise
+            console.log(`response is ${JSON.stringify(data)}`);
+            if (!data.summary || !data.search_results || data.search_results.length < 1) {
+                throw data;
+            }
+            let endTime = new Date().getTime();
+            console.log(`fetch elapsedTime: ${(endTime - startTime) / 1000}`);
+            return data;
         })
         .then((results) => {
             return successFn(results, query);
         })
         .catch(function (error) {
-          errorFn(error);
-          pulseLogo.classList.remove("vectara__search_loading");
+            errorFn(error);
+            pulseLogo.classList.remove("vectara__search_loading");
         });
     }
-  }
-
-  searchDiv.search = function (query, startFrom = offset) {
-    submitFn(query, startFrom);
-  };
-  searchDiv.resultsPerPage = pageSize;
-  // sends query text and length to the callback function
-  searchDiv.generateMeta = function (callback) {
-    callback({
-      queryText: queryText,
-      length: length,
-    });
-  };
-
-  return searchDiv;
 }
 
+searchDiv.search = function (query, startFrom = offset) {
+    submitFn(query, startFrom);
+};
+searchDiv.resultsPerPage = pageSize;
+// sends query text and length to the callback function
+searchDiv.generateMeta = function (callback) {
+    callback({
+        queryText: queryText,
+        length: length,
+    });
+};
+
+return searchDiv;
 
 
 //////////////////////////////////////////////////////////
@@ -204,22 +206,23 @@ function renderResults(results, containerId, metadataFieldsToShow = []) {
 
     currSelectedVectaraReference = null;
 
-    if (results.responseSet[0].summary && results.responseSet[0].summary[0].text) {
+    if (results.summary && results.search_results && results.search_results.length > 0) {        
         txt += "<h2 class=\"vuiTitle vuiTitle--xs\" style=\"display: flex; align-items: center;\"><span class=\"emoji\">🤖</span>&nbsp;<strong>AI Summary</strong></h2>";
-        summary = linkCitations(results.responseSet[0].summary[0].text);
+        summary = linkCitations(results.summary);
         txt += "<div class=\"vuiText vuiText--m\">" + summary + "</div>";
         txt += "<div class=\"vuiSpacer vuiSpacer--m\"></div>";
         txt += "<h2 class=\"vuiTitle vuiTitle--xs\" style=\"display: flex; align-items: center;\"><span class=\"emoji\">📄</span>&nbsp;<strong>Search Results</strong></h2>";
     }
 
-    results.responseSet[0].response.forEach((res, index) => {
+    results.search_results.forEach((res, index) => {
         txt += "<div class=\"vuiSearchResult fs-mask\">";
 
         txt += "<div id=\"searchResultCitation-" + (index+1) + "\" class=\"vuiSearchResultPosition\">" + (index+1) + "</div>";
 
-        docMetadata = results.responseSet[0].document[res.documentIndex].metadata;
-        titleField = docMetadata.find((field) => field.name === "title");
-        urlField = docMetadata.find((field) => field.name === "url");
+        docMetadata = res.document_metadata;
+        partMetadata = res.part_metadata;
+        titleField = {"value": docMetadata.title};
+        urlField = {"value": docMetadata.url};
         if (titleField) {
             snippetStart = res.text.indexOf("<strong>") + 8;
             snippetEnd = res.text.indexOf("</strong>");
@@ -232,11 +235,11 @@ function renderResults(results, containerId, metadataFieldsToShow = []) {
                 txt += "" + titleField.value + "";
             }
         } else {
-            txt += "<h3>" + results.responseSet[0].document[res.documentIndex].id + "</h3>";
+            txt += "<h3>" + docMetadata.title + "</h3>";
         }
 
         txt += "<div class=\"vuiText vuiText--s\">";
-        txt += res.text;
+        txt += res.text; 
         txt += "<div class=\"vuiSpacer vuiSpacer--xs\"></div>";
 
         //show requested metadata fields as badges
@@ -246,16 +249,16 @@ function renderResults(results, containerId, metadataFieldsToShow = []) {
             if (!fieldName.startsWith("part.")) {
                 //check for document level metadata if the name starts with "doc." or does not have the part. prefix
                 fieldNameSuffix = fieldName.substring(fieldName.indexOf("doc.") + 4);
-                foundField = docMetadata.find((field) => field.name === fieldNameSuffix);
-                if (foundField) {
-                    txt += "<div class=\"vuiBadge--success vuiBadge\">" + fieldNameSuffix + ": " + foundField.value + "</div>";
+                //foundField = docMetadata.find((field) => field.name === fieldNameSuffix);
+                if (fieldNameSuffix in docMetadata) {
+                    txt += "<div class=\"vuiBadge--success vuiBadge\">" + fieldNameSuffix + ": " + docMetadata[fieldNameSuffix] + "</div>";
                 }
             } else {
                 //check for part level metadata
                 fieldNameSuffix = fieldName.substring(fieldName.indexOf("part.") + 5);
-                foundField = res.metadata.find((field) => field.name === fieldNameSuffix);
-                if (foundField) {
-                    txt += "<div class=\"vuiBadge--success vuiBadge\">" + fieldNameSuffix + ": " + foundField.value + "</div>";
+                //foundField = res.metadata.find((field) => field.name === fieldNameSuffix);
+                if (fieldNameSuffix in partMetadata) {
+                    txt += "<div class=\"vuiBadge--success vuiBadge\">" + fieldNameSuffix + ": " + partMetadata[fieldNameSuffix] + "</div>";
                 }
             }
         });
