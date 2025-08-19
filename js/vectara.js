@@ -194,7 +194,7 @@ searchDiv.generateMeta = function (callback) {
 };
 
 return searchDiv;
-
+}
 
 //////////////////////////////////////////////////////////
 // The section below handles rendering search results and errors in the containing page
