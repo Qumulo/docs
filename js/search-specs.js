@@ -43,19 +43,17 @@ function successFn(results, query) {
   // Add prefixes to Docs Portal guides, Qumulo Blog, and Qumulo Care
   const qqCLIlinks = document.querySelectorAll(".vuiSearchResult a");
   qqCLIlinks.forEach(function(link) {
-    if (link.href.includes("/cloud-native-aws-administrator-guide/")) {
-      link.innerHTML = `CNQ on AWS: ${link.textContent}`;
-    } else if (link.href.includes("/aws-administrator-guide/")) {
-      // Old-style links
+    if (link.href.includes("/aws-administrator-guide/")) {
+      link.innerHTML = `CNQ on AWS: ${link.textContent}`; // Old-style links
+    } else if (link.href.includes("/cloud-native-aws-administrator-guide/")) {
       link.innerHTML = `CNQ on AWS: ${link.textContent}`;
     } else if (link.href.includes("/cloud-native-azure-administrator-guide/")) {
       link.innerHTML = `CNQ on Azure: ${link.textContent}`;
     } else if (link.href.includes("/cloud-native-gcp-administrator-guide/")) {
       link.innerHTML = `CNQ on GCP: ${link.textContent}`;
-    } else if (link.href.includes("/azure-native-administrator-guide/")) {
-      link.innerHTML = `Azure Native: ${link.textContent}`;
     } else if (link.href.includes("/azure-administrator-guide/")) {
-      // Old-style links
+      link.innerHTML = `Azure Native: ${link.textContent}`; // Old-style links
+    } else if (link.href.includes("/azure-native-administrator-guide/")) {
       link.innerHTML = `Azure Native: ${link.textContent}`;
     } else if (link.href.includes("/administrator-guide/")) {
       link.innerHTML = `On-Prem: ${link.textContent}`;
@@ -106,9 +104,9 @@ function successFn(results, query) {
 
   // Encourage users to enter more complex queries.
   const insufficientInfo = /I do not have enough information to answer this question./;
-  const apologyTextElements = document.querySelectorAll(".vuiText--m");
-  apologyTextElements.forEach(function(element) {
-    if (apologyText.exec(element.textContent)) {
+  const insufficientInfoElements = document.querySelectorAll(".vuiText--m");
+  infoTextElements.forEach(function(element) {
+    if (insufficientInfo.exec(element.textContent)) {
       element.textContent = `Here are some search results about ${query}. To help me write a better summary, enter more search terms or ask me a question!`;
     }
   });
