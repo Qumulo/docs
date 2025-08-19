@@ -105,7 +105,7 @@ function successFn(results, query) {
   // Encourage users to enter more complex queries.
   const insufficientInfo = /I do not have enough information to answer this question./;
   const insufficientInfoElements = document.querySelectorAll(".vuiText--m");
-  infoTextElements.forEach(function(element) {
+  insufficientInfoElements.forEach(function(element) {
     if (insufficientInfo.exec(element.textContent)) {
       element.textContent = `Here are some search results about ${query}. To help me write a better summary, enter more search terms or ask me a question!`;
     }
