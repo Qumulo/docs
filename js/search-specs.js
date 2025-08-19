@@ -1,19 +1,18 @@
 // Configure the search widget
 let searchWidget = createSearch(
-  "zqt_8wQ3QoFUYf53ymz-8ceKXsxAnFNwEJsobnvK6A", // api key
-  4077139778,                                   // customer id
-  ['Qumulo_Documentation_Portal_2', 'Qumulo_Care_4'],                                        // array of corpus keys
-                                                // 2 == Docs Portal, 4 == Qumulo Care
-  successFn,                                    // success function
-  errorFn,                                      // error function
-  "/images/magnifying-glass.png",               // custom icon for the search box
-  25,                                           // number of results to return
-  5,                                            // max number of results to summarize
-  1,                                            // number of sentences to show before each matching snippet
-  1,                                            // number of sentences to show after each matching snippet
-  "What would you like to know?",               // search placeholder
-  false                                         // default focus
-  //0                                           // offset for paging
+  "zqt_8wQ3QoFUYf53ymz-8ceKXsxAnFNwEJsobnvK6A", 	// api key
+  4077139778,                                   	// customer id
+  ['Qumulo_Documentation_Portal_2', 'Qumulo_Care_4'],	// array of corpus keys
+  successFn,                                    	// success function
+  errorFn,                                      	// error function
+  "/images/magnifying-glass.png",               	// custom icon for the search box
+  25,                                           	// number of results to return
+  5,                                            	// max number of results to summarize
+  1,                                            	// number of sentences to show before each matching snippet
+  1,                                            	// number of sentences to show after each matching snippet
+  "What would you like to know?",               	// search placeholder
+  false                                         	// default focus
+  //0                                           	// offset for paging
 );
 document.getElementById("search-widget").appendChild(searchWidget);
 
@@ -46,9 +45,17 @@ function successFn(results, query) {
   qqCLIlinks.forEach(function(link) {
     if (link.href.includes("/cloud-native-aws-administrator-guide/")) {
       link.innerHTML = `CNQ on AWS: ${link.textContent}`;
+    } else if (link.href.includes("/aws-administrator-guide/")) {
+      // Old-style links
+      link.innerHTML = `CNQ on AWS: ${link.textContent}`;
     } else if (link.href.includes("/cloud-native-azure-administrator-guide/")) {
       link.innerHTML = `CNQ on Azure: ${link.textContent}`;
+    } else if (link.href.includes("/cloud-native-gcp-administrator-guide/")) {
+      link.innerHTML = `CNQ on GCP: ${link.textContent}`;
     } else if (link.href.includes("/azure-native-administrator-guide/")) {
+      link.innerHTML = `Azure Native: ${link.textContent}`;
+    } else if (link.href.includes("/azure-administrator-guide/")) {
+      // Old-style links
       link.innerHTML = `Azure Native: ${link.textContent}`;
     } else if (link.href.includes("/administrator-guide/")) {
       link.innerHTML = `On-Prem: ${link.textContent}`;
@@ -90,6 +97,15 @@ function successFn(results, query) {
 
   // Encourage users to enter more search terms.
   const apologyText = /The returned (search )?results did not contain sufficient information to be summarized into a useful answer for your query. Please try a different search or restate your query differently./;
+  const apologyTextElements = document.querySelectorAll(".vuiText--m");
+  apologyTextElements.forEach(function(element) {
+    if (apologyText.exec(element.textContent)) {
+      element.textContent = `Here are some search results about ${query}. To help me write a better summary, enter more search terms or ask me a question!`;
+    }
+  });
+
+  // Encourage users to enter more complex queries.
+  const insufficientInfo = /I do not have enough information to answer this question./;
   const apologyTextElements = document.querySelectorAll(".vuiText--m");
   apologyTextElements.forEach(function(element) {
     if (apologyText.exec(element.textContent)) {
