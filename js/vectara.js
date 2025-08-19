@@ -85,7 +85,7 @@ function createSearch(
   function handleDirectSearch(query) {
     submitFn(searchInput.value.trim(), offset);
   }
-  
+
   if (icon) {
     pulseLogo.src = icon;
   } else {
@@ -95,9 +95,9 @@ function createSearch(
   if (currentPage.includes('search.html')) {
     searchForm.addEventListener('submit', function(e) {
       e.preventDefault();
-        // Always perform the search on form submission, regardless of the query parameter.
-        // This allows users to "refresh" their search by submitting the same term again.
-        handleDirectSearch();
+      // Always perform the search on form submission, regardless of the query parameter.
+      // This allows users to "refresh" their search by submitting the same term again.
+      handleDirectSearch();
     });
 
     // On page load, if there's a query parameter and it's different from the current input value,
@@ -105,8 +105,8 @@ function createSearch(
     // perform the search immediately. This avoids ignoring user attempts to refresh the search
     // for the same term via the UI.
     if (queryParam && (searchInput.value.trim() !== queryParam || searchInput.value.trim() === "")) {
-        searchInput.value = queryParam;
-        handleDirectSearch();
+      searchInput.value = queryParam;
+      handleDirectSearch();
     }
   }
 
@@ -115,85 +115,88 @@ function createSearch(
    * @param {string} query results will come on behalf of query string
    */
 
-function submitFn(query, startFrom = offset) {
+  function submitFn(query, startFrom = offset) {
     console.log("submitFn called with query:", query);
     if (query !== "") {
-        queryText = query;
-        pulseLogo.classList.add("vectara__search_loading");
-        showOverlay();
-        searchInput.value = query;
+      queryText = query;
+      pulseLogo.classList.add("vectara__search_loading");
+      showOverlay();
+      searchInput.value = query;
 
-        const corpusKeyObjArr = [];
-        corpusKeys.forEach(element => {
-            corpusKeyObject = {"corpus_key": element, "lexical_interpolation": 0.1};
-            corpusKeyObjArr.push(corpusKeyObject);
-        });
+      const corpusKeyObjArr = [];
+      corpusKeys.forEach(element => {
+        corpusKeyObject = {
+          "corpus_key": element,
+          "lexical_interpolation": 0.1
+        };
+        corpusKeyObjArr.push(corpusKeyObject);
+      });
 
-        let startTime = new Date().getTime();
-        fetch("https://api.vectara.io/v2/query", {
-            method: "post",
-            body: JSON.stringify({
-                "query": query, // text to run the search
-                "search": {
-                    "offset": startFrom, // for pagination
-                    "limit": pageSize,   // for pagination
-                    "context_configuration": {
-                        "sentences_before": sentencesBefore,
-                        "sentences_after": sentencesAfter,
-                        "start_tag": "<strong>",
-                        "end_tag": "</strong>"
-                    },
-                    "corpora": corpusKeyObjArr,
-                    "reranker": {
-                        "type": "customer_reranker",
-                        "reranker_name": "Rerank_Multilingual_v1"
-                    }
-                },
-                "generation": {
-                    "generation_preset_name": "vectara-summary-table-md-query-ext-jan-2025-gpt-4o",
-                    "response_language": "eng",
-                    "max_used_search_results": maxSummarizedResults
-                }
-            }),
-            headers: {
-                "x-api-key": apikey,
-                "Content-Type": "application/json",
+      let startTime = new Date().getTime();
+      fetch("https://api.vectara.io/v2/query", {
+          method: "post",
+          body: JSON.stringify({
+            "query": query, // text to run the search
+            "search": {
+              "offset": startFrom, // for pagination
+              "limit": pageSize, // for pagination
+              "context_configuration": {
+                "sentences_before": sentencesBefore,
+                "sentences_after": sentencesAfter,
+                "start_tag": "<strong>",
+                "end_tag": "</strong>"
+              },
+              "corpora": corpusKeyObjArr,
+              "reranker": {
+                "type": "customer_reranker",
+                "reranker_name": "Rerank_Multilingual_v1"
+              }
             },
-        })
-        .then(async function (response) {
-            pulseLogo.classList.remove("vectara__search_loading");
-            const data = await response.json(); // parse promise
-            console.log(`response is ${JSON.stringify(data)}`);
-            if (!data.summary || !data.search_results || data.search_results.length < 1) {
-                throw data;
+            "generation": {
+              "generation_preset_name": "vectara-summary-table-md-query-ext-jan-2025-gpt-4o",
+              "response_language": "eng",
+              "max_used_search_results": maxSummarizedResults
             }
-            let endTime = new Date().getTime();
-            console.log(`fetch elapsedTime: ${(endTime - startTime) / 1000}`);
-            return data;
+          }),
+          headers: {
+            "x-api-key": apikey,
+            "Content-Type": "application/json",
+          },
+        })
+        .then(async function(response) {
+          pulseLogo.classList.remove("vectara__search_loading");
+          const data = await response.json(); // parse promise
+          console.log(`response is ${JSON.stringify(data)}`);
+          if (!data.summary || !data.search_results || data.search_results.length < 1) {
+            throw data;
+          }
+          let endTime = new Date().getTime();
+          console.log(`fetch elapsedTime: ${(endTime - startTime) / 1000}`);
+          return data;
         })
         .then((results) => {
-            return successFn(results, query);
+          return successFn(results, query);
         })
-        .catch(function (error) {
-            errorFn(error);
-            pulseLogo.classList.remove("vectara__search_loading");
+        .catch(function(error) {
+          errorFn(error);
+          pulseLogo.classList.remove("vectara__search_loading");
         });
     }
-}
+  }
 
-searchDiv.search = function (query, startFrom = offset) {
+  searchDiv.search = function(query, startFrom = offset) {
     submitFn(query, startFrom);
-};
-searchDiv.resultsPerPage = pageSize;
-// sends query text and length to the callback function
-searchDiv.generateMeta = function (callback) {
+  };
+  searchDiv.resultsPerPage = pageSize;
+  // sends query text and length to the callback function
+  searchDiv.generateMeta = function(callback) {
     callback({
-        queryText: queryText,
-        length: length,
+      queryText: queryText,
+      length: length,
     });
-};
+  };
 
-return searchDiv;
+  return searchDiv;
 }
 
 //////////////////////////////////////////////////////////
@@ -201,134 +204,138 @@ return searchDiv;
 //////////////////////////////////////////////////////////
 
 function renderResults(results, containerId, metadataFieldsToShow = []) {
-    // Process the results and display them on the page.
-    let txt = "";
+  // Process the results and display them on the page.
+  let txt = "";
 
-    currSelectedVectaraReference = null;
+  currSelectedVectaraReference = null;
 
-    if (results.summary && results.search_results && results.search_results.length > 0) {        
-        txt += "<h2 class=\"vuiTitle vuiTitle--xs\" style=\"display: flex; align-items: center;\"><span class=\"emoji\">🤖</span>&nbsp;<strong>AI Summary</strong></h2>";
-        summary = linkCitations(results.summary);
-        txt += "<div class=\"vuiText vuiText--m\">" + summary + "</div>";
-        txt += "<div class=\"vuiSpacer vuiSpacer--m\"></div>";
-        txt += "<h2 class=\"vuiTitle vuiTitle--xs\" style=\"display: flex; align-items: center;\"><span class=\"emoji\">📄</span>&nbsp;<strong>Search Results</strong></h2>";
+  if (results.summary && results.search_results && results.search_results.length > 0) {
+    txt += "<h2 class=\"vuiTitle vuiTitle--xs\" style=\"display: flex; align-items: center;\"><span class=\"emoji\">🤖</span>&nbsp;<strong>AI Summary</strong></h2>";
+    summary = linkCitations(results.summary);
+    txt += "<div class=\"vuiText vuiText--m\">" + summary + "</div>";
+    txt += "<div class=\"vuiSpacer vuiSpacer--m\"></div>";
+    txt += "<h2 class=\"vuiTitle vuiTitle--xs\" style=\"display: flex; align-items: center;\"><span class=\"emoji\">📄</span>&nbsp;<strong>Search Results</strong></h2>";
+  }
+
+  results.search_results.forEach((res, index) => {
+    txt += "<div class=\"vuiSearchResult fs-mask\">";
+
+    txt += "<div id=\"searchResultCitation-" + (index + 1) + "\" class=\"vuiSearchResultPosition\">" + (index + 1) + "</div>";
+
+    docMetadata = res.document_metadata;
+    partMetadata = res.part_metadata;
+    titleField = {
+      "value": docMetadata.title
+    };
+    urlField = {
+      "value": docMetadata.url
+    };
+    if (titleField) {
+      snippetStart = res.text.indexOf("<strong>") + 8;
+      snippetEnd = res.text.indexOf("</strong>");
+      if (urlField) {
+        url = urlField.value + "#:~:text=" + res.text.substring(snippetStart, snippetEnd);
+        txt += "<a class=\"vuiLink vuiTitle vuiTitle--s\" rel=\"noopener\" href=\"" + url + "\" target=\"_self\">";
+        txt += "" + titleField.value + "";
+        txt += "</a>";
+      } else {
+        txt += "" + titleField.value + "";
+      }
+    } else {
+      txt += "<h3>" + docMetadata.title + "</h3>";
     }
 
-    results.search_results.forEach((res, index) => {
-        txt += "<div class=\"vuiSearchResult fs-mask\">";
+    txt += "<div class=\"vuiText vuiText--s\">";
+    txt += res.text;
+    txt += "<div class=\"vuiSpacer vuiSpacer--xs\"></div>";
 
-        txt += "<div id=\"searchResultCitation-" + (index+1) + "\" class=\"vuiSearchResultPosition\">" + (index+1) + "</div>";
-
-        docMetadata = res.document_metadata;
-        partMetadata = res.part_metadata;
-        titleField = {"value": docMetadata.title};
-        urlField = {"value": docMetadata.url};
-        if (titleField) {
-            snippetStart = res.text.indexOf("<strong>") + 8;
-            snippetEnd = res.text.indexOf("</strong>");
-            if (urlField) {
-                url = urlField.value + "#:~:text=" + res.text.substring(snippetStart, snippetEnd);
-                txt += "<a class=\"vuiLink vuiTitle vuiTitle--s\" rel=\"noopener\" href=\"" + url + "\" target=\"_self\">";
-                txt += "" + titleField.value + "";
-                txt += "</a>";
-            } else {
-                txt += "" + titleField.value + "";
-            }
-        } else {
-            txt += "<h3>" + docMetadata.title + "</h3>";
+    //show requested metadata fields as badges
+    //first convert the input to an array if the user just passed in a string scalar
+    metadataFieldsToShow = metadataFieldsToShow instanceof Array ? metadataFieldsToShow : [metadataFieldsToShow]
+    metadataFieldsToShow.forEach((fieldName, index) => {
+      if (!fieldName.startsWith("part.")) {
+        //check for document level metadata if the name starts with "doc." or does not have the part. prefix
+        fieldNameSuffix = fieldName.substring(fieldName.indexOf("doc.") + 4);
+        //foundField = docMetadata.find((field) => field.name === fieldNameSuffix);
+        if (fieldNameSuffix in docMetadata) {
+          txt += "<div class=\"vuiBadge--success vuiBadge\">" + fieldNameSuffix + ": " + docMetadata[fieldNameSuffix] + "</div>";
         }
-
-        txt += "<div class=\"vuiText vuiText--s\">";
-        txt += res.text; 
-        txt += "<div class=\"vuiSpacer vuiSpacer--xs\"></div>";
-
-        //show requested metadata fields as badges
-        //first convert the input to an array if the user just passed in a string scalar
-        metadataFieldsToShow = metadataFieldsToShow instanceof Array ? metadataFieldsToShow : [metadataFieldsToShow]
-        metadataFieldsToShow.forEach((fieldName, index) => {
-            if (!fieldName.startsWith("part.")) {
-                //check for document level metadata if the name starts with "doc." or does not have the part. prefix
-                fieldNameSuffix = fieldName.substring(fieldName.indexOf("doc.") + 4);
-                //foundField = docMetadata.find((field) => field.name === fieldNameSuffix);
-                if (fieldNameSuffix in docMetadata) {
-                    txt += "<div class=\"vuiBadge--success vuiBadge\">" + fieldNameSuffix + ": " + docMetadata[fieldNameSuffix] + "</div>";
-                }
-            } else {
-                //check for part level metadata
-                fieldNameSuffix = fieldName.substring(fieldName.indexOf("part.") + 5);
-                //foundField = res.metadata.find((field) => field.name === fieldNameSuffix);
-                if (fieldNameSuffix in partMetadata) {
-                    txt += "<div class=\"vuiBadge--success vuiBadge\">" + fieldNameSuffix + ": " + partMetadata[fieldNameSuffix] + "</div>";
-                }
-            }
-        });
-
-        txt += "</div></div>";
+      } else {
+        //check for part level metadata
+        fieldNameSuffix = fieldName.substring(fieldName.indexOf("part.") + 5);
+        //foundField = res.metadata.find((field) => field.name === fieldNameSuffix);
+        if (fieldNameSuffix in partMetadata) {
+          txt += "<div class=\"vuiBadge--success vuiBadge\">" + fieldNameSuffix + ": " + partMetadata[fieldNameSuffix] + "</div>";
+        }
+      }
     });
 
-    document.getElementById(containerId).innerHTML = txt;
+    txt += "</div></div>";
+  });
+
+  document.getElementById(containerId).innerHTML = txt;
 }
 
 function linkCitations(summary) {
-    for (let i = 1; i < 15; i++) {
-        var reg = new RegExp("\\[" + i + "\\]","g");
-        summary = summary.replace(reg, "<button id=\"citationButton-" + i + "\" class=\"vuiSummaryCitation\" onclick=\"clickCitation(this, " + i + ")\">" + i + "</button>");
-    }
+  for (let i = 1; i < 15; i++) {
+    var reg = new RegExp("\\[" + i + "\\]", "g");
+    summary = summary.replace(reg, "<button id=\"citationButton-" + i + "\" class=\"vuiSummaryCitation\" onclick=\"clickCitation(this, " + i + ")\">" + i + "</button>");
+  }
 
-    return summary;
+  return summary;
 }
 
 function clickCitation(clickedButton, newReferenceNum) {
-    //nop if the button clicked is the one already just clicked
-    if (newReferenceNum == currSelectedVectaraReference) {
-        return;
+  //nop if the button clicked is the one already just clicked
+  if (newReferenceNum == currSelectedVectaraReference) {
+    return;
+  }
+
+  //remove 'vuiSummaryCitation-isSelected' from origDiv class list (if it was originally set)
+  origDiv = document.getElementById("searchResultCitation-" + currSelectedVectaraReference);
+  if (origDiv) {
+    origDiv.classList.remove("vuiSearchResultPosition--selected");
+  }
+
+  //add 'vuiSummaryCitation-isSelected' to newDiv class list
+  newDiv = document.getElementById("searchResultCitation-" + newReferenceNum);
+  newDiv.classList.add("vuiSearchResultPosition--selected");
+
+  //remove vuiSummaryCitation-isSelected class from all buttons
+  citationButtons = document.querySelectorAll("button.vuiSummaryCitation");
+  if (citationButtons) {
+    for (let i = 0; i < citationButtons.length; i++) {
+      currButton = citationButtons[i];
+      if (clickedButton.id == currButton.id) {
+        currButton.classList.add("vuiSummaryCitation-isSelected");
+      } else {
+        currButton.classList.remove("vuiSummaryCitation-isSelected");
+      }
     }
+  }
 
-    //remove 'vuiSummaryCitation-isSelected' from origDiv class list (if it was originally set)
-    origDiv = document.getElementById("searchResultCitation-" + currSelectedVectaraReference);
-    if (origDiv) {
-        origDiv.classList.remove("vuiSearchResultPosition--selected");
-    }
+  //scroll screen to newDiv's parent
+  var y = newDiv.parentElement.offsetTop - 78;
+  window.scrollTo({
+    top: y,
+    behavior: 'smooth'
+  });
 
-    //add 'vuiSummaryCitation-isSelected' to newDiv class list
-    newDiv = document.getElementById("searchResultCitation-" + newReferenceNum);
-    newDiv.classList.add("vuiSearchResultPosition--selected");
-
-    //remove vuiSummaryCitation-isSelected class from all buttons
-    citationButtons = document.querySelectorAll("button.vuiSummaryCitation");
-    if (citationButtons) {
-        for (let i = 0; i < citationButtons.length; i++) {
-            currButton = citationButtons[i];
-            if (clickedButton.id == currButton.id) {
-                currButton.classList.add("vuiSummaryCitation-isSelected");
-            } else {
-                currButton.classList.remove("vuiSummaryCitation-isSelected");
-            }
-        }
-    }
-
-    //scroll screen to newDiv's parent
-    var y = newDiv.parentElement.offsetTop - 78;
-    window.scrollTo({
-      top: y,
-      behavior: 'smooth'
-    });
-
-    currSelectedVectaraReference = newReferenceNum;
+  currSelectedVectaraReference = newReferenceNum;
 }
 
 function renderError(err, containerId) {
-    // Show the error message in the container whose ID is provided
-    let txt = "";
+  // Show the error message in the container whose ID is provided
+  let txt = "";
 
-    if (err.responseSet[0] && err.responseSet[0].status[0]) {
-        txt += "<span class=\"vuiTitle--s\">" + err.responseSet[0].status[0].code + "</span>: ";
-        txt += "<span class=\"vuiText--s\">" + err.responseSet[0].status[0].statusDetail + "</span>";
-    } else {
-        txt += err;
-    }
+  if (err.responseSet[0] && err.responseSet[0].status[0]) {
+    txt += "<span class=\"vuiTitle--s\">" + err.responseSet[0].status[0].code + "</span>: ";
+    txt += "<span class=\"vuiText--s\">" + err.responseSet[0].status[0].statusDetail + "</span>";
+  } else {
+    txt += err;
+  }
 
-    document.getElementById(containerId).innerHTML = txt;
+  document.getElementById(containerId).innerHTML = txt;
 }
 
 
