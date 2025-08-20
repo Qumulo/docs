@@ -4,6 +4,12 @@ For information about upgrade types for each release, see <a href='mode-referenc
 
 <style>div#toc{height:200px;overflow:auto;}</style>
 
+## Qumulo Core 7.6.0 (Quarterly)
+{{page.varDownloadsRelnotes}}
+* {{page.varNoPublicChanges}}
+* Resolved an issue with the location of S3 buckets created from the Qumulo Core Web UI
+* Changed the response from the `GET /v1/unconfigured/nodes` REST API to return the number of drives for each unconfigured node
+
 ## Qumulo Core 7.5.5.1
 {{page.varDownloadsRelnotes}}
 {% include important.html content="This release resolves an issue identified in Qumulo Core 7.5.4 where, under certain conditions, a node could become unavailable during an update." %}

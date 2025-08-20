@@ -7,7 +7,10 @@ optional_options:
   name: --use-ldap
   required: false
 - alternate: []
-  help: 'LDAP URIs used to bind. Separate multiple URIs using commas. Example: ldap://server1.com,ldap://server2.com'
+  help: LDAP server URIs (for example, ldap://example.com). Separate multiple URIs
+    with commas (,). When you specify multiple URIs in order of preference, Qumulo
+    Core uses only one LDAP server at a time and falls back to the remaining servers
+    if one of the URIs becomes unreachable.
   name: --bind-uri
   required: false
 - alternate: []

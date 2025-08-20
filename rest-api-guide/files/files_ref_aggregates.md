@@ -12,7 +12,9 @@ methods:
         UI URL-encodes the paths.
       required: true
     - name: max-entries
-      description: 'Maximum number of directory entries to return (defauilt: 1000)'
+      description: 'Maximum number of directory entries to return. Specifying 0 entries
+        causes only the specified directory''s aggregates to be returned. (default:
+        1000)'
       required: false
     - name: order-by
       description: "Ordering field used for top N selection and sorting (default:\

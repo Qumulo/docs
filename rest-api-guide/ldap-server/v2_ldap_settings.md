@@ -9,14 +9,14 @@ methods:
         object\",\n  \"properties\": {\n    \"use_ldap\": {\n      \"description\"\
         : \"Top-level LDAP enablement switch, indicating whether Qumulo Core should\
         \ use LDAP or not.\",\n      \"type\": \"boolean\"\n    },\n    \"bind_uri\"\
-        : {\n      \"description\": \"LDAP URI(s) used to bind. Multiple URIs may\
-        \ be specified, separated by commas. Example: ldap://server1.com,ldap://server2.com\"\
-        ,\n      \"type\": \"string\"\n    },\n    \"user\": {\n      \"description\"\
-        : \"Binding user's distinguished name. Default is empty, for anonymous authentication.\"\
-        ,\n      \"type\": \"string\"\n    },\n    \"password\": {\n      \"description\"\
-        : \"Binding password for simple auth. Default is the password that is currently\
-        \ configured.\",\n      \"type\": \"string\",\n      \"format\": \"password\"\
-        \n    },\n    \"base_distinguished_names\": {\n      \"description\": \"Distinguished\
+        : {\n      \"description\": \"LDAP server URIs (for example, ldap://example.com).\
+        \ Separate multiple URIs with commas (,).\",\n      \"type\": \"string\"\n\
+        \    },\n    \"user\": {\n      \"description\": \"Binding user's distinguished\
+        \ name. Default is empty, for anonymous authentication.\",\n      \"type\"\
+        : \"string\"\n    },\n    \"password\": {\n      \"description\": \"Binding\
+        \ password for simple auth. Default is the password that is currently configured.\"\
+        ,\n      \"type\": \"string\",\n      \"format\": \"password\"\n    },\n \
+        \   \"base_distinguished_names\": {\n      \"description\": \"Distinguished\
         \ name(s) which will be used as the search base for queries. Multiple DNs\
         \ may be specified, separated by semi-colons. Example: dc=users,dc=example,dc=com;\
         \ dc=robots,dc=example,dc=com\",\n      \"type\": \"string\"\n    },\n   \
@@ -59,14 +59,14 @@ methods:
         object\",\n  \"properties\": {\n    \"use_ldap\": {\n      \"description\"\
         : \"Top-level LDAP enablement switch, indicating whether Qumulo Core should\
         \ use LDAP or not.\",\n      \"type\": \"boolean\"\n    },\n    \"bind_uri\"\
-        : {\n      \"description\": \"LDAP URI(s) used to bind. Multiple URIs may\
-        \ be specified, separated by commas. Example: ldap://server1.com,ldap://server2.com\"\
-        ,\n      \"type\": \"string\"\n    },\n    \"user\": {\n      \"description\"\
-        : \"Binding user's distinguished name. Default is empty, for anonymous authentication.\"\
-        ,\n      \"type\": \"string\"\n    },\n    \"password\": {\n      \"description\"\
-        : \"Binding password for simple auth. Default is the password that is currently\
-        \ configured.\",\n      \"type\": \"string\",\n      \"format\": \"password\"\
-        \n    },\n    \"base_distinguished_names\": {\n      \"description\": \"Distinguished\
+        : {\n      \"description\": \"LDAP server URIs (for example, ldap://example.com).\
+        \ Separate multiple URIs with commas (,).\",\n      \"type\": \"string\"\n\
+        \    },\n    \"user\": {\n      \"description\": \"Binding user's distinguished\
+        \ name. Default is empty, for anonymous authentication.\",\n      \"type\"\
+        : \"string\"\n    },\n    \"password\": {\n      \"description\": \"Binding\
+        \ password for simple auth. Default is the password that is currently configured.\"\
+        ,\n      \"type\": \"string\",\n      \"format\": \"password\"\n    },\n \
+        \   \"base_distinguished_names\": {\n      \"description\": \"Distinguished\
         \ name(s) which will be used as the search base for queries. Multiple DNs\
         \ may be specified, separated by semi-colons. Example: dc=users,dc=example,dc=com;\
         \ dc=robots,dc=example,dc=com\",\n      \"type\": \"string\"\n    },\n   \
@@ -103,14 +103,14 @@ methods:
         object\",\n  \"properties\": {\n    \"use_ldap\": {\n      \"description\"\
         : \"Top-level LDAP enablement switch, indicating whether Qumulo Core should\
         \ use LDAP or not.\",\n      \"type\": \"boolean\"\n    },\n    \"bind_uri\"\
-        : {\n      \"description\": \"LDAP URI(s) used to bind. Multiple URIs may\
-        \ be specified, separated by commas. Example: ldap://server1.com,ldap://server2.com\"\
-        ,\n      \"type\": \"string\"\n    },\n    \"user\": {\n      \"description\"\
-        : \"Binding user's distinguished name. Default is empty, for anonymous authentication.\"\
-        ,\n      \"type\": \"string\"\n    },\n    \"password\": {\n      \"description\"\
-        : \"Binding password for simple auth. Default is the password that is currently\
-        \ configured.\",\n      \"type\": \"string\",\n      \"format\": \"password\"\
-        \n    },\n    \"base_distinguished_names\": {\n      \"description\": \"Distinguished\
+        : {\n      \"description\": \"LDAP server URIs (for example, ldap://example.com).\
+        \ Separate multiple URIs with commas (,).\",\n      \"type\": \"string\"\n\
+        \    },\n    \"user\": {\n      \"description\": \"Binding user's distinguished\
+        \ name. Default is empty, for anonymous authentication.\",\n      \"type\"\
+        : \"string\"\n    },\n    \"password\": {\n      \"description\": \"Binding\
+        \ password for simple auth. Default is the password that is currently configured.\"\
+        ,\n      \"type\": \"string\",\n      \"format\": \"password\"\n    },\n \
+        \   \"base_distinguished_names\": {\n      \"description\": \"Distinguished\
         \ name(s) which will be used as the search base for queries. Multiple DNs\
         \ may be specified, separated by semi-colons. Example: dc=users,dc=example,dc=com;\
         \ dc=robots,dc=example,dc=com\",\n      \"type\": \"string\"\n    },\n   \
@@ -149,14 +149,14 @@ methods:
         object\",\n  \"properties\": {\n    \"use_ldap\": {\n      \"description\"\
         : \"Top-level LDAP enablement switch, indicating whether Qumulo Core should\
         \ use LDAP or not.\",\n      \"type\": \"boolean\"\n    },\n    \"bind_uri\"\
-        : {\n      \"description\": \"LDAP URI(s) used to bind. Multiple URIs may\
-        \ be specified, separated by commas. Example: ldap://server1.com,ldap://server2.com\"\
-        ,\n      \"type\": \"string\"\n    },\n    \"user\": {\n      \"description\"\
-        : \"Binding user's distinguished name. Default is empty, for anonymous authentication.\"\
-        ,\n      \"type\": \"string\"\n    },\n    \"password\": {\n      \"description\"\
-        : \"Binding password for simple auth. Default is the password that is currently\
-        \ configured.\",\n      \"type\": \"string\",\n      \"format\": \"password\"\
-        \n    },\n    \"base_distinguished_names\": {\n      \"description\": \"Distinguished\
+        : {\n      \"description\": \"LDAP server URIs (for example, ldap://example.com).\
+        \ Separate multiple URIs with commas (,).\",\n      \"type\": \"string\"\n\
+        \    },\n    \"user\": {\n      \"description\": \"Binding user's distinguished\
+        \ name. Default is empty, for anonymous authentication.\",\n      \"type\"\
+        : \"string\"\n    },\n    \"password\": {\n      \"description\": \"Binding\
+        \ password for simple auth. Default is the password that is currently configured.\"\
+        ,\n      \"type\": \"string\",\n      \"format\": \"password\"\n    },\n \
+        \   \"base_distinguished_names\": {\n      \"description\": \"Distinguished\
         \ name(s) which will be used as the search base for queries. Multiple DNs\
         \ may be specified, separated by semi-colons. Example: dc=users,dc=example,dc=com;\
         \ dc=robots,dc=example,dc=com\",\n      \"type\": \"string\"\n    },\n   \
@@ -193,14 +193,14 @@ methods:
         object\",\n  \"properties\": {\n    \"use_ldap\": {\n      \"description\"\
         : \"Top-level LDAP enablement switch, indicating whether Qumulo Core should\
         \ use LDAP or not.\",\n      \"type\": \"boolean\"\n    },\n    \"bind_uri\"\
-        : {\n      \"description\": \"LDAP URI(s) used to bind. Multiple URIs may\
-        \ be specified, separated by commas. Example: ldap://server1.com,ldap://server2.com\"\
-        ,\n      \"type\": \"string\"\n    },\n    \"user\": {\n      \"description\"\
-        : \"Binding user's distinguished name. Default is empty, for anonymous authentication.\"\
-        ,\n      \"type\": \"string\"\n    },\n    \"password\": {\n      \"description\"\
-        : \"Binding password for simple auth. Default is the password that is currently\
-        \ configured.\",\n      \"type\": \"string\",\n      \"format\": \"password\"\
-        \n    },\n    \"base_distinguished_names\": {\n      \"description\": \"Distinguished\
+        : {\n      \"description\": \"LDAP server URIs (for example, ldap://example.com).\
+        \ Separate multiple URIs with commas (,).\",\n      \"type\": \"string\"\n\
+        \    },\n    \"user\": {\n      \"description\": \"Binding user's distinguished\
+        \ name. Default is empty, for anonymous authentication.\",\n      \"type\"\
+        : \"string\"\n    },\n    \"password\": {\n      \"description\": \"Binding\
+        \ password for simple auth. Default is the password that is currently configured.\"\
+        ,\n      \"type\": \"string\",\n      \"format\": \"password\"\n    },\n \
+        \   \"base_distinguished_names\": {\n      \"description\": \"Distinguished\
         \ name(s) which will be used as the search base for queries. Multiple DNs\
         \ may be specified, separated by semi-colons. Example: dc=users,dc=example,dc=com;\
         \ dc=robots,dc=example,dc=com\",\n      \"type\": \"string\"\n    },\n   \
