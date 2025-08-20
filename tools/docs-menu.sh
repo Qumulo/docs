@@ -140,13 +140,10 @@ no_toolchain() {
 }
 
 check_tqdm() {
-    no_toolchain
-    USER_SITE=$(python3 -m site --user-site)
-
-    if ! PYTHONPATH="$USER_SITE:$PYTHONPATH" python3 -c "import tqdm" &>/dev/null; then
+    if ! python3 -c "import tqdm" &>/dev/null; then
         read -p "Package tqdm isn't installed or not visible. Install it? (y/n): " REPLY
         if [[ "$REPLY" == "y" ]]; then
-            pip3 install --user tqdm
+            sudo apt install -y python3-pip python3-tqdm
         else
             echo "Can't continue without tqdm. Exiting..."
             return 1
