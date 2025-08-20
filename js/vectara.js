@@ -328,16 +328,27 @@ function renderError(err, containerId) {
   // Show the error message in the container whose ID is provided
   let txt = "";
 
-  if (err.responseSet[0] && err.responseSet[0].status[0]) {
-    txt += "<span class=\"vuiTitle--s\">" + err.responseSet[0].status[0].code + "</span>: ";
-    txt += "<span class=\"vuiText--s\">" + err.responseSet[0].status[0].statusDetail + "</span>";
-  } else {
-    txt += err;
-  }
+  // Vectara structured error
+  if (
+    err &&
+    err.responseSet &&
+    err.responseSet[0] &&
+    err.responseSet[0].status &&
+    err.responseSet[0].status[0]
+  ) {
+    txt += `<span class="vuiTitle--s">${err.responseSet[0].status[0].code}</span>: `;
+    txt += `<span class="vuiText--s">${err.responseSet[0].status[0].statusDetail}</span>`;
 
+  // Normal JS Error object
+  } else if (err && err.message) {
+    txt += `<span class="vuiText--s">${err.message}</span>`;
+
+  // Fallback for everything else
+  } else {
+    txt += `<pre>${JSON.stringify(err, null, 2)}</pre>`;
+  }
   document.getElementById(containerId).innerHTML = txt;
 }
-
 
 
 //////////////////////////////////////////////////////////
