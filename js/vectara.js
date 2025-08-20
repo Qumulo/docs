@@ -125,7 +125,7 @@ function createSearch(
 
       const corpusKeyObjArr = [];
       corpusKeys.forEach(element => {
-        corpusKeyObject = {
+        const corpusKeyObject = {
           "corpus_key": element,
           "lexical_interpolation": 0.1
         };
@@ -200,6 +200,95 @@ function createSearch(
 }
 
 //////////////////////////////////////////////////////////
+// The section below defines result tab helpers
+//////////////////////////////////////////////////////////
+
+// Ensure the tabs are present in the container
+function ensureResultsTabs(containerId) {
+  const container = document.getElementById(containerId);
+  if (!container) return { docsPanel: null, carePanel: null };
+
+  // If the tabs already exist return only refs
+  let docsPanel = container.querySelector("#vectara-docs-panel");
+  let carePanel = container.querySelector("#vectara-care-panel");
+  if (docsPanel && carePanel) {
+    return { docsPanel, carePanel };
+  }
+
+  // Otherwise, define WAI-ARIA tabs
+  container.innerHTML = `
+    <div class="vuiTabs" role="tablist">
+      <button id="vectara-tab-docs" role="tab" aria-controls="vectara-docs-panel" aria-selected="true" class="vuiTab">Docs Portal</button>
+      <button id="vectara-tab-care" role="tab" aria-controls="vectara-care-panel" aria-selected="false" class="vuiTab">Qumulo Care</button>
+    </div>
+    <div id="vectara-docs-panel" role="tabpanel" aria-labelledby="vectara-tab-docs" class="vuiTabPanel"></div>
+    <div id="vectara-care-panel" role="tabpanel" aria-labelledby="vectara-tab-care" class="vuiTabPanel" hidden></div>
+  `;
+
+  // Tab switching functionality
+  const tabDocs = container.querySelector("#vectara-tab-docs");
+  const tabCare = container.querySelector("#vectara-tab-care");
+  docsPanel = container.querySelector("#vectara-docs-panel");
+  carePanel = container.querySelector("#vectara-care-panel");
+
+  function selectTab(tab) {
+    if (tab === "docs") {
+      tabDocs.setAttribute("aria-selected", "true");
+      tabCare.setAttribute("aria-selected", "false");
+      docsPanel.hidden = false;
+      carePanel.hidden = true;
+    } else {
+      tabDocs.setAttribute("aria-selected", "false");
+      tabCare.setAttribute("aria-selected", "true");
+      docsPanel.hidden = true;
+      carePanel.hidden = false;
+    }
+  }
+
+  tabDocs.addEventListener("click", () => selectTab("docs"));
+  tabCare.addEventListener("click", () => selectTab("care"));
+
+  return { docsPanel, carePanel };
+}
+
+// Route the result to the correct tab
+function pickTabForResult(res, containerId) {
+  const { docsPanel, carePanel } = ensureResultsTabs(containerId);
+  const url =
+    (res && res.document_metadata && res.document_metadata.url) ||
+    "";
+
+  if (url.includes("care.qumulo.com")) return carePanel;
+  if (url.includes("docs.qumulo.com")) return docsPanel;
+  return docsPanel;
+}
+
+function wireUpTabs(containerId) {
+  const container = document.getElementById(containerId);
+  const tabList = container.querySelector('[role="tablist"]');
+  const tabs = Array.from(tabList.querySelectorAll('[role="tab"]'));
+  const panels = tabs.map(tab => {
+    return document.getElementById(tab.getAttribute("aria-controls"));
+  });
+
+  function activateTab(index) {
+    tabs.forEach((tab, i) => {
+      const selected = i === index;
+      tab.setAttribute("aria-selected", selected);
+      tab.setAttribute("tabindex", selected ? "0" : "-1");
+      panels[i].hidden = !selected;
+    });
+  }
+
+  tabs.forEach((tab, i) => {
+    tab.addEventListener("focus", () => activateTab(i));
+  });
+
+  // Initialize first tab active
+  activateTab(0);
+}
+
+//////////////////////////////////////////////////////////
 // The section below handles rendering search results and errors in the containing page
 //////////////////////////////////////////////////////////
 
@@ -209,71 +298,140 @@ function renderResults(results, containerId, metadataFieldsToShow = []) {
 
   currSelectedVectaraReference = null;
 
+  // Add headings once before the loop
   if (results.summary && results.search_results && results.search_results.length > 0) {
     txt += "<h2 class=\"vuiTitle vuiTitle--xs\" style=\"display: flex; align-items: center;\"><span class=\"emoji\">🤖</span>&nbsp;<strong>AI Summary</strong></h2>";
-    summary = linkCitations(results.summary);
+    const summary = linkCitations(results.summary);
     txt += "<div class=\"vuiText vuiText--m\">" + summary + "</div>";
     txt += "<div class=\"vuiSpacer vuiSpacer--m\"></div>";
     txt += "<h2 class=\"vuiTitle vuiTitle--xs\" style=\"display: flex; align-items: center;\"><span class=\"emoji\">📄</span>&nbsp;<strong>Search Results</strong></h2>";
   }
 
+  // Ensure tabs exist & wire them up
+  const { docsPanel, carePanel } = ensureResultsTabs(containerId);
+  wireUpTabs(containerId);
+
+  // Clear panels before appending fresh results
+  if (docsPanel) docsPanel.innerHTML = "";
+  if (carePanel) carePanel.innerHTML = "";
+
+  // Iterate over results
   results.search_results.forEach((res, index) => {
-    txt += "<div class=\"vuiSearchResult fs-mask\">";
+    // Build the result HTML for each tab
+    let resultHtml = "";
 
-    txt += "<div id=\"searchResultCitation-" + (index + 1) + "\" class=\"vuiSearchResultPosition\">" + (index + 1) + "</div>";
+    // Add citation number
+    resultHtml += "<div class=\"vuiSearchResult fs-mask\">";
+    resultHtml += "<div id=\"searchResultCitation-" + (index + 1) + "\" class=\"vuiSearchResultPosition\">" + (index + 1) + "</div>";
 
-    docMetadata = res.document_metadata;
-    partMetadata = res.part_metadata;
-    titleField = {
-      "value": docMetadata.title
-    };
-    urlField = {
-      "value": docMetadata.url
-    };
+    // Extract metadata
+    const docMetadata = res.document_metadata;
+    const partMetadata = res.part_metadata;
+    const titleField = { value: docMetadata.title };
+    const urlField = { value: docMetadata.url };
+
+    // render clickable title if URL exists
     if (titleField) {
-      snippetStart = res.text.indexOf("<strong>") + 8;
-      snippetEnd = res.text.indexOf("</strong>");
+      const snippetStart = res.text.indexOf("<strong>") + 8;
+      const snippetEnd = res.text.indexOf("</strong>");
       if (urlField) {
-        url = urlField.value + "#:~:text=" + res.text.substring(snippetStart, snippetEnd);
-        txt += "<a class=\"vuiLink vuiTitle vuiTitle--s\" rel=\"noopener\" href=\"" + url + "\" target=\"_self\">";
-        txt += "" + titleField.value + "";
-        txt += "</a>";
+        const url = urlField.value + "#:~:text=" + res.text.substring(snippetStart, snippetEnd);
+        resultHtml += "<a class=\"vuiLink vuiTitle vuiTitle--s\" rel=\"noopener\" href=\"" + url + "\" target=\"_self\">";
+        resultHtml += "" + titleField.value + "";
+        resultHtml += "</a>";
       } else {
-        txt += "" + titleField.value + "";
+        resultHtml += "" + titleField.value + "";
       }
     } else {
-      txt += "<h3>" + docMetadata.title + "</h3>";
+      // Fallback heading
+      resultHtml += "<h3>" + docMetadata.title + "</h3>";
     }
 
-    txt += "<div class=\"vuiText vuiText--s\">";
-    txt += res.text;
-    txt += "<div class=\"vuiSpacer vuiSpacer--xs\"></div>";
+    // Render snippet text
+    resultHtml += "<div class=\"vuiText vuiText--s\">";
+    resultHtml += res.text;
+    resultHtml += "<div class=\"vuiSpacer vuiSpacer--xs\"></div>";
 
-    //show requested metadata fields as badges
-    //first convert the input to an array if the user just passed in a string scalar
-    metadataFieldsToShow = metadataFieldsToShow instanceof Array ? metadataFieldsToShow : [metadataFieldsToShow]
-    metadataFieldsToShow.forEach((fieldName, index) => {
+    // Show requested metadata fields as badges
+    // First convert the input to an array if the user just passed in a string scalar
+    metadataFieldsToShow = metadataFieldsToShow instanceof Array ? metadataFieldsToShow : [metadataFieldsToShow];
+    metadataFieldsToShow.forEach((fieldName) => {
       if (!fieldName.startsWith("part.")) {
-        //check for document level metadata if the name starts with "doc." or does not have the part. prefix
-        fieldNameSuffix = fieldName.substring(fieldName.indexOf("doc.") + 4);
-        //foundField = docMetadata.find((field) => field.name === fieldNameSuffix);
+        // Check for document level metadata if the name starts with "doc." or does not have the part. prefix
+        const fieldNameSuffix = fieldName.substring(fieldName.indexOf("doc.") + 4);
+        // FoundField = docMetadata.find((field) => field.name === fieldNameSuffix);
         if (fieldNameSuffix in docMetadata) {
-          txt += "<div class=\"vuiBadge--success vuiBadge\">" + fieldNameSuffix + ": " + docMetadata[fieldNameSuffix] + "</div>";
+          resultHtml += "<div class=\"vuiBadge--success vuiBadge\">" + fieldNameSuffix + ": " + docMetadata[fieldNameSuffix] + "</div>";
         }
       } else {
-        //check for part level metadata
-        fieldNameSuffix = fieldName.substring(fieldName.indexOf("part.") + 5);
-        //foundField = res.metadata.find((field) => field.name === fieldNameSuffix);
+        // Check for part level metadata
+        const fieldNameSuffix = fieldName.substring(fieldName.indexOf("part.") + 5);
+        // FoundField = res.metadata.find((field) => field.name === fieldNameSuffix);
         if (fieldNameSuffix in partMetadata) {
-          txt += "<div class=\"vuiBadge--success vuiBadge\">" + fieldNameSuffix + ": " + partMetadata[fieldNameSuffix] + "</div>";
+          resultHtml += "<div class=\"vuiBadge--success vuiBadge\">" + fieldNameSuffix + ": " + partMetadata[fieldNameSuffix] + "</div>";
         }
       }
     });
 
-    txt += "</div></div>";
+    // Close snippet
+    resultHtml += "</div></div>";
+
+    // Instead of appending results to txt,
+    // append each result to the correct tab
+    const tabContainer = pickTabForResult(res, containerId);
+    if (tabContainer) {
+      tabContainer.innerHTML += resultHtml;
+    }
   });
 
-  document.getElementById(containerId).innerHTML = txt;
+  // Render the AI summary and section headings above
+  // The results themselves are appended to tabs
+  const container = document.getElementById(containerId);
+
+  // Remove prior headings to avoid duplicates
+  const oldHead = container.querySelector('#vectara-results-head');
+  if (oldHead) oldHead.remove();
+
+  // Prepend fresh headings safely
+  const tablist = container.querySelector('[role="tablist"]');
+  const headBlock = '<div id="vectara-results-head">' + txt + '</div>';
+  if (tablist) {
+    tablist.insertAdjacentHTML('beforebegin', headBlock);
+  } else {
+    container.insertAdjacentHTML('afterbegin', headBlock);
+  }
+
+  // Hide any tab whose panel has no content
+  const tabDocs = container.querySelector("#vectara-tab-docs");
+  const tabCare = container.querySelector("#vectara-tab-care");
+
+  if (docsPanel && docsPanel.innerHTML.trim() === "") {
+    tabDocs.style.display = "none";
+  } else {
+    tabDocs.style.display = "";
+  }
+
+  if (carePanel && carePanel.innerHTML.trim() === "") {
+    tabCare.style.display = "none";
+  } else {
+    tabCare.style.display = "";
+  }
+
+  // Renumber positions per tab (display only; IDs stay global for citations)
+  ['#vectara-docs-panel', '#vectara-care-panel'].forEach((sel) => {
+    const panel = container.querySelector(sel);
+    if (!panel) return;
+    const items = panel.querySelectorAll('.vuiSearchResultPosition');
+    items.forEach((el, i) => {
+      el.dataset.global = el.textContent; // keep original global index for debugging
+      el.textContent = String(i + 1);     // show 1..N within the tab
+    });
+  });
+
+  // Add prefixes
+  if (typeof addResultPrefixes === "function") {
+    addResultPrefixes();
+  }
 }
 
 function linkCitations(summary) {
@@ -286,22 +444,30 @@ function linkCitations(summary) {
 }
 
 function clickCitation(clickedButton, newReferenceNum) {
-  //nop if the button clicked is the one already just clicked
+  // nop if the button clicked is the one already just clicked
   if (newReferenceNum == currSelectedVectaraReference) {
     return;
   }
 
-  //remove 'vuiSummaryCitation-isSelected' from origDiv class list (if it was originally set)
+  // Remove 'vuiSummaryCitation-isSelected' from origDiv class list (if it was originally set)
   origDiv = document.getElementById("searchResultCitation-" + currSelectedVectaraReference);
   if (origDiv) {
     origDiv.classList.remove("vuiSearchResultPosition--selected");
   }
 
-  //add 'vuiSummaryCitation-isSelected' to newDiv class list
+  // Add 'vuiSummaryCitation-isSelected' to newDiv class list
   newDiv = document.getElementById("searchResultCitation-" + newReferenceNum);
   newDiv.classList.add("vuiSearchResultPosition--selected");
 
-  //remove vuiSummaryCitation-isSelected class from all buttons
+  // Jump to the correct tab when a citation is clicked
+  const panelEl = newDiv.closest('[role="tabpanel"]');
+  if (panelEl && panelEl.hidden) {
+    const labelId = panelEl.getAttribute('aria-labelledby');
+    const tabBtn = labelId && document.getElementById(labelId);
+    if (tabBtn) tabBtn.click();
+  }
+
+  // Remove vuiSummaryCitation-isSelected class from all buttons
   citationButtons = document.querySelectorAll("button.vuiSummaryCitation");
   if (citationButtons) {
     for (let i = 0; i < citationButtons.length; i++) {
@@ -314,7 +480,7 @@ function clickCitation(clickedButton, newReferenceNum) {
     }
   }
 
-  //scroll screen to newDiv's parent
+  // Scroll screen to newDiv's parent
   var y = newDiv.parentElement.offsetTop - 78;
   window.scrollTo({
     top: y,

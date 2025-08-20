@@ -29,6 +29,41 @@ blockquote {
   font-size: 16px;
 }
 
+/* TABS START */
+/* Base tab list */
+[role="tablist"] {
+  display: flex;
+  gap: 0.5rem;
+  border-bottom: 1px solid #ccc;
+}
+
+/* Tab buttons */
+[role="tab"] {
+  background: none;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font: inherit;
+  border-bottom: 2px solid transparent;
+}
+
+[role="tab"][aria-selected="true"] {
+  border-color: #007cac; /* highlight color */
+  font-weight: bold;
+}
+
+/* Panels */
+[role="tabpanel"] {
+  padding: 1rem 0;
+}
+
+/* Hide inactive panels */
+[role="tabpanel"][hidden] {
+  display: none;
+}
+
+/* TABS END */
+
 /* API VERSION AND PREVIEW TAGS STARTS */
 @media screen {
   .nav li ul li a {
