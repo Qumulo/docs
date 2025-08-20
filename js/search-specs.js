@@ -1,18 +1,18 @@
 // Configure the search widget
 let searchWidget = createSearch(
-  "zqt_8wQ3QoFUYf53ymz-8ceKXsxAnFNwEJsobnvK6A", 	// api key
-  4077139778,                                   	// customer id
+  "zqt_8wQ3QoFUYf53ymz-8ceKXsxAnFNwEJsobnvK6A", 	    // api key
+  4077139778,                                   	    // customer id
   ['Qumulo_Documentation_Portal_2', 'Qumulo_Care_4'],	// array of corpus keys
-  successFn,                                    	// success function
-  errorFn,                                      	// error function
-  "/images/magnifying-glass.png",               	// custom icon for the search box
-  25,                                           	// number of results to return
-  5,                                            	// max number of results to summarize
-  1,                                            	// number of sentences to show before each matching snippet
-  1,                                            	// number of sentences to show after each matching snippet
-  "What would you like to know?",               	// search placeholder
-  false                                         	// default focus
-  //0                                           	// offset for paging
+  successFn,                                    	    // success function
+  errorFn,                                      	    // error function
+  "/images/magnifying-glass.png",               	    // custom icon for the search box
+  25,                                           	    // number of results to return
+  5,                                            	    // max number of results to summarize
+  1,                                            	    // number of sentences to show before each matching snippet
+  1,                                            	    // number of sentences to show after each matching snippet
+  "What would you like to know?",               	    // search placeholder
+  false                                         	    // default focus
+  //0                                           	    // offset for paging
 );
 document.getElementById("search-widget").appendChild(searchWidget);
 
