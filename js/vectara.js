@@ -325,10 +325,9 @@ function clickCitation(clickedButton, newReferenceNum) {
 }
 
 function renderError(err, containerId) {
-  // Show the error message in the container whose ID is provided
   let txt = "";
 
-  // Vectara structured error
+  // Vectara-style structured error
   if (
     err &&
     err.responseSet &&
@@ -339,15 +338,22 @@ function renderError(err, containerId) {
     txt += `<span class="vuiTitle--s">${err.responseSet[0].status[0].code}</span>: `;
     txt += `<span class="vuiText--s">${err.responseSet[0].status[0].statusDetail}</span>`;
 
-  // Normal JS Error object
+  // Normal JS error object
   } else if (err && err.message) {
     txt += `<span class="vuiText--s">${err.message}</span>`;
 
-  // Fallback for everything else
+  // Fallback for strings or plain objects
   } else {
     txt += `<pre>${JSON.stringify(err, null, 2)}</pre>`;
   }
-  document.getElementById(containerId).innerHTML = txt;
+
+  // Set innerHTML only if the container exists
+  const container = document.getElementById(containerId);
+  if (container) {
+    container.innerHTML = txt;
+  } else {
+    console.error("renderError: container not found:", containerId, err);
+  }
 }
 
 
