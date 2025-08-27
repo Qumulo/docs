@@ -20,6 +20,11 @@ optional_options:
   help: Create the bucket with versioning and object locking enabled.
   name: --enable-object-lock
   required: false
+- alternate: []
+  help: Create a private bucket. A private bucket has a policy automatically created
+    that restricts visibility and access to the creator and users with RBAC permissions.
+  name: --private
+  required: false
 permalink: /qq-cli-command-guide/s3/s3_add_bucket.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar
@@ -27,6 +32,7 @@ summary: This section explains how to use the <code>qq s3_add_bucket</code> comm
 synopsis: Create an S3 bucket
 title: qq s3_add_bucket
 usage: qq s3_add_bucket [-h] --name NAME [--fs-path FS_PATH] [--create-fs-path] [--enable-object-lock]
+  [--private]
 zendesk_source: qq CLI Command Guide
 
 ---
