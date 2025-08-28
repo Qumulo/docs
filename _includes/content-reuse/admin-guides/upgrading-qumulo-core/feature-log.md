@@ -4,15 +4,14 @@ For information about upgrade types for each release, see <a href='mode-referenc
 
 <style>div#toc{height:200px;overflow:auto;}</style>
 
-## Qumulo Core 7.6.1
+## Qumulo Core 7.6.0.1 (Quarterly)
 {{page.varDownloadsRelnotes}}
-{{page.varNoPublicChanges}}
-* Added the ability to apply the `private` policy to an S3 bucket at creation time
-* For Cloud Native Qumulo (CNQ), replaced two OpenMetrics metrics for node and drive failure
-* Changed the response from the `GET /v1/unconfigured/nodes` REST API to return the number of drives for each unconfigured node
-
-## Qumulo Core 7.6.0 (Quarterly)
-{{page.varDownloadsRelnotes}}
+{{site.data.alerts.important}}
+<ul>
+  <li>This release resolves unexpected behavior in the latest host operating system which can block the Qumulo Core upgrade process due to temporary storage becoming unavailable.</li>
+  <li>This release resolves an issue identified in Qumulo Core 7.5.4 where, under certain conditions, a node could become unavailable during an update.</li>
+</ul>
+{{site.data.alerts.end}}
 {{page.varNoPublicChanges}}
 Resolved an issue with the location of S3 buckets created from the Qumulo Core Web UI
 
