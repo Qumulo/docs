@@ -109,7 +109,7 @@ Before you can use Cloud-Based Monitoring and Remote Support:
 
 <a id="enabling-cloud-based-monitoring"></a>
 ## Enabling Cloud-Based Monitoring
-{% if page.platform == 'cnq-aws' or page.platform == 'cnq-azure' %}Cloud-Based Monitoring is enabled for you by default. If you have disabled Cloud-Based Monitoring, you can enable it{% else %}You can enable Cloud-Based Monitoring{% endif %} by using the Qumulo Core Web UI or `qq` CLI.
+{% if page.platform == 'cnq-aws' or page.platform == 'cnq-azure' or page.platform == 'cnq-gcp' %}Cloud-Based Monitoring is enabled for you by default. If you have disabled Cloud-Based Monitoring, you can enable it{% else %}You can enable Cloud-Based Monitoring{% endif %} by using the Qumulo Core Web UI or `qq` CLI.
 
 ### To Enable Cloud-Based Monitoring by Using the Qumulo Core Web UI
 
@@ -136,7 +136,7 @@ Before you can use Cloud-Based Monitoring and Remote Support:
 
 <a id="enabling-remote-support"></a>
 ## Enabling Remote Support
-{% if page.platform == 'cnq-aws' or page.platform == 'cnq-azure' %}Remote Support is enabled for you by default. If you have disabled Remote Support, you can enable{% else %}You can enable Remote Support{% endif %} by using the Qumulo Core Web UI or `qq` CLI.
+{% if page.platform == 'cnq-aws' or page.platform == 'cnq-azure' or page.platform == 'cnq-gcp' %}Remote Support is enabled for you by default. If you have disabled Remote Support, you can enable{% else %}You can enable Remote Support{% endif %} by using the Qumulo Core Web UI or `qq` CLI.
 
 ### To Enable Remote Support by Using the Qumulo Core Web UI
 

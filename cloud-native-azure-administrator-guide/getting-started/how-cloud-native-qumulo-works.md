@@ -1,6 +1,6 @@
 ---
 title: "How Cloud Native Qumulo on Azure Works"
-summary: "This section explains the main functionality of Cloud Native Qumulo on Azure (CNQ), shows the reference architecture, and lists the known limits. In addition, it provides an overview of the two-phase deployment, the post-deployment actions, and deployment optimization."
+summary: "This section explains the main functionality of Cloud Native Qumulo on Azure (CNQ), shows the reference architecture, and lists the known limits. In addition, it provides an overview of deployment, post-deployment actions, and deployment optimization."
 permalink: /cloud-native-azure-administrator-guide/getting-started/how-cloud-native-qumulo-works.html
 sidebar: cloud_native_azure_administrator_guide_sidebar
 ---

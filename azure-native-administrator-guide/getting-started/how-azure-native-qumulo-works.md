@@ -109,7 +109,7 @@ The following table compares the features of {{site.azure.qumuloOnAzureShort}} w
 ### Floating IP Addresses and Elastic Scaling
 When {{site.azure.qumuloOnAzureShort}} adjusts cluster performance to meet workflow demands, Qumulo Core redistributes floating IP addresses across compute resources. This process maintains both availability and performance by working with the Microsoft Azure network control plane.
 
-{% include note.html content="Acknowledgement of floating IP address reassignment can take between 1 and 30 seconds during the scaling process." %}
+{% include note.html content="Acknowledgment of floating IP address reassignment can take between 1 and 30 seconds during the scaling process." %}
 
 ### Known Limits
 * **IPv6 Addresses:** Currently, Azure Networking features don't support IPv6 addresses.

@@ -58,7 +58,7 @@ ACTIONS=()
 PS3='What would you like to build? '
 
 # Prints the options on screen
-options=("Qumulo-Certified Platinum-Tier Hardware Servicing Guide" "Gold-Tier Hardware Servicing Guide for Qumulo" "Azure Native Qumulo Administrator Guide" "Cloud Native Qumulo on AWS Administrator Guide" "Cloud Native Qumulo on Azure Administrator Guide" "Qumulo On-Premises Administrator Guide" "Qumulo Nexus Configuration Guide" "Qumulo Alerts Administrator Guide" "Qumulo qq CLI Command Guide" "Qumulo REST API Guide" "Qumulo Integration Guide" "All Administrator Guides" "All Hardware Guides" "All Guides" "Exit")
+options=("Qumulo-Certified Platinum-Tier Hardware Servicing Guide" "Gold-Tier Hardware Servicing Guide for Qumulo" "Azure Native Qumulo Administrator Guide" "Cloud Native Qumulo on AWS Administrator Guide" "Cloud Native Qumulo on Azure Administrator Guide" "Cloud Native Qumulo on GCP Administrator Guide" "Qumulo On-Premises Administrator Guide" "Qumulo Nexus Configuration Guide" "Qumulo Alerts Administrator Guide" "Qumulo qq CLI Command Guide" "Qumulo REST API Guide" "Qumulo Integration Guide" "All Administrator Guides" "All Hardware Guides" "All Guides" "Exit")
 echo
 
 select opt in "${options[@]}"
@@ -87,6 +87,10 @@ do
       ACTIONS+=("CNQ_Azure_Guide")
       break
       ;;
+    "Cloud Native Qumulo on GCP Administrator Guide")
+      ACTIONS+=("CNQ_GCP_Guide")
+      break
+      ;;
     "Qumulo On-Premises Administrator Guide")
       ACTIONS+=("Administrator_Guide")
       break
@@ -112,7 +116,7 @@ do
       break
       ;;
     "All Administrator Guides")
-      ACTIONS+=("ANQ_Guide" "CNQ_AWS_Guide" "CNQ_Azure_Guide" "Administrator_Guide")
+      ACTIONS+=("ANQ_Guide" "CNQ_AWS_Guide" "CNQ_Azure_Guide" "CNQ_GCP_Guide" "Administrator_Guide")
       break
       ;;
     "All Hardware Guides")
@@ -120,7 +124,7 @@ do
       break
       ;;
     "All Guides")
-      ACTIONS+=("Platinum_Tier_Hardware_Guide" "Gold_Tier_Hardware_Guide" "ANQ_Guide" "CNQ_AWS_Guide" "CNQ_Azure_Guide" "Administrator_Guide" "Qumulo_Alerts_Guide" "Qumulo_qq_CLI_Command_Guide" "Integration_Guide")
+      ACTIONS+=("Platinum_Tier_Hardware_Guide" "Gold_Tier_Hardware_Guide" "ANQ_Guide" "CNQ_AWS_Guide" "CNQ_Azure_Guide" "CNQ_GCP_Guide" "Administrator_Guide" "Qumulo_Alerts_Guide" "Qumulo_qq_CLI_Command_Guide" "Integration_Guide")
       break
       ;;
     "Exit")
@@ -154,6 +158,10 @@ build_prince () {
     "CNQ_Azure_Guide")
       JEKYLL_CONFIG=config_cloud_native_azure_guide_pdf.yml
       PRINCE_OUTPUT=cloud-native-qumulo-on-azure-administrator-guide.pdf
+      ;;
+    "CNQ_GCP_Guide")
+      JEKYLL_CONFIG=config_cloud_native_gcp_guide_pdf.yml
+      PRINCE_OUTPUT=cloud-native-qumulo-on-gcp-administrator-guide.pdf
       ;;
     "Administrator_Guide")
       JEKYLL_CONFIG=config_administrator_guide_pdf.yml

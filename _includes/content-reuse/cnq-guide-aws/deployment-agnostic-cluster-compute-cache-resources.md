@@ -10,7 +10,7 @@ This section explains how to deploy compute and cache resources for a Qumulo clu
 {% elsif page.deployment == "tf" %}
 * Provisioning completes successfully when the Provisioner shuts down automatically. If the Provisioner doesn't shut down, the provisioning cycle has failed and you must troubleshoot it. {{site.cnq.monitorProvisioner}}
 
-* The first variable in the example configuration files in the `aws-terraform-cnq` repository is `deployment_name`. To help avoid conflicts between Network Load Balancers (NLBs), resource groups, cross-region CloudWatch views, and other deployment components, Terraform ignores the `deployment_name` value and any changes to it. Terraform generates the additional `deployment_unique_name` variable; appends a random, 11-digit alphanumeric value to it; and then tags all future resources with this variable, which never changes during subsequent Terraform deployments.
+* The first variable in the example configuration files in the `aws-terraform-cnq` repository is `deployment_name`. To help avoid conflicts between Network Load Balancers (NLBs), resource groups, cross-region CloudWatch views, and other deployment components, {{site.cnq.deploymentUniqueName}}
 {% endif %}  
 
 * If you plan to deploy multiple Qumulo clusters, give the `q_cluster_name` variable a unique name for each cluster.
@@ -25,7 +25,7 @@ This section explains how to deploy compute and cache resources for a Qumulo clu
 
    * To store the Terraform state remotely, add the name of an S3 bucket to the sections that begin with `backend "s3" {` and `data "terraform_remote_state" "persistent_storage" {`.
 
-   * To store the Terraform state locally, comment the sections that begin with `backend "s3" {` and `data "terraform_remote_state" "persistent_storage" {` and uncomment the section that contains `backend = "local"`.
+   * To store the Terraform state locally, comment out the sections that begin with `backend "s3" {` and `data "terraform_remote_state" "persistent_storage" {` and uncomment the section that contains `backend = "local"`.
 
      {% capture noLocal %}{{site.cnq.dontRecommendLocalState}}{% endcapture %}
      {% include important.html content=noLocal %}
@@ -153,6 +153,8 @@ This section explains how to deploy compute and cache resources for a Qumulo clu
 
    CloudFormation creates resources for the stack and displays the **CREATE_COMPLETE** status for each resource.
 {% endif %}
+
+### To Mount the Qumulo File System
 
 1. To log in to your cluster's Web UI, use the endpoint from the {% if page.deployment == "tf" %}Terraform output{% elsif page.deployment == "cfn" %}the **QumuloPrivateIP** key on the **Outputs** tab for this stack {% endif %} and the username and password that you have configured.
 

@@ -22,6 +22,10 @@ entries:
       url: /cloud-native-azure-administrator-guide/
       output: web
 
+    - title: Cloud Native Qumulo on GCP Administrator Guide
+      url: /cloud-native-gcp-administrator-guide/
+      output: web
+
     - title: Azure Native Qumulo Administrator Guide
       url: /azure-native-administrator-guide/
       output: web

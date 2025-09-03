@@ -38,13 +38,11 @@ This section describes the common actions you can perform on a {{site.cnqShort}}
 
 <a id="removing-node-from-existing-cluster"></a>
 ### Removing Nodes from an Existing Cluster
-Removing nodes from an existing cluster is a two-step process:
-
-1. Remove the nodes from your cluster's quorum.
-1. Tidy up the AWS resources for the removed nodes.
+Removing nodes from an existing cluster is a two-step process in which you remove the nodes from your cluster's quorum and then tidy up the AWS resources for the removed nodes.
 
 #### Step 1: Remove Nodes from the Cluster's Quorum
-You must perform this step while the cluster is running.
+{% capture whileRunning %}{{site.cnq.performWhileRunning}}{% endcapture %}
+{% include important.html content=whileRunning %}
 
 1. Edit the `terraform.tfvars` file, setting the value of `q_target_node_count` to a reduced number of nodes in the cluster.
 
@@ -154,10 +152,7 @@ You must perform this step while the cluster is running.
 
 <a id="increasing-soft-capacity-limit-existing-cluster"></a>
 ### Increasing the Soft Capacity Limit for an Existing Cluster
-Increasing the soft capacity limit for an existing cluster is a two-step process:
-
-1. Configure new persistent storage parameters.
-2. Configure new compute and cache deployment parameters.
+Increasing the soft capacity limit for an existing cluster is a two-step process in which you configure new persistent storage parameters and then configure new compute and cache deployment parameters.
 
 #### Step 1: Set New Persistent Storage Parameters
 {% if page.deployment == "tf" %}
@@ -239,11 +234,7 @@ You can change the EC2 instance type, node count, and to convert your cluster fr
 </ul>
 {{site.data.alerts.end}}
 
-Changing the EC2 instance type of your {{site.aws.cnqAWSshort}} cluster is a three-step process:
-
-1. Create a new deployment in a new {% if page.deployment == "tf" %}Terraform workspace{% elsif page.deployment == "cfn" %}CloudFormation stack{% endif %} and join the new EC2 instances to a quorum.
-1. Remove the existing EC2 instances.
-1. Clean up your S3 bucket policies.
+Changing the EC2 instance type of your {{site.aws.cnqAWSshort}} cluster is a three-step process in which you create a new deployment in a new {% if page.deployment == "tf" %}Terraform workspace{% elsif page.deployment == "cfn" %}CloudFormation stack{% endif %} and join the new EC2 instances to a quorum, remove the existing EC2 instances, and then clean up your S3 bucket policies.
 
 {% if page.deployment == "tf" %}
 #### Step 1: Create a New Deployment in a New Terraform Workspace
@@ -420,10 +411,7 @@ Changing the EC2 instance type of your {{site.aws.cnqAWSshort}} cluster is a thr
 
 <a id="deleting-existing-cluster"></a>
 ### Deleting an Existing Cluster
-Deleting a cluster is a two-step process:
-
-1. Delete your cluster's compute and cache resources.
-1. Delete your persistent storage.
+Deleting a cluster is a two-step process in which you delete your cluster's compute and cache resources and then delete your persistent storage.
 
 {{site.data.alerts.caution}}
 <ul>

@@ -72,9 +72,9 @@ Before you can deploy the persistent storage for your cluster, you must download
 
 1. Edit the `provider.tf` file:
 
-   * To store the Terraform state remotely, add the name of an S3 bucket to the sections that begin with `backend "s3" {`.
+   * To store the Terraform state remotely, add the name of an S3 bucket to the section that begins with `backend "s3" {`.
 
-   * To store the Terraform state locally, comment the sections that begin with `backend "s3" {`.
+   * To store the Terraform state locally, comment out the section that begins with `backend "s3" {`.
 
      {% capture noLocal %}{{site.cnq.dontRecommendLocalState}}{% endcapture %}
      {% include important.html content=noLocal %}

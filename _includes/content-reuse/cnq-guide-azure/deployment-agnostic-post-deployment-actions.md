@@ -27,10 +27,7 @@ This section describes the common actions you can perform on a {{site.cnqShort}}
 
 <a id="increasing-soft-capacity-limit-existing-cluster"></a>
 ### Increasing the Soft Capacity Limit for an Existing Cluster
-Increasing the soft capacity limit for an existing cluster is a two-step process:
-
-1. Configure new persistent storage parameters.
-2. Configure new compute and cache deployment parameters.
+Increasing the soft capacity limit for an existing cluster is a two-step process in which you configure new persistent storage parameters and then configure new compute and cache deployment parameters.
 
 #### Step 1: Set New Persistent Storage Parameters
 1. Edit the `terraform.tfvars` file in the `persistent-storage` directory and set the `q_cluster_soft_capacity_limit` variable to a higher value.
@@ -74,10 +71,7 @@ Increasing the soft capacity limit for an existing cluster is a two-step process
 
 <a id="deleting-existing-cluster"></a>
 ### Deleting an Existing Cluster
-Deleting a cluster is a two-step process:
-
-1. Delete your {{site.cnqLong}} resources.
-1. Delete your persistent storage.
+Deleting a cluster is a two-step process in which you delete your {{site.cnqLong}} resources and then delete your persistent storage.
 
 {{site.data.alerts.caution}}
 <ul>

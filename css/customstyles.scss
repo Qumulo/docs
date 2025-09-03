@@ -470,17 +470,24 @@ a.navbar-brand {
   }
 }
 
+ul.two-columns {
+  columns: 2;
+  -webkit-columns: 2;
+  -moz-columns: 2;
+}
 ul.three-columns {
   columns: 3;
   -webkit-columns: 3;
   -moz-columns: 3;
 }
 
+ul.two-columns li,
 ul.three-columns li {
   break-inside: avoid; /* Prevents items from breaking across columns */
 }
 
 /* Fix first column */
+ul.two-columns li:first-child,
 ul.three-columns li:first-child {
     margin-top: 0px;
 }

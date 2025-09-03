@@ -1,9 +1,9 @@
 ---
 title: "Deploying Cloud Native Qumulo on Azure with Terraform"
-summary: "This section explains how to deploy Cloud Native Qumulo (CNQ) on Azure by creating the persistent storage and the cluster compute and cache resources with Terraform. It also provides recommendations for Terraform deployments and information about post-deployment actions and optimization."
+summary: "This section explains how to deploy Cloud Native Qumulo (CNQ) on Azure by creating the persistent storage and the cluster compute and cache resources by using Terraform. It also provides recommendations for Terraform deployments and information about post-deployment actions and optimization."
 permalink: /cloud-native-azure-administrator-guide/getting-started/terraform.html
 sidebar: cloud_native_azure_administrator_guide_sidebar
-varRepoLink: <code>azure-terraform-cnq-&lt;x.y&gt;.zip</code> file (the version in the file name corresponds to the provisioning scripts, not the version of Qumulo Core)
+varRepoLink: <code>azure-terraform-cnq-&lt;x.y&gt;.zip</code> file (the version in the file name corresponds to the provisioning scripts, not to the version of Qumulo Core)
 deployment: tf
 ---
 

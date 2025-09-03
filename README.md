@@ -42,6 +42,18 @@ To get started, choose one of the following guides.
       </figure>
     </a>
   </div>
+  <div class="guide-button">
+    <a class="big-button" href="cloud-native-gcp-administrator-guide/">
+      <figure>
+        <picture>
+          <source type="image/webp" srcset="images/cloud-native-qumulo-on-gcp-administrator-guide.webp">
+          <source type="image/png" srcset="images/cloud-native-qumulo-on-gcp-administrator-guide.png">
+          <img src="images/cloud-native-qumulo-on-gcp-administrator-guide.png" alt="An image of a computer screen with a stylized Qumulo Core interface behind an image of a cloud, symbolizing cloud native deployments on GCP" width="301" height="301">
+        </picture>
+        <figcaption>{{site.guides.cnqGCPShort}}</figcaption>
+      </figure>
+    </a>
+  </div>
 </div>
 
 <h2 class="frontpage">Cloud: Qumulo-Managed File System</h2>

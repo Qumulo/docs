@@ -433,6 +433,10 @@ aws:
   cnqAWSlong: Cloud Native Qumulo on AWS
   cnqAWSshort: CNQ on AWS
 
+gcp:
+  cnqGCPlong: Cloud Native Qumulo on GCP
+  cnqGCPshort: CNQ on GCP
+
 cnqLong: Cloud Native Qumulo
 cnqShort: CNQ
 
@@ -451,7 +455,9 @@ cnq:
   runTFdestroy: Run the <code>terraform destroy</code> command.
   runTFdestroyWithFile: Run the <code>terraform destroy -var-file config-standard.tfvars</code> command.
   monitorProvisioner:  To monitor the Provisioner's status, you can watch the Terraform operations in your terminal or <a href="#monitor-provisioner-status">monitor the Provisioner in AWS Systems Manager</a>.
+  monitorGCPProvisioner: To monitor the Provisioner's status, you can watch the Terraform operations in your terminal or <a href="#monitor-provisioner-status">monitor the Provisioner in the GCP Console</a>.
   tfCreatesNewBuckets: Terraform creates new S3 buckets as necessary
+  tfCreatesNewGCSBuckets: Terraform creates new GCS buckets as necessary
   tfCreatesNewStorageAccounts: Terraform creates new Azure Storage Accounts as necessary
   cfnUpdateStackComputeCache: On the <strong>Stacks</strong> page, select <a href="#compute-cache-stack-name">your compute and cache deployment stack</a> and then, in the upper right, click <strong>Update</strong>.
   cfnUpdateStackPersistentStorage: On the <strong>Stacks</strong> page, select <a href="#persistent-storage-stack-name">your persistent storage stack</a> and then, in the upper right, click <strong>Update</strong>.
@@ -460,13 +466,16 @@ cnq:
   cfnRollbackOnFailure: On the <strong>Configure stack options</strong> page, in the <strong>Stack failure options</strong> section, click <strong>Roll back all stack resources</strong>, read and accept the two acknowledgements, and then click <strong>Next</strong>.
   qCoreVerTip: Make a new subdirectory for every new release of Qumulo Core.
   copyDebAndConfig: Copy `qumulo-core.deb` or `qumulo-core.rpm` into the directory named after the Qumulo Core version (in this example, it is `7.5.0`).
+  deploymentUniqueName: Terraform ignores the <code>deployment_name</code> value and generates a <code>deployment_unique_name</code> variable. Terraform appends a random, alphanumeric value to the variable and then tags all future resources with this value. The <code>deployment_unique_name</code> variable never changes during subsequent Terraform deployments.
   deploymentUniqueNameExampleAWS: myname-deployment-ABCDE01EG2H
   deploymentUniqueNameExampleAzure: mynameCompute-ABCDEFG
+  deploymentUniqueNameExampleGCP: mydeploymentname-ABCDE01EG2H
   persistentStorageResourceGroupAzure: mynamePStore-abcde
   paramStore: (In AWS Systems Manager, click <strong>Application Management &gt; Parameter Store &gt; /qumulo/&lt;my-unique-deployment-name&gt;/last-run-status</strong>. On the <strong>History</strong> tab, click <span class="emoji">⚙️</span>, and then in the <strong>Preferences</strong> dialog box, click <strong>Parameter history properties &gt; Value &gt; Confirm</strong>.)
   azureAppConfig: in Azure App Configuration (on the left navigation panel, click <strong>Operations &gt; Configuration Explorer</strong>)
   reviewExecPlan: Review the Terraform execution plan and then enter <code>yes</code>.
   nexusDropDown: Cloud Native Qumulo Downloads
+  performWhileRunning: You must perform this step while the cluster is running.
 
 varonis:
   separateMachine: Deploy Qumulo Broker on a stand-alone machine (or virtual machine) so that it sits between your Qumulo cluster and Varonis.
@@ -514,6 +523,8 @@ guides:
   cnqShort: Cloud Native Qumulo on AWS Admin Guide
   cnqAzure: Cloud Native Qumulo on Azure Administrator Guide
   cnqAzureShort: Cloud Native Qumulo on Azure Admin Guide
+  cnqGCPShort: Cloud Native Qumulo on GCP Admin Guide
+  cnqGCPLong: Cloud Native Qumulo on GCP Administrator Guide
   onprem: Qumulo On-Premises Administrator Guide
   onpremShort: Qumulo On-Premises Admin Guide
   hard: Qumulo-Certified Platinum-Tier Hardware Servicing Guide

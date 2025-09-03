@@ -58,6 +58,7 @@ CHANGE_NOTIFY
 CIDR
 CLI
 CMA
+CMEKs
 CMS
 CNAMEs
 CNQ
@@ -114,12 +115,15 @@ FS
 FVT
 Failover
 FileSystemWatcher
+Firestore
 FlexibleLOM
 Fsas
 GBPS
 GBps
+GCE
 GCM
 GCP
+GCS
 GDPR
 GIDs
 GSS
@@ -143,6 +147,7 @@ HTTPS
 HTTPS
 Hostname
 Hostnames
+HyperDisk
 IAM
 IFTTT
 IML
@@ -345,6 +350,7 @@ Unrack
 UrlBase64
 VLAN
 VLANs
+VM
 VNet
 VNets
 VPC
