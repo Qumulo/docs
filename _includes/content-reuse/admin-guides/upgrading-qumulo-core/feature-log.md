@@ -272,7 +272,7 @@ This release resolves the following on-premises cluster issues:
 </ul>
 {{site.data.alerts.end}}
 
-* {{page.varNoPublicChanges}}
+{{page.varNoPublicChanges}}
 * Made CNQ on AWS available on Qumulo Nexus.
 * Resolved an issue with the **APIs & Tools** page in the Qumulo Core Web UI not showing certain REST endpoints correctly
 {% endif %}
@@ -280,7 +280,7 @@ This release resolves the following on-premises cluster issues:
 {% if page.platform == 'on-prem' %}
 ## Qumulo Core 7.1.4
 {{page.varDownloadsRelnotes}}
-* {{page.varNoPublicChanges}}
+{{page.varNoPublicChanges}}
 * Fixed issues with the default (empty) policy for S3 buckets
 * Configured Qumulo Core to permit anonymous users to perform read-only API actions on S3 buckets
 
@@ -296,8 +296,8 @@ Extended S3 object versioning support to additional API actions
 
 ## Qumulo Core 7.1.1
 {{page.varDownloadsRelnotes}}
-* {{page.varNoPublicChanges}}
-* Resolved two issues that could potentially cause a crash
+{{page.varNoPublicChanges}}
+Resolved two issues that could potentially cause a crash
 
 ## Qumulo Core 7.1.0.2 (Quarterly)
 {{page.varDownloadsRelnotes}}

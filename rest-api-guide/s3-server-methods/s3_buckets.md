@@ -81,7 +81,12 @@ methods:
         Specifies whether to create the bucket root if it doesn't exist.\",\n    \
         \  \"type\": \"boolean\"\n    },\n    \"object_lock_enabled\": {\n      \"\
         description\": \"Specifies whether to enable object locking.\",\n      \"\
-        type\": \"boolean\"\n    }\n  }\n}"
+        type\": \"boolean\"\n    },\n    \"private\": {\n      \"description\": \"\
+        Specifies whether to create a private bucket. A private bucket has a policy\
+        \ automatically created that restricts visibility and access to the creator\
+        \ and users with RBAC permissions. When a bucket is not private, it is created\
+        \ without any policy and is visible to all S3 users.\",\n      \"type\": \"\
+        boolean\"\n    }\n  }\n}"
 rest_endpoint: /v1/s3/buckets/
 api_version: v1
 permalink: /rest-api-guide/s3-server-methods/s3_buckets.html

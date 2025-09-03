@@ -18,9 +18,22 @@ methods:
         description\": \"Node model number\",\n            \"type\": \"string\"\n\
         \          },\n          \"capacity_in_bytes\": {\n            \"description\"\
         : \"Raw capacity of the node\",\n            \"type\": \"string\"\n      \
-        \    },\n          \"node_version\": {\n            \"description\": \"Version\"\
-        ,\n            \"type\": \"object\",\n            \"properties\": {\n    \
-        \          \"revision_id\": {\n                \"description\": \"revision_id\"\
+        \    },\n          \"disk_info\": {\n            \"description\": \"Node disk\
+        \ info\",\n            \"type\": \"object\",\n            \"properties\":\
+        \ {\n              \"slot_counts\": {\n                \"description\": \"\
+        slot_counts\",\n                \"type\": \"object\",\n                \"\
+        properties\": {\n                  \"hdds\": {\n                    \"description\"\
+        : \"hdds\",\n                    \"type\": \"number\"\n                  },\n\
+        \                  \"ssds\": {\n                    \"description\": \"ssds\"\
+        ,\n                    \"type\": \"number\"\n                  }\n       \
+        \         }\n              },\n              \"ssd_partition_size\": {\n \
+        \               \"description\": \"ssd_partition_size\",\n               \
+        \ \"type\": \"string\"\n              },\n              \"hdd_partition_size\"\
+        : {\n                \"description\": \"hdd_partition_size\",\n          \
+        \      \"type\": \"string\"\n              }\n            }\n          },\n\
+        \          \"node_version\": {\n            \"description\": \"Version\",\n\
+        \            \"type\": \"object\",\n            \"properties\": {\n      \
+        \        \"revision_id\": {\n                \"description\": \"revision_id\"\
         ,\n                \"type\": \"string\"\n              },\n              \"\
         build_id\": {\n                \"description\": \"build_id\",\n          \
         \      \"type\": \"string\"\n              },\n              \"flavor\": {\n\
