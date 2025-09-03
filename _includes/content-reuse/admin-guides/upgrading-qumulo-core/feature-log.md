@@ -4,6 +4,14 @@ For information about upgrade types for each release, see <a href='mode-referenc
 
 <style>div#toc{height:200px;overflow:auto;}</style>
 
+## Qumulo Core 7.6.1
+{{page.varDownloadsRelnotes}}
+{{page.varNoPublicChanges}}
+
+* Added the ability to apply the `private` policy to an S3 bucket at creation time
+* For Cloud Native Qumulo (CNQ), replaced two OpenMetrics metrics for node and drive failure
+* Resolved an issue with the REST API endpoint for unconfigured nodes
+
 ## Qumulo Core 7.6.0.1 (Quarterly)
 {{page.varDownloadsRelnotes}}
 {{site.data.alerts.important}}

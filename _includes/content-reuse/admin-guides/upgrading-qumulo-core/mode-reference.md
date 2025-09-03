@@ -13,6 +13,10 @@ For information about the most important features from each release, click the Q
   </thead>
   <tbody>
     <tr>
+      <td><a href="feature-log.html#qumulo-core-761-quarterly">7.6.1</a></td>
+      <td>Instant</td>
+    </tr>
+    <tr>
       <td><a href="feature-log.html#qumulo-core-7601-quarterly">7.6.0.1 (Quarterly)</a></td>
       <td>Instant</td>
     </tr>
