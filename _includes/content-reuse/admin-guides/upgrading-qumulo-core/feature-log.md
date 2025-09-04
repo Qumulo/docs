@@ -1,4 +1,4 @@
-{% if page.platform == 'on-prem' %}
+ {% if page.platform == 'on-prem' %}
 For information about upgrade types for each release, see <a href='mode-reference.html'>Qumulo Core Upgrade Mode Reference</a>.
 {% endif %}
 
@@ -6,6 +6,14 @@ For information about upgrade types for each release, see <a href='mode-referenc
 
 ## Qumulo Core 7.6.1.1
 {{page.varDownloadsRelnotes}}
+
+{{site.data.alerts.note}}
+This release of Qumulo Core adds Illumio Policy Compute Engine (PCE) and Virtual Enforcement Node (VEN) functionality that ensures network security within the container.
+<ul>
+  <li>If your cluster doesn't use Illumio, there is no need to upgrade to this release.</li>
+  <li>To connect each node in your cluster to a VEN, run the <code>illumio-ven-ctl</code> command within the container on every node in your cluster. For more information, see <a target="_blank" href="https://product-docs-repo.illumio.com/Tech-Docs/Core/24.2/Install-Upgrade-Admin/out/en/ven-install-and-upgrade/reference/ven-activate-command-reference.html">VEN Activate Command Reference</a> in the Illumio documentation.</li>
+</ul>
+{{site.data.alerts.end}}
 
 * Added the ability to apply the `private` policy to an S3 bucket at creation time
 * For Cloud Native Qumulo (CNQ), replaced two OpenMetrics metrics for node and drive failure
