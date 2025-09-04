@@ -1,12 +1,19 @@
-{% if page.platform == 'on-prem' %}
+ {% if page.platform == 'on-prem' %}
 For information about upgrade types for each release, see <a href='mode-reference.html'>Qumulo Core Upgrade Mode Reference</a>.
 {% endif %}
 
 <style>div#toc{height:200px;overflow:auto;}</style>
 
-## Qumulo Core 7.6.1
+## Qumulo Core 7.6.1.1
 {{page.varDownloadsRelnotes}}
-{{page.varNoPublicChanges}}
+
+{{site.data.alerts.note}}
+This release of Qumulo Core adds Illumio Policy Compute Engine (PCE) and Virtual Enforcement Node (VEN) functionality that ensures network security within the container.
+<ul>
+  <li>If your cluster doesn't use Illumio, there is no need to upgrade to this release.</li>
+  <li>To connect each node in your cluster to a VEN, run the <code>illumio-ven-ctl</code> command within the container on every node in your cluster. For more information, see <a target="_blank" href="https://product-docs-repo.illumio.com/Tech-Docs/Core/24.2/Install-Upgrade-Admin/out/en/ven-install-and-upgrade/reference/ven-activate-command-reference.html">VEN Activate Command Reference</a> in the Illumio documentation.</li>
+</ul>
+{{site.data.alerts.end}}
 
 * Added the ability to apply the `private` policy to an S3 bucket at creation time
 * For Cloud Native Qumulo (CNQ), replaced two OpenMetrics metrics for node and drive failure
@@ -20,8 +27,9 @@ For information about upgrade types for each release, see <a href='mode-referenc
   <li>This release resolves an issue identified in Qumulo Core 7.5.4 where, under certain conditions, a node could become unavailable during an update.</li>
 </ul>
 {{site.data.alerts.end}}
-{{page.varNoPublicChanges}}
-Resolved an issue with the location of S3 buckets created from the Qumulo Core Web UI
+
+* {{page.varNoPublicChanges}}
+* Resolved an issue with the location of S3 buckets created from the Qumulo Core Web UI
 
 ## Qumulo Core 7.5.5.1
 {{page.varDownloadsRelnotes}}
@@ -169,8 +177,6 @@ Resolved an issue with the location of S3 buckets created from the Qumulo Core W
 
 ## Qumulo Core 7.4.0.3 (Quarterly)
 {{page.varDownloadsRelnotes}}
-{{page.varNoPublicChanges}}
-
 * Added support for latest Western Digital Ultrastar DC SN640 SSD firmware
 * Improved UID and GID sorting in the Qumulo Core Web UI
 * Resolved an issue with `PutObject` and `CopyObject` S3 API actions
@@ -280,7 +286,7 @@ This release resolves the following on-premises cluster issues:
 </ul>
 {{site.data.alerts.end}}
 
-{{page.varNoPublicChanges}}
+* {{page.varNoPublicChanges}}
 * Made CNQ on AWS available on Qumulo Nexus.
 * Resolved an issue with the **APIs & Tools** page in the Qumulo Core Web UI not showing certain REST endpoints correctly
 {% endif %}
@@ -288,7 +294,7 @@ This release resolves the following on-premises cluster issues:
 {% if page.platform == 'on-prem' %}
 ## Qumulo Core 7.1.4
 {{page.varDownloadsRelnotes}}
-{{page.varNoPublicChanges}}
+* {{page.varNoPublicChanges}}
 * Fixed issues with the default (empty) policy for S3 buckets
 * Configured Qumulo Core to permit anonymous users to perform read-only API actions on S3 buckets
 
@@ -304,8 +310,8 @@ Extended S3 object versioning support to additional API actions
 
 ## Qumulo Core 7.1.1
 {{page.varDownloadsRelnotes}}
-{{page.varNoPublicChanges}}
-Resolved two issues that could potentially cause a crash
+* {{page.varNoPublicChanges}}
+* Resolved two issues that could potentially cause a crash
 
 ## Qumulo Core 7.1.0.2 (Quarterly)
 {{page.varDownloadsRelnotes}}
