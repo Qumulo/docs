@@ -52,7 +52,7 @@ You can use a single _lock key_ (private key) with multiple snapshot policies, o
 
    {% include note.html content="Snapshots created prior to this configuration remain unlocked." %}
 
-For more information, see <a href="../encryption-data-security/managing-security-keys.html">Managing Security Keys in the Qumulo File System Key Store</a>. {{site.protectingData.lockKeyPolicyExamples}}
+For more information, see <a href="../cryptographic-key-management/managing-security-keys.html">Managing Security Keys in the Qumulo File System Key Store</a>. {{site.protectingData.lockKeyPolicyExamples}}
 
 ### To View Existing Snapshots
 The **Snapshots** page lets you navigate a large number of snapshots.

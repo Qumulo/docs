@@ -158,6 +158,7 @@ IPv4
 IPv6
 ISOHybrid
 IdP
+Illumio
 Imager
 Infoblox
 Isilon
@@ -237,6 +238,7 @@ P2100G
 P225P
 P256
 PAM4
+PCE
 PCI
 PCIe
 PCLMUL
