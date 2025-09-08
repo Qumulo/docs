@@ -59,11 +59,13 @@ To create a USB Drive Installer on Windows, you must use a third-party applicati
 
 1. Insert your USB drive and run Rufus.
 
+   {% include tip.html content="A 32 GB or 64 GB USB drive is suitable for the USB Drive Installer." %}
+
 1. Under **Drive Properties**, select a device and the path to the Qumulo Core USB installer image.
 
 1. For **Partition scheme**, select **MBR** and for **Target System**, select **BIOS or UEFI**.
    
-1. Under **Format Options**, ensure that the **File system** is set to **FAT32 (Default)**.
+1. Under **Format Options**, ensure that the **File system** is set to **NTFS**.
 
 1. Click **Start**.
 
