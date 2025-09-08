@@ -59,5 +59,4 @@ This section explains the prerequisites to deploying {{site.gcp.cnqGCPshort}}.
 The {{site.cnqShort}} Provisioner is a Google Compute Engine (GCE) instance that configures your Qumulo cluster and any additional GCP environment requirements.
 
 <a id="monitor-provisioner-status"></a>
-#### To Monitor the Provisioner's Status
 {% include content-reuse/cnq-guide-gcp/deployment-agnostic-monitor-provisioner-status.md %}

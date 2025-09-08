@@ -21,7 +21,7 @@ This section describes the common actions you can perform on a {{site.cnqShort}}
      "{{site.exampleIP9}}"   
    ])
    ```   
-{% capture verifyProvis %}To ensure that the Provisioner shut downs automatically, monitor the `/qumulo/my-deployment-name/last-run-status` parameter for the Provisioner. {{site.cnq.monitorGCPProvisioner}}{% endcapture %}
+{% capture verifyProvis %}{{site.cnq.monitorGCPProvisionerShutdown}} {{site.cnq.monitorGCPProvisioner}}{% endcapture %}
 1. {{verifyProvis}}
 1. {{site.cnq.logIntoWebUI}}
 
@@ -180,7 +180,7 @@ Increasing the soft capacity limit for an existing cluster is a two-step process
    ```
 
 #### Step 2: Update Existing Compute and Cache Resource Deployment
-1. Navigate to the root directory of the `gcp-terraform-cnq-<x.y>` repository.
+1. Navigate to the root directory of the `qumulo-terraform-gcp-<x.y>` repository.
 1. {{site.cnq.runTFapply}}
 
    {{site.cnq.reviewExecPlan}}
@@ -207,11 +207,16 @@ Changing the GCE instance type of your {{site.gcp.cnqCNQshort}} cluster is a thr
 
    1. Specify the value for the `gcp_subnet_name` variable.
 
+   1. Specify the value for the `gcp_zones` variable.
+
       {% include note.html content="For multi-zone deployments, specify values as a comma-delimited list." %}
 
    1. Specify the value for the `q_instance_type` variable.
+
    1. Set the value of the `q_replacement_cluster` variable to `true`.
+
    1. Set the value of the `q_existing_deployment_unique_name` variable to the current deployment's name.
+
    1. (Optional) To change the number of nodes, specify the value for the `q_node_count` variable.
 
    {% include important.html content="Leave the other variables unchanged." %}
