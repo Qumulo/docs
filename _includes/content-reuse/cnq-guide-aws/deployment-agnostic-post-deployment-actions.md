@@ -24,16 +24,25 @@ This section describes the common actions you can perform on a {{site.cnqShort}}
    ```   
 {% elsif page.deployment == "cfn" %}
 1. {{site.cnq.logIntoCFN}}
+
 1. {{site.cnq.cfnUpdateStackComputeCache}}
+
 1. {{site.cnq.cfnUseExistingTemplate}}
-1. On the **Specify stack details** page, enter a new value for **Number of Qumulo EC2 instances** and then click **Next**.
+
+1. On the **Specify stack details** page, enter a new value for **Number of Qumulo EC2 instances**, enter the **Qumulo AMI ID** and then click **Next**.
+
+   {% capture findQumuloAMIid %}{{site.cnq.findQumuloAMIid}}{% endcapture %}
+   {% include tip.html content=findQumuloAMIid %}
+
 1. {{site.cnq.cfnRollbackOnFailure}}
+
 1. On the **Review &lt;my-unique-deployment-name&gt;** page, click **Submit**.
 
    CloudFormation creates resources for the stack and displays the **CREATE_COMPLETE** status for each resource.
 {% endif %}
 {% capture verifyProvis %}To ensure that the Provisioner shut downs automatically, monitor the `/qumulo/{% if page.deployment == "tf" %}my-deployment-name{% elsif page.deployment == "cfn" %}my-unique-deployment-name{% endif %}/last-run-status` parameter for the Provisioner. {{site.cnq.monitorProvisioner}}{% endcapture %}
 1. {{verifyProvis}}
+
 1. {{site.cnq.logIntoWebUI}}
 
 <a id="removing-node-from-existing-cluster"></a>
@@ -192,6 +201,7 @@ Increasing the soft capacity limit for an existing cluster is a two-step process
 
 #### Step 2: Update Existing Compute and Cache Resource Deployment
 1. Navigate to the root directory of the `aws-terraform-cnq-<x.y>` repository.
+
 1. {{site.cnq.runTFapply}}
 
    {{site.cnq.reviewExecPlan}}
@@ -199,12 +209,15 @@ Increasing the soft capacity limit for an existing cluster is a two-step process
    Terraform updates the necessary IAM roles and S3 bucket policies, adds S3 buckets to the persistent storage list for the cluster, increases the soft capacity limit, and displays the `Apply complete!` message.
    
    When the Provisioner shuts down automatically, this process is complete.
-
 {% elsif page.deployment == "cfn" %}
 1. {{site.cnq.cfnUpdateStackPersistentStorage}}
+
 1. {{site.cnq.cfnUseExistingTemplate}}
+
 1. On the **Specify stack details** page, select a higher value for **Soft Capacity Limit** and then click **Next**.
+
 1. {{site.cnq.cfnRollbackOnFailure}}
+
 1. On the **Review &lt;my-unique-deployment-name&gt;** page, click **Submit**.
 
    CloudFormation updates resources for the stack and displays the **CREATE_COMPLETE** status for each resource.
@@ -213,16 +226,21 @@ Increasing the soft capacity limit for an existing cluster is a two-step process
 
 #### Step 2: Update Existing Compute and Cache Resource Deployment
 1. {{site.cnq.cfnUpdateStackComputeCache}}
+
 1. {{site.cnq.cfnUseExistingTemplate}}
-1. On the **Specify stack details** page click **Next**.
+
+1. On the **Specify stack details** page, enter the **Qumulo AMI ID** and then click **Next**.
+
+   {% include tip.html content=findQumuloAMIid %}
+
 1. {{site.cnq.cfnRollbackOnFailure}}
+
 1. On the **Review &lt;my-unique-deployment-name&gt;** page, click **Submit**.
 
    CloudFormation updates resources for the stack and displays the **CREATE_COMPLETE** status for each resource.
 
    When the Provisioner shuts down automatically, this process is complete.
 {% endif %}
-
 
 ### Changing the EC2 Instance Type of Your CNQ on AWS Cluster
 You can change the EC2 instance type, node count, and to convert your cluster from single-AZ to multi-AZ, or the other way around.

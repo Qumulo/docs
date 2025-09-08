@@ -477,6 +477,7 @@ cnq:
   reviewExecPlan: Review the Terraform execution plan and then enter <code>yes</code>.
   nexusDropDown: Cloud Native Qumulo Downloads
   performWhileRunning: You must perform this step while the cluster is running.
+  findQumuloAMIid: To find the value for **Qumulo AMI ID**, on the EC2 console, click **Instances &gt; Instances**.
 
 varonis:
   separateMachine: Deploy Qumulo Broker on a stand-alone machine (or virtual machine) so that it sits between your Qumulo cluster and Varonis.
