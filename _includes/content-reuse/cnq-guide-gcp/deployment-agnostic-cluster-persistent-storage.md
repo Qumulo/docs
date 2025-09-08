@@ -60,7 +60,7 @@ Before you can deploy the persistent storage for your cluster, you must download
 
       * The `Apply complete!` message with a count of added resources
         
-      * The names of the created **GCS buckets**
+      * The names of the created GCS buckets
         
       * Your deployment's unique name
      

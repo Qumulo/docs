@@ -4,6 +4,5 @@ summary: "This section lists the names, types, labels, and descriptions for the 
 permalink: /cloud-native-gcp-administrator-guide/monitoring-and-metrics/openmetrics-api-specification.html
 sidebar: cloud_native_gcp_administrator_guide_sidebar
 include_content: content-reuse/admin-guides/monitoring-and-metrics/openmetrics-api-specification.md
-platform: cnq-aws
+platform: cnq-gcp
 ---
-

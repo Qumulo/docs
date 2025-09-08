@@ -1,4 +1,4 @@
- {% if page.platform == 'on-prem' %}
+{% if page.platform == 'on-prem' %}
 For information about upgrade types for each release, see <a href='mode-reference.html'>Qumulo Core Upgrade Mode Reference</a>.
 {% endif %}
 
@@ -31,6 +31,7 @@ This release of Qumulo Core adds Illumio Policy Compute Engine (PCE) and Virtual
 * {{page.varNoPublicChanges}}
 * Resolved an issue with the location of S3 buckets created from the Qumulo Core Web UI
 
+{% unless page.platform == 'cnq-gcp' %}
 ## Qumulo Core 7.5.5.1
 {{page.varDownloadsRelnotes}}
 {% include important.html content="This release resolves an issue identified in Qumulo Core 7.5.4 where, under certain conditions, a node could become unavailable during an update." %}
@@ -252,6 +253,7 @@ This release resolves the following on-premises cluster issues:
 * Updated some of the error types and HTTP status codes that appear during cluster membership operations.
 * Added REST API resources and `qq` CLI commands for creation and membership change of CNQ clusters.
 * Resolved an issue with an SSL configuration change while the S3 server is in plaintext mode.
+{% endunless %}
 
 {% if page.platform == 'on-prem' or page.platform == 'cnq-aws' %}
 ## Qumulo Core 7.2.2

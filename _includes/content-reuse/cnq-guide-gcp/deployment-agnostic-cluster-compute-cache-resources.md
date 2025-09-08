@@ -1,6 +1,6 @@
 <a id="deploy-cluster-compute-and-cache-resources"></a>
 ## Step 2: Deploying Cluster Compute and Cache Resources
-This section explains how to deploy compute and cache resources for a Qumulo cluster by using a Ubuntu AMI and the Qumulo Core `.deb` installer.
+This section explains how to deploy compute and cache resources for a Qumulo cluster by using a Ubuntu image and the Qumulo Core `.deb` installer.
 
 ### Recommendations
 {% include important.html content="We strongly recommend reviewing the following recommendations before beginning this process." %}
