@@ -456,6 +456,7 @@ cnq:
   runTFdestroyWithFile: Run the <code>terraform destroy -var-file config-standard.tfvars</code> command.
   monitorProvisioner:  To monitor the Provisioner's status, you can watch the Terraform operations in your terminal or <a href="#monitor-provisioner-status">monitor the Provisioner in AWS Systems Manager</a>.
   monitorGCPProvisioner: To monitor the Provisioner's status, you can watch the Terraform operations in your terminal or <a href="#monitor-provisioner-status">monitor the Provisioner in the GCP Console</a>.
+  monitorGCPProvisionerShutdown: To ensure that the Provisioner shut downs automatically, monitor the `deployment_unique_name/compute` and `deployment_unique_name/last-run-status` document paths in the Firestore database for the Provisioner.
   tfCreatesNewBuckets: Terraform creates new S3 buckets as necessary
   tfCreatesNewGCSBuckets: Terraform creates new GCS buckets as necessary
   tfCreatesNewStorageAccounts: Terraform creates new Azure Storage Accounts as necessary

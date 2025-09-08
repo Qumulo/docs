@@ -15,7 +15,7 @@ Before you can deploy the persistent storage for your cluster, you must download
 1. Within this directory, create another directory with the Qumulo Core version as its name. For example:
 
    ```
-    gs://my-gcs-bucket-name/my-prefix/qumulo-core-install/7.5.0
+    gs://my-gcs-bucket-name/my-prefix/qumulo-core-install/7.6.0
    ```
 
    {% capture newVer %}{{site.cnq.qCoreVerTip}}{% endcapture %}
@@ -23,7 +23,7 @@ Before you can deploy the persistent storage for your cluster, you must download
 
 1. {{site.cnq.copyDebAndConfig}}
 
-1. Copy `gcp-terraform-cnq-<x.y>.zip` to your Terraform environment and then decompress the file.
+1. Copy `qumulo-terraform-gcp-<x.y>.zip` to your Terraform environment and then decompress the file.
 
 <a id="create-necessary-resources"></a>
 ### Part 2: Create the Necessary Resources
@@ -31,9 +31,9 @@ Before you can deploy the persistent storage for your cluster, you must download
 
 1. Edit the `provider.tf` file:
 
-   * To store the Terraform state remotely, add the name of a GCS bucket to the section that begins with `backend "s3" {`.
+   * To store the Terraform state remotely, add the name of a GCS bucket to the section that begins with `backend "gcp" {`.
 
-   * To store the Terraform state locally, comment out the section that begins with `backend "s3" {`.
+   * To store the Terraform state locally, comment out the section that begins with `backend "gcp" {`.
 
      {% capture noLocal %}{{site.cnq.dontRecommendLocalState}}{% endcapture %}
      {% include important.html content=noLocal %}

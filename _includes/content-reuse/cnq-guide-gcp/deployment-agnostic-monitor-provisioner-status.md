@@ -1,4 +1,16 @@
-You can monitor the Provisioner from the GCP Console (in your project, click **Compute Engine &gt; VM Instances**) or by using the `gcloud` CLI. The Provisioner stores all necessary state information in a Firestore database and shuts down automatically when it completes its tasks.
+You can monitor the Provisioner from the GCP Console or by using the `gcloud` CLI.
+
+#### To Monitor the Provisioner's Status by Using the GCP Console
+
+1. Log in to the GCP Console.
+
+1. In your project, click **Compute Engine &gt; VM Instances**.
+
+1. {{site.cnq.monitorGCPProvisionerShutdown}}
+
+   The Provisioner stores all necessary state information in a Firestore database and shuts down automatically when it completes its tasks.
+
+#### To Monitor the Provisioner's Status by using the gcloud CLI
 
 <ol>
   <li>

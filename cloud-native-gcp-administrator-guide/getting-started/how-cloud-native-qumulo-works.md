@@ -6,7 +6,7 @@ sidebar: cloud_native_gcp_administrator_guide_sidebar
 ---
 
 ## What is Cloud Native Qumulo on GCP?
-{{site.gcp.cnqGCPshort}} is a self-managed Virtual Private Cloud (VPC) deployment that provisions Google Compute Engine (GCE) instances and uses Google Cloud Platform (GCP) infrastructure for a Qumulo file system, which allows the disaggregation of persistent storage from compute resources. You can deploy {{site.gcp.cnqGCPshort}} by using [Terraform](terraform.html) or Deployment Manager templates. 
+{{site.gcp.cnqGCPshort}} is a self-managed Virtual Private Cloud (VPC) deployment that provisions Google Compute Engine (GCE) instances and uses Google Cloud Platform (GCP) infrastructure for a Qumulo file system, which allows the disaggregation of persistent storage from compute resources. You can deploy {{site.gcp.cnqGCPshort}} by using [Terraform](terraform.html). 
 
 {{site.gcp.cnqGCPshort}} provides the same multi-protocol support, interfaces, and functionality as Qumulo on premises.
 

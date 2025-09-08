@@ -7,29 +7,31 @@ This section explains how to deploy compute and cache resources for a Qumulo clu
 
 * Provisioning completes successfully when the Provisioner shuts down automatically. If the Provisioner doesn't shut down, the provisioning cycle has failed and you must troubleshoot it. {{site.cnq.monitorGCPProvisioner}}
 
-* The first variable in the example configuration files in the `gcp-terraform-cnq` repository is `deployment_name`. To help avoid conflicts between load balancers, resource labels, and other deployment components, {{site.cnq.deploymentUniqueName}}
+* The first variable in the example configuration files in the `qumulo-terraform-gcp` repository is `deployment_name`. To help avoid conflicts between resource labels and other deployment components, {{site.cnq.deploymentUniqueName}}
 
 * If you plan to deploy multiple Qumulo clusters, give the `q_cluster_name` variable a unique name for each cluster.
 
+{% comment %}
 * We recommend forwarding DNS queries to [Qumulo Authoritative DNS (QDNS)](../network-configuration/configuring-authoritative-dns.html). For multi-zone deployments, specify a value for `q_cluster_fqdn`. Qumulo Core uses this variable to forward DNS requests to your cluster, where Qumulo Core resolves DNS for your floating IP addresses.
+{% endcomment %}
 
 ### To Deploy the Cluster Compute and Cache Resources
 1. Edit the `provider.tf` file:  
 
-   * To store the Terraform state remotely, add the name of an S3 bucket to the sections that begin with `backend "s3" {` and `data "terraform_remote_state" "persistent_storage" {`.
+   * To store the Terraform state remotely, add the name of an S3 bucket to the sections that begin with `backend "gcp" {` and `data "terraform_remote_state" "persistent_storage" {`.
 
-   * To store the Terraform state locally, comment the sections that begin with `backend "s3" {` and `data "terraform_remote_state" "persistent_storage" {` and uncomment the section that contains `backend = "local"`.
+   * To store the Terraform state locally, comment the sections that begin with `backend "gcp" {` and `data "terraform_remote_state" "persistent_storage" {` and uncomment the section that contains `backend = "local"`.
    
      {% capture noLocal %}{{site.cnq.dontRecommendLocalState}}{% endcapture %}  
      {% include important.html content=noLocal %}
 
-1. Navigate to the `gcp-terraform-cnq-<x.y>/compute` directory and then run the `terraform init` command.
+1. Navigate to the `qumulo-terraform-gcp-<x.y>/compute` directory and then run the `terraform init` command.
 
    Terraform prepares the environment and displays the message `Terraform has been successfully initialized!`
 
 1. Edit the `terraform.tfvars` file, specifying the values for all variables.
 
-   For more information, see `README.pdf` in `gcp-terraform-cnq-<x.y>.zip`.
+   For more information, see `README.pdf` in `qumulo-terraform-gcp-<x.y>.zip`.
 
 1. {{site.cnq.runTFapply}}
 
