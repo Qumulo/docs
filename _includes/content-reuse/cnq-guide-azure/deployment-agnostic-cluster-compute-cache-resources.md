@@ -1,32 +1,47 @@
 <a id="deploy-cluster-compute-and-cache-resources"></a>
 ## Step 2: Deploying Cluster Compute and Cache Resources
-This section explains how to deploy compute and cache resources for a Qumulo cluster by using a Ubuntu AMI and the Qumulo Core `.deb` installer.
+This section explains how to deploy compute and cache resources for a Qumulo cluster by using a Ubuntu image and the Qumulo Core `.deb` installer.
 
-{{site.data.alerts.important}}
-<ul>
-  <li>Provisioning completes successfully when the Provisioner shuts down automatically. If the Provisioner doesn't shut down, the provisioning cycle has failed and you must troubleshoot it.  To monitor the provisioner's status, you can watch the Terraform status posts in your terminal or {{site.cnq.azureAppConfig}}.</li>
-  <li>The first variable in the example configuration files in the <code>azure-terraform-cnq</code> repository is <code>deployment_name</code>. To help avoid conflicts between resource groups and other deployment components, {{site.cnq.deploymentUniqueName}}.</li> 
-  <li>If you plan to deploy multiple Qumulo clusters, give the <code>q_cluster_name</code> variable a unique name for each cluster.</li>
-</ul>
-{{site.data.alerts.end}}
+### Recommendations
+{% include important.html content="We strongly recommend reviewing the following recommendations before beginning this process." %}
 
-1. To add service endpoints to your Virtual Network, take the following steps:
+* Provisioning completes successfully when the Provisioner shuts down automatically. If the Provisioner doesn't shut down, the provisioning cycle has failed and you must troubleshoot it.  To monitor the provisioner's status, you can watch the Terraform status posts in your terminal or {{site.cnq.azureAppConfig}}.
 
-   1. In the Azure Portal, click **Virtual Network**.
+* The first variable in the example configuration files in the <code>azure-terraform-cnq</code> repository is <code>deployment_name</code>. To help avoid conflicts between resource groups and other deployment components, {{site.cnq.deploymentUniqueName}}
+
+* If you plan to deploy multiple Qumulo clusters, give the <code>q_cluster_name</code> variable a unique name for each cluster.
+
+* We recommend forwarding DNS queries to [Qumulo Authoritative DNS (QDNS)](../network-configuration/configuring-authoritative-dns.html). For a single-AZ deployment, to allow Qumulo Core to create an Amazon Route 53 outbound resolver, specify values for the `q_cluster_fqdn` and `second_private_subnet_id` variables. The resolver uses the `q_cluster_fqdn` variable to forward DNS requests to your cluster, where Qumulo Core resolves DNS for your floating IP addresses.
+
+### Part 1: To Deploy the Cluster Compute and Cache Resources
+
+1. To ensure that your Virtual Network subnet has the required service endpoints, take the following steps:
+
+   1. In the Azure Portal, search for `Virtual networks` and then select your Virtual Network.
 
    1. On the left panel, click **Settings > Service endpoints**.
 
-   1. On the **Service endpoints** page, add the `Microsoft.KeyVault` and `Microsoft.Storage` service endpoints to your Virtual Network.
+   1. On the **Service endpoints** page, ensure that the `Microsoft.KeyVault` and `Microsoft.Storage` service endpoints are added and enabled for the subnet where {{site.azure.cnqAzureShort}} is to be deployed.
 
-   {% include important.html content="It isn't possible to deploy your cluster without these endpoints." %}
+   {% include important.html content="It isn't possible to deploy your cluster without these service endpoints." %}
+
+1. Edit the `provider.tf` file:
+
+   * To store the Terraform state remotely, add the name of an S3 bucket to the sections that begin with `backend "azurerm" {` and `data "terraform_remote_state" "persistent_storage" {`.
+
+   * To store the Terraform state locally, comment out the sections that begin with `backend "azurerm" {` and `data "terraform_remote_state" "persistent_storage" {` and uncomment the section that contains `backend = "local"`.
+
+     {% capture noLocal %}{{site.cnq.dontRecommendLocalState}}{% endcapture %}
+     {% include important.html content=noLocal %}
 
 1. Navigate to the `azure-terraform-cnq-<x.y>` directory and then run the `terraform init` command.
 
    Terraform prepares the environment and displays the message `Terraform has been successfully initialized!`
 
-1. In `terraform.tfvars`, fill in the values for all variables.
+1. Edit the `terraform.tfvars` file and specify the values for all variables.
 
-   (Optional) Specify an existing `advanced_az_resource_group_name`.
+   {% capture advancedAZ %}{{site.azure.advancedAZresourceName}}{% endcapture %}
+   {% include note.html content=advancedAZ %}
 
    For more information, see `README.pdf` in `azure-terraform-cnq-<x.y>.zip`.
 
@@ -34,7 +49,7 @@ This section explains how to deploy compute and cache resources for a Qumulo clu
 
 1. {{site.cnq.reviewExecPlan}}
 
-   Terraform creates resources according the execution plan and displays:
+   Terraform creates resources according to the execution plan and displays:
 
    * Your deployment's unique name
 
@@ -51,29 +66,27 @@ This section explains how to deploy compute and cache resources for a Qumulo clu
    For example:
 
    ```
-   Outputs:
-
    deployment_unique_name = "{{site.cnq.deploymentUniqueNameExampleAzure}}"
    provisioner = {
      "provisioner_ip_address" = "{{site.exampleIP0}}"
-     "qumulo_cluster_floating_ips" = [
+     "qumulo_cluster_floating_ips" = tolist([
        "{{site.exampleIP42}}",
        "{{site.exampleIP84}}",
        ...
-     ]
+     ])
    }
    ...
-   qumulo_primary_ips = [
+   qumulo_primary_ips = tolist([
      "{{site.exampleIP1}}",
      "{{site.exampleIP2}}",
      "{{site.exampleIP3}}",
      "{{site.exampleIP4}}"
-   ]
+   ])
    ...
    qumulo_private_url_node1 = "https://{{site.exampleEndpointIP0}}"
    ```
 
-### To Mount the Qumulo File System
+### Part 2: To Mount the Qumulo File System
 
 1. To log in to your cluster's Web UI, use the endpoint from the Terraform output as the endpoint and the username and password that you have configured during deployment as the credentials.
 

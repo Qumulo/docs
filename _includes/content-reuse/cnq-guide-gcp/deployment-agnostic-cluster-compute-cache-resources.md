@@ -15,7 +15,7 @@ This section explains how to deploy compute and cache resources for a Qumulo clu
 * We recommend forwarding DNS queries to [Qumulo Authoritative DNS (QDNS)](../network-configuration/configuring-authoritative-dns.html). For multi-zone deployments, specify a value for `q_cluster_fqdn`. Qumulo Core uses this variable to forward DNS requests to your cluster, where Qumulo Core resolves DNS for your floating IP addresses.
 {% endcomment %}
 
-### To Deploy the Cluster Compute and Cache Resources
+### Part 1: To Deploy the Cluster Compute and Cache Resources
 1. Edit the `provider.tf` file:  
 
    * To store the Terraform state remotely, add the name of an S3 bucket to the sections that begin with `backend "gcp" {` and `data "terraform_remote_state" "persistent_storage" {`.
@@ -29,7 +29,7 @@ This section explains how to deploy compute and cache resources for a Qumulo clu
 
    Terraform prepares the environment and displays the message `Terraform has been successfully initialized!`
 
-1. Edit the `terraform.tfvars` file, specifying the values for all variables.
+1. Edit the `terraform.tfvars` file and specify the values for all variables.
 
    For more information, see `README.pdf` in `qumulo-terraform-gcp-<x.y>.zip`.
 
@@ -37,16 +37,16 @@ This section explains how to deploy compute and cache resources for a Qumulo clu
 
 1. {{site.cnq.reviewExecPlan}}
 
-   Terraform displays:
+   Terraform creates resources according to the execution plan and displays:
 
-   * The `Apply complete!` message with a count of added resources
-      
    * Your deployment's unique name
   
    * The names of the created GCS buckets
      
    * The floating IP addresses for your Qumulo cluster
      
+     {% include note.html content="You must specify the floating IP addresses in your `terraform.tfvars` file explicitly." %}
+ 
    * The primary (static) IP addresses for your Qumulo cluster
      
    * The Qumulo Core Web UI endpoint
@@ -54,11 +54,6 @@ This section explains how to deploy compute and cache resources for a Qumulo clu
    For example:
    
    ```
-   Apply complete! Resources: 62 added, 0 changed, 0 destroyed.
-  
-   Outputs:
-  
-   cluster_provisioned = "Success"
    deployment_unique_name = "{{site.cnq.deploymentUniqueNameExampleGCP}}"
    ...
    persistent_storage_bucket_names = tolist([
@@ -83,7 +78,7 @@ This section explains how to deploy compute and cache resources for a Qumulo clu
    qumulo_private_url_node1 = "https://{{site.exampleEndpointIP5}}"
    ```
 
-### To Mount the Qumulo File System
+### Part 2: To Mount the Qumulo File System
 
 1. To log in to your cluster's Web UI, use the endpoint from the Terraform output and the username and password that you have configured.
 

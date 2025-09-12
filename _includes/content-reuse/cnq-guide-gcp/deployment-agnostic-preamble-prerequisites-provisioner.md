@@ -5,8 +5,6 @@ The {{page.varRepoLink}} contains comprehensive Terraform configurations that le
 ## Prerequisites
 This section explains the prerequisites to deploying {{site.gcp.cnqGCPshort}}.
 
-* Qumulo Core 7.6.0 (or higher)
-
 * To allow instances without external IP addresses to reach GCP APIs, you must enable Private Google Access.
 
 * To allow your Qumulo cluster to report metrics to Qumulo, your VPC must have outbound Internet connectivity through a Cloud NAT gateway. Your instance shares no file data during this process.

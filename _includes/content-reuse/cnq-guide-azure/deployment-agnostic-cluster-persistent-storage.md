@@ -1,12 +1,15 @@
 <a id="deploy-persistent-storage"></a>
 ## Step 1: Deploying Cluster Persistent Storage
-This section explains how to deploy the Azure Storage Accounts that act as persistent storage for your Qumulo cluster.
+This section explains how to deploy the storage accounts that act as persistent storage for your Qumulo cluster.
+
+### Part 1: Prepare the Required Files
+Before you can deploy the persistent storage for your cluster, you must download and prepare the required files.
 
 1. Log in to Nexus and click **Downloads > {{site.cnq.nexusDropDown}}**.
 
 1. On the **Azure** tab and, in the **Download the required files** section, select the Qumulo Core version that you want to deploy and then download the corresponding Terraform configuration, Debian package.
 
-1. In an Azure Storage Account Container named `qumulo`, create the `images` directory. Within this directory, create another directory with the Qumulo Core version as its name. The following is an example path:
+1. In a storage account named `qumulo`, create the `images` directory. Within this directory, create another directory with the Qumulo Core version as its name. For example:
 
    ```
    my-storage-account/qumulo/images/7.2.3.2
@@ -17,46 +20,56 @@ This section explains how to deploy the Azure Storage Accounts that act as persi
 
 1. {{site.cnq.copyDebAndConfig}}
 
-1. Copy `azure-terraform-cnq-<x.y>.zip` to your Terraform environment and decompress it.
+1. Copy `azure-terraform-cnq-<x.y>.zip` to your Terraform environment and decompress the file.
 
-1. Navigate to the `persistent-storage` directory and take the following steps:
+### Part 2: Configure the Persistent Storage
+1. Navigate to the `persistent-storage` directory.
 
-   1. Run the `terraform init` command.
+1. Edit the `provider.tf` file:
 
-      Terraform prepares the environment and displays the message `Terraform has been successfully initialized!`
+   * To store the Terraform state remotely, add the storage account details to the section that begins with `backend "azurerm" {`.
 
-   1. Review the `terraform.tfvars` file.
+   * To store the Terraform state locally, comment out the section that begins with `backend "azurerm" {` and uncomment the section that contains `backend = "local"`.
 
-      * Specify the `deployment_name` and the correct `az_subscription_id` for your cluster's persistent storage.
+     {% include important.html content="We don’t recommend storing the Terraform state locally for production deployments." %}
 
-      * Specify the correct `az_location` for your cluster's persistent storage.
+1. Run the `terraform init` command.
 
-      * Leave the `soft_capacity_limit` at `1000`.
-     
-      * (Optional) Specify an existing `advanced_az_resource_group_name`.
+   Terraform prepares the environment and displays the message `Terraform has been successfully initialized!`
 
-   1. Use the `az` CLI to authenticate to your Azure account.
+1. Edit the `terraform.tfvars` file.
 
-   1. Run the `terraform apply` command.
+   * Specify the `deployment_name`, the `az_subscription_id`, and the correct `az_location` for your cluster's persistent storage.
+
+   * Specify the `az_subnet_name`, `az_vnet_name`, and the `az_vnet_rg` (resource group) for your Virtual Network.
+
+   * Set the `soft_capacity_limit` to `500` (or higher).
+
+     {% include note.html content="This value specifies the initial capacity limit of your Qumulo clusters (in TB). It is possible to increase this limit at any time." %}
+
+   * {{site.azure.advancedAZresourceName}}     
+
+### Part 3: Create the Necessary Resources
+1. To authenticate to your Azure account, use the `az` CLI.
+
+1. Run the `terraform apply` command.
   
-   1. {{site.cnq.reviewExecPlan}}
+1. {{site.cnq.reviewExecPlan}}
 
-      Terraform creates resources according the execution plan and displays:
+   Terraform creates resources according to the execution plan and displays:
 
-      * The names of the created persistent storage accounts
+   * The names of the created persistent storage accounts
  
-      * Your persistent storage resource group's unique name
+   * Your persistent storage resource group's unique name
 
-      For example:
+   For example:
       
-      ```
-      Outputs:
-
-      persistent_storage_accounts = [
-        "{{site.exampleStorageAccountName1}}",
-        "{{site.exampleStorageAccountName2}}",
-        "{{site.exampleStorageAccountName3}}",
-        "{{site.exampleStorageAccountName4}}",
-      ]
-      persistent_storage_resource_group = "{{site.cnq.persistentStorageResourceGroupAzure}}"
-      ```
+   ```
+   persistent_storage_accounts = tolist([
+     "{{site.exampleStorageAccountName1}}",
+     "{{site.exampleStorageAccountName2}}",
+     "{{site.exampleStorageAccountName3}}",
+     "{{site.exampleStorageAccountName4}}",
+   ])
+   persistent_storage_resource_group = "{{site.cnq.persistentStorageResourceGroupAzure}}"
+   ```

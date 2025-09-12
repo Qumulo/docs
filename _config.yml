@@ -460,7 +460,6 @@ cnq:
   monitorGCPProvisionerShutdown: To ensure that the Provisioner shut downs automatically, monitor the `deployment_unique_name/compute` and `deployment_unique_name/last-run-status` document paths in the Firestore database for the Provisioner.
   tfCreatesNewBuckets: Terraform creates new S3 buckets as necessary
   tfCreatesNewGCSBuckets: Terraform creates new GCS buckets as necessary
-  tfCreatesNewStorageAccounts: Terraform creates new Azure Storage Accounts as necessary
   cfnUpdateStackComputeCache: On the <strong>Stacks</strong> page, select <a href="#compute-cache-stack-name">your compute and cache deployment stack</a> and then, in the upper right, click <strong>Update</strong>.
   cfnUpdateStackPersistentStorage: On the <strong>Stacks</strong> page, select <a href="#persistent-storage-stack-name">your persistent storage stack</a> and then, in the upper right, click <strong>Update</strong>.
   cfnUseExistingTemplate: On the <strong>Update stack</strong> page, click <strong>Use existing template</strong> and then click <strong>Next</strong>.

@@ -17,7 +17,7 @@ This section explains how to deploy compute and cache resources for a Qumulo clu
 
 * We recommend forwarding DNS queries to [Qumulo Authoritative DNS (QDNS)](../network-configuration/configuring-authoritative-dns.html). For a single-AZ deployment, to allow Qumulo Core to create an Amazon Route 53 outbound resolver, specify values for the `q_cluster_fqdn` and `second_private_subnet_id` variables. The resolver uses the `q_cluster_fqdn` variable to forward DNS requests to your cluster, where Qumulo Core resolves DNS for your floating IP addresses.
 
-### To Deploy the Cluster Compute and Cache Resources
+### Part 1: To Deploy the Cluster Compute and Cache Resources
 1. Configure your VPC to use the gateway VPC endpoint for S3.
 
 {% if page.deployment == "tf" %}
@@ -34,7 +34,7 @@ This section explains how to deploy compute and cache resources for a Qumulo clu
 
    Terraform prepares the environment and displays the message `Terraform has been successfully initialized!`
 
-1. Edit the `terraform.tfvars` file, specifying the values for all variables.
+1. Edit the `terraform.tfvars` file and specify the values for all variables.
 
    For more information, see `README.pdf` in `aws-terraform-cnq-<x.y>.zip`.
 
@@ -42,16 +42,16 @@ This section explains how to deploy compute and cache resources for a Qumulo clu
 
 1. {{site.cnq.reviewExecPlan}}
 
-   Terraform displays:
-
-   * The `Apply complete!` message with a count of added resources
-      
+   Terraform creates resources according to the execution plan and displays:  
+   
    * Your deployment's unique name
   
    * The names of the created S3 buckets
      
    * The floating IP addresses for your Qumulo cluster
-     
+
+     {% include note.html content="You must specify the floating IP addresses in your `terraform.tfvars` file explicitly." %}   
+  
    * The primary (static) IP addresses for your Qumulo cluster
      
    * The Qumulo Core Web UI endpoint
@@ -59,11 +59,6 @@ This section explains how to deploy compute and cache resources for a Qumulo clu
    For example:
    
    ```
-   Apply complete! Resources: 62 added, 0 changed, 0 destroyed.
-  
-   Outputs:
-  
-   cluster_provisioned = "Success"
    deployment_unique_name = "{{site.cnq.deploymentUniqueNameExampleAWS}}"
    ...
    persistent_storage_bucket_names = tolist([
@@ -154,7 +149,7 @@ This section explains how to deploy compute and cache resources for a Qumulo clu
    CloudFormation creates resources for the stack and displays the **CREATE_COMPLETE** status for each resource.
 {% endif %}
 
-### To Mount the Qumulo File System
+### Part 2: To Mount the Qumulo File System
 
 1. To log in to your cluster's Web UI, use the endpoint from the {% if page.deployment == "tf" %}Terraform output{% elsif page.deployment == "cfn" %}the **QumuloPrivateIP** key on the **Outputs** tab for this stack {% endif %} and the username and password that you have configured.
 

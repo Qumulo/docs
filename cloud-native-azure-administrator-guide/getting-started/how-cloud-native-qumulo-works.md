@@ -19,7 +19,7 @@ sidebar: cloud_native_azure_administrator_guide_sidebar
 ## Overview of Deploying {{site.azure.cnqAzureShort}}
 This section outlines the process of configuring and deploying {{site.azure.cnqAzureShort}}.
 
-1. Create persistent storage by using Azure Storage Accounts.
+1. Create persistent storage by using Azure Storage accounts.
 
 1. Deploy cluster compute and cache resources.
 

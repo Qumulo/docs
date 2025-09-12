@@ -34,15 +34,13 @@ Removing nodes from an existing cluster is a two-step process in which you remov
 {% capture whileRunning %}{{site.cnq.performWhileRunning}}{% endcapture %}
 {% include important.html content=whileRunning %}
 
-1. Edit the `terraform.tfvars` file, setting the value of `q_target_node_count` to a reduced number of nodes in the cluster.
+1. Edit the `terraform.tfvars` file and set the value of `q_target_node_count` to a lower number of nodes.
 
 1. {{site.cnq.runTFapply}}
 
 1. Review the nodes to be removed and then enter `yes`.
 
    Terraform removes the nodes and displays:
-
-   * The `Apply complete!` message with a count of removed resources
 
    * Your deployment's unique name
 
@@ -55,11 +53,6 @@ Removing nodes from an existing cluster is a two-step process in which you remov
    For example:
 
    ```
-   Apply complete! Resources: 0 added, 0 changed, 1 destroyed.
-
-   Outputs:
-
-   cluster_provisioned = "Success"
    deployment_unique_name = "{{site.cnq.deploymentUniqueNameExampleGCP}}"
    ...
    persistent_storage_bucket_names = tolist([
@@ -83,7 +76,7 @@ Removing nodes from an existing cluster is a two-step process in which you remov
 #### Step 2: Tidy Up GCP Resources for Removed Nodes
 1. Edit the `terraform.tfvars` file:
 
-   1. Set the value of the `q_node_count` variable to a reduced number of nodes in the cluster.
+   1. Set the value of the `q_node_count` variable to a lower number of nodes.
 
    1. Set the value of the `q_target_node_count` to `null`.
 
@@ -94,9 +87,7 @@ Removing nodes from an existing cluster is a two-step process in which you remov
 1. {{site.cnq.logIntoWebUI}}
 
    Terraform tidies up the resources for removed nodes and displays:
-
-   * The `Apply complete!` message with a count of removed resources
-
+   
    * Your deployment's unique name
 
    * The remaining GCS buckets for your Qumulo cluster
@@ -110,11 +101,6 @@ Removing nodes from an existing cluster is a two-step process in which you remov
    For example:
 
    ```
-   Apply complete! Resources: 0 added, 0 changed, 66 destroyed.
-
-   Outputs:
-
-   cluster_provisioned = "Success"
    deployment_unique_name = "{{site.cnq.deploymentUniqueNameExampleGCP}}"
    ...
    persistent_storage_bucket_names = tolist([
@@ -225,9 +211,7 @@ Changing the GCE instance type of your {{site.gcp.cnqCNQshort}} cluster is a thr
 
    {{site.cnq.reviewExecPlan}}
    
-   Terraform displays:
-
-   * The `Apply complete!` message with a count of added resources
+   Terraform creates resources according to the execution plan and displays:
       
    * Your deployment's unique name
   
@@ -242,11 +226,6 @@ Changing the GCE instance type of your {{site.gcp.cnqCNQshort}} cluster is a thr
    For example:
 
    ```
-   Apply complete! Resources: 66 added, 0 changed, 0 destroyed.
-
-   Outputs:
-
-   cluster_provisioned = "Success"
    deployment_unique_name = "{{site.cnq.deploymentUniqueNameExampleGCP}}"
    ...
    persistent_storage_bucket_names = tolist([

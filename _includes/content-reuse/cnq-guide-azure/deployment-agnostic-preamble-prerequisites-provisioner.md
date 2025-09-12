@@ -1,6 +1,6 @@
 For an overview of {{site.azure.cnqAzureShort}}, its prerequisites, and limits, see [How Cloud Native Qumulo Works](how-cloud-native-qumulo-works.html).
 
-The {{page.varRepoLink}} contains comprehensive Terraform configurations that let you deploy Azure Storage Accounts and then create a {{site.cnqShort}} cluster with 3 to 24 instances and have fully elastic compute and capacity.
+The {{page.varRepoLink}} contains comprehensive Terraform configurations that let you deploy storage accounts and then create a {{site.cnqShort}} cluster with 3 to 24 instances and have fully elastic compute and capacity.
 
 ## Prerequisites
 This section explains the prerequisites to deploying {{site.azure.cnqAzureShort}}.
@@ -17,14 +17,13 @@ This section explains the prerequisites to deploying {{site.azure.cnqAzureShort}
 
 * Before you configure your Terraform environment, you must sign in to the `az` CLI.
 
-  Azure role assignments in your target subscription must include the following:
+* Ensure that your Azure subscription includes the `Reader` and `Contributor` role assignments.
 
-  <ul>
-    <li><code>Reader</code></li>
-    <li><code>Contributor</code></li>
-  </ul>
+* For scenarios in which your {{site.cnqShort}} cluster must run in a secure environment, you must make the following changes in the `terraform.tfvars` file before deploying your cluster's persistent storage:
 
-* For scenarios in which your {{site.cnqShort}} cluster must run in a secure environment, you must set the `disable_public_network_access` variable to `true` and specify the resource group name for the `privatelink_blob_dns_zone_resource_group_name` variable in the `terraform.tfvars` file before deploying your cluster's persistent storage.
+  * Set the `disable_public_network_access` variable to `true`
+
+  * Specify the values for the `privatelink_blob_dns_zone_resource_group_name` and `privatelink_blob_dns_zone_virtual_link_name` variables
 
 <a id="how-the-provisioner-works"></a>
 ### How the {{site.cnqShort}} Provisioner Works
