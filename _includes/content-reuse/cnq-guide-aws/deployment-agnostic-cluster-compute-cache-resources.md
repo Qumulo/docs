@@ -102,7 +102,7 @@ This section explains how to deploy compute and cache resources for a Qumulo clu
    
    1. In the **Parameters** section, under **Cloud Native Qumulo**, take the following steps:
 
-      1. For **S3 bucket name**, enter [the name of the S3 bucket that you used to prepare your files](#prepare-required-files).
+      1. For **S3 bucket name**, enter the name of the S3 bucket that you used to prepare your files
 
       1. For **S3 key prefix**, enter your S3 bucket prefix.
 

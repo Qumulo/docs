@@ -51,7 +51,7 @@ Before you can deploy the persistent storage for your cluster, you must download
 
    1. <a id="persistent-storage-stack-name"></a> Enter a **Stack name**, for example `my-storage-stack`.
 
-   1. For **S3 bucket name**, enter [the name of the S3 bucket that you used to prepare your files](#prepare-required-files).
+   1. For **S3 bucket name**, enter the name of the S3 bucket that you used to prepare your files.
 
    1. For **S3 key prefix**, enter your S3 bucket prefix.
 
