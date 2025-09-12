@@ -428,6 +428,7 @@ azure:
   anqColdImpact: The storage class has an impact on billing, metering, and how the system stores data.
   cnqAzureLong: Cloud Native Qumulo on Azure
   cnqAzureShort: CNQ on Azure
+  advancedAZresourceName: If you have an existing resource group that must contain your CNQ on Azure deployment due to your organization's policies or specific naming conventions, specify a value for the <code>advanced_az_resource_group_name</code> variable.
 
 aws:
   cnqAWSlong: Cloud Native Qumulo on AWS
