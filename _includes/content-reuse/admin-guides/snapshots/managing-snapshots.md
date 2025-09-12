@@ -8,7 +8,7 @@ This section explains how to create on-demand snapshots and snapshot policies, v
 
 1. On the **Saved Snapshots** page, in the upper right, click **Take Snapshot**.
 
-1. In the **On Demand Snapshot** dialog box, do the following.
+1. In the **On Demand Snapshot** dialog box, take the following steps:
 
    1. Enter the **Snapshot Name**.
 

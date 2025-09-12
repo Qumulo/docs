@@ -441,7 +441,7 @@ Deleting a cluster is a two-step process in which you delete your cluster's comp
 {% if page.deployment == "cfn" %}
 1. Back up your data safely.
 1. [Disable termination protection](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html) for your CloudFormation stack.
-1. To update your stack, do the following:
+1. To update your stack, take the following steps:
    1. On the **Stacks** page, select the existing stack and then, in the upper right, click **Update**.
    1. On the **Update stack** page, click **Use existing template** and then click **Next**.
    1. On the **Specify stack details** page, click **Next**.

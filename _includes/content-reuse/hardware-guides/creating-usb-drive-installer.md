@@ -32,7 +32,7 @@ For more information, see [Installing the Qumulo Core Product Package](https://d
    ```
 
    {{site.data.alerts.note}}
-   If you encounter an <strong>Operation not permitted</strong> error in macOS, do the following.
+   If you encounter an <strong>Operation not permitted</strong> error in macOS, take the following steps:
    <ol>
      <li>Navigate to <strong>System Preferences &gt; Security & Privacy</strong>.</li>
      <li>On the <strong>Privacy</strong> tab, grant <strong>Full Disk Access</strong> to Terminal.</li>
