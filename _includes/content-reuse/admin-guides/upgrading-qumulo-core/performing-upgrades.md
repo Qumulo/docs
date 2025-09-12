@@ -172,3 +172,31 @@ Every Qumulo Core upgrade has two phases, _preparation_ and _commit_.
 
    {% capture disableProgressBar %}{{page.varDisableProgressBar}}{% endcapture %}
    {% include note.html content=disableProgressBar %}
+
+{% unless page.platform == 'on-prem' or page.platform == 'anq' %}
+## Recommendations for Maintaining the Host Operating System (OS)
+To ensure the stability and security of your cluster, it is necessary to apply operating system (OS) patches to the _host operating system,_ the underlying instances that run Ubuntu or Red Hat Linux on the nodes in your cluster.
+
+{{site.data.alerts.important}}
+We strongly recommend developing a structured approach to maintaining the host OS:
+<ul>
+  <li><strong>Develop a Rollback Strategy:</strong> Having a plan ahead of time helps deal with unexpected issues and provides a way to revert changes.</li>
+  <li><strong>Test OS Updates:</strong> Testing OS updates helps check your assumptions and test your rollback strategy. Always perform a dry run in a non-production environment and then monitor your Qumulo cluster afterwards.</li>
+  <li><strong>Patch One Qumulo Node at a Time:</strong> To ensure the smooth operation and availability of your Qumulo cluster, patch one Qumulo node at a time.</li>
+</ul>
+{{site.data.alerts.end}}
+{% endunless %}
+
+{% if page.platform == 'cnq-aws' %}
+The AWS Systems Manager Patch Manager helps you maintain the host OS by providing automated, managed OS patching based on pre-defined baselines and update schedules. For more information, see [AWS Systems Manager Patch Manager](https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager.html) in the AWS Systems Manager User Guide.
+
+The following are best practice for working with Patch Manager:
+
+* **Configure Patch Baselines:** To define what approved OS components are to be updated, configure patch baselines. For more information, see [Predefined and custom patch baselines](https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-predefined-and-custom-patch-baselines.html).
+
+* **Configure Patch Groups:** To associate managed nodes with a specific patch baseline in Patch Manager, configure patch groups. For more information, see [Patch groups](https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-patch-groups.html).
+
+* **Schedule Maintenance Windows:** To ensure that potentially disruptive actions are performed on your nodes during off-peak hours, schedule maintenance windows. For more information, see [AWS Systems Manager Maintenance Windows](https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows.html).
+
+* **Develop Rollback Protocols:** To revert Patch Manager changes you can either use the <a target="_blank" href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">AWS Systems Manager Run Command</a> or revert the affected nodes to the last patch baseline known to be stable.
+{% endif %}
