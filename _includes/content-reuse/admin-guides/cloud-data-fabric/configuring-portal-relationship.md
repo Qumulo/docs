@@ -78,7 +78,7 @@ This section explains how to create the [spoke portal](how-portal-creation-enabl
 
    {% include note.html content="In this state, the spoke portal root directory is empty and Qumulo Core doesn't transfer any data until the hub portal authorizes the portal relationship." %}
 
-1. To check the status of a cluster, use the {% include qq.html command="portal_list" %} command. {{site.exampleOutput}}
+1. To check the status of a cluster, run the {% include qq.html command="portal_list" %} command. {{site.exampleOutput}}
 
    * From the spoke portal host cluster
 
@@ -179,7 +179,7 @@ You can initiate the deletion of a spoke portal in the `Unlinked`, `Pending`, or
 
    When the synchronization process is complete and the spoke portal configuration is removed, Qumulo Core begins to reclaim the spoke portal's cluster capacity in the background.
 
-   {% capture deleteStalled %}A spoke portal with connectivity issues receives the [`Degraded`](https://docs.qumulo.com/administrator-guide/cloud-data-fabric/how-portal-creation-enables-cloud-data-fabric.html#portal-statuses) status, which in turn can cause the deletion of a portal relationship to stall in the [`Deleting`](https://docs.qumulo.com/administrator-guide/cloud-data-fabric/how-portal-creation-enables-cloud-data-fabric.html#portal-states) state. If it isn't possible to restore connectivity between portals, you can use the {% include qq.html command="portal_get_spoke" %} command with the `--force` flag to delete a spoke portal with any status and in any state.{% endcapture %}
+   {% capture deleteStalled %}A spoke portal with connectivity issues receives the [`Degraded`](https://docs.qumulo.com/administrator-guide/cloud-data-fabric/how-portal-creation-enables-cloud-data-fabric.html#portal-statuses) status, which in turn can cause the deletion of a portal relationship to stall in the [`Deleting`](https://docs.qumulo.com/administrator-guide/cloud-data-fabric/how-portal-creation-enables-cloud-data-fabric.html#portal-states) state. If it isn't possible to restore connectivity between portals, you can run the {% include qq.html command="portal_get_spoke" %} command with the `--force` flag to delete a spoke portal with any status and in any state.{% endcapture %}
    {% include note.html content=deleteStalled %}
 
 ### Step 2: Delete the Hub Portal

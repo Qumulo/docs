@@ -116,7 +116,7 @@ By default, the default bucket directory prefix for newly created buckets is the
 
 * To change the default bucket directory prefix, you need the {{site.s3.permissions.bucketsWrite}}.
 
-* To enable or suspend S3 bucket versioning, use the {% include qq.html command="s3_modify_bucket" %} command.
+* To enable or suspend S3 bucket versioning, run the {% include qq.html command="s3_modify_bucket" %} command.
 
 #### To Configure the Default Bucket Directory Prefix by Using the qq CLI
 1. To view the current default bucket directory prefix, run the {% include qq.html command="s3_get_settings" %} command.
@@ -296,7 +296,7 @@ When you use the `qq` CLI to delete a bucket, you can choose to also delete the 
   
   * {{varMpuInProgress}}
 
-* To delete a bucket together with its root directory, use the {% include qq.html command="s3_delete_bucket" %} command, specify the bucket name, and use the `--delete-root-dir` flag. For example:
+* To delete a bucket together with its root directory, run the {% include qq.html command="s3_delete_bucket" %} command, specify the bucket name, and use the `--delete-root-dir` flag. For example:
 
   ```bash
   $ qq s3_delete_bucket \

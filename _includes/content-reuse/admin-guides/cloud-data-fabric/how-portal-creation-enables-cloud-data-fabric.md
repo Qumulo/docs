@@ -119,14 +119,14 @@ A _portal state_ indicates the stages of the [_spoke portal_](#spoke-portal) cre
       <td><p><code>Unlinked</code></p></td>
       <td>
         <p>Qumulo Core created the spoke portal, but couldn't establish a relationship for it or clean up the spoke portal automatically.</p>
-        <p>Before trying to re-establish the portal relationship, use the {% include qq.html command="portal_delete_spoke" %} command to clean up the spoke portal manually.</p>
+        <p>Before trying to re-establish the portal relationship, run the {% include qq.html command="portal_delete_spoke" %} command to clean up the spoke portal manually.</p>
       </td>
     </tr>
     <tr>
       <td><p><code>Pending</code></p></td>
       <td>
         <p>Qumulo Core established a relationship between the spoke portal and a hub portal, but the hub portal has not yet given its authorization.</p>
-        <p>Use the {% include qq.html command="portal_authorize_hub" %} command to give the authorization.</p>
+        <p>Run the {% include qq.html command="portal_authorize_hub" %} command to give the authorization.</p>
       </td>
     </tr>
     <tr>

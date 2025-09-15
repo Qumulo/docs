@@ -73,7 +73,7 @@ To route DNS queries from your cluster's FQDN to QDNS, you must configure DNS de
 This section explains how to enable QDNS, restrict DNS queries to specific client IP addresses, remove host restrictions from DNS queries, modify the fully qualified domain name (FQDN) for your QDNS configuration, and disable QDNS by using the `qq` CLI.
 
 ### To Enable QDNS for All Nodes
-Use the {% include qq.html command="authoritative_dns_modify_settings" %} command with the `--enable` flag and specify your FQDN. For example:
+Run the {% include qq.html command="authoritative_dns_modify_settings" %} command with the `--enable` flag and specify your FQDN. For example:
 
 ```bash
 qq authoritative_dns_modify_settings \
@@ -84,7 +84,7 @@ qq authoritative_dns_modify_settings \
 {% include tip.html content=neverForget %}
 
 ### To View the Current QDNS Configuration
-Use the {% include qq.html command="authoritative_dns_get_settings" %} command.
+Run the {% include qq.html command="authoritative_dns_get_settings" %} command.
 
 {{site.exampleOutput}}
 
@@ -104,7 +104,7 @@ Use the {% include qq.html command="authoritative_dns_get_settings" %} command.
 </ul>
 {{site.data.alerts.end}}
 
-Use the {% include qq.html command="authoritative_dns_modify_settings" %} command and specify your FQDN.
+Run the {% include qq.html command="authoritative_dns_modify_settings" %} command and specify your FQDN.
 
 ```bash
 qq authoritative_dns_modify_settings \
@@ -116,7 +116,7 @@ To limit DNS queries to authorized resolvers, add host restrictions to your QDNS
 
 {% include tip.html content="You can specify multiple IP addresses or CIDR blocks separated by spaces." %}
 
-Use the {% include qq.html command="authoritative_dns_modify_settings" %} command and specify the host restrictions. For example:
+Run the {% include qq.html command="authoritative_dns_modify_settings" %} command and specify the host restrictions. For example:
 
 ```bash
 qq authoritative_dns_modify_settings \
@@ -126,10 +126,10 @@ qq authoritative_dns_modify_settings \
 In this example, the command restricts DNS queries to resolvers from the {{ site.exampleNetworkSegment1 }} subnet and the IP address {{ site.exampleIP42 }}.
 
 ### To Remove Host Restrictions from DNS Queries
-Use the {% include qq.html command="authoritative_dns_modify_settings" %} command with the `--disable-host-restrictions` flag.
+Run the {% include qq.html command="authoritative_dns_modify_settings" %} command with the `--disable-host-restrictions` flag.
 
 ### To Disable QDNS for All Nodes
-Use the {% include qq.html command="authoritative_dns_modify_settings" %} command with the `--disable` flag.
+Run the {% include qq.html command="authoritative_dns_modify_settings" %} command with the `--disable` flag.
 
 {% include note.html content="When you disable QDNS, any previously configured FQDN and host restrictions remain on the cluster in an inactive state." %}
 
