@@ -16,7 +16,7 @@ sidebar: cloud_native_azure_administrator_guide_sidebar
 {% include shared_image.html alt=cnqArchi file="shared-images/admin-guides/getting-started/cloud-native-qumulo-on-azure-architecture.png" url="/images/shared-images/admin-guides/getting-started/cloud-native-qumulo-on-azure-architecture.png" %}
 
 
-## Overview of Deploying {{site.azure.cnqAzureShort}}
+## Deploying {{site.azure.cnqAzureShort}}
 This section outlines the process of configuring and deploying {{site.azure.cnqAzureShort}}.
 
 1. Create persistent storage by using Azure Storage accounts.

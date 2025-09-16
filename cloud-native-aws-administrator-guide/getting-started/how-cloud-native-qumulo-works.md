@@ -18,7 +18,7 @@ sidebar: cloud_native_aws_administrator_guide_sidebar
 {% include shared_image.html alt=cnqArchi file="shared-images/admin-guides/getting-started/cloud-native-qumulo-on-aws-architecture.png" url="/images/shared-images/admin-guides/getting-started/cloud-native-qumulo-on-aws-architecture.png" %}
 
 
-## Overview of Deploying {{site.aws.cnqAWSshort}}
+## Deploying {{site.aws.cnqAWSshort}}
 This section outlines the process of configuring and deploying {{site.aws.cnqAWSshort}}.
 
 1. Create persistent storage by using S3 buckets.

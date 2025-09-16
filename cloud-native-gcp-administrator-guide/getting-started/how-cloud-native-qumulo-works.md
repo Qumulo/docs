@@ -16,7 +16,7 @@ sidebar: cloud_native_gcp_administrator_guide_sidebar
 {% include shared_image.html alt=cnqArchi file="shared-images/admin-guides/getting-started/cloud-native-qumulo-on-gcp-architecture.png" url="/images/shared-images/admin-guides/getting-started/cloud-native-qumulo-on-gcp-architecture.png" %}
 
 
-## Overview of Deploying {{site.gcp.cnqGCPshort}}
+## Deploying {{site.gcp.cnqGCPshort}}
 This section outlines the process of configuring and deploying {{site.gcp.cnqGCPshort}}.
 
 1. Create persistent storage by using Google Cloud Storage (GCS) buckets.  
