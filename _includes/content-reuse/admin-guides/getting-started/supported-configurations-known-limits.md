@@ -118,6 +118,10 @@ Qumulo Core requires switches that meet the following criteria:
       </td>
     </tr>
     <tr>
+      <td>Portal root directories for each cluster</td>
+      <td>32 spoke portal root directories for each portal relationship</td>
+    </tr>
+    <tr>
       <td>NFS exports</td>
       <td>64,000</td>
     </tr>

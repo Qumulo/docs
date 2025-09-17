@@ -11,7 +11,7 @@ permalink: /qq-cli-command-guide/portal/portal_list_hubs.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar
 summary: This section explains how to use the <code>qq portal_list_hubs</code> command.
-synopsis: List the configuration and status of all hub portals on the current cluster
+synopsis: Get the configuration and status for all hub portals on the current cluster
 title: qq portal_list_hubs
 usage: qq portal_list_hubs [-h] [-j]
 zendesk_source: qq CLI Command Guide

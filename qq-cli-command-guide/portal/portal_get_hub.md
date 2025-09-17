@@ -12,13 +12,18 @@ optional_options:
   help: Pretty-print JSON
   name: -j
   required: false
+- alternate:
+  - --no-paths
+  help: Do not attempt to resolve file IDs present on the local cluster to paths.
+  name: -n
+  required: false
 permalink: /qq-cli-command-guide/portal/portal_get_hub.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar
 summary: This section explains how to use the <code>qq portal_get_hub</code> command.
 synopsis: Get the configuration and status for a hub portal on the current cluster
 title: qq portal_get_hub
-usage: qq portal_get_hub [-h] -i ID [-j]
+usage: qq portal_get_hub [-h] -i ID [-j] [-n]
 zendesk_source: qq CLI Command Guide
 
 ---

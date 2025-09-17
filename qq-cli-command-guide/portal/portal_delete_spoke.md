@@ -7,6 +7,16 @@ optional_options:
   help: Spoke portal ID
   name: -i
   required: true
+- alternate:
+  - --json
+  help: Pretty-print JSON
+  name: -j
+  required: false
+- alternate:
+  - --no-paths
+  help: Do not attempt to resolve file IDs present on the local cluster to paths.
+  name: -n
+  required: false
 - alternate: []
   help: 'Force the deletion of the spoke portal. Caution: This operation deletes all
     data from the spoke portal, including any new and modified data on the spoke that
@@ -21,7 +31,7 @@ summary: This section explains how to use the <code>qq portal_delete_spoke</code
   command.
 synopsis: Delete a spoke portal on the current cluster
 title: qq portal_delete_spoke
-usage: qq portal_delete_spoke [-h] -i ID [--force]
+usage: qq portal_delete_spoke [-h] -i ID [-j] [-n] [--force]
 zendesk_source: qq CLI Command Guide
 
 ---

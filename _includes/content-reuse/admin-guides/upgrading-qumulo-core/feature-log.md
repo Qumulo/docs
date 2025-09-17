@@ -4,6 +4,15 @@ For information about upgrade types for each release, see <a href='mode-referenc
 
 <style>div#toc{height:200px;overflow:auto;}</style>
 
+## Qumulo Core 7.6.2
+{{page.varDownloadsRelnotes}}
+
+* Made improvements to Cloud Data Fabric:
+  * Added the ability to configure up to 32 spoke portal root directories for each portal relationship
+  * Made corresponding `/v2/portal/*` REST API and `qq portal_*` CLI changes
+  * Changed some of the terminology concerning _portal relationship states_ and _portal root directory states_
+* Ensured that the `ListObjectsV2` S3 API action supports the `start-after` parameter
+
 ## Qumulo Core 7.6.1.1
 {{page.varDownloadsRelnotes}}
 
@@ -163,7 +172,6 @@ This release of Qumulo Core adds Illumio Policy Compute Engine (PCE) and Virtual
 <ul>
   <li>This release resolves an issue where previously Qumulo hub portal host clusters that communicated with read-write spoke portals crashed if the portal contained files with very large file IDs.</li>
   <li>This release resolves an issue that we identified in Qumulo Core releases 7.3.1.2 to 7.4.0.3, where making changes to networking configuration by using the <strong>API Tools</strong> page in the Qumulo Core Web UI or by using the <code>qq</code> CLI caused the default gateway to not populate.</li>
-  <li>{{site.gns.nameChange}}</li>
   <li>To enable upgrades to this version of Qumulo Core, you must delete any existing spoke portals or hub portals from your cluster and then wait for any related tree-delete operations to complete before beginning the upgrade process.</li>
   <li>To enable the QFSD API to distinguish between cluster-local and spoke-cached data, from this release of Qumulo Core onward, 64-bit integers can no longer represent QFSD API file identifiers. API integrations must treat them as variable-length strings, in accordance with the OpenMetrics API schema. Although this change affects all REST API endpoints the Qumulo REST API continues to accept old-style identifiers for backwards compatibility.</li>
 </ul>

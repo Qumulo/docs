@@ -8,6 +8,3 @@ redirect_from:
 sidebar: azure_native_administrator_guide_sidebar
 search: exclude
 ---
-
-{% capture nameChange %}{{site.gns.nameChange}}{% endcapture %}
-{% include tip.html content=nameChange %}

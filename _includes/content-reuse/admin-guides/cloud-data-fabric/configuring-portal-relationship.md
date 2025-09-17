@@ -1,12 +1,9 @@
-{% capture nameChange %}{{site.gns.nameChange}}{% endcapture %}
-{% include tip.html content=nameChange %}
-
 ## Configuring a Portal Relationship Between Two Qumulo Clusters
 This section explains how to configure a [portal relationship](how-portal-creation-enables-cloud-data-fabric.html#portal-relationship) between two Qumulo clusters by using the `qq` CLI.
 
 {{site.data.alerts.important}}
 <ul>
-  <li>Before you begin to implement Cloud Data Fabric in your organization, we strongly recommend reviewing <a href="how-portal-creation-enables-cloud-data-fabric.html">How Portal Relationships between Qumulo Clusters Enable Cloud Data Fabric in Qumulo Core</a>, especially the <a href="how-portal-creation-enables-cloud-data-fabric.html#known-limits">Known Limits</a> section.</li>
+  <li>Before you begin to implement Cloud Data Fabric in your organization, we strongly recommend reviewing the <a href="how-portal-creation-enables-cloud-data-fabric.html">How Portal Relationships between Qumulo Clusters Enable Cloud Data Fabric in Qumulo Core</a> and <a href="known-limits.html">Known Limits</a> sections.</li>
   <li>For any questions, {{site.contactQumuloCare}}.</li>
 </ul>
 {{site.data.alerts.end}}
@@ -54,7 +51,7 @@ This section explains how to create the [spoke portal](how-portal-creation-enabl
      --hub-root /projects
    ```
 
-   The spoke portal enters the `Pending` state. {{site.exampleOutput}}
+   The spoke portal enters the `Pending` portal relationship state. {{site.exampleOutput}}
 
    ```
    ID  State    Status    Type  Spoke Root        Hub Host     Hub Portal ID
@@ -74,7 +71,7 @@ This section explains how to create the [spoke portal](how-portal-creation-enabl
 
    When Qumulo Core can't establish a connection from the spoke portal host cluster to the hub portal host cluster, it displays an error message. Try re-establishing the portal relationship.
 
-   When the portal relationship is established, both spoke portal and hub portal enter the `Pending` state.
+   When the portal relationship is established, both spoke portal and hub portal enter the `Pending` portal relationship state.
 
    {% include note.html content="In this state, the spoke portal root directory is empty and Qumulo Core doesn't transfer any data until the hub portal authorizes the portal relationship." %}
 
@@ -83,17 +80,17 @@ This section explains how to create the [spoke portal](how-portal-creation-enabl
    * From the spoke portal host cluster
 
      ```
-     ID  State     Status    Role   Local Root
-     ==  ========  ========  =====  ================
-     2   Pending   Inactive  Spoke  /remote/projects
+     Role   ID  Type  State    Status    Peer         Root Count
+     =====  ==  ====  =======  ========  ===========  ==========
+     Spoke  2   RW    Pending  Inactive  {{site.exampleIP0}}  1
      ```
 
    * From the hub portal host cluster
 
      ```
-     ID  State     Status    Role   Local Root
-     ==  ========  ========  =====  ==========
-     4   Pending   Inactive  Hub    /projects/
+     Role  ID  Type  State    Status    Peer         Root Count
+     ====  ==  ====  =======  ========  ===========  ==========
+     Hub   4   RW    Pending  Inactive  {{site.exampleIP1}}  1
      ```
 
 ### Step 2: Authorize the Portal Relationship
@@ -126,7 +123,126 @@ This section explains how to authorize the [portal relationship](how-portal-crea
    4   Authorized  Active  /projects  {{site.exampleIP1}}  qfsd-edge   RW
    ```
 
-   After a few seconds, the spoke portal enters the `Authorized` state as well. You can now use the spoke portal root directory.
+   After a few seconds, the spoke portal enters the `Authorized` portal root directory state as well. You can now use the spoke portal root directory.
+
+## Configuring Additional Spoke Portal Root Directories for an Existing Portal Relationship
+{{site.gns.functionality762}} This section explains how to configure an additional spoke portal root directory, how to remove access from a hub portal root directory, and how to remove a spoke portal root directory by using the `qq` CLI.
+
+{% include tip.html content="Configuring an additional spoke portal root directory can be useful when it is necessary to provide access to individual directories rather than the contents of the entire file system on the hub portal host cluster." %}
+
+### Prerequisites
+* `PRIVILEGE_PORTAL_SPOKE_WRITE` for modifying a spoke portal
+
+* `PRIVILEGE_PORTAL_HUB_WRITE` for modifying a hub portal
+
+### To Configure an Additional Spoke Portal Root Directory
+For portal relationships in the `Pending` or `Accepted` state, you can configure an additional spoke portal root directory by proposing the additional spoke portal root directory and then authorizing the corresponding hub portal root directory.
+
+1. To propose the additional spoke portal root directory from the spoke portal host cluster, run the {% include qq.html command="portal_propose_spoke_root" %} command and specify the portal ID, the spoke portal root directory path, and the hub portal root directory path. For example: 
+
+
+   ```bash
+   qq portal_propose_spoke_root \
+     --id 2 \
+     --spoke-root-path /remote/archive \
+     --hub-root-path /archive
+   ```
+
+   {{site.exampleOutput}}
+
+
+   ```
+   Role   ID  Type  State     Status  Peer
+   =====  ==  ====  ========  ======  ==========
+   Spoke  2   RW    Accepted  Active  {{site.exampleIP0}}
+
+   Root State    Local Path         Remote ID
+   ============  =================  ==============================
+   Authorized    /remote/projects/  107592715270601080910970355714
+   Unauthorized  /remote/archive/   107592715270601080910970355715
+   ```
+
+1. To authorize the corresponding hub portal root directory from the hub portal host cluster, run the {% include qq.html command="portal_authorize_hub_root" %} command and specify the portal ID and the hub portal root directory path. For example:
+
+   {% include note.html content="It is possible to use an existing hub portal root directory which you have already authorized. In this scenario, the additional spoke portal root directory will be in the `Authorized` state immediately." %}
+
+
+   ```bash
+   qq portal_authorize_hub_root \
+     --id 4 \
+     --hub-root-path /archive
+   ```
+
+   {{site.exampleOutput}}
+
+
+   ```
+   Role  ID  Type  State     Status  Peer
+   ====  ==  ====  ========  ======  ===========
+   Hub   4   RW    Accepted  Active  {{site.exampleIP1}}
+
+   Root State  Local Path
+   ==========  ==========
+   Authorized  /projects/
+   Authorized  /archive/
+   ```
+
+### To Remove Access from a Hub Portal Root Directory
+Run the {% include qq.html command="portal_deny_hub_root" %} command and specify the portal ID and the hub portal root directory path.
+
+{% include important.html content="It isn't possible to use the `portal_deny_hub_root` command to restrict access to a subdirectory of a hub portal root directory. For example, if hub portal root directories are nested, removing access from a child hub portal root directory doesn't deny access from the corresponding parent hub portal root directory." %}
+
+For example:
+
+```bash
+qq portal_deny_hub_root \
+ --id 4 \
+ --hub-root-path /archive
+```
+
+Qumulo Core removes the authorization from the hub portal root directory. {{site.exampleOutput}}
+
+```
+Role  ID  Type  State     Status  Peer
+====  ==  ====  ========  ======  ===========
+Hub   4   RW    Accepted  Active  {{site.exampleIP1}}
+
+Root State    Local Path
+============  ==========
+Unauthorized  /archive/
+Authorized    /projects/
+```
+
+### To Remove a Spoke Portal Root Directory
+Run the {% include qq.html command="portal_delete_spoke_root" %} command and specify the portal ID and the spoke portal root directory path.
+
+{{site.data.alerts.important}}
+<ul>
+ <li>This operation doesn't affect any data on the hub portal host cluster, any unsynchronized data in the spoke portal root directory, or the portal relationship.</li>
+ <li>To restore the spoke portal root directory, you can propose a new spoke portal root directory.</li>
+ <li>When there are no more spoke portal root directories that correspond to a particular hub portal root directory, Qumulo Core removes that hub portal root directory from the portal relationship automatically.</li>
+</ul>
+{{site.data.alerts.end}}
+
+For example:
+
+```bash
+qq portal_delete_spoke_root \
+ --id 2 \
+ --spoke-root-path /remote/archive
+```
+
+Qumulo Core removes access to the hub portal root directory for any spoke portal host cluster clients. {{site.exampleOutput}}
+
+```
+Role   ID  Type  State     Status  Peer
+=====  ==  ====  ========  ======  ==========
+Spoke  2   RW    Accepted  Active  {{site.exampleIP0}}
+
+Root State    Local Path         Remote ID
+============  =================  ==============================
+Authorized    /remote/projects/  107592715270601080910970355714
+ ```
 
 ## Deleting a Portal Relationship Between Two Qumulo Clusters
 When you delete the [spoke portal](how-portal-creation-enables-cloud-data-fabric.html#spoke-portal) and the [hub portal](how-portal-creation-enables-cloud-data-fabric.html#hub-portal) (in any order), the [portal relationship](how-portal-creation-enables-cloud-data-fabric.html#portal-relationship) is deleted completely. This section explains how to delete a portal relationship between two Qumulo clusters by using the `qq` CLI.
@@ -135,14 +251,14 @@ When you delete the [spoke portal](how-portal-creation-enables-cloud-data-fabric
 {% include caution.html content=varQuorumBounce %}
 
 ### Prerequisites
-* A spoke portal or hub portal in any state
+* A spoke portal or hub portal in any portal relationship state
 
-* Privileges
-  * `PRIVILEGE_PORTAL_SPOKE_WRITE`: Delete a spoke portal
-  * `PRIVILEGE_PORTAL_HUB_WRITE`: Delete a hub portal
+* `PRIVILEGE_PORTAL_SPOKE_WRITE` for deleting a spoke portal
+
+* `PRIVILEGE_PORTAL_HUB_WRITE` for deleting a hub portal
 
 ### Step 1: Delete the Spoke Portal
-You can initiate the deletion of a spoke portal in the `Unlinked`, `Pending`, or `Authorized` state. This section explains how to delete the spoke portal from a portal relationship.
+You can initiate the deletion of a spoke portal in the `Pending` or `Accepted` portal relationship state. This section explains how to delete the spoke portal from a portal relationship.
 
 {% capture dataWarning %}{{site.gns.portalDeleteCaution}}{% endcapture %}
 {% include caution.html content=dataWarning %}
@@ -150,15 +266,15 @@ You can initiate the deletion of a spoke portal in the `Unlinked`, `Pending`, or
 1. To find the spoke portal ID, run the {% include qq.html command="portal_list" %} command. {{site.exampleOutput}}
 
    ```
-   ID  State       Status  Role   Local Root
-   ==  ==========  ======  =====  ================
-   3   Authorized  Active  Spoke  /remote/projects
+   Role   ID  Type  State     Status  Peer         Root Count
+   =====  ==  ====  ========  ======  ===========  ==========
+   Spoke  2   RW    Accepted  Active  {{site.exampleIP0}}  1
    ```
 
 1. To initiate the deletion of the spoke portal, run the {% include qq.html command="portal_delete_spoke" %} command and specify the spoke portal ID. For example:
 
    ```bash
-   qq portal_delete_spoke --id 3
+   qq portal_delete_spoke --id 2
    ```
 
    {{site.gns.portalDeleteProcess}}
@@ -166,15 +282,19 @@ You can initiate the deletion of a spoke portal in the `Unlinked`, `Pending`, or
 1. To monitor the deletion progress, run the {% include qq.html command="portal_get_spoke" %} command and specify the spoke portal ID. For example:
 
    ```bash
-   qq portal_get_spoke --id 3
+   qq portal_get_spoke --id 2
    ```
 
    {{site.exampleOutput}}
 
    ```
-   ID  State     Status  Type  Spoke Root        Hub Host     Hub Portal ID
-   ==  ========  ======  ====  ================  ===========  =============
-   2   Deleting  Active  RW    /remote/projects  {{site.exampleIP0}}  4
+   Role   ID  Type  State     Status  Peer
+   =====  ==  ====  ========  ======  ===========
+   Spoke  2   RO    Deleting  Active  {{site.exampleIP0}}
+
+   Root State  Local Path         Remote ID
+   ==========  =================  ==============================
+   Authorized  /remote/projects/  107592715270601080910970355715
    ```
 
    When the synchronization process is complete and the spoke portal configuration is removed, Qumulo Core begins to reclaim the spoke portal's cluster capacity in the background.
@@ -183,16 +303,16 @@ You can initiate the deletion of a spoke portal in the `Unlinked`, `Pending`, or
    {% include note.html content=deleteStalled %}
 
 ### Step 2: Delete the Hub Portal
-You can delete a hub portal in either the `Pending` or `Authorized` state.
+You can delete a hub portal in either the `Pending` or `Accepted` portal relationship state.
 
 {% include caution.html content="This action makes the spoke portal root directory and all cached data inaccessible." %}
 
 1. To find the hub portal ID, run the {% include qq.html command="portal_list" %} command. {{site.exampleOutput}}
 
    ```
-   ID  State       Status  Role   Local Root
-   ==  ==========  ======  =====  ==========
-   4   Authorized  Active  Hub    /projects/
+   Role  ID  Type  State     Status  Peer         Root Count
+   ====  ==  ====  ========  ======  ===========  ==========
+   Hub   4   RW    Accepted  Active  {{site.exampleIP1}}  1
    ```
 
 1. To delete the hub portal, run the {% include qq.html command="portal_delete_hub" %} command and specify the hub portal ID. For example:
@@ -214,9 +334,13 @@ You can delete a hub portal in either the `Pending` or `Authorized` state.
    {{site.exampleOutput}}
 
    ```
-   ID  State     Status  Hub Root   Spoke Host   Spoke Name  Spoke Type
-   ==  ========  ======  =========  ===========  ==========  ==========
-   4   Deleting  Active  /projects  {{site.exampleIP1}}  qfsd-edge   RO
+   Role  ID  Type  State     Status  Peer
+   ====  ==  ====  ========  ======  ===========
+   Hub   4   RO    Deleting  Active  {{site.exampleIP1}}
+
+   Root State  Local Path
+   ==========  ===========
+   Authorized  /projects/
    ```
 
    {% include note.html content=deleteStalled %}

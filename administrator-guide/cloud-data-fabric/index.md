@@ -7,6 +7,3 @@ redirect_from:
 sidebar: administrator_guide_sidebar
 search: exclude
 ---
-
-{% capture nameChange %}{{site.gns.nameChange}}{% endcapture %}
-{% include tip.html content=nameChange %}

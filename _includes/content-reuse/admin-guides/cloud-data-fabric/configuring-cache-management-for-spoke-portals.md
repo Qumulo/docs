@@ -1,6 +1,3 @@
-{% capture nameChange %}{{site.gns.nameChange}}{% endcapture %}
-{% include tip.html content=nameChange %}
-
 Before you can configure spoke portal cache management, your Qumulo cluster must have [an active portal relationship](configuring-portal-relationship.html).
 
 ## How Cache Management Works in Qumulo Core

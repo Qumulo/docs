@@ -801,8 +801,14 @@ entries:
     url: /qq-cli-command-guide/object/
   - folderitems:
     - output: web,pdf
+      title: portal_accept_hub
+      url: /qq-cli-command-guide/portal/portal_accept_hub.html
+    - output: web,pdf
       title: portal_authorize_hub
       url: /qq-cli-command-guide/portal/portal_authorize_hub.html
+    - output: web,pdf
+      title: portal_authorize_hub_root
+      url: /qq-cli-command-guide/portal/portal_authorize_hub_root.html
     - output: web,pdf
       title: portal_create
       url: /qq-cli-command-guide/portal/portal_create.html
@@ -812,6 +818,12 @@ entries:
     - output: web,pdf
       title: portal_delete_spoke
       url: /qq-cli-command-guide/portal/portal_delete_spoke.html
+    - output: web,pdf
+      title: portal_delete_spoke_root
+      url: /qq-cli-command-guide/portal/portal_delete_spoke_root.html
+    - output: web,pdf
+      title: portal_deny_hub_root
+      url: /qq-cli-command-guide/portal/portal_deny_hub_root.html
     - output: web,pdf
       title: portal_get_eviction_settings
       url: /qq-cli-command-guide/portal/portal_get_eviction_settings.html
@@ -837,11 +849,14 @@ entries:
       title: portal_list_spokes
       url: /qq-cli-command-guide/portal/portal_list_spokes.html
     - output: web,pdf
-      title: portal_modify_hub
-      url: /qq-cli-command-guide/portal/portal_modify_hub.html
+      title: portal_modify_hub_host
+      url: /qq-cli-command-guide/portal/portal_modify_hub_host.html
     - output: web,pdf
-      title: portal_modify_spoke
-      url: /qq-cli-command-guide/portal/portal_modify_spoke.html
+      title: portal_modify_spoke_host
+      url: /qq-cli-command-guide/portal/portal_modify_spoke_host.html
+    - output: web,pdf
+      title: portal_propose_spoke_root
+      url: /qq-cli-command-guide/portal/portal_propose_spoke_root.html
     - output: web,pdf
       title: portal_set_eviction_settings
       url: /qq-cli-command-guide/portal/portal_set_eviction_settings.html

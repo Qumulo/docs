@@ -239,6 +239,10 @@ entries:
       url: /administrator-guide/cloud-data-fabric/how-portal-creation-enables-cloud-data-fabric.html
       output: web, pdf
 
+    - title: Known Limits for Cloud Data Fabric 
+      url: /administrator-guide/cloud-data-fabric/known-limits.html
+      output: web, pdf
+
     - title: Configuring a Portal Relationship
       url: /administrator-guide/cloud-data-fabric/configuring-portal-relationship.html
       output: web, pdf

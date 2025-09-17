@@ -185,24 +185,64 @@ entries:
     - output: web,pdf
       title: portal/hubs
       url: /rest-api-guide/cloud-data-fabric/portal_hubs.html
+    - apiversion: v2
+      output: web,pdf
+      preview: true
+      title: portal/hubs
+      url: /rest-api-guide/cloud-data-fabric/v2_portal_hubs.html
     - output: web,pdf
       title: portal/hubs/{id}
       url: /rest-api-guide/cloud-data-fabric/portal_hubs_id.html
+    - apiversion: v2
+      output: web,pdf
+      preview: true
+      title: portal/hubs/{id}
+      url: /rest-api-guide/cloud-data-fabric/v2_portal_hubs_id.html
+    - apiversion: v2
+      output: web,pdf
+      preview: true
+      title: portal/hubs/{id}/accept
+      url: /rest-api-guide/cloud-data-fabric/v2_portal_hubs_id_accept.html
     - output: web,pdf
       title: portal/hubs/{id}/authorize
       url: /rest-api-guide/cloud-data-fabric/portal_hubs_id_authorize.html
+    - apiversion: v2
+      output: web,pdf
+      preview: true
+      title: portal/hubs/{id}/roots/{dir}
+      url: /rest-api-guide/cloud-data-fabric/v2_portal_hubs_id_roots_dir.html
     - output: web,pdf
       title: portal/spokes
       url: /rest-api-guide/cloud-data-fabric/portal_spokes.html
+    - apiversion: v2
+      output: web,pdf
+      preview: true
+      title: portal/spokes
+      url: /rest-api-guide/cloud-data-fabric/v2_portal_spokes.html
     - output: web,pdf
       title: portal/spokes/eviction-settings
       url: /rest-api-guide/cloud-data-fabric/portal_spokes_eviction-settings.html
     - output: web,pdf
       title: portal/spokes/{id}
       url: /rest-api-guide/cloud-data-fabric/portal_spokes_id.html
+    - apiversion: v2
+      output: web,pdf
+      preview: true
+      title: portal/spokes/{id}
+      url: /rest-api-guide/cloud-data-fabric/v2_portal_spokes_id.html
     - output: web,pdf
       title: portal/spokes/{id}/propose
       url: /rest-api-guide/cloud-data-fabric/portal_spokes_id_propose.html
+    - apiversion: v2
+      output: web,pdf
+      preview: true
+      title: portal/spokes/{id}/roots
+      url: /rest-api-guide/cloud-data-fabric/v2_portal_spokes_id_roots.html
+    - apiversion: v2
+      output: web,pdf
+      preview: true
+      title: portal/spokes/{id}/roots/{dir}
+      url: /rest-api-guide/cloud-data-fabric/v2_portal_spokes_id_roots_dir.html
     output: web,pdf
     title: Cloud Data Fabric (portal)
     url: /rest-api-guide/cloud-data-fabric/

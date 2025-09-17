@@ -28,7 +28,8 @@ positional_options: []
 sidebar: qq_cli_command_reference_sidebar
 summary: This section explains how to use the <code>qq portal_authorize_hub</code>
   command.
-synopsis: Authorize the specified hub portal to activate the relationship
+synopsis: Authorize the specified hub portal. Authorizing a hub establishes the relationship
+  with a spoke portal and authorizes the default root pair provided during creation.
 title: qq portal_authorize_hub
 usage: qq portal_authorize_hub [-h] -i ID -a SPOKE_ADDRESS [-p SPOKE_PORT] [-j]
 zendesk_source: qq CLI Command Guide

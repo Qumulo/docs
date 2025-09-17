@@ -3,7 +3,11 @@ category: /Unconfigured Nodes
 methods:
   get:
     summary: List the unconfigured nodes discovered on the local network.
-    parameters: []
+    parameters:
+    - name: include-incompatibles
+      description: Include incompatible unconfigured nodes in the discover response.
+        Defaults to false.
+      required: false
     response_body:
       schema: "{\n  \"description\": \"api_unconfigured_nodes_response\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"nodes\": {\n      \"type\": \"array\"\

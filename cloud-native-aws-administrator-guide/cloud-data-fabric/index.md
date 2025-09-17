@@ -8,6 +8,3 @@ redirect_from:
 sidebar: cloud_native_aws_administrator_guide_sidebar
 search: exclude
 ---
-
-{% capture nameChange %}{{site.gns.nameChange}}{% endcapture %}
-{% include tip.html content=nameChange %}

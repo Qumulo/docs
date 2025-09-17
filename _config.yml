@@ -490,14 +490,13 @@ changeNotify:
   useRESTnotSMB: Qumulo provides REST access to the same [change notification system](how-file-system-change-notifications-work.html) that backs SMB2 `CHANGE_NOTIFY`. Because the notification interface and types are easier to work with compared to SMB2, we recommend programming by using REST rather than SMB `CHANGE_NOTIFY`.
 
 gns:
-  nameChange: Global Namespace is now a core component of Qumulo Cloud Data Fabric.
   crossFileSystem: While Qumulo Core doesn't support hard links between the files local to the spoke portal host cluster and files within the spoke portal root directory, it does support hard links entirely outside or inside the spoke portal root directory.
   uniquePortalIDs: Portal IDs are unique within each cluster. It isn&apos;t possible to use a portal ID from a spoke portal to identify the other side of the relationship, or the other way around.
   spokePortalsReadOnly: To ensure strict consistency with the hub portal, all file system objects under the spoke portal root directory are read-only.
   ephemeralCache: The cache of a spoke portal is inherently ephemeral. You must not use it in place of data replication or backup.
   firstTimeAccess: Although first-time data access to data in a portal root directory is subject to round-trip latency between the spoke portal host cluster and the hub portal host cluster, subsequent access to the data is faster. Making changes to data under a portal root directory is also subject to latency when the system recaches these changes upon access.
   spokePortalInitiates: The spoke portal initiates the creation of a hub portal.
-  dirOnCluster: A directory on a cluster defines the _root directory_ for
+  dirOnCluster: A directory on a cluster defines a _root directory_ for
   accessConnectivity: For a spoke portal to be accessible, there must be full connectivity between the two clusters in a portal relationship, without which files or directories with outstanding modifications on one portal are inaccessible on other portals. Specifically, every node in the spoke portal host cluster must be able to connect to the configured hub portal host cluster address, and the other way around.
   versionRequirement: A spoke portal is inaccessible if the hub portal host cluster and the spoke portal host cluster run different versions of Qumulo Core.
   singleRelationship: In Qumulo Core 7.5.0.1 to 7.5.1, it is possible for a Qumulo cluster to host only up to 32 hub portals <em>or</em> up to 32 spoke portals.
@@ -508,6 +507,8 @@ gns:
   portalDeleteCaution: When you delete a spoke portal, all synchronized changes remain on the hub portal and all unsynchronized changes on the spoke portal are lost.
   portalDeleteOutput: The following is example output from the command that shows the portal ID, state, role, and root directory.
   portalDeleteProcess: The relationship becomes read-only and enters the `Deleting` state. Qumulo Core synchronizes any outstanding changes from the spoke portal to the hub portal and then removes the portal relationship from each cluster.
+  functionality762: In Qumulo Core 7.6.2 (and higher), it is possible to configure up to 32 spoke portal root directories for each Qumulo cluster, for each portal relationship.
+  functionality762note: A spoke portal root directory can either map to a unique hub portal root directory or share hub portal root directories with other spoke portals.
 
 RBACoverrides: For the S3 API and Qumulo REST API, if a user has the <a href="https://care.qumulo.com/hc/en-us/articles/360036591633">role-based access control privilege (RBAC)</a> to perform an API action, Qumulo Core <a href="#rbac-overrides">ignores the access policy</a> and permits the API action.
 
