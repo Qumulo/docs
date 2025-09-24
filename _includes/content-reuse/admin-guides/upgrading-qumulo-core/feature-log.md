@@ -107,7 +107,6 @@ This release of Qumulo Core adds Illumio Policy Compute Engine (PCE) and Virtual
     <ul>
       <li>For clusters with certain erasure coding configurations deployed before July 4, 2020, this release resolves an issue that previously could occur during quorum formation, resulting in internal metadata being in an inconsistent state.</li>
       <li>This release resolves unexpected SAS controller behavior on hardware nodes, where previously hot-plugging drives could cause cluster instability.</li>
-      <li>This release makes Qumulo Core more resilient to unexpected drive controller behavior.</li>
     </ul>
   </li>
 </ul>
@@ -290,7 +289,6 @@ This release resolves the following on-premises cluster issues:
     <ul>
       <li>This release resolves unexpected SAS controller behavior on hardware nodes, where previously hot-plugging drives could cause cluster instability.</li>
       <li>For clusters with certain erasure coding configurations deployed before July 4, 2020, this release resolves an issue that previously could occur during quorum formation, resulting in internal metadata being in an inconsistent state.</li>
-      <li>This release makes Qumulo Core more resilient to unexpected drive controller behavior.</li>
       <li>This release resolves a memory leak issue on HPE Apollo 4200 Gen 10 36T, 90T, 192T, and 336T Encrypted nodes when querying for system data.</li>
     </ul>
   </li>
@@ -332,7 +330,6 @@ This release resolves the following on-premises cluster issues:
 <ul>
   <li>This release resolves unexpected SAS controller behavior on hardware nodes, where previously hot-plugging drives could cause cluster instability.</li>
   <li>For clusters with certain erasure coding configurations deployed before July 4, 2020, this release resolves an issue that previously could occur during quorum formation, resulting in internal metadata being in an inconsistent state.</li>
-  <li>This release makes Qumulo Core more resilient to unexpected drive controller behavior.</li>
   <li>This release resolves an issue in Qumulo Core 7.1.0 that previously prevented Broadcom NIC firmware from being updated correctly.</li>
 </ul>
 {{site.data.alerts.end}}
