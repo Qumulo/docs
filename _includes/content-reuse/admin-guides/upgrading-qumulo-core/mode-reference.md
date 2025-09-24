@@ -53,7 +53,7 @@ For information about the most important features from each release, click the Q
       <td class="platform">Platform</td>
     </tr>
     <tr>
-      <td><a href="feature-log.html#qumulo-core-743">7.4.3</a></td>
+      <td><a href="feature-log.html#qumulo-core-7431">7.4.3.1</a></td>
       <td>Instant</td>
     </tr>
     <tr>
@@ -65,7 +65,7 @@ For information about the most important features from each release, click the Q
       <td>Instant</td>
     </tr>
     <tr>
-      <td><a href="feature-log.html#qumulo-core-7403-quarterly">7.4.0.3 (Quarterly)</a></td>
+      <td><a href="feature-log.html#qumulo-core-7404-quarterly">7.4.0.4 (Quarterly)</a></td>
       <td>Instant</td>
     </tr>
     <tr>
@@ -77,7 +77,7 @@ For information about the most important features from each release, click the Q
       <td>Instant</td>
     </tr>
     <tr>
-      <td><a href="feature-log.html#qumulo-core-7302-quarterly">7.3.0.2 (Quarterly)</a></td>
+      <td><a href="feature-log.html#qumulo-core-7303-quarterly">7.3.0.3 (Quarterly)</a></td>
       <td>Instant</td>
     </tr>
     <tr>
@@ -93,7 +93,7 @@ For information about the most important features from each release, click the Q
       <td>Instant</td>
     </tr>
     <tr>
-      <td><a href="feature-log.html#qumulo-core-7203-quarterly">7.2.0.3 (Quarterly)</a></td>
+      <td><a href="feature-log.html#qumulo-core-7204-quarterly">7.2.0.4 (Quarterly)</a></td>
       <td>Instant</td>
     </tr>
     <tr>
@@ -113,7 +113,7 @@ For information about the most important features from each release, click the Q
       <td>Instant</td>
     </tr> 
     <tr>
-      <td><a href="feature-log.html#qumulo-core-7102-quarterly">7.1.0.2 (Quarterly)</a></td>
+      <td><a href="feature-log.html#qumulo-core-7103-quarterly">7.1.0.3 (Quarterly)</a></td>
       <td class="platform">Platform</td>
     </tr>
     <tr>

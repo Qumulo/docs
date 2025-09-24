@@ -140,8 +140,9 @@ This release of Qumulo Core adds Illumio Policy Compute Engine (PCE) and Virtual
 * Added Qumulo Core Web UI notifications about SSD endurance levels and a corresponding REST API endpoint
 * Resolved an issue that previously affected read leases in the hub portal root directory
 
-## Qumulo Core 7.4.3
+## Qumulo Core 7.4.3.1
 {{page.varDownloadsRelnotes}}
+{% include important.html content="This release resolves unexpected SAS controller behavior on hardware nodes, where previously hot-plugging drives could cause cluster instability." %}
 
 * Added the ability to use the NFSv4.1 protocol with spoke portals
 * Added the ability to perform punch hole operations on spoke portals by using the `qq` CLI and REST API
@@ -184,25 +185,25 @@ This release of Qumulo Core adds Illumio Policy Compute Engine (PCE) and Virtual
 * Renamed the designation `preview` (previously, `beta`) which marks REST APIs under development
 * Made public the REST API endpoints and `qq` CLI commands that manage a cluster's DNS configuration
 
-## Qumulo Core 7.4.0.3 (Quarterly)
+## Qumulo Core 7.4.0.4 (Quarterly)
 {{page.varDownloadsRelnotes}}
-* Added support for latest Western Digital Ultrastar DC SN640 SSD firmware
-* Improved UID and GID sorting in the Qumulo Core Web UI
-* Resolved an issue with `PutObject` and `CopyObject` S3 API actions
-
 {{site.data.alerts.important}}
 <ul>
-  <li>This release resolves a rare issue where previously, under certain conditions, concurrent quorum-related activity could result in file system data being overwritten.</li>
-  <li>This release resolves an issue that previously occurred after a spoke portal was deleted.</li>
   <li>
     This release resolves the following on-premises cluster issues:
     <ul>
+      <li>This release resolves unexpected SAS controller behavior on hardware nodes, where previously hot-plugging drives could cause cluster instability.</li>
       <li>For clusters with certain erasure coding configurations deployed before July 4, 2020, this release resolves an issue that previously could occur during quorum formation, resulting in internal metadata being in an inconsistent state.</li>
-      <li>This release makes Qumulo Core more resilient to unexpected drive controller behavior.</li>
     </ul>
   </li>
+  <li>This release resolves a rare issue where previously, under certain conditions, concurrent quorum-related activity could result in file system data being overwritten.</li>
+  <li>This release resolves an issue that previously occurred after a spoke portal was deleted.</li>
 </ul>
 {{site.data.alerts.end}}
+
+* Added support for latest Western Digital Ultrastar DC SN640 SSD firmware
+* Improved UID and GID sorting in the Qumulo Core Web UI
+* Resolved an issue with `PutObject` and `CopyObject` S3 API actions
 
 ## Qumulo Core 7.3.2.1
 {{page.varDownloadsRelnotes}} 
@@ -227,13 +228,13 @@ This release of Qumulo Core adds Illumio Policy Compute Engine (PCE) and Virtual
 * Resolved an issue with NLM connections
 * Resolved an issue with tree deletion operations
 
-## Qumulo Core 7.3.0.2 (Quarterly)
+## Qumulo Core 7.3.0.3 (Quarterly)
 {{page.varDownloadsRelnotes}}
 {{site.data.alerts.important}}
 This release resolves the following on-premises cluster issues:
 <ul>
+  <li>This release resolves unexpected SAS controller behavior on hardware nodes, where previously hot-plugging drives could cause cluster instability.</li>
   <li>For clusters with certain erasure coding configurations deployed before July 4, 2020, this release resolves an issue that previously could occur during quorum formation, resulting in internal metadata being in an inconsistent state.</li>
-  <li>This release makes Qumulo Core more resilient to unexpected drive controller behavior.</li>
 </ul>
 {{site.data.alerts.end}}
 
@@ -280,13 +281,14 @@ This release resolves the following on-premises cluster issues:
 * Made improvements in SMB session handling
 * Made improvements in audit logging
 
-## Qumulo Core 7.2.0.3 (Quarterly)
+## Qumulo Core 7.2.0.4 (Quarterly)
 {{page.varDownloadsRelnotes}}
 {{site.data.alerts.important}}
 <ul>
   <li>
     This release resolves the following on-premises cluster issues:
     <ul>
+      <li>This release resolves unexpected SAS controller behavior on hardware nodes, where previously hot-plugging drives could cause cluster instability.</li>
       <li>For clusters with certain erasure coding configurations deployed before July 4, 2020, this release resolves an issue that previously could occur during quorum formation, resulting in internal metadata being in an inconsistent state.</li>
       <li>This release makes Qumulo Core more resilient to unexpected drive controller behavior.</li>
       <li>This release resolves a memory leak issue on HPE Apollo 4200 Gen 10 36T, 90T, 192T, and 336T Encrypted nodes when querying for system data.</li>
@@ -297,7 +299,7 @@ This release resolves the following on-premises cluster issues:
 {{site.data.alerts.end}}
 
 * {{page.varNoPublicChanges}}
-* Made CNQ on AWS available on Qumulo Nexus.
+* Made CNQ on AWS available on Qumulo Nexus
 * Resolved an issue with the **APIs & Tools** page in the Qumulo Core Web UI not showing certain REST endpoints correctly
 {% endif %}
 
@@ -323,11 +325,12 @@ Extended S3 object versioning support to additional API actions
 * {{page.varNoPublicChanges}}
 * Resolved two issues that could potentially cause a crash
 
-## Qumulo Core 7.1.0.2 (Quarterly)
+## Qumulo Core 7.1.0.3 (Quarterly)
 {{page.varDownloadsRelnotes}}
 {{site.data.alerts.important}}
 This release resolves the following on-premises cluster issues:
 <ul>
+  <li>This release resolves unexpected SAS controller behavior on hardware nodes, where previously hot-plugging drives could cause cluster instability.</li>
   <li>For clusters with certain erasure coding configurations deployed before July 4, 2020, this release resolves an issue that previously could occur during quorum formation, resulting in internal metadata being in an inconsistent state.</li>
   <li>This release makes Qumulo Core more resilient to unexpected drive controller behavior.</li>
   <li>This release resolves an issue in Qumulo Core 7.1.0 that previously prevented Broadcom NIC firmware from being updated correctly.</li>
