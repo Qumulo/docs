@@ -21,7 +21,9 @@ For more information specific to your SAML IdP, see the following documentation:
 
 * **Auth0:** [Customize SAML Assertions](https://auth0.com/docs/authenticate/protocols/saml/saml-configuration/customize-saml-assertions) in the Authenticate documentation
 
-* **Azure Active Directory:** [Customize SAML token claims](https://learn.microsoft.com/en-us/entra/identity-platform/saml-claims-customization) in the Microsoft Entra documentation
+* **Microsoft Entra/Azure Active Directory:** [Customize SAML token claims](https://learn.microsoft.com/en-us/entra/identity-platform/saml-claims-customization) in the Microsoft Entra documentation
+
+  {% include note.html content="Because Qumulo Nexus SSO integration requires specifying attributes without a namespace, make sure you clear the **Namespace** field when you specify an attribute in Microsoft Entra." %}
 
 * **Google Workspace:** [Set up your own custom SAML app](https://support.google.com/a/answer/6087519) in the Google Workspace Admin Help documentation
 
