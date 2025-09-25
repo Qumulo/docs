@@ -35,22 +35,33 @@ blockquote {
   [role="tablist"] {
     display: flex;
     gap: 0.5rem;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid #696969;
   }
 
-  /* Tab buttons */
+  /* Default (non-hover, non-actve) tab buttons */
   [role="tab"] {
-    background: none;
-    border: none;
-    padding: 0.5rem 1rem;
+    border: 0;
+    background: #696969;
+    color: white;
+    padding: 8px 16px;
     cursor: pointer;
     font: inherit;
-    border-bottom: 2px solid transparent;
+    font-weight: bold;
+    transition: all 0.3s ease;
   }
 
+  /* Current-page (active) tab button */
   [role="tab"][aria-selected="true"] {
-    border-color: #007cac; /* highlight color */
+    background-color: #007cac;
+    color: white;
     font-weight: bold;
+    cursor: default;
+  }
+
+  /* Non-current-page (inactive) tab button */
+  [role="tab"]:hover:not([aria-selected="true"]) {
+    background-color: #00a3ca;
+    color: white;
   }
 
   /* Panels */
