@@ -28,10 +28,11 @@ This release of Qumulo Core adds Illumio Policy Compute Engine (PCE) and Virtual
 * For Cloud Native Qumulo (CNQ), replaced two OpenMetrics metrics for node and drive failure
 * Resolved an issue with the REST API endpoint for unconfigured nodes
 
-## Qumulo Core 7.6.0.1 (Quarterly)
+## Qumulo Core 7.6.0.2 (Quarterly)
 {{page.varDownloadsRelnotes}}
 {{site.data.alerts.important}}
 <ul>
+  <li>This release resolves an issue with the Qumulo Core upgrade process.</li>
   <li>This release resolves unexpected behavior in the latest host operating system which can block the Qumulo Core upgrade process due to temporary storage becoming unavailable.</li>
   <li>This release resolves an issue identified in Qumulo Core 7.5.4 where, under certain conditions, a node could become unavailable during an update.</li>
 </ul>
