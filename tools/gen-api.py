@@ -1,17 +1,82 @@
 import os
+import sys
 import json
 import yaml
 import requests
 import re
 from tqdm import tqdm
 
-# Helper function for preserving manually added YAML keys
-def update_frontmatter_preserving_custom_fields(md_path, updates):
-    def create_directory(path):
-        if not os.path.exists(path):
-            os.makedirs(path)
 
-    create_directory(os.path.dirname(md_path))
+VERSION_PATTERN = re.compile(r"^/v(\d+)/")
+DEFAULT_VERSION = "v1"
+HTTP_METHODS = ["get", "post", "put", "delete", "patch", "options", "head"]
+OUTPUT_FORMATS = "web,pdf"
+
+OUTPUT_BASE_DIR = os.path.expanduser("~/git/docs-internal/rest-api-guide")
+SIDEBAR_FILE_PATH = os.path.expanduser(
+    "~/git/docs-internal/_data/sidebars/rest_api_guide_sidebar.yml"
+)
+
+
+def extract_api_version(path):
+    """Extract API version from path.
+
+    All paths in the OpenAPI spec have version prefixes (e.g., /v1/..., /v2/...).
+    This is the single source of truth for API versions.
+    """
+    match = VERSION_PATTERN.match(path)
+    if match:
+        return f"v{match.group(1)}"
+
+    assert False, f"Path without version prefix: {path}"
+
+
+def normalize_tag_with_version(tag, path_version):
+    """Normalize tag by removing any existing version suffix and adding path version.
+
+    This ensures all tags have consistent versioning based on their actual API paths,
+    fixing any inconsistencies in the OpenAPI spec tag naming.
+
+    Examples:
+    - "Network Configuration", "v2" -> ("Network Configuration V2", "Network Configuration")
+    - "Network Configuration V1", "v1" -> ("Network Configuration V1", "Network Configuration")
+    - "Cloud Data Fabric", "v1" -> ("Cloud Data Fabric V1", "Cloud Data Fabric")
+    """
+    # Strip any existing version suffix (e.g., "Network Configuration V1" -> "Network Configuration")
+    base_tag = re.sub(r"\s+V\d+$", "", tag)
+    # Add the version from the path
+    versioned_tag = f"{base_tag} {path_version.upper()}"
+    return versioned_tag, base_tag
+
+
+def get_versioned_directory_name(tag, version):
+    """Generate consistent directory name for versioned tag.
+
+    Examples:
+    - "Cloud Data Fabric V1", "v1" -> "cloud-data-fabric-v1"
+    - "Network Configuration", "v2" -> "network-configuration-v2"
+    - "Analytics V1", "v1" -> "analytics-v1"
+    """
+    # Remove version suffix if present (e.g., "Cloud Data Fabric V1" -> "Cloud Data Fabric")
+    base_tag = re.sub(r"\s+V\d+$", "", tag)
+    # Convert to lowercase, replace spaces with hyphens, append version
+    return f"{base_tag.lower().replace(' ', '-')}-{version.lower()}"
+
+
+def create_sidebar_entry(title, url, api_version=DEFAULT_VERSION, is_preview=False):
+    """Create a sidebar entry with appropriate fields."""
+    entry = {"output": OUTPUT_FORMATS, "title": title, "url": url}
+    if is_preview:
+        entry["preview"] = True
+    # Always include apiversion for consistency, even for v1
+    if api_version:
+        entry["apiversion"] = api_version
+    return entry
+
+
+def update_frontmatter_preserving_custom_fields(md_path, updates):
+    """Helper function for preserving manually added YAML keys"""
+    os.makedirs(os.path.dirname(md_path), exist_ok=True)
 
     if not os.path.exists(md_path):
         with open(md_path, "w") as f:
@@ -43,7 +108,9 @@ def update_frontmatter_preserving_custom_fields(md_path, updates):
 
         key = line.split(":", 1)[0].strip()
         if key in updates:
-            val = yaml.dump({key: updates[key]}, default_flow_style=False, sort_keys=False).strip()
+            val = yaml.dump(
+                {key: updates[key]}, default_flow_style=False, sort_keys=False
+            ).strip()
             new_lines.extend(val.splitlines())
             keys_updated.add(key)
             skip_key = key
@@ -52,7 +119,9 @@ def update_frontmatter_preserving_custom_fields(md_path, updates):
 
     for key, val in updates.items():
         if key not in keys_updated:
-            val_str = yaml.dump({key: val}, default_flow_style=False, sort_keys=False).strip()
+            val_str = yaml.dump(
+                {key: val}, default_flow_style=False, sort_keys=False
+            ).strip()
             new_lines.extend(val_str.splitlines())
 
     with open(md_path, "w") as f:
@@ -61,93 +130,99 @@ def update_frontmatter_preserving_custom_fields(md_path, updates):
         f.write("---\n")
         f.write(body)
 
-# URL to fetch the OpenAPI definition
-while True:
-    version_input = input("Which version of REST API docs to generate docs for? Enter a valid Qumulo Core version or q to quit. ").strip()
-    if version_input.lower() == 'q':
-        print("Exiting.")
-        exit(0)
 
-    url = f"https://artifacts.eng.qumulo.com/release/{version_input}/src/build/debug/iodocs/openapi.json"
-    print(f"Building REST API documentation from {url} ...")
+def interactive_version_selector():
+    if len(sys.argv) >= 2:
+        version_input = sys.argv[1]
+        interactive_mode = False
+    else:
+        version_input = None
+        interactive_mode = True
 
-    try:
-        response = requests.get(url)
-        response.raise_for_status()
-        api_definition = response.json()
-        break
-    except (requests.RequestException, json.JSONDecodeError):
-        print("Enter a valid Qumulo Core version or q to quit.")
+    while True:
+        if interactive_mode:
+            version_input = input(
+                "Which version of REST API docs to generate docs for? Enter a valid Qumulo Core version or q to quit. "
+            ).strip()
+            if version_input.lower() == "q":
+                print("Exiting.")
+                exit(0)
 
-# Define the base directory for output
-output_base_dir = os.path.expanduser("~/git/docs-internal/rest-api-guide")
-sidebar_file_path = os.path.expanduser("~/git/docs-internal/_data/sidebars/rest_api_guide_sidebar.yml")
+        url = f"https://artifacts.eng.qumulo.com/release/{version_input}/src/build/debug/iodocs/openapi.json"
+        print(f"Building REST API documentation from {url} ...")
 
-# Hard-coded tag configuration for all exceptions
-TAG_CONFIG = {
-    # Format: "Tag Name": (sort_order, api_version_for_parent, api_version_for_children)
-    "Network Configuration V1": (1, None, "v1"),     # Sort first, no parent tag
-    "Network Configuration": (2, "v2", "v2"),        # Sort second, parent tag v2
-    "NFS Methods V2": (1, "v2", "v2"),               # Sort first, parent tag v2
-    "NFS Methods": (2, "v3", "v3"),                  # Sort second, parent tag v3
-    "SMB Shares Methods V1": (1, None, "v1"),        # Sort first, no parent tag
-    "SMB Shares Methods V2": (2, "v2", "v2"),        # Sort second, parent tag v2
-    "SMB Shares Methods": (3, "v3", "v3"),           # Sort third, parent tag v3
+        try:
+            response = requests.get(url)
+            response.raise_for_status()
+            return response.json()
+        except (requests.RequestException, json.JSONDecodeError):
+            if interactive_mode:
+                print("Enter a valid Qumulo Core version or q to quit.")
+            else:
+                print(
+                    f"Error: Unable to fetch OpenAPI spec for version {version_input}"
+                )
+                print(
+                    f"Please check that '{version_input}' is a valid Qumulo Core version."
+                )
+                exit(1)
 
-    # Deal with dual-tagged APIs
-    "Configured Node Management": (1, None, "v1"),
-    "Unconfigured Node Management": (2, None, "v1")
-}
 
-# Function to create the directory if it does not exist
-def create_directory(path):
-    if not os.path.exists(path):
-        os.makedirs(path)
-
-# Function to write markdown files
-def write_markdown(file_path, content):
-    with open(file_path, "w") as file:
-        file.write(content)
-
-# Function to generate the content for index.md
-def generate_index_md(tag, title, tag_info):
-    return f"""---
+def generate_index_md(tag, title, tag_info, api_version):
+    out = f"""---
 layout: landing_page
 sidebar: rest_api_guide_sidebar
 summary: "{tag_info['description']}"
-title: {title}
----
-"""
+title: {title}"""
 
-# Function to generate the content for individual REST resource files
+    if api_version == "v1":
+        old_url = tag.lower().replace(" v1", "").replace(" ", "-")
+        out += f"""
+redirect_from:
+- /rest-api-guide/{old_url}/"""
+
+    return out + "\n---\n"
+
+
 def generate_resource_md(tag, endpoint, methods, permalink, api_version=None):
-    yaml_content = {
-        "category": f"/{tag}",
-        "rest_endpoint": endpoint,
-        "methods": {}
-    }
+    """Function to generate the content for individual REST resource files"""
+    yaml_content = {"category": f"/{tag}", "rest_endpoint": endpoint, "methods": {}}
 
     for method, details in methods.items():
         response_details = details.get("responses", {})
-        response_body = response_details.get("200", {}).get("content", {}).get("application/json", {})
-        request_body = details.get("requestBody", {}).get("content", {}).get("application/json", {})
+        response_body = (
+            response_details.get("200", {})
+            .get("content", {})
+            .get("application/json", {})
+        )
+        request_body = (
+            details.get("requestBody", {})
+            .get("content", {})
+            .get("application/json", {})
+        )
 
         is_preview = "[preview]" in details.get("summary", "").lower()
-        
+
         method_details = {
             "summary": details.get("summary", ""),
             "parameters": [
-                {"name": param["name"], "description": param.get("description", ""), "required": param.get("required", False)}
+                {
+                    "name": param["name"],
+                    "description": param.get("description", ""),
+                    "required": param.get("required", False),
+                }
                 for param in details.get("parameters", [])
             ],
             "response_body": {
                 "schema": json.dumps(response_body.get("schema", ""), indent=2)
-            } if response_body else {},
+            }
+            if response_body
+            else {},
             "responses": [
                 {"code": code, "description": response.get("description", "")}
                 for code, response in response_details.items()
             ],
-            "preview": is_preview
+            "preview": is_preview,
         }
 
         if request_body:
@@ -165,146 +240,155 @@ def generate_resource_md(tag, endpoint, methods, permalink, api_version=None):
     full_md = f"---\n{yaml_string}{version_string}permalink: {permalink}\nsidebar: rest_api_guide_sidebar\n---\n"
     return full_md, yaml_content
 
-# Function to clean up filenames
+
+def clean_path(path, remove_version=True, is_parent=False):
+    """Clean up paths for titles or filenames."""
+    parts = path.strip("/").split("/")
+    if remove_version and parts and parts[0].startswith("v") and parts[0][1:].isdigit():
+        parts.pop(0)  # Remove the version segment
+    if is_parent:
+        return parts[0] if parts else ""
+    return "/".join(parts)
+
 def clean_filename(tag, filename, api_version=None):
-    filename = filename.replace(f'{tag}_', '').replace('{', '_').replace('}', '').replace('__', '_').strip('_')
-    filename = filename.replace('v1_', '').replace('v2_', '').replace('v3_', '').replace('v4_', '').replace('v5_', '')
-    if api_version and api_version != 'v1':
+    # Clean brackets and underscores in one pass
+    filename = re.sub(r"[{}]", "_", filename.replace(f"{tag}_", ""))
+    filename = re.sub(r"_+", "_", filename).strip("_")
+
+    # Remove version prefixes (v1_, v2_, etc.)
+    filename = re.sub(r"^v\d+_", "", filename)
+    if api_version and api_version != DEFAULT_VERSION:
         filename = f"{api_version}_{filename}"
     return filename
 
-# Function to create the sidebar title from the tag and segment
+
 def create_sidebar_title(tag, segment):
-    # Special case for Configured Node Management
-    if tag == "Configured Node Management":
-        return f"Node Management ({segment})"
+    # Tag already includes version if it's versioned (e.g., "Cloud Data Fabric V1")
+    # No special cases needed - just use the tag as-is
     return f"{tag} ({segment})"
 
-# Function to find the tag for a category based on the path item
+
 def find_tags_for_category(path_item):
     tags = set()
     for method, details in path_item.items():
-        if method in ["get", "post", "put", "delete", "patch", "options", "head"]:
+        if method in HTTP_METHODS:
             if "tags" in details:
                 tags.update(details["tags"])
     return tags
 
-# Function to clean up path for titles
-def clean_path_for_title(path, is_parent=False):
-    parts = path.strip('/').split('/')
-    if parts[0].startswith('v') and parts[0][1:].isdigit():
-        parts.pop(0)  # Remove the version segment
-    if is_parent:
-        return parts[0]
-    return '/'.join(parts)
 
-# Function to determine API version for a tag
-def get_api_version_for_tag(tag, path):
-    # If tag is in our config, use the specified child version
-    if tag in TAG_CONFIG:
-        return TAG_CONFIG[tag][2]
-    
-    # Default: determine by path
-    if path.startswith('/v2'):
-        return 'v2'
-    elif path.startswith('/v3'):
-        return 'v3'
-    elif path.startswith('/v4'):
-        return 'v4'
-    elif path.startswith('/v5'):
-        return 'v5'
-    else:
-        return 'v1'
-
-# Fetch the OpenAPI definition
-response = requests.get(url)
-api_definition = response.json()
-
-# Dictionary to store sidebar entries grouped by tag
-sidebar_entries_by_tag = {}
-
-# Dictionary to store the tag information
-tag_info_dict = {tag['name']: tag for tag in api_definition['tags']}
-
-# Main processing logic
-paths_items = list(api_definition["paths"].items())
-for path, path_item in tqdm(paths_items, desc="Generating API docs", unit="endpoint"):
+def process_endpoint(path, path_item, sidebar_entries_by_tag, tag_info_dict):
+    """Process a single endpoint and update sidebar entries."""
     path_segments = path.strip("/").split("/")
     if path == "/openapi.json" or len(path_segments) < 2:
         if path != "/openapi.json":
-            tqdm.write(f"Skipping path {repr(path)} (segments: {len(path_segments)}): too short.")
-        continue
-    
-    # Find the tags for the category
+            tqdm.write(
+                f"Skipping path {repr(path)} (segments: {len(path_segments)}): too short."
+            )
+        return
+
     tags = find_tags_for_category(path_item)
     if not tags:
         tqdm.write(f"Skipping path '{path}' as it does not have any tags.")
-        continue
+        return
 
-    is_preview = any("[preview]" in details.get("summary", "").lower() for details in path_item.values())
+    is_preview = any(
+        "[preview]" in details.get("summary", "").lower()
+        for details in path_item.values()
+    )
 
     for tag in tags:
-        # Get API version using our function
-        api_version = get_api_version_for_tag(tag, path)
-        
-        tag_dir = os.path.join(output_base_dir, tag.lower().replace(" ", "-"))
-        create_directory(tag_dir)
+        # Get API version from path - the single source of truth
+        api_version = extract_api_version(path)
 
-        # Initialize the sidebar entries dictionary for the tag if not already present
-        if tag not in sidebar_entries_by_tag:
-            sidebar_entries_by_tag[tag] = []
+        # Normalize the tag with the path version
+        versioned_tag, base_tag = normalize_tag_with_version(tag, api_version)
 
-        # Clean up filename and write the individual resource file
-        resource_name = path.strip("/").replace("/", "_").replace("{", "_").replace("}", "")
+        # Generate directory name consistently
+        tag_dir_name = get_versioned_directory_name(versioned_tag, api_version)
+
+        tag_dir = os.path.join(OUTPUT_BASE_DIR, tag_dir_name)
+        os.makedirs(tag_dir, exist_ok=True)
+
+        # Initialize sidebar entries if needed
+        if versioned_tag not in sidebar_entries_by_tag:
+            sidebar_entries_by_tag[versioned_tag] = []
+
+        # Create resource file
+        resource_name = (
+            path.strip("/").replace("/", "_").replace("{", "_").replace("}", "")
+        )
         resource_filename = clean_filename(tag, f"{resource_name}.md", api_version)
         resource_md_path = os.path.join(tag_dir, resource_filename)
-        permalink = f"/rest-api-guide/{tag.lower().replace(' ', '-')}/{resource_filename.replace('.md', '.html')}"
-        resource_md_content, yaml_content = generate_resource_md(tag, path, path_item, permalink, api_version)
-        update_frontmatter_preserving_custom_fields(resource_md_path, {
-            "category": f"/{tag}",
-            "methods": yaml_content["methods"],
-            "rest_endpoint": path,
-            "api_version": api_version,
-            "permalink": permalink,
-            "sidebar": "rest_api_guide_sidebar"
-        })
+        permalink = f"/rest-api-guide/{tag_dir_name}/{resource_filename.replace('.md', '.html')}"
 
-        # Clean path for child title
-        cleaned_path = clean_path_for_title(path)
+        resource_md_content, yaml_content = generate_resource_md(
+            tag, path, path_item, permalink, api_version
+        )
+        update_frontmatter_preserving_custom_fields(
+            resource_md_path,
+            {
+                "category": f"/{versioned_tag}",
+                "methods": yaml_content["methods"],
+                "rest_endpoint": path,
+                "api_version": api_version,
+                "permalink": permalink,
+                "sidebar": "rest_api_guide_sidebar",
+            },
+        )
 
-        # Add entry to sidebar entries
-        sidebar_entry = {
-            "output": "web,pdf",
-            "title": cleaned_path,  # Use the cleaned path for the child title
-            "url": permalink
-        }
+        # Add sidebar entry
+        cleaned_path = clean_path(path)
+        sidebar_entry = create_sidebar_entry(
+            title=cleaned_path,
+            url=permalink,
+            api_version=api_version,
+            is_preview=is_preview,
+        )
+        sidebar_entries_by_tag[versioned_tag].append(sidebar_entry)
 
-        if is_preview:
-            sidebar_entry["preview"] = True
-
-        if api_version != 'v1':
-            sidebar_entry["apiversion"] = api_version
-
-        sidebar_entries_by_tag[tag].append(sidebar_entry)
-
-        # Generate the index.md file for the tag
-        if len(sidebar_entries_by_tag[tag]) == 1:  # Only create the index.md once per tag
-            tag_info = tag_info_dict.get(tag, {'name': tag, 'description': 'Listing of commands for ' + tag})
-            first_segment = clean_path_for_title(path, is_parent=True)
-            index_md_title = create_sidebar_title(tag, first_segment)
-            index_md_content = generate_index_md(tag, index_md_title, tag_info)
+        # Generate index.md if first entry for this tag
+        if len(sidebar_entries_by_tag[versioned_tag]) == 1:
+            # Use base_tag to look up tag info since that's what's in the OpenAPI spec
+            tag_info = tag_info_dict.get(
+                base_tag,
+                {
+                    "name": base_tag,
+                    "description": "Listing of commands for " + base_tag,
+                },
+            )
+            first_segment = clean_path(path, is_parent=True)
+            index_md_title = create_sidebar_title(versioned_tag, first_segment)
+            index_md_content = generate_index_md(
+                versioned_tag, index_md_title, tag_info, api_version
+            )
             index_md_path = os.path.join(tag_dir, "index.md")
-            write_markdown(index_md_path, index_md_content)
+            with open(index_md_path, "w") as f:
+                f.write(index_md_content)
 
-# Alphabetize entries within each tag
+
+api_definition = interactive_version_selector()
+
+sidebar_entries_by_tag = {}
+tag_info_dict = {tag["name"]: tag for tag in api_definition["tags"]}
+
+# Main processing loop
+paths_items = list(api_definition["paths"].items())
+for path, path_item in tqdm(paths_items, desc="Generating API docs", unit="endpoint"):
+    process_endpoint(path, path_item, sidebar_entries_by_tag, tag_info_dict)
+
+
 def version_key(entry):
-    version = entry.get('apiversion', 'v1').replace('v', '')
+    """Alphabetize entries within each tag"""
+    version = entry.get("apiversion", DEFAULT_VERSION).replace("v", "")
     return int(version)
 
-for tag in sidebar_entries_by_tag:
-    sidebar_entries_by_tag[tag] = sorted(sidebar_entries_by_tag[tag], key=lambda x: (x["title"], version_key(x)))
 
-# Generate sidebar YAML content
+for tag in sidebar_entries_by_tag:
+    sidebar_entries_by_tag[tag] = sorted(
+        sidebar_entries_by_tag[tag], key=lambda x: (x["title"], version_key(x))
+    )
+
 sidebar_content = {
     "entries": [
         {
@@ -315,41 +399,41 @@ sidebar_content = {
                             "output": "pdf",
                             "title": "",
                             "type": "frontmatter",
-                            "url": "/titlepage.html"
+                            "url": "/titlepage.html",
                         },
                         {
                             "output": "pdf",
                             "title": "",
                             "type": "frontmatter",
-                            "url": "/tocpage.html"
-                        }
+                            "url": "/tocpage.html",
+                        },
                     ],
                     "output": "pdf",
                     "title": "",
-                    "type": "frontmatter"
+                    "type": "frontmatter",
                 },
                 {
                     "folderitems": [
                         {
                             "output": "web",
                             "title": "Documentation Home",
-                            "url": "/index.html"
+                            "url": "/index.html",
                         },
                         {
                             "output": "web",
                             "title": "Qumulo REST API Guide Home",
-                            "url": "/rest-api-guide/"
+                            "url": "/rest-api-guide/",
                         },
                         {
                             "output": "web",
                             "title": "Contacting the Qumulo Care Team",
-                            "url": "/contacting-qumulo-care-team.html"
-                        }
+                            "url": "/contacting-qumulo-care-team.html",
+                        },
                     ],
                     "output": "web",
                     "title": "Qumulo REST API Guide",
-                    "type": "navi"
-                }
+                    "type": "navi",
+                },
             ]
         }
     ]
@@ -360,61 +444,49 @@ folders = []
 
 # Add folderitems for each tag
 for tag, entries in sidebar_entries_by_tag.items():
-    tag_info = tag_info_dict.get(tag, {'name': tag})
+    # All tags should now be normalized with versions (e.g., "Tag Name V1", "Tag Name V2")
+    version_match = re.match(r"^(.*)\s+V(\d+)$", tag)
+    if version_match:
+        base_tag = version_match.group(1)
+        version_num = version_match.group(2)
+        version = f"v{version_num}"
+        tag_dir_name = get_versioned_directory_name(tag, version)
+    else:
+        # This should never happen - all tags must have versions after normalization
+        assert False, f"Tag without version after normalization: {tag}"
+
+    tag_info = tag_info_dict.get(base_tag, {"name": base_tag})
     if entries:
         # Extract the first segment from the first entry's path
-        first_segment = clean_path_for_title(entries[0]["title"], is_parent=True)
+        first_segment = clean_path(
+            entries[0]["title"], remove_version=False, is_parent=True
+        )
         parent_title = create_sidebar_title(tag, first_segment)
-
-        # Check if all child entries don't have preview: false
         all_preview = all(entry.get("preview", False) for entry in entries)
 
-        # Create the parent folder entry
         parent_entry = {
             "folderitems": entries,
-            "output": "web,pdf",
+            "output": OUTPUT_FORMATS,
             "title": parent_title,
-            "url": f"/rest-api-guide/{tag.lower().replace(' ', '-')}/"
+            "url": f"/rest-api-guide/{tag_dir_name}/",
         }
 
         # If all children are preview, mark the parent as preview
         if all_preview:
             parent_entry["preview"] = True
 
-        # Get config for this tag if it exists
-        tag_config = TAG_CONFIG.get(tag)
-        if tag_config:
-            sort_order = tag_config[0]
-            parent_version = tag_config[1]
-            
-            # Add parent version tag if specified
-            if parent_version and parent_version != 'v1':
-                parent_entry["apiversion"] = parent_version
-        else:
-            # Default sort order for non-configured tags
-            sort_order = 100
-            
-            # For non-configured tags, if all children have the same non-v1 version, add it to parent
-            all_versions = set(entry.get('apiversion', 'v1') for entry in entries)
-            if len(all_versions) == 1 and 'v1' not in all_versions:
-                parent_entry["apiversion"] = next(iter(all_versions))
-        
-        # For sorting, extract tag base name (strip V1, V2, etc.)
-        tag_base = tag
-        if " V" in tag and tag[-2:] in ["V1", "V2", "V3", "V4", "V5"]:
-            tag_base = tag[:-3]
-            
+        # Sort order is simply the version number for consistent V1 → V2 → V3 ordering
+        sort_order = int(version_num)
+
         # Add the entry with sorting info
-        folders.append((tag_base, sort_order, tag, parent_entry))
+        folders.append((base_tag, sort_order, tag, parent_entry))
 
 # Sort folders first by tag base, then by the specified sort order
 folders.sort(key=lambda x: (x[0], x[1]))
-
-# Add sorted folders to the sidebar
 sidebar_content["entries"][0]["folders"].extend([entry for _, _, _, entry in folders])
 
 # Write the sidebar YAML file
-with open(sidebar_file_path, "w") as file:
+with open(SIDEBAR_FILE_PATH, "w") as file:
     yaml.dump(sidebar_content, file, default_flow_style=False)
 
 # Manually append the additional YAML content
@@ -427,7 +499,7 @@ additional_yaml_content = """  guidetitle: Qumulo REST API Guide
   version: ''
 """
 
-with open(sidebar_file_path, "a") as file:
+with open(SIDEBAR_FILE_PATH, "a") as file:
     file.write(additional_yaml_content)
 
 print("API documentation generation completed.")

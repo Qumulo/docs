@@ -1,0 +1,28 @@
+---
+category: /Snapshots V3
+methods:
+  post:
+    summary: Lock the specified snapshot. The only modification you can make to a
+      locked snapshot is extending its expiration time.
+    parameters:
+    - name: id
+      description: The snapshot identifier.
+      required: true
+    response_body:
+      schema: "{\n  \"description\": \"api_snapshot_lock\",\n  \"type\": \"object\"\
+        ,\n  \"properties\": {\n    \"lock_key_ref\": {\n      \"description\": \"\
+        lock_key_ref\",\n      \"type\": \"string\"\n    }\n  }\n}"
+    responses:
+    - code: '200'
+      description: Return value on success
+    preview: false
+    request_body:
+      schema: "{\n  \"description\": \"api_snapshot_lock\",\n  \"type\": \"object\"\
+        ,\n  \"properties\": {\n    \"lock_key_ref\": {\n      \"description\": \"\
+        lock_key_ref\",\n      \"type\": \"string\"\n    }\n  }\n}"
+rest_endpoint: /v3/snapshots/{id}/lock
+api_version: v3
+permalink: /rest-api-guide/snapshots-v3/v3_snapshots_id_lock.html
+sidebar: rest_api_guide_sidebar
+redirect_from: /rest-api-guide/snapshots/v3_snapshots_id_lock.html
+---

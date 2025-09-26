@@ -15,14 +15,14 @@
   {% for entry in sidebar %}
   {% for folder in entry.folders %}
   {% if folder.output contains "web" %}
-  
+
   {% capture indexURL %}{{ page.url }}index.html{% endcapture %}
 
   {% comment %}
     The first case accounts for parent_landing_page.html.
     The second case accounts for landing_page.html, which doesn't render with index.html by design.
   {% endcomment %}
-  
+
   {% if page.url == folder.url or indexURL == folder.url %}
   <li class="active">
   {% else %}
@@ -30,13 +30,13 @@
   {% endif %}
 
   <a title="{{folder.title}}" href="{% if page.url != folder.url and indexURL != folder.url %}{{folder.url}}{% else %}#{% endif %}" data-proofer-ignore>
+  {% comment %} Parse out version from title to display separately {% endcomment %}
+  {% assign title_parts = folder.title | split: ' ' %}
   {% assign version = '' %}
   {% assign title_without_version = '' %}
-  {% assign is_preview = '' %}
-  {% assign title_parts = folder.title | split: ' ' %}
-  
+
   {% for part in title_parts %}
-    {% if part == 'V1' or part == 'V2' or part == 'V3' or part == 'V4' %}
+    {% if part contains 'V1' or part contains 'V2' or part contains 'V3' or part contains 'V4' or part contains 'V5' or part contains 'V6' or part contains 'V7' or part contains 'V8' or part contains 'V0' %}
       {% assign version = part %}
     {% else %}
       {% if title_without_version == '' %}
@@ -47,15 +47,9 @@
     {% endif %}
   {% endfor %}
 
-  {% if folder.preview %}
-    {% assign is_preview = '<span class="apipreview">preview</span>' %}
-  {% endif %}
-
-  {% assign excluded_titles = "SMB Shares Methods V1 (smb),Network Configuration V1 (network)" | split: "," %}
-
-  {{ title_without_version }}{% unless excluded_titles contains folder.title %}{% if folder.apiversion and folder.apiversion != 'v1' %}<span class="apiversion parentversion {{ folder.apiversion | downcase }}">{{ folder.apiversion }}</span>{% elsif version != '' %}<span class="apiversion parentversion {{ version | downcase }}">{{ version }}</span>{% endif %}{% endunless %}{% if folder.preview %}<span class="apipreview parentpreview">preview</span>{% endif %}
+  {{ title_without_version }}{% if version != '' %}<span class="apiversion parentversion {{ version | downcase }}">{{ version }}</span>{% elsif folder.apiversion %}<span class="apiversion parentversion {{ folder.apiversion | downcase }}">{{ folder.apiversion }}</span>{% endif %}{% if folder.preview %}<span class="apipreview parentpreview">preview</span>{% endif %}
   </a>
- 
+
       <ul>
           {% for folderitem in folder.folderitems %}
           {% if folderitem.output contains "web" %}
@@ -64,7 +58,7 @@
           {% elsif page.url == folderitem.url %}
           <li class="active">
             <a title="{{folderitem.title}}" href="{{folderitem.url | relative_url }}">
-              {{folderitem.title}}
+              {{ folderitem.title | replace: '/', '/<wbr>' }}
               <span class="tag-container">
               {% if folderitem.apiversion %}
                 <span class="apiversion {{folderitem.apiversion}}">{{folderitem.apiversion}}</span>
@@ -78,7 +72,7 @@
           {% elsif folderitem.type == "empty" %}
           <li>
             <a title="{{folderitem.title}}" href="{{folderitem.url | relative_url }}">
-              {{folderitem.title}}
+              {{ folderitem.title | replace: '/', '/<wbr>' }}              
               <span class="tag-container">
               {% if folderitem.apiversion %}
                 <span class="apiversion {{folderitem.apiversion}}">{{folderitem.apiversion}}</span>
@@ -92,7 +86,7 @@
           {% else %}
           <li>
             <a title="{{folderitem.title}}" href="{{folderitem.url | relative_url }}">
-              {{folderitem.title}}     
+              {{ folderitem.title | replace: '/', '/<wbr>' }}
               <span class="tag-container">
               {% if folderitem.apiversion %}
                 <span class="apiversion {{folderitem.apiversion}}">{{folderitem.apiversion}}</span>
@@ -104,7 +98,7 @@
             </a>
           </li>
           {% endif %}
-          {% for subfolders in folderitem.subfolders %}        
+          {% for subfolders in folderitem.subfolders %}
           {% if subfolders.output contains "web" %}
           <li class="subfolders">
               <a title="{{subfolders.title}}" href="#">{{ subfolders.title }}</a>
@@ -162,4 +156,3 @@
 
 <!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
 <script>$("li.active").parents('li').addClass("active");</script>
-

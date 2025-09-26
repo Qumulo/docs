@@ -76,61 +76,86 @@ blockquote {
 }
 /* TABS END */
 
-/* API VERSION AND PREVIEW TAGS STARTS */
+/* API VERSION AND PREVIEW TAGS START */
 @media screen {
-  .nav li ul li a {
+  .nav > li > a {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
+    flex-wrap: nowrap;
     width: 100%;
+    gap: 6px;
   }
 
-  .tag-container {
+  .nav > li > a::before{
+    content: "";
+    order: 1;
+    flex: 1 1 auto;
+  }
+
+  .nav > li > a .apipreview.parentpreview{ order:2; white-space:nowrap; }
+  .nav > li > a .apiversion.parentversion{ order:3; white-space:nowrap; }
+  .nav > li > a > span:not(.apiversion):not(.apipreview){
+    order: 4;
+    float: none;
+    line-height: 1;
+  }
+
+  .nav li ul li a{
     display: flex;
-    gap: 5px;
-    margin-left: auto;
+    align-items: flex-start;
     flex-wrap: nowrap;
+    width: 100%;
+    gap: 6px;
+  }
+
+  .nav li ul li a::before{
+    content: "";
+    order: 1;
+    flex: 1 1 auto;
+  }
+
+  .nav li ul li a .tag-container{
+    order: 2;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 3px;
+    white-space: nowrap;
+  }
+
+  .nav li ul li a .tag-container .apipreview{ order:1; }
+  .nav li ul li a .tag-container .apiversion{ order:2; }
+  .nav li ul li a > span:not(.tag-container){
+    order: 3;
+    float: none;
+    line-height: 1;
   }
 
   .apiversion,
-  .apipreview {
-    color: white;
-    padding: 1px 4px 1px 4px;
+  .apipreview{
+    color: #fff;
+    padding: 1px 4px;
     font-size: 10pt !important;
+    font-weight: bold !important;
     border-radius: 5px;
     margin-top: -1px;
-    text-transform: lowercase;
     white-space: nowrap;
   }
 
   .apiversion {
-    background-color: #00a3ca;
+    min-width: 24px;
+    background: #00a3ca;
     text-transform: lowercase;
+    text-align: center;
   }
 
   .apipreview {
-    background-color: #ff5c35;
+    background: #ff5c35;
     text-transform: uppercase;
   }
 
-  .parentversion,
-  .parentpreview {
-    float: none !important;
-  }
-
-  .parentversion,
-  .parentpreview {
-    margin-left: 5px;
-  }
-
-  .parentversion::after,
-  .parentpreview::after {
-    content: "" !important;
-  }
+  .nav li > a > span{ float: none; }
 }
-
-/* API VERSION AND PREVIEW TAGS ENDS */
+/* API VERSION AND PREVIEW TAGS END */
 
 #toc + p {
   margin-top: 15px;
@@ -1227,17 +1252,16 @@ a.accordion-toggle, a.accordion-collapsed {
 }
 
 .nav li > a > span {
-    float: right;
     font-size: 19px;
     font-weight: bolder;
 }
 
 
-.nav li:has(li) > a > span:after {
+.nav li:has(li) > a > span:not(.apiversion):not(.apipreview)::after {
     content: '\25be';
 }
 
-.nav li.active:has(li) > a > span:after {
+.nav li.active:has(li) > a > span:not(.apiversion):not(.apipreview)::after {
     content: '\25b4';
 }
 
