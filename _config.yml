@@ -157,6 +157,7 @@ scanVars: true
 contactQumuloCare: <a href="https://docs.qumulo.com/contacting-qumulo-care-team.html">contact the Qumulo Care team</a>
 
 loginRequired: <span class="emoji">🔒</span>
+downloadsRelnotes: <a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a>
 ipmiLoginRequired: For more information, see <a href="https://care.qumulo.com/s/article/Default-IPMI-Usernames-Passwords">Default IPMI Usernames and Passwords</a> <span class="emoji">🔒</span> on Qumulo Care.
 
 nexus:
