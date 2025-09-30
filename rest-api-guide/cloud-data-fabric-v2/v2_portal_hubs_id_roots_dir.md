@@ -27,21 +27,23 @@ methods:
         \ [\n        \"INACTIVE\",\n        \"ACTIVE\",\n        \"DEGRADED\"\n  \
         \    ],\n      \"description\": \"Status of the portal:\\n * `ACTIVE` - PORTAL_ACTIVE,\\\
         n * `DEGRADED` - PORTAL_DEGRADED,\\n * `INACTIVE` - PORTAL_INACTIVE\"\n  \
-        \  },\n    \"spoke_host\": {\n      \"description\": \"IP address of a node\
-        \ in the remote cluster\",\n      \"type\": \"object\",\n      \"properties\"\
-        : {\n        \"address\": {\n          \"description\": \"address\",\n   \
-        \       \"type\": \"string\"\n        },\n        \"port\": {\n          \"\
-        description\": \"port\",\n          \"type\": \"number\"\n        }\n    \
-        \  }\n    },\n    \"spoke_cluster_uuid\": {\n      \"description\": \"UUID\
-        \ of the cluster with the spoke portal\",\n      \"type\": \"string\"\n  \
-        \  },\n    \"spoke_cluster_name\": {\n      \"description\": \"Name of the\
-        \ cluster with the spoke portal\",\n      \"type\": \"string\"\n    },\n \
-        \   \"pending_roots\": {\n      \"type\": \"array\",\n      \"items\": {\n\
-        \        \"description\": \"Set of hub root directories that are pending authorization\"\
-        ,\n        \"type\": \"string\"\n      }\n    },\n    \"authorized_roots\"\
-        : {\n      \"type\": \"array\",\n      \"items\": {\n        \"description\"\
-        : \"Set of hub root directories that are authorized for access\",\n      \
-        \  \"type\": \"string\"\n      }\n    }\n  }\n}"
+        \  },\n    \"spoke_hosts\": {\n      \"type\": \"array\",\n      \"items\"\
+        : {\n        \"description\": \"IP addresses and TCP ports of nodes in the\
+        \ remote cluster\",\n        \"type\": \"object\",\n        \"properties\"\
+        : {\n          \"address\": {\n            \"description\": \"address\",\n\
+        \            \"type\": \"string\"\n          },\n          \"port\": {\n \
+        \           \"description\": \"port\",\n            \"type\": \"number\"\n\
+        \          }\n        }\n      }\n    },\n    \"spoke_cluster_uuid\": {\n\
+        \      \"description\": \"UUID of the cluster with the spoke portal\",\n \
+        \     \"type\": \"string\"\n    },\n    \"spoke_cluster_name\": {\n      \"\
+        description\": \"Name of the cluster with the spoke portal\",\n      \"type\"\
+        : \"string\"\n    },\n    \"pending_roots\": {\n      \"type\": \"array\"\
+        ,\n      \"items\": {\n        \"description\": \"Set of hub root directories\
+        \ that are pending authorization\",\n        \"type\": \"string\"\n      }\n\
+        \    },\n    \"authorized_roots\": {\n      \"type\": \"array\",\n      \"\
+        items\": {\n        \"description\": \"Set of hub root directories that are\
+        \ authorized for access\",\n        \"type\": \"string\"\n      }\n    }\n\
+        \  }\n}"
     responses:
     - code: '200'
       description: Return value on success
@@ -71,21 +73,23 @@ methods:
         \ [\n        \"INACTIVE\",\n        \"ACTIVE\",\n        \"DEGRADED\"\n  \
         \    ],\n      \"description\": \"Status of the portal:\\n * `ACTIVE` - PORTAL_ACTIVE,\\\
         n * `DEGRADED` - PORTAL_DEGRADED,\\n * `INACTIVE` - PORTAL_INACTIVE\"\n  \
-        \  },\n    \"spoke_host\": {\n      \"description\": \"IP address of a node\
-        \ in the remote cluster\",\n      \"type\": \"object\",\n      \"properties\"\
-        : {\n        \"address\": {\n          \"description\": \"address\",\n   \
-        \       \"type\": \"string\"\n        },\n        \"port\": {\n          \"\
-        description\": \"port\",\n          \"type\": \"number\"\n        }\n    \
-        \  }\n    },\n    \"spoke_cluster_uuid\": {\n      \"description\": \"UUID\
-        \ of the cluster with the spoke portal\",\n      \"type\": \"string\"\n  \
-        \  },\n    \"spoke_cluster_name\": {\n      \"description\": \"Name of the\
-        \ cluster with the spoke portal\",\n      \"type\": \"string\"\n    },\n \
-        \   \"pending_roots\": {\n      \"type\": \"array\",\n      \"items\": {\n\
-        \        \"description\": \"Set of hub root directories that are pending authorization\"\
-        ,\n        \"type\": \"string\"\n      }\n    },\n    \"authorized_roots\"\
-        : {\n      \"type\": \"array\",\n      \"items\": {\n        \"description\"\
-        : \"Set of hub root directories that are authorized for access\",\n      \
-        \  \"type\": \"string\"\n      }\n    }\n  }\n}"
+        \  },\n    \"spoke_hosts\": {\n      \"type\": \"array\",\n      \"items\"\
+        : {\n        \"description\": \"IP addresses and TCP ports of nodes in the\
+        \ remote cluster\",\n        \"type\": \"object\",\n        \"properties\"\
+        : {\n          \"address\": {\n            \"description\": \"address\",\n\
+        \            \"type\": \"string\"\n          },\n          \"port\": {\n \
+        \           \"description\": \"port\",\n            \"type\": \"number\"\n\
+        \          }\n        }\n      }\n    },\n    \"spoke_cluster_uuid\": {\n\
+        \      \"description\": \"UUID of the cluster with the spoke portal\",\n \
+        \     \"type\": \"string\"\n    },\n    \"spoke_cluster_name\": {\n      \"\
+        description\": \"Name of the cluster with the spoke portal\",\n      \"type\"\
+        : \"string\"\n    },\n    \"pending_roots\": {\n      \"type\": \"array\"\
+        ,\n      \"items\": {\n        \"description\": \"Set of hub root directories\
+        \ that are pending authorization\",\n        \"type\": \"string\"\n      }\n\
+        \    },\n    \"authorized_roots\": {\n      \"type\": \"array\",\n      \"\
+        items\": {\n        \"description\": \"Set of hub root directories that are\
+        \ authorized for access\",\n        \"type\": \"string\"\n      }\n    }\n\
+        \  }\n}"
     responses:
     - code: '200'
       description: Return value on success
