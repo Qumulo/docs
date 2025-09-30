@@ -129,8 +129,8 @@ The S3 bucket policy statement contains the following fields.
 </table>
 
 <a id="actions"></a>
-## Actions Supported in Qumulo Core
-The following table describes the subset of the [Amazon S3 API Actions](https://docs.aws.amazon.com/AmazonS3/latest/userguide/list_amazons3.html#amazons3-actions-as-permissions) which Qumulo Core supports.
+## S3 API Action Permissions Supported in Qumulo Core
+The following table describes the subset of the [Amazon S3 API Actions](https://docs.aws.amazon.com/AmazonS3/latest/userguide/list_amazons3.html#amazons3-actions-as-permissions) which Qumulo Core access policies support.
 
 {{site.data.alerts.note}}
 <ul>
@@ -143,7 +143,7 @@ The following table describes the subset of the [Amazon S3 API Actions](https://
 <table>
   <thead>
     <tr>
-      <th width="39%">API Action</th>
+      <th width="39%">S3 API Action Permission</th>
       <th width="61%">Description</th>
     </tr>
   </thead>
@@ -329,13 +329,13 @@ The following table describes examples of principals which Qumulo Core supports.
 ## Role-Based Access Control (RBAC) Overrides
 {{site.RBACoverrides}}
 
-The following table describes the relationship between Qumulo Core privileges and the S3 API actions associated with them.
+The following table describes the relationships between Qumulo Core privileges and the S3 API action permissions associated with them.
 
 <table>
   <thead>
     <tr>
       <th>Qumulo Core Privilege</th>
-      <th>Associated S3 API Actions</th>
+      <th>Associated S3 API Action Permission</th>
     </tr>
   </thead>
   <tbody>
