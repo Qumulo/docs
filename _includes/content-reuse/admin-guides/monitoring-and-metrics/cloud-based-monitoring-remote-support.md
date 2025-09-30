@@ -76,7 +76,7 @@ Before you can use Cloud-Based Monitoring and Remote Support:
   <table>
     <thead>
       <tr>
-        <th width="40%">Hostname</th>
+        <th style="width:40%">Hostname</th>
         <th>Description</th>
       </tr>
     </thead>

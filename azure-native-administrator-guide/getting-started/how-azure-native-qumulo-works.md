@@ -170,9 +170,9 @@ The following table lists the regions that {{site.azure.qumuloOnAzureShort}} sup
   <thead>
     <tr>
       <th>Geographical Location</th>
-      <th width="30%">Azure Region</th>
-      <th width="15%">{{site.azure.qumuloOnAzureShort}} Hot</th>
-      <th width="15%">{{site.azure.qumuloOnAzureShort}} Cold</th>
+      <th style="width:30%">Azure Region</th>
+      <th style="width:15%">{{site.azure.qumuloOnAzureShort}} Hot</th>
+      <th style="width:15%">{{site.azure.qumuloOnAzureShort}} Cold</th>
     </tr>
   </thead>
   <tbody>

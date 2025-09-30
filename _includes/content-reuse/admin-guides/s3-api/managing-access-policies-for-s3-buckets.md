@@ -78,8 +78,8 @@ The S3 bucket policy statement contains the following fields.
 <table>
   <thead>
     <tr>
-      <th width="22%">Field Name</th>
-      <th width="78%">Description</th>
+      <th style="width:22%">Field Name</th>
+      <th style="width:78%">Description</th>
     </tr>
   </thead>
   <tbody>
@@ -143,8 +143,8 @@ The following table describes the subset of the [Amazon S3 API Actions](https://
 <table>
   <thead>
     <tr>
-      <th width="39%">S3 API Action Permission</th>
-      <th width="61%">Description</th>
+      <th style="width:39%">API Action</th>
+      <th style="width:61%">Description</th>
     </tr>
   </thead>
   <tbody>
@@ -268,8 +268,8 @@ The following table describes examples of principals which Qumulo Core supports.
 <table>
   <thead>
     <tr>
-      <th width="38%">Identity Specification Example</th>
-      <th width="62%">Description</th>
+      <th style="width:38%">Identity Specification Example</th>
+      <th style="width:62%">Description</th>
     </tr>
   </thead>
   <tbody>

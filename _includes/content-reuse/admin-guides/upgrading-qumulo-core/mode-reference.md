@@ -8,9 +8,9 @@
 For information about the most important features from each release, click the Qumulo Core version.
 <table class="upgrade-mode">
   <thead>
-    <th width="33%">Version</th>
-    <th width="33%">Quarterly Release</th>
-    <th width="33%">Upgrade Type</th>
+    <th style="width:33%">Version</th>
+    <th style="width:33%">Quarterly Upgrade</th>
+    <th style="width:33%">Upgrade Type</th>
   </thead>
   <tbody>
     <tr>
