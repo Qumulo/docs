@@ -739,6 +739,12 @@ entries:
       title: network_preview_get_config
       url: /qq-cli-command-guide/network/network_preview_get_config.html
     - output: web,pdf
+      title: network_preview_modify_interface
+      url: /qq-cli-command-guide/network/network_preview_modify_interface.html
+    - output: web,pdf
+      title: network_preview_modify_network
+      url: /qq-cli-command-guide/network/network_preview_modify_network.html
+    - output: web,pdf
       title: network_preview_put_config
       url: /qq-cli-command-guide/network/network_preview_put_config.html
     - output: web,pdf
@@ -1311,6 +1317,13 @@ entries:
     output: web,pdf
     title: unconfigured
     url: /qq-cli-command-guide/unconfigured/
+  - folderitems:
+    - output: web,pdf
+      title: unprotected_edge_cluster_create
+      url: /qq-cli-command-guide/unprotected/unprotected_edge_cluster_create.html
+    output: web,pdf
+    title: unprotected
+    url: /qq-cli-command-guide/unprotected/
   - folderitems:
     - output: web,pdf
       title: upgrade_blocked
