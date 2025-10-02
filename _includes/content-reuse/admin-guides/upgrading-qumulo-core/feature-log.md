@@ -8,6 +8,18 @@ For information about upgrade types for each release, see <a href='mode-referenc
 
 ## Qumulo Core 7.6.3
 {{ nexusLink }}
+* Made EdgeConnect (unprotected, single-node edge) clusters publicly available as bare-metal and VM deployments
+  * Added the `cluster_type` metric to the Qumulo OpenMetrics API Specification
+* Improved Cloud Data Fabric (CDF):
+  * Increased portal data synchronization IOPS and throughput for many CDF workloads
+  * Added full support for SMB Read Lease and Write Lease functionality to CDF
+  * Resolved an issue related to audit logging and spoke portal file path resolution
+* Improved the S3 API:
+  * Added support for the `STREAMING-UNSIGNED-PAYLOAD-TRAILER` authentication type with the `CRC64-NVME` and `SHA-256` checksum formats
+  * Added Qumulo Core support for the default authentication type that the AWS CLI uses for the `PutObject` and `UploadPart` API actions
+* Added the ability to specify a list of Active Directory domain controllers that overrides the default auto-discovery process
+* Limited the number of `bind_uri` entires to 3 for standalone LDAP queries
+* Made `qq` CLI and REST API changes to support the new EdgeConnect, CDF, S3 API, Active Directory, and LDAP functionality
 
 ## Qumulo Core 7.6.2
 {{ nexusLink }}
