@@ -78,6 +78,7 @@ The following table lists metric names, types, labels, and descriptions.
       <td><a href="#metric-type-info"><code>info</code></a></td>
       <td>
         <ul>
+          <li class="pdf-friendly"><a href="#metric-label-cluster_type"><code>cluster_type</code></a></li>
           <li class="pdf-friendly"><code>max_drive_failures</code></li>
           <li class="pdf-friendly"><code>max_node_failures</code></li>
           <li class="pdf-friendly"><code>name</code></li>
@@ -687,6 +688,16 @@ The following table lists metric label names, possible values, and descriptions.
         </ul>
       </td>
       <td>The bond to which a network interface belongs</td>
+    </tr>
+    <tr>
+      <td><a id="metric-label-cluster_type"></a><code>cluster_type</code></td>
+      <td>
+        <ul>
+          <li class="pdf-friendly"><code>protected_cluster</code></li>
+          <li class="pdf-friendly"><code>unprotected_edge</code></li>
+        </ul>
+      </td>
+      <td>The type of cluster</td>
     </tr>
     <tr>
       <td><a id="metric-label-cpu"></a><code>cpu</code></td>
