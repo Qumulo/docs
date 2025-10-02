@@ -33,7 +33,7 @@ The following key terms help define the components of Cloud Data Fabric function
 * <a id="portal-root-directory"></a>**Spoke Portal Root Directory, Hub Portal Root Directory:** A directory on a cluster that uses a portion of its file system for the _hub portal_ or _spoke portal_.
 
   According to the file system permissions that a hub portal might impose, you can access a spoke portal root directory by using NFSv3, NFSv4.1 (Qumulo Core 7.4.3 and higher), SMB, the S3 API (7.5.3 and higher) or the Qumulo REST API.
-  
+
   {% capture fyi762 %}{{site.gns.functionality762}}{% endcapture %}
   {% include note.html content=fyi762 %}
 
@@ -93,14 +93,14 @@ In addition, Qumulo Core 7.6.2 introduces the following changes:
 
 * We refer to _portal states_ as _portal relationship states_ and the `Authorized` portal state has become the `Accepted` portal relationship state.
 
-* We have added the `Authorized` and `Unauthorized` _portal root directory states_ to indicate the stages of the root directory approval process, to support the ability to add up to {{site.gns.portalRelationshipsMax}}.
+* We have added the `Authorized` and `Unauthorized` _portal root directory states_ to indicate the stages of the root directory approval process.
 
 * Although Qumulo Core still doesn't support more than one relationship between two clusters, it is now possible to have a variety of configurations involving spoke portal root directories and hub portal root directories, for example:
- 
+
   * **One-to-One Mapping:** A single spoke portal root directory maps to a unique hub portal root directory (with multiple one-to-one mappings in parallel, as necessary)
-    
+
   * **Many-to-One Mapping:** Multiple spoke portal root directories map to a shared hub portal root directory
-    
+
   * **Combined One-to-One and Many-to-One Mapping:** Multiple spoke portal root directories map to both unique and shared hub portal root directories
 
 ### Portals
@@ -120,7 +120,7 @@ In addition, Qumulo Core 7.6.2 introduces the following changes:
   </ul>
   {{site.data.alerts.end}}
 
-* <a id="portal-relationship"></a>**Portal Relationship:** A proposal that a spoke portal on one Qumulo cluster issues to another Qumulo cluster (with a _hub portal)_, which the Qumulo cluster with the hub portal _authorizes_.
+* <a id="portal-relationship"></a>**Portal Relationship:** A proposal that a spoke portal on one Qumulo cluster issues to another Qumulo cluster (with a _hub portal)_, which the Qumulo cluster with the hub portal _accepts_.
 
 <a id="portal-relationship-states"></a>
 #### Portal Relationship States
@@ -137,8 +137,8 @@ A _portal relationship state_ indicates the stages of the [_spoke portal_](#spok
     <tr>
       <td><p><code>Pending</code></p></td>
       <td>
-        <p>Qumulo Core has established a relationship between the spoke portal and a hub portal, but the hub portal hasn't yet given its <a href="#portal-root-directory-authorized">authorization</a>.</p>
-        <p>Run the {% include qq.html command="portal_authorize_hub" %} command to give the authorization.</p>
+        <p>Qumulo Core has established a relationship between the spoke portal and a hub portal, but the hub portal hasn't yet accepted the relationship.</p>
+        <p>Run the {% include qq.html command="portal_accept_hub" %} command to do so.</p>
       </td>
     </tr>
     <tr>
@@ -235,7 +235,7 @@ A _portal status_ indicates the accessibility of a [_spoke portal_](#spoke-porta
 This section explains the creation of portal relationships, data caching and synchronization, permissions in portal root directories, and the deletion of portal relationships.
 
 ### Portal Relationship Creation
-When you accept the portal relationship, the [hub portal](#hub-portal) also _authorizes_ access to a hub portal root directory, whose contents become available to the [spoke portal](#spoke-portal) immediately.
+When you accept the portal relationship, if you run the {% include qq.html command="portal_accept_hub" %} command with the `--authorize-hub-roots` flag, the [hub portal](#hub-portal) also authorizes access to a hub portal root directory whose contents become available to the [spoke portal](#spoke-portal) immediately.
 
 ### Data Synchronization
 {% capture varEphemeralCache %}{{site.gns.ephemeralCache}}{% endcapture %}
