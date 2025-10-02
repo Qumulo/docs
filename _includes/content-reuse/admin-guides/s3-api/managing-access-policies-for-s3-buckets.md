@@ -130,7 +130,7 @@ The S3 bucket policy statement contains the following fields.
 
 <a id="actions"></a>
 ## S3 API Action Permissions Supported in Qumulo Core
-The following table describes the subset of the [Amazon S3 API Actions](https://docs.aws.amazon.com/AmazonS3/latest/userguide/list_amazons3.html#amazons3-actions-as-permissions) which Qumulo Core access policies support.
+The following table describes the subset of the [Amazon S3 API action permissions](https://docs.aws.amazon.com/AmazonS3/latest/userguide/list_amazons3.html#amazons3-actions-as-permissions) which Qumulo Core access policies support.
 
 {{site.data.alerts.note}}
 <ul>
