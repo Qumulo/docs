@@ -357,7 +357,7 @@ function renderResults(results, containerId, metadataFieldsToShow = []) {
     metadataFieldsToShow = metadataFieldsToShow instanceof Array ? metadataFieldsToShow : [metadataFieldsToShow];
     metadataFieldsToShow.forEach((fieldName) => {
       if (!fieldName.startsWith("part.")) {
-        // Check for document level metadata if the name starts with "doc." or does not have the part. prefix
+        // Check for document level metadata if the name starts with "doc." or doesn't have the part. prefix
         const fieldNameSuffix = fieldName.substring(fieldName.indexOf("doc.") + 4);
         // FoundField = docMetadata.find((field) => field.name === fieldNameSuffix);
         if (fieldNameSuffix in docMetadata) {

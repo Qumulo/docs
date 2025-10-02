@@ -1,12 +1,28 @@
+<style>div#toc{height:200px;overflow:auto;}</style>
+
 {% if page.platform == 'on-prem' %}
 For information about upgrade types for each release, see <a href='mode-reference.html'>Qumulo Core Upgrade Mode Reference</a>.
 {% endif %}
 
-<style>div#toc{height:200px;overflow:auto;}</style>
+{% capture nexusLink %}<p>{{site.downloadsRelnotes}}{{site.loginRequired}}</p>{% endcapture %}
+
+## Qumulo Core 7.6.3
+{{ nexusLink }}
+* Made EdgeConnect (unprotected, single-node edge) clusters publicly available as bare-metal and VM deployments
+  * Added the `cluster_type` metric to the Qumulo OpenMetrics API Specification
+* Improved Cloud Data Fabric (CDF):
+  * Increased portal data synchronization IOPS and throughput for many CDF workloads
+  * Added full support for SMB Read Lease and Write Lease functionality to CDF
+  * Resolved an issue related to audit logging and spoke portal file path resolution
+* Improved the S3 API:
+  * Added support for the `STREAMING-UNSIGNED-PAYLOAD-TRAILER` authentication type with the `CRC64-NVME` and `SHA-256` checksum formats
+  * Added Qumulo Core support for the default authentication type that the AWS CLI uses for the `PutObject` and `UploadPart` API actions
+* Added the ability to specify a list of Active Directory domain controllers that overrides the default auto-discovery process
+* Limited the number of `bind_uri` entries to 3 for standalone LDAP queries
+* Made `qq` CLI and REST API changes to support the new EdgeConnect, CDF, S3 API, Active Directory, and LDAP functionality
 
 ## Qumulo Core 7.6.2
-{{page.varDownloadsRelnotes}}
-
+{{ nexusLink }}
 * Made improvements to Cloud Data Fabric:
   * Added the ability to configure up to 32 spoke portal root directories for each portal relationship
   * Made corresponding `/v2/portal/*` REST API and `qq portal_*` CLI changes
@@ -14,8 +30,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
 * Ensured that the `ListObjectsV2` S3 API action supports the `start-after` parameter
 
 ## Qumulo Core 7.6.1.1
-{{page.varDownloadsRelnotes}}
-
+{{ nexusLink }}
 {{site.data.alerts.note}}
 This release of Qumulo Core adds Illumio Policy Compute Engine (PCE) and Virtual Enforcement Node (VEN) functionality that ensures network security within the container.
 <ul>
@@ -29,7 +44,7 @@ This release of Qumulo Core adds Illumio Policy Compute Engine (PCE) and Virtual
 * Resolved an issue with the REST API endpoint for unconfigured nodes
 
 ## Qumulo Core 7.6.0.2 (Quarterly)
-{{page.varDownloadsRelnotes}}
+{{ nexusLink }}
 {{site.data.alerts.important}}
 <ul>
   <li>This release resolves an issue with the Qumulo Core upgrade process.</li>
@@ -43,7 +58,7 @@ This release of Qumulo Core adds Illumio Policy Compute Engine (PCE) and Virtual
 
 {% unless page.platform == 'cnq-gcp' %}
 ## Qumulo Core 7.5.0.3 (Quarterly)
-{{page.varDownloadsRelnotes}}
+{{ nexusLink }}
 {{site.data.alerts.important}}
 <ul>
   <li>This release resolves an issue with Authoritative DNS (QDNS) by reducing the amount of logging for the feature.</li>
@@ -69,7 +84,7 @@ This release of Qumulo Core adds Illumio Policy Compute Engine (PCE) and Virtual
 * Modified the `ListBuckets` S3 API action to use the `BucketPolicy` permission together with Role-Based Access Control (RBAC) in Qumulo Core
 
 ## Qumulo Core 7.4.0.4 (Quarterly)
-{{page.varDownloadsRelnotes}}
+{{ nexusLink }}
 {{site.data.alerts.important}}
 <ul>
   <li>
@@ -89,7 +104,7 @@ This release of Qumulo Core adds Illumio Policy Compute Engine (PCE) and Virtual
 * Resolved an issue with `PutObject` and `CopyObject` S3 API actions
 
 ## Qumulo Core 7.3.0.3 (Quarterly)
-{{page.varDownloadsRelnotes}}
+{{ nexusLink }}
 {{site.data.alerts.important}}
 This release resolves the following on-premises cluster issues:
 <ul>
@@ -105,7 +120,7 @@ This release resolves the following on-premises cluster issues:
 
 {% if page.platform == 'on-prem' or page.platform == 'cnq-aws' %}
 ## Qumulo Core 7.2.0.4 (Quarterly)
-{{page.varDownloadsRelnotes}}
+{{ nexusLink }}
 {{site.data.alerts.important}}
 <ul>
   <li>
@@ -127,7 +142,7 @@ This release resolves the following on-premises cluster issues:
 
 {% if page.platform == 'on-prem' %}
 ## Qumulo Core 7.1.0.3 (Quarterly)
-{{page.varDownloadsRelnotes}}
+{{ nexusLink }}
 {{site.data.alerts.important}}
 This release resolves the following on-premises cluster issues:
 <ul>
@@ -142,7 +157,7 @@ This release resolves the following on-premises cluster issues:
 * Configured S3 and HTTP servers to accept HTTP headers with empty values
 
 ## Qumulo Core 7.0.0.1 (Quarterly)
-{{page.varDownloadsRelnotes}}
+{{ nexusLink }}
 {% include important.html content="To install Qumulo Core on HPE Alletra 4110 platforms, you must use the 7.0.0.1 release." %}
 * Added support for NFSv4.1 cross-connection write combining
 * Made significant improvements in SMB random small-write performance
@@ -153,7 +168,7 @@ This release resolves the following on-premises cluster issues:
 * Resolved a minor issue with AD authentication, an issue with `.snapshot` directories in Windows Command Prompt, and an issue with SMB copy operations and long share names and volume labels
 
 ## Qumulo Core 6.3.0.1 (Quarterly)
-{{page.varDownloadsRelnotes}}
+{{ nexusLink }}
 {{site.data.alerts.important}}
 <ul>
   <li>This release resolves an issue with memory utilization during secure credential handling.</li>
@@ -166,7 +181,7 @@ This release resolves the following on-premises cluster issues:
 * Improved compatibility between Qumulo Core and the Auth0 SSO provider, increased the replication speed for large numbers of deleted files, updated the `smartpqi` driver for the {{site.a4200g10}} and {{site.a4200g10p}} node types, and resolved an issue with misreported temperatures for AMD CPUs
 
 ## Qumulo Core 6.2.0.1 (Quarterly)
-{{page.varDownloadsRelnotes}}
+{{ nexusLink }}
 {{site.data.alerts.important}}
 <ul>
   <li>The removal of the deprecated <code>/v1/smb/shares</code> REST API endpoints in this release can affect certain third-party backup or migration workflows.</li>
@@ -189,7 +204,7 @@ This release resolves the following on-premises cluster issues:
 * Disabled the automatic addition of DNS records to an AD domain when you join the domain
 
 ## Qumulo Core 6.1.0.3 (Quarterly)
-{{page.varDownloadsRelnotes}}
+{{ nexusLink }}
 {% include important.html content="This release resolves an issue where, under certain circumstances, while using Adaptive Data Protection in Qumulo Core 6.1.0 (and lower), it becomes impossible to add nodes to a cluster during normal cluster expansion or Transparent Platform Refresh operations, until you upgrade the cluster to version 6.1.0.3 (or higher)." %}
 * Configured Qumulo Core to use recursive change notifications by default
 * Enabled SMB multichannel by default
@@ -198,7 +213,7 @@ This release resolves the following on-premises cluster issues:
 * Removed beta multitenancy REST APIs and `qq` CLI commands
 
 ## Qumulo Core 6.0.0.2 (Quarterly)
-{{page.varDownloadsRelnotes}}
+{{ nexusLink }}
 {{site.data.alerts.important}}
 <ul>
   <li>This release resolves an issue with transparent platform refresh that we discovered in Qumulo Core 6.0.0 and 6.0.0.1.</li>
@@ -216,7 +231,7 @@ This release resolves the following on-premises cluster issues:
 * Fixed issues with the Qumulo Core Web UI, directory access by non-root users on Linux, and changed caching for some OpenMetrics API metrics
 
 ## Qumulo Core 5.3.0 (Quarterly)
-{{page.varDownloadsRelnotes}}
+{{ nexusLink }}
 * Added interactive SAML SSO login and SSO for Active Directory users who manage clusters
 * Identified a known issue with SAML SSO on cloud platforms
 * Improved SMB `CHANGE_NOTIFY` requests
@@ -227,7 +242,7 @@ This release resolves the following on-premises cluster issues:
 * Improved `qq` CLI commands
 
 ## Qumulo Core 5.2.0.2 (Quarterly)
-{{page.varDownloadsRelnotes}}
+{{ nexusLink }}
 * Enabled local trustees for NFSv4.1 with Kerberos
 * Added support for Amazon EC2 M6i instances and Amazon EBS gp3 volumes
 * Removed and replaced REST API endpoints related to shutting down and stopping clusters and nodes
@@ -236,7 +251,7 @@ This release resolves the following on-premises cluster issues:
 * Resolved an issue that caused a node to enter a reboot loop under certain conditions.
 
 ## Qumulo Core 5.1.0.1 (Quarterly)
-{{page.varDownloadsRelnotes}}
+{{ nexusLink }}
 * Improved write performance for workloads on clusters with high-churn, small-file datasets
 * Added a new Active Directory capability
 * Made a number of pages in the Qumulo Core Web UI more clear
@@ -245,7 +260,7 @@ This release resolves the following on-premises cluster issues:
 * Identified a regression in 5.0.5 and fixed an issue that occurs for rare NFS client applications.
 
 ## Qumulo Core 5.0.0.1 (Quarterly)
-{{page.varDownloadsRelnotes}}
+{{ nexusLink }}
 * Changed the Qumulo-to-Qumulo replication compatibility guarantee from 2 to 3 consecutive quarterly releases
 * Enforced Kerberos ticket expiration
 * Enabled NLM persistence by default
@@ -257,26 +272,26 @@ This release resolves the following on-premises cluster issues:
 * Resolved an issue that causes an unpredictable node failure if two NFSv4.1 clients have the same hostname.
 
 ## Qumulo Core 4.3.0 (Quarterly)
-{{page.varDownloadsRelnotes}}
+{{ nexusLink }}
 * Added Network File System Version 4.1 (NFSv4.1)
 * Improved performance for SMB offloaded data transfer (ODX) and SMB directory query
 * Allowed AWS Sidecar to handle a new class of EBS failures
 * Fixed issues in Shift-From-S3 and the Qumulo Core Web UI
 
 ## Qumulo Core 4.2.0 (Quarterly)
-{{page.varDownloadsRelnotes}}
+{{ nexusLink }}
 * Enhanced snapshot performance
 * Enhanced Active Directory connections
 * Fixed an important issue
 
 ## Qumulo Core 4.1.0.1 (Quarterly)
-{{page.varDownloadsRelnotes}}
+{{ nexusLink }}
 * Enhanced the upgrade experience
 * Improved the Qumulo Sidecar for AWS
 * Fixed several important issues
 
 ## Qumulo Core 4.0.0.2 (Quarterly)
-{{page.varDownloadsRelnotes}}
+{{ nexusLink }}
 * Deprecated the Python 2.7 SDK
 * Fixed several important issues
 {% endif %}

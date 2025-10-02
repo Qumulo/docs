@@ -27,7 +27,7 @@ summary: This section explains how to use the <code>qq network_preview_add_netwo
 synopsis: Add a network to the cluster-wide network config.
 title: qq network_preview_add_network
 usage: qq network_preview_add_network [-h] --network-id NETWORK_ID --name NAME [--tenant-id
-  TENANT_ID] {host_managed} ...
+  TENANT_ID] {host_managed,dhcp,static} ...
 zendesk_source: qq CLI Command Guide
 
 ---

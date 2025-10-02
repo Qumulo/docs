@@ -54,12 +54,16 @@ This section explains how to create the [spoke portal](how-portal-creation-enabl
    The spoke portal enters the `Pending` portal relationship state. {{site.exampleOutput}}
 
    ```
-   ID  State    Status    Type  Spoke Root        Hub Host     Hub Portal ID
-   ==  =======  ========  ====  ================  ===========  =============
-   2   Pending  Inactive  RW    /remote/projects  {{site.exampleIP0}}  4
+   Role   ID  Type  State    Status   Peer
+   =====  ==  ====  =======  ======== ==========
+   Spoke  2   RW    Pending  Inactive {{site.exampleIP0}}
+
+   Root State    Local Path         Remote ID
+   ============  =================  ==============================
+   Unauthorized  /remote/projects/  107592715270601080910970355714
    ```
 
-   Hub Portal ID `4` is the ID that the hub portal host cluster allocates for this portal relationship. You can use it to authorize the relationship on the hub portal host cluster as described later.
+   Hub Portal ID `4` is the ID that the hub portal host cluster allocates for this portal relationship. You can use it to accept the relationship on the hub portal host cluster as described later.
 
    {{site.data.alerts.note}}
    <ul>
@@ -73,7 +77,7 @@ This section explains how to create the [spoke portal](how-portal-creation-enabl
 
    When the portal relationship is established, both spoke portal and hub portal enter the `Pending` portal relationship state.
 
-   {% include note.html content="In this state, the spoke portal root directory is empty and Qumulo Core doesn't transfer any data until the hub portal authorizes the portal relationship." %}
+   {% include note.html content="In this state, the spoke portal root directory is empty and Qumulo Core doesn't transfer any data until the hub portal authorizes access to the hub portal root directory." %}
 
 1. To check the status of a cluster, run the {% include qq.html command="portal_list" %} command. {{site.exampleOutput}}
 
@@ -93,8 +97,8 @@ This section explains how to create the [spoke portal](how-portal-creation-enabl
      Hub   4   RW    Pending  Inactive  {{site.exampleIP1}}  1
      ```
 
-### Step 2: Authorize the Portal Relationship
-This section explains how to authorize the [portal relationship](how-portal-creation-enables-cloud-data-fabric.html#portal-relationship) from the [hub portal](how-portal-creation-enables-cloud-data-fabric.html#hub-portal) to the [spoke portal](how-portal-creation-enables-cloud-data-fabric.html#spoke-portal).
+### Step 2: Accept the Portal Relationship
+This section explains how to accept the [portal relationship](how-portal-creation-enables-cloud-data-fabric.html#portal-relationship) from the [hub portal](how-portal-creation-enables-cloud-data-fabric.html#hub-portal) to the [spoke portal](how-portal-creation-enables-cloud-data-fabric.html#spoke-portal).
 
 {% capture varQuorumBounce %}{{site.gns.quorumBounce}}{% endcapture %}
 {% include caution.html content=varQuorumBounce %}
@@ -104,11 +108,12 @@ This section explains how to authorize the [portal relationship](how-portal-crea
    {% capture retrievePortalConfig %}To retrieve portal configuration information, run the {% include qq.html command="portal_list_spokes" %} and {% include qq.html command="portal_list_hubs" %} commands.{% endcapture %}
    {% include tip.html content=retrievePortalConfig %}
 
-1. <a id="authorize-proposed-relationship-qq-cli"></a> To authorize the proposed portal relationship, run the {% include qq.html command="portal_authorize_hub" %} command and specify the hub portal ID and the IP address that the current cluster can use to contact the cluster that proposed the relationship. For example:
+1. To accept the proposed portal relationship, run the {% include qq.html command="portal_accept_hub" %} command, specify the hub portal ID and the IP address that the current cluster can use to contact the cluster that proposed the relationship, and use the `--authorize-hub-roots` flag to also authorize all pending hub root directories. For example:
 
    ```bash
-   qq portal_authorize_hub \
+   qq portal_accept_hub \
      --id 4 \
+     --authorize-hub-roots \
      --spoke-address {{site.exampleIP1}}
    ```
 
@@ -118,12 +123,17 @@ This section explains how to authorize the [portal relationship](how-portal-crea
    {{site.exampleOutput}}
 
    ```
-   ID  State       Status  Hub Root   Spoke Host   Spoke Name  Spoke Type
-   ==  ==========  ======  =========  ===========  ==========  ==========
-   4   Authorized  Active  /projects  {{site.exampleIP1}}  qfsd-edge   RW
+   Role  ID  Type  State     Status  Peer
+   ====  ==  ====  ========  ======  ===========
+   Hub   4   RW    Accepted  Active  {{site.exampleIP1}}
+
+   Root State  Local Path
+   ==========  ==========
+   Authorized  /projects/
    ```
 
    After a few seconds, the spoke portal enters the `Authorized` portal root directory state as well. You can now use the spoke portal root directory.
+
 
 ## Configuring Additional Spoke Portal Root Directories for an Existing Portal Relationship
 {{site.gns.functionality762}} This section explains how to configure an additional spoke portal root directory, how to remove access from a hub portal root directory, and how to remove a spoke portal root directory by using the `qq` CLI.
@@ -138,7 +148,7 @@ This section explains how to authorize the [portal relationship](how-portal-crea
 ### To Configure an Additional Spoke Portal Root Directory
 For portal relationships in the `Pending` or `Accepted` state, you can configure an additional spoke portal root directory by proposing the additional spoke portal root directory and then authorizing the corresponding hub portal root directory.
 
-1. To propose the additional spoke portal root directory from the spoke portal host cluster, run the {% include qq.html command="portal_propose_spoke_root" %} command and specify the portal ID, the spoke portal root directory path, and the hub portal root directory path. For example: 
+1. To propose the additional spoke portal root directory from the spoke portal host cluster, run the {% include qq.html command="portal_propose_spoke_root" %} command and specify the portal ID, the spoke portal root directory path, and the hub portal root directory path. For example:
 
 
    ```bash

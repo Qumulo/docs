@@ -8,10 +8,6 @@ The following table lists the S3 API actions that Qumulo Core supports and the v
 </ul>
 {{site.data.alerts.end}}
 
-{% comment %}
-<details>
-  <summary>Click to expand</summary>
-{% endcomment %}
   <table>
     <thead>
       <tr>
@@ -170,7 +166,6 @@ The following table lists the S3 API actions that Qumulo Core supports and the v
       </tr>
     </tbody>
   </table>
-{% comment %}</details>{% endcomment %}
 
 ## Unsupported S3 Functionality
 The following table lists some of the S3 API functionality that Qumulo Core doesn't support.
@@ -184,8 +179,8 @@ The following table lists some of the S3 API functionality that Qumulo Core does
 | Control of server-side encryption         | All Qumulo Core data is encrypted at rest. You can't control this functionality by using the S3 API. |
 | Object Lock in governance mode            | Qumulo Core supports only compliance mode. |
 | Logging controls                          | &mdash;     |
-| Multi-chunk payload signing               | Qumulo Core doesn't support the [streaming version of Amazon Signature Version 4 (SigV4)](https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-streaming.html), only the [single-chunk version](https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-header-based-auth.html). |
-| Signature Version 2                       | Qumulo Core supports only SigV4 signatures. |
+| Multi-chunk payload signing               | Qumulo Core has partial support for the [streaming variants of AWS Signature Version 4 (SigV4)](https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-streaming.html).|
+| AWS Signature Version 2                   | Qumulo Core supports only SigV4 signatures. |
 | Storage classes                           | Qumulo Core doesn't use the [storage class](https://aws.amazon.com/s3/storage-classes/) concept. All objects have the same storage class status. |
 | Temporary access credentials              | &mdash;     |
 | Virtual-hosted bucket addressing          | Qumulo Core supports only [path-style bucket addressing]({{site.s3.docs.pathStyleAddressing}}). |
@@ -194,6 +189,105 @@ The following table lists some of the S3 API functionality that Qumulo Core does
 
 ## S3 API Limitations
 This section describes the most important S3 API limitations in Qumulo Core.
+
+### Authentication
+{{site.data.alerts.important}}
+<ul>
+  <li>Qumulo Core supports only AWS Signature Version 4 (SigV4). AWS Signature Version 2 (SigV2) is unsupported.</li>
+  <li>Qumulo Core works with three of the seven values that the <code>x-amz-content-sha256</code> header supports: the actual payload checksum, <code>UNSIGNED-PAYLOAD</code>, and <code>STREAMING-UNSIGNED-PAYLOAD-TRAILER</code>. Attempting to use the <code>x-amz-content-sha256</code> header with an unsupported value returns the error <code>AuthorizationHeaderMalformed</code>.</li>
+  <li>Qumulo Core works with two of the five checksum formats that <code>STREAMING-UNSIGNED-PAYLOAD-TRAILER</code> supports: <code>CRC64-NVME</code> and <code>SHA-256</code>. Attempting to use the <code>STREAMING-UNSIGNED-PAYLOAD-TRAILER</code> header value with an unsupported checksum format returns the error <code>QumuloUnsupportedTrailerChecksumFormat</code>.</li>
+</ul>
+{{site.data.alerts.end}}
+
+SigV4 uses the `x-amz-content-sha256` header to specify [the authentication type to perform](https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-auth-using-authorization-header.html). The following table lists the supported values for the `x-amz-content-sha256` header that Qumulo Core supports, the number of chunks for a payload, and the produced signature type.
+
+{% capture supported %}<span class="emoji">✅</span>{% endcapture %}
+{% capture oneChunk %}Sending a payload in a single chunk{% endcapture %}
+{% capture multiChunk %}Sending a payload in multiple chunks{% endcapture %}
+{% capture p256sha256 %}Signing the chunks by using the AWS4-ECDSA-P256-SHA256 algorithm{% endcapture %}
+{% capture hmacsha256 %}Signing the chunks by using the AWS4-HMAC-SHA256 algorithm{% endcapture %}
+{% capture prodSigV4 %}<a target="_blank" href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html#how-aws-signing-works">SigV4 signature</a>{% endcapture %}
+{% capture prodSigV4a %}<a target="_blank" href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html#how-sigv4a-works">SigV4a signature</a>{% endcapture %}
+{% capture theresMore %}The digest for the chunks is included as a trailing header.{% endcapture %}
+<table>
+<thead>
+  <tr>
+    <th>Header Value</th>
+    <th>Qumulo Core Support</th>    
+    <th>Use When</th>
+    <th>Signature Type</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td><code>&lt;actual payload checksum&gt;</code></td>
+    <td>{{ supported }}</td>
+    <td>{{ oneChunk }}</td>
+    <td>&mdash;</td>
+  </tr>
+  <tr>
+    <td><code>UNSIGNED-PAYLOAD</code></td>
+    <td>{{ supported }}</td>    
+    <td>{{ oneChunk }}</td>
+    <td>Unsigned</td>
+  </tr>
+  <tr>
+    <td><code>STREAMING-UNSIGNED-PAYLOAD-TRAILER</code></td>
+    <td>Partial</td>    
+    <td>
+      <p>{{ multiChunk }}</p>
+      <p>{% include note.html content=theresMore %}</p>
+    </td>
+    <td>Unsigned</td>
+  </tr>
+{% comment %}  
+  <tr>
+    <td><code>STREAMING-AWS4-ECDSA-P256-SHA256-PAYLOAD</code></td>
+    <td></td>
+    <td>
+      <ul>
+        <li>{{ multiChunk }}</li>
+        <li>{{ p256sha256 }}</li>
+      </ul>
+    </td>
+    <td>{{ prodSigV4a }}</td>
+  </tr>
+  <tr>
+    <td><code>STREAMING-AWS4-ECDSA-P256-SHA256-PAYLOAD-TRAILER</code></td>
+    <td></td>    
+    <td>
+      <ul>
+        <li>{{ multiChunk }}</li>
+        <li>{{ p256sha256 }}</li>
+      </ul>      
+    </td>
+    <td>{{ prodSigV4a }}</td>
+  </tr>
+  <tr>
+    <td><code>STREAMING-AWS4-HMAC-SHA256-PAYLOAD</code></td>
+    <td></td>    
+    <td>
+      <ul>
+        <li>{{ multiChunk }}</li>
+        <li>{{ hmacsha256 }}</li>
+      </ul>
+    </td>
+    <td>{{ prodSigV4 }}</td>
+  </tr>
+  <tr>
+    <td><code>STREAMING-AWS4-HMAC-SHA256-PAYLOAD-TRAILER</code></td>
+    <td></td>    
+    <td>
+      <ul>
+        <li>{{ multiChunk }}</li>
+        <li>{{ hmacsha256 }}</li>
+      </ul>
+    </td>
+    <td>{{ prodSigV4 }} {{ theresMore }}</td>
+  </tr>
+{% endcomment %}  
+</tbody>
+</table>
 
 ### Bucket Addressing Style
 Because Qumulo Core supports only [path-style bucket addressing]({{site.s3.docs.pathStyleAddressing}}), you must configure your client applications to use path-style addressing to send S3 API requests to a Qumulo cluster. For more information, see [Configuring the AWS CLI for Use with Qumulo Core](configuring-using-s3-api.html#configuring-aws-cli).
@@ -213,9 +307,9 @@ The S3 API supports listing objects in a bucket by using the [`ListObjects`]({{s
 <table>
 <thead>
   <tr>
-    <th width="33%">Function</th>
-    <th width="33%">Qumulo Core</th>
-    <th width="33%">Amazon S3</th>
+    <th style="width:33%">Function</th>
+    <th style="width:33%">Qumulo Core</th>
+    <th style="width:33%">Amazon S3</th>
   </tr>
 </thead>
 <tbody>
@@ -237,7 +331,7 @@ The S3 API supports listing objects in a bucket by using the [`ListObjects`]({{s
 </tbody>
 </table>
 
-{% include note.html content="Although Qumulo Core supports `Prefix` and `Delimiter` partially, it supports the most common use case&mdash;listing the contents of S3 buckets as a hierarchical file tree&mdash;fully.)))" %}
+{% include note.html content="Although Qumulo Core supports `Prefix` and `Delimiter` partially, it fully supports the most common use case: listing the contents of S3 buckets as a hierarchical file." %}
 
 ### Request Authentication
 Qumulo Core supports authenticating requests by using only [Amazon Signature Version 4]({{site.s3.docs.signatureV4}}). Most S3 client applications support this authentication type.
@@ -262,9 +356,9 @@ This section compares the Qumulo Core S3 API limits with native Amazon S3 limits
 <table>
 <thead>
   <tr>
-    <th width="33%">Limit</th>
-    <th width="33%">Qumulo Core</th>
-    <th width="33%">Amazon S3</th>
+    <th style="width:33%">Limit</th>
+    <th style="width:33%">Qumulo Core</th>
+    <th style="width:33%">Amazon S3</th>
   </tr>
 </thead>
 <tbody>
@@ -296,9 +390,9 @@ This section compares the Qumulo Core S3 API limits with native Amazon S3 limits
 <table>
 <thead>
   <tr>
-    <th width="33%">Limit</th>
-    <th width="33%">Qumulo Core</th>
-    <th width="33%">Amazon S3</th>
+    <th style="width:33%">Limit</th>
+    <th style="width:33%">Qumulo Core</th>
+    <th style="width:33%">Amazon S3</th>
   </tr>
 </thead>
 <tbody>
@@ -337,9 +431,9 @@ This section compares the Qumulo Core S3 API limits with native Amazon S3 limits
 <table>
 <thead>
   <tr>
-    <th width="33%">Limit</th>
-    <th width="33%">Qumulo Core</th>
-    <th width="33%">Amazon S3</th>
+    <th style="width:33%">Limit</th>
+    <th style="width:33%">Qumulo Core</th>
+    <th style="width:33%">Amazon S3</th>
   </tr>
 </thead>
 <tbody>
@@ -380,9 +474,9 @@ This section compares the Qumulo Core S3 API limits with native Amazon S3 limits
 <table>
 <thead>
   <tr>
-    <th width="33%">Maximum Limit</th>
-    <th width="33%">Qumulo Core</th>
-    <th width="33%">Amazon S3</th>
+    <th style="width:33%">Maximum Limit</th>
+    <th style="width:33%">Qumulo Core</th>
+    <th style="width:33%">Amazon S3</th>
   </tr>
 </thead>
 <tbody>

@@ -157,6 +157,7 @@ scanVars: true
 contactQumuloCare: <a href="https://docs.qumulo.com/contacting-qumulo-care-team.html">contact the Qumulo Care team</a>
 
 loginRequired: <span class="emoji">🔒</span>
+downloadsRelnotes: <a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a>
 ipmiLoginRequired: For more information, see <a href="https://care.qumulo.com/s/article/Default-IPMI-Usernames-Passwords">Default IPMI Usernames and Passwords</a> <span class="emoji">🔒</span> on Qumulo Care.
 
 nexus:
@@ -377,8 +378,8 @@ protectingData:
   supportedKeys: Currently, Qumulo Core supports only 256-bit ECDSA keys in <code>.pem</code> and <code>.der</code> formats. Qumulo Core doesn't support storing ECDSA keys of other lengths and formats.
   lockKeyPolicyExamples: For examples of policies that set the lock key and clear it, see <a href="managing-snapshots.html#creating-snapshots-on-a-schedule-by-using-a-snapshot-policy">Creating Snapshots on a Schedule by Using a Snapshot Policy</a>.
 
-supportAWScliShort: <code>aws</code> CLI 1.22.75
-supportAWScliLong: Qumulo Core supports <code>aws</code> CLI 1.22.75.
+supportAWScliShort: <code>aws</code> CLI
+supportAWScliLong: Qumulo Core supports <code>aws</code> CLI
 
 s3:
   permissions:
@@ -502,7 +503,7 @@ gns:
   singleRelationship: In Qumulo Core 7.5.0.1 to 7.5.1, it is possible for a Qumulo cluster to host only up to 32 hub portals <em>or</em> up to 32 spoke portals.
   multiRelationship: In Qumulo Core 7.5.2 (and higher), it is possible for a Qumulo cluster to host both up to 32 spoke portals <em>and</em> up to 32 hub portals at the same time.
   upgradeCacheDrop: Future Qumulo Core upgrades might remove cached data from the spoke portal, which can result in a temporary increase in data access latency.
-  protocolLocking: Protocol locks don&apos;t synchronize between the hub portal host cluster and the spoke portal host cluster. Specifically, NFSv3 or NLM byte-range locks, NFSv4.1 locking operations, SMB share-mode locks, SMB byte-range locks, and SMB leases function independently on the two clusters. For example, while two exclusive locks on the same spoke portal host cluster contend with each each other, an exclusive lock on a spoke portal host cluster doesn't contend with an exclusive lock on the hub portal host cluster.
+  protocolLocking: Protocol locks don&apos;t synchronize between the hub portal host cluster and the spoke portal host cluster. Specifically, NFSv3 or NLM byte-range locks, NFSv4.1 locking operations, SMB share-mode locks, and SMB byte-range locks function independently on the two clusters. For example, while two exclusive locks on the same spoke portal host cluster contend with each each other, an exclusive lock on a spoke portal host cluster doesn't contend with an exclusive lock on the hub portal host cluster.
   quorumBounce: This action makes both clusters in the portal relationship unavailable for less than 30 seconds while the systems reconfigure.
   portalDeleteCaution: When you delete a spoke portal, all synchronized changes remain on the hub portal and all unsynchronized changes on the spoke portal are lost.
   portalDeleteOutput: The following is example output from the command that shows the portal ID, state, role, and root directory.

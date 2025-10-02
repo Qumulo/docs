@@ -41,6 +41,15 @@ optional_options:
   help: When using LDAP POSIX extensions, query using this base DN
   name: --base-dn
   required: false
+- alternate: []
+  help: A single fully qualified domain name (FQDN) or a comma-separated list of FQDNs
+    of the domain controllers (DCs) to use for LDAP queries and Netlogon authentication
+    (for example, dc1.example.com). When you use this flag, the specified FQDN overrides
+    the system's default discovery of DCs for the joined domain. When you specify
+    multiple FQDNs in order of preference, Qumulo Core uses only one DC at a time
+    and falls back to the remaining DCs if one of the FQDNs becomes unreachable.
+  name: --domain-controllers
+  required: false
 permalink: /qq-cli-command-guide/ad/ad_join.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar
@@ -49,7 +58,7 @@ synopsis: Join an Active Directory Domain
 title: qq ad_join
 usage: qq ad_join [-h] -d DOMAIN -u USERNAME [-p PASSWORD] [--domain-netbios DOMAIN_NETBIOS]
   [-o OU] [--disable-search-trusted-domains] [--use-ad-posix-attributes] [--base-dn
-  BASE_DN]
+  BASE_DN] [--domain-controllers DOMAIN_CONTROLLERS]
 zendesk_source: qq CLI Command Guide
 
 ---

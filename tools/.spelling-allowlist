@@ -54,6 +54,7 @@ C-432T
 C-72T
 CBM
 CCM
+CDF
 CHANGE_NOTIFY
 CIDR
 CLI
@@ -103,6 +104,7 @@ ENI
 EPYC
 ETag
 ETags
+EdgeConnect
 Entra
 EoPS
 Esc
@@ -314,6 +316,7 @@ SaaS
 Saitama
 Sanitization
 ServerView
+SigV4a
 SmartArray
 SmartArrays
 Softquotas

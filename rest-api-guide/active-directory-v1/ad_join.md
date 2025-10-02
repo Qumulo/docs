@@ -23,9 +23,11 @@ methods:
         \n    },\n    \"use_ad_posix_attributes\": {\n      \"description\": \"Use\
         \ AD POSIX attributes\",\n      \"type\": \"boolean\"\n    },\n    \"base_dn\"\
         : {\n      \"description\": \"Base DN\",\n      \"type\": \"string\"\n   \
-        \ },\n    \"dns_config_id\": {\n      \"description\": \"The unique ID of\
-        \ the DNS configuration to use for joining this AD domain\",\n      \"type\"\
-        : \"number\"\n    }\n  }\n}"
+        \ },\n    \"domain_controllers\": {\n      \"description\": \"A comma-separated\
+        \ list of domain controllers (DCs) to use with the specified AD domain.\"\
+        ,\n      \"type\": \"string\"\n    },\n    \"dns_config_id\": {\n      \"\
+        description\": \"The unique ID of the DNS configuration to use for joining\
+        \ this AD domain\",\n      \"type\": \"number\"\n    }\n  }\n}"
 rest_endpoint: /v1/ad/join
 api_version: v1
 permalink: /rest-api-guide/active-directory-v1/ad_join.html

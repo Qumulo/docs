@@ -7,20 +7,8 @@ For information about working with access policies for S3 buckets and for `qq` C
 * {% include qq.html command="s3_set_bucket_policy" %}
 * {% include qq.html command="s3_modify_bucket_policy" %}
 * {% include qq.html command="s3_delete_bucket_policy" %}
+* {% include qq.html command="s3_bucket_policy_explain_access" %}
 
-
-## Anonymous Access to S3 Buckets
-By default, S3 buckets in a Qumulo cluster are in a _no policy_ state, in which Qumulo Core disallows unsigned, anonymous requests and the {% include qq.html command="s3_get_bucket_policy" %} command returns <code>{}</code>.
-
-In Qumulo Core, anonymous S3 connections use the system `Guest` account, which is restricted to read-only S3 API actions. To permit anonymous access in an S3 bucket policy, grant access to one of the following principals:
-
-* The `Everyone` group
-* The `Guest` account
-* Any group that includes the `Guest` account as a member
-
-{% if page.platform contains 'anq' %}
-{% include note.html content="When you upgrade to Qumulo Core version 7.1.1, the system replaces anonymous S3 bucket access configuration with a default S3 bucket policy that permits all S3 API actions to all principals." %}
-{% endif %}
 
 ## Prerequisites
 The following prerequisites let you manage the access policy for an S3 bucket effectively.
@@ -36,6 +24,26 @@ The following prerequisites let you manage the access policy for an S3 bucket ef
   * `PRIVILEGE_S3_BUCKETS_WRITE`
   
 * (Optional) To delegate the management of an access policy for an S3 bucket to another user, grant the `s3:PutBucketPolicy` and `s3:DeleteBucketPolicy` S3 API actions to that user in the [`Actions`](#actions) field of a policy statement.
+
+
+## Anonymous Access to S3 Buckets
+By default, S3 buckets in a Qumulo cluster are in a _no policy_ state, in which Qumulo Core disallows unsigned, anonymous requests and the {% include qq.html command="s3_get_bucket_policy" %} command returns <code>{}</code>.
+
+In Qumulo Core, anonymous S3 connections use the system `Guest` account, which is restricted to read-only S3 API actions. To permit anonymous access in an S3 bucket policy, grant access to one of the following principals:
+
+* The `Everyone` group
+* The `Guest` account
+* Any group that includes the `Guest` account as a member
+
+{% if page.platform contains 'anq' %}
+{% include note.html content="When you upgrade to Qumulo Core version 7.1.1, the system replaces anonymous S3 bucket access configuration with a default S3 bucket policy that permits all S3 API actions to all principals." %}
+{% endif %}
+
+## Access to S3 Buckets in the No Policy State
+By default, S3 buckets in a _no policy_ state allow:
+
+* All S3 API users to perform S3 object read and write operations (all `s3:*` permissions)
+* The S3 bucket's creator and users with RBAC permissions to perform S3 bucket write operations
 
 
 <a id="access-policy-statements"></a>
@@ -70,8 +78,8 @@ The S3 bucket policy statement contains the following fields.
 <table>
   <thead>
     <tr>
-      <th width="22%">Field Name</th>
-      <th width="78%">Description</th>
+      <th style="width:22%">Field Name</th>
+      <th style="width:78%">Description</th>
     </tr>
   </thead>
   <tbody>
@@ -121,8 +129,8 @@ The S3 bucket policy statement contains the following fields.
 </table>
 
 <a id="actions"></a>
-## Actions Supported in Qumulo Core
-The following table describes the subset of the [Amazon S3 API Actions](https://docs.aws.amazon.com/AmazonS3/latest/userguide/list_amazons3.html#amazons3-actions-as-permissions) which Qumulo Core supports.
+## S3 API Action Permissions Supported in Qumulo Core
+The following table describes the subset of the [Amazon S3 API action permissions](https://docs.aws.amazon.com/AmazonS3/latest/userguide/list_amazons3.html#amazons3-actions-as-permissions) which Qumulo Core access policies support.
 
 {{site.data.alerts.note}}
 <ul>
@@ -135,8 +143,8 @@ The following table describes the subset of the [Amazon S3 API Actions](https://
 <table>
   <thead>
     <tr>
-      <th width="39%">API Action</th>
-      <th width="61%">Description</th>
+      <th style="width:39%">API Action</th>
+      <th style="width:61%">Description</th>
     </tr>
   </thead>
   <tbody>
@@ -260,8 +268,8 @@ The following table describes examples of principals which Qumulo Core supports.
 <table>
   <thead>
     <tr>
-      <th width="38%">Identity Specification Example</th>
-      <th width="62%">Description</th>
+      <th style="width:38%">Identity Specification Example</th>
+      <th style="width:62%">Description</th>
     </tr>
   </thead>
   <tbody>
@@ -321,13 +329,13 @@ The following table describes examples of principals which Qumulo Core supports.
 ## Role-Based Access Control (RBAC) Overrides
 {{site.RBACoverrides}}
 
-The following table describes the relationship between Qumulo Core privileges and the S3 API actions associated with them.
+The following table describes the relationships between Qumulo Core privileges and the S3 API action permissions associated with them.
 
 <table>
   <thead>
     <tr>
       <th>Qumulo Core Privilege</th>
-      <th>Associated S3 API Actions</th>
+      <th>Associated S3 API Action Permission</th>
     </tr>
   </thead>
   <tbody>

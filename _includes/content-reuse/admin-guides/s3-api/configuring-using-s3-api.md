@@ -59,15 +59,6 @@ To create and manage S3 buckets, you must configure AWS CLI to work with your Qu
      --profile my-qumulo-profile set s3.addressing_style path
    ```
 
-1. Configure the AWS CLI to include only checksum calculations in requests, as necessary, by using the `aws configure` command.
-
-   ```bash
-   $ aws configure set \
-     request_checksum_calculation when_required
-   ```
-
-   {% include important.html content="Qumulo Core doesn't support trailing checksums in requests." %}
-
 1. Use [the access key pair that you have created earlier](#creating-access-key) and the `aws configure` command to:
 
    1. Specify your profile and [access key ID](creating-managing-s3-access-keys.html#access-key-id). For example:

@@ -289,7 +289,7 @@ def process_endpoint(path, path_item, sidebar_entries_by_tag, tag_info_dict):
 
     tags = find_tags_for_category(path_item)
     if not tags:
-        tqdm.write(f"Skipping path '{path}' as it does not have any tags.")
+        tqdm.write(f"Skipping path '{path}' as it doesn't have any tags.")
         return
 
     is_preview = any(

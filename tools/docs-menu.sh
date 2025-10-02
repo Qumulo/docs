@@ -3,7 +3,7 @@
 check_environment() {
     # If ~/src is missing, offer to bootstrap the dev environment.
     if [[ ! -d "$HOME/src" ]]; then
-        read -rp "~/src does not exist. Set up development environment? (y/n): " setup_env
+        read -rp "~/src doesn't exist. Set up development environment? (y/n): " setup_env
         if [[ "$setup_env" == "y" ]]; then
             read -rp "Enter your full name: " full_name
             read -rp "Enter your Qumulo login (email): " qumulo_email
@@ -52,7 +52,7 @@ check_symlinks() {
 
     # Ensure ~/git exists
     if [[ ! -d "$git_dir" ]]; then
-        read -p "Directory $git_dir does not exist. Create it? (y/n): " create_git
+        read -p "Directory $git_dir doesn't exist. Create it? (y/n): " create_git
         if [[ "$create_git" == "y" ]]; then
             mkdir -p "$git_dir"
             echo "Created $git_dir."
@@ -90,9 +90,9 @@ check_symlinks() {
 }
 
 global_docs_menu() {
-    # Check if 'dm' exists but is NOT a regular file (i.e., broken symlink or dir)
+    # Check if 'dm' exists but isn't a regular file (i.e., broken symlink or dir)
     if [[ -e "$HOME/.local/bin/dm" && ! -f "$HOME/.local/bin/dm" ]]; then
-        echo "Warning: ~/.local/bin/dm exists but is not a regular file. Removing..."
+        echo "Warning: ~/.local/bin/dm exists but isn't a regular file. Removing..."
         rm -rf "$HOME/.local/bin/dm"
     fi
 

@@ -8,11 +8,16 @@
 For information about the most important features from each release, click the Qumulo Core version.
 <table class="upgrade-mode">
   <thead>
-    <th width="33%">Version</th>
-    <th width="33%">Quarterly Upgrade</th>
-    <th width="33%">Upgrade Type</th>
+    <th style="width:33%">Version</th>
+    <th style="width:33%">Quarterly Upgrade</th>
+    <th style="width:33%">Upgrade Type</th>
   </thead>
   <tbody>
+    <tr>
+      <td><a href="feature-log.html#qumulo-core-762">7.6.3</a></td>
+      <td></td>
+      <td class="instant">Instant</td>
+    </tr>
     <tr>
       <td><a href="feature-log.html#qumulo-core-762">7.6.2</a></td>
       <td></td>
