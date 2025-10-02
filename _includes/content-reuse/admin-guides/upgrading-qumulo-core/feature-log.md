@@ -18,7 +18,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
   * Added support for the `STREAMING-UNSIGNED-PAYLOAD-TRAILER` authentication type with the `CRC64-NVME` and `SHA-256` checksum formats
   * Added Qumulo Core support for the default authentication type that the AWS CLI uses for the `PutObject` and `UploadPart` API actions
 * Added the ability to specify a list of Active Directory domain controllers that overrides the default auto-discovery process
-* Limited the number of `bind_uri` entires to 3 for standalone LDAP queries
+* Limited the number of `bind_uri` entries to 3 for standalone LDAP queries
 * Made `qq` CLI and REST API changes to support the new EdgeConnect, CDF, S3 API, Active Directory, and LDAP functionality
 
 ## Qumulo Core 7.6.2
