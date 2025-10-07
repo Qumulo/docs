@@ -245,7 +245,7 @@ For read-write portals, data synchronization is bidirectional, asynchronous, and
 
 To ensure that any changes on one portal become available immediately to any client that reads data from the portal's peers, Qumulo Core uses a proprietary locking synchronization mechanism.
 
-{% include tip.html content="In Qumulo Core 7.6.3 (and higher), if two Qumulo clusters use a load balancer or if the portal relationship is configured by using the IP addresses of peer portals, portal data synchronization can achieve higher IOPS and throughput by making full use of all nodes from both Qumulo clusters in a portal relationship." %}
+{% include tip.html content="In Qumulo Core 7.6.3.1 (and higher), if two Qumulo clusters use a load balancer or if the portal relationship is configured by using the IP addresses of peer portals, portal data synchronization can achieve higher IOPS and throughput by making full use of all nodes from both Qumulo clusters in a portal relationship." %}
 
 ### Data Caching
 The first time a client accesses a spoke portal root directory, the spoke portal begins to read and cache data from the hub portal. Subsequent access to the same data accesses the cache of the spoke portal host cluster, with performance characteristics equivalent to access to non-portal data on the spoke portal host cluster.

@@ -6,8 +6,10 @@ For information about upgrade types for each release, see <a href='mode-referenc
 
 {% capture nexusLink %}<p>{{site.downloadsRelnotes}}{{site.loginRequired}}</p>{% endcapture %}
 
-## Qumulo Core 7.6.3
+## Qumulo Core 7.6.3.1
 {{ nexusLink }}
+{% include important.html content="This release resolves an issue with Cloud Data Fabric where previously it was possible for a client connected through SMB to perform an operation on a file from a spoke portal after the same file was deleted from the hub portal, causing the cluster to become unavailable." %}
+
 * Made EdgeConnect (unprotected, single-node edge) clusters publicly available as bare-metal and VM deployments
   * Added the `cluster_type` metric to the Qumulo OpenMetrics API Specification
 * Improved Cloud Data Fabric (CDF):
