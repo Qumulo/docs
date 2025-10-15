@@ -11,7 +11,7 @@ positional_options: []
 sidebar: qq_cli_command_reference_sidebar
 summary: This section explains how to use the <code>qq network_get_network</code>
   command.
-synopsis: Get configuration for the specified network
+synopsis: ==SUPPRESS==
 title: qq network_get_network
 usage: qq network_get_network [-h] --network-id NETWORK_ID
 zendesk_source: qq CLI Command Guide

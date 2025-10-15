@@ -82,11 +82,13 @@ methods:
         \  \"type\": \"boolean\"\n    },\n    \"object_lock_enabled\": {\n      \"\
         description\": \"Specifies whether to enable object locking.\",\n      \"\
         type\": \"boolean\"\n    },\n    \"private\": {\n      \"description\": \"\
-        Specifies whether to create a private bucket. A private bucket has a policy\
-        \ automatically created that restricts visibility and access to the creator\
-        \ and users with RBAC permissions. When a bucket is not private, it is created\
-        \ without any policy and is visible to all S3 users.\",\n      \"type\": \"\
-        boolean\"\n    }\n  }\n}"
+        Specifies whether to create a private S3 bucket. By default, Qumulo Core creates\
+        \ the bucket without a policy, allowing all S3 API users to perform S3 object\
+        \ read and write operations and the S3 bucket's creator and users with RBAC\
+        \ permissions to perform S3 bucket write operations. When enabled, Qumulo\
+        \ Core applies a policy that restricts both S3 object and S3 bucket operations\
+        \ to the S3 bucket's creator and users with RBAC permissions. \",\n      \"\
+        type\": \"boolean\"\n    }\n  }\n}"
 rest_endpoint: /v1/s3/buckets/
 api_version: v1
 permalink: /rest-api-guide/s3-server-methods-v1/s3_buckets.html

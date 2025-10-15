@@ -11,7 +11,7 @@ positional_options: []
 sidebar: qq_cli_command_reference_sidebar
 summary: This section explains how to use the <code>qq network_delete_network</code>
   command.
-synopsis: Delete network configuration
+synopsis: ==SUPPRESS==
 title: qq network_delete_network
 usage: qq network_delete_network [-h] --network-id NETWORK_ID
 zendesk_source: qq CLI Command Guide

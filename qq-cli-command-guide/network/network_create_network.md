@@ -1,6 +1,6 @@
 ---
 category: network
-command: network_preview_add_network
+command: network_create_network
 optional_options:
 - alternate: []
   help: Network ID
@@ -16,17 +16,18 @@ optional_options:
     will create the network unassigned.
   name: --tenant-id
   required: false
-permalink: /qq-cli-command-guide/network/network_preview_add_network.html
+permalink: /qq-cli-command-guide/network/network_create_network.html
 positional_options:
 - help: The kind of network you want to add.
   name: assigned_by
   required: true
+redirect_from: /qq-cli-command-guide/network/network_preview_add_network.html
 sidebar: qq_cli_command_reference_sidebar
-summary: This section explains how to use the <code>qq network_preview_add_network</code>
+summary: This section explains how to use the <code>qq network_create_network</code>
   command.
 synopsis: Add a network to the cluster-wide network config.
-title: qq network_preview_add_network
-usage: qq network_preview_add_network [-h] --network-id NETWORK_ID --name NAME [--tenant-id
+title: qq network_create_network
+usage: qq network_create_network [-h] --network-id NETWORK_ID --name NAME [--tenant-id
   TENANT_ID] {host_managed,dhcp,static} ...
 zendesk_source: qq CLI Command Guide
 

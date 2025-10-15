@@ -52,13 +52,13 @@ positional_options: []
 sidebar: qq_cli_command_reference_sidebar
 summary: This section explains how to use the <code>qq network_add_network</code>
   command.
-synopsis: Add network configuration
+synopsis: ==SUPPRESS==
 title: qq network_add_network
 usage: "qq network_add_network [-h] --name NAME --netmask <netmask-or-subnet> --ip-ranges\
-  \ <address-or-range> [<address-or-range> ...] [--floating-ip-ranges <address-or-range>\
+  \ <address-or-range> [<address-or-range> ...]\n    [--floating-ip-ranges <address-or-range>\
   \ [<address-or-range> ...]]\n    [--dns-servers <address-or-range> [<address-or-range>\
-  \ ...]] [--dns-search-domains <search-domain> [<search-domain> ...]] [--mtu MTU]\
-  \ [--vlan-id VLAN_ID] [--tenant-id TENANT_ID]"
+  \ ...]]\n    [--dns-search-domains <search-domain> [<search-domain> ...]] [--mtu\
+  \ MTU] [--vlan-id VLAN_ID]\n    [--tenant-id TENANT_ID]"
 zendesk_source: qq CLI Command Guide
 
 ---

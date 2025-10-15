@@ -10,7 +10,7 @@ permalink: /qq-cli-command-guide/network/network_poll.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar
 summary: This section explains how to use the <code>qq network_poll</code> command.
-synopsis: Poll network status
+synopsis: ==SUPPRESS==
 title: qq network_poll
 usage: qq network_poll [-h] [--node-id NODE_ID]
 zendesk_source: qq CLI Command Guide

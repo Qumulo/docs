@@ -27,8 +27,8 @@ summary: This section explains how to use the <code>qq unprotected_edge_cluster_
   command.
 synopsis: Creates a Single-Node Unprotected Qumulo Edge Device
 title: qq unprotected_edge_cluster_create
-usage: qq unprotected_edge_cluster_create [-h] --edge-cluster-name EDGE_CLUSTER_NAME
-  [--admin-password ADMIN_PASSWORD] [--accept-eula] [--reject-eula]
+usage: "qq unprotected_edge_cluster_create [-h] --edge-cluster-name EDGE_CLUSTER_NAME\
+  \ [--admin-password ADMIN_PASSWORD] [--accept-eula]\n    [--reject-eula]"
 zendesk_source: qq CLI Command Guide
 
 ---

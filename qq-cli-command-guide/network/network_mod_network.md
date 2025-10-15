@@ -75,14 +75,14 @@ positional_options: []
 sidebar: qq_cli_command_reference_sidebar
 summary: This section explains how to use the <code>qq network_mod_network</code>
   command.
-synopsis: Modify network configuration
+synopsis: ==SUPPRESS==
 title: qq network_mod_network
 usage: "qq network_mod_network [-h] --network-id NETWORK_ID [--name NAME] [--assigned-by\
-  \ {DHCP,STATIC}] [--netmask <netmask-or-subnet>] [--ip-ranges <address-or-range>\
+  \ {DHCP,STATIC}] [--netmask <netmask-or-subnet>]\n    [--ip-ranges <address-or-range>\
   \ [<address-or-range> ...]]\n    [--floating-ip-ranges <address-or-range> [<address-or-range>\
-  \ ...]] [--clear-floating-ip-ranges] [--dns-servers <address-or-range> [<address-or-range>\
+  \ ...]] [--clear-floating-ip-ranges]\n    [--dns-servers <address-or-range> [<address-or-range>\
   \ ...]] [--clear-dns-servers]\n    [--dns-search-domains <search-domain> [<search-domain>\
-  \ ...]] [--clear-dns-search-domains] [--mtu MTU] [--vlan-id VLAN_ID] [--tenant-id\
+  \ ...]] [--clear-dns-search-domains] [--mtu MTU]\n    [--vlan-id VLAN_ID] [--tenant-id\
   \ TENANT_ID | --clear-tenant-id]"
 zendesk_source: qq CLI Command Guide
 

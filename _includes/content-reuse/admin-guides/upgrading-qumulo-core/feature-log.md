@@ -6,6 +6,14 @@ For information about upgrade types for each release, see <a href='mode-referenc
 
 {% capture nexusLink %}<p>{{site.downloadsRelnotes}}{{site.loginRequired}}</p>{% endcapture %}
 
+## Qumulo Core 7.6.4
+{{ nexusLink }}
+
+* Improved Cloud Data Fabric portal data synchronization speeds
+* Made improvements to the Network Configuration V3 REST APIs:
+  * Moved a number of `/v3/network/*` REST APIs out of preview status
+  * Added a number `qq network_*`, `qq portal_authorize_hub`, and `qq_snapshot_*` CLI commands
+
 ## Qumulo Core 7.6.3.1
 {{ nexusLink }}
 {% include important.html content="This release resolves an issue with Cloud Data Fabric where previously it was possible for a client connected through SMB to perform an operation on a file from a spoke portal after the same file was deleted from the hub portal, causing the cluster to become unavailable." %}

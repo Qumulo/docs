@@ -21,8 +21,12 @@ optional_options:
   name: --enable-object-lock
   required: false
 - alternate: []
-  help: Create a private bucket. A private bucket has a policy automatically created
-    that restricts visibility and access to the creator and users with RBAC permissions.
+  help: 'Specifies whether to create a private S3 bucket. By default, Qumulo Core
+    creates the bucket without a policy, allowing all S3 API users to perform S3 object
+    read and write operations and the S3 bucket''s creator and users with RBAC permissions
+    to perform S3 bucket write operations. When enabled, Qumulo Core applies a policy
+    that restricts both S3 object and S3 bucket operations to the S3 bucket''s creator
+    and users with RBAC permissions. '
   name: --private
   required: false
 permalink: /qq-cli-command-guide/s3/s3_add_bucket.html

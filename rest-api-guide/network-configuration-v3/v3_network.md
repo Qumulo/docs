@@ -2,7 +2,7 @@
 category: /Network Configuration V3
 methods:
   get:
-    summary: '[preview] Get the cluster-wide network configuration'
+    summary: Get the cluster-wide network configuration
     parameters: []
     response_body:
       schema: "{\n  \"description\": \"api_v3_cluster_network_management\",\n  \"\
@@ -105,9 +105,9 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    preview: true
+    preview: false
   put:
-    summary: '[preview] Overwrite the current cluster network configuration.'
+    summary: Overwrite the current cluster network configuration.
     parameters:
     - name: If-Match
       description: ETag for expected version
@@ -116,7 +116,7 @@ methods:
     responses:
     - code: '202'
       description: Return value on success
-    preview: true
+    preview: false
     request_body:
       schema: "{\n  \"description\": \"api_v3_cluster_network_management\",\n  \"\
         type\": \"object\",\n  \"properties\": {\n    \"managed_interfaces\": {\n\

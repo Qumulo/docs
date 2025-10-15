@@ -52,9 +52,9 @@ summary: This section explains how to use the <code>qq auth_expand_identity</cod
   command.
 synopsis: Find equivalent identities and full group membership.
 title: qq auth_expand_identity
-usage: qq auth_expand_identity [-h] [--auth-id AUTH_ID] [--uid UID] [--gid GID] [--sid
-  SID] [--name NAME] [--domain {LOCAL,WORLD,POSIX_USER,POSIX_GROUP,ACTIVE_DIRECTORY}]
-  [--json] [--show-access-tokens] [identifier]
+usage: "qq auth_expand_identity [-h] [--auth-id AUTH_ID] [--uid UID] [--gid GID] [--sid\
+  \ SID] [--name NAME]\n    [--domain {LOCAL,WORLD,POSIX_USER,POSIX_GROUP,ACTIVE_DIRECTORY}]\
+  \ [--json] [--show-access-tokens]\n    [identifier]"
 zendesk_source: qq CLI Command Guide
 
 ---

@@ -2,8 +2,8 @@
 category: /Network Configuration V3
 methods:
   put:
-    summary: '[preview] Validate a new cluster-wide network configuration without
-      writing it to disk'
+    summary: Validate a new cluster-wide network configuration without writing it
+      to disk
     parameters:
     - name: If-Match
       description: ETag for expected version
@@ -12,7 +12,7 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    preview: true
+    preview: false
     request_body:
       schema: "{\n  \"description\": \"api_v3_cluster_network_management\",\n  \"\
         type\": \"object\",\n  \"properties\": {\n    \"managed_interfaces\": {\n\

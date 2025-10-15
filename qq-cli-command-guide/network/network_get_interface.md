@@ -11,7 +11,7 @@ positional_options: []
 sidebar: qq_cli_command_reference_sidebar
 summary: This section explains how to use the <code>qq network_get_interface</code>
   command.
-synopsis: Get configuration for the specified interface
+synopsis: ==SUPPRESS==
 title: qq network_get_interface
 usage: qq network_get_interface [-h] [--interface-id INTERFACE_ID]
 zendesk_source: qq CLI Command Guide
