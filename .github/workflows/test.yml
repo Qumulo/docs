@@ -21,8 +21,10 @@ jobs:
       - name: Rebuild Hot Topics ranking in README.md and show deltas (dry run)
         run: |
           ./tools/test-build-hot-topic.sh
+
           # Show deltas
           git diff
+
           # Revert changes before switching branches
           git reset --hard ${{ env.GITHUB_REF_NAME }}
         env:
@@ -36,6 +38,7 @@ jobs:
           # Do not fail if the check throws an error
           set +e
           ./tools/test-spelling.sh
+
           # Capture the exit code  
           status=$?
           if [ $status -ne 0 ]; then
@@ -49,6 +52,7 @@ jobs:
           # Do not fail if the check throws an error
           set +e
           ./tools/test-scripts-links-images.sh
+
           # Capture the exit code
           status=$?
           if [ $status -ne 0 ]; then

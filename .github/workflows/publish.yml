@@ -17,11 +17,18 @@ jobs:
       - name: Rebuild Hot Topics ranking in README.md, show deltas, and commit changes
         run: |
           ./tools/test-build-hot-topic.sh
+
+          # Set credentials
+          git config --global user.email "qontent@qumulo.com"
+          git config --global user.name "Team Qontent"        
+
           # Show deltas
           git diff
+
           # Commit changes
           git add --all
           git commit -m "Regenerated README.md with Hot Topic ranking" || echo "No changes to commit" >&2
+          
         env:
           ENGINEERING_JSON: ${{ secrets.ENGINEERING_JSON }}
 
@@ -33,6 +40,7 @@ jobs:
           # Do not fail if the check throws an error
           set +e
           ./tools/test-spelling.sh
+          
           # Capture the exit code  
           status=$?
           if [ $status -ne 0 ]; then
@@ -46,6 +54,7 @@ jobs:
           # Do not fail if the check throws an error
           set +e
           ./tools/test-scripts-links-images.sh
+          
           # Capture the exit code
           status=$?
           if [ $status -ne 0 ]; then
