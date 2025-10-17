@@ -1,4 +1,4 @@
 _config.yml
 .DS_Store
 _site
-tools/hot-topic/engineering-173019-49cb92815171.json
+tools/hot-topic/*.json

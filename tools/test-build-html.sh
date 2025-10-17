@@ -24,8 +24,8 @@ fi
 
 if [[ $DRY_RUN -eq 1 ]]; then
   echo "Dry-run mode: previewing file copy..."
-  rsync -av --dry-run _site/ .
+  rsync -av --dry-run --exclude 'tools/hot-topic/*.json' _site/ .
 else
-  rsync -av _site/ .
+  rsync -av --exclude 'tools/hot-topic/*.json' _site/ .
   rm -rf _site
 fi
