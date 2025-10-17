@@ -1,5 +1,5 @@
 #!/bin/bash
-set -euo pipefail
+set -eo pipefail
 
 # Run the docs-builder image to build the documentation on the mainline branch
 docker run --rm --user "$(id -u):$(id -g)" --name docs-container-build --volume "$(pwd)":/src:rw docs-builder
