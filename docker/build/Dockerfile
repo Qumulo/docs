@@ -16,8 +16,8 @@ RUN apt-get update && apt-get install -y \
     rm -rf /var/lib/apt/lists/*
 
 # Set up GEM paths to avoid permission issues
-ENV GEM_HOME=/usr/local/bundle
-ENV PATH=$GEM_HOME/bin:$PATH
+ENV GEM_HOME /usr/local/bundle
+ENV PATH $GEM_HOME/bin:$PATH
 
 # Set working directory
 WORKDIR /tmp
