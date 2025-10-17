@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "engineering-173019",
+  "private_key_id": "419af4b8908c8576b9ea73724f9a936a50cfacbd",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQDIWA/zE2fCZ6qB\noI6wCzLMCnLWLMBUo+P1BSzIH0uBSuqIDrkK4dn06YAF9M2otCe4wMDFC88UXiPu\nXlvZ0oBLPbV64+gx12idXJ8gFyiIpZw69oPsXTH6etI7a0iHYRwm0hsM4KmSk8BA\nx2oPkURGspfY7ueSw9Kh0jYc/t4ahveN+hOzpkPMmWXa5WD81kM4+qq27kNHjpKe\nz4+QfHrrNp5HY2gDFbzPQXWnJobFgspDo6xwpLal10VDU5MWhdXv1j81zJRB+fP5\nqkctNXhNboPYoVPPkpaqnUfvbjM/XOVTmcxMorVG5mL4gAtF6a5Eyvmhk1n9X8U0\n11MYKo8bAgMBAAECggEAV0E7WROnihzaPvCtlHCcJA+c6ji9X1+txaYGVfaDTQFS\n2gUHhHzPD4Ku1mlDNOmZrzaL/oXhH67MmWGRQXITnDF5G9es5iA6GOchCrnrVnBC\ndc+tr0D7pmrdqzFTelrKBwJU86vZTtR40/3F7JfJE71usvWB+AK/duj11nUOSKCf\n6VDaLztP54yMvraVvOozHO4wwq//YbRx8E6z/Se3ZdTzxaPaMN9OPQWEhg+22Hl4\nXNFx/Ko6Ey2wwWzn8KWioVm4HDQYxUnbPHCeSpD8l3oKf3XTn6gKQRZvNvMHEZ4g\n/YREJmbvD3P2mc+G5+3xQZQ/DWqVB0rx2jgMEfUe6QKBgQDy85+ZsJb18rTBDjJ2\nA5K5Uddc3Pq7bD2jH7vCUV+L2pd18WhWUR3Z5mUSfwcy+knsP9ZzB9DrjeP/eyrt\nfo6lDMh7lU9XEUJg84AviEjJZ71qiYODyy/4QoyVsw2Dw2SW2yUWVEGxGMRUYHx5\nNIbLRJpq7AE+k9r7A5uHNzbEVQKBgQDTGp7ApoOTddBV4TLrFfcGSGKeVu93lvl5\nScc7O9VCGnCF0EsXZJbFFcLyUo1eLZvAR8B/xQs7itOM0tya44O/3FU5c83esLT8\njwpc2xOP4zOkS8SkjKTmYYeYNGAOuC9+7sxuDSjCU6+KksHLhxiGEaywz+giDOEB\nygm8/YH1rwKBgQCKCYnA1OiwzTmOBvb8voL68Fkg1h1Pp+xNZpZTjdBvsb8ksAjM\nIkKHr7P1kl8Qw8yEgrDhoqs9at0EJ4L4dVOuy1iNfwQZQCEq3K8UUqaoaFziz0b9\n9tBGiek+lQE0wCvC2rhzu2Onr569IiUW6JU9oLjrzzPVzkQ5Io+Xf/OKEQKBgQCq\nwLN8PLPcyMT1UiyvfprK2C38yXD1GIc+FfEy9livGVe+xRaYG2Lgk5OWEjQK43VB\n+Ee6kZVeWhJ3q++I0VK2E/BTgloZMHGUf9bv+Lw//JS+5hJuztxrBKR69pJkFZNF\nZr6wnbBETxCEU+SxTdsGRrGaavDm6efuXI+38I34PQKBgQDjEDx+XVgdfpo9nJUv\nBLo2VDjRn2cdEPRmElIKEjJ6sRyVJjTJFzLq8eNrnfYWgCot8cNGn+XmnqMVrD7s\nTmFKRwMQPM8Bv5Ll6OCMTAQORUPVW/q5RcMkgKkuU36jG7ivB1cuKDeMDA4vL8/e\nbEAPGW2M1FzxU0Mja29BQ3oPQA==\n-----END PRIVATE KEY-----\n",
+  "client_email": "docs-portal-stats@engineering-173019.iam.gserviceaccount.com",
+  "client_id": "108872310110754125471",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/docs-portal-stats%40engineering-173019.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
