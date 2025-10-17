@@ -207,6 +207,3 @@ For information about upgrading, see:
 
 ## Reach Out to Us
 If you need help, [open a case](https://care.qumulo.com/s/submit-a-case), or {{site.contactQumuloCare}} through Slack, email, or by phone.
-
-## Report a Documentation Issue
-You can [view this page in GitHub](https://github.com/qumulo/docs/blob/gh-pages/README.md) and [suggest corrections by opening an issue](https://github.com/Qumulo/docs/issues).

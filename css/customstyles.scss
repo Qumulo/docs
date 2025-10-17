@@ -29,6 +29,23 @@ blockquote {
   font-size: 16px;
 }
 
+#send-feedback {
+  font-weight: bold;
+  font-size: 14px;
+  padding: 3px 18px;
+  background: #F7981F;
+  color: #FFF;
+  transition: all 0.3s ease;
+  border: 0;
+  width: fit-content;
+  float: right;
+  margin-bottom: 20px;
+}
+
+#send-feedback:hover {
+  background: #007CAC;
+}
+
 /* TABS START */
 @media screen {
   /* Base tab list */
@@ -226,6 +243,10 @@ blockquote {
     border: 1px solid #dddddd;
     text-decoration: none;
     padding-right: 10px;
+  }
+
+  a.big-button {
+    transition: all 0.3s ease;
   }
 
   a.big-button:visited {
