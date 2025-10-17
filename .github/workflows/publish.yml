@@ -78,8 +78,8 @@ jobs:
       - name: Push local gh-pages branch to remote gh-pages branch
         run: |
           git remote add -m gh-pages public git@github.com:Qumulo/docs
-          git push --set-upstream public gh-pages
-          git push --set-upstream public mainline
+          git push --force public gh-pages
+          git push --force public mainline
         env:
           GIT_SSH_COMMAND: ssh -i /tmp/key
 
