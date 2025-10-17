@@ -3,7 +3,7 @@ from google.analytics.data_v1beta.types import DateRange, Dimension, Metric, Run
 from google.oauth2 import service_account
 import re
 
-KEY_FILE_LOCATION = '/app/engineering-173019-419af4b8908c.json'
+KEY_FILE_LOCATION = '/app/engineering-173019-f79d4f9c2e03.json'
 PROPERTY_ID = '282075494'
 README_PATH = '/app/README.md'
 
