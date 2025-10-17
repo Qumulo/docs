@@ -16,12 +16,17 @@ if ! git checkout gh-pages; then
   exit 1
 fi
 
-# Copy from _site into current branch (repo root)
+# Ensure we are at the repo's root
+REPO_ROOT="$(git rev-parse --show-toplevel)"
+cd "$REPO_ROOT"
+
+# Check whether _site exists
 if [[ ! -d "_site" ]]; then
   echo "_site directory doesn't exist. Exiting..." >&2
   exit 2
 fi
 
+# Copy from _site into current branch (repo root)
 if [[ $DRY_RUN -eq 1 ]]; then
   echo "Dry-run mode: previewing file copy..."
   rsync -av --dry-run --exclude 'tools/hot-topic/*.json' _site/ .
