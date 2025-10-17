@@ -1,8 +1,10 @@
-name: Push mainline branch to public repo
+name: Regenerate documentation and push local gh-pages and mainline branches
 on:
   push:
     branches:
-    - mainline
+      - mainline
+permissions:
+  contents: write
 jobs:
   publish:
     runs-on: ubuntu-latest
@@ -11,42 +13,68 @@ jobs:
         with:
           fetch-depth: 0
           ref: ${{ env.GITHUB_REF_NAME }}
-      - uses: actions/cache@v4
-        with:
-          path: vendor/bundle
-          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile') }}
-          restore-keys: |
-            ${{ runner.os }}-gems-
-      - uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: '3.3'
-          bundler-cache: true
 
-      - name: Write JSON secret to file
-        run: echo -n "${{ secrets.ENGINEERING_JSON }}" | base64 --decode > hot-topic/engineering-173019-49cb92815171.json
-
-      - name: Build and run google-analytics-script Docker image
+      - name: Rebuild Hot Topics ranking in README.md, show deltas, and commit changes
         run: |
-          docker build -t google-analytics-script -f hot-topic/Dockerfile ./hot-topic
-          docker run -v $(pwd)/hot-topic/engineering-173019-49cb92815171.json:/app/engineering-173019-49cb92815171.json \
-                     -v $(pwd)/README.md:/app/README.md \
-                     google-analytics-script
+          ./tools/test-build-hot-topic.sh
+          # Show deltas
+          git diff
+          # Commit changes
+          git add --all
+          git commit -m "Regenerated README.md with Hot Topic ranking" || echo "No changes to commit" >&2
+        env:
+          ENGINEERING_JSON: ${{ secrets.ENGINEERING_JSON }}
 
-      - name: Sanity build site
-        run: JEKYLL_ENV=preview LC_ALL=C.UTF-8 bundle exec jekyll build -d prod
+      - name: Build common container
+        run: ./tools/test-build-container.sh
+
+      - name: Check spelling (non-fatal)
+        run: |
+          # Do not fail if the check throws an error
+          set +e
+          ./tools/test-spelling.sh
+          # Capture the exit code  
+          status=$?
+          if [ $status -ne 0 ]; then
+            echo "::warning::Fix spelling errors and add exceptions to tools/.spelling-allowlist"
+          fi
+          exit 0
+
+      - name: Check scripts, links, and images (non-fatal)
+        shell: bash {0} # Allow manual error handling 
+        run: |
+          # Do not fail if the check throws an error
+          set +e
+          ./tools/test-scripts-links-images.sh
+          # Capture the exit code
+          status=$?
+          if [ $status -ne 0 ]; then
+            echo "::warning::Fix script/link/image errors. 404s for unpublished pages is normal."
+          fi
+          exit 0
+
+      - name: Rebuild documentation
+        run: ./tools/test-build-html.sh
+
+      - name: Commit documentation changes
+        run: |
+          git add --all
+          git commit -m "Rebuilt documentation website" || echo "No changes to commit" >&2
 
       - name: Prepare SSH key
         run: |
           echo "${{ secrets.DOCS_PUBLISH_KEY }}" > /tmp/key
           chmod 400 /tmp/key
 
-      - name: Push to remote gh-pages branch
+      - name: Push local gh-pages branch to remote gh-pages branch
         run: |
           git remote add -t ${GITHUB_REF_NAME} -m gh-pages public git@github.com:Qumulo/docs
-          git push --set-upstream public ${GITHUB_REF_NAME}:gh-pages
+          git push --set-upstream public ${GITHUB_REF_NAME}:gh-pages public
+          git push --set-upstream public ${GITHUB_REF_NAME}:mainline mainline
         env:
           GIT_SSH_COMMAND: ssh -i /tmp/key
 
       - name: Clean up SSH key
         run: |
           rm -f /tmp/key
+        if: always()

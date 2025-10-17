@@ -1,17 +1,10 @@
 source "https://rubygems.org"
 
-# to publish on github page
-gem 'github-pages', group: :jekyll_plugins
-
-# to publish without github page
-#gem "jekyll"
-
-gem 'ostruct'
-
-gem 'nokogiri'
-gem 'html-proofer'
-gem 'faraday-retry'
-
-gem 'ffi-hunspell'
-
-gem 'jekyll-last-modified-at'
+gem "faraday-retry"
+gem "ffi-hunspell"
+gem "html-proofer"
+gem "jekyll", "4.4.1"
+gem "jekyll-redirect-from"
+gem "logger"
+gem "nokogiri"
+gem "ostruct"

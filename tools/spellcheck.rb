@@ -105,8 +105,6 @@ FFI::Hunspell.dict('en_US') do |dict|
         line.gsub!(/\b#{Regexp.escape(phrase)}\b/, '') if line.include?(phrase)
       end
 
-#      words = line.scan(/(?:F\d+|K-\d+[A-Z]|C-\d+[A-Z]|[\w'-]+)/)
-
 words = line.scan(/[a-zA-Z0-9_\-']+/)
 
       words.each do |word|
@@ -127,3 +125,7 @@ end
 puts "\nPotential misspellings: #{misspelling_count}"
 puts "\n"
 
+if misspelling_count > 0
+  puts "Errors found. Exiting..."
+  exit 1
+end

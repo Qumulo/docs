@@ -1,4 +1,5 @@
 #!/bin/bash
+set -euo pipefail
 
 # Check if Prince XML is installed
 if ! command -v prince &> /dev/null; then

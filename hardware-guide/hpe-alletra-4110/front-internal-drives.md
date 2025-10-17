@@ -9,14 +9,14 @@ There are 20 drive bay at the front of the {{site.all4110}} node, populated acco
 
 
 ## 307TB and 153TB Nodes
-In [307TB and 153TB nodes](technical-specifications.md), all drive bays are populated.
+In 307TB and 153TB nodes, all drive bays are populated.
 
 {% capture alt_tag %}The front drives in the {{site.all4110}} node (307TB and 153TB).{% endcapture %}
 {% include image.html alt=alt_tag file="hpe-alletra-4110-front-drive-bays-307tb-153tb.png" url="/hardware-guide/hpe-alletra-4110/images/hpe-alletra-4110-front-drive-bays-307tb-153tb.png" %}
 
 
 ## 38TB Nodes
-In [38TB Nodes](technical-specifications.md), some drive bays are empty.
+In 38TB Nodes, some drive bays are empty.
 
 {% include note.html content="In the following diagram, empty drive bays appear in gray." %}
 

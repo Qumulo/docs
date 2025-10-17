@@ -1,45 +1,60 @@
-name: Build feature branch
+name: Test feature branch
 on:
   # Manual trigger for feature branch
   workflow_dispatch:
     branches-ignore:
-    - gh-pages
+      - gh-pages
   # Push trigger for feature branch
   push:
     branches-ignore:
-    - gh-pages
+      - gh-pages
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
       # It is recommended to use specific versions
       - uses: actions/checkout@v4
-      - uses: actions/cache@v4
         with:
-          path: vendor/bundle
-          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile') }}
-          restore-keys: |
-            ${{ runner.os }}-gems-
-      - uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: '3.3'
-          bundler-cache: true
+          fetch-depth: 0
+          ref: ${{ env.GITHUB_REF_NAME }}
 
-      - name: Write JSON secret to file
-        run: echo -n "${{ secrets.ENGINEERING_JSON }}" | base64 --decode > hot-topic/engineering-173019-49cb92815171.json
-
-      - name: Build and run google-analytics-script Docker image
+      - name: Rebuild Hot Topics ranking in README.md and show deltas (dry run)
         run: |
-          docker build -t google-analytics-script -f hot-topic/Dockerfile ./hot-topic
-          docker run -v $(pwd)/hot-topic/engineering-173019-49cb92815171.json:/app/engineering-173019-49cb92815171.json \
-                     -v $(pwd)/README.md:/app/README.md \
-                     google-analytics-script
+          ./tools/test-build-hot-topic.sh
+          # Show deltas
+          git diff
+          # Revert changes before switching branches
+          git reset --hard ${{ env.GITHUB_REF_NAME }}
+        env:
+          ENGINEERING_JSON: ${{ secrets.ENGINEERING_JSON }}
 
-      - name: Build docs-builder Docker image
-        run: docker build -f docker/build/Dockerfile -t docs-builder .
+      - name: Build common container
+        run: ./tools/test-build-container.sh
 
-      # This action builds the feature branch ephemerally
-      # to prove that nothing is broken
-      - name: Build feature branch
-        # `prod` is the name of the output directory
-        run: JEKYLL_ENV=preview LC_ALL=C.UTF-8 bundle exec jekyll build -d test
+      - name: Check spelling (non-fatal)
+        run: |
+          # Do not fail if the check throws an error
+          set +e
+          ./tools/test-spelling.sh
+          # Capture the exit code  
+          status=$?
+          if [ $status -ne 0 ]; then
+            echo "::warning::Fix spelling errors and add exceptions to tools/.spelling-allowlist"
+          fi
+          exit 0
+
+      - name: Check scripts, links, and images (non-fatal)
+        shell: bash {0} # Allow manual error handling 
+        run: |
+          # Do not fail if the check throws an error
+          set +e
+          ./tools/test-scripts-links-images.sh
+          # Capture the exit code
+          status=$?
+          if [ $status -ne 0 ]; then
+            echo "::warning::Fix script/link/image errors. 404s for unpublished pages is normal."
+          fi
+          exit 0
+
+      - name: Rebuild documentation (dry run)
+        run: ./tools/test-build-html.sh --dry-run

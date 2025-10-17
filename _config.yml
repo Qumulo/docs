@@ -141,6 +141,9 @@ url: https://docs.qumulo.com
 baseurl: /
 github: [metadata]
 
+redirect_from:
+  json: false
+
 # Enable relative_links and enable it on collections as well to allow relative links to be processed in subdirectories
 relative_links:
     enabled: true
@@ -149,7 +152,6 @@ relative_links:
 # Enable server-side redirects. For more information, see https://github.com/jekyll/jekyll-redirect-from
 plugins:
   - jekyll-redirect-from
-  - jekyll-last-modified-at
 
 # BEGIN SPELLCHECK HERE
 scanVars: true
