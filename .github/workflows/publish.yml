@@ -77,9 +77,9 @@ jobs:
 
       - name: Push local gh-pages branch to remote gh-pages branch
         run: |
-          git remote add -t ${GITHUB_REF_NAME} -m gh-pages public git@github.com:Qumulo/docs
-          git push --set-upstream public ${GITHUB_REF_NAME}:gh-pages public
-          git push --set-upstream public ${GITHUB_REF_NAME}:mainline mainline
+          git remote add -m gh-pages public git@github.com:Qumulo/docs
+          git push --set-upstream public gh-pages
+          git push --set-upstream public mainline
         env:
           GIT_SSH_COMMAND: ssh -i /tmp/key
 
