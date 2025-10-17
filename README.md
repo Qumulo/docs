@@ -11,7 +11,6 @@ isHomepage: true
 #toc ul li:nth-child(-n+5) {
     display: none;
 }
-<!--test-->
 </style>
 
 To get started, choose one of the following guides.
