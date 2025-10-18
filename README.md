@@ -12,6 +12,7 @@ isHomepage: true
     display: none;
 }
 </style>
+<!--Docs update test-->
 
 To get started, choose one of the following guides.
 
