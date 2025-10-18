@@ -187,16 +187,16 @@ To get started, choose one of the following guides.
 ## Hot Topics
 The following are the most-accessed pages on the Documentation Portal.
 
-1. [Configuring Round-Robin DNS on Windows Server for Qumulo Core](/administrator-guide/network-configuration/configuring-round-robin-dns-windows-server.html)
-2. [Enabling Cloud-Based Monitoring and Remote Support](/administrator-guide/monitoring-and-metrics/enabling-cloud-based-monitoring-remote-support.html)
-3. [Qumulo Core Feature Log](/administrator-guide/upgrading-qumulo-core/feature-log.html)
-4. [Getting Started with the qq CLI](/administrator-guide/qq-cli/getting-started.html)
-5. [Supported Configurations and Known Limits for Qumulo Core](/administrator-guide/getting-started/supported-configurations-known-limits.html)
-6. [Managing Snapshots in Qumulo Core](/administrator-guide/snapshots/managing-snapshots.html)
-7. [Performing Qumulo Core Upgrades](/administrator-guide/upgrading-qumulo-core/performing-upgrades.html)
-8. [Creating and Managing S3 Buckets in Qumulo Core](/administrator-guide/s3-api/creating-managing-s3-buckets.html)
-9. [How Drive and Node Failure Protection Works in Qumulo Core](/administrator-guide/node-addition-replacement/how-drive-node-failure-protection-works.html)
-10. [Configuring and Using the S3 API in Qumulo Core](/administrator-guide/s3-api/configuring-using-s3-api.html)
+1. [Qumulo Core Feature Log](/administrator-guide/upgrading-qumulo-core/feature-log.html)
+2. [Performing Qumulo Core Upgrades](/administrator-guide/upgrading-qumulo-core/performing-upgrades.html)
+3. [Configuring Round-Robin DNS on Windows Server for Qumulo Core](/administrator-guide/network-configuration/configuring-round-robin-dns-windows-server.html)
+4. [Qumulo Core Upgrade Mode Reference](/administrator-guide/upgrading-qumulo-core/mode-reference.html)
+5. [Enabling Cloud-Based Monitoring and Remote Support](/administrator-guide/monitoring-and-metrics/enabling-cloud-based-monitoring-remote-support.html)
+6. [Getting Started with the qq CLI](/administrator-guide/qq-cli/getting-started.html)
+7. [Creating a Qumulo Core USB Drive Installer](/hardware-guide/getting-started/creating-usb-drive-installer.html)
+8. [Supported Configurations and Known Limits for Qumulo Core](/administrator-guide/getting-started/supported-configurations-known-limits.html)
+9. [Replication Version Requirements and Upgrade Recommendations for Qumulo Core](/administrator-guide/upgrading-qumulo-core/replication-version-requirements-upgrade-recommendations.html)
+10. [Installing the Qumulo Core Product Package](/administrator-guide/getting-started/installing-product-package.html)
 
 ## Get Qumulo Core
 {{site.nexus.downloads}} {{site.loginRequired}}.
