@@ -6,4 +6,4 @@ search: exclude
 tocTrue: false
 ---
 
-If you can read this, the new implementation was a success! —Lucía
+If you can read this, the new implementation was a success! —Lucia
