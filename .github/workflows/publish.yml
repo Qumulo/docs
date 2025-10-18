@@ -62,8 +62,10 @@ jobs:
           fi
           exit 0
 
-      - name: Rebuild documentation
-        run: ./tools/test-build-html.sh
+      - name: Build documentation and sitemap.xml
+        run: |
+          ./tools/test-build-html.sh
+          python3 tools/gen-sitemap.py
 
       - name: Commit documentation changes
         run: |
@@ -78,7 +80,7 @@ jobs:
       - name: Push modified mainline and intact gh-pages branches from internal to public
         run: |
           # Define remote repository (idempotent)
-          git remote remove public || true
+          git remote remove public >/dev/null 2>&1 || true
           git remote add -m gh-pages public git@github.com:Qumulo/docs
 
           # To avoid making changes to the internal `mainline` branch, make a temporary `export` branch
