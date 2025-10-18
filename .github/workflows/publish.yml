@@ -65,7 +65,6 @@ jobs:
       - name: Build documentation and sitemap.xml
         run: |
           ./tools/test-build-html.sh
-          python3 ./tools/gen-sitemap.py
 
       - name: Commit documentation changes
         run: |
