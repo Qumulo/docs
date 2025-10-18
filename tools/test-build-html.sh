@@ -29,8 +29,8 @@ fi
 # Copy from _site into current branch (repo root)
 if [[ $DRY_RUN -eq 1 ]]; then
   echo "Dry-run mode: previewing file copy..."
-  rsync -av --dry-run --exclude 'tools/hot-topic/*.json' _site/ .
+  rsync -av --dry-run _site/ .
 else
-  rsync -av --exclude 'tools/hot-topic/*.json' _site/ .
+  rsync -av _site/ .
   rm -rf _site
 fi

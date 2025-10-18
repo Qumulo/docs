@@ -1,4 +1,4 @@
-name: Test feature branch
+name: Test docs feature branch
 on:
   # Manual trigger for feature branch
   workflow_dispatch:

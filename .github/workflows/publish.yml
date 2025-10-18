@@ -1,4 +1,4 @@
-name: Regenerate documentation and push local gh-pages and mainline branches
+name: Build and push docs to prod
 on:
   push:
     branches:
@@ -75,11 +75,29 @@ jobs:
           echo "${{ secrets.DOCS_PUBLISH_KEY }}" > /tmp/key
           chmod 400 /tmp/key
 
-      - name: Push local gh-pages branch to remote gh-pages branch
+      - name: Push modified mainline and intact gh-pages branches from internal to public
         run: |
+          # Define remote repository (idempotent)
+          git remote remove public || true
           git remote add -m gh-pages public git@github.com:Qumulo/docs
+
+          # To avoid making changes to the internal `mainline` branch, make a temporary `export` branch
+          git checkout -B export mainline
+
+          # Delete both `.yml` workflow files
+          git rm -f .github/workflows/*.yml || true
+          git add --all
+          git commit -m "Remove internal workflow files for public export" || true
+
+          # Force push temporary `export` branch to public `mainline` branch
+          git push --force public export:mainline
+
+          # Force push internal `gh-pages` branch to public `gh-pages` branch
           git push --force public gh-pages
-          git push --force public mainline
+
+          # Clean up temporary `export` branch
+          git checkout mainline
+          git branch -D export || true
         env:
           GIT_SSH_COMMAND: ssh -i /tmp/key
 
