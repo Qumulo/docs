@@ -441,6 +441,10 @@ entries:
       url: /cloud-native-azure-administrator-guide/monitoring-and-metrics/configuring-cloud-based-monitoring-remote-support.html
       output: web, pdf
 
+    - title: Configuring Nexus Remote Support
+      url: /cloud-native-azure-administrator-guide/monitoring-and-metrics/configuring-nexus-remote-support.html
+      output: web, pdf
+
     - title: Connecting to Cloud-Based Monitoring and S3 with a Custom Proxy
       url: /cloud-native-azure-administrator-guide/monitoring-and-metrics/connecting-cloud-based-monitoring-s3-custom-proxy.html
       output: web, pdf
