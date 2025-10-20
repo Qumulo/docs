@@ -131,7 +131,7 @@ Before you can use Cloud-Based Monitoring and Remote Support:
 
 * To disable Cloud-Based Monitoring, run the `qq set_monitoring_conf --disabled` command.
 
-* To check the status of Cloud-Based Monitoring, run the `qq monitoring_conf` command.
+* To check the status of Cloud-Based Monitoring, run the `qq monitoring_status_get` command.
 
 
 <a id="enabling-remote-support"></a>
@@ -158,4 +158,4 @@ Before you can use Cloud-Based Monitoring and Remote Support:
 
 * To disable Remote Support, run the `qq set_monitoring_conf --vpn-disabled` command.
 
-* To check the status of Remote Support, run the `qq set_monitoring_conf` command.
+* To check the status of Remote Support, run the `qq monitoring_status_get` command.
