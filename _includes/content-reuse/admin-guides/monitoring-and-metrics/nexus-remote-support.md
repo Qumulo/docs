@@ -41,7 +41,7 @@ The following are known limitations with this feature. These limitations will be
 ## Prerequisites
 Before you can use Nexus Remote Support:
 
-* You must have a Nexus registration key. <!--TODO: Add instructions or link for how/where to obtain the Nexus registration key-->
+* You must have a Nexus registration key. For more information, see [Generating an Instance Registration Key for Nexus Remote Support](../../qumulo-nexus-configuration-guide/register-nexus-support.html).
 
 * You must enable TCP traffic on port 443 to the following hostname:
 
