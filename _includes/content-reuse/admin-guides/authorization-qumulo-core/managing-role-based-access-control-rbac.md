@@ -40,6 +40,29 @@ This role is suitable for users or groups who can access the Qumulo Core Web UI 
 </ul>
 {{site.data.alerts.end}}
 
+<a id="qumulo-support"></a>
+### Qumulo-Support
+This is a static role that provides recommended privileges for the Qumulo Care team to access and support your cluster. 
+It grants the following privileges:
+
+* Read access to most cluster configuration endpoints
+* Action privileges for debugging integrations with external services, including AD, LDAP, and DNS
+* Limited write privileges, including `DEBUG`, to access and modify internal debugging features
+
+{% include note.html content="File-level data access is not included in the default `Qumulo-Support` role." %}
+
+{% include note.html content="The `Qumulo-Support` role may change in future releases of Qumulo Core to match the Qumulo Care team's best recommendations for privileges needed to support you quickly and efficiently." %}
+
+When you register your cluster with Nexus, Qumulo Core creates an assignment to this role for the special identifier `qumulosupport:everyone`. The Qumulo Care team uses this identifier when accessing your cluster through Nexus Remote Support. For more information, see [Enabling Nexus Remote Support](../monitoring-and-metrics/enabling-nexus-remote-support.html).
+
+{{site.data.alerts.important}}
+<ul>
+  <li>You can delete the assignment that Qumulo Core creates when you register your cluster with Nexus. However, deleting the assignment removes all privileges that the Qumulo Care team has to support your cluster.</li>
+  <li>To grant the Qumulo Care team a different set of privileges, create a custom RBAC role and assign the special identifier <code>qumulosupport:everyone</code> to the custom role.</li>
+  <li>If you manage the Qumulo Care team's access manually by using a custom RBAC role, monitor changes to the static <code>Qumulo-Support</code> role in future Qumulo Core releases. Consider applying these changes to your custom RBAC role as well.</li>
+</ul>
+{{site.data.alerts.end}}
+
 ### Custom
 For information about managing RBAC and creating custom roles by using the `qq` CLI, see the following sections in the {{site.guides.cli}}:
 

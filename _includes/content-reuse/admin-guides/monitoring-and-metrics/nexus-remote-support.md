@@ -11,19 +11,13 @@ When you register your cluster with Nexus, your cluster establishes an encrypted
 
 ### Access Control and RBAC Roles
 
-The level of API access available to the support team through Nexus is controlled by role-based access control (RBAC) roles on the cluster. A default role called `Qumulo-Support` is preconfigured on your cluster. This role provides:
+The level of API access available to the support team through Nexus is controlled by role-based access control (RBAC) roles on the cluster. 
 
-* Read access to most cluster configuration endpoints
+When you register your cluster with Nexus, Qumulo Core automatically creates a role assignment that grants the Qumulo Care team access through the predefined `Qumulo-Support` role. 
+For detailed information about the `Qumulo-Support` role and the complete list of privileges granted during registration, see 
+[Managing Role-Based Access Control (RBAC) in Qumulo Core](../authorization-qumulo-core/managing-role-based-access-control-rbac.html#qumulo-support).
 
-* Essential troubleshooting privileges, including:
-
-  * Reboot operations
-
-  * Internal debug operations
-
-  * Querying identity services
-
-{% include important.html content="File-level data access is not included in the default `Qumulo-Support` role." %}
+{% include note.html content="File-level data access is not included in the default `Qumulo-Support` role." %}
 
 You can customize the privileges available to the support team by configuring and assigning a custom RBAC role with a different privilege profile. 
 The support team is unable to configure privileges for you unless you explicitly grant them that privilege through a custom RBAC role.
