@@ -9,8 +9,8 @@ To share management responsibilities with others, you can grant specific privile
 </ul>
 {{site.data.alerts.end}}
 
-## Qumulo Core Role Types
-This section explains the Administrators, Data-Administrators, Observers, and Custom role types in Qumulo Core.
+## Qumulo Core Built-In Roles
+Qumulo Core includes several built-in static roles that provide predefined sets of privileges for common administrative scenarios. These roles are designed to support several typical organizational access control personas..
 
 ### Administrators
 {% include note.html content="Only the default administrator account can access a Qumulo cluster by using SSH." %}
@@ -63,7 +63,9 @@ When you register your cluster with Nexus, Qumulo Core creates an assignment to 
 </ul>
 {{site.data.alerts.end}}
 
-### Custom
+## Custom Roles
+You can create custom RBAC roles that match your specific access control requirements. Custom roles let you define a precise set of privileges tailored to your needs.
+
 For information about managing RBAC and creating custom roles by using the `qq` CLI, see the following sections in the {{site.guides.cli}}:
 
 * {% include qq.html command="auth_assign_role" %}
