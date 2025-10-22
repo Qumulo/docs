@@ -270,9 +270,6 @@ When you delete the [spoke portal](how-portal-creation-enables-cloud-data-fabric
 ### Step 1: Delete the Spoke Portal
 You can initiate the deletion of a spoke portal in the `Pending` or `Accepted` portal relationship state. This section explains how to delete the spoke portal from a portal relationship.
 
-{% capture dataWarning %}{{site.gns.portalDeleteCaution}}{% endcapture %}
-{% include caution.html content=dataWarning %}
-
 1. To find the spoke portal ID, run the {% include qq.html command="portal_list" %} command. {{site.exampleOutput}}
 
    ```
@@ -309,8 +306,12 @@ You can initiate the deletion of a spoke portal in the `Pending` or `Accepted` p
 
    When the synchronization process is complete and the spoke portal configuration is removed, Qumulo Core begins to reclaim the spoke portal's cluster capacity in the background.
 
-   {% capture deleteStalled %}A spoke portal with connectivity issues receives the [`Degraded`](https://docs.qumulo.com/administrator-guide/cloud-data-fabric/how-portal-creation-enables-cloud-data-fabric.html#portal-statuses) status, which in turn can cause the deletion of a portal relationship to stall in the [`Deleting`](https://docs.qumulo.com/administrator-guide/cloud-data-fabric/how-portal-creation-enables-cloud-data-fabric.html#portal-states) state. If it isn't possible to restore connectivity between portals, you can run the {% include qq.html command="portal_get_spoke" %} command with the `--force` flag to delete a spoke portal with any status and in any state.{% endcapture %}
-   {% include note.html content=deleteStalled %}
+   {{site.data.alerts.important}}
+   <ul>
+     <li>A spoke portal with connectivity issues receives the <a href="how-portal-creation-enables-cloud-data-fabric.html#portal-statuses"><code>Degraded</code></a> status, which in turn can cause the deletion of a portal relationship to stall in the <a href="how-portal-creation-enables-cloud-data-fabric.html#portal-relationship-states"><code>Deleting</code></a> state.</li>
+     <li>If it isn't possible to restore connectivity between portals, you can delete a spoke portal with any status and in any state by running the {% include qq.html command="portal_delete_spoke" %} command with the <code>--force</code> flag. At the end of this operation, Qumulo Core keeps all synchronized changes on the hub portal and discards all unsynchronized changes from the spoke portal.</li>
+   </ul>
+   {{site.data.alerts.end}}
 
 ### Step 2: Delete the Hub Portal
 You can delete a hub portal in either the `Pending` or `Accepted` portal relationship state.
