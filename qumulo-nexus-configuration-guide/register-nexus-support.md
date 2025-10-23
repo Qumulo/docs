@@ -4,6 +4,7 @@ summary: "This section explains how to generate a one-time password (OTP) token 
 permalink: /qumulo-nexus-configuration-guide/register-nexus-support.html
 sidebar: qumulo_nexus_configuration_guide_sidebar
 search: exclude
+varRegKey: The registration key value is displayed only once when you create it. You must copy and store the key securely before closing the token creation dialog. If you lose the key before using it, you must revoke it and generate a new one.
 ---
 
 To register your Qumulo cluster with Nexus for remote support, you must first generate an instance registration key (also called an OTP token) from the Qumulo Nexus portal. This one-time password securely associates your cluster with your Nexus account.
@@ -11,13 +12,18 @@ To register your Qumulo cluster with Nexus for remote support, you must first ge
 ## Prerequisites
 To generate an instance registration key:
 
-* You must have access to the Qumulo Nexus portal <!--TODO: Add link to Nexus portal when available-->
+* You must have access to <a target="_blank" href="https://nexus.qumulo.com">Qumulo Nexus</a>
 
-* You must have a Nexus user account with appropriate permissions <!--TODO: Confirm what permissions are needed-->
+* You must have a Nexus user account with appropriate permissions
 
 
 ## How Instance Registration Keys Work
-An _instance registration key_ (or _OTP token_) is a one-time password that you use to register your Qumulo cluster with Nexus. When you generate a registration key:
+An _instance registration key_ (or _OTP token_) is a one-time password that you use to register your Qumulo cluster with Nexus.
+
+{% capture regKey %}{{ page.varRegKey }}{% endcapture %}
+{% include important.html content=page.varRegKey %}
+
+When you generate a registration key:
 
 * The key is valid for 14 days from creation
 
@@ -25,14 +31,14 @@ An _instance registration key_ (or _OTP token_) is a one-time password that you 
 
 * After you use the key to register a cluster, the key is automatically removed from your active tokens list
 
-{% include important.html content="The registration key value is displayed only once when you create it. You must copy and store the key securely before closing the token creation dialog. If you lose the key before using it, you must revoke it and generate a new one." %}
-
 
 ## Generating an Instance Registration Key
-You can generate instance registration keys from the Qumulo Nexus portal user settings.
+You can generate instance registration keys from the <a target="_blank" href="https://nexus.qumulo.com">Qumulo Nexus</a> user settings.
+
+{% include important.html content=page.varRegKey %}
 
 ### To Generate an Instance Registration Key
-1. Log in to the Qumulo Nexus portal. <!--TODO: Add URL/link to Nexus portal-->
+1. Log in to the Qumulo Nexus portal. 
 
 1. Navigate to **User Settings**.
 

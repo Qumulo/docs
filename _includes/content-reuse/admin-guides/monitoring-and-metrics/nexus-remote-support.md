@@ -19,17 +19,9 @@ For detailed information about the `Qumulo-Support` role and the complete list o
 
 {% include note.html content="File-level data access is not included in the default `Qumulo-Support` role." %}
 
-You can customize the privileges available to the support team by configuring and assigning an alternative RBAC role with a different privilege profile. The support team is unable to configure privileges from their end unless you explicitly grant them that privilege through a custom RBAC role.
+You can customize the privileges available to the support team by configuring and assigning an alternative RBAC role with a different set of privileges.
 
-
-## Limitations
-
-The following are known limitations with this feature. These limitations will be addressed as the feature is developed further.
-
-* HTTP proxy support is not currently available. 
-
-* The Qumulo Care team doesn't have access through this system to help troubleshoot when the Qumulo API is unavailable (for example, when cluster quorum is down). 
-
+{% include important.html content="The support team can't configure these privileges unless you explicitly grant this permission by using a custom RBAC role." %}
 
 
 ## Prerequisites
@@ -60,8 +52,7 @@ Before you can use Nexus Remote Support:
 You can enable Nexus Remote Support by using the `qq` CLI.
 
 ### To Enable Nexus Remote Support by Using the qq CLI
-
-{% include note.html content="You must generate a Nexus registration key to enable Nexus Remote Support." %}
+{% include note.html content="You must generate a [Nexus registration key](../../qumulo-nexus-configuration-guide/register-nexus-support.html) to enable Nexus Remote Support." %}
 
 * To enable Nexus Remote Support, run the `qq set_monitoring_conf --nexus-enabled --nexus-registration-key "<my_key>"` command.
 
@@ -69,3 +60,7 @@ You can enable Nexus Remote Support by using the `qq` CLI.
 
 * To disable Nexus Remote Support, run the `qq set_monitoring_conf --nexus-disabled` command.
 
+## Limits
+* Currently, HTTP proxy support is unavailable.
+
+* When the Qumulo REST API is unavailable (for example, if your Qumulo cluster is out of quorum), the Qumulo Care Team can't use Remote Support to help troubleshoot issues with your cluster.

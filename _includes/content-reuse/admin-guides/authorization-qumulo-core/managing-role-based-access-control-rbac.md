@@ -51,7 +51,7 @@ It grants the following privileges:
 
 {% include note.html content="File-level data access is not included in the default `Qumulo-Support` role." %}
 
-{% include note.html content="The `Qumulo-Support` role changes between releases of Qumulo Core to match the Qumulo Care team's best recommendations for privileges needed to support you quickly and efficiently." %}
+{% include note.html content="The `Qumulo-Support` role might change between certain releases of Qumulo Core to match the Qumulo Care team's best recommendations for privileges needed to support you quickly and efficiently." %}
 
 When you register your cluster with Nexus, Qumulo Core creates an assignment to this role for the special identifier `qumulosupport:everyone`. The Qumulo Care team uses this identifier when accessing your cluster through Nexus Remote Support. For more information, see [Enabling Nexus Remote Support](../monitoring-and-metrics/enabling-nexus-remote-support.html).
 
