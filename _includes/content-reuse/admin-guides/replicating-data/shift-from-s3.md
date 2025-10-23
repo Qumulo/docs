@@ -256,8 +256,9 @@ We recommend the following best practices for working with Qumulo Shift-From for
 * **Disallowed Amazon S3 Paths in Qumulo Clusters:** Certain allowed Amazon S3 paths can't be copied to Qumulo clusters and cause a copy job to fail. Disallowed paths contain:
   * A trailing slash (`/`) character (with non-zero object content length)
   * Consecutive slash (`/`) characters
-  * Single and double period (`.`, `..`) characters
-  * The path component `.snapshot`
+  * The single- (`.`) or double-period (`..`) path component
+    For example: `a/../b`
+  * The `.snapshot` or `.s3-versioning~` path component
 * **Disallowed Conflicting Types:** When content in an S3 bucket or Qumulo directory changes over time, a conflict related to type mismatches might arise, the Shift-from job fails, and an error message gives details about the conflict. For example, a conflict might occur when a remote object maps to a local file system directory entry which:
   * Is a regular file with two or more links
   * Isn't a regular file (for example, a directory or a special file)
