@@ -1,9 +1,3 @@
-## Release Preparation
-- [ ] Feature log
-  - [ ] Slack blast
-  - [ ] Email to company
-- [ ] Upgrade mode reference
-
 ## Release Notes
 - [ ] Public relnotes
   - [ ] Corrections from stakeholders
@@ -12,13 +6,18 @@
 - [ ] Quarterly relnotes
   - [ ] Corrections from stakeholders
 
-## Documentation Updates
-- [ ] Docs updates
-  - [ ] Release-relevant PRs
+## Release Preparation
+- [ ] Feature log
+  - [ ] Slack blast
+  - [ ] Email to company
+- [ ] Upgrade mode reference
 
-## Automated Documentation
-- [ ] REST API docs
+## Manual Documentation Updates
+- [ ] Docs updates
+
+## Automated Documentation Updates
 - [ ] `qq` CLI docs
+- [ ] REST API docs
 
 ## Testing
 - [ ] Spellchecker
