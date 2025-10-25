@@ -9,6 +9,8 @@
 
 When you register your cluster with Nexus, your cluster establishes an encrypted, outgoing connection to Nexus that securely allows the Nexus application to interact with the cluster's API.
 
+Nexus uses asymmetric keys to securely make requests to your cluster's API. During registration, a public key is registered on your cluster while Nexus retains the private key. Your cluster uses the public key to authenticate API requests from Nexus.
+
 ### Access Control and RBAC Roles
 
 The level of API access available to the support team through Nexus is controlled by role-based access control (RBAC) roles on the cluster. 
