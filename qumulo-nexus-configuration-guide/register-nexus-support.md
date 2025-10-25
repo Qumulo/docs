@@ -4,7 +4,7 @@ summary: "This section explains how to generate a one-time password (OTP) token 
 permalink: /qumulo-nexus-configuration-guide/register-nexus-support.html
 sidebar: qumulo_nexus_configuration_guide_sidebar
 search: exclude
-varRegKey: The registration key value is displayed only once when you create it. You must copy and store the key securely before closing the token creation dialog. If you lose the key before using it, you must revoke it and generate a new one.
+varRegKey: The registration key value is displayed only once when you create it. You must copy and store the key securely before closing the token creation dialog. If you lose the key before using it, you may revoke it and generate a new one.
 ---
 
 To register your Qumulo cluster with Nexus for remote support, you must first generate an instance registration key (also called an OTP token) from the Qumulo Nexus portal. This one-time password securely associates your cluster with your Nexus account.
