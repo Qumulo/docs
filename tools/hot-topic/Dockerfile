@@ -8,8 +8,7 @@ WORKDIR /app
 COPY . /app
 
 # Install any needed packages specified in requirements.txt
-RUN pip install --no-cache-dir google-analytics-data
+RUN pip install --no-cache-dir google-analytics-data packaging
 
 # Run hot-topic.py when the container launches
 CMD ["python", "hot-topic.py"]
-
