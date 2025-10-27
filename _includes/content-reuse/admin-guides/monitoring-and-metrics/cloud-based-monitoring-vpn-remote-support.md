@@ -21,11 +21,14 @@ VPN Remote Support lets the Qumulo Care team access your Qumulo cluster solely t
 
 When you install VPN keys in the `/etc/openvpn` directory, an authorized member of the Qumulo Care team uses SSH to connect to the `ep1.qumulo.com` server and then uses SSH through a secure VPN connection to connect to your cluster (normally, this VPN connection is closed).
 
-By default, the VPN tunnel remains open for four hours to allow members of the Qumulo Care team to perform operations such as uploading logs to `monitor.qumulo.com` or to a secured Amazon S3 bucket and sending diagnostic data to a private Amazon EC2 instance for analysis.
+By default, the VPN tunnel remains open for four hours to allow members of the Qumulo Care team to run remote debugging commands on your cluster. You can configure the connection period and enable or disable VPN Remote Support at any time.
 
-{% include note.html content="Currently, Qumulo Core doesn't support VPN connections with IPv6." %}
-
-You can configure the connection period and enable or disable VPN Remote Support at any time.
+{{site.data.alerts.note}}
+<ul>
+  <li>Currently, Qumulo Core doesn't support VPN connections with IPv6.</li>
+  <li>The VPN tunnel isn't required to upload logs to <code>monitor.qumulo.com</code> or to a secure Amazon S3 bucket or to send diagnostic data to a private Amazon EC2 instance for analysis.</li>
+</ul>
+{{site.data.alerts.end}}
 {% endif %}
 
 
@@ -67,6 +70,7 @@ Cloud-Based Monitoring {% if page.platform == 'on-prem'%}and VPN Remote Support 
 * Logs, stack traces, and code dumps
 
 
+{% unless page.platform == 'anq' %}
 ## Prerequisites
 Before you can use Cloud-Based Monitoring{% if page.platform == 'on-prem'%} and VPN Remote Support:{% elsif page.platform contains 'cnq-' %}, you must enable the following destination hostnames for TCP on port 443:{% endif %}
 {% if page.platform == 'on-prem' %}
@@ -92,7 +96,7 @@ Before you can use Cloud-Based Monitoring{% if page.platform == 'on-prem'%} and 
       </tr>
       <tr>
         <td><code>api.nexus.qumulo.com</code></td>
-        <td>Nexus Monitoring log uploads</td>
+        <td>Nexus Monitoring connectivity</td>
       </tr>
 {% if page.platform == 'on-prem' %}
       <tr>
@@ -112,7 +116,7 @@ Before you can use Cloud-Based Monitoring{% if page.platform == 'on-prem'%} and 
 
 <a id="enabling-cloud-based-monitoring"></a>
 ## Enabling Cloud-Based Monitoring
-{% if page.platform == 'cnq-aws' or page.platform == 'cnq-azure' or page.platform == 'cnq-gcp' %}Cloud-Based Monitoring is enabled for you by default. If you have disabled Cloud-Based Monitoring, you can enable it{% else %}You can enable Cloud-Based Monitoring{% endif %} by using the Qumulo Core Web UI or the `qq` CLI.
+{% if page.platform contains == 'cnq-' %}Cloud-Based Monitoring is enabled for you by default. If you have disabled Cloud-Based Monitoring, you can enable it{% else %}You can enable Cloud-Based Monitoring{% endif %} by using the Qumulo Core Web UI or the `qq` CLI.
 
 ### To Enable Cloud-Based Monitoring by Using the Qumulo Core Web UI
 
@@ -163,3 +167,4 @@ You can enable Remote Support by using the Qumulo Core Web UI or the `qq` CLI.
 
 * To check the status of VPN Remote Support, run the `qq set_monitoring_conf` command.
 {% endif %}
+{% endunless %}
