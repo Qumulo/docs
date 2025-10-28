@@ -491,8 +491,8 @@ entries:
     output: web, pdf
     folderitems:
 
-    - title: Enabling Cloud-Based Monitoring and Remote Support
-      url: /administrator-guide/monitoring-and-metrics/enabling-cloud-based-monitoring-remote-support.html
+    - title: Enabling Cloud-Based Monitoring and VPN Remote Support
+      url: /administrator-guide/monitoring-and-metrics/enabling-cloud-based-monitoring-vpn-remote-support.html
       output: web, pdf
 
     - title: Connecting to Cloud-Based Monitoring and S3 with a Custom Proxy
@@ -503,7 +503,7 @@ entries:
       url: /administrator-guide/monitoring-and-metrics/restoring-default-values-cloud-based-nexus-monitoring.html
       output: web, pdf
 
-    - title: How Audit Logging Works in Qumulo Core
+    - title: How Audit Logging Works
       url: /administrator-guide/monitoring-and-metrics/how-audit-logging-works.html
       output: web, pdf
 

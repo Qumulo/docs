@@ -437,8 +437,8 @@ entries:
     output: web, pdf
     folderitems:
 
-    - title: Configuring Cloud-Based Monitoring and Remote Support
-      url: /cloud-native-azure-administrator-guide/monitoring-and-metrics/configuring-cloud-based-monitoring-remote-support.html
+    - title: Enabling Cloud-Based Monitoring
+      url: /cloud-native-azure-administrator-guide/monitoring-and-metrics/enabling-cloud-based-monitoring.html
       output: web, pdf
 
     - title: Connecting to Cloud-Based Monitoring and S3 with a Custom Proxy
@@ -449,7 +449,7 @@ entries:
       url: /cloud-native-azure-administrator-guide/monitoring-and-metrics/restoring-default-values-cloud-based-nexus-monitoring.html
       output: web, pdf
 
-    - title: How Audit Logging Works in Qumulo Core
+    - title: How Audit Logging Works
       url: /cloud-native-azure-administrator-guide/monitoring-and-metrics/how-audit-logging-works.html
       output: web, pdf
 
