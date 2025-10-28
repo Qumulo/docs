@@ -9,6 +9,8 @@
 
 When you register your cluster with Nexus, your cluster establishes an encrypted, outgoing connection to Nexus that securely allows the Nexus application to interact with the cluster's API.
 
+Nexus uses asymmetric keys to securely make requests to your cluster's API. During registration, a public key is registered on your cluster while Nexus retains the private key. Your cluster uses the public key to authenticate API requests from Nexus.
+
 ### Access Control and RBAC Roles
 
 The level of API access available to the support team through Nexus is controlled by role-based access control (RBAC) roles on the cluster. 
@@ -19,7 +21,7 @@ For detailed information about the `Qumulo-Support` role and the complete list o
 
 {% include note.html content="File-level data access is not included in the default `Qumulo-Support` role." %}
 
-You can customize the privileges available to the support team by configuring and assigning an alternative RBAC role with a different set of privileges.
+You can customize the privileges available to the support team by configuring and assigning an custom RBAC role with a different set of privileges.
 
 {% include important.html content="The support team can't configure these privileges unless you explicitly grant this permission by using a custom RBAC role." %}
 
