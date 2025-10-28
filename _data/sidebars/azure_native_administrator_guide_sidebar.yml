@@ -439,7 +439,11 @@ entries:
       url: /azure-native-administrator-guide/monitoring-and-metrics/configuring-nexus-remote-support.html
       output: web, pdf
 
-    - title: How Audit Logging Works in Qumulo Core
+    - title: How Cloud-Based Monitoring Works
+      url: /azure-native-administrator-guide/monitoring-and-metrics/how-cloud-based-monitoring-works.html
+      output: web, pdf
+
+    - title: How Audit Logging Works
       url: /azure-native-administrator-guide/monitoring-and-metrics/how-audit-logging-works.html
       output: web, pdf
 
