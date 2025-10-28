@@ -46,9 +46,9 @@ This role is suitable for members of the Qumulo Care Team who access and support
 {{site.data.alerts.important}}
 <ul>
   <li>The built-in <code>Qumulo-Support</code> RBAC role doesn't include file-level access to your cluster's data.</li>
-  <li>When you <a href="../monitoring-and-metrics/enabling-nexus-remote-support.html">register your Qumulo cluster with Nexus to enable Remote Support</a>, Qumulo Core adds and assigns the <code>qumulosupport:everyone</code> trustee to the <code>Qumulo-Support</code> RBAC role. Although you can delete this assignment or assign other roles to the trustee, this removes all the permissions that the Qumulo Care Team requires to support your Qumulo cluster.</li>
-  <li>To grant the Qumulo Care Team a custom set of privileges, <a href="#custom-roles">create a custom RBAC role</a> and assign the <code>qumulosupport:everyone</code> trustee to your custom role.</li>
-  <li>If you manage the Qumulo Care Team's access to your cluster by using a custom RBAC role, review any changes to the built-in `Qumulo-Support` role after upgrading your Qumulo cluster and apply these changes to your customer RBAC role.</li>
+  <li>When you <a href="../monitoring-and-metrics/enabling-nexus-remote-support.html">register your Qumulo cluster with Nexus to enable Remote Support</a>, Qumulo Core adds and assigns the <code>qumulosupport:everyone</code> trustee to the <code>Qumulo-Support</code> RBAC role. You can delete this assignment (this removes all the permissions that the Qumulo Care Team requires to support your Qumulo cluster) or assign other roles to the trustee.</li>
+  <li>You can <a href="#custom-roles">create a custom RBAC role</a> to give access to the Qumulo Care Team and assign the <code>qumulosupport:everyone</code> trustee to this custom role.</li>
+  <li>If you use a custom RBAC role to give access to the Qumulo Care Team, review any changes to the built-in `Qumulo-Support` role after upgrading your Qumulo cluster and apply these changes to your customer RBAC role.</li>
 </ul>
 {{site.data.alerts.end}}
 
