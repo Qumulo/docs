@@ -120,7 +120,7 @@ entries:
     output: web, pdf
     folderitems:
 
-    - title: Managing Role-Based Access Control
+    - title: Managing Role-Based Access Control (RBAC)
       url: /administrator-guide/authorization-qumulo-core/managing-role-based-access-control-rbac.html
       output: web, pdf
 
