@@ -41,18 +41,16 @@ This role is suitable for users or groups who can access the Qumulo Core Web UI 
 {{site.data.alerts.end}}
 
 ### Qumulo-Support
-This role is suitable for members of the Qumulo Care Team who access and support your Qumulo cluster.
-
 {{site.data.alerts.important}}
 <ul>
   <li>The built-in <code>Qumulo-Support</code> RBAC role doesn't include file-level access to your cluster's data.</li>
   <li>When you <a href="../monitoring-and-metrics/enabling-nexus-remote-support.html">register your Qumulo cluster with Nexus to enable Remote Support</a>, Qumulo Core adds and assigns the <code>qumulosupport:everyone</code> trustee to the <code>Qumulo-Support</code> RBAC role. You can delete this assignment (this removes all the permissions that the Qumulo Care Team requires to support your Qumulo cluster) or assign other roles to the trustee.</li>
-  <li>You can <a href="#custom-roles">create a custom RBAC role</a> to give access to the Qumulo Care Team and assign the <code>qumulosupport:everyone</code> trustee to this custom role.</li>
-  <li>If you use a custom RBAC role to give access to the Qumulo Care Team, review any changes to the built-in `Qumulo-Support` role after upgrading your Qumulo cluster and apply these changes to your customer RBAC role.</li>
+  <li>You can <a href="#custom-roles">create a custom RBAC role</a> for the Qumulo Care Team and assign the <code>qumulosupport:everyone</code> trustee to this custom role.</li>
+  <li>If you use a custom RBAC role for the Qumulo Care Team, review any changes to the built-in <code>Qumulo-Support</code> role after upgrading your Qumulo cluster and apply these changes to your custom RBAC role.</li>
 </ul>
 {{site.data.alerts.end}}
 
-Users with this role have:
+This role is suitable for members of the Qumulo Care Team who access and support your Qumulo cluster. Users with this role have:
 
 * Read-only permissions for REST API endpoints that control cluster configuration
 * Permission for REST API endpoints that help debug integration with external services (such as Active Directory, LDAP, and DNS)
