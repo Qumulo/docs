@@ -26,12 +26,12 @@ This role is suitable for system administrators. Users with this role have full 
 ### Data-Administrators
 This role is suitable for Qumulo REST API and `qq` CLI users who don't have access to the Qumulo Core Web UI but have the same file privileges as those of the Administrators role, including:
 
-* Read and write permissions for all NFS, SMB, quota, and snapshot APIs
-* Read-only permissions for local API users
+* Read and write permissions for all NFS, SMB, quota, and snapshot REST APIs
+* Read-only permissions for local REST API users
 * Access to analytics and file system
 
 ### Observers
-This role is suitable for users or groups who can access the Qumulo Core Web UI and read-only APIs (with the exception of debug APIs and authentication settings).
+This role is suitable for users or groups who can access the Qumulo Core Web UI and read-only REST APIs (with the exception of `DEBUG` REST APIs and authentication settings).
 
 {{site.data.alerts.note}}
 <ul>
@@ -40,28 +40,24 @@ This role is suitable for users or groups who can access the Qumulo Core Web UI 
 </ul>
 {{site.data.alerts.end}}
 
-<a id="qumulo-support"></a>
 ### Qumulo-Support
-This is a static role that provides recommended privileges for the Qumulo Care Team to access and support your cluster. 
-It grants the following privileges:
-
-* Read access to most cluster configuration endpoints
-* Action privileges for debugging integrations with external services, including AD, LDAP, and DNS
-* Limited write privileges, including `DEBUG`, to access and modify internal debugging features
-
-{% include note.html content="File-level data access is not included in the default `Qumulo-Support` role." %}
-
-{% include note.html content="The `Qumulo-Support` role might change between certain releases of Qumulo Core to match the Qumulo Care Team's best recommendations for privileges needed to support you quickly and efficiently." %}
-
-When you register your cluster with Nexus, Qumulo Core creates an assignment to this role for the special identifier `qumulosupport:everyone`. The Qumulo Care Team uses this identifier when accessing your cluster through Nexus Remote Support. For more information, see [Enabling Nexus Remote Support](../monitoring-and-metrics/enabling-nexus-remote-support.html).
+This role is suitable for members of the Qumulo Care Team who access and support your Qumulo cluster.
 
 {{site.data.alerts.important}}
 <ul>
-  <li>You can delete the assignment that Qumulo Core creates when you register your cluster with Nexus. However, deleting the assignment removes all privileges that the Qumulo Care Team has to support your cluster.</li>
-  <li>To grant the Qumulo Care Team a different set of privileges, create a custom RBAC role and assign the special identifier <code>qumulosupport:everyone</code> to the custom role.</li>
-  <li>If you manage the Qumulo Care Team's access manually by using a custom RBAC role, monitor changes to the static <code>Qumulo-Support</code> role in future Qumulo Core releases. Consider applying these changes to your custom RBAC role as well.</li>
+  <li>The built-in <code>Qumulo-Support</code> RBAC role doesn't include file-level access to your cluster's data.</li>
+  <li>When you <a href="../monitoring-and-metrics/enabling-nexus-remote-support.html">register your Qumulo cluster with Nexus to enable Remote Support</a>, Qumulo Core adds and assigns the <code>qumulosupport:everyone</code> trustee to the <code>Qumulo-Support</code> RBAC role. Although you can delete this assignment or assign other roles to the trustee, this removes all the permissions that the Qumulo Care Team requires to support your Qumulo cluster.</li>
+  <li>To grant the Qumulo Care Team a custom set of privileges, <a href="#custom-roles">create a custom RBAC role</a> and assign the <code>qumulosupport:everyone</code> trustee to your custom role.</li>
+  <li>If you manage the Qumulo Care Team's access to your cluster by using a custom RBAC role, review any changes to the built-in `Qumulo-Support` role after upgrading your Qumulo cluster and apply these changes to your customer RBAC role.</li>
 </ul>
 {{site.data.alerts.end}}
+
+Users with this role have:
+
+* Read-only permissions for REST API endpoints that control cluster configuration
+* Permission for REST API endpoints that help debug integration with external services (such as Active Directory, LDAP, and DNS)
+* Write permissions (including `DEBUG` REST APIs) for internal debugging features
+
 
 ## Custom Roles
 For information about managing RBAC and creating custom roles by using the `qq` CLI, see the following sections in the {{site.guides.cli}}:
