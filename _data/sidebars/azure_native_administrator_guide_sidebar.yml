@@ -435,10 +435,6 @@ entries:
     output: web, pdf
     folderitems:
 
-    - title: Enabling Nexus Remote Support
-      url: /azure-native-administrator-guide/monitoring-and-metrics/enabling-nexus-remote-support.html
-      output: web, pdf
-
     - title: How Cloud-Based Monitoring Works
       url: /azure-native-administrator-guide/monitoring-and-metrics/how-cloud-based-monitoring-works.html
       output: web, pdf
