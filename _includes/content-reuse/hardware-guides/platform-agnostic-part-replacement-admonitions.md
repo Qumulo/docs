@@ -8,7 +8,7 @@
       <li>Requires precautions to avoid damage caused by electrostatic discharge (ESD) by using industry standard anti-static equipment (such as gloves or wrist straps)</li>
     </ul>
   </li>
-  <li>We don’t recommend updating firmware on Qumulo-certified hardware nodes unless the equipment manufacturer or a member of the Qumulo Care team advises you to do so. For questions about this process, {{site.contactQumuloCare}}.</li>
+  <li>We don’t recommend updating firmware on Qumulo-certified hardware nodes unless the equipment manufacturer or a member of the Qumulo Care Team advises you to do so. For questions about this process, {{site.contactQumuloCare}}.</li>
 </ul>
 {{site.data.alerts.end}}
 {% endunless %}

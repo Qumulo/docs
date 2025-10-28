@@ -1,14 +1,14 @@
 {% if page.platform == 'on-prem' %}
-{% include important.html content="To let the Qumulo Care team provide fast support when you need it most, we strongly recommend enabling both Cloud-Based Monitoring and VPN Remote Support." %}
+{% include important.html content="To let the Qumulo Care Team provide fast support when you need it most, we strongly recommend enabling both Cloud-Based Monitoring and VPN Remote Support." %}
 {% endif %}
 
 
 ## How Cloud-Based Monitoring Works
-Cloud-Based Monitoring (which includes Nexus Monitoring functionality) sends telemetry data to Qumulo to allow the Qumulo Care team to monitor your Qumulo cluster proactively.
+Cloud-Based Monitoring (which includes Nexus Monitoring functionality) sends telemetry data to Qumulo to allow the Qumulo Care Team to monitor your Qumulo cluster proactively.
 
 {% include important.html content="Cloud-Based Monitoring and Nexus Monitoring _don't_ collect file names, path names, client IP addresses, or account credentials." %}
 
-We use a proprietary application that aggregates diagnostic cluster data and alerts the Qumulo Care team if an issue arises. Depending on the issue severity and cluster state, a member of the Qumulo Care team reaches out. For more information, see:
+We use a proprietary application that aggregates diagnostic cluster data and alerts the Qumulo Care Team if an issue arises. Depending on the issue severity and cluster state, a member of the Qumulo Care Team reaches out. For more information, see:
 
 * [Qumulo Care Response Times](https://docs.qumulo.com/contacting-qumulo-care-team.html#qumulo-care-response-times)
 
@@ -17,11 +17,11 @@ We use a proprietary application that aggregates diagnostic cluster data and ale
 
 {% if page.platform == 'on-prem' %}
 ## How VPN Remote Support Works
-VPN Remote Support lets the Qumulo Care team access your Qumulo cluster solely to assist you with a software update or perform diagnostics or troubleshooting on your cluster from the command line.
+VPN Remote Support lets the Qumulo Care Team access your Qumulo cluster solely to assist you with a software update or perform diagnostics or troubleshooting on your cluster from the command line.
 
-When you install VPN keys in the `/etc/openvpn` directory, an authorized member of the Qumulo Care team uses SSH to connect to the `ep1.qumulo.com` server and then uses SSH through a secure VPN connection to connect to your cluster (normally, this VPN connection is closed).
+When you install VPN keys in the `/etc/openvpn` directory, an authorized member of the Qumulo Care Team uses SSH to connect to the `ep1.qumulo.com` server and then uses SSH through a secure VPN connection to connect to your cluster (normally, this VPN connection is closed).
 
-By default, the VPN tunnel remains open for four hours to allow members of the Qumulo Care team to run remote debugging commands on your cluster. You can configure the connection period and enable or disable VPN Remote Support at any time.
+By default, the VPN tunnel remains open for four hours to allow members of the Qumulo Care Team to run remote debugging commands on your cluster. You can configure the connection period and enable or disable VPN Remote Support at any time.
 
 {{site.data.alerts.note}}
 <ul>
