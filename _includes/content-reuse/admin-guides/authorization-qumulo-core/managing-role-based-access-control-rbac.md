@@ -9,7 +9,7 @@ To share management responsibilities with others, you can grant specific privile
 </ul>
 {{site.data.alerts.end}}
 
-## Qumulo Core Built-In Roles
+## Built-In Roles
 Qumulo Core includes _built-in roles_ that provide predefined privileges for common administrative operations to typical access control personas. This section explains the use cases and the authorization scope for each built-in role.
 
 ### Administrators
