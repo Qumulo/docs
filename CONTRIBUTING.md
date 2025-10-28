@@ -33,7 +33,7 @@ To contribute, open an issue.
 ## Contributing Security Issues
 **Important:** Do not create public security issues on GitHub.
 
-If you discover a potential security issue, contact the [Qumulo Care team](https://docs.qumulo.com/contacting-qumulo-care-team.html).
+If you discover a potential security issue, contact the [Qumulo Care Team](https://docs.qumulo.com/contacting-qumulo-care-team.html).
 
 ## Code of Conduct
 This project has adopted the [Contributor Covenant Code of Conduct](CODE_OF_CONDUCT.md). If you have any questions, email [qontent@qumulo.com](mailto:qontent@qumulo.com) with questions or comments.

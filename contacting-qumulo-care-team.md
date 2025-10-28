@@ -1,6 +1,6 @@
 ---
 title: "Contacting the Qumulo Care Team"
-summary: "This section explains how to contact the Qumulo Care team through Slack, email, or by phone."
+summary: "This section explains how to contact the Qumulo Care Team through Slack, email, or by phone."
 permalink: contacting-qumulo-care-team.html
 sidebar: home_sidebar
 breadcrumbs: exclude
@@ -14,22 +14,22 @@ We take pride in helping our customers and coming up with solutions for every sp
 {% include content-reuse/qumulo-care/qumulo-care-ways-to-get-help.md %}
 
 ## Support Hours
-The Qumulo Care team is available Monday to Friday, 24&times;5 to answer your questions and requests. During off hours, a team member is on call 24&times;7 for when you might need help the most.
+The Qumulo Care Team is available Monday to Friday, 24&times;5 to answer your questions and requests. During off hours, a team member is on call 24&times;7 for when you might need help the most.
 
 ## Qumulo Care Response Times
-The service availability and initial response time vary based on an issue's severity level, starting from the time when the Qumulo Care team first learns about the issue.
+The service availability and initial response time vary based on an issue's severity level, starting from the time when the Qumulo Care Team first learns about the issue.
 
 For more information about severity levels, service availability, and response times, see [Qumulo Customer Success Program Offerings](https://qumulo.com/terms-hub/support-offerings/) on the Qumulo Terms Hub.
 
 ## Slack Tips and Tricks
-The Qumulo Care team monitors the [qumulocare Slack channel](https://qumulocare.slack.com/) during our normal Monday-to-Friday, 24&times;5 standard support hours. If you are currently a Qumulo customer, the fastest way to reach us is by using your dedicated Slack channel.
+The Qumulo Care Team monitors the [qumulocare Slack channel](https://qumulocare.slack.com/) during our normal Monday-to-Friday, 24&times;5 standard support hours. If you are currently a Qumulo customer, the fastest way to reach us is by using your dedicated Slack channel.
 
 The following are some tips and tricks that can help you get the most out of making requests through Slack.
 
-* Keep all communications with the Qumulo Care team in your dedicated Slack channel.
+* Keep all communications with the Qumulo Care Team in your dedicated Slack channel.
 
-  * If you haven't been working with a specific member of the Qumulo Care team, include `@here` in your first message to notify the present Qumulo Care team members of your request.
+  * If you haven't been working with a specific member of the Qumulo Care Team, include `@here` in your first message to notify the present Qumulo Care Team members of your request.
 
-  * If you've been working with a specific member of the Qumulo Care team, use `@<name>` in your dedicated Slack channel. If that team member is unavailable, another Qumulo Care team member responds to your request.
+  * If you've been working with a specific member of the Qumulo Care Team, use `@<name>` in your dedicated Slack channel. If that team member is unavailable, another Qumulo Care Team member responds to your request.
 
 * Check **Also send to #&lt;channel&gt;** whenever you reply to a message thread.

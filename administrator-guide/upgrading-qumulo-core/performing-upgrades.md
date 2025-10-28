@@ -6,7 +6,7 @@ redirect_from:
   - /administrator-guide/upgrading-qumulo-core/instant-software-platform.html
   - /administrator-guide/upgrades/instant-software-platform.html
 sidebar: administrator_guide_sidebar
-varContactQumuloCare: If you perform multiple upgrades back to back, you might encounter one or more platform upgrades in one of the incremental releases; you must install these upgrades before you continue. Before performing back to back upgrades, <a href="https://docs.qumulo.com/contacting-qumulo-care-team.html">contact the Qumulo Care team</a> for guidance.
+varContactQumuloCare: If you perform multiple upgrades back to back, you might encounter one or more platform upgrades in one of the incremental releases; you must install these upgrades before you continue. Before performing back to back upgrades, <a href="https://docs.qumulo.com/contacting-qumulo-care-team.html">contact the Qumulo Care Team</a> for guidance.
 varViewUpgradeStatus: "To view your cluster's upgrade phase and status, run the `qq upgrade_status` command."
 varRollingRebootRefresh: If you don't see a rolling reboot option for a platform upgrade, refresh the page in your browser.
 varDisableProgressBar: "You can disable the CLI progress bar by adding the <code>--no-monitor</code> flag to your command. If you do this, it isn't possible to cancel the upgrade process after it begins."

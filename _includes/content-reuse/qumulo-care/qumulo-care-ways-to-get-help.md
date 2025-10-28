@@ -1,4 +1,4 @@
-The Qumulo Care team is always here to help you. You can contact us by using any of the following ways.
+The Qumulo Care Team is always here to help you. You can contact us by using any of the following ways.
 
 * <span class="emoji">📚</span> Browse the [Qumulo Knowledge Base](https://care.qumulo.com/s/knowledge)
 
