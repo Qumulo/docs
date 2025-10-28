@@ -1,11 +1,11 @@
 {% if page.platform contains 'cnq-' %}
-{% include important.html content="To let the Qumulo Care team provide fast support when you need it most, we strongly recommend enabling Nexus Remote Support." %}
+{% include important.html content="To let the Qumulo Care Team provide fast support when you need it most, we strongly recommend enabling Nexus Remote Support." %}
 {% else %}
 {% include important.html content="This support method is currently most relevant to the CNQ platform. Cloud-Based Remote Support is still strongly recommended to provide fast support where available." %}
 {% endif %}
 
 ## How Nexus Remote Support Works
-[Enabling Nexus Remote Support](#enabling-nexus-remote-support) lets the Qumulo Care team access your Qumulo cluster to assist you with diagnostics or troubleshooting.
+[Enabling Nexus Remote Support](#enabling-nexus-remote-support) lets the Qumulo Care Team access your Qumulo cluster to assist you with diagnostics or troubleshooting.
 
 When you register your cluster with Nexus, your cluster establishes an encrypted, outgoing connection to Nexus that securely allows the Nexus application to interact with the cluster's API.
 
@@ -15,7 +15,7 @@ Nexus uses asymmetric keys to securely make requests to your cluster's API. Duri
 
 The level of API access available to the support team through Nexus is controlled by role-based access control (RBAC) roles on the cluster. 
 
-When you register your cluster with Nexus, Qumulo Core automatically creates a role assignment that grants the Qumulo Care team access through the predefined `Qumulo-Support` role. 
+When you register your cluster with Nexus, Qumulo Core automatically creates a role assignment that grants the Qumulo Care Team access through the predefined `Qumulo-Support` role. 
 For detailed information about the `Qumulo-Support` role and the complete list of privileges granted during registration, see 
 [Managing Role-Based Access Control (RBAC) in Qumulo Core](../authorization-qumulo-core/managing-role-based-access-control-rbac.html#qumulo-support).
 
