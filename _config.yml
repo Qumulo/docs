@@ -13,10 +13,10 @@ company_name: Qumulo, Inc.
 # this appears in the footer
 
 github_editme_path: qumulo/docs/blob/mainline/
-# if you're using Github, provide the basepath to the branch you've created for reviews, following the sample here. if not, leave this value blank.
+# if you use Github, provide the basepath to the branch you've created for reviews
 
 # gitlab_editme_path: tomjoht/documentation-theme-jekyll/blob/gh-pages/
-# if you're using GitLab, provide the basepath to the branch you've created for reviews, following the sample here. if not, leave this value blank.
+# if you use GitLab, provide the basepath to the branch you've created for reviews
 
 # google_analytics: UA-66296557-1
 # if you have google-analytics ID, put it in. if not, edit this value to blank.
