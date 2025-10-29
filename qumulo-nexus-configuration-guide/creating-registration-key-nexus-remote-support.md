@@ -36,7 +36,7 @@ To generate a registration key, you must have administrative access to your orga
 
 <a id="revoke-registration-key"></a>
 ### To Revoke an Unused Registration Key
-You can revoke a registraton key before you use it to enable Nexus Remote Support or before it expires.
+You can revoke a registration key before you use it to enable Nexus Remote Support or before it expires.
 
 1. [Log in to Qumulo Nexus](https://nexus.qumulo.com/login).
 

@@ -14,7 +14,7 @@ When you register your Qumulo cluster with Nexus, you create a public-private ke
 
 {{site.data.alerts.note}}
 <ul>
-  <li>When the Qumulo REST API is unavalable (for example, if your Qumulo cluster is out of quorum), the Qumulo Care Team can't use Nexus Remote Support to troubleshoot issues with your cluster. In this type of scenario, {{site.contactQumuloCare}} for assistance.</li>
+  <li>When the Qumulo REST API is unavailable (for example, if your Qumulo cluster is out of quorum), the Qumulo Care Team can't use Nexus Remote Support to troubleshoot issues with your cluster. In this type of scenario, {{site.contactQumuloCare}} for assistance.</li>
   <li>Nexus Remote isn't compatible with HTTP proxies.</li>
 </ul>
 {{site.data.alerts.end}}
