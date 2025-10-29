@@ -6,4 +6,5 @@ redirect_from:
   - /azure-administrator-guide/authorization-qumulo-core/managing-role-based-access-control-rbac.html
 sidebar: azure_native_administrator_guide_sidebar
 include_content: content-reuse/admin-guides/authorization-qumulo-core/managing-role-based-access-control-rbac.md
+platform: anq
 ---
