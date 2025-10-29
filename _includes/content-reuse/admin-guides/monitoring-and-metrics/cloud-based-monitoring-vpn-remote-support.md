@@ -76,7 +76,7 @@ Before you can use Cloud-Based Monitoring{% if page.platform == 'on-prem'%} and 
 {% if page.platform == 'on-prem' %}
 * A member of the Qumulo Care Team must install VPN keys on your Qumulo cluster
 
-* You must enable the following destination hostnames for TCP on port 443
+* You must enable TCP traffic on port 443 for the following hostnames:
 {% endif %}
   <table>
     <thead>
