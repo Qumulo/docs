@@ -22,13 +22,13 @@ When you register your Qumulo cluster with Nexus, you create a public-private ke
 ## Prerequisites
 Before you can use Nexus Remote Support:
 
-* [Create an instance registration key](https://docs.qumulo.com/qumulo-nexus-configuration-guide/creating-instance-registration-key.html)
+* [Create a registration key](https://docs.qumulo.com/qumulo-nexus-configuration-guide/creating-registration-key-nexus-remote-support.html)
 
 * Enable TCP traffic on port 443 for the `api.nexus.qumulo.com` hostname to allow Nexus Monitoring and Nexus Remote Support connectivity
 
 
 ## To Enable Nexus Remote Support by Using the qq CLI
-Run the {% include qq.html command="set_monitoring_conf" %} with the `--nexus-enabled` flag and specify your instance registration key. For example:
+Run the {% include qq.html command="set_monitoring_conf" %} with the `--nexus-enabled` flag and specify your registration key. For example:
 
 ```bash
 qq set_monitoring_conf \
