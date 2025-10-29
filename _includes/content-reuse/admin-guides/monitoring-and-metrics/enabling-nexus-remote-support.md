@@ -22,7 +22,7 @@ When you register your Qumulo cluster with Nexus, you create a public-private ke
 ## Prerequisites
 Before you can use Nexus Remote Support:
 
-* [Create a registration key](https://docs.qumulo.com/qumulo-nexus-configuration-guide/creating-registration-key.html)
+* [Create a registration key](https://docs.qumulo.com/qumulo-nexus-configuration-guide/creating-registration-key-nexus-remote-support.html)
 
 * Enable TCP traffic on port 443 for the `api.nexus.qumulo.com` hostname to allow Nexus Monitoring and Nexus Remote Support connectivity
 
