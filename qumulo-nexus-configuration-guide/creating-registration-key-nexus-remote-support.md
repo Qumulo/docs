@@ -1,7 +1,7 @@
 ---
-title: "Creating an Instance Registration Key for Qumulo Nexus Remote Support"
-summary: "This section explains how to create a key that lets you register your Qumulo cluster with Nexus to provide access to the Qumulo Care Team."
-permalink: /qumulo-nexus-configuration-guide/creating-instance-registration-key.html
+title: "Creating a Registration Key for Qumulo Nexus Remote Support"
+summary: "This section explains how to register your Qumulo cluster with Nexus to provide access to the Qumulo Care Team."
+permalink: /qumulo-nexus-configuration-guide/creating-registration-key-nexus-remote-support.html
 sidebar: qumulo_nexus_configuration_guide_sidebar
 search: exclude
 varRegKey: The registration key value is displayed only once when you create it. You must copy and store the key securely before closing the creation dialog. If you lose the key before using it, you may revoke it and generate a new one.
