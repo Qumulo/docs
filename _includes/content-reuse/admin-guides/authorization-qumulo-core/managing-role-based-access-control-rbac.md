@@ -1,7 +1,5 @@
 To share management responsibilities with others, you can grant specific privileges to a user or group&mdash;locally or through Active Directory&mdash;by using RBAC.
 
-<a id="custom-roles"></a>
-
 {{site.data.alerts.important}}
 <ul>
   <li>For changes to take effect, a user account with newly assigned roles must log out of Qumulo Core and then log back in (or its sessions must time out).</li>
@@ -40,6 +38,8 @@ This role is suitable for users or groups who can access the Qumulo Core Web UI 
 </ul>
 {{site.data.alerts.end}}
 
+{% if page.platform != 'anq' %}
+<a id="qumulo-support"></a>
 ### Qumulo-Support
 {{site.data.alerts.important}}
 <ul>
@@ -55,8 +55,10 @@ This role is suitable for members of the Qumulo Care Team who access and support
 * Read permissions for REST API endpoints that control cluster configuration
 * Write permissions (including `DEBUG` REST APIs) for internal debugging features
 * Permissions for REST API endpoints that help debug integration with external services (such as Active Directory, LDAP, and DNS)
+{% endif %}
 
 
+<a id="custom-roles"></a>
 ## Custom Roles
 For information about managing RBAC and creating custom roles by using the `qq` CLI, see the following sections in the {{site.guides.cli}}:
 

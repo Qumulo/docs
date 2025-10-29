@@ -10,7 +10,7 @@ A _registration key_ works like a one-time password (it is valid for 14 days). I
 To generate a registration key, you must have administrative access to your organization's Nexus account.
 
 
-<a id="create-key"></a>
+<a id="create-registration-key"></a>
 ## To Create a Registration Key in Qumulo Nexus
 1. [Log in to Qumulo Nexus](https://nexus.qumulo.com/login).
 

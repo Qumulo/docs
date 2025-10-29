@@ -10,7 +10,7 @@ Nexus Remote Support lets the Qumulo Care Team access your Qumulo cluster solely
 
 When you register your Qumulo cluster with Nexus, you create a public-private key pair (your cluster holds the public key and Nexus holds the private key). Qumulo Core uses the public key to establish an encrypted outgoing connection that authenticates REST API operations from Nexus securely.
 
-{{site.nexus.rbacWhenYouReg}} This RBAC role determines the level of REST API access that Nexus gives to the Qumulo Care Team. For more information, see [the Qumulo-Support section in Managing Role-Based Access Control (RBAC) for Users and Groups](/authorization-qumulo-core/managing-role-based-access-control-rbac.html#qumulo-support).
+{{site.nexus.rbacWhenYouReg}} This RBAC role determines the level of REST API access that Nexus gives to the Qumulo Care Team. For more information, see [the Qumulo-Support section in Managing Role-Based Access Control (RBAC) for Users and Groups](../authorization-qumulo-core/managing-role-based-access-control-rbac.html#qumulo-support).
 
 {{site.data.alerts.note}}
 <ul>
