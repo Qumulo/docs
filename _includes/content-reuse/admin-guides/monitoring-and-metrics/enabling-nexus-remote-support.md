@@ -8,13 +8,13 @@
 ## How Nexus Remote Support Works
 Nexus Remote Support lets the Qumulo Care Team access your Qumulo cluster solely to assist you with a software update or perform diagnostics or troubleshooting on your cluster from the command line.
 
-When you register your Qumulo cluster with Nexus, you create a public-private key pair (your cluster holds the public key and Nexus holds the private key). Qumulo Core uses the public key to establish an encrypted outgoing connection that authenticates REST API operations issued by Nexus securely.
+When you register your Qumulo cluster with Nexus, you create a public-private key pair (your cluster holds the public key and Nexus holds the private key). Qumulo Core uses the public key to establish an encrypted outgoing connection that authenticates REST API operations from Nexus securely.
 
-{{site.nexus.rbacWhenYouReg}} This RBAC role determines the level of REST API access that Nexus gives to the Qumulo Care Team. For more information, see [the `Qumulo-Support` section in Managing Role-Based Access Control (RBAC) for Users and Groups](/authorization-qumulo-core/managing-role-based-access-control-rbac.html#qumulo-support).
+{{site.nexus.rbacWhenYouReg}} This RBAC role determines the level of REST API access that Nexus gives to the Qumulo Care Team. For more information, see [the Qumulo-Support section in Managing Role-Based Access Control (RBAC) for Users and Groups](/authorization-qumulo-core/managing-role-based-access-control-rbac.html#qumulo-support).
 
 {{site.data.alerts.note}}
 <ul>
-  <li>When the Qumulo REST API is unavalable (for example, if your Qumulo cluster is out of quorum), the Qumulo Care Team can't use Nexus Remote Support to troubleshoot issues with your cluster. {{site.contactQumuloCare}} for assistance.</li>
+  <li>When the Qumulo REST API is unavalable (for example, if your Qumulo cluster is out of quorum), the Qumulo Care Team can't use Nexus Remote Support to troubleshoot issues with your cluster. In this type of scenario, {{site.contactQumuloCare}} for assistance.</li>
   <li>Nexus Remote isn't compatible with HTTP proxies.</li>
 </ul>
 {{site.data.alerts.end}}
@@ -22,7 +22,7 @@ When you register your Qumulo cluster with Nexus, you create a public-private ke
 ## Prerequisites
 Before you can use Nexus Remote Support:
 
-* [Create an instance registration key](https://docs.qumulo.com/qumulo-nexus-configuration-guide/creating-instance-registration-key.html).
+* [Create an instance registration key](https://docs.qumulo.com/qumulo-nexus-configuration-guide/creating-instance-registration-key.html)
 
 * Enable TCP traffic on port 443 for the `api.nexus.qumulo.com` hostname to allow Nexus Monitoring and Nexus Remote Support connectivity
 
@@ -36,4 +36,5 @@ qq set_monitoring_conf \
   --nexus-registration-key "1A2B3CDEF4"
 ```
 
-{% include tip.html content="To disable Nexus Remote Support, run the {% include qq.html command="set_monitoring_conf" %} command with the `--nexus-disabled` flag." %}
+{% capture disableNRS %}To disable Nexus Remote Support, run the {% include qq.html command="set_monitoring_conf" %} command with the `--nexus-disabled` flag.{% endcapture %}
+{% include tip.html content=disableNRS %}
