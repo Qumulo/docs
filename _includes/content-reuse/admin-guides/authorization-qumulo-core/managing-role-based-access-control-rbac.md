@@ -52,9 +52,9 @@ This role is suitable for users or groups who can access the Qumulo Core Web UI 
 
 This role is suitable for members of the Qumulo Care Team who access and support your Qumulo cluster. Users with this role have:
 
-* Read-only permissions for REST API endpoints that control cluster configuration
-* Permission for REST API endpoints that help debug integration with external services (such as Active Directory, LDAP, and DNS)
+* Read permissions for REST API endpoints that control cluster configuration
 * Write permissions (including `DEBUG` REST APIs) for internal debugging features
+* Permissions for REST API endpoints that help debug integration with external services (such as Active Directory, LDAP, and DNS)
 
 
 ## Custom Roles
