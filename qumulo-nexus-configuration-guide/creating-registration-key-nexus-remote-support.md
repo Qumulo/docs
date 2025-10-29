@@ -1,6 +1,6 @@
 ---
 title: "Creating a Registration Key for Qumulo Nexus Remote Support"
-summary: "This section explains how to create a registration key for your Qumulo cluster to provide Nexus Remote Support access to the Qumulo Care Team."
+summary: 'This section explains how to create a registration key for your Qumulo cluster to provide <a href="https://docs.qumulo.com/administrator-guide/monitoring-and-metrics/enabling-nexus-remote-support.html">Nexus Remote Support</a> access to the Qumulo Care Team.'
 permalink: /qumulo-nexus-configuration-guide/creating-registration-key-nexus-remote-support.html
 sidebar: qumulo_nexus_configuration_guide_sidebar
 ---
@@ -22,19 +22,21 @@ To generate a registration key, you must have administrative access to your orga
 
 1. In the **Registration Key Created** dialog box, click **Copy Key** and they click **Done**.
 
-   {{site.data.alerts.note}}
+   {{site.data.alerts.important}}
    <ul>
      <li>Nexus displays the registration key only once. Copy this key to secure location.</li>
      <li>If you misplace your key before enabling Nexus Remote Support, <a href="#revoke-registration-key">revoke the key</a> and then <a href="#create-registration-key">create a new one</a>.</li>
    </ul>
    {{site.data.alerts.end}}
 
-   Your registration key appears in the **Registered Keys** section, which shows the key's name, creation date, and expiration date. When you use the registration key to enable Nexus Remote Support, Nexus removes the key from this list.
+   Your registration key appears in the **Registered Keys** section, which shows the key's name, creation date, and expiration date.
+
+   When you use the registration key to enable Nexus Remote Support, Nexus removes the key from this list.
 
 
 <a id="revoke-registration-key"></a>
 ### To Revoke an Unused Registration Key
-If you need to revoke a registration key before it is used or expires:
+You can revoke a registraton key before you use it to enable Nexus Remote Support or before it expires.
 
 1. [Log in to Qumulo Nexus](https://nexus.qumulo.com/login).
 
