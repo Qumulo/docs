@@ -50,6 +50,6 @@ entries:
       url: /qumulo-nexus-configuration-guide/enabling-sso-with-idp/system-administrator-configuration-workflow.html
       output: web, pdf
 
-  - title: Generating an Instance Registration Key
-    url: /qumulo-nexus-configuration-guide/generating-instance-registration-key.html
+  - title: Creating an Instance Registration Key
+    url: /qumulo-nexus-configuration-guide/creating-instance-registration-key.html
     output: web, pdf
