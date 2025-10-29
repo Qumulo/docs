@@ -351,7 +351,7 @@ While native Amazon S3 functionality requires Object Lock to be enabled for an S
 ## Comparison of Known Limits between S3 in Qumulo and Amazon
 This section compares the Qumulo Core S3 API limits with native Amazon S3 limits.
 
-### Limits for S3 Buckets
+### Known Limits for S3 Buckets
 
 <table>
 <thead>
@@ -385,7 +385,7 @@ This section compares the Qumulo Core S3 API limits with native Amazon S3 limits
 
 {% include note.html content="If all objects in a bucket are under the same directory&mdash;none of the object keys have the slash (`/`) character in them&mdash;the maximum number of objects in the bucket is limited to the maximum number of files in a directory. For more information, see [Supported Configurations and Known Limits for Qumulo Core](../getting-started/supported-configurations-known-limits.html)." %}
 
-### Limits for S3 Objects
+### Known Limits for S3 Objects
 
 <table>
 <thead>
@@ -426,7 +426,7 @@ This section compares the Qumulo Core S3 API limits with native Amazon S3 limits
 </tbody>
 </table>
 
-### Limits for S3 Multipart Uploads
+### Known Limits for S3 Multipart Uploads
 
 <table>
 <thead>
@@ -469,7 +469,7 @@ This section compares the Qumulo Core S3 API limits with native Amazon S3 limits
 </tbody>
 </table>
 
-### Limits for S3 API Requests
+### Known Limits for S3 API Requests
 
 <table>
 <thead>
