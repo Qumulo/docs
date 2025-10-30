@@ -6,8 +6,9 @@ For information about upgrade types for each release, see <a href='mode-referenc
 
 {% capture nexusLink %}<p>{{site.downloadsRelnotes}}{{site.loginRequired}}</p>{% endcapture %}
 
-## Qumulo Core 7.6.4
+## Qumulo Core 7.6.4.1 
 {{ nexusLink }}
+{% include important.html content="This release resolves an issue that affects Azure Native Qumulo (ANQ) and Cloud Native Qumulo (CNQ) clusters. While this issue did not affect cluster data, it caused the system to not delete unneeded backing data. When certain accounts retained this data incorrectly, there was a potential increase in consumption of cloud resources." %}
 
 * Improved Cloud Data Fabric portal data synchronization speeds
 * Made improvements to the Network Configuration V3 REST APIs:
