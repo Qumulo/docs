@@ -491,6 +491,10 @@ entries:
     output: web, pdf
     folderitems:
 
+    - title: Enabling Nexus Remote Support
+      url: /administrator-guide/monitoring-and-metrics/enabling-nexus-remote-support.html
+      output: web, pdf
+
     - title: Enabling Cloud-Based Monitoring and VPN Remote Support
       url: /administrator-guide/monitoring-and-metrics/enabling-cloud-based-monitoring-vpn-remote-support.html
       output: web, pdf

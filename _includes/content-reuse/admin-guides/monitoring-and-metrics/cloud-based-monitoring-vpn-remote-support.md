@@ -76,7 +76,7 @@ Before you can use Cloud-Based Monitoring{% if page.platform == 'on-prem'%} and 
 {% if page.platform == 'on-prem' %}
 * A member of the Qumulo Care Team must install VPN keys on your Qumulo cluster
 
-* You must enable the following destination hostnames for TCP on port 443
+* You must enable TCP traffic on port 443 for the following hostnames:
 {% endif %}
   <table>
     <thead>
@@ -133,12 +133,14 @@ Before you can use Cloud-Based Monitoring{% if page.platform == 'on-prem'%} and 
 {{site.monitoring.cloudBasedMonitoringEnabled}}
 
 ### To Enable Cloud-Based Monitoring by Using the qq CLI
+Run the {% include qq.html command="set_monitoring_conf" %} command with the `--enabled` flag.
 
-* To enable Cloud-Based Monitoring, run the `qq set_monitoring_conf --enabled` command.
-
-* To disable Cloud-Based Monitoring, run the `qq set_monitoring_conf --disabled` command.
-
-* To check the status of Cloud-Based Monitoring, run the `qq monitoring_conf` command.
+{{site.data.alerts.tip}}
+<ul>
+  <li>To disable Cloud-Based Monitoring, run the {% include qq.html command="set_monitoring_conf" %} command with the <code>--disabled</code> flag.</li>
+  <li>To check the status of Cloud-Based Monitoring, run the {% include qq.html command="monitoring_status_get" %} command.</li>
+</ul>
+{{site.data.alerts.end}}
 
 {% if page.platform == 'on-prem' %}
 <a id="enabling-remote-support"></a>
@@ -160,11 +162,13 @@ You can enable Remote Support by using the Qumulo Core Web UI or the `qq` CLI.
 {{site.monitoring.cloudBasedMonitoringEnabled}}
 
 ### To Enable VPN Remote Support by Using the qq CLI
+Run the {% include qq.html command="set_monitoring_conf" %} command with the `--vpn-enabled` flag.
 
-* To enable VPN Remote Support, run the `qq set_monitoring_conf --vpn-enabled` command.
-
-* To disable VPN Remote Support, run the `qq set_monitoring_conf --vpn-disabled` command.
-
-* To check the status of VPN Remote Support, run the `qq set_monitoring_conf` command.
+{{site.data.alerts.tip}}
+<ul>
+  <li>To disable VPN Remote Support, run the {% include qq.html command="set_monitoring_conf" %} command with the <code>--vpn-disabled</code> flag.</li>
+  <li>To check the status of VPN Remote Support, run the {% include qq.html command="monitoring_status_get" %} command.</li>
+</ul>
+{{site.data.alerts.end}}
 {% endif %}
 {% endunless %}

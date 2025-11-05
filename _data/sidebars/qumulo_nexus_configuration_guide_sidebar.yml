@@ -49,3 +49,7 @@ entries:
     - title: System Administrator Configuration Workflow
       url: /qumulo-nexus-configuration-guide/enabling-sso-with-idp/system-administrator-configuration-workflow.html
       output: web, pdf
+
+  - title: Creating a Registration Key for Nexus Remote Support
+    url: /qumulo-nexus-configuration-guide/creating-registration-key-nexus-remote-support.html
+    output: web, pdf
