@@ -23,8 +23,8 @@ sidebar: qq_cli_command_reference_sidebar
 summary: This section explains how to use the <code>qq upgrade_cluster</code> command.
 synopsis: Run a cluster upgrade to the image specified by the provided path
 title: qq upgrade_cluster
-usage: "qq upgrade_cluster [-h] [--path PATH] [--no-monitor] [--rolling] [--num-nodes-to-reboot\
-  \ NO_COMMAND_NUM_NODES_TO_REBOOT]\n    {prepare,commit} ..."
+usage: qq upgrade_cluster [-h] [--path PATH] [--no-monitor] [--rolling] [--num-nodes-to-reboot
+  NO_COMMAND_NUM_NODES_TO_REBOOT] {prepare,commit} ...
 zendesk_source: qq CLI Command Guide
 
 ---

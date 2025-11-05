@@ -6,6 +6,19 @@ For information about upgrade types for each release, see <a href='mode-referenc
 
 {% capture nexusLink %}<p>{{site.downloadsRelnotes}}{{site.loginRequired}}</p>{% endcapture %}
 
+## Qumulo Core 7.7.0 (Quarterly)
+{{ nexusLink }}
+{{site.data.alerts.important}}
+<ul>
+  <li>This release upgrades the host OS from Ubuntu 24.04, kernel 6.8 to Ubuntu 24.04, kernel 6.14.</li>
+  <li>To prevent Qumulo Core from consuming a large amount of memory when an Intel NIC is installed in a node, we have blacklisted the <code>irdma</code> kernel module in Qumulo Core 7.7.0 (and higher).</li>
+</ul>
+{{site.data.alerts.end}}
+
+* Added Non-VPN Remote Support for self-managed Cloud Native Qumulo (CNQ) and on-premises clusters
+* Removed and replaced `qq` CLI commands related to Snapshots functionality
+* Resolved an issue with case sensitivity in Domain Controller lists
+
 ## Qumulo Core 7.6.4.1 
 {{ nexusLink }}
 {% include important.html content="This release resolves an issue that affects Azure Native Qumulo (ANQ) and Cloud Native Qumulo (CNQ) clusters. While this issue did not affect cluster data, it caused the system to not delete unneeded backing data. When certain accounts retained this data incorrectly, there was a potential increase in consumption of cloud resources." %}

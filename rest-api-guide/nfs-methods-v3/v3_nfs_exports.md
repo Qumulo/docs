@@ -47,32 +47,34 @@ methods:
         : [\n                        \"LOCAL_USER\",\n                        \"LOCAL_GROUP\"\
         ,\n                        \"NFS_GID\",\n                        \"NFS_UID\"\
         ,\n                        \"SMB_SID\",\n                        \"INTERNAL\"\
-        ,\n                        \"QUMULO_OPERATOR\"\n                      ],\n\
-        \                      \"description\": \"id_type:\\n * `INTERNAL` - INTERNAL,\\\
-        n * `LOCAL_GROUP` - LOCAL_GROUP,\\n * `LOCAL_USER` - LOCAL_USER,\\n * `NFS_GID`\
-        \ - NFS_GID,\\n * `NFS_UID` - NFS_UID,\\n * `QUMULO_OPERATOR` - QUMULO_OPERATOR,\\\
-        n * `SMB_SID` - SMB_SID\"\n                    },\n                    \"\
-        id_value\": {\n                      \"description\": \"id_value\",\n    \
-        \                  \"type\": \"string\"\n                    }\n         \
-        \         }\n                },\n                \"map_to_group\": {\n   \
-        \               \"description\": \"An identity object representing an NFS\
-        \ group. If given, map_to_user should be an NFS user.\",\n               \
-        \   \"type\": \"object\",\n                  \"properties\": {\n         \
-        \           \"id_type\": {\n                      \"type\": \"string\",\n\
-        \                      \"enum\": [\n                        \"LOCAL_USER\"\
+        ,\n                        \"QUMULO_OPERATOR\",\n                        \"\
+        QUMULO_SUPPORT\"\n                      ],\n                      \"description\"\
+        : \"id_type:\\n * `INTERNAL` - INTERNAL,\\n * `LOCAL_GROUP` - LOCAL_GROUP,\\\
+        n * `LOCAL_USER` - LOCAL_USER,\\n * `NFS_GID` - NFS_GID,\\n * `NFS_UID` -\
+        \ NFS_UID,\\n * `QUMULO_OPERATOR` - QUMULO_OPERATOR,\\n * `QUMULO_SUPPORT`\
+        \ - QUMULO_SUPPORT,\\n * `SMB_SID` - SMB_SID\"\n                    },\n \
+        \                   \"id_value\": {\n                      \"description\"\
+        : \"id_value\",\n                      \"type\": \"string\"\n            \
+        \        }\n                  }\n                },\n                \"map_to_group\"\
+        : {\n                  \"description\": \"An identity object representing\
+        \ an NFS group. If given, map_to_user should be an NFS user.\",\n        \
+        \          \"type\": \"object\",\n                  \"properties\": {\n  \
+        \                  \"id_type\": {\n                      \"type\": \"string\"\
+        ,\n                      \"enum\": [\n                        \"LOCAL_USER\"\
         ,\n                        \"LOCAL_GROUP\",\n                        \"NFS_GID\"\
         ,\n                        \"NFS_UID\",\n                        \"SMB_SID\"\
         ,\n                        \"INTERNAL\",\n                        \"QUMULO_OPERATOR\"\
-        \n                      ],\n                      \"description\": \"id_type:\\\
-        n * `INTERNAL` - INTERNAL,\\n * `LOCAL_GROUP` - LOCAL_GROUP,\\n * `LOCAL_USER`\
-        \ - LOCAL_USER,\\n * `NFS_GID` - NFS_GID,\\n * `NFS_UID` - NFS_UID,\\n * `QUMULO_OPERATOR`\
-        \ - QUMULO_OPERATOR,\\n * `SMB_SID` - SMB_SID\"\n                    },\n\
-        \                    \"id_value\": {\n                      \"description\"\
-        : \"id_value\",\n                      \"type\": \"string\"\n            \
-        \        }\n                  }\n                }\n              }\n    \
-        \        }\n          },\n          \"fields_to_present_as_32_bit\": {\n \
-        \           \"description\": \"Specify which NFS3 result values should be\
-        \ 32-bit sanitized on this export. Has no effect on exports used over NFS4.\"\
+        ,\n                        \"QUMULO_SUPPORT\"\n                      ],\n\
+        \                      \"description\": \"id_type:\\n * `INTERNAL` - INTERNAL,\\\
+        n * `LOCAL_GROUP` - LOCAL_GROUP,\\n * `LOCAL_USER` - LOCAL_USER,\\n * `NFS_GID`\
+        \ - NFS_GID,\\n * `NFS_UID` - NFS_UID,\\n * `QUMULO_OPERATOR` - QUMULO_OPERATOR,\\\
+        n * `QUMULO_SUPPORT` - QUMULO_SUPPORT,\\n * `SMB_SID` - SMB_SID\"\n      \
+        \              },\n                    \"id_value\": {\n                 \
+        \     \"description\": \"id_value\",\n                      \"type\": \"string\"\
+        \n                    }\n                  }\n                }\n        \
+        \      }\n            }\n          },\n          \"fields_to_present_as_32_bit\"\
+        : {\n            \"description\": \"Specify which NFS3 result values should\
+        \ be 32-bit sanitized on this export. Has no effect on exports used over NFS4.\"\
         ,\n            \"type\": \"array\",\n            \"items\": {\n          \
         \    \"type\": \"string\",\n              \"enum\": [\n                \"\
         FILE_IDS\",\n                \"FILE_SIZES\",\n                \"FS_SIZE\"\
@@ -128,27 +130,30 @@ methods:
         \                \"enum\": [\n                  \"LOCAL_USER\",\n        \
         \          \"LOCAL_GROUP\",\n                  \"NFS_GID\",\n            \
         \      \"NFS_UID\",\n                  \"SMB_SID\",\n                  \"\
-        INTERNAL\",\n                  \"QUMULO_OPERATOR\"\n                ],\n \
-        \               \"description\": \"id_type:\\n * `INTERNAL` - INTERNAL,\\\
-        n * `LOCAL_GROUP` - LOCAL_GROUP,\\n * `LOCAL_USER` - LOCAL_USER,\\n * `NFS_GID`\
-        \ - NFS_GID,\\n * `NFS_UID` - NFS_UID,\\n * `QUMULO_OPERATOR` - QUMULO_OPERATOR,\\\
-        n * `SMB_SID` - SMB_SID\"\n              },\n              \"id_value\": {\n\
-        \                \"description\": \"id_value\",\n                \"type\"\
-        : \"string\"\n              }\n            }\n          },\n          \"map_to_group\"\
-        : {\n            \"description\": \"An identity object representing an NFS\
-        \ group. If given, map_to_user should be an NFS user.\",\n            \"type\"\
-        : \"object\",\n            \"properties\": {\n              \"id_type\": {\n\
-        \                \"type\": \"string\",\n                \"enum\": [\n    \
-        \              \"LOCAL_USER\",\n                  \"LOCAL_GROUP\",\n     \
-        \             \"NFS_GID\",\n                  \"NFS_UID\",\n             \
-        \     \"SMB_SID\",\n                  \"INTERNAL\",\n                  \"\
-        QUMULO_OPERATOR\"\n                ],\n                \"description\": \"\
+        INTERNAL\",\n                  \"QUMULO_OPERATOR\",\n                  \"\
+        QUMULO_SUPPORT\"\n                ],\n                \"description\": \"\
         id_type:\\n * `INTERNAL` - INTERNAL,\\n * `LOCAL_GROUP` - LOCAL_GROUP,\\n\
         \ * `LOCAL_USER` - LOCAL_USER,\\n * `NFS_GID` - NFS_GID,\\n * `NFS_UID` -\
-        \ NFS_UID,\\n * `QUMULO_OPERATOR` - QUMULO_OPERATOR,\\n * `SMB_SID` - SMB_SID\"\
-        \n              },\n              \"id_value\": {\n                \"description\"\
-        : \"id_value\",\n                \"type\": \"string\"\n              }\n \
-        \           }\n          }\n        }\n      }\n    },\n    \"fields_to_present_as_32_bit\"\
+        \ NFS_UID,\\n * `QUMULO_OPERATOR` - QUMULO_OPERATOR,\\n * `QUMULO_SUPPORT`\
+        \ - QUMULO_SUPPORT,\\n * `SMB_SID` - SMB_SID\"\n              },\n       \
+        \       \"id_value\": {\n                \"description\": \"id_value\",\n\
+        \                \"type\": \"string\"\n              }\n            }\n  \
+        \        },\n          \"map_to_group\": {\n            \"description\": \"\
+        An identity object representing an NFS group. If given, map_to_user should\
+        \ be an NFS user.\",\n            \"type\": \"object\",\n            \"properties\"\
+        : {\n              \"id_type\": {\n                \"type\": \"string\",\n\
+        \                \"enum\": [\n                  \"LOCAL_USER\",\n        \
+        \          \"LOCAL_GROUP\",\n                  \"NFS_GID\",\n            \
+        \      \"NFS_UID\",\n                  \"SMB_SID\",\n                  \"\
+        INTERNAL\",\n                  \"QUMULO_OPERATOR\",\n                  \"\
+        QUMULO_SUPPORT\"\n                ],\n                \"description\": \"\
+        id_type:\\n * `INTERNAL` - INTERNAL,\\n * `LOCAL_GROUP` - LOCAL_GROUP,\\n\
+        \ * `LOCAL_USER` - LOCAL_USER,\\n * `NFS_GID` - NFS_GID,\\n * `NFS_UID` -\
+        \ NFS_UID,\\n * `QUMULO_OPERATOR` - QUMULO_OPERATOR,\\n * `QUMULO_SUPPORT`\
+        \ - QUMULO_SUPPORT,\\n * `SMB_SID` - SMB_SID\"\n              },\n       \
+        \       \"id_value\": {\n                \"description\": \"id_value\",\n\
+        \                \"type\": \"string\"\n              }\n            }\n  \
+        \        }\n        }\n      }\n    },\n    \"fields_to_present_as_32_bit\"\
         : {\n      \"description\": \"Specify which NFS3 result values should be 32-bit\
         \ sanitized on this export. Has no effect on exports used over NFS4.\",\n\
         \      \"type\": \"array\",\n      \"items\": {\n        \"type\": \"string\"\
@@ -197,11 +202,12 @@ methods:
         \             \"LOCAL_USER\",\n                  \"LOCAL_GROUP\",\n      \
         \            \"NFS_GID\",\n                  \"NFS_UID\",\n              \
         \    \"SMB_SID\",\n                  \"INTERNAL\",\n                  \"QUMULO_OPERATOR\"\
-        \n                ],\n                \"description\": \"id_type:\\n * `INTERNAL`\
-        \ - INTERNAL,\\n * `LOCAL_GROUP` - LOCAL_GROUP,\\n * `LOCAL_USER` - LOCAL_USER,\\\
-        n * `NFS_GID` - NFS_GID,\\n * `NFS_UID` - NFS_UID,\\n * `QUMULO_OPERATOR`\
-        \ - QUMULO_OPERATOR,\\n * `SMB_SID` - SMB_SID\"\n              },\n      \
-        \        \"id_value\": {\n                \"description\": \"id_value\",\n\
+        ,\n                  \"QUMULO_SUPPORT\"\n                ],\n            \
+        \    \"description\": \"id_type:\\n * `INTERNAL` - INTERNAL,\\n * `LOCAL_GROUP`\
+        \ - LOCAL_GROUP,\\n * `LOCAL_USER` - LOCAL_USER,\\n * `NFS_GID` - NFS_GID,\\\
+        n * `NFS_UID` - NFS_UID,\\n * `QUMULO_OPERATOR` - QUMULO_OPERATOR,\\n * `QUMULO_SUPPORT`\
+        \ - QUMULO_SUPPORT,\\n * `SMB_SID` - SMB_SID\"\n              },\n       \
+        \       \"id_value\": {\n                \"description\": \"id_value\",\n\
         \                \"type\": \"string\"\n              }\n            }\n  \
         \        },\n          \"map_to_group\": {\n            \"description\": \"\
         An identity object representing an NFS group. If given, map_to_user should\
@@ -210,25 +216,26 @@ methods:
         \                \"enum\": [\n                  \"LOCAL_USER\",\n        \
         \          \"LOCAL_GROUP\",\n                  \"NFS_GID\",\n            \
         \      \"NFS_UID\",\n                  \"SMB_SID\",\n                  \"\
-        INTERNAL\",\n                  \"QUMULO_OPERATOR\"\n                ],\n \
-        \               \"description\": \"id_type:\\n * `INTERNAL` - INTERNAL,\\\
-        n * `LOCAL_GROUP` - LOCAL_GROUP,\\n * `LOCAL_USER` - LOCAL_USER,\\n * `NFS_GID`\
-        \ - NFS_GID,\\n * `NFS_UID` - NFS_UID,\\n * `QUMULO_OPERATOR` - QUMULO_OPERATOR,\\\
-        n * `SMB_SID` - SMB_SID\"\n              },\n              \"id_value\": {\n\
-        \                \"description\": \"id_value\",\n                \"type\"\
-        : \"string\"\n              }\n            }\n          }\n        }\n   \
-        \   }\n    },\n    \"fields_to_present_as_32_bit\": {\n      \"description\"\
+        INTERNAL\",\n                  \"QUMULO_OPERATOR\",\n                  \"\
+        QUMULO_SUPPORT\"\n                ],\n                \"description\": \"\
+        id_type:\\n * `INTERNAL` - INTERNAL,\\n * `LOCAL_GROUP` - LOCAL_GROUP,\\n\
+        \ * `LOCAL_USER` - LOCAL_USER,\\n * `NFS_GID` - NFS_GID,\\n * `NFS_UID` -\
+        \ NFS_UID,\\n * `QUMULO_OPERATOR` - QUMULO_OPERATOR,\\n * `QUMULO_SUPPORT`\
+        \ - QUMULO_SUPPORT,\\n * `SMB_SID` - SMB_SID\"\n              },\n       \
+        \       \"id_value\": {\n                \"description\": \"id_value\",\n\
+        \                \"type\": \"string\"\n              }\n            }\n  \
+        \        }\n        }\n      }\n    },\n    \"fields_to_present_as_32_bit\"\
+        : {\n      \"description\": \"Specify which NFS3 result values should be 32-bit\
+        \ sanitized on this export. Has no effect on exports used over NFS4\",\n \
+        \     \"type\": \"array\",\n      \"items\": {\n        \"type\": \"string\"\
+        ,\n        \"enum\": [\n          \"FILE_IDS\",\n          \"FILE_SIZES\"\
+        ,\n          \"FS_SIZE\",\n          \"ALL\"\n        ],\n        \"description\"\
         : \"Specify which NFS3 result values should be 32-bit sanitized on this export.\
-        \ Has no effect on exports used over NFS4\",\n      \"type\": \"array\",\n\
-        \      \"items\": {\n        \"type\": \"string\",\n        \"enum\": [\n\
-        \          \"FILE_IDS\",\n          \"FILE_SIZES\",\n          \"FS_SIZE\"\
-        ,\n          \"ALL\"\n        ],\n        \"description\": \"Specify which\
-        \ NFS3 result values should be 32-bit sanitized on this export. Has no effect\
-        \ on exports used over NFS4:\\n * `ALL` - Force all 64 bit fields to fit in\
-        \ 32 bits.,\\n * `FILE_IDS` - Hash high file ids to 32 bits.,\\n * `FILE_SIZES`\
-        \ - Clamp large file sizes to 4GiB to fit in 32 bits.,\\n * `FS_SIZE` - Clamp\
-        \ available, used and total space reported for the FS to 4GiB.\"\n      }\n\
-        \    }\n  }\n}"
+        \ Has no effect on exports used over NFS4:\\n * `ALL` - Force all 64 bit fields\
+        \ to fit in 32 bits.,\\n * `FILE_IDS` - Hash high file ids to 32 bits.,\\\
+        n * `FILE_SIZES` - Clamp large file sizes to 4GiB to fit in 32 bits.,\\n *\
+        \ `FS_SIZE` - Clamp available, used and total space reported for the FS to\
+        \ 4GiB.\"\n      }\n    }\n  }\n}"
 rest_endpoint: /v3/nfs/exports/
 api_version: v3
 permalink: /rest-api-guide/nfs-methods-v3/v3_nfs_exports.html
