@@ -34,39 +34,41 @@ methods:
         \  \"WORLD\",\n                  \"POSIX_USER\",\n                  \"POSIX_GROUP\"\
         ,\n                  \"ACTIVE_DIRECTORY\",\n                  \"API_INVALID_DOMAIN\"\
         ,\n                  \"API_RESERVED_DOMAIN\",\n                  \"API_INTERNAL_DOMAIN\"\
-        ,\n                  \"API_OPERATOR_DOMAIN\",\n                  \"API_CREATOR_DOMAIN\"\
-        \n                ],\n                \"description\": \"domain:\\n * `ACTIVE_DIRECTORY`\
-        \ - ACTIVE_DIRECTORY,\\n * `API_CREATOR_DOMAIN` - API_CREATOR_DOMAIN,\\n *\
-        \ `API_INTERNAL_DOMAIN` - API_INTERNAL_DOMAIN,\\n * `API_INVALID_DOMAIN` -\
-        \ API_INVALID_DOMAIN,\\n * `API_NULL_DOMAIN` - API_NULL_DOMAIN,\\n * `API_OPERATOR_DOMAIN`\
-        \ - API_OPERATOR_DOMAIN,\\n * `API_RESERVED_DOMAIN` - API_RESERVED_DOMAIN,\\\
-        n * `LOCAL` - LOCAL,\\n * `POSIX_GROUP` - POSIX_GROUP,\\n * `POSIX_USER` -\
-        \ POSIX_USER,\\n * `WORLD` - WORLD\"\n              },\n              \"auth_id\"\
-        : {\n                \"description\": \"auth_id\",\n                \"type\"\
-        : \"string\"\n              },\n              \"uid\": {\n               \
-        \ \"description\": \"uid\",\n                \"type\": \"number\"\n      \
-        \        },\n              \"gid\": {\n                \"description\": \"\
-        gid\",\n                \"type\": \"number\"\n              },\n         \
-        \     \"sid\": {\n                \"description\": \"sid\",\n            \
-        \    \"type\": \"string\"\n              },\n              \"name\": {\n \
-        \               \"description\": \"name\",\n                \"type\": \"string\"\
-        \n              }\n            }\n          },\n          \"initiated\": {\n\
-        \            \"description\": \"The time at which the upload was initiated.\"\
-        ,\n            \"type\": \"string\"\n          },\n          \"last_modified\"\
-        : {\n            \"description\": \"The time at which the upload was modified\
-        \ last.\",\n            \"type\": \"string\"\n          },\n          \"total_blocks\"\
-        : {\n            \"description\": \"The total number of blocks (data and meta\
-        \ blocks) that the upload has used.\",\n            \"type\": \"string\"\n\
-        \          },\n          \"datablocks\": {\n            \"description\": \"\
-        The number of data blocks that the upload has used.\",\n            \"type\"\
-        : \"string\"\n          },\n          \"metablocks\": {\n            \"description\"\
-        : \"The number of meta blocks that the upload has used.\",\n            \"\
-        type\": \"string\"\n          },\n          \"completing\": {\n          \
-        \  \"description\": \"The upload is in progress.\",\n            \"type\"\
-        : \"boolean\"\n          },\n          \"system_initiated\": {\n         \
-        \   \"description\": \"The system has initiated the current upload as part\
-        \ of a different request.\",\n            \"type\": \"boolean\"\n        \
-        \  }\n        }\n      }\n    }\n  }\n}"
+        ,\n                  \"API_OPERATOR_DOMAIN\",\n                  \"API_QUMULO_SUPPORT_DOMAIN\"\
+        ,\n                  \"API_CREATOR_DOMAIN\"\n                ],\n        \
+        \        \"description\": \"domain:\\n * `ACTIVE_DIRECTORY` - ACTIVE_DIRECTORY,\\\
+        n * `API_CREATOR_DOMAIN` - API_CREATOR_DOMAIN,\\n * `API_INTERNAL_DOMAIN`\
+        \ - API_INTERNAL_DOMAIN,\\n * `API_INVALID_DOMAIN` - API_INVALID_DOMAIN,\\\
+        n * `API_NULL_DOMAIN` - API_NULL_DOMAIN,\\n * `API_OPERATOR_DOMAIN` - API_OPERATOR_DOMAIN,\\\
+        n * `API_QUMULO_SUPPORT_DOMAIN` - API_QUMULO_SUPPORT_DOMAIN,\\n * `API_RESERVED_DOMAIN`\
+        \ - API_RESERVED_DOMAIN,\\n * `LOCAL` - LOCAL,\\n * `POSIX_GROUP` - POSIX_GROUP,\\\
+        n * `POSIX_USER` - POSIX_USER,\\n * `WORLD` - WORLD\"\n              },\n\
+        \              \"auth_id\": {\n                \"description\": \"auth_id\"\
+        ,\n                \"type\": \"string\"\n              },\n              \"\
+        uid\": {\n                \"description\": \"uid\",\n                \"type\"\
+        : \"number\"\n              },\n              \"gid\": {\n               \
+        \ \"description\": \"gid\",\n                \"type\": \"number\"\n      \
+        \        },\n              \"sid\": {\n                \"description\": \"\
+        sid\",\n                \"type\": \"string\"\n              },\n         \
+        \     \"name\": {\n                \"description\": \"name\",\n          \
+        \      \"type\": \"string\"\n              }\n            }\n          },\n\
+        \          \"initiated\": {\n            \"description\": \"The time at which\
+        \ the upload was initiated.\",\n            \"type\": \"string\"\n       \
+        \   },\n          \"last_modified\": {\n            \"description\": \"The\
+        \ time at which the upload was modified last.\",\n            \"type\": \"\
+        string\"\n          },\n          \"total_blocks\": {\n            \"description\"\
+        : \"The total number of blocks (data and meta blocks) that the upload has\
+        \ used.\",\n            \"type\": \"string\"\n          },\n          \"datablocks\"\
+        : {\n            \"description\": \"The number of data blocks that the upload\
+        \ has used.\",\n            \"type\": \"string\"\n          },\n         \
+        \ \"metablocks\": {\n            \"description\": \"The number of meta blocks\
+        \ that the upload has used.\",\n            \"type\": \"string\"\n       \
+        \   },\n          \"completing\": {\n            \"description\": \"The upload\
+        \ is in progress.\",\n            \"type\": \"boolean\"\n          },\n  \
+        \        \"system_initiated\": {\n            \"description\": \"The system\
+        \ has initiated the current upload as part of a different request.\",\n  \
+        \          \"type\": \"boolean\"\n          }\n        }\n      }\n    }\n\
+        \  }\n}"
     responses:
     - code: '200'
       description: Return value on success

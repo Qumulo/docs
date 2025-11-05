@@ -694,17 +694,11 @@ entries:
     url: /qq-cli-command-guide/multitenancy/
   - folderitems:
     - output: web,pdf
-      title: network_add_network
-      url: /qq-cli-command-guide/network/network_add_network.html
-    - output: web,pdf
       title: network_backend_interfaces
       url: /qq-cli-command-guide/network/network_backend_interfaces.html
     - output: web,pdf
       title: network_create_network
       url: /qq-cli-command-guide/network/network_create_network.html
-    - output: web,pdf
-      title: network_delete_network
-      url: /qq-cli-command-guide/network/network_delete_network.html
     - output: web,pdf
       title: network_frontend_interfaces
       url: /qq-cli-command-guide/network/network_frontend_interfaces.html
@@ -712,35 +706,14 @@ entries:
       title: network_get_config
       url: /qq-cli-command-guide/network/network_get_config.html
     - output: web,pdf
-      title: network_get_interface
-      url: /qq-cli-command-guide/network/network_get_interface.html
-    - output: web,pdf
-      title: network_get_network
-      url: /qq-cli-command-guide/network/network_get_network.html
-    - output: web,pdf
       title: network_list_connections
       url: /qq-cli-command-guide/network/network_list_connections.html
-    - output: web,pdf
-      title: network_list_interfaces
-      url: /qq-cli-command-guide/network/network_list_interfaces.html
-    - output: web,pdf
-      title: network_list_networks
-      url: /qq-cli-command-guide/network/network_list_networks.html
-    - output: web,pdf
-      title: network_mod_interface
-      url: /qq-cli-command-guide/network/network_mod_interface.html
-    - output: web,pdf
-      title: network_mod_network
-      url: /qq-cli-command-guide/network/network_mod_network.html
     - output: web,pdf
       title: network_modify_interface
       url: /qq-cli-command-guide/network/network_modify_interface.html
     - output: web,pdf
       title: network_modify_network
       url: /qq-cli-command-guide/network/network_modify_network.html
-    - output: web,pdf
-      title: network_poll
-      url: /qq-cli-command-guide/network/network_poll.html
     - output: web,pdf
       title: network_put_config
       url: /qq-cli-command-guide/network/network_put_config.html
@@ -809,9 +782,6 @@ entries:
     - output: web,pdf
       title: portal_accept_hub
       url: /qq-cli-command-guide/portal/portal_accept_hub.html
-    - output: web,pdf
-      title: portal_authorize_hub
-      url: /qq-cli-command-guide/portal/portal_authorize_hub.html
     - output: web,pdf
       title: portal_authorize_hub_root
       url: /qq-cli-command-guide/portal/portal_authorize_hub_root.html
@@ -1189,9 +1159,6 @@ entries:
       title: snapshot_get_policy_status
       url: /qq-cli-command-guide/snapshot/snapshot_get_policy_status.html
     - output: web,pdf
-      title: snapshot_get_snapshot
-      url: /qq-cli-command-guide/snapshot/snapshot_get_snapshot.html
-    - output: web,pdf
       title: snapshot_get_status
       url: /qq-cli-command-guide/snapshot/snapshot_get_status.html
     - output: web,pdf
@@ -1206,9 +1173,6 @@ entries:
     - output: web,pdf
       title: snapshot_list_policy_statuses
       url: /qq-cli-command-guide/snapshot/snapshot_list_policy_statuses.html
-    - output: web,pdf
-      title: snapshot_list_snapshots
-      url: /qq-cli-command-guide/snapshot/snapshot_list_snapshots.html
     - output: web,pdf
       title: snapshot_list_statuses
       url: /qq-cli-command-guide/snapshot/snapshot_list_statuses.html

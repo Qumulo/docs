@@ -38,15 +38,20 @@ This role is suitable for users or groups who can access the Qumulo Core Web UI 
 </ul>
 {{site.data.alerts.end}}
 
-{% if page.platform != 'anq' %}
 <a id="qumulo-support"></a>
 ### Qumulo-Support
 {{site.data.alerts.important}}
 <ul>
-  <li>The built-in <code>Qumulo-Support</code> RBAC role doesn't include file-level access to your cluster's data.</li>
-  <li>{{site.nexus.rbacWhenYouReg}} You can delete this assignment (this removes all the permissions that the Qumulo Care Team requires to support your Qumulo cluster) or assign other roles to the trustee.</li>
+{% if page.platform == 'anq' %}
+  <li>Because Azure Native Qumulo is a managed service, the Qumulo Care Team has access to your cluster's configuration regardless of how the <code>Qumulo-Support</code> RBAC role is configured on your cluster.
+{% endif %}
+{% unless page.platform == 'anq' %}
+  <li>The built-in <code>Qumulo-Support</code> RBAC role doesn't include file-level access to your cluster's data.</li>    
+  <li>{{site.nexus.rbacWhenYouReg}} You can assign other roles to this trustee.</li>  
+  <li>If you delete the default assignment, Qumulo Core removes all the permissions that the Qumulo Care Team requires to support your Qumulo cluster.</li>
   <li>You can <a href="#custom-roles">create a custom RBAC role</a> for the Qumulo Care Team and assign the <code>qumulosupport:everyone</code> trustee to this custom role.</li>
   <li>If you use a custom RBAC role for the Qumulo Care Team, review any changes to the built-in <code>Qumulo-Support</code> role after upgrading your Qumulo cluster and apply these changes to your custom RBAC role.</li>
+{% endunless %}
 </ul>
 {{site.data.alerts.end}}
 
@@ -55,7 +60,6 @@ This role is suitable for members of the Qumulo Care Team who access and support
 * Read permissions for REST API endpoints that control cluster configuration
 * Write permissions (including `DEBUG` REST APIs) for internal debugging features
 * Permissions for REST API endpoints that help debug integration with external services (such as Active Directory, LDAP, and DNS)
-{% endif %}
 
 
 <a id="custom-roles"></a>

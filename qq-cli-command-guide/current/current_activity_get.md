@@ -14,7 +14,7 @@ summary: This section explains how to use the <code>qq current_activity_get</cod
   command.
 synopsis: Get the current sampled IOP and throughput rates
 title: qq current_activity_get
-usage: "qq current_activity_get [-h]\n    [-t {file-iops-read,file-iops-write,metadata-iops-read,metadata-iops-write,file-throughput-read,file-throughput-write}]"
+usage: qq current_activity_get [-h] [-t {file-iops-read,file-iops-write,metadata-iops-read,metadata-iops-write,file-throughput-read,file-throughput-write}]
 zendesk_source: qq CLI Command Guide
 
 ---

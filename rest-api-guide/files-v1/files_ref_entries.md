@@ -51,10 +51,11 @@ methods:
         \ {\n        \"id_type\": {\n          \"type\": \"string\",\n          \"\
         enum\": [\n            \"LOCAL_USER\",\n            \"LOCAL_GROUP\",\n   \
         \         \"NFS_GID\",\n            \"NFS_UID\",\n            \"SMB_SID\"\
-        ,\n            \"INTERNAL\",\n            \"QUMULO_OPERATOR\"\n          ],\n\
-        \          \"description\": \"id_type:\\n * `INTERNAL` - INTERNAL,\\n * `LOCAL_GROUP`\
-        \ - LOCAL_GROUP,\\n * `LOCAL_USER` - LOCAL_USER,\\n * `NFS_GID` - NFS_GID,\\\
-        n * `NFS_UID` - NFS_UID,\\n * `QUMULO_OPERATOR` - QUMULO_OPERATOR,\\n * `SMB_SID`\
+        ,\n            \"INTERNAL\",\n            \"QUMULO_OPERATOR\",\n         \
+        \   \"QUMULO_SUPPORT\"\n          ],\n          \"description\": \"id_type:\\\
+        n * `INTERNAL` - INTERNAL,\\n * `LOCAL_GROUP` - LOCAL_GROUP,\\n * `LOCAL_USER`\
+        \ - LOCAL_USER,\\n * `NFS_GID` - NFS_GID,\\n * `NFS_UID` - NFS_UID,\\n * `QUMULO_OPERATOR`\
+        \ - QUMULO_OPERATOR,\\n * `QUMULO_SUPPORT` - QUMULO_SUPPORT,\\n * `SMB_SID`\
         \ - SMB_SID\"\n        },\n        \"id_value\": {\n          \"description\"\
         : \"id_value\",\n          \"type\": \"string\"\n        }\n      }\n    },\n\
         \    \"group\": {\n      \"description\": \"File group\",\n      \"type\"\
@@ -63,10 +64,11 @@ methods:
         \ {\n        \"id_type\": {\n          \"type\": \"string\",\n          \"\
         enum\": [\n            \"LOCAL_USER\",\n            \"LOCAL_GROUP\",\n   \
         \         \"NFS_GID\",\n            \"NFS_UID\",\n            \"SMB_SID\"\
-        ,\n            \"INTERNAL\",\n            \"QUMULO_OPERATOR\"\n          ],\n\
-        \          \"description\": \"id_type:\\n * `INTERNAL` - INTERNAL,\\n * `LOCAL_GROUP`\
-        \ - LOCAL_GROUP,\\n * `LOCAL_USER` - LOCAL_USER,\\n * `NFS_GID` - NFS_GID,\\\
-        n * `NFS_UID` - NFS_UID,\\n * `QUMULO_OPERATOR` - QUMULO_OPERATOR,\\n * `SMB_SID`\
+        ,\n            \"INTERNAL\",\n            \"QUMULO_OPERATOR\",\n         \
+        \   \"QUMULO_SUPPORT\"\n          ],\n          \"description\": \"id_type:\\\
+        n * `INTERNAL` - INTERNAL,\\n * `LOCAL_GROUP` - LOCAL_GROUP,\\n * `LOCAL_USER`\
+        \ - LOCAL_USER,\\n * `NFS_GID` - NFS_GID,\\n * `NFS_UID` - NFS_UID,\\n * `QUMULO_OPERATOR`\
+        \ - QUMULO_OPERATOR,\\n * `QUMULO_SUPPORT` - QUMULO_SUPPORT,\\n * `SMB_SID`\
         \ - SMB_SID\"\n        },\n        \"id_value\": {\n          \"description\"\
         : \"id_value\",\n          \"type\": \"string\"\n        }\n      }\n    },\n\
         \    \"blocks\": {\n      \"description\": \"Number of blocks used by the\
@@ -232,76 +234,78 @@ methods:
         : \"string\",\n                \"enum\": [\n                  \"LOCAL_USER\"\
         ,\n                  \"LOCAL_GROUP\",\n                  \"NFS_GID\",\n  \
         \                \"NFS_UID\",\n                  \"SMB_SID\",\n          \
-        \        \"INTERNAL\",\n                  \"QUMULO_OPERATOR\"\n          \
+        \        \"INTERNAL\",\n                  \"QUMULO_OPERATOR\",\n         \
+        \         \"QUMULO_SUPPORT\"\n                ],\n                \"description\"\
+        : \"id_type:\\n * `INTERNAL` - INTERNAL,\\n * `LOCAL_GROUP` - LOCAL_GROUP,\\\
+        n * `LOCAL_USER` - LOCAL_USER,\\n * `NFS_GID` - NFS_GID,\\n * `NFS_UID` -\
+        \ NFS_UID,\\n * `QUMULO_OPERATOR` - QUMULO_OPERATOR,\\n * `QUMULO_SUPPORT`\
+        \ - QUMULO_SUPPORT,\\n * `SMB_SID` - SMB_SID\"\n              },\n       \
+        \       \"id_value\": {\n                \"description\": \"id_value\",\n\
+        \                \"type\": \"string\"\n              }\n            }\n  \
+        \        },\n          \"group\": {\n            \"description\": \"File group\"\
+        ,\n            \"type\": \"string\"\n          },\n          \"group_details\"\
+        : {\n            \"description\": \"File group details\",\n            \"\
+        type\": \"object\",\n            \"properties\": {\n              \"id_type\"\
+        : {\n                \"type\": \"string\",\n                \"enum\": [\n\
+        \                  \"LOCAL_USER\",\n                  \"LOCAL_GROUP\",\n \
+        \                 \"NFS_GID\",\n                  \"NFS_UID\",\n         \
+        \         \"SMB_SID\",\n                  \"INTERNAL\",\n                \
+        \  \"QUMULO_OPERATOR\",\n                  \"QUMULO_SUPPORT\"\n          \
         \      ],\n                \"description\": \"id_type:\\n * `INTERNAL` - INTERNAL,\\\
         n * `LOCAL_GROUP` - LOCAL_GROUP,\\n * `LOCAL_USER` - LOCAL_USER,\\n * `NFS_GID`\
         \ - NFS_GID,\\n * `NFS_UID` - NFS_UID,\\n * `QUMULO_OPERATOR` - QUMULO_OPERATOR,\\\
-        n * `SMB_SID` - SMB_SID\"\n              },\n              \"id_value\": {\n\
-        \                \"description\": \"id_value\",\n                \"type\"\
-        : \"string\"\n              }\n            }\n          },\n          \"group\"\
-        : {\n            \"description\": \"File group\",\n            \"type\": \"\
-        string\"\n          },\n          \"group_details\": {\n            \"description\"\
-        : \"File group details\",\n            \"type\": \"object\",\n           \
-        \ \"properties\": {\n              \"id_type\": {\n                \"type\"\
-        : \"string\",\n                \"enum\": [\n                  \"LOCAL_USER\"\
-        ,\n                  \"LOCAL_GROUP\",\n                  \"NFS_GID\",\n  \
-        \                \"NFS_UID\",\n                  \"SMB_SID\",\n          \
-        \        \"INTERNAL\",\n                  \"QUMULO_OPERATOR\"\n          \
-        \      ],\n                \"description\": \"id_type:\\n * `INTERNAL` - INTERNAL,\\\
-        n * `LOCAL_GROUP` - LOCAL_GROUP,\\n * `LOCAL_USER` - LOCAL_USER,\\n * `NFS_GID`\
-        \ - NFS_GID,\\n * `NFS_UID` - NFS_UID,\\n * `QUMULO_OPERATOR` - QUMULO_OPERATOR,\\\
-        n * `SMB_SID` - SMB_SID\"\n              },\n              \"id_value\": {\n\
-        \                \"description\": \"id_value\",\n                \"type\"\
-        : \"string\"\n              }\n            }\n          },\n          \"blocks\"\
-        : {\n            \"description\": \"Number of blocks used by the file\",\n\
-        \            \"type\": \"string\"\n          },\n          \"datablocks\"\
-        : {\n            \"description\": \"Number of data blocks used by the file\"\
-        ,\n            \"type\": \"string\"\n          },\n          \"metablocks\"\
-        : {\n            \"description\": \"Number of meta blocks used by the file\"\
-        ,\n            \"type\": \"string\"\n          },\n          \"size\": {\n\
-        \            \"description\": \"File size in bytes\",\n            \"type\"\
-        : \"string\"\n          },\n          \"access_time\": {\n            \"description\"\
-        : \"Last time content was read, RFC 3339 format\",\n            \"type\":\
-        \ \"string\"\n          },\n          \"modification_time\": {\n         \
-        \   \"description\": \"Last time content was modified, RFC 3339 format\",\n\
-        \            \"type\": \"string\"\n          },\n          \"change_time\"\
-        : {\n            \"description\": \"Last time content or attributes were modified,\
-        \ RFC 3339 format\",\n            \"type\": \"string\"\n          },\n   \
-        \       \"creation_time\": {\n            \"description\": \"File creation\
-        \ time, RFC 3339 format\",\n            \"type\": \"string\"\n          },\n\
-        \          \"child_count\": {\n            \"description\": \"Count of children\
-        \ (valid for directories)\",\n            \"type\": \"number\"\n         \
-        \ },\n          \"extended_attributes\": {\n            \"description\": \"\
-        SMB extended file attributes\",\n            \"type\": \"object\",\n     \
-        \       \"properties\": {\n              \"read_only\": {\n              \
-        \  \"description\": \"read_only\",\n                \"type\": \"boolean\"\n\
-        \              },\n              \"hidden\": {\n                \"description\"\
-        : \"hidden\",\n                \"type\": \"boolean\"\n              },\n \
-        \             \"system\": {\n                \"description\": \"system\",\n\
+        n * `QUMULO_SUPPORT` - QUMULO_SUPPORT,\\n * `SMB_SID` - SMB_SID\"\n      \
+        \        },\n              \"id_value\": {\n                \"description\"\
+        : \"id_value\",\n                \"type\": \"string\"\n              }\n \
+        \           }\n          },\n          \"blocks\": {\n            \"description\"\
+        : \"Number of blocks used by the file\",\n            \"type\": \"string\"\
+        \n          },\n          \"datablocks\": {\n            \"description\":\
+        \ \"Number of data blocks used by the file\",\n            \"type\": \"string\"\
+        \n          },\n          \"metablocks\": {\n            \"description\":\
+        \ \"Number of meta blocks used by the file\",\n            \"type\": \"string\"\
+        \n          },\n          \"size\": {\n            \"description\": \"File\
+        \ size in bytes\",\n            \"type\": \"string\"\n          },\n     \
+        \     \"access_time\": {\n            \"description\": \"Last time content\
+        \ was read, RFC 3339 format\",\n            \"type\": \"string\"\n       \
+        \   },\n          \"modification_time\": {\n            \"description\": \"\
+        Last time content was modified, RFC 3339 format\",\n            \"type\":\
+        \ \"string\"\n          },\n          \"change_time\": {\n            \"description\"\
+        : \"Last time content or attributes were modified, RFC 3339 format\",\n  \
+        \          \"type\": \"string\"\n          },\n          \"creation_time\"\
+        : {\n            \"description\": \"File creation time, RFC 3339 format\"\
+        ,\n            \"type\": \"string\"\n          },\n          \"child_count\"\
+        : {\n            \"description\": \"Count of children (valid for directories)\"\
+        ,\n            \"type\": \"number\"\n          },\n          \"extended_attributes\"\
+        : {\n            \"description\": \"SMB extended file attributes\",\n    \
+        \        \"type\": \"object\",\n            \"properties\": {\n          \
+        \    \"read_only\": {\n                \"description\": \"read_only\",\n \
+        \               \"type\": \"boolean\"\n              },\n              \"\
+        hidden\": {\n                \"description\": \"hidden\",\n              \
+        \  \"type\": \"boolean\"\n              },\n              \"system\": {\n\
+        \                \"description\": \"system\",\n                \"type\": \"\
+        boolean\"\n              },\n              \"archive\": {\n              \
+        \  \"description\": \"archive\",\n                \"type\": \"boolean\"\n\
+        \              },\n              \"temporary\": {\n                \"description\"\
+        : \"temporary\",\n                \"type\": \"boolean\"\n              },\n\
+        \              \"compressed\": {\n                \"description\": \"compressed\"\
+        ,\n                \"type\": \"boolean\"\n              },\n             \
+        \ \"not_content_indexed\": {\n                \"description\": \"not_content_indexed\"\
+        ,\n                \"type\": \"boolean\"\n              },\n             \
+        \ \"sparse_file\": {\n                \"description\": \"sparse_file\",\n\
         \                \"type\": \"boolean\"\n              },\n              \"\
-        archive\": {\n                \"description\": \"archive\",\n            \
-        \    \"type\": \"boolean\"\n              },\n              \"temporary\"\
-        : {\n                \"description\": \"temporary\",\n                \"type\"\
-        : \"boolean\"\n              },\n              \"compressed\": {\n       \
-        \         \"description\": \"compressed\",\n                \"type\": \"boolean\"\
-        \n              },\n              \"not_content_indexed\": {\n           \
-        \     \"description\": \"not_content_indexed\",\n                \"type\"\
-        : \"boolean\"\n              },\n              \"sparse_file\": {\n      \
-        \          \"description\": \"sparse_file\",\n                \"type\": \"\
-        boolean\"\n              },\n              \"offline\": {\n              \
-        \  \"description\": \"offline\",\n                \"type\": \"boolean\"\n\
-        \              }\n            }\n          },\n          \"directory_entry_hash_policy\"\
-        : {\n            \"type\": \"string\",\n            \"enum\": [\n        \
-        \      \"FS_DIRECTORY_HASH_VERSION_LOWER\",\n              \"FS_DIRECTORY_HASH_VERSION_FOLDED\"\
-        \n            ],\n            \"description\": \"Hash policy for directory\
-        \ entries:\\n * `FS_DIRECTORY_HASH_VERSION_FOLDED` - FS_DIRECTORY_HASH_VERSION_FOLDED,\\\
-        n * `FS_DIRECTORY_HASH_VERSION_LOWER` - FS_DIRECTORY_HASH_VERSION_LOWER\"\n\
-        \          },\n          \"data_revision\": {\n            \"description\"\
-        : \"The revision for changes to the underlying file data.\",\n           \
-        \ \"type\": \"string\"\n          },\n          \"user_metadata_revision\"\
-        : {\n            \"description\": \"The revision for changes to the user defined\
-        \ metadata of the file.\",\n            \"type\": \"string\"\n          }\n\
-        \        }\n      }\n    }\n  }\n}"
+        offline\": {\n                \"description\": \"offline\",\n            \
+        \    \"type\": \"boolean\"\n              }\n            }\n          },\n\
+        \          \"directory_entry_hash_policy\": {\n            \"type\": \"string\"\
+        ,\n            \"enum\": [\n              \"FS_DIRECTORY_HASH_VERSION_LOWER\"\
+        ,\n              \"FS_DIRECTORY_HASH_VERSION_FOLDED\"\n            ],\n  \
+        \          \"description\": \"Hash policy for directory entries:\\n * `FS_DIRECTORY_HASH_VERSION_FOLDED`\
+        \ - FS_DIRECTORY_HASH_VERSION_FOLDED,\\n * `FS_DIRECTORY_HASH_VERSION_LOWER`\
+        \ - FS_DIRECTORY_HASH_VERSION_LOWER\"\n          },\n          \"data_revision\"\
+        : {\n            \"description\": \"The revision for changes to the underlying\
+        \ file data.\",\n            \"type\": \"string\"\n          },\n        \
+        \  \"user_metadata_revision\": {\n            \"description\": \"The revision\
+        \ for changes to the user defined metadata of the file.\",\n            \"\
+        type\": \"string\"\n          }\n        }\n      }\n    }\n  }\n}"
     responses:
     - code: '200'
       description: Return value on success

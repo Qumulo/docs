@@ -5,7 +5,7 @@ permalink: /qumulo-nexus-configuration-guide/creating-registration-key-nexus-rem
 sidebar: qumulo_nexus_configuration_guide_sidebar
 ---
 
-A _registration key_ works like a one-time password (it is valid for 14 days). It associates your Qumulo cluster with your Qumulo Nexus account.
+A _registration key_ associates your Qumulo cluster with your Qumulo Nexus account. It works like a one-time password and it is valid for 14 days after being created.
 
 To generate a registration key, you must have administrative access to your organization's Nexus account.
 

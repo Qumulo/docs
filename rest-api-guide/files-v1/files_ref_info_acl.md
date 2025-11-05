@@ -61,29 +61,30 @@ methods:
         \        \"enum\": [\n                      \"LOCAL_USER\",\n            \
         \          \"LOCAL_GROUP\",\n                      \"NFS_GID\",\n        \
         \              \"NFS_UID\",\n                      \"SMB_SID\",\n        \
-        \              \"INTERNAL\",\n                      \"QUMULO_OPERATOR\"\n\
-        \                    ],\n                    \"description\": \"id_type:\\\
-        n * `INTERNAL` - INTERNAL,\\n * `LOCAL_GROUP` - LOCAL_GROUP,\\n * `LOCAL_USER`\
-        \ - LOCAL_USER,\\n * `NFS_GID` - NFS_GID,\\n * `NFS_UID` - NFS_UID,\\n * `QUMULO_OPERATOR`\
-        \ - QUMULO_OPERATOR,\\n * `SMB_SID` - SMB_SID\"\n                  },\n  \
-        \                \"id_value\": {\n                    \"description\": \"\
-        id_value\",\n                    \"type\": \"string\"\n                  }\n\
-        \                }\n              },\n              \"rights\": {\n      \
-        \          \"description\": \"Rights granted or denied for this ACL entry\"\
-        ,\n                \"type\": \"array\",\n                \"items\": {\n  \
-        \                \"type\": \"string\",\n                  \"enum\": [\n  \
-        \                  \"READ\",\n                    \"READ_EA\",\n         \
-        \           \"READ_ATTR\",\n                    \"READ_ACL\",\n          \
-        \          \"WRITE_EA\",\n                    \"WRITE_ATTR\",\n          \
-        \          \"WRITE_ACL\",\n                    \"CHANGE_OWNER\",\n       \
-        \             \"WRITE_GROUP\",\n                    \"DELETE\",\n        \
-        \            \"EXECUTE\",\n                    \"MODIFY\",\n             \
-        \       \"EXTEND\",\n                    \"ADD_FILE\",\n                 \
-        \   \"ADD_SUBDIR\",\n                    \"DELETE_CHILD\",\n             \
-        \       \"SYNCHRONIZE\",\n                    \"ALL\"\n                  ],\n\
-        \                  \"description\": \"Rights granted or denied for this ACL\
-        \ entry:\\n * `ADD_FILE` - API_FILES_ACCESS_ADD_FILE,\\n * `ADD_SUBDIR` -\
-        \ API_FILES_ACCESS_ADD_SUBDIR,\\n * `ALL` - API_FILES_ACCESS_ALL,\\n * `CHANGE_OWNER`\
+        \              \"INTERNAL\",\n                      \"QUMULO_OPERATOR\",\n\
+        \                      \"QUMULO_SUPPORT\"\n                    ],\n      \
+        \              \"description\": \"id_type:\\n * `INTERNAL` - INTERNAL,\\n\
+        \ * `LOCAL_GROUP` - LOCAL_GROUP,\\n * `LOCAL_USER` - LOCAL_USER,\\n * `NFS_GID`\
+        \ - NFS_GID,\\n * `NFS_UID` - NFS_UID,\\n * `QUMULO_OPERATOR` - QUMULO_OPERATOR,\\\
+        n * `QUMULO_SUPPORT` - QUMULO_SUPPORT,\\n * `SMB_SID` - SMB_SID\"\n      \
+        \            },\n                  \"id_value\": {\n                    \"\
+        description\": \"id_value\",\n                    \"type\": \"string\"\n \
+        \                 }\n                }\n              },\n              \"\
+        rights\": {\n                \"description\": \"Rights granted or denied for\
+        \ this ACL entry\",\n                \"type\": \"array\",\n              \
+        \  \"items\": {\n                  \"type\": \"string\",\n               \
+        \   \"enum\": [\n                    \"READ\",\n                    \"READ_EA\"\
+        ,\n                    \"READ_ATTR\",\n                    \"READ_ACL\",\n\
+        \                    \"WRITE_EA\",\n                    \"WRITE_ATTR\",\n\
+        \                    \"WRITE_ACL\",\n                    \"CHANGE_OWNER\"\
+        ,\n                    \"WRITE_GROUP\",\n                    \"DELETE\",\n\
+        \                    \"EXECUTE\",\n                    \"MODIFY\",\n     \
+        \               \"EXTEND\",\n                    \"ADD_FILE\",\n         \
+        \           \"ADD_SUBDIR\",\n                    \"DELETE_CHILD\",\n     \
+        \               \"SYNCHRONIZE\",\n                    \"ALL\"\n          \
+        \        ],\n                  \"description\": \"Rights granted or denied\
+        \ for this ACL entry:\\n * `ADD_FILE` - API_FILES_ACCESS_ADD_FILE,\\n * `ADD_SUBDIR`\
+        \ - API_FILES_ACCESS_ADD_SUBDIR,\\n * `ALL` - API_FILES_ACCESS_ALL,\\n * `CHANGE_OWNER`\
         \ - API_FILES_ACCESS_CHANGE_OWNER,\\n * `DELETE` - API_FILES_ACCESS_DELETE,\\\
         n * `DELETE_CHILD` - API_FILES_ACCESS_DELETE_CHILD,\\n * `EXECUTE` - API_FILES_ACCESS_EXECUTE,\\\
         n * `EXTEND` - API_FILES_ACCESS_EXTEND,\\n * `MODIFY` - API_FILES_ACCESS_MODIFY,\\\
@@ -138,12 +139,13 @@ methods:
         \       \"type\": \"string\",\n                \"enum\": [\n             \
         \     \"LOCAL_USER\",\n                  \"LOCAL_GROUP\",\n              \
         \    \"NFS_GID\",\n                  \"NFS_UID\",\n                  \"SMB_SID\"\
-        ,\n                  \"INTERNAL\",\n                  \"QUMULO_OPERATOR\"\n\
-        \                ],\n                \"description\": \"id_type:\\n * `INTERNAL`\
-        \ - INTERNAL,\\n * `LOCAL_GROUP` - LOCAL_GROUP,\\n * `LOCAL_USER` - LOCAL_USER,\\\
-        n * `NFS_GID` - NFS_GID,\\n * `NFS_UID` - NFS_UID,\\n * `QUMULO_OPERATOR`\
-        \ - QUMULO_OPERATOR,\\n * `SMB_SID` - SMB_SID\"\n              },\n      \
-        \        \"id_value\": {\n                \"description\": \"id_value\",\n\
+        ,\n                  \"INTERNAL\",\n                  \"QUMULO_OPERATOR\"\
+        ,\n                  \"QUMULO_SUPPORT\"\n                ],\n            \
+        \    \"description\": \"id_type:\\n * `INTERNAL` - INTERNAL,\\n * `LOCAL_GROUP`\
+        \ - LOCAL_GROUP,\\n * `LOCAL_USER` - LOCAL_USER,\\n * `NFS_GID` - NFS_GID,\\\
+        n * `NFS_UID` - NFS_UID,\\n * `QUMULO_OPERATOR` - QUMULO_OPERATOR,\\n * `QUMULO_SUPPORT`\
+        \ - QUMULO_SUPPORT,\\n * `SMB_SID` - SMB_SID\"\n              },\n       \
+        \       \"id_value\": {\n                \"description\": \"id_value\",\n\
         \                \"type\": \"string\"\n              }\n            }\n  \
         \        },\n          \"rights\": {\n            \"description\": \"Rights\
         \ granted or denied for this ACL entry\",\n            \"type\": \"array\"\
@@ -228,29 +230,30 @@ methods:
         \        \"enum\": [\n                      \"LOCAL_USER\",\n            \
         \          \"LOCAL_GROUP\",\n                      \"NFS_GID\",\n        \
         \              \"NFS_UID\",\n                      \"SMB_SID\",\n        \
-        \              \"INTERNAL\",\n                      \"QUMULO_OPERATOR\"\n\
-        \                    ],\n                    \"description\": \"id_type:\\\
-        n * `INTERNAL` - INTERNAL,\\n * `LOCAL_GROUP` - LOCAL_GROUP,\\n * `LOCAL_USER`\
-        \ - LOCAL_USER,\\n * `NFS_GID` - NFS_GID,\\n * `NFS_UID` - NFS_UID,\\n * `QUMULO_OPERATOR`\
-        \ - QUMULO_OPERATOR,\\n * `SMB_SID` - SMB_SID\"\n                  },\n  \
-        \                \"id_value\": {\n                    \"description\": \"\
-        id_value\",\n                    \"type\": \"string\"\n                  }\n\
-        \                }\n              },\n              \"rights\": {\n      \
-        \          \"description\": \"Rights granted or denied for this ACL entry\"\
-        ,\n                \"type\": \"array\",\n                \"items\": {\n  \
-        \                \"type\": \"string\",\n                  \"enum\": [\n  \
-        \                  \"READ\",\n                    \"READ_EA\",\n         \
-        \           \"READ_ATTR\",\n                    \"READ_ACL\",\n          \
-        \          \"WRITE_EA\",\n                    \"WRITE_ATTR\",\n          \
-        \          \"WRITE_ACL\",\n                    \"CHANGE_OWNER\",\n       \
-        \             \"WRITE_GROUP\",\n                    \"DELETE\",\n        \
-        \            \"EXECUTE\",\n                    \"MODIFY\",\n             \
-        \       \"EXTEND\",\n                    \"ADD_FILE\",\n                 \
-        \   \"ADD_SUBDIR\",\n                    \"DELETE_CHILD\",\n             \
-        \       \"SYNCHRONIZE\",\n                    \"ALL\"\n                  ],\n\
-        \                  \"description\": \"Rights granted or denied for this ACL\
-        \ entry:\\n * `ADD_FILE` - API_FILES_ACCESS_ADD_FILE,\\n * `ADD_SUBDIR` -\
-        \ API_FILES_ACCESS_ADD_SUBDIR,\\n * `ALL` - API_FILES_ACCESS_ALL,\\n * `CHANGE_OWNER`\
+        \              \"INTERNAL\",\n                      \"QUMULO_OPERATOR\",\n\
+        \                      \"QUMULO_SUPPORT\"\n                    ],\n      \
+        \              \"description\": \"id_type:\\n * `INTERNAL` - INTERNAL,\\n\
+        \ * `LOCAL_GROUP` - LOCAL_GROUP,\\n * `LOCAL_USER` - LOCAL_USER,\\n * `NFS_GID`\
+        \ - NFS_GID,\\n * `NFS_UID` - NFS_UID,\\n * `QUMULO_OPERATOR` - QUMULO_OPERATOR,\\\
+        n * `QUMULO_SUPPORT` - QUMULO_SUPPORT,\\n * `SMB_SID` - SMB_SID\"\n      \
+        \            },\n                  \"id_value\": {\n                    \"\
+        description\": \"id_value\",\n                    \"type\": \"string\"\n \
+        \                 }\n                }\n              },\n              \"\
+        rights\": {\n                \"description\": \"Rights granted or denied for\
+        \ this ACL entry\",\n                \"type\": \"array\",\n              \
+        \  \"items\": {\n                  \"type\": \"string\",\n               \
+        \   \"enum\": [\n                    \"READ\",\n                    \"READ_EA\"\
+        ,\n                    \"READ_ATTR\",\n                    \"READ_ACL\",\n\
+        \                    \"WRITE_EA\",\n                    \"WRITE_ATTR\",\n\
+        \                    \"WRITE_ACL\",\n                    \"CHANGE_OWNER\"\
+        ,\n                    \"WRITE_GROUP\",\n                    \"DELETE\",\n\
+        \                    \"EXECUTE\",\n                    \"MODIFY\",\n     \
+        \               \"EXTEND\",\n                    \"ADD_FILE\",\n         \
+        \           \"ADD_SUBDIR\",\n                    \"DELETE_CHILD\",\n     \
+        \               \"SYNCHRONIZE\",\n                    \"ALL\"\n          \
+        \        ],\n                  \"description\": \"Rights granted or denied\
+        \ for this ACL entry:\\n * `ADD_FILE` - API_FILES_ACCESS_ADD_FILE,\\n * `ADD_SUBDIR`\
+        \ - API_FILES_ACCESS_ADD_SUBDIR,\\n * `ALL` - API_FILES_ACCESS_ALL,\\n * `CHANGE_OWNER`\
         \ - API_FILES_ACCESS_CHANGE_OWNER,\\n * `DELETE` - API_FILES_ACCESS_DELETE,\\\
         n * `DELETE_CHILD` - API_FILES_ACCESS_DELETE_CHILD,\\n * `EXECUTE` - API_FILES_ACCESS_EXECUTE,\\\
         n * `EXTEND` - API_FILES_ACCESS_EXTEND,\\n * `MODIFY` - API_FILES_ACCESS_MODIFY,\\\

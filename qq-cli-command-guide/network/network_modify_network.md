@@ -30,8 +30,8 @@ summary: This section explains how to use the <code>qq network_modify_network</c
   command.
 synopsis: Modify a network in the cluster-wide network config.
 title: qq network_modify_network
-usage: "qq network_modify_network [-h] --network-id NETWORK_ID [--name NAME] [--tenant-id\
-  \ TENANT_ID | --clear-tenant-id]\n    {host_managed,dhcp,static} ..."
+usage: qq network_modify_network [-h] --network-id NETWORK_ID [--name NAME] [--tenant-id
+  TENANT_ID | --clear-tenant-id] {host_managed,dhcp,static} ...
 zendesk_source: qq CLI Command Guide
 
 ---
