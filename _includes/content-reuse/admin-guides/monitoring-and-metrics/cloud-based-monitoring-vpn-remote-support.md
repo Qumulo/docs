@@ -4,7 +4,7 @@
 
 
 ## How Cloud-Based Monitoring Works
-Cloud-Based Monitoring (which includes Nexus Monitoring functionality) sends telemetry data to Qumulo to allow the Qumulo Care Team to monitor your Qumulo cluster proactively.
+Cloud-Based Monitoring (which includes Nexus Monitoring functionality) sends telemetry data to Qumulo to allow the Qumulo Care Team to monitor your Qumulo cluster proactively. {{site.tlsEncrypt}}
 
 {% include important.html content="Cloud-Based Monitoring and Nexus Monitoring _don't_ collect file names, path names, client IP addresses, or account credentials." %}
 
@@ -17,7 +17,7 @@ We use a proprietary application that aggregates diagnostic cluster data and ale
 
 {% if page.platform == 'on-prem' %}
 ## How VPN Remote Support Works
-VPN Remote Support lets the Qumulo Care Team access your Qumulo cluster solely to assist you with a software update or perform diagnostics or troubleshooting on your cluster from the command line.
+VPN Remote Support lets the Qumulo Care Team access your Qumulo cluster solely to assist you with running a software update, performing diagnostics, or troubleshooting your cluster. {{site.tlsEncrypt}}
 
 When you install VPN keys in the `/etc/openvpn` directory, an authorized member of the Qumulo Care Team uses SSH to connect to the `ep1.qumulo.com` server and then uses SSH through a secure VPN connection to connect to your cluster (normally, this VPN connection is closed).
 
