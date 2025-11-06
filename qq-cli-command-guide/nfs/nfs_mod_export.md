@@ -36,27 +36,31 @@ optional_options:
   required: false
 - alternate: []
   help: "Path to local file containing the restrictions in JSON format.\n\nhost_restrictions\
-    \ is a comma separated list of:\n    IPs| IP ranges | hostnames | wildcarded hostnames\
-    \ | KRB5@ | KRB5I@ | KRB5P@\n\n    kerberos security flavors:\n        KRB5@:\
-    \ basic     KRB5I@: auth Integrity     KRB5P@: Privacy\n\nuser_mapping can be:\n\
-    \    \"none\" | \"root\" | \"all\"\nmap_to_user can be:\n    \"{ \"id_type\":\
-    \ \"LOCAL_USER\", \"id_value\": \"<integer_id>\" }\" or\n    \"{ \"id_type\":\
-    \ \"NFS_UID\", \"id_value\": \"<integer_id>\" }\"\nmap_to_group can be:\n    \"\
-    { \"id_type\": \"NFS_GID\", \"id_value\": \"<integer_id> }\"\nIf user_mapping\
-    \ is not \"none\", then:\n    either specify \"map_to_user\" as a local user\n\
-    \    or specify both \"map_to_user\" and \"map_to_group\" as NFS user/group.\n\
-    \n==Example JSON==:\n{\n    \"restrictions\" : [\n        {\n            \"read_only\"\
-    \ : true,\n            \"host_restrictions\" : [ \"1.2.3.1\", \"1.100.0.0/24\"\
-    \ ],\n            \"user_mapping\" : \"root\",\n            \"map_to_user\": {\n\
+    \ is a comma separated list of:\n    IPs| IP ranges | hostnames | wildcarded hostnames\n\
+    \nrequired_authentication_mode can be:\n    \"AUTHENTICATION_MODE_NONE\" | \"\
+    AUTHENTICATION_MODE_KRB5\" | \"AUTHENTICATION_MODE_KRB5I\" |\n    \"AUTHENTICATION_MODE_KRB5P\"\
+    \n\n    kerberos security flavors:\n        KRB5: basic     KRB5I: auth Integrity\
+    \     KRB5P: Privacy\n\nuser_mapping can be:\n    \"none\" | \"root\" | \"all\"\
+    \nmap_to_user can be:\n    \"{ \"id_type\": \"LOCAL_USER\", \"id_value\": \"<integer_id>\"\
+    \ }\" or\n    \"{ \"id_type\": \"NFS_UID\", \"id_value\": \"<integer_id>\" }\"\
+    \nmap_to_group can be:\n    \"{ \"id_type\": \"NFS_GID\", \"id_value\": \"<integer_id>\
+    \ }\"\nIf user_mapping is not \"none\", then:\n    either specify \"map_to_user\"\
+    \ as a local user\n    or specify both \"map_to_user\" and \"map_to_group\" as\
+    \ NFS user/group.\n\n==Example JSON==:\n{\n    \"restrictions\" : [\n        {\n\
+    \            \"read_only\" : true,\n            \"host_restrictions\" : [ \"1.2.3.1\"\
+    , \"1.100.0.0/24\" ],\n            \"required_authentication_mode\": \"AUTHENTICATION_MODE_NONE\"\
+    ,\n            \"user_mapping\" : \"root\",\n            \"map_to_user\": {\n\
     \                \"id_type\" : \"LOCAL_USER\",\n                \"id_value\" :\
     \ \"500\"\n            }\n        },\n        {\n            \"read_only\" : false,\n\
-    \            \"host_restrictions\" : [ \"KRB5@\" ],\n            \"user_mapping\"\
-    \ : \"none\"\n        },\n        {\n            \"read_only\" : true,\n     \
-    \       \"host_restrictions\" : [],\n            \"user_mapping\" : \"all\",\n\
-    \            \"map_to_user\" :{\n                \"id_type\" : \"NFS_UID\",\n\
-    \                \"id_value\" : \"500\"\n            },\n            \"map_to_group\"\
-    : {\n                \"id_type\" : \"NFS_GID\",\n                \"id_value\"\
-    \ : \"501\"\n            }\n        }\n    ]\n}\n"
+    \            \"host_restrictions\" : [ \"*.example.com\" ],\n            \"required_authentication_mode\"\
+    : \"AUTHENTICATION_MODE_KRB5\",\n            \"user_mapping\" : \"none\"\n   \
+    \     },\n        {\n            \"read_only\" : true,\n            \"host_restrictions\"\
+    \ : [],\n            \"required_authentication_mode\": \"AUTHENTICATION_MODE_KRB5P\"\
+    ,\n            \"user_mapping\" : \"all\",\n            \"map_to_user\" :{\n \
+    \               \"id_type\" : \"NFS_UID\",\n                \"id_value\" : \"\
+    500\"\n            },\n            \"map_to_group\": {\n                \"id_type\"\
+    \ : \"NFS_GID\",\n                \"id_value\" : \"501\"\n            }\n    \
+    \    }\n    ]\n}\n"
   name: --restrictions
   required: false
 - alternate: []
@@ -83,9 +87,9 @@ summary: This section explains how to use the <code>qq nfs_mod_export</code> com
 synopsis: Modify an export
 title: qq nfs_mod_export
 usage: "qq nfs_mod_export [-h] (--export-id EXPORT_ID | --export-path EXPORT_PATH)\
-  \ [--tenant-id TENANT_ID] [--new-export-path NEW_EXPORT_PATH] [--new-tenant-id NEW_TENANT_ID]\
-  \ [--fs-path FS_PATH] [--description DESCRIPTION]\n    [--no-restrictions | --restrictions\
-  \ JSON_FILE_PATH] [--create-fs-path] [--fields-to-present-as-32-bit FIELD [FIELD\
+  \ [--tenant-id TENANT_ID] [--new-export-path NEW_EXPORT_PATH] [--new-tenant-id NEW_TENANT_ID]\n\
+  \    [--fs-path FS_PATH] [--description DESCRIPTION] [--no-restrictions | --restrictions\
+  \ JSON_FILE_PATH] [--create-fs-path]\n    [--fields-to-present-as-32-bit FIELD [FIELD\
   \ ...]]"
 zendesk_source: qq CLI Command Guide
 

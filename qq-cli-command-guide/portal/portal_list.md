@@ -7,13 +7,18 @@ optional_options:
   help: Pretty-print JSON
   name: -j
   required: false
+- alternate:
+  - --dns-lookup
+  help: Attempt reverse DNS lookups for peer IP addresses
+  name: -d
+  required: false
 permalink: /qq-cli-command-guide/portal/portal_list.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar
 summary: This section explains how to use the <code>qq portal_list</code> command.
 synopsis: Get the configuration and status for all portals on the current cluster
 title: qq portal_list
-usage: qq portal_list [-h] [-j]
+usage: qq portal_list [-h] [-j] [-d]
 zendesk_source: qq CLI Command Guide
 
 ---
