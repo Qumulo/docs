@@ -12,7 +12,7 @@ The Qumulo-Varonis integration monitors file and directory operations in Qumulo 
 
 
 ## How the Qumulo-Varonis Integration Works
-This section describes how the Qumulo-Varonis integration works. It provides an overview of the integration workflow; explains how Qumulo Broker gathers, processes, and emits Qumulo Core audit logs; and describes how Qumulo Broker uses `rsyslog` queues to ensure efficient data transfer.
+This section describes how the Qumulo-Varonis integration works. It provides an overview of the integration workflow; explains how Qumulo Broker gathers, processes, and sends Qumulo Core audit logs; and describes how Qumulo Broker uses `rsyslog` queues to ensure efficient data transfer.
 
 ### How Qumulo Clusters Send Audit Log Data to Varonis
 Qumulo Core sends audit logs for each [supported file- and directory-level operation](#supported-operations) in real time to Varonis for continuous monitoring. To detect anomalous behavior that system administrators can use to detect potential activity from a bad actor (for example, abnormal or high-frequency changes in file activity&mdash;such as file creation, deletion, and modification&mdash;or changes to access permissions), Varonis applies machine learning to Qumulo Core audit logs and issues alerts. In addition to common patterns, Varonis uses thread feeds and denylists to identify known ransomware and attack patterns.
@@ -27,16 +27,16 @@ The following architecture diagram shows the workflow between Qumulo Broker and 
 {% include note.html content="Although Qumulo currently is certified only for the Varonis SaaS offering, you can configure and use the SaaS offering with an on-premises Qumulo cluster." %}
 
 <a id="qumulo-broker"></a>
-### How Qumulo Broker Gathers, Processes, and Emits Data
+### How Qumulo Broker Gathers, Processes, and Sends Data
 In Qumulo Core, each audit log has a specific logging requirement (for example, certain log types include only specific fields). Although normally Qumulo Core outputs audit logs in CSV format, it can output these additional fields in JSON format. For more information, see [Configure Qumulo Audit Logging by Using the qq CLI](deploying-qumulo-broker.html#configure-audit-logging).
 
 Typically, Qumulo Core sends the audit logs to a single remote syslog instance. In the Qumulo-Varonis integration, Qumulo Broker receives the audit logs from multiple Qumulo clusters, converts them to various formats, and then sends them to Varonis.
 
 {% include note.html content="Qumulo Core can send audit logs to only one target syslog instance. For information about sending your Qumulo audit logs to different target systems in addition to Varonis, see [Configuring `rsyslog` to Communicate with Multiple Clusters](deploying-qumulo-broker.html#rsyslog-with-multiple-clusters)." %}
 
-The following architecture diagram shows how Qumulo Broker gathers, processes, and emits data.
+The following architecture diagram shows how Qumulo Broker gathers, processes, and sends data.
 
-{% include image.html alt="An Architecture Diagram that Shows how Qumulo Broker Gathers, Processes, and Emits Data" file="how-qumulo-broker-works.png" url="/integration-guide/varonis/images/how-qumulo-broker-works.png" %}
+{% include image.html alt="An Architecture Diagram that Shows how Qumulo Broker Gathers, Processes, and Sends Data" file="how-qumulo-broker-works.png" url="/integration-guide/varonis/images/how-qumulo-broker-works.png" %}
 
 
 ## Qumulo Broker Specifications
