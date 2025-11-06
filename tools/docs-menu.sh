@@ -639,6 +639,121 @@ determine_lowest_replication_version() {
     ~/src/release_management/determine_lowest_replication_version.py
 }
 
+reverse_integrate_all_changes_from_mainline() {
+  MAINLINE_BRANCH="mainline"
+  git checkout "$MAINLINE_BRANCH"
+  branches=$(git branch | grep -Ev "^\*|\b($MAINLINE_BRANCH|gh-pages)\b")
+
+  declare -a failed_branches
+
+  {
+    for branch in $branches; do
+      branch=$(echo "$branch" | xargs)
+      git checkout "$branch"
+
+      if git merge --no-commit --no-ff "$MAINLINE_BRANCH" 2>&1; then
+        if ! git diff --check | grep -q .; then
+          git commit -m "Reverse-integrating from mainline" 2>&1
+          git push 2>&1
+        else
+          failed_branches+=("$branch")
+          git merge --abort
+        fi
+      else
+        failed_branches+=("$branch")
+        git merge --abort
+      fi
+    done
+  } |& awk '
+    BEGIN {
+      hold = "";                 # pending blank line (if any)
+      last_blank_printed = 0;    # whether we just printed a blank
+      suppress_next_blank = 0;   # used after "Already up to date."
+    }
+
+    # helper to flush any held blank (if not suppressed)
+    function flush_hold() {
+      if (hold != "") {
+        print hold;
+        hold = "";
+        last_blank_printed = 1;
+      }
+    }
+
+    {
+      line = $0;
+
+      # If we have a held blank, decide whether to drop it
+      if (hold != "") {
+        if (line ~ /^nothing to commit, working tree clean$/) {
+          # Drop the blank before this specific line
+          print line;
+          hold = "";
+          last_blank_printed = 0;
+          next;
+        } else {
+          # Keep the blank; print it now
+          flush_hold();
+        }
+      }
+
+      # After "Already up to date.", we insert a blank ourselves.
+      # If the very next input line is blank, skip that duplicate.
+      if (suppress_next_blank) {
+        if (line ~ /^[[:space:]]*$/) {
+          suppress_next_blank = 0;
+          next;  # skip duplicate blank
+        }
+        suppress_next_blank = 0;
+      }
+
+      # Handle explicit blank lines (don’t print yet; may be dropped)
+      if (line ~ /^[[:space:]]*$/) {
+        hold = "";
+        hold = line;
+        next;
+      }
+
+      # ALWAYS insert exactly one blank line before "Switched to branch ..."
+      if (line ~ /^Switched to branch /) {
+        print "";
+        print line;
+        last_blank_printed = 1;
+        next;
+      }
+
+      # Add one blank after "Already up to date."
+      if (line ~ /^Already up to date\.$/) {
+        print line;
+        print "";
+        last_blank_printed = 1;
+        suppress_next_blank = 1;  # in case git prints its own blank
+        next;
+      }
+
+      # Default: print the line
+      print line;
+      last_blank_printed = 0;
+    }
+
+    END {
+      # if a blank was held at EOF (rare), print it
+      if (hold != "") print hold;
+    }
+  '
+
+  git checkout "$MAINLINE_BRANCH"
+
+  if [ ${#failed_branches[@]} -ne 0 ]; then
+    echo "Couldn't merge the following branches:"
+    printf '%s\n\n' "${failed_branches[@]}"
+  else
+    echo ""
+    echo "All branches merged successfully."
+  fi
+}
+
+
 check_environment
 check_symlinks
 global_docs_menu
@@ -663,33 +778,34 @@ while true; do
     echo -e "9.  🔄\tRefresh Vectara Ingest repo"
     echo -e "10. ❌\tFind unused .js scripts"
     echo -e "11. ❌\tFind unused and undefined Jekyll/Liquid variables"
+    echo -e "12. 🔀\tReverse-integrate all changes from mainline"
     echo
     echo -e "\033[1;33mRetrieve Information\033[0m"
-    echo -e "12. ⬆️\tDetermine whether a Qumulo Core release includes a host upgrade"
-    echo -e "13. ⬇️\tDetermine lowest replication version for Qumulo Core release"
-    echo -e "14. 🆕\tList CLI documentation with appended content"
+    echo -e "13. ⬆️\tDetermine whether a Qumulo Core release includes a host upgrade"
+    echo -e "14. ⬇️\tDetermine lowest replication version for Qumulo Core release"
+    echo -e "15. 🆕\tList CLI documentation with appended content"
     echo
     echo -e "\033[1;33mGenerate Documentation\033[0m"
-    echo -e "15. ⚙️\tRegenerate CLI documentation"
-    echo -e "16. ⚙️\tRegenerate REST API documentation"
-    echo -e "17. ⚙️\tOnly build HTML documentation"
-    echo -e "18. ⚙️\tOnly build PDF documentation"
+    echo -e "16. ⚙️\tRegenerate CLI documentation"
+    echo -e "17. ⚙️\tRegenerate REST API documentation"
+    echo -e "18. ⚙️\tOnly build HTML documentation"
+    echo -e "19. ⚙️\tOnly build PDF documentation"
     echo
     echo -e "\033[1;33mPreview Documentation\033[0m"
-    echo -e "19. 🖥️\tOnly serve documentation locally (Tailscale over HTTPS)"
-    echo -e "20. 🖥️\tOnly serve documentation locally (Python over HTTP)"
-    echo -e "21. 🖥️\tBuild documentation and serve it locally (Tailscale over HTTPS)"
-    echo -e "22. 🖥️\tBuild documentation and serve it locally (Python over HTTP)"
-    echo -e "23. 🖥️\tBuild documentation and serve it locally (Jekyll with LiveReload over HTTP)"
+    echo -e "20. 🖥️\tOnly serve documentation locally (Tailscale over HTTPS)"
+    echo -e "21. 🖥️\tOnly serve documentation locally (Python over HTTP)"
+    echo -e "22. 🖥️\tBuild documentation and serve it locally (Tailscale over HTTPS)"
+    echo -e "23. 🖥️\tBuild documentation and serve it locally (Python over HTTP)"
+    echo -e "24. 🖥️\tBuild documentation and serve it locally (Jekyll with LiveReload over HTTP)"
     echo
     echo -e "\033[1;33mTest Documentation\033[0m"
-    echo -e "24. 📋\tCheck documentation for link, script, and image errors"
-    echo -e "25. 📋\tCheck documentation for spelling errors"
+    echo -e "25. 📋\tCheck documentation for link, script, and image errors"
+    echo -e "26. 📋\tCheck documentation for spelling errors"
     echo
     echo -e "\033[1;33mIndex Documentation\033[0m"
-    echo -e "26. 🔍\tIngest docs.qumulo.com into Vectara"
-    echo -e "27. 🔍\tIngest care.qumulo.com into Vectara"
-    echo -e "28. 🔍\tIngest qumulo.com into Vectara"
+    echo -e "27. 🔍\tIngest docs.qumulo.com into Vectara"
+    echo -e "28. 🔍\tIngest care.qumulo.com into Vectara"
+    echo -e "29. 🔍\tIngest qumulo.com into Vectara"
     echo
     echo -e "q.  👋\tQuit"
     echo
@@ -707,23 +823,24 @@ while true; do
         9) refresh_vectara_ingest_repo;;
         10) find_unused_scripts ;;
         11) find_unused_undefined_vars ;;
-        12) determine_host_upgrade_onprem_release ;;
-        13) determine_lowest_replication_version ;;
-        14) find_modified_cli ;;
-        15) regen_cli_docs ;;
-        16) regen_api_docs ;;
-        17) build_html_docs ;;
-        18) build_pdf_docs ;;
-        19) only_serve_docs_locally_tailscale ;;
-        20) only_serve_docs_locally_python ;;
-        21) build_serve_docs_locally_tailscale ;;
-        22) build_serve_docs_locally_python ;;
-        23) build_serve_docs_locally_jekyll ;;
-        24) check_docs_errors ;;
-        25) check_spelling_errors ;;
-        26) ingest_docs_portal ;;
-        27) ingest_care_portal ;;
-        28) ingest_corp_site ;;
+        12) reverse_integrate_all_changes_from_mainline ;;
+        13) determine_host_upgrade_onprem_release ;;
+        14) determine_lowest_replication_version ;;
+        15) find_modified_cli ;;
+        16) regen_cli_docs ;;
+        17) regen_api_docs ;;
+        18) build_html_docs ;;
+        19) build_pdf_docs ;;
+        20) only_serve_docs_locally_tailscale ;;
+        21) only_serve_docs_locally_python ;;
+        22) build_serve_docs_locally_tailscale ;;
+        23) build_serve_docs_locally_python ;;
+        24) build_serve_docs_locally_jekyll ;;
+        25) check_docs_errors ;;
+        26) check_spelling_errors ;;
+        27) ingest_docs_portal ;;
+        28) ingest_care_portal ;;
+        29) ingest_corp_site ;;
         q) exit ;;
         *) echo "You must enter a valid option." ;;
     esac
