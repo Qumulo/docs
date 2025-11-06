@@ -25,8 +25,7 @@ Follow the instructions in the ASUS documentation:
 1. When reassembling the chassis, follow these instructions in reverse order.
 
 
-<a id="replace-nic"></a>
-## Replacing a NIC
+## Replacing a NIC {#replace-nic}
 {% include note.html content="Certain node types have two NICs. For more information, see [Technical Specifications](technical-specifications.html)." %}
 
 Follow the instructions in the ASUS documentation:
@@ -36,8 +35,7 @@ Follow the instructions in the ASUS documentation:
 * For the right NIC, see [Installing an Expansion Card to the Riser Card Bracket](https://dlcdnets.asus.com/pub/ASUS/server/RS500A-E12-RS12U/Manual/E21507_RS500A-E12-RS12U_UM_V2_WEB.pdf?model=RS500A-E12-RS12U#page=50).
 
 
-<a id="replace-nvme-m2-boot-drive"></a>
-## Replacing an M.2 Boot Drive
+## Replacing an M.2 Boot Drive {#replace-nvme-m2-boot-drive}
 {{site.q1uag1Drives.internalBootDrive}}
 
 
@@ -46,23 +44,19 @@ Follow the instructions in the ASUS documentation:
 {% include content-reuse/hardware-guides/platform-agnostic-boot-drive-replacement.md %}
 
 
-<a id="replace-nvme-drive-front-storage-bay"></a>
-## Replacing an NVMe Drive in a Front Storage Bay
+## Replacing an NVMe Drive in a Front Storage Bay {#replace-nvme-drive-front-storage-bay}
 {{site.q1uag1Drives.frontStorageBays}}
 
 
-<a id="replace-nvme-drive-internal-storage-bay"></a>
-## Replacing an NVMe Drive in an Internal Storage Bay
+## Replacing an NVMe Drive in an Internal Storage Bay {#replace-nvme-drive-internal-storage-bay}
 {{site.q1uag1Drives.internalStorageBays}}
 
 
-<a id="replace-psu"></a>
-## Replacing a Power Supply Unit (PSU)
+## Replacing a Power Supply Unit (PSU) {#replace-psu}
 Your {{site.q1uag1}} chassis contains two PSUs. Follow the instructions to [replace a power supply module](https://dlcdnets.asus.com/pub/ASUS/server/RS500A-E12-RS12U/Manual/E21507_RS500A-E12-RS12U_UM_V2_WEB.pdf?model=RS500A-E12-RS12U#page=71) in the ASUS documentation.
 
 
-<a id="replace-fan"></a>
-## To Replace a System Fan
+## To Replace a System Fan {#replace-fan}
 Your {{site.q1uag1}} chassis has five system fans on the left and two on the right. The fans mount to the chassis with a toolless system. For more information, see [Internal Features](https://dlcdnets.asus.com/pub/ASUS/server/RS500A-E12-RS12U/Manual/E21507_RS500A-E12-RS12U_UM_V2_WEB.pdf?model=RS500A-E12-RS12U#page=19) in the ASUS documentation.
 
 1. Disconnect a fan from the motherboard. For more information, see [Cable Connections](https://dlcdnets.asus.com/pub/ASUS/server/RS500A-E12-RS12U/Manual/E21507_RS500A-E12-RS12U_UM_V2_WEB.pdf?model=RS500A-E12-RS12U#page=62) and [System Fan Connectors](https://dlcdnets.asus.com/pub/ASUS/server/RS500A-E12-RS12U/Manual/E21507_RS500A-E12-RS12U_UM_V2_WEB.pdf?model=RS500A-E12-RS12U#page=90) in the ASUS documentation.
@@ -70,8 +64,7 @@ Your {{site.q1uag1}} chassis has five system fans on the left and two on the rig
 1. To remove a fan, lift it upwards from the chassis.
 
 
-<a id="replace-dimms"></a>
-## Replacing a DIMM
+## Replacing a DIMM {#replace-dimms}
 Your {{site.q1uag1}} chassis has 24 DDR5 DIMM slots. For more information, see [System Memory](https://dlcdnets.asus.com/pub/ASUS/server/RS500A-E12-RS12U/Manual/E21507_RS500A-E12-RS12U_UM_V2_WEB.pdf?model=RS500A-E12-RS12U#page=39) and [Memory Configurations](https://dlcdnets.asus.com/pub/ASUS/server/RS500A-E12-RS12U/Manual/E21507_RS500A-E12-RS12U_UM_V2_WEB.pdf?model=RS500A-E12-RS12U#page=40) in the ASUS documentation.
 
 Follow the instructions for [removing and installing a DIMM](https://dlcdnets.asus.com/pub/ASUS/server/RS500A-E12-RS12U/Manual/E21507_RS500A-E12-RS12U_UM_V2_WEB.pdf?model=RS500A-E12-RS12U#page=41) in the ASUS documentation.

@@ -26,8 +26,7 @@ Access tokens are long-lived. They provide an alternative to session-based authe
 </ul>
 {{site.data.alerts.end}}
 
-<a id="creating-using-access-tokens"></a>
-## Creating and Using Access Tokens
+## Creating and Using Access Tokens {#creating-using-access-tokens}
 This section explains how to create access tokens without or with an expiration time by using the `qq` CLI.
 
 {{page.varPrereqWrite}}
@@ -85,8 +84,7 @@ You can:
 </ul>
 {{site.data.alerts.end}}
 
-<a id="create-token-expiration-time"></a>
-### To Create an Access Token with an Expiration Time
+### To Create an Access Token with an Expiration Time {#create-token-expiration-time}
 In Qumulo Core 5.3.2 (and higher), you can run the {% include qq.html command="auth_create_access_token" %} command and specify the expiration time. You can specify the expiration time in different formats. For example:
 
 ```bash
@@ -237,8 +235,7 @@ expiration time       enabled
 To filter the command's output by user, use the `--user` flag and use the same format for the name as for the {% include qq.html command="auth_create_access_token" %} command.
 
 
-<a id="modifying-expiration-time-access-token"></a>
-## Modifying the Expiration Time for an Access Token
+## Modifying the Expiration Time for an Access Token {#modifying-expiration-time-access-token}
 This section explains how to modify access tokens by using the `qq` CLI.
 
 {{page.varPrereqWrite}}
@@ -256,8 +253,7 @@ $ qq auth_modify_access_token 1234567890123456789012 --expiration-time 'Jan 01 2
 {{site.data.alerts.end}}
 
 
-<a id="disabling-access-token"></a>
-## Disabling an Access Token
+## Disabling an Access Token {#disabling-access-token}
 To help you check your system's security posture, Qumulo Core lets you disable an access token without deleting it. This is a good way to check for dependencies on the access token before you delete the token permanently. This section explains how to disable an access token by using the `qq` CLI.
 
 {{page.varPrereqWrite}}
@@ -292,8 +288,7 @@ To delete an access token, run the {% include qq.html command="auth_delete_acces
 $ qq auth_delete_access_token 1234567890123456789012
 ```
 
-<a id="best-practices-using-access-tokens"></a>
-## Best Practices for Using Qumulo Core Access Tokens
+## Best Practices for Using Qumulo Core Access Tokens {#best-practices-using-access-tokens}
 This section lists the best practices for limiting the exposure to lost credentials and working with Qumulo Core access tokens securely.
 
 ### Avoiding Creation of Tokens for Administrative Accounts

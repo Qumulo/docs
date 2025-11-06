@@ -13,6 +13,6 @@ For more information and examples of configuring file locks, see the following r
 
 
 ## How You Can Use File Locks to Implement the Write Once Read Many (WORM) Model
-To lock any newly created file once the client finishes writing to it, you can [watch for file attribute and directory changes by using REST](../watching-file-attribute-directory-changes/rest.html). For example, you can use the `child_data_written` or `child_size_change` events. For more information, see [SSE Payload Notification Types](../watching-file-attribute-directory-changes/rest.html#sse-payload-notification-types).
+To lock any newly created file once the client finishes writing to it, you can [watch for file attribute and directory changes by using REST](../watching-file-attribute-directory-changes/rest.html). For example, you can use the `child_data_written` or `child_size_change` events. For more information, see [SSE Payload Notification Types](../watching-file-attribute-directory-changes/rest.html#notification-types).
 
 To implement the WORM model and maintain the file's _write-once_ integrity, use file locks to prevent any further modifications after the file becomes immutable following the initial write operation.

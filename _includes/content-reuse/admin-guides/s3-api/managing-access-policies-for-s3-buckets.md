@@ -46,8 +46,7 @@ By default, S3 buckets in a _no policy_ state allow:
 * The S3 bucket's creator and users with RBAC permissions to perform S3 bucket write operations
 
 
-<a id="access-policy-statements"></a>
-## How Policy Statements for S3 Buckets are Structured
+## How Policy Statements for S3 Buckets are Structured {#access-policy-statements}
 Policy statements for S3 buckets use the JSON format. For example:
 
 ```json
@@ -128,8 +127,7 @@ The S3 bucket policy statement contains the following fields.
   </tbody>
 </table>
 
-<a id="actions"></a>
-## S3 API Action Permissions Supported in Qumulo Core
+## S3 API Action Permissions Supported in Qumulo Core {#actions}
 The following table describes the subset of the [Amazon S3 API action permissions](https://docs.aws.amazon.com/AmazonS3/latest/userguide/list_amazons3.html#amazons3-actions-as-permissions) which Qumulo Core access policies support.
 
 {{site.data.alerts.note}}
@@ -261,8 +259,7 @@ The following table describes the subset of the [Amazon S3 API action permission
   </tbody>
 </table>
 
-<a id="principals"></a>
-## Principals Supported in Qumulo Core
+## Principals Supported in Qumulo Core {#principals}
 The following table describes examples of principals which Qumulo Core supports.
 
 <table>
@@ -325,8 +322,7 @@ The following table describes examples of principals which Qumulo Core supports.
   </tbody>
 </table>
 
-<a id="rbac-overrides"></a>
-## Role-Based Access Control (RBAC) Overrides
+## Role-Based Access Control (RBAC) Overrides {#rbac-overrides}
 {{site.RBACoverrides}}
 
 The following table describes the relationships between Qumulo Core privileges and the S3 API action permissions associated with them.

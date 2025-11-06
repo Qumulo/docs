@@ -17,8 +17,7 @@ This section explains the differences between the levels of detail of audit logs
 {{site.data.alerts.end}}
 
 
-<a id="details-in-syslog-csv-format"></a>
-## Details Included in the Default syslog CSV Format
+## Details Included in the Default syslog CSV Format {#details-in-syslog-csv-format}
 {{site.data.alerts.note}}
 <ul>
   <li>Because the user ID, path fields, and secondary path fields can contain characters that must be escaped (such as quotation marks and commas), you must enclose these fields in quotation marks.</li>
@@ -144,8 +143,7 @@ Jun 6 14:55:24 my-machine qumulo {{site.exampleIP0}},"system",internal,remote_sy
 ```
 
 
-<a id="details-in-syslog-json-format"></a>
-## Details Included in the syslog JSON Format
+## Details Included in the syslog JSON Format {#details-in-syslog-json-format}
 You can configure Qumulo Core to format audit log messages in the syslog JSON format. The fields in this format are similar to [the fields that the syslog CSV format provides](#details-in-syslog-csv-format), with the following exceptions.
 
 {% include note.html content="The syslog JSON format isn't available in the Qumulo Core Web UI." %}
@@ -228,8 +226,7 @@ Jun 6 14:55:24 my-machine qumulo {"user_id": {"sid": "{{site.exampleSID8}}", "au
 Jun 6 14:55:24 my-machine qumulo {"user_id": {"auth_id": "1", "sid": "{{site.exampleSID7}}", "name": "system"}, "user_ip": "{{site.exampleIP0}}", "protocol": "internal", "operation": "remote_syslog_shutdown", "status": "ok", "details": {}}</pre></div>
 
 
-<a id="details-in-cloudwatch-json-format"></a>
-## Details Included in the Amazon CloudWatch JSON Format
+## Details Included in the Amazon CloudWatch JSON Format {#details-in-cloudwatch-json-format}
 You can configure Qumulo Core to format audit log messages in the Amazon CloudWatch JSON format.
 
 {% include tip.html content="To download the audit log from the CloudWatch console, on the left navigation panel click **Logs &gt; Log groups**, click a log group, and then on the **Log events** page click **Actions &gt; Copy search results (ASCII)**." %}
@@ -268,8 +265,7 @@ For example:
 ## Operation Names in Audit Logging
 This section lists the operation names in Qumulo Core audit logging.
 
-<a id="connectivity-operations"></a>
-### Connectivity Operations
+### Connectivity Operations {#connectivity-operations}
 * `ftp_login`
 * `nfs_mount`
 * `rest_login`
@@ -278,20 +274,17 @@ This section lists the operation names in Qumulo Core audit logging.
 * `smb_close_session`
 * `smb_login`
 
-<a id="smb-specific-operations"></a>
-### SMB-Specific Operations
+### SMB-Specific Operations {#smb-specific-operations}
 * `smb_create_share`
 * `smb_modify_share`
 * `smb_delete_share`
 * `smb2_notify_req`
 
-<a id="audit-logging-operations"></a>
-### Audit Logging Operations
+### Audit Logging Operations {#audit-logging-operations}
 * `remote_syslog_shutdown`
 * `remote_syslog_startup`
 
-<a id="file-system-operations"></a>
-### File System Operations
+### File System Operations {#file-system-operations}
 * `fs_copy_chunk`
 * `fs_create_directory`
 * `fs_create_directories`
@@ -317,8 +310,7 @@ This section lists the operation names in Qumulo Core audit logging.
 * `fs_write_file_lock`
 * `fs_write_user_metadata`
 
-<a id="rest-api-operations"></a>
-### REST API Operations
+### REST API Operations {#rest-api-operations}
 <details>
   <summary>Click to expand</summary>
   <ul>
@@ -473,16 +465,14 @@ This section lists the operation names in Qumulo Core audit logging.
 ## Error Status Messages
 This section lists the error status messages in Qumulo Core audit logging.
 
-<a id="credential-error-messages"></a>
-### Credential Error Messages
+### Credential Error Messages {#credential-error-messages}
 * `cred_error`
 * `cred_identity_not_supported_error`
 * `cred_invalid_local_user_error`
 * `cred_invalid_sid_error`
 * `cred_remote_resource_unavailable_error`
 
-<a id="file-system-operation-error-messages"></a>
-### File System Operation Error Messages
+### File System Operation Error Messages {#file-system-operation-error-messages}
 <details>
   <summary>Click to expand</summary>
   <ul>

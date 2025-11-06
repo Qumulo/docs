@@ -26,8 +26,7 @@ The _bucket root directory_ (or _bucket root)_ is the directory to which you att
 {% include important.html content="Because S3 buckets can use any directory in the file system as a root directory, the same file can be an object in multiple buckets." %}
 
 
-<a id="object-keys"></a>
-### How the Qumulo File System Determines Object Keys
+### How the Qumulo File System Determines Object Keys {#object-keys}
 The _object key_ in a Qumulo S3 bucket is its file system path, relative to the bucket's root directory. Only objects that are directories have a trailing slash (`/`) in their keys.
 
 The following example shows the contents of a Qumulo file system.
@@ -69,8 +68,7 @@ However, if you have the S3 bucket `bucket2` with its root directory at `/applic
 </ul>
 {{site.data.alerts.end}}
 
-<a id="bucket-naming-rules"></a>
-### How to Name an S3 Bucket
+### How to Name an S3 Bucket {#bucket-naming-rules}
 When you create an S3 bucket, you name it. A bucket's name doesn't need to be related to its root directory.
 
 Except for names that contain the period (`.`), Qumulo Core accepts all names that conform to the following Amazon S3 bucket naming rules.
@@ -106,8 +104,7 @@ While the Qumulo REST API and `qq` CLI let you use an existing directory as the 
 {{site.data.alerts.end}}
 
 
-<a id="default-directory-prefix"></a>
-### Configuring the Default Bucket Directory Prefix for S3 Buckets
+### Configuring the Default Bucket Directory Prefix for S3 Buckets {#default-directory-prefix}
 The _default bucket directory prefix_ is the directory under which Qumulo Core creates new bucket root directories when it creates S3 buckets by using the `CreateBucket` S3 API action or when you create an S3 bucket without specifying a directory {{site.s3.permissions.APIorCLI}}.
 
 By default, the default bucket directory prefix for newly created buckets is the cluster's root directory (`/`). Thus, if you create a bucket named `my-bucket`, its root directory is `/my-bucket`.
@@ -192,8 +189,7 @@ You can configure global settings, such as the {{page.varDefaultPrefix}} for all
 * To change the bucket configuration, you need the {{site.s3.permissions.bucketsWrite}}. For more information, see {% include qq.html command="s3_modify_bucket" %} in the {{site.guides.cli}}.
 
 
-<a id="enable-object-lock"></a>
-## Enabling Object Lock for S3 Buckets
+## Enabling Object Lock for S3 Buckets {#enable-object-lock}
 An [Object Lock](https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock.html) can prevent an S3 object from being deleted for a limited time or indefinitely. For information about file locks in Qumulo Core, see [Managing File Locks](../authorization-qumulo-core/managing-file-locks.html).
 
 ### To Enable Object Lock for an S3 Bucket by Using the qq CLI

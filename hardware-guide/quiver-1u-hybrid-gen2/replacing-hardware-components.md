@@ -28,8 +28,7 @@ Your {{site.q1uhg2}} chassis has a label with instructions for removing the top 
    {% include image.html alt="Quiver 1U Hybrid Gen2 Top Cover Guide Hole" file="quiver-1u-hybrid-gen2-top-cover-guide-hole.png" %}
 
 
-<a id="replace-pci-e-riser-card"></a>
-## To Replace a PCI Express (PCIe) Riser Card
+## To Replace a PCI Express (PCIe) Riser Card {#replace-pci-e-riser-card}
 Your {{site.q1uhg2}} chassis contains a PCIe riser card inserted vertically into the motherboard. The PCIe riser card holds the NIC and M.2 boot drive.
 
 {% include note.html content="The PCIe riser card installation is toolless." %}
@@ -43,8 +42,7 @@ Your {{site.q1uhg2}} chassis contains a PCIe riser card inserted vertically into
 1. To install a replacement PCIe riser card, insert it vertically into the PCIe slot.
 
 
-<a id="replace-nic"></a>
-## To Replace a NIC
+## To Replace a NIC {#replace-nic}
 Your {{site.q1uhg2}} chassis contains a NIC inserted horizontally into the PCIe riser card.
 
 {% include note.html content="Although the NIC installation is toolless, depending on the NIC that ships with your node model, you might have to replace the exterior-facing metal frame on your NIC with a different one. For more information, see [Technical Specifications](technical-specifications.html)." %}
@@ -60,8 +58,7 @@ Your {{site.q1uhg2}} chassis contains a NIC inserted horizontally into the PCIe 
 1. Insert the PCIe riser card vertically into the PCIe slot.
 
 
-<a id="replace-nvme-m2-boot-drive"></a>
-## To Replace an M.2 Boot Drive
+## To Replace an M.2 Boot Drive {#replace-nvme-m2-boot-drive}
 Your {{site.q1uhg2}} chassis contains an NVMe boot drive inserted vertically into an M.2 expansion slot on the PCIe riser card. For more information, see [NVMe M.2 Boot Drive](drive-bay-mapping.html#nvme-m2-boot-drive).
 
 1. {{page.varNoHotPlug}}
@@ -89,8 +86,7 @@ Your {{site.q1uhg2}} chassis contains an NVMe boot drive inserted vertically int
 {% include content-reuse/hardware-guides/platform-agnostic-boot-drive-replacement.md %}
 
 
-<a id="replace-hdd"></a>
-## To Replace an HDD
+## To Replace an HDD {#replace-hdd}
 Your {{site.q1uhg2}} chassis contains 12 or 6 HDDs. For more information, see [HDD Drives](drive-bay-mapping.html#hdd-drives).
 
 {{site.data.alerts.note}}
@@ -119,8 +115,7 @@ Your {{site.q1uhg2}} chassis contains 12 or 6 HDDs. For more information, see [H
 1. Slide the tray with the HDD carriers into the chassis.
 
 
-<a id="replace-nvme-drive"></a>
-## To Replace an NVMe Drive
+## To Replace an NVMe Drive {#replace-nvme-drive}
 Your {{site.q1uhg2}} chassis contains 4 or 3 NVMe drives. For more information, see [NVMe Drives](drive-bay-mapping.html#nvme-drives).
 
 1. {{page.varNoHotPlug}}
@@ -138,8 +133,7 @@ Your {{site.q1uhg2}} chassis contains 4 or 3 NVMe drives. For more information, 
 1. Insert the SSD bracket with the new NVMe drive into the chassis until the blue latch snaps into place.
 
 
-<a id="replace-psu"></a>
-## To Replace a Power Supply Unit (PSU)
+## To Replace a Power Supply Unit (PSU) {#replace-psu}
 Your {{site.q1uhg2}} chassis contains two PSUs.
 
 {% capture psuHotPlugOK %}{{page.varHotPlug}}{% endcapture %}
@@ -178,8 +172,7 @@ Your {{site.q1uhg2}} chassis has two three-fan modules. The fans are marked **L*
 1. Replace the air duct onto the new fan module.
 
 
-<a id="replace-dimms"></a>
-## To Replace a DIMM
+## To Replace a DIMM {#replace-dimms}
 Your {{site.q1uhg2}} chassis has 12 DIMM slots, with a locking latch on each side of each DIMM.
 
 1. {{page.varNoHotPlug}}

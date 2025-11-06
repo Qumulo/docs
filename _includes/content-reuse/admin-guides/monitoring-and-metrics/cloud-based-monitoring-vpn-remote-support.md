@@ -114,8 +114,7 @@ Before you can use Cloud-Based Monitoring{% if page.platform == 'on-prem'%} and 
     </tbody>
   </table>
 
-<a id="enabling-cloud-based-monitoring"></a>
-## Enabling Cloud-Based Monitoring
+## Enabling Cloud-Based Monitoring {#enabling-cloud-based-monitoring}
 {% if page.platform contains == 'cnq-' %}Cloud-Based Monitoring is enabled for you by default. If you have disabled Cloud-Based Monitoring, you can enable it{% else %}You can enable Cloud-Based Monitoring{% endif %} by using the Qumulo Core Web UI or the `qq` CLI.
 
 ### To Enable Cloud-Based Monitoring by Using the Qumulo Core Web UI
@@ -143,8 +142,7 @@ Run the {% include qq.html command="set_monitoring_conf" %} command with the `--
 {{site.data.alerts.end}}
 
 {% if page.platform == 'on-prem' %}
-<a id="enabling-remote-support"></a>
-## Enabling VPN Remote Support
+## Enabling VPN Remote Support {#enabling-remote-support}
 You can enable Remote Support by using the Qumulo Core Web UI or the `qq` CLI.
 
 ### To Enable VPN Remote Support by Using the Qumulo Core Web UI

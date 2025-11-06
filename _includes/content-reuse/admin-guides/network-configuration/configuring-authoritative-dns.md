@@ -44,8 +44,7 @@ Before you enable QDNS on your Qumulo cluster, ensure that you have:
 
 * Permissions to configure DNS (for example, create `NS` records) and DNS delegation for your domain
 
-<a id="configure-dns-delegation"></a>
-### Configuring DNS Delegation for Your Domain
+### Configuring DNS Delegation for Your Domain {#configure-dns-delegation}
 To route DNS queries from your cluster's FQDN to QDNS, you must configure DNS delegation according to your DNS provider:
 
 * **Microsoft DNS:** Create a _delegated zone_. For more information, see [Manage DNS zones using DNS server in Windows Server](https://learn.microsoft.com/en-us/windows-server/networking/dns/manage-dns-zones) in the Windows Server documentation.

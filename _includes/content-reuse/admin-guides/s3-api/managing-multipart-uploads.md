@@ -26,8 +26,7 @@ The following conditions are true for multipart S3 uploads in Qumulo Core.
 
 To check how much space incomplete multipart uploads use on your cluster, you can list the uploads by using the Qumulo REST API or `qq` CLI. For more information, see [Listing Multipart Uploads](#listing-uploads).
 
-<a id="system-initiated-uploads"></a>
-### How System-Initiated Multipart S3 Uploads Work
+### How System-Initiated Multipart S3 Uploads Work {#system-initiated-uploads}
 Occasionally, when you [list your multipart uploads](#listing-uploads), you might see uploads that you didn't initiate. These are _system-initiated uploads_ which Qumulo Core uses for `PutObject` and `CopyObject` S3 API actions for objects that exceed a certain size.
 
 If Qumulo Core encounters an error while performing a system-initiated upload, it attempts to abort the upload and clean up the partial upload data immediately.
@@ -37,8 +36,7 @@ However, if Qumulo Core is unable to clean up the incomplete upload data immedia
 {% include note.html content="The process for background clean-up after incomplete and user-initiated uploads is the same. For more information, see [Aborting and Cleaning Up Multipart S3 Uploads Automatically](#cleaning-up-uploads-automatically)." %}
 
 
-<a id="listing-uploads"></a>
-## Listing Incomplete Multipart S3 Uploads
+## Listing Incomplete Multipart S3 Uploads {#listing-uploads}
 You can list the incomplete multipart uploads for a single S3 bucket by using the Qumulo REST API or `qq` CLI.
 
 {{site.data.alerts.note}}
@@ -115,8 +113,7 @@ The output from the `qq` CLI and REST API is the same. The following example out
 ```
 
 
-<a id="cleaning-up-uploads-automatically"></a>
-## Aborting and Cleaning Up Multipart S3 Uploads Automatically
+## Aborting and Cleaning Up Multipart S3 Uploads Automatically {#cleaning-up-uploads-automatically}
 Qumulo Core automatically aborts and cleans up an incomplete multipart S3 if the upload doesn't receive any data after the configured _expiry interval_ (1 day by default).
 
 When Qumulo Core removes a multipart upload, it frees up the space that the upload uses on the cluster. You can configure the expiry interval by using the Qumulo REST API or `qq` CLI.
@@ -148,8 +145,7 @@ $ qq s3_modify_settings \
 ```
 
 
-<a id="cleaning-up-uploads-manually"></a>
-## Aborting or Cleaning Up Multipart S3 Uploads Manually
+## Aborting or Cleaning Up Multipart S3 Uploads Manually {#cleaning-up-uploads-manually}
 Use the Qumulo REST API or `qq` CLI to abort and clean up the upload. You need the bucket name and upload ID. For more information about looking up this information, see [Listing Incomplete Multipart S3 Uploads](#listing-uploads).
 
 {% include note.html content="If you are an administrative user or the user who initiated the upload, you can use the `AbortMultipartUpload` S3 API action. In addition to the bucket name and upload ID, you also need the object key for the upload." %}

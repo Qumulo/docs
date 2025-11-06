@@ -25,8 +25,7 @@ When you create or modify an SMB share, you can use one of the following SMB hos
 
    {% include important.html content="The file's permissions and the share's user permissions must also grant full access." %}
 
-<a id="hiding-an-smb-share"></a>
-## Managing SMB Host Restrictions by Using the qq CLI
+## Managing SMB Host Restrictions by Using the qq CLI {#hiding-an-smb-share}
 For information about viewing, modifying, and removing host restrictions and hiding SMB shares from unauthorized hosts by using the `qq` CLI, see the following sections in the {{site.guides.cli}}:
 
 * {% include qq.html command="smb_add_share" %}

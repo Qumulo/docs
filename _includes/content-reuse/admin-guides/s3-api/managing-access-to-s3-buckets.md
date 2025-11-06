@@ -16,8 +16,7 @@ For authenticated requests signed with [Amazon Signature Version 4]({{site.s3.do
 While Qumulo Core processes an S3 request, the ownership of any newly created files and directories belongs to the user that makes the request. These files and directories inherit access control entries (ACEs) from their parents (this process is the same for all protocols).
 
 
-<a id="presigned-urls"></a>
-## Granting Access to S3 Buckets by Using Presigned URLs
+## Granting Access to S3 Buckets by Using Presigned URLs {#presigned-urls}
 To let trusted users perform S3 API actions&mdash;such as `GetObject` or `UploadPart`&mdash;as if using your user account, you can generate a _presigned URL_ (also known as _query parameter authentication_), associate the URL with specific API actions, and then share it with trusted users. Every presigned URLs has a configurable expiration time that ensures that the URL stops working at the configured time.
 
 For more information, see [Authenticating Requests: Using Query Parameters (AWS Signature Version 4)](https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html) in the Amazon Simple Storage Service API Reference.
@@ -59,8 +58,7 @@ X-Amz-Algorithm=AWS4-HMAC-SHA256
 ```
 
 
-<a id="enabling-anonymous-access"></a>
-## Enabling Anonymous Access for an S3 Bucket
+## Enabling Anonymous Access for an S3 Bucket {#enabling-anonymous-access}
 In certain cases, it might be more practical to allow anonymous (unauthenticated) requests to access the contents of S3 buckets, for example, if you want to let users access objects from the S3 bucket by using a web browser or if the number of users who need read access is very large. When you enable anonymous access to an S3 bucket, your users can perform read-only S3 operations without authenticating their requests.
 
 {% include important.html content="Anonymous requests can never perform modifying operations. Qumulo Core requires all modifying operations on an S3 bucket to be authenticated." %}
@@ -107,8 +105,7 @@ To ensure that anonymous requests have permission to read files in a bucket, gra
   }
   ```
 
-<a id="inheritable-aces"></a>
-## Using Inheritable ACEs to Imitate Bucket-Level Permissions
+## Using Inheritable ACEs to Imitate Bucket-Level Permissions {#inheritable-aces}
 To grant multiple users access to all paths in a bucket and ensure that newly created directories inherit the correct permissions, use inheritable access control entries (ACEs).
 
 In Amazon S3, permission to read objects from &mdash;and write objects to&mdash; an S3 bucket applies to the entire bucket. In Qumulo Core, each [object key](creating-managing-s3-buckets.html#object-keys) corresponds to a file path relative to a bucket's root directory. Qumulo Core grants permissions for individual files and directories.
@@ -156,8 +153,7 @@ Allowed  Object inherit, Container inherit  Delete child, Execute/Traverse, Read
                                             Write file
 ```
 
-<a id="bucket-level-read-access"></a>
-### Imitating Bucket-Level Read-Only Access
+### Imitating Bucket-Level Read-Only Access {#bucket-level-read-access}
 Run the {% include qq.html command="fs_modify_acl" %} command. In the following example, we add the access control entry (ACE) to the bucket whose root directory is `/buckets/my-bucket` for the user group `MyReaders`:
 
 ```bash

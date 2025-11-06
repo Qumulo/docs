@@ -64,8 +64,7 @@ To apply a specific subnet configuration, you can first create a subnet and then
 
 1. Delegate the newly created subnet to `Qumulo.Storage/fileSystems`.
 
-<a id="load-balanced-endpoints"></a>
-### Load-Balancing {{site.azure.qumuloOnAzureShort}} Endpoints
+### Load-Balancing {{site.azure.qumuloOnAzureShort}} Endpoints {#load-balanced-endpoints}
 Qumulo provisions multiple endpoints to allow access to {{site.azure.qumuloOnAzureShort}}. Every endpoint appears in the Azure Portal as a network interface with an IP address. Qumulo creates a managed resource group under your subscription for these endpoints.
 
 {% include tip.html content="To view links to your managed resource groups and network interfaces, use the **Portal** view of your `Qumulo.Storage/fileSystems` resource." %}

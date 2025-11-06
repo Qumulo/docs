@@ -7,8 +7,7 @@
 </ul>
 {{site.data.alerts.end}}
 
-<a id="generating-ecdsa-private-key"></a>
-## Generating an ECDSA Private Key
+## Generating an ECDSA Private Key {#generating-ecdsa-private-key}
 This section explains how to generate a 256-bit ECDSA private key by using Linux CLI tools and AWS, GCP, and Azure CLI or API.
 
 ### To Generate a Private Key by Using Linux CLI Tools

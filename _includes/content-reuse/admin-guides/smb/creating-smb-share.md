@@ -1,5 +1,4 @@
-<a id="create-smb-share"></a>
-## To Create an SMB Share
+## To Create an SMB Share {#create-smb-share}
 
 1. {{site.logIntoWebUI}}
 

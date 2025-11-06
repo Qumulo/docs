@@ -26,8 +26,7 @@ The following architecture diagram shows the workflow between Qumulo Broker and 
 
 {% include note.html content="Although Qumulo currently is certified only for the Varonis SaaS offering, you can configure and use the SaaS offering with an on-premises Qumulo cluster." %}
 
-<a id="qumulo-broker"></a>
-### How Qumulo Broker Gathers, Processes, and Sends Data
+### How Qumulo Broker Gathers, Processes, and Emits Data {#qumulo-broker}
 In Qumulo Core, each audit log has a specific logging requirement (for example, certain log types include only specific fields). Although normally Qumulo Core outputs audit logs in CSV format, it can output these additional fields in JSON format. For more information, see [Configure Qumulo Audit Logging by Using the qq CLI](deploying-qumulo-broker.html#configure-audit-logging).
 
 Typically, Qumulo Core sends the audit logs to a single remote syslog instance. In the Qumulo-Varonis integration, Qumulo Broker receives the audit logs from multiple Qumulo clusters, converts them to various formats, and then sends them to Varonis.

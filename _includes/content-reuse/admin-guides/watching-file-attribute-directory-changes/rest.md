@@ -16,8 +16,7 @@ Qumulo Core continues to stream events until the client closes the connection.
 </ul>
 {{site.data.alerts.end}}
 
-<a id="sse-event-payload-structure"></a>
-## How SSE Event Payloads are Structured for Recursive Notification Requests
+## How SSE Event Payloads are Structured for Recursive Notification Requests {#sse-event-payload-structure}
 An SSE event payload is a JSON-encoded list of notification objects. The following is a format example of the SSE event payload.
 
 ```json
@@ -50,8 +49,7 @@ An SSE event payload is a JSON-encoded list of notification objects. The followi
 
   When this value is `null`, the notification is for the file's default stream. Otherwise, the notification is for the listed stream.
 
-<a id="notification-types"></a>
-### SSE Payload Notification Types
+### SSE Payload Notification Types {#notification-types}
 The following is a list of available notification types in [SSE event payloads](#sse-event-payload-structure).
 
 * The `type` field shows a single notification type.

@@ -3,8 +3,7 @@
 
 * A subdomain for your organization
 
-<a id="initial-sso-configuration"></a>
-## Step 1: Perform Initial Single Sign-On (SSO) Configuration in Qumulo Nexus
+## Step 1: Perform Initial Single Sign-On (SSO) Configuration in Qumulo Nexus {#initial-sso-configuration}
 {% if page.persona contains 'sysadmin' %}Before you can configure{% else %}Before you ask a system administrator to configure{% endif %} the identity provider (IdP), you must perform the initial SSO configuration in Qumulo Nexus.
 
 ### To Perform Initial SSO Configuration in Nexus

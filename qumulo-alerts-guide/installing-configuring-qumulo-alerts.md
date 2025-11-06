@@ -44,8 +44,7 @@ Before you connect Qumulo Alerts to a Qumulo cluster, collect the information th
 ## Installing Qumulo Alerts
 This section explains how to install Qumulo Alerts on your machine.
 
-<a id="clone-qumuloalerts-repository"></a>
-### Step 1: Clone the Qumulo Alerts Repository
+### Step 1: Clone the Qumulo Alerts Repository {#clone-qumuloalerts-repository}
 Navigate to the directory where you want Git to download files and run the following command.
 
 ```bash

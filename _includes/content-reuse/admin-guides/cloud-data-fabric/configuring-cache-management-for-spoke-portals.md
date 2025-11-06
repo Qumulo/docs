@@ -6,8 +6,7 @@ By default, Qumulo Core automatically recaches data on spoke portals upon access
 {% include note.html content="Although this process doesn't affect data on the hub portal, accessing the portions of spoke portals whose cached data has been removed can incur the same latency as during initial access." %}
 
 
-<a id="configure-automated-removal"></a>
-## Configuring Automated Removal of Cached Data from Spoke Portals
+## Configuring Automated Removal of Cached Data from Spoke Portals {#configure-automated-removal}
 This section explains how to configure automatic cache management for active spoke portals. To control automatic cache management, you can configure a _free threshold._ For example, if you set the free threshold setting to `0.05`, Qumulo Core begins to remove cached data from spoke portals when the system is 95% full.
 
 {{site.data.alerts.important}}

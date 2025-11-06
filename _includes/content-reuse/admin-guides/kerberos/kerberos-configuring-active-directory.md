@@ -17,8 +17,7 @@ The default DNS configuration is generally not useful without additional modific
 
 * **We don't recommend assigning a single IP address to an entire cluster:** In such a configuration, any client that mounts the cluster points at the same node.
 
-<a id="configure-round-robin-dns"></a>
-## Configuring DNS for Distributing Workflows Across Nodes
+## Configuring DNS for Distributing Workflows Across Nodes {#configure-round-robin-dns}
 The Qumulo distributed file system works best when you spread the workload evenly across multiple nodes. We recommend configuring round-robin DNS in Active Directory.
 
 This approach provides a list of IP addresses which refer to different nodes in the cluster. Successive DNS queries for the single cluster hostname return different IP addresses. From the perspective of Kerberos, all nodes that comprise a Qumulo cluster act as one host and have the same Kerberos key table. In this way, the Kerberos experience is the same regardless of the selected node.

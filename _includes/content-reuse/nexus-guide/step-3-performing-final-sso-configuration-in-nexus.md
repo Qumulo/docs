@@ -1,5 +1,4 @@
-<a id="final-sso-configuration"></a>
-## Step 3: Perform Final Single Sign-On (SSO) Configuration in Qumulo Nexus
+## Step 3: Perform Final Single Sign-On (SSO) Configuration in Qumulo Nexus {#final-sso-configuration}
 {% capture fromAdmin %}provided by your system administrator{% endcapture %}
 {% if page.persona contains 'sysadmin' %}After you configure{% else %}After your system administrator configures{% endif %} the identity provider (IdP), you must perform the final SSO configuration in Qumulo Nexus by using the IdP Metadata URL {% if page.persona contains 'sysadmin' %}{{fromAdmin}}{% endif %}.
 

@@ -17,7 +17,7 @@ All {{site.q1uhg2}} nodes contain one boot drive in an internal M.2 expansion sl
 
 * For 48T nodes, only the following bays are populated: 0, 3, 4, 7, 8, 11.
 
-For more information, see [To Replace an HDD](replacing-hardware-components.html#to-replace-an-hdd).
+For more information, see [To Replace an HDD](replacing-hardware-components.html#replace-hdd).
 
 {% capture alt_tag %}{{site.q1uhg2Long}} HDD Bay Mapping{% endcapture %}
 {% include image.html alt=alt_tag file="quiver-1u-hybrid-gen2-hdd-bay-mapping.png" %}

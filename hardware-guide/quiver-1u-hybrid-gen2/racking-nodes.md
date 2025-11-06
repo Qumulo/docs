@@ -15,8 +15,7 @@ sidebar: hardware_guide_sidebar
    {% capture alt_tag_snap_rail %}Snap the {{site.q1uhg2Long}} Node Rail into the Rack{% endcapture %}
    {% include image.html alt=alt_tag_snap_rail file="quiver-1u-hybrid-gen2-rail-snap-into-rack.png" %}
 
-<a id="insert-chassis"></a>
-## To Insert the Chassis into the Server Rack
+## To Insert the Chassis into the Server Rack {#insert-chassis}
 {% capture content_tag %}{{site.twoPeopleOrLift}}{% endcapture %}
 {% include important.html content=content_tag %}
 
@@ -32,6 +31,5 @@ sidebar: hardware_guide_sidebar
 
 1. Attach the two stoppers marked **L** (left) and **R** (right) by using #10-32 &times; 13" screws on the back of the chassis.
 
-<a id="remove-chassis"></a>
-## To Remove the Chassis from the Server Rack
+## To Remove the Chassis from the Server Rack {#remove-chassis}
 Perform the steps for inserting the chassis in reverse order.

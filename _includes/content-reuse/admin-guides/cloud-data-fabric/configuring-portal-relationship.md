@@ -17,7 +17,7 @@ This section explains how to configure a [portal relationship](how-portal-creati
 
 * Spoke portals
 
-  * `PRIVILEGE_PORTAL_SPOKE_EVICT`: [Control automatic cache management for active spoke portals by configuring a free threshold](configuring-cache-management-for-spoke-portals.html#configuring-automated-removal-of-cached-data-from-spoke-portals)
+  * `PRIVILEGE_PORTAL_SPOKE_EVICT`: [Control automatic cache management for active spoke portals by configuring a free threshold](configuring-cache-management-for-spoke-portals.html#configure-automated-removal)
 
   * `PRIVILEGE_PORTAL_SPOKE_READ`: View the status of a single spoke portal
 

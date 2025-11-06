@@ -10,8 +10,7 @@ A _registration key_ associates your Qumulo cluster with your Qumulo Nexus accou
 To generate a registration key, you must have administrative access to your organization's Nexus account.
 
 
-<a id="create-registration-key"></a>
-## To Create a Registration Key in Qumulo Nexus
+## To Create a Registration Key in Qumulo Nexus {#create-registration-key}
 1. [Log in to Qumulo Nexus](https://nexus.qumulo.com/login).
 
 1. In the upper-right corner, click your username and then click **User Settings**.
@@ -34,8 +33,7 @@ To generate a registration key, you must have administrative access to your orga
    When you use the registration key to enable Nexus Remote Support, Nexus removes the key from this list.
 
 
-<a id="revoke-registration-key"></a>
-### To Revoke an Unused Registration Key
+### To Revoke an Unused Registration Key {#revoke-registration-key}
 You can revoke a registration key before you use it to enable Nexus Remote Support or before it expires.
 
 1. [Log in to Qumulo Nexus](https://nexus.qumulo.com/login).

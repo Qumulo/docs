@@ -11,8 +11,7 @@ For information about protecting your snapshots by using a key from the Qumulo f
 
 {% capture keyID %}{{site.fsSecurityCommands}}{% endcapture %}
 
-<a id="add-public-key"></a>
-## Adding a Public Key
+## Adding a Public Key {#add-public-key}
 This section explains how to add a public key to the Qumulo file system key store. To store a public key in the key store, you must have a pair of asymmetric keys. For more information, see [Generating an ECDSA Private Key](generating-storing-ecdsa-keys.html#generating-ecdsa-private-key).
 
 ### If You Have Access to the Private Key
@@ -50,8 +49,7 @@ For more information, see [Extracting the Public Key from an ECDSA Private Key](
   {{site.jsonNotTable}}
 
 
-<a id="retrieve-key-usage"></a>
-## Retrieving Public Key Usage Information
+## Retrieving Public Key Usage Information {#retrieve-key-usage}
 Run the {% include qq.html command="fs_security_get_key_usage" %} command and specify the key identifier or name.
 
 {{site.jsonNotTable}}

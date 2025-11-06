@@ -110,8 +110,7 @@ This section explains how to create snapshots on a schedule, create a snapshot w
 
 {% include important.html content="Creating and modifying snapshot policies with an associated lock requires the `SNAPSHOT_LOCK` permission in addition to policy permissions." %}
 
-<a id="create-snapshot-with-policy"></a>
-### Creating Snapshots on a Schedule by Using a Snapshot Policy
+### Creating Snapshots on a Schedule by Using a Snapshot Policy {#create-snapshot-with-policy}
 Run the `qq snapshot_create_policy` command to create a snapshot policy and specify the interval at which Qumulo Core takes and deletes snapshots.
 
 In the following example, we create a policy named `every_day` that takes a snapshot every midnight in the Pacific time zone and retains the snapshot for two days. Every new snapshot that this policy creates is locked with a key named `my-key-name`.  {{page.varSeeLockUnlock}}

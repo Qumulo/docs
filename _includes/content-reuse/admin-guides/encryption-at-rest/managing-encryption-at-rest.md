@@ -22,8 +22,7 @@ This section explains how to retrieve the status or detailed information about a
 {% capture requiredPrivileges %}The {% include qq.html command="encryption_get_key_store" %} and {% include qq.html command="encryption_get_status" %} commands require the `PRIVILEGE_ENCRYPTION_READ` privilege.{% endcapture %}
 {% include note.html content=requiredPrivileges %}
 
-<a id="encryption-get-status"></a>
-### To View the Status of an Active Encryption Configuration
+### To View the Status of an Active Encryption Configuration {#encryption-get-status}
 Run the `qq encryption_get_status` command.
 
 {{site.exampleOutput}} {{page.varLocalKey}}
@@ -49,8 +48,7 @@ Run the `qq encryption_get_status` command.
 }
 ```
 
-<a id="encryption-get-key-store"></a>
-### To View Detailed Information for an Active Encryption Configuration
+### To View Detailed Information for an Active Encryption Configuration {#encryption-get-key-store}
 Run the `qq encryption_get_key_store` command.
 
 {{site.exampleOutput}} {{page.varLocalKey}}
@@ -128,8 +126,7 @@ This section explains how to configure Qumulo Core to use a master key stored lo
    In the output, ensure that the `type` field is set to `KMS`.
 
 
-<a id="rotate-master-key"></a>
-## Rotating the Master Key
+## Rotating the Master Key {#rotate-master-key}
 This section explains how to rotate the master key and check the encryption status for your cluster by using the `qq` CLI and how to check the encryption status by using the Qumulo Core Web UI.
 
 {% include caution.html content="[Qumulo Care](https://docs.qumulo.com/contacting-qumulo-care-team.html) team members can help you [rotate your master keys](#rotate-master-key). However, they don't have access to your encryption keys and can't retrieve them for you." %}

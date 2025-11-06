@@ -4,8 +4,7 @@ To use the S3 API, you must install the [{{site.supportAWScliShort}}]({{site.s3.
 {% include note.html content="The following instructions are for Ubuntu 18.04 (and higher)." %}
 
 
-<a id="configuring-https"></a>
-## Step 1: Configure HTTPS
+## Step 1: Configure HTTPS {#configuring-https}
 The Qumulo Core S3 API accepts only HTTPS requests by default. To enable HTTPS support for your Qumulo cluster, you must install a valid SSL certificate on it.
 
 Every Qumulo cluster is preconfigured with a self-signed SSL certificate. However, because certain applications don't accept the default certificate, we recommend installing your own.
@@ -26,8 +25,7 @@ To let your Qumulo cluster accept S3 traffic, you must enable the S3 API by usin
 After you run the command, all nodes in your cluster begin to accept S3 API traffic on TCP port 9000.
 
 
-<a id="creating-access-key"></a>
-## Step 3: Create an Access Key Pair
+## Step 3: Create an Access Key Pair {#creating-access-key}
 To create and manage S3 buckets you must have a valid S3 access key pair associated with a specific user in your Qumulo cluster or in a connected external identity provider (such as Active Directory). For more information, see [Creating and Managing S3 Access Keys](creating-managing-s3-access-keys.html).
 
 Run the {% include qq.html command="s3_create_access_key" %} command and specify the username. For example:
@@ -40,8 +38,7 @@ $ qq s3_create_access_key my-username
 {% include note.html content=accessKeys %}
 
 
-<a id="configuring-aws-cli"></a>
-## Step 4: Configure the AWS CLI for Use with Qumulo Core
+## Step 4: Configure the AWS CLI for Use with Qumulo Core {#configuring-aws-cli}
 To create and manage S3 buckets, you must configure AWS CLI to work with your Qumulo cluster.
 
 {{site.data.alerts.note}}
@@ -116,8 +113,7 @@ $ aws s3api create-bucket \
 The S3 API creates the new directory `/my-bucket/`. All of the bucket's objects are located under this directory. For more information, see [Creating and Working with S3 Buckets in Qumulo Core](creating-managing-s3-buckets.html).
 
 
-<a id="writing-reading-objects"></a>
-## Step 6: Test Writing and Reading S3 Objects
+## Step 6: Test Writing and Reading S3 Objects {#writing-reading-objects}
 
 1. To test writing data to your Qumulo cluster, perform a `PutObject` S3 API action by using the `aws s3api put-object` command. Specify the S3 bucket name, the object key, and the object data. For example:
 

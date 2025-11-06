@@ -25,8 +25,7 @@ This section explains the prerequisites to deploying {{site.azure.cnqAzureShort}
 
   * Specify the values for the `privatelink_blob_dns_zone_resource_group_name` and `privatelink_blob_dns_zone_virtual_link_name` variables
 
-<a id="how-the-provisioner-works"></a>
-### How the {{site.cnqShort}} Provisioner Works
+### How the {{site.cnqShort}} Provisioner Works {#how-the-provisioner-works}
 The {{site.cnqShort}} Provisioner is an Azure Compute instance that configures your Qumulo cluster and any additional Azure environment requirements.
 
 The Provisioner stores all necessary state information {{site.cnq.azureAppConfig}} and shuts down automatically when it completes its tasks.

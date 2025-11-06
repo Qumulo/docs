@@ -39,9 +39,8 @@ This section explains how to deploy the {{site.azure.qumuloOnAzureShort}} servic
    
       {% include note.html content="By creating all your Qumulo resources within the same availability zone, Azure can reduce latency." %}
 
-1. <a id="admin-password"></a>
-
-   In the **Administrator account** section, enter a **Password** and then re-enter it.
+1. In the **Administrator account** section, enter a **Password** and then re-enter it.
+{: #admin-password}
 
 1. In the **Qumulo file system details** section:
 

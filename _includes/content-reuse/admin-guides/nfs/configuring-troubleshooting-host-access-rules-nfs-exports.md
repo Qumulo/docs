@@ -1,6 +1,5 @@
-<a id="host-access-rule"></a>
-
 In Qumulo Core 6.2.0.1, you can add a host access rule to an NFS export to restrict the export by IP address or hostname.
+{: #host-access-rule}
 
 The following examples show the elements that a host access rule can include.
 
@@ -128,7 +127,8 @@ Qumulo Core applies the host access rule to the NFS export.
 ## To Troubleshoot Host Access Rules for an NFS Export
 This section describes the troubleshooting steps for a scenario in which an NFS client can't mount or access an NFS export.
 
-{% include note.html content="Currently, if you use multiple DNS servers, the <code>dns_resolve_hostnames</code> and <code>dns_resolve_ips</code> commands aren&apos;t tenant-aware and might not return the same results as the DNS resolution mechanism in NFS." %}
+{% capture multiDNS %}Currently, if you use multiple DNS servers, the {% include qq.html command="dns_resolve_hostnames" %} and {% include qq.html command="dns_resolve_ips" %} commands aren&apos;t tenant-aware and might not return the same results as the DNS resolution mechanism in NFS.{% endcapture %}
+{% include note.html content=multiDNS %}
 
 1. To view the NFS export's host access rules, run the `qq nfs_get_export` command and specify the export path. For example:
 
@@ -159,9 +159,7 @@ This section describes the troubleshooting steps for a scenario in which an NFS 
    Client {{site.exampleIP2}} is not authorized to use export ExportId(1)
    ```
 
-1. <a id="dns_resolve_ips"></a>
-
-   To find the client's hostname, run the {% include qq.html command="dns_resolve_ips" %} command and specify the client's IP address. For example:
+1. To find the client's hostname, run the {% include qq.html command="dns_resolve_ips" %} command and specify the client's IP address. For example:
 
    ```bash
    qq dns_resolve_ips --ips {{site.exampleIP2}}
@@ -183,7 +181,7 @@ This section describes the troubleshooting steps for a scenario in which an NFS 
 
    * Ensure the NFS client configuration entry is correct.
      
-   * Run the [`dns_resolve_ips`](#dns_resolve_ips) command to verify that the IP address maps to the correct name.
+   * Run the {% include qq.html command="dns_resolve_ips" %} command to verify that the IP address maps to the correct name.
    
    * Update the host access rules for `user2.accounting.example.com`.
      
@@ -210,8 +208,7 @@ This section describes the troubleshooting steps for a scenario in which an NFS 
      * If the NFS client can access a share, but shouldn't be able to, remove the IP address from the NFS export's host access rules.
 
 
-<a id="optimize-for-reverse-dns"></a>
-## Optimizing Your System for Reverse-DNS Look-Ups
+## Optimizing Your System for Reverse-DNS Look-Ups {#optimize-for-reverse-dns}
 Qumulo Core checks hostnames by performing a reverse-DNS lookup on the cluster. Because continuous reverse-DNS look-ups can affect system performance, Qumulo Core caches the results on the cluster. Because Qumulo Core's cache abides by the DNS TTL, a low TTL can cause cache entries to expire frequently, which might require a new query.
 
 By increasing TTL, you can reduce the number of DNS requests that your cluster makes. However, this might cause your cluster to keep outdated results for a longer time. For the most optimal configuration, list your organization's DNS servers first in your DNS configuration.

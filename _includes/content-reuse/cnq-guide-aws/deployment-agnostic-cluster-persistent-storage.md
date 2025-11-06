@@ -1,5 +1,4 @@
-<a id="deploy-persistent-storage"></a>
-## Step 1: Deploying Cluster Persistent Storage
+## Step 1: Deploying Cluster Persistent Storage {#deploy-persistent-storage}
 This section explains how to deploy the S3 buckets that act as persistent storage for your Qumulo cluster.
 
 ### Part 1: Prepare the Required Files
@@ -38,8 +37,7 @@ Before you can deploy the persistent storage for your cluster, you must download
    {% capture newVer %}{{site.cnq.qCoreVerTip}}{% endcapture %}
    {% include tip.html content=newVer %}
 
-<a id="create-cloudformation-stack"></a>
-### Part 2: Create the CloudFormation Stack
+### Part 2: Create the CloudFormation Stack {#create-cloudformation-stack}
 
 1. {{site.cnq.logIntoCFN}}
 
@@ -49,7 +47,8 @@ Before you can deploy the persistent storage for your cluster, you must download
 
 1. On the **Specify stack details** page, take the following steps:
 
-   1. <a id="persistent-storage-stack-name"></a> Enter a **Stack name**, for example `my-storage-stack`.
+   1. Enter a **Stack name**, for example `my-storage-stack`.
+{: #persistent-storage-stack-name}
 
    1. For **S3 bucket name**, enter the name of the S3 bucket that you used to prepare your files.
 

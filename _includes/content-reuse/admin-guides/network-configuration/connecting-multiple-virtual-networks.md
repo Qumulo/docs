@@ -27,8 +27,7 @@ You can configure your Qumulo cluster from the default DHCP configuration. If yo
 
 1. Log in to the system by using one of the assigned IP addresses.
 
-<a id="add-more-networks"></a>
-## Step 2: Add More Networks
+## Step 2: Add More Networks {#add-more-networks}
 After you configure the first network for your Qumulo cluster, you can add more networks to it.
 
 {{site.data.alerts.note}}

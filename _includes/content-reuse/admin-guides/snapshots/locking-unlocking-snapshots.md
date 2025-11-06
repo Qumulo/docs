@@ -8,32 +8,32 @@ You can lock a snapshot by using the following methods.
 ### Locking a Snapshot by Using a Public Key
 In Qumulo Core 6.1.0.3 (and higher) you can lock a snapshot by using a public key.
 
-1. [Generate a private key](../cryptographic-key-management/generating-storing-ecdsa-keys.html#generating-an-ecdsa-private-key).
+1. [Generate a private key](../cryptographic-key-management/generating-storing-ecdsa-keys.html#generating-ecdsa-private-key).
 
 1. [Extract a public key from the private key](../cryptographic-key-management/generating-storing-ecdsa-keys.html#extracting-the-public-key-from-an-ecdsa-private-key).
 
-1. [Store the public key on your cluster](../cryptographic-key-management/managing-security-keys.html#adding-a-public-key).
+1. [Store the public key on your cluster](../cryptographic-key-management/managing-security-keys.html#add-public-key).
 
 1. [Lock your snapshot by using the `qq` CLI](#lock-snapshot-qq-cli).
 
 ### Locking a Snapshot by Using a Private Key
 In Qumulo Core 6.1.1 (and higher) you can lock a snapshot by using a _lock key_ (private key).
 
-1. [Generate a private key](../cryptographic-key-management/generating-storing-ecdsa-keys.html#generating-an-ecdsa-private-key).
+1. [Generate a private key](../cryptographic-key-management/generating-storing-ecdsa-keys.html#generating-ecdsa-private-key).
 
 1. [Lock your snapshot by using the `qq` CLI](#lock-snapshot-qq-cli).
 
 ### Locking a Snapshot by Using a Private Key in a Snapshot Policy
 In Qumulo Core 6.1.0.3 (and higher), you can configure a snapshot policy to lock all new snapshots with a _lock key_ (private key).
  
-1. [Generate a private key](../cryptographic-key-management/generating-storing-ecdsa-keys.html#generating-an-ecdsa-private-key).
+1. [Generate a private key](../cryptographic-key-management/generating-storing-ecdsa-keys.html#generating-ecdsa-private-key).
 
 1. [Associate your lock key with a snapshot policy by using the Qumulo Core Web UI](managing-snapshots.html#to-associate-a-lock-key-with-a-snapshot-policy).
 
 ### Locking a Snapshot by Using a Private Key on a Target Cluster Following Replication
 For clusters in a replication relationship, you can lock a snapshot on the destination cluster after the replication process finishes.
 
-1. [Generate a private key](../cryptographic-key-management/generating-storing-ecdsa-keys.html#generating-an-ecdsa-private-key).
+1. [Generate a private key](../cryptographic-key-management/generating-storing-ecdsa-keys.html#generating-ecdsa-private-key).
 
 1. [Retrieve the relationship ID from the source cluster by using the `qq` CLI](#retrieve-relationship-id).
 
@@ -44,14 +44,12 @@ For clusters in a replication relationship, you can lock a snapshot on the desti
 Unlocking a snapshot requires a cryptographic signature generated from a private key. To unlock a snapshot after its expiration time, [use the `qq` CLI](#unlock-snapshot-qq-cli).
 
 
-<a id="locking-unlocking-snapshots"></a>
-## Locking and Unlocking Snapshots by Using the qq CLI
+## Locking and Unlocking Snapshots by Using the qq CLI {#locking-unlocking-snapshots}
 This section explains how to lock and unlock snapshots by using the `qq` CLI.
 
 {% include tip.html content="To list your snapshots and their lock statuses, use the `sudo qq snapshot_list_statuses | egrep 'lock_key|source_file_path'` command." %}
 
-<a id="lock-snapshot-qq-cli"></a>
-### Locking a Snapshot
+### Locking a Snapshot {#lock-snapshot-qq-cli}
 Run the {% include qq.html command="snapshot_lock_snapshot" %} command and specify the snapshot ID and either the key ID or key name. For example:
 
 ```bash
@@ -60,8 +58,7 @@ qq snapshot_lock_snapshot \
   --lock-key my-key-name
 ```
 
-<a id="unlock-snapshot-qq-cli"></a>
-### Unlocking a Snapshot
+### Unlocking a Snapshot {#unlock-snapshot-qq-cli}
 Unlocking a snapshot requires proving that you can sign a challenge by using the same key that locked the snapshot.
 
 {% capture cryptoLib %}{{site.protectingData.mustHaveCryptoLib}}{% endcapture %}
@@ -75,8 +72,7 @@ qq snapshot_unlock_snapshot \
   --private-key-file /path/to-my-file.pem
 ```
 
-<a id="replication-target-locking"></a>
-## Associating a Lock Key with a Replication Target Relationship by Using the qq CLI
+## Associating a Lock Key with a Replication Target Relationship by Using the qq CLI {#replication-target-locking}
 To lock all policy-created snapshots by using a lock key, you can associate the key with a replication target relationship.
 
 ### How Relationship Reversal Affects Replication

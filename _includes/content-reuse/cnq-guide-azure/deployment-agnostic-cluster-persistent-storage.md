@@ -1,5 +1,4 @@
-<a id="deploy-persistent-storage"></a>
-## Step 1: Deploying Cluster Persistent Storage
+## Step 1: Deploying Cluster Persistent Storage {#deploy-persistent-storage}
 This section explains how to deploy the storage accounts that act as persistent storage for your Qumulo cluster.
 
 ### Part 1: Prepare the Required Files

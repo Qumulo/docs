@@ -7,8 +7,7 @@ Qumulo Core lets you add _{{site.udm.l}}_ to any file type stored in its file sy
 * The total size of each key-value pair must be under 400 KB.
 
 
-<a id="keyspace"></a>
-## Keyspace Types and Functions
+## Keyspace Types and Functions {#keyspace}
 {{site.udm.s}} in Qumulo Core is divided into `GENERIC` and `S3` _keyspaces_. Keyspaces work like _containers_ for key-value pairs. The `S3` keyspace primarily supports the [S3 API](https://docs.aws.amazon.com/AmazonS3/latest/API/Welcome.html), which requires all files to have two sets of metadata in separate keyspaces.
 
 Keyspaces can hold approximately 17 trillion key-value pairs and have the following requirements:

@@ -19,8 +19,7 @@ This section explains how to prepare your Qumulo Broker machine for deployment.
 
    {% include important.html content="Leave the `MYSQL_DATABASE` and `MYSQL_USERNAME` variables unchanged." %}
    
-<a id="deploy-qumulo-broker"></a>
-## Step 2: Deploy the Qumulo Broker API Server
+## Step 2: Deploy the Qumulo Broker API Server {#deploy-qumulo-broker}
 This section explains how to deploy Qumulo Broker on a standalone machine or virtual machine.
 
 1. Navigate to the `/opt/qumulo/QumuloBroker/api/` directory on your Qumulo Broker machine.
@@ -63,8 +62,7 @@ This section explains how to deploy Qumulo Broker on a standalone machine or vir
 
 You can now configure Varonis to communicate with your Qumulo cluster.
 
-<a id="configure-audit-logging"></a>
-## Step 3: Configure Qumulo Audit Logging by Using the qq CLI
+## Step 3: Configure Qumulo Audit Logging by Using the qq CLI {#configure-audit-logging}
 This section explains how to configure audit logging on your Qumulo cluster.
 
 1. To configure audit logging on your Qumulo cluster, run the {% include qq.html command="audit_set_syslog_config" %} command with the `--enable` flag, use the `--json` flag to request logging in JSON format, and specify the IP address or hostname and port number for your Qumulo Broker machine. For example:
@@ -110,8 +108,7 @@ This section explains how to configure audit logging on your Qumulo cluster.
 
    * `AUDIT_LOG_DISABLED`: Audit logging has been disabled explicitly for this Qumulo cluster.
 
-<a id="configure-rsyslog-communication"></a>
-## Step 4: Configure rsyslog to Communicate with Qumulo Broker
+## Step 4: Configure rsyslog to Communicate with Qumulo Broker {#configure-rsyslog-communication}
 This section explains how to configure `rsyslog` on the Qumulo Broker machine.
 
 {% include important.html content="Before you restart the `rsyslog` service to apply a new configuration, you must always [ensure that Qumulo Broker is deployed](#deploy-qumulo-broker)." %}
@@ -122,8 +119,7 @@ This section explains how to configure `rsyslog` on the Qumulo Broker machine.
    chmod a+x /opt/qumulo/QumuloBroker/events/Broker
    ```
 
-<a id="rsyslog-with-single-cluster"></a>
-### Configuring rsyslog to Communicate with a Single Cluster
+### Configuring rsyslog to Communicate with a Single Cluster {#rsyslog-with-single-cluster}
 Configure the following `rsyslog` parameters in the `/etc/rsyslog.d/10-qumulo.conf` file.
 
 The following complete, annotated configuration file lets `rsyslog` on the Qumulo Broker machine communicate with a single Qumulo cluster.
@@ -193,8 +189,7 @@ if ($app-name startswith "qumulo") then {
   action(type="omfile" file="/dev/null")
 ```
 
-<a id="rsyslog-with-multiple-clusters"></a>
-### Configuring rsyslog to Communicate with Multiple Clusters
+### Configuring rsyslog to Communicate with Multiple Clusters {#rsyslog-with-multiple-clusters}
 The `queue.size` and `queue.workerThreads` `rsyslog` parameters in [the `/etc/rsyslog.d/10-qumulo.conf` file](#rsyslog-with-single-cluster) let `rsyslog` on the Qumulo Broker machine communicate with multiple Qumulo clusters.
 
 * `queue.size`: Set the maximum size of the queue to 200,000 messages

@@ -1,9 +1,7 @@
-<a id="perform-post-deployment-actions"></a>
-## Step 3: Performing Post-Deployment Actions
+## Step 3: Performing Post-Deployment Actions {#perform-post-deployment-actions}
 This section describes the common actions you can perform on a {{site.cnqShort}} cluster after deploying it.
 
-<a id="adding-node-to-existing-cluster"></a>
-### Adding Nodes to an Existing Cluster
+### Adding Nodes to an Existing Cluster {#adding-node-to-existing-cluster}
 {% include important.html content="To add nodes to an existing cluster, the total node count must be greater than that of the current deployment." %}
 
 {% if page.deployment == "tf" %}
@@ -46,8 +44,7 @@ This section describes the common actions you can perform on a {{site.cnqShort}}
 1. {{site.cnq.logIntoWebUI}}
 
 {% if page.deployment == "tf" %}
-<a id="removing-node-from-existing-cluster"></a>
-### Removing Nodes from an Existing Cluster
+### Removing Nodes from an Existing Cluster {#removing-node-from-existing-cluster}
 Removing nodes from an existing cluster is a two-step process in which you remove the nodes from your cluster's quorum and then tidy up the AWS resources for the removed nodes.
 
 #### Step 1: Remove Nodes from the Cluster's Quorum
@@ -147,8 +144,7 @@ Removing nodes from an existing cluster is a two-step process in which you remov
    ```
 {% endif %}
 
-<a id="increasing-soft-capacity-limit-existing-cluster"></a>
-### Increasing the Soft Capacity Limit for an Existing Cluster
+### Increasing the Soft Capacity Limit for an Existing Cluster {#increasing-soft-capacity-limit-existing-cluster}
 Increasing the soft capacity limit for an existing cluster is a two-step process in which you configure new persistent storage parameters and then configure new compute and cache deployment parameters.
 
 #### Step 1: Set New Persistent Storage Parameters
@@ -408,8 +404,7 @@ Changing the EC2 instance type of your {{site.aws.cnqAWSshort}} cluster is a thr
    CloudFormation updates resources for the stack and displays the **CREATE_COMPLETE** status for each resource.
 {% endif %}
 
-<a id="deleting-existing-cluster"></a>
-### Deleting an Existing Cluster
+### Deleting an Existing Cluster {#deleting-existing-cluster}
 Deleting a cluster is a two-step process in which you delete your cluster's compute and cache resources and then delete your persistent storage.
 
 {{site.data.alerts.caution}}

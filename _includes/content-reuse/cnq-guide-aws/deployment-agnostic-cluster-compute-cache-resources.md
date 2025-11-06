@@ -1,5 +1,4 @@
-<a id="deploy-cluster-compute-and-cache-resources"></a>
-## Step 2: Deploying Cluster Compute and Cache Resources
+## Step 2: Deploying Cluster Compute and Cache Resources {#deploy-cluster-compute-and-cache-resources}
 This section explains how to deploy compute and cache resources for a Qumulo cluster by using a Ubuntu AMI and the Qumulo Core `.deb` installer.
 
 ### Recommendations
@@ -98,7 +97,8 @@ This section explains how to deploy compute and cache resources for a Qumulo clu
 
 1. On the **Specify stack details** page, take the following steps:
 
-   1. <a id="compute-cache-stack-name"></a> In the **Provide a stack name** section, enter a **Stack name**, for example `my-compute-cache-stack`.
+   1. In the **Provide a stack name** section, enter a **Stack name**, for example `my-compute-cache-stack`.
+{: #compute-cache-stack-name}
    
    1. In the **Parameters** section, under **Cloud Native Qumulo**, take the following steps:
 

@@ -38,8 +38,7 @@ This role is suitable for users or groups who can access the Qumulo Core Web UI 
 </ul>
 {{site.data.alerts.end}}
 
-<a id="qumulo-support"></a>
-### Qumulo-Support
+### Qumulo-Support {#qumulo-support}
 {{site.data.alerts.important}}
 <ul>
 {% if page.platform == 'anq' %}
@@ -62,8 +61,7 @@ This role is suitable for members of the Qumulo Care Team who access and support
 * Permissions for REST API endpoints that help debug integration with external services (such as Active Directory, LDAP, and DNS)
 
 
-<a id="custom-roles"></a>
-## Custom Roles
+## Custom Roles {#custom-roles}
 For information about managing RBAC and creating custom roles by using the `qq` CLI, see the following sections in the {{site.guides.cli}}:
 
 * {% include qq.html command="auth_assign_role" %}

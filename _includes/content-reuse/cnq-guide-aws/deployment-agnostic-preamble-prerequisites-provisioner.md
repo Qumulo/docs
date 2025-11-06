@@ -90,12 +90,10 @@ This section explains the prerequisites to deploying {{site.aws.cnqAWSshort}}.
   
   {% include note.html content="Although the `AdministratorAccess` managed IAM policy provides sufficient permissions, your organization might use a custom policy with more restrictions." %}
 
-<a id="how-the-provisioner-works"></a>
-### How the {{site.cnqShort}} Provisioner Works
+### How the {{site.cnqShort}} Provisioner Works {#how-the-provisioner-works}
 The {{site.cnqShort}} Provisioner is an m5.large EC2 instance that configures your Qumulo cluster and any additional AWS environment requirements.
 
 {% if page.deployment == "cfn" %}{% capture dontDelete %}Don't delete the {{site.cnqShort}} Provisioner's EC2 instance. It is necessary for EC2 updates.{% endcapture %}{% include important.html content=dontDelete %}{% endif %}
 
-<a id="monitor-provisioner-status"></a>
-#### To Monitor the Provisioner's Status
+#### To Monitor the Provisioner's Status {#monitor-provisioner-status}
 {% include content-reuse/cnq-guide-aws/deployment-agnostic-monitor-provisioner-status.md %}

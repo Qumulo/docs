@@ -35,8 +35,7 @@ The following privileges are required for continuous replication.
   * `PRIVILEGE_REPLICATION_TARGET_READ`
 
 
-<a id="create-replication-relationship"></a>
-## To Create a Replication Relationship
+## To Create a Replication Relationship {#create-replication-relationship}
 {% include important.html content="A replication job doesn't begin until you authorize the relationship on the target cluster." %}
 
 1. Log in to the Qumulo Core Web UI on the source cluster.

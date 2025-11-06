@@ -9,13 +9,11 @@ Before you begin, make sure that you have done the following.
 
 * To allow the cluster to find group memberships for SAML-authenticated users, configure the Base DN in your AD configuration, even if you don't use POSIX attributes.
 
-* <a id="identity-provider"></a>
-
-  Ensure that your SAML Identity Provider (IdP) is linked to the same AD. An _identity provider_ (such as Azure AD, Duo, or Okta) is a system that authenticates users (for example, by using passwords and additional factors).
-
-  <a id="service-provider"></a>
+* Ensure that your SAML Identity Provider (IdP) is linked to the same AD. An _identity provider_ (such as Azure AD, Duo, or Okta) is a system that authenticates users (for example, by using passwords and additional factors).
+{: #identity-provider}
 
   Typically, an IT department manages an IdP centrally and the IdP is linked with AD. Before you can enable SSO, your IT department must register a new Service Provider (SP) in your IdP. A _service provider_ is the server which users access, in this case a Qumulo cluster.
+{: #service-provider}
 
   {% include note.html content="You can use trusts, as long as the Base DN covers all users that might require access to your cluster." %}
   
@@ -122,8 +120,7 @@ Qumulo Core supports three SAML SSO workflows:
 
    If the user has sufficient privileges, the Qumulo Core Web UI logs the user in. Otherwise, the Qumulo Core Web UI displays an error message.
 
-<a id="sp-inititated-sso-workflow"></a>
-### SP-Initiated SSO Workflow
+### SP-Initiated SSO Workflow {#sp-inititated-sso-workflow}
 1. A user navigates to the Qumulo cluster's Web UI endpoint in a browser.
 
 1. If the Qumulo cluster has SAML SSO configured, the user can click **Continue to SSO login** on the Qumulo Core Web UI login page.
@@ -138,8 +135,7 @@ Qumulo Core supports three SAML SSO workflows:
 
 1. The SSO portal redirects the user to the cluster's endpoint.
 
-<a id="sso-login"></a>
-### qq-CLI-Initiated SSO Workflow
+### qq-CLI-Initiated SSO Workflow {#sso-login}
 In Qumulo Core 5.3.0 (and higher), a user can authenticate a `qq` CLI session by using SSO.
 
 1. A user uses the {% include qq.html command="sso_login" %} command. For example:

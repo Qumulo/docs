@@ -118,8 +118,7 @@ To connect your Kubernetes cluster to your Qumulo cluster, you must either use a
 
 For more information, see [Role-Based Access Control (RBAC) with Qumulo Core](../authorization-qumulo-core/managing-role-based-access-control-rbac.html) on Qumulo Care.
 
-<a id="step-4-create-configure-secrets"></a>
-### Step 4: Create and Configure Secrets
+### Step 4: Create and Configure Secrets {#step-4-create-configure-secrets}
 To allow the CSI driver to operate with your Qumulo cluster, you must create and configure Secrets. You may use either Basic Authentication with a username and password, or an [Access Token](https://care.qumulo.com/hc/en-us/articles/360004600994). Depending on configuration, Basic Authentication may be disallowed and using an Access Token will be required.
 
 1. Configure one of the following authentication types.
@@ -156,8 +155,7 @@ To allow the CSI driver to operate with your Qumulo cluster, you must create and
      --namespace kube-system
    ```
 
-<a id="step-5-create-storage-class"></a>
-### Step 5: Create a Storage Class
+### Step 5: Create a Storage Class {#step-5-create-storage-class}
 To link your Kubernetes cluster to your Qumulo cluster, you must create a storage class on your Kubernetes cluster.
 
 1. Begin with the example Qumulo storage class configuration.

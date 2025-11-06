@@ -2,7 +2,7 @@
 
 * For a general conceptual introduction, see [What is Hub and Spoke Topology?](https://www.cbtnuggets.com/blog/technology/networking/what-is-hub-and-spoke-topology).
 
-* For specific implementations of the Cloud Data Fabric functionality in Qumulo Core, see [Example Cloud Data Fabric Scenarios](#example-cloud-data-fabric-scenarios).
+* For specific implementations of the Cloud Data Fabric functionality in Qumulo Core, see [Example Cloud Data Fabric Scenarios](#example-scenarios).
 
 {{site.data.alerts.important}}
 <ul>
@@ -13,12 +13,12 @@
 {{site.data.alerts.end}}
 
 
-<a id="key-terms"></a>
-## Key Terms
+## Key Terms {#key-terms}
 The following key terms help define the components of Cloud Data Fabric functionality in Qumulo Core.
 
 ### Clusters and Root Directories
-* <a id="cluster"></a>**Cluster:** Any Qumulo cluster that shares a portion of its file system for a hub portal or a spoke portal. {{site.gns.dirOnCluster}} a spoke portal or a hub portal.
+* **Cluster:** Any Qumulo cluster that shares a portion of its file system for a hub portal or a spoke portal. {{site.gns.dirOnCluster}} a spoke portal or a hub portal.
+{: #cluster}
 
   {{site.data.alerts.tip}}
   <p>Because <em>a portion</em> of a Qumulo cluster's file system can hold the hub portal root directory or spoke portal root directory, using the correct terminology can help avoid confusion:</p>
@@ -30,18 +30,22 @@ The following key terms help define the components of Cloud Data Fabric function
   </ul>
   {{site.data.alerts.end}}
 
-* <a id="portal-root-directory"></a>**Spoke Portal Root Directory, Hub Portal Root Directory:** A directory on a cluster that uses a portion of its file system for the _hub portal_ or _spoke portal_.
+* **Spoke Portal Root Directory, Hub Portal Root Directory:** A directory on a cluster that uses a portion of its file system for the _hub portal_ or _spoke portal_.
+{: #portal-root-directory}
 
   According to the file system permissions that a hub portal might impose, you can access a spoke portal root directory by using NFSv3, NFSv4.1 (Qumulo Core 7.4.3 and higher), SMB, the S3 API (7.5.3 and higher) or the Qumulo REST API.
 
   {% capture fyi762 %}{{site.gns.functionality762}}{% endcapture %}
   {% include note.html content=fyi762 %}
 
-  * <a id="hub-portal-data"></a>**Hub Portal Data:** Accessible to other Qumulo clusters through a [portal relationship](#portal-relationship) or through replication, and to clients that connect to the [hub portal host cluster](#cluster)
+  * **Hub Portal Data:** Accessible to other Qumulo clusters through a [portal relationship](#portal-relationship) or through replication, and to clients that connect to the [hub portal host cluster](#cluster)
+{: #hub-portal-data}
 
-  * <a id="spoke-portal-data"></a>**Spoke Portal Data:** Accessible only to clients that connect to the [spoke portal host cluster](#cluster)
+  * **Spoke Portal Data:** Accessible only to clients that connect to the [spoke portal host cluster](#cluster)
+{: #spoke-portal-data}
 
-  * <a id="cluster-local-data"></a>**Cluster-Local Data:** Data on a [hub portal host cluster or spoke portal host cluster](#cluster) which is located outside of the corresponding [portal root directory](#portal-root-directory), accessible to clients that connect to the cluster or to other Qumulo clusters through replication
+  * **Cluster-Local Data:** Data on a [hub portal host cluster or spoke portal host cluster](#cluster) which is located outside of the corresponding [portal root directory](#portal-root-directory), accessible to clients that connect to the cluster or to other Qumulo clusters through replication
+{: #cluster-local-data}
 
   The following table illustrates the various content types and ways in which this data can be accessed.
 
@@ -83,8 +87,7 @@ The following key terms help define the components of Cloud Data Fabric function
     </tbody>
   </table>
 
-<a id="multiple-root-directories"></a>
-#### How Multiple Root Directories Work in Qumulo Core 7.2.0 (and Higher)
+#### How Multiple Root Directories Work in Qumulo Core 7.2.0 (and Higher) {#multiple-root-directories}
 In Qumulo Core 7.2.0 (and higher), clusters can take advantage of the Cloud Data Fabric functionality that lets clusters across disparate geographic or infrastructural locations (on-premises and in the cloud) access the same data while maintaining independent namespace structures on each cluster (by setting a portion of the cluster's file system as the _portal root directory)._
 
 {{site.gns.functionality762}} {{site.gns.functionality762note}}
@@ -104,13 +107,17 @@ In addition, Qumulo Core 7.6.2 introduces the following changes:
   * **Combined One-to-One and Many-to-One Mapping:** Multiple spoke portal root directories map to both unique and shared hub portal root directories
 
 ### Portals
-* <a id="spoke-portal"></a>**Spoke Portal:** An interface point on a Qumulo cluster that accesses a portion of the file system on another cluster (which has a _hub portal)_. {{site.gns.dirOnCluster}} spoke portal. {{site.gns.spokePortalInitiates}} You can configure multiple spoke portals on the same Qumulo cluster, as long as the spoke portal root directories don't overlap and the host cluster for each portal relationship is unique.
+* **Spoke Portal:** An interface point on a Qumulo cluster that accesses a portion of the file system on another cluster (which has a _hub portal)_. {{site.gns.dirOnCluster}} spoke portal. {{site.gns.spokePortalInitiates}} You can configure multiple spoke portals on the same Qumulo cluster, as long as the spoke portal root directories don't overlap and the host cluster for each portal relationship is unique.
+{: #spoke-portal}
 
-  * <a id="read-write-portal"></a>**Read-Write Portal:** A spoke portal that can access, modify, and create any files or directories within one or more corresponding hub portal root directories (in the `Authorized` state) according to file system permissions.
+  * **Read-Write Portal:** A spoke portal that can access, modify, and create any files or directories within one or more corresponding hub portal root directories (in the `Authorized` state) according to file system permissions.
+{: #read-write-portal}
 
-  * <a id="read-only-portal"></a>**Read-Only Portal:** A spoke portal that can access any files or directories within one or more corresponding hub portal root directories (in the `Authorized` state) according to file system permissions, but can't modify or create any files or directories regardless of file system permissions.
+  * **Read-Only Portal:** A spoke portal that can access any files or directories within one or more corresponding hub portal root directories (in the `Authorized` state) according to file system permissions, but can't modify or create any files or directories regardless of file system permissions.
+{: #read-only-portal}
 
-* <a id="hub-portal"></a>**Hub Portal:** An interface point on a Qumulo cluster that shares a portion of its file system with another cluster (which has a _spoke portal)_. {{site.gns.dirOnCluster}} hub portal. {{site.gns.spokePortalInitiates}} You can configure multiple portal relationships, with the same hub portal root directory, with nested directories, or with independent ones.
+* **Hub Portal:** An interface point on a Qumulo cluster that shares a portion of its file system with another cluster (which has a _spoke portal)_. {{site.gns.dirOnCluster}} hub portal. {{site.gns.spokePortalInitiates}} You can configure multiple portal relationships, with the same hub portal root directory, with nested directories, or with independent ones.
+{: #hub-portal}
 
   {{site.data.alerts.note}}
   <ul>
@@ -120,10 +127,10 @@ In addition, Qumulo Core 7.6.2 introduces the following changes:
   </ul>
   {{site.data.alerts.end}}
 
-* <a id="portal-relationship"></a>**Portal Relationship:** A proposal that a spoke portal on one Qumulo cluster issues to another Qumulo cluster (with a _hub portal)_, which the Qumulo cluster with the hub portal _accepts_.
+* **Portal Relationship:** A proposal that a spoke portal on one Qumulo cluster issues to another Qumulo cluster (with a _hub portal)_, which the Qumulo cluster with the hub portal _accepts_.
+{: #portal-relationship}
 
-<a id="portal-relationship-states"></a>
-#### Portal Relationship States
+#### Portal Relationship States {#portal-relationship-states}
 A _portal relationship state_ indicates the stages of the [_spoke portal_](#spoke-portal) creation process, and the proposal or deletion of a [_portal relationship_](#portal-relationship).
 
 <table>
@@ -152,8 +159,7 @@ A _portal relationship state_ indicates the stages of the [_spoke portal_](#spok
   </tbody>
 </table>
 
-<a id="portal-root-directory-states"></a>
-#### Portal Root Directory States
+#### Portal Root Directory States {#portal-root-directory-states}
 A _portal root directory state_ indicates the stages of the [_hub portal root directory_](#portal-root-directory) approval process.
 
 {% capture portalRootDirState %}{{site.gns.functionality762}} Each unique hub portal root directory has its own state.{% endcapture %}
@@ -184,8 +190,7 @@ A _portal root directory state_ indicates the stages of the [_hub portal root di
   </tbody>
 </table>
 
-<a id="portal-statuses"></a>
-#### Portal Statuses
+#### Portal Statuses {#portal-statuses}
 A _portal status_ indicates the accessibility of a [_spoke portal_](#spoke-portal) or [_hub portal_](#hub-portal).
 
 <table>
@@ -230,8 +235,7 @@ A _portal status_ indicates the accessibility of a [_spoke portal_](#spoke-porta
 </table>
 
 
-<a id="functionality-explanation"></a>
-## How Cloud Data Fabric Functionality Works
+## How Cloud Data Fabric Functionality Works {#functionality-explanation}
 This section explains the creation of portal relationships, data caching and synchronization, permissions in portal root directories, and the deletion of portal relationships.
 
 ### Portal Relationship Creation
@@ -283,8 +287,7 @@ This section explains the sequence of events when you request the removal of the
 * For clients accessing [hub portal data](#hub-portal-data), audit logging is determined by the configuration on the hub portal host cluster.
 
 
-<a id="example-scenarios"></a>
-## Example Cloud Data Fabric Scenarios
+## Example Cloud Data Fabric Scenarios {#example-scenarios}
 The following are examples of some of the most common scenarios for workloads that use Cloud Data Fabric functionality.
 
 ### Edge Clusters

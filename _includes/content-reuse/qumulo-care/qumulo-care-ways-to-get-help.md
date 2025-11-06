@@ -2,15 +2,13 @@ The Qumulo Care Team is always here to help you. You can contact us by using any
 
 * <span class="emoji">📚</span> Browse the [Qumulo Knowledge Base](https://care.qumulo.com/s/knowledge)
 
-* <a id="open-a-case"></a>
-
-  <span class="emoji">🧑‍💻</span> Open a case by [filing a request](https://care.qumulo.com/s/submit-a-case) or [emailing us](mailto:care@qumulo.com).
+* <span class="emoji">🧑‍💻</span> Open a case by [filing a request](https://care.qumulo.com/s/submit-a-case) or [emailing us](mailto:care@qumulo.com).
+{: #open-a-case}
 
 * <span class="emoji">💬</span> [Message us on Slack](https://qumulocare.slack.com/) (if you are a current customer). For more information, see our [Slack Tips and Tricks](https://docs.qumulo.com/contacting-qumulo-care-team.html#slack-tips-and-tricks).
 
-* <a id="toll-free-numbers"></a>
-
-  <span class="emoji">📱</span> Call one of our toll-free numbers:
+* <span class="emoji">📱</span> Call one of our toll-free numbers:
+{: #toll-free-numbers}
 
   * **North America:** [+1 855-577-7544](tel:+18555777544)
 

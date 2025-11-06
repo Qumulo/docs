@@ -22,8 +22,7 @@ sidebar: azure_native_administrator_guide_sidebar
 
 * Default {{site.azure.qumuloOnAzureShort}} workloads are called _Hot workloads_. Workloads that use the Azure Blob Storage Cold Tier are called [_Cold workloads_](#using-cold-workloads).
 
-<a id="anq-feature-comparison"></a>
-### Feature Comparison with Qumulo on Other Platforms
+### Feature Comparison with Qumulo on Other Platforms {#anq-feature-comparison}
 The following table compares the features of {{site.azure.qumuloOnAzureShort}} with those of Qumulo on other platforms.
 
 {{site.data.alerts.note}}
@@ -122,8 +121,7 @@ When {{site.azure.qumuloOnAzureShort}} adjusts cluster performance to meet workf
 For information about Qumulo's third-party attestations, including FIPS 140-2 Level 1, GDPR, HIPAA, and SOC 2 Type II, see [Qumulo Trust Center](https://qumulo.com/trust/).
 
 
-<a id="using-cold-workloads"></a>
-## Using {{site.azure.qumuloOnAzureLong}} Cold Workloads
+## Using {{site.azure.qumuloOnAzureLong}} Cold Workloads {#using-cold-workloads}
 {{site.azure.qumuloOnAzureShort}} Cold uses Azure Blob Storage Cold Tier and has the same data integrity as {{site.azure.qumuloOnAzureShort}} Hot, a slightly lower (99% rather than 99.9%) guaranteed availability, and a sustained high performance and read throughput. {{site.azure.qumuloOnAzureShort}} Cold is designed for workloads in which the majority of the data is written once, read infrequently, and retained for a long time period.
 
 {% capture availabilityEvent %}When Azure Blob Storage Cold Tier causes an availability event, it affects only the data within the files, not the metadata. While the data of a specific file might become unavailable, the file system and data within other files remain accessible.{% endcapture %}
