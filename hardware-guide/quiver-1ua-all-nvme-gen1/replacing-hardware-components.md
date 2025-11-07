@@ -34,10 +34,10 @@ Follow the instructions in the ASUS documentation:
 
 * For the right NIC, see [Installing an Expansion Card to the Riser Card Bracket](https://dlcdnets.asus.com/pub/ASUS/server/RS500A-E12-RS12U/Manual/E21507_RS500A-E12-RS12U_UM_V2_WEB.pdf?model=RS500A-E12-RS12U#page=50).
 
-
+{% comment %}
 ## Replacing an M.2 Boot Drive {#replace-nvme-m2-boot-drive}
 {{site.q1uag1Drives.internalBootDrive}}
-
+{% endcomment %}
 
 ## Initializing the Replacement Boot Drive
 {{site.bootDriveInit}}
@@ -78,7 +78,7 @@ Follow the instructions for [removing and installing a DIMM](https://dlcdnets.as
 
 1. Disconnect the network cabling from the NIC ports and [remove the existing NICs](#replace-nic) from the node.
 
-1. Remove the [NVMe drives in front storage bays](#replace-nvme-drive-front-storage-bay), the [NVMe drives in internal storage bays](#replace-nvme-drive-internal-storage-bay), and the [NVMe M.2 boot drive](#replace-nvme-m2-boot-drive) from the node.
+1. Remove the [NVMe drives in front storage bays](#replace-nvme-drive-front-storage-bay), the [NVMe drives in internal storage bays](#replace-nvme-drive-internal-storage-bay) and the NVMe M.2 boot drive{% comment %}, and the [NVMe M.2 boot drive](#replace-nvme-m2-boot-drive){% endcomment %} from the node.
 
 1. Remove the existing chassis from the server rack.
 
