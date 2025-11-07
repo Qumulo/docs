@@ -4,7 +4,9 @@ This section describes the common actions you can perform on a {{site.cnqShort}}
 ### Adding Nodes to an Existing Cluster {#adding-node-to-existing-cluster}
 {% include important.html content="To add nodes to an existing cluster, the total node count must be greater than that of the current deployment." %}
 
-1. {{site.cnq.changeQnodeCount}} to a new value.
+1. Edit the `terraform.tfvars` file.
+   1. Specify the `q_node_count`.
+   1. Set the `q_cluster_version` to the Qumulo Core version that your cluster is running.
 1. {{site.cnq.runTFapply}}
 1. {{site.cnq.reviewExecPlan}}
    

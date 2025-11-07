@@ -38,15 +38,15 @@ Before you can deploy the persistent storage for your cluster, you must download
 
 1. Edit the `terraform.tfvars` file.
 
-   * Specify the `deployment_name`, the `az_subscription_id`, and the correct `az_location` for your cluster's persistent storage.
+   1. Specify the `deployment_name`, the `az_subscription_id`, and the correct `az_location` for your cluster's persistent storage.
 
-   * Specify the `az_subnet_name`, `az_vnet_name`, and the `az_vnet_rg` (resource group) for your Virtual Network.
+   1. Specify the `az_subnet_name`, `az_vnet_name`, and the `az_vnet_rg` (resource group) for your Virtual Network.
 
-   * Set the `soft_capacity_limit` to `500` (or higher).
+   1. Set the `soft_capacity_limit` to `500` (or higher).
 
-     {% include note.html content="This value specifies the initial capacity limit of your Qumulo clusters (in TB). It is possible to increase this limit at any time." %}
+      {% include note.html content="This value specifies the initial capacity limit of your Qumulo clusters (in TB). It is possible to increase this limit at any time." %}
 
-   * {{site.azure.advancedAZresourceName}}     
+   1. {{site.azure.advancedAZresourceName}}     
 
 ### Part 3: Create the Necessary Resources
 1. To authenticate to your Azure account, use the `az` CLI.

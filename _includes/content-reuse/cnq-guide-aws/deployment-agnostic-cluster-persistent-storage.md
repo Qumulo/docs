@@ -82,11 +82,11 @@ Before you can deploy the persistent storage for your cluster, you must download
 
 1. Edit the `terraform.tfvars` file.
 
-   * Specify the `deployment_name` and the correct `aws_region` for your cluster's persistent storage.
+   1. Specify the `deployment_name` and the correct `aws_region` for your cluster's persistent storage.
         
-   * Set the `soft_capacity_limit` to `500` (or higher).
+   1. Set the `soft_capacity_limit` to `500` (or higher).
 
-     {% include note.html content="This value specifies the initial capacity limit of your Qumulo clusters (in TB). It is possible to increase this limit at any time." %}
+      {% include note.html content="This value specifies the initial capacity limit of your Qumulo clusters (in TB). It is possible to increase this limit at any time." %}
 
 ### Part 3: Create the Necessary Resources
 1. To authenticate to your AWS account, use the `aws` CLI.
