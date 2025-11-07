@@ -178,8 +178,9 @@ qq fs_list_locks \
 {{site.data.alerts.end}}
 
 
-## Supported and Unsupported Features in Qumulo's Implementation of NFSv4.1
+## Known Limits:
 Qumulo's implementation of NFSv4.1 currently supports:
+* Up to 1,000 connections for each node
 * Authentication with [Kerberos](../kerberos/kerberos-with-qumulo-core.html)
 * General file system access (reading, writing, and navigating files)
 * Unstable writes
@@ -191,5 +192,4 @@ Qumulo's implementation of NFSv4.1 currently supports:
 * Snapshots through NFSv4.1 (Qumulo Core 5.2.4 and higher)
 * Quotas through NFSv4.1 (Qumulo Core 5.2.5.1 and higher)
 
-Qumulo Core doesn't currently support the following NFSv4.1 features:
-* Delegations
+Qumulo Core doesn't currently support NFSv4.1 delegations.

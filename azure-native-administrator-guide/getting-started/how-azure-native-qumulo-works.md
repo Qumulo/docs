@@ -328,9 +328,9 @@ Once an hour, every deployed {{site.azure.qumuloOnAzureShort}} Hot and Cold inst
 
 * Include a set amount of used capacity, higher than that of an {{site.azure.qumuloOnAzureShort}} Hot instance
 
-* Include a set amount of data that you can retrieve per month
+* Include a set amount of data that you can retrieve each month
 
-  When you exceed this amount, we charge a per-gigabyte rate for reading data from the instance (regardless of protocol).
+  When you exceed this amount, we charge a rate for each gigabyte of data read from the instance (regardless of protocol).
 
 * Have a minimum data retention period of 120 days.
 

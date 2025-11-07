@@ -138,6 +138,10 @@ Qumulo Core requires switches that meet the following criteria:
       <td>16, when not using LDAP or Active Directory for {% include rfc.html rfc='2307' %} attributes</td>
     </tr>
     <tr>
+      <td>NFSv4.1 connections for each node</td>
+      <td>1,000</td>
+    </tr>
+    <tr>
       <td>Characters in a cluster name</td>
       <td>2-15, alphanumeric and hyphen (<code>-</code>)</td>
     </tr>
