@@ -96,7 +96,7 @@ Ensure that your host system meets the minimum requirements.
           Hybrid nodes must have at least 2 SSDs and 4 HDDs
           {% include note.html content="The number of HDDs must divide evenly by the number of SSDs." %}
         </li>
-        <li>All-flash systems must have at least 2 SSDs.</li>
+        <li>All-flash systems must have at least 3 SSDs.</li>
         <li>All data drives must be unpartitioned.</li>         
       </ul>
     </td>     
