@@ -1,3 +1,5 @@
+{% include important.html content="Creating a single snapshot policy at the root level (/) can potentially cause an issue when Qumulo Core attempts to remove data which no snapshots reference to reclaim space when the Qumulo cluster's capacity is used fully. We recommend creating multiple snapshot policies for individual directories. If your organization has a requirement for creating a single root-level snapshot policy, make sure that your cluster always has some free space available. %}
+
 ## Managing Snapshots by Using the Qumulo Core Web UI
 This section explains how to create on-demand snapshots and snapshot policies, view and search for existing snapshots, and delete snapshots by using the Qumulo Core Web UI.
 
