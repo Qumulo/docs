@@ -318,6 +318,9 @@ Changing the EC2 instance type of your {{site.aws.cnqAWSshort}} cluster is a thr
 
       1. For **S3 key prefix**, enter your S3 bucket prefix.
 
+         {% capture tipSlash %}{{site.cnq.tipTrailingSlash}}{% endcapture %}
+         {% include tip.html content=tipSlash %}
+
       1. For **S3 bucket region**, enter the same AWS region as the one for your S3 bucket.
   
       1. Select an **EC2 key pair**.

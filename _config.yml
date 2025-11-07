@@ -484,6 +484,7 @@ cnq:
   nexusDropDown: Cloud Native Qumulo Downloads
   performWhileRunning: You must perform this step while the cluster is running.
   findQumuloAMIid: To find the value for **Qumulo AMI ID**, on the EC2 console, click **Instances &gt; Instances**.
+  tipTrailingSlash: To avoid a potential `AccessDenied` error from CloudFormation, include a slash (`/`) at the end of your prefix.
 
 varonis:
   separateMachine: Deploy Qumulo Broker on a stand-alone machine (or virtual machine) so that it sits between your Qumulo cluster and Varonis.

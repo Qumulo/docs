@@ -105,6 +105,9 @@ This section explains how to deploy compute and cache resources for a Qumulo clu
       1. For **S3 bucket name**, enter the name of the S3 bucket that you used to prepare your files
 
       1. For **S3 key prefix**, enter your S3 bucket prefix.
+        
+         {% capture tipSlash %}{{site.cnq.tipTrailingSlash}}{% endcapture %}
+         {% include tip.html content=tipSlash %}
 
       1. For **S3 bucket region**, enter the same AWS region as the one for your S3 bucket.
   
