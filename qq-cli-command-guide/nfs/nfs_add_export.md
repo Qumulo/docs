@@ -80,3 +80,49 @@ usage: "qq nfs_add_export [-h] --export-path EXPORT_PATH --fs-path FS_PATH [--te
 zendesk_source: qq CLI Command Guide
 
 ---
+
+## Example
+### To Configure Required Authentication Modes for Different Hosts
+
+In the following example, we configure three export restrictions.
+
+* The first export restriction allows only the specified hosts to use any authentication mode to access the NFS export.
+* The second export restriction allows all hosts matching the wildcard pattern that use the `@KRB5` authentication mode to access the NFS export.
+* The third export restriction allows any hosts that use the `@KRB5P` authentication mode to access the NFS export.
+
+```json
+{
+   "restrictions" : [
+      {
+         "read_only" : true,
+         "host_restrictions" : [ "{{site.exampleIP0}}", "{{site.exampleNetworkSegment1}}" ],
+         "required_authentication_mode": "AUTHENTICATION_MODE_NONE",
+         "user_mapping" : "root",
+         "map_to_user": {
+            "id_type" : "LOCAL_USER",
+            "id_value" : "500"
+         }
+      },
+      {
+         "read_only" : false,
+         "host_restrictions" : [ "*.example.com" ],
+         "required_authentication_mode": "AUTHENTICATION_MODE_KRB5",
+         "user_mapping" : "none"
+      },
+      {
+         "read_only" : true,
+         "host_restrictions" : [],
+         "required_authentication_mode": "AUTHENTICATION_MODE_KRB5P",
+         "user_mapping" : "all",
+         "map_to_user" :{
+            "id_type" : "NFS_UID",
+            "id_value" : "500"
+         },
+         "map_to_group": {
+            "id_type" : "NFS_GID",
+            "id_value" : "501"
+         }
+      }
+   ]
+}
+```
