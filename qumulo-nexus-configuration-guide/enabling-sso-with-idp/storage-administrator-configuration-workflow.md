@@ -6,9 +6,6 @@ sidebar: qumulo_nexus_configuration_guide_sidebar
 persona: storage_administrator
 ---
 
-{% capture pp %}{{site.nexus.idpPP}}{% endcapture %}
-{% include important.html content=pp %}
-
 After the storage administrator performs the initial configuration in Nexus, the system administrator configures the IdP. Then, the storage administrator completes the SSO configuration in Nexus.
 
 {% include content-reuse/nexus-guide/step-1-performing-initial-sso-configuration-in-nexus.md %}

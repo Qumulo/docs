@@ -173,7 +173,6 @@ nexus:
   sso:
     orgSet: In the upper-right corner, click your username and then click <strong>Organization Settings</strong>.
     confSSO: On your organization's page, click <strong>SAML SSO</strong>, and then click <strong>Configure SSO</strong>.
-  idpPP: Nexus IdP functionality is currently in private preview.
   rbacWhenYouReg: When you <a href="../monitoring-and-metrics/enabling-nexus-remote-support.html">register your Qumulo cluster with Nexus to enable Remote Support</a>, Qumulo Core assigns the <code>qumulosupport:everyone</code> trustee to the <code>Qumulo-Support</code> RBAC role.
 
 exampleTooWide: The following example is too wide for the page. To explore this example, click <strong>Reading Mode</strong> or scroll the example horizontally.

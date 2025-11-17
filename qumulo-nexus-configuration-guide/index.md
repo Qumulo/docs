@@ -6,6 +6,3 @@ permalink: /qumulo-nexus-configuration-guide/
 sidebar: qumulo_nexus_configuration_guide_sidebar
 search: exclude
 ---
-
-{% capture pp %}{{site.nexus.idpPP}}{% endcapture %}
-{% include important.html content=pp %}

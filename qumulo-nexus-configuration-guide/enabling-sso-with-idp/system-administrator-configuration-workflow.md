@@ -6,9 +6,6 @@ sidebar: qumulo_nexus_configuration_guide_sidebar
 persona: sysadmin
 ---
 
-{% capture pp %}{{site.nexus.idpPP}}{% endcapture %}
-{% include important.html content=pp %}
-
 After the system administrator performs the initial configuration in Nexus, she must configure the IdP. Then, she can complete the SSO configuration in Nexus.
 
 {% include content-reuse/nexus-guide/step-1-performing-initial-sso-configuration-in-nexus.md %}
