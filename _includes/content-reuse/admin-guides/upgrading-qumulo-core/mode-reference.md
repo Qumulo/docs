@@ -14,7 +14,7 @@ For information about the most important features from each release, click the Q
   </thead>
   <tbody>
     <tr>
-      <td><a href="feature-log.html#qumulo-core-770-quarterly">7.7.0</a></td>
+      <td><a href="feature-log.html#qumulo-core-7701-quarterly">7.7.0.1</a></td>
       <td><span class="emoji">✅</span></td>
       <td class="platform">Platform</td>
     </tr>

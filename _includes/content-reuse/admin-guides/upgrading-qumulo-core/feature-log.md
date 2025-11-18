@@ -6,10 +6,11 @@ For information about upgrade types for each release, see <a href='mode-referenc
 
 {% capture nexusLink %}<p>{{site.downloadsRelnotes}}{{site.loginRequired}}</p>{% endcapture %}
 
-## Qumulo Core 7.7.0 (Quarterly)
+## Qumulo Core 7.7.0.1 (Quarterly)
 {{ nexusLink }}
 {{site.data.alerts.important}}
 <ul>
+  <li>This release resolves an issue where previously it was possible for QFSD to crash when system clock time was moved "backwards" while Cloud Data Fabric (CDF) is enabled for a Qumulo cluster.<li>
   <li>This release upgrades the host OS from Ubuntu 24.04, kernel 6.8 to Ubuntu 24.04, kernel 6.14.</li>
   <li>To prevent Qumulo Core from consuming a large amount of memory when an Intel NIC is installed in a node, we have blacklisted the <code>irdma</code> kernel module in Qumulo Core 7.7.0 (and higher).</li>
 </ul>
