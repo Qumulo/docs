@@ -32,20 +32,21 @@ You can configure your Qumulo Cluster to use a whitelisted set of domain control
 ### To specify domain controllers when joining a domain
 Run the `qq ad_join` command and specify a comma-separated list of domain controllers. For example:
 
-   ```bash
-   qq ad_join                \
-     --domain example.com    \
-     --username example_user \
-     --domain-controllers dc1.example.com,dc2.example.com 
-   ```
+```bash
+qq ad_join \
+  --domain example.com \
+  --username example_user \
+  --domain-controllers dc1.example.com,dc2.example.com 
+```
 
 `--domain-controllers` must be either a single fully qualified domain name (FQDN) or a comma-separated list of FQDNs. When multiple domain controllers are specified, the first in the list will be used for the join operation and will act as the primary domain controller your Qumulo Cluster communicates with. The remaining domain controllers will serve as backups, only to be used if the primary domain controller becomes unreachable. At most 3 domain controllers can be specified. Note that each specified domain controllers must reside in the same domain the cluster is joining to.
 
 ### To switch to a different set of domain controllers after you have joined a domain
 Run the `qq ad_reconfigure` command and specify a comma-separated list of domain controllers. For example:
 
-   ```bash
-   qq ad_reconfigure --domain-controllers dc1.example.com,dc2.example.com 
-   ```
+```bash
+qq ad_reconfigure \
+  --domain-controllers dc1.example.com,dc2.example.com 
+```
 
 Note that the specified domain controllers must reside in the same domain the cluster is joined to.
