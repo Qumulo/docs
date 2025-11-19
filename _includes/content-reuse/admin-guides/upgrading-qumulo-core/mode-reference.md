@@ -14,6 +14,11 @@ For information about the most important features from each release, click the Q
   </thead>
   <tbody>
     <tr>
+      <td><a href="feature-log.html#qumulo-core-771">7.7.1</a></td>
+      <td></td>
+      <td class="instant">Instant</td>
+    </tr>
+    <tr>
       <td><a href="feature-log.html#qumulo-core-7701-quarterly">7.7.0.1</a></td>
       <td><span class="emoji">✅</span></td>
       <td class="platform">Platform</td>

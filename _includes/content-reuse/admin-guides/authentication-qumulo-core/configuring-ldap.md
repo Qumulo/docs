@@ -7,7 +7,7 @@
 
    1. For **Use LDAP features**, click **Yes**.
 
-   1. Enter the **LDAP URI**.
+   1. For **LDAP URIs**, enter a comma-separated list of up to 3 server URIs. The cluster will use the first server in the list, falling back to the remaining servers if the former becomes unreachable.
 
    1. For **Base DN**, enter the Distinguished Name (DN) from which the LDAP server searches for users.
 

@@ -86,6 +86,10 @@ entries:
       url: /administrator-guide/authentication-qumulo-core/installing-vpn-keys-on-cluster.html
       output: web, pdf
 
+    - title: Configuring Active Directory
+      url: /administrator-guide/authentication-qumulo-core/configuring-ad.html
+      output: web, pdf
+
     - title: Configuring LDAP
       url: /administrator-guide/authentication-qumulo-core/configuring-ldap.html
       output: web, pdf

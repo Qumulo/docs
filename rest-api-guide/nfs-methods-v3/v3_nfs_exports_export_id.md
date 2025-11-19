@@ -25,11 +25,20 @@ methods:
         \            \"items\": {\n              \"description\": \"The list of hosts\
         \ allowed to connect\",\n              \"type\": \"string\"\n            }\n\
         \          },\n          \"require_privileged_port\": {\n            \"description\"\
-        : \"Require that clients use a privileged port to use this export.\",\n  \
-        \          \"type\": \"boolean\"\n          },\n          \"read_only\": {\n\
+        : \"Require that hosts use a privileged port to use this export.\",\n    \
+        \        \"type\": \"boolean\"\n          },\n          \"read_only\": {\n\
         \            \"description\": \"Sets the NFS export to read-only\",\n    \
-        \        \"type\": \"boolean\"\n          },\n          \"user_mapping\":\
-        \ {\n            \"type\": \"string\",\n            \"enum\": [\n        \
+        \        \"type\": \"boolean\"\n          },\n          \"required_authentication_mode\"\
+        : {\n            \"type\": \"string\",\n            \"enum\": [\n        \
+        \      \"AUTHENTICATION_MODE_NONE\",\n              \"AUTHENTICATION_MODE_KRB5\"\
+        ,\n              \"AUTHENTICATION_MODE_KRB5I\",\n              \"AUTHENTICATION_MODE_KRB5P\"\
+        \n            ],\n            \"description\": \"The authentication mode hosts\
+        \ are required to authenticate with.:\\n * `AUTHENTICATION_MODE_KRB5` - Require\
+        \ users to authenticate with the krb5 security flavor.,\\n * `AUTHENTICATION_MODE_KRB5I`\
+        \ - Require users to authenticate with the krb5i security flavor.,\\n * `AUTHENTICATION_MODE_KRB5P`\
+        \ - Require users to authenticate with the krb5p security flavor.,\\n * `AUTHENTICATION_MODE_NONE`\
+        \ - Allow unauthenticated access.\"\n          },\n          \"user_mapping\"\
+        : {\n            \"type\": \"string\",\n            \"enum\": [\n        \
         \      \"NFS_MAP_NONE\",\n              \"NFS_MAP_ROOT\",\n              \"\
         NFS_MAP_ALL\"\n            ],\n            \"description\": \"NFS user mapping\
         \ (squashing) support:\\n * `NFS_MAP_ALL` - Map all users.,\\n * `NFS_MAP_NONE`\
@@ -111,11 +120,20 @@ methods:
         \            \"items\": {\n              \"description\": \"The list of hosts\
         \ allowed to connect\",\n              \"type\": \"string\"\n            }\n\
         \          },\n          \"require_privileged_port\": {\n            \"description\"\
-        : \"Require that clients use a privileged port to use this export.\",\n  \
-        \          \"type\": \"boolean\"\n          },\n          \"read_only\": {\n\
+        : \"Require that hosts use a privileged port to use this export.\",\n    \
+        \        \"type\": \"boolean\"\n          },\n          \"read_only\": {\n\
         \            \"description\": \"Sets the NFS export to read-only\",\n    \
-        \        \"type\": \"boolean\"\n          },\n          \"user_mapping\":\
-        \ {\n            \"type\": \"string\",\n            \"enum\": [\n        \
+        \        \"type\": \"boolean\"\n          },\n          \"required_authentication_mode\"\
+        : {\n            \"type\": \"string\",\n            \"enum\": [\n        \
+        \      \"AUTHENTICATION_MODE_NONE\",\n              \"AUTHENTICATION_MODE_KRB5\"\
+        ,\n              \"AUTHENTICATION_MODE_KRB5I\",\n              \"AUTHENTICATION_MODE_KRB5P\"\
+        \n            ],\n            \"description\": \"The authentication mode hosts\
+        \ are required to authenticate with.:\\n * `AUTHENTICATION_MODE_KRB5` - Require\
+        \ users to authenticate with the krb5 security flavor.,\\n * `AUTHENTICATION_MODE_KRB5I`\
+        \ - Require users to authenticate with the krb5i security flavor.,\\n * `AUTHENTICATION_MODE_KRB5P`\
+        \ - Require users to authenticate with the krb5p security flavor.,\\n * `AUTHENTICATION_MODE_NONE`\
+        \ - Allow unauthenticated access.\"\n          },\n          \"user_mapping\"\
+        : {\n            \"type\": \"string\",\n            \"enum\": [\n        \
         \      \"NFS_MAP_NONE\",\n              \"NFS_MAP_ROOT\",\n              \"\
         NFS_MAP_ALL\"\n            ],\n            \"description\": \"NFS user mapping\
         \ (squashing) support:\\n * `NFS_MAP_ALL` - Map all users.,\\n * `NFS_MAP_NONE`\
@@ -184,11 +202,20 @@ methods:
         \            \"items\": {\n              \"description\": \"The list of hosts\
         \ allowed to connect\",\n              \"type\": \"string\"\n            }\n\
         \          },\n          \"require_privileged_port\": {\n            \"description\"\
-        : \"Require that clients use a privileged port to use this export.\",\n  \
-        \          \"type\": \"boolean\"\n          },\n          \"read_only\": {\n\
+        : \"Require that hosts use a privileged port to use this export.\",\n    \
+        \        \"type\": \"boolean\"\n          },\n          \"read_only\": {\n\
         \            \"description\": \"Sets the NFS export to read-only\",\n    \
-        \        \"type\": \"boolean\"\n          },\n          \"user_mapping\":\
-        \ {\n            \"type\": \"string\",\n            \"enum\": [\n        \
+        \        \"type\": \"boolean\"\n          },\n          \"required_authentication_mode\"\
+        : {\n            \"type\": \"string\",\n            \"enum\": [\n        \
+        \      \"AUTHENTICATION_MODE_NONE\",\n              \"AUTHENTICATION_MODE_KRB5\"\
+        ,\n              \"AUTHENTICATION_MODE_KRB5I\",\n              \"AUTHENTICATION_MODE_KRB5P\"\
+        \n            ],\n            \"description\": \"The authentication mode hosts\
+        \ are required to authenticate with.:\\n * `AUTHENTICATION_MODE_KRB5` - Require\
+        \ users to authenticate with the krb5 security flavor.,\\n * `AUTHENTICATION_MODE_KRB5I`\
+        \ - Require users to authenticate with the krb5i security flavor.,\\n * `AUTHENTICATION_MODE_KRB5P`\
+        \ - Require users to authenticate with the krb5p security flavor.,\\n * `AUTHENTICATION_MODE_NONE`\
+        \ - Allow unauthenticated access.\"\n          },\n          \"user_mapping\"\
+        : {\n            \"type\": \"string\",\n            \"enum\": [\n        \
         \      \"NFS_MAP_NONE\",\n              \"NFS_MAP_ROOT\",\n              \"\
         NFS_MAP_ALL\"\n            ],\n            \"description\": \"NFS user mapping\
         \ (squashing) support:\\n * `NFS_MAP_ALL` - Map all users.,\\n * `NFS_MAP_NONE`\
@@ -266,11 +293,20 @@ methods:
         \            \"items\": {\n              \"description\": \"The list of hosts\
         \ allowed to connect\",\n              \"type\": \"string\"\n            }\n\
         \          },\n          \"require_privileged_port\": {\n            \"description\"\
-        : \"Require that clients use a privileged port to use this export.\",\n  \
-        \          \"type\": \"boolean\"\n          },\n          \"read_only\": {\n\
+        : \"Require that hosts use a privileged port to use this export.\",\n    \
+        \        \"type\": \"boolean\"\n          },\n          \"read_only\": {\n\
         \            \"description\": \"Sets the NFS export to read-only\",\n    \
-        \        \"type\": \"boolean\"\n          },\n          \"user_mapping\":\
-        \ {\n            \"type\": \"string\",\n            \"enum\": [\n        \
+        \        \"type\": \"boolean\"\n          },\n          \"required_authentication_mode\"\
+        : {\n            \"type\": \"string\",\n            \"enum\": [\n        \
+        \      \"AUTHENTICATION_MODE_NONE\",\n              \"AUTHENTICATION_MODE_KRB5\"\
+        ,\n              \"AUTHENTICATION_MODE_KRB5I\",\n              \"AUTHENTICATION_MODE_KRB5P\"\
+        \n            ],\n            \"description\": \"The authentication mode hosts\
+        \ are required to authenticate with.:\\n * `AUTHENTICATION_MODE_KRB5` - Require\
+        \ users to authenticate with the krb5 security flavor.,\\n * `AUTHENTICATION_MODE_KRB5I`\
+        \ - Require users to authenticate with the krb5i security flavor.,\\n * `AUTHENTICATION_MODE_KRB5P`\
+        \ - Require users to authenticate with the krb5p security flavor.,\\n * `AUTHENTICATION_MODE_NONE`\
+        \ - Allow unauthenticated access.\"\n          },\n          \"user_mapping\"\
+        : {\n            \"type\": \"string\",\n            \"enum\": [\n        \
         \      \"NFS_MAP_NONE\",\n              \"NFS_MAP_ROOT\",\n              \"\
         NFS_MAP_ALL\"\n            ],\n            \"description\": \"NFS user mapping\
         \ (squashing) support:\\n * `NFS_MAP_ALL` - Map all users.,\\n * `NFS_MAP_NONE`\
@@ -339,19 +375,29 @@ methods:
         \   \"type\": \"array\",\n            \"items\": {\n              \"description\"\
         : \"The list of hosts allowed to connect\",\n              \"type\": \"string\"\
         \n            }\n          },\n          \"require_privileged_port\": {\n\
-        \            \"description\": \"Require that clients use a privileged port\
-        \ to use this export.\",\n            \"type\": \"boolean\"\n          },\n\
-        \          \"read_only\": {\n            \"description\": \"Sets the NFS export\
+        \            \"description\": \"Require that hosts use a privileged port to\
+        \ use this export.\",\n            \"type\": \"boolean\"\n          },\n \
+        \         \"read_only\": {\n            \"description\": \"Sets the NFS export\
         \ to read-only\",\n            \"type\": \"boolean\"\n          },\n     \
-        \     \"user_mapping\": {\n            \"type\": \"string\",\n           \
-        \ \"enum\": [\n              \"NFS_MAP_NONE\",\n              \"NFS_MAP_ROOT\"\
-        ,\n              \"NFS_MAP_ALL\"\n            ],\n            \"description\"\
-        : \"NFS user mapping (squashing) support:\\n * `NFS_MAP_ALL` - Map all users.,\\\
-        n * `NFS_MAP_NONE` - Do not map users.,\\n * `NFS_MAP_ROOT` - Map root user\
-        \ (uid 0).\"\n          },\n          \"map_to_user\": {\n            \"description\"\
-        : \"An identity object representing a local user or an NFS user to map (see\
-        \ /users). If map_to_user is an NFS user, then map_to_group with an NFS gid\
-        \ must be given.\",\n            \"type\": \"object\",\n            \"properties\"\
+        \     \"required_authentication_mode\": {\n            \"type\": \"string\"\
+        ,\n            \"enum\": [\n              \"AUTHENTICATION_MODE_NONE\",\n\
+        \              \"AUTHENTICATION_MODE_KRB5\",\n              \"AUTHENTICATION_MODE_KRB5I\"\
+        ,\n              \"AUTHENTICATION_MODE_KRB5P\"\n            ],\n         \
+        \   \"description\": \"The authentication mode hosts are required to authenticate\
+        \ with.:\\n * `AUTHENTICATION_MODE_KRB5` - Require users to authenticate with\
+        \ the krb5 security flavor.,\\n * `AUTHENTICATION_MODE_KRB5I` - Require users\
+        \ to authenticate with the krb5i security flavor.,\\n * `AUTHENTICATION_MODE_KRB5P`\
+        \ - Require users to authenticate with the krb5p security flavor.,\\n * `AUTHENTICATION_MODE_NONE`\
+        \ - Allow unauthenticated access.\"\n          },\n          \"user_mapping\"\
+        : {\n            \"type\": \"string\",\n            \"enum\": [\n        \
+        \      \"NFS_MAP_NONE\",\n              \"NFS_MAP_ROOT\",\n              \"\
+        NFS_MAP_ALL\"\n            ],\n            \"description\": \"NFS user mapping\
+        \ (squashing) support:\\n * `NFS_MAP_ALL` - Map all users.,\\n * `NFS_MAP_NONE`\
+        \ - Do not map users.,\\n * `NFS_MAP_ROOT` - Map root user (uid 0).\"\n  \
+        \        },\n          \"map_to_user\": {\n            \"description\": \"\
+        An identity object representing a local user or an NFS user to map (see /users).\
+        \ If map_to_user is an NFS user, then map_to_group with an NFS gid must be\
+        \ given.\",\n            \"type\": \"object\",\n            \"properties\"\
         : {\n              \"id_type\": {\n                \"type\": \"string\",\n\
         \                \"enum\": [\n                  \"LOCAL_USER\",\n        \
         \          \"LOCAL_GROUP\",\n                  \"NFS_GID\",\n            \

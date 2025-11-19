@@ -86,6 +86,10 @@ entries:
       url: /cloud-native-aws-administrator-guide/authentication-qumulo-core/installing-signed-ssl-certificate.html
       output: web, pdf
 
+    - title: Configuring Active Directory
+      url: /cloud-native-aws-administrator-guide/authentication-qumulo-core/configuring-ad.html
+      output: web, pdf
+
     - title: Configuring LDAP
       url: /cloud-native-aws-administrator-guide/authentication-qumulo-core/configuring-ldap.html
       output: web, pdf

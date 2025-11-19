@@ -6,6 +6,14 @@ For information about upgrade types for each release, see <a href='mode-referenc
 
 {% capture nexusLink %}<p>{{site.downloadsRelnotes}}{{site.loginRequired}}</p>{% endcapture %}
 
+## Qumulo Core 7.7.1
+{{ nexusLink }}
+
+* Changed how NFS export host restrictions use `KRB*` keywords in Qumulo Core by allowing an additional match for hosts that authenticate by using a specific Kerberos flavor
+* Added REST API endpoints and qq CLI commands to support specifying a registration key that associates your Qumulo cluster with your Qumulo Nexus account
+* Changed `qq` CLI error messages to write to `stderr` instead of `stdout`
+* Resolved an S3 API issue with applications placing a trailing whitespace in the signed header field
+
 ## Qumulo Core 7.7.0.1 (Quarterly)
 {{ nexusLink }}
 {{site.data.alerts.important}}

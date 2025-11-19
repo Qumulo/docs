@@ -728,6 +728,22 @@ entries:
     url: /qq-cli-command-guide/network/
   - folderitems:
     - output: web,pdf
+      title: nexus_get_config
+      url: /qq-cli-command-guide/nexus/nexus_get_config.html
+    - output: web,pdf
+      title: nexus_get_registration
+      url: /qq-cli-command-guide/nexus/nexus_get_registration.html
+    - output: web,pdf
+      title: nexus_set_config
+      url: /qq-cli-command-guide/nexus/nexus_set_config.html
+    - output: web,pdf
+      title: nexus_set_registration
+      url: /qq-cli-command-guide/nexus/nexus_set_registration.html
+    output: web,pdf
+    title: nexus
+    url: /qq-cli-command-guide/nexus/
+  - folderitems:
+    - output: web,pdf
       title: nfs_add_export
       url: /qq-cli-command-guide/nfs/nfs_add_export.html
     - output: web,pdf
@@ -825,11 +841,11 @@ entries:
       title: portal_list_spokes
       url: /qq-cli-command-guide/portal/portal_list_spokes.html
     - output: web,pdf
-      title: portal_modify_hub
-      url: /qq-cli-command-guide/portal/portal_modify_hub.html
+      title: portal_modify_hub_host
+      url: /qq-cli-command-guide/portal/portal_modify_hub_host.html
     - output: web,pdf
-      title: portal_modify_spoke
-      url: /qq-cli-command-guide/portal/portal_modify_spoke.html
+      title: portal_modify_spoke_host
+      url: /qq-cli-command-guide/portal/portal_modify_spoke_host.html
     - output: web,pdf
       title: portal_propose_spoke_root
       url: /qq-cli-command-guide/portal/portal_propose_spoke_root.html

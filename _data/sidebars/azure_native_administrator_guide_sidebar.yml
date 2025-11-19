@@ -84,6 +84,10 @@ entries:
       url: /azure-native-administrator-guide/authentication-qumulo-core/installing-signed-ssl-certificate.html
       output: web, pdf
 
+    - title: Configuring Active Directory
+      url: /azure-native-administrator-guide/authentication-qumulo-core/configuring-ad.html
+      output: web, pdf
+
     - title: Configuring LDAP
       url: /azure-native-administrator-guide/authentication-qumulo-core/configuring-ldap.html
       output: web, pdf

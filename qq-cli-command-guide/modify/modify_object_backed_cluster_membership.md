@@ -63,7 +63,7 @@ synopsis: Modify the membership of an object-backed cluster by specifying the de
   to be added, removed, or replaced are implicitly derived using the specified target
   membership and the current membership of the cluster.
 title: qq modify_object_backed_cluster_membership
-usage: "qq modify_object_backed_cluster_membership [-h]\n    (--node-ips-and-fault-domains\
+usage: "qq modify_object_backed_cluster_membership [-h] (--node-ips-and-fault-domains\
   \ NODE_IPS_AND_FAULT_DOMAINS [NODE_IPS_AND_FAULT_DOMAINS ...] | --node-uuids-and-fault-domains\
   \ NODE_UUIDS_AND_FAULT_DOMAINS [NODE_UUIDS_AND_FAULT_DOMAINS ...])\n    [--batch]\
   \ [--dry-run]"

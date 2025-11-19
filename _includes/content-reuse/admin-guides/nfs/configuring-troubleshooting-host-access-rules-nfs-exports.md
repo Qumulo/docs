@@ -21,14 +21,6 @@ The following examples show the elements that a host access rule can include.
 
   * With a subnet mask (`{{site.exampleNetworkSegment2}}`)
 
-* **Allowed Kerberos Security Flavors**
-
-  To restrict access to NFSv4.1 clients that use only specific [Kerberos security flavors](../kerberos/kerberos-with-qumulo-core.html#choosing-a-kerberos-security-flavor), add the following special strings to the list of host access rules. For example:
-  
-  * `KRB5P@`: Allow only encrypted access for the specified export.
-    
-  * `KRB5@`, `KRB5I@`, and `KRB5P@`: Allow any Kerberos-authenticated access, but not `AUTH_SYS` access.
-
 {% include important.html content="If you don't specify a host access rule, Qumulo Core allows access to all IP addresses." %}
 
 
@@ -42,6 +34,18 @@ To be able to use hostnames, you must:
 * Use wildcards carefully because they match only one hostname level. For example, `*.accounting.example.com` matches `user1.accounting.example.com` but not `machine.user1.accounting.example.com`.
 
 * [Optimize your system for reverse-dns look-ups.](#optimize-for-reverse-dns)
+
+
+## Restricting NFS Export Access to Hosts using a Specific Kerberos Security Flavor
+In Qumulo Core 7.7.1, you can further restrict export access to a set of NFSv4.1 clients that are using a specific [Kerberos security flavor](../kerberos/kerberos-with-qumulo-core.html#choosing-a-kerberos-security-flavor). The options are:
+
+   * `AUTHENTICATION_MODE_NONE`: No authentication restrictions.
+
+   * `AUTHENTICATION_MODE_KRB5`: Allows all Kerberos-authenticated access.
+
+   * `AUTHENTICATION_MODE_KRB5I`: Allows all Kerberos-authenticated access with message integrity or encryption.
+
+   * `AUTHENTICATION_MODE_KRB5P`: Allows only encrypted access.
 
 
 ## Adding a Host Access Rule to an Existing NFS Export
@@ -60,6 +64,8 @@ This section explains how you can add a host access rule to an existing NFS expo
    1. For **Allowed Hosts**, enter a comma-separated [host access rule.](#host-access-rule)
 
    1. (Optional) To ensure that the allowed hosts have limited access to the NFS export, click **Read-only**.
+
+   1. (Optional) Choose the authentication mode the hosts entered in **Allowed Hosts** are required to use. Defaults to `AUTHENTICATION_MODE_NONE`.
       
    1. (Optional) For **User mapping** select one of the following:
   
@@ -87,7 +93,8 @@ Qumulo Core applies the host access rule to the NFS export.
          "user1.accounting.example.com",
          "*.eng.example.com",
          "{{site.exampleIP0}}"
-       ]
+       ],
+       "required_authentication_mode": "AUTHENTICATION_MODE_KRB5"
      }]
    }
    ```
@@ -116,6 +123,7 @@ Qumulo Core applies the host access rule to the NFS export.
          "{{site.exampleIP0}}"
        ],
        "read_only": false,
+       "required_authentication_mode": "AUTHENTICATION_MODE_KRB5",
        "require_privileged_port": false,
        "user_mapping": "NFS_MAP_NONE"
      }],

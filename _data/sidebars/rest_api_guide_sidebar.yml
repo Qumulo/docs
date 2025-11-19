@@ -1031,6 +1031,22 @@ entries:
   - folderitems:
     - apiversion: v1
       output: web,pdf
+      title: nexus/connection
+      url: /rest-api-guide/nexus-configuration-v1/nexus_connection.html
+    - apiversion: v1
+      output: web,pdf
+      title: nexus/registration
+      url: /rest-api-guide/nexus-configuration-v1/nexus_registration.html
+    - apiversion: v1
+      output: web,pdf
+      title: nexus/registration/rotate
+      url: /rest-api-guide/nexus-configuration-v1/nexus_registration_rotate.html
+    output: web,pdf
+    title: Nexus Configuration V1 (nexus)
+    url: /rest-api-guide/nexus-configuration-v1/
+  - folderitems:
+    - apiversion: v1
+      output: web,pdf
       title: node/state
       url: /rest-api-guide/node-management-v1/node_state.html
     output: web,pdf
