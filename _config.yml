@@ -167,7 +167,7 @@ tlsEncrypt: All connections are encrypted with TLS.
 nexus:
   downloads: For downloads, release notes, and upgrade paths for Qumulo Core releases, see <a target="_blank" href="https://nexus.qumulo.com/downloads">Qumulo Nexus</a>
   productPackage: <a target="_blank" href="https://nexus.qumulo.com/deploy/aws">download the installation package</a>
-  entityID: Entity ID (your Nexus account's unique identifier)
+  entityID: SP Entity ID (your Nexus account's unique identifier)
   acsURL: ACS URL (the Assertion Consumer Service URL that receives SAML responses)
   logIn: <a href="https://nexus.qumulo.com/login">Log in to Qumulo Nexus.</a>
   sso:

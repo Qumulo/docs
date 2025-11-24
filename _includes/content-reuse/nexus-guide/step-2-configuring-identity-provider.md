@@ -3,7 +3,7 @@
 ## Step 2: Configure an Identity Provider (IdP) for Qumulo Nexus
 After you perform the initial SSO configuration in Nexus, you must configure your IdP.
 
-{% include tip.html content="If you work together with a storage administrator who manages your organization's Nexus account, she provides you with the Entity ID and ACS URL." %}
+{% include tip.html content="If you work together with a storage administrator who manages your organization's Nexus account, she provides you with the SP Entity ID and ACS URL." %}
 
 ### To Configure Your IdP for Nexus
 
@@ -11,7 +11,7 @@ After you perform the initial SSO configuration in Nexus, you must configure you
 
 1. In the application or service configuration section, take the following steps:
 
-   1. Add Qumulo Nexus as a service provider by using the Entity ID and ACS URL from your Nexus account.
+   1. Add Qumulo Nexus as a service provider by using the SP Entity ID and ACS URL from your Nexus account.
 
       {% include note.html content="If your IdP is joined to Active Directory (AD), configure the IdP to send the User Principal Name (UPN) as the primary name identifier. This lets the Qumulo cluster use the information provided by the IdP to identify an authenticated user and any remote management actions that she performs on the cluster." %}
 
