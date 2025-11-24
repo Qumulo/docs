@@ -30,7 +30,7 @@ ADD Gemfile.lock /tmp/
 RUN gem install bundler:2.4.22 --no-document && bundle update --bundler
 
 # Install dependencies inside /usr/local/bundle
-RUN bundle install --path /usr/local/bundle
+RUN bundle config set path '/usr/local/bundle' && bundle install
 
 # Store build hash
 RUN sha256sum Gemfile Gemfile.lock > /build.sha256
