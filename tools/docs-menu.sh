@@ -214,10 +214,18 @@ refresh_vectara_ingest_repo() {
 
         echo "Pulling down latest updates..."
         git checkout main
-        git remote add upstream https://github.com/vectara/vectara-ingest >/dev/null 2>&1
+
+        # ensure upstream exists, but don't re-add it every time
+        if git remote get-url upstream >/dev/null 2>&1; then
+            git remote set-url upstream git@github.com:vectara/vectara-ingest.git
+        else
+            git remote add upstream git@github.com:vectara/vectara-ingest.git
+        fi
+
+        #git remote add upstream https://github.com/vectara/vectara-ingest >/dev/null 2>&1
         git fetch upstream
         git reset --hard upstream/main
-        git push --force origin main
+        git push --force origin main || { echo "Push failed"; exit 1; }
         git checkout local-config
         git fetch origin local-config
 
