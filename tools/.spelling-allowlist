@@ -77,6 +77,7 @@ DAC
 DACs
 DCE
 DCERPC
+DCs
 DDR5
 DHCP
 DIMM
@@ -171,6 +172,8 @@ K-432T
 KDC
 KMIP
 KMS
+KRB5I
+KRB5P
 KRB5i
 Kerberos
 Keychain

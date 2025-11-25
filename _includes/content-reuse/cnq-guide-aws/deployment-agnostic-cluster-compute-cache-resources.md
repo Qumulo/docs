@@ -158,6 +158,6 @@ This section explains how to deploy compute and cache resources for a Qumulo clu
 
    {% include important.html content="If you change the administrative password for your cluster by using the Qumulo Core Web UI, `qq` CLI, or REST API after deployment, you must update your password in AWS Secrets Manager." %}
 
-   You can use the Qumulo Core Web UI to create and manage [NFS exports](../nfs/creating-nfs-export.html), [SMB shares](../smb/creating-smb-share.html), [snapshots](../snapshots/managing-snapshots.html), and [continuous replication relationships](../replicating-data/creating-managing-continuous-replication-relationship.html) You can also [join your cluster to Active Directory](../authentication-qumulo-core/configuring-ad.html), [configure LDAP](../authentication-qumulo-core/configuring-ldap.html), and [perform many other operations](../).
+   You can use the Qumulo Core Web UI to create and manage [NFS exports](../nfs/creating-nfs-export.html), [SMB shares](../smb/creating-smb-share.html), [snapshots](../snapshots/managing-snapshots.html), and [continuous replication relationships](../replicating-data/creating-managing-continuous-replication-relationship.html). You can also [join your cluster to Active Directory](../authentication-qumulo-core/configuring-ad.html), [configure LDAP](../authentication-qumulo-core/configuring-ldap.html), and [perform many other operations](../).
 
 1. Mount your Qumulo file system by using NFS or SMB and your cluster's DNS name or IP address.

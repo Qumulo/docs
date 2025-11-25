@@ -1,5 +1,5 @@
 ## To Configure LDAP by Using the Qumulo Core Web UI
-1. {{site.logIntoWebUI}}.
+1. {{site.logIntoWebUI}}
 
 1. Click **Cluster > LDAP**.
 
@@ -7,7 +7,9 @@
 
    1. For **Use LDAP features**, click **Yes**.
 
-   1. For **LDAP URIs**, enter a comma-separated list of up to 3 server URIs. The cluster will use the first server in the list, falling back to the remaining servers if the former becomes unreachable.
+   1. For **LDAP URIs**, enter a comma-separated list of up to 3 URIs.
+
+      Qumulo Core attempts connecting to the first URI. If the first URI becomes unreachable, it attempts to connect to the other URIs.
 
    1. For **Base DN**, enter the Distinguished Name (DN) from which the LDAP server searches for users.
 

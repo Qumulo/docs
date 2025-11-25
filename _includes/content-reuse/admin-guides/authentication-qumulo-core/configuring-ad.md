@@ -1,52 +1,67 @@
-## Joining your Qumulo Cluster to Active Directory
-1. {{site.logIntoWebUI}}.
+## To Join a Qumulo Cluster to Active Directory (AD) by Using the Qumulo Core Web UI
+1. {{site.logIntoWebUI}}
 
 1. Click **Cluster > Active Directory**.
 
-1. Fill in the following fields:
+1. On the **Active Directory** page, click **Edit** and then do the following:
 
-   1. For **Domain Name**, enter the name of your domain. Example: ad.example.com
+   1. Enter the **Domain Name**.
 
-   1. For **Domain Username**, enter the user account or service account you will use to authenticate against the domain.
+   1. For **Domain Username**, enter the name of a user account or service account.
 
-   1. For **Domain Password**, enter the password for the user account or service account.
+   1. Enter the **Domain Password**.
 
-   1. (Optional) For **NetBIOS Domain Name**, if your Domain’s NetBIOS name is different from your domain name then enter the Domain’s NetBIOS name.
+   1. If the NetBIOS name of your domain is different from your domain name, enter the **NetBIOS Domain Name**.
 
-   1. (Optional) For **Organizational Unit**, enter the OU where the cluster's machine account will be created. If unknown, leave it blank and Qumulo will attempt to join the domain without an OU specified.
+   1. (Optional) Enter the **Organizational Unit for Machine Account**.
 
-   1. (Optional) For **Use Active Directory as your primary time server**, click **Yes**. This can also be configured in **Cluster > Date & Time**.
+   1. (Optional) For **Use Active Directory as your primary time server**, click **Yes**.
 
-   1. For **Use Active Directory for POSIX attributes**, click **Yes** if 'user objects' in Active Directory are assigned UNIX UID and GID attributes in order to allow the cluster to properly enforce permissions regardless of the protocol used to access the data.
+   1. If your AD deployment can **Use Active Directory for POSIX attributes** assigning Unix UID and GID attributes to user objects, click **Yes**.
 
-   1. For **Search Trusted Domains**, click **Yes** if you wish to allow Qumulo to follow LDAP referrals for Parent/Child Domains or Domains in the same Forest (Does not impact SMB authentication)
+      {% include tip.html content="Assigning Unix UID and GID attributes to user objects allows a Qumulo cluster to enforce permissions correctly regardless of the protocol that a client uses to access cluster data." %}
 
-   1. (Optional) For **Base DN**, enter the list of containers in the domain that Qumulo will search for POSIX attributes, S3 and REST API access keys, SSO access to the Web UI, and accounts using Kerberos with NFSv4.1.
+   1. To allow Qumulo Core to follow LDAP referrals to Parent Domains, Child Domains, or Domains in the same Forest, for **Search Trusted Domains**, click **Yes**.
+
+   1. (Optional) For **Base DN (Distinguished Name) for User and Group Accounts**, enter the list of containers in the domain that Qumulo Core searches for POSIX attributes, S3 and REST API access keys, SSO access for the Qumulo Core Web UI, and accounts that use Kerberos with NFSv4.1. For example:
+
+      ```
+      OU=Staff;DC=ad;DC=example;DC=com
+      ```
+
+      {% include note.html content="This setting doesn't affect SMB authentication." %}
 
    1. Click **Join**.
 
 
-## To configure your Qumulo Cluster to communicate with specific domain controllers
-You can configure your Qumulo Cluster to use a whitelisted set of domain controllers to be used for LDAP queries and Netlogon authentication. This can only be done through the REST API or the `qq` CLI. This section explains how you can specify these domain controllers through `qq`.
+## Configuring a Qumulo Cluster to Use Specific Domain Controllers (DCs)
+You can configure your Qumulo cluster to use an allowlist of DCs for LDAP queries and Netlogon authentication by using the Qumulo REST API or the `qq` CLI.
 
-### To specify domain controllers when joining a domain
-Run the `qq ad_join` command and specify a comma-separated list of domain controllers. For example:
+### To Specify DCs When Joining a Domain
+Run the {% include qq.html command="ad_join" %} command, specify the domain name, the username, and a comma-separated list of DCs. For example:
 
 ```bash
 qq ad_join \
   --domain example.com \
   --username example_user \
-  --domain-controllers dc1.example.com,dc2.example.com 
+  --domain-controllers dc1.example.com,dc2.example.com
 ```
 
-`--domain-controllers` must be either a single fully qualified domain name (FQDN) or a comma-separated list of FQDNs. When multiple domain controllers are specified, the first in the list will be used for the join operation and will act as the primary domain controller your Qumulo Cluster communicates with. The remaining domain controllers will serve as backups, only to be used if the primary domain controller becomes unreachable. At most 3 domain controllers can be specified. Note that each specified domain controllers must reside in the same domain the cluster is joining to.
+{% capture eachDC %}The DCs that you specify must reside in the same domain that you cluster joins to.{% endcapture %}
 
-### To switch to a different set of domain controllers after you have joined a domain
-Run the `qq ad_reconfigure` command and specify a comma-separated list of domain controllers. For example:
+{{site.data.alerts.note}}
+<ul>
+  <li>You can specify a maximum of 3 DCs.</li>
+  <li>{{eachDC}}</li>
+</ul>
+{{site.data.alerts.end}}
+
+### To Change DCs After Joining a Domain
+Run the {% include qq.html command="ad_reconfigure" %} command and specify a comma-separated list of DCs. For example:
 
 ```bash
 qq ad_reconfigure \
-  --domain-controllers dc1.example.com,dc2.example.com 
+  --domain-controllers dc1.example.com,dc2.example.com
 ```
 
-Note that the specified domain controllers must reside in the same domain the cluster is joined to.
+{% include note.html content=eachDC %}
