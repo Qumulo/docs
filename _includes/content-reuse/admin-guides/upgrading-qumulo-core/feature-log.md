@@ -6,6 +6,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
 
 {% capture nexusLink %}<p>{{site.downloadsRelnotes}}{{site.loginRequired}}</p>{% endcapture %}
 
+{% comment %}
 ## Qumulo Core 7.7.1
 {{ nexusLink }}
 
@@ -27,6 +28,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
 * Added Non-VPN Remote Support for self-managed Cloud Native Qumulo (CNQ) and on-premises clusters
 * Removed and replaced `qq` CLI commands related to Snapshots functionality
 * Resolved an issue with case sensitivity in Domain Controller lists
+{% endcomment %}
 
 ## Qumulo Core 7.6.4.1 
 {{ nexusLink }}
