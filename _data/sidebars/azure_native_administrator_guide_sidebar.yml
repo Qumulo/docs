@@ -84,6 +84,10 @@ entries:
       url: /azure-native-administrator-guide/authentication-qumulo-core/installing-signed-ssl-certificate.html
       output: web, pdf
 
+    - title: Installing a Custom Root CA Certificate
+      url: /azure-native-administrator-guide/authentication-qumulo-core/installing-custom-root-ca-certificate.html
+      output: web, pdf
+
     - title: Configuring Active Directory
       url: /azure-native-administrator-guide/authentication-qumulo-core/configuring-ad.html
       output: web, pdf
