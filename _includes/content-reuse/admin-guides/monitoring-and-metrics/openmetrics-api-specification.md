@@ -98,7 +98,7 @@ The following table lists metric names, types, labels, and descriptions.
         Qumulo Core information, including the cluster name, cluster UUID, and the current Qumulo Core version.
       </td>
     </tr>
-{% unless page.platform == 'anq' %}
+{% unless page.platform == 'anq' or page.platform contains 'cnq-' %}
     <tr>
       <td><code>qumulo_kernel</code></td>
       <td><a href="#metric-type-info"><code>info</code></a></td>
