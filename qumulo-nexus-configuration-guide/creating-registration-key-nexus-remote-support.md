@@ -1,16 +1,29 @@
 ---
-title: "Creating a Registration Key for Qumulo Nexus Remote Support"
-summary: 'This section explains how to create a registration key for your Qumulo cluster to provide <a href="https://docs.qumulo.com/administrator-guide/monitoring-and-metrics/enabling-nexus-remote-support.html">Nexus Remote Support</a> access to the Qumulo Care Team.'
-permalink: /qumulo-nexus-configuration-guide/creating-registration-key-nexus-remote-support.html
+title: "Enabling Nexus Remote Support for Qumulo Core"
+summary: 'This section explains how to enable Nexus Remote Support for Qumulo Core by creating a registration key in Nexus and then registering the key by using the <code>qq</code> CLI.'
+permalink: /qumulo-nexus-configuration-guide/enabling-nexus-remote-support.html
+redirect-from:
+  - /qumulo-nexus-configuration-guide/creating-registration-key-nexus-remote-support.html
 sidebar: qumulo_nexus_configuration_guide_sidebar
 ---
 
-A _registration key_ associates your Qumulo cluster with your Qumulo Nexus account. It works like a one-time password and it is valid for 14 days after being created.
+## Prerequisites
+* Administrative access to your organization's Nexus account
 
-To generate a registration key, you must have administrative access to your organization's Nexus account.
+* TCP traffic on port 443 for the `api.nexus.qumulo.com` hostname to allow Nexus Monitoring and Nexus Remote Support connectivity
 
 
-## To Create a Registration Key in Qumulo Nexus {#create-registration-key}
+## Step 1: Create a Registration Key in Qumulo Nexus {#create-registration-key}
+A registration key associates your Qumulo cluster with your Qumulo Nexus account. It works like a one-time password and it is valid for 14 days after being created.
+
+{{site.data.alerts.important}}
+<ul>
+  <li>Nexus displays the registration key only once. Copy this key to secure location.</li>
+  <li>If you misplace your key before enabling Nexus Remote Support or before it expires, in the <strong>Manage Registration Keys</strong> section, locate the key and then click <strong>Revoke</strong>. Next, create a new key.</li>
+  <li>Revoking a registration key is a permanent action. However, you can create a new registration key at any time.</li>
+</ul>
+{{site.data.alerts.end}}
+
 1. [Log in to Qumulo Nexus](https://nexus.qumulo.com/login).
 
 1. In the upper-right corner, click your username and then click **User Settings**.
@@ -21,31 +34,21 @@ To generate a registration key, you must have administrative access to your orga
 
 1. In the **Registration Key Created** dialog box, click **Copy Key** and they click **Done**.
 
-   {{site.data.alerts.important}}
-   <ul>
-     <li>Nexus displays the registration key only once. Copy this key to secure location.</li>
-     <li>If you misplace your key before enabling Nexus Remote Support, <a href="#revoke-registration-key">revoke the key</a> and then <a href="#create-registration-key">create a new one</a>.</li>
-   </ul>
-   {{site.data.alerts.end}}
-
    Your registration key appears in the **Registered Keys** section, which shows the key's name, creation date, and expiration date.
 
    When you use the registration key to enable Nexus Remote Support, Nexus removes the key from this list.
 
 
-### To Revoke an Unused Registration Key {#revoke-registration-key}
-You can revoke a registration key before you use it to enable Nexus Remote Support or before it expires.
+## Step 2: Enable Nexus Remote Support by Using the qq CLI {#enable-nexus-remote-support}
+When you enable Nexus Remote Support, Qumulo Core assigns the <code>qumulosupport:everyone</code> trustee to the <code>Qumulo-Support</code> RBAC role. This RBAC role determines the level of REST API access that Nexus gives to the Qumulo Care Team. For more information, see [the Qumulo-Support section in Managing Role-Based Access Control (RBAC) for Users and Groups](https://docs.qumulo.com/administrator-guide/authorization-qumulo-core/managing-role-based-access-control-rbac.html#qumulo-support).
 
-1. [Log in to Qumulo Nexus](https://nexus.qumulo.com/login).
+Run the {% include qq.html command="set_monitoring_conf" %} with the `--nexus-enabled` flag and specify your registration key. For example:
 
-1. In the upper-right corner, click your username and then click **User Settings**.
+```bash
+qq set_monitoring_conf \
+  --nexus-enabled
+  --nexus-registration-key "1A2B3CDEF4"
+```
 
-1. On the **User Settings** page, click **Registration Keys**.
-
-1. In the **Manage Registration Keys** section, locate the key to revoke and then click **Revoke**.
-
-   {% include note.html content="Although revoking a registration key is a permanent action, you can [create a new key](#create-registration-key)." %}
-
-
-## Next Steps
-After you create a registration key, you can [enable Nexus Remote Support](https://docs.qumulo.com/administrator-guide/monitoring-and-metrics/enabling-nexus-remote-support.html) for your Qumulo cluster.
+{% capture disableNRS %}To disable Nexus Remote Support, run the {% include qq.html command="set_monitoring_conf" %} command with the `--nexus-disabled` flag.{% endcapture %}
+{% include tip.html content=disableNRS %}

@@ -10,8 +10,6 @@ Nexus Remote Support lets the Qumulo Care Team access your Qumulo cluster solely
 
 When you register your Qumulo cluster with Nexus, the system creates a public-private key pair (your cluster holds the public key and Nexus holds the private key). Qumulo Core uses the public key to establish an encrypted outgoing connection that authenticates REST API operations from Nexus securely.
 
-{{site.nexus.rbacWhenYouReg}} This RBAC role determines the level of REST API access that Nexus gives to the Qumulo Care Team. For more information, see [the Qumulo-Support section in Managing Role-Based Access Control (RBAC) for Users and Groups](../authorization-qumulo-core/managing-role-based-access-control-rbac.html#qumulo-support).
-
 {{site.data.alerts.note}}
 <ul>
   <li>When the Qumulo REST API is unavailable (for example, if your Qumulo cluster is out of quorum), the Qumulo Care Team can't use Nexus Remote Support to troubleshoot issues with your cluster. In this type of scenario, {{site.contactQumuloCare}} for assistance.</li>
@@ -19,22 +17,6 @@ When you register your Qumulo cluster with Nexus, the system creates a public-pr
 </ul>
 {{site.data.alerts.end}}
 
-## Prerequisites
-Before you can use Nexus Remote Support:
 
-* [Create a registration key](https://docs.qumulo.com/qumulo-nexus-configuration-guide/creating-registration-key-nexus-remote-support.html)
-
-* Enable TCP traffic on port 443 for the `api.nexus.qumulo.com` hostname to allow Nexus Monitoring and Nexus Remote Support connectivity
-
-
-## To Enable Nexus Remote Support by Using the qq CLI
-Run the {% include qq.html command="set_monitoring_conf" %} with the `--nexus-enabled` flag and specify your registration key. For example:
-
-```bash
-qq set_monitoring_conf \
-  --nexus-enabled
-  --nexus-registration-key "1A2B3CDEF4"
-```
-
-{% capture disableNRS %}To disable Nexus Remote Support, run the {% include qq.html command="set_monitoring_conf" %} command with the `--nexus-disabled` flag.{% endcapture %}
-{% include tip.html content=disableNRS %}
+## Enabling Nexus Remote Support
+To enable Nexus Remote Support for your Qumulo cluster, you must [create a registration key in Nexus and then register the key by using the `qq` CLI](https://docs.qumulo.com/qumulo-nexus-configuration-guide/enabling-nexus-remote-support.html).

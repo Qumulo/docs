@@ -46,7 +46,7 @@ This role is suitable for users or groups who can access the Qumulo Core Web UI 
 {% endif %}
 {% unless page.platform == 'anq' %}
   <li>The built-in <code>Qumulo-Support</code> RBAC role doesn't include file-level access to your cluster's data.</li>    
-  <li>{{site.nexus.rbacWhenYouReg}} You can assign other roles to this trustee.</li>  
+  <li>When you <a href="../monitoring-and-metrics/enabling-nexus-remote-support.html">register your Qumulo cluster with Nexus to enable Remote Support</a>, Qumulo Core assigns the <code>qumulosupport:everyone</code> trustee to the <code>Qumulo-Support</code> RBAC role. You can assign other roles to this trustee.</li>  
   <li>If you delete the default assignment, Qumulo Core removes all the permissions that the Qumulo Care Team requires to support your Qumulo cluster.</li>
   <li>You can <a href="#custom-roles">create a custom RBAC role</a> for the Qumulo Care Team and assign the <code>qumulosupport:everyone</code> trustee to this custom role.</li>
   <li>If you use a custom RBAC role for the Qumulo Care Team, review any changes to the built-in <code>Qumulo-Support</code> role after upgrading your Qumulo cluster and apply these changes to your custom RBAC role.</li>
