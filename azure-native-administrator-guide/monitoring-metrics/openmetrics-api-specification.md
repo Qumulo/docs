@@ -6,5 +6,5 @@ redirect_from:
   - /azure-administrator-guide/monitoring-and-metrics/openmetrics-api-specification.html
 sidebar: azure_native_administrator_guide_sidebar
 include_content: content-reuse/admin-guides/monitoring-and-metrics/openmetrics-api-specification.md
+platform: anq
 ---
-

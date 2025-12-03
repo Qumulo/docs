@@ -24,7 +24,7 @@ All Qumulo metrics belong to one of the following OpenMetrics types.
     <tr>
       <td><a id="metric-type-counter"></a><code>counter</code></td>
       <td>
-        An integer that increases monotonically from zero, stored in <code>&lt;metric_name&gt;_count</code>.
+        An integer that increases monotonically from zero, stored in <code>&lt;metric_name&gt;&lowbar;count</code>.
         {% include note.html content="During normal operation, the value of <code>counter</code> never decreases." %}
       </td>
     </tr>
@@ -39,13 +39,13 @@ All Qumulo metrics belong to one of the following OpenMetrics types.
       <td><a id="metric-type-histogram"></a><code>histogram</code></td>
       <td>
         <p>A representation of a series of <em>buckets</em>, where each bucket tracks values within a specific range.</p>
-        <p>A histogram has a <code>count</code> field and a <code>sum</code> field, stored in <code>&lt;metric_name&gt;_count</code> (the total number of samples) and <code>&lt;metric_name&gt;_sum</code> (the sum of all samples). Qumulo Core emits a single bucket that contains all samples.</p>
+        <p>A histogram has a <code>count</code> field and a <code>sum</code> field, stored in <code>&lt;metric_name&gt;&lowbar;count</code> (the total number of samples) and <code>&lt;metric_name&gt;&lowbar;sum</code> (the sum of all samples). Qumulo Core emits a single bucket that contains all samples.</p>
         {% include tip.html content="You can use <code>histogram</code> metrics to keep track of averages by dividing the <code>sum</code> field by the <code>count</code> field." %}
       </td>
     </tr>
     <tr>
       <td><a id="metric-type-info"></a><code>info</code></td>
-      <td>Informational text about the system, stored in <code>&lt;metric_name&gt;_info</code>. An <code>info</code> metric always has a value of <code>1</code> and labels that contain detailed information.</td>
+      <td>Informational text about the system, stored in <code>&lt;metric_name&gt;&lowbar;info</code>. An <code>info</code> metric always has a value of <code>1</code> and labels that contain detailed information.</td>
     </tr>
   </tbody>
 </table>
@@ -56,11 +56,11 @@ For more information, see [Metric Types](https://github.com/OpenObservability/Op
 ## Metric Labels
 The OpenMetrics format allows for metric labeling for communicating additional information. To provide context for metrics, Qumulo Core emits metric-specific labels. For example, the `name` of a protocol operation or the `url` of a remote server. For more information, see [Available Labels](#available-labels).
 
+{% comment %}For Azure Native Qumulo (ANQ), all metrics with a `node_id` label are unavailable because they refer to specific hardware.{% endcomment %}
+
 
 ## Available Metrics
 The following table lists metric names, types, labels, and descriptions.
-
-{% include note.html content="For Azure Native Qumulo (ANQ), all metrics with a `node_id` label are unavailable because they refer to specific hardware." %}
 
 <table class="pdf-reduce">
   <thead>
@@ -79,8 +79,10 @@ The following table lists metric names, types, labels, and descriptions.
       <td>
         <ul>
           <li class="pdf-friendly"><a href="#metric-label-cluster_type"><code>cluster_type</code></a></li>
+{% unless page.platform == 'anq' %}
           <li class="pdf-friendly"><code>max_drive_failures</code></li>
           <li class="pdf-friendly"><code>max_node_failures</code></li>
+{% endunless %}
           <li class="pdf-friendly"><code>name</code></li>
           <li class="pdf-friendly"><code>platform</code></li>
           <li class="pdf-friendly"><code>service_model</code></li>
@@ -94,17 +96,16 @@ The following table lists metric names, types, labels, and descriptions.
       <td>5.3.0</td>
       <td>
         Qumulo Core information, including the cluster name, cluster UUID, and the current Qumulo Core version.
-        {% include note.html content="For Azure Native Qumulo (ANQ), `max_drive_failures` and `max_node_failures` labels aren't available." %}
       </td>
     </tr>
-{% if page.platform == 'on-prem' %}
+{% unless page.platform == 'anq' %}
     <tr>
       <td><code>qumulo_kernel</code></td>
       <td><a href="#metric-type-info"><code>info</code></a></td>
       <td>
         <ul>
           <li class="pdf-friendly"><code>cmdline</code></li>
-          <li class="pdf-friendly"><code>node_id</code></li>
+          <li class="pdf-friendly"><a href="#metric-label-node_id"><code>node_id</code></a></li>
           <li class="pdf-friendly">
             <code>version</code>
             {% include tip.html content="Don't confuse this label for the <em>kernel version</em> with the identically named label for the <em>Qumulo Core version</em> for the <code>qumulo</code> metric." %}
@@ -117,7 +118,6 @@ The following table lists metric names, types, labels, and descriptions.
         {% include note.html content="The <code>qumulo_kernel</code> metric is available only on nodes configured by using the <a href='../getting-started/installing-product-package.html'>Qumulo Core Product Package</a>." %}
       </td>
     </tr>
-{% endif %}
     <tr>
       <td><code>qumulo_node</code></td>
       <td><a href="#metric-type-info"><code>info</code></a></td>
@@ -146,6 +146,7 @@ The following table lists metric names, types, labels, and descriptions.
         </ul>
       </td>
     </tr>
+{% endunless %}
     <tr>
       <td><code>qumulo_ad_netlogon_request<br>&#95;errors</code></td>
       <td><a href="#metric-type-counter"><code>counter</code></a></td>
@@ -182,6 +183,7 @@ The following table lists metric names, types, labels, and descriptions.
       <td>5.3.0</td>
       <td>The total number of completed AD <code>NETLOGON</code> operations</td>
     </tr>
+{% unless page.platform == 'anq' %}
     <tr>
       <td><code>qumulo_cpu_crit_temperature_celsius</code></td>
       <td><a href="#metric-type-gauge"><code>gauge</code></a></td>
@@ -296,6 +298,7 @@ The following table lists metric names, types, labels, and descriptions.
       <td>5.3.0</td>
       <td>The fan speed, in RPM</td>
     </tr>
+{% endunless %}
     <tr>
       <td><code>qumulo_fault_tolerance_metrics_current_remaining_disk_failures</code></td>
       <td><a href="#metric-type-gauge"><code>gauge</code></a></td>
@@ -303,6 +306,7 @@ The following table lists metric names, types, labels, and descriptions.
       <td>7.5.2</td>
       <td>The current number of disk failures that the cluster can tolerate.</td>
     </tr>
+{% if page.platform == 'anq' or page.platform contains 'cnq-' %}
     <tr>
       <td><code>qumulo_fault_tolerance_metrics_current_remaining_fault_domain_failures</code></td>
       <td><a href="#metric-type-gauge"><code>gauge</code></a></td>
@@ -310,9 +314,9 @@ The following table lists metric names, types, labels, and descriptions.
       <td>7.5.2</td>
       <td>
         The current number of fault domain failures that the cluster can tolerate.
-        {% include note.html content="This metric isn't available for Cloud Native Qumulo (CNQ) or Azure Native Qumulo (ANQ) clusters." %}
       </td>
     </tr>
+{% endif %}
     <tr>
       <td><code>qumulo_fault_tolerance_metrics_current_remaining_node_failures</code></td>
       <td><a href="#metric-type-gauge"><code>gauge</code></a></td>
@@ -462,6 +466,7 @@ The following table lists metric names, types, labels, and descriptions.
       <td>5.3.0</td>
       <td>The total number of completed LDAP operations</td>
     </tr>
+{% unless page.platform == 'anq' %}
     <tr>
       <td><code>qumulo_memory_correctable<br>&#95;ecc_errors</code></td>
       <td><a href="#metric-type-counter"><code>counter</code></a></td>
@@ -593,6 +598,7 @@ The following table lists metric names, types, labels, and descriptions.
       <td>5.3.0</td>
       <td>PSU health, <code>0</code> (healthy) or <code>1</code> (unplugged, removed, or unresponsive)</td>
     </tr>
+{% endunless %}
     <tr>
       <td><code>qumulo_protocol_client<br>&#95;connections</code></td>
       <td><a href="#metric-type-counter"><code>counter</code></a></td>
@@ -649,6 +655,7 @@ The following table lists metric names, types, labels, and descriptions.
       <td>5.3.0</td>
       <td>The total number of completed protocol operations</td>
     </tr>
+{% unless page.platform == 'anq' %}
     <tr>
       <td><code>qumulo_quorum_node_is<br>&#95;offline</code></td>
       <td><a href="#metric-type-gauge"><code>gauge</code></a></td>
@@ -663,6 +670,7 @@ The following table lists metric names, types, labels, and descriptions.
       <td>5.3.0</td>
       <td>The time synchronization status for each node in the cluster, <code>0</code> (time is synchronized) or <code>1</code> (time isn't synchronized)</td>
     </tr>
+{% endunless %}
   </tbody>
 </table>
 
@@ -679,6 +687,7 @@ The following table lists metric label names, possible values, and descriptions.
     </tr>
   </thead>
   <tbody>
+{% unless page.platform == 'anq' %}
     <tr>
       <td><a id="metric-label-bond"></a><code>bond</code></td>
       <td>
@@ -689,6 +698,7 @@ The following table lists metric label names, possible values, and descriptions.
       </td>
       <td>The bond to which a network interface belongs</td>
     </tr>
+{% endunless %}
     <tr>
       <td><a id="metric-label-cluster_type"></a><code>cluster_type</code></td>
       <td>
@@ -699,11 +709,13 @@ The following table lists metric label names, possible values, and descriptions.
       </td>
       <td>The type of cluster</td>
     </tr>
+{% unless page.platform == 'anq' %}
     <tr>
       <td><a id="metric-label-cpu"></a><code>cpu</code></td>
       <td>A non-negative integer</td>
       <td>The CPU index in the node</td>
     </tr>
+{% endunless %}
     <tr>
       <td><a id="metric-label-data_type"></a><code>data_type</code></td>
       <td>
@@ -718,6 +730,7 @@ The following table lists metric label names, possible values, and descriptions.
       </td>
       <td>The data type that an operation transfers</td>
     </tr>
+{% unless page.platform == 'anq' %}
     <tr>
       <td><a id="metric-label-disk_type"></a><code>disk_type</code></td>
       <td>
@@ -728,16 +741,19 @@ The following table lists metric label names, possible values, and descriptions.
       </td>
       <td>The underlying storage type</td>
     </tr>
+{% endunless %}
     <tr>
       <td><a id="metric-label-domain_url"></a><code>domain_url</code></td>
       <td>An Active Directory domain (for example, <code>my-domain.com</code>) or an LDAP bind URI (for example, <code>ldap://my-server.my-domain.com</code>)</td>
       <td>The URL of the domain</td>
     </tr>
+{% unless page.platform == 'anq' %}
     <tr>
       <td><a id="metric-label-drive_bay"></a><code>drive_bay</code></td>
       <td>A drive bay name. For example: <code>b3</code>, <code>1.1</code></td>
       <td>The physical drive bay in the chassis.</td>
     </tr>
+{% endunless %}
     <tr>
       <td><a id="metric-label-entry_type"></a><code>entry_type</code></td>
       <td>
@@ -751,11 +767,13 @@ The following table lists metric label names, possible values, and descriptions.
       </td>
       <td>The file system object type</td>
     </tr>
+{% unless page.platform == 'anq' %}
     <tr>
       <td><a id="metric-label-fan"></a><code>fan</code></td>
       <td>A fan name, for example <code>system fan 1</code></td>
       <td>The fan name</td>
     </tr>
+{% endunless %}
     <tr>
       <td><a id="metric-label-fs_type"></a><code>fs_type</code></td>
       <td>
@@ -784,11 +802,13 @@ The following table lists metric label names, possible values, and descriptions.
       </td>
       <td>The method for detecting and managing hardware</td>
     </tr>
+{% unless page.platform == 'anq' %}
     <tr>
       <td><a id="metric-label-interface"></a><code>interface</code></td>
       <td>An interface name, for example <code>eth0</code></td>
       <td>The interface name</td>
     </tr>
+{% endunless %}
     <tr>
       <td><a id="metric-label-io_type"></a><code>io_type</code></td>
       <td>
@@ -802,6 +822,7 @@ The following table lists metric label names, possible values, and descriptions.
       </td>
       <td>The I/O that an operation performs</td>
     </tr>
+{% unless page.platform == 'anq' %}
     <tr>
       <td><a id="metric-label-location"></a><code>location</code></td>
       <td>A location on the chassis, for example <code>left</code> or <code>right</code></td>
@@ -810,6 +831,7 @@ The following table lists metric label names, possible values, and descriptions.
         {% include note.html content="For PSU, this location is relative to the back of the node." %}
       </td>
     </tr>
+{% endunless %}
     <tr>
       <td><a id="metric-label-network_management_mode"></a><code>network_management_mode</code></td>
       <td>
@@ -820,11 +842,13 @@ The following table lists metric label names, possible values, and descriptions.
       </td>
       <td>The management mode for network interfaces</td>
     </tr>
+{% unless page.platform == 'anq' %}
     <tr>
       <td><a id="metric-label-node_id"></a><code>node_id</code></td>
       <td>A positive integer that represents a node ID in the cluster.</td>
       <td>A value that differentiates between the different nodes in a cluster</td>
     </tr>
+{% endunless %}
     <tr>
       <td><a id="metric-label-op_name"></a><code>op_name</code></td>
       <td>Any operation name, including NFSv3, NFSv4.1, SMBv2, SMBv3, REST, S3, replication, or FTP</td>
@@ -879,6 +903,7 @@ The following table lists metric label names, possible values, and descriptions.
       </td>
       <td>The protocol of the recorded operation</td>
     </tr>
+{% unless page.platform == 'anq' %}
     <tr>
       <td><a id="metric-label-role"></a><code>role</code></td>
       <td>
@@ -892,6 +917,7 @@ The following table lists metric label names, possible values, and descriptions.
         {% include note.html content="<code>frontend</code> includes protocol, management, and replication traffic. <code>backend</code> includes all intra-node communications." %}
       </td>
     </tr>
+{% endunless %}
     <tr>
       <td><a id="metric-label-server_url"></a><code>server_url</code></td>
       <td>A hostname (for example, <code>ad.my-domain.com</code>) or an IP address</td>
