@@ -1,6 +1,13 @@
 ## Step 2: Deploying Cluster Compute and Cache Resources {#deploy-cluster-compute-and-cache-resources}
 This section explains how to deploy compute and cache resources for a Qumulo cluster by using a Ubuntu AMI and the Qumulo Core `.deb` installer.
 
+{{site.data.alerts.important}}
+<ul>
+  <li>If you plan to use <a href="../network-configuration/configuring-authoritative-dns.html">Qumulo Authoritative DNS (QDNS)</a> functionality and you have configured the Amazon Route 53 Resolver outbound endpoint by specifying the <strong>FQDN for Qumulo DNS Resolver</strong> parameter during the CloudFormation stack creation process, you must attach your client VPC by selecting <strong>Associate VPC</strong> when configuring the Route 53 forwarding rule.</li>
+  <li>If your client VPCs are in an AWS account different from the AWS account into which you deployed your <code>qumulo</code> VPC, you must share the Route 53 forwarding rule with your other AWS account by using AWS Resource Access Manager.</li>
+</ul>
+{{site.data.alerts.end}}
+
 ### Recommendations
 {% include important.html content="We strongly recommend reviewing the following recommendations before beginning this process." %}
 
