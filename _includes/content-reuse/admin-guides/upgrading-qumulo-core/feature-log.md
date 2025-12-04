@@ -6,21 +6,27 @@ For information about upgrade types for each release, see <a href='mode-referenc
 
 {% capture nexusLink %}<p>{{site.downloadsRelnotes}}{{site.loginRequired}}</p>{% endcapture %}
 
-{% comment %}
-## Qumulo Core 7.7.1
+## Qumulo Core 7.7.2
+{% capture genoaFix %}This release resolves a kernel incompatibility with hardware platforms that use AMD EPYC 9004 Series (AMD Genoa and later) CPUs.{% endcapture %}
+{% include important.html content=genoaFix %}
+
+Significantly improved the performance of the incremental replication process for directories
+
+## Qumulo Core 7.7.1.1
 {{ nexusLink }}
+{% include important.html content=genoaFix %}
 
 * Changed how NFS export host restrictions use `KRB*` keywords in Qumulo Core by allowing an additional match for hosts that authenticate by using a specific Kerberos flavor
 * Added REST API endpoints and qq CLI commands to support specifying a registration key that associates your Qumulo cluster with your Qumulo Nexus account
 * Changed `qq` CLI error messages to write to `stderr` instead of `stdout`
 * Resolved an S3 API issue with applications placing a trailing whitespace in the signed header field
 
-## Qumulo Core 7.7.0.1 (Quarterly)
+## Qumulo Core 7.7.0.2 (Quarterly)
 {{ nexusLink }}
 {{site.data.alerts.important}}
 <ul>
+  <li>{{ genoaFix }}</li>
   <li>This release resolves an issue where previously it was possible for QFSD to crash when system clock time was moved "backwards" while Cloud Data Fabric (CDF) is enabled for a Qumulo cluster.</li>
-  <li>This release upgrades the host OS from Ubuntu 24.04, kernel 6.8 to Ubuntu 24.04, kernel 6.14.</li>
   <li>To prevent Qumulo Core from consuming a large amount of memory when an Intel NIC is installed in a node, we have blacklisted the <code>irdma</code> kernel module in Qumulo Core 7.7.0 (and higher).</li>
 </ul>
 {{site.data.alerts.end}}
@@ -28,7 +34,6 @@ For information about upgrade types for each release, see <a href='mode-referenc
 * Added Non-VPN Remote Support for self-managed Cloud Native Qumulo (CNQ) and on-premises clusters
 * Removed and replaced `qq` CLI commands related to Snapshots functionality
 * Resolved an issue with case sensitivity in Domain Controller lists
-{% endcomment %}
 
 ## Qumulo Core 7.6.4.1 
 {{ nexusLink }}

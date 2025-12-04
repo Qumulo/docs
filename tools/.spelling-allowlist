@@ -364,6 +364,7 @@ VMs
 VNet
 VNets
 VPC
+VPCs
 VPN
 Varonis
 Veam
@@ -449,6 +450,7 @@ qq
 qumulo
 qumulocare
 realmd
+rebalance
 recache
 recaches
 redownloading

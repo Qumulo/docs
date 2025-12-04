@@ -309,6 +309,10 @@ entries:
       url: /rest-api-guide/cluster-creation-v2/v2_cluster_create.html
     - apiversion: v2
       output: web,pdf
+      title: cluster/data-core/create
+      url: /rest-api-guide/cluster-creation-v2/v2_cluster_data-core_create.html
+    - apiversion: v2
+      output: web,pdf
       title: cluster/unprotected-edge/create
       url: /rest-api-guide/cluster-creation-v2/v2_cluster_unprotected-edge_create.html
     output: web,pdf

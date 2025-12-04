@@ -285,6 +285,13 @@ entries:
     url: /qq-cli-command-guide/current/
   - folderitems:
     - output: web,pdf
+      title: data_core_cluster_create
+      url: /qq-cli-command-guide/data/data_core_cluster_create.html
+    output: web,pdf
+    title: data
+    url: /qq-cli-command-guide/data/
+  - folderitems:
+    - output: web,pdf
       title: dns_clear_cache
       url: /qq-cli-command-guide/dns/dns_clear_cache.html
     - output: web,pdf
@@ -841,11 +848,11 @@ entries:
       title: portal_list_spokes
       url: /qq-cli-command-guide/portal/portal_list_spokes.html
     - output: web,pdf
-      title: portal_modify_hub_host
-      url: /qq-cli-command-guide/portal/portal_modify_hub_host.html
+      title: portal_modify_hub
+      url: /qq-cli-command-guide/portal/portal_modify_hub.html
     - output: web,pdf
-      title: portal_modify_spoke_host
-      url: /qq-cli-command-guide/portal/portal_modify_spoke_host.html
+      title: portal_modify_spoke
+      url: /qq-cli-command-guide/portal/portal_modify_spoke.html
     - output: web,pdf
       title: portal_propose_spoke_root
       url: /qq-cli-command-guide/portal/portal_propose_spoke_root.html

@@ -28,7 +28,7 @@ The following examples show the elements that a host access rule can include.
 {% include important.html content="If you don't specify a host access rule, Qumulo Core allows access to all IP addresses." %}
 
 ### Restricting Access by the NFS Client's Kerberos Security Flavor
-In Qumulo Core 7.7.1 (and higher), it is possible to further restrict access to NFSv4.1 clients that use the following [Kerberos security flavors](../kerberos/kerberos-with-qumulo-core.html#choosing-a-kerberos-security-flavor):
+In Qumulo Core 7.7.1.1 (and higher), it is possible to further restrict access to NFSv4.1 clients that use the following [Kerberos security flavors](../kerberos/kerberos-with-qumulo-core.html#choosing-a-kerberos-security-flavor):
 
 * **None:** No authentication restrictions.
 

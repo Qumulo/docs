@@ -17,7 +17,7 @@ optional_options:
     by the --max_entries and --max_depth flags, or up to the system-imposed limit.
     It omits
 
-    directory entries which are smaller than 10%% of the directory''s total size.
+    directory entries which are smaller than 10% of the directory''s total size.
 
     '
   name: --recursive
