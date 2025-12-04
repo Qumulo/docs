@@ -1,3 +1,5 @@
+{% capture currentVer %}1.1.1{% endcapture %}
+
 To automate container storage, enable dynamic volumes, and help you scale your application container images based on usage and workflows, Qumulo uses its CSI driver to connect the Kubernetes orchestrator to Qumulo persistent storage. (In comparison, for example, the [NFS CSI Driver for Kubernetes](https://github.com/kubernetes-csi/csi-driver-nfs) requires unprivileged NFS access for dynamic volumes and doesn't support volume sizing and expansion.)
 
 For general driver information, see the [Container Storage Interface (CSI) Specification](https://github.com/container-storage-interface/spec).
@@ -40,18 +42,18 @@ This section explains how you can configure, provision, and mount Qumulo storage
 ### Step 1: Install the Qumulo CSI Driver
 1. Connect to a machine that has `kubectl` and can access your Kubernetes cluster.
 
-1. [Download the `.zip` file](https://csi-driver-qumulo.s3.us-west-2.amazonaws.com/deploy_v1.1.0.zip) or use one of the following commands.
+1. [Download the `.zip` file](https://csi-driver-qumulo.s3.us-west-2.amazonaws.com/deploy_v{{ currentVer }}.zip) or use one of the following commands.
 
    * S3:
 
      ```bash
-     aws s3 cp s3://csi-driver-qumulo/deploy_v1.1.0.zip ./
+     aws s3 cp s3://csi-driver-qumulo/deploy_v{{ currentVer }}.zip ./
      ```
    
    * HTTP:
 
      ```bash
-     wget https://csi-driver-qumulo.s3.us-west-2.amazonaws.com/deploy_v1.1.0.zip
+     wget https://csi-driver-qumulo.s3.us-west-2.amazonaws.com/deploy_v{{ currentVer }}.zip
      ```
      
 1. Extract the contents of the `.zip` file.
@@ -61,19 +63,19 @@ This section explains how you can configure, provision, and mount Qumulo storage
    * Linux:
 
      ```bash
-     cd deploy_v1.1.0
+     cd deploy_v{{ currentVer }}
      chmod +x install-driver.sh
      ./install-driver.sh
      ```
    
    * Windows:
    
-     ```bat
-     cd deploy_v1.1.0
+     ```batch
+     cd deploy_v{{ currentVer }}
      install-driver.bat
      ```
      
-   The script configures Qumulo's prebuilt Elastic Container Registry (ECR) image (from `public.ecr.aws/qumulo/csi-driver-qumulo:v1.1.0`) and installs it on your Kubernetes system.
+   The script configures Qumulo's prebuilt Elastic Container Registry (ECR) image (from `public.ecr.aws/qumulo/csi-driver-qumulo:v{{ currentVer }}`) and installs it on your Kubernetes system.
    
 ### Step 2: Configure Volume and NFS Export Paths
 To prepare your Qumulo cluster for connecting to your Kubernetes cluster, you must first configure your volume and NFS export paths on your Qumulo cluster by setting the following parameters for each storage class that you define.

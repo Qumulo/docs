@@ -61,3 +61,10 @@
 .highlight .vg { color: #008080 } /* Name.Variable.Global */
 .highlight .vi { color: #008080 } /* Name.Variable.Instance */
 .highlight .il { color: #009999 } /* Literal.Number.Integer.Long */
+
+/* Do not bold anything in Windows CLI examples */
+.language-batch.highlighter-rouge .nb,
+.language-batch.highlighter-rouge .kd,
+.language-batch.highlighter-rouge .na {
+  font-weight: normal;
+}
