@@ -248,7 +248,8 @@ refresh_vectara_ingest_repo() {
           fi
         fi
 
-        git merge main
+        git merge main -m "Refreshing vectara-ingest"
+        git push
 
         echo "Preparing repository..."
         chmod +x run.sh
