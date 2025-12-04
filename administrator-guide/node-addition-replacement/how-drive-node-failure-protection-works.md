@@ -41,6 +41,13 @@ The length of time before this scenario takes place depends on the number of dri
 
 The following sections describe various drive and node failure protection configurations and how they correspond to failure scenarios and data protection states.
 
+{{site.data.alerts.important}}
+<ul>
+  <li>The number of failures listed in the <strong>Failure Scenario</strong> column pertains to how many simultaneous node or drive failures can occur <em>as part of a single quorum event,</em> not as a cumulative number of events for the cluster. If a cluster can form a quorum, its file data remains consistent and intact regardless of number of cumulative node or drive failures in a given quorum.</li>
+  <li>For certain cluster configurations, the amount of space reserved for reprotect operations (that run after a drive fails) can significantly exceed the cluster's drive fault tolerance. As long as the number of simultaneous drive failures doesn't exceed the cluster's drive fault tolerance, Qumulo Core can perform reprotect operations on the cluster until the space reserved for these operations is depleted.</li>
+</ul>
+{{site.data.alerts.end}}
+
 ## 2-Drive, 1-Node Protection (2,1)
 {{page.varMinConfig}} 4 nodes.
 
