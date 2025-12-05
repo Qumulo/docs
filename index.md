@@ -1,6 +1,6 @@
 ---
 title: "Qumulo Documentation Portal"
-summary: "Welcome to the Qumulo Documentation Portal. Here, you can learn about deploying, configuring, and working with cloud and on-premises Qumulo offerings, developer tools and interfaces, and external alerts and monitoring for Qumulo Core."
+summary: "Welcome to the Qumulo Documentation Portal. This repository provides guidance for deploying, configuring, and working with Qumulo offerings."
 permalink: index.html
 breadcrumbs: exclude
 tocTrue: true
@@ -12,7 +12,6 @@ isHomepage: true
     display: none;
 }
 </style>
-<!--Docs update test-->
 
 To get started, choose one of the following guides.
 
