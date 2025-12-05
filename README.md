@@ -1,15 +1,25 @@
 # Qumulo Documentation Portal
-Welcome to the Qumulo Documentation Portal repository!
-This project uses docs-as-code principles to provide guidance about deploying, configuring, and working with Qumulo offerings.
+Welcome to the Qumulo Documentation Portal repository! This project uses docs-as-code principles to provide guidance about deploying, configuring, and working with cloud and on-premises Qumulo offerings, developer tools and interfaces, and external alerts and monitoring for Qumulo Core.
+
+**Table of Contents**
+* [Repository Maintainers](#repository-maintainers)
+* [Contributing to this Project](#contributing-to-this-project)
+  * [🍊&thinsp;As a Qumulon](#as-a-qumulon)
+* [Running Tests and Builds](#running-tests-and-builds)
+  * [🍊&thinsp;As a Qumulon](#as-a-qumulon-1)
+  * [How Automation Works in the `docs-internal` Repository](#how-automation-works-in-the-docs-internal-repository)
+* [About This Project's Infrastructure](#about-this-projects-infrastructure)
+* [Licenses](#licenses)
+
 
 ## Repository Maintainers
-The current owner and primary maintainer of this repository is [🍊 Lucía M. Polis](https://github.com/shefulloflight).
+The current owner and primary maintainer of this repository is [🍊&thinsp;Lucía M. Polis](https://github.com/shefulloflight).
 
 The secondary maintainers of this repository are:
 
-* [🍊 Andrew Abrahamowicz](https://github.com/andrewabrahamowicz)
+* [🍊&thinsp;Andrew Abrahamowicz](https://github.com/andrewabrahamowicz)
 
-* [🍊 Martin Metke](https://github.com/mmetke-qumulo)
+* [🍊&thinsp;Martin Metke](https://github.com/mmetke-qumulo)
 
 
 ## Contributing to this Project
@@ -19,7 +29,7 @@ You can contribute content to this repository by sending feedback to this reposi
 
 * [Open an Issue](https://github.com/Qumulo/docs/issues/new/choose)
 
-### 🍊 As a Qumulon
+### 🍊&thinsp;As a Qumulon
 * Docs-as-Code Workflows
 
   * [🔒 Docs as Code Quick-Start Guide for Engineering Teams](https://qumulo.atlassian.net/wiki/spaces/QON/pages/2858385431/)
@@ -58,9 +68,9 @@ You can contribute content to this repository by sending feedback to this reposi
 
 
 ## Running Tests and Builds
-Everything you need to successfully test and build the documentation is located in the `dm` tool, which you can run from [`./tools/docs-menu.sh`](tools/docs-menu.sh) for the first time.
+Everything you need to successfully test and build the documentation from the `docs-internal` repository is located in the `dm` tool, which you can run from [`./tools/docs-menu.sh`](tools/docs-menu.sh) for the first time.
 
-### 🍊 As a Qumulon
+### 🍊&thinsp;As a Qumulon
 * [🔒 Building and Checking HTML Documentation](https://qumulo.atlassian.net/wiki/spaces/QON/pages/1755217988/)
 
 * [🔒 Building the `qq` CLI and REST API Guides](https://qumulo.atlassian.net/wiki/spaces/QON/pages/2259550614/)
@@ -73,17 +83,17 @@ Everything you need to successfully test and build the documentation is located 
 
 * [🔒 Documentation Runbooks](https://qumulo.atlassian.net/wiki/spaces/QON/pages/1953660967/)
 
+### How Automation Works in the `docs-internal` Repository
+* **Testing:** This repository runs the `.github/workflows/test.yml` workflow on every commit to the `docs-internal` repository.
 
-## How Automation Works in this Repository
-This repository runs a test workflow on every commit. For more information, see [`test.yml`](/.github/workflows/test.yml).
-
-When the repository owner merges a pull request to `mainline`, this repository runs a publish workflow. For more information, see [`publish.yml`](/.github/workflows/publish.yml).
+* **Publishing:** When the repository owner merges a pull request to `mainline`, the `docs-internal` repository runs the `.github/workflows/publish.yml` workflow.
 
 
 ## About this Project's Infrastructure
 The following diagram outlines the most current project infrastructure.
 
 ![Qumulo Documentation Infrastructure](images/qumulo-documentation-infrastructure.png)
+
 
 ## Licenses
 This project uses the [Creative Commons Attribution 4.0 International](/LICENSE) overall and the [BSD 3-Clause License](/LICENSE-BSD-NAVGOCO) for the Navgoco jQuery component.
