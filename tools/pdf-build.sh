@@ -44,9 +44,9 @@ set -e
 
 # Display list of containers, count them, and kill them if they exist
 echo 'Killing all running containers...'
-if [ $(docker ps | grep -c 'docs-container$') -gt 0 ]; then
-  docker kill docs-container || true 
-  docker wait docs-container || true
+if [ $(docker ps | grep -c 'docs-container-pdf$') -gt 0 ]; then
+  docker kill docs-container-pdf || true 
+  docker wait docs-container-pdf || true
 fi
 echo
 echo -e "📄 \033[1;33mBuild PDF documentation\033[0m"
@@ -231,9 +231,9 @@ build_prince () {
   prince --javascript --input-list=_site/pdfconfigs/prince-list.txt -o "pdf/${PRINCE_OUTPUT}"
 
 echo "Cleaning up the Docker container..."
-if [ $(docker ps | grep -c 'docs-container$') -gt 0 ]; then
-  docker kill docs-container || true
-  docker wait docs-container || true
+if [ $(docker ps | grep -c 'docs-container-pdf$') -gt 0 ]; then
+  docker kill docs-container-pdf || true
+  docker wait docs-container-pdf || true
 fi
 }
 
