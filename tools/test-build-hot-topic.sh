@@ -8,7 +8,7 @@ echo -n "$ENGINEERING_JSON" | base64 --decode > /tmp/hot-topic-key.json
 docker build --no-cache --file tools/hot-topic/Dockerfile --tag google-analytics-script ./tools/hot-topic
 docker run --rm \
   -v /tmp/hot-topic-key.json:/app/hot-topic-key.json \
-  -v "$(pwd)/README.md:/app/README.md" \
+  -v "$(pwd)/index.md:/app/index.md" \
   google-analytics-script
 
 # Clean up

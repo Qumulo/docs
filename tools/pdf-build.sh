@@ -196,7 +196,7 @@ build_prince () {
   CONTAINER_ID=$(docker run \
     --rm \
     --user $(id -u):$(id -g) \
-    --name docs-container \
+    --name docs-container-pdf \
     -v "$(pwd)":/src:rw \
     -P \
     --detach \

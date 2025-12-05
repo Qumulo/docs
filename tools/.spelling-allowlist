@@ -38,6 +38,7 @@ ASUS
 AUTH_SYS
 AUTH_UNIX
 AVX
+Abrahamowicz
 Alletra
 Auth0
 Autocomplete
@@ -135,6 +136,7 @@ GbE
 Gbps
 GiB
 Grafana
+Gävle
 HBA
 HDDs
 HIPAA
@@ -192,6 +194,7 @@ LFF
 LTS
 Lan
 Lifecycle
+Lucía
 M.2
 M6i
 MBR
@@ -202,6 +205,7 @@ MQ
 MSDN
 MTU
 Mellanox
+Metke
 MiB
 Microarchitecture
 Multitenancy
@@ -225,6 +229,7 @@ NTP
 NVM3
 NVMe
 Namespace
+Navgoco
 NetBIOS
 Netlogon
 NetworkManager
@@ -274,6 +279,7 @@ QaaS
 Qumulo
 QumuloAlerts
 QumuloPrivateIP
+Qumulon
 RBAC
 RBSU
 RDP
@@ -286,6 +292,7 @@ RX2540
 Rackmount
 ReadDirectoryChangesW
 Rebalancing
+Runbooks
 S.M.A.R.T.
 S100G
 S25G
@@ -328,6 +335,7 @@ Splunk
 StartTLS
 Subnet
 Supermicro
+São
 TCP
 TFN
 TFNs
@@ -402,6 +410,8 @@ deduplicate
 deduplicates
 denylist
 denylists
+dæmon
+dæmons
 failover
 gcloud
 gp3
@@ -416,6 +426,7 @@ inode
 intra-node
 io
 ipmitool
+jQuery
 kB
 keyspace
 keyspaces

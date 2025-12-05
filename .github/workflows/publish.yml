@@ -14,7 +14,7 @@ jobs:
           fetch-depth: 0
           ref: ${{ env.GITHUB_REF_NAME }}
 
-      - name: Rebuild Hot Topics ranking in README.md, show deltas, and commit changes
+      - name: Rebuild Hot Topics ranking in index.md, show deltas, and commit changes
         run: |
           ./tools/test-build-hot-topic.sh
 
@@ -27,7 +27,7 @@ jobs:
 
           # Commit changes
           git add --all
-          git commit -m "Regenerated README.md with Hot Topic ranking" || echo "No changes to commit" >&2
+          git commit -m "Regenerated index.md with Hot Topic ranking" || echo "No changes to commit" >&2
           
         env:
           ENGINEERING_JSON: ${{ secrets.ENGINEERING_JSON }}

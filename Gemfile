@@ -2,6 +2,7 @@ source "https://rubygems.org"
 
 gem "faraday-retry"
 gem "ffi-hunspell"
+gem "htmlentities"
 gem "html-proofer"
 gem "jekyll", "4.4.1"
 gem "jekyll-redirect-from"

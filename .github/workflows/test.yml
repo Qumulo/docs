@@ -18,7 +18,7 @@ jobs:
           fetch-depth: 0
           ref: ${{ env.GITHUB_REF_NAME }}
 
-      - name: Rebuild Hot Topics ranking in README.md and show deltas (dry run)
+      - name: Rebuild Hot Topics ranking in index.md and show deltas (dry run)
         run: |
           ./tools/test-build-hot-topic.sh
 

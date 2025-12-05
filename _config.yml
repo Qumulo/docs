@@ -30,17 +30,18 @@ port: 4000
 exclude:
   - .gitignore
   - .idea
+  - createtag
   - tools/
-  - "*.sh"
+  - "*.drawio"
   - "*.py"
   - "*.rb"
-  - "*.yml"
-  - "*.drawio"
   - "*.lua"
+  - "*.sh"
+  - "*.yml"
   - docker/
   - Gemfile
   - Gemfile.lock
-  - createtag
+  - README.md
   - var # Deleting this line will cause tests to fail
   - vendor # Deleting this line will cause tests to fail
 # these are the files and directories that jekyll will exclude from the build

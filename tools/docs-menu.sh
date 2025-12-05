@@ -343,20 +343,6 @@ rebuild_container_bypass_cache() {
     docker build --no-cache -f docker/build/Dockerfile -t docs-builder .
 }
 
-# Rebuild the docs-container-check container
-rebuild_check_container() {
-    start_in_docs_dir
-    echo "Rebuilding the docs-container-check container..."
-    docker build -f docker/build/Dockerfile -t docs-container-check .
-}
-
-# Rebuild the docs-container-check container
-rebuild_check_container_bypass_cache() {
-    start_in_docs_dir
-    echo "Rebuilding the docs-container-check container while bypassing the cache..."
-    docker build --no-cache -f docker/build/Dockerfile -t docs-container-check .
-}
-
 # List CLI documentation with appended content
 find_modified_cli(){
     start_in_docs_dir
@@ -461,7 +447,7 @@ build_serve_docs_locally_tailscale() {
     start_in_docs_dir
     echo -e "Building documentation and serving it locally on \e[31m$(hostname).qumulo.ts.net\e[0m by using Tailscale..."
     ignore_warnings
-    docker run --rm --user $(id -u):$(id -g) --name docs-container-build -v $(pwd):/src:rw docs-builder && cd _site && sudo tailscale serve $PWD && cd ..
+    docker run --rm --user $(id -u):$(id -g) --name docs-container-build-serve-tailscale -v $(pwd):/src:rw docs-builder && cd _site && sudo tailscale serve $PWD && cd ..
 }
 
 # Build the documentation and serve it locally on port 4000 by using Python
@@ -469,7 +455,7 @@ build_serve_docs_locally_python() {
     start_in_docs_dir
     echo -e "Building documentation and serving it locally on \e[31m$(hostname):4000\e[0m by using Python..."
     ignore_warnings
-    docker run --rm --user $(id -u):$(id -g) --name docs-container-build -v $(pwd):/src:rw docs-builder && cd _site && python3 -m http.server 4000 && cd ..
+    docker run --rm --user $(id -u):$(id -g) --name docs-container-build-serve-python -v $(pwd):/src:rw docs-builder && cd _site && python3 -m http.server 4000 && cd ..
 }
 
 # Build the documentation and serve it locally on port 4000 by using Jekyll LiveReload
@@ -477,7 +463,7 @@ build_serve_docs_locally_jekyll() {
     start_in_docs_dir
     echo -e "Building documentation and serving it locally on \e[31m$(hostname):4000\e[0m by using Jekyll LiveReload..."
     ignore_warnings
-    docker run -ti --rm --user $(id -u):$(id -g) --name docs-container-serve -v $(pwd):/src:rw -P --network host docs-builder serve
+    docker run -ti --rm --user $(id -u):$(id -g) --name docs-container-build-serve-jekyll -v $(pwd):/src:rw -P --network host docs-builder serve
 }
 
 # Only serve the documentation locally on port 4000 by using http.server
@@ -778,43 +764,41 @@ while true; do
     echo -e "\033[1;33mPerform Maintenance\033[0m"
     echo -e "1.  📦\tRebuild docs-builder container"
     echo -e "2.  📦\tRebuild docs-builder container while bypassing the cache"
-    echo -e "3.  📦\tRebuild docs-container-check container"
-    echo -e "4.  📦\tRebuild docs-container-check container while bypassing the cache"
-    echo -e "5.  💎\tUpdate specific Ruby gem"
-    echo -e "6.  💎\tRebuild Ruby gems"
-    echo -e "7.  🧹\tSweep Toolchain"
-    echo -e "8.  🧹\tPrune Docker"
-    echo -e "9.  🔄\tRefresh Vectara Ingest repo"
-    echo -e "10. ❌\tFind unused .js scripts"
-    echo -e "11. ❌\tFind unused and undefined Jekyll/Liquid variables"
-    echo -e "12. 🔀\tReverse-integrate all changes from mainline"
+    echo -e "3.  💎\tUpdate a specific Ruby gem (useful for Dependabot fixes)"
+    echo -e "4.  💎\tRebuild Ruby gems"
+    echo -e "5.  🧹\tSweep Toolchain"
+    echo -e "6.  🧹\tPrune Docker"
+    echo -e "7.  🔄\tRefresh Vectara Ingest repo"
+    echo -e "8. ❌\tFind unused .js scripts"
+    echo -e "9. ❌\tFind unused and undefined Jekyll/Liquid variables"
+    echo -e "10. 🔀\tReverse-integrate all changes from mainline"
     echo
     echo -e "\033[1;33mRetrieve Information\033[0m"
-    echo -e "13. ⬆️\tDetermine whether a Qumulo Core release includes a host upgrade"
-    echo -e "14. ⬇️\tDetermine lowest replication version for Qumulo Core release"
-    echo -e "15. 🆕\tList CLI documentation with appended content"
+    echo -e "11. ⬆️\tDetermine whether a Qumulo Core release includes a host upgrade"
+    echo -e "12. ⬇️\tDetermine lowest replication version for Qumulo Core release"
+    echo -e "13. 🆕\tList CLI documentation with appended content"
     echo
     echo -e "\033[1;33mGenerate Documentation\033[0m"
-    echo -e "16. ⚙️\tRegenerate CLI documentation"
-    echo -e "17. ⚙️\tRegenerate REST API documentation"
-    echo -e "18. ⚙️\tOnly build HTML documentation"
-    echo -e "19. ⚙️\tOnly build PDF documentation"
+    echo -e "14. ⚙️\tRegenerate CLI documentation"
+    echo -e "15. ⚙️\tRegenerate REST API documentation"
+    echo -e "16. ⚙️\tOnly build HTML documentation"
+    echo -e "17. ⚙️\tOnly build PDF documentation"
     echo
     echo -e "\033[1;33mPreview Documentation\033[0m"
-    echo -e "20. 🖥️\tOnly serve documentation locally (Tailscale over HTTPS)"
-    echo -e "21. 🖥️\tOnly serve documentation locally (Python over HTTP)"
-    echo -e "22. 🖥️\tBuild documentation and serve it locally (Tailscale over HTTPS)"
-    echo -e "23. 🖥️\tBuild documentation and serve it locally (Python over HTTP)"
-    echo -e "24. 🖥️\tBuild documentation and serve it locally (Jekyll with LiveReload over HTTP)"
+    echo -e "18. 🖥️\tOnly serve documentation locally (Tailscale over HTTPS)"
+    echo -e "19. 🖥️\tOnly serve documentation locally (Python over HTTP)"
+    echo -e "20. 🖥️\tBuild documentation and serve it locally (Tailscale over HTTPS)"
+    echo -e "21. 🖥️\tBuild documentation and serve it locally (Python over HTTP)"
+    echo -e "22. 🖥️\tBuild documentation and serve it locally (Jekyll with LiveReload over HTTP)"
     echo
     echo -e "\033[1;33mTest Documentation\033[0m"
-    echo -e "25. 📋\tCheck documentation for link, script, and image errors"
-    echo -e "26. 📋\tCheck documentation for spelling errors"
+    echo -e "23. 📋\tCheck documentation for link, script, and image errors"
+    echo -e "24. 📋\tCheck documentation for spelling errors"
     echo
     echo -e "\033[1;33mIndex Documentation\033[0m"
-    echo -e "27. 🔍\tIngest docs.qumulo.com into Vectara"
-    echo -e "28. 🔍\tIngest care.qumulo.com into Vectara"
-    echo -e "29. 🔍\tIngest qumulo.com into Vectara"
+    echo -e "25. 🔍\tIngest docs.qumulo.com into Vectara"
+    echo -e "26. 🔍\tIngest care.qumulo.com into Vectara"
+    echo -e "27. 🔍\tIngest qumulo.com into Vectara"
     echo
     echo -e "q.  👋\tQuit"
     echo
@@ -823,33 +807,31 @@ while true; do
     case $choice in
         1) rebuild_container ;;
         2) rebuild_container_bypass_cache ;;
-        3) rebuild_check_container ;;
-        4) rebuild_check_container_bypass_cache ;;
-        5) update_specific_ruby_gem ;;
-        6) rebuild_ruby_gems ;;
-        7) sweep_toolchain ;;
-        8) prune_docker ;;
-        9) refresh_vectara_ingest_repo;;
-        10) find_unused_scripts ;;
-        11) find_unused_undefined_vars ;;
-        12) reverse_integrate_all_changes_from_mainline ;;
-        13) determine_host_upgrade_onprem_release ;;
-        14) determine_lowest_replication_version ;;
-        15) find_modified_cli ;;
-        16) regen_cli_docs ;;
-        17) regen_api_docs ;;
-        18) build_html_docs ;;
-        19) build_pdf_docs ;;
-        20) only_serve_docs_locally_tailscale ;;
-        21) only_serve_docs_locally_python ;;
-        22) build_serve_docs_locally_tailscale ;;
-        23) build_serve_docs_locally_python ;;
-        24) build_serve_docs_locally_jekyll ;;
-        25) check_docs_errors ;;
-        26) check_spelling_errors ;;
-        27) ingest_docs_portal ;;
-        28) ingest_care_portal ;;
-        29) ingest_corp_site ;;
+        3) update_specific_ruby_gem ;;
+        4) rebuild_ruby_gems ;;
+        5) sweep_toolchain ;;
+        6) prune_docker ;;
+        7) refresh_vectara_ingest_repo;;
+        8) find_unused_scripts ;;
+        9) find_unused_undefined_vars ;;
+        10) reverse_integrate_all_changes_from_mainline ;;
+        11) determine_host_upgrade_onprem_release ;;
+        12) determine_lowest_replication_version ;;
+        13) find_modified_cli ;;
+        14) regen_cli_docs ;;
+        15) regen_api_docs ;;
+        16) build_html_docs ;;
+        17) build_pdf_docs ;;
+        18) only_serve_docs_locally_tailscale ;;
+        19) only_serve_docs_locally_python ;;
+        20) build_serve_docs_locally_tailscale ;;
+        21) build_serve_docs_locally_python ;;
+        22) build_serve_docs_locally_jekyll ;;
+        23) check_docs_errors ;;
+        24) check_spelling_errors ;;
+        25) ingest_docs_portal ;;
+        26) ingest_care_portal ;;
+        27) ingest_corp_site ;;
         q) exit ;;
         *) echo "You must enter a valid option." ;;
     esac

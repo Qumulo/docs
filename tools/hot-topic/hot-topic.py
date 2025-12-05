@@ -5,7 +5,7 @@ import re
 
 KEY_FILE_LOCATION = '/app/hot-topic-key.json'
 PROPERTY_ID = '282075494'
-README_PATH = '/app/README.md'
+README_PATH = '/app/index.md'
 
 def initialize_analytics_reporting():
     credentials = service_account.Credentials.from_service_account_file(KEY_FILE_LOCATION)
