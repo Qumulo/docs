@@ -18,7 +18,7 @@ A registration key associates your Qumulo cluster with your Qumulo Nexus account
 
 {{site.data.alerts.important}}
 <ul>
-  <li>Nexus displays the registration key only once. Copy this key to secure location.</li>
+  <li>Nexus displays the registration key only once. Copy this key to a secure location.</li>
   <li>If you misplace your key before enabling Nexus Remote Support or before it expires, in the <strong>Manage Registration Keys</strong> section, locate the key and then click <strong>Revoke</strong>. Next, create a new key.</li>
   <li>Revoking a registration key is a permanent action. However, you can create a new registration key at any time.</li>
 </ul>
