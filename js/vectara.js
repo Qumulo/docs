@@ -60,7 +60,7 @@ function createSearch(
   successFn,
   errorFn,
   icon,
-  pageSize = 10,
+  pageSize = 25,
   maxSummarizedResults = 5,
   sentencesBefore = 2,
   sentencesAfter = 2,
@@ -127,7 +127,7 @@ function createSearch(
       corpusKeys.forEach(element => {
         const corpusKeyObject = {
           "corpus_key": element,
-          "lexical_interpolation": 0.1
+          "lexical_interpolation": 0.005
         };
         corpusKeyObjArr.push(corpusKeyObject);
       });
@@ -153,7 +153,7 @@ function createSearch(
               }
             },
             "generation": {
-              "generation_preset_name": "vectara-summary-table-md-query-ext-jan-2025-gpt-4o",
+              "generation_preset_name": "vectara-summary-ext-25-09-gpt-5",
               "response_language": "eng",
               "max_used_search_results": maxSummarizedResults
             }

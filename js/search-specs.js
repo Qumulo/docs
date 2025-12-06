@@ -8,8 +8,8 @@ let searchWidget = createSearch(
   "/images/magnifying-glass.png",               	    // custom icon for the search box
   25,                                           	    // number of results to return
   5,                                            	    // max number of results to summarize
-  1,                                            	    // number of sentences to show before each matching snippet
-  1,                                            	    // number of sentences to show after each matching snippet
+  2,                                            	    // number of sentences to show before each matching snippet
+  2,                                            	    // number of sentences to show after each matching snippet
   "What would you like to know?",               	    // search placeholder
   false                                         	    // default focus
   //0                                           	    // offset for paging
