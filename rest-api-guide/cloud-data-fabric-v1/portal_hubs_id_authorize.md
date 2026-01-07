@@ -18,24 +18,29 @@ methods:
         \n    },\n    \"state\": {\n      \"type\": \"string\",\n      \"enum\": [\n\
         \        \"UNLINKED\",\n        \"PENDING\",\n        \"AUTHORIZED\",\n  \
         \      \"DELETING\"\n      ],\n      \"description\": \"State of the portal:\\\
-        n * `AUTHORIZED` - PORTAL_AUTHORIZED,\\n * `DELETING` - PORTAL_DELETING,\\\
-        n * `PENDING` - PORTAL_PENDING,\\n * `UNLINKED` - PORTAL_UNLINKED\"\n    },\n\
-        \    \"status\": {\n      \"type\": \"string\",\n      \"enum\": [\n     \
-        \   \"INACTIVE\",\n        \"ACTIVE\",\n        \"DEGRADED\"\n      ],\n \
-        \     \"description\": \"Status of the portal:\\n * `ACTIVE` - PORTAL_ACTIVE,\\\
-        n * `DEGRADED` - PORTAL_DEGRADED,\\n * `INACTIVE` - PORTAL_INACTIVE\"\n  \
-        \  },\n    \"root\": {\n      \"description\": \"Local hub portal root directory\
-        \ file ID\",\n      \"type\": \"string\"\n    },\n    \"root_path\": {\n \
-        \     \"description\": \"Local hub portal root directory path\",\n      \"\
-        type\": \"string\"\n    },\n    \"spoke_cluster_uuid\": {\n      \"description\"\
-        : \"UUID of the cluster with the spoke portal\",\n      \"type\": \"string\"\
-        \n    },\n    \"spoke_cluster_name\": {\n      \"description\": \"Name of\
-        \ the cluster with the spoke portal\",\n      \"type\": \"string\"\n    },\n\
-        \    \"spoke_address\": {\n      \"description\": \"IP address of a node in\
-        \ the cluster with the spoke portal (if in a relationship)\",\n      \"type\"\
-        : \"string\"\n    },\n    \"spoke_port\": {\n      \"description\": \"TCP\
-        \ port for the cluster with the spoke portal (if in a relationship)\",\n \
-        \     \"type\": \"number\"\n    }\n  }\n}"
+        n * `AUTHORIZED` - An authorized spoke portal or hub portal that can be used\
+        \ for file system access.,\\n * `DELETING` - A portal in the process of synchronizing\
+        \ outstanding changes before deletion.,\\n * `PENDING` - A spoke portal or\
+        \ hub portal awaiting authorization. Hub portals are created in this state.,\\\
+        n * `UNLINKED` - A newly created spoke portal without a relationship with\
+        \ another cluster.\"\n    },\n    \"status\": {\n      \"type\": \"string\"\
+        ,\n      \"enum\": [\n        \"INACTIVE\",\n        \"ACTIVE\",\n       \
+        \ \"DEGRADED\"\n      ],\n      \"description\": \"Status of the portal:\\\
+        n * `ACTIVE` - A fully connected portal ready for use.,\\n * `DEGRADED` -\
+        \ A portal missing one or more connections with the other cluster in the relationship.,\\\
+        n * `INACTIVE` - A portal that is not ready for use.\"\n    },\n    \"root\"\
+        : {\n      \"description\": \"Local hub portal root directory file ID\",\n\
+        \      \"type\": \"string\"\n    },\n    \"root_path\": {\n      \"description\"\
+        : \"Local hub portal root directory path\",\n      \"type\": \"string\"\n\
+        \    },\n    \"spoke_cluster_uuid\": {\n      \"description\": \"UUID of the\
+        \ cluster with the spoke portal\",\n      \"type\": \"string\"\n    },\n \
+        \   \"spoke_cluster_name\": {\n      \"description\": \"Name of the cluster\
+        \ with the spoke portal\",\n      \"type\": \"string\"\n    },\n    \"spoke_address\"\
+        : {\n      \"description\": \"IP address of a node in the cluster with the\
+        \ spoke portal (if in a relationship)\",\n      \"type\": \"string\"\n   \
+        \ },\n    \"spoke_port\": {\n      \"description\": \"TCP port for the cluster\
+        \ with the spoke portal (if in a relationship)\",\n      \"type\": \"number\"\
+        \n    }\n  }\n}"
     responses:
     - code: '200'
       description: Return value on success

@@ -13,24 +13,24 @@ methods:
         : \"string\",\n        \"enum\": [\n          \"DISABLED\",\n          \"\
         IN_PROGRESS\",\n          \"CONNECTED\",\n          \"ERROR\",\n         \
         \ \"ERROR_PENDING\"\n        ],\n        \"description\": \"monitoring:\\\
-        n * `CONNECTED` - MONITORING_CONNECTION_STATE_CONNECTED,\\n * `DISABLED` -\
-        \ MONITORING_CONNECTION_STATE_DISABLED,\\n * `ERROR` - MONITORING_CONNECTION_STATE_ERROR,\\\
-        n * `ERROR_PENDING` - MONITORING_CONNECTION_STATE_ERROR_PENDING,\\n * `IN_PROGRESS`\
-        \ - MONITORING_CONNECTION_STATE_IN_PROGRESS\"\n      },\n      \"file_upload\"\
-        : {\n        \"type\": \"string\",\n        \"enum\": [\n          \"DISABLED\"\
-        ,\n          \"IN_PROGRESS\",\n          \"CONNECTED\",\n          \"ERROR\"\
-        ,\n          \"ERROR_PENDING\"\n        ],\n        \"description\": \"file_upload:\\\
-        n * `CONNECTED` - MONITORING_CONNECTION_STATE_CONNECTED,\\n * `DISABLED` -\
-        \ MONITORING_CONNECTION_STATE_DISABLED,\\n * `ERROR` - MONITORING_CONNECTION_STATE_ERROR,\\\
-        n * `ERROR_PENDING` - MONITORING_CONNECTION_STATE_ERROR_PENDING,\\n * `IN_PROGRESS`\
-        \ - MONITORING_CONNECTION_STATE_IN_PROGRESS\"\n      },\n      \"vpn_connection\"\
-        : {\n        \"type\": \"string\",\n        \"enum\": [\n          \"DISABLED\"\
-        ,\n          \"IN_PROGRESS\",\n          \"CONNECTED\",\n          \"ERROR\"\
-        ,\n          \"ERROR_PENDING\"\n        ],\n        \"description\": \"vpn_connection:\\\
-        n * `CONNECTED` - MONITORING_CONNECTION_STATE_CONNECTED,\\n * `DISABLED` -\
-        \ MONITORING_CONNECTION_STATE_DISABLED,\\n * `ERROR` - MONITORING_CONNECTION_STATE_ERROR,\\\
-        n * `ERROR_PENDING` - MONITORING_CONNECTION_STATE_ERROR_PENDING,\\n * `IN_PROGRESS`\
-        \ - MONITORING_CONNECTION_STATE_IN_PROGRESS\"\n      }\n    }\n  }\n}"
+        n * `CONNECTED` - Connection successful,\\n * `DISABLED` - Service is not\
+        \ enabled,\\n * `ERROR` - Connection has been down for 5 minutes,\\n * `ERROR_PENDING`\
+        \ - Connection error on last attempt,\\n * `IN_PROGRESS` - Status has not\
+        \ yet been reported\"\n      },\n      \"file_upload\": {\n        \"type\"\
+        : \"string\",\n        \"enum\": [\n          \"DISABLED\",\n          \"\
+        IN_PROGRESS\",\n          \"CONNECTED\",\n          \"ERROR\",\n         \
+        \ \"ERROR_PENDING\"\n        ],\n        \"description\": \"file_upload:\\\
+        n * `CONNECTED` - Connection successful,\\n * `DISABLED` - Service is not\
+        \ enabled,\\n * `ERROR` - Connection has been down for 5 minutes,\\n * `ERROR_PENDING`\
+        \ - Connection error on last attempt,\\n * `IN_PROGRESS` - Status has not\
+        \ yet been reported\"\n      },\n      \"vpn_connection\": {\n        \"type\"\
+        : \"string\",\n        \"enum\": [\n          \"DISABLED\",\n          \"\
+        IN_PROGRESS\",\n          \"CONNECTED\",\n          \"ERROR\",\n         \
+        \ \"ERROR_PENDING\"\n        ],\n        \"description\": \"vpn_connection:\\\
+        n * `CONNECTED` - Connection successful,\\n * `DISABLED` - Service is not\
+        \ enabled,\\n * `ERROR` - Connection has been down for 5 minutes,\\n * `ERROR_PENDING`\
+        \ - Connection error on last attempt,\\n * `IN_PROGRESS` - Status has not\
+        \ yet been reported\"\n      }\n    }\n  }\n}"
     responses:
     - code: '200'
       description: Return value on success

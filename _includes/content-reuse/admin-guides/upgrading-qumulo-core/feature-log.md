@@ -6,6 +6,12 @@ For information about upgrade types for each release, see <a href='mode-referenc
 
 {% capture nexusLink %}<p>{{site.downloadsRelnotes}}{{site.loginRequired}}</p>{% endcapture %}
 
+## Qumulo Core 7.7.3
+{{ nexusLink }}
+
+* Updates to `/v3/smb/share/` REST API arguments
+* Nexus security improvements
+
 ## Qumulo Core 7.7.2
 {{ nexusLink }}
 {% capture genoaFix %}This release resolves a kernel incompatibility with hardware platforms that use AMD EPYC 9004 Series (AMD Genoa and later) CPUs.{% endcapture %}

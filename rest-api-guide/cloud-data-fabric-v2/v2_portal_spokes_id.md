@@ -18,14 +18,17 @@ methods:
         n * `PORTAL_READ_WRITE` - PORTAL_READ_WRITE\"\n    },\n    \"state\": {\n\
         \      \"type\": \"string\",\n      \"enum\": [\n        \"PENDING\",\n  \
         \      \"ACCEPTED\",\n        \"DELETING\"\n      ],\n      \"description\"\
-        : \"State of the spoke portal:\\n * `ACCEPTED` - API_PORTAL_ACCEPTED,\\n *\
-        \ `DELETING` - API_PORTAL_DELETING,\\n * `PENDING` - API_PORTAL_PENDING\"\n\
-        \    },\n    \"status\": {\n      \"type\": \"string\",\n      \"enum\": [\n\
-        \        \"INACTIVE\",\n        \"ACTIVE\",\n        \"DEGRADED\"\n      ],\n\
-        \      \"description\": \"Status of the portal:\\n * `ACTIVE` - PORTAL_ACTIVE,\\\
-        n * `DEGRADED` - PORTAL_DEGRADED,\\n * `INACTIVE` - PORTAL_INACTIVE\"\n  \
-        \  },\n    \"hub_hosts\": {\n      \"type\": \"array\",\n      \"items\":\
-        \ {\n        \"description\": \"IP addresses and TCP ports of nodes in the\
+        : \"State of the spoke portal:\\n * `ACCEPTED` - A portal that is in an active\
+        \ relationship.,\\n * `DELETING` - A portal in the process of synchronizing\
+        \ outstanding changes before deletion.,\\n * `PENDING` - A portal not yet\
+        \ in an active relationship.\"\n    },\n    \"status\": {\n      \"type\"\
+        : \"string\",\n      \"enum\": [\n        \"INACTIVE\",\n        \"ACTIVE\"\
+        ,\n        \"DEGRADED\"\n      ],\n      \"description\": \"Status of the\
+        \ portal:\\n * `ACTIVE` - A fully connected portal ready for use.,\\n * `DEGRADED`\
+        \ - A portal missing one or more connections with the other cluster in the\
+        \ relationship.,\\n * `INACTIVE` - A portal that is not ready for use.\"\n\
+        \    },\n    \"hub_hosts\": {\n      \"type\": \"array\",\n      \"items\"\
+        : {\n        \"description\": \"IP addresses and TCP ports of nodes in the\
         \ remote cluster\",\n        \"type\": \"object\",\n        \"properties\"\
         : {\n          \"address\": {\n            \"description\": \"address\",\n\
         \            \"type\": \"string\"\n          },\n          \"port\": {\n \
@@ -81,14 +84,17 @@ methods:
         n * `PORTAL_READ_WRITE` - PORTAL_READ_WRITE\"\n    },\n    \"state\": {\n\
         \      \"type\": \"string\",\n      \"enum\": [\n        \"PENDING\",\n  \
         \      \"ACCEPTED\",\n        \"DELETING\"\n      ],\n      \"description\"\
-        : \"State of the spoke portal:\\n * `ACCEPTED` - API_PORTAL_ACCEPTED,\\n *\
-        \ `DELETING` - API_PORTAL_DELETING,\\n * `PENDING` - API_PORTAL_PENDING\"\n\
-        \    },\n    \"status\": {\n      \"type\": \"string\",\n      \"enum\": [\n\
-        \        \"INACTIVE\",\n        \"ACTIVE\",\n        \"DEGRADED\"\n      ],\n\
-        \      \"description\": \"Status of the portal:\\n * `ACTIVE` - PORTAL_ACTIVE,\\\
-        n * `DEGRADED` - PORTAL_DEGRADED,\\n * `INACTIVE` - PORTAL_INACTIVE\"\n  \
-        \  },\n    \"hub_hosts\": {\n      \"type\": \"array\",\n      \"items\":\
-        \ {\n        \"description\": \"IP addresses and TCP ports of nodes in the\
+        : \"State of the spoke portal:\\n * `ACCEPTED` - A portal that is in an active\
+        \ relationship.,\\n * `DELETING` - A portal in the process of synchronizing\
+        \ outstanding changes before deletion.,\\n * `PENDING` - A portal not yet\
+        \ in an active relationship.\"\n    },\n    \"status\": {\n      \"type\"\
+        : \"string\",\n      \"enum\": [\n        \"INACTIVE\",\n        \"ACTIVE\"\
+        ,\n        \"DEGRADED\"\n      ],\n      \"description\": \"Status of the\
+        \ portal:\\n * `ACTIVE` - A fully connected portal ready for use.,\\n * `DEGRADED`\
+        \ - A portal missing one or more connections with the other cluster in the\
+        \ relationship.,\\n * `INACTIVE` - A portal that is not ready for use.\"\n\
+        \    },\n    \"hub_hosts\": {\n      \"type\": \"array\",\n      \"items\"\
+        : {\n        \"description\": \"IP addresses and TCP ports of nodes in the\
         \ remote cluster\",\n        \"type\": \"object\",\n        \"properties\"\
         : {\n          \"address\": {\n            \"description\": \"address\",\n\
         \            \"type\": \"string\"\n          },\n          \"port\": {\n \
@@ -121,14 +127,17 @@ methods:
         n * `PORTAL_READ_WRITE` - PORTAL_READ_WRITE\"\n    },\n    \"state\": {\n\
         \      \"type\": \"string\",\n      \"enum\": [\n        \"PENDING\",\n  \
         \      \"ACCEPTED\",\n        \"DELETING\"\n      ],\n      \"description\"\
-        : \"State of the spoke portal:\\n * `ACCEPTED` - API_PORTAL_ACCEPTED,\\n *\
-        \ `DELETING` - API_PORTAL_DELETING,\\n * `PENDING` - API_PORTAL_PENDING\"\n\
-        \    },\n    \"status\": {\n      \"type\": \"string\",\n      \"enum\": [\n\
-        \        \"INACTIVE\",\n        \"ACTIVE\",\n        \"DEGRADED\"\n      ],\n\
-        \      \"description\": \"Status of the portal:\\n * `ACTIVE` - PORTAL_ACTIVE,\\\
-        n * `DEGRADED` - PORTAL_DEGRADED,\\n * `INACTIVE` - PORTAL_INACTIVE\"\n  \
-        \  },\n    \"hub_hosts\": {\n      \"type\": \"array\",\n      \"items\":\
-        \ {\n        \"description\": \"IP addresses and TCP ports of nodes in the\
+        : \"State of the spoke portal:\\n * `ACCEPTED` - A portal that is in an active\
+        \ relationship.,\\n * `DELETING` - A portal in the process of synchronizing\
+        \ outstanding changes before deletion.,\\n * `PENDING` - A portal not yet\
+        \ in an active relationship.\"\n    },\n    \"status\": {\n      \"type\"\
+        : \"string\",\n      \"enum\": [\n        \"INACTIVE\",\n        \"ACTIVE\"\
+        ,\n        \"DEGRADED\"\n      ],\n      \"description\": \"Status of the\
+        \ portal:\\n * `ACTIVE` - A fully connected portal ready for use.,\\n * `DEGRADED`\
+        \ - A portal missing one or more connections with the other cluster in the\
+        \ relationship.,\\n * `INACTIVE` - A portal that is not ready for use.\"\n\
+        \    },\n    \"hub_hosts\": {\n      \"type\": \"array\",\n      \"items\"\
+        : {\n        \"description\": \"IP addresses and TCP ports of nodes in the\
         \ remote cluster\",\n        \"type\": \"object\",\n        \"properties\"\
         : {\n          \"address\": {\n            \"description\": \"address\",\n\
         \            \"type\": \"string\"\n          },\n          \"port\": {\n \

@@ -24,78 +24,41 @@ methods:
         : {\n          \"type\": {\n            \"type\": \"string\",\n          \
         \  \"enum\": [\n              \"ALLOWED\",\n              \"DENIED\"\n   \
         \         ],\n            \"description\": \"Type of permissions entry (ALLOWED\
-        \ or DENIED):\\n * `ALLOWED` - API_SMB_SHARE_PERMISSIONS_ENTRY_TYPE_ALLOWED,\\\
-        n * `DENIED` - API_SMB_SHARE_PERMISSIONS_ENTRY_TYPE_DENIED\"\n          },\n\
-        \          \"trustee\": {\n            \"description\": \"User/group to apply\
-        \ the permissions entry to\",\n            \"type\": \"object\",\n       \
-        \     \"properties\": {\n              \"domain\": {\n                \"type\"\
-        : \"string\",\n                \"enum\": [\n                  \"LOCAL\",\n\
-        \                  \"API_NULL_DOMAIN\",\n                  \"WORLD\",\n  \
-        \                \"POSIX_USER\",\n                  \"POSIX_GROUP\",\n   \
-        \               \"ACTIVE_DIRECTORY\",\n                  \"API_INVALID_DOMAIN\"\
-        ,\n                  \"API_RESERVED_DOMAIN\",\n                  \"API_INTERNAL_DOMAIN\"\
-        ,\n                  \"API_OPERATOR_DOMAIN\",\n                  \"API_QUMULO_SUPPORT_DOMAIN\"\
-        ,\n                  \"API_CREATOR_DOMAIN\"\n                ],\n        \
-        \        \"description\": \"domain:\\n * `ACTIVE_DIRECTORY` - ACTIVE_DIRECTORY,\\\
-        n * `API_CREATOR_DOMAIN` - API_CREATOR_DOMAIN,\\n * `API_INTERNAL_DOMAIN`\
-        \ - API_INTERNAL_DOMAIN,\\n * `API_INVALID_DOMAIN` - API_INVALID_DOMAIN,\\\
-        n * `API_NULL_DOMAIN` - API_NULL_DOMAIN,\\n * `API_OPERATOR_DOMAIN` - API_OPERATOR_DOMAIN,\\\
-        n * `API_QUMULO_SUPPORT_DOMAIN` - API_QUMULO_SUPPORT_DOMAIN,\\n * `API_RESERVED_DOMAIN`\
-        \ - API_RESERVED_DOMAIN,\\n * `LOCAL` - LOCAL,\\n * `POSIX_GROUP` - POSIX_GROUP,\\\
-        n * `POSIX_USER` - POSIX_USER,\\n * `WORLD` - WORLD\"\n              },\n\
-        \              \"auth_id\": {\n                \"description\": \"auth_id\"\
-        ,\n                \"type\": \"string\"\n              },\n              \"\
-        uid\": {\n                \"description\": \"uid\",\n                \"type\"\
-        : \"number\"\n              },\n              \"gid\": {\n               \
-        \ \"description\": \"gid\",\n                \"type\": \"number\"\n      \
-        \        },\n              \"sid\": {\n                \"description\": \"\
-        sid\",\n                \"type\": \"string\"\n              },\n         \
-        \     \"name\": {\n                \"description\": \"name\",\n          \
-        \      \"type\": \"string\"\n              }\n            }\n          },\n\
-        \          \"rights\": {\n            \"description\": \"Rights pertaining\
-        \ to the permissions entry\",\n            \"type\": \"array\",\n        \
-        \    \"items\": {\n              \"type\": \"string\",\n              \"enum\"\
-        : [\n                \"READ\",\n                \"WRITE\",\n             \
-        \   \"CHANGE_PERMISSIONS\",\n                \"ALL\",\n                \"\
-        READ_DATA\",\n                \"READ_EA\",\n                \"READ_ATTR\"\
-        ,\n                \"READ_ACL\",\n                \"WRITE_EA\",\n        \
-        \        \"WRITE_ATTR\",\n                \"WRITE_ACL\",\n               \
-        \ \"CHANGE_OWNER\",\n                \"WRITE_GROUP\",\n                \"\
-        DELETE\",\n                \"EXECUTE\",\n                \"MODIFY\",\n   \
-        \             \"EXTEND\",\n                \"ADD_FILE\",\n               \
-        \ \"ADD_SUBDIR\",\n                \"DELETE_CHILD\",\n                \"SYNCHRONIZE\"\
-        \n              ],\n              \"description\": \"Rights pertaining to\
-        \ the permissions entry:\\n * `ADD_FILE` - File creation access,\\n * `ADD_SUBDIR`\
-        \ - Directory creation access,\\n * `ALL` - All access rights,\\n * `CHANGE_OWNER`\
-        \ - Owner write access,\\n * `CHANGE_PERMISSIONS` - Rights to change permissions\
-        \ on file objects,\\n * `DELETE` - Delete access,\\n * `DELETE_CHILD` - Delete\
-        \ from directory access,\\n * `EXECUTE` - Execute access,\\n * `EXTEND` -\
-        \ File extension access,\\n * `MODIFY` - File modification access,\\n * `READ`\
-        \ - Read access rights,\\n * `READ_ACL` - ACL read access,\\n * `READ_ATTR`\
-        \ - Attribute read access,\\n * `READ_DATA` - File read access,\\n * `READ_EA`\
-        \ - Extended attribute read access,\\n * `SYNCHRONIZE` - File synchronize\
-        \ access,\\n * `WRITE` - Write access rights,\\n * `WRITE_ACL` - ACL write\
-        \ access,\\n * `WRITE_ATTR` - Attribute write access,\\n * `WRITE_EA` - Extended\
-        \ attribute write access,\\n * `WRITE_GROUP` - Group write access\"\n    \
-        \        }\n          }\n        }\n      }\n    },\n    \"network_permissions\"\
-        : {\n      \"type\": \"array\",\n      \"items\": {\n        \"description\"\
-        : \"The network access control list (ACL) for this SMB share. If not specified,\
-        \ the default is to allow any host.\",\n        \"type\": \"object\",\n  \
-        \      \"properties\": {\n          \"type\": {\n            \"type\": \"\
-        string\",\n            \"enum\": [\n              \"ALLOWED\",\n         \
-        \     \"DENIED\"\n            ],\n            \"description\": \"Type of permissions\
-        \ entry (ALLOWED or DENIED):\\n * `ALLOWED` - API_SMB_SHARE_PERMISSIONS_ENTRY_TYPE_ALLOWED,\\\
-        n * `DENIED` - API_SMB_SHARE_PERMISSIONS_ENTRY_TYPE_DENIED\"\n          },\n\
-        \          \"address_ranges\": {\n            \"type\": \"array\",\n     \
-        \       \"items\": {\n              \"description\": \"IP address ranges to\
-        \ apply permissions to. Empty means all hosts.\",\n              \"type\"\
-        : \"string\"\n            }\n          },\n          \"rights\": {\n     \
-        \       \"description\": \"Rights pertaining to the permissions entry\",\n\
-        \            \"type\": \"array\",\n            \"items\": {\n            \
-        \  \"type\": \"string\",\n              \"enum\": [\n                \"READ\"\
-        ,\n                \"WRITE\",\n                \"CHANGE_PERMISSIONS\",\n \
-        \               \"ALL\",\n                \"READ_DATA\",\n               \
-        \ \"READ_EA\",\n                \"READ_ATTR\",\n                \"READ_ACL\"\
+        \ or DENIED):\\n * `ALLOWED` - The permissions entry rights are allowed to\
+        \ the trustee,\\n * `DENIED` - The permissions entry rights are denied to\
+        \ the trustee\"\n          },\n          \"trustee\": {\n            \"description\"\
+        : \"User/group to apply the permissions entry to\",\n            \"type\"\
+        : \"object\",\n            \"properties\": {\n              \"domain\": {\n\
+        \                \"type\": \"string\",\n                \"enum\": [\n    \
+        \              \"LOCAL\",\n                  \"API_NULL_DOMAIN\",\n      \
+        \            \"WORLD\",\n                  \"POSIX_USER\",\n             \
+        \     \"POSIX_GROUP\",\n                  \"ACTIVE_DIRECTORY\",\n        \
+        \          \"API_INVALID_DOMAIN\",\n                  \"API_RESERVED_DOMAIN\"\
+        ,\n                  \"API_INTERNAL_DOMAIN\",\n                  \"API_OPERATOR_DOMAIN\"\
+        ,\n                  \"API_QUMULO_SUPPORT_DOMAIN\",\n                  \"\
+        API_CREATOR_DOMAIN\"\n                ],\n                \"description\"\
+        : \"domain:\\n * `ACTIVE_DIRECTORY` - ACTIVE_DIRECTORY,\\n * `API_CREATOR_DOMAIN`\
+        \ - API_CREATOR_DOMAIN,\\n * `API_INTERNAL_DOMAIN` - API_INTERNAL_DOMAIN,\\\
+        n * `API_INVALID_DOMAIN` - API_INVALID_DOMAIN,\\n * `API_NULL_DOMAIN` - API_NULL_DOMAIN,\\\
+        n * `API_OPERATOR_DOMAIN` - API_OPERATOR_DOMAIN,\\n * `API_QUMULO_SUPPORT_DOMAIN`\
+        \ - API_QUMULO_SUPPORT_DOMAIN,\\n * `API_RESERVED_DOMAIN` - API_RESERVED_DOMAIN,\\\
+        n * `LOCAL` - LOCAL,\\n * `POSIX_GROUP` - POSIX_GROUP,\\n * `POSIX_USER` -\
+        \ POSIX_USER,\\n * `WORLD` - WORLD\"\n              },\n              \"auth_id\"\
+        : {\n                \"description\": \"auth_id\",\n                \"type\"\
+        : \"string\"\n              },\n              \"uid\": {\n               \
+        \ \"description\": \"uid\",\n                \"type\": \"number\"\n      \
+        \        },\n              \"gid\": {\n                \"description\": \"\
+        gid\",\n                \"type\": \"number\"\n              },\n         \
+        \     \"sid\": {\n                \"description\": \"sid\",\n            \
+        \    \"type\": \"string\"\n              },\n              \"name\": {\n \
+        \               \"description\": \"name\",\n                \"type\": \"string\"\
+        \n              }\n            }\n          },\n          \"rights\": {\n\
+        \            \"description\": \"Rights pertaining to the permissions entry\"\
+        ,\n            \"type\": \"array\",\n            \"items\": {\n          \
+        \    \"type\": \"string\",\n              \"enum\": [\n                \"\
+        READ\",\n                \"WRITE\",\n                \"CHANGE_PERMISSIONS\"\
+        ,\n                \"ALL\",\n                \"READ_DATA\",\n            \
+        \    \"READ_EA\",\n                \"READ_ATTR\",\n                \"READ_ACL\"\
         ,\n                \"WRITE_EA\",\n                \"WRITE_ATTR\",\n      \
         \          \"WRITE_ACL\",\n                \"CHANGE_OWNER\",\n           \
         \     \"WRITE_GROUP\",\n                \"DELETE\",\n                \"EXECUTE\"\
@@ -106,6 +69,44 @@ methods:
         \ access,\\n * `ADD_SUBDIR` - Directory creation access,\\n * `ALL` - All\
         \ access rights,\\n * `CHANGE_OWNER` - Owner write access,\\n * `CHANGE_PERMISSIONS`\
         \ - Rights to change permissions on file objects,\\n * `DELETE` - Delete access,\\\
+        n * `DELETE_CHILD` - Delete from directory access,\\n * `EXECUTE` - Execute\
+        \ access,\\n * `EXTEND` - File extension access,\\n * `MODIFY` - File modification\
+        \ access,\\n * `READ` - Read access rights,\\n * `READ_ACL` - ACL read access,\\\
+        n * `READ_ATTR` - Attribute read access,\\n * `READ_DATA` - File read access,\\\
+        n * `READ_EA` - Extended attribute read access,\\n * `SYNCHRONIZE` - File\
+        \ synchronize access,\\n * `WRITE` - Write access rights,\\n * `WRITE_ACL`\
+        \ - ACL write access,\\n * `WRITE_ATTR` - Attribute write access,\\n * `WRITE_EA`\
+        \ - Extended attribute write access,\\n * `WRITE_GROUP` - Group write access\"\
+        \n            }\n          }\n        }\n      }\n    },\n    \"network_permissions\"\
+        : {\n      \"type\": \"array\",\n      \"items\": {\n        \"description\"\
+        : \"The network access control list (ACL) for this SMB share. If not specified,\
+        \ the default is to allow any host.\",\n        \"type\": \"object\",\n  \
+        \      \"properties\": {\n          \"type\": {\n            \"type\": \"\
+        string\",\n            \"enum\": [\n              \"ALLOWED\",\n         \
+        \     \"DENIED\"\n            ],\n            \"description\": \"Type of permissions\
+        \ entry (ALLOWED or DENIED):\\n * `ALLOWED` - The permissions entry rights\
+        \ are allowed to the trustee,\\n * `DENIED` - The permissions entry rights\
+        \ are denied to the trustee\"\n          },\n          \"address_ranges\"\
+        : {\n            \"type\": \"array\",\n            \"items\": {\n        \
+        \      \"description\": \"IP address ranges to apply permissions to. Empty\
+        \ means all hosts.\",\n              \"type\": \"string\"\n            }\n\
+        \          },\n          \"rights\": {\n            \"description\": \"Rights\
+        \ pertaining to the permissions entry\",\n            \"type\": \"array\"\
+        ,\n            \"items\": {\n              \"type\": \"string\",\n       \
+        \       \"enum\": [\n                \"READ\",\n                \"WRITE\"\
+        ,\n                \"CHANGE_PERMISSIONS\",\n                \"ALL\",\n   \
+        \             \"READ_DATA\",\n                \"READ_EA\",\n             \
+        \   \"READ_ATTR\",\n                \"READ_ACL\",\n                \"WRITE_EA\"\
+        ,\n                \"WRITE_ATTR\",\n                \"WRITE_ACL\",\n     \
+        \           \"CHANGE_OWNER\",\n                \"WRITE_GROUP\",\n        \
+        \        \"DELETE\",\n                \"EXECUTE\",\n                \"MODIFY\"\
+        ,\n                \"EXTEND\",\n                \"ADD_FILE\",\n          \
+        \      \"ADD_SUBDIR\",\n                \"DELETE_CHILD\",\n              \
+        \  \"SYNCHRONIZE\"\n              ],\n              \"description\": \"Rights\
+        \ pertaining to the permissions entry:\\n * `ADD_FILE` - File creation access,\\\
+        n * `ADD_SUBDIR` - Directory creation access,\\n * `ALL` - All access rights,\\\
+        n * `CHANGE_OWNER` - Owner write access,\\n * `CHANGE_PERMISSIONS` - Rights\
+        \ to change permissions on file objects,\\n * `DELETE` - Delete access,\\\
         n * `DELETE_CHILD` - Delete from directory access,\\n * `EXECUTE` - Execute\
         \ access,\\n * `EXTEND` - File extension access,\\n * `MODIFY` - File modification\
         \ access,\\n * `READ` - Read access rights,\\n * `READ_ACL` - ACL read access,\\\
@@ -125,7 +126,14 @@ methods:
         \  \"require_encryption\": {\n      \"description\": \"Require all traffic\
         \ to this share to be encrypted. Clients without encryption capabilities will\
         \ not be able to connect. Default is false if this field is empty.\",\n  \
-        \    \"type\": \"boolean\"\n    }\n  }\n}"
+        \    \"type\": \"boolean\"\n    },\n    \"allow_fs_path_create\": {\n    \
+        \  \"description\": \"If true, the server will create the file system path\
+        \ for the share if it does not already exist. If false, the file system path\
+        \ must already exist. Default is false if this field is empty.\",\n      \"\
+        type\": \"boolean\"\n    },\n    \"expand_fs_path_variables\": {\n      \"\
+        description\": \"If true, the server will expand %U variables in the file\
+        \ system path to username. Default is false if this field is empty.\",\n \
+        \     \"type\": \"boolean\"\n    }\n  }\n}"
     responses:
     - code: '200'
       description: Return value on success
@@ -136,10 +144,6 @@ methods:
     - name: share_id
       description: The unique ID of the SMB share.
       required: true
-    - name: allow-fs-path-create
-      description: Specifies whether the file system path can be created if it does
-        not already exist.
-      required: false
     - name: If-Match
       description: ETag for expected version
       required: false
@@ -159,78 +163,41 @@ methods:
         : {\n          \"type\": {\n            \"type\": \"string\",\n          \
         \  \"enum\": [\n              \"ALLOWED\",\n              \"DENIED\"\n   \
         \         ],\n            \"description\": \"Type of permissions entry (ALLOWED\
-        \ or DENIED):\\n * `ALLOWED` - API_SMB_SHARE_PERMISSIONS_ENTRY_TYPE_ALLOWED,\\\
-        n * `DENIED` - API_SMB_SHARE_PERMISSIONS_ENTRY_TYPE_DENIED\"\n          },\n\
-        \          \"trustee\": {\n            \"description\": \"User/group to apply\
-        \ the permissions entry to\",\n            \"type\": \"object\",\n       \
-        \     \"properties\": {\n              \"domain\": {\n                \"type\"\
-        : \"string\",\n                \"enum\": [\n                  \"LOCAL\",\n\
-        \                  \"API_NULL_DOMAIN\",\n                  \"WORLD\",\n  \
-        \                \"POSIX_USER\",\n                  \"POSIX_GROUP\",\n   \
-        \               \"ACTIVE_DIRECTORY\",\n                  \"API_INVALID_DOMAIN\"\
-        ,\n                  \"API_RESERVED_DOMAIN\",\n                  \"API_INTERNAL_DOMAIN\"\
-        ,\n                  \"API_OPERATOR_DOMAIN\",\n                  \"API_QUMULO_SUPPORT_DOMAIN\"\
-        ,\n                  \"API_CREATOR_DOMAIN\"\n                ],\n        \
-        \        \"description\": \"domain:\\n * `ACTIVE_DIRECTORY` - ACTIVE_DIRECTORY,\\\
-        n * `API_CREATOR_DOMAIN` - API_CREATOR_DOMAIN,\\n * `API_INTERNAL_DOMAIN`\
-        \ - API_INTERNAL_DOMAIN,\\n * `API_INVALID_DOMAIN` - API_INVALID_DOMAIN,\\\
-        n * `API_NULL_DOMAIN` - API_NULL_DOMAIN,\\n * `API_OPERATOR_DOMAIN` - API_OPERATOR_DOMAIN,\\\
-        n * `API_QUMULO_SUPPORT_DOMAIN` - API_QUMULO_SUPPORT_DOMAIN,\\n * `API_RESERVED_DOMAIN`\
-        \ - API_RESERVED_DOMAIN,\\n * `LOCAL` - LOCAL,\\n * `POSIX_GROUP` - POSIX_GROUP,\\\
-        n * `POSIX_USER` - POSIX_USER,\\n * `WORLD` - WORLD\"\n              },\n\
-        \              \"auth_id\": {\n                \"description\": \"auth_id\"\
-        ,\n                \"type\": \"string\"\n              },\n              \"\
-        uid\": {\n                \"description\": \"uid\",\n                \"type\"\
-        : \"number\"\n              },\n              \"gid\": {\n               \
-        \ \"description\": \"gid\",\n                \"type\": \"number\"\n      \
-        \        },\n              \"sid\": {\n                \"description\": \"\
-        sid\",\n                \"type\": \"string\"\n              },\n         \
-        \     \"name\": {\n                \"description\": \"name\",\n          \
-        \      \"type\": \"string\"\n              }\n            }\n          },\n\
-        \          \"rights\": {\n            \"description\": \"Rights pertaining\
-        \ to the permissions entry\",\n            \"type\": \"array\",\n        \
-        \    \"items\": {\n              \"type\": \"string\",\n              \"enum\"\
-        : [\n                \"READ\",\n                \"WRITE\",\n             \
-        \   \"CHANGE_PERMISSIONS\",\n                \"ALL\",\n                \"\
-        READ_DATA\",\n                \"READ_EA\",\n                \"READ_ATTR\"\
-        ,\n                \"READ_ACL\",\n                \"WRITE_EA\",\n        \
-        \        \"WRITE_ATTR\",\n                \"WRITE_ACL\",\n               \
-        \ \"CHANGE_OWNER\",\n                \"WRITE_GROUP\",\n                \"\
-        DELETE\",\n                \"EXECUTE\",\n                \"MODIFY\",\n   \
-        \             \"EXTEND\",\n                \"ADD_FILE\",\n               \
-        \ \"ADD_SUBDIR\",\n                \"DELETE_CHILD\",\n                \"SYNCHRONIZE\"\
-        \n              ],\n              \"description\": \"Rights pertaining to\
-        \ the permissions entry:\\n * `ADD_FILE` - File creation access,\\n * `ADD_SUBDIR`\
-        \ - Directory creation access,\\n * `ALL` - All access rights,\\n * `CHANGE_OWNER`\
-        \ - Owner write access,\\n * `CHANGE_PERMISSIONS` - Rights to change permissions\
-        \ on file objects,\\n * `DELETE` - Delete access,\\n * `DELETE_CHILD` - Delete\
-        \ from directory access,\\n * `EXECUTE` - Execute access,\\n * `EXTEND` -\
-        \ File extension access,\\n * `MODIFY` - File modification access,\\n * `READ`\
-        \ - Read access rights,\\n * `READ_ACL` - ACL read access,\\n * `READ_ATTR`\
-        \ - Attribute read access,\\n * `READ_DATA` - File read access,\\n * `READ_EA`\
-        \ - Extended attribute read access,\\n * `SYNCHRONIZE` - File synchronize\
-        \ access,\\n * `WRITE` - Write access rights,\\n * `WRITE_ACL` - ACL write\
-        \ access,\\n * `WRITE_ATTR` - Attribute write access,\\n * `WRITE_EA` - Extended\
-        \ attribute write access,\\n * `WRITE_GROUP` - Group write access\"\n    \
-        \        }\n          }\n        }\n      }\n    },\n    \"network_permissions\"\
-        : {\n      \"type\": \"array\",\n      \"items\": {\n        \"description\"\
-        : \"The network access control list (ACL) for this SMB share. If not specified,\
-        \ the default is to allow any host.\",\n        \"type\": \"object\",\n  \
-        \      \"properties\": {\n          \"type\": {\n            \"type\": \"\
-        string\",\n            \"enum\": [\n              \"ALLOWED\",\n         \
-        \     \"DENIED\"\n            ],\n            \"description\": \"Type of permissions\
-        \ entry (ALLOWED or DENIED):\\n * `ALLOWED` - API_SMB_SHARE_PERMISSIONS_ENTRY_TYPE_ALLOWED,\\\
-        n * `DENIED` - API_SMB_SHARE_PERMISSIONS_ENTRY_TYPE_DENIED\"\n          },\n\
-        \          \"address_ranges\": {\n            \"type\": \"array\",\n     \
-        \       \"items\": {\n              \"description\": \"IP address ranges to\
-        \ apply permissions to. Empty means all hosts.\",\n              \"type\"\
-        : \"string\"\n            }\n          },\n          \"rights\": {\n     \
-        \       \"description\": \"Rights pertaining to the permissions entry\",\n\
-        \            \"type\": \"array\",\n            \"items\": {\n            \
-        \  \"type\": \"string\",\n              \"enum\": [\n                \"READ\"\
-        ,\n                \"WRITE\",\n                \"CHANGE_PERMISSIONS\",\n \
-        \               \"ALL\",\n                \"READ_DATA\",\n               \
-        \ \"READ_EA\",\n                \"READ_ATTR\",\n                \"READ_ACL\"\
+        \ or DENIED):\\n * `ALLOWED` - The permissions entry rights are allowed to\
+        \ the trustee,\\n * `DENIED` - The permissions entry rights are denied to\
+        \ the trustee\"\n          },\n          \"trustee\": {\n            \"description\"\
+        : \"User/group to apply the permissions entry to\",\n            \"type\"\
+        : \"object\",\n            \"properties\": {\n              \"domain\": {\n\
+        \                \"type\": \"string\",\n                \"enum\": [\n    \
+        \              \"LOCAL\",\n                  \"API_NULL_DOMAIN\",\n      \
+        \            \"WORLD\",\n                  \"POSIX_USER\",\n             \
+        \     \"POSIX_GROUP\",\n                  \"ACTIVE_DIRECTORY\",\n        \
+        \          \"API_INVALID_DOMAIN\",\n                  \"API_RESERVED_DOMAIN\"\
+        ,\n                  \"API_INTERNAL_DOMAIN\",\n                  \"API_OPERATOR_DOMAIN\"\
+        ,\n                  \"API_QUMULO_SUPPORT_DOMAIN\",\n                  \"\
+        API_CREATOR_DOMAIN\"\n                ],\n                \"description\"\
+        : \"domain:\\n * `ACTIVE_DIRECTORY` - ACTIVE_DIRECTORY,\\n * `API_CREATOR_DOMAIN`\
+        \ - API_CREATOR_DOMAIN,\\n * `API_INTERNAL_DOMAIN` - API_INTERNAL_DOMAIN,\\\
+        n * `API_INVALID_DOMAIN` - API_INVALID_DOMAIN,\\n * `API_NULL_DOMAIN` - API_NULL_DOMAIN,\\\
+        n * `API_OPERATOR_DOMAIN` - API_OPERATOR_DOMAIN,\\n * `API_QUMULO_SUPPORT_DOMAIN`\
+        \ - API_QUMULO_SUPPORT_DOMAIN,\\n * `API_RESERVED_DOMAIN` - API_RESERVED_DOMAIN,\\\
+        n * `LOCAL` - LOCAL,\\n * `POSIX_GROUP` - POSIX_GROUP,\\n * `POSIX_USER` -\
+        \ POSIX_USER,\\n * `WORLD` - WORLD\"\n              },\n              \"auth_id\"\
+        : {\n                \"description\": \"auth_id\",\n                \"type\"\
+        : \"string\"\n              },\n              \"uid\": {\n               \
+        \ \"description\": \"uid\",\n                \"type\": \"number\"\n      \
+        \        },\n              \"gid\": {\n                \"description\": \"\
+        gid\",\n                \"type\": \"number\"\n              },\n         \
+        \     \"sid\": {\n                \"description\": \"sid\",\n            \
+        \    \"type\": \"string\"\n              },\n              \"name\": {\n \
+        \               \"description\": \"name\",\n                \"type\": \"string\"\
+        \n              }\n            }\n          },\n          \"rights\": {\n\
+        \            \"description\": \"Rights pertaining to the permissions entry\"\
+        ,\n            \"type\": \"array\",\n            \"items\": {\n          \
+        \    \"type\": \"string\",\n              \"enum\": [\n                \"\
+        READ\",\n                \"WRITE\",\n                \"CHANGE_PERMISSIONS\"\
+        ,\n                \"ALL\",\n                \"READ_DATA\",\n            \
+        \    \"READ_EA\",\n                \"READ_ATTR\",\n                \"READ_ACL\"\
         ,\n                \"WRITE_EA\",\n                \"WRITE_ATTR\",\n      \
         \          \"WRITE_ACL\",\n                \"CHANGE_OWNER\",\n           \
         \     \"WRITE_GROUP\",\n                \"DELETE\",\n                \"EXECUTE\"\
@@ -241,6 +208,44 @@ methods:
         \ access,\\n * `ADD_SUBDIR` - Directory creation access,\\n * `ALL` - All\
         \ access rights,\\n * `CHANGE_OWNER` - Owner write access,\\n * `CHANGE_PERMISSIONS`\
         \ - Rights to change permissions on file objects,\\n * `DELETE` - Delete access,\\\
+        n * `DELETE_CHILD` - Delete from directory access,\\n * `EXECUTE` - Execute\
+        \ access,\\n * `EXTEND` - File extension access,\\n * `MODIFY` - File modification\
+        \ access,\\n * `READ` - Read access rights,\\n * `READ_ACL` - ACL read access,\\\
+        n * `READ_ATTR` - Attribute read access,\\n * `READ_DATA` - File read access,\\\
+        n * `READ_EA` - Extended attribute read access,\\n * `SYNCHRONIZE` - File\
+        \ synchronize access,\\n * `WRITE` - Write access rights,\\n * `WRITE_ACL`\
+        \ - ACL write access,\\n * `WRITE_ATTR` - Attribute write access,\\n * `WRITE_EA`\
+        \ - Extended attribute write access,\\n * `WRITE_GROUP` - Group write access\"\
+        \n            }\n          }\n        }\n      }\n    },\n    \"network_permissions\"\
+        : {\n      \"type\": \"array\",\n      \"items\": {\n        \"description\"\
+        : \"The network access control list (ACL) for this SMB share. If not specified,\
+        \ the default is to allow any host.\",\n        \"type\": \"object\",\n  \
+        \      \"properties\": {\n          \"type\": {\n            \"type\": \"\
+        string\",\n            \"enum\": [\n              \"ALLOWED\",\n         \
+        \     \"DENIED\"\n            ],\n            \"description\": \"Type of permissions\
+        \ entry (ALLOWED or DENIED):\\n * `ALLOWED` - The permissions entry rights\
+        \ are allowed to the trustee,\\n * `DENIED` - The permissions entry rights\
+        \ are denied to the trustee\"\n          },\n          \"address_ranges\"\
+        : {\n            \"type\": \"array\",\n            \"items\": {\n        \
+        \      \"description\": \"IP address ranges to apply permissions to. Empty\
+        \ means all hosts.\",\n              \"type\": \"string\"\n            }\n\
+        \          },\n          \"rights\": {\n            \"description\": \"Rights\
+        \ pertaining to the permissions entry\",\n            \"type\": \"array\"\
+        ,\n            \"items\": {\n              \"type\": \"string\",\n       \
+        \       \"enum\": [\n                \"READ\",\n                \"WRITE\"\
+        ,\n                \"CHANGE_PERMISSIONS\",\n                \"ALL\",\n   \
+        \             \"READ_DATA\",\n                \"READ_EA\",\n             \
+        \   \"READ_ATTR\",\n                \"READ_ACL\",\n                \"WRITE_EA\"\
+        ,\n                \"WRITE_ATTR\",\n                \"WRITE_ACL\",\n     \
+        \           \"CHANGE_OWNER\",\n                \"WRITE_GROUP\",\n        \
+        \        \"DELETE\",\n                \"EXECUTE\",\n                \"MODIFY\"\
+        ,\n                \"EXTEND\",\n                \"ADD_FILE\",\n          \
+        \      \"ADD_SUBDIR\",\n                \"DELETE_CHILD\",\n              \
+        \  \"SYNCHRONIZE\"\n              ],\n              \"description\": \"Rights\
+        \ pertaining to the permissions entry:\\n * `ADD_FILE` - File creation access,\\\
+        n * `ADD_SUBDIR` - Directory creation access,\\n * `ALL` - All access rights,\\\
+        n * `CHANGE_OWNER` - Owner write access,\\n * `CHANGE_PERMISSIONS` - Rights\
+        \ to change permissions on file objects,\\n * `DELETE` - Delete access,\\\
         n * `DELETE_CHILD` - Delete from directory access,\\n * `EXECUTE` - Execute\
         \ access,\\n * `EXTEND` - File extension access,\\n * `MODIFY` - File modification\
         \ access,\\n * `READ` - Read access rights,\\n * `READ_ACL` - ACL read access,\\\
@@ -260,7 +265,14 @@ methods:
         \  \"require_encryption\": {\n      \"description\": \"Require all traffic\
         \ to this share to be encrypted. Clients without encryption capabilities will\
         \ not be able to connect. Default is false if this field is empty.\",\n  \
-        \    \"type\": \"boolean\"\n    }\n  }\n}"
+        \    \"type\": \"boolean\"\n    },\n    \"allow_fs_path_create\": {\n    \
+        \  \"description\": \"If true, the server will create the file system path\
+        \ for the share if it does not already exist. If false, the file system path\
+        \ must already exist. Default is false if this field is empty.\",\n      \"\
+        type\": \"boolean\"\n    },\n    \"expand_fs_path_variables\": {\n      \"\
+        description\": \"If true, the server will expand %U variables in the file\
+        \ system path to username. Default is false if this field is empty.\",\n \
+        \     \"type\": \"boolean\"\n    }\n  }\n}"
     responses:
     - code: '200'
       description: Return value on success
@@ -281,78 +293,41 @@ methods:
         : {\n          \"type\": {\n            \"type\": \"string\",\n          \
         \  \"enum\": [\n              \"ALLOWED\",\n              \"DENIED\"\n   \
         \         ],\n            \"description\": \"Type of permissions entry (ALLOWED\
-        \ or DENIED):\\n * `ALLOWED` - API_SMB_SHARE_PERMISSIONS_ENTRY_TYPE_ALLOWED,\\\
-        n * `DENIED` - API_SMB_SHARE_PERMISSIONS_ENTRY_TYPE_DENIED\"\n          },\n\
-        \          \"trustee\": {\n            \"description\": \"User/group to apply\
-        \ the permissions entry to\",\n            \"type\": \"object\",\n       \
-        \     \"properties\": {\n              \"domain\": {\n                \"type\"\
-        : \"string\",\n                \"enum\": [\n                  \"LOCAL\",\n\
-        \                  \"API_NULL_DOMAIN\",\n                  \"WORLD\",\n  \
-        \                \"POSIX_USER\",\n                  \"POSIX_GROUP\",\n   \
-        \               \"ACTIVE_DIRECTORY\",\n                  \"API_INVALID_DOMAIN\"\
-        ,\n                  \"API_RESERVED_DOMAIN\",\n                  \"API_INTERNAL_DOMAIN\"\
-        ,\n                  \"API_OPERATOR_DOMAIN\",\n                  \"API_QUMULO_SUPPORT_DOMAIN\"\
-        ,\n                  \"API_CREATOR_DOMAIN\"\n                ],\n        \
-        \        \"description\": \"domain:\\n * `ACTIVE_DIRECTORY` - ACTIVE_DIRECTORY,\\\
-        n * `API_CREATOR_DOMAIN` - API_CREATOR_DOMAIN,\\n * `API_INTERNAL_DOMAIN`\
-        \ - API_INTERNAL_DOMAIN,\\n * `API_INVALID_DOMAIN` - API_INVALID_DOMAIN,\\\
-        n * `API_NULL_DOMAIN` - API_NULL_DOMAIN,\\n * `API_OPERATOR_DOMAIN` - API_OPERATOR_DOMAIN,\\\
-        n * `API_QUMULO_SUPPORT_DOMAIN` - API_QUMULO_SUPPORT_DOMAIN,\\n * `API_RESERVED_DOMAIN`\
-        \ - API_RESERVED_DOMAIN,\\n * `LOCAL` - LOCAL,\\n * `POSIX_GROUP` - POSIX_GROUP,\\\
-        n * `POSIX_USER` - POSIX_USER,\\n * `WORLD` - WORLD\"\n              },\n\
-        \              \"auth_id\": {\n                \"description\": \"auth_id\"\
-        ,\n                \"type\": \"string\"\n              },\n              \"\
-        uid\": {\n                \"description\": \"uid\",\n                \"type\"\
-        : \"number\"\n              },\n              \"gid\": {\n               \
-        \ \"description\": \"gid\",\n                \"type\": \"number\"\n      \
-        \        },\n              \"sid\": {\n                \"description\": \"\
-        sid\",\n                \"type\": \"string\"\n              },\n         \
-        \     \"name\": {\n                \"description\": \"name\",\n          \
-        \      \"type\": \"string\"\n              }\n            }\n          },\n\
-        \          \"rights\": {\n            \"description\": \"Rights pertaining\
-        \ to the permissions entry\",\n            \"type\": \"array\",\n        \
-        \    \"items\": {\n              \"type\": \"string\",\n              \"enum\"\
-        : [\n                \"READ\",\n                \"WRITE\",\n             \
-        \   \"CHANGE_PERMISSIONS\",\n                \"ALL\",\n                \"\
-        READ_DATA\",\n                \"READ_EA\",\n                \"READ_ATTR\"\
-        ,\n                \"READ_ACL\",\n                \"WRITE_EA\",\n        \
-        \        \"WRITE_ATTR\",\n                \"WRITE_ACL\",\n               \
-        \ \"CHANGE_OWNER\",\n                \"WRITE_GROUP\",\n                \"\
-        DELETE\",\n                \"EXECUTE\",\n                \"MODIFY\",\n   \
-        \             \"EXTEND\",\n                \"ADD_FILE\",\n               \
-        \ \"ADD_SUBDIR\",\n                \"DELETE_CHILD\",\n                \"SYNCHRONIZE\"\
-        \n              ],\n              \"description\": \"Rights pertaining to\
-        \ the permissions entry:\\n * `ADD_FILE` - File creation access,\\n * `ADD_SUBDIR`\
-        \ - Directory creation access,\\n * `ALL` - All access rights,\\n * `CHANGE_OWNER`\
-        \ - Owner write access,\\n * `CHANGE_PERMISSIONS` - Rights to change permissions\
-        \ on file objects,\\n * `DELETE` - Delete access,\\n * `DELETE_CHILD` - Delete\
-        \ from directory access,\\n * `EXECUTE` - Execute access,\\n * `EXTEND` -\
-        \ File extension access,\\n * `MODIFY` - File modification access,\\n * `READ`\
-        \ - Read access rights,\\n * `READ_ACL` - ACL read access,\\n * `READ_ATTR`\
-        \ - Attribute read access,\\n * `READ_DATA` - File read access,\\n * `READ_EA`\
-        \ - Extended attribute read access,\\n * `SYNCHRONIZE` - File synchronize\
-        \ access,\\n * `WRITE` - Write access rights,\\n * `WRITE_ACL` - ACL write\
-        \ access,\\n * `WRITE_ATTR` - Attribute write access,\\n * `WRITE_EA` - Extended\
-        \ attribute write access,\\n * `WRITE_GROUP` - Group write access\"\n    \
-        \        }\n          }\n        }\n      }\n    },\n    \"network_permissions\"\
-        : {\n      \"type\": \"array\",\n      \"items\": {\n        \"description\"\
-        : \"The network access control list (ACL) for this SMB share. If not specified,\
-        \ the default is to allow any host.\",\n        \"type\": \"object\",\n  \
-        \      \"properties\": {\n          \"type\": {\n            \"type\": \"\
-        string\",\n            \"enum\": [\n              \"ALLOWED\",\n         \
-        \     \"DENIED\"\n            ],\n            \"description\": \"Type of permissions\
-        \ entry (ALLOWED or DENIED):\\n * `ALLOWED` - API_SMB_SHARE_PERMISSIONS_ENTRY_TYPE_ALLOWED,\\\
-        n * `DENIED` - API_SMB_SHARE_PERMISSIONS_ENTRY_TYPE_DENIED\"\n          },\n\
-        \          \"address_ranges\": {\n            \"type\": \"array\",\n     \
-        \       \"items\": {\n              \"description\": \"IP address ranges to\
-        \ apply permissions to. Empty means all hosts.\",\n              \"type\"\
-        : \"string\"\n            }\n          },\n          \"rights\": {\n     \
-        \       \"description\": \"Rights pertaining to the permissions entry\",\n\
-        \            \"type\": \"array\",\n            \"items\": {\n            \
-        \  \"type\": \"string\",\n              \"enum\": [\n                \"READ\"\
-        ,\n                \"WRITE\",\n                \"CHANGE_PERMISSIONS\",\n \
-        \               \"ALL\",\n                \"READ_DATA\",\n               \
-        \ \"READ_EA\",\n                \"READ_ATTR\",\n                \"READ_ACL\"\
+        \ or DENIED):\\n * `ALLOWED` - The permissions entry rights are allowed to\
+        \ the trustee,\\n * `DENIED` - The permissions entry rights are denied to\
+        \ the trustee\"\n          },\n          \"trustee\": {\n            \"description\"\
+        : \"User/group to apply the permissions entry to\",\n            \"type\"\
+        : \"object\",\n            \"properties\": {\n              \"domain\": {\n\
+        \                \"type\": \"string\",\n                \"enum\": [\n    \
+        \              \"LOCAL\",\n                  \"API_NULL_DOMAIN\",\n      \
+        \            \"WORLD\",\n                  \"POSIX_USER\",\n             \
+        \     \"POSIX_GROUP\",\n                  \"ACTIVE_DIRECTORY\",\n        \
+        \          \"API_INVALID_DOMAIN\",\n                  \"API_RESERVED_DOMAIN\"\
+        ,\n                  \"API_INTERNAL_DOMAIN\",\n                  \"API_OPERATOR_DOMAIN\"\
+        ,\n                  \"API_QUMULO_SUPPORT_DOMAIN\",\n                  \"\
+        API_CREATOR_DOMAIN\"\n                ],\n                \"description\"\
+        : \"domain:\\n * `ACTIVE_DIRECTORY` - ACTIVE_DIRECTORY,\\n * `API_CREATOR_DOMAIN`\
+        \ - API_CREATOR_DOMAIN,\\n * `API_INTERNAL_DOMAIN` - API_INTERNAL_DOMAIN,\\\
+        n * `API_INVALID_DOMAIN` - API_INVALID_DOMAIN,\\n * `API_NULL_DOMAIN` - API_NULL_DOMAIN,\\\
+        n * `API_OPERATOR_DOMAIN` - API_OPERATOR_DOMAIN,\\n * `API_QUMULO_SUPPORT_DOMAIN`\
+        \ - API_QUMULO_SUPPORT_DOMAIN,\\n * `API_RESERVED_DOMAIN` - API_RESERVED_DOMAIN,\\\
+        n * `LOCAL` - LOCAL,\\n * `POSIX_GROUP` - POSIX_GROUP,\\n * `POSIX_USER` -\
+        \ POSIX_USER,\\n * `WORLD` - WORLD\"\n              },\n              \"auth_id\"\
+        : {\n                \"description\": \"auth_id\",\n                \"type\"\
+        : \"string\"\n              },\n              \"uid\": {\n               \
+        \ \"description\": \"uid\",\n                \"type\": \"number\"\n      \
+        \        },\n              \"gid\": {\n                \"description\": \"\
+        gid\",\n                \"type\": \"number\"\n              },\n         \
+        \     \"sid\": {\n                \"description\": \"sid\",\n            \
+        \    \"type\": \"string\"\n              },\n              \"name\": {\n \
+        \               \"description\": \"name\",\n                \"type\": \"string\"\
+        \n              }\n            }\n          },\n          \"rights\": {\n\
+        \            \"description\": \"Rights pertaining to the permissions entry\"\
+        ,\n            \"type\": \"array\",\n            \"items\": {\n          \
+        \    \"type\": \"string\",\n              \"enum\": [\n                \"\
+        READ\",\n                \"WRITE\",\n                \"CHANGE_PERMISSIONS\"\
+        ,\n                \"ALL\",\n                \"READ_DATA\",\n            \
+        \    \"READ_EA\",\n                \"READ_ATTR\",\n                \"READ_ACL\"\
         ,\n                \"WRITE_EA\",\n                \"WRITE_ATTR\",\n      \
         \          \"WRITE_ACL\",\n                \"CHANGE_OWNER\",\n           \
         \     \"WRITE_GROUP\",\n                \"DELETE\",\n                \"EXECUTE\"\
@@ -363,6 +338,44 @@ methods:
         \ access,\\n * `ADD_SUBDIR` - Directory creation access,\\n * `ALL` - All\
         \ access rights,\\n * `CHANGE_OWNER` - Owner write access,\\n * `CHANGE_PERMISSIONS`\
         \ - Rights to change permissions on file objects,\\n * `DELETE` - Delete access,\\\
+        n * `DELETE_CHILD` - Delete from directory access,\\n * `EXECUTE` - Execute\
+        \ access,\\n * `EXTEND` - File extension access,\\n * `MODIFY` - File modification\
+        \ access,\\n * `READ` - Read access rights,\\n * `READ_ACL` - ACL read access,\\\
+        n * `READ_ATTR` - Attribute read access,\\n * `READ_DATA` - File read access,\\\
+        n * `READ_EA` - Extended attribute read access,\\n * `SYNCHRONIZE` - File\
+        \ synchronize access,\\n * `WRITE` - Write access rights,\\n * `WRITE_ACL`\
+        \ - ACL write access,\\n * `WRITE_ATTR` - Attribute write access,\\n * `WRITE_EA`\
+        \ - Extended attribute write access,\\n * `WRITE_GROUP` - Group write access\"\
+        \n            }\n          }\n        }\n      }\n    },\n    \"network_permissions\"\
+        : {\n      \"type\": \"array\",\n      \"items\": {\n        \"description\"\
+        : \"The network access control list (ACL) for this SMB share. If not specified,\
+        \ the default is to allow any host.\",\n        \"type\": \"object\",\n  \
+        \      \"properties\": {\n          \"type\": {\n            \"type\": \"\
+        string\",\n            \"enum\": [\n              \"ALLOWED\",\n         \
+        \     \"DENIED\"\n            ],\n            \"description\": \"Type of permissions\
+        \ entry (ALLOWED or DENIED):\\n * `ALLOWED` - The permissions entry rights\
+        \ are allowed to the trustee,\\n * `DENIED` - The permissions entry rights\
+        \ are denied to the trustee\"\n          },\n          \"address_ranges\"\
+        : {\n            \"type\": \"array\",\n            \"items\": {\n        \
+        \      \"description\": \"IP address ranges to apply permissions to. Empty\
+        \ means all hosts.\",\n              \"type\": \"string\"\n            }\n\
+        \          },\n          \"rights\": {\n            \"description\": \"Rights\
+        \ pertaining to the permissions entry\",\n            \"type\": \"array\"\
+        ,\n            \"items\": {\n              \"type\": \"string\",\n       \
+        \       \"enum\": [\n                \"READ\",\n                \"WRITE\"\
+        ,\n                \"CHANGE_PERMISSIONS\",\n                \"ALL\",\n   \
+        \             \"READ_DATA\",\n                \"READ_EA\",\n             \
+        \   \"READ_ATTR\",\n                \"READ_ACL\",\n                \"WRITE_EA\"\
+        ,\n                \"WRITE_ATTR\",\n                \"WRITE_ACL\",\n     \
+        \           \"CHANGE_OWNER\",\n                \"WRITE_GROUP\",\n        \
+        \        \"DELETE\",\n                \"EXECUTE\",\n                \"MODIFY\"\
+        ,\n                \"EXTEND\",\n                \"ADD_FILE\",\n          \
+        \      \"ADD_SUBDIR\",\n                \"DELETE_CHILD\",\n              \
+        \  \"SYNCHRONIZE\"\n              ],\n              \"description\": \"Rights\
+        \ pertaining to the permissions entry:\\n * `ADD_FILE` - File creation access,\\\
+        n * `ADD_SUBDIR` - Directory creation access,\\n * `ALL` - All access rights,\\\
+        n * `CHANGE_OWNER` - Owner write access,\\n * `CHANGE_PERMISSIONS` - Rights\
+        \ to change permissions on file objects,\\n * `DELETE` - Delete access,\\\
         n * `DELETE_CHILD` - Delete from directory access,\\n * `EXECUTE` - Execute\
         \ access,\\n * `EXTEND` - File extension access,\\n * `MODIFY` - File modification\
         \ access,\\n * `READ` - Read access rights,\\n * `READ_ACL` - ACL read access,\\\
@@ -382,17 +395,20 @@ methods:
         \  \"require_encryption\": {\n      \"description\": \"Require all traffic\
         \ to this share to be encrypted. Clients without encryption capabilities will\
         \ not be able to connect. Default is false if this field is empty.\",\n  \
-        \    \"type\": \"boolean\"\n    }\n  }\n}"
+        \    \"type\": \"boolean\"\n    },\n    \"allow_fs_path_create\": {\n    \
+        \  \"description\": \"If true, the server will create the file system path\
+        \ for the share if it does not already exist. If false, the file system path\
+        \ must already exist. Default is false if this field is empty.\",\n      \"\
+        type\": \"boolean\"\n    },\n    \"expand_fs_path_variables\": {\n      \"\
+        description\": \"If true, the server will expand %U variables in the file\
+        \ system path to username. Default is false if this field is empty.\",\n \
+        \     \"type\": \"boolean\"\n    }\n  }\n}"
   patch:
     summary: '[preview] Modify select fields in an SMB share.'
     parameters:
     - name: share_id
       description: The unique ID of the SMB share.
       required: true
-    - name: allow-fs-path-create
-      description: Specifies whether the file system path can be created if it does
-        not already exist.
-      required: false
     - name: If-Match
       description: ETag for expected version
       required: false
@@ -412,78 +428,41 @@ methods:
         : {\n          \"type\": {\n            \"type\": \"string\",\n          \
         \  \"enum\": [\n              \"ALLOWED\",\n              \"DENIED\"\n   \
         \         ],\n            \"description\": \"Type of permissions entry (ALLOWED\
-        \ or DENIED):\\n * `ALLOWED` - API_SMB_SHARE_PERMISSIONS_ENTRY_TYPE_ALLOWED,\\\
-        n * `DENIED` - API_SMB_SHARE_PERMISSIONS_ENTRY_TYPE_DENIED\"\n          },\n\
-        \          \"trustee\": {\n            \"description\": \"User/group to apply\
-        \ the permissions entry to\",\n            \"type\": \"object\",\n       \
-        \     \"properties\": {\n              \"domain\": {\n                \"type\"\
-        : \"string\",\n                \"enum\": [\n                  \"LOCAL\",\n\
-        \                  \"API_NULL_DOMAIN\",\n                  \"WORLD\",\n  \
-        \                \"POSIX_USER\",\n                  \"POSIX_GROUP\",\n   \
-        \               \"ACTIVE_DIRECTORY\",\n                  \"API_INVALID_DOMAIN\"\
-        ,\n                  \"API_RESERVED_DOMAIN\",\n                  \"API_INTERNAL_DOMAIN\"\
-        ,\n                  \"API_OPERATOR_DOMAIN\",\n                  \"API_QUMULO_SUPPORT_DOMAIN\"\
-        ,\n                  \"API_CREATOR_DOMAIN\"\n                ],\n        \
-        \        \"description\": \"domain:\\n * `ACTIVE_DIRECTORY` - ACTIVE_DIRECTORY,\\\
-        n * `API_CREATOR_DOMAIN` - API_CREATOR_DOMAIN,\\n * `API_INTERNAL_DOMAIN`\
-        \ - API_INTERNAL_DOMAIN,\\n * `API_INVALID_DOMAIN` - API_INVALID_DOMAIN,\\\
-        n * `API_NULL_DOMAIN` - API_NULL_DOMAIN,\\n * `API_OPERATOR_DOMAIN` - API_OPERATOR_DOMAIN,\\\
-        n * `API_QUMULO_SUPPORT_DOMAIN` - API_QUMULO_SUPPORT_DOMAIN,\\n * `API_RESERVED_DOMAIN`\
-        \ - API_RESERVED_DOMAIN,\\n * `LOCAL` - LOCAL,\\n * `POSIX_GROUP` - POSIX_GROUP,\\\
-        n * `POSIX_USER` - POSIX_USER,\\n * `WORLD` - WORLD\"\n              },\n\
-        \              \"auth_id\": {\n                \"description\": \"auth_id\"\
-        ,\n                \"type\": \"string\"\n              },\n              \"\
-        uid\": {\n                \"description\": \"uid\",\n                \"type\"\
-        : \"number\"\n              },\n              \"gid\": {\n               \
-        \ \"description\": \"gid\",\n                \"type\": \"number\"\n      \
-        \        },\n              \"sid\": {\n                \"description\": \"\
-        sid\",\n                \"type\": \"string\"\n              },\n         \
-        \     \"name\": {\n                \"description\": \"name\",\n          \
-        \      \"type\": \"string\"\n              }\n            }\n          },\n\
-        \          \"rights\": {\n            \"description\": \"Rights pertaining\
-        \ to the permissions entry\",\n            \"type\": \"array\",\n        \
-        \    \"items\": {\n              \"type\": \"string\",\n              \"enum\"\
-        : [\n                \"READ\",\n                \"WRITE\",\n             \
-        \   \"CHANGE_PERMISSIONS\",\n                \"ALL\",\n                \"\
-        READ_DATA\",\n                \"READ_EA\",\n                \"READ_ATTR\"\
-        ,\n                \"READ_ACL\",\n                \"WRITE_EA\",\n        \
-        \        \"WRITE_ATTR\",\n                \"WRITE_ACL\",\n               \
-        \ \"CHANGE_OWNER\",\n                \"WRITE_GROUP\",\n                \"\
-        DELETE\",\n                \"EXECUTE\",\n                \"MODIFY\",\n   \
-        \             \"EXTEND\",\n                \"ADD_FILE\",\n               \
-        \ \"ADD_SUBDIR\",\n                \"DELETE_CHILD\",\n                \"SYNCHRONIZE\"\
-        \n              ],\n              \"description\": \"Rights pertaining to\
-        \ the permissions entry:\\n * `ADD_FILE` - File creation access,\\n * `ADD_SUBDIR`\
-        \ - Directory creation access,\\n * `ALL` - All access rights,\\n * `CHANGE_OWNER`\
-        \ - Owner write access,\\n * `CHANGE_PERMISSIONS` - Rights to change permissions\
-        \ on file objects,\\n * `DELETE` - Delete access,\\n * `DELETE_CHILD` - Delete\
-        \ from directory access,\\n * `EXECUTE` - Execute access,\\n * `EXTEND` -\
-        \ File extension access,\\n * `MODIFY` - File modification access,\\n * `READ`\
-        \ - Read access rights,\\n * `READ_ACL` - ACL read access,\\n * `READ_ATTR`\
-        \ - Attribute read access,\\n * `READ_DATA` - File read access,\\n * `READ_EA`\
-        \ - Extended attribute read access,\\n * `SYNCHRONIZE` - File synchronize\
-        \ access,\\n * `WRITE` - Write access rights,\\n * `WRITE_ACL` - ACL write\
-        \ access,\\n * `WRITE_ATTR` - Attribute write access,\\n * `WRITE_EA` - Extended\
-        \ attribute write access,\\n * `WRITE_GROUP` - Group write access\"\n    \
-        \        }\n          }\n        }\n      }\n    },\n    \"network_permissions\"\
-        : {\n      \"type\": \"array\",\n      \"items\": {\n        \"description\"\
-        : \"The network access control list (ACL) for this SMB share. If not specified,\
-        \ the default is to allow any host.\",\n        \"type\": \"object\",\n  \
-        \      \"properties\": {\n          \"type\": {\n            \"type\": \"\
-        string\",\n            \"enum\": [\n              \"ALLOWED\",\n         \
-        \     \"DENIED\"\n            ],\n            \"description\": \"Type of permissions\
-        \ entry (ALLOWED or DENIED):\\n * `ALLOWED` - API_SMB_SHARE_PERMISSIONS_ENTRY_TYPE_ALLOWED,\\\
-        n * `DENIED` - API_SMB_SHARE_PERMISSIONS_ENTRY_TYPE_DENIED\"\n          },\n\
-        \          \"address_ranges\": {\n            \"type\": \"array\",\n     \
-        \       \"items\": {\n              \"description\": \"IP address ranges to\
-        \ apply permissions to. Empty means all hosts.\",\n              \"type\"\
-        : \"string\"\n            }\n          },\n          \"rights\": {\n     \
-        \       \"description\": \"Rights pertaining to the permissions entry\",\n\
-        \            \"type\": \"array\",\n            \"items\": {\n            \
-        \  \"type\": \"string\",\n              \"enum\": [\n                \"READ\"\
-        ,\n                \"WRITE\",\n                \"CHANGE_PERMISSIONS\",\n \
-        \               \"ALL\",\n                \"READ_DATA\",\n               \
-        \ \"READ_EA\",\n                \"READ_ATTR\",\n                \"READ_ACL\"\
+        \ or DENIED):\\n * `ALLOWED` - The permissions entry rights are allowed to\
+        \ the trustee,\\n * `DENIED` - The permissions entry rights are denied to\
+        \ the trustee\"\n          },\n          \"trustee\": {\n            \"description\"\
+        : \"User/group to apply the permissions entry to\",\n            \"type\"\
+        : \"object\",\n            \"properties\": {\n              \"domain\": {\n\
+        \                \"type\": \"string\",\n                \"enum\": [\n    \
+        \              \"LOCAL\",\n                  \"API_NULL_DOMAIN\",\n      \
+        \            \"WORLD\",\n                  \"POSIX_USER\",\n             \
+        \     \"POSIX_GROUP\",\n                  \"ACTIVE_DIRECTORY\",\n        \
+        \          \"API_INVALID_DOMAIN\",\n                  \"API_RESERVED_DOMAIN\"\
+        ,\n                  \"API_INTERNAL_DOMAIN\",\n                  \"API_OPERATOR_DOMAIN\"\
+        ,\n                  \"API_QUMULO_SUPPORT_DOMAIN\",\n                  \"\
+        API_CREATOR_DOMAIN\"\n                ],\n                \"description\"\
+        : \"domain:\\n * `ACTIVE_DIRECTORY` - ACTIVE_DIRECTORY,\\n * `API_CREATOR_DOMAIN`\
+        \ - API_CREATOR_DOMAIN,\\n * `API_INTERNAL_DOMAIN` - API_INTERNAL_DOMAIN,\\\
+        n * `API_INVALID_DOMAIN` - API_INVALID_DOMAIN,\\n * `API_NULL_DOMAIN` - API_NULL_DOMAIN,\\\
+        n * `API_OPERATOR_DOMAIN` - API_OPERATOR_DOMAIN,\\n * `API_QUMULO_SUPPORT_DOMAIN`\
+        \ - API_QUMULO_SUPPORT_DOMAIN,\\n * `API_RESERVED_DOMAIN` - API_RESERVED_DOMAIN,\\\
+        n * `LOCAL` - LOCAL,\\n * `POSIX_GROUP` - POSIX_GROUP,\\n * `POSIX_USER` -\
+        \ POSIX_USER,\\n * `WORLD` - WORLD\"\n              },\n              \"auth_id\"\
+        : {\n                \"description\": \"auth_id\",\n                \"type\"\
+        : \"string\"\n              },\n              \"uid\": {\n               \
+        \ \"description\": \"uid\",\n                \"type\": \"number\"\n      \
+        \        },\n              \"gid\": {\n                \"description\": \"\
+        gid\",\n                \"type\": \"number\"\n              },\n         \
+        \     \"sid\": {\n                \"description\": \"sid\",\n            \
+        \    \"type\": \"string\"\n              },\n              \"name\": {\n \
+        \               \"description\": \"name\",\n                \"type\": \"string\"\
+        \n              }\n            }\n          },\n          \"rights\": {\n\
+        \            \"description\": \"Rights pertaining to the permissions entry\"\
+        ,\n            \"type\": \"array\",\n            \"items\": {\n          \
+        \    \"type\": \"string\",\n              \"enum\": [\n                \"\
+        READ\",\n                \"WRITE\",\n                \"CHANGE_PERMISSIONS\"\
+        ,\n                \"ALL\",\n                \"READ_DATA\",\n            \
+        \    \"READ_EA\",\n                \"READ_ATTR\",\n                \"READ_ACL\"\
         ,\n                \"WRITE_EA\",\n                \"WRITE_ATTR\",\n      \
         \          \"WRITE_ACL\",\n                \"CHANGE_OWNER\",\n           \
         \     \"WRITE_GROUP\",\n                \"DELETE\",\n                \"EXECUTE\"\
@@ -494,6 +473,44 @@ methods:
         \ access,\\n * `ADD_SUBDIR` - Directory creation access,\\n * `ALL` - All\
         \ access rights,\\n * `CHANGE_OWNER` - Owner write access,\\n * `CHANGE_PERMISSIONS`\
         \ - Rights to change permissions on file objects,\\n * `DELETE` - Delete access,\\\
+        n * `DELETE_CHILD` - Delete from directory access,\\n * `EXECUTE` - Execute\
+        \ access,\\n * `EXTEND` - File extension access,\\n * `MODIFY` - File modification\
+        \ access,\\n * `READ` - Read access rights,\\n * `READ_ACL` - ACL read access,\\\
+        n * `READ_ATTR` - Attribute read access,\\n * `READ_DATA` - File read access,\\\
+        n * `READ_EA` - Extended attribute read access,\\n * `SYNCHRONIZE` - File\
+        \ synchronize access,\\n * `WRITE` - Write access rights,\\n * `WRITE_ACL`\
+        \ - ACL write access,\\n * `WRITE_ATTR` - Attribute write access,\\n * `WRITE_EA`\
+        \ - Extended attribute write access,\\n * `WRITE_GROUP` - Group write access\"\
+        \n            }\n          }\n        }\n      }\n    },\n    \"network_permissions\"\
+        : {\n      \"type\": \"array\",\n      \"items\": {\n        \"description\"\
+        : \"The network access control list (ACL) for this SMB share. If not specified,\
+        \ the default is to allow any host.\",\n        \"type\": \"object\",\n  \
+        \      \"properties\": {\n          \"type\": {\n            \"type\": \"\
+        string\",\n            \"enum\": [\n              \"ALLOWED\",\n         \
+        \     \"DENIED\"\n            ],\n            \"description\": \"Type of permissions\
+        \ entry (ALLOWED or DENIED):\\n * `ALLOWED` - The permissions entry rights\
+        \ are allowed to the trustee,\\n * `DENIED` - The permissions entry rights\
+        \ are denied to the trustee\"\n          },\n          \"address_ranges\"\
+        : {\n            \"type\": \"array\",\n            \"items\": {\n        \
+        \      \"description\": \"IP address ranges to apply permissions to. Empty\
+        \ means all hosts.\",\n              \"type\": \"string\"\n            }\n\
+        \          },\n          \"rights\": {\n            \"description\": \"Rights\
+        \ pertaining to the permissions entry\",\n            \"type\": \"array\"\
+        ,\n            \"items\": {\n              \"type\": \"string\",\n       \
+        \       \"enum\": [\n                \"READ\",\n                \"WRITE\"\
+        ,\n                \"CHANGE_PERMISSIONS\",\n                \"ALL\",\n   \
+        \             \"READ_DATA\",\n                \"READ_EA\",\n             \
+        \   \"READ_ATTR\",\n                \"READ_ACL\",\n                \"WRITE_EA\"\
+        ,\n                \"WRITE_ATTR\",\n                \"WRITE_ACL\",\n     \
+        \           \"CHANGE_OWNER\",\n                \"WRITE_GROUP\",\n        \
+        \        \"DELETE\",\n                \"EXECUTE\",\n                \"MODIFY\"\
+        ,\n                \"EXTEND\",\n                \"ADD_FILE\",\n          \
+        \      \"ADD_SUBDIR\",\n                \"DELETE_CHILD\",\n              \
+        \  \"SYNCHRONIZE\"\n              ],\n              \"description\": \"Rights\
+        \ pertaining to the permissions entry:\\n * `ADD_FILE` - File creation access,\\\
+        n * `ADD_SUBDIR` - Directory creation access,\\n * `ALL` - All access rights,\\\
+        n * `CHANGE_OWNER` - Owner write access,\\n * `CHANGE_PERMISSIONS` - Rights\
+        \ to change permissions on file objects,\\n * `DELETE` - Delete access,\\\
         n * `DELETE_CHILD` - Delete from directory access,\\n * `EXECUTE` - Execute\
         \ access,\\n * `EXTEND` - File extension access,\\n * `MODIFY` - File modification\
         \ access,\\n * `READ` - Read access rights,\\n * `READ_ACL` - ACL read access,\\\
@@ -513,7 +530,14 @@ methods:
         \  \"require_encryption\": {\n      \"description\": \"Require all traffic\
         \ to this share to be encrypted. Clients without encryption capabilities will\
         \ not be able to connect. Default is false if this field is empty.\",\n  \
-        \    \"type\": \"boolean\"\n    }\n  }\n}"
+        \    \"type\": \"boolean\"\n    },\n    \"allow_fs_path_create\": {\n    \
+        \  \"description\": \"If true, the server will create the file system path\
+        \ for the share if it does not already exist. If false, the file system path\
+        \ must already exist. Default is false if this field is empty.\",\n      \"\
+        type\": \"boolean\"\n    },\n    \"expand_fs_path_variables\": {\n      \"\
+        description\": \"If true, the server will expand %U variables in the file\
+        \ system path to username. Default is false if this field is empty.\",\n \
+        \     \"type\": \"boolean\"\n    }\n  }\n}"
     responses:
     - code: '200'
       description: Return value on success
@@ -534,78 +558,41 @@ methods:
         : {\n          \"type\": {\n            \"type\": \"string\",\n          \
         \  \"enum\": [\n              \"ALLOWED\",\n              \"DENIED\"\n   \
         \         ],\n            \"description\": \"Type of permissions entry (ALLOWED\
-        \ or DENIED):\\n * `ALLOWED` - API_SMB_SHARE_PERMISSIONS_ENTRY_TYPE_ALLOWED,\\\
-        n * `DENIED` - API_SMB_SHARE_PERMISSIONS_ENTRY_TYPE_DENIED\"\n          },\n\
-        \          \"trustee\": {\n            \"description\": \"User/group to apply\
-        \ the permissions entry to\",\n            \"type\": \"object\",\n       \
-        \     \"properties\": {\n              \"domain\": {\n                \"type\"\
-        : \"string\",\n                \"enum\": [\n                  \"LOCAL\",\n\
-        \                  \"API_NULL_DOMAIN\",\n                  \"WORLD\",\n  \
-        \                \"POSIX_USER\",\n                  \"POSIX_GROUP\",\n   \
-        \               \"ACTIVE_DIRECTORY\",\n                  \"API_INVALID_DOMAIN\"\
-        ,\n                  \"API_RESERVED_DOMAIN\",\n                  \"API_INTERNAL_DOMAIN\"\
-        ,\n                  \"API_OPERATOR_DOMAIN\",\n                  \"API_QUMULO_SUPPORT_DOMAIN\"\
-        ,\n                  \"API_CREATOR_DOMAIN\"\n                ],\n        \
-        \        \"description\": \"domain:\\n * `ACTIVE_DIRECTORY` - ACTIVE_DIRECTORY,\\\
-        n * `API_CREATOR_DOMAIN` - API_CREATOR_DOMAIN,\\n * `API_INTERNAL_DOMAIN`\
-        \ - API_INTERNAL_DOMAIN,\\n * `API_INVALID_DOMAIN` - API_INVALID_DOMAIN,\\\
-        n * `API_NULL_DOMAIN` - API_NULL_DOMAIN,\\n * `API_OPERATOR_DOMAIN` - API_OPERATOR_DOMAIN,\\\
-        n * `API_QUMULO_SUPPORT_DOMAIN` - API_QUMULO_SUPPORT_DOMAIN,\\n * `API_RESERVED_DOMAIN`\
-        \ - API_RESERVED_DOMAIN,\\n * `LOCAL` - LOCAL,\\n * `POSIX_GROUP` - POSIX_GROUP,\\\
-        n * `POSIX_USER` - POSIX_USER,\\n * `WORLD` - WORLD\"\n              },\n\
-        \              \"auth_id\": {\n                \"description\": \"auth_id\"\
-        ,\n                \"type\": \"string\"\n              },\n              \"\
-        uid\": {\n                \"description\": \"uid\",\n                \"type\"\
-        : \"number\"\n              },\n              \"gid\": {\n               \
-        \ \"description\": \"gid\",\n                \"type\": \"number\"\n      \
-        \        },\n              \"sid\": {\n                \"description\": \"\
-        sid\",\n                \"type\": \"string\"\n              },\n         \
-        \     \"name\": {\n                \"description\": \"name\",\n          \
-        \      \"type\": \"string\"\n              }\n            }\n          },\n\
-        \          \"rights\": {\n            \"description\": \"Rights pertaining\
-        \ to the permissions entry\",\n            \"type\": \"array\",\n        \
-        \    \"items\": {\n              \"type\": \"string\",\n              \"enum\"\
-        : [\n                \"READ\",\n                \"WRITE\",\n             \
-        \   \"CHANGE_PERMISSIONS\",\n                \"ALL\",\n                \"\
-        READ_DATA\",\n                \"READ_EA\",\n                \"READ_ATTR\"\
-        ,\n                \"READ_ACL\",\n                \"WRITE_EA\",\n        \
-        \        \"WRITE_ATTR\",\n                \"WRITE_ACL\",\n               \
-        \ \"CHANGE_OWNER\",\n                \"WRITE_GROUP\",\n                \"\
-        DELETE\",\n                \"EXECUTE\",\n                \"MODIFY\",\n   \
-        \             \"EXTEND\",\n                \"ADD_FILE\",\n               \
-        \ \"ADD_SUBDIR\",\n                \"DELETE_CHILD\",\n                \"SYNCHRONIZE\"\
-        \n              ],\n              \"description\": \"Rights pertaining to\
-        \ the permissions entry:\\n * `ADD_FILE` - File creation access,\\n * `ADD_SUBDIR`\
-        \ - Directory creation access,\\n * `ALL` - All access rights,\\n * `CHANGE_OWNER`\
-        \ - Owner write access,\\n * `CHANGE_PERMISSIONS` - Rights to change permissions\
-        \ on file objects,\\n * `DELETE` - Delete access,\\n * `DELETE_CHILD` - Delete\
-        \ from directory access,\\n * `EXECUTE` - Execute access,\\n * `EXTEND` -\
-        \ File extension access,\\n * `MODIFY` - File modification access,\\n * `READ`\
-        \ - Read access rights,\\n * `READ_ACL` - ACL read access,\\n * `READ_ATTR`\
-        \ - Attribute read access,\\n * `READ_DATA` - File read access,\\n * `READ_EA`\
-        \ - Extended attribute read access,\\n * `SYNCHRONIZE` - File synchronize\
-        \ access,\\n * `WRITE` - Write access rights,\\n * `WRITE_ACL` - ACL write\
-        \ access,\\n * `WRITE_ATTR` - Attribute write access,\\n * `WRITE_EA` - Extended\
-        \ attribute write access,\\n * `WRITE_GROUP` - Group write access\"\n    \
-        \        }\n          }\n        }\n      }\n    },\n    \"network_permissions\"\
-        : {\n      \"type\": \"array\",\n      \"items\": {\n        \"description\"\
-        : \"The network access control list (ACL) for this SMB share. If not specified,\
-        \ the default is to allow any host.\",\n        \"type\": \"object\",\n  \
-        \      \"properties\": {\n          \"type\": {\n            \"type\": \"\
-        string\",\n            \"enum\": [\n              \"ALLOWED\",\n         \
-        \     \"DENIED\"\n            ],\n            \"description\": \"Type of permissions\
-        \ entry (ALLOWED or DENIED):\\n * `ALLOWED` - API_SMB_SHARE_PERMISSIONS_ENTRY_TYPE_ALLOWED,\\\
-        n * `DENIED` - API_SMB_SHARE_PERMISSIONS_ENTRY_TYPE_DENIED\"\n          },\n\
-        \          \"address_ranges\": {\n            \"type\": \"array\",\n     \
-        \       \"items\": {\n              \"description\": \"IP address ranges to\
-        \ apply permissions to. Empty means all hosts.\",\n              \"type\"\
-        : \"string\"\n            }\n          },\n          \"rights\": {\n     \
-        \       \"description\": \"Rights pertaining to the permissions entry\",\n\
-        \            \"type\": \"array\",\n            \"items\": {\n            \
-        \  \"type\": \"string\",\n              \"enum\": [\n                \"READ\"\
-        ,\n                \"WRITE\",\n                \"CHANGE_PERMISSIONS\",\n \
-        \               \"ALL\",\n                \"READ_DATA\",\n               \
-        \ \"READ_EA\",\n                \"READ_ATTR\",\n                \"READ_ACL\"\
+        \ or DENIED):\\n * `ALLOWED` - The permissions entry rights are allowed to\
+        \ the trustee,\\n * `DENIED` - The permissions entry rights are denied to\
+        \ the trustee\"\n          },\n          \"trustee\": {\n            \"description\"\
+        : \"User/group to apply the permissions entry to\",\n            \"type\"\
+        : \"object\",\n            \"properties\": {\n              \"domain\": {\n\
+        \                \"type\": \"string\",\n                \"enum\": [\n    \
+        \              \"LOCAL\",\n                  \"API_NULL_DOMAIN\",\n      \
+        \            \"WORLD\",\n                  \"POSIX_USER\",\n             \
+        \     \"POSIX_GROUP\",\n                  \"ACTIVE_DIRECTORY\",\n        \
+        \          \"API_INVALID_DOMAIN\",\n                  \"API_RESERVED_DOMAIN\"\
+        ,\n                  \"API_INTERNAL_DOMAIN\",\n                  \"API_OPERATOR_DOMAIN\"\
+        ,\n                  \"API_QUMULO_SUPPORT_DOMAIN\",\n                  \"\
+        API_CREATOR_DOMAIN\"\n                ],\n                \"description\"\
+        : \"domain:\\n * `ACTIVE_DIRECTORY` - ACTIVE_DIRECTORY,\\n * `API_CREATOR_DOMAIN`\
+        \ - API_CREATOR_DOMAIN,\\n * `API_INTERNAL_DOMAIN` - API_INTERNAL_DOMAIN,\\\
+        n * `API_INVALID_DOMAIN` - API_INVALID_DOMAIN,\\n * `API_NULL_DOMAIN` - API_NULL_DOMAIN,\\\
+        n * `API_OPERATOR_DOMAIN` - API_OPERATOR_DOMAIN,\\n * `API_QUMULO_SUPPORT_DOMAIN`\
+        \ - API_QUMULO_SUPPORT_DOMAIN,\\n * `API_RESERVED_DOMAIN` - API_RESERVED_DOMAIN,\\\
+        n * `LOCAL` - LOCAL,\\n * `POSIX_GROUP` - POSIX_GROUP,\\n * `POSIX_USER` -\
+        \ POSIX_USER,\\n * `WORLD` - WORLD\"\n              },\n              \"auth_id\"\
+        : {\n                \"description\": \"auth_id\",\n                \"type\"\
+        : \"string\"\n              },\n              \"uid\": {\n               \
+        \ \"description\": \"uid\",\n                \"type\": \"number\"\n      \
+        \        },\n              \"gid\": {\n                \"description\": \"\
+        gid\",\n                \"type\": \"number\"\n              },\n         \
+        \     \"sid\": {\n                \"description\": \"sid\",\n            \
+        \    \"type\": \"string\"\n              },\n              \"name\": {\n \
+        \               \"description\": \"name\",\n                \"type\": \"string\"\
+        \n              }\n            }\n          },\n          \"rights\": {\n\
+        \            \"description\": \"Rights pertaining to the permissions entry\"\
+        ,\n            \"type\": \"array\",\n            \"items\": {\n          \
+        \    \"type\": \"string\",\n              \"enum\": [\n                \"\
+        READ\",\n                \"WRITE\",\n                \"CHANGE_PERMISSIONS\"\
+        ,\n                \"ALL\",\n                \"READ_DATA\",\n            \
+        \    \"READ_EA\",\n                \"READ_ATTR\",\n                \"READ_ACL\"\
         ,\n                \"WRITE_EA\",\n                \"WRITE_ATTR\",\n      \
         \          \"WRITE_ACL\",\n                \"CHANGE_OWNER\",\n           \
         \     \"WRITE_GROUP\",\n                \"DELETE\",\n                \"EXECUTE\"\
@@ -616,6 +603,44 @@ methods:
         \ access,\\n * `ADD_SUBDIR` - Directory creation access,\\n * `ALL` - All\
         \ access rights,\\n * `CHANGE_OWNER` - Owner write access,\\n * `CHANGE_PERMISSIONS`\
         \ - Rights to change permissions on file objects,\\n * `DELETE` - Delete access,\\\
+        n * `DELETE_CHILD` - Delete from directory access,\\n * `EXECUTE` - Execute\
+        \ access,\\n * `EXTEND` - File extension access,\\n * `MODIFY` - File modification\
+        \ access,\\n * `READ` - Read access rights,\\n * `READ_ACL` - ACL read access,\\\
+        n * `READ_ATTR` - Attribute read access,\\n * `READ_DATA` - File read access,\\\
+        n * `READ_EA` - Extended attribute read access,\\n * `SYNCHRONIZE` - File\
+        \ synchronize access,\\n * `WRITE` - Write access rights,\\n * `WRITE_ACL`\
+        \ - ACL write access,\\n * `WRITE_ATTR` - Attribute write access,\\n * `WRITE_EA`\
+        \ - Extended attribute write access,\\n * `WRITE_GROUP` - Group write access\"\
+        \n            }\n          }\n        }\n      }\n    },\n    \"network_permissions\"\
+        : {\n      \"type\": \"array\",\n      \"items\": {\n        \"description\"\
+        : \"The network access control list (ACL) for this SMB share. If not specified,\
+        \ the default is to allow any host.\",\n        \"type\": \"object\",\n  \
+        \      \"properties\": {\n          \"type\": {\n            \"type\": \"\
+        string\",\n            \"enum\": [\n              \"ALLOWED\",\n         \
+        \     \"DENIED\"\n            ],\n            \"description\": \"Type of permissions\
+        \ entry (ALLOWED or DENIED):\\n * `ALLOWED` - The permissions entry rights\
+        \ are allowed to the trustee,\\n * `DENIED` - The permissions entry rights\
+        \ are denied to the trustee\"\n          },\n          \"address_ranges\"\
+        : {\n            \"type\": \"array\",\n            \"items\": {\n        \
+        \      \"description\": \"IP address ranges to apply permissions to. Empty\
+        \ means all hosts.\",\n              \"type\": \"string\"\n            }\n\
+        \          },\n          \"rights\": {\n            \"description\": \"Rights\
+        \ pertaining to the permissions entry\",\n            \"type\": \"array\"\
+        ,\n            \"items\": {\n              \"type\": \"string\",\n       \
+        \       \"enum\": [\n                \"READ\",\n                \"WRITE\"\
+        ,\n                \"CHANGE_PERMISSIONS\",\n                \"ALL\",\n   \
+        \             \"READ_DATA\",\n                \"READ_EA\",\n             \
+        \   \"READ_ATTR\",\n                \"READ_ACL\",\n                \"WRITE_EA\"\
+        ,\n                \"WRITE_ATTR\",\n                \"WRITE_ACL\",\n     \
+        \           \"CHANGE_OWNER\",\n                \"WRITE_GROUP\",\n        \
+        \        \"DELETE\",\n                \"EXECUTE\",\n                \"MODIFY\"\
+        ,\n                \"EXTEND\",\n                \"ADD_FILE\",\n          \
+        \      \"ADD_SUBDIR\",\n                \"DELETE_CHILD\",\n              \
+        \  \"SYNCHRONIZE\"\n              ],\n              \"description\": \"Rights\
+        \ pertaining to the permissions entry:\\n * `ADD_FILE` - File creation access,\\\
+        n * `ADD_SUBDIR` - Directory creation access,\\n * `ALL` - All access rights,\\\
+        n * `CHANGE_OWNER` - Owner write access,\\n * `CHANGE_PERMISSIONS` - Rights\
+        \ to change permissions on file objects,\\n * `DELETE` - Delete access,\\\
         n * `DELETE_CHILD` - Delete from directory access,\\n * `EXECUTE` - Execute\
         \ access,\\n * `EXTEND` - File extension access,\\n * `MODIFY` - File modification\
         \ access,\\n * `READ` - Read access rights,\\n * `READ_ACL` - ACL read access,\\\
@@ -635,7 +660,14 @@ methods:
         \  \"require_encryption\": {\n      \"description\": \"Require all traffic\
         \ to this share to be encrypted. Clients without encryption capabilities will\
         \ not be able to connect. Default is false if this field is empty.\",\n  \
-        \    \"type\": \"boolean\"\n    }\n  }\n}"
+        \    \"type\": \"boolean\"\n    },\n    \"allow_fs_path_create\": {\n    \
+        \  \"description\": \"If true, the server will create the file system path\
+        \ for the share if it does not already exist. If false, the file system path\
+        \ must already exist. Default is false if this field is empty.\",\n      \"\
+        type\": \"boolean\"\n    },\n    \"expand_fs_path_variables\": {\n      \"\
+        description\": \"If true, the server will expand %U variables in the file\
+        \ system path to username. Default is false if this field is empty.\",\n \
+        \     \"type\": \"boolean\"\n    }\n  }\n}"
   delete:
     summary: '[preview] Delete an SMB share. Not undoable.'
     parameters:

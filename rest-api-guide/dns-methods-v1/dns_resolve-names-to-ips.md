@@ -14,9 +14,11 @@ methods:
         : \"string\"\n        }\n      },\n      \"result\": {\n        \"type\":\
         \ \"string\",\n        \"enum\": [\n          \"OK\",\n          \"ERROR\"\
         ,\n          \"NOT_FOUND\",\n          \"TIMEOUT\"\n        ],\n        \"\
-        description\": \"The status of the resolution:\\n * `ERROR` - DNS_RESOLUTION_ERROR,\\\
-        n * `NOT_FOUND` - DNS_RESOLUTION_NOT_FOUND,\\n * `OK` - DNS_RESOLUTION_OK,\\\
-        n * `TIMEOUT` - DNS_RESOLUTION_TIMEOUT\"\n      }\n    }\n  }\n}"
+        description\": \"The status of the resolution:\\n * `ERROR` - An error occurred\
+        \ while resolving the hostname,\\n * `NOT_FOUND` - No hostname was found for\
+        \ the IP address,\\n * `OK` - The hostname for the IP address was successfully\
+        \ resolved,\\n * `TIMEOUT` - Timeout occurred before this address was resolved\"\
+        \n      }\n    }\n  }\n}"
     responses:
     - code: '200'
       description: Return value on success

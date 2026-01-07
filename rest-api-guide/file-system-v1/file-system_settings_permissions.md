@@ -8,9 +8,11 @@ methods:
       schema: "{\n  \"description\": \"api_permissions_settings\",\n  \"type\": \"\
         object\",\n  \"properties\": {\n    \"mode\": {\n      \"type\": \"string\"\
         ,\n      \"enum\": [\n        \"NATIVE\",\n        \"_DEPRECATED_MERGED_V1\"\
-        ,\n        \"CROSS_PROTOCOL\"\n      ],\n      \"description\": \"mode:\\\
-        n * `CROSS_PROTOCOL` - CROSS_PROTOCOL,\\n * `NATIVE` - NATIVE,\\n * `_DEPRECATED_MERGED_V1`\
-        \ - _DEPRECATED_MERGED_V1\"\n    }\n  }\n}"
+        ,\n        \"CROSS_PROTOCOL\",\n        \"CROSS_PROTOCOL_IGNORE_UNRELATED_ACES\"\
+        \n      ],\n      \"description\": \"mode:\\n * `CROSS_PROTOCOL` - CROSS_PROTOCOL,\\\
+        n * `CROSS_PROTOCOL_IGNORE_UNRELATED_ACES` - CROSS_PROTOCOL_IGNORE_UNRELATED_ACES,\\\
+        n * `NATIVE` - NATIVE,\\n * `_DEPRECATED_MERGED_V1` - _DEPRECATED_MERGED_V1\"\
+        \n    }\n  }\n}"
     responses:
     - code: '200'
       description: Return value on success
@@ -19,9 +21,11 @@ methods:
       schema: "{\n  \"description\": \"api_permissions_settings\",\n  \"type\": \"\
         object\",\n  \"properties\": {\n    \"mode\": {\n      \"type\": \"string\"\
         ,\n      \"enum\": [\n        \"NATIVE\",\n        \"_DEPRECATED_MERGED_V1\"\
-        ,\n        \"CROSS_PROTOCOL\"\n      ],\n      \"description\": \"mode:\\\
-        n * `CROSS_PROTOCOL` - CROSS_PROTOCOL,\\n * `NATIVE` - NATIVE,\\n * `_DEPRECATED_MERGED_V1`\
-        \ - _DEPRECATED_MERGED_V1\"\n    }\n  }\n}"
+        ,\n        \"CROSS_PROTOCOL\",\n        \"CROSS_PROTOCOL_IGNORE_UNRELATED_ACES\"\
+        \n      ],\n      \"description\": \"mode:\\n * `CROSS_PROTOCOL` - CROSS_PROTOCOL,\\\
+        n * `CROSS_PROTOCOL_IGNORE_UNRELATED_ACES` - CROSS_PROTOCOL_IGNORE_UNRELATED_ACES,\\\
+        n * `NATIVE` - NATIVE,\\n * `_DEPRECATED_MERGED_V1` - _DEPRECATED_MERGED_V1\"\
+        \n    }\n  }\n}"
   get:
     summary: Get permissions settings.
     parameters: []
@@ -29,9 +33,11 @@ methods:
       schema: "{\n  \"description\": \"api_permissions_settings\",\n  \"type\": \"\
         object\",\n  \"properties\": {\n    \"mode\": {\n      \"type\": \"string\"\
         ,\n      \"enum\": [\n        \"NATIVE\",\n        \"_DEPRECATED_MERGED_V1\"\
-        ,\n        \"CROSS_PROTOCOL\"\n      ],\n      \"description\": \"mode:\\\
-        n * `CROSS_PROTOCOL` - CROSS_PROTOCOL,\\n * `NATIVE` - NATIVE,\\n * `_DEPRECATED_MERGED_V1`\
-        \ - _DEPRECATED_MERGED_V1\"\n    }\n  }\n}"
+        ,\n        \"CROSS_PROTOCOL\",\n        \"CROSS_PROTOCOL_IGNORE_UNRELATED_ACES\"\
+        \n      ],\n      \"description\": \"mode:\\n * `CROSS_PROTOCOL` - CROSS_PROTOCOL,\\\
+        n * `CROSS_PROTOCOL_IGNORE_UNRELATED_ACES` - CROSS_PROTOCOL_IGNORE_UNRELATED_ACES,\\\
+        n * `NATIVE` - NATIVE,\\n * `_DEPRECATED_MERGED_V1` - _DEPRECATED_MERGED_V1\"\
+        \n    }\n  }\n}"
     responses:
     - code: '200'
       description: Return value on success
