@@ -21,7 +21,8 @@ optional_options:
   - --hub-hosts
   help: The IP addresses and TCP ports of the remote cluster. Use a comma-delimited
     list to specify multiple hosts. Use colon as a separator after each IP address
-    to provide custom TCP port (3713 is used by default).
+    to provide custom TCP port (3713 is used by default). Ports specified this way
+    override other --port arguments.
   name: -m
   required: false
 - alternate:

@@ -8,6 +8,11 @@ For information about upgrade types for each release, see <a href='mode-referenc
 
 {% comment %}For boilerplate text, use {{page.varNoPublicChanges}}{% endcomment %}
 
+## Qumulo Core 7.7.4
+* {{page.varNoPublicChanges}}
+* Added the `/v1/portal/ping` REST API endpoint and the `qq portal_ping` command
+* Changed how the `qq ad_cancel`, `ad_join`, `ad_leave`, and `ad_reconfigure` commands return the status of in-progress background operations
+
 ## Qumulo Core 7.7.3
 {{ nexusLink }}
 

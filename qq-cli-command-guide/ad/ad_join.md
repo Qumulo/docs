@@ -50,6 +50,10 @@ optional_options:
     and falls back to the remaining DCs if one of the FQDNs becomes unreachable.
   name: --domain-controllers
   required: false
+- alternate: []
+  help: Do not wait for the operation to complete
+  name: --no-wait
+  required: false
 permalink: /qq-cli-command-guide/ad/ad_join.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar
@@ -58,7 +62,7 @@ synopsis: Join an Active Directory Domain
 title: qq ad_join
 usage: qq ad_join [-h] -d DOMAIN -u USERNAME [-p PASSWORD] [--domain-netbios DOMAIN_NETBIOS]
   [-o OU] [--disable-search-trusted-domains] [--use-ad-posix-attributes] [--base-dn
-  BASE_DN] [--domain-controllers DOMAIN_CONTROLLERS]
+  BASE_DN] [--domain-controllers DOMAIN_CONTROLLERS] [--no-wait]
 zendesk_source: qq CLI Command Guide
 
 ---

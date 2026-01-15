@@ -42,6 +42,14 @@ optional_options:
   help: Disables mounting with AUTH_SYS security
   name: --disable-auth-sys
   required: false
+- alternate: []
+  help: Sets a custom domain for mapping NFSv4 string identities.
+  name: --idmap-domain
+  required: false
+- alternate: []
+  help: Clears the custom idmap domain.
+  name: --clear-idmap-domain
+  required: false
 permalink: /qq-cli-command-guide/multitenancy/multitenancy_nfs_modify_global_settings.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar
@@ -49,9 +57,10 @@ summary: This section explains how to use the <code>qq multitenancy_nfs_modify_g
   command.
 synopsis: Modify global default NFS settings
 title: qq multitenancy_nfs_modify_global_settings
-usage: qq multitenancy_nfs_modify_global_settings [-h] [--enable-v4 | --disable-v4]
-  [--enable-krb5 | --disable-krb5] [--enable-krb5p | --disable-krb5p] [--enable-krb5i
-  | --disable-krb5i] [--enable-auth-sys | --disable-auth-sys]
+usage: "qq multitenancy_nfs_modify_global_settings [-h] [--enable-v4 | --disable-v4]\
+  \ [--enable-krb5 | --disable-krb5] [--enable-krb5p | --disable-krb5p] [--enable-krb5i\
+  \ | --disable-krb5i] [--enable-auth-sys | --disable-auth-sys]\n    [--idmap-domain\
+  \ OVERRIDE | --clear-idmap-domain]"
 zendesk_source: qq CLI Command Guide
 
 ---

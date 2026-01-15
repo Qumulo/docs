@@ -240,6 +240,11 @@ entries:
       url: /rest-api-guide/cloud-data-fabric-v1/portal_hubs_id_authorize.html
     - apiversion: v1
       output: web,pdf
+      preview: true
+      title: portal/ping
+      url: /rest-api-guide/cloud-data-fabric-v1/portal_ping.html
+    - apiversion: v1
+      output: web,pdf
       title: portal/spokes
       url: /rest-api-guide/cloud-data-fabric-v1/portal_spokes.html
     - apiversion: v1

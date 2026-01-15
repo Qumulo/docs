@@ -14,7 +14,10 @@ methods:
         \    },\n    \"krb5i_enabled\": {\n      \"description\": \"Whether Kerberos5i\
         \ (integrity) is enabled\",\n      \"type\": \"boolean\"\n    },\n    \"auth_sys_enabled\"\
         : {\n      \"description\": \"Whether AUTH_SYS is enabled\",\n      \"type\"\
-        : \"boolean\"\n    }\n  }\n}"
+        : \"boolean\"\n    },\n    \"idmap_domain\": {\n      \"description\": \"\
+        The domain used for mapping NFSv4 string identities. The value must match\
+        \ what idmapd on the clients expects for correct name resolution.\",\n   \
+        \   \"type\": \"string\"\n    }\n  }\n}"
     responses:
     - code: '200'
       description: Return value on success
@@ -35,7 +38,10 @@ methods:
         \    },\n    \"krb5i_enabled\": {\n      \"description\": \"Whether Kerberos5i\
         \ (integrity) is enabled\",\n      \"type\": \"boolean\"\n    },\n    \"auth_sys_enabled\"\
         : {\n      \"description\": \"Whether AUTH_SYS is enabled\",\n      \"type\"\
-        : \"boolean\"\n    }\n  }\n}"
+        : \"boolean\"\n    },\n    \"idmap_domain\": {\n      \"description\": \"\
+        The domain used for mapping NFSv4 string identities. The value must match\
+        \ what idmapd on the clients expects for correct name resolution.\",\n   \
+        \   \"type\": \"string\"\n    }\n  }\n}"
     responses:
     - code: '200'
       description: Return value on success
@@ -50,7 +56,10 @@ methods:
         \    },\n    \"krb5i_enabled\": {\n      \"description\": \"Whether Kerberos5i\
         \ (integrity) is enabled\",\n      \"type\": \"boolean\"\n    },\n    \"auth_sys_enabled\"\
         : {\n      \"description\": \"Whether AUTH_SYS is enabled\",\n      \"type\"\
-        : \"boolean\"\n    }\n  }\n}"
+        : \"boolean\"\n    },\n    \"idmap_domain\": {\n      \"description\": \"\
+        The domain used for mapping NFSv4 string identities. The value must match\
+        \ what idmapd on the clients expects for correct name resolution.\",\n   \
+        \   \"type\": \"string\"\n    }\n  }\n}"
   patch:
     summary: '[preview] Modify global NFS configuration.'
     parameters:
@@ -67,7 +76,10 @@ methods:
         \    },\n    \"krb5i_enabled\": {\n      \"description\": \"Whether Kerberos5i\
         \ (integrity) is enabled\",\n      \"type\": \"boolean\"\n    },\n    \"auth_sys_enabled\"\
         : {\n      \"description\": \"Whether AUTH_SYS is enabled\",\n      \"type\"\
-        : \"boolean\"\n    }\n  }\n}"
+        : \"boolean\"\n    },\n    \"idmap_domain\": {\n      \"description\": \"\
+        The domain used for mapping NFSv4 string identities. The value must match\
+        \ what idmapd on the clients expects for correct name resolution.\",\n   \
+        \   \"type\": \"string\"\n    }\n  }\n}"
     responses:
     - code: '200'
       description: Return value on success
@@ -82,7 +94,10 @@ methods:
         \    },\n    \"krb5i_enabled\": {\n      \"description\": \"Whether Kerberos5i\
         \ (integrity) is enabled\",\n      \"type\": \"boolean\"\n    },\n    \"auth_sys_enabled\"\
         : {\n      \"description\": \"Whether AUTH_SYS is enabled\",\n      \"type\"\
-        : \"boolean\"\n    }\n  }\n}"
+        : \"boolean\"\n    },\n    \"idmap_domain\": {\n      \"description\": \"\
+        The domain used for mapping NFSv4 string identities. The value must match\
+        \ what idmapd on the clients expects for correct name resolution.\",\n   \
+        \   \"type\": \"string\"\n    }\n  }\n}"
 rest_endpoint: /v1/multitenancy/nfs/global-settings
 api_version: v1
 permalink: /rest-api-guide/nfs-multitenancy-methods-v1/multitenancy_nfs_global-settings.html

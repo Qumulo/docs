@@ -854,6 +854,9 @@ entries:
       title: portal_modify_spoke
       url: /qq-cli-command-guide/portal/portal_modify_spoke.html
     - output: web,pdf
+      title: portal_ping
+      url: /qq-cli-command-guide/portal/portal_ping.html
+    - output: web,pdf
       title: portal_propose_spoke_root
       url: /qq-cli-command-guide/portal/portal_propose_spoke_root.html
     - output: web,pdf

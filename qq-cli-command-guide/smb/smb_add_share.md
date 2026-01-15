@@ -27,6 +27,11 @@ optional_options:
   name: --create-fs-path
   required: false
 - alternate: []
+  help: Enable expanding %U in the specified file system path to the SMB username
+    during connection.
+  name: --expand-fs-path-variables
+  required: false
+- alternate: []
   help: "\n                Change the default POSIX file create mode bits (octal)\
     \ for the specified SMB share.\n                These mode bits are applied to\
     \ new files as they are created. Note: If an\n                inheritable ACE\
@@ -113,13 +118,13 @@ synopsis: Add a new SMB share
 title: qq smb_add_share
 usage: "qq smb_add_share [-h] [--tenant-id TENANT_ID] --name NAME --fs-path FS_PATH\
   \ [--description DESCRIPTION] [--access-based-enumeration-enabled {true,false}]\
-  \ [--create-fs-path] [--default-file-create-mode DEFAULT_FILE_CREATE_MODE]\n   \
-  \ [--default-directory-create-mode DEFAULT_DIRECTORY_CREATE_MODE] [--require-encryption\
-  \ {true,false}] [--json] [--no-access | --read-only | --all-access] [--grant-read-access\
-  \ TRUSTEE [TRUSTEE ...]]\n    [--grant-read-write-access TRUSTEE [TRUSTEE ...]]\
-  \ [--grant-all-access TRUSTEE [TRUSTEE ...]] [--deny-access TRUSTEE [TRUSTEE ...]]\
-  \ [--full-control-hosts IP/RANGE [IP/RANGE ...]] [--read-only-hosts IP/RANGE [IP/RANGE\
-  \ ...]]\n    [--deny-hosts IP/RANGE [IP/RANGE ...]] [--deny-all-hosts]"
+  \ [--create-fs-path] [--expand-fs-path-variables]\n    [--default-file-create-mode\
+  \ DEFAULT_FILE_CREATE_MODE] [--default-directory-create-mode DEFAULT_DIRECTORY_CREATE_MODE]\
+  \ [--require-encryption {true,false}] [--json] [--no-access | --read-only | --all-access]\n\
+  \    [--grant-read-access TRUSTEE [TRUSTEE ...]] [--grant-read-write-access TRUSTEE\
+  \ [TRUSTEE ...]] [--grant-all-access TRUSTEE [TRUSTEE ...]] [--deny-access TRUSTEE\
+  \ [TRUSTEE ...]] [--full-control-hosts IP/RANGE [IP/RANGE ...]]\n    [--read-only-hosts\
+  \ IP/RANGE [IP/RANGE ...]] [--deny-hosts IP/RANGE [IP/RANGE ...]] [--deny-all-hosts]"
 zendesk_source: qq CLI Command Guide
 
 ---

@@ -17,13 +17,17 @@ optional_options:
   help: Domain password (insecure, visible via ps)
   name: -p
   required: false
+- alternate: []
+  help: Do not wait for the operation to complete
+  name: --no-wait
+  required: false
 permalink: /qq-cli-command-guide/ad/ad_leave.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar
 summary: This section explains how to use the <code>qq ad_leave</code> command.
 synopsis: Leave an Active Directory Domain
 title: qq ad_leave
-usage: qq ad_leave [-h] -d DOMAIN [-u USERNAME] [-p PASSWORD]
+usage: qq ad_leave [-h] -d DOMAIN [-u USERNAME] [-p PASSWORD] [--no-wait]
 zendesk_source: qq CLI Command Guide
 
 ---

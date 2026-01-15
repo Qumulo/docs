@@ -1,14 +1,18 @@
 ---
 category: ad
 command: ad_cancel
-optional_options: []
+optional_options:
+- alternate: []
+  help: Do not wait for the operation to complete
+  name: --no-wait
+  required: false
 permalink: /qq-cli-command-guide/ad/ad_cancel.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar
 summary: This section explains how to use the <code>qq ad_cancel</code> command.
 synopsis: Cancel current AD join/leave operation and clear errors
 title: qq ad_cancel
-usage: qq ad_cancel [-h]
+usage: qq ad_cancel [-h] [--no-wait]
 zendesk_source: qq CLI Command Guide
 
 ---

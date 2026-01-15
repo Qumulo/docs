@@ -33,6 +33,10 @@ optional_options:
     and falls back to the remaining DCs if one of the FQDNs becomes unreachable.
   name: --domain-controllers
   required: false
+- alternate: []
+  help: Do not wait for the operation to complete
+  name: --no-wait
+  required: false
 permalink: /qq-cli-command-guide/ad/ad_reconfigure.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar
@@ -41,7 +45,7 @@ synopsis: Reconfigure Active Directory POSIX Attributes
 title: qq ad_reconfigure
 usage: qq ad_reconfigure [-h] [--enable-search-trusted-domains | --disable-search-trusted-domains]
   [--enable-ad-posix-attributes | --disable-ad-posix-attributes] [--base-dn BASE_DN]
-  [--domain-controllers DOMAIN_CONTROLLERS]
+  [--domain-controllers DOMAIN_CONTROLLERS] [--no-wait]
 zendesk_source: qq CLI Command Guide
 
 ---
