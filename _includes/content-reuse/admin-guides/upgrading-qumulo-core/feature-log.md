@@ -49,53 +49,6 @@ Significantly improved the performance of the incremental replication process fo
 * Removed and replaced `qq` CLI commands related to Snapshots functionality
 * Resolved an issue with case sensitivity in Domain Controller lists
 
-## Qumulo Core 7.6.4.1 
-{{ nexusLink }}
-{% include important.html content="This release resolves an issue that affects Azure Native Qumulo (ANQ) and Cloud Native Qumulo (CNQ) clusters. While this issue did not affect cluster data, it caused the system to not delete unneeded backing data. When certain accounts retained this data incorrectly, there was a potential increase in consumption of cloud resources." %}
-
-* Improved Cloud Data Fabric portal data synchronization speeds
-* Moved a number of `/v3/network/*` REST APIs out of preview status
-* Added a number `qq network_*`, `qq portal_authorize_hub`, and `qq_snapshot_*` CLI commands
-
-## Qumulo Core 7.6.3.1
-{{ nexusLink }}
-{% include important.html content="This release resolves an issue with Cloud Data Fabric where previously it was possible for a client connected through SMB to perform an operation on a file from a spoke portal after the same file was deleted from the hub portal, causing the cluster to become unavailable." %}
-
-* Made EdgeConnect (unprotected, single-node edge) clusters publicly available as bare-metal and VM deployments
-  * Added the `cluster_type` metric to the Qumulo OpenMetrics API Specification
-* Improved Cloud Data Fabric (CDF):
-  * Increased portal data synchronization IOPS and throughput for many CDF workloads
-  * Added full support for SMB Read Lease and Write Lease functionality to CDF
-  * Resolved an issue related to audit logging and spoke portal file path resolution
-* Improved the S3 API:
-  * Added support for the `STREAMING-UNSIGNED-PAYLOAD-TRAILER` authentication type with the `CRC64-NVME` and `SHA-256` checksum formats
-  * Added Qumulo Core support for the default authentication type that the AWS CLI uses for the `PutObject` and `UploadPart` API actions
-* Added the ability to specify a list of Active Directory domain controllers that overrides the default auto-discovery process
-* Limited the number of `bind_uri` entries to 3 for standalone LDAP queries
-* Made `qq` CLI and REST API changes to support the new EdgeConnect, CDF, S3 API, Active Directory, and LDAP functionality
-
-## Qumulo Core 7.6.2
-{{ nexusLink }}
-* Made improvements to Cloud Data Fabric:
-  * Added the ability to configure up to 32 spoke portal root directories for each portal relationship
-  * Made corresponding `/v2/portal/*` REST API and `qq portal_*` CLI changes
-  * Changed some of the terminology concerning _portal relationship states_ and _portal root directory states_
-* Ensured that the `ListObjectsV2` S3 API action supports the `start-after` parameter
-
-## Qumulo Core 7.6.1.1
-{{ nexusLink }}
-{{site.data.alerts.note}}
-This release of Qumulo Core adds Illumio Policy Compute Engine (PCE) and Virtual Enforcement Node (VEN) functionality that ensures network security within the container.
-<ul>
-  <li>If your cluster doesn't use Illumio, there is no need to upgrade to this release.</li>
-  <li>To connect each node in your cluster to a VEN, run the <code>illumio-ven-ctl</code> command within the container on every node in your cluster. For more information, see <a target="_blank" href="https://product-docs-repo.illumio.com/Tech-Docs/Core/24.2/Install-Upgrade-Admin/out/en/ven-install-and-upgrade/reference/ven-activate-command-reference.html">VEN Activate Command Reference</a> in the Illumio documentation.</li>
-</ul>
-{{site.data.alerts.end}}
-
-* Added the ability to apply the `private` policy to an S3 bucket at creation time
-* For Cloud Native Qumulo (CNQ), replaced two OpenMetrics metrics for node and drive failure
-* Resolved an issue with the REST API endpoint for unconfigured nodes
-
 ## Qumulo Core 7.6.0.2 (Quarterly)
 {{ nexusLink }}
 {{site.data.alerts.important}}

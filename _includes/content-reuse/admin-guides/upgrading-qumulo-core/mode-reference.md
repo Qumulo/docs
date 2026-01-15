@@ -39,26 +39,6 @@ For information about the most important features from each release, click the Q
       <td class="platform">Platform</td>
     </tr>
     <tr>
-      <td><a href="feature-log.html#qumulo-core-7641">7.6.4.1</a></td>
-      <td></td>
-      <td class="instant">Instant</td>
-    </tr>
-    <tr>
-      <td><a href="feature-log.html#qumulo-core-7631">7.6.3.1</a></td>
-      <td></td>
-      <td class="instant">Instant</td>
-    </tr>
-    <tr>
-      <td><a href="feature-log.html#qumulo-core-762">7.6.2</a></td>
-      <td></td>
-      <td class="instant">Instant</td>
-    </tr>
-    <tr>
-      <td><a href="feature-log.html#qumulo-core-7611">7.6.1.1</a></td>
-      <td></td>
-      <td class="instant">Instant</td>
-    </tr>
-    <tr>
       <td><a href="feature-log.html#qumulo-core-7602-quarterly">7.6.0.2</a></td>
       <td><span class="emoji">✅</span></td>
       <td class="instant">Instant</td>
