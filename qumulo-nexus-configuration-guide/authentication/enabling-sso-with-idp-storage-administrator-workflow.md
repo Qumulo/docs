@@ -1,7 +1,9 @@
 ---
 title: "Configuration Workflow for Storage Administrators who Manage a Qumulo Nexus Account"
 summary: "This configuration workflow explains how to enable single sign-on (SSO) for Qumulo Nexus from the perspective of a storage administrator who manages a Qumulo Nexus account and works together with a system administrator who manages your organization's identity provider (IdP)."
-permalink: /qumulo-nexus-configuration-guide/enabling-sso-with-idp/storage-administrator-configuration-workflow.html
+permalink: /qumulo-nexus-configuration-guide/authentication/enabling-sso-with-idp-storage-administrator-workflow.html
+redirect_from:
+  - /qumulo-nexus-configuration-guide/enabling-sso-with-idp/storage-administrator-configuration-workflow.html
 sidebar: qumulo_nexus_configuration_guide_sidebar
 persona: storage_administrator
 ---

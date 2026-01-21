@@ -1,7 +1,9 @@
 ---
 title: "Configuration Workflow for System Administrators who Manage a Qumulo Nexus Account and an Identity Provider (IdP)"
 summary: "This configuration workflow explains how to enable single sign-on (SSO) for Qumulo Nexus from the perspective of a system administrator who manages both a Qumulo Nexus account and an Identity Provider (IdP)."
-permalink: /qumulo-nexus-configuration-guide/enabling-sso-with-idp/system-administrator-configuration-workflow.html
+permalink: /qumulo-nexus-configuration-guide/authentication/enabling-sso-with-idp-system-administrator-workflow.html
+redirect_from:
+  - /qumulo-nexus-configuration-guide/enabling-sso-with-idp/system-administrator-configuration-workflow.html
 sidebar: qumulo_nexus_configuration_guide_sidebar
 persona: sysadmin
 ---

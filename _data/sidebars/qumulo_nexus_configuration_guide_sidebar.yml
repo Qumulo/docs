@@ -37,19 +37,33 @@ entries:
       url: /contacting-qumulo-care-team.html
       output: web
 
-  - title: Enabling Single Sign-On (SSO)
-    url: /qumulo-nexus-configuration-guide/enabling-sso-with-idp/index.html
+  - title: Authentication in Qumulo Nexus
+    url: /qumulo-nexus-configuration-guide/authentication/index.html
     output: web, pdf
-    folderitems:
+    folderitems:    
 
-    - title: Storage Administrator Configuration Workflow
-      url: /qumulo-nexus-configuration-guide/enabling-sso-with-idp/storage-administrator-configuration-workflow.html
+    - title: Enabling Single Sign-On (SSO) for Storage Administrators
+      url: /qumulo-nexus-configuration-guide/authentication/enabling-sso-with-idp-storage-administrator-workflow.html
       output: web, pdf
 
-    - title: System Administrator Configuration Workflow
-      url: /qumulo-nexus-configuration-guide/enabling-sso-with-idp/system-administrator-configuration-workflow.html
+    - title: Enabling Single Sign-On (SSO) for System Administrators
+      url: /qumulo-nexus-configuration-guide/authentication/enabling-sso-with-idp-system-administrator-workflow.html
       output: web, pdf
 
-  - title: Enabling Nexus Remote Support
-    url: /qumulo-nexus-configuration-guide/enabling-nexus-remote-support.html
+  - title: Authorization in Qumulo Nexus
+    url: /qumulo-nexus-configuration-guide/authorization/index.html
     output: web, pdf
+    folderitems:    
+
+    - title: Managing User Access
+      url: /qumulo-nexus-configuration-guide/authorization/managing-user-access.html
+      output: web, pdf
+
+  - title: Monitoring and Metrics
+    url: /qumulo-nexus-configuration-guide/monitoring-and-metrics/index.html
+    output: web, pdf
+    folderitems:    
+
+    - title: Enabling Nexus Remote Support and Nexus Remote Management
+      url: /qumulo-nexus-configuration-guide/monitoring-and-metrics/enabling-nexus-remote-support-and-remote-management.html
+      output: web, pdf

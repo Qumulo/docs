@@ -38,7 +38,7 @@ After you perform the initial SSO configuration in Nexus, you must ask a system 
 
 1. Provide your system administrator with the {{site.nexus.entityID}} and {{site.nexus.acsURL}}.
 
-1. Ask the system administrator to [perform the necessary configuration](system-administrator-configuration-workflow.html#configure-identity-provider).
+1. Ask the system administrator to [perform the necessary configuration](../authentication/enabling-sso-with-idp-system-administrator-workflow.html#configure-identity-provider).
 
 1. Receive the IdP Metadata URL from your system administrator. For example:
 
