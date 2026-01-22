@@ -178,7 +178,7 @@ qq fs_list_locks \
 {{site.data.alerts.end}}
 
 
-## Known Limits:
+## Known Limits
 Qumulo's implementation of NFSv4.1 currently supports:
 * Up to 1,000 connections for each node
 * Authentication with [Kerberos](../kerberos/kerberos-with-qumulo-core.html)
