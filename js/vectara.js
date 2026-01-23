@@ -127,7 +127,7 @@ function createSearch(
       corpusKeys.forEach(element => {
         const corpusKeyObject = {
           "corpus_key": element,
-          "lexical_interpolation": 0.005
+          "lexical_interpolation": 0.1
         };
         corpusKeyObjArr.push(corpusKeyObject);
       });
