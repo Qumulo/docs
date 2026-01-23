@@ -60,7 +60,7 @@ function createSearch(
   successFn,
   errorFn,
   icon,
-  pageSize = 25,
+  pageSize = 50,
   maxSummarizedResults = 5,
   sentencesBefore = 2,
   sentencesAfter = 2,
@@ -149,7 +149,8 @@ function createSearch(
               "corpora": corpusKeyObjArr,
               "reranker": {
                 "type": "customer_reranker",
-                "reranker_name": "Rerank_Multilingual_v1"
+                "limit": 30,
+                "reranker_name": "qwen3-reranker"
               }
             },
             "generation": {

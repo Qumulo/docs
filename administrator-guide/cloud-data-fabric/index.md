@@ -1,5 +1,5 @@
 ---
-title: "Cloud Data Fabric"
+title: "Cloud Data Fabric (CDF)"
 layout: landing_page
 permalink: /administrator-guide/cloud-data-fabric/
 redirect_from:
