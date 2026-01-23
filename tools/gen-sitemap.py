@@ -14,7 +14,7 @@ if not os.path.isdir(ROOT):
 html_files = []
 for dirpath, _, files in os.walk(ROOT):
     for f in files:
-        if f.endswith(".html") and f != "404.html":
+        if f.endswith(".html") and f != "404.html" and f != "agent.html":
             html_files.append(os.path.join(dirpath, f))
 
 if not html_files:
