@@ -31,7 +31,6 @@
         }
 
         .config-btn {
-            display: none !important;
             background: rgba(255,255,255,0.1);
             border: 1px solid rgba(255,255,255,0.2);
             color: white;
@@ -141,16 +140,6 @@
         .message.assistant pre code {
             background: none;
             padding: 0;
-        }
-
-        .message.assistant .keyword {
-            color: #00838A;
-            font-weight: 600;
-        }
-
-        .message.assistant strong {
-            color: #1B3A5C;
-            font-weight: 700;
         }
 
         .message.system {
@@ -779,28 +768,6 @@
 
             // Bold (markdown style)
             formatted = formatted.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
-
-            // Qumulo-specific keywords - highlight in brand colors
-            const qumuloKeywords = [
-                'Qumulo', 'Qumulo Core', 'Qumulo Alerts', 'Qumulo Protect',
-                'SMB', 'NFS', 'S3', 'API', 'REST API', 'CLI',
-                'quota', 'quotas', 'snapshot', 'snapshots', 'replication',
-                'cluster', 'node', 'nodes', 'storage', 'file system',
-                'RBAC', 'Active Directory', 'AD', 'LDAP', 'Kerberos',
-                'throughput', 'IOPS', 'latency', 'performance',
-                'capacity', 'SSD', 'HDD', 'flash', 'hybrid',
-                'Azure', 'AWS', 'GCP', 'cloud', 'on-premises',
-                'NFSv3', 'NFSv4', 'NFSv4.1', 'SMB2', 'SMB3',
-                'audit', 'audit log', 'analytics', 'metrics'
-            ];
-
-            // Sort by length (longest first) to avoid partial replacements
-            qumuloKeywords.sort((a, b) => b.length - a.length);
-
-            for (const keyword of qumuloKeywords) {
-                const regex = new RegExp(`\\b(${keyword})\\b`, 'gi');
-                formatted = formatted.replace(regex, '<span class="keyword">$1</span>');
-            }
 
             // Line breaks
             formatted = formatted.replace(/\n/g, '<br>');
