@@ -6,7 +6,7 @@ permalink: /qq-cli-command-guide/ad/ad_poll.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar
 summary: This section explains how to use the <code>qq ad_poll</code> command.
-synopsis: Get details on a join or leave operation
+synopsis: Get status of a join, leave, or reconfigure operation with Active Directory
 title: qq ad_poll
 usage: qq ad_poll [-h]
 zendesk_source: qq CLI Command Guide

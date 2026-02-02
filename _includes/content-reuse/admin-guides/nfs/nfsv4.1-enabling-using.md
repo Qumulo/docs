@@ -8,6 +8,12 @@ For more information about NFSv4.1 and file access permissions, see [Managing Fi
 {{site.data.alerts.end}}
 
 
+## How NFSv4.1 User Identities Work in Qumulo Core
+In Qumulo Core 7.7.5 (and higher), the system accepts user identities in the `&lt;principal&gt;@&lt;domain&gt;` format (for example, `alice@example.com`) when a domain name is different from the Active Directory domain to which your Qumulo cluster is joined NFS configuration for each tenant lets Qumulo Core and NFSv4.1 clients determine the domain string to be used over the wire.
+
+{% include important.html content="In Qumulo Core releases lower than 7.7.5, if the Qumulo cluster was joined to `domain.example.com`, the system expects all NFSv4.1 user identities to be in the `&lt;principal&gt;@domain.example.com` format. If `idmapd` on your clients is configured to use a different domain, authorization issues can occur." %}
+
+
 ## Configuring and Using Exports for NFSv4.1
 Qumulo's NFS exports can present a view of your cluster over NFS that might differ from the contents of the underlying file system. You can mark NFS exports as read-only, restricted (to allow access only from certain IP addresses), or configure specific user mappings. For more information, see [Create an NFS Export](https://care.qumulo.com/hc/en-us/articles/360000723928) on Qumulo Care.
 

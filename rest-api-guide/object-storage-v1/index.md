@@ -1,7 +1,7 @@
 ---
 layout: landing_page
 sidebar: rest_api_guide_sidebar
-summary: "The following methods interact with the Object Storage URIs"
+summary: "The following methods interact with the object storage configuration."
 title: Object Storage V1 (object-storage)
 redirect_from:
 - /rest-api-guide/object-storage/

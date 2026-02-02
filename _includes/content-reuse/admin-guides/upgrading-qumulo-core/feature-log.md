@@ -8,7 +8,18 @@ For information about upgrade types for each release, see <a href='mode-referenc
 
 {% comment %}For boilerplate text, use {{page.varNoPublicChanges}}{% endcomment %}
 
+## Qumulo Core 7.7.5
+{{ nexusLink }}
+
+* Added expansion of the placeholder `%U` to a username for SMB shares
+* Added the ability to handle NFSv4.1 user identities in the `<principal>@<domain>` format when a domain name is different from the Active Directory domain to which your Qumulo cluster is joined
+* Made additions and revisions associated with these changes to `qq` CLI commands and REST API endpoints
+* Resolved an issue with creating new files and then writing them to a spoke portal over SMB
+* Resolved an issue with the NFSv4.1 server not presenting the `INHERITED` flag on an Access Control Entry if the entry was inherited from a parent directory
+
 ## Qumulo Core 7.7.4
+{{ nexusLink }}
+
 * {{page.varNoPublicChanges}}
 * Added the `/v1/portal/ping` REST API endpoint and the `qq portal_ping` command
 * Changed how the `qq ad_cancel`, `ad_join`, `ad_leave`, and `ad_reconfigure` commands return the status of in-progress background operations

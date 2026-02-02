@@ -75,17 +75,18 @@ methods:
         ,\n          \"PRIVILEGE_LICENSE_READ\",\n          \"PRIVILEGE_CAPACITY_READ\"\
         ,\n          \"PRIVILEGE_CAPACITY_WRITE\",\n          \"PRIVILEGE_OBJECT_STORAGE_URIS_READ\"\
         ,\n          \"PRIVILEGE_OBJECT_STORAGE_URIS_WRITE\",\n          \"PRIVILEGE_DISK_ERROR_WRITE\"\
-        ,\n          \"PRIVILEGE_DISK_ERROR_READ\"\n        ],\n        \"description\"\
-        : \"Privileges the role has been granted:\\n * `PRIVILEGE_ACCESS_TOKENS_READ`\
-        \ - View any access tokens present in the system,\\n * `PRIVILEGE_ACCESS_TOKENS_WRITE`\
-        \ - Create or delete access tokens for any user in the system,\\n * `PRIVILEGE_AD_READ`\
-        \ - Read Qumulo Active Directory settings,\\n * `PRIVILEGE_AD_USE` - Use Qumulo's\
-        \ APIs for performing queries against Active Directory,\\n * `PRIVILEGE_AD_WRITE`\
-        \ - Modify Qumulo Active Directory settings,\\n * `PRIVILEGE_ANALYTICS_READ`\
-        \ - Read cluster analytics,\\n * `PRIVILEGE_AUDIT_READ` - Read audit settings,\\\
-        n * `PRIVILEGE_AUDIT_WRITE` - Modify audit settings,\\n * `PRIVILEGE_AUTH_CACHE_READ`\
-        \ - Internal-Only: Read authentication cache settings,\\n * `PRIVILEGE_AUTH_CACHE_WRITE`\
-        \ - Internal-Only: Modify authentication cache settings,\\n * `PRIVILEGE_CAPACITY_READ`\
+        ,\n          \"PRIVILEGE_DISK_ERROR_READ\",\n          \"PRIVILEGE_OBJECT_STORAGE_CONFIG_READ\"\
+        \n        ],\n        \"description\": \"Privileges the role has been granted:\\\
+        n * `PRIVILEGE_ACCESS_TOKENS_READ` - View any access tokens present in the\
+        \ system,\\n * `PRIVILEGE_ACCESS_TOKENS_WRITE` - Create or delete access tokens\
+        \ for any user in the system,\\n * `PRIVILEGE_AD_READ` - Read Qumulo Active\
+        \ Directory settings,\\n * `PRIVILEGE_AD_USE` - Use Qumulo's APIs for performing\
+        \ queries against Active Directory,\\n * `PRIVILEGE_AD_WRITE` - Modify Qumulo\
+        \ Active Directory settings,\\n * `PRIVILEGE_ANALYTICS_READ` - Read cluster\
+        \ analytics,\\n * `PRIVILEGE_AUDIT_READ` - Read audit settings,\\n * `PRIVILEGE_AUDIT_WRITE`\
+        \ - Modify audit settings,\\n * `PRIVILEGE_AUTH_CACHE_READ` - Internal-Only:\
+        \ Read authentication cache settings,\\n * `PRIVILEGE_AUTH_CACHE_WRITE` -\
+        \ Internal-Only: Modify authentication cache settings,\\n * `PRIVILEGE_CAPACITY_READ`\
         \ - View the capacity clamp value.,\\n * `PRIVILEGE_CAPACITY_WRITE` - Set\
         \ the capacity clamp value.,\\n * `PRIVILEGE_CHECKSUMMING_READ` - View the\
         \ status of checksumming,\\n * `PRIVILEGE_CLUSTER_READ` - View nodes, disks,\
@@ -139,11 +140,12 @@ methods:
         \ NFS exports,\\n * `PRIVILEGE_NFS_EXPORT_WRITE` - Create, modify, and delete\
         \ NFS exports,\\n * `PRIVILEGE_NFS_SETTINGS_READ` - Internal-Only: View NFS\
         \ server settings,\\n * `PRIVILEGE_NFS_SETTINGS_WRITE` - Internal-Only: Modify\
-        \ NFS server settings,\\n * `PRIVILEGE_OBJECT_STORAGE_URIS_READ` - View the\
-        \ object storage URIs.,\\n * `PRIVILEGE_OBJECT_STORAGE_URIS_WRITE` - Add new\
-        \ object storage URIs.,\\n * `PRIVILEGE_PORTAL_GLOBAL_READ` - View global\
-        \ portal settings and status,\\n * `PRIVILEGE_PORTAL_HUB_READ` - View hub\
-        \ portal relationship status and configuration,\\n * `PRIVILEGE_PORTAL_HUB_WRITE`\
+        \ NFS server settings,\\n * `PRIVILEGE_OBJECT_STORAGE_CONFIG_READ` - Read\
+        \ object storage config, including store URIs and credentials.,\\n * `PRIVILEGE_OBJECT_STORAGE_URIS_READ`\
+        \ - View the object storage URIs.,\\n * `PRIVILEGE_OBJECT_STORAGE_URIS_WRITE`\
+        \ - Add new object storage URIs.,\\n * `PRIVILEGE_PORTAL_GLOBAL_READ` - View\
+        \ global portal settings and status,\\n * `PRIVILEGE_PORTAL_HUB_READ` - View\
+        \ hub portal relationship status and configuration,\\n * `PRIVILEGE_PORTAL_HUB_WRITE`\
         \ - Authorize, modify, and delete hub portal relationships. Granting this\
         \ privilege allows authorizing proposed relationships. Depending on existing\
         \ file and directory permissions, this privilege can allow remote access to\
@@ -295,17 +297,18 @@ methods:
         ,\n          \"PRIVILEGE_LICENSE_READ\",\n          \"PRIVILEGE_CAPACITY_READ\"\
         ,\n          \"PRIVILEGE_CAPACITY_WRITE\",\n          \"PRIVILEGE_OBJECT_STORAGE_URIS_READ\"\
         ,\n          \"PRIVILEGE_OBJECT_STORAGE_URIS_WRITE\",\n          \"PRIVILEGE_DISK_ERROR_WRITE\"\
-        ,\n          \"PRIVILEGE_DISK_ERROR_READ\"\n        ],\n        \"description\"\
-        : \"Privileges the role has been granted:\\n * `PRIVILEGE_ACCESS_TOKENS_READ`\
-        \ - View any access tokens present in the system,\\n * `PRIVILEGE_ACCESS_TOKENS_WRITE`\
-        \ - Create or delete access tokens for any user in the system,\\n * `PRIVILEGE_AD_READ`\
-        \ - Read Qumulo Active Directory settings,\\n * `PRIVILEGE_AD_USE` - Use Qumulo's\
-        \ APIs for performing queries against Active Directory,\\n * `PRIVILEGE_AD_WRITE`\
-        \ - Modify Qumulo Active Directory settings,\\n * `PRIVILEGE_ANALYTICS_READ`\
-        \ - Read cluster analytics,\\n * `PRIVILEGE_AUDIT_READ` - Read audit settings,\\\
-        n * `PRIVILEGE_AUDIT_WRITE` - Modify audit settings,\\n * `PRIVILEGE_AUTH_CACHE_READ`\
-        \ - Internal-Only: Read authentication cache settings,\\n * `PRIVILEGE_AUTH_CACHE_WRITE`\
-        \ - Internal-Only: Modify authentication cache settings,\\n * `PRIVILEGE_CAPACITY_READ`\
+        ,\n          \"PRIVILEGE_DISK_ERROR_READ\",\n          \"PRIVILEGE_OBJECT_STORAGE_CONFIG_READ\"\
+        \n        ],\n        \"description\": \"Privileges the role has been granted:\\\
+        n * `PRIVILEGE_ACCESS_TOKENS_READ` - View any access tokens present in the\
+        \ system,\\n * `PRIVILEGE_ACCESS_TOKENS_WRITE` - Create or delete access tokens\
+        \ for any user in the system,\\n * `PRIVILEGE_AD_READ` - Read Qumulo Active\
+        \ Directory settings,\\n * `PRIVILEGE_AD_USE` - Use Qumulo's APIs for performing\
+        \ queries against Active Directory,\\n * `PRIVILEGE_AD_WRITE` - Modify Qumulo\
+        \ Active Directory settings,\\n * `PRIVILEGE_ANALYTICS_READ` - Read cluster\
+        \ analytics,\\n * `PRIVILEGE_AUDIT_READ` - Read audit settings,\\n * `PRIVILEGE_AUDIT_WRITE`\
+        \ - Modify audit settings,\\n * `PRIVILEGE_AUTH_CACHE_READ` - Internal-Only:\
+        \ Read authentication cache settings,\\n * `PRIVILEGE_AUTH_CACHE_WRITE` -\
+        \ Internal-Only: Modify authentication cache settings,\\n * `PRIVILEGE_CAPACITY_READ`\
         \ - View the capacity clamp value.,\\n * `PRIVILEGE_CAPACITY_WRITE` - Set\
         \ the capacity clamp value.,\\n * `PRIVILEGE_CHECKSUMMING_READ` - View the\
         \ status of checksumming,\\n * `PRIVILEGE_CLUSTER_READ` - View nodes, disks,\
@@ -359,11 +362,12 @@ methods:
         \ NFS exports,\\n * `PRIVILEGE_NFS_EXPORT_WRITE` - Create, modify, and delete\
         \ NFS exports,\\n * `PRIVILEGE_NFS_SETTINGS_READ` - Internal-Only: View NFS\
         \ server settings,\\n * `PRIVILEGE_NFS_SETTINGS_WRITE` - Internal-Only: Modify\
-        \ NFS server settings,\\n * `PRIVILEGE_OBJECT_STORAGE_URIS_READ` - View the\
-        \ object storage URIs.,\\n * `PRIVILEGE_OBJECT_STORAGE_URIS_WRITE` - Add new\
-        \ object storage URIs.,\\n * `PRIVILEGE_PORTAL_GLOBAL_READ` - View global\
-        \ portal settings and status,\\n * `PRIVILEGE_PORTAL_HUB_READ` - View hub\
-        \ portal relationship status and configuration,\\n * `PRIVILEGE_PORTAL_HUB_WRITE`\
+        \ NFS server settings,\\n * `PRIVILEGE_OBJECT_STORAGE_CONFIG_READ` - Read\
+        \ object storage config, including store URIs and credentials.,\\n * `PRIVILEGE_OBJECT_STORAGE_URIS_READ`\
+        \ - View the object storage URIs.,\\n * `PRIVILEGE_OBJECT_STORAGE_URIS_WRITE`\
+        \ - Add new object storage URIs.,\\n * `PRIVILEGE_PORTAL_GLOBAL_READ` - View\
+        \ global portal settings and status,\\n * `PRIVILEGE_PORTAL_HUB_READ` - View\
+        \ hub portal relationship status and configuration,\\n * `PRIVILEGE_PORTAL_HUB_WRITE`\
         \ - Authorize, modify, and delete hub portal relationships. Granting this\
         \ privilege allows authorizing proposed relationships. Depending on existing\
         \ file and directory permissions, this privilege can allow remote access to\
@@ -506,17 +510,18 @@ methods:
         ,\n          \"PRIVILEGE_LICENSE_READ\",\n          \"PRIVILEGE_CAPACITY_READ\"\
         ,\n          \"PRIVILEGE_CAPACITY_WRITE\",\n          \"PRIVILEGE_OBJECT_STORAGE_URIS_READ\"\
         ,\n          \"PRIVILEGE_OBJECT_STORAGE_URIS_WRITE\",\n          \"PRIVILEGE_DISK_ERROR_WRITE\"\
-        ,\n          \"PRIVILEGE_DISK_ERROR_READ\"\n        ],\n        \"description\"\
-        : \"Privileges the role has been granted:\\n * `PRIVILEGE_ACCESS_TOKENS_READ`\
-        \ - View any access tokens present in the system,\\n * `PRIVILEGE_ACCESS_TOKENS_WRITE`\
-        \ - Create or delete access tokens for any user in the system,\\n * `PRIVILEGE_AD_READ`\
-        \ - Read Qumulo Active Directory settings,\\n * `PRIVILEGE_AD_USE` - Use Qumulo's\
-        \ APIs for performing queries against Active Directory,\\n * `PRIVILEGE_AD_WRITE`\
-        \ - Modify Qumulo Active Directory settings,\\n * `PRIVILEGE_ANALYTICS_READ`\
-        \ - Read cluster analytics,\\n * `PRIVILEGE_AUDIT_READ` - Read audit settings,\\\
-        n * `PRIVILEGE_AUDIT_WRITE` - Modify audit settings,\\n * `PRIVILEGE_AUTH_CACHE_READ`\
-        \ - Internal-Only: Read authentication cache settings,\\n * `PRIVILEGE_AUTH_CACHE_WRITE`\
-        \ - Internal-Only: Modify authentication cache settings,\\n * `PRIVILEGE_CAPACITY_READ`\
+        ,\n          \"PRIVILEGE_DISK_ERROR_READ\",\n          \"PRIVILEGE_OBJECT_STORAGE_CONFIG_READ\"\
+        \n        ],\n        \"description\": \"Privileges the role has been granted:\\\
+        n * `PRIVILEGE_ACCESS_TOKENS_READ` - View any access tokens present in the\
+        \ system,\\n * `PRIVILEGE_ACCESS_TOKENS_WRITE` - Create or delete access tokens\
+        \ for any user in the system,\\n * `PRIVILEGE_AD_READ` - Read Qumulo Active\
+        \ Directory settings,\\n * `PRIVILEGE_AD_USE` - Use Qumulo's APIs for performing\
+        \ queries against Active Directory,\\n * `PRIVILEGE_AD_WRITE` - Modify Qumulo\
+        \ Active Directory settings,\\n * `PRIVILEGE_ANALYTICS_READ` - Read cluster\
+        \ analytics,\\n * `PRIVILEGE_AUDIT_READ` - Read audit settings,\\n * `PRIVILEGE_AUDIT_WRITE`\
+        \ - Modify audit settings,\\n * `PRIVILEGE_AUTH_CACHE_READ` - Internal-Only:\
+        \ Read authentication cache settings,\\n * `PRIVILEGE_AUTH_CACHE_WRITE` -\
+        \ Internal-Only: Modify authentication cache settings,\\n * `PRIVILEGE_CAPACITY_READ`\
         \ - View the capacity clamp value.,\\n * `PRIVILEGE_CAPACITY_WRITE` - Set\
         \ the capacity clamp value.,\\n * `PRIVILEGE_CHECKSUMMING_READ` - View the\
         \ status of checksumming,\\n * `PRIVILEGE_CLUSTER_READ` - View nodes, disks,\
@@ -570,11 +575,12 @@ methods:
         \ NFS exports,\\n * `PRIVILEGE_NFS_EXPORT_WRITE` - Create, modify, and delete\
         \ NFS exports,\\n * `PRIVILEGE_NFS_SETTINGS_READ` - Internal-Only: View NFS\
         \ server settings,\\n * `PRIVILEGE_NFS_SETTINGS_WRITE` - Internal-Only: Modify\
-        \ NFS server settings,\\n * `PRIVILEGE_OBJECT_STORAGE_URIS_READ` - View the\
-        \ object storage URIs.,\\n * `PRIVILEGE_OBJECT_STORAGE_URIS_WRITE` - Add new\
-        \ object storage URIs.,\\n * `PRIVILEGE_PORTAL_GLOBAL_READ` - View global\
-        \ portal settings and status,\\n * `PRIVILEGE_PORTAL_HUB_READ` - View hub\
-        \ portal relationship status and configuration,\\n * `PRIVILEGE_PORTAL_HUB_WRITE`\
+        \ NFS server settings,\\n * `PRIVILEGE_OBJECT_STORAGE_CONFIG_READ` - Read\
+        \ object storage config, including store URIs and credentials.,\\n * `PRIVILEGE_OBJECT_STORAGE_URIS_READ`\
+        \ - View the object storage URIs.,\\n * `PRIVILEGE_OBJECT_STORAGE_URIS_WRITE`\
+        \ - Add new object storage URIs.,\\n * `PRIVILEGE_PORTAL_GLOBAL_READ` - View\
+        \ global portal settings and status,\\n * `PRIVILEGE_PORTAL_HUB_READ` - View\
+        \ hub portal relationship status and configuration,\\n * `PRIVILEGE_PORTAL_HUB_WRITE`\
         \ - Authorize, modify, and delete hub portal relationships. Granting this\
         \ privilege allows authorizing proposed relationships. Depending on existing\
         \ file and directory permissions, this privilege can allow remote access to\
@@ -722,17 +728,18 @@ methods:
         ,\n          \"PRIVILEGE_LICENSE_READ\",\n          \"PRIVILEGE_CAPACITY_READ\"\
         ,\n          \"PRIVILEGE_CAPACITY_WRITE\",\n          \"PRIVILEGE_OBJECT_STORAGE_URIS_READ\"\
         ,\n          \"PRIVILEGE_OBJECT_STORAGE_URIS_WRITE\",\n          \"PRIVILEGE_DISK_ERROR_WRITE\"\
-        ,\n          \"PRIVILEGE_DISK_ERROR_READ\"\n        ],\n        \"description\"\
-        : \"Privileges the role has been granted:\\n * `PRIVILEGE_ACCESS_TOKENS_READ`\
-        \ - View any access tokens present in the system,\\n * `PRIVILEGE_ACCESS_TOKENS_WRITE`\
-        \ - Create or delete access tokens for any user in the system,\\n * `PRIVILEGE_AD_READ`\
-        \ - Read Qumulo Active Directory settings,\\n * `PRIVILEGE_AD_USE` - Use Qumulo's\
-        \ APIs for performing queries against Active Directory,\\n * `PRIVILEGE_AD_WRITE`\
-        \ - Modify Qumulo Active Directory settings,\\n * `PRIVILEGE_ANALYTICS_READ`\
-        \ - Read cluster analytics,\\n * `PRIVILEGE_AUDIT_READ` - Read audit settings,\\\
-        n * `PRIVILEGE_AUDIT_WRITE` - Modify audit settings,\\n * `PRIVILEGE_AUTH_CACHE_READ`\
-        \ - Internal-Only: Read authentication cache settings,\\n * `PRIVILEGE_AUTH_CACHE_WRITE`\
-        \ - Internal-Only: Modify authentication cache settings,\\n * `PRIVILEGE_CAPACITY_READ`\
+        ,\n          \"PRIVILEGE_DISK_ERROR_READ\",\n          \"PRIVILEGE_OBJECT_STORAGE_CONFIG_READ\"\
+        \n        ],\n        \"description\": \"Privileges the role has been granted:\\\
+        n * `PRIVILEGE_ACCESS_TOKENS_READ` - View any access tokens present in the\
+        \ system,\\n * `PRIVILEGE_ACCESS_TOKENS_WRITE` - Create or delete access tokens\
+        \ for any user in the system,\\n * `PRIVILEGE_AD_READ` - Read Qumulo Active\
+        \ Directory settings,\\n * `PRIVILEGE_AD_USE` - Use Qumulo's APIs for performing\
+        \ queries against Active Directory,\\n * `PRIVILEGE_AD_WRITE` - Modify Qumulo\
+        \ Active Directory settings,\\n * `PRIVILEGE_ANALYTICS_READ` - Read cluster\
+        \ analytics,\\n * `PRIVILEGE_AUDIT_READ` - Read audit settings,\\n * `PRIVILEGE_AUDIT_WRITE`\
+        \ - Modify audit settings,\\n * `PRIVILEGE_AUTH_CACHE_READ` - Internal-Only:\
+        \ Read authentication cache settings,\\n * `PRIVILEGE_AUTH_CACHE_WRITE` -\
+        \ Internal-Only: Modify authentication cache settings,\\n * `PRIVILEGE_CAPACITY_READ`\
         \ - View the capacity clamp value.,\\n * `PRIVILEGE_CAPACITY_WRITE` - Set\
         \ the capacity clamp value.,\\n * `PRIVILEGE_CHECKSUMMING_READ` - View the\
         \ status of checksumming,\\n * `PRIVILEGE_CLUSTER_READ` - View nodes, disks,\
@@ -786,11 +793,12 @@ methods:
         \ NFS exports,\\n * `PRIVILEGE_NFS_EXPORT_WRITE` - Create, modify, and delete\
         \ NFS exports,\\n * `PRIVILEGE_NFS_SETTINGS_READ` - Internal-Only: View NFS\
         \ server settings,\\n * `PRIVILEGE_NFS_SETTINGS_WRITE` - Internal-Only: Modify\
-        \ NFS server settings,\\n * `PRIVILEGE_OBJECT_STORAGE_URIS_READ` - View the\
-        \ object storage URIs.,\\n * `PRIVILEGE_OBJECT_STORAGE_URIS_WRITE` - Add new\
-        \ object storage URIs.,\\n * `PRIVILEGE_PORTAL_GLOBAL_READ` - View global\
-        \ portal settings and status,\\n * `PRIVILEGE_PORTAL_HUB_READ` - View hub\
-        \ portal relationship status and configuration,\\n * `PRIVILEGE_PORTAL_HUB_WRITE`\
+        \ NFS server settings,\\n * `PRIVILEGE_OBJECT_STORAGE_CONFIG_READ` - Read\
+        \ object storage config, including store URIs and credentials.,\\n * `PRIVILEGE_OBJECT_STORAGE_URIS_READ`\
+        \ - View the object storage URIs.,\\n * `PRIVILEGE_OBJECT_STORAGE_URIS_WRITE`\
+        \ - Add new object storage URIs.,\\n * `PRIVILEGE_PORTAL_GLOBAL_READ` - View\
+        \ global portal settings and status,\\n * `PRIVILEGE_PORTAL_HUB_READ` - View\
+        \ hub portal relationship status and configuration,\\n * `PRIVILEGE_PORTAL_HUB_WRITE`\
         \ - Authorize, modify, and delete hub portal relationships. Granting this\
         \ privilege allows authorizing proposed relationships. Depending on existing\
         \ file and directory permissions, this privilege can allow remote access to\
@@ -933,17 +941,18 @@ methods:
         ,\n          \"PRIVILEGE_LICENSE_READ\",\n          \"PRIVILEGE_CAPACITY_READ\"\
         ,\n          \"PRIVILEGE_CAPACITY_WRITE\",\n          \"PRIVILEGE_OBJECT_STORAGE_URIS_READ\"\
         ,\n          \"PRIVILEGE_OBJECT_STORAGE_URIS_WRITE\",\n          \"PRIVILEGE_DISK_ERROR_WRITE\"\
-        ,\n          \"PRIVILEGE_DISK_ERROR_READ\"\n        ],\n        \"description\"\
-        : \"Privileges the role has been granted:\\n * `PRIVILEGE_ACCESS_TOKENS_READ`\
-        \ - View any access tokens present in the system,\\n * `PRIVILEGE_ACCESS_TOKENS_WRITE`\
-        \ - Create or delete access tokens for any user in the system,\\n * `PRIVILEGE_AD_READ`\
-        \ - Read Qumulo Active Directory settings,\\n * `PRIVILEGE_AD_USE` - Use Qumulo's\
-        \ APIs for performing queries against Active Directory,\\n * `PRIVILEGE_AD_WRITE`\
-        \ - Modify Qumulo Active Directory settings,\\n * `PRIVILEGE_ANALYTICS_READ`\
-        \ - Read cluster analytics,\\n * `PRIVILEGE_AUDIT_READ` - Read audit settings,\\\
-        n * `PRIVILEGE_AUDIT_WRITE` - Modify audit settings,\\n * `PRIVILEGE_AUTH_CACHE_READ`\
-        \ - Internal-Only: Read authentication cache settings,\\n * `PRIVILEGE_AUTH_CACHE_WRITE`\
-        \ - Internal-Only: Modify authentication cache settings,\\n * `PRIVILEGE_CAPACITY_READ`\
+        ,\n          \"PRIVILEGE_DISK_ERROR_READ\",\n          \"PRIVILEGE_OBJECT_STORAGE_CONFIG_READ\"\
+        \n        ],\n        \"description\": \"Privileges the role has been granted:\\\
+        n * `PRIVILEGE_ACCESS_TOKENS_READ` - View any access tokens present in the\
+        \ system,\\n * `PRIVILEGE_ACCESS_TOKENS_WRITE` - Create or delete access tokens\
+        \ for any user in the system,\\n * `PRIVILEGE_AD_READ` - Read Qumulo Active\
+        \ Directory settings,\\n * `PRIVILEGE_AD_USE` - Use Qumulo's APIs for performing\
+        \ queries against Active Directory,\\n * `PRIVILEGE_AD_WRITE` - Modify Qumulo\
+        \ Active Directory settings,\\n * `PRIVILEGE_ANALYTICS_READ` - Read cluster\
+        \ analytics,\\n * `PRIVILEGE_AUDIT_READ` - Read audit settings,\\n * `PRIVILEGE_AUDIT_WRITE`\
+        \ - Modify audit settings,\\n * `PRIVILEGE_AUTH_CACHE_READ` - Internal-Only:\
+        \ Read authentication cache settings,\\n * `PRIVILEGE_AUTH_CACHE_WRITE` -\
+        \ Internal-Only: Modify authentication cache settings,\\n * `PRIVILEGE_CAPACITY_READ`\
         \ - View the capacity clamp value.,\\n * `PRIVILEGE_CAPACITY_WRITE` - Set\
         \ the capacity clamp value.,\\n * `PRIVILEGE_CHECKSUMMING_READ` - View the\
         \ status of checksumming,\\n * `PRIVILEGE_CLUSTER_READ` - View nodes, disks,\
@@ -997,11 +1006,12 @@ methods:
         \ NFS exports,\\n * `PRIVILEGE_NFS_EXPORT_WRITE` - Create, modify, and delete\
         \ NFS exports,\\n * `PRIVILEGE_NFS_SETTINGS_READ` - Internal-Only: View NFS\
         \ server settings,\\n * `PRIVILEGE_NFS_SETTINGS_WRITE` - Internal-Only: Modify\
-        \ NFS server settings,\\n * `PRIVILEGE_OBJECT_STORAGE_URIS_READ` - View the\
-        \ object storage URIs.,\\n * `PRIVILEGE_OBJECT_STORAGE_URIS_WRITE` - Add new\
-        \ object storage URIs.,\\n * `PRIVILEGE_PORTAL_GLOBAL_READ` - View global\
-        \ portal settings and status,\\n * `PRIVILEGE_PORTAL_HUB_READ` - View hub\
-        \ portal relationship status and configuration,\\n * `PRIVILEGE_PORTAL_HUB_WRITE`\
+        \ NFS server settings,\\n * `PRIVILEGE_OBJECT_STORAGE_CONFIG_READ` - Read\
+        \ object storage config, including store URIs and credentials.,\\n * `PRIVILEGE_OBJECT_STORAGE_URIS_READ`\
+        \ - View the object storage URIs.,\\n * `PRIVILEGE_OBJECT_STORAGE_URIS_WRITE`\
+        \ - Add new object storage URIs.,\\n * `PRIVILEGE_PORTAL_GLOBAL_READ` - View\
+        \ global portal settings and status,\\n * `PRIVILEGE_PORTAL_HUB_READ` - View\
+        \ hub portal relationship status and configuration,\\n * `PRIVILEGE_PORTAL_HUB_WRITE`\
         \ - Authorize, modify, and delete hub portal relationships. Granting this\
         \ privilege allows authorizing proposed relationships. Depending on existing\
         \ file and directory permissions, this privilege can allow remote access to\

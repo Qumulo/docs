@@ -1068,6 +1068,10 @@ entries:
       url: /rest-api-guide/object-storage-v1/object-storage_add-uris.html
     - apiversion: v1
       output: web,pdf
+      title: object-storage/external-credentials-source
+      url: /rest-api-guide/object-storage-v1/object-storage_external-credentials-source.html
+    - apiversion: v1
+      output: web,pdf
       title: object-storage/uris
       url: /rest-api-guide/object-storage-v1/object-storage_uris.html
     output: web,pdf
