@@ -14,6 +14,7 @@ let searchWidget = createSearch(
   false                                         	    // default focus
   //0                                           	    // offset for paging
 );
+
 document.getElementById("search-widget").appendChild(searchWidget);
 
 function addResultPrefixes() {
