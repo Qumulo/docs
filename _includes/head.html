@@ -6,7 +6,7 @@
   script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://maxcdn.bootstrapcdn.com https://www.googletagmanager.com https://cdn.jsdelivr.net https://cdn.datatables.net; 
   style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://maxcdn.bootstrapcdn.com https://cdn.datatables.net; 
   font-src 'self' data: https://fonts.gstatic.com https://maxcdn.bootstrapcdn.com; 
-  img-src 'self' data: https:; 
+  img-src 'self' data:; 
   connect-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://maxcdn.bootstrapcdn.com;">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 {% assign title = page.rest_endpoint | default: page.title %}{% if page.isHomepage %}<title>Qumulo Documentation Portal</title>{% else %}<title>{{ title }} | {{ site.site_title }}</title>{% endif %}
