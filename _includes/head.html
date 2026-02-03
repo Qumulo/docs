@@ -6,8 +6,29 @@
 {% assign title = page.rest_endpoint | default: page.title %}{% if page.isHomepage %}<title>Qumulo Documentation Portal</title>{% else %}<title>{{ title }} | {{ site.site_title }}</title>{% endif %}
 <link rel="canonical" href="{{ site.url }}{{ page.url }}">
 
-<!-- Organization & Website JSON-LD Schema -->
-<script src="{{ "js/schema.js" | relative_url }}"></script>
+<!-- Organization JSON-LD Schema -->
+<script>
+fetch('/data/organization.json')
+.then(response => response.text())
+.then(structuredDataText => {
+  const script = document.createElement('script');
+  script.setAttribute('type', 'application/ld+json');
+  script.textContent = structuredDataText;
+  document.head.appendChild(script);
+});    
+</script>
+
+<!-- Website JSON-LD Schema -->
+<script>
+fetch('/data/website.json')
+.then(response => response.text())
+.then(structuredDataText => {
+  const script = document.createElement('script');
+  script.setAttribute('type', 'application/ld+json');
+  script.textContent = structuredDataText;
+  document.head.appendChild(script);
+});    
+</script>
 
 <!-- BEGIN TO PREPARE WEBSITE RESOURCES -->  
 <!-- Preload from jsdelivr.net:
