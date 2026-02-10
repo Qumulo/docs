@@ -659,7 +659,7 @@ reverse_integrate_all_changes_from_mainline() {
         git merge --abort
       fi
     done
-  } |& awk '
+  } 2>&1 | awk '
     BEGIN {
       hold = "";                 # pending blank line (if any)
       last_blank_printed = 0;    # whether we just printed a blank
