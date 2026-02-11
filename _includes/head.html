@@ -30,8 +30,14 @@
   frame-src 
     https://www.googletagmanager.com;
   object-src 'none';
-  frame-ancestors 'self';
 ">
+
+<!-- This replaces frame-ancestors 'self'; which is unsupported in meta tags. -->
+<script>
+  if (self !== top) {
+    top.location = self.location;
+  }
+</script>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 {% assign title = page.rest_endpoint | default: page.title %}{% if page.isHomepage %}<title>Qumulo Documentation Portal</title>{% else %}<title>{{ title }} | {{ site.site_title }}</title>{% endif %}
