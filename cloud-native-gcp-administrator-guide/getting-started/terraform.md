@@ -3,7 +3,7 @@ title: "Deploying Cloud Native Qumulo on GCP with Terraform"
 summary: "This section explains how to deploy Cloud Native Qumulo (CNQ) on GCP by creating the persistent storage and the cluster compute and cache resources by using Terraform. It also provides recommendations for Terraform deployments and information about post-deployment actions and optimization."
 permalink: /cloud-native-gcp-administrator-guide/getting-started/terraform.html
 sidebar: cloud_native_gcp_administrator_guide_sidebar
-varRepoLink: <code>qumulo-terraform-gcp-&lt;x.y&gt;.zip</code> file (the version in the file name corresponds to the provisioning scripts, not to the version of Qumulo Core)
+varRepoLink: <code>qumulo-terraform-gcp-&lt;x.y&gt;.zip</code> file (the version in the file name corresponds to the provisioning scripts, not to the Qumulo Core version)
 deployment: tf
 ---
 

@@ -15,7 +15,7 @@ For information about which upgrade modes different Qumulo Core releases use, se
 ### Instant Software Upgrade
 The more common, faster instant software upgrade requires restarting only the container on your nodes and has a downtime of less than 30 seconds without disruption to the operation of the cluster.
 
-Because in Qumulo Core 3.3.2 (and higher), the Qumulo file and data protection systems are separate from the host in charge of running the operating system and the services specific to each hardware or cloud platform, and because these services run in a lightweight container (by using Ubuntu-native [systemd-nspawn](https://www.freedesktop.org/software/systemd/man/systemd-nspawn.html) containerization) in the user space, it is possible to move quickly from one version of Qumulo Core to another by loading a new container and pointing the runtime environment at updated software.
+Because in Qumulo Core 3.3.2 (and higher), the Qumulo file and data protection systems are separate from the host in charge of running the operating system and the services specific to each hardware or cloud platform, and because these services run in a lightweight container (by using Ubuntu-native [systemd-nspawn](https://www.freedesktop.org/software/systemd/man/systemd-nspawn.html) containerization) in the user space, it is possible to move quickly from one Qumulo Core version to another by loading a new container and pointing the runtime environment at updated software.
   
 {{site.data.alerts.note}}
 <ul>

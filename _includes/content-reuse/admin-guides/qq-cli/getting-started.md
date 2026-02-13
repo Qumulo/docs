@@ -35,7 +35,7 @@ The best way to start exploring your Qumulo cluster by using the `qq` CLI is to 
 
 * **{% include qq.html command="login" %}:** Connect to the IP address of one of the nodes in your cluster and log in.
 * **{% include qq.html command="nodes_list" %}:** List information about the nodes in your cluster.
-* **{% include qq.html command="version" %}:** Show the version of Qumulo Core running on your cluster.
+* **{% include qq.html command="version" %}:** Show the Qumulo Core version running on your cluster.
 * **{% include qq.html command="fs_read_dir" %}:** List the contents of a directory on your cluster.
 * **{% include qq.html command="fs_write" %}:** Write a file to a directory on your cluster.
 

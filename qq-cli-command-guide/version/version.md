@@ -15,7 +15,7 @@ zendesk_source: qq CLI Command Guide
 
 ## Examples
 
-### To Show the Version of Qumulo Core Running on Your Cluster
+### To Show the Qumulo Core Version Running on Your Cluster
 Run the `qq version` command.
 
 {{site.exampleOutput}}

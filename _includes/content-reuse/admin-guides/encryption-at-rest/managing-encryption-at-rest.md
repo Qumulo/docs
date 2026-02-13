@@ -4,7 +4,7 @@
 {{nonANQ}}
 {% else %}
 <ul>
-  <li>Upgrading a Qumulo cluster from a version of Qumulo Core lower than 3.1.5 doesn't enable encryption automatically. You must rebuild your cluster to take advantage of this feature. When you <a href="https://care.qumulo.com/hc/en-us/articles/115014525587">create a new cluster</a>, Qumulo Core enables encryption automatically and distributes the master key to all nodes in the cluster.</li>
+  <li>Upgrading a Qumulo cluster from a Qumulo Core version lower than 3.1.5 doesn't enable encryption automatically. You must rebuild your cluster to take advantage of this feature. When you <a href="https://care.qumulo.com/hc/en-us/articles/115014525587">create a new cluster</a>, Qumulo Core enables encryption automatically and distributes the master key to all nodes in the cluster.</li>
   <li>{{nonANQ}}</li>
 </ul>
 {% endif %}

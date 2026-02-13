@@ -27,13 +27,13 @@ If Qumulo Core doesn't discover any unconfigured nodes, it displays the message 
 {{site.data.alerts.important}}
 <ul>
   <li>{{site.hardware.platinumOnlyThis}}</li>
-  <li>If the version of Qumulo Core on your existing nodes predates the Qumulo-certified drives that you received with your new nodes, you can't install a lower version of Qumulo Core on your new node and Qumulo Core displays the message <strong>Installation failed</strong>. Use the cluster logs to identify any incompatible drives.</li>
+  <li>If the Qumulo Core version on your existing nodes predates the Qumulo-certified drives that you received with your new nodes, you can't install a lower Qumulo Core version on your new node and Qumulo Core displays the message <strong>Installation failed</strong>. Use the cluster logs to identify any incompatible drives.</li>
 </ul>
 {{site.data.alerts.end}}
 
 To receive support for new, Qumulo-certified drives, do one of the following:
 
-* Upgrade your existing cluster to the latest version of Qumulo Core and then install the same version of Qumulo Core on your new node. For more information, see [Upgrading Your Qumulo Cluster](../upgrading-qumulo-core/performing-upgrades.html).
+* Upgrade your existing cluster to the latest Qumulo Core version and then install the same Qumulo Core version on your new node. For more information, see [Upgrading Your Qumulo Cluster](../upgrading-qumulo-core/performing-upgrades.html).
   
 * Update the Supported Drive List on your new node. For more information, {{site.contactQumuloCare}}.
 

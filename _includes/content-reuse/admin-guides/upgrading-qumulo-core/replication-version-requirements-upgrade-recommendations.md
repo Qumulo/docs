@@ -1,4 +1,4 @@
-The replication process creates a consistent point-in-time copy of data in a directory on a source cluster when Qumulo Core transfers the data to a directory on a target cluster. Because two clusters are required for the replication process, there are specific requirements for version of Qumulo Core that the two clusters must run.
+The replication process creates a consistent point-in-time copy of data in a directory on a source cluster when Qumulo Core transfers the data to a directory on a target cluster. Because two clusters are required for the replication process, there are specific requirements for Qumulo Core versions that the two clusters must run.
 
 ## Replication for Qumulo Core 6.0.0.x (and Higher)
 For Qumulo Core 6.0.0.x (and higher), clusters that run different versions can replicate _with all quarterly and non-quarterly versions, up to eight quarters in the future._

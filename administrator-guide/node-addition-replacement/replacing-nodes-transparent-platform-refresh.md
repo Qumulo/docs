@@ -11,7 +11,7 @@ sidebar: administrator_guide_sidebar
 <ul>
   <li>Qumulo Core doesn't support replacing nodes in clusters with more than 100 nodes.</li>
   <li>The total capacity of the planned cluster configuration can't be less than the total capacity of the current cluster configuration.</li>
-  <li>In Qumulo Core 6.1.2.2 (and higher), you can use the <code>qq</code> CLI to replace nodes. To replace nodes on a lower version of Qumulo Core, {{site.contactQumuloCare}}.</li>
+  <li>In Qumulo Core 6.1.2.2 (and higher), you can use the <code>qq</code> CLI to replace nodes. To replace nodes on a lower Qumulo Core version, {{site.contactQumuloCare}}.</li>
 </ul>
 {{site.data.alerts.end}}
 

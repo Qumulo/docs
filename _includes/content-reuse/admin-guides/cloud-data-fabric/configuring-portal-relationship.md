@@ -9,7 +9,7 @@ This section explains how to configure a [portal relationship](how-portal-creati
 {{site.data.alerts.end}}
 
 ### Prerequisites
-* Two clusters with the same version of Qumulo Core
+* Two clusters with the same Qumulo Core version
 
 * Network connectivity on TCP port 3713 from the cluster that shares a portion of its file system for the [spoke portal root directory](how-portal-creation-enables-cloud-data-fabric.html#portal-root-directory) to the cluster that will share a portion of its file system for the [hub portal root directory](how-portal-creation-enables-cloud-data-fabric.html#portal-root-directory)
 
