@@ -105,7 +105,7 @@ For information about the most important features from each release, click the Q
     </tr>
     <tr>
       <td><a href="feature-log.html#qumulo-core-744">7.4.4</a></td>
-      <td><span class="emoji">✅</span></td>
+      <td></td>
       <td class="platform">Platform</td>
     </tr>      
     <tr>
