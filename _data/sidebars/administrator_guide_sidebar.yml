@@ -48,6 +48,10 @@ entries:
       url: /administrator-guide/getting-started/installing-product-package.html
       output: web, pdf
 
+    - title: Configuring Interface Tagging for Host-Managed Networking
+      url: /administrator-guide/getting-started/configuring-interface-tagging-host-managed-networking.html
+      output: web, pdf
+
     - title: Supported Configurations and Known Limits
       url: /administrator-guide/getting-started/supported-configurations-known-limits.html
       output: web, pdf
@@ -200,6 +204,10 @@ entries:
     url: /administrator-guide/network-configuration/index.html
     output: web, pdf
     folderitems:
+
+    - title: Configuring Interface Tagging for Host-Managed Networking
+      url: /administrator-guide/network-configuration/configuring-interface-tagging-host-managed-networking.html
+      output: web, pdf
 
     - title: Required Networking Ports
       url: /administrator-guide/network-configuration/required-ports.html

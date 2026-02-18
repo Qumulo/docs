@@ -82,7 +82,8 @@ methods:
         ,\n          \"PRIVILEGE_CAPACITY_WRITE\",\n          \"PRIVILEGE_OBJECT_STORAGE_URIS_READ\"\
         ,\n          \"PRIVILEGE_OBJECT_STORAGE_URIS_WRITE\",\n          \"PRIVILEGE_DISK_ERROR_WRITE\"\
         ,\n          \"PRIVILEGE_DISK_ERROR_READ\",\n          \"PRIVILEGE_OBJECT_STORAGE_CONFIG_READ\"\
-        \n        ],\n        \"description\": \"The user's privileges:\\n * `PRIVILEGE_ACCESS_TOKENS_READ`\
+        ,\n          \"PRIVILEGE_OBJECT_STORAGE_CONFIG_WRITE\"\n        ],\n     \
+        \   \"description\": \"The user's privileges:\\n * `PRIVILEGE_ACCESS_TOKENS_READ`\
         \ - View any access tokens present in the system,\\n * `PRIVILEGE_ACCESS_TOKENS_WRITE`\
         \ - Create or delete access tokens for any user in the system,\\n * `PRIVILEGE_AD_READ`\
         \ - Read Qumulo Active Directory settings,\\n * `PRIVILEGE_AD_USE` - Use Qumulo's\
@@ -146,18 +147,20 @@ methods:
         \ NFS exports,\\n * `PRIVILEGE_NFS_SETTINGS_READ` - Internal-Only: View NFS\
         \ server settings,\\n * `PRIVILEGE_NFS_SETTINGS_WRITE` - Internal-Only: Modify\
         \ NFS server settings,\\n * `PRIVILEGE_OBJECT_STORAGE_CONFIG_READ` - Read\
-        \ object storage config, including store URIs and credentials.,\\n * `PRIVILEGE_OBJECT_STORAGE_URIS_READ`\
-        \ - View the object storage URIs.,\\n * `PRIVILEGE_OBJECT_STORAGE_URIS_WRITE`\
-        \ - Add new object storage URIs.,\\n * `PRIVILEGE_PORTAL_GLOBAL_READ` - View\
-        \ global portal settings and status,\\n * `PRIVILEGE_PORTAL_HUB_READ` - View\
-        \ hub portal relationship status and configuration,\\n * `PRIVILEGE_PORTAL_HUB_WRITE`\
-        \ - Authorize, modify, and delete hub portal relationships. Granting this\
-        \ privilege allows authorizing proposed relationships. Depending on existing\
-        \ file and directory permissions, this privilege can allow remote access to\
-        \ local data under the hub root directory.,\\n * `PRIVILEGE_PORTAL_SPOKE_EVICT`\
-        \ - Remove cached files and directories from a spoke portal. Qumulo Core recaches\
-        \ the removed files or directories upon access.,\\n * `PRIVILEGE_PORTAL_SPOKE_READ`\
-        \ - View spoke portal relationship status and configuration,\\n * `PRIVILEGE_PORTAL_SPOKE_WRITE`\
+        \ object storage config, including store URIs and credentials.,\\n * `PRIVILEGE_OBJECT_STORAGE_CONFIG_WRITE`\
+        \ - Write object storage config, including store URIs and credentials.,\\\
+        n * `PRIVILEGE_OBJECT_STORAGE_URIS_READ` - View the object storage URIs.,\\\
+        n * `PRIVILEGE_OBJECT_STORAGE_URIS_WRITE` - Add new object storage URIs.,\\\
+        n * `PRIVILEGE_PORTAL_GLOBAL_READ` - View global portal settings and status,\\\
+        n * `PRIVILEGE_PORTAL_HUB_READ` - View hub portal relationship status and\
+        \ configuration,\\n * `PRIVILEGE_PORTAL_HUB_WRITE` - Authorize, modify, and\
+        \ delete hub portal relationships. Granting this privilege allows authorizing\
+        \ proposed relationships. Depending on existing file and directory permissions,\
+        \ this privilege can allow remote access to local data under the hub root\
+        \ directory.,\\n * `PRIVILEGE_PORTAL_SPOKE_EVICT` - Remove cached files and\
+        \ directories from a spoke portal. Qumulo Core recaches the removed files\
+        \ or directories upon access.,\\n * `PRIVILEGE_PORTAL_SPOKE_READ` - View spoke\
+        \ portal relationship status and configuration,\\n * `PRIVILEGE_PORTAL_SPOKE_WRITE`\
         \ - Create, modify, and delete spoke portal relationships. Granting this privilege\
         \ allows creating spoke portal root directories. Depending on existing file\
         \ permissions, this privilege can allow local access to remote files and directories.,\\\

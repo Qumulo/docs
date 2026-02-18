@@ -62,10 +62,10 @@ methods:
         Ethernet bonding mode (ACTIVE_BACKUP or IEEE_8023AD), if this interface is\
         \ bonded.:\\n * `ACTIVE_BACKUP` - BONDING_MODE_ACTIVE_BACKUP,\\n * `IEEE_8023AD`\
         \ - BONDING_MODE_IEEE_8023AD\"\n        },\n        \"mtu\": {\n         \
-        \ \"description\": \"The maximum transfer unit in bytes\",\n          \"type\"\
-        : \"number\"\n        }\n      }\n    },\n    \"network_statuses\": {\n  \
-        \    \"type\": \"array\",\n      \"items\": {\n        \"description\": \"\
-        network_statuses\",\n        \"type\": \"object\",\n        \"properties\"\
+        \ \"description\": \"The maximum transmission unit in bytes\",\n         \
+        \ \"type\": \"number\"\n        }\n      }\n    },\n    \"network_statuses\"\
+        : {\n      \"type\": \"array\",\n      \"items\": {\n        \"description\"\
+        : \"network_statuses\",\n        \"type\": \"object\",\n        \"properties\"\
         : {\n          \"name\": {\n            \"description\": \"User-assigned network\
         \ configuration name\",\n            \"type\": \"string\"\n          },\n\
         \          \"assigned_by\": {\n            \"type\": \"string\",\n       \
@@ -89,7 +89,7 @@ methods:
         : {\n            \"description\": \"The IPv4 or IPv6 netmask in 0.0.0.0 or\
         \ :: format, or the IPv4 or IPv6 subnet CIDR\",\n            \"type\": \"\
         string\"\n          },\n          \"mtu\": {\n            \"description\"\
-        : \"The maximum transfer unit in bytes\",\n            \"type\": \"number\"\
+        : \"The maximum transmission unit in bytes\",\n            \"type\": \"number\"\
         \n          },\n          \"vlan_id\": {\n            \"description\": \"\
         User-assigned vlan_id tag for network configuration.\",\n            \"type\"\
         : \"number\"\n          }\n        }\n      }\n    },\n    \"aws_status\"\

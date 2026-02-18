@@ -1255,6 +1255,13 @@ entries:
     url: /qq-cli-command-guide/static/
   - folderitems:
     - output: web,pdf
+      title: stratus_cluster_create
+      url: /qq-cli-command-guide/stratus/stratus_cluster_create.html
+    output: web,pdf
+    title: stratus
+    url: /qq-cli-command-guide/stratus/
+  - folderitems:
+    - output: web,pdf
       title: time_get
       url: /qq-cli-command-guide/time/time_get.html
     - output: web,pdf

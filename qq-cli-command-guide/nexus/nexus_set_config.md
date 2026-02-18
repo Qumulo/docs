@@ -44,9 +44,9 @@ sidebar: qq_cli_command_reference_sidebar
 summary: This section explains how to use the <code>qq nexus_set_config</code> command.
 synopsis: Set Nexus connection configuration
 title: qq nexus_set_config
-usage: "qq nexus_set_config [-h] [--enable | --disable] [--nexus-host NEXUS_HOST]\
-  \ [--nexus-port NEXUS_PORT] [--nexus-interval NEXUS_INTERVAL]\n    [--enable-remote-support\
-  \ | --disable-remote-support] [--enable-sso | --disable-sso]"
+usage: qq nexus_set_config [-h] [--enable | --disable] [--nexus-host NEXUS_HOST] [--nexus-port
+  NEXUS_PORT] [--nexus-interval NEXUS_INTERVAL] [--enable-remote-support | --disable-remote-support]
+  [--enable-sso | --disable-sso]
 zendesk_source: qq CLI Command Guide
 
 ---

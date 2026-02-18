@@ -194,11 +194,25 @@ This section describes the most important S3 API limitations in Qumulo Core.
 {{site.data.alerts.important}}
 <ul>
   <li>Qumulo Core supports only AWS Signature Version 4 (SigV4). AWS Signature Version 2 (SigV2) is unsupported.</li>
-  <li>Qumulo Core works with three of the seven values that the <code>x-amz-content-sha256</code> header supports: the actual payload checksum, <code>UNSIGNED-PAYLOAD</code>, and <code>STREAMING-UNSIGNED-PAYLOAD-TRAILER</code>. Attempting to use the <code>x-amz-content-sha256</code> header with an unsupported value returns the error <code>AuthorizationHeaderMalformed</code>.</li>
-  <li>Qumulo Core works with two of the five checksum formats that <code>STREAMING-UNSIGNED-PAYLOAD-TRAILER</code> supports: <code>CRC64-NVME</code> and <code>SHA-256</code>. Attempting to use the <code>STREAMING-UNSIGNED-PAYLOAD-TRAILER</code> header value with an unsupported checksum format returns the error <code>QumuloUnsupportedTrailerChecksumFormat</code>.</li>
+  <li>Attempting to use the <code>STREAMING-UNSIGNED-PAYLOAD-TRAILER</code> header value with an unsupported checksum format returns the error <code>QumuloUnsupportedTrailerChecksumFormat</code>.</li>
+  <li>Attempting to use the <code>x-amz-content-sha256</code> header with an unsupported value returns the error <code>AuthorizationHeaderMalformed</code>.</li>
 </ul>
 {{site.data.alerts.end}}
 
+#### Supported STREAMING-UNSIGNED-PAYLOAD-TRAILER Checksum Formats
+* `CRC64-NVME`
+* `SHA-256`
+
+{% capture actualPayCheck %}<code>&lt;actual payload checksum&gt;</code>{% endcapture %}
+
+#### Supported x-amz-content-sha256 Header Values
+* {{ actualPayCheck }}
+* `UNSIGNED-PAYLOAD`
+* `STREAMING-UNSIGNED-PAYLOAD-TRAILER`
+* `STREAMING-AWS4-HMAC-SHA256-PAYLOAD`
+* `STREAMING-AWS4-HMAC-SHA256-PAYLOAD-TRAILER`
+
+#### Use Cases for Supported x-amz-content-sha256 Header Values
 SigV4 uses the `x-amz-content-sha256` header to specify [the authentication type to perform](https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-auth-using-authorization-header.html). The following table lists the supported values for the `x-amz-content-sha256` header that Qumulo Core supports, the number of chunks for a payload, and the produced signature type.
 
 {% capture supported %}<span class="emoji">✅</span>{% endcapture %}
@@ -220,7 +234,7 @@ SigV4 uses the `x-amz-content-sha256` header to specify [the authentication type
 </thead>
 <tbody>
   <tr>
-    <td><code>&lt;actual payload checksum&gt;</code></td>
+    <td>{{ actualPayCheck }}</td>
     <td>{{ supported }}</td>
     <td>{{ oneChunk }}</td>
     <td>&mdash;</td>
@@ -239,6 +253,31 @@ SigV4 uses the `x-amz-content-sha256` header to specify [the authentication type
       <p>{% include note.html content=theresMore %}</p>
     </td>
     <td>Unsigned</td>
+  </tr>
+  <tr>
+    <td><code>STREAMING-AWS4-HMAC-SHA256-PAYLOAD</code></td>
+    <td>{{ supported }}</td>    
+    <td>
+      <ul>
+        <li>{{ multiChunk }}</li>
+        <li>{{ hmacsha256 }}</li>
+      </ul>
+    </td>
+    <td>{{ prodSigV4 }}</td>
+  </tr>
+  <tr>
+    <td><code>STREAMING-AWS4-HMAC-SHA256-PAYLOAD-TRAILER</code></td>
+    <td>Partial</td>    
+    <td>
+      <ul>
+        <li>
+          {{ multiChunk }}
+          <p>{% include note.html content=theresMore %}</p>
+        </li>
+        <li>{{ hmacsha256 }}</li>
+      </ul>
+    </td>
+    <td>{{ prodSigV4 }}</td>
   </tr>
 {% comment %}  
   <tr>
@@ -262,28 +301,6 @@ SigV4 uses the `x-amz-content-sha256` header to specify [the authentication type
       </ul>      
     </td>
     <td>{{ prodSigV4a }}</td>
-  </tr>
-  <tr>
-    <td><code>STREAMING-AWS4-HMAC-SHA256-PAYLOAD</code></td>
-    <td></td>    
-    <td>
-      <ul>
-        <li>{{ multiChunk }}</li>
-        <li>{{ hmacsha256 }}</li>
-      </ul>
-    </td>
-    <td>{{ prodSigV4 }}</td>
-  </tr>
-  <tr>
-    <td><code>STREAMING-AWS4-HMAC-SHA256-PAYLOAD-TRAILER</code></td>
-    <td></td>    
-    <td>
-      <ul>
-        <li>{{ multiChunk }}</li>
-        <li>{{ hmacsha256 }}</li>
-      </ul>
-    </td>
-    <td>{{ prodSigV4 }} {{ theresMore }}</td>
   </tr>
 {% endcomment %}  
 </tbody>

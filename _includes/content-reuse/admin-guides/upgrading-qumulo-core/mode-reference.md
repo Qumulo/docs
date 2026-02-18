@@ -14,12 +14,17 @@ For information about the most important features from each release, click the Q
   </thead>
   <tbody>
     <tr>
-      <td><a href="feature-log.html#qumulo-core-774">7.7.5</a></td>
+      <td><a href="feature-log.html#qumulo-core-7801-quarterly">7.8.0.1</a></td>
+      <td><span class="emoji">✅</span></td>
+      <td class="instant">Instant</td>
+    </tr>
+    <tr>
+      <td><a href="feature-log.html#qumulo-core-7751">7.7.5.1</a></td>
       <td></td>
       <td class="instant">Instant</td>
     </tr>
     <tr>
-      <td><a href="feature-log.html#qumulo-core-774">7.7.4</a></td>
+      <td><a href="feature-log.html#qumulo-core-7741">7.7.4.1</a></td>
       <td></td>
       <td class="instant">Instant</td>
     </tr>
@@ -44,97 +49,117 @@ For information about the most important features from each release, click the Q
       <td class="platform">Platform</td>
     </tr>
     <tr>
+      <td><a href="feature-log.html#qumulo-core-7641">7.6.4.1</a></td>
+      <td></td>
+      <td class="instant">Instant</td>
+    </tr>      
+    <tr>
+      <td><a href="feature-log.html#qumulo-core-7631">7.6.3.1</a></td>
+      <td></td>
+      <td class="instant">Instant</td>
+    </tr>      
+    <tr>
+      <td><a href="feature-log.html#qumulo-core-762">7.6.2</a></td>
+      <td></td>
+      <td class="instant">Instant</td>
+    </tr>      
+    <tr>
+      <td><a href="feature-log.html#qumulo-core-7611">7.6.1.1</a></td>
+      <td></td>
+      <td class="instant">Instant</td>
+    </tr>      
+    <tr>
       <td><a href="feature-log.html#qumulo-core-7602-quarterly">7.6.0.2</a></td>
       <td><span class="emoji">✅</span></td>
       <td class="instant">Instant</td>
     </tr>
+    <tr>
+      <td><a href="feature-log.html#qumulo-core-7552">7.5.5.2</a></td>
+      <td></td>
+      <td class="instant">Instant</td>
+    </tr>      
+    <tr>
+      <td><a href="feature-log.html#qumulo-core-7542">7.5.4.2</a></td>
+      <td></td>
+      <td class="instant">Instant</td>
+    </tr>      
+    <tr>
+      <td><a href="feature-log.html#qumulo-core-753">7.5.3</a></td>
+      <td></td>
+      <td class="instant">Instant</td>
+    </tr>      
+    <tr>
+      <td><a href="feature-log.html#qumulo-core-752">7.5.2</a></td>
+      <td></td>
+      <td class="instant">Instant</td>
+    </tr>      
+    <tr>
+      <td><a href="feature-log.html#qumulo-core-7512">7.5.1.2</a></td>
+      <td></td>
+      <td class="instant">Instant</td>
+    </tr>      
     <tr>
       <td><a href="feature-log.html#qumulo-core-7503-quarterly">7.5.0.3</a></td>
       <td><span class="emoji">✅</span></td>
       <td class="instant">Instant</td>
     </tr>
     <tr>
+      <td><a href="feature-log.html#qumulo-core-744">7.4.4</a></td>
+      <td><span class="emoji">✅</span></td>
+      <td class="platform">Platform</td>
+    </tr>      
+    <tr>
+      <td><a href="feature-log.html#qumulo-core-7431">7.4.3.1</a></td>
+      <td></td>
+      <td class="instant">Instant</td>
+    </tr>      
+    <tr>
+      <td><a href="feature-log.html#qumulo-core-7421">7.4.2.1</a></td>
+      <td></td>
+      <td class="instant">Instant</td>
+    </tr>      
+    <tr>
+      <td><a href="feature-log.html#qumulo-core-7411">7.4.1.1</a></td>
+      <td></td>
+      <td class="instant">Instant</td>
+    </tr>      
+    <tr>
       <td><a href="feature-log.html#qumulo-core-7404-quarterly">7.4.0.4</a></td>
       <td><span class="emoji">✅</span></td>
       <td class="instant">Instant</td>
     </tr>
+    <tr>
+      <td><a href="feature-log.html#qumulo-core-7321">7.3.2.1</a></td>
+      <td></td>
+      <td class="instant">Instant</td>
+    </tr>      
+    <tr>
+      <td><a href="feature-log.html#qumulo-core-7312">7.3.1.2</a></td>
+      <td></td>
+      <td class="instant">Instant</td>
+    </tr>      
     <tr>
       <td><a href="feature-log.html#qumulo-core-7303-quarterly">7.3.0.3</a></td>
       <td><span class="emoji">✅</span></td>
       <td class="instant">Instant</td>
     </tr>
     <tr>
+      <td><a href="feature-log.html#qumulo-core-7232">7.2.3.2</a></td>
+      <td></td>
+      <td class="instant">Instant</td>
+    </tr>      
+    <tr>
+      <td><a href="feature-log.html#qumulo-core-722">7.2.2</a></td>
+      <td></td>
+      <td class="instant">Instant</td>
+    </tr>  
+    <tr>
+      <td><a href="feature-log.html#qumulo-core-7211">7.2.1.1</a></td>
+      <td></td>
+      <td class="instant">Instant</td>
+    </tr>    
+    <tr>
       <td><a href="feature-log.html#qumulo-core-7204-quarterly">7.2.0.4</a></td>
-      <td><span class="emoji">✅</span></td>
-      <td class="instant">Instant</td>
-    </tr>
-    <tr>
-      <td><a href="feature-log.html#qumulo-core-7103-quarterly">7.1.0.3</a></td>
-      <td><span class="emoji">✅</span></td>
-      <td class="platform">Platform</td>
-    </tr>
-    <tr>
-      <td><a href="feature-log.html#qumulo-core-7001-quarterly">7.0.0.1</a></td>
-      <td><span class="emoji">✅</span></td>
-      <td class="instant">Instant</td>
-    </tr> 
-    <tr>
-      <td><a href="feature-log.html#qumulo-core-6301-quarterly">6.3.0.1</a></td>
-      <td><span class="emoji">✅</span></td>
-      <td class="platform">Platform</td>
-    </tr>
-    <tr>
-      <td><a href="feature-log.html#qumulo-core-6201-quarterly">6.2.0.1</a></td>
-      <td><span class="emoji">✅</span></td>
-      <td class="instant">Instant</td>
-    </tr>
-    <tr>
-      <td><a href="feature-log.html#qumulo-core-6103-quarterly">6.1.0.3</a></td>
-      <td><span class="emoji">✅</span></td>
-      <td class="instant">Instant</td>
-    </tr>
-    <tr>
-      <td><a href="feature-log.html#qumulo-core-6002-quarterly">6.0.0.2</a></td>
-      <td><span class="emoji">✅</span></td>
-      <td class="instant">Instant</td>
-    </tr>
-    <tr>
-      <td><a href="feature-log.html#qumulo-core-530-quarterly">5.3.0</a></td>
-      <td><span class="emoji">✅</span></td>
-      <td class="instant">Instant</td>
-    </tr>
-    <tr>
-      <td><a href="feature-log.html#qumulo-core-5202-quarterly">5.2.0.2</a></td>
-      <td><span class="emoji">✅</span></td>
-      <td class="instant">Instant</td>
-    </tr>
-    <tr>
-      <td><a href="feature-log.html#qumulo-core-5101-quarterly">5.1.0.1</a></td>
-      <td><span class="emoji">✅</span></td>
-      <td class="instant">Instant</td>
-    </tr>
-    <tr>
-      <td><a href="feature-log.html#qumulo-core-5001-quarterly">5.0.0.1</a></td>
-      <td><span class="emoji">✅</span></td>
-      <td class="instant">Instant</td>
-    </tr>
-    <tr>
-      <td><a href="feature-log.html#qumulo-core-430-quarterly">4.3.0</a></td>
-      <td><span class="emoji">✅</span></td>
-      <td class="instant">Instant</td>
-    </tr>
-    <tr>
-      <td><a href="feature-log.html#qumulo-core-420-quarterly">4.2.0</a></td>
-      <td><span class="emoji">✅</span></td>
-      <td class="instant">Instant</td>
-    </tr>
-    <tr>
-      <td><a href="feature-log.html#qumulo-core-4101-quarterly">4.1.0.1</a></td>
-      <td><span class="emoji">✅</span></td>
-      <td class="instant">Instant</td>
-    </tr>
-    <tr>
-      <td><a href="feature-log.html#qumulo-core-4002-quarterly">4.0.0.2</a></td>
       <td><span class="emoji">✅</span></td>
       <td class="instant">Instant</td>
     </tr>

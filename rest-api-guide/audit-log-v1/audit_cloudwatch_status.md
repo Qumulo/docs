@@ -4,7 +4,19 @@ methods:
   get:
     summary: Retrieves audit log CloudWatch status for the cluster.
     parameters: []
-    response_body: {}
+    response_body:
+      schema: "{\n  \"description\": \"cloudwatch_audit_status\",\n  \"type\": \"\
+        object\",\n  \"properties\": {\n    \"node_statuses\": {\n      \"description\"\
+        : \"node_statuses\",\n      \"type\": \"object\",\n      \"properties\": {},\n\
+        \      \"additionalProperties\": {\n        \"description\": \"node_statuses\
+        \ value\",\n        \"type\": \"object\",\n        \"properties\": {\n   \
+        \       \"last_seen_error\": {\n            \"description\": \"last_seen_error\"\
+        ,\n            \"type\": \"object\",\n            \"properties\": {\n    \
+        \          \"error_message\": {\n                \"description\": \"error_message\"\
+        ,\n                \"type\": \"string\"\n              },\n              \"\
+        error_details\": {\n                \"description\": \"error_details\",\n\
+        \                \"type\": \"string\"\n              }\n            }\n  \
+        \        }\n        }\n      }\n    }\n  }\n}"
     responses:
     - code: '200'
       description: Return value on success

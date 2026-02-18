@@ -48,7 +48,7 @@
   1. Click **Create Share**.
 
 ### How SMB Share Username Expansion Works in Qumulo Core {#username-expansion}
-In Qumulo Core 7.7.5 (and higher), the system expands the `%U` placeholder to a username for SMB shares. For example, for a user authenticated in SMB as `EXAMPLE_DOMAIN\alice`, the path `/home/%U` becomes `/home/%alice`.
+In Qumulo Core 7.7.5.1 (and higher), the system expands the `%U` placeholder to a username for SMB shares. For example, for a user authenticated in SMB as `EXAMPLE_DOMAIN\alice`, the path `/home/%U` becomes `/home/%alice`.
 
 Qumulo core expands the `%U` placeholder:
 

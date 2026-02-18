@@ -7,6 +7,7 @@
   - [ ] Corrections from stakeholders
 
 ## Release Preparation
+- [ ] Match available versions to Nexus
 - [ ] Feature log
   - [ ] Slack blast
   - [ ] Email to company

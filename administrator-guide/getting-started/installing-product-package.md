@@ -3,6 +3,7 @@ title: "Installing the Qumulo Core Product Package"
 summary: "This section explains how to install the Qumulo Core Product Package on a user-managed, Linux-based host system from a <code>.deb</code> or <code>.rpm</code> package."
 permalink: /administrator-guide/getting-started/installing-product-package.html
 sidebar: administrator_guide_sidebar
+context: qpp
 ---
 
 The Qumulo Core Product Package permits flexible deployment: For example, it can let your organization adhere to its security and compliance requirements, or use a specific Linux distribution that has become standardized across the entire system fleet.
@@ -134,23 +135,41 @@ Before installing the Qumulo Core Product Package, you must configure your host 
 
 To ensure that Qumulo Core has full control over network configuration, disable or remove the default network configuration tool (such as ENI, netplan.io, NetworkManager).
 
+### Step 4: Choose a Networking Mode
+{% include content-reuse/admin-guides/getting-started/host-managed-vs-qumulo-managed-networking.md %}
 
-## To Install the Qumulo Core Product Package
+## To Install the Qumulo Core Product Package {#install-qumulo-core-product-package}
 {% include note.html content="Use the latest, official image available for your Linux distribution on the distribution's website or cloud marketplace." %}
+{% capture envVar %}(Optional) To run the installation with [Qumulo-Managed Networking](#qumulo-managed-networking), set the `QUMULO_NETWORK_MANAGED_BY_QUMULO` environment variable to `true`. For example:{% endcapture %}
 
 1. To install Qumulo Core, {{site.nexus.productPackage}} for your Linux distribution.
 
-   * For the `.deb` package, run the `apt` command. For example:
+   * For the `.deb` package, run the `apt` command and use the `-y` flag for non-interactive mode. For example:
 
      ```bash
-     sudo apt install ./qumulo-core.deb
+     sudo apt install -y ./qumulo-core.deb
      ```
 
-   * For the `.rpm` package, run the `dnf` command. For example:
+     {{ envVar }}
+     
+     ```bash
+     sudo QUMULO_NETWORK_MANAGED_BY_QUMULO=true \
+       apt install -y ./qumulo-core.deb
+     ```
+
+   * For the `.rpm` package, run the `dnf` command and use the `-y` flag for non-interactive mode. For example:
 
      ```bash
-     sudo dnf install ./qumulo-core.rpm
+     sudo dnf install -y ./qumulo-core.rpm
      ```
+
+     {{ envVar }}
+     
+     ```bash
+     sudo QUMULO_NETWORK_MANAGED_BY_QUMULO=true \
+       dnf install -y ./qumulo-core.rpm
+     ```
+
 1. To verify that the Qumulo Core service has started successfully, run the `systemctl` command. For example:
 
    ```bash
@@ -223,6 +242,3 @@ Depending on the issue, you can troubleshoot the Qumulo Core Product Package fro
     </td>
   </tr>
 </table>
-
-
-{% include content-reuse/admin-guides/getting-started/configuring-host-managed-networking.md %}

@@ -38,11 +38,11 @@ methods:
         : {\n      \"type\": \"array\",\n      \"items\": {\n        \"description\"\
         : \"(STATIC only) The list of DNS search domains\",\n        \"type\": \"\
         string\"\n      }\n    },\n    \"mtu\": {\n      \"description\": \"(STATIC\
-        \ only) The maximum transfer unit (MTU) in bytes\",\n      \"type\": \"number\"\
-        \n    },\n    \"bonding_mode\": {\n      \"type\": \"string\",\n      \"enum\"\
-        : [\n        \"ACTIVE_BACKUP\",\n        \"IEEE_8023AD\"\n      ],\n     \
-        \ \"description\": \"Ethernet bonding mode (ACTIVE_BACKUP or IEEE_8023AD),\
-        \ if the interface is bonded.:\\n * `ACTIVE_BACKUP` - BONDING_MODE_ACTIVE_BACKUP,\\\
+        \ only) The maximum transmission unit (MTU) in bytes\",\n      \"type\": \"\
+        number\"\n    },\n    \"bonding_mode\": {\n      \"type\": \"string\",\n \
+        \     \"enum\": [\n        \"ACTIVE_BACKUP\",\n        \"IEEE_8023AD\"\n \
+        \     ],\n      \"description\": \"Ethernet bonding mode (ACTIVE_BACKUP or\
+        \ IEEE_8023AD), if the interface is bonded.:\\n * `ACTIVE_BACKUP` - BONDING_MODE_ACTIVE_BACKUP,\\\
         n * `IEEE_8023AD` - BONDING_MODE_IEEE_8023AD\"\n    }\n  }\n}"
   patch:
     summary: Update networking configuration for the whole cluster. This API is deprecated
@@ -78,11 +78,11 @@ methods:
         : {\n      \"type\": \"array\",\n      \"items\": {\n        \"description\"\
         : \"(STATIC only) The list of DNS search domains\",\n        \"type\": \"\
         string\"\n      }\n    },\n    \"mtu\": {\n      \"description\": \"(STATIC\
-        \ only) The maximum transfer unit (MTU) in bytes\",\n      \"type\": \"number\"\
-        \n    },\n    \"bonding_mode\": {\n      \"type\": \"string\",\n      \"enum\"\
-        : [\n        \"ACTIVE_BACKUP\",\n        \"IEEE_8023AD\"\n      ],\n     \
-        \ \"description\": \"Ethernet bonding mode (ACTIVE_BACKUP or IEEE_8023AD),\
-        \ if the interface is bonded.:\\n * `ACTIVE_BACKUP` - BONDING_MODE_ACTIVE_BACKUP,\\\
+        \ only) The maximum transmission unit (MTU) in bytes\",\n      \"type\": \"\
+        number\"\n    },\n    \"bonding_mode\": {\n      \"type\": \"string\",\n \
+        \     \"enum\": [\n        \"ACTIVE_BACKUP\",\n        \"IEEE_8023AD\"\n \
+        \     ],\n      \"description\": \"Ethernet bonding mode (ACTIVE_BACKUP or\
+        \ IEEE_8023AD), if the interface is bonded.:\\n * `ACTIVE_BACKUP` - BONDING_MODE_ACTIVE_BACKUP,\\\
         n * `IEEE_8023AD` - BONDING_MODE_IEEE_8023AD\"\n    }\n  }\n}"
   get:
     summary: Get global networking configuration for the whole cluster. This API is
@@ -113,11 +113,11 @@ methods:
         : {\n      \"type\": \"array\",\n      \"items\": {\n        \"description\"\
         : \"(STATIC only) The list of DNS search domains\",\n        \"type\": \"\
         string\"\n      }\n    },\n    \"mtu\": {\n      \"description\": \"(STATIC\
-        \ only) The maximum transfer unit (MTU) in bytes\",\n      \"type\": \"number\"\
-        \n    },\n    \"bonding_mode\": {\n      \"type\": \"string\",\n      \"enum\"\
-        : [\n        \"ACTIVE_BACKUP\",\n        \"IEEE_8023AD\"\n      ],\n     \
-        \ \"description\": \"Ethernet bonding mode (ACTIVE_BACKUP or IEEE_8023AD),\
-        \ if the interface is bonded.:\\n * `ACTIVE_BACKUP` - BONDING_MODE_ACTIVE_BACKUP,\\\
+        \ only) The maximum transmission unit (MTU) in bytes\",\n      \"type\": \"\
+        number\"\n    },\n    \"bonding_mode\": {\n      \"type\": \"string\",\n \
+        \     \"enum\": [\n        \"ACTIVE_BACKUP\",\n        \"IEEE_8023AD\"\n \
+        \     ],\n      \"description\": \"Ethernet bonding mode (ACTIVE_BACKUP or\
+        \ IEEE_8023AD), if the interface is bonded.:\\n * `ACTIVE_BACKUP` - BONDING_MODE_ACTIVE_BACKUP,\\\
         n * `IEEE_8023AD` - BONDING_MODE_IEEE_8023AD\"\n    }\n  }\n}"
     responses:
     - code: '200'

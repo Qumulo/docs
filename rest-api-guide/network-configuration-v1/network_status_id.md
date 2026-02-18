@@ -45,9 +45,9 @@ methods:
         : {\n          \"type\": \"array\",\n          \"items\": {\n            \"\
         description\": \"The list of DNS search domains\",\n            \"type\":\
         \ \"string\"\n          }\n        },\n        \"mtu\": {\n          \"description\"\
-        : \"The maximum transfer unit in bytes\",\n          \"type\": \"number\"\n\
-        \        },\n        \"bonding_mode\": {\n          \"type\": \"string\",\n\
-        \          \"enum\": [\n            \"ACTIVE_BACKUP\",\n            \"IEEE_8023AD\"\
+        : \"The maximum transmission unit in bytes\",\n          \"type\": \"number\"\
+        \n        },\n        \"bonding_mode\": {\n          \"type\": \"string\"\
+        ,\n          \"enum\": [\n            \"ACTIVE_BACKUP\",\n            \"IEEE_8023AD\"\
         \n          ],\n          \"description\": \"Ethernet bonding mode (ACTIVE_BACKUP\
         \ or IEEE_8023AD), if the interface is bonded.:\\n * `ACTIVE_BACKUP` - BONDING_MODE_ACTIVE_BACKUP,\\\
         n * `IEEE_8023AD` - BONDING_MODE_IEEE_8023AD\"\n        }\n      }\n    },\n\

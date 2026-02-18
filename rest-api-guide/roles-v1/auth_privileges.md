@@ -4,7 +4,10 @@ methods:
   get:
     summary: Get information about all privileges.
     parameters: []
-    response_body: {}
+    response_body:
+      schema: "{\n  \"description\": \"string_string_map\",\n  \"type\": \"object\"\
+        ,\n  \"properties\": {},\n  \"additionalProperties\": {\n    \"description\"\
+        : \"string_string_map value\",\n    \"type\": \"string\"\n  }\n}"
     responses:
     - code: '200'
       description: Return value on success

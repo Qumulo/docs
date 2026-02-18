@@ -4,7 +4,11 @@ methods:
   get:
     summary: Get the frontend interface names for all nodes in the cluster
     parameters: []
-    response_body: {}
+    response_body:
+      schema: "{\n  \"description\": \"node_id_string_vec_map\",\n  \"type\": \"object\"\
+        ,\n  \"properties\": {},\n  \"additionalProperties\": {\n    \"type\": \"\
+        array\",\n    \"items\": {\n      \"description\": \"node_id_string_vec_map\
+        \ value\",\n      \"type\": \"string\"\n    }\n  }\n}"
     responses:
     - code: '200'
       description: Return value on success
