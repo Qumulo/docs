@@ -39,4 +39,5 @@ api_version: v1
 permalink: /rest-api-guide/capacity-clamp-v1/capacity_clamp.html
 sidebar: rest_api_guide_sidebar
 redirect_from: /rest-api-guide/capacity-clamp/capacity_clamp.html
+deprecated: false
 ---

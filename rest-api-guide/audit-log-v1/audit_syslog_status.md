@@ -27,4 +27,5 @@ api_version: v1
 permalink: /rest-api-guide/audit-log-v1/audit_syslog_status.html
 sidebar: rest_api_guide_sidebar
 redirect_from: /rest-api-guide/audit-log/audit_syslog_status.html
+deprecated: false
 ---

@@ -35,4 +35,5 @@ api_version: v2
 permalink: /rest-api-guide/cluster-creation-v2/v2_cluster_create.html
 sidebar: rest_api_guide_sidebar
 redirect_from: /rest-api-guide/cluster-creation/v2_cluster_create.html
+deprecated: false
 ---

@@ -294,4 +294,5 @@ api_version: v2
 permalink: /rest-api-guide/files-v2/v2_files_ref_info_acl.html
 sidebar: rest_api_guide_sidebar
 redirect_from: /rest-api-guide/files/v2_files_ref_info_acl.html
+deprecated: false
 ---

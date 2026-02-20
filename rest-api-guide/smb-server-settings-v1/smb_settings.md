@@ -203,4 +203,5 @@ api_version: v1
 permalink: /rest-api-guide/smb-server-settings-v1/smb_settings.html
 sidebar: rest_api_guide_sidebar
 redirect_from: /rest-api-guide/smb-server-settings/smb_settings.html
+deprecated: false
 ---

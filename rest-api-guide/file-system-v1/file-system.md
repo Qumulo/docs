@@ -23,4 +23,5 @@ api_version: v1
 permalink: /rest-api-guide/file-system-v1/file-system.html
 sidebar: rest_api_guide_sidebar
 redirect_from: /rest-api-guide/file-system/file-system.html
+deprecated: false
 ---

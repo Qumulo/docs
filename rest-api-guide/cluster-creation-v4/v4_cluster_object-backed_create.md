@@ -70,4 +70,5 @@ api_version: v4
 permalink: /rest-api-guide/cluster-creation-v4/v4_cluster_object-backed_create.html
 sidebar: rest_api_guide_sidebar
 redirect_from: /rest-api-guide/cluster-creation/v4_cluster_object-backed_create.html
+deprecated: false
 ---

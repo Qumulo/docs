@@ -50,4 +50,5 @@ api_version: v1
 permalink: /rest-api-guide/cluster-management-v1/cluster_node-replacement-plan.html
 sidebar: rest_api_guide_sidebar
 redirect_from: /rest-api-guide/cluster-management/cluster_node-replacement-plan.html
+deprecated: false
 ---

@@ -64,4 +64,5 @@ rest_endpoint: /v5/cluster/object-backed/create-stratus
 api_version: v5
 permalink: /rest-api-guide/cluster-creation-v5/v5_cluster_object-backed_create-stratus.html
 sidebar: rest_api_guide_sidebar
+deprecated: false
 ---

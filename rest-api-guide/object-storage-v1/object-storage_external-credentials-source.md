@@ -16,4 +16,5 @@ rest_endpoint: /v1/object-storage/external-credentials-source
 api_version: v1
 permalink: /rest-api-guide/object-storage-v1/object-storage_external-credentials-source.html
 sidebar: rest_api_guide_sidebar
+deprecated: false
 ---

@@ -21,4 +21,5 @@ api_version: v1
 permalink: /rest-api-guide/version-v1/version.html
 sidebar: rest_api_guide_sidebar
 redirect_from: /rest-api-guide/version/version.html
+deprecated: false
 ---

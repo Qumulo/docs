@@ -113,4 +113,5 @@ rest_endpoint: /v1/smb/shares/{id}
 api_version: v1
 permalink: /rest-api-guide/smb-shares-methods-v1/smb_shares_id.html
 sidebar: rest_api_guide_sidebar
+deprecated: true
 ---

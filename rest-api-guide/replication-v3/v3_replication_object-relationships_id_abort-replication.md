@@ -18,4 +18,5 @@ api_version: v3
 permalink: /rest-api-guide/replication-v3/v3_replication_object-relationships_id_abort-replication.html
 sidebar: rest_api_guide_sidebar
 redirect_from: /rest-api-guide/replication/v3_replication_object-relationships_id_abort-replication.html
+deprecated: false
 ---

@@ -39,4 +39,5 @@ rest_endpoint: /v1/network/static-ip-allocation
 api_version: v1
 permalink: /rest-api-guide/network-configuration-v1/network_static-ip-allocation.html
 sidebar: rest_api_guide_sidebar
+deprecated: false
 ---

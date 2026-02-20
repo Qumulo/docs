@@ -23,4 +23,5 @@ api_version: v1
 permalink: /rest-api-guide/dns-methods-v1/dns_clear-dns-cache.html
 sidebar: rest_api_guide_sidebar
 redirect_from: /rest-api-guide/dns-methods/dns_clear-dns-cache.html
+deprecated: false
 ---

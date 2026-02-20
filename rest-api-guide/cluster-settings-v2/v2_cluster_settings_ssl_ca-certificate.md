@@ -55,4 +55,5 @@ api_version: v2
 permalink: /rest-api-guide/cluster-settings-v2/v2_cluster_settings_ssl_ca-certificate.html
 sidebar: rest_api_guide_sidebar
 redirect_from: /rest-api-guide/cluster-settings/v2_cluster_settings_ssl_ca-certificate.html
+deprecated: false
 ---

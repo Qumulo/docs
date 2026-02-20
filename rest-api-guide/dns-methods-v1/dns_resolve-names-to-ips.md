@@ -31,4 +31,5 @@ api_version: v1
 permalink: /rest-api-guide/dns-methods-v1/dns_resolve-names-to-ips.html
 sidebar: rest_api_guide_sidebar
 redirect_from: /rest-api-guide/dns-methods/dns_resolve-names-to-ips.html
+deprecated: false
 ---

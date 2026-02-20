@@ -24,4 +24,5 @@ api_version: v1
 permalink: /rest-api-guide/ldap-server-v1/ldap_uid-number_uid_number_login-name.html
 sidebar: rest_api_guide_sidebar
 redirect_from: /rest-api-guide/ldap-server/ldap_uid-number_uid_number_login-name.html
+deprecated: false
 ---

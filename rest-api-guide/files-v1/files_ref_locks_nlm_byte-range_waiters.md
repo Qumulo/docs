@@ -63,4 +63,5 @@ api_version: v1
 permalink: /rest-api-guide/files-v1/files_ref_locks_nlm_byte-range_waiters.html
 sidebar: rest_api_guide_sidebar
 redirect_from: /rest-api-guide/files/files_ref_locks_nlm_byte-range_waiters.html
+deprecated: false
 ---

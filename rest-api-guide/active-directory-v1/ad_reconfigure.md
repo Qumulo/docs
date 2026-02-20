@@ -28,4 +28,5 @@ api_version: v1
 permalink: /rest-api-guide/active-directory-v1/ad_reconfigure.html
 sidebar: rest_api_guide_sidebar
 redirect_from: /rest-api-guide/active-directory/ad_reconfigure.html
+deprecated: false
 ---

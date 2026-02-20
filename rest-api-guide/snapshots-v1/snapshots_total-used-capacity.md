@@ -18,4 +18,5 @@ api_version: v1
 permalink: /rest-api-guide/snapshots-v1/snapshots_total-used-capacity.html
 sidebar: rest_api_guide_sidebar
 redirect_from: /rest-api-guide/snapshots/snapshots_total-used-capacity.html
+deprecated: false
 ---

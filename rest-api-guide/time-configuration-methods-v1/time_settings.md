@@ -69,4 +69,5 @@ api_version: v1
 permalink: /rest-api-guide/time-configuration-methods-v1/time_settings.html
 sidebar: rest_api_guide_sidebar
 redirect_from: /rest-api-guide/time-configuration-methods/time_settings.html
+deprecated: false
 ---

@@ -23,4 +23,5 @@ api_version: v1
 permalink: /rest-api-guide/encryption-at-rest-v1/encryption_status.html
 sidebar: rest_api_guide_sidebar
 redirect_from: /rest-api-guide/encryption-at-rest/encryption_status.html
+deprecated: true
 ---

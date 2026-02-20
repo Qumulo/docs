@@ -235,4 +235,5 @@ api_version: v1
 permalink: /rest-api-guide/session-management-v1/session_who-am-i.html
 sidebar: rest_api_guide_sidebar
 redirect_from: /rest-api-guide/session-management/session_who-am-i.html
+deprecated: false
 ---

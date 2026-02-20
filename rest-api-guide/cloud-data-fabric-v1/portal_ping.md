@@ -40,4 +40,5 @@ rest_endpoint: /v1/portal/ping
 api_version: v1
 permalink: /rest-api-guide/cloud-data-fabric-v1/portal_ping.html
 sidebar: rest_api_guide_sidebar
+deprecated: false
 ---

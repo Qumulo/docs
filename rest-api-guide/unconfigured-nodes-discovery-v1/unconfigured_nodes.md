@@ -56,4 +56,5 @@ api_version: v1
 permalink: /rest-api-guide/unconfigured-nodes-discovery-v1/unconfigured_nodes.html
 sidebar: rest_api_guide_sidebar
 redirect_from: /rest-api-guide/unconfigured-nodes-discovery/unconfigured_nodes.html
+deprecated: false
 ---

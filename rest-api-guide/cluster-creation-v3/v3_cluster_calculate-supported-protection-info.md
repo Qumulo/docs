@@ -43,4 +43,5 @@ api_version: v3
 permalink: /rest-api-guide/cluster-creation-v3/v3_cluster_calculate-supported-protection-info.html
 sidebar: rest_api_guide_sidebar
 redirect_from: /rest-api-guide/cluster-creation/v3_cluster_calculate-supported-protection-info.html
+deprecated: false
 ---

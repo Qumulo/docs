@@ -47,4 +47,5 @@ api_version: v2
 permalink: /rest-api-guide/cluster-management-v2/v2_cluster_nodes_dry-run.html
 sidebar: rest_api_guide_sidebar
 redirect_from: /rest-api-guide/cluster-management/v2_cluster_nodes_dry-run.html
+deprecated: false
 ---

@@ -23,4 +23,5 @@ api_version: v1
 permalink: /rest-api-guide/cluster-data-protection-v1/cluster_object-backed_protection_fault-tolerance.html
 sidebar: rest_api_guide_sidebar
 redirect_from: /rest-api-guide/cluster-data-protection/cluster_object-backed_protection_fault-tolerance.html
+deprecated: false
 ---

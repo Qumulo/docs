@@ -37,4 +37,5 @@ api_version: v1
 permalink: /rest-api-guide/s3-server-methods-v1/s3_buckets_name_policy.html
 sidebar: rest_api_guide_sidebar
 redirect_from: /rest-api-guide/s3-server-methods/s3_buckets_name_policy.html
+deprecated: false
 ---

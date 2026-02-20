@@ -70,4 +70,5 @@ api_version: v1
 permalink: /rest-api-guide/dns-config-methods-v1/dns_configs_system.html
 sidebar: rest_api_guide_sidebar
 redirect_from: /rest-api-guide/dns-config-methods/dns_configs_system.html
+deprecated: false
 ---

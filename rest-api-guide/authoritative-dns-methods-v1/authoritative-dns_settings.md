@@ -43,4 +43,5 @@ rest_endpoint: /v1/authoritative-dns/settings
 api_version: v1
 permalink: /rest-api-guide/authoritative-dns-methods-v1/authoritative-dns_settings.html
 sidebar: rest_api_guide_sidebar
+deprecated: false
 ---

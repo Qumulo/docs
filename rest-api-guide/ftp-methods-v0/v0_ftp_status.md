@@ -54,4 +54,5 @@ api_version: v0
 permalink: /rest-api-guide/ftp-methods-v0/v0_ftp_status.html
 sidebar: rest_api_guide_sidebar
 redirect_from: /rest-api-guide/ftp-methods/v0_ftp_status.html
+deprecated: false
 ---

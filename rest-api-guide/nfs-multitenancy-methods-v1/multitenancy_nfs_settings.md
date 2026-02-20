@@ -30,4 +30,5 @@ api_version: v1
 permalink: /rest-api-guide/nfs-multitenancy-methods-v1/multitenancy_nfs_settings.html
 sidebar: rest_api_guide_sidebar
 redirect_from: /rest-api-guide/nfs-multitenancy-methods/multitenancy_nfs_settings.html
+deprecated: false
 ---

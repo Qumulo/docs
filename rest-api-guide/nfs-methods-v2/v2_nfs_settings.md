@@ -96,4 +96,5 @@ rest_endpoint: /v2/nfs/settings
 api_version: v2
 permalink: /rest-api-guide/nfs-methods-v2/v2_nfs_settings.html
 sidebar: rest_api_guide_sidebar
+deprecated: false
 ---

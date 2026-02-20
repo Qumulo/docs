@@ -20,4 +20,5 @@ api_version: v1
 permalink: /rest-api-guide/active-directory-v1/ad_gids_gid_sids.html
 sidebar: rest_api_guide_sidebar
 redirect_from: /rest-api-guide/active-directory/ad_gids_gid_sids.html
+deprecated: false
 ---

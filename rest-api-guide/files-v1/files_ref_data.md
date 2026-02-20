@@ -282,4 +282,5 @@ api_version: v1
 permalink: /rest-api-guide/files-v1/files_ref_data.html
 sidebar: rest_api_guide_sidebar
 redirect_from: /rest-api-guide/files/files_ref_data.html
+deprecated: false
 ---

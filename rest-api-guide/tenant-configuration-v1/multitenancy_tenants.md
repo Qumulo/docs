@@ -90,4 +90,5 @@ api_version: v1
 permalink: /rest-api-guide/tenant-configuration-v1/multitenancy_tenants.html
 sidebar: rest_api_guide_sidebar
 redirect_from: /rest-api-guide/tenant-configuration/multitenancy_tenants.html
+deprecated: false
 ---

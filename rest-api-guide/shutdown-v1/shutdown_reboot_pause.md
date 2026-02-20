@@ -14,4 +14,5 @@ api_version: v1
 permalink: /rest-api-guide/shutdown-v1/shutdown_reboot_pause.html
 sidebar: rest_api_guide_sidebar
 redirect_from: /rest-api-guide/shutdown/shutdown_reboot_pause.html
+deprecated: false
 ---

@@ -49,4 +49,5 @@ api_version: v1
 permalink: /rest-api-guide/authentication-v1/auth_identities_id_attributes.html
 sidebar: rest_api_guide_sidebar
 redirect_from: /rest-api-guide/authentication/auth_identities_id_attributes.html
+deprecated: false
 ---

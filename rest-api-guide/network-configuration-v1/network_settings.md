@@ -127,4 +127,5 @@ rest_endpoint: /v1/network/settings
 api_version: v1
 permalink: /rest-api-guide/network-configuration-v1/network_settings.html
 sidebar: rest_api_guide_sidebar
+deprecated: true
 ---

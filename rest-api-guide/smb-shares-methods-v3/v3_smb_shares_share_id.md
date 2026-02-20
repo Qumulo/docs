@@ -687,4 +687,5 @@ api_version: v3
 permalink: /rest-api-guide/smb-shares-methods-v3/v3_smb_shares_share_id.html
 sidebar: rest_api_guide_sidebar
 redirect_from: /rest-api-guide/smb-shares-methods/v3_smb_shares_share_id.html
+deprecated: false
 ---

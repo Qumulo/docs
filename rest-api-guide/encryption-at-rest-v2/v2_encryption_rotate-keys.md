@@ -19,4 +19,5 @@ rest_endpoint: /v2/encryption/rotate-keys
 api_version: v2
 permalink: /rest-api-guide/encryption-at-rest-v2/v2_encryption_rotate-keys.html
 sidebar: rest_api_guide_sidebar
+deprecated: false
 ---

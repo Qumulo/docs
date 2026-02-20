@@ -143,4 +143,5 @@ api_version: v1
 permalink: /rest-api-guide/cloud-data-fabric-v1/portal_hubs_id.html
 sidebar: rest_api_guide_sidebar
 redirect_from: /rest-api-guide/cloud-data-fabric/portal_hubs_id.html
+deprecated: false
 ---

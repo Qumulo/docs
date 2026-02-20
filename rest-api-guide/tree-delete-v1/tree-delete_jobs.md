@@ -62,4 +62,5 @@ api_version: v1
 permalink: /rest-api-guide/tree-delete-v1/tree-delete_jobs.html
 sidebar: rest_api_guide_sidebar
 redirect_from: /rest-api-guide/tree-delete/tree-delete_jobs.html
+deprecated: false
 ---

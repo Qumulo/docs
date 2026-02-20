@@ -159,4 +159,5 @@ api_version: v1
 permalink: /rest-api-guide/access-tokens-v1/auth_access-tokens_id.html
 sidebar: rest_api_guide_sidebar
 redirect_from: /rest-api-guide/access-tokens/auth_access-tokens_id.html
+deprecated: false
 ---

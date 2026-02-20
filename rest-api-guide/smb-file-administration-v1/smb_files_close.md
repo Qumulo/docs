@@ -26,4 +26,5 @@ api_version: v1
 permalink: /rest-api-guide/smb-file-administration-v1/smb_files_close.html
 sidebar: rest_api_guide_sidebar
 redirect_from: /rest-api-guide/smb-file-administration/smb_files_close.html
+deprecated: false
 ---

@@ -38,4 +38,5 @@ api_version: v1
 permalink: /rest-api-guide/authentication-v1/auth_kerberos-settings.html
 sidebar: rest_api_guide_sidebar
 redirect_from: /rest-api-guide/authentication/auth_kerberos-settings.html
+deprecated: false
 ---

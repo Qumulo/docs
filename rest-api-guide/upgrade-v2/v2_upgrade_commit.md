@@ -14,4 +14,5 @@ api_version: v2
 permalink: /rest-api-guide/upgrade-v2/v2_upgrade_commit.html
 sidebar: rest_api_guide_sidebar
 redirect_from: /rest-api-guide/upgrade/v2_upgrade_commit.html
+deprecated: false
 ---

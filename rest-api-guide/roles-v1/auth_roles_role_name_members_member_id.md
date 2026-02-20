@@ -54,4 +54,5 @@ api_version: v1
 permalink: /rest-api-guide/roles-v1/auth_roles_role_name_members_member_id.html
 sidebar: rest_api_guide_sidebar
 redirect_from: /rest-api-guide/roles/auth_roles_role_name_members_member_id.html
+deprecated: false
 ---

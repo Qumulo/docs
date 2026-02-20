@@ -179,4 +179,5 @@ api_version: v1
 permalink: /rest-api-guide/saml-configuration-v1/saml_settings.html
 sidebar: rest_api_guide_sidebar
 redirect_from: /rest-api-guide/saml-configuration/saml_settings.html
+deprecated: false
 ---

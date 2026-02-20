@@ -17,4 +17,5 @@ api_version: v1
 permalink: /rest-api-guide/object-storage-v1/object-storage_uris.html
 sidebar: rest_api_guide_sidebar
 redirect_from: /rest-api-guide/object-storage/object-storage_uris.html
+deprecated: false
 ---

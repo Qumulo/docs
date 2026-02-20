@@ -81,4 +81,5 @@ api_version: v1
 permalink: /rest-api-guide/smb-session-administration-v1/smb_sessions.html
 sidebar: rest_api_guide_sidebar
 redirect_from: /rest-api-guide/smb-session-administration/smb_sessions.html
+deprecated: false
 ---

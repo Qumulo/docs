@@ -24,4 +24,5 @@ api_version: v1
 permalink: /rest-api-guide/snapshots-v1/snapshots_capacity-used-per-snapshot_id.html
 sidebar: rest_api_guide_sidebar
 redirect_from: /rest-api-guide/snapshots/snapshots_capacity-used-per-snapshot_id.html
+deprecated: false
 ---

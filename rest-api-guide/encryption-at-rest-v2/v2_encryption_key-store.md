@@ -68,4 +68,5 @@ rest_endpoint: /v2/encryption/key-store
 api_version: v2
 permalink: /rest-api-guide/encryption-at-rest-v2/v2_encryption_key-store.html
 sidebar: rest_api_guide_sidebar
+deprecated: false
 ---

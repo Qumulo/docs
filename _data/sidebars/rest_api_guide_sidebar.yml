@@ -155,6 +155,7 @@ entries:
     url: /rest-api-guide/audit-log-v1/
   - folderitems:
     - apiversion: v1
+      deprecated: true
       output: web,pdf
       title: auth/auth-ids/{id}/related-identities
       url: /rest-api-guide/authentication-v1/auth_auth-ids_id_related-identities.html
@@ -167,10 +168,12 @@ entries:
       title: auth/identities/{id}/attributes
       url: /rest-api-guide/authentication-v1/auth_identities_id_attributes.html
     - apiversion: v1
+      deprecated: true
       output: web,pdf
       title: auth/identity/expand
       url: /rest-api-guide/authentication-v1/auth_identity_expand.html
     - apiversion: v1
+      deprecated: true
       output: web,pdf
       title: auth/identity/find
       url: /rest-api-guide/authentication-v1/auth_identity_find.html
@@ -183,18 +186,22 @@ entries:
       title: auth/kerberos-settings
       url: /rest-api-guide/authentication-v1/auth_kerberos-settings.html
     - apiversion: v1
+      deprecated: true
       output: web,pdf
       title: auth/local-username/{username}/related-identities
       url: /rest-api-guide/authentication-v1/auth_local-username_username_related-identities.html
     - apiversion: v1
+      deprecated: true
       output: web,pdf
       title: auth/posix-gids/{id}/related-identities
       url: /rest-api-guide/authentication-v1/auth_posix-gids_id_related-identities.html
     - apiversion: v1
+      deprecated: true
       output: web,pdf
       title: auth/posix-uids/{id}/related-identities
       url: /rest-api-guide/authentication-v1/auth_posix-uids_id_related-identities.html
     - apiversion: v1
+      deprecated: true
       output: web,pdf
       title: auth/sids/{id}/related-identities
       url: /rest-api-guide/authentication-v1/auth_sids_id_related-identities.html
@@ -377,6 +384,7 @@ entries:
     url: /rest-api-guide/cluster-data-protection-v1/
   - folderitems:
     - apiversion: v1
+      deprecated: true
       output: web,pdf
       title: cluster/calculate-node-add-capacity
       url: /rest-api-guide/cluster-management-v1/cluster_calculate-node-add-capacity.html
@@ -385,10 +393,12 @@ entries:
       title: cluster/node-replacement-plan
       url: /rest-api-guide/cluster-management-v1/cluster_node-replacement-plan.html
     - apiversion: v1
+      deprecated: true
       output: web,pdf
       title: cluster/nodes
       url: /rest-api-guide/cluster-management-v1/cluster_nodes.html
     - apiversion: v1
+      deprecated: true
       output: web,pdf
       title: cluster/nodes/chassis
       url: /rest-api-guide/cluster-management-v1/cluster_nodes_chassis.html
@@ -401,6 +411,7 @@ entries:
       title: cluster/nodes/{id}
       url: /rest-api-guide/cluster-management-v1/cluster_nodes_id.html
     - apiversion: v1
+      deprecated: true
       output: web,pdf
       title: cluster/nodes/{id}/chassis
       url: /rest-api-guide/cluster-management-v1/cluster_nodes_id_chassis.html
@@ -413,6 +424,7 @@ entries:
       title: cluster/nodes/{id}/uid-light
       url: /rest-api-guide/cluster-management-v1/cluster_nodes_id_uid-light.html
     - apiversion: v1
+      deprecated: true
       output: web,pdf
       title: cluster/restriper/status
       url: /rest-api-guide/cluster-management-v1/cluster_restriper_status.html
@@ -501,6 +513,7 @@ entries:
       title: dns/lookup-override-config
       url: /rest-api-guide/dns-methods-v1/dns_lookup-override-config.html
     - apiversion: v1
+      deprecated: true
       output: web,pdf
       title: dns/resolve
       url: /rest-api-guide/dns-methods-v1/dns_resolve.html
@@ -535,12 +548,15 @@ entries:
     output: web,pdf
     title: Directory Quotas V1 (files)
     url: /rest-api-guide/directory-quotas-v1/
-  - folderitems:
+  - deprecated: true
+    folderitems:
     - apiversion: v1
+      deprecated: true
       output: web,pdf
       title: encryption/rotate-keys
       url: /rest-api-guide/encryption-at-rest-v1/encryption_rotate-keys.html
     - apiversion: v1
+      deprecated: true
       output: web,pdf
       title: encryption/status
       url: /rest-api-guide/encryption-at-rest-v1/encryption_status.html
@@ -971,6 +987,7 @@ entries:
       title: network/floating-ip-allocation
       url: /rest-api-guide/network-configuration-v1/network_floating-ip-allocation.html
     - apiversion: v1
+      deprecated: true
       output: web,pdf
       title: network/settings
       url: /rest-api-guide/network-configuration-v1/network_settings.html
@@ -979,10 +996,12 @@ entries:
       title: network/static-ip-allocation
       url: /rest-api-guide/network-configuration-v1/network_static-ip-allocation.html
     - apiversion: v1
+      deprecated: true
       output: web,pdf
       title: network/status
       url: /rest-api-guide/network-configuration-v1/network_status.html
     - apiversion: v1
+      deprecated: true
       output: web,pdf
       title: network/status/{id}
       url: /rest-api-guide/network-configuration-v1/network_status_id.html
@@ -1325,12 +1344,15 @@ entries:
     output: web,pdf
     title: SMB Session Administration V1 (smb)
     url: /rest-api-guide/smb-session-administration-v1/
-  - folderitems:
+  - deprecated: true
+    folderitems:
     - apiversion: v1
+      deprecated: true
       output: web,pdf
       title: smb/shares
       url: /rest-api-guide/smb-shares-methods-v1/smb_shares.html
     - apiversion: v1
+      deprecated: true
       output: web,pdf
       title: smb/shares/{id}
       url: /rest-api-guide/smb-shares-methods-v1/smb_shares_id.html
@@ -1430,6 +1452,7 @@ entries:
     url: /rest-api-guide/shutdown-v1/
   - folderitems:
     - apiversion: v1
+      deprecated: true
       output: web,pdf
       title: snapshots
       url: /rest-api-guide/snapshots-v1/snapshots.html
@@ -1446,18 +1469,22 @@ entries:
       title: snapshots/capacity-used-per-snapshot/{id}
       url: /rest-api-guide/snapshots-v1/snapshots_capacity-used-per-snapshot_id.html
     - apiversion: v1
+      deprecated: true
       output: web,pdf
       title: snapshots/policies
       url: /rest-api-guide/snapshots-v1/snapshots_policies.html
     - apiversion: v1
+      deprecated: true
       output: web,pdf
       title: snapshots/policies/status
       url: /rest-api-guide/snapshots-v1/snapshots_policies_status.html
     - apiversion: v1
+      deprecated: true
       output: web,pdf
       title: snapshots/policies/status/{id}
       url: /rest-api-guide/snapshots-v1/snapshots_policies_status_id.html
     - apiversion: v1
+      deprecated: true
       output: web,pdf
       title: snapshots/policies/{id}
       url: /rest-api-guide/snapshots-v1/snapshots_policies_id.html
@@ -1466,6 +1493,7 @@ entries:
       title: snapshots/total-used-capacity
       url: /rest-api-guide/snapshots-v1/snapshots_total-used-capacity.html
     - apiversion: v1
+      deprecated: true
       output: web,pdf
       title: snapshots/{id}
       url: /rest-api-guide/snapshots-v1/snapshots_id.html
@@ -1474,34 +1502,42 @@ entries:
     url: /rest-api-guide/snapshots-v1/
   - folderitems:
     - apiversion: v2
+      deprecated: true
       output: web,pdf
       title: snapshots
       url: /rest-api-guide/snapshots-v2/v2_snapshots.html
     - apiversion: v2
+      deprecated: true
       output: web,pdf
       title: snapshots/policies
       url: /rest-api-guide/snapshots-v2/v2_snapshots_policies.html
     - apiversion: v2
+      deprecated: true
       output: web,pdf
       title: snapshots/policies/status
       url: /rest-api-guide/snapshots-v2/v2_snapshots_policies_status.html
     - apiversion: v2
+      deprecated: true
       output: web,pdf
       title: snapshots/policies/status/{id}
       url: /rest-api-guide/snapshots-v2/v2_snapshots_policies_status_id.html
     - apiversion: v2
+      deprecated: true
       output: web,pdf
       title: snapshots/policies/{id}
       url: /rest-api-guide/snapshots-v2/v2_snapshots_policies_id.html
     - apiversion: v2
+      deprecated: true
       output: web,pdf
       title: snapshots/status
       url: /rest-api-guide/snapshots-v2/v2_snapshots_status.html
     - apiversion: v2
+      deprecated: true
       output: web,pdf
       title: snapshots/status/{id}
       url: /rest-api-guide/snapshots-v2/v2_snapshots_status_id.html
     - apiversion: v2
+      deprecated: true
       output: web,pdf
       title: snapshots/{id}
       url: /rest-api-guide/snapshots-v2/v2_snapshots_id.html
@@ -1538,6 +1574,7 @@ entries:
       title: snapshots/policies/{id}
       url: /rest-api-guide/snapshots-v3/v3_snapshots_policies_id.html
     - apiversion: v3
+      deprecated: true
       output: web,pdf
       title: snapshots/status
       url: /rest-api-guide/snapshots-v3/v3_snapshots_status.html
@@ -1665,6 +1702,7 @@ entries:
       title: upgrade/prepare
       url: /rest-api-guide/upgrade-v2/v2_upgrade_prepare.html
     - apiversion: v2
+      deprecated: true
       output: web,pdf
       title: upgrade/status
       url: /rest-api-guide/upgrade-v2/v2_upgrade_status.html
@@ -1691,8 +1729,10 @@ entries:
     output: web,pdf
     title: Version V1 (version)
     url: /rest-api-guide/version-v1/
-  - folderitems:
+  - deprecated: true
+    folderitems:
     - apiversion: v1
+      deprecated: true
       output: web,pdf
       title: web-ui/settings
       url: /rest-api-guide/web-ui-settings-v1/web-ui_settings.html

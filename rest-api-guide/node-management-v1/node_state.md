@@ -27,4 +27,5 @@ api_version: v1
 permalink: /rest-api-guide/node-management-v1/node_state.html
 sidebar: rest_api_guide_sidebar
 redirect_from: /rest-api-guide/node-management/node_state.html
+deprecated: false
 ---

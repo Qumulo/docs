@@ -22,4 +22,5 @@ api_version: v1
 permalink: /rest-api-guide/local-user-methods-v1/users_id_setpassword.html
 sidebar: rest_api_guide_sidebar
 redirect_from: /rest-api-guide/local-user-methods/users_id_setpassword.html
+deprecated: false
 ---

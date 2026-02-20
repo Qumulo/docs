@@ -87,4 +87,5 @@ rest_endpoint: /v1/nexus/connection
 api_version: v1
 permalink: /rest-api-guide/nexus-configuration-v1/nexus_connection.html
 sidebar: rest_api_guide_sidebar
+deprecated: false
 ---

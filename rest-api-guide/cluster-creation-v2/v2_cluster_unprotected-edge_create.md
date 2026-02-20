@@ -22,4 +22,5 @@ rest_endpoint: /v2/cluster/unprotected-edge/create
 api_version: v2
 permalink: /rest-api-guide/cluster-creation-v2/v2_cluster_unprotected-edge_create.html
 sidebar: rest_api_guide_sidebar
+deprecated: false
 ---

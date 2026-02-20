@@ -13,4 +13,5 @@ rest_endpoint: /v1/nexus/registration/rotate
 api_version: v1
 permalink: /rest-api-guide/nexus-configuration-v1/nexus_registration_rotate.html
 sidebar: rest_api_guide_sidebar
+deprecated: false
 ---

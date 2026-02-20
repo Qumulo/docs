@@ -41,4 +41,5 @@ api_version: v3
 permalink: /rest-api-guide/upgrade-v3/v3_upgrade_status.html
 sidebar: rest_api_guide_sidebar
 redirect_from: /rest-api-guide/upgrade/v3_upgrade_status.html
+deprecated: false
 ---

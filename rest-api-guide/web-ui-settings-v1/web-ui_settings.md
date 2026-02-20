@@ -87,4 +87,5 @@ api_version: v1
 permalink: /rest-api-guide/web-ui-settings-v1/web-ui_settings.html
 sidebar: rest_api_guide_sidebar
 redirect_from: /rest-api-guide/web-ui-settings/web-ui_settings.html
+deprecated: true
 ---

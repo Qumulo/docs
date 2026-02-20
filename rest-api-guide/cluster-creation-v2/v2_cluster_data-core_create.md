@@ -32,4 +32,5 @@ rest_endpoint: /v2/cluster/data-core/create
 api_version: v2
 permalink: /rest-api-guide/cluster-creation-v2/v2_cluster_data-core_create.html
 sidebar: rest_api_guide_sidebar
+deprecated: false
 ---

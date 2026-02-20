@@ -63,12 +63,12 @@ def get_versioned_directory_name(tag, version):
     return f"{base_tag.lower().replace(' ', '-')}-{version.lower()}"
 
 
-def create_sidebar_entry(title, url, api_version=DEFAULT_VERSION, is_preview=False):
-    """Create a sidebar entry with appropriate fields."""
+def create_sidebar_entry(title, url, api_version=DEFAULT_VERSION, is_preview=False, is_deprecated=False):
     entry = {"output": OUTPUT_FORMATS, "title": title, "url": url}
     if is_preview:
         entry["preview"] = True
-    # Always include apiversion for consistency, even for v1
+    if is_deprecated:
+        entry["deprecated"] = True
     if api_version:
         entry["apiversion"] = api_version
     return entry
@@ -297,6 +297,11 @@ def process_endpoint(path, path_item, sidebar_entries_by_tag, tag_info_dict):
         for details in path_item.values()
     )
 
+    is_deprecated = any(
+        details.get("deprecated", False)
+        for details in path_item.values()
+    )
+
     for tag in tags:
         # Get API version from path - the single source of truth
         api_version = extract_api_version(path)
@@ -332,6 +337,7 @@ def process_endpoint(path, path_item, sidebar_entries_by_tag, tag_info_dict):
                 "methods": yaml_content["methods"],
                 "rest_endpoint": path,
                 "api_version": api_version,
+                "deprecated": is_deprecated,
                 "permalink": permalink,
                 "sidebar": "rest_api_guide_sidebar",
             },
@@ -344,6 +350,7 @@ def process_endpoint(path, path_item, sidebar_entries_by_tag, tag_info_dict):
             url=permalink,
             api_version=api_version,
             is_preview=is_preview,
+            is_deprecated=is_deprecated,
         )
         sidebar_entries_by_tag[versioned_tag].append(sidebar_entry)
 
@@ -463,6 +470,7 @@ for tag, entries in sidebar_entries_by_tag.items():
         )
         parent_title = create_sidebar_title(tag, first_segment)
         all_preview = all(entry.get("preview", False) for entry in entries)
+        all_deprecated = all(entry.get("deprecated", False) for entry in entries)
 
         parent_entry = {
             "folderitems": entries,
@@ -474,6 +482,10 @@ for tag, entries in sidebar_entries_by_tag.items():
         # If all children are preview, mark the parent as preview
         if all_preview:
             parent_entry["preview"] = True
+
+        # If all children are deprecated, mark the parent as deprecated
+        if all_deprecated:
+            parent_entry["deprecated"] = True
 
         # Sort order is simply the version number for consistent V1 → V2 → V3 ordering
         sort_order = int(version_num)

@@ -23,4 +23,5 @@ api_version: v1
 permalink: /rest-api-guide/active-directory-v1/ad_leave.html
 sidebar: rest_api_guide_sidebar
 redirect_from: /rest-api-guide/active-directory/ad_leave.html
+deprecated: false
 ---

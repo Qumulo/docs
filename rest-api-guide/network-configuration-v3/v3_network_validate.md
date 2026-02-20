@@ -123,4 +123,5 @@ rest_endpoint: /v3/network/validate
 api_version: v3
 permalink: /rest-api-guide/network-configuration-v3/v3_network_validate.html
 sidebar: rest_api_guide_sidebar
+deprecated: false
 ---

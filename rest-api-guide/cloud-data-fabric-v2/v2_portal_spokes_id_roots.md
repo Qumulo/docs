@@ -63,4 +63,5 @@ api_version: v2
 permalink: /rest-api-guide/cloud-data-fabric-v2/v2_portal_spokes_id_roots.html
 sidebar: rest_api_guide_sidebar
 redirect_from: /rest-api-guide/cloud-data-fabric/v2_portal_spokes_id_roots.html
+deprecated: false
 ---

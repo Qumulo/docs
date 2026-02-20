@@ -112,13 +112,21 @@ blockquote {
     flex: 1 1 auto;
   }
 
-  .nav > li > a .apipreview.parentpreview{ order:2; white-space:nowrap; }
-  .nav > li > a .apiversion.parentversion{ order:3; white-space:nowrap; }
-  .nav > li > a > span:not(.apiversion):not(.apipreview){
+  .nav li:has(li) > a > span:not(.apiversion):not(.apipreview):not(.apideprecated)::after { content: '\25be'; }
+  .nav li.active:has(li) > a > span:not(.apiversion):not(.apipreview):not(.apideprecated)::after { content: '\25b4'; }
+
+  .nav > li > a .apipreview.parentpreview { order: 2; white-space: nowrap; }
+  .nav > li > a .apideprecated.parentdeprecated { order: 2; white-space: nowrap; }
+  .nav > li > a .apiversion.parentversion { order: 3; white-space: nowrap; }
+  .nav > li > a > span:not(.apiversion):not(.apipreview):not(.apideprecated) {
     order: 4;
     float: none;
     line-height: 1;
-  }
+  } 
+
+  .nav li ul li a .tag-container .apipreview { order: 1; }
+  .nav li ul li a .tag-container .apideprecated { order: 1; }
+  .nav li ul li a .tag-container .apiversion { order: 2; }
 
   .nav li ul li a{
     display: flex;
@@ -142,8 +150,6 @@ blockquote {
     white-space: nowrap;
   }
 
-  .nav li ul li a .tag-container .apipreview{ order:1; }
-  .nav li ul li a .tag-container .apiversion{ order:2; }
   .nav li ul li a > span:not(.tag-container){
     order: 3;
     float: none;
@@ -151,7 +157,8 @@ blockquote {
   }
 
   .apiversion,
-  .apipreview{
+  .apipreview,
+  .apideprecated {
     color: #fff;
     padding: 1px 4px;
     font-size: 10pt !important;
@@ -171,6 +178,12 @@ blockquote {
   .apipreview {
     background: #ff5c35;
     text-transform: uppercase;
+  }
+
+  .apideprecated {
+    background: #17598e;
+    text-transform: uppercase;
+    margin-left: -10px;
   }
 
   .nav li > a > span{ float: none; }
@@ -1279,16 +1292,6 @@ a.accordion-toggle, a.accordion-collapsed {
     font-size: 19px;
     font-weight: bolder;
 }
-
-
-.nav li:has(li) > a > span:not(.apiversion):not(.apipreview)::after {
-    content: '\25be';
-}
-
-.nav li.active:has(li) > a > span:not(.apiversion):not(.apipreview)::after {
-    content: '\25b4';
-}
-
 
 .nav a:hover, .nav li.active > a {
     /* This color is required to meet WCAG standards for accessible text. */

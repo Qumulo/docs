@@ -674,4 +674,5 @@ rest_endpoint: /v2/smb/shares/{ref}
 api_version: v2
 permalink: /rest-api-guide/smb-shares-methods-v2/v2_smb_shares_ref.html
 sidebar: rest_api_guide_sidebar
+deprecated: false
 ---

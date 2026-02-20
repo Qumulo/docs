@@ -79,4 +79,5 @@ api_version: v1
 permalink: /rest-api-guide/local-user-methods-v1/users_id.html
 sidebar: rest_api_guide_sidebar
 redirect_from: /rest-api-guide/local-user-methods/users_id.html
+deprecated: false
 ---

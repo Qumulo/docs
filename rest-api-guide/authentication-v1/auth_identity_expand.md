@@ -216,4 +216,5 @@ api_version: v1
 permalink: /rest-api-guide/authentication-v1/auth_identity_expand.html
 sidebar: rest_api_guide_sidebar
 redirect_from: /rest-api-guide/authentication/auth_identity_expand.html
+deprecated: true
 ---

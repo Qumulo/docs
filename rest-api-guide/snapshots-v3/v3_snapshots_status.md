@@ -58,4 +58,5 @@ api_version: v3
 permalink: /rest-api-guide/snapshots-v3/v3_snapshots_status.html
 sidebar: rest_api_guide_sidebar
 redirect_from: /rest-api-guide/snapshots/v3_snapshots_status.html
+deprecated: true
 ---

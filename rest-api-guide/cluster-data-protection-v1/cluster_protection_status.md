@@ -44,4 +44,5 @@ api_version: v1
 permalink: /rest-api-guide/cluster-data-protection-v1/cluster_protection_status.html
 sidebar: rest_api_guide_sidebar
 redirect_from: /rest-api-guide/cluster-data-protection/cluster_protection_status.html
+deprecated: false
 ---

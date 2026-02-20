@@ -40,4 +40,5 @@ rest_endpoint: /v2/encryption/external-kms/keys/create
 api_version: v2
 permalink: /rest-api-guide/encryption-at-rest-v2/v2_encryption_external-kms_keys_create.html
 sidebar: rest_api_guide_sidebar
+deprecated: false
 ---

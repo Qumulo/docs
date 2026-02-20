@@ -17,4 +17,5 @@ rest_endpoint: /v3/network/frontend-interfaces
 api_version: v3
 permalink: /rest-api-guide/network-configuration-v3/v3_network_frontend-interfaces.html
 sidebar: rest_api_guide_sidebar
+deprecated: false
 ---

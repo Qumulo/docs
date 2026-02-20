@@ -68,4 +68,5 @@ api_version: v1
 permalink: /rest-api-guide/audit-log-v1/audit_cloudwatch_config.html
 sidebar: rest_api_guide_sidebar
 redirect_from: /rest-api-guide/audit-log/audit_cloudwatch_config.html
+deprecated: false
 ---

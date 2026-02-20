@@ -227,4 +227,5 @@ api_version: v1
 permalink: /rest-api-guide/smb-multitenancy-methods-v1/multitenancy_smb_settings_id.html
 sidebar: rest_api_guide_sidebar
 redirect_from: /rest-api-guide/smb-multitenancy-methods/multitenancy_smb_settings_id.html
+deprecated: false
 ---

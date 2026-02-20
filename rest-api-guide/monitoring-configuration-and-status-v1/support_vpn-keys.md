@@ -62,4 +62,5 @@ api_version: v1
 permalink: /rest-api-guide/monitoring-configuration-and-status-v1/support_vpn-keys.html
 sidebar: rest_api_guide_sidebar
 redirect_from: /rest-api-guide/monitoring-configuration-and-status/support_vpn-keys.html
+deprecated: false
 ---

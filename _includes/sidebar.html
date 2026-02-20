@@ -47,7 +47,7 @@
     {% endif %}
   {% endfor %}
 
-  {{ title_without_version }}{% if version != '' %}<span class="apiversion parentversion {{ version | downcase }}">{{ version }}</span>{% elsif folder.apiversion %}<span class="apiversion parentversion {{ folder.apiversion | downcase }}">{{ folder.apiversion }}</span>{% endif %}{% if folder.preview %}<span class="apipreview parentpreview">preview</span>{% endif %}
+  {{ title_without_version }}{% if version != '' %}<span class="apiversion parentversion {{ version | downcase }}">{{ version }}</span>{% elsif folder.apiversion %}<span class="apiversion parentversion {{ folder.apiversion | downcase }}">{{ folder.apiversion }}</span>{% endif %}{% if folder.preview %}<span class="apipreview parentpreview">preview</span>{% endif %}{% if folder.deprecated %}<span class="apideprecated parentdeprecated">deprecated</span>{% endif %}
   </a>
 
       <ul>
@@ -66,6 +66,9 @@
               {% if folderitem.preview %}
                 <span class="apipreview">preview</span>
               {% endif %}
+              {% if folderitem.deprecated %}
+                <span class="apideprecated">deprecated</span>
+              {% endif %}
               </span>
             </a>
           </li>
@@ -80,6 +83,9 @@
               {% if folderitem.preview %}
                 <span class="apipreview">preview</span>
               {% endif %}
+              {% if folderitem.deprecated %}
+                <span class="apideprecated">deprecated</span>
+              {% endif %}
               </span>
             </a>
           </li>
@@ -93,6 +99,9 @@
               {% endif %}
               {% if folderitem.preview %}
                 <span class="apipreview">preview</span>
+              {% endif %}
+              {% if folderitem.deprecated %}
+                <span class="apideprecated">deprecated</span>
               {% endif %}
               </span>
             </a>

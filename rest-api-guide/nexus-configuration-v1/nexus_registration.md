@@ -69,4 +69,5 @@ rest_endpoint: /v1/nexus/registration
 api_version: v1
 permalink: /rest-api-guide/nexus-configuration-v1/nexus_registration.html
 sidebar: rest_api_guide_sidebar
+deprecated: false
 ---

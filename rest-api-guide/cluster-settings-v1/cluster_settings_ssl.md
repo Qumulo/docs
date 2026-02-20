@@ -21,4 +21,5 @@ api_version: v1
 permalink: /rest-api-guide/cluster-settings-v1/cluster_settings_ssl.html
 sidebar: rest_api_guide_sidebar
 redirect_from: /rest-api-guide/cluster-settings/cluster_settings_ssl.html
+deprecated: false
 ---

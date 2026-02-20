@@ -152,4 +152,5 @@ api_version: v2
 permalink: /rest-api-guide/network-configuration-v2/v2_network_interfaces_interface_id_networks_network_id.html
 sidebar: rest_api_guide_sidebar
 redirect_from: /rest-api-guide/network-configuration/v2_network_interfaces_interface_id_networks_network_id.html
+deprecated: false
 ---

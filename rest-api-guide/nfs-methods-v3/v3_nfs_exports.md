@@ -270,4 +270,5 @@ api_version: v3
 permalink: /rest-api-guide/nfs-methods-v3/v3_nfs_exports.html
 sidebar: rest_api_guide_sidebar
 redirect_from: /rest-api-guide/nfs-methods/v3_nfs_exports.html
+deprecated: false
 ---

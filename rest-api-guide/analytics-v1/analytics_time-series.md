@@ -26,4 +26,5 @@ api_version: v1
 permalink: /rest-api-guide/analytics-v1/analytics_time-series.html
 sidebar: rest_api_guide_sidebar
 redirect_from: /rest-api-guide/analytics/analytics_time-series.html
+deprecated: false
 ---

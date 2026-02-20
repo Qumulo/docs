@@ -45,4 +45,5 @@ api_version: v1
 permalink: /rest-api-guide/authentication-v1/auth_user-defined-mappings.html
 sidebar: rest_api_guide_sidebar
 redirect_from: /rest-api-guide/authentication/auth_user-defined-mappings.html
+deprecated: false
 ---

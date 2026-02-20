@@ -44,4 +44,5 @@ api_version: v1
 permalink: /rest-api-guide/analytics-v1/analytics_capacity-history.html
 sidebar: rest_api_guide_sidebar
 redirect_from: /rest-api-guide/analytics/analytics_capacity-history.html
+deprecated: false
 ---

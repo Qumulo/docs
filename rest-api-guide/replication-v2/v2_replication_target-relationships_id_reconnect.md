@@ -146,4 +146,5 @@ api_version: v2
 permalink: /rest-api-guide/replication-v2/v2_replication_target-relationships_id_reconnect.html
 sidebar: rest_api_guide_sidebar
 redirect_from: /rest-api-guide/replication/v2_replication_target-relationships_id_reconnect.html
+deprecated: false
 ---

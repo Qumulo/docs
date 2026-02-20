@@ -17,4 +17,5 @@ api_version: v1
 permalink: /rest-api-guide/license-management-v1/license_enforcement.html
 sidebar: rest_api_guide_sidebar
 redirect_from: /rest-api-guide/license-management/license_enforcement.html
+deprecated: false
 ---

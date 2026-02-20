@@ -193,4 +193,5 @@ rest_endpoint: /v3/network/status/{node_id}
 api_version: v3
 permalink: /rest-api-guide/network-configuration-v3/v3_network_status_node_id.html
 sidebar: rest_api_guide_sidebar
+deprecated: false
 ---

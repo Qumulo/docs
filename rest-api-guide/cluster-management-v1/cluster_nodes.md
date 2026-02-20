@@ -49,4 +49,5 @@ api_version: v1
 permalink: /rest-api-guide/cluster-management-v1/cluster_nodes.html
 sidebar: rest_api_guide_sidebar
 redirect_from: /rest-api-guide/cluster-management/cluster_nodes.html
+deprecated: true
 ---

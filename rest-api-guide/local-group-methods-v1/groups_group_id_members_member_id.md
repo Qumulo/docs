@@ -20,4 +20,5 @@ api_version: v1
 permalink: /rest-api-guide/local-group-methods-v1/groups_group_id_members_member_id.html
 sidebar: rest_api_guide_sidebar
 redirect_from: /rest-api-guide/local-group-methods/groups_group_id_members_member_id.html
+deprecated: false
 ---

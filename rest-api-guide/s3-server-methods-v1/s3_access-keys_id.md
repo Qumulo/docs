@@ -19,4 +19,5 @@ api_version: v1
 permalink: /rest-api-guide/s3-server-methods-v1/s3_access-keys_id.html
 sidebar: rest_api_guide_sidebar
 redirect_from: /rest-api-guide/s3-server-methods/s3_access-keys_id.html
+deprecated: false
 ---

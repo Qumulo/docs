@@ -28,4 +28,5 @@ api_version: v1
 permalink: /rest-api-guide/session-management-v1/session_start-saml-login.html
 sidebar: rest_api_guide_sidebar
 redirect_from: /rest-api-guide/session-management/session_start-saml-login.html
+deprecated: false
 ---

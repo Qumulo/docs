@@ -31,4 +31,5 @@ rest_endpoint: /v2/object-storage/add-uris
 api_version: v2
 permalink: /rest-api-guide/object-storage-v2/v2_object-storage_add-uris.html
 sidebar: rest_api_guide_sidebar
+deprecated: false
 ---
