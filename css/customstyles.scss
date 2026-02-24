@@ -98,6 +98,13 @@ blockquote {
 
 /* API VERSION AND PREVIEW TAGS START */
 @media screen {
+  /* Fix for Firefox not using <wbr> correctly */
+  @-moz-document url-prefix() {
+    .nav li ul li a wbr {
+      display: none;
+    }
+  }
+
   .nav > li > a {
     display: flex;
     align-items: flex-start;
@@ -182,16 +189,28 @@ blockquote {
     text-align: center;
   }
 
-  .apipreview,
-  .apipreview-inline {
+  .apipreview {
     background: #ff5c35;
     text-transform: uppercase;
   }
 
-  .apideprecated,
-  .apideprecated-inline {
+  .apipreview-inline {
+    text-transform: uppercase;
+    background: transparent;
+    color: #ff5c35;
+    border: 1px solid #ff5c35;
+  }
+
+  .apideprecated {
     background: #17598e;
     text-transform: uppercase;
+  }
+
+  .apideprecated-inline {
+    text-transform: uppercase;
+    background: none;
+    color: #17598e;
+    border: 1px solid #17598e;
   }
 
   .apideprecated {
@@ -201,7 +220,7 @@ blockquote {
   .apipreview-inline,
   .apideprecated-inline {
     font-size: 12pt !important;
-    margin-left: 15px;
+    margin-left: 10px;
     padding: 3px 7px;
   }
 

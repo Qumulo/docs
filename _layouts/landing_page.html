@@ -22,7 +22,7 @@ layout: default
         <ul>
           {% for item in entry.folderitems %}
           {% if item.type == subnavi %}
-          <li><a href="{{ item.url }}">{{ item.title }}{% if item.deprecated %}<span class="apideprecated-inline">deprecated</span>{% elsif item.preview %}<span class="apipreview-inline">preview</span>{% endif %}</a></li>
+          <li><a href="{{ item.url }}">{{ item.title }}</a>{% if item.deprecated %}<span class="apideprecated-inline">deprecated</span>{% elsif item.preview %}<span class="apipreview-inline">preview</span>{% endif %}</li>
           {% endif %}
           {% endfor %}    
         </ul>             
