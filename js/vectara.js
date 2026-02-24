@@ -14,12 +14,19 @@ function createOverlay() {
   overlay.style.justifyContent = 'center';
   overlay.style.alignItems = 'center';
   overlay.style.zIndex = '1000';
+  overlay.style.flexDirection = 'column';
 
   const message = document.createElement('h1');
   message.textContent = 'Searching Documentation...';
   message.style.color = 'white';
 
   overlay.appendChild(message);
+
+   const gif = document.createElement('img');
+  gif.src = '/images/spinner.gif';
+  gif.style.width = '100px';
+  gif.style.height = '100px';
+  overlay.appendChild(gif);
 
   return overlay;
 }
