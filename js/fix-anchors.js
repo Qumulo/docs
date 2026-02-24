@@ -6,3 +6,10 @@ window.addEventListener('load', function() {
     }
   }
 });
+
+window.addEventListener('hashchange', function() {
+  const target = document.querySelector(window.location.hash);
+  if (target) {
+    target.scrollIntoView();
+  }
+});
