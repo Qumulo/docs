@@ -19,7 +19,7 @@ layout: default
     {% for entry in site.data.sidebars[page.sidebar].entries[0].folders %}
       {% if entry.type != 'navi' and entry.type != 'frontmatter' and entry.title %}
         <ul>
-          <li><strong><a href="{{ entry.url }}">{{ entry.title }}</a></strong>{% if entry.deprecated %}<span class="apideprecated-inline">deprecated</span>{% elsif entry.preview %}<span class="apipreview-inline">preview</span>{% endif %}
+          <li><strong><a href="{{ entry.url }}">{{ entry.title }}</a></strong>
             <ul>
               {% for item in entry.folderitems %}
               <li><a href="{{ item.url }}">{{ item.title }}</a>{% if item.deprecated %}<span class="apideprecated-inline">deprecated</span>{% elsif item.preview %}<span class="apipreview-inline">preview</span>{% endif %}</li>

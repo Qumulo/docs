@@ -34,7 +34,7 @@ blockquote {
   font-size: 14px;
   padding: 3px 18px;
   background: #F7981F;
-  color: #0d1934;
+  color: whitesmoke;
   transition: all 0.3s ease;
   border: 0;
   width: fit-content;
@@ -42,11 +42,12 @@ blockquote {
   margin-left: auto;
   margin-bottom: 20px;
   margin-right: 20px;
+  border-radius: 5px;
 }
 
 #send-feedback:hover {
   background: #007CAC;
-  color: white;
+  color: whitesmoke;
 }
 
 /* TABS START */
@@ -68,6 +69,7 @@ blockquote {
     font: inherit;
     font-weight: bold;
     transition: all 0.3s ease;
+    border-radius: 5px 5px 0px 0px;
   }
 
   /* Current-page (active) tab button */
@@ -178,7 +180,7 @@ blockquote {
   .apiversion,
   .apipreview,
   .apideprecated {
-    margin-top: -1px;
+    /*margin-top: -1px;*/
     white-space: nowrap;
   }
 
@@ -297,6 +299,7 @@ blockquote {
     border: 1px solid #dddddd;
     text-decoration: none;
     padding-right: 10px;
+    border-radius: 5px;
   }
 
   a.big-button {
@@ -344,13 +347,14 @@ h2#endpoint ~ h2#patch,
 #toc a[href="#put"],
 #toc a[href="#delete"],
 #toc a[href="#patch"] {
-  color: white;
+  color: whitesmoke;
   font-weight: bold;
   border-radius: 5px;
   width: fit-content;
   padding-top: 5px;
   padding-bottom: 5px;
   padding-left: 25px;
+  cursor: pointer;
 }
 
 h2#get,    #toc a[href="#get"]    { background-color: #0298ff; }
@@ -368,15 +372,16 @@ h2#patch  a {
   margin-left: -5px !important;
   padding-right: 10px !important;
   padding-left: 10px !important;
-  color: white !important;
+  color: whitesmoke !important;
 }
 
-h2#get    a:hover,
-h2#post   a:hover,
-h2#put    a:hover,
-h2#delete a:hover,
-h2#patch  a:hover {
-  color: white !important;
+h2#get:hover,
+h2#post:hover,
+h2#put:hover,
+h2#delete:hover,
+h2#patch:hover {
+  background: #17598e;
+  color: whitesmoke;
 }
 
 /* END API HEADING COLOUR */
@@ -389,8 +394,27 @@ h2#patch  a:hover {
 #toc a[href="#put"],
 #toc a[href="#delete"],
 #toc a[href="#patch"] {
+  text-decoration: none;
   padding-right: 7px;
   padding-left: 5px;
+  color: whitesmoke;
+}
+
+#toc a[href="#get"]:visited,
+#toc a[href="#post"]:visited,
+#toc a[href="#put"]:visited,
+#toc a[href="#delete"]:visited,
+#toc a[href="#patch"]:visited {
+  color: whitesmoke;
+}
+
+#toc a[href="#get"]:hover,
+#toc a[href="#post"]:hover,
+#toc a[href="#put"]:hover,
+#toc a[href="#delete"]:hover,
+#toc a[href="#patch"]:hover {
+  background-color: #0070a4;
+  color: whitesmoke;
 }
 
 #toc a[href="#get"] + .anchorjs-link,
@@ -473,6 +497,10 @@ a.navbar-brand {
   margin-left: -38px;
   border: 0;
   background: transparent;
+}
+
+.vectara__search_logo:hover {
+  filter: drop-shadow(1.5px 1.5px 0.1px white);
 }
 
 .vectara__search_loading {
@@ -639,7 +667,11 @@ td.replication-icon {
 
 /* Reading Mode tweak */
 #tg-sb-link {
-  background-color:transparent;
+  background-color: transparent;
+}
+
+#tg-sb-icon {
+  margin-top: 3px;
 }
 
 /* Search result summary */
@@ -1933,7 +1965,7 @@ a.footer_link:hover {
 
 /* Styles from Qumulo Care */
 a.btn-contact {
-  color: white !important;
+  color: whitesmoke !important;
   background-color: #0070A4;
   font-family: Montserrat, sans-serif;
   font-weight: bold;
@@ -1945,6 +1977,7 @@ a.btn-contact {
   border-radius: 0;
   transition: all 0.3s ease;
   text-transform: capitalize;
+  border-radius: 5px;
 }
 
 a.btn-contact:last-child {
@@ -1954,7 +1987,7 @@ a.btn-contact:last-child {
 a.btn-contact:hover,
 a.btn-contact:focus,
 a.btn-contact:active {
-  color: white;
+  color: whitesmoke;
   background-color: #ff9a00;
   text-decoration: none;
 }

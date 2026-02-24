@@ -32,7 +32,7 @@ function showOverlay() {
   if (document.querySelector('.vuiTitle')) {
     return;
   } else {
-    document.querySelectorAll('.post-title-main, .nav, #mysidebar, .search-grumpquat').forEach(element => {
+    document.querySelectorAll('#mysidebar, #tg-sb-content, #send-feedback').forEach(element => {
       element.style.display = 'none';
     });
   }
@@ -43,7 +43,7 @@ function hideOverlay() {
   if (document.querySelector('.vuiTitle')) {
     return;
   } else {
-    document.querySelectorAll('.post-title-main, .nav, #mysidebar, .search-grumpquat').forEach(element => {
+    document.querySelectorAll('#mysidebar, #tg-sb-content, #send-feedback').forEach(element => {
       element.style.display = 'block';
     });
   }
