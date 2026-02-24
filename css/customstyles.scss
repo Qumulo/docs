@@ -158,12 +158,19 @@ blockquote {
 
   .apiversion,
   .apipreview,
-  .apideprecated {
+  .apipreview-inline,
+  .apideprecated,
+  .apideprecated-inline {
     color: #fff;
     padding: 1px 4px;
     font-size: 10pt !important;
     font-weight: bold !important;
     border-radius: 5px;
+  }
+
+  .apiversion,
+  .apipreview,
+  .apideprecated {
     margin-top: -1px;
     white-space: nowrap;
   }
@@ -175,15 +182,27 @@ blockquote {
     text-align: center;
   }
 
-  .apipreview {
+  .apipreview,
+  .apipreview-inline {
     background: #ff5c35;
     text-transform: uppercase;
   }
 
-  .apideprecated {
+  .apideprecated,
+  .apideprecated-inline {
     background: #17598e;
     text-transform: uppercase;
+  }
+
+  .apideprecated {
     margin-left: -10px;
+  }
+
+  .apipreview-inline,
+  .apideprecated-inline {
+    font-size: 12pt !important;
+    margin-left: 15px;
+    padding: 3px 7px;
   }
 
   .nav li > a > span{ float: none; }
