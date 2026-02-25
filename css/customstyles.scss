@@ -180,7 +180,6 @@ blockquote {
   .apiversion,
   .apipreview,
   .apideprecated {
-    /*margin-top: -1px;*/
     white-space: nowrap;
   }
 
@@ -211,6 +210,27 @@ blockquote {
   .apideprecated-inline {
     text-transform: uppercase;
     background: none;
+    color: #17598e;
+    border: 1px solid #17598e;
+  }
+
+  .apipreview-inpage,
+  .apideprecated-inpage {
+    font-size: 24px;
+    text-transform: uppercase;
+    background: none;
+    border-radius: 5px;
+    padding: 0px 5px 0px 5px;
+    font-size: 24px;
+    margin-left: 10px;
+  }
+
+  .apipreview-inpage {
+    color: #ff5c35;
+    border: 1px solid #ff5c35;
+  }
+
+  .apideprecated-inpage {
     color: #17598e;
     border: 1px solid #17598e;
   }
