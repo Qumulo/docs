@@ -2023,7 +2023,10 @@ a.pdf:after {
 }
 
 /* Add an icon after external links by using Font Awesome */
-a[href^="http://"]:after, a[href^="https://"]:after {
+a[href^="http://"]:after,
+a[href^="https://"]:after,
+a[href*="/integration-guide/netwrix/index.html"]:after,
+a[href*="/integration-guide/splunk/index.html"]:after {
   content: "\f08e";
   font-family: FontAwesome;
   font-weight: normal;
