@@ -226,7 +226,8 @@ Deleting a cluster is a two-step process in which you delete your cluster's comp
 {{site.data.alerts.end}}
 
 #### Step 1: To Delete Your Cluster's Compute and Cache Resources
-1. After you back up your data safely, edit your `terraform.tfvars` file and set the `term_protection` variable to `false`.
+1. Back up your data safely.
+
 1. {{site.cnq.runTFapply}}
 
    {{site.cnq.reviewExecPlan}}
@@ -241,7 +242,7 @@ Deleting a cluster is a two-step process in which you delete your cluster's comp
 
 #### Step 2: To Delete Your Cluster's Persistent Storage
 1. Navigate to the `persistent-storage` directory.
-1. Edit your `terraform.tfvars` file and set the `prevent_destroy` parameter to `false`.
+
 1. {{site.cnq.runTFapply}}
 
    {{site.cnq.reviewExecPlan}}
