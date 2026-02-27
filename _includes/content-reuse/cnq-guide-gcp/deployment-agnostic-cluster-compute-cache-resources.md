@@ -17,7 +17,7 @@ This section explains how to deploy compute and cache resources for a Qumulo clu
 ### Part 1: To Deploy the Cluster Compute and Cache Resources
 1. Edit the `provider.tf` file:  
 
-   * To store the Terraform state remotely, add the name of an S3 bucket to the sections that begin with `backend "gcp" {` and `data "terraform_remote_state" "persistent_storage" {`.
+   * To store the Terraform state remotely, add the name of a GCS bucket to the sections that begin with `backend "gcp" {` and `data "terraform_remote_state" "persistent_storage" {`.
 
    * To store the Terraform state locally, comment the sections that begin with `backend "gcp" {` and `data "terraform_remote_state" "persistent_storage" {` and uncomment the section that contains `backend = "local"`.
    
