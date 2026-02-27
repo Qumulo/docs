@@ -128,7 +128,7 @@ entries:
       url: /cloud-native-gcp-administrator-guide/authorization-qumulo-core/managing-role-based-access-control-rbac.html
       output: web, pdf
 
-    - title: Managing Cross-Protocol Permissions
+    - title: Managing Cross-Protocol (XPP) Permissions
       url: /cloud-native-gcp-administrator-guide/authorization-qumulo-core/managing-cross-protocol-permissions-xpp.html
       output: web, pdf
 
