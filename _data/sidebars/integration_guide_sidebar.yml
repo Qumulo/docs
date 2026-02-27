@@ -37,6 +37,14 @@ entries:
       url: /contacting-qumulo-care-team.html
       output: web  
 
+  - title: Integrating with Netwrix
+    url: /integration-guide/netwrix/index.html
+    output: web, pdf
+
+  - title: Integrating with Splunk
+    url: /integration-guide/splunk/index.html
+    output: web, pdf
+
   - title: Integrating with Varonis
     url: /integration-guide/varonis/index.html
     output: web, pdf
