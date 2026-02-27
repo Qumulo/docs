@@ -8,7 +8,7 @@ When there are no cross-protocol interactions, Qumulo Core operates according to
 {{site.data.alerts.important}}
 <ul>
   <li>XPP doesn't break compatibility with previous Qumulo Core releases.</li>
-  <li>Enabling XPP doesn't change the rights on <em>existing</em> files in your file system. Changes take place only <em>after</em> you enable XPP.</li>
+  <li>Changing permissions mode doesn't change the rights for existing files in your file system. These changes take place during future operations that modify file permissions.</li>
 </ul>
 {{site.data.alerts.end}}
 
@@ -31,19 +31,48 @@ This section gives examples of common workflow scenarios and explains how Qumulo
 
 * **Mixed-Protocol Workflows (Mostly NFS)** Qumulo core operates as expected, with one exception: To preserve compatibility, Qumulo Core permits SMB clients to add access control entries (ACEs) to files and directories
  
-{% include note.html content="XPP reveals permissions that Native Permissions Mode hides. This can trigger security checks from SSH and SSHD. If you use SSH to access NFS home directories, see [Using SSH with Cross-Protocol Permissions](https://care.qumulo.com/hc/en-us/articles/360022920274) for more information." %}
-
 
 ## To Manage Cross-Protocol Permissions (XPP)
-Qumulo Core enables and disables XPP immediately, without scanning the directory tree. Existing file and directory permissions remain unaffected unless&mdash;or until&mdash;your workflow modifies them.
+XPP is enabled on new Qumulo clusters by default.
 
-* To enable XPP, run the `qq fs_set_permissions_settings cross_protocol` command.
+{{site.data.alerts.important}}
+<ul>
+  <li>When you disable or enable XPP, the change takes effect immediately, without Qumulo Core scanning the directory tree. Existing file and directory permissions remain unaffected unless&mdash;or until&mdash;your workflow modifies them.</li>
+  <li>It is important to remember that the <code>native</code> sub-command is a simple means of handling mixed protocol permissions by keping the most recent change to a file's or directory's permissions. While this is sufficient for most scenarios that don't require cross-protocol use, disabling XPP can cause issues to occur for mixed-protocol workloads when POSIX-mode bits can replace SMB access control lists (ACLs), or the other way around.</li>
+  <li>Before enabling XPP in a production environment, we recommend <a href="../snapshots/managing-snapshots.html">create a snapshot</a> of your file system.</li>
+</ul>
+{{site.data.alerts.end}}
 
-  {% include tip.html content="We recommend creating a snapshot before enabling XPP in a production environment." %}
+* To disable XPP, run the {% include qq.html command="fs_set_permissions_settings" %} `native` command.
 
-* To disable XPP, run the `qq fs_set_permissions_settings native` command.
+* To enable XPP, run the {% include qq.html command="fs_set_permissions_settings" %} `cross_protocol` command.
 
-* To check the current permissions mode, run the `qq fs_get_permissions_settings` command.
+* To check the current permissions mode, run the {% include qq.html command="fs_get_permissions_settings" %} command.
+
+
+## Best Practices for Using SSH with Cross-Protocol Permissions (XPP) Mode
+{{site.data.alerts.important}}
+XPP Mode can "reveal" the permissions that Native Permission Mode "hides" by translating the access control entry (ACE) rights for users or groups that aren't the file or group owners to the <code>Others</code> POSIX-mode bits, which:
+
+<ul>
+  <li>Helps avoid potential interoperability issues with POSIX applications that might misbehave if XPP Mode <em>appears</em> to deny access (which is actually permitted)</li>
+  <li>Ensures that XPP doesn't provide a false sense of security by accurately reflecting actual access rights in the <code>Others</code> POSIX mode bits</li>
+</ul>
+
+This behavior can trigger security checks from SSH or SSHD when you attempt to access NFSv4.1 home directories.
+{{site.data.alerts.end}}
+
+* **Ensure that the access control list (ACL) grants access only to its owner:** Private keys (for example, `$HOME/.ssh/id_rsa`) must not be accessible to any principal other than the owner (their permissions must not be higher than `600`).
+
+* **Ensure that the `authorized_keys` file and its parent directories are writable only by their owner:** Choose one of the following guidelines based on your organization's requirements.
+
+  * Ensure that the ACLs for `$HOME`, `$HOME/.ssh`, and `$HOME/.ssh/authorized_keys` don't grant write permissions to anyone other than the owner.
+    
+  * If anyone other than the owner of user home directories must be able to modify the directories, move the `authorized_keys` file to a location that can be secured according to OpenSSH requirements by setting the value of the `AuthorizedKeys` configuration option to the path to the `authorized_keys` file in the `/etc/ssh/sshd_config` file on every SSH server.
+
+  * If anyone other than the owner of the `authorized_keys` file must be able to modify the file, disable the security check by setting the `StrictModes` configuration option to `no` in the `/etc/ssh/sshd_config` file on every SSH server.
+
+    {% include caution.html content="Disabling the `StrictModes` configuration option disables OpenSSH permission checks entirely, for _all_ of the files that it checks." %}
 
 
 ## Troubleshooting the Permissions for a File or Directory
@@ -54,3 +83,5 @@ Explain Permissions Tools is a suite of diagnostic utilities that examines a fil
 * {% include qq.html command="fs_acl_explain_posix_mode" %}
 
 * {% include qq.html command="fs_acl_explain_rights" %}
+
+{% include note.html content="If an inheritable ACL is set on home directories, it will generally be necessary to fix permissions on new private key files before they are usable." %}
