@@ -24,13 +24,29 @@ Before you can deploy the persistent storage for your cluster, you must download
 1. Copy `qumulo-terraform-gcp-<x.y>.zip` to your Terraform environment and then decompress the file.
 
 ### Part 2: Configure the Persistent Storage
-1. Navigate to the `persistent-storage` directory.
+To configure the persistent storage, you must specify storage configuration in the `backend.tf` and `terraform.tfvars` files.
 
-1. Edit the `provider.tf` file:
+1. Navigate to the `persistent-storage` directory and edit the `backend.tf` file:
 
-   * To store the Terraform state remotely, add the name of a GCS bucket to the section that begins with `backend "gcp" {`.
+   * To use remote storage, do the following:
 
-   * To store the Terraform state locally, comment out the section that begins with `backend "gcp" {` and uncomment the section that contains `backend = "local"`.
+     1. Set the `bucket` variable to the name of your GCS bucket.
+        
+     1. Set the `prefix` variable to the your GCS bucket prefix.
+
+   * To use local storage, comment out the entire `terraform` section.
+
+1. Edit the `terraform.tfvars` file:
+
+   * To store the Terraform state remotely, do the following:
+
+     1. Set the `tf_persistent_storage_backend_type` variable to `gcs`.
+
+     1. Set the `tf_persistent_storage_backend_bucket` variable to the name of your GCS bucket.
+
+     1. Set the `tf_persistent_storage_backend_prefix` variable to your GCS bucket prefix.
+
+   * To store the Terraform state locally, set the `tf_persistent_storage_backend_type` variable to `local`.
 
      {% capture noLocal %}{{site.cnq.dontRecommendLocalState}}{% endcapture %}
      {% include important.html content=noLocal %}
