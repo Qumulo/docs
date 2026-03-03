@@ -2,7 +2,7 @@
 title: "Enabling Nexus Remote Support and Nexus Remote Management for Qumulo Core"
 summary: "This section explains how to create a registration key and register your Qumulo cluster from Nexus and how to enable Nexus Remote Support and Nexus Management by using the <code>qq</code> CLI."
 permalink: /qumulo-nexus-configuration-guide/monitoring-and-metrics/enabling-nexus-remote-support-and-remote-management.html
-redirect-from:
+redirect_from:
   - /qumulo-nexus-configuration-guide/creating-registration-key-nexus-remote-support.html
 sidebar: qumulo_nexus_configuration_guide_sidebar
 ---
