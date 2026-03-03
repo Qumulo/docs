@@ -1841,6 +1841,14 @@ pre.manual {
     opacity: 1;
 }
 
+.highlighter-rouge {
+    width: fit-content;
+}
+
+.highlighter-rouge pre {
+    padding: 20px 40px 20px 20px;
+}
+
 /* END COPY-CODE */
 
 #json-box-container pre {
