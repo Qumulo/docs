@@ -1827,6 +1827,22 @@ pre.manual {
     margin: unset;
 }
 
+
+/* START COPY-CODE */
+
+.copy-btn {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    opacity: 0.5;
+}
+
+.copy-btn:hover {
+    opacity: 1;
+}
+
+/* END COPY-CODE */
+
 #json-box-container pre {
     margin: 0px;
 }
