@@ -1828,28 +1828,28 @@ pre.manual {
 }
 
 
-/* START COPY-CODE */
+/* COPY-CODE START */
+@media screen {
+  .copy-btn {
+      position: absolute;
+      top: 6px;
+      right: 6px;
+      opacity: 0.5;
+  }
 
-.copy-btn {
-    position: absolute;
-    top: 6px;
-    right: 6px;
-    opacity: 0.5;
+  .copy-btn:hover {
+      opacity: 1;
+  }
+
+  .highlighter-rouge {
+      width: fit-content;
+  }
+
+  .highlighter-rouge pre {
+      padding: 20px 40px 20px 20px;
+  }
 }
-
-.copy-btn:hover {
-    opacity: 1;
-}
-
-.highlighter-rouge {
-    width: fit-content;
-}
-
-.highlighter-rouge pre {
-    padding: 20px 40px 20px 20px;
-}
-
-/* END COPY-CODE */
+/* COPY-CODE END */
 
 #json-box-container pre {
     margin: 0px;
