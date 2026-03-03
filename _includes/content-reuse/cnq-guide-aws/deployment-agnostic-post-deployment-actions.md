@@ -236,6 +236,7 @@ You can change the EC2 instance type, node count, and to convert your cluster fr
 <ul>
   <li>To minimize potential availability interruptions, you must perform the <em>cluster replacement procedure</em> as a two-quorum event. For example, if you stop the existing EC2 instances by using the AWS Management Console and change the EC2 instance types, two quorum events occur <em>for each node</em> and the read and write cache isn't optimized for the EC2 instance type.</li>
   <li>Performing the cluster replacement procedure ensures that the required EC2 instance types are available in advance.</li>
+  <li>For Qumulo clusters with <a href="../cloud-data-fabric/how-portal-creation-enables-cloud-data-fabric.html#portal-relationship">Cloud Data Fabric portal relationships</a>, portal data becomes inaccessible until you specify the correct IP addresses in your portal configuration.</li>
 </ul>
 {{site.data.alerts.end}}
 
