@@ -2,8 +2,8 @@
 category: /Cloud Data Fabric V2
 methods:
   post:
-    summary: '[preview] Propose a spoke root directory for the specified spoke portal.
-      This action creates a pending hub root directory on the paired remote hub portal.'
+    summary: Propose a spoke root directory for the specified spoke portal. This action
+      creates a pending hub root directory on the paired remote hub portal.
     parameters:
     - name: id
       description: Portal ID
@@ -50,7 +50,7 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    preview: true
+    preview: false
     request_body:
       schema: "{\n  \"description\": \"v2_portal_root_propose_request\",\n  \"type\"\
         : \"object\",\n  \"properties\": {\n    \"spoke_root_path\": {\n      \"description\"\

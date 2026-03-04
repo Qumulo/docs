@@ -2,8 +2,8 @@
 category: /Cloud Data Fabric V2
 methods:
   get:
-    summary: '[preview] Retrieve the relationship status and configuration for the
-      specified hub portal.'
+    summary: Retrieve the relationship status and configuration for the specified
+      hub portal.
     parameters:
     - name: id
       description: Portal ID
@@ -46,23 +46,23 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    preview: true
+    preview: false
   delete:
-    summary: '[preview] Delete the specified hub portal from the current cluster.'
+    summary: Delete the specified hub portal from the current cluster.
     parameters:
     - name: id
       description: Portal ID
       required: true
     - name: force
-      description: null
+      description: ''
       required: false
     response_body: {}
     responses:
     - code: '202'
       description: Return value on success
-    preview: true
+    preview: false
   patch:
-    summary: '[preview] Change configuration for the specified hub portal.'
+    summary: Change configuration for the specified hub portal.
     parameters:
     - name: id
       description: Portal ID
@@ -108,7 +108,7 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    preview: true
+    preview: false
     request_body:
       schema: "{\n  \"description\": \"v2_portal_hub_patch\",\n  \"type\": \"object\"\
         ,\n  \"properties\": {\n    \"id\": {\n      \"description\": \"Hub portal\

@@ -2,8 +2,8 @@
 category: /Cloud Data Fabric V2
 methods:
   post:
-    summary: '[preview] Create a spoke portal in the current cluster and propose a
-      relationship between this spoke portal and a hub portal on another cluster.'
+    summary: Create a spoke portal in the current cluster and propose a relationship
+      between this spoke portal and a hub portal on another cluster.
     parameters: []
     response_body:
       schema: "{\n  \"description\": \"v2_portal_spoke\",\n  \"type\": \"object\"\
@@ -47,7 +47,7 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    preview: true
+    preview: false
     request_body:
       schema: "{\n  \"description\": \"v2_portal_create_request\",\n  \"type\": \"\
         object\",\n  \"properties\": {\n    \"type\": {\n      \"type\": \"string\"\
@@ -62,8 +62,8 @@ methods:
         \ \"port\": {\n            \"description\": \"port\",\n            \"type\"\
         : \"number\"\n          }\n        }\n      }\n    }\n  }\n}"
   get:
-    summary: '[preview] List the relationship status and configuration for all spoke
-      portals on the current cluster.'
+    summary: List the relationship status and configuration for all spoke portals
+      on the current cluster.
     parameters: []
     response_body:
       schema: "{\n  \"description\": \"v2_portal_spokes\",\n  \"type\": \"object\"\
@@ -116,7 +116,7 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    preview: true
+    preview: false
 rest_endpoint: /v2/portal/spokes/
 api_version: v2
 permalink: /rest-api-guide/cloud-data-fabric-v2/v2_portal_spokes.html

@@ -2,8 +2,8 @@
 category: /Cloud Data Fabric V2
 methods:
   post:
-    summary: '[preview] Accept the specified pending hub portal. Accepting a hub portal
-      establishes a relationship with a spoke portal but does not provide data access.'
+    summary: Accept the specified pending hub portal. Accepting a hub portal establishes
+      a relationship with a spoke portal but does not provide data access.
     parameters:
     - name: id
       description: Portal ID
@@ -46,7 +46,7 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    preview: true
+    preview: false
     request_body:
       schema: "{\n  \"description\": \"v2_portal_accept_request\",\n  \"type\": \"\
         object\",\n  \"properties\": {\n    \"spoke_hosts\": {\n      \"type\": \"\

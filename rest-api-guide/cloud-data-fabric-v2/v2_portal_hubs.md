@@ -2,8 +2,8 @@
 category: /Cloud Data Fabric V2
 methods:
   get:
-    summary: '[preview] List the relationship status and configuration for all hub
-      portals on the current cluster.'
+    summary: List the relationship status and configuration for all hub portals on
+      the current cluster.
     parameters: []
     response_body:
       schema: "{\n  \"description\": \"v2_portal_hubs\",\n  \"type\": \"object\",\n\
@@ -51,7 +51,7 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    preview: true
+    preview: false
 rest_endpoint: /v2/portal/hubs/
 api_version: v2
 permalink: /rest-api-guide/cloud-data-fabric-v2/v2_portal_hubs.html

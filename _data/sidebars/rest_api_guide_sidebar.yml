@@ -242,14 +242,17 @@ entries:
       title: portal/files/{file_id}/evict
       url: /rest-api-guide/cloud-data-fabric-v1/portal_files_file_id_evict.html
     - apiversion: v1
+      deprecated: true
       output: web,pdf
       title: portal/hubs
       url: /rest-api-guide/cloud-data-fabric-v1/portal_hubs.html
     - apiversion: v1
+      deprecated: true
       output: web,pdf
       title: portal/hubs/{id}
       url: /rest-api-guide/cloud-data-fabric-v1/portal_hubs_id.html
     - apiversion: v1
+      deprecated: true
       output: web,pdf
       title: portal/hubs/{id}/authorize
       url: /rest-api-guide/cloud-data-fabric-v1/portal_hubs_id_authorize.html
@@ -259,6 +262,7 @@ entries:
       title: portal/ping
       url: /rest-api-guide/cloud-data-fabric-v1/portal_ping.html
     - apiversion: v1
+      deprecated: true
       output: web,pdf
       title: portal/spokes
       url: /rest-api-guide/cloud-data-fabric-v1/portal_spokes.html
@@ -267,10 +271,12 @@ entries:
       title: portal/spokes/eviction-settings
       url: /rest-api-guide/cloud-data-fabric-v1/portal_spokes_eviction-settings.html
     - apiversion: v1
+      deprecated: true
       output: web,pdf
       title: portal/spokes/{id}
       url: /rest-api-guide/cloud-data-fabric-v1/portal_spokes_id.html
     - apiversion: v1
+      deprecated: true
       output: web,pdf
       title: portal/spokes/{id}/propose
       url: /rest-api-guide/cloud-data-fabric-v1/portal_spokes_id_propose.html
@@ -280,46 +286,37 @@ entries:
   - folderitems:
     - apiversion: v2
       output: web,pdf
-      preview: true
       title: portal/hubs
       url: /rest-api-guide/cloud-data-fabric-v2/v2_portal_hubs.html
     - apiversion: v2
       output: web,pdf
-      preview: true
       title: portal/hubs/{id}
       url: /rest-api-guide/cloud-data-fabric-v2/v2_portal_hubs_id.html
     - apiversion: v2
       output: web,pdf
-      preview: true
       title: portal/hubs/{id}/accept
       url: /rest-api-guide/cloud-data-fabric-v2/v2_portal_hubs_id_accept.html
     - apiversion: v2
       output: web,pdf
-      preview: true
       title: portal/hubs/{id}/roots/{dir}
       url: /rest-api-guide/cloud-data-fabric-v2/v2_portal_hubs_id_roots_dir.html
     - apiversion: v2
       output: web,pdf
-      preview: true
       title: portal/spokes
       url: /rest-api-guide/cloud-data-fabric-v2/v2_portal_spokes.html
     - apiversion: v2
       output: web,pdf
-      preview: true
       title: portal/spokes/{id}
       url: /rest-api-guide/cloud-data-fabric-v2/v2_portal_spokes_id.html
     - apiversion: v2
       output: web,pdf
-      preview: true
       title: portal/spokes/{id}/roots
       url: /rest-api-guide/cloud-data-fabric-v2/v2_portal_spokes_id_roots.html
     - apiversion: v2
       output: web,pdf
-      preview: true
       title: portal/spokes/{id}/roots/{dir}
       url: /rest-api-guide/cloud-data-fabric-v2/v2_portal_spokes_id_roots_dir.html
     output: web,pdf
-    preview: true
     title: Cloud Data Fabric V2 (portal)
     url: /rest-api-guide/cloud-data-fabric-v2/
   - folderitems:

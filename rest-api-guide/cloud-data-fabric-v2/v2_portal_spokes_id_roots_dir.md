@@ -2,8 +2,8 @@
 category: /Cloud Data Fabric V2
 methods:
   delete:
-    summary: '[preview] Delete the specified spoke root directory for the specified
-      spoke portal. This action does not affect the data in the hub root directory.'
+    summary: Delete the specified spoke root directory for the specified spoke portal.
+      This action does not affect the data in the hub root directory.
     parameters:
     - name: id
       description: Portal ID
@@ -53,7 +53,7 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    preview: true
+    preview: false
 rest_endpoint: /v2/portal/spokes/{id}/roots/{dir}
 api_version: v2
 permalink: /rest-api-guide/cloud-data-fabric-v2/v2_portal_spokes_id_roots_dir.html

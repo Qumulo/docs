@@ -52,7 +52,7 @@ methods:
       description: Portal ID
       required: true
     - name: force
-      description: null
+      description: ''
       required: false
     response_body: {}
     responses:
@@ -143,5 +143,5 @@ api_version: v1
 permalink: /rest-api-guide/cloud-data-fabric-v1/portal_hubs_id.html
 sidebar: rest_api_guide_sidebar
 redirect_from: /rest-api-guide/cloud-data-fabric/portal_hubs_id.html
-deprecated: false
+deprecated: true
 ---

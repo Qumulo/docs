@@ -2,9 +2,8 @@
 category: /Cloud Data Fabric V2
 methods:
   post:
-    summary: '[preview] Authorize the specified hub root directory for the specified
-      hub portal. This allows the spoke portal to access the data in the hub root
-      directory.'
+    summary: Authorize the specified hub root directory for the specified hub portal.
+      This allows the spoke portal to access the data in the hub root directory.
     parameters:
     - name: id
       description: Portal ID
@@ -50,10 +49,10 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    preview: true
+    preview: false
   delete:
-    summary: '[preview] Deny access to the specified hub root directory for the specified
-      hub portal. This action does not affect the data in the hub root directory.'
+    summary: Deny access to the specified hub root directory for the specified hub
+      portal. This action does not affect the data in the hub root directory.
     parameters:
     - name: id
       description: Portal ID
@@ -99,7 +98,7 @@ methods:
     responses:
     - code: '200'
       description: Return value on success
-    preview: true
+    preview: false
 rest_endpoint: /v2/portal/hubs/{id}/roots/{dir}
 api_version: v2
 permalink: /rest-api-guide/cloud-data-fabric-v2/v2_portal_hubs_id_roots_dir.html

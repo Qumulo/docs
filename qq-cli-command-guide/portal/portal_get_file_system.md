@@ -6,6 +6,11 @@ optional_options:
   help: File System UUID
   name: --uuid
   required: true
+- alternate:
+  - --json
+  help: Pretty-print JSON
+  name: -j
+  required: false
 permalink: /qq-cli-command-guide/portal/portal_get_file_system.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar
@@ -13,7 +18,7 @@ summary: This section explains how to use the <code>qq portal_get_file_system</c
   command.
 synopsis: Retrieve portal information for a specific file system
 title: qq portal_get_file_system
-usage: qq portal_get_file_system [-h] --uuid UUID
+usage: qq portal_get_file_system [-h] --uuid UUID [-j]
 zendesk_source: qq CLI Command Guide
 
 ---
