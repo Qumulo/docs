@@ -41,6 +41,6 @@ On the back of your node, there are three LEDs.
 
 | Label               | Color and Behavior | Description                             |
 | ------------------- | ------------------ | --------------------------------------- |
-| Q-Code LED          | {{site.led.orange}} (solid amber)   | Indicates a post code for troubleshooting. For more information, see the [Q-Code Table](https://dlcdnets.asus.com/pub/ASUS/server/RS500A-E12-RS12U/Manual/E21507_RS500A-E12-RS12U_UM_V2_WEB.pdf?model=RS500A-E12-RS12U#page=23) in the ASUS documentation. |
+| Q-Code LED          | {{site.led.orange}} (solid amber)   | Indicates a post code for troubleshooting. For more information, see the [Q-Code Table](/pdf/quiver-1ua-all-nvme-gen1-server-user-guide.pdf#page=23) in the ASUS documentation. |
 | Location Button LED | {{site.led.blue}} (solid blue)    | The location button has been pressed. To turn off the LED, press the location button again. |
 | Power LED           | {{site.led.green}} (solid green)   | The node is powered on. |

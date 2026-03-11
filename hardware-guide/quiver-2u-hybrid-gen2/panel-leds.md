@@ -7,4 +7,4 @@ sidebar: hardware_guide_sidebar
 
 ## Front and Rear Panel LEDs and Buttons
 
-For information about the front and rear panel LEDs and buttons, <a href="https://docs.qumulo.com/pdf/quiver-2uh-hybrid-rackmount-chassis-user-manual.pdf#page=11" class="pdf">Front Panel and Rear Panel (p. 11)</a> {{site.hardware.fromAIC}}.
+For information about the front and rear panel LEDs and buttons, <a href="/pdf/quiver-2uh-hybrid-rackmount-chassis-user-manual.pdf#page=11" class="pdf">Front Panel and Rear Panel (p. 11)</a> {{site.hardware.fromAIC}}.

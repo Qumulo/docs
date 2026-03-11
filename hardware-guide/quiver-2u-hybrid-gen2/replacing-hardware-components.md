@@ -11,14 +11,14 @@ platform:
   - q2uhg2
 ---
 
-For detailed hardware replacement instructions, see <a href="https://docs.qumulo.com/pdf/quiver-2uh-hybrid-rackmount-chassis-user-manual.pdf#page=11" class="pdf">RSC-2MS Rackmount Chassis User's Manual</a> {{site.hardware.fromAIC}}.
+For detailed hardware replacement instructions, see <a href="/pdf/quiver-2uh-hybrid-rackmount-chassis-user-manual.pdf#page=11" class="pdf">RSC-2MS Rackmount Chassis User's Manual</a> {{site.hardware.fromAIC}}.
 
 {% capture ShipScrews %}Before installing your {{site.q2uhg2}} node in a server rack, you must remove the shipping screws from the node.{% endcapture %}
 {% include important.html content=ShipScrews %}
 
 
 ## Removing and Replacing the Top Cover
-Follow the instructions in the SC-2MS Rackmount Chassis User's Manual: <a href="https://docs.qumulo.com/pdf/quiver-2uh-hybrid-rackmount-chassis-user-manual.pdf#page=13" class="pdf">Top Cover (p. 13)</a>.
+Follow the instructions in the SC-2MS Rackmount Chassis User's Manual: <a href="/pdf/quiver-2uh-hybrid-rackmount-chassis-user-manual.pdf#page=13" class="pdf">Top Cover (p. 13)</a>.
 
 
 ## Initializing the Replacement Boot Drive
@@ -36,11 +36,11 @@ Your {{site.q2uhg2}} chassis contains 6 NVMe drives. For more information about 
 
 
 ## Replacing a Power Supply Unit (PSU)
-Follow the instructions in the SC-2MS Rackmount Chassis User's Manual: <a href="https://docs.qumulo.com/pdf/quiver-2uh-hybrid-rackmount-chassis-user-manual.pdf#page=14" class="pdf">Power Supply Unit Module (p. 14)</a>.
+Follow the instructions in the SC-2MS Rackmount Chassis User's Manual: <a href="/pdf/quiver-2uh-hybrid-rackmount-chassis-user-manual.pdf#page=14" class="pdf">Power Supply Unit Module (p. 14)</a>.
 
 
 ## Replacing a Fan Module
-Follow the instructions in the SC-2MS Rackmount Chassis User's Manual: <a href="https://docs.qumulo.com/pdf/quiver-2uh-hybrid-rackmount-chassis-user-manual.pdf#page=15" class="pdf">Fan Module (p. 15)</a>.
+Follow the instructions in the SC-2MS Rackmount Chassis User's Manual: <a href="/pdf/quiver-2uh-hybrid-rackmount-chassis-user-manual.pdf#page=15" class="pdf">Fan Module (p. 15)</a>.
 
 
 ## To Replace the Node Chassis

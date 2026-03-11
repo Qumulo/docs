@@ -234,10 +234,6 @@ entries:
       url: /hardware-guide/hpe-apollo-4200-gen10-plus/replacing-hardware-components.html
       output: web, pdf
 
-    - title: Technical Specifications
-      url: /hardware-guide/hpe-apollo-4200-gen10-plus/technical-specifications.html
-      output: web
-
   - title: HPE ProLiant DL325 Gen10 Plus
     url: /hardware-guide/hpe-dl325-gen10-plus/index.html
     output: web, pdf

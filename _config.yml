@@ -346,9 +346,9 @@ fprx2540m7: Fsas Technologies RX2540 M7
 fprx2540m7followDocs: "Follow the instructions in the Fsas Technologies Upgrade and Maintenance Manual:"
 
 q1uag1Drives:
-  frontStorageBays: There are 12 2.5" hot-swap NVMe drives attached with four screws to trays in front storage bays. For more information, see <a href="https://dlcdnets.asus.com/pub/ASUS/server/RS500A-E12-RS12U/Manual/E21507_RS500A-E12-RS12U_UM_V2_WEB.pdf?model=RS500A-E12-RS12U#page=45">Installing a 2.5-Inch Storage Device to a Front Storage Bay</a> in the ASUS documentation.
-  internalStorageBays: There are 4 2.5" hot-swap NVMe drives in snap-in, toolless trays in internal storage bays. For more information, see <a href="https://dlcdnets.asus.com/pub/ASUS/server/RS500A-E12-RS12U/Manual/E21507_RS500A-E12-RS12U_UM_V2_WEB.pdf?model=RS500A-E12-RS12U#page=46">Installing a 2.5-Inch Storage Device to an Internal Storage Bay</a> in the ASUS documentation.
-  internalBootDrive: The boot drive is located at the M.2 expansion slot at connector NGFF1. For more information, see <a href="https://dlcdnets.asus.com/pub/ASUS/server/RS500A-E12-RS12U/Manual/E21507_RS500A-E12-RS12U_UM_V2_WEB.pdf?model=RS500A-E12-RS12U#page=58">Installing M.2 (NGFF) Cards</a> in the ASUS documentation.
+  frontStorageBays: There are 12 2.5" hot-swap NVMe drives attached with four screws to trays in front storage bays. For more information, see <a href="/pdf/quiver-1ua-all-nvme-gen1-server-user-guide.pdf#page=45">Installing a 2.5-Inch Storage Device to a Front Storage Bay</a> in the ASUS documentation.
+  internalStorageBays: There are 4 2.5" hot-swap NVMe drives in snap-in, toolless trays in internal storage bays. For more information, see <a href="/pdf/quiver-1ua-all-nvme-gen1-server-user-guide.pdf#page=46">Installing a 2.5-Inch Storage Device to an Internal Storage Bay</a> in the ASUS documentation.
+  internalBootDrive: The boot drive is located at the M.2 expansion slot at connector NGFF1. For more information, see <a href="/pdf/quiver-1ua-all-nvme-gen1-server-user-guide.pdf#page=58">Installing M.2 (NGFF) Cards</a> in the ASUS documentation.
 
 qumuloalerts:
   consTrans: The consumer processes for <a href="../configuring-integrations/email-server.html">email</a>, <a href="../configuring-integrations/ifttt.html">IFTTT</a>, and <a href="../configuring-integrations/sms-clicksend.html">SMS (ClickSend)</a> integrations translate messages into the recipient's native language.
