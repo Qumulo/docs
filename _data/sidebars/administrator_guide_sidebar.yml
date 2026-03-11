@@ -251,7 +251,7 @@ entries:
     output: web, pdf
     folderitems:
 
-    - title: Enabling Cloud Data Fabric
+    - title: How Cloud Data Fabric Works
       url: /administrator-guide/cloud-data-fabric/how-portal-creation-enables-cloud-data-fabric.html
       output: web, pdf
 
