@@ -130,6 +130,12 @@ In addition, Qumulo Core 7.6.2 introduces the following changes:
 * **Portal Relationship:** A proposal that a spoke portal on one Qumulo cluster issues to another Qumulo cluster (with a _hub portal)_, which the Qumulo cluster with the hub portal _accepts_.
 {: #portal-relationship}
 
+* **Peer Portal:** A portal that serves as a counterpart to another portal. For example, a hub portal is a peer portal to a spoke portal.
+{: #peer-portal}
+
+* **Peer Portal Address:** The IP address for a peer portal.
+{: #peer-portal-address}
+
 #### Portal Relationship States {#portal-relationship-states}
 A _portal relationship state_ indicates the stages of the [_spoke portal_](#spoke-portal) creation process, and the proposal or deletion of a [_portal relationship_](#portal-relationship).
 
