@@ -86,8 +86,7 @@ It is important to understand how reversing the relationship between clusters ca
 
 * If you disable or delete a key while a target replication relationship is reversed and then return the source and target to their original assignments, you must set a new key to be able to lock future snapshots.
 
-<a id="retrieve-relationship-id">
-### Retrieving the Relationship ID from the Source Cluster
+### Retrieving the Relationship ID from the Source Cluster {#retrieve-relationship-id}
 Before you begin, retrieve the relationship ID from the source cluster by using the {% include qq.html command="replication_list_source_relationship_statuses" %} command.
 
 If the command returns multiple relationships, you can pipe the command to the following `jq` query to sort the output. The first column lists the replication IDs.
@@ -103,8 +102,7 @@ qq replication_list_source_relationship_statuses | jq -r \
   | @tsv' | column -t -s $'\t'
 ```
 
-<a id="associate-lock-key-with-replication-target-relationship">
-### Associating a Lock Key with a Replication Target Relationship
+### Associating a Lock Key with a Replication Target Relationship {#associate-lock-key-with-replication-target-relationship}
 On the target cluster, run the {% include qq.html command="replication_set_target_relationship_lock" %} command and specify the relationship ID and key name or ID. For example:
 
 ```bash
@@ -113,8 +111,7 @@ qq replication_set_target_relationship_lock \
   --lock-key my-key-name
 ```
 
-<a id="disassociating-lock-key-from-replication-target-relationship">
-### Disassociating a Lock Key from a Replication Target Relationship
+### Disassociating a Lock Key from a Replication Target Relationship {#disassociating-lock-key-from-replication-target-relationship}
 On the target cluster, run the {% include qq.html command="replication_set_target_relationship_lock" %} command, specify the relationship ID, and use the `--clear-lock-key` flag. For example:
 
 ```bash

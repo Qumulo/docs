@@ -38,9 +38,8 @@ Run the {% include qq.html command="auth_create_access_token" %} command with th
 $ qq auth_create_access_token --self
 ```
 
-<a id="json-bearer-token"></a>
-
 The {% include qq.html command="auth_create_access_token" %} command returns a JSON response that contains the bearer token body and the access token ID, which you can use to manage the access token.
+{: #json-bearer-token}
 
 ```json
 {
@@ -65,8 +64,7 @@ Run the {% include qq.html command="auth_create_access_token" %} command and spe
 $ qq auth_create_access_token jane
 ```
 
-<a id="create-token-format"></a>
-
+{: #create-token-format}
 You can:
 * Specify the user as a name
 * Qualify the user by using a domain prefix, for example:

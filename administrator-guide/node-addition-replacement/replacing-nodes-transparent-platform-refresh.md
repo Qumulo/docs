@@ -150,5 +150,5 @@ Ensure that the number of static and floating IP addresses is equal to or greate
   {% include important.html content="Canceling a node replacement plan after executing one or more steps might make it impossible to reregister and complete the plan." %}
 
 
-<a id="monitoring-data-protection-reconfiguration"></a>
+{: #monitoring-data-protection-reconfiguration}
 {% include content-reuse/admin-guides/node-addition-replacement/monitoring-data-protection-reconfiguration-process.md %}

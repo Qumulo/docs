@@ -1,6 +1,5 @@
-<a id="configure-identity-provider"></a>
 {% if page.persona contains 'sysadmin' %}
-## Step 2: Configure an Identity Provider (IdP) for Qumulo Nexus
+## Step 2: Configure an Identity Provider (IdP) for Qumulo Nexus {#configure-identity-provider}
 After you perform the initial SSO configuration in Nexus, you must configure your IdP.
 
 {% include tip.html content="If you work together with a storage administrator who manages your organization's Nexus account, she provides you with the SP Entity ID and ACS URL." %}
