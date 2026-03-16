@@ -8,10 +8,11 @@ For information about upgrade types for each release, see <a href='mode-referenc
 
 {% comment %}For boilerplate text, use {{page.varNoPublicChanges}}{% endcomment %}
 
-## Qumulo Core 7.8.1
+## Qumulo Core 7.8.1.1
 {{ nexusLink }}
+{% include important.html content="This release resolves an issue that could cause nodes in clusters with specific configurations to restart unexpectedly." %}
 
-* Enabled **Try it out** functionality on the *APIs & Tools* Web UI page to work with `POST`, `PUT`, and `PATCH` requests after clicking **Use current session**
+* Enabled **Try it out** functionality on the **APIs & Tools** Web UI page to work with `POST`, `PUT`, and `PATCH` requests after clicking **Use current session**
 * Deprecated some `/v1/portal` REST API endpoints and replaced others with `/v2/portal` endpoints that let you retrieve information about and create portals with multiple root directories
 
 ## Qumulo Core 7.8.0.1 (Quarterly)
