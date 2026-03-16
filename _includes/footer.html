@@ -21,21 +21,34 @@
     </div>
   </div>
 
-  <!-- Cookie Consent - GRT Plugin -->	
+  <!-- Cookie consent Banner-->	
   <div id="cookie-banner" class="grt-cookie">
     <div class="grt-cookies-msg">
       <p>We use cookies to improve your user experience and remember your preferences on this website. If you continue to use this website, we will assume that you accept and understand our <a class="no_icon" href="https://qumulo.com/legal/privacy-policy">Privacy Policy</a>, <a class="no_icon" href="https://qumulo.com/legal/cookie-policy/">Cookie Policy</a>, and <a class="no_icon" href="https://qumulo.com/terms-hub/">Terms Hub</a>.</p>
     </div>
     <span class="grt-cookie-button">Accept</span>
   </div>
+
+  <!-- Local scripts -->
+  <!-- Cookie consent banner -->
   <script src="{{ "js/grt-cookie-consent.js" | relative_url }}"></script>
   <script>$(".grt-cookie").grtCookie();</script>
-  
-{% if page.vectaraScripts %}  <script src="{{ "js/vectara.js" | relative_url }}"></script>
-  <script src="{{ "js/search-specs.js" | relative_url }}"></script>{% endif %}
+
+  <!-- Page elements -->
   <script src="{{ "js/expand-collapse.js" | relative_url }}"></script>
   <script src="{{ "js/send-feedback.js" | relative_url }}"></script>
-{% if page.permalink contains 'rest-api-guide' %}  <script src="{{ "js/fix-double-dashes.js" | relative_url }}"></script>
-  <script src="{{ "js/fix-anchors.js" | relative_url }}"></script>{% endif %}
+  <script src="{{ "js/check-favorites.js" | relative_url }}"></script>
   <script src="{{ "js/copy-code.js" | relative_url }}"></script>
+{% if page.vectaraScripts or page.favoritesScripts %}  <script src="{{ "js/expand-sidebar.js" | relative_url }}"></script>{% endif %}
+
+{% if page.vectaraScripts %} <!-- Search elements -->
+  <script src="{{ "js/vectara.js" | relative_url }}"></script>
+  <script src="{{ "js/search-specs.js" | relative_url }}"></script>{% endif %}
+
+{% if page.favoritesScripts %}  <!-- Favorite pages elements -->
+  <script src="{{ "js/list-favorites.js" | relative_url }}"></script>{% endif %}
+
+{% if page.permalink contains 'rest-api-guide' %}  <!-- Postprocessing directives -->
+  <script src="{{ "js/fix-double-dashes.js" | relative_url }}"></script>
+  <script src="{{ "js/fix-anchors.js" | relative_url }}"></script>{% endif %}
 </footer>

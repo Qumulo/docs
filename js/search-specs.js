@@ -166,11 +166,3 @@ window.addEventListener("load", function(e) {
     successFn(history.state.results, history.state.query);
   }
 });
-
-// Expand left sidebar menu on page load
-window.addEventListener("DOMContentLoaded", (event) => {
-    var secondListItem = document.querySelector("#mysidebar > li:nth-child(2)");
-    if (secondListItem) {
-        secondListItem.classList.add("active");
-    }
-});

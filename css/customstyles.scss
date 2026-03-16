@@ -50,6 +50,59 @@ blockquote {
   color: whitesmoke;
 }
 
+/* FAVORITES START */
+
+/* Navbar */
+#view-favorites {
+  background: transparent;
+}
+
+#fav-nav-icon {
+  margin-top: 3px;
+}
+
+/* My Favorite Pages page */
+#fav-list {
+  margin-left: -20px;
+}
+
+#fav-intro {
+  display: none;
+}
+
+.fav-star-demo {
+  color: #f7981f;
+}
+
+.fav-remove,
+.fav-remove-demo {
+  font-size: 0.85em;
+  color: black;
+  font-weight: bold;
+}
+
+.fav-remove {
+  cursor: pointer;
+  user-select: none;
+  margin-left: 6px;
+}
+
+.fav-remove:hover {
+  color: #ff0000;
+}
+
+/* Any page */
+#page-star {
+  float: right;
+  font-size: 21pt;
+  cursor: pointer;
+  color: #f7981f;
+  user-select: none;
+  font-weight: bold;
+}
+
+/* FAVORITES END */
+
 /* TABS START */
 @media screen {
   /* Base tab list */

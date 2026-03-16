@@ -5,6 +5,7 @@ layout: default
 {% assign processed_content = content | replace: '<p><a id="', '<a id="' | replace: '"></a></p>', '"></a>' %}
 
 <div class="post-header">
+{% unless page.isHomepage or page.favoritesScripts %}   <div class="star" id="page-star" title="Save to Favorites">&#9733;</div>{% endunless %}
    <h1 class="post-title-main">{{ page.title }}</h1>
 </div>
 
