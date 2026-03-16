@@ -1366,7 +1366,6 @@ li.dropdownActive a {
 
 .navbar-inverse .navbar-nav > li > a {
     background-color: #0d1934;
-    margin-top:10px;
 }
 
 .post-content .rssfeedLink {
@@ -2363,6 +2362,8 @@ h4.panel-title {
 
   .navbar-collapse {
     border-top: 1px solid transparent;
+    padding-right: unset !important;
+    padding-left: unset !important;
   }
 
   .navbar-fixed-top {
@@ -2371,12 +2372,11 @@ h4.panel-title {
   }
 
   .navbar-collapse.collapse {
-    display: none!important;
+    display: none !important;
   }
 
   .navbar-nav {
-    float: none!important;
-    margin-top: 7.5px;
+    float: none !important;
   }
 
   .navbar-nav>li {
