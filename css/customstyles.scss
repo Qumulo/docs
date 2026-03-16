@@ -2381,6 +2381,7 @@ h4.panel-title {
 
   .navbar-nav>li {
     float: none;
+    background-color: #17598e;
   }
 
   .navbar-nav>li>a {
@@ -2389,7 +2390,7 @@ h4.panel-title {
   }
 
   .collapse.in {
-    display:block !important;
+    display: block !important;
   }
 
   /* Make search field stand out in responsive mode
