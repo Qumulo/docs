@@ -133,6 +133,8 @@ This section explains which entity types Qumulo Core doesn't copy to an S3 bucke
 * UNIX device file
 
 ### Entity Types that Qumulo Core Copies
+{% include note.html content="While Qumulo Core doesn't copy Access Control Lists (ACLs) or alternate data streams, it preserves both S3 metadata and generic user metadata." %}
+
 <table>
   <thead>
     <tr>
@@ -142,21 +144,6 @@ This section explains which entity types Qumulo Core doesn't copy to an S3 bucke
   </thead>
   <tbody>
     <tr>
-      <td>Hard link to <a target="_blank" href="https://eitca.org/cybersecurity/eitc-is-lsa-linux-system-administration/linux-filesystem/linux-file-types/examination-review-linux-file-types/what-are-regular-files-in-linux-and-how-can-they-be-identified/">a regular file</a></td>
-      <td>Copy of the S3 object</td>
-    </tr>
-    <tr>
-      <td>Generic user metadata</td>
-      <td>S3 tags</td>
-    </tr>   
-    <tr>
-      <td>Hole in sparse files</td>
-      <td>
-        Zero
-        {% include note.html content="The system expands any holes." %}
-      </td>
-    </tr>
-    <tr>
       <td>Regular file</td>
       <td>
         S3 object
@@ -164,9 +151,24 @@ This section explains which entity types Qumulo Core doesn't copy to an S3 bucke
       </td>
     </tr>
     <tr>
+      <td>Hard link to <a target="_blank" href="https://eitca.org/cybersecurity/eitc-is-lsa-linux-system-administration/linux-filesystem/linux-file-types/examination-review-linux-file-types/what-are-regular-files-in-linux-and-how-can-they-be-identified/">a regular file</a></td>
+      <td>Copy of the S3 object</td>
+    </tr>
+    <tr>
       <td>S3 Metadata</td>
       <td>
         Object metadata
+      </td>
+    </tr>
+    <tr>
+      <td>Generic user metadata</td>
+      <td>S3 tags</td>
+    </tr>
+    <tr>
+      <td>Hole in sparse files</td>
+      <td>
+        Zero
+        {% include note.html content="The system expands any holes." %}
       </td>
     </tr>
   </tbody>
