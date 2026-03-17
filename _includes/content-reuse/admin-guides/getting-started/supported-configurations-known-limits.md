@@ -100,14 +100,12 @@ Qumulo Core requires switches that meet the following criteria:
     </tr>
   </thead>
   <tbody>
+{% if page.platform != 'anq' %}
     <tr>
       <td>Cluster size</td>
-{% if page.platform != 'anq' %}
       <td>265 nodes</td>
-{% else %}
-      <td>100 nodes</td>
-{% endif %}
     </tr>
+{% endif %}
     <tr>
       <td>Hub portals or spoke portals for each node</td>
       <td>
