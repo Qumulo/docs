@@ -1,6 +1,6 @@
 ---
 title: "Qumulo Documentation Portal"
-summary: "Welcome to the Qumulo Documentation Portal. This repository provides guidance for deploying, configuring, and working with Qumulo offerings."
+summary: "Welcome! The Qumulo Documentation Portal helps you deploy, configure, and work with Qumulo offerings and provides reference materials for developer tools, interfaces, and integrations."
 permalink: index.html
 breadcrumbs: exclude
 tocTrue: true
