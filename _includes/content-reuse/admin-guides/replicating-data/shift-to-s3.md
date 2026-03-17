@@ -94,7 +94,7 @@ Qumulo Core performs the following steps when it creates a Shift-To relationship
    https://my-bucket.s3.us-west-2.amazonaws.com/my-folder/my-project/file.txt
    ```
 
-   {% include note.html content="This process doesn't encode or transform your data in any way. Shift-To replicates only the data in a regular file's primary stream, excluding alternate data streams and file system metadata such as access control lists (ACLs). To avoid transferring data across the public Internet, a server-side S3 copy operation also copies any hard links to files in the replication local directory to S3 as full copies of objects, with identical contents and metadata." %}
+   {% include note.html content="This process doesn't encode or transform your data in any way. Shift-To replicates only the data in a regular file's primary stream. While it excludes alternate data streams and file system metadata such as access control lists (ACLs), it preserves both S3 metadata and generic user metadata. To avoid transferring data across the public Internet, a server-side S3 copy operation also copies any hard links to files in the replication local directory to S3 as full copies of objects, with identical contents and metadata." %}
 
 1. Checks whether a file is already replicated. If the object exists in the remote S3 bucket, and neither the file nor the object are modified since the last successful replication, its data isn't retransferred to S3.
 
@@ -133,7 +133,6 @@ This section explains which entity types Qumulo Core doesn't copy to an S3 bucke
 * UNIX device file
 
 ### Entity Types that Qumulo Core Copies
-{% include note.html content="While Qumulo Core doesn't copy Access Control Lists (ACLs) or alternate data streams, it preserves both S3 metadata and generic user metadata." %}
 
 <table>
   <thead>
