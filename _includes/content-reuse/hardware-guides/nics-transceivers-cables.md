@@ -1,3 +1,5 @@
+{% include important.html content="In April 2020, NVIDIA acquired Mellanox Technologies and began to use the name &ldquo;NVIDIA ConnectX&rdquo; for their NICs." %}
+
 ## Step 1: Identify the NICs in Your Nodes
 Most Qumulo-certified nodes are compatible with multiple NIC models. The NIC model determines transceiver compatibility.
 
@@ -52,12 +54,12 @@ Most Qumulo-certified nodes are compatible with multiple NIC models. The NIC mod
        <tr>
          <td>ConnectX-3</td>
          <td>10 Gbps</td>
-         <td><a href="https://network.nvidia.com/pdf/firmware/ConnectX3-FW-2_42_5000-release_notes.pdf#page=7">Supported Cables and Modules</a> in the Mellanox ConnectX-3 Firmware Release Notes</td>
+         <td><a href="https://network.nvidia.com/pdf/firmware/ConnectX3-FW-2_42_5000-release_notes.pdf#page=7">Supported Cables and Modules</a> in the NVIDIA ConnectX-3 Firmware Release Notes</td>
        </tr>       
        <tr>
          <td>ConnectX-3 Pro</td>
          <td>40 Gbps</td>
-         <td><a href="https://network.nvidia.com/related-docs/firmware/ConnectX3Pro-FW-2_42_5000-release_notes.pdf#page=8">Supported Cables and Modules</a> in the Mellanox ConnectX-3 Pro Firmware Release Notes</td>
+         <td><a href="https://network.nvidia.com/related-docs/firmware/ConnectX3Pro-FW-2_42_5000-release_notes.pdf#page=8">Supported Cables and Modules</a> in the NVIDIA ConnectX-3 Pro Firmware Release Notes</td>
        </tr>       
        <tr>
          <td>ConnectX-4</td>
