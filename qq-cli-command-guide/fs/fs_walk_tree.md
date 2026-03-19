@@ -31,6 +31,10 @@ optional_options:
   name: --display-all-attributes
   required: false
 - alternate: []
+  help: Output aggregate summary as JSON
+  name: --summary
+  required: false
+- alternate: []
   help: Output a file at the specified path instead of stdout
   name: --output-file
   required: false
@@ -40,6 +44,10 @@ optional_options:
     of 1 from root will yield / and /dir
   name: --max-depth
   required: false
+- alternate: []
+  help: Show progress bar (requires --output-file or --summary)
+  name: --progress
+  required: false
 permalink: /qq-cli-command-guide/fs/fs_walk_tree.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar
@@ -47,8 +55,8 @@ summary: This section explains how to use the <code>qq fs_walk_tree</code> comma
 synopsis: Walk file system tree
 title: qq fs_walk_tree
 usage: qq fs_walk_tree [-h] [--path PATH] [--snapshot SNAPSHOT] [--file-only | --directory-only
-  | --symlink-only] [--display-ownership | --display-all-attributes] [--output-file
-  OUTPUT_FILE] [--max-depth MAX_DEPTH]
+  | --symlink-only] [--display-ownership | --display-all-attributes | --summary] [--output-file
+  OUTPUT_FILE] [--max-depth MAX_DEPTH] [--progress]
 zendesk_source: qq CLI Command Guide
 
 ---

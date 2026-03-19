@@ -16,7 +16,9 @@ optional_options:
     By default, qq CLI commands manipulate generic metadata.
 
     When you use the --s3 flag, Qumulo Core makes user metadata visible to the S3
-    protocol as object metadata.
+    protocol
+
+    as object metadata.
 
     '
   name: --s3
