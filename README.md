@@ -98,7 +98,7 @@ This project began from [Jekyll Doc Theme 6.0](https://github.com/tomjoht/docume
   * **JS** [Retrieval of page favorite status](js/check-favorites.js)
   * **jQuery** [Cookie consent banner](js/grt-cookie-consent.js) (adapted from [GRT Cookie Consent](https://grt107.github.io/grt-cookie-consent/))
   * **JS** [Modal pop-up for reporting documentation issues directly into a Jira backlog](js/send-feedback.js)
-  * **JS** [RAG-driven search from Vectara](https://www.vectara.com/)
+  * **JS** [RAG-driven search](js/vectara.js) from [Vectara](https://www.vectara.com/)
     * **JS** [Custom parametrized URLs with history states](js/search-specs.js)
 * Layout and navigation
   * **Liquid** [Breadcrumbs](_includes/crumb)
