@@ -89,6 +89,27 @@ Everything you need to successfully test and build the documentation from the `d
 * **Publishing:** When the repository owner merges a pull request to `mainline`, the `docs-internal` repository runs the `.github/workflows/publish.yml` workflow.
 
 
+## Features and Functionality
+This project began from [Jekyll Doc Theme 6.0](https://github.com/tomjoht/documentation-theme-jekyll) by [Tom Johnson](https://idratherbewriting.com/aboutme/) and received additional custom features and enhancements over time. The following features and functionality use JavaScript and Python scripts and the [Liquid Templating Language](https://shopify.github.io/liquid/).
+
+* User Experience and Feedback
+  * **JS** [Copy code to clipboard](js/copy-code.js)
+  * **JS** [Favorite pages in browser local storage](js/list-favorites.js)
+  * **JS** [Retrieval of page favorite status](js/check-favorites.js)
+  * **jQuery** [Cookie consent banner](js/grt-cookie-consent.js) (adapted from [GRT Cookie Consent](https://grt107.github.io/grt-cookie-consent/))
+  * **JS** [Modal pop-up for reporting documentation issues directly into a Jira backlog](js/send-feedback.js)
+  * **JS** [RAG-driven search from Vectara](https://www.vectara.com/)
+    * **JS** [Custom parametrized URLs with history states](js/search-specs.js)
+* Layout and navigation
+  * **Liquid** [Breadcrumbs](_includes/crumb)
+  * **Liquid** [Parent landing pages](_layouts/parent_landing_page.html)
+  * **Liquid** [Child landing pages](_layouts/landing_page.html)
+* Content creation
+  * **Python** [Custom generation of REST API documentation from `openapi.json`](tools/gen-api.py)
+    * Dynamic labeling of REST APIs with versions, **PREVIEW**, and **DEPRECATED** tags
+  * **Python** 🔒 Custom generation of `qq` CLI documentation from the code base
+
+
 ## About this Project's Infrastructure
 The following diagram outlines the most current project infrastructure.
 
