@@ -8,7 +8,8 @@ Welcome to the Qumulo Documentation Portal repository! This project uses docs-as
 * [Running Tests and Builds](#running-tests-and-builds)
   * [🍊&thinsp;As a Qumulon](#as-a-qumulon-1)
   * [How Automation Works in the `docs-internal` Repository](#how-automation-works-in-the-docs-internal-repository)
-* [About This Project's Infrastructure](#about-this-projects-infrastructure)
+* [Features and Functionality](#features-and-functionality)
+* [Project Infrastructure Overview](#project-infrastructure-overview)
 * [Licenses](#licenses)
 
 
@@ -110,7 +111,7 @@ This project began from [Jekyll Doc Theme 6.0](https://github.com/tomjoht/docume
   * 🔒 Custom generation of `qq` CLI documentation from the code base
 
 
-## How This Project's Infrastructure is Organized
+## Project Infrastructure Overview
 The following diagram outlines the most current project infrastructure.
 
 ![Qumulo Documentation Infrastructure](images/qumulo-documentation-infrastructure.png)
