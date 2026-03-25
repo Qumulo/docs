@@ -110,7 +110,7 @@ This project began from [Jekyll Doc Theme 6.0](https://github.com/tomjoht/docume
   * 🔒 Custom generation of `qq` CLI documentation from the code base
 
 
-## About this Project's Infrastructure
+## How This Project's Infrastructure is Organized {#:
 The following diagram outlines the most current project infrastructure.
 
 ![Qumulo Documentation Infrastructure](images/qumulo-documentation-infrastructure.png)
