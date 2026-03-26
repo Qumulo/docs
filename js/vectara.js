@@ -23,9 +23,9 @@ function createOverlay() {
   overlay.appendChild(message);
 
    const gif = document.createElement('img');
-  gif.src = '/images/spinner.gif';
-  gif.style.width = '100px';
-  gif.style.height = '100px';
+  gif.src = '/images/spinner.png';
+  gif.style.width = '70px';
+  gif.style.height = '70px';
   overlay.appendChild(gif);
 
   return overlay;
