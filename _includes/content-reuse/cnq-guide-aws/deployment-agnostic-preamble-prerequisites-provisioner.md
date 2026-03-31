@@ -61,12 +61,14 @@ This section explains the prerequisites to deploying {{site.aws.cnqAWSshort}}.
 * Before you configure your Terraform environment, you must sign in to the AWS CLI.
 {% endif %}
 
+{% elsif page.deployment == "tf" %}
   {{site.data.alerts.important}}
   <ul>
     <li>Unless you use the <code>AdministratorAccess</code> managed IAM policy for your user or role, you can run the <code>iam_tester.py</code> script in the <code>utilities</code> directory to validate your IAM role.</li> 
     <li>For an explicit list of privileges recommended for least-privilege access, see the IAM documentation in the <code>utilities</code> directory.</li>
   </ul>
   {{site.data.alerts.end}}
+{% endif %}
 
   A custom IAM role or user must include the following AWS services:
 
