@@ -74,6 +74,7 @@ Checksums
 ClickSend
 CloudFormation
 CloudWatch
+ConnectX
 DAC
 DACs
 DCE
@@ -130,6 +131,7 @@ GCP
 GCS
 GDPR
 GIDs
+GRT
 GSS
 GUID
 GbE
@@ -167,7 +169,9 @@ Illumio
 Imager
 Infoblox
 Isilon
+JS
 JSON
+Jira
 K-144T
 K-168T
 K-432T
@@ -377,6 +381,7 @@ VPCs
 VPN
 Varonis
 Veam
+Vectara
 Veeam
 WATCH_TREE
 WIO

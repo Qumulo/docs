@@ -8,10 +8,17 @@ For information about upgrade types for each release, see <a href='mode-referenc
 
 {% comment %}For boilerplate text, use {{page.varNoPublicChanges}}{% endcomment %}
 
-## Qumulo Core 7.8.2
+## Qumulo Core 7.8.2.1
 {{ nexusLink }}
 {% capture unexpRest %}This release resolves an issue that could cause nodes in clusters with specific configurations to restart unexpectedly.{% endcapture %}
-{% include important.html content=unexpRest %}
+
+{{site.data.alerts.important}}
+<ul>
+  <li>{{ unexpRest }}</li>
+  <li>This release improves the compatibility of Qumulo Core 7.8.2 (and higher) with all large memory node types.</li>
+  <li>This release improves the stability and data integrity of Qumulo Core 7.8.2 (and higher).</li>
+</ul>
+{{site.data.alerts.end}}
 
 * Improved the stability and connectivity of portal relationships when multiple peer portal addresses
 * Improved the read performance for scenarios with intermittent connectivity issues that can cause a portal quorum event
