@@ -457,6 +457,10 @@ entries:
       url: /administrator-guide/smb/creating-smb-share.html
       output: web, pdf
 
+    - title: Resolving Access Issues with an SMB Share
+      url: /administrator-guide/smb/resolving-smb-share-permission-errors-on-windows-clients.html
+      output: web, pdf
+
     - title: Managing File Shares by Using the Shared Folders MMC Snap-In
       url: /administrator-guide/smb/managing-file-shares-shared-folders-mmc.html
       output: web, pdf

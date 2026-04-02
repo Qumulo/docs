@@ -391,6 +391,10 @@ entries:
       url: /cloud-native-gcp-administrator-guide/smb/creating-smb-share.html
       output: web, pdf
 
+    - title: Resolving Access Issues with an SMB Share
+      url: /cloud-native-gcp-administrator-guide/smb/resolving-smb-share-permission-errors-on-windows-clients.html
+      output: web, pdf
+
     - title: Managing File Shares by Using the Shared Folders MMC Snap-In
       url: /cloud-native-gcp-administrator-guide/smb/managing-file-shares-shared-folders-mmc.html
       output: web, pdf
