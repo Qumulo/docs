@@ -3,7 +3,7 @@ url: "http://127.0.0.1:4001"
 baseurl: "/qumulo-doc"
 port: 4001
 output: pdf
-print_title: Qumulo-Certified Platinum-Tier Hardware Servicing Guide
+print_title: Qumulo Hardware Servicing Guide
 defaults:
   -
     scope:
