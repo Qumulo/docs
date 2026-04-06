@@ -1,8 +1,10 @@
 ---
 title: "Creating and Configuring a Qumulo Cluster with Your Nodes"
 summary: "This section explains how to prepare your platform nodes for creating a Qumulo cluster."
-permalink: /gold-tier-hardware-servicing-guide/getting-started/creating-configuring-cluster.html
-sidebar: gold_tier_hardware_servicing_guide_sidebar
+permalink: /hardware-guide/getting-started/creating-configuring-cluster.html
+redirect_from:
+ - /gold-tier-hardware-servicing-guide/getting-started/creating-configuring-cluster.html
+sidebar: hardware_guide_sidebar
 ---
 
 ## Step 1: Boot by Using the Qumulo Core USB Drive Installer

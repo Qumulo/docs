@@ -1,9 +1,10 @@
 ---
 title: "Networking a Qumulo Cluster with a Split Networking Configuration"
 summary: "This section explains how to network a cluster with platforms that use a split networking configuration."
-permalink: /gold-tier-hardware-servicing-guide/cluster-networking/split-networking.html
-sidebar: gold_tier_hardware_servicing_guide_sidebar
-platform: gold
+permalink: /hardware-guide/cluster-networking/split-networking.html
+redirect_from:
+  - /gold-tier-hardware-servicing-guide/cluster-networking/split-networking.html
+sidebar: hardware_guide_sidebar
 ---
 
 {% include content-reuse/hardware-guides/platform-agnostic-split-networking-cluster.md %}

@@ -8,7 +8,7 @@
 Your node requires the following resources.
 * A network switch with the following specifications:
 
-  * {{include.ethernetSpeed}} Ethernet
+  * Ethernet connectivity
   
   * Fully non-blocking architecture
 
@@ -22,7 +22,7 @@ Your node requires the following resources.
 
 
 ## Recommended Configuration
-{{site.unifyNetDefine}} However, for greater reliability, we recommend connecting both {{include.ethernetSpeed}} ports on every node to each switch.
+{{site.unifyNetDefine}} However, for greater reliability, we recommend connecting both ports on every node to each switch.
 
 We recommend the following configuration for your node.
 
@@ -50,7 +50,7 @@ We recommend the following configuration for your node.
 ## Connecting to Redundant Switches
 For redundancy, we recommend connecting your cluster to dual switches. If either switch becomes inoperative, the cluster is still be accessible from the remaining switch.
 
-* Connect the two NIC ports {% unless page.platform == 'gold' %}(2 &#215; {{include.ethernetSpeed}}){% endunless %} on your nodes to separate switches.
+* Connect the two NIC ports on your nodes to separate switches.
 
 * The uplinks to the client network must equal the bandwidth from the cluster to the switch.
 
@@ -62,7 +62,7 @@ For redundancy, we recommend connecting your cluster to dual switches. If either
 ## Connecting to a Single Switch
 You can connect a your cluster to a single switch. If this switch becomes inoperative, the entire cluster becomes inaccessible.
 
-* Connect the two NIC ports {% unless page.platform == 'gold' %}(2 &#215; {{include.ethernetSpeed}}){% endunless %} on your nodes to a single switch.
+* Connect the two NIC ports on your nodes to a single switch.
 
 * The uplinks to the client network must equal the bandwidth from the cluster to the switch.
 

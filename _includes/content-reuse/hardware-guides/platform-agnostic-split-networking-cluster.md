@@ -8,7 +8,7 @@
 Your node requires the following resources.
 * A network switch with the following specifications:
 
-  * {{include.ethernetSpeed}} Ethernet
+  * Ethernet connection
 
   * Fully non-blocking architecture
 
@@ -25,7 +25,7 @@ Your node requires the following resources.
 {% capture noSingleNIC %}{{site.splitNetDontConnectSingleNIC}}{% endcapture %}
 {% include important.html content=noSingleNIC %}
 
-{{site.splitNetDefine}} However, for greater reliability, we recommend connecting all four {{include.ethernetSpeed}} ports on every node: Connect both front-end NIC ports to the front-end switch and both back-end NIC ports to the back-end switch.
+{{site.splitNetDefine}} However, for greater reliability, we recommend connecting all four ports on every node: Connect both front-end NIC ports to the front-end switch and both back-end NIC ports to the back-end switch.
 
 We recommend the following configuration for your node.
 
@@ -59,7 +59,7 @@ For redundancy, we recommend connecting your cluster to dual switches. If either
 
 * **Front End**
 
-  * Connect the two front-end NIC ports {% unless page.platform == 'gold' %}(2 &#215; {{include.ethernetSpeed}}){% endunless %} on your nodes to separate switches.
+  * Connect the two front-end NIC ports on your nodes to separate switches.
 
   * The uplinks to the client network must equal the bandwidth from the cluster to the switch.
 
@@ -67,7 +67,7 @@ For redundancy, we recommend connecting your cluster to dual switches. If either
 
 * **Back End**
 
-  * Connect the two back-end NIC ports {% unless page.platform == 'gold' %}(2 &#215; {{include.ethernetSpeed}}){% endunless %} on your nodes to separate switches.
+  * Connect the two back-end NIC ports on your nodes to separate switches.
 
   * Use an appropriate inter-switch link or virtual port channel.
 
@@ -81,7 +81,7 @@ You can connect your cluster to a single switch. If this switch becomes inoperat
 
 * **Front End**
 
-  * Connect the two front-end NIC ports {% unless page.platform == 'gold' %}(2 &#215; {{include.ethernetSpeed}}){% endunless %} to a single switch.
+  * Connect the two front-end NIC ports to a single switch.
 
   * The uplinks to the client network must equal the bandwidth from the cluster to the switch.
 
@@ -89,7 +89,7 @@ You can connect your cluster to a single switch. If this switch becomes inoperat
 
 * **Back End**
 
-  * Connect the two band-end ports {% unless page.platform == 'gold' %}(2 &#215; {{include.ethernetSpeed}}){% endunless %} to a single switch.
+  * Connect the two band-end ports to a single switch.
 
 * **Link Aggregation Control Protocol (LACP)**
 

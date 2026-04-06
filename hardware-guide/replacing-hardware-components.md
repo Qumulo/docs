@@ -1,18 +1,16 @@
 ---
 title: "Replacing Hardware Components in Your Nodes"
 summary: "This section explains how to replace hardware components in your platform's nodes."
-permalink: /gold-tier-hardware-servicing-guide/replacing-hardware-components.html
-sidebar: gold_tier_hardware_servicing_guide_sidebar
-platform: agnostic
+permalink: /hardware-guide/replacing-hardware-components.html
+redirect_from:
+  - /gold-tier-hardware-servicing-guide/replacing-hardware-components.html
+sidebar: hardware_guide_sidebar
 ---
 
 For detailed instructions, see the documentation from your hardware vendor.
 
 
-## Locating a Failed Drive
-Gold-Tier hardware doesn't use predefined drive mapping or panel LEDs to indicate drive health.
-
-### To Locate a Failed Drive by using the Qumulo Core Web UI
+## To Locate a Failed Drive by using the Qumulo Core Web UI
 
 1. Log in to Qumulo Core.
 

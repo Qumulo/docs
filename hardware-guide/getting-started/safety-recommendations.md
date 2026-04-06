@@ -1,7 +1,9 @@
 ---
-title: "Safety Recommendations for Qumulo-Certified Platinum-Tier Hardware Platforms"
-summary: "This section gives safety recommendations for Qumulo-Certified Platinum-Tier hardware platforms."
+title: "Safety Recommendations"
+summary: "This section gives general safety recommendations."
 permalink: /hardware-guide/getting-started/safety-recommendations.html
+redirect_from:
+  - /gold-tier-hardware-servicing-guide/getting-started/safety-recommendations.html
 sidebar: hardware_guide_sidebar
 ---
 

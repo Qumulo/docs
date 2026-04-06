@@ -1,10 +1,10 @@
 ---
 title: "Configuring the Integrated Lights Out (iLO) Port"
 summary: "This section explains how to configure the out-of-band management port on platforms that use the Integrated Lights Out (iLO) interface."
-permalink: /gold-tier-hardware-servicing-guide/out-of-band-management-port/configuring-ilo.html
+permalink: /hardware-guide/out-of-band-management-port/configuring-ilo.html
 redirect_from:
   - https://docs.qumulo.com/hardware-guide/hpe-alletra-4140/configuring-ilo.html
-sidebar: gold_tier_hardware_servicing_guide_sidebar
+sidebar: hardware_guide_sidebar
 portLoc: false
 ---
 

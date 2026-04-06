@@ -89,24 +89,11 @@ To get started, choose one of the following guides.
     <a class="big-button" href="hardware-guide/">
       <figure>  
         <picture>
-          <source type="image/webp" srcset="images/qumulo-certified-platinum-tier-hardware-servicing-guide.webp" width="301" height="301">
-          <source type="image/png" srcset="images/qumulo-certified-platinum-tier-hardware-servicing-guide.png" width="301" height="301">
-          <img src="images/qumulo-certified-platinum-tier-hardware-servicing-guide.png" alt="A stylized image of a server rack, symbolizing installing, configuring, and maintaining hardware; above the image of the server rack there is an image of a ribbbon with the Qumulo logo, symbolizing the hardware being Qumulo-certified" width="301" height="301">
+          <source type="image/webp" srcset="images/qumulo-hardware-servicing-guide.webp" width="301" height="301">
+          <source type="image/png" srcset="images/qumulo-hardware-servicing-guide.png" width="301" height="301">
+          <img src="images/qumulo-hardware-servicing-guide.png" alt="A stylized image of a server rack, symbolizing installing, configuring, and maintaining hardware" width="301" height="301">
         </picture>
-        <figcaption class="platinum-tier-caption">{{site.guides.hard}}</figcaption>
-      </figure>
-    </a>
-  </div>
-
-  <div class="guide-button">
-    <a class="big-button" href="gold-tier-hardware-servicing-guide/">
-      <figure>
-        <picture>
-          <source type="image/webp" srcset="images/gold-tier-hardware-servicing-guide.webp" width="301" height="301">
-          <source type="image/png" srcset="images/gold-tier-hardware-servicing-guide.png" width="301" height="301">
-          <img src="images/gold-tier-hardware-servicing-guide.png" alt="A stylized image of a server rack, symbolizing installing, configuring, and maintaining hardware" width="301" height="301">
-        </picture>
-        <figcaption class="gold-tier-caption">{{site.guides.hardGold}}</figcaption>
+        <figcaption>{{site.guides.hard}}</figcaption>
       </figure>
     </a>
   </div>
