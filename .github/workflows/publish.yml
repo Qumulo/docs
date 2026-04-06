@@ -3,8 +3,10 @@ on:
   push:
     branches:
       - mainline
+
 permissions:
   contents: write
+
 jobs:
   publish:
     runs-on: ubuntu-latest
@@ -20,7 +22,7 @@ jobs:
 
           # Set credentials
           git config --global user.email "qontent@qumulo.com"
-          git config --global user.name "Team Qontent"        
+          git config --global user.name "Team Qontent"
 
           # Show deltas
           git diff
@@ -28,7 +30,7 @@ jobs:
           # Commit changes
           git add --all
           git commit -m "Regenerated index.md with Hot Topic ranking" || echo "No changes to commit" >&2
-          
+
         env:
           ENGINEERING_JSON: ${{ secrets.ENGINEERING_JSON }}
 
@@ -40,8 +42,8 @@ jobs:
           # Do not fail if the check throws an error
           set +e
           ./tools/test-spelling.sh
-          
-          # Capture the exit code  
+
+          # Capture the exit code
           status=$?
           if [ $status -ne 0 ]; then
             echo "::warning::Fix spelling errors and add exceptions to tools/.spelling-allowlist"
@@ -49,12 +51,12 @@ jobs:
           exit 0
 
       - name: Check scripts, links, and images (non-fatal)
-        shell: bash {0} # Allow manual error handling 
+        shell: bash {0} # Allow manual error handling
         run: |
           # Do not fail if the check throws an error
           set +e
           ./tools/test-scripts-links-images.sh
-          
+
           # Capture the exit code
           status=$?
           if [ $status -ne 0 ]; then
@@ -62,47 +64,39 @@ jobs:
           fi
           exit 0
 
-      - name: Build documentation and sitemap.xml
+      - name: Prepare ReadOnly SSH key - access to external repos we include
+        run: |
+          echo "${{ secrets.DOCS_READONLY_KEY }}" > /tmp/ro_key
+          chmod 400 /tmp/ro_key
+
+      - name: Build documentation and sitemap.xml. _site is ready for use
         run: |
           ./tools/test-build-html.sh
+        env:
+          GIT_SSH_COMMAND: ssh -i /tmp/ro_key
 
-      - name: Commit documentation changes
+      - name: Checkout fresh copy of repo with gh-pages branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: gh-pages
+          path: content
+
+      - name: Sync and update the gh-pages branch
         run: |
-          git add --all
-          git commit -m "Rebuilt documentation website" || echo "No changes to commit" >&2
+          rsync -a _site/ content/
 
-      - name: Prepare SSH key
-        run: |
-          echo "${{ secrets.DOCS_PUBLISH_KEY }}" > /tmp/key
-          chmod 400 /tmp/key
-
-      - name: Push modified mainline and intact gh-pages branches from internal to public
-        run: |
-          # Define remote repository (idempotent)
-          git remote remove public >/dev/null 2>&1 || true
-          git remote add -m gh-pages public git@github.com:Qumulo/docs
-
-          # To avoid making changes to the internal `mainline` branch, make a temporary `export` branch
-          git checkout -B export mainline
-
-          # Delete both `.yml` workflow files
-          git rm -f .github/workflows/*.yml || true
-          git add --all
-          git commit -m "Remove internal workflow files for public export" || true
-
-          # Force push temporary `export` branch to public `mainline` branch
-          git push --force public export:mainline
+          git -C content add --all
+          git -C content commit -m "Rebuilt documentation website" || echo "No changes to commit" >&2
 
           # Force push internal `gh-pages` branch to public `gh-pages` branch
-          git push --force public gh-pages
-
-          # Clean up temporary `export` branch
-          git checkout mainline
-          git branch -D export || true
-        env:
-          GIT_SSH_COMMAND: ssh -i /tmp/key
+          git -C content push --force gh-pages
 
       - name: Clean up SSH key
         run: |
-          rm -f /tmp/key
+          rm -f /tmp/ro_key
         if: always()
+
+  push-to-public:
+    if: ${{ github.repository == 'Qumulo/docs-internal' }}
+    uses: ./.github/workflows/push-to-public.yml

@@ -4,40 +4,22 @@ set -eo pipefail
 # Run the docs-builder image to build the documentation on the mainline branch
 docker run --rm --user "$(id -u):$(id -g)" --name docs-container-build --volume "$(pwd)":/src:rw docs-builder
 
+#### We want to sync from external repos to specific folders
+if [ ! -z "$EXTERNAL_REPOS" ]; then
+  echo "$EXTERNAL_REPOS" | jq -c '.[]' | while read -r item; do
+    repo=$(echo "$item" | jq -r '.repo')
+    path=$(echo "$item" | jq -r '.path')
+
+    tmpdir=$(mktemp -d)
+    git clone --branch gh-pages --single-branch --depth 1 "${repo}" "${tmpdir}"
+    # sync only the hardware folder and its contents to _site
+    rsync -a "${tmpdir}/${path}" _site/
+  done
+fi
+
 # Build sitemap.xml
 if [[ -z "${GITHUB_ACTIONS:-}" ]]; then
   echo "Skipping sitemap generation (non-GitHub Actions build)"
 else
   python3 ./tools/gen-sitemap.py
-fi
-
-# Check for dry-run mode
-DRY_RUN=0
-if [[ "$1" == "--dry-run" ]]; then
-  DRY_RUN=1
-fi
-
-# Check out gh-pages branch
-if ! git checkout gh-pages; then
-  echo "Couldn't check out gh-pages branch. Exiting..." >&2
-  exit 1
-fi
-
-# Ensure we are at the repo's root
-REPO_ROOT="$(git rev-parse --show-toplevel)"
-cd "$REPO_ROOT"
-
-# Check whether _site exists
-if [[ ! -d "_site" ]]; then
-  echo "_site directory doesn't exist. Exiting..." >&2
-  exit 2
-fi
-
-# Copy from _site into current branch (repo root)
-if [[ $DRY_RUN -eq 1 ]]; then
-  echo "Dry-run mode: previewing file copy..."
-  rsync -av --dry-run _site/ .
-else
-  rsync -av _site/ .
-  rm -rf _site
 fi

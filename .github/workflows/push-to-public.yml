@@ -1,0 +1,31 @@
+﻿name: Build and push docs to prod
+on: workflow_call
+
+jobs:
+  push:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: gh-pages
+          path: content
+
+      - name: Prepare SSH key
+        run: |
+          echo "${{ secrets.DOCS_PUBLISH_KEY }}" > /tmp/key
+          chmod 400 /tmp/key
+
+      - name: Push this upstream
+        run: |
+          git remote add -m gh-pages public git@github.com:Qumulo/docs
+
+          # Force push internal `gh-pages` branch to public `gh-pages` branch
+          git push --force public gh-pages
+        env:
+          GIT_SSH_COMMAND: ssh -i /tmp/key
+
+      - name: Clean up SSH key
+        run: |
+          rm -f /tmp/key
+        if: always()
