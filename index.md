@@ -173,16 +173,16 @@ To get started, choose one of the following guides.
 ## Hot Topics
 The following are the most-accessed pages on the Documentation Portal.
 
-1. [Qumulo Core Feature Log](/administrator-guide/upgrading-qumulo-core/feature-log.html)
-2. [Performing Qumulo Core Upgrades](/administrator-guide/upgrading-qumulo-core/performing-upgrades.html)
-3. [Configuring Round-Robin DNS on Windows Server for Qumulo Core](/administrator-guide/network-configuration/configuring-round-robin-dns-windows-server.html)
-4. [Qumulo Core Upgrade Mode Reference](/administrator-guide/upgrading-qumulo-core/mode-reference.html)
-5. [Enabling Cloud-Based Monitoring and Remote Support](/administrator-guide/monitoring-and-metrics/enabling-cloud-based-monitoring-remote-support.html)
-6. [Getting Started with the qq CLI](/administrator-guide/qq-cli/getting-started.html)
-7. [Creating a Qumulo Core USB Drive Installer](/hardware-guide/getting-started/creating-usb-drive-installer.html)
-8. [Supported Configurations and Known Limits for Qumulo Core](/administrator-guide/getting-started/supported-configurations-known-limits.html)
-9. [Replication Version Requirements and Upgrade Recommendations for Qumulo Core](/administrator-guide/upgrading-qumulo-core/replication-version-requirements-upgrade-recommendations.html)
-10. [Installing the Qumulo Core Product Package](/administrator-guide/getting-started/installing-product-package.html)
+1. [Supported Configurations and Known Limits for Qumulo Core](/administrator-guide/getting-started/supported-configurations-known-limits.html)
+2. [Qumulo Core Feature Log](/administrator-guide/upgrading-qumulo-core/feature-log.html)
+3. [Installing the Qumulo Core Product Package](/administrator-guide/getting-started/installing-product-package.html)
+4. [Enabling Cloud-Based Monitoring and VPN Remote Support for Qumulo Core](/administrator-guide/monitoring-and-metrics/enabling-cloud-based-monitoring-vpn-remote-support.html)
+5. [Deploying Cloud Native Qumulo on AWS with Terraform](/cloud-native-aws-administrator-guide/getting-started/terraform.html)
+6. [Configuring Round-Robin DNS on Windows Server for Qumulo Core](/administrator-guide/network-configuration/configuring-round-robin-dns-windows-server.html)
+7. [Getting Started with the qq CLI](/administrator-guide/qq-cli/getting-started.html)
+8. [Performing Qumulo Core Upgrades](/administrator-guide/upgrading-qumulo-core/performing-upgrades.html)
+9. [Creating a Qumulo Core USB Drive Installer](/hardware-guide/getting-started/creating-usb-drive-installer.html)
+10. [Installing and Configuring Qumulo Alerts](/qumulo-alerts-guide/installing-configuring-qumulo-alerts.html)
 
 ## Get Qumulo Core
 {{site.nexus.downloads}} {{site.loginRequired}}.
