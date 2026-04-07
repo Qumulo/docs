@@ -14,9 +14,10 @@ jobs:
       - uses: actions/checkout@v5
         with:
           fetch-depth: 0
-          ref: ${{ env.GITHUB_REF_NAME }}
+          ref: ${{ github.ref_name }}
 
       - name: Rebuild Hot Topics ranking in index.md, show deltas, and commit changes
+        if: ${{ github.repository == 'Qumulo/docs-internal' }}
         run: |
           ./tools/test-build-hot-topic.sh
 

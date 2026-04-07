@@ -1,9 +1,5 @@
 name: Test docs feature branch
 on:
-  # Manual trigger for feature branch
-  workflow_dispatch:
-    branches-ignore:
-      - gh-pages
   # Push trigger for feature branch
   push:
     branches-ignore:
@@ -16,7 +12,7 @@ jobs:
       - uses: actions/checkout@v5
         with:
           fetch-depth: 0
-          ref: ${{ env.GITHUB_REF_NAME }}
+          ref: ${{ github.ref_name }}
 
       - name: Rebuild Hot Topics ranking in index.md and show deltas (dry run)
         run: |
@@ -26,7 +22,7 @@ jobs:
           git diff
 
           # Revert changes before switching branches
-          git reset --hard ${{ env.GITHUB_REF_NAME }}
+          git reset --hard ${{ github.ref_name }}
         env:
           ENGINEERING_JSON: ${{ secrets.ENGINEERING_JSON }}
 
