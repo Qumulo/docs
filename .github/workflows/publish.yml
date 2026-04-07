@@ -3,6 +3,8 @@ on:
   push:
     branches:
       - mainline
+  repository_dispatch:
+     types: [run-publish]
 
 permissions:
   contents: write
@@ -76,6 +78,7 @@ jobs:
           ./tools/test-build-html.sh
         env:
           GIT_SSH_COMMAND: ssh -i /tmp/ro_key
+          EXTERNAL_REPOS: ${{ env.EXTERNAL_REPOS }}
 
       - name: Sync and update the gh-pages branch
         env:
@@ -93,3 +96,15 @@ jobs:
     secrets: inherit # pass all secrets
     needs: publish
     uses: ./.github/workflows/push-to-public.yml
+
+  notify-docs-internal:
+    if: ${{ github.repository != 'Qumulo/docs-internal' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Notify docs-internal repository of update in the current repository
+        run: |
+          curl -X POST \
+            -H "Authorization: token ${{ secrets.REPO_PAT }}" \
+            -H "Accept: application/vnd.github+json" \
+            https://api.github.com/repos/Qumulo/docs-internal/dispatches \
+            -d '{"event_type":"run-publish"}'
