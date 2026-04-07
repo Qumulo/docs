@@ -94,5 +94,6 @@ jobs:
 
   push-to-public:
     if: ${{ github.repository == 'Qumulo/docs-internal' }}
+    secrets: inherit # pass all secrets
     needs: publish
     uses: ./.github/workflows/push-to-public.yml
