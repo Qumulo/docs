@@ -15,6 +15,7 @@ jobs:
           ref: ${{ github.ref_name }}
 
       - name: Rebuild Hot Topics ranking in index.md and show deltas (dry run)
+        if: ${{ github.repository == 'Qumulo/docs-internal' }}
         run: |
           ./tools/test-build-hot-topic.sh
 
