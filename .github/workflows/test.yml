@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # It is recommended to use specific versions
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           fetch-depth: 0
           ref: ${{ env.GITHUB_REF_NAME }}
