@@ -1,3 +1,5 @@
+> ℹ️ **Note:** To contribute content to the [Qumulo Hardware Servicing Guide](https://docs.qumulo.com/hardware-guide/), use the [`docs-hardware`](https://github.com/Qumulo/docs-hardware) repository.
+
 # Qumulo Documentation Portal
 Welcome to the Qumulo Documentation Portal repository! This project uses docs-as-code principles to provide guidance about deploying, configuring, and working with cloud and on-premises Qumulo offerings, developer tools and interfaces, and external alerts and monitoring for Qumulo Core. 
 
