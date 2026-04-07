@@ -1,4 +1,4 @@
-﻿name: Build and push docs to prod
+﻿name: Push docs to prod
 on: workflow_call
 
 jobs:

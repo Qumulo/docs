@@ -1,4 +1,4 @@
-name: Build and push docs to prod
+name: Build and validate docs
 on:
   push:
     branches:
