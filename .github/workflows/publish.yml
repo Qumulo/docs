@@ -66,6 +66,7 @@ jobs:
           exit 0
 
       - name: Prepare ReadOnly SSH key - access to external repos we include
+        if: ${{ github.repository == 'Qumulo/docs-internal' }}
         run: |
           echo "${{ secrets.DOCS_READONLY_KEY }}" > /tmp/ro_key
           chmod 400 /tmp/ro_key
@@ -77,21 +78,15 @@ jobs:
           GIT_SSH_COMMAND: ssh -i /tmp/ro_key
 
       - name: Sync and update the gh-pages branch
-        run: |
-          git worktree add content gh-pages
-
-          rsync -a _site/ content/
-
-          git -C content --work-tree . add --all
-          git -C content --work-tree . commit -m "Rebuilt documentation website" || echo "No changes to commit" >&2
-
-          # Force push internal `gh-pages` branch to public `gh-pages` branch
-          git -C content --work-tree . push --force origin gh-pages
+        env:
+          GIT_ACTOR: ${{ github.actor }}
+          IS_INTERNAL: ${{ github.repository == 'Qumulo/docs-internal' }}
+        run: ./tools/sync-gh-pages.sh
 
       - name: Clean up SSH key
+        if: ${{ github.repository == 'Qumulo/docs-internal' }}
         run: |
           rm -f /tmp/ro_key
-        if: always()
 
   push-to-public:
     if: ${{ github.repository == 'Qumulo/docs-internal' }}
