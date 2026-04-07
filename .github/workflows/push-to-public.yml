@@ -18,10 +18,12 @@ jobs:
 
       - name: Push this upstream
         run: |
-          git remote add -m gh-pages public git@github.com:Qumulo/docs
+          # git remote add -m gh-pages public git@github.com:Qumulo/docs
+          git -C content remote add -m gh-pages public git@github.com:Qumulo/docs
 
           # Force push internal `gh-pages` branch to public `gh-pages` branch
-          git push --force public gh-pages
+          # git push --force public gh-pages
+          git -C content push --force public gh-pages
         env:
           GIT_SSH_COMMAND: ssh -i /tmp/key
 

@@ -75,22 +75,17 @@ jobs:
         env:
           GIT_SSH_COMMAND: ssh -i /tmp/ro_key
 
-      - name: Checkout fresh copy of repo with gh-pages branch
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-          ref: gh-pages
-          path: content
-
       - name: Sync and update the gh-pages branch
         run: |
+          git worktree add content gh-pages
+
           rsync -a _site/ content/
 
-          git -C content add --all
-          git -C content commit -m "Rebuilt documentation website" || echo "No changes to commit" >&2
+          git -C content --work-tree . add --all
+          git -C content --work-tree . commit -m "Rebuilt documentation website" || echo "No changes to commit" >&2
 
           # Force push internal `gh-pages` branch to public `gh-pages` branch
-          git -C content push --force gh-pages
+          git -C content --work-tree . push --force origin gh-pages
 
       - name: Clean up SSH key
         run: |
@@ -99,4 +94,5 @@ jobs:
 
   push-to-public:
     if: ${{ github.repository == 'Qumulo/docs-internal' }}
+    needs: publish
     uses: ./.github/workflows/push-to-public.yml
