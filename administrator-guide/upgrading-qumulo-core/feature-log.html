@@ -3,9 +3,48 @@
 <head>
     
 <meta charset="utf-8">
+
+<!-- Headers -->
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta http-equiv="Content-Security-Policy" content="
+  default-src 'self'; 
+  script-src 'self' 'unsafe-inline'
+    https://cdn.datatables.net    
+    https://cdn.jsdelivr.net    
+    https://cdnjs.cloudflare.com
+    https://maxcdn.bootstrapcdn.com
+    https://www.googletagmanager.com;
+  connect-src 'self'
+    https://*.googletagmanager.com
+    https://*.google-analytics.com
+    https://api.vectara.io  
+    https://maxcdn.bootstrapcdn.com;
+  img-src 'self' data:
+    https://*.google-analytics.com
+    https://*.googletagmanager.com;
+  style-src 'self' 'unsafe-inline'
+    https://cdn.datatables.net
+    https://fonts.googleapis.com
+    https://maxcdn.bootstrapcdn.com; 
+  font-src 'self' data:
+    https://fonts.gstatic.com
+    https://maxcdn.bootstrapcdn.com; 
+  frame-src 
+    https://www.googletagmanager.com;
+  object-src 'none';
+">
+
+<!-- This replaces frame-ancestors 'self'; which is unsupported in meta tags. -->
+<script>
+  if (self !== top) {
+    top.location = self.location;
+  }
+</script>
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Qumulo Core Feature Log | Qumulo Documentation</title>
+<title>Qumulo Core Feature Log | Qumulo Documentation Portal</title>
+
 <link rel="canonical" href="https://docs.qumulo.com/administrator-guide/upgrading-qumulo-core/feature-log.html">
 
 <!-- Organization JSON-LD Schema -->
@@ -111,8 +150,8 @@ fetch('/data/website.json')
 
 <!-- Define page metadata -->
 <meta name="description" content="This section lists the most important features from each release.">
-<meta name="apple-mobile-web-app-title" content="Qumulo Documentation">
-<meta name="application-name" content="Qumulo Documentation">
+<meta name="apple-mobile-web-app-title" content="Qumulo Documentation Portal">
+<meta name="application-name" content="Qumulo Documentation Portal">
 <meta name="msapplication-TileColor" content="#2b5797">
 <meta name="msapplication-TileImage" content="/images/mstile-144x144.png">
 <meta name="msapplication-config" content="/images/browserconfig.xml">
@@ -120,9 +159,9 @@ fetch('/data/website.json')
 <meta name="google-site-verification" content="_KoxPR0qF_ZeMyH6uWvlX84cFRujO_AZ1eq0eT9alAg">
 
 <!-- Open Graph Meta Tags -->
-<meta property="og:title" content="Qumulo Core Feature Log | Qumulo Documentation">
+<meta property="og:title" content="Qumulo Core Feature Log | Qumulo Documentation Portal">
 <meta property="og:url" content="https://docs.qumulo.com/administrator-guide/upgrading-qumulo-core/feature-log.html">
-<meta property="og:site_name" content="Qumulo Documentation">
+<meta property="og:site_name" content="Qumulo Documentation Portal">
 <meta property="og:description" content="This section lists the most important features from each release.">
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="website">
@@ -131,7 +170,7 @@ fetch('/data/website.json')
 <meta property="og:image:height" content="630">
 
 <!-- Twitter Meta Tags -->
-<meta name="twitter:title" content="Qumulo Core Feature Log | Qumulo Documentation">
+<meta name="twitter:title" content="Qumulo Core Feature Log | Qumulo Documentation Portal">
 <meta property="twitter:url" content="https://docs.qumulo.com/administrator-guide/upgrading-qumulo-core/feature-log.html">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:description" content="This section lists the most important features from each release.">
@@ -149,7 +188,7 @@ fetch('/data/website.json')
 
 <!-- Define RSS feed -->
 <!-- TEMPORARILY DISABLED
-<link rel="alternate" href="https://docs.qumulo.com/feed.xml" type="application/rss+xml" title="docs">
+<link rel="alternate" href="https://docs.qumulo.com/feed.xml" type="application/rss+xml" title="">
 -->
 
 <!-- Load scripts from cloudflare.com -->
@@ -282,7 +321,7 @@ fetch('/data/website.json')
         <div class="flex-links">
           <a class="header-link header-right" href="https://qumulo.com/company/about-qumulo/" target="_blank">About Qumulo</a>
           <a class="header-link header-right" href="https://care.qumulo.com/s/knowledge" target="_blank">Knowledge Base</a>
-          <a class="header-link header-right" href="https://nexus.qumulo.com/" target="_blank">Nexus</a>
+          <a class="header-link header-right" href="https://nexus.qumulo.com/" target="_blank">Nexus <span class="emoji">🔒</span></a>
         </div>
         <div class="contact-links">
           <a class="btn-contact no_icon" href="https://qumulocare.slack.com/">Send Slack Message</a>
@@ -302,12 +341,13 @@ fetch('/data/website.json')
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/index.html">&nbsp;<span class="projectTitle"> Qumulo Documentation</span></a>
+            <a class="navbar-brand" href="/index.html">&nbsp;<span class="projectTitle"> Qumulo Documentation Portal</span></a>
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <!-- toggle sidebar button -->
-                <li><a id="tg-sb-link" href="#" data-proofer-ignore><i id="tg-sb-icon" class="fa fa-toggle-off"></i> Reading Mode</a></li>
+                <li><a id="tg-sb-link" href="#" data-proofer-ignore><i id="tg-sb-icon" class="fa fa-toggle-off"></i> Toggle Reading Mode</a></li>
+                <li><a id="view-favorites" href="/favorites.html" data-proofer-ignore><i id="fav-nav-icon" class="fa fa-star-o"></i> View Favorites</a></li>
                 <!-- entries without drop-downs appear here -->
 
 
@@ -322,7 +362,7 @@ fetch('/data/website.json')
                   <div id="search-demo-container">
                     <div class="parent">
                       <div class="search_container">
-                        <main id="search-widget">
+                        <div id="search-widget">
                           <div class="vectara__search_Box">
                             <form id="vectara__search_form" action="/search.html" method="GET">
                               <input class="vectara__search_field" name="query" id="search-input" placeholder="What would you like to know?" autofocus>
@@ -331,7 +371,7 @@ fetch('/data/website.json')
                               </button>
                             </form>
                           </div>
-                        </main>
+                        </div>
                         <ul class="tags" id="widget-tags"></ul>
                       </div>
                     </div>
@@ -348,19 +388,18 @@ fetch('/data/website.json')
 <!-- Page Content -->
 
 <div class="container">
-  <div id="main">
+  <main id="main">
     <!-- Content Row -->
     <div class="row">
         
         
-
             <!-- Sidebar Column -->
             <div class="col-md-3" id="tg-sb-sidebar">
                 
 
 <div class="nav nav-buttons">
   
-    <a target="_blank" rel="noopener" href="https://github.com/qumulo/docs/blob/gh-pages/administrator-guide/upgrading-qumulo-core/feature-log.md" class="btn btn-default githubEditButton no_icon" role="button" data-proofer-ignore><span class="fa fa-github fa-lg"></span> Edit on GitHub</a>
+    <a target="_blank" rel="noopener" href="https://github.com/qumulo/docs/blob/mainline/administrator-guide/upgrading-qumulo-core/feature-log.md" class="btn btn-default githubEditButton no_icon" role="button" data-proofer-ignore><span class="fa fa-github fa-lg"></span> Edit on GitHub</a>
   
 
   
@@ -375,11 +414,11 @@ fetch('/data/website.json')
   
       
   
-  
+
   
 
   
-  
+
   
   <li>
   
@@ -389,24 +428,21 @@ fetch('/data/website.json')
   
   
   
-  
-  
-
-  
 
   
 
   Qumulo On-Premises Administrator Guide
   </a>
- 
+
       <ul>
           
           
           
           <li>
             <a title="Documentation Home" href="/index.html">
-              Documentation Home     
+              Documentation Home
               <span class="tag-container">
+              
               
               
               </span>
@@ -420,8 +456,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Guide Table of Contents" href="/administrator-guide/">
-              Guide Table of Contents     
+              Guide Table of Contents
               <span class="tag-container">
+              
               
               
               </span>
@@ -435,8 +472,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Contacting the Qumulo Care Team" href="/contacting-qumulo-care-team.html">
-              Contacting the Qumulo Care Team     
+              Contacting the Qumulo Care Team
               <span class="tag-container">
+              
               
               
               </span>
@@ -451,11 +489,11 @@ fetch('/data/website.json')
      
       
   
-  
+
   
 
   
-  
+
   
   <li>
   
@@ -465,24 +503,37 @@ fetch('/data/website.json')
   
   
   
-  
-  
-
-  
 
   
 
   Getting Started
   </a>
- 
+
       <ul>
           
           
           
           <li>
             <a title="Installing the Qumulo Core Product Package" href="/administrator-guide/getting-started/installing-product-package.html">
-              Installing the Qumulo Core Product Package     
+              Installing the Qumulo Core Product Package
               <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Configuring Interface Tagging for Host-Managed Networking" href="/administrator-guide/getting-started/configuring-interface-tagging-host-managed-networking.html">
+              Configuring Interface Tagging for Host-Managed Networking
+              <span class="tag-container">
+              
               
               
               </span>
@@ -496,8 +547,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Supported Configurations and Known Limits" href="/administrator-guide/getting-started/supported-configurations-known-limits.html">
-              Supported Configurations and Known Limits     
+              Supported Configurations and Known Limits
               <span class="tag-container">
+              
               
               
               </span>
@@ -512,11 +564,11 @@ fetch('/data/website.json')
      
       
   
-  
+
   
 
   
-  
+
   
   <li>
   
@@ -526,16 +578,12 @@ fetch('/data/website.json')
   
   
   
-  
-  
-
-  
 
   
 
   System Upgrades
   </a>
- 
+
       <ul>
           
           
@@ -544,6 +592,7 @@ fetch('/data/website.json')
             <a title="Feature Log" href="/administrator-guide/upgrading-qumulo-core/feature-log.html">
               Feature Log
               <span class="tag-container">
+              
               
               
               </span>
@@ -557,8 +606,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Upgrade Modes" href="/administrator-guide/upgrading-qumulo-core/mode-reference.html">
-              Upgrade Modes     
+              Upgrade Modes
               <span class="tag-container">
+              
               
               
               </span>
@@ -572,8 +622,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Performing Upgrades" href="/administrator-guide/upgrading-qumulo-core/performing-upgrades.html">
-              Performing Upgrades     
+              Performing Upgrades
               <span class="tag-container">
+              
               
               
               </span>
@@ -587,8 +638,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Replication Version Requirements and Upgrade Recommendations" href="/administrator-guide/upgrading-qumulo-core/replication-version-requirements-upgrade-recommendations.html">
-              Replication Version Requirements and Upgrade Recommendations     
+              Replication Version Requirements and Upgrade Recommendations
               <span class="tag-container">
+              
               
               
               </span>
@@ -603,11 +655,11 @@ fetch('/data/website.json')
      
       
   
-  
+
   
 
   
-  
+
   
   <li>
   
@@ -617,24 +669,53 @@ fetch('/data/website.json')
   
   
   
-  
-  
-
-  
 
   
 
   Authentication
   </a>
- 
+
       <ul>
           
           
           
           <li>
+            <a title="Installing a Signed SSL Certificate" href="/administrator-guide/authentication-qumulo-core/installing-signed-ssl-certificate.html">
+              Installing a Signed SSL Certificate
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Installing a Custom Root CA Certificate" href="/administrator-guide/authentication-qumulo-core/installing-custom-root-ca-certificate.html">
+              Installing a Custom Root CA Certificate
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
             <a title="Installing VPN Keys" href="/administrator-guide/authentication-qumulo-core/installing-vpn-keys-on-cluster.html">
-              Installing VPN Keys     
+              Installing VPN Keys
               <span class="tag-container">
+              
               
               
               </span>
@@ -647,24 +728,10 @@ fetch('/data/website.json')
           
           
           <li>
-            <a title="Configuring SAML Single Sign-On (SSO)" href="/administrator-guide/authentication-qumulo-core/configuring-saml-single-sign-on-sso.html">
-              Configuring SAML Single Sign-On (SSO)     
+            <a title="Configuring Active Directory" href="/administrator-guide/authentication-qumulo-core/configuring-ad.html">
+              Configuring Active Directory
               <span class="tag-container">
               
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-          
-          
-          <li>
-            <a title="Configuring Search Trusted Domains" href="/administrator-guide/authentication-qumulo-core/configuring-search-trusted-domains-active-directory.html">
-              Configuring Search Trusted Domains     
-              <span class="tag-container">
               
               
               </span>
@@ -678,8 +745,41 @@ fetch('/data/website.json')
           
           <li>
             <a title="Configuring LDAP" href="/administrator-guide/authentication-qumulo-core/configuring-ldap.html">
-              Configuring LDAP     
+              Configuring LDAP
               <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Configuring SAML Single Sign-On (SSO)" href="/administrator-guide/authentication-qumulo-core/configuring-saml-single-sign-on-sso.html">
+              Configuring SAML Single Sign-On (SSO)
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Configuring Search Trusted Domains" href="/administrator-guide/authentication-qumulo-core/configuring-search-trusted-domains-active-directory.html">
+              Configuring Search Trusted Domains
+              <span class="tag-container">
+              
               
               
               </span>
@@ -693,8 +793,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Creating and Using Bearer Tokens" href="/administrator-guide/authentication-qumulo-core/creating-using-bearer-tokens-to-authenticate-qumulo-rest-api-calls.html">
-              Creating and Using Bearer Tokens     
+              Creating and Using Bearer Tokens
               <span class="tag-container">
+              
               
               
               </span>
@@ -709,11 +810,11 @@ fetch('/data/website.json')
      
       
   
-  
+
   
 
   
-  
+
   
   <li>
   
@@ -723,24 +824,21 @@ fetch('/data/website.json')
   
   
   
-  
-  
-
-  
 
   
 
   Connecting to External Services
   </a>
- 
+
       <ul>
           
           
           
           <li>
             <a title="Creating and Using Access Tokens" href="/administrator-guide/connecting-to-external-services/creating-using-access-tokens-to-authenticate-external-services-qumulo-core.html">
-              Creating and Using Access Tokens     
+              Creating and Using Access Tokens
               <span class="tag-container">
+              
               
               
               </span>
@@ -754,8 +852,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Connecting a Kubernetes Cluster" href="/administrator-guide/connecting-to-external-services/connecting-kubernetes-cluster-with-container-storage-interface-csi-driver.html">
-              Connecting a Kubernetes Cluster     
+              Connecting a Kubernetes Cluster
               <span class="tag-container">
+              
               
               
               </span>
@@ -770,11 +869,11 @@ fetch('/data/website.json')
      
       
   
-  
+
   
 
   
-  
+
   
   <li>
   
@@ -784,24 +883,21 @@ fetch('/data/website.json')
   
   
   
-  
-  
-
-  
 
   
 
   Authorization
   </a>
- 
+
       <ul>
           
           
           
           <li>
-            <a title="Managing File Locks" href="/administrator-guide/authorization-qumulo-core/managing-file-locks.html">
-              Managing File Locks     
+            <a title="Managing Role-Based Access Control (RBAC)" href="/administrator-guide/authorization-qumulo-core/managing-role-based-access-control-rbac.html">
+              Managing Role-Based Access Control (RBAC)
               <span class="tag-container">
+              
               
               
               </span>
@@ -814,24 +910,10 @@ fetch('/data/website.json')
           
           
           <li>
-            <a title="Managing Role-Based Access Control" href="/administrator-guide/authorization-qumulo-core/managing-role-based-access-control-rbac.html">
-              Managing Role-Based Access Control     
+            <a title="Managing Cross-Protocol (XPP) Permissions" href="/administrator-guide/authorization-qumulo-core/managing-cross-protocol-permissions-xpp.html">
+              Managing Cross-Protocol (XPP) Permissions
               <span class="tag-container">
               
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-          
-          
-          <li>
-            <a title="Managing Cross-Protocol Permissions" href="/administrator-guide/authorization-qumulo-core/managing-cross-protocol-permissions-xpp.html">
-              Managing Cross-Protocol Permissions     
-              <span class="tag-container">
               
               
               </span>
@@ -845,8 +927,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Using SMB Host Restrictions" href="/administrator-guide/authorization-qumulo-core/using-smb-host-restrictions.html">
-              Using SMB Host Restrictions     
+              Using SMB Host Restrictions
               <span class="tag-container">
+              
               
               
               </span>
@@ -860,8 +943,25 @@ fetch('/data/website.json')
           
           <li>
             <a title="Using Active Directory for POSIX Attributes" href="/administrator-guide/authorization-qumulo-core/using-active-directory-for-posix-attributes.html">
-              Using Active Directory for POSIX Attributes     
+              Using Active Directory for POSIX Attributes
               <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Managing File Locks" href="/administrator-guide/authorization-qumulo-core/managing-file-locks.html">
+              Managing File Locks
+              <span class="tag-container">
+              
               
               
               </span>
@@ -876,18 +976,16 @@ fetch('/data/website.json')
      
       
   
-  
+
   
 
   
-  
+
   
   <li>
   
 
-  <a title="Storage Management" href="/administrator-guide/storage-management/index.html" data-proofer-ignore>
-  
-  
+  <a title="Encryption at Rest" href="/administrator-guide/encryption-at-rest/index.html" data-proofer-ignore>
   
   
   
@@ -895,19 +993,18 @@ fetch('/data/website.json')
 
   
 
-  
-
-  Storage Management
+  Encryption at Rest
   </a>
- 
+
       <ul>
           
           
           
           <li>
-            <a title="Creating and Managing Directory Quotas" href="/administrator-guide/storage-management/creating-directory-quotas.html">
-              Creating and Managing Directory Quotas     
+            <a title="Managing Encryption at Rest" href="/administrator-guide/encryption-at-rest/managing-encryption-at-rest.html">
+              Managing Encryption at Rest
               <span class="tag-container">
+              
               
               
               </span>
@@ -922,18 +1019,16 @@ fetch('/data/website.json')
      
       
   
-  
+
   
 
   
-  
+
   
   <li>
   
 
-  <a title="Network Configuration" href="/administrator-guide/network-configuration/index.html" data-proofer-ignore>
-  
-  
+  <a title="Encryption in Transit" href="/administrator-guide/encryption-in-transit/index.html" data-proofer-ignore>
   
   
   
@@ -941,19 +1036,18 @@ fetch('/data/website.json')
 
   
 
-  
-
-  Network Configuration
+  Encryption in Transit
   </a>
- 
+
       <ul>
           
           
           
           <li>
-            <a title="Required Networking Ports" href="/administrator-guide/network-configuration/required-ports.html">
-              Required Networking Ports     
+            <a title="Managing SMB3 Encryption in Transit" href="/administrator-guide/encryption-in-transit/managing-smb3-encryption-in-transit.html">
+              Managing SMB3 Encryption in Transit
               <span class="tag-container">
+              
               
               
               </span>
@@ -966,920 +1060,10 @@ fetch('/data/website.json')
           
           
           <li>
-            <a title="Configuring IPv6" href="/administrator-guide/network-configuration/configuring-ipv6.html">
-              Configuring IPv6     
+            <a title="How NFSv4.1 Works with Kerberos" href="/administrator-guide/kerberos/kerberos-with-qumulo-core.html">
+              How NFSv4.1 Works with Kerberos
               <span class="tag-container">
               
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-          
-          
-          <li>
-            <a title="Connecting to Multiple Virtual Networks" href="/administrator-guide/network-configuration/connecting-multiple-virtual-networks.html">
-              Connecting to Multiple Virtual Networks     
-              <span class="tag-container">
-              
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-          
-          
-          <li>
-            <a title="Configuring Round-Robin DNS on Windows Server" href="/administrator-guide/network-configuration/configuring-round-robin-dns-windows-server.html">
-              Configuring Round-Robin DNS on Windows Server     
-              <span class="tag-container">
-              
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-      </ul>
-   </li>
-     
-      
-  
-  
-  
-
-  
-  
-  
-  <li>
-  
-
-  <a title="Network Multitenancy" href="/administrator-guide/network-multitenancy/index.html" data-proofer-ignore>
-  
-  
-  
-  
-  
-  
-
-  
-
-  
-
-  Network Multitenancy
-  </a>
- 
-      <ul>
-          
-          
-          
-          <li>
-            <a title="Partitioning a Cluster into Tenants" href="/administrator-guide/network-multitenancy/partitioning-cluster-into-tenants.html">
-              Partitioning a Cluster into Tenants     
-              <span class="tag-container">
-              
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-          
-          
-          <li>
-            <a title="Configuring Management Protocols" href="/administrator-guide/network-multitenancy/configuring-management-protocols.html">
-              Configuring Management Protocols     
-              <span class="tag-container">
-              
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-          
-          
-          <li>
-            <a title="Configuring File System Protocols" href="/administrator-guide/network-multitenancy/configuring-file-system-protocols.html">
-              Configuring File System Protocols     
-              <span class="tag-container">
-              
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-      </ul>
-   </li>
-     
-      
-  
-  
-  
-
-  
-  
-  
-  <li>
-  
-
-  <a title="Cloud Data Fabric" href="/administrator-guide/cloud-data-fabric/index.html" data-proofer-ignore>
-  
-  
-  
-  
-  
-  
-
-  
-
-  
-
-  Cloud Data Fabric
-  </a>
- 
-      <ul>
-          
-          
-          
-          <li>
-            <a title="Enabling Cloud Data Fabric" href="/administrator-guide/cloud-data-fabric/how-portal-creation-enables-cloud-data-fabric.html">
-              Enabling Cloud Data Fabric     
-              <span class="tag-container">
-              
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-          
-          
-          <li>
-            <a title="Configuring a Portal Relationship" href="/administrator-guide/cloud-data-fabric/configuring-portal-relationship.html">
-              Configuring a Portal Relationship     
-              <span class="tag-container">
-              
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-          
-          
-          <li>
-            <a title="Configuring Cache Management" href="/administrator-guide/cloud-data-fabric/configuring-cache-management-for-spoke-portals.html">
-              Configuring Cache Management     
-              <span class="tag-container">
-              
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-      </ul>
-   </li>
-     
-      
-  
-  
-  
-
-  
-  
-  
-  <li>
-  
-
-  <a title="Web UI" href="/administrator-guide/web-ui/index.html" data-proofer-ignore>
-  
-  
-  
-  
-  
-  
-
-  
-
-  
-
-  Web UI
-  </a>
- 
-      <ul>
-          
-          
-          
-          <li>
-            <a title="Setting the Web UI Login Banner" href="/administrator-guide/web-ui/login-banner.html">
-              Setting the Web UI Login Banner     
-              <span class="tag-container">
-              
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-          
-          
-          <li>
-            <a title="Setting the Web UI Inactivity Timeout" href="/administrator-guide/web-ui/inactivity-timeout.html">
-              Setting the Web UI Inactivity Timeout     
-              <span class="tag-container">
-              
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-      </ul>
-   </li>
-     
-      
-  
-  
-  
-
-  
-  
-  
-  <li>
-  
-
-  <a title="qq CLI" href="/administrator-guide/qq-cli/index.html" data-proofer-ignore>
-  
-  
-  
-  
-  
-  
-
-  
-
-  
-
-  qq CLI
-  </a>
- 
-      <ul>
-          
-          
-          
-          <li>
-            <a title="Getting Started with the qq CLI" href="/administrator-guide/qq-cli/getting-started.html">
-              Getting Started with the qq CLI     
-              <span class="tag-container">
-              
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-          
-          
-          <li>
-            <a title="Enabling Autocomplete for the qq CLI" href="/administrator-guide/qq-cli/enabling-autocomplete.html">
-              Enabling Autocomplete for the qq CLI     
-              <span class="tag-container">
-              
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-      </ul>
-   </li>
-     
-      
-  
-  
-  
-
-  
-  
-  
-  <li>
-  
-
-  <a title="Metadata" href="/administrator-guide/metadata/index.html" data-proofer-ignore>
-  
-  
-  
-  
-  
-  
-
-  
-
-  
-
-  Metadata
-  </a>
- 
-      <ul>
-          
-          
-          
-          <li>
-            <a title="Managing User-Defined Metadata" href="/administrator-guide/metadata/managing-user-defined-metadata.html">
-              Managing User-Defined Metadata     
-              <span class="tag-container">
-              
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-      </ul>
-   </li>
-     
-      
-  
-  
-  
-
-  
-  
-  
-  <li>
-  
-
-  <a title="Snapshots" href="/administrator-guide/snapshots/index.html" data-proofer-ignore>
-  
-  
-  
-  
-  
-  
-
-  
-
-  
-
-  Snapshots
-  </a>
- 
-      <ul>
-          
-          
-          
-          <li>
-            <a title="How Snapshots Work" href="/administrator-guide/snapshots/how-snapshots-work.html">
-              How Snapshots Work     
-              <span class="tag-container">
-              
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-          
-          
-          <li>
-            <a title="Managing Snapshots" href="/administrator-guide/snapshots/managing-snapshots.html">
-              Managing Snapshots     
-              <span class="tag-container">
-              
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-          
-          
-          <li>
-            <a title="Locking and Unlocking Snapshots" href="/administrator-guide/snapshots/locking-unlocking-snapshots.html">
-              Locking and Unlocking Snapshots     
-              <span class="tag-container">
-              
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-          
-          
-          <li>
-            <a title="Recovering Files by Using Snapshots" href="/administrator-guide/snapshots/recovering-files.html">
-              Recovering Files by Using Snapshots     
-              <span class="tag-container">
-              
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-      </ul>
-   </li>
-     
-      
-  
-  
-  
-
-  
-  
-  
-  <li>
-  
-
-  <a title="Encryption and Data Security" href="/administrator-guide/encryption-data-security/index.html" data-proofer-ignore>
-  
-  
-  
-  
-  
-  
-
-  
-
-  
-
-  Encryption and Data Security
-  </a>
- 
-      <ul>
-          
-          
-          
-          <li>
-            <a title="Managing Encryption at Rest" href="/administrator-guide/encryption-data-security/managing-encryption-at-rest.html">
-              Managing Encryption at Rest     
-              <span class="tag-container">
-              
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-          
-          
-          <li>
-            <a title="Managing SMB3 Encryption in Transit" href="/administrator-guide/encryption-data-security/managing-smb3-encryption-in-transit.html">
-              Managing SMB3 Encryption in Transit     
-              <span class="tag-container">
-              
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-          
-          
-          <li>
-            <a title="Generating and Storing ECDSA Keys" href="/administrator-guide/encryption-data-security/generating-storing-ecdsa-keys.html">
-              Generating and Storing ECDSA Keys     
-              <span class="tag-container">
-              
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-          
-          
-          <li>
-            <a title="Managing Security Keys" href="/administrator-guide/encryption-data-security/managing-security-keys.html">
-              Managing Security Keys     
-              <span class="tag-container">
-              
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-          
-          
-          <li>
-            <a title="Installing a Signed SSL Certificate" href="/administrator-guide/encryption-data-security/installing-signed-ssl-certificate.html">
-              Installing a Signed SSL Certificate     
-              <span class="tag-container">
-              
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-      </ul>
-   </li>
-     
-      
-  
-  
-  
-
-  
-  
-  
-  <li>
-  
-
-  <a title="Node Addition and Replacement" href="/administrator-guide/node-addition-replacement/index.html" data-proofer-ignore>
-  
-  
-  
-  
-  
-  
-
-  
-
-  
-
-  Node Addition and Replacement
-  </a>
- 
-      <ul>
-          
-          
-          
-          <li>
-            <a title="How Drive and Node Failure Protection Works" href="/administrator-guide/node-addition-replacement/how-drive-node-failure-protection-works.html">
-              How Drive and Node Failure Protection Works     
-              <span class="tag-container">
-              
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-          
-          
-          <li>
-            <a title="Adding Nodes to an Existing Cluster" href="/administrator-guide/node-addition-replacement/adding-nodes-existing-cluster.html">
-              Adding Nodes to an Existing Cluster     
-              <span class="tag-container">
-              
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-          
-          
-          <li>
-            <a title="Increasing the Node Fault Tolerance Level during Node-Add Operations" href="/administrator-guide/node-addition-replacement/increasing-node-fault-tolerance-level.html">
-              Increasing the Node Fault Tolerance Level during Node-Add Operations     
-              <span class="tag-container">
-              
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-          
-          
-          <li>
-            <a title="Adding Nodes with Adaptive Data Protection" href="/administrator-guide/node-addition-replacement/adding-nodes-adaptive-data-protection.html">
-              Adding Nodes with Adaptive Data Protection     
-              <span class="tag-container">
-              
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-          
-          
-          <li>
-            <a title="Replacing Nodes by Performing a Transparent Platform Refresh" href="/administrator-guide/node-addition-replacement/replacing-nodes-transparent-platform-refresh.html">
-              Replacing Nodes by Performing a Transparent Platform Refresh     
-              <span class="tag-container">
-              
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-          
-          
-          <li>
-            <a title="Improving Performance by Migrating a Cluster to a Different License Class" href="/administrator-guide/node-addition-replacement/migrating-license-class.html">
-              Improving Performance by Migrating a Cluster to a Different License Class     
-              <span class="tag-container">
-              
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-          
-          
-          <li>
-            <a title="Understanding Offline Nodes" href="/administrator-guide/node-addition-replacement/understanding-offline-nodes.html">
-              Understanding Offline Nodes     
-              <span class="tag-container">
-              
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-      </ul>
-   </li>
-     
-      
-  
-  
-  
-
-  
-  
-  
-  <li>
-  
-
-  <a title="Data Replication" href="/administrator-guide/replicating-data/index.html" data-proofer-ignore>
-  
-  
-  
-  
-  
-  
-
-  
-
-  
-
-  Data Replication
-  </a>
- 
-      <ul>
-          
-          
-          
-          <li>
-            <a title="Creating and Managing a Continuous Replication Relationship" href="/administrator-guide/replicating-data/creating-managing-continuous-replication-relationship.html">
-              Creating and Managing a Continuous Replication Relationship     
-              <span class="tag-container">
-              
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-          
-          
-          <li>
-            <a title="Shift-To Amazon S3" href="/administrator-guide/replicating-data/shift-to-s3.html">
-              Shift-To Amazon S3     
-              <span class="tag-container">
-              
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-          
-          
-          <li>
-            <a title="Shift-From Amazon S3" href="/administrator-guide/replicating-data/shift-from-s3.html">
-              Shift-From Amazon S3     
-              <span class="tag-container">
-              
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-      </ul>
-   </li>
-     
-      
-  
-  
-  
-
-  
-  
-  
-  <li>
-  
-
-  <a title="File System Changes" href="/administrator-guide/watching-file-attribute-directory-changes/index.html" data-proofer-ignore>
-  
-  
-  
-  
-  
-  
-
-  
-
-  
-
-  File System Changes
-  </a>
- 
-      <ul>
-          
-          
-          
-          <li>
-            <a title="How File System Change Notifications Work" href="/administrator-guide/watching-file-attribute-directory-changes/how-file-system-change-notifications-work.html">
-              How File System Change Notifications Work     
-              <span class="tag-container">
-              
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-          
-          
-          <li>
-            <a title="Watching for Changes with SMB2 CHANGE_NOTIFY" href="/administrator-guide/watching-file-attribute-directory-changes/smb2-change-notify.html">
-              Watching for Changes with SMB2 CHANGE_NOTIFY     
-              <span class="tag-container">
-              
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-          
-          
-          <li>
-            <a title="Watching for Changes with REST" href="/administrator-guide/watching-file-attribute-directory-changes/rest.html">
-              Watching for Changes with REST     
-              <span class="tag-container">
-              
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-      </ul>
-   </li>
-     
-      
-  
-  
-  
-
-  
-  
-  
-  <li>
-  
-
-  <a title="NFS" href="/administrator-guide/nfs/index.html" data-proofer-ignore>
-  
-  
-  
-  
-  
-  
-
-  
-
-  
-
-  NFS
-  </a>
- 
-      <ul>
-          
-          
-          
-          <li>
-            <a title="Creating and Managing an NFS Export" href="/administrator-guide/nfs/creating-nfs-export.html">
-              Creating and Managing an NFS Export     
-              <span class="tag-container">
-              
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-          
-          
-          <li>
-            <a title="Enabling and Using NFSv4.1" href="/administrator-guide/nfs/nfsv4.1-enabling-using.html">
-              Enabling and Using NFSv4.1     
-              <span class="tag-container">
-              
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-          
-          
-          <li>
-            <a title="Managing File Access Permissions with ACLs" href="/administrator-guide/nfs/nfsv4.1-acls.html">
-              Managing File Access Permissions with ACLs     
-              <span class="tag-container">
               
               
               </span>
@@ -1893,8 +1077,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Host Access Rules for NFS Exports" href="/administrator-guide/nfs/configuring-troubleshooting-host-access-rules-nfs-exports.html">
-              Host Access Rules for NFS Exports     
+              Host Access Rules for NFS Exports
               <span class="tag-container">
+              
               
               
               </span>
@@ -1909,11 +1094,1034 @@ fetch('/data/website.json')
      
       
   
+
+  
+
+  
+
+  
+  <li>
+  
+
+  <a title="Cryptographic Key Management" href="/administrator-guide/cryptographic-key-management/index.html" data-proofer-ignore>
+  
+  
   
   
 
   
+
+  Cryptographic Key Management
+  </a>
+
+      <ul>
+          
+          
+          
+          <li>
+            <a title="Generating and Storing ECDSA Keys" href="/administrator-guide/cryptographic-key-management/generating-storing-ecdsa-keys.html">
+              Generating and Storing ECDSA Keys
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Managing Security Keys" href="/administrator-guide/cryptographic-key-management/managing-security-keys.html">
+              Managing Security Keys
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
   
+
+  
+
+  
+
+  
+  <li>
+  
+
+  <a title="Storage Management" href="/administrator-guide/storage-management/index.html" data-proofer-ignore>
+  
+  
+  
+  
+
+  
+
+  Storage Management
+  </a>
+
+      <ul>
+          
+          
+          
+          <li>
+            <a title="Creating and Managing Directory Quotas" href="/administrator-guide/storage-management/creating-directory-quotas.html">
+              Creating and Managing Directory Quotas
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+
+  
+
+  
+
+  
+  <li>
+  
+
+  <a title="Network Configuration" href="/administrator-guide/network-configuration/index.html" data-proofer-ignore>
+  
+  
+  
+  
+
+  
+
+  Network Configuration
+  </a>
+
+      <ul>
+          
+          
+          
+          <li>
+            <a title="Configuring Interface Tagging for Host-Managed Networking" href="/administrator-guide/network-configuration/configuring-interface-tagging-host-managed-networking.html">
+              Configuring Interface Tagging for Host-Managed Networking
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Required Networking Ports" href="/administrator-guide/network-configuration/required-ports.html">
+              Required Networking Ports
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Configuring IPv6" href="/administrator-guide/network-configuration/configuring-ipv6.html">
+              Configuring IPv6
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Connecting to Multiple Virtual Networks" href="/administrator-guide/network-configuration/connecting-multiple-virtual-networks.html">
+              Connecting to Multiple Virtual Networks
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Configuring Round-Robin DNS on Windows Server" href="/administrator-guide/network-configuration/configuring-round-robin-dns-windows-server.html">
+              Configuring Round-Robin DNS on Windows Server
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Configuring Qumulo Authoritative DNS (QDNS)" href="/administrator-guide/network-configuration/configuring-authoritative-dns.html">
+              Configuring Qumulo Authoritative DNS (QDNS)
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+
+  
+
+  
+
+  
+  <li>
+  
+
+  <a title="Network Multitenancy" href="/administrator-guide/network-multitenancy/index.html" data-proofer-ignore>
+  
+  
+  
+  
+
+  
+
+  Network Multitenancy
+  </a>
+
+      <ul>
+          
+          
+          
+          <li>
+            <a title="Partitioning a Cluster into Tenants" href="/administrator-guide/network-multitenancy/partitioning-cluster-into-tenants.html">
+              Partitioning a Cluster into Tenants
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Configuring Management Protocols" href="/administrator-guide/network-multitenancy/configuring-management-protocols.html">
+              Configuring Management Protocols
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Configuring File System Protocols" href="/administrator-guide/network-multitenancy/configuring-file-system-protocols.html">
+              Configuring File System Protocols
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+
+  
+
+  
+
+  
+  <li>
+  
+
+  <a title="Cloud Data Fabric" href="/administrator-guide/cloud-data-fabric/index.html" data-proofer-ignore>
+  
+  
+  
+  
+
+  
+
+  Cloud Data Fabric
+  </a>
+
+      <ul>
+          
+          
+          
+          <li>
+            <a title="How Cloud Data Fabric Works" href="/administrator-guide/cloud-data-fabric/how-portal-creation-enables-cloud-data-fabric.html">
+              How Cloud Data Fabric Works
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Known Limits for Cloud Data Fabric" href="/administrator-guide/cloud-data-fabric/known-limits.html">
+              Known Limits for Cloud Data Fabric
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Configuring a Portal Relationship" href="/administrator-guide/cloud-data-fabric/configuring-portal-relationship.html">
+              Configuring a Portal Relationship
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Configuring Cache Management" href="/administrator-guide/cloud-data-fabric/configuring-cache-management-for-spoke-portals.html">
+              Configuring Cache Management
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+
+  
+
+  
+
+  
+  <li>
+  
+
+  <a title="Web UI" href="/administrator-guide/web-ui/index.html" data-proofer-ignore>
+  
+  
+  
+  
+
+  
+
+  Web UI
+  </a>
+
+      <ul>
+          
+          
+          
+          <li>
+            <a title="Setting the Web UI Login Banner" href="/administrator-guide/web-ui/login-banner.html">
+              Setting the Web UI Login Banner
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Setting the Web UI Inactivity Timeout" href="/administrator-guide/web-ui/inactivity-timeout.html">
+              Setting the Web UI Inactivity Timeout
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+
+  
+
+  
+
+  
+  <li>
+  
+
+  <a title="qq CLI" href="/administrator-guide/qq-cli/index.html" data-proofer-ignore>
+  
+  
+  
+  
+
+  
+
+  qq CLI
+  </a>
+
+      <ul>
+          
+          
+          
+          <li>
+            <a title="Getting Started with the qq CLI" href="/administrator-guide/qq-cli/getting-started.html">
+              Getting Started with the qq CLI
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Enabling Autocomplete for the qq CLI" href="/administrator-guide/qq-cli/enabling-autocomplete.html">
+              Enabling Autocomplete for the qq CLI
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+
+  
+
+  
+
+  
+  <li>
+  
+
+  <a title="Metadata" href="/administrator-guide/metadata/index.html" data-proofer-ignore>
+  
+  
+  
+  
+
+  
+
+  Metadata
+  </a>
+
+      <ul>
+          
+          
+          
+          <li>
+            <a title="Managing User-Defined Metadata" href="/administrator-guide/metadata/managing-user-defined-metadata.html">
+              Managing User-Defined Metadata
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+
+  
+
+  
+
+  
+  <li>
+  
+
+  <a title="Snapshots" href="/administrator-guide/snapshots/index.html" data-proofer-ignore>
+  
+  
+  
+  
+
+  
+
+  Snapshots
+  </a>
+
+      <ul>
+          
+          
+          
+          <li>
+            <a title="How Snapshots Work" href="/administrator-guide/snapshots/how-snapshots-work.html">
+              How Snapshots Work
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Managing Snapshots" href="/administrator-guide/snapshots/managing-snapshots.html">
+              Managing Snapshots
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Locking and Unlocking Snapshots" href="/administrator-guide/snapshots/locking-unlocking-snapshots.html">
+              Locking and Unlocking Snapshots
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Recovering Files by Using Snapshots" href="/administrator-guide/snapshots/recovering-files.html">
+              Recovering Files by Using Snapshots
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+
+  
+
+  
+
+  
+  <li>
+  
+
+  <a title="Node Addition and Replacement" href="/administrator-guide/node-addition-replacement/index.html" data-proofer-ignore>
+  
+  
+  
+  
+
+  
+
+  Node Addition and Replacement
+  </a>
+
+      <ul>
+          
+          
+          
+          <li>
+            <a title="How Drive and Node Failure Protection Works" href="/administrator-guide/node-addition-replacement/how-drive-node-failure-protection-works.html">
+              How Drive and Node Failure Protection Works
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Adding Nodes to an Existing Cluster" href="/administrator-guide/node-addition-replacement/adding-nodes-existing-cluster.html">
+              Adding Nodes to an Existing Cluster
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Increasing the Node Fault Tolerance Level during Node-Add Operations" href="/administrator-guide/node-addition-replacement/increasing-node-fault-tolerance-level.html">
+              Increasing the Node Fault Tolerance Level during Node-Add Operations
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Adding Nodes with Adaptive Data Protection" href="/administrator-guide/node-addition-replacement/adding-nodes-adaptive-data-protection.html">
+              Adding Nodes with Adaptive Data Protection
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Replacing Nodes by Performing a Transparent Platform Refresh" href="/administrator-guide/node-addition-replacement/replacing-nodes-transparent-platform-refresh.html">
+              Replacing Nodes by Performing a Transparent Platform Refresh
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Improving Performance by Migrating a Cluster to a Different License Class" href="/administrator-guide/node-addition-replacement/migrating-license-class.html">
+              Improving Performance by Migrating a Cluster to a Different License Class
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Understanding Offline Nodes" href="/administrator-guide/node-addition-replacement/understanding-offline-nodes.html">
+              Understanding Offline Nodes
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+
+  
+
+  
+
+  
+  <li>
+  
+
+  <a title="Data Replication" href="/administrator-guide/replicating-data/index.html" data-proofer-ignore>
+  
+  
+  
+  
+
+  
+
+  Data Replication
+  </a>
+
+      <ul>
+          
+          
+          
+          <li>
+            <a title="Creating and Managing a Continuous Replication Relationship" href="/administrator-guide/replicating-data/creating-managing-continuous-replication-relationship.html">
+              Creating and Managing a Continuous Replication Relationship
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Shift-To Amazon S3" href="/administrator-guide/replicating-data/shift-to-s3.html">
+              Shift-To Amazon S3
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Shift-From Amazon S3" href="/administrator-guide/replicating-data/shift-from-s3.html">
+              Shift-From Amazon S3
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+
+  
+
+  
+
+  
+  <li>
+  
+
+  <a title="File System Changes" href="/administrator-guide/watching-file-attribute-directory-changes/index.html" data-proofer-ignore>
+  
+  
+  
+  
+
+  
+
+  File System Changes
+  </a>
+
+      <ul>
+          
+          
+          
+          <li>
+            <a title="How File System Change Notifications Work" href="/administrator-guide/watching-file-attribute-directory-changes/how-file-system-change-notifications-work.html">
+              How File System Change Notifications Work
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Watching for Changes with SMB2 CHANGE_NOTIFY" href="/administrator-guide/watching-file-attribute-directory-changes/smb2-change-notify.html">
+              Watching for Changes with SMB2 CHANGE_NOTIFY
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Watching for Changes with REST" href="/administrator-guide/watching-file-attribute-directory-changes/rest.html">
+              Watching for Changes with REST
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+
+  
+
+  
+
+  
+  <li>
+  
+
+  <a title="NFS" href="/administrator-guide/nfs/index.html" data-proofer-ignore>
+  
+  
+  
+  
+
+  
+
+  NFS
+  </a>
+
+      <ul>
+          
+          
+          
+          <li>
+            <a title="Creating and Managing an NFS Export" href="/administrator-guide/nfs/creating-nfs-export.html">
+              Creating and Managing an NFS Export
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Enabling and Using NFSv4.1" href="/administrator-guide/nfs/nfsv4.1-enabling-using.html">
+              Enabling and Using NFSv4.1
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Managing File Access Permissions with ACLs" href="/administrator-guide/nfs/nfsv4.1-acls.html">
+              Managing File Access Permissions with ACLs
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Host Access Rules for NFS Exports" href="/administrator-guide/nfs/configuring-troubleshooting-host-access-rules-nfs-exports.html">
+              Host Access Rules for NFS Exports
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+
+  
+
+  
+
   
   <li>
   
@@ -1923,24 +2131,21 @@ fetch('/data/website.json')
   
   
   
-  
-  
-
-  
 
   
 
   NFSv4.1 with Kerberos
   </a>
- 
+
       <ul>
           
           
           
           <li>
             <a title="How NFSv4.1 Works with Kerberos" href="/administrator-guide/kerberos/kerberos-with-qumulo-core.html">
-              How NFSv4.1 Works with Kerberos     
+              How NFSv4.1 Works with Kerberos
               <span class="tag-container">
+              
               
               
               </span>
@@ -1954,8 +2159,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Prerequisites for Joining to Active Directory" href="/administrator-guide/kerberos/kerberos-prerequisites-joining-cluster-active-directory.html">
-              Prerequisites for Joining to Active Directory     
+              Prerequisites for Joining to Active Directory
               <span class="tag-container">
+              
               
               
               </span>
@@ -1969,8 +2175,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Configuring Active Directory" href="/administrator-guide/kerberos/kerberos-configuring-active-directory.html">
-              Configuring Active Directory     
+              Configuring Active Directory
               <span class="tag-container">
+              
               
               
               </span>
@@ -1984,8 +2191,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Performing Additional Cluster Configuration" href="/administrator-guide/kerberos/kerberos-additional-cluster-configuration.html">
-              Performing Additional Cluster Configuration     
+              Performing Additional Cluster Configuration
               <span class="tag-container">
+              
               
               
               </span>
@@ -1999,8 +2207,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Using Kerberos Permissions" href="/administrator-guide/kerberos/kerberos-qumulo-permissions.html">
-              Using Kerberos Permissions     
+              Using Kerberos Permissions
               <span class="tag-container">
+              
               
               
               </span>
@@ -2014,8 +2223,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Configuring a Linux Client" href="/administrator-guide/kerberos/kerberos-configuring-linux-client.html">
-              Configuring a Linux Client     
+              Configuring a Linux Client
               <span class="tag-container">
+              
               
               
               </span>
@@ -2029,8 +2239,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Configuring Cross-Domain Active Directory Trusts" href="/administrator-guide/kerberos/kerberos-configuring-cross-domain-active-directory-trusts.html">
-              Configuring Cross-Domain Active Directory Trusts     
+              Configuring Cross-Domain Active Directory Trusts
               <span class="tag-container">
+              
               
               
               </span>
@@ -2044,8 +2255,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Troubleshooting NFSv4.1 with Kerberos" href="/administrator-guide/kerberos/kerberos-troubleshooting.html">
-              Troubleshooting NFSv4.1 with Kerberos     
+              Troubleshooting NFSv4.1 with Kerberos
               <span class="tag-container">
+              
               
               
               </span>
@@ -2060,11 +2272,11 @@ fetch('/data/website.json')
      
       
   
-  
+
   
 
   
-  
+
   
   <li>
   
@@ -2074,24 +2286,37 @@ fetch('/data/website.json')
   
   
   
-  
-  
-
-  
 
   
 
   SMB
   </a>
- 
+
       <ul>
           
           
           
           <li>
             <a title="Creating and Managing an SMB Share" href="/administrator-guide/smb/creating-smb-share.html">
-              Creating and Managing an SMB Share     
+              Creating and Managing an SMB Share
               <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Resolving Access Issues with an SMB Share" href="/administrator-guide/smb/resolving-smb-share-permission-errors-on-windows-clients.html">
+              Resolving Access Issues with an SMB Share
+              <span class="tag-container">
+              
               
               
               </span>
@@ -2105,8 +2330,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Managing File Shares by Using the Shared Folders MMC Snap-In" href="/administrator-guide/smb/managing-file-shares-shared-folders-mmc.html">
-              Managing File Shares by Using the Shared Folders MMC Snap-In     
+              Managing File Shares by Using the Shared Folders MMC Snap-In
               <span class="tag-container">
+              
               
               
               </span>
@@ -2121,11 +2347,11 @@ fetch('/data/website.json')
      
       
   
-  
+
   
 
   
-  
+
   
   <li>
   
@@ -2135,24 +2361,21 @@ fetch('/data/website.json')
   
   
   
-  
-  
-
-  
 
   
 
   S3 API
   </a>
- 
+
       <ul>
           
           
           
           <li>
             <a title="Configuring and Using the S3 API" href="/administrator-guide/s3-api/configuring-using-s3-api.html">
-              Configuring and Using the S3 API     
+              Configuring and Using the S3 API
               <span class="tag-container">
+              
               
               
               </span>
@@ -2166,8 +2389,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Creating and Managing S3 Access Keys" href="/administrator-guide/s3-api/creating-managing-s3-access-keys.html">
-              Creating and Managing S3 Access Keys     
+              Creating and Managing S3 Access Keys
               <span class="tag-container">
+              
               
               
               </span>
@@ -2181,8 +2405,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Creating and Managing S3 Buckets" href="/administrator-guide/s3-api/creating-managing-s3-buckets.html">
-              Creating and Managing S3 Buckets     
+              Creating and Managing S3 Buckets
               <span class="tag-container">
+              
               
               
               </span>
@@ -2196,8 +2421,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Managing Access to S3 Buckets" href="/administrator-guide/s3-api/managing-access-to-s3-buckets.html">
-              Managing Access to S3 Buckets     
+              Managing Access to S3 Buckets
               <span class="tag-container">
+              
               
               
               </span>
@@ -2211,8 +2437,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Managing Access Policies for S3 Buckets" href="/administrator-guide/s3-api/managing-access-policies-for-s3-buckets.html">
-              Managing Access Policies for S3 Buckets     
+              Managing Access Policies for S3 Buckets
               <span class="tag-container">
+              
               
               
               </span>
@@ -2226,8 +2453,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Managing Multipart S3 Uploads" href="/administrator-guide/s3-api/managing-multipart-uploads.html">
-              Managing Multipart S3 Uploads     
+              Managing Multipart S3 Uploads
               <span class="tag-container">
+              
               
               
               </span>
@@ -2241,8 +2469,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Managing S3 Bucket Versioning" href="/administrator-guide/s3-api/managing-s3-bucket-versioning.html">
-              Managing S3 Bucket Versioning     
+              Managing S3 Bucket Versioning
               <span class="tag-container">
+              
               
               
               </span>
@@ -2256,8 +2485,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Managing Object Lock for S3 Buckets" href="/administrator-guide/s3-api/managing-object-lock-for-s3-buckets.html">
-              Managing Object Lock for S3 Buckets     
+              Managing Object Lock for S3 Buckets
               <span class="tag-container">
+              
               
               
               </span>
@@ -2271,8 +2501,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Supported Functionality and Limits" href="/administrator-guide/s3-api/supported-s3-functionality-known-limits.html">
-              Supported Functionality and Limits     
+              Supported Functionality and Limits
               <span class="tag-container">
+              
               
               
               </span>
@@ -2287,11 +2518,11 @@ fetch('/data/website.json')
      
       
   
-  
+
   
 
   
-  
+
   
   <li>
   
@@ -2301,24 +2532,37 @@ fetch('/data/website.json')
   
   
   
-  
-  
-
-  
 
   
 
   Monitoring and Metrics
   </a>
- 
+
       <ul>
           
           
           
           <li>
-            <a title="Enabling Cloud-Based Monitoring and Remote Support" href="/administrator-guide/monitoring-and-metrics/enabling-cloud-based-monitoring-remote-support.html">
-              Enabling Cloud-Based Monitoring and Remote Support     
+            <a title="Enabling Nexus Remote Support" href="/administrator-guide/monitoring-and-metrics/enabling-nexus-remote-support.html">
+              Enabling Nexus Remote Support
               <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Enabling Cloud-Based Monitoring and VPN Remote Support" href="/administrator-guide/monitoring-and-metrics/enabling-cloud-based-monitoring-vpn-remote-support.html">
+              Enabling Cloud-Based Monitoring and VPN Remote Support
+              <span class="tag-container">
+              
               
               
               </span>
@@ -2332,8 +2576,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Connecting to Cloud-Based Monitoring and S3 with a Custom Proxy" href="/administrator-guide/monitoring-and-metrics/connecting-cloud-based-monitoring-s3-custom-proxy.html">
-              Connecting to Cloud-Based Monitoring and S3 with a Custom Proxy     
+              Connecting to Cloud-Based Monitoring and S3 with a Custom Proxy
               <span class="tag-container">
+              
               
               
               </span>
@@ -2347,8 +2592,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Restoring the Default Values for Cloud-Based and Nexus Monitoring" href="/administrator-guide/monitoring-and-metrics/restoring-default-values-cloud-based-nexus-monitoring.html">
-              Restoring the Default Values for Cloud-Based and Nexus Monitoring     
+              Restoring the Default Values for Cloud-Based and Nexus Monitoring
               <span class="tag-container">
+              
               
               
               </span>
@@ -2361,9 +2607,10 @@ fetch('/data/website.json')
           
           
           <li>
-            <a title="How Audit Logging Works in Qumulo Core" href="/administrator-guide/monitoring-and-metrics/how-audit-logging-works.html">
-              How Audit Logging Works in Qumulo Core     
+            <a title="How Audit Logging Works" href="/administrator-guide/monitoring-and-metrics/how-audit-logging-works.html">
+              How Audit Logging Works
               <span class="tag-container">
+              
               
               
               </span>
@@ -2377,8 +2624,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="OpenMetrics API Specification" href="/administrator-guide/monitoring-and-metrics/openmetrics-api-specification.html">
-              OpenMetrics API Specification     
+              OpenMetrics API Specification
               <span class="tag-container">
+              
               
               
               </span>
@@ -2398,7 +2646,6 @@ fetch('/data/website.json')
 
 <!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
 <script>$("li.active").parents('li').addClass("active");</script>
-
 
             </div>
             
@@ -2434,6 +2681,7 @@ fetch('/data/website.json')
             
 
 <div class="post-header">
+   <div class="star" id="page-star" title="Save to Favorites">&#9733;</div>
    <h1 class="post-title-main">Qumulo Core Feature Log</h1>
 </div>
 
@@ -2474,20 +2722,378 @@ $(document).ready(function() {
    <p>This section lists the most important features from each release.</p>
    
      
-     
+     <style>div#toc{height:200px;overflow:auto;}</style>
+
 <p>For information about upgrade types for each release, see <a href="mode-reference.html">Qumulo Core Upgrade Mode Reference</a>.</p>
 
-<style>div#toc{height:200px;overflow:auto;}</style>
+<h2 id="qumulo-core-7821">Qumulo Core 7.8.2.1</h2>
+<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a><span class="emoji">🔒</span></p>
 
-<h2 id="qumulo-core-741">Qumulo Core 7.4.1</h2>
-<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a></p>
-<p>Global Namespace is now a core component of Qumulo Cloud Data Fabric.</p>
 <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
 <ul>
-  <li>This release resolves an issue that we identified in Qumulo Core releases 7.3.1.2 to 7.4.0, where making changes to networking configuration by using the <strong>API Tools</strong> page in the Web UI or by using the <code>qq</code> CLI caused the default gateway to not populate.</li>
-  <li>Global Namespace is now a core component of Qumulo Cloud Data Fabric.</li>
+  <li>This release resolves an issue that could cause nodes in clusters with specific configurations to restart unexpectedly.</li>
+  <li>This release improves the compatibility of Qumulo Core 7.8.2 (and higher) with all large memory node types.</li>
+  <li>This release improves the stability and data integrity of Qumulo Core 7.8.2 (and higher).</li>
+</ul>
+</div>
+
+<ul>
+  <li>Improved the stability and connectivity of portal relationships when multiple peer portal addresses</li>
+  <li>Improved the read performance for scenarios with intermittent connectivity issues that can cause a portal quorum event</li>
+</ul>
+
+<h2 id="qumulo-core-7811">Qumulo Core 7.8.1.1</h2>
+<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a><span class="emoji">🔒</span></p>
+<div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> This release resolves an issue that could cause nodes in clusters with specific configurations to restart unexpectedly.</div>
+
+<ul>
+  <li>Enabled <strong>Try it out</strong> functionality on the <strong>APIs &amp; Tools</strong> Web UI page to work with <code class="language-plaintext highlighter-rouge">POST</code>, <code class="language-plaintext highlighter-rouge">PUT</code>, and <code class="language-plaintext highlighter-rouge">PATCH</code> requests after clicking <strong>Use current session</strong></li>
+  <li>Deprecated some <code class="language-plaintext highlighter-rouge">/v1/portal</code> REST API endpoints and replaced others with <code class="language-plaintext highlighter-rouge">/v2/portal</code> endpoints that let you retrieve information about and create portals with multiple root directories</li>
+</ul>
+
+<h2 id="qumulo-core-7801-quarterly">Qumulo Core 7.8.0.1 (Quarterly)</h2>
+<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a><span class="emoji">🔒</span></p>
+
+<div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> This release resolves an issue where an uncommon operational sequence could trigger an internal encoding inconsistency.</div>
+
+<ul>
+  <li>Improved the performance of Cloud Data Fabric (CDF) writes from the hub portal to a spoke portal</li>
+  <li>Added Host-Managed Networking Mode for all Qumulo Core Product Package installations of Qumulo Core 7.8.0.1 (and higher)</li>
+  <li>Added support for the <code class="language-plaintext highlighter-rouge">STREAMING-AWS4-HMAC-SHA256-PAYLOAD</code> and <code class="language-plaintext highlighter-rouge">STREAMING-AWS4-HMAC-SHA256-PAYLOAD-TRAILER</code> authentication types to the S3 API</li>
+  <li>Changed Authoritative DNS (QDNS) configuration to:
+    <ul>
+      <li>Serve <code class="language-plaintext highlighter-rouge">A</code> records for the first Qumulo network on the cluster’s base domain</li>
+      <li>Provide improved support for Windows Server DNS and stricter DNS resolvers</li>
+    </ul>
+  </li>
+  <li>Added support for accepting and returning security identifiers (SIDs) with the <code class="language-plaintext highlighter-rouge">IdentifierAuthority</code> value larger than <code class="language-plaintext highlighter-rouge">255</code></li>
+</ul>
+
+<h2 id="qumulo-core-7751">Qumulo Core 7.7.5.1</h2>
+<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a><span class="emoji">🔒</span></p>
+<div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> This release resolves an issue where an uncommon operational sequence could trigger an internal encoding inconsistency.</div>
+
+<ul>
+  <li>Added expansion of the placeholder <code class="language-plaintext highlighter-rouge">%U</code> to a username for SMB shares</li>
+  <li>Added the ability to handle NFSv4.1 user identities in the <code class="language-plaintext highlighter-rouge">&lt;principal&gt;@&lt;domain&gt;</code> format when a domain name is different from the Active Directory domain to which your Qumulo cluster is joined</li>
+  <li>Made additions and revisions associated with these changes to <code class="language-plaintext highlighter-rouge">qq</code> CLI commands and REST API endpoints</li>
+  <li>Resolved an issue with creating new files and then writing them to a spoke portal over SMB</li>
+  <li>Resolved an issue with the NFSv4.1 server not presenting the <code class="language-plaintext highlighter-rouge">INHERITED</code> flag on an Access Control Entry if the entry was inherited from a parent directory</li>
+</ul>
+
+<h2 id="qumulo-core-7741">Qumulo Core 7.7.4.1</h2>
+<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a><span class="emoji">🔒</span></p>
+<div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> This release resolves an issue where an uncommon operational sequence could trigger an internal encoding inconsistency.</div>
+
+<ul>
+  <li>The majority of functionality and stability improvements in this Qumulo Core release are internal.</li>
+  <li>Added the <code class="language-plaintext highlighter-rouge">/v1/portal/ping</code> REST API endpoint and the <code class="language-plaintext highlighter-rouge">qq portal_ping</code> command</li>
+  <li>Changed how the <code class="language-plaintext highlighter-rouge">qq ad_cancel</code>, <code class="language-plaintext highlighter-rouge">ad_join</code>, <code class="language-plaintext highlighter-rouge">ad_leave</code>, and <code class="language-plaintext highlighter-rouge">ad_reconfigure</code> commands return the status of in-progress background operations</li>
+</ul>
+
+<h2 id="qumulo-core-773">Qumulo Core 7.7.3</h2>
+<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a><span class="emoji">🔒</span></p>
+
+<ul>
+  <li>Updated the <code class="language-plaintext highlighter-rouge">/v3/smb/share/</code> REST API endpoint</li>
+  <li>Made Nexus security improvements</li>
+</ul>
+
+<h2 id="qumulo-core-772">Qumulo Core 7.7.2</h2>
+<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a><span class="emoji">🔒</span></p>
+
+<div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> This release resolves a kernel incompatibility with hardware platforms that use AMD EPYC 9004 Series (AMD Genoa and later) CPUs.</div>
+
+<p>Significantly improved the performance of the incremental replication process for directories</p>
+
+<h2 id="qumulo-core-7711">Qumulo Core 7.7.1.1</h2>
+<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a><span class="emoji">🔒</span></p>
+<div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> This release resolves a kernel incompatibility with hardware platforms that use AMD EPYC 9004 Series (AMD Genoa and later) CPUs.</div>
+
+<ul>
+  <li>Changed how NFS export host restrictions use <code class="language-plaintext highlighter-rouge">KRB*</code> keywords in Qumulo Core by allowing an additional match for hosts that authenticate by using a specific Kerberos flavor</li>
+  <li>Added REST API endpoints and qq CLI commands to support specifying a registration key that associates your Qumulo cluster with your Qumulo Nexus account</li>
+  <li>Changed <code class="language-plaintext highlighter-rouge">qq</code> CLI error messages to write to <code class="language-plaintext highlighter-rouge">stderr</code> instead of <code class="language-plaintext highlighter-rouge">stdout</code></li>
+  <li>Resolved an S3 API issue with applications placing a trailing whitespace in the signed header field</li>
+</ul>
+
+<h2 id="qumulo-core-7702-quarterly">Qumulo Core 7.7.0.2 (Quarterly)</h2>
+<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a><span class="emoji">🔒</span></p>
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
+<ul>
+  <li>This release resolves a kernel incompatibility with hardware platforms that use AMD EPYC 9004 Series (AMD Genoa and later) CPUs.</li>
+  <li>This release resolves an issue where previously it was possible for QFSD to crash when system clock time was moved "backwards" while Cloud Data Fabric (CDF) is enabled for a Qumulo cluster.</li>
+  <li>To prevent Qumulo Core from consuming a large amount of memory when an Intel NIC is installed in a node, we have blacklisted the <code>irdma</code> kernel module in Qumulo Core 7.7.0 (and higher).</li>
+</ul>
+</div>
+
+<ul>
+  <li>Added Non-VPN Remote Support for self-managed Cloud Native Qumulo (CNQ) and on-premises clusters</li>
+  <li>Removed and replaced <code class="language-plaintext highlighter-rouge">qq</code> CLI commands related to Snapshots functionality</li>
+  <li>Resolved an issue with case sensitivity in Domain Controller lists</li>
+</ul>
+
+<h2 id="qumulo-core-7641">Qumulo Core 7.6.4.1</h2>
+<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a><span class="emoji">🔒</span></p>
+<div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> This release resolves an issue that affects Azure Native Qumulo (ANQ) and Cloud Native Qumulo (CNQ) clusters. While this issue did not affect cluster data, it caused the system to not delete unneeded backing data. When certain accounts retained this data incorrectly, there was a potential increase in consumption of cloud resources.</div>
+
+<ul>
+  <li>Improved Cloud Data Fabric portal data synchronization speeds</li>
+  <li>Made improvements to the Network Configuration V3 REST APIs:
+    <ul>
+      <li>Moved a number of <code class="language-plaintext highlighter-rouge">/v3/network/*</code> REST APIs out of preview status</li>
+      <li>Added a number <code class="language-plaintext highlighter-rouge">qq network_*</code>, <code class="language-plaintext highlighter-rouge">qq portal_authorize_hub</code>, and <code class="language-plaintext highlighter-rouge">qq_snapshot_*</code> CLI commands</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="qumulo-core-7631">Qumulo Core 7.6.3.1</h2>
+<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a><span class="emoji">🔒</span></p>
+<div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> This release resolves an issue with Cloud Data Fabric where previously it was possible for a client connected through SMB to perform an operation on a file from a spoke portal after the same file was deleted from the hub portal, causing the cluster to become unavailable.</div>
+
+<ul>
+  <li>Made EdgeConnect (unprotected, single-node edge) clusters publicly available as bare-metal and VM deployments
+    <ul>
+      <li>Added the <code class="language-plaintext highlighter-rouge">cluster_type</code> metric to the Qumulo OpenMetrics API Specification</li>
+    </ul>
+  </li>
+  <li>Improved Cloud Data Fabric (CDF):
+    <ul>
+      <li>Increased portal data synchronization IOPS and throughput for many CDF workloads</li>
+      <li>Added full support for SMB Read Lease and Write Lease functionality to CDF</li>
+      <li>Resolved an issue related to audit logging and spoke portal file path resolution</li>
+    </ul>
+  </li>
+  <li>Improved the S3 API:
+    <ul>
+      <li>Added support for the <code class="language-plaintext highlighter-rouge">STREAMING-UNSIGNED-PAYLOAD-TRAILER</code> authentication type with the <code class="language-plaintext highlighter-rouge">CRC64-NVME</code> and <code class="language-plaintext highlighter-rouge">SHA-256</code> checksum formats</li>
+      <li>Added Qumulo Core support for the default authentication type that the AWS CLI uses for the <code class="language-plaintext highlighter-rouge">PutObject</code> and <code class="language-plaintext highlighter-rouge">UploadPart</code> API actions</li>
+    </ul>
+  </li>
+  <li>Added the ability to specify a list of Active Directory domain controllers that overrides the default auto-discovery process</li>
+  <li>Limited the number of <code class="language-plaintext highlighter-rouge">bind_uri</code> entries to 3 for standalone LDAP queries</li>
+  <li>Made <code class="language-plaintext highlighter-rouge">qq</code> CLI and REST API changes to support the new EdgeConnect, CDF, S3 API, Active Directory, and LDAP functionality</li>
+</ul>
+
+<h2 id="qumulo-core-762">Qumulo Core 7.6.2</h2>
+<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a><span class="emoji">🔒</span></p>
+
+<ul>
+  <li>Made improvements to Cloud Data Fabric:
+    <ul>
+      <li>Added the ability to configure up to 32 spoke portal root directories for each portal relationship</li>
+      <li>Made corresponding <code class="language-plaintext highlighter-rouge">/v2/portal/*</code> REST API and <code class="language-plaintext highlighter-rouge">qq portal_*</code> CLI changes</li>
+      <li>Changed some of the terminology concerning <em>portal relationship states</em> and <em>portal root directory states</em></li>
+    </ul>
+  </li>
+  <li>Ensured that the <code class="language-plaintext highlighter-rouge">ListObjectsV2</code> S3 API action supports the <code class="language-plaintext highlighter-rouge">start-after</code> parameter</li>
+</ul>
+
+<h2 id="qumulo-core-7611">Qumulo Core 7.6.1.1</h2>
+<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a><span class="emoji">🔒</span></p>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note</b><br />
+This release of Qumulo Core adds Illumio Policy Compute Engine (PCE) and Virtual Enforcement Node (VEN) functionality that ensures network security within the container.
+<ul>
+  <li>If your cluster doesn't use Illumio, there is no need to upgrade to this release.</li>
+  <li>To connect each node in your cluster to a VEN, run the <code>illumio-ven-ctl</code> command within the container on every node in your cluster. For more information, see <a target="_blank" href="https://product-docs-repo.illumio.com/Tech-Docs/Core/24.2/Install-Upgrade-Admin/out/en/ven-install-and-upgrade/reference/ven-activate-command-reference.html">VEN Activate Command Reference</a> in the Illumio documentation.</li>
+</ul>
+</div>
+
+<ul>
+  <li>Added the ability to apply the <code class="language-plaintext highlighter-rouge">private</code> policy to an S3 bucket at creation time</li>
+  <li>For Cloud Native Qumulo (CNQ), replaced two OpenMetrics metrics for node and drive failure</li>
+  <li>Resolved an issue with the REST API endpoint for unconfigured nodes</li>
+</ul>
+
+<h2 id="qumulo-core-7602-quarterly">Qumulo Core 7.6.0.2 (Quarterly)</h2>
+<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a><span class="emoji">🔒</span></p>
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
+<ul>
+  <li>This release resolves an issue with the Qumulo Core upgrade process.</li>
+  <li>This release resolves unexpected behavior in the latest host operating system which can block the Qumulo Core upgrade process due to temporary storage becoming unavailable.</li>
+  <li>This release resolves an issue identified in Qumulo Core 7.5.4 where, under certain conditions, a node could become unavailable during an update.</li>
+</ul>
+</div>
+
+<ul>
+  <li>The majority of functionality and stability improvements in this Qumulo Core release are internal.</li>
+  <li>Resolved an issue with the location of S3 buckets created from the Qumulo Core Web UI</li>
+</ul>
+
+<h2 id="qumulo-core-7552">Qumulo Core 7.5.5.2</h2>
+<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a><span class="emoji">🔒</span></p>
+<div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> This release resolves an issue identified in Qumulo Core 7.5.4 where, under certain conditions, a node could become unavailable during an update.</div>
+
+<ul>
+  <li>Added the ability to specify a comma-separated list of bind URIs when configuring LDAP</li>
+  <li>Changed the error message when a user attempts to write to a read-only S3 bucket on a spoke portal</li>
+  <li>Resolved an issue with unexpected SAS controller behavior on hardware nodes</li>
+  <li>Added the ability for CNQ clusters to use the REST API and <code class="language-plaintext highlighter-rouge">qq</code> CLI to modify cloud monitoring settings</li>
+</ul>
+
+<h2 id="qumulo-core-7542">Qumulo Core 7.5.4.2</h2>
+<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a><span class="emoji">🔒</span></p>
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
+<ul>
+  <li>This release resolves an issue identified in Qumulo Core 7.5.4 where, under certain conditions, a node could become unavailable during an update.</li>
+  <li>This release resolves an issue where File Explorer becomes unresponsive and then displays the <strong>Unable to create shortcut</strong> error when a user attempts to create a shortcut inside an SMB share on a Qumulo cluster.</li>
+  <li>This release resolves unexpected SAS controller behavior on hardware nodes, where previously hot-plugging drives could cause cluster instability.</li>
+</ul>
+</div>
+
+<ul>
+  <li>Improved the efficiency of parallel operations for workloads that perform a high number of small transactions on the spoke portal</li>
+  <li>Modified the <code class="language-plaintext highlighter-rouge">PutObject</code> S3 API action to accept the <code class="language-plaintext highlighter-rouge">x-amz-tagging</code> header that contains properly encoded key-value pairs</li>
+</ul>
+
+<h2 id="qumulo-core-753">Qumulo Core 7.5.3</h2>
+<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a><span class="emoji">🔒</span></p>
+<ul>
+  <li>Made improvements to the S3 API:
+    <ul>
+      <li>Added the ability for the S3 API to access spoke portal data</li>
+      <li>Removed the requirement to have the <code class="language-plaintext highlighter-rouge">ObjectLockEnabled</code> setting for an S3 bucket from the <code class="language-plaintext highlighter-rouge">GetObjectRetention</code> and <code class="language-plaintext highlighter-rouge">GetObjectLegalHold</code> S3 API actions</li>
+    </ul>
+  </li>
+  <li>Made significant improvements to NFSv4.1 <code class="language-plaintext highlighter-rouge">readdir</code> operation performance for:
+    <ul>
+      <li>Clusters with numerous export host restrictions</li>
+      <li>Active Directory for POSIX attributes where files have AD owners with numerous group memberships</li>
+    </ul>
+  </li>
+  <li>Added an OpenMetrics metric for tracking shared data for a hub portal root directory</li>
+</ul>
+
+<h2 id="qumulo-core-752">Qumulo Core 7.5.2</h2>
+<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a><span class="emoji">🔒</span></p>
+<ul>
+  <li>Added the ability to upgrade NeuralCache on Azure Native Qumulo (ANQ) and Cloud Native Qumulo (CNQ) instances deployed on Qumulo Core versions lower than 7.4.1</li>
+  <li>Added the ability to configure up to 32 hub portals and up to 32 spoke portals on the same cluster at the same time</li>
+  <li>Made improvements to the S3 API:
+    <ul>
+      <li>Extended the expiration of presigned S3 URLs</li>
+      <li>Changed the <code class="language-plaintext highlighter-rouge">PutObject</code> S3 API action to accept all valid HTTP header keys</li>
+      <li>Resolved issues with the <code class="language-plaintext highlighter-rouge">CopyObject</code> S3 API action</li>
+    </ul>
+  </li>
+  <li>Added OpenMetrics for self-managed, on-premises clusters and CNQ instances</li>
+  <li>Added support for latest Western Digital Ultrastar DC SN640 SSD firmware</li>
+</ul>
+
+<h2 id="qumulo-core-7512">Qumulo Core 7.5.1.2</h2>
+<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a><span class="emoji">🔒</span></p>
+<div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> This release resolves an issue that previously caused an increase in logging output levels on CNQ and ANQ.</div>
+
+<ul>
+  <li>For CNQ on Oracle Cloud Infrastructure (OCI), added support for Cold clusters with an object tier for infrequent access to files and directories</li>
+  <li>Made improvements to the S3 API:
+    <ul>
+      <li>Resolved an issue with S3 directory deletion</li>
+      <li>Modified the XML response bodies for S3 API actions to return the canonical XML header</li>
+    </ul>
+  </li>
+  <li>Modified <code class="language-plaintext highlighter-rouge">files</code> REST APIs to return entity tag (ETag) values correctly</li>
+  <li>Added support for latest Western Digital Ultrastar DC SN640 SSD firmware</li>
+  <li>
+    <h2 id="qumulo-core-7503-quarterly">Qumulo Core 7.5.0.3 (Quarterly)</h2>
+  </li>
+</ul>
+<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a><span class="emoji">🔒</span></p>
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
+<ul>
+  <li>This release resolves an issue with Authoritative DNS (QDNS) by reducing the amount of logging for the feature.</li>
+  <li>This release resolves a rare issue where previously, under certain conditions, concurrent quorum-related activity could result in file system data being overwritten.</li>
+  <li>This release resolves an issue that previously occurred after a spoke portal was deleted.</li>
+  <li>
+    This release resolves the following on-premises cluster issues:
+    <ul>
+      <li>For clusters with certain erasure coding configurations deployed before July 4, 2020, this release resolves an issue that previously could occur during quorum formation, resulting in internal metadata being in an inconsistent state.</li>
+      <li>This release resolves unexpected SAS controller behavior on hardware nodes, where previously hot-plugging drives could cause cluster instability.</li>
+    </ul>
+  </li>
+</ul>
+</div>
+
+<ul>
+  <li>Made improvements to Cloud Data Fabric:
+    <ul>
+      <li>Enabled the creation of up to 32 spoke portals on a single Qumulo cluster</li>
+      <li>Improved file creation latency and throughput for spoke portals</li>
+      <li>Added the Priority Sync feature for read-write spoke portals</li>
+    </ul>
+  </li>
+  <li>Added the Qumulo Authoritative DNS (QDNS) to Qumulo Core</li>
+  <li>Added support for latest Western Digital Ultrastar DC SN640 SSD firmware</li>
+  <li>Resolved an issue with incorrect drive types for nodes in on-premises clusters</li>
+  <li>Modified the <code class="language-plaintext highlighter-rouge">ListBuckets</code> S3 API action to use the <code class="language-plaintext highlighter-rouge">BucketPolicy</code> permission together with Role-Based Access Control (RBAC) in Qumulo Core</li>
+</ul>
+
+<h2 id="qumulo-core-744">Qumulo Core 7.4.4</h2>
+<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a><span class="emoji">🔒</span></p>
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
+<p>Qumulo Core 7.4.4 is a <em>platform upgrade for on-premises clusters</em> which includes an update of the underlying Ubuntu operating system, from version 20.04 to 24.04.</p>
+<ul>
+  <li><strong>HPE hardware platforms users:</strong> We strongly recommend downloading and installing the latest HPE Service Pack (SPP) from the <a target="_blank" href="https://support.hpe.com/">HPE Support Center</a>. Lab testing of the upgrade process has shown that certain components (such as NICs and transceivers) can experience compatibility issues when running older firmware on Ubuntu 24.04.</li>
+  <li><strong>All hardware platform users:</strong> You must perform a rolling reboot (rebooting the nodes in your cluster one at a time) in order to avoid the interruption of connectivity between nodes in your cluster.</li>
+</ul>
+</div>
+
+<ul>
+  <li>Made improvements to Cloud Data Fabric:
+    <ul>
+      <li>Added the ability to enable the S3 protocol for a spoke portal host cluster</li>
+      <li>Removed previous restrictions from the placement of replication targets</li>
+      <li>Enabled compression for data transferred between clusters in a portal relationship</li>
+      <li>Made significant performance improvements for small-I/O workloads on the hub portal and for locally cached files on the spoke portal</li>
+    </ul>
+  </li>
+  <li>Added Qumulo Core Web UI notifications about SSD endurance levels and a corresponding REST API endpoint</li>
+  <li>Resolved an issue that previously affected read leases in the hub portal root directory</li>
+</ul>
+
+<h2 id="qumulo-core-7431">Qumulo Core 7.4.3.1</h2>
+<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a><span class="emoji">🔒</span></p>
+<div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> This release resolves unexpected SAS controller behavior on hardware nodes, where previously hot-plugging drives could cause cluster instability.</div>
+
+<ul>
+  <li>Added the ability to use the NFSv4.1 protocol with spoke portals</li>
+  <li>Added the ability to perform punch hole operations on spoke portals by using the <code class="language-plaintext highlighter-rouge">qq</code> CLI and REST API</li>
+  <li>Added automatic functionality that cleans up portal relationships after synchronizing spoke portal changes</li>
+  <li>Improved NeuralCache (formerly Predictive Read Cache) intelligent data ingestion and retention policy</li>
+  <li>Added support for using EBS volumes for NeuralCache in AWS Local Zones</li>
+  <li>Resolved an issue with NTLM authentication for certain image scanning devices and SMB shares</li>
+  <li>Resolved an issue with the SMB server and showing previous versions for files and directories</li>
+</ul>
+
+<h2 id="qumulo-core-7421">Qumulo Core 7.4.2.1</h2>
+<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a><span class="emoji">🔒</span></p>
+
+<div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> This release resolves an issue that can occur while following a non-standard upgrade path.</div>
+
+<ul>
+  <li>Added support for Cloud Native Qumulo (CNQ) clusters with 1, 3, or more nodes</li>
+  <li>Made improvements to Cloud Data Fabric:
+    <ul>
+      <li>Moved the REST APIs out of preview</li>
+      <li>Removed a <code class="language-plaintext highlighter-rouge">qq</code> CLI command in favor of automatic clean-up of partially configured portal relationships</li>
+      <li>Added support for FTP communications for spoke portals</li>
+      <li>Changed the names of <em>portal states,</em> which indicate the stages of the spoke portal creation process and the proposal or deletion of a portal relationship</li>
+      <li>Added new <em>portal statuses,</em> which indicate the accessibility of a spoke portal or a hub portal</li>
+    </ul>
+  </li>
+  <li>Updated the default configuration for new NFS exports</li>
+  <li>Added a REST API and <code class="language-plaintext highlighter-rouge">qq</code> CLI command to facilitate deleting files from directories without constructing full paths</li>
+</ul>
+
+<h2 id="qumulo-core-7411">Qumulo Core 7.4.1.1</h2>
+<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a><span class="emoji">🔒</span></p>
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
+<ul>
+  <li>This release resolves an issue where previously Qumulo hub portal host clusters that communicated with read-write spoke portals crashed if the portal contained files with very large file IDs.</li>
+  <li>This release resolves an issue that we identified in Qumulo Core releases 7.3.1.2 to 7.4.0.3, where making changes to networking configuration by using the <strong>API Tools</strong> page in the Qumulo Core Web UI or by using the <code>qq</code> CLI caused the default gateway to not populate.</li>
   <li>To enable upgrades to this version of Qumulo Core, you must delete any existing spoke portals or hub portals from your cluster and then wait for any related tree-delete operations to complete before beginning the upgrade process.</li>
-  <li>To enable the QFSD API to distinguish between cluster-local and spoke-cached data, from this release of Qumulo Core onward, 64-bit integers can no longer represent QFSD API file identifiers. API integrations must treat them as variable-length strings, in accordance with the OpenAPI schema. Although this change affects all REST API endpoints the Qumulo REST API continues to accept old-style identifiers for backwards compatibility.</li>
+  <li>To enable the QFSD API to distinguish between cluster-local and spoke-cached data, from this release of Qumulo Core onward, 64-bit integers can no longer represent QFSD API file identifiers. API integrations must treat them as variable-length strings, in accordance with the OpenMetrics API schema. Although this change affects all REST API endpoints the Qumulo REST API continues to accept old-style identifiers for backwards compatibility.</li>
 </ul>
 </div>
 
@@ -2495,26 +3101,42 @@ $(document).ready(function() {
   <li>Made <em>read-write spoke portals</em> available by default</li>
   <li>Eliminated the REST APIs for manual removal of cached data from spoke portals (no changes to automatic cached data removal)</li>
   <li>Improved file identifiers to distinguish between cluster-local and spoke-cached data</li>
-  <li>Implemented Predictive Read Cache architecture for new cloud clusters</li>
+  <li>Implemented NeuralCache architecture for new cloud clusters</li>
   <li>Renamed the designation <code class="language-plaintext highlighter-rouge">preview</code> (previously, <code class="language-plaintext highlighter-rouge">beta</code>) which marks REST APIs under development</li>
   <li>Made public the REST API endpoints and <code class="language-plaintext highlighter-rouge">qq</code> CLI commands that manage a cluster’s DNS configuration</li>
 </ul>
 
-<h2 id="qumulo-core-740-quarterly">Qumulo Core 7.4.0 (Quarterly)</h2>
-<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a></p>
-<p>The majority of functionality and stability improvements in this Qumulo Core release are internal.</p>
+<h2 id="qumulo-core-7404-quarterly">Qumulo Core 7.4.0.4 (Quarterly)</h2>
+<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a><span class="emoji">🔒</span></p>
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
+<ul>
+  <li>
+    This release resolves the following on-premises cluster issues:
+    <ul>
+      <li>This release resolves unexpected SAS controller behavior on hardware nodes, where previously hot-plugging drives could cause cluster instability.</li>
+      <li>For clusters with certain erasure coding configurations deployed before July 4, 2020, this release resolves an issue that previously could occur during quorum formation, resulting in internal metadata being in an inconsistent state.</li>
+    </ul>
+  </li>
+  <li>This release resolves a rare issue where previously, under certain conditions, concurrent quorum-related activity could result in file system data being overwritten.</li>
+  <li>This release resolves an issue that previously occurred after a spoke portal was deleted.</li>
+</ul>
+</div>
 
-<p>Improved UID and GID sorting in the Web UI.</p>
+<ul>
+  <li>Added support for latest Western Digital Ultrastar DC SN640 SSD firmware</li>
+  <li>Improved UID and GID sorting in the Qumulo Core Web UI</li>
+  <li>Resolved an issue with <code class="language-plaintext highlighter-rouge">PutObject</code> and <code class="language-plaintext highlighter-rouge">CopyObject</code> S3 API actions</li>
+</ul>
 
 <h2 id="qumulo-core-7321">Qumulo Core 7.3.2.1</h2>
-<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a></p>
+<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a><span class="emoji">🔒</span></p>
 <ul>
   <li>Removed the limit from the number of floating IP addresses per cluster</li>
   <li>Added support for sharing S3 objects with presigned URLs to additional S3 API actions</li>
 </ul>
 
 <h2 id="qumulo-core-7312">Qumulo Core 7.3.1.2</h2>
-<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a></p>
+<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a><span class="emoji">🔒</span></p>
 <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
 <ul>
   <li>For clusters that were created in 2016 (or earlier), this release resolves an issue identified in Qumulo Core 7.3.1.1 where, under certain conditions, the cluster was unable to start after being upgraded to 7.3.1.1, resulting in the cluster going offline.</li>
@@ -2533,8 +3155,16 @@ $(document).ready(function() {
   <li>Resolved an issue with tree deletion operations</li>
 </ul>
 
-<h2 id="qumulo-core-730-quarterly">Qumulo Core 7.3.0 (Quarterly)</h2>
-<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a></p>
+<h2 id="qumulo-core-7303-quarterly">Qumulo Core 7.3.0.3 (Quarterly)</h2>
+<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a><span class="emoji">🔒</span></p>
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
+This release resolves the following on-premises cluster issues:
+<ul>
+  <li>This release resolves unexpected SAS controller behavior on hardware nodes, where previously hot-plugging drives could cause cluster instability.</li>
+  <li>For clusters with certain erasure coding configurations deployed before July 4, 2020, this release resolves an issue that previously could occur during quorum formation, resulting in internal metadata being in an inconsistent state.</li>
+</ul>
+</div>
+
 <ul>
   <li>Added the <em>self-service</em> permission model to Qumulo REST API access tokens and made changes to corresponding <code class="language-plaintext highlighter-rouge">qq</code> CLI commands</li>
   <li>Made it possible for a user to perform operations on their own access keys without having RBAC privileges</li>
@@ -2542,11 +3172,11 @@ $(document).ready(function() {
 </ul>
 
 <h2 id="qumulo-core-7232">Qumulo Core 7.2.3.2</h2>
-<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a></p>
+<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a><span class="emoji">🔒</span></p>
 <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
 <ul>
   <li>This release resolves an issue with Cloud Data Fabric functionality in Qumulo Core 7.2.3.1 that could cause files to become unavailable temporarily.</li>
-  <li>If your Qumulo cluster's nodes haven't been configured to use static routes, it isn't necessary to upgrade from Qumulo Core 7.2.3 to 7.2.3.1. To determine whether your cluster's nodes use static routes, SSH into the node and run the <code>ip route show</code> command. Typically, static routes do not have tags such as <code>proto dhcp</code> or <code>proto kernel</code>. For further help, <a href="https://docs.qumulo.com/contacting-qumulo-care-team.html">contact the Qumulo Care team</a>.</li>
+  <li>If your Qumulo cluster's nodes haven't been configured to use static routes, it isn't necessary to upgrade from Qumulo Core 7.2.3 to 7.2.3.1. To determine whether your cluster's nodes use static routes, SSH into the node and run the <code>ip route show</code> command. Typically, static routes do not have tags such as <code>proto dhcp</code> or <code>proto kernel</code>. For further help, <a href="https://docs.qumulo.com/contacting-qumulo-care-team.html">contact the Qumulo Care Team</a>.</li>
   <li>If your Qumulo cluster's nodes use static routes, this release resolves an issue in Qumulo Core 7.2.3 that, under certain conditions, caused the system to lose its static route configurations after a quorum event.</li>
 </ul>
 </div>
@@ -2565,7 +3195,7 @@ $(document).ready(function() {
 </ul>
 
 <h2 id="qumulo-core-722">Qumulo Core 7.2.2</h2>
-<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a></p>
+<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a><span class="emoji">🔒</span></p>
 <ul>
   <li>Configured Qumulo Core to permit more than 10 floating IP addresses for each node</li>
   <li>Added support for floating IP addresses to Cloud Native Qumulo on AWS</li>
@@ -2574,7 +3204,7 @@ $(document).ready(function() {
 </ul>
 
 <h2 id="qumulo-core-7211">Qumulo Core 7.2.1.1</h2>
-<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a></p>
+<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a><span class="emoji">🔒</span></p>
 <div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> This release resolves an issue in Qumulo Core 7.2.0, 7.2.0.1, and 7.2.1 that could cause a cluster to become unresponsive due to incorrectly closed LDAP connections.</div>
 
 <ul>
@@ -2585,758 +3215,26 @@ $(document).ready(function() {
   <li>Made improvements in audit logging</li>
 </ul>
 
-<h2 id="qumulo-core-7202-quarterly">Qumulo Core 7.2.0.2 (Quarterly)</h2>
-<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a></p>
+<h2 id="qumulo-core-7204-quarterly">Qumulo Core 7.2.0.4 (Quarterly)</h2>
+<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a><span class="emoji">🔒</span></p>
 <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
 <ul>
+  <li>
+    This release resolves the following on-premises cluster issues:
+    <ul>
+      <li>This release resolves unexpected SAS controller behavior on hardware nodes, where previously hot-plugging drives could cause cluster instability.</li>
+      <li>For clusters with certain erasure coding configurations deployed before July 4, 2020, this release resolves an issue that previously could occur during quorum formation, resulting in internal metadata being in an inconsistent state.</li>
+      <li>This release resolves a memory leak issue on HPE Apollo 4200 Gen 10 36T, 90T, 192T, and 336T Encrypted nodes when querying for system data.</li>
+    </ul>
+  </li>
   <li>This release resolves an issue in Qumulo Core 7.2.0 and 7.2.0.1 that could cause a cluster to become unresponsive due to incorrectly closed LDAP connections.</li>
-  <li>This release resolves an issue on HPE platforms by maximizing the reuse of existing REST client connections and by restarting the iLO monitor regularly. Previously, REST connections within the iLO monitor consumed all available memory after running for approximately longer than one week.</li>
 </ul>
 </div>
 
 <ul>
   <li>The majority of functionality and stability improvements in this Qumulo Core release are internal.</li>
-  <li>Made CNQ on AWS available on Qumulo Nexus.</li>
+  <li>Made CNQ on AWS available on Qumulo Nexus</li>
   <li>Resolved an issue with the <strong>APIs &amp; Tools</strong> page in the Qumulo Core Web UI not showing certain REST endpoints correctly</li>
-</ul>
-
-<h2 id="qumulo-core-714">Qumulo Core 7.1.4</h2>
-<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a></p>
-<ul>
-  <li>The majority of functionality and stability improvements in this Qumulo Core release are internal.</li>
-  <li>Fixed issues with the default (empty) policy for S3 buckets</li>
-  <li>Configured Qumulo Core to permit anonymous users to perform read-only API actions on S3 buckets</li>
-</ul>
-
-<h2 id="qumulo-core-713">Qumulo Core 7.1.3</h2>
-<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a></p>
-<p>Extended S3 object versioning support to additional API actions</p>
-
-<h2 id="qumulo-core-712">Qumulo Core 7.1.2</h2>
-<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a></p>
-<ul>
-  <li>Added Amazon S3 object versioning</li>
-  <li>Improved the prefetcher’s performance</li>
-  <li>Disabled automatic NIC firmware updates during platform upgrades</li>
-</ul>
-
-<h2 id="qumulo-core-711">Qumulo Core 7.1.1</h2>
-<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a></p>
-<ul>
-  <li>The majority of functionality and stability improvements in this Qumulo Core release are internal.</li>
-  <li>Resolved two issues that could potentially cause a crash</li>
-</ul>
-
-<h2 id="qumulo-core-7101-quarterly">Qumulo Core 7.1.0.1 (Quarterly)</h2>
-<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a></p>
-<div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> This release resolves an issue in Qumulo Core 7.1.0 that prevented Broadcom NIC firmware from being updated correctly.</div>
-
-<ul>
-  <li>Improved NFSv4.1 performance for writes and reads</li>
-  <li>Configured Qumulo Core to move a minimal number of IP addresses</li>
-  <li>Configured S3 and HTTP servers to accept HTTP headers with empty values</li>
-</ul>
-
-<h2 id="qumulo-core-702">Qumulo Core 7.0.2</h2>
-<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a></p>
-<ul>
-  <li>Added the ability for the system to explain user access that an S3 bucket access policy allows</li>
-  <li>Made changes to the REST API and <code class="language-plaintext highlighter-rouge">qq</code> CLI to support this functionality</li>
-</ul>
-
-<h2 id="qumulo-core-7011">Qumulo Core 7.0.1.1</h2>
-<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a></p>
-<div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> This release resolves a scenario in Qumulo Core 7.0.1 where a node in a Qumulo cluster could go offline if a tree delete operation was performed on a directory while an SMB client was watching it for changes.</div>
-
-<ul>
-  <li>Configured rolling reboots to restart <code class="language-plaintext highlighter-rouge">N-1</code> nodes at a time, where <code class="language-plaintext highlighter-rouge">N</code> is the number of nodes configured for the cluster’s fault tolerance</li>
-  <li>Configured Shift-To S3 and Shift-From S3 to replicate file system user metadata.</li>
-  <li>Added support for S3 bucket policies and the ability to configure, retrieve, and delete policies for S3 buckets</li>
-  <li>Further improved NFSv3 random small-write performance</li>
-  <li>Added support for Active Directory Global Catalog for look-ups</li>
-  <li>Added support for <code class="language-plaintext highlighter-rouge">DeleteBucketPolicy</code> and <code class="language-plaintext highlighter-rouge">PutBucketPolicy</code> S3 API actions</li>
-  <li>Configured RBAC privileges to override bucket policies which deny a user access to API actions through the S3 API</li>
-  <li>Improved REST API and <code class="language-plaintext highlighter-rouge">qq</code> CLI operations for working with S3 buckets</li>
-  <li>Fixed an issue with custom LDAP schemas</li>
-</ul>
-
-<h2 id="qumulo-core-7001-quarterly">Qumulo Core 7.0.0.1 (Quarterly)</h2>
-<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a></p>
-<div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> To install Qumulo Core on HPE Alletra 4110 platforms, you must use the 7.0.0.1 release.</div>
-
-<ul>
-  <li>Added support for NFSv4.1 cross-connection write combining</li>
-  <li>Made significant improvements in SMB random small-write performance</li>
-  <li>Added partial support for new S3 API actions</li>
-  <li>Configured Qumulo Core to take daily snapshots at regular intervals throughout the day</li>
-  <li>Made changes to the Qumulo REST API and the <code class="language-plaintext highlighter-rouge">qq</code> CLI to accommodate improvements in snapshot and at-rest encryption functionality</li>
-  <li>Revised permissions for SMB <code class="language-plaintext highlighter-rouge">copychunk</code> requests</li>
-  <li>Resolved a minor issue with AD authentication, an issue with <code class="language-plaintext highlighter-rouge">.snapshot</code> directories in Windows Command Prompt, and an issue with SMB copy operations and long share names and volume labels</li>
-</ul>
-
-<h2 id="qumulo-core-632">Qumulo Core 6.3.2</h2>
-<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a></p>
-<ul>
-  <li>Added support for additional custom metadata operations to the S3 API</li>
-  <li>Configured Qumulo Core to replicate user metadata</li>
-  <li>Added support for counting metadata updates for a file</li>
-  <li>Configured OpenMetrics API metrics for protocol operations to track file system REST API operations</li>
-  <li>Fixed an issue with cluster authentication for Kerberos client principals with names that contain the <code class="language-plaintext highlighter-rouge">@</code> character</li>
-</ul>
-
-<h2 id="qumulo-core-6311">Qumulo Core 6.3.1.1</h2>
-<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a></p>
-<div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> This release resolves an issue with memory utilization during secure credential handling.</div>
-
-<ul>
-  <li>Added support for storing and retrieving custom metadata and tags by using the S3 API and Qumulo REST API and made supporting changes to the API and <code class="language-plaintext highlighter-rouge">qq</code> CLI</li>
-  <li>Added the optional <code class="language-plaintext highlighter-rouge">data_revision</code> field for all REST resources that return file or stream attributes</li>
-  <li>Resolved an issue with a third-party GSS authentication library</li>
-</ul>
-
-<h2 id="qumulo-core-6301-quarterly">Qumulo Core 6.3.0.1 (Quarterly)</h2>
-<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a></p>
-<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
-<ul>
-  <li>This release resolves an issue with memory utilization during secure credential handling.</li>
-  <li>This release resolves an issue in Qumulo 6.2.1.1 that interrupted the functioning of cross-realm Kerberos authentication when the system returns CNAMEs for PTR records while performing reverse DNS look-ups.</li>
-</ul>
-</div>
-<ul>
-  <li>Configured nodes to remain powered on after Transparent Platform Refresh operations</li>
-  <li>Changed the behavior of static IP addresses when a cluster’s networking configuration changes or nodes are replaced</li>
-  <li>Improved the Qumulo Core Web UI by making accessibility improvements, renaming headings on the <strong>Dashboard</strong> page, and added physical drive bay locations to the <strong>Node Details</strong> page for HPE Alletra 4110 and Quiver 1U All-NVMe Gen1 node types</li>
-  <li>Improved compatibility between Qumulo Core and the Auth0 SSO provider, increased the replication speed for large numbers of deleted files, updated the <code class="language-plaintext highlighter-rouge">smartpqi</code> driver for the HPE Apollo 4200 Gen10 and HPE Apollo 4200 Gen10 Plus node types, and resolved an issue with misreported temperatures for AMD CPUs</li>
-</ul>
-
-<h2 id="qumulo-core-6222">Qumulo Core 6.2.2.2</h2>
-<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a></p>
-<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
-<ul>
-  <li>This release resolves an issue with memory utilization during secure credential handling.</li>
-  <li>This release resolves an issue in Qumulo 6.2.1.1 that interrupted the functioning of cross-realm Kerberos authentication when the system returns CNAMEs for PTR records while performing reverse DNS look-ups.</li>
-  <li>This release resolves an issue with caching NFS hostnames from the NFS allowed list.</li>
-</ul>
-</div>
-<ul>
-  <li>Added the ability to store master keys for at-rest encryption in an external Key Management Server (KMS) and updated the corresponding REST APIs and <code class="language-plaintext highlighter-rouge">qq</code> CLI commands</li>
-  <li>Added the ability to dismiss errors and warnings on the <strong>Cluster &gt; Active Directory</strong> page in the Qumulo Core Web UI by clicking <strong>X</strong></li>
-  <li>Configured the drive LEDs for the front (external) storage bays on Quiver 1U All-NVMe Gen 1 platforms to light up red if a drive fails</li>
-  <li>Ensured that certain SMB <code class="language-plaintext highlighter-rouge">qq</code> CLI commands always output valid JSON</li>
-</ul>
-
-<h2 id="qumulo-core-6212">Qumulo Core 6.2.1.2</h2>
-<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a></p>
-<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
-<ul>
-  <li>This release resolves an issue in Qumulo 6.2.1.1 that interrupted the functioning of cross-realm Kerberos authentication when the system returns CNAMEs for PTR records while performing reverse DNS look-ups.</li>
-  <li>This release resolves an issue in Qumulo Core 6.2.1 that affected the persistence of cluster network settings configured by using the Qumulo Core Web UI.</li>
-  <li>This release removes the flag <code>--dns-config-id</code> that was added in Qumulo Core 6.2.1. This flag prevents the normal functioning of the <code>qq fs_list_locks</code> command.</li>
-  <li>This release resolves an issue that we have identified in Qumulo Core 6.1.0 (and higher), where a potential session impersonation exploit was possible when a client accesses a Qumulo cluster by using the SMB protocol.</li>
-</ul>
-</div>
-
-<ul>
-  <li>Configured Qumulo Core 6.0.0 (and higher) to have replication compatibility with all quarterly and non-quarterly releases up to 8 quarters in the future (previously, compatibility was for 2 quarters)</li>
-  <li>Improved the functionality of S3 <code class="language-plaintext highlighter-rouge">ListObjects</code>, <code class="language-plaintext highlighter-rouge">ListObjectsV2</code>, and <code class="language-plaintext highlighter-rouge">PutObject</code> API actions</li>
-  <li>Added support for the SMB <code class="language-plaintext highlighter-rouge">ATTR_OFFLINE</code> extended file attribute</li>
-  <li>Replaced deprecated REST API and <code class="language-plaintext highlighter-rouge">qq</code> CLI command pertaining to authentication</li>
-  <li>Deprecated and replaced REST API command pertaining to the UID light and PSU information</li>
-</ul>
-
-<h2 id="qumulo-core-6201-quarterly">Qumulo Core 6.2.0.1 (Quarterly)</h2>
-<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a></p>
-<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
-<ul>
-  <li>The removal of the deprecated <code>/v1/smb/shares</code> REST API endpoints in this release can affect certain third-party backup or migration workflows.</li>
-  <li>
-    <p>This release resolves an issue with Qumulo Core's ability to route return packets back to clients when the following conditions are true for a cluster:</p>
-    <ul>
-      <li>The cluster has a single tenant</li>
-      <li>VLAN networks are configured</li>
-      <li>Packets are destined for specific VLANs without a configured gateway</li>
-    </ul>
-    <p>After upgrading to Qumulo Core 6.2.0.1, you can continue to use the default gateway to route VLAN-specific packets.</p>
-  </li>
-</ul>
-</div>
-
-<ul>
-  <li>Added the ability to specify hostnames in host access rules for NFS exports</li>
-  <li>Added the privilege <code class="language-plaintext highlighter-rouge">FILE_READ_ACCESS</code> to Qumulo Core for roles that require read-only access</li>
-  <li>Improved the snapshot deletion process</li>
-  <li>Added information about drive bays and disk serial numbers for Quiver 1U All-NVMe Gen1 and virtual machine nodes</li>
-  <li>Disabled the automatic addition of DNS records to an AD domain when you join the domain</li>
-</ul>
-
-<h2 id="qumulo-core-6122">Qumulo Core 6.1.2.2</h2>
-<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a></p>
-<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
-<ul>
-  <li>
-    <p>This release resolves:</p>
-    <ul>
-      <li>An issue that affects parsing Kerberos principal names that contain special characters in Active Directory Kerberos authentication in Qumulo Core 6.1.2. This issue doesn't prevent access to SMB shares by using NTLM-based authentication.</li>
-      <li>An issue that affects upgrading Qumulo Core on the Quiver 1U Hybrid Gen2 platform in Qumulo Core 6.1.1.</li>
-      <li>An issue that affects getting a useful core dump in Qumulo Core 6.1.1.</li>
-   </ul>
-  </li>
-  <li>We've identified a known issue that affects event processing in the Cloud-Based Monitoring (CBM) service Qumulo Core 6.1.0.3. This issue is resolved in Qumulo Core 6.2.0.1.</li>
-</ul>
-</div>
-
-<ul>
-  <li>Added Adaptive Data Protection to the Qumulo REST API and <code class="language-plaintext highlighter-rouge">qq</code> CLI and made performance improvements</li>
-  <li>Added Transparent Platform Refresh to the Qumulo REST API and <code class="language-plaintext highlighter-rouge">qq</code> CLI</li>
-  <li>Added S3 configuration settings to the Qumulo Core Web UI</li>
-  <li>Improved hard link creation</li>
-</ul>
-
-<h2 id="qumulo-core-611">Qumulo Core 6.1.1</h2>
-<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a></p>
-<ul>
-  <li>Added support for new S3 API actions, snapshot locking for replication target relationships, and lock configuration to the Qumulo Core Web UI</li>
-  <li>Enabled the Search Trusted Domains Active Directory configuration option by default</li>
-  <li>Upgraded the host and container images</li>
-  <li>Revised the Qumulo REST API for snapshots</li>
-  <li>Added <code class="language-plaintext highlighter-rouge">qq</code> CLI commands for lock key functionality</li>
-  <li>Added a <code class="language-plaintext highlighter-rouge">qq</code> CLI command for viewing blocked upgrade status</li>
-  <li>Updated the OpenMetrics API Specification</li>
-  <li>Made general improvements to Qumulo Core</li>
-</ul>
-
-<h2 id="qumulo-core-6103-quarterly">Qumulo Core 6.1.0.3 (Quarterly)</h2>
-<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a></p>
-<div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> This release resolves an issue where, under certain circumstances, while using Adaptive Data Protection in Qumulo Core 6.1.0 (and lower), it becomes impossible to add nodes to a cluster during normal cluster expansion or Transparent Platform Refresh operations, until you upgrade the cluster to version 6.1.0.3 (or higher).</div>
-
-<ul>
-  <li>Configured Qumulo Core to use recursive change notifications by default</li>
-  <li>Enabled SMB multichannel by default</li>
-  <li>Added snapshot locking functionality by using the <code class="language-plaintext highlighter-rouge">qq</code> CLI</li>
-  <li>Made usability changes to event logging and the Qumulo Core Web UI</li>
-  <li>Removed beta multitenancy REST APIs and <code class="language-plaintext highlighter-rouge">qq</code> CLI commands</li>
-</ul>
-
-<h2 id="qumulo-core-602">Qumulo Core 6.0.2</h2>
-<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a></p>
-<div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> The removal of the deprecated <code>/v1/smb/shares</code> REST API endpoints in this release can affect certain third-party backup or migration workflows.</div>
-
-<ul>
-  <li>Added support for streaming file change notifications</li>
-  <li>Improved the S3 API</li>
-  <li>Made improvements to the Qumulo Core allocation algorithm</li>
-  <li>Added audit logging and REST API and <code class="language-plaintext highlighter-rouge">qq</code> CLI commands for streaming file change notifications</li>
-  <li>Removed v2 Python bindings for NFS export and SMB share APIs</li>
-  <li>Added new fields to the OpenMetrics API</li>
-  <li>Fixed issues with creating SMB shares, transparent platform refresh, vSphere clusters, upgrades in the Qumulo Core Web UI, making SMB2 copies by using ODX, and creating snapshot policies</li>
-</ul>
-
-<h2 id="qumulo-core-6011">Qumulo Core 6.0.1.1</h2>
-<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a></p>
-<ul>
-  <li>Added new SMB2 <code class="language-plaintext highlighter-rouge">CHANGE_NOTIFY</code> functionality
-    <ul>
-      <li>Full support for recursive watch-tree notifications</li>
-      <li>Alternate Data Streams</li>
-      <li>Numerous performance improvements</li>
-      <li>Elimination of missed events</li>
-    </ul>
-  </li>
-  <li>Added read combining for NFSv4.1</li>
-  <li>Improved the S3 API
-    <ul>
-      <li>S3 API action traversal rights</li>
-      <li>S3 traffic in the Qumulo Core Web UI and in <code class="language-plaintext highlighter-rouge">qq</code> CLI output</li>
-      <li>Presigned URL functionality</li>
-      <li>HTTP identity transfer encoding for the <code class="language-plaintext highlighter-rouge">GetObject</code> API action</li>
-    </ul>
-  </li>
-  <li>Added operational information to audit logging in JSON format</li>
-  <li>Made numerous updates to the multitenancy and S3 <code class="language-plaintext highlighter-rouge">qq</code> CLI commands and REST APIs</li>
-  <li>Fixed an issue with Network Interface Card (NIC) addressing on 240TB and 480TB General Purpose models of the HPE Apollo 4200 Gen10 Plus node</li>
-</ul>
-
-<h2 id="qumulo-core-6002-quarterly">Qumulo Core 6.0.0.2 (Quarterly)</h2>
-<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a></p>
-<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
-<ul>
-  <li>This release resolves an issue with transparent platform refresh that we discovered in Qumulo Core 6.0.0 and 6.0.0.1.</li>
-  <li>This release restores the status of the <code>/v1/smb/shares</code> REST API endpoints (previously removed in Qumulo Core 5.3.4) to deprecated. We strongly recommend changing over to <code>/v2/smb/shares</code> endpoints as soon as possible.</li>
-</ul>
-</div>
-
-<ul>
-  <li>Added Transparent Platform Refresh for node replacement</li>
-  <li>Enabled concurrent node reboots for rolling upgrades</li>
-  <li>Added write combining for NFSv4.1</li>
-  <li>Introduced optional HTTP mode for the S3 API</li>
-  <li>Made SSL certificate changes for the S3 API without a cluster restart</li>
-  <li>Added audit syslog in JSON format</li>
-  <li>Made corresponding changes and additions to the Qumulo REST API and <code class="language-plaintext highlighter-rouge">qq</code> CLI</li>
-  <li>Fixed issues with the Qumulo Core Web UI, directory access by non-root users on Linux, and changed caching for some OpenMetrics API metrics</li>
-</ul>
-
-<h2 id="qumulo-core-534">Qumulo Core 5.3.4</h2>
-<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a></p>
-<div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> The removal of the deprecated <code>/v1/smb/shares</code> REST API endpoints in this release can affect certain third-party backup or migration workflows.</div>
-
-<ul>
-  <li>Added data protection configuration, multitenancy, tenant-aware SMB and NFS, and automatic clean-up of stale multipart S3 uploads</li>
-  <li>Removed all REST API endpoints under <code class="language-plaintext highlighter-rouge">/v1/smb/shares</code></li>
-  <li>Improved and added REST APIs and <code class="language-plaintext highlighter-rouge">qq</code> CLI commands for restriper, multitenancy, and tenant-aware SMB and NFS operations</li>
-  <li>Improved the OpenMetrics APIs</li>
-  <li>Fixed an issue with SMB2 attributes for symlinks and a potential security issue with REST API session tokens</li>
-</ul>
-
-<h2 id="qumulo-core-5331">Qumulo Core 5.3.3.1</h2>
-<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a></p>
-<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> This release resolves an issue that we discovered in Qumulo Core 5.3.3.</div>
-
-<ul>
-  <li>Put out the initial release of the S3 Protocol Server</li>
-  <li>Added support for NFSv4.1 with KRB5i</li>
-  <li>Added the ability to disable access tokens</li>
-  <li>Removed <code class="language-plaintext highlighter-rouge">/v1/session/kv</code> REST API endpoints</li>
-  <li>Fixed an issue with listing trustees for a role and an issue with LDAP connections</li>
-</ul>
-
-<h2 id="qumulo-core-532">Qumulo Core 5.3.2</h2>
-<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a></p>
-<ul>
-  <li>Added distributed multi-AZ clustering to Qumulo clusters on AWS</li>
-  <li>Added SMB2 <code class="language-plaintext highlighter-rouge">CHANGE_NOTIFY</code> parity with Windows</li>
-  <li>New Qumulo OpenMetrics API metrics</li>
-  <li>Added expiration time for access tokens</li>
-  <li>Improved the Qumulo REST API</li>
-</ul>
-
-<h2 id="qumulo-core-531">Qumulo Core 5.3.1</h2>
-<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a></p>
-<ul>
-  <li>Added support for watching for changes in file attributes and directory entries with SMB2 <code class="language-plaintext highlighter-rouge">CHANGE_NOTIFY</code> filters</li>
-  <li>Updated all firmware for all variants of Mellanox CX5 and CX6 and Broadcom NICs</li>
-  <li>Added metrics to the Qumulo OpenMetrics API</li>
-  <li>Added two-factor authentication for qq-CLI-initiated SAML SSO workflows</li>
-  <li>Improved REST API and <code class="language-plaintext highlighter-rouge">qq</code> CLI</li>
-  <li>Added a missing library dependency that allows SAML SSO to work on cloud platforms</li>
-</ul>
-
-<h2 id="qumulo-core-530-quarterly">Qumulo Core 5.3.0 (Quarterly)</h2>
-<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a></p>
-<ul>
-  <li>Added interactive SAML SSO login and SSO for Active Directory users who manage clusters</li>
-  <li>Identified a known issue with SAML SSO on cloud platforms</li>
-  <li>Improved SMB <code class="language-plaintext highlighter-rouge">CHANGE_NOTIFY</code> requests</li>
-  <li>Released the Qumulo OpenMetrics API</li>
-  <li>Released the Access Tokens API</li>
-  <li>Improved the Qumulo Core Web UI</li>
-  <li>Added REST APIs for node identification</li>
-  <li>Improved <code class="language-plaintext highlighter-rouge">qq</code> CLI commands</li>
-</ul>
-
-<h2 id="qumulo-core-5251">Qumulo Core 5.2.5.1</h2>
-<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a></p>
-<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> This release resolves an issue that we discovered in Qumulo Core 5.2.5.</div>
-
-<ul>
-  <li>Allowed clusters joined to Active Directory to use SAML 2.0 SSO</li>
-  <li>Added support for displaying NFSv4.1 quotas</li>
-  <li>Created a more balanced usage of free space on clusters after the addition of nodes</li>
-  <li>Improved the Qumulo Core Web UI</li>
-  <li>Added a flag to a <code class="language-plaintext highlighter-rouge">qq</code> CLI command</li>
-  <li>Fixed issues related to quotas and Alternative Data Streams</li>
-</ul>
-
-<h2 id="qumulo-core-524">Qumulo Core 5.2.4</h2>
-<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a></p>
-<p>The majority of functionality and stability improvements in this Qumulo Core release are internal.</p>
-
-<h2 id="qumulo-core-523">Qumulo Core 5.2.3</h2>
-<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a></p>
-<p>The majority of functionality and stability improvements in this Qumulo Core release are internal.</p>
-
-<h2 id="qumulo-core-522">Qumulo Core 5.2.2</h2>
-<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a></p>
-<ul>
-  <li>Made improvements to the Qumulo Core Web UI on the NFS Exports and Role Management pages</li>
-  <li>Adjusted the Qumulo REST API endpoint <code class="language-plaintext highlighter-rouge">/v1/smb/sessions</code> and the corresponding <code class="language-plaintext highlighter-rouge">qq</code> CLI command</li>
-  <li>Fixed an issue that occurs during NFSv4.1 failover</li>
-  <li>Fixed an issue that prevents a cluster from forming due to an incorrect HDD-SSD ratio.</li>
-</ul>
-
-<h2 id="qumulo-core-521">Qumulo Core 5.2.1</h2>
-<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a></p>
-<ul>
-  <li>Added over-the-wire encryption to NFSv4.1 with Kerberos</li>
-  <li>Improved performance for SMB Find requests</li>
-  <li>Added an optional Web UI login banner</li>
-  <li>Removed <code class="language-plaintext highlighter-rouge">/v1/upgrade/</code> endpoints</li>
-  <li>Fixed an issue on the NFS Exports page.</li>
-</ul>
-
-<h2 id="qumulo-core-5202-quarterly">Qumulo Core 5.2.0.2 (Quarterly)</h2>
-<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a></p>
-<ul>
-  <li>Enabled local trustees for NFSv4.1 with Kerberos</li>
-  <li>Added support for Amazon EC2 M6i instances and Amazon EBS gp3 volumes</li>
-  <li>Removed and replaced REST API endpoints related to shutting down and stopping clusters and nodes</li>
-  <li>Fixed an SMB client issue</li>
-  <li>Resolved a file system operations latency issue with continuous replication jobs and on clusters with high file creation load</li>
-  <li>Resolved an issue that caused a node to enter a reboot loop under certain conditions.</li>
-</ul>
-
-<h2 id="qumulo-core-515">Qumulo Core 5.1.5</h2>
-<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a></p>
-<ul>
-  <li>Enabled creating mounts by using NFSv4.1 with Kerberos</li>
-  <li>Improved NLM and NFSv4.1 locking</li>
-  <li>Updated Mellanox NIC firmware</li>
-  <li>Made improvements to the Qumulo Core Web UI on the <strong>APIs &amp; Tools</strong>, <strong>Add Nodes</strong>, and <strong>Active Directory</strong> pages</li>
-  <li>Added NFS fields to the Qumulo REST API and <code class="language-plaintext highlighter-rouge">qq</code> CLI</li>
-  <li>Deprecated the <code class="language-plaintext highlighter-rouge">/v2/upgrade/status</code> REST API</li>
-  <li>Updated security permissions for home directories</li>
-  <li>Prohibited the use of the switch-user command</li>
-  <li>Added support for user principal (UPN) names</li>
-</ul>
-
-<h2 id="qumulo-core-5141">Qumulo Core 5.1.4.1</h2>
-<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a></p>
-<ul>
-  <li>Improved workload read performance for streaming</li>
-  <li>Deprecated the <code class="language-plaintext highlighter-rouge">/v1/session/kv/</code> REST API endpoints</li>
-  <li>Fixed an issue on the FTP Settings page</li>
-  <li>Fixed an issue where unexpected behavior from an NFS client can cause issues with memory usage on a Qumulo cluster.</li>
-</ul>
-
-<h2 id="qumulo-core-513">Qumulo Core 5.1.3</h2>
-<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a></p>
-<ul>
-  <li>Added NFSv4.1 byte-range locking support for clusters that have NFSv4.1 enabled</li>
-  <li>Added custom naming functionality for snapshots</li>
-  <li>Made improvements to the Qumulo Core Web UI</li>
-  <li>Improved node fault tolerance for node-adds</li>
-  <li>Updated the time synchronization for cloud clusters</li>
-  <li>Added a REST API to calculate node-add capacity</li>
-  <li>Fixed issues related to adding S3 privileges, making <code class="language-plaintext highlighter-rouge">OPEN</code> requests over NFSv4.1, and reassigning floating IP addresses.</li>
-</ul>
-
-<h2 id="qumulo-core-512">Qumulo Core 5.1.2</h2>
-<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a></p>
-<ul>
-  <li>Improved user experience for NFSv4.1 ACL editor</li>
-  <li>Made improvements to the Qumulo Core Web UI</li>
-  <li>Updated time synchronization APIs for QaaS Azure clusters</li>
-  <li>Fixed issues related to malformed <code class="language-plaintext highlighter-rouge">RPCBIND</code> requests and replication relationships.</li>
-</ul>
-
-<h2 id="qumulo-core-511">Qumulo Core 5.1.1</h2>
-<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a></p>
-<ul>
-  <li>Improved time management on QaaS Azure clusters</li>
-  <li>Improved resiliency against data center accidents</li>
-  <li>Made improvements to the Qumulo Core Web UI</li>
-  <li>Updated the SDK to Python 3.8</li>
-  <li>Disabled time management APIs on QaaS Azure clusters</li>
-  <li>Fixed SMB and Web UI form issues</li>
-</ul>
-
-<h2 id="qumulo-core-5101-quarterly">Qumulo Core 5.1.0.1 (Quarterly)</h2>
-<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a></p>
-<ul>
-  <li>Improved write performance for workloads on clusters with high-churn, small-file datasets</li>
-  <li>Added a new Active Directory capability</li>
-  <li>Made a number of pages in the Qumulo Core Web UI more clear</li>
-  <li>Improved SMB and NFS share, export management, and status APIs</li>
-  <li>Added inactivity timeout to the Qumulo Core Web UI</li>
-  <li>Identified a regression in 5.0.5 and fixed an issue that occurs for rare NFS client applications.</li>
-</ul>
-
-<h2 id="qumulo-core-506">Qumulo Core 5.0.6</h2>
-<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a></p>
-<ul>
-  <li>Improved read performance for previously read large files</li>
-  <li>Improved write performance for certain platforms and workloads</li>
-  <li>Improved cluster resilience on Azure</li>
-  <li>Added support for HPE Broadcom NICs and updated the NIC and node type reference</li>
-  <li>Made improvements to the Qumulo Core Web UI</li>
-  <li>Fixed issues related to snapshots of directories with SMB-illegal characters and localized Active Directory installations.</li>
-</ul>
-
-<h2 id="qumulo-core-505">Qumulo Core 5.0.5</h2>
-<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a></p>
-<ul>
-  <li>Increased the tolerance of uncertainty for NTP</li>
-  <li>Mapped Isilon-style and Samba-style NFS SIDs to Qumulo SIDs</li>
-  <li>Made changes to the Python SDK</li>
-  <li>Made an XSS security fix</li>
-</ul>
-
-<h2 id="qumulo-core-504">Qumulo Core 5.0.4</h2>
-<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a></p>
-<ul>
-  <li>Enabled Advanced Data Integrity for new clusters to provide checksumming functionality</li>
-  <li>Added a check to confirm whether an upgrade can begin</li>
-  <li>Added an initial release of the S3 protocol</li>
-  <li>Deprecated reboot <code class="language-plaintext highlighter-rouge">qq</code> CLI commands</li>
-  <li>Added access time (<code class="language-plaintext highlighter-rouge">atime</code>) API resources and <code class="language-plaintext highlighter-rouge">qq</code> CLI commands.</li>
-</ul>
-
-<h2 id="qumulo-core-503">Qumulo Core 5.0.3</h2>
-<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a></p>
-<ul>
-  <li>Added Rolling Reboot for platform upgrades (including new APIs and CLI commands)</li>
-  <li>Updated the Qumulo Core Web UI for both software and platform upgrades</li>
-  <li>Made improvements to write performance over NFSv3</li>
-  <li>Improved the <strong>Add Nodes</strong> and <strong>Snapshots</strong> pages in the Qumulo Core Web UI</li>
-</ul>
-
-<h2 id="qumulo-core-502">Qumulo Core 5.0.2</h2>
-<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a></p>
-<ul>
-  <li>Changed all HPE firmware updates to be performed using the Qumulo installer</li>
-  <li>Improved cluster resilience against boot drive failures</li>
-  <li>Added the ability to set timestamps through NFSv4.1</li>
-  <li>Added the <code class="language-plaintext highlighter-rouge">access_time</code> field to the attributes REST API resource.</li>
-</ul>
-
-<h2 id="qumulo-core-501">Qumulo Core 5.0.1</h2>
-<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a></p>
-<ul>
-  <li>Enforced the Qumulo-to-Qumulo replication compatibility guarantee to 3 consecutive quarterly releases
-    <div class="alert alert-success" role="alert"><span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br /> For example, 5.0.1 can’t replicate with versions lower than 4.3.0 or higher than 5.2.0.</div>
-  </li>
-  <li>Made improvements to Shift-to-S3</li>
-  <li>Removed unconfigured node APIs</li>
-</ul>
-
-<h2 id="qumulo-core-5001-quarterly">Qumulo Core 5.0.0.1 (Quarterly)</h2>
-<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a></p>
-<ul>
-  <li>Changed the Qumulo-to-Qumulo replication compatibility guarantee from 2 to 3 consecutive quarterly releases</li>
-  <li>Enforced Kerberos ticket expiration</li>
-  <li>Enabled NLM persistence by default</li>
-  <li>Added sorting and filtering to the Snapshot Policies page</li>
-  <li>Improved speed of deleted snapshot clean-up</li>
-  <li>Removed requirements for QaaS clusters</li>
-  <li>Added support for Python 3.8</li>
-  <li>Improved the API and CLI version and user-querying command</li>
-  <li>Resolved an issue that causes an unpredictable node failure if two NFSv4.1 clients have the same hostname.</li>
-</ul>
-
-<h2 id="qumulo-core-434">Qumulo Core 4.3.4</h2>
-<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a></p>
-<div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> This release of Qumulo Core resolves a critical security vulnerability. We strongly recommend upgrading your Qumulo cluster to 4.3.4 to resolve this issue.</div>
-
-<ul>
-  <li>Added work estimation to Shift-from-S3 relationships</li>
-  <li>Added a feature that improves cluster resiliency for unresponsive devices</li>
-  <li>Changed the kiosk timeout window to 15 minutes</li>
-</ul>
-
-<h2 id="qumulo-core-433">Qumulo Core 4.3.3</h2>
-<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a></p>
-<ul>
-  <li>Prevented authentication requests with PAC buffers of unknown type from failing</li>
-  <li>Improved Saved Snapshots page in the Qumulo Core Web UI</li>
-  <li>Added a mechanism for monitoring status of front-end network on platforms with separate interfaces.</li>
-</ul>
-
-<h2 id="qumulo-core-432">Qumulo Core 4.3.2</h2>
-<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a></p>
-<p>Fixed an issue in Qumulo Core’s handling of cross-protocol permissions</p>
-
-<h2 id="qumulo-core-431">Qumulo Core 4.3.1</h2>
-<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a></p>
-<ul>
-  <li>Improved write performance</li>
-  <li>Improved speed and duration of terminating outstanding requests to AD Controllers</li>
-  <li>Added file system permission checks for SMB shares and NFS exports</li>
-  <li>Enabled mounting NFS over UDP with floating IP addresses</li>
-</ul>
-
-<h2 id="qumulo-core-430-quarterly">Qumulo Core 4.3.0 (Quarterly)</h2>
-<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a></p>
-<ul>
-  <li>Added Network File System Version 4.1 (NFSv4.1)</li>
-  <li>Improved performance for SMB offloaded data transfer (ODX) and SMB directory query</li>
-  <li>Allowed AWS Sidecar to handle a new class of EBS failures</li>
-  <li>Fixed issues in Shift-From-S3 and the Qumulo Core Web UI</li>
-</ul>
-
-<h2 id="qumulo-core-426">Qumulo Core 4.2.6</h2>
-<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a></p>
-<ul>
-  <li>Made an enhancement to Web UI for Qumulo on Azure</li>
-  <li>Adjusted a REST resource</li>
-  <li>Made an important change to export names that end with a slash (<code class="language-plaintext highlighter-rouge">/</code>) or are longer than 64 KiB</li>
-</ul>
-
-<h2 id="qumulo-core-425">Qumulo Core 4.2.5</h2>
-<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a></p>
-<p>Added Web UI management support for Qumulo Shift-from-S3 operations</p>
-
-<h2 id="qumulo-core-424">Qumulo Core 4.2.4</h2>
-<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a></p>
-<ul>
-  <li>Enhanced tree-delete operations</li>
-  <li>Made performance improvement for C-72T, C-168T, C-192T, and C-432T platforms</li>
-  <li>Enhanced Shift-to-S3</li>
-  <li>Made performance improvements</li>
-  <li>Fixed several issues</li>
-</ul>
-
-<h2 id="qumulo-core-423">Qumulo Core 4.2.3</h2>
-<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a></p>
-<ul>
-  <li>Added Qumulo Shift-from-S3</li>
-  <li>Web UI Update for SMB Shares</li>
-  <li>Enabled DNS configuration for cloud deployments in the Qumulo Core Web UI</li>
-</ul>
-
-<h2 id="qumulo-core-422">Qumulo Core 4.2.2</h2>
-<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a></p>
-<ul>
-  <li>Improved the appearance of spinners in the Qumulo Core Web UI</li>
-  <li>Fixed a failover procedure issue</li>
-</ul>
-
-<h2 id="qumulo-core-421">Qumulo Core 4.2.1</h2>
-<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a></p>
-<ul>
-  <li>Made improvements for security identifiers
-    <div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> We removed this feature for compatibility reasons. For more information, see <a href="https://nexus.qumulo.com/downloads/">the release notes</a> on Qumulo Nexus.</div>
-  </li>
-  <li>Upgraded the Linux kernel to 5.4</li>
-  <li>Improved multistream throughput for 4U nodes</li>
-  <li>Updated <code class="language-plaintext highlighter-rouge">qq</code> CLI commands for unconfigured node cluster creation</li>
-</ul>
-
-<h2 id="qumulo-core-420-quarterly">Qumulo Core 4.2.0 (Quarterly)</h2>
-<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a></p>
-<ul>
-  <li>Enhanced snapshot performance</li>
-  <li>Enhanced Active Directory connections</li>
-  <li>Fixed an important issue</li>
-</ul>
-
-<h2 id="qumulo-core-415">Qumulo Core 4.1.5</h2>
-<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a></p>
-<ul>
-  <li>Added details to the <strong>Node Add</strong> page in the Qumulo Core Web UI</li>
-  <li>Updated <code class="language-plaintext highlighter-rouge">qq</code> CLI upgrade commands for unconfigured nodes</li>
-  <li>Made improvements to snapshot cleanup</li>
-  <li>Fixed an important issue</li>
-</ul>
-
-<h2 id="qumulo-core-414">Qumulo Core 4.1.4</h2>
-<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a></p>
-<ul>
-  <li>Updated user privileges for the quota <code class="language-plaintext highlighter-rouge">qq</code> CLI commands</li>
-  <li>Enhanced autocomplete functionality in the Qumulo Core Web UI</li>
-  <li>Fixed several important issues</li>
-</ul>
-
-<h2 id="qumulo-core-413">Qumulo Core 4.1.3</h2>
-<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a></p>
-<p>The majority of functionality and stability improvements in this Qumulo Core release are internal.</p>
-
-<h2 id="qumulo-core-412">Qumulo Core 4.1.2</h2>
-<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a></p>
-<ul>
-  <li>Enhanced security of <code class="language-plaintext highlighter-rouge">qq</code> CLI commands</li>
-  <li>Fixed several important issues</li>
-</ul>
-
-<h2 id="qumulo-core-411">Qumulo Core 4.1.1</h2>
-<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a></p>
-<ul>
-  <li>Added the ability to repeat completed jobs for Shift</li>
-  <li>Enhanced the security flag for SMB connections</li>
-  <li>Improved directory-caching performance</li>
-  <li>Updated the HPE Field Verification Tool</li>
-</ul>
-
-<h2 id="qumulo-core-4101-quarterly">Qumulo Core 4.1.0.1 (Quarterly)</h2>
-<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a></p>
-<ul>
-  <li>Enhanced the upgrade experience</li>
-  <li>Improved the Qumulo Sidecar for AWS</li>
-  <li>Fixed several important issues</li>
-</ul>
-
-<h2 id="qumulo-core-406">Qumulo Core 4.0.6</h2>
-<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a></p>
-<p>Made a platform upgrade for cloud clusters</p>
-
-<h2 id="qumulo-core-405">Qumulo Core 4.0.5</h2>
-<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a></p>
-<ul>
-  <li>Updated the SMB API and CLI</li>
-  <li>Fixed several important issues</li>
-</ul>
-
-<h2 id="qumulo-core-404">Qumulo Core 4.0.4</h2>
-<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a></p>
-<ul>
-  <li>Updated the firmware for C-72T, C-168T, C-192T, C-432T, K-144T, K-168T, and K-432T platforms</li>
-  <li>Enhanced <code class="language-plaintext highlighter-rouge">qq</code> CLI commands</li>
-  <li>Fixed an important issue related to mixed-node clusters</li>
-</ul>
-
-<h2 id="qumulo-core-403">Qumulo Core 4.0.3</h2>
-<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a></p>
-<ul>
-  <li>Enhanced the web server security</li>
-  <li>Fixed an important issue related to  mixed-node clusters</li>
-</ul>
-
-<h2 id="qumulo-core-402">Qumulo Core 4.0.2</h2>
-<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a></p>
-<ul>
-  <li>Improved the performance of SSD clusters</li>
-  <li>Made minor performance enhancements</li>
-  <li>Fixed an important issue in the Qumulo Core Web UI</li>
-</ul>
-
-<h2 id="qumulo-core-4011">Qumulo Core 4.0.1.1</h2>
-<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a></p>
-<p>Fixed important issues in:</p>
-<ul>
-  <li>Cloud-Based Monitoring</li>
-  <li>SMB file enumeration</li>
-  <li>Compound API and <code class="language-plaintext highlighter-rouge">qq</code> CLI request errors</li>
-</ul>
-
-<h2 id="qumulo-core-4002-quarterly">Qumulo Core 4.0.0.2 (Quarterly)</h2>
-<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a></p>
-<ul>
-  <li>Deprecated the Python 2.7 SDK</li>
-  <li>Fixed several important issues</li>
-</ul>
-
-<h2 id="qumulo-core-335">Qumulo Core 3.3.5</h2>
-<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a></p>
-<ul>
-  <li>Updated mixed-node compatibility</li>
-  <li>Made a performance improvement for Qumulo Shift</li>
-  <li>Improved the Field Verification Tool for HPE Apollo 4200 Gen10 clusters</li>
-  <li>Adjusted audit logging functionality</li>
-  <li>Fixed several important issues</li>
-</ul>
-
-<h2 id="qumulo-core-334">Qumulo Core 3.3.4</h2>
-<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a></p>
-<ul>
-  <li>Added support for the HPE ProLiant DL325 Gen10 Plus platform</li>
-  <li>Made general performance enhancements for hybrid clusters</li>
-</ul>
-
-<h2 id="qumulo-core-333">Qumulo Core 3.3.3</h2>
-<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a></p>
-<ul>
-  <li>Added Instant Software Upgrade</li>
-  <li>Made Qumulo Shift performance improvements and Web UI enhancements</li>
-  <li>Updated the HPE Service Pack Pro (SPP) Update for HPE Apollo 4200 Gen10 clusters</li>
 </ul>
 
 
@@ -3365,6 +3263,9 @@ $(document).ready(function() {
         
     
   
+    
+      
+        
     
       
         
@@ -3429,22 +3330,6 @@ $(document).ready(function() {
       
         
     
-  
-    
-      
-        
-    
-      
-        
-    
-  
-    
-      
-        
-    
-      
-        
-    
       
         
     
@@ -3455,6 +3340,9 @@ $(document).ready(function() {
         
     
   
+    
+      
+        
     
       
         
@@ -3473,14 +3361,6 @@ $(document).ready(function() {
       
         
     
-  
-    
-      
-        
-    
-      
-        
-    
       
         
     
@@ -3489,13 +3369,10 @@ $(document).ready(function() {
       
         
     
-      
-        
-    
-      
-        
-    
   
+    
+      
+        
     
       
         
@@ -3526,51 +3403,6 @@ $(document).ready(function() {
     
       
         
-    
-      
-        
-    
-  
-    
-      
-        
-    
-      
-        
-    
-      
-        
-    
-      
-        
-    
-      
-        
-    
-  
-    
-      
-        
-    
-      
-        
-    
-      
-        
-    
-      
-        
-    
-      
-        
-    
-      
-        
-    
-      
-        
-    
-  
     
       
         
@@ -3614,6 +3446,38 @@ $(document).ready(function() {
       
         
     
+  
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
       
         
     
@@ -3640,6 +3504,71 @@ $(document).ready(function() {
       
         
     
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
   
     
       
@@ -3670,6 +3599,9 @@ $(document).ready(function() {
         
     
   
+    
+      
+        
     
       
         
@@ -3693,16 +3625,18 @@ $(document).ready(function() {
 
         </div>
     <!-- /.row -->
-</div>
+    </div>
+  <!-- /main -->
+  </main>
 <!-- /.container -->
 </div>
-<!-- /#main -->
-    </div>
+
+<button id="send-feedback">Send Feedback</button>
 
 <footer>
   <div class="footer">
     <div class="footer-text">
-      Copyright &copy; 2021&ndash;2025 Qumulo, Inc.<br>
+      Copyright &copy; 2021&ndash;2026 Qumulo, Inc.<br>
 
       <a class="no_icon footer_link" href="https://qumulo.com/legal/privacy-policy/">Privacy Policy</a> &VerticalSeparator; <a class="no_icon footer_link" href="https://qumulo.com/legal/cookie-policy/">Cookie Policy</a> &VerticalSeparator; <a class="no_icon footer_link" href="https://qumulo.com/terms-hub/">Terms Hub</a><br>
       <p>
@@ -3722,19 +3656,31 @@ $(document).ready(function() {
     </div>
   </div>
 
-  <!-- Cookie Consent - GRT Plugin -->	
+  <!-- Cookie consent Banner-->	
   <div id="cookie-banner" class="grt-cookie">
     <div class="grt-cookies-msg">
       <p>We use cookies to improve your user experience and remember your preferences on this website. If you continue to use this website, we will assume that you accept and understand our <a class="no_icon" href="https://qumulo.com/legal/privacy-policy">Privacy Policy</a>, <a class="no_icon" href="https://qumulo.com/legal/cookie-policy/">Cookie Policy</a>, and <a class="no_icon" href="https://qumulo.com/terms-hub/">Terms Hub</a>.</p>
     </div>
     <span class="grt-cookie-button">Accept</span>
   </div>
+
+  <!-- Local scripts -->
+  <!-- Cookie consent banner -->
   <script src="/js/grt-cookie-consent.js"></script>
   <script>$(".grt-cookie").grtCookie();</script>
-  
-  <script src="/js/fixdoubledashes.js"></script>
 
+  <!-- Page elements -->
   <script src="/js/expand-collapse.js"></script>
+  <script src="/js/send-feedback.js"></script>
+  <script src="/js/check-favorites.js"></script>
+  <script src="/js/copy-code.js"></script>
+
+
+
+
+
+
+
 </footer>
 
 

@@ -3,9 +3,48 @@
 <head>
     
 <meta charset="utf-8">
+
+<!-- Headers -->
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta http-equiv="Content-Security-Policy" content="
+  default-src 'self'; 
+  script-src 'self' 'unsafe-inline'
+    https://cdn.datatables.net    
+    https://cdn.jsdelivr.net    
+    https://cdnjs.cloudflare.com
+    https://maxcdn.bootstrapcdn.com
+    https://www.googletagmanager.com;
+  connect-src 'self'
+    https://*.googletagmanager.com
+    https://*.google-analytics.com
+    https://api.vectara.io  
+    https://maxcdn.bootstrapcdn.com;
+  img-src 'self' data:
+    https://*.google-analytics.com
+    https://*.googletagmanager.com;
+  style-src 'self' 'unsafe-inline'
+    https://cdn.datatables.net
+    https://fonts.googleapis.com
+    https://maxcdn.bootstrapcdn.com; 
+  font-src 'self' data:
+    https://fonts.gstatic.com
+    https://maxcdn.bootstrapcdn.com; 
+  frame-src 
+    https://www.googletagmanager.com;
+  object-src 'none';
+">
+
+<!-- This replaces frame-ancestors 'self'; which is unsupported in meta tags. -->
+<script>
+  if (self !== top) {
+    top.location = self.location;
+  }
+</script>
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Qumulo OpenMetrics API Specification | Qumulo Documentation</title>
+<title>Qumulo Core OpenMetrics API Specification | Qumulo Documentation Portal</title>
+
 <link rel="canonical" href="https://docs.qumulo.com/administrator-guide/monitoring-and-metrics/openmetrics-api-specification.html">
 
 <!-- Organization JSON-LD Schema -->
@@ -111,8 +150,8 @@ fetch('/data/website.json')
 
 <!-- Define page metadata -->
 <meta name="description" content="This section lists the names, types, labels, and descriptions for the metrics that Qumulo Core 5.3.0 (and higher) emits in OpenMetrics API format.">
-<meta name="apple-mobile-web-app-title" content="Qumulo Documentation">
-<meta name="application-name" content="Qumulo Documentation">
+<meta name="apple-mobile-web-app-title" content="Qumulo Documentation Portal">
+<meta name="application-name" content="Qumulo Documentation Portal">
 <meta name="msapplication-TileColor" content="#2b5797">
 <meta name="msapplication-TileImage" content="/images/mstile-144x144.png">
 <meta name="msapplication-config" content="/images/browserconfig.xml">
@@ -120,9 +159,9 @@ fetch('/data/website.json')
 <meta name="google-site-verification" content="_KoxPR0qF_ZeMyH6uWvlX84cFRujO_AZ1eq0eT9alAg">
 
 <!-- Open Graph Meta Tags -->
-<meta property="og:title" content="Qumulo OpenMetrics API Specification | Qumulo Documentation">
+<meta property="og:title" content="Qumulo Core OpenMetrics API Specification | Qumulo Documentation Portal">
 <meta property="og:url" content="https://docs.qumulo.com/administrator-guide/monitoring-and-metrics/openmetrics-api-specification.html">
-<meta property="og:site_name" content="Qumulo Documentation">
+<meta property="og:site_name" content="Qumulo Documentation Portal">
 <meta property="og:description" content="This section lists the names, types, labels, and descriptions for the metrics that Qumulo Core 5.3.0 (and higher) emits in OpenMetrics API format.">
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="website">
@@ -131,7 +170,7 @@ fetch('/data/website.json')
 <meta property="og:image:height" content="630">
 
 <!-- Twitter Meta Tags -->
-<meta name="twitter:title" content="Qumulo OpenMetrics API Specification | Qumulo Documentation">
+<meta name="twitter:title" content="Qumulo Core OpenMetrics API Specification | Qumulo Documentation Portal">
 <meta property="twitter:url" content="https://docs.qumulo.com/administrator-guide/monitoring-and-metrics/openmetrics-api-specification.html">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:description" content="This section lists the names, types, labels, and descriptions for the metrics that Qumulo Core 5.3.0 (and higher) emits in OpenMetrics API format.">
@@ -149,7 +188,7 @@ fetch('/data/website.json')
 
 <!-- Define RSS feed -->
 <!-- TEMPORARILY DISABLED
-<link rel="alternate" href="https://docs.qumulo.com/feed.xml" type="application/rss+xml" title="docs">
+<link rel="alternate" href="https://docs.qumulo.com/feed.xml" type="application/rss+xml" title="">
 -->
 
 <!-- Load scripts from cloudflare.com -->
@@ -282,7 +321,7 @@ fetch('/data/website.json')
         <div class="flex-links">
           <a class="header-link header-right" href="https://qumulo.com/company/about-qumulo/" target="_blank">About Qumulo</a>
           <a class="header-link header-right" href="https://care.qumulo.com/s/knowledge" target="_blank">Knowledge Base</a>
-          <a class="header-link header-right" href="https://nexus.qumulo.com/" target="_blank">Nexus</a>
+          <a class="header-link header-right" href="https://nexus.qumulo.com/" target="_blank">Nexus <span class="emoji">🔒</span></a>
         </div>
         <div class="contact-links">
           <a class="btn-contact no_icon" href="https://qumulocare.slack.com/">Send Slack Message</a>
@@ -302,12 +341,13 @@ fetch('/data/website.json')
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/index.html">&nbsp;<span class="projectTitle"> Qumulo Documentation</span></a>
+            <a class="navbar-brand" href="/index.html">&nbsp;<span class="projectTitle"> Qumulo Documentation Portal</span></a>
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <!-- toggle sidebar button -->
-                <li><a id="tg-sb-link" href="#" data-proofer-ignore><i id="tg-sb-icon" class="fa fa-toggle-off"></i> Reading Mode</a></li>
+                <li><a id="tg-sb-link" href="#" data-proofer-ignore><i id="tg-sb-icon" class="fa fa-toggle-off"></i> Toggle Reading Mode</a></li>
+                <li><a id="view-favorites" href="/favorites.html" data-proofer-ignore><i id="fav-nav-icon" class="fa fa-star-o"></i> View Favorites</a></li>
                 <!-- entries without drop-downs appear here -->
 
 
@@ -322,7 +362,7 @@ fetch('/data/website.json')
                   <div id="search-demo-container">
                     <div class="parent">
                       <div class="search_container">
-                        <main id="search-widget">
+                        <div id="search-widget">
                           <div class="vectara__search_Box">
                             <form id="vectara__search_form" action="/search.html" method="GET">
                               <input class="vectara__search_field" name="query" id="search-input" placeholder="What would you like to know?" autofocus>
@@ -331,7 +371,7 @@ fetch('/data/website.json')
                               </button>
                             </form>
                           </div>
-                        </main>
+                        </div>
                         <ul class="tags" id="widget-tags"></ul>
                       </div>
                     </div>
@@ -348,19 +388,18 @@ fetch('/data/website.json')
 <!-- Page Content -->
 
 <div class="container">
-  <div id="main">
+  <main id="main">
     <!-- Content Row -->
     <div class="row">
         
         
-
             <!-- Sidebar Column -->
             <div class="col-md-3" id="tg-sb-sidebar">
                 
 
 <div class="nav nav-buttons">
   
-    <a target="_blank" rel="noopener" href="https://github.com/qumulo/docs/blob/gh-pages/administrator-guide/monitoring-and-metrics/openmetrics-api-specification.md" class="btn btn-default githubEditButton no_icon" role="button" data-proofer-ignore><span class="fa fa-github fa-lg"></span> Edit on GitHub</a>
+    <a target="_blank" rel="noopener" href="https://github.com/qumulo/docs/blob/mainline/administrator-guide/monitoring-and-metrics/openmetrics-api-specification.md" class="btn btn-default githubEditButton no_icon" role="button" data-proofer-ignore><span class="fa fa-github fa-lg"></span> Edit on GitHub</a>
   
 
   
@@ -375,11 +414,11 @@ fetch('/data/website.json')
   
       
   
-  
+
   
 
   
-  
+
   
   <li>
   
@@ -389,24 +428,21 @@ fetch('/data/website.json')
   
   
   
-  
-  
-
-  
 
   
 
   Qumulo On-Premises Administrator Guide
   </a>
- 
+
       <ul>
           
           
           
           <li>
             <a title="Documentation Home" href="/index.html">
-              Documentation Home     
+              Documentation Home
               <span class="tag-container">
+              
               
               
               </span>
@@ -420,8 +456,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Guide Table of Contents" href="/administrator-guide/">
-              Guide Table of Contents     
+              Guide Table of Contents
               <span class="tag-container">
+              
               
               
               </span>
@@ -435,8 +472,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Contacting the Qumulo Care Team" href="/contacting-qumulo-care-team.html">
-              Contacting the Qumulo Care Team     
+              Contacting the Qumulo Care Team
               <span class="tag-container">
+              
               
               
               </span>
@@ -451,11 +489,11 @@ fetch('/data/website.json')
      
       
   
-  
+
   
 
   
-  
+
   
   <li>
   
@@ -465,24 +503,37 @@ fetch('/data/website.json')
   
   
   
-  
-  
-
-  
 
   
 
   Getting Started
   </a>
- 
+
       <ul>
           
           
           
           <li>
             <a title="Installing the Qumulo Core Product Package" href="/administrator-guide/getting-started/installing-product-package.html">
-              Installing the Qumulo Core Product Package     
+              Installing the Qumulo Core Product Package
               <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Configuring Interface Tagging for Host-Managed Networking" href="/administrator-guide/getting-started/configuring-interface-tagging-host-managed-networking.html">
+              Configuring Interface Tagging for Host-Managed Networking
+              <span class="tag-container">
+              
               
               
               </span>
@@ -496,8 +547,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Supported Configurations and Known Limits" href="/administrator-guide/getting-started/supported-configurations-known-limits.html">
-              Supported Configurations and Known Limits     
+              Supported Configurations and Known Limits
               <span class="tag-container">
+              
               
               
               </span>
@@ -512,11 +564,11 @@ fetch('/data/website.json')
      
       
   
-  
+
   
 
   
-  
+
   
   <li>
   
@@ -526,24 +578,21 @@ fetch('/data/website.json')
   
   
   
-  
-  
-
-  
 
   
 
   System Upgrades
   </a>
- 
+
       <ul>
           
           
           
           <li>
             <a title="Feature Log" href="/administrator-guide/upgrading-qumulo-core/feature-log.html">
-              Feature Log     
+              Feature Log
               <span class="tag-container">
+              
               
               
               </span>
@@ -557,8 +606,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Upgrade Modes" href="/administrator-guide/upgrading-qumulo-core/mode-reference.html">
-              Upgrade Modes     
+              Upgrade Modes
               <span class="tag-container">
+              
               
               
               </span>
@@ -572,8 +622,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Performing Upgrades" href="/administrator-guide/upgrading-qumulo-core/performing-upgrades.html">
-              Performing Upgrades     
+              Performing Upgrades
               <span class="tag-container">
+              
               
               
               </span>
@@ -587,8 +638,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Replication Version Requirements and Upgrade Recommendations" href="/administrator-guide/upgrading-qumulo-core/replication-version-requirements-upgrade-recommendations.html">
-              Replication Version Requirements and Upgrade Recommendations     
+              Replication Version Requirements and Upgrade Recommendations
               <span class="tag-container">
+              
               
               
               </span>
@@ -603,11 +655,11 @@ fetch('/data/website.json')
      
       
   
-  
+
   
 
   
-  
+
   
   <li>
   
@@ -617,24 +669,53 @@ fetch('/data/website.json')
   
   
   
-  
-  
-
-  
 
   
 
   Authentication
   </a>
- 
+
       <ul>
           
           
           
           <li>
+            <a title="Installing a Signed SSL Certificate" href="/administrator-guide/authentication-qumulo-core/installing-signed-ssl-certificate.html">
+              Installing a Signed SSL Certificate
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Installing a Custom Root CA Certificate" href="/administrator-guide/authentication-qumulo-core/installing-custom-root-ca-certificate.html">
+              Installing a Custom Root CA Certificate
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
             <a title="Installing VPN Keys" href="/administrator-guide/authentication-qumulo-core/installing-vpn-keys-on-cluster.html">
-              Installing VPN Keys     
+              Installing VPN Keys
               <span class="tag-container">
+              
               
               
               </span>
@@ -647,24 +728,10 @@ fetch('/data/website.json')
           
           
           <li>
-            <a title="Configuring SAML Single Sign-On (SSO)" href="/administrator-guide/authentication-qumulo-core/configuring-saml-single-sign-on-sso.html">
-              Configuring SAML Single Sign-On (SSO)     
+            <a title="Configuring Active Directory" href="/administrator-guide/authentication-qumulo-core/configuring-ad.html">
+              Configuring Active Directory
               <span class="tag-container">
               
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-          
-          
-          <li>
-            <a title="Configuring Search Trusted Domains" href="/administrator-guide/authentication-qumulo-core/configuring-search-trusted-domains-active-directory.html">
-              Configuring Search Trusted Domains     
-              <span class="tag-container">
               
               
               </span>
@@ -678,8 +745,41 @@ fetch('/data/website.json')
           
           <li>
             <a title="Configuring LDAP" href="/administrator-guide/authentication-qumulo-core/configuring-ldap.html">
-              Configuring LDAP     
+              Configuring LDAP
               <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Configuring SAML Single Sign-On (SSO)" href="/administrator-guide/authentication-qumulo-core/configuring-saml-single-sign-on-sso.html">
+              Configuring SAML Single Sign-On (SSO)
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Configuring Search Trusted Domains" href="/administrator-guide/authentication-qumulo-core/configuring-search-trusted-domains-active-directory.html">
+              Configuring Search Trusted Domains
+              <span class="tag-container">
+              
               
               
               </span>
@@ -693,8 +793,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Creating and Using Bearer Tokens" href="/administrator-guide/authentication-qumulo-core/creating-using-bearer-tokens-to-authenticate-qumulo-rest-api-calls.html">
-              Creating and Using Bearer Tokens     
+              Creating and Using Bearer Tokens
               <span class="tag-container">
+              
               
               
               </span>
@@ -709,11 +810,11 @@ fetch('/data/website.json')
      
       
   
-  
+
   
 
   
-  
+
   
   <li>
   
@@ -723,24 +824,21 @@ fetch('/data/website.json')
   
   
   
-  
-  
-
-  
 
   
 
   Connecting to External Services
   </a>
- 
+
       <ul>
           
           
           
           <li>
             <a title="Creating and Using Access Tokens" href="/administrator-guide/connecting-to-external-services/creating-using-access-tokens-to-authenticate-external-services-qumulo-core.html">
-              Creating and Using Access Tokens     
+              Creating and Using Access Tokens
               <span class="tag-container">
+              
               
               
               </span>
@@ -754,8 +852,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Connecting a Kubernetes Cluster" href="/administrator-guide/connecting-to-external-services/connecting-kubernetes-cluster-with-container-storage-interface-csi-driver.html">
-              Connecting a Kubernetes Cluster     
+              Connecting a Kubernetes Cluster
               <span class="tag-container">
+              
               
               
               </span>
@@ -770,11 +869,11 @@ fetch('/data/website.json')
      
       
   
-  
+
   
 
   
-  
+
   
   <li>
   
@@ -784,24 +883,21 @@ fetch('/data/website.json')
   
   
   
-  
-  
-
-  
 
   
 
   Authorization
   </a>
- 
+
       <ul>
           
           
           
           <li>
-            <a title="Managing File Locks" href="/administrator-guide/authorization-qumulo-core/managing-file-locks.html">
-              Managing File Locks     
+            <a title="Managing Role-Based Access Control (RBAC)" href="/administrator-guide/authorization-qumulo-core/managing-role-based-access-control-rbac.html">
+              Managing Role-Based Access Control (RBAC)
               <span class="tag-container">
+              
               
               
               </span>
@@ -814,24 +910,10 @@ fetch('/data/website.json')
           
           
           <li>
-            <a title="Managing Role-Based Access Control" href="/administrator-guide/authorization-qumulo-core/managing-role-based-access-control-rbac.html">
-              Managing Role-Based Access Control     
+            <a title="Managing Cross-Protocol (XPP) Permissions" href="/administrator-guide/authorization-qumulo-core/managing-cross-protocol-permissions-xpp.html">
+              Managing Cross-Protocol (XPP) Permissions
               <span class="tag-container">
               
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-          
-          
-          <li>
-            <a title="Managing Cross-Protocol Permissions" href="/administrator-guide/authorization-qumulo-core/managing-cross-protocol-permissions-xpp.html">
-              Managing Cross-Protocol Permissions     
-              <span class="tag-container">
               
               
               </span>
@@ -845,8 +927,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Using SMB Host Restrictions" href="/administrator-guide/authorization-qumulo-core/using-smb-host-restrictions.html">
-              Using SMB Host Restrictions     
+              Using SMB Host Restrictions
               <span class="tag-container">
+              
               
               
               </span>
@@ -860,8 +943,25 @@ fetch('/data/website.json')
           
           <li>
             <a title="Using Active Directory for POSIX Attributes" href="/administrator-guide/authorization-qumulo-core/using-active-directory-for-posix-attributes.html">
-              Using Active Directory for POSIX Attributes     
+              Using Active Directory for POSIX Attributes
               <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Managing File Locks" href="/administrator-guide/authorization-qumulo-core/managing-file-locks.html">
+              Managing File Locks
+              <span class="tag-container">
+              
               
               
               </span>
@@ -876,18 +976,16 @@ fetch('/data/website.json')
      
       
   
-  
+
   
 
   
-  
+
   
   <li>
   
 
-  <a title="Storage Management" href="/administrator-guide/storage-management/index.html" data-proofer-ignore>
-  
-  
+  <a title="Encryption at Rest" href="/administrator-guide/encryption-at-rest/index.html" data-proofer-ignore>
   
   
   
@@ -895,19 +993,18 @@ fetch('/data/website.json')
 
   
 
-  
-
-  Storage Management
+  Encryption at Rest
   </a>
- 
+
       <ul>
           
           
           
           <li>
-            <a title="Creating and Managing Directory Quotas" href="/administrator-guide/storage-management/creating-directory-quotas.html">
-              Creating and Managing Directory Quotas     
+            <a title="Managing Encryption at Rest" href="/administrator-guide/encryption-at-rest/managing-encryption-at-rest.html">
+              Managing Encryption at Rest
               <span class="tag-container">
+              
               
               
               </span>
@@ -922,18 +1019,16 @@ fetch('/data/website.json')
      
       
   
-  
+
   
 
   
-  
+
   
   <li>
   
 
-  <a title="Network Configuration" href="/administrator-guide/network-configuration/index.html" data-proofer-ignore>
-  
-  
+  <a title="Encryption in Transit" href="/administrator-guide/encryption-in-transit/index.html" data-proofer-ignore>
   
   
   
@@ -941,19 +1036,18 @@ fetch('/data/website.json')
 
   
 
-  
-
-  Network Configuration
+  Encryption in Transit
   </a>
- 
+
       <ul>
           
           
           
           <li>
-            <a title="Required Networking Ports" href="/administrator-guide/network-configuration/required-ports.html">
-              Required Networking Ports     
+            <a title="Managing SMB3 Encryption in Transit" href="/administrator-guide/encryption-in-transit/managing-smb3-encryption-in-transit.html">
+              Managing SMB3 Encryption in Transit
               <span class="tag-container">
+              
               
               
               </span>
@@ -966,920 +1060,10 @@ fetch('/data/website.json')
           
           
           <li>
-            <a title="Configuring IPv6" href="/administrator-guide/network-configuration/configuring-ipv6.html">
-              Configuring IPv6     
+            <a title="How NFSv4.1 Works with Kerberos" href="/administrator-guide/kerberos/kerberos-with-qumulo-core.html">
+              How NFSv4.1 Works with Kerberos
               <span class="tag-container">
               
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-          
-          
-          <li>
-            <a title="Connecting to Multiple Virtual Networks" href="/administrator-guide/network-configuration/connecting-multiple-virtual-networks.html">
-              Connecting to Multiple Virtual Networks     
-              <span class="tag-container">
-              
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-          
-          
-          <li>
-            <a title="Configuring Round-Robin DNS on Windows Server" href="/administrator-guide/network-configuration/configuring-round-robin-dns-windows-server.html">
-              Configuring Round-Robin DNS on Windows Server     
-              <span class="tag-container">
-              
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-      </ul>
-   </li>
-     
-      
-  
-  
-  
-
-  
-  
-  
-  <li>
-  
-
-  <a title="Network Multitenancy" href="/administrator-guide/network-multitenancy/index.html" data-proofer-ignore>
-  
-  
-  
-  
-  
-  
-
-  
-
-  
-
-  Network Multitenancy
-  </a>
- 
-      <ul>
-          
-          
-          
-          <li>
-            <a title="Partitioning a Cluster into Tenants" href="/administrator-guide/network-multitenancy/partitioning-cluster-into-tenants.html">
-              Partitioning a Cluster into Tenants     
-              <span class="tag-container">
-              
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-          
-          
-          <li>
-            <a title="Configuring Management Protocols" href="/administrator-guide/network-multitenancy/configuring-management-protocols.html">
-              Configuring Management Protocols     
-              <span class="tag-container">
-              
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-          
-          
-          <li>
-            <a title="Configuring File System Protocols" href="/administrator-guide/network-multitenancy/configuring-file-system-protocols.html">
-              Configuring File System Protocols     
-              <span class="tag-container">
-              
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-      </ul>
-   </li>
-     
-      
-  
-  
-  
-
-  
-  
-  
-  <li>
-  
-
-  <a title="Cloud Data Fabric" href="/administrator-guide/cloud-data-fabric/index.html" data-proofer-ignore>
-  
-  
-  
-  
-  
-  
-
-  
-
-  
-
-  Cloud Data Fabric
-  </a>
- 
-      <ul>
-          
-          
-          
-          <li>
-            <a title="Enabling Cloud Data Fabric" href="/administrator-guide/cloud-data-fabric/how-portal-creation-enables-cloud-data-fabric.html">
-              Enabling Cloud Data Fabric     
-              <span class="tag-container">
-              
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-          
-          
-          <li>
-            <a title="Configuring a Portal Relationship" href="/administrator-guide/cloud-data-fabric/configuring-portal-relationship.html">
-              Configuring a Portal Relationship     
-              <span class="tag-container">
-              
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-          
-          
-          <li>
-            <a title="Configuring Cache Management" href="/administrator-guide/cloud-data-fabric/configuring-cache-management-for-spoke-portals.html">
-              Configuring Cache Management     
-              <span class="tag-container">
-              
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-      </ul>
-   </li>
-     
-      
-  
-  
-  
-
-  
-  
-  
-  <li>
-  
-
-  <a title="Web UI" href="/administrator-guide/web-ui/index.html" data-proofer-ignore>
-  
-  
-  
-  
-  
-  
-
-  
-
-  
-
-  Web UI
-  </a>
- 
-      <ul>
-          
-          
-          
-          <li>
-            <a title="Setting the Web UI Login Banner" href="/administrator-guide/web-ui/login-banner.html">
-              Setting the Web UI Login Banner     
-              <span class="tag-container">
-              
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-          
-          
-          <li>
-            <a title="Setting the Web UI Inactivity Timeout" href="/administrator-guide/web-ui/inactivity-timeout.html">
-              Setting the Web UI Inactivity Timeout     
-              <span class="tag-container">
-              
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-      </ul>
-   </li>
-     
-      
-  
-  
-  
-
-  
-  
-  
-  <li>
-  
-
-  <a title="qq CLI" href="/administrator-guide/qq-cli/index.html" data-proofer-ignore>
-  
-  
-  
-  
-  
-  
-
-  
-
-  
-
-  qq CLI
-  </a>
- 
-      <ul>
-          
-          
-          
-          <li>
-            <a title="Getting Started with the qq CLI" href="/administrator-guide/qq-cli/getting-started.html">
-              Getting Started with the qq CLI     
-              <span class="tag-container">
-              
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-          
-          
-          <li>
-            <a title="Enabling Autocomplete for the qq CLI" href="/administrator-guide/qq-cli/enabling-autocomplete.html">
-              Enabling Autocomplete for the qq CLI     
-              <span class="tag-container">
-              
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-      </ul>
-   </li>
-     
-      
-  
-  
-  
-
-  
-  
-  
-  <li>
-  
-
-  <a title="Metadata" href="/administrator-guide/metadata/index.html" data-proofer-ignore>
-  
-  
-  
-  
-  
-  
-
-  
-
-  
-
-  Metadata
-  </a>
- 
-      <ul>
-          
-          
-          
-          <li>
-            <a title="Managing User-Defined Metadata" href="/administrator-guide/metadata/managing-user-defined-metadata.html">
-              Managing User-Defined Metadata     
-              <span class="tag-container">
-              
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-      </ul>
-   </li>
-     
-      
-  
-  
-  
-
-  
-  
-  
-  <li>
-  
-
-  <a title="Snapshots" href="/administrator-guide/snapshots/index.html" data-proofer-ignore>
-  
-  
-  
-  
-  
-  
-
-  
-
-  
-
-  Snapshots
-  </a>
- 
-      <ul>
-          
-          
-          
-          <li>
-            <a title="How Snapshots Work" href="/administrator-guide/snapshots/how-snapshots-work.html">
-              How Snapshots Work     
-              <span class="tag-container">
-              
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-          
-          
-          <li>
-            <a title="Managing Snapshots" href="/administrator-guide/snapshots/managing-snapshots.html">
-              Managing Snapshots     
-              <span class="tag-container">
-              
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-          
-          
-          <li>
-            <a title="Locking and Unlocking Snapshots" href="/administrator-guide/snapshots/locking-unlocking-snapshots.html">
-              Locking and Unlocking Snapshots     
-              <span class="tag-container">
-              
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-          
-          
-          <li>
-            <a title="Recovering Files by Using Snapshots" href="/administrator-guide/snapshots/recovering-files.html">
-              Recovering Files by Using Snapshots     
-              <span class="tag-container">
-              
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-      </ul>
-   </li>
-     
-      
-  
-  
-  
-
-  
-  
-  
-  <li>
-  
-
-  <a title="Encryption and Data Security" href="/administrator-guide/encryption-data-security/index.html" data-proofer-ignore>
-  
-  
-  
-  
-  
-  
-
-  
-
-  
-
-  Encryption and Data Security
-  </a>
- 
-      <ul>
-          
-          
-          
-          <li>
-            <a title="Managing Encryption at Rest" href="/administrator-guide/encryption-data-security/managing-encryption-at-rest.html">
-              Managing Encryption at Rest     
-              <span class="tag-container">
-              
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-          
-          
-          <li>
-            <a title="Managing SMB3 Encryption in Transit" href="/administrator-guide/encryption-data-security/managing-smb3-encryption-in-transit.html">
-              Managing SMB3 Encryption in Transit     
-              <span class="tag-container">
-              
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-          
-          
-          <li>
-            <a title="Generating and Storing ECDSA Keys" href="/administrator-guide/encryption-data-security/generating-storing-ecdsa-keys.html">
-              Generating and Storing ECDSA Keys     
-              <span class="tag-container">
-              
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-          
-          
-          <li>
-            <a title="Managing Security Keys" href="/administrator-guide/encryption-data-security/managing-security-keys.html">
-              Managing Security Keys     
-              <span class="tag-container">
-              
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-          
-          
-          <li>
-            <a title="Installing a Signed SSL Certificate" href="/administrator-guide/encryption-data-security/installing-signed-ssl-certificate.html">
-              Installing a Signed SSL Certificate     
-              <span class="tag-container">
-              
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-      </ul>
-   </li>
-     
-      
-  
-  
-  
-
-  
-  
-  
-  <li>
-  
-
-  <a title="Node Addition and Replacement" href="/administrator-guide/node-addition-replacement/index.html" data-proofer-ignore>
-  
-  
-  
-  
-  
-  
-
-  
-
-  
-
-  Node Addition and Replacement
-  </a>
- 
-      <ul>
-          
-          
-          
-          <li>
-            <a title="How Drive and Node Failure Protection Works" href="/administrator-guide/node-addition-replacement/how-drive-node-failure-protection-works.html">
-              How Drive and Node Failure Protection Works     
-              <span class="tag-container">
-              
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-          
-          
-          <li>
-            <a title="Adding Nodes to an Existing Cluster" href="/administrator-guide/node-addition-replacement/adding-nodes-existing-cluster.html">
-              Adding Nodes to an Existing Cluster     
-              <span class="tag-container">
-              
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-          
-          
-          <li>
-            <a title="Increasing the Node Fault Tolerance Level during Node-Add Operations" href="/administrator-guide/node-addition-replacement/increasing-node-fault-tolerance-level.html">
-              Increasing the Node Fault Tolerance Level during Node-Add Operations     
-              <span class="tag-container">
-              
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-          
-          
-          <li>
-            <a title="Adding Nodes with Adaptive Data Protection" href="/administrator-guide/node-addition-replacement/adding-nodes-adaptive-data-protection.html">
-              Adding Nodes with Adaptive Data Protection     
-              <span class="tag-container">
-              
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-          
-          
-          <li>
-            <a title="Replacing Nodes by Performing a Transparent Platform Refresh" href="/administrator-guide/node-addition-replacement/replacing-nodes-transparent-platform-refresh.html">
-              Replacing Nodes by Performing a Transparent Platform Refresh     
-              <span class="tag-container">
-              
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-          
-          
-          <li>
-            <a title="Improving Performance by Migrating a Cluster to a Different License Class" href="/administrator-guide/node-addition-replacement/migrating-license-class.html">
-              Improving Performance by Migrating a Cluster to a Different License Class     
-              <span class="tag-container">
-              
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-          
-          
-          <li>
-            <a title="Understanding Offline Nodes" href="/administrator-guide/node-addition-replacement/understanding-offline-nodes.html">
-              Understanding Offline Nodes     
-              <span class="tag-container">
-              
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-      </ul>
-   </li>
-     
-      
-  
-  
-  
-
-  
-  
-  
-  <li>
-  
-
-  <a title="Data Replication" href="/administrator-guide/replicating-data/index.html" data-proofer-ignore>
-  
-  
-  
-  
-  
-  
-
-  
-
-  
-
-  Data Replication
-  </a>
- 
-      <ul>
-          
-          
-          
-          <li>
-            <a title="Creating and Managing a Continuous Replication Relationship" href="/administrator-guide/replicating-data/creating-managing-continuous-replication-relationship.html">
-              Creating and Managing a Continuous Replication Relationship     
-              <span class="tag-container">
-              
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-          
-          
-          <li>
-            <a title="Shift-To Amazon S3" href="/administrator-guide/replicating-data/shift-to-s3.html">
-              Shift-To Amazon S3     
-              <span class="tag-container">
-              
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-          
-          
-          <li>
-            <a title="Shift-From Amazon S3" href="/administrator-guide/replicating-data/shift-from-s3.html">
-              Shift-From Amazon S3     
-              <span class="tag-container">
-              
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-      </ul>
-   </li>
-     
-      
-  
-  
-  
-
-  
-  
-  
-  <li>
-  
-
-  <a title="File System Changes" href="/administrator-guide/watching-file-attribute-directory-changes/index.html" data-proofer-ignore>
-  
-  
-  
-  
-  
-  
-
-  
-
-  
-
-  File System Changes
-  </a>
- 
-      <ul>
-          
-          
-          
-          <li>
-            <a title="How File System Change Notifications Work" href="/administrator-guide/watching-file-attribute-directory-changes/how-file-system-change-notifications-work.html">
-              How File System Change Notifications Work     
-              <span class="tag-container">
-              
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-          
-          
-          <li>
-            <a title="Watching for Changes with SMB2 CHANGE_NOTIFY" href="/administrator-guide/watching-file-attribute-directory-changes/smb2-change-notify.html">
-              Watching for Changes with SMB2 CHANGE_NOTIFY     
-              <span class="tag-container">
-              
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-          
-          
-          <li>
-            <a title="Watching for Changes with REST" href="/administrator-guide/watching-file-attribute-directory-changes/rest.html">
-              Watching for Changes with REST     
-              <span class="tag-container">
-              
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-      </ul>
-   </li>
-     
-      
-  
-  
-  
-
-  
-  
-  
-  <li>
-  
-
-  <a title="NFS" href="/administrator-guide/nfs/index.html" data-proofer-ignore>
-  
-  
-  
-  
-  
-  
-
-  
-
-  
-
-  NFS
-  </a>
- 
-      <ul>
-          
-          
-          
-          <li>
-            <a title="Creating and Managing an NFS Export" href="/administrator-guide/nfs/creating-nfs-export.html">
-              Creating and Managing an NFS Export     
-              <span class="tag-container">
-              
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-          
-          
-          <li>
-            <a title="Enabling and Using NFSv4.1" href="/administrator-guide/nfs/nfsv4.1-enabling-using.html">
-              Enabling and Using NFSv4.1     
-              <span class="tag-container">
-              
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-          
-          
-          <li>
-            <a title="Managing File Access Permissions with ACLs" href="/administrator-guide/nfs/nfsv4.1-acls.html">
-              Managing File Access Permissions with ACLs     
-              <span class="tag-container">
               
               
               </span>
@@ -1893,8 +1077,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Host Access Rules for NFS Exports" href="/administrator-guide/nfs/configuring-troubleshooting-host-access-rules-nfs-exports.html">
-              Host Access Rules for NFS Exports     
+              Host Access Rules for NFS Exports
               <span class="tag-container">
+              
               
               
               </span>
@@ -1909,11 +1094,1034 @@ fetch('/data/website.json')
      
       
   
+
+  
+
+  
+
+  
+  <li>
+  
+
+  <a title="Cryptographic Key Management" href="/administrator-guide/cryptographic-key-management/index.html" data-proofer-ignore>
+  
+  
   
   
 
   
+
+  Cryptographic Key Management
+  </a>
+
+      <ul>
+          
+          
+          
+          <li>
+            <a title="Generating and Storing ECDSA Keys" href="/administrator-guide/cryptographic-key-management/generating-storing-ecdsa-keys.html">
+              Generating and Storing ECDSA Keys
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Managing Security Keys" href="/administrator-guide/cryptographic-key-management/managing-security-keys.html">
+              Managing Security Keys
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
   
+
+  
+
+  
+
+  
+  <li>
+  
+
+  <a title="Storage Management" href="/administrator-guide/storage-management/index.html" data-proofer-ignore>
+  
+  
+  
+  
+
+  
+
+  Storage Management
+  </a>
+
+      <ul>
+          
+          
+          
+          <li>
+            <a title="Creating and Managing Directory Quotas" href="/administrator-guide/storage-management/creating-directory-quotas.html">
+              Creating and Managing Directory Quotas
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+
+  
+
+  
+
+  
+  <li>
+  
+
+  <a title="Network Configuration" href="/administrator-guide/network-configuration/index.html" data-proofer-ignore>
+  
+  
+  
+  
+
+  
+
+  Network Configuration
+  </a>
+
+      <ul>
+          
+          
+          
+          <li>
+            <a title="Configuring Interface Tagging for Host-Managed Networking" href="/administrator-guide/network-configuration/configuring-interface-tagging-host-managed-networking.html">
+              Configuring Interface Tagging for Host-Managed Networking
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Required Networking Ports" href="/administrator-guide/network-configuration/required-ports.html">
+              Required Networking Ports
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Configuring IPv6" href="/administrator-guide/network-configuration/configuring-ipv6.html">
+              Configuring IPv6
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Connecting to Multiple Virtual Networks" href="/administrator-guide/network-configuration/connecting-multiple-virtual-networks.html">
+              Connecting to Multiple Virtual Networks
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Configuring Round-Robin DNS on Windows Server" href="/administrator-guide/network-configuration/configuring-round-robin-dns-windows-server.html">
+              Configuring Round-Robin DNS on Windows Server
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Configuring Qumulo Authoritative DNS (QDNS)" href="/administrator-guide/network-configuration/configuring-authoritative-dns.html">
+              Configuring Qumulo Authoritative DNS (QDNS)
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+
+  
+
+  
+
+  
+  <li>
+  
+
+  <a title="Network Multitenancy" href="/administrator-guide/network-multitenancy/index.html" data-proofer-ignore>
+  
+  
+  
+  
+
+  
+
+  Network Multitenancy
+  </a>
+
+      <ul>
+          
+          
+          
+          <li>
+            <a title="Partitioning a Cluster into Tenants" href="/administrator-guide/network-multitenancy/partitioning-cluster-into-tenants.html">
+              Partitioning a Cluster into Tenants
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Configuring Management Protocols" href="/administrator-guide/network-multitenancy/configuring-management-protocols.html">
+              Configuring Management Protocols
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Configuring File System Protocols" href="/administrator-guide/network-multitenancy/configuring-file-system-protocols.html">
+              Configuring File System Protocols
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+
+  
+
+  
+
+  
+  <li>
+  
+
+  <a title="Cloud Data Fabric" href="/administrator-guide/cloud-data-fabric/index.html" data-proofer-ignore>
+  
+  
+  
+  
+
+  
+
+  Cloud Data Fabric
+  </a>
+
+      <ul>
+          
+          
+          
+          <li>
+            <a title="How Cloud Data Fabric Works" href="/administrator-guide/cloud-data-fabric/how-portal-creation-enables-cloud-data-fabric.html">
+              How Cloud Data Fabric Works
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Known Limits for Cloud Data Fabric" href="/administrator-guide/cloud-data-fabric/known-limits.html">
+              Known Limits for Cloud Data Fabric
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Configuring a Portal Relationship" href="/administrator-guide/cloud-data-fabric/configuring-portal-relationship.html">
+              Configuring a Portal Relationship
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Configuring Cache Management" href="/administrator-guide/cloud-data-fabric/configuring-cache-management-for-spoke-portals.html">
+              Configuring Cache Management
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+
+  
+
+  
+
+  
+  <li>
+  
+
+  <a title="Web UI" href="/administrator-guide/web-ui/index.html" data-proofer-ignore>
+  
+  
+  
+  
+
+  
+
+  Web UI
+  </a>
+
+      <ul>
+          
+          
+          
+          <li>
+            <a title="Setting the Web UI Login Banner" href="/administrator-guide/web-ui/login-banner.html">
+              Setting the Web UI Login Banner
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Setting the Web UI Inactivity Timeout" href="/administrator-guide/web-ui/inactivity-timeout.html">
+              Setting the Web UI Inactivity Timeout
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+
+  
+
+  
+
+  
+  <li>
+  
+
+  <a title="qq CLI" href="/administrator-guide/qq-cli/index.html" data-proofer-ignore>
+  
+  
+  
+  
+
+  
+
+  qq CLI
+  </a>
+
+      <ul>
+          
+          
+          
+          <li>
+            <a title="Getting Started with the qq CLI" href="/administrator-guide/qq-cli/getting-started.html">
+              Getting Started with the qq CLI
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Enabling Autocomplete for the qq CLI" href="/administrator-guide/qq-cli/enabling-autocomplete.html">
+              Enabling Autocomplete for the qq CLI
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+
+  
+
+  
+
+  
+  <li>
+  
+
+  <a title="Metadata" href="/administrator-guide/metadata/index.html" data-proofer-ignore>
+  
+  
+  
+  
+
+  
+
+  Metadata
+  </a>
+
+      <ul>
+          
+          
+          
+          <li>
+            <a title="Managing User-Defined Metadata" href="/administrator-guide/metadata/managing-user-defined-metadata.html">
+              Managing User-Defined Metadata
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+
+  
+
+  
+
+  
+  <li>
+  
+
+  <a title="Snapshots" href="/administrator-guide/snapshots/index.html" data-proofer-ignore>
+  
+  
+  
+  
+
+  
+
+  Snapshots
+  </a>
+
+      <ul>
+          
+          
+          
+          <li>
+            <a title="How Snapshots Work" href="/administrator-guide/snapshots/how-snapshots-work.html">
+              How Snapshots Work
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Managing Snapshots" href="/administrator-guide/snapshots/managing-snapshots.html">
+              Managing Snapshots
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Locking and Unlocking Snapshots" href="/administrator-guide/snapshots/locking-unlocking-snapshots.html">
+              Locking and Unlocking Snapshots
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Recovering Files by Using Snapshots" href="/administrator-guide/snapshots/recovering-files.html">
+              Recovering Files by Using Snapshots
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+
+  
+
+  
+
+  
+  <li>
+  
+
+  <a title="Node Addition and Replacement" href="/administrator-guide/node-addition-replacement/index.html" data-proofer-ignore>
+  
+  
+  
+  
+
+  
+
+  Node Addition and Replacement
+  </a>
+
+      <ul>
+          
+          
+          
+          <li>
+            <a title="How Drive and Node Failure Protection Works" href="/administrator-guide/node-addition-replacement/how-drive-node-failure-protection-works.html">
+              How Drive and Node Failure Protection Works
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Adding Nodes to an Existing Cluster" href="/administrator-guide/node-addition-replacement/adding-nodes-existing-cluster.html">
+              Adding Nodes to an Existing Cluster
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Increasing the Node Fault Tolerance Level during Node-Add Operations" href="/administrator-guide/node-addition-replacement/increasing-node-fault-tolerance-level.html">
+              Increasing the Node Fault Tolerance Level during Node-Add Operations
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Adding Nodes with Adaptive Data Protection" href="/administrator-guide/node-addition-replacement/adding-nodes-adaptive-data-protection.html">
+              Adding Nodes with Adaptive Data Protection
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Replacing Nodes by Performing a Transparent Platform Refresh" href="/administrator-guide/node-addition-replacement/replacing-nodes-transparent-platform-refresh.html">
+              Replacing Nodes by Performing a Transparent Platform Refresh
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Improving Performance by Migrating a Cluster to a Different License Class" href="/administrator-guide/node-addition-replacement/migrating-license-class.html">
+              Improving Performance by Migrating a Cluster to a Different License Class
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Understanding Offline Nodes" href="/administrator-guide/node-addition-replacement/understanding-offline-nodes.html">
+              Understanding Offline Nodes
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+
+  
+
+  
+
+  
+  <li>
+  
+
+  <a title="Data Replication" href="/administrator-guide/replicating-data/index.html" data-proofer-ignore>
+  
+  
+  
+  
+
+  
+
+  Data Replication
+  </a>
+
+      <ul>
+          
+          
+          
+          <li>
+            <a title="Creating and Managing a Continuous Replication Relationship" href="/administrator-guide/replicating-data/creating-managing-continuous-replication-relationship.html">
+              Creating and Managing a Continuous Replication Relationship
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Shift-To Amazon S3" href="/administrator-guide/replicating-data/shift-to-s3.html">
+              Shift-To Amazon S3
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Shift-From Amazon S3" href="/administrator-guide/replicating-data/shift-from-s3.html">
+              Shift-From Amazon S3
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+
+  
+
+  
+
+  
+  <li>
+  
+
+  <a title="File System Changes" href="/administrator-guide/watching-file-attribute-directory-changes/index.html" data-proofer-ignore>
+  
+  
+  
+  
+
+  
+
+  File System Changes
+  </a>
+
+      <ul>
+          
+          
+          
+          <li>
+            <a title="How File System Change Notifications Work" href="/administrator-guide/watching-file-attribute-directory-changes/how-file-system-change-notifications-work.html">
+              How File System Change Notifications Work
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Watching for Changes with SMB2 CHANGE_NOTIFY" href="/administrator-guide/watching-file-attribute-directory-changes/smb2-change-notify.html">
+              Watching for Changes with SMB2 CHANGE_NOTIFY
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Watching for Changes with REST" href="/administrator-guide/watching-file-attribute-directory-changes/rest.html">
+              Watching for Changes with REST
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+
+  
+
+  
+
+  
+  <li>
+  
+
+  <a title="NFS" href="/administrator-guide/nfs/index.html" data-proofer-ignore>
+  
+  
+  
+  
+
+  
+
+  NFS
+  </a>
+
+      <ul>
+          
+          
+          
+          <li>
+            <a title="Creating and Managing an NFS Export" href="/administrator-guide/nfs/creating-nfs-export.html">
+              Creating and Managing an NFS Export
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Enabling and Using NFSv4.1" href="/administrator-guide/nfs/nfsv4.1-enabling-using.html">
+              Enabling and Using NFSv4.1
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Managing File Access Permissions with ACLs" href="/administrator-guide/nfs/nfsv4.1-acls.html">
+              Managing File Access Permissions with ACLs
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Host Access Rules for NFS Exports" href="/administrator-guide/nfs/configuring-troubleshooting-host-access-rules-nfs-exports.html">
+              Host Access Rules for NFS Exports
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+
+  
+
+  
+
   
   <li>
   
@@ -1923,24 +2131,21 @@ fetch('/data/website.json')
   
   
   
-  
-  
-
-  
 
   
 
   NFSv4.1 with Kerberos
   </a>
- 
+
       <ul>
           
           
           
           <li>
             <a title="How NFSv4.1 Works with Kerberos" href="/administrator-guide/kerberos/kerberos-with-qumulo-core.html">
-              How NFSv4.1 Works with Kerberos     
+              How NFSv4.1 Works with Kerberos
               <span class="tag-container">
+              
               
               
               </span>
@@ -1954,8 +2159,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Prerequisites for Joining to Active Directory" href="/administrator-guide/kerberos/kerberos-prerequisites-joining-cluster-active-directory.html">
-              Prerequisites for Joining to Active Directory     
+              Prerequisites for Joining to Active Directory
               <span class="tag-container">
+              
               
               
               </span>
@@ -1969,8 +2175,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Configuring Active Directory" href="/administrator-guide/kerberos/kerberos-configuring-active-directory.html">
-              Configuring Active Directory     
+              Configuring Active Directory
               <span class="tag-container">
+              
               
               
               </span>
@@ -1984,8 +2191,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Performing Additional Cluster Configuration" href="/administrator-guide/kerberos/kerberos-additional-cluster-configuration.html">
-              Performing Additional Cluster Configuration     
+              Performing Additional Cluster Configuration
               <span class="tag-container">
+              
               
               
               </span>
@@ -1999,8 +2207,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Using Kerberos Permissions" href="/administrator-guide/kerberos/kerberos-qumulo-permissions.html">
-              Using Kerberos Permissions     
+              Using Kerberos Permissions
               <span class="tag-container">
+              
               
               
               </span>
@@ -2014,8 +2223,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Configuring a Linux Client" href="/administrator-guide/kerberos/kerberos-configuring-linux-client.html">
-              Configuring a Linux Client     
+              Configuring a Linux Client
               <span class="tag-container">
+              
               
               
               </span>
@@ -2029,8 +2239,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Configuring Cross-Domain Active Directory Trusts" href="/administrator-guide/kerberos/kerberos-configuring-cross-domain-active-directory-trusts.html">
-              Configuring Cross-Domain Active Directory Trusts     
+              Configuring Cross-Domain Active Directory Trusts
               <span class="tag-container">
+              
               
               
               </span>
@@ -2044,8 +2255,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Troubleshooting NFSv4.1 with Kerberos" href="/administrator-guide/kerberos/kerberos-troubleshooting.html">
-              Troubleshooting NFSv4.1 with Kerberos     
+              Troubleshooting NFSv4.1 with Kerberos
               <span class="tag-container">
+              
               
               
               </span>
@@ -2060,11 +2272,11 @@ fetch('/data/website.json')
      
       
   
-  
+
   
 
   
-  
+
   
   <li>
   
@@ -2074,24 +2286,37 @@ fetch('/data/website.json')
   
   
   
-  
-  
-
-  
 
   
 
   SMB
   </a>
- 
+
       <ul>
           
           
           
           <li>
             <a title="Creating and Managing an SMB Share" href="/administrator-guide/smb/creating-smb-share.html">
-              Creating and Managing an SMB Share     
+              Creating and Managing an SMB Share
               <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Resolving Access Issues with an SMB Share" href="/administrator-guide/smb/resolving-smb-share-permission-errors-on-windows-clients.html">
+              Resolving Access Issues with an SMB Share
+              <span class="tag-container">
+              
               
               
               </span>
@@ -2105,8 +2330,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Managing File Shares by Using the Shared Folders MMC Snap-In" href="/administrator-guide/smb/managing-file-shares-shared-folders-mmc.html">
-              Managing File Shares by Using the Shared Folders MMC Snap-In     
+              Managing File Shares by Using the Shared Folders MMC Snap-In
               <span class="tag-container">
+              
               
               
               </span>
@@ -2121,11 +2347,11 @@ fetch('/data/website.json')
      
       
   
-  
+
   
 
   
-  
+
   
   <li>
   
@@ -2135,24 +2361,21 @@ fetch('/data/website.json')
   
   
   
-  
-  
-
-  
 
   
 
   S3 API
   </a>
- 
+
       <ul>
           
           
           
           <li>
             <a title="Configuring and Using the S3 API" href="/administrator-guide/s3-api/configuring-using-s3-api.html">
-              Configuring and Using the S3 API     
+              Configuring and Using the S3 API
               <span class="tag-container">
+              
               
               
               </span>
@@ -2166,8 +2389,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Creating and Managing S3 Access Keys" href="/administrator-guide/s3-api/creating-managing-s3-access-keys.html">
-              Creating and Managing S3 Access Keys     
+              Creating and Managing S3 Access Keys
               <span class="tag-container">
+              
               
               
               </span>
@@ -2181,8 +2405,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Creating and Managing S3 Buckets" href="/administrator-guide/s3-api/creating-managing-s3-buckets.html">
-              Creating and Managing S3 Buckets     
+              Creating and Managing S3 Buckets
               <span class="tag-container">
+              
               
               
               </span>
@@ -2196,8 +2421,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Managing Access to S3 Buckets" href="/administrator-guide/s3-api/managing-access-to-s3-buckets.html">
-              Managing Access to S3 Buckets     
+              Managing Access to S3 Buckets
               <span class="tag-container">
+              
               
               
               </span>
@@ -2211,8 +2437,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Managing Access Policies for S3 Buckets" href="/administrator-guide/s3-api/managing-access-policies-for-s3-buckets.html">
-              Managing Access Policies for S3 Buckets     
+              Managing Access Policies for S3 Buckets
               <span class="tag-container">
+              
               
               
               </span>
@@ -2226,8 +2453,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Managing Multipart S3 Uploads" href="/administrator-guide/s3-api/managing-multipart-uploads.html">
-              Managing Multipart S3 Uploads     
+              Managing Multipart S3 Uploads
               <span class="tag-container">
+              
               
               
               </span>
@@ -2241,8 +2469,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Managing S3 Bucket Versioning" href="/administrator-guide/s3-api/managing-s3-bucket-versioning.html">
-              Managing S3 Bucket Versioning     
+              Managing S3 Bucket Versioning
               <span class="tag-container">
+              
               
               
               </span>
@@ -2256,8 +2485,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Managing Object Lock for S3 Buckets" href="/administrator-guide/s3-api/managing-object-lock-for-s3-buckets.html">
-              Managing Object Lock for S3 Buckets     
+              Managing Object Lock for S3 Buckets
               <span class="tag-container">
+              
               
               
               </span>
@@ -2271,8 +2501,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Supported Functionality and Limits" href="/administrator-guide/s3-api/supported-s3-functionality-known-limits.html">
-              Supported Functionality and Limits     
+              Supported Functionality and Limits
               <span class="tag-container">
+              
               
               
               </span>
@@ -2287,11 +2518,11 @@ fetch('/data/website.json')
      
       
   
-  
+
   
 
   
-  
+
   
   <li>
   
@@ -2301,24 +2532,37 @@ fetch('/data/website.json')
   
   
   
-  
-  
-
-  
 
   
 
   Monitoring and Metrics
   </a>
- 
+
       <ul>
           
           
           
           <li>
-            <a title="Enabling Cloud-Based Monitoring and Remote Support" href="/administrator-guide/monitoring-and-metrics/enabling-cloud-based-monitoring-remote-support.html">
-              Enabling Cloud-Based Monitoring and Remote Support     
+            <a title="Enabling Nexus Remote Support" href="/administrator-guide/monitoring-and-metrics/enabling-nexus-remote-support.html">
+              Enabling Nexus Remote Support
               <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Enabling Cloud-Based Monitoring and VPN Remote Support" href="/administrator-guide/monitoring-and-metrics/enabling-cloud-based-monitoring-vpn-remote-support.html">
+              Enabling Cloud-Based Monitoring and VPN Remote Support
+              <span class="tag-container">
+              
               
               
               </span>
@@ -2332,8 +2576,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Connecting to Cloud-Based Monitoring and S3 with a Custom Proxy" href="/administrator-guide/monitoring-and-metrics/connecting-cloud-based-monitoring-s3-custom-proxy.html">
-              Connecting to Cloud-Based Monitoring and S3 with a Custom Proxy     
+              Connecting to Cloud-Based Monitoring and S3 with a Custom Proxy
               <span class="tag-container">
+              
               
               
               </span>
@@ -2347,8 +2592,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Restoring the Default Values for Cloud-Based and Nexus Monitoring" href="/administrator-guide/monitoring-and-metrics/restoring-default-values-cloud-based-nexus-monitoring.html">
-              Restoring the Default Values for Cloud-Based and Nexus Monitoring     
+              Restoring the Default Values for Cloud-Based and Nexus Monitoring
               <span class="tag-container">
+              
               
               
               </span>
@@ -2361,9 +2607,10 @@ fetch('/data/website.json')
           
           
           <li>
-            <a title="How Audit Logging Works in Qumulo Core" href="/administrator-guide/monitoring-and-metrics/how-audit-logging-works.html">
-              How Audit Logging Works in Qumulo Core     
+            <a title="How Audit Logging Works" href="/administrator-guide/monitoring-and-metrics/how-audit-logging-works.html">
+              How Audit Logging Works
               <span class="tag-container">
+              
               
               
               </span>
@@ -2379,6 +2626,7 @@ fetch('/data/website.json')
             <a title="OpenMetrics API Specification" href="/administrator-guide/monitoring-and-metrics/openmetrics-api-specification.html">
               OpenMetrics API Specification
               <span class="tag-container">
+              
               
               
               </span>
@@ -2398,7 +2646,6 @@ fetch('/data/website.json')
 
 <!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
 <script>$("li.active").parents('li').addClass("active");</script>
-
 
             </div>
             
@@ -2426,7 +2673,7 @@ fetch('/data/website.json')
   <a href='/administrator-guide/monitoring-and-metrics/index.html'>Monitoring and Metrics</a> <span>&rsaquo;</span>
 
 
-  Qumulo OpenMetrics API Specification
+  Qumulo Core OpenMetrics API Specification
   </div>
 </nav>
 
@@ -2434,7 +2681,8 @@ fetch('/data/website.json')
             
 
 <div class="post-header">
-   <h1 class="post-title-main">Qumulo OpenMetrics API Specification</h1>
+   <div class="star" id="page-star" title="Save to Favorites">&#9733;</div>
+   <h1 class="post-title-main">Qumulo Core OpenMetrics API Specification</h1>
 </div>
 
 
@@ -2497,22 +2745,32 @@ $(document).ready(function() {
   <tbody>
     <tr>
       <td><a id="metric-type-counter"></a><code>counter</code></td>
-      <td>An integer that increases monotonically from zero, stored in <code>&lt;metric_name&gt;_count</code>. <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> During normal operation, the value of <code>counter</code> never decreases.</div>
-</td>
+      <td>
+        An integer that increases monotonically from zero, stored in <code>&lt;metric_name&gt;&lowbar;count</code>.
+        <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> During normal operation, the value of <code>counter</code> never decreases.</div>
+
+      </td>
     </tr>
     <tr>
       <td><a id="metric-type-gauge"></a><code>gauge</code></td>
-      <td>A value that represents a single integer (similar to <code>counter</code>), stored in <code>&lt;metric_name&gt;</code>. <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> During normal operation, the value of a <code>gauge</code> metric might increase or decrease.</div>
-</td>
+      <td>
+        A value that represents a single integer (similar to <code>counter</code>), stored in <code>&lt;metric_name&gt;</code>.
+        <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> During normal operation, the value of a <code>gauge</code> metric might increase or decrease.</div>
+
+      </td>
     </tr>
     <tr>
       <td><a id="metric-type-histogram"></a><code>histogram</code></td>
-      <td><p>A representation of a series of <em>buckets</em>, where each bucket tracks values within a specific range.</p><p>A histogram has a <code>count</code> field and a <code>sum</code> field, stored in <code>&lt;metric_name&gt;_count</code> (the total number of samples) and <code>&lt;metric_name&gt;_sum</code> (the sum of all samples). Qumulo Core emits a single bucket that contains all samples.</p> <div class="alert alert-success" role="alert"><span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br /> You can use <code>histogram</code> metrics to keep track of averages by dividing the <code>sum</code> field by the <code>count</code> field.</div>
-</td>
+      <td>
+        <p>A representation of a series of <em>buckets</em>, where each bucket tracks values within a specific range.</p>
+        <p>A histogram has a <code>count</code> field and a <code>sum</code> field, stored in <code>&lt;metric_name&gt;&lowbar;count</code> (the total number of samples) and <code>&lt;metric_name&gt;&lowbar;sum</code> (the sum of all samples). Qumulo Core emits a single bucket that contains all samples.</p>
+        <div class="alert alert-success" role="alert"><span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br /> You can use <code>histogram</code> metrics to keep track of averages by dividing the <code>sum</code> field by the <code>count</code> field.</div>
+
+      </td>
     </tr>
     <tr>
       <td><a id="metric-type-info"></a><code>info</code></td>
-      <td>Informational text about the system, stored in <code>&lt;metric_name&gt;_info</code>. An <code>info</code> metric always has a value of <code>1</code> and labels that contain detailed information.</td>
+      <td>Informational text about the system, stored in <code>&lt;metric_name&gt;&lowbar;info</code>. An <code>info</code> metric always has a value of <code>1</code> and labels that contain detailed information.</td>
     </tr>
   </tbody>
 </table>
@@ -2524,8 +2782,6 @@ $(document).ready(function() {
 
 <h2 id="available-metrics">Available Metrics</h2>
 <p>The following table lists metric names, types, labels, and descriptions.</p>
-
-<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> For Qumulo as a Service, all metrics with a <code class="language-plaintext highlighter-rouge">node_id</code> label are unavailable because they refer to specific hardware.</div>
 
 <table class="pdf-reduce">
   <thead>
@@ -2543,8 +2799,11 @@ $(document).ready(function() {
       <td><a href="#metric-type-info"><code>info</code></a></td>
       <td>
         <ul>
+          <li class="pdf-friendly"><a href="#metric-label-cluster_type"><code>cluster_type</code></a></li>
+
           <li class="pdf-friendly"><code>max_drive_failures</code></li>
           <li class="pdf-friendly"><code>max_node_failures</code></li>
+
           <li class="pdf-friendly"><code>name</code></li>
           <li class="pdf-friendly"><code>platform</code></li>
           <li class="pdf-friendly"><code>service_model</code></li>
@@ -2552,28 +2811,68 @@ $(document).ready(function() {
           <li class="pdf-friendly">
             <code>version</code>
             <div class="alert alert-success" role="alert"><span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br /> Don’t confuse this label for the <em>Qumulo Core version</em> with the identically named label for the <em>kernel version</em> for the <code>qumulo_kernel</code> metric.</div>
- 
+
           </li>
         </ul>
       </td>
       <td>5.3.0</td>
-      <td>Qumulo Core information, including the cluster name, cluster UUID, and the current Qumulo Core version.</td>
+      <td>
+        Qumulo Core information, including the cluster name, cluster UUID, and the current Qumulo Core version.
+      </td>
     </tr>
 
+    <tr>
+      <td><code>qumulo_kernel</code></td>
+      <td><a href="#metric-type-info"><code>info</code></a></td>
+      <td>
+        <ul>
+          <li class="pdf-friendly"><code>cmdline</code></li>
+          <li class="pdf-friendly"><a href="#metric-label-node_id"><code>node_id</code></a></li>
+          <li class="pdf-friendly">
+            <code>version</code>
+            <div class="alert alert-success" role="alert"><span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br /> Don’t confuse this label for the <em>kernel version</em> with the identically named label for the <em>Qumulo Core version</em> for the <code>qumulo</code> metric.</div>
+
+          </li>
+        </ul>
+      </td>
+      <td>7.2.0.4</td>
+      <td>
+        Kernel information for each node in a cluster, including the command-line arguments that were used for starting the kernel, the node ID, and the kernel version.
+        <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> The <code>qumulo_kernel</code> metric is available only on nodes configured by using the <a href="../getting-started/installing-product-package.html">Qumulo Core Product Package</a>.</div>
+
+      </td>
+    </tr>
     <tr>
       <td><code>qumulo_node</code></td>
       <td><a href="#metric-type-info"><code>info</code></a></td>
       <td>
         <ul>
+          <li class="pdf-friendly"><code>form_factor</code></li>
+          <li class="pdf-friendly"><a href="#metric-label-hardware_detection_mode"><code>hardware_detection_mode</code></a></li>
+          <li class="pdf-friendly"><a href="#metric-label-network_management_mode"><code>network_management_mode</code></a></li>
           <li class="pdf-friendly"><a href="#metric-label-node_id"><code>node_id</code></a></li>
           <li class="pdf-friendly"><code>node_model</code></li>
+          <li class="pdf-friendly"><code>node_uuid</code></li>
+          <li class="pdf-friendly"><code>serial_number</code></li>
         </ul>
       </td>
       <td>6.0.2</td>
-      <td>Information about the nodes in the cluster, including the node ID and the node model</td>
+      <td>
+        Information about nodes in the cluster, including:
+        <ul>
+          <li class="pdf-friendly">Form factor in Qumulo Core 7.2.2 (and higher)</li>
+          <li class="pdf-friendly">Hardware detection mode</li>
+          <li class="pdf-friendly">Network management mode in Qumulo Core 7.5.1.2 (and higher)</li>          
+          <li class="pdf-friendly">ID</li>
+          <li class="pdf-friendly">Model in Qumulo Core 6.0.2 (and higher)</li>
+          <li class="pdf-friendly">UUID</li>
+          <li class="pdf-friendly">Serial number</li>
+        </ul>
+      </td>
     </tr>
+
     <tr>
-      <td><code>qumulo_ad_netlogon_request<br />_errors</code></td>
+      <td><code>qumulo_ad_netlogon_request<br />&#95;errors</code></td>
       <td><a href="#metric-type-counter"><code>counter</code></a></td>
       <td>
         <ul>
@@ -2585,7 +2884,7 @@ $(document).ready(function() {
       <td>The total number of Active Directory (AD) <code>NETLOGON</code> requests that resulted in an error</td>
     </tr>
     <tr>
-      <td><code>qumulo_ad_netlogon_request<br />_latency_seconds</code></td>
+      <td><code>qumulo_ad_netlogon_request<br />&#95;latency_seconds</code></td>
       <td><a href="#metric-type-histogram"><code>histogram</code></a></td>
       <td>
         <ul>
@@ -2608,6 +2907,7 @@ $(document).ready(function() {
       <td>5.3.0</td>
       <td>The total number of completed AD <code>NETLOGON</code> operations</td>
     </tr>
+
     <tr>
       <td><code>qumulo_cpu_crit_temperature_celsius</code></td>
       <td><a href="#metric-type-gauge"><code>gauge</code></a></td>
@@ -2617,11 +2917,11 @@ $(document).ready(function() {
           <li class="pdf-friendly"><a href="#metric-label-node_id"><code>node_id</code></a></li>
         </ul>
       </td>
-      <td>7.2.0.2</td>
+      <td>7.2.0.4</td>
       <td>The critical temperature threshold for each physical CPU</td>
     </tr>
     <tr>
-      <td><code>qumulo_cpu_max_temperature<br />_celsius</code></td>
+      <td><code>qumulo_cpu_max_temperature<br />&#95;celsius</code></td>
       <td><a href="#metric-type-gauge"><code>gauge</code></a></td>
       <td>
         <ul>
@@ -2633,7 +2933,7 @@ $(document).ready(function() {
       <td>The maximum temperature threshold for each physical CPU</td>
     </tr>
     <tr>
-      <td><code>qumulo_cpu_temperature<br />_celsius</code></td>
+      <td><code>qumulo_cpu_temperature<br />&#95;celsius</code></td>
       <td><a href="#metric-type-gauge"><code>gauge</code></a></td>
       <td>
         <ul>
@@ -2643,9 +2943,9 @@ $(document).ready(function() {
       </td>
       <td>5.3.0</td>
       <td>The temperature for each physical CPU, in degrees Celsius</td>
-    </tr>    
+    </tr>
     <tr>
-      <td><code>qumulo_disk_endurance<br />_percent</code></td>
+      <td><code>qumulo_disk_endurance<br />&#95;percent</code></td>
       <td><a href="#metric-type-gauge"><code>gauge</code></a></td>
       <td>
         <ul>
@@ -2658,7 +2958,7 @@ $(document).ready(function() {
       <td>The remaining disk endurance value for each disk in the cluster, ranging <code>100</code> (no disk wear) to <code>0</code> (disk is worn fully)</td>
     </tr>
     <tr>
-      <td><code>qumulo_disk_transport<br />_errors</code></td>
+      <td><code>qumulo_disk_transport<br />&#95;errors</code></td>
       <td><a href="#metric-type-counter"><code>counter</code></a></td>
       <td>
         <ul>
@@ -2671,7 +2971,7 @@ $(document).ready(function() {
       <td>The total number of communication errors between the specified drive and its host.</td>
     </tr>
     <tr>
-      <td><code>qumulo_disk_uncorrectable<br />_media_errors</code></td>
+      <td><code>qumulo_disk_uncorrectable<br />&#95;media_errors</code></td>
       <td><a href="#metric-type-counter"><code>counter</code></a></td>
       <td>
         <ul>
@@ -2697,7 +2997,7 @@ $(document).ready(function() {
       <td>The health of each disk in the cluster, ranging from <code>0</code> (the disk is healthy) to <code>1</code> (the disk is unhealthy)</td>
     </tr>
     <tr>
-      <td><code>qumulo_disk_operation<br />_latency_seconds</code></td>
+      <td><code>qumulo_disk_operation<br />&#95;latency_seconds</code></td>
       <td><a href="#metric-type-histogram"><code>histogram</code></a></td>
       <td>
         <ul>
@@ -2722,6 +3022,22 @@ $(document).ready(function() {
       <td>5.3.0</td>
       <td>The fan speed, in RPM</td>
     </tr>
+
+    <tr>
+      <td><code>qumulo_fault_tolerance_metrics_current_remaining_disk_failures</code></td>
+      <td><a href="#metric-type-gauge"><code>gauge</code></a></td>
+      <td>&mdash;</td>
+      <td>7.5.2</td>
+      <td>The current number of disk failures that the cluster can tolerate.</td>
+    </tr>
+
+    <tr>
+      <td><code>qumulo_fault_tolerance_metrics_current_remaining_node_failures</code></td>
+      <td><a href="#metric-type-gauge"><code>gauge</code></a></td>
+      <td>&mdash;</td>
+      <td>7.5.2</td>
+      <td>The current number of node failures that the cluster can tolerate.</td>
+    </tr>
     <tr>
       <td><code>qumulo_fs_capacity_bytes</code></td>
       <td><a href="#metric-type-gauge"><code>gauge</code></a></td>
@@ -2730,7 +3046,7 @@ $(document).ready(function() {
       <td>The total cluster space, in bytes</td>
     </tr>
     <tr>
-      <td><code>qumulo_fs_directory<br />_tree_entries</code></td>
+      <td><code>qumulo_fs_directory<br />&#95;tree_entries</code></td>
       <td><a href="#metric-type-gauge"><code>gauge</code></a></td>
       <td>
         <ul>
@@ -2742,7 +3058,7 @@ $(document).ready(function() {
       <td>The number of file system objects on the cluster, sorted by object type</td>
     </tr>
     <tr>
-      <td><code>qumulo_fs_directory<br />_used_bytes</code></td>
+      <td><code>qumulo_fs_directory<br />&#95;used_bytes</code></td>
       <td><a href="#metric-type-gauge"><code>gauge</code></a></td>
       <td>
         <ul>
@@ -2758,7 +3074,36 @@ $(document).ready(function() {
       <td><a href="#metric-type-gauge"><code>gauge</code></a></td>
       <td>&mdash;</td>
       <td>5.3.0</td>
-      <td>The free space on the cluster, in bytes</td>
+      <td>
+        The free space on the cluster, in bytes
+        <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> This metric doesn’t include the cached data on spoke portals.</div>
+
+      </td>
+    </tr>
+    <tr>
+      <td><code>qumulo_fs_portal_count</code></td>
+      <td><a href="#metric-type-gauge"><code>gauge</code></a></td>
+      <td>
+        <ul>
+          <li class="pdf-friendly"><a href="#metric-label-portal_state"><code>portal_state</code></a></li>
+          <li class="pdf-friendly"><a href="#metric-label-portal_type"><code>portal_type</code></a></li>
+        </ul>
+      </td>
+      <td>7.4.2.1</td>
+      <td>The number of portals for each state, not including portals in <code>Pending</code> and <code>Unlinked</code> states</td>
+    </tr>
+    <tr>
+      <td><code>qumulo_fs_portal_root_shared_bytes</code></td>
+      <td><a href="#metric-type-gauge"><code>gauge</code></a></td>
+      <td>
+        <ul>
+          <li class="pdf-friendly"><a href="#metric-label-portal_peer"><code>portal_peer</code></a></li>
+          <li class="pdf-friendly"><a href="#metric-label-portal_root"><code>portal_root</code></a></li>
+          <li class="pdf-friendly"><a href="#metric-label-portal_type"><code>portal_type</code></a></li>
+        </ul>
+      </td>
+      <td>7.5.3</td>
+      <td>The amount of data that a hub portal root directory shares with the cluster in a portal relationship with the current cluster.</td>
     </tr>
     <tr>
       <td><code>qumulo_fs_snapshots</code></td>
@@ -2768,7 +3113,19 @@ $(document).ready(function() {
       <td>The number of snapshots on the cluster</td>
     </tr>
     <tr>
-      <td><code>qumulo_ldap_lookup<br />_request_errors</code></td>
+      <td><code>qumulo_fs_used_bytes</code></td>
+      <td><a href="#metric-type-gauge"><code>gauge</code></a></td>
+      <td>
+        <ul>
+          <li class="pdf-friendly"><a href="#metric-label-fs_type"><code>fs_type</code></a></li>
+          <li class="pdf-friendly"><a href="#metric-label-fs_uuid"><code>fs_uuid</code></a></li>
+        </ul>
+      </td>
+      <td>7.4.2.1</td>
+      <td>The amount of space that a file system uses, in bytes</td>
+    </tr>
+    <tr>
+      <td><code>qumulo_ldap_lookup<br />&#95;request_errors</code></td>
       <td><a href="#metric-type-counter"><code>counter</code></a></td>
       <td>
         <ul>
@@ -2780,7 +3137,7 @@ $(document).ready(function() {
       <td>The total number of LDAP requests that resulted in an error</td>
     </tr>
     <tr>
-      <td><code>qumulo_ldap_lookup<br />_request_latency_seconds</code></td>
+      <td><code>qumulo_ldap_lookup<br />&#95;request_latency_seconds</code></td>
       <td><a href="#metric-type-histogram"><code>histogram</code></a></td>
       <td>
         <ul>
@@ -2792,7 +3149,7 @@ $(document).ready(function() {
       <td>The total latency of LDAP requests</td>
     </tr>
     <tr>
-      <td><code>qumulo_ldap_lookup<br />_requests</code></td>
+      <td><code>qumulo_ldap_lookup<br />&#95;requests</code></td>
       <td><a href="#metric-type-counter"><code>counter</code></a></td>
       <td>
         <ul>
@@ -2804,14 +3161,14 @@ $(document).ready(function() {
       <td>The total number of completed LDAP requests</td>
     </tr>
     <tr>
-      <td><code>qumulo_ldap_operation<br />_errors</code></td>
+      <td><code>qumulo_ldap_operation<br />&#95;errors</code></td>
       <td><a href="#metric-type-counter"><code>counter</code></a></td>
       <td><a href="#metric-label-domain_url"><code>domain_url</code></a></td>
       <td>5.3.0</td>
       <td>The total number of LDAP operations that resulted in an error</td>
     </tr>
     <tr>
-      <td><code>qumulo_ldap_operation<br />_latency_seconds</code></td>
+      <td><code>qumulo_ldap_operation<br />&#95;latency_seconds</code></td>
       <td><a href="#metric-type-histogram"><code>histogram</code></a></td>
       <td><a href="#metric-label-domain_url"><code>domain_url</code></a></td>
       <td>5.3.0</td>
@@ -2824,15 +3181,16 @@ $(document).ready(function() {
       <td>5.3.0</td>
       <td>The total number of completed LDAP operations</td>
     </tr>
+
     <tr>
-      <td><code>qumulo_memory_correctable<br />_ecc_errors</code></td>
+      <td><code>qumulo_memory_correctable<br />&#95;ecc_errors</code></td>
       <td><a href="#metric-type-counter"><code>counter</code></a></td>
       <td><a href="#metric-label-node_id"><code>node_id</code></a></td>
       <td>5.3.0</td>
       <td>The total number of memory errors that Qumulo Core corrected automatically</td>
     </tr>
     <tr>
-      <td><code>qumulo_network_interface<br />_is_down</code></td>
+      <td><code>qumulo_network_interface<br />&#95;is_down</code></td>
       <td><a href="#metric-type-gauge"><code>gauge</code></a></td>
       <td>
         <ul>
@@ -2846,7 +3204,7 @@ $(document).ready(function() {
       <td>The interface status, <code>0</code> (interface is up) or <code>1</code> (interface is down)</td>
     </tr>
     <tr>
-      <td><code>qumulo_network_interface<br />_link_speed_bits_per_second</code></td>
+      <td><code>qumulo_network_interface<br />&#95;link_speed_bits_per_second</code></td>
       <td><a href="#metric-type-gauge"><code>gauge</code></a></td>
       <td>
         <ul>
@@ -2860,7 +3218,7 @@ $(document).ready(function() {
       <td>The negotiated link speed for the specified interface</td>
     </tr>
     <tr>
-      <td><code>qumulo_network_interface<br />_receive_errors</code></td>
+      <td><code>qumulo_network_interface<br />&#95;receive_errors</code></td>
       <td><a href="#metric-type-counter"><code>counter</code></a></td>
       <td>
         <ul>
@@ -2874,7 +3232,7 @@ $(document).ready(function() {
       <td>The total number of receive errors on the specified interface</td>
     </tr>
     <tr>
-      <td><code>qumulo_network_interface<br />_received_bytes</code></td>
+      <td><code>qumulo_network_interface<br />&#95;received_bytes</code></td>
       <td><a href="#metric-type-counter"><code>counter</code></a></td>
       <td>
         <ul>
@@ -2888,7 +3246,7 @@ $(document).ready(function() {
       <td>The total bytes received on the specified interface</td>
     </tr>
     <tr>
-      <td><code>qumulo_network_interface<br />_received_packets</code></td>
+      <td><code>qumulo_network_interface<br />&#95;received_packets</code></td>
       <td><a href="#metric-type-counter"><code>counter</code></a></td>
       <td>
         <ul>
@@ -2902,7 +3260,7 @@ $(document).ready(function() {
       <td>The total number of packets received on the specified interface</td>
     </tr>
     <tr>
-      <td><code>qumulo_network_interface<br />_transmit_errors</code></td>
+      <td><code>qumulo_network_interface<br />&#95;transmit_errors</code></td>
       <td><a href="#metric-type-counter"><code>counter</code></a></td>
       <td>
         <ul>
@@ -2916,7 +3274,7 @@ $(document).ready(function() {
       <td>The total number of transmission errors on the specified interface</td>
     </tr>
     <tr>
-      <td><code>qumulo_network_interface<br />_transmitted_bytes</code></td>
+      <td><code>qumulo_network_interface<br />&#95;transmitted_bytes</code></td>
       <td><a href="#metric-type-counter"><code>counter</code></a></td>
       <td>
         <ul>
@@ -2930,7 +3288,7 @@ $(document).ready(function() {
       <td>The total number of bytes transmitted on the specified interface</td>
     </tr>
     <tr>
-      <td><code>qumulo_network_interface<br />_transmitted_packets</code></td>
+      <td><code>qumulo_network_interface<br />&#95;transmitted_packets</code></td>
       <td><a href="#metric-type-counter"><code>counter</code></a></td>
       <td>
         <ul>
@@ -2944,7 +3302,7 @@ $(document).ready(function() {
       <td>The total number of packets transmitted on the specified interface</td>
     </tr>
     <tr>
-      <td><code>qumulo_power_supply<br />_is_unhealthy</code></td>
+      <td><code>qumulo_power_supply<br />&#95;is_unhealthy</code></td>
       <td><a href="#metric-type-gauge"><code>gauge</code></a></td>
       <td>
         <ul>
@@ -2955,22 +3313,23 @@ $(document).ready(function() {
       <td>5.3.0</td>
       <td>PSU health, <code>0</code> (healthy) or <code>1</code> (unplugged, removed, or unresponsive)</td>
     </tr>
+
     <tr>
-      <td><code>qumulo_protocol_client<br />_connections</code></td>
+      <td><code>qumulo_protocol_client<br />&#95;connections</code></td>
       <td><a href="#metric-type-counter"><code>counter</code></a></td>
       <td><a href="#metric-label-protocol"><code>protocol</code></a></td>
       <td>5.3.0</td>
       <td>The total number of clients that have connected to the specified protocol</td>
     </tr>
     <tr>
-      <td><code>qumulo_protocol_client<br />_disconnections</code></td>
+      <td><code>qumulo_protocol_client<br />&#95;disconnections</code></td>
       <td><a href="#metric-type-counter"><code>counter</code></a></td>
       <td><a href="#metric-label-protocol"><code>protocol</code></a></td>
       <td>5.3.0</td>
       <td>The total number of clients that have disconnected from the specified protocol</td>
     </tr>
     <tr>
-      <td><code>qumulo_protocol_operation<br />_bytes</code></td>
+      <td><code>qumulo_protocol_operation<br />&#95;bytes</code></td>
       <td><a href="#metric-type-counter"><code>counter</code></a></td>
       <td>
         <ul>
@@ -2984,7 +3343,7 @@ $(document).ready(function() {
       <td>The total bytes that protocol operations have transferred</td>
     </tr>
     <tr>
-      <td><code>qumulo_protocol_operation<br />_latency_seconds</code></td>
+      <td><code>qumulo_protocol_operation<br />&#95;latency_seconds</code></td>
       <td><a href="#metric-type-histogram"><code>histogram</code></a></td>
       <td>
         <ul>
@@ -3011,8 +3370,9 @@ $(document).ready(function() {
       <td>5.3.0</td>
       <td>The total number of completed protocol operations</td>
     </tr>
+
     <tr>
-      <td><code>qumulo_quorum_node_is<br />_offline</code></td>
+      <td><code>qumulo_quorum_node_is<br />&#95;offline</code></td>
       <td><a href="#metric-type-gauge"><code>gauge</code></a></td>
       <td><a href="#metric-label-node_id"><code>node_id</code></a></td>
       <td>5.3.0</td>
@@ -3025,6 +3385,7 @@ $(document).ready(function() {
       <td>5.3.0</td>
       <td>The time synchronization status for each node in the cluster, <code>0</code> (time is synchronized) or <code>1</code> (time isn't synchronized)</td>
     </tr>
+
   </tbody>
 </table>
 
@@ -3040,6 +3401,7 @@ $(document).ready(function() {
     </tr>
   </thead>
   <tbody>
+
     <tr>
       <td><a id="metric-label-bond"></a><code>bond</code></td>
       <td>
@@ -3050,23 +3412,40 @@ $(document).ready(function() {
       </td>
       <td>The bond to which a network interface belongs</td>
     </tr>
+
+    <tr>
+      <td><a id="metric-label-cluster_type"></a><code>cluster_type</code></td>
+      <td>
+        <ul>
+          <li class="pdf-friendly"><code>protected_cluster</code></li>
+          <li class="pdf-friendly"><code>unprotected_edge</code></li>
+        </ul>
+      </td>
+      <td>The type of cluster</td>
+    </tr>
+
     <tr>
       <td><a id="metric-label-cpu"></a><code>cpu</code></td>
       <td>A non-negative integer</td>
       <td>The CPU index in the node</td>
     </tr>
+
     <tr>
       <td><a id="metric-label-data_type"></a><code>data_type</code></td>
       <td>
         <ul>
           <li class="pdf-friendly"><code>data</code>: Read or write operations on the data of a file.</li>
           <li class="pdf-friendly"><code>metadata</code>: Operations (such as <code>lookup</code>, <code>stat</code>, or <code>getattr</code>) unrelated to a file's data</li>
-          <li class="pdf-friendly"><code>none</code>: Operations that operate on neither the file data nor the metadata. <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> The protocol often requires these operations for session negotiation and authentication.</div>
-</li>
+          <li class="pdf-friendly">
+            <code>none</code>: Operations that apply to neither the file data nor the metadata.
+            <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> The protocol often requires these operations for session negotiation and authentication.</div>
+
+          </li>
         </ul>
       </td>
       <td>The data type that an operation transfers</td>
     </tr>
+
     <tr>
       <td><a id="metric-label-disk_type"></a><code>disk_type</code></td>
       <td>
@@ -3077,16 +3456,19 @@ $(document).ready(function() {
       </td>
       <td>The underlying storage type</td>
     </tr>
+
     <tr>
       <td><a id="metric-label-domain_url"></a><code>domain_url</code></td>
       <td>An Active Directory domain (for example, <code>my-domain.com</code>) or an LDAP bind URI (for example, <code>ldap://my-server.my-domain.com</code>)</td>
       <td>The URL of the domain</td>
     </tr>
+
     <tr>
       <td><a id="metric-label-drive_bay"></a><code>drive_bay</code></td>
       <td>A drive bay name. For example: <code>b3</code>, <code>1.1</code></td>
       <td>The physical drive bay in the chassis.</td>
     </tr>
+
     <tr>
       <td><a id="metric-label-entry_type"></a><code>entry_type</code></td>
       <td>
@@ -3100,16 +3482,49 @@ $(document).ready(function() {
       </td>
       <td>The file system object type</td>
     </tr>
+
     <tr>
       <td><a id="metric-label-fan"></a><code>fan</code></td>
       <td>A fan name, for example <code>system fan 1</code></td>
       <td>The fan name</td>
     </tr>
+
+    <tr>
+      <td><a id="metric-label-fs_type"></a><code>fs_type</code></td>
+      <td>
+        <ul>
+          <li class="pdf-friendly"><code>local</code>: The portion of the file system used for persistent data, including data in hub portal root directories</li>
+          <li class="pdf-friendly"><code>spoke</code>: The portion of the file system used for cached data on spoke portals</li>
+        </ul>
+      </td>
+      <td>File system type</td>
+    </tr>
+    <tr>
+      <td><a id="metric-label-fs_uuid"></a><code>fs_uuid</code></td>
+      <td>
+        A UUID that identifies a local file system.
+        <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> The UUID of a spoke portal file system is identical to the UUID of the corresponding hub portal file system.</div>
+
+      </td>
+      <td>File system ID</td>
+    </tr>
+    <tr>
+      <td><a id="metric-label-hardware_detection_mode"></a><code>hardware_detection_mode</code></td>
+      <td>
+        <ul>
+          <li class="pdf-friendly"><code>chassis</code>: Uses a predefined, static hardware layout (chassis files) for component identification</li>
+          <li class="pdf-friendly"><code>run_anywhere</code>: Detects available hardware components automatically and adapts behavior dynamically</li>
+        </ul>
+      </td>
+      <td>The method for detecting and managing hardware</td>
+    </tr>
+
     <tr>
       <td><a id="metric-label-interface"></a><code>interface</code></td>
       <td>An interface name, for example <code>eth0</code></td>
       <td>The interface name</td>
     </tr>
+
     <tr>
       <td><a id="metric-label-io_type"></a><code>io_type</code></td>
       <td>
@@ -3123,17 +3538,34 @@ $(document).ready(function() {
       </td>
       <td>The I/O that an operation performs</td>
     </tr>
+
     <tr>
       <td><a id="metric-label-location"></a><code>location</code></td>
       <td>A location on the chassis, for example <code>left</code> or <code>right</code></td>
-      <td>The location on the chassis. <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> For PSU, this location is relative to the back of the node.</div>
-</td>
+      <td>
+        The location on the chassis.
+        <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> For PSU, this location is relative to the back of the node.</div>
+
+      </td>
     </tr>
+
+    <tr>
+      <td><a id="metric-label-network_management_mode"></a><code>network_management_mode</code></td>
+      <td>
+        <ul>
+          <li class="pdf-friendly"><code>host_managed</code>: Network interfaces managed by the host system</li>
+          <li class="pdf-friendly"><code>qumulo_managed</code>: Network interfaces managed by Qumulo Core</li>
+        </ul>
+      </td>
+      <td>The management mode for network interfaces</td>
+    </tr>
+
     <tr>
       <td><a id="metric-label-node_id"></a><code>node_id</code></td>
       <td>A positive integer that represents a node ID in the cluster.</td>
       <td>A value that differentiates between the different nodes in a cluster</td>
     </tr>
+
     <tr>
       <td><a id="metric-label-op_name"></a><code>op_name</code></td>
       <td>Any operation name, including NFSv3, NFSv4.1, SMBv2, SMBv3, REST, S3, replication, or FTP</td>
@@ -3144,6 +3576,36 @@ $(document).ready(function() {
       <td>Slash (<code>/</code>)</td>
       <td>The path to a directory in the file system</td>
     </tr>
+    <tr>
+      <td><a id="metric-label-portal_state"></a><code>portal_state</code></td>
+      <td>
+        <ul>
+          <li class="pdf-friendly"><code>authorized</code>: A portal, ready for file system access, for which both clusters approved a portal relationship</li>
+          <li class="pdf-friendly"><code>deleting</code>: A portal in process of synchronizing outstanding changes before being deleted</li>
+        </ul>
+      </td>
+      <td>The state of a spoke portal or a hub portal</td>
+    </tr>
+    <tr>
+      <td><a id="metric-label-portal_peer"></a><code>portal_peer</code></td>
+      <td>A version 4 UUID</td>
+      <td>The UUID of the cluster in a portal relationship with the current cluster.</td>
+    </tr>
+    <tr>
+      <td><a id="metric-label-portal_root"></a><code>portal_root</code></td>
+      <td>A QFSD API file ID string</td>
+      <td>The file ID of the hub portal root directory.</td>
+    </tr>
+    <tr>
+      <td><a id="metric-label-portal_type"></a><code>portal_type</code></td>
+      <td>
+        <ul>
+          <li class="pdf-friendly"><code>hub</code>: Hub portal</li>
+          <li class="pdf-friendly"><code>spoke</code>: Spoke portal</li>
+        </ul>
+      </td>
+      <td>The portal type</td>
+    </tr>    
     <tr>
       <td><a id="metric-label-protocol"></a><code>protocol</code></td>
       <td>
@@ -3158,6 +3620,7 @@ $(document).ready(function() {
       </td>
       <td>The protocol of the recorded operation</td>
     </tr>
+
     <tr>
       <td><a id="metric-label-role"></a><code>role</code></td>
       <td>
@@ -3166,9 +3629,13 @@ $(document).ready(function() {
           <li class="pdf-friendly"><code>backend</code></li>
         </ul>
       </td>
-      <td>The role of the interface <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> <code>frontend</code> includes protocol, management, and replication traffic. <code>backend</code> includes all intra-node communications.</div>
-</td>
+      <td>
+        The role of the interface
+        <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> <code>frontend</code> includes protocol, management, and replication traffic. <code>backend</code> includes all intra-node communications.</div>
+
+      </td>
     </tr>
+
     <tr>
       <td><a id="metric-label-server_url"></a><code>server_url</code></td>
       <td>A hostname (for example, <code>ad.my-domain.com</code>) or an IP address</td>
@@ -3184,7 +3651,7 @@ $(document).ready(function() {
         </ul>
       </td>
       <td>The data type that uses space</td>
-    </tr>          
+    </tr>
   </tbody>
 </table>
 
@@ -3220,197 +3687,6 @@ $(document).ready(function() {
       
         
     
-  
-    
-      
-        
-    
-      
-        
-    
-      
-        
-    
-      
-        
-    
-  
-    
-      
-        
-    
-      
-        
-    
-      
-        
-    
-      
-        
-    
-      
-        
-    
-  
-    
-      
-        
-    
-      
-        
-    
-  
-    
-      
-        
-    
-      
-        
-    
-      
-        
-    
-      
-        
-    
-      
-        
-    
-  
-    
-      
-        
-    
-  
-    
-      
-        
-    
-      
-        
-    
-      
-        
-    
-      
-        
-    
-  
-    
-      
-        
-    
-      
-        
-    
-      
-        
-    
-  
-    
-      
-        
-    
-      
-        
-    
-      
-        
-    
-  
-    
-      
-        
-    
-      
-        
-    
-  
-    
-      
-        
-    
-      
-        
-    
-  
-    
-      
-        
-    
-  
-    
-      
-        
-    
-      
-        
-    
-      
-        
-    
-      
-        
-    
-  
-    
-      
-        
-    
-      
-        
-    
-      
-        
-    
-      
-        
-    
-      
-        
-    
-  
-    
-      
-        
-    
-      
-        
-    
-      
-        
-    
-      
-        
-    
-      
-        
-    
-      
-        
-    
-      
-        
-    
-  
-    
-      
-        
-    
-      
-        
-    
-      
-        
-    
-  
-    
-      
-        
-    
-      
-        
-    
       
         
     
@@ -3479,6 +3755,43 @@ $(document).ready(function() {
       
         
     
+  
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
       
         
     
@@ -3492,6 +3805,194 @@ $(document).ready(function() {
         
     
   
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
     
       
         
@@ -3514,7 +4015,12 @@ $(document).ready(function() {
           
             
             
-  <li><a href="/administrator-guide/monitoring-and-metrics/enabling-cloud-based-monitoring-remote-support.html">Enabling Cloud-Based Monitoring and Remote Support</a></li>
+  <li><a href="/administrator-guide/monitoring-and-metrics/enabling-nexus-remote-support.html">Enabling Nexus Remote Support</a></li>
+            
+          
+            
+            
+  <li><a href="/administrator-guide/monitoring-and-metrics/enabling-cloud-based-monitoring-vpn-remote-support.html">Enabling Cloud-Based Monitoring and VPN Remote Support</a></li>
             
           
             
@@ -3529,7 +4035,7 @@ $(document).ready(function() {
           
             
             
-  <li><a href="/administrator-guide/monitoring-and-metrics/how-audit-logging-works.html">How Audit Logging Works in Qumulo Core</a></li>
+  <li><a href="/administrator-guide/monitoring-and-metrics/how-audit-logging-works.html">How Audit Logging Works</a></li>
             
           
             
@@ -3546,16 +4052,18 @@ $(document).ready(function() {
 
         </div>
     <!-- /.row -->
-</div>
+    </div>
+  <!-- /main -->
+  </main>
 <!-- /.container -->
 </div>
-<!-- /#main -->
-    </div>
+
+<button id="send-feedback">Send Feedback</button>
 
 <footer>
   <div class="footer">
     <div class="footer-text">
-      Copyright &copy; 2021&ndash;2025 Qumulo, Inc.<br>
+      Copyright &copy; 2021&ndash;2026 Qumulo, Inc.<br>
 
       <a class="no_icon footer_link" href="https://qumulo.com/legal/privacy-policy/">Privacy Policy</a> &VerticalSeparator; <a class="no_icon footer_link" href="https://qumulo.com/legal/cookie-policy/">Cookie Policy</a> &VerticalSeparator; <a class="no_icon footer_link" href="https://qumulo.com/terms-hub/">Terms Hub</a><br>
       <p>
@@ -3575,19 +4083,31 @@ $(document).ready(function() {
     </div>
   </div>
 
-  <!-- Cookie Consent - GRT Plugin -->	
+  <!-- Cookie consent Banner-->	
   <div id="cookie-banner" class="grt-cookie">
     <div class="grt-cookies-msg">
       <p>We use cookies to improve your user experience and remember your preferences on this website. If you continue to use this website, we will assume that you accept and understand our <a class="no_icon" href="https://qumulo.com/legal/privacy-policy">Privacy Policy</a>, <a class="no_icon" href="https://qumulo.com/legal/cookie-policy/">Cookie Policy</a>, and <a class="no_icon" href="https://qumulo.com/terms-hub/">Terms Hub</a>.</p>
     </div>
     <span class="grt-cookie-button">Accept</span>
   </div>
+
+  <!-- Local scripts -->
+  <!-- Cookie consent banner -->
   <script src="/js/grt-cookie-consent.js"></script>
   <script>$(".grt-cookie").grtCookie();</script>
-  
-  <script src="/js/fixdoubledashes.js"></script>
 
+  <!-- Page elements -->
   <script src="/js/expand-collapse.js"></script>
+  <script src="/js/send-feedback.js"></script>
+  <script src="/js/check-favorites.js"></script>
+  <script src="/js/copy-code.js"></script>
+
+
+
+
+
+
+
 </footer>
 
 

@@ -14,12 +14,19 @@ function createOverlay() {
   overlay.style.justifyContent = 'center';
   overlay.style.alignItems = 'center';
   overlay.style.zIndex = '1000';
+  overlay.style.flexDirection = 'column';
 
   const message = document.createElement('h1');
   message.textContent = 'Searching Documentation...';
   message.style.color = 'white';
 
   overlay.appendChild(message);
+
+   const gif = document.createElement('img');
+  gif.src = '/images/spinner.png';
+  gif.style.width = '70px';
+  gif.style.height = '70px';
+  overlay.appendChild(gif);
 
   return overlay;
 }
@@ -32,7 +39,7 @@ function showOverlay() {
   if (document.querySelector('.vuiTitle')) {
     return;
   } else {
-    document.querySelectorAll('.post-title-main, .nav, #mysidebar, .search-grumpquat').forEach(element => {
+    document.querySelectorAll('#mysidebar, #tg-sb-content, #send-feedback').forEach(element => {
       element.style.display = 'none';
     });
   }
@@ -43,7 +50,7 @@ function hideOverlay() {
   if (document.querySelector('.vuiTitle')) {
     return;
   } else {
-    document.querySelectorAll('.post-title-main, .nav, #mysidebar, .search-grumpquat').forEach(element => {
+    document.querySelectorAll('#mysidebar, #tg-sb-content, #send-feedback').forEach(element => {
       element.style.display = 'block';
     });
   }
@@ -56,11 +63,11 @@ function hideOverlay() {
 function createSearch(
   apikey,
   customerId,
-  corpusIds,
+  corpusKeys,
   successFn,
   errorFn,
   icon,
-  pageSize = 10,
+  pageSize = 50,
   maxSummarizedResults = 5,
   sentencesBefore = 2,
   sentencesAfter = 2,
@@ -85,7 +92,7 @@ function createSearch(
   function handleDirectSearch(query) {
     submitFn(searchInput.value.trim(), offset);
   }
-  
+
   if (icon) {
     pulseLogo.src = icon;
   } else {
@@ -95,9 +102,9 @@ function createSearch(
   if (currentPage.includes('search.html')) {
     searchForm.addEventListener('submit', function(e) {
       e.preventDefault();
-        // Always perform the search on form submission, regardless of the query parameter.
-        // This allows users to "refresh" their search by submitting the same term again.
-        handleDirectSearch();
+      // Always perform the search on form submission, regardless of the query parameter.
+      // This allows users to "refresh" their search by submitting the same term again.
+      handleDirectSearch();
     });
 
     // On page load, if there's a query parameter and it's different from the current input value,
@@ -105,8 +112,8 @@ function createSearch(
     // perform the search immediately. This avoids ignoring user attempts to refresh the search
     // for the same term via the UI.
     if (queryParam && (searchInput.value.trim() !== queryParam || searchInput.value.trim() === "")) {
-        searchInput.value = queryParam;
-        handleDirectSearch();
+      searchInput.value = queryParam;
+      handleDirectSearch();
     }
   }
 
@@ -114,75 +121,83 @@ function createSearch(
    * function can be called from anywhere like vectaraSearch.submitFn(query)
    * @param {string} query results will come on behalf of query string
    */
+
   function submitFn(query, startFrom = offset) {
-console.log("submitFn called with query:", query);
+    console.log("submitFn called with query:", query);
     if (query !== "") {
       queryText = query;
       pulseLogo.classList.add("vectara__search_loading");
       showOverlay();
       searchInput.value = query;
-      let corpusKeys = [];
-      corpusIds.forEach((v) =>
-        corpusKeys.push({ customer_id: customerId, corpus_id: v })
-      );
+
+      const corpusKeyObjArr = [];
+      corpusKeys.forEach(element => {
+        const corpusKeyObject = {
+          "corpus_key": element,
+          "lexical_interpolation": 0.1
+        };
+        corpusKeyObjArr.push(corpusKeyObject);
+      });
+
       let startTime = new Date().getTime();
-      fetch("https://api.vectara.io/v1/query", {
-        method: "post",
-        body: JSON.stringify({
-          query: [
-            {
-              query: query, // text to make search
-              num_results: pageSize, // results per page
-              corpus_key: corpusKeys,
-              start: startFrom, // offset
-              contextConfig: {sentencesBefore, sentencesAfter, startTag: "<strong>", endTag: "</strong>"},
-              rerankingConfig: {
-                rerankerId: 272725719
-                //mmrConfig: {
-                //  diversityBias: 0.4
-                //}
+      fetch("https://api.vectara.io/v2/query", {
+          method: "post",
+          body: JSON.stringify({
+            "query": query, // text to run the search
+            "search": {
+              "offset": startFrom, // for pagination
+              "limit": pageSize, // for pagination
+              "context_configuration": {
+                "sentences_before": sentencesBefore,
+                "sentences_after": sentencesAfter,
+                "start_tag": "<strong>",
+                "end_tag": "</strong>"
               },
-              summary: [{
-                summarizerPromptName: "vectara-summary-table-md-query-ext-jan-2025-gpt-4-turbo",
-                maxSummarizedResults: maxSummarizedResults,
-                responseLang: "eng"
-              }]
+              "corpora": corpusKeyObjArr,
+              "reranker": {
+                "type": "customer_reranker",
+                "limit": 30,
+                "reranker_name": "qwen3-reranker"
+              }
             },
-          ],
-        }),
-        headers: {
-          "customer-id": customerId,
-          "x-api-key": apikey,
-          "Content-Type": "application/json",
-        },
-      })
-        .then(async function (response) {
+            "generation": {
+              "generation_preset_name": "vectara-summary-ext-25-09-gpt-5",
+              "response_language": "eng",
+              "max_used_search_results": maxSummarizedResults
+            }
+          }),
+          headers: {
+            "x-api-key": apikey,
+            "Content-Type": "application/json",
+          },
+        })
+        .then(async function(response) {
           pulseLogo.classList.remove("vectara__search_loading");
           const data = await response.json(); // parse promise
-          length = data.responseSet[0]?.response.length || 0; // length of response
-          if (data.responseSet[0] && data.responseSet[0].status[0]) {
+          console.log(`response is ${JSON.stringify(data)}`);
+          if (!data.summary || !data.search_results || data.search_results.length < 1) {
             throw data;
           }
           let endTime = new Date().getTime();
-          console.log(`fetch elapsedTime: ${ ( endTime - startTime ) / 1000 }`);
+          console.log(`fetch elapsedTime: ${(endTime - startTime) / 1000}`);
           return data;
         })
         .then((results) => {
-            return successFn(results, query);
+          return successFn(results, query);
         })
-        .catch(function (error) {
+        .catch(function(error) {
           errorFn(error);
           pulseLogo.classList.remove("vectara__search_loading");
         });
     }
   }
 
-  searchDiv.search = function (query, startFrom = offset) {
+  searchDiv.search = function(query, startFrom = offset) {
     submitFn(query, startFrom);
   };
   searchDiv.resultsPerPage = pageSize;
   // sends query text and length to the callback function
-  searchDiv.generateMeta = function (callback) {
+  searchDiv.generateMeta = function(callback) {
     callback({
       queryText: queryText,
       length: length,
@@ -192,142 +207,328 @@ console.log("submitFn called with query:", query);
   return searchDiv;
 }
 
+//////////////////////////////////////////////////////////
+// The section below defines result tab helpers
+//////////////////////////////////////////////////////////
 
+// Ensure the tabs are present in the container
+function ensureResultsTabs(containerId) {
+  const container = document.getElementById(containerId);
+  if (!container) return { docsPanel: null, carePanel: null };
+
+  // If the tabs already exist return only refs
+  let docsPanel = container.querySelector("#vectara-docs-panel");
+  let carePanel = container.querySelector("#vectara-care-panel");
+  if (docsPanel && carePanel) {
+    return { docsPanel, carePanel };
+  }
+
+  // Otherwise, define WAI-ARIA tabs
+  container.innerHTML = `
+    <div class="vuiTabs" role="tablist">
+      <button id="vectara-tab-docs" role="tab" aria-controls="vectara-docs-panel" aria-selected="true" class="vuiTab">Docs Portal</button>
+      <button id="vectara-tab-care" role="tab" aria-controls="vectara-care-panel" aria-selected="false" class="vuiTab">Qumulo Care</button>
+    </div>
+    <div id="vectara-docs-panel" role="tabpanel" aria-labelledby="vectara-tab-docs" class="vuiTabPanel"></div>
+    <div id="vectara-care-panel" role="tabpanel" aria-labelledby="vectara-tab-care" class="vuiTabPanel" hidden></div>
+  `;
+
+  // Tab switching functionality
+  const tabDocs = container.querySelector("#vectara-tab-docs");
+  const tabCare = container.querySelector("#vectara-tab-care");
+  docsPanel = container.querySelector("#vectara-docs-panel");
+  carePanel = container.querySelector("#vectara-care-panel");
+
+  function selectTab(tab) {
+    if (tab === "docs") {
+      tabDocs.setAttribute("aria-selected", "true");
+      tabCare.setAttribute("aria-selected", "false");
+      docsPanel.hidden = false;
+      carePanel.hidden = true;
+    } else {
+      tabDocs.setAttribute("aria-selected", "false");
+      tabCare.setAttribute("aria-selected", "true");
+      docsPanel.hidden = true;
+      carePanel.hidden = false;
+    }
+  }
+
+  tabDocs.addEventListener("click", () => selectTab("docs"));
+  tabCare.addEventListener("click", () => selectTab("care"));
+
+  return { docsPanel, carePanel };
+}
+
+// Route the result to the correct tab
+function pickTabForResult(res, containerId) {
+  const { docsPanel, carePanel } = ensureResultsTabs(containerId);
+  const url =
+    (res && res.document_metadata && res.document_metadata.url) ||
+    "";
+
+  if (url.includes("care.qumulo.com")) return carePanel;
+  if (url.includes("docs.qumulo.com")) return docsPanel;
+  return docsPanel;
+}
+
+function wireUpTabs(containerId) {
+  const container = document.getElementById(containerId);
+  const tabList = container.querySelector('[role="tablist"]');
+  const tabs = Array.from(tabList.querySelectorAll('[role="tab"]'));
+  const panels = tabs.map(tab => {
+    return document.getElementById(tab.getAttribute("aria-controls"));
+  });
+
+  function activateTab(index) {
+    tabs.forEach((tab, i) => {
+      const selected = i === index;
+      tab.setAttribute("aria-selected", selected);
+      tab.setAttribute("tabindex", selected ? "0" : "-1");
+      panels[i].hidden = !selected;
+    });
+  }
+
+  tabs.forEach((tab, i) => {
+    tab.addEventListener("focus", () => activateTab(i));
+  });
+
+  // Initialize first tab active
+  activateTab(0);
+}
 
 //////////////////////////////////////////////////////////
 // The section below handles rendering search results and errors in the containing page
 //////////////////////////////////////////////////////////
 
 function renderResults(results, containerId, metadataFieldsToShow = []) {
-    // Process the results and display them on the page.
-    let txt = "";
+  // Process the results and display them on the page.
+  let txt = "";
 
-    currSelectedVectaraReference = null;
+  currSelectedVectaraReference = null;
 
-    if (results.responseSet[0].summary && results.responseSet[0].summary[0].text) {
-        txt += "<h2 class=\"vuiTitle vuiTitle--xs\" style=\"display: flex; align-items: center;\"><span class=\"emoji\">🤖</span>&nbsp;<strong>AI Summary</strong></h2>";
-        summary = linkCitations(results.responseSet[0].summary[0].text);
-        txt += "<div class=\"vuiText vuiText--m\">" + summary + "</div>";
-        txt += "<div class=\"vuiSpacer vuiSpacer--m\"></div>";
-        txt += "<h2 class=\"vuiTitle vuiTitle--xs\" style=\"display: flex; align-items: center;\"><span class=\"emoji\">📄</span>&nbsp;<strong>Search Results</strong></h2>";
+  // Add headings once before the loop
+  if (results.summary && results.search_results && results.search_results.length > 0) {
+    txt += "<h2 class=\"vuiTitle vuiTitle--xs\" style=\"display: flex; align-items: center;\"><span class=\"emoji\">🤖</span>&nbsp;<strong>AI Summary</strong></h2>";
+    const summary = linkCitations(results.summary);
+    txt += "<div class=\"vuiText vuiText--m\">" + summary + "</div>";
+    txt += "<div class=\"vuiSpacer vuiSpacer--m\"></div>";
+    txt += "<h2 class=\"vuiTitle vuiTitle--xs\" style=\"display: flex; align-items: center;\"><span class=\"emoji\">📄</span>&nbsp;<strong>Search Results</strong></h2>";
+  }
+
+  // Ensure tabs exist & wire them up
+  const { docsPanel, carePanel } = ensureResultsTabs(containerId);
+  wireUpTabs(containerId);
+
+  // Clear panels before appending fresh results
+  if (docsPanel) docsPanel.innerHTML = "";
+  if (carePanel) carePanel.innerHTML = "";
+
+  // Iterate over results
+  results.search_results.forEach((res, index) => {
+    // Build the result HTML for each tab
+    let resultHtml = "";
+
+    // Add citation number
+    resultHtml += "<div class=\"vuiSearchResult fs-mask\">";
+    resultHtml += "<div id=\"searchResultCitation-" + (index + 1) + "\" class=\"vuiSearchResultPosition\">" + (index + 1) + "</div>";
+
+    // Extract metadata
+    const docMetadata = res.document_metadata;
+    const partMetadata = res.part_metadata;
+    const titleField = { value: docMetadata.title };
+    const urlField = { value: docMetadata.url };
+
+    // render clickable title if URL exists
+    if (titleField) {
+      const snippetStart = res.text.indexOf("<strong>") + 8;
+      const snippetEnd = res.text.indexOf("</strong>");
+      if (urlField) {
+        const url = urlField.value + "#:~:text=" + res.text.substring(snippetStart, snippetEnd);
+        resultHtml += "<a class=\"vuiLink vuiTitle vuiTitle--s\" rel=\"noopener\" href=\"" + url + "\" target=\"_self\">";
+        resultHtml += "" + titleField.value + "";
+        resultHtml += "</a>";
+      } else {
+        resultHtml += "" + titleField.value + "";
+      }
+    } else {
+      // Fallback heading
+      resultHtml += "<h3>" + docMetadata.title + "</h3>";
     }
 
-    results.responseSet[0].response.forEach((res, index) => {
-        txt += "<div class=\"vuiSearchResult fs-mask\">";
+    // Render snippet text
+    resultHtml += "<div class=\"vuiText vuiText--s\">";
+    resultHtml += res.text;
+    resultHtml += "<div class=\"vuiSpacer vuiSpacer--xs\"></div>";
 
-        txt += "<div id=\"searchResultCitation-" + (index+1) + "\" class=\"vuiSearchResultPosition\">" + (index+1) + "</div>";
-
-        docMetadata = results.responseSet[0].document[res.documentIndex].metadata;
-        titleField = docMetadata.find((field) => field.name === "title");
-        urlField = docMetadata.find((field) => field.name === "url");
-        if (titleField) {
-            snippetStart = res.text.indexOf("<strong>") + 8;
-            snippetEnd = res.text.indexOf("</strong>");
-            if (urlField) {
-                url = urlField.value + "#:~:text=" + res.text.substring(snippetStart, snippetEnd);
-                txt += "<a class=\"vuiLink vuiTitle vuiTitle--s\" rel=\"noopener\" href=\"" + url + "\" target=\"_self\">";
-                txt += "" + titleField.value + "";
-                txt += "</a>";
-            } else {
-                txt += "" + titleField.value + "";
-            }
-        } else {
-            txt += "<h3>" + results.responseSet[0].document[res.documentIndex].id + "</h3>";
+    // Show requested metadata fields as badges
+    // First convert the input to an array if the user just passed in a string scalar
+    metadataFieldsToShow = metadataFieldsToShow instanceof Array ? metadataFieldsToShow : [metadataFieldsToShow];
+    metadataFieldsToShow.forEach((fieldName) => {
+      if (!fieldName.startsWith("part.")) {
+        // Check for document level metadata if the name starts with "doc." or doesn't have the part. prefix
+        const fieldNameSuffix = fieldName.substring(fieldName.indexOf("doc.") + 4);
+        // FoundField = docMetadata.find((field) => field.name === fieldNameSuffix);
+        if (fieldNameSuffix in docMetadata) {
+          resultHtml += "<div class=\"vuiBadge--success vuiBadge\">" + fieldNameSuffix + ": " + docMetadata[fieldNameSuffix] + "</div>";
         }
-
-        txt += "<div class=\"vuiText vuiText--s\">";
-        txt += res.text;
-        txt += "<div class=\"vuiSpacer vuiSpacer--xs\"></div>";
-
-        //show requested metadata fields as badges
-        //first convert the input to an array if the user just passed in a string scalar
-        metadataFieldsToShow = metadataFieldsToShow instanceof Array ? metadataFieldsToShow : [metadataFieldsToShow]
-        metadataFieldsToShow.forEach((fieldName, index) => {
-            if (!fieldName.startsWith("part.")) {
-                //check for document level metadata if the name starts with "doc." or does not have the part. prefix
-                fieldNameSuffix = fieldName.substring(fieldName.indexOf("doc.") + 4);
-                foundField = docMetadata.find((field) => field.name === fieldNameSuffix);
-                if (foundField) {
-                    txt += "<div class=\"vuiBadge--success vuiBadge\">" + fieldNameSuffix + ": " + foundField.value + "</div>";
-                }
-            } else {
-                //check for part level metadata
-                fieldNameSuffix = fieldName.substring(fieldName.indexOf("part.") + 5);
-                foundField = res.metadata.find((field) => field.name === fieldNameSuffix);
-                if (foundField) {
-                    txt += "<div class=\"vuiBadge--success vuiBadge\">" + fieldNameSuffix + ": " + foundField.value + "</div>";
-                }
-            }
-        });
-
-        txt += "</div></div>";
+      } else {
+        // Check for part level metadata
+        const fieldNameSuffix = fieldName.substring(fieldName.indexOf("part.") + 5);
+        // FoundField = res.metadata.find((field) => field.name === fieldNameSuffix);
+        if (fieldNameSuffix in partMetadata) {
+          resultHtml += "<div class=\"vuiBadge--success vuiBadge\">" + fieldNameSuffix + ": " + partMetadata[fieldNameSuffix] + "</div>";
+        }
+      }
     });
 
-    document.getElementById(containerId).innerHTML = txt;
+    // Close snippet
+    resultHtml += "</div></div>";
+
+    // Instead of appending results to txt,
+    // append each result to the correct tab
+    const tabContainer = pickTabForResult(res, containerId);
+    if (tabContainer) {
+      tabContainer.innerHTML += resultHtml;
+    }
+  });
+
+  // Render the AI summary and section headings above
+  // The results themselves are appended to tabs
+  const container = document.getElementById(containerId);
+
+  // Remove prior headings to avoid duplicates
+  const oldHead = container.querySelector('#vectara-results-head');
+  if (oldHead) oldHead.remove();
+
+  // Prepend fresh headings safely
+  const tablist = container.querySelector('[role="tablist"]');
+  const headBlock = '<div id="vectara-results-head">' + txt + '</div>';
+  if (tablist) {
+    tablist.insertAdjacentHTML('beforebegin', headBlock);
+  } else {
+    container.insertAdjacentHTML('afterbegin', headBlock);
+  }
+
+  // Hide any tab whose panel has no content
+  const tabDocs = container.querySelector("#vectara-tab-docs");
+  const tabCare = container.querySelector("#vectara-tab-care");
+
+  if (docsPanel && docsPanel.innerHTML.trim() === "") {
+    tabDocs.style.display = "none";
+  } else {
+    tabDocs.style.display = "";
+  }
+
+  if (carePanel && carePanel.innerHTML.trim() === "") {
+    tabCare.style.display = "none";
+  } else {
+    tabCare.style.display = "";
+  }
+
+  // Renumber positions per tab (display only; IDs stay global for citations)
+  ['#vectara-docs-panel', '#vectara-care-panel'].forEach((sel) => {
+    const panel = container.querySelector(sel);
+    if (!panel) return;
+    const items = panel.querySelectorAll('.vuiSearchResultPosition');
+    items.forEach((el, i) => {
+      el.dataset.global = el.textContent; // keep original global index for debugging
+      el.textContent = String(i + 1);     // show 1..N within the tab
+    });
+  });
+
+  // Add prefixes
+  if (typeof addResultPrefixes === "function") {
+    addResultPrefixes();
+  }
 }
 
 function linkCitations(summary) {
-    for (let i = 1; i < 15; i++) {
-        var reg = new RegExp("\\[" + i + "\\]","g");
-        summary = summary.replace(reg, "<button id=\"citationButton-" + i + "\" class=\"vuiSummaryCitation\" onclick=\"clickCitation(this, " + i + ")\">" + i + "</button>");
-    }
+  for (let i = 1; i < 15; i++) {
+    var reg = new RegExp("\\[" + i + "\\]", "g");
+    summary = summary.replace(reg, "<button id=\"citationButton-" + i + "\" class=\"vuiSummaryCitation\" onclick=\"clickCitation(this, " + i + ")\">" + i + "</button>");
+  }
 
-    return summary;
+  return summary;
 }
 
 function clickCitation(clickedButton, newReferenceNum) {
-    //nop if the button clicked is the one already just clicked
-    if (newReferenceNum == currSelectedVectaraReference) {
-        return;
+  // nop if the button clicked is the one already just clicked
+  if (newReferenceNum == currSelectedVectaraReference) {
+    return;
+  }
+
+  // Remove 'vuiSummaryCitation-isSelected' from origDiv class list (if it was originally set)
+  origDiv = document.getElementById("searchResultCitation-" + currSelectedVectaraReference);
+  if (origDiv) {
+    origDiv.classList.remove("vuiSearchResultPosition--selected");
+  }
+
+  // Add 'vuiSummaryCitation-isSelected' to newDiv class list
+  newDiv = document.getElementById("searchResultCitation-" + newReferenceNum);
+  newDiv.classList.add("vuiSearchResultPosition--selected");
+
+  // Jump to the correct tab when a citation is clicked
+  const panelEl = newDiv.closest('[role="tabpanel"]');
+  if (panelEl && panelEl.hidden) {
+    const labelId = panelEl.getAttribute('aria-labelledby');
+    const tabBtn = labelId && document.getElementById(labelId);
+    if (tabBtn) tabBtn.click();
+  }
+
+  // Remove vuiSummaryCitation-isSelected class from all buttons
+  citationButtons = document.querySelectorAll("button.vuiSummaryCitation");
+  if (citationButtons) {
+    for (let i = 0; i < citationButtons.length; i++) {
+      currButton = citationButtons[i];
+      if (clickedButton.id == currButton.id) {
+        currButton.classList.add("vuiSummaryCitation-isSelected");
+      } else {
+        currButton.classList.remove("vuiSummaryCitation-isSelected");
+      }
     }
+  }
 
-    //remove 'vuiSummaryCitation-isSelected' from origDiv class list (if it was originally set)
-    origDiv = document.getElementById("searchResultCitation-" + currSelectedVectaraReference);
-    if (origDiv) {
-        origDiv.classList.remove("vuiSearchResultPosition--selected");
-    }
+  // Scroll screen to newDiv's parent
+  var y = newDiv.parentElement.offsetTop - 78;
+  window.scrollTo({
+    top: y,
+    behavior: 'smooth'
+  });
 
-    //add 'vuiSummaryCitation-isSelected' to newDiv class list
-    newDiv = document.getElementById("searchResultCitation-" + newReferenceNum);
-    newDiv.classList.add("vuiSearchResultPosition--selected");
-
-    //remove vuiSummaryCitation-isSelected class from all buttons
-    citationButtons = document.querySelectorAll("button.vuiSummaryCitation");
-    if (citationButtons) {
-        for (let i = 0; i < citationButtons.length; i++) {
-            currButton = citationButtons[i];
-            if (clickedButton.id == currButton.id) {
-                currButton.classList.add("vuiSummaryCitation-isSelected");
-            } else {
-                currButton.classList.remove("vuiSummaryCitation-isSelected");
-            }
-        }
-    }
-
-    //scroll screen to newDiv's parent
-    var y = newDiv.parentElement.offsetTop - 78;
-    window.scrollTo({
-      top: y,
-      behavior: 'smooth'
-    });
-
-    currSelectedVectaraReference = newReferenceNum;
+  currSelectedVectaraReference = newReferenceNum;
 }
 
 function renderError(err, containerId) {
-    // Show the error message in the container whose ID is provided
-    let txt = "";
+  let txt = "";
 
-    if (err.responseSet[0] && err.responseSet[0].status[0]) {
-        txt += "<span class=\"vuiTitle--s\">" + err.responseSet[0].status[0].code + "</span>: ";
-        txt += "<span class=\"vuiText--s\">" + err.responseSet[0].status[0].statusDetail + "</span>";
-    } else {
-        txt += err;
-    }
+  // Vectara-style structured error
+  if (
+    err &&
+    err.responseSet &&
+    err.responseSet[0] &&
+    err.responseSet[0].status &&
+    err.responseSet[0].status[0]
+  ) {
+    txt += `<span class="vuiTitle--s">${err.responseSet[0].status[0].code}</span>: `;
+    txt += `<span class="vuiText--s">${err.responseSet[0].status[0].statusDetail}</span>`;
 
-    document.getElementById(containerId).innerHTML = txt;
+  // Normal JS error object
+  } else if (err && err.message) {
+    txt += `<span class="vuiText--s">${err.message}</span>`;
+
+  // Fallback for strings or plain objects
+  } else {
+    txt += `<pre>${JSON.stringify(err, null, 2)}</pre>`;
+  }
+
+  // Set innerHTML only if the container exists
+  const container = document.getElementById(containerId);
+  if (container) {
+    container.innerHTML = txt;
+  } else {
+    console.error("renderError: container not found:", containerId, err);
+  }
 }
-
 
 
 //////////////////////////////////////////////////////////

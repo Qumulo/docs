@@ -3,9 +3,48 @@
 <head>
     
 <meta charset="utf-8">
+
+<!-- Headers -->
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta http-equiv="Content-Security-Policy" content="
+  default-src 'self'; 
+  script-src 'self' 'unsafe-inline'
+    https://cdn.datatables.net    
+    https://cdn.jsdelivr.net    
+    https://cdnjs.cloudflare.com
+    https://maxcdn.bootstrapcdn.com
+    https://www.googletagmanager.com;
+  connect-src 'self'
+    https://*.googletagmanager.com
+    https://*.google-analytics.com
+    https://api.vectara.io  
+    https://maxcdn.bootstrapcdn.com;
+  img-src 'self' data:
+    https://*.google-analytics.com
+    https://*.googletagmanager.com;
+  style-src 'self' 'unsafe-inline'
+    https://cdn.datatables.net
+    https://fonts.googleapis.com
+    https://maxcdn.bootstrapcdn.com; 
+  font-src 'self' data:
+    https://fonts.gstatic.com
+    https://maxcdn.bootstrapcdn.com; 
+  frame-src 
+    https://www.googletagmanager.com;
+  object-src 'none';
+">
+
+<!-- This replaces frame-ancestors 'self'; which is unsupported in meta tags. -->
+<script>
+  if (self !== top) {
+    top.location = self.location;
+  }
+</script>
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contacting the Qumulo Care Team | Qumulo Documentation</title>
+<title>Contacting the Qumulo Care Team | Qumulo Documentation Portal</title>
+
 <link rel="canonical" href="https://docs.qumulo.com/contacting-qumulo-care-team.html">
 
 <!-- Organization JSON-LD Schema -->
@@ -110,9 +149,9 @@ fetch('/data/website.json')
 </noscript>
 
 <!-- Define page metadata -->
-<meta name="description" content="This section explains how to contact the Qumulo Care team through Slack, email, or by phone.">
-<meta name="apple-mobile-web-app-title" content="Qumulo Documentation">
-<meta name="application-name" content="Qumulo Documentation">
+<meta name="description" content="This section explains how to contact the Qumulo Care Team through Slack, email, or by phone.">
+<meta name="apple-mobile-web-app-title" content="Qumulo Documentation Portal">
+<meta name="application-name" content="Qumulo Documentation Portal">
 <meta name="msapplication-TileColor" content="#2b5797">
 <meta name="msapplication-TileImage" content="/images/mstile-144x144.png">
 <meta name="msapplication-config" content="/images/browserconfig.xml">
@@ -120,10 +159,10 @@ fetch('/data/website.json')
 <meta name="google-site-verification" content="_KoxPR0qF_ZeMyH6uWvlX84cFRujO_AZ1eq0eT9alAg">
 
 <!-- Open Graph Meta Tags -->
-<meta property="og:title" content="Contacting the Qumulo Care Team | Qumulo Documentation">
+<meta property="og:title" content="Contacting the Qumulo Care Team | Qumulo Documentation Portal">
 <meta property="og:url" content="https://docs.qumulo.com/contacting-qumulo-care-team.html">
-<meta property="og:site_name" content="Qumulo Documentation">
-<meta property="og:description" content="This section explains how to contact the Qumulo Care team through Slack, email, or by phone.">
+<meta property="og:site_name" content="Qumulo Documentation Portal">
+<meta property="og:description" content="This section explains how to contact the Qumulo Care Team through Slack, email, or by phone.">
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://docs.qumulo.com/images/docs.qumulo.com-qumulo-documentation-portal-630px.png">
@@ -131,10 +170,10 @@ fetch('/data/website.json')
 <meta property="og:image:height" content="630">
 
 <!-- Twitter Meta Tags -->
-<meta name="twitter:title" content="Contacting the Qumulo Care Team | Qumulo Documentation">
+<meta name="twitter:title" content="Contacting the Qumulo Care Team | Qumulo Documentation Portal">
 <meta property="twitter:url" content="https://docs.qumulo.com/contacting-qumulo-care-team.html">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:description" content="This section explains how to contact the Qumulo Care team through Slack, email, or by phone.">
+<meta name="twitter:description" content="This section explains how to contact the Qumulo Care Team through Slack, email, or by phone.">
 <meta name="twitter:image" content="https://docs.qumulo.com/images/docs.qumulo.com-qumulo-documentation-portal-418px.png">
 <meta property="twitter:domain" content="docs.qumulo.com">
 
@@ -149,7 +188,7 @@ fetch('/data/website.json')
 
 <!-- Define RSS feed -->
 <!-- TEMPORARILY DISABLED
-<link rel="alternate" href="https://docs.qumulo.com/feed.xml" type="application/rss+xml" title="docs">
+<link rel="alternate" href="https://docs.qumulo.com/feed.xml" type="application/rss+xml" title="">
 -->
 
 <!-- Load scripts from cloudflare.com -->
@@ -282,7 +321,7 @@ fetch('/data/website.json')
         <div class="flex-links">
           <a class="header-link header-right" href="https://qumulo.com/company/about-qumulo/" target="_blank">About Qumulo</a>
           <a class="header-link header-right" href="https://care.qumulo.com/s/knowledge" target="_blank">Knowledge Base</a>
-          <a class="header-link header-right" href="https://nexus.qumulo.com/" target="_blank">Nexus</a>
+          <a class="header-link header-right" href="https://nexus.qumulo.com/" target="_blank">Nexus <span class="emoji">🔒</span></a>
         </div>
         <div class="contact-links">
           <a class="btn-contact no_icon" href="https://qumulocare.slack.com/">Send Slack Message</a>
@@ -302,12 +341,13 @@ fetch('/data/website.json')
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/index.html">&nbsp;<span class="projectTitle"> Qumulo Documentation</span></a>
+            <a class="navbar-brand" href="/index.html">&nbsp;<span class="projectTitle"> Qumulo Documentation Portal</span></a>
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <!-- toggle sidebar button -->
-                <li><a id="tg-sb-link" href="#" data-proofer-ignore><i id="tg-sb-icon" class="fa fa-toggle-off"></i> Reading Mode</a></li>
+                <li><a id="tg-sb-link" href="#" data-proofer-ignore><i id="tg-sb-icon" class="fa fa-toggle-off"></i> Toggle Reading Mode</a></li>
+                <li><a id="view-favorites" href="/favorites.html" data-proofer-ignore><i id="fav-nav-icon" class="fa fa-star-o"></i> View Favorites</a></li>
                 <!-- entries without drop-downs appear here -->
 
 
@@ -322,7 +362,7 @@ fetch('/data/website.json')
                   <div id="search-demo-container">
                     <div class="parent">
                       <div class="search_container">
-                        <main id="search-widget">
+                        <div id="search-widget">
                           <div class="vectara__search_Box">
                             <form id="vectara__search_form" action="/search.html" method="GET">
                               <input class="vectara__search_field" name="query" id="search-input" placeholder="What would you like to know?" autofocus>
@@ -331,7 +371,7 @@ fetch('/data/website.json')
                               </button>
                             </form>
                           </div>
-                        </main>
+                        </div>
                         <ul class="tags" id="widget-tags"></ul>
                       </div>
                     </div>
@@ -348,19 +388,18 @@ fetch('/data/website.json')
 <!-- Page Content -->
 
 <div class="container">
-  <div id="main">
+  <main id="main">
     <!-- Content Row -->
     <div class="row">
         
         
-
             <!-- Sidebar Column -->
             <div class="col-md-3" id="tg-sb-sidebar">
                 
 
 <div class="nav nav-buttons">
   
-    <a target="_blank" rel="noopener" href="https://github.com/qumulo/docs/blob/gh-pages/contacting-qumulo-care-team.md" class="btn btn-default githubEditButton no_icon" role="button" data-proofer-ignore><span class="fa fa-github fa-lg"></span> Edit on GitHub</a>
+    <a target="_blank" rel="noopener" href="https://github.com/qumulo/docs/blob/mainline/contacting-qumulo-care-team.md" class="btn btn-default githubEditButton no_icon" role="button" data-proofer-ignore><span class="fa fa-github fa-lg"></span> Edit on GitHub</a>
   
 
   
@@ -371,11 +410,11 @@ fetch('/data/website.json')
   
   
   
-  
+
   
 
   
-  
+
   
   <li>
   
@@ -385,24 +424,21 @@ fetch('/data/website.json')
   
   
   
-  
-  
-
-  
 
   
 
   Qumulo Guides
   </a>
- 
+
       <ul>
           
           
           
           <li>
             <a title="Documentation Home" href="/index.html">
-              Documentation Home     
+              Documentation Home
               <span class="tag-container">
+              
               
               
               </span>
@@ -416,8 +452,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Cloud Native Qumulo on AWS Administrator Guide" href="/cloud-native-aws-administrator-guide/">
-              Cloud Native Qumulo on AWS Administrator Guide     
+              Cloud Native Qumulo on AWS Administrator Guide
               <span class="tag-container">
+              
               
               
               </span>
@@ -431,8 +468,25 @@ fetch('/data/website.json')
           
           <li>
             <a title="Cloud Native Qumulo on Azure Administrator Guide" href="/cloud-native-azure-administrator-guide/">
-              Cloud Native Qumulo on Azure Administrator Guide     
+              Cloud Native Qumulo on Azure Administrator Guide
               <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Cloud Native Qumulo on GCP Administrator Guide" href="/cloud-native-gcp-administrator-guide/">
+              Cloud Native Qumulo on GCP Administrator Guide
+              <span class="tag-container">
+              
               
               
               </span>
@@ -446,8 +500,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Azure Native Qumulo Administrator Guide" href="/azure-native-administrator-guide/">
-              Azure Native Qumulo Administrator Guide     
+              Azure Native Qumulo Administrator Guide
               <span class="tag-container">
+              
               
               
               </span>
@@ -461,8 +516,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Qumulo On-Premises Administrator Guide" href="/administrator-guide/">
-              Qumulo On-Premises Administrator Guide     
+              Qumulo On-Premises Administrator Guide
               <span class="tag-container">
+              
               
               
               </span>
@@ -476,8 +532,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Qumulo-Certified Platinum-Tier Hardware Servicing Guide" href="/hardware-guide/">
-              Qumulo-Certified Platinum-Tier Hardware Servicing Guide     
+              Qumulo-Certified Platinum-Tier Hardware Servicing Guide
               <span class="tag-container">
+              
               
               
               </span>
@@ -491,8 +548,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Gold-Tier Hardware Servicing Guide for Qumulo" href="/gold-tier-hardware-servicing-guide/">
-              Gold-Tier Hardware Servicing Guide for Qumulo     
+              Gold-Tier Hardware Servicing Guide for Qumulo
               <span class="tag-container">
+              
               
               
               </span>
@@ -506,8 +564,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Qumulo qq CLI Command Guide" href="/qq-cli-command-guide/">
-              Qumulo qq CLI Command Guide     
+              Qumulo qq CLI Command Guide
               <span class="tag-container">
+              
               
               
               </span>
@@ -521,8 +580,25 @@ fetch('/data/website.json')
           
           <li>
             <a title="Qumulo REST API Guide" href="/rest-api-guide/">
-              Qumulo REST API Guide     
+              Qumulo REST API Guide
               <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Qumulo Nexus Configuration Guide" href="/qumulo-nexus-configuration-guide/">
+              Qumulo Nexus Configuration Guide
+              <span class="tag-container">
+              
               
               
               </span>
@@ -536,8 +612,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Qumulo Alerts Administrator Guide" href="/qumulo-alerts-guide/">
-              Qumulo Alerts Administrator Guide     
+              Qumulo Alerts Administrator Guide
               <span class="tag-container">
+              
               
               
               </span>
@@ -551,8 +628,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Qumulo Integration Guide" href="/integration-guide/">
-              Qumulo Integration Guide     
+              Qumulo Integration Guide
               <span class="tag-container">
+              
               
               
               </span>
@@ -568,6 +646,7 @@ fetch('/data/website.json')
             <a title="Contacting the Qumulo Care Team" href="/contacting-qumulo-care-team.html">
               Contacting the Qumulo Care Team
               <span class="tag-container">
+              
               
               
               </span>
@@ -588,7 +667,6 @@ fetch('/data/website.json')
 <!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
 <script>$("li.active").parents('li').addClass("active");</script>
 
-
             </div>
             
         
@@ -607,6 +685,7 @@ fetch('/data/website.json')
             
 
 <div class="post-header">
+   <div class="star" id="page-star" title="Save to Favorites">&#9733;</div>
    <h1 class="post-title-main">Contacting the Qumulo Care Team</h1>
 </div>
 
@@ -644,154 +723,74 @@ $(document).ready(function() {
 
     
 
-   <p>This section explains how to contact the Qumulo Care team through Slack, email, or by phone.</p>
+   <p>This section explains how to contact the Qumulo Care Team through Slack, email, or by phone.</p>
    
      <p>We make sure that every one of our engineers has deep experience with file storage systems; knows the appropriate workflows, software, and hardware; and can get you the answers you need quickly.</p>
 
 <p>We take pride in helping our customers and coming up with solutions for every specific issue.</p>
 
 <h2 id="ways-to-get-help">Ways to Get Help</h2>
-<p>The Qumulo Care team is always here to help you. You can contact us by using any of the following ways.</p>
+<p>The Qumulo Care Team is always here to help you. You can contact us by using any of the following ways.</p>
 
-<ul>
+<ul id="open-a-case">
   <li>
     <p><span class="emoji">📚</span> Browse the <a href="https://care.qumulo.com/s/knowledge">Qumulo Knowledge Base</a></p>
   </li>
   <li>
-    <a id="open-a-case"></a>
-
     <p><span class="emoji">🧑‍💻</span> Open a case by <a href="https://care.qumulo.com/s/submit-a-case">filing a request</a> or <a href="mailto:care@qumulo.com">emailing us</a>.</p>
   </li>
+</ul>
+
+<ul id="toll-free-numbers">
   <li>
     <p><span class="emoji">💬</span> <a href="https://qumulocare.slack.com/">Message us on Slack</a> (if you are a current customer). For more information, see our <a href="https://docs.qumulo.com/contacting-qumulo-care-team.html#slack-tips-and-tricks">Slack Tips and Tricks</a>.</p>
   </li>
   <li>
-    <a id="toll-free-numbers"></a>
-
     <p><span class="emoji">📱</span> Call one of our toll-free numbers:</p>
+  </li>
+</ul>
 
-    <ul>
-      <li>
-        <p><strong>North America:</strong> <a href="tel:+18555777544">+1 855-577-7544</a></p>
-      </li>
-      <li>
-        <p><strong>United Kingdom:</strong> <a href="tel:+448081646656">+44 808-164-6656</a></p>
-      </li>
-      <li>
-        <p><strong>Germany:</strong> <a href="tel:+498000007047">+49 800-000-7047</a></p>
-      </li>
-      <li>
-        <p><strong>Australia:</strong> <a href="tel:+611800954952">+61 1800-954-952</a></p>
-      </li>
-      <li>
-        <p><strong>U.S. Government Customers:</strong> <a href="tel:+18449623777">+1 844-962-3777</a></p>
-      </li>
-    </ul>
+<ul>
+  <li>
+    <p><strong>North America:</strong> <a href="tel:+18555777544">+1 855-577-7544</a></p>
+  </li>
+  <li>
+    <p><strong>United Kingdom:</strong> <a href="tel:+448081646656">+44 808-164-6656</a></p>
+  </li>
+  <li>
+    <p><strong>Germany:</strong> <a href="tel:+498000007047">+49 800-000-7047</a></p>
+  </li>
+  <li>
+    <p><strong>Australia:</strong> <a href="tel:+611800954952">+61 1800-954-952</a></p>
+  </li>
+  <li>
+    <p><strong>U.S. Government Customers:</strong> <a href="tel:+18449623777">+1 844-962-3777</a></p>
   </li>
 </ul>
 
 <h2 id="support-hours">Support Hours</h2>
-<p>The Qumulo Care team is available Monday to Friday, 24×5 to answer your questions and requests. During off hours, a team member is on call 24×7 for when you might need help the most.</p>
+<p>The Qumulo Care Team is available Monday to Friday, 24×5 to answer your questions and requests. During off hours, a team member is on call 24×7 for when you might need help the most.</p>
 
 <h2 id="qumulo-care-response-times">Qumulo Care Response Times</h2>
-<p>The service availability and initial response time vary based on an issue’s severity level, starting from the time when the Qumulo Care team first learns about the issue.</p>
+<p>The service availability and initial response time vary based on an issue’s severity level, starting from the time when the Qumulo Care Team first learns about the issue.</p>
 
-<table>
-<thead>
-  <tr>
-    <th style="text-align:center;">Severity Level</th>
-    <th style="text-align:center;">Service Availability</th>
-    <th style="text-align:center;">Response Time</th>
-    <th style="text-align:center;">Description</th>
-    <th style="text-align:center;">Common Examples</th>   
-  </tr>
-</thead>
-<tbody>
-  <tr style="background:rgb(255 153 153 / 0.75);">
-    <td>Sev0</td>
-    <td>24&times;7</td>   
-    <td>30 minutes</td>
-    <td>
-      <p><strong>Business Impacting:</strong> A Qumulo cluster is offline, impacting regular business operations, with potential productivity or financial losses.</p>
-      <div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> For Severity 0 cases, call one of our <a href="#toll-free-numbers">toll-free numbers</a> or select <strong>Severity 0</strong> when you <a href="#open-a-case">open a case</a>.</div>
-
-    </td>
-    <td>
-      <ul>
-        <li>A Qumulo cluster is unable to form a quorum</li>
-        <li>A Qumulo cluster is unable to maintain a quorum</li>
-      </ul>
-    </td>   
-  </tr>
-  <tr style="background:rgb(255 153 153 / 0.5);">
-    <td>Sev1</td>
-    <td>24&times;7</td>   
-    <td>1 hour</td>
-    <td><strong>High Priority:</strong> A Qumulo cluster is operational. However, a node is offline or the cluster experiences a severe performance degradation.</td>
-    <td>
-      <ul>
-        <li>A node in a Qumulo cluster is offline.</li>
-        <li>Multiple business units experience degraded performance.</li>
-      </ul>
-    </td>   
-  </tr>
-  <tr style="background:rgb(255 153 153 / 0.25);">
-    <td>Sev2</td>
-    <td>24&times;5</td>   
-    <td>2 hours</td>
-    <td><strong>Normal Priority:</strong> A Qumulo cluster and the Qumulo Core software are operational. However, an issue with the cluster or moderate performance degradation causes applications to operate suboptimally.</td>
-    <td>
-      <ul>
-        <li>CPU cores recover to normal operation</li>
-        <li>Drive failures (within expected parameters)</li>
-        <li>Inconsistent performance issues</li>
-      </ul>
-    </td>   
-  </tr>
-  <tr style="background:rgb(255 153 153 / 0.125);">
-    <td>Sev3</td>
-    <td>24&times;5</td>   
-    <td>6 hours</td>
-    <td><strong>Low Priority:</strong> A Qumulo cluster or the Qumulo Core software experiences an issue, cosmetic Web UI defect, or minor performance degradation that has minimal or negligible impact on a production system or regular business operations.</td>
-    <td>
-      <ul>
-        <li>PSU failure</li>
-        <li>Loss of communication with Cloud-Based Monitoring</li>
-        <li>Upgrade issues</li>
-      </ul>
-    </td>   
-  </tr>
-  <tr style="background:rgb(255 153 153 / 0.0625);">
-    <td>Sev4</td>
-    <td>24&times;5</td>   
-    <td>6 hours</td>
-    <td><strong>Informational:</strong> Informal inquiries about product functionality</td>
-    <td>
-      <ul>
-        <li>Questions about Qumulo Core configuration</li>
-        <li>Documentation requests</li>
-        <li>Qumulo Care Slack channel access permissions</li>
-      </ul>
-    </td>   
-  </tr>   
-</tbody>
-</table>
+<p>For more information about severity levels, service availability, and response times, see <a href="https://qumulo.com/terms-hub/support-offerings/">Qumulo Customer Success Program Offerings</a> on the Qumulo Terms Hub.</p>
 
 <h2 id="slack-tips-and-tricks">Slack Tips and Tricks</h2>
-<p>The Qumulo Care team monitors the <a href="https://qumulocare.slack.com/">qumulocare Slack channel</a> during our normal Monday-to-Friday, 24×5 standard support hours. If you are currently a Qumulo customer, the fastest way to reach us is by using your dedicated Slack channel.</p>
+<p>The Qumulo Care Team monitors the <a href="https://qumulocare.slack.com/">qumulocare Slack channel</a> during our normal Monday-to-Friday, 24×5 standard support hours. If you are currently a Qumulo customer, the fastest way to reach us is by using your dedicated Slack channel.</p>
 
 <p>The following are some tips and tricks that can help you get the most out of making requests through Slack.</p>
 
 <ul>
   <li>
-    <p>Keep all communications with the Qumulo Care team in your dedicated Slack channel.</p>
+    <p>Keep all communications with the Qumulo Care Team in your dedicated Slack channel.</p>
 
     <ul>
       <li>
-        <p>If you haven’t been working with a specific member of the Qumulo Care team, include <code class="language-plaintext highlighter-rouge">@here</code> in your first message to notify the present Qumulo Care team members of your request.</p>
+        <p>If you haven’t been working with a specific member of the Qumulo Care Team, include <code class="language-plaintext highlighter-rouge">@here</code> in your first message to notify the present Qumulo Care Team members of your request.</p>
       </li>
       <li>
-        <p>If you’ve been working with a specific member of the Qumulo Care team, use <code class="language-plaintext highlighter-rouge">@&lt;name&gt;</code> in your dedicated Slack channel. If that team member is unavailable, another Qumulo Care team member responds to your request.</p>
+        <p>If you’ve been working with a specific member of the Qumulo Care Team, use <code class="language-plaintext highlighter-rouge">@&lt;name&gt;</code> in your dedicated Slack channel. If that team member is unavailable, another Qumulo Care Team member responds to your request.</p>
       </li>
     </ul>
   </li>
@@ -843,6 +842,12 @@ $(document).ready(function() {
       
         
     
+      
+        
+    
+      
+        
+    
   
 
 
@@ -850,16 +855,18 @@ $(document).ready(function() {
 
         </div>
     <!-- /.row -->
-</div>
+    </div>
+  <!-- /main -->
+  </main>
 <!-- /.container -->
 </div>
-<!-- /#main -->
-    </div>
+
+<button id="send-feedback">Send Feedback</button>
 
 <footer>
   <div class="footer">
     <div class="footer-text">
-      Copyright &copy; 2021&ndash;2025 Qumulo, Inc.<br>
+      Copyright &copy; 2021&ndash;2026 Qumulo, Inc.<br>
 
       <a class="no_icon footer_link" href="https://qumulo.com/legal/privacy-policy/">Privacy Policy</a> &VerticalSeparator; <a class="no_icon footer_link" href="https://qumulo.com/legal/cookie-policy/">Cookie Policy</a> &VerticalSeparator; <a class="no_icon footer_link" href="https://qumulo.com/terms-hub/">Terms Hub</a><br>
       <p>
@@ -879,19 +886,31 @@ $(document).ready(function() {
     </div>
   </div>
 
-  <!-- Cookie Consent - GRT Plugin -->	
+  <!-- Cookie consent Banner-->	
   <div id="cookie-banner" class="grt-cookie">
     <div class="grt-cookies-msg">
       <p>We use cookies to improve your user experience and remember your preferences on this website. If you continue to use this website, we will assume that you accept and understand our <a class="no_icon" href="https://qumulo.com/legal/privacy-policy">Privacy Policy</a>, <a class="no_icon" href="https://qumulo.com/legal/cookie-policy/">Cookie Policy</a>, and <a class="no_icon" href="https://qumulo.com/terms-hub/">Terms Hub</a>.</p>
     </div>
     <span class="grt-cookie-button">Accept</span>
   </div>
+
+  <!-- Local scripts -->
+  <!-- Cookie consent banner -->
   <script src="/js/grt-cookie-consent.js"></script>
   <script>$(".grt-cookie").grtCookie();</script>
-  
-  <script src="/js/fixdoubledashes.js"></script>
 
+  <!-- Page elements -->
   <script src="/js/expand-collapse.js"></script>
+  <script src="/js/send-feedback.js"></script>
+  <script src="/js/check-favorites.js"></script>
+  <script src="/js/copy-code.js"></script>
+
+
+
+
+
+
+
 </footer>
 
 

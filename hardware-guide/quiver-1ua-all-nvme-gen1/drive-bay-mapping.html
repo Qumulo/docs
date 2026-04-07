@@ -3,9 +3,48 @@
 <head>
     
 <meta charset="utf-8">
+
+<!-- Headers -->
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta http-equiv="Content-Security-Policy" content="
+  default-src 'self'; 
+  script-src 'self' 'unsafe-inline'
+    https://cdn.datatables.net    
+    https://cdn.jsdelivr.net    
+    https://cdnjs.cloudflare.com
+    https://maxcdn.bootstrapcdn.com
+    https://www.googletagmanager.com;
+  connect-src 'self'
+    https://*.googletagmanager.com
+    https://*.google-analytics.com
+    https://api.vectara.io  
+    https://maxcdn.bootstrapcdn.com;
+  img-src 'self' data:
+    https://*.google-analytics.com
+    https://*.googletagmanager.com;
+  style-src 'self' 'unsafe-inline'
+    https://cdn.datatables.net
+    https://fonts.googleapis.com
+    https://maxcdn.bootstrapcdn.com; 
+  font-src 'self' data:
+    https://fonts.gstatic.com
+    https://maxcdn.bootstrapcdn.com; 
+  frame-src 
+    https://www.googletagmanager.com;
+  object-src 'none';
+">
+
+<!-- This replaces frame-ancestors 'self'; which is unsupported in meta tags. -->
+<script>
+  if (self !== top) {
+    top.location = self.location;
+  }
+</script>
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Drive Bay Mapping in Quiver 1U All-NVMe Gen1 Nodes | Qumulo Documentation</title>
+<title>Drive Bay Mapping in Quiver 1U All-NVMe Gen1 Nodes | Qumulo Documentation Portal</title>
+
 <link rel="canonical" href="https://docs.qumulo.com/hardware-guide/quiver-1ua-all-nvme-gen1/drive-bay-mapping.html">
 
 <!-- Organization JSON-LD Schema -->
@@ -111,8 +150,8 @@ fetch('/data/website.json')
 
 <!-- Define page metadata -->
 <meta name="description" content="This section explains the drive bay mapping in Quiver 1UA Gen1 nodes.">
-<meta name="apple-mobile-web-app-title" content="Qumulo Documentation">
-<meta name="application-name" content="Qumulo Documentation">
+<meta name="apple-mobile-web-app-title" content="Qumulo Documentation Portal">
+<meta name="application-name" content="Qumulo Documentation Portal">
 <meta name="msapplication-TileColor" content="#2b5797">
 <meta name="msapplication-TileImage" content="/images/mstile-144x144.png">
 <meta name="msapplication-config" content="/images/browserconfig.xml">
@@ -120,9 +159,9 @@ fetch('/data/website.json')
 <meta name="google-site-verification" content="_KoxPR0qF_ZeMyH6uWvlX84cFRujO_AZ1eq0eT9alAg">
 
 <!-- Open Graph Meta Tags -->
-<meta property="og:title" content="Drive Bay Mapping in Quiver 1U All-NVMe Gen1 Nodes | Qumulo Documentation">
+<meta property="og:title" content="Drive Bay Mapping in Quiver 1U All-NVMe Gen1 Nodes | Qumulo Documentation Portal">
 <meta property="og:url" content="https://docs.qumulo.com/hardware-guide/quiver-1ua-all-nvme-gen1/drive-bay-mapping.html">
-<meta property="og:site_name" content="Qumulo Documentation">
+<meta property="og:site_name" content="Qumulo Documentation Portal">
 <meta property="og:description" content="This section explains the drive bay mapping in Quiver 1UA Gen1 nodes.">
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="website">
@@ -131,7 +170,7 @@ fetch('/data/website.json')
 <meta property="og:image:height" content="630">
 
 <!-- Twitter Meta Tags -->
-<meta name="twitter:title" content="Drive Bay Mapping in Quiver 1U All-NVMe Gen1 Nodes | Qumulo Documentation">
+<meta name="twitter:title" content="Drive Bay Mapping in Quiver 1U All-NVMe Gen1 Nodes | Qumulo Documentation Portal">
 <meta property="twitter:url" content="https://docs.qumulo.com/hardware-guide/quiver-1ua-all-nvme-gen1/drive-bay-mapping.html">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:description" content="This section explains the drive bay mapping in Quiver 1UA Gen1 nodes.">
@@ -149,7 +188,7 @@ fetch('/data/website.json')
 
 <!-- Define RSS feed -->
 <!-- TEMPORARILY DISABLED
-<link rel="alternate" href="https://docs.qumulo.com/feed.xml" type="application/rss+xml" title="docs">
+<link rel="alternate" href="https://docs.qumulo.com/feed.xml" type="application/rss+xml" title="">
 -->
 
 <!-- Load scripts from cloudflare.com -->
@@ -282,7 +321,7 @@ fetch('/data/website.json')
         <div class="flex-links">
           <a class="header-link header-right" href="https://qumulo.com/company/about-qumulo/" target="_blank">About Qumulo</a>
           <a class="header-link header-right" href="https://care.qumulo.com/s/knowledge" target="_blank">Knowledge Base</a>
-          <a class="header-link header-right" href="https://nexus.qumulo.com/" target="_blank">Nexus</a>
+          <a class="header-link header-right" href="https://nexus.qumulo.com/" target="_blank">Nexus <span class="emoji">🔒</span></a>
         </div>
         <div class="contact-links">
           <a class="btn-contact no_icon" href="https://qumulocare.slack.com/">Send Slack Message</a>
@@ -302,12 +341,13 @@ fetch('/data/website.json')
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/index.html">&nbsp;<span class="projectTitle"> Qumulo Documentation</span></a>
+            <a class="navbar-brand" href="/index.html">&nbsp;<span class="projectTitle"> Qumulo Documentation Portal</span></a>
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <!-- toggle sidebar button -->
-                <li><a id="tg-sb-link" href="#" data-proofer-ignore><i id="tg-sb-icon" class="fa fa-toggle-off"></i> Reading Mode</a></li>
+                <li><a id="tg-sb-link" href="#" data-proofer-ignore><i id="tg-sb-icon" class="fa fa-toggle-off"></i> Toggle Reading Mode</a></li>
+                <li><a id="view-favorites" href="/favorites.html" data-proofer-ignore><i id="fav-nav-icon" class="fa fa-star-o"></i> View Favorites</a></li>
                 <!-- entries without drop-downs appear here -->
 
 
@@ -322,7 +362,7 @@ fetch('/data/website.json')
                   <div id="search-demo-container">
                     <div class="parent">
                       <div class="search_container">
-                        <main id="search-widget">
+                        <div id="search-widget">
                           <div class="vectara__search_Box">
                             <form id="vectara__search_form" action="/search.html" method="GET">
                               <input class="vectara__search_field" name="query" id="search-input" placeholder="What would you like to know?" autofocus>
@@ -331,7 +371,7 @@ fetch('/data/website.json')
                               </button>
                             </form>
                           </div>
-                        </main>
+                        </div>
                         <ul class="tags" id="widget-tags"></ul>
                       </div>
                     </div>
@@ -348,23 +388,22 @@ fetch('/data/website.json')
 <!-- Page Content -->
 
 <div class="container">
-  <div id="main">
+  <main id="main">
     <!-- Content Row -->
     <div class="row">
         
         
-
             <!-- Sidebar Column -->
             <div class="col-md-3" id="tg-sb-sidebar">
                 
 
 <div class="nav nav-buttons">
   
-    <a target="_blank" rel="noopener" href="https://github.com/qumulo/docs/blob/gh-pages/hardware-guide/quiver-1ua-all-nvme-gen1/drive-bay-mapping.md" class="btn btn-default githubEditButton no_icon" role="button" data-proofer-ignore><span class="fa fa-github fa-lg"></span> Edit on GitHub</a>
+    <a target="_blank" rel="noopener" href="https://github.com/qumulo/docs/blob/mainline/hardware-guide/quiver-1ua-all-nvme-gen1/drive-bay-mapping.md" class="btn btn-default githubEditButton no_icon" role="button" data-proofer-ignore><span class="fa fa-github fa-lg"></span> Edit on GitHub</a>
   
 
   
-    <a target="_blank" rel="noopener" href="/pdf/qumulo-certified-platinum-tier-hardware-guide.pdf" class="btn btn-default downloadPDFButton no_icon" role="button"><span class="glyphicon glyphicon-file" aria-hidden="true"></span> Download PDF</a>
+    <a target="_blank" rel="noopener" href="/pdf/qumulo-hardware-servicing-guide.pdf" class="btn btn-default downloadPDFButton no_icon" role="button"><span class="glyphicon glyphicon-file" aria-hidden="true"></span> Download PDF</a>
   
 </div>
 
@@ -375,18 +414,16 @@ fetch('/data/website.json')
   
       
   
-  
+
   
 
   
-  
+
   
   <li>
   
 
-  <a title="Qumulo-Certified Platinum-Tier Hardware Servicing Guide" href="" data-proofer-ignore>
-  
-  
+  <a title="Qumulo Hardware Servicing Guide" href="" data-proofer-ignore>
   
   
   
@@ -394,19 +431,18 @@ fetch('/data/website.json')
 
   
 
-  
-
-  Qumulo-Certified Platinum-Tier Hardware Servicing Guide
+  Qumulo Hardware Servicing Guide
   </a>
- 
+
       <ul>
           
           
           
           <li>
             <a title="Documentation Home" href="/index.html">
-              Documentation Home     
+              Documentation Home
               <span class="tag-container">
+              
               
               
               </span>
@@ -420,8 +456,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Guide Table of Contents" href="/hardware-guide/">
-              Guide Table of Contents     
+              Guide Table of Contents
               <span class="tag-container">
+              
               
               
               </span>
@@ -435,8 +472,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Contacting the Qumulo Care Team" href="/contacting-qumulo-care-team.html">
-              Contacting the Qumulo Care Team     
+              Contacting the Qumulo Care Team
               <span class="tag-container">
+              
               
               
               </span>
@@ -451,11 +489,11 @@ fetch('/data/website.json')
      
       
   
-  
+
   
 
   
-  
+
   
   <li>
   
@@ -465,24 +503,21 @@ fetch('/data/website.json')
   
   
   
-  
-  
-
-  
 
   
 
   Getting Started
   </a>
- 
+
       <ul>
           
           
           
           <li>
             <a title="Safety Recommendations" href="/hardware-guide/getting-started/safety-recommendations.html">
-              Safety Recommendations     
+              Safety Recommendations
               <span class="tag-container">
+              
               
               
               </span>
@@ -496,8 +531,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Identifying NICs and Choosing Transceivers and Cables" href="/hardware-guide/getting-started/nics-transceivers-cables.html">
-              Identifying NICs and Choosing Transceivers and Cables     
+              Identifying NICs and Choosing Transceivers and Cables
               <span class="tag-container">
+              
               
               
               </span>
@@ -511,8 +547,25 @@ fetch('/data/website.json')
           
           <li>
             <a title="Creating a USB Drive Installer" href="/hardware-guide/getting-started/creating-usb-drive-installer.html">
-              Creating a USB Drive Installer     
+              Creating a USB Drive Installer
               <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Creating and Configuring a Cluster" href="/hardware-guide/getting-started/creating-configuring-cluster.html">
+              Creating and Configuring a Cluster
+              <span class="tag-container">
+              
               
               
               </span>
@@ -527,11 +580,156 @@ fetch('/data/website.json')
      
       
   
+
+  
+
+  
+
+  
+  <li>
+  
+
+  <a title="Configuring Cluster Networking" href="/hardware-guide/cluster-networking/index.html" data-proofer-ignore>
+  
+  
   
   
 
   
+
+  Configuring Cluster Networking
+  </a>
+
+      <ul>
+          
+          
+          
+          <li>
+            <a title="Platforms with Unified Networking" href="/hardware-guide/cluster-networking/unified-networking.html">
+              Platforms with Unified Networking
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Platforms with Split Networking" href="/hardware-guide/cluster-networking/split-networking.html">
+              Platforms with Split Networking
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
   
+
+  
+
+  
+
+  
+  <li>
+  
+
+  <a title="Configuring the Out-of-Band Management Port" href="/hardware-guide/out-of-band-management-port/index.html" data-proofer-ignore>
+  
+  
+  
+  
+
+  
+
+  Configuring the Out-of-Band Management Port
+  </a>
+
+      <ul>
+          
+          
+          
+          <li>
+            <a title="Configuring iLO" href="/hardware-guide/out-of-band-management-port/configuring-ilo.html">
+              Configuring iLO
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Configuring IPMI" href="/hardware-guide/out-of-band-management-port/configuring-ipmi.html">
+              Configuring IPMI
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+
+  
+
+  
+
+  
+  <li>
+  
+
+  <a title="Replacing Hardware Components" href="/hardware-guide/replacing-hardware-components.html" data-proofer-ignore>
+  
+  
+  
+  
+
+  
+
+  Replacing Hardware Components
+  </a>
+
+      <ul>
+          
+      </ul>
+   </li>
+     
+      
+  
+
+  
+
+  
+
   
   <li>
   
@@ -541,24 +739,21 @@ fetch('/data/website.json')
   
   
   
-  
-  
-
-  
 
   
 
   C-192T, C-432T, and K-432T
   </a>
- 
+
       <ul>
           
           
           
           <li>
             <a title="Replacing the Chassis" href="/hardware-guide/c-192t-c-432t-k-432t/replacing-chassis.html">
-              Replacing the Chassis     
+              Replacing the Chassis
               <span class="tag-container">
+              
               
               
               </span>
@@ -573,18 +768,16 @@ fetch('/data/website.json')
      
       
   
-  
+
   
 
   
-  
+
   
   <li>
   
 
-  <a title="Fujitsu PRIMERGY RX2540 M7" href="/hardware-guide/fujitsu-primergy-rx2540-m7/index.html" data-proofer-ignore>
-  
-  
+  <a title="Fsas Technologies PRIMERGY RX2540 M7" href="/hardware-guide/fsas-technologies-primergy-rx2540-m7/index.html" data-proofer-ignore>
   
   
   
@@ -592,19 +785,18 @@ fetch('/data/website.json')
 
   
 
-  
-
-  Fujitsu PRIMERGY RX2540 M7
+  Fsas Technologies PRIMERGY RX2540 M7
   </a>
- 
+
       <ul>
           
           
           
           <li>
-            <a title="Racking Nodes" href="/hardware-guide/fujitsu-primergy-rx2540-m7/racking-nodes.html">
-              Racking Nodes     
+            <a title="Racking Nodes" href="/hardware-guide/fsas-technologies-primergy-rx2540-m7/racking-nodes.html">
+              Racking Nodes
               <span class="tag-container">
+              
               
               
               </span>
@@ -617,9 +809,10 @@ fetch('/data/website.json')
           
           
           <li>
-            <a title="Configuring iRMC and Wiring Nodes" href="/hardware-guide/fujitsu-primergy-rx2540-m7/configuring-irmc-wiring-nodes.html">
-              Configuring iRMC and Wiring Nodes     
+            <a title="Configuring iRMC and Wiring Nodes" href="/hardware-guide/fsas-technologies-primergy-rx2540-m7/configuring-irmc-wiring-nodes.html">
+              Configuring iRMC and Wiring Nodes
               <span class="tag-container">
+              
               
               
               </span>
@@ -632,9 +825,10 @@ fetch('/data/website.json')
           
           
           <li>
-            <a title="Creating and Configuring a Cluster" href="/hardware-guide/fujitsu-primergy-rx2540-m7/creating-configuring-cluster.html">
-              Creating and Configuring a Cluster     
+            <a title="Creating and Configuring a Cluster" href="/hardware-guide/fsas-technologies-primergy-rx2540-m7/creating-configuring-cluster.html">
+              Creating and Configuring a Cluster
               <span class="tag-container">
+              
               
               
               </span>
@@ -647,9 +841,10 @@ fetch('/data/website.json')
           
           
           <li>
-            <a title="Drive Bay Mapping" href="/hardware-guide/fujitsu-primergy-rx2540-m7/drive-bay-mapping.html">
-              Drive Bay Mapping     
+            <a title="Drive Bay Mapping" href="/hardware-guide/fsas-technologies-primergy-rx2540-m7/drive-bay-mapping.html">
+              Drive Bay Mapping
               <span class="tag-container">
+              
               
               
               </span>
@@ -662,9 +857,10 @@ fetch('/data/website.json')
           
           
           <li>
-            <a title="Panel LEDs" href="/hardware-guide/fujitsu-primergy-rx2540-m7/panel-leds.html">
-              Panel LEDs     
+            <a title="Panel LEDs" href="/hardware-guide/fsas-technologies-primergy-rx2540-m7/panel-leds.html">
+              Panel LEDs
               <span class="tag-container">
+              
               
               
               </span>
@@ -677,9 +873,10 @@ fetch('/data/website.json')
           
           
           <li>
-            <a title="Cluster Networking" href="/hardware-guide/fujitsu-primergy-rx2540-m7/networking-cluster.html">
-              Cluster Networking     
+            <a title="Cluster Networking" href="/hardware-guide/fsas-technologies-primergy-rx2540-m7/networking-cluster.html">
+              Cluster Networking
               <span class="tag-container">
+              
               
               
               </span>
@@ -692,9 +889,10 @@ fetch('/data/website.json')
           
           
           <li>
-            <a title="Replacing Hardware Components" href="/hardware-guide/fujitsu-primergy-rx2540-m7/replacing-hardware-components.html">
-              Replacing Hardware Components     
+            <a title="Replacing Hardware Components" href="/hardware-guide/fsas-technologies-primergy-rx2540-m7/replacing-hardware-components.html">
+              Replacing Hardware Components
               <span class="tag-container">
+              
               
               
               </span>
@@ -707,9 +905,10 @@ fetch('/data/website.json')
           
           
           <li>
-            <a title="Technical Specifications" href="/hardware-guide/fujitsu-primergy-rx2540-m7/technical-specifications.html">
-              Technical Specifications     
+            <a title="Technical Specifications" href="/hardware-guide/fsas-technologies-primergy-rx2540-m7/technical-specifications.html">
+              Technical Specifications
               <span class="tag-container">
+              
               
               
               </span>
@@ -724,11 +923,11 @@ fetch('/data/website.json')
      
       
   
-  
+
   
 
   
-  
+
   
   <li>
   
@@ -738,24 +937,21 @@ fetch('/data/website.json')
   
   
   
-  
-  
-
-  
 
   
 
   HPE Alletra 4110
   </a>
- 
+
       <ul>
           
           
           
           <li>
             <a title="Wiring Nodes and Networking a Cluster" href="/hardware-guide/hpe-alletra-4110/wiring-nodes-networking-cluster.html">
-              Wiring Nodes and Networking a Cluster     
+              Wiring Nodes and Networking a Cluster
               <span class="tag-container">
+              
               
               
               </span>
@@ -769,8 +965,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Creating and Configuring a Cluster" href="/hardware-guide/hpe-alletra-4110/creating-configuring-cluster.html">
-              Creating and Configuring a Cluster     
+              Creating and Configuring a Cluster
               <span class="tag-container">
+              
               
               
               </span>
@@ -784,8 +981,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Front and Internal Drives" href="/hardware-guide/hpe-alletra-4110/front-internal-drives.html">
-              Front and Internal Drives     
+              Front and Internal Drives
               <span class="tag-container">
+              
               
               
               </span>
@@ -799,8 +997,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Panel LEDs" href="/hardware-guide/hpe-alletra-4110/panel-leds.html">
-              Panel LEDs     
+              Panel LEDs
               <span class="tag-container">
+              
               
               
               </span>
@@ -814,8 +1013,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Configuring iLO" href="/hardware-guide/hpe-alletra-4110/configuring-ilo.html">
-              Configuring iLO     
+              Configuring iLO
               <span class="tag-container">
+              
               
               
               </span>
@@ -829,8 +1029,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Replacing Hardware Components" href="/hardware-guide/hpe-alletra-4110/replacing-hardware-components.html">
-              Replacing Hardware Components     
+              Replacing Hardware Components
               <span class="tag-container">
+              
               
               
               </span>
@@ -844,8 +1045,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Technical Specifications" href="/hardware-guide/hpe-alletra-4110/technical-specifications.html">
-              Technical Specifications     
+              Technical Specifications
               <span class="tag-container">
+              
               
               
               </span>
@@ -860,11 +1062,11 @@ fetch('/data/website.json')
      
       
   
-  
+
   
 
   
-  
+
   
   <li>
   
@@ -874,24 +1076,21 @@ fetch('/data/website.json')
   
   
   
-  
-  
-
-  
 
   
 
   HPE Apollo 4200 Gen9
   </a>
- 
+
       <ul>
           
           
           
           <li>
             <a title="Wiring Nodes and Networking a Cluster" href="/hardware-guide/hpe-apollo-4200-gen9/wiring-nodes-networking-cluster.html">
-              Wiring Nodes and Networking a Cluster     
+              Wiring Nodes and Networking a Cluster
               <span class="tag-container">
+              
               
               
               </span>
@@ -905,8 +1104,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Creating and Configuring a Cluster" href="/hardware-guide/hpe-apollo-4200-gen9/creating-configuring-cluster.html">
-              Creating and Configuring a Cluster     
+              Creating and Configuring a Cluster
               <span class="tag-container">
+              
               
               
               </span>
@@ -920,8 +1120,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Front and Rear Drives" href="/hardware-guide/hpe-apollo-4200-gen9/front-rear-drives.html">
-              Front and Rear Drives     
+              Front and Rear Drives
               <span class="tag-container">
+              
               
               
               </span>
@@ -935,8 +1136,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Panel LEDs" href="/hardware-guide/hpe-apollo-4200-gen9/panel-leds.html">
-              Panel LEDs     
+              Panel LEDs
               <span class="tag-container">
+              
               
               
               </span>
@@ -950,8 +1152,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Drive LEDs" href="/hardware-guide/hpe-apollo-4200-gen9/drive-leds.html">
-              Drive LEDs     
+              Drive LEDs
               <span class="tag-container">
+              
               
               
               </span>
@@ -965,8 +1168,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Configuring iLO" href="/hardware-guide/hpe-apollo-4200-gen9/configuring-ilo.html">
-              Configuring iLO     
+              Configuring iLO
               <span class="tag-container">
+              
               
               
               </span>
@@ -980,8 +1184,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Replacing Hardware Components" href="/hardware-guide/hpe-apollo-4200-gen9/replacing-hardware-components.html">
-              Replacing Hardware Components     
+              Replacing Hardware Components
               <span class="tag-container">
+              
               
               
               </span>
@@ -996,11 +1201,11 @@ fetch('/data/website.json')
      
       
   
-  
+
   
 
   
-  
+
   
   <li>
   
@@ -1010,24 +1215,21 @@ fetch('/data/website.json')
   
   
   
-  
-  
-
-  
 
   
 
   HPE Apollo 4200 Gen10
   </a>
- 
+
       <ul>
           
           
           
           <li>
             <a title="Wiring Nodes and Networking a Cluster" href="/hardware-guide/hpe-apollo-4200-gen10/wiring-nodes-networking-cluster.html">
-              Wiring Nodes and Networking a Cluster     
+              Wiring Nodes and Networking a Cluster
               <span class="tag-container">
+              
               
               
               </span>
@@ -1041,8 +1243,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Creating and Configuring a Cluster" href="/hardware-guide/hpe-apollo-4200-gen10/creating-configuring-cluster.html">
-              Creating and Configuring a Cluster     
+              Creating and Configuring a Cluster
               <span class="tag-container">
+              
               
               
               </span>
@@ -1056,8 +1259,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Front and Rear Drives" href="/hardware-guide/hpe-apollo-4200-gen10/front-rear-drives.html">
-              Front and Rear Drives     
+              Front and Rear Drives
               <span class="tag-container">
+              
               
               
               </span>
@@ -1071,8 +1275,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Panel LEDs" href="/hardware-guide/hpe-apollo-4200-gen10/panel-leds.html">
-              Panel LEDs     
+              Panel LEDs
               <span class="tag-container">
+              
               
               
               </span>
@@ -1086,8 +1291,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Drive LEDs" href="/hardware-guide/hpe-apollo-4200-gen10/drive-leds.html">
-              Drive LEDs     
+              Drive LEDs
               <span class="tag-container">
+              
               
               
               </span>
@@ -1101,8 +1307,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Configuring iLO" href="/hardware-guide/hpe-apollo-4200-gen10/configuring-ilo.html">
-              Configuring iLO     
+              Configuring iLO
               <span class="tag-container">
+              
               
               
               </span>
@@ -1116,8 +1323,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Replacing Hardware Components" href="/hardware-guide/hpe-apollo-4200-gen10/replacing-hardware-components.html">
-              Replacing Hardware Components     
+              Replacing Hardware Components
               <span class="tag-container">
+              
               
               
               </span>
@@ -1131,8 +1339,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Technical Specifications" href="/hardware-guide/hpe-apollo-4200-gen10/technical-specifications.html">
-              Technical Specifications     
+              Technical Specifications
               <span class="tag-container">
+              
               
               
               </span>
@@ -1147,11 +1356,11 @@ fetch('/data/website.json')
      
       
   
-  
+
   
 
   
-  
+
   
   <li>
   
@@ -1161,24 +1370,21 @@ fetch('/data/website.json')
   
   
   
-  
-  
-
-  
 
   
 
   HPE Apollo 4200 Gen10 Plus
   </a>
- 
+
       <ul>
           
           
           
           <li>
             <a title="Wiring Nodes and Networking a Cluster" href="/hardware-guide/hpe-apollo-4200-gen10-plus/wiring-nodes-networking-cluster.html">
-              Wiring Nodes and Networking a Cluster     
+              Wiring Nodes and Networking a Cluster
               <span class="tag-container">
+              
               
               
               </span>
@@ -1192,8 +1398,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Creating and Configuring a Cluster" href="/hardware-guide/hpe-apollo-4200-gen10-plus/creating-configuring-cluster.html">
-              Creating and Configuring a Cluster     
+              Creating and Configuring a Cluster
               <span class="tag-container">
+              
               
               
               </span>
@@ -1207,8 +1414,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Front and Internal Drives" href="/hardware-guide/hpe-apollo-4200-gen10-plus/front-internal-drives.html">
-              Front and Internal Drives     
+              Front and Internal Drives
               <span class="tag-container">
+              
               
               
               </span>
@@ -1222,8 +1430,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Panel LEDs" href="/hardware-guide/hpe-apollo-4200-gen10-plus/panel-leds.html">
-              Panel LEDs     
+              Panel LEDs
               <span class="tag-container">
+              
               
               
               </span>
@@ -1237,8 +1446,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Configuring iLO" href="/hardware-guide/hpe-apollo-4200-gen10-plus/configuring-ilo.html">
-              Configuring iLO     
+              Configuring iLO
               <span class="tag-container">
+              
               
               
               </span>
@@ -1252,23 +1462,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Replacing Hardware Components" href="/hardware-guide/hpe-apollo-4200-gen10-plus/replacing-hardware-components.html">
-              Replacing Hardware Components     
+              Replacing Hardware Components
               <span class="tag-container">
               
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-          
-          
-          <li>
-            <a title="Technical Specifications" href="/hardware-guide/hpe-apollo-4200-gen10-plus/technical-specifications.html">
-              Technical Specifications     
-              <span class="tag-container">
               
               
               </span>
@@ -1283,11 +1479,11 @@ fetch('/data/website.json')
      
       
   
-  
+
   
 
   
-  
+
   
   <li>
   
@@ -1297,24 +1493,21 @@ fetch('/data/website.json')
   
   
   
-  
-  
-
-  
 
   
 
   HPE ProLiant DL325 Gen10 Plus
   </a>
- 
+
       <ul>
           
           
           
           <li>
             <a title="Wiring Nodes and Networking a Cluster" href="/hardware-guide/hpe-dl325-gen10-plus/wiring-nodes-networking-cluster.html">
-              Wiring Nodes and Networking a Cluster     
+              Wiring Nodes and Networking a Cluster
               <span class="tag-container">
+              
               
               
               </span>
@@ -1328,8 +1521,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Creating and Configuring a Cluster" href="/hardware-guide/hpe-dl325-gen10-plus/creating-configuring-cluster.html">
-              Creating and Configuring a Cluster     
+              Creating and Configuring a Cluster
               <span class="tag-container">
+              
               
               
               </span>
@@ -1343,8 +1537,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Front and Rear Drives" href="/hardware-guide/hpe-dl325-gen10-plus/front-rear-drives.html">
-              Front and Rear Drives     
+              Front and Rear Drives
               <span class="tag-container">
+              
               
               
               </span>
@@ -1358,8 +1553,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Configuring iLO" href="/hardware-guide/hpe-dl325-gen10-plus/configuring-ilo.html">
-              Configuring iLO     
+              Configuring iLO
               <span class="tag-container">
+              
               
               
               </span>
@@ -1373,8 +1569,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Replacing Hardware Components" href="/hardware-guide/hpe-dl325-gen10-plus/replacing-hardware-components.html">
-              Replacing Hardware Components     
+              Replacing Hardware Components
               <span class="tag-container">
+              
               
               
               </span>
@@ -1388,8 +1585,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Technical Specifications" href="/hardware-guide/hpe-dl325-gen10-plus/technical-specifications.html">
-              Technical Specifications     
+              Technical Specifications
               <span class="tag-container">
+              
               
               
               </span>
@@ -1404,11 +1602,11 @@ fetch('/data/website.json')
      
       
   
-  
+
   
 
   
-  
+
   
   <li>
   
@@ -1418,24 +1616,21 @@ fetch('/data/website.json')
   
   
   
-  
-  
-
-  
 
   
 
   Quiver 1U All-NVMe Gen1
   </a>
- 
+
       <ul>
           
           
           
           <li>
             <a title="Racking Nodes" href="/hardware-guide/quiver-1ua-all-nvme-gen1/racking-nodes.html">
-              Racking Nodes     
+              Racking Nodes
               <span class="tag-container">
+              
               
               
               </span>
@@ -1449,8 +1644,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Configuring IPMI and Wiring Nodes" href="/hardware-guide/quiver-1ua-all-nvme-gen1/configuring-ipmi-wiring-nodes.html">
-              Configuring IPMI and Wiring Nodes     
+              Configuring IPMI and Wiring Nodes
               <span class="tag-container">
+              
               
               
               </span>
@@ -1464,8 +1660,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Creating and Configuring a Cluster" href="/hardware-guide/quiver-1ua-all-nvme-gen1/creating-configuring-cluster.html">
-              Creating and Configuring a Cluster     
+              Creating and Configuring a Cluster
               <span class="tag-container">
+              
               
               
               </span>
@@ -1483,6 +1680,7 @@ fetch('/data/website.json')
               <span class="tag-container">
               
               
+              
               </span>
             </a>
           </li>
@@ -1494,8 +1692,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Panel LEDs" href="/hardware-guide/quiver-1ua-all-nvme-gen1/panel-leds.html">
-              Panel LEDs     
+              Panel LEDs
               <span class="tag-container">
+              
               
               
               </span>
@@ -1509,8 +1708,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Cluster Networking" href="/hardware-guide/quiver-1ua-all-nvme-gen1/networking-cluster.html">
-              Cluster Networking     
+              Cluster Networking
               <span class="tag-container">
+              
               
               
               </span>
@@ -1524,8 +1724,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Replacing Hardware Components" href="/hardware-guide/quiver-1ua-all-nvme-gen1/replacing-hardware-components.html">
-              Replacing Hardware Components     
+              Replacing Hardware Components
               <span class="tag-container">
+              
               
               
               </span>
@@ -1539,8 +1740,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Technical Specifications" href="/hardware-guide/quiver-1ua-all-nvme-gen1/technical-specifications.html">
-              Technical Specifications     
+              Technical Specifications
               <span class="tag-container">
+              
               
               
               </span>
@@ -1555,11 +1757,11 @@ fetch('/data/website.json')
      
       
   
-  
+
   
 
   
-  
+
   
   <li>
   
@@ -1569,24 +1771,21 @@ fetch('/data/website.json')
   
   
   
-  
-  
-
-  
 
   
 
   Quiver 1U Hybrid Gen2
   </a>
- 
+
       <ul>
           
           
           
           <li>
             <a title="Racking Nodes" href="/hardware-guide/quiver-1u-hybrid-gen2/racking-nodes.html">
-              Racking Nodes     
+              Racking Nodes
               <span class="tag-container">
+              
               
               
               </span>
@@ -1600,8 +1799,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Configuring IPMI and Wiring Nodes" href="/hardware-guide/quiver-1u-hybrid-gen2/configuring-ipmi-wiring-nodes.html">
-              Configuring IPMI and Wiring Nodes     
+              Configuring IPMI and Wiring Nodes
               <span class="tag-container">
+              
               
               
               </span>
@@ -1615,8 +1815,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Creating and Configuring a Cluster" href="/hardware-guide/quiver-1u-hybrid-gen2/creating-configuring-cluster.html">
-              Creating and Configuring a Cluster     
+              Creating and Configuring a Cluster
               <span class="tag-container">
+              
               
               
               </span>
@@ -1630,8 +1831,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Drive Bay Mapping" href="/hardware-guide/quiver-1u-hybrid-gen2/drive-bay-mapping.html">
-              Drive Bay Mapping     
+              Drive Bay Mapping
               <span class="tag-container">
+              
               
               
               </span>
@@ -1645,8 +1847,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Panel LEDs" href="/hardware-guide/quiver-1u-hybrid-gen2/panel-leds.html">
-              Panel LEDs     
+              Panel LEDs
               <span class="tag-container">
+              
               
               
               </span>
@@ -1660,8 +1863,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Cluster Networking" href="/hardware-guide/quiver-1u-hybrid-gen2/networking-cluster.html">
-              Cluster Networking     
+              Cluster Networking
               <span class="tag-container">
+              
               
               
               </span>
@@ -1675,8 +1879,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Replacing Hardware Components" href="/hardware-guide/quiver-1u-hybrid-gen2/replacing-hardware-components.html">
-              Replacing Hardware Components     
+              Replacing Hardware Components
               <span class="tag-container">
+              
               
               
               </span>
@@ -1690,8 +1895,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Technical Specifications" href="/hardware-guide/quiver-1u-hybrid-gen2/technical-specifications.html">
-              Technical Specifications     
+              Technical Specifications
               <span class="tag-container">
+              
               
               
               </span>
@@ -1706,11 +1912,11 @@ fetch('/data/website.json')
      
       
   
-  
+
   
 
   
-  
+
   
   <li>
   
@@ -1720,24 +1926,21 @@ fetch('/data/website.json')
   
   
   
-  
-  
-
-  
 
   
 
   Quiver 2U Hybrid Gen2
   </a>
- 
+
       <ul>
           
           
           
           <li>
             <a title="Configuring IPMI and Wiring Nodes" href="/hardware-guide/quiver-2u-hybrid-gen2/configuring-ipmi-wiring-nodes.html">
-              Configuring IPMI and Wiring Nodes     
+              Configuring IPMI and Wiring Nodes
               <span class="tag-container">
+              
               
               
               </span>
@@ -1751,8 +1954,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Creating and Configuring a Cluster" href="/hardware-guide/quiver-2u-hybrid-gen2/creating-configuring-cluster.html">
-              Creating and Configuring a Cluster     
+              Creating and Configuring a Cluster
               <span class="tag-container">
+              
               
               
               </span>
@@ -1766,8 +1970,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Drive Bay Mapping" href="/hardware-guide/quiver-2u-hybrid-gen2/drive-bay-mapping.html">
-              Drive Bay Mapping     
+              Drive Bay Mapping
               <span class="tag-container">
+              
               
               
               </span>
@@ -1781,8 +1986,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Panel LEDs" href="/hardware-guide/quiver-2u-hybrid-gen2/panel-leds.html">
-              Panel LEDs     
+              Panel LEDs
               <span class="tag-container">
+              
               
               
               </span>
@@ -1796,8 +2002,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Cluster Networking" href="/hardware-guide/quiver-2u-hybrid-gen2/networking-cluster.html">
-              Cluster Networking     
+              Cluster Networking
               <span class="tag-container">
+              
               
               
               </span>
@@ -1811,8 +2018,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Replacing Hardware Components" href="/hardware-guide/quiver-2u-hybrid-gen2/replacing-hardware-components.html">
-              Replacing Hardware Components     
+              Replacing Hardware Components
               <span class="tag-container">
+              
               
               
               </span>
@@ -1826,8 +2034,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Technical Specifications" href="/hardware-guide/quiver-2u-hybrid-gen2/technical-specifications.html">
-              Technical Specifications     
+              Technical Specifications
               <span class="tag-container">
+              
               
               
               </span>
@@ -1842,11 +2051,11 @@ fetch('/data/website.json')
      
       
   
-  
+
   
 
   
-  
+
   
   <li>
   
@@ -1856,24 +2065,21 @@ fetch('/data/website.json')
   
   
   
-  
-  
-
-  
 
   
 
   Supermicro A+ ASG-1014S-ACR12N4H
   </a>
- 
+
       <ul>
           
           
           
           <li>
             <a title="Racking Nodes" href="/hardware-guide/supermicro-a-plus-asg-1014s-acr12n4h/racking-nodes.html">
-              Racking Nodes     
+              Racking Nodes
               <span class="tag-container">
+              
               
               
               </span>
@@ -1887,8 +2093,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Configuring IPMI and Wiring Nodes" href="/hardware-guide/supermicro-a-plus-asg-1014s-acr12n4h/configuring-ipmi-wiring-nodes.html">
-              Configuring IPMI and Wiring Nodes     
+              Configuring IPMI and Wiring Nodes
               <span class="tag-container">
+              
               
               
               </span>
@@ -1902,8 +2109,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Creating and Configuring a Cluster" href="/hardware-guide/supermicro-a-plus-asg-1014s-acr12n4h/creating-configuring-cluster.html">
-              Creating and Configuring a Cluster     
+              Creating and Configuring a Cluster
               <span class="tag-container">
+              
               
               
               </span>
@@ -1917,8 +2125,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Drive Bay Mapping" href="/hardware-guide/supermicro-a-plus-asg-1014s-acr12n4h/drive-bay-mapping.html">
-              Drive Bay Mapping     
+              Drive Bay Mapping
               <span class="tag-container">
+              
               
               
               </span>
@@ -1932,8 +2141,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Panel LEDs" href="/hardware-guide/supermicro-a-plus-asg-1014s-acr12n4h/panel-leds.html">
-              Panel LEDs     
+              Panel LEDs
               <span class="tag-container">
+              
               
               
               </span>
@@ -1947,8 +2157,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Cluster Networking" href="/hardware-guide/supermicro-a-plus-asg-1014s-acr12n4h/networking-cluster.html">
-              Cluster Networking     
+              Cluster Networking
               <span class="tag-container">
+              
               
               
               </span>
@@ -1962,8 +2173,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Replacing Hardware Components" href="/hardware-guide/supermicro-a-plus-asg-1014s-acr12n4h/replacing-hardware-components.html">
-              Replacing Hardware Components     
+              Replacing Hardware Components
               <span class="tag-container">
+              
               
               
               </span>
@@ -1977,8 +2189,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Technical Specifications" href="/hardware-guide/supermicro-a-plus-asg-1014s-acr12n4h/technical-specifications.html">
-              Technical Specifications     
+              Technical Specifications
               <span class="tag-container">
+              
               
               
               </span>
@@ -1993,11 +2206,11 @@ fetch('/data/website.json')
      
       
   
-  
+
   
 
   
-  
+
   
   <li>
   
@@ -2007,24 +2220,21 @@ fetch('/data/website.json')
   
   
   
-  
-  
-
-  
 
   
 
   Supermicro A+ WIO 1114S-WN10RT
   </a>
- 
+
       <ul>
           
           
           
           <li>
             <a title="Racking Nodes" href="/hardware-guide/supermicro-a-plus-wio-1114s-wn10rt/racking-nodes.html">
-              Racking Nodes     
+              Racking Nodes
               <span class="tag-container">
+              
               
               
               </span>
@@ -2038,8 +2248,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Configuring IPMI and Wiring Nodes" href="/hardware-guide/supermicro-a-plus-wio-1114s-wn10rt/configuring-ipmi-wiring-nodes.html">
-              Configuring IPMI and Wiring Nodes     
+              Configuring IPMI and Wiring Nodes
               <span class="tag-container">
+              
               
               
               </span>
@@ -2053,8 +2264,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Creating and Configuring a Cluster" href="/hardware-guide/supermicro-a-plus-wio-1114s-wn10rt/creating-configuring-cluster.html">
-              Creating and Configuring a Cluster     
+              Creating and Configuring a Cluster
               <span class="tag-container">
+              
               
               
               </span>
@@ -2068,8 +2280,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Drive Bay Mapping" href="/hardware-guide/supermicro-a-plus-wio-1114s-wn10rt/drive-bay-mapping.html">
-              Drive Bay Mapping     
+              Drive Bay Mapping
               <span class="tag-container">
+              
               
               
               </span>
@@ -2083,8 +2296,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Panel LEDs" href="/hardware-guide/supermicro-a-plus-wio-1114s-wn10rt/panel-leds.html">
-              Panel LEDs     
+              Panel LEDs
               <span class="tag-container">
+              
               
               
               </span>
@@ -2098,8 +2312,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Cluster Networking" href="/hardware-guide/supermicro-a-plus-wio-1114s-wn10rt/networking-cluster.html">
-              Cluster Networking     
+              Cluster Networking
               <span class="tag-container">
+              
               
               
               </span>
@@ -2113,8 +2328,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Replacing Hardware Components" href="/hardware-guide/supermicro-a-plus-wio-1114s-wn10rt/replacing-hardware-components.html">
-              Replacing Hardware Components     
+              Replacing Hardware Components
               <span class="tag-container">
+              
               
               
               </span>
@@ -2128,8 +2344,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Technical Specifications" href="/hardware-guide/supermicro-a-plus-wio-1114s-wn10rt/technical-specifications.html">
-              Technical Specifications     
+              Technical Specifications
               <span class="tag-container">
+              
               
               
               </span>
@@ -2150,7 +2367,6 @@ fetch('/data/website.json')
 <!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
 <script>$("li.active").parents('li').addClass("active");</script>
 
-
             </div>
             
         
@@ -2170,7 +2386,7 @@ fetch('/data/website.json')
   <a href='/'>Home</a> <span>&rsaquo;</span> 
 
 
-  <a href='/hardware-guide/'>Qumulo-Certified Platinum-Tier Hardware Servicing Guide</a> <span>&rsaquo;</span>
+  <a href='/hardware-guide/'>Qumulo Hardware Servicing Guide</a> <span>&rsaquo;</span>
 
 
 
@@ -2185,6 +2401,7 @@ fetch('/data/website.json')
             
 
 <div class="post-header">
+   <div class="star" id="page-star" title="Save to Favorites">&#9733;</div>
    <h1 class="post-title-main">Drive Bay Mapping in Quiver 1U All-NVMe Gen1 Nodes</h1>
 </div>
 
@@ -2229,20 +2446,19 @@ $(document).ready(function() {
 <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Certain node types have four additional NVMe drives in internal storage bays. For more information, see <a href="technical-specifications.html">Technical Specifications</a>.</div>
 
 <h2 id="nvme-drives-in-front-storage-bays">NVMe Drives in Front Storage Bays</h2>
-<p>There are 12 2.5” hot-swap NVMe drives attached with four screws to trays in front storage bays. For more information, see <a href="https://dlcdnets.asus.com/pub/ASUS/server/RS500A-E12-RS12U/Manual/E21507_RS500A-E12-RS12U_UM_V2_WEB.pdf?model=RS500A-E12-RS12U#page=45">Installing a 2.5-Inch Storage Device to a Front Storage Bay</a> in the ASUS documentation.</p>
+<p>There are 12 2.5” hot-swap NVMe drives attached with four screws to trays in front storage bays. For more information, see <a href="/pdf/quiver-1ua-all-nvme-gen1-server-user-guide.pdf#page=45">Installing a 2.5-Inch Storage Device to a Front Storage Bay</a> in the ASUS documentation.</p>
 
 <figure><span class="enlargeimage" data-url="/hardware-guide/quiver-1ua-all-nvme-gen1/images/quiver-1ua-all-nvme-gen1-nvme-front-storage-bay-mapping.png"><a target="_blank" rel="noopener" href="/hardware-guide/quiver-1ua-all-nvme-gen1/images/quiver-1ua-all-nvme-gen1-nvme-front-storage-bay-mapping.png"><img class="docimage" src="images/quiver-1ua-all-nvme-gen1-nvme-front-storage-bay-mapping.png" alt="Quiver 1U All-NVMe Gen1 NVMe Front Storage Bay Mapping" /></a></span></figure>
 
-<a id="internal-storage-bays"></a>
-<h2 id="nvme-drives-in-internal-storage-bays">NVMe Drives in Internal Storage Bays</h2>
-<p>There are 4 2.5” hot-swap NVMe drives in snap-in, toolless trays in internal storage bays. For more information, see <a href="https://dlcdnets.asus.com/pub/ASUS/server/RS500A-E12-RS12U/Manual/E21507_RS500A-E12-RS12U_UM_V2_WEB.pdf?model=RS500A-E12-RS12U#page=46">Installing a 2.5-Inch Storage Device to an Internal Storage Bay</a> in the ASUS documentation.</p>
+<h2 id="internal-storage-bays">NVMe Drives in Internal Storage Bays</h2>
+<p>There are 4 2.5” hot-swap NVMe drives in snap-in, toolless trays in internal storage bays. For more information, see <a href="/pdf/quiver-1ua-all-nvme-gen1-server-user-guide.pdf#page=46">Installing a 2.5-Inch Storage Device to an Internal Storage Bay</a> in the ASUS documentation.</p>
 
 <div class="alert alert-danger" role="alert"><span class="alert-title"><span class="fa fa-exclamation-circle"></span> <strong>Caution</strong></span><br /> To access the internal storage bays, you must slide the chassis out of its rack. While pulled out of the rack, the chassis must have support.</div>
 
 <figure><img class="docimage" src="images/quiver-1ua-all-nvme-gen1-nvme-internal-storage-bay-mapping.png" alt="Quiver 1U All-NVMe Gen1 NVMe Internal Storage Bay Mapping" /></figure>
 
 <h2 id="nvme-m2-boot-drive">NVMe M.2 Boot Drive</h2>
-<p>The boot drive is located at the M.2 expansion slot at connector NGFF1. For more information, see <a href="https://dlcdnets.asus.com/pub/ASUS/server/RS500A-E12-RS12U/Manual/E21507_RS500A-E12-RS12U_UM_V2_WEB.pdf?model=RS500A-E12-RS12U#page=58">Installing M.2 (NGFF) Cards</a> in the ASUS documentation.</p>
+<p>The boot drive is located at the M.2 expansion slot at connector NGFF1. For more information, see <a href="/pdf/quiver-1ua-all-nvme-gen1-server-user-guide.pdf#page=58">Installing M.2 (NGFF) Cards</a> in the ASUS documentation.</p>
 
    
 
@@ -2279,6 +2495,27 @@ $(document).ready(function() {
       
         
     
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+  
+    
   
     
       
@@ -2383,9 +2620,6 @@ $(document).ready(function() {
         
     
   
-    
-      
-        
     
       
         
@@ -2605,16 +2839,18 @@ $(document).ready(function() {
 
         </div>
     <!-- /.row -->
-</div>
+    </div>
+  <!-- /main -->
+  </main>
 <!-- /.container -->
 </div>
-<!-- /#main -->
-    </div>
+
+<button id="send-feedback">Send Feedback</button>
 
 <footer>
   <div class="footer">
     <div class="footer-text">
-      Copyright &copy; 2021&ndash;2025 Qumulo, Inc.<br>
+      Copyright &copy; 2021&ndash;2026 Qumulo, Inc.<br>
 
       <a class="no_icon footer_link" href="https://qumulo.com/legal/privacy-policy/">Privacy Policy</a> &VerticalSeparator; <a class="no_icon footer_link" href="https://qumulo.com/legal/cookie-policy/">Cookie Policy</a> &VerticalSeparator; <a class="no_icon footer_link" href="https://qumulo.com/terms-hub/">Terms Hub</a><br>
       <p>
@@ -2634,19 +2870,31 @@ $(document).ready(function() {
     </div>
   </div>
 
-  <!-- Cookie Consent - GRT Plugin -->	
+  <!-- Cookie consent Banner-->	
   <div id="cookie-banner" class="grt-cookie">
     <div class="grt-cookies-msg">
       <p>We use cookies to improve your user experience and remember your preferences on this website. If you continue to use this website, we will assume that you accept and understand our <a class="no_icon" href="https://qumulo.com/legal/privacy-policy">Privacy Policy</a>, <a class="no_icon" href="https://qumulo.com/legal/cookie-policy/">Cookie Policy</a>, and <a class="no_icon" href="https://qumulo.com/terms-hub/">Terms Hub</a>.</p>
     </div>
     <span class="grt-cookie-button">Accept</span>
   </div>
+
+  <!-- Local scripts -->
+  <!-- Cookie consent banner -->
   <script src="/js/grt-cookie-consent.js"></script>
   <script>$(".grt-cookie").grtCookie();</script>
-  
-  <script src="/js/fixdoubledashes.js"></script>
 
+  <!-- Page elements -->
   <script src="/js/expand-collapse.js"></script>
+  <script src="/js/send-feedback.js"></script>
+  <script src="/js/check-favorites.js"></script>
+  <script src="/js/copy-code.js"></script>
+
+
+
+
+
+
+
 </footer>
 
 

@@ -3,9 +3,48 @@
 <head>
     
 <meta charset="utf-8">
+
+<!-- Headers -->
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta http-equiv="Content-Security-Policy" content="
+  default-src 'self'; 
+  script-src 'self' 'unsafe-inline'
+    https://cdn.datatables.net    
+    https://cdn.jsdelivr.net    
+    https://cdnjs.cloudflare.com
+    https://maxcdn.bootstrapcdn.com
+    https://www.googletagmanager.com;
+  connect-src 'self'
+    https://*.googletagmanager.com
+    https://*.google-analytics.com
+    https://api.vectara.io  
+    https://maxcdn.bootstrapcdn.com;
+  img-src 'self' data:
+    https://*.google-analytics.com
+    https://*.googletagmanager.com;
+  style-src 'self' 'unsafe-inline'
+    https://cdn.datatables.net
+    https://fonts.googleapis.com
+    https://maxcdn.bootstrapcdn.com; 
+  font-src 'self' data:
+    https://fonts.gstatic.com
+    https://maxcdn.bootstrapcdn.com; 
+  frame-src 
+    https://www.googletagmanager.com;
+  object-src 'none';
+">
+
+<!-- This replaces frame-ancestors 'self'; which is unsupported in meta tags. -->
+<script>
+  if (self !== top) {
+    top.location = self.location;
+  }
+</script>
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Configuring a Portal Relationship Between Two Qumulo Clusters | Qumulo Documentation</title>
+<title>Configuring a Portal Relationship Between Two Qumulo Clusters | Qumulo Documentation Portal</title>
+
 <link rel="canonical" href="https://docs.qumulo.com/cloud-native-aws-administrator-guide/cloud-data-fabric/configuring-portal-relationship.html">
 
 <!-- Organization JSON-LD Schema -->
@@ -111,8 +150,8 @@ fetch('/data/website.json')
 
 <!-- Define page metadata -->
 <meta name="description" content="This section explains how to use the Cloud Data Fabric functionality in Qumulo Core by creating a spoke portal on one cluster, proposing a portal relationship to another cluster (which creates the hub portal), and authorizing the relationship by using the qq CLI.">
-<meta name="apple-mobile-web-app-title" content="Qumulo Documentation">
-<meta name="application-name" content="Qumulo Documentation">
+<meta name="apple-mobile-web-app-title" content="Qumulo Documentation Portal">
+<meta name="application-name" content="Qumulo Documentation Portal">
 <meta name="msapplication-TileColor" content="#2b5797">
 <meta name="msapplication-TileImage" content="/images/mstile-144x144.png">
 <meta name="msapplication-config" content="/images/browserconfig.xml">
@@ -120,9 +159,9 @@ fetch('/data/website.json')
 <meta name="google-site-verification" content="_KoxPR0qF_ZeMyH6uWvlX84cFRujO_AZ1eq0eT9alAg">
 
 <!-- Open Graph Meta Tags -->
-<meta property="og:title" content="Configuring a Portal Relationship Between Two Qumulo Clusters | Qumulo Documentation">
+<meta property="og:title" content="Configuring a Portal Relationship Between Two Qumulo Clusters | Qumulo Documentation Portal">
 <meta property="og:url" content="https://docs.qumulo.com/cloud-native-aws-administrator-guide/cloud-data-fabric/configuring-portal-relationship.html">
-<meta property="og:site_name" content="Qumulo Documentation">
+<meta property="og:site_name" content="Qumulo Documentation Portal">
 <meta property="og:description" content="This section explains how to use the Cloud Data Fabric functionality in Qumulo Core by creating a spoke portal on one cluster, proposing a portal relationship to another cluster (which creates the hub portal), and authorizing the relationship by using the qq CLI.">
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="website">
@@ -131,7 +170,7 @@ fetch('/data/website.json')
 <meta property="og:image:height" content="630">
 
 <!-- Twitter Meta Tags -->
-<meta name="twitter:title" content="Configuring a Portal Relationship Between Two Qumulo Clusters | Qumulo Documentation">
+<meta name="twitter:title" content="Configuring a Portal Relationship Between Two Qumulo Clusters | Qumulo Documentation Portal">
 <meta property="twitter:url" content="https://docs.qumulo.com/cloud-native-aws-administrator-guide/cloud-data-fabric/configuring-portal-relationship.html">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:description" content="This section explains how to use the Cloud Data Fabric functionality in Qumulo Core by creating a spoke portal on one cluster, proposing a portal relationship to another cluster (which creates the hub portal), and authorizing the relationship by using the qq CLI.">
@@ -149,7 +188,7 @@ fetch('/data/website.json')
 
 <!-- Define RSS feed -->
 <!-- TEMPORARILY DISABLED
-<link rel="alternate" href="https://docs.qumulo.com/feed.xml" type="application/rss+xml" title="docs">
+<link rel="alternate" href="https://docs.qumulo.com/feed.xml" type="application/rss+xml" title="">
 -->
 
 <!-- Load scripts from cloudflare.com -->
@@ -282,7 +321,7 @@ fetch('/data/website.json')
         <div class="flex-links">
           <a class="header-link header-right" href="https://qumulo.com/company/about-qumulo/" target="_blank">About Qumulo</a>
           <a class="header-link header-right" href="https://care.qumulo.com/s/knowledge" target="_blank">Knowledge Base</a>
-          <a class="header-link header-right" href="https://nexus.qumulo.com/" target="_blank">Nexus</a>
+          <a class="header-link header-right" href="https://nexus.qumulo.com/" target="_blank">Nexus <span class="emoji">🔒</span></a>
         </div>
         <div class="contact-links">
           <a class="btn-contact no_icon" href="https://qumulocare.slack.com/">Send Slack Message</a>
@@ -302,12 +341,13 @@ fetch('/data/website.json')
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/index.html">&nbsp;<span class="projectTitle"> Qumulo Documentation</span></a>
+            <a class="navbar-brand" href="/index.html">&nbsp;<span class="projectTitle"> Qumulo Documentation Portal</span></a>
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <!-- toggle sidebar button -->
-                <li><a id="tg-sb-link" href="#" data-proofer-ignore><i id="tg-sb-icon" class="fa fa-toggle-off"></i> Reading Mode</a></li>
+                <li><a id="tg-sb-link" href="#" data-proofer-ignore><i id="tg-sb-icon" class="fa fa-toggle-off"></i> Toggle Reading Mode</a></li>
+                <li><a id="view-favorites" href="/favorites.html" data-proofer-ignore><i id="fav-nav-icon" class="fa fa-star-o"></i> View Favorites</a></li>
                 <!-- entries without drop-downs appear here -->
 
 
@@ -322,7 +362,7 @@ fetch('/data/website.json')
                   <div id="search-demo-container">
                     <div class="parent">
                       <div class="search_container">
-                        <main id="search-widget">
+                        <div id="search-widget">
                           <div class="vectara__search_Box">
                             <form id="vectara__search_form" action="/search.html" method="GET">
                               <input class="vectara__search_field" name="query" id="search-input" placeholder="What would you like to know?" autofocus>
@@ -331,7 +371,7 @@ fetch('/data/website.json')
                               </button>
                             </form>
                           </div>
-                        </main>
+                        </div>
                         <ul class="tags" id="widget-tags"></ul>
                       </div>
                     </div>
@@ -348,19 +388,18 @@ fetch('/data/website.json')
 <!-- Page Content -->
 
 <div class="container">
-  <div id="main">
+  <main id="main">
     <!-- Content Row -->
     <div class="row">
         
         
-
             <!-- Sidebar Column -->
             <div class="col-md-3" id="tg-sb-sidebar">
                 
 
 <div class="nav nav-buttons">
   
-    <a target="_blank" rel="noopener" href="https://github.com/qumulo/docs/blob/gh-pages/cloud-native-aws-administrator-guide/cloud-data-fabric/configuring-portal-relationship.md" class="btn btn-default githubEditButton no_icon" role="button" data-proofer-ignore><span class="fa fa-github fa-lg"></span> Edit on GitHub</a>
+    <a target="_blank" rel="noopener" href="https://github.com/qumulo/docs/blob/mainline/cloud-native-aws-administrator-guide/cloud-data-fabric/configuring-portal-relationship.md" class="btn btn-default githubEditButton no_icon" role="button" data-proofer-ignore><span class="fa fa-github fa-lg"></span> Edit on GitHub</a>
   
 
   
@@ -375,11 +414,11 @@ fetch('/data/website.json')
   
       
   
-  
+
   
 
   
-  
+
   
   <li>
   
@@ -389,24 +428,21 @@ fetch('/data/website.json')
   
   
   
-  
-  
-
-  
 
   
 
   Cloud Native Qumulo on AWS Administrator Guide
   </a>
- 
+
       <ul>
           
           
           
           <li>
             <a title="Documentation Home" href="/index.html">
-              Documentation Home     
+              Documentation Home
               <span class="tag-container">
+              
               
               
               </span>
@@ -420,8 +456,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Guide Table of Contents" href="/cloud-native-aws-administrator-guide/">
-              Guide Table of Contents     
+              Guide Table of Contents
               <span class="tag-container">
+              
               
               
               </span>
@@ -435,8 +472,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Contacting the Qumulo Care Team" href="/contacting-qumulo-care-team.html">
-              Contacting the Qumulo Care Team     
+              Contacting the Qumulo Care Team
               <span class="tag-container">
+              
               
               
               </span>
@@ -451,11 +489,11 @@ fetch('/data/website.json')
      
       
   
-  
+
   
 
   
-  
+
   
   <li>
   
@@ -465,24 +503,21 @@ fetch('/data/website.json')
   
   
   
-  
-  
-
-  
 
   
 
   Getting Started
   </a>
- 
+
       <ul>
           
           
           
           <li>
             <a title="How Cloud Native Qumulo Works" href="/cloud-native-aws-administrator-guide/getting-started/how-cloud-native-qumulo-works.html">
-              How Cloud Native Qumulo Works     
+              How Cloud Native Qumulo Works
               <span class="tag-container">
+              
               
               
               </span>
@@ -496,8 +531,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Deploying with CloudFormation" href="/cloud-native-aws-administrator-guide/getting-started/cloudformation.html">
-              Deploying with CloudFormation     
+              Deploying with CloudFormation
               <span class="tag-container">
+              
               
               
               </span>
@@ -511,8 +547,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Deploying with Terraform" href="/cloud-native-aws-administrator-guide/getting-started/terraform.html">
-              Deploying with Terraform     
+              Deploying with Terraform
               <span class="tag-container">
+              
               
               
               </span>
@@ -526,8 +563,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Supported Configurations and Known Limits" href="/cloud-native-aws-administrator-guide/getting-started/supported-configurations-known-limits.html">
-              Supported Configurations and Known Limits     
+              Supported Configurations and Known Limits
               <span class="tag-container">
+              
               
               
               </span>
@@ -542,11 +580,11 @@ fetch('/data/website.json')
      
       
   
-  
+
   
 
   
-  
+
   
   <li>
   
@@ -556,24 +594,21 @@ fetch('/data/website.json')
   
   
   
-  
-  
-
-  
 
   
 
   System Upgrades
   </a>
- 
+
       <ul>
           
           
           
           <li>
             <a title="Feature Log" href="/cloud-native-aws-administrator-guide/upgrading-qumulo-core/feature-log.html">
-              Feature Log     
+              Feature Log
               <span class="tag-container">
+              
               
               
               </span>
@@ -587,8 +622,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Performing Upgrades" href="/cloud-native-aws-administrator-guide/upgrading-qumulo-core/performing-upgrades.html">
-              Performing Upgrades     
+              Performing Upgrades
               <span class="tag-container">
+              
               
               
               </span>
@@ -602,8 +638,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Replication Version Requirements and Upgrade Recommendations" href="/cloud-native-aws-administrator-guide/upgrading-qumulo-core/replication-version-requirements-upgrade-recommendations.html">
-              Replication Version Requirements and Upgrade Recommendations     
+              Replication Version Requirements and Upgrade Recommendations
               <span class="tag-container">
+              
               
               
               </span>
@@ -618,11 +655,11 @@ fetch('/data/website.json')
      
       
   
-  
+
   
 
   
-  
+
   
   <li>
   
@@ -632,24 +669,21 @@ fetch('/data/website.json')
   
   
   
-  
-  
-
-  
 
   
 
   Authentication
   </a>
- 
+
       <ul>
           
           
           
           <li>
-            <a title="Configuring SAML Single Sign-On (SSO)" href="/cloud-native-aws-administrator-guide/authentication-qumulo-core/configuring-saml-single-sign-on-sso.html">
-              Configuring SAML Single Sign-On (SSO)     
+            <a title="Installing a Signed SSL Certificate" href="/cloud-native-aws-administrator-guide/authentication-qumulo-core/installing-signed-ssl-certificate.html">
+              Installing a Signed SSL Certificate
               <span class="tag-container">
+              
               
               
               </span>
@@ -662,9 +696,26 @@ fetch('/data/website.json')
           
           
           <li>
-            <a title="Configuring Search Trusted Domains" href="/cloud-native-aws-administrator-guide/authentication-qumulo-core/configuring-search-trusted-domains-active-directory.html">
-              Configuring Search Trusted Domains     
+            <a title="Installing a Custom Root CA Certificate" href="/cloud-native-aws-administrator-guide/authentication-qumulo-core/installing-custom-root-ca-certificate.html">
+              Installing a Custom Root CA Certificate
               <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Configuring Active Directory" href="/cloud-native-aws-administrator-guide/authentication-qumulo-core/configuring-ad.html">
+              Configuring Active Directory
+              <span class="tag-container">
+              
               
               
               </span>
@@ -678,8 +729,41 @@ fetch('/data/website.json')
           
           <li>
             <a title="Configuring LDAP" href="/cloud-native-aws-administrator-guide/authentication-qumulo-core/configuring-ldap.html">
-              Configuring LDAP     
+              Configuring LDAP
               <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Configuring SAML Single Sign-On (SSO)" href="/cloud-native-aws-administrator-guide/authentication-qumulo-core/configuring-saml-single-sign-on-sso.html">
+              Configuring SAML Single Sign-On (SSO)
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Configuring Search Trusted Domains" href="/cloud-native-aws-administrator-guide/authentication-qumulo-core/configuring-search-trusted-domains-active-directory.html">
+              Configuring Search Trusted Domains
+              <span class="tag-container">
+              
               
               
               </span>
@@ -693,8 +777,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Creating and Using Bearer Tokens" href="/cloud-native-aws-administrator-guide/authentication-qumulo-core/creating-using-bearer-tokens-to-authenticate-qumulo-rest-api-calls.html">
-              Creating and Using Bearer Tokens     
+              Creating and Using Bearer Tokens
               <span class="tag-container">
+              
               
               
               </span>
@@ -709,11 +794,11 @@ fetch('/data/website.json')
      
       
   
-  
+
   
 
   
-  
+
   
   <li>
   
@@ -723,24 +808,21 @@ fetch('/data/website.json')
   
   
   
-  
-  
-
-  
 
   
 
   Connecting to External Services
   </a>
- 
+
       <ul>
           
           
           
           <li>
             <a title="Creating and Using Access Tokens" href="/cloud-native-aws-administrator-guide/connecting-to-external-services/creating-using-access-tokens-to-authenticate-external-services-qumulo-core.html">
-              Creating and Using Access Tokens     
+              Creating and Using Access Tokens
               <span class="tag-container">
+              
               
               
               </span>
@@ -754,8 +836,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Connecting a Kubernetes Cluster" href="/cloud-native-aws-administrator-guide/connecting-to-external-services/connecting-kubernetes-cluster-with-container-storage-interface-csi-driver.html">
-              Connecting a Kubernetes Cluster     
+              Connecting a Kubernetes Cluster
               <span class="tag-container">
+              
               
               
               </span>
@@ -770,11 +853,11 @@ fetch('/data/website.json')
      
       
   
-  
+
   
 
   
-  
+
   
   <li>
   
@@ -784,24 +867,21 @@ fetch('/data/website.json')
   
   
   
-  
-  
-
-  
 
   
 
   Authorization
   </a>
- 
+
       <ul>
           
           
           
           <li>
-            <a title="Managing File Locks" href="/cloud-native-aws-administrator-guide/authorization-qumulo-core/managing-file-locks.html">
-              Managing File Locks     
+            <a title="Managing Role-Based Access Control (RBAC)" href="/cloud-native-aws-administrator-guide/authorization-qumulo-core/managing-role-based-access-control-rbac.html">
+              Managing Role-Based Access Control (RBAC)
               <span class="tag-container">
+              
               
               
               </span>
@@ -814,24 +894,10 @@ fetch('/data/website.json')
           
           
           <li>
-            <a title="Managing Role-Based Access Control" href="/cloud-native-aws-administrator-guide/authorization-qumulo-core/managing-role-based-access-control-rbac.html">
-              Managing Role-Based Access Control     
+            <a title="Managing Cross-Protocol (XPP) Permissions" href="/cloud-native-aws-administrator-guide/authorization-qumulo-core/managing-cross-protocol-permissions-xpp.html">
+              Managing Cross-Protocol (XPP) Permissions
               <span class="tag-container">
               
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-          
-          
-          <li>
-            <a title="Managing Cross-Protocol Permissions" href="/cloud-native-aws-administrator-guide/authorization-qumulo-core/managing-cross-protocol-permissions-xpp.html">
-              Managing Cross-Protocol Permissions     
-              <span class="tag-container">
               
               
               </span>
@@ -845,8 +911,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Using SMB Host Restrictions" href="/cloud-native-aws-administrator-guide/authorization-qumulo-core/using-smb-host-restrictions.html">
-              Using SMB Host Restrictions     
+              Using SMB Host Restrictions
               <span class="tag-container">
+              
               
               
               </span>
@@ -860,8 +927,25 @@ fetch('/data/website.json')
           
           <li>
             <a title="Using Active Directory for POSIX Attributes" href="/cloud-native-aws-administrator-guide/authorization-qumulo-core/using-active-directory-for-posix-attributes.html">
-              Using Active Directory for POSIX Attributes     
+              Using Active Directory for POSIX Attributes
               <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Managing File Locks" href="/cloud-native-aws-administrator-guide/authorization-qumulo-core/managing-file-locks.html">
+              Managing File Locks
+              <span class="tag-container">
+              
               
               
               </span>
@@ -876,11 +960,188 @@ fetch('/data/website.json')
      
       
   
+
+  
+
+  
+
+  
+  <li>
+  
+
+  <a title="Encryption at Rest" href="/cloud-native-aws-administrator-guide/encryption-at-rest/index.html" data-proofer-ignore>
+  
+  
   
   
 
   
+
+  Encryption at Rest
+  </a>
+
+      <ul>
+          
+          
+          
+          <li>
+            <a title="Managing Encryption at Rest" href="/cloud-native-aws-administrator-guide/encryption-at-rest/managing-encryption-at-rest.html">
+              Managing Encryption at Rest
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
   
+
+  
+
+  
+
+  
+  <li>
+  
+
+  <a title="Encryption in Transit" href="/cloud-native-aws-administrator-guide/encryption-in-transit/index.html" data-proofer-ignore>
+  
+  
+  
+  
+
+  
+
+  Encryption in Transit
+  </a>
+
+      <ul>
+          
+          
+          
+          <li>
+            <a title="Managing SMB3 Encryption in Transit" href="/cloud-native-aws-administrator-guide/encryption-in-transit/managing-smb3-encryption-in-transit.html">
+              Managing SMB3 Encryption in Transit
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="How NFSv4.1 Works with Kerberos" href="/cloud-native-aws-administrator-guide/kerberos/kerberos-with-qumulo-core.html">
+              How NFSv4.1 Works with Kerberos
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Host Access Rules for NFS Exports" href="/cloud-native-aws-administrator-guide/nfs/configuring-troubleshooting-host-access-rules-nfs-exports.html">
+              Host Access Rules for NFS Exports
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+
+  
+
+  
+
+  
+  <li>
+  
+
+  <a title="Cryptographic Key Management" href="/cloud-native-aws-administrator-guide/cryptographic-key-management/index.html" data-proofer-ignore>
+  
+  
+  
+  
+
+  
+
+  Cryptographic Key Management
+  </a>
+
+      <ul>
+          
+          
+          
+          <li>
+            <a title="Generating and Storing ECDSA Keys" href="/cloud-native-aws-administrator-guide/cryptographic-key-management/generating-storing-ecdsa-keys.html">
+              Generating and Storing ECDSA Keys
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Managing Security Keys" href="/cloud-native-aws-administrator-guide/cryptographic-key-management/managing-security-keys.html">
+              Managing Security Keys
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+
+  
+
+  
+
   
   <li>
   
@@ -890,24 +1151,21 @@ fetch('/data/website.json')
   
   
   
-  
-  
-
-  
 
   
 
   Storage Management
   </a>
- 
+
       <ul>
           
           
           
           <li>
             <a title="Creating and Managing Directory Quotas" href="/cloud-native-aws-administrator-guide/storage-management/creating-directory-quotas.html">
-              Creating and Managing Directory Quotas     
+              Creating and Managing Directory Quotas
               <span class="tag-container">
+              
               
               
               </span>
@@ -922,11 +1180,11 @@ fetch('/data/website.json')
      
       
   
-  
+
   
 
   
-  
+
   
   <li>
   
@@ -936,24 +1194,21 @@ fetch('/data/website.json')
   
   
   
-  
-  
-
-  
 
   
 
   Network Configuration
   </a>
- 
+
       <ul>
           
           
           
           <li>
             <a title="Required Networking Ports" href="/cloud-native-aws-administrator-guide/network-configuration/required-ports.html">
-              Required Networking Ports     
+              Required Networking Ports
               <span class="tag-container">
+              
               
               
               </span>
@@ -967,23 +1222,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Configuring IPv6" href="/cloud-native-aws-administrator-guide/network-configuration/configuring-ipv6.html">
-              Configuring IPv6     
+              Configuring IPv6
               <span class="tag-container">
               
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-          
-          
-          <li>
-            <a title="Connecting to Multiple Virtual Networks" href="/cloud-native-aws-administrator-guide/network-configuration/connecting-multiple-virtual-networks.html">
-              Connecting to Multiple Virtual Networks     
-              <span class="tag-container">
               
               
               </span>
@@ -997,8 +1238,25 @@ fetch('/data/website.json')
           
           <li>
             <a title="Configuring Round-Robin DNS on Windows Server" href="/cloud-native-aws-administrator-guide/network-configuration/configuring-round-robin-dns-windows-server.html">
-              Configuring Round-Robin DNS on Windows Server     
+              Configuring Round-Robin DNS on Windows Server
               <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Configuring Qumulo Authoritative DNS (QDNS)" href="/cloud-native-aws-administrator-guide/network-configuration/configuring-authoritative-dns.html">
+              Configuring Qumulo Authoritative DNS (QDNS)
+              <span class="tag-container">
+              
               
               
               </span>
@@ -1013,11 +1271,11 @@ fetch('/data/website.json')
      
       
   
-  
+
   
 
   
-  
+
   
   <li>
   
@@ -1027,24 +1285,37 @@ fetch('/data/website.json')
   
   
   
-  
-  
-
-  
 
   
 
   Cloud Data Fabric
   </a>
- 
+
       <ul>
           
           
           
           <li>
-            <a title="Enabling Cloud Data Fabric" href="/cloud-native-aws-administrator-guide/cloud-data-fabric/how-portal-creation-enables-cloud-data-fabric.html">
-              Enabling Cloud Data Fabric     
+            <a title="How Cloud Data Fabric Works" href="/cloud-native-aws-administrator-guide/cloud-data-fabric/how-portal-creation-enables-cloud-data-fabric.html">
+              How Cloud Data Fabric Works
               <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Known Limits for Cloud Data Fabric" href="/cloud-native-aws-administrator-guide/cloud-data-fabric/known-limits.html">
+              Known Limits for Cloud Data Fabric
+              <span class="tag-container">
+              
               
               
               </span>
@@ -1062,6 +1333,7 @@ fetch('/data/website.json')
               <span class="tag-container">
               
               
+              
               </span>
             </a>
           </li>
@@ -1073,8 +1345,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Configuring Cache Management" href="/cloud-native-aws-administrator-guide/cloud-data-fabric/configuring-cache-management-for-spoke-portals.html">
-              Configuring Cache Management     
+              Configuring Cache Management
               <span class="tag-container">
+              
               
               
               </span>
@@ -1089,11 +1362,11 @@ fetch('/data/website.json')
      
       
   
-  
+
   
 
   
-  
+
   
   <li>
   
@@ -1103,24 +1376,21 @@ fetch('/data/website.json')
   
   
   
-  
-  
-
-  
 
   
 
   Web UI
   </a>
- 
+
       <ul>
           
           
           
           <li>
             <a title="Setting the Web UI Login Banner" href="/cloud-native-aws-administrator-guide/web-ui/login-banner.html">
-              Setting the Web UI Login Banner     
+              Setting the Web UI Login Banner
               <span class="tag-container">
+              
               
               
               </span>
@@ -1134,8 +1404,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Setting the Web UI Inactivity Timeout" href="/cloud-native-aws-administrator-guide/web-ui/inactivity-timeout.html">
-              Setting the Web UI Inactivity Timeout     
+              Setting the Web UI Inactivity Timeout
               <span class="tag-container">
+              
               
               
               </span>
@@ -1150,11 +1421,11 @@ fetch('/data/website.json')
      
       
   
-  
+
   
 
   
-  
+
   
   <li>
   
@@ -1164,24 +1435,21 @@ fetch('/data/website.json')
   
   
   
-  
-  
-
-  
 
   
 
   qq CLI
   </a>
- 
+
       <ul>
           
           
           
           <li>
             <a title="Getting Started with the qq CLI" href="/cloud-native-aws-administrator-guide/qq-cli/getting-started.html">
-              Getting Started with the qq CLI     
+              Getting Started with the qq CLI
               <span class="tag-container">
+              
               
               
               </span>
@@ -1195,8 +1463,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Enabling Autocomplete for the qq CLI" href="/cloud-native-aws-administrator-guide/qq-cli/enabling-autocomplete.html">
-              Enabling Autocomplete for the qq CLI     
+              Enabling Autocomplete for the qq CLI
               <span class="tag-container">
+              
               
               
               </span>
@@ -1211,11 +1480,11 @@ fetch('/data/website.json')
      
       
   
-  
+
   
 
   
-  
+
   
   <li>
   
@@ -1225,24 +1494,21 @@ fetch('/data/website.json')
   
   
   
-  
-  
-
-  
 
   
 
   Metadata
   </a>
- 
+
       <ul>
           
           
           
           <li>
             <a title="Managing User-Defined Metadata" href="/cloud-native-aws-administrator-guide/metadata/managing-user-defined-metadata.html">
-              Managing User-Defined Metadata     
+              Managing User-Defined Metadata
               <span class="tag-container">
+              
               
               
               </span>
@@ -1257,11 +1523,11 @@ fetch('/data/website.json')
      
       
   
-  
+
   
 
   
-  
+
   
   <li>
   
@@ -1271,24 +1537,21 @@ fetch('/data/website.json')
   
   
   
-  
-  
-
-  
 
   
 
   Snapshots
   </a>
- 
+
       <ul>
           
           
           
           <li>
             <a title="How Snapshots Work" href="/cloud-native-aws-administrator-guide/snapshots/how-snapshots-work.html">
-              How Snapshots Work     
+              How Snapshots Work
               <span class="tag-container">
+              
               
               
               </span>
@@ -1302,8 +1565,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Managing Snapshots" href="/cloud-native-aws-administrator-guide/snapshots/managing-snapshots.html">
-              Managing Snapshots     
+              Managing Snapshots
               <span class="tag-container">
+              
               
               
               </span>
@@ -1317,8 +1581,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Locking and Unlocking Snapshots" href="/cloud-native-aws-administrator-guide/snapshots/locking-unlocking-snapshots.html">
-              Locking and Unlocking Snapshots     
+              Locking and Unlocking Snapshots
               <span class="tag-container">
+              
               
               
               </span>
@@ -1332,8 +1597,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Recovering Files by Using Snapshots" href="/cloud-native-aws-administrator-guide/snapshots/recovering-files.html">
-              Recovering Files by Using Snapshots     
+              Recovering Files by Using Snapshots
               <span class="tag-container">
+              
               
               
               </span>
@@ -1348,117 +1614,11 @@ fetch('/data/website.json')
      
       
   
-  
-  
-
-  
-  
-  
-  <li>
-  
-
-  <a title="Encryption and Data Security" href="/cloud-native-aws-administrator-guide/encryption-data-security/index.html" data-proofer-ignore>
-  
-  
-  
-  
-  
-  
 
   
 
   
 
-  Encryption and Data Security
-  </a>
- 
-      <ul>
-          
-          
-          
-          <li>
-            <a title="Managing Encryption at Rest" href="/cloud-native-aws-administrator-guide/encryption-data-security/managing-encryption-at-rest.html">
-              Managing Encryption at Rest     
-              <span class="tag-container">
-              
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-          
-          
-          <li>
-            <a title="Managing SMB3 Encryption in Transit" href="/cloud-native-aws-administrator-guide/encryption-data-security/managing-smb3-encryption-in-transit.html">
-              Managing SMB3 Encryption in Transit     
-              <span class="tag-container">
-              
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-          
-          
-          <li>
-            <a title="Generating and Storing ECDSA Keys" href="/cloud-native-aws-administrator-guide/encryption-data-security/generating-storing-ecdsa-keys.html">
-              Generating and Storing ECDSA Keys     
-              <span class="tag-container">
-              
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-          
-          
-          <li>
-            <a title="Managing Security Keys" href="/cloud-native-aws-administrator-guide/encryption-data-security/managing-security-keys.html">
-              Managing Security Keys     
-              <span class="tag-container">
-              
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-          
-          
-          <li>
-            <a title="Installing a Signed SSL Certificate" href="/cloud-native-aws-administrator-guide/encryption-data-security/installing-signed-ssl-certificate.html">
-              Installing a Signed SSL Certificate     
-              <span class="tag-container">
-              
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-      </ul>
-   </li>
-     
-      
-  
-  
-  
-
-  
-  
   
   <li>
   
@@ -1468,24 +1628,21 @@ fetch('/data/website.json')
   
   
   
-  
-  
-
-  
 
   
 
   Data Replication
   </a>
- 
+
       <ul>
           
           
           
           <li>
             <a title="Creating and Managing a Continuous Replication Relationship" href="/cloud-native-aws-administrator-guide/replicating-data/creating-managing-continuous-replication-relationship.html">
-              Creating and Managing a Continuous Replication Relationship     
+              Creating and Managing a Continuous Replication Relationship
               <span class="tag-container">
+              
               
               
               </span>
@@ -1499,8 +1656,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Shift-To Amazon S3" href="/cloud-native-aws-administrator-guide/replicating-data/shift-to-s3.html">
-              Shift-To Amazon S3     
+              Shift-To Amazon S3
               <span class="tag-container">
+              
               
               
               </span>
@@ -1514,8 +1672,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Shift-From Amazon S3" href="/cloud-native-aws-administrator-guide/replicating-data/shift-from-s3.html">
-              Shift-From Amazon S3     
+              Shift-From Amazon S3
               <span class="tag-container">
+              
               
               
               </span>
@@ -1530,11 +1689,11 @@ fetch('/data/website.json')
      
       
   
-  
+
   
 
   
-  
+
   
   <li>
   
@@ -1544,24 +1703,21 @@ fetch('/data/website.json')
   
   
   
-  
-  
-
-  
 
   
 
   File System Changes
   </a>
- 
+
       <ul>
           
           
           
           <li>
             <a title="How File System Change Notifications Work" href="/cloud-native-aws-administrator-guide/watching-file-attribute-directory-changes/how-file-system-change-notifications-work.html">
-              How File System Change Notifications Work     
+              How File System Change Notifications Work
               <span class="tag-container">
+              
               
               
               </span>
@@ -1575,8 +1731,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Watching for Changes with SMB2 CHANGE_NOTIFY" href="/cloud-native-aws-administrator-guide/watching-file-attribute-directory-changes/smb2-change-notify.html">
-              Watching for Changes with SMB2 CHANGE_NOTIFY     
+              Watching for Changes with SMB2 CHANGE_NOTIFY
               <span class="tag-container">
+              
               
               
               </span>
@@ -1590,8 +1747,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Watching for Changes with REST" href="/cloud-native-aws-administrator-guide/watching-file-attribute-directory-changes/rest.html">
-              Watching for Changes with REST     
+              Watching for Changes with REST
               <span class="tag-container">
+              
               
               
               </span>
@@ -1606,11 +1764,11 @@ fetch('/data/website.json')
      
       
   
-  
+
   
 
   
-  
+
   
   <li>
   
@@ -1620,24 +1778,21 @@ fetch('/data/website.json')
   
   
   
-  
-  
-
-  
 
   
 
   NFS
   </a>
- 
+
       <ul>
           
           
           
           <li>
             <a title="Creating and Managing an NFS Export" href="/cloud-native-aws-administrator-guide/nfs/creating-nfs-export.html">
-              Creating and Managing an NFS Export     
+              Creating and Managing an NFS Export
               <span class="tag-container">
+              
               
               
               </span>
@@ -1651,8 +1806,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Enabling and Using NFSv4.1" href="/cloud-native-aws-administrator-guide/nfs/nfsv4.1-enabling-using.html">
-              Enabling and Using NFSv4.1     
+              Enabling and Using NFSv4.1
               <span class="tag-container">
+              
               
               
               </span>
@@ -1666,8 +1822,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Managing File Access Permissions with ACLs" href="/cloud-native-aws-administrator-guide/nfs/nfsv4.1-acls.html">
-              Managing File Access Permissions with ACLs     
+              Managing File Access Permissions with ACLs
               <span class="tag-container">
+              
               
               
               </span>
@@ -1681,8 +1838,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Host Access Rules for NFS Exports" href="/cloud-native-aws-administrator-guide/nfs/configuring-troubleshooting-host-access-rules-nfs-exports.html">
-              Host Access Rules for NFS Exports     
+              Host Access Rules for NFS Exports
               <span class="tag-container">
+              
               
               
               </span>
@@ -1697,11 +1855,11 @@ fetch('/data/website.json')
      
       
   
-  
+
   
 
   
-  
+
   
   <li>
   
@@ -1711,24 +1869,21 @@ fetch('/data/website.json')
   
   
   
-  
-  
-
-  
 
   
 
   NFSv4.1 with Kerberos
   </a>
- 
+
       <ul>
           
           
           
           <li>
             <a title="How NFSv4.1 Works with Kerberos" href="/cloud-native-aws-administrator-guide/kerberos/kerberos-with-qumulo-core.html">
-              How NFSv4.1 Works with Kerberos     
+              How NFSv4.1 Works with Kerberos
               <span class="tag-container">
+              
               
               
               </span>
@@ -1742,8 +1897,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Prerequisites for Joining to Active Directory" href="/cloud-native-aws-administrator-guide/kerberos/kerberos-prerequisites-joining-cluster-active-directory.html">
-              Prerequisites for Joining to Active Directory     
+              Prerequisites for Joining to Active Directory
               <span class="tag-container">
+              
               
               
               </span>
@@ -1757,8 +1913,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Configuring Active Directory" href="/cloud-native-aws-administrator-guide/kerberos/kerberos-configuring-active-directory.html">
-              Configuring Active Directory     
+              Configuring Active Directory
               <span class="tag-container">
+              
               
               
               </span>
@@ -1772,8 +1929,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Performing Additional Cluster Configuration" href="/cloud-native-aws-administrator-guide/kerberos/kerberos-additional-cluster-configuration.html">
-              Performing Additional Cluster Configuration     
+              Performing Additional Cluster Configuration
               <span class="tag-container">
+              
               
               
               </span>
@@ -1787,8 +1945,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Using Kerberos Permissions" href="/cloud-native-aws-administrator-guide/kerberos/kerberos-qumulo-permissions.html">
-              Using Kerberos Permissions     
+              Using Kerberos Permissions
               <span class="tag-container">
+              
               
               
               </span>
@@ -1802,8 +1961,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Configuring a Linux Client" href="/cloud-native-aws-administrator-guide/kerberos/kerberos-configuring-linux-client.html">
-              Configuring a Linux Client     
+              Configuring a Linux Client
               <span class="tag-container">
+              
               
               
               </span>
@@ -1817,8 +1977,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Configuring Cross-Domain Active Directory Trusts" href="/cloud-native-aws-administrator-guide/kerberos/kerberos-configuring-cross-domain-active-directory-trusts.html">
-              Configuring Cross-Domain Active Directory Trusts     
+              Configuring Cross-Domain Active Directory Trusts
               <span class="tag-container">
+              
               
               
               </span>
@@ -1832,8 +1993,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Troubleshooting NFSv4.1 with Kerberos" href="/cloud-native-aws-administrator-guide/kerberos/kerberos-troubleshooting.html">
-              Troubleshooting NFSv4.1 with Kerberos     
+              Troubleshooting NFSv4.1 with Kerberos
               <span class="tag-container">
+              
               
               
               </span>
@@ -1848,11 +2010,11 @@ fetch('/data/website.json')
      
       
   
-  
+
   
 
   
-  
+
   
   <li>
   
@@ -1862,24 +2024,37 @@ fetch('/data/website.json')
   
   
   
-  
-  
-
-  
 
   
 
   SMB
   </a>
- 
+
       <ul>
           
           
           
           <li>
             <a title="Creating and Managing an SMB Share" href="/cloud-native-aws-administrator-guide/smb/creating-smb-share.html">
-              Creating and Managing an SMB Share     
+              Creating and Managing an SMB Share
               <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Resolving Access Issues with an SMB Share" href="/cloud-native-aws-administrator-guide/smb/resolving-smb-share-permission-errors-on-windows-clients.html">
+              Resolving Access Issues with an SMB Share
+              <span class="tag-container">
+              
               
               
               </span>
@@ -1893,8 +2068,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Managing File Shares by Using the Shared Folders MMC Snap-In" href="/cloud-native-aws-administrator-guide/smb/managing-file-shares-shared-folders-mmc.html">
-              Managing File Shares by Using the Shared Folders MMC Snap-In     
+              Managing File Shares by Using the Shared Folders MMC Snap-In
               <span class="tag-container">
+              
               
               
               </span>
@@ -1909,11 +2085,11 @@ fetch('/data/website.json')
      
       
   
-  
+
   
 
   
-  
+
   
   <li>
   
@@ -1923,24 +2099,21 @@ fetch('/data/website.json')
   
   
   
-  
-  
-
-  
 
   
 
   S3 API
   </a>
- 
+
       <ul>
           
           
           
           <li>
             <a title="Configuring and Using the S3 API" href="/cloud-native-aws-administrator-guide/s3-api/configuring-using-s3-api.html">
-              Configuring and Using the S3 API     
+              Configuring and Using the S3 API
               <span class="tag-container">
+              
               
               
               </span>
@@ -1954,8 +2127,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Creating and Managing S3 Access Keys" href="/cloud-native-aws-administrator-guide/s3-api/creating-managing-s3-access-keys.html">
-              Creating and Managing S3 Access Keys     
+              Creating and Managing S3 Access Keys
               <span class="tag-container">
+              
               
               
               </span>
@@ -1969,8 +2143,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Creating and Managing S3 Buckets" href="/cloud-native-aws-administrator-guide/s3-api/creating-managing-s3-buckets.html">
-              Creating and Managing S3 Buckets     
+              Creating and Managing S3 Buckets
               <span class="tag-container">
+              
               
               
               </span>
@@ -1984,8 +2159,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Managing Access to S3 Buckets" href="/cloud-native-aws-administrator-guide/s3-api/managing-access-to-s3-buckets.html">
-              Managing Access to S3 Buckets     
+              Managing Access to S3 Buckets
               <span class="tag-container">
+              
               
               
               </span>
@@ -1999,8 +2175,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Managing Access Policies for S3 Buckets" href="/cloud-native-aws-administrator-guide/s3-api/managing-access-policies-for-s3-buckets.html">
-              Managing Access Policies for S3 Buckets     
+              Managing Access Policies for S3 Buckets
               <span class="tag-container">
+              
               
               
               </span>
@@ -2014,8 +2191,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Managing Multipart S3 Uploads" href="/cloud-native-aws-administrator-guide/s3-api/managing-multipart-uploads.html">
-              Managing Multipart S3 Uploads     
+              Managing Multipart S3 Uploads
               <span class="tag-container">
+              
               
               
               </span>
@@ -2029,8 +2207,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Managing S3 Bucket Versioning" href="/cloud-native-aws-administrator-guide/s3-api/managing-s3-bucket-versioning.html">
-              Managing S3 Bucket Versioning     
+              Managing S3 Bucket Versioning
               <span class="tag-container">
+              
               
               
               </span>
@@ -2044,8 +2223,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Managing Object Lock" href="/cloud-native-aws-administrator-guide/s3-api/managing-object-lock-for-s3-buckets.html">
-              Managing Object Lock     
+              Managing Object Lock
               <span class="tag-container">
+              
               
               
               </span>
@@ -2059,8 +2239,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Supported Functionality and Limits" href="/cloud-native-aws-administrator-guide/s3-api/supported-s3-functionality-known-limits.html">
-              Supported Functionality and Limits     
+              Supported Functionality and Limits
               <span class="tag-container">
+              
               
               
               </span>
@@ -2075,11 +2256,11 @@ fetch('/data/website.json')
      
       
   
-  
+
   
 
   
-  
+
   
   <li>
   
@@ -2089,24 +2270,37 @@ fetch('/data/website.json')
   
   
   
-  
-  
-
-  
 
   
 
   Monitoring and Metrics
   </a>
- 
+
       <ul>
           
           
           
           <li>
-            <a title="Configuring Cloud-Based Monitoring and Remote Support" href="/cloud-native-aws-administrator-guide/monitoring-and-metrics/configuring-cloud-based-monitoring-remote-support.html">
-              Configuring Cloud-Based Monitoring and Remote Support     
+            <a title="Enabling Nexus Remote Support" href="/cloud-native-aws-administrator-guide/monitoring-and-metrics/enabling-nexus-remote-support.html">
+              Enabling Nexus Remote Support
               <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Enabling Cloud-Based Monitoring" href="/cloud-native-aws-administrator-guide/monitoring-and-metrics/enabling-cloud-based-monitoring.html">
+              Enabling Cloud-Based Monitoring
+              <span class="tag-container">
+              
               
               
               </span>
@@ -2120,8 +2314,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Connecting to Cloud-Based Monitoring and S3 with a Custom Proxy" href="/cloud-native-aws-administrator-guide/monitoring-and-metrics/connecting-cloud-based-monitoring-s3-custom-proxy.html">
-              Connecting to Cloud-Based Monitoring and S3 with a Custom Proxy     
+              Connecting to Cloud-Based Monitoring and S3 with a Custom Proxy
               <span class="tag-container">
+              
               
               
               </span>
@@ -2135,8 +2330,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Restoring the Default Values for Cloud-Based and Nexus Monitoring" href="/cloud-native-aws-administrator-guide/monitoring-and-metrics/restoring-default-values-cloud-based-nexus-monitoring.html">
-              Restoring the Default Values for Cloud-Based and Nexus Monitoring     
+              Restoring the Default Values for Cloud-Based and Nexus Monitoring
               <span class="tag-container">
+              
               
               
               </span>
@@ -2149,9 +2345,10 @@ fetch('/data/website.json')
           
           
           <li>
-            <a title="How Audit Logging Works in Qumulo Core" href="/cloud-native-aws-administrator-guide/monitoring-and-metrics/how-audit-logging-works.html">
-              How Audit Logging Works in Qumulo Core     
+            <a title="How Audit Logging Works" href="/cloud-native-aws-administrator-guide/monitoring-and-metrics/how-audit-logging-works.html">
+              How Audit Logging Works
               <span class="tag-container">
+              
               
               
               </span>
@@ -2165,8 +2362,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="OpenMetrics API Specification" href="/cloud-native-aws-administrator-guide/monitoring-and-metrics/openmetrics-api-specification.html">
-              OpenMetrics API Specification     
+              OpenMetrics API Specification
               <span class="tag-container">
+              
               
               
               </span>
@@ -2186,7 +2384,6 @@ fetch('/data/website.json')
 
 <!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
 <script>$("li.active").parents('li').addClass("active");</script>
-
 
             </div>
             
@@ -2222,6 +2419,7 @@ fetch('/data/website.json')
             
 
 <div class="post-header">
+   <div class="star" id="page-star" title="Save to Favorites">&#9733;</div>
    <h1 class="post-title-main">Configuring a Portal Relationship Between Two Qumulo Clusters</h1>
 </div>
 
@@ -2262,23 +2460,20 @@ $(document).ready(function() {
    <p>This section explains how to use the Cloud Data Fabric functionality in Qumulo Core by creating a <a href='how-portal-creation-enables-cloud-data-fabric.html#spoke-portal'><em>spoke portal</em></a> on one cluster, proposing a <a href='how-portal-creation-enables-cloud-data-fabric.html#portal-relationship'><em>portal relationship</em></a> to another cluster (which creates the <a href='how-portal-creation-enables-cloud-data-fabric.html#hub-portal'><em>hub portal)</em></a>, and authorizing the relationship by using the <code>qq</code> CLI.</p>
    
      
-     
-<div class="alert alert-success" role="alert"><span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br /> Global Namespace is now a core component of Qumulo Cloud Data Fabric.</div>
-
-<h2 id="configuring-a-portal-relationship-between-two-qumulo-clusters">Configuring a Portal Relationship Between Two Qumulo Clusters</h2>
+     <h2 id="configuring-a-portal-relationship-between-two-qumulo-clusters">Configuring a Portal Relationship Between Two Qumulo Clusters</h2>
 <p>This section explains how to configure a <a href="how-portal-creation-enables-cloud-data-fabric.html#portal-relationship">portal relationship</a> between two Qumulo clusters by using the <code class="language-plaintext highlighter-rouge">qq</code> CLI.</p>
 
 <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
 <ul>
-  <li>Before you begin to implement Cloud Data Fabric in your organization, we strongly recommend reviewing <a href="how-portal-creation-enables-cloud-data-fabric.html">How Portal Relationships between Qumulo Clusters Enable Cloud Data Fabric in Qumulo Core</a>, especially the <a href="how-portal-creation-enables-cloud-data-fabric.html#known-limitations">Known Limitations</a> section.</li>
-  <li>For any questions, <a href="https://docs.qumulo.com/contacting-qumulo-care-team.html">contact the Qumulo Care team</a>.</li>
+  <li>Before you begin to implement Cloud Data Fabric in your organization, we strongly recommend reviewing the <a href="how-portal-creation-enables-cloud-data-fabric.html">How Portal Relationships between Qumulo Clusters Enable Cloud Data Fabric in Qumulo Core</a> and <a href="known-limits.html">Known Limits</a> sections.</li>
+  <li>For any questions, <a href="https://docs.qumulo.com/contacting-qumulo-care-team.html">contact the Qumulo Care Team</a>.</li>
 </ul>
 </div>
 
 <h3 id="prerequisites">Prerequisites</h3>
 <ul>
   <li>
-    <p>Two clusters with the same version of Qumulo Core</p>
+    <p>Two clusters with the same Qumulo Core version</p>
   </li>
   <li>
     <p>Network connectivity on TCP port 3713 from the cluster that shares a portion of its file system for the <a href="how-portal-creation-enables-cloud-data-fabric.html#portal-root-directory">spoke portal root directory</a> to the cluster that will share a portion of its file system for the <a href="how-portal-creation-enables-cloud-data-fabric.html#portal-root-directory">hub portal root directory</a></p>
@@ -2291,7 +2486,7 @@ $(document).ready(function() {
 
     <ul>
       <li>
-        <p><code class="language-plaintext highlighter-rouge">PRIVILEGE_PORTAL_SPOKE_EVICT</code>: <a href="configuring-cache-management-for-spoke-portals.html#configuring-automated-removal-of-cached-data-from-spoke-portals">Control automatic cache management for active spoke portals by configuring a free threshold</a></p>
+        <p><code class="language-plaintext highlighter-rouge">PRIVILEGE_PORTAL_SPOKE_EVICT</code>: <a href="configuring-cache-management-for-spoke-portals.html#configure-automated-removal">Control automatic cache management for active spoke portals by configuring a free threshold</a></p>
       </li>
       <li>
         <p><code class="language-plaintext highlighter-rouge">PRIVILEGE_PORTAL_SPOKE_READ</code>: View the status of a single spoke portal</p>
@@ -2318,7 +2513,7 @@ $(document).ready(function() {
 <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
 <ul>
   <li>If both of the clusters use Active Directory, they must be joined to the same domain or each cluster must be joined to Active Directory domains that have a two-way trust relationship to each other.</li>
-  <li>A Qumulo cluster can be a portal host for any number of hub portals or for a single spoke portal. It isn&apos;t possible for a Qumulo cluster to be a host for spoke and hub portals simultaneously.</li>
+  <li>In Qumulo Core 7.5.0.1 to 7.5.1, it is possible for a Qumulo cluster to host only up to 32 hub portals <em>or</em> up to 32 spoke portals.</li>
 </ul>
 </div>
 
@@ -2339,75 +2534,60 @@ $(document).ready(function() {
   <span class="nt">--hub-root</span> /projects
 </code></pre></div>    </div>
 
-    <p>The spoke portal enters the <code class="language-plaintext highlighter-rouge">Pending</code> state. The following is example output from the command.</p>
+    <p>The spoke portal enters the <code class="language-plaintext highlighter-rouge">Pending</code> portal relationship state. The following is example output.</p>
 
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ID  State    Type  Spoke Root        Hub Host     Hub Root   Hub Portal ID
-==  =======  ====  ================  ===========  =========  =============
-2   Pending  RW    /remote/projects  203.0.113.0  123456     4
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Role   ID  Type  State    Status   Peer
+=====  ==  ====  =======  ======== ==========
+Spoke  2   RW    Pending  Inactive 203.0.113.0
+
+Root State    Local Path         Remote ID
+============  =================  ==============================
+Unauthorized  /remote/projects/  107592715270601080910970355714
 </code></pre></div>    </div>
 
-    <p>Hub Portal ID <code class="language-plaintext highlighter-rouge">4</code> is the ID that the hub portal host cluster allocates for this portal relationship. You can use it to authorize the relationship on the hub portal host cluster as described later.</p>
+    <p>Hub Portal ID <code class="language-plaintext highlighter-rouge">4</code> is the ID that the hub portal host cluster allocates for this portal relationship. You can use it to accept the relationship on the hub portal host cluster as described later.</p>
 
-    <p>If Qumulo Core can’t establish a connection from the cluster with the spoke portal portion to the cluster with the hub portal portion, it displays an error message and the spoke portal enters the <code class="language-plaintext highlighter-rouge">Unlinked</code> state.</p>
-
-    <p>To propose a portal relationship at a later time, do the following:</p>
-
-    <ol>
-      <li>
-        <p>To find the spoke portal ID, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/portal/portal_list.html"><code>qq portal_list</code></a>
- command.</p>
-      </li>
-      <li>
-        <p><a id="establish-portal-relationship-qq-cli"></a>Run the <a href="https://docs.qumulo.com/qq-cli-command-guide/portal/portal_propose_hub.html"><code>qq portal_propose_hub</code></a>
- command and specify the spoke ID, the IP address of a prospective Qumulo cluster with the hub portal portion, and the proposed hub portal root directory on that cluster. For example:</p>
-
-        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq portal_propose_hub <span class="se">\</span>
-  <span class="nt">--spoke-id</span> 2 <span class="se">\</span>
-  <span class="nt">--hub-address</span> 203.0.113.0 <span class="se">\</span>
-  <span class="nt">--hub-root</span> /projects
-</code></pre></div>        </div>
-
-        <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note</b><br />
+    <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note</b><br />
 <ul>
-   <li>We recommend using floating IP addresses.</li>
-   <li>Qumulo Core doesn't support fully qualified domain names (FQDNs) for this operation.</li>
-   <li>Portal IDs are unique within each cluster. It isn&apos;t possible to use a portal ID from a spoke portal to identify the other side of the relationship, or the other way around.</li>
+  <li>We recommend using floating IP addresses.</li>
+  <li>Qumulo Core doesn't support fully qualified domain names (FQDNs) for this operation.</li>
+  <li>Portal IDs are unique within each cluster. It isn&apos;t possible to use a portal ID from a spoke portal to identify the other side of the relationship, or the other way around.</li>
 </ul>
 </div>
+
+    <p>When Qumulo Core can’t establish a connection from the spoke portal host cluster to the hub portal host cluster, it displays an error message. Try re-establishing the portal relationship.</p>
+
+    <p>When the portal relationship is established, both spoke portal and hub portal enter the <code class="language-plaintext highlighter-rouge">Pending</code> portal relationship state.</p>
+
+    <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> In this state, the spoke portal root directory is empty and Qumulo Core doesn’t transfer any data until the hub portal authorizes access to the hub portal root directory.</div>
+  </li>
+  <li>
+    <p>To check the status of a cluster, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/portal/portal_list.html"><code>qq portal_list</code></a>
+ command. The following is example output.</p>
+
+    <ul>
+      <li>
+        <p>From the spoke portal host cluster</p>
+
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Role   ID  Type  State    Status    Peer         Root Count
+=====  ==  ====  =======  ========  ===========  ==========
+Spoke  2   RW    Pending  Inactive  203.0.113.0  1
+</code></pre></div>        </div>
       </li>
       <li>
-        <p>When the portal relationship is established, both spoke portal and hub portal enter the <code class="language-plaintext highlighter-rouge">Pending</code> state.</p>
+        <p>From the hub portal host cluster</p>
 
-        <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> In this state, the spoke portal root directory is empty and Qumulo Core doesn’t transfer any data until the hub portal authorizes the portal relationship.</div>
-
-        <p>You can check the status of a cluster by using the <a href="https://docs.qumulo.com/qq-cli-command-guide/portal/portal_list.html"><code>qq portal_list</code></a>
- command. The following is example output from the command that shows the portal ID, state, role, and root directory.</p>
-
-        <ul>
-          <li>
-            <p>From the spoke portal host cluster</p>
-
-            <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ID  State     Role   Local Root
-==  ========  =====  ================
-2   Pending   Spoke  /remote/projects
-</code></pre></div>            </div>
-          </li>
-          <li>
-            <p>From the hub portal host cluster</p>
-
-            <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ID  State     Role   Local Root
-==  ========  =====  ==========
-4   Pending   Hub    /projects/
-</code></pre></div>            </div>
-          </li>
-        </ul>
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Role  ID  Type  State    Status    Peer         Root Count
+====  ==  ====  =======  ========  ===========  ==========
+Hub   4   RW    Pending  Inactive  203.0.113.1  1
+</code></pre></div>        </div>
       </li>
-    </ol>
+    </ul>
   </li>
 </ol>
 
-<h3 id="step-2-authorize-the-portal-relationship">Step 2: Authorize the Portal Relationship</h3>
-<p>This section explains how to authorize the <a href="how-portal-creation-enables-cloud-data-fabric.html#portal-relationship">portal relationship</a> from the <a href="how-portal-creation-enables-cloud-data-fabric.html#hub-portal">hub portal</a> to the <a href="how-portal-creation-enables-cloud-data-fabric.html#spoke-portal">spoke portal</a>.</p>
+<h3 id="step-2-accept-the-portal-relationship">Step 2: Accept the Portal Relationship</h3>
+<p>This section explains how to accept the <a href="how-portal-creation-enables-cloud-data-fabric.html#portal-relationship">portal relationship</a> from the <a href="how-portal-creation-enables-cloud-data-fabric.html#hub-portal">hub portal</a> to the <a href="how-portal-creation-enables-cloud-data-fabric.html#spoke-portal">spoke portal</a>.</p>
 
 <div class="alert alert-danger" role="alert"><span class="alert-title"><span class="fa fa-exclamation-circle"></span> <strong>Caution</strong></span><br /> This action makes both clusters in the portal relationship unavailable for less than 30 seconds while the systems reconfigure.</div>
 
@@ -2421,89 +2601,236 @@ $(document).ready(function() {
  commands.</div>
   </li>
   <li>
-    <p><a id="authorize-proposed-relationship-qq-cli"></a> To authorize the proposed portal relationship, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/portal/portal_authorize_hub.html"><code>qq portal_authorize_hub</code></a>
- command and specify the hub portal ID and the IP address that the current cluster can use to contact the cluster that proposed the relationship. For example:</p>
+    <p>To accept the proposed portal relationship, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/portal/portal_accept_hub.html"><code>qq portal_accept_hub</code></a>
+ command, specify the hub portal ID and the IP address that the current cluster can use to contact the cluster that proposed the relationship, and use the <code class="language-plaintext highlighter-rouge">--authorize-hub-roots</code> flag to also authorize all pending hub root directories. For example:</p>
 
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq portal_authorize_hub <span class="se">\</span>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq portal_accept_hub <span class="se">\</span>
   <span class="nt">--id</span> 4 <span class="se">\</span>
+  <span class="nt">--authorize-hub-roots</span> <span class="se">\</span>
   <span class="nt">--spoke-address</span> 203.0.113.1
 </code></pre></div>    </div>
 
     <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Portal IDs are unique within each cluster. It isn't possible to use a portal ID from a spoke portal to identify the other side of the relationship, or the other way around.</div>
 
-    <p>The following is example output from the command that shows that the portal relationship for the hub portal is in the <code class="language-plaintext highlighter-rouge">Active</code> state.</p>
+    <p>The following is example output.</p>
 
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ID  State   Hub Root   Spoke Host   Spoke Name  Spoke Type
-==  ======  =========  ===========  ==========  ==========
-4   Active  /projects  203.0.113.1  qfsd-edge   RW
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Role  ID  Type  State     Status  Peer
+====  ==  ====  ========  ======  ===========
+Hub   4   RW    Accepted  Active  203.0.113.1
+
+Root State  Local Path
+==========  ==========
+Authorized  /projects/
 </code></pre></div>    </div>
 
-    <p>After a few seconds, the spoke portal enters the <code class="language-plaintext highlighter-rouge">Active</code> state as well. You can now use the spoke portal root directory.</p>
+    <p>After a few seconds, the spoke portal enters the <code class="language-plaintext highlighter-rouge">Authorized</code> portal root directory state as well. You can now use the spoke portal root directory.</p>
   </li>
 </ol>
+
+<h2 id="configuring-additional-spoke-portal-root-directories-for-an-existing-portal-relationship">Configuring Additional Spoke Portal Root Directories for an Existing Portal Relationship</h2>
+<p>In Qumulo Core 7.6.2 (and higher), it is possible to configure up to 32 spoke portal root directories for each Qumulo cluster, for each portal relationship. This section explains how to configure an additional spoke portal root directory, how to remove access from a hub portal root directory, and how to remove a spoke portal root directory by using the <code class="language-plaintext highlighter-rouge">qq</code> CLI.</p>
+
+<div class="alert alert-success" role="alert"><span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br /> Configuring an additional spoke portal root directory can be useful when it is necessary to provide access to individual directories rather than the contents of the entire file system on the hub portal host cluster.</div>
+
+<h3 id="prerequisites-1">Prerequisites</h3>
+<ul>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">PRIVILEGE_PORTAL_SPOKE_WRITE</code> for modifying a spoke portal</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">PRIVILEGE_PORTAL_HUB_WRITE</code> for modifying a hub portal</p>
+  </li>
+</ul>
+
+<h3 id="to-configure-an-additional-spoke-portal-root-directory">To Configure an Additional Spoke Portal Root Directory</h3>
+<p>For portal relationships in the <code class="language-plaintext highlighter-rouge">Pending</code> or <code class="language-plaintext highlighter-rouge">Accepted</code> state, you can configure an additional spoke portal root directory by proposing the additional spoke portal root directory and then authorizing the corresponding hub portal root directory.</p>
+
+<ol>
+  <li>
+    <p>To propose the additional spoke portal root directory from the spoke portal host cluster, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/portal/portal_propose_spoke_root.html"><code>qq portal_propose_spoke_root</code></a>
+ command and specify the portal ID, the spoke portal root directory path, and the hub portal root directory path. For example:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq portal_propose_spoke_root <span class="se">\</span>
+  <span class="nt">--id</span> 2 <span class="se">\</span>
+  <span class="nt">--spoke-root-path</span> /remote/archive <span class="se">\</span>
+  <span class="nt">--hub-root-path</span> /archive
+</code></pre></div>    </div>
+
+    <p>The following is example output.</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Role   ID  Type  State     Status  Peer
+=====  ==  ====  ========  ======  ==========
+Spoke  2   RW    Accepted  Active  203.0.113.0
+
+Root State    Local Path         Remote ID
+============  =================  ==============================
+Authorized    /remote/projects/  107592715270601080910970355714
+Unauthorized  /remote/archive/   107592715270601080910970355715
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>To authorize the corresponding hub portal root directory from the hub portal host cluster, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/portal/portal_authorize_hub_root.html"><code>qq portal_authorize_hub_root</code></a>
+ command and specify the portal ID and the hub portal root directory path. For example:</p>
+
+    <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> It is possible to use an existing hub portal root directory which you have already authorized. In this scenario, the additional spoke portal root directory will be in the <code class="language-plaintext highlighter-rouge">Authorized</code> state immediately.</div>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq portal_authorize_hub_root <span class="se">\</span>
+  <span class="nt">--id</span> 4 <span class="se">\</span>
+  <span class="nt">--hub-root-path</span> /archive
+</code></pre></div>    </div>
+
+    <p>The following is example output.</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Role  ID  Type  State     Status  Peer
+====  ==  ====  ========  ======  ===========
+Hub   4   RW    Accepted  Active  203.0.113.1
+
+Root State  Local Path
+==========  ==========
+Authorized  /projects/
+Authorized  /archive/
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h3 id="to-remove-access-from-a-hub-portal-root-directory">To Remove Access from a Hub Portal Root Directory</h3>
+<p>Run the <a href="https://docs.qumulo.com/qq-cli-command-guide/portal/portal_deny_hub_root.html"><code>qq portal_deny_hub_root</code></a>
+ command and specify the portal ID and the hub portal root directory path.</p>
+
+<div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> It isn’t possible to use the <code class="language-plaintext highlighter-rouge">portal_deny_hub_root</code> command to restrict access to a subdirectory of a hub portal root directory. For example, if hub portal root directories are nested, removing access from a child hub portal root directory doesn’t deny access from the corresponding parent hub portal root directory.</div>
+
+<p>For example:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq portal_deny_hub_root <span class="se">\</span>
+ <span class="nt">--id</span> 4 <span class="se">\</span>
+ <span class="nt">--hub-root-path</span> /archive
+</code></pre></div></div>
+
+<p>Qumulo Core removes the authorization from the hub portal root directory. The following is example output.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Role  ID  Type  State     Status  Peer
+====  ==  ====  ========  ======  ===========
+Hub   4   RW    Accepted  Active  203.0.113.1
+
+Root State    Local Path
+============  ==========
+Unauthorized  /archive/
+Authorized    /projects/
+</code></pre></div></div>
+
+<h3 id="to-remove-a-spoke-portal-root-directory">To Remove a Spoke Portal Root Directory</h3>
+<p>Run the <a href="https://docs.qumulo.com/qq-cli-command-guide/portal/portal_delete_spoke_root.html"><code>qq portal_delete_spoke_root</code></a>
+ command and specify the portal ID and the spoke portal root directory path.</p>
+
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
+<ul>
+ <li>This operation doesn't affect any data on the hub portal host cluster, any unsynchronized data in the spoke portal root directory, or the portal relationship.</li>
+ <li>To restore the spoke portal root directory, you can propose a new spoke portal root directory.</li>
+ <li>When there are no more spoke portal root directories that correspond to a particular hub portal root directory, Qumulo Core removes that hub portal root directory from the portal relationship automatically.</li>
+</ul>
+</div>
+
+<p>For example:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq portal_delete_spoke_root <span class="se">\</span>
+ <span class="nt">--id</span> 2 <span class="se">\</span>
+ <span class="nt">--spoke-root-path</span> /remote/archive
+</code></pre></div></div>
+
+<p>Qumulo Core removes access to the hub portal root directory for any spoke portal host cluster clients. The following is example output.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Role   ID  Type  State     Status  Peer
+=====  ==  ====  ========  ======  ==========
+Spoke  2   RW    Accepted  Active  203.0.113.0
+
+Root State    Local Path         Remote ID
+============  =================  ==============================
+Authorized    /remote/projects/  107592715270601080910970355714
+</code></pre></div></div>
 
 <h2 id="deleting-a-portal-relationship-between-two-qumulo-clusters">Deleting a Portal Relationship Between Two Qumulo Clusters</h2>
 <p>When you delete the <a href="how-portal-creation-enables-cloud-data-fabric.html#spoke-portal">spoke portal</a> and the <a href="how-portal-creation-enables-cloud-data-fabric.html#hub-portal">hub portal</a> (in any order), the <a href="how-portal-creation-enables-cloud-data-fabric.html#portal-relationship">portal relationship</a> is deleted completely. This section explains how to delete a portal relationship between two Qumulo clusters by using the <code class="language-plaintext highlighter-rouge">qq</code> CLI.</p>
 
 <div class="alert alert-danger" role="alert"><span class="alert-title"><span class="fa fa-exclamation-circle"></span> <strong>Caution</strong></span><br /> This action makes both clusters in the portal relationship unavailable for less than 30 seconds while the systems reconfigure.</div>
 
-<h3 id="prerequisites-1">Prerequisites</h3>
+<h3 id="prerequisites-2">Prerequisites</h3>
 <ul>
   <li>
-    <p>A spoke portal or hub portal in any state</p>
+    <p>A spoke portal or hub portal in any portal relationship state</p>
   </li>
   <li>
-    <p>Privileges</p>
-    <ul>
-      <li><code class="language-plaintext highlighter-rouge">PRIVILEGE_PORTAL_SPOKE_WRITE</code>: Delete a spoke portal</li>
-      <li><code class="language-plaintext highlighter-rouge">PRIVILEGE_PORTAL_HUB_WRITE</code>: Delete a hub portal</li>
-    </ul>
+    <p><code class="language-plaintext highlighter-rouge">PRIVILEGE_PORTAL_SPOKE_WRITE</code> for deleting a spoke portal</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">PRIVILEGE_PORTAL_HUB_WRITE</code> for deleting a hub portal</p>
   </li>
 </ul>
 
 <h3 id="step-1-delete-the-spoke-portal">Step 1: Delete the Spoke Portal</h3>
-<p>You can delete a spoke portal in any state (<code class="language-plaintext highlighter-rouge">Unlinked</code>, <code class="language-plaintext highlighter-rouge">Pending</code>, <code class="language-plaintext highlighter-rouge">Active</code>, or <code class="language-plaintext highlighter-rouge">Ended</code>) and without connectivity to the hub portal. This section explains how to delete the spoke portal from a portal relationship.</p>
+<p>You can initiate the deletion of a spoke portal in the <code class="language-plaintext highlighter-rouge">Pending</code> or <code class="language-plaintext highlighter-rouge">Accepted</code> portal relationship state. This section explains how to delete the spoke portal from a portal relationship.</p>
 
 <ol>
   <li>
     <p>To find the spoke portal ID, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/portal/portal_list.html"><code>qq portal_list</code></a>
- command.</p>
+ command. The following is example output.</p>
 
-    <p>The following is example output from the command that shows the portal ID, state, role, and root directory.</p>
-
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ID  State     Role   Local Root
-==  ========  =====  ================
-3   Active    Spoke  /remote/projects
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Role   ID  Type  State     Status  Peer         Root Count
+=====  ==  ====  ========  ======  ===========  ==========
+Spoke  2   RW    Accepted  Active  203.0.113.0  1
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>To delete the spoke portal run the <a href="https://docs.qumulo.com/qq-cli-command-guide/portal/portal_delete_spoke.html"><code>qq portal_delete_spoke</code></a>
+    <p>To initiate the deletion of the spoke portal, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/portal/portal_delete_spoke.html"><code>qq portal_delete_spoke</code></a>
  command and specify the spoke portal ID. For example:</p>
 
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq portal_delete_spoke <span class="nt">--id</span> 3
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq portal_delete_spoke <span class="nt">--id</span> 2
 </code></pre></div>    </div>
 
-    <p>Qumulo Core deletes the spoke portal and begins to reclaim the spoke portal’s cluster capacity in the background.</p>
+    <p>The relationship becomes read-only and enters the <code class="language-plaintext highlighter-rouge">Deleting</code> state. Qumulo Core synchronizes any outstanding changes from the spoke portal to the hub portal and then removes the portal relationship from each cluster.</p>
+  </li>
+  <li>
+    <p>To monitor the deletion progress, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/portal/portal_get_spoke.html"><code>qq portal_get_spoke</code></a>
+ command and specify the spoke portal ID. For example:</p>
 
-    <p>If the spoke portal can connect to the hub portal, the hub portal detects the relationship change automatically and enters the <code class="language-plaintext highlighter-rouge">Ended</code> state without affecting any of the data on the hub portal host cluster.</p>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq portal_get_spoke <span class="nt">--id</span> 2
+</code></pre></div>    </div>
+
+    <p>The following is example output.</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Role   ID  Type  State     Status  Peer
+=====  ==  ====  ========  ======  ===========
+Spoke  2   RO    Deleting  Active  203.0.113.0
+
+Root State  Local Path         Remote ID
+==========  =================  ==============================
+Authorized  /remote/projects/  107592715270601080910970355715
+</code></pre></div>    </div>
+
+    <p>When the synchronization process is complete and the spoke portal configuration is removed, Qumulo Core begins to reclaim the spoke portal’s cluster capacity in the background.</p>
+
+    <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
+<ul>
+  <li>A spoke portal with connectivity issues receives the <a href="how-portal-creation-enables-cloud-data-fabric.html#portal-statuses"><code>Degraded</code></a> status, which in turn can cause the deletion of a portal relationship to stall in the <a href="how-portal-creation-enables-cloud-data-fabric.html#portal-relationship-states"><code>Deleting</code></a> state.</li>
+  <li>If it isn't possible to restore connectivity between portals, you can delete a spoke portal with any status and in any state by running the <a href="https://docs.qumulo.com/qq-cli-command-guide/portal/portal_delete_spoke.html"><code>qq portal_delete_spoke</code></a>
+ command with the <code>--force</code> flag. At the end of this operation, Qumulo Core keeps all synchronized changes on the hub portal and discards all unsynchronized changes from the spoke portal.</li>
+</ul>
+</div>
   </li>
 </ol>
 
 <h3 id="step-2-delete-the-hub-portal">Step 2: Delete the Hub Portal</h3>
-<p>You can delete a hub portal in any state (<code class="language-plaintext highlighter-rouge">Pending</code>, <code class="language-plaintext highlighter-rouge">Active</code>, or <code class="language-plaintext highlighter-rouge">Ended</code>) and without connectivity to the spoke portal.</p>
+<p>You can delete a hub portal in either the <code class="language-plaintext highlighter-rouge">Pending</code> or <code class="language-plaintext highlighter-rouge">Accepted</code> portal relationship state.</p>
 
 <div class="alert alert-danger" role="alert"><span class="alert-title"><span class="fa fa-exclamation-circle"></span> <strong>Caution</strong></span><br /> This action makes the spoke portal root directory and all cached data inaccessible.</div>
 
 <ol>
   <li>
     <p>To find the hub portal ID, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/portal/portal_list.html"><code>qq portal_list</code></a>
- command.</p>
+ command. The following is example output.</p>
 
-    <p>The following is example output from the command that shows the portal ID, state, role, and root directory.</p>
-
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ID  State     Role   Local Root
-==  ========  =====  ==========
-4   Active    Hub    /projects/
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Role  ID  Type  State     Status  Peer         Root Count
+====  ==  ====  ========  ======  ===========  ==========
+Hub   4   RW    Accepted  Active  203.0.113.1  1
 </code></pre></div>    </div>
   </li>
   <li>
@@ -2513,11 +2840,32 @@ $(document).ready(function() {
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq portal_delete_hub <span class="nt">--id</span> 4
 </code></pre></div>    </div>
 
-    <p>Qumulo Core deletes the hub portal without affecting any of the data on the hub portal host cluster.</p>
+    <p>The relationship becomes read-only and enters the <code class="language-plaintext highlighter-rouge">Deleting</code> state. Qumulo Core synchronizes any outstanding changes from the spoke portal to the hub portal and then removes the portal relationship from each cluster.</p>
 
-    <p>If the hub portal can connect to the spoke portal, the spoke portal detects the relationship change and enters the <code class="language-plaintext highlighter-rouge">Ended</code> state automatically.</p>
+    <p>Qumulo Core deletes the hub portal without affecting any of the data on the hub portal host cluster.</p>
+  </li>
+  <li>
+    <p>To monitor the deletion process, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/portal/portal_get_hub.html"><code>qq portal_get_hub</code></a>
+ command and specify the hub portal ID. For example:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq portal_get_hub <span class="nt">--id</span> 4
+</code></pre></div>    </div>
+
+    <p>The following is example output.</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Role  ID  Type  State     Status  Peer
+====  ==  ====  ========  ======  ===========
+Hub   4   RO    Deleting  Active  203.0.113.1
+
+Root State  Local Path
+==========  ===========
+Authorized  /projects/
+</code></pre></div>    </div>
+
+    <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> </div>
   </li>
 </ol>
+
 
    
 
@@ -2582,22 +2930,6 @@ $(document).ready(function() {
       
         
     
-  
-    
-      
-        
-    
-      
-        
-    
-  
-    
-      
-        
-    
-      
-        
-    
       
         
     
@@ -2608,6 +2940,9 @@ $(document).ready(function() {
         
     
   
+    
+      
+        
     
       
         
@@ -2626,7 +2961,56 @@ $(document).ready(function() {
       
         
     
+      
+        
+    
   
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
     
       
         
@@ -2640,7 +3024,12 @@ $(document).ready(function() {
           
             
             
-  <li><a href="/cloud-native-aws-administrator-guide/cloud-data-fabric/how-portal-creation-enables-cloud-data-fabric.html">Enabling Cloud Data Fabric</a></li>
+  <li><a href="/cloud-native-aws-administrator-guide/cloud-data-fabric/how-portal-creation-enables-cloud-data-fabric.html">How Cloud Data Fabric Works</a></li>
+            
+          
+            
+            
+  <li><a href="/cloud-native-aws-administrator-guide/cloud-data-fabric/known-limits.html">Known Limits for Cloud Data Fabric</a></li>
             
           
             
@@ -2704,23 +3093,6 @@ $(document).ready(function() {
       
         
     
-      
-        
-    
-      
-        
-    
-  
-    
-      
-        
-    
-      
-        
-    
-      
-        
-    
   
     
       
@@ -2780,36 +3152,42 @@ $(document).ready(function() {
       
         
     
-  
-    
-      
-        
-    
-      
-        
-    
-      
-        
-    
-      
-        
-    
-      
-        
-    
-      
-        
-    
-      
-        
-    
-      
-        
-    
       
         
     
   
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
     
       
         
@@ -2833,16 +3211,18 @@ $(document).ready(function() {
 
         </div>
     <!-- /.row -->
-</div>
+    </div>
+  <!-- /main -->
+  </main>
 <!-- /.container -->
 </div>
-<!-- /#main -->
-    </div>
+
+<button id="send-feedback">Send Feedback</button>
 
 <footer>
   <div class="footer">
     <div class="footer-text">
-      Copyright &copy; 2021&ndash;2025 Qumulo, Inc.<br>
+      Copyright &copy; 2021&ndash;2026 Qumulo, Inc.<br>
 
       <a class="no_icon footer_link" href="https://qumulo.com/legal/privacy-policy/">Privacy Policy</a> &VerticalSeparator; <a class="no_icon footer_link" href="https://qumulo.com/legal/cookie-policy/">Cookie Policy</a> &VerticalSeparator; <a class="no_icon footer_link" href="https://qumulo.com/terms-hub/">Terms Hub</a><br>
       <p>
@@ -2862,19 +3242,31 @@ $(document).ready(function() {
     </div>
   </div>
 
-  <!-- Cookie Consent - GRT Plugin -->	
+  <!-- Cookie consent Banner-->	
   <div id="cookie-banner" class="grt-cookie">
     <div class="grt-cookies-msg">
       <p>We use cookies to improve your user experience and remember your preferences on this website. If you continue to use this website, we will assume that you accept and understand our <a class="no_icon" href="https://qumulo.com/legal/privacy-policy">Privacy Policy</a>, <a class="no_icon" href="https://qumulo.com/legal/cookie-policy/">Cookie Policy</a>, and <a class="no_icon" href="https://qumulo.com/terms-hub/">Terms Hub</a>.</p>
     </div>
     <span class="grt-cookie-button">Accept</span>
   </div>
+
+  <!-- Local scripts -->
+  <!-- Cookie consent banner -->
   <script src="/js/grt-cookie-consent.js"></script>
   <script>$(".grt-cookie").grtCookie();</script>
-  
-  <script src="/js/fixdoubledashes.js"></script>
 
+  <!-- Page elements -->
   <script src="/js/expand-collapse.js"></script>
+  <script src="/js/send-feedback.js"></script>
+  <script src="/js/check-favorites.js"></script>
+  <script src="/js/copy-code.js"></script>
+
+
+
+
+
+
+
 </footer>
 
 

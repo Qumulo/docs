@@ -1,21 +1,60 @@
 // Configure the search widget
 let searchWidget = createSearch(
-  "zqt_8wQ3QoFUYf53ymz-8ceKXsxAnFNwEJsobnvK6A", // api key
-  4077139778,                                   // customer id
-  [2,4],                                        // array of corpus ids
-                                                // 2 == Docs Portal, 4 == Qumulo Care
-  successFn,                                    // success function
-  errorFn,                                      // error function
-  "/images/magnifying-glass.png",               // custom icon for the search box
-  25,                                           // number of results to return
-  5,                                            // max number of results to summarize
-  1,                                            // number of sentences to show before each matching snippet
-  1,                                            // number of sentences to show after each matching snippet
-  "What would you like to know?",               // search placeholder
-  false                                         // default focus
-  //0                                           // offset for paging
+  "zqt_8wQ3QoFUYf53ymz-8ceKXsxAnFNwEJsobnvK6A", 	    // api key
+  4077139778,                                   	    // customer id
+  ['Qumulo_Documentation_Portal_2', 'Qumulo_Care_4'],	// array of corpus keys
+  successFn,                                    	    // success function
+  errorFn,                                      	    // error function
+  "/images/magnifying-glass.png",               	    // custom icon for the search box
+  25,                                           	    // number of results to return
+  5,                                            	    // max number of results to summarize
+  2,                                            	    // number of sentences to show before each matching snippet
+  2,                                            	    // number of sentences to show after each matching snippet
+  "What would you like to know?",               	    // search placeholder
+  false                                         	    // default focus
+  //0                                           	    // offset for paging
 );
+
 document.getElementById("search-widget").appendChild(searchWidget);
+
+function addResultPrefixes() {
+  const qqCLIlinks = document.querySelectorAll(".vuiSearchResult a");
+  qqCLIlinks.forEach(function(link) {
+    if (link.href.includes("/aws-administrator-guide/")) { // Legacy link
+      link.innerHTML = `CNQ on AWS: ${link.textContent}`;
+    } else if (link.href.includes("/cloud-native-aws-administrator-guide/")) {
+      link.innerHTML = `CNQ on AWS: ${link.textContent}`;
+    } else if (link.href.includes("/cloud-native-azure-administrator-guide/")) {
+      link.innerHTML = `CNQ on Azure: ${link.textContent}`;
+    } else if (link.href.includes("/cloud-native-gcp-administrator-guide/")) {
+      link.innerHTML = `CNQ on GCP: ${link.textContent}`;
+    } else if (link.href.includes("/azure-administrator-guide/")) { // Legacy link
+      link.innerHTML = `Azure Native: ${link.textContent}`;
+    } else if (link.href.includes("/azure-native-administrator-guide/")) {
+      link.innerHTML = `Azure Native: ${link.textContent}`;
+    } else if (link.href.includes("/administrator-guide/")) {
+      link.innerHTML = `On-Prem: ${link.textContent}`;
+    } else if (link.href.includes("/hardware-guide/")) {
+      link.innerHTML = `Platinum-Tier HW: ${link.textContent}`;
+    } else if (link.href.includes("/gold-tier-hardware-servicing-guide/")) {
+      link.innerHTML = `Gold-Tier HW: ${link.textContent}`;
+    } else if (link.href.includes("/qq-cli-command-guide/")) {
+      link.innerHTML = `qq CLI: ${link.textContent}`;
+    } else if (link.href.includes("/rest-api-guide/")) {
+      link.innerHTML = `REST API: ${link.textContent}`;
+    } else if (link.href.includes("/qumulo-nexus-configuration-guide/")) {
+      link.innerHTML = `Nexus Config: ${link.textContent}`;
+    } else if (link.href.includes("/qumulo-alerts-guide/")) {
+      link.innerHTML = `Qumulo Alerts: ${link.textContent}`;
+    } else if (link.href.includes("/integration-guide/")) {
+      link.innerHTML = `Qumulo Integration: ${link.textContent}`;
+    } else if (link.href.includes("qumulo.com/blog/")) {
+      link.innerHTML = `Qumulo Blog: ${link.textContent}`;
+    } else if (link.href.includes("care.qumulo.com/s/")) {
+      link.innerHTML = `Qumulo Care: ${link.textContent}`;
+    }
+  });
+}
 
 function successFn(results, query) {
   hideOverlay();
@@ -33,37 +72,11 @@ function successFn(results, query) {
   renderResults(results, "search-widget-results");
 
   // Remove suffixes from all elements within .vuiSearchResult
-  const suffixToRemove = " | Qumulo Documentation";
+  const suffixToRemove = " | Qumulo Documentation Portal";
   const searchResultElements = document.querySelectorAll(".vuiSearchResult a, .vuiSearchResult strong");
   searchResultElements.forEach(function(element) {
     if (element.textContent.includes(suffixToRemove)) {
       element.textContent = element.textContent.replace(suffixToRemove, "");
-    }
-  });
-
-  // Add prefixes to Docs Portal guides, Qumulo Blog, and Qumulo Care
-  const qqCLIlinks = document.querySelectorAll(".vuiSearchResult a");
-  qqCLIlinks.forEach(function(link) {
-    if (link.href.includes("/cloud-native-aws-administrator-guide/")) {
-      link.innerHTML = `CNQ on AWS: ${link.textContent}`;
-    } else if (link.href.includes("/cloud-native-azure-administrator-guide/")) {
-      link.innerHTML = `CNQ on Azure: ${link.textContent}`;
-    } else if (link.href.includes("/azure-native-administrator-guide/")) {
-      link.innerHTML = `Azure Native: ${link.textContent}`;
-    } else if (link.href.includes("/administrator-guide/")) {
-      link.innerHTML = `On-Prem: ${link.textContent}`;
-    } else if (link.href.includes("/hardware-guide/")) {
-      link.innerHTML = `Platinum-Tier HW: ${link.textContent}`;
-    } else if (link.href.includes("/gold-tier-hardware-servicing-guide/")) {
-      link.innerHTML = `Gold-Tier HW: ${link.textContent}`;
-    } else if (link.href.includes("/qq-cli-command-guide/")) {
-      link.innerHTML = `qq CLI: ${link.textContent}`;
-    } else if (link.href.includes("/rest-api-guide/")) {
-      link.innerHTML = `REST API: ${link.textContent}`;
-    } else if (link.href.includes("qumulo.com/blog/")) {
-      link.innerHTML = `Qumulo Blog: ${link.textContent}`;
-    } else if (link.href.includes("care.qumulo.com/s/")) {
-      link.innerHTML = `Qumulo Care: ${link.textContent}`;
     }
   });
 
@@ -88,11 +101,28 @@ function successFn(results, query) {
     }
   });
 
+  const shortCookieText = "We use cookies to improve your user experience and remember your preferences on this website.";
+  const shortCookieElements = document.querySelectorAll(".vuiText");
+  shortCookieElements.forEach(function(element) {
+    if (element.textContent.includes(shortCookieText)) {
+      element.textContent = element.textContent.replace(shortCookieText, "");
+    }
+  });
+
   // Encourage users to enter more search terms.
   const apologyText = /The returned (search )?results did not contain sufficient information to be summarized into a useful answer for your query. Please try a different search or restate your query differently./;
   const apologyTextElements = document.querySelectorAll(".vuiText--m");
   apologyTextElements.forEach(function(element) {
     if (apologyText.exec(element.textContent)) {
+      element.textContent = `Here are some search results about ${query}. To help me write a better summary, enter more search terms or ask me a question!`;
+    }
+  });
+
+  // Encourage users to enter more complex queries.
+  const insufficientInfo = /I do not have enough information to answer this question./;
+  const insufficientInfoElements = document.querySelectorAll(".vuiText--m");
+  insufficientInfoElements.forEach(function(element) {
+    if (insufficientInfo.exec(element.textContent)) {
       element.textContent = `Here are some search results about ${query}. To help me write a better summary, enter more search terms or ask me a question!`;
     }
   });
@@ -135,12 +165,4 @@ window.addEventListener("load", function(e) {
     // If there are results in the history state, render them
     successFn(history.state.results, history.state.query);
   }
-});
-
-// Expand left sidebar menu on page load
-window.addEventListener("DOMContentLoaded", (event) => {
-    var secondListItem = document.querySelector("#mysidebar > li:nth-child(2)");
-    if (secondListItem) {
-        secondListItem.classList.add("active");
-    }
 });

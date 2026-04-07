@@ -3,9 +3,48 @@
 <head>
     
 <meta charset="utf-8">
+
+<!-- Headers -->
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta http-equiv="Content-Security-Policy" content="
+  default-src 'self'; 
+  script-src 'self' 'unsafe-inline'
+    https://cdn.datatables.net    
+    https://cdn.jsdelivr.net    
+    https://cdnjs.cloudflare.com
+    https://maxcdn.bootstrapcdn.com
+    https://www.googletagmanager.com;
+  connect-src 'self'
+    https://*.googletagmanager.com
+    https://*.google-analytics.com
+    https://api.vectara.io  
+    https://maxcdn.bootstrapcdn.com;
+  img-src 'self' data:
+    https://*.google-analytics.com
+    https://*.googletagmanager.com;
+  style-src 'self' 'unsafe-inline'
+    https://cdn.datatables.net
+    https://fonts.googleapis.com
+    https://maxcdn.bootstrapcdn.com; 
+  font-src 'self' data:
+    https://fonts.gstatic.com
+    https://maxcdn.bootstrapcdn.com; 
+  frame-src 
+    https://www.googletagmanager.com;
+  object-src 'none';
+">
+
+<!-- This replaces frame-ancestors 'self'; which is unsupported in meta tags. -->
+<script>
+  if (self !== top) {
+    top.location = self.location;
+  }
+</script>
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Integration with Varonis | Qumulo Documentation</title>
+<title>Integration with Varonis | Qumulo Documentation Portal</title>
+
 <link rel="canonical" href="https://docs.qumulo.com/integration-guide/varonis/">
 
 <!-- Organization JSON-LD Schema -->
@@ -111,8 +150,8 @@ fetch('/data/website.json')
 
 <!-- Define page metadata -->
 <meta name="description" content="">
-<meta name="apple-mobile-web-app-title" content="Qumulo Documentation">
-<meta name="application-name" content="Qumulo Documentation">
+<meta name="apple-mobile-web-app-title" content="Qumulo Documentation Portal">
+<meta name="application-name" content="Qumulo Documentation Portal">
 <meta name="msapplication-TileColor" content="#2b5797">
 <meta name="msapplication-TileImage" content="/images/mstile-144x144.png">
 <meta name="msapplication-config" content="/images/browserconfig.xml">
@@ -120,9 +159,9 @@ fetch('/data/website.json')
 <meta name="google-site-verification" content="_KoxPR0qF_ZeMyH6uWvlX84cFRujO_AZ1eq0eT9alAg">
 
 <!-- Open Graph Meta Tags -->
-<meta property="og:title" content="Integration with Varonis | Qumulo Documentation">
+<meta property="og:title" content="Integration with Varonis | Qumulo Documentation Portal">
 <meta property="og:url" content="https://docs.qumulo.com/integration-guide/varonis/">
-<meta property="og:site_name" content="Qumulo Documentation">
+<meta property="og:site_name" content="Qumulo Documentation Portal">
 <meta property="og:description" content="">
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="website">
@@ -131,7 +170,7 @@ fetch('/data/website.json')
 <meta property="og:image:height" content="630">
 
 <!-- Twitter Meta Tags -->
-<meta name="twitter:title" content="Integration with Varonis | Qumulo Documentation">
+<meta name="twitter:title" content="Integration with Varonis | Qumulo Documentation Portal">
 <meta property="twitter:url" content="https://docs.qumulo.com/integration-guide/varonis/">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:description" content="">
@@ -149,7 +188,7 @@ fetch('/data/website.json')
 
 <!-- Define RSS feed -->
 <!-- TEMPORARILY DISABLED
-<link rel="alternate" href="https://docs.qumulo.com/feed.xml" type="application/rss+xml" title="docs">
+<link rel="alternate" href="https://docs.qumulo.com/feed.xml" type="application/rss+xml" title="">
 -->
 
 <!-- Load scripts from cloudflare.com -->
@@ -282,7 +321,7 @@ fetch('/data/website.json')
         <div class="flex-links">
           <a class="header-link header-right" href="https://qumulo.com/company/about-qumulo/" target="_blank">About Qumulo</a>
           <a class="header-link header-right" href="https://care.qumulo.com/s/knowledge" target="_blank">Knowledge Base</a>
-          <a class="header-link header-right" href="https://nexus.qumulo.com/" target="_blank">Nexus</a>
+          <a class="header-link header-right" href="https://nexus.qumulo.com/" target="_blank">Nexus <span class="emoji">🔒</span></a>
         </div>
         <div class="contact-links">
           <a class="btn-contact no_icon" href="https://qumulocare.slack.com/">Send Slack Message</a>
@@ -302,12 +341,13 @@ fetch('/data/website.json')
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/index.html">&nbsp;<span class="projectTitle"> Qumulo Documentation</span></a>
+            <a class="navbar-brand" href="/index.html">&nbsp;<span class="projectTitle"> Qumulo Documentation Portal</span></a>
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <!-- toggle sidebar button -->
-                <li><a id="tg-sb-link" href="#" data-proofer-ignore><i id="tg-sb-icon" class="fa fa-toggle-off"></i> Reading Mode</a></li>
+                <li><a id="tg-sb-link" href="#" data-proofer-ignore><i id="tg-sb-icon" class="fa fa-toggle-off"></i> Toggle Reading Mode</a></li>
+                <li><a id="view-favorites" href="/favorites.html" data-proofer-ignore><i id="fav-nav-icon" class="fa fa-star-o"></i> View Favorites</a></li>
                 <!-- entries without drop-downs appear here -->
 
 
@@ -322,7 +362,7 @@ fetch('/data/website.json')
                   <div id="search-demo-container">
                     <div class="parent">
                       <div class="search_container">
-                        <main id="search-widget">
+                        <div id="search-widget">
                           <div class="vectara__search_Box">
                             <form id="vectara__search_form" action="/search.html" method="GET">
                               <input class="vectara__search_field" name="query" id="search-input" placeholder="What would you like to know?" autofocus>
@@ -331,7 +371,7 @@ fetch('/data/website.json')
                               </button>
                             </form>
                           </div>
-                        </main>
+                        </div>
                         <ul class="tags" id="widget-tags"></ul>
                       </div>
                     </div>
@@ -348,19 +388,18 @@ fetch('/data/website.json')
 <!-- Page Content -->
 
 <div class="container">
-  <div id="main">
+  <main id="main">
     <!-- Content Row -->
     <div class="row">
         
         
-
             <!-- Sidebar Column -->
             <div class="col-md-3" id="tg-sb-sidebar">
                 
 
 <div class="nav nav-buttons">
   
-    <a target="_blank" rel="noopener" href="https://github.com/qumulo/docs/blob/gh-pages/integration-guide/varonis/index.md" class="btn btn-default githubEditButton no_icon" role="button" data-proofer-ignore><span class="fa fa-github fa-lg"></span> Edit on GitHub</a>
+    <a target="_blank" rel="noopener" href="https://github.com/qumulo/docs/blob/mainline/integration-guide/varonis/index.md" class="btn btn-default githubEditButton no_icon" role="button" data-proofer-ignore><span class="fa fa-github fa-lg"></span> Edit on GitHub</a>
   
 
   
@@ -375,11 +414,11 @@ fetch('/data/website.json')
   
       
   
-  
+
   
 
   
-  
+
   
   <li>
   
@@ -389,24 +428,21 @@ fetch('/data/website.json')
   
   
   
-  
-  
-
-  
 
   
 
   Qumulo Integration Guide
   </a>
- 
+
       <ul>
           
           
           
           <li>
             <a title="Documentation Home" href="/index.html">
-              Documentation Home     
+              Documentation Home
               <span class="tag-container">
+              
               
               
               </span>
@@ -420,8 +456,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Guide Table of Contents" href="/integration-guide/">
-              Guide Table of Contents     
+              Guide Table of Contents
               <span class="tag-container">
+              
               
               
               </span>
@@ -435,8 +472,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Contacting the Qumulo Care Team" href="/contacting-qumulo-care-team.html">
-              Contacting the Qumulo Care Team     
+              Contacting the Qumulo Care Team
               <span class="tag-container">
+              
               
               
               </span>
@@ -451,11 +489,65 @@ fetch('/data/website.json')
      
       
   
+
+  
+
+  
+
+  
+  <li>
+  
+
+  <a title="Integrating with Netwrix" href="/integration-guide/netwrix/index.html" data-proofer-ignore>
+  
+  
   
   
 
   
+
+  Integrating with Netwrix
+  </a>
+
+      <ul>
+          
+      </ul>
+   </li>
+     
+      
   
+
+  
+
+  
+
+  
+  <li>
+  
+
+  <a title="Integrating with Splunk" href="/integration-guide/splunk/index.html" data-proofer-ignore>
+  
+  
+  
+  
+
+  
+
+  Integrating with Splunk
+  </a>
+
+      <ul>
+          
+      </ul>
+   </li>
+     
+      
+  
+
+  
+
+  
+
   
   <li class="active">
   
@@ -465,24 +557,21 @@ fetch('/data/website.json')
   
   
   
-  
-  
-
-  
 
   
 
   Integrating with Varonis
   </a>
- 
+
       <ul>
           
           
           
           <li>
             <a title="How Qumulo Core Integrates with Varonis" href="/integration-guide/varonis/qumulo-broker-with-qumulo-core.html">
-              How Qumulo Core Integrates with Varonis     
+              How Qumulo Core Integrates with Varonis
               <span class="tag-container">
+              
               
               
               </span>
@@ -496,8 +585,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Integrating Qumulo Core with Varonis" href="/integration-guide/varonis/deploying-qumulo-broker.html">
-              Integrating Qumulo Core with Varonis     
+              Integrating Qumulo Core with Varonis
               <span class="tag-container">
+              
               
               
               </span>
@@ -511,8 +601,9 @@ fetch('/data/website.json')
           
           <li>
             <a title="Troubleshooting the Integration" href="/integration-guide/varonis/troubleshooting-qumulo-broker.html">
-              Troubleshooting the Integration     
+              Troubleshooting the Integration
               <span class="tag-container">
+              
               
               
               </span>
@@ -532,7 +623,6 @@ fetch('/data/website.json')
 
 <!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
 <script>$("li.active").parents('li').addClass("active");</script>
-
 
             </div>
             
@@ -608,6 +698,10 @@ $(document).ready(function() {
     
                
     
+               
+    
+               
+    
       
         <ul>
           
@@ -630,16 +724,18 @@ $(document).ready(function() {
 
         </div>
     <!-- /.row -->
-</div>
+    </div>
+  <!-- /main -->
+  </main>
 <!-- /.container -->
 </div>
-<!-- /#main -->
-    </div>
+
+<button id="send-feedback">Send Feedback</button>
 
 <footer>
   <div class="footer">
     <div class="footer-text">
-      Copyright &copy; 2021&ndash;2025 Qumulo, Inc.<br>
+      Copyright &copy; 2021&ndash;2026 Qumulo, Inc.<br>
 
       <a class="no_icon footer_link" href="https://qumulo.com/legal/privacy-policy/">Privacy Policy</a> &VerticalSeparator; <a class="no_icon footer_link" href="https://qumulo.com/legal/cookie-policy/">Cookie Policy</a> &VerticalSeparator; <a class="no_icon footer_link" href="https://qumulo.com/terms-hub/">Terms Hub</a><br>
       <p>
@@ -659,19 +755,31 @@ $(document).ready(function() {
     </div>
   </div>
 
-  <!-- Cookie Consent - GRT Plugin -->	
+  <!-- Cookie consent Banner-->	
   <div id="cookie-banner" class="grt-cookie">
     <div class="grt-cookies-msg">
       <p>We use cookies to improve your user experience and remember your preferences on this website. If you continue to use this website, we will assume that you accept and understand our <a class="no_icon" href="https://qumulo.com/legal/privacy-policy">Privacy Policy</a>, <a class="no_icon" href="https://qumulo.com/legal/cookie-policy/">Cookie Policy</a>, and <a class="no_icon" href="https://qumulo.com/terms-hub/">Terms Hub</a>.</p>
     </div>
     <span class="grt-cookie-button">Accept</span>
   </div>
+
+  <!-- Local scripts -->
+  <!-- Cookie consent banner -->
   <script src="/js/grt-cookie-consent.js"></script>
   <script>$(".grt-cookie").grtCookie();</script>
-  
-  <script src="/js/fixdoubledashes.js"></script>
 
+  <!-- Page elements -->
   <script src="/js/expand-collapse.js"></script>
+  <script src="/js/send-feedback.js"></script>
+  <script src="/js/check-favorites.js"></script>
+  <script src="/js/copy-code.js"></script>
+
+
+
+
+
+
+
 </footer>
 
 

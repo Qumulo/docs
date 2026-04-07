@@ -47,6 +47,26 @@ body {
   font-size: 14px;
 }
 
+
+/* Address Prince XML build errors */
+pre {
+  page-break-inside: auto !important;
+}
+
+div.highlighter-rouge {
+  display: block;
+  page-break-inside: avoid;
+}
+
+div.highlighter-rouge .highlight {
+  display: block;
+  page-break-inside: avoid;
+}
+
+div.highlighter-rouge pre {
+  page-break-inside: avoid;
+}
+
 /* Allow the H2 headings in the TOC to be hyperlinks */
 a.parentSectionTitle, a.parentSectionTitleLone {
   background: transparent !important;
