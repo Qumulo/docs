@@ -75,22 +75,17 @@ jobs:
         env:
           GIT_SSH_COMMAND: ssh -i /tmp/ro_key
 
-      - name: Checkout fresh copy of repo with gh-pages branch
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-          ref: gh-pages
-          path: content
-
       - name: Sync and update the gh-pages branch
         run: |
+          git worktree add content gh-pages
+
           rsync -a _site/ content/
 
-          git --git-dir content add --all
-          git --git-dir content commit -m "Rebuilt documentation website" || echo "No changes to commit" >&2
+          git -C content --worktree . content add --all
+          git -C content --worktree . commit -m "Rebuilt documentation website" || echo "No changes to commit" >&2
 
           # Force push internal `gh-pages` branch to public `gh-pages` branch
-          git --git-dir content push --force origin gh-pages
+          git -C content --worktree . push --force origin gh-pages
 
       - name: Clean up SSH key
         run: |
