@@ -81,11 +81,11 @@ jobs:
 
           rsync -a _site/ content/
 
-          git -C content --worktree . content add --all
-          git -C content --worktree . commit -m "Rebuilt documentation website" || echo "No changes to commit" >&2
+          git -C content --work-tree . content add --all
+          git -C content --work-tree . commit -m "Rebuilt documentation website" || echo "No changes to commit" >&2
 
           # Force push internal `gh-pages` branch to public `gh-pages` branch
-          git -C content --worktree . push --force origin gh-pages
+          git -C content --work-tree . push --force origin gh-pages
 
       - name: Clean up SSH key
         run: |
