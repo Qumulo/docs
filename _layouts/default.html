@@ -132,7 +132,7 @@
 <!-- /.container -->
 </div>
 
-<button id="send-feedback">Send Feedback</button>
+{% unless page.permalink contains 'hardware-guide' %}<button id="send-feedback">Send Feedback</button>{% endunless %}
 
 {% include footer.html %}
 
