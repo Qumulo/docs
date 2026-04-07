@@ -61,4 +61,4 @@ jobs:
           exit 0
 
       - name: Rebuild documentation (dry run)
-        run: ./tools/test-build-html.sh --dry-run
+        run: ./tools/test-build-html.sh
