@@ -86,11 +86,11 @@ jobs:
         run: |
           rsync -a _site/ content/
 
-          git -C content add --all
-          git -C content commit -m "Rebuilt documentation website" || echo "No changes to commit" >&2
+          git --git-dir content add --all
+          git --git-dir content commit -m "Rebuilt documentation website" || echo "No changes to commit" >&2
 
           # Force push internal `gh-pages` branch to public `gh-pages` branch
-          git -C content push --force gh-pages
+          git --git-dir content push --force origin gh-pages
 
       - name: Clean up SSH key
         run: |
@@ -99,4 +99,5 @@ jobs:
 
   push-to-public:
     if: ${{ github.repository == 'Qumulo/docs-internal' }}
+    needs: publish
     uses: ./.github/workflows/push-to-public.yml
