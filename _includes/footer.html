@@ -36,7 +36,7 @@
 
   <!-- Page elements -->
   <script src="{{ "js/expand-collapse.js" | relative_url }}"></script>
-{% unless page.permalink contains 'hardware-guide' %}  <script src="{{ "js/send-feedback.js" | relative_url }}"></script>{% endif %}
+{% unless page.permalink contains 'hardware-guide' %}  <script src="{{ "js/send-feedback.js" | relative_url }}"></script>{% endunless %}
   <script src="{{ "js/check-favorites.js" | relative_url }}"></script>
   <script src="{{ "js/copy-code.js" | relative_url }}"></script>
 {% if page.vectaraScripts or page.favoritesScripts %}  <script src="{{ "js/expand-sidebar.js" | relative_url }}"></script>{% endif %}
