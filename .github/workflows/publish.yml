@@ -81,7 +81,7 @@ jobs:
 
           rsync -a _site/ content/
 
-          git -C content --work-tree . content add --all
+          git -C content --work-tree . add --all
           git -C content --work-tree . commit -m "Rebuilt documentation website" || echo "No changes to commit" >&2
 
           # Force push internal `gh-pages` branch to public `gh-pages` branch
