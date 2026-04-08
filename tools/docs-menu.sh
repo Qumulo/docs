@@ -502,7 +502,7 @@ check_docs_errors() {
     start_in_docs_dir
     echo "Checking documentation for link, script, and image errors..."
     ignore_locale
-    docker run --rm --user $(id -u):$(id -g) --name docs-container-check -v $(pwd):/src:rw docs-builder check
+    docker run --rm -it --user $(id -u):$(id -g) --name docs-container-check -v $(pwd):/src:rw docs-builder check
 }
 
 # Check documentation for spelling errors by using Hunspell

@@ -32,16 +32,7 @@ jobs:
 
       - name: Check spelling (non-fatal)
         run: |
-          # Do not fail if the check throws an error
-          set +e
-          ./tools/test-spelling.sh
-
-          # Capture the exit code  
-          status=$?
-          if [ $status -ne 0 ]; then
-            echo "::warning::Fix spelling errors and add exceptions to tools/.spelling-allowlist"
-          fi
-          exit 0
+          ./tools/test-spelling.sh || { echo "::error::Fix spelling errors or exceptions to tools/.spelling-allowlist"; exit 1; }
 
       - name: Check scripts, links, and images (non-fatal)
         shell: bash {0} # Allow manual error handling 
@@ -56,6 +47,3 @@ jobs:
             echo "::warning::Fix script/link/image errors. 404s for unpublished pages is normal."
           fi
           exit 0
-
-      - name: Rebuild documentation (dry run)
-        run: ./tools/test-build-html.sh

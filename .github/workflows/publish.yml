@@ -40,33 +40,6 @@ jobs:
       - name: Build common container
         run: ./tools/test-build-container.sh
 
-      - name: Check spelling (non-fatal)
-        run: |
-          # Do not fail if the check throws an error
-          set +e
-          ./tools/test-spelling.sh
-
-          # Capture the exit code
-          status=$?
-          if [ $status -ne 0 ]; then
-            echo "::warning::Fix spelling errors and add exceptions to tools/.spelling-allowlist"
-          fi
-          exit 0
-
-      - name: Check scripts, links, and images (non-fatal)
-        shell: bash {0} # Allow manual error handling
-        run: |
-          # Do not fail if the check throws an error
-          set +e
-          ./tools/test-scripts-links-images.sh
-
-          # Capture the exit code
-          status=$?
-          if [ $status -ne 0 ]; then
-            echo "::warning::Fix script/link/image errors. 404s for unpublished pages is normal."
-          fi
-          exit 0
-
       - name: Prepare ReadOnly SSH key - access to external repos we include
         if: ${{ github.repository == 'Qumulo/docs-internal' }}
         run: |

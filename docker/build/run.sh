@@ -150,7 +150,7 @@ if [[ -f /.dockerenv ]] || grep -qa docker /proc/1/cgroup; then
             echo ""
             echo "Checking spelling..."
             rm -rf _site
-            ruby tools/spellcheck.rb ;;
+            bundle exec ruby tools/check-spelling.rb ;;
         check)
             echo ""
             echo "Checking HTML output..."
