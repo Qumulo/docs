@@ -30,9 +30,9 @@ jobs:
       - name: Build common container
         run: ./tools/test-build-container.sh
 
-      - name: Check spelling (non-fatal)
+      - name: Check spelling
         run: |
-          ./tools/test-spelling.sh || { echo "::error::Fix spelling errors or exceptions to tools/.spelling-allowlist"; exit 1; }
+          ./tools/test-spelling.sh || { echo "::error::Fix spelling errors or add exceptions to tools/.spelling-allowlist"; exit 1; }
 
       - name: Check scripts, links, and images (non-fatal)
         shell: bash {0} # Allow manual error handling 
