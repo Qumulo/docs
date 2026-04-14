@@ -310,13 +310,23 @@ SigV4 uses the `x-amz-content-sha256` header to specify [the authentication type
 Because Qumulo Core supports only [path-style bucket addressing]({{site.s3.docs.pathStyleAddressing}}), you must configure your client applications to use path-style addressing to send S3 API requests to a Qumulo cluster. For more information, see [Configuring the AWS CLI for Use with Qumulo Core](configuring-using-s3-api.html#configuring-aws-cli).
 
 ### ETags
-RESTful APIs, such as the S3 API, use HTTP [ETags](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/ETag) to identify different resource versions.
+RESTful APIs, such as the Qumulo Core S3 API, use HTTP [ETags](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/ETag) to identify different resource versions. When working with files by using Qumulo Core, each time a file's contents change (regardless of protocol), the value of its ETag changes as well.
 
-* Qumulo Core uses a proprietary mechanism to generate an object's ETag.
+{{site.data.alerts.note}}
+<ul>
+  <li>Certain applications might assume that S3 object ETags contain the MD5 checksum of the object's contents. Such applications might not function properly with the Qumulo S3 API.</li>
+  <li>
+    To maintain data integrity, we recommend that applications do one of the following:
+    <ul>
+      <li><a href="configuring-using-s3-api.html">Configure HTTPS for the S3 API</a></li>
+      <li>Include the <code>Content-MD5</code> header with the checksum of the object's contents</li>
+    </ul>
+</ul>
+{{site.data.alerts.end}}
+
+* Qumulo Core doesn't maintain a checksum value for every object in an S3 bucket because other protocols, such as NFS or SMB, can modify portions of the same file, which causes changes to a file to make the checksum inaccurate.
 
 * Amazon S3 uses the MD5 checksum of an object's contents as its ETag.
-
-{% include important.html content="Well-behaved applications shouldn't attempt to interpret the contents of an ETag. However, certain applications do assume that S3 object ETags contain the MD5 checksum of the object's contents. Such applications might not function properly with the Qumulo S3 API." %}
 
 ### Listing Objects
 The S3 API supports listing objects in a bucket by using the [`ListObjects`]({{site.s3.actions.ListObjects}}) and [`ListObjectsV2`]({{site.s3.actions.ListObjectsV2}}) API actions.
