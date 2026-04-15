@@ -81,10 +81,10 @@ summary: This section explains how to use the <code>qq fs_file_set_attr</code> c
 synopsis: Set file attributes
 title: qq fs_file_set_attr
 usage: "qq fs_file_set_attr [-h] (--path PATH | --id ID) [--stream-id STREAM_ID |\
-  \ --stream-name STREAM_NAME] [--mode MODE] [--size SIZE] [--creation-time CREATION_TIME]\n\
-  \    [--access-time ACCESS_TIME] [--modification-time MODIFICATION_TIME] [--change-time\
-  \ CHANGE_TIME]\n    [--owner OWNER | --owner-local OWNER_LOCAL | --owner-sid OWNER_SID\
-  \ | --owner-uid OWNER_UID]\n    [--group GROUP | --group-local GROUP_LOCAL | --group-sid\
+  \ --stream-name STREAM_NAME] [--mode MODE] [--size SIZE] [--creation-time CREATION_TIME]\
+  \ [--access-time ACCESS_TIME] [--modification-time MODIFICATION_TIME]\n    [--change-time\
+  \ CHANGE_TIME] [--owner OWNER | --owner-local OWNER_LOCAL | --owner-sid OWNER_SID\
+  \ | --owner-uid OWNER_UID] [--group GROUP | --group-local GROUP_LOCAL | --group-sid\
   \ GROUP_SID | --group-gid GROUP_GID]"
 zendesk_source: qq CLI Command Guide
 

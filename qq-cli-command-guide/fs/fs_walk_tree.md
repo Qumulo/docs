@@ -48,25 +48,15 @@ optional_options:
   help: Show progress bar (requires --output-file or --summary)
   name: --progress
   required: false
-- alternate:
-  - --max-bytes-per-file
-  help: Fetch at most this many bytes per file
-  name: -m
-  required: false
-- alternate: []
-  help: Fetch each file server-side to warm caches without transferring data
-  name: --fetch-data
-  required: false
 permalink: /qq-cli-command-guide/fs/fs_walk_tree.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar
 summary: This section explains how to use the <code>qq fs_walk_tree</code> command.
 synopsis: Walk file system tree
 title: qq fs_walk_tree
-usage: "qq fs_walk_tree [-h] [--path PATH] [--snapshot SNAPSHOT] [--file-only | --directory-only\
-  \ | --symlink-only] [--display-ownership | --display-all-attributes | --summary]\n\
-  \    [--output-file OUTPUT_FILE] [--max-depth MAX_DEPTH] [--progress] [-m MAX_BYTES_PER_FILE]\
-  \ [--fetch-data]"
+usage: qq fs_walk_tree [-h] [--path PATH] [--snapshot SNAPSHOT] [--file-only | --directory-only
+  | --symlink-only] [--display-ownership | --display-all-attributes | --summary] [--output-file
+  OUTPUT_FILE] [--max-depth MAX_DEPTH] [--progress]
 zendesk_source: qq CLI Command Guide
 
 ---

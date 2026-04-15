@@ -499,6 +499,7 @@ gns:
   singleRelationship: In Qumulo Core 7.5.0.1 to 7.5.1, it is possible for a Qumulo cluster to host only up to 32 hub portals <em>or</em> up to 32 spoke portals.
   multiRelationship: In Qumulo Core 7.5.2 (and higher), it is possible for a Qumulo cluster to host both up to 32 spoke portals <em>and</em> up to 32 hub portals at the same time.
   upgradeCacheDrop: Future Qumulo Core upgrades might remove cached data from the spoke portal, which can result in a temporary increase in data access latency.
+  protocolLocking: Protocol locks don&apos;t synchronize between the hub portal host cluster and the spoke portal host cluster. Specifically, NFSv3 or NLM byte-range locks, NFSv4.1 locking operations, SMB share-mode locks, and SMB byte-range locks function independently on the two clusters. For example, while two exclusive locks on the same spoke portal host cluster contend with each each other, an exclusive lock on a spoke portal host cluster doesn't contend with an exclusive lock on the hub portal host cluster.
   quorumBounce: This action makes both clusters in the portal relationship unavailable for less than 30 seconds while the systems reconfigure.
   portalDeleteOutput: The following is example output from the command that shows the portal ID, state, role, and root directory.
   portalDeleteProcess: The relationship becomes read-only and enters the `Deleting` state. Qumulo Core synchronizes any outstanding changes from the spoke portal to the hub portal and then removes the portal relationship from each cluster.

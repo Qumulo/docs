@@ -99,12 +99,12 @@ summary: This section explains how to use the <code>qq smb_mod_share</code> comm
 synopsis: Modify a share
 title: qq smb_mod_share
 usage: "qq smb_mod_share [-h] (--id ID | --name NAME) [--tenant-id TENANT_ID] [--new-name\
-  \ NEW_NAME] [--new-tenant-id NEW_TENANT_ID] [--fs-path FS_PATH]\n    [--description\
-  \ DESCRIPTION] [--access-based-enumeration-enabled {true,false}] [--create-fs-path]\
-  \ [--expand-fs-path-variables]\n    [--default-file-create-mode DEFAULT_FILE_CREATE_MODE]\
-  \ [--default-directory-create-mode DEFAULT_DIRECTORY_CREATE_MODE] [--require-encryption\
-  \ {true,false}]\n    [--json] [--full-control-hosts IP/RANGE [IP/RANGE ...]] [--read-only-hosts\
-  \ IP/RANGE [IP/RANGE ...]] [--deny-hosts IP/RANGE [IP/RANGE ...]]\n    [--deny-all-hosts]"
+  \ NEW_NAME] [--new-tenant-id NEW_TENANT_ID] [--fs-path FS_PATH] [--description DESCRIPTION]\
+  \ [--access-based-enumeration-enabled {true,false}] [--create-fs-path]\n    [--expand-fs-path-variables]\
+  \ [--default-file-create-mode DEFAULT_FILE_CREATE_MODE] [--default-directory-create-mode\
+  \ DEFAULT_DIRECTORY_CREATE_MODE] [--require-encryption {true,false}] [--json]\n\
+  \    [--full-control-hosts IP/RANGE [IP/RANGE ...]] [--read-only-hosts IP/RANGE\
+  \ [IP/RANGE ...]] [--deny-hosts IP/RANGE [IP/RANGE ...]] [--deny-all-hosts]"
 zendesk_source: qq CLI Command Guide
 
 ---
