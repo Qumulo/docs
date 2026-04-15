@@ -683,6 +683,11 @@ entries:
       url: /rest-api-guide/files-v1/files_ref_entries_name.html
     - apiversion: v1
       output: web,pdf
+      preview: true
+      title: files/{ref}/fetch-data
+      url: /rest-api-guide/files-v1/files_ref_fetch-data.html
+    - apiversion: v1
+      output: web,pdf
       title: files/{ref}/file-lock
       url: /rest-api-guide/files-v1/files_ref_file-lock.html
     - apiversion: v1
@@ -1412,6 +1417,10 @@ entries:
     title: Session Management V1 (session)
     url: /rest-api-guide/session-management-v1/
   - folderitems:
+    - apiversion: v1
+      output: web,pdf
+      title: shutdown/container-restart
+      url: /rest-api-guide/shutdown-v1/shutdown_container-restart.html
     - apiversion: v1
       output: web,pdf
       title: shutdown/container-restart/{node_id}

@@ -47,6 +47,15 @@ Currently, it is possible to configure and manage Cloud Data Fabric functionalit
 
 
 ## Protocols
+{% capture byteRangeLocksNoSpan %}<em>Byte-range locks</em> let multiple processes lock specific portions of a file for granular access. Currently, byte-range locks can't span portals, so NFSv3 or NLM byte-range locks and NFSv4.1 byte-range locks function independently on the two clusters.{% endcapture %}
+{% capture shareModeLocksCanSpan %}<em>Share-mode locks</em> control access to an entire file for read, write, and delete operations. In Qumulo Core 7.8.3 (and higher), share-mode locks <em>can</em> span portals but SMB byte-range locks function independently on the two clusters.{% endcapture %}
+{{site.data.alerts.note}}
+<ul>
+  <li>{{ byteRangeLocksNoSpan }}</li>
+  <li>{{ shareModeLocksCanSpan }}</li>
+</ul>
+{{site.data.alerts.end}}
+
 ### S3
 * Currently, Qumulo Core allows only partial access to portal data through the S3 protocol, including:
 
@@ -72,4 +81,7 @@ Currently, it is possible to configure and manage Cloud Data Fabric functionalit
 
 * When you edit ACLs over NFSv4.1 by using `editfacl` or similar tools, you can use only Kerberos principals from the Active Directory domain associated with the Qumulo cluster to which you are connected. It isn't possible to use principals from a remote Qumulo cluster.
 
-* {{site.gns.protocolLocking}}
+* {{ byteRangeLocksNoSpan }}
+
+### SMB
+* {{ shareModeLocksCanSpan }}
