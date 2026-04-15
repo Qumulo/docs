@@ -2461,14 +2461,6 @@ $(document).ready(function() {
 </ul>
 
 <h2 id="protocols">Protocols</h2>
-
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note</b><br />
-<ul>
-  <li><em>Byte-range locks</em> let multiple processes lock specific portions of a file for granular access. Currently, byte-range locks can't span portals, so NFSv3 or NLM byte-range locks and NFSv4.1 byte-range locks function independently on the two clusters.</li>
-  <li><em>Share-mode locks</em> control access to an entire file for read, write, and delete operations. In Qumulo Core 7.8.3 (and higher), share-mode locks <em>can</em> span portals but SMB byte-range locks function independently on the two clusters.</li>
-</ul>
-</div>
-
 <h3 id="s3">S3</h3>
 <ul>
   <li>
@@ -2509,13 +2501,8 @@ $(document).ready(function() {
     <p>When you edit ACLs over NFSv4.1 by using <code class="language-plaintext highlighter-rouge">editfacl</code> or similar tools, you can use only Kerberos principals from the Active Directory domain associated with the Qumulo cluster to which you are connected. It isn’t possible to use principals from a remote Qumulo cluster.</p>
   </li>
   <li>
-    <p><em>Byte-range locks</em> let multiple processes lock specific portions of a file for granular access. Currently, byte-range locks can’t span portals, so NFSv3 or NLM byte-range locks and NFSv4.1 byte-range locks function independently on the two clusters.</p>
+    <p>Protocol locks don't synchronize between the hub portal host cluster and the spoke portal host cluster. Specifically, NFSv3 or NLM byte-range locks, NFSv4.1 locking operations, SMB share-mode locks, and SMB byte-range locks function independently on the two clusters. For example, while two exclusive locks on the same spoke portal host cluster contend with each each other, an exclusive lock on a spoke portal host cluster doesn’t contend with an exclusive lock on the hub portal host cluster.</p>
   </li>
-</ul>
-
-<h3 id="smb">SMB</h3>
-<ul>
-  <li><em>Share-mode locks</em> control access to an entire file for read, write, and delete operations. In Qumulo Core 7.8.3 (and higher), share-mode locks <em>can</em> span portals but SMB byte-range locks function independently on the two clusters.</li>
 </ul>
 
    
