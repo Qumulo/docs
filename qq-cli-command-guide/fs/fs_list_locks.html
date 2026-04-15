@@ -1842,6 +1842,22 @@ fetch('/data/website.json')
           
           
           
+          
+          
+          <li>
+            <a title="container_restart_cluster" href="/qq-cli-command-guide/container/container_restart_cluster.html">
+              container_restart_cluster
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
       </ul>
    </li>
      
@@ -2420,6 +2436,38 @@ fetch('/data/website.json')
           <li>
             <a title="fs_delete_user_metadata" href="/qq-cli-command-guide/fs/fs_delete_user_metadata.html">
               fs_delete_user_metadata
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="fs_fetch_file" href="/qq-cli-command-guide/fs/fs_fetch_file.html">
+              fs_fetch_file
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="fs_fetch_tree" href="/qq-cli-command-guide/fs/fs_fetch_tree.html">
+              fs_fetch_tree
               <span class="tag-container">
               
               
@@ -8063,7 +8111,8 @@ $(document).ready(function() {
 
 
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq fs_list_locks <span class="o">[</span><span class="nt">-h</span><span class="o">]</span> <span class="nt">--protocol</span> <span class="o">{</span>nfs4,smb,nlm<span class="o">}</span> <span class="nt">--lock-type</span> <span class="o">{</span>share-mode,byte-range<span class="o">}</span> <span class="o">[</span><span class="nt">--path</span> PATH | <span class="nt">--id</span> ID | <span class="nt">--ip</span> IP | <span class="nt">--hostname</span> HOSTNAME] <span class="o">[</span><span class="nt">--snapshot</span> SNAPSHOT] <span class="o">[</span><span class="nt">--no-resolve</span><span class="o">]</span> <span class="o">[</span><span class="nt">--json</span><span class="o">]</span> <span class="o">[</span><span class="nt">--sort</span> <span class="o">{</span>file,client<span class="o">}]</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq fs_list_locks <span class="o">[</span><span class="nt">-h</span><span class="o">]</span> <span class="nt">--protocol</span> <span class="o">{</span>nfs4,nlm,smb<span class="o">}</span> <span class="nt">--lock-type</span> <span class="o">{</span>byte-range,share-mode<span class="o">}</span> <span class="o">[</span><span class="nt">--path</span> PATH | <span class="nt">--id</span> ID | <span class="nt">--ip</span> IP | <span class="nt">--hostname</span> HOSTNAME] <span class="o">[</span><span class="nt">--snapshot</span> SNAPSHOT]
+    <span class="o">[</span><span class="nt">--no-resolve</span><span class="o">]</span> <span class="o">[</span><span class="nt">--json</span><span class="o">]</span> <span class="o">[</span><span class="nt">--sort</span> <span class="o">{</span>file,client<span class="o">}]</span>
 </code></pre></div></div>
 
 
@@ -8467,8 +8516,6 @@ $(document).ready(function() {
       
         
     
-  
-    
       
         
     
@@ -8487,6 +8534,11 @@ $(document).ready(function() {
       
         
     
+  
+    
+      
+        
+    
       
         
     
@@ -8522,6 +8574,12 @@ $(document).ready(function() {
         
     
   
+    
+      
+        
+    
+      
+        
     
       
         
@@ -8655,6 +8713,16 @@ $(document).ready(function() {
             
             
   <li><a href="/qq-cli-command-guide/fs/fs_delete_user_metadata.html">fs_delete_user_metadata</a></li>
+            
+          
+            
+            
+  <li><a href="/qq-cli-command-guide/fs/fs_fetch_file.html">fs_fetch_file</a></li>
+            
+          
+            
+            
+  <li><a href="/qq-cli-command-guide/fs/fs_fetch_tree.html">fs_fetch_tree</a></li>
             
           
             

@@ -1842,6 +1842,22 @@ fetch('/data/website.json')
           
           
           
+          
+          
+          <li>
+            <a title="container_restart_cluster" href="/qq-cli-command-guide/container/container_restart_cluster.html">
+              container_restart_cluster
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
       </ul>
    </li>
      
@@ -2420,6 +2436,38 @@ fetch('/data/website.json')
           <li>
             <a title="fs_delete_user_metadata" href="/qq-cli-command-guide/fs/fs_delete_user_metadata.html">
               fs_delete_user_metadata
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="fs_fetch_file" href="/qq-cli-command-guide/fs/fs_fetch_file.html">
+              fs_fetch_file
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="fs_fetch_tree" href="/qq-cli-command-guide/fs/fs_fetch_tree.html">
+              fs_fetch_tree
               <span class="tag-container">
               
               
@@ -8063,8 +8111,9 @@ $(document).ready(function() {
 
 
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq create_object_backed_cluster <span class="o">[</span><span class="nt">-h</span><span class="o">]</span> <span class="nt">--cluster-name</span> CLUSTER_NAME <span class="nt">--admin-password</span> ADMIN_PASSWORD <span class="nt">--host-instance-id</span> HOST_INSTANCE_ID <span class="nt">--object-storage-uris</span> OBJECT_STORAGE_URIS <span class="o">[</span>OBJECT_STORAGE_URIS ...] <span class="nt">--usable-capacity-clamp</span>
-    USABLE_CAPACITY_CLAMP <span class="nt">--product-type</span> PRODUCT_TYPE <span class="o">[</span><span class="nt">--node-ips-and-fault-domains</span> NODE_IPS_AND_FAULT_DOMAINS <span class="o">[</span>NODE_IPS_AND_FAULT_DOMAINS ...]] <span class="nt">--accept-eula</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq create_object_backed_cluster <span class="o">[</span><span class="nt">-h</span><span class="o">]</span> <span class="nt">--cluster-name</span> CLUSTER_NAME <span class="nt">--admin-password</span> ADMIN_PASSWORD <span class="nt">--host-instance-id</span> HOST_INSTANCE_ID <span class="nt">--object-storage-uris</span>
+    OBJECT_STORAGE_URIS <span class="o">[</span>OBJECT_STORAGE_URIS ...] <span class="nt">--usable-capacity-clamp</span> USABLE_CAPACITY_CLAMP <span class="nt">--product-type</span> PRODUCT_TYPE
+    <span class="o">[</span><span class="nt">--node-ips-and-fault-domains</span> NODE_IPS_AND_FAULT_DOMAINS <span class="o">[</span>NODE_IPS_AND_FAULT_DOMAINS ...]] <span class="nt">--accept-eula</span>
     <span class="o">[</span><span class="nt">--azure-key-vault-uri</span> KEY_VAULT | <span class="nt">--key-vault</span> KEY_VAULT]
 </code></pre></div></div>
 
@@ -8473,8 +8522,6 @@ domain ids <ip-1>,None <ip-2>,None <ip-3>,None...
       
         
     
-  
-    
       
         
     
@@ -8493,6 +8540,11 @@ domain ids <ip-1>,None <ip-2>,None <ip-3>,None...
       
         
     
+  
+    
+      
+        
+    
       
         
     
@@ -8528,6 +8580,12 @@ domain ids <ip-1>,None <ip-2>,None <ip-3>,None...
         
     
   
+    
+      
+        
+    
+      
+        
     
       
         
