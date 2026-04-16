@@ -1842,6 +1842,22 @@ fetch('/data/website.json')
           
           
           
+          
+          
+          <li>
+            <a title="container_restart_cluster" href="/qq-cli-command-guide/container/container_restart_cluster.html">
+              container_restart_cluster
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
       </ul>
    </li>
      
@@ -2420,6 +2436,38 @@ fetch('/data/website.json')
           <li>
             <a title="fs_delete_user_metadata" href="/qq-cli-command-guide/fs/fs_delete_user_metadata.html">
               fs_delete_user_metadata
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="fs_fetch_file" href="/qq-cli-command-guide/fs/fs_fetch_file.html">
+              fs_fetch_file
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="fs_fetch_tree" href="/qq-cli-command-guide/fs/fs_fetch_tree.html">
+              fs_fetch_tree
               <span class="tag-container">
               
               
@@ -8118,9 +8166,11 @@ ID Trustee                        Type    Rights
 
 
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq smb_mod_share <span class="o">[</span><span class="nt">-h</span><span class="o">]</span> <span class="o">(</span><span class="nt">--id</span> ID | <span class="nt">--name</span> NAME<span class="o">)</span> <span class="o">[</span><span class="nt">--tenant-id</span> TENANT_ID] <span class="o">[</span><span class="nt">--new-name</span> NEW_NAME] <span class="o">[</span><span class="nt">--new-tenant-id</span> NEW_TENANT_ID] <span class="o">[</span><span class="nt">--fs-path</span> FS_PATH] <span class="o">[</span><span class="nt">--description</span> DESCRIPTION] <span class="o">[</span><span class="nt">--access-based-enumeration-enabled</span> <span class="o">{</span><span class="nb">true</span>,false<span class="o">}]</span> <span class="o">[</span><span class="nt">--create-fs-path</span><span class="o">]</span>
-    <span class="o">[</span><span class="nt">--expand-fs-path-variables</span><span class="o">]</span> <span class="o">[</span><span class="nt">--default-file-create-mode</span> DEFAULT_FILE_CREATE_MODE] <span class="o">[</span><span class="nt">--default-directory-create-mode</span> DEFAULT_DIRECTORY_CREATE_MODE] <span class="o">[</span><span class="nt">--require-encryption</span> <span class="o">{</span><span class="nb">true</span>,false<span class="o">}]</span> <span class="o">[</span><span class="nt">--json</span><span class="o">]</span>
-    <span class="o">[</span><span class="nt">--full-control-hosts</span> IP/RANGE <span class="o">[</span>IP/RANGE ...]] <span class="o">[</span><span class="nt">--read-only-hosts</span> IP/RANGE <span class="o">[</span>IP/RANGE ...]] <span class="o">[</span><span class="nt">--deny-hosts</span> IP/RANGE <span class="o">[</span>IP/RANGE ...]] <span class="o">[</span><span class="nt">--deny-all-hosts</span><span class="o">]</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq smb_mod_share <span class="o">[</span><span class="nt">-h</span><span class="o">]</span> <span class="o">(</span><span class="nt">--id</span> ID | <span class="nt">--name</span> NAME<span class="o">)</span> <span class="o">[</span><span class="nt">--tenant-id</span> TENANT_ID] <span class="o">[</span><span class="nt">--new-name</span> NEW_NAME] <span class="o">[</span><span class="nt">--new-tenant-id</span> NEW_TENANT_ID] <span class="o">[</span><span class="nt">--fs-path</span> FS_PATH]
+    <span class="o">[</span><span class="nt">--description</span> DESCRIPTION] <span class="o">[</span><span class="nt">--access-based-enumeration-enabled</span> <span class="o">{</span><span class="nb">true</span>,false<span class="o">}]</span> <span class="o">[</span><span class="nt">--create-fs-path</span><span class="o">]</span> <span class="o">[</span><span class="nt">--expand-fs-path-variables</span><span class="o">]</span>
+    <span class="o">[</span><span class="nt">--default-file-create-mode</span> DEFAULT_FILE_CREATE_MODE] <span class="o">[</span><span class="nt">--default-directory-create-mode</span> DEFAULT_DIRECTORY_CREATE_MODE] <span class="o">[</span><span class="nt">--require-encryption</span> <span class="o">{</span><span class="nb">true</span>,false<span class="o">}]</span>
+    <span class="o">[</span><span class="nt">--json</span><span class="o">]</span> <span class="o">[</span><span class="nt">--full-control-hosts</span> IP/RANGE <span class="o">[</span>IP/RANGE ...]] <span class="o">[</span><span class="nt">--read-only-hosts</span> IP/RANGE <span class="o">[</span>IP/RANGE ...]] <span class="o">[</span><span class="nt">--deny-hosts</span> IP/RANGE <span class="o">[</span>IP/RANGE ...]]
+    <span class="o">[</span><span class="nt">--deny-all-hosts</span><span class="o">]</span>
 </code></pre></div></div>
 
 
@@ -8655,8 +8705,6 @@ ID Trustee                        Type    Rights
       
         
     
-  
-    
       
         
     
@@ -8675,6 +8723,11 @@ ID Trustee                        Type    Rights
       
         
     
+  
+    
+      
+        
+    
       
         
     
@@ -8710,6 +8763,12 @@ ID Trustee                        Type    Rights
         
     
   
+    
+      
+        
+    
+      
+        
     
       
         
