@@ -266,6 +266,9 @@ entries:
     - output: web,pdf
       title: container_restart
       url: /qq-cli-command-guide/container/container_restart.html
+    - output: web,pdf
+      title: container_restart_cluster
+      url: /qq-cli-command-guide/container/container_restart_cluster.html
     output: web,pdf
     title: container
     url: /qq-cli-command-guide/container/
@@ -369,6 +372,12 @@ entries:
     - output: web,pdf
       title: fs_delete_user_metadata
       url: /qq-cli-command-guide/fs/fs_delete_user_metadata.html
+    - output: web,pdf
+      title: fs_fetch_file
+      url: /qq-cli-command-guide/fs/fs_fetch_file.html
+    - output: web,pdf
+      title: fs_fetch_tree
+      url: /qq-cli-command-guide/fs/fs_fetch_tree.html
     - output: web,pdf
       title: fs_file_get_attr
       url: /qq-cli-command-guide/fs/fs_file_get_attr.html

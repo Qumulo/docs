@@ -27,9 +27,9 @@ summary: This section explains how to use the <code>qq dns_modify_system_config<
   command.
 synopsis: Modify the system's DNS configuration.
 title: qq dns_modify_system_config
-usage: qq dns_modify_system_config [-h] [--dns-servers <address-or-range> [<address-or-range>
-  ...] | --clear-dns-servers] [--dns-search-domains <search-domain> [<search-domain>
-  ...] | --clear-dns-search-domains]
+usage: "qq dns_modify_system_config [-h] [--dns-servers <address-or-range> [<address-or-range>\
+  \ ...] | --clear-dns-servers]\n    [--dns-search-domains <search-domain> [<search-domain>\
+  \ ...] | --clear-dns-search-domains]"
 zendesk_source: qq CLI Command Guide
 
 ---

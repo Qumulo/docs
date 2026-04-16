@@ -29,8 +29,8 @@ summary: This section explains how to use the <code>qq authoritative_dns_modify_
   command.
 synopsis: Configure settings for Qumulo Authoritative DNS server
 title: qq authoritative_dns_modify_settings
-usage: qq authoritative_dns_modify_settings [-h] [--fqdn FQDN] [--enable] [--disable]
-  [--host-restrictions HOST_RESTRICTIONS [HOST_RESTRICTIONS ...]] [--disable-host-restrictions]
+usage: "qq authoritative_dns_modify_settings [-h] [--fqdn FQDN] [--enable] [--disable]\
+  \ [--host-restrictions HOST_RESTRICTIONS [HOST_RESTRICTIONS ...]]\n    [--disable-host-restrictions]"
 zendesk_source: qq CLI Command Guide
 
 ---
