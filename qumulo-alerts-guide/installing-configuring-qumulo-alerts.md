@@ -65,7 +65,7 @@ To be able to generate access tokens, you must create a local user for Qumulo Al
      --password {{site.examplePassword}} 
    ```
 
-1. To create a role for Qumulo Alerts, you will need the user ID that appears in the command output.
+1. To create a role for Qumulo Alerts later, you need the user ID that appears in the command output.
 
    In the following example, the user ID is `1234`.
 
