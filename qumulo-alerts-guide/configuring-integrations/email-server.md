@@ -25,11 +25,11 @@ sidebar: qumulo_alerts_guide_sidebar
 
    1. For **SMTP Server**, enter the hostname or IP address of your SMTP server (for example, `mail.example.com`).
    
-   1. For **Port**, select the following SMTP server port.
+   1. For **Port**, select the SMTP server port.
    
    1. For **From Address**, select the email address to appear in the **From** field of outgoing notifications (for example, `alerts@example.com`).
    
-   1. For **Security**, select the following connection security types.
+   1. For **Security**, select the connection security type.
    
    1. (Optional) For **Username**, enter the username for SMTP authentication.
    
