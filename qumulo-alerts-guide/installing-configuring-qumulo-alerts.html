@@ -149,7 +149,7 @@ fetch('/data/website.json')
 </noscript>
 
 <!-- Define page metadata -->
-<meta name="description" content="This section explains how to install, start and stop, and configure Qumulo Alerts.">
+<meta name="description" content="This section explains how to install, start and stop, log in to, and configure Qumulo Alerts.">
 <meta name="apple-mobile-web-app-title" content="Qumulo Documentation Portal">
 <meta name="application-name" content="Qumulo Documentation Portal">
 <meta name="msapplication-TileColor" content="#2b5797">
@@ -162,7 +162,7 @@ fetch('/data/website.json')
 <meta property="og:title" content="Installing and Configuring Qumulo Alerts | Qumulo Documentation Portal">
 <meta property="og:url" content="https://docs.qumulo.com/qumulo-alerts-guide/installing-configuring-qumulo-alerts.html">
 <meta property="og:site_name" content="Qumulo Documentation Portal">
-<meta property="og:description" content="This section explains how to install, start and stop, and configure Qumulo Alerts.">
+<meta property="og:description" content="This section explains how to install, start and stop, log in to, and configure Qumulo Alerts.">
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://docs.qumulo.com/images/docs.qumulo.com-qumulo-documentation-portal-630px.png">
@@ -173,7 +173,7 @@ fetch('/data/website.json')
 <meta name="twitter:title" content="Installing and Configuring Qumulo Alerts | Qumulo Documentation Portal">
 <meta property="twitter:url" content="https://docs.qumulo.com/qumulo-alerts-guide/installing-configuring-qumulo-alerts.html">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:description" content="This section explains how to install, start and stop, and configure Qumulo Alerts.">
+<meta name="twitter:description" content="This section explains how to install, start and stop, log in to, and configure Qumulo Alerts.">
 <meta name="twitter:image" content="https://docs.qumulo.com/images/docs.qumulo.com-qumulo-documentation-portal-418px.png">
 <meta property="twitter:domain" content="docs.qumulo.com">
 
@@ -962,13 +962,13 @@ $(document).ready(function() {
 
     
 
-   <p>This section explains how to install, start and stop, and configure Qumulo Alerts.</p>
+   <p>This section explains how to install, start and stop, log in to, and configure Qumulo Alerts.</p>
    
      <h2 id="prerequisites">Prerequisites</h2>
 <p>This section lists the prerequisites for Qumulo Alerts.</p>
 
 <h3 id="firewall-ports">Firewall Ports</h3>
-<p>Qumulo Alerts requires the following firewall ports to be open from the Qumulo Alerts instance</p>
+<p>Qumulo Alerts requires the following firewall ports to be open from the Qumulo Alerts instance.</p>
 
 <table>
   <thead>
@@ -1015,7 +1015,6 @@ $(document).ready(function() {
 
 <h3 id="configuration-details">Configuration Details</h3>
 <p>Before you connect Qumulo Alerts to a Qumulo cluster, collect the information that can help you configure Qumulo Alerts to monitor your cluster.</p>
-
 <ul>
   <li><strong>Cluster Address:</strong> Use a fully qualified domain name (FQDN) rather than an IP address.</li>
   <li><strong>Traffic Distribution:</strong> Will your Qumulo Alerts installation use a network load balancer or a floating IP address?</li>
@@ -1050,7 +1049,7 @@ $(document).ready(function() {
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>You need the user ID that appears in the command output to create a role for Qumulo Alerts.</p>
+    <p>To create a role for Qumulo Alerts later, you need the user ID that appears in the command output.</p>
 
     <p>In the following example, the user ID is <code class="language-plaintext highlighter-rouge">1234</code>.</p>
 
@@ -1194,22 +1193,49 @@ As soon as you receive your bearer token, record it in a safe place. If you misp
   </li>
 </ul>
 
-<h2 id="configuring-qumulo-alerts">Configuring Qumulo Alerts</h2>
-<p>This section explains how to use the <code class="language-plaintext highlighter-rouge">alerts</code> CLI and how to configure Qumulo Alerts</p>
+<h2 id="logging-in-to-qumulo-alerts">Logging In to Qumulo Alerts</h2>
+<p>This section explains how to log in to Qumulo Alerts by using the Web UI or the <code class="language-plaintext highlighter-rouge">alerts</code> CLI.</p>
 
-<h3 id="step-1-configure-the-alerts-cli-for-your-operating-system">Step 1: Configure the alerts CLI for Your Operating System</h3>
-<p>Qumulo Alerts comes with the following binaries for Linux, macOS, and Windows.</p>
+<h3 id="to-log-in-to-the-qumulo-alerts-web-ui">To Log In to the Qumulo Alerts Web UI</h3>
+<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> The Qumulo Alerts Web UI is available in Qumulo Alerts 7.2.1 (and higher).</div>
+
+<ol>
+  <li>
+    <p>In a browser, navigate to <code class="language-plaintext highlighter-rouge">http://&lt;your-host&gt;:8080/web/login</code>, where <code class="language-plaintext highlighter-rouge">&lt;your-host&gt;</code> is the hostname or IP address of the machine running Qumulo Alerts.</p>
+  </li>
+  <li>
+    <p>Enter the default credentials:</p>
+
+    <ol>
+      <li>
+        <p>For <strong>Username</strong>, enter <code class="language-plaintext highlighter-rouge">admin</code>.</p>
+      </li>
+      <li>
+        <p>For <strong>Password</strong>, enter <code class="language-plaintext highlighter-rouge">Admin123</code>.</p>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>Click <strong>Login</strong>.</p>
+
+    <p>After a successful login, Qumulo Alerts creates a session that expires after six hours.</p>
+  </li>
+</ol>
+
+<h3 id="to-log-in-to-qumulo-alerts-by-using-the-alerts-cli-on-linux-or-macos">To Log In to Qumulo Alerts by Using the alerts CLI on Linux or macOS</h3>
+<p>Qumulo Alerts includes the following binaries:</p>
 
 <ul>
   <li><code class="language-plaintext highlighter-rouge">alerts.macos-latest</code></li>
   <li><code class="language-plaintext highlighter-rouge">alerts.redhat-8</code></li>
   <li><code class="language-plaintext highlighter-rouge">alerts.ubuntu-20.04</code></li>
   <li><code class="language-plaintext highlighter-rouge">alerts.ubuntu-latest</code></li>
-  <li><code class="language-plaintext highlighter-rouge">alerts.windows-latest.exe</code></li>
 </ul>
 
-<h4 id="to-configure-the-alerts-cli-for-linux">To Configure the alerts CLI for Linux</h4>
 <ol>
+  <li>
+    <p>Copy the appropriate binary to your Linux or macOS machine.</p>
+  </li>
   <li>
     <p>Link the binary for your operating system to the <code class="language-plaintext highlighter-rouge">alerts</code> CLI. For example:</p>
 
@@ -1224,36 +1250,36 @@ As soon as you receive your bearer token, record it in a safe place. If you misp
   </li>
 </ol>
 
-<h4 id="to-configure-the-alerts-cli-for-windows">To Configure the alerts CLI for Windows</h4>
+<h3 id="to-log-in-to-qumulo-alerts-by-using-the-alerts-cli-on-windows">To Log In to Qumulo Alerts by Using the alerts CLI on Windows</h3>
 <ol>
   <li>
-    <p>Copy <code class="language-plaintext highlighter-rouge">alerts.windows-latest.exe</code> to your Windows machine.</p>
+    <p>Copy <code class="language-plaintext highlighter-rouge">alerts.windows-latest.exe</code> binary to your Windows machine.</p>
   </li>
   <li>
     <p>Rename the file to <code class="language-plaintext highlighter-rouge">alerts.exe</code></p>
   </li>
 </ol>
 
-<h3 id="step-2-log-in-to-qumulo-alerts">Step 2: Log in to Qumulo Alerts</h3>
+<h4 id="step-2-log-in-to-qumulo-alerts-by-using-the-alerts-cli">Step 2: Log In to Qumulo Alerts by Using the alerts CLI</h4>
 <ol>
   <li>
-    <p>To log in to Qumulo Alerts, run the <code class="language-plaintext highlighter-rouge">./alerts login -u admin</code> command.</p>
+    <p>To log in to Qumulo Alerts, run the <code class="language-plaintext highlighter-rouge">./alerts login -u admin</code> command on Linux or macOS or <code class="language-plaintext highlighter-rouge">alerts login -u admin</code> on Windows.</p>
   </li>
   <li>
-    <p>When prompted, enter the following:</p>
+    <p>When prompted, enter your credentials:</p>
 
     <ul>
       <li>
-        <p><strong>Login:</strong> <code class="language-plaintext highlighter-rouge">admin</code></p>
+        <p>For <strong>Login</strong>, enter <code class="language-plaintext highlighter-rouge">admin</code>.</p>
       </li>
       <li>
-        <p><strong>Password:</strong> <code class="language-plaintext highlighter-rouge">Admin123</code></p>
+        <p>For <strong>Password</strong>, enter <code class="language-plaintext highlighter-rouge">Admin123</code>.</p>
       </li>
     </ul>
   </li>
 </ol>
 
-<h3 id="step-3-configure-qumulo-alerts">Step 3: Configure Qumulo Alerts</h3>
+<h2 id="configuring-qumulo-alerts">Configuring Qumulo Alerts</h2>
 <ol>
   <li>
     <p>Configure integration <a href="configuring-integrations/email-server.html">with an email server</a> or <a href="configuring-integrations/sms-clicksend.html">with SMS (ClickSend)</a>.</p>

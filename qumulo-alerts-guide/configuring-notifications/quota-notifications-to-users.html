@@ -43,7 +43,7 @@
 </script>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Configuring Quota Notifications to a User Account in Qumulo Alerts | Qumulo Documentation Portal</title>
+<title>Configuring Quota Notifications to One or More User Accounts in Qumulo Alerts | Qumulo Documentation Portal</title>
 
 <link rel="canonical" href="https://docs.qumulo.com/qumulo-alerts-guide/configuring-notifications/quota-notifications-to-users.html">
 
@@ -149,7 +149,7 @@ fetch('/data/website.json')
 </noscript>
 
 <!-- Define page metadata -->
-<meta name="description" content="This section explains how to configure Qumulo Alerts to send quota notifications from a Qumulo cluster to a user account.">
+<meta name="description" content="This section explains how to configure Qumulo Alerts to send quota notifications from a Qumulo cluster to one or more user accounts.">
 <meta name="apple-mobile-web-app-title" content="Qumulo Documentation Portal">
 <meta name="application-name" content="Qumulo Documentation Portal">
 <meta name="msapplication-TileColor" content="#2b5797">
@@ -159,10 +159,10 @@ fetch('/data/website.json')
 <meta name="google-site-verification" content="_KoxPR0qF_ZeMyH6uWvlX84cFRujO_AZ1eq0eT9alAg">
 
 <!-- Open Graph Meta Tags -->
-<meta property="og:title" content="Configuring Quota Notifications to a User Account in Qumulo Alerts | Qumulo Documentation Portal">
+<meta property="og:title" content="Configuring Quota Notifications to One or More User Accounts in Qumulo Alerts | Qumulo Documentation Portal">
 <meta property="og:url" content="https://docs.qumulo.com/qumulo-alerts-guide/configuring-notifications/quota-notifications-to-users.html">
 <meta property="og:site_name" content="Qumulo Documentation Portal">
-<meta property="og:description" content="This section explains how to configure Qumulo Alerts to send quota notifications from a Qumulo cluster to a user account.">
+<meta property="og:description" content="This section explains how to configure Qumulo Alerts to send quota notifications from a Qumulo cluster to one or more user accounts.">
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://docs.qumulo.com/images/docs.qumulo.com-qumulo-documentation-portal-630px.png">
@@ -170,10 +170,10 @@ fetch('/data/website.json')
 <meta property="og:image:height" content="630">
 
 <!-- Twitter Meta Tags -->
-<meta name="twitter:title" content="Configuring Quota Notifications to a User Account in Qumulo Alerts | Qumulo Documentation Portal">
+<meta name="twitter:title" content="Configuring Quota Notifications to One or More User Accounts in Qumulo Alerts | Qumulo Documentation Portal">
 <meta property="twitter:url" content="https://docs.qumulo.com/qumulo-alerts-guide/configuring-notifications/quota-notifications-to-users.html">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:description" content="This section explains how to configure Qumulo Alerts to send quota notifications from a Qumulo cluster to a user account.">
+<meta name="twitter:description" content="This section explains how to configure Qumulo Alerts to send quota notifications from a Qumulo cluster to one or more user accounts.">
 <meta name="twitter:image" content="https://docs.qumulo.com/images/docs.qumulo.com-qumulo-documentation-portal-418px.png">
 <meta property="twitter:domain" content="docs.qumulo.com">
 
@@ -918,7 +918,7 @@ fetch('/data/website.json')
   <a href='/qumulo-alerts-guide/configuring-notifications/index.html'>Configuring Notifications</a> <span>&rsaquo;</span>
 
 
-  Configuring Quota Notifications to a User Account in Qumulo Alerts
+  Configuring Quota Notifications to One or More User Accounts in Qumulo Alerts
   </div>
 </nav>
 
@@ -927,7 +927,7 @@ fetch('/data/website.json')
 
 <div class="post-header">
    <div class="star" id="page-star" title="Save to Favorites">&#9733;</div>
-   <h1 class="post-title-main">Configuring Quota Notifications to a User Account in Qumulo Alerts</h1>
+   <h1 class="post-title-main">Configuring Quota Notifications to One or More User Accounts in Qumulo Alerts</h1>
 </div>
 
 
@@ -964,12 +964,48 @@ $(document).ready(function() {
 
     
 
-   <p>This section explains how to configure Qumulo Alerts to send quota notifications from a Qumulo cluster to a user account.</p>
+   <p>This section explains how to configure Qumulo Alerts to send quota notifications from a Qumulo cluster to one or more user accounts.</p>
    
-     <p>Qumulo Alerts can notify an individual user’s email address manually or use <a href="default-quotas.html">default quotas</a> to notify email addresses associated in Active Directory (AD) with the security identifier (SID) of the quota directory’s owner automatically.</p>
+     <h2 id="to-configure-quota-notifications-by-using-the-qumulo-alerts-web-ui">To Configure Quota Notifications by Using the Qumulo Alerts Web UI</h2>
 
-<h2 id="to-notify-an-individual-email-address">To Notify an Individual Email Address</h2>
-<p>Run the <code class="language-plaintext highlighter-rouge">./alerts quota_add</code> command and specify the quota path, the email address to notify, the email address to notify, and the fully qualified domain name (FQDN) of your Qumulo cluster. For example:</p>
+<ol>
+  <li>
+    <p>On the sidebar, under <strong>Quotas</strong>, click <strong>Quotas</strong>.</p>
+  </li>
+  <li>
+    <p>Click <strong>+ Add Quota</strong> or click <strong>Edit</strong> next to an existing rule.</p>
+  </li>
+  <li>
+    <p>In the <strong>Clusters</strong> section, select one or more Qumulo clusters to add to this quota and then enter the quota rules:</p>
+
+    <ul>
+      <li>
+        <p>For <strong>Quota Path</strong>, enter the quota directory path on your Qumulo cluster (for example, <code class="language-plaintext highlighter-rouge">/Reports/Marketing</code>).</p>
+      </li>
+      <li>
+        <p>For <strong>Warning (%)</strong>, enter the quota usage percentage that triggers a <em>warning</em> notification (<code class="language-plaintext highlighter-rouge">70</code> by default).</p>
+      </li>
+      <li>
+        <p>For <strong>Error (%)</strong>, enter the quota usage percentage that triggers an <em>error</em> notification (<code class="language-plaintext highlighter-rouge">80</code> by default).</p>
+      </li>
+      <li>
+        <p>For <strong>Critical (%)</strong>, enter the quota usage percentage that triggers a <em>critical</em> notification (<code class="language-plaintext highlighter-rouge">90</code> by default).</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Click <strong>Notify Users entered below</strong> and enter an email address.</p>
+  </li>
+  <li>
+    <p>(Optional) To add more addresses, click <strong>+</strong>.</p>
+  </li>
+  <li>
+    <p>Click <strong>Save</strong>.</p>
+  </li>
+</ol>
+
+<h2 id="to-configure-quota-notifications-by-using-the-alerts-cli">To Configure Quota Notifications by Using the alerts CLI</h2>
+<p>Run the <code class="language-plaintext highlighter-rouge">./alerts quota_add</code> command and specify the quota path, the email address to notify, and the fully qualified domain name (FQDN) of your Qumulo cluster. For example:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./alerts quota_add <span class="se">\</span>
   <span class="nt">--quotapath</span> /Reports/Marketing <span class="se">\</span>
@@ -996,59 +1032,6 @@ $(document).ready(function() {
 </span><span class="p">}]</span><span class="w">
 </span></code></pre></div></div>
 
-<h2 id="notifying-directory-owners-automatically">Notifying Directory Owners Automatically</h2>
-<p>To use this method, you must first add an AD server to Qumulo Alerts and then configure the default quota to use AD lookup to retrieve users’ email addresses.</p>
-
-<h3 id="step-1-connect-qumulo-alerts-to-an-active-directory-server">Step 1: Connect Qumulo Alerts to an Active Directory Server</h3>
-<p>Run the <code class="language-plaintext highlighter-rouge">./alerts ad_server_add</code> command and specify the AD server, AD login name, AD password, the search base for looking up users, and the fully qualified domain name (FQDN) of your Qumulo cluster. For example:</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./alerts ad_server_add <span class="se">\</span>
-  <span class="nt">--server-name</span> <span class="s2">"ad.example.com"</span> <span class="se">\</span>
-  <span class="nt">--login-name</span> <span class="s2">"example.com</span><span class="se">\L</span><span class="s2">ookupUser"</span> <span class="se">\</span>
-  <span class="nt">--password</span> HTEj0kGIOsNOAA0 <span class="se">\</span>
-  <span class="nt">--search-base</span> <span class="s2">"CN=Users,DC=example,DC=com"</span> <span class="se">\</span>
-  <span class="nt">--cluster-include</span> cluster.example.com
-</code></pre></div></div>
-
-<div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> For maximum security, configure a specific AD user to issue lookup requests.</div>
-
-<p>The following is example output.</p>
-
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[{</span><span class="w">
-  </span><span class="nl">"clusters"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
-    </span><span class="nl">"frequency"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cluster.example.com"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"nlb"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"port"</span><span class="p">:</span><span class="w"> </span><span class="mi">8000</span><span class="w">
-  </span><span class="p">}],</span><span class="w">
-  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"login_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example.com</span><span class="se">\\</span><span class="s2">LookupUser"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"search_base"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CN=Users,DC=example,DC=com"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"server_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ad.example.com"</span><span class="w">
-</span><span class="p">}]</span><span class="w">
-</span></code></pre></div></div>
-
-<h3 id="step-2-configure-a-default-quota-to-use-active-directory-lookup">Step 2: Configure a Default Quota to use Active Directory Lookup</h3>
-<p>Run the <code class="language-plaintext highlighter-rouge">./alerts default_quota_update</code> command, specify the default quota ID, and configure the quota to notify users. For example:</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./alerts default_quota_update <span class="se">\</span>
-  <span class="nt">--id</span> 1 <span class="se">\</span>
-  <span class="nt">--user-notification</span> <span class="se">\</span>
-  <span class="nt">--admin-notification</span> False
-</code></pre></div></div>
-
-<p>The following is example output.</p>
-
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[{</span><span class="w">
-  </span><span class="nl">"admin_notification"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"critical"</span><span class="p">:</span><span class="w"> </span><span class="mi">95</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="mi">85</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"quota_prefix"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"user_mode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"owner"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"user_notification"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"warning"</span><span class="p">:</span><span class="w"> </span><span class="mi">75</span><span class="w">
-</span><span class="p">}]</span><span class="w">
-</span></code></pre></div></div>
 
    
 

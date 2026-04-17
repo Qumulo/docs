@@ -2802,15 +2802,21 @@ $(document).ready(function() {
       <li><a href="configuring-using-s3-api.html">Configure HTTPS for the S3 API</a></li>
       <li>Include the <code>Content-MD5</code> header with the checksum of the object's contents</li>
     </ul>
-&lt;/ul&gt;
-&lt;/div&gt;
+  </li>
+</ul>
+</div>
 
-* Qumulo Core doesn't maintain a checksum value for every object in an S3 bucket because other protocols, such as NFS or SMB, can modify portions of the same file, which causes changes to a file to make the checksum inaccurate.
+<ul>
+  <li>
+    <p>Qumulo Core doesn’t maintain a checksum value for every object in an S3 bucket because other protocols, such as NFS or SMB, can modify portions of the same file, which causes changes to a file to make the checksum inaccurate.</p>
+  </li>
+  <li>
+    <p>Amazon S3 uses the MD5 checksum of an object’s contents as its ETag.</p>
+  </li>
+</ul>
 
-* Amazon S3 uses the MD5 checksum of an object's contents as its ETag.
-
-### Listing Objects
-The S3 API supports listing objects in a bucket by using the [`ListObjects`](https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjects.html) and [`ListObjectsV2`](https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjectsV2.html) API actions.
+<h3 id="listing-objects">Listing Objects</h3>
+<p>The S3 API supports listing objects in a bucket by using the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjects.html"><code class="language-plaintext highlighter-rouge">ListObjects</code></a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjectsV2.html"><code class="language-plaintext highlighter-rouge">ListObjectsV2</code></a> API actions.</p>
 
 <table>
 <thead>
@@ -2841,26 +2847,31 @@ The S3 API supports listing objects in a bucket by using the [`ListObjects`](htt
 
 <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Although Qumulo Core supports <code class="language-plaintext highlighter-rouge">Prefix</code> and <code class="language-plaintext highlighter-rouge">Delimiter</code> partially, it fully supports the most common use case: listing the contents of S3 buckets as a hierarchical file.</div>
 
+<h3 id="request-authentication">Request Authentication</h3>
+<p>Qumulo Core supports authenticating requests by using only <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html">Amazon Signature Version 4</a>. Most S3 client applications support this authentication type.</p>
 
-### Request Authentication
-Qumulo Core supports authenticating requests by using only [Amazon Signature Version 4](https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html). Most S3 client applications support this authentication type.
+<p>If your application attempts to use a previous Amazon signature version, you receive a <code class="language-plaintext highlighter-rouge">400 Bad Request</code> response with the error code <code class="language-plaintext highlighter-rouge">AuthorizationHeaderMalformed</code>.</p>
 
-If your application attempts to use a previous Amazon signature version, you receive a `400 Bad Request` response with the error code `AuthorizationHeaderMalformed`.
+<h3 id="versioning">Versioning</h3>
+<ul>
+  <li>
+    <p><strong>Object Version Limits:</strong> In Qumulo Core, S3 bucket versioning is consistent with that of Amazon S3, with the exception of individual object versions. Qumulo Core limits directories to approximately 4.3 billion child files. The approach that Qumulo Core takes to indexing files in a directory might cause object creation commands to output the <code class="language-plaintext highlighter-rouge">QumuloDirectoryEntryLimitReached</code> error when a directory gets close to its capacity. Because Qumulo Core gives object versions unique identifiers, it might be possible to retry the command successfully. However, if you begin to observe this error, we recommend removing previous object versions from your system.</p>
+  </li>
+  <li>
+    <p><strong>Creating Empty Versioned Directories:</strong> Qumulo Core doesn’t support creating empty, versioned directories.</p>
+  </li>
+  <li>
+    <p><strong>Deleting Versioned Objects:</strong> If you don’t specify an object version ID, the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObject.html">DeleteObject</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObjects.html">DeleteObjects</a> S3 API actions create a <em>deletion marker</em> for an object but don’t delete any file system data. Because currently Qumulo Core doesn’t support bucket lifecycle policies, the data remains accessible by using S3 API actions and the object version ID. To delete a specific object version permanently, specify its version ID when you use either of these API actions.</p>
+  </li>
+</ul>
 
-### Versioning
-* **Object Version Limits:** In Qumulo Core, S3 bucket versioning is consistent with that of Amazon S3, with the exception of individual object versions. Qumulo Core limits directories to approximately 4.3 billion child files. The approach that Qumulo Core takes to indexing files in a directory might cause object creation commands to output the `QumuloDirectoryEntryLimitReached` error when a directory gets close to its capacity. Because Qumulo Core gives object versions unique identifiers, it might be possible to retry the command successfully. However, if you begin to observe this error, we recommend removing previous object versions from your system.
+<h3 id="object-lock">Object Lock</h3>
+<p>While native Amazon S3 functionality requires Object Lock to be enabled for an S3 bucket to be able to both modify and view locks on objects, Qumulo Core requires <a href="managing-object-lock-for-s3-buckets.html">Object Lock to be enabled for an S3 bucket</a> only to <em>modify</em> locks on objects.</p>
 
-* **Creating Empty Versioned Directories:** Qumulo Core doesn't support creating empty, versioned directories.
+<h2 id="comparison-of-known-limits-between-s3-in-qumulo-and-amazon">Comparison of Known Limits between S3 in Qumulo and Amazon</h2>
+<p>This section compares the Qumulo Core S3 API limits with native Amazon S3 limits.</p>
 
-* **Deleting Versioned Objects:** If you don't specify an object version ID, the [DeleteObject](https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObject.html) and [DeleteObjects](https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObjects.html) S3 API actions create a _deletion marker_ for an object but don't delete any file system data. Because currently Qumulo Core doesn't support bucket lifecycle policies, the data remains accessible by using S3 API actions and the object version ID. To delete a specific object version permanently, specify its version ID when you use either of these API actions.
-
-### Object Lock
-While native Amazon S3 functionality requires Object Lock to be enabled for an S3 bucket to be able to both modify and view locks on objects, Qumulo Core requires [Object Lock to be enabled for an S3 bucket](managing-object-lock-for-s3-buckets.html) only to _modify_ locks on objects.
-
-## Comparison of Known Limits between S3 in Qumulo and Amazon
-This section compares the Qumulo Core S3 API limits with native Amazon S3 limits.
-
-### Known Limits for S3 Buckets
+<h3 id="known-limits-for-s3-buckets">Known Limits for S3 Buckets</h3>
 
 <table>
 <thead>
@@ -2894,8 +2905,7 @@ This section compares the Qumulo Core S3 API limits with native Amazon S3 limits
 
 <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> If all objects in a bucket are under the same directory—none of the object keys have the slash (<code class="language-plaintext highlighter-rouge">/</code>) character in them—the maximum number of objects in the bucket is limited to the maximum number of files in a directory. For more information, see <a href="../getting-started/supported-configurations-known-limits.html">Supported Configurations and Known Limits for Qumulo Core</a>.</div>
 
-
-### Known Limits for S3 Objects
+<h3 id="known-limits-for-s3-objects">Known Limits for S3 Objects</h3>
 
 <table>
 <thead>
@@ -2936,7 +2946,7 @@ This section compares the Qumulo Core S3 API limits with native Amazon S3 limits
 </tbody>
 </table>
 
-### Known Limits for S3 Multipart Uploads
+<h3 id="known-limits-for-s3-multipart-uploads">Known Limits for S3 Multipart Uploads</h3>
 
 <table>
 <thead>
@@ -2979,7 +2989,7 @@ This section compares the Qumulo Core S3 API limits with native Amazon S3 limits
 </tbody>
 </table>
 
-### Known Limits for S3 API Requests
+<h3 id="known-limits-for-s3-api-requests">Known Limits for S3 API Requests</h3>
 
 <table>
 <thead>
@@ -3018,13 +3028,13 @@ This section compares the Qumulo Core S3 API limits with native Amazon S3 limits
 
 <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> <code class="language-plaintext highlighter-rouge">DeleteObjects</code> is subject to a 10 MiB request payload limit in Qumulo Core. This provides a practical upper limit on the number of object keys that the API action can specify.</div>
 
+<p>In addition, the following API actions have the Qumulo-specific maximum payload size limit of 10 MiB.</p>
 
-In addition, the following API actions have the Qumulo-specific maximum payload size limit of 10 MiB.
-
-* `CompleteMultipartUpload`
-* `CreateBucket`
-* `DeleteObjects`
-</li></ul></div>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">CompleteMultipartUpload</code></li>
+  <li><code class="language-plaintext highlighter-rouge">CreateBucket</code></li>
+  <li><code class="language-plaintext highlighter-rouge">DeleteObjects</code></li>
+</ul>
 
    
 

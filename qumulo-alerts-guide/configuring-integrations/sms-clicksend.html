@@ -43,7 +43,7 @@
 </script>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Configuring Qumulo Alerts Integration with SMS (ClickSend) | Qumulo Documentation Portal</title>
+<title>Configuring Qumulo Alerts Integration with ClickSend (SMS) | Qumulo Documentation Portal</title>
 
 <link rel="canonical" href="https://docs.qumulo.com/qumulo-alerts-guide/configuring-integrations/sms-clicksend.html">
 
@@ -149,7 +149,7 @@ fetch('/data/website.json')
 </noscript>
 
 <!-- Define page metadata -->
-<meta name="description" content="This section explains how to configure Qumulo Alerts to work with SMS by using ClickSend.">
+<meta name="description" content="This section explains how to integrate ClickSend with Qumulo Alerts and test the integration.">
 <meta name="apple-mobile-web-app-title" content="Qumulo Documentation Portal">
 <meta name="application-name" content="Qumulo Documentation Portal">
 <meta name="msapplication-TileColor" content="#2b5797">
@@ -159,10 +159,10 @@ fetch('/data/website.json')
 <meta name="google-site-verification" content="_KoxPR0qF_ZeMyH6uWvlX84cFRujO_AZ1eq0eT9alAg">
 
 <!-- Open Graph Meta Tags -->
-<meta property="og:title" content="Configuring Qumulo Alerts Integration with SMS (ClickSend) | Qumulo Documentation Portal">
+<meta property="og:title" content="Configuring Qumulo Alerts Integration with ClickSend (SMS) | Qumulo Documentation Portal">
 <meta property="og:url" content="https://docs.qumulo.com/qumulo-alerts-guide/configuring-integrations/sms-clicksend.html">
 <meta property="og:site_name" content="Qumulo Documentation Portal">
-<meta property="og:description" content="This section explains how to configure Qumulo Alerts to work with SMS by using ClickSend.">
+<meta property="og:description" content="This section explains how to integrate ClickSend with Qumulo Alerts and test the integration.">
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://docs.qumulo.com/images/docs.qumulo.com-qumulo-documentation-portal-630px.png">
@@ -170,10 +170,10 @@ fetch('/data/website.json')
 <meta property="og:image:height" content="630">
 
 <!-- Twitter Meta Tags -->
-<meta name="twitter:title" content="Configuring Qumulo Alerts Integration with SMS (ClickSend) | Qumulo Documentation Portal">
+<meta name="twitter:title" content="Configuring Qumulo Alerts Integration with ClickSend (SMS) | Qumulo Documentation Portal">
 <meta property="twitter:url" content="https://docs.qumulo.com/qumulo-alerts-guide/configuring-integrations/sms-clicksend.html">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:description" content="This section explains how to configure Qumulo Alerts to work with SMS by using ClickSend.">
+<meta name="twitter:description" content="This section explains how to integrate ClickSend with Qumulo Alerts and test the integration.">
 <meta name="twitter:image" content="https://docs.qumulo.com/images/docs.qumulo.com-qumulo-documentation-portal-418px.png">
 <meta property="twitter:domain" content="docs.qumulo.com">
 
@@ -918,7 +918,7 @@ fetch('/data/website.json')
   <a href='/qumulo-alerts-guide/configuring-integrations/index.html'>Configuring Integrations</a> <span>&rsaquo;</span>
 
 
-  Configuring Qumulo Alerts Integration with SMS (ClickSend)
+  Configuring Qumulo Alerts Integration with ClickSend (SMS)
   </div>
 </nav>
 
@@ -927,7 +927,7 @@ fetch('/data/website.json')
 
 <div class="post-header">
    <div class="star" id="page-star" title="Save to Favorites">&#9733;</div>
-   <h1 class="post-title-main">Configuring Qumulo Alerts Integration with SMS (ClickSend)</h1>
+   <h1 class="post-title-main">Configuring Qumulo Alerts Integration with ClickSend (SMS)</h1>
 </div>
 
 
@@ -964,48 +964,100 @@ $(document).ready(function() {
 
     
 
-   <p>This section explains how to configure Qumulo Alerts to work with SMS by using ClickSend.</p>
+   <p>This section explains how to integrate ClickSend with Qumulo Alerts and test the integration.</p>
    
-     <p><a href="https://www.clicksend.com/en/">ClickSend</a> is a paid, third-party service that provides delivery of messages as SMS (and other formats).  For more information, see <a href="https://help.clicksend.com/article/3pp05c4fcs-how-to-get-started-with-clicksend">How to get started with ClickSend</a> in the ClickSend documentation.</p>
+     <p><a href="https://www.clicksend.com/en/">ClickSend</a> is a paid, third-party service that provides delivery of messages as SMS (and other formats). For more information, see <a href="https://help.clicksend.com/article/3pp05c4fcs-how-to-get-started-with-clicksend">How to get started with ClickSend</a> in the ClickSend documentation.</p>
 
 <div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> To be able to send SMS in the U.S. and Canada, you must sign up for a dedicated toll-free number (TFN).</div>
 
-<h2 id="to-integrate-clicksend-with-qumulo-alerts">To Integrate ClickSend with Qumulo Alerts</h2>
-<p>Run the <code class="language-plaintext highlighter-rouge">./alerts clicksend_server_add</code> command and specify the username, token, sender ID, and recipient’s phone number.</p>
+<h2 id="to-integrate-clicksend-with-qumulo-alerts-and-test-the-integration-by-using-the-qumulo-alerts-web-ui">To Integrate ClickSend with Qumulo Alerts and Test the Integration by Using the Qumulo Alerts Web UI</h2>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./alerts clicksend_server_add <span class="se">\</span>
+<ol>
+  <li>
+    <p>On the sidebar, under <strong>Servers</strong>, click <strong>ClickSend SMS</strong>.</p>
+  </li>
+  <li>
+    <p>Enter the ClickSend configuration details:</p>
+
+    <ol>
+      <li>
+        <p>For <strong>Username</strong>, enter your ClickSend account username (typically, your email address).</p>
+      </li>
+      <li>
+        <p>For <strong>API Key</strong>, enter the API key from your ClickSend account dashboard.</p>
+
+        <div class="alert alert-success" role="alert"><span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br /> To keep the current key, leave <strong>API Key</strong> empty when you edit an existing ClickSend configuration.</div>
+      </li>
+      <li>
+        <p>For <strong>From Number</strong>, enter the phone number or sender ID to appear as the sender of outgoing SMS messages, formatted according to the <a href="https://en.wikipedia.org/wiki/E.164">E.164 standard</a> (for example, <code class="language-plaintext highlighter-rouge">+15555550100</code>).</p>
+      </li>
+      <li>
+        <p>For <strong>Test Number</strong>, enter the phone number to receive the test SMS when you click <strong>Test Connection</strong>.</p>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>Click <strong>Save Configuration</strong>.</p>
+
+    <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> You must configure recipient phone numbers separately for each user on the <strong>Alert Recipients</strong> page. For more information, see <a href="../configuring-notifications/alarms-and-alert-notifications-to-administrators.html">Configuring Alarm and Alert Notifications to an Administrative Account</a>.</div>
+  </li>
+  <li>
+    <p>Click <strong>Test Connection</strong>.</p>
+  </li>
+  <li>
+    <p>Qumulo Alerts sends a test SMS to the configured test number.</p>
+
+    <ul>
+      <li>
+        <p>If the test succeeds, a confirmation message appears.</p>
+      </li>
+      <li>
+        <p>If the test fails, check the configuration details.</p>
+      </li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="to-integrate-clicksend-with-qumulo-alerts-and-test-the-integration-by-using-the-alerts-cli">To Integrate ClickSend with Qumulo Alerts and Test the Integration by Using the alerts CLI</h2>
+<ol>
+  <li>
+    <p>Run the <code class="language-plaintext highlighter-rouge">./alerts clicksend_server_add</code> command and specify the username, token, sender ID, and recipient’s phone number.</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./alerts clicksend_server_add <span class="se">\</span>
   <span class="nt">--username</span> name@example.com <span class="se">\</span>
   <span class="nt">--token</span> 12345678-ABCDEFGH-12345678-ABCDEFGH <span class="se">\</span>
   <span class="nt">--senderid</span> <span class="s2">"+15551234567"</span> <span class="se">\</span>
   <span class="nt">--to-address</span> <span class="s2">"+15550987654"</span>
-</code></pre></div></div>
+</code></pre></div>    </div>
 
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note</b><br />
+    <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note</b><br />
 <ul>
   <li>For the <code>--username</code> and <code>--token</code> flags, see <a href="https://help.clicksend.com/article/dghaoyf7tg-api-credentials">API Credentials</a> in the ClickSend documentation.</li>
   <li>The <code>--senderid</code> flag is mandatory for the U.S. and Canada. For more information, see <a href="https://help.clicksend.com/article/nu1dkqqpi0-how-to-register-a-toll-free-number-tfn-with-click-send">How to Register a Toll-Free Number (TFN) with ClickSend</a> in the ClickSend documentation.</li>
-  <li>For the <code>--language</code> flag, see <a href="../getting-started/supported-language-locales.html">What Language Locales Qumulo Alerts Supports</a>. The consumer processes for <a href="../configuring-integrations/email-server.html">email</a>, <a href="../configuring-integrations/ifttt.html">IFTTT</a>, and <a href="../configuring-integrations/sms-clicksend.html">SMS (ClickSend)</a> integrations translate messages into the recipient's native language.</li>
-  <li>For the  <code>--timezone</code> flag, see <a href="../getting-started/supported-language-locales.html#converting-time-zones">Converting Time Zones</a>.</li>
+  <li>For more information about locales, see <a href="../getting-started/supported-language-locales.html">What Language Locales Qumulo Alerts Supports</a>. The consumer processes for <a href="../configuring-integrations/email-server.html">email</a>, <a href="../configuring-integrations/ifttt.html">IFTTT</a>, and <a href="../configuring-integrations/sms-clicksend.html">SMS (ClickSend)</a> integrations translate messages into the recipient's native language.</li>
+  <li>For more information about time zones, see <a href="../getting-started/supported-language-locales.html#converting-time-zones">Converting Time Zones</a>.</li>
 </ul>
 </div>
 
-<p>The following is example output.</p>
+    <p>The following is example output.</p>
 
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[{</span><span class="w">
+    <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[{</span><span class="w">
   </span><span class="nl">"language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en_GB"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"senderid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+15551234567"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"timezone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UTC"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"to_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+15550987654"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"name@example.com"</span><span class="w">
 </span><span class="p">}]</span><span class="w">
-</span></code></pre></div></div>
+</span></code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Run the <code class="language-plaintext highlighter-rouge">./alerts clicksend_server_test</code> command.</p>
 
-<h2 id="to-test-integration-with-clicksend">To Test Integration with ClickSend</h2>
-<p>Run the <code class="language-plaintext highlighter-rouge">./alerts clicksend_server_test</code> command.</p>
+    <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> For integration testing to complete successfully, the <code class="language-plaintext highlighter-rouge">--to-address</code> flag must be configured already.</div>
 
-<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> For integration testing to complete successfully, the <code class="language-plaintext highlighter-rouge">--to-address</code> flag must be configured already.</div>
-
-<p>A successful response returns the <code>[{ "ok"&colon; true }]</code> JSON output. In addition, the recipient’s phone number receives a test message.</p>
+    <p>A successful response returns the <code>[{ "ok"&colon; true }]</code> JSON output. In addition, the recipient’s phone number receives a test message.</p>
+  </li>
+</ol>
 
    
 

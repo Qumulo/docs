@@ -149,7 +149,7 @@ fetch('/data/website.json')
 </noscript>
 
 <!-- Define page metadata -->
-<meta name="description" content="This section explains how to configure Qumulo Alerts to work with an email server.">
+<meta name="description" content="This section explains how to integrate an email server with Qumulo Alerts and test the integration.">
 <meta name="apple-mobile-web-app-title" content="Qumulo Documentation Portal">
 <meta name="application-name" content="Qumulo Documentation Portal">
 <meta name="msapplication-TileColor" content="#2b5797">
@@ -162,7 +162,7 @@ fetch('/data/website.json')
 <meta property="og:title" content="Configuring Qumulo Alerts Integration with an Email Server | Qumulo Documentation Portal">
 <meta property="og:url" content="https://docs.qumulo.com/qumulo-alerts-guide/configuring-integrations/email-server.html">
 <meta property="og:site_name" content="Qumulo Documentation Portal">
-<meta property="og:description" content="This section explains how to configure Qumulo Alerts to work with an email server.">
+<meta property="og:description" content="This section explains how to integrate an email server with Qumulo Alerts and test the integration.">
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://docs.qumulo.com/images/docs.qumulo.com-qumulo-documentation-portal-630px.png">
@@ -173,7 +173,7 @@ fetch('/data/website.json')
 <meta name="twitter:title" content="Configuring Qumulo Alerts Integration with an Email Server | Qumulo Documentation Portal">
 <meta property="twitter:url" content="https://docs.qumulo.com/qumulo-alerts-guide/configuring-integrations/email-server.html">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:description" content="This section explains how to configure Qumulo Alerts to work with an email server.">
+<meta name="twitter:description" content="This section explains how to integrate an email server with Qumulo Alerts and test the integration.">
 <meta name="twitter:image" content="https://docs.qumulo.com/images/docs.qumulo.com-qumulo-documentation-portal-418px.png">
 <meta property="twitter:domain" content="docs.qumulo.com">
 
@@ -964,49 +964,121 @@ $(document).ready(function() {
 
     
 
-   <p>This section explains how to configure Qumulo Alerts to work with an email server.</p>
+   <p>This section explains how to integrate an email server with Qumulo Alerts and test the integration.</p>
    
-     <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> After May 2022, only organizations with access to the Google Admin Console can use SMTP relay. If your organization has this access, see <a href="https://support.google.com/a/answer/2956491?hl=en">Route outgoing SMTP relay messages through Google</a>.</div>
+     <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> After May 2022, only organizations with access to the Google Admin Console can use SMTP relay to <a href="https://support.google.com/a/answer/2956491?hl=en">Route outgoing SMTP relay messages through Google</a>.</div>
 
-<h2 id="to-add-a-new-email-server-to-qumulo-alerts">To Add a New Email Server to Qumulo Alerts</h2>
-<p>Run the <code class="language-plaintext highlighter-rouge">./alerts email_server_add</code> command and specify the sender’s email address, recipient’s email address, email server hostname and port, language, and time zone. For example:</p>
+<h2 id="to-integrate-an-email-server-with-qumulo-alerts-and-test-the-integration-by-using-the-qumulo-alerts-web-ui">To Integrate an Email Server with Qumulo Alerts and Test the Integration by Using the Qumulo Alerts Web UI</h2>
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note</b><br />
+<ul>
+  <li>Depending on your SMTP server configuration, the <strong>Username</strong>, <strong>Password</strong>, and <strong>Security</strong> fields might be optional.</li>
+  <li>For more information about locales, see <a href="../getting-started/supported-language-locales.html">What Language Locales Qumulo Alerts Supports</a>. The consumer processes for <a href="../configuring-integrations/email-server.html">email</a>, <a href="../configuring-integrations/ifttt.html">IFTTT</a>, and <a href="../configuring-integrations/sms-clicksend.html">SMS (ClickSend)</a> integrations translate messages into the recipient's native language.</li>
+  <li>For more information about time zones, see <a href="../getting-started/supported-language-locales.html#converting-time-zones">Converting Time Zones</a>.</li>
+</ul>
+</div>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./alerts email_server_add <span class="se">\</span>
+<ol>
+  <li>
+    <p>On the sidebar, under <strong>Servers</strong>, click <strong>Email Server</strong>.</p>
+  </li>
+  <li>
+    <p>Enter the SMTP configuration details:</p>
+
+    <ol>
+      <li>
+        <p>For <strong>SMTP Server</strong>, enter the hostname or IP address of your SMTP server (for example, <code class="language-plaintext highlighter-rouge">mail.example.com</code>).</p>
+      </li>
+      <li>
+        <p>For <strong>Port</strong>, select the SMTP server port.</p>
+      </li>
+      <li>
+        <p>For <strong>From Address</strong>, select the email address to appear in the <strong>From</strong> field of outgoing notifications (for example, <code class="language-plaintext highlighter-rouge">alerts@example.com</code>).</p>
+      </li>
+      <li>
+        <p>For <strong>Security</strong>, select the connection security type.</p>
+      </li>
+      <li>
+        <p>(Optional) For <strong>Username</strong>, enter the username for SMTP authentication.</p>
+      </li>
+      <li>
+        <p>(Optional) For <strong>Password</strong>, enter the password for SMTP authentication.</p>
+
+        <div class="alert alert-success" role="alert"><span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br /> To keep the current password, leave <strong>Password</strong> empty.</div>
+      </li>
+      <li>
+        <p>For <strong>To Address (used only for testing the connection)</strong>, enter the email address to receive the test message when you click <strong>Test Connection</strong>.</p>
+      </li>
+      <li>
+        <p>For <strong>Default Language</strong>, enter a <a href="../getting-started/supported-language-locales.html">supported language locale</a> to use for notification email templates when a user-level language isn’t configured.</p>
+      </li>
+      <li>
+        <p>For <strong>Default Timezone</strong>, enter the the time zone for formatting timestamps in notification emails when a user-level timezone isn’t configured.</p>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>Click <strong>Save Configuration</strong>.</p>
+  </li>
+  <li>
+    <p>Click <strong>Test Connection</strong>.</p>
+  </li>
+  <li>
+    <p>Qumulo Alerts sends a test message to the configured email address.</p>
+
+    <ul>
+      <li>
+        <p>If the test succeeds, a confirmation message appears.</p>
+      </li>
+      <li>
+        <p>If the test fails, check the configuration details.</p>
+      </li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="to-integrate-an-email-server-with-qumulo-alerts-and-test-the-integration-by-using-the-alerts-cli">To Integrate an Email Server with Qumulo Alerts and Test the Integration by Using the alerts CLI</h2>
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note</b><br />
+<ul>
+  <li>Depending on the type of SMTP email server that you use, the <code>--login</code>, <code>--password</code>, and <code>--security</code> flags might be optional.</li>
+  <li>For more information about locales, see <a href="../getting-started/supported-language-locales.html">What Language Locales Qumulo Alerts Supports</a>. The consumer processes for <a href="../configuring-integrations/email-server.html">email</a>, <a href="../configuring-integrations/ifttt.html">IFTTT</a>, and <a href="../configuring-integrations/sms-clicksend.html">SMS (ClickSend)</a> integrations translate messages into the recipient's native language.</li>
+  <li>For more information about time zones, see <a href="../getting-started/supported-language-locales.html#converting-time-zones">Converting Time Zones</a>.</li>
+</ul>
+</div>
+
+<ol>
+  <li>
+    <p>Run the <code class="language-plaintext highlighter-rouge">./alerts email_server_add</code> command and specify the sender’s email address, recipient’s email address, email server hostname and port, language, and time zone. For example:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./alerts email_server_add <span class="se">\</span>
   <span class="nt">--from-addr</span> alerts@example.com <span class="se">\</span>
   <span class="nt">--to-addr</span> name@example.com <span class="se">\</span>
   <span class="nt">--server</span> mail.example.com <span class="se">\</span>
   <span class="nt">--port</span> 25
   <span class="nt">--language</span> en_US
   <span class="nt">--timezone</span> <span class="s2">"America/Los_Angeles"</span>
-</code></pre></div></div>
+</code></pre></div>    </div>
 
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note</b><br />
-<ul>
-  <li>The <code>--login</code>, <code>--password</code>, and <code>--security</code> flags might be optional, depending on the type of SMTP email server that you use.</li>
-  <li>For the <code>--language</code> flag, see <a href="../getting-started/supported-language-locales.html">What Language Locales Qumulo Alerts Supports</a>. The consumer processes for <a href="../configuring-integrations/email-server.html">email</a>, <a href="../configuring-integrations/ifttt.html">IFTTT</a>, and <a href="../configuring-integrations/sms-clicksend.html">SMS (ClickSend)</a> integrations translate messages into the recipient's native language.</li>
-  <li>For the  <code>--timezone</code> flag, see <a href="../getting-started/supported-language-locales.html#converting-time-zones">Converting Time Zones</a>.</li>
-</ul>
-</div>
+    <p>The following is example output.</p>
 
-<p>The following is example output.</p>
+    <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w"> </span><span class="p">[{</span><span class="w">
+   </span><span class="nl">"from_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"alerts@example.com"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en_US"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"login"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"password"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"port"</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"security"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"server"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mail.example.com"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"timezone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"America/Los_Angeles"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"to_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"name@example.com"</span><span class="w">
+ </span><span class="p">}]</span><span class="w">
+</span></code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Run the <code class="language-plaintext highlighter-rouge">./alerts email_server_test</code> command.</p>
 
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[{</span><span class="w">
-  </span><span class="nl">"from_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"alerts@example.com"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en_US"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"login"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"password"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"port"</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"security"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"server"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mail.example.com"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"timezone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"America/Los_Angeles"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"to_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"name@example.com"</span><span class="w">
-</span><span class="p">}]</span><span class="w">
-</span></code></pre></div></div>
-
-<h2 id="to-test-integration-with-your-email-server">To Test Integration with Your Email Server</h2>
-<p>Run the <code class="language-plaintext highlighter-rouge">./alerts email_server_test</code> command.</p>
-
-<p>A successful response returns the <code>[{ "ok"&colon; true }]</code> JSON output.</p>
+    <p>A successful response returns the <code>[{ "ok"&colon; true }]</code> JSON output.</p>
+  </li>
+</ol>
 
    
 

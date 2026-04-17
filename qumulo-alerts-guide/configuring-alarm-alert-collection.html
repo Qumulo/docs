@@ -149,7 +149,7 @@ fetch('/data/website.json')
 </noscript>
 
 <!-- Define page metadata -->
-<meta name="description" content="This section explains how to configure Qumulo Alerts to collect alarms and alerts from a Qumulo Cluster.">
+<meta name="description" content="This section explains how to collect alarms and alerts from a Qumulo Cluster by using the Qumulo Alerts Web UI and the alerts CLI.">
 <meta name="apple-mobile-web-app-title" content="Qumulo Documentation Portal">
 <meta name="application-name" content="Qumulo Documentation Portal">
 <meta name="msapplication-TileColor" content="#2b5797">
@@ -162,7 +162,7 @@ fetch('/data/website.json')
 <meta property="og:title" content="Configuring Alarm and Alert Collection from a Qumulo Cluster | Qumulo Documentation Portal">
 <meta property="og:url" content="https://docs.qumulo.com/qumulo-alerts-guide/configuring-alarm-alert-collection.html">
 <meta property="og:site_name" content="Qumulo Documentation Portal">
-<meta property="og:description" content="This section explains how to configure Qumulo Alerts to collect alarms and alerts from a Qumulo Cluster.">
+<meta property="og:description" content="This section explains how to collect alarms and alerts from a Qumulo Cluster by using the Qumulo Alerts Web UI and the alerts CLI.">
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://docs.qumulo.com/images/docs.qumulo.com-qumulo-documentation-portal-630px.png">
@@ -173,7 +173,7 @@ fetch('/data/website.json')
 <meta name="twitter:title" content="Configuring Alarm and Alert Collection from a Qumulo Cluster | Qumulo Documentation Portal">
 <meta property="twitter:url" content="https://docs.qumulo.com/qumulo-alerts-guide/configuring-alarm-alert-collection.html">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:description" content="This section explains how to configure Qumulo Alerts to collect alarms and alerts from a Qumulo Cluster.">
+<meta name="twitter:description" content="This section explains how to collect alarms and alerts from a Qumulo Cluster by using the Qumulo Alerts Web UI and the alerts CLI.">
 <meta name="twitter:image" content="https://docs.qumulo.com/images/docs.qumulo.com-qumulo-documentation-portal-418px.png">
 <meta property="twitter:domain" content="docs.qumulo.com">
 
@@ -962,9 +962,77 @@ $(document).ready(function() {
 
     
 
-   <p>This section explains how to configure Qumulo Alerts to collect alarms and alerts from a Qumulo Cluster.</p>
+   <p>This section explains how to collect alarms and alerts from a Qumulo Cluster by using the Qumulo Alerts Web UI and the <code>alerts</code> CLI.</p>
    
-     <h2 id="collecting-information-about-specific-alarms">Collecting Information about Specific Alarms</h2>
+     <h2 id="to-configure-alarm-and-alert-collection-by-using-the-qumulo-alerts-web-ui">To Configure Alarm and Alert Collection by Using the Qumulo Alerts Web UI</h2>
+<p>This section explains how to configure alarm and alert collection by adding your Qumulo cluster to Qumulo Alerts and then configuring alert plugins for your cluster in the Qumulo Alerts Web UI.</p>
+
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
+<ul>
+  <li>When you add a Qumulo cluster to Qumulo Alerts, all available alarm and alert plugins are enabled for that cluster by default.</li>
+  <li>If you use a floating IP address, you must click <strong>Network Load Balancer</strong> to ensure that Qumulo Alerts connects to the node that currently uses the floating IP address.</li>
+  <li>To avoid spreading a plugin's API request load across the nodes of a Qumulo cluster, all alarm and alert plugins communicate with your cluster by using either a network load balancer or floating IP addresses. You can configure <em>one</em>&mdash;but not both&mdash;of these communication methods.</li>
+</ul>
+</div>
+
+<h3 id="step-1-add-a-qumulo-cluster-to-qumulo-alerts">Step 1: Add a Qumulo Cluster to Qumulo Alerts</h3>
+<ol>
+  <li>
+    <p>Log in to the Qumulo Alerts Web UI.</p>
+  </li>
+  <li>
+    <p>On the sidebar, under <strong>Monitoring</strong>, click <strong>Clusters</strong>.</p>
+  </li>
+  <li>
+    <p>Click <strong>+ Add Cluster</strong> and enter the following details:</p>
+
+    <ol>
+      <li>
+        <p>For <strong>Cluster Name/IP</strong>, specify the hostname or IP address for your Qumulo cluster.</p>
+
+        <div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> Qumulo Alerts uses this value as the display name. It isn’t possible to change it after saving the cluster configuration.</div>
+      </li>
+      <li>
+        <p>For <strong>Access Token</strong>, specify the long-lived access token that you created while <a href="installing-configuring-qumulo-alerts.html#step-5-create-a-long-lived-access-token">Installing and Configuring Qumulo Alerts</a> guide.</p>
+      </li>
+      <li>
+        <p>For <strong>Port</strong>, specify the REST API port (<code class="language-plaintext highlighter-rouge">8000</code> by default).</p>
+      </li>
+      <li>
+        <p>For <strong>Polling Frequency (minutes)</strong>, specify how frequently Qumulo Alerts should poll your Qumulo cluster.</p>
+      </li>
+      <li>
+        <p>(Optional) If your Qumulo cluster is accessible through a floating IP address behind a network load balancer, click <strong>Network Load Balancer</strong>.</p>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>Click <strong>Save</strong>.</p>
+  </li>
+</ol>
+
+<h3 id="step-2-configure-alarm-or-alert-plugins-for-a-qumulo-cluster">Step 2: Configure Alarm or Alert Plugins for a Qumulo Cluster</h3>
+<div class="alert alert-success" role="alert"><span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br /> To view all available plugin names and categories before configuring a cluster, click <strong>Monitoring &gt; Alert Types</strong> on the sidebar</div>
+
+<ol>
+  <li>
+    <p>Log in to the Qumulo Alerts Web UI.</p>
+  </li>
+  <li>
+    <p>On the sidebar, under <strong>Monitoring</strong>, click <strong>Clusters</strong> and then click <strong>Edit</strong> next to the cluster to configure.</p>
+  </li>
+  <li>
+    <p>In the <strong>Plugins</strong> section, click individual alarm and alert plugins to enable or disable them for your Qumulo cluster.</p>
+  </li>
+  <li>
+    <p>Click <strong>Save</strong>.</p>
+  </li>
+</ol>
+
+<h2 id="to-configure-alarm-and-alert-collection-by-using-the-alerts-cli">To Configure Alarm and Alert Collection by Using the alerts CLI</h2>
+<p>This section explains how to collect information and specific alarms; all alarms; or all alarms, alerts, and informational messages by using the <code class="language-plaintext highlighter-rouge">alerts</code> CLI.</p>
+
+<h3 id="collecting-information-about-specific-alarms">Collecting Information about Specific Alarms</h3>
 <p>Run the <code>./alerts cluster_add</code> command and specify the fully qualified domain name (FQDN) of your Qumulo cluster, your long-lived access token for the Qumulo REST API, and the plugins or plugin categories to include or exclude from monitoring.</p>
 
 <p>In the following example, we include the plugins <code class="language-plaintext highlighter-rouge">Disks</code> and <code class="language-plaintext highlighter-rouge">Nodes</code>.</p>
@@ -1001,11 +1069,11 @@ $(document).ready(function() {
 <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note</b><br />
 <ul>
   <li>For the <code>--nlb</code> flag, the <code>false</code> setting requires floating IP address configuration.</li>
-  <li>To prevent spreading the load of a plugin's API requests across all nodes in a Qumulo cluster, each alarm or alert plugin that you configure communicates with your cluster by using either a network load balancer or floating IP addresses. You can configure <em>one</em>&mdash;but not both&mdash;of these communication methods.</li>
+  <li>To avoid spreading a plugin's API request load across the nodes of a Qumulo cluster, all alarm and alert plugins communicate with your cluster by using either a network load balancer or floating IP addresses. You can configure <em>one</em>&mdash;but not both&mdash;of these communication methods.</li>
 </ul>
 </div>
 
-<h2 id="collecting-information-about-all-alarms">Collecting Information about All Alarms</h2>
+<h3 id="collecting-information-about-all-alarms">Collecting Information about All Alarms</h3>
 <p>Run the <code>./alerts cluster_add</code> command and specify the fully qualified domain name (FQDN) of your Qumulo cluster, your long-lived access token for the Qumulo REST API, and the plugins or plugin categories to include or exclude from monitoring.</p>
 
 <p>In the following example, we include the <code class="language-plaintext highlighter-rouge">Alarms</code> category.</p>
@@ -1050,7 +1118,7 @@ $(document).ready(function() {
 </span><span class="p">}]</span><span class="w">
 </span></code></pre></div></div>
 
-<h2 id="collecting-information-about-all-alarms-alerts-and-informational-messages">Collecting Information about All Alarms, Alerts, and Informational Messages</h2>
+<h3 id="collecting-information-about-all-alarms-alerts-and-informational-messages">Collecting Information about All Alarms, Alerts, and Informational Messages</h3>
 <p>Run the <code>./alerts cluster_add</code> command and specify the fully qualified domain name (FQDN) of your Qumulo cluster, your long-lived access token for the Qumulo REST API, and the plugins or plugin categories to include or exclude from monitoring.</p>
 
 <p>In the following example, we include the <code class="language-plaintext highlighter-rouge">Alarms</code>, <code class="language-plaintext highlighter-rouge">Alerts</code>, and <code class="language-plaintext highlighter-rouge">Informational</code> categories.</p>

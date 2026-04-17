@@ -149,7 +149,7 @@ fetch('/data/website.json')
 </noscript>
 
 <!-- Define page metadata -->
-<meta name="description" content="This section explains how to configure Qumulo Alerts to work with IFTTT.">
+<meta name="description" content="This section explains how to integrate IFTTT with Qumulo Alerts and test the integration.">
 <meta name="apple-mobile-web-app-title" content="Qumulo Documentation Portal">
 <meta name="application-name" content="Qumulo Documentation Portal">
 <meta name="msapplication-TileColor" content="#2b5797">
@@ -162,7 +162,7 @@ fetch('/data/website.json')
 <meta property="og:title" content="Configuring Qumulo Alerts Integration with IFTTT | Qumulo Documentation Portal">
 <meta property="og:url" content="https://docs.qumulo.com/qumulo-alerts-guide/configuring-integrations/ifttt.html">
 <meta property="og:site_name" content="Qumulo Documentation Portal">
-<meta property="og:description" content="This section explains how to configure Qumulo Alerts to work with IFTTT.">
+<meta property="og:description" content="This section explains how to integrate IFTTT with Qumulo Alerts and test the integration.">
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://docs.qumulo.com/images/docs.qumulo.com-qumulo-documentation-portal-630px.png">
@@ -173,7 +173,7 @@ fetch('/data/website.json')
 <meta name="twitter:title" content="Configuring Qumulo Alerts Integration with IFTTT | Qumulo Documentation Portal">
 <meta property="twitter:url" content="https://docs.qumulo.com/qumulo-alerts-guide/configuring-integrations/ifttt.html">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:description" content="This section explains how to configure Qumulo Alerts to work with IFTTT.">
+<meta name="twitter:description" content="This section explains how to integrate IFTTT with Qumulo Alerts and test the integration.">
 <meta name="twitter:image" content="https://docs.qumulo.com/images/docs.qumulo.com-qumulo-documentation-portal-418px.png">
 <meta property="twitter:domain" content="docs.qumulo.com">
 
@@ -964,39 +964,77 @@ $(document).ready(function() {
 
     
 
-   <p>This section explains how to configure Qumulo Alerts to work with IFTTT.</p>
+   <p>This section explains how to integrate IFTTT with Qumulo Alerts and test the integration.</p>
    
      <p><a href="https://ifttt.com/">IFTTT (If This Then That)</a> is a paid, third-party service that provides delivery of messages by using <a href="https://ifttt.com/maker_webhooks">Webhooks integrations</a> and events. For more information, see the <a href="https://ifttt.com/docs">IFTTT documentation</a>.</p>
 
-<h2 id="to-integrate-ifttt-with-qumulo-alerts">To Integrate IFTTT with Qumulo Alerts</h2>
-<p>Run the <code class="language-plaintext highlighter-rouge">./alerts ifttt_server_add</code> command and specify the IFTTT server token, language, and time zone. For example:</p>
+<h2 id="to-integrate-ifttt-with-qumulo-alerts-and-test-the-integration-by-using-the-qumulo-alerts-web-ui">To Integrate IFTTT with Qumulo Alerts and Test the Integration by Using the Qumulo Alerts Web UI</h2>
+<ol>
+  <li>
+    <p>Create a Webhooks applet in IFTTT and obtain the Webhooks key from the <a href="https://ifttt.com/maker_webhooks">IFTTT Maker Webhooks</a> page.</p>
+  </li>
+  <li>
+    <p>Log in to Qumulo Alerts.</p>
+  </li>
+  <li>
+    <p>On the sidebar, under <strong>Servers</strong>, click <strong>IFTTT</strong>.</p>
+  </li>
+  <li>
+    <p>For the <strong>Webhook Key</strong> field, enter your IFTTT Webhooks key.</p>
+  </li>
+  <li>
+    <p>Click <strong>Save Configuration</strong>.</p>
+  </li>
+  <li>
+    <p>Click <strong>Test Connection</strong>.</p>
+  </li>
+  <li>
+    <p>Qumulo Alerts sends a test event to your IFTTT Webhooks.</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./alerts ifttt_server_add <span class="se">\</span>
+    <ul>
+      <li>
+        <p>If the test succeeds, a confirmation message appears.</p>
+      </li>
+      <li>
+        <p>If the test fails, check your Webhooks key and that your IFTTT applet is active.</p>
+      </li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="to-integrate-ifttt-with-qumulo-alerts-and-test-the-integration-by-using-the-alerts-cli">To Integrate IFTTT with Qumulo Alerts and Test the Integration by Using the alerts CLI</h2>
+<ol>
+  <li>
+    <p>Run the <code class="language-plaintext highlighter-rouge">./alerts ifttt_server_add</code> command and specify the IFTTT server token, language, and time zone. For example:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./alerts ifttt_server_add <span class="se">\</span>
   <span class="nt">--token</span> abcABde12f3g4567CDE89 <span class="se">\</span>
   <span class="nt">--language</span> en_US <span class="se">\</span>
   <span class="nt">--timezone</span> <span class="s2">"America/Phoenix"</span>
-</code></pre></div></div>
+</code></pre></div>    </div>
 
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note</b><br />
+    <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note</b><br />
 <ul>
-  <li>For the <code>--language</code> flag, see <a href="../getting-started/supported-language-locales.html">What Language Locales Qumulo Alerts Supports</a>. The consumer processes for <a href="../configuring-integrations/email-server.html">email</a>, <a href="../configuring-integrations/ifttt.html">IFTTT</a>, and <a href="../configuring-integrations/sms-clicksend.html">SMS (ClickSend)</a> integrations translate messages into the recipient's native language.</li>
-  <li>For the  <code>--timezone</code> flag, see <a href="../getting-started/supported-language-locales.html#converting-time-zones">Converting Time Zones</a>.</li>
+  <li>For more information about locales, see <a href="../getting-started/supported-language-locales.html">What Language Locales Qumulo Alerts Supports</a>. The consumer processes for <a href="../configuring-integrations/email-server.html">email</a>, <a href="../configuring-integrations/ifttt.html">IFTTT</a>, and <a href="../configuring-integrations/sms-clicksend.html">SMS (ClickSend)</a> integrations translate messages into the recipient's native language.</li>
+  <li>For more information about time zones, see <a href="../getting-started/supported-language-locales.html#converting-time-zones">Converting Time Zones</a>.</li>
 </ul>
 </div>
 
-<p>The following is example output.</p>
+    <p>The following is example output.</p>
 
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[{</span><span class="w">
+    <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[{</span><span class="w">
   </span><span class="nl">"language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en_US"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"timezone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"America/Los_Angeles"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"timezone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"America/Phoenix"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abcABde12f3g4567CDE89"</span><span class="w">
 </span><span class="p">}]</span><span class="w">
-</span></code></pre></div></div>
+</span></code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Run the <code class="language-plaintext highlighter-rouge">./alerts ifttt_server_test</code> command.</p>
 
-<h2 id="to-test-integration-with-ifttt">To Test Integration with IFTTT</h2>
-<p>Run the <code class="language-plaintext highlighter-rouge">./alerts ifttt_server_test</code> command.</p>
-
-<p>A successful response returns the <code>[{ "ok"&colon; true }]</code> JSON output.</p>
+    <p>A successful response returns the <code>[{ "ok"&colon; true }]</code> JSON output.</p>
+  </li>
+</ol>
 
    
 

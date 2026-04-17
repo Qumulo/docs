@@ -967,27 +967,24 @@ $(document).ready(function() {
      <h2 id="to-connect-to-the-grafana-endpoint">To Connect to the Grafana Endpoint</h2>
 <ol>
   <li>
-    <p>In a browser, navigate to the hostname of your running Grafana instance on port 3000. Grafana was started when you executed the script</p>
-
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./start-docker-qumulo-alerts.sh
-</code></pre></div>    </div>
-
-    <p>For example, if your docker instance of Grafana is on IP address 203.0.113.0:</p>
+    <p>In a browser, navigate to the hostname of your running Grafana instance on port 3000. For example:</p>
 
     <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://203.0.113.0:3000
 </code></pre></div>    </div>
+
+    <div class="alert alert-success" role="alert"><span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br /> Running the <code class="language-plaintext highlighter-rouge">./start-docker-qumulo-alerts.sh</code> script starts Grafana.</div>
   </li>
   <li>
-    <p>When prompted, enter the following:</p>
+    <p>When prompted, enter the default credentials:</p>
 
-    <ul>
+    <ol>
       <li>
-        <p><strong>Login:</strong> <code class="language-plaintext highlighter-rouge">qumulo</code></p>
+        <p>For <strong>Login</strong>, enter <code class="language-plaintext highlighter-rouge">qumulo</code>.</p>
       </li>
       <li>
-        <p><strong>Password:</strong> <code class="language-plaintext highlighter-rouge">Admin123</code>.</p>
+        <p>For <strong>Password</strong>, enter <code class="language-plaintext highlighter-rouge">Admin123</code>.</p>
       </li>
-    </ul>
+    </ol>
 
     <p>Grafana displays visualizations and information about your cluster.</p>
   </li>
