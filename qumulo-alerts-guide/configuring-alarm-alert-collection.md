@@ -30,7 +30,7 @@ This section explains how to configure alarm and alert collection by adding your
 
    1. For **Cluster Name/IP**, specify the hostname or IP address for your Qumulo cluster.
 
-      {% include important.html content="Qumulo Alerts uses this value as a display name. It isn't possible to change it after saving the cluster configuration." %}
+      {% include important.html content="Qumulo Alerts uses this value as the display name. It isn't possible to change it after saving the cluster configuration." %}
    
    1. For **Access Token**, specify the long-lived access token that you created while [Installing and Configuring Qumulo Alerts](installing-configuring-qumulo-alerts.html#step-5-create-a-long-lived-access-token) guide.
    
