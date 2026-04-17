@@ -1,17 +1,37 @@
 ---
-title: "Configuring Quota Notifications to a User Account in Qumulo Alerts"
-summary: "This section explains how to configure Qumulo Alerts to send quota notifications from a Qumulo cluster to a user account."
+title: "Configuring Quota Notifications to One or More User Accounts in Qumulo Alerts"
+summary: "This section explains how to configure Qumulo Alerts to send quota notifications from a Qumulo cluster to one or more user accounts."
 permalink: /qumulo-alerts-guide/configuring-notifications/quota-notifications-to-users.html
 redirect_from:
   - /qumulo-alerts-guide/configuring-notifications/quotas-to-users.html
 sidebar: qumulo_alerts_guide_sidebar
 ---
 
-Qumulo Alerts can notify an individual user's email address manually or use [default quotas](default-quotas.html) to notify email addresses associated in Active Directory (AD) with the security identifier (SID) of the quota directory's owner automatically.
+## To Configure Quota Notifications by Using the Qumulo Alerts Web UI
+
+1. On the sidebar, under **Quotas**, click **Quotas**.
+
+1. Click **+ Add Quota** or click **Edit** next to an existing rule.
+
+1. In the **Clusters** section, select one or more Qumulo clusters to add to this quota and then enter the quota rules:
+
+   * For **Quota Path**, enter the quota directory path on your Qumulo cluster (for example, `/Reports/Marketing`).
+  
+   * For **Warning (%)**, enter the quota usage percentage that triggers a _warning_ notification (`70` by default).
+  
+   * For **Error (%)**, enter the quota usage percentage that triggers an _error_ notification (`80` by default).
+  
+   * For **Critical (%)**, enter the quota usage percentage that triggers a _critical_ notification (`90` by default).
+
+1. Click **Notify Users entered below** and enter an email address.
+
+1. (Optional) To add more addresses, click **+**.
+
+1. Click **Save**.
 
 
-## To Notify an Individual Email Address
-Run the `./alerts quota_add` command and specify the quota path, the email address to notify, the email address to notify, and the fully qualified domain name (FQDN) of your Qumulo cluster. For example:
+## To Configure Quota Notifications by Using the alerts CLI
+Run the `./alerts quota_add` command and specify the quota path, the email address to notify, and the fully qualified domain name (FQDN) of your Qumulo cluster. For example:
 
 ```bash
 ./alerts quota_add \
@@ -40,60 +60,3 @@ Run the `./alerts quota_add` command and specify the quota path, the email addre
 }]
 ```
 
-## Notifying Directory Owners Automatically
-To use this method, you must first add an AD server to Qumulo Alerts and then configure the default quota to use AD lookup to retrieve users' email addresses.
-
-### Step 1: Connect Qumulo Alerts to an Active Directory Server
-Run the `./alerts ad_server_add` command and specify the AD server, AD login name, AD password, the search base for looking up users, and the fully qualified domain name (FQDN) of your Qumulo cluster. For example:
-
-```bash
-./alerts ad_server_add \
-  --server-name "ad.example.com" \
-  --login-name "example.com\LookupUser" \
-  --password {{site.examplePassword}} \
-  --search-base "CN=Users,DC=example,DC=com" \
-  --cluster-include cluster.example.com
-```
-
-{% include important.html content="For maximum security, configure a specific AD user to issue lookup requests." %}
-
-{{site.exampleOutput}}
-
-```json
-[{
-  "clusters": [{
-    "frequency": 1,
-    "name": "cluster.example.com",
-    "nlb": false,
-    "port": 8000
-  }],
-  "id": 2,
-  "login_name": "example.com\\LookupUser",
-  "search_base": "CN=Users,DC=example,DC=com",
-  "server_name": "ad.example.com"
-}]
-```
-
-### Step 2: Configure a Default Quota to use Active Directory Lookup
-Run the `./alerts default_quota_update` command, specify the default quota ID, and configure the quota to notify users. For example:
-
-```bash
-./alerts default_quota_update \
-  --id 1 \
-  --user-notification \
-  --admin-notification False
-```
-
-{{site.exampleOutput}}
-
-```json
-[{
-  "admin_notification": false,
-  "critical": 95,
-  "error": 85,
-  "quota_prefix": "",
-  "user_mode": "owner",
-  "user_notification": true,
-  "warning": 75
-}]
-```

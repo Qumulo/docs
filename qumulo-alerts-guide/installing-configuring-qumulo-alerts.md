@@ -1,6 +1,6 @@
 ---
 title: "Installing and Configuring Qumulo Alerts"
-summary: "This section explains how to install, start and stop, and configure Qumulo Alerts."
+summary: "This section explains how to install, start and stop, log in to, and configure Qumulo Alerts."
 permalink: /qumulo-alerts-guide/installing-configuring-qumulo-alerts.html
 redirect_from:
   - /qumulo-alerts-guide/installing-configuring/installing-connecting-to-qumulo-cluster.html
@@ -11,7 +11,7 @@ sidebar: qumulo_alerts_guide_sidebar
 This section lists the prerequisites for Qumulo Alerts.
 
 ### Firewall Ports
-Qumulo Alerts requires the following firewall ports to be open from the Qumulo Alerts instance
+Qumulo Alerts requires the following firewall ports to be open from the Qumulo Alerts instance.
 
 | Port                  | Target                                              |
 | --------------------- | --------------------------------------------------- |
@@ -35,11 +35,11 @@ Before you install Qumulo Alerts, make sure you have the following tools:
 
 ### Configuration Details
 Before you connect Qumulo Alerts to a Qumulo cluster, collect the information that can help you configure Qumulo Alerts to monitor your cluster.
-
 * **Cluster Address:** Use a fully qualified domain name (FQDN) rather than an IP address.
 * **Traffic Distribution:** Will your Qumulo Alerts installation use a network load balancer or a floating IP address?
 * **Default Plugin Frequency**: What should be the default frequency for plugin execution? (You can specify the frequency in minutes or seconds.)
 * **Alarm and Alert Types:** Which alarms and alerts will Qumulo Alerts will collect from your Qumulo cluster?
+
 
 ## Installing Qumulo Alerts
 This section explains how to install Qumulo Alerts on your machine.
@@ -65,7 +65,7 @@ To be able to generate access tokens, you must create a local user for Qumulo Al
      --password {{site.examplePassword}} 
    ```
 
-1. You need the user ID that appears in the command output to create a role for Qumulo Alerts.
+1. To create a role for Qumulo Alerts later, you need the user ID that appears in the command output.
 
    In the following example, the user ID is `1234`.
 
@@ -189,19 +189,34 @@ For more information, see [Using Qumulo Core Access Tokens](https://docs.qumulo.
 * To stop Qumulo Alerts, run the `./stop-docker-qumulo-alerts.sh` command from the Qumulo Alerts directory.
 
 
-## Configuring Qumulo Alerts
-This section explains how to use the `alerts` CLI and how to configure Qumulo Alerts
+## Logging In to Qumulo Alerts
+This section explains how to log in to Qumulo Alerts by using the Web UI or the `alerts` CLI.
 
-### Step 1: Configure the alerts CLI for Your Operating System
-Qumulo Alerts comes with the following binaries for Linux, macOS, and Windows.
+### To Log In to the Qumulo Alerts Web UI
+{% include note.html content="The Qumulo Alerts Web UI is available in Qumulo Alerts 7.2.1 (and higher)." %}
+
+1. In a browser, navigate to `http://<your-host>:8080/web/login`, where `<your-host>` is the hostname or IP address of the machine running Qumulo Alerts.
+
+1. Enter the default credentials:
+
+   1. For **Username**, enter `admin`.
+
+   1. For **Password**, enter `Admin123`.
+
+1. Click **Login**.
+
+   After a successful login, Qumulo Alerts creates a session that expires after six hours.
+
+### To Log In to Qumulo Alerts by Using the alerts CLI on Linux or macOS
+Qumulo Alerts includes the following binaries:
 
 * `alerts.macos-latest`
 * `alerts.redhat-8`
 * `alerts.ubuntu-20.04`
 * `alerts.ubuntu-latest`
-* `alerts.windows-latest.exe`
 
-#### To Configure the alerts CLI for Linux
+1. Copy the appropriate binary to your Linux or macOS machine.
+   
 1. Link the binary for your operating system to the `alerts` CLI. For example:
 
    ```bash
@@ -214,22 +229,22 @@ Qumulo Alerts comes with the following binaries for Linux, macOS, and Windows.
    chmod a+x alerts.ubuntu-20.04
    ```
 
-#### To Configure the alerts CLI for Windows
-1. Copy `alerts.windows-latest.exe` to your Windows machine.
+### To Log In to Qumulo Alerts by Using the alerts CLI on Windows
+1. Copy `alerts.windows-latest.exe` binary to your Windows machine.
 
 1. Rename the file to `alerts.exe`
 
 
-### Step 2: Log in to Qumulo Alerts
-1. To log in to Qumulo Alerts, run the `./alerts login -u admin` command.
+#### Step 2: Log In to Qumulo Alerts by Using the alerts CLI
+1. To log in to Qumulo Alerts, run the `./alerts login -u admin` command on Linux or macOS or `alerts login -u admin` on Windows.
 
-1. When prompted, enter the following:
+1. When prompted, enter your credentials:
 
-   * **Login:** `admin`
-     
-   * **Password:** `Admin123`
+   * For **Login**, enter `admin`.
 
-### Step 3: Configure Qumulo Alerts
+   * For **Password**, enter `Admin123`.
+
+## Configuring Qumulo Alerts
 1. Configure integration [with an email server](configuring-integrations/email-server.html) or [with SMS (ClickSend)](configuring-integrations/sms-clicksend.html).
 
 1. [Configure alarm and alert notifications](configuring-notifications/alarms-and-alert-notifications-to-administrators.html).
