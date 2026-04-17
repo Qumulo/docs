@@ -321,6 +321,7 @@ RESTful APIs, such as the Qumulo Core S3 API, use HTTP [ETags](https://developer
       <li><a href="configuring-using-s3-api.html">Configure HTTPS for the S3 API</a></li>
       <li>Include the <code>Content-MD5</code> header with the checksum of the object's contents</li>
     </ul>
+  </li>
 </ul>
 {{site.data.alerts.end}}
 
