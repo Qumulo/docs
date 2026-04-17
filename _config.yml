@@ -349,8 +349,8 @@ q1uag1Drives:
 
 qumuloalerts:
   consTrans: The consumer processes for <a href="../configuring-integrations/email-server.html">email</a>, <a href="../configuring-integrations/ifttt.html">IFTTT</a>, and <a href="../configuring-integrations/sms-clicksend.html">SMS (ClickSend)</a> integrations translate messages into the recipient's native language.
-  locale: For the <code>--language</code> flag, see <a href="../getting-started/supported-language-locales.html">What Language Locales Qumulo Alerts Supports</a>.
-  tz: For the  <code>--timezone</code> flag, see <a href="../getting-started/supported-language-locales.html#converting-time-zones">Converting Time Zones</a>.
+  locale: For more information about locales, see <a href="../getting-started/supported-language-locales.html">What Language Locales Qumulo Alerts Supports</a>.
+  tz: For more information about time zones, see <a href="../getting-started/supported-language-locales.html#converting-time-zones">Converting Time Zones</a>.
   testSuccess: A successful response returns the <code>[{ "ok"&colon; true }]</code> JSON output.
   warningThreshold: For the <code>--warning</code> flag, the threshold must be lower than the thresholds of both the <code>--error</code> and <code>--critical</code> flags.
   errorThreshold: For the <code>--error</code> flag, the threshold must be lower than the threshold of the <code>--critical</code> flag.
