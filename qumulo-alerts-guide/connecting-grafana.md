@@ -6,23 +6,19 @@ sidebar: qumulo_alerts_guide_sidebar
 ---
 
 ## To Connect to the Grafana Endpoint
-1. In a browser, navigate to the hostname of your running Grafana instance on port 3000. Grafana was started when you executed the script 
+1. In a browser, navigate to the hostname of your running Grafana instance on port 3000. For example:
 
    ```
-   ./start-docker-qumulo-alerts.sh
+   http://{{site.exampleIP0}}:3000
    ```
 
-   For example, if your docker instance of Grafana is on IP address 203.0.113.0:
+   {% include tip.html content="Running the `./start-docker-qumulo-alerts.sh` script starts Grafana." %}
 
-   ```
-   http://203.0.113.0:3000
-   ```
+2. When prompted, enter the default credentials:
 
-2. When prompted, enter the following:
-
-   * **Login:** `qumulo`
+   1. For **Login**, enter `qumulo`.
      
-   * **Password:** `Admin123`.
+   1. For **Password**, enter `Admin123`.
 
    Grafana displays visualizations and information about your cluster.
 

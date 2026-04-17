@@ -37,7 +37,7 @@ To perform these instructions, ensure that you have `root` privileges and that D
 
 1. To restart Qumulo Alerts with the new configuration, run the `start-docker-qumulo-alerts.sh` script.
 
-1. The verify the Qumulo Alerts Docker container's status, you can run the `docker ps -a` command or access Grafana by using its configured endpoint and port. For example:
+1. To verify the Qumulo Alerts Docker container's status, you can run the `docker ps -a` command or access Grafana by using its configured endpoint and port. For example:
 
    ```
    http://127.0.0.1:3000
