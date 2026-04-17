@@ -29,7 +29,7 @@ sidebar: qumulo_alerts_guide_sidebar
    
    1. For **From Address**, select the email address to appear in the **From** field of outgoing notifications (for example, `alerts@example.com`).
    
-   1. For **Security**, select the following connection security types.
+   1. For **Security**, select the connection security type.
    
    1. (Optional) For **Username**, enter the username for SMTP authentication.
    
