@@ -2,7 +2,8 @@
 <ul>
   <li>{{page.varContactQumuloCare}}</li>
   <li>{{page.varRollingRebootRefresh}}</li>
-{% if page.platform == 'cnq-aws' or page.platform == 'cnq-azure' or page.platform == 'cnq-gcp' %}<li>{{site.cnqLong}} doesn't differentiate between upgrade modes and all upgrades are <em>instant software upgrades</em> that have a downtime of less than 30 seconds and don't disrupt the operation of the cluster.</li>{% endif %}
+{% if page.platform contains 'cnq-' %}<li>{{site.cnqLong}} doesn't differentiate between upgrade modes and all upgrades are <em>instant software upgrades</em> that have a downtime of less than 30 seconds and don't disrupt the operation of the cluster.</li>{% endif %}
+{% unless page.platform == 'anq' %}<li>If, while <a href="#upgrade-qq-cli">upgrading your Qumulo cluster by using the <code>qq</code> CLI</a>, you receive the following message, ensure that the upgrade file is located within the cluster's file system (for example, in an SMB share or an NFS export), not in the <code>/var/opt/qumulo/history</code> local system directory on an individual node. <div class="highlighter-rouge"><div class="highlight"><pre class="highlight" style="position: relative;"><code>Error 400: upgrade_verify_error: You must use the same image version on all nodes in your cluster.</code></pre></div></div></li>{% endunless %}
 </ul>
 {{site.data.alerts.end}}
 
@@ -74,7 +75,7 @@ Every Qumulo Core upgrade has two phases, _preparation_ and _commit_.
 </ul>
 {{site.data.alerts.end}}
 
-### To Upgrade Your Qumulo Cluster by Using the Qumulo Core Web UI
+### To Upgrade Your Qumulo Cluster by Using the Qumulo Core Web UI {#upgrade-web-ui}
 
 {{page.varUploadUpgradeFile}}
 
@@ -106,7 +107,7 @@ Every Qumulo Core upgrade has two phases, _preparation_ and _commit_.
 
    When the upgrade is complete, the message **You have successfully upgraded from Qumulo Core x.x.x to y.y.y** is displayed.
 
-### To Upgrade Your Qumulo Cluster by Using the qq CLI
+### To Upgrade Your Qumulo Cluster by Using the qq CLI {#upgrade-qq-cli}
 
 {{site.data.alerts.important}}
 <ul>
