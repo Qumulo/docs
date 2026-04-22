@@ -51,7 +51,7 @@ jobs:
           ./tools/test-build-html.sh
         env:
           GIT_SSH_COMMAND: ssh -i /tmp/ro_key
-          EXTERNAL_REPOS: ${{ env.EXTERNAL_REPOS }}
+          EXTERNAL_REPOS: ${{ var.EXTERNAL_REPOS }}
 
       - name: Sync and update the gh-pages branch
         env:
