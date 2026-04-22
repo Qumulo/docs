@@ -59,7 +59,7 @@ ACTIONS=()
 PS3='What would you like to build? '
 
 # Prints the options on screen
-options=("Qumulo Hardware Servicing Guide" "Azure Native Qumulo Administrator Guide" "Cloud Native Qumulo on AWS Administrator Guide" "Cloud Native Qumulo on Azure Administrator Guide" "Cloud Native Qumulo on GCP Administrator Guide" "Qumulo On-Premises Administrator Guide" "Qumulo Nexus Configuration Guide" "Qumulo Alerts Administrator Guide" "Qumulo qq CLI Command Guide" "Qumulo REST API Guide" "Qumulo Integration Guide" "All Administrator Guides" "All Guides" "Exit")
+options=("Qumulo Hardware Servicing Guide" "Azure Native Qumulo Administrator Guide" "Cloud Native Qumulo on AWS Administrator Guide" "Cloud Native Qumulo on Azure Administrator Guide" "Cloud Native Qumulo on GCP Administrator Guide" "Qumulo On-Premises Administrator Guide" "Qumulo Nexus Configuration Guide" "Qumulo Alerts Administrator Guide" "Qumulo qq CLI Command Guide" "Qumulo REST API Guide" "Qumulo Integration Guide" "All Administrator Guides" "All Guides Except Hardware" "Exit")
 echo
 
 select opt in "${options[@]}"
@@ -116,8 +116,8 @@ do
       ACTIONS+=("ANQ_Guide" "CNQ_AWS_Guide" "CNQ_Azure_Guide" "CNQ_GCP_Guide" "Administrator_Guide")
       break
       ;;
-    "All Guides")
-      ACTIONS+=("Hardware_Guide" "ANQ_Guide" "CNQ_AWS_Guide" "CNQ_Azure_Guide" "CNQ_GCP_Guide" "Administrator_Guide" "Qumulo_Alerts_Guide" "Qumulo_qq_CLI_Command_Guide" "Integration_Guide")
+    "All Guides Except Hardware")
+      ACTIONS+=("ANQ_Guide" "CNQ_AWS_Guide" "CNQ_Azure_Guide" "CNQ_GCP_Guide" "Administrator_Guide" "Qumulo_Alerts_Guide" "Qumulo_qq_CLI_Command_Guide" "Integration_Guide")
       break
       ;;
     "Exit")
