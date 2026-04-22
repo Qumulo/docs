@@ -1901,6 +1901,10 @@ pre.manual {
   .highlighter-rouge pre {
       padding: 20px 40px 20px 20px;
   }
+
+  .code-in-note {
+      margin: 10px auto -10px auto;
+  }
 }
 /* COPY-CODE END */
 
@@ -2218,10 +2222,6 @@ ol li ul li ol li ul li{
 
 table thead th code.highlighter-rouge {
     background-color: transparent;
-}
-
-.highlighter-rouge .highlight pre.highlight {
-    margin: 10px auto -10px auto;
 }
 
 .box {
