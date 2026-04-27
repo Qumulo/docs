@@ -48,7 +48,7 @@ Currently, it is possible to configure and manage Cloud Data Fabric functionalit
 
 ## Protocols
 {% capture byteRangeLocksNoSpan %}<em>Byte-range locks</em> let multiple processes lock specific portions of a file for granular access. Currently, byte-range locks can't span portals, so NFSv3 or NLM byte-range locks and NFSv4.1 byte-range locks function independently on the two clusters.{% endcapture %}
-{% capture shareModeLocksCanSpan %}<em>Share-mode locks</em> control access to an entire file for read, write, and delete operations. In Qumulo Core 7.8.3 (and higher), share-mode locks <em>can</em> span portals but SMB byte-range locks function independently on the two clusters.{% endcapture %}
+{% capture shareModeLocksCanSpan %}<em>Share-mode locks</em> control access to an entire file for read, write, and delete operations.{% endcapture %}
 {{site.data.alerts.note}}
 <ul>
   <li>{{ byteRangeLocksNoSpan }}</li>

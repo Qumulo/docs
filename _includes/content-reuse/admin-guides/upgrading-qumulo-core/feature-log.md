@@ -8,13 +8,6 @@ For information about upgrade types for each release, see <a href='mode-referenc
 
 {% comment %}For boilerplate text, use {{page.varNoPublicChanges}}{% endcomment %}
 
-## Qumulo Core 7.8.3
-{{ nexusLink }}
-
-* Added SMB share-mode lock functionality across Cloud Data Fabric (CDF) portals
-* Added the ability to use caching without requiring clients to match the throughput of any Qumulo cluster type&mdash;and the corresponding REST API endpoint and `qq` CLI command
-* Added the ability to restart the container on _every_ node (rather than only on the specified node) in a cluster&mdash;and the corresponding REST API endpoint and `qq` CLI commands
-
 ## Qumulo Core 7.8.2.1
 {{ nexusLink }}
 {% capture unexpRest %}This release resolves an issue that could cause nodes in clusters with specific configurations to restart unexpectedly.{% endcapture %}
