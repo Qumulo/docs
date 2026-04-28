@@ -628,6 +628,7 @@ find_unused_undefined_vars() {
 
 determine_host_upgrade_onprem_release(){
    ~/src/release_management/list_host_upgrades.py
+   cd -
 } 
 
 determine_lowest_replication_version() {
