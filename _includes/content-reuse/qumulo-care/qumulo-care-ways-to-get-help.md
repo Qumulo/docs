@@ -10,12 +10,12 @@ The Qumulo Care Team is always here to help you. You can contact us by using any
 * <span class="emoji">📱</span> Call one of our toll-free numbers:
 {: #toll-free-numbers}
 
-  * **North America:** [+1 855-577-7544](tel:+18555777544)
+  * **North America:** [+1 855 577 7544](tel:+18555777544)
 
-  * **United Kingdom:** [+44 808-164-6656](tel:+448081646656)
+    * **U.S. Government Customers:** [+1 844 962 3777](tel:+18449623777)
 
-  * **Germany:** [+49 800-000-7047](tel:+498000007047)
+  * **United Kingdom:** [+44 808 164 6656](tel:+448081646656)
 
-  * **Australia:** [+61 1800-954-952](tel:+611800954952)
-  
-  * **U.S. Government Customers:** [+1 844-962-3777](tel:+18449623777)
+  * **Germany:** [+49 800 478 6856](tel:+498004786856)
+
+  * **Australia:** [+61 1800 954 952](tel:+611800954952)
