@@ -43,9 +43,9 @@
 </script>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HPE Apollo 4200 Gen10 | Qumulo Documentation Portal</title>
+<title>Maintenance | Qumulo Documentation Portal</title>
 
-<link rel="canonical" href="https://docs.qumulo.com/hardware-guide/hpe/hpe-apollo-4200-gen10/">
+<link rel="canonical" href="https://docs.qumulo.com/hardware-guide/hpe/hpe-maintenance/">
 
 <!-- Organization JSON-LD Schema -->
 <script>
@@ -149,7 +149,7 @@ fetch('/data/website.json')
 </noscript>
 
 <!-- Define page metadata -->
-<meta name="description" content="Documentation for the HPE Apollo 4200 Gen10 platform running Qumulo Core.">
+<meta name="description" content="Maintenance procedures for HPE platforms running Qumulo Core, including firmware updates with HPE Service Packs for ProLiant (SPPs).">
 <meta name="apple-mobile-web-app-title" content="Qumulo Documentation Portal">
 <meta name="application-name" content="Qumulo Documentation Portal">
 <meta name="msapplication-TileColor" content="#2b5797">
@@ -159,10 +159,10 @@ fetch('/data/website.json')
 <meta name="google-site-verification" content="_KoxPR0qF_ZeMyH6uWvlX84cFRujO_AZ1eq0eT9alAg">
 
 <!-- Open Graph Meta Tags -->
-<meta property="og:title" content="HPE Apollo 4200 Gen10 | Qumulo Documentation Portal">
-<meta property="og:url" content="https://docs.qumulo.com/hardware-guide/hpe/hpe-apollo-4200-gen10/">
+<meta property="og:title" content="Maintenance | Qumulo Documentation Portal">
+<meta property="og:url" content="https://docs.qumulo.com/hardware-guide/hpe/hpe-maintenance/">
 <meta property="og:site_name" content="Qumulo Documentation Portal">
-<meta property="og:description" content="Documentation for the HPE Apollo 4200 Gen10 platform running Qumulo Core.">
+<meta property="og:description" content="Maintenance procedures for HPE platforms running Qumulo Core, including firmware updates with HPE Service Packs for ProLiant (SPPs).">
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://docs.qumulo.com/images/docs.qumulo.com-qumulo-documentation-portal-630px.png">
@@ -170,10 +170,10 @@ fetch('/data/website.json')
 <meta property="og:image:height" content="630">
 
 <!-- Twitter Meta Tags -->
-<meta name="twitter:title" content="HPE Apollo 4200 Gen10 | Qumulo Documentation Portal">
-<meta property="twitter:url" content="https://docs.qumulo.com/hardware-guide/hpe/hpe-apollo-4200-gen10/">
+<meta name="twitter:title" content="Maintenance | Qumulo Documentation Portal">
+<meta property="twitter:url" content="https://docs.qumulo.com/hardware-guide/hpe/hpe-maintenance/">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:description" content="Documentation for the HPE Apollo 4200 Gen10 platform running Qumulo Core.">
+<meta name="twitter:description" content="Maintenance procedures for HPE platforms running Qumulo Core, including firmware updates with HPE Service Packs for ProLiant (SPPs).">
 <meta name="twitter:image" content="https://docs.qumulo.com/images/docs.qumulo.com-qumulo-documentation-portal-418px.png">
 <meta property="twitter:domain" content="docs.qumulo.com">
 
@@ -399,7 +399,7 @@ fetch('/data/website.json')
 
 <div class="nav nav-buttons">
   
-    <a target="_blank" rel="noopener" href="https://github.com/qumulo/docs/blob/mainline/hardware-guide/hpe/hpe-apollo-4200-gen10/index.md" class="btn btn-default githubEditButton no_icon" role="button" data-proofer-ignore><span class="fa fa-github fa-lg"></span> Edit on GitHub</a>
+    <a target="_blank" rel="noopener" href="https://github.com/qumulo/docs/blob/mainline/hardware-guide/hpe/hpe-maintenance/index.md" class="btn btn-default githubEditButton no_icon" role="button" data-proofer-ignore><span class="fa fa-github fa-lg"></span> Edit on GitHub</a>
   
 
   
@@ -495,10 +495,10 @@ fetch('/data/website.json')
   
 
   
-  <li>
+  <li class="active">
   
 
-  <a title="Maintenance" href="/hardware-guide/hpe/hpe-maintenance/" data-proofer-ignore>
+  <a title="Maintenance" href="#" data-proofer-ignore>
   
   
   
@@ -712,13 +712,13 @@ fetch('/data/website.json')
 
 
 
-  HPE Apollo 4200 Gen10
+  Maintenance
   </div>
 </nav>
 
 
             <div class="post-header">
-   <h1 class="post-title-main">HPE Apollo 4200 Gen10</h1>
+   <h1 class="post-title-main">Maintenance</h1>
 </div>
 
 <div class="post-content">
@@ -752,29 +752,35 @@ $(document).ready(function() {
 
     
 
-    <p>The HPE Apollo 4200 Gen10 is a 2U high-density storage server with enhanced performance and updated processor support.</p>
+    <p>This section covers maintenance procedures specific to HPE platforms running Qumulo Core.</p>
 
-<h2 id="in-this-section">In This Section</h2>
+<h2 id="table-of-contents">Table of Contents</h2>
 
-<ul>
-  <li><a href="wiring-nodes-networking-cluster.html">Wiring Nodes and Networking a Cluster</a></li>
-  <li><a href="creating-configuring-cluster.html">Creating and Configuring a Cluster</a></li>
-  <li><a href="front-rear-drives.html">Front and Rear Drives</a></li>
-  <li><a href="panel-leds.html">Panel LEDs</a></li>
-  <li><a href="drive-leds.html">Drive LEDs</a></li>
-  <li><a href="configuring-ilo.html">Configuring iLO</a></li>
-  <li><a href="replacing-hardware-components.html">Replacing Hardware Components</a></li>
-  <li><a href="technical-specifications.html">Technical Specifications</a></li>
-</ul>
+<!-- Create the automatic mini-TOC on a page (unless disabled with #toc{display:none;}.
+     Note: If you use HTML tags, add an ID to the heading so that it appears in the mini-TOC.
+-->
 
-<h2 id="hpe-documentation">HPE Documentation</h2>
+<script>
+$(document).ready(function() {
+    $('#toc').toc({
+      minimumHeaders: 2,
+      listType: 'ul',
+      showSpeed: 0,
+      headers: 'h2'
+    });
 
-<p>For detailed hardware specifications and service information, refer to the official HPE documentation:</p>
+    /* Account for the space that the floating toolbar takes up. */
+    $('#toc').on('click', 'a', function() {
+      var target = $(this.getAttribute('href')), 
+          scroll_target = target.offset().top
+          $(window).scrollTop(scroll_target - 10);
+      return false
+    });
+});
+</script>
 
-<ul>
-  <li><a href="https://www.hpe.com/psnow/doc/a00056091enw" class="no_icon">HPE Apollo 4200 Gen10 QuickSpecs</a></li>
-  <li><a href="https://support.hpe.com/hpesc/public/docDisplay?docId=a00061642en_us" class="no_icon">HPE Apollo 4200 Gen10 User Guide</a></li>
-</ul>
+<div id="toc"></div>
+
 
    
     
@@ -786,6 +792,14 @@ $(document).ready(function() {
     
                
     
+      
+        <ul>
+          
+          
+          <li><a href="/hardware-guide/hpe/hpe-maintenance/updating-firmware-with-spp.html">Updating Firmware with HPE SPPs</a></li>
+          
+              
+        </ul>             
                
     
                

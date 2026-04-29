@@ -43,9 +43,9 @@
 </script>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HPE Apollo 4200 Gen10 | Qumulo Documentation Portal</title>
+<title>Updating Firmware with HPE Service Packs (SPPs) | Qumulo Documentation Portal</title>
 
-<link rel="canonical" href="https://docs.qumulo.com/hardware-guide/hpe/hpe-apollo-4200-gen10/">
+<link rel="canonical" href="https://docs.qumulo.com/hardware-guide/hpe/hpe-maintenance/updating-firmware-with-spp.html">
 
 <!-- Organization JSON-LD Schema -->
 <script>
@@ -149,7 +149,7 @@ fetch('/data/website.json')
 </noscript>
 
 <!-- Define page metadata -->
-<meta name="description" content="Documentation for the HPE Apollo 4200 Gen10 platform running Qumulo Core.">
+<meta name="description" content="This section explains how to update the firmware on HPE platforms running Qumulo Core by using an HPE Service Pack for ProLiant (SPP).">
 <meta name="apple-mobile-web-app-title" content="Qumulo Documentation Portal">
 <meta name="application-name" content="Qumulo Documentation Portal">
 <meta name="msapplication-TileColor" content="#2b5797">
@@ -159,10 +159,10 @@ fetch('/data/website.json')
 <meta name="google-site-verification" content="_KoxPR0qF_ZeMyH6uWvlX84cFRujO_AZ1eq0eT9alAg">
 
 <!-- Open Graph Meta Tags -->
-<meta property="og:title" content="HPE Apollo 4200 Gen10 | Qumulo Documentation Portal">
-<meta property="og:url" content="https://docs.qumulo.com/hardware-guide/hpe/hpe-apollo-4200-gen10/">
+<meta property="og:title" content="Updating Firmware with HPE Service Packs (SPPs) | Qumulo Documentation Portal">
+<meta property="og:url" content="https://docs.qumulo.com/hardware-guide/hpe/hpe-maintenance/updating-firmware-with-spp.html">
 <meta property="og:site_name" content="Qumulo Documentation Portal">
-<meta property="og:description" content="Documentation for the HPE Apollo 4200 Gen10 platform running Qumulo Core.">
+<meta property="og:description" content="This section explains how to update the firmware on HPE platforms running Qumulo Core by using an HPE Service Pack for ProLiant (SPP).">
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://docs.qumulo.com/images/docs.qumulo.com-qumulo-documentation-portal-630px.png">
@@ -170,10 +170,10 @@ fetch('/data/website.json')
 <meta property="og:image:height" content="630">
 
 <!-- Twitter Meta Tags -->
-<meta name="twitter:title" content="HPE Apollo 4200 Gen10 | Qumulo Documentation Portal">
-<meta property="twitter:url" content="https://docs.qumulo.com/hardware-guide/hpe/hpe-apollo-4200-gen10/">
+<meta name="twitter:title" content="Updating Firmware with HPE Service Packs (SPPs) | Qumulo Documentation Portal">
+<meta property="twitter:url" content="https://docs.qumulo.com/hardware-guide/hpe/hpe-maintenance/updating-firmware-with-spp.html">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:description" content="Documentation for the HPE Apollo 4200 Gen10 platform running Qumulo Core.">
+<meta name="twitter:description" content="This section explains how to update the firmware on HPE platforms running Qumulo Core by using an HPE Service Pack for ProLiant (SPP).">
 <meta name="twitter:image" content="https://docs.qumulo.com/images/docs.qumulo.com-qumulo-documentation-portal-418px.png">
 <meta property="twitter:domain" content="docs.qumulo.com">
 
@@ -399,7 +399,7 @@ fetch('/data/website.json')
 
 <div class="nav nav-buttons">
   
-    <a target="_blank" rel="noopener" href="https://github.com/qumulo/docs/blob/mainline/hardware-guide/hpe/hpe-apollo-4200-gen10/index.md" class="btn btn-default githubEditButton no_icon" role="button" data-proofer-ignore><span class="fa fa-github fa-lg"></span> Edit on GitHub</a>
+    <a target="_blank" rel="noopener" href="https://github.com/qumulo/docs/blob/mainline/hardware-guide/hpe/hpe-maintenance/updating-firmware-with-spp.md" class="btn btn-default githubEditButton no_icon" role="button" data-proofer-ignore><span class="fa fa-github fa-lg"></span> Edit on GitHub</a>
   
 
   
@@ -513,7 +513,7 @@ fetch('/data/website.json')
           
           
           
-          <li>
+          <li class="active">
             <a title="Updating Firmware with HPE SPPs" href="/hardware-guide/hpe/hpe-maintenance/updating-firmware-with-spp.html">
               Updating Firmware with HPE SPPs
               <span class="tag-container">
@@ -711,17 +711,25 @@ fetch('/data/website.json')
 
 
 
+  <a href='/hardware-guide/hpe/hpe-maintenance/'>Maintenance</a> <span>&rsaquo;</span>
 
-  HPE Apollo 4200 Gen10
+
+  Updating Firmware with HPE Service Packs (SPPs)
   </div>
 </nav>
 
 
-            <div class="post-header">
-   <h1 class="post-title-main">HPE Apollo 4200 Gen10</h1>
+            
+
+<div class="post-header">
+   <div class="star" id="page-star" title="Save to Favorites">&#9733;</div>
+   <h1 class="post-title-main">Updating Firmware with HPE Service Packs (SPPs)</h1>
 </div>
 
+
+
 <div class="post-content">
+
     
     
 <!-- Create the automatic mini-TOC on a page (unless disabled with #toc{display:none;}.
@@ -752,46 +760,239 @@ $(document).ready(function() {
 
     
 
-    <p>The HPE Apollo 4200 Gen10 is a 2U high-density storage server with enhanced performance and updated processor support.</p>
+   <p>This section explains how to update the firmware on HPE platforms running Qumulo Core by using an HPE Service Pack for ProLiant (SPP).</p>
+   
+     <p>This section explains how to update the firmware on HPE platforms running Qumulo Core by using an HPE Service Pack for ProLiant (SPP).</p>
 
-<h2 id="in-this-section">In This Section</h2>
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
+Qumulo follows HPE's recommendation on SPP versioning. SPP images are provided directly by HPE. For the latest SPP releases, see the <a href="https://support.hpe.com/docs/display/public/a00sppdocen_US/spp/#/" class="no_icon">HPE Service Pack for ProLiant (SPP) Home Page</a>.
+</div>
 
-<ul>
-  <li><a href="wiring-nodes-networking-cluster.html">Wiring Nodes and Networking a Cluster</a></li>
-  <li><a href="creating-configuring-cluster.html">Creating and Configuring a Cluster</a></li>
-  <li><a href="front-rear-drives.html">Front and Rear Drives</a></li>
-  <li><a href="panel-leds.html">Panel LEDs</a></li>
-  <li><a href="drive-leds.html">Drive LEDs</a></li>
-  <li><a href="configuring-ilo.html">Configuring iLO</a></li>
-  <li><a href="replacing-hardware-components.html">Replacing Hardware Components</a></li>
-  <li><a href="technical-specifications.html">Technical Specifications</a></li>
-</ul>
+<h2 id="prerequisites">Prerequisites</h2>
 
-<h2 id="hpe-documentation">HPE Documentation</h2>
-
-<p>For detailed hardware specifications and service information, refer to the official HPE documentation:</p>
+<p>Before updating firmware, ensure you have:</p>
 
 <ul>
-  <li><a href="https://www.hpe.com/psnow/doc/a00056091enw" class="no_icon">HPE Apollo 4200 Gen10 QuickSpecs</a></li>
-  <li><a href="https://support.hpe.com/hpesc/public/docDisplay?docId=a00061642en_us" class="no_icon">HPE Apollo 4200 Gen10 User Guide</a></li>
+  <li>Direct or networked KVM access to the node</li>
+  <li>An HPE SPP (ISO or USB image)</li>
+  <li>Optional: USB3 drive (if not using the iLO method)</li>
 </ul>
+
+<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> This process updates platform firmware only. It does not upgrade the Qumulo Core software.</div>
+
+<h2 id="important-considerations">Important Considerations</h2>
+
+<div class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> <b>Caution</b><br />
+<ul>
+  <li>When updating a live cluster, you must run this procedure on <strong>one node at a time</strong>. Updating multiple nodes simultaneously can result in cluster-wide data loss.</li>
+  <li>Update firmware by using only HPE Service Packs (SPPs). Do not install unsupported firmware updates on HDDs, SSDs, or individual hardware components unless Qumulo Care instructs you to do so.</li>
+</ul>
+</div>
+
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
+<ul>
+  <li>You must perform this procedure on every node in your cluster.</li>
+  <li>After you perform a firmware update on one node, you must wait for the newly updated node to rejoin the cluster and re-enter protected status before you continue to the next node.</li>
+</ul>
+</div>
+
+<h2 id="method-1-update-firmware-using-ilo">Method 1: Update Firmware Using iLO</h2>
+
+<p>This method uses iLO’s virtual media feature to mount the SPP ISO file.</p>
+
+<ol>
+  <li>
+    <p>Mount the <code class="language-plaintext highlighter-rouge">.iso</code> file from the SPP as a virtual optical drive.</p>
+  </li>
+  <li>
+    <p>On a workstation or virtual machine in your data center, click <strong>Remote Console &amp; Media</strong> &gt; <strong>Virtual Media URL</strong>, and enter the URL to the <code class="language-plaintext highlighter-rouge">.iso</code> file.</p>
+  </li>
+  <li>
+    <p>Connect to your node’s IP address through SSH and run the following commands to stop the QFSD service and power-cycle the node:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>qsh
+<span class="nb">sudo </span>service qumulo-qfsd stop
+<span class="nb">sudo </span>ipmitool power cycle
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>The node reboots to the Smart Update Firmware Boot Menu.</p>
+  </li>
+  <li>
+    <p>When the firmware update is complete, unmount the virtual optical drive.</p>
+  </li>
+  <li>
+    <p>Reboot the node.</p>
+  </li>
+</ol>
+
+<h2 id="method-2-update-firmware-using-a-usb-drive">Method 2: Update Firmware Using a USB Drive</h2>
+
+<p>This method uses a bootable USB drive containing the SPP image.</p>
+
+<ol>
+  <li>
+    <p>Copy the <code class="language-plaintext highlighter-rouge">.img</code> file from the SPP to a USB3 drive.</p>
+  </li>
+  <li>
+    <p>Insert the USB3 drive into the node.</p>
+  </li>
+  <li>
+    <p>Connect to your node’s IP address through SSH and run the following commands to stop the QFSD service and power-cycle the node:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>service qumulo-qfsd stop
+<span class="nb">sudo </span>ipmitool power cycle
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>After the node reboots, press <strong>F11</strong> to enter the boot menu.</p>
+  </li>
+  <li>
+    <p>The node reboots to the Smart Update Firmware Boot Menu.</p>
+  </li>
+  <li>
+    <p>After 10 seconds, the SPP starts in Automatic mode.</p>
+  </li>
+  <li>
+    <p>When the firmware update is complete, remove the USB3 drive.</p>
+  </li>
+  <li>
+    <p>Reboot the node.</p>
+  </li>
+</ol>
+
+<h2 id="verify-cluster-protection-status">Verify Cluster Protection Status</h2>
+
+<p>After updating each node, verify the cluster’s ability to tolerate a node going offline before proceeding to the next node.</p>
+
+<p>Use SSH to connect to a node in the cluster and run the following commands:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq protection_status_get
+</code></pre></div></div>
+
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
+The value for <code>remaining_drive_failures</code> must match <code>max_drive_failures</code> and the value for <code>remaining_node_failures</code> must match <code>max_node_failures</code>. If these values don't match, the cluster is still working to reprotect data.
+</div>
+
+<p>Then run:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq restriper_status
+</code></pre></div></div>
+
+<p>Ensure that one of the following values appears (depending on your cluster’s version of Qumulo Core):</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">"state": "FINISHED"</code></li>
+  <li><code class="language-plaintext highlighter-rouge">"state": "NOT_RUNNING"</code></li>
+</ul>
+
+<h2 id="troubleshooting">Troubleshooting</h2>
+
+<h3 id="boot-loop-after-spp-update">Boot Loop After SPP Update</h3>
+
+<p>When running the SPP, sometimes the controller loses the boot drive and the node gets stuck in a boot loop. To resolve this:</p>
+
+<ol>
+  <li>
+    <p>Enter the System Utilities menu in the BIOS by pressing <strong>F9</strong> during boot.</p>
+  </li>
+  <li>
+    <p>Navigate to <strong>Embedded Applications</strong> &gt; <strong>Intelligent Provisioning</strong> &gt; <strong>Smart Storage Administrator</strong> (or <strong>RAID Configuration</strong>).</p>
+  </li>
+  <li>
+    <p>Select the HPE Smart Array where the boot drive is located.</p>
+  </li>
+  <li>
+    <p>Choose <strong>Set Bootable Logical Drive/Volume</strong>.</p>
+  </li>
+  <li>
+    <p>Select the boot drive (the drive with the smallest capacity).</p>
+  </li>
+</ol>
+
+<h3 id="boot-drive-location-gen10-only">Boot Drive Location (Gen10 Only)</h3>
+
+<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> This information applies to Gen10 platforms only, not Gen10 Plus.</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>SKU</th>
+      <th>Boot Drive Location</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>90T and 36T</td>
+      <td>3I:1:13</td>
+    </tr>
+    <tr>
+      <td>336T</td>
+      <td>2I:1:54</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="getting-help">Getting Help</h2>
+
+<p>If you encounter issues during the firmware update process, <a href="https://docs.qumulo.com/contacting-qumulo-care-team.html">contact the Qumulo Care Team</a>.</p>
+
+<p>For HPE-specific firmware questions, refer to the <a href="https://support.hpe.com/docs/display/public/a00sppdocen_US/spp/#/" class="no_icon">HPE SPP Documentation</a>.</p>
 
    
-    
-    
 
-    <strong>Table of Contents</strong>
+
+
+
+  
     
-               
-    
-               
-    
-               
-    
-               
-    
-               
       
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+  
+
+
 </div>
 
         </div>

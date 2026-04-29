@@ -498,7 +498,7 @@ fetch('/data/website.json')
   <li>
   
 
-  <a title="Getting Started" href="/hardware-guide/getting-started/" data-proofer-ignore>
+  <a title="Platforms" href="/hardware-guide/supermicro/supermicro-platforms/" data-proofer-ignore>
   
   
   
@@ -506,82 +506,7 @@ fetch('/data/website.json')
 
   
 
-  Getting Started
-  </a>
-
-      <ul>
-          
-          
-          
-          <li>
-            <a title="Safety Recommendations" href="/hardware-guide/getting-started/safety-recommendations.html">
-              Safety Recommendations
-              <span class="tag-container">
-              
-              
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-          
-          
-          <li>
-            <a title="Identifying NICs and Choosing Transceivers and Cables" href="/hardware-guide/getting-started/nics-transceivers-cables.html">
-              Identifying NICs and Choosing Transceivers and Cables
-              <span class="tag-container">
-              
-              
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-          
-          
-          <li>
-            <a title="Creating a USB Drive Installer" href="/hardware-guide/getting-started/creating-usb-drive-installer.html">
-              Creating a USB Drive Installer
-              <span class="tag-container">
-              
-              
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-      </ul>
-   </li>
-     
-      
-  
-
-  
-
-  
-
-  
-  <li>
-  
-
-  <a title="Supermicro Platforms" href="/hardware-guide/supermicro/supermicro-platforms/" data-proofer-ignore>
-  
-  
-  
-  
-
-  
-
-  Supermicro Platforms
+  Platforms
   </a>
 
       <ul>
@@ -696,7 +621,7 @@ fetch('/data/website.json')
   <li>
   
 
-  <a title="Supermicro Legacy" href="/hardware-guide/supermicro/supermicro-legacy/" data-proofer-ignore>
+  <a title="Legacy" href="/hardware-guide/supermicro/supermicro-legacy/" data-proofer-ignore>
   
   
   
@@ -704,7 +629,7 @@ fetch('/data/website.json')
 
   
 
-  Supermicro Legacy
+  Legacy
   </a>
 
       <ul>
@@ -743,7 +668,7 @@ fetch('/data/website.json')
 
 
 
-  <a href='/hardware-guide/supermicro/supermicro-platforms/'>Supermicro Platforms</a> <span>&rsaquo;</span>
+  <a href='/hardware-guide/supermicro/supermicro-platforms/'>Platforms</a> <span>&rsaquo;</span>
 
 
   Technical Specifications
@@ -801,113 +726,67 @@ $(document).ready(function() {
 <table>
   <thead>
     <tr>
-      <th>Model</th>
-      <th>Type</th>
+      <th>Platform</th>
       <th>Form Factor</th>
-      <th>Capacity</th>
+      <th>Available Configurations</th>
+      <th>Available Capacities</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>SF-46TB</td>
-      <td>All-NVMe U.2 Flash</td>
+      <td>Hyper A+ AS-1115HS-TNR</td>
       <td>1U</td>
-      <td>48 TB</td>
+      <td>All Flash</td>
+      <td>AF: 48 TB, 92 TB, 184 TB</td>
     </tr>
     <tr>
-      <td>SF-92TB</td>
-      <td>All-NVMe U.2 Flash</td>
-      <td>1U</td>
-      <td>92 TB</td>
+      <td>GrandTwin A+ AS-2115GT-HNTR</td>
+      <td>2U (4 nodes)</td>
+      <td>All Flash</td>
+      <td>AF: 62 TB, 185 TB, 369 TB</td>
     </tr>
     <tr>
-      <td>SF-184TB</td>
-      <td>All-NVMe U.2 Flash</td>
-      <td>1U</td>
-      <td>184 TB</td>
-    </tr>
-    <tr>
-      <td>GrandTwin 62T</td>
-      <td>All-NVMe U.3 Flash</td>
+      <td>Storage A+ ASG-2015S-E1CR24L</td>
       <td>2U</td>
-      <td>62 TB</td>
+      <td>Hybrid</td>
+      <td>H: 48 TB, 92 TB, 240 TB, 576 TB, 720 TB</td>
     </tr>
     <tr>
-      <td>GrandTwin 185T</td>
-      <td>All-NVMe U.3 Flash</td>
+      <td>Hyper A+ AS-2115HS-TNR</td>
       <td>2U</td>
-      <td>185 TB</td>
-    </tr>
-    <tr>
-      <td>GrandTwin 369T</td>
-      <td>All-NVMe U.3 Flash</td>
-      <td>2U</td>
-      <td>369 TB</td>
-    </tr>
-    <tr>
-      <td>SH-48TB</td>
-      <td>Hybrid (NVMe + HDD)</td>
-      <td>2U</td>
-      <td>48 TB</td>
-    </tr>
-    <tr>
-      <td>SH-96TB</td>
-      <td>Hybrid (NVMe + HDD)</td>
-      <td>2U</td>
-      <td>92 TB</td>
-    </tr>
-    <tr>
-      <td>SH-240TB</td>
-      <td>Hybrid (NVMe + HDD)</td>
-      <td>2U</td>
-      <td>240 TB</td>
-    </tr>
-    <tr>
-      <td>SH-576TB</td>
-      <td>Hybrid (NVMe + HDD)</td>
-      <td>2U</td>
-      <td>576 TB</td>
-    </tr>
-    <tr>
-      <td>SH-720TB</td>
-      <td>Hybrid (NVMe + HDD)</td>
-      <td>2U</td>
-      <td>720 TB</td>
-    </tr>
-    <tr>
-      <td>SHF-983T</td>
       <td>Hybrid All Flash</td>
-      <td>2U</td>
-      <td>983 TB</td>
+      <td>HAF: 983 TB</td>
     </tr>
     <tr>
-      <td>SHF-1475T</td>
-      <td>Hybrid All Flash</td>
+      <td>Storage A+ ASG-2115S-NE332R</td>
       <td>2U</td>
-      <td>1475 TB</td>
+      <td>Hybrid All Flash</td>
+      <td>HAF: 1475 TB</td>
     </tr>
   </tbody>
 </table>
+
+<p><strong>AF</strong> = All Flash, <strong>H</strong> = Hybrid, <strong>HAF</strong> = Hybrid All Flash</p>
 
 <h2 id="supermicro-server-documentation">Supermicro Server Documentation</h2>
 
 <p>For detailed hardware specifications, installation guides, and service manuals, refer to the official Supermicro documentation:</p>
 
-<h3 id="all-nvme-u2-flash-as-1115hs-tnr">All-NVMe U.2 Flash (AS-1115HS-TNR)</h3>
+<h3 id="all-flash-as-1115hs-tnr">All Flash (AS-1115HS-TNR)</h3>
 
 <ul>
   <li><a href="https://www.supermicro.com/en/products/system/hyper/1u/as-1115hs-tnr" class="no_icon">Supermicro AS-1115HS-TNR Product Page</a></li>
   <li><a href="https://www.supermicro.com/manuals/superserver/1U/MNL-2559.pdf" class="no_icon">Supermicro AS-1115HS-TNR User’s Manual</a></li>
 </ul>
 
-<h3 id="all-nvme-u3-flash-grandtwin-as-2115gt-hntr">All-NVMe U.3 Flash GrandTwin (AS-2115GT-HNTR)</h3>
+<h3 id="all-flash-grandtwin-as-2115gt-hntr">All Flash GrandTwin (AS-2115GT-HNTR)</h3>
 
 <ul>
   <li><a href="https://www.supermicro.com/en/products/system/grandtwin/2u/as-2115gt-hntr" class="no_icon">Supermicro AS-2115GT-HNTR Product Page</a></li>
   <li><a href="https://www.supermicro.com/manuals/superserver/2U/MNL-2612.pdf" class="no_icon">Supermicro AS-2115GT-HNTR User’s Manual</a></li>
 </ul>
 
-<h3 id="nvme--hdd-hybrid-asg-2015s-e1cr24l">NVMe / HDD Hybrid (ASG-2015S-E1CR24L)</h3>
+<h3 id="hybrid-asg-2015s-e1cr24l">Hybrid (ASG-2015S-E1CR24L)</h3>
 
 <ul>
   <li><a href="https://www.supermicro.com/en/products/system/storage/2u/asg-2015s-e1cr24l" class="no_icon">Supermicro ASG-2015S-E1CR24L Product Page</a></li>
@@ -938,17 +817,6 @@ $(document).ready(function() {
 
 
   
-    
-      
-        
-    
-      
-        
-    
-  
-    
-      
-        
     
       
         
