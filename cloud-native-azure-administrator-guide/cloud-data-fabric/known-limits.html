@@ -2524,7 +2524,7 @@ $(document).ready(function() {
 <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note</b><br />
 <ul>
   <li><em>Byte-range locks</em> let multiple processes lock specific portions of a file for granular access. Currently, byte-range locks can't span portals, so NFSv3 or NLM byte-range locks and NFSv4.1 byte-range locks function independently on the two clusters.</li>
-  <li><em>Share-mode locks</em> control access to an entire file for read, write, and delete operations.</li>
+  <li><em>Share-mode locks</em> control access to an entire file for read, write, and delete operations. In Qumulo Core 7.8.3.1 (and higher), share-mode locks <em>can</em> span portals but SMB byte-range locks function independently on the two clusters.</li>
 </ul>
 </div>
 
@@ -2574,7 +2574,7 @@ $(document).ready(function() {
 
 <h3 id="smb">SMB</h3>
 <ul>
-  <li><em>Share-mode locks</em> control access to an entire file for read, write, and delete operations.</li>
+  <li><em>Share-mode locks</em> control access to an entire file for read, write, and delete operations. In Qumulo Core 7.8.3.1 (and higher), share-mode locks <em>can</em> span portals but SMB byte-range locks function independently on the two clusters.</li>
 </ul>
 
    
