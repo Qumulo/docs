@@ -142,7 +142,7 @@ To ensure that Qumulo Core has full control over network configuration, disable 
 {{site.data.alerts.tip}}
 <ul>
   <li>Use the latest, official image available for your Linux distribution on the distribution's website or cloud marketplace.</li>
-  <li>In Qumulo Core releases prior to version 7.8.0.1, the default networking mode is Qumulo-Managed Networking. To run the installation with Host-Managed Networking, set the <code>QUMULO_NETWORK_MANAGED_BY_HOST</code> environment variable to <code>true</code>.</li>
+  <li>In Qumulo Core releases prior to version 7.8.0.2, the default networking mode is Qumulo-Managed Networking. To run the installation with Host-Managed Networking, set the <code>QUMULO_NETWORK_MANAGED_BY_HOST</code> environment variable to <code>true</code>.</li>
 </ul>
 {{site.data.alerts.end}}
 

@@ -8,6 +8,15 @@ For information about upgrade types for each release, see <a href='mode-referenc
 
 {% comment %}For boilerplate text, use {{page.varNoPublicChanges}}{% endcomment %}
 
+## Qumulo Core 7.8.3.1
+{{ nexusLink }}
+
+{% include important.html content="This release resolves a memory management issue that previously could cause a Qumulo node to go offline." %}
+
+* Added SMB share-mode lock functionality across Cloud Data Fabric (CDF) portals
+* Added the ability to use caching without requiring clients to match the throughput of any Qumulo cluster type&mdash;and the corresponding REST API endpoint and `qq` CLI command
+* Added the ability to restart the container on _every_ node (rather than only on the specified node) in a cluster&mdash;and the corresponding REST API endpoint and `qq` CLI commands
+
 ## Qumulo Core 7.8.2.1
 {{ nexusLink }}
 {% capture unexpRest %}This release resolves an issue that could cause nodes in clusters with specific configurations to restart unexpectedly.{% endcapture %}
@@ -30,13 +39,19 @@ For information about upgrade types for each release, see <a href='mode-referenc
 * Enabled **Try it out** functionality on the **APIs & Tools** Web UI page to work with `POST`, `PUT`, and `PATCH` requests after clicking **Use current session**
 * Deprecated some `/v1/portal` REST API endpoints and replaced others with `/v2/portal` endpoints that let you retrieve information about and create portals with multiple root directories
 
-## Qumulo Core 7.8.0.1 (Quarterly)
+## Qumulo Core 7.8.0.2 (Quarterly)
 {{ nexusLink }}
 {% capture inconTrigg %}This release resolves an issue where an uncommon operational sequence could trigger an internal encoding inconsistency.{% endcapture %}
-{% include important.html content=inconTrigg %}
+
+{{site.data.alerts.important}}
+<ul>
+  <li>This release improves the ability of appliance-image-based Qumulo Core clusters that use host-managed networking to withstand networking issues.</li>
+  <li>{{ inconTrigg }}</li>
+</ul>
+{{site.data.alerts.end}}
 
 * Improved the performance of Cloud Data Fabric (CDF) writes from the hub portal to a spoke portal
-* Added Host-Managed Networking Mode for all Qumulo Core Product Package installations of Qumulo Core 7.8.0.1 (and higher)
+* Added Host-Managed Networking Mode for all Qumulo Core Product Package installations of Qumulo Core 7.8.0.2 (and higher)
 * Added support for the `STREAMING-AWS4-HMAC-SHA256-PAYLOAD` and `STREAMING-AWS4-HMAC-SHA256-PAYLOAD-TRAILER` authentication types to the S3 API
 * Changed Authoritative DNS (QDNS) configuration to:
   * Serve `A` records for the first Qumulo network on the cluster's base domain
