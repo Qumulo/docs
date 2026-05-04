@@ -1,0 +1,1173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+<meta charset="utf-8">
+
+<!-- Headers -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta http-equiv="Content-Security-Policy" content="
+  default-src 'self'; 
+  script-src 'self' 'unsafe-inline'
+    https://cdn.datatables.net    
+    https://cdn.jsdelivr.net    
+    https://cdnjs.cloudflare.com
+    https://maxcdn.bootstrapcdn.com
+    https://www.googletagmanager.com;
+  connect-src 'self'
+    https://*.googletagmanager.com
+    https://*.google-analytics.com
+    https://api.vectara.io  
+    https://maxcdn.bootstrapcdn.com;
+  img-src 'self' data:
+    https://*.google-analytics.com
+    https://*.googletagmanager.com;
+  style-src 'self' 'unsafe-inline'
+    https://cdn.datatables.net
+    https://fonts.googleapis.com
+    https://maxcdn.bootstrapcdn.com; 
+  font-src 'self' data:
+    https://fonts.gstatic.com
+    https://maxcdn.bootstrapcdn.com; 
+  frame-src 
+    https://www.googletagmanager.com;
+  object-src 'none';
+">
+
+<!-- This replaces frame-ancestors 'self'; which is unsupported in meta tags. -->
+<script>
+  if (self !== top) {
+    top.location = self.location;
+  }
+</script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Replacing Hardware Components | Qumulo Documentation Portal</title>
+
+<link rel="canonical" href="https://docs.qumulo.com/hardware-guide/supermicro/supermicro-maintenance/replacing-hardware-components.html">
+
+<!-- Organization JSON-LD Schema -->
+<script>
+fetch('/data/organization.json')
+.then(response => response.text())
+.then(structuredDataText => {
+  const script = document.createElement('script');
+  script.setAttribute('type', 'application/ld+json');
+  script.textContent = structuredDataText;
+  document.head.appendChild(script);
+});    
+</script>
+
+<!-- Website JSON-LD Schema -->
+<script>
+fetch('/data/website.json')
+.then(response => response.text())
+.then(structuredDataText => {
+  const script = document.createElement('script');
+  script.setAttribute('type', 'application/ld+json');
+  script.textContent = structuredDataText;
+  document.head.appendChild(script);
+});    
+</script>
+
+<!-- BEGIN TO PREPARE WEBSITE RESOURCES -->  
+<!-- Preload from jsdelivr.net:
+     * Bootstrap stylesheet and script
+     * Font Awesome
+-->
+<link rel="preload" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" as="style" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="preload" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" as="script" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
+<link rel="preload" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" as="style">
+
+<!-- Preload web fonts from fonts.googleapis.com as stylesheets -->
+<link rel="preload" href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" as="style">
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap" as="style">
+
+<!-- Preload scripts from cloudflare.com
+     * jQuery
+     * jQuery Cookie
+     * Anchor JS
+-->
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" as="script">
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js" as="script">
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/5.0.0/anchor.min.js" as="script">
+
+<!-- Preload JavaScript resources -->
+<link rel="preload" href="/js/grt-cookie-consent.js" as="script">
+<link rel="preload" href="/js/googletag.js" as="script">
+<link rel="preload" href="https://www.googletagmanager.com/gtag/js?id=G-81J7N4LMSE" as="script">
+
+<!-- Prefetch DNS from CDNs -->
+<link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+<link rel="dns-prefetch" href="https://fonts.googleapis.com">
+<link rel="dns-prefetch" href="https://fonts.gstatic.com" crossorigin>
+<link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+<link rel="dns-prefetch" href="https://maxcdn.bootstrapcdn.com">
+
+<!-- Preconnect to CDNs -->
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdnjs.cloudflare.com">
+<link rel="preconnect" href="https://maxcdn.bootstrapcdn.com">
+
+<!-- BEGIN TO LOAD WEBSITE RESOURCES -->
+<!-- Load Bootstrap and Font Awesome -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!-- Load local stylesheets inline -->
+<link rel="stylesheet" href="/css/boxshadowproperties.css">
+<link rel="stylesheet" href="/css/customstyles.css">
+<link rel="stylesheet" href="/css/grt-cookies-consent.css">
+<link rel="stylesheet" href="/css/modern-business.css">
+<link rel="stylesheet" href="/css/syntax.css">
+<link rel="stylesheet" href="/css/theme-blue.css">
+
+<!-- Optimize web font load
+     * Loading Noto Color Emoji by using `link rel=stylesheet`
+       syntax causes multiple versions of the font to load.
+     * Additional instructions are necessary for Font Awesome
+       to load with the font-display attribute.
+-->
+<style>
+  @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap');
+  @font-face {
+    font-family:'FontAwesome';
+    src: url('/fonts/fontawesome-webfont.woff?v=4.7.0') format('woff'),
+         url('/fonts/fontawesome-webfont.woff2?v=4.7.0') format('woff2');
+    font-display: swap;
+  }
+</style>
+
+<!-- Web font fallbacks for older browsers -->
+<noscript>
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Montserrat&display=swap">
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap">
+</noscript>
+
+<!-- Define page metadata -->
+<meta name="description" content="This section explains how to safely replace hardware components on Supermicro platforms running Qumulo Core.">
+<meta name="apple-mobile-web-app-title" content="Qumulo Documentation Portal">
+<meta name="application-name" content="Qumulo Documentation Portal">
+<meta name="msapplication-TileColor" content="#2b5797">
+<meta name="msapplication-TileImage" content="/images/mstile-144x144.png">
+<meta name="msapplication-config" content="/images/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+<meta name="google-site-verification" content="_KoxPR0qF_ZeMyH6uWvlX84cFRujO_AZ1eq0eT9alAg">
+
+<!-- Open Graph Meta Tags -->
+<meta property="og:title" content="Replacing Hardware Components | Qumulo Documentation Portal">
+<meta property="og:url" content="https://docs.qumulo.com/hardware-guide/supermicro/supermicro-maintenance/replacing-hardware-components.html">
+<meta property="og:site_name" content="Qumulo Documentation Portal">
+<meta property="og:description" content="This section explains how to safely replace hardware components on Supermicro platforms running Qumulo Core.">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://docs.qumulo.com/images/docs.qumulo.com-qumulo-documentation-portal-630px.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<!-- Twitter Meta Tags -->
+<meta name="twitter:title" content="Replacing Hardware Components | Qumulo Documentation Portal">
+<meta property="twitter:url" content="https://docs.qumulo.com/hardware-guide/supermicro/supermicro-maintenance/replacing-hardware-components.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:description" content="This section explains how to safely replace hardware components on Supermicro platforms running Qumulo Core.">
+<meta name="twitter:image" content="https://docs.qumulo.com/images/docs.qumulo.com-qumulo-documentation-portal-418px.png">
+<meta property="twitter:domain" content="docs.qumulo.com">
+
+<!-- Define favicon variants -->
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="194x194" href="/images/favicon-194x194.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/images/android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+<link rel="manifest" href="/images/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+<!-- Define RSS feed -->
+<!-- TEMPORARILY DISABLED
+<link rel="alternate" href="https://docs.qumulo.com/feed.xml" type="application/rss+xml" title="">
+-->
+
+<!-- Load scripts from cloudflare.com -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+<!-- Load local scripts with dependencies on jQuery -->
+<script src="/js/jquery.navgoco.min.js"></script>
+
+<!-- Load scripts from jsdelivr.net and cloudflare.com -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/5.0.0/anchor.min.js"></script>
+
+<!-- Load local scripts with dependencies on Bootstrap and Anchor JS -->
+<script src="/js/toc.js"></script>
+<script src="/js/customscripts.js"></script>
+
+<!-- Fallback for IE9 -->
+<!--[if lt IE 9]>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<!-- Load Google Analytics and exclude GDPR countries from collection -->
+<script defer src="/js/googletag.js"></script>
+<script defer src="https://www.googletagmanager.com/gtag/js?id=G-81J7N4LMSE"></script>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
+    
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: true,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 400,
+                    easing: 'swing'
+                }
+            });
+
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    <script>
+        $(document).ready(function() {
+            // By default, Reading Mode is off and the button is dark.
+            if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
+                // On the landing page, hide the sidebar, make content full-width, and hide the toggle link.
+                $("#tg-sb-sidebar").hide();
+                $("#tg-sb-content").removeClass('col-md-9').addClass('col-md-12');
+                $("#tg-sb-link").hide();
+                $(".projectTitle").hide();
+                $(".navbar-brand").hide();
+                return;
+            }
+
+            if (Cookies.get('reading_mode') == '1' ) {
+                $("#tg-sb-sidebar").toggle();
+                $("#tg-sb-content").toggleClass('col-md-9');
+                $("#tg-sb-content").toggleClass('col-md-12');
+                $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                $("#tg-sb-icon").toggleClass('fa-toggle-off');                   
+            }
+            
+            $("#tg-sb-link").click(function() {
+                if (Cookies.get('reading_mode') == '1' ) {
+                    // If the Reading Mode is on, remove the cookie.
+                    Cookies.remove('reading_mode');
+                } else {
+                    // If the Reading Mode is on, place the cookie.
+                    Cookies.set('reading_mode', '1');
+                }
+                
+                // Toggle the Reading Mode and change the button color.
+                $("#tg-sb-sidebar").toggle();
+                $("#tg-sb-content").toggleClass('col-md-9');
+                $("#tg-sb-content").toggleClass('col-md-12');
+                $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                $("#tg-sb-icon").toggleClass('fa-toggle-off');
+            });
+        });
+    </script>
+    
+
+</head>
+<body>
+<!-- ==================== TOPNAV START ==================== -->
+<div class="above-header"></div>
+
+<div class="header-container">
+<header class="header">
+  <div class="logo">
+    <a class="header-link" href="https://docs.qumulo.com/">
+      <picture>
+	<source type="image/webp" srcset="/images/qumulo-logo.webp">
+	<source type="image/png" srcset="/images/qumulo-logo.png">	      
+        <img class="header-logo" src="/images/qumulo-logo.png" alt="Qumulo Logo">
+      </picture>
+    </a>
+  </div>
+
+  <div class="nav-wrapper">
+    <span class="icon-menu"></span>
+    <nav class="user-nav" id="user-nav">
+      <div class="qf2header">
+        <div class="flex-links">
+          <a class="header-link header-right" href="https://qumulo.com/company/about-qumulo/" target="_blank">About Qumulo</a>
+          <a class="header-link header-right" href="https://care.qumulo.com/s/knowledge" target="_blank">Knowledge Base</a>
+          <a class="header-link header-right" href="https://nexus.qumulo.com/" target="_blank">Nexus <span class="emoji">🔒</span></a>
+        </div>
+        <div class="contact-links">
+          <a class="btn-contact no_icon" href="https://qumulocare.slack.com/">Send Slack Message</a>
+          <a class="btn-contact no_icon" href="https://care.qumulo.com/s/submit-a-case">Open a Case</a>
+        </div>
+      </div>
+    </nav>
+</div>
+</header>
+</div>
+<div class="below-header navbar navbar-inverse navbar-static-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/index.html">&nbsp;<span class="projectTitle"> Qumulo Documentation Portal</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- toggle sidebar button -->
+                <li><a id="tg-sb-link" href="#" data-proofer-ignore><i id="tg-sb-icon" class="fa fa-toggle-off"></i> Toggle Reading Mode</a></li>
+                <li><a id="view-favorites" href="/favorites.html" data-proofer-ignore><i id="fav-nav-icon" class="fa fa-star-o"></i> View Favorites</a></li>
+                <!-- entries without drop-downs appear here -->
+
+
+
+
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+                <li>
+                  <div id="search-demo-container">
+                    <div class="parent">
+                      <div class="search_container">
+                        <div id="search-widget">
+                          <div class="vectara__search_Box">
+                            <form id="vectara__search_form" action="/search.html" method="GET">
+                              <input class="vectara__search_field" name="query" id="search-input" placeholder="What would you like to know?" autofocus>
+                              <button class="vectara__logo_btn">
+                                <img class="vectara__search_logo" width="26" height="28" src="/images/magnifying-glass.png" alt="Search">
+                              </button>
+                            </form>
+                          </div>
+                        </div>
+                        <ul class="tags" id="widget-tags"></ul>
+                      </div>
+                    </div>
+                  </div>
+                  <ul id="list"></ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+        <!-- /.container -->
+</div>
+<!-- ==================== TOPNAV END ==================== -->
+
+<!-- Page Content -->
+
+<div class="container">
+  <main id="main">
+    <!-- Content Row -->
+    <div class="row">
+        
+        
+            <!-- Sidebar Column -->
+            <div class="col-md-3" id="tg-sb-sidebar">
+                
+
+<div class="nav nav-buttons">
+  
+    <a target="_blank" rel="noopener" href="https://github.com/qumulo/docs/blob/mainline/hardware-guide/supermicro/supermicro-maintenance/replacing-hardware-components.md" class="btn btn-default githubEditButton no_icon" role="button" data-proofer-ignore><span class="fa fa-github fa-lg"></span> Edit on GitHub</a>
+  
+
+  
+    <a target="_blank" rel="noopener" href="/pdf/supermicro-hardware-guide.pdf" class="btn btn-default downloadPDFButton no_icon" role="button"><span class="glyphicon glyphicon-file" aria-hidden="true"></span> Download PDF</a>
+  
+</div>
+
+<ul id="mysidebar" class="nav">
+  <li class="sidebarTitle"> </li>
+  
+  
+  
+      
+  
+
+  
+
+  
+
+  
+  <li>
+  
+
+  <a title="Supermicro Hardware Guide" href="" data-proofer-ignore>
+  
+  
+  
+  
+
+  
+
+  Supermicro Hardware Guide
+  </a>
+
+      <ul>
+          
+          
+          
+          <li>
+            <a title="Documentation Home" href="/index.html">
+              Documentation Home
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Guide Table of Contents" href="/hardware-guide/supermicro/">
+              Guide Table of Contents
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Contacting the Qumulo Care Team" href="/contacting-qumulo-care-team.html">
+              Contacting the Qumulo Care Team
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+
+  
+
+  
+
+  
+  <li>
+  
+
+  <a title="Maintenance" href="/hardware-guide/supermicro/supermicro-maintenance/" data-proofer-ignore>
+  
+  
+  
+  
+
+  
+
+  Maintenance
+  </a>
+
+      <ul>
+          
+          
+          
+          <li class="active">
+            <a title="Replacing Hardware Components" href="/hardware-guide/supermicro/supermicro-maintenance/replacing-hardware-components.html">
+              Replacing Hardware Components
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Boot Drive Replacement" href="/hardware-guide/supermicro/supermicro-maintenance/boot-drive-replacement.html">
+              Boot Drive Replacement
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Configuring Out-of-Band Management" href="/hardware-guide/supermicro/supermicro-maintenance/configuring-out-of-band-management.html">
+              Configuring Out-of-Band Management
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Panel LEDs" href="/hardware-guide/supermicro/supermicro-maintenance/panel-leds.html">
+              Panel LEDs
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="Legacy" href="/hardware-guide/supermicro/supermicro-legacy/">
+              Legacy
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+
+  
+
+  
+
+  
+  <li>
+  
+
+  <a title="Platform Information" href="/hardware-guide/supermicro/supermicro-platforms/" data-proofer-ignore>
+  
+  
+  
+  
+
+  
+
+  Platform Information
+  </a>
+
+      <ul>
+          
+      </ul>
+   </li>
+     
+      
+      
+      
+</ul>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').addClass("active");</script>
+
+            </div>
+            
+        
+
+        <!-- Content Column -->
+        <div class="col-md-9" id="tg-sb-content">
+            
+
+
+
+
+
+
+
+<nav>
+<div class="breadcrumb-line">
+  <a href='/'>Home</a> <span>&rsaquo;</span> 
+
+
+  <a href='/hardware-guide/supermicro/'>Supermicro Hardware Guide</a> <span>&rsaquo;</span>
+
+
+
+  <a href='/hardware-guide/supermicro/supermicro-maintenance/'>Maintenance</a> <span>&rsaquo;</span>
+
+
+  Replacing Hardware Components
+  </div>
+</nav>
+
+
+            
+
+<div class="post-header">
+   <div class="star" id="page-star" title="Save to Favorites">&#9733;</div>
+   <h1 class="post-title-main">Replacing Hardware Components</h1>
+</div>
+
+
+
+<div class="post-content">
+
+    
+    
+<!-- Create the automatic mini-TOC on a page (unless disabled with #toc{display:none;}.
+     Note: If you use HTML tags, add an ID to the heading so that it appears in the mini-TOC.
+-->
+
+<script>
+$(document).ready(function() {
+    $('#toc').toc({
+      minimumHeaders: 2,
+      listType: 'ul',
+      showSpeed: 0,
+      headers: 'h2'
+    });
+
+    /* Account for the space that the floating toolbar takes up. */
+    $('#toc').on('click', 'a', function() {
+      var target = $(this.getAttribute('href')), 
+          scroll_target = target.offset().top
+          $(window).scrollTop(scroll_target - 10);
+      return false
+    });
+});
+</script>
+
+
+<div id="toc"></div>
+
+    
+
+   <p>This section explains how to safely replace hardware components on Supermicro platforms running Qumulo Core.</p>
+   
+     <p>This section provides guidance for safely replacing hardware components on Supermicro platforms running Qumulo Core. It covers procedures for both hot-swappable components (drives, power supplies) and components that require the node to be taken offline (DIMMs, fans, CPUs, motherboards, NICs).</p>
+
+<h2 id="component-replacement-overview">Component Replacement Overview</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Component</th>
+      <th>Hot-Swappable</th>
+      <th>Node Offline Required</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Drives (NVMe, HDD)</td>
+      <td>Yes</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td>Power Supplies</td>
+      <td>Yes</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td>Fans (most models)</td>
+      <td>Yes</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td>DIMMs (Memory)</td>
+      <td>No</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td>CPUs</td>
+      <td>No</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td>Motherboard</td>
+      <td>No</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td>NICs</td>
+      <td>No</td>
+      <td>Yes</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
+For components that require the node to be taken offline, you must follow the <b>Components Requiring Node Offline</b> procedure below to ensure data protection.
+</div>
+
+<h2 id="hot-swappable-components">Hot-Swappable Components</h2>
+
+<h3 id="drive-replacement">Drive Replacement</h3>
+
+<p>Drives in Qumulo clusters are hot-swappable. Qumulo Core automatically handles drive removal and reintegration.</p>
+
+<ol>
+  <li>
+    <p>Identify the failed drive using the Qumulo Web UI or CLI:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq cluster_slots
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Verify cluster protection before removing the drive:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq protection_status_get
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Locate the physical drive in the chassis. For your platform’s specific bay layout, consult the Supermicro User’s Manual linked from <a href="/hardware-guide/supermicro/supermicro-platforms/">Platform Information</a>.</p>
+  </li>
+  <li>
+    <p>Verify the serial number matches the failed drive before removal.</p>
+  </li>
+  <li>Remove the failed drive:
+    <ul>
+      <li>Press the release latch on the drive carrier.</li>
+      <li>Pull the drive carrier straight out.</li>
+      <li>Remove the drive from the carrier.</li>
+    </ul>
+  </li>
+  <li>Install the replacement drive:
+    <ul>
+      <li>Mount the new drive in the carrier.</li>
+      <li>Insert the carrier into the bay until it clicks.</li>
+      <li>Qumulo Core automatically detects and incorporates the new drive.</li>
+    </ul>
+  </li>
+  <li>Verify the new drive appears healthy in the Qumulo Web UI or CLI.</li>
+</ol>
+
+<h4 id="platform-specific-notes">Platform-Specific Notes</h4>
+
+<h5 id="grandtwin-as-2115gt-hntr">GrandTwin (AS-2115GT-HNTR)</h5>
+
+<p>Each node in the GrandTwin chassis has dedicated drive bays. Ensure you identify the correct node before replacing drives.</p>
+
+<h5 id="hybrid-models-sh-series">Hybrid Models (SH-series)</h5>
+
+<p>The SH-series models have separate NVMe cache bays and HDD storage bays. Verify you are replacing the correct drive type.</p>
+
+<h3 id="power-supply-replacement">Power Supply Replacement</h3>
+
+<p>All Supermicro platforms use redundant power supplies, allowing hot-swap replacement.</p>
+
+<ol>
+  <li>Verify redundancy: ensure both PSUs are connected and at least one is functioning.</li>
+  <li>Identify the failed PSU by checking the PSU LED (amber indicates failure).</li>
+  <li>Remove the failed PSU:
+    <ul>
+      <li>Disconnect the power cord.</li>
+      <li>Press the release latch.</li>
+      <li>Slide the PSU out of the chassis.</li>
+    </ul>
+  </li>
+  <li>Install the replacement PSU:
+    <ul>
+      <li>Slide the new PSU into the bay until it clicks.</li>
+      <li>Connect the power cord.</li>
+      <li>Verify the PSU LED shows green.</li>
+    </ul>
+  </li>
+</ol>
+
+<hr />
+
+<h2 id="components-requiring-node-offline">Components Requiring Node Offline</h2>
+
+<p>For DIMM, CPU, motherboard, or NIC replacements, the node must be safely taken offline using the following procedure.</p>
+
+<h3 id="before-you-begin">Before You Begin</h3>
+
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
+Before taking any node offline, you <b>must</b> verify that cluster protection allows for a node to be removed. Failing to verify this could result in data loss or cluster unavailability.
+</div>
+
+<h3 id="step-1-verify-cluster-protection-status">Step 1: Verify Cluster Protection Status</h3>
+
+<p>You can verify cluster protection status using either the Web UI or the CLI.</p>
+
+<h4 id="using-the-qumulo-web-ui">Using the Qumulo Web UI</h4>
+
+<ol>
+  <li>Log in to the Qumulo Web UI.</li>
+  <li>Navigate to <strong>Cluster</strong> &gt; <strong>Cluster Overview</strong>.</li>
+  <li>Under <strong>Data Protection</strong>, verify that the cluster can tolerate a node failure.</li>
+</ol>
+
+<h4 id="using-the-qq-cli">Using the qq CLI</h4>
+
+<p>SSH into any node and run:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq protection_status_get
+</code></pre></div></div>
+
+<p>You will see output similar to:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"remaining_drive_failures"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"remaining_node_failures"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
+If <code>remaining_node_failures</code> is <b>greater than or equal to 1</b>, you can safely proceed with taking a node offline.
+
+If <code>remaining_node_failures</code> is <b>0</b>, do <b>not</b> proceed and <a href="https://docs.qumulo.com/contacting-qumulo-care-team.html">contact the Qumulo Care Team</a> for guidance.
+</div>
+
+<h3 id="step-2-recuse-the-node">Step 2: Recuse the Node</h3>
+
+<p>Recusing a node safely removes it from the cluster quorum, allowing data protection mechanisms to account for the missing node.</p>
+
+<ol>
+  <li>
+    <p>SSH into the node that requires maintenance.</p>
+  </li>
+  <li>
+    <p>Run the recuse command:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/opt/qumulo/recuse_node.py <span class="nt">--reason</span> <span class="s2">"Component replacement"</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>After running this command, a red banner appears in the Qumulo Web UI stating:</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Unable to communicate with node X
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>This confirms the node was successfully recused from the cluster.</p>
+  </li>
+</ol>
+
+<h3 id="step-3-power-off-the-node">Step 3: Power Off the Node</h3>
+
+<p>After the node is recused, power it off:</p>
+
+<h4 id="using-ipmi">Using IPMI</h4>
+
+<ol>
+  <li>Log in to the node’s IPMI interface.</li>
+  <li>Navigate to <strong>Remote Control</strong> &gt; <strong>Power Control</strong>.</li>
+  <li>Click <strong>Power Off</strong>.</li>
+</ol>
+
+<h4 id="using-the-cli">Using the CLI</h4>
+
+<p>From another node or management system:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ipmitool <span class="nt">-I</span> lanplus <span class="nt">-H</span> &lt;IPMI-IP&gt; <span class="nt">-U</span> &lt;your_user&gt; <span class="nt">-P</span> &lt;password&gt; power off
+</code></pre></div></div>
+
+<h4 id="using-the-physical-power-button">Using the Physical Power Button</h4>
+
+<p>Press and hold the power button on the front panel until the server powers off.</p>
+
+<h3 id="step-4-replace-the-component">Step 4: Replace the Component</h3>
+
+<p>Perform the hardware replacement according to your hardware vendor’s documentation:</p>
+
+<ul>
+  <li><a href="https://www.supermicro.com/manuals/superserver/1U/MNL-2559.pdf" class="no_icon">AS-1115HS-TNR User’s Manual</a> (SF-46TB, SF-92TB, SF-184TB)</li>
+  <li><a href="https://www.supermicro.com/manuals/superserver/2U/MNL-2612.pdf" class="no_icon">AS-2115GT-HNTR User’s Manual</a> (GrandTwin 62T, 185T, 369T)</li>
+  <li><a href="https://www.supermicro.com/manuals/superserver/2U/MNL-2619.pdf" class="no_icon">ASG-2015S-E1CR24L User’s Manual</a> (SH-48TB, SH-96TB, SH-240TB, SH-576TB, SH-720TB)</li>
+  <li><a href="https://www.supermicro.com/manuals/superserver/2U/MNL-2560.pdf" class="no_icon">AS-2115HS-TNR User’s Manual</a> (SHF-983T)</li>
+  <li><a href="https://www.supermicro.com/manuals/superserver/2U/MNL-2620.pdf" class="no_icon">ASG-2115S-NE332R User’s Manual</a> (SHF-1475T)</li>
+</ul>
+
+<h4 id="dimm-replacement-notes">DIMM Replacement Notes</h4>
+
+<p>When replacing DIMMs:</p>
+
+<ol>
+  <li>Follow your vendor’s DIMM population guidelines.</li>
+  <li>Ensure replacement DIMMs match the specifications of the original.</li>
+  <li>Use proper ESD precautions.</li>
+</ol>
+
+<h3 id="step-5-power-on-the-node">Step 5: Power On the Node</h3>
+
+<p>After completing the component replacement:</p>
+
+<ol>
+  <li>Power on the node using the power button, IPMI, or IPMI command.</li>
+  <li>Wait for the node to complete POST and boot Qumulo Core.</li>
+  <li>Verify the component is functioning:
+    <ul>
+      <li>For DIMMs: Check total memory in IPMI or using <code class="language-plaintext highlighter-rouge">qq node_status</code></li>
+      <li>For NICs: Check network connectivity</li>
+      <li>For fans: Check IPMI sensor readings</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="step-6-reintroduce-the-node">Step 6: Reintroduce the Node</h3>
+
+<p>After verifying the component replacement was successful, reintroduce the node to the cluster:</p>
+
+<ol>
+  <li>
+    <p>SSH into the node that was serviced.</p>
+  </li>
+  <li>
+    <p>Run the reintroduce command:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/opt/qumulo/sbin/reintroduce_node.sh
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Monitor the Qumulo Web UI to verify:</p>
+    <ul>
+      <li>The red banner disappears</li>
+      <li>The node appears healthy in the cluster overview</li>
+      <li>Data reprotection begins (if applicable)</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="step-7-verify-cluster-health">Step 7: Verify Cluster Health</h3>
+
+<p>After reintroduction:</p>
+
+<ol>
+  <li>
+    <p>Check cluster protection status:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq protection_status_get
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Verify all nodes are healthy:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq cluster_slots
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Monitor the Web UI for any alerts or warnings.</p>
+  </li>
+</ol>
+
+<hr />
+
+<h2 id="getting-help">Getting Help</h2>
+
+<p>If you have any questions or encounter issues during component replacement, contact <a href="https://docs.qumulo.com/contacting-qumulo-care-team.html">contact the Qumulo Care Team</a> through Slack, email, or by phone.</p>
+
+<p>When contacting support, provide:</p>
+
+<ul>
+  <li>Cluster name and node serial number</li>
+  <li>Description of the issue</li>
+  <li>Error messages from the Qumulo Web UI or CLI</li>
+  <li>IPMI event logs (if available)</li>
+</ul>
+
+   
+
+
+
+
+  
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+      
+<h2 id="related-topics" class="clickable-header top-level-header">Related Topics</h2>
+<ul id="related-topics-list">
+        
+        
+          
+            
+            
+          
+            
+            
+  <li><a href="/hardware-guide/supermicro/supermicro-maintenance/boot-drive-replacement.html">Boot Drive Replacement</a></li>
+            
+          
+            
+            
+  <li><a href="/hardware-guide/supermicro/supermicro-maintenance/configuring-out-of-band-management.html">Configuring Out-of-Band Management</a></li>
+            
+          
+            
+            
+  <li><a href="/hardware-guide/supermicro/supermicro-maintenance/panel-leds.html">Panel LEDs</a></li>
+            
+          
+            
+            
+  <li><a href="/hardware-guide/supermicro/supermicro-legacy/">Legacy</a></li>
+            
+          
+        
+</ul>
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+  
+
+
+</div>
+
+        </div>
+    <!-- /.row -->
+    </div>
+  <!-- /main -->
+  </main>
+<!-- /.container -->
+</div>
+
+
+
+<footer>
+  <div class="footer">
+    <div class="footer-text">
+      Copyright &copy; 2021&ndash;2026 Qumulo, Inc.<br>
+
+      <a class="no_icon footer_link" href="https://qumulo.com/legal/privacy-policy/">Privacy Policy</a> &VerticalSeparator; <a class="no_icon footer_link" href="https://qumulo.com/legal/cookie-policy/">Cookie Policy</a> &VerticalSeparator; <a class="no_icon footer_link" href="https://qumulo.com/terms-hub/">Terms Hub</a><br>
+      <p>
+        <picture>
+          <source type="image/webp" srcset="/images/qumulo-logo-inverse.webp">
+          <source type="image/png" srcset="/images/qumulo-logo-inverse.png">       
+          <img class="footer-logo" src="/images/qumulo-logo-inverse.png" alt="Qumulo Logo">
+        </picture>
+      </p>
+    </div>
+    <div class="footer-grumpquats">
+      <picture>
+        <source type="image/webp" srcset="/images/grumpquats.webp">
+        <source type="image/png" srcset="/images/grumpquats.png"> 
+        <img src="/images/grumpquats.png" class="three-grumpquats" alt="Three Grumpquats">
+      </picture>
+    </div>
+  </div>
+
+  <!-- Cookie consent Banner-->	
+  <div id="cookie-banner" class="grt-cookie">
+    <div class="grt-cookies-msg">
+      <p>We use cookies to improve your user experience and remember your preferences on this website. If you continue to use this website, we will assume that you accept and understand our <a class="no_icon" href="https://qumulo.com/legal/privacy-policy">Privacy Policy</a>, <a class="no_icon" href="https://qumulo.com/legal/cookie-policy/">Cookie Policy</a>, and <a class="no_icon" href="https://qumulo.com/terms-hub/">Terms Hub</a>.</p>
+    </div>
+    <span class="grt-cookie-button">Accept</span>
+  </div>
+
+  <!-- Local scripts -->
+  <!-- Cookie consent banner -->
+  <script src="/js/grt-cookie-consent.js"></script>
+  <script>$(".grt-cookie").grtCookie();</script>
+
+  <!-- Send Feedback button -->
+  <script src="/js/send-feedback.js"></script>
+
+  <!-- UI enhancements -->
+  <script src="/js/expand-collapse.js"></script>
+  <script src="/js/check-favorites.js"></script>
+  <script src="/js/copy-code.js"></script>
+
+  
+
+  
+
+  
+
+  
+</footer>
+
+
+</body>
+
+</html>

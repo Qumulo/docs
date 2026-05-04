@@ -766,8 +766,8 @@ $(document).ready(function() {
     </tr>
     <tr>
       <td>Fans</td>
-      <td>Yes (but prompt replacement required)</td>
       <td>No</td>
+      <td>Yes</td>
     </tr>
     <tr>
       <td>DIMMs (Memory)</td>
@@ -793,7 +793,7 @@ $(document).ready(function() {
 </table>
 
 <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
-For components that require the node to be taken offline, you must follow the **Node Recuse and Reintroduction** procedure below to ensure data protection.
+For components that require the node to be taken offline, you must follow the <b>Components Requiring Node Offline</b> procedure below to ensure data protection.
 </div>
 
 <hr />
@@ -837,20 +837,6 @@ For components that require the node to be taken offline, you must follow the **
   <li>Verify the server has redundant power supplies and the remaining PSU is functioning.</li>
   <li>Remove the failed power supply.</li>
   <li>Insert the replacement power supply.</li>
-</ol>
-
-<h3 id="fan-replacement">Fan Replacement</h3>
-
-<p>Fans are hot-swappable but require prompt replacement to prevent thermal issues.</p>
-
-<div class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> <b>Caution</b><br />
-When replacing fans, complete the replacement within 60 seconds to prevent the server from overheating and shutting down automatically.
-</div>
-
-<ol>
-  <li>Identify the failed fan using your out-of-band management interface or front panel LEDs.</li>
-  <li>Have the replacement fan ready before beginning.</li>
-  <li>Follow the fan replacement procedure in your hardware vendor’s documentation.</li>
 </ol>
 
 <hr />
@@ -932,6 +918,12 @@ When replacing fans, complete the replacement within 60 seconds to prevent the s
 
 <hr />
 
+<h2 id="fan-replacement">Fan Replacement</h2>
+
+<p>Fan replacement requires taking the node offline. Before powering off, identify the failed fan using your out-of-band management interface or the front panel LEDs, and follow the <a href="#components-requiring-node-offline">Components Requiring Node Offline</a> procedure below.</p>
+
+<hr />
+
 <h2 id="components-requiring-node-offline">Components Requiring Node Offline</h2>
 
 <p>For DIMM, CPU, motherboard, or NIC replacements, the node must be safely taken offline using the following procedure.</p>
@@ -939,7 +931,7 @@ When replacing fans, complete the replacement within 60 seconds to prevent the s
 <h3 id="before-you-begin">Before You Begin</h3>
 
 <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
-Before taking any node offline, you **must** verify that cluster protection allows for a node to be removed. Failing to verify this could result in data loss or cluster unavailability.
+Before taking any node offline, you <b>must</b> verify that cluster protection allows for a node to be removed. Failing to verify this could result in data loss or cluster unavailability.
 </div>
 
 <h3 id="step-1-verify-cluster-protection-status">Step 1: Verify Cluster Protection Status</h3>
@@ -970,9 +962,9 @@ Before taking any node offline, you **must** verify that cluster protection allo
 </span></code></pre></div></div>
 
 <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
-If `remaining_node_failures` is **greater than or equal to 1**, you can safely proceed with taking a node offline.
+If <code>remaining_node_failures</code> is <b>greater than or equal to 1</b>, you can safely proceed with taking a node offline.
 
-If `remaining_node_failures` is **0**, do **not** proceed. Contact <a href="https://docs.qumulo.com/contacting-qumulo-care-team.html">contact the Qumulo Care Team</a> for guidance.
+If <code>remaining_node_failures</code> is <b>0</b>, do <b>not</b> proceed and <a href="https://docs.qumulo.com/contacting-qumulo-care-team.html">contact the Qumulo Care Team</a> for guidance.
 </div>
 
 <h3 id="step-2-recuse-the-node">Step 2: Recuse the Node</h3>
@@ -1002,12 +994,12 @@ If `remaining_node_failures` is **0**, do **not** proceed. Contact <a href="http
 
 <h3 id="step-3-power-off-the-node">Step 3: Power Off the Node</h3>
 
-<p>After the node is recused, power it off using one of the following methods:</p>
+<p>After the node is recused, power it off:</p>
 
 <h4 id="using-the-out-of-band-management-interface">Using the Out-of-Band Management Interface</h4>
 
 <ol>
-  <li>Log in to the node’s IPMI or iLO interface.</li>
+  <li>Log in to the node’s the Out-of-Band Management Interface interface.</li>
   <li>Navigate to the power controls.</li>
   <li>Click <strong>Power Off</strong>.</li>
 </ol>
@@ -1016,7 +1008,7 @@ If `remaining_node_failures` is **0**, do **not** proceed. Contact <a href="http
 
 <p>From another node or management system:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ipmitool <span class="nt">-I</span> lanplus <span class="nt">-H</span> &lt;MANAGEMENT-IP&gt; <span class="nt">-U</span> admin <span class="nt">-P</span> &lt;password&gt; power off
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ipmitool <span class="nt">-I</span> lanplus <span class="nt">-H</span> &lt;MANAGEMENT-IP&gt; <span class="nt">-U</span> &lt;your_user&gt; <span class="nt">-P</span> &lt;password&gt; power off
 </code></pre></div></div>
 
 <h4 id="using-the-physical-power-button">Using the Physical Power Button</h4>
@@ -1025,7 +1017,9 @@ If `remaining_node_failures` is **0**, do **not** proceed. Contact <a href="http
 
 <h3 id="step-4-replace-the-component">Step 4: Replace the Component</h3>
 
-<p>Perform the hardware replacement according to your hardware vendor’s documentation.</p>
+<p>Perform the hardware replacement according to your hardware vendor’s documentation:</p>
+
+<p>Refer to your hardware vendor’s documentation for detailed component-replacement procedures.</p>
 
 <h4 id="dimm-replacement-notes">DIMM Replacement Notes</h4>
 
@@ -1042,13 +1036,13 @@ If `remaining_node_failures` is **0**, do **not** proceed. Contact <a href="http
 <p>After completing the component replacement:</p>
 
 <ol>
-  <li>Power on the node using the power button, out-of-band management interface, or IPMI command.</li>
+  <li>Power on the node using the power button, the Out-of-Band Management Interface, or IPMI command.</li>
   <li>Wait for the node to complete POST and boot Qumulo Core.</li>
   <li>Verify the component is functioning:
     <ul>
-      <li>For DIMMs: Check total memory in your management interface or using <code class="language-plaintext highlighter-rouge">qq node_status</code></li>
+      <li>For DIMMs: Check total memory in the Out-of-Band Management Interface or using <code class="language-plaintext highlighter-rouge">qq node_status</code></li>
       <li>For NICs: Check network connectivity</li>
-      <li>For fans: Check sensor readings in your management interface</li>
+      <li>For fans: Check the Out-of-Band Management Interface sensor readings</li>
     </ul>
   </li>
 </ol>
@@ -1091,7 +1085,7 @@ If `remaining_node_failures` is **0**, do **not** proceed. Contact <a href="http
   <li>
     <p>Verify all nodes are healthy:</p>
 
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq cluster_slots_status
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq cluster_slots
 </code></pre></div>    </div>
   </li>
   <li>
