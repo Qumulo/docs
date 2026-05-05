@@ -43,7 +43,7 @@
 </script>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>C-72T and C-168T | Qumulo Documentation Portal</title>
+<title>C-72T, C-168T, K-144T, and K-168T | Qumulo Documentation Portal</title>
 
 <link rel="canonical" href="https://docs.qumulo.com/hardware-guide/arrow/c-72t-c-168t/">
 
@@ -149,7 +149,7 @@ fetch('/data/website.json')
 </noscript>
 
 <!-- Define page metadata -->
-<meta name="description" content="">
+<meta name="description" content="Drive bay mapping for the C-72T, C-168T, K-144T, and K-168T legacy platforms.">
 <meta name="apple-mobile-web-app-title" content="Qumulo Documentation Portal">
 <meta name="application-name" content="Qumulo Documentation Portal">
 <meta name="msapplication-TileColor" content="#2b5797">
@@ -159,10 +159,10 @@ fetch('/data/website.json')
 <meta name="google-site-verification" content="_KoxPR0qF_ZeMyH6uWvlX84cFRujO_AZ1eq0eT9alAg">
 
 <!-- Open Graph Meta Tags -->
-<meta property="og:title" content="C-72T and C-168T | Qumulo Documentation Portal">
+<meta property="og:title" content="C-72T, C-168T, K-144T, and K-168T | Qumulo Documentation Portal">
 <meta property="og:url" content="https://docs.qumulo.com/hardware-guide/arrow/c-72t-c-168t/">
 <meta property="og:site_name" content="Qumulo Documentation Portal">
-<meta property="og:description" content="">
+<meta property="og:description" content="Drive bay mapping for the C-72T, C-168T, K-144T, and K-168T legacy platforms.">
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://docs.qumulo.com/images/docs.qumulo.com-qumulo-documentation-portal-630px.png">
@@ -170,10 +170,10 @@ fetch('/data/website.json')
 <meta property="og:image:height" content="630">
 
 <!-- Twitter Meta Tags -->
-<meta name="twitter:title" content="C-72T and C-168T | Qumulo Documentation Portal">
+<meta name="twitter:title" content="C-72T, C-168T, K-144T, and K-168T | Qumulo Documentation Portal">
 <meta property="twitter:url" content="https://docs.qumulo.com/hardware-guide/arrow/c-72t-c-168t/">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:description" content="">
+<meta name="twitter:description" content="Drive bay mapping for the C-72T, C-168T, K-144T, and K-168T legacy platforms.">
 <meta name="twitter:image" content="https://docs.qumulo.com/images/docs.qumulo.com-qumulo-documentation-portal-418px.png">
 <meta property="twitter:domain" content="docs.qumulo.com">
 
@@ -653,13 +653,13 @@ fetch('/data/website.json')
 
 
 
-  C-72T and C-168T
+  C-72T, C-168T, K-144T, and K-168T
   </div>
 </nav>
 
 
             <div class="post-header">
-   <h1 class="post-title-main">C-72T and C-168T</h1>
+   <h1 class="post-title-main">C-72T, C-168T, K-144T, and K-168T</h1>
 </div>
 
 <div class="post-content">
@@ -693,7 +693,144 @@ $(document).ready(function() {
 
     
 
-    <div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> The C-72T, C-168T, K-168T, and K-144T platforms will reach their End of Platform Support (EoPS) on January 30, 2028.</div>
+    <div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> The C-72T, C-168T, K-144T, and K-168T platforms reached their End of Availability on January 30, 2023. End of Platform Support (EoPS) is January 30, 2028.</div>
+
+<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> This page is reference material (drive bay layout) for the C-72T, C-168T, K-144T, and K-168T platforms. For replacement procedures, see <a href="/hardware-guide/arrow/arrow-maintenance/replacing-hardware-components.html">Replacing Hardware Components</a>.</div>
+
+<p>The <strong>C-series</strong> and <strong>K-series</strong> 1U platforms share a common chassis but differ in drive count and NIC speed:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>SKU</th>
+      <th>Family</th>
+      <th>SSDs</th>
+      <th>HDDs</th>
+      <th>NICs</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>C-72T</td>
+      <td>C-series</td>
+      <td>4 × 480 GB</td>
+      <td>12 × 6 TB</td>
+      <td>2 × 25 GbE</td>
+    </tr>
+    <tr>
+      <td>C-168T</td>
+      <td>C-series</td>
+      <td>4 × 960 GB</td>
+      <td>12 × 14 TB</td>
+      <td>2 × 25 GbE</td>
+    </tr>
+    <tr>
+      <td>K-144T</td>
+      <td>K-series</td>
+      <td>3 × 800 GB</td>
+      <td>12 × 12 TB</td>
+      <td>2 × 10 GbE</td>
+    </tr>
+    <tr>
+      <td>K-168T</td>
+      <td>K-series</td>
+      <td>3 × 800 GB</td>
+      <td>12 × 14 TB</td>
+      <td>2 × 10 GbE</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="hdd-top-load-drawer-12-bays">HDD Top-Load Drawer (12 bays)</h2>
+
+<p>All four SKUs share the same 12-HDD top-load drawer arranged in a 3 × 4 grid. Bays are numbered left-to-right, top-to-bottom — bays 1–4 are at the back, bays 9–12 at the front.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>                +-----------+-----------+-----------+-----------+
+   BACK -----&gt;  | HDD Bay 1 | HDD Bay 2 | HDD Bay 3 | HDD Bay 4 |
+                +-----------+-----------+-----------+-----------+
+                | HDD Bay 5 | HDD Bay 6 | HDD Bay 7 | HDD Bay 8 |
+                +-----------+-----------+-----------+-----------+
+                | HDD Bay 9 | HDD Bay 10| HDD Bay 11| HDD Bay 12|
+   FRONT ----&gt;  +-----------+-----------+-----------+-----------+
+</code></pre></div></div>
+
+<h2 id="front-ssd-bays">Front SSD Bays</h2>
+
+<p>The chassis has 4 front-facing SSD slots (Bay 13 through Bay 16).</p>
+
+<h3 id="c-series-c-72t-c-168t--4-ssds">C-series (C-72T, C-168T) — 4 SSDs</h3>
+
+<p>All 4 SSD bays are populated:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>      +-----------+-----------+-----------+-----------+
+      | SSD Bay 13| SSD Bay 14| SSD Bay 15| SSD Bay 16|
+      +-----------+-----------+-----------+-----------+
+</code></pre></div></div>
+
+<h3 id="k-series-k-144t-k-168t--3-ssds">K-series (K-144T, K-168T) — 3 SSDs</h3>
+
+<p>Bays 13–15 are populated; Bay 16 (rightmost) is unused:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>      +-----------+-----------+-----------+-----------+
+      | SSD Bay 13| SSD Bay 14| SSD Bay 15|  Unused   |
+      +-----------+-----------+-----------+-----------+
+</code></pre></div></div>
+
+<h2 id="nic-ports">NIC Ports</h2>
+
+<p>The Qumulo C-series platform uses a networking configuration where both back-end and front-end traffic are handled by the same NIC. Each node has 2 NIC ports on the rear of the chassis (plus a separate IPMI port).</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>                 NIC card (rear)
+              +---------+
+              | Port 1  |   &lt;- top
+              +---------+
+              | Port 2  |   &lt;- bottom
+              +---------+
+</code></pre></div></div>
+
+<p>Linux interface names depend on NIC manufacturer (C-series uses Mellanox; K-series uses Intel):</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>NIC Manufacturer</th>
+      <th>Port Location</th>
+      <th>Port Label</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Mellanox</td>
+      <td>Top</td>
+      <td>1 (<code class="language-plaintext highlighter-rouge">eth3</code>)</td>
+    </tr>
+    <tr>
+      <td>Mellanox</td>
+      <td>Bottom</td>
+      <td>2 (<code class="language-plaintext highlighter-rouge">eth4</code>)</td>
+    </tr>
+    <tr>
+      <td>Broadcom</td>
+      <td>Top</td>
+      <td>1 (<code class="language-plaintext highlighter-rouge">eth0</code>)</td>
+    </tr>
+    <tr>
+      <td>Broadcom</td>
+      <td>Bottom</td>
+      <td>2 (<code class="language-plaintext highlighter-rouge">eth1</code>)</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="alert alert-danger" role="alert"><span class="alert-title"><span class="fa fa-exclamation-circle"></span> <strong>Caution</strong></span><br /> Don’t use the LAN On Motherboard ports. Only use the external NIC ports for connections.</div>
+
+<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> For reliability, both ports on each node should be connected. If a single connection fails, the node will be unavailable.</div>
+
+<h2 id="boot-drive">Boot Drive</h2>
+
+<p>The boot drive is on the rear panel in the bottom row, which has 2 slots. The boot drive is located on the lower of the two slots available.</p>
+
+<div class="alert alert-danger" role="alert"><span class="alert-title"><span class="fa fa-exclamation-circle"></span> <strong>Caution</strong></span><br /> Before removing the boot drive, reach out to care@qumulo.com for additional instructions on how to proceed.</div>
 
 
    

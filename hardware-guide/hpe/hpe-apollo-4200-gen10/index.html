@@ -149,7 +149,7 @@ fetch('/data/website.json')
 </noscript>
 
 <!-- Define page metadata -->
-<meta name="description" content="Documentation for the HPE Apollo 4200 Gen10 platform running Qumulo Core.">
+<meta name="description" content="Drive and NIC layout for the HPE Apollo 4200 Gen10 legacy platform.">
 <meta name="apple-mobile-web-app-title" content="Qumulo Documentation Portal">
 <meta name="application-name" content="Qumulo Documentation Portal">
 <meta name="msapplication-TileColor" content="#2b5797">
@@ -162,7 +162,7 @@ fetch('/data/website.json')
 <meta property="og:title" content="HPE Apollo 4200 Gen10 | Qumulo Documentation Portal">
 <meta property="og:url" content="https://docs.qumulo.com/hardware-guide/hpe/hpe-apollo-4200-gen10/">
 <meta property="og:site_name" content="Qumulo Documentation Portal">
-<meta property="og:description" content="Documentation for the HPE Apollo 4200 Gen10 platform running Qumulo Core.">
+<meta property="og:description" content="Drive and NIC layout for the HPE Apollo 4200 Gen10 legacy platform.">
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://docs.qumulo.com/images/docs.qumulo.com-qumulo-documentation-portal-630px.png">
@@ -173,7 +173,7 @@ fetch('/data/website.json')
 <meta name="twitter:title" content="HPE Apollo 4200 Gen10 | Qumulo Documentation Portal">
 <meta property="twitter:url" content="https://docs.qumulo.com/hardware-guide/hpe/hpe-apollo-4200-gen10/">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:description" content="Documentation for the HPE Apollo 4200 Gen10 platform running Qumulo Core.">
+<meta name="twitter:description" content="Drive and NIC layout for the HPE Apollo 4200 Gen10 legacy platform.">
 <meta name="twitter:image" content="https://docs.qumulo.com/images/docs.qumulo.com-qumulo-documentation-portal-418px.png">
 <meta property="twitter:domain" content="docs.qumulo.com">
 
@@ -709,24 +709,51 @@ $(document).ready(function() {
 
     
 
-    <p>The HPE Apollo 4200 Gen10 is a 2U high-density storage server with enhanced performance and updated processor support.</p>
+    <p>The HPE Apollo 4200 Gen10 is a 2U high-density storage server (legacy platform).</p>
 
-<h2 id="in-this-section">In This Section</h2>
+<div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> The HPE Apollo 4200 Gen10 reached its End of Availability on October 31, 2023. End of Platform Support (EoPS) is October 31, 2028.</div>
 
-<ul>
-  <li><a href="wiring-nodes-networking-cluster.html">Wiring Nodes and Networking a Cluster</a></li>
-  <li><a href="creating-configuring-cluster.html">Creating and Configuring a Cluster</a></li>
-  <li><a href="front-rear-drives.html">Front and Rear Drives</a></li>
-  <li><a href="panel-leds.html">Panel LEDs</a></li>
-  <li><a href="drive-leds.html">Drive LEDs</a></li>
-  <li><a href="configuring-ilo.html">Configuring iLO</a></li>
-  <li><a href="replacing-hardware-components.html">Replacing Hardware Components</a></li>
-  <li><a href="technical-specifications.html">Technical Specifications</a></li>
-</ul>
+<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> This page is reference material (drive bay layout and NIC port locations) for the HPE Apollo 4200 Gen10. For replacement procedures, see <a href="/hardware-guide/hpe/hpe-maintenance/replacing-hardware-components.html">Replacing Hardware Components</a>.</div>
+
+<h2 id="drives">Drives</h2>
+
+<h3 id="front-lff-drive-row">Front LFF Drive Row</h3>
+
+<figure><img class="docimage" src="images/hpe-gen10-drives-front.png" alt="The front large form factor drive row in the HPE Apollo 4200 Gen10 node" /></figure>
+
+<h3 id="second-lff-drive-row">Second LFF Drive Row</h3>
+
+<figure><img class="docimage" src="images/hpe-gen10-drives-front2.png" alt="The second large form factor drive row in the HPE Apollo 4200 Gen10 node" /></figure>
+
+<h3 id="rear-sff-hot-plug-drives">Rear SFF Hot-Plug Drives</h3>
+
+<figure><img class="docimage" src="images/hpe-gen10-drives-rear.png" alt="The rear small form factor hot-plug drive in the HPE Apollo 4200 Gen10 node" /></figure>
+
+<h3 id="boot-drive">Boot Drive</h3>
+
+<h4 id="36t-and-90t-nodes">36T and 90T Nodes</h4>
+
+<p>In 36T and 90T nodes, the boot drive is located in the second LFF drive row.</p>
+
+<figure><img class="docimage" src="images/hpe-gen10-90-boot.png" alt="The boot drive in the second LFF drive row in HPE Apollo 4200 Gen10 36T and 90T nodes" /></figure>
+
+<h4 id="192t-nodes">192T Nodes</h4>
+
+<p>In 192T nodes, the boot drive is a BOSS PCIe riser card.</p>
+
+<figure><img class="docimage" src="images/hpe-gen10-196t-boot.png" alt="The boot drive is a BOSS PCIe riser card in HPE Apollo 4200 Gen10 192T nodes" /></figure>
+
+<h4 id="336t-nodes">336T Nodes</h4>
+
+<p>In 336T nodes, the boot drive is located with the rear SFF hot-plug drives.</p>
+
+<figure><img class="docimage" src="images/hpe-gen10-336tboot.png" alt="The boot drive with the rear SFF hot-plug drives in HPE Apollo 4200 Gen10 336T nodes" /></figure>
+
+<h2 id="nic-ports">NIC Ports</h2>
+
+<figure><img class="docimage" src="images/hpe-networking-gen10-rear.png" alt="NIC ports on HPE Apollo 4200 Gen10 nodes" /></figure>
 
 <h2 id="hpe-documentation">HPE Documentation</h2>
-
-<p>For detailed hardware specifications and service information, refer to the official HPE documentation:</p>
 
 <ul>
   <li><a href="https://www.hpe.com/psnow/doc/a00056091enw" class="no_icon">HPE Apollo 4200 Gen10 QuickSpecs</a></li>

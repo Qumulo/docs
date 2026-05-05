@@ -149,7 +149,7 @@ fetch('/data/website.json')
 </noscript>
 
 <!-- Define page metadata -->
-<meta name="description" content="">
+<meta name="description" content="Drive bay mapping for the C-192T, C-432T, and K-432T legacy platforms.">
 <meta name="apple-mobile-web-app-title" content="Qumulo Documentation Portal">
 <meta name="application-name" content="Qumulo Documentation Portal">
 <meta name="msapplication-TileColor" content="#2b5797">
@@ -162,7 +162,7 @@ fetch('/data/website.json')
 <meta property="og:title" content="C-192T, C-432T, and K-432T | Qumulo Documentation Portal">
 <meta property="og:url" content="https://docs.qumulo.com/hardware-guide/arrow/c-192t-c-432t-k-432t/">
 <meta property="og:site_name" content="Qumulo Documentation Portal">
-<meta property="og:description" content="">
+<meta property="og:description" content="Drive bay mapping for the C-192T, C-432T, and K-432T legacy platforms.">
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://docs.qumulo.com/images/docs.qumulo.com-qumulo-documentation-portal-630px.png">
@@ -173,7 +173,7 @@ fetch('/data/website.json')
 <meta name="twitter:title" content="C-192T, C-432T, and K-432T | Qumulo Documentation Portal">
 <meta property="twitter:url" content="https://docs.qumulo.com/hardware-guide/arrow/c-192t-c-432t-k-432t/">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:description" content="">
+<meta name="twitter:description" content="Drive bay mapping for the C-192T, C-432T, and K-432T legacy platforms.">
 <meta name="twitter:image" content="https://docs.qumulo.com/images/docs.qumulo.com-qumulo-documentation-portal-418px.png">
 <meta property="twitter:domain" content="docs.qumulo.com">
 
@@ -694,7 +694,117 @@ $(document).ready(function() {
     
 
     
-<div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> The C-192T, C-432T, and K-432T platforms will reach their End of Platform Support (EoPS) on May 9, 2030.</div>
+<div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> The C-192T, C-432T, and K-432T platforms reached their End of Availability on May 9, 2025. End of Platform Support (EoPS) is May 9, 2030.</div>
+
+<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> This page is reference material (drive bay layout) for the C-192T, C-432T, and K-432T platforms. For replacement procedures, see <a href="replacing-hardware-components.html">Replacing Hardware Components</a> and <a href="replacing-chassis.html">Replacing the Chassis</a>.</div>
+
+<p>This page provides drive bay mapping for the C-192T, C-432T, and K-432T (Q2U_1 platform).</p>
+
+<h2 id="hdd-drawers-24-bays-across-3-drawers">HDD Drawers (24 bays across 3 drawers)</h2>
+
+<p>The chassis contains 24 HDDs across three top-load drawers, labeled in sequence from top to bottom.</p>
+
+<div class="alert alert-danger" role="alert"><span class="alert-title"><span class="fa fa-exclamation-circle"></span> <strong>Caution</strong></span><br /> When the HDD drawer is full, it is very heavy. Adding extra weight (such as resting tools on the drawer) can cause the rails to deform.</div>
+
+<h3 id="top-tray-drawer-1">Top Tray (Drawer 1)</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>                     BACK of server
+       +----------+----------+----------+----------+
+       | Bay 1    | Bay 2    | Bay 3    | Bay 4    |
+       +----------+----------+----------+----------+
+       | Bay 5    | Bay 6    | Bay 7    | Bay 8    |
+       +----------+----------+----------+----------+
+                     FRONT of server
+</code></pre></div></div>
+
+<h3 id="middle-tray-drawer-2">Middle Tray (Drawer 2)</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>                     BACK of server
+       +----------+----------+----------+----------+
+       | Bay 9    | Bay 10   | Bay 11   | Bay 12   |
+       +----------+----------+----------+----------+
+       | Bay 13   | Bay 14   | Bay 15   | Bay 16   |
+       +----------+----------+----------+----------+
+                     FRONT of server
+</code></pre></div></div>
+
+<h3 id="bottom-tray-drawer-3">Bottom Tray (Drawer 3)</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>                     BACK of server
+       +----------+----------+----------+----------+
+       | Bay 17   | Bay 18   | Bay 19   | Bay 20   |
+       +----------+----------+----------+----------+
+       | Bay 21   | Bay 22   | Bay 23   | Bay 24   |
+       +----------+----------+----------+----------+
+                     FRONT of server
+</code></pre></div></div>
+
+<h2 id="rear-nvme-drives">Rear NVMe Drives</h2>
+
+<p>The rear NVMe drives are located at the back of the chassis in a 2 × 3 configuration.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>       +---------+---------+---------+
+       | NVMe 25 | NVMe 26 | NVMe 27 |
+       +---------+---------+---------+
+       | NVMe 28 | NVMe 29 | NVMe 30 |
+       +---------+---------+---------+
+</code></pre></div></div>
+
+<h2 id="nic-ports">NIC Ports</h2>
+
+<p>The Qumulo C-series platform uses a networking configuration where both back-end and front-end traffic are handled by the same NIC. Each node has 2 NIC ports on the rear of the chassis (plus a separate IPMI port).</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>                 NIC card (rear)
+              +---------+
+              | Port 1  |   &lt;- top
+              +---------+
+              | Port 2  |   &lt;- bottom
+              +---------+
+</code></pre></div></div>
+
+<p>Linux interface names depend on NIC manufacturer:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>NIC Manufacturer</th>
+      <th>Port Location</th>
+      <th>Port Label</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Mellanox</td>
+      <td>Top</td>
+      <td>1 (<code class="language-plaintext highlighter-rouge">eth3</code>)</td>
+    </tr>
+    <tr>
+      <td>Mellanox</td>
+      <td>Bottom</td>
+      <td>2 (<code class="language-plaintext highlighter-rouge">eth4</code>)</td>
+    </tr>
+    <tr>
+      <td>Broadcom</td>
+      <td>Top</td>
+      <td>1 (<code class="language-plaintext highlighter-rouge">eth0</code>)</td>
+    </tr>
+    <tr>
+      <td>Broadcom</td>
+      <td>Bottom</td>
+      <td>2 (<code class="language-plaintext highlighter-rouge">eth1</code>)</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="alert alert-danger" role="alert"><span class="alert-title"><span class="fa fa-exclamation-circle"></span> <strong>Caution</strong></span><br /> Don’t use the LAN On Motherboard ports. Only use the external NIC ports for connections.</div>
+
+<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> For reliability, both ports on each node should be connected. If a single connection fails, the node will be unavailable.</div>
+
+<h2 id="boot-drive">Boot Drive</h2>
+
+<p>The boot drive is an internal M.2 SSD located on the motherboard.</p>
+
+<div class="alert alert-danger" role="alert"><span class="alert-title"><span class="fa fa-exclamation-circle"></span> <strong>Caution</strong></span><br /> Before removing the boot drive, contact the Qumulo Care team for detailed instructions on how to proceed.</div>
 
 
    

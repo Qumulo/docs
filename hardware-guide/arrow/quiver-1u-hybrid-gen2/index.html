@@ -149,7 +149,7 @@ fetch('/data/website.json')
 </noscript>
 
 <!-- Define page metadata -->
-<meta name="description" content="">
+<meta name="description" content="Drive bay layout for the Quiver 1U Hybrid Gen2 legacy platform.">
 <meta name="apple-mobile-web-app-title" content="Qumulo Documentation Portal">
 <meta name="application-name" content="Qumulo Documentation Portal">
 <meta name="msapplication-TileColor" content="#2b5797">
@@ -162,7 +162,7 @@ fetch('/data/website.json')
 <meta property="og:title" content="Quiver 1U Hybrid Gen2 | Qumulo Documentation Portal">
 <meta property="og:url" content="https://docs.qumulo.com/hardware-guide/arrow/quiver-1u-hybrid-gen2/">
 <meta property="og:site_name" content="Qumulo Documentation Portal">
-<meta property="og:description" content="">
+<meta property="og:description" content="Drive bay layout for the Quiver 1U Hybrid Gen2 legacy platform.">
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://docs.qumulo.com/images/docs.qumulo.com-qumulo-documentation-portal-630px.png">
@@ -173,7 +173,7 @@ fetch('/data/website.json')
 <meta name="twitter:title" content="Quiver 1U Hybrid Gen2 | Qumulo Documentation Portal">
 <meta property="twitter:url" content="https://docs.qumulo.com/hardware-guide/arrow/quiver-1u-hybrid-gen2/">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:description" content="">
+<meta name="twitter:description" content="Drive bay layout for the Quiver 1U Hybrid Gen2 legacy platform.">
 <meta name="twitter:image" content="https://docs.qumulo.com/images/docs.qumulo.com-qumulo-documentation-portal-418px.png">
 <meta property="twitter:domain" content="docs.qumulo.com">
 
@@ -693,7 +693,51 @@ $(document).ready(function() {
 
     
 
-    
+    <div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> The Quiver 1U Hybrid Gen2 platform reached its End of Availability on October 25, 2025. End of Platform Support (EoPS) is October 25, 2030.</div>
+
+<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> This page is reference material (drive bay layout) for the Quiver 1U Hybrid Gen2 platform. For replacement procedures, see <a href="replacing-hardware-components.html">Replacing Hardware Components</a>.</div>
+
+<h2 id="drives">Drives</h2>
+
+<ul>
+  <li>For 240T and 96T nodes, your chassis contains 12 HDDs and 4 NVMe drives.</li>
+  <li>For 48T nodes, your chassis contains 6 HDDs and 3 NVMe drives.</li>
+</ul>
+
+<p>All Quiver 1UH Gen2 nodes contain one boot drive in an internal M.2 expansion slot.</p>
+
+<h3 id="hdd-drives">HDD Drives</h3>
+
+<ul>
+  <li>For 240T and 96T nodes, all drive bays are populated.</li>
+  <li>For 48T nodes, only the following bays are populated: 0, 3, 4, 7, 8, 11.</li>
+</ul>
+
+<p>For more information, see <a href="replacing-hardware-components.html#replace-hdd">To Replace an HDD</a>.</p>
+
+<figure><img class="docimage" src="images/quiver-1u-hybrid-gen2-hdd-bay-mapping.png" alt="Quiver 1U Hybrid Gen2 HDD Bay Mapping" /></figure>
+
+<h3 id="nvme-drives">NVMe Drives</h3>
+
+<ul>
+  <li>For 240T and 96T nodes, all drive bays are populated.</li>
+  <li>
+    <p>For 48T nodes, only the following drive bays are populated: 0, 1, 2.</p>
+
+    <div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> When replacing faulty drives, use only the originally populated drive bays.</div>
+  </li>
+</ul>
+
+<p>For more information, see <a href="replacing-hardware-components.html#replace-nvme-m2-boot-drive">To Replace an NVMe Drive</a>.</p>
+
+<figure><span class="enlargeimage" data-url="/hardware-guide/arrow/quiver-1u-hybrid-gen2/images/quiver-1u-hybrid-gen2-nvme-drive-bay-mapping.png"><a target="_blank" rel="noopener" href="/hardware-guide/arrow/quiver-1u-hybrid-gen2/images/quiver-1u-hybrid-gen2-nvme-drive-bay-mapping.png"><img class="docimage" src="images/quiver-1u-hybrid-gen2-nvme-drive-bay-mapping.png" alt="Quiver 1U Hybrid Gen2 NVMe Drive Bay Mapping" /></a></span></figure>
+
+<h3 id="nvme-m2-boot-drive">NVMe M.2 Boot Drive</h3>
+
+<p>The boot drive is located at the M.2 expansion slot at Riser Slot 4. For more information, see <a href="replacing-hardware-components.html#replace-nvme-m2-boot-drive">To Replace an NVMe M.2 Boot Drive</a>.</p>
+
+<figure><img class="docimage" src="images/quiver-1u-hybrid-gen2-nvme-boot-drive-location.png" alt="Quiver 1U Hybrid Gen2 NVMe Boot Drive Location" /></figure>
+
 
    
     

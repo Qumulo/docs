@@ -149,7 +149,7 @@ fetch('/data/website.json')
 </noscript>
 
 <!-- Define page metadata -->
-<meta name="description" content="Documentation for the HPE Apollo 4200 Gen10 Plus platform running Qumulo Core.">
+<meta name="description" content="Drive and NIC layout for the HPE Apollo 4200 Gen10 Plus legacy platform.">
 <meta name="apple-mobile-web-app-title" content="Qumulo Documentation Portal">
 <meta name="application-name" content="Qumulo Documentation Portal">
 <meta name="msapplication-TileColor" content="#2b5797">
@@ -162,7 +162,7 @@ fetch('/data/website.json')
 <meta property="og:title" content="HPE Apollo 4200 Gen10 Plus | Qumulo Documentation Portal">
 <meta property="og:url" content="https://docs.qumulo.com/hardware-guide/hpe/hpe-apollo-4200-gen10-plus/">
 <meta property="og:site_name" content="Qumulo Documentation Portal">
-<meta property="og:description" content="Documentation for the HPE Apollo 4200 Gen10 Plus platform running Qumulo Core.">
+<meta property="og:description" content="Drive and NIC layout for the HPE Apollo 4200 Gen10 Plus legacy platform.">
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://docs.qumulo.com/images/docs.qumulo.com-qumulo-documentation-portal-630px.png">
@@ -173,7 +173,7 @@ fetch('/data/website.json')
 <meta name="twitter:title" content="HPE Apollo 4200 Gen10 Plus | Qumulo Documentation Portal">
 <meta property="twitter:url" content="https://docs.qumulo.com/hardware-guide/hpe/hpe-apollo-4200-gen10-plus/">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:description" content="Documentation for the HPE Apollo 4200 Gen10 Plus platform running Qumulo Core.">
+<meta name="twitter:description" content="Drive and NIC layout for the HPE Apollo 4200 Gen10 Plus legacy platform.">
 <meta name="twitter:image" content="https://docs.qumulo.com/images/docs.qumulo.com-qumulo-documentation-portal-418px.png">
 <meta property="twitter:domain" content="docs.qumulo.com">
 
@@ -709,23 +709,71 @@ $(document).ready(function() {
 
     
 
-    <p>The HPE Apollo 4200 Gen10 Plus is the latest generation 2U high-density storage server with improved I/O and management capabilities.</p>
+    <p>The HPE Apollo 4200 Gen10 Plus is a 2U high-density storage server (legacy platform).</p>
 
-<h2 id="in-this-section">In This Section</h2>
+<div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> The HPE Apollo 4200 Gen10 Plus reached its End of Availability on November 1, 2025. End of Platform Support (EoPS) is November 1, 2030.</div>
 
-<ul>
-  <li><a href="wiring-nodes-networking-cluster.html">Wiring Nodes and Networking a Cluster</a></li>
-  <li><a href="creating-configuring-cluster.html">Creating and Configuring a Cluster</a></li>
-  <li><a href="front-internal-drives.html">Front and Internal Drives</a></li>
-  <li><a href="panel-leds.html">Panel LEDs</a></li>
-  <li><a href="configuring-ilo.html">Configuring iLO</a></li>
-  <li><a href="replacing-hardware-components.html">Replacing Hardware Components</a></li>
-  <li><a href="technical-specifications.html">Technical Specifications</a></li>
-</ul>
+<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> This page is reference material (drive bay layout and NIC port locations) for the HPE Apollo 4200 Gen10 Plus. For replacement procedures, see <a href="/hardware-guide/hpe/hpe-maintenance/replacing-hardware-components.html">Replacing Hardware Components</a>.</div>
+
+<h2 id="drives">Drives</h2>
+
+<h3 id="480tb-and-240tb-nodes">480TB and 240TB Nodes</h3>
+
+<p>In 480TB and 240TB nodes, all drive bays are populated.</p>
+
+<h4 id="front-lff-drive-row">Front LFF Drive Row</h4>
+
+<p>The front LFF drive row, or cage 1, holds the first half of the drives in box 1, bays 1-12.</p>
+
+<figure><img class="docimage" src="images/hpe-apollo-4200-gen10-plus-front-panel-lff-cage-1-box-1-480tb-240tb.png" alt="The front large form factor drive row, or cage 1, in the HPE Apollo 4200 Gen10 Plus node (480TB and 240TB)." /></figure>
+
+<h4 id="internal-lff-drive-row">Internal LFF Drive Row</h4>
+
+<p>The internal LFF drive row, or cage 2, flips up behind the front drive row in the node. Cage 2 holds the second half of the drives in box 1, bays 13-24.</p>
+
+<figure><img class="docimage" src="images/hpe-apollo-4200-gen10-plus-internal-lff-cage-2-box-1-480tb-240tb.png" alt="The internal large form factor drive row, or cage 2, in the HPE Apollo 4200 Gen10 Plus node (480TB and 240TB)." /></figure>
+
+<h4 id="internal-sff-drive-row">Internal SFF Drive Row</h4>
+
+<p>The internal SFF drive row flips up behind the internal LFF drive row. This row holds box 3, bays 1-8.</p>
+
+<figure><img class="docimage" src="images/hpe-apollo-4200-gen10-plus-internal-sff-box-3-480tb-240tb.png" alt="The internal small form factor drive row in the HPE Apollo 4200 Gen10 Plus node (480TB and 240TB)." /></figure>
+
+<h3 id="90tb-and-36tb-nodes">90TB and 36TB Nodes</h3>
+
+<p>In 90TB and 36TB nodes, some drive bays are empty.</p>
+
+<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> In the following diagrams, empty drive bays appear in gray.</div>
+
+<h4 id="front-lff-drive-row-1">Front LFF Drive Row</h4>
+
+<p>Cage 1 holds the drives in box 1, bays 1-9. Bays 10-12 are empty.</p>
+
+<figure><img class="docimage" src="images/hpe-apollo-4200-gen10-plus-front-panel-lff-cage-1-box-1-90tb-36tb.png" alt="The front large form factor drive row, or cage 1, in the HPE Apollo 4200 Gen10 Plus node (90TB and 36TB). Cage 1 holds the drives in box 1, bays 1-9. Bays 10-12 are empty." /></figure>
+
+<h4 id="internal-lff-drive-row-1">Internal LFF Drive Row</h4>
+
+<p>Bays 13-24 in cage 2, box 1 are empty.</p>
+
+<figure><img class="docimage" src="images/hpe-apollo-4200-gen10-plus-internal-lff-cage-2-box-1-90tb-36tb.png" alt="The internal large form factor drive row, or cage 2, in the HPE Apollo 4200 Gen10 Plus node (90TB and 36TB). Bays 13-24 in cage 2, box 1 are empty." /></figure>
+
+<h4 id="internal-sff-drive-row-1">Internal SFF Drive Row</h4>
+
+<p>Bays 1-4 and 8 in box 3 are empty.</p>
+
+<figure><img class="docimage" src="images/hpe-apollo-4200-gen10-plus-internal-sff-box-3-90tb-36tb.png" alt="The internal small form factor drive row in the HPE Apollo 4200 Gen10 Plus node (90TB and 36TB). Bays 1-4 and 8 in box 3 are empty." /></figure>
+
+<h3 id="boot-drive">Boot Drive</h3>
+
+<p>The boot drive is located inside the node at the indicated location. The drive is mounted onto a PCI Express slot and connected to the motherboard with a SATA cable.</p>
+
+<figure><span class="enlargeimage" data-url="/hardware-guide/hpe/hpe-apollo-4200-gen10-plus/images/hpe-apollo-4200-gen10-plus-boot-drive.png"><a target="_blank" rel="noopener" href="/hardware-guide/hpe/hpe-apollo-4200-gen10-plus/images/hpe-apollo-4200-gen10-plus-boot-drive.png"><img class="docimage" src="images/hpe-apollo-4200-gen10-plus-boot-drive.png" alt="The boot drive inside the HPE Apollo 4200 Gen10 Plus node" /></a></span></figure>
+
+<h2 id="nic-ports">NIC Ports</h2>
+
+<figure><span class="enlargeimage" data-url="/hardware-guide/hpe/hpe-apollo-4200-gen10-plus/images/hpe-apollo-4200-gen10-plus-back-diagram.png"><a target="_blank" rel="noopener" href="/hardware-guide/hpe/hpe-apollo-4200-gen10-plus/images/hpe-apollo-4200-gen10-plus-back-diagram.png"><img class="docimage" src="images/hpe-apollo-4200-gen10-plus-back-diagram.png" alt="Back Diagram of the HPE Apollo 4200 Gen10 Plus Node" /></a></span></figure>
 
 <h2 id="hpe-documentation">HPE Documentation</h2>
-
-<p>For detailed hardware specifications and service information, refer to the official HPE documentation:</p>
 
 <ul>
   <li><a href="https://www.hpe.com/psnow/doc/a50002956enw" class="no_icon">HPE Apollo 4200 Gen10 Plus QuickSpecs</a></li>

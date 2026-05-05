@@ -149,7 +149,7 @@ fetch('/data/website.json')
 </noscript>
 
 <!-- Define page metadata -->
-<meta name="description" content="Documentation for the HPE ProLiant DL325 Gen10 Plus platform running Qumulo Core.">
+<meta name="description" content="Drive and NIC layout for the HPE ProLiant DL325 Gen10 Plus legacy platform.">
 <meta name="apple-mobile-web-app-title" content="Qumulo Documentation Portal">
 <meta name="application-name" content="Qumulo Documentation Portal">
 <meta name="msapplication-TileColor" content="#2b5797">
@@ -162,7 +162,7 @@ fetch('/data/website.json')
 <meta property="og:title" content="HPE ProLiant DL325 Gen10 Plus | Qumulo Documentation Portal">
 <meta property="og:url" content="https://docs.qumulo.com/hardware-guide/hpe/hpe-dl325-gen10-plus/">
 <meta property="og:site_name" content="Qumulo Documentation Portal">
-<meta property="og:description" content="Documentation for the HPE ProLiant DL325 Gen10 Plus platform running Qumulo Core.">
+<meta property="og:description" content="Drive and NIC layout for the HPE ProLiant DL325 Gen10 Plus legacy platform.">
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://docs.qumulo.com/images/docs.qumulo.com-qumulo-documentation-portal-630px.png">
@@ -173,7 +173,7 @@ fetch('/data/website.json')
 <meta name="twitter:title" content="HPE ProLiant DL325 Gen10 Plus | Qumulo Documentation Portal">
 <meta property="twitter:url" content="https://docs.qumulo.com/hardware-guide/hpe/hpe-dl325-gen10-plus/">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:description" content="Documentation for the HPE ProLiant DL325 Gen10 Plus platform running Qumulo Core.">
+<meta name="twitter:description" content="Drive and NIC layout for the HPE ProLiant DL325 Gen10 Plus legacy platform.">
 <meta name="twitter:image" content="https://docs.qumulo.com/images/docs.qumulo.com-qumulo-documentation-portal-418px.png">
 <meta property="twitter:domain" content="docs.qumulo.com">
 
@@ -709,22 +709,41 @@ $(document).ready(function() {
 
     
 
-    <p>The HPE ProLiant DL325 Gen10 Plus is a compact 1U server with AMD EPYC processor optimized for all-NVMe storage.</p>
+    <p>The HPE ProLiant DL325 Gen10 Plus is a compact 1U server with AMD EPYC processor optimized for all-NVMe storage (legacy platform).</p>
 
-<h2 id="in-this-section">In This Section</h2>
+<div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> The HPE ProLiant DL325 Gen10 Plus reached its End of Availability on October 31, 2023. End of Platform Support (EoPS) is October 31, 2028.</div>
 
-<ul>
-  <li><a href="creating-configuring-cluster.html">Creating and Configuring a Cluster</a></li>
-  <li><a href="wiring-nodes-networking-cluster.html">Wiring Nodes and Networking a Cluster</a></li>
-  <li><a href="front-rear-drives.html">Front and Rear Drives</a></li>
-  <li><a href="configuring-ilo.html">Configuring iLO</a></li>
-  <li><a href="replacing-hardware-components.html">Replacing Hardware Components</a></li>
-  <li><a href="technical-specifications.html">Technical Specifications</a></li>
-</ul>
+<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> This page is reference material (drive bay layout and NIC port locations) for the HPE ProLiant DL325 Gen10 Plus. For replacement procedures, see <a href="/hardware-guide/hpe/hpe-maintenance/replacing-hardware-components.html">Replacing Hardware Components</a>.</div>
+
+<h2 id="drives">Drives</h2>
+
+<p>On this platform, the drives in a node are arranged into rows and groups called boxes.</p>
+
+<h3 id="front-drive-row">Front Drive Row</h3>
+
+<p>Box 1 holds bays 1-8 (indicated in green) and box 2 holds bays 1-2 (indicated in orange).</p>
+
+<figure><img class="docimage" src="images/dl325-drive-diagram.png" alt="Bays 1-8 (box 1) and bays 1-2 (box 2) on the HPE ProLiant DL325 Gen10 Plus node" /></figure>
+
+<h3 id="second-drive-row">Second Drive Row</h3>
+
+<p>The second drive row flips up behind the front drive row. Box 3 holds bays 1-8 and box 4 holds bays 1-2.</p>
+
+<figure><img class="docimage" src="images/dl325-node-photo.png" alt="The second drive row flips up behind the front drive row in the node. Box 3 holds bays 1-8 and box 4 holds bays 1-2." /></figure>
+
+<figure><img class="docimage" src="images/dl325-drive-diagram-second-row.png" alt="Bays 1-8 (box 3) and bays 1-2 (box 4) on the HPE ProLiant DL325 Gen10 Plus node" /></figure>
+
+<h3 id="boot-drive">Boot Drive</h3>
+
+<p>The boot drive is in box 1, bay 1.</p>
+
+<h2 id="nic-ports">NIC Ports</h2>
+
+<p>On this platform, there are two sets of NICs, one for the front end and one for the back end.</p>
+
+<figure><img class="docimage" src="images/dl325-rear-networking.png" alt="Front End (NIC1) and Back End (NIC2) ports on HPE ProLiant DL325 Gen10 Plus nodes." /></figure>
 
 <h2 id="hpe-documentation">HPE Documentation</h2>
-
-<p>For detailed hardware specifications and service information, refer to the official HPE documentation:</p>
 
 <ul>
   <li><a href="https://www.hpe.com/psnow/doc/a00073548enw" class="no_icon">HPE ProLiant DL325 Gen10 Plus QuickSpecs</a></li>

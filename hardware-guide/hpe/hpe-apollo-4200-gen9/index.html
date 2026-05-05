@@ -149,7 +149,7 @@ fetch('/data/website.json')
 </noscript>
 
 <!-- Define page metadata -->
-<meta name="description" content="Documentation for the HPE Apollo 4200 Gen9 platform running Qumulo Core.">
+<meta name="description" content="Drive and NIC layout for the HPE Apollo 4200 Gen9 legacy platform.">
 <meta name="apple-mobile-web-app-title" content="Qumulo Documentation Portal">
 <meta name="application-name" content="Qumulo Documentation Portal">
 <meta name="msapplication-TileColor" content="#2b5797">
@@ -162,7 +162,7 @@ fetch('/data/website.json')
 <meta property="og:title" content="HPE Apollo 4200 Gen9 | Qumulo Documentation Portal">
 <meta property="og:url" content="https://docs.qumulo.com/hardware-guide/hpe/hpe-apollo-4200-gen9/">
 <meta property="og:site_name" content="Qumulo Documentation Portal">
-<meta property="og:description" content="Documentation for the HPE Apollo 4200 Gen9 platform running Qumulo Core.">
+<meta property="og:description" content="Drive and NIC layout for the HPE Apollo 4200 Gen9 legacy platform.">
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://docs.qumulo.com/images/docs.qumulo.com-qumulo-documentation-portal-630px.png">
@@ -173,7 +173,7 @@ fetch('/data/website.json')
 <meta name="twitter:title" content="HPE Apollo 4200 Gen9 | Qumulo Documentation Portal">
 <meta property="twitter:url" content="https://docs.qumulo.com/hardware-guide/hpe/hpe-apollo-4200-gen9/">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:description" content="Documentation for the HPE Apollo 4200 Gen9 platform running Qumulo Core.">
+<meta name="twitter:description" content="Drive and NIC layout for the HPE Apollo 4200 Gen9 legacy platform.">
 <meta name="twitter:image" content="https://docs.qumulo.com/images/docs.qumulo.com-qumulo-documentation-portal-418px.png">
 <meta property="twitter:domain" content="docs.qumulo.com">
 
@@ -709,23 +709,51 @@ $(document).ready(function() {
 
     
 
-    <p>The HPE Apollo 4200 Gen9 is a 2U high-density storage server with HDD and SSD cache.</p>
+    <p>The HPE Apollo 4200 Gen9 is a 2U high-density storage server (legacy platform).</p>
 
-<h2 id="in-this-section">In This Section</h2>
+<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> This page is reference material (drive bay layout and NIC port locations) for the HPE Apollo 4200 Gen9. For replacement procedures, see <a href="/hardware-guide/hpe/hpe-maintenance/replacing-hardware-components.html">Replacing Hardware Components</a>.</div>
 
-<ul>
-  <li><a href="wiring-nodes-networking-cluster.html">Wiring Nodes and Networking a Cluster</a></li>
-  <li><a href="creating-configuring-cluster.html">Creating and Configuring a Cluster</a></li>
-  <li><a href="front-rear-drives.html">Front and Rear Drives</a></li>
-  <li><a href="panel-leds.html">Panel LEDs</a></li>
-  <li><a href="drive-leds.html">Drive LEDs</a></li>
-  <li><a href="configuring-ilo.html">Configuring iLO</a></li>
-  <li><a href="replacing-hardware-components.html">Replacing Hardware Components</a></li>
-</ul>
+<div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> The HPE Apollo 4200 Gen9 90T, 180T, and 288T platforms reached their End of Availability on April 30, 2020 and their End of Platform Support (EoPS) on May 31, 2025.</div>
+
+<h2 id="drives">Drives</h2>
+
+<h3 id="front-lff-drive-row">Front LFF Drive Row</h3>
+
+<figure><img class="docimage" src="images/hpe-gen9-drives-front.png" alt="The front large form factor drive row in the HPE Apollo 4200 Gen9 node" /></figure>
+
+<h3 id="second-lff-drive-row">Second LFF Drive Row</h3>
+
+<figure><img class="docimage" src="images/hpe-gen9-drives-front2.png" alt="The second large form factor drive row in the HPE Apollo 4200 Gen9 node" /></figure>
+
+<h3 id="rear-sff-hot-plug-drives">Rear SFF Hot-Plug Drives</h3>
+
+<figure><img class="docimage" src="images/hpe-gen9-drives-rear.png" alt="The rear small form factor hot-plug drive in the HPE Apollo 4200 Gen9 node" /></figure>
+
+<h3 id="boot-drive">Boot Drive</h3>
+
+<figure><img class="docimage" src="images/hpe-gen9-boot-drive.png" alt="The boot drive in HPE Apollo 4200 Gen9 90T, 180T, and 288T nodes" /></figure>
+
+<h2 id="nic-ports">NIC Ports</h2>
+
+<h3 id="288t">288T</h3>
+
+<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Currently, NIC2 on this model is unused.</div>
+
+<figure><img class="docimage" src="images/hpe-288t-dual.png" alt="NIC ports on the dual HPE Apollo 4200 Gen9 288T node type. Currently, NIC2 (on the left) is unused." /></figure>
+
+<figure><img class="docimage" src="images/hpe-288t-single.png" alt="NIC ports on the single HPE Apollo 4200 Gen9 288T node type." /></figure>
+
+<h3 id="180t">180T</h3>
+
+<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Currently, NIC2 on this model is unused.</div>
+
+<figure><img class="docimage" src="images/hpe-180t-dual.png" alt="NIC ports on the HPE Apollo 4200 Gen9 180T node type. Currently, NIC2 (on the right) is unused." /></figure>
+
+<h3 id="90t">90T</h3>
+
+<figure><img class="docimage" src="images/hpe-90t-single.png" alt="NIC ports on the HPE Apollo 4200 Gen9 90T node type." /></figure>
 
 <h2 id="hpe-documentation">HPE Documentation</h2>
-
-<p>For detailed hardware specifications and service information, refer to the official HPE documentation:</p>
 
 <ul>
   <li><a href="https://www.hpe.com/psnow/doc/c04616495" class="no_icon">HPE Apollo 4200 Gen9 QuickSpecs</a></li>
