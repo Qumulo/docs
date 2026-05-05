@@ -530,6 +530,22 @@ fetch('/data/website.json')
           
           
           <li>
+            <a title="Drive Replacement" href="/hardware-guide/arrow/arrow-maintenance/drive-replacement.html">
+              Drive Replacement
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
             <a title="Boot Drive Replacement" href="/hardware-guide/arrow/arrow-maintenance/boot-drive-replacement.html">
               Boot Drive Replacement
               <span class="tag-container">
@@ -732,6 +748,11 @@ $(document).ready(function() {
       <td>No</td>
     </tr>
     <tr>
+      <td>Fans</td>
+      <td>No</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
       <td>DIMMs (Memory)</td>
       <td>No</td>
       <td>Yes</td>
@@ -762,15 +783,7 @@ For components that require the node to be taken offline, you must follow the <b
 
 <h3 id="drive-replacement">Drive Replacement</h3>
 
-<p>Drives in Qumulo clusters are hot-swappable. You can replace a failed drive without taking the node offline.</p>
-
-<ol>
-  <li>Identify the failed drive using the Qumulo Web UI or <code class="language-plaintext highlighter-rouge">qq cluster_slots</code> command.</li>
-  <li>Locate the physical drive in the chassis. For your platform’s specific bay layout, see <a href="/hardware-guide/arrow/arrow-platforms/">Platform Information</a> or contact <a href="https://docs.qumulo.com/contacting-qumulo-care-team.html">contact the Qumulo Care Team</a>.</li>
-  <li>Remove the failed drive.</li>
-  <li>Insert the replacement drive.</li>
-  <li>Qumulo Core automatically detects and incorporates the new drive.</li>
-</ol>
+<p>For the drive replacement procedure, see <a href="/hardware-guide/arrow/arrow-maintenance/drive-replacement.html">Drive Replacement</a>.</p>
 
 <h3 id="power-supply-replacement">Power Supply Replacement</h3>
 
@@ -999,6 +1012,11 @@ If <code>remaining_node_failures</code> is <b>0</b>, do <b>not</b> proceed and <
           
             
             
+  <li><a href="/hardware-guide/arrow/arrow-maintenance/drive-replacement.html">Drive Replacement</a></li>
+            
+          
+            
+            
   <li><a href="/hardware-guide/arrow/arrow-maintenance/boot-drive-replacement.html">Boot Drive Replacement</a></li>
             
           
@@ -1019,6 +1037,9 @@ If <code>remaining_node_failures</code> is <b>0</b>, do <b>not</b> proceed and <
           
         
 </ul>
+        
+    
+      
         
     
       

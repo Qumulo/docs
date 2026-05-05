@@ -530,6 +530,22 @@ fetch('/data/website.json')
           
           
           <li>
+            <a title="Drive Replacement" href="/hardware-guide/hpe/hpe-maintenance/drive-replacement.html">
+              Drive Replacement
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
             <a title="Boot Drive Replacement" href="/hardware-guide/hpe/hpe-maintenance/boot-drive-replacement.html">
               Boot Drive Replacement
               <span class="tag-container">
@@ -749,8 +765,8 @@ $(document).ready(function() {
     </tr>
     <tr>
       <td>Fans</td>
+      <td>No</td>
       <td>Yes</td>
-      <td>No (but special handling required)</td>
     </tr>
     <tr>
       <td>DIMMs (Memory)</td>
@@ -783,17 +799,7 @@ For components that require the node to be taken offline, you must follow the <b
 
 <h3 id="drive-replacement">Drive Replacement</h3>
 
-<p>Drives in Qumulo clusters are hot-swappable. You can replace a failed drive without taking the node offline.</p>
-
-<ol>
-  <li>Identify the failed drive using the Qumulo Web UI or <code class="language-plaintext highlighter-rouge">qq cluster_slots</code> command.</li>
-  <li>Locate the physical drive in the chassis. For your platform’s specific bay layout, consult the HPE User Guide linked from <a href="/hardware-guide/hpe/hpe-platforms/">Platform Information</a>.</li>
-  <li>Remove the failed drive.</li>
-  <li>Insert the replacement drive.</li>
-  <li>Qumulo Core automatically detects and incorporates the new drive.</li>
-</ol>
-
-<p>For physical drive replacement procedures, refer to the HPE User Guides listed in <a href="/hardware-guide/hpe/hpe-platforms/">Platform Information</a>.</p>
+<p>For the drive replacement procedure, see <a href="/hardware-guide/hpe/hpe-maintenance/drive-replacement.html">Drive Replacement</a>.</p>
 
 <h3 id="power-supply-replacement">Power Supply Replacement</h3>
 
@@ -803,20 +809,6 @@ For components that require the node to be taken offline, you must follow the <b
   <li>Verify the server has redundant power supplies and the remaining PSU is functioning.</li>
   <li>Remove the failed power supply.</li>
   <li>Insert the replacement power supply.</li>
-</ol>
-
-<h3 id="fan-replacement">Fan Replacement</h3>
-
-<p>Fans are hot-swappable but require prompt replacement to prevent thermal issues.</p>
-
-<div class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> <b>Caution</b><br />
-When replacing fans, complete the replacement within 60 seconds to prevent the server from overheating and shutting down automatically.
-</div>
-
-<ol>
-  <li>Identify the failed fan using iLO or front panel LEDs.</li>
-  <li>Have the replacement fan ready before beginning.</li>
-  <li>Follow the fan replacement procedure in the HPE User Guide for your server model.</li>
 </ol>
 
 <p>For Boot Drive replacement (a special procedure), see <a href="/hardware-guide/hpe/hpe-maintenance/boot-drive-replacement.html">Boot Drive Replacement</a>.</p>
@@ -1043,6 +1035,11 @@ If <code>remaining_node_failures</code> is <b>0</b>, do <b>not</b> proceed and <
           
             
             
+  <li><a href="/hardware-guide/hpe/hpe-maintenance/drive-replacement.html">Drive Replacement</a></li>
+            
+          
+            
+            
   <li><a href="/hardware-guide/hpe/hpe-maintenance/boot-drive-replacement.html">Boot Drive Replacement</a></li>
             
           
@@ -1068,6 +1065,9 @@ If <code>remaining_node_failures</code> is <b>0</b>, do <b>not</b> proceed and <
           
         
 </ul>
+        
+    
+      
         
     
       

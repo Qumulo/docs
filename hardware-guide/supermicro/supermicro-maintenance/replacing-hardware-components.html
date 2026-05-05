@@ -530,6 +530,22 @@ fetch('/data/website.json')
           
           
           <li>
+            <a title="Drive Replacement" href="/hardware-guide/supermicro/supermicro-maintenance/drive-replacement.html">
+              Drive Replacement
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
             <a title="Boot Drive Replacement" href="/hardware-guide/supermicro/supermicro-maintenance/boot-drive-replacement.html">
               Boot Drive Replacement
               <span class="tag-container">
@@ -727,9 +743,9 @@ $(document).ready(function() {
       <td>No</td>
     </tr>
     <tr>
-      <td>Fans (most models)</td>
-      <td>Yes</td>
+      <td>Fans</td>
       <td>No</td>
+      <td>Yes</td>
     </tr>
     <tr>
       <td>DIMMs (Memory)</td>
@@ -762,43 +778,7 @@ For components that require the node to be taken offline, you must follow the <b
 
 <h3 id="drive-replacement">Drive Replacement</h3>
 
-<p>Drives in Qumulo clusters are hot-swappable. Qumulo Core automatically handles drive removal and reintegration.</p>
-
-<ol>
-  <li>
-    <p>Identify the failed drive using the Qumulo Web UI or CLI:</p>
-
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq cluster_slots
-</code></pre></div>    </div>
-  </li>
-  <li>
-    <p>Verify cluster protection before removing the drive:</p>
-
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq protection_status_get
-</code></pre></div>    </div>
-  </li>
-  <li>
-    <p>Locate the physical drive in the chassis. For your platform’s specific bay layout, consult the Supermicro User’s Manual linked from <a href="/hardware-guide/supermicro/supermicro-platforms/">Platform Information</a>.</p>
-  </li>
-  <li>
-    <p>Verify the serial number matches the failed drive before removal.</p>
-  </li>
-  <li>Remove the failed drive:
-    <ul>
-      <li>Press the release latch on the drive carrier.</li>
-      <li>Pull the drive carrier straight out.</li>
-      <li>Remove the drive from the carrier.</li>
-    </ul>
-  </li>
-  <li>Install the replacement drive:
-    <ul>
-      <li>Mount the new drive in the carrier.</li>
-      <li>Insert the carrier into the bay until it clicks.</li>
-      <li>Qumulo Core automatically detects and incorporates the new drive.</li>
-    </ul>
-  </li>
-  <li>Verify the new drive appears healthy in the Qumulo Web UI or CLI.</li>
-</ol>
+<p>For the drive replacement procedure, see <a href="/hardware-guide/supermicro/supermicro-maintenance/drive-replacement.html">Drive Replacement</a>.</p>
 
 <h4 id="platform-specific-notes">Platform-Specific Notes</h4>
 
@@ -1063,6 +1043,11 @@ If <code>remaining_node_failures</code> is <b>0</b>, do <b>not</b> proceed and <
           
             
             
+  <li><a href="/hardware-guide/supermicro/supermicro-maintenance/drive-replacement.html">Drive Replacement</a></li>
+            
+          
+            
+            
   <li><a href="/hardware-guide/supermicro/supermicro-maintenance/boot-drive-replacement.html">Boot Drive Replacement</a></li>
             
           
@@ -1083,6 +1068,9 @@ If <code>remaining_node_failures</code> is <b>0</b>, do <b>not</b> proceed and <
           
         
 </ul>
+        
+    
+      
         
     
       
