@@ -54,4 +54,7 @@
   {% if page.permalink contains 'rest-api-guide' %}<!-- Postprocessing directives -->
   <script src="{{ "js/fix-double-dashes.js" | relative_url }}"></script>
   <script src="{{ "js/fix-anchors.js" | relative_url }}"></script>{% endif %}
+
+{% if page.permalink contains 'administrator-guide' %} <!-- Admin guide switcher -->
+  <script src="{{ "js/switch-admin-guide.js" | relative_url }}"></script>{% endif %}
 </footer>
