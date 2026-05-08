@@ -2460,11 +2460,7 @@ $(document).ready(function() {
    <p>This section explains how to create, modify, and delete directory quotas by using the Qumulo Core Web UI and how to use the Cluster Alerts for Qumulo script to manage cluster quota notifications.</p>
    
      
-     <p>In Qumulo Core, directory quotas are designed to strike a balance between the traditional approaches of <em>hard quotas</em> (that block operations as soon as the directory reaches a set limit) and <em>soft quotas</em> (that only warn about the directory reaching a set limit).</p>
-
-<p>When you create a directory quota, Qumulo Core checks the directory tree every few seconds for usage and marks the directory as full and read-only when it reaches its quota. This design often permits a client to finish writing a file, while still preventing the directory’s usage from expanding indefinitely.</p>
-
-<h2 id="to-create-a-directory-quota">To Create a Directory Quota</h2>
+     <h2 id="to-create-a-directory-quota">To Create a Directory Quota</h2>
 
 <ol>
   <li>
