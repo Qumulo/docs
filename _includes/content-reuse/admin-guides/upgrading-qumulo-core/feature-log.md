@@ -11,6 +11,8 @@ For information about upgrade types for each release, see <a href='mode-referenc
 ## Qumulo Core 7.8.4
 {{ nexusLink }}
 
+{% include important.html content="In this release, Qumulo Core disables the `algif_aead` kernel module to mitigate the [Copy Fail](https://copy.fail/) ([CVE-2026-31431](https://nvd.nist.gov/vuln/detail/CVE-2026-31431)) vulnerability." %}
+
 * Improved the performance of NFSv3 and NFSv4.1 workloads
 * Added support for unstable writes to all hub portals and spoke portals, including data in Cloud Data Fabric (CDF), significantly improving application workflows
 * Added support for configuring NTP servers on Cloud Native Qumulo on Azure nodes
