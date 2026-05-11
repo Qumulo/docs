@@ -8,9 +8,18 @@ For information about upgrade types for each release, see <a href='mode-referenc
 
 {% comment %}For boilerplate text, use {{page.varNoPublicChanges}}{% endcomment %}
 
-## Qumulo Core 7.8.3.1
+## Qumulo Core 7.8.4
 {{ nexusLink }}
 
+* Improved the performance of NFSv3 and NFSv4.1 workloads
+* Added support for unstable writes to all hub portals and spoke portals, including data in Cloud Data Fabric (CDF), significantly improving application workflows
+* Added support for configuring NTP servers on Cloud Native Qumulo on Azure nodes
+  * Replaced deprecated `/v1/time` REST API endpoints with their `/v2/time` counterparts
+  * Updated and added new REST API endpoints
+* Resolved an issue with NFS export names when modifying a tenant
+
+## Qumulo Core 7.8.3.1
+{{ nexusLink }}
 {% include important.html content="This release resolves a memory management issue that previously could cause a Qumulo node to go offline." %}
 
 * Added SMB share-mode lock functionality across Cloud Data Fabric (CDF) portals

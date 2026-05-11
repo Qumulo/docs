@@ -95,28 +95,6 @@ entries:
     url: /qq-cli-command-guide/add/
   - folderitems:
     - output: web,pdf
-      title: audit_get_cloudwatch_config
-      url: /qq-cli-command-guide/audit/audit_get_cloudwatch_config.html
-    - output: web,pdf
-      title: audit_get_cloudwatch_status
-      url: /qq-cli-command-guide/audit/audit_get_cloudwatch_status.html
-    - output: web,pdf
-      title: audit_get_syslog_config
-      url: /qq-cli-command-guide/audit/audit_get_syslog_config.html
-    - output: web,pdf
-      title: audit_get_syslog_status
-      url: /qq-cli-command-guide/audit/audit_get_syslog_status.html
-    - output: web,pdf
-      title: audit_set_cloudwatch_config
-      url: /qq-cli-command-guide/audit/audit_set_cloudwatch_config.html
-    - output: web,pdf
-      title: audit_set_syslog_config
-      url: /qq-cli-command-guide/audit/audit_set_syslog_config.html
-    output: web,pdf
-    title: audit
-    url: /qq-cli-command-guide/audit/
-  - folderitems:
-    - output: web,pdf
       title: auth_add_group
       url: /qq-cli-command-guide/auth/auth_add_group.html
     - output: web,pdf
@@ -1276,6 +1254,9 @@ entries:
     - output: web,pdf
       title: time_list_timezones
       url: /qq-cli-command-guide/time/time_list_timezones.html
+    - output: web,pdf
+      title: time_reset_configuration
+      url: /qq-cli-command-guide/time/time_reset_configuration.html
     - output: web,pdf
       title: time_series_get
       url: /qq-cli-command-guide/time/time_series_get.html

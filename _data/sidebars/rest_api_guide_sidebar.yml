@@ -154,6 +154,22 @@ entries:
     title: Audit Log V1 (audit)
     url: /rest-api-guide/audit-log-v1/
   - folderitems:
+    - apiversion: v2
+      output: web,pdf
+      title: audit/destinations
+      url: /rest-api-guide/audit-log-v2/v2_audit_destinations.html
+    - apiversion: v2
+      output: web,pdf
+      title: audit/destinations/{id}
+      url: /rest-api-guide/audit-log-v2/v2_audit_destinations_id.html
+    - apiversion: v2
+      output: web,pdf
+      title: audit/destinations/{id}/status
+      url: /rest-api-guide/audit-log-v2/v2_audit_destinations_id_status.html
+    output: web,pdf
+    title: Audit Log V2 (audit)
+    url: /rest-api-guide/audit-log-v2/
+  - folderitems:
     - apiversion: v1
       deprecated: true
       output: web,pdf
@@ -1646,6 +1662,26 @@ entries:
     output: web,pdf
     title: Time Configuration Methods V1 (time)
     url: /rest-api-guide/time-configuration-methods-v1/
+  - folderitems:
+    - apiversion: v2
+      output: web,pdf
+      title: time/default-settings
+      url: /rest-api-guide/time-configuration-methods-v2/v2_time_default-settings.html
+    - apiversion: v2
+      output: web,pdf
+      title: time/settings
+      url: /rest-api-guide/time-configuration-methods-v2/v2_time_settings.html
+    - apiversion: v2
+      output: web,pdf
+      title: time/status
+      url: /rest-api-guide/time-configuration-methods-v2/v2_time_status.html
+    - apiversion: v2
+      output: web,pdf
+      title: time/timezones
+      url: /rest-api-guide/time-configuration-methods-v2/v2_time_timezones.html
+    output: web,pdf
+    title: Time Configuration Methods V2 (time)
+    url: /rest-api-guide/time-configuration-methods-v2/
   - folderitems:
     - apiversion: v1
       output: web,pdf
