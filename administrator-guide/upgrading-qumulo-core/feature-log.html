@@ -2726,9 +2726,23 @@ $(document).ready(function() {
 
 <p>For information about upgrade types for each release, see <a href="mode-reference.html">Qumulo Core Upgrade Mode Reference</a>.</p>
 
-<h2 id="qumulo-core-7831">Qumulo Core 7.8.3.1</h2>
+<h2 id="qumulo-core-784">Qumulo Core 7.8.4</h2>
 <p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a><span class="emoji">🔒</span></p>
 
+<ul>
+  <li>Improved the performance of NFSv3 and NFSv4.1 workloads</li>
+  <li>Added support for unstable writes to all hub portals and spoke portals, including data in Cloud Data Fabric (CDF), significantly improving application workflows</li>
+  <li>Added support for configuring NTP servers on Cloud Native Qumulo on Azure nodes
+    <ul>
+      <li>Replaced deprecated <code class="language-plaintext highlighter-rouge">/v1/time</code> REST API endpoints with their <code class="language-plaintext highlighter-rouge">/v2/time</code> counterparts</li>
+      <li>Updated and added new REST API endpoints</li>
+    </ul>
+  </li>
+  <li>Resolved an issue with NFS export names when modifying a tenant</li>
+</ul>
+
+<h2 id="qumulo-core-7831">Qumulo Core 7.8.3.1</h2>
+<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a><span class="emoji">🔒</span></p>
 <div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> This release resolves a memory management issue that previously could cause a Qumulo node to go offline.</div>
 
 <ul>

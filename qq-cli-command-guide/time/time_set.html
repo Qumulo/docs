@@ -872,129 +872,6 @@ fetch('/data/website.json')
   <li>
   
 
-  <a title="audit" href="/qq-cli-command-guide/audit/" data-proofer-ignore>
-  
-  
-  
-  
-
-  
-
-  audit
-  </a>
-
-      <ul>
-          
-          
-          
-          <li>
-            <a title="audit_get_cloudwatch_config" href="/qq-cli-command-guide/audit/audit_get_cloudwatch_config.html">
-              audit_get_cloudwatch_config
-              <span class="tag-container">
-              
-              
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-          
-          
-          <li>
-            <a title="audit_get_cloudwatch_status" href="/qq-cli-command-guide/audit/audit_get_cloudwatch_status.html">
-              audit_get_cloudwatch_status
-              <span class="tag-container">
-              
-              
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-          
-          
-          <li>
-            <a title="audit_get_syslog_config" href="/qq-cli-command-guide/audit/audit_get_syslog_config.html">
-              audit_get_syslog_config
-              <span class="tag-container">
-              
-              
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-          
-          
-          <li>
-            <a title="audit_get_syslog_status" href="/qq-cli-command-guide/audit/audit_get_syslog_status.html">
-              audit_get_syslog_status
-              <span class="tag-container">
-              
-              
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-          
-          
-          <li>
-            <a title="audit_set_cloudwatch_config" href="/qq-cli-command-guide/audit/audit_set_cloudwatch_config.html">
-              audit_set_cloudwatch_config
-              <span class="tag-container">
-              
-              
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-          
-          
-          <li>
-            <a title="audit_set_syslog_config" href="/qq-cli-command-guide/audit/audit_set_syslog_config.html">
-              audit_set_syslog_config
-              <span class="tag-container">
-              
-              
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-      </ul>
-   </li>
-     
-      
-  
-
-  
-
-  
-
-  
-  <li>
-  
-
   <a title="auth" href="/qq-cli-command-guide/auth/" data-proofer-ignore>
   
   
@@ -7498,6 +7375,22 @@ fetch('/data/website.json')
           
           
           <li>
+            <a title="time_reset_configuration" href="/qq-cli-command-guide/time/time_reset_configuration.html">
+              time_reset_configuration
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
             <a title="time_series_get" href="/qq-cli-command-guide/time/time_series_get.html">
               time_series_get
               <span class="tag-container">
@@ -8111,7 +8004,7 @@ $(document).ready(function() {
 
 
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq time_set <span class="o">[</span><span class="nt">-h</span><span class="o">]</span> <span class="o">[</span><span class="nt">--set-use-ad</span><span class="o">]</span> <span class="o">[</span><span class="nt">--unset-use-ad</span><span class="o">]</span> <span class="o">[</span><span class="nt">--ntp-servers</span> NTP_SERVERS]
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq time_set <span class="o">[</span><span class="nt">-h</span><span class="o">]</span> <span class="o">[</span><span class="nt">--source</span> SOURCE] <span class="o">[</span><span class="nt">--set-use-ad</span><span class="o">]</span> <span class="o">[</span><span class="nt">--unset-use-ad</span><span class="o">]</span> <span class="o">[</span><span class="nt">--ntp-servers</span> NTP_SERVERS]
 </code></pre></div></div>
 
 
@@ -8122,6 +8015,20 @@ $(document).ready(function() {
     <th>Flag Name</th>
     <th>Required</th>
     <th>Description</th>
+  </tr>
+
+  <tr>
+    <td>
+      <code>--source</code>
+    </td>
+    <td>
+      
+        No
+      
+    </td>
+    <td>
+      The time source type. For all platforms other than Azure, must be API_TIME_SOURCE_NTP. For Azure, can be either API_TIME_SOURCE_NTP or API_TIME_SOURCE_HYPERVISOR.
+    </td>
   </tr>
 
   <tr>
@@ -8277,26 +8184,6 @@ $(document).ready(function() {
       
         
     
-  
-    
-      
-        
-    
-      
-        
-    
-      
-        
-    
-      
-        
-    
-      
-        
-    
-      
-        
-    
       
         
     
@@ -9326,6 +9213,9 @@ $(document).ready(function() {
         
     
   
+    
+      
+        
     
       
         
@@ -9351,6 +9241,11 @@ $(document).ready(function() {
             
             
   <li><a href="/qq-cli-command-guide/time/time_list_timezones.html">time_list_timezones</a></li>
+            
+          
+            
+            
+  <li><a href="/qq-cli-command-guide/time/time_reset_configuration.html">time_reset_configuration</a></li>
             
           
             
