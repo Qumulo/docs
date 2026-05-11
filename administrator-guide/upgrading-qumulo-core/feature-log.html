@@ -2729,6 +2729,8 @@ $(document).ready(function() {
 <h2 id="qumulo-core-784">Qumulo Core 7.8.4</h2>
 <p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a><span class="emoji">🔒</span></p>
 
+<div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> In this release, Qumulo Core disables the <code class="language-plaintext highlighter-rouge">algif_aead</code> kernel module to mitigate the <a href="https://copy.fail/">Copy Fail</a> (<a href="https://nvd.nist.gov/vuln/detail/CVE-2026-31431">CVE-2026-31431</a>) vulnerability.</div>
+
 <ul>
   <li>Improved the performance of NFSv3 and NFSv4.1 workloads</li>
   <li>Added support for unstable writes to all hub portals and spoke portals, including data in Cloud Data Fabric (CDF), significantly improving application workflows</li>
