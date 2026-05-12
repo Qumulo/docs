@@ -43,9 +43,9 @@
 </script>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Encryption at Rest V1 (encryption) | Qumulo Documentation Portal</title>
+<title>Qumulo REST API Change Log | Qumulo Documentation Portal</title>
 
-<link rel="canonical" href="https://docs.qumulo.com/rest-api-guide/encryption-at-rest-v1/">
+<link rel="canonical" href="https://docs.qumulo.com/rest-api-guide/change-log.html">
 
 <!-- Organization JSON-LD Schema -->
 <script>
@@ -149,7 +149,7 @@ fetch('/data/website.json')
 </noscript>
 
 <!-- Define page metadata -->
-<meta name="description" content="Rotate keys and view encryption status.">
+<meta name="description" content="This section lists the REST API changes for each release of Qumulo Core.">
 <meta name="apple-mobile-web-app-title" content="Qumulo Documentation Portal">
 <meta name="application-name" content="Qumulo Documentation Portal">
 <meta name="msapplication-TileColor" content="#2b5797">
@@ -159,10 +159,10 @@ fetch('/data/website.json')
 <meta name="google-site-verification" content="_KoxPR0qF_ZeMyH6uWvlX84cFRujO_AZ1eq0eT9alAg">
 
 <!-- Open Graph Meta Tags -->
-<meta property="og:title" content="Encryption at Rest V1 (encryption) | Qumulo Documentation Portal">
-<meta property="og:url" content="https://docs.qumulo.com/rest-api-guide/encryption-at-rest-v1/">
+<meta property="og:title" content="Qumulo REST API Change Log | Qumulo Documentation Portal">
+<meta property="og:url" content="https://docs.qumulo.com/rest-api-guide/change-log.html">
 <meta property="og:site_name" content="Qumulo Documentation Portal">
-<meta property="og:description" content="Rotate keys and view encryption status.">
+<meta property="og:description" content="This section lists the REST API changes for each release of Qumulo Core.">
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://docs.qumulo.com/images/docs.qumulo.com-qumulo-documentation-portal-630px.png">
@@ -170,10 +170,10 @@ fetch('/data/website.json')
 <meta property="og:image:height" content="630">
 
 <!-- Twitter Meta Tags -->
-<meta name="twitter:title" content="Encryption at Rest V1 (encryption) | Qumulo Documentation Portal">
-<meta property="twitter:url" content="https://docs.qumulo.com/rest-api-guide/encryption-at-rest-v1/">
+<meta name="twitter:title" content="Qumulo REST API Change Log | Qumulo Documentation Portal">
+<meta property="twitter:url" content="https://docs.qumulo.com/rest-api-guide/change-log.html">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:description" content="Rotate keys and view encryption status.">
+<meta name="twitter:description" content="This section lists the REST API changes for each release of Qumulo Core.">
 <meta name="twitter:image" content="https://docs.qumulo.com/images/docs.qumulo.com-qumulo-documentation-portal-418px.png">
 <meta property="twitter:domain" content="docs.qumulo.com">
 
@@ -399,7 +399,7 @@ fetch('/data/website.json')
 
 <div class="nav nav-buttons">
   
-    <a target="_blank" rel="noopener" href="https://github.com/qumulo/docs/blob/mainline/rest-api-guide/encryption-at-rest-v1/index.md" class="btn btn-default githubEditButton no_icon" role="button" data-proofer-ignore><span class="fa fa-github fa-lg"></span> Edit on GitHub</a>
+    <a target="_blank" rel="noopener" href="https://github.com/qumulo/docs/blob/mainline/rest-api-guide/change-log.md" class="btn btn-default githubEditButton no_icon" role="button" data-proofer-ignore><span class="fa fa-github fa-lg"></span> Edit on GitHub</a>
   
 
   
@@ -495,10 +495,10 @@ fetch('/data/website.json')
   
 
   
-  <li>
+  <li class="active">
   
 
-  <a title="Change Log" href="/rest-api-guide/change-log.html" data-proofer-ignore>
+  <a title="Change Log" href="#" data-proofer-ignore>
   
   
   
@@ -3091,10 +3091,10 @@ fetch('/data/website.json')
   
 
   
-  <li class="active">
+  <li>
   
 
-  <a title="Encryption at Rest V1 (encryption)" href="#" data-proofer-ignore>
+  <a title="Encryption at Rest V1 (encryption)" href="/rest-api-guide/encryption-at-rest-v1/" data-proofer-ignore>
   
   
   
@@ -8962,16 +8962,22 @@ fetch('/data/website.json')
 
 
 
-  Encryption at Rest V1 (encryption)
+  Qumulo REST API Change Log
   </div>
 </nav>
 
 
-            <div class="post-header">
-   <h1 class="post-title-main">Encryption at Rest V1 (encryption)</h1>
+            
+
+<div class="post-header">
+   <div class="star" id="page-star" title="Save to Favorites">&#9733;</div>
+   <h1 class="post-title-main">Qumulo REST API Change Log</h1>
 </div>
 
+
+
 <div class="post-content">
+
     
     
 <!-- Create the automatic mini-TOC on a page (unless disabled with #toc{display:none;}.
@@ -9002,188 +9008,1714 @@ $(document).ready(function() {
 
     
 
-    
+   <p>This section lists the REST API changes for each release of Qumulo Core.</p>
+   
+     
+<style>div#toc{height:200px;overflow:auto;}</style>
+
+<h2 id="qumulo-core-784">Qumulo Core 7.8.4</h2>
+
+<ul>
+  <li>Added <code>GET /v2/time/default-settings</code></li>
+  <li>Added <code>GET | PATCH | PUT /v2/time/settings</code></li>
+  <li>Added <code>GET /v2/time/status</code></li>
+  <li>Added <code>GET /v2/time/timezones</code></li>
+</ul>
+
+<h2 id="qumulo-core-7831">Qumulo Core 7.8.3.1</h2>
+
+<ul>
+  <li>Added <code>POST /v1/files/{ref}/fetch-data</code></li>
+  <li>Added <code>POST /v1/shutdown/container-restart</code></li>
+</ul>
+
+<h2 id="qumulo-core-7821">Qumulo Core 7.8.2.1</h2>
+
+<p>This release contains no REST API changes.</p>
+
+<h2 id="qumulo-core-7811">Qumulo Core 7.8.1.1</h2>
+
+<p>This release contains no REST API changes.</p>
+
+<h2 id="qumulo-core-7802-quarterly">Qumulo Core 7.8.0.2 (Quarterly)</h2>
+
+<ul>
+  <li>Added <code>GET | PATCH /v1/authoritative-dns/settings</code></li>
+  <li>Added <code>POST /v2/object-storage/add-uris</code></li>
+  <li>Added <code>POST /v5/cluster/object-backed/create-stratus</code></li>
+</ul>
+<details>
+  <summary>Click to expand</summary>
+  <ul>
+    <li>Added <code>node_statuses</code> parameter to <code>GET /v1/audit/cloudwatch/status</code> response</li>
+    <li>Added <code>members</code> parameter to <code>GET /v1/auth/roles/{role_name}/members</code> response</li>
+    <li>
+      Added parameters to <code>GET /v3/network/status/{node_id}</code> response:
+          <ul>
+            <li><code>api_cloud_provider_status</code></li>
+            <li><code>devices</code></li>
+            <li><code>environment</code></li>
+            <li><code>managed_interface_statuses</code></li>
+            <li><code>network_statuses</code></li>
+            <li><code>node_id</code></li>
+            <li><code>node_name</code></li>
+          </ul>
+    </li>
+  </ul>
+</details>
+
+<h2 id="qumulo-core-7751">Qumulo Core 7.7.5.1</h2>
+
+<p>Added <code>GET /v1/object-storage/external-credentials-source</code></p>
+
+<h2 id="qumulo-core-7741">Qumulo Core 7.7.4.1</h2>
+
+<ul>
+  <li>Added <code>POST /v1/portal/ping</code></li>
+  <li>Added <code>idmap_domain</code> parameter to <code>GET /v1/multitenancy/nfs/global-settings</code> response</li>
+  <li>
+    Modified <code>PATCH /v1/multitenancy/nfs/global-settings</code>:
+      <ul>
+        <li>Added <code>idmap_domain</code> parameter to <code>PATCH /v1/multitenancy/nfs/global-settings</code> request body</li>
+        <li>Added <code>idmap_domain</code> parameter to <code>PATCH /v1/multitenancy/nfs/global-settings</code> response</li>
+      </ul>
+  </li>
+</ul>
+<details>
+  <summary>Click to expand</summary>
+  <ul>
+    <li>
+      Modified <code>PUT /v1/multitenancy/nfs/global-settings</code>:
+      <ul>
+        <li>Added <code>idmap_domain</code> parameter to <code>PUT /v1/multitenancy/nfs/global-settings</code> request body</li>
+        <li>Added <code>idmap_domain</code> parameter to <code>PUT /v1/multitenancy/nfs/global-settings</code> response</li>
+      </ul>
+    </li>
+    <li>Added <code>idmap_domain</code> parameter to <code>GET /v1/multitenancy/nfs/settings/{id}</code> response</li>
+    <li>
+      Modified <code>PATCH /v1/multitenancy/nfs/settings/{id}</code>:
+      <ul>
+        <li>Added <code>idmap_domain</code> parameter to <code>PATCH /v1/multitenancy/nfs/settings/{id}</code> request body</li>
+        <li>Added <code>idmap_domain</code> parameter to <code>PATCH /v1/multitenancy/nfs/settings/{id}</code> response</li>
+      </ul>
+    </li>
+    <li>
+      Modified <code>PUT /v1/multitenancy/nfs/settings/{id}</code>:
+      <ul>
+        <li>Added <code>idmap_domain</code> parameter to <code>PUT /v1/multitenancy/nfs/settings/{id}</code> request body</li>
+        <li>Added <code>idmap_domain</code> parameter to <code>PUT /v1/multitenancy/nfs/settings/{id}</code> response</li>
+      </ul>
+    </li>
+    <li>Added <code>idmap_domain</code> parameter to <code>GET /v2/nfs/settings</code> response</li>
+    <li>
+      Modified <code>PATCH /v2/nfs/settings</code>:
+      <ul>
+        <li>Added <code>idmap_domain</code> parameter to <code>PATCH /v2/nfs/settings</code> request body</li>
+        <li>Added <code>idmap_domain</code> parameter to <code>PATCH /v2/nfs/settings</code> response</li>
+      </ul>
+    </li>
+    <li>
+      Modified <code>PUT /v2/nfs/settings</code>:
+      <ul>
+        <li>Added <code>idmap_domain</code> parameter to <code>PUT /v2/nfs/settings</code> request body</li>
+        <li>Added <code>idmap_domain</code> parameter to <code>PUT /v2/nfs/settings</code> response</li>
+      </ul>
+    </li>
+  </ul>
+</details>
+
+<h2 id="qumulo-core-773">Qumulo Core 7.7.3</h2>
+
+<ul>
+  <li>
+    Modified <code>POST /v3/smb/shares/</code>:
+      <ul>
+        <li>Removed <code>allow-fs-path-create</code> parameter from <code>POST /v3/smb/shares/</code> parameters</li>
+        <li>Added parameters to <code>POST /v3/smb/shares/</code> request body:
+          <ul>
+            <li><code>allow_fs_path_create</code></li>
+            <li><code>expand_fs_path_variables</code></li>
+          </ul></li>
+        <li>Added parameters to <code>POST /v3/smb/shares/</code> response:
+          <ul>
+            <li><code>allow_fs_path_create</code></li>
+            <li><code>expand_fs_path_variables</code></li>
+          </ul></li>
+      </ul>
+  </li>
+  <li>
+    Added parameters to <code>GET /v3/smb/shares/{share_id}</code> response:
+          <ul>
+            <li><code>allow_fs_path_create</code></li>
+            <li><code>expand_fs_path_variables</code></li>
+          </ul>
+  </li>
+  <li>
+    Modified <code>PATCH /v3/smb/shares/{share_id}</code>:
+      <ul>
+        <li>Removed <code>allow-fs-path-create</code> parameter from <code>PATCH /v3/smb/shares/{share_id}</code> parameters</li>
+        <li>Added parameters to <code>PATCH /v3/smb/shares/{share_id}</code> request body:
+          <ul>
+            <li><code>allow_fs_path_create</code></li>
+            <li><code>expand_fs_path_variables</code></li>
+          </ul></li>
+        <li>Added parameters to <code>PATCH /v3/smb/shares/{share_id}</code> response:
+          <ul>
+            <li><code>allow_fs_path_create</code></li>
+            <li><code>expand_fs_path_variables</code></li>
+          </ul></li>
+      </ul>
+  </li>
+  <li>
+    Modified <code>PUT /v3/smb/shares/{share_id}</code>:
+      <ul>
+        <li>Removed <code>allow-fs-path-create</code> parameter from <code>PUT /v3/smb/shares/{share_id}</code> parameters</li>
+        <li>Added parameters to <code>PUT /v3/smb/shares/{share_id}</code> request body:
+          <ul>
+            <li><code>allow_fs_path_create</code></li>
+            <li><code>expand_fs_path_variables</code></li>
+          </ul></li>
+        <li>Added parameters to <code>PUT /v3/smb/shares/{share_id}</code> response:
+          <ul>
+            <li><code>allow_fs_path_create</code></li>
+            <li><code>expand_fs_path_variables</code></li>
+          </ul></li>
+      </ul>
+  </li>
+</ul>
+
+<h2 id="qumulo-core-772">Qumulo Core 7.7.2</h2>
+
+<p>Added <code>POST /v2/cluster/data-core/create</code></p>
+
+<h2 id="qumulo-core-7711">Qumulo Core 7.7.1.1</h2>
+
+<ul>
+  <li>Added <code>GET | PATCH | PUT /v1/nexus/connection</code></li>
+  <li>Added <code>DELETE | GET | PUT /v1/nexus/registration</code></li>
+  <li>Added <code>POST /v1/nexus/registration/rotate</code></li>
+</ul>
+
+<h2 id="qumulo-core-7702-quarterly">Qumulo Core 7.7.0.2 (Quarterly)</h2>
+
+<ul>
+  <li>
+    Added parameters to <code>GET /v1/support/settings</code> response:
+          <ul>
+            <li><code>nexus_registration_key</code></li>
+            <li><code>nexus_secret_created_at</code></li>
+          </ul>
+  </li>
+  <li>Added <code>nexus_registration_key</code> parameter to <code>PATCH /v1/support/settings</code> request body</li>
+  <li>Added <code>nexus_registration_key</code> parameter to <code>PUT /v1/support/settings</code> request body</li>
+</ul>
+
+<h2 id="qumulo-core-7641">Qumulo Core 7.6.4.1</h2>
+
+<p>This release contains no REST API changes.</p>
+
+<h2 id="qumulo-core-7631">Qumulo Core 7.6.3.1</h2>
+
+<ul>
+  <li>Added <code>POST /v2/cluster/unprotected-edge/create</code></li>
+  <li>Added <code>domain_controllers</code> parameter to <code>POST /v1/ad/join</code> request body</li>
+  <li>Added <code>domain_controllers</code> parameter to <code>POST /v1/ad/reconfigure</code> request body</li>
+</ul>
+<details>
+  <summary>Click to expand</summary>
+  <ul>
+    <li>
+      Modified <code>DELETE /v2/portal/hubs/{id}</code>:
+      <ul>
+        <li>Added <code>spoke_hosts</code> parameter to <code>DELETE /v2/portal/hubs/{id}</code> <code>202</code> response</li>
+        <li>Removed <code>spoke_host</code> parameter from <code>DELETE /v2/portal/hubs/{id}</code> <code>202</code> response</li>
+      </ul>
+    </li>
+    <li>
+      Modified <code>GET /v2/portal/hubs/{id}</code>:
+      <ul>
+        <li>Added <code>spoke_hosts</code> parameter to <code>GET /v2/portal/hubs/{id}</code> response</li>
+        <li>Removed <code>spoke_host</code> parameter from <code>GET /v2/portal/hubs/{id}</code> response</li>
+      </ul>
+    </li>
+    <li>
+      Modified <code>PATCH /v2/portal/hubs/{id}</code>:
+      <ul>
+        <li>Added <code>spoke_hosts</code> parameter to <code>PATCH /v2/portal/hubs/{id}</code> request body</li>
+        <li>Removed <code>spoke_host</code> parameter from <code>PATCH /v2/portal/hubs/{id}</code> request body</li>
+        <li>Added <code>spoke_hosts</code> parameter to <code>PATCH /v2/portal/hubs/{id}</code> response</li>
+        <li>Removed <code>spoke_host</code> parameter from <code>PATCH /v2/portal/hubs/{id}</code> response</li>
+      </ul>
+    </li>
+    <li>
+      Modified <code>POST /v2/portal/hubs/{id}/accept</code>:
+      <ul>
+        <li>Added parameters to <code>POST /v2/portal/hubs/{id}/accept</code> request body:
+          <ul>
+            <li><code>authorized_roots</code></li>
+            <li><code>spoke_hosts</code></li>
+          </ul></li>
+        <li>Removed parameters from <code>POST /v2/portal/hubs/{id}/accept</code> request body:
+          <ul>
+            <li><code>spoke_address</code></li>
+            <li><code>spoke_port</code></li>
+          </ul></li>
+        <li>Added <code>spoke_hosts</code> parameter to <code>POST /v2/portal/hubs/{id}/accept</code> response</li>
+        <li>Removed <code>spoke_host</code> parameter from <code>POST /v2/portal/hubs/{id}/accept</code> response</li>
+      </ul>
+    </li>
+    <li>
+      Modified <code>DELETE /v2/portal/hubs/{id}/roots/{dir}</code>:
+      <ul>
+        <li>Added <code>spoke_hosts</code> parameter to <code>DELETE /v2/portal/hubs/{id}/roots/{dir}</code> response</li>
+        <li>Removed <code>spoke_host</code> parameter from <code>DELETE /v2/portal/hubs/{id}/roots/{dir}</code> response</li>
+      </ul>
+    </li>
+    <li>
+      Modified <code>POST /v2/portal/hubs/{id}/roots/{dir}</code>:
+      <ul>
+        <li>Added <code>spoke_hosts</code> parameter to <code>POST /v2/portal/hubs/{id}/roots/{dir}</code> response</li>
+        <li>Removed <code>spoke_host</code> parameter from <code>POST /v2/portal/hubs/{id}/roots/{dir}</code> response</li>
+      </ul>
+    </li>
+  </ul>
+</details>
+
+<h2 id="qumulo-core-762">Qumulo Core 7.6.2</h2>
+
+<ul>
+  <li>Added <code>GET /v2/portal/hubs/</code></li>
+  <li>Added <code>DELETE | GET | PATCH /v2/portal/hubs/{id}</code></li>
+  <li>Added <code>POST /v2/portal/hubs/{id}/accept</code></li>
+</ul>
+<details>
+  <summary>Click to expand</summary>
+  <ul>
+    <li>Added <code>DELETE | POST /v2/portal/hubs/{id}/roots/{dir}</code></li>
+    <li>Added <code>GET | POST /v2/portal/spokes/</code></li>
+    <li>Added <code>DELETE | GET | PATCH /v2/portal/spokes/{id}</code></li>
+    <li>Added <code>POST /v2/portal/spokes/{id}/roots/</code></li>
+    <li>Added <code>DELETE /v2/portal/spokes/{id}/roots/{dir}</code></li>
+    <li>Added <code>include-incompatibles</code> parameter to <code>GET /v1/unconfigured/nodes/</code> parameters</li>
+  </ul>
+</details>
+
+<h2 id="qumulo-core-7611">Qumulo Core 7.6.1.1</h2>
+
+<p>Added <code>private</code> parameter to <code>POST /v1/s3/buckets/</code> request body</p>
+
+<h2 id="qumulo-core-7602-quarterly">Qumulo Core 7.6.0.2 (Quarterly)</h2>
+
+<p>This release contains no REST API changes.</p>
+
+<h2 id="qumulo-core-7552">Qumulo Core 7.5.5.2</h2>
+
+<ul>
+  <li>Added <code>configured_dcs</code> parameter to <code>POST /v1/ad/dismiss-error</code> response</li>
+  <li>Added <code>configured_dcs</code> parameter to <code>GET /v1/ad/monitor</code> response</li>
+</ul>
+
+<h2 id="qumulo-core-7542">Qumulo Core 7.5.4.2</h2>
+
+<p>This release contains no REST API changes.</p>
+
+<h2 id="qumulo-core-753">Qumulo Core 7.5.3</h2>
+
+<p>This release contains no REST API changes.</p>
+
+<h2 id="qumulo-core-752">Qumulo Core 7.5.2</h2>
+
+<p>This release contains no REST API changes.</p>
+
+<h2 id="qumulo-core-7512">Qumulo Core 7.5.1.2</h2>
+
+<ul>
+  <li>Added <code>GET | PUT /v3/network</code></li>
+  <li>Added <code>GET /v3/network/backend-interfaces</code></li>
+  <li>Added <code>GET /v3/network/frontend-interfaces</code></li>
+</ul>
+<details>
+  <summary>Click to expand</summary>
+  <ul>
+    <li>Added <code>GET /v3/network/status</code></li>
+    <li>Added <code>GET /v3/network/status/{node_id}</code></li>
+    <li>Added <code>PUT /v3/network/validate</code></li>
+  </ul>
+</details>
+
+<h2 id="qumulo-core-7503-quarterly">Qumulo Core 7.5.0.3 (Quarterly)</h2>
+
+<p>This release contains no REST API changes.</p>
+
+<h2 id="qumulo-core-744">Qumulo Core 7.4.4</h2>
+
+<p>Added <code>GET /v1/health/ssd-endurance</code></p>
+
+<h2 id="qumulo-core-7431">Qumulo Core 7.4.3.1</h2>
+
+<p>Added <code>POST /v5/cluster/object-backed/create</code></p>
+
+<h2 id="qumulo-core-7421">Qumulo Core 7.4.2.1</h2>
+
+<ul>
+  <li>Added <code>DELETE /v1/files/{ref}/entries/{name}</code></li>
+  <li>Added <code>force</code> parameter to <code>DELETE /v1/portal/hubs/{id}</code> parameters</li>
+  <li>Added <code>status</code> parameter to <code>GET /v1/portal/hubs/{id}</code> response</li>
+</ul>
+<details>
+  <summary>Click to expand</summary>
+  <ul>
+    <li>
+      Modified <code>PATCH /v1/portal/hubs/{id}</code>:
+      <ul>
+        <li>Added <code>status</code> parameter to <code>PATCH /v1/portal/hubs/{id}</code> request body</li>
+        <li>Added <code>status</code> parameter to <code>PATCH /v1/portal/hubs/{id}</code> response</li>
+      </ul>
+    </li>
+    <li>Added <code>status</code> parameter to <code>POST /v1/portal/hubs/{id}/authorize</code> response</li>
+    <li>Added <code>force</code> parameter to <code>DELETE /v1/portal/spokes/{id}</code> parameters</li>
+    <li>Added <code>status</code> parameter to <code>GET /v1/portal/spokes/{id}</code> response</li>
+    <li>
+      Modified <code>PATCH /v1/portal/spokes/{id}</code>:
+      <ul>
+        <li>Added <code>status</code> parameter to <code>PATCH /v1/portal/spokes/{id}</code> request body</li>
+        <li>Added <code>status</code> parameter to <code>PATCH /v1/portal/spokes/{id}</code> response</li>
+      </ul>
+    </li>
+    <li>Added <code>status</code> parameter to <code>POST /v1/portal/spokes/{id}/propose</code> response</li>
+  </ul>
+</details>
+
+<h2 id="qumulo-core-7411">Qumulo Core 7.4.1.1</h2>
+
+<ul>
+  <li>Removed <code>/v1/portal/spokes/{id}/evict-data</code></li>
+  <li>Removed <code>/v1/portal/spokes/{id}/evict-link</code></li>
+  <li>Removed <code>/v1/portal/spokes/{id}/evict-tree</code></li>
+  <li>Added <code>GET /v1/cluster/slots/node/{node_id}</code></li>
+</ul>
+
+<h2 id="qumulo-core-7404-quarterly">Qumulo Core 7.4.0.4 (Quarterly)</h2>
+
+<ul>
+  <li>Added <code>GET /v1/portal/file-systems/</code></li>
+  <li>Added <code>GET /v1/portal/file-systems/{id}</code></li>
+  <li>Added <code>POST /v1/shutdown/container-restart/{node_id}</code></li>
+</ul>
+<details>
+  <summary>Click to expand</summary>
+  <ul>
+    <li>Added <code>POST /v1/shutdown/halt/{node_id}</code></li>
+    <li>Added <code>POST /v1/shutdown/reboot/{node_id}</code></li>
+    <li>Added <code>hub_cluster_uuid</code> parameter to <code>GET /v1/portal/spokes/{id}</code> response</li>
+    <li>
+      Modified <code>PATCH /v1/portal/spokes/{id}</code>:
+      <ul>
+        <li>Added <code>hub_cluster_uuid</code> parameter to <code>PATCH /v1/portal/spokes/{id}</code> request body</li>
+        <li>Added <code>hub_cluster_uuid</code> parameter to <code>PATCH /v1/portal/spokes/{id}</code> response</li>
+      </ul>
+    </li>
+    <li>Added <code>hub_cluster_uuid</code> parameter to <code>POST /v1/portal/spokes/{id}/propose</code> response</li>
+  </ul>
+</details>
+
+<h2 id="qumulo-core-7321">Qumulo Core 7.3.2.1</h2>
+
+<ul>
+  <li>Added <code>POST /v1/portal/files/{file_id}/evict</code></li>
+  <li>Added <code>slot_command_capacity</code> parameter to <code>GET /v1/cluster/slots/{id}</code> response</li>
+  <li>Added <code>slot_command_capacity</code> parameter to <code>PATCH /v1/cluster/slots/{id}</code> response</li>
+</ul>
+
+<h2 id="qumulo-core-7312">Qumulo Core 7.3.1.2</h2>
+
+<ul>
+  <li>Added <code>GET /v1/cluster/object-backed/protection/fault-tolerance</code></li>
+  <li>Added <code>hub_id</code> parameter to <code>GET /v1/portal/spokes/{id}</code> response</li>
+  <li>
+    Modified <code>PATCH /v1/portal/spokes/{id}</code>:
+      <ul>
+        <li>Added <code>hub_id</code> parameter to <code>PATCH /v1/portal/spokes/{id}</code> request body</li>
+        <li>Added <code>hub_id</code> parameter to <code>PATCH /v1/portal/spokes/{id}</code> response</li>
+      </ul>
+  </li>
+  <li>Added <code>hub_id</code> parameter to <code>POST /v1/portal/spokes/{id}/propose</code> response</li>
+</ul>
+
+<h2 id="qumulo-core-7303-quarterly">Qumulo Core 7.3.0.3 (Quarterly)</h2>
+
+<ul>
+  <li>Added <code>GET | PUT /v1/capacity/clamp</code></li>
+  <li>Added support for <code>PATCH /v1/s3/buckets/{name}</code></li>
+  <li>Added <code>spoke_type</code> parameter to <code>GET /v1/portal/hubs/{id}</code> response</li>
+</ul>
+<details>
+  <summary>Click to expand</summary>
+  <ul>
+    <li>
+      Modified <code>PATCH /v1/portal/hubs/{id}</code>:
+      <ul>
+        <li>Added <code>spoke_type</code> parameter to <code>PATCH /v1/portal/hubs/{id}</code> request body</li>
+        <li>Added <code>spoke_type</code> parameter to <code>PATCH /v1/portal/hubs/{id}</code> response</li>
+      </ul>
+    </li>
+    <li>Added <code>spoke_type</code> parameter to <code>POST /v1/portal/hubs/{id}/authorize</code> response</li>
+    <li>Added <code>is_writable_spoke</code> parameter to <code>POST /v1/portal/spokes/</code> request body</li>
+    <li>Added <code>spoke_type</code> parameter to <code>GET /v1/portal/spokes/{id}</code> response</li>
+    <li>
+      Modified <code>PATCH /v1/portal/spokes/{id}</code>:
+      <ul>
+        <li>Added <code>spoke_type</code> parameter to <code>PATCH /v1/portal/spokes/{id}</code> request body</li>
+        <li>Added <code>spoke_type</code> parameter to <code>PATCH /v1/portal/spokes/{id}</code> response</li>
+      </ul>
+    </li>
+    <li>Added <code>spoke_type</code> parameter to <code>POST /v1/portal/spokes/{id}/propose</code> response</li>
+  </ul>
+</details>
+
+<h2 id="qumulo-core-7232">Qumulo Core 7.2.3.2</h2>
+
+<ul>
+  <li>Added <code>POST /v1/object-storage/add-uris</code></li>
+  <li>Added <code>GET /v1/object-storage/uris</code></li>
+  <li>Added <code>GET /v1/portal/hubs/</code></li>
+</ul>
+<details>
+  <summary>Click to expand</summary>
+  <ul>
+    <li>Added <code>DELETE | GET | PATCH /v1/portal/hubs/{id}</code></li>
+    <li>Added <code>POST /v1/portal/hubs/{id}/authorize</code></li>
+    <li>Added <code>GET | POST /v1/portal/spokes/</code></li>
+    <li>Added <code>GET | PATCH | PUT /v1/portal/spokes/eviction-settings</code></li>
+    <li>Added <code>DELETE | GET | PATCH /v1/portal/spokes/{id}</code></li>
+    <li>Added <code>POST /v1/portal/spokes/{id}/evict-data</code></li>
+    <li>Added <code>POST /v1/portal/spokes/{id}/evict-link</code></li>
+    <li>Added <code>POST /v1/portal/spokes/{id}/evict-tree</code></li>
+    <li>Added <code>POST /v1/portal/spokes/{id}/propose</code></li>
+    <li>Added <code>GET | POST /v2/cluster/object-backed/nodes</code></li>
+    <li>Added <code>POST /v2/cluster/object-backed/nodes/dry-run</code></li>
+    <li>Added <code>POST /v4/cluster/object-backed/create</code></li>
+  </ul>
+</details>
+
 
    
-    
-    
 
-    <strong>Table of Contents</strong>
-    
-               
-    
-               
-    
-               
-    
-               
-    
-               
-    
-               
-    
-               
-    
-               
-    
-               
-    
-               
-    
-               
-    
-               
-    
-               
-    
-               
-    
-               
-    
-               
-    
-               
-    
-               
-    
-               
-    
-               
-    
-               
-    
-               
-    
-               
-    
-               
-    
-               
-    
-               
+
+
+
+  
     
       
-        <ul>
-          
-          
-          <li><a href="/rest-api-guide/encryption-at-rest-v1/encryption_rotate-keys.html">encryption/rotate-keys</a><span class="apideprecated-inline">deprecated</span></li>
-          
-          
-          
-          <li><a href="/rest-api-guide/encryption-at-rest-v1/encryption_status.html">encryption/status</a><span class="apideprecated-inline">deprecated</span></li>
-          
-              
-        </ul>             
-               
+        
     
-               
-    
-               
-    
-               
-    
-               
-    
-               
-    
-               
-    
-               
-    
-               
-    
-               
-    
-               
-    
-               
-    
-               
-    
-               
-    
-               
-    
-               
-    
-               
-    
-               
-    
-               
-    
-               
-    
-               
-    
-               
-    
-               
-    
-               
-    
-               
-    
-               
-    
-               
-    
-               
-    
-               
-    
-               
-    
-               
-    
-               
-    
-               
-    
-               
-    
-               
-    
-               
-    
-               
-    
-               
-    
-               
-    
-               
-    
-               
-    
-               
-    
-               
-    
-               
-    
-               
-    
-               
-    
-               
-    
-               
-    
-               
-    
-               
-    
-               
-    
-               
-    
-               
-    
-               
-    
-               
       
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+  
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+  
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+  
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+  
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+  
+    
+      
+        
+    
+  
+    
+      
+        
+    
+  
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+  
+    
+      
+        
+    
+  
+    
+      
+        
+    
+  
+
+
 </div>
 
         </div>
@@ -9246,7 +10778,9 @@ $(document).ready(function() {
 
   
 
-  
+  <!-- Postprocessing directives -->
+  <script src="/js/fix-double-dashes.js"></script>
+  <script src="/js/fix-anchors.js"></script>
 
 
 </footer>

@@ -2449,6 +2449,7 @@ $(document).ready(function() {
 <h2 id="qumulo-core-784">Qumulo Core 7.8.4</h2>
 <p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a><span class="emoji">🔒</span></p>
 
+<h3 id="features-and-improvements">Features and Improvements</h3>
 <div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> In this release, Qumulo Core disables the <code class="language-plaintext highlighter-rouge">algif_aead</code> kernel module to mitigate the <a href="https://copy.fail/">Copy Fail</a> (<a href="https://nvd.nist.gov/vuln/detail/CVE-2026-31431">CVE-2026-31431</a>) vulnerability.</div>
 
 <ul>
@@ -2463,8 +2464,15 @@ $(document).ready(function() {
   <li>Resolved an issue with NFS export names when modifying a tenant</li>
 </ul>
 
+<h3 id="change-log">Change Log</h3>
+<ul>
+  <li><a href="https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-784">REST API</a></li>
+</ul>
+
 <h2 id="qumulo-core-7831">Qumulo Core 7.8.3.1</h2>
 <p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a><span class="emoji">🔒</span></p>
+
+<h3 id="features-and-improvements-1">Features and Improvements</h3>
 <div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> This release resolves a memory management issue that previously could cause a Qumulo node to go offline.</div>
 
 <ul>
@@ -2473,8 +2481,15 @@ $(document).ready(function() {
   <li>Added the ability to restart the container on <em>every</em> node (rather than only on the specified node) in a cluster—and the corresponding REST API endpoint and <code class="language-plaintext highlighter-rouge">qq</code> CLI commands</li>
 </ul>
 
+<h3 id="change-log-1">Change Log</h3>
+<ul>
+  <li><a href="https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7831">REST API</a></li>
+</ul>
+
 <h2 id="qumulo-core-7821">Qumulo Core 7.8.2.1</h2>
 <p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a><span class="emoji">🔒</span></p>
+
+<h3 id="features-and-improvements-2">Features and Improvements</h3>
 
 <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
 <ul>
@@ -2489,8 +2504,15 @@ $(document).ready(function() {
   <li>Improved the read performance for scenarios with intermittent connectivity issues that can cause a portal quorum event</li>
 </ul>
 
+<h3 id="change-log-2">Change Log</h3>
+<ul>
+  <li><a href="https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7821">REST API</a></li>
+</ul>
+
 <h2 id="qumulo-core-7811">Qumulo Core 7.8.1.1</h2>
 <p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a><span class="emoji">🔒</span></p>
+
+<h3 id="features-and-improvements-3">Features and Improvements</h3>
 <div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> This release resolves an issue that could cause nodes in clusters with specific configurations to restart unexpectedly.</div>
 
 <ul>
@@ -2498,8 +2520,15 @@ $(document).ready(function() {
   <li>Deprecated some <code class="language-plaintext highlighter-rouge">/v1/portal</code> REST API endpoints and replaced others with <code class="language-plaintext highlighter-rouge">/v2/portal</code> endpoints that let you retrieve information about and create portals with multiple root directories</li>
 </ul>
 
+<h3 id="change-log-3">Change Log</h3>
+<ul>
+  <li><a href="https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7811">REST API</a></li>
+</ul>
+
 <h2 id="qumulo-core-7802-quarterly">Qumulo Core 7.8.0.2 (Quarterly)</h2>
 <p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a><span class="emoji">🔒</span></p>
+
+<h3 id="features-and-improvements-4">Features and Improvements</h3>
 
 <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
 <ul>
@@ -2507,7 +2536,6 @@ $(document).ready(function() {
   <li>This release resolves an issue where an uncommon operational sequence could trigger an internal encoding inconsistency.</li>
 </ul>
 </div>
-
 <ul>
   <li>Improved the performance of Cloud Data Fabric (CDF) writes from the hub portal to a spoke portal</li>
   <li>Added Host-Managed Networking Mode for all Qumulo Core Product Package installations of Qumulo Core 7.8.0.2 (and higher)</li>
@@ -2521,8 +2549,15 @@ $(document).ready(function() {
   <li>Added support for accepting and returning security identifiers (SIDs) with the <code class="language-plaintext highlighter-rouge">IdentifierAuthority</code> value larger than <code class="language-plaintext highlighter-rouge">255</code></li>
 </ul>
 
+<h3 id="change-log-4">Change Log</h3>
+<ul>
+  <li><a href="https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7802-quarterly">REST API</a></li>
+</ul>
+
 <h2 id="qumulo-core-7751">Qumulo Core 7.7.5.1</h2>
 <p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a><span class="emoji">🔒</span></p>
+
+<h3 id="features-and-improvements-5">Features and Improvements</h3>
 <div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> This release resolves an issue where an uncommon operational sequence could trigger an internal encoding inconsistency.</div>
 
 <ul>
@@ -2533,8 +2568,15 @@ $(document).ready(function() {
   <li>Resolved an issue with the NFSv4.1 server not presenting the <code class="language-plaintext highlighter-rouge">INHERITED</code> flag on an Access Control Entry if the entry was inherited from a parent directory</li>
 </ul>
 
+<h3 id="change-log-5">Change Log</h3>
+<ul>
+  <li><a href="https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7751">REST API</a></li>
+</ul>
+
 <h2 id="qumulo-core-7741">Qumulo Core 7.7.4.1</h2>
 <p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a><span class="emoji">🔒</span></p>
+
+<h3 id="features-and-improvements-6">Features and Improvements</h3>
 <div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> This release resolves an issue where an uncommon operational sequence could trigger an internal encoding inconsistency.</div>
 
 <ul>
@@ -2543,23 +2585,43 @@ $(document).ready(function() {
   <li>Changed how the <code class="language-plaintext highlighter-rouge">qq ad_cancel</code>, <code class="language-plaintext highlighter-rouge">ad_join</code>, <code class="language-plaintext highlighter-rouge">ad_leave</code>, and <code class="language-plaintext highlighter-rouge">ad_reconfigure</code> commands return the status of in-progress background operations</li>
 </ul>
 
+<h3 id="change-log-6">Change Log</h3>
+<ul>
+  <li><a href="https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7741">REST API</a></li>
+</ul>
+
 <h2 id="qumulo-core-773">Qumulo Core 7.7.3</h2>
 <p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a><span class="emoji">🔒</span></p>
 
+<h3 id="features-and-improvements-7">Features and Improvements</h3>
 <ul>
   <li>Updated the <code class="language-plaintext highlighter-rouge">/v3/smb/share/</code> REST API endpoint</li>
   <li>Made Nexus security improvements</li>
 </ul>
 
+<h3 id="change-log-7">Change Log</h3>
+<ul>
+  <li><a href="https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-773">REST API</a></li>
+</ul>
+
 <h2 id="qumulo-core-772">Qumulo Core 7.7.2</h2>
 <p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a><span class="emoji">🔒</span></p>
+
+<h2 id="features-and-improvements-8">Features and Improvements</h2>
 
 <div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> This release resolves a kernel incompatibility with hardware platforms that use AMD EPYC 9004 Series (AMD Genoa and later) CPUs.</div>
 
 <p>Significantly improved the performance of the incremental replication process for directories</p>
 
+<h3 id="change-log-8">Change Log</h3>
+<ul>
+  <li><a href="https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-772">REST API</a></li>
+</ul>
+
 <h2 id="qumulo-core-7711">Qumulo Core 7.7.1.1</h2>
 <p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a><span class="emoji">🔒</span></p>
+
+<h3 id="features-and-improvements-9">Features and Improvements</h3>
 <div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> This release resolves a kernel incompatibility with hardware platforms that use AMD EPYC 9004 Series (AMD Genoa and later) CPUs.</div>
 
 <ul>
@@ -2569,8 +2631,15 @@ $(document).ready(function() {
   <li>Resolved an S3 API issue with applications placing a trailing whitespace in the signed header field</li>
 </ul>
 
+<h3 id="change-log-9">Change Log</h3>
+<ul>
+  <li><a href="https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7711">REST API</a></li>
+</ul>
+
 <h2 id="qumulo-core-7702-quarterly">Qumulo Core 7.7.0.2 (Quarterly)</h2>
 <p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a><span class="emoji">🔒</span></p>
+
+<h3 id="features-and-improvements-10">Features and Improvements</h3>
 <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
 <ul>
   <li>This release resolves a kernel incompatibility with hardware platforms that use AMD EPYC 9004 Series (AMD Genoa and later) CPUs.</li>
@@ -2578,15 +2647,21 @@ $(document).ready(function() {
   <li>To prevent Qumulo Core from consuming a large amount of memory when an Intel NIC is installed in a node, we have blacklisted the <code>irdma</code> kernel module in Qumulo Core 7.7.0 (and higher).</li>
 </ul>
 </div>
-
 <ul>
   <li>Added Non-VPN Remote Support for self-managed Cloud Native Qumulo (CNQ) and on-premises clusters</li>
   <li>Removed and replaced <code class="language-plaintext highlighter-rouge">qq</code> CLI commands related to Snapshots functionality</li>
   <li>Resolved an issue with case sensitivity in Domain Controller lists</li>
 </ul>
 
+<h3 id="change-log-10">Change Log</h3>
+<ul>
+  <li><a href="https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7702-quarterly">REST API</a></li>
+</ul>
+
 <h2 id="qumulo-core-7641">Qumulo Core 7.6.4.1</h2>
 <p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a><span class="emoji">🔒</span></p>
+
+<h3 id="features-and-improvements-11">Features and Improvements</h3>
 <div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> This release resolves an issue that affects Azure Native Qumulo (ANQ) and Cloud Native Qumulo (CNQ) clusters. While this issue did not affect cluster data, it caused the system to not delete unneeded backing data. When certain accounts retained this data incorrectly, there was a potential increase in consumption of cloud resources.</div>
 
 <ul>
@@ -2599,8 +2674,15 @@ $(document).ready(function() {
   </li>
 </ul>
 
+<h3 id="change-log-11">Change Log</h3>
+<ul>
+  <li><a href="https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7641">REST API</a></li>
+</ul>
+
 <h2 id="qumulo-core-7631">Qumulo Core 7.6.3.1</h2>
 <p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a><span class="emoji">🔒</span></p>
+
+<h3 id="features-and-improvements-12">Features and Improvements</h3>
 <div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> This release resolves an issue with Cloud Data Fabric where previously it was possible for a client connected through SMB to perform an operation on a file from a spoke portal after the same file was deleted from the hub portal, causing the cluster to become unavailable.</div>
 
 <ul>
@@ -2627,9 +2709,15 @@ $(document).ready(function() {
   <li>Made <code class="language-plaintext highlighter-rouge">qq</code> CLI and REST API changes to support the new EdgeConnect, CDF, S3 API, Active Directory, and LDAP functionality</li>
 </ul>
 
+<h3 id="change-log-12">Change Log</h3>
+<ul>
+  <li><a href="https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7631">REST API</a></li>
+</ul>
+
 <h2 id="qumulo-core-762">Qumulo Core 7.6.2</h2>
 <p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a><span class="emoji">🔒</span></p>
 
+<h3 id="features-and-improvements-13">Features and Improvements</h3>
 <ul>
   <li>Made improvements to Cloud Data Fabric:
     <ul>
@@ -2641,9 +2729,15 @@ $(document).ready(function() {
   <li>Ensured that the <code class="language-plaintext highlighter-rouge">ListObjectsV2</code> S3 API action supports the <code class="language-plaintext highlighter-rouge">start-after</code> parameter</li>
 </ul>
 
+<h3 id="change-log-13">Change Log</h3>
+<ul>
+  <li><a href="https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-762">REST API</a></li>
+</ul>
+
 <h2 id="qumulo-core-7611">Qumulo Core 7.6.1.1</h2>
 <p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a><span class="emoji">🔒</span></p>
 
+<h3 id="features-and-improvements-14">Features and Improvements</h3>
 <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note</b><br />
 This release of Qumulo Core adds Illumio Policy Compute Engine (PCE) and Virtual Enforcement Node (VEN) functionality that ensures network security within the container.
 <ul>
@@ -2651,15 +2745,21 @@ This release of Qumulo Core adds Illumio Policy Compute Engine (PCE) and Virtual
   <li>To connect each node in your cluster to a VEN, run the <code>illumio-ven-ctl</code> command within the container on every node in your cluster. For more information, see <a target="_blank" href="https://product-docs-repo.illumio.com/Tech-Docs/Core/24.2/Install-Upgrade-Admin/out/en/ven-install-and-upgrade/reference/ven-activate-command-reference.html">VEN Activate Command Reference</a> in the Illumio documentation.</li>
 </ul>
 </div>
-
 <ul>
   <li>Added the ability to apply the <code class="language-plaintext highlighter-rouge">private</code> policy to an S3 bucket at creation time</li>
   <li>For Cloud Native Qumulo (CNQ), replaced two OpenMetrics metrics for node and drive failure</li>
   <li>Resolved an issue with the REST API endpoint for unconfigured nodes</li>
 </ul>
 
+<h3 id="change-log-14">Change Log</h3>
+<ul>
+  <li><a href="https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7611">REST API</a></li>
+</ul>
+
 <h2 id="qumulo-core-7602-quarterly">Qumulo Core 7.6.0.2 (Quarterly)</h2>
 <p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a><span class="emoji">🔒</span></p>
+
+<h3 id="features-and-improvements-15">Features and Improvements</h3>
 <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
 <ul>
   <li>This release resolves an issue with the Qumulo Core upgrade process.</li>
@@ -2667,14 +2767,20 @@ This release of Qumulo Core adds Illumio Policy Compute Engine (PCE) and Virtual
   <li>This release resolves an issue identified in Qumulo Core 7.5.4 where, under certain conditions, a node could become unavailable during an update.</li>
 </ul>
 </div>
-
 <ul>
   <li>The majority of functionality and stability improvements in this Qumulo Core release are internal.</li>
   <li>Resolved an issue with the location of S3 buckets created from the Qumulo Core Web UI</li>
 </ul>
 
+<h3 id="change-log-15">Change Log</h3>
+<ul>
+  <li><a href="https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7602-quarterly">REST API</a></li>
+</ul>
+
 <h2 id="qumulo-core-7552">Qumulo Core 7.5.5.2</h2>
 <p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a><span class="emoji">🔒</span></p>
+
+<h3 id="features-and-improvements-16">Features and Improvements</h3>
 <div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> This release resolves an issue identified in Qumulo Core 7.5.4 where, under certain conditions, a node could become unavailable during an update.</div>
 
 <ul>
@@ -2684,8 +2790,15 @@ This release of Qumulo Core adds Illumio Policy Compute Engine (PCE) and Virtual
   <li>Added the ability for CNQ clusters to use the REST API and <code class="language-plaintext highlighter-rouge">qq</code> CLI to modify cloud monitoring settings</li>
 </ul>
 
+<h3 id="change-log-16">Change Log</h3>
+<ul>
+  <li><a href="https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7552">REST API</a></li>
+</ul>
+
 <h2 id="qumulo-core-7542">Qumulo Core 7.5.4.2</h2>
 <p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a><span class="emoji">🔒</span></p>
+
+<h3 id="features-and-improvements-17">Features and Improvements</h3>
 <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
 <ul>
   <li>This release resolves an issue identified in Qumulo Core 7.5.4 where, under certain conditions, a node could become unavailable during an update.</li>
@@ -2693,14 +2806,20 @@ This release of Qumulo Core adds Illumio Policy Compute Engine (PCE) and Virtual
   <li>This release resolves unexpected SAS controller behavior on hardware nodes, where previously hot-plugging drives could cause cluster instability.</li>
 </ul>
 </div>
-
 <ul>
   <li>Improved the efficiency of parallel operations for workloads that perform a high number of small transactions on the spoke portal</li>
   <li>Modified the <code class="language-plaintext highlighter-rouge">PutObject</code> S3 API action to accept the <code class="language-plaintext highlighter-rouge">x-amz-tagging</code> header that contains properly encoded key-value pairs</li>
 </ul>
 
+<h3 id="change-log-17">Change Log</h3>
+<ul>
+  <li><a href="https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7542">REST API</a></li>
+</ul>
+
 <h2 id="qumulo-core-753">Qumulo Core 7.5.3</h2>
 <p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a><span class="emoji">🔒</span></p>
+
+<h3 id="features-and-improvements-18">Features and Improvements</h3>
 <ul>
   <li>Made improvements to the S3 API:
     <ul>
@@ -2717,8 +2836,15 @@ This release of Qumulo Core adds Illumio Policy Compute Engine (PCE) and Virtual
   <li>Added an OpenMetrics metric for tracking shared data for a hub portal root directory</li>
 </ul>
 
+<h3 id="change-log-18">Change Log</h3>
+<ul>
+  <li><a href="https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-753">REST API</a></li>
+</ul>
+
 <h2 id="qumulo-core-752">Qumulo Core 7.5.2</h2>
 <p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a><span class="emoji">🔒</span></p>
+
+<h3 id="features-and-improvements-19">Features and Improvements</h3>
 <ul>
   <li>Added the ability to upgrade NeuralCache on Azure Native Qumulo (ANQ) and Cloud Native Qumulo (CNQ) instances deployed on Qumulo Core versions lower than 7.4.1</li>
   <li>Added the ability to configure up to 32 hub portals and up to 32 spoke portals on the same cluster at the same time</li>
@@ -2733,8 +2859,15 @@ This release of Qumulo Core adds Illumio Policy Compute Engine (PCE) and Virtual
   <li>Added support for latest Western Digital Ultrastar DC SN640 SSD firmware</li>
 </ul>
 
+<h3 id="change-log-19">Change Log</h3>
+<ul>
+  <li><a href="https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-752">REST API</a></li>
+</ul>
+
 <h2 id="qumulo-core-7512">Qumulo Core 7.5.1.2</h2>
 <p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a><span class="emoji">🔒</span></p>
+
+<h3 id="features-and-improvements-20">Features and Improvements</h3>
 <div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> This release resolves an issue that previously caused an increase in logging output levels on CNQ and ANQ.</div>
 
 <ul>
@@ -2746,12 +2879,18 @@ This release of Qumulo Core adds Illumio Policy Compute Engine (PCE) and Virtual
     </ul>
   </li>
   <li>Modified <code class="language-plaintext highlighter-rouge">files</code> REST APIs to return entity tag (ETag) values correctly</li>
-  <li>Added support for latest Western Digital Ultrastar DC SN640 SSD firmware</li>
-  <li>
-    <h2 id="qumulo-core-7503-quarterly">Qumulo Core 7.5.0.3 (Quarterly)</h2>
-  </li>
+  <li>Added support for latest Western Digital Ultrastar DC SN640 SSD firmware\</li>
 </ul>
+
+<h3 id="change-log-20">Change Log</h3>
+<ul>
+  <li><a href="https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7512">REST API</a></li>
+</ul>
+
+<h2 id="qumulo-core-7503-quarterly">Qumulo Core 7.5.0.3 (Quarterly)</h2>
 <p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a><span class="emoji">🔒</span></p>
+
+<h3 id="features-and-improvements-21">Features and Improvements</h3>
 <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
 <ul>
   <li>This release resolves an issue with Authoritative DNS (QDNS) by reducing the amount of logging for the feature.</li>
@@ -2766,7 +2905,6 @@ This release of Qumulo Core adds Illumio Policy Compute Engine (PCE) and Virtual
   </li>
 </ul>
 </div>
-
 <ul>
   <li>Made improvements to Cloud Data Fabric:
     <ul>
@@ -2775,14 +2913,21 @@ This release of Qumulo Core adds Illumio Policy Compute Engine (PCE) and Virtual
       <li>Added the Priority Sync feature for read-write spoke portals</li>
     </ul>
   </li>
-  <li>Added the Qumulo Authoritative DNS (QDNS) to Qumulo Core</li>
+  <li>Added Qumulo Authoritative DNS (QDNS) to Qumulo Core</li>
   <li>Added support for latest Western Digital Ultrastar DC SN640 SSD firmware</li>
   <li>Resolved an issue with incorrect drive types for nodes in on-premises clusters</li>
   <li>Modified the <code class="language-plaintext highlighter-rouge">ListBuckets</code> S3 API action to use the <code class="language-plaintext highlighter-rouge">BucketPolicy</code> permission together with Role-Based Access Control (RBAC) in Qumulo Core</li>
 </ul>
 
+<h3 id="change-log-21">Change Log</h3>
+<ul>
+  <li><a href="https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7503-quarterly">REST API</a></li>
+</ul>
+
 <h2 id="qumulo-core-744">Qumulo Core 7.4.4</h2>
 <p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a><span class="emoji">🔒</span></p>
+
+<h3 id="features-and-improvements-22">Features and Improvements</h3>
 <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
 <p>Qumulo Core 7.4.4 is a <em>platform upgrade for on-premises clusters</em> which includes an update of the underlying Ubuntu operating system, from version 20.04 to 24.04.</p>
 <ul>
@@ -2804,8 +2949,15 @@ This release of Qumulo Core adds Illumio Policy Compute Engine (PCE) and Virtual
   <li>Resolved an issue that previously affected read leases in the hub portal root directory</li>
 </ul>
 
+<h3 id="change-log-22">Change Log</h3>
+<ul>
+  <li><a href="https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-744">REST API</a></li>
+</ul>
+
 <h2 id="qumulo-core-7431">Qumulo Core 7.4.3.1</h2>
 <p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a><span class="emoji">🔒</span></p>
+
+<h3 id="features-and-improvements-23">Features and Improvements</h3>
 <div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> This release resolves unexpected SAS controller behavior on hardware nodes, where previously hot-plugging drives could cause cluster instability.</div>
 
 <ul>
@@ -2818,9 +2970,15 @@ This release of Qumulo Core adds Illumio Policy Compute Engine (PCE) and Virtual
   <li>Resolved an issue with the SMB server and showing previous versions for files and directories</li>
 </ul>
 
+<h3 id="change-log-23">Change Log</h3>
+<ul>
+  <li><a href="https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7431">REST API</a></li>
+</ul>
+
 <h2 id="qumulo-core-7421">Qumulo Core 7.4.2.1</h2>
 <p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a><span class="emoji">🔒</span></p>
 
+<h3 id="features-and-improvements-24">Features and Improvements</h3>
 <div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> This release resolves an issue that can occur while following a non-standard upgrade path.</div>
 
 <ul>
@@ -2838,8 +2996,15 @@ This release of Qumulo Core adds Illumio Policy Compute Engine (PCE) and Virtual
   <li>Added a REST API and <code class="language-plaintext highlighter-rouge">qq</code> CLI command to facilitate deleting files from directories without constructing full paths</li>
 </ul>
 
+<h3 id="change-log-24">Change Log</h3>
+<ul>
+  <li><a href="https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7421">REST API</a></li>
+</ul>
+
 <h2 id="qumulo-core-7411">Qumulo Core 7.4.1.1</h2>
 <p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a><span class="emoji">🔒</span></p>
+
+<h3 id="features-and-improvements-25">Features and Improvements</h3>
 <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
 <ul>
   <li>This release resolves an issue where previously Qumulo hub portal host clusters that communicated with read-write spoke portals crashed if the portal contained files with very large file IDs.</li>
@@ -2848,7 +3013,6 @@ This release of Qumulo Core adds Illumio Policy Compute Engine (PCE) and Virtual
   <li>To enable the QFSD API to distinguish between cluster-local and spoke-cached data, from this release of Qumulo Core onward, 64-bit integers can no longer represent QFSD API file identifiers. API integrations must treat them as variable-length strings, in accordance with the OpenMetrics API schema. Although this change affects all REST API endpoints the Qumulo REST API continues to accept old-style identifiers for backwards compatibility.</li>
 </ul>
 </div>
-
 <ul>
   <li>Made <em>read-write spoke portals</em> available by default</li>
   <li>Eliminated the REST APIs for manual removal of cached data from spoke portals (no changes to automatic cached data removal)</li>
@@ -2858,8 +3022,15 @@ This release of Qumulo Core adds Illumio Policy Compute Engine (PCE) and Virtual
   <li>Made public the REST API endpoints and <code class="language-plaintext highlighter-rouge">qq</code> CLI commands that manage a cluster’s DNS configuration</li>
 </ul>
 
+<h3 id="change-log-25">Change Log</h3>
+<ul>
+  <li><a href="https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7411">REST API</a></li>
+</ul>
+
 <h2 id="qumulo-core-7404-quarterly">Qumulo Core 7.4.0.4 (Quarterly)</h2>
 <p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a><span class="emoji">🔒</span></p>
+
+<h3 id="features-and-improvements-26">Features and Improvements</h3>
 <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
 <ul>
   <li>
@@ -2873,29 +3044,41 @@ This release of Qumulo Core adds Illumio Policy Compute Engine (PCE) and Virtual
   <li>This release resolves an issue that previously occurred after a spoke portal was deleted.</li>
 </ul>
 </div>
-
 <ul>
   <li>Added support for latest Western Digital Ultrastar DC SN640 SSD firmware</li>
   <li>Improved UID and GID sorting in the Qumulo Core Web UI</li>
   <li>Resolved an issue with <code class="language-plaintext highlighter-rouge">PutObject</code> and <code class="language-plaintext highlighter-rouge">CopyObject</code> S3 API actions</li>
 </ul>
 
+<h3 id="change-log-26">Change Log</h3>
+<ul>
+  <li><a href="https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7404-quarterly">REST API</a></li>
+</ul>
+
 <h2 id="qumulo-core-7321">Qumulo Core 7.3.2.1</h2>
 <p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a><span class="emoji">🔒</span></p>
+
+<h3 id="features-and-improvements-27">Features and Improvements</h3>
 <ul>
   <li>Removed the limit from the number of floating IP addresses per cluster</li>
   <li>Added support for sharing S3 objects with presigned URLs to additional S3 API actions</li>
 </ul>
 
+<h3 id="change-log-27">Change Log</h3>
+<ul>
+  <li><a href="https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7321">REST API</a></li>
+</ul>
+
 <h2 id="qumulo-core-7312">Qumulo Core 7.3.1.2</h2>
 <p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a><span class="emoji">🔒</span></p>
+
+<h3 id="features-and-improvements-28">Features and Improvements</h3>
 <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
 <ul>
   <li>For clusters that were created in 2016 (or earlier), this release resolves an issue identified in Qumulo Core 7.3.1.1 where, under certain conditions, the cluster was unable to start after being upgraded to 7.3.1.1, resulting in the cluster going offline.</li>
   <li>For clusters that have only tagged VLANs but no untagged networks, this release resolves an issue in Qumulo Core 7.3.1 where it was possible for the default gateways to be copied incorrectly during the upgrade process, resulting in a potential cluster outage.</li>
 </ul>
 </div>
-
 <ul>
   <li>Made it easier to authorize hub portals from the hub portal host cluster by adding information to REST APIs and <code class="language-plaintext highlighter-rouge">qq</code> CLI commands</li>
   <li>Improved the behavior of NFSv3 and NFSv4.1 <code class="language-plaintext highlighter-rouge">ACCESS</code> commands</li>
@@ -2907,8 +3090,15 @@ This release of Qumulo Core adds Illumio Policy Compute Engine (PCE) and Virtual
   <li>Resolved an issue with tree deletion operations</li>
 </ul>
 
+<h3 id="change-log-28">Change Log</h3>
+<ul>
+  <li><a href="https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7312">REST API</a></li>
+</ul>
+
 <h2 id="qumulo-core-7303-quarterly">Qumulo Core 7.3.0.3 (Quarterly)</h2>
 <p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a><span class="emoji">🔒</span></p>
+
+<h3 id="features-and-improvements-29">Features and Improvements</h3>
 <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
 This release resolves the following on-premises cluster issues:
 <ul>
@@ -2916,15 +3106,21 @@ This release resolves the following on-premises cluster issues:
   <li>For clusters with certain erasure coding configurations deployed before July 4, 2020, this release resolves an issue that previously could occur during quorum formation, resulting in internal metadata being in an inconsistent state.</li>
 </ul>
 </div>
-
 <ul>
   <li>Added the <em>self-service</em> permission model to Qumulo REST API access tokens and made changes to corresponding <code class="language-plaintext highlighter-rouge">qq</code> CLI commands</li>
   <li>Made it possible for a user to perform operations on their own access keys without having RBAC privileges</li>
   <li>Resolved issues concerning cached data on a spoke portal host cluster, directory metadata block updates made by S3 API actions, and the <code class="language-plaintext highlighter-rouge">GetObject</code> S3 API action with the Veeam client</li>
 </ul>
 
+<h3 id="change-log-29">Change Log</h3>
+<ul>
+  <li><a href="https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7303-quarterly">REST API</a></li>
+</ul>
+
 <h2 id="qumulo-core-7232">Qumulo Core 7.2.3.2</h2>
 <p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a><span class="emoji">🔒</span></p>
+
+<h3 id="features-and-improvements-30">Features and Improvements</h3>
 <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
 <ul>
   <li>This release resolves an issue with Cloud Data Fabric functionality in Qumulo Core 7.2.3.1 that could cause files to become unavailable temporarily.</li>
@@ -2932,7 +3128,6 @@ This release resolves the following on-premises cluster issues:
   <li>If your Qumulo cluster's nodes use static routes, this release resolves an issue in Qumulo Core 7.2.3 that, under certain conditions, caused the system to lose its static route configurations after a quorum event.</li>
 </ul>
 </div>
-
 <ul>
   <li>Made CNQ on Azure available on Qumulo Nexus.</li>
   <li>Added support for read-only Cloud Data Fabric functionality between two or more Qumulo clusters.</li>
