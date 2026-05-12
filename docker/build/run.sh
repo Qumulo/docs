@@ -155,13 +155,15 @@ if [[ -f /.dockerenv ]] || grep -qa docker /proc/1/cgroup; then
             echo ""
             echo "Checking HTML output..."
             bundle exec jekyll build -d _site
-            ignore_list=$(grep -v '^\s*$' /src/tools/.ignore-error | tr '\n' ',' | sed 's/,$//')
+            ignore_list=$(grep -v '^\s*$' /src/tools/.ignore-error | paste -sd "," -)
             if [ -n "$ignore_list" ]; then
-                # Use a leading comma, otherwise htmlproofer seems to ignore the first entry
-                proofer_args="--ignore-urls \",${ignore_list},\""
-                htmlproofer --only-4xx --allow-missing-href=true ${proofer_args} _site
+                echo "Ignoring: $ignore_list"
+                bundle exec htmlproofer _site \
+                    --only-4xx \
+                    --allow-missing-href=true \
+                    --ignore-urls "$ignore_list"
             else
-                htmlproofer --only-4xx --allow-missing-href=true _site
+                bundle exec htmlproofer _site --only-4xx --allow-missing-href=true
             fi
             ;;
         serve)
