@@ -25,6 +25,9 @@ entries:
     output: web
     title: Qumulo REST API Guide
     type: navi
+  - title: Change Log
+    url: /rest-api-guide/change-log.html
+    output: web,pdf
   - folderitems:
     - apiversion: v1
       output: web,pdf
