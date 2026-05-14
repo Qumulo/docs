@@ -102,15 +102,15 @@ This project began from [Jekyll Doc Theme 6.0](https://github.com/tomjoht/docume
   * [Platform Admin Guide switcher](js/switch-admin-guide.js)
   * [Cookie consent banner](js/grt-cookie-consent.js) (adapted from [GRT Cookie Consent](https://grt107.github.io/grt-cookie-consent/))
   * [Modal pop-up for reporting documentation issues directly into a Jira backlog](js/send-feedback.js)
-  * [RAG-driven search](js/vectara.js) from [Vectara](https://www.vectara.com/)
+  * [RAG-driven search](js/vectara.js) with [Vectara](https://www.vectara.com/)
     * [Custom parametrized URLs with history states](js/search-specs.js)
 * Layout and navigation ([Liquid Templating Language](https://shopify.github.io/liquid/))
   * [Breadcrumbs](_includes/crumb)
   * [Parent landing pages](_layouts/parent_landing_page.html)
   * [Child landing pages](_layouts/landing_page.html)
 * Content creation (Python)
-  * [Custom generation of REST API documentation from `openapi.json`](tools/gen-api.py)
-    * Dynamic labeling of REST APIs with versions, **PREVIEW**, and **DEPRECATED** tags
+  * [Custom generation of REST API documentation from `openapi.json` with dynamic labeling of REST APIs with versions, **PREVIEW**, and **DEPRECATED** tags](tools/gen-api.py)
+  * [Custom generation of REST API change summaries from `openapi.json](tools/gen-api-changes.py)
   * 🔒 Custom generation of `qq` CLI documentation from the code base
 
 
