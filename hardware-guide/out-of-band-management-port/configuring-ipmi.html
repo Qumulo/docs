@@ -789,18 +789,145 @@ $(document).ready(function() {
 
    <p>This section explains how to configure the out-of-band management port on platforms that use the Intelligent Platform Management Interface (IPMI).</p>
    
-     <h2 id="how-the-ipmi-port-works">How the IPMI Port Works</h2>
+     <div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> This guide provides generic IPMI configuration examples. For platform-specific details and exact channel numbers, see the documentation from your hardware vendor.</div>
+
+<h2 id="how-the-ipmi-port-works">How the IPMI Port Works</h2>
 
 <p>The dedicated out-of-band management port allows functionality such as remote display, control, and power. The port uses the Intelligent Platform Management Interface (IPMI) protocol.</p>
 
 <p>The IPMI port is located on the back of your node. For more information, see the documentation from your hardware vendor.</p>
 
-<p>For more information, see <a href="https://care.qumulo.com/s/article/Default-IPMI-Usernames-Passwords">Default IPMI Usernames and Passwords</a> <span class="emoji">🔒</span> on Qumulo Care.</p>
-
 <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> The IPMI username and password are unrelated to your Qumulo administrative credentials.</div>
 
-<h2 id="ipmi-configuration">IPMI Configuration</h2>
-<p>For information about configuring the IPMI port, see the documentation from your hardware vendor.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+
+<p>You must have root user access through SSH on the client-facing network. For example:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo</span> <span class="nt">-s</span>
+</code></pre></div></div>
+
+<p>You must enter the configuration commands on each node that will be a member of your IPMI maintenance network.</p>
+
+<p>In the examples below, replace <code class="language-plaintext highlighter-rouge">&lt;CHANNEL&gt;</code> with the IPMI channel for your platform (commonly <code class="language-plaintext highlighter-rouge">1</code> or <code class="language-plaintext highlighter-rouge">3</code>). For the correct channel, see the documentation from your hardware vendor.</p>
+
+<h2 id="verifying-ipmi-lan-configuration">Verifying IPMI LAN Configuration</h2>
+
+<p>To view the current IPMI LAN configuration, run the following command.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ipmitool lan print &lt;CHANNEL&gt;
+</code></pre></div></div>
+
+<h2 id="configuring-ipmi-with-static-ip-addresses">Configuring IPMI with Static IP Addresses</h2>
+
+<p>To configure the IPMI interface with a static IP address, run the following commands. Replace <code class="language-plaintext highlighter-rouge">&lt;IP_ADDRESS&gt;</code>, <code class="language-plaintext highlighter-rouge">&lt;SUBNET_MASK&gt;</code>, and <code class="language-plaintext highlighter-rouge">&lt;GATEWAY_IP_ADDRESS&gt;</code> with values appropriate for your network.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Set IPMI interface to static IP</span>
+ipmitool lan <span class="nb">set</span> &lt;CHANNEL&gt; ipsrc static
+
+<span class="c"># Set the IP address of the interface</span>
+ipmitool lan <span class="nb">set</span> &lt;CHANNEL&gt; ipaddr &lt;IP_ADDRESS&gt;
+
+<span class="c"># Set the subnet mask</span>
+ipmitool lan <span class="nb">set</span> &lt;CHANNEL&gt; netmask &lt;SUBNET_MASK&gt;
+
+<span class="c"># Set the default gateway</span>
+ipmitool lan <span class="nb">set</span> &lt;CHANNEL&gt; defgw ipaddr &lt;GATEWAY_IP_ADDRESS&gt;
+
+<span class="c"># (Optional) Enable BMC ARP responses</span>
+ipmitool lan <span class="nb">set</span> &lt;CHANNEL&gt; arp respond on
+</code></pre></div></div>
+
+<h2 id="managing-ipmi-users">Managing IPMI Users</h2>
+
+<h3 id="listing-current-users">Listing Current Users</h3>
+
+<p>To list current IPMI users, run the following command.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ipmitool user list &lt;CHANNEL&gt;
+</code></pre></div></div>
+
+<p>The output shows user IDs, names, and privilege levels. For example:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ID  Name    Callin  Link Auth  IPMI Msg  Channel Priv Limit
+1           false   false      true      ADMINISTRATOR
+2   root    false   true       true      ADMINISTRATOR
+</code></pre></div></div>
+
+<h3 id="changing-a-user-password">Changing a User Password</h3>
+
+<p>To change the password for an existing user, run the following command. Replace <code class="language-plaintext highlighter-rouge">&lt;USER_ID&gt;</code> with the user’s ID number.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ipmitool user <span class="nb">set </span>password &lt;USER_ID&gt;
+</code></pre></div></div>
+
+<p>The system prompts you to enter and confirm the new password.</p>
+
+<h3 id="creating-a-new-user">Creating a New User</h3>
+
+<p>To create a new administrative user, run the following commands. This example creates a user named <code class="language-plaintext highlighter-rouge">netadmin</code> in user slot 4.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Set the username</span>
+ipmitool user <span class="nb">set </span>name 4 netadmin
+
+<span class="c"># Set the password (you will be prompted)</span>
+ipmitool user <span class="nb">set </span>password 4
+</code></pre></div></div>
+
+<h3 id="setting-user-access">Setting User Access</h3>
+
+<p>To configure access permissions for a user, run the following commands. Replace <code class="language-plaintext highlighter-rouge">&lt;USER_ID&gt;</code> with the user’s ID number.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Grant LAN access, IPMI messaging, callin, and administrator privilege</span>
+ipmitool channel setaccess &lt;CHANNEL&gt; &lt;USER_ID&gt; <span class="nb">link</span><span class="o">=</span>on <span class="nv">ipmi</span><span class="o">=</span>on <span class="nv">callin</span><span class="o">=</span>on <span class="nv">privilege</span><span class="o">=</span>4
+
+<span class="c"># Enable the user</span>
+ipmitool user <span class="nb">enable</span> &lt;USER_ID&gt;
+</code></pre></div></div>
+
+<h3 id="verifying-user-access">Verifying User Access</h3>
+
+<p>To verify access settings for a channel, run the following command.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ipmitool channel getaccess &lt;CHANNEL&gt;
+</code></pre></div></div>
+
+<p>Example output:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Maximum User IDs  : 15
+Enabled User IDs  : 2
+
+User ID           : 1
+User Name         :
+Fixed Name        : Yes
+Access Available  : callback
+Link Authentication : disabled
+IPMI Messaging    : enabled
+Privilege Level   : ADMINISTRATOR
+
+User ID           : 2
+User Name         : root
+Fixed Name        : Yes
+Access Available  : callback
+Link Authentication : enabled
+IPMI Messaging    : enabled
+Privilege Level   : ADMINISTRATOR
+</code></pre></div></div>
+
+<h2 id="connecting-to-nodes">Connecting to Nodes</h2>
+
+<p>After you configure the IPMI port, you can access the node by using a web browser and the IP address that you or your DHCP server assigned.</p>
+
+<h2 id="troubleshooting-connectivity">Troubleshooting Connectivity</h2>
+
+<p>If you can’t connect to the IPMI management console, make sure that LAN access is turned on for the channel.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ipmitool lan <span class="nb">set</span> &lt;CHANNEL&gt; access on
+</code></pre></div></div>
+
+<p>If you still can’t connect and your network configuration is correct, reset the BMC through an SSH or KVM Console session to the node.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ipmitool bmc reset cold
+</code></pre></div></div>
 
    
 

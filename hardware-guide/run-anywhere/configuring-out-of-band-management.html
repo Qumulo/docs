@@ -149,7 +149,7 @@ fetch('/data/website.json')
 </noscript>
 
 <!-- Define page metadata -->
-<meta name="description" content="This section explains how to configure out-of-band management ports (IPMI or iLO) for your hardware platform.">
+<meta name="description" content="This section explains how to configure the baseboard management controller (BMC) on your node using the IPMI protocol.">
 <meta name="apple-mobile-web-app-title" content="Qumulo Documentation Portal">
 <meta name="application-name" content="Qumulo Documentation Portal">
 <meta name="msapplication-TileColor" content="#2b5797">
@@ -162,7 +162,7 @@ fetch('/data/website.json')
 <meta property="og:title" content="Configuring Out-of-Band Management | Qumulo Documentation Portal">
 <meta property="og:url" content="https://docs.qumulo.com/hardware-guide/run-anywhere/configuring-out-of-band-management.html">
 <meta property="og:site_name" content="Qumulo Documentation Portal">
-<meta property="og:description" content="This section explains how to configure out-of-band management ports (IPMI or iLO) for your hardware platform.">
+<meta property="og:description" content="This section explains how to configure the baseboard management controller (BMC) on your node using the IPMI protocol.">
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://docs.qumulo.com/images/docs.qumulo.com-qumulo-documentation-portal-630px.png">
@@ -173,7 +173,7 @@ fetch('/data/website.json')
 <meta name="twitter:title" content="Configuring Out-of-Band Management | Qumulo Documentation Portal">
 <meta property="twitter:url" content="https://docs.qumulo.com/hardware-guide/run-anywhere/configuring-out-of-band-management.html">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:description" content="This section explains how to configure out-of-band management ports (IPMI or iLO) for your hardware platform.">
+<meta name="twitter:description" content="This section explains how to configure the baseboard management controller (BMC) on your node using the IPMI protocol.">
 <meta name="twitter:image" content="https://docs.qumulo.com/images/docs.qumulo.com-qumulo-documentation-portal-418px.png">
 <meta property="twitter:domain" content="docs.qumulo.com">
 
@@ -682,6 +682,33 @@ fetch('/data/website.json')
    </li>
      
       
+  
+
+  
+
+  
+
+  
+  <li>
+  
+
+  <a title="Chassis Replacement" href="/hardware-guide/run-anywhere/chassis-replacement.html" data-proofer-ignore>
+  
+  
+  
+  
+
+  
+
+  Chassis Replacement
+  </a>
+
+      <ul>
+          
+      </ul>
+   </li>
+     
+      
       
       
 </ul>
@@ -759,9 +786,13 @@ $(document).ready(function() {
 
     
 
-   <p>This section explains how to configure out-of-band management ports (IPMI or iLO) for your hardware platform.</p>
+   <p>This section explains how to configure the baseboard management controller (BMC) on your node using the IPMI protocol.</p>
    
-     <p>Out-of-band management allows you to monitor, manage, and troubleshoot servers remotely, independent of the operating system. Depending on your hardware platform, you may use IPMI (Intelligent Platform Management Interface) or iLO (Integrated Lights Out).</p>
+     <div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> This guide provides generic out-of-band management configuration examples. For platform-specific details and exact channel numbers, see the documentation from your hardware vendor.</div>
+
+<p>Out-of-band management allows you to monitor, manage, and troubleshoot servers remotely, independent of the operating system. The dedicated management port on each node is connected to a baseboard management controller (BMC) — the management chip on the motherboard. The Intelligent Platform Management Interface (IPMI) is the standard protocol used to talk to a BMC over the network, and the <code class="language-plaintext highlighter-rouge">ipmitool</code> commands in this guide work against any BMC that supports IPMI.</p>
+
+<p>Different vendors brand their BMC differently — for example, HPE iLO, Dell iDRAC, and Lenovo XCC are all BMC implementations that support IPMI. The vendor’s web console (such as the HPE iLO web UI) offers additional features beyond the standard IPMI commands; see your hardware vendor’s documentation for those.</p>
 
 <h2 id="overview">Overview</h2>
 
@@ -796,7 +827,7 @@ $(document).ready(function() {
 
 <h2 id="ipmi-configuration">IPMI Configuration</h2>
 
-<p>IPMI (Intelligent Platform Management Interface) is common on Supermicro and other server platforms.</p>
+<p>The commands below use <code class="language-plaintext highlighter-rouge">ipmitool</code> and apply to any BMC that supports the IPMI protocol.</p>
 
 <h3 id="prerequisites">Prerequisites</h3>
 
@@ -805,7 +836,9 @@ $(document).ready(function() {
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo</span> <span class="nt">-s</span>
 </code></pre></div></div>
 
-<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> To access the IPMI CLI while physically connected to the node, press <strong>Ctrl+Alt+F1</strong>.</div>
+<p>You must enter the configuration commands on each node that will be a member of your IPMI maintenance network.</p>
+
+<p>In the examples below, replace <code class="language-plaintext highlighter-rouge">&lt;CHANNEL&gt;</code> with the IPMI channel for your platform (commonly <code class="language-plaintext highlighter-rouge">1</code> or <code class="language-plaintext highlighter-rouge">3</code>). For the correct channel, see the documentation from your hardware vendor.</p>
 
 <h3 id="how-ipmi-works">How IPMI Works</h3>
 
@@ -819,36 +852,32 @@ $(document).ready(function() {
 
 <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> The IPMI username and password are independent of your Qumulo administrative credentials.</div>
 
-<p>You must enter the following configuration commands on each node that will be a member of your IPMI maintenance network.</p>
-
 <h3 id="verifying-ipmi-lan-configuration">Verifying IPMI LAN Configuration</h3>
 
 <p>To view the current IPMI LAN configuration, run the following command.</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ipmitool lan print 1
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ipmitool lan print &lt;CHANNEL&gt;
 </code></pre></div></div>
 
 <h3 id="configuring-ipmi-with-static-ip-addresses">Configuring IPMI with Static IP Addresses</h3>
 
-<p>To configure the IPMI interface with a static IP address, run the following commands.</p>
+<p>To configure the IPMI interface with a static IP address, run the following commands. Replace <code class="language-plaintext highlighter-rouge">&lt;IP_ADDRESS&gt;</code>, <code class="language-plaintext highlighter-rouge">&lt;SUBNET_MASK&gt;</code>, and <code class="language-plaintext highlighter-rouge">&lt;GATEWAY_IP_ADDRESS&gt;</code> with values appropriate for your network.</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Set IPMI ethernet interface to static IP</span>
-ipmitool lan <span class="nb">set </span>1 ipsrc static
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Set IPMI interface to static IP</span>
+ipmitool lan <span class="nb">set</span> &lt;CHANNEL&gt; ipsrc static
 
 <span class="c"># Set the IP address of the interface</span>
-ipmitool lan <span class="nb">set </span>1 ipaddr &lt;IP_ADDRESS&gt;
+ipmitool lan <span class="nb">set</span> &lt;CHANNEL&gt; ipaddr &lt;IP_ADDRESS&gt;
 
-<span class="c"># Set the subnet mask for the interface</span>
-ipmitool lan <span class="nb">set </span>1 netmask &lt;SUBNET_MASK&gt;
+<span class="c"># Set the subnet mask</span>
+ipmitool lan <span class="nb">set</span> &lt;CHANNEL&gt; netmask &lt;SUBNET_MASK&gt;
 
-<span class="c"># Set the IP address of the default gateway</span>
-ipmitool lan <span class="nb">set </span>1 defgw ipaddr &lt;GATEWAY_IP_ADDRESS&gt;
+<span class="c"># Set the default gateway</span>
+ipmitool lan <span class="nb">set</span> &lt;CHANNEL&gt; defgw ipaddr &lt;GATEWAY_IP_ADDRESS&gt;
 
 <span class="c"># (Optional) Enable BMC ARP responses</span>
-ipmitool lan <span class="nb">set </span>1 arp respond on
+ipmitool lan <span class="nb">set</span> &lt;CHANNEL&gt; arp respond on
 </code></pre></div></div>
-
-<p>Replace <code class="language-plaintext highlighter-rouge">&lt;IP_ADDRESS&gt;</code>, <code class="language-plaintext highlighter-rouge">&lt;SUBNET_MASK&gt;</code>, and <code class="language-plaintext highlighter-rouge">&lt;GATEWAY_IP_ADDRESS&gt;</code> with values appropriate for your network.</p>
 
 <h3 id="managing-ipmi-users">Managing IPMI Users</h3>
 
@@ -856,7 +885,7 @@ ipmitool lan <span class="nb">set </span>1 arp respond on
 
 <p>To list current IPMI users, run the following command.</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ipmitool user list 1
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ipmitool user list &lt;CHANNEL&gt;
 </code></pre></div></div>
 
 <p>The output shows user IDs, names, and privilege levels. For example:</p>
@@ -890,11 +919,8 @@ ipmitool user <span class="nb">set </span>password 4
 
 <p>To configure access permissions for a user, run the following commands. Replace <code class="language-plaintext highlighter-rouge">&lt;USER_ID&gt;</code> with the user’s ID number.</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Set access on channel 1</span>
-ipmitool channel setaccess 1 &lt;USER_ID&gt; <span class="nb">link</span><span class="o">=</span>on <span class="nv">ipmi</span><span class="o">=</span>on <span class="nv">callin</span><span class="o">=</span>on <span class="nv">privilege</span><span class="o">=</span>4
-
-<span class="c"># Set access on channel 2</span>
-ipmitool channel setaccess 2 &lt;USER_ID&gt; <span class="nb">link</span><span class="o">=</span>on <span class="nv">ipmi</span><span class="o">=</span>on <span class="nv">callin</span><span class="o">=</span>on <span class="nv">privilege</span><span class="o">=</span>4
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Grant LAN access, IPMI messaging, callin, and administrator privilege</span>
+ipmitool channel setaccess &lt;CHANNEL&gt; &lt;USER_ID&gt; <span class="nb">link</span><span class="o">=</span>on <span class="nv">ipmi</span><span class="o">=</span>on <span class="nv">callin</span><span class="o">=</span>on <span class="nv">privilege</span><span class="o">=</span>4
 
 <span class="c"># Enable the user</span>
 ipmitool user <span class="nb">enable</span> &lt;USER_ID&gt;
@@ -902,51 +928,25 @@ ipmitool user <span class="nb">enable</span> &lt;USER_ID&gt;
 
 <h4 id="verifying-user-access">Verifying User Access</h4>
 
-<p>To verify user access settings, run the following command. Replace <code class="language-plaintext highlighter-rouge">&lt;USER_ID&gt;</code> with the user’s ID number.</p>
+<p>To verify access settings for a channel, run the following command.</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ipmitool channel getaccess 1 &lt;USER_ID&gt;
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ipmitool channel getaccess &lt;CHANNEL&gt;
 </code></pre></div></div>
-
-<hr />
-
-<h2 id="ilo-configuration">iLO Configuration</h2>
-
-<p>iLO (Integrated Lights Out) is used on HPE server platforms.</p>
-
-<h3 id="prerequisites-1">Prerequisites</h3>
-
-<p>To configure the iLO port, you must have root access to the client-facing network through SSH. For example, you can run the <code class="language-plaintext highlighter-rouge">sudo -s</code> command.</p>
-
-<h3 id="how-the-ilo-port-works">How the iLO Port Works</h3>
-
-<p>Your node provides iLO support for out-of-band maintenance access even when the node is plugged in but powered off.</p>
-
-<p>Your nodes receive DHCP address assignments by default. When you configure a node’s iLO port, you can access the node by using the IP address (that the DHCP server assigns to the node) and a browser that supports HTML5, Java, or .NET.</p>
-
-<div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> We strongly recommend separating your iLO access network from your client-facing network.</div>
-
-<p>To access iLO configuration from the BIOS System Utilities menu, press <strong>F9</strong>.</p>
-
-<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> The iLO username and password are unrelated to your Qumulo administrative credentials.</div>
-
-<h3 id="ilo-configuration-1">iLO Configuration</h3>
-
-<p>To configure the iLO port, you must use <code class="language-plaintext highlighter-rouge">ipmitool</code>. For more information, see the following HPE resources:</p>
-
-<ul>
-  <li><a href="https://support.hpe.com/hpesc/public/docDisplay?docId=sd00002007en_us">HPE iLO 6 User Guide</a></li>
-  <li><a href="https://support.hpe.com/hpesc/public/docDisplay?docId=a00018321en_us&amp;docLocale=en_US&amp;page=GUID-D7147C7F-2016-0901-06CE-0000000004E4.html">HPE iLO IPMI User Guide</a></li>
-</ul>
 
 <hr />
 
 <h2 id="connecting-to-nodes">Connecting to Nodes</h2>
 
-<p>After you configure out-of-band management, you can access nodes through a web browser using the IP addresses assigned by you or your DHCP server. Use a modern web browser such as Firefox or Chrome for best results.</p>
+<p>After you configure the BMC, you can access the node by using a web browser and the IP address that you or your DHCP server assigned.</p>
 
 <h2 id="troubleshooting-connectivity">Troubleshooting Connectivity</h2>
 
-<p>If you cannot connect to the out-of-band management console and you are certain that your network configuration is correct, reset the BMC through an SSH or KVM Console session to the node by running the following command.</p>
+<p>If you can’t connect to the BMC, make sure that LAN access is turned on for the channel.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ipmitool lan <span class="nb">set</span> &lt;CHANNEL&gt; access on
+</code></pre></div></div>
+
+<p>If you still can’t connect and your network configuration is correct, reset the BMC through an SSH or KVM Console session to the node.</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ipmitool bmc reset cold
 </code></pre></div></div>
@@ -988,6 +988,8 @@ ipmitool user <span class="nb">enable</span> &lt;USER_ID&gt;
     
       
         
+    
+  
     
   
     

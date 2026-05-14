@@ -735,7 +735,9 @@ $(document).ready(function() {
 
    <p>This section explains how to configure out-of-band management (iLO) for HPE platforms running Qumulo Core.</p>
    
-     <p>HPE platforms include HPE Integrated Lights-Out (iLO) for out-of-band management. iLO allows you to monitor, manage, and troubleshoot servers remotely, independent of the operating system.</p>
+     <p>HPE platforms include HPE Integrated Lights-Out (iLO) for out-of-band management. iLO is HPE’s baseboard management controller (BMC); it supports the standard IPMI protocol in addition to HPE-specific web UI features (such as virtual media and the integrated remote console).</p>
+
+<p>For configuration using standard <code class="language-plaintext highlighter-rouge">ipmitool</code> commands that apply to any BMC supporting IPMI, see <a href="/hardware-guide/out-of-band-management-port/configuring-ipmi.html">Configuring the IPMI Port</a>. The rest of this page covers HPE-specific iLO features and references.</p>
 
 <h2 id="overview">Overview</h2>
 
@@ -786,9 +788,12 @@ $(document).ready(function() {
 <ul>
   <li><a href="https://www.hpe.com/us/en/servers/integrated-lights-out-ilo.html" class="no_icon">HPE Integrated Lights-Out (iLO) Overview</a></li>
   <li><a href="https://support.hpe.com/hpesc/public/docDisplay?docId=a00105236en_us" class="no_icon">HPE iLO User Guide</a></li>
+  <li><a href="https://support.hpe.com/hpesc/public/docDisplay?docId=a00018321en_us&amp;docLocale=en_US&amp;page=GUID-D7147C7F-2016-0901-06CE-0000000004E4.html">HPE iLO IPMI User Guide</a> — using <code class="language-plaintext highlighter-rouge">ipmitool</code> against iLO</li>
   <li><a href="https://support.hpe.com/hpesc/public/docDisplay?docId=sd00002058en_us" class="no_icon">HPE Alletra 4110 User Guide</a> (includes iLO setup)</li>
   <li><a href="https://support.hpe.com/hpesc/public/docDisplay?docId=sd00003050en_us" class="no_icon">HPE Alletra 4120/4140 User Guide</a> (includes iLO setup)</li>
 </ul>
+
+<p>To access iLO configuration from the BIOS System Utilities menu during POST, press <strong>F9</strong>.</p>
 
    
 
