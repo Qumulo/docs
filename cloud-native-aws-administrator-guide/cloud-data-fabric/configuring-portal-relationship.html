@@ -2520,18 +2520,35 @@ $(document).ready(function() {
 <h3 id="step-1-create-the-spoke-portal">Step 1: Create the Spoke Portal</h3>
 <p>This section explains how to create the <a href="how-portal-creation-enables-cloud-data-fabric.html#spoke-portal">spoke portal</a> on one cluster and propose the creation of a <a href="how-portal-creation-enables-cloud-data-fabric.html#portal-relationship">portal relationship</a> to another cluster (which creates the <a href="how-portal-creation-enables-cloud-data-fabric.html#hub-portal">hub portal</a>).</p>
 
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
+<ul>
+ <li>We strongly recommend using the <a href="https://docs.qumulo.com/qq-cli-command-guide/portal/portal_create.html"><code>qq portal_create</code></a> command with the <code>--hub-hosts</code> flag to spread the workload across all nodes on the hub portal host cluster.</li>
+ <li>For the command to succeed, don't use the backslash (<code>\</code>) to break the list of IP addresses across multiple lines.</li>
+ <li>
+   While using multiple IP addresses greatly helps with resilience, it isn't required. It is possible to run this command with:
+   <ul>
+     <li>A single IP address</li>
+     <li>Multiple IP addresses</li>
+     <li>A single IP address for each remote node</li>
+   </ul>
+ </li>
+</ul>
+</div>
+
 <ol>
   <li>
     <p>On one cluster, choose a location for the spoke <a href="how-portal-creation-enables-cloud-data-fabric.html#portal-root-directory">portal root directory</a>. For example, <code class="language-plaintext highlighter-rouge">/remote/projects</code>.</p>
   </li>
   <li>
     <p>To propose an initial portal relationship, run the <a href="https://docs.qumulo.com/qq-cli-command-guide/portal/portal_create.html"><code>qq portal_create</code></a>
- command and specify the spoke portal root directory, the IP address of the proposed hub portal host cluster, and the proposed hub portal root directory on that cluster. For example:</p>
+ command and specify the spoke portal root directory, the proposed hub portal root directory on that cluster, and the IP addresses of the nodes in the remote cluster.</p>
+
+    <p>For example:</p>
 
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq portal_create <span class="se">\</span>
   <span class="nt">--spoke-root</span> /remote/projects <span class="se">\</span>
-  <span class="nt">--hub-address</span> 203.0.113.0 <span class="se">\</span>
-  <span class="nt">--hub-root</span> /projects
+  <span class="nt">--hub-root</span> /projects <span class="se">\</span>
+  <span class="nt">--hub-hosts</span> 203.0.113.1,203.0.113.2,203.0.113.3,203.0.113.4
 </code></pre></div>    </div>
 
     <p>The spoke portal enters the <code class="language-plaintext highlighter-rouge">Pending</code> portal relationship state. The following is example output.</p>

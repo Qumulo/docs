@@ -7993,7 +7993,27 @@ $(document).ready(function() {
 
 <div>This section explains how to use the <code>qq portal_create</code> command.</div>
 
+<h2 id="example">Example</h2>
+<h3 id="to-propose-an-initial-portal-relationship">To Propose an Initial Portal Relationship</h3>
+<p>Run the <a href="https://docs.qumulo.com/qq-cli-command-guide/portal/portal_create.html"><code>qq portal_create</code></a>
+ command and specify the spoke portal root directory, the proposed hub portal root directory on that cluster, and the IP addresses of the nodes in the remote cluster.</p>
 
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
+<ul>
+  <li>We strongly recommend using the <a href="https://docs.qumulo.com/qq-cli-command-guide/portal/portal_create.html"><code>qq portal_create</code></a> command with the <code>--hub-hosts</code> flag to spread the workload across all nodes on the hub portal host cluster.</li>
+  <li>For the command to succeed, don't use the backslash (<code>\</code>) to break the list of IP addresses across multiple lines. </li>
+</ul>
+</div>
+
+<p>For example:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq portal_create <span class="se">\</span>
+  <span class="nt">--spoke-root</span> /remote/projects <span class="se">\</span>
+  <span class="nt">--hub-address</span> 203.0.113.0 <span class="se">\</span>
+  <span class="nt">--hub-root</span> /projects
+  <span class="nt">--hub-root</span> /projects <span class="se">\</span>
+  <span class="nt">--hub-hosts</span> 203.0.113.1,203.0.113.2,203.0.113.3,203.0.113.4
+</code></pre></div></div>
 
 
 <h2>Description</h2>
