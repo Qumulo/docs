@@ -40,15 +40,32 @@ This section explains how to configure a [portal relationship](how-portal-creati
 ### Step 1: Create the Spoke Portal
 This section explains how to create the [spoke portal](how-portal-creation-enables-cloud-data-fabric.html#spoke-portal) on one cluster and propose the creation of a [portal relationship](how-portal-creation-enables-cloud-data-fabric.html#portal-relationship) to another cluster (which creates the [hub portal](how-portal-creation-enables-cloud-data-fabric.html#hub-portal)).
 
+{{site.data.alerts.important}}
+<ul>
+ <li>{{ site.gns.qqPortalCreate }}</li>
+ <li>{{ site.gns.doNotBreakIPlist }}</li>
+ <li>
+   While using multiple IP addresses greatly helps with resilience, it isn't required. It is possible to run this command with:
+   <ul>
+     <li>A single IP address</li>
+     <li>Multiple IP addresses</li>
+     <li>A single IP address for each remote node</li>
+   </ul>
+ </li>
+</ul>
+{{site.data.alerts.end}}
+
 1. On one cluster, choose a location for the spoke [portal root directory](how-portal-creation-enables-cloud-data-fabric.html#portal-root-directory). For example, `/remote/projects`.
 
-1. To propose an initial portal relationship, run the {% include qq.html command="portal_create" %} command and specify the spoke portal root directory, the IP address of the proposed hub portal host cluster, and the proposed hub portal root directory on that cluster. For example:
+1. To propose an initial portal relationship, run the {% include qq.html command="portal_create" %} command and specify the spoke portal root directory, the proposed hub portal root directory on that cluster, and the IP addresses of the nodes in the remote cluster.
+
+   For example:
 
    ```bash
    qq portal_create \
      --spoke-root /remote/projects \
-     --hub-address {{site.exampleIP0}} \
-     --hub-root /projects
+     --hub-root /projects \
+     --hub-hosts {{site.exampleIP1}},{{site.exampleIP2}},{{site.exampleIP3}},{{site.exampleIP4}}
    ```
 
    The spoke portal enters the `Pending` portal relationship state. {{site.exampleOutput}}

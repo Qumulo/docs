@@ -62,3 +62,25 @@ usage: qq portal_create [-h] [--spoke-root SPOKE_ROOT] [--hub-root HUB_ROOT] [-j
 zendesk_source: qq CLI Command Guide
 
 ---
+
+## Example
+### To Propose an Initial Portal Relationship
+Run the {% include qq.html command="portal_create" %} command and specify the spoke portal root directory, the proposed hub portal root directory on that cluster, and the IP addresses of the nodes in the remote cluster.
+
+{{site.data.alerts.important}}
+<ul>
+  <li>{{ site.gns.qqPortalCreate }}</li>
+  <li>{{ site.gns.doNotBreakIPlist}} </li>
+</ul>
+{{site.data.alerts.end}}
+
+For example:
+
+```bash
+qq portal_create \
+  --spoke-root /remote/projects \
+  --hub-address {{site.exampleIP0}} \
+  --hub-root /projects
+  --hub-root /projects \
+  --hub-hosts {{site.exampleIP1}},{{site.exampleIP2}},{{site.exampleIP3}},{{site.exampleIP4}}
+ ```
