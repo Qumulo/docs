@@ -10,11 +10,19 @@ For information about upgrade types for each release, see <a href='mode-referenc
 
 {% capture noAPIchanges %}This release contains no REST API changes.{% endcapture %}
 
-## Qumulo Core 7.8.4
+## Qumulo Core 7.8.4.1
 {{ nexusLink }}
 
 ### Features and Improvements
-{% include important.html content="In this release, Qumulo Core disables the `algif_aead` kernel module to mitigate the [Copy Fail](https://copy.fail/) ([CVE-2026-31431](https://nvd.nist.gov/vuln/detail/CVE-2026-31431)) vulnerability." %}
+{% capture availDelay %}This release resolves an issue with the upgrade process that previously caused the Qumulo cluster to become available after a delay.{% endcapture %}
+{% capture disableKernMod %}This release disables the <code>algif_aead</code> kernel module to mitigate the <a target="_blank" href="https://copy.fail/">Copy Fail</a> (<a target="_blank" href="https://nvd.nist.gov/vuln/detail/CVE-2026-31431">CVE-2026-31431</a>) vulnerability.{% endcapture %}
+{{site.data.alerts.important}}
+<ul>
+  <li>{{ availDelay }}</li>
+  <li>{{ disableKernMod }}</li>
+</ul>
+{{site.data.alerts.end}}
+
 * Improved the performance of NFSv3 and NFSv4.1 workloads
 * Added support for unstable writes to all hub portals and spoke portals, including data in Cloud Data Fabric (CDF), significantly improving application workflows
 * Added support for configuring NTP servers on Cloud Native Qumulo on Azure nodes
@@ -23,7 +31,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
 * Resolved an issue with NFS export names when modifying a tenant
 
 ### Change Log
-* [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-784)
+* [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7841)
 
 
 ## Qumulo Core 7.8.3.1
@@ -71,19 +79,21 @@ For information about upgrade types for each release, see <a href='mode-referenc
 * [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7811)
 
 
-## Qumulo Core 7.8.0.2 (Quarterly)
+## Qumulo Core 7.8.0.3 (Quarterly)
 {{ nexusLink }}
 
 ### Features and Improvements
 {% capture inconTrigg %}This release resolves an issue where an uncommon operational sequence could trigger an internal encoding inconsistency.{% endcapture %}
 {{site.data.alerts.important}}
 <ul>
+  <li>{{ availDelay }}</li>
+  <li>{{ disableKernMod }}</li>
   <li>This release improves the ability of appliance-image-based Qumulo Core clusters that use host-managed networking to withstand networking issues.</li>
   <li>{{ inconTrigg }}</li>
 </ul>
 {{site.data.alerts.end}}
 * Improved the performance of Cloud Data Fabric (CDF) writes from the hub portal to a spoke portal
-* Added Host-Managed Networking Mode for all Qumulo Core Product Package installations of Qumulo Core 7.8.0.2 (and higher)
+* Added Host-Managed Networking Mode for all Qumulo Core Product Package installations of Qumulo Core 7.8.0.3 (and higher)
 * Added support for the `STREAMING-AWS4-HMAC-SHA256-PAYLOAD` and `STREAMING-AWS4-HMAC-SHA256-PAYLOAD-TRAILER` authentication types to the S3 API
 * Changed Authoritative DNS (QDNS) configuration to:
   * Serve `A` records for the first Qumulo network on the cluster's base domain
@@ -91,7 +101,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
 * Added support for accepting and returning security identifiers (SIDs) with the `IdentifierAuthority` value larger than `255`
 
 ### Change Log
-* [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7802-quarterly)
+* [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7803-quarterly)
 
 
 ## Qumulo Core 7.7.5.1
@@ -159,12 +169,14 @@ Significantly improved the performance of the incremental replication process fo
 * [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7711)
 
 
-## Qumulo Core 7.7.0.2 (Quarterly)
+## Qumulo Core 7.7.0.3 (Quarterly)
 {{ nexusLink }}
 
 ### Features and Improvements
 {{site.data.alerts.important}}
 <ul>
+  <li>{{ availDelay }}</li>
+  <li>{{ disableKernMod }}</li>
   <li>{{ genoaFix }}</li>
   <li>This release resolves an issue where previously it was possible for QFSD to crash when system clock time was moved "backwards" while Cloud Data Fabric (CDF) is enabled for a Qumulo cluster.</li>
   <li>To prevent Qumulo Core from consuming a large amount of memory when an Intel NIC is installed in a node, we have blacklisted the <code>irdma</code> kernel module in Qumulo Core 7.7.0 (and higher).</li>
@@ -175,7 +187,7 @@ Significantly improved the performance of the incremental replication process fo
 * Resolved an issue with case sensitivity in Domain Controller lists
 
 ### Change Log
-* [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7702-quarterly)
+* [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7703-quarterly)
 
 
 ## Qumulo Core 7.6.4.1 

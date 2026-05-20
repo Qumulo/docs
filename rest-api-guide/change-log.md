@@ -11,7 +11,7 @@ layout: page
 <style>div#toc{height:200px;overflow:auto;}</style>
 
 
-## Qumulo Core 7.8.4
+## Qumulo Core 7.8.4.1
 {{ nexusLink }}
 <ul>
   <li>Added <code>GET /v2/time/default-settings</code></li>
@@ -39,7 +39,7 @@ layout: page
 {{ noAPIchanges }}
 
 
-## Qumulo Core 7.8.0.2 (Quarterly)
+## Qumulo Core 7.8.0.3 (Quarterly)
 {{ nexusLink }}
 <ul>
   <li>Added <code>GET | PATCH /v1/authoritative-dns/settings</code></li>
@@ -204,7 +204,7 @@ Added <code>POST /v2/cluster/data-core/create</code>
 </ul>
 
 
-## Qumulo Core 7.7.0.2 (Quarterly)
+## Qumulo Core 7.7.0.3 (Quarterly)
 {{ nexusLink }}
 <ul>
   <li>
