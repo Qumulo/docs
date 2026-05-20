@@ -2462,11 +2462,17 @@ $(document).ready(function() {
      
      <style>div#toc{height:200px;overflow:auto;}</style>
 
-<h2 id="qumulo-core-784">Qumulo Core 7.8.4</h2>
+<h2 id="qumulo-core-7841">Qumulo Core 7.8.4.1</h2>
 <p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a><span class="emoji">🔒</span></p>
 
 <h3 id="features-and-improvements">Features and Improvements</h3>
-<div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> In this release, Qumulo Core disables the <code class="language-plaintext highlighter-rouge">algif_aead</code> kernel module to mitigate the <a href="https://copy.fail/">Copy Fail</a> (<a href="https://nvd.nist.gov/vuln/detail/CVE-2026-31431">CVE-2026-31431</a>) vulnerability.</div>
+
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
+<ul>
+  <li>This release resolves an issue with the upgrade process that previously caused the Qumulo cluster to become available after a delay.</li>
+  <li>This release disables the <code>algif_aead</code> kernel module to mitigate the <a target="_blank" href="https://copy.fail/">Copy Fail</a> (<a target="_blank" href="https://nvd.nist.gov/vuln/detail/CVE-2026-31431">CVE-2026-31431</a>) vulnerability.</li>
+</ul>
+</div>
 
 <ul>
   <li>Improved the performance of NFSv3 and NFSv4.1 workloads</li>
@@ -2482,7 +2488,7 @@ $(document).ready(function() {
 
 <h3 id="change-log">Change Log</h3>
 <ul>
-  <li><a href="https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-784">REST API</a></li>
+  <li><a href="https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7841">REST API</a></li>
 </ul>
 
 <h2 id="qumulo-core-7831">Qumulo Core 7.8.3.1</h2>
@@ -2541,20 +2547,22 @@ $(document).ready(function() {
   <li><a href="https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7811">REST API</a></li>
 </ul>
 
-<h2 id="qumulo-core-7802-quarterly">Qumulo Core 7.8.0.2 (Quarterly)</h2>
+<h2 id="qumulo-core-7803-quarterly">Qumulo Core 7.8.0.3 (Quarterly)</h2>
 <p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a><span class="emoji">🔒</span></p>
 
 <h3 id="features-and-improvements-4">Features and Improvements</h3>
 
 <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
 <ul>
+  <li>This release resolves an issue with the upgrade process that previously caused the Qumulo cluster to become available after a delay.</li>
+  <li>This release disables the <code>algif_aead</code> kernel module to mitigate the <a target="_blank" href="https://copy.fail/">Copy Fail</a> (<a target="_blank" href="https://nvd.nist.gov/vuln/detail/CVE-2026-31431">CVE-2026-31431</a>) vulnerability.</li>
   <li>This release improves the ability of appliance-image-based Qumulo Core clusters that use host-managed networking to withstand networking issues.</li>
   <li>This release resolves an issue where an uncommon operational sequence could trigger an internal encoding inconsistency.</li>
 </ul>
 </div>
 <ul>
   <li>Improved the performance of Cloud Data Fabric (CDF) writes from the hub portal to a spoke portal</li>
-  <li>Added Host-Managed Networking Mode for all Qumulo Core Product Package installations of Qumulo Core 7.8.0.2 (and higher)</li>
+  <li>Added Host-Managed Networking Mode for all Qumulo Core Product Package installations of Qumulo Core 7.8.0.3 (and higher)</li>
   <li>Added support for the <code class="language-plaintext highlighter-rouge">STREAMING-AWS4-HMAC-SHA256-PAYLOAD</code> and <code class="language-plaintext highlighter-rouge">STREAMING-AWS4-HMAC-SHA256-PAYLOAD-TRAILER</code> authentication types to the S3 API</li>
   <li>Changed Authoritative DNS (QDNS) configuration to:
     <ul>
@@ -2567,7 +2575,7 @@ $(document).ready(function() {
 
 <h3 id="change-log-4">Change Log</h3>
 <ul>
-  <li><a href="https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7802-quarterly">REST API</a></li>
+  <li><a href="https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7803-quarterly">REST API</a></li>
 </ul>
 
 <h2 id="qumulo-core-7751">Qumulo Core 7.7.5.1</h2>
@@ -2652,12 +2660,14 @@ $(document).ready(function() {
   <li><a href="https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7711">REST API</a></li>
 </ul>
 
-<h2 id="qumulo-core-7702-quarterly">Qumulo Core 7.7.0.2 (Quarterly)</h2>
+<h2 id="qumulo-core-7703-quarterly">Qumulo Core 7.7.0.3 (Quarterly)</h2>
 <p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a><span class="emoji">🔒</span></p>
 
 <h3 id="features-and-improvements-10">Features and Improvements</h3>
 <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
 <ul>
+  <li>This release resolves an issue with the upgrade process that previously caused the Qumulo cluster to become available after a delay.</li>
+  <li>This release disables the <code>algif_aead</code> kernel module to mitigate the <a target="_blank" href="https://copy.fail/">Copy Fail</a> (<a target="_blank" href="https://nvd.nist.gov/vuln/detail/CVE-2026-31431">CVE-2026-31431</a>) vulnerability.</li>
   <li>This release resolves a kernel incompatibility with hardware platforms that use AMD EPYC 9004 Series (AMD Genoa and later) CPUs.</li>
   <li>This release resolves an issue where previously it was possible for QFSD to crash when system clock time was moved "backwards" while Cloud Data Fabric (CDF) is enabled for a Qumulo cluster.</li>
   <li>To prevent Qumulo Core from consuming a large amount of memory when an Intel NIC is installed in a node, we have blacklisted the <code>irdma</code> kernel module in Qumulo Core 7.7.0 (and higher).</li>
@@ -2671,7 +2681,7 @@ $(document).ready(function() {
 
 <h3 id="change-log-10">Change Log</h3>
 <ul>
-  <li><a href="https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7702-quarterly">REST API</a></li>
+  <li><a href="https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7703-quarterly">REST API</a></li>
 </ul>
 
 <h2 id="qumulo-core-7641">Qumulo Core 7.6.4.1</h2>
