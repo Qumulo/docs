@@ -14,11 +14,10 @@ For information about upgrade types for each release, see <a href='mode-referenc
 {{ nexusLink }}
 
 ### Features and Improvements
-{% capture availDelay %}This release resolves an issue with the upgrade process that previously caused the Qumulo cluster to become available after a delay.{% endcapture %}
 {% capture disableKernMod %}This release disables the <code>algif_aead</code> kernel module to mitigate the <a target="_blank" href="https://copy.fail/">Copy Fail</a> (<a target="_blank" href="https://nvd.nist.gov/vuln/detail/CVE-2026-31431">CVE-2026-31431</a>) vulnerability.{% endcapture %}
 {{site.data.alerts.important}}
 <ul>
-  <li>{{ availDelay }}</li>
+  <li>This release restores certain <code>qq</code> CLI commands that were removed in Qumulo Core 7.8.4.</li>
   <li>{{ disableKernMod }}</li>
 </ul>
 {{site.data.alerts.end}}
@@ -83,6 +82,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
 {{ nexusLink }}
 
 ### Features and Improvements
+{% capture availDelay %}This release resolves an issue with the upgrade process that previously caused the Qumulo cluster to become available after a delay.{% endcapture %}
 {% capture inconTrigg %}This release resolves an issue where an uncommon operational sequence could trigger an internal encoding inconsistency.{% endcapture %}
 {{site.data.alerts.important}}
 <ul>
