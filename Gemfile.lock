@@ -14,11 +14,11 @@ GEM
     ethon (0.16.0)
       ffi (>= 1.15.0)
     eventmachine (1.2.7)
-    faraday (2.14.1)
+    faraday (2.14.2)
       faraday-net_http (>= 2.0, < 3.5)
       json
       logger
-    faraday-net_http (3.4.2)
+    faraday-net_http (3.4.3)
       net-http (~> 0.5)
     faraday-retry (2.2.0)
       faraday (~> 2.0)
@@ -67,7 +67,7 @@ GEM
       sass-embedded (~> 1.75)
     jekyll-watch (2.2.1)
       listen (~> 3.0)
-    json (2.10.2)
+    json (2.19.5)
     kramdown (2.4.0)
       rexml
     kramdown-parser-gfm (1.1.0)
@@ -126,4 +126,4 @@ DEPENDENCIES
   ostruct
 
 BUNDLED WITH
-  4.0.11
+  4.0.12
