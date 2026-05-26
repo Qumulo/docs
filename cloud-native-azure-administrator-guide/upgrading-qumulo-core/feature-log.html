@@ -3127,30 +3127,6 @@ This release resolves the following on-premises cluster issues:
   <li><a href="https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7303-quarterly">REST API</a></li>
 </ul>
 
-<h2 id="qumulo-core-7232">Qumulo Core 7.2.3.2</h2>
-<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a><span class="emoji">🔒</span></p>
-
-<h3 id="features-and-improvements-30">Features and Improvements</h3>
-<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
-<ul>
-  <li>This release resolves an issue with Cloud Data Fabric functionality in Qumulo Core 7.2.3.1 that could cause files to become unavailable temporarily.</li>
-  <li>If your Qumulo cluster's nodes haven't been configured to use static routes, it isn't necessary to upgrade from Qumulo Core 7.2.3 to 7.2.3.1. To determine whether your cluster's nodes use static routes, SSH into the node and run the <code>ip route show</code> command. Typically, static routes do not have tags such as <code>proto dhcp</code> or <code>proto kernel</code>. For further help, <a href="https://docs.qumulo.com/contacting-qumulo-care-team.html">contact the Qumulo Care Team</a>.</li>
-  <li>If your Qumulo cluster's nodes use static routes, this release resolves an issue in Qumulo Core 7.2.3 that, under certain conditions, caused the system to lose its static route configurations after a quorum event.</li>
-</ul>
-</div>
-<ul>
-  <li>Made CNQ on Azure available on Qumulo Nexus.</li>
-  <li>Added support for read-only Cloud Data Fabric functionality between two or more Qumulo clusters.</li>
-  <li>Added support for three-node clusters to CNQ on Azure and CNQ on AWS.</li>
-  <li>Added support for CNQ clusters that adjust to multi-AZ configurations automatically.</li>
-  <li>Improved S3 Object Lock functionality and made changes to corresponding S3 API actions.</li>
-  <li>Made improvements in S3 Versioning API actions and the <code class="language-plaintext highlighter-rouge">CopyObject</code> S3 API action.</li>
-  <li>Allowed users without administrative role-based access control (RBAC) roles to modify S3 access keys and made changes to corresponding <code class="language-plaintext highlighter-rouge">qq</code> CLI commands.</li>
-  <li>Updated some of the error types and HTTP status codes that appear during cluster membership operations.</li>
-  <li>Added REST API resources and <code class="language-plaintext highlighter-rouge">qq</code> CLI commands for creation and membership change of CNQ clusters.</li>
-  <li>Resolved an issue with an SSL configuration change while the S3 server is in plaintext mode.</li>
-</ul>
-
 
    
 
