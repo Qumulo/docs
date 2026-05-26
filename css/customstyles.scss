@@ -549,6 +549,10 @@ table.info-matrix td:nth-child(n+2) {
   text-align: center;
 }
 
+td.align-middle {
+  vertical-align: middle;
+}
+
 a {
   /* This color is required to meet WCAG standards for accessible text.
      Note: This style overrides bootstrap.css.
