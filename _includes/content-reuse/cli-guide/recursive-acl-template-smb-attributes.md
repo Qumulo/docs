@@ -1,3 +1,5 @@
+{% include important.html content="We strongly recommend piping `qq` CLI commands to `jq` by using the `--stream` flag to avoid excessive memory use." %}
+
 ### To Recursively Add a New ACL with Multithreading
 For this operation, you must run the {% include qq.html command="fs_walk_tree" %} and {% include qq.html command="fs_modify_acl" %} commands.
 
@@ -9,8 +11,8 @@ For this operation, you must run the {% include qq.html command="fs_walk_tree" %
 
    ```bash
    qq fs_walk_tree --path /my_path | \
-     jq -r '.tree_nodes[].path' | \
-       xargs -d '\n' -I % -n1 -P 4 \
+     jq --stream -j 'select(.[0][-1] == "path") | .[1], "\u0000"' | \
+       xargs -0 -I % -n1 -P 4 \
          qq fs_modify_acl --path '%' \
            add_entry -t "DOMAIN\my_username" \
              -y Allowed \
@@ -34,8 +36,8 @@ For this operation, you must run the {% include qq.html command="fs_walk_tree" %
 
    ```bash
    qq fs_walk_tree --path /my_target_path | \
-     jq -r '.tree_nodes[].path' | \
-       xargs -I % -n1 -P 4 \
+     jq --stream -j 'select(.[0][-1] == "path") | .[1], "\u0000"' | \
+       xargs -0 -I % -n1 -P 4 \
          qq fs_set_acl --path '%' \
            --file /history/new_permissions.json >> &>/dev/null
    ```
@@ -47,8 +49,8 @@ Run the {% include qq.html command="fs_walk_tree" %} command and use the `--path
 
 ```bash
 qq fs_walk_tree --path /my_path | \
-  jq -r '.tree_nodes[].path' | \
-    xargs -I % -n1 -P 4 \
+  jq --stream -j 'select(.[0][-1] == "path") | .[1], "\u0000"' | \
+    xargs -0 -I % -n1 -P 4 \
       qq fs_file_set_smb_attrs --path % \
         --hidden false
 ```
