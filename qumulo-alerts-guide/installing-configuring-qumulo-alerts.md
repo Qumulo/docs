@@ -195,7 +195,7 @@ This section explains how to log in to Qumulo Alerts by using the Web UI or the 
 ### To Log In to the Qumulo Alerts Web UI
 {% include note.html content="The Qumulo Alerts Web UI is available in Qumulo Alerts 7.2.1 (and higher)." %}
 
-1. In a browser, navigate to `http://<your-host>:8080/web/login`, where `<your-host>` is the hostname or IP address of the machine running Qumulo Alerts.
+1. In a browser, navigate to `https://<your-host>:8000/web/`, where `<your-host>` is the hostname or IP address of the machine running Qumulo Alerts.
 
 1. Enter the default credentials:
 
