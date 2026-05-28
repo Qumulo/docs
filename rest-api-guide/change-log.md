@@ -11,16 +11,6 @@ layout: page
 <style>div#toc{height:200px;overflow:auto;}</style>
 
 
-## Qumulo Core 7.8.4.1
-{{ nexusLink }}
-<ul>
-  <li>Added <code>GET /v2/time/default-settings</code></li>
-  <li>Added <code>GET | PATCH | PUT /v2/time/settings</code></li>
-  <li>Added <code>GET /v2/time/status</code></li>
-  <li>Added <code>GET /v2/time/timezones</code></li>
-</ul>
-
-
 ## Qumulo Core 7.8.3.1
 {{ nexusLink }}
 <ul>
