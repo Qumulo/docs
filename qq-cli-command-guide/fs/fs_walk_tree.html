@@ -7995,6 +7995,8 @@ $(document).ready(function() {
 
 <h2 id="examples">Examples</h2>
 
+<div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> We strongly recommend piping <code class="language-plaintext highlighter-rouge">qq</code> CLI commands to <code class="language-plaintext highlighter-rouge">jq</code> by using the <code class="language-plaintext highlighter-rouge">--stream</code> flag to avoid excessive memory use.</div>
+
 <h3 id="to-recursively-add-a-new-acl-with-multithreading">To Recursively Add a New ACL with Multithreading</h3>
 <p>For this operation, you must run the <a href="https://docs.qumulo.com/qq-cli-command-guide/fs/fs_walk_tree.html"><code>qq fs_walk_tree</code></a>
  and <a href="https://docs.qumulo.com/qq-cli-command-guide/fs/fs_modify_acl.html"><code>qq fs_modify_acl</code></a>
@@ -8012,8 +8014,8 @@ $(document).ready(function() {
  command on each path. For example:</p>
 
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq fs_walk_tree <span class="nt">--path</span> /my_path | <span class="se">\</span>
-  jq <span class="nt">-r</span> <span class="s1">'.tree_nodes[].path'</span> | <span class="se">\</span>
-    xargs <span class="nt">-d</span> <span class="s1">'\n'</span> <span class="nt">-I</span> % <span class="nt">-n1</span> <span class="nt">-P</span> 4 <span class="se">\</span>
+  jq <span class="nt">--stream</span> <span class="nt">-j</span> <span class="s1">'select(.[0][-1] == "path") | .[1], "\u0000"'</span> | <span class="se">\</span>
+    xargs <span class="nt">-0</span> <span class="nt">-I</span> % <span class="nt">-n1</span> <span class="nt">-P</span> 4 <span class="se">\</span>
       qq fs_modify_acl <span class="nt">--path</span> <span class="s1">'%'</span> <span class="se">\</span>
         add_entry <span class="nt">-t</span> <span class="s2">"DOMAIN</span><span class="se">\m</span><span class="s2">y_username"</span> <span class="se">\</span>
           <span class="nt">-y</span> Allowed <span class="se">\</span>
@@ -8046,8 +8048,8 @@ $(document).ready(function() {
  command on each path.</p>
 
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq fs_walk_tree <span class="nt">--path</span> /my_target_path | <span class="se">\</span>
-  jq <span class="nt">-r</span> <span class="s1">'.tree_nodes[].path'</span> | <span class="se">\</span>
-    xargs <span class="nt">-I</span> % <span class="nt">-n1</span> <span class="nt">-P</span> 4 <span class="se">\</span>
+  jq <span class="nt">--stream</span> <span class="nt">-j</span> <span class="s1">'select(.[0][-1] == "path") | .[1], "\u0000"'</span> | <span class="se">\</span>
+    xargs <span class="nt">-0</span> <span class="nt">-I</span> % <span class="nt">-n1</span> <span class="nt">-P</span> 4 <span class="se">\</span>
       qq fs_set_acl <span class="nt">--path</span> <span class="s1">'%'</span> <span class="se">\</span>
         <span class="nt">--file</span> /history/new_permissions.json <span class="o">&gt;&gt;</span> &amp;&gt;/dev/null
 </code></pre></div>    </div>
@@ -8064,8 +8066,8 @@ $(document).ready(function() {
  command on each path.</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq fs_walk_tree <span class="nt">--path</span> /my_path | <span class="se">\</span>
-  jq <span class="nt">-r</span> <span class="s1">'.tree_nodes[].path'</span> | <span class="se">\</span>
-    xargs <span class="nt">-I</span> % <span class="nt">-n1</span> <span class="nt">-P</span> 4 <span class="se">\</span>
+  jq <span class="nt">--stream</span> <span class="nt">-j</span> <span class="s1">'select(.[0][-1] == "path") | .[1], "\u0000"'</span> | <span class="se">\</span>
+    xargs <span class="nt">-0</span> <span class="nt">-I</span> % <span class="nt">-n1</span> <span class="nt">-P</span> 4 <span class="se">\</span>
       qq fs_file_set_smb_attrs <span class="nt">--path</span> % <span class="se">\</span>
         <span class="nt">--hidden</span> <span class="nb">false</span>
 </code></pre></div></div>
