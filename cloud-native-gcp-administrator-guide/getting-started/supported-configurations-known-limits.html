@@ -2446,231 +2446,256 @@ $(document).ready(function() {
      
      <h2 id="supported-configurations">Supported Configurations</h2>
 
-<table>
-  <thead>
-    <tr>
-      <th>Configuration Type</th>
-      <th>Supported Value</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Protocols</td>
-      <td>
-        <ul>
-          <li>FTP</li>
-          <li>FTPS</li>
-          <li>NFSv3</li>
-          <li><a href="../nfs/nfsv4.1-enabling-using.html">NFSv4.1</a></li>
-          <li><a href="../s3-api/configuring-using-s3-api.html">S3 API</a> (<code>aws</code> CLI)</li>
-          <li>SMB 2.002</li>
-          <li>SMB 2.1</li>
-          <li>SMB 3.0</li>
-          <li>SMB 3.1</li>
-          <li>SMB 3.1.1</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td>Browser</td>
-      <td>Google Chrome 80 (and higher)</td>
-    </tr>
-    <tr>
-      <td>Clients over SMB</td>
-      <td>
-        <ul>
-          <li>macOS 10.14 (and higher)</li>
-          <li>Windows 7 (and higher)</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td>Clients over NFS</td>
-      <td>
-        <ul>
-          <li>macOS 10.14 (and higher)</li>
-          <li>Linux Kernel 2.6.x (and higher)</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td>Linux configuration</td>
-      <td>Qumulo Core is up to date with all Ubuntu 24.04 security updates.</td>
-    </tr>
-    <tr>
-      <td>Domain functional level</td>
-      <td>
-        Microsoft Windows Server 2008 R2 (and higher)
-        <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Qumulo Core doesn’t support Samba Domain Controllers.</div>
+<h3 id="protocols">Protocols</h3>
 
-      </td>
-    </tr>
-    <tr>
-      <td>Kerberos V5 encryption types</td>
-      <td>
-         <ul>
-           <li>RC4-HMAC-MD5</li>
-           <li>AES256-CTS-HMAC-SHA1</li>
-           <li>AES128-CTS-HMAD-SHA1</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td>LDAP servers</td>
-      <td>OpenLDAP for Group Expansion</td>
-    </tr>
-    <tr>
-      <td>Python version for <code>qq</code> CLI</td>
-      <td>3.8 (and higher)</td>
-    </tr>
-  </tbody>
-</table>
+<div class="three-columns">
 
-<h2 id="known-limits">Known Limits</h2>
+  <ul>
+    <li>
+      <p>FTP</p>
+    </li>
+    <li>
+      <p>FTPS</p>
+    </li>
+    <li>
+      <p>NFSv3</p>
+    </li>
+    <li>
+      <p>NFSv4.1</p>
+    </li>
+    <li>
+      <p>S3 API (<code class="language-plaintext highlighter-rouge">aws</code> CLI)</p>
+    </li>
+    <li>
+      <p>SMB 2.002</p>
+    </li>
+    <li>
+      <p>SMB 2.1</p>
+    </li>
+    <li>
+      <p>SMB 3.0</p>
+    </li>
+    <li>
+      <p>SMB 3.1</p>
+    </li>
+    <li>
+      <p>SMB 3.1.1</p>
+    </li>
+  </ul>
 
-<table>
-  <thead>
-    <tr>
-      <th>Limit Type</th>
-      <th>Maximum Value</th>
-    </tr>
-  </thead>
-  <tbody>
+</div>
 
-    <tr>
-      <td>Cluster size</td>
-      <td>265 nodes</td>
-    </tr>
+<h3 id="clients-and-environments">Clients and Environments</h3>
 
-    <tr>
-      <td>Hub portals or spoke portals for each node</td>
-      <td>
-        <ul>
-          <li>32 hub portals <em>and</em> 32 spoke portals (Qumulo Core 7.5.2 (and higher))</li>
-          <li>32 hub portals <em>or</em> 32 spoke portals (Qumulo Core 7.5.0.1 to 7.5.1.2)</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td>Portal root directories for each cluster</td>
-      <td>32 spoke portal root directories for each portal relationship</td>
-    </tr>
-    <tr>
-      <td>NFS exports</td>
-      <td>64,000</td>
-    </tr>
-    <tr>
-      <td>SMB shares</td>
-      <td>40,000</td>
-    </tr>
-    <tr>
-      <td>Access Control Entries (ACEs) in an Access Control List (ACL)</td>
-      <td>200</td>
-    </tr>
-    <tr>
-      <td>NFS groups</td>
-      <td>16, when not using LDAP or Active Directory for <a target="_blank" href="https://www.ietf.org/rfc/rfc2307.txt">RFC 2307</a>
- attributes</td>
-    </tr>
-    <tr>
-      <td>NFSv4.1 connections for each node</td>
-      <td>1,000</td>
-    </tr>
-    <tr>
-      <td>Characters in a cluster name</td>
-      <td>2-15, alphanumeric and hyphen (<code>-</code>)</td>
-    </tr>
-    <tr>
-      <td>Characters in a full path (path name)</td>
-      <td>32,760 (limited by protocol)</td>
-    </tr>
-    <tr>
-      <td>Characters in a file path component (file or directory)</td>
-      <td>255 (limited by protocol)</td>
-    </tr>
-    <tr>
-      <td>Files in a directory</td>
-      <td>4.3 billion</td>
-    </tr>
-    <tr>
-      <td>File size</td>
-      <td>9 exabytes</td>
-    </tr>
-    <tr>
-      <td>Total files</td>
-      <td>18 quintillion</td>
-    </tr>
-    <tr>
-      <td>Hard links for each file</td>
-      <td>1,024</td>
-    </tr>
-    <tr>
-      <td>LDAP domains</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>Active Directory domains</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>DNS servers</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <td>Snapshots</td>
-      <td>40,000</td>
-    </tr>
-    <tr>
-      <td>Quotas</td>
-      <td>
-        4.3 billion
-        <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> This approximate value of 2<sup>32</sup> is equivalent to the possible maximum of directories or the entire inode space.</div>
+<ul>
+  <li>
+    <p><strong>Clients over SMB</strong></p>
 
-      </td>
-    </tr>
-    <tr>
-      <td>S3 Bucket object versions</td>
-      <td>Unlimited (4,294,967,296 theoretical)</td>
-    </tr>
-    <tr>
-      <td>Total replication relationships</td>
-      <td>
-        100
-        <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> If a directory is more than 100 levels below the file system root directory, you can’t use it as a replication source.</div>
+    <ul>
+      <li>
+        <p>macOS 10.14 (and higher)</p>
+      </li>
+      <li>
+        <p>Windows 7 (and higher)</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Clients over NFS</strong></p>
 
-      </td>
-    </tr>
-   
-    <tr>
-      <td>NFS sockets</td>
-      <td>
-        8,000 TCP sockets for each node
-        <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> A client configured with the NFS <code>nconnect</code> mount option uses multiple sockets.</div>
+    <ul>
+      <li>
+        <p>macOS 10.14 (and higher)</p>
+      </li>
+      <li>
+        <p>Linux Kernel 2.6.x (and higher)</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Qumulo Core Web UI:</strong> Google Chrome 80 (and higher)</p>
+  </li>
+  <li>
+    <p><strong><code class="language-plaintext highlighter-rouge">qq</code> CLI:</strong> Python 3.8 (and higher)</p>
+  </li>
+</ul>
 
-      </td>
-    </tr>    
-    <tr>
-      <td>SMB sockets</td>
-      <td>
-        5,000 TCP sockets for each node
-        <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> A client configured with the SMB Multichannel feature uses multiple sockets.</div>
+<h3 id="authentication-and-directory-services">Authentication and Directory Services</h3>
 
-      </td>
-    </tr>
-    <tr>
-      <td>S3 API sockets</td>
-      <td>
-        8,000 TCP sockets for each node
-        <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> By default, a maximum of 5,000 connections can execute actively.</div>
+<ul>
+  <li>
+    <p><strong>Domain Functional Level:</strong> Microsoft Windows Server 2008 R2 (and higher)</p>
 
-      </td>
-    </tr>
-    <tr>
-      <td>REST API sockets</td>
-      <td>1,000 TCP sockets for each node</td>
-    </tr>     
-  </tbody>
-</table>
+    <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Qumulo Core doesn’t support Samba Domain Controllers.</div>
+  </li>
+  <li>
+    <p><strong>LDAP Servers:</strong> OpenLDAP for Group Expansion</p>
+  </li>
+</ul>
+
+<h3 id="encryption-in-transit">Encryption in Transit</h3>
+
+<ul>
+  <li>
+    <p><strong>Kerberos V5 Encryption:</strong></p>
+
+    <ul>
+      <li>
+        <p>AES128-CTS-HMAC-SHA1</p>
+      </li>
+      <li>
+        <p>AES256-CTS-HMAC-SHA1</p>
+      </li>
+      <li>
+        <p>RC4-HMAC-MD5</p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="host-system-security">Host System Security</h3>
+
+<p>Qumulo Core is up to date with all Ubuntu 24.04 security updates</p>
+
+<h2 id="known-maximum-limits">Known Maximum Limits</h2>
+
+<h3 id="authentication">Authentication</h3>
+<ul>
+  <li>
+    <p><strong>Active Directory Domains:</strong> 1</p>
+  </li>
+  <li>
+    <p><strong>LDAP Domains:</strong> 1</p>
+  </li>
+</ul>
+
+<h3 id="authorization">Authorization</h3>
+<p><strong>Access Control Entries (ACEs) in an Access Control List (ACL):</strong> 200</p>
+
+<h3 id="cluster">Cluster</h3>
+
+<ul>
+  <li>
+    <p><strong>Cluster size:</strong> 265 nodes</p>
+  </li>
+  <li>
+    <p><strong>Characters in a cluster name:</strong> 2-15, alphanumeric and hyphen (<code class="language-plaintext highlighter-rouge">-</code>)</p>
+  </li>
+</ul>
+
+<h3 id="file-system">File System</h3>
+<ul>
+  <li>
+    <p><strong>Characters in a file path component (file or directory):</strong> 255</p>
+
+    <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Limited by protocol</div>
+  </li>
+  <li>
+    <p><strong>Characters in a full path (path name):</strong> 32,760</p>
+
+    <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Limited by protocol</div>
+  </li>
+  <li>
+    <p><strong>Hard links for each file:</strong> 1,024</p>
+  </li>
+  <li>
+    <p><strong>File size:</strong> 9 exabytes</p>
+  </li>
+  <li>
+    <p><strong>Number of files in a directory:</strong> 4.3 billion</p>
+  </li>
+  <li>
+    <p><strong>Total number of files:</strong> 18 quintillion</p>
+  </li>
+  <li>
+    <p><strong>Replication relationships:</strong> 100</p>
+
+    <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> If a directory is more than 100 levels below the file system root directory, it isn’t possible to use it as a replication source.</div>
+  </li>
+  <li>
+    <p><strong>Snapshots:</strong> 40,000</p>
+  </li>
+  <li>
+    <p><strong>Quotas:</strong> 4.3 billion</p>
+
+    <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> This approximate value of 2<sup>32</sup> is equivalent to the possible maximum of directories or the entire inode space.</div>
+  </li>
+  <li>
+    <p><strong>S3 Bucket object versions:</strong> Unlimited</p>
+
+    <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Theoretically, 4,294,967,296</div>
+  </li>
+</ul>
+
+<h3 id="file-system-protocols">File System Protocols</h3>
+
+<h4 id="rest-api">REST API</h4>
+<p><strong>TCP Sockets for each node:</strong> 1,000</p>
+
+<h4 id="nfs">NFS</h4>
+<ul>
+  <li>
+    <p><strong>Exports:</strong> 64,000</p>
+  </li>
+  <li>
+    <p><strong>Groups:</strong> 16</p>
+
+    <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> When not using LDAP or Active Directory for <a target="_blank" href="https://www.ietf.org/rfc/rfc2307.txt">RFC 2307</a>
+ attributes</div>
+  </li>
+  <li>
+    <p><strong>NFSv4.1 connections for each node:</strong> 1,000</p>
+  </li>
+  <li>
+    <p><strong>TCP sockets for each node:</strong> 8,000</p>
+
+    <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> A client configured by using the NFS <code class="language-plaintext highlighter-rouge">nconnect</code> mount option uses multiple sockets.</div>
+  </li>
+</ul>
+
+<h4 id="smb">SMB</h4>
+
+<ul>
+  <li>
+    <p><strong>Shares:</strong> 40,000</p>
+  </li>
+  <li>
+    <p><strong>TCP sockets for each node:</strong> 5,000</p>
+
+    <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> A client configured with the SMB Multichannel feature uses multiple sockets.</div>
+  </li>
+</ul>
+
+<h4 id="s3-api">S3 API</h4>
+<ul>
+  <li>
+    <p><strong>TCP sockets for each node:</strong> 8,000</p>
+
+    <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> By default, a maximum of 5,000 connections can execute actively.</div>
+  </li>
+  <li>
+    <p><strong>Presigned URL expiration (<code class="language-plaintext highlighter-rouge">X-Amz-Expires</code>):</strong> 604,800 seconds (7 days)</p>
+  </li>
+</ul>
+
+<h3 id="cloud-data-fabric-cdf">Cloud Data Fabric (CDF)</h3>
+<ul>
+  <li>
+    <p><strong>Portals for each node in a cluster:</strong></p>
+
+    <ul>
+      <li>
+        <p><strong>Qumulo Core 7.5.2 (and higher):</strong> 32 hub portals <em>and</em> 32 spoke portals</p>
+      </li>
+      <li>
+        <p><strong>Qumulo Core 7.5.0.1 to 7.5.1.2:</strong> 32 hub portals <em>or</em> 32 spoke portals</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Portal root directories for each cluster:</strong> 32 spoke portal root directories for each portal relationship</p>
+  </li>
+</ul>
 
    
 

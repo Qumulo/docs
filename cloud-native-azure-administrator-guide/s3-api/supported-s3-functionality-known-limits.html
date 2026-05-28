@@ -2832,9 +2832,16 @@ $(document).ready(function() {
 <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Although Qumulo Core supports <code class="language-plaintext highlighter-rouge">Prefix</code> and <code class="language-plaintext highlighter-rouge">Delimiter</code> partially, it fully supports the most common use case: listing the contents of S3 buckets as a hierarchical file.</div>
 
 <h3 id="request-authentication">Request Authentication</h3>
-<p>Qumulo Core supports authenticating requests by using only <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html">Amazon Signature Version 4</a>. Most S3 client applications support this authentication type.</p>
+<ul>
+  <li>
+    <p>Qumulo Core supports authenticating requests by using only <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html">Amazon Signature Version 4</a>. Most S3 client applications support this authentication type.</p>
 
-<p>If your application attempts to use a previous Amazon signature version, you receive a <code class="language-plaintext highlighter-rouge">400 Bad Request</code> response with the error code <code class="language-plaintext highlighter-rouge">AuthorizationHeaderMalformed</code>.</p>
+    <p>If your application attempts to use a previous Amazon signature version, you receive a <code class="language-plaintext highlighter-rouge">400 Bad Request</code> response with the error code <code class="language-plaintext highlighter-rouge">AuthorizationHeaderMalformed</code>.</p>
+  </li>
+  <li>
+    <p>Qumulo Core accepts only presigned requests where the <code>X-Amz-Expires</code> query parameter is set to a value of up to 604,800 seconds (7 days).</p>
+  </li>
+</ul>
 
 <h3 id="versioning">Versioning</h3>
 <ul>
