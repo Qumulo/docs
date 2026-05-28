@@ -377,6 +377,8 @@ supportAWScliShort: <code>aws</code> CLI
 supportAWScliLong: Qumulo Core supports <code>aws</code> CLI
 
 s3:
+  limits:
+    presignedURL: Qumulo Core accepts only presigned requests where the <code>X-Amz-Expires</code> query parameter is set to a value of up to 604,800 seconds (7 days).
   permissions:
     APIorCLI: by using the Qumulo REST API or <code>qq</code> CLI
     directAPI: You can also use the S3 API directly.

@@ -32,7 +32,8 @@ For more information, see [Authenticating Requests: Using Query Parameters (AWS 
       <li><code>DeleteObjects</code></li>
     </ul>
   </li>
-  <li>{{site.supportAWScliLong}}</li>
+  <li>{{site.s3.limits.presignedURL}}</li>
+  <li>{{site.supportAWScliLong}}.</li>
 </ul>
 {{site.data.alerts.end}}
 

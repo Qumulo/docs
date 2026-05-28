@@ -303,6 +303,17 @@ blockquote {
 }
 /* API VERSION AND PREVIEW TAGS END */
 
+
+/* COLUMNS START */
+.two-columns {
+  column-count: 2;
+}
+
+.three-columns {
+  column-count: 3;
+}
+/* COLUMNS END */
+
 #toc + p {
   margin-top: 15px;
 }
@@ -1945,6 +1956,7 @@ dd {margin-left:20px;}
 }
 
 .alert {
+    width: fit-content;
     margin-bottom:10px;
     margin-top:10px;
 }
