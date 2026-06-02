@@ -18,7 +18,7 @@ varNoX: node failure
 ---
 
 ## How Qumulo Core Ensures Fault Tolerance
-Qumulo Core protects your cluster with a `6,4` [erasure coding](https://qumulo.com/blog/how-to-implement-erasure-coding/) (2 concurrent drive failures or 1 node failure), at minimum. When a drive fails, Qumulo Core begins to rebuild the data that was previously stored on the failed drive.
+Qumulo Core protects your cluster with a `6,4` _erasure coding_ (2 concurrent drive failures or 1 node failure), at minimum. When a drive fails, Qumulo Core begins to rebuild the data that was previously stored on the failed drive.
 
 {% include note.html content="When Qumulo Core finishes reprotecting the drive, it resets the fault tolerance for the cluster, regardless of whether you have replaced the failed drive." %}
 

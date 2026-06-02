@@ -118,7 +118,7 @@ When {{site.azure.qumuloOnAzureShort}} adjusts cluster performance to meet workf
   To allow the `admin` user to authenticate over the SMB protocol, change the `admin` user's password.
 
 ### Qumulo Compliance Posture
-For information about Qumulo's third-party attestations, including FIPS 140-2 Level 1, GDPR, HIPAA, and SOC 2 Type II, see [Qumulo Trust Center](https://qumulo.com/trust/).
+For information about Qumulo's third-party attestations, including FIPS 140-2 Level 1, GDPR, HIPAA, and SOC 2 Type II, see [Qumulo Trust Center](https://trust.qumulo.com).
 
 
 ## Using {{site.azure.qumuloOnAzureLong}} Cold Workloads {#using-cold-workloads}
