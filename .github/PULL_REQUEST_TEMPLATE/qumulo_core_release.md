@@ -19,6 +19,7 @@
 ## Automated Documentation Updates
 - [ ] `qq` CLI docs
 - [ ] REST API docs
+- [ ] REST API change log
 
 ## Testing
 - [ ] Spellchecker
