@@ -393,6 +393,24 @@ regen_cli_docs() {
     start_in_docs_dir
     check_src_repo
     check_ssh_keys
+
+    # Non-interactive execution
+    if [ -n "$1" ]; then
+        if [ "$1" = "current" ]; then
+            echo "Regenerating current CLI documentation from default branch..."
+            cd ~/src && hg up default && hg fetch && ./tools/extract_cli_help.py --base-dir ~/git/docs-internal && cd -
+            return 0
+        elif [[ "$1" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+            echo "Regenerating CLI documentation from release-$1 branch..."
+            cd ~/src && hg up default && hg fetch && hg up release-$1 && ./tools/extract_cli_help.py --base-dir ~/git/docs-internal && cd -
+            return 0
+        else
+            echo "Error: Invalid version format '$1'. Expected 'current' or 'N.N.N'."
+            return 1
+        fi
+    fi
+
+    # Interactive execution
     while true; do
         read -p "Generate the current (c) or future (f) version of the CLI docs? " version_choice
         if [ "$version_choice" = "c" ]; then
@@ -421,10 +439,31 @@ regen_api_docs() {
     start_in_docs_dir
     check_src_repo
     check_tqdm || return 1
-    echo "Building REST API documentation from artifacts.eng.qumulo.com ..."
+
+    # Capture var to determine non-interactive or interactive execution
+    local api_version="$1"
+
     no_toolchain
     USER_SITE=$(python3 -m site --user-site)
-    PYTHONPATH="$USER_SITE:$PYTHONPATH" python3 tools/gen-api.py
+
+    if [ -n "$api_version" ]; then
+        # Non-Interactive execution
+        echo "Building REST API documentation for version $api_version from artifacts.eng.qumulo.com ..."
+        PYTHONPATH="$USER_SITE:$PYTHONPATH" python3 tools/gen-api.py "$api_version"
+    else
+        # Interactive execution
+        echo "Building REST API documentation from artifacts.eng.qumulo.com ..."
+        PYTHONPATH="$USER_SITE:$PYTHONPATH" python3 tools/gen-api.py
+    fi
+}
+
+# Regenerate REST API change log
+regen_api_change_log() {
+    start_in_docs_dir
+    check_tqdm || return 1
+
+    echo "Building REST API change log..."
+    python3 tools/gen-api-changes.py
 }
 
 # Build HTML documentation by using Jekyll
@@ -573,7 +612,7 @@ ingest_corp_site() {
     else
       NUM_PROCS=$(printf "%.${2:-0}f" "$(bc <<< "0.625*$(nproc)")")
       sed -i "s/^  ray_workers:.*/  ray_workers: ${NUM_PROCS}/" ~/git/vectara-ingest/config/qumulo-main.yaml
-      ingest_documentation "qumulo-care.yaml"
+      ingest_documentation "qumulo-main.yaml"
     fi
     docker logs -f vingest-qumulo-main
 }
@@ -749,13 +788,47 @@ reverse_integrate_all_changes_from_mainline() {
   fi
 }
 
+# Run environment and dependency checks for both interactive and non-interactive users
+check_environment	# Set up environment variables and fix the toolchain if necessary
+check_symlinks		# Verify repository structures
+install_docker		# Install Docker if necessary
+install_noto_emoji	# Install Noto Emoji if necessary
 
-check_environment
-check_symlinks
+# Evaluate flag execution
+if [ "$1" = "--regen-cli" ]; then
+    VERSION="${2:-current}"
+    regen_cli_docs "$VERSION"
+    exit 0
+elif [ "$1" = "--regen-api" ]; then
+    VERSION="$2"
+    regen_api_docs "$VERSION"
+    exit 0
+elif [ "$1" = "--regen-api-changes" ]; then
+    regen_api_change_log
+    exit 0
+elif [[ "$1" == "--help" || "$1" == "-h" ]]; then
+    # ---> CHANGED: Added help flag and clear documentation layout
+    echo -e "\033[1;33m🤖 Documentation Portal Tool ('dm') - Command Help\033[0m"
+    echo -e "Usage: dm [FLAG] [ARGUMENT]\n"
+    echo -e "Available Non-Interactive Flags:"
+    echo -e "  -h, --help            Show this help menu and exit."
+    echo -e "  --regen-cli [VERSION] Regenerate CLI command guide documentation."
+    echo -e "                        Accepts 'current' or specific N.N.N format (for example, 7.1.2)."
+    echo -e "                        Defaults to 'current' if no version is given."
+    echo -e "  --regen-api [VERSION] Regenerate REST API reference guide documentation."
+    echo -e "                        Accepts specific N.N.N format (for example 7.1.2)."
+    echo -e "                        Drops into a version prompt if no version is given."
+    echo -e "  --regen-api-changes   Regenerate the dynamic REST API changes log guide."
+    echo -e ""
+    echo -e "Running 'dm' with no flags launches the interactive menu."
+    exit 0
+    # ------------------------------------------------------------------
+fi
+
+# On first wrap, generate the `dm` shell wrapper tool
 global_docs_menu
-install_docker
-install_noto_emoji
 
+# Interactive menu
 while true; do
     echo
     echo -e "\033[1;33m🤖 Hello and welcome to the Documentation Portal Repository!\033[0m"
@@ -782,24 +855,25 @@ while true; do
     echo -e "\033[1;33mGenerate Documentation\033[0m"
     echo -e "14. ⚙️\tRegenerate CLI documentation"
     echo -e "15. ⚙️\tRegenerate REST API documentation"
-    echo -e "16. ⚙️\tOnly build HTML documentation"
-    echo -e "17. ⚙️\tOnly build PDF documentation"
+    echo -e "16. ⚙️\tRegenerate REST API change log"    
+    echo -e "17. ⚙️\tOnly build HTML documentation"
+    echo -e "18. ⚙️\tOnly build PDF documentation"
     echo
     echo -e "\033[1;33mPreview Documentation\033[0m"
-    echo -e "18. 🖥️\tOnly serve documentation locally (Tailscale over HTTPS)"
-    echo -e "19. 🖥️\tOnly serve documentation locally (Python over HTTP)"
-    echo -e "20. 🖥️\tBuild documentation and serve it locally (Tailscale over HTTPS)"
-    echo -e "21. 🖥️\tBuild documentation and serve it locally (Python over HTTP)"
-    echo -e "22. 🖥️\tBuild documentation and serve it locally (Jekyll with LiveReload over HTTP)"
+    echo -e "19. 🖥️\tOnly serve documentation locally (Tailscale over HTTPS)"
+    echo -e "20. 🖥️\tOnly serve documentation locally (Python over HTTP)"
+    echo -e "21. 🖥️\tBuild documentation and serve it locally (Tailscale over HTTPS)"
+    echo -e "22. 🖥️\tBuild documentation and serve it locally (Python over HTTP)"
+    echo -e "23. 🖥️\tBuild documentation and serve it locally (Jekyll with LiveReload over HTTP)"
     echo
     echo -e "\033[1;33mTest Documentation\033[0m"
-    echo -e "23. 📋\tCheck documentation for link, script, and image errors"
-    echo -e "24. 📋\tCheck documentation for spelling errors"
+    echo -e "24. 📋\tCheck documentation for link, script, and image errors"
+    echo -e "25. 📋\tCheck documentation for spelling errors"
     echo
     echo -e "\033[1;33mIndex Documentation\033[0m"
-    echo -e "25. 🔍\tIngest docs.qumulo.com into Vectara"
-    echo -e "26. 🔍\tIngest care.qumulo.com into Vectara"
-    echo -e "27. 🔍\tIngest qumulo.com into Vectara"
+    echo -e "26. 🔍\tIngest docs.qumulo.com into Vectara"
+    echo -e "27. 🔍\tIngest care.qumulo.com into Vectara"
+    echo -e "28. 🔍\tIngest qumulo.com into Vectara"
     echo
     echo -e "q.  👋\tQuit"
     echo
@@ -821,18 +895,19 @@ while true; do
         13) find_modified_cli ;;
         14) regen_cli_docs ;;
         15) regen_api_docs ;;
-        16) build_html_docs ;;
-        17) build_pdf_docs ;;
-        18) only_serve_docs_locally_tailscale ;;
-        19) only_serve_docs_locally_python ;;
-        20) build_serve_docs_locally_tailscale ;;
-        21) build_serve_docs_locally_python ;;
-        22) build_serve_docs_locally_jekyll ;;
-        23) check_docs_errors ;;
-        24) check_spelling_errors ;;
-        25) ingest_docs_portal ;;
-        26) ingest_care_portal ;;
-        27) ingest_corp_site ;;
+        16) regen_api_change_log ;;
+        17) build_html_docs ;;
+        18) build_pdf_docs ;;
+        19) only_serve_docs_locally_tailscale ;;
+        20) only_serve_docs_locally_python ;;
+        21) build_serve_docs_locally_tailscale ;;
+        22) build_serve_docs_locally_python ;;
+        23) build_serve_docs_locally_jekyll ;;
+        24) check_docs_errors ;;
+        25) check_spelling_errors ;;
+        26) ingest_docs_portal ;;
+        27) ingest_care_portal ;;
+        28) ingest_corp_site ;;
         q) exit ;;
         *) echo "You must enter a valid option." ;;
     esac
