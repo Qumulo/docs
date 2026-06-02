@@ -2722,7 +2722,7 @@ $(document).ready(function() {
    <p>This section provides an overview of how Qumulo clusters ensure continued operation in the event of a drive or node failure.</p>
    
      <h2 id="how-qumulo-core-ensures-fault-tolerance">How Qumulo Core Ensures Fault Tolerance</h2>
-<p>Qumulo Core protects your cluster with a <code class="language-plaintext highlighter-rouge">6,4</code> <a href="https://qumulo.com/blog/how-to-implement-erasure-coding/">erasure coding</a> (2 concurrent drive failures or 1 node failure), at minimum. When a drive fails, Qumulo Core begins to rebuild the data that was previously stored on the failed drive.</p>
+<p>Qumulo Core protects your cluster with a <code class="language-plaintext highlighter-rouge">6,4</code> <em>erasure coding</em> (2 concurrent drive failures or 1 node failure), at minimum. When a drive fails, Qumulo Core begins to rebuild the data that was previously stored on the failed drive.</p>
 
 <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> When Qumulo Core finishes reprotecting the drive, it resets the fault tolerance for the cluster, regardless of whether you have replaced the failed drive.</div>
 
