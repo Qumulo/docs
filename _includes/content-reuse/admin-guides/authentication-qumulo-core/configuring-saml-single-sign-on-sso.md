@@ -109,7 +109,7 @@ Qumulo Core supports three SAML SSO workflows:
   <li>Members of the built-in Administrators role always have access to the Qumulo Core Web UI.</li>
   <li>To allow other users to access the Qumulo Core Web UI, you must assign the built-in Observers role to individual users or to groups.</li>
   <li>Depending on policy, additional verification might be necessary for users. For example, the SSO administrator can enforce mandatory two-factor authentication (2FA) for certain clusters.</li>
-  <li>If the user accesses the Qumulo Core Web UI by connecting to a node physically, the login page doesn't show doesn't show <strong>Continue to SSO login</strong> on the Qumulo Core Web UI login page, even if SSO is configured.</li>
+  <li>If the user accesses the Qumulo Core Web UI by connecting to a node physically, the login page doesn't show <strong>Continue to SSO login</strong> on the Qumulo Core Web UI login page, even if SSO is configured.</li>
 </ul>
 {{site.data.alerts.end}}
 
@@ -125,7 +125,7 @@ Qumulo Core supports three SAML SSO workflows:
 
 1. If the Qumulo cluster has SAML SSO configured, the user can click **Continue to SSO login** on the Qumulo Core Web UI login page.
 
-   the Qumulo Core Web UI redirects the user to the configured SSO portal. Because the authentication request uses HTTP-Redirect Binding, the login URL appears.
+   The Qumulo Core Web UI redirects the user to the configured SSO portal. Because the authentication request uses HTTP-Redirect Binding, the login URL appears.
    
    ```
    https://<my-org>.<sso-provider>.com/abc12de34fgAB5CDh6i7/saml?SAMLRequest=abcdefgh1234567890...
