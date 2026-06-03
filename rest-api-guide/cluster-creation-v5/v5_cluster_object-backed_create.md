@@ -39,10 +39,10 @@ methods:
         ,\n        \"ACTIVE_WITH_INTELLIGENT_STORAGE\",\n        \"ACTIVE_WITH_HOT_STORAGE\"\
         ,\n        \"ARCHIVE_WITH_IA_STORAGE\",\n        \"ARCHIVE_WITH_GIR_STORAGE\"\
         ,\n        \"ARCHIVE_WITH_COLD_STORAGE\"\n      ],\n      \"description\"\
-        : \"The product type of cluster to create. Valid options are: ACTIVE_WITH_STANDARD_STORAGE,\
-        \ ACTIVE_WITH_HOT_STORAGE, ACTIVE_WITH_INTELLIGENT_STORAGE, ARCHIVE_WITH_IA_STORAGE,\
-        \ ARCHIVE_WITH_GIR_STORAGE, ARCHIVE_WITH_COLD_STORAGE. Not all product types\
-        \ are available on all platforms.:\\n * `ACTIVE_WITH_HOT_STORAGE` - ACTIVE_WITH_HOT_STORAGE,\\\
+        : \"The product type of cluster to create. Valid options for AWS clusters\
+        \ are:ACTIVE_WITH_STANDARD_STORAGE, ACTIVE_WITH_INTELLIGENT_STORAGE, ARCHIVE_WITH_IA_STORAGE,\
+        \ ARCHIVE_WITH_GIR_STORAGE. Valid options for Azureclusters are: ACTIVE_WITH_HOT_STORAGE,\
+        \ ARCHIVE_WITH_COLD_STORAGE.:\\n * `ACTIVE_WITH_HOT_STORAGE` - ACTIVE_WITH_HOT_STORAGE,\\\
         n * `ACTIVE_WITH_INTELLIGENT_STORAGE` - ACTIVE_WITH_INTELLIGENT_STORAGE,\\\
         n * `ACTIVE_WITH_STANDARD_STORAGE` - ACTIVE_WITH_STANDARD_STORAGE,\\n * `ARCHIVE_WITH_COLD_STORAGE`\
         \ - ARCHIVE_WITH_COLD_STORAGE,\\n * `ARCHIVE_WITH_GIR_STORAGE` - ARCHIVE_WITH_GIR_STORAGE,\\\
