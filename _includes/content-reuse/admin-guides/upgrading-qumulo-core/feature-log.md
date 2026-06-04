@@ -10,6 +10,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
 
 {% capture noAPIchanges %}This release contains no REST API changes.{% endcapture %}
 
+{% capture disableKernMod %}This release disables the <code>algif_aead</code> kernel module to mitigate the <a target="_blank" href="https://copy.fail/">Copy Fail</a> (<a target="_blank" href="https://nvd.nist.gov/vuln/detail/CVE-2026-31431">CVE-2026-31431</a>) vulnerability.{% endcapture %}
 
 ## Qumulo Core 7.8.3.1
 {{ nexusLink }}
