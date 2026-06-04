@@ -419,12 +419,12 @@ sidebar_content = {
                     "title": "Qumulo REST API Guide",
                     "type": "navi",
                 },
+                {
+                    "title": "Change Log",
+                    "url": "/rest-api-guide/change-log.html",
+                    "output": "web,pdf"
+                }
             ]
-        },
-        {
-            "title": "Change Log",
-            "url": "/rest-api-guide/change-log.html",
-            "output": "web,pdf"
         }
     ]
 }
