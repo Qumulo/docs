@@ -2532,22 +2532,23 @@ $(document).ready(function() {
   <li><a href="https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7811">REST API</a></li>
 </ul>
 
-<h2 id="qumulo-core-7803-quarterly">Qumulo Core 7.8.0.3 (Quarterly)</h2>
+<h2 id="qumulo-core-7804-quarterly">Qumulo Core 7.8.0.4 (Quarterly)</h2>
 <p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a><span class="emoji">🔒</span></p>
 
 <h3 id="features-and-improvements-4">Features and Improvements</h3>
 
 <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
 <ul>
+  <li>This release resolves an issue with handling an internal encoding inconsistency from legacy builds.</li>
   <li>This release resolves an issue with the upgrade process that previously caused the Qumulo cluster to become available after a delay.</li>
   <li>This release disables the <code>algif_aead</code> kernel module to mitigate the <a target="_blank" href="https://copy.fail/">Copy Fail</a> (<a target="_blank" href="https://nvd.nist.gov/vuln/detail/CVE-2026-31431">CVE-2026-31431</a>) vulnerability.</li>
   <li>This release improves the ability of appliance-image-based Qumulo Core clusters that use host-managed networking to withstand networking issues.</li>
-  <li>This release resolves an issue where an uncommon operational sequence could trigger an internal encoding inconsistency.</li>
+  <li>This release resolves an issue with an uncommon sequence of operations that previously could cause an internal encoding inconsistency.</li>
 </ul>
 </div>
 <ul>
   <li>Improved the performance of Cloud Data Fabric (CDF) writes from the hub portal to a spoke portal</li>
-  <li>Added Host-Managed Networking Mode for all Qumulo Core Product Package installations of Qumulo Core 7.8.0.3 (and higher)</li>
+  <li>Added Host-Managed Networking Mode for all Qumulo Core Product Package installations of Qumulo Core 7.8.0.4 (and higher)</li>
   <li>Added support for the <code class="language-plaintext highlighter-rouge">STREAMING-AWS4-HMAC-SHA256-PAYLOAD</code> and <code class="language-plaintext highlighter-rouge">STREAMING-AWS4-HMAC-SHA256-PAYLOAD-TRAILER</code> authentication types to the S3 API</li>
   <li>Changed Authoritative DNS (QDNS) configuration to:
     <ul>
@@ -2567,7 +2568,7 @@ $(document).ready(function() {
 <p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a><span class="emoji">🔒</span></p>
 
 <h3 id="features-and-improvements-5">Features and Improvements</h3>
-<div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> This release resolves an issue where an uncommon operational sequence could trigger an internal encoding inconsistency.</div>
+<div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> This release resolves an issue with an uncommon sequence of operations that previously could cause an internal encoding inconsistency.</div>
 
 <ul>
   <li>Added expansion of the placeholder <code class="language-plaintext highlighter-rouge">%U</code> to a username for SMB shares</li>
@@ -2586,7 +2587,7 @@ $(document).ready(function() {
 <p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a><span class="emoji">🔒</span></p>
 
 <h3 id="features-and-improvements-6">Features and Improvements</h3>
-<div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> This release resolves an issue where an uncommon operational sequence could trigger an internal encoding inconsistency.</div>
+<div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> This release resolves an issue with an uncommon sequence of operations that previously could cause an internal encoding inconsistency.</div>
 
 <ul>
   <li>The majority of functionality and stability improvements in this Qumulo Core release are internal.</li>
