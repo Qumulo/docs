@@ -39,7 +39,7 @@ layout: page
 {{ noAPIchanges }}
 
 
-## Qumulo Core 7.8.0.3 (Quarterly)
+## Qumulo Core 7.8.0.4 (Quarterly)
 {{ nexusLink }}
 <ul>
   <li>Added <code>GET | PATCH /v1/authoritative-dns/settings</code></li>

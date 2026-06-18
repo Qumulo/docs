@@ -34,7 +34,7 @@ For information about the most important features from each release, click the Q
       <td class="instant">Instant</td>
     </tr>
     <tr>
-      <td><a href="feature-log.html#qumulo-core-7803-quarterly">7.8.0.3</a></td>
+      <td><a href="feature-log.html#qumulo-core-7804-quarterly">7.8.0.4</a></td>
       <td><span class="emoji">✅</span></td>
       <td class="instant">Instant</td>
     </tr>

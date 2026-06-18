@@ -7,7 +7,7 @@ You can choose a networking mode depending on the version of Qumulo Core that yo
 This section explains the difference between the two networking modes in Qumulo Core. You can choose a networking mode depending on the version of Qumulo Core that you want to install.
 {% endif %}
 
-* **Host-Managed Networking:** This is the default networking mode for Qumulo Core Product Package installations of Qumulo Core 7.8.0.3 (and higher).
+* **Host-Managed Networking:** This is the default networking mode for Qumulo Core Product Package installations of Qumulo Core 7.8.0.4 (and higher).
 {: #host-managed-networking}
 
   In this networking mode:
@@ -18,11 +18,11 @@ This section explains the difference between the two networking modes in Qumulo 
 
   To disable Host-Managed Networking, {{ howTo }}.
 
-* **Qumulo-Managed Networking**: This is the default networking mode for Qumulo Core Product Package installations of Qumulo Core versions lower than 7.8.0.3.
+* **Qumulo-Managed Networking**: This is the default networking mode for Qumulo Core Product Package installations of Qumulo Core versions lower than 7.8.0.4.
 {: #qumulo-managed-networking}
 
   In this networking mode:
   * Qumulo is responsible for configuring your entire network infrastructure.
   * You can change only a limited number of settings.
 
-  To enable Host-Managed Networking for Qumulo Core versions lower than 7.8.0.3, {{ howTo }}.
+  To enable Host-Managed Networking for Qumulo Core versions lower than 7.8.0.4, {{ howTo }}.

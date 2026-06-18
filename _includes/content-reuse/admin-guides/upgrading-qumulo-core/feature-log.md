@@ -5,10 +5,10 @@ For information about upgrade types for each release, see <a href='mode-referenc
 {% endif %}
 
 {% capture nexusLink %}<p>{{site.downloadsRelnotes}}{{site.loginRequired}}</p>{% endcapture %}
-
 {% comment %}For boilerplate text, use {{page.varNoPublicChanges}}{% endcomment %}
-
 {% capture noAPIchanges %}This release contains no REST API changes.{% endcapture %}
+
+{% capture inconTriggLegacy %}This release resolves an issue with handling an internal encoding inconsistency from legacy builds.{% endcapture %}
 
 ## Qumulo Core 7.8.4.3
 {{ nexusLink }}
@@ -80,14 +80,15 @@ For information about upgrade types for each release, see <a href='mode-referenc
 * [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7811)
 
 
-## Qumulo Core 7.8.0.3 (Quarterly)
+## Qumulo Core 7.8.0.4 (Quarterly)
 {{ nexusLink }}
 
 ### Features and Improvements
 {% capture availDelay %}This release resolves an issue with the upgrade process that previously caused the Qumulo cluster to become available after a delay.{% endcapture %}
-{% capture inconTrigg %}This release resolves an issue where an uncommon operational sequence could trigger an internal encoding inconsistency.{% endcapture %}
+{% capture inconTrigg %}This release resolves an issue with an uncommon sequence of operations that previously could cause an internal encoding inconsistency.{% endcapture %}
 {{site.data.alerts.important}}
 <ul>
+  <li>{{ inconTriggLegacy }}</li>
   <li>{{ availDelay }}</li>
   <li>{{ disableKernMod }}</li>
   <li>This release improves the ability of appliance-image-based Qumulo Core clusters that use host-managed networking to withstand networking issues.</li>
@@ -95,7 +96,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
 </ul>
 {{site.data.alerts.end}}
 * Improved the performance of Cloud Data Fabric (CDF) writes from the hub portal to a spoke portal
-* Added Host-Managed Networking Mode for all Qumulo Core Product Package installations of Qumulo Core 7.8.0.3 (and higher)
+* Added Host-Managed Networking Mode for all Qumulo Core Product Package installations of Qumulo Core 7.8.0.4 (and higher)
 * Added support for the `STREAMING-AWS4-HMAC-SHA256-PAYLOAD` and `STREAMING-AWS4-HMAC-SHA256-PAYLOAD-TRAILER` authentication types to the S3 API
 * Changed Authoritative DNS (QDNS) configuration to:
   * Serve `A` records for the first Qumulo network on the cluster's base domain
