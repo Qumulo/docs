@@ -872,6 +872,145 @@ fetch('/data/website.json')
   <li>
   
 
+  <a title="audit" href="/qq-cli-command-guide/audit/" data-proofer-ignore>
+  
+  
+  
+  
+
+  
+
+  audit
+  </a>
+
+      <ul>
+          
+          
+          
+          <li>
+            <a title="audit_create_destination" href="/qq-cli-command-guide/audit/audit_create_destination.html">
+              audit_create_destination
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="audit_delete_destination" href="/qq-cli-command-guide/audit/audit_delete_destination.html">
+              audit_delete_destination
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="audit_get_destination" href="/qq-cli-command-guide/audit/audit_get_destination.html">
+              audit_get_destination
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="audit_get_destination_status" href="/qq-cli-command-guide/audit/audit_get_destination_status.html">
+              audit_get_destination_status
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="audit_list_destinations" href="/qq-cli-command-guide/audit/audit_list_destinations.html">
+              audit_list_destinations
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="audit_modify_destination" href="/qq-cli-command-guide/audit/audit_modify_destination.html">
+              audit_modify_destination
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="audit_set_destination" href="/qq-cli-command-guide/audit/audit_set_destination.html">
+              audit_set_destination
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+
+  
+
+  
+
+  
+  <li>
+  
+
   <a title="auth" href="/qq-cli-command-guide/auth/" data-proofer-ignore>
   
   
@@ -4763,6 +4902,22 @@ fetch('/data/website.json')
           
           
           
+          
+          
+          <li>
+            <a title="object_bridge_create" href="/qq-cli-command-guide/object/object_bridge_create.html">
+              object_bridge_create
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
       </ul>
    </li>
      
@@ -6744,22 +6899,6 @@ fetch('/data/website.json')
           
           
           <li>
-            <a title="snapshot_calculate_used_capacity" href="/qq-cli-command-guide/snapshot/snapshot_calculate_used_capacity.html">
-              snapshot_calculate_used_capacity
-              <span class="tag-container">
-              
-              
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-          
-          
-          <li>
             <a title="snapshot_create_policy" href="/qq-cli-command-guide/snapshot/snapshot_create_policy.html">
               snapshot_create_policy
               <span class="tag-container">
@@ -6842,22 +6981,6 @@ fetch('/data/website.json')
           <li>
             <a title="snapshot_file_diff" href="/qq-cli-command-guide/snapshot/snapshot_file_diff.html">
               snapshot_file_diff
-              <span class="tag-container">
-              
-              
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-          
-          
-          <li>
-            <a title="snapshot_get_capacity_used_per_snapshot" href="/qq-cli-command-guide/snapshot/snapshot_get_capacity_used_per_snapshot.html">
-              snapshot_get_capacity_used_per_snapshot
               <span class="tag-container">
               
               
@@ -8047,8 +8170,7 @@ $(document).ready(function() {
 
 
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq nfs_add_export <span class="o">[</span><span class="nt">-h</span><span class="o">]</span> <span class="nt">--export-path</span> EXPORT_PATH <span class="nt">--fs-path</span> FS_PATH <span class="o">[</span><span class="nt">--tenant-id</span> TENANT_ID] <span class="o">[</span><span class="nt">--description</span> DESCRIPTION] <span class="o">(</span><span class="nt">--no-restrictions</span> | <span class="nt">--restrictions</span> JSON_FILE_PATH<span class="o">)</span>
-    <span class="o">[</span><span class="nt">--create-fs-path</span><span class="o">]</span> <span class="o">[</span><span class="nt">--fields-to-present-as-32-bit</span> FIELD <span class="o">[</span>FIELD ...]]
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq nfs_add_export <span class="o">[</span><span class="nt">-h</span><span class="o">]</span> <span class="nt">--export-path</span> EXPORT_PATH <span class="nt">--fs-path</span> FS_PATH <span class="o">[</span><span class="nt">--tenant-id</span> TENANT_ID] <span class="o">[</span><span class="nt">--description</span> DESCRIPTION] <span class="o">(</span><span class="nt">--no-restrictions</span> | <span class="nt">--restrictions</span> JSON_FILE_PATH<span class="o">)</span> <span class="o">[</span><span class="nt">--create-fs-path</span><span class="o">]</span> <span class="o">[</span><span class="nt">--fields-to-present-as-32-bit</span> FIELD <span class="o">[</span>FIELD ...]]
 </code></pre></div></div>
 
 
@@ -8330,6 +8452,29 @@ NONE: explicitly specifies no 32 bit mapping.
         
     
   
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
     
       
         
@@ -9008,151 +9153,10 @@ NONE: explicitly specifies no 32 bit mapping.
       
         
     
-  
-    
-      
-        
-    
-      
-        
-    
-      
-        
-    
-      
-        
-    
-      
-        
-    
-      
-        
-    
-      
-        
-    
-      
-        
-    
-      
-        
-    
-      
-        
-    
-      
-        
-    
-      
-        
-    
-      
-        
-    
-      
-        
-    
-      
-        
-    
-      
-        
-    
-      
-        
-    
-      
-        
-    
-      
-        
-    
       
         
     
   
-    
-      
-        
-    
-  
-    
-      
-        
-    
-      
-        
-    
-      
-        
-    
-      
-        
-    
-      
-        
-    
-  
-    
-      
-        
-    
-  
-    
-      
-        
-    
-      
-        
-    
-      
-        
-    
-      
-        
-    
-  
-    
-      
-        
-    
-  
-    
-      
-        
-    
-      
-        
-    
-      
-        
-    
-      
-        
-    
-      
-        
-    
-      
-        
-    
-      
-        
-    
-      
-        
-    
-      
-        
-    
-      
-        
-    
-      
-        
-    
-      
-        
     
       
         
@@ -9224,6 +9228,150 @@ NONE: explicitly specifies no 32 bit mapping.
       
         
     
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+  
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+  
+    
+      
+        
+    
+  
+    
+      
+        
+    
   
     
       
@@ -9335,12 +9483,6 @@ NONE: explicitly specifies no 32 bit mapping.
         
     
   
-    
-      
-        
-    
-      
-        
     
       
         

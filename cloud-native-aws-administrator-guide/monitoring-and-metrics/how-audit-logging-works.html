@@ -2460,10 +2460,10 @@ $(document).ready(function() {
    <p>This section explains the different formats of audit logs for file system operations that Qumulo Core generates whenever a connected client sends a request to a Qumulo cluster.</p>
    
      
-     <p>Qumulo Core creates a descriptive audit log message for every operation that a client attempts. Then, Qumulo Core sends the audit log messages to the remote syslog instance that the audit logging configuration specifies in compliance with <a target="_blank" href="https://www.ietf.org/rfc/rfc5424.txt">RFC 5424</a>
-.</p>
+     <p>Qumulo Core creates a descriptive audit log message for every operation that a client attempts. Qumulo Core routes audit log messages to one or more configured destinations: remote syslog servers (in compliance with <a target="_blank" href="https://www.ietf.org/rfc/rfc5424.txt">RFC 5424</a>
+) or Amazon CloudWatch (configured through the audit logging REST API).</p>
 
-<p>This section explains the differences between the levels of detail of audit logs in <a href="#details-in-syslog-csv-format">syslog CSV</a>, <a href="#details-in-syslog-json-format">syslog JSON</a>, and <a href="#details-in-cloudwatch-json-format">CloudWatch JSON</a> formats. (In general, the syslog CSV and CloudWatch JSON formats contain audit logs contain an identical number of fields, some named differently, while the syslog JSON format has additional audit logging information.)</p>
+<p>This section explains the differences between the levels of detail of audit logs in <a href="#details-in-syslog-csv-format">syslog CSV</a>, <a href="#details-in-syslog-json-format">syslog JSON</a>, and <a href="#details-in-cloudwatch-json-format">CloudWatch JSON</a> formats. (In general, the syslog CSV and CloudWatch JSON formats contain an identical number of fields, some named differently, while the syslog JSON format has additional audit logging information.)</p>
 
 <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note</b><br />
 <ul>
@@ -2545,11 +2545,11 @@ $(document).ready(function() {
     <td>The operation that the user or the system attempts to perform.</td>
     <td>
       <ul>
-        <li><a href="#connectivity-operations">Connectivity operation</a>, such as <code>ftp_login</code></li>
-        <li><a href="#smb-specific-operations">SMB-Specific operation</a>, such as <code>smb_create_share</code></li>        
-        <li><a href="#audit-logging-operations">Audit logging operation</a>, such as <code>remote_syslog_startup</code></li>
-        <li><a href="#file-system-operations">File system operation</a>, such as <code>fs_create</code></li>
-        <li><a href="#rest-api-operations">REST API operation</a>, such as <code>ad_join</code></li>
+        <li>Audit logging operation, such as <code>remote_syslog_startup</code></li>
+        <li>Connectivity operation, such as <code>ftp_login</code></li>
+        <li>File system operation, such as <code>fs_create</code></li>
+        <li>Protocol management operation, such as <code>smb_create_share</code></li>
+        <li>REST API operation, such as <code>ad_join</code></li>
       </ul>
     </td>
   </tr>
@@ -2562,8 +2562,8 @@ $(document).ready(function() {
         <li>
           Error message:
           <ul>
-            <li><a href="#credential-error-messages">Credential error message</a>, such as <code>cred_invalid_sid_error</code></li>
-            <li><a href="#file-system-operation-error-messages">File system operation error message</a>, such as <code>fs_access_perm_not_owner_error</code></li>
+            <li>Credential error message, such as <code>cred_invalid_sid_error</code></li>
+            <li>File system operation error message, such as <code>fs_access_perm_not_owner_error</code></li>
           </ul>
         </li>
       </ul>
@@ -2725,302 +2725,24 @@ Jun 6 14:55:24 my-machine qumulo {"user_id": {"auth_id": "1", "sid": "S-1-5-21-9
 | 1717679724000 | {"ip_address": "203.0.113.0", "user": "system", "protocol": "internal", "operation": "remote_syslog_shutdown", "result": "ok", "object_id": "", "path_1": "", "path_2": ""}        |
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</pre></div>
 
-<h2 id="operation-names-in-audit-logging">Operation Names in Audit Logging</h2>
-<p>This section lists the operation names in Qumulo Core audit logging.</p>
+<h2 id="operation-types-in-audit-logging">Operation Types in Audit Logging</h2>
+<p>This following operation types are included in Qumulo Core audit logging.</p>
 
-<h3 id="connectivity-operations">Connectivity Operations</h3>
 <ul>
-  <li><code class="language-plaintext highlighter-rouge">ftp_login</code></li>
-  <li><code class="language-plaintext highlighter-rouge">nfs_mount</code></li>
-  <li><code class="language-plaintext highlighter-rouge">rest_login</code></li>
-  <li><code class="language-plaintext highlighter-rouge">share_connect</code></li>
-  <li><code class="language-plaintext highlighter-rouge">smb_close_handle</code></li>
-  <li><code class="language-plaintext highlighter-rouge">smb_close_session</code></li>
-  <li><code class="language-plaintext highlighter-rouge">smb_login</code></li>
+  <li>Audit logging operations</li>
+  <li>Connectivity operations</li>
+  <li>File system operations</li>
+  <li>Protocol management operations</li>
+  <li>REST API operations</li>
 </ul>
-
-<h3 id="smb-specific-operations">SMB-Specific Operations</h3>
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">smb_create_share</code></li>
-  <li><code class="language-plaintext highlighter-rouge">smb_modify_share</code></li>
-  <li><code class="language-plaintext highlighter-rouge">smb_delete_share</code></li>
-  <li><code class="language-plaintext highlighter-rouge">smb2_notify_req</code></li>
-</ul>
-
-<h3 id="audit-logging-operations">Audit Logging Operations</h3>
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">remote_syslog_shutdown</code></li>
-  <li><code class="language-plaintext highlighter-rouge">remote_syslog_startup</code></li>
-</ul>
-
-<h3 id="file-system-operations">File System Operations</h3>
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">fs_copy_chunk</code></li>
-  <li><code class="language-plaintext highlighter-rouge">fs_create_directory</code></li>
-  <li><code class="language-plaintext highlighter-rouge">fs_create_directories</code></li>
-  <li><code class="language-plaintext highlighter-rouge">fs_create_file</code></li>
-  <li><code class="language-plaintext highlighter-rouge">fs_create_hard_link</code></li>
-  <li><code class="language-plaintext highlighter-rouge">fs_create_symlink</code></li>
-  <li><code class="language-plaintext highlighter-rouge">fs_create_stream</code></li>
-  <li><code class="language-plaintext highlighter-rouge">fs_create</code>
-    <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> This operation type applies to any but the previous file types.</div>
-  </li>
-  <li><code class="language-plaintext highlighter-rouge">fs_delete</code></li>
-  <li><code class="language-plaintext highlighter-rouge">fs_fsstat</code></li>
-  <li><code class="language-plaintext highlighter-rouge">fs_list_directory</code></li>
-  <li><code class="language-plaintext highlighter-rouge">fs_open</code></li>
-  <li><code class="language-plaintext highlighter-rouge">fs_read_data</code></li>
-  <li><code class="language-plaintext highlighter-rouge">fs_read_link</code></li>
-  <li><code class="language-plaintext highlighter-rouge">fs_read_metadata</code></li>
-  <li><code class="language-plaintext highlighter-rouge">fs_read_user_metadata</code></li>
-  <li><code class="language-plaintext highlighter-rouge">fs_rename</code></li>
-  <li><code class="language-plaintext highlighter-rouge">fs_set_quota</code></li>
-  <li><code class="language-plaintext highlighter-rouge">fs_tree_delete</code></li>
-  <li><code class="language-plaintext highlighter-rouge">fs_write_data</code></li>
-  <li><code class="language-plaintext highlighter-rouge">fs_write_metadata</code></li>
-  <li><code class="language-plaintext highlighter-rouge">fs_write_file_lock</code></li>
-  <li><code class="language-plaintext highlighter-rouge">fs_write_user_metadata</code></li>
-</ul>
-
-<h3 id="rest-api-operations">REST API Operations</h3>
-<details>
-  <summary>Click to expand</summary>
-  <ul>
-    <li><code>ad_cancel_operation</code></li>
-    <li><code>ad_dismiss_error</code></li>
-    <li><code>ad_join</code></li>
-    <li><code>ad_kerberos_renew_ticket</code></li>
-    <li><code>ad_leave</code></li>
-    <li><code>ad_modify_settings</code></li>
-    <li><code>ad_reconfigure</code></li>
-    <li><code>audit_modify_cloudwatch_config</code></li>
-    <li><code>audit_modify_syslog_config</code></li>
-    <li><code>auth_add_group</code></li>
-    <li><code>auth_add_member_to_group</code></li>
-    <li><code>auth_assign_role</code></li>
-    <li><code>auth_create_access_token</code></li>
-    <li><code>auth_create_role</code></li>
-    <li><code>auth_create_user</code></li>
-    <li><code>auth_delete_access_token</code></li>
-    <li><code>auth_delete_group</code></li>
-    <li><code>auth_delete_identity_attributes</code></li>
-    <li><code>auth_delete_role</code></li>
-    <li><code>auth_delete_user</code></li>
-    <li><code>auth_get_access_token</code></li>
-    <li><code>auth_get_access_tokens</code></li>
-    <li><code>auth_modify_access_token</code></li>
-    <li><code>auth_modify_group</code></li>
-    <li><code>auth_modify_identity_attributes</code></li>
-    <li><code>auth_modify_role</code></li>
-    <li><code>auth_modify_user</code></li>
-    <li><code>auth_modify_user_password</code></li>
-    <li><code>auth_remove_member_from_group</code></li>
-    <li><code>auth_set_user_defined_mappings</code></li>
-    <li><code>auth_unassign_role</code></li>
-    <li><code>cluster_add_nodes</code></li>
-    <li><code>cluster_calculate_node_add_capacity</code></li>
-    <li><code>cluster_generate_vpn_private_key</code></li>
-    <li><code>cluster_initiate_node_replacement_plan</code></li>
-    <li><code>cluster_install_vpn_keys</code></li>
-    <li><code>cluster_locate_disk_slot</code></li>
-    <li><code>cluster_modify_config</code></li>
-    <li><code>cluster_modify_monitoring_config</code></li>
-    <li><code>cluster_modify_nodes</code></li>
-    <li><code>cluster_modify_nodes_dry_run</code></li>
-    <li><code>cluster_modify_upgrade_config</code></li>
-    <li><code>cluster_nodes_resolve_indeterminate_modification</code></li>
-    <li><code>dns_create</code></li>
-    <li><code>dns_delete</code></li>
-    <li><code>dns_modify</code></li>
-    <li><code>dns_set_lookup_overrides</code></li>
-    <li><code>encryption_create_key</code></li>
-    <li><code>encryption_rotate_keys</code></li>
-    <li><code>encryption_update_config</code></li>
-    <li><code>fs_create_public_key</code></li>
-    <li><code>fs_delete_public_key</code></li>
-    <li><code>fs_modify_atime_settings</code></li>
-    <li><code>fs_modify_notify_settings</code></li>
-    <li><code>fs_modify_permissions_settings</code></li>
-    <li><code>fs_modify_public_key</code></li>
-    <li><code>fs_release_nlm_locks_by_client</code></li>
-    <li><code>fs_release_nlm_locks_by_file</code></li>
-    <li><code>fs_replace_public_key</code></li>
-    <li><code>fs_sample</code></li>
-    <li><code>ftp_modify_settings</code></li>
-    <li><code>identity_create</code></li>
-    <li><code>identity_delete</code></li>
-    <li><code>identity_modify</code></li>
-    <li><code>kerberos_delete_keytab</code></li>
-    <li><code>kerberos_modify_settings</code></li>
-    <li><code>kerberos_set_keytab</code></li>
-    <li><code>ldap_modify_settings</code></li>
-    <li><code>network_create_config</code></li>
-    <li><code>network_delete_config</code></li>
-    <li><code>network_modify_config</code></li>
-    <li><code>network_modify_interface</code></li>
-    <li><code>nfs_create_export</code></li>
-    <li><code>nfs_delete_export</code></li>
-    <li><code>nfs_delete_settings</code></li>
-    <li><code>nfs_modify_export</code></li>
-    <li><code>nfs_modify_settings</code></li>
-    <li><code>node_halt</code></li>
-    <li><code>node_restart</code></li>
-    <li><code>node_set_identify_light</code></li>
-    <li><code>portals_authorize_hub_portal</code></li>
-    <li><code>portals_create_spoke_portal</code></li>
-    <li><code>portals_delete_hub_portal</code></li>
-    <li><code>portals_delete_spoke_portal</code></li>
-    <li><code>portals_evict_inode</code></li>
-    <li><code>portals_modify_eviction_configuration</code></li>
-    <li><code>portals_modify_hub_portal</code></li>
-    <li><code>portals_modify_spoke_portal</code></li>
-    <li><code>portals_propose_portal_relationship</code></li>
-    <li><code>reboot_pause</code></li>
-    <li><code>reboot_resume</code></li>
-    <li><code>reboot_start</code></li>
-    <li><code>replication_abort</code></li>
-    <li><code>replication_abort_object_relationship</code></li>
-    <li><code>replication_authorize_target_relationship</code></li>
-    <li><code>replication_create_object_relationship</code></li>
-    <li><code>replication_create_source_relationship</code></li>
-    <li><code>replication_delete_object_relationship</code></li>
-    <li><code>replication_delete_source_relationship</code></li>
-    <li><code>replication_delete_target_relationship</code></li>
-    <li><code>replication_dismiss_source_relationship_error</code></li>
-    <li><code>replication_dismiss_target_relationship_error</code></li>
-    <li><code>replication_make_target_writable</code></li>
-    <li><code>replication_modify_source_relationship</code></li>
-    <li><code>replication_reconnect_target_relationship</code></li>
-    <li><code>replication_release_queued_snapshot</code></li>
-    <li><code>replication_replicate_object_relationship</code></li>
-    <li><code>replication_reverse_target_relationship</code></li>
-    <li><code>replication_start</code></li>
-    <li><code>replication_target_relationship_lock</code></li>
-    <li><code>s3_abort_upload</code></li>
-    <li><code>s3_add_bucket</code></li>
-    <li><code>s3_bucket_policy_explain_access</code></li>
-    <li><code>s3_create_key</code></li>
-    <li><code>s3_delete_bucket</code></li>
-    <li><code>s3_delete_key</code></li>
-    <li><code>s3_get_bucket_policy</code></li>
-    <li><code>s3_modify_bucket</code></li>
-    <li><code>s3_modify_settings</code></li>
-    <li><code>s3_put_bucket_policy</code></li>
-    <li><code>saml_modify_settings</code></li>
-    <li><code>session_change_password</code></li>
-    <li><code>shutdown_halt</code></li>
-    <li><code>smb_delete_settings</code></li>
-    <li><code>smb_modify_settings</code></li>
-    <li><code>snapshot_create_policy</code></li>
-    <li><code>snapshot_create_snapshot</code></li>
-    <li><code>snapshot_delete_policy</code></li>
-    <li><code>snapshot_delete_snapshot</code></li>
-    <li><code>snapshot_lock_snapshot</code></li>
-    <li><code>snapshot_modify_policy</code></li>
-    <li><code>snapshot_modify_snapshot</code></li>
-    <li><code>snapshot_unlock_snapshot</code></li>
-    <li><code>snapshot_unlock_snapshot_challege</code></li>
-    <li><code>ssl_delete_ca_certificate</code></li>
-    <li><code>ssl_modify_ca_certificate</code></li>
-    <li><code>ssl_modify_certificate</code></li>
-    <li><code>tenant_create</code></li>
-    <li><code>tenant_delete</code></li>
-    <li><code>tenant_modify</code></li>
-    <li><code>time_modify_config</code></li>
-    <li><code>tree_delete_cancel</code></li>
-    <li><code>tree_delete_start</code></li>
-    <li><code>web_ui_modify_settings</code></li>
-  </ul>
-</details>
 
 <h2 id="error-status-messages">Error Status Messages</h2>
-<p>This section lists the error status messages in Qumulo Core audit logging.</p>
+<p>The following error status message types are included in Qumulo Core audit logging.</p>
 
-<h3 id="credential-error-messages">Credential Error Messages</h3>
 <ul>
-  <li><code class="language-plaintext highlighter-rouge">cred_error</code></li>
-  <li><code class="language-plaintext highlighter-rouge">cred_identity_not_supported_error</code></li>
-  <li><code class="language-plaintext highlighter-rouge">cred_invalid_local_user_error</code></li>
-  <li><code class="language-plaintext highlighter-rouge">cred_invalid_sid_error</code></li>
-  <li><code class="language-plaintext highlighter-rouge">cred_remote_resource_unavailable_error</code></li>
+  <li>Credential error messages</li>
+  <li>File system operation error messages</li>
 </ul>
-
-<h3 id="file-system-operation-error-messages">File System Operation Error Messages</h3>
-<details>
-  <summary>Click to expand</summary>
-  <ul>
-    <li><code>fs_access_denied_error</code></li>
-    <li><code>fs_access_error</code></li>
-    <li><code>fs_access_perm_not_owner_error</code></li>
-    <li><code>fs_already_read_only_error</code></li>
-    <li><code>fs_default_stream_of_directory_error</code></li>
-    <li><code>fs_directory_cycle_error</code></li>
-    <li><code>fs_directory_error</code></li>
-    <li><code>fs_directory_hash_exhaustion_error</code></li>
-    <li><code>fs_directory_is_symlink_error</code></li>
-    <li><code>fs_directory_not_empty_error</code></li>
-    <li><code>fs_encountered_portal_error</code></li>
-    <li><code>fs_entry_exists_error</code></li>
-    <li><code>fs_entry_hardlink_ambiguity_error</code></li>
-    <li><code>fs_entry_not_in_subtree_error</code></li>
-    <li><code>fs_exceeded_maximum_stream_count_error</code></li>
-    <li><code>fs_file_dirent_id_stale_error</code></li>
-    <li><code>fs_file_is_named_stream_error</code></li>
-    <li><code>fs_file_is_symlink_error</code></li>
-    <li><code>fs_file_not_covered_by_snapshot_error</code></li>
-    <li><code>fs_file_not_empty_error</code></li>
-    <li><code>fs_file_path_invalid_error</code></li>
-    <li><code>fs_file_size_error</code></li>
-    <li><code>fs_file_too_many_links_error</code></li>
-    <li><code>fs_invalid_acl_error</code></li>
-    <li><code>fs_invalid_attrs_error</code></li>
-    <li><code>fs_invalid_file_type_error</code></li>
-    <li><code>fs_invalid_name_error</code></li>
-    <li><code>fs_invalid_offset_error</code></li>
-    <li><code>fs_invalid_size_error</code></li>
-    <li><code>fs_name_size_error</code></li>
-    <li><code>fs_no_such_entry_error</code></li>
-    <li><code>fs_no_such_file_version_error</code></li>
-    <li><code>fs_no_such_inode_error</code></li>
-    <li><code>fs_no_such_path_error</code></li>
-    <li><code>fs_not_a_directory_error</code></li>
-    <li><code>fs_not_a_file_error</code></li>
-    <li><code>fs_not_a_symlink_error</code></li>
-    <li><code>fs_opened_file_stale_error</code></li>
-    <li><code>fs_path_size_error</code></li>
-    <li><code>fs_permissions_mode_operation_unsupported_error</code></li>
-    <li><code>fs_portal_create_orphanage_error</code></li>
-    <li><code>fs_portal_disconnected_error</code></li>
-    <li><code>fs_portal_error</code></li>
-    <li><code>fs_portal_eviction_error</code></li>
-    <li><code>fs_portal_inconsistent_data_error</code></li>
-    <li><code>fs_portal_incorrect_state_error</code></li>
-    <li><code>fs_portal_invalid_lease_break_range_error</code></li>
-    <li><code>fs_portal_not_covered_by_snapshot_error</code></li>
-    <li><code>fs_portal_not_found_error</code></li>
-    <li><code>fs_portal_out_of_order_lease_break_error</code></li>
-    <li><code>fs_quota_limit_already_set_error</code></li>
-    <li><code>fs_quota_limit_does_not_exist_error</code></li>
-    <li><code>fs_quota_no_space_error</code></li>
-    <li><code>fs_read_only_error</code></li>
-    <li><code>fs_revision_mismatch_error</code></li>
-    <li><code>fs_s3_versioning_full_error</code></li>
-    <li><code>fs_same_inode_error</code></li>
-    <li><code>fs_sharing_violation_error</code></li>
-    <li><code>fs_smb_share_root_deleted_error</code></li>
-    <li><code>fs_stream_is_default_error</code></li>
-    <li><code>fs_symlink_loop_error</code></li>
-    <li><code>fs_tag_mismatch_error</code></li>
-    <li><code>fs_too_many_aces_error</code></li>
-    <li><code>fs_user_metadata_continuation_token_type_mismatch</code></li>
-    <li><code>fs_user_metadata_empty_insertion_error</code></li>
-    <li><code>fs_user_metadata_hash_exhaustion_error</code></li>
-    <li><code>fs_user_metadata_key_already_exists</code></li>
-    <li><code>fs_user_metadata_key_not_found</code></li>
-    <li><code>fs_user_metadata_too_large</code></li>
-    <li><code>fs_watcher_missed_events_error</code></li>
-  </ul>
-</details>
 
    
 
