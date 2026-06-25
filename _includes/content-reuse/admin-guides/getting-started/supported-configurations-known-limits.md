@@ -166,6 +166,8 @@ Qumulo Core requires switches that meet the following criteria:
 
   {% include note.html content="By default, a maximum of 5,000 connections can execute actively." %}
 
+* **Presigned URL expiration (`X-Amz-Expires`):** 604,800 seconds (7 days)
+
 ### Cloud Data Fabric (CDF)
 * **Portals for each node in a cluster:**
 

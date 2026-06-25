@@ -28,10 +28,13 @@ methods:
         : \"object\",\n  \"properties\": {\n    \"name\": {\n      \"description\"\
         : \"name\",\n      \"type\": \"string\"\n    },\n    \"id\": {\n      \"description\"\
         : \"id\",\n      \"type\": \"string\"\n    },\n    \"size\": {\n      \"description\"\
-        : \"size\",\n      \"type\": \"string\"\n    },\n    \"datablocks\": {\n \
-        \     \"description\": \"datablocks\",\n      \"type\": \"string\"\n    },\n\
-        \    \"data_revision\": {\n      \"description\": \"data_revision\",\n   \
-        \   \"type\": \"string\"\n    }\n  }\n}"
+        : \"Size of the stream in bytes\",\n      \"type\": \"string\"\n    },\n \
+        \   \"datablocks\": {\n      \"description\": \"Number of data blocks used\
+        \ by the stream on this cluster\",\n      \"type\": \"string\"\n    },\n \
+        \   \"logical_datablocks\": {\n      \"description\": \"Number of data blocks\
+        \ used by the stream\",\n      \"type\": \"string\"\n    },\n    \"data_revision\"\
+        : {\n      \"description\": \"Counter that increases with every data change\
+        \ to the stream\",\n      \"type\": \"string\"\n    }\n  }\n}"
     responses:
     - code: '200'
       description: Return value on success
@@ -60,10 +63,13 @@ methods:
         : \"object\",\n  \"properties\": {\n    \"name\": {\n      \"description\"\
         : \"name\",\n      \"type\": \"string\"\n    },\n    \"id\": {\n      \"description\"\
         : \"id\",\n      \"type\": \"string\"\n    },\n    \"size\": {\n      \"description\"\
-        : \"size\",\n      \"type\": \"string\"\n    },\n    \"datablocks\": {\n \
-        \     \"description\": \"datablocks\",\n      \"type\": \"string\"\n    },\n\
-        \    \"data_revision\": {\n      \"description\": \"data_revision\",\n   \
-        \   \"type\": \"string\"\n    }\n  }\n}"
+        : \"Size of the stream in bytes\",\n      \"type\": \"string\"\n    },\n \
+        \   \"datablocks\": {\n      \"description\": \"Number of data blocks used\
+        \ by the stream on this cluster\",\n      \"type\": \"string\"\n    },\n \
+        \   \"logical_datablocks\": {\n      \"description\": \"Number of data blocks\
+        \ used by the stream\",\n      \"type\": \"string\"\n    },\n    \"data_revision\"\
+        : {\n      \"description\": \"Counter that increases with every data change\
+        \ to the stream\",\n      \"type\": \"string\"\n    }\n  }\n}"
     responses:
     - code: '200'
       description: Return value on success
@@ -100,6 +106,10 @@ methods:
       description: Read up to length bytes from the requested stream. If the read
         extends beyond the end of the stream, the read will return as many bytes as
         possible, up to length. Will read the whole file if not specified.
+      required: false
+    - name: skip-atime-update
+      description: If true, suppress the update of the stream's access time for this
+        read.
       required: false
     response_body: {}
     responses:

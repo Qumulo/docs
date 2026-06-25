@@ -11,6 +11,63 @@ layout: page
 <style>div#toc{height:200px;overflow:auto;}</style>
 
 
+## Qumulo Core 7.9.0
+{{ nexusLink }}
+<ul>
+  <li>Removed <code>/v1/snapshots/calculate-used-capacity</code></li>
+  <li>Removed <code>/v1/snapshots/capacity-used-per-snapshot/</code></li>
+  <li>Removed <code>/v1/snapshots/capacity-used-per-snapshot/{id}</code></li>
+</ul>
+<details>
+  <summary>Click to expand</summary>
+  <ul>
+    <li>Added <code>GET | POST /v2/audit/destinations/</code></li>
+    <li>Added <code>DELETE | GET | PATCH | PUT /v2/audit/destinations/{id}</code></li>
+    <li>Added <code>GET /v2/audit/destinations/{id}/status</code></li>
+    <li>Added <code>GET /v3/snapshots/{newer_id}/changes-since/{older_id}/files/{ref}</code></li>
+    <li>Added <code>skip-atime-update</code> parameter to <code>GET /v1/files/{ref}/data</code> parameters</li>
+    <li>Added <code>logical_datablocks</code> parameter to <code>PATCH /v1/files/{ref}/data</code> response</li>
+    <li>Added <code>logical_datablocks</code> parameter to <code>PUT /v1/files/{ref}/data</code> response</li>
+    <li>
+      Modified <code>GET /v1/files/{ref}/entries/</code>:
+      <ul>
+        <li>Added parameters to <code>GET /v1/files/{ref}/entries/</code> parameters:
+          <ul>
+            <li><code>include-acls</code></li>
+            <li><code>skip-atime-update</code></li>
+          </ul></li>
+        <li>Added <code>file_acls</code> parameter to <code>GET /v1/files/{ref}/entries/</code> response</li>
+      </ul>
+    </li>
+    <li>Added <code>logical_datablocks</code> parameter to <code>POST /v1/files/{ref}/entries/</code> response</li>
+    <li>Added <code>logical_datablocks</code> parameter to <code>PATCH /v1/files/{ref}/file-lock</code> response</li>
+    <li>Added <code>logical_datablocks</code> parameter to <code>GET /v1/files/{ref}/info/attributes</code> response</li>
+    <li>
+      Modified <code>PATCH /v1/files/{ref}/info/attributes</code>:
+      <ul>
+        <li>Added <code>logical_datablocks</code> parameter to <code>PATCH /v1/files/{ref}/info/attributes</code> request body</li>
+        <li>Added <code>logical_datablocks</code> parameter to <code>PATCH /v1/files/{ref}/info/attributes</code> response</li>
+      </ul>
+    </li>
+    <li>Added <code>logical_datablocks</code> parameter to <code>POST /v1/files/{ref}/punch-hole</code> response</li>
+    <li>Added <code>logical_datablocks</code> parameter to <code>POST /v1/files/{ref}/streams/</code> response</li>
+    <li>Added <code>logical_datablocks</code> parameter to <code>GET /v1/files/{ref}/streams/{stream_id}/attributes</code> response</li>
+    <li>
+      Modified <code>PATCH /v1/files/{ref}/streams/{stream_id}/attributes</code>:
+      <ul>
+        <li>Added <code>logical_datablocks</code> parameter to <code>PATCH /v1/files/{ref}/streams/{stream_id}/attributes</code> request body</li>
+        <li>Added <code>logical_datablocks</code> parameter to <code>PATCH /v1/files/{ref}/streams/{stream_id}/attributes</code> response</li>
+      </ul>
+    </li>
+    <li>Added <code>skip-atime-update</code> parameter to <code>GET /v1/files/{ref}/streams/{stream_id}/data</code> parameters</li>
+    <li>Added <code>logical_datablocks</code> parameter to <code>PATCH /v1/files/{ref}/streams/{stream_id}/data</code> response</li>
+    <li>Added <code>logical_datablocks</code> parameter to <code>PUT /v1/files/{ref}/streams/{stream_id}/data</code> response</li>
+    <li>Added <code>logical_datablocks</code> parameter to <code>POST /v1/files/{ref}/streams/{stream_id}/punch-hole</code> response</li>
+    <li>Added <code>logical_datablocks</code> parameter to <code>POST /v1/files/{ref}/streams/{stream_id}/rename</code> response</li>
+  </ul>
+</details>
+
+
 ## Qumulo Core 7.8.4.3
 {{ nexusLink }}
 <ul>
@@ -473,32 +530,6 @@ Added <code>POST /v5/cluster/object-backed/create</code>
 
 ## Qumulo Core 7.3.0.3 (Quarterly)
 {{ nexusLink }}
-<ul>
-  <li>Added <code>GET | PUT /v1/capacity/clamp</code></li>
-  <li>Added support for <code>PATCH /v1/s3/buckets/{name}</code></li>
-  <li>Added <code>spoke_type</code> parameter to <code>GET /v1/portal/hubs/{id}</code> response</li>
-</ul>
-<details>
-  <summary>Click to expand</summary>
-  <ul>
-    <li>
-      Modified <code>PATCH /v1/portal/hubs/{id}</code>:
-      <ul>
-        <li>Added <code>spoke_type</code> parameter to <code>PATCH /v1/portal/hubs/{id}</code> request body</li>
-        <li>Added <code>spoke_type</code> parameter to <code>PATCH /v1/portal/hubs/{id}</code> response</li>
-      </ul>
-    </li>
-    <li>Added <code>spoke_type</code> parameter to <code>POST /v1/portal/hubs/{id}/authorize</code> response</li>
-    <li>Added <code>is_writable_spoke</code> parameter to <code>POST /v1/portal/spokes/</code> request body</li>
-    <li>Added <code>spoke_type</code> parameter to <code>GET /v1/portal/spokes/{id}</code> response</li>
-    <li>
-      Modified <code>PATCH /v1/portal/spokes/{id}</code>:
-      <ul>
-        <li>Added <code>spoke_type</code> parameter to <code>PATCH /v1/portal/spokes/{id}</code> request body</li>
-        <li>Added <code>spoke_type</code> parameter to <code>PATCH /v1/portal/spokes/{id}</code> response</li>
-      </ul>
-    </li>
-    <li>Added <code>spoke_type</code> parameter to <code>POST /v1/portal/spokes/{id}/propose</code> response</li>
-  </ul>
-</details>
+{{ noAPIchanges }}
+
 {% endunless %}

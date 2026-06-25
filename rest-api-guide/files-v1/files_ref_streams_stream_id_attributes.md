@@ -22,10 +22,13 @@ methods:
         : \"object\",\n  \"properties\": {\n    \"name\": {\n      \"description\"\
         : \"name\",\n      \"type\": \"string\"\n    },\n    \"id\": {\n      \"description\"\
         : \"id\",\n      \"type\": \"string\"\n    },\n    \"size\": {\n      \"description\"\
-        : \"size\",\n      \"type\": \"string\"\n    },\n    \"datablocks\": {\n \
-        \     \"description\": \"datablocks\",\n      \"type\": \"string\"\n    },\n\
-        \    \"data_revision\": {\n      \"description\": \"data_revision\",\n   \
-        \   \"type\": \"string\"\n    }\n  }\n}"
+        : \"Size of the stream in bytes\",\n      \"type\": \"string\"\n    },\n \
+        \   \"datablocks\": {\n      \"description\": \"Number of data blocks used\
+        \ by the stream on this cluster\",\n      \"type\": \"string\"\n    },\n \
+        \   \"logical_datablocks\": {\n      \"description\": \"Number of data blocks\
+        \ used by the stream\",\n      \"type\": \"string\"\n    },\n    \"data_revision\"\
+        : {\n      \"description\": \"Counter that increases with every data change\
+        \ to the stream\",\n      \"type\": \"string\"\n    }\n  }\n}"
     responses:
     - code: '200'
       description: Return value on success
@@ -50,10 +53,13 @@ methods:
         : \"object\",\n  \"properties\": {\n    \"name\": {\n      \"description\"\
         : \"name\",\n      \"type\": \"string\"\n    },\n    \"id\": {\n      \"description\"\
         : \"id\",\n      \"type\": \"string\"\n    },\n    \"size\": {\n      \"description\"\
-        : \"size\",\n      \"type\": \"string\"\n    },\n    \"datablocks\": {\n \
-        \     \"description\": \"datablocks\",\n      \"type\": \"string\"\n    },\n\
-        \    \"data_revision\": {\n      \"description\": \"data_revision\",\n   \
-        \   \"type\": \"string\"\n    }\n  }\n}"
+        : \"Size of the stream in bytes\",\n      \"type\": \"string\"\n    },\n \
+        \   \"datablocks\": {\n      \"description\": \"Number of data blocks used\
+        \ by the stream on this cluster\",\n      \"type\": \"string\"\n    },\n \
+        \   \"logical_datablocks\": {\n      \"description\": \"Number of data blocks\
+        \ used by the stream\",\n      \"type\": \"string\"\n    },\n    \"data_revision\"\
+        : {\n      \"description\": \"Counter that increases with every data change\
+        \ to the stream\",\n      \"type\": \"string\"\n    }\n  }\n}"
     responses:
     - code: '200'
       description: Return value on success
@@ -118,38 +124,40 @@ methods:
         \ - SMB_SID\"\n        },\n        \"id_value\": {\n          \"description\"\
         : \"id_value\",\n          \"type\": \"string\"\n        }\n      }\n    },\n\
         \    \"blocks\": {\n      \"description\": \"Number of blocks used by the\
-        \ file\",\n      \"type\": \"string\"\n    },\n    \"datablocks\": {\n   \
+        \ file on this cluster\",\n      \"type\": \"string\"\n    },\n    \"datablocks\"\
+        : {\n      \"description\": \"Number of data blocks used by the file on this\
+        \ cluster\",\n      \"type\": \"string\"\n    },\n    \"metablocks\": {\n\
+        \      \"description\": \"Number of meta blocks used by the file on this cluster\"\
+        ,\n      \"type\": \"string\"\n    },\n    \"logical_datablocks\": {\n   \
         \   \"description\": \"Number of data blocks used by the file\",\n      \"\
-        type\": \"string\"\n    },\n    \"metablocks\": {\n      \"description\":\
-        \ \"Number of meta blocks used by the file\",\n      \"type\": \"string\"\n\
-        \    },\n    \"size\": {\n      \"description\": \"File size in bytes\",\n\
-        \      \"type\": \"string\"\n    },\n    \"access_time\": {\n      \"description\"\
-        : \"Last time content was read, RFC 3339 format\",\n      \"type\": \"string\"\
-        \n    },\n    \"modification_time\": {\n      \"description\": \"Last time\
-        \ content was modified, RFC 3339 format\",\n      \"type\": \"string\"\n \
-        \   },\n    \"change_time\": {\n      \"description\": \"Last time content\
-        \ or attributes were modified, RFC 3339 format\",\n      \"type\": \"string\"\
-        \n    },\n    \"creation_time\": {\n      \"description\": \"File creation\
-        \ time, RFC 3339 format\",\n      \"type\": \"string\"\n    },\n    \"child_count\"\
-        : {\n      \"description\": \"Count of children (valid for directories)\"\
-        ,\n      \"type\": \"number\"\n    },\n    \"extended_attributes\": {\n  \
-        \    \"description\": \"SMB extended file attributes\",\n      \"type\": \"\
-        object\",\n      \"properties\": {\n        \"read_only\": {\n          \"\
-        description\": \"read_only\",\n          \"type\": \"boolean\"\n        },\n\
-        \        \"hidden\": {\n          \"description\": \"hidden\",\n         \
-        \ \"type\": \"boolean\"\n        },\n        \"system\": {\n          \"description\"\
-        : \"system\",\n          \"type\": \"boolean\"\n        },\n        \"archive\"\
-        : {\n          \"description\": \"archive\",\n          \"type\": \"boolean\"\
-        \n        },\n        \"temporary\": {\n          \"description\": \"temporary\"\
-        ,\n          \"type\": \"boolean\"\n        },\n        \"compressed\": {\n\
-        \          \"description\": \"compressed\",\n          \"type\": \"boolean\"\
-        \n        },\n        \"not_content_indexed\": {\n          \"description\"\
-        : \"not_content_indexed\",\n          \"type\": \"boolean\"\n        },\n\
-        \        \"sparse_file\": {\n          \"description\": \"sparse_file\",\n\
-        \          \"type\": \"boolean\"\n        },\n        \"offline\": {\n   \
-        \       \"description\": \"offline\",\n          \"type\": \"boolean\"\n \
-        \       }\n      }\n    },\n    \"directory_entry_hash_policy\": {\n     \
-        \ \"type\": \"string\",\n      \"enum\": [\n        \"FS_DIRECTORY_HASH_VERSION_LOWER\"\
+        type\": \"string\"\n    },\n    \"size\": {\n      \"description\": \"File\
+        \ size in bytes\",\n      \"type\": \"string\"\n    },\n    \"access_time\"\
+        : {\n      \"description\": \"Last time content was read, RFC 3339 format\"\
+        ,\n      \"type\": \"string\"\n    },\n    \"modification_time\": {\n    \
+        \  \"description\": \"Last time content was modified, RFC 3339 format\",\n\
+        \      \"type\": \"string\"\n    },\n    \"change_time\": {\n      \"description\"\
+        : \"Last time content or attributes were modified, RFC 3339 format\",\n  \
+        \    \"type\": \"string\"\n    },\n    \"creation_time\": {\n      \"description\"\
+        : \"File creation time, RFC 3339 format\",\n      \"type\": \"string\"\n \
+        \   },\n    \"child_count\": {\n      \"description\": \"Count of children\
+        \ (valid for directories)\",\n      \"type\": \"number\"\n    },\n    \"extended_attributes\"\
+        : {\n      \"description\": \"SMB extended file attributes\",\n      \"type\"\
+        : \"object\",\n      \"properties\": {\n        \"read_only\": {\n       \
+        \   \"description\": \"read_only\",\n          \"type\": \"boolean\"\n   \
+        \     },\n        \"hidden\": {\n          \"description\": \"hidden\",\n\
+        \          \"type\": \"boolean\"\n        },\n        \"system\": {\n    \
+        \      \"description\": \"system\",\n          \"type\": \"boolean\"\n   \
+        \     },\n        \"archive\": {\n          \"description\": \"archive\",\n\
+        \          \"type\": \"boolean\"\n        },\n        \"temporary\": {\n \
+        \         \"description\": \"temporary\",\n          \"type\": \"boolean\"\
+        \n        },\n        \"compressed\": {\n          \"description\": \"compressed\"\
+        ,\n          \"type\": \"boolean\"\n        },\n        \"not_content_indexed\"\
+        : {\n          \"description\": \"not_content_indexed\",\n          \"type\"\
+        : \"boolean\"\n        },\n        \"sparse_file\": {\n          \"description\"\
+        : \"sparse_file\",\n          \"type\": \"boolean\"\n        },\n        \"\
+        offline\": {\n          \"description\": \"offline\",\n          \"type\"\
+        : \"boolean\"\n        }\n      }\n    },\n    \"directory_entry_hash_policy\"\
+        : {\n      \"type\": \"string\",\n      \"enum\": [\n        \"FS_DIRECTORY_HASH_VERSION_LOWER\"\
         ,\n        \"FS_DIRECTORY_HASH_VERSION_FOLDED\"\n      ],\n      \"description\"\
         : \"Hash policy for directory entries:\\n * `FS_DIRECTORY_HASH_VERSION_FOLDED`\
         \ - FS_DIRECTORY_HASH_VERSION_FOLDED,\\n * `FS_DIRECTORY_HASH_VERSION_LOWER`\

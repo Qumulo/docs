@@ -157,6 +157,7 @@ Hostnames
 HyperDisk
 IAM
 IFTTT
+IMDS
 IML
 IOPS
 IPMI
@@ -442,6 +443,7 @@ kinit
 kms
 krb5.conf
 lifecycle
+lookups
 m5
 macOS
 mc

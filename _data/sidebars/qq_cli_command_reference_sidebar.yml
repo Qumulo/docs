@@ -95,6 +95,31 @@ entries:
     url: /qq-cli-command-guide/add/
   - folderitems:
     - output: web,pdf
+      title: audit_create_destination
+      url: /qq-cli-command-guide/audit/audit_create_destination.html
+    - output: web,pdf
+      title: audit_delete_destination
+      url: /qq-cli-command-guide/audit/audit_delete_destination.html
+    - output: web,pdf
+      title: audit_get_destination
+      url: /qq-cli-command-guide/audit/audit_get_destination.html
+    - output: web,pdf
+      title: audit_get_destination_status
+      url: /qq-cli-command-guide/audit/audit_get_destination_status.html
+    - output: web,pdf
+      title: audit_list_destinations
+      url: /qq-cli-command-guide/audit/audit_list_destinations.html
+    - output: web,pdf
+      title: audit_modify_destination
+      url: /qq-cli-command-guide/audit/audit_modify_destination.html
+    - output: web,pdf
+      title: audit_set_destination
+      url: /qq-cli-command-guide/audit/audit_set_destination.html
+    output: web,pdf
+    title: audit
+    url: /qq-cli-command-guide/audit/
+  - folderitems:
+    - output: web,pdf
       title: auth_add_group
       url: /qq-cli-command-guide/auth/auth_add_group.html
     - output: web,pdf
@@ -785,6 +810,9 @@ entries:
     - output: web,pdf
       title: object_backed_fault_tolerance_get
       url: /qq-cli-command-guide/object/object_backed_fault_tolerance_get.html
+    - output: web,pdf
+      title: object_bridge_create
+      url: /qq-cli-command-guide/object/object_bridge_create.html
     output: web,pdf
     title: object
     url: /qq-cli-command-guide/object/
@@ -1142,9 +1170,6 @@ entries:
     url: /qq-cli-command-guide/smb/
   - folderitems:
     - output: web,pdf
-      title: snapshot_calculate_used_capacity
-      url: /qq-cli-command-guide/snapshot/snapshot_calculate_used_capacity.html
-    - output: web,pdf
       title: snapshot_create_policy
       url: /qq-cli-command-guide/snapshot/snapshot_create_policy.html
     - output: web,pdf
@@ -1162,9 +1187,6 @@ entries:
     - output: web,pdf
       title: snapshot_file_diff
       url: /qq-cli-command-guide/snapshot/snapshot_file_diff.html
-    - output: web,pdf
-      title: snapshot_get_capacity_used_per_snapshot
-      url: /qq-cli-command-guide/snapshot/snapshot_get_capacity_used_per_snapshot.html
     - output: web,pdf
       title: snapshot_get_policy
       url: /qq-cli-command-guide/snapshot/snapshot_get_policy.html

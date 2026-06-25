@@ -2,9 +2,9 @@
 category: /Snapshots V2
 methods:
   get:
-    summary: Returns a list of changed byte ranges between two snapshots of a regular
-      file. The list includes new, modified, and deallocated regions of the file's
-      contents.
+    summary: 'Returns the byte ranges of a file whose contents differ between two
+      snapshots. Each entry''s `type` field reports what''s in the newer snapshot
+      at that range: DATA or HOLE.'
     parameters:
     - name: newer_id
       description: Newer snapshot
@@ -27,9 +27,9 @@ methods:
         smaller limit.
       required: false
     response_body:
-      schema: "{\n  \"description\": \"api_snapshot_file_diff\",\n  \"type\": \"object\"\
-        ,\n  \"properties\": {\n    \"entries\": {\n      \"type\": \"array\",\n \
-        \     \"items\": {\n        \"description\": \"entries\",\n        \"type\"\
+      schema: "{\n  \"description\": \"api_snapshot_file_diff_v2\",\n  \"type\": \"\
+        object\",\n  \"properties\": {\n    \"entries\": {\n      \"type\": \"array\"\
+        ,\n      \"items\": {\n        \"description\": \"entries\",\n        \"type\"\
         : \"object\",\n        \"properties\": {\n          \"type\": {\n        \
         \    \"type\": \"string\",\n            \"enum\": [\n              \"FILE_REGION_DATA\"\
         ,\n              \"FILE_REGION_HOLE\"\n            ],\n            \"description\"\

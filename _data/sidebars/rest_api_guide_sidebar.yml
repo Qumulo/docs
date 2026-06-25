@@ -25,7 +25,7 @@ entries:
     output: web
     title: Qumulo REST API Guide
     type: navi
-  - output: web,pdf
+  - output: web
     title: Change Log
     url: /rest-api-guide/change-log.html
   - folderitems:
@@ -156,6 +156,22 @@ entries:
     output: web,pdf
     title: Audit Log V1 (audit)
     url: /rest-api-guide/audit-log-v1/
+  - folderitems:
+    - apiversion: v2
+      output: web,pdf
+      title: audit/destinations
+      url: /rest-api-guide/audit-log-v2/v2_audit_destinations.html
+    - apiversion: v2
+      output: web,pdf
+      title: audit/destinations/{id}
+      url: /rest-api-guide/audit-log-v2/v2_audit_destinations_id.html
+    - apiversion: v2
+      output: web,pdf
+      title: audit/destinations/{id}/status
+      url: /rest-api-guide/audit-log-v2/v2_audit_destinations_id_status.html
+    output: web,pdf
+    title: Audit Log V2 (audit)
+    url: /rest-api-guide/audit-log-v2/
   - folderitems:
     - apiversion: v1
       deprecated: true
@@ -1466,18 +1482,6 @@ entries:
       title: snapshots
       url: /rest-api-guide/snapshots-v1/snapshots.html
     - apiversion: v1
-      output: web,pdf
-      title: snapshots/calculate-used-capacity
-      url: /rest-api-guide/snapshots-v1/snapshots_calculate-used-capacity.html
-    - apiversion: v1
-      output: web,pdf
-      title: snapshots/capacity-used-per-snapshot
-      url: /rest-api-guide/snapshots-v1/snapshots_capacity-used-per-snapshot.html
-    - apiversion: v1
-      output: web,pdf
-      title: snapshots/capacity-used-per-snapshot/{id}
-      url: /rest-api-guide/snapshots-v1/snapshots_capacity-used-per-snapshot_id.html
-    - apiversion: v1
       deprecated: true
       output: web,pdf
       title: snapshots/policies
@@ -1607,6 +1611,10 @@ entries:
       output: web,pdf
       title: snapshots/{id}/unlock-challenge
       url: /rest-api-guide/snapshots-v3/v3_snapshots_id_unlock-challenge.html
+    - apiversion: v3
+      output: web,pdf
+      title: snapshots/{newer_id}/changes-since/{older_id}/files/{ref}
+      url: /rest-api-guide/snapshots-v3/v3_snapshots_newer_id_changes-since_older_id_files_ref.html
     output: web,pdf
     title: Snapshots V3 (snapshots)
     url: /rest-api-guide/snapshots-v3/
@@ -1649,6 +1657,26 @@ entries:
     output: web,pdf
     title: Time Configuration Methods V1 (time)
     url: /rest-api-guide/time-configuration-methods-v1/
+  - folderitems:
+    - apiversion: v2
+      output: web,pdf
+      title: time/default-settings
+      url: /rest-api-guide/time-configuration-methods-v2/v2_time_default-settings.html
+    - apiversion: v2
+      output: web,pdf
+      title: time/settings
+      url: /rest-api-guide/time-configuration-methods-v2/v2_time_settings.html
+    - apiversion: v2
+      output: web,pdf
+      title: time/status
+      url: /rest-api-guide/time-configuration-methods-v2/v2_time_status.html
+    - apiversion: v2
+      output: web,pdf
+      title: time/timezones
+      url: /rest-api-guide/time-configuration-methods-v2/v2_time_timezones.html
+    output: web,pdf
+    title: Time Configuration Methods V2 (time)
+    url: /rest-api-guide/time-configuration-methods-v2/
   - folderitems:
     - apiversion: v1
       output: web,pdf

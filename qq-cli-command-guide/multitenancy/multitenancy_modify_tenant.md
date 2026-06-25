@@ -88,9 +88,9 @@ summary: This section explains how to use the <code>qq multitenancy_modify_tenan
 synopsis: Modify a tenant
 title: qq multitenancy_modify_tenant
 usage: "qq multitenancy_modify_tenant [-h] --id ID [--name NAME] [--enable-web-ui\
-  \ | --disable-web-ui] [--enable-rest-api | --disable-rest-api] [--enable-ssh | --disable-ssh]\n\
-  \    [--enable-replication | --disable-replication] [--enable-nfs | --disable-nfs]\
-  \ [--enable-smb | --disable-smb]\n    [--network-id [NETWORK_ID [NETWORK_ID ...]]]"
+  \ | --disable-web-ui] [--enable-rest-api | --disable-rest-api] [--enable-ssh | --disable-ssh]\
+  \ [--enable-replication | --disable-replication] [--enable-nfs | --disable-nfs]\n\
+  \    [--enable-smb | --disable-smb] [--network-id [NETWORK_ID [NETWORK_ID ...]]]"
 zendesk_source: qq CLI Command Guide
 
 ---

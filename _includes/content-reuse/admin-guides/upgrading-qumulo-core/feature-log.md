@@ -3,10 +3,107 @@
 {% if page.platform == 'on-prem' %}
 For information about upgrade types for each release, see <a href='mode-reference.html'>Qumulo Core Upgrade Mode Reference</a>.
 {% endif %}
-
 {% capture nexusLink %}<p>{{site.downloadsRelnotes}}{{site.loginRequired}}</p>{% endcapture %}
 {% comment %}For boilerplate text, use {{page.varNoPublicChanges}}{% endcomment %}
 {% capture noAPIchanges %}This release contains no REST API changes.{% endcapture %}
+{% capture platUpg %}This release of Qumulo Core is a _platform upgrade_ that requires either a complete reboot (rebooting all nodes in your cluster at the same time) or a rolling reboot (rebooting the nodes in your cluster one at a time).{% endcapture %}
+
+## Qumulo Core 7.9.0 (Quarterly)
+{{ nexusLink }}
+
+### Features and Improvements
+{% capture inconTriggLegacy %}This release resolves an issue with handling an internal encoding inconsistency from legacy builds.{% endcapture %}
+{% capture disableKernMod %}This release disables the <code>algif_aead</code> kernel module to mitigate the <a target="_blank" href="https://copy.fail/">Copy Fail</a> (<a target="_blank" href="https://nvd.nist.gov/vuln/detail/CVE-2026-31431">CVE-2026-31431</a>) vulnerability.{% endcapture %}
+{{site.data.alerts.important}}
+<ul>
+  <li>{{ inconTriggLegacy }}</li>
+  <li>{{ disableKernMod }}</li>
+  <li>
+    This release has special upgrade provisions:
+    <ul>
+      <li>
+        <strong>Before the upgrade to Qumulo Core 7.9.0</strong>
+        <ul>
+          <li><strong>All Clusters:</strong> Ensure that your cluster has at least 1 GB of available capacity for each node (for example, a 4-node cluster requires 4 GB of available capacity). If your cluster doesn't have sufficient total available capacity, you must free up or expand your cluster's capacity.</li>
+          <li>
+            <p><strong>CNQ on AWS Clusters:</strong> Update your CloudWatch IAM policy to take advantage of the audit log pipeline upgrade (which improves Amazon CloudWatch log processing) included with this release. This upgrade improves Amazon CloudWatch log processing. Working with either the <code>/v1/audit</code> or <code>/v2/audit</code> endpoints to send audit logs to Amazon CloudWatch requires the following IAM permissions:</p>
+            <ul>
+              <li><code>logs:CreateLogStream</code></li>
+              <li><code>logs:DescribeLogGroups</code></li>
+              <li><code>logs:DescribeLogStreams</code></li>
+              <li><code>logs:PutLogEvents</code></li>
+            </ul>
+            <p>You can prepare for these changes in two ways:</p>
+            <ul>
+              <li>
+                <strong>Automated IAM Policy Update:</strong> For Cloud Native Qumulo (CNQ) clusters deployed by using Terraform, take the following steps:
+                <ul>
+                  <li>Download the latest scripts from <a target="_blank" href="https://nexus.qumulo.com/deploy/aws">Nexus</a>.</li>
+                  <li>Run the <code>terraform apply</code> command.</li>
+                </ul>
+              </li>
+              <li><strong>Manual IAM Policy Update:</strong> For clusters with manually configured policies, update your IAM policy. For more information, see <a target="_blank" href="https://care.qumulo.com/s/article/Sending-Audit-Logs-for-a-Qumulo-Cloud-Cluster-to-CloudWatch">Sending Audit Logs for a Qumulo Cloud Cluster to CloudWatch</a> on Qumulo Care.</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <strong>During the upgrade</strong>
+        <ul>
+          <li>The <em>platform upgrade</em> requires either a complete reboot (rebooting all nodes in your cluster at the same time) or a rolling reboot (rebooting the nodes in your cluster one at a time).</li>
+          <li>Qumulo Core performs preparations for future functionality. These preparations require file system space for running a background process.</li>
+        </ul>
+      </li>
+      <li>
+        <strong>After the upgrade</strong>
+        <ul>
+          <li>
+            <strong>Existing CNQ, Azure Native Qumulo (ANQ), and Stratus Accelerator:</strong> Clusters undergo a process which requires two quorum changes. This process improves CPU and memory usage for these cluster types. After this process is complete, we expect that:
+            <ul>
+              <li>Write performance is equivalent to <em>steady state</em> (for example, when your Qumulo cluster has been running without disruptions) immediately after the quorum transition, because the entire address space becomes available.</li>
+              <li>CPU usage no longer spikes after quorum transition on large Qumulo clusters.</li>
+              <li>Large amounts of memory become available.</li>
+            </ul>
+          </li>
+          <li><strong>Existing CNQ, ANQ, and Stratus Accelerator:</strong> Clusters might be blocked from upgrading to a higher version of Qumulo Core for up to 24 hours (up to 36 hours for exceptionally large object-backed clusters) due to upgrades of on-disk structures and other background activities.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+{{site.data.alerts.end}}
+
+* **Audit Logging**
+  * Upgraded the audit log pipeline with a unified routing engine
+  * Added the ability to configure up to 20 custom audit log destinations
+  * Added the following functionality for every audit log destination:
+    * Unique, reusable numerical IDs
+    * Independent buffering
+    * Automatic retry
+    * Status monitoring 
+* **Authentication**
+  * Added support for one-to-one mode, in which all LDAP usernames map to identical names within a specified Active Directory domain
+* **Cloud Data Fabric (CDF)**
+  * Changed how NFSv3, NFSv4.1, and SMB report disk usage for files on spoke portals  
+  * Improved the availability of hub portal host clusters and spoke portal hub clusters when spoke portals are disconnected
+  * Improved the speed at which portal quorums reform and background CDF processes recover
+* **Protocols**
+  * Changed NFSv3 and NFSv4.1 disk space calculations to display more accurate (slightly smaller) sizes for certain files and directories
+  * Changed case-insensitive SMB lookups to behave the way they do on a Windows server, making it possible for files such as `Straße` and `Strasse` to exist in the same directory
+  * Added support for conditional writes to the `CompleteMultipartUpload` and `PutObject` S3 API actions by using the `If-Match` and `If-None-Match` headers
+* **General Improvements**
+  * Improved IOPS performance for certain metadata-heavy workloads
+  * Revised `analytics`, `audit`, `files`, and `snapshots` REST APIs
+  * Added the [`qsnap` standalone CLI tool](https://github.com/Qumulo/qsnap) to replace the capacity-related functionality of `/v1/snapshots`
+  * Removed a number of outdated `qq` CLI commands pertaining to retrieving and configuring `syslog` and CloudWatch status and configuration
+* **Bug Fixes**
+  * Resolved an issue with opening a TCP socket to the Azure Instance Metadata Service (IMDS)
+  * Resolved an issue with restarting `systemd-networkd`
+  * Resolved an issue with the `qq fs_list_locks --protocol smb --lock-type share-mode` command
+
+### Change Log
+* [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-790-quarterly)
+
 
 {% capture inconTriggLegacy %}This release resolves an issue with handling an internal encoding inconsistency from legacy builds.{% endcapture %}
 

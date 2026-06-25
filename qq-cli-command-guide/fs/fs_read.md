@@ -43,15 +43,19 @@ optional_options:
   help: Output data to standard out
   name: --stdout
   required: false
+- alternate: []
+  help: Do not update the file's access time (atime) as a result of this read.
+  name: --skip-atime-update
+  required: false
 permalink: /qq-cli-command-guide/fs/fs_read.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar
 summary: This section explains how to use the <code>qq fs_read</code> command.
 synopsis: Read an object
 title: qq fs_read
-usage: "qq fs_read [-h] (--path PATH | --id ID) [--stream-id STREAM_ID | --stream-name\
-  \ STREAM_NAME] [--snapshot SNAPSHOT] [--offset OFFSET] [--length LENGTH] [--file\
-  \ FILE]\n    [--force] [--stdout]"
+usage: qq fs_read [-h] (--path PATH | --id ID) [--stream-id STREAM_ID | --stream-name
+  STREAM_NAME] [--snapshot SNAPSHOT] [--offset OFFSET] [--length LENGTH] [--file FILE]
+  [--force] [--stdout] [--skip-atime-update]
 zendesk_source: qq CLI Command Guide
 
 ---

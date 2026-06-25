@@ -24,6 +24,15 @@ optional_options:
   help: SMB style match pattern.
   name: --smb-pattern
   required: false
+- alternate: []
+  help: Do not update the directory's access time (atime) as a result of this read.
+  name: --skip-atime-update
+  required: false
+- alternate: []
+  help: Provides ACL for each file in files[i].acl. When the caller does not have
+    the READ_ACL permission on that entry, the entry in files[i].acl is null.
+  name: --include-acls
+  required: false
 permalink: /qq-cli-command-guide/fs/fs_read_dir.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar
@@ -31,7 +40,7 @@ summary: This section explains how to use the <code>qq fs_read_dir</code> comman
 synopsis: Read directory
 title: qq fs_read_dir
 usage: qq fs_read_dir [-h] (--path PATH | --id ID) [--page-size PAGE_SIZE] [--snapshot
-  SNAPSHOT] [--smb-pattern SMB_PATTERN]
+  SNAPSHOT] [--smb-pattern SMB_PATTERN] [--skip-atime-update] [--include-acls]
 zendesk_source: qq CLI Command Guide
 
 ---
