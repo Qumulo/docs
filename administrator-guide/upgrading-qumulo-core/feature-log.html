@@ -2782,7 +2782,13 @@ $(document).ready(function() {
               <li>Large amounts of memory become available.</li>
             </ul>
           </li>
-          <li><strong>Existing CNQ, ANQ, and Stratus Accelerator:</strong> Clusters might be blocked from upgrading to a higher version of Qumulo Core for up to 24 hours (up to 36 hours for exceptionally large object-backed clusters) due to upgrades of on-disk structures and other background activities.</li>
+          <li>
+            <strong>Consecutive Upgrade Delay:</strong> Clusters might be blocked from upgrading to a higher version of Qumulo Core due to upgrades of on-disk structures and other background activities:
+            <ul>
+              <li><strong>All Clusters:</strong> For up to 24 hours</li>
+              <li><strong>Exceptionally Large CNQ, ANQ, and Stratus Accelerator Clusters:</strong> For up to 36 hours</li>
+            </ul>
+          </li>
         </ul>
       </li>
     </ul>
