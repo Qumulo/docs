@@ -194,7 +194,7 @@ This section describes the most important S3 API limitations in Qumulo Core.
 {{site.data.alerts.important}}
 <ul>
   <li>Qumulo Core supports only AWS Signature Version 4 (SigV4). AWS Signature Version 2 (SigV2) is unsupported.</li>
-  <li>Attempting to use the <code>STREAMING-UNSIGNED-PAYLOAD-TRAILER</code> header value with an unsupported checksum format returns the error <code>QumuloUnsupportedTrailerChecksumFormat</code>.</li>
+  <li>Attempting to use the <code>CRC32</code> or <code>CRC32C</code> header value or the <code>STREAMING-UNSIGNED-PAYLOAD-TRAILER</code> header value with an unsupported checksum format returns the error <code>QumuloUnsupportedTrailerChecksumFormat</code>.</li>
   <li>Attempting to use the <code>x-amz-content-sha256</code> header with an unsupported value returns the error <code>AuthorizationHeaderMalformed</code>.</li>
 </ul>
 {{site.data.alerts.end}}
@@ -216,6 +216,7 @@ This section describes the most important S3 API limitations in Qumulo Core.
 SigV4 uses the `x-amz-content-sha256` header to specify [the authentication type to perform](https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-auth-using-authorization-header.html). The following table lists the supported values for the `x-amz-content-sha256` header that Qumulo Core supports, the number of chunks for a payload, and the produced signature type.
 
 {% capture supported %}<span class="emoji">✅</span>{% endcapture %}
+{% capture unsupported %}<span class="emoji">❌</span>{% endcapture %}
 {% capture oneChunk %}Sending a payload in a single chunk{% endcapture %}
 {% capture multiChunk %}Sending a payload in multiple chunks{% endcapture %}
 {% capture p256sha256 %}Signing the chunks by using the AWS4-ECDSA-P256-SHA256 algorithm{% endcapture %}
@@ -233,6 +234,18 @@ SigV4 uses the `x-amz-content-sha256` header to specify [the authentication type
   </tr>
 </thead>
 <tbody>
+  <tr>
+    <td><code>CRC32</code></td>
+    <td>{{ unsupported }}</td>
+    <td>&mdash;</td>
+    <td>&mdash;</td>
+  </tr>
+  <tr>
+    <td><code>CRC32C</code></td>
+    <td>{{ unsupported }}</td>
+    <td>&mdash;</td>
+    <td>&mdash;</td>
+  </tr>
   <tr>
     <td>{{ actualPayCheck }}</td>
     <td>{{ supported }}</td>
