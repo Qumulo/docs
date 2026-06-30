@@ -2686,7 +2686,7 @@ $(document).ready(function() {
 <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
 <ul>
   <li>Qumulo Core supports only AWS Signature Version 4 (SigV4). AWS Signature Version 2 (SigV2) is unsupported.</li>
-  <li>Attempting to use the <code>STREAMING-UNSIGNED-PAYLOAD-TRAILER</code> header value with an unsupported checksum format returns the error <code>QumuloUnsupportedTrailerChecksumFormat</code>.</li>
+  <li>Attempting to use the <code>CRC32</code> or <code>CRC32C</code> header value or the <code>STREAMING-UNSIGNED-PAYLOAD-TRAILER</code> header value with an unsupported checksum format returns the error <code>QumuloUnsupportedTrailerChecksumFormat</code>.</li>
   <li>Attempting to use the <code>x-amz-content-sha256</code> header with an unsupported value returns the error <code>AuthorizationHeaderMalformed</code>.</li>
 </ul>
 </div>
@@ -2719,6 +2719,18 @@ $(document).ready(function() {
   </tr>
 </thead>
 <tbody>
+  <tr>
+    <td><code>CRC32</code></td>
+    <td><span class="emoji">❌</span></td>
+    <td>&mdash;</td>
+    <td>&mdash;</td>
+  </tr>
+  <tr>
+    <td><code>CRC32C</code></td>
+    <td><span class="emoji">❌</span></td>
+    <td>&mdash;</td>
+    <td>&mdash;</td>
+  </tr>
   <tr>
     <td><code>&lt;actual payload checksum&gt;</code></td>
     <td><span class="emoji">✅</span></td>
