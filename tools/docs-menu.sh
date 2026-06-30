@@ -536,9 +536,10 @@ only_serve_docs_locally_tailscale() {
     sudo tailscale serve "$PWD"
 }
 
+# Publish release notes to Nexus
 publish_release_notes_to_nexus() {
     check_src_repo
-
+    
     local version_number
     while true; do
         read -p "Enter Qumulo Core Version: " version_number
@@ -554,24 +555,28 @@ publish_release_notes_to_nexus() {
     if [[ "$profile_choice" == "n" ]]; then
         read -p "Enter profile name: " aws_profile
     fi
-
+    
     local dry_run_flag=""
     read -p "Do a dry run? (y/n): " dry_run_choice
     if [[ "$dry_run_choice" == "y" ]]; then
         dry_run_flag="--dry-run"
-    fi
-
+    fi  
+            
     echo "Publishing release notes to Nexus..."
-    
+        
     cd ~/src || return 1
-
+            
     # Create a temp file for stderr exception handling
     local cmd_errlog
     cmd_errlog=$(mktemp)
+    
+    # Force python to flush output unbuffered, merge streams, and stream through tee
+    # so everything prints to the screen immediately while capturing to the log.
+    PYTHONUNBUFFERED=1 ./release_management/publish.py $dry_run_flag --overwrite --release-notes-only "$version_number" s3 --aws-profile "$aws_profile" 2>&1 | tee "$cmd_errlog"
+    local exit_pipeline=${PIPESTATUS[0]}
 
-    if ! ./release_management/publish.py $dry_run_flag --overwrite --release-notes-only "$version_number" s3 --aws-profile "$aws_profile" 2> "$cmd_errlog"; then
-        cat "$cmd_errlog" >&2
-        
+    # Check the actual python execution exit code
+    if [[ $exit_pipeline -ne 0 ]]; then
         if grep -q "botocore.exceptions.ProfileNotFound" "$cmd_errlog"; then
             echo
             echo -e "\033[0;31mError: The config profile ($aws_profile) could not be found.\033[0m"
@@ -582,7 +587,7 @@ publish_release_notes_to_nexus() {
             echo "4. From the Option 2 section, copy the credentials into ~/.aws/credentials and replace the text in square brackets with a memorable profile name."
             echo
         fi
-        
+
         rm -f "$cmd_errlog"
         cd - >/dev/null || true
         return 1
