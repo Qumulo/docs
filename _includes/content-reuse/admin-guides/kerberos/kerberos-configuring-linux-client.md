@@ -1,6 +1,6 @@
 {% include note.html content="Qumulo Core supports only Linux for using NFSv4.1 with Kerberos." %}
 
-Linux systems implement Kerberos support as a series of loosely related packages and configuration files. For this reason, configuration depends on the Linux distribution and version. This section refers to tools, packages, d&aelig;mons, configuration files, and other elements in Ubuntu 18.04 LTS.
+Linux systems implement Kerberos support as a series of loosely related packages and configuration files. For this reason, configuration depends on the Linux distribution and version. This section refers to tools, packages, d&aelig;mons, configuration files, and other elements in the latest supported Ubuntu LTS release.
 
 
 ## Joining a Linux Client to a Domain
