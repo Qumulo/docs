@@ -536,6 +536,61 @@ only_serve_docs_locally_tailscale() {
     sudo tailscale serve "$PWD"
 }
 
+publish_release_notes_to_nexus() {
+    check_src_repo
+
+    local version_number
+    while true; do
+        read -p "Enter Qumulo Core Version: " version_number
+        if [[ $version_number =~ ^[0-9]+\.[0-9]+\.[0-9]+(\.[0-9]+)?$ ]]; then
+            break
+        else
+            echo "Enter a valid version, for example, 9.1.0 or 9.1.0.1"
+        fi
+    done
+
+    local aws_profile="default"
+    read -p "Use default AWS profile? (y/n): " profile_choice
+    if [[ "$profile_choice" == "n" ]]; then
+        read -p "Enter profile name: " aws_profile
+    fi
+
+    local dry_run_flag=""
+    read -p "Do a dry run? (y/n): " dry_run_choice
+    if [[ "$dry_run_choice" == "y" ]]; then
+        dry_run_flag="--dry-run"
+    fi
+
+    echo "Publishing release notes to Nexus..."
+    
+    cd ~/src || return 1
+
+    # Create a temp file for stderr exception handling
+    local cmd_errlog
+    cmd_errlog=$(mktemp)
+
+    if ! ./release_management/publish.py $dry_run_flag --overwrite --release-notes-only "$version_number" s3 --aws-profile "$aws_profile" 2> "$cmd_errlog"; then
+        cat "$cmd_errlog" >&2
+        
+        if grep -q "botocore.exceptions.ProfileNotFound" "$cmd_errlog"; then
+            echo
+            echo -e "\033[0;31mError: The config profile ($aws_profile) could not be found.\033[0m"
+            echo "Could not find ~/.aws/credentials file."
+            echo "1. Create the file."
+            echo "2. Navigate to Okta > AWS IAM Identity Center > AWS access portal > AWS accounts > qumulo-public"
+            echo "3. Next to Qumulo-Publish-SSO-Publish, click Access keys."
+            echo
+        fi
+        
+        rm -f "$cmd_errlog"
+        cd - >/dev/null || true
+        return 1
+    fi
+
+    rm -f "$cmd_errlog"
+    cd - >/dev/null || true
+}
+
 # Check documentation for link, script, and image errors by using HTML Proofer
 check_docs_errors() {
     start_in_docs_dir
@@ -866,14 +921,17 @@ while true; do
     echo -e "22. 🖥️\tBuild documentation and serve it locally (Python over HTTP)"
     echo -e "23. 🖥️\tBuild documentation and serve it locally (Jekyll with LiveReload over HTTP)"
     echo
+    echo -e "\033[1;33mPublish Documentation\033[0m"
+    echo -e "24. 📣\tPublish release notes to Nexus" 
+    echo
     echo -e "\033[1;33mTest Documentation\033[0m"
-    echo -e "24. 📋\tCheck documentation for link, script, and image errors"
-    echo -e "25. 📋\tCheck documentation for spelling errors"
+    echo -e "25. 📋\tCheck documentation for link, script, and image errors"
+    echo -e "26. 📋\tCheck documentation for spelling errors"
     echo
     echo -e "\033[1;33mIndex Documentation\033[0m"
-    echo -e "26. 🔍\tIngest docs.qumulo.com into Vectara"
-    echo -e "27. 🔍\tIngest care.qumulo.com into Vectara"
-    echo -e "28. 🔍\tIngest qumulo.com into Vectara"
+    echo -e "27. 🔍\tIngest docs.qumulo.com into Vectara"
+    echo -e "28. 🔍\tIngest care.qumulo.com into Vectara"
+    echo -e "29. 🔍\tIngest qumulo.com into Vectara"
     echo
     echo -e "q.  👋\tQuit"
     echo
@@ -903,11 +961,12 @@ while true; do
         21) build_serve_docs_locally_tailscale ;;
         22) build_serve_docs_locally_python ;;
         23) build_serve_docs_locally_jekyll ;;
-        24) check_docs_errors ;;
-        25) check_spelling_errors ;;
-        26) ingest_docs_portal ;;
-        27) ingest_care_portal ;;
-        28) ingest_corp_site ;;
+        24) publish_release_notes_to_nexus ;;
+        25) check_docs_errors ;;
+        26) check_spelling_errors ;;
+        27) ingest_docs_portal ;;
+        28) ingest_care_portal ;;
+        29) ingest_corp_site ;;
         q) exit ;;
         *) echo "You must enter a valid option." ;;
     esac
