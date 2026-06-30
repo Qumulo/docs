@@ -579,6 +579,7 @@ publish_release_notes_to_nexus() {
             echo "1. Create the file."
             echo "2. Navigate to Okta > AWS IAM Identity Center > AWS access portal > AWS accounts > qumulo-public"
             echo "3. Next to Qumulo-Publish-SSO-Publish, click Access keys."
+            echo "4. From the Option 2 section, copy the credentials into ~/.aws/credentials and replace the text in square brackets with a memorable profile name."
             echo
         fi
         
