@@ -10,8 +10,7 @@ layout: page
 
 <style>div#toc{height:200px;overflow:auto;}</style>
 
-{% comment %}
-## Qumulo Core 7.9.0
+## Qumulo Core 7.9.0.1
 {{ nexusLink }}
 <ul>
   <li>Removed <code>/v1/snapshots/calculate-used-capacity</code></li>
@@ -66,7 +65,6 @@ layout: page
     <li>Added <code>logical_datablocks</code> parameter to <code>POST /v1/files/{ref}/streams/{stream_id}/rename</code> response</li>
   </ul>
 </details>
-{% endcomment %}
 
 
 ## Qumulo Core 7.8.4.3

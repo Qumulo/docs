@@ -8,8 +8,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
 {% capture noAPIchanges %}This release contains no REST API changes.{% endcapture %}
 {% capture platUpg %}This release of Qumulo Core is a _platform upgrade_ that requires either a complete reboot (rebooting all nodes in your cluster at the same time) or a rolling reboot (rebooting the nodes in your cluster one at a time).{% endcapture %}
 
-{% comment %}
-## Qumulo Core 7.9.0 (Quarterly)
+## Qumulo Core 7.9.0.1 (Quarterly)
 {{ nexusLink }}
 
 ### Features and Improvements
@@ -17,13 +16,14 @@ For information about upgrade types for each release, see <a href='mode-referenc
 {% capture disableKernMod %}This release disables the <code>algif_aead</code> kernel module to mitigate the <a target="_blank" href="https://copy.fail/">Copy Fail</a> (<a target="_blank" href="https://nvd.nist.gov/vuln/detail/CVE-2026-31431">CVE-2026-31431</a>) vulnerability.{% endcapture %}
 {{site.data.alerts.important}}
 <ul>
+  <li>This release resolves an issue where, in certain scenarios, Qumulo Core could crash while upgrading on-disk structures.</li>
   <li>{{ inconTriggLegacy }}</li>
   <li>{{ disableKernMod }}</li>
   <li>
     This release has special upgrade provisions:
     <ul>
       <li>
-        <strong>Before the upgrade to Qumulo Core 7.9.0</strong>
+        <strong>Before the upgrade to Qumulo Core 7.9.0.1</strong>
         <ul>
           <li><strong>All Clusters:</strong> Ensure that your cluster has at least 1 GB of available capacity for each node (for example, a 4-node cluster requires 4 GB of available capacity). If your cluster doesn't have sufficient total available capacity, you must free up or expand your cluster's capacity.</li>
           <li>
@@ -110,7 +110,6 @@ For information about upgrade types for each release, see <a href='mode-referenc
 
 ### Change Log
 * [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-790-quarterly)
-{% endcomment %}
 
 {% capture inconTriggLegacy %}This release resolves an issue with handling an internal encoding inconsistency from legacy builds.{% endcapture %}
 
