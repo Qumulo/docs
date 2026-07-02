@@ -8,6 +8,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
 {% capture noAPIchanges %}This release contains no REST API changes.{% endcapture %}
 {% capture platUpg %}This release of Qumulo Core is a _platform upgrade_ that requires either a complete reboot (rebooting all nodes in your cluster at the same time) or a rolling reboot (rebooting the nodes in your cluster one at a time).{% endcapture %}
 
+{% comment %}
 ## Qumulo Core 7.9.0 (Quarterly)
 {{ nexusLink }}
 
@@ -109,7 +110,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
 
 ### Change Log
 * [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-790-quarterly)
-
+{% endcomment %}
 
 {% capture inconTriggLegacy %}This release resolves an issue with handling an internal encoding inconsistency from legacy builds.{% endcapture %}
 

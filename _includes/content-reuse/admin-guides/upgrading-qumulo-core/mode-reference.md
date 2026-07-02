@@ -13,11 +13,13 @@ For information about the most important features from each release, click the Q
     <th style="width:33%">Upgrade Type</th>
   </thead>
   <tbody>
+{% comment %}
     <tr>
       <td><a href="feature-log.html#qumulo-core-790-quarterly">7.9.0</a></td>
       <td><span class="emoji">✅</span></td>      
       <td class="platform">Platform</td>
     </tr>
+{% endcomment %}
     <tr>
       <td><a href="feature-log.html#qumulo-core-7843">7.8.4.3</a></td>
       <td></td>
