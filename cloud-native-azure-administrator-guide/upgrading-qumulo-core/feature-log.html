@@ -3194,68 +3194,6 @@ This release of Qumulo Core adds Illumio Policy Compute Engine (PCE) and Virtual
   <li><a href="https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7404-quarterly">REST API</a></li>
 </ul>
 
-<h2 id="qumulo-core-7321">Qumulo Core 7.3.2.1</h2>
-<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a><span class="emoji">🔒</span></p>
-
-<h3 id="features-and-improvements-28">Features and Improvements</h3>
-<ul>
-  <li>Removed the limit from the number of floating IP addresses per cluster</li>
-  <li>Added support for sharing S3 objects with presigned URLs to additional S3 API actions</li>
-</ul>
-
-<h3 id="change-log-28">Change Log</h3>
-<ul>
-  <li><a href="https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7321">REST API</a></li>
-</ul>
-
-<h2 id="qumulo-core-7312">Qumulo Core 7.3.1.2</h2>
-<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a><span class="emoji">🔒</span></p>
-
-<h3 id="features-and-improvements-29">Features and Improvements</h3>
-<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
-<ul>
-  <li>For clusters that were created in 2016 (or earlier), this release resolves an issue identified in Qumulo Core 7.3.1.1 where, under certain conditions, the cluster was unable to start after being upgraded to 7.3.1.1, resulting in the cluster going offline.</li>
-  <li>For clusters that have only tagged VLANs but no untagged networks, this release resolves an issue in Qumulo Core 7.3.1 where it was possible for the default gateways to be copied incorrectly during the upgrade process, resulting in a potential cluster outage.</li>
-</ul>
-</div>
-<ul>
-  <li>Made it easier to authorize hub portals from the hub portal host cluster by adding information to REST APIs and <code class="language-plaintext highlighter-rouge">qq</code> CLI commands</li>
-  <li>Improved the behavior of NFSv3 and NFSv4.1 <code class="language-plaintext highlighter-rouge">ACCESS</code> commands</li>
-  <li>Increased the S3 connection limit</li>
-  <li>Configured Qumulo Core to permit (but ignore) out-of-spec query parameters for S3 API actions</li>
-  <li>Reverted floating IP assignment to Qumulo Core functionality prior to version 7.1.0</li>
-  <li>Added a REST API and a <code class="language-plaintext highlighter-rouge">qq</code> CLI command for querying the current fault tolerance of an object-backed cluster</li>
-  <li>Resolved an issue with NLM connections</li>
-  <li>Resolved an issue with tree deletion operations</li>
-</ul>
-
-<h3 id="change-log-29">Change Log</h3>
-<ul>
-  <li><a href="https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7312">REST API</a></li>
-</ul>
-
-<h2 id="qumulo-core-7303-quarterly">Qumulo Core 7.3.0.3 (Quarterly)</h2>
-<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a><span class="emoji">🔒</span></p>
-
-<h3 id="features-and-improvements-30">Features and Improvements</h3>
-<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
-This release resolves the following on-premises cluster issues:
-<ul>
-  <li>This release resolves unexpected SAS controller behavior on hardware nodes, where previously hot-plugging drives could cause cluster instability.</li>
-  <li>For clusters with certain erasure coding configurations deployed before July 4, 2020, this release resolves an issue that previously could occur during quorum formation, resulting in internal metadata being in an inconsistent state.</li>
-</ul>
-</div>
-<ul>
-  <li>Added the <em>self-service</em> permission model to Qumulo REST API access tokens and made changes to corresponding <code class="language-plaintext highlighter-rouge">qq</code> CLI commands</li>
-  <li>Made it possible for a user to perform operations on their own access keys without having RBAC privileges</li>
-  <li>Resolved issues concerning cached data on a spoke portal host cluster, directory metadata block updates made by S3 API actions, and the <code class="language-plaintext highlighter-rouge">GetObject</code> S3 API action with the Veeam client</li>
-</ul>
-
-<h3 id="change-log-30">Change Log</h3>
-<ul>
-  <li><a href="https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7303-quarterly">REST API</a></li>
-</ul>
-
 
    
 
