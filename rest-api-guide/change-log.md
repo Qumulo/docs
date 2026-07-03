@@ -500,35 +500,4 @@ Added <code>POST /v5/cluster/object-backed/create</code>
     <li>Added <code>hub_cluster_uuid</code> parameter to <code>POST /v1/portal/spokes/{id}/propose</code> response</li>
   </ul>
 </details>
-
-
-## Qumulo Core 7.3.2.1
-{{ nexusLink }}
-<ul>
-  <li>Added <code>POST /v1/portal/files/{file_id}/evict</code></li>
-  <li>Added <code>slot_command_capacity</code> parameter to <code>GET /v1/cluster/slots/{id}</code> response</li>
-  <li>Added <code>slot_command_capacity</code> parameter to <code>PATCH /v1/cluster/slots/{id}</code> response</li>
-</ul>
-
-
-## Qumulo Core 7.3.1.2
-{{ nexusLink }}
-<ul>
-  <li>Added <code>GET /v1/cluster/object-backed/protection/fault-tolerance</code></li>
-  <li>Added <code>hub_id</code> parameter to <code>GET /v1/portal/spokes/{id}</code> response</li>
-  <li>
-    Modified <code>PATCH /v1/portal/spokes/{id}</code>:
-      <ul>
-        <li>Added <code>hub_id</code> parameter to <code>PATCH /v1/portal/spokes/{id}</code> request body</li>
-        <li>Added <code>hub_id</code> parameter to <code>PATCH /v1/portal/spokes/{id}</code> response</li>
-      </ul>
-  </li>
-  <li>Added <code>hub_id</code> parameter to <code>POST /v1/portal/spokes/{id}/propose</code> response</li>
-</ul>
-
-
-## Qumulo Core 7.3.0.3 (Quarterly)
-{{ nexusLink }}
-{{ noAPIchanges }}
-
 {% endunless %}
