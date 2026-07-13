@@ -18,11 +18,7 @@ Welcome to the Qumulo Documentation Portal repository! This project uses docs-as
 ## Repository Maintainers
 The current owner and primary maintainer of this repository is [🍊&thinsp;Lucía M. Polis](https://github.com/shefulloflight).
 
-The secondary maintainers of this repository are:
-
-* [🍊&thinsp;Andrew Abrahamowicz](https://github.com/andrewabrahamowicz)
-
-* [🍊&thinsp;Martin Metke](https://github.com/mmetke-qumulo)
+The secondary maintainer of this repository is [🍊&thinsp;Andrew Abrahamowicz](https://github.com/andrewabrahamowicz).
 
 
 ## Contributing to this Project
@@ -33,58 +29,46 @@ You can contribute content to this repository by sending feedback to this reposi
 * [Open an Issue](https://github.com/Qumulo/docs/issues/new/choose)
 
 ### 🍊&thinsp;As a Qumulon
-* Docs-as-Code Workflows
+* ⚡ [🔒 Qontent QuickStart for Engineers](https://qumulo.atlassian.net/wiki/spaces/QON/pages/3705241605/)
 
-  * [🔒 Docs as Code Quick-Start Guide for Engineering Teams](https://qumulo.atlassian.net/wiki/spaces/QON/pages/2858385431/)
+  * [🔒 Qontent Best Practices for Engineers](https://qumulo.atlassian.net/wiki/spaces/QON/pages/3704684580/)
 
-  * [🔒 Onboarding to the Docs-as-Code Process at Qumulo](https://qumulo.atlassian.net/wiki/spaces/QON/pages/1585774639/Contributing+to+Docs+as+Code#Onboarding-to-the-Docs-as-Code-Process-at-Qumulo)
+  * [🔒 To Begin Planning New Feature Documentation](https://qumulo.atlassian.net/wiki/spaces/QON/pages/3704750093/)
 
-  * [🔒 Best Practices for Working with Docs as Code](https://qumulo.atlassian.net/wiki/spaces/QON/pages/1755676699/)
+  * [🔒 To Contribute New or Revised Content to the Docs Portal](https://qumulo.atlassian.net/wiki/spaces/QON/pages/3704815656/)
 
-* Working with Git and GitHub
+  * [🔒 To Request Page Migration from Qumulo Care to the Docs Portal](https://qumulo.atlassian.net/wiki/spaces/QON/pages/3704651805/)
+
+* 🤝 [🔒 Working with Team Qontent](https://qumulo.atlassian.net/wiki/spaces/QON/pages/1788936376/)
+
+* ⚙️ Working with Git and GitHub
 
   * [🔒 Working with the GitHub Web UI](https://qumulo.atlassian.net/wiki/spaces/QON/pages/1755185184/)
 
   * [🔒 Working with the Git CLI](https://qumulo.atlassian.net/wiki/spaces/QON/pages/1755643921/)
 
-  * [🔒 Useful Git Commands](https://qumulo.atlassian.net/wiki/spaces/QON/pages/1755512871/)
+  * [🔒 Useful Git Workflows and Commands](https://qumulo.atlassian.net/wiki/spaces/QON/pages/1755512871/)
 
-* Contributing Content
+* 📖 Reference
 
-  * [🔒 Preparing Hardware Platform Documentation](https://qumulo.atlassian.net/wiki/spaces/QON/pages/1942586089/)
+  * [🔒 Acronym and Abbreviation Glossary](https://qumulo.atlassian.net/wiki/spaces/QON/pages/512197065/)
 
-  * [🔒 Preparing Release Notes](https://qumulo.atlassian.net/wiki/spaces/QON/pages/1817215088/)
+  * [🔒 Best Practices for Docs as Code](https://qumulo.atlassian.net/wiki/spaces/QON/pages/1755676699/)
 
-  * [🔒 Preparing Collateral for a Qumulo Core Release](https://qumulo.atlassian.net/wiki/spaces/QON/pages/2976874578/)
+  * [🔒 Qumulo Style Guide for Tech Docs](https://qumulo.atlassian.net/wiki/spaces/QON/pages/1814036510/)
 
-  * [🔒 Publishing a Qumulo Core Release (Engineering)](https://qumulo.atlassian.net/wiki/spaces/EN/pages/765231733/)
-
-  * [🔒 Style Guide for Technical Documentation](https://qumulo.atlassian.net/wiki/spaces/QON/pages/1814036510/)
-
-    * [🔒 Preparing to Contribute Content](https://qumulo.atlassian.net/wiki/spaces/QON/pages/1813741669/)
-
-    * [🔒 Structuring a Topic](https://qumulo.atlassian.net/wiki/spaces/QON/pages/1813610636/)
-   
-    * [🔒 Formatting Text and Ordering Information](https://qumulo.atlassian.net/wiki/spaces/QON/pages/1813741718/)
-
-    * [🔒 Best Practices for Writing and Editing Technical Documentation](https://qumulo.atlassian.net/wiki/spaces/QON/pages/1814069393/)
+  * [🔒 Documentation Runbooks](https://qumulo.atlassian.net/wiki/spaces/QON/pages/1953660967/)
 
 
 ## Running Tests and Builds
 Everything you need to successfully test and build the documentation from the `docs-internal` repository is located in the `dm` tool, which you can run from [`./tools/docs-menu.sh`](tools/docs-menu.sh) for the first time.
 
 ### 🍊&thinsp;As a Qumulon
-* [🔒 Building and Checking HTML Documentation](https://qumulo.atlassian.net/wiki/spaces/QON/pages/1755217988/)
+* 👷‍♀️ [🔒 Building and Checking HTML Docs](https://qumulo.atlassian.net/wiki/spaces/QON/pages/1755217988/)
 
-* [🔒 Building the `qq` CLI and REST API Guides](https://qumulo.atlassian.net/wiki/spaces/QON/pages/2259550614/)
+* 🔧 [🔒 Building the REST API and `qq` CLI Guides](https://qumulo.atlassian.net/wiki/spaces/QON/pages/2259550614/)
 
-* [🔒 Building PDF Documentation](https://qumulo.atlassian.net/wiki/spaces/QON/pages/1841070245)
-
-* [🔒 Preparing Collateral for a Qumulo Core Release](https://qumulo.atlassian.net/wiki/spaces/QON/pages/2976874578/)
-
-* [🔒 Publishing a Qumulo Core Release (Engineering)](https://qumulo.atlassian.net/wiki/spaces/EN/pages/765231733/)
-
-* [🔒 Documentation Runbooks](https://qumulo.atlassian.net/wiki/spaces/QON/pages/1953660967/)
+* 📄 [🔒 Building PDF Documentation](https://qumulo.atlassian.net/wiki/spaces/QON/pages/1841070245/)
 
 ### How Automation Works in the `docs-internal` Repository
 * **Testing:** This repository runs the `.github/workflows/test.yml` workflow on every commit to the `docs-internal` repository.
