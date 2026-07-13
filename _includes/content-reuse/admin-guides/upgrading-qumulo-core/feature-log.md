@@ -16,6 +16,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
 {% capture disableKernMod %}This release disables the <code>algif_aead</code> kernel module to mitigate the <a target="_blank" href="https://copy.fail/">Copy Fail</a> (<a target="_blank" href="https://nvd.nist.gov/vuln/detail/CVE-2026-31431">CVE-2026-31431</a>) vulnerability.{% endcapture %}
 {{site.data.alerts.important}}
 <ul>
+  <li>For appliance hardware installations, this release upgrades the host kernel on Ubuntu 24.04 from 6.8.0-85 to 6.8.0-117.</li>
   <li>This release resolves an issue where, in certain scenarios, Qumulo Core could crash while upgrading on-disk structures.</li>
   <li>{{ inconTriggLegacy }}</li>
   <li>{{ disableKernMod }}</li>
