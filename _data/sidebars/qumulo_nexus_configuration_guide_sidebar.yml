@@ -67,3 +67,16 @@ entries:
     - title: Enabling Nexus Remote Support and Nexus Remote Management
       url: /qumulo-nexus-configuration-guide/monitoring-and-metrics/enabling-nexus-remote-support-and-remote-management.html
       output: web, pdf
+
+  - title: NeuralProtect in Qumulo Nexus
+    url: /qumulo-nexus-configuration-guide/neuralprotect/index.html
+    output: web, pdf
+    folderitems:
+
+    - title: NeuralProtect in Qumulo Nexus
+      url: /qumulo-nexus-configuration-guide/neuralprotect/neuralprotect-in-qumulo-nexus.html
+      output: web, pdf
+
+    - title: Configuring NeuralProtect
+      url: /qumulo-nexus-configuration-guide/neuralprotect/configuring-neuralprotect.html
+      output: web, pdf
