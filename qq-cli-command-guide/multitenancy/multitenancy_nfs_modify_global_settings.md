@@ -3,11 +3,11 @@ category: multitenancy
 command: multitenancy_nfs_modify_global_settings
 optional_options:
 - alternate: []
-  help: Enables mounting with the NFSv4.1 protocol
+  help: Enables mounting with the NFSv4 protocol
   name: --enable-v4
   required: false
 - alternate: []
-  help: Disables mounting with the NFSv4.1 protocol
+  help: Disables mounting with the NFSv4 protocol
   name: --disable-v4
   required: false
 - alternate: []

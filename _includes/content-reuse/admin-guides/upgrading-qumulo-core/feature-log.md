@@ -8,6 +8,20 @@ For information about upgrade types for each release, see <a href='mode-referenc
 {% capture noAPIchanges %}This release contains no REST API changes.{% endcapture %}
 {% capture platUpg %}This release of Qumulo Core is a _platform upgrade_ that requires either a complete reboot (rebooting all nodes in your cluster at the same time) or a rolling reboot (rebooting the nodes in your cluster one at a time).{% endcapture %}
 
+## Qumulo Core 7.9.1
+{{ nexusLink }}
+
+### Features and Improvements
+* Configured the Qumulo Core Product Package `.rpm` packages to allow firewalling and Security-Enhanced Linux (SELinux) in enforcing mode, and to enable these features upon installation
+* Added support for RDMA over NFSv3 on production clusters
+* Added support for Microsoft Hyper-V edge clusters
+* Resolved issues with `/v1/files` REST API endpoints
+* Resolved an issue with enumerating snapshots while using the NFSv3 and NFSv4.1 protocols
+
+### Change Log
+* [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-791)
+
+
 ## Qumulo Core 7.9.0.1 (Quarterly)
 {{ nexusLink }}
 
@@ -113,6 +127,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
 * [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-790-quarterly)
 
 {% capture inconTriggLegacy %}This release resolves an issue with handling an internal encoding inconsistency from legacy builds.{% endcapture %}
+
 
 ## Qumulo Core 7.8.4.3
 {{ nexusLink }}
@@ -579,29 +594,4 @@ This release of Qumulo Core adds Illumio Policy Compute Engine (PCE) and Virtual
 
 ### Change Log
 * [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7411)
-
-
-## Qumulo Core 7.4.0.4 (Quarterly)
-{{ nexusLink }}
-
-### Features and Improvements
-{{site.data.alerts.important}}
-<ul>
-  <li>
-    This release resolves the following on-premises cluster issues:
-    <ul>
-      <li>This release resolves unexpected SAS controller behavior on hardware nodes, where previously hot-plugging drives could cause cluster instability.</li>
-      <li>For clusters with certain erasure coding configurations deployed before July 4, 2020, this release resolves an issue that previously could occur during quorum formation, resulting in internal metadata being in an inconsistent state.</li>
-    </ul>
-  </li>
-  <li>This release resolves a rare issue where previously, under certain conditions, concurrent quorum-related activity could result in file system data being overwritten.</li>
-  <li>This release resolves an issue that previously occurred after a spoke portal was deleted.</li>
-</ul>
-{{site.data.alerts.end}}
-* Added support for latest Western Digital Ultrastar DC SN640 SSD firmware
-* Improved UID and GID sorting in the Qumulo Core Web UI
-* Resolved an issue with `PutObject` and `CopyObject` S3 API actions
-
-### Change Log
-* [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7404-quarterly)
 {% endunless %}

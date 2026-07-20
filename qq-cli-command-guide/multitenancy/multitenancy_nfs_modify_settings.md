@@ -7,11 +7,11 @@ optional_options:
   name: --tenant-id
   required: true
 - alternate: []
-  help: Enables mounting with the NFSv4.1 protocol
+  help: Enables mounting with the NFSv4 protocol
   name: --enable-v4
   required: false
 - alternate: []
-  help: Disables mounting with the NFSv4.1 protocol
+  help: Disables mounting with the NFSv4 protocol
   name: --disable-v4
   required: false
 - alternate: []

@@ -4,7 +4,7 @@ command: object_bridge_create
 optional_options:
 - alternate: []
   help: 'Full bucket URI. Examples: https://my-bucket.s3.us-west-2.amazonaws.com/
-    or https://minio.local:9000/my-bucket'
+    or https://myaccount.blob.core.windows.net/my-container'
   name: --bucket-uri
   required: true
 - alternate: []
@@ -29,6 +29,16 @@ optional_options:
   help: Secret key for private S3 endpoints. Omit for AWS ambient credentials.
   name: --secret-access-key
   required: false
+- alternate: []
+  help: Azure Key Vault hostname (e.g. my-vault.vault.azure.net) from which to fetch
+    SAS tokens for an Azure Blob bucket. Mutually exclusive with --access-key-id/--secret-access-key.
+  name: --key-vault-hostname
+  required: false
+- alternate: []
+  help: URL of an SQS queue that delivers this bucket's object-change notifications.
+    Omit to use cache expiry only.
+  name: --notification-queue-url
+  required: false
 permalink: /qq-cli-command-guide/object/object_bridge_create.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar
@@ -37,9 +47,10 @@ summary: This section explains how to use the <code>qq object_bridge_create</cod
 synopsis: Test-only. Create a bridge filesystem rooted at an external object bucket.
   The cluster must have been created with the object_portals test option enabled.
 title: qq object_bridge_create
-usage: qq object_bridge_create [-h] --bucket-uri BUCKET_URI --mount-path MOUNT_PATH
-  [--key-prefix KEY_PREFIX] [--delimiter DELIMITER] [--access-key-id ACCESS_KEY_ID]
-  [--secret-access-key SECRET_ACCESS_KEY]
+usage: "qq object_bridge_create [-h] --bucket-uri BUCKET_URI --mount-path MOUNT_PATH\
+  \ [--key-prefix KEY_PREFIX] [--delimiter DELIMITER] [--access-key-id ACCESS_KEY_ID]\
+  \ [--secret-access-key SECRET_ACCESS_KEY] [--key-vault-hostname KEY_VAULT_HOSTNAME]\n\
+  \    [--notification-queue-url NOTIFICATION_QUEUE_URL]"
 zendesk_source: qq CLI Command Guide
 
 ---

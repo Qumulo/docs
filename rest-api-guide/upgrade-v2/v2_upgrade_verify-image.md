@@ -13,7 +13,8 @@ methods:
         ,\n        \"SOFTWARE_AND_PLATFORM\"\n      ],\n      \"description\": \"\
         upgrade_type:\\n * `SOFTWARE_AND_PLATFORM` - SOFTWARE_AND_PLATFORM,\\n * `SOFTWARE_ONLY`\
         \ - SOFTWARE_ONLY\"\n    },\n    \"error\": {\n      \"description\": \"error\"\
-        ,\n      \"type\": \"string\"\n    }\n  }\n}"
+        ,\n      \"type\": \"string\"\n    },\n    \"error_class\": {\n      \"description\"\
+        : \"error_class\",\n      \"type\": \"string\"\n    }\n  }\n}"
     responses:
     - code: '200'
       description: Return value on success

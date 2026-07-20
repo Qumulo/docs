@@ -10,6 +10,12 @@ layout: page
 
 <style>div#toc{height:200px;overflow:auto;}</style>
 
+
+## Qumulo Core 7.9.1
+{{ nexusLink }}
+Added <code>lock</code> parameter to <code>PATCH /v1/files/{ref}/info/attributes</code> response
+
+
 ## Qumulo Core 7.9.0.1
 {{ nexusLink }}
 <ul>
@@ -63,6 +69,7 @@ layout: page
     <li>Added <code>logical_datablocks</code> parameter to <code>PUT /v1/files/{ref}/streams/{stream_id}/data</code> response</li>
     <li>Added <code>logical_datablocks</code> parameter to <code>POST /v1/files/{ref}/streams/{stream_id}/punch-hole</code> response</li>
     <li>Added <code>logical_datablocks</code> parameter to <code>POST /v1/files/{ref}/streams/{stream_id}/rename</code> response</li>
+    <li>Added <code>error_class</code> parameter to <code>POST /v2/upgrade/verify-image</code> response</li>
   </ul>
 </details>
 
@@ -377,8 +384,6 @@ Added <code>private</code> parameter to <code>POST /v1/s3/buckets/</code> reques
 {{ nexusLink }}
 {{ noAPIchanges }}
 
-{% unless page.platform == 'cnq-gcp' %}
-
 
 ## Qumulo Core 7.5.5.2
 {{ nexusLink }}
@@ -469,35 +474,4 @@ Added <code>POST /v5/cluster/object-backed/create</code>
 
 ## Qumulo Core 7.4.1.1
 {{ nexusLink }}
-<ul>
-  <li>Removed <code>/v1/portal/spokes/{id}/evict-data</code></li>
-  <li>Removed <code>/v1/portal/spokes/{id}/evict-link</code></li>
-  <li>Removed <code>/v1/portal/spokes/{id}/evict-tree</code></li>
-  <li>Added <code>GET /v1/cluster/slots/node/{node_id}</code></li>
-</ul>
-
-
-## Qumulo Core 7.4.0.4 (Quarterly)
-{{ nexusLink }}
-<ul>
-  <li>Added <code>GET /v1/portal/file-systems/</code></li>
-  <li>Added <code>GET /v1/portal/file-systems/{id}</code></li>
-  <li>Added <code>POST /v1/shutdown/container-restart/{node_id}</code></li>
-</ul>
-<details>
-  <summary>Click to expand</summary>
-  <ul>
-    <li>Added <code>POST /v1/shutdown/halt/{node_id}</code></li>
-    <li>Added <code>POST /v1/shutdown/reboot/{node_id}</code></li>
-    <li>Added <code>hub_cluster_uuid</code> parameter to <code>GET /v1/portal/spokes/{id}</code> response</li>
-    <li>
-      Modified <code>PATCH /v1/portal/spokes/{id}</code>:
-      <ul>
-        <li>Added <code>hub_cluster_uuid</code> parameter to <code>PATCH /v1/portal/spokes/{id}</code> request body</li>
-        <li>Added <code>hub_cluster_uuid</code> parameter to <code>PATCH /v1/portal/spokes/{id}</code> response</li>
-      </ul>
-    </li>
-    <li>Added <code>hub_cluster_uuid</code> parameter to <code>POST /v1/portal/spokes/{id}/propose</code> response</li>
-  </ul>
-</details>
-{% endunless %}
+{{ noAPIchanges }}
