@@ -8977,6 +8977,10 @@ $(document).ready(function() {
      
 <style>div#toc{height:200px;overflow:auto;}</style>
 
+<h2 id="qumulo-core-791">Qumulo Core 7.9.1</h2>
+
+<p>Added <code>lock</code> parameter to <code>PATCH /v1/files/{ref}/info/attributes</code> response</p>
+
 <h2 id="qumulo-core-7901">Qumulo Core 7.9.0.1</h2>
 
 <ul>
@@ -9030,6 +9034,7 @@ $(document).ready(function() {
     <li>Added <code>logical_datablocks</code> parameter to <code>PUT /v1/files/{ref}/streams/{stream_id}/data</code> response</li>
     <li>Added <code>logical_datablocks</code> parameter to <code>POST /v1/files/{ref}/streams/{stream_id}/punch-hole</code> response</li>
     <li>Added <code>logical_datablocks</code> parameter to <code>POST /v1/files/{ref}/streams/{stream_id}/rename</code> response</li>
+    <li>Added <code>error_class</code> parameter to <code>POST /v2/upgrade/verify-image</code> response</li>
   </ul>
 </details>
 
@@ -9408,37 +9413,7 @@ $(document).ready(function() {
 
 <h2 id="qumulo-core-7411">Qumulo Core 7.4.1.1</h2>
 
-<ul>
-  <li>Removed <code>/v1/portal/spokes/{id}/evict-data</code></li>
-  <li>Removed <code>/v1/portal/spokes/{id}/evict-link</code></li>
-  <li>Removed <code>/v1/portal/spokes/{id}/evict-tree</code></li>
-  <li>Added <code>GET /v1/cluster/slots/node/{node_id}</code></li>
-</ul>
-
-<h2 id="qumulo-core-7404-quarterly">Qumulo Core 7.4.0.4 (Quarterly)</h2>
-
-<ul>
-  <li>Added <code>GET /v1/portal/file-systems/</code></li>
-  <li>Added <code>GET /v1/portal/file-systems/{id}</code></li>
-  <li>Added <code>POST /v1/shutdown/container-restart/{node_id}</code></li>
-</ul>
-<details>
-  <summary>Click to expand</summary>
-  <ul>
-    <li>Added <code>POST /v1/shutdown/halt/{node_id}</code></li>
-    <li>Added <code>POST /v1/shutdown/reboot/{node_id}</code></li>
-    <li>Added <code>hub_cluster_uuid</code> parameter to <code>GET /v1/portal/spokes/{id}</code> response</li>
-    <li>
-      Modified <code>PATCH /v1/portal/spokes/{id}</code>:
-      <ul>
-        <li>Added <code>hub_cluster_uuid</code> parameter to <code>PATCH /v1/portal/spokes/{id}</code> request body</li>
-        <li>Added <code>hub_cluster_uuid</code> parameter to <code>PATCH /v1/portal/spokes/{id}</code> response</li>
-      </ul>
-    </li>
-    <li>Added <code>hub_cluster_uuid</code> parameter to <code>POST /v1/portal/spokes/{id}/propose</code> response</li>
-  </ul>
-</details>
-
+<p>This release contains no REST API changes.</p>
 
    
 
