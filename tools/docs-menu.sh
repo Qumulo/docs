@@ -393,44 +393,47 @@ regen_cli_docs() {
     start_in_docs_dir
     check_src_repo
     check_ssh_keys
-
+    
+    # Version regex: accepts 3 or 4 segment version numbers (e.g., 7.1.2 or 7.9.0.2)
+    local version_regex='^[0-9]+(\.[0-9]+){2,3}$'
+    
     # Non-interactive execution
     if [ -n "$1" ]; then
         if [ "$1" = "current" ]; then
             echo "Regenerating current CLI documentation from default branch..."
             cd ~/src && hg up default && hg fetch && ./tools/extract_cli_help.py --base-dir ~/git/docs-internal && cd -
             return 0
-        elif [[ "$1" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+        elif [[ "$1" =~ $version_regex ]]; then
             echo "Regenerating CLI documentation from release-$1 branch..."
             cd ~/src && hg up default && hg fetch && hg up release-$1 && ./tools/extract_cli_help.py --base-dir ~/git/docs-internal && cd -
             return 0
         else
-            echo "Error: Invalid version format '$1'. Expected 'current' or 'N.N.N'."
+            echo "Error: Invalid version format '$1'. Expected 'current' or version number (e.g., '7.1.2' or '7.9.0.2')."
             return 1
         fi
     fi
-
+    
     # Interactive execution
     while true; do
         read -p "Generate the current (c) or future (f) version of the CLI docs? " version_choice
         if [ "$version_choice" = "c" ]; then
             echo "Regenerating current CLI documentation from default branch..."
             cd ~/src && hg up default && hg fetch && ./tools/extract_cli_help.py --base-dir ~/git/docs-internal && cd -
-            break
+            break 
         elif [ "$version_choice" = "f" ]; then
             while true; do
-                read -p "Enter the Qumulo Core release number in N.N.N format (for example, 7.1.2): " version_number
-                if [[ $version_number =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+                read -p "Enter the Qumulo Core release number (for example, 7.9.0.2): " version_number
+                if [[ $version_number =~ $version_regex ]]; then
                     echo "Regenerating CLI documentation from release-$version_number branch..."
                     cd ~/src && hg up default && hg fetch && hg up release-$version_number && ./tools/extract_cli_help.py --base-dir ~/git/docs-internal && cd -
                     break 2
                 else
-                    echo "Enter a release version in the N.N.N format, where N is a number."
+                    echo "Enter a valid release version in N.N.N or N.N.N.N format."
                 fi
             done
         else
             echo "Invalid choice. Enter 'c' for the current version or 'f' for a future version."
-        fi
+        fi  
     done
 }
 
