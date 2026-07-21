@@ -394,7 +394,6 @@ regen_cli_docs() {
     check_src_repo
     check_ssh_keys
     
-    # Version regex: accepts 3 or 4 segment version numbers (e.g., 7.1.2 or 7.9.0.2)
     local version_regex='^[0-9]+(\.[0-9]+){2,3}$'
     
     # Non-interactive execution
@@ -405,7 +404,7 @@ regen_cli_docs() {
             return 0
         elif [[ "$1" =~ $version_regex ]]; then
             echo "Regenerating CLI documentation from release-$1 branch..."
-            cd ~/src && hg up default && hg fetch && hg up release-$1 && ./tools/extract_cli_help.py --base-dir ~/git/docs-internal && cd -
+            cd ~/src && hg up default && hg fetch && hg up "release-${1}" && ./tools/extract_cli_help.py --base-dir ~/git/docs-internal && cd -
             return 0
         else
             echo "Error: Invalid version format '$1'. Expected 'current' or version number (e.g., '7.1.2' or '7.9.0.2')."
@@ -425,7 +424,7 @@ regen_cli_docs() {
                 read -p "Enter the Qumulo Core release number (for example, 7.9.0.2): " version_number
                 if [[ $version_number =~ $version_regex ]]; then
                     echo "Regenerating CLI documentation from release-$version_number branch..."
-                    cd ~/src && hg up default && hg fetch && hg up release-$version_number && ./tools/extract_cli_help.py --base-dir ~/git/docs-internal && cd -
+                    cd ~/src && hg up default && hg fetch && hg up "release-${version_number}" && ./tools/extract_cli_help.py --base-dir ~/git/docs-internal && cd -
                     break 2
                 else
                     echo "Enter a valid release version in N.N.N or N.N.N.N format."
