@@ -72,19 +72,36 @@
   margin: 0;
 }
 
-@media (max-width:767px) {
-  .grt-cookie {
+@media (max-width: 767px) {
+  .grt-cookie-active {
     flex-direction: column;
+    align-items: flex-start;
     padding: 15px;
+    gap: 12px;
   }
 
-  .grt-cookie p, .grt-cookie p a {
-    font-size:13px;
+  .grt-cookies-msg {
+    max-width: 100%;
+    text-align: left;
+  }
+
+  .grt-cookie p, 
+  .grt-cookie p a {
+    font-size: 13px;
+    line-height: 1.4;
+  }
+
+  .grt-cookie-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 8px;
+    width: 100%;
   }
 
   .grt-cookie-button {
-    font-size:13px;
-    padding: 3px 14px;
-    margin:8px 0 0 0;
+    font-size: 13px;
+    padding: 5px 12px;
+    margin: 0;
   }
 }
