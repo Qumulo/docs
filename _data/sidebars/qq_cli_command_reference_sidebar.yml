@@ -860,6 +860,9 @@ entries:
       title: portal_list_hubs
       url: /qq-cli-command-guide/portal/portal_list_hubs.html
     - output: web,pdf
+      title: portal_list_quorum_events
+      url: /qq-cli-command-guide/portal/portal_list_quorum_events.html
+    - output: web,pdf
       title: portal_list_spokes
       url: /qq-cli-command-guide/portal/portal_list_spokes.html
     - output: web,pdf

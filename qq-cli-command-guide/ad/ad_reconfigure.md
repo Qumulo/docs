@@ -43,9 +43,9 @@ sidebar: qq_cli_command_reference_sidebar
 summary: This section explains how to use the <code>qq ad_reconfigure</code> command.
 synopsis: Reconfigure Active Directory POSIX Attributes
 title: qq ad_reconfigure
-usage: qq ad_reconfigure [-h] [--enable-search-trusted-domains | --disable-search-trusted-domains]
-  [--enable-ad-posix-attributes | --disable-ad-posix-attributes] [--base-dn BASE_DN]
-  [--domain-controllers DOMAIN_CONTROLLERS] [--no-wait]
+usage: "qq ad_reconfigure [-h] [--enable-search-trusted-domains | --disable-search-trusted-domains]\
+  \ [--enable-ad-posix-attributes | --disable-ad-posix-attributes]\n    [--base-dn\
+  \ BASE_DN] [--domain-controllers DOMAIN_CONTROLLERS] [--no-wait]"
 zendesk_source: qq CLI Command Guide
 
 ---

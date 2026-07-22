@@ -25,7 +25,7 @@ entries:
     output: web
     title: Qumulo REST API Guide
     type: navi
-  - output: web
+  - output: web,pdf
     title: Change Log
     url: /rest-api-guide/change-log.html
   - folderitems:
@@ -280,6 +280,10 @@ entries:
       preview: true
       title: portal/ping
       url: /rest-api-guide/cloud-data-fabric-v1/portal_ping.html
+    - apiversion: v1
+      output: web,pdf
+      title: portal/quorum/events
+      url: /rest-api-guide/cloud-data-fabric-v1/portal_quorum_events.html
     - apiversion: v1
       deprecated: true
       output: web,pdf

@@ -17,28 +17,49 @@ For information about upgrade types for each release, see <a href='mode-referenc
 * Added support for Microsoft Hyper-V edge clusters
 * Resolved issues with `/v1/files` REST API endpoints
 * Resolved an issue with enumerating snapshots while using the NFSv3 and NFSv4.1 protocols
+* Resolved an issue with quorum formation caused by audit server address misconfiguration
 
 ### Change Log
 * [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-791)
 
 
-## Qumulo Core 7.9.0.1 (Quarterly)
+## Qumulo Core 7.9.0.2 (Quarterly)
 {{ nexusLink }}
 
 ### Features and Improvements
-{% capture inconTriggLegacy %}This release resolves an issue with handling an internal encoding inconsistency from legacy builds.{% endcapture %}
-{% capture disableKernMod %}This release disables the <code>algif_aead</code> kernel module to mitigate the <a target="_blank" href="https://copy.fail/">Copy Fail</a> (<a target="_blank" href="https://nvd.nist.gov/vuln/detail/CVE-2026-31431">CVE-2026-31431</a>) vulnerability.{% endcapture %}
+{% capture disableKernMod %}the <code>algif_aead</code> kernel module to mitigate the <a target="_blank" href="https://copy.fail/">Copy Fail</a> (<a target="_blank" href="https://nvd.nist.gov/vuln/detail/CVE-2026-31431">CVE-2026-31431</a>) vulnerability.{% endcapture %}
 {{site.data.alerts.important}}
 <ul>
-  <li>For appliance hardware installations, this release upgrades the host kernel on Ubuntu 24.04 from 6.8.0-85 to 6.8.0-117.</li>
-  <li>This release resolves an issue where, in certain scenarios, Qumulo Core could crash while upgrading on-disk structures.</li>
-  <li>{{ inconTriggLegacy }}</li>
-  <li>{{ disableKernMod }}</li>
+  <li>
+    This release makes critical improvements:
+    <ul>
+      <li><strong>Cloud Native Qumulo (CNQ), Azure Native Qumulo (ANQ), and Stratus Accelerator Clusters:</strong> Improved cluster start-up times.</li>
+      <li><strong>Appliance Hardware Installations:</strong> Upgraded the host kernel on Ubuntu 24.04, from 6.8.0-85 to 6.8.0-117</li>
+      <li>Disabled {{ disableKernMod }}</li> 
+    </ul>
+  </li>
+  <li>
+    This release adds important cluster management functionality:
+    <ul>
+      <li>Added the <code>GET /v1/portal/quorum/events</code> REST API endpoint and the <code>qq portal_list_quorum_events</code> CLI command to let you retrieve recent portal quorum success and abandon events recorded by cluster nodes.</li>
+    </ul>
+  </li>
+  <li>
+    This release resolves issues that previously:
+    <ul>
+      <li>Prevented the system from handling an internal encoding inconsistency from legacy builds</li>
+      <li>Prevented quorum formation if the audit server address specified in the audit configuration isn't a valid IP address or DNS name</li>
+      <li>Prevented Nexus agent on nodes in a Qumulo Core cluster from detecting a cleanly closed connection to Nexus and reconnecting, causing nodes to continue reporting metrics without being able to be managed from Nexus until the connection was reset</li>
+      <li>Could cause Qumulo Core to become unresponsive if a remote syslog endpoint configured for audit log delivery becomes unreachable</li>
+      <li>Could cause Qumulo Core to crash if a multi-part upload to a versioned S3 bucket took longer than approximately 10 seconds</li>
+      <li>Could cause Qumulo Core to crash while upgrading on-disk structures in certain scenarios</li>
+    </ul>
+  </li>
   <li>
     This release has special upgrade provisions:
     <ul>
       <li>
-        <strong>Before the upgrade to Qumulo Core 7.9.0.1</strong>
+        <strong>Before the upgrade to Qumulo Core 7.9.0.2</strong>
         <ul>
           <li><strong>All Clusters:</strong> Ensure that your cluster has at least 1 GB of available capacity for each node (for example, a 4-node cluster requires 4 GB of available capacity). If your cluster doesn't have sufficient total available capacity, you must free up or expand your cluster's capacity.</li>
           <li>
@@ -124,9 +145,8 @@ For information about upgrade types for each release, see <a href='mode-referenc
   * Resolved an issue with the `qq fs_list_locks --protocol smb --lock-type share-mode` command
 
 ### Change Log
-* [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-790-quarterly)
+* [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7902-quarterly)
 
-{% capture inconTriggLegacy %}This release resolves an issue with handling an internal encoding inconsistency from legacy builds.{% endcapture %}
 
 
 ## Qumulo Core 7.8.4.3
@@ -134,12 +154,11 @@ For information about upgrade types for each release, see <a href='mode-referenc
 
 ### Features and Improvements
 {% capture availDelay %}This release resolves an issue with the upgrade process that previously caused the Qumulo cluster to become available after a delay.{% endcapture %}
-{% capture disableKernMod %}This release disables the <code>algif_aead</code> kernel module to mitigate the <a target="_blank" href="https://copy.fail/">Copy Fail</a> (<a target="_blank" href="https://nvd.nist.gov/vuln/detail/CVE-2026-31431">CVE-2026-31431</a>) vulnerability.{% endcapture %}
 {{site.data.alerts.important}}
 <ul>
   <li>This release resolves an issue that previously caused delays in reading data from and writing data to a cluster immediately following a quorum event.</li> 
   <li>{{ availDelay }}</li>
-  <li>{{ disableKernMod }}</li>
+  <li>This release disables {{ disableKernMod }}</li>
 </ul>
 {{site.data.alerts.end}}
 
@@ -204,14 +223,12 @@ For information about upgrade types for each release, see <a href='mode-referenc
 
 ### Features and Improvements
 {% capture availDelay %}This release resolves an issue with the upgrade process that previously caused the Qumulo cluster to become available after a delay.{% endcapture %}
-{% capture inconTrigg %}This release resolves an issue with an uncommon sequence of operations that previously could cause an internal encoding inconsistency.{% endcapture %}
 {{site.data.alerts.important}}
 <ul>
-  <li>{{ inconTriggLegacy }}</li>
+  <li>Prevented the system from handling an internal encoding inconsistency from legacy builds</li>
   <li>{{ availDelay }}</li>
   <li>{{ disableKernMod }}</li>
   <li>This release improves the ability of appliance-image-based Qumulo Core clusters that use host-managed networking to withstand networking issues.</li>
-  <li>{{ inconTrigg }}</li>
 </ul>
 {{site.data.alerts.end}}
 * Improved the performance of Cloud Data Fabric (CDF) writes from the hub portal to a spoke portal
@@ -230,6 +247,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
 {{ nexusLink }}
 
 ### Features and Improvements
+{% capture inconTrigg %}This release resolves an issue with an uncommon sequence of operations that previously could cause an internal encoding inconsistency.{% endcapture %}
 {% include important.html content=inconTrigg %}
 * Added expansion of the placeholder `%U` to a username for SMB shares
 * Added the ability to handle NFSv4.1 user identities in the `<principal>@<domain>` format when a domain name is different from the Active Directory domain to which your Qumulo cluster is joined

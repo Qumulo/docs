@@ -13,10 +13,13 @@ layout: page
 
 ## Qumulo Core 7.9.1
 {{ nexusLink }}
-Added <code>lock</code> parameter to <code>PATCH /v1/files/{ref}/info/attributes</code> response
+<ul>
+  <li>Removed <code>/v1/portal/quorum/events</code></li>
+  <li>Added <code>lock</code> parameter to <code>PATCH /v1/files/{ref}/info/attributes</code> response</li>
+</ul>
 
 
-## Qumulo Core 7.9.0.1
+## Qumulo Core 7.9.0.2
 {{ nexusLink }}
 <ul>
   <li>Removed <code>/v1/snapshots/calculate-used-capacity</code></li>
@@ -26,6 +29,7 @@ Added <code>lock</code> parameter to <code>PATCH /v1/files/{ref}/info/attributes
 <details>
   <summary>Click to expand</summary>
   <ul>
+    <li>Added <code>GET /v1/portal/quorum/events</code></li>
     <li>Added <code>GET | POST /v2/audit/destinations/</code></li>
     <li>Added <code>DELETE | GET | PATCH | PUT /v2/audit/destinations/{id}</code></li>
     <li>Added <code>GET /v2/audit/destinations/{id}/status</code></li>

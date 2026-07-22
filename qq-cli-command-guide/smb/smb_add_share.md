@@ -54,14 +54,6 @@ optional_options:
   name: --require-encryption
   required: false
 - alternate: []
-  help: "\n                Offline-files caching mode advertised to SMB clients. When\
-    \ set to no_caching (the\n                default), client-side caching is disabled.\
-    \ When set to manual_caching, clients may\n                cache files that the\
-    \ user designates as available offline. When set to\n                automatic_caching,\
-    \ clients may cache files as they are opened.\n                "
-  name: --offline-files-caching-mode
-  required: false
-- alternate: []
   help: Print the raw JSON response.
   name: --json
   required: false
@@ -125,15 +117,14 @@ summary: This section explains how to use the <code>qq smb_add_share</code> comm
 synopsis: Add a new SMB share
 title: qq smb_add_share
 usage: "qq smb_add_share [-h] [--tenant-id TENANT_ID] --name NAME --fs-path FS_PATH\
-  \ [--description DESCRIPTION] [--access-based-enumeration-enabled {true,false}]\
-  \ [--create-fs-path] [--expand-fs-path-variables]\n    [--default-file-create-mode\
-  \ DEFAULT_FILE_CREATE_MODE] [--default-directory-create-mode DEFAULT_DIRECTORY_CREATE_MODE]\
-  \ [--require-encryption {true,false}]\n    [--offline-files-caching-mode {no_caching,manual_caching,automatic_caching}]\
-  \ [--json] [--no-access | --read-only | --all-access] [--grant-read-access TRUSTEE\
-  \ [TRUSTEE ...]] [--grant-read-write-access TRUSTEE [TRUSTEE ...]]\n    [--grant-all-access\
-  \ TRUSTEE [TRUSTEE ...]] [--deny-access TRUSTEE [TRUSTEE ...]] [--full-control-hosts\
-  \ IP/RANGE [IP/RANGE ...]] [--read-only-hosts IP/RANGE [IP/RANGE ...]] [--deny-hosts\
-  \ IP/RANGE [IP/RANGE ...]]\n    [--deny-all-hosts]"
+  \ [--description DESCRIPTION] [--access-based-enumeration-enabled {true,false}]\n\
+  \    [--create-fs-path] [--expand-fs-path-variables] [--default-file-create-mode\
+  \ DEFAULT_FILE_CREATE_MODE]\n    [--default-directory-create-mode DEFAULT_DIRECTORY_CREATE_MODE]\
+  \ [--require-encryption {true,false}] [--json] [--no-access | --read-only | --all-access]\n\
+  \    [--grant-read-access TRUSTEE [TRUSTEE ...]] [--grant-read-write-access TRUSTEE\
+  \ [TRUSTEE ...]] [--grant-all-access TRUSTEE [TRUSTEE ...]]\n    [--deny-access\
+  \ TRUSTEE [TRUSTEE ...]] [--full-control-hosts IP/RANGE [IP/RANGE ...]] [--read-only-hosts\
+  \ IP/RANGE [IP/RANGE ...]]\n    [--deny-hosts IP/RANGE [IP/RANGE ...]] [--deny-all-hosts]"
 zendesk_source: qq CLI Command Guide
 
 ---
