@@ -261,17 +261,6 @@ fetch('/data/website.json')
     </script>
     <script>
         $(document).ready(function() {
-            // By default, Reading Mode is off and the button is dark.
-            if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
-                // On the landing page, hide the sidebar, make content full-width, and hide the toggle link.
-                $("#tg-sb-sidebar").hide();
-                $("#tg-sb-content").removeClass('col-md-9').addClass('col-md-12');
-                $("#tg-sb-link").hide();
-                $(".projectTitle").hide();
-                $(".navbar-brand").hide();
-                return;
-            }
-
             if (Cookies.get('reading_mode') == '1' ) {
                 $("#tg-sb-sidebar").toggle();
                 $("#tg-sb-content").toggleClass('col-md-9');
@@ -301,7 +290,7 @@ fetch('/data/website.json')
     
 
 </head>
-<body>
+<body data-page="doc">
 <!-- ==================== TOPNAV START ==================== -->
 <div class="above-header"></div>
 
