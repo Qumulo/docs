@@ -25,6 +25,19 @@ body {
   flex-direction:column;
 }
 
+/* HOMEPAGE LAYOUT RULES START */
+body[data-page="home"] #tg-sb-sidebar,
+body[data-page="home"] #tg-sb-link,
+body[data-page="home"] .projectTitle,
+body[data-page="home"] .navbar-brand {
+  display: none !important;
+}
+
+body[data-page="home"] #tg-sb-content {
+  width: 100% !important;
+}
+/* HOMEPAGE LAYOUT RULES END */
+
 blockquote {
   font-size: 16px;
 }
