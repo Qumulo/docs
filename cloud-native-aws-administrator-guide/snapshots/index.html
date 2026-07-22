@@ -212,6 +212,9 @@ fetch('/data/website.json')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
 
+<!-- Load default Google Analytics consent settings -->
+<script src="/js/grt-cookie-consent-default.js"></script>
+
 <!-- Load Google Analytics and exclude GDPR countries from collection -->
 <script defer src="/js/googletag.js"></script>
 <script defer src="https://www.googletagmanager.com/gtag/js?id=G-81J7N4LMSE"></script>
@@ -347,7 +350,9 @@ fetch('/data/website.json')
             <ul class="nav navbar-nav navbar-right">
                 <!-- toggle sidebar button -->
                 <li><a id="tg-sb-link" href="#" data-proofer-ignore><i id="tg-sb-icon" class="fa fa-toggle-off"></i> Toggle Reading Mode</a></li>
+
                 <li><a id="view-favorites" href="/favorites.html" data-proofer-ignore><i id="fav-nav-icon" class="fa fa-star-o"></i> View Favorites</a></li>
+
                 <!-- entries without drop-downs appear here -->
 
 
@@ -2528,18 +2533,24 @@ $(document).ready(function() {
     </div>
   </div>
 
-  <!-- Cookie consent Banner-->	
+  <!-- Cookie Consent Banner -->
   <div id="cookie-banner" class="grt-cookie">
     <div class="grt-cookies-msg">
-      <p>We use cookies to improve your user experience and remember your preferences on this website. If you continue to use this website, we will assume that you accept and understand our <a class="no_icon" href="https://qumulo.com/legal/privacy-policy">Privacy Policy</a>, <a class="no_icon" href="https://qumulo.com/legal/cookie-policy/">Cookie Policy</a>, and <a class="no_icon" href="https://qumulo.com/terms-hub/">Terms Hub</a>.</p>
+      <p>We use cookies to improve your user experience and remember your preferences.</p>
     </div>
-    <span class="grt-cookie-button">Accept</span>
+    <div class="grt-cookie-buttons">
+      <button type="button" class="grt-cookie-btn grt-allow-all">Allow All</button>
+      <button type="button" class="grt-cookie-btn grt-essential-only">Essential Only</button>
+      <button type="button" class="grt-cookie-btn grt-deny-all">Deny All</button>
+    </div>
   </div>
 
-  <!-- Local scripts -->
+  <!-- LOCAL SCRIPTS -->
   <!-- Cookie consent banner -->
   <script src="/js/grt-cookie-consent.js"></script>
-  <script>$(".grt-cookie").grtCookie();</script>
+  <script>
+    $(".grt-cookie").grtCookie();
+  </script>
 
   <!-- Send Feedback button -->
   <script src="/js/send-feedback.js"></script>

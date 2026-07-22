@@ -1,27 +1,114 @@
 (function ($) {
   $.fn.grtCookie = function (options) {
-    // Default options
-    var settings = $.extend({
-      duration: 365
-    }, options);
-    // Check cookie
-    if (!(document.cookie.indexOf("acceptgrt=0") > -1)) {
-      // Show message and calculate date
-      this.addClass("grt-cookie-active");
-      var d1 = new Date();
-      var days1 = settings.duration;
-      d1.setTime(d1.getTime() + days1 * 24 * 60 * 60 * 1000);
-      var expiredate = "expires=" + d1.toUTCString();
-      document.cookie = "acceptgrt=1;" + expiredate + ";path=/;SameSite=Lax;Secure";
-      // On click accept button
-      $(".grt-cookie-button").on("click", function () {
-        $(this).parent().remove();
-        document.cookie = "acceptgrt=0;" + expiredate + ";path=/;SameSite=Lax;Secure";
-        document.getElementById('search-input').focus();
-      });
-    } else {
-      this.remove();
+    var settings = $.extend({ duration: 365 }, options);
+
+    // Read cookie by name
+    function getCookie(name) {
+      var match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+      return match ? match[2] : null;
     }
+
+    // Delete cookies across all potential domains and paths
+    function eraseCookie(name) {
+      var domains = [window.location.hostname, '.' + window.location.hostname.replace(/^www\./, ''), '.qumulo.com'];
+      var paths = ['/', '/legal'];
+
+      domains.forEach(function (domain) {
+        paths.forEach(function (path) {
+          document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=' + path + '; domain=' + domain + ';';
+          document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=' + path + ';';
+        });
+      });
+    }
+
+    // Sets acceptgrt cookie
+    function setConsent(level) {
+      var d = new Date();
+      d.setTime(d.getTime() + (settings.duration * 24 * 60 * 60 * 1000));
+      var expires = "expires=" + d.toUTCString();
+      document.cookie = "acceptgrt=" + level + ";" + expires + ";path=/;SameSite=Lax;Secure";
+    }
+
+    // Update Google Analytics Consent Mode dynamically
+    function updateGoogleConsent(status) {
+      if (typeof gtag === 'function') {
+        gtag('consent', 'update', {
+          'analytics_storage': status,
+          'ad_storage': status,
+          'ad_user_data': status,
+          'ad_personalization': status
+        });
+      }
+    }
+
+    // Clear local GA cookies manually
+    function removeGACookies() {
+      var cookies = document.cookie.split(";");
+      for (var i = 0; i < cookies.length; i++) {
+        var cookieName = cookies[i].split("=")[0].trim();
+        if (cookieName === "_ga" || cookieName.indexOf("_ga_") === 0) {
+          eraseCookie(cookieName);
+        }
+      }
+    }
+
+    // Apply UI state and cookie purges
+    function applyConsentRules(consentLevel) {
+      if (consentLevel === "deny") {
+        $("#tg-sb-link, #view-favorites").hide();
+        removeGACookies();
+        eraseCookie("reading_mode");
+      } else if (consentLevel === "essential") {
+        removeGACookies();
+        $("#tg-sb-link, #view-favorites").show();
+      } else if (consentLevel === "all") {
+        $("#tg-sb-link, #view-favorites").show();
+      }
+    }
+
+    // MAIN INITIALIZATION LOGIC
+    var consentState = getCookie("acceptgrt");
+
+    // If user has already made a choice on a previous pageview, hide banner and enforce rules
+    if (consentState) {
+      this.remove();
+      applyConsentRules(consentState);
+    } else {
+      // First-time visitor: show the banner
+      this.addClass("grt-cookie-active");
+    }
+
+    var $banner = this;
+
+    // BUTTON CLICK HANDLERS
+
+    // "Allow All" Button
+    $banner.find(".grt-allow-all").on("click", function () {
+      setConsent("all");
+      updateGoogleConsent('granted'); // <--- Tells Google Analytics it's OK to track
+      $banner.remove();
+      applyConsentRules("all");
+      if ($('#search-input').length) $('#search-input').focus();
+    });
+
+    // "Essential Only" Button
+    $banner.find(".grt-essential-only").on("click", function () {
+      setConsent("essential");
+      updateGoogleConsent('denied'); // <--- Tells Google Analytics NOT to set cookies
+      $banner.remove();
+      applyConsentRules("essential");
+      if ($('#search-input').length) $('#search-input').focus();
+    });
+
+    // "Deny All" Button
+    $banner.find(".grt-deny-all").on("click", function () {
+      setConsent("deny");
+      updateGoogleConsent('denied'); // <--- Tells Google Analytics NOT to set cookies
+      $banner.remove();
+      applyConsentRules("deny");
+      if ($('#search-input').length) $('#search-input').focus();
+    });
+
     return this;
   };
 }(jQuery));
