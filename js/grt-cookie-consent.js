@@ -55,14 +55,17 @@
     // Apply UI state and cookie purges
     function applyConsentRules(consentLevel) {
       if (consentLevel === "deny") {
-        $("#tg-sb-link, #view-favorites").hide();
+        // Hide ONLY the non-essential/tracking elements (keep #view-favorites visible!)
+        $("#tg-sb-link").hide();
+        
+        // Purge non-essential cookies
         removeGACookies();
         eraseCookie("reading_mode");
       } else if (consentLevel === "essential") {
         removeGACookies();
-        $("#tg-sb-link, #view-favorites").show();
+        $("#tg-sb-link").show();
       } else if (consentLevel === "all") {
-        $("#tg-sb-link, #view-favorites").show();
+        $("#tg-sb-link").show();
       }
     }
 
