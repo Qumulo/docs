@@ -66,7 +66,6 @@
       }
     }
 
-    // MAIN INITIALIZATION LOGIC
     var consentState = getCookie("acceptgrt");
 
     // If user has already made a choice on a previous pageview, hide banner and enforce rules
@@ -74,36 +73,34 @@
       this.remove();
       applyConsentRules(consentState);
     } else {
-      // First-time visitor: show the banner
+      // Show the banner to first-time visitors
       this.addClass("grt-cookie-active");
     }
 
     var $banner = this;
 
-    // BUTTON CLICK HANDLERS
-
-    // "Allow All" Button
-    $banner.find(".grt-allow-all").on("click", function () {
+    // Allow All
+    $banner.find("span.grt-allow-all").on("click", function () {
       setConsent("all");
-      updateGoogleConsent('granted'); // <--- Tells Google Analytics it's OK to track
+      updateGoogleConsent('granted');
       $banner.remove();
       applyConsentRules("all");
       if ($('#search-input').length) $('#search-input').focus();
     });
 
-    // "Essential Only" Button
-    $banner.find(".grt-essential-only").on("click", function () {
+    // Essential Only
+    $banner.find("span.grt-essential-only").on("click", function () {
       setConsent("essential");
-      updateGoogleConsent('denied'); // <--- Tells Google Analytics NOT to set cookies
+      updateGoogleConsent('denied');
       $banner.remove();
       applyConsentRules("essential");
       if ($('#search-input').length) $('#search-input').focus();
     });
 
-    // "Deny All" Button
-    $banner.find(".grt-deny-all").on("click", function () {
+    // Deny All
+    $banner.find("span.grt-deny-all").on("click", function () {
       setConsent("deny");
-      updateGoogleConsent('denied'); // <--- Tells Google Analytics NOT to set cookies
+      updateGoogleConsent('denied');
       $banner.remove();
       applyConsentRules("deny");
       if ($('#search-input').length) $('#search-input').focus();
