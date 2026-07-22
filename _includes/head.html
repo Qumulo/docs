@@ -209,6 +209,9 @@ fetch('/data/website.json')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
 
+<!-- Load default Google Analytics consent settings -->
+<script src="{{ "js/grt-cookie-consent-default.js" | relative_url }}"></script>
+
 <!-- Load Google Analytics and exclude GDPR countries from collection -->
 <script defer src="{{ "js/googletag.js" | relative_url }}"></script>
 <script defer src="https://www.googletagmanager.com/gtag/js?id=G-81J7N4LMSE"></script>

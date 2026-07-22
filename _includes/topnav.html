@@ -46,7 +46,9 @@
             <ul class="nav navbar-nav navbar-right">
                 <!-- toggle sidebar button -->
                 <li><a id="tg-sb-link" href="#" data-proofer-ignore><i id="tg-sb-icon" class="fa fa-toggle-off"></i> Toggle Reading Mode</a></li>
+{% unless page.title == "My Favorite Pages" %}
                 <li><a id="view-favorites" href="/favorites.html" data-proofer-ignore><i id="fav-nav-icon" class="fa fa-star-o"></i> View Favorites</a></li>
+{% endunless %}
                 <!-- entries without drop-downs appear here -->
 
 {% assign topnav = site.data[page.topnav] %}
