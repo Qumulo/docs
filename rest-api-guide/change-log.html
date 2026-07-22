@@ -1715,6 +1715,24 @@ fetch('/data/website.json')
           
           
           <li>
+            <a title="portal/quorum/events" href="/rest-api-guide/cloud-data-fabric-v1/portal_quorum_events.html">
+              portal/<wbr>quorum/<wbr>events
+              <span class="tag-container">
+              
+                <span class="apiversion v1">v1</span>
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
             <a title="portal/spokes" href="/rest-api-guide/cloud-data-fabric-v1/portal_spokes.html">
               portal/<wbr>spokes
               <span class="tag-container">
@@ -8979,9 +8997,12 @@ $(document).ready(function() {
 
 <h2 id="qumulo-core-791">Qumulo Core 7.9.1</h2>
 
-<p>Added <code>lock</code> parameter to <code>PATCH /v1/files/{ref}/info/attributes</code> response</p>
+<ul>
+  <li>Removed <code>/v1/portal/quorum/events</code></li>
+  <li>Added <code>lock</code> parameter to <code>PATCH /v1/files/{ref}/info/attributes</code> response</li>
+</ul>
 
-<h2 id="qumulo-core-7901">Qumulo Core 7.9.0.1</h2>
+<h2 id="qumulo-core-7902">Qumulo Core 7.9.0.2</h2>
 
 <ul>
   <li>Removed <code>/v1/snapshots/calculate-used-capacity</code></li>
@@ -8991,6 +9012,7 @@ $(document).ready(function() {
 <details>
   <summary>Click to expand</summary>
   <ul>
+    <li>Added <code>GET /v1/portal/quorum/events</code></li>
     <li>Added <code>GET | POST /v2/audit/destinations/</code></li>
     <li>Added <code>DELETE | GET | PATCH | PUT /v2/audit/destinations/{id}</code></li>
     <li>Added <code>GET /v2/audit/destinations/{id}/status</code></li>
@@ -9593,6 +9615,9 @@ $(document).ready(function() {
         
     
   
+    
+      
+        
     
       
         

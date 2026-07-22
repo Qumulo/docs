@@ -2736,6 +2736,7 @@ $(document).ready(function() {
   <li>Added support for Microsoft Hyper-V edge clusters</li>
   <li>Resolved issues with <code class="language-plaintext highlighter-rouge">/v1/files</code> REST API endpoints</li>
   <li>Resolved an issue with enumerating snapshots while using the NFSv3 and NFSv4.1 protocols</li>
+  <li>Resolved an issue with quorum formation caused by audit server address misconfiguration</li>
 </ul>
 
 <h3 id="change-log">Change Log</h3>
@@ -2743,22 +2744,43 @@ $(document).ready(function() {
   <li><a href="https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-791">REST API</a></li>
 </ul>
 
-<h2 id="qumulo-core-7901-quarterly">Qumulo Core 7.9.0.1 (Quarterly)</h2>
+<h2 id="qumulo-core-7902-quarterly">Qumulo Core 7.9.0.2 (Quarterly)</h2>
 <p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a><span class="emoji">🔒</span></p>
 
 <h3 id="features-and-improvements-1">Features and Improvements</h3>
 
 <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
 <ul>
-  <li>For appliance hardware installations, this release upgrades the host kernel on Ubuntu 24.04 from 6.8.0-85 to 6.8.0-117.</li>
-  <li>This release resolves an issue where, in certain scenarios, Qumulo Core could crash while upgrading on-disk structures.</li>
-  <li>This release resolves an issue with handling an internal encoding inconsistency from legacy builds.</li>
-  <li>This release disables the <code>algif_aead</code> kernel module to mitigate the <a target="_blank" href="https://copy.fail/">Copy Fail</a> (<a target="_blank" href="https://nvd.nist.gov/vuln/detail/CVE-2026-31431">CVE-2026-31431</a>) vulnerability.</li>
+  <li>
+    This release makes critical improvements:
+    <ul>
+      <li><strong>Cloud Native Qumulo (CNQ), Azure Native Qumulo (ANQ), and Stratus Accelerator Clusters:</strong> Improved cluster start-up times.</li>
+      <li><strong>Appliance Hardware Installations:</strong> Upgraded the host kernel on Ubuntu 24.04, from 6.8.0-85 to 6.8.0-117</li>
+      <li>Disabled the <code>algif_aead</code> kernel module to mitigate the <a target="_blank" href="https://copy.fail/">Copy Fail</a> (<a target="_blank" href="https://nvd.nist.gov/vuln/detail/CVE-2026-31431">CVE-2026-31431</a>) vulnerability.</li> 
+    </ul>
+  </li>
+  <li>
+    This release adds important cluster management functionality:
+    <ul>
+      <li>Added the <code>GET /v1/portal/quorum/events</code> REST API endpoint and the <code>qq portal_list_quorum_events</code> CLI command to let you retrieve recent portal quorum success and abandon events recorded by cluster nodes.</li>
+    </ul>
+  </li>
+  <li>
+    This release resolves issues that previously:
+    <ul>
+      <li>Prevented the system from handling an internal encoding inconsistency from legacy builds</li>
+      <li>Prevented quorum formation if the audit server address specified in the audit configuration isn't a valid IP address or DNS name</li>
+      <li>Prevented Nexus agent on nodes in a Qumulo Core cluster from detecting a cleanly closed connection to Nexus and reconnecting, causing nodes to continue reporting metrics without being able to be managed from Nexus until the connection was reset</li>
+      <li>Could cause Qumulo Core to become unresponsive if a remote syslog endpoint configured for audit log delivery becomes unreachable</li>
+      <li>Could cause Qumulo Core to crash if a multi-part upload to a versioned S3 bucket took longer than approximately 10 seconds</li>
+      <li>Could cause Qumulo Core to crash while upgrading on-disk structures in certain scenarios</li>
+    </ul>
+  </li>
   <li>
     This release has special upgrade provisions:
     <ul>
       <li>
-        <strong>Before the upgrade to Qumulo Core 7.9.0.1</strong>
+        <strong>Before the upgrade to Qumulo Core 7.9.0.2</strong>
         <ul>
           <li><strong>All Clusters:</strong> Ensure that your cluster has at least 1 GB of available capacity for each node (for example, a 4-node cluster requires 4 GB of available capacity). If your cluster doesn't have sufficient total available capacity, you must free up or expand your cluster's capacity.</li>
           <li>
@@ -2868,7 +2890,7 @@ $(document).ready(function() {
 
 <h3 id="change-log-1">Change Log</h3>
 <ul>
-  <li><a href="https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-790-quarterly">REST API</a></li>
+  <li><a href="https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7902-quarterly">REST API</a></li>
 </ul>
 
 <h2 id="qumulo-core-7843">Qumulo Core 7.8.4.3</h2>
@@ -2964,11 +2986,10 @@ $(document).ready(function() {
 
 <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
 <ul>
-  <li>This release resolves an issue with handling an internal encoding inconsistency from legacy builds.</li>
+  <li>Prevented the system from handling an internal encoding inconsistency from legacy builds</li>
   <li>This release resolves an issue with the upgrade process that previously caused the Qumulo cluster to become available after a delay.</li>
-  <li>This release disables the <code>algif_aead</code> kernel module to mitigate the <a target="_blank" href="https://copy.fail/">Copy Fail</a> (<a target="_blank" href="https://nvd.nist.gov/vuln/detail/CVE-2026-31431">CVE-2026-31431</a>) vulnerability.</li>
+  <li>the <code>algif_aead</code> kernel module to mitigate the <a target="_blank" href="https://copy.fail/">Copy Fail</a> (<a target="_blank" href="https://nvd.nist.gov/vuln/detail/CVE-2026-31431">CVE-2026-31431</a>) vulnerability.</li>
   <li>This release improves the ability of appliance-image-based Qumulo Core clusters that use host-managed networking to withstand networking issues.</li>
-  <li>This release resolves an issue with an uncommon sequence of operations that previously could cause an internal encoding inconsistency.</li>
 </ul>
 </div>
 <ul>
@@ -2993,6 +3014,7 @@ $(document).ready(function() {
 <p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a><span class="emoji">🔒</span></p>
 
 <h3 id="features-and-improvements-7">Features and Improvements</h3>
+
 <div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> This release resolves an issue with an uncommon sequence of operations that previously could cause an internal encoding inconsistency.</div>
 
 <ul>
@@ -3078,7 +3100,7 @@ $(document).ready(function() {
 <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
 <ul>
   <li>This release resolves an issue with the upgrade process that previously caused the Qumulo cluster to become available after a delay.</li>
-  <li>This release disables the <code>algif_aead</code> kernel module to mitigate the <a target="_blank" href="https://copy.fail/">Copy Fail</a> (<a target="_blank" href="https://nvd.nist.gov/vuln/detail/CVE-2026-31431">CVE-2026-31431</a>) vulnerability.</li>
+  <li>the <code>algif_aead</code> kernel module to mitigate the <a target="_blank" href="https://copy.fail/">Copy Fail</a> (<a target="_blank" href="https://nvd.nist.gov/vuln/detail/CVE-2026-31431">CVE-2026-31431</a>) vulnerability.</li>
   <li>This release resolves a kernel incompatibility with hardware platforms that use AMD EPYC 9004 Series (AMD Genoa and later) CPUs.</li>
   <li>This release resolves an issue where previously it was possible for QFSD to crash when system clock time was moved "backwards" while Cloud Data Fabric (CDF) is enabled for a Qumulo cluster.</li>
   <li>To prevent Qumulo Core from consuming a large amount of memory when an Intel NIC is installed in a node, we have blacklisted the <code>irdma</code> kernel module in Qumulo Core 7.7.0 (and higher).</li>

@@ -5172,6 +5172,22 @@ fetch('/data/website.json')
           
           
           <li>
+            <a title="portal_list_quorum_events" href="/qq-cli-command-guide/portal/portal_list_quorum_events.html">
+              portal_list_quorum_events
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
             <a title="portal_list_spokes" href="/qq-cli-command-guide/portal/portal_list_spokes.html">
               portal_list_spokes
               <span class="tag-container">
@@ -8127,8 +8143,8 @@ $(document).ready(function() {
 
 
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq object_bridge_create <span class="o">[</span><span class="nt">-h</span><span class="o">]</span> <span class="nt">--bucket-uri</span> BUCKET_URI <span class="nt">--mount-path</span> MOUNT_PATH <span class="o">[</span><span class="nt">--key-prefix</span> KEY_PREFIX] <span class="o">[</span><span class="nt">--delimiter</span> DELIMITER] <span class="o">[</span><span class="nt">--access-key-id</span> ACCESS_KEY_ID] <span class="o">[</span><span class="nt">--secret-access-key</span> SECRET_ACCESS_KEY] <span class="o">[</span><span class="nt">--key-vault-hostname</span> KEY_VAULT_HOSTNAME]
-    <span class="o">[</span><span class="nt">--notification-queue-url</span> NOTIFICATION_QUEUE_URL]
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq object_bridge_create <span class="o">[</span><span class="nt">-h</span><span class="o">]</span> <span class="nt">--bucket-uri</span> BUCKET_URI <span class="nt">--mount-path</span> MOUNT_PATH <span class="o">[</span><span class="nt">--key-prefix</span> KEY_PREFIX] <span class="o">[</span><span class="nt">--access-key-id</span> ACCESS_KEY_ID]
+    <span class="o">[</span><span class="nt">--secret-access-key</span> SECRET_ACCESS_KEY]
 </code></pre></div></div>
 
 
@@ -8151,7 +8167,7 @@ $(document).ready(function() {
       
     </td>
     <td>
-      Full bucket URI. Examples: https://my-bucket.s3.us-west-2.amazonaws.com/ or https://myaccount.blob.core.windows.net/my-container
+      Full bucket URI. Examples: https://my-bucket.s3.us-west-2.amazonaws.com/ or https://minio.local:9000/my-bucket
     </td>
   </tr>
 
@@ -8185,20 +8201,6 @@ $(document).ready(function() {
 
   <tr>
     <td>
-      <code>--delimiter</code>
-    </td>
-    <td>
-      
-        No
-      
-    </td>
-    <td>
-      Object-key separator used to project bridge directories. Defaults to "/".
-    </td>
-  </tr>
-
-  <tr>
-    <td>
       <code>--access-key-id</code>
     </td>
     <td>
@@ -8222,34 +8224,6 @@ $(document).ready(function() {
     </td>
     <td>
       Secret key for private S3 endpoints. Omit for AWS ambient credentials.
-    </td>
-  </tr>
-
-  <tr>
-    <td>
-      <code>--key-vault-hostname</code>
-    </td>
-    <td>
-      
-        No
-      
-    </td>
-    <td>
-      Azure Key Vault hostname (e.g. my-vault.vault.azure.net) from which to fetch SAS tokens for an Azure Blob bucket. Mutually exclusive with --access-key-id/--secret-access-key.
-    </td>
-  </tr>
-
-  <tr>
-    <td>
-      <code>--notification-queue-url</code>
-    </td>
-    <td>
-      
-        No
-      
-    </td>
-    <td>
-      URL of an SQS queue that delivers this bucket's object-change notifications. Omit to use cache expiry only.
     </td>
   </tr>
 
@@ -9012,6 +8986,9 @@ $(document).ready(function() {
         
     
   
+    
+      
+        
     
       
         

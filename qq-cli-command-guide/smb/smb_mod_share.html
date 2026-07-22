@@ -5172,6 +5172,22 @@ fetch('/data/website.json')
           
           
           <li>
+            <a title="portal_list_quorum_events" href="/qq-cli-command-guide/portal/portal_list_quorum_events.html">
+              portal_list_quorum_events
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
             <a title="portal_list_spokes" href="/qq-cli-command-guide/portal/portal_list_spokes.html">
               portal_list_spokes
               <span class="tag-container">
@@ -8182,9 +8198,10 @@ ID Trustee                        Type    Rights
 
 
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq smb_mod_share <span class="o">[</span><span class="nt">-h</span><span class="o">]</span> <span class="o">(</span><span class="nt">--id</span> ID | <span class="nt">--name</span> NAME<span class="o">)</span> <span class="o">[</span><span class="nt">--tenant-id</span> TENANT_ID] <span class="o">[</span><span class="nt">--new-name</span> NEW_NAME] <span class="o">[</span><span class="nt">--new-tenant-id</span> NEW_TENANT_ID] <span class="o">[</span><span class="nt">--fs-path</span> FS_PATH] <span class="o">[</span><span class="nt">--description</span> DESCRIPTION] <span class="o">[</span><span class="nt">--access-based-enumeration-enabled</span> <span class="o">{</span><span class="nb">true</span>,false<span class="o">}]</span> <span class="o">[</span><span class="nt">--create-fs-path</span><span class="o">]</span>
-    <span class="o">[</span><span class="nt">--expand-fs-path-variables</span><span class="o">]</span> <span class="o">[</span><span class="nt">--default-file-create-mode</span> DEFAULT_FILE_CREATE_MODE] <span class="o">[</span><span class="nt">--default-directory-create-mode</span> DEFAULT_DIRECTORY_CREATE_MODE] <span class="o">[</span><span class="nt">--require-encryption</span> <span class="o">{</span><span class="nb">true</span>,false<span class="o">}]</span>
-    <span class="o">[</span><span class="nt">--offline-files-caching-mode</span> <span class="o">{</span>no_caching,manual_caching,automatic_caching<span class="o">}]</span> <span class="o">[</span><span class="nt">--json</span><span class="o">]</span> <span class="o">[</span><span class="nt">--full-control-hosts</span> IP/RANGE <span class="o">[</span>IP/RANGE ...]] <span class="o">[</span><span class="nt">--read-only-hosts</span> IP/RANGE <span class="o">[</span>IP/RANGE ...]] <span class="o">[</span><span class="nt">--deny-hosts</span> IP/RANGE <span class="o">[</span>IP/RANGE ...]]
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq smb_mod_share <span class="o">[</span><span class="nt">-h</span><span class="o">]</span> <span class="o">(</span><span class="nt">--id</span> ID | <span class="nt">--name</span> NAME<span class="o">)</span> <span class="o">[</span><span class="nt">--tenant-id</span> TENANT_ID] <span class="o">[</span><span class="nt">--new-name</span> NEW_NAME] <span class="o">[</span><span class="nt">--new-tenant-id</span> NEW_TENANT_ID] <span class="o">[</span><span class="nt">--fs-path</span> FS_PATH]
+    <span class="o">[</span><span class="nt">--description</span> DESCRIPTION] <span class="o">[</span><span class="nt">--access-based-enumeration-enabled</span> <span class="o">{</span><span class="nb">true</span>,false<span class="o">}]</span> <span class="o">[</span><span class="nt">--create-fs-path</span><span class="o">]</span> <span class="o">[</span><span class="nt">--expand-fs-path-variables</span><span class="o">]</span>
+    <span class="o">[</span><span class="nt">--default-file-create-mode</span> DEFAULT_FILE_CREATE_MODE] <span class="o">[</span><span class="nt">--default-directory-create-mode</span> DEFAULT_DIRECTORY_CREATE_MODE] <span class="o">[</span><span class="nt">--require-encryption</span> <span class="o">{</span><span class="nb">true</span>,false<span class="o">}]</span>
+    <span class="o">[</span><span class="nt">--json</span><span class="o">]</span> <span class="o">[</span><span class="nt">--full-control-hosts</span> IP/RANGE <span class="o">[</span>IP/RANGE ...]] <span class="o">[</span><span class="nt">--read-only-hosts</span> IP/RANGE <span class="o">[</span>IP/RANGE ...]] <span class="o">[</span><span class="nt">--deny-hosts</span> IP/RANGE <span class="o">[</span>IP/RANGE ...]]
     <span class="o">[</span><span class="nt">--deny-all-hosts</span><span class="o">]</span>
 </code></pre></div></div>
 
@@ -8385,25 +8402,6 @@ ID Trustee                        Type    Rights
     </td>
     <td>
       Require all traffic for this share to be encrypted. If true, clients without encryption capabilities will not be able to connect.
-    </td>
-  </tr>
-
-  <tr>
-    <td>
-      <code>--offline-files-caching-mode</code>
-    </td>
-    <td>
-      
-        No
-      
-    </td>
-    <td>
-      
-                Offline-files caching mode advertised to SMB clients. When set to no_caching,
-                client-side caching is disabled. When set to manual_caching, clients may cache files
-                that the user designates as available offline. When set to automatic_caching,
-                clients may cache files as they are opened.
-                
     </td>
   </tr>
 
@@ -9231,6 +9229,9 @@ ID Trustee                        Type    Rights
         
     
   
+    
+      
+        
     
       
         
