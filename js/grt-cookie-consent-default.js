@@ -1,23 +1,19 @@
 window.dataLayer = window.dataLayer || [];
-function gtag() { dataLayer.push(arguments); }
+function gtag(){dataLayer.push(arguments);}
 
-// Read saved user choice from cookie
 var match = document.cookie.match(new RegExp('(^| )acceptgrt=([^;]+)'));
 var userChoice = match ? match[2] : null;
 
-if (userChoice === 'all') {
-  gtag('consent', 'default', {
-    'analytics_storage': 'granted',
-    'ad_storage': 'granted',
-    'ad_user_data': 'granted',
-    'ad_personalization': 'granted'
-  });
-} else {
-  // Default to DENIED for initial visits, 'essential', or 'deny'
-  gtag('consent', 'default', {
-    'analytics_storage': 'denied',
-    'ad_storage': 'denied',
-    'ad_user_data': 'denied',
-    'ad_personalization': 'denied'
-  });
-}
+gtag('js', new Date());
+
+// Set default consent state BEFORE GA config runs
+gtag('consent', 'default', {
+  'analytics_storage': userChoice === 'all' ? 'granted' : 'denied',
+  'ad_storage': userChoice === 'all' ? 'granted' : 'denied',
+  'ad_user_data': userChoice === 'all' ? 'granted' : 'denied',
+  'ad_personalization': userChoice === 'all' ? 'granted' : 'denied'
+});
+
+gtag('config', 'G-81J7N4LMSE', { 
+  cookie_flags: 'SameSite=None;Secure'
+});
