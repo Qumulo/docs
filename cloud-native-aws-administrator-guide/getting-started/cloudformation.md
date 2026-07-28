@@ -5,8 +5,6 @@ permalink: /cloud-native-aws-administrator-guide/getting-started/cloudformation.
 redirect_from:
   - /aws-administrator-guide/getting-started/cloudformation.html
   - /aws-administrator-guide/getting-started/deploying-instance-cloudformation.html
-redirect_to:
-  - /cloud-native-aws-administrator-guide/getting-started/
 sidebar: cloud_native_aws_administrator_guide_sidebar
 varRepoLink: <code>aws-cloudformation-cnq-&lt;x.y&gt;.zip</code> file (the version in the file name corresponds to the provisioning scripts, not to the Qumulo Core version)
 deployment: cfn

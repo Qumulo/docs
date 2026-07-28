@@ -5,8 +5,6 @@ permalink: /cloud-native-aws-administrator-guide/getting-started/terraform.html
 redirect_from:
   - /aws-administrator-guide/getting-started/terraform.html
   - /aws-administrator-guide/getting-started/deploying-instance-terraform.html
-redirect_to:
-  - /cloud-native-aws-administrator-guide/getting-started/
 sidebar: cloud_native_aws_administrator_guide_sidebar
 varRepoLink: <code>aws-terraform-cnq-&lt;x.y&gt;.zip</code> file (the version in the file name corresponds to the provisioning scripts, not to the Qumulo Core version)
 deployment: tf
