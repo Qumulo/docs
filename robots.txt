@@ -1,3 +1,7 @@
+# CONTENT SIGNALS (IETF draft-romm-aipref-contentsignals)
+# Explicitly grants permission for AI search, model training, and real-time inference/RAG
+Content-Signal: search=yes, ai-train=yes, ai-input=yes
+
 # RULES FOR ALL USER AGENTS
 User-agent: *
 
