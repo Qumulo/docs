@@ -1834,6 +1834,10 @@ table code {background-color: transparent;}
     background-color: transparent !important;
 }
 
+pre.manual:first-of-type {
+    margin: 10px auto 20px auto;
+}
+
 table p {
     margin-top: 12px;
     margin-bottom: 12px;

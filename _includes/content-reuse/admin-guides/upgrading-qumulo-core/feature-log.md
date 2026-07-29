@@ -8,10 +8,23 @@ For information about upgrade types for each release, see <a href='mode-referenc
 {% capture noAPIchanges %}This release contains no REST API changes.{% endcapture %}
 {% capture platUpg %}This release of Qumulo Core is a _platform upgrade_ that requires either a complete reboot (rebooting all nodes in your cluster at the same time) or a rolling reboot (rebooting the nodes in your cluster one at a time).{% endcapture %}
 
-## Qumulo Core 7.9.1
+## Qumulo Core 7.9.1.1
 {{ nexusLink }}
 
 ### Features and Improvements
+{% capture couldCrash %}crash while upgrading on-disk structures in certain scenarios{% endcapture %}
+{{site.data.alerts.important}}
+<ul>
+  <li>This release resolves an issue that previously could cause Qumulo Core to {{ couldCrash }}.</li>
+  <li>
+    For clusters running Qumulo Core 7.9.0 (and higher), you must wait for on-disk upgrades to complete before you can upgrade the cluster to a higher version (this process typically takes 1-2 days). To check whether a cluster is ready to be upgraded, you can use the Qumulo REST API or the qq CLI. For example:
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight" style="position: relative;"><button class="btn btn-xs btn-default copy-btn" title="Copy to clipboard"><i class="fa fa-copy"></i></button><code>POST /v2/upgrade/verify-image</code></pre></div></div>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight" style="position: relative;"><button class="btn btn-xs btn-default copy-btn" title="Copy to clipboard"><i class="fa fa-copy"></i></button><code>qq upgrade_verify_image \
+  --path /example/path/to/target/image</code></pre></div></div>
+  </li>
+</ul>
+{{site.data.alerts.end}}
+
 * Configured the Qumulo Core Product Package `.rpm` packages to allow firewalling and Security-Enhanced Linux (SELinux) in enforcing mode, and to enable these features upon installation
 * Added support for RDMA over NFSv3 on production clusters
 * Added support for Microsoft Hyper-V edge clusters
@@ -52,7 +65,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
       <li>Prevented Nexus agent on nodes in a Qumulo Core cluster from detecting a cleanly closed connection to Nexus and reconnecting, causing nodes to continue reporting metrics without being able to be managed from Nexus until the connection was reset</li>
       <li>Could cause Qumulo Core to become unresponsive if a remote syslog endpoint configured for audit log delivery becomes unreachable</li>
       <li>Could cause Qumulo Core to crash if a multi-part upload to a versioned S3 bucket took longer than approximately 10 seconds</li>
-      <li>Could cause Qumulo Core to crash while upgrading on-disk structures in certain scenarios</li>
+      <li>Could cause Qumulo Core to {{ couldCrash }}</li>
     </ul>
   </li>
   <li>

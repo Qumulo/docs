@@ -11,7 +11,7 @@ layout: page
 <style>div#toc{height:200px;overflow:auto;}</style>
 
 
-## Qumulo Core 7.9.1
+## Qumulo Core 7.9.1.1
 {{ nexusLink }}
 <ul>
   <li>Removed <code>/v1/portal/quorum/events</code></li>
