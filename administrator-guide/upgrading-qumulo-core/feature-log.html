@@ -2693,10 +2693,23 @@ $(document).ready(function() {
 
 <p>For information about upgrade types for each release, see <a href="mode-reference.html">Qumulo Core Upgrade Mode Reference</a>.</p>
 
-<h2 id="qumulo-core-791">Qumulo Core 7.9.1</h2>
+<h2 id="qumulo-core-7911">Qumulo Core 7.9.1.1</h2>
 <p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a><span class="emoji">🔒</span></p>
 
 <h3 id="features-and-improvements">Features and Improvements</h3>
+
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
+<ul>
+  <li>This release resolves an issue that previously could cause Qumulo Core to crash while upgrading on-disk structures in certain scenarios.</li>
+  <li>
+    For clusters running Qumulo Core 7.9.0 (and higher), you must wait for on-disk upgrades to complete before you can upgrade the cluster to a higher version (this process typically takes 1-2 days). To check whether a cluster is ready to be upgraded, you can use the Qumulo REST API or the qq CLI. For example:
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight" style="position: relative;"><button class="btn btn-xs btn-default copy-btn" title="Copy to clipboard"><i class="fa fa-copy"></i></button><code>POST /v2/upgrade/verify-image</code></pre></div></div>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight" style="position: relative;"><button class="btn btn-xs btn-default copy-btn" title="Copy to clipboard"><i class="fa fa-copy"></i></button><code>qq upgrade_verify_image \
+  --path /example/path/to/target/image</code></pre></div></div>
+  </li>
+</ul>
+</div>
+
 <ul>
   <li>Configured the Qumulo Core Product Package <code class="language-plaintext highlighter-rouge">.rpm</code> packages to allow firewalling and Security-Enhanced Linux (SELinux) in enforcing mode, and to enable these features upon installation</li>
   <li>Added support for RDMA over NFSv3 on production clusters</li>
