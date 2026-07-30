@@ -645,7 +645,7 @@ ingest_docs_portal() {
 # Ingest care.qumulo.com into Vectara corpus 4
 ingest_care_portal() {
     start_in_docs_dir
-    echo "Ingesting cqre.qumulo.com into Vectara..."
+    echo "Ingesting care.qumulo.com into Vectara..."
     no_toolchain
     check_vectara_ingest_repo
     check_secrets_toml
