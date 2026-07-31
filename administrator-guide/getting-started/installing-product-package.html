@@ -2840,31 +2840,32 @@ $(document).ready(function() {
 
 <p>You can choose a networking mode depending on the version of Qumulo Core that you want to install.</p>
 
-<ul id="host-managed-networking">
-  <li><strong>Host-Managed Networking:</strong> This is the default networking mode for Qumulo Core Product Package installations of Qumulo Core 7.8.0.4 (and higher).</li>
-</ul>
-
-<p>In this networking mode:</p>
 <ul>
-  <li>You’re responsible for configuring most of your network infrastructure.</li>
-  <li>Qumulo provides configurations only for tenants and floating IP addresses.</li>
+  <li>
+    <p id="host-managed-networking"><strong>Host-Managed Networking:</strong> This is the default networking mode for Qumulo Core Product Package installations of Qumulo Core 7.8.0.4 (and higher).</p>
+
+    <p>In this networking mode:</p>
+    <ul>
+      <li>You’re responsible for configuring most of your network infrastructure.</li>
+      <li>Qumulo provides configurations only for tenants and floating IP addresses.</li>
+    </ul>
+
+    <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> You can use Host-Managed Networking with or without the Qumulo REST API. However, using floating IP addresses requires tagging with alternative names and REST API access.</div>
+
+    <p>To disable Host-Managed Networking, enable Qumulo-Managed Networking when you <a href="#install-qumulo-core-product-package">install the Qumulo Core Product Package</a>.</p>
+  </li>
+  <li>
+    <p id="qumulo-managed-networking"><strong>Qumulo-Managed Networking</strong>: This is the default networking mode for Qumulo Core Product Package installations of Qumulo Core versions lower than 7.8.0.4.</p>
+
+    <p>In this networking mode:</p>
+    <ul>
+      <li>Qumulo is responsible for configuring your entire network infrastructure.</li>
+      <li>You can change only a limited number of settings.</li>
+    </ul>
+
+    <p>To enable Host-Managed Networking for Qumulo Core versions lower than 7.8.0.4, enable Qumulo-Managed Networking when you <a href="#install-qumulo-core-product-package">install the Qumulo Core Product Package</a>.</p>
+  </li>
 </ul>
-
-<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> You can use Host-Managed Networking with or without the Qumulo REST API. However, using floating IP addresses requires tagging with alternative names and REST API access.</div>
-
-<p>To disable Host-Managed Networking, enable Qumulo-Managed Networking when you <a href="#install-qumulo-core-product-package">install the Qumulo Core Product Package</a>.</p>
-
-<ul id="qumulo-managed-networking">
-  <li><strong>Qumulo-Managed Networking</strong>: This is the default networking mode for Qumulo Core Product Package installations of Qumulo Core versions lower than 7.8.0.4.</li>
-</ul>
-
-<p>In this networking mode:</p>
-<ul>
-  <li>Qumulo is responsible for configuring your entire network infrastructure.</li>
-  <li>You can change only a limited number of settings.</li>
-</ul>
-
-<p>To enable Host-Managed Networking for Qumulo Core versions lower than 7.8.0.4, enable Qumulo-Managed Networking when you <a href="#install-qumulo-core-product-package">install the Qumulo Core Product Package</a>.</p>
 
 <h2 id="install-qumulo-core-product-package">To Install the Qumulo Core Product Package</h2>
 <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip</b><br />
