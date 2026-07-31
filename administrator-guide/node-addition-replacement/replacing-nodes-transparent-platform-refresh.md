@@ -43,7 +43,7 @@ There are two node replacement plan types:
 * When a replacement step begins, Qumulo Core distributes floating IP addresses among the nodes in the [combined cluster](#combined-cluster). After Qumulo Core removes nodes marked for replacement, it redistributes any client connections that use floating IP addresses among the nodes that remain in the cluster.
 
 * While a node replacement step is in progress, both new nodes and nodes marked for replacement appear on the **Cluster** page of the Qumulo Core Web UI and clients can connect to any of the nodes in the _combined cluster_ while the step is in progress.
-{: #combined-cluster}
+  {: #combined-cluster}
 
 * When a node replacement step is complete, the reassignment of static IP addresses differs between versions of Qumulo Core:
 

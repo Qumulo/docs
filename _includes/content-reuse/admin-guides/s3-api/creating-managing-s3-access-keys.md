@@ -19,10 +19,10 @@ An _identity_ is a single principal from an identity provider (IdP). Examples of
 An _access key_ (or _access key pair)_ is comprised of an S3 access key ID and an S3 secret access key.
 
 * The _access key ID_ is the public component of an S3 access key pair. It identifies the user that performs an S3 request.
-{: #access-key-id}
+  {: #access-key-id}
 
 * The _secret access key_ (or _secret key_) is the private component of an S3 access key pair. The client uses the secret access key to sign requests. The server uses the secret access key to validate request signatures.
-{: #secret-access-key}
+  {: #secret-access-key}
 
 {{site.data.alerts.important}}
 <ul>
@@ -118,7 +118,7 @@ You can specify an identity by using:
 * An Active Directory Security Identifier. For example: `SID:{{site.everyoneGroupSID}}`
 
 * A Qumulo _auth ID_, Qumulo Core's common representation for identities, in the form of a numeric identifier. For example: `auth_id:513`
-{: #auth-id}
+  {: #auth-id}
 
 {% include important.html content="Currently, it isn't possible to associate an S3 access key with a POSIX group ID (GID)." %}
 

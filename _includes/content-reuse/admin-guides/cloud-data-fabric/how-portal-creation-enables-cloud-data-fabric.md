@@ -18,7 +18,7 @@ The following key terms help define the components of Cloud Data Fabric function
 
 ### Clusters and Root Directories
 * **Cluster:** Any Qumulo cluster that shares a portion of its file system for a hub portal or a spoke portal. {{site.gns.dirOnCluster}} a spoke portal or a hub portal.
-{: #cluster}
+  {: #cluster}
 
   {{site.data.alerts.tip}}
   <p>Because <em>a portion</em> of a Qumulo cluster's file system can hold the hub portal root directory or spoke portal root directory, using the correct terminology can help avoid confusion:</p>
@@ -31,7 +31,7 @@ The following key terms help define the components of Cloud Data Fabric function
   {{site.data.alerts.end}}
 
 * **Spoke Portal Root Directory, Hub Portal Root Directory:** A directory on a cluster that uses a portion of its file system for the _hub portal_ or _spoke portal_.
-{: #portal-root-directory}
+  {: #portal-root-directory}
 
   According to the file system permissions that a hub portal might impose, you can access a spoke portal root directory by using NFSv3, NFSv4.1 (Qumulo Core 7.4.3 and higher), SMB, the S3 API (7.5.3 and higher) or the Qumulo REST API.
 
@@ -39,13 +39,13 @@ The following key terms help define the components of Cloud Data Fabric function
   {% include note.html content=fyi762 %}
 
   * **Hub Portal Data:** Accessible to other Qumulo clusters through a [portal relationship](#portal-relationship) or through replication, and to clients that connect to the [hub portal host cluster](#cluster)
-{: #hub-portal-data}
+  {: #hub-portal-data}
 
   * **Spoke Portal Data:** Accessible only to clients that connect to the [spoke portal host cluster](#cluster)
-{: #spoke-portal-data}
+  {: #spoke-portal-data}
 
   * **Cluster-Local Data:** Data on a [hub portal host cluster or spoke portal host cluster](#cluster) which is located outside of the corresponding [portal root directory](#portal-root-directory), accessible to clients that connect to the cluster or to other Qumulo clusters through replication
-{: #cluster-local-data}
+  {: #cluster-local-data}
 
   The following table illustrates the various content types and ways in which this data can be accessed.
 
@@ -108,16 +108,16 @@ In addition, Qumulo Core 7.6.2 introduces the following changes:
 
 ### Portals
 * **Spoke Portal:** An interface point on a Qumulo cluster that accesses a portion of the file system on another cluster (which has a _hub portal)_. {{site.gns.dirOnCluster}} spoke portal. {{site.gns.spokePortalInitiates}} You can configure multiple spoke portals on the same Qumulo cluster, as long as the spoke portal root directories don't overlap and the host cluster for each portal relationship is unique.
-{: #spoke-portal}
+  {: #spoke-portal}
 
   * **Read-Write Portal:** A spoke portal that can access, modify, and create any files or directories within one or more corresponding hub portal root directories (in the `Authorized` state) according to file system permissions.
-{: #read-write-portal}
+  {: #read-write-portal}
 
   * **Read-Only Portal:** A spoke portal that can access any files or directories within one or more corresponding hub portal root directories (in the `Authorized` state) according to file system permissions, but can't modify or create any files or directories regardless of file system permissions.
-{: #read-only-portal}
+  {: #read-only-portal}
 
 * **Hub Portal:** An interface point on a Qumulo cluster that shares a portion of its file system with another cluster (which has a _spoke portal)_. {{site.gns.dirOnCluster}} hub portal. {{site.gns.spokePortalInitiates}} You can configure multiple portal relationships, with the same hub portal root directory, with nested directories, or with independent ones.
-{: #hub-portal}
+  {: #hub-portal}
 
   {{site.data.alerts.note}}
   <ul>
@@ -128,13 +128,13 @@ In addition, Qumulo Core 7.6.2 introduces the following changes:
   {{site.data.alerts.end}}
 
 * **Portal Relationship:** A proposal that a spoke portal on one Qumulo cluster issues to another Qumulo cluster (with a _hub portal)_, which the Qumulo cluster with the hub portal _accepts_.
-{: #portal-relationship}
+  {: #portal-relationship}
 
 * **Peer Portal:** A portal that serves as a counterpart to another portal. For example, a hub portal is a peer portal to a spoke portal.
-{: #peer-portal}
+  {: #peer-portal}
 
 * **Peer Portal Address:** The IP address for a peer portal.
-{: #peer-portal-address}
+  {: #peer-portal-address}
 
 #### Portal Relationship States {#portal-relationship-states}
 A _portal relationship state_ indicates the stages of the [_spoke portal_](#spoke-portal) creation process, and the proposal or deletion of a [_portal relationship_](#portal-relationship).

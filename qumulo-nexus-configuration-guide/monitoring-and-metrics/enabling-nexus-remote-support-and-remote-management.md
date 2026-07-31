@@ -24,7 +24,7 @@ Qumulo Nexus includes two remote access components:
 * TCP traffic on port 443 for the `api.nexus.qumulo.com` hostname to allow Nexus connectivity
 
 * For Nexus Remote Management:
-{: #nexus-remote-management-prerequisites}
+  {: #nexus-remote-management-prerequisites}
 
   * A configured identity provider (IdP) and enabled SSO for Nexus
 
