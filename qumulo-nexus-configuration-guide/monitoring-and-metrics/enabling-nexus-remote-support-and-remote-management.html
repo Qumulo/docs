@@ -748,7 +748,7 @@ $(document).ready(function() {
 <div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> To let the Qumulo Care Team provide fast support when you need it most, we strongly recommend enabling both Nexus Remote Support and Nexus Remote Management.</div>
 
 <h2 id="prerequisites">Prerequisites</h2>
-<ul id="nexus-remote-management-prerequisites">
+<ul>
   <li>
     <p>Administrative access to your organization’s Nexus account</p>
   </li>
@@ -756,35 +756,35 @@ $(document).ready(function() {
     <p>TCP traffic on port 443 for the <code class="language-plaintext highlighter-rouge">api.nexus.qumulo.com</code> hostname to allow Nexus connectivity</p>
   </li>
   <li>
-    <p>For Nexus Remote Management:</p>
-  </li>
-</ul>
-
-<ul>
-  <li>
-    <p>A configured identity provider (IdP) and enabled SSO for Nexus</p>
-
-    <div class="alert alert-success" role="alert"><span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br /> For more information, see the <a href="../authentication/enabling-sso-with-idp-storage-administrator-workflow.html">storage administrator workflow</a> or the <a href="../authentication/enabling-sso-with-idp-system-administrator-workflow.html">system administrator workflow</a>.</div>
-  </li>
-  <li>
-    <p>A Qumulo cluster <a href="https://docs.qumulo.com/administrator-guide/authentication-qumulo-core/configuring-ad.html">joined to Active Directory (AD)</a></p>
-  </li>
-  <li>
-    <p>Users configured in your IdP with the following <a href="../authorization/managing-user-access.html#how-user-roles-work-in-qumulo-nexus">roles in Nexus</a>:</p>
+    <p id="nexus-remote-management-prerequisites">For Nexus Remote Management:</p>
 
     <ul>
       <li>
-        <p><code class="language-plaintext highlighter-rouge">View</code> or <code class="language-plaintext highlighter-rouge">Admin</code></p>
+        <p>A configured identity provider (IdP) and enabled SSO for Nexus</p>
+
+        <div class="alert alert-success" role="alert"><span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br /> For more information, see the <a href="../authentication/enabling-sso-with-idp-storage-administrator-workflow.html">storage administrator workflow</a> or the <a href="../authentication/enabling-sso-with-idp-system-administrator-workflow.html">system administrator workflow</a>.</div>
       </li>
       <li>
-        <p><code class="language-plaintext highlighter-rouge">Cluster API Access</code></p>
+        <p>A Qumulo cluster <a href="https://docs.qumulo.com/administrator-guide/authentication-qumulo-core/configuring-ad.html">joined to Active Directory (AD)</a></p>
+      </li>
+      <li>
+        <p>Users configured in your IdP with the following <a href="../authorization/managing-user-access.html#how-user-roles-work-in-qumulo-nexus">roles in Nexus</a>:</p>
+
+        <ul>
+          <li>
+            <p><code class="language-plaintext highlighter-rouge">View</code> or <code class="language-plaintext highlighter-rouge">Admin</code></p>
+          </li>
+          <li>
+            <p><code class="language-plaintext highlighter-rouge">Cluster API Access</code></p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p>Users who log in to Nexus by using the IdP <a href="../authentication/enabling-sso-with-idp-system-administrator-workflow.html#configure-identity-provider">resolve to AD users</a>.</p>
+
+        <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> The resolved AD user must have appropriate <a href="https://docs.qumulo.com/administrator-guide/authorization-qumulo-core/managing-role-based-access-control-rbac.html">RBAC roles assigned in Qumulo Core</a>.</div>
       </li>
     </ul>
-  </li>
-  <li>
-    <p>Users who log in to Nexus by using the IdP <a href="../authentication/enabling-sso-with-idp-system-administrator-workflow.html#configure-identity-provider">resolve to AD users</a>.</p>
-
-    <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> The resolved AD user must have appropriate <a href="https://docs.qumulo.com/administrator-guide/authorization-qumulo-core/managing-role-based-access-control-rbac.html">RBAC roles assigned in Qumulo Core</a>.</div>
   </li>
 </ul>
 

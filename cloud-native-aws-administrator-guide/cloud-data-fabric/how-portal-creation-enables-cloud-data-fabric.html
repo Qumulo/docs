@@ -2450,79 +2450,80 @@ $(document).ready(function() {
 <p>The following key terms help define the components of Cloud Data Fabric functionality in Qumulo Core.</p>
 
 <h3 id="clusters-and-root-directories">Clusters and Root Directories</h3>
-<ul id="cluster">
-  <li><strong>Cluster:</strong> Any Qumulo cluster that shares a portion of its file system for a hub portal or a spoke portal. A directory on a cluster defines a <em>root directory</em> for a spoke portal or a hub portal.</li>
+<ul>
+  <li>
+    <p id="cluster"><strong>Cluster:</strong> Any Qumulo cluster that shares a portion of its file system for a hub portal or a spoke portal. A directory on a cluster defines a <em>root directory</em> for a spoke portal or a hub portal.</p>
+
+    <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip</b><br />
+<p>Because <em>a portion</em> of a Qumulo cluster's file system can hold the hub portal root directory or spoke portal root directory, using the correct terminology can help avoid confusion:</p>
+<ul>
+  <li><span class="emoji">❌</span> hub cluster</li>
+  <li><span class="emoji">✅</span> hub portal host cluster</li>
+  <li><span class="emoji">❌</span> spoke cluster</li>
+  <li><span class="emoji">✅</span> spoke portal host cluster</li>
 </ul>
+</div>
+  </li>
+  <li>
+    <p id="portal-root-directory"><strong>Spoke Portal Root Directory, Hub Portal Root Directory:</strong> A directory on a cluster that uses a portion of its file system for the <em>hub portal</em> or <em>spoke portal</em>.</p>
 
-<div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip</b><br />
-  <p>Because <em>a portion</em> of a Qumulo cluster's file system can hold the hub portal root directory or spoke portal root directory, using the correct terminology can help avoid confusion:</p>
-  <ul>
-    <li><span class="emoji">❌</span> hub cluster</li>
-    <li><span class="emoji">✅</span> hub portal host cluster</li>
-    <li><span class="emoji">❌</span> spoke cluster</li>
-    <li><span class="emoji">✅</span> spoke portal host cluster</li>
-  </ul>
-  </div>
+    <p>According to the file system permissions that a hub portal might impose, you can access a spoke portal root directory by using NFSv3, NFSv4.1 (Qumulo Core 7.4.3 and higher), SMB, the S3 API (7.5.3 and higher) or the Qumulo REST API.</p>
 
-<ul id="portal-root-directory">
-  <li><strong>Spoke Portal Root Directory, Hub Portal Root Directory:</strong> A directory on a cluster that uses a portion of its file system for the <em>hub portal</em> or <em>spoke portal</em>.</li>
+    <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> In Qumulo Core 7.6.2 (and higher), it is possible to configure up to 32 spoke portal root directories for each Qumulo cluster, for each portal relationship.</div>
+
+    <ul id="hub-portal-data">
+      <li><strong>Hub Portal Data:</strong> Accessible to other Qumulo clusters through a <a href="#portal-relationship">portal relationship</a> or through replication, and to clients that connect to the <a href="#cluster">hub portal host cluster</a></li>
+    </ul>
+
+    <ul id="spoke-portal-data">
+      <li><strong>Spoke Portal Data:</strong> Accessible only to clients that connect to the <a href="#cluster">spoke portal host cluster</a></li>
+    </ul>
+
+    <ul id="cluster-local-data">
+      <li><strong>Cluster-Local Data:</strong> Data on a <a href="#cluster">hub portal host cluster or spoke portal host cluster</a> which is located outside of the corresponding <a href="#portal-root-directory">portal root directory</a>, accessible to clients that connect to the cluster or to other Qumulo clusters through replication</li>
+    </ul>
+
+    <p>The following table illustrates the various content types and ways in which this data can be accessed.</p>
+
+    <table class="info-matrix">
+  <thead>
+    <tr>
+      <th style="vertical-align:middle" rowspan="2">Data Type</th>
+      <th style="text-align:center" colspan="4">Data Accessible Through&hellip;</th>
+    </tr>
+    <tr>
+      <th style="width:20%">Other Qumulo clusters through portal relationships</th>
+      <th style="width:20%">Other Qumulo clusters through replication</th>
+      <th style="width:20%">Clients that access the spoke portal host cluster</th>
+      <th style="width:20%">Clients that access the hub portal host cluster</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Hub Portal Data</th>
+      <td><span class="emoji">✅</span></td>
+      <td><span class="emoji">✅</span></td>
+      <td><span class="emoji">❌</span></td>
+      <td><span class="emoji">✅</span></td>
+    </tr>
+    <tr>
+      <th scope="row">Spoke Portal Data</th>
+      <td><span class="emoji">❌</span></td>
+      <td><span class="emoji">❌</span></td>
+      <td><span class="emoji">✅</span></td>
+      <td><span class="emoji">❌</span></td>
+    </tr>
+    <tr>
+      <th scope="row">Cluster-Local Data</th>
+      <td><span class="emoji">❌</span></td>
+      <td><span class="emoji">✅</span></td>
+      <td><span class="emoji">✅</span></td>
+      <td><span class="emoji">✅</span></td>
+    </tr>
+  </tbody>
+</table>
+  </li>
 </ul>
-
-<p>According to the file system permissions that a hub portal might impose, you can access a spoke portal root directory by using NFSv3, NFSv4.1 (Qumulo Core 7.4.3 and higher), SMB, the S3 API (7.5.3 and higher) or the Qumulo REST API.</p>
-
-<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> In Qumulo Core 7.6.2 (and higher), it is possible to configure up to 32 spoke portal root directories for each Qumulo cluster, for each portal relationship.</div>
-
-<ul id="hub-portal-data">
-  <li><strong>Hub Portal Data:</strong> Accessible to other Qumulo clusters through a <a href="#portal-relationship">portal relationship</a> or through replication, and to clients that connect to the <a href="#cluster">hub portal host cluster</a></li>
-</ul>
-
-<ul id="spoke-portal-data">
-  <li><strong>Spoke Portal Data:</strong> Accessible only to clients that connect to the <a href="#cluster">spoke portal host cluster</a></li>
-</ul>
-
-<ul id="cluster-local-data">
-  <li><strong>Cluster-Local Data:</strong> Data on a <a href="#cluster">hub portal host cluster or spoke portal host cluster</a> which is located outside of the corresponding <a href="#portal-root-directory">portal root directory</a>, accessible to clients that connect to the cluster or to other Qumulo clusters through replication</li>
-</ul>
-
-<p>The following table illustrates the various content types and ways in which this data can be accessed.</p>
-
-<table class="info-matrix">
-    <thead>
-      <tr>
-        <th style="vertical-align:middle" rowspan="2">Data Type</th>
-        <th style="text-align:center" colspan="4">Data Accessible Through&hellip;</th>
-      </tr>
-      <tr>
-        <th style="width:20%">Other Qumulo clusters through portal relationships</th>
-        <th style="width:20%">Other Qumulo clusters through replication</th>
-        <th style="width:20%">Clients that access the spoke portal host cluster</th>
-        <th style="width:20%">Clients that access the hub portal host cluster</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">Hub Portal Data</th>
-        <td><span class="emoji">✅</span></td>
-        <td><span class="emoji">✅</span></td>
-        <td><span class="emoji">❌</span></td>
-        <td><span class="emoji">✅</span></td>
-      </tr>
-      <tr>
-        <th scope="row">Spoke Portal Data</th>
-        <td><span class="emoji">❌</span></td>
-        <td><span class="emoji">❌</span></td>
-        <td><span class="emoji">✅</span></td>
-        <td><span class="emoji">❌</span></td>
-      </tr>
-      <tr>
-        <th scope="row">Cluster-Local Data</th>
-        <td><span class="emoji">❌</span></td>
-        <td><span class="emoji">✅</span></td>
-        <td><span class="emoji">✅</span></td>
-        <td><span class="emoji">✅</span></td>
-      </tr>
-    </tbody>
-  </table>
 
 <h4 id="multiple-root-directories">How Multiple Root Directories Work in Qumulo Core 7.2.0 (and Higher)</h4>
 <p>In Qumulo Core 7.2.0 (and higher), clusters can take advantage of the Cloud Data Fabric functionality that lets clusters across disparate geographic or infrastructural locations (on-premises and in the cloud) access the same data while maintaining independent namespace structures on each cluster (by setting a portion of the cluster’s file system as the <em>portal root directory).</em></p>
@@ -2556,40 +2557,38 @@ $(document).ready(function() {
 </ul>
 
 <h3 id="portals">Portals</h3>
-<ul id="spoke-portal">
-  <li><strong>Spoke Portal:</strong> An interface point on a Qumulo cluster that accesses a portion of the file system on another cluster (which has a <em>hub portal)</em>. A directory on a cluster defines a <em>root directory</em> for spoke portal. The spoke portal initiates the creation of a hub portal. You can configure multiple spoke portals on the same Qumulo cluster, as long as the spoke portal root directories don’t overlap and the host cluster for each portal relationship is unique.</li>
+<ul>
+  <li>
+    <p id="spoke-portal"><strong>Spoke Portal:</strong> An interface point on a Qumulo cluster that accesses a portion of the file system on another cluster (which has a <em>hub portal)</em>. A directory on a cluster defines a <em>root directory</em> for spoke portal. The spoke portal initiates the creation of a hub portal. You can configure multiple spoke portals on the same Qumulo cluster, as long as the spoke portal root directories don’t overlap and the host cluster for each portal relationship is unique.</p>
+
+    <ul id="read-write-portal">
+      <li><strong>Read-Write Portal:</strong> A spoke portal that can access, modify, and create any files or directories within one or more corresponding hub portal root directories (in the <code class="language-plaintext highlighter-rouge">Authorized</code> state) according to file system permissions.</li>
+    </ul>
+
+    <ul id="read-only-portal">
+      <li><strong>Read-Only Portal:</strong> A spoke portal that can access any files or directories within one or more corresponding hub portal root directories (in the <code class="language-plaintext highlighter-rouge">Authorized</code> state) according to file system permissions, but can’t modify or create any files or directories regardless of file system permissions.</li>
+    </ul>
+  </li>
+  <li>
+    <p id="hub-portal"><strong>Hub Portal:</strong> An interface point on a Qumulo cluster that shares a portion of its file system with another cluster (which has a <em>spoke portal)</em>. A directory on a cluster defines a <em>root directory</em> for hub portal. The spoke portal initiates the creation of a hub portal. You can configure multiple portal relationships, with the same hub portal root directory, with nested directories, or with independent ones.</p>
+
+    <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note</b><br />
+<ul>
+  <li>It isn't possible to create a hub portal without a spoke portal. For example, a spoke portal on Cluster A can propose a portal relationship to Cluster B. This action initiates the creation of a hub portal in a <code>Pending</code> state on Cluster B.</li>
+  <li>You must accept the portal relationship and then authorize any hub portal root directories before you can use them.</li>
+  <li>While a spoke portal can be either <em>read-only</em> or <em>read-write</em>, a hub portal is always read-write.</li>
 </ul>
-
-<ul id="read-write-portal">
-  <li><strong>Read-Write Portal:</strong> A spoke portal that can access, modify, and create any files or directories within one or more corresponding hub portal root directories (in the <code class="language-plaintext highlighter-rouge">Authorized</code> state) according to file system permissions.</li>
-</ul>
-
-<ul id="read-only-portal">
-  <li><strong>Read-Only Portal:</strong> A spoke portal that can access any files or directories within one or more corresponding hub portal root directories (in the <code class="language-plaintext highlighter-rouge">Authorized</code> state) according to file system permissions, but can’t modify or create any files or directories regardless of file system permissions.</li>
-</ul>
-
-<ul id="hub-portal">
-  <li><strong>Hub Portal:</strong> An interface point on a Qumulo cluster that shares a portion of its file system with another cluster (which has a <em>spoke portal)</em>. A directory on a cluster defines a <em>root directory</em> for hub portal. The spoke portal initiates the creation of a hub portal. You can configure multiple portal relationships, with the same hub portal root directory, with nested directories, or with independent ones.</li>
-</ul>
-
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note</b><br />
-  <ul>
-    <li>It isn't possible to create a hub portal without a spoke portal. For example, a spoke portal on Cluster A can propose a portal relationship to Cluster B. This action initiates the creation of a hub portal in a <code>Pending</code> state on Cluster B.</li>
-    <li>You must accept the portal relationship and then authorize any hub portal root directories before you can use them.</li>
-    <li>While a spoke portal can be either <em>read-only</em> or <em>read-write</em>, a hub portal is always read-write.</li>
-  </ul>
-  </div>
-
-<ul id="portal-relationship">
-  <li><strong>Portal Relationship:</strong> A proposal that a spoke portal on one Qumulo cluster issues to another Qumulo cluster (with a <em>hub portal)</em>, which the Qumulo cluster with the hub portal <em>accepts</em>.</li>
-</ul>
-
-<ul id="peer-portal">
-  <li><strong>Peer Portal:</strong> A portal that serves as a counterpart to another portal. For example, a hub portal is a peer portal to a spoke portal.</li>
-</ul>
-
-<ul id="peer-portal-address">
-  <li><strong>Peer Portal Address:</strong> The IP address for a peer portal.</li>
+</div>
+  </li>
+  <li>
+    <p id="portal-relationship"><strong>Portal Relationship:</strong> A proposal that a spoke portal on one Qumulo cluster issues to another Qumulo cluster (with a <em>hub portal)</em>, which the Qumulo cluster with the hub portal <em>accepts</em>.</p>
+  </li>
+  <li>
+    <p id="peer-portal"><strong>Peer Portal:</strong> A portal that serves as a counterpart to another portal. For example, a hub portal is a peer portal to a spoke portal.</p>
+  </li>
+  <li>
+    <p id="peer-portal-address"><strong>Peer Portal Address:</strong> The IP address for a peer portal.</p>
+  </li>
 </ul>
 
 <h4 id="portal-relationship-states">Portal Relationship States</h4>

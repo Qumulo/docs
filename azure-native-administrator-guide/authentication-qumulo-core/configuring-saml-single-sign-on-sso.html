@@ -2373,7 +2373,7 @@ $(document).ready(function() {
 <h2 id="prerequisites">Prerequisites</h2>
 <p>Before you begin, make sure that you have done the following.</p>
 
-<ul id="identity-provider">
+<ul>
   <li>
     <p>To join your cluster to an Active Directory (AD) domain, log in to the Qumulo Core Web UI and click <strong>Cluster &gt; Active Directory</strong>.</p>
 
@@ -2383,16 +2383,15 @@ $(document).ready(function() {
     <p>To allow the cluster to find group memberships for SAML-authenticated users, configure the Base DN in your AD configuration, even if you don’t use POSIX attributes.</p>
   </li>
   <li>
-    <p>Ensure that your SAML Identity Provider (IdP) is linked to the same AD. An <em>identity provider</em> (such as Azure AD, Duo, or Okta) is a system that authenticates users (for example, by using passwords and additional factors).</p>
+    <p id="identity-provider">Ensure that your SAML Identity Provider (IdP) is linked to the same AD. An <em>identity provider</em> (such as Azure AD, Duo, or Okta) is a system that authenticates users (for example, by using passwords and additional factors).</p>
+
+    <p id="service-provider">Typically, an IT department manages an IdP centrally and the IdP is linked with AD. Before you can enable SSO, your IT department must register a new Service Provider (SP) in your IdP. A <em>service provider</em> is the server which users access, in this case a Qumulo cluster.</p>
+
+    <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> You can use trusts, as long as the Base DN covers all users that might require access to your cluster.</div>
   </li>
-</ul>
-
-<p id="service-provider">Typically, an IT department manages an IdP centrally and the IdP is linked with AD. Before you can enable SSO, your IT department must register a new Service Provider (SP) in your IdP. A <em>service provider</em> is the server which users access, in this case a Qumulo cluster.</p>
-
-<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> You can use trusts, as long as the Base DN covers all users that might require access to your cluster.</div>
-
-<ul>
-  <li>Configure your IdP to return AD User Principal Names (UPNs, for example <code class="language-plaintext highlighter-rouge">alice@example.com</code>) or an email address as a name identifier for an authenticated user. Typically, a <code class="language-plaintext highlighter-rouge">nameID</code> uses the format of an email address.</li>
+  <li>
+    <p>Configure your IdP to return AD User Principal Names (UPNs, for example <code class="language-plaintext highlighter-rouge">alice@example.com</code>) or an email address as a name identifier for an authenticated user. Typically, a <code class="language-plaintext highlighter-rouge">nameID</code> uses the format of an email address.</p>
+  </li>
 </ul>
 
 <h2 id="to-configure-saml-sso-for-your-qumulo-cluster">To Configure SAML SSO for Your Qumulo Cluster</h2>

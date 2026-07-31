@@ -2730,16 +2730,13 @@ $(document).ready(function() {
 </ul>
 
 <h3 id="cluster-properties-during-node-replacement">Cluster Properties During Node Replacement</h3>
-<ul id="combined-cluster">
+<ul>
   <li>
     <p>When a replacement step begins, Qumulo Core distributes floating IP addresses among the nodes in the <a href="#combined-cluster">combined cluster</a>. After Qumulo Core removes nodes marked for replacement, it redistributes any client connections that use floating IP addresses among the nodes that remain in the cluster.</p>
   </li>
   <li>
-    <p>While a node replacement step is in progress, both new nodes and nodes marked for replacement appear on the <strong>Cluster</strong> page of the Qumulo Core Web UI and clients can connect to any of the nodes in the <em>combined cluster</em> while the step is in progress.</p>
+    <p id="combined-cluster">While a node replacement step is in progress, both new nodes and nodes marked for replacement appear on the <strong>Cluster</strong> page of the Qumulo Core Web UI and clients can connect to any of the nodes in the <em>combined cluster</em> while the step is in progress.</p>
   </li>
-</ul>
-
-<ul>
   <li>
     <p>When a node replacement step is complete, the reassignment of static IP addresses differs between versions of Qumulo Core:</p>
 

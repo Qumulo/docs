@@ -2391,12 +2391,13 @@ $(document).ready(function() {
 
 <p>An <em>access key</em> (or <em>access key pair)</em> is comprised of an S3 access key ID and an S3 secret access key.</p>
 
-<ul id="access-key-id">
-  <li>The <em>access key ID</em> is the public component of an S3 access key pair. It identifies the user that performs an S3 request.</li>
-</ul>
-
-<ul id="secret-access-key">
-  <li>The <em>secret access key</em> (or <em>secret key</em>) is the private component of an S3 access key pair. The client uses the secret access key to sign requests. The server uses the secret access key to validate request signatures.</li>
+<ul>
+  <li>
+    <p id="access-key-id">The <em>access key ID</em> is the public component of an S3 access key pair. It identifies the user that performs an S3 request.</p>
+  </li>
+  <li>
+    <p id="secret-access-key">The <em>secret access key</em> (or <em>secret key</em>) is the private component of an S3 access key pair. The client uses the secret access key to sign requests. The server uses the secret access key to validate request signatures.</p>
+  </li>
 </ul>
 
 <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
@@ -2474,7 +2475,7 @@ $(document).ready(function() {
 
 <p>You can specify an identity by using:</p>
 
-<ul id="auth-id">
+<ul>
   <li>
     <p>A name, optionally qualified with a domain prefix:</p>
 
@@ -2497,7 +2498,7 @@ $(document).ready(function() {
     <p>An Active Directory Security Identifier. For example: <code class="language-plaintext highlighter-rouge">SID:S-1-1-0</code></p>
   </li>
   <li>
-    <p>A Qumulo <em>auth ID</em>, Qumulo Core’s common representation for identities, in the form of a numeric identifier. For example: <code class="language-plaintext highlighter-rouge">auth_id:513</code></p>
+    <p id="auth-id">A Qumulo <em>auth ID</em>, Qumulo Core’s common representation for identities, in the form of a numeric identifier. For example: <code class="language-plaintext highlighter-rouge">auth_id:513</code></p>
   </li>
 </ul>
 
