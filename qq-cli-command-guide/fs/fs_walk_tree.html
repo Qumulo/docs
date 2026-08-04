@@ -75,7 +75,10 @@ fetch('/data/website.json')
 });    
 </script>
 
-<!-- BEGIN TO PREPARE WEBSITE RESOURCES -->  
+<!-- BEGIN TO PREPARE WEBSITE RESOURCES -->
+<!-- Preload image for LCP request discovery -->
+<link rel="preload" href="/images/below-header.webp" as="image" fetchpriority="high">
+
 <!-- Preconnect to CDNs -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
