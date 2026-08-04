@@ -8,6 +8,67 @@ For information about upgrade types for each release, see <a href='mode-referenc
 {% capture noAPIchanges %}This release contains no REST API changes.{% endcapture %}
 {% capture platUpg %}This release of Qumulo Core is a _platform upgrade_ that requires either a complete reboot (rebooting all nodes in your cluster at the same time) or a rolling reboot (rebooting the nodes in your cluster one at a time).{% endcapture %}
 
+
+## Qumulo Core 7.9.2.1
+{{ nexusLink }}
+
+{% capture betterStartup %}<strong>Cloud Native Qumulo (CNQ), Azure Native Qumulo (ANQ), and Stratus Accelerator clusters:</strong> Improved cluster start-up times.{% endcapture %}
+{% capture appHardInst %}<strong>Appliance Hardware Installations:</strong> Upgraded the host kernel on Ubuntu 24.04, from 6.8.0-85 to 6.8.0-117{% endcapture %}
+{% capture disableKernMod %}the <code>algif_aead</code> kernel module to mitigate the <a target="_blank" href="https://copy.fail/">Copy Fail</a> (<a target="_blank" href="https://nvd.nist.gov/vuln/detail/CVE-2026-31431">CVE-2026-31431</a>) vulnerability.{% endcapture %}
+{{site.data.alerts.important}}
+<ul>
+  <li>
+    <p>This release resolves an issue with Product Package deployments of Qumulo Core releases lower than 7.9.2 that are configured to use Host-Managed Networking. Qumulo Core detects any unintentionally unassigned floating IP addresses and restores them without affecting client connectivity.</p>
+    <p></p>
+  </li>
+  <li>For clusters running Qumulo Core 7.9.0 (and higher), you must wait for on-disk upgrades to complete before you can upgrade the cluster to a higher version (this process typically takes 1-2 days). To check whether a cluster is ready to be upgraded, you can use the Qumulo REST API or the <code>qq</code> CLI. For example:
+    <ul>
+      <li><code>POST /v2/upgrade/verify-image</code></li>
+      <li><code>qq upgrade_verify_image --path /example/path/to/target/image</code></li>
+    </ul>
+  </li>
+  <li>This release adds important performance, security, and stability improvements:
+    <ul>
+      <li>{{ betterStartup }}</li>
+      <li>{{ appHardInst }}</li>
+      <li>Disabled {{ disableKernMod }}</li>
+    </ul>
+  </li>
+  <li>This release adds important cluster management functionality:
+    <ul>
+      <li>Added the following REST API endpoint and <code>qq</code> CLI command to let you retrieve recent portal quorum success and abandon events recorded by cluster nodes. This functionality can help administrators of clusters with large or complex portal relationships monitor recent portal quorum issues and debug networking and availability.
+        <ul>
+          <li><code>GET /v1/portal/quorum/events</code></li>
+          <li><code>qq portal_list_quorum_events</code></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>This release resolves issues that previously:
+    <ul>
+      <li>Prevented the system from handling an internal encoding inconsistency from legacy builds</li>
+      <li>Prevented quorum formation if the audit server address specified in the audit configuration isn't a valid IP address or DNS name</li>
+      <li>Could cause Qumulo Core to become unresponsive if a remote syslog endpoint configured for audit log delivery becomes unreachable</li>
+      <li>Could cause Qumulo Core to crash if a multi-part upload to a versioned S3 bucket took longer than approximately 10 seconds</li>
+      <li>Could cause Qumulo Core to crash while upgrading on-disk structures in certain scenarios</li>
+    </ul>
+  </li>
+</ul>
+{{site.data.alerts.end}}
+
+* Added support for IPv6 addresses to CNQ on AWS clusters
+* Added support for Offline Files for Windows to SMB and added supporting REST API and `qq` CLI changes
+* Configured new Stratus Accelerator clusters to use the Object Metadata Cache (OMC) as the source of truth for objects in use by a cluster
+* Removed and replaced `/v1` endpoints for managing hub portals and spoke portals with `/v2` counterparts
+* Enabled `atime` updates to take place every 24 hours by default
+* Resolved the following issues:
+  * **CNQ, ANQ, and Stratus Accelerator Clusters:** Cluster fault tolerance reporting 
+  * **CNQ Clusters:** DNS resolution malfunctions when the user runs the `apt upgrade` command
+  * **CNQ on Azure Clusters:** System configuration doesn't respect the host DNS configuration
+  * **Nexus Remote Support:** Can't connect when using a proxy configured with a `CNAME` record
+  * **Nexus Agent:** Can't detect a cleanly closed connection to Nexus
+
+
 ## Qumulo Core 7.9.1.1
 {{ nexusLink }}
 
@@ -40,14 +101,13 @@ For information about upgrade types for each release, see <a href='mode-referenc
 {{ nexusLink }}
 
 ### Features and Improvements
-{% capture disableKernMod %}the <code>algif_aead</code> kernel module to mitigate the <a target="_blank" href="https://copy.fail/">Copy Fail</a> (<a target="_blank" href="https://nvd.nist.gov/vuln/detail/CVE-2026-31431">CVE-2026-31431</a>) vulnerability.{% endcapture %}
 {{site.data.alerts.important}}
 <ul>
   <li>
     This release makes critical improvements:
     <ul>
-      <li><strong>Cloud Native Qumulo (CNQ), Azure Native Qumulo (ANQ), and Stratus Accelerator Clusters:</strong> Improved cluster start-up times.</li>
-      <li><strong>Appliance Hardware Installations:</strong> Upgraded the host kernel on Ubuntu 24.04, from 6.8.0-85 to 6.8.0-117</li>
+      <li>{{ betterStartup }}</li>
+      <li>{{ appHardInst }}</li>
       <li>Disabled {{ disableKernMod }}</li> 
     </ul>
   </li>
@@ -314,7 +374,7 @@ Significantly improved the performance of the incremental replication process fo
 ### Features and Improvements
 {% include important.html content=genoaFix %}
 * Changed how NFS export host restrictions use `KRB*` keywords in Qumulo Core by allowing an additional match for hosts that authenticate by using a specific Kerberos flavor
-* Added REST API endpoints and qq CLI commands to support specifying a registration key that associates your Qumulo cluster with your Qumulo Nexus account
+* Added REST API endpoints and `qq` CLI commands to support specifying a registration key that associates your Qumulo cluster with your Qumulo Nexus account
 * Changed `qq` CLI error messages to write to `stderr` instead of `stdout`
 * Resolved an S3 API issue with applications placing a trailing whitespace in the signed header field
 

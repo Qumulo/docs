@@ -3,11 +3,11 @@ category: nfs
 command: nfs_modify_settings
 optional_options:
 - alternate: []
-  help: Enables mounting with the NFSv4.1 protocol
+  help: Enables mounting with the NFSv4 protocol
   name: --enable-v4
   required: false
 - alternate: []
-  help: Disables mounting with the NFSv4.1 protocol
+  help: Disables mounting with the NFSv4 protocol
   name: --disable-v4
   required: false
 - alternate: []
@@ -58,8 +58,8 @@ summary: This section explains how to use the <code>qq nfs_modify_settings</code
 synopsis: Modify current NFS server configuration.
 title: qq nfs_modify_settings
 usage: "qq nfs_modify_settings [-h] [--enable-v4 | --disable-v4] [--enable-krb5 |\
-  \ --disable-krb5] [--enable-krb5p | --disable-krb5p] [--enable-krb5i | --disable-krb5i]\n\
-  \    [--enable-auth-sys | --disable-auth-sys] [--idmap-domain OVERRIDE | --clear-idmap-domain]"
+  \ --disable-krb5] [--enable-krb5p | --disable-krb5p] [--enable-krb5i | --disable-krb5i]\
+  \ [--enable-auth-sys | --disable-auth-sys]\n    [--idmap-domain OVERRIDE | --clear-idmap-domain]"
 zendesk_source: qq CLI Command Guide
 
 ---

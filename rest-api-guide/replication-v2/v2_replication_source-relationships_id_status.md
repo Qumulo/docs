@@ -45,51 +45,48 @@ methods:
         : \"number\"\n          },\n          \"end_minute\": {\n            \"description\"\
         : \"Minute of hour [0, 59] at which the blackout window ends\",\n        \
         \    \"type\": \"number\"\n          },\n          \"on_days\": {\n      \
-        \      \"description\": \"List of days of the week on which the replication\
-        \ schedule applies. Choose from SUN, MON, TUE, WED, THU, FRI, and/or SAT.\
-        \ EVERY_DAY can be used to specify all days.\",\n            \"type\": \"\
-        array\",\n            \"items\": {\n              \"type\": \"string\",\n\
-        \              \"enum\": [\n                \"SUN\",\n                \"MON\"\
-        ,\n                \"TUE\",\n                \"WED\",\n                \"\
-        THU\",\n                \"FRI\",\n                \"SAT\",\n             \
-        \   \"EVERY_DAY\"\n              ],\n              \"description\": \"List\
-        \ of days of the week on which the replication schedule applies. Choose from\
-        \ SUN, MON, TUE, WED, THU, FRI, and/or SAT. EVERY_DAY can be used to specify\
-        \ all days.:\\n * `EVERY_DAY` - EVERY_DAY,\\n * `FRI` - FRI,\\n * `MON` -\
-        \ MON,\\n * `SAT` - SAT,\\n * `SUN` - SUN,\\n * `THU` - THU,\\n * `TUE` -\
-        \ TUE,\\n * `WED` - WED\"\n            }\n          }\n        }\n      }\n\
-        \    },\n    \"snapshot_policies\": {\n      \"type\": \"array\",\n      \"\
-        items\": {\n        \"description\": \"List of snapshot policies linked with\
-        \ the relationship along with the corresponding expiration time of the replicated\
-        \ snapshots on the target for each linked policy\",\n        \"type\": \"\
-        object\",\n        \"properties\": {\n          \"id\": {\n            \"\
-        description\": \"Unique identifier for the snapshot policy linked with the\
-        \ relationship\",\n            \"type\": \"number\"\n          },\n      \
-        \    \"target_expiration\": {\n            \"description\": \"Duration after\
-        \ which to expire snapshots on the target cluster that were replicated from\
-        \ this snapshot policy, in format <quantity><units>, where <quantity> is a\
-        \ positive integer less than 100 and <units> is one of [months, weeks, days,\
-        \ hours, minutes], e.g. 5days or 1hours. 'never' indicates snapshots should\
-        \ never expire and 'same_as_policy' indicates snapshots should expire at the\
-        \ same time as the snapshot policy specifies.\",\n            \"type\": \"\
-        string\"\n          }\n        }\n      }\n    },\n    \"state\": {\n    \
-        \  \"type\": \"string\",\n      \"enum\": [\n        \"AWAITING_AUTHORIZATION\"\
-        ,\n        \"DISCONNECTED\",\n        \"DISCONNECTING\",\n        \"ENDED\"\
-        ,\n        \"ESTABLISHED\",\n        \"RECONNECTING\",\n        \"REESTABLISHING\"\
-        \n      ],\n      \"description\": \"Current state of replication relationship:\\\
-        n * `AWAITING_AUTHORIZATION` - AWAITING_AUTHORIZATION,\\n * `DISCONNECTED`\
-        \ - DISCONNECTED,\\n * `DISCONNECTING` - DISCONNECTING,\\n * `ENDED` - ENDED,\\\
-        n * `ESTABLISHED` - ESTABLISHED,\\n * `RECONNECTING` - RECONNECTING,\\n *\
-        \ `REESTABLISHING` - REESTABLISHING\"\n    },\n    \"end_reason\": {\n   \
-        \   \"description\": \"If the relationship has ENDED, this states the reason.\
-        \ Otherwise, this field is empty\",\n      \"type\": \"string\"\n    },\n\
-        \    \"source_cluster_name\": {\n      \"description\": \"Name of the source\
-        \ cluster\",\n      \"type\": \"string\"\n    },\n    \"source_cluster_uuid\"\
-        : {\n      \"description\": \"UUID of the source cluster\",\n      \"type\"\
-        : \"string\"\n    },\n    \"source_root_path\": {\n      \"description\":\
-        \ \"Path to the source directory\",\n      \"type\": \"string\"\n    },\n\
-        \    \"target_cluster_name\": {\n      \"description\": \"Name of the target\
-        \ cluster\",\n      \"type\": \"string\"\n    },\n    \"target_cluster_uuid\"\
+        \      \"type\": \"array\",\n            \"items\": {\n              \"type\"\
+        : \"string\",\n              \"enum\": [\n                \"SUNDAY\",\n  \
+        \              \"MONDAY\",\n                \"TUESDAY\",\n               \
+        \ \"WEDNESDAY\",\n                \"THURSDAY\",\n                \"FRIDAY\"\
+        ,\n                \"SATURDAY\"\n              ],\n              \"description\"\
+        : \"List of days of the week on which the replication schedule applies. Choose\
+        \ from SUN, MON, TUE, WED, THU, FRI, and/or SAT. EVERY_DAY can be used to\
+        \ specify all days.:\\n * `FRIDAY` - FRIDAY,\\n * `MONDAY` - MONDAY,\\n *\
+        \ `SATURDAY` - SATURDAY,\\n * `SUNDAY` - SUNDAY,\\n * `THURSDAY` - THURSDAY,\\\
+        n * `TUESDAY` - TUESDAY,\\n * `WEDNESDAY` - WEDNESDAY\"\n            }\n \
+        \         }\n        }\n      }\n    },\n    \"snapshot_policies\": {\n  \
+        \    \"type\": \"array\",\n      \"items\": {\n        \"description\": \"\
+        List of snapshot policies linked with the relationship along with the corresponding\
+        \ expiration time of the replicated snapshots on the target for each linked\
+        \ policy\",\n        \"type\": \"object\",\n        \"properties\": {\n  \
+        \        \"id\": {\n            \"description\": \"Unique identifier for the\
+        \ snapshot policy linked with the relationship\",\n            \"type\": \"\
+        number\"\n          },\n          \"target_expiration\": {\n            \"\
+        description\": \"Duration after which to expire snapshots on the target cluster\
+        \ that were replicated from this snapshot policy, in format <quantity><units>,\
+        \ where <quantity> is a positive integer less than 100 and <units> is one\
+        \ of [months, weeks, days, hours, minutes], e.g. 5days or 1hours. 'never'\
+        \ indicates snapshots should never expire and 'same_as_policy' indicates snapshots\
+        \ should expire at the same time as the snapshot policy specifies.\",\n  \
+        \          \"type\": \"string\"\n          }\n        }\n      }\n    },\n\
+        \    \"state\": {\n      \"type\": \"string\",\n      \"enum\": [\n      \
+        \  \"AWAITING_AUTHORIZATION\",\n        \"DISCONNECTED\",\n        \"DISCONNECTING\"\
+        ,\n        \"ENDED\",\n        \"ESTABLISHED\",\n        \"RECONNECTING\"\
+        ,\n        \"REESTABLISHING\"\n      ],\n      \"description\": \"Current\
+        \ state of replication relationship:\\n * `AWAITING_AUTHORIZATION` - AWAITING_AUTHORIZATION,\\\
+        n * `DISCONNECTED` - DISCONNECTED,\\n * `DISCONNECTING` - DISCONNECTING,\\\
+        n * `ENDED` - ENDED,\\n * `ESTABLISHED` - ESTABLISHED,\\n * `RECONNECTING`\
+        \ - RECONNECTING,\\n * `REESTABLISHING` - REESTABLISHING\"\n    },\n    \"\
+        end_reason\": {\n      \"description\": \"If the relationship has ENDED, this\
+        \ states the reason. Otherwise, this field is empty\",\n      \"type\": \"\
+        string\"\n    },\n    \"source_cluster_name\": {\n      \"description\": \"\
+        Name of the source cluster\",\n      \"type\": \"string\"\n    },\n    \"\
+        source_cluster_uuid\": {\n      \"description\": \"UUID of the source cluster\"\
+        ,\n      \"type\": \"string\"\n    },\n    \"source_root_path\": {\n     \
+        \ \"description\": \"Path to the source directory\",\n      \"type\": \"string\"\
+        \n    },\n    \"target_cluster_name\": {\n      \"description\": \"Name of\
+        \ the target cluster\",\n      \"type\": \"string\"\n    },\n    \"target_cluster_uuid\"\
         : {\n      \"description\": \"UUID of the target cluster\",\n      \"type\"\
         : \"string\"\n    },\n    \"target_root_path\": {\n      \"description\":\
         \ \"Path to the target directory\",\n      \"type\": \"string\"\n    },\n\

@@ -37,40 +37,36 @@ methods:
         \  },\n              \"minute\": {\n                \"description\": \"For\
         \ MONTHLY or DAILY_OR_WEEKLY frequency: minute of hour [0, 59] at which to\
         \ take snapshot\",\n                \"type\": \"number\"\n              },\n\
-        \              \"on_days\": {\n                \"description\": \"For DAILY_OR_WEEKLY\
-        \ or HOURLY_OR_LESS frequency: list of days of the week on which to take snapshots.\
-        \ Choose from SUN, MON, TUE, WED, THU, FRI, and/or SAT. EVERY_DAY can be used\
-        \ to specify all days. For MONTHLY frequency: LAST_DAY_OF_MONTH indicates\
-        \ that the snapshot should be taken only on the last day of the month.\",\n\
-        \                \"type\": \"array\",\n                \"items\": {\n    \
-        \              \"type\": \"string\",\n                  \"enum\": [\n    \
-        \                \"SUN\",\n                    \"MON\",\n                \
-        \    \"TUE\",\n                    \"WED\",\n                    \"THU\",\n\
-        \                    \"FRI\",\n                    \"SAT\",\n            \
-        \        \"EVERY_DAY\"\n                  ],\n                  \"description\"\
-        : \"For DAILY_OR_WEEKLY or HOURLY_OR_LESS frequency: list of days of the week\
-        \ on which to take snapshots. Choose from SUN, MON, TUE, WED, THU, FRI, and/or\
-        \ SAT. EVERY_DAY can be used to specify all days. For MONTHLY frequency: LAST_DAY_OF_MONTH\
-        \ indicates that the snapshot should be taken only on the last day of the\
-        \ month.:\\n * `EVERY_DAY` - EVERY_DAY,\\n * `FRI` - FRI,\\n * `MON` - MON,\\\
-        n * `SAT` - SAT,\\n * `SUN` - SUN,\\n * `THU` - THU,\\n * `TUE` - TUE,\\n\
-        \ * `WED` - WED\"\n                }\n              },\n              \"day_of_month\"\
-        : {\n                \"description\": \"For MONTHLY frequency: day of month\
-        \ on which to take snapshot. [1, 27] for specific day, 128 for last day of\
-        \ month.\",\n                \"type\": \"number\"\n              },\n    \
-        \          \"window_start_hour\": {\n                \"description\": \"For\
-        \ HOURLY_OR_LESS frequency: hour of day [0, 23] for start of window during\
-        \ which to take snapshots\",\n                \"type\": \"number\"\n     \
-        \         },\n              \"window_start_minute\": {\n                \"\
-        description\": \"For HOURLY_OR_LESS frequency: minute of hour [0, 59] for\
-        \ start of window during which to take snapshots\",\n                \"type\"\
-        : \"number\"\n              },\n              \"window_end_hour\": {\n   \
-        \             \"description\": \"For HOURLY_OR_LESS frequency: hour of day\
-        \ [0, 23] for end of window during which to take snapshots)\",\n         \
-        \       \"type\": \"number\"\n              },\n              \"window_end_minute\"\
-        : {\n                \"description\": \"For HOURLY_OR_LESS frequency: minute\
-        \ of hour [0, 59] for end of window during which to take snapshots\",\n  \
-        \              \"type\": \"number\"\n              },\n              \"fire_every_interval\"\
+        \              \"on_days\": {\n                \"type\": \"array\",\n    \
+        \            \"items\": {\n                  \"type\": \"string\",\n     \
+        \             \"enum\": [\n                    \"SUNDAY\",\n             \
+        \       \"MONDAY\",\n                    \"TUESDAY\",\n                  \
+        \  \"WEDNESDAY\",\n                    \"THURSDAY\",\n                   \
+        \ \"FRIDAY\",\n                    \"SATURDAY\"\n                  ],\n  \
+        \                \"description\": \"For DAILY_OR_WEEKLY or HOURLY_OR_LESS\
+        \ frequency: list of days of the week on which to take snapshots. Choose from\
+        \ SUN, MON, TUE, WED, THU, FRI, and/or SAT. EVERY_DAY can be used to specify\
+        \ all days. For MONTHLY frequency: LAST_DAY_OF_MONTH indicates that the snapshot\
+        \ should be taken only on the last day of the month.:\\n * `FRIDAY` - FRIDAY,\\\
+        n * `MONDAY` - MONDAY,\\n * `SATURDAY` - SATURDAY,\\n * `SUNDAY` - SUNDAY,\\\
+        n * `THURSDAY` - THURSDAY,\\n * `TUESDAY` - TUESDAY,\\n * `WEDNESDAY` - WEDNESDAY\"\
+        \n                }\n              },\n              \"day_of_month\": {\n\
+        \                \"description\": \"For MONTHLY frequency: day of month on\
+        \ which to take snapshot. [1, 27] for specific day, 128 for last day of month.\"\
+        ,\n                \"type\": \"number\"\n              },\n              \"\
+        window_start_hour\": {\n                \"description\": \"For HOURLY_OR_LESS\
+        \ frequency: hour of day [0, 23] for start of window during which to take\
+        \ snapshots\",\n                \"type\": \"number\"\n              },\n \
+        \             \"window_start_minute\": {\n                \"description\"\
+        : \"For HOURLY_OR_LESS frequency: minute of hour [0, 59] for start of window\
+        \ during which to take snapshots\",\n                \"type\": \"number\"\n\
+        \              },\n              \"window_end_hour\": {\n                \"\
+        description\": \"For HOURLY_OR_LESS frequency: hour of day [0, 23] for end\
+        \ of window during which to take snapshots)\",\n                \"type\":\
+        \ \"number\"\n              },\n              \"window_end_minute\": {\n \
+        \               \"description\": \"For HOURLY_OR_LESS frequency: minute of\
+        \ hour [0, 59] for end of window during which to take snapshots\",\n     \
+        \           \"type\": \"number\"\n              },\n              \"fire_every_interval\"\
         : {\n                \"type\": \"string\",\n                \"enum\": [\n\
         \                  \"FIRE_IN_MINUTES\",\n                  \"FIRE_IN_HOURS\"\
         \n                ],\n                \"description\": \"For HOURLY_OR_LESS\

@@ -11,7 +11,7 @@ optional_options:
   - -p
   help: Administrator Password
   name: --admin-password
-  required: true
+  required: false
 - alternate: []
   help: Accept the EULA
   name: --accept-eula
@@ -68,13 +68,13 @@ summary: This section explains how to use the <code>qq stratus_cluster_create</c
   command.
 synopsis: Create a Qumulo Stratus Tenant Cluster
 title: qq stratus_cluster_create
-usage: "qq stratus_cluster_create [-h] --cluster-name CLUSTER_NAME --admin-password\
-  \ ADMIN_PASSWORD [--accept-eula] [--reject-eula] [--cluster-uuid CLUSTER_UUID]\n\
-  \    [--admin-pbkdf2-hash ADMIN_PBKDF2_HASH] [--admin-pbkdf2-salt ADMIN_PBKDF2_SALT]\
-  \ [--admin-pbkdf2-num-iterations ADMIN_PBKDF2_NUM_ITERATIONS]\n    [--node-uuids-and-fault-domains\
+usage: "qq stratus_cluster_create [-h] --cluster-name CLUSTER_NAME [--admin-password\
+  \ ADMIN_PASSWORD] [--accept-eula] [--reject-eula] [--cluster-uuid CLUSTER_UUID]\
+  \ [--admin-pbkdf2-hash ADMIN_PBKDF2_HASH] [--admin-pbkdf2-salt ADMIN_PBKDF2_SALT]\n\
+  \    [--admin-pbkdf2-num-iterations ADMIN_PBKDF2_NUM_ITERATIONS] [--node-uuids-and-fault-domains\
   \ NODE_UUIDS_AND_FAULT_DOMAINS [NODE_UUIDS_AND_FAULT_DOMAINS ...]] [--all-unconfigured]\
-  \ --usable-capacity\n    USABLE_CAPACITY --object-store-uris OBJECT_STORE_URIS [OBJECT_STORE_URIS\
-  \ ...]\n    [--object-store-credentials OBJECT_STORE_CREDENTIALS [OBJECT_STORE_CREDENTIALS\
+  \ --usable-capacity USABLE_CAPACITY\n    --object-store-uris OBJECT_STORE_URIS [OBJECT_STORE_URIS\
+  \ ...] [--object-store-credentials OBJECT_STORE_CREDENTIALS [OBJECT_STORE_CREDENTIALS\
   \ ...]]"
 zendesk_source: qq CLI Command Guide
 

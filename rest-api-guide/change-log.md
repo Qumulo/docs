@@ -11,6 +11,46 @@ layout: page
 <style>div#toc{height:200px;overflow:auto;}</style>
 
 
+## Qumulo Core 7.9.2.1
+{{ nexusLink }}
+<ul>
+  <li>Removed <code>/v1/portal/hubs/</code></li>
+  <li>Removed <code>/v1/portal/hubs/{id}</code></li>
+  <li>Removed <code>/v1/portal/hubs/{id}/authorize</code></li>
+</ul>
+<details>
+  <summary>Click to expand</summary>
+  <ul>
+    <li>Removed <code>/v1/portal/spokes/</code></li>
+    <li>Removed <code>/v1/portal/spokes/{id}</code></li>
+    <li>Removed <code>/v1/portal/spokes/{id}/propose</code></li>
+    <li>Added <code>GET /v1/portal/quorum/events</code></li>
+    <li>
+      Modified <code>POST /v3/smb/shares/</code>:
+      <ul>
+        <li>Added <code>offline_files_caching_mode</code> parameter to <code>POST /v3/smb/shares/</code> request body</li>
+        <li>Added <code>offline_files_caching_mode</code> parameter to <code>POST /v3/smb/shares/</code> response</li>
+      </ul>
+    </li>
+    <li>Added <code>offline_files_caching_mode</code> parameter to <code>GET /v3/smb/shares/{share_id}</code> response</li>
+    <li>
+      Modified <code>PATCH /v3/smb/shares/{share_id}</code>:
+      <ul>
+        <li>Added <code>offline_files_caching_mode</code> parameter to <code>PATCH /v3/smb/shares/{share_id}</code> request body</li>
+        <li>Added <code>offline_files_caching_mode</code> parameter to <code>PATCH /v3/smb/shares/{share_id}</code> response</li>
+      </ul>
+    </li>
+    <li>
+      Modified <code>PUT /v3/smb/shares/{share_id}</code>:
+      <ul>
+        <li>Added <code>offline_files_caching_mode</code> parameter to <code>PUT /v3/smb/shares/{share_id}</code> request body</li>
+        <li>Added <code>offline_files_caching_mode</code> parameter to <code>PUT /v3/smb/shares/{share_id}</code> response</li>
+      </ul>
+    </li>
+  </ul>
+</details>
+
+
 ## Qumulo Core 7.9.1.1
 {{ nexusLink }}
 <ul>

@@ -51,31 +51,28 @@ methods:
         \    \"type\": \"string\"\n              },\n              \"name\": {\n \
         \               \"description\": \"name\",\n                \"type\": \"string\"\
         \n              }\n            }\n          },\n          \"rights\": {\n\
-        \            \"description\": \"Rights pertaining to the permissions entry\"\
-        ,\n            \"type\": \"array\",\n            \"items\": {\n          \
-        \    \"type\": \"string\",\n              \"enum\": [\n                \"\
-        READ\",\n                \"WRITE\",\n                \"CHANGE_PERMISSIONS\"\
-        ,\n                \"ALL\",\n                \"READ_DATA\",\n            \
-        \    \"READ_EA\",\n                \"READ_ATTR\",\n                \"READ_ACL\"\
-        ,\n                \"WRITE_EA\",\n                \"WRITE_ATTR\",\n      \
-        \          \"WRITE_ACL\",\n                \"CHANGE_OWNER\",\n           \
-        \     \"WRITE_GROUP\",\n                \"DELETE\",\n                \"EXECUTE\"\
-        ,\n                \"MODIFY\",\n                \"EXTEND\",\n            \
-        \    \"ADD_FILE\",\n                \"ADD_SUBDIR\",\n                \"DELETE_CHILD\"\
-        ,\n                \"SYNCHRONIZE\"\n              ],\n              \"description\"\
-        : \"Rights pertaining to the permissions entry:\\n * `ADD_FILE` - File creation\
-        \ access,\\n * `ADD_SUBDIR` - Directory creation access,\\n * `ALL` - All\
-        \ access rights,\\n * `CHANGE_OWNER` - Owner write access,\\n * `CHANGE_PERMISSIONS`\
-        \ - Rights to change permissions on file objects,\\n * `DELETE` - Delete access,\\\
-        n * `DELETE_CHILD` - Delete from directory access,\\n * `EXECUTE` - Execute\
-        \ access,\\n * `EXTEND` - File extension access,\\n * `MODIFY` - File modification\
-        \ access,\\n * `READ` - Read access rights,\\n * `READ_ACL` - ACL read access,\\\
-        n * `READ_ATTR` - Attribute read access,\\n * `READ_DATA` - File read access,\\\
-        n * `READ_EA` - Extended attribute read access,\\n * `SYNCHRONIZE` - File\
-        \ synchronize access,\\n * `WRITE` - Write access rights,\\n * `WRITE_ACL`\
-        \ - ACL write access,\\n * `WRITE_ATTR` - Attribute write access,\\n * `WRITE_EA`\
-        \ - Extended attribute write access,\\n * `WRITE_GROUP` - Group write access\"\
-        \n            }\n          }\n        }\n      }\n    },\n    \"network_permissions\"\
+        \            \"type\": \"array\",\n            \"items\": {\n            \
+        \  \"type\": \"string\",\n              \"enum\": [\n                \"READ_DATA\"\
+        ,\n                \"READ_EA\",\n                \"READ_ATTR\",\n        \
+        \        \"READ_ACL\",\n                \"WRITE_EA\",\n                \"\
+        WRITE_ATTR\",\n                \"WRITE_ACL\",\n                \"CHANGE_OWNER\"\
+        ,\n                \"WRITE_GROUP\",\n                \"DELETE\",\n       \
+        \         \"EXECUTE\",\n                \"MODIFY\",\n                \"EXTEND\"\
+        ,\n                \"DELETE_CHILD\",\n                \"SYNCHRONIZE\",\n \
+        \               \"READ\",\n                \"WRITE\",\n                \"\
+        CHANGE_PERMISSIONS\"\n              ],\n              \"description\": \"\
+        Rights pertaining to the permissions entry:\\n * `CHANGE_OWNER` - Owner write\
+        \ access,\\n * `CHANGE_PERMISSIONS` - Rights to change permissions on file\
+        \ objects,\\n * `DELETE` - Delete access,\\n * `DELETE_CHILD` - Delete from\
+        \ directory access,\\n * `EXECUTE` - Execute access,\\n * `EXTEND` - File\
+        \ extension access,\\n * `MODIFY` - File modification access,\\n * `READ`\
+        \ - Read access rights,\\n * `READ_ACL` - ACL read access,\\n * `READ_ATTR`\
+        \ - Attribute read access,\\n * `READ_DATA` - File read access,\\n * `READ_EA`\
+        \ - Extended attribute read access,\\n * `SYNCHRONIZE` - File synchronize\
+        \ access,\\n * `WRITE` - Write access rights,\\n * `WRITE_ACL` - ACL write\
+        \ access,\\n * `WRITE_ATTR` - Attribute write access,\\n * `WRITE_EA` - Extended\
+        \ attribute write access,\\n * `WRITE_GROUP` - Group write access\"\n    \
+        \        }\n          }\n        }\n      }\n    },\n    \"network_permissions\"\
         : {\n      \"type\": \"array\",\n      \"items\": {\n        \"description\"\
         : \"The network access control list (ACL) for this SMB share. If not specified,\
         \ the default is to allow any host.\",\n        \"type\": \"object\",\n  \
@@ -88,23 +85,19 @@ methods:
         : {\n            \"type\": \"array\",\n            \"items\": {\n        \
         \      \"description\": \"IP address ranges to apply permissions to. Empty\
         \ means all hosts.\",\n              \"type\": \"string\"\n            }\n\
-        \          },\n          \"rights\": {\n            \"description\": \"Rights\
-        \ pertaining to the permissions entry\",\n            \"type\": \"array\"\
-        ,\n            \"items\": {\n              \"type\": \"string\",\n       \
-        \       \"enum\": [\n                \"READ\",\n                \"WRITE\"\
-        ,\n                \"CHANGE_PERMISSIONS\",\n                \"ALL\",\n   \
-        \             \"READ_DATA\",\n                \"READ_EA\",\n             \
-        \   \"READ_ATTR\",\n                \"READ_ACL\",\n                \"WRITE_EA\"\
-        ,\n                \"WRITE_ATTR\",\n                \"WRITE_ACL\",\n     \
-        \           \"CHANGE_OWNER\",\n                \"WRITE_GROUP\",\n        \
-        \        \"DELETE\",\n                \"EXECUTE\",\n                \"MODIFY\"\
-        ,\n                \"EXTEND\",\n                \"ADD_FILE\",\n          \
-        \      \"ADD_SUBDIR\",\n                \"DELETE_CHILD\",\n              \
-        \  \"SYNCHRONIZE\"\n              ],\n              \"description\": \"Rights\
-        \ pertaining to the permissions entry:\\n * `ADD_FILE` - File creation access,\\\
-        n * `ADD_SUBDIR` - Directory creation access,\\n * `ALL` - All access rights,\\\
-        n * `CHANGE_OWNER` - Owner write access,\\n * `CHANGE_PERMISSIONS` - Rights\
-        \ to change permissions on file objects,\\n * `DELETE` - Delete access,\\\
+        \          },\n          \"rights\": {\n            \"type\": \"array\",\n\
+        \            \"items\": {\n              \"type\": \"string\",\n         \
+        \     \"enum\": [\n                \"READ_DATA\",\n                \"READ_EA\"\
+        ,\n                \"READ_ATTR\",\n                \"READ_ACL\",\n       \
+        \         \"WRITE_EA\",\n                \"WRITE_ATTR\",\n               \
+        \ \"WRITE_ACL\",\n                \"CHANGE_OWNER\",\n                \"WRITE_GROUP\"\
+        ,\n                \"DELETE\",\n                \"EXECUTE\",\n           \
+        \     \"MODIFY\",\n                \"EXTEND\",\n                \"DELETE_CHILD\"\
+        ,\n                \"SYNCHRONIZE\",\n                \"READ\",\n         \
+        \       \"WRITE\",\n                \"CHANGE_PERMISSIONS\"\n             \
+        \ ],\n              \"description\": \"Rights pertaining to the permissions\
+        \ entry:\\n * `CHANGE_OWNER` - Owner write access,\\n * `CHANGE_PERMISSIONS`\
+        \ - Rights to change permissions on file objects,\\n * `DELETE` - Delete access,\\\
         n * `DELETE_CHILD` - Delete from directory access,\\n * `EXECUTE` - Execute\
         \ access,\\n * `EXTEND` - File extension access,\\n * `MODIFY` - File modification\
         \ access,\\n * `READ` - Read access rights,\\n * `READ_ACL` - ACL read access,\\\
@@ -190,31 +183,28 @@ methods:
         \    \"type\": \"string\"\n              },\n              \"name\": {\n \
         \               \"description\": \"name\",\n                \"type\": \"string\"\
         \n              }\n            }\n          },\n          \"rights\": {\n\
-        \            \"description\": \"Rights pertaining to the permissions entry\"\
-        ,\n            \"type\": \"array\",\n            \"items\": {\n          \
-        \    \"type\": \"string\",\n              \"enum\": [\n                \"\
-        READ\",\n                \"WRITE\",\n                \"CHANGE_PERMISSIONS\"\
-        ,\n                \"ALL\",\n                \"READ_DATA\",\n            \
-        \    \"READ_EA\",\n                \"READ_ATTR\",\n                \"READ_ACL\"\
-        ,\n                \"WRITE_EA\",\n                \"WRITE_ATTR\",\n      \
-        \          \"WRITE_ACL\",\n                \"CHANGE_OWNER\",\n           \
-        \     \"WRITE_GROUP\",\n                \"DELETE\",\n                \"EXECUTE\"\
-        ,\n                \"MODIFY\",\n                \"EXTEND\",\n            \
-        \    \"ADD_FILE\",\n                \"ADD_SUBDIR\",\n                \"DELETE_CHILD\"\
-        ,\n                \"SYNCHRONIZE\"\n              ],\n              \"description\"\
-        : \"Rights pertaining to the permissions entry:\\n * `ADD_FILE` - File creation\
-        \ access,\\n * `ADD_SUBDIR` - Directory creation access,\\n * `ALL` - All\
-        \ access rights,\\n * `CHANGE_OWNER` - Owner write access,\\n * `CHANGE_PERMISSIONS`\
-        \ - Rights to change permissions on file objects,\\n * `DELETE` - Delete access,\\\
-        n * `DELETE_CHILD` - Delete from directory access,\\n * `EXECUTE` - Execute\
-        \ access,\\n * `EXTEND` - File extension access,\\n * `MODIFY` - File modification\
-        \ access,\\n * `READ` - Read access rights,\\n * `READ_ACL` - ACL read access,\\\
-        n * `READ_ATTR` - Attribute read access,\\n * `READ_DATA` - File read access,\\\
-        n * `READ_EA` - Extended attribute read access,\\n * `SYNCHRONIZE` - File\
-        \ synchronize access,\\n * `WRITE` - Write access rights,\\n * `WRITE_ACL`\
-        \ - ACL write access,\\n * `WRITE_ATTR` - Attribute write access,\\n * `WRITE_EA`\
-        \ - Extended attribute write access,\\n * `WRITE_GROUP` - Group write access\"\
-        \n            }\n          }\n        }\n      }\n    },\n    \"network_permissions\"\
+        \            \"type\": \"array\",\n            \"items\": {\n            \
+        \  \"type\": \"string\",\n              \"enum\": [\n                \"READ_DATA\"\
+        ,\n                \"READ_EA\",\n                \"READ_ATTR\",\n        \
+        \        \"READ_ACL\",\n                \"WRITE_EA\",\n                \"\
+        WRITE_ATTR\",\n                \"WRITE_ACL\",\n                \"CHANGE_OWNER\"\
+        ,\n                \"WRITE_GROUP\",\n                \"DELETE\",\n       \
+        \         \"EXECUTE\",\n                \"MODIFY\",\n                \"EXTEND\"\
+        ,\n                \"DELETE_CHILD\",\n                \"SYNCHRONIZE\",\n \
+        \               \"READ\",\n                \"WRITE\",\n                \"\
+        CHANGE_PERMISSIONS\"\n              ],\n              \"description\": \"\
+        Rights pertaining to the permissions entry:\\n * `CHANGE_OWNER` - Owner write\
+        \ access,\\n * `CHANGE_PERMISSIONS` - Rights to change permissions on file\
+        \ objects,\\n * `DELETE` - Delete access,\\n * `DELETE_CHILD` - Delete from\
+        \ directory access,\\n * `EXECUTE` - Execute access,\\n * `EXTEND` - File\
+        \ extension access,\\n * `MODIFY` - File modification access,\\n * `READ`\
+        \ - Read access rights,\\n * `READ_ACL` - ACL read access,\\n * `READ_ATTR`\
+        \ - Attribute read access,\\n * `READ_DATA` - File read access,\\n * `READ_EA`\
+        \ - Extended attribute read access,\\n * `SYNCHRONIZE` - File synchronize\
+        \ access,\\n * `WRITE` - Write access rights,\\n * `WRITE_ACL` - ACL write\
+        \ access,\\n * `WRITE_ATTR` - Attribute write access,\\n * `WRITE_EA` - Extended\
+        \ attribute write access,\\n * `WRITE_GROUP` - Group write access\"\n    \
+        \        }\n          }\n        }\n      }\n    },\n    \"network_permissions\"\
         : {\n      \"type\": \"array\",\n      \"items\": {\n        \"description\"\
         : \"The network access control list (ACL) for this SMB share. If not specified,\
         \ the default is to allow any host.\",\n        \"type\": \"object\",\n  \
@@ -227,23 +217,19 @@ methods:
         : {\n            \"type\": \"array\",\n            \"items\": {\n        \
         \      \"description\": \"IP address ranges to apply permissions to. Empty\
         \ means all hosts.\",\n              \"type\": \"string\"\n            }\n\
-        \          },\n          \"rights\": {\n            \"description\": \"Rights\
-        \ pertaining to the permissions entry\",\n            \"type\": \"array\"\
-        ,\n            \"items\": {\n              \"type\": \"string\",\n       \
-        \       \"enum\": [\n                \"READ\",\n                \"WRITE\"\
-        ,\n                \"CHANGE_PERMISSIONS\",\n                \"ALL\",\n   \
-        \             \"READ_DATA\",\n                \"READ_EA\",\n             \
-        \   \"READ_ATTR\",\n                \"READ_ACL\",\n                \"WRITE_EA\"\
-        ,\n                \"WRITE_ATTR\",\n                \"WRITE_ACL\",\n     \
-        \           \"CHANGE_OWNER\",\n                \"WRITE_GROUP\",\n        \
-        \        \"DELETE\",\n                \"EXECUTE\",\n                \"MODIFY\"\
-        ,\n                \"EXTEND\",\n                \"ADD_FILE\",\n          \
-        \      \"ADD_SUBDIR\",\n                \"DELETE_CHILD\",\n              \
-        \  \"SYNCHRONIZE\"\n              ],\n              \"description\": \"Rights\
-        \ pertaining to the permissions entry:\\n * `ADD_FILE` - File creation access,\\\
-        n * `ADD_SUBDIR` - Directory creation access,\\n * `ALL` - All access rights,\\\
-        n * `CHANGE_OWNER` - Owner write access,\\n * `CHANGE_PERMISSIONS` - Rights\
-        \ to change permissions on file objects,\\n * `DELETE` - Delete access,\\\
+        \          },\n          \"rights\": {\n            \"type\": \"array\",\n\
+        \            \"items\": {\n              \"type\": \"string\",\n         \
+        \     \"enum\": [\n                \"READ_DATA\",\n                \"READ_EA\"\
+        ,\n                \"READ_ATTR\",\n                \"READ_ACL\",\n       \
+        \         \"WRITE_EA\",\n                \"WRITE_ATTR\",\n               \
+        \ \"WRITE_ACL\",\n                \"CHANGE_OWNER\",\n                \"WRITE_GROUP\"\
+        ,\n                \"DELETE\",\n                \"EXECUTE\",\n           \
+        \     \"MODIFY\",\n                \"EXTEND\",\n                \"DELETE_CHILD\"\
+        ,\n                \"SYNCHRONIZE\",\n                \"READ\",\n         \
+        \       \"WRITE\",\n                \"CHANGE_PERMISSIONS\"\n             \
+        \ ],\n              \"description\": \"Rights pertaining to the permissions\
+        \ entry:\\n * `CHANGE_OWNER` - Owner write access,\\n * `CHANGE_PERMISSIONS`\
+        \ - Rights to change permissions on file objects,\\n * `DELETE` - Delete access,\\\
         n * `DELETE_CHILD` - Delete from directory access,\\n * `EXECUTE` - Execute\
         \ access,\\n * `EXTEND` - File extension access,\\n * `MODIFY` - File modification\
         \ access,\\n * `READ` - Read access rights,\\n * `READ_ACL` - ACL read access,\\\
@@ -316,31 +302,28 @@ methods:
         \    \"type\": \"string\"\n              },\n              \"name\": {\n \
         \               \"description\": \"name\",\n                \"type\": \"string\"\
         \n              }\n            }\n          },\n          \"rights\": {\n\
-        \            \"description\": \"Rights pertaining to the permissions entry\"\
-        ,\n            \"type\": \"array\",\n            \"items\": {\n          \
-        \    \"type\": \"string\",\n              \"enum\": [\n                \"\
-        READ\",\n                \"WRITE\",\n                \"CHANGE_PERMISSIONS\"\
-        ,\n                \"ALL\",\n                \"READ_DATA\",\n            \
-        \    \"READ_EA\",\n                \"READ_ATTR\",\n                \"READ_ACL\"\
-        ,\n                \"WRITE_EA\",\n                \"WRITE_ATTR\",\n      \
-        \          \"WRITE_ACL\",\n                \"CHANGE_OWNER\",\n           \
-        \     \"WRITE_GROUP\",\n                \"DELETE\",\n                \"EXECUTE\"\
-        ,\n                \"MODIFY\",\n                \"EXTEND\",\n            \
-        \    \"ADD_FILE\",\n                \"ADD_SUBDIR\",\n                \"DELETE_CHILD\"\
-        ,\n                \"SYNCHRONIZE\"\n              ],\n              \"description\"\
-        : \"Rights pertaining to the permissions entry:\\n * `ADD_FILE` - File creation\
-        \ access,\\n * `ADD_SUBDIR` - Directory creation access,\\n * `ALL` - All\
-        \ access rights,\\n * `CHANGE_OWNER` - Owner write access,\\n * `CHANGE_PERMISSIONS`\
-        \ - Rights to change permissions on file objects,\\n * `DELETE` - Delete access,\\\
-        n * `DELETE_CHILD` - Delete from directory access,\\n * `EXECUTE` - Execute\
-        \ access,\\n * `EXTEND` - File extension access,\\n * `MODIFY` - File modification\
-        \ access,\\n * `READ` - Read access rights,\\n * `READ_ACL` - ACL read access,\\\
-        n * `READ_ATTR` - Attribute read access,\\n * `READ_DATA` - File read access,\\\
-        n * `READ_EA` - Extended attribute read access,\\n * `SYNCHRONIZE` - File\
-        \ synchronize access,\\n * `WRITE` - Write access rights,\\n * `WRITE_ACL`\
-        \ - ACL write access,\\n * `WRITE_ATTR` - Attribute write access,\\n * `WRITE_EA`\
-        \ - Extended attribute write access,\\n * `WRITE_GROUP` - Group write access\"\
-        \n            }\n          }\n        }\n      }\n    },\n    \"network_permissions\"\
+        \            \"type\": \"array\",\n            \"items\": {\n            \
+        \  \"type\": \"string\",\n              \"enum\": [\n                \"READ_DATA\"\
+        ,\n                \"READ_EA\",\n                \"READ_ATTR\",\n        \
+        \        \"READ_ACL\",\n                \"WRITE_EA\",\n                \"\
+        WRITE_ATTR\",\n                \"WRITE_ACL\",\n                \"CHANGE_OWNER\"\
+        ,\n                \"WRITE_GROUP\",\n                \"DELETE\",\n       \
+        \         \"EXECUTE\",\n                \"MODIFY\",\n                \"EXTEND\"\
+        ,\n                \"DELETE_CHILD\",\n                \"SYNCHRONIZE\",\n \
+        \               \"READ\",\n                \"WRITE\",\n                \"\
+        CHANGE_PERMISSIONS\"\n              ],\n              \"description\": \"\
+        Rights pertaining to the permissions entry:\\n * `CHANGE_OWNER` - Owner write\
+        \ access,\\n * `CHANGE_PERMISSIONS` - Rights to change permissions on file\
+        \ objects,\\n * `DELETE` - Delete access,\\n * `DELETE_CHILD` - Delete from\
+        \ directory access,\\n * `EXECUTE` - Execute access,\\n * `EXTEND` - File\
+        \ extension access,\\n * `MODIFY` - File modification access,\\n * `READ`\
+        \ - Read access rights,\\n * `READ_ACL` - ACL read access,\\n * `READ_ATTR`\
+        \ - Attribute read access,\\n * `READ_DATA` - File read access,\\n * `READ_EA`\
+        \ - Extended attribute read access,\\n * `SYNCHRONIZE` - File synchronize\
+        \ access,\\n * `WRITE` - Write access rights,\\n * `WRITE_ACL` - ACL write\
+        \ access,\\n * `WRITE_ATTR` - Attribute write access,\\n * `WRITE_EA` - Extended\
+        \ attribute write access,\\n * `WRITE_GROUP` - Group write access\"\n    \
+        \        }\n          }\n        }\n      }\n    },\n    \"network_permissions\"\
         : {\n      \"type\": \"array\",\n      \"items\": {\n        \"description\"\
         : \"The network access control list (ACL) for this SMB share. If not specified,\
         \ the default is to allow any host.\",\n        \"type\": \"object\",\n  \
@@ -353,23 +336,19 @@ methods:
         : {\n            \"type\": \"array\",\n            \"items\": {\n        \
         \      \"description\": \"IP address ranges to apply permissions to. Empty\
         \ means all hosts.\",\n              \"type\": \"string\"\n            }\n\
-        \          },\n          \"rights\": {\n            \"description\": \"Rights\
-        \ pertaining to the permissions entry\",\n            \"type\": \"array\"\
-        ,\n            \"items\": {\n              \"type\": \"string\",\n       \
-        \       \"enum\": [\n                \"READ\",\n                \"WRITE\"\
-        ,\n                \"CHANGE_PERMISSIONS\",\n                \"ALL\",\n   \
-        \             \"READ_DATA\",\n                \"READ_EA\",\n             \
-        \   \"READ_ATTR\",\n                \"READ_ACL\",\n                \"WRITE_EA\"\
-        ,\n                \"WRITE_ATTR\",\n                \"WRITE_ACL\",\n     \
-        \           \"CHANGE_OWNER\",\n                \"WRITE_GROUP\",\n        \
-        \        \"DELETE\",\n                \"EXECUTE\",\n                \"MODIFY\"\
-        ,\n                \"EXTEND\",\n                \"ADD_FILE\",\n          \
-        \      \"ADD_SUBDIR\",\n                \"DELETE_CHILD\",\n              \
-        \  \"SYNCHRONIZE\"\n              ],\n              \"description\": \"Rights\
-        \ pertaining to the permissions entry:\\n * `ADD_FILE` - File creation access,\\\
-        n * `ADD_SUBDIR` - Directory creation access,\\n * `ALL` - All access rights,\\\
-        n * `CHANGE_OWNER` - Owner write access,\\n * `CHANGE_PERMISSIONS` - Rights\
-        \ to change permissions on file objects,\\n * `DELETE` - Delete access,\\\
+        \          },\n          \"rights\": {\n            \"type\": \"array\",\n\
+        \            \"items\": {\n              \"type\": \"string\",\n         \
+        \     \"enum\": [\n                \"READ_DATA\",\n                \"READ_EA\"\
+        ,\n                \"READ_ATTR\",\n                \"READ_ACL\",\n       \
+        \         \"WRITE_EA\",\n                \"WRITE_ATTR\",\n               \
+        \ \"WRITE_ACL\",\n                \"CHANGE_OWNER\",\n                \"WRITE_GROUP\"\
+        ,\n                \"DELETE\",\n                \"EXECUTE\",\n           \
+        \     \"MODIFY\",\n                \"EXTEND\",\n                \"DELETE_CHILD\"\
+        ,\n                \"SYNCHRONIZE\",\n                \"READ\",\n         \
+        \       \"WRITE\",\n                \"CHANGE_PERMISSIONS\"\n             \
+        \ ],\n              \"description\": \"Rights pertaining to the permissions\
+        \ entry:\\n * `CHANGE_OWNER` - Owner write access,\\n * `CHANGE_PERMISSIONS`\
+        \ - Rights to change permissions on file objects,\\n * `DELETE` - Delete access,\\\
         n * `DELETE_CHILD` - Delete from directory access,\\n * `EXECUTE` - Execute\
         \ access,\\n * `EXTEND` - File extension access,\\n * `MODIFY` - File modification\
         \ access,\\n * `READ` - Read access rights,\\n * `READ_ACL` - ACL read access,\\\
@@ -451,31 +430,28 @@ methods:
         \    \"type\": \"string\"\n              },\n              \"name\": {\n \
         \               \"description\": \"name\",\n                \"type\": \"string\"\
         \n              }\n            }\n          },\n          \"rights\": {\n\
-        \            \"description\": \"Rights pertaining to the permissions entry\"\
-        ,\n            \"type\": \"array\",\n            \"items\": {\n          \
-        \    \"type\": \"string\",\n              \"enum\": [\n                \"\
-        READ\",\n                \"WRITE\",\n                \"CHANGE_PERMISSIONS\"\
-        ,\n                \"ALL\",\n                \"READ_DATA\",\n            \
-        \    \"READ_EA\",\n                \"READ_ATTR\",\n                \"READ_ACL\"\
-        ,\n                \"WRITE_EA\",\n                \"WRITE_ATTR\",\n      \
-        \          \"WRITE_ACL\",\n                \"CHANGE_OWNER\",\n           \
-        \     \"WRITE_GROUP\",\n                \"DELETE\",\n                \"EXECUTE\"\
-        ,\n                \"MODIFY\",\n                \"EXTEND\",\n            \
-        \    \"ADD_FILE\",\n                \"ADD_SUBDIR\",\n                \"DELETE_CHILD\"\
-        ,\n                \"SYNCHRONIZE\"\n              ],\n              \"description\"\
-        : \"Rights pertaining to the permissions entry:\\n * `ADD_FILE` - File creation\
-        \ access,\\n * `ADD_SUBDIR` - Directory creation access,\\n * `ALL` - All\
-        \ access rights,\\n * `CHANGE_OWNER` - Owner write access,\\n * `CHANGE_PERMISSIONS`\
-        \ - Rights to change permissions on file objects,\\n * `DELETE` - Delete access,\\\
-        n * `DELETE_CHILD` - Delete from directory access,\\n * `EXECUTE` - Execute\
-        \ access,\\n * `EXTEND` - File extension access,\\n * `MODIFY` - File modification\
-        \ access,\\n * `READ` - Read access rights,\\n * `READ_ACL` - ACL read access,\\\
-        n * `READ_ATTR` - Attribute read access,\\n * `READ_DATA` - File read access,\\\
-        n * `READ_EA` - Extended attribute read access,\\n * `SYNCHRONIZE` - File\
-        \ synchronize access,\\n * `WRITE` - Write access rights,\\n * `WRITE_ACL`\
-        \ - ACL write access,\\n * `WRITE_ATTR` - Attribute write access,\\n * `WRITE_EA`\
-        \ - Extended attribute write access,\\n * `WRITE_GROUP` - Group write access\"\
-        \n            }\n          }\n        }\n      }\n    },\n    \"network_permissions\"\
+        \            \"type\": \"array\",\n            \"items\": {\n            \
+        \  \"type\": \"string\",\n              \"enum\": [\n                \"READ_DATA\"\
+        ,\n                \"READ_EA\",\n                \"READ_ATTR\",\n        \
+        \        \"READ_ACL\",\n                \"WRITE_EA\",\n                \"\
+        WRITE_ATTR\",\n                \"WRITE_ACL\",\n                \"CHANGE_OWNER\"\
+        ,\n                \"WRITE_GROUP\",\n                \"DELETE\",\n       \
+        \         \"EXECUTE\",\n                \"MODIFY\",\n                \"EXTEND\"\
+        ,\n                \"DELETE_CHILD\",\n                \"SYNCHRONIZE\",\n \
+        \               \"READ\",\n                \"WRITE\",\n                \"\
+        CHANGE_PERMISSIONS\"\n              ],\n              \"description\": \"\
+        Rights pertaining to the permissions entry:\\n * `CHANGE_OWNER` - Owner write\
+        \ access,\\n * `CHANGE_PERMISSIONS` - Rights to change permissions on file\
+        \ objects,\\n * `DELETE` - Delete access,\\n * `DELETE_CHILD` - Delete from\
+        \ directory access,\\n * `EXECUTE` - Execute access,\\n * `EXTEND` - File\
+        \ extension access,\\n * `MODIFY` - File modification access,\\n * `READ`\
+        \ - Read access rights,\\n * `READ_ACL` - ACL read access,\\n * `READ_ATTR`\
+        \ - Attribute read access,\\n * `READ_DATA` - File read access,\\n * `READ_EA`\
+        \ - Extended attribute read access,\\n * `SYNCHRONIZE` - File synchronize\
+        \ access,\\n * `WRITE` - Write access rights,\\n * `WRITE_ACL` - ACL write\
+        \ access,\\n * `WRITE_ATTR` - Attribute write access,\\n * `WRITE_EA` - Extended\
+        \ attribute write access,\\n * `WRITE_GROUP` - Group write access\"\n    \
+        \        }\n          }\n        }\n      }\n    },\n    \"network_permissions\"\
         : {\n      \"type\": \"array\",\n      \"items\": {\n        \"description\"\
         : \"The network access control list (ACL) for this SMB share. If not specified,\
         \ the default is to allow any host.\",\n        \"type\": \"object\",\n  \
@@ -488,23 +464,19 @@ methods:
         : {\n            \"type\": \"array\",\n            \"items\": {\n        \
         \      \"description\": \"IP address ranges to apply permissions to. Empty\
         \ means all hosts.\",\n              \"type\": \"string\"\n            }\n\
-        \          },\n          \"rights\": {\n            \"description\": \"Rights\
-        \ pertaining to the permissions entry\",\n            \"type\": \"array\"\
-        ,\n            \"items\": {\n              \"type\": \"string\",\n       \
-        \       \"enum\": [\n                \"READ\",\n                \"WRITE\"\
-        ,\n                \"CHANGE_PERMISSIONS\",\n                \"ALL\",\n   \
-        \             \"READ_DATA\",\n                \"READ_EA\",\n             \
-        \   \"READ_ATTR\",\n                \"READ_ACL\",\n                \"WRITE_EA\"\
-        ,\n                \"WRITE_ATTR\",\n                \"WRITE_ACL\",\n     \
-        \           \"CHANGE_OWNER\",\n                \"WRITE_GROUP\",\n        \
-        \        \"DELETE\",\n                \"EXECUTE\",\n                \"MODIFY\"\
-        ,\n                \"EXTEND\",\n                \"ADD_FILE\",\n          \
-        \      \"ADD_SUBDIR\",\n                \"DELETE_CHILD\",\n              \
-        \  \"SYNCHRONIZE\"\n              ],\n              \"description\": \"Rights\
-        \ pertaining to the permissions entry:\\n * `ADD_FILE` - File creation access,\\\
-        n * `ADD_SUBDIR` - Directory creation access,\\n * `ALL` - All access rights,\\\
-        n * `CHANGE_OWNER` - Owner write access,\\n * `CHANGE_PERMISSIONS` - Rights\
-        \ to change permissions on file objects,\\n * `DELETE` - Delete access,\\\
+        \          },\n          \"rights\": {\n            \"type\": \"array\",\n\
+        \            \"items\": {\n              \"type\": \"string\",\n         \
+        \     \"enum\": [\n                \"READ_DATA\",\n                \"READ_EA\"\
+        ,\n                \"READ_ATTR\",\n                \"READ_ACL\",\n       \
+        \         \"WRITE_EA\",\n                \"WRITE_ATTR\",\n               \
+        \ \"WRITE_ACL\",\n                \"CHANGE_OWNER\",\n                \"WRITE_GROUP\"\
+        ,\n                \"DELETE\",\n                \"EXECUTE\",\n           \
+        \     \"MODIFY\",\n                \"EXTEND\",\n                \"DELETE_CHILD\"\
+        ,\n                \"SYNCHRONIZE\",\n                \"READ\",\n         \
+        \       \"WRITE\",\n                \"CHANGE_PERMISSIONS\"\n             \
+        \ ],\n              \"description\": \"Rights pertaining to the permissions\
+        \ entry:\\n * `CHANGE_OWNER` - Owner write access,\\n * `CHANGE_PERMISSIONS`\
+        \ - Rights to change permissions on file objects,\\n * `DELETE` - Delete access,\\\
         n * `DELETE_CHILD` - Delete from directory access,\\n * `EXECUTE` - Execute\
         \ access,\\n * `EXTEND` - File extension access,\\n * `MODIFY` - File modification\
         \ access,\\n * `READ` - Read access rights,\\n * `READ_ACL` - ACL read access,\\\
@@ -577,31 +549,28 @@ methods:
         \    \"type\": \"string\"\n              },\n              \"name\": {\n \
         \               \"description\": \"name\",\n                \"type\": \"string\"\
         \n              }\n            }\n          },\n          \"rights\": {\n\
-        \            \"description\": \"Rights pertaining to the permissions entry\"\
-        ,\n            \"type\": \"array\",\n            \"items\": {\n          \
-        \    \"type\": \"string\",\n              \"enum\": [\n                \"\
-        READ\",\n                \"WRITE\",\n                \"CHANGE_PERMISSIONS\"\
-        ,\n                \"ALL\",\n                \"READ_DATA\",\n            \
-        \    \"READ_EA\",\n                \"READ_ATTR\",\n                \"READ_ACL\"\
-        ,\n                \"WRITE_EA\",\n                \"WRITE_ATTR\",\n      \
-        \          \"WRITE_ACL\",\n                \"CHANGE_OWNER\",\n           \
-        \     \"WRITE_GROUP\",\n                \"DELETE\",\n                \"EXECUTE\"\
-        ,\n                \"MODIFY\",\n                \"EXTEND\",\n            \
-        \    \"ADD_FILE\",\n                \"ADD_SUBDIR\",\n                \"DELETE_CHILD\"\
-        ,\n                \"SYNCHRONIZE\"\n              ],\n              \"description\"\
-        : \"Rights pertaining to the permissions entry:\\n * `ADD_FILE` - File creation\
-        \ access,\\n * `ADD_SUBDIR` - Directory creation access,\\n * `ALL` - All\
-        \ access rights,\\n * `CHANGE_OWNER` - Owner write access,\\n * `CHANGE_PERMISSIONS`\
-        \ - Rights to change permissions on file objects,\\n * `DELETE` - Delete access,\\\
-        n * `DELETE_CHILD` - Delete from directory access,\\n * `EXECUTE` - Execute\
-        \ access,\\n * `EXTEND` - File extension access,\\n * `MODIFY` - File modification\
-        \ access,\\n * `READ` - Read access rights,\\n * `READ_ACL` - ACL read access,\\\
-        n * `READ_ATTR` - Attribute read access,\\n * `READ_DATA` - File read access,\\\
-        n * `READ_EA` - Extended attribute read access,\\n * `SYNCHRONIZE` - File\
-        \ synchronize access,\\n * `WRITE` - Write access rights,\\n * `WRITE_ACL`\
-        \ - ACL write access,\\n * `WRITE_ATTR` - Attribute write access,\\n * `WRITE_EA`\
-        \ - Extended attribute write access,\\n * `WRITE_GROUP` - Group write access\"\
-        \n            }\n          }\n        }\n      }\n    },\n    \"network_permissions\"\
+        \            \"type\": \"array\",\n            \"items\": {\n            \
+        \  \"type\": \"string\",\n              \"enum\": [\n                \"READ_DATA\"\
+        ,\n                \"READ_EA\",\n                \"READ_ATTR\",\n        \
+        \        \"READ_ACL\",\n                \"WRITE_EA\",\n                \"\
+        WRITE_ATTR\",\n                \"WRITE_ACL\",\n                \"CHANGE_OWNER\"\
+        ,\n                \"WRITE_GROUP\",\n                \"DELETE\",\n       \
+        \         \"EXECUTE\",\n                \"MODIFY\",\n                \"EXTEND\"\
+        ,\n                \"DELETE_CHILD\",\n                \"SYNCHRONIZE\",\n \
+        \               \"READ\",\n                \"WRITE\",\n                \"\
+        CHANGE_PERMISSIONS\"\n              ],\n              \"description\": \"\
+        Rights pertaining to the permissions entry:\\n * `CHANGE_OWNER` - Owner write\
+        \ access,\\n * `CHANGE_PERMISSIONS` - Rights to change permissions on file\
+        \ objects,\\n * `DELETE` - Delete access,\\n * `DELETE_CHILD` - Delete from\
+        \ directory access,\\n * `EXECUTE` - Execute access,\\n * `EXTEND` - File\
+        \ extension access,\\n * `MODIFY` - File modification access,\\n * `READ`\
+        \ - Read access rights,\\n * `READ_ACL` - ACL read access,\\n * `READ_ATTR`\
+        \ - Attribute read access,\\n * `READ_DATA` - File read access,\\n * `READ_EA`\
+        \ - Extended attribute read access,\\n * `SYNCHRONIZE` - File synchronize\
+        \ access,\\n * `WRITE` - Write access rights,\\n * `WRITE_ACL` - ACL write\
+        \ access,\\n * `WRITE_ATTR` - Attribute write access,\\n * `WRITE_EA` - Extended\
+        \ attribute write access,\\n * `WRITE_GROUP` - Group write access\"\n    \
+        \        }\n          }\n        }\n      }\n    },\n    \"network_permissions\"\
         : {\n      \"type\": \"array\",\n      \"items\": {\n        \"description\"\
         : \"The network access control list (ACL) for this SMB share. If not specified,\
         \ the default is to allow any host.\",\n        \"type\": \"object\",\n  \
@@ -614,23 +583,19 @@ methods:
         : {\n            \"type\": \"array\",\n            \"items\": {\n        \
         \      \"description\": \"IP address ranges to apply permissions to. Empty\
         \ means all hosts.\",\n              \"type\": \"string\"\n            }\n\
-        \          },\n          \"rights\": {\n            \"description\": \"Rights\
-        \ pertaining to the permissions entry\",\n            \"type\": \"array\"\
-        ,\n            \"items\": {\n              \"type\": \"string\",\n       \
-        \       \"enum\": [\n                \"READ\",\n                \"WRITE\"\
-        ,\n                \"CHANGE_PERMISSIONS\",\n                \"ALL\",\n   \
-        \             \"READ_DATA\",\n                \"READ_EA\",\n             \
-        \   \"READ_ATTR\",\n                \"READ_ACL\",\n                \"WRITE_EA\"\
-        ,\n                \"WRITE_ATTR\",\n                \"WRITE_ACL\",\n     \
-        \           \"CHANGE_OWNER\",\n                \"WRITE_GROUP\",\n        \
-        \        \"DELETE\",\n                \"EXECUTE\",\n                \"MODIFY\"\
-        ,\n                \"EXTEND\",\n                \"ADD_FILE\",\n          \
-        \      \"ADD_SUBDIR\",\n                \"DELETE_CHILD\",\n              \
-        \  \"SYNCHRONIZE\"\n              ],\n              \"description\": \"Rights\
-        \ pertaining to the permissions entry:\\n * `ADD_FILE` - File creation access,\\\
-        n * `ADD_SUBDIR` - Directory creation access,\\n * `ALL` - All access rights,\\\
-        n * `CHANGE_OWNER` - Owner write access,\\n * `CHANGE_PERMISSIONS` - Rights\
-        \ to change permissions on file objects,\\n * `DELETE` - Delete access,\\\
+        \          },\n          \"rights\": {\n            \"type\": \"array\",\n\
+        \            \"items\": {\n              \"type\": \"string\",\n         \
+        \     \"enum\": [\n                \"READ_DATA\",\n                \"READ_EA\"\
+        ,\n                \"READ_ATTR\",\n                \"READ_ACL\",\n       \
+        \         \"WRITE_EA\",\n                \"WRITE_ATTR\",\n               \
+        \ \"WRITE_ACL\",\n                \"CHANGE_OWNER\",\n                \"WRITE_GROUP\"\
+        ,\n                \"DELETE\",\n                \"EXECUTE\",\n           \
+        \     \"MODIFY\",\n                \"EXTEND\",\n                \"DELETE_CHILD\"\
+        ,\n                \"SYNCHRONIZE\",\n                \"READ\",\n         \
+        \       \"WRITE\",\n                \"CHANGE_PERMISSIONS\"\n             \
+        \ ],\n              \"description\": \"Rights pertaining to the permissions\
+        \ entry:\\n * `CHANGE_OWNER` - Owner write access,\\n * `CHANGE_PERMISSIONS`\
+        \ - Rights to change permissions on file objects,\\n * `DELETE` - Delete access,\\\
         n * `DELETE_CHILD` - Delete from directory access,\\n * `EXECUTE` - Execute\
         \ access,\\n * `EXTEND` - File extension access,\\n * `MODIFY` - File modification\
         \ access,\\n * `READ` - Read access rights,\\n * `READ_ACL` - ACL read access,\\\

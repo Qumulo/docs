@@ -261,21 +261,6 @@ entries:
       title: portal/files/{file_id}/evict
       url: /rest-api-guide/cloud-data-fabric-v1/portal_files_file_id_evict.html
     - apiversion: v1
-      deprecated: true
-      output: web,pdf
-      title: portal/hubs
-      url: /rest-api-guide/cloud-data-fabric-v1/portal_hubs.html
-    - apiversion: v1
-      deprecated: true
-      output: web,pdf
-      title: portal/hubs/{id}
-      url: /rest-api-guide/cloud-data-fabric-v1/portal_hubs_id.html
-    - apiversion: v1
-      deprecated: true
-      output: web,pdf
-      title: portal/hubs/{id}/authorize
-      url: /rest-api-guide/cloud-data-fabric-v1/portal_hubs_id_authorize.html
-    - apiversion: v1
       output: web,pdf
       preview: true
       title: portal/ping
@@ -285,24 +270,9 @@ entries:
       title: portal/quorum/events
       url: /rest-api-guide/cloud-data-fabric-v1/portal_quorum_events.html
     - apiversion: v1
-      deprecated: true
-      output: web,pdf
-      title: portal/spokes
-      url: /rest-api-guide/cloud-data-fabric-v1/portal_spokes.html
-    - apiversion: v1
       output: web,pdf
       title: portal/spokes/eviction-settings
       url: /rest-api-guide/cloud-data-fabric-v1/portal_spokes_eviction-settings.html
-    - apiversion: v1
-      deprecated: true
-      output: web,pdf
-      title: portal/spokes/{id}
-      url: /rest-api-guide/cloud-data-fabric-v1/portal_spokes_id.html
-    - apiversion: v1
-      deprecated: true
-      output: web,pdf
-      title: portal/spokes/{id}/propose
-      url: /rest-api-guide/cloud-data-fabric-v1/portal_spokes_id_propose.html
     output: web,pdf
     title: Cloud Data Fabric V1 (portal)
     url: /rest-api-guide/cloud-data-fabric-v1/
