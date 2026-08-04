@@ -8110,9 +8110,8 @@ $(document).ready(function() {
 
 
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq create_object_backed_cluster <span class="o">[</span><span class="nt">-h</span><span class="o">]</span> <span class="nt">--cluster-name</span> CLUSTER_NAME <span class="nt">--admin-password</span> ADMIN_PASSWORD <span class="nt">--host-instance-id</span> HOST_INSTANCE_ID <span class="nt">--object-storage-uris</span>
-    OBJECT_STORAGE_URIS <span class="o">[</span>OBJECT_STORAGE_URIS ...] <span class="nt">--usable-capacity-clamp</span> USABLE_CAPACITY_CLAMP <span class="nt">--product-type</span> PRODUCT_TYPE
-    <span class="o">[</span><span class="nt">--node-ips-and-fault-domains</span> NODE_IPS_AND_FAULT_DOMAINS <span class="o">[</span>NODE_IPS_AND_FAULT_DOMAINS ...]] <span class="nt">--accept-eula</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq create_object_backed_cluster <span class="o">[</span><span class="nt">-h</span><span class="o">]</span> <span class="nt">--cluster-name</span> CLUSTER_NAME <span class="o">[</span><span class="nt">--admin-password</span> ADMIN_PASSWORD] <span class="nt">--host-instance-id</span> HOST_INSTANCE_ID <span class="nt">--object-storage-uris</span> OBJECT_STORAGE_URIS <span class="o">[</span>OBJECT_STORAGE_URIS ...] <span class="nt">--usable-capacity-clamp</span>
+    USABLE_CAPACITY_CLAMP <span class="nt">--product-type</span> PRODUCT_TYPE <span class="o">[</span><span class="nt">--node-ips-and-fault-domains</span> NODE_IPS_AND_FAULT_DOMAINS <span class="o">[</span>NODE_IPS_AND_FAULT_DOMAINS ...]] <span class="nt">--accept-eula</span>
     <span class="o">[</span><span class="nt">--azure-key-vault-uri</span> KEY_VAULT | <span class="nt">--key-vault</span> KEY_VAULT]
 </code></pre></div></div>
 
@@ -8146,7 +8145,7 @@ $(document).ready(function() {
     </td>
     <td>
       
-        Yes
+        No
       
     </td>
     <td>

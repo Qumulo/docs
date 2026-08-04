@@ -1602,66 +1602,6 @@ fetch('/data/website.json')
           
           
           <li>
-            <a title="portal/hubs" href="/rest-api-guide/cloud-data-fabric-v1/portal_hubs.html">
-              portal/<wbr>hubs
-              <span class="tag-container">
-              
-                <span class="apiversion v1">v1</span>
-              
-              
-              
-                <span class="apideprecated">deprecated</span>
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-          
-          
-          <li>
-            <a title="portal/hubs/{id}" href="/rest-api-guide/cloud-data-fabric-v1/portal_hubs_id.html">
-              portal/<wbr>hubs/<wbr>{id}
-              <span class="tag-container">
-              
-                <span class="apiversion v1">v1</span>
-              
-              
-              
-                <span class="apideprecated">deprecated</span>
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-          
-          
-          <li>
-            <a title="portal/hubs/{id}/authorize" href="/rest-api-guide/cloud-data-fabric-v1/portal_hubs_id_authorize.html">
-              portal/<wbr>hubs/<wbr>{id}/<wbr>authorize
-              <span class="tag-container">
-              
-                <span class="apiversion v1">v1</span>
-              
-              
-              
-                <span class="apideprecated">deprecated</span>
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-          
-          
-          <li>
             <a title="portal/ping" href="/rest-api-guide/cloud-data-fabric-v1/portal_ping.html">
               portal/<wbr>ping
               <span class="tag-container">
@@ -1700,26 +1640,6 @@ fetch('/data/website.json')
           
           
           <li>
-            <a title="portal/spokes" href="/rest-api-guide/cloud-data-fabric-v1/portal_spokes.html">
-              portal/<wbr>spokes
-              <span class="tag-container">
-              
-                <span class="apiversion v1">v1</span>
-              
-              
-              
-                <span class="apideprecated">deprecated</span>
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-          
-          
-          <li>
             <a title="portal/spokes/eviction-settings" href="/rest-api-guide/cloud-data-fabric-v1/portal_spokes_eviction-settings.html">
               portal/<wbr>spokes/<wbr>eviction-settings
               <span class="tag-container">
@@ -1727,46 +1647,6 @@ fetch('/data/website.json')
                 <span class="apiversion v1">v1</span>
               
               
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-          
-          
-          <li>
-            <a title="portal/spokes/{id}" href="/rest-api-guide/cloud-data-fabric-v1/portal_spokes_id.html">
-              portal/<wbr>spokes/<wbr>{id}
-              <span class="tag-container">
-              
-                <span class="apiversion v1">v1</span>
-              
-              
-              
-                <span class="apideprecated">deprecated</span>
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-          
-          
-          <li>
-            <a title="portal/spokes/{id}/propose" href="/rest-api-guide/cloud-data-fabric-v1/portal_spokes_id_propose.html">
-              portal/<wbr>spokes/<wbr>{id}/<wbr>propose
-              <span class="tag-container">
-              
-                <span class="apiversion v1">v1</span>
-              
-              
-              
-                <span class="apideprecated">deprecated</span>
               
               </span>
             </a>
@@ -9089,21 +8969,19 @@ $(document).ready(function() {
             </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="w">
           </span><span class="p">},</span><span class="w">
           </span><span class="nl">"on_days"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"List of days of the week on which the replication schedule applies. Choose from SUN, MON, TUE, WED, THU, FRI, and/or SAT. EVERY_DAY can be used to specify all days."</span><span class="p">,</span><span class="w">
             </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"array"</span><span class="p">,</span><span class="w">
             </span><span class="nl">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
               </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
               </span><span class="nl">"enum"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-                </span><span class="s2">"SUN"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"MON"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"TUE"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"WED"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"THU"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"FRI"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"SAT"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"EVERY_DAY"</span><span class="w">
+                </span><span class="s2">"SUNDAY"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"MONDAY"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"TUESDAY"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"WEDNESDAY"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"THURSDAY"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"FRIDAY"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"SATURDAY"</span><span class="w">
               </span><span class="p">],</span><span class="w">
-              </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"List of days of the week on which the replication schedule applies. Choose from SUN, MON, TUE, WED, THU, FRI, and/or SAT. EVERY_DAY can be used to specify all days.:</span><span class="se">\n</span><span class="s2"> * `EVERY_DAY` - EVERY_DAY,</span><span class="se">\n</span><span class="s2"> * `FRI` - FRI,</span><span class="se">\n</span><span class="s2"> * `MON` - MON,</span><span class="se">\n</span><span class="s2"> * `SAT` - SAT,</span><span class="se">\n</span><span class="s2"> * `SUN` - SUN,</span><span class="se">\n</span><span class="s2"> * `THU` - THU,</span><span class="se">\n</span><span class="s2"> * `TUE` - TUE,</span><span class="se">\n</span><span class="s2"> * `WED` - WED"</span><span class="w">
+              </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"List of days of the week on which the replication schedule applies. Choose from SUN, MON, TUE, WED, THU, FRI, and/or SAT. EVERY_DAY can be used to specify all days.:</span><span class="se">\n</span><span class="s2"> * `FRIDAY` - FRIDAY,</span><span class="se">\n</span><span class="s2"> * `MONDAY` - MONDAY,</span><span class="se">\n</span><span class="s2"> * `SATURDAY` - SATURDAY,</span><span class="se">\n</span><span class="s2"> * `SUNDAY` - SUNDAY,</span><span class="se">\n</span><span class="s2"> * `THURSDAY` - THURSDAY,</span><span class="se">\n</span><span class="s2"> * `TUESDAY` - TUESDAY,</span><span class="se">\n</span><span class="s2"> * `WEDNESDAY` - WEDNESDAY"</span><span class="w">
             </span><span class="p">}</span><span class="w">
           </span><span class="p">}</span><span class="w">
         </span><span class="p">}</span><span class="w">
@@ -9249,21 +9127,19 @@ $(document).ready(function() {
             </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="w">
           </span><span class="p">},</span><span class="w">
           </span><span class="nl">"on_days"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"List of days of the week on which the replication schedule applies. Choose from SUN, MON, TUE, WED, THU, FRI, and/or SAT. EVERY_DAY can be used to specify all days."</span><span class="p">,</span><span class="w">
             </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"array"</span><span class="p">,</span><span class="w">
             </span><span class="nl">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
               </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
               </span><span class="nl">"enum"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-                </span><span class="s2">"SUN"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"MON"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"TUE"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"WED"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"THU"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"FRI"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"SAT"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"EVERY_DAY"</span><span class="w">
+                </span><span class="s2">"SUNDAY"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"MONDAY"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"TUESDAY"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"WEDNESDAY"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"THURSDAY"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"FRIDAY"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"SATURDAY"</span><span class="w">
               </span><span class="p">],</span><span class="w">
-              </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"List of days of the week on which the replication schedule applies. Choose from SUN, MON, TUE, WED, THU, FRI, and/or SAT. EVERY_DAY can be used to specify all days.:</span><span class="se">\n</span><span class="s2"> * `EVERY_DAY` - EVERY_DAY,</span><span class="se">\n</span><span class="s2"> * `FRI` - FRI,</span><span class="se">\n</span><span class="s2"> * `MON` - MON,</span><span class="se">\n</span><span class="s2"> * `SAT` - SAT,</span><span class="se">\n</span><span class="s2"> * `SUN` - SUN,</span><span class="se">\n</span><span class="s2"> * `THU` - THU,</span><span class="se">\n</span><span class="s2"> * `TUE` - TUE,</span><span class="se">\n</span><span class="s2"> * `WED` - WED"</span><span class="w">
+              </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"List of days of the week on which the replication schedule applies. Choose from SUN, MON, TUE, WED, THU, FRI, and/or SAT. EVERY_DAY can be used to specify all days.:</span><span class="se">\n</span><span class="s2"> * `FRIDAY` - FRIDAY,</span><span class="se">\n</span><span class="s2"> * `MONDAY` - MONDAY,</span><span class="se">\n</span><span class="s2"> * `SATURDAY` - SATURDAY,</span><span class="se">\n</span><span class="s2"> * `SUNDAY` - SUNDAY,</span><span class="se">\n</span><span class="s2"> * `THURSDAY` - THURSDAY,</span><span class="se">\n</span><span class="s2"> * `TUESDAY` - TUESDAY,</span><span class="se">\n</span><span class="s2"> * `WEDNESDAY` - WEDNESDAY"</span><span class="w">
             </span><span class="p">}</span><span class="w">
           </span><span class="p">}</span><span class="w">
         </span><span class="p">}</span><span class="w">
@@ -9377,21 +9253,19 @@ $(document).ready(function() {
             </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="w">
           </span><span class="p">},</span><span class="w">
           </span><span class="nl">"on_days"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"List of days of the week on which the replication schedule applies. Choose from SUN, MON, TUE, WED, THU, FRI, and/or SAT. EVERY_DAY can be used to specify all days."</span><span class="p">,</span><span class="w">
             </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"array"</span><span class="p">,</span><span class="w">
             </span><span class="nl">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
               </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
               </span><span class="nl">"enum"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-                </span><span class="s2">"SUN"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"MON"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"TUE"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"WED"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"THU"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"FRI"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"SAT"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"EVERY_DAY"</span><span class="w">
+                </span><span class="s2">"SUNDAY"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"MONDAY"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"TUESDAY"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"WEDNESDAY"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"THURSDAY"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"FRIDAY"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"SATURDAY"</span><span class="w">
               </span><span class="p">],</span><span class="w">
-              </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"List of days of the week on which the replication schedule applies. Choose from SUN, MON, TUE, WED, THU, FRI, and/or SAT. EVERY_DAY can be used to specify all days.:</span><span class="se">\n</span><span class="s2"> * `EVERY_DAY` - EVERY_DAY,</span><span class="se">\n</span><span class="s2"> * `FRI` - FRI,</span><span class="se">\n</span><span class="s2"> * `MON` - MON,</span><span class="se">\n</span><span class="s2"> * `SAT` - SAT,</span><span class="se">\n</span><span class="s2"> * `SUN` - SUN,</span><span class="se">\n</span><span class="s2"> * `THU` - THU,</span><span class="se">\n</span><span class="s2"> * `TUE` - TUE,</span><span class="se">\n</span><span class="s2"> * `WED` - WED"</span><span class="w">
+              </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"List of days of the week on which the replication schedule applies. Choose from SUN, MON, TUE, WED, THU, FRI, and/or SAT. EVERY_DAY can be used to specify all days.:</span><span class="se">\n</span><span class="s2"> * `FRIDAY` - FRIDAY,</span><span class="se">\n</span><span class="s2"> * `MONDAY` - MONDAY,</span><span class="se">\n</span><span class="s2"> * `SATURDAY` - SATURDAY,</span><span class="se">\n</span><span class="s2"> * `SUNDAY` - SUNDAY,</span><span class="se">\n</span><span class="s2"> * `THURSDAY` - THURSDAY,</span><span class="se">\n</span><span class="s2"> * `TUESDAY` - TUESDAY,</span><span class="se">\n</span><span class="s2"> * `WEDNESDAY` - WEDNESDAY"</span><span class="w">
             </span><span class="p">}</span><span class="w">
           </span><span class="p">}</span><span class="w">
         </span><span class="p">}</span><span class="w">
@@ -9598,21 +9472,19 @@ $(document).ready(function() {
             </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="w">
           </span><span class="p">},</span><span class="w">
           </span><span class="nl">"on_days"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"List of days of the week on which the replication schedule applies. Choose from SUN, MON, TUE, WED, THU, FRI, and/or SAT. EVERY_DAY can be used to specify all days."</span><span class="p">,</span><span class="w">
             </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"array"</span><span class="p">,</span><span class="w">
             </span><span class="nl">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
               </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
               </span><span class="nl">"enum"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-                </span><span class="s2">"SUN"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"MON"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"TUE"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"WED"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"THU"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"FRI"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"SAT"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"EVERY_DAY"</span><span class="w">
+                </span><span class="s2">"SUNDAY"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"MONDAY"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"TUESDAY"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"WEDNESDAY"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"THURSDAY"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"FRIDAY"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"SATURDAY"</span><span class="w">
               </span><span class="p">],</span><span class="w">
-              </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"List of days of the week on which the replication schedule applies. Choose from SUN, MON, TUE, WED, THU, FRI, and/or SAT. EVERY_DAY can be used to specify all days.:</span><span class="se">\n</span><span class="s2"> * `EVERY_DAY` - EVERY_DAY,</span><span class="se">\n</span><span class="s2"> * `FRI` - FRI,</span><span class="se">\n</span><span class="s2"> * `MON` - MON,</span><span class="se">\n</span><span class="s2"> * `SAT` - SAT,</span><span class="se">\n</span><span class="s2"> * `SUN` - SUN,</span><span class="se">\n</span><span class="s2"> * `THU` - THU,</span><span class="se">\n</span><span class="s2"> * `TUE` - TUE,</span><span class="se">\n</span><span class="s2"> * `WED` - WED"</span><span class="w">
+              </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"List of days of the week on which the replication schedule applies. Choose from SUN, MON, TUE, WED, THU, FRI, and/or SAT. EVERY_DAY can be used to specify all days.:</span><span class="se">\n</span><span class="s2"> * `FRIDAY` - FRIDAY,</span><span class="se">\n</span><span class="s2"> * `MONDAY` - MONDAY,</span><span class="se">\n</span><span class="s2"> * `SATURDAY` - SATURDAY,</span><span class="se">\n</span><span class="s2"> * `SUNDAY` - SUNDAY,</span><span class="se">\n</span><span class="s2"> * `THURSDAY` - THURSDAY,</span><span class="se">\n</span><span class="s2"> * `TUESDAY` - TUESDAY,</span><span class="se">\n</span><span class="s2"> * `WEDNESDAY` - WEDNESDAY"</span><span class="w">
             </span><span class="p">}</span><span class="w">
           </span><span class="p">}</span><span class="w">
         </span><span class="p">}</span><span class="w">
@@ -9726,21 +9598,19 @@ $(document).ready(function() {
             </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="w">
           </span><span class="p">},</span><span class="w">
           </span><span class="nl">"on_days"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"List of days of the week on which the replication schedule applies. Choose from SUN, MON, TUE, WED, THU, FRI, and/or SAT. EVERY_DAY can be used to specify all days."</span><span class="p">,</span><span class="w">
             </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"array"</span><span class="p">,</span><span class="w">
             </span><span class="nl">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
               </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
               </span><span class="nl">"enum"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-                </span><span class="s2">"SUN"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"MON"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"TUE"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"WED"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"THU"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"FRI"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"SAT"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"EVERY_DAY"</span><span class="w">
+                </span><span class="s2">"SUNDAY"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"MONDAY"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"TUESDAY"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"WEDNESDAY"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"THURSDAY"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"FRIDAY"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"SATURDAY"</span><span class="w">
               </span><span class="p">],</span><span class="w">
-              </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"List of days of the week on which the replication schedule applies. Choose from SUN, MON, TUE, WED, THU, FRI, and/or SAT. EVERY_DAY can be used to specify all days.:</span><span class="se">\n</span><span class="s2"> * `EVERY_DAY` - EVERY_DAY,</span><span class="se">\n</span><span class="s2"> * `FRI` - FRI,</span><span class="se">\n</span><span class="s2"> * `MON` - MON,</span><span class="se">\n</span><span class="s2"> * `SAT` - SAT,</span><span class="se">\n</span><span class="s2"> * `SUN` - SUN,</span><span class="se">\n</span><span class="s2"> * `THU` - THU,</span><span class="se">\n</span><span class="s2"> * `TUE` - TUE,</span><span class="se">\n</span><span class="s2"> * `WED` - WED"</span><span class="w">
+              </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"List of days of the week on which the replication schedule applies. Choose from SUN, MON, TUE, WED, THU, FRI, and/or SAT. EVERY_DAY can be used to specify all days.:</span><span class="se">\n</span><span class="s2"> * `FRIDAY` - FRIDAY,</span><span class="se">\n</span><span class="s2"> * `MONDAY` - MONDAY,</span><span class="se">\n</span><span class="s2"> * `SATURDAY` - SATURDAY,</span><span class="se">\n</span><span class="s2"> * `SUNDAY` - SUNDAY,</span><span class="se">\n</span><span class="s2"> * `THURSDAY` - THURSDAY,</span><span class="se">\n</span><span class="s2"> * `TUESDAY` - TUESDAY,</span><span class="se">\n</span><span class="s2"> * `WEDNESDAY` - WEDNESDAY"</span><span class="w">
             </span><span class="p">}</span><span class="w">
           </span><span class="p">}</span><span class="w">
         </span><span class="p">}</span><span class="w">

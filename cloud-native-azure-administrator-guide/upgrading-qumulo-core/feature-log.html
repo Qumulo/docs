@@ -2413,6 +2413,67 @@ $(document).ready(function() {
      
      <style>div#toc{height:200px;overflow:auto;}</style>
 
+<h2 id="qumulo-core-7921">Qumulo Core 7.9.2.1</h2>
+<p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a><span class="emoji">🔒</span></p>
+
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
+<ul>
+  <li>
+    <p>This release resolves an issue with Product Package deployments of Qumulo Core releases lower than 7.9.2 that are configured to use Host-Managed Networking. Qumulo Core detects any unintentionally unassigned floating IP addresses and restores them without affecting client connectivity.</p>
+    <p></p>
+  </li>
+  <li>For clusters running Qumulo Core 7.9.0 (and higher), you must wait for on-disk upgrades to complete before you can upgrade the cluster to a higher version (this process typically takes 1-2 days). To check whether a cluster is ready to be upgraded, you can use the Qumulo REST API or the <code>qq</code> CLI. For example:
+    <ul>
+      <li><code>POST /v2/upgrade/verify-image</code></li>
+      <li><code>qq upgrade_verify_image --path /example/path/to/target/image</code></li>
+    </ul>
+  </li>
+  <li>This release adds important performance, security, and stability improvements:
+    <ul>
+      <li><strong>Cloud Native Qumulo (CNQ), Azure Native Qumulo (ANQ), and Stratus Accelerator clusters:</strong> Improved cluster start-up times.</li>
+      <li><strong>Appliance Hardware Installations:</strong> Upgraded the host kernel on Ubuntu 24.04, from 6.8.0-85 to 6.8.0-117</li>
+      <li>Disabled the <code>algif_aead</code> kernel module to mitigate the <a target="_blank" href="https://copy.fail/">Copy Fail</a> (<a target="_blank" href="https://nvd.nist.gov/vuln/detail/CVE-2026-31431">CVE-2026-31431</a>) vulnerability.</li>
+    </ul>
+  </li>
+  <li>This release adds important cluster management functionality:
+    <ul>
+      <li>Added the following REST API endpoint and <code>qq</code> CLI command to let you retrieve recent portal quorum success and abandon events recorded by cluster nodes. This functionality can help administrators of clusters with large or complex portal relationships monitor recent portal quorum issues and debug networking and availability.
+        <ul>
+          <li><code>GET /v1/portal/quorum/events</code></li>
+          <li><code>qq portal_list_quorum_events</code></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>This release resolves issues that previously:
+    <ul>
+      <li>Prevented the system from handling an internal encoding inconsistency from legacy builds</li>
+      <li>Prevented quorum formation if the audit server address specified in the audit configuration isn't a valid IP address or DNS name</li>
+      <li>Could cause Qumulo Core to become unresponsive if a remote syslog endpoint configured for audit log delivery becomes unreachable</li>
+      <li>Could cause Qumulo Core to crash if a multi-part upload to a versioned S3 bucket took longer than approximately 10 seconds</li>
+      <li>Could cause Qumulo Core to crash while upgrading on-disk structures in certain scenarios</li>
+    </ul>
+  </li>
+</ul>
+</div>
+
+<ul>
+  <li>Added support for IPv6 addresses to CNQ on AWS clusters</li>
+  <li>Added support for Offline Files for Windows to SMB and added supporting REST API and <code class="language-plaintext highlighter-rouge">qq</code> CLI changes</li>
+  <li>Configured new Stratus Accelerator clusters to use the Object Metadata Cache (OMC) as the source of truth for objects in use by a cluster</li>
+  <li>Removed and replaced <code class="language-plaintext highlighter-rouge">/v1</code> endpoints for managing hub portals and spoke portals with <code class="language-plaintext highlighter-rouge">/v2</code> counterparts</li>
+  <li>Enabled <code class="language-plaintext highlighter-rouge">atime</code> updates to take place every 24 hours by default</li>
+  <li>Resolved the following issues:
+    <ul>
+      <li><strong>CNQ, ANQ, and Stratus Accelerator Clusters:</strong> Cluster fault tolerance reporting</li>
+      <li><strong>CNQ Clusters:</strong> DNS resolution malfunctions when the user runs the <code class="language-plaintext highlighter-rouge">apt upgrade</code> command</li>
+      <li><strong>CNQ on Azure Clusters:</strong> System configuration doesn’t respect the host DNS configuration</li>
+      <li><strong>Nexus Remote Support:</strong> Can’t connect when using a proxy configured with a <code class="language-plaintext highlighter-rouge">CNAME</code> record</li>
+      <li><strong>Nexus Agent:</strong> Can’t detect a cleanly closed connection to Nexus</li>
+    </ul>
+  </li>
+</ul>
+
 <h2 id="qumulo-core-7911">Qumulo Core 7.9.1.1</h2>
 <p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a><span class="emoji">🔒</span></p>
 
@@ -2448,13 +2509,12 @@ $(document).ready(function() {
 <p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a><span class="emoji">🔒</span></p>
 
 <h3 id="features-and-improvements-1">Features and Improvements</h3>
-
 <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
 <ul>
   <li>
     This release makes critical improvements:
     <ul>
-      <li><strong>Cloud Native Qumulo (CNQ), Azure Native Qumulo (ANQ), and Stratus Accelerator Clusters:</strong> Improved cluster start-up times.</li>
+      <li><strong>Cloud Native Qumulo (CNQ), Azure Native Qumulo (ANQ), and Stratus Accelerator clusters:</strong> Improved cluster start-up times.</li>
       <li><strong>Appliance Hardware Installations:</strong> Upgraded the host kernel on Ubuntu 24.04, from 6.8.0-85 to 6.8.0-117</li>
       <li>Disabled the <code>algif_aead</code> kernel module to mitigate the <a target="_blank" href="https://copy.fail/">Copy Fail</a> (<a target="_blank" href="https://nvd.nist.gov/vuln/detail/CVE-2026-31431">CVE-2026-31431</a>) vulnerability.</li> 
     </ul>
@@ -2783,7 +2843,7 @@ $(document).ready(function() {
 
 <ul>
   <li>Changed how NFS export host restrictions use <code class="language-plaintext highlighter-rouge">KRB*</code> keywords in Qumulo Core by allowing an additional match for hosts that authenticate by using a specific Kerberos flavor</li>
-  <li>Added REST API endpoints and qq CLI commands to support specifying a registration key that associates your Qumulo cluster with your Qumulo Nexus account</li>
+  <li>Added REST API endpoints and <code class="language-plaintext highlighter-rouge">qq</code> CLI commands to support specifying a registration key that associates your Qumulo cluster with your Qumulo Nexus account</li>
   <li>Changed <code class="language-plaintext highlighter-rouge">qq</code> CLI error messages to write to <code class="language-plaintext highlighter-rouge">stderr</code> instead of <code class="language-plaintext highlighter-rouge">stdout</code></li>
   <li>Resolved an S3 API issue with applications placing a trailing whitespace in the signed header field</li>
 </ul>

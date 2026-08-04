@@ -1602,66 +1602,6 @@ fetch('/data/website.json')
           
           
           <li>
-            <a title="portal/hubs" href="/rest-api-guide/cloud-data-fabric-v1/portal_hubs.html">
-              portal/<wbr>hubs
-              <span class="tag-container">
-              
-                <span class="apiversion v1">v1</span>
-              
-              
-              
-                <span class="apideprecated">deprecated</span>
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-          
-          
-          <li>
-            <a title="portal/hubs/{id}" href="/rest-api-guide/cloud-data-fabric-v1/portal_hubs_id.html">
-              portal/<wbr>hubs/<wbr>{id}
-              <span class="tag-container">
-              
-                <span class="apiversion v1">v1</span>
-              
-              
-              
-                <span class="apideprecated">deprecated</span>
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-          
-          
-          <li>
-            <a title="portal/hubs/{id}/authorize" href="/rest-api-guide/cloud-data-fabric-v1/portal_hubs_id_authorize.html">
-              portal/<wbr>hubs/<wbr>{id}/<wbr>authorize
-              <span class="tag-container">
-              
-                <span class="apiversion v1">v1</span>
-              
-              
-              
-                <span class="apideprecated">deprecated</span>
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-          
-          
-          <li>
             <a title="portal/ping" href="/rest-api-guide/cloud-data-fabric-v1/portal_ping.html">
               portal/<wbr>ping
               <span class="tag-container">
@@ -1700,26 +1640,6 @@ fetch('/data/website.json')
           
           
           <li>
-            <a title="portal/spokes" href="/rest-api-guide/cloud-data-fabric-v1/portal_spokes.html">
-              portal/<wbr>spokes
-              <span class="tag-container">
-              
-                <span class="apiversion v1">v1</span>
-              
-              
-              
-                <span class="apideprecated">deprecated</span>
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-          
-          
-          <li>
             <a title="portal/spokes/eviction-settings" href="/rest-api-guide/cloud-data-fabric-v1/portal_spokes_eviction-settings.html">
               portal/<wbr>spokes/<wbr>eviction-settings
               <span class="tag-container">
@@ -1727,46 +1647,6 @@ fetch('/data/website.json')
                 <span class="apiversion v1">v1</span>
               
               
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-          
-          
-          <li>
-            <a title="portal/spokes/{id}" href="/rest-api-guide/cloud-data-fabric-v1/portal_spokes_id.html">
-              portal/<wbr>spokes/<wbr>{id}
-              <span class="tag-container">
-              
-                <span class="apiversion v1">v1</span>
-              
-              
-              
-                <span class="apideprecated">deprecated</span>
-              
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-          
-          
-          <li>
-            <a title="portal/spokes/{id}/propose" href="/rest-api-guide/cloud-data-fabric-v1/portal_spokes_id_propose.html">
-              portal/<wbr>spokes/<wbr>{id}/<wbr>propose
-              <span class="tag-container">
-              
-                <span class="apiversion v1">v1</span>
-              
-              
-              
-                <span class="apideprecated">deprecated</span>
               
               </span>
             </a>
@@ -9100,15 +8980,10 @@ $(document).ready(function() {
             </span><span class="p">}</span><span class="w">
           </span><span class="p">},</span><span class="w">
           </span><span class="nl">"rights"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Rights pertaining to the permissions entry"</span><span class="p">,</span><span class="w">
             </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"array"</span><span class="p">,</span><span class="w">
             </span><span class="nl">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
               </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
               </span><span class="nl">"enum"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-                </span><span class="s2">"READ"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"WRITE"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"CHANGE_PERMISSIONS"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"ALL"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"READ_DATA"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"READ_EA"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"READ_ATTR"</span><span class="p">,</span><span class="w">
@@ -9122,12 +8997,13 @@ $(document).ready(function() {
                 </span><span class="s2">"EXECUTE"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"MODIFY"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"EXTEND"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"ADD_FILE"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"ADD_SUBDIR"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"DELETE_CHILD"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"SYNCHRONIZE"</span><span class="w">
+                </span><span class="s2">"SYNCHRONIZE"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"READ"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"WRITE"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"CHANGE_PERMISSIONS"</span><span class="w">
               </span><span class="p">],</span><span class="w">
-              </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Rights pertaining to the permissions entry:</span><span class="se">\n</span><span class="s2"> * `ADD_FILE` - File creation access,</span><span class="se">\n</span><span class="s2"> * `ADD_SUBDIR` - Directory creation access,</span><span class="se">\n</span><span class="s2"> * `ALL` - All access rights,</span><span class="se">\n</span><span class="s2"> * `CHANGE_OWNER` - Owner write access,</span><span class="se">\n</span><span class="s2"> * `CHANGE_PERMISSIONS` - Rights to change permissions on file objects,</span><span class="se">\n</span><span class="s2"> * `DELETE` - Delete access,</span><span class="se">\n</span><span class="s2"> * `DELETE_CHILD` - Delete from directory access,</span><span class="se">\n</span><span class="s2"> * `EXECUTE` - Execute access,</span><span class="se">\n</span><span class="s2"> * `EXTEND` - File extension access,</span><span class="se">\n</span><span class="s2"> * `MODIFY` - File modification access,</span><span class="se">\n</span><span class="s2"> * `READ` - Read access rights,</span><span class="se">\n</span><span class="s2"> * `READ_ACL` - ACL read access,</span><span class="se">\n</span><span class="s2"> * `READ_ATTR` - Attribute read access,</span><span class="se">\n</span><span class="s2"> * `READ_DATA` - File read access,</span><span class="se">\n</span><span class="s2"> * `READ_EA` - Extended attribute read access,</span><span class="se">\n</span><span class="s2"> * `SYNCHRONIZE` - File synchronize access,</span><span class="se">\n</span><span class="s2"> * `WRITE` - Write access rights,</span><span class="se">\n</span><span class="s2"> * `WRITE_ACL` - ACL write access,</span><span class="se">\n</span><span class="s2"> * `WRITE_ATTR` - Attribute write access,</span><span class="se">\n</span><span class="s2"> * `WRITE_EA` - Extended attribute write access,</span><span class="se">\n</span><span class="s2"> * `WRITE_GROUP` - Group write access"</span><span class="w">
+              </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Rights pertaining to the permissions entry:</span><span class="se">\n</span><span class="s2"> * `CHANGE_OWNER` - Owner write access,</span><span class="se">\n</span><span class="s2"> * `CHANGE_PERMISSIONS` - Rights to change permissions on file objects,</span><span class="se">\n</span><span class="s2"> * `DELETE` - Delete access,</span><span class="se">\n</span><span class="s2"> * `DELETE_CHILD` - Delete from directory access,</span><span class="se">\n</span><span class="s2"> * `EXECUTE` - Execute access,</span><span class="se">\n</span><span class="s2"> * `EXTEND` - File extension access,</span><span class="se">\n</span><span class="s2"> * `MODIFY` - File modification access,</span><span class="se">\n</span><span class="s2"> * `READ` - Read access rights,</span><span class="se">\n</span><span class="s2"> * `READ_ACL` - ACL read access,</span><span class="se">\n</span><span class="s2"> * `READ_ATTR` - Attribute read access,</span><span class="se">\n</span><span class="s2"> * `READ_DATA` - File read access,</span><span class="se">\n</span><span class="s2"> * `READ_EA` - Extended attribute read access,</span><span class="se">\n</span><span class="s2"> * `SYNCHRONIZE` - File synchronize access,</span><span class="se">\n</span><span class="s2"> * `WRITE` - Write access rights,</span><span class="se">\n</span><span class="s2"> * `WRITE_ACL` - ACL write access,</span><span class="se">\n</span><span class="s2"> * `WRITE_ATTR` - Attribute write access,</span><span class="se">\n</span><span class="s2"> * `WRITE_EA` - Extended attribute write access,</span><span class="se">\n</span><span class="s2"> * `WRITE_GROUP` - Group write access"</span><span class="w">
             </span><span class="p">}</span><span class="w">
           </span><span class="p">}</span><span class="w">
         </span><span class="p">}</span><span class="w">
@@ -9155,15 +9031,10 @@ $(document).ready(function() {
             </span><span class="p">}</span><span class="w">
           </span><span class="p">},</span><span class="w">
           </span><span class="nl">"rights"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Rights pertaining to the permissions entry"</span><span class="p">,</span><span class="w">
             </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"array"</span><span class="p">,</span><span class="w">
             </span><span class="nl">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
               </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
               </span><span class="nl">"enum"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-                </span><span class="s2">"READ"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"WRITE"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"CHANGE_PERMISSIONS"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"ALL"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"READ_DATA"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"READ_EA"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"READ_ATTR"</span><span class="p">,</span><span class="w">
@@ -9177,12 +9048,13 @@ $(document).ready(function() {
                 </span><span class="s2">"EXECUTE"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"MODIFY"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"EXTEND"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"ADD_FILE"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"ADD_SUBDIR"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"DELETE_CHILD"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"SYNCHRONIZE"</span><span class="w">
+                </span><span class="s2">"SYNCHRONIZE"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"READ"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"WRITE"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"CHANGE_PERMISSIONS"</span><span class="w">
               </span><span class="p">],</span><span class="w">
-              </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Rights pertaining to the permissions entry:</span><span class="se">\n</span><span class="s2"> * `ADD_FILE` - File creation access,</span><span class="se">\n</span><span class="s2"> * `ADD_SUBDIR` - Directory creation access,</span><span class="se">\n</span><span class="s2"> * `ALL` - All access rights,</span><span class="se">\n</span><span class="s2"> * `CHANGE_OWNER` - Owner write access,</span><span class="se">\n</span><span class="s2"> * `CHANGE_PERMISSIONS` - Rights to change permissions on file objects,</span><span class="se">\n</span><span class="s2"> * `DELETE` - Delete access,</span><span class="se">\n</span><span class="s2"> * `DELETE_CHILD` - Delete from directory access,</span><span class="se">\n</span><span class="s2"> * `EXECUTE` - Execute access,</span><span class="se">\n</span><span class="s2"> * `EXTEND` - File extension access,</span><span class="se">\n</span><span class="s2"> * `MODIFY` - File modification access,</span><span class="se">\n</span><span class="s2"> * `READ` - Read access rights,</span><span class="se">\n</span><span class="s2"> * `READ_ACL` - ACL read access,</span><span class="se">\n</span><span class="s2"> * `READ_ATTR` - Attribute read access,</span><span class="se">\n</span><span class="s2"> * `READ_DATA` - File read access,</span><span class="se">\n</span><span class="s2"> * `READ_EA` - Extended attribute read access,</span><span class="se">\n</span><span class="s2"> * `SYNCHRONIZE` - File synchronize access,</span><span class="se">\n</span><span class="s2"> * `WRITE` - Write access rights,</span><span class="se">\n</span><span class="s2"> * `WRITE_ACL` - ACL write access,</span><span class="se">\n</span><span class="s2"> * `WRITE_ATTR` - Attribute write access,</span><span class="se">\n</span><span class="s2"> * `WRITE_EA` - Extended attribute write access,</span><span class="se">\n</span><span class="s2"> * `WRITE_GROUP` - Group write access"</span><span class="w">
+              </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Rights pertaining to the permissions entry:</span><span class="se">\n</span><span class="s2"> * `CHANGE_OWNER` - Owner write access,</span><span class="se">\n</span><span class="s2"> * `CHANGE_PERMISSIONS` - Rights to change permissions on file objects,</span><span class="se">\n</span><span class="s2"> * `DELETE` - Delete access,</span><span class="se">\n</span><span class="s2"> * `DELETE_CHILD` - Delete from directory access,</span><span class="se">\n</span><span class="s2"> * `EXECUTE` - Execute access,</span><span class="se">\n</span><span class="s2"> * `EXTEND` - File extension access,</span><span class="se">\n</span><span class="s2"> * `MODIFY` - File modification access,</span><span class="se">\n</span><span class="s2"> * `READ` - Read access rights,</span><span class="se">\n</span><span class="s2"> * `READ_ACL` - ACL read access,</span><span class="se">\n</span><span class="s2"> * `READ_ATTR` - Attribute read access,</span><span class="se">\n</span><span class="s2"> * `READ_DATA` - File read access,</span><span class="se">\n</span><span class="s2"> * `READ_EA` - Extended attribute read access,</span><span class="se">\n</span><span class="s2"> * `SYNCHRONIZE` - File synchronize access,</span><span class="se">\n</span><span class="s2"> * `WRITE` - Write access rights,</span><span class="se">\n</span><span class="s2"> * `WRITE_ACL` - ACL write access,</span><span class="se">\n</span><span class="s2"> * `WRITE_ATTR` - Attribute write access,</span><span class="se">\n</span><span class="s2"> * `WRITE_EA` - Extended attribute write access,</span><span class="se">\n</span><span class="s2"> * `WRITE_GROUP` - Group write access"</span><span class="w">
             </span><span class="p">}</span><span class="w">
           </span><span class="p">}</span><span class="w">
         </span><span class="p">}</span><span class="w">
@@ -9352,15 +9224,10 @@ $(document).ready(function() {
             </span><span class="p">}</span><span class="w">
           </span><span class="p">},</span><span class="w">
           </span><span class="nl">"rights"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Rights pertaining to the permissions entry"</span><span class="p">,</span><span class="w">
             </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"array"</span><span class="p">,</span><span class="w">
             </span><span class="nl">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
               </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
               </span><span class="nl">"enum"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-                </span><span class="s2">"READ"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"WRITE"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"CHANGE_PERMISSIONS"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"ALL"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"READ_DATA"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"READ_EA"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"READ_ATTR"</span><span class="p">,</span><span class="w">
@@ -9374,12 +9241,13 @@ $(document).ready(function() {
                 </span><span class="s2">"EXECUTE"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"MODIFY"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"EXTEND"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"ADD_FILE"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"ADD_SUBDIR"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"DELETE_CHILD"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"SYNCHRONIZE"</span><span class="w">
+                </span><span class="s2">"SYNCHRONIZE"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"READ"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"WRITE"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"CHANGE_PERMISSIONS"</span><span class="w">
               </span><span class="p">],</span><span class="w">
-              </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Rights pertaining to the permissions entry:</span><span class="se">\n</span><span class="s2"> * `ADD_FILE` - File creation access,</span><span class="se">\n</span><span class="s2"> * `ADD_SUBDIR` - Directory creation access,</span><span class="se">\n</span><span class="s2"> * `ALL` - All access rights,</span><span class="se">\n</span><span class="s2"> * `CHANGE_OWNER` - Owner write access,</span><span class="se">\n</span><span class="s2"> * `CHANGE_PERMISSIONS` - Rights to change permissions on file objects,</span><span class="se">\n</span><span class="s2"> * `DELETE` - Delete access,</span><span class="se">\n</span><span class="s2"> * `DELETE_CHILD` - Delete from directory access,</span><span class="se">\n</span><span class="s2"> * `EXECUTE` - Execute access,</span><span class="se">\n</span><span class="s2"> * `EXTEND` - File extension access,</span><span class="se">\n</span><span class="s2"> * `MODIFY` - File modification access,</span><span class="se">\n</span><span class="s2"> * `READ` - Read access rights,</span><span class="se">\n</span><span class="s2"> * `READ_ACL` - ACL read access,</span><span class="se">\n</span><span class="s2"> * `READ_ATTR` - Attribute read access,</span><span class="se">\n</span><span class="s2"> * `READ_DATA` - File read access,</span><span class="se">\n</span><span class="s2"> * `READ_EA` - Extended attribute read access,</span><span class="se">\n</span><span class="s2"> * `SYNCHRONIZE` - File synchronize access,</span><span class="se">\n</span><span class="s2"> * `WRITE` - Write access rights,</span><span class="se">\n</span><span class="s2"> * `WRITE_ACL` - ACL write access,</span><span class="se">\n</span><span class="s2"> * `WRITE_ATTR` - Attribute write access,</span><span class="se">\n</span><span class="s2"> * `WRITE_EA` - Extended attribute write access,</span><span class="se">\n</span><span class="s2"> * `WRITE_GROUP` - Group write access"</span><span class="w">
+              </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Rights pertaining to the permissions entry:</span><span class="se">\n</span><span class="s2"> * `CHANGE_OWNER` - Owner write access,</span><span class="se">\n</span><span class="s2"> * `CHANGE_PERMISSIONS` - Rights to change permissions on file objects,</span><span class="se">\n</span><span class="s2"> * `DELETE` - Delete access,</span><span class="se">\n</span><span class="s2"> * `DELETE_CHILD` - Delete from directory access,</span><span class="se">\n</span><span class="s2"> * `EXECUTE` - Execute access,</span><span class="se">\n</span><span class="s2"> * `EXTEND` - File extension access,</span><span class="se">\n</span><span class="s2"> * `MODIFY` - File modification access,</span><span class="se">\n</span><span class="s2"> * `READ` - Read access rights,</span><span class="se">\n</span><span class="s2"> * `READ_ACL` - ACL read access,</span><span class="se">\n</span><span class="s2"> * `READ_ATTR` - Attribute read access,</span><span class="se">\n</span><span class="s2"> * `READ_DATA` - File read access,</span><span class="se">\n</span><span class="s2"> * `READ_EA` - Extended attribute read access,</span><span class="se">\n</span><span class="s2"> * `SYNCHRONIZE` - File synchronize access,</span><span class="se">\n</span><span class="s2"> * `WRITE` - Write access rights,</span><span class="se">\n</span><span class="s2"> * `WRITE_ACL` - ACL write access,</span><span class="se">\n</span><span class="s2"> * `WRITE_ATTR` - Attribute write access,</span><span class="se">\n</span><span class="s2"> * `WRITE_EA` - Extended attribute write access,</span><span class="se">\n</span><span class="s2"> * `WRITE_GROUP` - Group write access"</span><span class="w">
             </span><span class="p">}</span><span class="w">
           </span><span class="p">}</span><span class="w">
         </span><span class="p">}</span><span class="w">
@@ -9407,15 +9275,10 @@ $(document).ready(function() {
             </span><span class="p">}</span><span class="w">
           </span><span class="p">},</span><span class="w">
           </span><span class="nl">"rights"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Rights pertaining to the permissions entry"</span><span class="p">,</span><span class="w">
             </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"array"</span><span class="p">,</span><span class="w">
             </span><span class="nl">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
               </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
               </span><span class="nl">"enum"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-                </span><span class="s2">"READ"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"WRITE"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"CHANGE_PERMISSIONS"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"ALL"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"READ_DATA"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"READ_EA"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"READ_ATTR"</span><span class="p">,</span><span class="w">
@@ -9429,12 +9292,13 @@ $(document).ready(function() {
                 </span><span class="s2">"EXECUTE"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"MODIFY"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"EXTEND"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"ADD_FILE"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"ADD_SUBDIR"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"DELETE_CHILD"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"SYNCHRONIZE"</span><span class="w">
+                </span><span class="s2">"SYNCHRONIZE"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"READ"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"WRITE"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"CHANGE_PERMISSIONS"</span><span class="w">
               </span><span class="p">],</span><span class="w">
-              </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Rights pertaining to the permissions entry:</span><span class="se">\n</span><span class="s2"> * `ADD_FILE` - File creation access,</span><span class="se">\n</span><span class="s2"> * `ADD_SUBDIR` - Directory creation access,</span><span class="se">\n</span><span class="s2"> * `ALL` - All access rights,</span><span class="se">\n</span><span class="s2"> * `CHANGE_OWNER` - Owner write access,</span><span class="se">\n</span><span class="s2"> * `CHANGE_PERMISSIONS` - Rights to change permissions on file objects,</span><span class="se">\n</span><span class="s2"> * `DELETE` - Delete access,</span><span class="se">\n</span><span class="s2"> * `DELETE_CHILD` - Delete from directory access,</span><span class="se">\n</span><span class="s2"> * `EXECUTE` - Execute access,</span><span class="se">\n</span><span class="s2"> * `EXTEND` - File extension access,</span><span class="se">\n</span><span class="s2"> * `MODIFY` - File modification access,</span><span class="se">\n</span><span class="s2"> * `READ` - Read access rights,</span><span class="se">\n</span><span class="s2"> * `READ_ACL` - ACL read access,</span><span class="se">\n</span><span class="s2"> * `READ_ATTR` - Attribute read access,</span><span class="se">\n</span><span class="s2"> * `READ_DATA` - File read access,</span><span class="se">\n</span><span class="s2"> * `READ_EA` - Extended attribute read access,</span><span class="se">\n</span><span class="s2"> * `SYNCHRONIZE` - File synchronize access,</span><span class="se">\n</span><span class="s2"> * `WRITE` - Write access rights,</span><span class="se">\n</span><span class="s2"> * `WRITE_ACL` - ACL write access,</span><span class="se">\n</span><span class="s2"> * `WRITE_ATTR` - Attribute write access,</span><span class="se">\n</span><span class="s2"> * `WRITE_EA` - Extended attribute write access,</span><span class="se">\n</span><span class="s2"> * `WRITE_GROUP` - Group write access"</span><span class="w">
+              </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Rights pertaining to the permissions entry:</span><span class="se">\n</span><span class="s2"> * `CHANGE_OWNER` - Owner write access,</span><span class="se">\n</span><span class="s2"> * `CHANGE_PERMISSIONS` - Rights to change permissions on file objects,</span><span class="se">\n</span><span class="s2"> * `DELETE` - Delete access,</span><span class="se">\n</span><span class="s2"> * `DELETE_CHILD` - Delete from directory access,</span><span class="se">\n</span><span class="s2"> * `EXECUTE` - Execute access,</span><span class="se">\n</span><span class="s2"> * `EXTEND` - File extension access,</span><span class="se">\n</span><span class="s2"> * `MODIFY` - File modification access,</span><span class="se">\n</span><span class="s2"> * `READ` - Read access rights,</span><span class="se">\n</span><span class="s2"> * `READ_ACL` - ACL read access,</span><span class="se">\n</span><span class="s2"> * `READ_ATTR` - Attribute read access,</span><span class="se">\n</span><span class="s2"> * `READ_DATA` - File read access,</span><span class="se">\n</span><span class="s2"> * `READ_EA` - Extended attribute read access,</span><span class="se">\n</span><span class="s2"> * `SYNCHRONIZE` - File synchronize access,</span><span class="se">\n</span><span class="s2"> * `WRITE` - Write access rights,</span><span class="se">\n</span><span class="s2"> * `WRITE_ACL` - ACL write access,</span><span class="se">\n</span><span class="s2"> * `WRITE_ATTR` - Attribute write access,</span><span class="se">\n</span><span class="s2"> * `WRITE_EA` - Extended attribute write access,</span><span class="se">\n</span><span class="s2"> * `WRITE_GROUP` - Group write access"</span><span class="w">
             </span><span class="p">}</span><span class="w">
           </span><span class="p">}</span><span class="w">
         </span><span class="p">}</span><span class="w">
@@ -9566,15 +9430,10 @@ $(document).ready(function() {
             </span><span class="p">}</span><span class="w">
           </span><span class="p">},</span><span class="w">
           </span><span class="nl">"rights"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Rights pertaining to the permissions entry"</span><span class="p">,</span><span class="w">
             </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"array"</span><span class="p">,</span><span class="w">
             </span><span class="nl">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
               </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
               </span><span class="nl">"enum"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-                </span><span class="s2">"READ"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"WRITE"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"CHANGE_PERMISSIONS"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"ALL"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"READ_DATA"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"READ_EA"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"READ_ATTR"</span><span class="p">,</span><span class="w">
@@ -9588,12 +9447,13 @@ $(document).ready(function() {
                 </span><span class="s2">"EXECUTE"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"MODIFY"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"EXTEND"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"ADD_FILE"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"ADD_SUBDIR"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"DELETE_CHILD"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"SYNCHRONIZE"</span><span class="w">
+                </span><span class="s2">"SYNCHRONIZE"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"READ"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"WRITE"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"CHANGE_PERMISSIONS"</span><span class="w">
               </span><span class="p">],</span><span class="w">
-              </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Rights pertaining to the permissions entry:</span><span class="se">\n</span><span class="s2"> * `ADD_FILE` - File creation access,</span><span class="se">\n</span><span class="s2"> * `ADD_SUBDIR` - Directory creation access,</span><span class="se">\n</span><span class="s2"> * `ALL` - All access rights,</span><span class="se">\n</span><span class="s2"> * `CHANGE_OWNER` - Owner write access,</span><span class="se">\n</span><span class="s2"> * `CHANGE_PERMISSIONS` - Rights to change permissions on file objects,</span><span class="se">\n</span><span class="s2"> * `DELETE` - Delete access,</span><span class="se">\n</span><span class="s2"> * `DELETE_CHILD` - Delete from directory access,</span><span class="se">\n</span><span class="s2"> * `EXECUTE` - Execute access,</span><span class="se">\n</span><span class="s2"> * `EXTEND` - File extension access,</span><span class="se">\n</span><span class="s2"> * `MODIFY` - File modification access,</span><span class="se">\n</span><span class="s2"> * `READ` - Read access rights,</span><span class="se">\n</span><span class="s2"> * `READ_ACL` - ACL read access,</span><span class="se">\n</span><span class="s2"> * `READ_ATTR` - Attribute read access,</span><span class="se">\n</span><span class="s2"> * `READ_DATA` - File read access,</span><span class="se">\n</span><span class="s2"> * `READ_EA` - Extended attribute read access,</span><span class="se">\n</span><span class="s2"> * `SYNCHRONIZE` - File synchronize access,</span><span class="se">\n</span><span class="s2"> * `WRITE` - Write access rights,</span><span class="se">\n</span><span class="s2"> * `WRITE_ACL` - ACL write access,</span><span class="se">\n</span><span class="s2"> * `WRITE_ATTR` - Attribute write access,</span><span class="se">\n</span><span class="s2"> * `WRITE_EA` - Extended attribute write access,</span><span class="se">\n</span><span class="s2"> * `WRITE_GROUP` - Group write access"</span><span class="w">
+              </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Rights pertaining to the permissions entry:</span><span class="se">\n</span><span class="s2"> * `CHANGE_OWNER` - Owner write access,</span><span class="se">\n</span><span class="s2"> * `CHANGE_PERMISSIONS` - Rights to change permissions on file objects,</span><span class="se">\n</span><span class="s2"> * `DELETE` - Delete access,</span><span class="se">\n</span><span class="s2"> * `DELETE_CHILD` - Delete from directory access,</span><span class="se">\n</span><span class="s2"> * `EXECUTE` - Execute access,</span><span class="se">\n</span><span class="s2"> * `EXTEND` - File extension access,</span><span class="se">\n</span><span class="s2"> * `MODIFY` - File modification access,</span><span class="se">\n</span><span class="s2"> * `READ` - Read access rights,</span><span class="se">\n</span><span class="s2"> * `READ_ACL` - ACL read access,</span><span class="se">\n</span><span class="s2"> * `READ_ATTR` - Attribute read access,</span><span class="se">\n</span><span class="s2"> * `READ_DATA` - File read access,</span><span class="se">\n</span><span class="s2"> * `READ_EA` - Extended attribute read access,</span><span class="se">\n</span><span class="s2"> * `SYNCHRONIZE` - File synchronize access,</span><span class="se">\n</span><span class="s2"> * `WRITE` - Write access rights,</span><span class="se">\n</span><span class="s2"> * `WRITE_ACL` - ACL write access,</span><span class="se">\n</span><span class="s2"> * `WRITE_ATTR` - Attribute write access,</span><span class="se">\n</span><span class="s2"> * `WRITE_EA` - Extended attribute write access,</span><span class="se">\n</span><span class="s2"> * `WRITE_GROUP` - Group write access"</span><span class="w">
             </span><span class="p">}</span><span class="w">
           </span><span class="p">}</span><span class="w">
         </span><span class="p">}</span><span class="w">
@@ -9621,15 +9481,10 @@ $(document).ready(function() {
             </span><span class="p">}</span><span class="w">
           </span><span class="p">},</span><span class="w">
           </span><span class="nl">"rights"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Rights pertaining to the permissions entry"</span><span class="p">,</span><span class="w">
             </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"array"</span><span class="p">,</span><span class="w">
             </span><span class="nl">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
               </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
               </span><span class="nl">"enum"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-                </span><span class="s2">"READ"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"WRITE"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"CHANGE_PERMISSIONS"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"ALL"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"READ_DATA"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"READ_EA"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"READ_ATTR"</span><span class="p">,</span><span class="w">
@@ -9643,12 +9498,13 @@ $(document).ready(function() {
                 </span><span class="s2">"EXECUTE"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"MODIFY"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"EXTEND"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"ADD_FILE"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"ADD_SUBDIR"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"DELETE_CHILD"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"SYNCHRONIZE"</span><span class="w">
+                </span><span class="s2">"SYNCHRONIZE"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"READ"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"WRITE"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"CHANGE_PERMISSIONS"</span><span class="w">
               </span><span class="p">],</span><span class="w">
-              </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Rights pertaining to the permissions entry:</span><span class="se">\n</span><span class="s2"> * `ADD_FILE` - File creation access,</span><span class="se">\n</span><span class="s2"> * `ADD_SUBDIR` - Directory creation access,</span><span class="se">\n</span><span class="s2"> * `ALL` - All access rights,</span><span class="se">\n</span><span class="s2"> * `CHANGE_OWNER` - Owner write access,</span><span class="se">\n</span><span class="s2"> * `CHANGE_PERMISSIONS` - Rights to change permissions on file objects,</span><span class="se">\n</span><span class="s2"> * `DELETE` - Delete access,</span><span class="se">\n</span><span class="s2"> * `DELETE_CHILD` - Delete from directory access,</span><span class="se">\n</span><span class="s2"> * `EXECUTE` - Execute access,</span><span class="se">\n</span><span class="s2"> * `EXTEND` - File extension access,</span><span class="se">\n</span><span class="s2"> * `MODIFY` - File modification access,</span><span class="se">\n</span><span class="s2"> * `READ` - Read access rights,</span><span class="se">\n</span><span class="s2"> * `READ_ACL` - ACL read access,</span><span class="se">\n</span><span class="s2"> * `READ_ATTR` - Attribute read access,</span><span class="se">\n</span><span class="s2"> * `READ_DATA` - File read access,</span><span class="se">\n</span><span class="s2"> * `READ_EA` - Extended attribute read access,</span><span class="se">\n</span><span class="s2"> * `SYNCHRONIZE` - File synchronize access,</span><span class="se">\n</span><span class="s2"> * `WRITE` - Write access rights,</span><span class="se">\n</span><span class="s2"> * `WRITE_ACL` - ACL write access,</span><span class="se">\n</span><span class="s2"> * `WRITE_ATTR` - Attribute write access,</span><span class="se">\n</span><span class="s2"> * `WRITE_EA` - Extended attribute write access,</span><span class="se">\n</span><span class="s2"> * `WRITE_GROUP` - Group write access"</span><span class="w">
+              </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Rights pertaining to the permissions entry:</span><span class="se">\n</span><span class="s2"> * `CHANGE_OWNER` - Owner write access,</span><span class="se">\n</span><span class="s2"> * `CHANGE_PERMISSIONS` - Rights to change permissions on file objects,</span><span class="se">\n</span><span class="s2"> * `DELETE` - Delete access,</span><span class="se">\n</span><span class="s2"> * `DELETE_CHILD` - Delete from directory access,</span><span class="se">\n</span><span class="s2"> * `EXECUTE` - Execute access,</span><span class="se">\n</span><span class="s2"> * `EXTEND` - File extension access,</span><span class="se">\n</span><span class="s2"> * `MODIFY` - File modification access,</span><span class="se">\n</span><span class="s2"> * `READ` - Read access rights,</span><span class="se">\n</span><span class="s2"> * `READ_ACL` - ACL read access,</span><span class="se">\n</span><span class="s2"> * `READ_ATTR` - Attribute read access,</span><span class="se">\n</span><span class="s2"> * `READ_DATA` - File read access,</span><span class="se">\n</span><span class="s2"> * `READ_EA` - Extended attribute read access,</span><span class="se">\n</span><span class="s2"> * `SYNCHRONIZE` - File synchronize access,</span><span class="se">\n</span><span class="s2"> * `WRITE` - Write access rights,</span><span class="se">\n</span><span class="s2"> * `WRITE_ACL` - ACL write access,</span><span class="se">\n</span><span class="s2"> * `WRITE_ATTR` - Attribute write access,</span><span class="se">\n</span><span class="s2"> * `WRITE_EA` - Extended attribute write access,</span><span class="se">\n</span><span class="s2"> * `WRITE_GROUP` - Group write access"</span><span class="w">
             </span><span class="p">}</span><span class="w">
           </span><span class="p">}</span><span class="w">
         </span><span class="p">}</span><span class="w">
@@ -9879,15 +9735,10 @@ $(document).ready(function() {
             </span><span class="p">}</span><span class="w">
           </span><span class="p">},</span><span class="w">
           </span><span class="nl">"rights"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Rights pertaining to the permissions entry"</span><span class="p">,</span><span class="w">
             </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"array"</span><span class="p">,</span><span class="w">
             </span><span class="nl">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
               </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
               </span><span class="nl">"enum"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-                </span><span class="s2">"READ"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"WRITE"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"CHANGE_PERMISSIONS"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"ALL"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"READ_DATA"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"READ_EA"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"READ_ATTR"</span><span class="p">,</span><span class="w">
@@ -9901,12 +9752,13 @@ $(document).ready(function() {
                 </span><span class="s2">"EXECUTE"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"MODIFY"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"EXTEND"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"ADD_FILE"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"ADD_SUBDIR"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"DELETE_CHILD"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"SYNCHRONIZE"</span><span class="w">
+                </span><span class="s2">"SYNCHRONIZE"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"READ"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"WRITE"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"CHANGE_PERMISSIONS"</span><span class="w">
               </span><span class="p">],</span><span class="w">
-              </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Rights pertaining to the permissions entry:</span><span class="se">\n</span><span class="s2"> * `ADD_FILE` - File creation access,</span><span class="se">\n</span><span class="s2"> * `ADD_SUBDIR` - Directory creation access,</span><span class="se">\n</span><span class="s2"> * `ALL` - All access rights,</span><span class="se">\n</span><span class="s2"> * `CHANGE_OWNER` - Owner write access,</span><span class="se">\n</span><span class="s2"> * `CHANGE_PERMISSIONS` - Rights to change permissions on file objects,</span><span class="se">\n</span><span class="s2"> * `DELETE` - Delete access,</span><span class="se">\n</span><span class="s2"> * `DELETE_CHILD` - Delete from directory access,</span><span class="se">\n</span><span class="s2"> * `EXECUTE` - Execute access,</span><span class="se">\n</span><span class="s2"> * `EXTEND` - File extension access,</span><span class="se">\n</span><span class="s2"> * `MODIFY` - File modification access,</span><span class="se">\n</span><span class="s2"> * `READ` - Read access rights,</span><span class="se">\n</span><span class="s2"> * `READ_ACL` - ACL read access,</span><span class="se">\n</span><span class="s2"> * `READ_ATTR` - Attribute read access,</span><span class="se">\n</span><span class="s2"> * `READ_DATA` - File read access,</span><span class="se">\n</span><span class="s2"> * `READ_EA` - Extended attribute read access,</span><span class="se">\n</span><span class="s2"> * `SYNCHRONIZE` - File synchronize access,</span><span class="se">\n</span><span class="s2"> * `WRITE` - Write access rights,</span><span class="se">\n</span><span class="s2"> * `WRITE_ACL` - ACL write access,</span><span class="se">\n</span><span class="s2"> * `WRITE_ATTR` - Attribute write access,</span><span class="se">\n</span><span class="s2"> * `WRITE_EA` - Extended attribute write access,</span><span class="se">\n</span><span class="s2"> * `WRITE_GROUP` - Group write access"</span><span class="w">
+              </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Rights pertaining to the permissions entry:</span><span class="se">\n</span><span class="s2"> * `CHANGE_OWNER` - Owner write access,</span><span class="se">\n</span><span class="s2"> * `CHANGE_PERMISSIONS` - Rights to change permissions on file objects,</span><span class="se">\n</span><span class="s2"> * `DELETE` - Delete access,</span><span class="se">\n</span><span class="s2"> * `DELETE_CHILD` - Delete from directory access,</span><span class="se">\n</span><span class="s2"> * `EXECUTE` - Execute access,</span><span class="se">\n</span><span class="s2"> * `EXTEND` - File extension access,</span><span class="se">\n</span><span class="s2"> * `MODIFY` - File modification access,</span><span class="se">\n</span><span class="s2"> * `READ` - Read access rights,</span><span class="se">\n</span><span class="s2"> * `READ_ACL` - ACL read access,</span><span class="se">\n</span><span class="s2"> * `READ_ATTR` - Attribute read access,</span><span class="se">\n</span><span class="s2"> * `READ_DATA` - File read access,</span><span class="se">\n</span><span class="s2"> * `READ_EA` - Extended attribute read access,</span><span class="se">\n</span><span class="s2"> * `SYNCHRONIZE` - File synchronize access,</span><span class="se">\n</span><span class="s2"> * `WRITE` - Write access rights,</span><span class="se">\n</span><span class="s2"> * `WRITE_ACL` - ACL write access,</span><span class="se">\n</span><span class="s2"> * `WRITE_ATTR` - Attribute write access,</span><span class="se">\n</span><span class="s2"> * `WRITE_EA` - Extended attribute write access,</span><span class="se">\n</span><span class="s2"> * `WRITE_GROUP` - Group write access"</span><span class="w">
             </span><span class="p">}</span><span class="w">
           </span><span class="p">}</span><span class="w">
         </span><span class="p">}</span><span class="w">
@@ -9934,15 +9786,10 @@ $(document).ready(function() {
             </span><span class="p">}</span><span class="w">
           </span><span class="p">},</span><span class="w">
           </span><span class="nl">"rights"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Rights pertaining to the permissions entry"</span><span class="p">,</span><span class="w">
             </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"array"</span><span class="p">,</span><span class="w">
             </span><span class="nl">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
               </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
               </span><span class="nl">"enum"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-                </span><span class="s2">"READ"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"WRITE"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"CHANGE_PERMISSIONS"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"ALL"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"READ_DATA"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"READ_EA"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"READ_ATTR"</span><span class="p">,</span><span class="w">
@@ -9956,12 +9803,13 @@ $(document).ready(function() {
                 </span><span class="s2">"EXECUTE"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"MODIFY"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"EXTEND"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"ADD_FILE"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"ADD_SUBDIR"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"DELETE_CHILD"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"SYNCHRONIZE"</span><span class="w">
+                </span><span class="s2">"SYNCHRONIZE"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"READ"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"WRITE"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"CHANGE_PERMISSIONS"</span><span class="w">
               </span><span class="p">],</span><span class="w">
-              </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Rights pertaining to the permissions entry:</span><span class="se">\n</span><span class="s2"> * `ADD_FILE` - File creation access,</span><span class="se">\n</span><span class="s2"> * `ADD_SUBDIR` - Directory creation access,</span><span class="se">\n</span><span class="s2"> * `ALL` - All access rights,</span><span class="se">\n</span><span class="s2"> * `CHANGE_OWNER` - Owner write access,</span><span class="se">\n</span><span class="s2"> * `CHANGE_PERMISSIONS` - Rights to change permissions on file objects,</span><span class="se">\n</span><span class="s2"> * `DELETE` - Delete access,</span><span class="se">\n</span><span class="s2"> * `DELETE_CHILD` - Delete from directory access,</span><span class="se">\n</span><span class="s2"> * `EXECUTE` - Execute access,</span><span class="se">\n</span><span class="s2"> * `EXTEND` - File extension access,</span><span class="se">\n</span><span class="s2"> * `MODIFY` - File modification access,</span><span class="se">\n</span><span class="s2"> * `READ` - Read access rights,</span><span class="se">\n</span><span class="s2"> * `READ_ACL` - ACL read access,</span><span class="se">\n</span><span class="s2"> * `READ_ATTR` - Attribute read access,</span><span class="se">\n</span><span class="s2"> * `READ_DATA` - File read access,</span><span class="se">\n</span><span class="s2"> * `READ_EA` - Extended attribute read access,</span><span class="se">\n</span><span class="s2"> * `SYNCHRONIZE` - File synchronize access,</span><span class="se">\n</span><span class="s2"> * `WRITE` - Write access rights,</span><span class="se">\n</span><span class="s2"> * `WRITE_ACL` - ACL write access,</span><span class="se">\n</span><span class="s2"> * `WRITE_ATTR` - Attribute write access,</span><span class="se">\n</span><span class="s2"> * `WRITE_EA` - Extended attribute write access,</span><span class="se">\n</span><span class="s2"> * `WRITE_GROUP` - Group write access"</span><span class="w">
+              </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Rights pertaining to the permissions entry:</span><span class="se">\n</span><span class="s2"> * `CHANGE_OWNER` - Owner write access,</span><span class="se">\n</span><span class="s2"> * `CHANGE_PERMISSIONS` - Rights to change permissions on file objects,</span><span class="se">\n</span><span class="s2"> * `DELETE` - Delete access,</span><span class="se">\n</span><span class="s2"> * `DELETE_CHILD` - Delete from directory access,</span><span class="se">\n</span><span class="s2"> * `EXECUTE` - Execute access,</span><span class="se">\n</span><span class="s2"> * `EXTEND` - File extension access,</span><span class="se">\n</span><span class="s2"> * `MODIFY` - File modification access,</span><span class="se">\n</span><span class="s2"> * `READ` - Read access rights,</span><span class="se">\n</span><span class="s2"> * `READ_ACL` - ACL read access,</span><span class="se">\n</span><span class="s2"> * `READ_ATTR` - Attribute read access,</span><span class="se">\n</span><span class="s2"> * `READ_DATA` - File read access,</span><span class="se">\n</span><span class="s2"> * `READ_EA` - Extended attribute read access,</span><span class="se">\n</span><span class="s2"> * `SYNCHRONIZE` - File synchronize access,</span><span class="se">\n</span><span class="s2"> * `WRITE` - Write access rights,</span><span class="se">\n</span><span class="s2"> * `WRITE_ACL` - ACL write access,</span><span class="se">\n</span><span class="s2"> * `WRITE_ATTR` - Attribute write access,</span><span class="se">\n</span><span class="s2"> * `WRITE_EA` - Extended attribute write access,</span><span class="se">\n</span><span class="s2"> * `WRITE_GROUP` - Group write access"</span><span class="w">
             </span><span class="p">}</span><span class="w">
           </span><span class="p">}</span><span class="w">
         </span><span class="p">}</span><span class="w">
@@ -10093,15 +9941,10 @@ $(document).ready(function() {
             </span><span class="p">}</span><span class="w">
           </span><span class="p">},</span><span class="w">
           </span><span class="nl">"rights"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Rights pertaining to the permissions entry"</span><span class="p">,</span><span class="w">
             </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"array"</span><span class="p">,</span><span class="w">
             </span><span class="nl">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
               </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
               </span><span class="nl">"enum"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-                </span><span class="s2">"READ"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"WRITE"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"CHANGE_PERMISSIONS"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"ALL"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"READ_DATA"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"READ_EA"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"READ_ATTR"</span><span class="p">,</span><span class="w">
@@ -10115,12 +9958,13 @@ $(document).ready(function() {
                 </span><span class="s2">"EXECUTE"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"MODIFY"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"EXTEND"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"ADD_FILE"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"ADD_SUBDIR"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"DELETE_CHILD"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"SYNCHRONIZE"</span><span class="w">
+                </span><span class="s2">"SYNCHRONIZE"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"READ"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"WRITE"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"CHANGE_PERMISSIONS"</span><span class="w">
               </span><span class="p">],</span><span class="w">
-              </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Rights pertaining to the permissions entry:</span><span class="se">\n</span><span class="s2"> * `ADD_FILE` - File creation access,</span><span class="se">\n</span><span class="s2"> * `ADD_SUBDIR` - Directory creation access,</span><span class="se">\n</span><span class="s2"> * `ALL` - All access rights,</span><span class="se">\n</span><span class="s2"> * `CHANGE_OWNER` - Owner write access,</span><span class="se">\n</span><span class="s2"> * `CHANGE_PERMISSIONS` - Rights to change permissions on file objects,</span><span class="se">\n</span><span class="s2"> * `DELETE` - Delete access,</span><span class="se">\n</span><span class="s2"> * `DELETE_CHILD` - Delete from directory access,</span><span class="se">\n</span><span class="s2"> * `EXECUTE` - Execute access,</span><span class="se">\n</span><span class="s2"> * `EXTEND` - File extension access,</span><span class="se">\n</span><span class="s2"> * `MODIFY` - File modification access,</span><span class="se">\n</span><span class="s2"> * `READ` - Read access rights,</span><span class="se">\n</span><span class="s2"> * `READ_ACL` - ACL read access,</span><span class="se">\n</span><span class="s2"> * `READ_ATTR` - Attribute read access,</span><span class="se">\n</span><span class="s2"> * `READ_DATA` - File read access,</span><span class="se">\n</span><span class="s2"> * `READ_EA` - Extended attribute read access,</span><span class="se">\n</span><span class="s2"> * `SYNCHRONIZE` - File synchronize access,</span><span class="se">\n</span><span class="s2"> * `WRITE` - Write access rights,</span><span class="se">\n</span><span class="s2"> * `WRITE_ACL` - ACL write access,</span><span class="se">\n</span><span class="s2"> * `WRITE_ATTR` - Attribute write access,</span><span class="se">\n</span><span class="s2"> * `WRITE_EA` - Extended attribute write access,</span><span class="se">\n</span><span class="s2"> * `WRITE_GROUP` - Group write access"</span><span class="w">
+              </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Rights pertaining to the permissions entry:</span><span class="se">\n</span><span class="s2"> * `CHANGE_OWNER` - Owner write access,</span><span class="se">\n</span><span class="s2"> * `CHANGE_PERMISSIONS` - Rights to change permissions on file objects,</span><span class="se">\n</span><span class="s2"> * `DELETE` - Delete access,</span><span class="se">\n</span><span class="s2"> * `DELETE_CHILD` - Delete from directory access,</span><span class="se">\n</span><span class="s2"> * `EXECUTE` - Execute access,</span><span class="se">\n</span><span class="s2"> * `EXTEND` - File extension access,</span><span class="se">\n</span><span class="s2"> * `MODIFY` - File modification access,</span><span class="se">\n</span><span class="s2"> * `READ` - Read access rights,</span><span class="se">\n</span><span class="s2"> * `READ_ACL` - ACL read access,</span><span class="se">\n</span><span class="s2"> * `READ_ATTR` - Attribute read access,</span><span class="se">\n</span><span class="s2"> * `READ_DATA` - File read access,</span><span class="se">\n</span><span class="s2"> * `READ_EA` - Extended attribute read access,</span><span class="se">\n</span><span class="s2"> * `SYNCHRONIZE` - File synchronize access,</span><span class="se">\n</span><span class="s2"> * `WRITE` - Write access rights,</span><span class="se">\n</span><span class="s2"> * `WRITE_ACL` - ACL write access,</span><span class="se">\n</span><span class="s2"> * `WRITE_ATTR` - Attribute write access,</span><span class="se">\n</span><span class="s2"> * `WRITE_EA` - Extended attribute write access,</span><span class="se">\n</span><span class="s2"> * `WRITE_GROUP` - Group write access"</span><span class="w">
             </span><span class="p">}</span><span class="w">
           </span><span class="p">}</span><span class="w">
         </span><span class="p">}</span><span class="w">
@@ -10148,15 +9992,10 @@ $(document).ready(function() {
             </span><span class="p">}</span><span class="w">
           </span><span class="p">},</span><span class="w">
           </span><span class="nl">"rights"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Rights pertaining to the permissions entry"</span><span class="p">,</span><span class="w">
             </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"array"</span><span class="p">,</span><span class="w">
             </span><span class="nl">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
               </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
               </span><span class="nl">"enum"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-                </span><span class="s2">"READ"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"WRITE"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"CHANGE_PERMISSIONS"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"ALL"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"READ_DATA"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"READ_EA"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"READ_ATTR"</span><span class="p">,</span><span class="w">
@@ -10170,12 +10009,13 @@ $(document).ready(function() {
                 </span><span class="s2">"EXECUTE"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"MODIFY"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"EXTEND"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"ADD_FILE"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"ADD_SUBDIR"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"DELETE_CHILD"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"SYNCHRONIZE"</span><span class="w">
+                </span><span class="s2">"SYNCHRONIZE"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"READ"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"WRITE"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"CHANGE_PERMISSIONS"</span><span class="w">
               </span><span class="p">],</span><span class="w">
-              </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Rights pertaining to the permissions entry:</span><span class="se">\n</span><span class="s2"> * `ADD_FILE` - File creation access,</span><span class="se">\n</span><span class="s2"> * `ADD_SUBDIR` - Directory creation access,</span><span class="se">\n</span><span class="s2"> * `ALL` - All access rights,</span><span class="se">\n</span><span class="s2"> * `CHANGE_OWNER` - Owner write access,</span><span class="se">\n</span><span class="s2"> * `CHANGE_PERMISSIONS` - Rights to change permissions on file objects,</span><span class="se">\n</span><span class="s2"> * `DELETE` - Delete access,</span><span class="se">\n</span><span class="s2"> * `DELETE_CHILD` - Delete from directory access,</span><span class="se">\n</span><span class="s2"> * `EXECUTE` - Execute access,</span><span class="se">\n</span><span class="s2"> * `EXTEND` - File extension access,</span><span class="se">\n</span><span class="s2"> * `MODIFY` - File modification access,</span><span class="se">\n</span><span class="s2"> * `READ` - Read access rights,</span><span class="se">\n</span><span class="s2"> * `READ_ACL` - ACL read access,</span><span class="se">\n</span><span class="s2"> * `READ_ATTR` - Attribute read access,</span><span class="se">\n</span><span class="s2"> * `READ_DATA` - File read access,</span><span class="se">\n</span><span class="s2"> * `READ_EA` - Extended attribute read access,</span><span class="se">\n</span><span class="s2"> * `SYNCHRONIZE` - File synchronize access,</span><span class="se">\n</span><span class="s2"> * `WRITE` - Write access rights,</span><span class="se">\n</span><span class="s2"> * `WRITE_ACL` - ACL write access,</span><span class="se">\n</span><span class="s2"> * `WRITE_ATTR` - Attribute write access,</span><span class="se">\n</span><span class="s2"> * `WRITE_EA` - Extended attribute write access,</span><span class="se">\n</span><span class="s2"> * `WRITE_GROUP` - Group write access"</span><span class="w">
+              </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Rights pertaining to the permissions entry:</span><span class="se">\n</span><span class="s2"> * `CHANGE_OWNER` - Owner write access,</span><span class="se">\n</span><span class="s2"> * `CHANGE_PERMISSIONS` - Rights to change permissions on file objects,</span><span class="se">\n</span><span class="s2"> * `DELETE` - Delete access,</span><span class="se">\n</span><span class="s2"> * `DELETE_CHILD` - Delete from directory access,</span><span class="se">\n</span><span class="s2"> * `EXECUTE` - Execute access,</span><span class="se">\n</span><span class="s2"> * `EXTEND` - File extension access,</span><span class="se">\n</span><span class="s2"> * `MODIFY` - File modification access,</span><span class="se">\n</span><span class="s2"> * `READ` - Read access rights,</span><span class="se">\n</span><span class="s2"> * `READ_ACL` - ACL read access,</span><span class="se">\n</span><span class="s2"> * `READ_ATTR` - Attribute read access,</span><span class="se">\n</span><span class="s2"> * `READ_DATA` - File read access,</span><span class="se">\n</span><span class="s2"> * `READ_EA` - Extended attribute read access,</span><span class="se">\n</span><span class="s2"> * `SYNCHRONIZE` - File synchronize access,</span><span class="se">\n</span><span class="s2"> * `WRITE` - Write access rights,</span><span class="se">\n</span><span class="s2"> * `WRITE_ACL` - ACL write access,</span><span class="se">\n</span><span class="s2"> * `WRITE_ATTR` - Attribute write access,</span><span class="se">\n</span><span class="s2"> * `WRITE_EA` - Extended attribute write access,</span><span class="se">\n</span><span class="s2"> * `WRITE_GROUP` - Group write access"</span><span class="w">
             </span><span class="p">}</span><span class="w">
           </span><span class="p">}</span><span class="w">
         </span><span class="p">}</span><span class="w">
