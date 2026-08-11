@@ -2380,6 +2380,10 @@ $(document).ready(function() {
 </ul>
 
 <h3 id="spoke-portals">Spoke Portals</h3>
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
+A spoke portal is inaccessible if the hub portal host cluster and the spoke portal host cluster run different versions of Qumulo Core.
+</div>
+
 <ul>
   <li>
     <p>It is possible to create up to 32 hub portals—or 32 spoke portals (Qumulo Core 7.5.0.3 and higher)—on a single Qumulo cluster.</p>
@@ -2405,14 +2409,11 @@ $(document).ready(function() {
 </ul>
 
 <h2 id="portal-connectivity">Portal Connectivity</h2>
-<ul>
-  <li>
-    <p>For a spoke portal to be accessible, there must be full connectivity between the two clusters in a portal relationship, without which files or directories with outstanding modifications on one portal are inaccessible on other portals. Specifically, every node in the spoke portal host cluster must be able to connect to the configured hub portal host cluster address, and the other way around.</p>
-  </li>
-  <li>
-    <p>A spoke portal is inaccessible if the hub portal host cluster and the spoke portal host cluster run different versions of Qumulo Core.</p>
-  </li>
-</ul>
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
+A spoke portal is inaccessible if the hub portal host cluster and the spoke portal host cluster run different versions of Qumulo Core.
+</div>
+
+<p>For a spoke portal to be accessible, there must be full connectivity between the two clusters in a portal relationship, without which files or directories with outstanding modifications on one portal are inaccessible on other portals. Specifically, every node in the spoke portal host cluster must be able to connect to the configured hub portal host cluster address, and the other way around.</p>
 
 <h2 id="portal-relationships">Portal Relationships</h2>
 <ul>
