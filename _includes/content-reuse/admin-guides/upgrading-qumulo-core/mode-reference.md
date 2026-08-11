@@ -14,11 +14,6 @@ For information about the most important features from each release, click the Q
   </thead>
   <tbody>
     <tr>
-      <td><a href="feature-log.html#qumulo-core-793">7.9.3</a></td>
-      <td></td>
-      <td class="instant">Instant</td>
-    </tr>
-    <tr>
       <td><a href="feature-log.html#qumulo-core-7922">7.9.2.2</a></td>
       <td></td>
       <td class="instant">Instant</td>

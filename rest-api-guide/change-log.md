@@ -11,11 +11,6 @@ layout: page
 <style>div#toc{height:200px;overflow:auto;}</style>
 
 
-## Qumulo Core 7.9.3
-{{ nexusLink }}
-{{ noAPIchanges }}
-
-
 ## Qumulo Core 7.9.2.2
 {{ nexusLink }}
 <ul>
