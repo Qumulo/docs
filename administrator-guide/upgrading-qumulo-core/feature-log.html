@@ -2696,10 +2696,35 @@ $(document).ready(function() {
 
 <p>For information about upgrade types for each release, see <a href="mode-reference.html">Qumulo Core Upgrade Mode Reference</a>.</p>
 
+<h2 id="qumulo-core-793">Qumulo Core 7.9.3</h2>
+
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
+For clusters running Qumulo Core 7.9.0 (and higher), you must wait for on-disk upgrades to complete before you can upgrade the cluster to a higher version (this process typically takes 1-2 days). To check whether a cluster is ready to be upgraded, you can use the Qumulo REST API or the <code>qq</code> CLI. For example:
+    <ul>
+      <li><code>POST /v2/upgrade/verify-image</code></li>
+      <li><code>qq upgrade_verify_image --path /example/path/to/target/image</code></li>
+    </ul>
+</div>
+
+<ul>
+  <li>
+    Cloud Data Fabric
+    <ul>
+      <li>Made significant latency and throughput improvements on hub portals and spoke portals on Qumulo clusters with CPU-constrained metadata reads</li>
+      <li>Made significant speed improvements for opening and listing certain directory types</li>
+      <li>Added a REST API endpoint and a <code>qq</code> CLI command for querying recent portal quorum events</li>
+    </ul>
+  </li>
+  <li><strong>Azure Native Qumulo (ANQ), Cloud Native Qumulo (CNQ), and Stratus Accelerator Clusters:</strong> Resolved a performance issue with slow reads after cluster membership reconfiguration</li>
+  <li><strong>SMB:</strong> Made significant performance improvements by enabling the execution of multiple, concurrent <code>SMB CREATE</code> commands</li>
+  <li>Made modest latency and throughput improvements for all Qumulo clusters with CPU-constrained metadata reads</li>
+</ul>
+
 <h2 id="qumulo-core-7921">Qumulo Core 7.9.2.1</h2>
 <p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a><span class="emoji">🔒</span></p>
 
 <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
+
 <ul>
   <li>
     <p>This release resolves an issue with Product Package deployments of Qumulo Core releases lower than 7.9.2 that are configured to use Host-Managed Networking. Qumulo Core detects any unintentionally unassigned floating IP addresses and restores them without affecting client connectivity.</p>
@@ -2709,8 +2734,7 @@ $(document).ready(function() {
     <ul>
       <li><code>POST /v2/upgrade/verify-image</code></li>
       <li><code>qq upgrade_verify_image --path /example/path/to/target/image</code></li>
-    </ul>
-  </li>
+    </ul></li>
   <li>This release adds important performance, security, and stability improvements:
     <ul>
       <li><strong>Cloud Native Qumulo (CNQ), Azure Native Qumulo (ANQ), and Stratus Accelerator clusters:</strong> Improved cluster start-up times.</li>

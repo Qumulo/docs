@@ -4888,6 +4888,102 @@ fetch('/data/website.json')
           
           
           
+          
+          
+          <li>
+            <a title="object_bridge_delete" href="/qq-cli-command-guide/object/object_bridge_delete.html">
+              object_bridge_delete
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="object_bridge_export_job_run" href="/qq-cli-command-guide/object/object_bridge_export_job_run.html">
+              object_bridge_export_job_run
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="object_bridge_export_rule_create" href="/qq-cli-command-guide/object/object_bridge_export_rule_create.html">
+              object_bridge_export_rule_create
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="object_bridge_export_rule_delete" href="/qq-cli-command-guide/object/object_bridge_export_rule_delete.html">
+              object_bridge_export_rule_delete
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="object_bridge_export_rule_get" href="/qq-cli-command-guide/object/object_bridge_export_rule_get.html">
+              object_bridge_export_rule_get
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="object_bridge_export_rule_list" href="/qq-cli-command-guide/object/object_bridge_export_rule_list.html">
+              object_bridge_export_rule_list
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
       </ul>
    </li>
      
@@ -8114,7 +8210,7 @@ $(document).ready(function() {
 
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq object_bridge_create <span class="o">[</span><span class="nt">-h</span><span class="o">]</span> <span class="nt">--bucket-uri</span> BUCKET_URI <span class="nt">--mount-path</span> MOUNT_PATH <span class="o">[</span><span class="nt">--key-prefix</span> KEY_PREFIX] <span class="o">[</span><span class="nt">--delimiter</span> DELIMITER] <span class="o">[</span><span class="nt">--access-key-id</span> ACCESS_KEY_ID] <span class="o">[</span><span class="nt">--secret-access-key</span> SECRET_ACCESS_KEY] <span class="o">[</span><span class="nt">--key-vault-hostname</span> KEY_VAULT_HOSTNAME]
-    <span class="o">[</span><span class="nt">--notification-queue-url</span> NOTIFICATION_QUEUE_URL]
+    <span class="o">[</span><span class="nt">--notification-queue-url</span> NOTIFICATION_QUEUE_URL] <span class="o">[</span><span class="nt">--read-only</span><span class="o">]</span>
 </code></pre></div></div>
 
 
@@ -8236,6 +8332,20 @@ $(document).ready(function() {
     </td>
     <td>
       URL of an SQS queue that delivers this bucket's object-change notifications. Omit to use cache expiry only.
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <code>--read-only</code>
+    </td>
+    <td>
+      
+        No
+      
+    </td>
+    <td>
+      Reject protocol writes to the bridge while the bucket keeps converging.
     </td>
   </tr>
 
@@ -8993,8 +9103,56 @@ $(document).ready(function() {
             
             
           
+            
+            
+  <li><a href="/qq-cli-command-guide/object/object_bridge_delete.html">object_bridge_delete</a></li>
+            
+          
+            
+            
+  <li><a href="/qq-cli-command-guide/object/object_bridge_export_job_run.html">object_bridge_export_job_run</a></li>
+            
+          
+            
+            
+  <li><a href="/qq-cli-command-guide/object/object_bridge_export_rule_create.html">object_bridge_export_rule_create</a></li>
+            
+          
+            
+            
+  <li><a href="/qq-cli-command-guide/object/object_bridge_export_rule_delete.html">object_bridge_export_rule_delete</a></li>
+            
+          
+            
+            
+  <li><a href="/qq-cli-command-guide/object/object_bridge_export_rule_get.html">object_bridge_export_rule_get</a></li>
+            
+          
+            
+            
+  <li><a href="/qq-cli-command-guide/object/object_bridge_export_rule_list.html">object_bridge_export_rule_list</a></li>
+            
+          
         
 </ul>
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
         
     
   
