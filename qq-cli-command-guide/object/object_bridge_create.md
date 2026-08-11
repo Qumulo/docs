@@ -39,10 +39,6 @@ optional_options:
     Omit to use cache expiry only.
   name: --notification-queue-url
   required: false
-- alternate: []
-  help: Reject protocol writes to the bridge while the bucket keeps converging.
-  name: --read-only
-  required: false
 permalink: /qq-cli-command-guide/object/object_bridge_create.html
 positional_options: []
 sidebar: qq_cli_command_reference_sidebar
@@ -54,7 +50,7 @@ title: qq object_bridge_create
 usage: "qq object_bridge_create [-h] --bucket-uri BUCKET_URI --mount-path MOUNT_PATH\
   \ [--key-prefix KEY_PREFIX] [--delimiter DELIMITER] [--access-key-id ACCESS_KEY_ID]\
   \ [--secret-access-key SECRET_ACCESS_KEY] [--key-vault-hostname KEY_VAULT_HOSTNAME]\n\
-  \    [--notification-queue-url NOTIFICATION_QUEUE_URL] [--read-only]"
+  \    [--notification-queue-url NOTIFICATION_QUEUE_URL]"
 zendesk_source: qq CLI Command Guide
 
 ---
