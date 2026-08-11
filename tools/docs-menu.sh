@@ -429,10 +429,12 @@ regen_cli_docs() {
         if [ "$1" = "current" ]; then
             echo "Regenerating current CLI documentation from default branch..."
             cd ~/src && hg up default && hg fetch && ./tools/extract_cli_help.py --base-dir ~/git/docs-internal && cd -
+            sweep_toolchain
             return 0
         elif [[ "$1" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
             echo "Regenerating CLI documentation from release-$1 branch..."
             cd ~/src && hg up default && hg fetch && hg up release-$1 && ./tools/extract_cli_help.py --base-dir ~/git/docs-internal && cd -
+            sweep_toolchain
             return 0
         else
             echo "Error: Invalid version format '$1'. Expected 'current' or 'N.N.N'."
@@ -446,6 +448,7 @@ regen_cli_docs() {
         if [ "$version_choice" = "c" ]; then
             echo "Regenerating current CLI documentation from default branch..."
             cd ~/src && hg up default && hg fetch && ./tools/extract_cli_help.py --base-dir ~/git/docs-internal && cd -
+            sweep_toolchain
             break
         elif [ "$version_choice" = "f" ]; then
             while true; do
@@ -453,6 +456,7 @@ regen_cli_docs() {
                 if [[ $version_number =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
                     echo "Regenerating CLI documentation from release-$version_number branch..."
                     cd ~/src && hg up default && hg fetch && hg up release-$version_number && ./tools/extract_cli_help.py --base-dir ~/git/docs-internal && cd -
+                    sweep_toolchain
                     break 2
                 else
                     echo "Enter a release version in the N.N.N format, where N is a number."
