@@ -21,7 +21,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
 
 <ul>
   <li>
-    Cloud Data Fabric
+    <strong>Cloud Data Fabric:</strong>
     <ul>
       <li>Made significant latency and throughput improvements on hub portals and spoke portals on Qumulo clusters with CPU-constrained metadata reads</li>
       <li>Made significant speed improvements for opening and listing certain directory types</li>
