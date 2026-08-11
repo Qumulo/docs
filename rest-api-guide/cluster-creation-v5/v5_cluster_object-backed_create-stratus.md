@@ -23,39 +23,43 @@ methods:
         \ a hexadecimal salt, and the number of iterations. It is possible to use\
         \ these parameters for administrative password or a different password.\"\
         ,\n      \"type\": \"object\",\n      \"properties\": {\n        \"hash\"\
-        : {\n          \"description\": \"hash\",\n          \"type\": \"string\"\n\
-        \        },\n        \"salt\": {\n          \"description\": \"salt\",\n \
-        \         \"type\": \"string\"\n        },\n        \"num_iterations\": {\n\
-        \          \"description\": \"num_iterations\",\n          \"type\": \"number\"\
+        : {\n          \"type\": \"array\",\n          \"items\": {\n            \"\
+        description\": \"hash\",\n            \"type\": \"number\"\n          }\n\
+        \        },\n        \"salt\": {\n          \"type\": \"array\",\n       \
+        \   \"items\": {\n            \"description\": \"salt\",\n            \"type\"\
+        : \"number\"\n          }\n        },\n        \"num_iterations\": {\n   \
+        \       \"description\": \"num_iterations\",\n          \"type\": \"number\"\
         \n        }\n      }\n    },\n    \"operator_public_keys\": {\n      \"type\"\
         : \"array\",\n      \"items\": {\n        \"description\": \"The set of public\
         \ keys allowed to sign operator bearer tokens\",\n        \"type\": \"object\"\
-        ,\n        \"properties\": {\n          \"data\": {\n            \"description\"\
-        : \"data\",\n            \"type\": \"string\"\n          }\n        }\n  \
-        \    }\n    },\n    \"node_uuids_and_fault_domains\": {\n      \"type\": \"\
-        array\",\n      \"items\": {\n        \"description\": \"List of node UUIDs\
-        \ and their respective fault domains as cluster members\",\n        \"type\"\
-        : \"object\",\n        \"properties\": {\n          \"node_uuid\": {\n   \
-        \         \"description\": \"node_uuid\",\n            \"type\": \"string\"\
-        \n          },\n          \"fault_domain_id\": {\n            \"description\"\
-        : \"fault_domain_id\",\n            \"type\": \"number\"\n          }\n  \
-        \      }\n      }\n    },\n    \"admin_password\": {\n      \"description\"\
-        : \"The administrator password\",\n      \"type\": \"string\",\n      \"format\"\
-        : \"password\"\n    },\n    \"usable_capacity\": {\n      \"description\"\
-        : \"File system usable capacity in bytes\",\n      \"type\": \"string\"\n\
-        \    },\n    \"object_store_uris\": {\n      \"type\": \"array\",\n      \"\
-        items\": {\n        \"description\": \"URI(s) of the object store(s) to be\
-        \ used by this tenant cluster\",\n        \"type\": \"string\"\n      }\n\
-        \    },\n    \"object_store_credentials\": {\n      \"type\": \"array\",\n\
-        \      \"items\": {\n        \"description\": \"Credentials for accessing\
-        \ the object stores referenced by the list of object storage URIs\",\n   \
-        \     \"type\": \"object\",\n        \"properties\": {\n          \"store_name\"\
-        : {\n            \"description\": \"store_name\",\n            \"type\": \"\
-        string\"\n          },\n          \"access_key_id\": {\n            \"description\"\
-        : \"access_key_id\",\n            \"type\": \"string\"\n          },\n   \
-        \       \"secret_access_key\": {\n            \"description\": \"secret_access_key\"\
-        ,\n            \"type\": \"string\",\n            \"format\": \"password\"\
-        \n          }\n        }\n      }\n    }\n  }\n}"
+        ,\n        \"properties\": {\n          \"data\": {\n            \"type\"\
+        : \"array\",\n            \"items\": {\n              \"description\": \"\
+        data\",\n              \"type\": \"number\"\n            }\n          }\n\
+        \        }\n      }\n    },\n    \"node_uuids_and_fault_domains\": {\n   \
+        \   \"type\": \"array\",\n      \"items\": {\n        \"description\": \"\
+        List of node UUIDs and their respective fault domains as cluster members\"\
+        ,\n        \"type\": \"object\",\n        \"properties\": {\n          \"\
+        node_uuid\": {\n            \"description\": \"node_uuid\",\n            \"\
+        type\": \"string\"\n          },\n          \"fault_domain_id\": {\n     \
+        \       \"description\": \"fault_domain_id\",\n            \"type\": \"number\"\
+        \n          }\n        }\n      }\n    },\n    \"admin_password\": {\n   \
+        \   \"description\": \"The administrator password\",\n      \"type\": \"string\"\
+        ,\n      \"format\": \"password\"\n    },\n    \"usable_capacity\": {\n  \
+        \    \"description\": \"File system usable capacity in bytes\",\n      \"\
+        type\": \"string\"\n    },\n    \"object_store_uris\": {\n      \"type\":\
+        \ \"array\",\n      \"items\": {\n        \"description\": \"URI(s) of the\
+        \ object store(s) to be used by this tenant cluster\",\n        \"type\":\
+        \ \"string\"\n      }\n    },\n    \"object_store_credentials\": {\n     \
+        \ \"type\": \"array\",\n      \"items\": {\n        \"description\": \"Credentials\
+        \ for accessing the object stores referenced by the list of object storage\
+        \ URIs\",\n        \"type\": \"object\",\n        \"properties\": {\n    \
+        \      \"store_name\": {\n            \"description\": \"store_name\",\n \
+        \           \"type\": \"string\"\n          },\n          \"access_key_id\"\
+        : {\n            \"description\": \"access_key_id\",\n            \"type\"\
+        : \"string\"\n          },\n          \"secret_access_key\": {\n         \
+        \   \"description\": \"secret_access_key\",\n            \"type\": \"string\"\
+        ,\n            \"format\": \"password\"\n          }\n        }\n      }\n\
+        \    }\n  }\n}"
 rest_endpoint: /v5/cluster/object-backed/create-stratus
 api_version: v5
 permalink: /rest-api-guide/cluster-creation-v5/v5_cluster_object-backed_create-stratus.html

@@ -58,8 +58,9 @@ methods:
         \ - KERBEROS_ENCRYPTION_TYPE_NULL,\\n * `KERBEROS_ENCRYPTION_TYPE_OLD_DES3_CBC_SHA1`\
         \ - KERBEROS_ENCRYPTION_TYPE_OLD_DES3_CBC_SHA1,\\n * `KERBEROS_ENCRYPTION_TYPE_SIGN_DSA_GENERATE`\
         \ - KERBEROS_ENCRYPTION_TYPE_SIGN_DSA_GENERATE\"\n          },\n         \
-        \ \"key\": {\n            \"description\": \"key\",\n            \"type\"\
-        : \"string\"\n          }\n        }\n      }\n    }\n  }\n}"
+        \ \"key\": {\n            \"type\": \"array\",\n            \"items\": {\n\
+        \              \"description\": \"key\",\n              \"type\": \"number\"\
+        \n            }\n          }\n        }\n      }\n    }\n  }\n}"
     responses:
     - code: '200'
       description: Return value on success
@@ -125,8 +126,9 @@ methods:
         \ - KERBEROS_ENCRYPTION_TYPE_NULL,\\n * `KERBEROS_ENCRYPTION_TYPE_OLD_DES3_CBC_SHA1`\
         \ - KERBEROS_ENCRYPTION_TYPE_OLD_DES3_CBC_SHA1,\\n * `KERBEROS_ENCRYPTION_TYPE_SIGN_DSA_GENERATE`\
         \ - KERBEROS_ENCRYPTION_TYPE_SIGN_DSA_GENERATE\"\n          },\n         \
-        \ \"key\": {\n            \"description\": \"key\",\n            \"type\"\
-        : \"string\"\n          }\n        }\n      }\n    }\n  }\n}"
+        \ \"key\": {\n            \"type\": \"array\",\n            \"items\": {\n\
+        \              \"description\": \"key\",\n              \"type\": \"number\"\
+        \n            }\n          }\n        }\n      }\n    }\n  }\n}"
     responses:
     - code: '200'
       description: Return value on success

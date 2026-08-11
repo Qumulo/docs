@@ -35,9 +35,10 @@ methods:
         n * `S3` - FS_USER_METADATA_TYPE_S3\"\n          },\n          \"key\": {\n\
         \            \"description\": \"The key used to reference the user metadata.\"\
         ,\n            \"type\": \"string\"\n          },\n          \"value\": {\n\
-        \            \"description\": \"The Base64-encoded value that the user-defined\
-        \ metadata entry stores.\",\n            \"type\": \"string\"\n          }\n\
-        \        }\n      }\n    }\n  }\n}"
+        \            \"type\": \"array\",\n            \"items\": {\n            \
+        \  \"description\": \"The data that the user-defined metadata entry stores.\"\
+        ,\n              \"type\": \"number\"\n            }\n          }\n      \
+        \  }\n      }\n    }\n  }\n}"
     responses:
     - code: '200'
       description: Return value on success

@@ -52,16 +52,19 @@ methods:
         \ for the administrative user: a hexadecimal hash, a hexadecimal salt, and\
         \ the number of iterations. It is possible to use these parameters for administrative\
         \ password or a different password.\",\n      \"type\": \"object\",\n    \
-        \  \"properties\": {\n        \"hash\": {\n          \"description\": \"hash\"\
-        ,\n          \"type\": \"string\"\n        },\n        \"salt\": {\n     \
-        \     \"description\": \"salt\",\n          \"type\": \"string\"\n       \
-        \ },\n        \"num_iterations\": {\n          \"description\": \"num_iterations\"\
+        \  \"properties\": {\n        \"hash\": {\n          \"type\": \"array\",\n\
+        \          \"items\": {\n            \"description\": \"hash\",\n        \
+        \    \"type\": \"number\"\n          }\n        },\n        \"salt\": {\n\
+        \          \"type\": \"array\",\n          \"items\": {\n            \"description\"\
+        : \"salt\",\n            \"type\": \"number\"\n          }\n        },\n \
+        \       \"num_iterations\": {\n          \"description\": \"num_iterations\"\
         ,\n          \"type\": \"number\"\n        }\n      }\n    },\n    \"operator_public_keys\"\
         : {\n      \"type\": \"array\",\n      \"items\": {\n        \"description\"\
         : \"The set of public keys allowed to sign operator bearer tokens\",\n   \
         \     \"type\": \"object\",\n        \"properties\": {\n          \"data\"\
-        : {\n            \"description\": \"data\",\n            \"type\": \"string\"\
-        \n          }\n        }\n      }\n    }\n  }\n}"
+        : {\n            \"type\": \"array\",\n            \"items\": {\n        \
+        \      \"description\": \"data\",\n              \"type\": \"number\"\n  \
+        \          }\n          }\n        }\n      }\n    }\n  }\n}"
 rest_endpoint: /v4/cluster/object-backed/create
 api_version: v4
 permalink: /rest-api-guide/cluster-creation-v4/v4_cluster_object-backed_create.html

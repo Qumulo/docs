@@ -79,15 +79,17 @@ methods:
         \      ],\n                \"description\": \"Type of this ACL entry:\\n *\
         \ `ALLOWED` - An ACL entry that grants rights,\\n * `DENIED` - An ACL entry\
         \ that denies rights\"\n              },\n              \"flags\": {\n   \
-        \             \"type\": \"array\",\n                \"items\": {\n       \
-        \           \"type\": \"string\",\n                  \"enum\": [\n       \
-        \             \"OBJECT_INHERIT\",\n                    \"CONTAINER_INHERIT\"\
-        ,\n                    \"NO_PROPAGATE_INHERIT\",\n                    \"INHERIT_ONLY\"\
-        ,\n                    \"INHERITED\"\n                  ],\n             \
-        \     \"description\": \"ACE flags for this ACL entry:\\n * `CONTAINER_INHERIT`\
-        \ - Children that are containers inherit as effective ACE,\\n * `INHERITED`\
-        \ - Indicates the ACE was inherited,\\n * `INHERIT_ONLY` - Indicates an inherit-only\
-        \ ACE that doesn't control access to the attached object,\\n * `NO_PROPAGATE_INHERIT`\
+        \             \"description\": \"ACE flags for this ACL entry\",\n       \
+        \         \"type\": \"array\",\n                \"items\": {\n           \
+        \       \"type\": \"string\",\n                  \"enum\": [\n           \
+        \         \"OBJECT_INHERIT\",\n                    \"CONTAINER_INHERIT\",\n\
+        \                    \"NO_PROPAGATE_INHERIT\",\n                    \"INHERIT_ONLY\"\
+        ,\n                    \"INHERITED\",\n                    \"ALL\"\n     \
+        \             ],\n                  \"description\": \"ACE flags for this\
+        \ ACL entry:\\n * `ALL` - All ACE flags,\\n * `CONTAINER_INHERIT` - Children\
+        \ that are containers inherit as effective ACE,\\n * `INHERITED` - Indicates\
+        \ the ACE was inherited,\\n * `INHERIT_ONLY` - Indicates an inherit-only ACE\
+        \ that doesn't control access to the attached object,\\n * `NO_PROPAGATE_INHERIT`\
         \ - Prevent subsequent children from inheriting ACE,\\n * `OBJECT_INHERIT`\
         \ - Non-container children inherit as effective ACE. Container objects inherit\
         \ as inherit-only ACE\"\n                }\n              },\n           \
@@ -119,7 +121,8 @@ methods:
         \                \"type\": \"string\"\n                  },\n            \
         \      \"name\": {\n                    \"description\": \"name\",\n     \
         \               \"type\": \"string\"\n                  }\n              \
-        \  }\n              },\n              \"rights\": {\n                \"type\"\
+        \  }\n              },\n              \"rights\": {\n                \"description\"\
+        : \"Rights granted or denied for this ACL entry\",\n                \"type\"\
         : \"array\",\n                \"items\": {\n                  \"type\": \"\
         string\",\n                  \"enum\": [\n                    \"READ\",\n\
         \                    \"READ_EA\",\n                    \"READ_ATTR\",\n  \
@@ -128,13 +131,16 @@ methods:
         \                 \"CHANGE_OWNER\",\n                    \"WRITE_GROUP\",\n\
         \                    \"DELETE\",\n                    \"EXECUTE\",\n     \
         \               \"MODIFY\",\n                    \"EXTEND\",\n           \
-        \         \"DELETE_CHILD\",\n                    \"SYNCHRONIZE\"\n       \
-        \           ],\n                  \"description\": \"Rights granted or denied\
-        \ for this ACL entry:\\n * `CHANGE_OWNER` - Owner write access,\\n * `DELETE`\
-        \ - Delete access,\\n * `DELETE_CHILD` - Delete from directory access,\\n\
-        \ * `EXECUTE` - Execute access,\\n * `EXTEND` - File extension access,\\n\
-        \ * `MODIFY` - File modification access,\\n * `READ` - File read access,\\\
-        n * `READ_ACL` - ACL read access,\\n * `READ_ATTR` - Attribute read access,\\\
+        \         \"ADD_FILE\",\n                    \"ADD_SUBDIR\",\n           \
+        \         \"DELETE_CHILD\",\n                    \"SYNCHRONIZE\",\n      \
+        \              \"ALL\"\n                  ],\n                  \"description\"\
+        : \"Rights granted or denied for this ACL entry:\\n * `ADD_FILE` - File creation\
+        \ access,\\n * `ADD_SUBDIR` - Directory creation access,\\n * `ALL` - All\
+        \ access rights,\\n * `CHANGE_OWNER` - Owner write access,\\n * `DELETE` -\
+        \ Delete access,\\n * `DELETE_CHILD` - Delete from directory access,\\n *\
+        \ `EXECUTE` - Execute access,\\n * `EXTEND` - File extension access,\\n *\
+        \ `MODIFY` - File modification access,\\n * `READ` - File read access,\\n\
+        \ * `READ_ACL` - ACL read access,\\n * `READ_ATTR` - Attribute read access,\\\
         n * `READ_EA` - Extended attribute read access,\\n * `SYNCHRONIZE` - File\
         \ synchronize access,\\n * `WRITE_ACL` - ACL write access,\\n * `WRITE_ATTR`\
         \ - Attribute write access,\\n * `WRITE_EA` - Extended attribute write access,\\\
@@ -153,6 +159,7 @@ methods:
         \ - TRUSTEE_MATCH_EQUIVALENT,\\n * `EVERYONE` - TRUSTEE_MATCH_EVERYONE,\\\
         n * `NONE` - TRUSTEE_MATCH_NONE,\\n * `POTENTIALLY_AFFECTED` - TRUSTEE_MATCH_POTENTIALLY_AFFECTED\"\
         \n              },\n              \"newly_allowed\": {\n                \"\
+        description\": \"Rights allowed by the current ACE.\",\n                \"\
         type\": \"array\",\n                \"items\": {\n                  \"type\"\
         : \"string\",\n                  \"enum\": [\n                    \"READ\"\
         ,\n                    \"READ_EA\",\n                    \"READ_ATTR\",\n\
@@ -161,68 +168,83 @@ methods:
         \                   \"CHANGE_OWNER\",\n                    \"WRITE_GROUP\"\
         ,\n                    \"DELETE\",\n                    \"EXECUTE\",\n   \
         \                 \"MODIFY\",\n                    \"EXTEND\",\n         \
-        \           \"DELETE_CHILD\",\n                    \"SYNCHRONIZE\"\n     \
-        \             ],\n                  \"description\": \"Rights allowed by the\
-        \ current ACE.:\\n * `CHANGE_OWNER` - Owner write access,\\n * `DELETE` -\
-        \ Delete access,\\n * `DELETE_CHILD` - Delete from directory access,\\n *\
-        \ `EXECUTE` - Execute access,\\n * `EXTEND` - File extension access,\\n *\
-        \ `MODIFY` - File modification access,\\n * `READ` - File read access,\\n\
-        \ * `READ_ACL` - ACL read access,\\n * `READ_ATTR` - Attribute read access,\\\
-        n * `READ_EA` - Extended attribute read access,\\n * `SYNCHRONIZE` - File\
-        \ synchronize access,\\n * `WRITE_ACL` - ACL write access,\\n * `WRITE_ATTR`\
-        \ - Attribute write access,\\n * `WRITE_EA` - Extended attribute write access,\\\
-        n * `WRITE_GROUP` - Group write access\"\n                }\n            \
-        \  },\n              \"cumulative_allowed\": {\n                \"type\":\
-        \ \"array\",\n                \"items\": {\n                  \"type\": \"\
-        string\",\n                  \"enum\": [\n                    \"READ\",\n\
-        \                    \"READ_EA\",\n                    \"READ_ATTR\",\n  \
-        \                  \"READ_ACL\",\n                    \"WRITE_EA\",\n    \
-        \                \"WRITE_ATTR\",\n                    \"WRITE_ACL\",\n   \
-        \                 \"CHANGE_OWNER\",\n                    \"WRITE_GROUP\",\n\
-        \                    \"DELETE\",\n                    \"EXECUTE\",\n     \
-        \               \"MODIFY\",\n                    \"EXTEND\",\n           \
-        \         \"DELETE_CHILD\",\n                    \"SYNCHRONIZE\"\n       \
-        \           ],\n                  \"description\": \"Rights allowed in total\
-        \ so far.:\\n * `CHANGE_OWNER` - Owner write access,\\n * `DELETE` - Delete\
-        \ access,\\n * `DELETE_CHILD` - Delete from directory access,\\n * `EXECUTE`\
-        \ - Execute access,\\n * `EXTEND` - File extension access,\\n * `MODIFY` -\
-        \ File modification access,\\n * `READ` - File read access,\\n * `READ_ACL`\
-        \ - ACL read access,\\n * `READ_ATTR` - Attribute read access,\\n * `READ_EA`\
-        \ - Extended attribute read access,\\n * `SYNCHRONIZE` - File synchronize\
-        \ access,\\n * `WRITE_ACL` - ACL write access,\\n * `WRITE_ATTR` - Attribute\
-        \ write access,\\n * `WRITE_EA` - Extended attribute write access,\\n * `WRITE_GROUP`\
-        \ - Group write access\"\n                }\n              },\n          \
-        \    \"newly_denied\": {\n                \"type\": \"array\",\n         \
-        \       \"items\": {\n                  \"type\": \"string\",\n          \
-        \        \"enum\": [\n                    \"READ\",\n                    \"\
-        READ_EA\",\n                    \"READ_ATTR\",\n                    \"READ_ACL\"\
-        ,\n                    \"WRITE_EA\",\n                    \"WRITE_ATTR\",\n\
-        \                    \"WRITE_ACL\",\n                    \"CHANGE_OWNER\"\
-        ,\n                    \"WRITE_GROUP\",\n                    \"DELETE\",\n\
-        \                    \"EXECUTE\",\n                    \"MODIFY\",\n     \
-        \               \"EXTEND\",\n                    \"DELETE_CHILD\",\n     \
-        \               \"SYNCHRONIZE\"\n                  ],\n                  \"\
-        description\": \"Rights denied by the current ACE.:\\n * `CHANGE_OWNER` -\
-        \ Owner write access,\\n * `DELETE` - Delete access,\\n * `DELETE_CHILD` -\
-        \ Delete from directory access,\\n * `EXECUTE` - Execute access,\\n * `EXTEND`\
-        \ - File extension access,\\n * `MODIFY` - File modification access,\\n *\
-        \ `READ` - File read access,\\n * `READ_ACL` - ACL read access,\\n * `READ_ATTR`\
+        \           \"ADD_FILE\",\n                    \"ADD_SUBDIR\",\n         \
+        \           \"DELETE_CHILD\",\n                    \"SYNCHRONIZE\",\n    \
+        \                \"ALL\"\n                  ],\n                  \"description\"\
+        : \"Rights allowed by the current ACE.:\\n * `ADD_FILE` - File creation access,\\\
+        n * `ADD_SUBDIR` - Directory creation access,\\n * `ALL` - All access rights,\\\
+        n * `CHANGE_OWNER` - Owner write access,\\n * `DELETE` - Delete access,\\\
+        n * `DELETE_CHILD` - Delete from directory access,\\n * `EXECUTE` - Execute\
+        \ access,\\n * `EXTEND` - File extension access,\\n * `MODIFY` - File modification\
+        \ access,\\n * `READ` - File read access,\\n * `READ_ACL` - ACL read access,\\\
+        n * `READ_ATTR` - Attribute read access,\\n * `READ_EA` - Extended attribute\
+        \ read access,\\n * `SYNCHRONIZE` - File synchronize access,\\n * `WRITE_ACL`\
+        \ - ACL write access,\\n * `WRITE_ATTR` - Attribute write access,\\n * `WRITE_EA`\
+        \ - Extended attribute write access,\\n * `WRITE_GROUP` - Group write access\"\
+        \n                }\n              },\n              \"cumulative_allowed\"\
+        : {\n                \"description\": \"Rights allowed in total so far.\"\
+        ,\n                \"type\": \"array\",\n                \"items\": {\n  \
+        \                \"type\": \"string\",\n                  \"enum\": [\n  \
+        \                  \"READ\",\n                    \"READ_EA\",\n         \
+        \           \"READ_ATTR\",\n                    \"READ_ACL\",\n          \
+        \          \"WRITE_EA\",\n                    \"WRITE_ATTR\",\n          \
+        \          \"WRITE_ACL\",\n                    \"CHANGE_OWNER\",\n       \
+        \             \"WRITE_GROUP\",\n                    \"DELETE\",\n        \
+        \            \"EXECUTE\",\n                    \"MODIFY\",\n             \
+        \       \"EXTEND\",\n                    \"ADD_FILE\",\n                 \
+        \   \"ADD_SUBDIR\",\n                    \"DELETE_CHILD\",\n             \
+        \       \"SYNCHRONIZE\",\n                    \"ALL\"\n                  ],\n\
+        \                  \"description\": \"Rights allowed in total so far.:\\n\
+        \ * `ADD_FILE` - File creation access,\\n * `ADD_SUBDIR` - Directory creation\
+        \ access,\\n * `ALL` - All access rights,\\n * `CHANGE_OWNER` - Owner write\
+        \ access,\\n * `DELETE` - Delete access,\\n * `DELETE_CHILD` - Delete from\
+        \ directory access,\\n * `EXECUTE` - Execute access,\\n * `EXTEND` - File\
+        \ extension access,\\n * `MODIFY` - File modification access,\\n * `READ`\
+        \ - File read access,\\n * `READ_ACL` - ACL read access,\\n * `READ_ATTR`\
+        \ - Attribute read access,\\n * `READ_EA` - Extended attribute read access,\\\
+        n * `SYNCHRONIZE` - File synchronize access,\\n * `WRITE_ACL` - ACL write\
+        \ access,\\n * `WRITE_ATTR` - Attribute write access,\\n * `WRITE_EA` - Extended\
+        \ attribute write access,\\n * `WRITE_GROUP` - Group write access\"\n    \
+        \            }\n              },\n              \"newly_denied\": {\n    \
+        \            \"description\": \"Rights denied by the current ACE.\",\n   \
+        \             \"type\": \"array\",\n                \"items\": {\n       \
+        \           \"type\": \"string\",\n                  \"enum\": [\n       \
+        \             \"READ\",\n                    \"READ_EA\",\n              \
+        \      \"READ_ATTR\",\n                    \"READ_ACL\",\n               \
+        \     \"WRITE_EA\",\n                    \"WRITE_ATTR\",\n               \
+        \     \"WRITE_ACL\",\n                    \"CHANGE_OWNER\",\n            \
+        \        \"WRITE_GROUP\",\n                    \"DELETE\",\n             \
+        \       \"EXECUTE\",\n                    \"MODIFY\",\n                  \
+        \  \"EXTEND\",\n                    \"ADD_FILE\",\n                    \"\
+        ADD_SUBDIR\",\n                    \"DELETE_CHILD\",\n                   \
+        \ \"SYNCHRONIZE\",\n                    \"ALL\"\n                  ],\n  \
+        \                \"description\": \"Rights denied by the current ACE.:\\n\
+        \ * `ADD_FILE` - File creation access,\\n * `ADD_SUBDIR` - Directory creation\
+        \ access,\\n * `ALL` - All access rights,\\n * `CHANGE_OWNER` - Owner write\
+        \ access,\\n * `DELETE` - Delete access,\\n * `DELETE_CHILD` - Delete from\
+        \ directory access,\\n * `EXECUTE` - Execute access,\\n * `EXTEND` - File\
+        \ extension access,\\n * `MODIFY` - File modification access,\\n * `READ`\
+        \ - File read access,\\n * `READ_ACL` - ACL read access,\\n * `READ_ATTR`\
         \ - Attribute read access,\\n * `READ_EA` - Extended attribute read access,\\\
         n * `SYNCHRONIZE` - File synchronize access,\\n * `WRITE_ACL` - ACL write\
         \ access,\\n * `WRITE_ATTR` - Attribute write access,\\n * `WRITE_EA` - Extended\
         \ attribute write access,\\n * `WRITE_GROUP` - Group write access\"\n    \
         \            }\n              },\n              \"cumulative_denied\": {\n\
-        \                \"type\": \"array\",\n                \"items\": {\n    \
-        \              \"type\": \"string\",\n                  \"enum\": [\n    \
-        \                \"READ\",\n                    \"READ_EA\",\n           \
-        \         \"READ_ATTR\",\n                    \"READ_ACL\",\n            \
-        \        \"WRITE_EA\",\n                    \"WRITE_ATTR\",\n            \
-        \        \"WRITE_ACL\",\n                    \"CHANGE_OWNER\",\n         \
-        \           \"WRITE_GROUP\",\n                    \"DELETE\",\n          \
-        \          \"EXECUTE\",\n                    \"MODIFY\",\n               \
-        \     \"EXTEND\",\n                    \"DELETE_CHILD\",\n               \
-        \     \"SYNCHRONIZE\"\n                  ],\n                  \"description\"\
-        : \"Rights denied in total so far.:\\n * `CHANGE_OWNER` - Owner write access,\\\
+        \                \"description\": \"Rights denied in total so far.\",\n  \
+        \              \"type\": \"array\",\n                \"items\": {\n      \
+        \            \"type\": \"string\",\n                  \"enum\": [\n      \
+        \              \"READ\",\n                    \"READ_EA\",\n             \
+        \       \"READ_ATTR\",\n                    \"READ_ACL\",\n              \
+        \      \"WRITE_EA\",\n                    \"WRITE_ATTR\",\n              \
+        \      \"WRITE_ACL\",\n                    \"CHANGE_OWNER\",\n           \
+        \         \"WRITE_GROUP\",\n                    \"DELETE\",\n            \
+        \        \"EXECUTE\",\n                    \"MODIFY\",\n                 \
+        \   \"EXTEND\",\n                    \"ADD_FILE\",\n                    \"\
+        ADD_SUBDIR\",\n                    \"DELETE_CHILD\",\n                   \
+        \ \"SYNCHRONIZE\",\n                    \"ALL\"\n                  ],\n  \
+        \                \"description\": \"Rights denied in total so far.:\\n * `ADD_FILE`\
+        \ - File creation access,\\n * `ADD_SUBDIR` - Directory creation access,\\\
+        n * `ALL` - All access rights,\\n * `CHANGE_OWNER` - Owner write access,\\\
         n * `DELETE` - Delete access,\\n * `DELETE_CHILD` - Delete from directory\
         \ access,\\n * `EXECUTE` - Execute access,\\n * `EXTEND` - File extension\
         \ access,\\n * `MODIFY` - File modification access,\\n * `READ` - File read\
@@ -242,76 +264,93 @@ methods:
         \ or not.:\\n * `EQUIVALENT` - TRUSTEE_MATCH_EQUIVALENT,\\n * `EVERYONE` -\
         \ TRUSTEE_MATCH_EVERYONE,\\n * `NONE` - TRUSTEE_MATCH_NONE,\\n * `POTENTIALLY_AFFECTED`\
         \ - TRUSTEE_MATCH_POTENTIALLY_AFFECTED\"\n              },\n             \
-        \ \"newly_allowed\": {\n                \"type\": \"array\",\n           \
-        \     \"items\": {\n                  \"type\": \"string\",\n            \
-        \      \"enum\": [\n                    \"READ\",\n                    \"\
+        \ \"newly_allowed\": {\n                \"description\": \"Rights allowed\
+        \ by the current ACE.\",\n                \"type\": \"array\",\n         \
+        \       \"items\": {\n                  \"type\": \"string\",\n          \
+        \        \"enum\": [\n                    \"READ\",\n                    \"\
         READ_EA\",\n                    \"READ_ATTR\",\n                    \"READ_ACL\"\
         ,\n                    \"WRITE_EA\",\n                    \"WRITE_ATTR\",\n\
         \                    \"WRITE_ACL\",\n                    \"CHANGE_OWNER\"\
         ,\n                    \"WRITE_GROUP\",\n                    \"DELETE\",\n\
         \                    \"EXECUTE\",\n                    \"MODIFY\",\n     \
-        \               \"EXTEND\",\n                    \"DELETE_CHILD\",\n     \
-        \               \"SYNCHRONIZE\"\n                  ],\n                  \"\
-        description\": \"Rights allowed by the current ACE.:\\n * `CHANGE_OWNER` -\
-        \ Owner write access,\\n * `DELETE` - Delete access,\\n * `DELETE_CHILD` -\
-        \ Delete from directory access,\\n * `EXECUTE` - Execute access,\\n * `EXTEND`\
-        \ - File extension access,\\n * `MODIFY` - File modification access,\\n *\
-        \ `READ` - File read access,\\n * `READ_ACL` - ACL read access,\\n * `READ_ATTR`\
+        \               \"EXTEND\",\n                    \"ADD_FILE\",\n         \
+        \           \"ADD_SUBDIR\",\n                    \"DELETE_CHILD\",\n     \
+        \               \"SYNCHRONIZE\",\n                    \"ALL\"\n          \
+        \        ],\n                  \"description\": \"Rights allowed by the current\
+        \ ACE.:\\n * `ADD_FILE` - File creation access,\\n * `ADD_SUBDIR` - Directory\
+        \ creation access,\\n * `ALL` - All access rights,\\n * `CHANGE_OWNER` - Owner\
+        \ write access,\\n * `DELETE` - Delete access,\\n * `DELETE_CHILD` - Delete\
+        \ from directory access,\\n * `EXECUTE` - Execute access,\\n * `EXTEND` -\
+        \ File extension access,\\n * `MODIFY` - File modification access,\\n * `READ`\
+        \ - File read access,\\n * `READ_ACL` - ACL read access,\\n * `READ_ATTR`\
         \ - Attribute read access,\\n * `READ_EA` - Extended attribute read access,\\\
         n * `SYNCHRONIZE` - File synchronize access,\\n * `WRITE_ACL` - ACL write\
         \ access,\\n * `WRITE_ATTR` - Attribute write access,\\n * `WRITE_EA` - Extended\
         \ attribute write access,\\n * `WRITE_GROUP` - Group write access\"\n    \
         \            }\n              },\n              \"cumulative_allowed\": {\n\
-        \                \"type\": \"array\",\n                \"items\": {\n    \
-        \              \"type\": \"string\",\n                  \"enum\": [\n    \
-        \                \"READ\",\n                    \"READ_EA\",\n           \
-        \         \"READ_ATTR\",\n                    \"READ_ACL\",\n            \
-        \        \"WRITE_EA\",\n                    \"WRITE_ATTR\",\n            \
-        \        \"WRITE_ACL\",\n                    \"CHANGE_OWNER\",\n         \
-        \           \"WRITE_GROUP\",\n                    \"DELETE\",\n          \
-        \          \"EXECUTE\",\n                    \"MODIFY\",\n               \
-        \     \"EXTEND\",\n                    \"DELETE_CHILD\",\n               \
-        \     \"SYNCHRONIZE\"\n                  ],\n                  \"description\"\
-        : \"Rights allowed in total so far.:\\n * `CHANGE_OWNER` - Owner write access,\\\
-        n * `DELETE` - Delete access,\\n * `DELETE_CHILD` - Delete from directory\
-        \ access,\\n * `EXECUTE` - Execute access,\\n * `EXTEND` - File extension\
-        \ access,\\n * `MODIFY` - File modification access,\\n * `READ` - File read\
-        \ access,\\n * `READ_ACL` - ACL read access,\\n * `READ_ATTR` - Attribute\
-        \ read access,\\n * `READ_EA` - Extended attribute read access,\\n * `SYNCHRONIZE`\
-        \ - File synchronize access,\\n * `WRITE_ACL` - ACL write access,\\n * `WRITE_ATTR`\
-        \ - Attribute write access,\\n * `WRITE_EA` - Extended attribute write access,\\\
-        n * `WRITE_GROUP` - Group write access\"\n                }\n            \
-        \  },\n              \"newly_denied\": {\n                \"type\": \"array\"\
-        ,\n                \"items\": {\n                  \"type\": \"string\",\n\
-        \                  \"enum\": [\n                    \"READ\",\n          \
-        \          \"READ_EA\",\n                    \"READ_ATTR\",\n            \
-        \        \"READ_ACL\",\n                    \"WRITE_EA\",\n              \
-        \      \"WRITE_ATTR\",\n                    \"WRITE_ACL\",\n             \
-        \       \"CHANGE_OWNER\",\n                    \"WRITE_GROUP\",\n        \
-        \            \"DELETE\",\n                    \"EXECUTE\",\n             \
-        \       \"MODIFY\",\n                    \"EXTEND\",\n                   \
-        \ \"DELETE_CHILD\",\n                    \"SYNCHRONIZE\"\n               \
-        \   ],\n                  \"description\": \"Rights denied by the current\
-        \ ACE.:\\n * `CHANGE_OWNER` - Owner write access,\\n * `DELETE` - Delete access,\\\
-        n * `DELETE_CHILD` - Delete from directory access,\\n * `EXECUTE` - Execute\
-        \ access,\\n * `EXTEND` - File extension access,\\n * `MODIFY` - File modification\
-        \ access,\\n * `READ` - File read access,\\n * `READ_ACL` - ACL read access,\\\
-        n * `READ_ATTR` - Attribute read access,\\n * `READ_EA` - Extended attribute\
-        \ read access,\\n * `SYNCHRONIZE` - File synchronize access,\\n * `WRITE_ACL`\
-        \ - ACL write access,\\n * `WRITE_ATTR` - Attribute write access,\\n * `WRITE_EA`\
-        \ - Extended attribute write access,\\n * `WRITE_GROUP` - Group write access\"\
-        \n                }\n              },\n              \"cumulative_denied\"\
-        : {\n                \"type\": \"array\",\n                \"items\": {\n\
-        \                  \"type\": \"string\",\n                  \"enum\": [\n\
-        \                    \"READ\",\n                    \"READ_EA\",\n       \
-        \             \"READ_ATTR\",\n                    \"READ_ACL\",\n        \
-        \            \"WRITE_EA\",\n                    \"WRITE_ATTR\",\n        \
-        \            \"WRITE_ACL\",\n                    \"CHANGE_OWNER\",\n     \
-        \               \"WRITE_GROUP\",\n                    \"DELETE\",\n      \
-        \              \"EXECUTE\",\n                    \"MODIFY\",\n           \
-        \         \"EXTEND\",\n                    \"DELETE_CHILD\",\n           \
-        \         \"SYNCHRONIZE\"\n                  ],\n                  \"description\"\
-        : \"Rights denied in total so far.:\\n * `CHANGE_OWNER` - Owner write access,\\\
+        \                \"description\": \"Rights allowed in total so far.\",\n \
+        \               \"type\": \"array\",\n                \"items\": {\n     \
+        \             \"type\": \"string\",\n                  \"enum\": [\n     \
+        \               \"READ\",\n                    \"READ_EA\",\n            \
+        \        \"READ_ATTR\",\n                    \"READ_ACL\",\n             \
+        \       \"WRITE_EA\",\n                    \"WRITE_ATTR\",\n             \
+        \       \"WRITE_ACL\",\n                    \"CHANGE_OWNER\",\n          \
+        \          \"WRITE_GROUP\",\n                    \"DELETE\",\n           \
+        \         \"EXECUTE\",\n                    \"MODIFY\",\n                \
+        \    \"EXTEND\",\n                    \"ADD_FILE\",\n                    \"\
+        ADD_SUBDIR\",\n                    \"DELETE_CHILD\",\n                   \
+        \ \"SYNCHRONIZE\",\n                    \"ALL\"\n                  ],\n  \
+        \                \"description\": \"Rights allowed in total so far.:\\n *\
+        \ `ADD_FILE` - File creation access,\\n * `ADD_SUBDIR` - Directory creation\
+        \ access,\\n * `ALL` - All access rights,\\n * `CHANGE_OWNER` - Owner write\
+        \ access,\\n * `DELETE` - Delete access,\\n * `DELETE_CHILD` - Delete from\
+        \ directory access,\\n * `EXECUTE` - Execute access,\\n * `EXTEND` - File\
+        \ extension access,\\n * `MODIFY` - File modification access,\\n * `READ`\
+        \ - File read access,\\n * `READ_ACL` - ACL read access,\\n * `READ_ATTR`\
+        \ - Attribute read access,\\n * `READ_EA` - Extended attribute read access,\\\
+        n * `SYNCHRONIZE` - File synchronize access,\\n * `WRITE_ACL` - ACL write\
+        \ access,\\n * `WRITE_ATTR` - Attribute write access,\\n * `WRITE_EA` - Extended\
+        \ attribute write access,\\n * `WRITE_GROUP` - Group write access\"\n    \
+        \            }\n              },\n              \"newly_denied\": {\n    \
+        \            \"description\": \"Rights denied by the current ACE.\",\n   \
+        \             \"type\": \"array\",\n                \"items\": {\n       \
+        \           \"type\": \"string\",\n                  \"enum\": [\n       \
+        \             \"READ\",\n                    \"READ_EA\",\n              \
+        \      \"READ_ATTR\",\n                    \"READ_ACL\",\n               \
+        \     \"WRITE_EA\",\n                    \"WRITE_ATTR\",\n               \
+        \     \"WRITE_ACL\",\n                    \"CHANGE_OWNER\",\n            \
+        \        \"WRITE_GROUP\",\n                    \"DELETE\",\n             \
+        \       \"EXECUTE\",\n                    \"MODIFY\",\n                  \
+        \  \"EXTEND\",\n                    \"ADD_FILE\",\n                    \"\
+        ADD_SUBDIR\",\n                    \"DELETE_CHILD\",\n                   \
+        \ \"SYNCHRONIZE\",\n                    \"ALL\"\n                  ],\n  \
+        \                \"description\": \"Rights denied by the current ACE.:\\n\
+        \ * `ADD_FILE` - File creation access,\\n * `ADD_SUBDIR` - Directory creation\
+        \ access,\\n * `ALL` - All access rights,\\n * `CHANGE_OWNER` - Owner write\
+        \ access,\\n * `DELETE` - Delete access,\\n * `DELETE_CHILD` - Delete from\
+        \ directory access,\\n * `EXECUTE` - Execute access,\\n * `EXTEND` - File\
+        \ extension access,\\n * `MODIFY` - File modification access,\\n * `READ`\
+        \ - File read access,\\n * `READ_ACL` - ACL read access,\\n * `READ_ATTR`\
+        \ - Attribute read access,\\n * `READ_EA` - Extended attribute read access,\\\
+        n * `SYNCHRONIZE` - File synchronize access,\\n * `WRITE_ACL` - ACL write\
+        \ access,\\n * `WRITE_ATTR` - Attribute write access,\\n * `WRITE_EA` - Extended\
+        \ attribute write access,\\n * `WRITE_GROUP` - Group write access\"\n    \
+        \            }\n              },\n              \"cumulative_denied\": {\n\
+        \                \"description\": \"Rights denied in total so far.\",\n  \
+        \              \"type\": \"array\",\n                \"items\": {\n      \
+        \            \"type\": \"string\",\n                  \"enum\": [\n      \
+        \              \"READ\",\n                    \"READ_EA\",\n             \
+        \       \"READ_ATTR\",\n                    \"READ_ACL\",\n              \
+        \      \"WRITE_EA\",\n                    \"WRITE_ATTR\",\n              \
+        \      \"WRITE_ACL\",\n                    \"CHANGE_OWNER\",\n           \
+        \         \"WRITE_GROUP\",\n                    \"DELETE\",\n            \
+        \        \"EXECUTE\",\n                    \"MODIFY\",\n                 \
+        \   \"EXTEND\",\n                    \"ADD_FILE\",\n                    \"\
+        ADD_SUBDIR\",\n                    \"DELETE_CHILD\",\n                   \
+        \ \"SYNCHRONIZE\",\n                    \"ALL\"\n                  ],\n  \
+        \                \"description\": \"Rights denied in total so far.:\\n * `ADD_FILE`\
+        \ - File creation access,\\n * `ADD_SUBDIR` - Directory creation access,\\\
+        n * `ALL` - All access rights,\\n * `CHANGE_OWNER` - Owner write access,\\\
         n * `DELETE` - Delete access,\\n * `DELETE_CHILD` - Delete from directory\
         \ access,\\n * `EXECUTE` - Execute access,\\n * `EXTEND` - File extension\
         \ access,\\n * `MODIFY` - File modification access,\\n * `READ` - File read\
@@ -331,76 +370,93 @@ methods:
         \ or not.:\\n * `EQUIVALENT` - TRUSTEE_MATCH_EQUIVALENT,\\n * `EVERYONE` -\
         \ TRUSTEE_MATCH_EVERYONE,\\n * `NONE` - TRUSTEE_MATCH_NONE,\\n * `POTENTIALLY_AFFECTED`\
         \ - TRUSTEE_MATCH_POTENTIALLY_AFFECTED\"\n              },\n             \
-        \ \"newly_allowed\": {\n                \"type\": \"array\",\n           \
-        \     \"items\": {\n                  \"type\": \"string\",\n            \
-        \      \"enum\": [\n                    \"READ\",\n                    \"\
+        \ \"newly_allowed\": {\n                \"description\": \"Rights allowed\
+        \ by the current ACE.\",\n                \"type\": \"array\",\n         \
+        \       \"items\": {\n                  \"type\": \"string\",\n          \
+        \        \"enum\": [\n                    \"READ\",\n                    \"\
         READ_EA\",\n                    \"READ_ATTR\",\n                    \"READ_ACL\"\
         ,\n                    \"WRITE_EA\",\n                    \"WRITE_ATTR\",\n\
         \                    \"WRITE_ACL\",\n                    \"CHANGE_OWNER\"\
         ,\n                    \"WRITE_GROUP\",\n                    \"DELETE\",\n\
         \                    \"EXECUTE\",\n                    \"MODIFY\",\n     \
-        \               \"EXTEND\",\n                    \"DELETE_CHILD\",\n     \
-        \               \"SYNCHRONIZE\"\n                  ],\n                  \"\
-        description\": \"Rights allowed by the current ACE.:\\n * `CHANGE_OWNER` -\
-        \ Owner write access,\\n * `DELETE` - Delete access,\\n * `DELETE_CHILD` -\
-        \ Delete from directory access,\\n * `EXECUTE` - Execute access,\\n * `EXTEND`\
-        \ - File extension access,\\n * `MODIFY` - File modification access,\\n *\
-        \ `READ` - File read access,\\n * `READ_ACL` - ACL read access,\\n * `READ_ATTR`\
+        \               \"EXTEND\",\n                    \"ADD_FILE\",\n         \
+        \           \"ADD_SUBDIR\",\n                    \"DELETE_CHILD\",\n     \
+        \               \"SYNCHRONIZE\",\n                    \"ALL\"\n          \
+        \        ],\n                  \"description\": \"Rights allowed by the current\
+        \ ACE.:\\n * `ADD_FILE` - File creation access,\\n * `ADD_SUBDIR` - Directory\
+        \ creation access,\\n * `ALL` - All access rights,\\n * `CHANGE_OWNER` - Owner\
+        \ write access,\\n * `DELETE` - Delete access,\\n * `DELETE_CHILD` - Delete\
+        \ from directory access,\\n * `EXECUTE` - Execute access,\\n * `EXTEND` -\
+        \ File extension access,\\n * `MODIFY` - File modification access,\\n * `READ`\
+        \ - File read access,\\n * `READ_ACL` - ACL read access,\\n * `READ_ATTR`\
         \ - Attribute read access,\\n * `READ_EA` - Extended attribute read access,\\\
         n * `SYNCHRONIZE` - File synchronize access,\\n * `WRITE_ACL` - ACL write\
         \ access,\\n * `WRITE_ATTR` - Attribute write access,\\n * `WRITE_EA` - Extended\
         \ attribute write access,\\n * `WRITE_GROUP` - Group write access\"\n    \
         \            }\n              },\n              \"cumulative_allowed\": {\n\
-        \                \"type\": \"array\",\n                \"items\": {\n    \
-        \              \"type\": \"string\",\n                  \"enum\": [\n    \
-        \                \"READ\",\n                    \"READ_EA\",\n           \
-        \         \"READ_ATTR\",\n                    \"READ_ACL\",\n            \
-        \        \"WRITE_EA\",\n                    \"WRITE_ATTR\",\n            \
-        \        \"WRITE_ACL\",\n                    \"CHANGE_OWNER\",\n         \
-        \           \"WRITE_GROUP\",\n                    \"DELETE\",\n          \
-        \          \"EXECUTE\",\n                    \"MODIFY\",\n               \
-        \     \"EXTEND\",\n                    \"DELETE_CHILD\",\n               \
-        \     \"SYNCHRONIZE\"\n                  ],\n                  \"description\"\
-        : \"Rights allowed in total so far.:\\n * `CHANGE_OWNER` - Owner write access,\\\
-        n * `DELETE` - Delete access,\\n * `DELETE_CHILD` - Delete from directory\
-        \ access,\\n * `EXECUTE` - Execute access,\\n * `EXTEND` - File extension\
-        \ access,\\n * `MODIFY` - File modification access,\\n * `READ` - File read\
-        \ access,\\n * `READ_ACL` - ACL read access,\\n * `READ_ATTR` - Attribute\
-        \ read access,\\n * `READ_EA` - Extended attribute read access,\\n * `SYNCHRONIZE`\
-        \ - File synchronize access,\\n * `WRITE_ACL` - ACL write access,\\n * `WRITE_ATTR`\
-        \ - Attribute write access,\\n * `WRITE_EA` - Extended attribute write access,\\\
-        n * `WRITE_GROUP` - Group write access\"\n                }\n            \
-        \  },\n              \"newly_denied\": {\n                \"type\": \"array\"\
-        ,\n                \"items\": {\n                  \"type\": \"string\",\n\
-        \                  \"enum\": [\n                    \"READ\",\n          \
-        \          \"READ_EA\",\n                    \"READ_ATTR\",\n            \
-        \        \"READ_ACL\",\n                    \"WRITE_EA\",\n              \
-        \      \"WRITE_ATTR\",\n                    \"WRITE_ACL\",\n             \
-        \       \"CHANGE_OWNER\",\n                    \"WRITE_GROUP\",\n        \
-        \            \"DELETE\",\n                    \"EXECUTE\",\n             \
-        \       \"MODIFY\",\n                    \"EXTEND\",\n                   \
-        \ \"DELETE_CHILD\",\n                    \"SYNCHRONIZE\"\n               \
-        \   ],\n                  \"description\": \"Rights denied by the current\
-        \ ACE.:\\n * `CHANGE_OWNER` - Owner write access,\\n * `DELETE` - Delete access,\\\
-        n * `DELETE_CHILD` - Delete from directory access,\\n * `EXECUTE` - Execute\
-        \ access,\\n * `EXTEND` - File extension access,\\n * `MODIFY` - File modification\
-        \ access,\\n * `READ` - File read access,\\n * `READ_ACL` - ACL read access,\\\
-        n * `READ_ATTR` - Attribute read access,\\n * `READ_EA` - Extended attribute\
-        \ read access,\\n * `SYNCHRONIZE` - File synchronize access,\\n * `WRITE_ACL`\
-        \ - ACL write access,\\n * `WRITE_ATTR` - Attribute write access,\\n * `WRITE_EA`\
-        \ - Extended attribute write access,\\n * `WRITE_GROUP` - Group write access\"\
-        \n                }\n              },\n              \"cumulative_denied\"\
-        : {\n                \"type\": \"array\",\n                \"items\": {\n\
-        \                  \"type\": \"string\",\n                  \"enum\": [\n\
-        \                    \"READ\",\n                    \"READ_EA\",\n       \
-        \             \"READ_ATTR\",\n                    \"READ_ACL\",\n        \
-        \            \"WRITE_EA\",\n                    \"WRITE_ATTR\",\n        \
-        \            \"WRITE_ACL\",\n                    \"CHANGE_OWNER\",\n     \
-        \               \"WRITE_GROUP\",\n                    \"DELETE\",\n      \
-        \              \"EXECUTE\",\n                    \"MODIFY\",\n           \
-        \         \"EXTEND\",\n                    \"DELETE_CHILD\",\n           \
-        \         \"SYNCHRONIZE\"\n                  ],\n                  \"description\"\
-        : \"Rights denied in total so far.:\\n * `CHANGE_OWNER` - Owner write access,\\\
+        \                \"description\": \"Rights allowed in total so far.\",\n \
+        \               \"type\": \"array\",\n                \"items\": {\n     \
+        \             \"type\": \"string\",\n                  \"enum\": [\n     \
+        \               \"READ\",\n                    \"READ_EA\",\n            \
+        \        \"READ_ATTR\",\n                    \"READ_ACL\",\n             \
+        \       \"WRITE_EA\",\n                    \"WRITE_ATTR\",\n             \
+        \       \"WRITE_ACL\",\n                    \"CHANGE_OWNER\",\n          \
+        \          \"WRITE_GROUP\",\n                    \"DELETE\",\n           \
+        \         \"EXECUTE\",\n                    \"MODIFY\",\n                \
+        \    \"EXTEND\",\n                    \"ADD_FILE\",\n                    \"\
+        ADD_SUBDIR\",\n                    \"DELETE_CHILD\",\n                   \
+        \ \"SYNCHRONIZE\",\n                    \"ALL\"\n                  ],\n  \
+        \                \"description\": \"Rights allowed in total so far.:\\n *\
+        \ `ADD_FILE` - File creation access,\\n * `ADD_SUBDIR` - Directory creation\
+        \ access,\\n * `ALL` - All access rights,\\n * `CHANGE_OWNER` - Owner write\
+        \ access,\\n * `DELETE` - Delete access,\\n * `DELETE_CHILD` - Delete from\
+        \ directory access,\\n * `EXECUTE` - Execute access,\\n * `EXTEND` - File\
+        \ extension access,\\n * `MODIFY` - File modification access,\\n * `READ`\
+        \ - File read access,\\n * `READ_ACL` - ACL read access,\\n * `READ_ATTR`\
+        \ - Attribute read access,\\n * `READ_EA` - Extended attribute read access,\\\
+        n * `SYNCHRONIZE` - File synchronize access,\\n * `WRITE_ACL` - ACL write\
+        \ access,\\n * `WRITE_ATTR` - Attribute write access,\\n * `WRITE_EA` - Extended\
+        \ attribute write access,\\n * `WRITE_GROUP` - Group write access\"\n    \
+        \            }\n              },\n              \"newly_denied\": {\n    \
+        \            \"description\": \"Rights denied by the current ACE.\",\n   \
+        \             \"type\": \"array\",\n                \"items\": {\n       \
+        \           \"type\": \"string\",\n                  \"enum\": [\n       \
+        \             \"READ\",\n                    \"READ_EA\",\n              \
+        \      \"READ_ATTR\",\n                    \"READ_ACL\",\n               \
+        \     \"WRITE_EA\",\n                    \"WRITE_ATTR\",\n               \
+        \     \"WRITE_ACL\",\n                    \"CHANGE_OWNER\",\n            \
+        \        \"WRITE_GROUP\",\n                    \"DELETE\",\n             \
+        \       \"EXECUTE\",\n                    \"MODIFY\",\n                  \
+        \  \"EXTEND\",\n                    \"ADD_FILE\",\n                    \"\
+        ADD_SUBDIR\",\n                    \"DELETE_CHILD\",\n                   \
+        \ \"SYNCHRONIZE\",\n                    \"ALL\"\n                  ],\n  \
+        \                \"description\": \"Rights denied by the current ACE.:\\n\
+        \ * `ADD_FILE` - File creation access,\\n * `ADD_SUBDIR` - Directory creation\
+        \ access,\\n * `ALL` - All access rights,\\n * `CHANGE_OWNER` - Owner write\
+        \ access,\\n * `DELETE` - Delete access,\\n * `DELETE_CHILD` - Delete from\
+        \ directory access,\\n * `EXECUTE` - Execute access,\\n * `EXTEND` - File\
+        \ extension access,\\n * `MODIFY` - File modification access,\\n * `READ`\
+        \ - File read access,\\n * `READ_ACL` - ACL read access,\\n * `READ_ATTR`\
+        \ - Attribute read access,\\n * `READ_EA` - Extended attribute read access,\\\
+        n * `SYNCHRONIZE` - File synchronize access,\\n * `WRITE_ACL` - ACL write\
+        \ access,\\n * `WRITE_ATTR` - Attribute write access,\\n * `WRITE_EA` - Extended\
+        \ attribute write access,\\n * `WRITE_GROUP` - Group write access\"\n    \
+        \            }\n              },\n              \"cumulative_denied\": {\n\
+        \                \"description\": \"Rights denied in total so far.\",\n  \
+        \              \"type\": \"array\",\n                \"items\": {\n      \
+        \            \"type\": \"string\",\n                  \"enum\": [\n      \
+        \              \"READ\",\n                    \"READ_EA\",\n             \
+        \       \"READ_ATTR\",\n                    \"READ_ACL\",\n              \
+        \      \"WRITE_EA\",\n                    \"WRITE_ATTR\",\n              \
+        \      \"WRITE_ACL\",\n                    \"CHANGE_OWNER\",\n           \
+        \         \"WRITE_GROUP\",\n                    \"DELETE\",\n            \
+        \        \"EXECUTE\",\n                    \"MODIFY\",\n                 \
+        \   \"EXTEND\",\n                    \"ADD_FILE\",\n                    \"\
+        ADD_SUBDIR\",\n                    \"DELETE_CHILD\",\n                   \
+        \ \"SYNCHRONIZE\",\n                    \"ALL\"\n                  ],\n  \
+        \                \"description\": \"Rights denied in total so far.:\\n * `ADD_FILE`\
+        \ - File creation access,\\n * `ADD_SUBDIR` - Directory creation access,\\\
+        n * `ALL` - All access rights,\\n * `CHANGE_OWNER` - Owner write access,\\\
         n * `DELETE` - Delete access,\\n * `DELETE_CHILD` - Delete from directory\
         \ access,\\n * `EXECUTE` - Execute access,\\n * `EXTEND` - File extension\
         \ access,\\n * `MODIFY` - File modification access,\\n * `READ` - File read\
