@@ -19,13 +19,43 @@ check_environment() {
         fi
     fi
 
-    # Remediate the toolchain when necessary
-    if ! "$HOME/src/environment" > /tmp/env.out 2>&1; then
-        if [[ -d "$HOME/src" ]]; then
-            echo "Detected an error while running environment script. Remediating toolchain..."
-            cd "$HOME/src" && hg up default && hg fetch && ./prebuild
+    # Helper function to execute environment check and capture output
+    run_env_check() {
+        "$HOME/src/environment" > /tmp/env.out 2>&1
+    }
+
+    # Attempt running the environment script
+    if ! run_env_check; then
+        # Check if the output contains the low disk space warning
+        if grep -q "You've got a root file system which is less than 5 GB free!" /tmp/env.out; then
+            echo -e "\033[1;33mRoot file system has less than 5 GB free.\033[0m"
+            read -p $'\033[1;33mPerform emergency disk cleanup and qpkg sweep? (y/n): \033[0m' do_cleanup
+            
+            if [[ "$do_cleanup" == "y" ]]; then
+                echo "Performing emergency disk cleanup..."
+                sudo apt-get clean && sudo journalctl --vacuum-time=1d && rm -rf ~/.cache/*
+                find /tmp -mindepth 1 -maxdepth 1 ! -name "env.out" -exec rm -rf {} + 2>/dev/null
+                
+                echo "Sweeping toolchain..."
+                sweep_toolchain
+
+                echo "Retrying environment initialization..."
+                run_env_check
+            fi
         fi
-    else
+
+        # If it still fails after cleanup (or if user declined/error was unrelated to space)
+        if [[ $? -ne 0 ]]; then
+            if [[ -d "$HOME/src" ]]; then
+                echo "Detected an error while running environment script. Remediating toolchain..."
+                cd "$HOME/src" && hg up default && hg fetch && ./prebuild
+                run_env_check
+            fi
+        fi
+    fi
+
+    # Evaluate environment variables if output file exists and is non-empty
+    if [[ -s /tmp/env.out ]]; then
         eval "$(cat /tmp/env.out)"
     fi
 }
