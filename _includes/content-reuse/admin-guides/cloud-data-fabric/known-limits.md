@@ -6,6 +6,10 @@ Currently, it is possible to configure and manage Cloud Data Fabric functionalit
 * {{site.gns.crossFileSystem}}
 
 ### Spoke Portals
+{{site.data.alerts.important}}
+{{site.gns.versionRequirement}}
+{{site.data.alerts.end}}
+
 * It is possible to create up to 32 hub portals&mdash;or 32 spoke portals (Qumulo Core 7.5.0.3 and higher)&mdash;on a single Qumulo cluster.
 
 * It isn't possible to nest spoke portal root directories within other spoke portal root directories.
@@ -23,9 +27,11 @@ Currently, it is possible to configure and manage Cloud Data Fabric functionalit
 
 
 ## Portal Connectivity
-* {{site.gns.accessConnectivity}}
+{{site.data.alerts.important}}
+{{site.gns.versionRequirement}}
+{{site.data.alerts.end}}
 
-* {{site.gns.versionRequirement}}
+{{site.gns.accessConnectivity}}
 
 
 ## Portal Relationships
