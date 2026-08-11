@@ -489,6 +489,8 @@ regen_api_docs() {
         echo "Building REST API documentation from artifacts.eng.qumulo.com ..."
         PYTHONPATH="$USER_SITE:$PYTHONPATH" python3 tools/gen-api.py
     fi
+
+    sweep_toolchain
 }
 
 # Regenerate REST API change log
