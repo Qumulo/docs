@@ -9,6 +9,30 @@ For information about upgrade types for each release, see <a href='mode-referenc
 {% capture platUpg %}This release of Qumulo Core is a _platform upgrade_ that requires either a complete reboot (rebooting all nodes in your cluster at the same time) or a rolling reboot (rebooting the nodes in your cluster one at a time).{% endcapture %}
 
 
+## Qumulo Core 7.9.3
+{% capture mustWait %}For clusters running Qumulo Core 7.9.0 (and higher), you must wait for on-disk upgrades to complete before you can upgrade the cluster to a higher version (this process typically takes 1-2 days). To check whether a cluster is ready to be upgraded, you can use the Qumulo REST API or the <code>qq</code> CLI. For example:
+    <ul>
+      <li><code>POST /v2/upgrade/verify-image</code></li>
+      <li><code>qq upgrade_verify_image --path /example/path/to/target/image</code></li>
+    </ul>{% endcapture %}
+{{site.data.alerts.important}}
+{{ mustWait }}
+{{site.data.alerts.end}}
+
+<ul>
+  <li>
+    Cloud Data Fabric
+    <ul>
+      <li>Made significant latency and throughput improvements on hub portals and spoke portals on Qumulo clusters with CPU-constrained metadata reads</li>
+      <li>Made significant speed improvements for opening and listing certain directory types</li>
+      <li>Added a REST API endpoint and a <code>qq</code> CLI command for querying recent portal quorum events</li>
+    </ul>
+  </li>
+  <li><strong>Azure Native Qumulo (ANQ), Cloud Native Qumulo (CNQ), and Stratus Accelerator Clusters:</strong> Resolved a performance issue with slow reads after cluster membership reconfiguration</li>
+  <li><strong>SMB:</strong> Made significant performance improvements by enabling the execution of multiple, concurrent <code>SMB CREATE</code> commands</li>
+  <li>Made modest latency and throughput improvements for all Qumulo clusters with CPU-constrained metadata reads</li>
+</ul>
+
 ## Qumulo Core 7.9.2.1
 {{ nexusLink }}
 
@@ -16,17 +40,13 @@ For information about upgrade types for each release, see <a href='mode-referenc
 {% capture appHardInst %}<strong>Appliance Hardware Installations:</strong> Upgraded the host kernel on Ubuntu 24.04, from 6.8.0-85 to 6.8.0-117{% endcapture %}
 {% capture disableKernMod %}the <code>algif_aead</code> kernel module to mitigate the <a target="_blank" href="https://copy.fail/">Copy Fail</a> (<a target="_blank" href="https://nvd.nist.gov/vuln/detail/CVE-2026-31431">CVE-2026-31431</a>) vulnerability.{% endcapture %}
 {{site.data.alerts.important}}
+
 <ul>
   <li>
     <p>This release resolves an issue with Product Package deployments of Qumulo Core releases lower than 7.9.2 that are configured to use Host-Managed Networking. Qumulo Core detects any unintentionally unassigned floating IP addresses and restores them without affecting client connectivity.</p>
     <p></p>
   </li>
-  <li>For clusters running Qumulo Core 7.9.0 (and higher), you must wait for on-disk upgrades to complete before you can upgrade the cluster to a higher version (this process typically takes 1-2 days). To check whether a cluster is ready to be upgraded, you can use the Qumulo REST API or the <code>qq</code> CLI. For example:
-    <ul>
-      <li><code>POST /v2/upgrade/verify-image</code></li>
-      <li><code>qq upgrade_verify_image --path /example/path/to/target/image</code></li>
-    </ul>
-  </li>
+  <li>{{ mustWait }}</li>
   <li>This release adds important performance, security, and stability improvements:
     <ul>
       <li>{{ betterStartup }}</li>
