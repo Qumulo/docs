@@ -331,7 +331,6 @@ install_noto_emoji() {
     fi
 }
 
-# Update specific Ruby gem
 update_specific_ruby_gem() {
   local gem_name="$1"
 
@@ -352,25 +351,28 @@ update_specific_ruby_gem() {
     -c "bundle lock --update $gem_name && bundle install"
 }
 
-# Rebuild Ruby gems
 rebuild_ruby_gems() {
     start_in_docs_dir
     echo "Rebuilding the ruby gems..."
     docker run -ti --user $(id -u):$(id -g) --entrypoint /bin/bash -v $(pwd):/src docs-builder -c "bundle update --bundler; bundle install"
 }
 
-# Rebuild the docs-builder container
 rebuild_container() {
     start_in_docs_dir
     echo "Rebuilding the docs-builder container..."
     docker build -f docker/build/Dockerfile -t docs-builder .
 }
 
-# Rebuild the docs-builder container
 rebuild_container_bypass_cache() {
     start_in_docs_dir
     echo "Rebuilding the docs-builder container while bypassing the cache..."
     docker build --no-cache -f docker/build/Dockerfile -t docs-builder .
+}
+
+rebuild_vec_container_bypass_cache() {
+    cd ~/git/vectara-ingest 
+    echo "Rebuilding the vectara-ingest container while bypassing the cache..."
+    docker build --no-cache -t vectara-ingest:latest .
 }
 
 # List CLI documentation with appended content
@@ -935,45 +937,46 @@ while true; do
     echo -e "\033[1;33mPerform Maintenance\033[0m"
     echo -e "1.  📦\tRebuild docs-builder container"
     echo -e "2.  📦\tRebuild docs-builder container while bypassing the cache"
-    echo -e "3.  💎\tUpdate a specific Ruby gem (useful for Dependabot fixes)"
-    echo -e "4.  💎\tRebuild Ruby gems"
-    echo -e "5.  🧹\tSweep Toolchain"
-    echo -e "6.  🧹\tPrune Docker"
-    echo -e "7.  🔄\tRefresh Vectara Ingest repo"
-    echo -e "8.  ❌\tFind unused .js scripts"
-    echo -e "9.  ❌\tFind unused and undefined Jekyll/Liquid variables"
-    echo -e "10. 🔀\tReverse-integrate all changes from mainline"
+    echo -e "3.  📦\tRebuild vectara-ingest container while bypassing the cache"
+    echo -e "4.  💎\tUpdate a specific Ruby gem (useful for Dependabot fixes)"
+    echo -e "5.  💎\tRebuild Ruby gems"
+    echo -e "6.  🧹\tSweep Toolchain"
+    echo -e "7.  🧹\tPrune Docker"
+    echo -e "8.  🔄\tRefresh Vectara Ingest repo"
+    echo -e "9.  ❌\tFind unused .js scripts"
+    echo -e "10.  ❌\tFind unused and undefined Jekyll/Liquid variables"
+    echo -e "11. 🔀\tReverse-integrate all changes from mainline"
     echo
     echo -e "\033[1;33mRetrieve Information\033[0m"
-    echo -e "11. ⬆️\tDetermine whether a Qumulo Core release includes a host upgrade"
-    echo -e "12. ⬇️\tDetermine lowest replication version for Qumulo Core release"
-    echo -e "13. 🆕\tList CLI documentation with appended content"
+    echo -e "12. ⬆️\tDetermine whether a Qumulo Core release includes a host upgrade"
+    echo -e "13. ⬇️\tDetermine lowest replication version for Qumulo Core release"
+    echo -e "14. 🆕\tList CLI documentation with appended content"
     echo
     echo -e "\033[1;33mGenerate Documentation\033[0m"
-    echo -e "14. ⚙️\tRegenerate CLI documentation"
-    echo -e "15. ⚙️\tRegenerate REST API documentation"
-    echo -e "16. ⚙️\tRegenerate REST API change log"    
-    echo -e "17. ⚙️\tOnly build HTML documentation"
-    echo -e "18. ⚙️\tOnly build PDF documentation"
+    echo -e "15. ⚙️\tRegenerate CLI documentation"
+    echo -e "16. ⚙️\tRegenerate REST API documentation"
+    echo -e "17. ⚙️\tRegenerate REST API change log"    
+    echo -e "18. ⚙️\tOnly build HTML documentation"
+    echo -e "19. ⚙️\tOnly build PDF documentation"
     echo
     echo -e "\033[1;33mPreview Documentation\033[0m"
-    echo -e "19. 🖥️\tOnly serve documentation locally (Tailscale over HTTPS)"
-    echo -e "20. 🖥️\tOnly serve documentation locally (Python over HTTP)"
-    echo -e "21. 🖥️\tBuild documentation and serve it locally (Tailscale over HTTPS)"
-    echo -e "22. 🖥️\tBuild documentation and serve it locally (Python over HTTP)"
-    echo -e "23. 🖥️\tBuild documentation and serve it locally (Jekyll with LiveReload over HTTP)"
+    echo -e "20. 🖥️\tOnly serve documentation locally (Tailscale over HTTPS)"
+    echo -e "21. 🖥️\tOnly serve documentation locally (Python over HTTP)"
+    echo -e "22. 🖥️\tBuild documentation and serve it locally (Tailscale over HTTPS)"
+    echo -e "23. 🖥️\tBuild documentation and serve it locally (Python over HTTP)"
+    echo -e "24. 🖥️\tBuild documentation and serve it locally (Jekyll with LiveReload over HTTP)"
     echo
     echo -e "\033[1;33mPublish Documentation\033[0m"
-    echo -e "24. 📣\tPublish release notes to Nexus" 
+    echo -e "25. 📣\tPublish release notes to Nexus" 
     echo
     echo -e "\033[1;33mTest Documentation\033[0m"
-    echo -e "25. 📋\tCheck documentation for link, script, and image errors"
-    echo -e "26. 📋\tCheck documentation for spelling errors"
+    echo -e "26. 📋\tCheck documentation for link, script, and image errors"
+    echo -e "27. 📋\tCheck documentation for spelling errors"
     echo
     echo -e "\033[1;33mIndex Documentation\033[0m"
-    echo -e "27. 🔍\tIngest docs.qumulo.com into Vectara"
-    echo -e "28. 🔍\tIngest care.qumulo.com into Vectara"
-    echo -e "29. 🔍\tIngest qumulo.com into Vectara"
+    echo -e "28. 🔍\tIngest docs.qumulo.com into Vectara"
+    echo -e "29. 🔍\tIngest care.qumulo.com into Vectara"
+    echo -e "30. 🔍\tIngest qumulo.com into Vectara"
     echo
     echo -e "q.  👋\tQuit"
     echo
@@ -982,33 +985,34 @@ while true; do
     case $choice in
         1) rebuild_container ;;
         2) rebuild_container_bypass_cache ;;
-        3) update_specific_ruby_gem ;;
-        4) rebuild_ruby_gems ;;
-        5) sweep_toolchain ;;
-        6) prune_docker ;;
-        7) refresh_vectara_ingest_repo;;
-        8) find_unused_scripts ;;
-        9) find_unused_undefined_vars ;;
-        10) reverse_integrate_all_changes_from_mainline ;;
-        11) determine_host_upgrade_onprem_release ;;
-        12) determine_lowest_replication_version ;;
-        13) find_modified_cli ;;
-        14) regen_cli_docs ;;
-        15) regen_api_docs ;;
-        16) regen_api_change_log ;;
-        17) build_html_docs ;;
-        18) build_pdf_docs ;;
-        19) only_serve_docs_locally_tailscale ;;
-        20) only_serve_docs_locally_python ;;
-        21) build_serve_docs_locally_tailscale ;;
-        22) build_serve_docs_locally_python ;;
-        23) build_serve_docs_locally_jekyll ;;
-        24) publish_release_notes_to_nexus ;;
-        25) check_docs_errors ;;
-        26) check_spelling_errors ;;
-        27) ingest_docs_portal ;;
-        28) ingest_care_portal ;;
-        29) ingest_corp_site ;;
+        3) rebuild_vec_container_bypass_cache ;;
+        4) update_specific_ruby_gem ;;
+        5) rebuild_ruby_gems ;;
+        6) sweep_toolchain ;;
+        7) prune_docker ;;
+        8) refresh_vectara_ingest_repo;;
+        9) find_unused_scripts ;;
+        10) find_unused_undefined_vars ;;
+        11) reverse_integrate_all_changes_from_mainline ;;
+        12) determine_host_upgrade_onprem_release ;;
+        13) determine_lowest_replication_version ;;
+        14) find_modified_cli ;;
+        15) regen_cli_docs ;;
+        16) regen_api_docs ;;
+        17) regen_api_change_log ;;
+        18) build_html_docs ;;
+        19) build_pdf_docs ;;
+        20) only_serve_docs_locally_tailscale ;;
+        21) only_serve_docs_locally_python ;;
+        22) build_serve_docs_locally_tailscale ;;
+        23) build_serve_docs_locally_python ;;
+        24) build_serve_docs_locally_jekyll ;;
+        25) publish_release_notes_to_nexus ;;
+        26) check_docs_errors ;;
+        27) check_spelling_errors ;;
+        28) ingest_docs_portal ;;
+        29) ingest_care_portal ;;
+        30) ingest_corp_site ;;
         q) exit ;;
         *) echo "You must enter a valid option." ;;
     esac
