@@ -16,7 +16,7 @@ layout: page
 {{ noAPIchanges }}
 
 
-## Qumulo Core 7.9.2.1
+## Qumulo Core 7.9.2.2
 {{ nexusLink }}
 <ul>
   <li>Removed <code>/v1/portal/hubs/</code></li>

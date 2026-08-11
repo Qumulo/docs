@@ -33,7 +33,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
   <li>Made modest latency and throughput improvements for all Qumulo clusters with CPU-constrained metadata reads</li>
 </ul>
 
-## Qumulo Core 7.9.2.1
+## Qumulo Core 7.9.2.2
 {{ nexusLink }}
 
 {% capture betterStartup %}<strong>Cloud Native Qumulo (CNQ), Azure Native Qumulo (ANQ), and Stratus Accelerator clusters:</strong> Improved cluster start-up times.{% endcapture %}
@@ -43,8 +43,11 @@ For information about upgrade types for each release, see <a href='mode-referenc
 
 <ul>
   <li>
-    <p>This release resolves an issue with Product Package deployments of Qumulo Core releases lower than 7.9.2 that are configured to use Host-Managed Networking. Qumulo Core detects any unintentionally unassigned floating IP addresses and restores them without affecting client connectivity.</p>
-    <p></p>
+    This release resolves:
+    <ul>
+      <li><strong>Stratus Accelerator Clusters Deployed with Qumulo Core 7.9.2:</strong> An issue with an unlikely scenario that previously could occur on a Qumulo cluster with heavy workloads resulting from moving or combining data stored on a shared DataCore cluster. In this scenario, the object metadata cache can become corrupted when SSDs on nodes perform operations out of order.</li>
+      <li>An issue with Product Package deployments of Qumulo Core releases lower than 7.9.2 that are configured to use Host-Managed Networking. Qumulo Core detects any unintentionally unassigned floating IP addresses and restores them without affecting client connectivity.</li>
+    </ul>
   </li>
   <li>{{ mustWait }}</li>
   <li>This release adds important performance, security, and stability improvements:
@@ -54,7 +57,8 @@ For information about upgrade types for each release, see <a href='mode-referenc
       <li>Disabled {{ disableKernMod }}</li>
     </ul>
   </li>
-  <li>This release adds important cluster management functionality:
+  <li>
+    This release adds important cluster management functionality:
     <ul>
       <li>Added the following REST API endpoint and <code>qq</code> CLI command to let you retrieve recent portal quorum success and abandon events recorded by cluster nodes. This functionality can help administrators of clusters with large or complex portal relationships monitor recent portal quorum issues and debug networking and availability.
         <ul>
