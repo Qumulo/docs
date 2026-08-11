@@ -67,7 +67,7 @@ GEM
       sass-embedded (~> 1.75)
     jekyll-watch (2.2.1)
       listen (~> 3.0)
-    json (2.20.0)
+    json (2.21.2)
     kramdown (2.4.0)
       rexml
     kramdown-parser-gfm (1.1.0)
@@ -126,4 +126,4 @@ DEPENDENCIES
   ostruct
 
 BUNDLED WITH
-  4.0.15
+  4.0.17
