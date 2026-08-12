@@ -9,7 +9,7 @@ sidebar: qumulo_nexus_configuration_guide_sidebar
 
 Qumulo Nexus includes two remote access components:
 
-{% capture nexusRemoteSupport %}For clusters that run Qumulo Core 7.7.0 (and higher), Nexus Remote Support lets the Qumulo Care Team access your cluster and work on it remotely.{% endcapture %}
+{% capture nexusRemoteSupport %}For clusters that run Qumulo Core 7.7.1.1 (and higher), Nexus Remote Support lets the Qumulo Care Team access your cluster and work on it remotely.{% endcapture %}
 {% capture nexusRemoteManagement %}For clusters that run Qumulo Core 7.7.3 (and higher), Nexus Remote Management lets users in your organization with single sign-on (SSO) manage your cluster from Nexus.{% endcapture %}
 
 * {{ nexusRemoteSupport }}
