@@ -1,5 +1,5 @@
 ## How QDNS Enables DNS Resolution and Load Balancing
-QDNS allows your Qumulo cluster to provide load balancing for inbound connections by hosting a delegated DNS zone. QDNS supports:
+In Qumulo Core 7.5.0.3 (and higher), QDNS lets your cluster provide load balancing for inbound connections by hosting a delegated DNS zone. QDNS supports:
 
 * Any IPv4 or IPv6 floating IP addresses in your cluster
 
