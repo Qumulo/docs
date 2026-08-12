@@ -2704,6 +2704,24 @@ qumulo_private_url_node1 = "https://203.0.113.10"
 <h2 id="perform-post-deployment-actions">Step 3: Performing Post-Deployment Actions</h2>
 <p>This section describes the common actions you can perform on a CNQ cluster after deploying it.</p>
 
+<h3 id="connecting-to-cluster-ssh">Connecting to a Cluster by Using SSH</h3>
+
+<ol>
+  <li>
+    <p>To be able to run <code class="language-plaintext highlighter-rouge">qq</code> CLI commands over SSH from any node of a CNQ on Azure cluster, run the following command:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>machinectl shell qcore
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>To connect to a cluster by using SSH, specify the path to your <code class="language-plaintext highlighter-rouge">.pem</code> file and your credentials. For example:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh <span class="nt">-i</span> /my-file.pem <span class="se">\</span>
+  gquat@203.0.113.1
+</code></pre></div>    </div>
+  </li>
+</ol>
+
 <h3 id="adding-node-to-existing-cluster">Adding Nodes to an Existing Cluster</h3>
 <div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> To add nodes to an existing cluster, the total node count must be greater than that of the current deployment.</div>
 
