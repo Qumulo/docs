@@ -1,6 +1,21 @@
 ## Step 3: Performing Post-Deployment Actions {#perform-post-deployment-actions}
 This section describes the common actions you can perform on a {{site.cnqShort}} cluster after deploying it.
 
+### Connecting to a Cluster by Using SSH {#connecting-to-cluster-ssh}
+
+1. To be able to run `qq` CLI commands over SSH from any node of a {{site.azure.cnqAzureShort}} cluster, run the following command:
+
+   ```bash
+   sudo machinectl shell qcore
+   ```
+
+1. To connect to a cluster by using SSH, specify the path to your `.pem` file and your credentials. For example:
+
+   ```bash
+   ssh -i /my-file.pem \
+     gquat@{{site.exampleIP1}}
+   ```
+
 ### Adding Nodes to an Existing Cluster {#adding-node-to-existing-cluster}
 {% include important.html content="To add nodes to an existing cluster, the total node count must be greater than that of the current deployment." %}
 
