@@ -576,6 +576,45 @@ only_serve_docs_locally_tailscale() {
 
 # Publish release notes to Nexus
 publish_release_notes_to_nexus() {
+    local aws_bin="/usr/local/aws-cli/v2/current/bin/aws"
+
+    # Check whether AWS CLI v2 binary exists
+    if [[ ! -f "$aws_bin" ]]; then
+        read -p "AWS CLI v2 isn't installed. Install it? (y/n): " install_aws
+        if [[ "$install_aws" == "y" ]]; then
+            curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" && \
+            unzip awscliv2.zip && \
+            sudo ./aws/install
+        else
+            echo "Can't continue without AWS CLI v2. Exiting..."
+            return 1
+        fi
+    fi
+
+    # Check whether `aws2` alias exists
+    local target_rc=""
+    if [[ "$SHELL" == *"zsh"* ]]; then
+        target_rc="$HOME/.zshrc"
+    else
+        target_rc="$HOME/.bashrc"
+    fi
+
+    if ! grep -q "alias aws2=" "$target_rc" 2>/dev/null; then
+        read -p "Add 'aws2' alias to your shell profile? (y/n): " add_alias
+        if [[ "$add_alias" == "y" ]]; then
+            echo 'alias aws2="/usr/local/aws-cli/v2/current/bin/aws"' >> "$target_rc"
+            echo "Added alias 'aws2' to $target_rc."
+        fi
+    fi
+
+    # Initiate SSO login
+    local sso_profile
+    read -p "Enter login profile (default: qumulo-public): " sso_profile
+    sso_profile="${sso_profile:-qumulo-public}"
+
+    echo "Initiating AWS SSO login for profile '$sso_profile'..."
+    "$aws_bin" sso login --profile "$sso_profile" --use-device-code --no-browser
+
     check_src_repo
     
     local version_number
@@ -588,8 +627,8 @@ publish_release_notes_to_nexus() {
         fi
     done
 
-    local aws_profile="default"
-    read -p "Use default AWS profile? (y/n): " profile_choice
+    local aws_profile="$sso_profile"
+    read -p "Use AWS profile '$sso_profile'? (y/n): " profile_choice
     if [[ "$profile_choice" == "n" ]]; then
         read -p "Enter profile name: " aws_profile
     fi
