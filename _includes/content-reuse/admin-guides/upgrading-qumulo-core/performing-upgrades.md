@@ -4,6 +4,7 @@
   <li>{{page.varRollingRebootRefresh}}</li>
 {% if page.platform contains 'cnq-' %}<li>{{site.cnqLong}} doesn't differentiate between upgrade modes and all upgrades are <em>instant software upgrades</em> that have a downtime of less than 30 seconds and don't disrupt the operation of the cluster.</li>{% endif %}
 {% unless page.platform == 'anq' %}<li>If, while <a href="#upgrade-qq-cli">upgrading your Qumulo cluster by using the <code>qq</code> CLI</a>, you receive the following message, ensure that the upgrade file is located within the cluster's file system (for example, in an SMB share or an NFS export), not in the <code>/var/opt/qumulo/history</code> local system directory on an individual node. <div class="highlighter-rouge"><div class="highlight"><pre class="code-in-note highlight" style="position: relative;"><code>Error 400: upgrade_verify_error: You must use the same image version on all nodes in your cluster.</code></pre></div></div></li>{% endunless %}
+  <li>To minimize upgrade-related disruptions for SMB clients, if your Qumulo cluster is configured in a <a href="../cloud-data-fabric/how-portal-creation-enables-cloud-data-fabric.html">Cloud Data Fabric (CDF)</a> portal relationship, you must upgrade your spoke portal host clusters before you upgrade your hub portal host clusters.</li>
 </ul>
 {{site.data.alerts.end}}
 

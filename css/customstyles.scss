@@ -598,6 +598,11 @@ a.navbar-brand {
   background: yellow
 }
 
+/* When a .code-in-note precedes another <li> */
+li:has(+ li) div.highlighter-rouge {
+  margin-bottom: 20px;
+}
+
 /* Vectara */
 .vectara__logo_btn {
   margin-left: -38px;
