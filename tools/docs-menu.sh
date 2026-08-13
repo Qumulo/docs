@@ -983,7 +983,7 @@ while true; do
     echo -e "7.  🧹\tPrune Docker"
     echo -e "8.  🔄\tRefresh Vectara Ingest repo"
     echo -e "9.  ❌\tFind unused .js scripts"
-    echo -e "10.  ❌\tFind unused and undefined Jekyll/Liquid variables"
+    echo -e "10. ❌\tFind unused and undefined Jekyll/Liquid variables"
     echo -e "11. 🔀\tReverse-integrate all changes from mainline"
     echo
     echo -e "\033[1;33mRetrieve Information\033[0m"
