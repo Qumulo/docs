@@ -32,7 +32,11 @@ jobs:
 
       - name: Check spelling
         run: |
-          ./tools/test-spelling.sh || { echo "::error::Fix spelling errors or add exceptions to tools/.spelling-allowlist"; exit 1; }
+          ./tools/test-spelling.sh || { echo "::error title=Spell Check Failed::Fix spelling errors or add exceptions to tools/.spelling-allowlist"; exit 1; }
+
+      - name: Check for .md files not linked to a sidebar .yml file
+        run: |
+          ./tools/test-sidebars.sh || { echo "::error title=Sidebar Validation Failed::Ensure there are no loose .md files in the repository and that all files are added to _data/sidebars/*.yml"; exit 1; }
 
       - name: Check scripts, links, and images (non-fatal)
         shell: bash {0} # Allow manual error handling 
@@ -44,6 +48,6 @@ jobs:
           # Capture the exit code
           status=$?
           if [ $status -ne 0 ]; then
-            echo "::warning::Fix script/link/image errors. 404s for unpublished pages is normal."
+            echo "::warning title=Script, Link, and Image Check Failed::Fix script/link/image errors. 404s for unpublished pages is normal."
           fi
           exit 0

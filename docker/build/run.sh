@@ -166,6 +166,10 @@ if [[ -f /.dockerenv ]] || grep -qa docker /proc/1/cgroup; then
                 bundle exec htmlproofer _site --only-4xx --allow-missing-href=true
             fi
             ;;
+        sidebar)
+            echo ""
+            echo "Checking for loose Markdown files..."
+            bundle exec ruby tools/check-sidebars.rb ;;
         serve)
             echo ""
             echo "Serving on port 4000"

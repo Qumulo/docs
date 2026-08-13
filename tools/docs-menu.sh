@@ -674,20 +674,27 @@ publish_release_notes_to_nexus() {
     cd - >/dev/null || true
 }
 
-# Check documentation for link, script, and image errors by using HTML Proofer
-check_docs_errors() {
-    start_in_docs_dir
-    echo "Checking documentation for link, script, and image errors..."
-    ignore_locale
-    docker run --rm -it --user $(id -u):$(id -g) --name docs-container-check -v $(pwd):/src:rw docs-builder check
-}
-
 # Check documentation for spelling errors by using Hunspell
 check_spelling_errors() {
     start_in_docs_dir
     echo "Checking documentation for spelling errors..."
     ignore_locale
     docker run --rm --user $(id -u):$(id -g) --name docs-container-proof -v $(pwd):/src:rw docs-builder proof
+}
+
+# Check documentation for link, script, and image errors by using HTML Proofer
+check_docs_errors() {
+    start_in_docs_dir
+    echo "Checking documentation for link, script, and image errors..."
+    ignore_locale
+    docker run --rm -it --user $(id -u):$(id -g) --name docs-container-check -v $(pwd):/src:rw docs-builder check
+} 
+
+# Check documentation for sidebar errors
+check_sidebar_errors() {
+    start_in_docs_dir
+    echo "Checking documentation for sidebar errors..."
+    docker run -i --rm --user $(id -u):$(id -g) --name docs-container-proof -v $(pwd):/src:rw docs-builder sidebar
 }
 
 # Ingest documentation
@@ -1009,13 +1016,14 @@ while true; do
     echo -e "25. 📣\tPublish release notes to Nexus" 
     echo
     echo -e "\033[1;33mTest Documentation\033[0m"
-    echo -e "26. 📋\tCheck documentation for link, script, and image errors"
-    echo -e "27. 📋\tCheck documentation for spelling errors"
+    echo -e "26. 📋\tCheck documentation for spelling errors"
+    echo -e "27. 📋\tCheck documentation for script, link, and image errors"
+    echo -e "28. 📋\tCheck documentation for sidebar errors"
     echo
     echo -e "\033[1;33mIndex Documentation\033[0m"
-    echo -e "28. 🔍\tIngest docs.qumulo.com into Vectara"
-    echo -e "29. 🔍\tIngest care.qumulo.com into Vectara"
-    echo -e "30. 🔍\tIngest qumulo.com into Vectara"
+    echo -e "29. 🔍\tIngest docs.qumulo.com into Vectara"
+    echo -e "30. 🔍\tIngest care.qumulo.com into Vectara"
+    echo -e "31. 🔍\tIngest qumulo.com into Vectara"
     echo
     echo -e "q.  👋\tQuit"
     echo
@@ -1047,11 +1055,12 @@ while true; do
         23) build_serve_docs_locally_python ;;
         24) build_serve_docs_locally_jekyll ;;
         25) publish_release_notes_to_nexus ;;
-        26) check_docs_errors ;;
-        27) check_spelling_errors ;;
-        28) ingest_docs_portal ;;
-        29) ingest_care_portal ;;
-        30) ingest_corp_site ;;
+        26) check_spelling_errors ;;
+        27) check_docs_errors ;;
+        28) check_sidebar_errors ;;
+        29) ingest_docs_portal ;;
+        30) ingest_care_portal ;;
+        31) ingest_corp_site ;;
         q) exit ;;
         *) echo "You must enter a valid option." ;;
     esac
