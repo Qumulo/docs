@@ -35,6 +35,10 @@
   object-src 'none';
 ">
 
+<!-- AI Agent Discovery Headers -->
+<link rel="sitemap" type="application/xml" href="https://docs.qumulo.com/sitemap.xml">
+<link rel="service-doc" href="https://docs.qumulo.com/">
+
 <!-- This replaces frame-ancestors 'self'; which is unsupported in meta tags. -->
 <script>
   if (self !== top) {
@@ -71,46 +75,18 @@ fetch('/data/website.json')
 });    
 </script>
 
-<!-- BEGIN TO PREPARE WEBSITE RESOURCES -->  
-<!-- Preload from jsdelivr.net:
-     * Bootstrap stylesheet and script
-     * Font Awesome
--->
-<link rel="preload" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" as="style" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-<link rel="preload" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" as="script" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
-<link rel="preload" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" as="style">
-
-<!-- Preload web fonts from fonts.googleapis.com as stylesheets -->
-<link rel="preload" href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" as="style">
-<link rel="preload" href="https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap" as="style">
-
-<!-- Preload scripts from cloudflare.com
-     * jQuery
-     * jQuery Cookie
-     * Anchor JS
--->
-<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" as="script">
-<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js" as="script">
-<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/5.0.0/anchor.min.js" as="script">
-
-<!-- Preload JavaScript resources -->
-<link rel="preload" href="/js/grt-cookie-consent.js" as="script">
-<link rel="preload" href="/js/googletag.js" as="script">
-<link rel="preload" href="https://www.googletagmanager.com/gtag/js?id=G-81J7N4LMSE" as="script">
-
-<!-- Prefetch DNS from CDNs -->
-<link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
-<link rel="dns-prefetch" href="https://fonts.googleapis.com">
-<link rel="dns-prefetch" href="https://fonts.gstatic.com" crossorigin>
-<link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
-<link rel="dns-prefetch" href="https://maxcdn.bootstrapcdn.com">
+<!-- BEGIN TO PREPARE WEBSITE RESOURCES -->
+<!-- Preload image for LCP request discovery -->
+<link rel="preload" href="/images/below-header.webp" as="image" fetchpriority="high">
 
 <!-- Preconnect to CDNs -->
-<link rel="preconnect" href="https://cdn.jsdelivr.net">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://cdnjs.cloudflare.com">
 <link rel="preconnect" href="https://maxcdn.bootstrapcdn.com">
+
+<!-- Prefetch DNS -->
+<link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+<link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
 
 <!-- BEGIN TO LOAD WEBSITE RESOURCES -->
 <!-- Load Bootstrap and Font Awesome -->
@@ -212,6 +188,9 @@ fetch('/data/website.json')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
 
+<!-- Load default Google Analytics consent settings -->
+<script src="/js/grt-cookie-consent-default.js"></script>
+
 <!-- Load Google Analytics and exclude GDPR countries from collection -->
 <script defer src="/js/googletag.js"></script>
 <script defer src="https://www.googletagmanager.com/gtag/js?id=G-81J7N4LMSE"></script>
@@ -258,17 +237,6 @@ fetch('/data/website.json')
     </script>
     <script>
         $(document).ready(function() {
-            // By default, Reading Mode is off and the button is dark.
-            if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
-                // On the landing page, hide the sidebar, make content full-width, and hide the toggle link.
-                $("#tg-sb-sidebar").hide();
-                $("#tg-sb-content").removeClass('col-md-9').addClass('col-md-12');
-                $("#tg-sb-link").hide();
-                $(".projectTitle").hide();
-                $(".navbar-brand").hide();
-                return;
-            }
-
             if (Cookies.get('reading_mode') == '1' ) {
                 $("#tg-sb-sidebar").toggle();
                 $("#tg-sb-content").toggleClass('col-md-9');
@@ -298,7 +266,7 @@ fetch('/data/website.json')
     
 
 </head>
-<body>
+<body data-page="doc">
 <!-- ==================== TOPNAV START ==================== -->
 <div class="above-header"></div>
 
@@ -347,7 +315,9 @@ fetch('/data/website.json')
             <ul class="nav navbar-nav navbar-right">
                 <!-- toggle sidebar button -->
                 <li><a id="tg-sb-link" href="#" data-proofer-ignore><i id="tg-sb-icon" class="fa fa-toggle-off"></i> Toggle Reading Mode</a></li>
+
                 <li><a id="view-favorites" href="/favorites.html" data-proofer-ignore><i id="fav-nav-icon" class="fa fa-star-o"></i> View Favorites</a></li>
+
                 <!-- entries without drop-downs appear here -->
 
 
@@ -1118,18 +1088,24 @@ If <code>remaining_node_failures</code> is <b>0</b>, do <b>not</b> proceed and <
     </div>
   </div>
 
-  <!-- Cookie consent Banner-->	
+  <!-- Cookie Consent Banner -->
   <div id="cookie-banner" class="grt-cookie">
     <div class="grt-cookies-msg">
-      <p>We use cookies to improve your user experience and remember your preferences on this website. If you continue to use this website, we will assume that you accept and understand our <a class="no_icon" href="https://qumulo.com/legal/privacy-policy">Privacy Policy</a>, <a class="no_icon" href="https://qumulo.com/legal/cookie-policy/">Cookie Policy</a>, and <a class="no_icon" href="https://qumulo.com/terms-hub/">Terms Hub</a>.</p>
+      <p>We use cookies to improve your user experience and remember your preferences. Which cookies would you like to accept?</p>
     </div>
-    <span class="grt-cookie-button">Accept</span>
+    <div class="grt-cookie-buttons">
+      <span class="grt-cookie-button grt-allow-all">Allow All</span>
+      <span class="grt-cookie-button grt-essential-only">Essential Only</span>
+      <span class="grt-cookie-button grt-deny-all">Deny All</span>
+    </div>
   </div>
 
-  <!-- Local scripts -->
+  <!-- LOCAL SCRIPTS -->
   <!-- Cookie consent banner -->
   <script src="/js/grt-cookie-consent.js"></script>
-  <script>$(".grt-cookie").grtCookie();</script>
+  <script>
+    $(".grt-cookie").grtCookie();
+  </script>
 
   <!-- Send Feedback button -->
   <script src="/js/send-feedback.js"></script>
