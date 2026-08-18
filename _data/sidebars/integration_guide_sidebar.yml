@@ -39,11 +39,11 @@ entries:
 
   - title: Integrating with Netwrix
     url: /integration-guide/netwrix/index.html
-    output: web, pdf
+    output: web
 
   - title: Integrating with Splunk
     url: /integration-guide/splunk/index.html
-    output: web, pdf
+    output: web
 
   - title: Integrating with Varonis
     url: /integration-guide/varonis/index.html
