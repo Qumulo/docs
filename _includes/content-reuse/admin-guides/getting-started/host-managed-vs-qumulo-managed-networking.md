@@ -25,4 +25,8 @@ This section explains the difference between the two networking modes in Qumulo 
   * Qumulo is responsible for configuring your entire network infrastructure.
   * You can change only a limited number of settings.
 
+  {% if page.context == 'qpp' %}
+  {% include note.html content="To ensure that Qumulo Core has full control over network configuration, disable or remove the default network configuration tool (such as ENI, netplan.io, NetworkManager) before you install the Qumulo Core Product Package." %}
+  {% endif %}
+
   To enable Host-Managed Networking for Qumulo Core versions lower than 7.8.0.4, {{ howTo }}.

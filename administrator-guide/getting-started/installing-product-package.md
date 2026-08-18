@@ -108,7 +108,7 @@ Ensure that your host system meets the minimum requirements.
 ### Step 2: Prepare the Host Operating System
 Before configuring your host operating system (OS) for installing the Qumulo Core Product Package, certain Linux distributions require some preliminary configuration.
 
-{% include note.html content="Ubuntu doesn't require any additional configuration. You can now [configure the host OS](#configure-host-os)." %}
+{% include note.html content="Ubuntu doesn't require any additional configuration. Continue to [Choose a Networking Mode](#choose-networking-mode)." %}
 
 #### To Prepare a Rocky or Red Hat Enterprise Linux (RHEL) 9.3 System
 <details>
@@ -130,12 +130,7 @@ Before configuring your host operating system (OS) for installing the Qumulo Cor
 </ul>  
 </details>
 
-### Step 3: Configure the Host Operating System {#configure-host-os}
-Before installing the Qumulo Core Product Package, you must configure your host operating system.
-
-To ensure that Qumulo Core has full control over network configuration, disable or remove the default network configuration tool (such as ENI, netplan.io, NetworkManager).
-
-### Step 4: Choose a Networking Mode
+### Step 3: Choose a Networking Mode {#choose-networking-mode}
 {% include content-reuse/admin-guides/getting-started/host-managed-vs-qumulo-managed-networking.md %}
 
 ## To Install the Qumulo Core Product Package {#install-qumulo-core-product-package}
@@ -143,6 +138,7 @@ To ensure that Qumulo Core has full control over network configuration, disable 
 <ul>
   <li>Use the latest, official image available for your Linux distribution on the distribution's website or cloud marketplace.</li>
   <li>In Qumulo Core releases lower than 7.8.0.4, the default networking mode is Qumulo-Managed Networking. To run the installation with Host-Managed Networking, set the <code>QUMULO_NETWORK_MANAGED_BY_HOST</code> environment variable to <code>true</code>.</li>
+  <li>To avoid the <code>Download is performed unsandboxed as root</code> notice, run <code>qumulo-core.deb</code> from the <code>/tmp</code> directory.</li>
 </ul>
 {{site.data.alerts.end}}
 
@@ -153,14 +149,14 @@ To ensure that Qumulo Core has full control over network configuration, disable 
    * For the `.deb` package, run the `apt` command and use the `-y` flag for non-interactive mode. For example:
 
      ```bash
-     sudo apt install -y ./qumulo-core.deb
+     sudo apt install -y /tmp/qumulo-core.deb
      ```
 
      {{ envVar }}
      
      ```bash
      sudo QUMULO_NETWORK_MANAGED_BY_QUMULO=true \
-       apt install -y ./qumulo-core.deb
+       apt install -y /tmp/qumulo-core.deb
      ```
 
    * For the `.rpm` package, run the `dnf` command and use the `-y` flag for non-interactive mode. For example:
