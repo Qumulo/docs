@@ -2812,7 +2812,7 @@ $(document).ready(function() {
 <h3 id="step-2-prepare-the-host-operating-system">Step 2: Prepare the Host Operating System</h3>
 <p>Before configuring your host operating system (OS) for installing the Qumulo Core Product Package, certain Linux distributions require some preliminary configuration.</p>
 
-<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Ubuntu doesn’t require any additional configuration. You can now <a href="#configure-host-os">configure the host OS</a>.</div>
+<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Ubuntu doesn’t require any additional configuration. Continue to <a href="#choose-networking-mode">Choose a Networking Mode</a>.</div>
 
 <h4 id="to-prepare-a-rocky-or-red-hat-enterprise-linux-rhel-93-system">To Prepare a Rocky or Red Hat Enterprise Linux (RHEL) 9.3 System</h4>
 <details>
@@ -2834,12 +2834,7 @@ $(document).ready(function() {
 </ul>  
 </details>
 
-<h3 id="configure-host-os">Step 3: Configure the Host Operating System</h3>
-<p>Before installing the Qumulo Core Product Package, you must configure your host operating system.</p>
-
-<p>To ensure that Qumulo Core has full control over network configuration, disable or remove the default network configuration tool (such as ENI, netplan.io, NetworkManager).</p>
-
-<h3 id="step-4-choose-a-networking-mode">Step 4: Choose a Networking Mode</h3>
+<h3 id="choose-networking-mode">Step 3: Choose a Networking Mode</h3>
 
 <p>You can choose a networking mode depending on the version of Qumulo Core that you want to install.</p>
 
@@ -2866,6 +2861,8 @@ $(document).ready(function() {
       <li>You can change only a limited number of settings.</li>
     </ul>
 
+    <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> To ensure that Qumulo Core has full control over network configuration, disable or remove the default network configuration tool (such as ENI, netplan.io, NetworkManager) before you install the Qumulo Core Product Package.</div>
+
     <p>To enable Host-Managed Networking for Qumulo Core versions lower than 7.8.0.4, enable Qumulo-Managed Networking when you <a href="#install-qumulo-core-product-package">install the Qumulo Core Product Package</a>.</p>
   </li>
 </ul>
@@ -2875,6 +2872,7 @@ $(document).ready(function() {
 <ul>
   <li>Use the latest, official image available for your Linux distribution on the distribution's website or cloud marketplace.</li>
   <li>In Qumulo Core releases lower than 7.8.0.4, the default networking mode is Qumulo-Managed Networking. To run the installation with Host-Managed Networking, set the <code>QUMULO_NETWORK_MANAGED_BY_HOST</code> environment variable to <code>true</code>.</li>
+  <li>To avoid the <code>Download is performed unsandboxed as root</code> notice, run <code>qumulo-core.deb</code> from the <code>/tmp</code> directory.</li>
 </ul>
 </div>
 
@@ -2886,13 +2884,13 @@ $(document).ready(function() {
       <li>
         <p>For the <code class="language-plaintext highlighter-rouge">.deb</code> package, run the <code class="language-plaintext highlighter-rouge">apt</code> command and use the <code class="language-plaintext highlighter-rouge">-y</code> flag for non-interactive mode. For example:</p>
 
-        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt <span class="nb">install</span> <span class="nt">-y</span> ./qumulo-core.deb
+        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt <span class="nb">install</span> <span class="nt">-y</span> /tmp/qumulo-core.deb
 </code></pre></div>        </div>
 
         <p>(Optional) To run the installation with <a href="#qumulo-managed-networking">Qumulo-Managed Networking</a>, set the <code class="language-plaintext highlighter-rouge">QUMULO_NETWORK_MANAGED_BY_QUMULO</code> environment variable to <code class="language-plaintext highlighter-rouge">true</code>. For example:</p>
 
         <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span><span class="nv">QUMULO_NETWORK_MANAGED_BY_QUMULO</span><span class="o">=</span><span class="nb">true</span> <span class="se">\</span>
-  apt <span class="nb">install</span> <span class="nt">-y</span> ./qumulo-core.deb
+  apt <span class="nb">install</span> <span class="nt">-y</span> /tmp/qumulo-core.deb
 </code></pre></div>        </div>
       </li>
       <li>
