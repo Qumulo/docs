@@ -2706,6 +2706,28 @@ $(document).ready(function() {
   <li>Transitive trusts can authenticate as a user from any of the domains in the transitive trust, against any of the other trusted domains’ AD DC.</li>
 </ul>
 
+<h2 id="prerequisites-for-two-way-forest-trust-configurations">Prerequisites for Two-Way Forest Trust Configurations</h2>
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
+<ul>
+  <li>Without a two-way transitive forest trust, cross-forest Kerberos authentication calls fail because standard external trusts don't allow generating new Kerberos Ticket Granting Tickets (TGTs) for the cluster's LDAP client.</li>
+  <li>When Kerberos authentication fails, the system typically attempts to fall back to NTLMv1 authentication. However, Qumulo Core supports only NTLMv2, which can cause an <code>Access denied</code> error.</li>
+  <li>Invalid <code>PTR</code> records can cause Generic Security Services (GSS) initialization lookup errors.</li>
+</ul> 
+</div>
+
+<p>You must establish a <em>two-way transitive forest trust</em> (a bidirectional relationship that allows users in either Active Directory (AD) forest to authenticate to and access resources across both forests) if:</p>
+
+<ul>
+  <li>
+    <p>You have two domains in two separate AD forests and you want to ensure that both user and computer objects can access your Qumulo cluster</p>
+  </li>
+  <li>
+    <p>You want to be able to use AD and POSIX attributes on your Qumulo cluster</p>
+  </li>
+</ul>
+
+<p>After you configure your forest trust, ensure that the pointer (<code class="language-plaintext highlighter-rouge">PTR</code>) records for all DCs in the forest trust are valid.</p>
+
 <h2 id="configuring-the-base-dn">Configuring the Base DN</h2>
 <p>For identity mapping to work, you must configure LDAP Base DNs correctly on your Qumulo cluster and on your client. This helps avoid <code class="language-plaintext highlighter-rouge">nobody</code> or <code class="language-plaintext highlighter-rouge">66534</code> identity responses that occur when you inspect files that contain trusted users (stored as identities) from other domains. For more information about configuring the Base DN, see <a href="https://docs.qumulo.com/administrator-guide/authorization-qumulo-core/using-active-directory-for-posix-attributes.html">Using Active Directory for POSIX Attributes in Qumulo Core</a>.</p>
 
