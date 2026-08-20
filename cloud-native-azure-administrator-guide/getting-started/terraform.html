@@ -2618,7 +2618,7 @@ persistent_storage_resource_group = "mynamePStore-abcde"
       <li>
         <p>To store the Terraform state locally, comment out the sections that begin with <code class="language-plaintext highlighter-rouge">backend "azurerm" {</code> and <code class="language-plaintext highlighter-rouge">data "terraform_remote_state" "persistent_storage" {</code> and uncomment the section that contains <code class="language-plaintext highlighter-rouge">backend = "local"</code>.</p>
 
-        <div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> We don’t recommend storing the Terraform state locally for production deployments.</div>
+        <div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> For production deployments, we don’t recommend storing the Terraform state locally. Instead, use the S3 backend and enable versioning on the state bucket. This configuration makes it possible to recover a previous state file if a particular state becomes corrupted or gets overwritten.</div>
       </li>
     </ul>
   </li>

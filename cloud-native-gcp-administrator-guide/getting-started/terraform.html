@@ -2607,7 +2607,7 @@ Connectivity to the following endpoints is required for a successful deployment 
       <li>
         <p>To store the Terraform state locally, set the <code class="language-plaintext highlighter-rouge">tf_persistent_storage_backend_type</code> variable to <code class="language-plaintext highlighter-rouge">local</code>.</p>
 
-        <div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> We don’t recommend storing the Terraform state locally for production deployments.</div>
+        <div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> For production deployments, we don’t recommend storing the Terraform state locally. Instead, use the S3 backend and enable versioning on the state bucket. This configuration makes it possible to recover a previous state file if a particular state becomes corrupted or gets overwritten.</div>
       </li>
     </ul>
   </li>
@@ -2698,7 +2698,7 @@ deployment_unique_name = "mydeploymentname-ABCDE01EG2H"
       <li>
         <p>To store the Terraform state locally, comment the sections that begin with <code class="language-plaintext highlighter-rouge">backend "gcp" {</code> and <code class="language-plaintext highlighter-rouge">data "terraform_remote_state" "persistent_storage_gcs" {</code> and uncomment the section that contains <code class="language-plaintext highlighter-rouge">backend = "local"</code>.</p>
 
-        <div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> We don’t recommend storing the Terraform state locally for production deployments.</div>
+        <div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> For production deployments, we don’t recommend storing the Terraform state locally. Instead, use the S3 backend and enable versioning on the state bucket. This configuration makes it possible to recover a previous state file if a particular state becomes corrupted or gets overwritten.</div>
       </li>
     </ul>
   </li>

@@ -47,7 +47,7 @@
 </script>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Deploying Cloud Native Qumulo on AWS with Terraform | Qumulo Documentation Portal</title>
+<title>Deploying Cloud Native Qumulo on AWS with the Qumulo Terraform Provider | Qumulo Documentation Portal</title>
 
 <link rel="canonical" href="https://docs.qumulo.com/cloud-native-aws-administrator-guide/getting-started/terraform.html">
 
@@ -125,7 +125,7 @@ fetch('/data/website.json')
 </noscript>
 
 <!-- Define page metadata -->
-<meta name="description" content="This section explains how to deploy Cloud Native Qumulo (CNQ) on AWS by creating the persistent storage and the cluster compute and cache resources by using Terraform. It also provides recommendations for Terraform deployments and information about post-deployment actions and optimization.">
+<meta name="description" content="This section explains how to deploy Cloud Native Qumulo (CNQ) on AWS by preparing your infrastructure, environment, and authentication; deploying and configuring your Qumulo cluster; mounting the Qumulo file system; and performing post-deployment actions such as adding and removing nodes">
 <meta name="apple-mobile-web-app-title" content="Qumulo Documentation Portal">
 <meta name="application-name" content="Qumulo Documentation Portal">
 <meta name="msapplication-TileColor" content="#2b5797">
@@ -135,10 +135,10 @@ fetch('/data/website.json')
 <meta name="google-site-verification" content="_KoxPR0qF_ZeMyH6uWvlX84cFRujO_AZ1eq0eT9alAg">
 
 <!-- Open Graph Meta Tags -->
-<meta property="og:title" content="Deploying Cloud Native Qumulo on AWS with Terraform | Qumulo Documentation Portal">
+<meta property="og:title" content="Deploying Cloud Native Qumulo on AWS with the Qumulo Terraform Provider | Qumulo Documentation Portal">
 <meta property="og:url" content="https://docs.qumulo.com/cloud-native-aws-administrator-guide/getting-started/terraform.html">
 <meta property="og:site_name" content="Qumulo Documentation Portal">
-<meta property="og:description" content="This section explains how to deploy Cloud Native Qumulo (CNQ) on AWS by creating the persistent storage and the cluster compute and cache resources by using Terraform. It also provides recommendations for Terraform deployments and information about post-deployment actions and optimization.">
+<meta property="og:description" content="This section explains how to deploy Cloud Native Qumulo (CNQ) on AWS by preparing your infrastructure, environment, and authentication; deploying and configuring your Qumulo cluster; mounting the Qumulo file system; and performing post-deployment actions such as adding and removing nodes">
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://docs.qumulo.com/images/docs.qumulo.com-qumulo-documentation-portal-630px.png">
@@ -146,10 +146,10 @@ fetch('/data/website.json')
 <meta property="og:image:height" content="630">
 
 <!-- Twitter Meta Tags -->
-<meta name="twitter:title" content="Deploying Cloud Native Qumulo on AWS with Terraform | Qumulo Documentation Portal">
+<meta name="twitter:title" content="Deploying Cloud Native Qumulo on AWS with the Qumulo Terraform Provider | Qumulo Documentation Portal">
 <meta property="twitter:url" content="https://docs.qumulo.com/cloud-native-aws-administrator-guide/getting-started/terraform.html">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:description" content="This section explains how to deploy Cloud Native Qumulo (CNQ) on AWS by creating the persistent storage and the cluster compute and cache resources by using Terraform. It also provides recommendations for Terraform deployments and information about post-deployment actions and optimization.">
+<meta name="twitter:description" content="This section explains how to deploy Cloud Native Qumulo (CNQ) on AWS by preparing your infrastructure, environment, and authentication; deploying and configuring your Qumulo cluster; mounting the Qumulo file system; and performing post-deployment actions such as adding and removing nodes">
 <meta name="twitter:image" content="https://docs.qumulo.com/images/docs.qumulo.com-qumulo-documentation-portal-418px.png">
 <meta property="twitter:domain" content="docs.qumulo.com">
 
@@ -2381,7 +2381,7 @@ fetch('/data/website.json')
   <a href='/cloud-native-aws-administrator-guide/getting-started/index.html'>Getting Started</a> <span>&rsaquo;</span>
 
 
-  Deploying Cloud Native Qumulo on AWS with Terraform
+  Deploying Cloud Native Qumulo on AWS with the Qumulo Terraform Provider
   </div>
 </nav>
 
@@ -2390,7 +2390,7 @@ fetch('/data/website.json')
 
 <div class="post-header">
    <div class="star" id="page-star" title="Save to Favorites">&#9733;</div>
-   <h1 class="post-title-main">Deploying Cloud Native Qumulo on AWS with Terraform</h1>
+   <h1 class="post-title-main">Deploying Cloud Native Qumulo on AWS with the Qumulo Terraform Provider</h1>
 </div>
 
 
@@ -2427,190 +2427,252 @@ $(document).ready(function() {
 
     
 
-   <p>This section explains how to deploy Cloud Native Qumulo (CNQ) on AWS by creating the persistent storage and the cluster compute and cache resources by using Terraform. It also provides recommendations for Terraform deployments and information about post-deployment actions and optimization.</p>
+   <p>This section explains how to deploy Cloud Native Qumulo (CNQ) on AWS by preparing your infrastructure, environment, and authentication; deploying and configuring your Qumulo cluster; mounting the Qumulo file system; and performing post-deployment actions such as adding and removing nodes</p>
    
      <p>For an overview of CNQ on AWS, its prerequisites, and limits, see <a href="how-cloud-native-qumulo-works.html">How Cloud Native Qumulo Works</a>.</p>
-
-<p>The <code>aws-terraform-cnq-&lt;x.y&gt;.zip</code> file (the version in the file name corresponds to the provisioning scripts, not to the Qumulo Core version) contains comprehensive Terraform configurations that let you deploy S3 buckets and then create a CNQ cluster with 1 or 3–24 instances that adhere to the <a href="https://aws.amazon.com/architecture/well-architected/">AWS Well-Architected Framework</a> and have fully elastic compute and capacity.</p>
 
 <h2 id="prerequisites">Prerequisites</h2>
 <p>This section explains the prerequisites to deploying CNQ on AWS.</p>
 
+<h3 id="qumulo-core">Qumulo Core</h3>
 <ul>
   <li>
-    <p>To allow your Qumulo cluster to report metrics to Qumulo, your AWS VPC must have outbound Internet connectivity through a NAT gateway or a firewall. Your instance shares no file data during this process.</p>
+    <p><strong>Deployment Version:</strong> This deployment requires Qumulo Core 7.9.2 (or higher), which includes the required Ubuntu kernel and software upgrades and fixes.</p>
+
+    <div class="alert alert-success" role="alert"><span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br /> To deploy the latest release, leave the <code class="language-plaintext highlighter-rouge">cluster_version</code> variable empty.</div>
+  </li>
+  <li>
+    <p><strong>Metrics:</strong> To allow your Qumulo cluster to report metrics to Qumulo, your AWS VPC must have outbound Internet connectivity through a <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">NAT gateway</a> or a firewall. Your cluster shares no file data during this process.</p>
 
     <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
-Connectivity to the following endpoints is required for a successful deployment of a Qumulo instance and quorum formation:
+Connectivity to the following endpoints is required to successfully deploy a Qumulo cluster and form a quorum:
 <ul>
   <li><code>api.missionq.qumulo.com</code></li>
   <li><code>api.nexus.qumulo.com</code></li>
 </ul>
 </div>
   </li>
+</ul>
+
+<h3 id="aws">AWS</h3>
+<ul>
   <li>
-    <p>To deploy your Qumulo cluster with a VPC S3 gateway, you must configure your VPC to use the S3 gateway VPC endpoint.</p>
+    <p><strong>VPC:</strong> Configure your VPC to use the <a href="https://docs.aws.amazon.com/vpc/latest/privatelink/vpc-endpoints-s3.html">S3 gateway VPC endpoint</a>, attached to the route table that serves your cluster subnet.</p>
+
+    <div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> It isn’t possible to complete deployment without this configuration.</div>
   </li>
   <li>
-    <p>The following features require specific versions of Qumulo Core:</p>
+    <p><strong>AWS Region:</strong> Your Region must have a sufficient EC2 On-Demand vCPU quota for your node count and for a temporary Provisioner instance.</p>
 
-    <table>
-  <thead>
-    <tr>
-      <th>Feature</th>
-      <th>Minimum Qumulo Core Version</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>
-        <ul>
-          <li>Adding S3 buckets to increase persistent storage capacity</li>
-          <li>Increasing the soft capacity limit for an existing CNQ cluster</li>
-        </ul>
-      </td>
-      <td>7.2.1.1</td>
-    </tr>      
-    <tr>
-      <td>
-        <ul>
-          <li><a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/intelligent-tiering-overview.html">S3 Intelligent-Tiering storage class</a></li>
-          <li><a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html#sc-dynamic-data-access">Infrequent Access S3 access tier</a></li>
-        </ul>
-      </td>
-      <td>7.2.0.4</td>
-    </tr>
-    <tr>
-      <td>
-        Creating persistent storage
-          
-        <div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> You must create persistent storage by using a separate Terraform deployment <em>before</em> you deploy the compute and cache resources for your cluster.</div>
+    <div class="alert alert-success" role="alert"><span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br /> Because a quota shortage can look identical to a capacity shortage, we recommend checking your service quotas before beginning deployment.</div>
+  </li>
+</ul>
 
-      </td>
-      <td>7.1.3 with version 4.0 of the deployment scripts</td>
-    </tr>
-  </tbody>
-</table>
+<h3 id="tools-and-authentication">Tools and authentication</h3>
+<ul>
+  <li>Install the following tools:
+    <ul>
+      <li>Terraform 1.11 (or higher)</li>
+      <li>Git CLI</li>
+      <li>AWS CLI</li>
+    </ul>
   </li>
   <li>
-    <p>Before you configure your Terraform environment, you must sign in to the AWS CLI.</p>
+    <p>Authenticate to the AWS API</p>
 
     <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
-<ul>
-  <li>Unless you use the <code>AdministratorAccess</code> managed IAM policy for your user or role, you can run the <code>iam_tester.py</code> script in the <code>utilities</code> directory to validate your IAM role.</li> 
-  <li>For an explicit list of privileges recommended for least-privilege access, see the IAM documentation in the <code>utilities</code> directory.</li>
-</ul>
-</div>
-
-    <p>A custom IAM role or user must include the following AWS services:</p>
-
-    <ul class="three-columns">
-  <li><code>cloudformation:*</code></li>
+Unless you use the <code>AdministratorAccess</code> managed IAM policy for your user or role, your custom IAM role or user must include the following AWS services:
+<ul class="three-columns">
   <li><code>ec2:*</code></li>
   <li><code>elasticloadbalancing:*</code></li>
   <li><code>iam:*</code></li>
   <li><code>kms:*</code></li>
-  <li><code>lambda:*</code></li>
   <li><code>logs:*</code></li>
-  <li><code>resource-groups:*</code></li>
-  <li><code>route53:*</code></li>
-  <li><code>route53resolver:*</code></li>
   <li><code>s3:*</code></li>
   <li><code>secretsmanager:*</code></li>
-  <li><code>sns:*</code></li>
   <li><code>ssm:*</code></li>
   <li><code>sts:*</code></li>
 </ul>
-
-    <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Although the <code class="language-plaintext highlighter-rouge">AdministratorAccess</code> managed IAM policy provides sufficient permissions, your organization might use a custom policy with more restrictions.</div>
+  
+For role definitions and ready-to-use policy statements, see <a href="https://qumulo.github.io/terraform-provider-qumulo-cloud/aws-byo-iam/">AWS Bring Your Own IAM Roles</a> in the Qumulo Terraform Provider documentation.
+</div>
   </li>
 </ul>
 
-<h3 id="how-the-provisioner-works">How the CNQ Provisioner Works</h3>
-<p>The CNQ Provisioner is an m5.large EC2 instance that configures your Qumulo cluster and any additional AWS environment requirements.</p>
+<h3 id="working-with-the-qumulo-terraform-aws-repository">Working with the Qumulo-terraform-aws Repository</h3>
+<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Existing clusters that used the previous deployment provisioning remain operational. For information about migrating your cluster to the new Terraform deployment method, see the <a href="https://qumulo.github.io/terraform-provider-qumulo-cloud/import-guide/">Import Guide</a> in the Qumulo Terraform Provider documentation.</div>
 
-<h4 id="monitor-provisioner-status">To Monitor the Provisioner’s Status</h4>
-<p>The Provisioner stores all necessary state information in the Parameter Store and shuts down automatically when it completes its tasks.</p>
+<p>The <a href="https://github.com/Qumulo/Qumulo-terraform-aws">Qumulo-terraform-aws</a> repository contains Terraform configurations that let you deploy S3 buckets and a CNQ cluster with 1 or 3–24 nodes that adhere to the <a href="https://aws.amazon.com/architecture/well-architected/">AWS Well-Architected Framework</a> and have fully elastic compute and capacity.</p>
+
+<p>This deployment uses the <a href="https://qumulo.github.io/terraform-provider-qumulo-cloud/">Qumulo Terraform Provider</a>, which greatly simplifies Terraform operations by ensuring that:</p>
+<ul>
+  <li>Persistent storage and compute deploy together in a single Terraform workspace</li>
+  <li>Node operations use a single variable and a single <code class="language-plaintext highlighter-rouge">terraform apply</code> command</li>
+</ul>
+
+<h3 id="working-with-the-terraform-apply-command">Working With the terraform apply Command</h3>
+<p>This section explains the most common scenarios that cause the <code class="language-plaintext highlighter-rouge">terraform apply</code> command to fail.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Symptom</th>
+      <th>Potential Resolution</th>
+    </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>The command waits for a long time for EC2 capacity</td>
+    <td>This is normal behavior. For more information, see <a href="#create-the-necessary-resources">Create the Necessary Resources</a>.</td>
+  </tr>  
+  <tr>
+    <td>The command fails early in the process with an S3 access error</td>
+    <td>
+      The cluster subnet has no S3 gateway VPC endpoint. <a href="https://docs.aws.amazon.com/vpc/latest/privatelink/vpc-endpoints-s3.html">Add a VPC endpoint</a> and then associate it with the subnet's route table.
+      <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> It isn’t possible to use a NAT gateway in this scenario.</div>
+
+    </td>
+  </tr>
+  <tr>
+    <td>The command fails completely and removes the resources that it has created</td>
+    <td>This is expected cleanup behavior. To resolve the issue, inspect <a href="#working-with-the-provisioner">the Provisioner's</a> logs, make any changes, and then run the <code>terraform apply</code> command again.</td>
+  </tr>
+</tbody>
+</table>
+
+<div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip</b><br />
+If the <code>terraform apply</code> command fails for a reason not listed in this section, <a href="https://docs.qumulo.com/contacting-qumulo-care-team.html">contact the Qumulo Care Team</a> and include the following items with your request:
+<ul>
+  <li>AWS Region</li>
+  <li>Terraform version</li>
+  <li><code>Qumulo-terraform-aws</code> repository release version</li>
+  <li>Any relevant CloudWatch logs</li>
+</ul>
+</div>
+
+<h3 id="working-with-the-provisioner">Working with the Provisioner</h3>
+<p>The Provisioner is a temporary EC2 instance (<code class="language-plaintext highlighter-rouge">m5.xlarge</code> by default) that configures your Qumulo cluster. The Terraform Provider launches it during cluster creation, scaling, and node replacement operations, and stops it when an operation completes.</p>
+
+<p>To monitor the Provisioner’s status, watch the Terraform operations in your terminal or inspect the Provisioner’s entries in your CloudWatch Logs, for your deployment’s AWS Region.</p>
+
+<div class="alert alert-success" role="alert"><span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br /> The logs remain available after the Provisioner terminates. To find the log group, filter for your deployment’s unique name or use the link in the Terraform command’s output.</div>
+
+<h2 id="deploy-your-qumulo-cluster">Part 1: Deploying Your Qumulo Cluster</h2>
+<p>This section explains how to prepare the required files, configure your deployment, and create the resources necessary for your Qumulo cluster.</p>
+
+<h3 id="prepare-the-required-files">Step 1: Prepare the Required Files</h3>
+<p>During the following process, Terraform downloads the Qumulo Terraform Provider from Qumulo’s registry. Later, the Provider installs Qumulo Core on your cluster’s nodes.</p>
 
 <ol>
-  <li>In AWS Systems Manager, click <strong>Application Management &gt; Parameter Store &gt; /qumulo/&lt;my-unique-deployment-name&gt;/last-run-status</strong>.</li>
-  <li>On the <strong>History</strong> tab, click <span class="emoji">⚙️</span>.</li>
-  <li>In the <strong>Preferences</strong> dialog box, click <strong>Parameter history properties &gt; Value &gt; Confirm</strong>.</li>
+  <li>
+    <p>To clone the <code class="language-plaintext highlighter-rouge">Qumulo-terraform-aws</code> repository and check out a specific release, run the following commands.</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/Qumulo/Qumulo-terraform-aws.git
+<span class="nb">cd </span>Qumulo-terraform-aws
+git checkout v7.0
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>To understand the deployment variables, review the <code class="language-plaintext highlighter-rouge">terraform.tfvars.example</code> and <code class="language-plaintext highlighter-rouge">README</code> files.</p>
+  </li>
 </ol>
 
-<h2 id="deploy-persistent-storage">Step 1: Deploying Cluster Persistent Storage</h2>
-<p>This section explains how to deploy the S3 buckets that act as persistent storage for your Qumulo cluster.</p>
-
-<h3 id="part-1-prepare-the-required-files">Part 1: Prepare the Required Files</h3>
-<p>Before you can deploy the persistent storage for your cluster, you must download and prepare the required files.</p>
-
+<h3 id="configure-the-deployment">Step 2: Configure the Deployment</h3>
 <ol>
   <li>
-    <p>Log in to <a href="https://nexus.qumulo.com/login">Qumulo Nexus</a> and click <strong>Downloads &gt; Cloud Native Qumulo Downloads</strong>.</p>
-  </li>
-  <li>
-    <p>On the <strong>AWS</strong> tab, in the <strong>Download the required files</strong> section, select the Qumulo Core version that you want to deploy and then download the corresponding Terraform configuration and Debian or RPM package.</p>
-  </li>
-  <li>
-    <p>In a new or existing S3 bucket, within your S3 bucket prefix, create the <code class="language-plaintext highlighter-rouge">qumulo-core-install</code> directory.</p>
-  </li>
-  <li>
-    <p>Within this directory, create another directory with the Qumulo Core version as its name. For example:</p>
+    <p>Edit the <code class="language-plaintext highlighter-rouge">backend.tf</code> file, add the name of an S3 bucket for the Terraform state, and specify the Region for the deployment. For example:</p>
 
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>my-s3-bucket-name/my-s3-bucket-prefix/qumulo-core-install/7.5.0
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>terraform {
+  backend "s3" {
+    bucket               = "my-bucket-for-tf-state"
+    key                  = "tf-state/cnq/terraform.tfstate"
+    region               = "us-west-2"
+    use_lockfile         = true
+    workspace_key_prefix = "tf-state-workspace"
+  }
+}
 </code></pre></div>    </div>
 
-    <div class="alert alert-success" role="alert"><span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br /> Make a new subdirectory for every new release of Qumulo Core.</div>
-  </li>
-  <li>
-    <p>Copy <code class="language-plaintext highlighter-rouge">qumulo-core.deb</code> or <code class="language-plaintext highlighter-rouge">qumulo-core.rpm</code> into the directory named after the Qumulo Core version (in this example, it is <code class="language-plaintext highlighter-rouge">7.5.0</code>).</p>
-  </li>
-  <li>
-    <p>Copy <code class="language-plaintext highlighter-rouge">aws-terraform-cnq-&lt;x.y&gt;.zip</code> to your Terraform environment and then decompress the file.</p>
-  </li>
-</ol>
-
-<h3 id="part-2-configure-the-persistent-storage">Part 2: Configure the Persistent Storage</h3>
-<ol>
-  <li>
-    <p>Navigate to the <code class="language-plaintext highlighter-rouge">persistent-storage</code> directory.</p>
-  </li>
-  <li>
-    <p>Edit the <code class="language-plaintext highlighter-rouge">provider.tf</code> file:</p>
-
-    <ul>
-      <li>
-        <p>To store the Terraform state remotely, add the name of an S3 bucket to the section that begins with <code class="language-plaintext highlighter-rouge">backend "s3" {</code>.</p>
-      </li>
-      <li>
-        <p>To store the Terraform state locally, comment out the section that begins with <code class="language-plaintext highlighter-rouge">backend "s3" {</code> and uncomment the section that contains <code class="language-plaintext highlighter-rouge">backend = "local"</code>.</p>
-
-        <div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> We don’t recommend storing the Terraform state locally for production deployments.</div>
-      </li>
-    </ul>
+    <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
+<ul>
+  <li>We don't recommend making further changes to this part of the configuration.</li>
+  <li>For production deployments, we don't recommend storing the Terraform state locally. Instead, use the S3 backend and enable versioning on the state bucket. This configuration makes it possible to recover a previous state file if a particular state becomes corrupted or gets overwritten.</li>
+</ul>
+</div>
   </li>
   <li>
     <p>Run the <code class="language-plaintext highlighter-rouge">terraform init</code> command.</p>
 
-    <p>Terraform prepares the environment and displays the message <code class="language-plaintext highlighter-rouge">Terraform has been successfully initialized!</code></p>
+    <p>Terraform prepares the environment, downloads the Qumulo Terraform Provider from Qumulo’s registry, verifies its GPG-signed checksums, and displays the message <code class="language-plaintext highlighter-rouge">Terraform has been successfully initialized!</code></p>
+
+    <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note</b><br />
+<ul>
+  <li>The <code>terraform init</code> command reports that the Qumulo provider is self-signed. This is expected for providers hosted outside <code>registry.terraform.io</code> and isn't a security issue; Terraform still performs full signature and checksum verification. For more information, see <a target="_blank" href="https://qumulo.github.io/terraform-provider-qumulo-cloud/installation-trust/">Installation and Trust</a> in the Qumulo Terraform Provider documentation.</li>
+  <li>If the <code>terraform init</code> command can't reach the Provider registry, allow outbound HTTPS to <code>qumulo-terraform-registry.s3.us-east-1.amazonaws.com</code>.</li>
+</ul>
+</div>
   </li>
   <li>
-    <p>Edit the <code class="language-plaintext highlighter-rouge">terraform.tfvars</code> file.</p>
+    <p>Edit the <code class="language-plaintext highlighter-rouge">terraform.tfvars</code> file and specify the following required values for your deployment:</p>
 
-    <ol>
+    <ul>
       <li>
-        <p>Specify the <code class="language-plaintext highlighter-rouge">deployment_name</code> and the correct <code class="language-plaintext highlighter-rouge">aws_region</code> for your cluster’s persistent storage.</p>
+        <p><strong>Basic Details:</strong> <code class="language-plaintext highlighter-rouge">deployment_name</code>, <code class="language-plaintext highlighter-rouge">ec2_key_pair</code>, and the <code class="language-plaintext highlighter-rouge">region</code> for your cluster</p>
       </li>
       <li>
-        <p>Set the <code class="language-plaintext highlighter-rouge">soft_capacity_limit</code> to <code class="language-plaintext highlighter-rouge">500</code> (or higher).</p>
+        <p><strong>Networking:</strong> <code class="language-plaintext highlighter-rouge">vpc_id</code> and <code class="language-plaintext highlighter-rouge">subnet_ids</code></p>
 
-        <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> This value specifies the initial capacity limit of your Qumulo clusters (in TB). It is possible to increase this limit at any time.</div>
+        <ul>
+          <li>
+            <p><strong>Single-AZ (Availability Zone) Deployment:</strong> Specify 1 private subnet</p>
+          </li>
+          <li>
+            <p><strong>Multi-AZ Deployment:</strong> Specify 3 subnets, one for each AZ</p>
+          </li>
+        </ul>
       </li>
-    </ol>
+      <li>
+        <p><strong>Cluster Configuration:</strong> <code class="language-plaintext highlighter-rouge">instance_type</code> and <code class="language-plaintext highlighter-rouge">node_count</code> (1, or 3–24)</p>
+
+        <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> A 4-node cluster can support only a single-AZ deployment.</div>
+      </li>
+      <li>
+        <p><strong>Soft Capacity Limit:</strong> If you don’t use the default limit, specify <code class="language-plaintext highlighter-rouge">soft_capacity_limit_tb</code> to set the initial capacity limit of your Qumulo cluster (in TB).</p>
+
+        <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> It is possible to increase this limit at any time, but not to decrease it.</div>
+      </li>
+      <li>
+        <p><strong>Cluster / Active Directory Name:</strong> <code class="language-plaintext highlighter-rouge">cluster_name</code></p>
+      </li>
+      <li>
+        <p><strong>Qumulo Core Version:</strong> <code class="language-plaintext highlighter-rouge">cluster_version</code></p>
+
+        <ul>
+          <li>
+            <p><strong>Specific Release:</strong> Specify <code class="language-plaintext highlighter-rouge">7.9.2.1</code> (or higher)</p>
+          </li>
+          <li>
+            <p><strong>Latest Release:</strong> Don’t enter a value</p>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Specify the administrator password. The password variable accepts a plain-text value or an AWS Secrets Manager ARN.</p>
+
+    <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
+<ul>
+  <li>The system treats the administrator password as sensitive: It never writes it to Terraform states and reads it anew for every Terraform run.</li>
+  <li>We strongly recommend passing a <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_secret.html">Secrets Manager ARN</a> by rotating the secret in your store and allowing the next Terraform run to pick it up. Because secret handling functionality is located outside the Provider, you can also source the password from a HashiCorp Vault or another pipeline-integrated secrets store.</li>
+</ul>
+</div>
   </li>
 </ol>
 
-<h3 id="part-3-create-the-necessary-resources">Part 3: Create the Necessary Resources</h3>
+<h3 id="create-the-necessary-resources">Step 3: Create the Necessary Resources</h3>
+<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> If EC2 capacity is unavailable in your Availability Zone, you can select a different Availability Zone, deploy multi-AZ, or increase the create timeout and let the provider keep retrying.</div>
+
 <ol>
   <li>
     <p>To authenticate to your AWS account, use the <code class="language-plaintext highlighter-rouge">aws</code> CLI.</p>
@@ -2630,101 +2692,11 @@ Connectivity to the following endpoints is required for a successful deployment 
       <li>
         <p>Your deployment’s unique name</p>
       </li>
-    </ul>
-
-    <p>For example:</p>
-
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>persistent_storage_bucket_names = tolist([
-  "ab5cdefghij-my-deployment-klmnopqr9st-qps-1",
-  "ab4cdefghij-my-deployment-klmnopqr8st-qps-2",
-  "ab3cdefghij-my-deployment-klmnopqr7st-qps-3",
-  ...
-  "ab2cdefghij-my-deployment-klmnopqr6st-qps-16"
-])
-deployment_unique_name = "myname-deployment-ABCDE01EG2H"
-</code></pre></div>    </div>
-  </li>
-</ol>
-
-<h2 id="deploy-cluster-compute-and-cache-resources">Step 2: Deploying Cluster Compute and Cache Resources</h2>
-<p>This section explains how to deploy compute and cache resources for a Qumulo cluster by using a Ubuntu AMI and the Qumulo Core <code class="language-plaintext highlighter-rouge">.deb</code> installer.</p>
-
-<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
-<ul>
-  <li>If you plan to use <a href="../network-configuration/configuring-authoritative-dns.html">Qumulo Authoritative DNS (QDNS)</a> functionality and you have configured the Amazon Route 53 Resolver outbound endpoint by specifying the <strong>FQDN for Qumulo DNS Resolver</strong> parameter during the CloudFormation stack creation process, you must attach your client VPC by selecting <strong>Associate VPC</strong> when configuring the Route 53 forwarding rule.</li>
-  <li>If your client VPCs are in an AWS account different from the AWS account into which you deployed your <code>qumulo</code> VPC, you must share the Route 53 forwarding rule with your other AWS account by using AWS Resource Access Manager.</li>
-</ul>
-</div>
-
-<h3 id="recommendations">Recommendations</h3>
-<div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> We strongly recommend reviewing the following recommendations before beginning this process.</div>
-
-<ul>
-  <li>
-    <p>Provisioning completes successfully when the Provisioner shuts down automatically. If the Provisioner doesn’t shut down, the provisioning cycle has failed and you must troubleshoot it. To monitor the Provisioner’s status, you can watch the Terraform operations in your terminal or <a href="#monitor-provisioner-status">monitor the Provisioner in AWS Systems Manager</a>.</p>
-  </li>
-  <li>
-    <p>The first variable in the example configuration files in the <code class="language-plaintext highlighter-rouge">aws-terraform-cnq</code> repository is <code class="language-plaintext highlighter-rouge">deployment_name</code>. To help avoid conflicts between Network Load Balancers (NLBs), resource groups, cross-region CloudWatch views, and other deployment components, Terraform ignores the <code>deployment_name</code> value and generates a <code>deployment_unique_name</code> variable. Terraform appends a random, alphanumeric value to the variable and then tags all future resources with this value. The <code>deployment_unique_name</code> variable never changes during subsequent Terraform deployments.</p>
-  </li>
-  <li>
-    <p>If you plan to deploy multiple Qumulo clusters, give the <code class="language-plaintext highlighter-rouge">q_cluster_name</code> variable a unique name for each cluster.</p>
-  </li>
-  <li>
-    <p>We recommend forwarding DNS queries to <a href="../network-configuration/configuring-authoritative-dns.html">Qumulo Authoritative DNS (QDNS)</a>. For a single-AZ deployment, to allow Qumulo Core to create an Amazon Route 53 outbound resolver, specify values for the <code class="language-plaintext highlighter-rouge">q_cluster_fqdn</code> and <code class="language-plaintext highlighter-rouge">second_private_subnet_id</code> variables. The resolver uses the <code class="language-plaintext highlighter-rouge">q_cluster_fqdn</code> variable to forward DNS requests to your cluster, where Qumulo Core resolves DNS for your floating IP addresses.</p>
-  </li>
-</ul>
-
-<h3 id="part-1-to-deploy-the-cluster-compute-and-cache-resources">Part 1: To Deploy the Cluster Compute and Cache Resources</h3>
-<ol>
-  <li>
-    <p>Configure your VPC to use the gateway VPC endpoint for S3.</p>
-  </li>
-  <li>
-    <p>Edit the <code class="language-plaintext highlighter-rouge">provider.tf</code> file:</p>
-
-    <ul>
       <li>
-        <p>To store the Terraform state remotely, add the name of an S3 bucket to the sections that begin with <code class="language-plaintext highlighter-rouge">backend "s3" {</code> and <code class="language-plaintext highlighter-rouge">data "terraform_remote_state" "persistent_storage" {</code>.</p>
+        <p>The floating IP addresses for your Qumulo cluster (single-AZ deployments)</p>
       </li>
       <li>
-        <p>To store the Terraform state locally, comment out the sections that begin with <code class="language-plaintext highlighter-rouge">backend "s3" {</code> and <code class="language-plaintext highlighter-rouge">data "terraform_remote_state" "persistent_storage" {</code> and uncomment the section that contains <code class="language-plaintext highlighter-rouge">backend = "local"</code>.</p>
-
-        <div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> We don’t recommend storing the Terraform state locally for production deployments.</div>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <p>Navigate to the <code class="language-plaintext highlighter-rouge">aws-terraform-cnq-&lt;x.y&gt;</code> directory and then run the <code class="language-plaintext highlighter-rouge">terraform init</code> command.</p>
-
-    <p>Terraform prepares the environment and displays the message <code class="language-plaintext highlighter-rouge">Terraform has been successfully initialized!</code></p>
-  </li>
-  <li>
-    <p>Edit the <code class="language-plaintext highlighter-rouge">terraform.tfvars</code> file and specify the values for all variables.</p>
-
-    <p>For more information, see <code class="language-plaintext highlighter-rouge">README.pdf</code> in <code class="language-plaintext highlighter-rouge">aws-terraform-cnq-&lt;x.y&gt;.zip</code>.</p>
-  </li>
-  <li>
-    <p>Run the <code>terraform apply</code> command.</p>
-  </li>
-  <li>
-    <p>Review the Terraform execution plan and then enter <code>yes</code>.</p>
-
-    <p>Terraform creates resources according to the execution plan and displays:</p>
-
-    <ul>
-      <li>
-        <p>Your deployment’s unique name</p>
-      </li>
-      <li>
-        <p>The names of the created S3 buckets</p>
-      </li>
-      <li>
-        <p>The floating IP addresses for your Qumulo cluster</p>
-
-        <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> You must specify the floating IP addresses in your <code class="language-plaintext highlighter-rouge">terraform.tfvars</code> file explicitly.</div>
-      </li>
-      <li>
-        <p>The primary (static) IP addresses for your Qumulo cluster</p>
+        <p>The primary (static) IP addresses</p>
       </li>
       <li>
         <p>The Qumulo Core Web UI endpoint</p>
@@ -2732,449 +2704,164 @@ deployment_unique_name = "myname-deployment-ABCDE01EG2H"
     </ul>
 
     <p>For example:</p>
-
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>deployment_unique_name = "myname-deployment-ABCDE01EG2H"
-...
-persistent_storage_bucket_names = tolist([
-  "ab5cdefghij-my-deployment-klmnopqr9st-qps-1",
-  "ab4cdefghij-my-deployment-klmnopqr8st-qps-2",
-  "ab3cdefghij-my-deployment-klmnopqr7st-qps-3",
-  ...
-  "ab2cdefghij-my-deployment-klmnopqr6st-qps-16",
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cluster_soft_capacity_limit_tb = 500
+cluster_uuid = "12345a6b-7c89-0d12-3456-78fe9012f345"
+deployment_unique_name = "myname-deployment-ABCDE01EG2H"
+endpoint_ips = tolist([
+  "203.0.113.1",
+  "203.0.113.2",
+  "203.0.113.3",
 ])
-qumulo_floating_ips = tolist([
-  "203.0.113.42",
-  "203.0.113.84",
-  ...
-])
-...
-qumulo_primary_ips = tolist([
+endpoints = {
+  "api" = "https://203.0.113.1:8000"
+  "nfs" = "203.0.113.1:/&lt;NFS Export Name&gt;"
+  "smb" = "\\\\203.0.113.1\\&lt;SMB Share Name&gt;"
+  "web_ui" = "https://203.0.113.1"
+}
+primary_ips = tolist([
   "203.0.113.5",
   "203.0.113.6",
-  "203.0.113.7"
+  "203.0.113.7",
 ])
-...
-qumulo_private_url_node1 = "https://203.0.113.5"
+provisioner_log = "https://us-west-2.console.aws.amazon.com/cloudwatch/..."
 </code></pre></div>    </div>
   </li>
 </ol>
 
-<h3 id="part-2-to-mount-the-qumulo-file-system">Part 2: To Mount the Qumulo File System</h3>
-
+<h2 id="mounting-the-qumulo-file-system">Part 2: Mounting the Qumulo File System</h2>
 <ol>
   <li>
     <p>To log in to your cluster’s Web UI, use the endpoint from the Terraform output and the username and password that you have configured.</p>
 
-    <div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> If you change the administrative password for your cluster by using the Qumulo Core Web UI, <code class="language-plaintext highlighter-rouge">qq</code> CLI, or REST API after deployment, you must update your password in AWS Secrets Manager.</div>
+    <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
+<ul>
+  <li>The system treats the administrator password as sensitive: It never writes it to Terraform states and reads it anew for every Terraform run.</li>
+  <li>If you change the administrator password by using the Qumulo Core Web UI, Qumulo REST API, or <code>qq</code> CLI after deployment, although Terraform configuration remains unaffected, we recommend keeping your secrets store up to date with your cluster's settings, so that future redeployments use the correct value.</li>
+</ul>
+</div>
 
-    <p>You can use the Qumulo Core Web UI to create and manage <a href="../nfs/creating-nfs-export.html">NFS exports</a>, <a href="../smb/creating-smb-share.html">SMB shares</a>, <a href="../snapshots/managing-snapshots.html">snapshots</a>, and <a href="../replicating-data/creating-managing-continuous-replication-relationship.html">continuous replication relationships</a>. You can also <a href="../authentication-qumulo-core/configuring-ad.html">join your cluster to Active Directory</a>, <a href="../authentication-qumulo-core/configuring-ldap.html">configure LDAP</a>, and <a href="../">perform many other operations</a>.</p>
-  </li>
-  <li>
-    <p>Mount your Qumulo file system by using NFS or SMB and your cluster’s DNS name or IP address.</p>
-  </li>
-</ol>
-
-<h2 id="perform-post-deployment-actions">Step 3: Performing Post-Deployment Actions</h2>
-<p>This section describes the common actions you can perform on a CNQ cluster after deploying it.</p>
-
-<h3 id="adding-node-to-existing-cluster">Adding Nodes to an Existing Cluster</h3>
-<div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> To add nodes to an existing cluster, the total node count must be greater than that of the current deployment.</div>
-
-<ol>
-  <li>Edit the <code class="language-plaintext highlighter-rouge">terraform.tfvars</code> file.
-    <ol>
-      <li>Specify the <code class="language-plaintext highlighter-rouge">q_node_count</code>.</li>
-      <li>Set the <code class="language-plaintext highlighter-rouge">q_cluster_version</code> to the Qumulo Core version that your cluster is running.</li>
-    </ol>
-  </li>
-  <li>Edit <code>terraform.tfvars</code> and change the value of <code>q_node_count</code> to a new value.</li>
-  <li>Run the <code>terraform apply</code> command.</li>
-  <li>
-    <p>Review the Terraform execution plan and then enter <code>yes</code>.</p>
-
-    <p>Terraform displays an additional primary (static) IP for the new node. For example:</p>
-
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qumulo_primary_ips = tolist([
-  "203.0.113.5",
-  "203.0.113.6",
-  "203.0.113.7",
-  "203.0.113.8",
-  "203.0.113.9"   
-])
-</code></pre></div>    </div>
-  </li>
-  <li>
-    <p>To ensure that the Provisioner shut downs automatically, monitor the <code class="language-plaintext highlighter-rouge">/qumulo/my-deployment-name/last-run-status</code> parameter for the Provisioner. To monitor the Provisioner’s status, you can watch the Terraform operations in your terminal or <a href="#monitor-provisioner-status">monitor the Provisioner in AWS Systems Manager</a>.</p>
-  </li>
-  <li>To check that the cluster is healthy and has the needed number of nodes, log in to the Qumulo Core Web UI.</li>
-</ol>
-
-<h3 id="removing-node-from-existing-cluster">Removing Nodes from an Existing Cluster</h3>
-<p>Removing nodes from an existing cluster is a two-step process in which you remove the nodes from your cluster’s quorum and then tidy up the AWS resources for the removed nodes.</p>
-
-<h4 id="step-1-remove-nodes-from-the-clusters-quorum">Step 1: Remove Nodes from the Cluster’s Quorum</h4>
-
-<div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> You must perform this step while the cluster is running.</div>
-
-<ol>
-  <li>
-    <p>Edit the <code class="language-plaintext highlighter-rouge">terraform.tfvars</code> file and set the value of <code class="language-plaintext highlighter-rouge">q_target_node_count</code> to a lower number of nodes.</p>
-  </li>
-  <li>
-    <p>Run the <code>terraform apply</code> command.</p>
-  </li>
-  <li>
-    <p>Review the nodes to be removed and then enter <code class="language-plaintext highlighter-rouge">yes</code>.</p>
-
-    <p>Terraform removes the nodes and displays:</p>
-
+    <p>You can use the Qumulo Core Web UI to create and manage the following:</p>
     <ul>
-      <li>
-        <p>Your deployment’s unique name</p>
-      </li>
-      <li>
-        <p>The remaining S3 buckets for your Qumulo cluster</p>
-      </li>
-      <li>
-        <p>The primary (static) IP addresses for the node removed from your Qumulo cluster</p>
-      </li>
-      <li>
-        <p>The Qumulo Core Web UI endpoint</p>
-      </li>
+      <li><a href="../nfs/creating-nfs-export.html">NFS exports</a></li>
+      <li><a href="../smb/creating-smb-share.html">SMB shares</a></li>
+      <li><a href="../snapshots/managing-snapshots.html">Snapshots</a></li>
+      <li><a href="../replicating-data/creating-managing-continuous-replication-relationship.html">Continuous replication relationships</a></li>
     </ul>
 
-    <p>For example:</p>
-
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>deployment_unique_name = "myname-deployment-ABCDE01EG2H"
-...
-persistent_storage_bucket_names = tolist([
-  "ab5cdefghij-my-deployment-klmnopqr9st-qps-1",
-  "ab4cdefghij-my-deployment-klmnopqr8st-qps-2",
-  "ab3cdefghij-my-deployment-klmnopqr7st-qps-3",
-  ...
-  "ab2cdefghij-my-deployment-klmnopqr6st-qps-16"
-])
-qumulo_floating_ips = tolist([
-  "203.0.113.42",
-  "203.0.113.84",
-  ...
-])
-...
-qumulo_primary_ips_removed_nodes = "203.0.113.24",
-...
-qumulo_private_url_node1 = "https://203.0.113.10"
-</code></pre></div>    </div>
+    <p>You can also <a href="../authentication-qumulo-core/configuring-ad.html">join your cluster to Active Directory</a> and <a href="../authentication-qumulo-core/configuring-ldap.html">configure LDAP</a>.</p>
+  </li>
+  <li>
+    <p>Mount your Qumulo file system by using NFS or SMB and your cluster’s DNS name or an IP address from the Terraform output.</p>
   </li>
 </ol>
 
-<h4 id="step-2-tidy-up-aws-resources-for-removed-nodes">Step 2: Tidy Up AWS Resources for Removed Nodes</h4>
-<ol>
-  <li>
-    <p>Edit the <code class="language-plaintext highlighter-rouge">terraform.tfvars</code> file:</p>
-
-    <ol>
-      <li>
-        <p>Set the value of the <code class="language-plaintext highlighter-rouge">q_node_count</code> variable to a lower number of nodes.</p>
-      </li>
-      <li>
-        <p>Set the value of the <code class="language-plaintext highlighter-rouge">q_target_node_count</code> to <code class="language-plaintext highlighter-rouge">null</code>.</p>
-      </li>
-    </ol>
-  </li>
-  <li>
-    <p>Run the <code>terraform apply</code> command.</p>
-  </li>
-  <li>
-    <p>Review the resources to be removed and then enter <code class="language-plaintext highlighter-rouge">yes</code>.</p>
-  </li>
-  <li>
-    <p>To check that the cluster is healthy and has the needed number of nodes, log in to the Qumulo Core Web UI.</p>
-
-    <p>Terraform tidies up the resources for removed nodes and displays:</p>
-
-    <ul>
-      <li>
-        <p>Your deployment’s unique name</p>
-      </li>
-      <li>
-        <p>The remaining S3 buckets for your Qumulo cluster</p>
-      </li>
-      <li>
-        <p>The remaining floating IP addresses for your Qumulo cluster</p>
-      </li>
-      <li>
-        <p>The remaining primary (static) IP addresses for your Qumulo cluster</p>
-      </li>
-      <li>
-        <p>The Qumulo Core Web UI endpoint</p>
-      </li>
-    </ul>
-
-    <p>For example:</p>
-
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>deployment_unique_name = "myname-deployment-ABCDE01EG2H"
-...
-persistent_storage_bucket_names = tolist([
-  "ab5cdefghij-my-deployment-klmnopqr9st-qps-1",
-  "ab4cdefghij-my-deployment-klmnopqr8st-qps-2",
-  "ab3cdefghij-my-deployment-klmnopqr7st-qps-3",
-  ...
-  "ab2cdefghij-my-deployment-klmnopqr6st-qps-16"
-])
-qumulo_floating_ips = tolist([
-  "203.0.113.42",
-  "203.0.113.84",
-  ...
-])
-...
-qumulo_primary_ips = tolist([
-  "203.0.113.4",
-  "203.0.113.5",
-  "203.0.113.6",
-  "203.0.113.7"
-])
-...
-qumulo_private_url_node1 = "https://203.0.113.10"
-</code></pre></div>    </div>
-  </li>
-</ol>
-
-<h3 id="increasing-soft-capacity-limit-existing-cluster">Increasing the Soft Capacity Limit for an Existing Cluster</h3>
-<p>Increasing the soft capacity limit for an existing cluster is a two-step process in which you configure new persistent storage parameters and then configure new compute and cache deployment parameters.</p>
-
-<h4 id="step-1-set-new-persistent-storage-parameters">Step 1: Set New Persistent Storage Parameters</h4>
-
-<ol>
-  <li>Edit the <code class="language-plaintext highlighter-rouge">terraform.tfvars</code> file in the <code class="language-plaintext highlighter-rouge">persistent-storage</code> directory and set the <code class="language-plaintext highlighter-rouge">soft_capacity_limit</code> variable to a higher value.</li>
-  <li>
-    <p>Run the <code>terraform apply</code> command.</p>
-
-    <p>Review the Terraform execution plan and then enter <code>yes</code>.</p>
-
-    <p>Terraform creates new S3 buckets as necessary and displays:</p>
-
-    <ul>
-      <li>
-        <p>The <code class="language-plaintext highlighter-rouge">Apply complete!</code> message with a count of changed resources</p>
-      </li>
-      <li>
-        <p>The names of the created S3 buckets</p>
-      </li>
-      <li>
-        <p>Your deployment’s unique name</p>
-      </li>
-      <li>
-        <p>The new soft capacity limit</p>
-      </li>
-    </ul>
-
-    <p>For example:</p>
-
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Apply complete! Resources: 0 added, 1 changed, 0 destroyed.
-
-Outputs:
-
-persistent_storage_bucket_names = tolist([
-  "ab5cdefghij-my-deployment-klmnopqr9st-qps-1",
-  "ab4cdefghij-my-deployment-klmnopqr8st-qps-2",
-  "ab3cdefghij-my-deployment-klmnopqr7st-qps-3",
-  ...
-  "ab2cdefghij-my-deployment-klmnopqr6st-qps--16"
-])
-deployment_unique_name = "myname-deployment-ABCDE01EG2H"
-...
-soft_capacity_limit = "1000 TB"
-</code></pre></div>    </div>
-  </li>
-</ol>
-
-<h4 id="step-2-update-existing-compute-and-cache-resource-deployment">Step 2: Update Existing Compute and Cache Resource Deployment</h4>
-<ol>
-  <li>
-    <p>Navigate to the root directory of the <code class="language-plaintext highlighter-rouge">aws-terraform-cnq-&lt;x.y&gt;</code> repository.</p>
-  </li>
-  <li>
-    <p>Run the <code>terraform apply</code> command.</p>
-
-    <p>Review the Terraform execution plan and then enter <code>yes</code>.</p>
-
-    <p>Terraform updates the necessary IAM roles and S3 bucket policies, adds S3 buckets to the persistent storage list for the cluster, increases the soft capacity limit, and displays the <code class="language-plaintext highlighter-rouge">Apply complete!</code> message.</p>
-
-    <p>When the Provisioner shuts down automatically, this process is complete.</p>
-  </li>
-</ol>
-
-<h3 id="changing-the-ec2-instance-type-of-your-cnq-on-aws-cluster">Changing the EC2 Instance Type of Your CNQ on AWS Cluster</h3>
-<p>You can change the EC2 instance type, node count, and to convert your cluster from single-AZ to multi-AZ, or the other way around.</p>
+<h2 id="part-3-perform-post-deployment-actions">Part 3: Performing Post-Deployment Actions</h2>
+<p>This section describes the common actions you can perform on a CNQ cluster after deploying it: adding and removing nodes, increasing the soft capacity limit for a cluster, changing the EC2 instance type and deleting a cluster.</p>
 
 <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
 <ul>
-  <li>To minimize potential availability interruptions, you must perform the <em>cluster replacement procedure</em> as a two-quorum event. For example, if you stop the existing EC2 instances by using the AWS Management Console and change the EC2 instance types, two quorum events occur <em>for each node</em> and the read and write cache isn't optimized for the EC2 instance type.</li>
-  <li>Performing the cluster replacement procedure ensures that the required EC2 instance types are available in advance.</li>
-  <li>For Qumulo clusters with <a href="../cloud-data-fabric/how-portal-creation-enables-cloud-data-fabric.html#portal-relationship">Cloud Data Fabric portal relationships</a>, portal data becomes inaccessible until you specify the correct IP addresses in your portal configuration.</li>
+  <li>After you create your Qumulo cluster, the deployed version (and the <code>cluster_version</code> variable) becomes immutable in the Terraform configuration. It isn't possible to upgrade Qumulo Core by changing this variable or by performing a Terraform operation.</li>
+  <li>To upgrade Qumulo Core, use the Qumulo Core Web UI or the <code>qq</code> CLI. For more information, see <a href="../upgrading-qumulo-core/performing-upgrades.html">Performing Upgrades</a>.</li>
+  <li>For all node addition and EC2 instance type change operations, the Qumulo Terraform Provider deploys the same Qumulo Core version as the one that your cluster is currently running.</li>
 </ul>
 </div>
 
-<p>Changing the EC2 instance type of your CNQ on AWS cluster is a three-step process in which you create a new deployment in a new Terraform workspace and join the new EC2 instances to a quorum, remove the existing EC2 instances, and then clean up your S3 bucket policies.</p>
-
-<h4 id="step-1-create-a-new-deployment-in-a-new-terraform-workspace">Step 1: Create a New Deployment in a New Terraform Workspace</h4>
+<h3 id="adding-node-to-existing-cluster">Adding Nodes to an Existing CNQ on AWS Cluster</h3>
 <ol>
-  <li>To create a new Terraform workspace, run the <code class="language-plaintext highlighter-rouge">terraform workspace new my-new-workspace-name</code> command.</li>
   <li>
-    <p>Edit the <code class="language-plaintext highlighter-rouge">terraform.tfvars</code> file:</p>
-
-    <ol>
-      <li>
-        <p>Specify the value for the <code class="language-plaintext highlighter-rouge">private_subnet_id</code> variable.</p>
-
-        <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> For multi-AZ deployments, specify values as a comma-delimited list.</div>
-      </li>
-      <li>Specify the value for the <code class="language-plaintext highlighter-rouge">q_instance_type</code> variable.</li>
-      <li>Set the value of the <code class="language-plaintext highlighter-rouge">q_replacement_cluster</code> variable to <code class="language-plaintext highlighter-rouge">true</code>.</li>
-      <li>Set the value of the <code class="language-plaintext highlighter-rouge">q_existing_deployment_unique_name</code> variable to the current deployment’s name.</li>
-      <li>(Optional) To change the number of nodes, specify the value for the <code class="language-plaintext highlighter-rouge">q_node_count</code> variable.</li>
-    </ol>
-
-    <div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> Leave the other variables unchanged.</div>
+    <p>Edit the <code class="language-plaintext highlighter-rouge">terraform.tfvars</code> file and set <code class="language-plaintext highlighter-rouge">node_count</code> to a higher value.</p>
   </li>
   <li>
     <p>Run the <code>terraform apply</code> command.</p>
-
-    <p>Review the Terraform execution plan and then enter <code>yes</code>.</p>
-
-    <p>Terraform creates resources according to the execution plan and displays:</p>
-
-    <ul>
-      <li>
-        <p>Your deployment’s unique name</p>
-      </li>
-      <li>
-        <p>The names of the created S3 buckets</p>
-      </li>
-      <li>
-        <p>The same floating IP addresses for your Qumulo cluster</p>
-      </li>
-      <li>
-        <p>New primary (static) IP addresses for your Qumulo cluster</p>
-      </li>
-      <li>
-        <p>The Qumulo Core Web UI endpoint</p>
-      </li>
-    </ul>
-
-    <p>For example:</p>
-
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>deployment_unique_name = "myname-deployment-ABCDE01EG2H"
-...
-persistent_storage_bucket_names = tolist([
-  "ab5cdefghij-my-deployment-klmnopqr9st-qps-1",
-  "ab4cdefghij-my-deployment-klmnopqr8st-qps-2",
-  "ab3cdefghij-my-deployment-klmnopqr7st-qps-3",
-  ...
-  "ab2cdefghij-my-deployment-klmnopqr6st-qps--16"
-])
-qumulo_floating_ips = tolist([
-  "203.0.113.42",
-  "203.0.113.84",
-  ...
-])
-...
-qumulo_primary_ips = tolist([
-  "203.0.113.4",
-  "203.0.113.5",
-  "203.0.113.6",
-  "203.0.113.7"
-])
-...
-qumulo_private_url_node1 = "https://203.0.113.10"
-</code></pre></div>    </div>
   </li>
-  <li>To ensure that the Provisioner shut downs automatically, monitor the <code class="language-plaintext highlighter-rouge">/qumulo/my-deployment-name/last-run-status</code> parameter for the Provisioner. To monitor the Provisioner’s status, you can watch the Terraform operations in your terminal or <a href="#monitor-provisioner-status">monitor the Provisioner in AWS Systems Manager</a>.</li>
-  <li>To check that the cluster is healthy and has the needed number of nodes, log in to the Qumulo Core Web UI.</li>
+  <li>
+    <p>Review the Terraform execution plan, confirm that it shows an in-place update, and then enter <code class="language-plaintext highlighter-rouge">yes</code>.</p>
+  </li>
 </ol>
 
-<h4 id="step-2-remove-the-previous-deployment">Step 2: Remove the Previous Deployment</h4>
+<p>Terraform adds the nodes to your cluster and displays the additional primary (static) IP addresses.</p>
+
+<h3 id="removing-node-from-existing-cluster">Removing Nodes from an Existing CNQ on AWS Cluster</h3>
+<p>Removing nodes is a single Terraform operation. The Qumulo Terraform Provider handles the separate quorum removal and resource cleanup steps.</p>
 
 <ol>
-  <li>To select the previous Terraform workspace (for example, <code class="language-plaintext highlighter-rouge">default</code>), run the <code class="language-plaintext highlighter-rouge">terraform workspace select default</code> command.</li>
-  <li>To ensure that the correct workspace is selected, run the <code class="language-plaintext highlighter-rouge">terraform workspace show</code> command.</li>
   <li>
-    <p>Run the <code>terraform destroy</code> command.</p>
-
+    <p>Edit the <code class="language-plaintext highlighter-rouge">terraform.tfvars</code> file and set <code class="language-plaintext highlighter-rouge">node_count</code> to a lower value.</p>
+  </li>
+  <li>
+    <p>Run the <code>terraform apply</code> command.</p>
+  </li>
+  <li>
     <p>Review the Terraform execution plan and then enter <code>yes</code>.</p>
-
-    <p>Terraform displays the <code class="language-plaintext highlighter-rouge">Destroy complete!</code> message with a count of destroyed resources.</p>
-
-    <p>The previous deployment is deleted.</p>
   </li>
 </ol>
 
-<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> The persistent storage deployment remains in its original Terraform workspace. You can perform the next cluster replacement procedure in the <code class="language-plaintext highlighter-rouge">default</code> workspace.</div>
+<p>The specified nodes are removed from your cluster.</p>
 
-<h4 id="step-3-clean-up-s3-bucket-policies">Step 3: Clean Up S3 Bucket Policies</h4>
+<h3 id="increasing-soft-capacity-limit-existing-cluster">Increasing the Soft Capacity Limit for an Existing CNQ on AWS Cluster</h3>
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
+<ul>
+  <li>A single operation can increase the soft capacity limit by less than 5,000 TB.</li>
+  <li>We recommend applying larger increases in incremental steps.</li>
+  <li>It isn't possible to decrease the soft capacity limit.</li>
+</ul>
+</div>
 
 <ol>
-  <li>To list your Terraform workspaces, run the <code class="language-plaintext highlighter-rouge">terraform workspace list</code> command.</li>
-  <li>To select your new Terraform workspace, run the <code class="language-plaintext highlighter-rouge">terraform workspace select &lt;my-new-workspace-name&gt;</code> command.</li>
-  <li>Edit the <code class="language-plaintext highlighter-rouge">terraform.tfvars</code> file and set the <code class="language-plaintext highlighter-rouge">q_replacement_cluster</code> variable to <code class="language-plaintext highlighter-rouge">false</code>.</li>
   <li>
-    <p>Run the <code>terraform apply</code> command. This ensures that the S3 bucket policies have least privilege.</p>
-
+    <p>Edit the <code class="language-plaintext highlighter-rouge">terraform.tfvars</code> file and set <code class="language-plaintext highlighter-rouge">soft_capacity_limit_tb</code> to a higher value.</p>
+  </li>
+  <li>
+    <p>Run the <code>terraform apply</code> command.</p>
+  </li>
+  <li>
     <p>Review the Terraform execution plan and then enter <code>yes</code>.</p>
-
-    <p>Terraform displays the <code class="language-plaintext highlighter-rouge">Apply complete!</code> message with a count of destroyed resources.</p>
   </li>
 </ol>
 
-<h3 id="deleting-existing-cluster">Deleting an Existing Cluster</h3>
-<p>Deleting a cluster is a two-step process in which you delete your cluster’s compute and cache resources and then delete your persistent storage.</p>
+<p>Terraform creates new S3 buckets as necessary, updates the IAM roles and S3 bucket policies, and increases the soft capacity limit.</p>
 
+<h3 id="changing-the-ec2-instance-type">Changing the EC2 Instance Type of a CNQ on AWS Cluster</h3>
+<p>The Qumulo Terraform Provider performs the replacement natively within the existing deployment.</p>
+
+<div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> Changing the EC2 instance type creates new instances of the specified type, joins them to the cluster quorum, then removes the existing instances.</div>
+
+<ol>
+  <li>
+    <p>Edit the <code class="language-plaintext highlighter-rouge">terraform.tfvars</code> file and specify the new <code class="language-plaintext highlighter-rouge">instance_type</code>.</p>
+  </li>
+  <li>
+    <p>Run the <code>terraform apply</code> command.</p>
+  </li>
+  <li>
+    <p>Review the Terraform execution plan, and then enter <code class="language-plaintext highlighter-rouge">yes</code>.</p>
+  </li>
+</ol>
+
+<h3 id="deleting-existing-cluster">Deleting an Existing CNQ on AWS Cluster</h3>
 <div class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> <b>Caution</b><br />
 <ul>
-  <li>When you no longer need your cluster, you must back up all important data on the cluster safely before deleting the cluster.</li>
-  <li>When you delete your cluster's cache and computer resources, it isn't possible to access your persistent storage anymore.</li>
+  <li>When you no longer need your cluster, you must back up all important data on the cluster safely before deleting the cluster. Deleting the cluster deletes its compute and cache resources and its persistent storage.</li>
+  <li>The system won't run the <code>terraform destroy</code> command unless you disable deletion protection and then apply this change.</li>
 </ul>
 </div>
 
-<h4 id="step-1-to-delete-your-clusters-compute-and-cache-resources">Step 1: To Delete Your Cluster’s Compute and Cache Resources</h4>
 <ol>
-  <li>After you back up your data safely, edit your <code class="language-plaintext highlighter-rouge">terraform.tfvars</code> file and set the <code class="language-plaintext highlighter-rouge">term_protection</code> variable to <code class="language-plaintext highlighter-rouge">false</code>.</li>
   <li>
-    <p>Run the <code>terraform apply</code> command.</p>
-
-    <p>Review the Terraform execution plan and then enter <code>yes</code>.</p>
-
-    <p>Terraform displays the <code class="language-plaintext highlighter-rouge">Apply complete!</code> message with a count of changed resources.</p>
+    <p>After you back up your data safely, edit your <code class="language-plaintext highlighter-rouge">terraform.tfvars</code> file and set the deletion protection variable to <code class="language-plaintext highlighter-rouge">false</code>.</p>
+  </li>
+  <li>
+    <p>Run the <code class="language-plaintext highlighter-rouge">terraform apply</code> command, review the Terraform execution plan, and then enter <code class="language-plaintext highlighter-rouge">yes</code>.</p>
   </li>
   <li>
     <p>Run the <code>terraform destroy</code> command.</p>
-
-    <p>Review the Terraform execution plan and then enter <code>yes</code>.</p>
-
-    <p>Terraform deletes all of your cluster’s compute and cache resources and displays the <code class="language-plaintext highlighter-rouge">Destroy complete!</code> message and a count of destroyed resources.</p>
-  </li>
-</ol>
-
-<h4 id="step-2-to-delete-your-clusters-persistent-storage">Step 2: To Delete Your Cluster’s Persistent Storage</h4>
-<ol>
-  <li>Navigate to the <code class="language-plaintext highlighter-rouge">persistent-storage</code> directory.</li>
-  <li>Edit your <code class="language-plaintext highlighter-rouge">terraform.tfvars</code> file and set the <code class="language-plaintext highlighter-rouge">prevent_destroy</code> parameter to <code class="language-plaintext highlighter-rouge">false</code>.</li>
-  <li>
-    <p>Run the <code>terraform apply</code> command.</p>
-
-    <p>Review the Terraform execution plan and then enter <code>yes</code>.</p>
-
-    <p>Terraform displays the <code class="language-plaintext highlighter-rouge">Apply complete!</code> message with a count of changed resources.</p>
   </li>
   <li>
-    <p>Run the <code>terraform destroy</code> command.</p>
-
     <p>Review the Terraform execution plan and then enter <code>yes</code>.</p>
 
-    <p>Terraform deletes all of your cluster’s persistent storage and displays the <code class="language-plaintext highlighter-rouge">Destroy complete!</code> message and a count of destroyed resources.</p>
+    <p>Terraform deletes all of your cluster’s resources, including the persistent storage, and displays the <code class="language-plaintext highlighter-rouge">Destroy complete!</code> message with a count of destroyed resources.</p>
   </li>
 </ol>
-
 
    
 
