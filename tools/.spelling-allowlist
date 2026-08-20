@@ -1,3 +1,4 @@
+redeployments
 1014S
 1114S
 192T
@@ -33,6 +34,7 @@ ANQ
 AOC
 AOCs
 APIs
+ARN
 ASG
 ASUS
 AUTH_SYS
@@ -150,6 +152,7 @@ HSM
 HTM
 HTML
 HTML5
+HashiCorp
 HTTP
 HTTPS
 HTTPS
@@ -388,6 +391,7 @@ VPC
 VPCs
 VPN
 Varonis
+vCPU
 Veam
 Vectara
 Veeam

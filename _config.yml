@@ -448,7 +448,7 @@ cnq:
   logIntoWebUIcapacity: To check the cluster's total usable storage, log in to the Qumulo Core Web UI.
   changeQnodeCount: Edit <code>terraform.tfvars</code> and change the value of <code>q_node_count</code>
   changeQnodeCountAzure: Edit <code>terraform.tfvars</code> and change the value of <code>q_node_count</code>
-  dontRecommendLocalState: We don't recommend storing the Terraform state locally for production deployments.
+  dontRecommendLocalState: For production deployments, we don't recommend storing the Terraform state locally. Instead, use the S3 backend and enable versioning on the state bucket. This configuration makes it possible to recover a previous state file if a particular state becomes corrupted or gets overwritten.
   runTFapply: Run the <code>terraform apply</code> command.
   runTFapplyWithFile: Run the <code>terraform apply -var-file config-standard.tfvars</code> command.
   runTFdestroy: Run the <code>terraform destroy</code> command.
@@ -457,6 +457,7 @@ cnq:
   monitorGCPProvisioner: To monitor the Provisioner's status, you can watch the Terraform operations in your terminal or <a href="#monitor-provisioner-status">monitor the Provisioner in the GCP Console</a>.
   monitorGCPProvisionerShutdown: To ensure that the Provisioner shut downs automatically, monitor the `deployment_unique_name/compute` and `deployment_unique_name/last-run-status` document paths in the Firestore database for the Provisioner.
   tfCreatesNewBuckets: Terraform creates new S3 buckets as necessary
+  tfVersion: v7.0
   tfCreatesNewGCSBuckets: Terraform creates new GCS buckets as necessary
   cfnUpdateStackComputeCache: On the <strong>Stacks</strong> page, select <a href="#compute-cache-stack-name">your compute and cache deployment stack</a> and then, in the upper right, click <strong>Update</strong>.
   cfnUpdateStackPersistentStorage: On the <strong>Stacks</strong> page, select <a href="#persistent-storage-stack-name">your persistent storage stack</a> and then, in the upper right, click <strong>Update</strong>.
