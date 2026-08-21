@@ -19,22 +19,22 @@ check_environment() {
         fi
     fi
 
-    # Helper function to execute environment check and capture output
+    # Helper function to execute environment check and separate stdout/stderr
     run_env_check() {
-        "$HOME/src/environment" > /tmp/env.out 2>&1
+        "$HOME/src/environment" > /tmp/env.out 2> /tmp/env.err
     }
 
-    # Attempt running the environment script
+    # First execution attempt
     if ! run_env_check; then
-        # Check if the output contains the low disk space warning
-        if grep -q "You've got a root file system which is less than 5 GB free!" /tmp/env.out; then
+        # Check if stderr or stdout contains the low disk space warning
+        if grep -q "You've got a root file system which is less than 5 GB free!" /tmp/env.err /tmp/env.out 2>/dev/null; then
             echo -e "\033[1;33mRoot file system has less than 5 GB free.\033[0m"
             read -p $'\033[1;33mPerform emergency disk cleanup and qpkg sweep? (y/n): \033[0m' do_cleanup
             
             if [[ "$do_cleanup" == "y" ]]; then
                 echo "Performing emergency disk cleanup..."
                 sudo apt-get clean && sudo journalctl --vacuum-time=1d && rm -rf ~/.cache/*
-                find /tmp -mindepth 1 -maxdepth 1 ! -name "env.out" -exec rm -rf {} + 2>/dev/null
+                find /tmp -mindepth 1 -maxdepth 1 ! -name "env.*" -exec rm -rf {} + 2>/dev/null
                 
                 echo "Sweeping toolchain..."
                 sweep_toolchain
@@ -44,17 +44,17 @@ check_environment() {
             fi
         fi
 
-        # If it still fails after cleanup (or if user declined/error was unrelated to space)
-        if [[ $? -ne 0 ]]; then
+        # If run_env_check is still failing, attempt toolchain remediation in a subshell
+        if ! run_env_check; then
             if [[ -d "$HOME/src" ]]; then
                 echo "Detected an error while running environment script. Remediating toolchain..."
-                cd "$HOME/src" && hg up default && hg fetch && ./prebuild
+                (cd "$HOME/src" && hg up default && hg fetch && ./prebuild)
                 run_env_check
             fi
         fi
     fi
 
-    # Evaluate environment variables if output file exists and is non-empty
+    # Evaluate stdout environment variables if non-empty
     if [[ -s /tmp/env.out ]]; then
         eval "$(cat /tmp/env.out)"
     fi
@@ -93,27 +93,27 @@ check_symlinks() {
     fi
 
     # Check and create docs-internal symlink
-    if [[ ! -L "$docs_symlink" || ! -e "$docs_symlink" ]]; then
+    if [[ ! -e "$docs_symlink" && ! -L "$docs_symlink" ]]; then
         read -p "Create symlink for $docs_symlink? Use default path ($default_repo_dir)? (y/n): " create_docs
         if [[ "$create_docs" == "y" ]]; then
-            ln -s "$(realpath "$default_repo_dir")" "$docs_symlink"
+            ln -snf "$(realpath "$default_repo_dir")" "$docs_symlink"
             echo "Created symlink $docs_symlink -> $default_repo_dir."
         elif [[ "$create_docs" == "n" ]]; then
             read -p "Enter the full path of the docs-internal repo: " docs_path
-            ln -s "$(realpath "$docs_path")" "$docs_symlink"
+            ln -snf "$(realpath "$docs_path")" "$docs_symlink"
             echo "Created symlink $docs_symlink -> $docs_path."
         fi
     fi
 
     # Check and create vectara-ingest symlink
-    if [[ ! -L "$vectara_symlink" || ! -e "$vectara_symlink" ]]; then
+    if [[ ! -e "$vectara_symlink" && ! -L "$vectara_symlink" ]]; then
         read -p "Create symlink for $vectara_symlink? Use default path ($parent_dir/vectara-ingest)? (y/n): " create_vectara
         if [[ "$create_vectara" == "y" ]]; then
-            ln -s "$(realpath "$parent_dir/vectara-ingest")" "$vectara_symlink"
+            ln -snf "$(realpath "$parent_dir/vectara-ingest")" "$vectara_symlink"
             echo "Created symlink $vectara_symlink -> $parent_dir/vectara-ingest."
         elif [[ "$create_vectara" == "n" ]]; then
             read -p "Enter the full path of the vectara-ingest repo: " vectara_path
-            ln -s "$(realpath "$vectara_path")" "$vectara_symlink"
+            ln -snf "$(realpath "$vectara_path")" "$vectara_symlink"
             echo "Created symlink $vectara_symlink -> $vectara_path."
         fi
     fi
@@ -406,7 +406,7 @@ check_src_repo() {
         echo "You must first bootstrap the dev environment."
         echo "For more information, see"
         echo "https://qumulo.atlassian.net/wiki/spaces/EN/pages/1167851855/Manually+Checking+Out+Source#Bootstrap-the-DEV-environment"
-        exit 1
+        return 1
     fi
 }
 
@@ -416,27 +416,27 @@ check_ssh_keys() {
         echo "You must add SSH keys to the agent."
         echo "For more information, see:"
         echo "https://qumulo.atlassian.net/wiki/spaces/EN/pages/590414149/Dev+Environment+Setup#Create-an-SSH-key-pair-and-Request-Access-to-Mercurial"
-        exit 1
+        return 1
     fi
 }
 
 # Regenerate CLI documentation
 regen_cli_docs() {
     start_in_docs_dir
-    check_src_repo
-    check_ssh_keys
+    check_src_repo || return 1
+    check_ssh_keys || return 1
+
+    local hg_opts="--config extensions.progress= --config progress.assume_tty=True --config progress.delay=0"
 
     # Non-interactive execution
     if [ -n "$1" ]; then
         if [ "$1" = "current" ]; then
             echo "Regenerating current CLI documentation from default branch..."
-            cd ~/src && hg up default && hg fetch && ./tools/extract_cli_help.py --base-dir ~/git/docs-internal && cd -
-            sweep_toolchain
+            (cd ~/src && hg $hg_opts up default && hg $hg_opts fetch && ./tools/extract_cli_help.py --base-dir ~/git/docs-internal)
             return 0
         elif [[ "$1" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
             echo "Regenerating CLI documentation from release-$1 branch..."
-            cd ~/src && hg up default && hg fetch && hg up release-$1 && ./tools/extract_cli_help.py --base-dir ~/git/docs-internal && cd -
-            sweep_toolchain
+            (cd ~/src && hg $hg_opts up default && hg $hg_opts fetch && hg $hg_opts up "release-$1" && ./tools/extract_cli_help.py --base-dir ~/git/docs-internal)
             return 0
         else
             echo "Error: Invalid version format '$1'. Expected 'current' or 'N.N.N'."
@@ -446,26 +446,19 @@ regen_cli_docs() {
 
     # Interactive execution
     while true; do
-        read -p "Generate the current (c) or future (f) version of the CLI docs? " version_choice
-        if [ "$version_choice" = "c" ]; then
+        read -p "Which version of qq CLI docs to generate docs for? Enter a valid Qumulo Core version or q to quit: " version_choice
+        if [ "$version_choice" = "q" ]; then
+            return 0
+        elif [ "$version_choice" = "current" ]; then
             echo "Regenerating current CLI documentation from default branch..."
-            cd ~/src && hg up default && hg fetch && ./tools/extract_cli_help.py --base-dir ~/git/docs-internal && cd -
-            sweep_toolchain
+            (cd ~/src && hg $hg_opts up default && hg $hg_opts fetch && ./tools/extract_cli_help.py --base-dir ~/git/docs-internal)
             break
-        elif [ "$version_choice" = "f" ]; then
-            while true; do
-                read -p "Enter the Qumulo Core release number in N.N.N format (for example, 7.1.2): " version_number
-                if [[ $version_number =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
-                    echo "Regenerating CLI documentation from release-$version_number branch..."
-                    cd ~/src && hg up default && hg fetch && hg up release-$version_number && ./tools/extract_cli_help.py --base-dir ~/git/docs-internal && cd -
-                    sweep_toolchain
-                    break 2
-                else
-                    echo "Enter a release version in the N.N.N format, where N is a number."
-                fi
-            done
+        elif [[ "$version_choice" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+            echo "Regenerating CLI documentation from release-$version_choice branch..."
+            (cd ~/src && hg $hg_opts up default && hg $hg_opts fetch && hg $hg_opts up "release-$version_choice" && ./tools/extract_cli_help.py --base-dir ~/git/docs-internal)
+            break
         else
-            echo "Invalid choice. Enter 'c' for the current version or 'f' for a future version."
+            echo "Error: Invalid version format '$version_choice'. Expected 'current' or 'N.N.N'."
         fi
     done
 }
@@ -473,7 +466,7 @@ regen_cli_docs() {
 # Regenerate REST API documentation
 regen_api_docs() {
     start_in_docs_dir
-    check_src_repo
+    check_src_repo || return 1
     check_tqdm || return 1
 
     # Capture var to determine non-interactive or interactive execution
@@ -491,8 +484,6 @@ regen_api_docs() {
         echo "Building REST API documentation from artifacts.eng.qumulo.com ..."
         PYTHONPATH="$USER_SITE:$PYTHONPATH" python3 tools/gen-api.py
     fi
-
-    sweep_toolchain
 }
 
 # Regenerate REST API change log
