@@ -14,17 +14,17 @@ For information about the most important features from each release, click the Q
   </thead>
   <tbody>
     <tr>
-      <td><a href="feature-log.html#qumulo-core-7922">7.9.2.2</a></td>
+      <td><a href="feature-log.html#qumulo-core-7923">7.9.2.3</a></td>
       <td></td>
       <td class="instant">Instant</td>
     </tr>
     <tr>
-      <td><a href="feature-log.html#qumulo-core-7911">7.9.1.1</a></td>
+      <td><a href="feature-log.html#qumulo-core-7912">7.9.1.2</a></td>
       <td></td>
       <td class="instant">Instant</td>
     </tr>
     <tr>
-      <td><a href="feature-log.html#qumulo-core-7902-quarterly">7.9.0.2</a></td>
+      <td><a href="feature-log.html#qumulo-core-7903-quarterly">7.9.0.3</a></td>
       <td><span class="emoji">✅</span></td>      
       <td class="platform">Platform</td>
     </tr>

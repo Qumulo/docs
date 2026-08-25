@@ -11,7 +11,7 @@ layout: page
 <style>div#toc{height:200px;overflow:auto;}</style>
 
 
-## Qumulo Core 7.9.2.2
+## Qumulo Core 7.9.2.3
 {{ nexusLink }}
 <ul>
   <li>Removed <code>/v1/portal/hubs/</code></li>
@@ -51,7 +51,7 @@ layout: page
 </details>
 
 
-## Qumulo Core 7.9.1.1
+## Qumulo Core 7.9.1.2
 {{ nexusLink }}
 <ul>
   <li>Removed <code>/v1/portal/quorum/events</code></li>
@@ -59,7 +59,7 @@ layout: page
 </ul>
 
 
-## Qumulo Core 7.9.0.2
+## Qumulo Core 7.9.0.3
 {{ nexusLink }}
 <ul>
   <li>Removed <code>/v1/snapshots/calculate-used-capacity</code></li>

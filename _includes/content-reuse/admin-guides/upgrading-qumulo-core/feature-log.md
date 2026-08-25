@@ -8,8 +8,15 @@ For information about upgrade types for each release, see <a href='mode-referenc
 {% capture noAPIchanges %}This release contains no REST API changes.{% endcapture %}
 {% capture platUpg %}This release of Qumulo Core is a _platform upgrade_ that requires either a complete reboot (rebooting all nodes in your cluster at the same time) or a rolling reboot (rebooting the nodes in your cluster one at a time).{% endcapture %}
 
+{% capture clustCapRecl %}issue with system performance during the cluster capacity reclamation process{% endcapture %}
+{% capture mustWait %}For clusters running Qumulo Core 7.9.0 (and higher), you must wait for on-disk upgrades to complete before you can upgrade the cluster to a higher version (this process typically takes 1-2 days). To check whether a cluster is ready to be upgraded, you can use the Qumulo REST API or the <code>qq</code> CLI. For example:
+    <ul>
+      <li><code>POST /v2/upgrade/verify-image</code></li>
+      <li><code>qq upgrade_verify_image --path /example/path/to/target/image</code></li>
+    </ul>{% endcapture %}
 
-## Qumulo Core 7.9.2.2
+
+## Qumulo Core 7.9.2.3
 {{ nexusLink }}
 
 {% capture betterStartup %}<strong>Cloud Native Qumulo (CNQ), Azure Native Qumulo (ANQ), and Stratus Accelerator clusters:</strong> Improved cluster start-up times.{% endcapture %}
@@ -25,6 +32,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
   <li>
     This release resolves:
     <ul>
+      <li>An {{ clustCapRecl }}</li>
       <li><strong>Stratus Accelerator Clusters Deployed with Qumulo Core 7.9.2:</strong> An issue with an unlikely scenario that previously could occur on a Qumulo cluster with heavy workloads resulting from moving or combining data stored on a shared DataCore cluster. In this scenario, the object metadata cache can become corrupted when SSDs on nodes perform operations out of order.</li>
       <li>An issue with Product Package deployments of Qumulo Core releases lower than 7.9.2 that are configured to use Host-Managed Networking. Qumulo Core detects any unintentionally unassigned floating IP addresses and restores them without affecting client connectivity.</li>
     </ul>
@@ -73,14 +81,20 @@ For information about upgrade types for each release, see <a href='mode-referenc
   * **Nexus Agent:** Can't detect a cleanly closed connection to Nexus
 
 
-## Qumulo Core 7.9.1.1
+## Qumulo Core 7.9.1.2
 {{ nexusLink }}
 
 ### Features and Improvements
 {% capture couldCrash %}crash while upgrading on-disk structures in certain scenarios{% endcapture %}
 {{site.data.alerts.important}}
 <ul>
-  <li>This release resolves an issue that previously could cause Qumulo Core to {{ couldCrash }}.</li>
+  <li>
+    This release resolves:
+    <ul>
+      <li>An {{ clustCapRecl }}</li>
+      <li>An issue that previously could cause Qumulo Core to {{ couldCrash }}.</li>
+    </ul>
+  </li>
   <li>{{ mustWait }}</li>
 </ul>
 {{site.data.alerts.end}}
@@ -96,7 +110,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
 * [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-791)
 
 
-## Qumulo Core 7.9.0.2 (Quarterly)
+## Qumulo Core 7.9.0.3 (Quarterly)
 {{ nexusLink }}
 
 ### Features and Improvements
@@ -105,20 +119,16 @@ For information about upgrade types for each release, see <a href='mode-referenc
   <li>
     This release makes critical improvements:
     <ul>
+      <li>Prevented a crash that previously occurred under rare conditions and could affect certain SMB operations during an unstable portal quorum</li>
       <li>{{ betterStartup }}</li>
       <li>{{ appHardInst }}</li>
       <li>Disabled {{ disableKernMod }}</li> 
     </ul>
   </li>
   <li>
-    This release adds important cluster management functionality:
-    <ul>
-      <li>Added the <code>GET /v1/portal/quorum/events</code> REST API endpoint and the <code>qq portal_list_quorum_events</code> CLI command to let you retrieve recent portal quorum success and abandon events recorded by cluster nodes.</li>
-    </ul>
-  </li>
-  <li>
     This release resolves issues that previously:
     <ul>
+      <li>Affected system performance during the cluster reclamation process</li>
       <li>Prevented the system from handling an internal encoding inconsistency from legacy builds</li>
       <li>Prevented quorum formation if the audit server address specified in the audit configuration isn't a valid IP address or DNS name</li>
       <li>Prevented Nexus agent on nodes in a Qumulo Core cluster from detecting a cleanly closed connection to Nexus and reconnecting, causing nodes to continue reporting metrics without being able to be managed from Nexus until the connection was reset</li>
@@ -128,10 +138,16 @@ For information about upgrade types for each release, see <a href='mode-referenc
     </ul>
   </li>
   <li>
+    This release adds important cluster management functionality:
+    <ul>
+      <li>Added the <code>GET /v1/portal/quorum/events</code> REST API endpoint and the <code>qq portal_list_quorum_events</code> CLI command to let you retrieve recent portal quorum success and abandon events recorded by cluster nodes.</li>
+    </ul>
+  </li>
+  <li>
     This release has special upgrade provisions:
     <ul>
       <li>
-        <strong>Before the upgrade to Qumulo Core 7.9.0.2</strong>
+        <strong>Before the upgrade to Qumulo Core 7.9.0.x</strong>
         <ul>
           <li><strong>All Clusters:</strong> Ensure that your cluster has at least 1 GB of available capacity for each node (for example, a 4-node cluster requires 4 GB of available capacity). If your cluster doesn't have sufficient total available capacity, you must free up or expand your cluster's capacity.</li>
           <li>
