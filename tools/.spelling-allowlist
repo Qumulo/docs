@@ -1,5 +1,3 @@
-Restriper
-redeployments
 1014S
 1114S
 192T
@@ -153,10 +151,10 @@ HSM
 HTM
 HTML
 HTML5
-HashiCorp
 HTTP
 HTTPS
 HTTPS
+HashiCorp
 Hostname
 Hostnames
 HyperDisk
@@ -307,6 +305,7 @@ RX2540
 Rackmount
 ReadDirectoryChangesW
 Rebalancing
+Restriper
 Runbooks
 S.M.A.R.T.
 S100G
@@ -392,7 +391,6 @@ VPC
 VPCs
 VPN
 Varonis
-vCPU
 Veam
 Vectara
 Veeam
@@ -486,6 +484,7 @@ realmd
 rebalance
 recache
 recaches
+redeployments
 redownloading
 reencodes
 refetched
@@ -523,6 +522,7 @@ unpartitioned
 unsynchronized
 uplink
 uplinks
+vCPU
 vSphere
 winbase
 x86
