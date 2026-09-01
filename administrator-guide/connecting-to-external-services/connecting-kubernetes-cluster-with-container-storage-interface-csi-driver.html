@@ -2693,7 +2693,7 @@ $(document).ready(function() {
    
      
      
-<p>To automate container storage, enable dynamic volumes, and help you scale your application container images based on usage and workflows, Qumulo uses its CSI driver to connect the Kubernetes orchestrator to Qumulo persistent storage. (In comparison, for example, the <a href="https://github.com/kubernetes-csi/csi-driver-nfs">NFS CSI Driver for Kubernetes</a> requires unprivileged NFS access for dynamic volumes and doesn’t support volume sizing and expansion.)</p>
+<p>To automate container storage, enable dynamic volumes, and help you scale your application container images based on usage and workflows, Qumulo uses the CSI driver to connect the Kubernetes orchestrator to Qumulo persistent storage. (In comparison, for example, the <a href="https://github.com/kubernetes-csi/csi-driver-nfs">NFS CSI Driver for Kubernetes</a> requires unprivileged NFS access for dynamic volumes and doesn’t support volume sizing and expansion.)</p>
 
 <p>For general driver information, see the <a href="https://github.com/container-storage-interface/spec">Container Storage Interface (CSI) Specification</a>.</p>
 
@@ -2719,6 +2719,8 @@ $(document).ready(function() {
       </li>
       <li>
         <p><code class="language-plaintext highlighter-rouge">ReadWriteOncePod</code></p>
+
+        <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> The <code class="language-plaintext highlighter-rouge">ReadWriteOncePod</code> access mode requires Kubernetes 1.27 (and higher). Earlier Kubernetes versions reject this access mode when you create a Persistent Volume Claim.</div>
       </li>
     </ul>
   </li>
@@ -2753,24 +2755,38 @@ $(document).ready(function() {
 <p>This section explains how you can configure, provision, and mount Qumulo storage for each <em>Pod</em> (a logical wrapper for a container) on Kubernetes by using dynamic provisioning. This gives you more control over persistent volume capacity.</p>
 
 <h3 id="step-1-install-the-qumulo-csi-driver">Step 1: Install the Qumulo CSI Driver</h3>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note</b><br />
+<ul>
+  <li>The installation pulls the CSI driver's sidecar containers from <code>registry.k8s.io</code> and the CSI driver's container from <code>public.ecr.aws</code>. If a firewall, HTTP proxy, or private registry mirror limits the registries from which your Kubernetes nodes can pull images, allow both registries (or mirror the images into your private registry) before installing the CSI driver.</li>
+  <li>For information about upgrading an existing installation, see <a href="#upgrading-csi-driver">Upgrading the Qumulo CSI Driver</a>.</li>
+</ul>
+</div>
+
 <ol>
   <li>
     <p>Connect to a machine that has <code class="language-plaintext highlighter-rouge">kubectl</code> and can access your Kubernetes cluster.</p>
   </li>
   <li>
-    <p><a href="https://csi-driver-qumulo.s3.us-west-2.amazonaws.com/deploy_v1.1.1.zip">Download the <code class="language-plaintext highlighter-rouge">.zip</code> file</a> or use one of the following commands.</p>
+    <p><a href="https://csi-driver-qumulo.s3.us-west-2.amazonaws.com/deploy_v1.2.0.zip">Download the <code class="language-plaintext highlighter-rouge">.zip</code> file</a> or use one of the following commands.</p>
 
     <ul>
       <li>
-        <p>S3:</p>
+        <p><strong>S3</strong></p>
 
-        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>aws s3 <span class="nb">cp </span>s3://csi-driver-qumulo/deploy_v1.1.1.zip ./
+        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>aws s3 <span class="nb">cp </span>s3://csi-driver-qumulo/deploy_v1.2.0.zip ./
 </code></pre></div>        </div>
       </li>
       <li>
-        <p>HTTP:</p>
+        <p><strong>HTTP with <code class="language-plaintext highlighter-rouge">wget</code> (Linux)</strong></p>
 
-        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>wget https://csi-driver-qumulo.s3.us-west-2.amazonaws.com/deploy_v1.1.1.zip
+        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>wget https://csi-driver-qumulo.s3.us-west-2.amazonaws.com/deploy_v1.2.0.zip
+</code></pre></div>        </div>
+      </li>
+      <li>
+        <p><strong>HTTP with <code class="language-plaintext highlighter-rouge">curl</code> (macOS)</strong></p>
+
+        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-O</span> https://csi-driver-qumulo.s3.us-west-2.amazonaws.com/deploy_v1.2.0.zip
 </code></pre></div>        </div>
       </li>
     </ul>
@@ -2785,7 +2801,7 @@ $(document).ready(function() {
       <li>
         <p>Linux:</p>
 
-        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd </span>deploy_v1.1.1
+        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd </span>deploy_v1.2.0
 <span class="nb">chmod</span> +x install-driver.sh
 ./install-driver.sh
 </code></pre></div>        </div>
@@ -2793,13 +2809,13 @@ $(document).ready(function() {
       <li>
         <p>Windows:</p>
 
-        <div class="language-batch highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> <span class="kd">deploy_v1</span>.1.1
+        <div class="language-batch highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> <span class="kd">deploy_v1</span>.2.0
 <span class="kd">install</span><span class="na">-driver</span>.bat
 </code></pre></div>        </div>
       </li>
     </ul>
 
-    <p>The script configures Qumulo’s prebuilt Elastic Container Registry (ECR) image (from <code class="language-plaintext highlighter-rouge">public.ecr.aws/qumulo/csi-driver-qumulo:v1.1.1</code>) and installs it on your Kubernetes system.</p>
+    <p>The script configures Qumulo’s prebuilt Elastic Container Registry (ECR) image (from <code class="language-plaintext highlighter-rouge">public.ecr.aws/qumulo/csi-driver-qumulo:v1.2.0</code>) and installs it on your Kubernetes system.</p>
   </li>
 </ol>
 
@@ -2871,48 +2887,119 @@ $(document).ready(function() {
 <p>For more information, see <a href="../authorization-qumulo-core/managing-role-based-access-control-rbac.html">Role-Based Access Control (RBAC) with Qumulo Core</a> on Qumulo Care.</p>
 
 <h3 id="step-4-create-configure-secrets">Step 4: Create and Configure Secrets</h3>
-<p>To allow the CSI driver to operate with your Qumulo cluster, you must create and configure Secrets. You may use either Basic Authentication with a username and password, or an <a href="https://care.qumulo.com/hc/en-us/articles/360004600994">Access Token</a>. Depending on configuration, Basic Authentication may be disallowed and using an Access Token will be required.</p>
+<p>To allow the CSI driver to operate with your Qumulo cluster, you must create and configure Secrets. You can use one of the following methods:</p>
 
-<ol>
+<ul>
   <li>
-    <p>Configure one of the following authentication types.</p>
+    <p>Basic authentication with a username and password</p>
 
-    <ul>
-      <li>
-        <p>Basic Authentication:</p>
+    <p>For example:</p>
 
-        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubectl create secret generic cluster1-login <span class="se">\</span>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubectl create secret generic cluster1-login <span class="se">\</span>
   <span class="nt">--type</span><span class="o">=</span><span class="s2">"kubernetes.io/basic-auth"</span> <span class="se">\</span>
-  <span class="nt">--from-literal</span><span class="o">=</span><span class="nv">username</span><span class="o">=</span>bill <span class="se">\</span>
-  <span class="nt">--from-literal</span><span class="o">=</span><span class="nv">password</span><span class="o">=</span>SuperSecret <span class="se">\</span>
+  <span class="nt">--from-literal</span><span class="o">=</span><span class="nv">username</span><span class="o">=</span>myusername <span class="se">\</span>
+  <span class="nt">--from-literal</span><span class="o">=</span><span class="nv">password</span><span class="o">=</span>mypassword <span class="se">\</span>
   <span class="nt">--namespace</span><span class="o">=</span>kube-system
-</code></pre></div>        </div>
-      </li>
-      <li>
-        <p>Access Token:</p>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>A bearer token (or access token)</p>
 
-        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">TOKEN</span><span class="o">=</span><span class="s1">'access-v1:zNTc5D0zWTdNi/KsZo620fu71TweGh47u+S/5NbV...'</span>
+    <p>For example:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">TOKEN</span><span class="o">=</span><span class="s1">'access-v1:zNTc5D0zWTdNi/KsZo620fu71TweGh47u+S/5NbV...'</span>
 kubectl create secret generic cluster1-login <span class="se">\</span>
   <span class="nt">--from-literal</span><span class="o">=</span><span class="nv">access_token</span><span class="o">=</span><span class="s2">"</span><span class="nv">$TOKEN</span><span class="s2">"</span> <span class="se">\</span>
   <span class="nt">--namespace</span><span class="o">=</span>kube-system
-</code></pre></div>        </div>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <p>Give the CSI driver access to the Secrets. For example:</p>
-
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubectl create role access-secrets <span class="se">\</span>
-  <span class="nt">--verb</span><span class="o">=</span>get,list,watch <span class="se">\</span>
-  <span class="nt">--resource</span><span class="o">=</span>secrets <span class="se">\</span>
-  <span class="nt">--namespace</span> kube-system
-kubectl create rolebinding <span class="se">\</span>
-  <span class="nt">--role</span><span class="o">=</span>access-secrets default-to-secrets <span class="se">\</span>
-  <span class="nt">--serviceaccount</span><span class="o">=</span>kube-system:csi-qumulo-controller-sa <span class="se">\</span>
-  <span class="nt">--namespace</span> kube-system
 </code></pre></div>    </div>
+
+    <p>For more information, see <a href="../authentication-qumulo-core/creating-using-bearer-tokens-to-authenticate-qumulo-rest-api-calls.html">Creating and Using Bearer Tokens to Authenticate Qumulo REST API Calls</a>.</p>
   </li>
-</ol>
+</ul>
+
+<h3 id="configuring-the-csi-driver-to-verify-your-clusters-tls-certificate">Configuring the CSI Driver to Verify Your Cluster’s TLS Certificate</h3>
+<p>The CSI driver communicates with your Qumulo cluster by using the Qumulo REST API over HTTPS. By default, the CSI driver accepts any TLS certificate, including self-signed certificates, without verifying the identity of the cluster that presents it.</p>
+
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
+<ul>
+  <li>We strongly recommend configuring verification if your cluster's certificate allows it. Verifying your cluster's TLS certificate can help prevent someone from posing as your cluster in order to capture the CSI driver's credentials.</li>
+  <li>Before you configure verification for a storage class in use, confirm that your certificate is current.</li>
+  <li>When verification isn't configured, the CSI driver logs the informational warning <code>TLS certificate verification is DISABLED for the Qumulo cluster.</code> for each connection to your cluster.</li>
+  <li>When verification is configured, it uses strict rules: If your cluster's certificate is expired, or the certificate's name doesn't match the <code>server</code> value specified for your storage class, provisioning stops with an <code>x509</code> error until you correct the certificate or relax your verification.</li>
+</ul>
+</div>
+
+<p>To configure verification, add one of the following optional keys to the Secret that you created. The following table outlines the CSI driver’s behavior and key configuration process for each type of cluster certificate issuer.</p>
+
+<div class="alert alert-success" role="alert"><span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br /> If your storage class names different Secrets for provisioning and for expansion, add the keys to both Secrets.</div>
+
+<table>
+  <thead>
+    <tr>
+      <th style="width:29%;">Cluster Certificate Issuer</th>
+      <th style="width:19%;">CSI Driver Behavior</th>
+      <th>Key Configuration</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><p>Public CA</p></td>
+      <td><p>The CSI driver verifies the certificate against standard public CAs.</p></td>
+      <td>
+        <p>Set the <code>tls_insecure</code> key to <code>false</code>. For example:</p>
+        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubectl create secret generic cluster1-login <span class="se">\</span>
+  <span class="nt">--type</span><span class="o">=</span><span class="s2">"kubernetes.io/basic-auth"</span> <span class="se">\</span>
+  <span class="nt">--from-literal</span><span class="o">=</span><span class="nv">username</span><span class="o">=</span>myusername <span class="se">\</span>
+  <span class="nt">--from-literal</span><span class="o">=</span><span class="nv">password</span><span class="o">=</span>mypassword <span class="se">\</span>
+  <span class="nt">--from-literal</span><span class="o">=</span><span class="nv">tls_insecure</span><span class="o">=</span><span class="nb">false</span> <span class="se">\</span>
+  <span class="nt">--namespace</span><span class="o">=</span>kube-system
+</code></pre></div></div></td>
+    </tr>
+    <tr>
+      <td>
+        <p>Self-Signed or Your Organization's Internal CA</p>
+        <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Because a self-signed certificate provides the same protection as a certificate from a public certificate authority (CA), it isn’t necessary to replace a self-signed certificate to configure verification.</div>
+
+      </td>
+      <td><p>The CSI driver verifies the certificate against only the <code>.pem</code> bundle that you supply.</p></td>
+      <td>
+        <p>Specify the <code>.pem</code> certificate by using the <code>ca_cert</code> key.</p>
+        <p>If a certificate isn't available, you can retrieve it by using the <code>openssl</code> tool. For example:</p>
+        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>openssl s_client <span class="se">\</span>
+  <span class="nt">-connect</span> cluster.example.com:8000 <span class="se">\</span>
+  <span class="nt">-showcerts</span> &lt;/dev/null <span class="se">\</span>
+  2&gt;/dev/null | openssl x509 <span class="o">&gt;</span> cluster1-ca.pem</code></pre></div></div>
+        <p>When you create your Secret, specify a path to the certificate.</p>
+        <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
+        <ul>
+          <li>When you specify a <code>.pem</code> bundle for <code>ca_cert</code>, the CSI driver trusts only the specified bundle and rejects any certificates from a public CA that aren't included in the bundle.</li>
+          <li>Don't specify a value for <code>ca_cert</code> and set <code>tls_insecure</code> to <code>true</code> at the same time.</li>
+        </ul>
+        </div>
+        <p>For example:</p>
+        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubectl create secret generic cluster1-login <span class="se">\</span>
+  <span class="nt">--type</span><span class="o">=</span><span class="s2">"kubernetes.io/basic-auth"</span> <span class="se">\</span>
+  <span class="nt">--from-literal</span><span class="o">=</span><span class="nv">username</span><span class="o">=</span>myusername <span class="se">\</span>
+  <span class="nt">--from-literal</span><span class="o">=</span><span class="nv">password</span><span class="o">=</span>mypassword <span class="se">\</span>
+  <span class="nt">--from-file</span><span class="o">=</span><span class="nv">ca_cert</span><span class="o">=</span>cluster1-ca.pem <span class="se">\</span>
+  <span class="nt">--namespace</span><span class="o">=</span>kube-system
+</code></pre></div></div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>Any Issuer</p>
+        <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> The system retains the current behavior without a log warning.</div>
+
+      </td>
+      <td><p>The CSI driver skips verification and doesn't log the warning.</p></td>
+      <td>
+       <p>Set the <code>tls_insecure</code> key to <code>true</code>.</p>
+       <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />Don't specify a value for <code>ca_cert</code> and set <code>tls_insecure</code> to <code>true</code> at the same time.</div>
+      </td> 
+   </tr>
+  </tbody>
+</table>
 
 <h3 id="step-5-create-storage-class">Step 5: Create a Storage Class</h3>
 <p>To link your Kubernetes cluster to your Qumulo cluster, you must create a storage class on your Kubernetes cluster.</p>
@@ -3007,7 +3094,7 @@ kubectl create rolebinding <span class="se">\</span>
 </ol>
 
 <h3 id="step-6-create-a-persistent-volume-claim-pvc-and-apply-it-to-a-pod">Step 6: Create a Persistent Volume Claim (PVC) and Apply it to a Pod</h3>
-<p>To apply a PVC claim to a Pod dynamically, you must first configure and create it.</p>
+<p>To apply a PVC to a Pod dynamically, you must first configure and create it.</p>
 
 <ol>
   <li>
@@ -3028,14 +3115,14 @@ kubectl create rolebinding <span class="se">\</span>
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>Edit the configuration for your PVC claim.</p>
+    <p>Edit the configuration for your PVC.</p>
 
     <ol>
       <li>
         <p>Name your claim.</p>
       </li>
       <li>
-        <p>Change <code class="language-plaintext highlighter-rouge">storeClassName</code> to the name of your claim.</p>
+        <p>Change <code class="language-plaintext highlighter-rouge">storageClassName</code> to the name of your storage class.</p>
       </li>
       <li>
         <p>Specify the capacity in <code class="language-plaintext highlighter-rouge">spec.resources.requests.storage</code>. This parameter lets you create a quota on your Qumulo cluster.</p>
@@ -3069,12 +3156,86 @@ kubectl create rolebinding <span class="se">\</span>
           <span class="na">name</span><span class="pi">:</span> <span class="s">cluster1</span>
 </code></pre></div>    </div>
 
-    <div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> When the PVC is released, a tree-delete is initiated on the Qumulo cluster for the directory that the PVC indicates. To prevent this behavior, set <code class="language-plaintext highlighter-rouge">reclaimPolicy</code> to <code class="language-plaintext highlighter-rouge">Retain</code>.</div>
+    <div class="alert alert-warning" role="alert"><span class="alert-title"><span class="fa fa-warning"></span> <strong>Important</strong></span><br /> When the PVC is released, a tree-delete is initiated on the Qumulo cluster for the directory that the PVC indicates. To prevent this behavior, set <code class="language-plaintext highlighter-rouge">reclaimPolicy</code> to <code class="language-plaintext highlighter-rouge">Retain</code> in your <code class="language-plaintext highlighter-rouge">StorageClass</code> configuration.</div>
   </li>
   <li>
     <p>You can launch and use your container image.</p>
   </li>
 </ol>
+
+<h2 id="upgrading-csi-driver">Upgrading the Qumulo CSI Driver</h2>
+<p>To upgrade the CSI driver, you can install a new version without removing the previous installation.</p>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note</b><br />
+<ul>
+  <li>The upgrade doesn't require changing your existing storage classes, Persistent Volume Claims, or Secrets and doesn't disrupt any running workloads.</li>
+  <li>The CSI driver's components restart one at a time and any volumes that are already mounted remain mounted, readable, and writable throughout the upgrade.</li>
+  <li>The process pauses new volume creation for a few seconds while the CSI driver's controller restarts.</li>
+</ul>
+</div>
+
+<h3 id="prerequisites">Prerequisites</h3>
+<p>Before you begin, confirm that your Kubernetes nodes can pull images from <code class="language-plaintext highlighter-rouge">registry.k8s.io</code>.</p>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note</b><br />
+<ul>   
+  <li>Driver versions 1.2.0 (and higher) pull their sidecar containers from <code>registry.k8s.io</code>. If a firewall, HTTP proxy, or private registry mirror limits the registries from which your Kubernetes nodes can pull images, allow both registries (or mirror the images into your private registry) before installing the CSI driver.</li>
+  <li>If the registry is unreachable, the new driver Pods remain in the <code>ImagePullBackOff</code> state until it becomes reachable and the previous driver version continues to run.</li>
+</ul>
+</div>
+
+<h3 id="to-upgrade-the-qumulo-csi-driver">To Upgrade the Qumulo CSI Driver</h3>
+<ol>
+  <li>
+    <p><a href="https://csi-driver-qumulo.s3.us-west-2.amazonaws.com/deploy_v1.2.0.zip">Download the <code class="language-plaintext highlighter-rouge">.zip</code> file</a> for the new driver version and extract its contents.</p>
+  </li>
+  <li>
+    <p>Run the installation script.</p>
+
+    <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
+<ul>
+  <li>The script applies four manifests, including the CSI driver's role-based access control (RBAC) configuration.</li>
+  <li>Updating only the container image references leaves the previous permissions in place and can prevent volume provisioning.</li>
+  <li>If the CSI driver can't read Secrets, ensure that the current CSI driver's RBAC manifest has been applied and isn't being overridden by an older manifest.</li>
+</ul>
+</div>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd </span>deploy_v1.2.0
+<span class="nb">chmod</span> +x install-driver.sh
+./install-driver.sh
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>(Optional) To monitor the installation process, run the following commands.</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubectl <span class="nt">-n</span> kube-system rollout status <span class="se">\</span>
+  deployment/csi-qumulo-controller
+
+kubectl <span class="nt">-n</span> kube-system rollout status <span class="se">\</span>
+  daemonset/csi-qumulo-node
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>To verify the upgrade, create a test Persistent Volume Claim against one of your storage classes, confirm that it reaches the <code class="language-plaintext highlighter-rouge">Bound</code> state, and then delete it.</p>
+
+    <p>Any <code class="language-plaintext highlighter-rouge">ReadWriteOncePod</code> claims that an earlier driver version left in the <code class="language-plaintext highlighter-rouge">Pending</code> state complete automatically after the upgrade.</p>
+  </li>
+  <li>
+    <p>(Optional) If you created the <code class="language-plaintext highlighter-rouge">access-secrets</code> role and the <code class="language-plaintext highlighter-rouge">default-to-secrets</code> role binding while <a href="#step-4-create-configure-secrets">creating and configuring Secrets</a> for an earlier version of the CSI driver, you may remove them. Version 1.2.0 (and higher) grants this access within the CSI driver’s own RBAC configuration.</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubectl delete rolebinding <span class="se">\</span>
+  default-to-secrets <span class="nt">--namespace</span> kube-system
+
+kubectl delete role <span class="se">\</span>
+  access-secrets <span class="nt">--namespace</span> kube-system
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<p>To roll back to the previous driver version, run <code class="language-plaintext highlighter-rouge">install-driver.sh</code> from the previous version’s deployment files.</p>
+
+<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> The additional permissions that version 1.2.0 grants are backwards-compatible with earlier versions.</div>
+
 
    
 
