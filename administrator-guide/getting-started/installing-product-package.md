@@ -137,7 +137,7 @@ Before configuring your host operating system (OS) for installing the Qumulo Cor
 {{site.data.alerts.tip}}
 <ul>
   <li>Use the latest, official image available for your Linux distribution on the distribution's website or cloud marketplace.</li>
-  <li>In Qumulo Core releases lower than 7.8.0.4, the default networking mode is Qumulo-Managed Networking. To run the installation with Host-Managed Networking, set the <code>QUMULO_NETWORK_MANAGED_BY_HOST</code> environment variable to <code>true</code>.</li>
+  <li>In Qumulo Core versions lower than 7.8.0.4, the default networking mode is Qumulo-Managed Networking. To run the installation with Host-Managed Networking, set the <code>QUMULO_NETWORK_MANAGED_BY_HOST</code> environment variable to <code>true</code>.</li>
   <li>To avoid the <code>Download is performed unsandboxed as root</code> notice, run <code>qumulo-core.deb</code> from the <code>/tmp</code> directory.</li>
 </ul>
 {{site.data.alerts.end}}
