@@ -54,6 +54,7 @@ C-192T
 C-432T
 C-432T
 C-72T
+CAs
 CBM
 CCM
 CDF
@@ -170,6 +171,7 @@ IPv6
 ISOHybrid
 IdP
 Illumio
+ImagePullBackOff
 Imager
 Infoblox
 Isilon
@@ -402,6 +404,7 @@ Webhook
 Webhooks
 Win32
 Wireshark
+X.509
 XPP
 XSS
 XXVD
@@ -493,6 +496,7 @@ reregister
 restriper
 retransferred
 reuploading
+rollout
 routable
 rsyslog
 saml
