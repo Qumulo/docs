@@ -34,12 +34,8 @@ entries:
       url: /administrator-guide/
       output: web
 
-    - title: Qumulo-Certified Platinum-Tier Hardware Servicing Guide
-      url: /hardware-guide/
-      output: web
-
-    - title: Gold-Tier Hardware Servicing Guide for Qumulo
-      url: /gold-tier-hardware-servicing-guide/
+    - title: Qumulo Hardware Servicing Guide
+      url: https://docs.qumulo.com/hardware-guide/
       output: web
 
     - title: Qumulo qq CLI Command Guide
