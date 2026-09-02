@@ -813,6 +813,24 @@ entries:
     - output: web,pdf
       title: object_bridge_create
       url: /qq-cli-command-guide/object/object_bridge_create.html
+    - output: web,pdf
+      title: object_bridge_delete
+      url: /qq-cli-command-guide/object/object_bridge_delete.html
+    - output: web,pdf
+      title: object_bridge_export_job_run
+      url: /qq-cli-command-guide/object/object_bridge_export_job_run.html
+    - output: web,pdf
+      title: object_bridge_export_rule_create
+      url: /qq-cli-command-guide/object/object_bridge_export_rule_create.html
+    - output: web,pdf
+      title: object_bridge_export_rule_delete
+      url: /qq-cli-command-guide/object/object_bridge_export_rule_delete.html
+    - output: web,pdf
+      title: object_bridge_export_rule_get
+      url: /qq-cli-command-guide/object/object_bridge_export_rule_get.html
+    - output: web,pdf
+      title: object_bridge_export_rule_list
+      url: /qq-cli-command-guide/object/object_bridge_export_rule_list.html
     output: web,pdf
     title: object
     url: /qq-cli-command-guide/object/

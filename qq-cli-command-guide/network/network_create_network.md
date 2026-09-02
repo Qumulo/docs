@@ -27,8 +27,8 @@ summary: This section explains how to use the <code>qq network_create_network</c
   command.
 synopsis: Add a network to the cluster-wide network config.
 title: qq network_create_network
-usage: qq network_create_network [-h] --network-id NETWORK_ID --name NAME [--tenant-id
-  TENANT_ID] {host_managed,dhcp,static} ...
+usage: "qq network_create_network [-h] --network-id NETWORK_ID --name NAME [--tenant-id\
+  \ TENANT_ID]\n    {host_managed,dhcp,static} ..."
 zendesk_source: qq CLI Command Guide
 
 ---

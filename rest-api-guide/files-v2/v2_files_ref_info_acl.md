@@ -15,12 +15,11 @@ methods:
       required: false
     response_body:
       schema: "{\n  \"description\": \"api_files_acl_v2\",\n  \"type\": \"object\"\
-        ,\n  \"properties\": {\n    \"control\": {\n      \"description\": \"control\"\
-        ,\n      \"type\": \"array\",\n      \"items\": {\n        \"type\": \"string\"\
-        ,\n        \"enum\": [\n          \"PRESENT\",\n          \"DEFAULTED\",\n\
-        \          \"TRUSTED\",\n          \"AUTO_INHERIT\",\n          \"PROTECTED\"\
-        ,\n          \"ALL\"\n        ],\n        \"description\": \"control:\\n *\
-        \ `ALL` - All ACL controls,\\n * `AUTO_INHERIT` - Set whether the ACL was\
+        ,\n  \"properties\": {\n    \"control\": {\n      \"type\": \"array\",\n \
+        \     \"items\": {\n        \"type\": \"string\",\n        \"enum\": [\n \
+        \         \"PRESENT\",\n          \"DEFAULTED\",\n          \"TRUSTED\",\n\
+        \          \"AUTO_INHERIT\",\n          \"PROTECTED\"\n        ],\n      \
+        \  \"description\": \"control:\\n * `AUTO_INHERIT` - Set whether the ACL was\
         \ created through inheritance,\\n * `DEFAULTED` - Sets whether the ACL was\
         \ established by default means,\\n * `PRESENT` - Set when ACL is present on\
         \ the object,\\n * `PROTECTED` - Protects ACL from inherit operations,\\n\
@@ -37,16 +36,15 @@ methods:
         \     \"DENIED\"\n            ],\n            \"description\": \"Type of this\
         \ ACL entry:\\n * `ALLOWED` - An ACL entry that grants rights,\\n * `DENIED`\
         \ - An ACL entry that denies rights\"\n          },\n          \"flags\":\
-        \ {\n            \"description\": \"ACE flags for this ACL entry\",\n    \
-        \        \"type\": \"array\",\n            \"items\": {\n              \"\
-        type\": \"string\",\n              \"enum\": [\n                \"OBJECT_INHERIT\"\
-        ,\n                \"CONTAINER_INHERIT\",\n                \"NO_PROPAGATE_INHERIT\"\
-        ,\n                \"INHERIT_ONLY\",\n                \"INHERITED\",\n   \
-        \             \"ALL\"\n              ],\n              \"description\": \"\
-        ACE flags for this ACL entry:\\n * `ALL` - All ACE flags,\\n * `CONTAINER_INHERIT`\
-        \ - Children that are containers inherit as effective ACE,\\n * `INHERITED`\
-        \ - Indicates the ACE was inherited,\\n * `INHERIT_ONLY` - Indicates an inherit-only\
-        \ ACE that doesn't control access to the attached object,\\n * `NO_PROPAGATE_INHERIT`\
+        \ {\n            \"type\": \"array\",\n            \"items\": {\n        \
+        \      \"type\": \"string\",\n              \"enum\": [\n                \"\
+        OBJECT_INHERIT\",\n                \"CONTAINER_INHERIT\",\n              \
+        \  \"NO_PROPAGATE_INHERIT\",\n                \"INHERIT_ONLY\",\n        \
+        \        \"INHERITED\"\n              ],\n              \"description\": \"\
+        ACE flags for this ACL entry:\\n * `CONTAINER_INHERIT` - Children that are\
+        \ containers inherit as effective ACE,\\n * `INHERITED` - Indicates the ACE\
+        \ was inherited,\\n * `INHERIT_ONLY` - Indicates an inherit-only ACE that\
+        \ doesn't control access to the attached object,\\n * `NO_PROPAGATE_INHERIT`\
         \ - Prevent subsequent children from inheriting ACE,\\n * `OBJECT_INHERIT`\
         \ - Non-container children inherit as effective ACE. Container objects inherit\
         \ as inherit-only ACE\"\n            }\n          },\n          \"trustee\"\
@@ -76,40 +74,36 @@ methods:
         \    \"type\": \"string\"\n              },\n              \"name\": {\n \
         \               \"description\": \"name\",\n                \"type\": \"string\"\
         \n              }\n            }\n          },\n          \"rights\": {\n\
-        \            \"description\": \"Rights granted or denied for this ACL entry\"\
-        ,\n            \"type\": \"array\",\n            \"items\": {\n          \
-        \    \"type\": \"string\",\n              \"enum\": [\n                \"\
-        READ\",\n                \"READ_EA\",\n                \"READ_ATTR\",\n  \
-        \              \"READ_ACL\",\n                \"WRITE_EA\",\n            \
-        \    \"WRITE_ATTR\",\n                \"WRITE_ACL\",\n                \"CHANGE_OWNER\"\
+        \            \"type\": \"array\",\n            \"items\": {\n            \
+        \  \"type\": \"string\",\n              \"enum\": [\n                \"READ\"\
+        ,\n                \"READ_EA\",\n                \"READ_ATTR\",\n        \
+        \        \"READ_ACL\",\n                \"WRITE_EA\",\n                \"\
+        WRITE_ATTR\",\n                \"WRITE_ACL\",\n                \"CHANGE_OWNER\"\
         ,\n                \"WRITE_GROUP\",\n                \"DELETE\",\n       \
         \         \"EXECUTE\",\n                \"MODIFY\",\n                \"EXTEND\"\
-        ,\n                \"ADD_FILE\",\n                \"ADD_SUBDIR\",\n      \
-        \          \"DELETE_CHILD\",\n                \"SYNCHRONIZE\",\n         \
-        \       \"ALL\"\n              ],\n              \"description\": \"Rights\
-        \ granted or denied for this ACL entry:\\n * `ADD_FILE` - File creation access,\\\
-        n * `ADD_SUBDIR` - Directory creation access,\\n * `ALL` - All access rights,\\\
-        n * `CHANGE_OWNER` - Owner write access,\\n * `DELETE` - Delete access,\\\
-        n * `DELETE_CHILD` - Delete from directory access,\\n * `EXECUTE` - Execute\
-        \ access,\\n * `EXTEND` - File extension access,\\n * `MODIFY` - File modification\
-        \ access,\\n * `READ` - File read access,\\n * `READ_ACL` - ACL read access,\\\
-        n * `READ_ATTR` - Attribute read access,\\n * `READ_EA` - Extended attribute\
-        \ read access,\\n * `SYNCHRONIZE` - File synchronize access,\\n * `WRITE_ACL`\
-        \ - ACL write access,\\n * `WRITE_ATTR` - Attribute write access,\\n * `WRITE_EA`\
-        \ - Extended attribute write access,\\n * `WRITE_GROUP` - Group write access\"\
-        \n            }\n          }\n        }\n      }\n    }\n  }\n}"
+        ,\n                \"DELETE_CHILD\",\n                \"SYNCHRONIZE\"\n  \
+        \            ],\n              \"description\": \"Rights granted or denied\
+        \ for this ACL entry:\\n * `CHANGE_OWNER` - Owner write access,\\n * `DELETE`\
+        \ - Delete access,\\n * `DELETE_CHILD` - Delete from directory access,\\n\
+        \ * `EXECUTE` - Execute access,\\n * `EXTEND` - File extension access,\\n\
+        \ * `MODIFY` - File modification access,\\n * `READ` - File read access,\\\
+        n * `READ_ACL` - ACL read access,\\n * `READ_ATTR` - Attribute read access,\\\
+        n * `READ_EA` - Extended attribute read access,\\n * `SYNCHRONIZE` - File\
+        \ synchronize access,\\n * `WRITE_ACL` - ACL write access,\\n * `WRITE_ATTR`\
+        \ - Attribute write access,\\n * `WRITE_EA` - Extended attribute write access,\\\
+        n * `WRITE_GROUP` - Group write access\"\n            }\n          }\n   \
+        \     }\n      }\n    }\n  }\n}"
     responses:
     - code: '200'
       description: Return value on success
     preview: false
     request_body:
       schema: "{\n  \"description\": \"api_files_acl_v2\",\n  \"type\": \"object\"\
-        ,\n  \"properties\": {\n    \"control\": {\n      \"description\": \"control\"\
-        ,\n      \"type\": \"array\",\n      \"items\": {\n        \"type\": \"string\"\
-        ,\n        \"enum\": [\n          \"PRESENT\",\n          \"DEFAULTED\",\n\
-        \          \"TRUSTED\",\n          \"AUTO_INHERIT\",\n          \"PROTECTED\"\
-        ,\n          \"ALL\"\n        ],\n        \"description\": \"control:\\n *\
-        \ `ALL` - All ACL controls,\\n * `AUTO_INHERIT` - Set whether the ACL was\
+        ,\n  \"properties\": {\n    \"control\": {\n      \"type\": \"array\",\n \
+        \     \"items\": {\n        \"type\": \"string\",\n        \"enum\": [\n \
+        \         \"PRESENT\",\n          \"DEFAULTED\",\n          \"TRUSTED\",\n\
+        \          \"AUTO_INHERIT\",\n          \"PROTECTED\"\n        ],\n      \
+        \  \"description\": \"control:\\n * `AUTO_INHERIT` - Set whether the ACL was\
         \ created through inheritance,\\n * `DEFAULTED` - Sets whether the ACL was\
         \ established by default means,\\n * `PRESENT` - Set when ACL is present on\
         \ the object,\\n * `PROTECTED` - Protects ACL from inherit operations,\\n\
@@ -126,16 +120,15 @@ methods:
         \     \"DENIED\"\n            ],\n            \"description\": \"Type of this\
         \ ACL entry:\\n * `ALLOWED` - An ACL entry that grants rights,\\n * `DENIED`\
         \ - An ACL entry that denies rights\"\n          },\n          \"flags\":\
-        \ {\n            \"description\": \"ACE flags for this ACL entry\",\n    \
-        \        \"type\": \"array\",\n            \"items\": {\n              \"\
-        type\": \"string\",\n              \"enum\": [\n                \"OBJECT_INHERIT\"\
-        ,\n                \"CONTAINER_INHERIT\",\n                \"NO_PROPAGATE_INHERIT\"\
-        ,\n                \"INHERIT_ONLY\",\n                \"INHERITED\",\n   \
-        \             \"ALL\"\n              ],\n              \"description\": \"\
-        ACE flags for this ACL entry:\\n * `ALL` - All ACE flags,\\n * `CONTAINER_INHERIT`\
-        \ - Children that are containers inherit as effective ACE,\\n * `INHERITED`\
-        \ - Indicates the ACE was inherited,\\n * `INHERIT_ONLY` - Indicates an inherit-only\
-        \ ACE that doesn't control access to the attached object,\\n * `NO_PROPAGATE_INHERIT`\
+        \ {\n            \"type\": \"array\",\n            \"items\": {\n        \
+        \      \"type\": \"string\",\n              \"enum\": [\n                \"\
+        OBJECT_INHERIT\",\n                \"CONTAINER_INHERIT\",\n              \
+        \  \"NO_PROPAGATE_INHERIT\",\n                \"INHERIT_ONLY\",\n        \
+        \        \"INHERITED\"\n              ],\n              \"description\": \"\
+        ACE flags for this ACL entry:\\n * `CONTAINER_INHERIT` - Children that are\
+        \ containers inherit as effective ACE,\\n * `INHERITED` - Indicates the ACE\
+        \ was inherited,\\n * `INHERIT_ONLY` - Indicates an inherit-only ACE that\
+        \ doesn't control access to the attached object,\\n * `NO_PROPAGATE_INHERIT`\
         \ - Prevent subsequent children from inheriting ACE,\\n * `OBJECT_INHERIT`\
         \ - Non-container children inherit as effective ACE. Container objects inherit\
         \ as inherit-only ACE\"\n            }\n          },\n          \"trustee\"\
@@ -165,28 +158,25 @@ methods:
         \    \"type\": \"string\"\n              },\n              \"name\": {\n \
         \               \"description\": \"name\",\n                \"type\": \"string\"\
         \n              }\n            }\n          },\n          \"rights\": {\n\
-        \            \"description\": \"Rights granted or denied for this ACL entry\"\
-        ,\n            \"type\": \"array\",\n            \"items\": {\n          \
-        \    \"type\": \"string\",\n              \"enum\": [\n                \"\
-        READ\",\n                \"READ_EA\",\n                \"READ_ATTR\",\n  \
-        \              \"READ_ACL\",\n                \"WRITE_EA\",\n            \
-        \    \"WRITE_ATTR\",\n                \"WRITE_ACL\",\n                \"CHANGE_OWNER\"\
+        \            \"type\": \"array\",\n            \"items\": {\n            \
+        \  \"type\": \"string\",\n              \"enum\": [\n                \"READ\"\
+        ,\n                \"READ_EA\",\n                \"READ_ATTR\",\n        \
+        \        \"READ_ACL\",\n                \"WRITE_EA\",\n                \"\
+        WRITE_ATTR\",\n                \"WRITE_ACL\",\n                \"CHANGE_OWNER\"\
         ,\n                \"WRITE_GROUP\",\n                \"DELETE\",\n       \
         \         \"EXECUTE\",\n                \"MODIFY\",\n                \"EXTEND\"\
-        ,\n                \"ADD_FILE\",\n                \"ADD_SUBDIR\",\n      \
-        \          \"DELETE_CHILD\",\n                \"SYNCHRONIZE\",\n         \
-        \       \"ALL\"\n              ],\n              \"description\": \"Rights\
-        \ granted or denied for this ACL entry:\\n * `ADD_FILE` - File creation access,\\\
-        n * `ADD_SUBDIR` - Directory creation access,\\n * `ALL` - All access rights,\\\
-        n * `CHANGE_OWNER` - Owner write access,\\n * `DELETE` - Delete access,\\\
-        n * `DELETE_CHILD` - Delete from directory access,\\n * `EXECUTE` - Execute\
-        \ access,\\n * `EXTEND` - File extension access,\\n * `MODIFY` - File modification\
-        \ access,\\n * `READ` - File read access,\\n * `READ_ACL` - ACL read access,\\\
-        n * `READ_ATTR` - Attribute read access,\\n * `READ_EA` - Extended attribute\
-        \ read access,\\n * `SYNCHRONIZE` - File synchronize access,\\n * `WRITE_ACL`\
-        \ - ACL write access,\\n * `WRITE_ATTR` - Attribute write access,\\n * `WRITE_EA`\
-        \ - Extended attribute write access,\\n * `WRITE_GROUP` - Group write access\"\
-        \n            }\n          }\n        }\n      }\n    }\n  }\n}"
+        ,\n                \"DELETE_CHILD\",\n                \"SYNCHRONIZE\"\n  \
+        \            ],\n              \"description\": \"Rights granted or denied\
+        \ for this ACL entry:\\n * `CHANGE_OWNER` - Owner write access,\\n * `DELETE`\
+        \ - Delete access,\\n * `DELETE_CHILD` - Delete from directory access,\\n\
+        \ * `EXECUTE` - Execute access,\\n * `EXTEND` - File extension access,\\n\
+        \ * `MODIFY` - File modification access,\\n * `READ` - File read access,\\\
+        n * `READ_ACL` - ACL read access,\\n * `READ_ATTR` - Attribute read access,\\\
+        n * `READ_EA` - Extended attribute read access,\\n * `SYNCHRONIZE` - File\
+        \ synchronize access,\\n * `WRITE_ACL` - ACL write access,\\n * `WRITE_ATTR`\
+        \ - Attribute write access,\\n * `WRITE_EA` - Extended attribute write access,\\\
+        n * `WRITE_GROUP` - Group write access\"\n            }\n          }\n   \
+        \     }\n      }\n    }\n  }\n}"
   get:
     summary: Get file access control list (ACL).
     parameters:
@@ -202,12 +192,11 @@ methods:
       required: false
     response_body:
       schema: "{\n  \"description\": \"api_files_acl_v2\",\n  \"type\": \"object\"\
-        ,\n  \"properties\": {\n    \"control\": {\n      \"description\": \"control\"\
-        ,\n      \"type\": \"array\",\n      \"items\": {\n        \"type\": \"string\"\
-        ,\n        \"enum\": [\n          \"PRESENT\",\n          \"DEFAULTED\",\n\
-        \          \"TRUSTED\",\n          \"AUTO_INHERIT\",\n          \"PROTECTED\"\
-        ,\n          \"ALL\"\n        ],\n        \"description\": \"control:\\n *\
-        \ `ALL` - All ACL controls,\\n * `AUTO_INHERIT` - Set whether the ACL was\
+        ,\n  \"properties\": {\n    \"control\": {\n      \"type\": \"array\",\n \
+        \     \"items\": {\n        \"type\": \"string\",\n        \"enum\": [\n \
+        \         \"PRESENT\",\n          \"DEFAULTED\",\n          \"TRUSTED\",\n\
+        \          \"AUTO_INHERIT\",\n          \"PROTECTED\"\n        ],\n      \
+        \  \"description\": \"control:\\n * `AUTO_INHERIT` - Set whether the ACL was\
         \ created through inheritance,\\n * `DEFAULTED` - Sets whether the ACL was\
         \ established by default means,\\n * `PRESENT` - Set when ACL is present on\
         \ the object,\\n * `PROTECTED` - Protects ACL from inherit operations,\\n\
@@ -224,16 +213,15 @@ methods:
         \     \"DENIED\"\n            ],\n            \"description\": \"Type of this\
         \ ACL entry:\\n * `ALLOWED` - An ACL entry that grants rights,\\n * `DENIED`\
         \ - An ACL entry that denies rights\"\n          },\n          \"flags\":\
-        \ {\n            \"description\": \"ACE flags for this ACL entry\",\n    \
-        \        \"type\": \"array\",\n            \"items\": {\n              \"\
-        type\": \"string\",\n              \"enum\": [\n                \"OBJECT_INHERIT\"\
-        ,\n                \"CONTAINER_INHERIT\",\n                \"NO_PROPAGATE_INHERIT\"\
-        ,\n                \"INHERIT_ONLY\",\n                \"INHERITED\",\n   \
-        \             \"ALL\"\n              ],\n              \"description\": \"\
-        ACE flags for this ACL entry:\\n * `ALL` - All ACE flags,\\n * `CONTAINER_INHERIT`\
-        \ - Children that are containers inherit as effective ACE,\\n * `INHERITED`\
-        \ - Indicates the ACE was inherited,\\n * `INHERIT_ONLY` - Indicates an inherit-only\
-        \ ACE that doesn't control access to the attached object,\\n * `NO_PROPAGATE_INHERIT`\
+        \ {\n            \"type\": \"array\",\n            \"items\": {\n        \
+        \      \"type\": \"string\",\n              \"enum\": [\n                \"\
+        OBJECT_INHERIT\",\n                \"CONTAINER_INHERIT\",\n              \
+        \  \"NO_PROPAGATE_INHERIT\",\n                \"INHERIT_ONLY\",\n        \
+        \        \"INHERITED\"\n              ],\n              \"description\": \"\
+        ACE flags for this ACL entry:\\n * `CONTAINER_INHERIT` - Children that are\
+        \ containers inherit as effective ACE,\\n * `INHERITED` - Indicates the ACE\
+        \ was inherited,\\n * `INHERIT_ONLY` - Indicates an inherit-only ACE that\
+        \ doesn't control access to the attached object,\\n * `NO_PROPAGATE_INHERIT`\
         \ - Prevent subsequent children from inheriting ACE,\\n * `OBJECT_INHERIT`\
         \ - Non-container children inherit as effective ACE. Container objects inherit\
         \ as inherit-only ACE\"\n            }\n          },\n          \"trustee\"\
@@ -263,28 +251,25 @@ methods:
         \    \"type\": \"string\"\n              },\n              \"name\": {\n \
         \               \"description\": \"name\",\n                \"type\": \"string\"\
         \n              }\n            }\n          },\n          \"rights\": {\n\
-        \            \"description\": \"Rights granted or denied for this ACL entry\"\
-        ,\n            \"type\": \"array\",\n            \"items\": {\n          \
-        \    \"type\": \"string\",\n              \"enum\": [\n                \"\
-        READ\",\n                \"READ_EA\",\n                \"READ_ATTR\",\n  \
-        \              \"READ_ACL\",\n                \"WRITE_EA\",\n            \
-        \    \"WRITE_ATTR\",\n                \"WRITE_ACL\",\n                \"CHANGE_OWNER\"\
+        \            \"type\": \"array\",\n            \"items\": {\n            \
+        \  \"type\": \"string\",\n              \"enum\": [\n                \"READ\"\
+        ,\n                \"READ_EA\",\n                \"READ_ATTR\",\n        \
+        \        \"READ_ACL\",\n                \"WRITE_EA\",\n                \"\
+        WRITE_ATTR\",\n                \"WRITE_ACL\",\n                \"CHANGE_OWNER\"\
         ,\n                \"WRITE_GROUP\",\n                \"DELETE\",\n       \
         \         \"EXECUTE\",\n                \"MODIFY\",\n                \"EXTEND\"\
-        ,\n                \"ADD_FILE\",\n                \"ADD_SUBDIR\",\n      \
-        \          \"DELETE_CHILD\",\n                \"SYNCHRONIZE\",\n         \
-        \       \"ALL\"\n              ],\n              \"description\": \"Rights\
-        \ granted or denied for this ACL entry:\\n * `ADD_FILE` - File creation access,\\\
-        n * `ADD_SUBDIR` - Directory creation access,\\n * `ALL` - All access rights,\\\
-        n * `CHANGE_OWNER` - Owner write access,\\n * `DELETE` - Delete access,\\\
-        n * `DELETE_CHILD` - Delete from directory access,\\n * `EXECUTE` - Execute\
-        \ access,\\n * `EXTEND` - File extension access,\\n * `MODIFY` - File modification\
-        \ access,\\n * `READ` - File read access,\\n * `READ_ACL` - ACL read access,\\\
-        n * `READ_ATTR` - Attribute read access,\\n * `READ_EA` - Extended attribute\
-        \ read access,\\n * `SYNCHRONIZE` - File synchronize access,\\n * `WRITE_ACL`\
-        \ - ACL write access,\\n * `WRITE_ATTR` - Attribute write access,\\n * `WRITE_EA`\
-        \ - Extended attribute write access,\\n * `WRITE_GROUP` - Group write access\"\
-        \n            }\n          }\n        }\n      }\n    }\n  }\n}"
+        ,\n                \"DELETE_CHILD\",\n                \"SYNCHRONIZE\"\n  \
+        \            ],\n              \"description\": \"Rights granted or denied\
+        \ for this ACL entry:\\n * `CHANGE_OWNER` - Owner write access,\\n * `DELETE`\
+        \ - Delete access,\\n * `DELETE_CHILD` - Delete from directory access,\\n\
+        \ * `EXECUTE` - Execute access,\\n * `EXTEND` - File extension access,\\n\
+        \ * `MODIFY` - File modification access,\\n * `READ` - File read access,\\\
+        n * `READ_ACL` - ACL read access,\\n * `READ_ATTR` - Attribute read access,\\\
+        n * `READ_EA` - Extended attribute read access,\\n * `SYNCHRONIZE` - File\
+        \ synchronize access,\\n * `WRITE_ACL` - ACL write access,\\n * `WRITE_ATTR`\
+        \ - Attribute write access,\\n * `WRITE_EA` - Extended attribute write access,\\\
+        n * `WRITE_GROUP` - Group write access\"\n            }\n          }\n   \
+        \     }\n      }\n    }\n  }\n}"
     responses:
     - code: '200'
       description: Return value on success

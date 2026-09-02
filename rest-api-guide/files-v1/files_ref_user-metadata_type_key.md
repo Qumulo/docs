@@ -23,10 +23,9 @@ methods:
       required: false
     response_body:
       schema: "{\n  \"description\": \"api_files_user_metadata_value\",\n  \"type\"\
-        : \"object\",\n  \"properties\": {\n    \"value\": {\n      \"type\": \"array\"\
-        ,\n      \"items\": {\n        \"description\": \"The bytes that represent\
-        \ the Base64-encoded value of the user-defined metadata entry.\",\n      \
-        \  \"type\": \"number\"\n      }\n    }\n  }\n}"
+        : \"object\",\n  \"properties\": {\n    \"value\": {\n      \"description\"\
+        : \"The Base64-encoded value of the user-defined metadata entry.\",\n    \
+        \  \"type\": \"string\"\n    }\n  }\n}"
     responses:
     - code: '200'
       description: Return value on success
@@ -81,10 +80,9 @@ methods:
     preview: false
     request_body:
       schema: "{\n  \"description\": \"api_files_user_metadata_value\",\n  \"type\"\
-        : \"object\",\n  \"properties\": {\n    \"value\": {\n      \"type\": \"array\"\
-        ,\n      \"items\": {\n        \"description\": \"The bytes that represent\
-        \ the Base64-encoded value of the user-defined metadata entry.\",\n      \
-        \  \"type\": \"number\"\n      }\n    }\n  }\n}"
+        : \"object\",\n  \"properties\": {\n    \"value\": {\n      \"description\"\
+        : \"The Base64-encoded value of the user-defined metadata entry.\",\n    \
+        \  \"type\": \"string\"\n    }\n  }\n}"
   post:
     summary: Add a user-defined metadata value to the current file by using the specified
       key and user-defined metadata type.
@@ -111,10 +109,9 @@ methods:
     preview: false
     request_body:
       schema: "{\n  \"description\": \"api_files_user_metadata_value\",\n  \"type\"\
-        : \"object\",\n  \"properties\": {\n    \"value\": {\n      \"type\": \"array\"\
-        ,\n      \"items\": {\n        \"description\": \"The bytes that represent\
-        \ the Base64-encoded value of the user-defined metadata entry.\",\n      \
-        \  \"type\": \"number\"\n      }\n    }\n  }\n}"
+        : \"object\",\n  \"properties\": {\n    \"value\": {\n      \"description\"\
+        : \"The Base64-encoded value of the user-defined metadata entry.\",\n    \
+        \  \"type\": \"string\"\n    }\n  }\n}"
 rest_endpoint: /v1/files/{ref}/user-metadata/{type}/{key}
 api_version: v1
 permalink: /rest-api-guide/files-v1/files_ref_user-metadata_type_key.html
