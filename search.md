@@ -4,6 +4,7 @@ permalink: search.html
 breadcrumbs: exclude
 search: exclude
 toc: false
+hideSidebar: true
 vectaraScripts: true
 ---
 

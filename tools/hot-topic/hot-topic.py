@@ -1,11 +1,13 @@
 from google.analytics.data_v1beta import BetaAnalyticsDataClient
 from google.analytics.data_v1beta.types import DateRange, Dimension, Metric, RunReportRequest
 from google.oauth2 import service_account
+from urllib.parse import urljoin
 import re
 
 KEY_FILE_LOCATION = '/app/hot-topic-key.json'
 PROPERTY_ID = '282075494'
 README_PATH = '/app/index.md'
+BASE_URL = 'https://docs.qumulo.com'  # Replace with your domain if different
 
 def initialize_analytics_reporting():
     credentials = service_account.Credentials.from_service_account_file(KEY_FILE_LOCATION)
@@ -61,12 +63,16 @@ def generate_markdown(filtered_rows):
             continue
         seen_paths.add(page_path) # Mark pagePath as seen 
 
-        if dimensions[1].value == "Qumulo Documentation Portal" or dimensions[1].value == "Qumulo Documentation":
+        if dimensions[1].value in ["Qumulo Documentation Portal", "Qumulo Documentation"]:
             page_title = "Qumulo Documentation Portal Home"
         else:
             page_title = dimensions[1].value.replace(" | Qumulo Documentation Portal", "").replace(" | Qumulo Documentation", "")
-        # Build Markdown-formatted numbered list item with a link
-        markdown_lines.append("{}. [{}]({})".format(len(seen_paths), page_title, page_path))
+        
+        # Combine base URL and page path to make an absolute URL
+        absolute_url = urljoin(BASE_URL, page_path)
+
+        # Build Markdown-formatted numbered list item with an absolute link
+        markdown_lines.append("{}. [{}]({})".format(len(seen_paths), page_title, absolute_url))
 
         if len(seen_paths) == 10: # Stop after encountering 10 unique pagePath instances
             break

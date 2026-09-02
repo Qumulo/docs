@@ -86,7 +86,7 @@ To get started, choose one of the following guides.
   </div>
 
   <div class="guide-button">
-    <a class="big-button" href="hardware-guide/">
+    <a class="big-button" href="https://docs.qumulo.com/hardware-guide/">
       <figure>  
         <picture>
           <source type="image/webp" srcset="images/qumulo-hardware-servicing-guide.webp" width="301" height="301">
@@ -179,7 +179,7 @@ The following are the most-accessed pages on the Documentation Portal.
 4. [Qumulo Core Upgrade Mode Reference](/administrator-guide/upgrading-qumulo-core/mode-reference.html)
 5. [Enabling Cloud-Based Monitoring and Remote Support](/administrator-guide/monitoring-and-metrics/enabling-cloud-based-monitoring-remote-support.html)
 6. [Getting Started with the qq CLI](/administrator-guide/qq-cli/getting-started.html)
-7. [Creating a Qumulo Core USB Drive Installer](/hardware-guide/getting-started/creating-usb-drive-installer.html)
+7. [Creating a Qumulo Core USB Drive Installer](https://docs.qumulo.com/hardware-guide/getting-started/creating-usb-drive-installer.html)
 8. [Supported Configurations and Known Limits for Qumulo Core](/administrator-guide/getting-started/supported-configurations-known-limits.html)
 9. [Replication Version Requirements and Upgrade Recommendations for Qumulo Core](/administrator-guide/upgrading-qumulo-core/replication-version-requirements-upgrade-recommendations.html)
 10. [Installing the Qumulo Core Product Package](/administrator-guide/getting-started/installing-product-package.html)
