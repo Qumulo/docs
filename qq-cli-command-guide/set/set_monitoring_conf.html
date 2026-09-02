@@ -4888,6 +4888,102 @@ fetch('/data/website.json')
           
           
           
+          
+          
+          <li>
+            <a title="object_bridge_delete" href="/qq-cli-command-guide/object/object_bridge_delete.html">
+              object_bridge_delete
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="object_bridge_export_job_run" href="/qq-cli-command-guide/object/object_bridge_export_job_run.html">
+              object_bridge_export_job_run
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="object_bridge_export_rule_create" href="/qq-cli-command-guide/object/object_bridge_export_rule_create.html">
+              object_bridge_export_rule_create
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="object_bridge_export_rule_delete" href="/qq-cli-command-guide/object/object_bridge_export_rule_delete.html">
+              object_bridge_export_rule_delete
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="object_bridge_export_rule_get" href="/qq-cli-command-guide/object/object_bridge_export_rule_get.html">
+              object_bridge_export_rule_get
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="object_bridge_export_rule_list" href="/qq-cli-command-guide/object/object_bridge_export_rule_list.html">
+              object_bridge_export_rule_list
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
       </ul>
    </li>
      
@@ -8113,9 +8209,12 @@ $(document).ready(function() {
 
 
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq set_monitoring_conf <span class="o">[</span><span class="nt">-h</span><span class="o">]</span> <span class="o">[</span><span class="nt">--enabled</span> | <span class="nt">--disabled</span><span class="o">]</span> <span class="o">[</span><span class="nt">--vpn-enabled</span> | <span class="nt">--vpn-disabled</span><span class="o">]</span> <span class="o">[</span><span class="nt">--mq-host</span> MQ_HOST] <span class="o">[</span><span class="nt">--mq-port</span> MQ_PORT] <span class="o">[</span><span class="nt">--mq-proxy-host</span> MQ_PROXY_HOST] <span class="o">[</span><span class="nt">--mq-proxy-port</span> MQ_PROXY_PORT] <span class="o">[</span><span class="nt">--s3-proxy-host</span> S3_PROXY_HOST]
-    <span class="o">[</span><span class="nt">--s3-proxy-port</span> S3_PROXY_PORT] <span class="o">[</span><span class="nt">--s3-proxy-disable-https</span><span class="o">]</span> <span class="o">[</span><span class="nt">--all-proxy-host</span> HOST] <span class="o">[</span><span class="nt">--all-proxy-port</span> PORT] <span class="o">[</span><span class="nt">--period</span> PERIOD] <span class="o">[</span><span class="nt">--vpn-host</span> VPN_HOST] <span class="o">[</span><span class="nt">--nexus-enabled</span> | <span class="nt">--nexus-disabled</span><span class="o">]</span> <span class="o">[</span><span class="nt">--nexus-host</span> NEXUS_HOST]
-    <span class="o">[</span><span class="nt">--nexus-port</span> NEXUS_PORT] <span class="o">[</span><span class="nt">--nexus-interval</span> NEXUS_INTERVAL] <span class="o">[</span><span class="nt">--nexus-registration-key</span> NEXUS_REGISTRATION_KEY]
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq set_monitoring_conf <span class="o">[</span><span class="nt">-h</span><span class="o">]</span> <span class="o">[</span><span class="nt">--enabled</span> | <span class="nt">--disabled</span><span class="o">]</span> <span class="o">[</span><span class="nt">--vpn-enabled</span> | <span class="nt">--vpn-disabled</span><span class="o">]</span> <span class="o">[</span><span class="nt">--mq-host</span> MQ_HOST]
+    <span class="o">[</span><span class="nt">--mq-port</span> MQ_PORT] <span class="o">[</span><span class="nt">--mq-proxy-host</span> MQ_PROXY_HOST] <span class="o">[</span><span class="nt">--mq-proxy-port</span> MQ_PROXY_PORT]
+    <span class="o">[</span><span class="nt">--s3-proxy-host</span> S3_PROXY_HOST] <span class="o">[</span><span class="nt">--s3-proxy-port</span> S3_PROXY_PORT] <span class="o">[</span><span class="nt">--s3-proxy-disable-https</span><span class="o">]</span>
+    <span class="o">[</span><span class="nt">--all-proxy-host</span> HOST] <span class="o">[</span><span class="nt">--all-proxy-port</span> PORT] <span class="o">[</span><span class="nt">--period</span> PERIOD] <span class="o">[</span><span class="nt">--vpn-host</span> VPN_HOST]
+    <span class="o">[</span><span class="nt">--nexus-enabled</span> | <span class="nt">--nexus-disabled</span><span class="o">]</span> <span class="o">[</span><span class="nt">--nexus-host</span> NEXUS_HOST] <span class="o">[</span><span class="nt">--nexus-port</span> NEXUS_PORT]
+    <span class="o">[</span><span class="nt">--nexus-interval</span> NEXUS_INTERVAL] <span class="o">[</span><span class="nt">--nexus-registration-key</span> NEXUS_REGISTRATION_KEY]
 </code></pre></div></div>
 
 
@@ -9157,6 +9256,24 @@ $(document).ready(function() {
         
     
   
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
     
       
         

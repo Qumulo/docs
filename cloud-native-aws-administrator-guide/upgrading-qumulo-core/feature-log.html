@@ -2432,6 +2432,33 @@ $(document).ready(function() {
      
      <style>div#toc{height:200px;overflow:auto;}</style>
 
+<h2 id="qumulo-core-7931">Qumulo Core 7.9.3.1</h2>
+
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
+<ul>
+  <li>This release resolves an issue with system performance during the cluster capacity reclamation process.</li>
+  <li>For clusters running Qumulo Core 7.9.0 (and higher), you must wait for on-disk upgrades to complete before you can upgrade the cluster to a higher version (this process typically takes 1-2 days). To check whether a cluster is ready to be upgraded, you can use the Qumulo REST API or the <code>qq</code> CLI. For example:
+    <ul>
+      <li><code>POST /v2/upgrade/verify-image</code></li>
+      <li><code>qq upgrade_verify_image --path /example/path/to/target/image</code></li>
+    </ul></li>
+</ul>
+</div>
+
+<ul>
+  <li>
+    <strong>Cloud Data Fabric:</strong>
+    <ul>
+      <li>Made significant latency and throughput improvements on hub portals and spoke portals on Qumulo clusters with CPU-constrained metadata reads</li>
+      <li>Made significant speed improvements for opening and listing certain directory types</li>
+      <li>Added a REST API endpoint and a <code>qq</code> CLI command for querying recent portal quorum events</li>
+    </ul>
+  </li>
+  <li><strong>Azure Native Qumulo (ANQ), Cloud Native Qumulo (CNQ), and Stratus Accelerator Clusters:</strong> Resolved a performance issue with slow reads after cluster membership reconfiguration</li>
+  <li>Made modest latency and throughput improvements for all Qumulo clusters with CPU-constrained metadata reads</li>
+  <li>Improved the responsiveness of certain operations that SMB, NFS3 and NFSv4.1 clients initiate after listing a directory</li>
+</ul>
+
 <h2 id="qumulo-core-7923">Qumulo Core 7.9.2.3</h2>
 <p><a target="_blank" href="https://nexus.qumulo.com/downloads/">Downloads and Release Notes</a><span class="emoji">🔒</span></p>
 
@@ -2441,7 +2468,7 @@ $(document).ready(function() {
   <li>
     This release resolves:
     <ul>
-      <li>An issue with system performance during the cluster capacity reclamation process</li>
+      <li>An This release resolves an issue with system performance during the cluster capacity reclamation process.</li>
       <li><strong>Stratus Accelerator Clusters Deployed with Qumulo Core 7.9.2:</strong> An issue with an unlikely scenario that previously could occur on a Qumulo cluster with heavy workloads resulting from moving or combining data stored on a shared DataCore cluster. In this scenario, the object metadata cache can become corrupted when SSDs on nodes perform operations out of order.</li>
       <li>An issue with Product Package deployments of Qumulo Core versions lower than 7.9.2 that are configured to use Host-Managed Networking. Qumulo Core detects any unintentionally unassigned floating IP addresses and restores them without affecting client connectivity.</li>
     </ul>
@@ -2507,7 +2534,7 @@ $(document).ready(function() {
   <li>
     This release resolves:
     <ul>
-      <li>An issue with system performance during the cluster capacity reclamation process</li>
+      <li>An This release resolves an issue with system performance during the cluster capacity reclamation process.</li>
       <li>An issue that previously could cause Qumulo Core to crash while upgrading on-disk structures in certain scenarios.</li>
     </ul>
   </li>

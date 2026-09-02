@@ -4888,6 +4888,102 @@ fetch('/data/website.json')
           
           
           
+          
+          
+          <li>
+            <a title="object_bridge_delete" href="/qq-cli-command-guide/object/object_bridge_delete.html">
+              object_bridge_delete
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="object_bridge_export_job_run" href="/qq-cli-command-guide/object/object_bridge_export_job_run.html">
+              object_bridge_export_job_run
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="object_bridge_export_rule_create" href="/qq-cli-command-guide/object/object_bridge_export_rule_create.html">
+              object_bridge_export_rule_create
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="object_bridge_export_rule_delete" href="/qq-cli-command-guide/object/object_bridge_export_rule_delete.html">
+              object_bridge_export_rule_delete
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="object_bridge_export_rule_get" href="/qq-cli-command-guide/object/object_bridge_export_rule_get.html">
+              object_bridge_export_rule_get
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li>
+            <a title="object_bridge_export_rule_list" href="/qq-cli-command-guide/object/object_bridge_export_rule_list.html">
+              object_bridge_export_rule_list
+              <span class="tag-container">
+              
+              
+              
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
       </ul>
    </li>
      
@@ -8113,10 +8209,17 @@ $(document).ready(function() {
 
 
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq ldap_set_settings <span class="o">[</span><span class="nt">-h</span><span class="o">]</span> <span class="nt">--use-ldap</span> <span class="o">{</span><span class="nb">false</span>,true<span class="o">}</span> <span class="nt">--bind-uri</span> BIND_URI <span class="nt">--base-dn</span> BASE_DN <span class="o">[</span><span class="nt">--bind-username</span> BIND_USERNAME] <span class="o">[</span><span class="nt">--bind-password</span> BIND_PASSWORD] <span class="o">[</span><span class="nt">--encrypt-connection</span> <span class="o">{</span><span class="nb">false</span>,true<span class="o">}]</span> <span class="o">[</span><span class="nt">--rfc2307</span><span class="o">]</span>
-    <span class="o">[</span><span class="nt">--custom-group-member-attribute</span> CUSTOM_GROUP_MEMBER_ATTRIBUTE] <span class="o">[</span><span class="nt">--custom-user-group-identifier-attribute</span> CUSTOM_USER_GROUP_IDENTIFIER_ATTRIBUTE] <span class="o">[</span><span class="nt">--custom-login-name-attribute</span> CUSTOM_LOGIN_NAME_ATTRIBUTE]
-    <span class="o">[</span><span class="nt">--custom-group-name-attribute</span> CUSTOM_GROUP_NAME_ATTRIBUTE] <span class="o">[</span><span class="nt">--custom-user-object-class</span> CUSTOM_USER_OBJECT_CLASS] <span class="o">[</span><span class="nt">--custom-group-object-class</span> CUSTOM_GROUP_OBJECT_CLASS]
-    <span class="o">[</span><span class="nt">--custom-uid-number-attribute</span> CUSTOM_UID_NUMBER_ATTRIBUTE] <span class="o">[</span><span class="nt">--custom-gid-number-attribute</span> CUSTOM_GID_NUMBER_ATTRIBUTE]
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qq ldap_set_settings <span class="o">[</span><span class="nt">-h</span><span class="o">]</span> <span class="nt">--use-ldap</span> <span class="o">{</span><span class="nb">false</span>,true<span class="o">}</span> <span class="nt">--bind-uri</span> BIND_URI <span class="nt">--base-dn</span> BASE_DN
+    <span class="o">[</span><span class="nt">--bind-username</span> BIND_USERNAME] <span class="o">[</span><span class="nt">--bind-password</span> BIND_PASSWORD]
+    <span class="o">[</span><span class="nt">--encrypt-connection</span> <span class="o">{</span><span class="nb">false</span>,true<span class="o">}]</span> <span class="o">[</span><span class="nt">--rfc2307</span><span class="o">]</span>
+    <span class="o">[</span><span class="nt">--custom-group-member-attribute</span> CUSTOM_GROUP_MEMBER_ATTRIBUTE]
+    <span class="o">[</span><span class="nt">--custom-user-group-identifier-attribute</span> CUSTOM_USER_GROUP_IDENTIFIER_ATTRIBUTE]
+    <span class="o">[</span><span class="nt">--custom-login-name-attribute</span> CUSTOM_LOGIN_NAME_ATTRIBUTE]
+    <span class="o">[</span><span class="nt">--custom-group-name-attribute</span> CUSTOM_GROUP_NAME_ATTRIBUTE]
+    <span class="o">[</span><span class="nt">--custom-user-object-class</span> CUSTOM_USER_OBJECT_CLASS]
+    <span class="o">[</span><span class="nt">--custom-group-object-class</span> CUSTOM_GROUP_OBJECT_CLASS]
+    <span class="o">[</span><span class="nt">--custom-uid-number-attribute</span> CUSTOM_UID_NUMBER_ATTRIBUTE]
+    <span class="o">[</span><span class="nt">--custom-gid-number-attribute</span> CUSTOM_GID_NUMBER_ATTRIBUTE]
 </code></pre></div></div>
 
 
@@ -9115,6 +9218,24 @@ $(document).ready(function() {
         
     
   
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
+    
+      
+        
     
       
         
