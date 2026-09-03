@@ -48,7 +48,7 @@ check_environment() {
         if ! run_env_check; then
             if [[ -d "$HOME/src" ]]; then
                 echo "Detected an error while running environment script. Remediating toolchain..."
-                (cd "$HOME/src" && hg up default && hg fetch && ./prebuild)
+                (cd "$HOME/src" && unset PYTHONPATH PYTHONHOME LD_LIBRARY_PATH && hg up default && hg fetch && ./prebuild)
                 run_env_check
             fi
         fi
