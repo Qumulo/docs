@@ -12,3 +12,15 @@ usage: qq node_state_get [-h]
 zendesk_source: qq CLI Command Guide
 
 ---
+
+## Examples
+
+{{site.exampleOutput}}
+
+```json
+{
+  "cluster_id": "{{site.exampleUUID41}}",
+  "node_id": 1,
+  "state": "ACTIVE"
+}
+```
