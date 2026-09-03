@@ -54,8 +54,8 @@ check_environment() {
         fi
     fi
 
-    # Evaluate stdout environment variables if non-empty
-    if [[ -s /tmp/env.out ]]; then
+    # Evaluate stdout environment variables only if run_env_check succeeded
+    if run_env_check && [[ -s /tmp/env.out ]]; then
         eval "$(cat /tmp/env.out)"
     fi
 }
@@ -167,6 +167,9 @@ prune_docker() {
 
 no_toolchain() {
     export PATH=$(echo $PATH | sed "s|/opt/qumulo[^:]*:||g")
+    unset PYTHONPATH
+    unset PYTHONHOME
+    unset LD_LIBRARY_PATH
 }
 
 check_tqdm() {
@@ -478,11 +481,11 @@ regen_api_docs() {
     if [ -n "$api_version" ]; then
         # Non-Interactive execution
         echo "Building REST API documentation for version $api_version from artifacts.eng.qumulo.com ..."
-        PYTHONPATH="$USER_SITE:$PYTHONPATH" python3 tools/gen-api.py "$api_version"
+        PYTHONPATH="$USER_SITE" python3 tools/gen-api.py "$api_version"
     else
         # Interactive execution
         echo "Building REST API documentation from artifacts.eng.qumulo.com ..."
-        PYTHONPATH="$USER_SITE:$PYTHONPATH" python3 tools/gen-api.py
+        PYTHONPATH="$USER_SITE" python3 tools/gen-api.py
     fi
 }
 
