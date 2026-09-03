@@ -2104,6 +2104,8 @@ a[href*="/integration-guide/splunk/index.html"]:after {
 }
 
 /* Strip the outbound icon when this class is present */
+#hot-topics ~ ol > li::after,
+a[href*="/hardware-guide"]::after,
 a[href*="contacting-qumulo-care-team"]::after,
 a[href].noCrossRef::after,
 a.no_icon:after
