@@ -16,12 +16,15 @@ For information about upgrade types for each release, see <a href='mode-referenc
 
 
 ## Qumulo Core 7.9.3.1
+{{ nexusLink }}
+
 {% capture mustWait %}For clusters running Qumulo Core 7.9.0 (and higher), you must wait for on-disk upgrades to complete before you can upgrade the cluster to a higher version (this process typically takes 1-2 days). To check whether a cluster is ready to be upgraded, you can use the Qumulo REST API or the <code>qq</code> CLI. For example:
     <ul>
       <li><code>POST /v2/upgrade/verify-image</code></li>
       <li><code>qq upgrade_verify_image --path /example/path/to/target/image</code></li>
     </ul>{% endcapture %}
 {% capture clustCapRecl %}This release resolves an issue with system performance during the cluster capacity reclamation process.{% endcapture %}
+
 {{site.data.alerts.important}}
 <ul>
   <li>{{ clustCapRecl }}</li>
