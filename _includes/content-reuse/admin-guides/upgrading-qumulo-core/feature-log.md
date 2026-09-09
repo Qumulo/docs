@@ -731,4 +731,29 @@ This release of Qumulo Core adds Illumio Policy Compute Engine (PCE) and Virtual
 
 ### Change Log
 * [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7411)
+
+
+## Qumulo Core 7.4.0.4 (Quarterly)
+{{ nexusLink }}
+
+### Features and Improvements
+{{site.data.alerts.important}}
+<ul>
+  <li>
+    This release resolves the following on-premises cluster issues:
+    <ul>
+      <li>This release resolves unexpected SAS controller behavior on hardware nodes, where previously hot-plugging drives could cause cluster instability.</li>
+      <li>For clusters with certain erasure coding configurations deployed before July 4, 2020, this release resolves an issue that previously could occur during quorum formation, resulting in internal metadata being in an inconsistent state.</li>
+    </ul>
+  </li>
+  <li>This release resolves a rare issue where previously, under certain conditions, concurrent quorum-related activity could result in file system data being overwritten.</li>
+  <li>This release resolves an issue that previously occurred after a spoke portal was deleted.</li>
+</ul>
+{{site.data.alerts.end}}
+* Added support for latest Western Digital Ultrastar DC SN640 SSD firmware
+* Improved UID and GID sorting in the Qumulo Core Web UI
+* Resolved an issue with `PutObject` and `CopyObject` S3 API actions
+
+### Change Log
+* [REST API](https://docs.qumulo.com/rest-api-guide/change-log.html#qumulo-core-7404-quarterly)
 {% endunless %}
