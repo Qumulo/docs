@@ -9333,6 +9333,30 @@ $(document).ready(function() {
 
 <p>This release contains no REST API changes.</p>
 
+<h2 id="qumulo-core-7404-quarterly">Qumulo Core 7.4.0.4 (Quarterly)</h2>
+
+<ul>
+  <li>Added <code>GET /v1/portal/file-systems/</code></li>
+  <li>Added <code>GET /v1/portal/file-systems/{id}</code></li>
+  <li>Added <code>POST /v1/shutdown/container-restart/{node_id}</code></li>
+</ul>
+<details>
+  <summary>Click to expand</summary>
+  <ul>
+    <li>Added <code>POST /v1/shutdown/halt/{node_id}</code></li>
+    <li>Added <code>POST /v1/shutdown/reboot/{node_id}</code></li>
+    <li>Added <code>hub_cluster_uuid</code> parameter to <code>GET /v1/portal/spokes/{id}</code> response</li>
+    <li>  
+      Modified <code>PATCH /v1/portal/spokes/{id}</code>:
+      <ul>  
+        <li>Added <code>hub_cluster_uuid</code> parameter to <code>PATCH /v1/portal/spokes/{id}</code> request body</li>
+        <li>Added <code>hub_cluster_uuid</code> parameter to <code>PATCH /v1/portal/spokes/{id}</code> response</li>
+      </ul> 
+    </li>   
+    <li>Added <code>hub_cluster_uuid</code> parameter to <code>POST /v1/portal/spokes/{id}/propose</code> response</li>
+  </ul>   
+</details>
+
    
 
 
