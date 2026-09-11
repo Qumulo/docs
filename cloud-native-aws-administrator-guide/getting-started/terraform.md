@@ -122,7 +122,7 @@ To monitor the Provisioner's status, watch the Terraform operations in your term
 This section explains how to prepare the required files, configure your deployment, and create the resources necessary for your Qumulo cluster.
 
 ### Step 1: Prepare the Required Files {#prepare-the-required-files}
-During the following process, Terraform downloads the Qumulo Terraform Provider from Qumulo's registry. Later, the Provider installs Qumulo Core on your cluster's nodes.
+During the following process, Terraform downloads the Qumulo Terraform Provider from Qumulo's registry. Later, the Terraform Provider installs Qumulo Core on your cluster's nodes.
 
 1. To clone the `Qumulo-terraform-aws` repository and check out a specific release, run the following commands.
 
@@ -162,8 +162,8 @@ During the following process, Terraform downloads the Qumulo Terraform Provider 
 
    {{site.data.alerts.note}}
    <ul>
-     <li>The <code>terraform init</code> command reports that the Qumulo provider is self-signed. This is expected for providers hosted outside <code>registry.terraform.io</code> and isn't a security issue; Terraform still performs full signature and checksum verification. For more information, see <a target="_blank" href="https://qumulo.github.io/terraform-provider-qumulo-cloud/installation-trust/">Installation and Trust</a> in the Qumulo Terraform Provider documentation.</li>
-     <li>If the <code>terraform init</code> command can't reach the Provider registry, allow outbound HTTPS to <code>qumulo-terraform-registry.s3.us-east-1.amazonaws.com</code>.</li>
+     <li>The <code>terraform init</code> command reports that the Qumulo Terraform Provider is self-signed. This is expected for instances of the Terraform Provider which are hosted outside <code>registry.terraform.io</code> and isn't a security issue; Terraform still performs full signature and checksum verification. For more information, see <a target="_blank" href="https://qumulo.github.io/terraform-provider-qumulo-cloud/installation-trust/">Installation and Trust</a> in the Qumulo Terraform Provider documentation.</li>
+     <li>If the <code>terraform init</code> command can't reach the Terraform Provider's registry, allow outbound HTTPS to <code>qumulo-terraform-registry.s3.us-east-1.amazonaws.com</code>.</li>
    </ul>
    {{site.data.alerts.end}}
 
@@ -177,7 +177,7 @@ During the following process, Terraform downloads the Qumulo Terraform Provider 
         
       * **Multi-AZ Deployment:** Specify 3 subnets, one for each AZ
 
-   * **Cluster Configuration:** `instance_type` and `node_count` (1, or 3&ndash;24)
+   * **Cluster Configuration:** `instance_type` and `node_count` (1, or 3&ndash;24). See [Recommended EC2 Instance Types](#recommended-ec2-instance-types).
 
       {% include note.html content="A 4-node cluster can support only a single-AZ deployment." %}
 
@@ -199,12 +199,114 @@ During the following process, Terraform downloads the Qumulo Terraform Provider 
    {{site.data.alerts.important}}
    <ul>
      <li>{{ sensPass }}</li>
-     <li>We strongly recommend passing a <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_secret.html">Secrets Manager ARN</a> by rotating the secret in your store and allowing the next Terraform run to pick it up. Because secret handling functionality is located outside the Provider, you can also source the password from a HashiCorp Vault or another pipeline-integrated secrets store.</li>
+     <li>We strongly recommend passing a <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_secret.html">Secrets Manager ARN</a> by rotating the secret in your store and allowing the next Terraform run to pick it up. Because secret handling functionality is located outside the Terraform Provider, you can also source the password from a HashiCorp Vault or another pipeline-integrated secrets store.</li>
    </ul>
    {{site.data.alerts.end}}
 
+#### Recommended EC2 Instance Types {#recommended-ec2-instance-types}
+{% capture fullList %}<a target="_blank" href="https://qumulo.github.io/terraform-provider-qumulo-cloud/aws-basic/">full list of supported instance families and sizes</a>{% endcapture %}
+The following table lists recommended _EC2 instance types_ (combinations of _EC2 instance families_ and _EC2 instance sizes_, such as `i7i.2xlarge`) that the Qumulo Terraform Provider accepts. For more information, see the {{ fullList }} in the Qumulo Terraform Provider documentation.
+
+{{site.data.alerts.important}}
+<ul>
+  <li>Any <em>EC2 instance type</em> outside of the {{ fullList }} causes plan validation to fail.</li>
+  <li>Although the Terraform Provider accepts instance sizes lower than <code>2xlarge</code>, we don't recommend using these instance sizes in production.</li>
+  <li>Changing the <code>instance_type</code> after deployment replaces the cluster's nodes within the existing deployment. For more information, see <a href="#changing-the-ec2-instance-type">Changing the EC2 Instance Type of a CNQ on AWS Cluster</a>.</li>
+</ul>
+{{site.data.alerts.end}}
+
+<table>
+  <thead>
+    <tr>
+      <th>EC2 Instance Category</th>
+      <th>EC2 Instance Family</th>
+      <th>EC2 Instance Sizes</th>
+      <th>Availability Considerations</th>      
+      <th>Performance and Deployment Considerations</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td rowspan="5">Storage Optimized</td>
+      <td><code>i3en</code></td>
+      <td>
+        From <code>2xlarge</code><br>
+        to <code>24xlarge</code>
+      </td>
+      <td>Use only when all other instance families are unavailable</td>
+      <td>Works best on older CPUs and with lower-performing EBS</td>
+    </tr>    
+    <tr>
+      <td><code>i4i</code></td>
+      <td>
+        From <code>2xlarge</code><br>
+        to <code>32xlarge</code>
+      </td>
+      <td>
+        <ul>
+          <li>Use when the <code>i7i</code> instance family isn't available</li>          
+          <li>Broadly available across many AWS Regions</li>       
+        </ul>
+      </td>
+      <td>Provides a good balance of performance and price</td>      
+    </tr>    
+    <tr>
+      <td><code>i7i</code></td>
+      <td>
+        From <code>2xlarge</code><br>
+        to <code>24xlarge</code>
+      </td>
+      <td>Regional availability is currently expanding</td>
+      <td>
+        <ul>
+          <li>Provides the best balance of performance and price</li>
+          <li>The newest storage-optimized EC2 instance family</li>          
+        </ul>
+        {% include tip.html content="We recommend this instance family for typical deployments." %}        
+      </td>
+    </tr>
+    <tr>
+      <td><code>i7ie</code></td>
+      <td>
+        From <code>2xlarge</code><br>
+        to <code>24xlarge</code>
+      </td>
+      <td>Available in fewer AWS Regions than the <code>i7i</code> instance family</td>
+      <td>Provides the highest performance for each node at a higher price</td>
+    </tr>
+    <tr>
+      <td><code>m6idn</code></td>
+      <td>
+        From <code>2xlarge</code><br>
+        to <code>16xlarge</code>
+      </td>
+      <td>Use when the <code>i4i</code> and <code>i7i</code> instance families are unavailable</td>
+      <td>Works best with small-capacity clusters that require high throughput</td>
+    </tr>    
+    <tr>
+      <td>General Purpose</td>
+      <td>
+        <ul>
+          <li><code>m6i</code></li>
+          <li><code>m7i</code></li>
+        </ul>
+      </td>
+      <td>
+        From <code>xlarge</code><br>
+        to <code>16xlarge</code>
+      </td>
+      <td>Use only in AWS Local Zones and other locations that don't offer storage-optimized instance categories</td>
+      <td>
+        Provides reduced performance and adds EBS costs
+        {% include important.html content="Because this instance family has no local NVMe drives, the Qumulo Terraform Provider must build the read cache on <code>gp3</code> EBS volumes, which requires Qumulo Core 7.4.3 (or higher)." %}
+      </td>
+    </tr>    
+  </tbody>
+</table>
+
+
 ### Step 3: Create the Necessary Resources {#create-the-necessary-resources}
-{% include note.html content="If EC2 capacity is unavailable in your Availability Zone, you can select a different Availability Zone, deploy multi-AZ, or increase the create timeout and let the provider keep retrying." %}
+{% include note.html content="If EC2 capacity is unavailable in your Availability Zone (AZ), you can select a different AZ, deploy in multiple AZs, or increase the resource creation timeout so that the Qumulo Terraform Provider continues retrying the operation until capacity becomes available." %}
 
 1. To authenticate to your AWS account, use the `aws` CLI.
 
