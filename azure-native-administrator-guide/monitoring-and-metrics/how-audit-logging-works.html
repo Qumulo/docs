@@ -2374,10 +2374,10 @@ $(document).ready(function() {
    <p>This section explains the different formats of audit logs for file system operations that Qumulo Core generates whenever a connected client sends a request to a Qumulo cluster.</p>
    
      
-     <p>Qumulo Core creates a descriptive audit log message for every operation that a client attempts. Qumulo Core routes audit log messages to one or more configured destinations: remote syslog servers (in compliance with <a target="_blank" href="https://www.ietf.org/rfc/rfc5424.txt">RFC 5424</a>
+     <p>Qumulo Core creates a descriptive audit log message for every operation that a client attempts. Qumulo Core routes audit log messages to one or more configured destinations: remote <code class="language-plaintext highlighter-rouge">syslog</code> servers (in compliance with <a target="_blank" href="https://www.ietf.org/rfc/rfc5424.txt">RFC 5424</a>
 ) or Amazon CloudWatch (configured through the audit logging REST API).</p>
 
-<p>This section explains the differences between the levels of detail of audit logs in <a href="#details-in-syslog-csv-format">syslog CSV</a>, <a href="#details-in-syslog-json-format">syslog JSON</a>, and <a href="#details-in-cloudwatch-json-format">CloudWatch JSON</a> formats. (In general, the syslog CSV and CloudWatch JSON formats contain an identical number of fields, some named differently, while the syslog JSON format has additional audit logging information.)</p>
+<p>This section explains the differences between the levels of detail of audit logs in <a href="#details-in-syslog-csv-format"><code class="language-plaintext highlighter-rouge">syslog</code> CSV</a>, <a href="#details-in-syslog-json-format"><code class="language-plaintext highlighter-rouge">syslog</code> JSON</a>, and <a href="#details-in-cloudwatch-json-format">CloudWatch JSON</a> formats. (In general, the <code class="language-plaintext highlighter-rouge">syslog</code> CSV and CloudWatch JSON formats contain an identical number of fields, some named differently, while the <code class="language-plaintext highlighter-rouge">syslog</code> JSON format has additional audit logging information.)</p>
 
 <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note</b><br />
 <ul>
@@ -2398,12 +2398,12 @@ $(document).ready(function() {
 <ul>
   <li>Because the user ID, path fields, and secondary path fields can contain characters that must be escaped (such as quotation marks and commas), you must enclose these fields in quotation marks.</li>
   <li>Qumulo Core system strips out the <code>\n</code> and <code>\r</code> newline characters from the user ID, file path, and secondary file path fields.</li>
-  <li>Both syslog CSV and syslog JSON formats deduplicate repeated file reads. However, for metadata changes&mdash;such as modifications to an access-control list (ACL)&mdash;only the syslog CSV deduplicates repeated operations.</li>
-  <li>Unlike the <a href="#details-in-syslog-json-format">syslog JSON format</a>, the syslog CSV format has only values (no keys) and the fields are empty when unused. The following table helps explain the fields and their possible values.</li> 
+  <li>Both <code>syslog</code> CSV and <code>syslog</code> JSON formats deduplicate repeated file reads. However, for metadata changes&mdash;such as modifications to an access-control list (ACL)&mdash;only the <code>syslog</code> CSV deduplicates repeated operations.</li>
+  <li>Unlike the <a href="#details-in-syslog-json-format">`syslog` JSON format</a>, the `syslog` CSV format has only values (no keys) and the fields are empty when unused. The following table helps explain the fields and their possible values.</li> 
 </ul>
 </div>
 
-<p>By default, Qumulo Core formats audit log messages in the syslog CSV format, prefaced by the date, time, and the name of the machine that issues the operation. The syslog CSV format includes the following fields in the following order within the log message body.</p>
+<p>By default, Qumulo Core formats audit log messages in the <code class="language-plaintext highlighter-rouge">syslog</code> CSV format, prefaced by the date, time, and the name of the machine that issues the operation. The <code class="language-plaintext highlighter-rouge">syslog</code> CSV format includes the following fields in the following order within the log message body.</p>
 
 <table>
   <tr>
@@ -2521,9 +2521,9 @@ Jun 6 14:55:24 my-machine qumulo 203.0.113.0,"system",internal,remote_syslog_shu
 </code></pre></div></div>
 
 <h2 id="details-in-syslog-json-format">Details Included in the syslog JSON Format</h2>
-<p>You can configure Qumulo Core to format audit log messages in the syslog JSON format. The fields in this format are similar to <a href="#details-in-syslog-csv-format">the fields that the syslog CSV format provides</a>, with the following exceptions.</p>
+<p>You can configure Qumulo Core to format audit log messages in the <code class="language-plaintext highlighter-rouge">syslog</code> JSON format. The fields in this format are similar to <a href="#details-in-syslog-csv-format">the fields that the <code class="language-plaintext highlighter-rouge">syslog</code> CSV format provides</a>, with the following exceptions.</p>
 
-<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> The syslog JSON format isn’t available in the Qumulo Core Web UI.</div>
+<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> The <code class="language-plaintext highlighter-rouge">syslog</code> JSON format isn’t available in the Qumulo Core Web UI.</div>
 
 <table>
   <tr>
@@ -2533,7 +2533,7 @@ Jun 6 14:55:24 my-machine qumulo 203.0.113.0,"system",internal,remote_syslog_shu
   </tr> 
   <tr>
     <td><code>user_id</code> Object</td>
-    <td>In Qumulo Core 6.0.1 (and higher) the <code>user_id</code> object replaces the single user ID field in the syslog CSV format and contains the fields <code>sid</code>, <code>auth_id</code>, and <code>name</code>.</td>
+    <td>In Qumulo Core 6.0.1 (and higher) the <code>user_id</code> object replaces the single user ID field in the `syslog` CSV format and contains the fields <code>sid</code>, <code>auth_id</code>, and <code>name</code>.</td>
     <td>
       <ul>
         <li><code>sid</code>: Security identifier</li>
@@ -2546,7 +2546,7 @@ Jun 6 14:55:24 my-machine qumulo 203.0.113.0,"system",internal,remote_syslog_shu
     <td><code>details</code> Object</td>
     <td>
       <ul>
-        <li>For most file system operations, the <code>details</code> object replaces the file path, secondary file path, and file ID fields in the syslog CSV format and contains the fields <code>path</code>, <code>target</code>, and <code>file_id</code>.</li>
+        <li>For most file system operations, the <code>details</code> object replaces the file path, secondary file path, and file ID fields in the `syslog` CSV format and contains the fields <code>path</code>, <code>target</code>, and <code>file_id</code>.</li>
         <li>For <code>fs_write_*</code> and <code>fs_read_*</code> operations, the <code>details</code> object also includes the <code>offset</code> and <code>file_size</code> fields.</li>
         <li>For operations that write metadata or change access-control lists (ACLs), the <code>details</code> object also includes the <code>after</code> and <code>before</code> objects that include fields for current and previous metadata.</li>
       </ul>
@@ -2604,7 +2604,7 @@ Jun 6 14:55:24 my-machine qumulo {"user_id": {"auth_id": "1", "sid": "S-1-5-21-9
 
 <div class="alert alert-success" role="alert"><span class="alert-title"><span class="fa fa-check-square-o"></span> <strong>Tip</strong></span><br /> To download the audit log from the CloudWatch console, on the left navigation panel click <strong>Logs &gt; Log groups</strong>, click a log group, and then on the <strong>Log events</strong> page click <strong>Actions &gt; Copy search results (ASCII)</strong>.</div>
 
-<p>Rather than preface each line of CSV or JSON with the date and time, CloudWatch creates an ASCII table, which contains Unix timestamps in its first column. The second column contains the fields that are similar to the fields that both <a href="#details-in-syslog-csv-format">the syslog CSV format</a> and <a href="#details-in-syslog-json-format">the syslog JSON format</a> provide, with the following exceptions.</p>
+<p>Rather than preface each line of CSV or JSON with the date and time, CloudWatch creates an ASCII table, which contains Unix timestamps in its first column. The second column contains the fields that are similar to the fields that both <a href="#details-in-syslog-csv-format">the <code class="language-plaintext highlighter-rouge">syslog</code> CSV format</a> and <a href="#details-in-syslog-json-format">the <code class="language-plaintext highlighter-rouge">syslog</code> JSON format</a> provide, with the following exceptions.</p>
 
 <ul>
   <li>

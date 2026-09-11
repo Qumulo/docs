@@ -2461,7 +2461,7 @@ $(document).ready(function() {
       <li>An issue with Product Package deployments of Qumulo Core versions lower than 7.9.2 that are configured to use Host-Managed Networking. Qumulo Core detects any unintentionally unassigned floating IP addresses and restores them without affecting client connectivity.</li>
     </ul>
   </li>
-  <li>For clusters running Qumulo Core 7.9.0 (and higher), you must wait for on-disk upgrades to complete before you can upgrade the cluster to a higher version (this process typically takes 1-2 days). To check whether a cluster is ready to be upgraded, you can use the Qumulo REST API or the qq CLI. For example:
+  <li>For clusters running Qumulo Core 7.9.0 (and higher), you must wait for on-disk upgrades to complete before you can upgrade the cluster to a higher version (this process typically takes 1-2 days). To check whether a cluster is ready to be upgraded, you can use the Qumulo REST API or the <code>qq</code> CLI. For example:
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight" style="position: relative;"><button class="btn btn-xs btn-default copy-btn" title="Copy to clipboard"><i class="fa fa-copy"></i></button><code>POST /v2/upgrade/verify-image</code></pre></div></div>
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight" style="position: relative;"><button class="btn btn-xs btn-default copy-btn" title="Copy to clipboard"><i class="fa fa-copy"></i></button><code>qq upgrade_verify_image \
   --path /example/path/to/target/image</code></pre></div></div></li>
@@ -2487,7 +2487,7 @@ $(document).ready(function() {
     <ul>
       <li>Prevented the system from handling an internal encoding inconsistency from legacy builds</li>
       <li>Prevented quorum formation if the audit server address specified in the audit configuration isn't a valid IP address or DNS name</li>
-      <li>Could cause Qumulo Core to become unresponsive if a remote syslog endpoint configured for audit log delivery becomes unreachable</li>
+      <li>Could cause Qumulo Core to become unresponsive if a remote <code>syslog</code> endpoint configured for audit log delivery becomes unreachable</li>
       <li>Could cause Qumulo Core to crash if a multi-part upload to a versioned S3 bucket took longer than approximately 10 seconds</li>
       <li>Could cause Qumulo Core to crash while upgrading on-disk structures in certain scenarios</li>
     </ul>
@@ -2526,7 +2526,7 @@ $(document).ready(function() {
       <li>An issue that previously could cause Qumulo Core to crash while upgrading on-disk structures in certain scenarios.</li>
     </ul>
   </li>
-  <li>For clusters running Qumulo Core 7.9.0 (and higher), you must wait for on-disk upgrades to complete before you can upgrade the cluster to a higher version (this process typically takes 1-2 days). To check whether a cluster is ready to be upgraded, you can use the Qumulo REST API or the qq CLI. For example:
+  <li>For clusters running Qumulo Core 7.9.0 (and higher), you must wait for on-disk upgrades to complete before you can upgrade the cluster to a higher version (this process typically takes 1-2 days). To check whether a cluster is ready to be upgraded, you can use the Qumulo REST API or the <code>qq</code> CLI. For example:
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight" style="position: relative;"><button class="btn btn-xs btn-default copy-btn" title="Copy to clipboard"><i class="fa fa-copy"></i></button><code>POST /v2/upgrade/verify-image</code></pre></div></div>
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight" style="position: relative;"><button class="btn btn-xs btn-default copy-btn" title="Copy to clipboard"><i class="fa fa-copy"></i></button><code>qq upgrade_verify_image \
   --path /example/path/to/target/image</code></pre></div></div></li>
@@ -2569,7 +2569,7 @@ $(document).ready(function() {
       <li>Prevented the system from handling an internal encoding inconsistency from legacy builds</li>
       <li>Prevented quorum formation if the audit server address specified in the audit configuration isn't a valid IP address or DNS name</li>
       <li>Prevented Nexus agent on nodes in a Qumulo Core cluster from detecting a cleanly closed connection to Nexus and reconnecting, causing nodes to continue reporting metrics without being able to be managed from Nexus until the connection was reset</li>
-      <li>Could cause Qumulo Core to become unresponsive if a remote syslog endpoint configured for audit log delivery becomes unreachable</li>
+      <li>Could cause Qumulo Core to become unresponsive if a remote <code>syslog</code> endpoint configured for audit log delivery becomes unreachable</li>
       <li>Could cause Qumulo Core to crash if a multi-part upload to a versioned S3 bucket took longer than approximately 10 seconds</li>
       <li>Could cause Qumulo Core to crash while upgrading on-disk structures in certain scenarios</li>
     </ul>

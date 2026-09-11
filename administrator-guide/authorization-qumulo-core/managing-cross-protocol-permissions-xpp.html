@@ -2741,7 +2741,7 @@ $(document).ready(function() {
 <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
 <ul>
   <li>When you disable or enable XPP, the change takes effect immediately, without Qumulo Core scanning the directory tree. Existing file and directory permissions remain unaffected unless&mdash;or until&mdash;your workflow modifies them.</li>
-  <li>It is important to remember that the <code>native</code> sub-command is a simple means of handling mixed protocol permissions by keping the most recent change to a file's or directory's permissions. While this is sufficient for most scenarios that don't require cross-protocol use, disabling XPP can cause issues to occur for mixed-protocol workloads when POSIX-mode bits can replace SMB access control lists (ACLs), or the other way around.</li>
+  <li>It is important to remember that the <code>native</code> sub-command is a simple means of handling mixed protocol permissions by keeping the most recent change to a file's or directory's permissions. While this is sufficient for most scenarios that don't require cross-protocol use, disabling XPP can cause issues to occur for mixed-protocol workloads when POSIX-mode bits can replace SMB access control lists (ACLs), or the other way around.</li>
   <li>Before enabling XPP in a production environment, we recommend <a href="../snapshots/managing-snapshots.html">create a snapshot</a> of your file system.</li>
 </ul>
 </div>

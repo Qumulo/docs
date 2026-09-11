@@ -2476,7 +2476,7 @@ kerberos method = system keytab
 
 <ul>
   <li>If you join domains by using <code class="language-plaintext highlighter-rouge">samba</code>, you must create the <a href="https://linux.die.net/man/5/sssd.conf">/etc/sssd.conf</a> file.</li>
-  <li>If you join domains by using <code class="language-plaintext highlighter-rouge">realmd</code>, you might already have a <code class="language-plaintext highlighter-rouge">/etc/sssd.conf</code> file. For detailed configuration information, see <a href="https://linux.die.net/man/5/sssd-ldap">sssd-ldap</a> in the Linux documentation.</li>
+  <li>If you join domains by using <code class="language-plaintext highlighter-rouge">realmd</code>, you might already have a <code class="language-plaintext highlighter-rouge">/etc/sssd.conf</code> file. For detailed configuration information, see <a href="https://linux.die.net/man/5/sssd-ldap"><code class="language-plaintext highlighter-rouge">sssd-ldap</code></a> in the Linux documentation.</li>
 </ul>
 
 <p>In the following example, the <code class="language-plaintext highlighter-rouge">sssd.conf</code> file configures basic ID mapping for AD.</p>
@@ -2538,7 +2538,7 @@ access_provider = ad
 </ol>
 
 <h3 id="configuring-the-conversion-of-local-identities-to-nfs-representations-by-using-idmapd">Configuring the Conversion of Local Identities to NFS Representations by Using idmapd</h3>
-<p><a href="https://linux.die.net/man/5/idmapd.conf">idmapd (or nfsidmap)</a>, is a tool that lets you convert local identities to their on-the-wire NFS representations. Although <code class="language-plaintext highlighter-rouge">idmapd</code> works with <code class="language-plaintext highlighter-rouge">sssd</code>, it has additional configuration options.</p>
+<p><a href="https://linux.die.net/man/5/idmapd.conf"><code class="language-plaintext highlighter-rouge">idmapd</code> (or <code class="language-plaintext highlighter-rouge">nfsidmap</code>)</a>, is a tool that lets you convert local identities to their on-the-wire NFS representations. Although <code class="language-plaintext highlighter-rouge">idmapd</code> works with <code class="language-plaintext highlighter-rouge">sssd</code>, it has additional configuration options.</p>
 
 <p>In the following example, the <code class="language-plaintext highlighter-rouge">/etc/idmapd.conf</code> file configures a Linux client joined to AD:</p>
 
@@ -2684,7 +2684,7 @@ use-machine-creds=false
         <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/- /etc/auto.kerberos_nfs_mount_example --timeout 60
 </code></pre></div>        </div>
 
-        <p>For more information, see <a href="https://help.ubuntu.com/community/Autofs">Autofs</a> in the Ubuntu documentation.</p>
+        <p>For more information, see <a href="https://help.ubuntu.com/community/Autofs"><code class="language-plaintext highlighter-rouge">autofs</code></a> in the Ubuntu documentation.</p>
       </li>
       <li>
         <p>Add the following line to the <code class="language-plaintext highlighter-rouge">/etc/auto.kerberos_nfs_mount_example</code> map file.</p>
@@ -2725,7 +2725,7 @@ $ ssh domain_user_3@my-linux-system ls -l /mnt/qumulo_mount_point
   </li>
 </ul>
 
-<p>There are many NTP dæmons for Linux. For example, Ubuntu uses the <a href="https://ubuntu.com/server/docs/use-timedatectl-and-timesyncd">NTP functionality in systemd</a> (<code class="language-plaintext highlighter-rouge">timedatectl</code> and <code class="language-plaintext highlighter-rouge">timesyncd</code>).</p>
+<p>There are many NTP dæmons for Linux. For example, Ubuntu uses the <a href="https://ubuntu.com/server/docs/use-timedatectl-and-timesyncd">NTP functionality in <code class="language-plaintext highlighter-rouge">systemd</code></a> (<code class="language-plaintext highlighter-rouge">timedatectl</code> and <code class="language-plaintext highlighter-rouge">timesyncd</code>).</p>
 
    
 

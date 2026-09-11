@@ -2837,7 +2837,7 @@ $(document).ready(function() {
     <p><strong>Creating Empty Versioned Directories:</strong> Qumulo Core doesn’t support creating empty, versioned directories.</p>
   </li>
   <li>
-    <p><strong>Deleting Versioned Objects:</strong> If you don’t specify an object version ID, the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObject.html">DeleteObject</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObjects.html">DeleteObjects</a> S3 API actions create a <em>deletion marker</em> for an object but don’t delete any file system data. Because currently Qumulo Core doesn’t support bucket lifecycle policies, the data remains accessible by using S3 API actions and the object version ID. To delete a specific object version permanently, specify its version ID when you use either of these API actions.</p>
+    <p><strong>Deleting Versioned Objects:</strong> If you don’t specify an object version ID, the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObject.html"><code class="language-plaintext highlighter-rouge">DeleteObject</code></a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObjects.html"><code class="language-plaintext highlighter-rouge">DeleteObjects</code></a> S3 API actions create a <em>deletion marker</em> for an object but don’t delete any file system data. Because currently Qumulo Core doesn’t support bucket lifecycle policies, the data remains accessible by using S3 API actions and the object version ID. To delete a specific object version permanently, specify its version ID when you use either of these API actions.</p>
   </li>
 </ul>
 

@@ -2763,14 +2763,14 @@ $(document).ready(function() {
 </ol>
 
 <h2 id="to-install-vpn-keys-from-a-node">To Install VPN Keys from a Node</h2>
-<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> On macOS and Linux, you can use SCP and SSH. On Windows Server 2022, Windows Server 2019, and Windows 10 (build 1809 and higher), we recommend <a href="https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse">installing OpenSSH</a>.</div>
+<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> On macOS and Linux, you can use the <code class="language-plaintext highlighter-rouge">scp</code> and <code class="language-plaintext highlighter-rouge">ssh</code> tools. On Windows Server 2022, Windows Server 2019, and Windows 10 (build 1809 and higher), we recommend <a href="https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse">installing OpenSSH</a>.</div>
 
 <ol>
   <li>
     <p>Copy the <code class="language-plaintext highlighter-rouge">.zip</code> file from Qumulo Care to a computer on the same network as your cluster, and decompress the file.</p>
   </li>
   <li>
-    <p>To copy the VPN key files to one of your nodes, use SCP. For example:</p>
+    <p>To copy the VPN key files to one of your nodes, use the <code class="language-plaintext highlighter-rouge">scp</code> tool. For example:</p>
 
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>scp /my-path/<span class="k">*</span> admin@203.0.113.0:~/
 </code></pre></div>    </div>

@@ -688,9 +688,9 @@ $(document).ready(function() {
 <h3 id="qumulo-broker">How Qumulo Broker Gathers, Processes, and Emits Data</h3>
 <p>In Qumulo Core, each audit log has a specific logging requirement (for example, certain log types include only specific fields). Although normally Qumulo Core outputs audit logs in CSV format, it can output these additional fields in JSON format. For more information, see <a href="deploying-qumulo-broker.html#configure-audit-logging">Configure Qumulo Audit Logging by Using the qq CLI</a>.</p>
 
-<p>Typically, Qumulo Core sends the audit logs to a single remote syslog instance. In the Qumulo-Varonis integration, Qumulo Broker receives the audit logs from multiple Qumulo clusters, converts them to various formats, and then sends them to Varonis.</p>
+<p>Typically, Qumulo Core sends the audit logs to a single remote <code class="language-plaintext highlighter-rouge">syslog</code> instance. In the Qumulo-Varonis integration, Qumulo Broker receives the audit logs from multiple Qumulo clusters, converts them to various formats, and then sends them to Varonis.</p>
 
-<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Qumulo Core can send audit logs to only one target syslog instance. For information about sending your Qumulo audit logs to different target systems in addition to Varonis, see <a href="deploying-qumulo-broker.html#rsyslog-with-multiple-clusters">Configuring <code class="language-plaintext highlighter-rouge">rsyslog</code> to Communicate with Multiple Clusters</a>.</div>
+<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Qumulo Core can send audit logs to only one target <code class="language-plaintext highlighter-rouge">syslog</code> instance. For information about sending your Qumulo audit logs to different target systems in addition to Varonis, see <a href="deploying-qumulo-broker.html#rsyslog-with-multiple-clusters">Configuring <code class="language-plaintext highlighter-rouge">rsyslog</code> to Communicate with Multiple Clusters</a>.</div>
 
 <p>The following architecture diagram shows how Qumulo Broker gathers, processes, and sends data.</p>
 
@@ -772,7 +772,7 @@ $(document).ready(function() {
       <td>TCP</td>	    
       <td>Qumulo Core (persistent and floating IP addresses)</td>
       <td>Qumulo Broker</td>
-      <td>Qumulo Broker syslog connection</td>
+      <td>Qumulo Broker <code>syslog</code> connection</td>
     </tr>
     <tr>
       <td>8000</td>
