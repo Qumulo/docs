@@ -17,7 +17,7 @@ For information about which upgrade modes different Qumulo Core releases use, se
 ### Instant Software Upgrade
 The more common, faster instant software upgrade requires restarting only the container on your nodes and has a downtime of less than 30 seconds without disruption to the operation of the cluster.
 
-Because in Qumulo Core 3.3.2 (and higher), the Qumulo file and data protection systems are separate from the host in charge of running the operating system and the services specific to each hardware or cloud platform, and because these services run in a lightweight container (by using Ubuntu-native [systemd-nspawn](https://www.freedesktop.org/software/systemd/man/systemd-nspawn.html) containerization) in the user space, it is possible to move quickly from one Qumulo Core version to another by loading a new container and pointing the runtime environment at updated software.
+Because in Qumulo Core 3.3.2 (and higher), the Qumulo file and data protection systems are separate from the host in charge of running the operating system and the services specific to each hardware or cloud platform, and because these services run in a lightweight container (by using Ubuntu-native [`systemd-nspawn`](https://www.freedesktop.org/software/systemd/man/systemd-nspawn.html) containerization) in the user space, it is possible to move quickly from one Qumulo Core version to another by loading a new container and pointing the runtime environment at updated software.
   
 {{site.data.alerts.note}}
 <ul>
@@ -190,7 +190,7 @@ We strongly recommend developing a structured approach to maintaining the host O
 {% endunless %}
 
 {% if page.platform == 'cnq-aws' %}
-The AWS Systems Manager Patch Manager helps you maintain the host OS by providing automated, managed OS patching based on pre-defined baselines and update schedules. For more information, see [AWS Systems Manager Patch Manager](https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager.html) in the AWS Systems Manager User Guide.
+The AWS Systems Manager Patch Manager helps you maintain the host OS by providing automated, managed OS patching based on predefined baselines and update schedules. For more information, see [AWS Systems Manager Patch Manager](https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager.html) in the AWS Systems Manager User Guide.
 
 The following are best practice for working with Patch Manager:
 

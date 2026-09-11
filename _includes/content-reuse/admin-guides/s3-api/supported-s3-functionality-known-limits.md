@@ -386,7 +386,7 @@ The S3 API supports listing objects in a bucket by using the [`ListObjects`]({{s
 
 * **Creating Empty Versioned Directories:** Qumulo Core doesn't support creating empty, versioned directories.
 
-* **Deleting Versioned Objects:** If you don't specify an object version ID, the [DeleteObject](https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObject.html) and [DeleteObjects](https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObjects.html) S3 API actions create a _deletion marker_ for an object but don't delete any file system data. Because currently Qumulo Core doesn't support bucket lifecycle policies, the data remains accessible by using S3 API actions and the object version ID. To delete a specific object version permanently, specify its version ID when you use either of these API actions.
+* **Deleting Versioned Objects:** If you don't specify an object version ID, the [`DeleteObject`](https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObject.html) and [`DeleteObjects`](https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObjects.html) S3 API actions create a _deletion marker_ for an object but don't delete any file system data. Because currently Qumulo Core doesn't support bucket lifecycle policies, the data remains accessible by using S3 API actions and the object version ID. To delete a specific object version permanently, specify its version ID when you use either of these API actions.
 
 ### Object Lock
 While native Amazon S3 functionality requires Object Lock to be enabled for an S3 bucket to be able to both modify and view locks on objects, Qumulo Core requires [Object Lock to be enabled for an S3 bucket](managing-object-lock-for-s3-buckets.html) only to _modify_ locks on objects.

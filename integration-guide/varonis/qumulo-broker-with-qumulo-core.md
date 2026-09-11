@@ -29,9 +29,9 @@ The following architecture diagram shows the workflow between Qumulo Broker and 
 ### How Qumulo Broker Gathers, Processes, and Emits Data {#qumulo-broker}
 In Qumulo Core, each audit log has a specific logging requirement (for example, certain log types include only specific fields). Although normally Qumulo Core outputs audit logs in CSV format, it can output these additional fields in JSON format. For more information, see [Configure Qumulo Audit Logging by Using the qq CLI](deploying-qumulo-broker.html#configure-audit-logging).
 
-Typically, Qumulo Core sends the audit logs to a single remote syslog instance. In the Qumulo-Varonis integration, Qumulo Broker receives the audit logs from multiple Qumulo clusters, converts them to various formats, and then sends them to Varonis.
+Typically, Qumulo Core sends the audit logs to a single remote `syslog` instance. In the Qumulo-Varonis integration, Qumulo Broker receives the audit logs from multiple Qumulo clusters, converts them to various formats, and then sends them to Varonis.
 
-{% include note.html content="Qumulo Core can send audit logs to only one target syslog instance. For information about sending your Qumulo audit logs to different target systems in addition to Varonis, see [Configuring `rsyslog` to Communicate with Multiple Clusters](deploying-qumulo-broker.html#rsyslog-with-multiple-clusters)." %}
+{% include note.html content="Qumulo Core can send audit logs to only one target `syslog` instance. For information about sending your Qumulo audit logs to different target systems in addition to Varonis, see [Configuring `rsyslog` to Communicate with Multiple Clusters](deploying-qumulo-broker.html#rsyslog-with-multiple-clusters)." %}
 
 The following architecture diagram shows how Qumulo Broker gathers, processes, and sends data.
 
@@ -101,7 +101,7 @@ In addition to the Varonis firewall requirements, you must also define the follo
       <td>TCP</td>	    
       <td>Qumulo Core (persistent and floating IP addresses)</td>
       <td>Qumulo Broker</td>
-      <td>Qumulo Broker syslog connection</td>
+      <td>Qumulo Broker <code>syslog</code> connection</td>
     </tr>
     <tr>
       <td>8000</td>

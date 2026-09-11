@@ -53,7 +53,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
 {% capture betterStartup %}<strong>Cloud Native Qumulo (CNQ), Azure Native Qumulo (ANQ), and Stratus Accelerator clusters:</strong> Improved cluster start-up times.{% endcapture %}
 {% capture appHardInst %}<strong>Appliance Hardware Installations:</strong> Upgraded the host kernel on Ubuntu 24.04, from 6.8.0-85 to 6.8.0-117{% endcapture %}
 {% capture disableKernMod %}the <code>algif_aead</code> kernel module to mitigate the <a target="_blank" href="https://copy.fail/">Copy Fail</a> (<a target="_blank" href="https://nvd.nist.gov/vuln/detail/CVE-2026-31431">CVE-2026-31431</a>) vulnerability.{% endcapture %}
-{% capture mustWait %}For clusters running Qumulo Core 7.9.0 (and higher), you must wait for on-disk upgrades to complete before you can upgrade the cluster to a higher version (this process typically takes 1-2 days). To check whether a cluster is ready to be upgraded, you can use the Qumulo REST API or the qq CLI. For example:
+{% capture mustWait %}For clusters running Qumulo Core 7.9.0 (and higher), you must wait for on-disk upgrades to complete before you can upgrade the cluster to a higher version (this process typically takes 1-2 days). To check whether a cluster is ready to be upgraded, you can use the Qumulo REST API or the <code>qq</code> CLI. For example:
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight" style="position: relative;"><button class="btn btn-xs btn-default copy-btn" title="Copy to clipboard"><i class="fa fa-copy"></i></button><code>POST /v2/upgrade/verify-image</code></pre></div></div>
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight" style="position: relative;"><button class="btn btn-xs btn-default copy-btn" title="Copy to clipboard"><i class="fa fa-copy"></i></button><code>qq upgrade_verify_image \
   --path /example/path/to/target/image</code></pre></div></div>{% endcapture %}
@@ -91,7 +91,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
     <ul>
       <li>Prevented the system from handling an internal encoding inconsistency from legacy builds</li>
       <li>Prevented quorum formation if the audit server address specified in the audit configuration isn't a valid IP address or DNS name</li>
-      <li>Could cause Qumulo Core to become unresponsive if a remote syslog endpoint configured for audit log delivery becomes unreachable</li>
+      <li>Could cause Qumulo Core to become unresponsive if a remote <code>syslog</code> endpoint configured for audit log delivery becomes unreachable</li>
       <li>Could cause Qumulo Core to crash if a multi-part upload to a versioned S3 bucket took longer than approximately 10 seconds</li>
       <li>Could cause Qumulo Core to crash while upgrading on-disk structures in certain scenarios</li>
     </ul>
@@ -163,7 +163,7 @@ For information about upgrade types for each release, see <a href='mode-referenc
       <li>Prevented the system from handling an internal encoding inconsistency from legacy builds</li>
       <li>Prevented quorum formation if the audit server address specified in the audit configuration isn't a valid IP address or DNS name</li>
       <li>Prevented Nexus agent on nodes in a Qumulo Core cluster from detecting a cleanly closed connection to Nexus and reconnecting, causing nodes to continue reporting metrics without being able to be managed from Nexus until the connection was reset</li>
-      <li>Could cause Qumulo Core to become unresponsive if a remote syslog endpoint configured for audit log delivery becomes unreachable</li>
+      <li>Could cause Qumulo Core to become unresponsive if a remote <code>syslog</code> endpoint configured for audit log delivery becomes unreachable</li>
       <li>Could cause Qumulo Core to crash if a multi-part upload to a versioned S3 bucket took longer than approximately 10 seconds</li>
       <li>Could cause Qumulo Core to {{ couldCrash }}</li>
     </ul>

@@ -90,7 +90,7 @@ A system call, such as `stat`, that returns a UID or GID, requires that the doma
 [sssd (System Security Services Daemon)](https://linux.die.net/man/8/sssd) is a tool responsible for managing authentication with external providers in Linux. To use NFSv4.1 with Kerberos, you must configure `sssd` with AD as the identity provider.
 
 * If you join domains by using `samba`, you must create the [/etc/sssd.conf](https://linux.die.net/man/5/sssd.conf) file.
-* If you join domains by using `realmd`, you might already have a `/etc/sssd.conf` file. For detailed configuration information, see [sssd-ldap](https://linux.die.net/man/5/sssd-ldap) in the Linux documentation.
+* If you join domains by using `realmd`, you might already have a `/etc/sssd.conf` file. For detailed configuration information, see [`sssd-ldap`](https://linux.die.net/man/5/sssd-ldap) in the Linux documentation.
 
 In the following example, the `sssd.conf` file configures basic ID mapping for AD.
 
@@ -136,7 +136,7 @@ Like Qumulo clusters, Linux systems can resolve details about user and group obj
 1. To pick up changes to the `/etc/sssd.conf` file on a live system, restart the `sssd` service.
 
 ### Configuring the Conversion of Local Identities to NFS Representations by Using idmapd
-[idmapd (or nfsidmap)](https://linux.die.net/man/5/idmapd.conf), is a tool that lets you convert local identities to their on-the-wire NFS representations. Although `idmapd` works with `sssd`, it has additional configuration options.
+[`idmapd` (or `nfsidmap`)](https://linux.die.net/man/5/idmapd.conf), is a tool that lets you convert local identities to their on-the-wire NFS representations. Although `idmapd` works with `sssd`, it has additional configuration options.
 
 In the following example, the `/etc/idmapd.conf` file configures a Linux client joined to AD:
 
@@ -273,7 +273,7 @@ In environments where Linux systems map exactly to end users that have `kinit`-b
       /- /etc/auto.kerberos_nfs_mount_example --timeout 60
       ```
 
-      For more information, see [Autofs](https://help.ubuntu.com/community/Autofs) in the Ubuntu documentation.
+      For more information, see [`autofs`](https://help.ubuntu.com/community/Autofs) in the Ubuntu documentation.
 
    1. Add the following line to the `/etc/auto.kerberos_nfs_mount_example` map file.
 
@@ -302,4 +302,4 @@ In environments where Linux systems map exactly to end users that have `kinit`-b
 ## Network Time Protocol (NTP) Server
 {% include content-reuse/admin-guides/kerberos/kerberos-ntp-server.md %}
 
-There are many NTP d&aelig;mons for Linux. For example, Ubuntu uses the [NTP functionality in systemd](https://ubuntu.com/server/docs/use-timedatectl-and-timesyncd) (`timedatectl` and `timesyncd`).
+There are many NTP d&aelig;mons for Linux. For example, Ubuntu uses the [NTP functionality in `systemd`](https://ubuntu.com/server/docs/use-timedatectl-and-timesyncd) (`timedatectl` and `timesyncd`).

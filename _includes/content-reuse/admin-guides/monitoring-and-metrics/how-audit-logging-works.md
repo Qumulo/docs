@@ -1,6 +1,6 @@
-Qumulo Core creates a descriptive audit log message for every operation that a client attempts. Qumulo Core routes audit log messages to one or more configured destinations: remote syslog servers (in compliance with {% include rfc.html rfc='5424' %}) or Amazon CloudWatch (configured through the audit logging REST API).
+Qumulo Core creates a descriptive audit log message for every operation that a client attempts. Qumulo Core routes audit log messages to one or more configured destinations: remote `syslog` servers (in compliance with {% include rfc.html rfc='5424' %}) or Amazon CloudWatch (configured through the audit logging REST API).
 
-This section explains the differences between the levels of detail of audit logs in [syslog CSV](#details-in-syslog-csv-format), [syslog JSON](#details-in-syslog-json-format), and [CloudWatch JSON](#details-in-cloudwatch-json-format) formats. (In general, the syslog CSV and CloudWatch JSON formats contain an identical number of fields, some named differently, while the syslog JSON format has additional audit logging information.)
+This section explains the differences between the levels of detail of audit logs in [`syslog` CSV](#details-in-syslog-csv-format), [`syslog` JSON](#details-in-syslog-json-format), and [CloudWatch JSON](#details-in-cloudwatch-json-format) formats. (In general, the `syslog` CSV and CloudWatch JSON formats contain an identical number of fields, some named differently, while the `syslog` JSON format has additional audit logging information.)
 
 {{site.data.alerts.note}}
 <ul>
@@ -22,12 +22,12 @@ This section explains the differences between the levels of detail of audit logs
 <ul>
   <li>Because the user ID, path fields, and secondary path fields can contain characters that must be escaped (such as quotation marks and commas), you must enclose these fields in quotation marks.</li>
   <li>Qumulo Core system strips out the <code>\n</code> and <code>\r</code> newline characters from the user ID, file path, and secondary file path fields.</li>
-  <li>Both syslog CSV and syslog JSON formats deduplicate repeated file reads. However, for metadata changes&mdash;such as modifications to an access-control list (ACL)&mdash;only the syslog CSV deduplicates repeated operations.</li>
-  <li>Unlike the <a href="#details-in-syslog-json-format">syslog JSON format</a>, the syslog CSV format has only values (no keys) and the fields are empty when unused. The following table helps explain the fields and their possible values.</li> 
+  <li>Both <code>syslog</code> CSV and <code>syslog</code> JSON formats deduplicate repeated file reads. However, for metadata changes&mdash;such as modifications to an access-control list (ACL)&mdash;only the <code>syslog</code> CSV deduplicates repeated operations.</li>
+  <li>Unlike the <a href="#details-in-syslog-json-format">`syslog` JSON format</a>, the `syslog` CSV format has only values (no keys) and the fields are empty when unused. The following table helps explain the fields and their possible values.</li> 
 </ul>
 {{site.data.alerts.end}}
 
-By default, Qumulo Core formats audit log messages in the syslog CSV format, prefaced by the date, time, and the name of the machine that issues the operation. The syslog CSV format includes the following fields in the following order within the log message body.
+By default, Qumulo Core formats audit log messages in the `syslog` CSV format, prefaced by the date, time, and the name of the machine that issues the operation. The `syslog` CSV format includes the following fields in the following order within the log message body.
 
 <table>
   <tr>
@@ -144,9 +144,9 @@ Jun 6 14:55:24 my-machine qumulo {{site.exampleIP0}},"system",internal,remote_sy
 
 
 ## Details Included in the syslog JSON Format {#details-in-syslog-json-format}
-You can configure Qumulo Core to format audit log messages in the syslog JSON format. The fields in this format are similar to [the fields that the syslog CSV format provides](#details-in-syslog-csv-format), with the following exceptions.
+You can configure Qumulo Core to format audit log messages in the `syslog` JSON format. The fields in this format are similar to [the fields that the `syslog` CSV format provides](#details-in-syslog-csv-format), with the following exceptions.
 
-{% include note.html content="The syslog JSON format isn't available in the Qumulo Core Web UI." %}
+{% include note.html content="The `syslog` JSON format isn't available in the Qumulo Core Web UI." %}
 
 <table>
   <tr>
@@ -156,7 +156,7 @@ You can configure Qumulo Core to format audit log messages in the syslog JSON fo
   </tr> 
   <tr>
     <td><code>user_id</code> Object</td>
-    <td>In Qumulo Core 6.0.1 (and higher) the <code>user_id</code> object replaces the single user ID field in the syslog CSV format and contains the fields <code>sid</code>, <code>auth_id</code>, and <code>name</code>.</td>
+    <td>In Qumulo Core 6.0.1 (and higher) the <code>user_id</code> object replaces the single user ID field in the `syslog` CSV format and contains the fields <code>sid</code>, <code>auth_id</code>, and <code>name</code>.</td>
     <td>
       <ul>
         <li><code>sid</code>: Security identifier</li>
@@ -169,7 +169,7 @@ You can configure Qumulo Core to format audit log messages in the syslog JSON fo
     <td><code>details</code> Object</td>
     <td>
       <ul>
-        <li>For most file system operations, the <code>details</code> object replaces the file path, secondary file path, and file ID fields in the syslog CSV format and contains the fields <code>path</code>, <code>target</code>, and <code>file_id</code>.</li>
+        <li>For most file system operations, the <code>details</code> object replaces the file path, secondary file path, and file ID fields in the `syslog` CSV format and contains the fields <code>path</code>, <code>target</code>, and <code>file_id</code>.</li>
         <li>For <code>fs_write_*</code> and <code>fs_read_*</code> operations, the <code>details</code> object also includes the <code>offset</code> and <code>file_size</code> fields.</li>
         <li>For operations that write metadata or change access-control lists (ACLs), the <code>details</code> object also includes the <code>after</code> and <code>before</code> objects that include fields for current and previous metadata.</li>
       </ul>
@@ -231,7 +231,7 @@ You can configure Qumulo Core to format audit log messages in the Amazon CloudWa
 
 {% include tip.html content="To download the audit log from the CloudWatch console, on the left navigation panel click **Logs &gt; Log groups**, click a log group, and then on the **Log events** page click **Actions &gt; Copy search results (ASCII)**." %}
 
-Rather than preface each line of CSV or JSON with the date and time, CloudWatch creates an ASCII table, which contains Unix timestamps in its first column. The second column contains the fields that are similar to the fields that both [the syslog CSV format](#details-in-syslog-csv-format) and [the syslog JSON format](#details-in-syslog-json-format) provide, with the following exceptions.
+Rather than preface each line of CSV or JSON with the date and time, CloudWatch creates an ASCII table, which contains Unix timestamps in its first column. The second column contains the fields that are similar to the fields that both [the `syslog` CSV format](#details-in-syslog-csv-format) and [the `syslog` JSON format](#details-in-syslog-json-format) provide, with the following exceptions.
 
 * The <code>result</code> field replaces the Operation Status or <code>status</code> field.
 

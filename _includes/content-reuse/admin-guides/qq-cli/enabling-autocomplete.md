@@ -1,4 +1,4 @@
-The `qq` CLI supports [Python argparse completion](https://docs.python.org/3/library/argparse.html) that helps you use the CLI more effectively. This section explains how to enable automatic command completion for the `qq` CLI and for command aliases.
+The `qq` CLI supports [Python `argparse` completion](https://docs.python.org/3/library/argparse.html) that helps you use the CLI more effectively. This section explains how to enable automatic command completion for the `qq` CLI and for command aliases.
 
 {% include important.html content="The following procedures apply to running the `qq` CLI on Linux, macOS, and Windows Subsystem for Linux. Don't run these commands on Qumulo nodes" %}
 

@@ -63,11 +63,11 @@ Before you begin, make sure that you have done the following.
 
 
 ## To Install VPN Keys from a Node
-{% include note.html content="On macOS and Linux, you can use SCP and SSH. On Windows Server 2022, Windows Server 2019, and Windows 10 (build 1809 and higher), we recommend [installing OpenSSH](https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse)." %}
+{% include note.html content="On macOS and Linux, you can use the `scp` and `ssh` tools. On Windows Server 2022, Windows Server 2019, and Windows 10 (build 1809 and higher), we recommend [installing OpenSSH](https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse)." %}
 
 {{page.varCopyFile}}
 
-1. To copy the VPN key files to one of your nodes, use SCP. For example:
+1. To copy the VPN key files to one of your nodes, use the `scp` tool. For example:
 
    ```bash
    scp /my-path/* admin@{{site.exampleIP0}}:~/
