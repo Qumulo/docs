@@ -53,7 +53,7 @@ This section explains the prerequisites to deploying {{site.azure.cnqAzureShort}
   </ul>
   <p>Contributor alone is refused by the provider's preflight check, which needs <code>Microsoft.Authorization/roleAssignments/write</code> for the Provisioner and node identities. Key Vault Administrator supplies the Key Vault data-plane actions the provider uses to store the admin password (<code>secrets/setSecret</code>) and to register the storage accounts with the vault (<code>storageaccounts/set</code>); no management-plane role, Owner included, carries those. A custom role that combines <code>Microsoft.Authorization/roleAssignments/write</code> with the data action <code>Microsoft.KeyVault/vaults/*</code> also works.</p>
   <p><code>deletion_protection</code> (on by default) additionally needs <code>Microsoft.Authorization/locks/*</code> (<a href="https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/lock-resources">management locks</a>), and <code>floating_ip_count</code> (3 by default) needs <code>Microsoft.Network/virtualNetworks/CheckIPAddressAvailability/action</code> on the virtual network plus <code>Microsoft.Authorization/roleDefinitions/write</code> at subscription scope, because the provider creates a custom subnet-join role for the node identities.</p>
-  <p>To keep the deploying principal at Contributor, pre-create the identities and pass <code>cluster_node_identity_id</code> and <code>provisioner_identity_id</code>; the provider then creates no role assignments.</p>
+  <p>To keep the deploying principal at Contributor, create the identities in advance and pass <code>cluster_node_identity_id</code> and <code>provisioner_identity_id</code>; the provider then creates no role assignments.</p>
   {{site.data.alerts.end}}
 
 ### Working with the qumulo-terraform-azure Repository
@@ -104,7 +104,7 @@ This section explains the most common scenarios that cause the `terraform init` 
   </tr>
   <tr>
     <td>A create is refused with <code>RequestDisallowedByPolicy</code></td>
-    <td>An Azure Policy initiative (commonly required tags) applies. Pre-create the resource group with those tags and pass them in <code>tags</code>.</td>
+    <td>An Azure Policy initiative (commonly required tags) applies. Create the resource group in advance with those tags and pass them in <code>tags</code>.</td>
   </tr>
   <tr>
     <td>The apply waits a long time on VM capacity</td>
@@ -158,7 +158,7 @@ To view the log:
 
 1. Run the `terraform output provisioner_log_url` command and open the link, or copy the link from the Terraform output after the apply.
 
-1. The Azure portal opens the workspace's **Logs** blade. If the **Queries hub** gallery appears first, this is normal and isn't an error. To close the gallery, click the **X** control in the upper right.
+1. The Azure portal opens the **Logs** blade of the workspace. If the **Queries hub** gallery appears first, this is normal and isn't an error. To close the gallery, click the **X** control in the upper right.
 
 1. In the KQL query editor, paste the following query:
 
