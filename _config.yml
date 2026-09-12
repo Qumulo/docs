@@ -469,6 +469,7 @@ cnq:
   deploymentUniqueName: Terraform ignores the <code>deployment_name</code> value and generates a <code>deployment_unique_name</code> variable. Terraform appends a random, alphanumeric value to the variable and then tags all future resources with this value. The <code>deployment_unique_name</code> variable never changes during subsequent Terraform deployments.
   deploymentUniqueNameExampleAWS: myname-deployment-ABCDE01EG2H
   deploymentUniqueNameExampleAzure: mynameCompute-ABCDEFG
+  deploymentUniqueNameExampleAzureTF: my-deployment-a1b2c3
   deploymentUniqueNameExampleGCP: mydeploymentname-ABCDE01EG2H
   persistentStorageResourceGroupAzure: mynamePStore-abcde
   paramStore: (In AWS Systems Manager, click <strong>Application Management &gt; Parameter Store &gt; /qumulo/&lt;my-unique-deployment-name&gt;/last-run-status</strong>. On the <strong>History</strong> tab, click <span class="emoji">⚙️</span>, and then in the <strong>Preferences</strong> dialog box, click <strong>Parameter history properties &gt; Value &gt; Confirm</strong>.)
