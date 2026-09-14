@@ -124,13 +124,7 @@ This section explains how to prepare the required files, configure your deployme
 ### Step 1: Prepare the Required Files {#prepare-the-required-files}
 During the following process, Terraform downloads the Qumulo Terraform Provider from Qumulo's registry. Later, the Terraform Provider installs Qumulo Core on your cluster's nodes.
 
-1. To clone the `Qumulo-terraform-aws` repository and check out a specific release, run the following commands.
-
-   ```bash
-   git clone https://github.com/Qumulo/Qumulo-terraform-aws.git
-   cd Qumulo-terraform-aws
-   git checkout {{site.cnq.tfVersion}}
-   ```
+1. Clone the `Qumulo-terraform-aws` repository, then check out the branch for a specific release.
 
 1. To understand the deployment variables, review the `terraform.tfvars.example` and `README` files.
 
