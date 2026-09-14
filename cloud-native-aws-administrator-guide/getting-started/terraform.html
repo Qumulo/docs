@@ -125,7 +125,7 @@ fetch('/data/website.json')
 </noscript>
 
 <!-- Define page metadata -->
-<meta name="description" content="This section explains how to deploy Cloud Native Qumulo (CNQ) on AWS by preparing your infrastructure, environment, and authentication; deploying and configuring your Qumulo cluster; mounting the Qumulo file system; and performing post-deployment actions such as adding and removing nodes">
+<meta name="description" content="This section explains how to deploy Cloud Native Qumulo (CNQ) on AWS by preparing your infrastructure, environment, and authentication; deploying and configuring your Qumulo cluster; mounting the Qumulo file system; and performing post-deployment actions such as adding and removing nodes.">
 <meta name="apple-mobile-web-app-title" content="Qumulo Documentation Portal">
 <meta name="application-name" content="Qumulo Documentation Portal">
 <meta name="msapplication-TileColor" content="#2b5797">
@@ -138,7 +138,7 @@ fetch('/data/website.json')
 <meta property="og:title" content="Deploying Cloud Native Qumulo on AWS with the Qumulo Terraform Provider | Qumulo Documentation Portal">
 <meta property="og:url" content="https://docs.qumulo.com/cloud-native-aws-administrator-guide/getting-started/terraform.html">
 <meta property="og:site_name" content="Qumulo Documentation Portal">
-<meta property="og:description" content="This section explains how to deploy Cloud Native Qumulo (CNQ) on AWS by preparing your infrastructure, environment, and authentication; deploying and configuring your Qumulo cluster; mounting the Qumulo file system; and performing post-deployment actions such as adding and removing nodes">
+<meta property="og:description" content="This section explains how to deploy Cloud Native Qumulo (CNQ) on AWS by preparing your infrastructure, environment, and authentication; deploying and configuring your Qumulo cluster; mounting the Qumulo file system; and performing post-deployment actions such as adding and removing nodes.">
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://docs.qumulo.com/images/docs.qumulo.com-qumulo-documentation-portal-630px.png">
@@ -149,7 +149,7 @@ fetch('/data/website.json')
 <meta name="twitter:title" content="Deploying Cloud Native Qumulo on AWS with the Qumulo Terraform Provider | Qumulo Documentation Portal">
 <meta property="twitter:url" content="https://docs.qumulo.com/cloud-native-aws-administrator-guide/getting-started/terraform.html">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:description" content="This section explains how to deploy Cloud Native Qumulo (CNQ) on AWS by preparing your infrastructure, environment, and authentication; deploying and configuring your Qumulo cluster; mounting the Qumulo file system; and performing post-deployment actions such as adding and removing nodes">
+<meta name="twitter:description" content="This section explains how to deploy Cloud Native Qumulo (CNQ) on AWS by preparing your infrastructure, environment, and authentication; deploying and configuring your Qumulo cluster; mounting the Qumulo file system; and performing post-deployment actions such as adding and removing nodes.">
 <meta name="twitter:image" content="https://docs.qumulo.com/images/docs.qumulo.com-qumulo-documentation-portal-418px.png">
 <meta property="twitter:domain" content="docs.qumulo.com">
 
@@ -2430,9 +2430,18 @@ $(document).ready(function() {
 
     
 
-   <p>This section explains how to deploy Cloud Native Qumulo (CNQ) on AWS by preparing your infrastructure, environment, and authentication; deploying and configuring your Qumulo cluster; mounting the Qumulo file system; and performing post-deployment actions such as adding and removing nodes</p>
+   <p>This section explains how to deploy Cloud Native Qumulo (CNQ) on AWS by preparing your infrastructure, environment, and authentication; deploying and configuring your Qumulo cluster; mounting the Qumulo file system; and performing post-deployment actions such as adding and removing nodes.</p>
    
      <p>For an overview of CNQ on AWS, its prerequisites, and limits, see <a href="how-cloud-native-qumulo-works.html">How Cloud Native Qumulo Works</a>.</p>
+
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
+New CNQ deployments use the <a href="https://qumulo.github.io/terraform-provider-qumulo-cloud/">Qumulo Terraform Provider</a>:
+<ul>
+  <li>The Terraform Provider doesn't require downloading a Terraform bundle or staging an installer in an S3 bucket.</li>
+  <li>Persistent storage and compute resources deploy in a single Terraform workspace and don't require configuring a cross-workspace remote state.</li>
+  <li>Node addition and removal, soft capacity limit increases, and EC2 instance type changes deploy with one variable change and <code>terraform apply</code> command and don't require multi-stage sequences or a second Terraform workspace for cluster replacement.</li>
+</ul>
+</div>
 
 <h2 id="prerequisites">Prerequisites</h2>
 <p>This section explains the prerequisites to deploying CNQ on AWS.</p>
@@ -2505,7 +2514,7 @@ For role definitions and ready-to-use policy statements, see <a href="https://qu
 <h3 id="working-with-the-qumulo-terraform-aws-repository">Working with the Qumulo-terraform-aws Repository</h3>
 <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Existing clusters that used the previous deployment provisioning remain operational. For information about migrating your cluster to the new Terraform deployment method, see the <a href="https://qumulo.github.io/terraform-provider-qumulo-cloud/import-guide/">Import Guide</a> in the Qumulo Terraform Provider documentation.</div>
 
-<p>The <a href="https://github.com/Qumulo/Qumulo-terraform-aws">Qumulo-terraform-aws</a> repository contains Terraform configurations that let you deploy S3 buckets and a CNQ cluster with 1 or 3–24 nodes that adhere to the <a href="https://aws.amazon.com/architecture/well-architected/">AWS Well-Architected Framework</a> and have fully elastic compute and capacity.</p>
+<p>The <a href="https://github.com/Qumulo/Qumulo-terraform-aws">Qumulo-terraform-aws</a> repository contains Terraform configurations that let you deploy the persistent storage and the compute cluster, with 1 or 3–24 nodes. These resources form the CNQ cluster, which adheres to the <a href="https://aws.amazon.com/architecture/well-architected/">AWS Well-Architected Framework</a> and has fully elastic compute and capacity.</p>
 
 <p>This deployment uses the <a href="https://qumulo.github.io/terraform-provider-qumulo-cloud/">Qumulo Terraform Provider</a>, which greatly simplifies Terraform operations by ensuring that:</p>
 <ul>
@@ -2513,7 +2522,7 @@ For role definitions and ready-to-use policy statements, see <a href="https://qu
   <li>Node operations use a single variable and a single <code class="language-plaintext highlighter-rouge">terraform apply</code> command</li>
 </ul>
 
-<h3 id="working-with-the-terraform-apply-command">Working With the terraform apply Command</h3>
+<h3 id="working-with-the-terraform-apply-command">Working with the terraform apply Command</h3>
 <p>This section explains the most common scenarios that cause the <code class="language-plaintext highlighter-rouge">terraform apply</code> command to fail.</p>
 
 <table>
@@ -2625,14 +2634,21 @@ If the <code>terraform apply</code> command fails for a reason not listed in thi
             <p><strong>Single-AZ (Availability Zone) Deployment:</strong> Specify 1 private subnet</p>
           </li>
           <li>
-            <p><strong>Multi-AZ Deployment:</strong> Specify 3 subnets, one for each AZ</p>
+            <p><strong>Multi-AZ Deployment:</strong> Specify 3 (or more) subnets, one for each AZ.</p>
+
+            <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> Because 2 AZs can’t form a majority quorum, it isn’t possible to deploy across 2 AZs.</div>
           </li>
         </ul>
       </li>
       <li>
         <p><strong>Cluster Configuration:</strong> <code class="language-plaintext highlighter-rouge">instance_type</code> and <code class="language-plaintext highlighter-rouge">node_count</code> (1, or 3–24). See <a href="#recommended-ec2-instance-types">Recommended EC2 Instance Types</a>.</p>
 
-        <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> A 4-node cluster can support only a single-AZ deployment.</div>
+        <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note</b><br />
+<ul>
+  <li>A 4-node cluster can support only a single-AZ deployment.</li>
+  <li>Because a 2-node cluster is unsupported and a 4-node cluster is single-AZ only, a multi-AZ deployment requires 3 nodes, or 5 or more nodes.</li>
+</ul>
+</div>
       </li>
       <li>
         <p><strong>Soft Capacity Limit:</strong> If you don’t use the default limit, specify <code class="language-plaintext highlighter-rouge">soft_capacity_limit_tb</code> to set the initial capacity limit of your Qumulo cluster (in TB).</p>
@@ -2772,7 +2788,14 @@ If the <code>terraform apply</code> command fails for a reason not listed in thi
 </table>
 
 <h3 id="create-the-necessary-resources">Step 3: Create the Necessary Resources</h3>
-<div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> If EC2 capacity is unavailable in your Availability Zone (AZ), you can select a different AZ, deploy in multiple AZs, or increase the resource creation timeout so that the Qumulo Terraform Provider continues retrying the operation until capacity becomes available.</div>
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
+<ul>
+  <li>If EC2 capacity is unavailable in your Availability Zones, the Qumulo Terraform Provider continues retrying the operation in the Availability Zones that you configured until capacity becomes available.</li>
+  <li>The Terraform Provider doesn't move your deployment to different Availability Zones or Region.</li>
+  <li>To relocate your deployment by replacing the cluster, change either the <code>subnet_ids</code> or <code>region</code> variable and re-run the <code>terraform apply</code> command.</li>
+  <li>Alternatively, you can deploy your cluster in multiple AZs, or increase the resource creation timeout.</li>
+</ul>
+</div>
 
 <ol>
   <li>
@@ -2804,7 +2827,8 @@ If the <code>terraform apply</code> command fails for a reason not listed in thi
       </li>
     </ul>
 
-    <p>For example:</p>
+    <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> The four backslashes (<code class="language-plaintext highlighter-rouge">\\\\</code>) in the <code class="language-plaintext highlighter-rouge">smb</code> endpoint in the following example are intentional because Terraform escapes backslashes when it prints string values; a doubled backslash in the output represents a single backslash. The path that clients use in this example is <code class="language-plaintext highlighter-rouge">\\203.0.113.1\&lt;SMB Share Name&gt;</code></div>
+
     <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cluster_soft_capacity_limit_tb = 500
 cluster_uuid = "12345a6b-7c89-0d12-3456-78fe9012f345"
 deployment_unique_name = "myname-deployment-ABCDE01EG2H"
@@ -2837,7 +2861,7 @@ provisioner_log = "https://us-west-2.console.aws.amazon.com/cloudwatch/..."
     <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
 <ul>
   <li>The system treats the administrator password as sensitive: It never writes it to Terraform states and reads it anew for every Terraform run.</li>
-  <li>If you change the administrator password by using the Qumulo Core Web UI, Qumulo REST API, or <code>qq</code> CLI after deployment, although Terraform configuration remains unaffected, we recommend keeping your secrets store up to date with your cluster's settings, so that future redeployments use the correct value.</li>
+  <li>If you change the administrator password by using the Qumulo Core Web UI, Qumulo REST API, or <code>qq</code> CLI after deployment, although Terraform configuration remains unaffected, we recommend keeping your secrets store up to date with your cluster's settings, so that future modifications made with Terraform use the correct value.</li>
 </ul>
 </div>
 
@@ -2857,13 +2881,14 @@ provisioner_log = "https://us-west-2.console.aws.amazon.com/cloudwatch/..."
 </ol>
 
 <h2 id="part-3-perform-post-deployment-actions">Part 3: Performing Post-Deployment Actions</h2>
-<p>This section describes the common actions you can perform on a CNQ cluster after deploying it: adding and removing nodes, increasing the soft capacity limit for a cluster, changing the EC2 instance type and deleting a cluster.</p>
+<p>This section describes the common actions you can perform on a CNQ cluster after deploying it.</p>
 
 <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
 <ul>
   <li>After you create your Qumulo cluster, the deployed version (and the <code>cluster_version</code> variable) becomes immutable in the Terraform configuration. It isn't possible to upgrade Qumulo Core by changing this variable or by performing a Terraform operation.</li>
   <li>To upgrade Qumulo Core, use the Qumulo Core Web UI or the <code>qq</code> CLI. For more information, see <a href="../upgrading-qumulo-core/performing-upgrades.html">Performing Upgrades</a>.</li>
   <li>For all node addition and EC2 instance type change operations, the Qumulo Terraform Provider deploys the same Qumulo Core version as the one that your cluster is currently running.</li>
+  <li>If you upgrade Qumulo Core outside of Terraform, don't change the <code>cluster_version</code> variable. Changing it to match the upgraded version causes the next <code>terraform apply</code> command to fail.</li>  
 </ul>
 </div>
 
@@ -2885,6 +2910,13 @@ provisioner_log = "https://us-west-2.console.aws.amazon.com/cloudwatch/..."
 <h3 id="removing-node-from-existing-cluster">Removing Nodes from an Existing CNQ on AWS Cluster</h3>
 <p>Removing nodes is a single Terraform operation. The Qumulo Terraform Provider handles the separate quorum removal and resource cleanup steps.</p>
 
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
+<ul>
+  <li>It isn't possible to choose which specific nodes the Terraform Provider removes from a cluster. To retire a specific node, you must replace the entire cluster.</li>
+  <li>Lowering the value of the <code>node_count</code> variable removes the highest-numbered nodes. For example, to reduce a 4-node cluster to 3-node cluster, the Terraform Provider removes node <code>4</code>. In this scenario, it isn't possible to remove node 2 and keep node 4.</li>
+</ul>
+</div>
+
 <ol>
   <li>
     <p>Edit the <code class="language-plaintext highlighter-rouge">terraform.tfvars</code> file and set <code class="language-plaintext highlighter-rouge">node_count</code> to a lower value.</p>
@@ -2897,13 +2929,14 @@ provisioner_log = "https://us-west-2.console.aws.amazon.com/cloudwatch/..."
   </li>
 </ol>
 
-<p>The specified nodes are removed from your cluster.</p>
+<p>Terraform removes the highest-numbered nodes from your cluster.</p>
 
 <h3 id="increasing-soft-capacity-limit-existing-cluster">Increasing the Soft Capacity Limit for an Existing CNQ on AWS Cluster</h3>
 <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important</b><br />
 <ul>
-  <li>A single operation can increase the soft capacity limit by less than 5,000 TB.</li>
-  <li>We recommend applying larger increases in incremental steps.</li>
+  <li>A single operation can increase the soft capacity limit by any amount under 5,000 TB.</li>
+  <li>To increase the soft capacity limit by 5,000 TB or more, apply the increase in incremental steps.</li>
+  <li>The maximum soft capacity limit is 50,000 TB.</li>
   <li>It isn't possible to decrease the soft capacity limit.</li>
 </ul>
 </div>
@@ -2943,13 +2976,18 @@ provisioner_log = "https://us-west-2.console.aws.amazon.com/cloudwatch/..."
 <div class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> <b>Caution</b><br />
 <ul>
   <li>When you no longer need your cluster, you must back up all important data on the cluster safely before deleting the cluster. Deleting the cluster deletes its compute and cache resources and its persistent storage.</li>
-  <li>The system won't run the <code>terraform destroy</code> command unless you disable deletion protection and then apply this change.</li>
+  <li>The system won't run the <code>terraform destroy</code> command unless you disable deletion protection for your cluster and Network Load Balancer (if present) and then apply this change.</li>
 </ul>
 </div>
 
 <ol>
   <li>
-    <p>After you back up your data safely, edit your <code class="language-plaintext highlighter-rouge">terraform.tfvars</code> file and set the deletion protection variable to <code class="language-plaintext highlighter-rouge">false</code>.</p>
+    <p>After you back up your data safely, edit your <code class="language-plaintext highlighter-rouge">terraform.tfvars</code> file and set the <code class="language-plaintext highlighter-rouge">deletion_protection</code> variable to <code class="language-plaintext highlighter-rouge">false</code>.</p>
+  </li>
+  <li>
+    <p>If your deployment has a Network Load Balancer (NLB), set the <code class="language-plaintext highlighter-rouge">nlb_deletion_protection</code> variable to <code class="language-plaintext highlighter-rouge">false</code>.</p>
+
+    <div class="alert alert-info" role="alert"><span class="alert-title"><span class="fa fa-info-circle"></span> <strong>Note</strong></span><br /> NLB configuration is present for every multi-AZ deployment and for single-AZ deployments with the <code class="language-plaintext highlighter-rouge">nlb_provision</code> variable set to <code class="language-plaintext highlighter-rouge">true</code>.</div>
   </li>
   <li>
     <p>Run the <code class="language-plaintext highlighter-rouge">terraform apply</code> command, review the Terraform execution plan, and then enter <code class="language-plaintext highlighter-rouge">yes</code>.</p>
