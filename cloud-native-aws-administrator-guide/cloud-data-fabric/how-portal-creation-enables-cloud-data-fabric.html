@@ -2564,7 +2564,7 @@ $(document).ready(function() {
 <h3 id="portals">Portals</h3>
 <ul>
   <li>
-    <p id="spoke-portal"><strong>Spoke Portal:</strong> An interface point on a Qumulo cluster that accesses a portion of the file system on another cluster (which has a <em>hub portal)</em>. A directory on a cluster defines a <em>root directory</em> for spoke portal. The spoke portal initiates the creation of a hub portal. You can configure multiple spoke portals on the same Qumulo cluster, as long as the spoke portal root directories don’t overlap and the host cluster for each portal relationship is unique.</p>
+    <p id="spoke-portal"><strong>Spoke Portal:</strong> An interface point on a Qumulo cluster that accesses a portion of the file system on another cluster (which has a <em>hub portal)</em>. A directory on a cluster defines a <em>root directory</em> for a spoke portal. The spoke portal initiates the creation of a hub portal. You can configure multiple spoke portals on the same Qumulo cluster, as long as the spoke portal root directories don’t overlap and the host cluster for each portal relationship is unique.</p>
 
     <ul id="read-write-portal">
       <li><strong>Read-Write Portal:</strong> A spoke portal that can access, modify, and create any files or directories within one or more corresponding hub portal root directories (in the <code class="language-plaintext highlighter-rouge">Authorized</code> state) according to file system permissions.</li>
@@ -2575,7 +2575,7 @@ $(document).ready(function() {
     </ul>
   </li>
   <li>
-    <p id="hub-portal"><strong>Hub Portal:</strong> An interface point on a Qumulo cluster that shares a portion of its file system with another cluster (which has a <em>spoke portal)</em>. A directory on a cluster defines a <em>root directory</em> for hub portal. The spoke portal initiates the creation of a hub portal. You can configure multiple portal relationships, with the same hub portal root directory, with nested directories, or with independent ones.</p>
+    <p id="hub-portal"><strong>Hub Portal:</strong> An interface point on a Qumulo cluster that shares a portion of its file system with another cluster (which has a <em>spoke portal)</em>. A directory on a cluster defines a <em>root directory</em> for a hub portal. The spoke portal initiates the creation of a hub portal. You can configure multiple portal relationships, with the same hub portal root directory, with nested directories, or with independent ones.</p>
 
     <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note</b><br />
 <ul>
@@ -2592,7 +2592,7 @@ $(document).ready(function() {
     <p id="peer-portal"><strong>Peer Portal:</strong> A portal that serves as a counterpart to another portal. For example, a hub portal is a peer portal to a spoke portal.</p>
   </li>
   <li>
-    <p id="peer-portal-address"><strong>Peer Portal Address:</strong> The IP address for a peer portal.</p>
+    <p id="peer-portal-address"><strong>Peer Portal Address:</strong> The IP address of a peer portal.</p>
   </li>
 </ul>
 
